@@ -9,7 +9,7 @@ var test = require('tap').test
 
 var npm = require('../../lib/npm.js')
 
-var pkg = path.resolve(__dirname, 'version-sub-directory')
+var pkg = path.resolve(__dirname, path.basename(__filename, '.js'))
 var subDirectory = path.resolve(pkg, 'sub-directory')
 var packagePath = path.resolve(pkg, 'package.json')
 var cache = path.resolve(pkg, 'cache')
