@@ -1,10 +1,10 @@
 var fs = require('graceful-fs')
 var path = require('path')
-var userconfigSrc = path.resolve(__dirname, '..', 'fixtures', 'config', 'userconfig')
+var userconfigSrc = path.resolve(__dirname, 'fixtures', 'config', 'userconfig')
 exports.userconfig = userconfigSrc + '-with-gc'
-exports.globalconfig = path.resolve(__dirname, '..', 'fixtures', 'config', 'globalconfig')
-exports.builtin = path.resolve(__dirname, '..', 'fixtures', 'config', 'builtin')
-exports.malformed = path.resolve(__dirname, '..', 'fixtures', 'config', 'malformed')
+exports.globalconfig = path.resolve(__dirname, 'fixtures', 'config', 'globalconfig')
+exports.builtin = path.resolve(__dirname, 'fixtures', 'config', 'builtin')
+exports.malformed = path.resolve(__dirname, 'fixtures', 'config', 'malformed')
 exports.ucData =
   { globalconfig: exports.globalconfig,
     email: 'i@izs.me',
@@ -55,7 +55,7 @@ exports.envDataFix = {
   'other-env-thing': 1000
 }
 
-var projectConf = path.resolve(__dirname, '..', '..', '.npmrc')
+var projectConf = path.resolve(__dirname, '..', '.npmrc')
 try {
   fs.statSync(projectConf)
 } catch (er) {
@@ -66,7 +66,7 @@ legacy-bundling = true
   */ }.toString().split('\n').slice(1, -1).join('\n'))
 }
 
-var projectRc = path.join(__dirname, '..', 'fixtures', 'config', '.npmrc')
+var projectRc = path.join(__dirname, 'fixtures', 'config', '.npmrc')
 try {
   fs.statSync(projectRc)
 } catch (er) {

@@ -1,4 +1,4 @@
-var common = require('../common-tap')
+var common = require('./common-tap')
 var test = require('tap').test
 var rimraf = require('rimraf')
 
