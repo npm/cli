@@ -172,6 +172,18 @@ for npm-audit(1) for details on what is submitted.
 The minimum level of vulnerability for `npm audit` to exit with
 a non-zero exit code.
 
+### archive
+
+* Default: true
+* Type: Boolean
+
+If false (with `--no-archive`), an existing `archived-packages/` directory
+will not be modified on save.
+
+This flag has no effect if the archive directory does not alredy exist.
+
+See also npm-archive(1).
+
 ### auth-type
 
 * Default: `'legacy'`
