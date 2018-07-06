@@ -114,7 +114,7 @@ metadata.
 ## CHANGES
 
 This is a living document and may be updated from time to time. Please refer to
-the [git history for this document](https://github.com/npm/npm/commits/master/doc/misc/npm-disputes.md)
+the [git history for this document](https://github.com/npm/cli/commits/latest/doc/misc/npm-disputes.md)
 to view the changes.
 
 ## LICENSE

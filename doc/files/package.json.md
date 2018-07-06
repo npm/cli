@@ -11,10 +11,10 @@ settings described in `npm-config(7)`.
 
 ## name
 
-If you plan to publish your package, the *most* important things in your 
-package.json are the name and version fields as they will be required. The name 
-and version together form an identifier that is assumed to be completely unique. 
-Changes to the package should come along with changes to the version. If you don't 
+If you plan to publish your package, the *most* important things in your
+package.json are the name and version fields as they will be required. The name
+and version together form an identifier that is assumed to be completely unique.
+Changes to the package should come along with changes to the version. If you don't
 plan to publish your package, the name and version fields are optional.
 
 The name is what your thing is called.
@@ -44,10 +44,10 @@ A name can be optionally prefixed by a scope, e.g. `@myorg/mypackage`. See
 
 ## version
 
-If you plan to publish your package, the *most* important things in your 
-package.json are the name and version fields as they will be required. The name 
-and version together form an identifier that is assumed to be completely unique. 
-Changes to the package should come along with changes to the version. If you don't 
+If you plan to publish your package, the *most* important things in your
+package.json are the name and version fields as they will be required. The name
+and version together form an identifier that is assumed to be completely unique.
+Changes to the package should come along with changes to the version. If you don't
 plan to publish your package, the name and version fields are optional.
 
 Version must be parseable by
@@ -368,7 +368,7 @@ Do it like this:
 
     "repository" :
       { "type" : "git"
-      , "url" : "https://github.com/npm/npm.git"
+      , "url" : "https://github.com/npm/cli.git"
       }
 
     "repository" :
@@ -490,10 +490,10 @@ specified, then `master` is used.
 
 Examples:
 
-    git+ssh://git@github.com:npm/npm.git#v1.0.27
-    git+ssh://git@github.com:npm/npm#semver:^5.0
-    git+https://isaacs@github.com/npm/npm.git
-    git://github.com/npm/npm.git#v1.0.27
+    git+ssh://git@github.com:npm/cli.git#v1.0.27
+    git+ssh://git@github.com:npm/cli#semver:^5.0
+    git+https://isaacs@github.com/npm/cli.git
+    git://github.com/npm/cli.git#v1.0.27
 
 ### GitHub URLs
 
