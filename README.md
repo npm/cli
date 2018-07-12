@@ -153,7 +153,7 @@ you should [read this](https://docs.npmjs.com/misc/developers).
 When you find issues, please report them:
 
 * web:
-  <https://github.com/npm/npm/issues>
+  <https://npm.community/c/bugs>
 
 Be sure to include *all* of the output from the npm command that didn't work
 as expected.  The `npm-debug.log` file is also helpful to provide.
