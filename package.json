@@ -257,6 +257,7 @@
     "worker-farm",
     "tiny-relative-date",
     "cli-columns",
+    "cli-table3",
     "node-gyp",
     "lock-verify"
   ],
