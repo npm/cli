@@ -176,6 +176,8 @@ whichever stage of the cycle is being executed. So, you could have a
 single script used for different parts of the process which switches
 based on what's currently happening.
 
+### process.env usage
+
 Objects are flattened following this format, so if you had
 `{"scripts":{"install":"foo.js"}}` in your package.json, then you'd
 see this in the script:
