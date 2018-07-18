@@ -87,8 +87,7 @@ Many improvements for Windows users have been made in npm 3 - you will have a be
 experience if you run a recent version of npm. To upgrade, either use [Microsoft's
 upgrade tool](https://github.com/felixrieseberg/npm-windows-upgrade),
 [download a new version of Node](https://nodejs.org/en/download/),
-or follow the Windows upgrade instructions in the
-[npm Troubleshooting Guide](./TROUBLESHOOTING.md).
+or follow the Windows upgrade instructions in [the troubleshooting posts on npm.community](https://npm.community/c/support/troubleshooting).
 
 If that's not fancy enough for you, then you can fetch the code with
 git, and mess with it directly.
