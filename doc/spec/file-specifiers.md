@@ -134,7 +134,7 @@ example-package@1.0.0 /path/to/example-package
 +-- a -> file:../a
 ```
 
-Of note here: No version is included as the relavent detail is WHERE the
+Of note here: No version is included as the relevant detail is WHERE the
 package came from, not what version happened to be in that path.
 
 ### Outdated
