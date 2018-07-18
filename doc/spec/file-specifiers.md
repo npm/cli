@@ -14,7 +14,7 @@ URLs and URL-like strings for other types.
   slashes on a file specifier will be removed, that is 'file://../foo/bar`
   references the same package as same as `file:../foo/bar`.  The latter is
   considered canonical.
-* Attempting to install a specifer that has a windows drive letter will
+* Attempting to install a specifier that has a windows drive letter will
   produce an error on non-Windows systems.
 * A valid `file:` specifier points is:
   * a valid package file. That is, a `.tar`, `.tar.gz` or `.tgz` containing
@@ -134,7 +134,7 @@ example-package@1.0.0 /path/to/example-package
 +-- a -> file:../a
 ```
 
-Of note here: No version is included as the relavent detail is WHERE the
+Of note here: No version is included as the relevant detail is WHERE the
 package came from, not what version happened to be in that path.
 
 ### Outdated
