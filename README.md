@@ -1,7 +1,7 @@
 npm(1) -- a JavaScript package manager
 ==============================
 
-[![Build Status](https://img.shields.io/travis/npm/npm/latest.svg)](https://travis-ci.org/npm/npm)
+[![Build Status](https://img.shields.io/travis/npm/cli/latest.svg)](https://travis-ci.org/npm/cli)
 
 ## SYNOPSIS
 
