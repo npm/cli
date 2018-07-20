@@ -143,7 +143,11 @@ The package.json fields are tacked onto the `npm_package_` prefix. So,
 for instance, if you had `{"name":"foo", "version":"1.2.5"}` in your
 package.json file, then your package scripts would have the
 `npm_package_name` environment variable set to "foo", and the
-`npm_package_version` set to "1.2.5"
+`npm_package_version` set to "1.2.5".
+
+#### Usage
+As an example, you could access the `npm_package_version` variable by 
+referencing `process.env.npm_package_version` in your code.
 
 ### configuration
 
@@ -175,8 +179,6 @@ Lastly, the `npm_lifecycle_event` environment variable is set to
 whichever stage of the cycle is being executed. So, you could have a
 single script used for different parts of the process which switches
 based on what's currently happening.
-
-### process.env usage
 
 Objects are flattened following this format, so if you had
 `{"scripts":{"install":"foo.js"}}` in your package.json, then you'd
