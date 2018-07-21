@@ -1,4 +1,86 @@
-## v6.2.0 (2018-06-28):
+## v6.2.0 (2018-07-13):
+
+In case you missed it, [we
+moved!](https://blog.npmjs.org/post/175587538995/announcing-npmcommunity). We
+look forward to seeing future PRs landing in
+[npm/cli](https://github.com/npm/cli) in the future, and we'll be chatting with
+you all in [npm.community](https://npm.community). Go check it out!
+
+This final release of `npm@6.2.0` includes a couple of features that weren't
+quite ready on time but that we'd still like to include. Enjoy!
+
+### FEATURES
+
+* [`244b18380`](https://github.com/npm/npm/commit/244b18380ee55950b13c293722771130dbad70de)
+  [#20554](https://github.com/npm/npm/pull/20554)
+  add support for --parseable output
+  ([@luislobo](https://github.com/luislobo))
+* [`7984206e2`](https://github.com/npm/npm/commit/7984206e2f41b8d8361229cde88d68f0c96ed0b8)
+  [#12697](https://github.com/npm/npm/pull/12697)
+  Add new `sign-git-commit` config to control whether the git commit itself gets
+  signed, or just the tag (which is the default).
+  ([@tribou](https://github.com/tribou))
+
+### FIXES
+
+* [`4c32413a5`](https://github.com/npm/npm/commit/4c32413a5b42e18a34afb078cf00eed60f08e4ff)
+  [#19418](https://github.com/npm/npm/pull/19418)
+  Do not use `SET` to fetch the env in git-bash or Cygwin.
+  ([@gucong3000](https://github.com/gucong3000))
+
+### DEPENDENCY BUMPS
+
+* [`d9b2712a6`](https://github.com/npm/npm/commit/d9b2712a670e5e78334e83f89a5ed49616f1f3d3)
+  `request@2.81.0`: Downgraded to allow better deduplication. This does
+  introduce a bunch of `hoek`-related audit reports, but they don't affect npm
+  itself so we consider it safe. We'll upgrade `request` again once `node-gyp`
+  unpins it.
+  ([@simov](https://github.com/simov))
+* [`2ac48f863`](https://github.com/npm/npm/commit/2ac48f863f90166b2bbf2021ed4cc04343d2503c)
+  `node-gyp@3.7.0`
+  ([@MylesBorins](https://github.com/MylesBorins))
+* [`8dc6d7640`](https://github.com/npm/npm/commit/8dc6d76408f83ba35bda77a2ac1bdbde01937349)
+  `cli-table3@0.5.0`: `cli-table2` is unmaintained and required `lodash`. With
+  this dependency bump, we've removed `lodash` from our tree, which cut back
+  tarball size by another 300kb.
+  ([@Turbo87](https://github.com/Turbo87))
+* [`90c759fee`](https://github.com/npm/npm/commit/90c759fee6055cf61cf6709432a5e6eae6278096)
+  `npm-audit-report@1.3.1`
+  ([@zkat](https://github.com/zkat))
+* [`4231a0a1e`](https://github.com/npm/npm/commit/4231a0a1eb2be13931c3b71eba38c0709644302c)
+  Add `cli-table3` to bundleDeps.
+  ([@iarna](https://github.com/iarna))
+* [`322d9c2f1`](https://github.com/npm/npm/commit/322d9c2f107fd82a4cbe2f9d7774cea5fbf41b8d)
+  Make `standard` happy.
+  ([@iarna](https://github.com/iarna))
+
+### DOCS
+
+* [`5724983ea`](https://github.com/npm/npm/commit/5724983ea8f153fb122f9c0ccab6094a26dfc631)
+  [#21165](https://github.com/npm/npm/pull/21165)
+  Fix some markdown formatting in npm-disputes.md.
+  ([@hchiam](https://github.com/hchiam))
+* [`738178315`](https://github.com/npm/npm/commit/738178315fe48e463028657ea7ae541c3d63d171)
+  [#20920](https://github.com/npm/npm/pull/20920)
+  Explicitly state that republishing an unpublished package requires a 72h
+  waiting period.
+  ([@gmattie](https://github.com/gmattie))
+* [`f0a372b07`](https://github.com/npm/npm/commit/f0a372b074cc43ee0e1be28dbbcef0d556b3b36c)
+  Replace references to the old repo or issue tracker. We're at npm/cli now!
+  ([@zkat](https://github.com/zkat))
+
+## v6.2.0-next.1 (2018-07-05):
+
+This is a quick patch to the release to fix an issue that was preventing users
+from installing `npm@next`.
+
+* [`ecdcbd745`](https://github.com/npm/npm/commit/ecdcbd745ae1edd9bdd102dc3845a7bc76e1c5fb)
+  [#21129](https://github.com/npm/npm/pull/21129)
+  Remove postinstall script that depended on source files, thus preventing
+  `npm@next` from being installable from the registry.
+  ([@zkat](https://github.com/zkat))
+
+## v6.2.0-next.0 (2018-06-28):
 
 ### NEW FEATURES
 

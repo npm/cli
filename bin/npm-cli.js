@@ -103,7 +103,7 @@
               break
           }
         }
-        const changelog = `https://github.com/npm/npm/releases/tag/v${latest}`
+        const changelog = `https://github.com/npm/cli/releases/tag/v${latest}`
         notifier.notify({
           message: `New ${type} version of ${pkg.name} available! ${
             useColor ? color.red(old) : old
