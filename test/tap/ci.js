@@ -222,8 +222,6 @@ test('removes existing node_modules/ before installing', (t) => {
     .then((lock) => t.equal(lock, RAW_LOCKFILE, 'package-lock.json unchanged'))
 })
 
-test('installs all package types correctly')
-
 test('errors if package-lock.json missing', (t) => {
   const fixture = new Tacks(Dir({
     'package.json': File(PKG)
