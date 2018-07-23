@@ -140,7 +140,6 @@
     "validate-npm-package-name": "~3.0.0",
     "which": "^1.3.1",
     "worker-farm": "^1.6.0",
-    "wrappy": "~1.0.2",
     "write-file-atomic": "^2.3.0"
   },
   "bundleDependencies": [
@@ -252,7 +251,6 @@
     "validate-npm-package-license",
     "validate-npm-package-name",
     "which",
-    "wrappy",
     "write-file-atomic",
     "safe-buffer",
     "worker-farm",
