@@ -55,9 +55,6 @@ note for the `npm-shrinkwrap.json` as it means the specifier there will
 be different then the original `package.json` (where it was relative to that
 `package.json`).
 
-# No, for `file:` type specifiers, we SHOULD shrinkwrap.  Other symlinks we
-# should not. Other symlinks w/o the link spec should be an error.
-
 When shrinkwrapping file specifiers, the contents of the destination
 package's `node_modules` WILL NOT be included in the shrinkwrap. If you want to lock
 down the destination package's `node_modules` you should create a shrinkwrap for it
