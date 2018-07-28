@@ -178,6 +178,7 @@
     "inherits",
     "ini",
     "init-package-json",
+    "is-ci",
     "is-cidr",
     "json-parse-better-errors",
     "JSONStream",
