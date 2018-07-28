@@ -83,9 +83,10 @@
     ) {
       const pkg = require('../package.json')
       let notifier = require('update-notifier')({pkg})
+      const isCI = require('is-ci')
       if (
         notifier.update &&
-        notifier.update.latest !== pkg.version
+        notifier.update.latest !== pkg.version && !isCI
       ) {
         const color = require('ansicolors')
         const useColor = npm.config.get('color')
