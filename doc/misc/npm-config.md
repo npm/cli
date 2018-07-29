@@ -331,8 +331,8 @@ Install `dev-dependencies` along with packages.
 Indicates that you don't want npm to make any changes and that it should
 only report what it would have done.  This can be passed into any of the
 commands that modify your local installation, eg, `install`, `update`,
-`dedupe`, `uninstall`.  This is NOT currently honored by network related
-commands, eg `dist-tags`, `owner`, `publish`, etc.
+`dedupe`, `uninstall`.  This is NOT currently honored by some network related
+commands, eg `dist-tags`, `owner`, etc.
 
 ### editor
 
