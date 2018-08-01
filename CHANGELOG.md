@@ -1,8 +1,20 @@
-## v6.3.0 (2018-07-25):
+## v6.3.0 (2018-08-01):
+
+This is basically the same as the prerelease, but two dependencies have been
+bumped due to bugs that had been around for a while.
+
+* [`0a22be42e`](https://github.com/npm/cli/commit/0a22be42eb0d40cd0bd87e68c9e28fc9d72c0e19)
+  `figgy-pudding@3.2.0`
+  ([@zkat](https://github.com/zkat))
+* [`0096f6997`](https://github.com/npm/cli/commit/0096f69978d2f40b170b28096f269b0b0008a692)
+  `cacache@11.1.0`
+  ([@zkat](https://github.com/zkat))
+
+## v6.3.0-next.0 (2018-07-25):
 
 ### NEW FEATURES
 
-* [`ad0dd226f`](https://github.com/npm/npm/commit/ad0dd226fb97a33dcf41787ae7ff282803fb66f2)
+* [`ad0dd226f`](https://github.com/npm/cli/commit/ad0dd226fb97a33dcf41787ae7ff282803fb66f2)
   [npm/cli#26](https://github.com/npm/cli/pull/26)
   `npm version` now supports a `--preid` option to specify the preid for
   prereleases. For example, `npm version premajor --preid rc` will tag a version
@@ -11,15 +23,15 @@
 
 ### MESSAGING IMPROVEMENTS
 
-* [`c1dad1e99`](https://github.com/npm/npm/commit/c1dad1e994827f2eab7a13c0f6454f4e4c22ebc2)
+* [`c1dad1e99`](https://github.com/npm/cli/commit/c1dad1e994827f2eab7a13c0f6454f4e4c22ebc2)
   [npm/cli#6](https://github.com/npm/cli/pull/6)
   Make `npm audit fix` message provide better instructions for vulnerabilities
   that require manual review.
   ([@bradsk88](https://github.com/bradsk88))
-* [`15c1130fe`](https://github.com/npm/npm/commit/15c1130fe81961706667d845aad7a5a1f70369f3)
+* [`15c1130fe`](https://github.com/npm/cli/commit/15c1130fe81961706667d845aad7a5a1f70369f3)
   Fix missing colon next to tarball url in new `npm view` output.
   ([@zkat](https://github.com/zkat))
-* [`21cf0ab68`](https://github.com/npm/npm/commit/21cf0ab68cf528d5244ae664133ef400bdcfbdb6)
+* [`21cf0ab68`](https://github.com/npm/cli/commit/21cf0ab68cf528d5244ae664133ef400bdcfbdb6)
   [npm/cli#24](https://github.com/npm/cli/pull/24)
   Use the defaut OTP explanation everywhere except when the context is
   "OTP-aware" (like when setting double-authentication). This improves the
@@ -28,11 +40,11 @@
 
 ### MISC
 
-* [`a9ac8712d`](https://github.com/npm/npm/commit/a9ac8712dfafcb31a4e3deca24ddb92ff75e942d)
+* [`a9ac8712d`](https://github.com/npm/cli/commit/a9ac8712dfafcb31a4e3deca24ddb92ff75e942d)
   [npm/cli#21](https://github.com/npm/cli/pull/21)
   Use the extracted `stringify-package` package.
   ([@dpogue](https://github.com/dpogue))
-* [`9db15408c`](https://github.com/npm/npm/commit/9db15408c60be788667cafc787116555507dc433)
+* [`9db15408c`](https://github.com/npm/cli/commit/9db15408c60be788667cafc787116555507dc433)
   [npm/cli#27](https://github.com/npm/cli/pull/27)
   `wrappy` was previously added to dependencies in order to flatten it, but we
   no longer do legacy-style for npm itself, so it has been removed from
@@ -41,32 +53,32 @@
 
 ### DOCUMENTATION
 
-* [`3242baf08`](https://github.com/npm/npm/commit/3242baf0880d1cdc0e20b546d3c1da952e474444)
+* [`3242baf08`](https://github.com/npm/cli/commit/3242baf0880d1cdc0e20b546d3c1da952e474444)
   [npm/cli#13](https://github.com/npm/cli/pull/13)
   Update more dead links in README.md.
   ([@u32i64](https://github.com/u32i64))
-* [`06580877b`](https://github.com/npm/npm/commit/06580877b6023643ec780c19d84fbe120fe5425c)
+* [`06580877b`](https://github.com/npm/cli/commit/06580877b6023643ec780c19d84fbe120fe5425c)
   [npm/cli#19](https://github.com/npm/cli/pull/19)
   Update links in docs' `index.html` to refer to new bug/PR URLs.
   ([@watilde](https://github.com/watilde))
-* [`ca03013c2`](https://github.com/npm/npm/commit/ca03013c23ff38e12902e9569a61265c2d613738)
+* [`ca03013c2`](https://github.com/npm/cli/commit/ca03013c23ff38e12902e9569a61265c2d613738)
   [npm/cli#15](https://github.com/npm/cli/pull/15)
   Fix some typos in file-specifiers docs.
   ([@Mstrodl](https://github.com/Mstrodl))
-* [`4f39f79bc`](https://github.com/npm/npm/commit/4f39f79bcacef11bf2f98d09730bc94d0379789b)
+* [`4f39f79bc`](https://github.com/npm/cli/commit/4f39f79bcacef11bf2f98d09730bc94d0379789b)
   [npm/cli#16](https://github.com/npm/cli/pull/16)
   Fix some typos in file-specifiers and package-lock docs.
   ([@watilde](https://github.com/watilde))
-* [`35e51f79d`](https://github.com/npm/npm/commit/35e51f79d1a285964aad44f550811aa9f9a72cd8)
+* [`35e51f79d`](https://github.com/npm/cli/commit/35e51f79d1a285964aad44f550811aa9f9a72cd8)
   [npm/cli#18](https://github.com/npm/cli/pull/18)
   Update build status badge url in README.
   ([@watilde](https://github.com/watilde))
-* [`a67db5607`](https://github.com/npm/npm/commit/a67db5607ba2052b4ea44f66657f98b758fb4786)
+* [`a67db5607`](https://github.com/npm/cli/commit/a67db5607ba2052b4ea44f66657f98b758fb4786)
   [npm/cli#17](https://github.com/npm/cli/pull/17/)
   Replace TROUBLESHOOTING.md with [posts in
   npm.community](https://npm.community/c/support/troubleshooting).
   ([@watilde](https://github.com/watilde))
-* [`e115f9de6`](https://github.com/npm/npm/commit/e115f9de65bf53711266152fc715a5012f7d3462)
+* [`e115f9de6`](https://github.com/npm/cli/commit/e115f9de65bf53711266152fc715a5012f7d3462)
   [npm/cli#7](https://github.com/npm/cli/pull/7)
   Use https URLs in documentation when appropriate. Happy [Not Secure Day](https://arstechnica.com/gadgets/2018/07/todays-the-day-that-chrome-brands-plain-old-http-as-not-secure/)!
   ([@XhmikosR](https://github.com/XhmikosR))
