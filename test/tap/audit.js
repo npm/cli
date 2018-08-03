@@ -3,7 +3,6 @@
 const BB = require('bluebird')
 
 const common = BB.promisifyAll(require('../common-tap.js'))
-const fs = require('fs')
 const mr = BB.promisify(require('npm-registry-mock'))
 const path = require('path')
 const rimraf = BB.promisify(require('rimraf'))
