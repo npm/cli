@@ -1,3 +1,92 @@
+## v6.4.0 (2018-09-08):
+
+### NEW FEATURES
+
+* [`6e9f04b0b`](https://github.com/npm/cli/commit/6e9f04b0baed007169d4e0c341f097cf133debf7)
+  [npm/cli#8](https://github.com/npm/cli/pull/8)
+  Search for authentication token defined by environment variables by preventing
+  the translation layer from env variable to npm option from breaking
+  `:_authToken`.
+  ([@mkhl](https://github.com/mkhl))
+* [`84bfd23e7`](https://github.com/npm/cli/commit/84bfd23e7d6434d30595594723a6e1976e84b022)
+  [npm/cli#35](https://github.com/npm/cli/pull/35)
+  Stop filtering out non-IPv4 addresses from `local-addrs`, making npm actually
+  use IPv6 addresses when it must.
+  ([@valentin2105](https://github.com/valentin2105))
+* [`792c8c709`](https://github.com/npm/cli/commit/792c8c709dc7a445687aa0c8cba5c50bc4ed83fd)
+  [npm/cli#31](https://github.com/npm/cli/pull/31)
+  configurable audit level for non-zero exit
+  `npm audit` currently exits with exit code 1 if any vulnerabilities are found of any level.
+  Add a flag of `--audit-level` to `npm audit` to allow it to pass if only vulnerabilities below a certain level are found.
+  Example: `npm audit --audit-level=high` will exit with 0 if only low or moderate level vulns are detected.
+  ([@lennym](https://github.com/lennym))
+
+### BUGFIXES
+
+* [`d81146181`](https://github.com/npm/cli/commit/d8114618137bb5b9a52a86711bb8dc18bfc8e60c)
+  [npm/cli#32](https://github.com/npm/cli/pull/32)
+  Don't check for updates to npm when we are updating npm itself.
+  ([@olore](https://github.com/olore))
+
+### DEPENDENCY UPDATES
+
+A very special dependency update event! Since the [release of
+`node-gyp@3.8.0`](https://github.com/nodejs/node-gyp/pull/1521), an awkward
+version conflict that was preventing `request` from begin flattened was
+resolved. This means two things:
+
+1. We've cut down the npm tarball size by another 200kb, to 4.6MB
+2. `npm audit` now shows no vulnerabilities for npm itself!
+
+Thanks, [@rvagg](https://github.com/rvagg)!
+
+* [`866d776c2`](https://github.com/npm/cli/commit/866d776c27f80a71309389aaab42825b2a0916f6)
+  `request@2.87.0`
+  ([@simov](https://github.com/simov))
+* [`f861c2b57`](https://github.com/npm/cli/commit/f861c2b579a9d4feae1653222afcefdd4f0e978f)
+  `node-gyp@3.8.0`
+  ([@rvagg](https://github.com/rvagg))
+* [`32e6947c6`](https://github.com/npm/cli/commit/32e6947c60db865257a0ebc2f7e754fedf7a6fc9)
+  [npm/cli#39](https://github.com/npm/cli/pull/39)
+  `colors@1.1.2`:
+  REVERT REVERT, newer versions of this library are broken and print ansi
+  codes even when disabled.
+  ([@iarna](https://github.com/iarna))
+* [`beb96b92c`](https://github.com/npm/cli/commit/beb96b92caf061611e3faafc7ca10e77084ec335)
+  `libcipm@2.0.1`
+  ([@zkat](https://github.com/zkat))
+* [`348fc91ad`](https://github.com/npm/cli/commit/348fc91ad223ff91cd7bcf233018ea1d979a2af1)
+  `validate-npm-package-license@3.0.4`: Fixes errors with empty or string-only
+  license fields.
+  ([@Gudahtt](https://github.com/Gudahtt))
+* [`e57d34575`](https://github.com/npm/cli/commit/e57d3457547ef464828fc6f82ae4750f3e511550)
+  `iferr@1.0.2`
+  ([@shesek](https://github.com/shesek))
+* [`46f1c6ad4`](https://github.com/npm/cli/commit/46f1c6ad4b2fd5b0d7ec879b76b76a70a3a2595c)
+  `tar@4.4.6`
+  ([@isaacs](https://github.com/isaacs))
+* [`50df1bf69`](https://github.com/npm/cli/commit/50df1bf691e205b9f13e0fff0d51a68772c40561)
+  `hosted-git-info@2.7.1`
+  ([@iarna](https://github.com/iarna))
+  ([@Erveon](https://github.com/Erveon))
+  ([@huochunpeng](https://github.com/huochunpeng))
+
+### DOCUMENTATION
+
+* [`af98e76ed`](https://github.com/npm/cli/commit/af98e76ed96af780b544962aa575585b3fa17b9a)
+  [npm/cli#34](https://github.com/npm/cli/pull/34)
+  Remove `npm publish` from list of commands not affected by `--dry-run`.
+  ([@joebowbeer](https://github.com/joebowbeer))
+* [`e2b0f0921`](https://github.com/npm/cli/commit/e2b0f092193c08c00f12a6168ad2bd9d6e16f8ce)
+  [npm/cli#36](https://github.com/npm/cli/pull/36)
+  Tweak formatting in repository field examples.
+  ([@noahbenham](https://github.com/noahbenham))
+* [`e2346e770`](https://github.com/npm/cli/commit/e2346e7702acccefe6d711168c2b0e0e272e194a)
+  [npm/cli#14](https://github.com/npm/cli/pull/14)
+  Used `process.env` examples to make accessing certain `npm run-scripts`
+  environment variables more clear.
+  ([@mwarger](https://github.com/mwarger))
+
 ## v6.3.0 (2018-08-01):
 
 This is basically the same as the prerelease, but two dependencies have been
