@@ -164,6 +164,26 @@ When "true" submit audit reports alongside `npm install` runs to the default
 registry and all registries configured for scopes.  See the documentation
 for npm-audit(1) for details on what is submitted.
 
+### audit-level
+
+* Default: `"low"`
+* Type: `'low'`, `'moderate'`, `'high'`, `'critical'`
+
+The minimum level of vulnerability for `npm audit` to exit with
+a non-zero exit code.
+
+### archive
+
+* Default: true
+* Type: Boolean
+
+If false (with `--no-archive`), an existing `archived-packages/` directory
+will not be modified on save.
+
+This flag has no effect if the archive directory does not alredy exist.
+
+See also npm-archive(1).
+
 ### auth-type
 
 * Default: `'legacy'`
@@ -331,8 +351,8 @@ Install `dev-dependencies` along with packages.
 Indicates that you don't want npm to make any changes and that it should
 only report what it would have done.  This can be passed into any of the
 commands that modify your local installation, eg, `install`, `update`,
-`dedupe`, `uninstall`.  This is NOT currently honored by network related
-commands, eg `dist-tags`, `owner`, `publish`, etc.
+`dedupe`, `uninstall`.  This is NOT currently honored by some network related
+commands, eg `dist-tags`, `owner`, etc.
 
 ### editor
 
