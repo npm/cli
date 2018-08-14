@@ -9,9 +9,10 @@ var test = require('tap').test
 
 var npm = require('../../lib/npm.js')
 
-var pkg = path.resolve(__dirname, 'version-sub-directory')
+var pkg = path.resolve(__dirname, path.basename(__filename, '.js'))
 var subDirectory = path.resolve(pkg, 'sub-directory')
 var packagePath = path.resolve(pkg, 'package.json')
+var shrinkwrapPath = path.resolve(pkg, 'npm-shrinkwrap.json')
 var cache = path.resolve(pkg, 'cache')
 
 var json = { name: 'cat', version: '0.1.2' }
@@ -24,7 +25,7 @@ test('npm version <semver> from a subdirectory', function (t) {
     npm.load({ cache: cache }, function () {
       common.makeGitRepo({
         path: pkg,
-        added: ['package.json']
+        added: ['package.json', 'npm-shrinkwrap.json']
       }, version)
     })
   }
@@ -32,12 +33,15 @@ test('npm version <semver> from a subdirectory', function (t) {
   function version (er, stdout, stderr) {
     t.ifError(er, 'git repo initialized without issue')
     t.notOk(stderr, 'no error output')
-    npm.config.set('sign-git-commit', false)
     npm.config.set('sign-git-tag', false)
     npm.commands.version(['patch'], checkVersion)
   }
 
   function checkVersion (er) {
+    var newShrinkwrap = JSON.parse(fs.readFileSync(shrinkwrapPath))
+    t.is(newShrinkwrap.version, '0.1.3', 'shrinkwrap has right version')
+    var newPackage = JSON.parse(fs.readFileSync(packagePath))
+    t.is(newPackage.version, '0.1.3', 'package.json has right version')
     var git = require('../../lib/utils/git.js')
     t.ifError(er, 'version command ran without error')
     git.whichAndExec(
@@ -72,4 +76,5 @@ function setup () {
   mkdirp.sync(subDirectory)
   process.chdir(subDirectory)
   fs.writeFileSync(packagePath, JSON.stringify(json), 'utf8')
+  fs.writeFileSync(shrinkwrapPath, JSON.stringify(json), 'utf8')
 }

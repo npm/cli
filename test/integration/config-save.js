@@ -2,7 +2,7 @@ var fs = require('fs')
 var ini = require('ini')
 var test = require('tap').test
 var npmconf = require('../../lib/config/core.js')
-var common = require('./00-config-setup.js')
+var common = require('../00-config-setup.js')
 
 var expectConf = [
   'globalconfig = ' + common.globalconfig,
