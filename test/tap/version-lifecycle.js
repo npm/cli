@@ -124,20 +124,27 @@ test('npm version <semver> execution order', function (t) {
         t.ifError(err, 'version command complete')
 
         t.equal('0.0.0', readPackage('preversion').version, 'preversion')
+        t.equal('0.0.0', readNpmPackageVersion('preversion'), 'preversion')
         t.deepEqual(readStatus('preversion', t), {
-          'preversion-package.json': 'A'
+          'preversion-package.json': 'A',
+          'preversion_npm_package_version.txt': 'A'
         })
 
         t.equal('0.0.1', readPackage('version').version, 'version')
+        t.equal('0.0.1', readNpmPackageVersion('version'), 'version')
         t.deepEqual(readStatus('version', t), {
           'package.json': 'M',
           'preversion-package.json': 'A',
-          'version-package.json': 'A'
+          'preversion_npm_package_version.txt': 'A',
+          'version-package.json': 'A',
+          'version_npm_package_version.txt': 'A'
         })
 
         t.equal('0.0.1', readPackage('postversion').version, 'postversion')
+        t.equal('0.0.1', readNpmPackageVersion('postversion'), 'postversion')
         t.deepEqual(readStatus('postversion', t), {
-          'postversion-package.json': 'A'
+          'postversion-package.json': 'A',
+          'postversion_npm_package_version.txt': 'A'
         })
         t.end()
       })
@@ -162,23 +169,26 @@ function setup () {
 function makeScript (lifecycle) {
   function contents (lifecycle) {
     var fs = require('fs')
-    var exec = require('child_process').exec
-    fs.createReadStream('package.json')
-      .pipe(fs.createWriteStream(lifecycle + '-package.json'))
-      .on('close', function () {
-        exec(
-          'git add ' + lifecycle + '-package.json',
-          function () {
-            exec(
-              'git status --porcelain',
-              function (err, stdout) {
-                if (err) throw err
-                fs.writeFileSync(lifecycle + '-git.txt', stdout)
-              }
-            )
-          }
-        )
-      })
+    fs.writeFile(lifecycle + '_npm_package_version.txt', process.env.npm_package_version, function (err) {
+      if (err) throw err
+      var exec = require('child_process').exec
+      fs.createReadStream('package.json')
+        .pipe(fs.createWriteStream(lifecycle + '-package.json'))
+        .on('close', function () {
+          exec(
+            'git add ' + lifecycle + '-package.json ' + lifecycle + '_npm_package_version.txt',
+            function () {
+              exec(
+                'git status --porcelain',
+                function (err, stdout) {
+                  if (err) throw err
+                  fs.writeFileSync(lifecycle + '-git.txt', stdout)
+                }
+              )
+            }
+          )
+        })
+    })
   }
   var scriptPath = path.join(pkg, lifecycle + '.js')
   fs.writeFileSync(
@@ -189,6 +199,10 @@ function makeScript (lifecycle) {
 
 function readPackage (lifecycle) {
   return JSON.parse(fs.readFileSync(path.join(pkg, lifecycle + '-package.json'), 'utf-8'))
+}
+
+function readNpmPackageVersion (lifecycle) {
+  return fs.readFileSync(path.join(pkg, lifecycle + '_npm_package_version.txt'), 'utf-8')
 }
 
 function readStatus (lifecycle, t) {
