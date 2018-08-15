@@ -73,8 +73,10 @@ function readStream (cache, integrity, opts) {
 let copyFileAsync
 if (fs.copyFile) {
   module.exports.copy = copy
+  module.exports.copy.sync = copySync
   copyFileAsync = BB.promisify(fs.copyFile)
 }
+
 function copy (cache, integrity, dest, opts) {
   opts = ReadOpts(opts)
   return withContentSri(cache, integrity, (cpath, sri) => {
@@ -82,11 +84,18 @@ function copy (cache, integrity, dest, opts) {
   })
 }
 
+function copySync (cache, integrity, dest, opts) {
+  opts = ReadOpts(opts)
+  return withContentSriSync(cache, integrity, (cpath, sri) => {
+    return fs.copyFileSync(cpath, dest)
+  })
+}
+
 module.exports.hasContent = hasContent
 function hasContent (cache, integrity) {
   if (!integrity) { return BB.resolve(false) }
   return withContentSri(cache, integrity, (cpath, sri) => {
-    return lstatAsync(cpath).then(stat => ({size: stat.size, sri}))
+    return lstatAsync(cpath).then(stat => ({size: stat.size, sri, stat}))
   }).catch(err => {
     if (err.code === 'ENOENT') { return false }
     if (err.code === 'EPERM') {
@@ -94,6 +103,26 @@ function hasContent (cache, integrity) {
         throw err
       } else {
         return false
+      }
+    }
+  })
+}
+
+module.exports.hasContent.sync = hasContentSync
+function hasContentSync (cache, integrity) {
+  if (!integrity) { return false }
+  return withContentSriSync(cache, integrity, (cpath, sri) => {
+    try {
+      const stat = fs.lstatSync(cpath)
+      return {size: stat.size, sri, stat}
+    } catch (err) {
+      if (err.code === 'ENOENT') { return false }
+      if (err.code === 'EPERM') {
+        if (process.platform !== 'win32') {
+          throw err
+        } else {
+          return false
+        }
       }
     }
   })
