@@ -261,22 +261,12 @@
     "cli-table3",
     "node-gyp",
     "lock-verify",
-<<<<<<< HEAD
-    "stringify-package"
-||||||| parent of 18f3fb01d... libnpm@1.4.0
-    "stringify-package",
-    "libnpmaccess",
-    "libnpmorg",
-    "libnpmteam",
-    "libnpmsearch"
-=======
     "stringify-package",
     "libnpmaccess",
     "libnpmorg",
     "libnpmteam",
     "libnpmsearch",
     "libnpm"
->>>>>>> 18f3fb01d... libnpm@1.4.0
   ],
   "devDependencies": {
     "deep-equal": "~1.0.1",
