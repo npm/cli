@@ -23,9 +23,7 @@ You can configure npm to use any compatible registry you
 like, and even run your own registry. Check out the [doc on
 registries](https://docs.npmjs.com/misc/registry).
 
-Use of someone else's registry may be governed by terms of use. The
-terms of use for the default public registry are available at
-<https://www.npmjs.com>.
+Use of someone else's registry may be governed by terms of use. 
 
 ## Super Easy Install
 
