@@ -692,7 +692,7 @@ impact how lifecycle scripts are called.
 
 The node version to use when checking a package's `engines` map.
 
-### no-proxy
+### noproxy
 
 * Default: null
 * Type: String or Array
