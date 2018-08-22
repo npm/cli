@@ -90,7 +90,7 @@ function main () {
     } else if (m = line.match(/^Credit: @(.*)/)) {
       if (!commit.credit) commit.credit = []
       commit.credit.push(m[1])
-    } else if (m = line.match(/^Fixes: #?(.*?)/)) {
+    } else if (m = line.match(/^Fixes: #?(.*)/)) {
       commit.fixes = m[1]
     } else if (m = line.match(/^Reviewed-By: @(.*)/)) {
       commit.reviewed = m[1]
