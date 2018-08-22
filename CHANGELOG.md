@@ -1,3 +1,101 @@
+## v6.4.1 (2018-08-22):
+
+### BUGFIXES
+
+* [`4bd40f543`](https://github.com/npm/cli/commit/4bd40f543dc89f0721020e7d0bb3497300d74818)
+  [#42](https://github.com/npm/cli/pull/42)
+  Prevent blowing up on malformed responses from the `npm audit` endpoint, such
+  as with third-party registries.
+  ([@framp](https://github.com/framp))
+* [`0e576f0aa`](https://github.com/npm/cli/commit/0e576f0aa6ea02653d948c10f29102a2d4a31944)
+  [#46](https://github.com/npm/cli/pull/46)
+  Fix `NO_PROXY` support by renaming npm-side config to `--noproxy`. The
+  environment variable should still work.
+  ([@SneakyFish5](https://github.com/SneakyFish5))
+* [`d8e811d6a`](https://github.com/npm/cli/commit/d8e811d6adf3d87474982cb831c11316ac725605)
+  [#33](https://github.com/npm/cli/pull/33)
+  Disable `update-notifier` checks when a CI environment is detected.
+  ([@Sibiraj-S](https://github.com/Sibiraj-S))
+* [`1bc5b8cea`](https://github.com/npm/cli/commit/1bc5b8ceabc86bfe4777732f25ffef0f3de81bd1)
+  [#47](https://github.com/npm/cli/pull/47)
+  Fix issue where `postpack` scripts would break if `pack` was used with
+  `--dry-run`.
+  ([@larsgw](https://github.com/larsgw))
+
+### DEPENDENCY BUMPS
+
+* [`4c57316d5`](https://github.com/npm/cli/commit/4c57316d5633e940105fa545b52d8fbfd2eb9f75)
+  `figgy-pudding@3.4.1`
+  ([@zkat](https://github.com/zkat))
+* [`85f4d7905`](https://github.com/npm/cli/commit/85f4d79059865d5267f3516b6cdbc746012202c6)
+  `cacache@11.2.0`
+  ([@zkat](https://github.com/zkat))
+* [`d20ac242a`](https://github.com/npm/cli/commit/d20ac242aeb44aa3581c65c052802a02d5eb22f3)
+  `npm-packlist@1.1.11`:
+  No real changes in npm-packlist, but npm-bundled included a
+  circular dependency fix, as well as adding a proper LICENSE file.
+  ([@isaacs](https://github.com/isaacs))
+* [`e8d5f4418`](https://github.com/npm/cli/commit/e8d5f441821553a31fc8cd751670663699d2c8ce)
+  [npm.community#632](https://npm.community/t/https://npm.community/t/using-npm-ci-does-not-run-prepare-script-for-git-modules/632)
+  `libcipm@2.0.2`:
+  Fixes issue where `npm ci` wasn't running the `prepare` lifecycle script when
+  installing git dependencies
+  ([@edahlseng](https://github.com/edahlseng))
+* [`a5e6f78e9`](https://github.com/npm/cli/commit/a5e6f78e916873f7d18639ebdb8abd20479615a9)
+  `JSONStream@1.3.4`:
+  Fixes memory leak problem when streaming large files (like legacy npm search).
+  ([@daern91](https://github.com/daern91))
+* [`3b940331d`](https://github.com/npm/cli/commit/3b940331dcccfa67f92366adb7ffd9ecf7673a9a)
+  [npm.community#1042](https://npm.community/t/3-path-variables-are-assigned-to-child-process-launched-by-npm/1042)
+  `npm-lifecycle@2.1.0`:
+  Fixes issue for Windows user where multiple `Path`/`PATH` variables were being
+  added to the environment and breaking things in all sorts of fun and
+  interesting ways.
+  ([@JimiC](https://github.com/JimiC))
+* [`d612d2ce8`](https://github.com/npm/cli/commit/d612d2ce8fab72026f344f125539ecbf3746af9a)
+  `npm-registry-client@8.6.0`
+  ([@iarna](https://github.com/iarna))
+* [`1f6ba1cb1`](https://github.com/npm/cli/commit/1f6ba1cb174590c1f5d2b00e2ca238dfa39d507a)
+  `opener@1.5.0`
+  ([@domenic](https://github.com/domenic))
+* [`37b8f405f`](https://github.com/npm/cli/commit/37b8f405f35c861b7beeed56f71ad20b0bf87889)
+  `request@2.88.0`
+  ([@mikeal](https://github.com/mikeal))
+* [`bb91a2a14`](https://github.com/npm/cli/commit/bb91a2a14562e77769057f1b6d06384be6d6bf7f)
+  `tacks@1.2.7`
+  ([@iarna](https://github.com/iarna))
+* [`30bc9900a`](https://github.com/npm/cli/commit/30bc9900ae79c80bf0bdee0ae6372da6f668124c)
+  `ci-info@1.4.0`:
+  Adds support for two more CI services
+  ([@watson](https://github.com/watson))
+* [`1d2fa4ddd`](https://github.com/npm/cli/commit/1d2fa4dddcab8facfee92096cc24b299387f3182)
+  `marked@0.5.0`
+  ([@joshbruce](https://github.com/joshbruce))
+
+### DOCUMENTATION
+
+* [`08ecde292`](https://github.com/npm/cli/commit/08ecde2928f8c89a2fdaa800ae845103750b9327)
+  [#54](https://github.com/npm/cli/pull/54)
+  Mention registry terms of use in manpage and registry docs and update language
+  in README for it.
+  ([@kemitchell](https://github.com/kemitchell))
+* [`de956405d`](https://github.com/npm/cli/commit/de956405d8b72354f98579d00c6dd30ac3b9bddf)
+  [#41](https://github.com/npm/cli/pull/41)
+  Add documentation for `--dry-run` in `install` and `pack` docs.
+  ([@reconbot](https://github.com/reconbot))
+* [`95031b90c`](https://github.com/npm/cli/commit/95031b90ce0b0c4dcd5e4eafc86e3e5bfd59fb3e)
+  [#48](https://github.com/npm/cli/pull/48)
+  Update republish time and lightly reorganize republish info.
+  ([@neverett](https://github.com/neverett))
+* [`767699b68`](https://github.com/npm/cli/commit/767699b6829b8b899d5479445e99b0ffc43ff92d)
+  [#53](https://github.com/npm/cli/pull/53)
+  Correct `npm@6.4.0` release date in changelog.
+  ([@charmander](https://github.com/charmander))
+* [`3fea3166e`](https://github.com/npm/cli/commit/3fea3166eb4f43f574fcfd9ee71a171feea2bc29)
+  [#55](https://github.com/npm/cli/pull/55)
+  Align command descriptions in help text.
+  ([@erik](https://github.com/erik))
+
 ## v6.4.0 (2018-08-09):
 
 ### NEW FEATURES
