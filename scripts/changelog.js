@@ -75,7 +75,7 @@ function main () {
     /* eslint no-cond-assign:0 */
     if (/^---$/.test(line)) {
       printCommit(commit)
-    } else if (m = line.match(/^([a-f0-9]{7,9}) ([a-f0-9]+) (?:[(]([^)]+)[)] )?(.*?) [(](.*?)[)]/)) {
+    } else if (m = line.match(/^([a-f0-9]{7,10}) ([a-f0-9]+) (?:[(]([^)]+)[)] )?(.*?) [(](.*?)[)]/)) {
       commit = {
         shortid: m[1],
         fullid: m[2],
