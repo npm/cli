@@ -19,7 +19,7 @@ main()
 
 function shortname (url) {
   let matched = url.match(/https:\/\/github\.com\/([^/]+\/[^/]+)\/(?:pull|issues)\/(\d+)/) ||
-                url.match(/https:\/\/(npm\.community)\/t\/(\d+)/)
+                url.match(/https:\/\/(npm\.community)\/t\/(?:[^/]+\/)(\d+)/)
   if (!matched) return false
   let repo = matched[1]
   let id = matched[2]
