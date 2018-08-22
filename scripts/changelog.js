@@ -23,7 +23,7 @@ function shortname (url) {
   if (!matched) return false
   let repo = matched[1]
   let id = matched[2]
-  if (repo !== 'npm/npm') {
+  if (repo !== 'npm/cli') {
     return `${repo}#${id}`
   } else {
     return `#${id}`
