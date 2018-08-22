@@ -71,6 +71,7 @@ function printCommit (c) {
 function main () {
   let commit
   log.forEach(function (line) {
+    line = line.replace(/\r/g, '')
     let m
     /* eslint no-cond-assign:0 */
     if (/^---$/.test(line)) {
