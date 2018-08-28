@@ -1,23 +1,25 @@
 'use strict'
 
-var common = require('../common-tap.js')
-var npm = require('../../')
-var test = require('tap').test
-var mkdirp = require('mkdirp')
-var rimraf = require('rimraf')
-var path = require('path')
-var mr = require('npm-registry-mock')
-var ms = require('mississippi')
-var Tacks = require('tacks')
-var File = Tacks.File
+const common = require('../common-tap.js')
+const getStream = require('get-stream')
+const mkdirp = require('mkdirp')
+const mr = require('npm-registry-mock')
+const ms = require('mississippi')
+const npm = require('../../')
+const path = require('path')
+const rimraf = require('rimraf')
+const Tacks = require('tacks')
+const test = require('tap').test
 
-var _createEntryStream = require('../../lib/search/all-package-metadata.js')._createEntryStream
+const {File} = Tacks
 
-var ALL = common.registry + '/-/all'
-var PKG_DIR = path.resolve(__dirname, 'create-entry-update-stream')
-var CACHE_DIR = path.resolve(PKG_DIR, 'cache')
+const _createEntryStream = require('../../lib/search/all-package-metadata.js')._createEntryStream
 
-var server
+const ALL = common.registry + '/-/all'
+const PKG_DIR = path.resolve(__dirname, 'create-entry-update-stream')
+const CACHE_DIR = path.resolve(PKG_DIR, 'cache')
+
+let server
 
 function setup () {
   mkdirp.sync(CACHE_DIR)
@@ -27,10 +29,11 @@ function cleanup () {
   rimraf.sync(PKG_DIR)
 }
 
-test('setup', function (t) {
-  mr({port: common.port, throwOnUnmatched: true}, function (err, s) {
+test('setup', t => {
+  cleanup()
+  mr({port: common.port, throwOnUnmatched: true}, (err, s) => {
     t.ifError(err, 'registry mocked successfully')
-    npm.load({ cache: CACHE_DIR, registry: common.registry }, function (err) {
+    npm.load({ cache: CACHE_DIR, registry: common.registry }, err => {
       t.ifError(err, 'npm loaded successfully')
       server = s
       t.pass('all set up')
@@ -39,10 +42,10 @@ test('setup', function (t) {
   })
 })
 
-test('createEntryStream full request', function (t) {
+test('createEntryStream full request', t => {
   setup()
-  var cachePath = path.join(CACHE_DIR, '.cache.json')
-  var dataTime = +(new Date())
+  const cachePath = path.join(CACHE_DIR, '.cache.json')
+  const dataTime = +(new Date())
   server.get('/-/all').once().reply(200, {
     '_updated': dataTime,
     'bar': { name: 'bar', version: '1.0.0' },
@@ -50,37 +53,34 @@ test('createEntryStream full request', function (t) {
   }, {
     date: 1234 // should never be used.
   })
-  _createEntryStream(cachePath, ALL, {}, 600, function (err, stream, latest, newEntries) {
-    if (err) throw err
+  return _createEntryStream(cachePath, 600, {}).then(({
+    entryStream: stream,
+    latest,
+    newEntries
+  }) => {
     t.equals(latest, dataTime, '`latest` correctly extracted')
     t.ok(newEntries, 'new entries need to be written to cache')
     t.ok(stream, 'returned a stream')
-    var results = []
-    stream.on('data', function (pkg) {
-      results.push(pkg)
-    })
-    ms.finished(stream, function (err) {
-      if (err) throw err
-      t.deepEquals(results, [{
-        name: 'bar',
-        version: '1.0.0'
-      }, {
-        name: 'foo',
-        version: '1.0.0'
-      }])
-      server.done()
-      cleanup()
-      t.end()
-    })
+    return getStream.array(stream)
+  }).then(results => {
+    t.deepEquals(results, [{
+      name: 'bar',
+      version: '1.0.0'
+    }, {
+      name: 'foo',
+      version: '1.0.0'
+    }])
+    server.done()
+    cleanup()
   })
 })
 
 test('createEntryStream cache only', function (t) {
   setup()
-  var now = Date.now()
-  var cacheTime = now - 100000
-  var cachePath = path.join(CACHE_DIR, '.cache.json')
-  var fixture = new Tacks(File({
+  const now = Date.now()
+  const cacheTime = now - 100000
+  const cachePath = path.join(CACHE_DIR, '.cache.json')
+  const fixture = new Tacks(File({
     '_updated': cacheTime,
     bar: { name: 'bar', version: '1.0.0' },
     cool: { name: 'cool', version: '1.0.0' },
@@ -113,8 +113,8 @@ test('createEntryStream cache only', function (t) {
 
 test('createEntryStream merged stream', function (t) {
   setup()
-  var now = Date.now()
-  var cacheTime = now - 6000000
+  const now = Date.now()
+  const cacheTime = now - 6000000
   server.get('/-/all/since?stale=update_after&startkey=' + cacheTime).once().reply(200, {
     'bar': { name: 'bar', version: '2.0.0' },
     'car': { name: 'car', version: '1.0.0' },
@@ -122,8 +122,8 @@ test('createEntryStream merged stream', function (t) {
   }, {
     date: (new Date(now)).toISOString()
   })
-  var cachePath = path.join(CACHE_DIR, '.cache.json')
-  var fixture = new Tacks(File({
+  const cachePath = path.join(CACHE_DIR, '.cache.json')
+  const fixture = new Tacks(File({
     '_updated': cacheTime,
     bar: { name: 'bar', version: '1.0.0' },
     cool: { name: 'cool', version: '1.0.0' },
@@ -164,7 +164,7 @@ test('createEntryStream merged stream', function (t) {
 
 test('createEntryStream no sources', function (t) {
   setup()
-  var cachePath = path.join(CACHE_DIR, '.cache.json')
+  const cachePath = path.join(CACHE_DIR, '.cache.json')
   server.get('/-/all').once().reply(404, {})
   _createEntryStream(cachePath, ALL, {}, 600, function (err, stream, latest, newEntries) {
     t.ok(err, 'no sources, got an error')
