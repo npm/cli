@@ -1,5 +1,5 @@
 {
-  "version": "6.4.1-next.0",
+  "version": "6.4.1",
   "name": "npm",
   "description": "a package manager for JavaScript",
   "keywords": [
