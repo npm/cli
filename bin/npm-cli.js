@@ -97,12 +97,16 @@
     })
   })
 
-  var versionCheckerMessages = []
-  versionChecker.check()
-    .stdout.on('data', function (data) {
-      versionCheckerMessages.push(data.toString())
+  if (process.stdout.isTTY) {
+    var versionCheckerMessages = []
+    versionChecker.check()
+      .stdout.on('data', function (data) {
+        versionCheckerMessages.push(data.toString())
+      })
+    process.on('exit', () => {
+      if (versionCheckerMessages.length > 0) {
+        console.error(versionCheckerMessages.join('\n'))
+      }
     })
-  process.on('exit', () => {
-    console.error(versionCheckerMessages.join('\n'))
-  })
+  }
 })()
