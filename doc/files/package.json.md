@@ -221,6 +221,8 @@ Conversely, some files are always ignored:
 * `*.orig`
 * `package-lock.json` (use shrinkwrap instead)
 
+**NOTE: `files` won’t work for `file:` dependencies because they get symlinked.**
+
 ## main
 
 The main field is a module ID that is the primary entry point to your program.
