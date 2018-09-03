@@ -78,16 +78,15 @@
     if (er) return errorHandler(er)
     if (
       !isGlobalNpmUpdate &&
+      !require('ci-info').isCI &&
       npm.config.get('update-notifier') &&
       !unsupported.checkVersion(process.version).unsupported
     ) {
       const pkg = require('../package.json')
       let notifier = require('update-notifier')({pkg})
-      const isCI = require('ci-info').isCI
       if (
         notifier.update &&
-        notifier.update.latest !== pkg.version &&
-        !isCI
+        notifier.update.latest !== pkg.version
       ) {
         const color = require('ansicolors')
         const useColor = npm.config.get('color')
