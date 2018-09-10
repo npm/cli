@@ -18,11 +18,12 @@ const log = execSync(`git log --reverse --pretty='format:%h %H%d %s (%aN)%n%b%n-
 main()
 
 function shortname (url) {
-  let matched = url.match(/https:\/\/github.com\/([^/]+\/[^/]+)\/(?:pull|issues)\/(\d+)/)
+  let matched = url.match(/https:\/\/github\.com\/([^/]+\/[^/]+)\/(?:pull|issues)\/(\d+)/) ||
+                url.match(/https:\/\/(npm\.community)\/t\/(?:[^/]+\/)(\d+)/)
   if (!matched) return false
   let repo = matched[1]
   let id = matched[2]
-  if (repo !== 'npm/npm') {
+  if (repo !== 'npm/cli') {
     return `${repo}#${id}`
   } else {
     return `#${id}`
@@ -70,11 +71,12 @@ function printCommit (c) {
 function main () {
   let commit
   log.forEach(function (line) {
+    line = line.replace(/\r/g, '')
     let m
     /* eslint no-cond-assign:0 */
     if (/^---$/.test(line)) {
       printCommit(commit)
-    } else if (m = line.match(/^([a-f0-9]{7,9}) ([a-f0-9]+) (?:[(]([^)]+)[)] )?(.*?) [(](.*?)[)]/)) {
+    } else if (m = line.match(/^([a-f0-9]{7,10}) ([a-f0-9]+) (?:[(]([^)]+)[)] )?(.*?) [(](.*?)[)]/)) {
       commit = {
         shortid: m[1],
         fullid: m[2],
@@ -90,7 +92,7 @@ function main () {
     } else if (m = line.match(/^Credit: @(.*)/)) {
       if (!commit.credit) commit.credit = []
       commit.credit.push(m[1])
-    } else if (m = line.match(/^Fixes: #?(.*?)/)) {
+    } else if (m = line.match(/^Fixes: #?(.*)/)) {
       commit.fixes = m[1]
     } else if (m = line.match(/^Reviewed-By: @(.*)/)) {
       commit.reviewed = m[1]

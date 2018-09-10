@@ -366,15 +366,15 @@ command will be able to find you.
 
 Do it like this:
 
-    "repository" :
-      { "type" : "git"
-      , "url" : "https://github.com/npm/cli.git"
-      }
+    "repository": {
+      "type" : "git",
+      "url" : "https://github.com/npm/cli.git"
+    }
 
-    "repository" :
-      { "type" : "svn"
-      , "url" : "https://v8.googlecode.com/svn/trunk/"
-      }
+    "repository": {
+      "type" : "svn",
+      "url" : "https://v8.googlecode.com/svn/trunk/"
+    }
 
 The URL should be a publicly available (perhaps read-only) url that can be handed
 directly to a VCS program without any modification.  It should not be a url to an
