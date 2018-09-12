@@ -103,7 +103,7 @@
     "npm-user-validate": "~1.0.0",
     "npmlog": "~4.1.2",
     "once": "~1.4.0",
-    "opener": "^1.5.0",
+    "opener": "^1.5.1",
     "osenv": "^0.1.5",
     "pacote": "^8.1.6",
     "path-is-inside": "~1.0.2",
