@@ -10,8 +10,7 @@ npm-deprecate(1) -- Deprecate a version of a package
 This command will update the npm registry entry for a package, providing
 a deprecation warning to all who attempt to install it.
 
-It works on [version ranges](https://semver.npmjs.com/) as well as specific versions, so you can do
-something like this:
+It works on [version ranges](https://semver.npmjs.com/) as well as specific versions, so you can do something like this:
 
     npm deprecate my-thing@"< 0.2.3" "critical bug fixed in v0.2.3"
 
