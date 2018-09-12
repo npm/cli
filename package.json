@@ -40,7 +40,7 @@
     "aproba": "~1.2.0",
     "archy": "~1.0.0",
     "bin-links": "^1.1.2",
-    "bluebird": "~3.5.1",
+    "bluebird": "^3.5.2",
     "byte-size": "^4.0.3",
     "cacache": "^11.2.0",
     "call-limit": "~1.1.0",
