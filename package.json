@@ -265,6 +265,7 @@
   ],
   "devDependencies": {
     "deep-equal": "~1.0.1",
+    "licensee": "^5.0.0",
     "marked": "^0.5.0",
     "marked-man": "~0.2.1",
     "npm-registry-couchapp": "^2.7.1",
@@ -279,6 +280,7 @@
     "dumpconf": "env | grep npm | sort | uniq",
     "prepare": "node bin/npm-cli.js --no-audit --no-timing prune --prefix=. --no-global && rimraf test/*/*/node_modules && make -j4 doc",
     "preversion": "bash scripts/update-authors.sh && git add AUTHORS && git commit -m \"update AUTHORS\" || true",
+    "licenses": "licensee --production --errors-only",
     "tap": "tap --reporter=classic --timeout 300",
     "tap-cover": "tap --reporter=classic --nyc-arg='--cache' --coverage --timeout 600",
     "test": "standard && npm run test-tap",
