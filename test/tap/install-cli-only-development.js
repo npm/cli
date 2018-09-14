@@ -28,11 +28,23 @@ var json = {
 var dependency = {
   name: 'dependency',
   description: 'fixture',
-  version: '0.0.0'
+  version: '0.0.0',
+  dependencies: {
+    'sub-dependency': 'file:../sub-dependency'
+  }
 }
 
 var devDependency = {
   name: 'dev-dependency',
+  description: 'fixture',
+  version: '0.0.0',
+  dependencies: {
+    'sub-dependency': 'file:../sub-dependency'
+  }
+}
+
+var subDependency = {
+  name: 'sub-dependency',
   description: 'fixture',
   version: '0.0.0'
 }
@@ -56,6 +68,12 @@ test('\'npm install --only=development\' should only install devDependencies', f
     t.notOk(
       existsSync(path.resolve(pkg, 'node_modules/dependency/package.json')),
       'dependency was NOT installed'
+    )
+    t.ok(
+      JSON.parse(fs.readFileSync(
+        path.resolve(pkg, 'node_modules/sub-dependency/package.json'), 'utf8')
+      ),
+      'subDependency was installed'
     )
     t.end()
   })
@@ -99,6 +117,12 @@ function setup () {
   fs.writeFileSync(
     path.join(pkg, 'dev-dependency', 'package.json'),
     JSON.stringify(devDependency, null, 2)
+  )
+
+  mkdirp.sync(path.join(pkg, 'sub-dependency'))
+  fs.writeFileSync(
+    path.join(pkg, 'sub-dependency', 'package.json'),
+    JSON.stringify(subDependency, null, 2)
   )
 
   mkdirp.sync(path.join(pkg, 'node_modules'))
