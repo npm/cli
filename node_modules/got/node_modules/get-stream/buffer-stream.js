@@ -1,11 +1,11 @@
 'use strict';
-const {PassThrough} = require('stream');
+const PassThrough = require('stream').PassThrough;
 
-module.exports = options => {
-	options = Object.assign({}, options);
+module.exports = opts => {
+	opts = Object.assign({}, opts);
 
-	const {array} = options;
-	let {encoding} = options;
+	const array = opts.array;
+	let encoding = opts.encoding;
 	const buffer = encoding === 'buffer';
 	let objectMode = false;
 
