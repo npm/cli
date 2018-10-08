@@ -7,19 +7,30 @@ var test = require('tap').test
 var common = require('../common-tap.js')
 
 var base = path.join(__dirname, path.basename(__filename, '.js'))
-var moduleDir = path.join(base, 'example')
-var moduleJson = {
-  name: 'example',
+var optionalDir = path.join(base, 'optional')
+var optionalJson = {
+  name: 'optional',
   version: '1.0.0',
   optionalDependencies: {
+    'example': '../example-1.0.0.tgz'
+  }
+}
+var devDir = path.join(base, 'dev')
+var devJson = {
+  name: 'dev',
+  version: '1.0.0',
+  devDependencies: {
     'example': '../example-1.0.0.tgz'
   }
 }
 
 function setup () {
   cleanup()
-  mkdirp.sync(moduleDir)
-  fs.writeFileSync(path.join(moduleDir, 'package.json'), JSON.stringify(moduleJson))
+  mkdirp.sync(optionalDir)
+  fs.writeFileSync(path.join(optionalDir, 'package.json'), JSON.stringify(optionalJson))
+  mkdirp.sync(devDir)
+  fs.writeFileSync(path.join(devDir, 'package.json'), JSON.stringify(devJson))
+
   fs.writeFileSync(path.join(base, 'example-1.0.0.tgz'), Buffer.from(
     '1f8b0800000000000003ed8fc10ac2300c8677f62946cedaa5d8f5e0db64' +
     '5b1853d795758a38f6ee4607e261370722f4bbfce5cb4f493c9527aa39f3' +
@@ -60,11 +71,24 @@ test('setup', function (t) {
 test('optional dependency identification', function (t) {
   common.npm(
     ['install', '--no-optional'],
-    {cwd: moduleDir},
+    {cwd: optionalDir},
     function (er, code, stdout, stderr) {
       t.is(code, 0, 'no error code')
       t.is(stderr, '', 'no error output')
-      t.notOk(fs.existsSync(path.join(moduleDir, 'node_modules')), 'did not install anything')
+      t.notOk(fs.existsSync(path.join(optionalDir, 'node_modules')), 'did not install anything')
+      t.end()
+    }
+  )
+})
+
+test('development dependency identification', function (t) {
+  common.npm(
+    ['install', '--only=prod'],
+    {cwd: devDir},
+    function (er, code, stdout, stderr) {
+      t.is(code, 0, 'no error code')
+      t.is(stderr, '', 'no error output')
+      t.notOk(fs.existsSync(path.join(devDir, 'node_modules')), 'did not install anything')
       t.end()
     }
   )
