@@ -275,6 +275,9 @@
     "tacks": "^1.2.7",
     "tap": "^12.0.1"
   },
+  "engines": {
+    "node": ">=6"
+  },
   "scripts": {
     "dumpconf": "env | grep npm | sort | uniq",
     "prepare": "node bin/npm-cli.js --no-audit --no-timing prune --prefix=. --no-global && rimraf test/*/*/node_modules && make -j4 doc",
