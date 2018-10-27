@@ -7,6 +7,8 @@ npm(1) -- a JavaScript package manager
 
 This is just enough info to get you up and running.
 
+If you want to learn more about npm, check out [this YouTube video](https://www.youtube.com/embed/x03fjb2VlGY).
+
 Much more info will be available via `npm help` once it's installed.
 
 ## IMPORTANT
@@ -24,24 +26,15 @@ You can configure npm to use any compatible registry you
 like, and even run your own registry. Check out the [doc on
 registries](https://docs.npmjs.com/misc/registry).
 
-## Super Easy Install
+## Installation
 
-npm is bundled with [node](https://nodejs.org/en/download/).
+There are many options for installing npm,
+here are a few:
 
-### Windows Computers
-
-[Get the MSI](https://nodejs.org/en/download/).  npm is in it.
-
-### Apple Macintosh Computers
-
-[Get the pkg](https://nodejs.org/en/download/).  npm is in it.
-
-### Other Sorts of Unices
-
-Run `make install`.  npm will be installed with node.
-
-If you want a more fancy pants install (a different version, customized
-paths, etc.) then read on.
++ npm is bundled with [node](https://nodejs.org/en/download/).
++ Get the [MSI](https://nodejs.org/en/download/) for Windows.
++ Get the [pkg](https://nodejs.org/en/download/) for Mac.
++ Run `make install` to install npm **with node**.
 
 ## Fancy Install (Unix)
 
@@ -77,6 +70,20 @@ If you've got the npm source code, you can also semi-permanently set
 arbitrary config keys using the `./configure --key=val ...`, and then
 run npm commands by doing `node bin/npm-cli.js <command> <args>`.  (This is helpful
 for testing, or running stuff without actually installing npm itself.)
+
+## Upgrading 
+
+You can upgrade to the latest version of npm using:
+
+```sh
+npm install -g npm@latest
+```
+
+Or upgrade to the most recent release:
+
+```sh
+npm install -g npm@next
+```
 
 ## Windows Install or Upgrade
 
