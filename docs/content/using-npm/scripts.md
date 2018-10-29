@@ -10,57 +10,97 @@ description: How npm handles the "scripts" field
 
 ### Description
 
-npm supports the "scripts" property of the package.json file, for the
-following scripts:
+The `"scripts"` property of of your `package.json` file supports a number of built-in scripts and their preset life cycle events as well as arbitrary scripts which can be executed by running `npm run <stage>`. *Pre* and *post* commands with matching names will be run for those as well (e.g. `premyscript`, `myscript`,
+`postmyscript`). Scripts from dependencies can be run with `npm explore
+<pkg> -- npm run <stage>`.
 
-* **prepublish** (_as of npm@5, `prepublish` is deprecated. Use `prepare` for build steps and `prepublishOnly` for upload-only._):
-  Run BEFORE the package is packed and published, as well as on local `npm
+* `prepublish` (_as of npm@5, `prepublish` is deprecated. Use `prepare` for
+    build steps and `prepublishOnly` for upload-only._):
+  * Runs BEFORE the package is packed and published, as well as on local `npm
   install` without any arguments. (See below)
-* **prepare**:
-  Run both BEFORE the package is packed and published, on local `npm
-  install` without any arguments, and when installing git dependencies (See
-  below). This is run AFTER `prepublish`, but BEFORE `prepublishOnly`.
-* **prepublishOnly**:
-  Run BEFORE the package is prepared and packed, ONLY on `npm publish`. (See
-  below.)
-* **prepack**:
-  run BEFORE a tarball is packed (on `npm pack`, `npm publish`, and when
-  installing git dependencies)
-* **postpack**:
-  Run AFTER the tarball has been generated and moved to its final destination.
-* **publish**, **postpublish**:
-  Run AFTER the package is published.
-* **preinstall**:
-  Run BEFORE the package is installed
-* **install**, **postinstall**:
-  Run AFTER the package is installed.
-* **preuninstall**, **uninstall**:
-  Run BEFORE the package is uninstalled.
-* **postuninstall**:
-  Run AFTER the package is uninstalled.
-* **preversion**:
-  Run BEFORE bumping the package version.
-* **version**:
-  Run AFTER bumping the package version, but BEFORE commit.
-* **postversion**:
-  Run AFTER bumping the package version, and AFTER commit.
-* **pretest**, **test**, **posttest**:
-  Run by the `npm test` command.
-* **prestop**, **stop**, **poststop**:
-  Run by the `npm stop` command.
-* **prestart**, **start**, **poststart**:
-  Run by the `npm start` command.
-* **prerestart**, **restart**, **postrestart**:
-  Run by the `npm restart` command. Note: `npm restart` will run the
+* `prepare`:
+  * Runs both BEFORE the package is packed and published, and on local
+    `npm install` without any arguments (See below). This is run AFTER
+    `prepublish`, but BEFORE `prepublishOnly`.
+  * If a package being installed through git contains a `prepare` script, its
+    `dependencies` and `devDependencies` will be installed, and the prepare
+    script will be run, before the package is packaged and installed.
+* `prepublishOnly`:
+  * Runs BEFORE the package is prepared and packed, ONLY on `npm publish`.
+    (See below.)
+* `prepack`:
+  * Runs BEFORE a tarball is packed (on `npm pack`, `npm publish`, and when
+    installing git dependencies)
+* `postpack`:
+  * Runs AFTER the tarball has been generated and moved to its final destination.
+* `publish`, `postpublish`:
+  * Runs AFTER the package is published.
+* `preinstall`:
+  * Runs BEFORE the package is installed
+* `install`, `postinstall`:
+  * Runs AFTER the package is installed.
+* `preuninstall`, `uninstall`:
+  * Runs BEFORE the package is uninstalled.
+* `postuninstall`:
+  * Runs AFTER the package is uninstalled.
+* `preversion`:
+  * Runs BEFORE bumping the package version.
+* `version`:
+  * Runs AFTER bumping the package version, but BEFORE commit.
+* `postversion`:
+  * Runs AFTER bumping the package version, and AFTER commit.
+* `pretest`, `test`, `posttest`:
+  * Run by the `npm test` command.
+* `prestop`, `stop`, `poststop`:
+  * Run by the `npm stop` command.
+* `prestart`, `start`, `poststart`:
+  * Run by the `npm start` command.
+* `prerestart`, `restart`, `postrestart`:
+  * Run by the `npm restart` command. Note: `npm restart` will run the
   stop and start scripts if no `restart` script is provided.
-* **preshrinkwrap**, **shrinkwrap**, **postshrinkwrap**:
-  Run by the `npm shrinkwrap` command.
+* `preshrinkwrap`, `shrinkwrap`, `postshrinkwrap`:
+  * Run by the `npm shrinkwrap` command.
 
-Additionally, arbitrary scripts can be executed by running `npm
-run-script <stage>`. *Pre* and *post* commands with matching
-names will be run for those as well (e.g. `premyscript`, `myscript`,
-`postmyscript`). Scripts from dependencies can be run with 
+Additionally, arbitrary scripts can be executed by running
+`npm run-script <stage>`. *Pre* and *post* commands with matching names will
+be run for those as well (e.g. `premyscript`, `myscript`, `postmyscript`).
+Scripts from dependencies can be run with
 `npm explore <pkg> -- npm run <stage>`.
+
+### Life Cycle
+
+npm commands such as `npm install` and `npm publish` will fire life cycle
+hooks as specified in your `package.json` file. These hooks are as follows
+for each command.
+
+#### [`npm publish`](/cli-commands/npm-publish)
+
+* `prepublishOnly`
+* `prepare`
+
+#### [`npm pack`](/cli-commands/npm-pack)
+
+* `prepack`
+
+#### [`npm install`](/cli-commands/npm-install)
+
+* `preinstall`
+  * Run BEFORE the package is installed
+* `install`, `postinstall`
+  * Run AFTER the package is installed.
+
+Also triggers
+
+* `prepublish` (when on local)
+* `prepare` (when on local)
+
+#### `start`
+
+`npm run start` has an `npm start` shorthand.
+
+* `prestart`
+* `start`
+* `poststart`
 
 #### Prepublish and Prepare
 
