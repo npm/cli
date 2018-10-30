@@ -76,6 +76,22 @@ test('optional dependency identification', function (t) {
       t.is(code, 0, 'no error code')
       t.is(stderr, '', 'no error output')
       t.notOk(fs.existsSync(path.join(optionalDir, 'node_modules')), 'did not install anything')
+      t.similar(JSON.parse(fs.readFileSync(path.join(optionalDir, 'package-lock.json'), 'utf8')), {
+        dependencies: {
+          a: {
+            version: 'file:../a-1.0.0.tgz',
+            optional: true,
+          },
+          b: {
+            version: 'file:../b-1.0.0.tgz',
+            optional: true
+          },
+          example: {
+            version: "1.0.0",
+            optional: true,
+          }
+        }
+      }, 'locks dependencies as optional')
       t.end()
     }
   )
@@ -89,6 +105,50 @@ test('development dependency identification', function (t) {
       t.is(code, 0, 'no error code')
       t.is(stderr, '', 'no error output')
       t.notOk(fs.existsSync(path.join(devDir, 'node_modules')), 'did not install anything')
+      t.similar(JSON.parse(fs.readFileSync(path.join(devDir, 'package-lock.json'), 'utf8')), {
+        dependencies: {
+          a: {
+            version: 'file:../a-1.0.0.tgz',
+            dev: true,
+          },
+          b: {
+            version: 'file:../b-1.0.0.tgz',
+            dev: true
+          },
+          example: {
+            version: "1.0.0",
+            dev: true,
+          }
+        }
+      }, 'locks dependencies as dev')
+      t.end()
+    }
+  )
+})
+
+test('default dependency identification', function (t) {
+  common.npm(
+    ['install'],
+    {cwd: optionalDir},
+    function (er, code, stdout, stderr) {
+      t.is(code, 0, 'no error code')
+      t.is(stderr, '', 'no error output')
+      t.similar(JSON.parse(fs.readFileSync(path.join(optionalDir, 'package-lock.json'), 'utf8')), {
+        dependencies: {
+          a: {
+            version: 'file:../a-1.0.0.tgz',
+            optional: true,
+          },
+          b: {
+            version: 'file:../b-1.0.0.tgz',
+            optional: true
+          },
+          example: {
+            version: "1.0.0",
+            optional: true,
+          }
+        }
+      }, 'locks dependencies as optional')
       t.end()
     }
   )
