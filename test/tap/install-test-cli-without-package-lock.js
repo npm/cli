@@ -38,7 +38,7 @@ test('\'npm install-test\' should not generate package-lock.json.*', function (t
     if (err) throw err
     t.comment(stdout.trim())
     t.comment(stderr.trim())
-    t.is(code, 0, 'npm install did not raise error code')
+    t.is(code, 1, 'npm install-test w/o test defined should return error')
     var files = fs.readdirSync(pkg).filter(function (f) {
       return f.indexOf('package-lock.json.') === 0
     })
