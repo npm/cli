@@ -20,7 +20,7 @@ variables, `npmrc` files, and in some cases, the `package.json` file.
 
 See npmrc(5) for more information about the npmrc files.
 
-See `npm-config(7)` for a more thorough discussion of the mechanisms
+See npm-config(7) for a more thorough discussion of the mechanisms
 involved.
 
 The `npm config` command can be used to update and edit the contents
