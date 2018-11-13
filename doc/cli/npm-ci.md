@@ -37,7 +37,7 @@ cache:
 
 ## DESCRIPTION
 
-This command is similar to `npm-install(1)`, except it's meant to be used in
+This command is similar to npm-install(1), except it's meant to be used in
 automated environments such as test platforms, continuous integration, and
 deployment. It can be significantly faster than a regular npm install by
 skipping certain user-oriented features. It is also more strict than a regular
