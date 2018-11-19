@@ -7,7 +7,7 @@ This document is all you need to know about what's required in your package.json
 file.  It must be actual JSON, not just a JavaScript object literal.
 
 A lot of the behavior described in this document is affected by the config
-settings described in `npm-config(7)`.
+settings described in npm-config(7).
 
 ## name
 
@@ -40,7 +40,7 @@ Some tips:
   already, before you get too attached to it. <https://www.npmjs.com/>
 
 A name can be optionally prefixed by a scope, e.g. `@myorg/mypackage`. See
-`npm-scope(7)` for more detail.
+npm-scope(7) for more detail.
 
 ## version
 
@@ -399,7 +399,7 @@ The "scripts" property is a dictionary containing script commands that are run
 at various times in the lifecycle of your package.  The key is the lifecycle
 event, and the value is the command to run at that point.
 
-See `npm-scripts(7)` to find out more about writing package scripts.
+See npm-scripts(7) to find out more about writing package scripts.
 
 ## config
 
@@ -414,7 +414,7 @@ and then had a "start" command that then referenced the
 `npm_package_config_port` environment variable, then the user could
 override that by doing `npm config set foo:port 8001`.
 
-See `npm-config(7)` and `npm-scripts(7)` for more on package
+See npm-config(7) and npm-scripts(7) for more on package
 configs.
 
 ## dependencies
@@ -444,7 +444,7 @@ See semver(7) for more details about specifying version ranges.
 * `range1 || range2` Passes if either range1 or range2 are satisfied.
 * `git...` See 'Git URLs as Dependencies' below
 * `user/repo` See 'GitHub URLs' below
-* `tag` A specific version tagged and published as `tag`  See `npm-dist-tag(1)`
+* `tag` A specific version tagged and published as `tag`  See npm-dist-tag(1)
 * `path/path/path` See [Local Paths](#local-paths) below
 
 For example, these are all valid:
@@ -548,7 +548,7 @@ object.
 
 These things will be installed when doing `npm link` or `npm install`
 from the root of a package, and can be managed like any other npm
-configuration param.  See `npm-config(7)` for more on the topic.
+configuration param.  See npm-config(7) for more on the topic.
 
 For build steps that are not platform-specific, such as compiling
 CoffeeScript or other languages to JavaScript, use the `prepare`
@@ -760,7 +760,7 @@ to the global public registry or that a scoped module is private by default.
 Any config values can be overridden, but only "tag", "registry" and "access"
 probably matter for the purposes of publishing.
 
-See `npm-config(7)` to see the list of config options that can be
+See npm-config(7) to see the list of config options that can be
 overridden.
 
 ## DEFAULT VALUES
