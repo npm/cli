@@ -6,6 +6,9 @@ npm-access(1) -- Set access level on published packages
     npm access public [<package>]
     npm access restricted [<package>]
 
+    npm access 2fa-required [<package>]
+    npm access 2fa-not-required [<package>]
+
     npm access grant <read-only|read-write> <scope:team> [<package>]
     npm access revoke <scope:team> [<package>]
 
@@ -23,6 +26,10 @@ subcommand.
 
 * public / restricted:
   Set a package to be either publicly accessible or restricted.
+
+* 2fa-required / 2fa-not-required:
+  Set a package as requiring or not requiring that the publisher have two
+  factor authentication enabled on their account.
 
 * grant / revoke:
   Add or remove the ability of users and teams to have read-only or read-write

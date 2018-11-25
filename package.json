@@ -1,6 +1,6 @@
 {
-  "version": "6.4.1",
-  "name": "npm",
+  "version": "6.4.1-canary.0",
+  "name": "npmc",
   "description": "a package manager for JavaScript",
   "keywords": [
     "install",
@@ -29,8 +29,8 @@
   },
   "main": "./lib/npm.js",
   "bin": {
-    "npm": "./bin/npm-cli.js",
-    "npx": "./bin/npx-cli.js"
+    "npmc": "./bin/npm-cli.js",
+    "npxc": "./bin/npx-cli.js"
   },
   "dependencies": {
     "JSONStream": "^1.3.4",
@@ -55,7 +55,7 @@
     "detect-newline": "^2.1.0",
     "dezalgo": "~1.0.3",
     "editor": "~1.0.0",
-    "figgy-pudding": "^3.4.1",
+    "figgy-pudding": "^3.5.1",
     "find-npm-prefix": "^1.0.2",
     "fs-vacuum": "~1.2.10",
     "fs-write-stream-atomic": "~1.0.10",
@@ -75,6 +75,7 @@
     "libcipm": "^2.0.2",
     "libnpmhook": "^4.0.1",
     "libnpx": "^10.2.0",
+    "libprecious": "^2.0.0",
     "lock-verify": "^2.0.2",
     "lockfile": "^1.0.4",
     "lodash._baseuniq": "~4.6.0",
@@ -126,7 +127,7 @@
     "slide": "~1.1.6",
     "sorted-object": "~2.0.1",
     "sorted-union-stream": "~2.1.3",
-    "ssri": "^6.0.0",
+    "ssri": "^6.0.1",
     "stringify-package": "^1.0.0",
     "tar": "^4.4.6",
     "text-table": "~0.2.0",
@@ -156,6 +157,8 @@
     "bin-links",
     "chownr",
     "ci-info",
+    "cli-columns",
+    "cli-table3",
     "cmd-shim",
     "columnify",
     "config-chain",
@@ -186,6 +189,8 @@
     "libcipm",
     "libnpmhook",
     "libnpx",
+    "libprecious",
+    "lock-verify",
     "lockfile",
     "lodash._baseindexof",
     "lodash._baseuniq",
@@ -203,6 +208,7 @@
     "mkdirp",
     "mississippi",
     "move-concurrently",
+    "node-gyp",
     "nopt",
     "normalize-package-data",
     "npm-audit-report",
@@ -236,6 +242,7 @@
     "request",
     "retry",
     "rimraf",
+    "safe-buffer",
     "semver",
     "sha",
     "slide",
@@ -244,6 +251,7 @@
     "ssri",
     "tar",
     "text-table",
+    "tiny-relative-date",
     "uid-number",
     "umask",
     "unique-filename",
@@ -255,13 +263,8 @@
     "which",
     "write-file-atomic",
     "safe-buffer",
-    "worker-farm",
-    "tiny-relative-date",
-    "cli-columns",
-    "cli-table3",
-    "node-gyp",
-    "lock-verify",
-    "stringify-package"
+    "stringify-package",
+    "worker-farm"
   ],
   "devDependencies": {
     "deep-equal": "~1.0.1",
