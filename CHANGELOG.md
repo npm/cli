@@ -220,7 +220,7 @@ bumped due to bugs that had been around for a while.
   ([@zkat](https://github.com/zkat))
 * [`21cf0ab68`](https://github.com/npm/cli/commit/21cf0ab68cf528d5244ae664133ef400bdcfbdb6)
   [npm/cli#24](https://github.com/npm/cli/pull/24)
-  Use the defaut OTP explanation everywhere except when the context is
+  Use the default OTP explanation everywhere except when the context is
   "OTP-aware" (like when setting double-authentication). This improves the
   overall CLI messaging when prompting for an OTP code.
   ([@jdeniau](https://github.com/jdeniau))
