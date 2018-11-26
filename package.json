@@ -73,6 +73,7 @@
     "json-parse-better-errors": "^1.0.2",
     "lazy-property": "~1.0.0",
     "libcipm": "^3.0.2",
+    "libnpm": "^1.4.0",
     "libnpx": "^10.2.0",
     "lock-verify": "^2.0.2",
     "lockfile": "^1.0.4",
@@ -260,7 +261,22 @@
     "cli-table3",
     "node-gyp",
     "lock-verify",
+<<<<<<< HEAD
     "stringify-package"
+||||||| parent of 18f3fb01d... libnpm@1.4.0
+    "stringify-package",
+    "libnpmaccess",
+    "libnpmorg",
+    "libnpmteam",
+    "libnpmsearch"
+=======
+    "stringify-package",
+    "libnpmaccess",
+    "libnpmorg",
+    "libnpmteam",
+    "libnpmsearch",
+    "libnpm"
+>>>>>>> 18f3fb01d... libnpm@1.4.0
   ],
   "devDependencies": {
     "deep-equal": "~1.0.1",
