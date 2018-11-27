@@ -1,3 +1,3 @@
 'use strict'
 
-module.exports = require('pacote').extract
+module.exports = require('pacote/extract')

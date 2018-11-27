@@ -54,7 +54,7 @@ test('access grant basic read-write', t => {
     permissions: 'read-write'
   }).reply(201)
   return access.grant(
-    '@foo/bar', 'myorg', 'myteam', 'read-write', OPTS
+    '@foo/bar', 'myorg:myteam', 'read-write', OPTS
   ).then(ret => {
     t.deepEqual(ret, true, 'request succeeded')
   })
@@ -66,7 +66,7 @@ test('access grant basic read-only', t => {
     permissions: 'read-only'
   }).reply(201)
   return access.grant(
-    '@foo/bar', 'myorg', 'myteam', 'read-only', OPTS
+    '@foo/bar', 'myorg:myteam', 'read-only', OPTS
   ).then(ret => {
     t.deepEqual(ret, true, 'request succeeded')
   })
@@ -74,7 +74,7 @@ test('access grant basic read-only', t => {
 
 test('access grant bad perm', t => {
   return access.grant(
-    '@foo/bar', 'myorg', 'myteam', 'unknown', OPTS
+    '@foo/bar', 'myorg:myteam', 'unknown', OPTS
   ).then(ret => {
     throw new Error('should not have succeeded')
   }, err => {
@@ -86,13 +86,27 @@ test('access grant bad perm', t => {
   })
 })
 
+test('access grant no entity', t => {
+  return access.grant(
+    '@foo/bar', undefined, 'read-write', OPTS
+  ).then(ret => {
+    throw new Error('should not have succeeded')
+  }, err => {
+    t.match(
+      err.message,
+      /Expected string/,
+      'passing undefined entity gives useful error'
+    )
+  })
+})
+
 test('access grant basic unscoped', t => {
   tnock(t, REG).put('/-/team/myorg/myteam/package', {
     package: 'bar',
     permissions: 'read-write'
   }).reply(201)
   return access.grant(
-    'bar', 'myorg', 'myteam', 'read-write', OPTS
+    'bar', 'myorg:myteam', 'read-write', OPTS
   ).then(ret => {
     t.deepEqual(ret, true, 'request succeeded')
   })
@@ -102,7 +116,7 @@ test('access revoke basic', t => {
   tnock(t, REG).delete('/-/team/myorg/myteam/package', {
     package: '@foo/bar'
   }).reply(200)
-  return access.revoke('@foo/bar', 'myorg', 'myteam', OPTS).then(ret => {
+  return access.revoke('@foo/bar', 'myorg:myteam', OPTS).then(ret => {
     t.deepEqual(ret, true, 'request succeeded')
   })
 })
@@ -111,7 +125,7 @@ test('access revoke basic unscoped', t => {
   tnock(t, REG).delete('/-/team/myorg/myteam/package', {
     package: 'bar'
   }).reply(200, {accessChanged: true})
-  return access.revoke('bar', 'myorg', 'myteam', OPTS).then(ret => {
+  return access.revoke('bar', 'myorg:myteam', OPTS).then(ret => {
     t.deepEqual(ret, true, 'request succeeded')
   })
 })
@@ -130,7 +144,7 @@ test('ls-packages on team', t => {
   tnock(t, REG).get(
     '/-/team/myorg/myteam/package?format=cli'
   ).reply(200, serverPackages)
-  return access.lsPackages('myorg', 'myteam', OPTS).then(data => {
+  return access.lsPackages('myorg:myteam', OPTS).then(data => {
     t.deepEqual(data, clientPackages, 'got client package info')
   })
 })
@@ -149,7 +163,7 @@ test('ls-packages on org', t => {
   tnock(t, REG).get(
     '/-/org/myorg/package?format=cli'
   ).reply(200, serverPackages)
-  return access.lsPackages('myorg', null, OPTS).then(data => {
+  return access.lsPackages('myorg', OPTS).then(data => {
     t.deepEqual(data, clientPackages, 'got client package info')
   })
 })
@@ -168,16 +182,14 @@ test('ls-packages on user', t => {
   const srv = tnock(t, REG)
   srv.get('/-/org/myuser/package?format=cli').reply(404, {error: 'not found'})
   srv.get('/-/user/myuser/package?format=cli').reply(200, serverPackages)
-  return access.lsPackages('myuser', null, OPTS).then(data => {
+  return access.lsPackages('myuser', OPTS).then(data => {
     t.deepEqual(data, clientPackages, 'got client package info')
   })
 })
 
 test('ls-packages error on team', t => {
   tnock(t, REG).get('/-/team/myorg/myteam/package?format=cli').reply(404)
-  return access.lsPackages(
-    'myorg', 'myteam', OPTS
-  ).then(
+  return access.lsPackages('myorg:myteam', OPTS).then(
     () => { throw new Error('should not have succeeded') },
     err => t.equal(err.code, 'E404', 'spit out 404 directly if team provided')
   )
@@ -187,7 +199,7 @@ test('ls-packages error on user', t => {
   const srv = tnock(t, REG)
   srv.get('/-/org/myuser/package?format=cli').reply(404, {error: 'not found'})
   srv.get('/-/user/myuser/package?format=cli').reply(404, {error: 'not found'})
-  return access.lsPackages('myuser', null, OPTS).then(
+  return access.lsPackages('myuser', OPTS).then(
     () => { throw new Error('should not have succeeded') },
     err => t.equal(err.code, 'E404', 'spit out 404 if both reqs fail')
   )
@@ -197,7 +209,7 @@ test('ls-packages bad response', t => {
   tnock(t, REG).get(
     '/-/team/myorg/myteam/package?format=cli'
   ).reply(200, JSON.stringify(null))
-  return access.lsPackages('myorg', 'myteam', OPTS).then(data => {
+  return access.lsPackages('myorg:myteam', OPTS).then(data => {
     t.deepEqual(data, null, 'succeeds with null')
   })
 })
@@ -217,7 +229,7 @@ test('ls-packages stream', t => {
     '/-/team/myorg/myteam/package?format=cli'
   ).reply(200, serverPackages)
   return getStream.array(
-    access.lsPackages.stream('myorg', 'myteam', OPTS)
+    access.lsPackages.stream('myorg:myteam', OPTS)
   ).then(data => {
     t.deepEqual(data, clientPackages, 'got streamed client package info')
   })
@@ -237,7 +249,7 @@ test('ls-collaborators', t => {
   tnock(t, REG).get(
     '/-/package/%40foo%2Fbar/collaborators?format=cli'
   ).reply(200, serverCollaborators)
-  return access.lsCollaborators('@foo/bar', null, OPTS).then(data => {
+  return access.lsCollaborators('@foo/bar', OPTS).then(data => {
     t.deepEqual(data, clientCollaborators, 'got collaborators')
   })
 })
@@ -257,7 +269,7 @@ test('ls-collaborators stream', t => {
     '/-/package/%40foo%2Fbar/collaborators?format=cli'
   ).reply(200, serverCollaborators)
   return getStream.array(
-    access.lsCollaborators.stream('@foo/bar', null, OPTS)
+    access.lsCollaborators.stream('@foo/bar', OPTS)
   ).then(data => {
     t.deepEqual(data, clientCollaborators, 'got collaborators')
   })

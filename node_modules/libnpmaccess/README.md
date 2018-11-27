@@ -96,37 +96,37 @@ await access.restricted('@foo/bar', {token: 'myregistrytoken'})
 // `@foo/bar` is now private
 ```
 
-#### <a name="grant"></a> `> access.grant(spec, scope, team, permissions, [opts]) -> Promise`
+#### <a name="grant"></a> `> access.grant(spec, team, permissions, [opts]) -> Promise`
 
 `spec` must be an [`npm-package-arg`](https://npm.im/npm-package-arg)-compatible
-registry spec. `scope` must be a valid scope, with or without the `@` prefix,
-and `team` must be a valid team within that scope. `permissions` must be one of
-`'read-only'` or `'read-write'`.
+registry spec. `team` must be a fully-qualified team name, in the `scope:team`
+format, with or without the `@` prefix, and the team must be a valid team within
+that scope. `permissions` must be one of `'read-only'` or `'read-write'`.
 
 Grants `read-only` or `read-write` permissions for a certain package to a team.
 
 ##### Example
 
 ```javascript
-await access.grant('@foo/bar', '@foo', 'myteam', 'read-write', {
+await access.grant('@foo/bar', '@foo:myteam', 'read-write', {
   token: 'myregistrytoken'
 })
 // `@foo/bar` is now read/write enabled for the @foo:myteam team.
 ```
 
-#### <a name="revoke"></a> `> access.revoke(spec, scope, team, [opts]) -> Promise`
+#### <a name="revoke"></a> `> access.revoke(spec, team, [opts]) -> Promise`
 
 `spec` must be an [`npm-package-arg`](https://npm.im/npm-package-arg)-compatible
-registry spec. `scope` must be a valid scope, with or without the `@` prefix,
-and `team` must be a valid team within that scope. `permissions` must be one of
-`'read-only'` or `'read-write'`.
+registry spec. `team` must be a fully-qualified team name, in the `scope:team`
+format, with or without the `@` prefix, and the team must be a valid team within
+that scope. `permissions` must be one of `'read-only'` or `'read-write'`.
 
 Removes access to a package from a certain team.
 
 ##### Example
 
 ```javascript
-await access.revoke('@foo/bar', '@foo', 'myteam', {
+await access.revoke('@foo/bar', '@foo:myteam', {
   token: 'myregistrytoken'
 })
 // @foo:myteam can no longer access `@foo/bar`
@@ -163,22 +163,25 @@ await access.tfaNotRequired('lodash', {otp: '123654', token: 'myregistrytoken'})
 // enabled.
 ```
 
-#### <a name="ls-packages"></a> `> access.lsPackages(scope, [team], [opts]) -> Promise`
+#### <a name="ls-packages"></a> `> access.lsPackages(entity, [opts]) -> Promise`
 
-`scope` must be a valid org or user name, with or without the `@` prefix. `team`
-is optional and, if provided, must be a valid team within that scope. `team`
-must be `null` in order to pass in `opts`.
+`entity` must be either a valid org or user name, or a fully-qualified team name
+in the `scope:team` format, with or without the `@` prefix.
 
 Lists out packages a user, org, or team has access to, with corresponding
 permissions. Packages that the access token does not have access to won't be
 listed.
 
-For a streamed version of these results, see [`access.lsPackages.stream()`](#ls-package-stream).
+In order to disambiguate between users and orgs, two requests may end up being
+made when listing orgs or users.
+
+For a streamed version of these results, see
+[`access.lsPackages.stream()`](#ls-package-stream).
 
 ##### Example
 
 ```javascript
-await access.lsPackages('zkat', null, {
+await access.lsPackages('zkat', {
   token: 'myregistrytoken'
 })
 // Lists all packages `@zkat` has access to on the registry, and the
@@ -187,14 +190,16 @@ await access.lsPackages('zkat', null, {
 
 #### <a name="ls-packages-stream"></a> `> access.lsPackages.stream(scope, [team], [opts]) -> Stream`
 
-`scope` must be a valid org or user name, with or without the `@` prefix. `team`
-is optional and, if provided, must be a valid team within that scope. `team`
-must be `null` in order to pass in `opts`.
+`entity` must be either a valid org or user name, or a fully-qualified team name
+in the `scope:team` format, with or without the `@` prefix.
 
 Streams out packages a user, org, or team has access to, with corresponding
 permissions, with each stream entry being formatted like `[packageName,
 permissions]`. Packages that the access token does not have access to won't be
 listed.
+
+In order to disambiguate between users and orgs, two requests may end up being
+made when listing orgs or users.
 
 The returned stream is a valid `asyncIterator`.
 
@@ -211,9 +216,8 @@ for await (let [pkg, perm] of access.lsPackages.stream('zkat')) {
 #### <a name="ls-collaborators"></a> `> access.lsCollaborators(spec, [user], [opts]) -> Promise`
 
 `spec` must be an [`npm-package-arg`](https://npm.im/npm-package-arg)-compatible
-registry spec. `scope` must be a valid org or user name, with or without the `@`
-prefix. `team` is optional and, if provided, must be a valid team within that
-scope. `team` must be `null` in order to pass in `opts`.
+registry spec. `user` must be a valid user name, with or without the `@`
+prefix.
 
 Lists out access privileges for a certain package. Will only show permissions
 for packages to which you have at least read access. If `user` is passed in, the
@@ -233,9 +237,8 @@ await access.lsCollaborators('@npm/foo', 'zkat', {
 #### <a name="ls-collaborators-stream"></a> `> access.lsCollaborators.stream(spec, [user], [opts]) -> Stream`
 
 `spec` must be an [`npm-package-arg`](https://npm.im/npm-package-arg)-compatible
-registry spec. `scope` must be a valid org or user name, with or without the `@`
-prefix. `team` is optional and, if provided, must be a valid team within that
-scope. `team` must be `null` in order to pass in `opts`.
+registry spec. `user` must be a valid user name, with or without the `@`
+prefix.
 
 Stream out access privileges for a certain package, with each entry in `[user,
 permissions]` format. Will only show permissions for packages to which you have

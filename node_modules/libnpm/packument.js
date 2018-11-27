@@ -1,3 +1,3 @@
 'use strict'
 
-module.exports = require('pacote').packument
+module.exports = require('pacote/packument')

@@ -8,7 +8,7 @@ const Fetcher = duck.define(['spec', 'opts', 'manifest'], {
   tarball: ['spec', 'opts'],
   fromManifest: ['manifest', 'spec', 'opts'],
   clearMemoized () {}
-}, {name: 'Fetcher'})
+}, { name: 'Fetcher' })
 module.exports = Fetcher
 
 module.exports.packument = packument

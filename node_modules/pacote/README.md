@@ -229,6 +229,16 @@ for package specs that are not already packaged, such as git and directory
 dependencies. The default `opts.dirPacker` does not execute `prepare` scripts,
 even though npm itself does.
 
+##### <a name="opts-enjoy-by"></a> `opts.enjoy-by`
+
+* Alias: `opts.enjoyBy`
+* Type: Date-able
+* Default: undefined
+
+If passed in, will be used while resolving to filter the versions for **registry
+dependencies** such that versions published **after** `opts.enjoy-by` are not
+considered -- as if they'd never been published.
+
 ##### <a name="opts-include-deprecated"></a> `opts.include-deprecated`
 
 * Alias: `opts.includeDeprecated`

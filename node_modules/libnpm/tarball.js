@@ -1,3 +1,3 @@
 'use strict'
 
-module.exports = require('pacote').tarball
+module.exports = require('pacote/tarball')

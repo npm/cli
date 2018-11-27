@@ -16,10 +16,13 @@ function manifest (spec, opts) {
 }
 
 function getManifest (spec, opts) {
-  return fetchPackument(spec, opts).then(packument => {
+  return fetchPackument(spec, opts.concat({
+    fullMetadata: opts.enjoyBy ? true : opts.fullMetadata
+  })).then(packument => {
     try {
       return pickManifest(packument, spec.fetchSpec, {
         defaultTag: opts.defaultTag,
+        enjoyBy: opts.enjoyBy,
         includeDeprecated: opts.includeDeprecated
       })
     } catch (err) {
@@ -32,9 +35,12 @@ function getManifest (spec, opts) {
           preferOffline: false,
           preferOnline: true
         })
-        return fetchPackument(spec, opts).then(packument => {
+        return fetchPackument(spec, opts.concat({
+          fullMetadata: opts.enjoyBy ? true : opts.fullMetadata
+        })).then(packument => {
           return pickManifest(packument, spec.fetchSpec, {
-            defaultTag: opts.defaultTag
+            defaultTag: opts.defaultTag,
+            enjoyBy: opts.enjoyBy
           })
         })
       } else {

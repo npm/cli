@@ -23,7 +23,7 @@ function packument (spec, opts) {
     return fetchPackument(spec, opts)
   }).then(p => {
     const elapsedTime = Date.now() - startTime
-    opts.log.silly('pacote', `${spec.type} packument for ${spec.name}@${spec.saveSpec || spec.fetchSpec} fetched in ${elapsedTime}ms`)
+    opts.log.silly('pacote', `${spec.registry ? 'registry' : spec.type} packument for ${spec.name}@${spec.saveSpec || spec.fetchSpec} fetched in ${elapsedTime}ms`)
     return p
   })
 }
