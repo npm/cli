@@ -48,7 +48,7 @@ function tarball (spec, opts) {
 module.exports.fromManifest = fromManifest
 function fromManifest (manifest, spec, opts) {
   opts = optCheck(opts)
-  if (spec.scope) { opts = opts.concat({scope: spec.scope}) }
+  if (spec.scope) { opts = opts.concat({ scope: spec.scope }) }
   const stream = new PassThrough()
   const registry = fetch.pickRegistry(spec, opts)
   const uri = getTarballUrl(spec, registry, manifest, opts)

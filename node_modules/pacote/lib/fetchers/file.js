@@ -43,9 +43,9 @@ Fetcher.impl(fetchFile, {
               opts.cache, `pacote:tarball:file:${src}`, data, {
                 integrity: opts.integrity
               }
-            ).then(integrity => ({data, integrity}))
+            ).then(integrity => ({ data, integrity }))
           } else {
-            return {data}
+            return { data }
           }
         }).then(info => {
           if (info.integrity) { stream.emit('integrity', info.integrity) }

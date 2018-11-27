@@ -74,10 +74,10 @@ function fullClone (repo, committish, target, opts) {
   if (process.platform === 'win32') {
     gitArgs.push('--config', 'core.longpaths=true')
   }
-  return execGit(gitArgs, {cwd: target}).then(() => {
-    return execGit(['init'], {cwd: target})
+  return execGit(gitArgs, { cwd: target }).then(() => {
+    return execGit(['init'], { cwd: target })
   }).then(() => {
-    return execGit(['checkout', committish || 'HEAD'], {cwd: target})
+    return execGit(['checkout', committish || 'HEAD'], { cwd: target })
   }).then(() => {
     return updateSubmodules(target, opts)
   }).then(() => headSha(target, opts))
@@ -110,7 +110,7 @@ function updateSubmodules (localRepo, opts) {
 
 function headSha (repo, opts) {
   opts = optCheck(opts)
-  return execGit(['rev-parse', '--revs-only', 'HEAD'], {cwd: repo}, opts).spread(stdout => {
+  return execGit(['rev-parse', '--revs-only', 'HEAD'], { cwd: repo }, opts).spread(stdout => {
     return stdout.trim()
   })
 }
@@ -139,7 +139,7 @@ function revs (repo, opts) {
         if (!ref) { return revs } // ???
         if (ref.endsWith(CARET_BRACES)) { return revs } // refs/tags/x^{} crap
         const type = refType(line)
-        const doc = {sha, ref, type}
+        const doc = { sha, ref, type }
 
         revs.refs[ref] = doc
         // We can check out shallow clones on specific SHAs if we have a ref
@@ -157,7 +157,7 @@ function revs (repo, opts) {
         }
 
         return revs
-      }, {versions: {}, 'dist-tags': {}, refs: {}, shas: {}})
+      }, { versions: {}, 'dist-tags': {}, refs: {}, shas: {} })
     }, err => {
       err.message = `Error while executing:\n${GITPATH} ls-remote -h -t ${repo}\n\n${err.stderr}\n${err.message}`
       throw err
