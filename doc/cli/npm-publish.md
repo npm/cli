@@ -15,12 +15,12 @@ Publishes a package to the registry so that it can be installed by name. All
 files in the package directory are included if no local `.gitignore` or
 `.npmignore` file exists. If both files exist and a file is ignored by
 `.gitignore` but not by `.npmignore` then it will be included.  See
-`npm-developers(7)` for full details on what's included in the published
+npm-developers(7) for full details on what's included in the published
 package, as well as details on how the package is built.
 
 By default npm will publish to the public registry. This can be overridden by
-specifying a different default registry or using a `npm-scope(7)` in the name
-(see `package.json(5)`).
+specifying a different default registry or using a npm-scope(7) in the name
+(see package.json(5)).
 
 * `<folder>`:
   A folder containing a package.json file
@@ -32,7 +32,7 @@ specifying a different default registry or using a `npm-scope(7)` in the name
 * `[--tag <tag>]`
   Registers the published package with the given tag, such that `npm install
   <name>@<tag>` will install this version.  By default, `npm publish` updates
-  and `npm install` installs the `latest` tag. See `npm-dist-tag(1)` for
+  and `npm install` installs the `latest` tag. See npm-dist-tag(1) for
   details about tags.
 
 * `[--access <public|restricted>]`
@@ -61,7 +61,7 @@ As of `npm@5`, both a sha1sum and an integrity field with a sha512sum of the
 tarball will be submitted to the registry during publication. Subsequent
 installs will use the strongest supported algorithm to verify downloads.
 
-Similar to `--dry-run` see `npm-pack(1)`, which figures out the files to be
+Similar to `--dry-run` see npm-pack(1), which figures out the files to be
 included and packs them into a tarball to be uploaded to the registry.
 
 ## SEE ALSO
