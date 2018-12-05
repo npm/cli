@@ -263,8 +263,8 @@
   ],
   "devDependencies": {
     "deep-equal": "~1.0.1",
-    "licensee": "^5.0.0",
     "get-stream": "^4.1.0",
+    "licensee": "^5.0.0",
     "marked": "^0.5.0",
     "marked-man": "~0.2.1",
     "npm-registry-couchapp": "^2.7.1",
