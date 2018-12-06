@@ -17,6 +17,8 @@ otherwise you will get:
 Ping error: {*Detail about error}
 ```
 
+Note that the details returned is up to the registry.
+
 ## SEE ALSO
 
 * npm-config(1)
