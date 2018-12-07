@@ -24,8 +24,9 @@ matrix:
     - node_js: "11"
       env: DEPLOY_VERSION=testing
       script:
-       - "standard"
-       - "node . run tap -- \"test/tap/*.js\" \"test/broken-under-nyc/*.js\""
+      - "npx standard"
+      - "node . run licenses"
+      - "node . run tap -- \"test/tap/*.js\" \"test/broken-under-nyc/*.js\""
 notifications:
     slack: npm-inc:kRqQjto7YbINqHPb1X6nS3g8
 cache:
@@ -35,4 +36,3 @@ install:
   - "node . install"
 script:
   - "node . run tap -- \"test/tap/*.js\" \"test/broken-under-nyc/*.js\""
-  - "node . run licenses"
