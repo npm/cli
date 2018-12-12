@@ -1,3 +1,136 @@
+## v6.6.0 (2018-12-12):
+
+### REFACTORING OUT npm-REGISTRY-CLIENT
+
+Today is an auspicious day! This release marks the end of a massive internal
+refactor to npm that means we finally got rid of the legacy
+[`npm-registry-client`](https://npm.im/npm-registry-client) in favor of the
+shiny, new, `window.fetch`-like
+[`npm-registry-fetch`](https://npm.im/npm-registry-fetch).
+
+Now, the installer had already done most of this work with the release of
+`npm@5`, but it turns out _every other command_ still used the legacy client.
+This release updates all of those commands to use the new client, and while
+we're at it, adds a few extra goodies:
+
+* All OTP-requiring commands will now **prompt**. `--otp` is no longer required for `dist-tag`, `access`, et al.
+* We're starting to integrate a new config system which will eventually get extracted into a standalone package.
+* We now use [`libnpm`](https://npm.im/libnpm) for the API functionality of a lot of our commands! That means you can install a library if you want to write your own tooling around them.
+* There's now an `npm org` command for managing users in your org.
+* [`pacote`](https://npm.im/pacote) now consumes npm-style configurations, instead of its own naming for various config vars. This will make it easier to load npm configs using `libnpm.config` and hand them directly to `pacote`.
+
+There's too many commits to list all of them here, so check out the PR if you're
+curious about details:
+
+* [`c5af34c05`](https://github.com/npm/cli/commit/c5af34c05fd569aecd11f18d6d0ddeac3970b253)
+  [npm-registry-client@REMOVED](https://www.youtube.com/watch\?v\=kPIdRJlzERo)
+  ([@zkat](https://github.com/zkat))
+* [`4cca9cb90`](https://github.com/npm/cli/commit/4cca9cb9042c0eeb743377e8f1ae1c07733df43f)
+  [`ad67461dc`](https://github.com/npm/cli/commit/ad67461dc3a73d5ae6569fdbee44c67e1daf86e7)
+  [`77625f9e2`](https://github.com/npm/cli/commit/77625f9e20d4285b7726b3bf3ebc10cb21c638f0)
+  [`6e922aefb`](https://github.com/npm/cli/commit/6e922aefbb4634bbd77ed3b143e0765d63afc7f9)
+  [`584613ea8`](https://github.com/npm/cli/commit/584613ea8ff94b927db4957e5647504b30ca2b1f)
+  [`64de4ebf0`](https://github.com/npm/cli/commit/64de4ebf019b217179039124c6621e74651e4d27)
+  [`6cd87d1a9`](https://github.com/npm/cli/commit/6cd87d1a9bb90e795f9891ea4db384435f4a8930)
+  [`2786834c0`](https://github.com/npm/cli/commit/2786834c0257b8bb1bbb115f1ce7060abaab2e17)
+  [`514558e09`](https://github.com/npm/cli/commit/514558e094460fd0284a759c13965b685133b3fe)
+  [`dec07ebe3`](https://github.com/npm/cli/commit/dec07ebe3312245f6421c6e523660be4973ae8c2)
+  [`084741913`](https://github.com/npm/cli/commit/084741913c4fdb396e589abf3440b4be3aa0b67e)
+  [`45aff0e02`](https://github.com/npm/cli/commit/45aff0e02251785a85e56eafacf9efaeac6f92ae)
+  [`846ddcc44`](https://github.com/npm/cli/commit/846ddcc44538f2d9a51ac79405010dfe97fdcdeb)
+  [`8971ba1b9`](https://github.com/npm/cli/commit/8971ba1b953d4f05ff5094f1822b91526282edd8)
+  [`99156e081`](https://github.com/npm/cli/commit/99156e081a07516d6c970685bc3d858f89dc4f9c)
+  [`ab2155306`](https://github.com/npm/cli/commit/ab215530674d7f6123c9572d0ad4ca9e9b5fb184)
+  [`b37a66542`](https://github.com/npm/cli/commit/b37a66542ca2879069b2acd338b1904de71b7f40)
+  [`d2af0777a`](https://github.com/npm/cli/commit/d2af0777ac179ff5009dbbf0354a4a84f151b60f)
+  [`e0b4c6880`](https://github.com/npm/cli/commit/e0b4c6880504fa2e8491c2fbd098efcb2e496849)
+  [`ff72350b4`](https://github.com/npm/cli/commit/ff72350b4c56d65e4a92671d86a33080bf3c2ea5)
+  [`6ed943303`](https://github.com/npm/cli/commit/6ed943303ce7a267ddb26aa25caa035f832895dd)
+  [`90a069e7d`](https://github.com/npm/cli/commit/90a069e7d4646682211f4cabe289c306ee1d5397)
+  [`b24ed5fdc`](https://github.com/npm/cli/commit/b24ed5fdc3a4395628465ae5273bad54eea274c8)
+  [`ec9fcc14f`](https://github.com/npm/cli/commit/ec9fcc14f4e0e2f3967e2fd6ad8b8433076393cb)
+  [`8a56fa39e`](https://github.com/npm/cli/commit/8a56fa39e61136da45565447fe201a57f04ad4cd)
+  [`41d19e18f`](https://github.com/npm/cli/commit/41d19e18f769c6f0acfdffbdb01d12bf332908ce)
+  [`125ff9551`](https://github.com/npm/cli/commit/125ff9551595dda9dab2edaef10f4c73ae8e1433)
+  [`1c3b226ff`](https://github.com/npm/cli/commit/1c3b226ff37159c426e855e83c8f6c361603901d)
+  [`3c0a7b06b`](https://github.com/npm/cli/commit/3c0a7b06b6473fe068fc8ae8466c07a177975b87)
+  [`08fcb3f0f`](https://github.com/npm/cli/commit/08fcb3f0f26e025702b35253ed70a527ab69977f)
+  [`c8135d97a`](https://github.com/npm/cli/commit/c8135d97a424b38363dc4530c45e4583471e9849)
+  [`ae936f22c`](https://github.com/npm/cli/commit/ae936f22ce80614287f2769e9aaa9a155f03cc15)
+  [#2](https://github.com/npm/cli/pull/2)
+  Move rest of commands to `npm-registry-fetch` and use [`figgy-pudding`](https://npm.im/figgy-pudding) for configs.
+  ([@zkat](https://github.com/zkat))
+
+### NEW FEATURES
+
+* [`02c837e01`](https://github.com/npm/cli/commit/02c837e01a71a26f37cbd5a09be89df8a9ce01da)
+  [#106](https://github.com/npm/cli/pull/106)
+  Make `npm dist-tags` the same as `npm dist-tag ls`.
+  ([@isaacs](https://github.com/isaacs))
+* [`1065a7809`](https://github.com/npm/cli/commit/1065a7809161fd4dc23e96b642019fc842fdacf2)
+  [#65](https://github.com/npm/cli/pull/65)
+  Add support for `IBM i`.
+  ([@dmabupt](https://github.com/dmabupt))
+
+### BUGFIXES
+
+* [`890a74458`](https://github.com/npm/cli/commit/890a74458dd4a55e2d85f3eba9dbf125affa4206)
+  [npm.community#https://npm.community/t/3278](https://npm.community/t/https://npm.community/t/3278)
+  Fix support for passing git binary path config with `--git`.
+  ([@larsgw](https://github.com/larsgw))
+* [`90e55a143`](https://github.com/npm/cli/commit/90e55a143ed1de8678d65c17bc3c2b103a15ddac)
+  [npm.community#2713](https://npm.community/t/npx-envinfo-preset-jest-fails-on-windows-with-a-stack-trace/2713)
+  Check for `npm.config`'s existence in `error-handler.js` to prevent weird
+  errors when failures happen before config object is loaded.
+  ([@BeniCheni](https://github.com/BeniCheni))
+
+### DOCS
+
+* [`31a7274b7`](https://github.com/npm/cli/commit/31a7274b70de18b24e7bee51daa22cc7cbb6141c)
+  [#71](https://github.com/npm/cli/pull/71)
+  Fix typo in npm-token documentation.
+  ([@GeorgeTaveras1231](https://github.com/GeorgeTaveras1231))
+
+### DEPENDENCIES
+
+
+* [`9cefcdc1d`](https://github.com/npm/cli/commit/9cefcdc1d2289b56f9164d14d7e499e115cfeaee)
+  `npm-registry-fetch@3.8.0`
+  ([@zkat](https://github.com/zkat))
+* [`1c769c9b3`](https://github.com/npm/cli/commit/1c769c9b3e431d324c1a5b6dd10e1fddb5cb88c7)
+  `pacote@9.1.0`
+  ([@zkat](https://github.com/zkat))
+* [`f3bc5539b`](https://github.com/npm/cli/commit/f3bc5539b30446500abcc3873781b2c717f8e22c)
+  `figgy-pudding@3.5.1`
+  ([@zkat](https://github.com/zkat))
+* [`bf7199d3c`](https://github.com/npm/cli/commit/bf7199d3cbf50545da1ebd30d28f0a6ed5444a00)
+  `npm-profile@4.0.1`
+  ([@zkat](https://github.com/zkat))
+* [`118c50496`](https://github.com/npm/cli/commit/118c50496c01231cab3821ae623be6df89cb0a32)
+  `semver@5.5.1`
+  ([@isaacs](https://github.com/isaacs))
+* [`eab4df925`](https://github.com/npm/cli/commit/eab4df9250e9169c694b3f6c287d2932bf5e08fb)
+  `libcipm@3.0.2`
+  ([@zkat](https://github.com/zkat))
+* [`b86e51573`](https://github.com/npm/cli/commit/b86e515734faf433dc6c457c36c1de52795aa870)
+  `libnpm@1.4.0`
+  ([@zkat](https://github.com/zkat))
+* [`56fffbff2`](https://github.com/npm/cli/commit/56fffbff27fe2fae8bef27d946755789ef0d89bd)
+  `get-stream@4.1.0`
+  ([@zkat](https://github.com/zkat))
+* [`df972e948`](https://github.com/npm/cli/commit/df972e94868050b5aa42ac18b527fd929e1de9e4)
+  npm-profile@REMOVED
+  ([@zkat](https://github.com/zkat))
+* [`32c73bf0e`](https://github.com/npm/cli/commit/32c73bf0e3f0441d0c7c940292235d4b93aa87e2)
+  `libnpm@2.0.1`
+  ([@zkat](https://github.com/zkat))
+* [`569491b80`](https://github.com/npm/cli/commit/569491b8042f939dc13986b6adb2a0a260f95b63)
+  `licensee@5.0.0`
+  ([@zkat](https://github.com/zkat))
+* [`a3ba0ccf1`](https://github.com/npm/cli/commit/a3ba0ccf1fa86aec56b1ad49883abf28c1f56b3c)
+  move rimraf to prod deps
+  ([@zkat](https://github.com/zkat))
+
 ## v6.5.0 (2018-11-28):
 
 ### NEW FEATURES
