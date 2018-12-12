@@ -57,7 +57,7 @@ curious about details:
   [`08fcb3f0f`](https://github.com/npm/cli/commit/08fcb3f0f26e025702b35253ed70a527ab69977f)
   [`c8135d97a`](https://github.com/npm/cli/commit/c8135d97a424b38363dc4530c45e4583471e9849)
   [`ae936f22c`](https://github.com/npm/cli/commit/ae936f22ce80614287f2769e9aaa9a155f03cc15)
-  [#2](https://github.com/npm/cli/pull/2)
+* [#2](https://github.com/npm/cli/pull/2)
   Move rest of commands to `npm-registry-fetch` and use [`figgy-pudding`](https://npm.im/figgy-pudding) for configs.
   ([@zkat](https://github.com/zkat))
 
@@ -75,7 +75,7 @@ curious about details:
 ### BUGFIXES
 
 * [`890a74458`](https://github.com/npm/cli/commit/890a74458dd4a55e2d85f3eba9dbf125affa4206)
-  [npm.community#https://npm.community/t/3278](https://npm.community/t/https://npm.community/t/3278)
+  [npm.community#3278](https://npm.community/t/https://npm.community/t/3278)
   Fix support for passing git binary path config with `--git`.
   ([@larsgw](https://github.com/larsgw))
 * [`90e55a143`](https://github.com/npm/cli/commit/90e55a143ed1de8678d65c17bc3c2b103a15ddac)
