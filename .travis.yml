@@ -1,3 +1,4 @@
+dist: xenial
 sudo: false
 # need to declare the language as well as the matrix below
 language: node_js
