@@ -38,7 +38,7 @@ const tmpdir = path.join(basedir, 'tmp')
 
 const conf = {
   cwd: testdir,
-  env: Object.assign({}, process.env, {
+  env: common.newEnv().extend({
     npm_config_cache: cachedir,
     npm_config_tmp: tmpdir,
     npm_config_prefix: globaldir,
