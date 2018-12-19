@@ -69,13 +69,11 @@ test('setup', t => {
 })
 
 test('example', t => {
-  common.npm(['install'], conf, function (err, code, stdout, stderr) {
-    if (err) throw err
+  return common.npm(['install'], conf).then((code, stdout, stderr) => {
     t.is(code, 0, 'command ran ok')
     t.comment(stdout.trim())
     t.comment(stderr.trim())
     // your assertions here
-    t.done()
   })
 })
 
