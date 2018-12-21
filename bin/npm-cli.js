@@ -92,10 +92,14 @@
         const color = require('ansicolors')
         const useColor = npm.config.get('color')
         const useUnicode = npm.config.get('unicode')
-        const old = notifier.update.current
-        const latest = notifier.update.latest
+        let old = notifier.update.current
+        let latest = notifier.update.latest
+        let changelog = `https://github.com/npm/cli/releases/tag/v${latest}`
         let type = notifier.update.type
         if (useColor) {
+          old = color.red(old)
+          latest = color.green(latest)
+          changelog = color.cyan(changelog)
           switch (type) {
             case 'major':
               type = color.red(type)
@@ -108,23 +112,15 @@
               break
           }
         }
-        const changelog = `https://github.com/npm/cli/releases/tag/v${latest}`
         notifier.notify({
-          message: `New ${type} version of ${pkg.name} available! ${
-            useColor ? color.red(old) : old
-          } ${useUnicode ? '→' : '->'} ${
-            useColor ? color.green(latest) : latest
-          }\n` +
-          `${
-            useColor ? color.yellow('Changelog:') : 'Changelog:'
-          } ${
-            useColor ? color.cyan(changelog) : changelog
-          }\n` +
-          `Run ${
-            useColor
-              ? color.green(`npm install -g ${pkg.name}`)
-              : `npm i -g ${pkg.name}`
-          } to update!`
+          message: `New ${type} version of ${pkg.name} available! 
+          ${old} ${useUnicode ? '→' : '->'} ${latest}\n` +
+            `${useColor ? color.yellow('Changelog:') : 'Changelog:'} ${changelog}\n` +
+            `Run ${
+              useColor
+                ? color.green(`npm install -g ${pkg.name}`)
+                : `npm i -g ${pkg.name}`
+            } to update!`
         })
       }
     }
