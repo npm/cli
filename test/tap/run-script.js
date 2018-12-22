@@ -166,9 +166,9 @@ test('npm run-script explicitly call pre script with arg', function (t) {
 
 test('npm run-script test', function (t) {
   common.npm(['run-script', 'test'], opts, function (er, code, stdout, stderr) {
-    t.match(stderr, /Error: no test specified/)
+    t.match(stderr, /npm ERR! missing script: test/)
     t.ifError(er, 'npm run-script test ran without issue')
-    t.ok(stderr, 'should not generate errors')
+    t.ok(stderr, 'should generate errors')
     t.end()
   })
 })
