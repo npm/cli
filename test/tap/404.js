@@ -53,16 +53,16 @@ test('setup', function (t) {
 test('404 message for basic package', function (t) {
   return common.npm(['install', 'test-npm-404'], {cwd: testdir, env}).then(([code, stdout, stderr]) => {
     t.is(code, 1, 'error code')
-    t.ok(stderr.match(e404), 'error output')
-    t.notOk(stderr.match(invalidPackage), 'no invalidity error')
+    t.match(stderr, e404, 'error output')
+    t.notMatch(stderr, invalidPackage, 'no invalidity error')
   })
 })
 
 test('404 message for scoped package', function (t) {
   return common.npm(['install', '@npm/test-npm-404'], {cwd: testdir, env}).then(([code, stdout, stderr]) => {
     t.is(code, 1, 'error code')
-    t.ok(stderr.match(e404), 'error output')
-    t.notOk(stderr.match(invalidPackage), 'no invalidity error')
+    t.match(stderr, e404, 'error output')
+    t.notMatch(stderr, invalidPackage, 'no invalidity error')
   })
 })
 
