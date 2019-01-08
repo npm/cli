@@ -45,7 +45,7 @@ Fetcher.impl(fetchGit, {
           manifest, spec, opts
         ).on('integrity', i => stream.emit('integrity', i)), stream
       )
-    }, err => stream.emit('error', err))
+    }).catch(err => stream.emit('error', err))
     return stream
   },
 

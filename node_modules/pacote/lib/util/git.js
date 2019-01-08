@@ -74,10 +74,10 @@ function fullClone (repo, committish, target, opts) {
   if (process.platform === 'win32') {
     gitArgs.push('--config', 'core.longpaths=true')
   }
-  return execGit(gitArgs, { cwd: target }).then(() => {
-    return execGit(['init'], { cwd: target })
+  return execGit(gitArgs, { cwd: target }, opts).then(() => {
+    return execGit(['init'], { cwd: target }, opts)
   }).then(() => {
-    return execGit(['checkout', committish || 'HEAD'], { cwd: target })
+    return execGit(['checkout', committish || 'HEAD'], { cwd: target }, opts)
   }).then(() => {
     return updateSubmodules(target, opts)
   }).then(() => headSha(target, opts))
@@ -182,7 +182,7 @@ function revs (repo, opts) {
 module.exports._exec = execGit
 function execGit (gitArgs, gitOpts, opts) {
   opts = optCheck(opts)
-  return checkGit().then(gitPath => {
+  return checkGit(opts).then(gitPath => {
     return promiseRetry((retry, number) => {
       if (number !== 1) {
         opts.log.silly('pacote', 'Retrying git command: ' + gitArgs.join(' ') + ' attempt # ' + number)
@@ -206,7 +206,7 @@ function execGit (gitArgs, gitOpts, opts) {
 module.exports._spawn = spawnGit
 function spawnGit (gitArgs, gitOpts, opts) {
   opts = optCheck(opts)
-  return checkGit().then(gitPath => {
+  return checkGit(opts).then(gitPath => {
     return promiseRetry((retry, number) => {
       if (number !== 1) {
         opts.log.silly('pacote', 'Retrying git command: ' + gitArgs.join(' ') + ' attempt # ' + number)
@@ -246,8 +246,10 @@ function mkOpts (_gitOpts, opts) {
   return gitOpts
 }
 
-function checkGit () {
-  if (!GITPATH) {
+function checkGit (opts) {
+  if (opts.git) {
+    return BB.resolve(opts.git)
+  } else if (!GITPATH) {
     const err = new Error('No git binary found in $PATH')
     err.code = 'ENOGIT'
     return BB.reject(err)

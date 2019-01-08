@@ -21,6 +21,7 @@ module.exports = figgyPudding({
   fullMetadata: 'full-metadata',
   'full-metadata': { default: false },
   gid: {},
+  git: {},
   includeDeprecated: { default: true },
   'include-deprecated': 'includeDeprecated',
   integrity: {},

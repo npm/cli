@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.3.0"></a>
+# [9.3.0](https://github.com/zkat/pacote/compare/v9.2.3...v9.3.0) (2018-12-21)
+
+
+### Bug Fixes
+
+* **git, file:** properly catch otherwise unhandled errors ([89d4897](https://github.com/zkat/pacote/commit/89d4897))
+* **test:** set umask opt to fix extract-stream 'accepts dmode/fmode/umask opts' ([e51de83](https://github.com/zkat/pacote/commit/e51de83))
+
+
+### Features
+
+* **git:** accept git path option ([#164](https://github.com/zkat/pacote/issues/164)) ([f06c8c5](https://github.com/zkat/pacote/commit/f06c8c5))
+
+
+
 <a name="9.2.3"></a>
 ## [9.2.3](https://github.com/zkat/pacote/compare/v9.2.2...v9.2.3) (2018-10-31)
 

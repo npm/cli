@@ -68,7 +68,7 @@ Fetcher.impl(fetchFile, {
           return pipe(fs.createReadStream(src), stream)
         })
       }
-    }, err => stream.emit('error', err))
+    }).catch(err => stream.emit('error', err))
     return stream
   },
 
