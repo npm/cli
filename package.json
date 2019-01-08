@@ -74,6 +74,7 @@
     "lazy-property": "~1.0.0",
     "libcipm": "^3.0.2",
     "libnpm": "^2.0.1",
+    "libnpmhook": "^5.0.2",
     "libnpx": "^10.2.0",
     "lock-verify": "^2.0.2",
     "lockfile": "^1.0.4",
