@@ -4,7 +4,7 @@ var vendors = require('./vendors.json')
 
 var env = process.env
 
-// Used for testing only
+// Used for testinging only
 Object.defineProperty(exports, '_vendors', {
   value: vendors.map(function (v) { return v.constant })
 })
