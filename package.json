@@ -97,7 +97,7 @@
     "npm-lifecycle": "^2.1.0",
     "npm-package-arg": "^6.1.0",
     "npm-packlist": "^1.2.0",
-    "npm-pick-manifest": "^2.1.0",
+    "npm-pick-manifest": "^2.2.3",
     "npm-registry-fetch": "^3.8.0",
     "npm-user-validate": "~1.0.0",
     "npmlog": "~4.1.2",
