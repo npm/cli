@@ -47,7 +47,7 @@
     "chownr": "^1.1.1",
     "ci-info": "^2.0.0",
     "cli-columns": "^3.1.2",
-    "cli-table3": "^0.5.0",
+    "cli-table3": "^0.5.1",
     "cmd-shim": "~2.0.2",
     "columnify": "~1.5.4",
     "config-chain": "^1.1.12",
