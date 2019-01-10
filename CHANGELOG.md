@@ -1,4 +1,4 @@
-## v6.6.0 (2018-12-12):
+## v6.6.0 (2019-01-09):
 
 ### REFACTORING OUT npm-REGISTRY-CLIENT
 
@@ -71,11 +71,15 @@ curious about details:
   [#65](https://github.com/npm/cli/pull/65)
   Add support for `IBM i`.
   ([@dmabupt](https://github.com/dmabupt))
+* [`a22e6f5fc`](https://github.com/npm/cli/commit/a22e6f5fc3e91350d3c64dcc88eabbe0efbca759)
+  [#131](https://github.com/npm/cli/pull/131)
+  Update profile to support new npm-profile API.
+  ([@zkat](https://github.com/zkat))
 
 ### BUGFIXES
 
 * [`890a74458`](https://github.com/npm/cli/commit/890a74458dd4a55e2d85f3eba9dbf125affa4206)
-  [npm.community#3278](https://npm.community/t/https://npm.community/t/3278)
+  [npm.community#3278](https://npm.community/t/3278)
   Fix support for passing git binary path config with `--git`.
   ([@larsgw](https://github.com/larsgw))
 * [`90e55a143`](https://github.com/npm/cli/commit/90e55a143ed1de8678d65c17bc3c2b103a15ddac)
@@ -83,6 +87,30 @@ curious about details:
   Check for `npm.config`'s existence in `error-handler.js` to prevent weird
   errors when failures happen before config object is loaded.
   ([@BeniCheni](https://github.com/BeniCheni))
+* [`134207174`](https://github.com/npm/cli/commit/134207174652e1eb6d7b0f44fd9858a0b6a0cd6c)
+  [npm.community#2569](https://npm.community/t/2569)
+  Fix checking for optional dependencies.
+  ([@larsgw](https://github.com/larsgw))
+* [`7a2f6b05d`](https://github.com/npm/cli/commit/7a2f6b05d27f3bcf47a48230db62e86afa41c9d3)
+  [npm.community#4172](https://npm.community/t/4172)
+  Remove tink experiments.
+  ([@larsgw](https://github.com/larsgw))
+* [`c5b6056b6`](https://github.com/npm/cli/commit/c5b6056b6b35eefb81ae5fb00a5c7681c5318c22)
+  [#123](https://github.com/npm/cli/pull/123)
+  Handle git branch references correctly.
+  ([@johanneswuerbach](https://github.com/johanneswuerbach))
+* [`f58b43ef2`](https://github.com/npm/cli/commit/f58b43ef2c5e3dea2094340a0cf264b2d11a5da4)
+  [npm.community#3983](https://npm.community/t/npm-audit-error-messaging-update-for-401s/3983)
+  Report any errors above 400 as potentially not supporting audit.
+  ([@zkat](https://github.com/zkat))
+* [`a5c9e6f35`](https://github.com/npm/cli/commit/a5c9e6f35a591a6e2d4b6ace5c01bc03f2b75fdc)
+  [#124](https://github.com/npm/cli/pull/124)
+  Set default homepage to an empty string.
+  ([@anchnk](https://github.com/anchnk))
+* [`5d076351d`](https://github.com/npm/cli/commit/5d076351d7ec1d3585942a9289548166a7fbbd4c)
+  [npm.community#4054](https://npm.community/t/4054)
+  Fix npm-prefix description.
+  ([@larsgw](https://github.com/larsgw))
 
 ### DOCS
 
@@ -90,9 +118,11 @@ curious about details:
   [#71](https://github.com/npm/cli/pull/71)
   Fix typo in npm-token documentation.
   ([@GeorgeTaveras1231](https://github.com/GeorgeTaveras1231))
+* [`2401b7592`](https://github.com/npm/cli/commit/2401b7592c6ee114e6db7077ebf8c072b7bfe427)
+  Correct docs for fake-registry interface.
+  ([@iarna](https://github.com/iarna))
 
 ### DEPENDENCIES
-
 
 * [`9cefcdc1d`](https://github.com/npm/cli/commit/9cefcdc1d2289b56f9164d14d7e499e115cfeaee)
   `npm-registry-fetch@3.8.0`
@@ -130,6 +160,95 @@ curious about details:
 * [`a3ba0ccf1`](https://github.com/npm/cli/commit/a3ba0ccf1fa86aec56b1ad49883abf28c1f56b3c)
   move rimraf to prod deps
   ([@zkat](https://github.com/zkat))
+* [`f63a0d6cf`](https://github.com/npm/cli/commit/f63a0d6cf0b7db3dcc80e72e1383c3df723c8119)
+  `spdx-license-ids@3.0.3`:
+  Ref: https://github.com/npm/cli/pull/121
+  ([@zkat](https://github.com/zkat))
+* [`f350e714f`](https://github.com/npm/cli/commit/f350e714f66a77f71a7ebe17daeea2ea98179a1a)
+  `aproba@2.0.0`
+  ([@aeschright](https://github.com/aeschright))
+* [`a67e4d8b2`](https://github.com/npm/cli/commit/a67e4d8b214e58ede037c3854961acb33fd889da)
+  `byte-size@5.0.1`
+  ([@aeschright](https://github.com/aeschright))
+* [`8bea4efa3`](https://github.com/npm/cli/commit/8bea4efa34857c4e547904b3630dd442def241de)
+  `cacache@11.3.2`
+  ([@aeschright](https://github.com/aeschright))
+* [`9d4776836`](https://github.com/npm/cli/commit/9d4776836a4eaa4b19701b4e4f00cd64578bf078)
+  `chownr@1.1.1`
+  ([@aeschright](https://github.com/aeschright))
+* [`70da139e9`](https://github.com/npm/cli/commit/70da139e97ed1660c216e2d9b3f9cfb986bfd4a4)
+  `ci-info@2.0.0`
+  ([@aeschright](https://github.com/aeschright))
+* [`bcdeddcc3`](https://github.com/npm/cli/commit/bcdeddcc3d4dc242f42404223dafe4afdc753b32)
+  `cli-table3@0.5.1`
+  ([@aeschright](https://github.com/aeschright))
+* [`63aab82c7`](https://github.com/npm/cli/commit/63aab82c7bfca4f16987cf4156ddebf8d150747c)
+  `is-cidr@3.0.0`
+  ([@aeschright](https://github.com/aeschright))
+* [`d522bd90c`](https://github.com/npm/cli/commit/d522bd90c3b0cb08518f249ae5b90bd609fff165)
+  `JSONStream@1.3.5`
+  ([@aeschright](https://github.com/aeschright))
+* [`2a59bfc79`](https://github.com/npm/cli/commit/2a59bfc7989bd5575d8cbba912977c6d1ba92567)
+  `libnpmhook@5.0.2`
+  ([@aeschright](https://github.com/aeschright))
+* [`66d60e394`](https://github.com/npm/cli/commit/66d60e394e5a96330f90e230505758f19a3643ac)
+  `marked@0.6.0`
+  ([@aeschright](https://github.com/aeschright))
+* [`8213def9a`](https://github.com/npm/cli/commit/8213def9aa9b6e702887e4f2ed7654943e1e4154)
+  `npm-packlist@1.2.0`
+  ([@aeschright](https://github.com/aeschright))
+* [`e4ffc6a2b`](https://github.com/npm/cli/commit/e4ffc6a2bfb8d0b7047cb6692030484760fc8c91)
+  `unique-filename@1.1.1`
+  ([@aeschright](https://github.com/aeschright))
+* [`09a5c2fab`](https://github.com/npm/cli/commit/09a5c2fabe0d1c00ec8c99f328f6d28a3495eb0b)
+  `semver@5.6.0`
+  ([@aeschright](https://github.com/aeschright))
+* [`740e79e17`](https://github.com/npm/cli/commit/740e79e17a78247f73349525043c9388ce94459a)
+  `rimraf@2.6.3`
+  ([@aeschright](https://github.com/aeschright))
+* [`455476c8d`](https://github.com/npm/cli/commit/455476c8d148ca83a4e030e96e93dcf1c7f0ff5f)
+  `require-inject@1.4.4`
+  ([@aeschright](https://github.com/aeschright))
+* [`3f40251c5`](https://github.com/npm/cli/commit/3f40251c5868feaacbcdbcb1360877ce76998f5e)
+  `npm-pick-manifest@2.2.3`
+  ([@aeschright](https://github.com/aeschright))
+* [`4ffa8a8e9`](https://github.com/npm/cli/commit/4ffa8a8e9e80e5562898dd76fe5a49f5694f38c8)
+  `query-string@6.2.0`
+  ([@aeschright](https://github.com/aeschright))
+* [`a0a0ca9ec`](https://github.com/npm/cli/commit/a0a0ca9ec2a962183d420fa751f4139969760f18)
+  `pacote@9.3.0`
+  ([@aeschright](https://github.com/aeschright))
+* [`5777ea8ad`](https://github.com/npm/cli/commit/5777ea8ad2058be3166a6dad2d31d2d393c9f778)
+  `readable-stream@3.1.1`
+  ([@aeschright](https://github.com/aeschright))
+* [`887e94386`](https://github.com/npm/cli/commit/887e94386f42cb59a5628e7762b3662d084b23c8)
+  `lru-cache@4.1.5`
+  ([@aeschright](https://github.com/aeschright))
+* [`41f15524c`](https://github.com/npm/cli/commit/41f15524c58c59d206c4b1d25ae9e0f22745213b)
+  Updating semver docs.
+  ([@aeschright](https://github.com/aeschright))
+* [`fb3bbb72d`](https://github.com/npm/cli/commit/fb3bbb72d448ac37a465b31233b21381917422f3)
+  `npm-audit-report@1.3.2`:
+  ([@melkikh](https://github.com/melkikh))
+
+### TESTING
+
+* [`f1edffba9`](https://github.com/npm/cli/commit/f1edffba90ebd96cf88675d2e18ebc48954ba50e)
+  Modernize maketest script.
+  ([@iarna](https://github.com/iarna))
+* [`ae263473d`](https://github.com/npm/cli/commit/ae263473d92a896b482830d4019a04b5dbd1e9d7)
+  maketest: Use promise based example common.npm call.
+  ([@iarna](https://github.com/iarna))
+* [`d9970da5e`](https://github.com/npm/cli/commit/d9970da5ee97a354eab01cbf16f9101693a15d2d)
+  maketest: Use newEnv for env production.
+  ([@iarna](https://github.com/iarna))
+
+### MISCELLANEOUS
+
+* [`c665f35aa`](https://github.com/npm/cli/commit/c665f35aacdb8afdbe35f3dd7ccb62f55ff6b896)
+  [#119](https://github.com/npm/cli/pull/119)
+  Replace var with const/let in lib/repo.js.
+  ([@watilde](https://github.com/watilde))
 
 ## v6.5.0 (2018-11-28):
 
@@ -146,7 +265,7 @@ curious about details:
 ### BUGFIXES
 
 * [`89652cb9b`](https://github.com/npm/cli/commit/89652cb9b810f929f5586fc90cc6794d076603fb)
-  [npm.community#1661](https://npm.community/t/https://npm.community/t/1661)
+  [npm.community#1661](https://npm.community/t/1661)
   Fix sign-git-commit options. They were previously totally wrong.
   ([@zkat](https://github.com/zkat))
 * [`414f2d1a1`](https://github.com/npm/cli/commit/414f2d1a1bdffc02ed31ebb48a43216f284c21d4)
@@ -300,7 +419,7 @@ curious about details:
   circular dependency fix, as well as adding a proper LICENSE file.
   ([@isaacs](https://github.com/isaacs))
 * [`e8d5f4418`](https://github.com/npm/cli/commit/e8d5f441821553a31fc8cd751670663699d2c8ce)
-  [npm.community#632](https://npm.community/t/https://npm.community/t/using-npm-ci-does-not-run-prepare-script-for-git-modules/632)
+  [npm.community#632](https://npm.community/t/using-npm-ci-does-not-run-prepare-script-for-git-modules/632)
   `libcipm@2.0.2`:
   Fixes issue where `npm ci` wasn't running the `prepare` lifecycle script when
   installing git dependencies
