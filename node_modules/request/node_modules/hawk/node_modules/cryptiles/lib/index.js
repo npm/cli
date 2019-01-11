@@ -3,6 +3,7 @@
 // Load modules
 
 const Crypto = require('crypto');
+
 const Boom = require('boom');
 
 
@@ -29,17 +30,30 @@ exports.randomString = function (size) {
 
 exports.randomDigits = function (size) {
 
-    const buffer = exports.randomBits(size * 8);
-    if (buffer instanceof Error) {
-        return buffer;
-    }
+    try {
+        const digits = [];
 
-    const digits = [];
-    for (let i = 0; i < buffer.length; ++i) {
-        digits.push(Math.floor(buffer[i] / 25.6));
-    }
+        let buffer = internals.random(size * 2);            // Provision twice the amount of bytes needed to increase chance of single pass
+        let pos = 0;
 
-    return digits.join('');
+        while (digits.length < size) {
+            if (pos >= buffer.length) {
+                buffer = internals.random(size * 2);
+                pos = 0;
+            }
+
+            if (buffer[pos] < 250) {
+                digits.push(buffer[pos] % 10);
+            }
+
+            ++pos;
+        }
+
+        return digits.join('');
+    }
+    catch (err) {
+        return err;
+    }
 };
 
 
@@ -55,10 +69,10 @@ exports.randomBits = function (bits) {
 
     const bytes = Math.ceil(bits / 8);
     try {
-        return Crypto.randomBytes(bytes);
+        return internals.random(bytes);
     }
     catch (err) {
-        return Boom.internal('Failed generating random bits: ' + err.message);
+        return err;
     }
 };
 
@@ -67,22 +81,21 @@ exports.randomBits = function (bits) {
 
 exports.fixedTimeComparison = function (a, b) {
 
-    if (typeof a !== 'string' ||
-        typeof b !== 'string') {
-
+    try {
+        return Crypto.timingSafeEqual(Buffer.from(a), Buffer.from(b));
+    }
+    catch (err) {
         return false;
     }
+};
 
-    let mismatch = (a.length === b.length ? 0 : 1);
-    if (mismatch) {
-        b = a;
+
+internals.random = function (bytes) {
+
+    try {
+        return Crypto.randomBytes(bytes);
     }
-
-    for (let i = 0; i < a.length; ++i) {
-        const ac = a.charCodeAt(i);
-        const bc = b.charCodeAt(i);
-        mismatch |= (ac ^ bc);
+    catch (err) {
+        throw Boom.internal('Failed generating random bits: ' + err.message);
     }
-
-    return (mismatch === 0);
 };
