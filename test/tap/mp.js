@@ -1,6 +1,8 @@
 "use strict"
 const common  = require("../common-tap.js")
 const path = require("path")
+const mr = require('npm-registry-mock')
+const fs = require('graceful-fs')
 const test = require("tap").test
 const rimraf = require("rimraf")
 const basePath = path.resolve(__dirname, path.basename(__filename, ".js"))
@@ -13,10 +15,18 @@ const Dir = Tacks.Dir
 const jsFile1 = "require('uninstalledDep1')"
 const jsFile2 = "require('dep1'); require('dep2')"
 const jsFile3 = "require('dep1'); require('dep3')"
+const jsFile4 = "require('underscore')"
+
+let server
 
 test("setup", function (t) {
   cleanup()
-  t.end()
+
+  mr({ port: common.port }, function (err, s) {
+    t.ifError(err)
+    server = s
+    t.end()
+  })
 })
 
 test("mp check simple file", function(t) {
@@ -145,17 +155,21 @@ test("mp install missing deps in file", function(t) {
           dep1: "installedDep1",
         }
       }),
-      "file1.js": File(jsFile2)
+      "file4.js": File(jsFile4)
     })
   }))
 
   withFixture(t, fixture, function(done) {
-    common.npm(["mp", "install", "file1.js", "-y"], {
+    // @TODO: say yes to inquirer
+    common.npm(["mp", "install", "file1.js"], {
       cwd: testDirPath
     }, function(err, code, stdout, stderr) {
       t.ifErr(err, "mp succeeded")
       t.equal(0, code, "exit 0 on mp")
-      // @TODO: verify that -y works and check packages.json deps
+      const packageJsonPath = path.resolve(testDirPath, "package.json")
+      const installedDeps = JSON.parse(fs.readFileSync(packageJsonPath, "utf8")).dependencies
+
+      t.equal(Object.keys(installedDeps), ["dep1", "underscore"])
       done()
     })
   })
