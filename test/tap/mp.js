@@ -19,17 +19,17 @@ const jsFile4 = "require('underscore')"
 
 let server
 
-test("setup", function (t) {
+test("setup", (t) => {
   cleanup()
 
-  mr({ port: common.port }, function (err, s) {
+  mr({ port: common.port }, (err, s) => {
     t.ifError(err)
     server = s
     t.end()
   })
 })
 
-test("mp check simple file", function(t) {
+test("mp check simple file", (t) => {
   const fixture = new Tacks(Dir({
     "npm-test-mp": Dir({
       "package.json": File({
@@ -43,7 +43,7 @@ test("mp check simple file", function(t) {
     })
   }))
 
-  withFixture(t, fixture, function(done) {
+  withFixture(t, fixture, (done) => {
     common.npm(["mp", "check", "./file1.js"], {
       cwd: testDirPath
     }, function(err, code, stdout, stderr) {
@@ -57,7 +57,7 @@ test("mp check simple file", function(t) {
   })
 })
 
-test("mp c (check) simple file", function(t) {
+test("mp c (check) simple file", (t) => {
   const fixture = new Tacks(Dir({
     "npm-test-mp": Dir({
       "package.json": File({
@@ -71,7 +71,7 @@ test("mp c (check) simple file", function(t) {
     })
   }))
 
-  withFixture(t, fixture, function(done) {
+  withFixture(t, fixture, (done) => {
     common.npm(["mp", "c", "./file1.js"], {
       cwd: testDirPath
     }, function(err, code, stdout, stderr) {
@@ -85,7 +85,7 @@ test("mp c (check) simple file", function(t) {
   })
 })
 
-test("mp check folder", function(t) {
+test("mp check folder", (t) => {
   const fixture = new Tacks(Dir({
     "npm-test-mp": Dir({
       "package.json": File({
@@ -100,7 +100,7 @@ test("mp check folder", function(t) {
     })
   }))
 
-  withFixture(t, fixture, function(done) {
+  withFixture(t, fixture, (done) => {
     common.npm(["mp", "check", "."], {
       cwd: testDirPath
     }, function(err, code, stdout, stderr) {
@@ -114,7 +114,7 @@ test("mp check folder", function(t) {
   })
 })
 
-test("mp check folder but all installed", function(t) {
+test("mp check folder but all installed", (t) => {
   const fixture = new Tacks(Dir({
     "npm-test-mp": Dir({
       "package.json": File({
@@ -131,7 +131,7 @@ test("mp check folder but all installed", function(t) {
     })
   }))
 
-  withFixture(t, fixture, function(done) {
+  withFixture(t, fixture, (done) => {
     common.npm(["mp", "check", "."], {
       cwd: testDirPath
     }, function(err, code, stdout, stderr) {
@@ -145,7 +145,9 @@ test("mp check folder but all installed", function(t) {
   })
 })
 
-test("mp install missing deps in file", function(t) {
+test("mp install missing deps in file", (t) => {
+  let runner
+
   const fixture = new Tacks(Dir({
     "npm-test-mp": Dir({
       "package.json": File({
@@ -159,23 +161,39 @@ test("mp install missing deps in file", function(t) {
     })
   }))
 
-  withFixture(t, fixture, function(done) {
-    // @TODO: say yes to inquirer
-    common.npm(["mp", "install", "file1.js"], {
+  withFixture(t, fixture, (done) => {
+    runner = common.npm(["mp", "install", "file4.js"], {
       cwd: testDirPath
-    }, function(err, code, stdout, stderr) {
-      t.ifErr(err, "mp succeeded")
-      t.equal(0, code, "exit 0 on mp")
+    }, (err, code, stdout, stderr) => {
+      t.ifErr(err, "mp install succeeded")
+      t.equal(code, 0, "exit 0 on mp install")
       const packageJsonPath = path.resolve(testDirPath, "package.json")
       const installedDeps = JSON.parse(fs.readFileSync(packageJsonPath, "utf8")).dependencies
+      const expected = ["dep1", "underscore"]
 
-      t.equal(Object.keys(installedDeps), ["dep1", "underscore"])
+      t.same(Object.keys(installedDeps), expected)
       done()
+    })
+
+    let remaining = 3
+
+    runner.stdout.on("data", (chunk) => {
+      remaining--
+
+      if (remaining === 2) {
+        runner.stdin.write("y")
+        runner.stdin.end()
+      } else if(remaining === 0) {
+        // Removes special characters and emojis
+        const message = chunk.toString('utf8').trim().substr(2)
+        t.equal(message, "Packages installed !")
+      }
     })
   })
 })
 
-test("cleanup", function (t) {
+test("cleanup", (t) => {
+  server.close()
   cleanup()
   t.end()
 })
@@ -193,6 +211,6 @@ function withFixture (t, fixture, tester) {
     if (err) throw err
     fixture.remove(fixturePath)
     rimraf.sync(basePath)
-    t.done()
+    t.end()
   }
 }
