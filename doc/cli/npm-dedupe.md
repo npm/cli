@@ -43,10 +43,10 @@ be deleted.
 
 Arguments are ignored. Dedupe always acts on the entire tree.
 
-Modules
+### Modules
 
-Note that this operation transforms the dependency tree, but will never
-result in new modules being installed.
+Note that this operation automatically fixes broken installs, which can sometimes
+cause the installation of new packages, just like `npm-install(1)` does.
 
 ## SEE ALSO
 
