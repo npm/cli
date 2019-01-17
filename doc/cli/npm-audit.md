@@ -3,10 +3,20 @@ npm-audit(1) -- Run a security audit
 
 ## SYNOPSIS
 
-    npm audit [--json|--parseable]
+    npm audit [--json|--parseable|--production|--only=dev]
     npm audit fix [--force|--package-lock-only|--dry-run|--production|--only=dev]
 
 ## EXAMPLES
+
+List vulnerabilities with a level of `high` or higher:
+```
+$ npm audit --audit-level high
+```
+
+List vulnerabilities in `devDependencies`:
+```
+$ npm audit --only=dev
+```
 
 Scan your project for vulnerabilities and automatically install any compatible
 updates to vulnerable dependencies:

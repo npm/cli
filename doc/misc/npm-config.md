@@ -153,7 +153,8 @@ even for `GET` requests.
 * Type: String
 
 When "dev" or "development" and running local `npm shrinkwrap`,
-`npm outdated`, or `npm update`, is an alias for `--dev`.
+`npm outdated`, or `npm update`, or `npm audit`, is an alias for
+`--dev`.
 
 ### audit
 
@@ -329,7 +330,7 @@ Show the description in `npm search`
 * Default: false
 * Type: Boolean
 
-Install `dev-dependencies` along with packages.
+Install or audit `devDependencies` along with packages.
 
 ### dry-run
 
@@ -723,15 +724,15 @@ usage.
 When "dev" or "development" and running local `npm install` without any
 arguments, only devDependencies (and their dependencies) are installed.
 
-When "dev" or "development" and running local `npm ls`, `npm outdated`, or
-`npm update`, is an alias for `--dev`.
+When "dev" or "development" and running local `npm ls`, `npm outdated`,
+`npm update`, or `npm audit`, is an alias for `--dev`.
 
 When "prod" or "production" and running local `npm install` without any
 arguments, only non-devDependencies (and their dependencies) are
 installed.
 
-When "prod" or "production" and running local `npm ls`, `npm outdated`, or
-`npm update`, is an alias for `--production`.
+When "prod" or "production" and running local `npm ls`, `npm outdated`,
+`npm update`, or `npm audit`, is an alias for `--production`.
 
 ### optional
 
@@ -822,8 +823,9 @@ semver. Like the `rc` in `1.2.0-rc.8`.
 Set to true to run in "production" mode.
 
 1. devDependencies are not installed at the topmost level when running
-   local `npm install` without any arguments.
-2. Set the NODE_ENV="production" for lifecycle scripts.
+   local `npm install` without any arguments or `npm audit fix`.
+2. devDependencies are excluded from the npm audit report
+3. Set the NODE_ENV="production" for lifecycle scripts.
 
 ### progress
 
