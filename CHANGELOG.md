@@ -1,4 +1,4 @@
-## v6.6.0 (2019-01-09):
+## v6.6.0 (2019-01-17):
 
 ### REFACTORING OUT npm-REGISTRY-CLIENT
 
@@ -249,6 +249,9 @@ curious about details:
   [#119](https://github.com/npm/cli/pull/119)
   Replace var with const/let in lib/repo.js.
   ([@watilde](https://github.com/watilde))
+* [`46639ba9f`](https://github.com/npm/cli/commit/46639ba9f04ea729502f1af28b02eb67fb6dcb66)
+  Update package-lock.json for https tarball URLs
+  ([@aeschright](https://github.com/aeschright))
 
 ## v6.5.0 (2018-11-28):
 
