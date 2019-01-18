@@ -1,3 +1,53 @@
+## v6.7.0 (2019-01-23):
+
+Hey y'all! This is a quick hotfix release that includes some important fixes to
+`npm@6.6.0` related to the large rewrite/refactor. We're tagging it as a feature
+release because the changes involve some minor new features, and semver is
+semver, but there's nothing major here.
+
+### NEW FEATURES
+
+* [`50463f58b`](https://github.com/npm/cli/commit/50463f58b4b70180a85d6d8c10fcf50d8970ef5e)
+  Improve usage errors to `npm org` commands and add optional filtering to `npm
+  org ls` subcommand.
+  ([@zkat](https://github.com/zkat))
+
+### BUGFIXES
+
+* [`4027070b0`](https://github.com/npm/cli/commit/4027070b03be3bdae2515f2291de89b91f901df9)
+  Fix default usage printout for `npm org` so you actually see how it's supposed
+  to be used.
+  ([@zkat](https://github.com/zkat))
+* [`cfea6ea5b`](https://github.com/npm/cli/commit/cfea6ea5b67ec5e4ec57e3a9cb8c82d018cb5476)
+  fix default usage message for npm hook
+  ([@zkat](https://github.com/zkat))
+
+### DOCS
+
+* [`e959e1421`](https://github.com/npm/cli/commit/e959e14217d751ddb295565fd75cc81de1ee0d5b)
+  Add manpage for `npm org` command.
+  ([@zkat](https://github.com/zkat))
+
+### DEPENDENCY BUMPS
+
+* [`8543fc357`](https://github.com/npm/cli/commit/8543fc3576f64e91f7946d4c56a5ffb045b55156)
+  `pacote@9.4.0`: Fall back to "fullfat" packuments on ETARGET errors. This will
+  make it so that, when a package is published but the corgi follower hasn't
+  caught up, users can still install a freshly-published package.
+  ([@zkat](https://github.com/zkat))
+* [`75475043b`](https://github.com/npm/cli/commit/75475043b03a254b2e7db2c04c3f0baea31d8dc5)
+  [npm.community#4752](https://npm.community/t/npm-6-6-0-broke-authentication-with-npm-registry-couchapp/4752)
+  `libnpmpublish@1.1.1`: Fixes auth error for username/password legacy authentication.
+  ([@sreeramjayan](https://github.com/sreeramjayan))
+* [`0af8c00ac`](https://github.com/npm/cli/commit/0af8c00acb01849362ffca25b567cc62447c7175)
+  [npm.community#4746](https://npm.community/t/npm-6-6-0-release-breaking-docker-npm-ci-commands/4746)
+  `libcipm@3.0.3`: Fixes issue with "cannot run in wd" errors for run-scripts.
+  ([@zkat](https://github.com/zkat))
+* [`5a7962e46`](https://github.com/npm/cli/commit/5a7962e46f582c6bd91784b0ddc941ed45e9f802)
+  `write-file-atomic@2.4.2`:
+  Fixes issues with leaking `signal-exit` instances and file descriptors.
+  ([@iarna](https://github.com/iarna))
+
 ## v6.6.0 (2019-01-17):
 
 ### REFACTORING OUT npm-REGISTRY-CLIENT
