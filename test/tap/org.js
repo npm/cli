@@ -1,9 +1,9 @@
 'use strict'
 
-var mr = require('npm-registry-mock')
-
 var test = require('tap').test
 var common = require('../common-tap.js')
+
+var mr = common.fakeRegistry.compat
 
 var server
 
