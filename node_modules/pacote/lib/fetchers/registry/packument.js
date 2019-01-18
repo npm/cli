@@ -59,7 +59,15 @@ function fetchPackument (uri, registry, spec, opts) {
       mem.set(memoKey, packument)
     }
     return packument
-  }))
+  })).catch(err => {
+    if (err.code === 'E404' && !opts.fullMetadata) {
+      return fetchPackument(uri, registry, spec, opts.concat({
+        fullMetadata: true
+      }))
+    } else {
+      throw err
+    }
+  })
 }
 
 class ObjProxy {

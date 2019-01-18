@@ -16,9 +16,10 @@ function manifest (spec, opts) {
 }
 
 function getManifest (spec, opts) {
-  return fetchPackument(spec, opts.concat({
+  opts = opts.concat({
     fullMetadata: opts.enjoyBy ? true : opts.fullMetadata
-  })).then(packument => {
+  })
+  return fetchPackument(spec, opts).then(packument => {
     try {
       return pickManifest(packument, spec.fetchSpec, {
         defaultTag: opts.defaultTag,
@@ -29,14 +30,15 @@ function getManifest (spec, opts) {
       if (err.code === 'ETARGET' && packument._cached && !opts.offline) {
         opts.log.silly(
           'registry:manifest',
-          `no matching version for ${spec.name}@${spec.fetchSpec} in the cache. Forcing revalidation`
+          `no matching version for ${spec.name}@${spec.fetchSpec} in the cache. Forcing revalidation.`
         )
         opts = opts.concat({
           preferOffline: false,
           preferOnline: true
         })
         return fetchPackument(spec, opts.concat({
-          fullMetadata: opts.enjoyBy ? true : opts.fullMetadata
+          // Fetch full metadata in case ETARGET was due to corgi delay
+          fullMetadata: true
         })).then(packument => {
           return pickManifest(packument, spec.fetchSpec, {
             defaultTag: opts.defaultTag,

@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.4.0"></a>
+# [9.4.0](https://github.com/zkat/pacote/compare/v9.3.0...v9.4.0) (2019-01-14)
+
+
+### Features
+
+* **registry:** fall back to fullfat if something might be wrong with corgis ([0e71d6b](https://github.com/zkat/pacote/commit/0e71d6b))
+
+
+
 <a name="9.3.0"></a>
 # [9.3.0](https://github.com/zkat/pacote/compare/v9.2.3...v9.3.0) (2018-12-21)
 
