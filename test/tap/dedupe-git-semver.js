@@ -5,7 +5,6 @@ const test = require('tap').test
 const requireInject = require('require-inject')
 const Tacks = require('tacks')
 const File = Tacks.File
-const Symlink = Tacks.Symlink
 const Dir = Tacks.Dir
 
 const manifests = {
@@ -37,7 +36,6 @@ const npm = requireInject.installGlobally('../../lib/npm.js', {
 const basedir = path.join(__dirname, path.basename(__filename, '.js'))
 const testdir = path.join(basedir, 'testdir')
 const cachedir = path.join(basedir, 'cache')
-const globaldir = path.join(basedir, 'global')
 const tmpdir = path.join(basedir, 'tmp')
 
 const cwd = process.cwd()
@@ -45,12 +43,10 @@ const cwd = process.cwd()
 const conf = {
   cache: cachedir,
   tmp: tmpdir,
-  prefix: testdir,
   loglevel: 'silent',
   'package-lock-only': true
 }
 
-let server
 const fixture = new Tacks(Dir({
   cache: Dir(),
   global: Dir(),
@@ -74,7 +70,7 @@ const fixture = new Tacks(Dir({
     //     }
     //   })
     // }),
-    'git-wrap-1.0.0.tgz': File(new Buffer(
+    'git-wrap-1.0.0.tgz': File(Buffer.from(
       '1f8b0800000000000003ed8fcd0ac23010843df729423caaf9c13642df26' +
       'b44bad9a3434f107a4efeec68aa7de2c8898ef32cb0c3bec3a5d1d7503dc' +
       '8dca0ebeb38b991142a83c27537e44ee30db164a48a994c01987a210a873' +
