@@ -118,7 +118,7 @@ test('dedupe matching git semver ranges', function (t) {
         'git-wrap': {
           version: 'file:git-wrap-1.0.0.tgz',
           requires: {
-            git: 'git+https://example.com/git#0000000000000000000000000000000000000000'
+            git: 'git+https://example.com/git#semver:1'
           }
         }
       }
