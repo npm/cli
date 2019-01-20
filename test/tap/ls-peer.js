@@ -3,7 +3,6 @@ const path = require('path')
 const test = require('tap').test
 const Tacks = require('tacks')
 const File = Tacks.File
-const Symlink = Tacks.Symlink
 const Dir = Tacks.Dir
 const common = require('../common-tap.js')
 
@@ -47,7 +46,7 @@ const fixture = new Tacks(Dir({
     //     }
     //   })
     // }),
-    'dep-1.0.0.tgz': File(new Buffer(
+    'dep-1.0.0.tgz': File(Buffer.from(
       '1f8b0800000000000003ed8f3d0ec2300c853be71451661a1cd166e8cc45' +
       'a2d654e1278d92c200eadd491a60ea462584946fb1f5fc9e655bd59e548f' +
       '5b9b2a3ffac1142b0300b2aae8921e1152d062574b10424a08bed0d4d10f' +
@@ -64,7 +63,7 @@ const fixture = new Tacks(Dir({
     //     version: '2.0.0'
     //   })
     // }),
-    'peer-dep-1.0.0.tgz': File(new Buffer(
+    'peer-dep-1.0.0.tgz': File(Buffer.from(
       '1f8b08000000000000032b484cce4e4c4fd52f80d07a59c5f9790c540606' +
       '06066626260ad8c4c1c0d45c81c1d8d4ccc0d0d0cccc00a80ec830353500' +
       'd2d4760836505a5c925804740aa5e640bca200a78708a8e6525050ca4bcc' +
@@ -72,7 +71,7 @@ const fixture = new Tacks(Dir({
       '0c94b86ab906dab9a360148c8251300aa80400c1c67f6300080000',
       'hex'
     )),
-    'peer-dep-2.0.0.tgz': File(new Buffer(
+    'peer-dep-2.0.0.tgz': File(Buffer.from(
       '1f8b08000000000000032b484cce4e4c4fd52f80d07a59c5f9790c540606' +
       '06066626260ad8c4c1c0d45c81c1d8d4ccc0d0d0cccc00a80ec830353500' +
       'd2d4760836505a5c925804740aa5e640bca200a78708a8e6525050ca4bcc' +
