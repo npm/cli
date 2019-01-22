@@ -197,7 +197,7 @@ test('retry after a conflict', t => {
           _nodeVersion: process.versions.node,
           _npmVersion: '6.9.0',
           _npmUser: {
-            username: 'other',
+            name: 'other',
             email: 'other@idk.tech'
           },
           name: 'libnpmpublish',
@@ -282,7 +282,7 @@ test('retry after a conflict -- no versions on remote', t => {
           _nodeVersion: process.versions.node,
           _npmVersion: '6.9.0',
           _npmUser: {
-            username: 'other',
+            name: 'other',
             email: 'other@idk.tech'
           },
           name: 'libnpmpublish',
@@ -432,7 +432,7 @@ test('publish with basic auth', t => {
           _nodeVersion: process.versions.node,
           _npmVersion: '6.9.0',
           _npmUser: {
-            username: 'zkat',
+            name: 'zkat',
             email: 'kat@example.tech'
           },
           maintainers: [{

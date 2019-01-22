@@ -88,7 +88,7 @@ function patchedManifest (spec, auth, base, opts) {
     // currently gets filled in by the npm registry itself, based on auth
     // information.
     manifest._npmUser = {
-      username: auth.username,
+      name: auth.username,
       email: auth.email
     }
   }

@@ -8,13 +8,13 @@ care of putting it up on a nice registry for you.
 ## Example
 
 ```js
-const search = require('libnpmpublish')
+const { publish, unpublish } = require('libnpmpublish')
 
 ```
 
 ## Install
 
-`$ npm install libnpmsearch`
+`$ npm install libnpmpublish`
 
 ## Table of Contents
 
@@ -22,8 +22,8 @@ const search = require('libnpmpublish')
 * [Install](#install)
 * [API](#api)
   * [publish/unpublish opts](#opts)
-  * [`search()`](#search)
-  * [`search.stream()`](#search-stream)
+  * [`publish()`](#publish)
+  * [`unpublish()`](#unpublish)
 
 ### API
 
