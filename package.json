@@ -140,7 +140,7 @@
     "validate-npm-package-name": "~3.0.0",
     "which": "^1.3.1",
     "worker-farm": "^1.6.0",
-    "write-file-atomic": "^2.3.0"
+    "write-file-atomic": "^2.4.2"
   },
   "bundleDependencies": [
     "abbrev",
