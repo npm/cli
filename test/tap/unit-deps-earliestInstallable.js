@@ -146,7 +146,7 @@ test('earliestInstallable should consider peerDependencies', function (t) {
     children: [dep1],
     package: {
       name: 'pkg',
-      dependencies: { dep1: '1.0.0' },
+      dependencies: { dep1: '1.0.0' }
     },
     path: '/',
     realpath: '/'

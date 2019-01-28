@@ -49,7 +49,7 @@ const fixture = new Tacks(Dir({
     // file: dependencies do not work as they are symlinked and behave
     // differently. Instead installation from tgz files is used.
     packages: Dir({
-      'base-dep-1.0.0.tgz': File(new Buffer(
+      'base-dep-1.0.0.tgz': File(Buffer.from(
         '1f8b080000000000000a2b484cce4e4c4fd52f80d07a59c5f9790c540606' +
         '06066666660ad8c4c1c0d45c81c1d8d4ccc0d0d0ccccc0448101c8303505' +
         'd1d4760836505a5c925804740aa5e640bca200a78708a8e6525050ca4bcc' +
@@ -57,7 +57,7 @@ const fixture = new Tacks(Dir({
         '0c94b86ab906dab9a360148c8251300aa80400a44d97d100080000',
         'hex'
       )),
-      'base-dep-2.0.0.tgz': File(new Buffer(
+      'base-dep-2.0.0.tgz': File(Buffer.from(
         '1f8b080000000000000a2b484cce4e4c4fd52f80d07a59c5f9790c540606' +
         '06066666660ad8c4c1c0d45c81c1d8d4ccc0d0d0ccccc0448101c8303505' +
         'd1d4760836505a5c925804740aa5e640bca200a78708a8e6525050ca4bcc' +
@@ -65,7 +65,7 @@ const fixture = new Tacks(Dir({
         '0c94b86ab906dab9a360148c8251300aa80400aebbeeba00080000',
         'hex'
       )),
-      'plugin-dep-1.0.0.tgz': File(new Buffer(
+      'plugin-dep-1.0.0.tgz': File(Buffer.from(
         '1f8b080000000000000aed8f3d0e83300c8599394594b904476d3274e622' +
         '295888fe8488408756dcbd0e513bb115a9aa946f79ce7bb1653b535f4c8b' +
         'a58b2acebeb7d9c60080d69aadf90119b2bdd220a98203cba8504a916ebd' +
@@ -103,7 +103,7 @@ test('example', t => {
     t.similar(packageLock, {
       dependencies: {
         'base-dep': {
-          version: 'file:packages/base-dep-2.0.0.tgz',
+          version: 'file:packages/base-dep-2.0.0.tgz'
         },
         'package': {
           version: 'file:package',
@@ -128,4 +128,3 @@ test('cleanup', t => {
   cleanup()
   t.done()
 })
-
