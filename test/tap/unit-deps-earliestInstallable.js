@@ -67,7 +67,7 @@ test('earliestInstallable should consider devDependencies', function (t) {
   dep2a.parent = dep1
   dep2.parent = pkg
 
-  var earliest = earliestInstallable(dep1, dep1, dep2a.package, log)
+  var earliest = earliestInstallable(dep1, dep1, dep2a.package, log, null)
   t.isDeeply(earliest, dep1, 'should hoist package when an incompatible devDependency is present')
   t.end()
 })
@@ -108,7 +108,58 @@ test('earliestInstallable should reuse shared prod/dev deps when they are identi
   dep1.parent = pkg
   dep2.parent = pkg
 
-  var earliest = earliestInstallable(dep1, dep1, dep2.package, log)
+  var earliest = earliestInstallable(dep1, dep1, dep2.package, log, null)
   t.isDeeply(earliest, pkg, 'should reuse identical shared dev/prod deps when installing both')
+  t.end()
+})
+
+test('earliestInstallable should consider peerDependencies', function (t) {
+  var dep1 = {
+    children: [],
+    package: {
+      name: 'dep1',
+      dependencies: {
+        dep2: '1.0.0',
+        dep3: '1.0.0'
+      }
+    },
+    path: '/dep1',
+    realpath: '/dep1'
+  }
+
+  var dep2 = {
+    package: {
+      name: 'dep2',
+      version: '1.0.0',
+      peerDependencies: {
+        dep3: '1.0.0'
+      },
+      _requested: npa('dep2@^1.0.0')
+    },
+    parent: dep1,
+    path: '/dep1/node_modules/dep2',
+    realpath: '/dep1/node_modules/dep2'
+  }
+
+  var pkg = {
+    isTop: true,
+    children: [dep1],
+    package: {
+      name: 'pkg',
+      dependencies: { dep1: '1.0.0' }
+    },
+    path: '/',
+    realpath: '/'
+  }
+
+  dep1.parent = pkg
+
+  var earliest = earliestInstallable(dep1, dep1, dep2.package, log, null)
+  t.isDeeply(earliest, dep1, 'should not be able to hoist the package to top-level')
+
+  dep1.children.push(dep2)
+
+  var earliestWithIgnore = earliestInstallable(dep1, dep1, dep2.package, log, dep2)
+  t.isDeeply(earliestWithIgnore, dep1, 'should not be able to hoist the package to top-level')
   t.end()
 })
