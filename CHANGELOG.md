@@ -31,6 +31,10 @@ the directory path for a package within a monorepo.
   [#149](https://github.com/npm/cli/pull/149)
   Use figgy-config to make sure extra opts are there.
   ([@zkat](https://github.com/zkat))
+* [`3c22d1a35`](https://github.com/npm/cli/commit/3c22d1a35878f73c0af8ea5968b962a85a1a9b84)
+  [npm.community#5101](https://npm.community/t/npm-6-6-0-breaks-access-to-ls-collaborators/5101)
+  Fix `ls-collaborators` access error for non-scoped case.
+  ([@zkat](https://github.com/zkat))
 
 ### DEPENDENCY BUMPS
 
@@ -43,6 +47,12 @@ the directory path for a package within a monorepo.
   ([@zkat](https://github.com/zkat))
 * [`95ca1aef4`](https://github.com/npm/cli/commit/95ca1aef4077c8e68d9f4dce37f6ba49b591c4ca)
   `pacote@9.4.1`
+  ([@aeschright](https://github.com/aeschright))
+* [`322fef403`](https://github.com/npm/cli/commit/322fef40376e71cd100159dc914e7ca89faae327)
+  `normalize-package-data@2.5.0`
+  ([@aeschright](https://github.com/aeschright))
+* [`32d34c0da`](https://github.com/npm/cli/commit/32d34c0da4f393a74697297667eb9226155ecc6b)
+  `npm-packlist@1.3.0`
   ([@aeschright](https://github.com/aeschright))
 
 ### MISC
