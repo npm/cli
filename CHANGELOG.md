@@ -1,4 +1,4 @@
-## v6.8.0 (2019-01-31):
+## v6.8.0 (2019-02-07):
 
 This release includes an implementation of [RFC #10](https://github.com/npm/rfcs/blob/latest/accepted/0010-monorepo-subdirectory-declaration.md), documenting an optional field that can be used to specify
 the directory path for a package within a monorepo.
@@ -35,6 +35,11 @@ the directory path for a package within a monorepo.
   [npm.community#5101](https://npm.community/t/npm-6-6-0-breaks-access-to-ls-collaborators/5101)
   Fix `ls-collaborators` access error for non-scoped case.
   ([@zkat](https://github.com/zkat))
+* [`d5137091d`](https://github.com/npm/cli/commit/d5137091dd695a2980f7ade85fdc56b2421ff677)
+  [npm.community#754](https://npm.community/t/npm-install-for-package-with-local-dependency-fails/754)
+  Fix issue with sub-folder local references.
+  ([@iarna](https://github.com/iarna))
+  ([@jhecking](https://github.com/jhecking))
 
 ### DEPENDENCY BUMPS
 
