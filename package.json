@@ -83,7 +83,7 @@
     "lodash.union": "~4.6.0",
     "lodash.uniq": "~4.5.0",
     "lodash.without": "~4.4.0",
-    "lru-cache": "^4.1.5",
+    "lru-cache": "^5.1.1",
     "meant": "~1.0.1",
     "mississippi": "^3.0.0",
     "mkdirp": "~0.5.1",
