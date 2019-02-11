@@ -30,6 +30,9 @@ const npm = requireInject.installGlobally('../../lib/npm.js', {
       manifest._from = spec.rawSpec
       return Promise.resolve(manifest)
     }
+  },
+  '../../lib/utils/output.js': function () {
+    // do not output to stdout
   }
 })
 
