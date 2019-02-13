@@ -19,10 +19,6 @@ the directory path for a package within a monorepo.
   [#144](https://github.com/npm/cli/pull/144)
   Fix common.npm callback arguments. 
   ([@larsgw](https://github.com/larsgw))
-* [`91314e77b`](https://github.com/npm/cli/commit/91314e77be09a50a275f59ccda314f7cfe269069)
-  [npm.community#4794](https://npm.community/t/packages-with-peerdependencies-are-incorrectly-hoisted/4794)
-  Fix hoisting of packages with peerDeps.
-  ([@sokra](https://github.com/sokra))
 * [`25573e9b9`](https://github.com/npm/cli/commit/25573e9b9d5d26261c68d453f06db5b3b1cd6789)
   [npm.community#4770](https://npm.community/t/https://npm.community/t/4770)
   Show installed but unmet peer deps.
@@ -59,6 +55,9 @@ the directory path for a package within a monorepo.
 * [`32d34c0da`](https://github.com/npm/cli/commit/32d34c0da4f393a74697297667eb9226155ecc6b)
   `npm-packlist@1.3.0`
   ([@aeschright](https://github.com/aeschright))
+* [`338571cf0`](https://github.com/npm/cli/commit/338571cf0bd3a1e2ea800464d57581932ff0fb11)
+  `read-package-tree@5.2.2`
+  ([@zkat](https://github.com/zkat))
 
 ### MISC
 
