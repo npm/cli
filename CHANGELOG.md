@@ -1,6 +1,6 @@
 ## v6.8.0 (2019-02-07):
 
-This release includes an implementation of [RFC #10](https://github.com/npm/rfcs/blob/latest/accepted/0010-monorepo-subdirectory-declaration.md), documenting an optional field that can be used to specify
+This release includes an implementation of [RFC #10](https://github.com/npm/rfcs/blob/latest/implemented/0010-monorepo-subdirectory-declaration.md), documenting an optional field that can be used to specify
 the directory path for a package within a monorepo.
 
 ### NEW FEATURES
