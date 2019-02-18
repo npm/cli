@@ -89,6 +89,14 @@ const pacote = {
       repository: { url: 'git+https://gothib.com/foo/unhostedgithttpsobj' }
     }
 
+    : spec === 'directory' ? {
+      repository: {
+        type: 'git',
+        url: 'git+https://github.com/foo/test-repo-with-directory.git',
+        directory: 'some/directory'
+      }
+    }
+
     : spec === '.' ? {
       name: 'thispkg',
       version: '1.2.3',
@@ -143,6 +151,7 @@ t.test('open repo urls', t => {
     unhostedgitsshobj: 'https://gothib.com/foo/unhostedgitsshobj',
     unhostedgithttpobj: 'http://gothib.com/foo/unhostedgithttpobj',
     unhostedgithttpsobj: 'https://gothib.com/foo/unhostedgithttpsobj',
+    directory: 'https://github.com/foo/test-repo-with-directory/tree/master/some/directory',
     '.': 'https://example.com/thispkg'
   }
   const keys = Object.keys(expect)
