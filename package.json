@@ -76,7 +76,7 @@
     "libnpm": "^2.0.1",
     "libnpmhook": "^5.0.2",
     "libnpx": "^10.2.0",
-    "lock-verify": "^2.0.2",
+    "lock-verify": "^2.1.0",
     "lockfile": "^1.0.4",
     "lodash._baseuniq": "~4.6.0",
     "lodash.clonedeep": "~4.5.0",
