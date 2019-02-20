@@ -278,7 +278,7 @@
     "sprintf-js": "^1.1.2",
     "standard": "^11.0.1",
     "tacks": "^1.2.7",
-    "tap": "^12.1.1",
+    "tap": "^12.5.3",
     "tar-stream": "^2.0.0"
   },
   "scripts": {
