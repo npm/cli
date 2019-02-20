@@ -1,3 +1,97 @@
+## v6.9.0 (2018-02-20):
+
+### FEATURES
+
+* [`2ba3a0f67`](https://github.com/npm/cli/commit/2ba3a0f6721f6d5a16775aebce6012965634fc7c)
+  [#90](https://github.com/npm/cli/pull/90)
+  Time traveling installs using the `--before` flag.
+  ([@zkat](https://github.com/zkat))
+* [`b7b54f2d1`](https://github.com/npm/cli/commit/b7b54f2d18e2d8d65ec67c850b21ae9f01c60e7e)
+  [#3](https://github.com/npm/cli/pull/3)
+  Add support for package aliases. This allows packages to be installed under a
+  different directory than the package name listed in `package.json`, and adds a
+  new dependency type to allow this to be done for registry dependencies.
+  ([@zkat](https://github.com/zkat))
+* [`684bccf06`](https://github.com/npm/cli/commit/684bccf061dfc97bb759121bc0ad635e01c65868)
+  [#146](https://github.com/npm/cli/pull/146)
+  Always save `package-lock.json` when using `--package-lock-only`.
+  ([@aeschright](https://github.com/aeschright))
+* [`b8b8afd40`](https://github.com/npm/cli/commit/b8b8afd4048b4ba1181e00ba2ac49ced43936ce0)
+  [#139](https://github.com/npm/cli/pull/139)
+  Make empty-string run-scripts run successfully as a no-op.
+  ([@vlasy](https://github.com/vlasy))
+* [`8047b19b1`](https://github.com/npm/cli/commit/8047b19b1b994fd4b4e7b5c91d7cc4e0384bd5e4)
+  [npm.community#3784](https://npm.community/t/3784)
+  Match git semver ranges when flattening the tree.
+  ([@larsgw](https://github.com/larsgw))
+* [`e135c2bb3`](https://github.com/npm/cli/commit/e135c2bb360dcf00ecee34a95985afec21ba3655)
+  [npm.community#1725](https://npm.community/t/1725?u=larsgw)
+  Re-enable updating local packages.
+  ([@larsgw](https://github.com/larsgw))
+
+### BUGFIXES
+
+* [`cf09fbaed`](https://github.com/npm/cli/commit/cf09fbaed489d908e9b551382cc5f61bdabe99a9)
+  [#153](https://github.com/npm/cli/pull/153)
+  Set modified to undefined in `npm view` when `time` is not available. This
+  fixes a bug where `npm view` would crash on certain third-party registries.
+  ([@simonua](https://github.com/simonua))
+* [`774fc26ee`](https://github.com/npm/cli/commit/774fc26eeb01345c11bd8c97e2c4f328d419d9b5)
+  [#154](https://github.com/npm/cli/pull/154)
+  Print out tar version in `install.sh` only when the flag is supported not all
+  the tar implementations support --version flag. This allows the install script
+  to work in OpenBSD, for example.
+  ([@agudulin](https://github.com/agudulin))
+* [`863baff11`](https://github.com/npm/cli/commit/863baff11d8c870f1a0d9619bb5133c67d71e407)
+  [#158](https://github.com/npm/cli/pull/158)
+  Fix typo in error message for `npm stars`.
+  ([@phihag](https://github.com/phihag))
+* [`a805a95ad`](https://github.com/npm/cli/commit/a805a95ad8832ef5008671f4bd4c11b83e32e0f2)
+  [npm.community#4227](https://npm.community/t/4227)
+  Strip version info from pkg on E404. This improves the error messaging format.
+  ([@larsgw](https://github.com/larsgw))
+
+### DOCS
+
+* [`5d7633833`](https://github.com/npm/cli/commit/5d76338338621fd0b3d4f7914a51726d27569ee1)
+  [#160](https://github.com/npm/cli/pull/160)
+  Add `npm add` as alias to npm install in docs.
+  ([@ahasall](https://github.com/ahasall))
+* [`489c2211c`](https://github.com/npm/cli/commit/489c2211c96a01d65df50fd57346c785bcc3efe6)
+  [#162](https://github.com/npm/cli/pull/162)
+  Fix link to RFC #10 in the changelog.
+  ([@mansona](https://github.com/mansona))
+* [`433020ead`](https://github.com/npm/cli/commit/433020ead5251b562bc3b0f5f55341a5b8cc9023)
+  [#135](https://github.com/npm/cli/pull/135)
+  Describe exit codes in npm-audit docs.
+  ([@emilis-tm](https://github.com/emilis-tm))
+
+### DEPENDENCIES
+
+* [`ee6b6746b`](https://github.com/npm/cli/commit/ee6b6746b04f145dfe489af2d26667ac32ba0cef)
+  [zkat/make-fetch-happen#29](https://github.com/zkat/make-fetch-happen/issues/29)
+  `agent-base@4.2.1`
+  ([@TooTallNate](https://github.com/TooTallNate))
+* [`2ce23baf5`](https://github.com/npm/cli/commit/2ce23baf53b1ce7d11b8efb80c598ddaf9cef9e7)
+  `lock-verify@2.1.0`:
+  Adds support for package aliases
+  ([@zkat](https://github.com/zkat))
+* [`baaedbc6e`](https://github.com/npm/cli/commit/baaedbc6e2fc370d73b35e7721794719115507cc)
+  `pacote@9.5.0`:
+  Adds opts.before support
+  ([@zkat](https://github.com/zkat))
+* [`57e771a03`](https://github.com/npm/cli/commit/57e771a032165d1e31e71d0ff7530442139c21a6)
+  [#164](https://github.com/npm/cli/pull/164)
+  `licensee@6.1.0`
+  ([@kemitchell](https://github.com/kemitchell))
+* [`2b78288d4`](https://github.com/npm/cli/commit/2b78288d4accd10c1b7cc6c36bc28045f5634d91)
+  add core to default inclusion tests in pack
+  ([@Kat Marchán](https://github.com/Kat Marchán))
+* [`9b8b6513f`](https://github.com/npm/cli/commit/9b8b6513fbce92764b32a067322984985ff683fe)
+  [npm.community#5382](https://npm.community/t/npm-pack-leaving-out-files-6-8-0-only/5382)
+  `npm-packlist@1.4.1`: Fixes bug where `core/` directories were being suddenly excluded.
+  ([@zkat](https://github.com/zkat))
+
 ## v6.8.0 (2019-02-07):
 
 This release includes an implementation of [RFC #10](https://github.com/npm/rfcs/blob/latest/implemented/0010-monorepo-subdirectory-declaration.md), documenting an optional field that can be used to specify
@@ -17,7 +111,7 @@ the directory path for a package within a monorepo.
   ([@zkat](https://github.com/zkat))
 * [`cdb059293`](https://github.com/npm/cli/commit/cdb0592939d6256c80f7ec5a2b6251131a512a2a)
   [#144](https://github.com/npm/cli/pull/144)
-  Fix common.npm callback arguments. 
+  Fix common.npm callback arguments.
   ([@larsgw](https://github.com/larsgw))
 * [`25573e9b9`](https://github.com/npm/cli/commit/25573e9b9d5d26261c68d453f06db5b3b1cd6789)
   [npm.community#4770](https://npm.community/t/https://npm.community/t/4770)
