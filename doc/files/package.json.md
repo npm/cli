@@ -742,7 +742,7 @@ The host architecture is determined by `process.arch`
 
 ## preferGlobal
 
-Inform that this package is usually installed globally.
+**DEPRECATED**
 
 This option used to trigger an npm warning, but it will no longer warn. It is
 purely there for informational purposes. It is now recommended that you install
