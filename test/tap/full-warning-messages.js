@@ -70,7 +70,7 @@ function exists (t, filepath, msg) {
     t.pass(msg)
     return true
   } catch (ex) {
-    t.fail(msg, {found: null, wanted: 'exists', compare: 'fs.stat(' + filepath + ')'})
+    t.fail(msg, { found: null, wanted: 'exists', compare: 'fs.stat(' + filepath + ')' })
     return false
   }
 }
@@ -78,7 +78,7 @@ function exists (t, filepath, msg) {
 function notExists (t, filepath, msg) {
   try {
     fs.statSync(filepath)
-    t.fail(msg, {found: 'exists', wanted: null, compare: 'fs.stat(' + filepath + ')'})
+    t.fail(msg, { found: 'exists', wanted: null, compare: 'fs.stat(' + filepath + ')' })
     return true
   } catch (ex) {
     t.pass(msg)
@@ -87,21 +87,25 @@ function notExists (t, filepath, msg) {
 }
 
 test('tree-style', function (t) {
-  common.npm(['install', '--json', '--loglevel=warn'], {cwd: base}, function (err, code, stdout, stderr) {
+  common.npm(['install', '--json', '--loglevel=info'], { cwd: base }, function (err, code, stdout, stderr) {
     if (err) throw err
     t.is(code, 0, 'result code')
     var result = JSON.parse(stdout)
     t.is(result.added.length, 1, 'only added one module')
     t.is(result.added[0].name, 'modA', 'modA got installed')
-    t.is(result.warnings.length, 1, 'one warning')
-    var stderrlines = stderr.trim().split(/\n/)
-    t.is(stderrlines.length, 2, 'two lines of warnings')
-    t.match(stderr, /SKIPPING OPTIONAL DEPENDENCY/, 'expected optional failure warning in stderr')
+    t.is(result.warnings.length, 0, 'no warnings')
+    t.match(stderr, /SKIPPING OPTIONAL DEPENDENCY/, 'expected optional failure info in stderr')
     t.match(stderr, /Unsupported platform/, 'reason for optional failure in stderr')
-    t.match(result.warnings[0], /SKIPPING OPTIONAL DEPENDENCY/, 'expected optional failure warning in JSON')
-    t.match(result.warnings[0], /Unsupported platform/, 'reason for optional failure in JSON')
     exists(t, modJoin(base, 'modA'), 'module A')
     notExists(t, modJoin(base, 'modB'), 'module B')
+    t.done()
+  })
+})
+
+test('tree-style', function (t) {
+  common.npm(['install', '--loglevel=warn'], { cwd: base }, function (err, code, stdout, stderr) {
+    if (err) throw err
+    t.is(stderr.length, 0, 'EBADPLATFORM errors for optional deps are excluded from warnings')
     t.done()
   })
 })
