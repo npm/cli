@@ -53,11 +53,12 @@ The exact order of execution is as follows:
   1. Check to make sure the git working directory is clean before we get started.
      Your scripts may add files to the commit in future steps.
      This step is skipped if the `--force` flag is set.
-  2. Run the `preversion` script. These scripts have access to the old `version` in package.json.
+  2. Run the `preversion` script. These scripts have access to the old `version` in `package.json`.
      A typical use would be running your full test suite before deploying.
      Any files you want added to the commit should be explicitly added using `git add`.
   3. Bump `version` in `package.json` as requested (`patch`, `minor`, `major`, etc).
-  4. Run the `version` script. These scripts have access to the new `version` in package.json
+     Also updates `npm-shrinkwrap.json` or `package-lock.json` if present.
+  4. Run the `version` script. These scripts have access to the new `version` in `package.json`
      (so they can incorporate it into file headers in generated files for example).
      Again, scripts should explicitly add generated files to the commit using `git add`.
   5. Commit and tag.
