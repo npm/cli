@@ -219,7 +219,8 @@ Conversely, some files are always ignored:
 * `node_modules`
 * `config.gypi`
 * `*.orig`
-* `package-lock.json` (use shrinkwrap instead)
+
+`package-lock.json` is ignored by default, unless explicitly included (e.g. with `"*"`). Use shrinkwrap instead.
 
 ## main
 
