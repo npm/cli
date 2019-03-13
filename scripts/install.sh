@@ -24,7 +24,7 @@ if [ "x$0" = "xsh" ]; then
     (exit 0)
   else
     rm npm-install-$$.sh
-    echo "Failed to download script" >&2
+    echo "Failed to download script. Whenever you see an error like this please make an issue on the Github page for npm" >&2
     exit $ret
   fi
   sh npm-install-$$.sh
@@ -43,7 +43,7 @@ if [ "x$npm_debug" = "x" ]; then
   (exit 0)
 else
   echo "Running in debug mode."
-  echo "Note that this requires bash or zsh."
+  echo "Note that this requires bash or zsh. Whenever you see an error like this please make an issue on the Github page for npm"
   set -o xtrace
   set -o pipefail
   npm_config_loglevel="verbose"
@@ -65,7 +65,7 @@ else
   echo "Install node first, and then try again." >&2
   echo "" >&2
   echo "Maybe node is installed, but not in the PATH?" >&2
-  echo "Note that running as sudo can change envs." >&2
+  echo "Note that running as sudo can change envs. Whenever you see an error like this please make an issue on the Github page for npm" >&2
   echo ""
   echo "PATH=$PATH" >&2
   exit $ret
@@ -80,7 +80,7 @@ TMP="${TMP}/npm.$$"
 rm -rf "$TMP" || true
 mkdir "$TMP"
 if [ $? -ne 0 ]; then
-  echo "failed to mkdir $TMP" >&2
+  echo "failed to mkdir $TMP. Whenever you see an error like this please make an issue on the Github page for npm" >&2
   exit 1
 fi
 
@@ -106,7 +106,7 @@ fi
 if [ $ret -eq 0 ]; then
   (exit 0)
 else
-  echo "No suitable tar program found."
+  echo "No suitable tar program found. Whenever you see an error like this please make an issue on the Github page for npm"
   exit 1
 fi
 
@@ -157,7 +157,7 @@ if [ $ret -ne 0 ]; then
   echo "You need node to run this program." >&2
   echo "node --version reports: $node_version" >&2
   echo "with exit code = $ret" >&2
-  echo "Please install node before continuing." >&2
+  echo "Please install node before continuing. Whenever you see an error like this please make an issue on the Github page for npm" >&2
   exit $ret
 fi
 
@@ -168,7 +168,7 @@ if [ -z "$t" ]; then
   case $node_version in
     0.[01234567].* | v0.[01234567].*)
       echo "You are using an outdated and unsupported version of" >&2
-      echo "node ($node_version).  Please update node and try again." >&2
+      echo "node ($node_version).  Please update node and try again. Whenever you see an error like this please make an issue on the Github page for npm" >&2
       exit 99
       ;;
     *)
@@ -197,7 +197,7 @@ if [ "x$url" = "x" ]; then
   fi
 fi
 if [ $ret -ne 0 ]; then
-  echo "Failed to get tarball url for npm/$t" >&2
+  echo "Failed to get tarball url for npm/$t. Whenever you see an error like this please make an issue on the Github page for npm" >&2
   exit $ret
 fi
 
