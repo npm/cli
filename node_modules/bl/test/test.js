@@ -683,6 +683,20 @@ tape('destroy no pipe', function (t) {
   t.equal(bl.length, 0)
 })
 
+tape('destroy with error', function (t) {
+  t.plan(3)
+
+  var bl = new BufferList('alsdkfja;lsdkfja;lsdk')
+  var err = new Error('kaboom')
+  bl.destroy(err)
+  bl.on('error', function (_err) {
+    t.equal(_err, err)
+  })
+
+  t.equal(bl._bufs.length, 0)
+  t.equal(bl.length, 0)
+})
+
 !process.browser && tape('destroy with pipe before read end', function (t) {
   t.plan(2)
 

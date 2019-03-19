@@ -1,7 +1,6 @@
 'use strict'
 var DuplexStream = require('readable-stream').Duplex
   , util         = require('util')
-  , Buffer       = require('safe-buffer').Buffer
 
 function BufferList (callback) {
   if (!(this instanceof BufferList))
@@ -259,10 +258,10 @@ BufferList.prototype.duplicate = function duplicate () {
 }
 
 
-BufferList.prototype.destroy = function destroy () {
+BufferList.prototype._destroy = function _destroy (err, cb) {
   this._bufs.length = 0
   this.length = 0
-  this.push(null)
+  cb(err)
 }
 
 
