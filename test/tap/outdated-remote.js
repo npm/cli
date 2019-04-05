@@ -3,7 +3,6 @@ const path = require('path')
 const test = require('tap').test
 const Tacks = require('tacks')
 const File = Tacks.File
-const Symlink = Tacks.Symlink
 const Dir = Tacks.Dir
 const common = require('../common-tap.js')
 
