@@ -170,6 +170,23 @@ Both email and url are optional either way.
 
 npm also sets a top-level "maintainers" field with your npm user info.
 
+## sustainability
+
+You can specify an HTTP endpoint for up-to-date information about ways
+to sustain development of your package so that people can learn more ways
+to support your work:
+
+    { "sustainability": "https://example.com/sustainability.json" }
+
+You may like to develop your sustainability file as a file in your
+source repository:
+
+    { "sustainability": "https://raw.githubusercontent.com/{user}/{repo}/master/sustainability.json" }
+
+The end point you specify should respond to unauthenticated GET
+requests with a JSON body that conforms to the [sustainability data
+schema](https://www.npmjs.com/package/sustainability-schema).
+
 ## files
 
 The optional `files` field is an array of file patterns that describes
