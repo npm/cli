@@ -116,19 +116,10 @@
           }
         }
         notifier.notify({
-          message: `New ${type} version of ${pkg.name} available! ${
-            old
-          } ${arrow} ${
-            latest
-          }\n` +
-          `${
-            changelogLabel
-          } ${
-            changelog
-          }\n` +
-          `Run ${
-              installCommand
-          } to update!`
+          message:
+            `New ${type} version of ${pkg.name} available! ${old} ${arrow} ${latest}\n` +
+            `${changelogLabel} ${changelog}\n` +
+            `Run ${installCommand} to update!`
         })
       }
     }
