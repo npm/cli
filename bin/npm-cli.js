@@ -94,7 +94,9 @@
         let old = notifier.update.current
         let latest = notifier.update.latest
         let type = notifier.update.type
+        let changelogLabel = 'Changelog:'
         let changelog = `https://github.com/npm/cli/releases/tag/v${latest}`
+        let installCommand = `npm install -g ${pkg.name}`
         if (useColor) {
           switch (type) {
             case 'major':
@@ -115,14 +117,14 @@
             useColor ? color.green(latest) : latest
           }\n` +
           `${
-            useColor ? color.yellow('Changelog:') : 'Changelog:'
+            useColor ? color.yellow(changelogLabel) : changelogLabel
           } ${
             useColor ? color.cyan(changelog) : changelog
           }\n` +
           `Run ${
             useColor
-              ? color.green(`npm install -g ${pkg.name}`)
-              : `npm i -g ${pkg.name}`
+              ? color.green(installCommand)
+              : installCommand
           } to update!`
         })
       }
