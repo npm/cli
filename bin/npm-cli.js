@@ -91,10 +91,10 @@
         const color = require('ansicolors')
         const useColor = npm.config.get('color')
         const useUnicode = npm.config.get('unicode')
-        const old = notifier.update.current
-        const latest = notifier.update.latest
+        let old = notifier.update.current
+        let latest = notifier.update.latest
         let type = notifier.update.type
-        const changelog = `https://github.com/npm/cli/releases/tag/v${latest}`
+        let changelog = `https://github.com/npm/cli/releases/tag/v${latest}`
         if (useColor) {
           switch (type) {
             case 'major':
