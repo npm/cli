@@ -94,6 +94,7 @@
         const old = notifier.update.current
         const latest = notifier.update.latest
         let type = notifier.update.type
+        const changelog = `https://github.com/npm/cli/releases/tag/v${latest}`
         if (useColor) {
           switch (type) {
             case 'major':
@@ -107,7 +108,6 @@
               break
           }
         }
-        const changelog = `https://github.com/npm/cli/releases/tag/v${latest}`
         notifier.notify({
           message: `New ${type} version of ${pkg.name} available! ${
             useColor ? color.red(old) : old
