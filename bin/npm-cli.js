@@ -75,6 +75,7 @@
   conf._exit = true
   npm.load(conf, function (er) {
     if (er) return errorHandler(er)
+    const useUnicode = npm.config.get('unicode')
     if (
       !isGlobalNpmUpdate &&
       npm.config.get('update-notifier') &&
@@ -89,7 +90,6 @@
         !isCI
       ) {
         const color = require('ansicolors')
-        const useUnicode = npm.config.get('unicode')
         let old = notifier.update.current
         let latest = notifier.update.latest
         let type = notifier.update.type
@@ -134,11 +134,11 @@
       ) {
         console.error(
           `\n ${
-            npm.config.get('unicode') ? '🎵 ' : ''
+            useUnicode ? '🎵 ' : ''
           } I Have the Honour to Be Your Obedient Servant,${
-            npm.config.get('unicode') ? '🎵 ' : ''
+            useUnicode ? '🎵 ' : ''
           } ~ npm ${
-            npm.config.get('unicode') ? '📜🖋 ' : ''
+            useUnicode ? '📜🖋 ' : ''
           }\n`
         )
       }
