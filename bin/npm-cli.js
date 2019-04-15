@@ -89,7 +89,6 @@
         !isCI
       ) {
         const color = require('ansicolors')
-        const useColor = npm.config.get('color')
         const useUnicode = npm.config.get('unicode')
         let old = notifier.update.current
         let latest = notifier.update.latest
@@ -98,7 +97,7 @@
         let changelog = `https://github.com/npm/cli/releases/tag/v${latest}`
         let installCommand = `npm install -g ${pkg.name}`
         const arrow = useUnicode ? '→' : '->'
-        if (useColor) {
+        if (npm.config.get('color')) {
           old = color.red(old)
           latest = color.green(latest)
           changelogLabel = color.yellow(changelogLabel)
