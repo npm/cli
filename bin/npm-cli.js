@@ -98,6 +98,11 @@
         let changelog = `https://github.com/npm/cli/releases/tag/v${latest}`
         let installCommand = `npm install -g ${pkg.name}`
         if (useColor) {
+          old = color.red(old)
+          latest = color.green(latest)
+          changelogLabel = color.yellow(changelogLabel)
+          changelog = color.cyan(changelog)
+          installCommand = color.green(installCommand)
           switch (type) {
             case 'major':
               type = color.red(type)
