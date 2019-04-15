@@ -117,19 +117,17 @@
         }
         notifier.notify({
           message: `New ${type} version of ${pkg.name} available! ${
-            useColor ? color.red(old) : old
+            old
           } ${useUnicode ? '→' : '->'} ${
-            useColor ? color.green(latest) : latest
+            latest
           }\n` +
           `${
-            useColor ? color.yellow(changelogLabel) : changelogLabel
+            changelogLabel
           } ${
-            useColor ? color.cyan(changelog) : changelog
+            changelog
           }\n` +
           `Run ${
-            useColor
-              ? color.green(installCommand)
-              : installCommand
+              installCommand
           } to update!`
         })
       }
