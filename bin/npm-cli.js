@@ -97,6 +97,7 @@
         let changelogLabel = 'Changelog:'
         let changelog = `https://github.com/npm/cli/releases/tag/v${latest}`
         let installCommand = `npm install -g ${pkg.name}`
+        const arrow = useUnicode ? '→' : '->'
         if (useColor) {
           old = color.red(old)
           latest = color.green(latest)
@@ -118,7 +119,7 @@
         notifier.notify({
           message: `New ${type} version of ${pkg.name} available! ${
             old
-          } ${useUnicode ? '→' : '->'} ${
+          } ${arrow} ${
             latest
           }\n` +
           `${
