@@ -47,7 +47,7 @@ const fixture = new Tacks(Dir({
         version: '1.0.3',
         main: 'dobuild.js',
         scripts: {
-          'prepublish': 'exit 123',
+          'prepublishOnly': 'exit 123',
           'prepare': 'writer build-artifact'
         },
         devDependencies: {
