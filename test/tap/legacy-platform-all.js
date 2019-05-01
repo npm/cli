@@ -33,6 +33,7 @@ var fixture = new Tacks(
       ],
       cpu: [
         'arm',
+        'arm64',
         'mips',
         'ia32',
         'x64',
