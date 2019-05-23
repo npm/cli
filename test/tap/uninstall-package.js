@@ -9,7 +9,7 @@ var test = require('tap').test
 
 var common = require('../common-tap.js')
 
-var pkg = path.join(__dirname, 'uninstall-package')
+var pkg = common.pkg
 
 var EXEC_OPTS = { cwd: pkg, stdio: [0, 'pipe', 2] }
 

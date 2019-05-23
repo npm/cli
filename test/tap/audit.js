@@ -12,20 +12,9 @@ const test = tap.test
 
 const Dir = Tacks.Dir
 const File = Tacks.File
-const testDir = path.join(__dirname, path.basename(__filename, '.js'))
+const testDir = common.pkg
 
 const EXEC_OPTS = { cwd: testDir }
-
-tap.tearDown(function () {
-  process.chdir(__dirname)
-  try {
-    rimraf.sync(testDir)
-  } catch (e) {
-    if (process.platform !== 'win32') {
-      throw e
-    }
-  }
-})
 
 function tmock (t) {
   return mr({port: common.port}).then(s => {
