@@ -10,7 +10,7 @@ var test = require('tap').test
 var common = require('../common-tap.js')
 var server
 
-var pkg = path.resolve(__dirname, 'outdated-json')
+var pkg = common.pkg
 
 var EXEC_OPTS = { cwd: pkg }
 

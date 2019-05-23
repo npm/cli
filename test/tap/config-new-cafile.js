@@ -1,4 +1,4 @@
-require('./00-config-setup.js')
+const common = require('../common-tap.js')
 
 var path = require('path')
 var fs = require('graceful-fs')
@@ -8,7 +8,7 @@ var rimraf = require('rimraf')
 var osenv = require('osenv')
 var npmconf = require('../../lib/config/core.js')
 
-var dir = path.resolve(__dirname, 'config-new-cafile')
+var dir = common.pkg
 var beep = path.resolve(dir, 'beep.pem')
 
 test('setup', function (t) {

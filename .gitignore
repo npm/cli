@@ -21,3 +21,5 @@ npm-debug.log
 .jshintrc
 .eslintrc
 .nyc_output
+/test/npm_cache*
+/node_modules/.cache

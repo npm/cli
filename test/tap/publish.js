@@ -10,7 +10,7 @@ const path = require('path')
 const rimraf = require('rimraf')
 const test = require('tap').test
 
-const testDir = path.join(__dirname, 'publish_test_package')
+const testDir = common.pkg
 
 function setup () {
   cleanup()

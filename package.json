@@ -1,5 +1,5 @@
 {
-  "version": "6.9.1-next.0",
+  "version": "6.9.0",
   "name": "npm",
   "description": "a package manager for JavaScript",
   "keywords": [
@@ -108,7 +108,7 @@
     "path-is-inside": "~1.0.2",
     "promise-inflight": "~1.0.1",
     "qrcode-terminal": "^0.12.0",
-    "query-string": "^6.4.0",
+    "query-string": "^6.2.0",
     "qw": "~1.0.1",
     "read": "~1.0.7",
     "read-cmd-shim": "~1.0.1",
@@ -121,7 +121,7 @@
     "rimraf": "^2.6.3",
     "safe-buffer": "^5.1.2",
     "semver": "^5.6.0",
-    "sha": "^3.0.0",
+    "sha": "~2.0.1",
     "slide": "~1.1.6",
     "sorted-object": "~2.0.1",
     "sorted-union-stream": "~2.1.3",
@@ -276,17 +276,17 @@
     "require-inject": "^1.4.4",
     "sprintf-js": "^1.1.2",
     "standard": "^11.0.1",
-    "tacks": "^1.3.0",
-    "tap": "^12.7.0",
-    "tar-stream": "^2.0.1"
+    "tacks": "^1.2.7",
+    "tap": "~12.7.0",
+    "tar-stream": "^2.0.0"
   },
   "scripts": {
     "dumpconf": "env | grep npm | sort | uniq",
     "prepare": "node bin/npm-cli.js rebuild && node bin/npm-cli.js --no-audit --no-timing prune --prefix=. --no-global && rimraf test/*/*/node_modules && make -j4 doc",
     "preversion": "bash scripts/update-authors.sh && git add AUTHORS && git commit -m \"update AUTHORS\" || true",
     "licenses": "licensee --production --errors-only",
-    "tap": "tap --reporter=classic --timeout 300",
-    "tap-cover": "tap --reporter=classic --nyc-arg='--cache' --coverage --timeout 600",
+    "tap": "tap -J --timeout 300",
+    "tap-cover": "tap -J --nyc-arg=--cache --coverage --timeout 600",
     "test": "standard && npm run test-tap",
     "test-coverage": "npm run tap-cover -- \"test/tap/*.js\" \"test/network/*.js\" \"test/broken-under-*/*.js\"",
     "test-tap": "npm run tap -- \"test/tap/*.js\" \"test/network/*.js\" \"test/broken-under-*/*.js\"",
