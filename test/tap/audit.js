@@ -337,7 +337,7 @@ test('exits with zero exit code for vulnerabilities in devDependencies when runn
           vulnerabilities: {}
         }
       })
-     return common.npm([
+      return common.npm([
         'audit',
         '--json',
         '--production',
@@ -442,7 +442,7 @@ test('exits with non-zero exit code for vulnerabilities in dependencies when run
           }
         }
       })
-     return common.npm([
+      return common.npm([
         'audit',
         '--json',
         '--production',
