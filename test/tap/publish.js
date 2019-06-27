@@ -125,8 +125,8 @@ test('npm publish --json', (t) => {
           name: 'publish-organized',
           version: '1.2.5',
           files: [
-            {path: 'package.json'},
-            {path: 'index.js'}
+            {path: 'index.js'},
+            {path: 'package.json'}
           ],
           entryCount: 2
         }, 'JSON output reflects package contents')
@@ -154,8 +154,8 @@ test('npm publish --dry-run --json', (t) => {
         name: 'publish-organized',
         version: '1.2.5',
         files: [
-          {path: 'package.json'},
-          {path: 'index.js'}
+          {path: 'index.js'},
+          {path: 'package.json'}
         ],
         entryCount: 2
       }, 'JSON output reflects package contents')

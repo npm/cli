@@ -484,7 +484,7 @@ test('default-ignored files can be explicitly included', function (t) {
     })
   )
   withFixture(t, fixture, function (done) {
-    t.ok(fileExists('.git'), '.git included')
+    t.notOk(fileExists('.git'), '.git should never be included')
     t.ok(fileExists('.svn'), '.svn included')
     t.ok(fileExists('CVS'), 'CVS included')
     t.ok(fileExists('.hg'), '.hg included')
