@@ -1,4 +1,8 @@
-## v6.9.1 (2019-03-20):
+## v6.9.2 (2019-06-27):
+
+This release is identical to v6.9.1, but we had to publish a new version due to [a .git directory in the release](https://npm.community/t/8454).
+
+## v6.9.1 (2019-06-26):
 
 ### BUGFIXES
 
