@@ -42,7 +42,7 @@
     "bin-links": "^1.1.2",
     "bluebird": "^3.5.5",
     "byte-size": "^5.0.1",
-    "cacache": "^11.3.2",
+    "cacache": "^11.3.3",
     "call-limit": "~1.1.0",
     "chownr": "^1.1.1",
     "ci-info": "^2.0.0",
