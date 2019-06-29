@@ -6,6 +6,9 @@ var requireInject = require('require-inject')
 var osenv = require('osenv')
 var npm = require('../../lib/npm.js')
 
+// XXX update this when rpt's realpath.js is extracted out
+var rptRealpath = require.resolve('read-package-tree/realpath.js')
+
 const common = require('../common-tap.js')
 const pkg = common.pkg
 var packages = {
@@ -41,6 +44,8 @@ mockFs.realpath = function (dir, cb) {
   return cb(null, dir)
 }
 
+const mockRptRealpath = path => Promise.resolve(path)
+
 test('setup', function (t) {
   npm.load(function () {
     t.pass('npm loaded')
@@ -54,7 +59,8 @@ test('installer', function (t) {
     'fs': mockFs,
     'readdir-scoped-modules': mockReaddir,
     'read-package-json': mockReadPackageJson,
-    'mkdirp': function (path, cb) { cb() }
+    'mkdirp': function (path, cb) { cb() },
+    [rptRealpath]: mockRptRealpath
   })
 
   var Installer = installer.Installer
@@ -83,7 +89,8 @@ test('uninstaller', function (t) {
     'fs': mockFs,
     'readdir-scoped-modules': mockReaddir,
     'read-package-json': mockReadPackageJson,
-    'mkdirp': function (path, cb) { cb() }
+    'mkdirp': function (path, cb) { cb() },
+    [rptRealpath]: mockRptRealpath
   })
 
   var Uninstaller = uninstaller.Uninstaller
