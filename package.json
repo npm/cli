@@ -98,7 +98,7 @@
     "npm-package-arg": "^6.1.0",
     "npm-packlist": "^1.4.4",
     "npm-pick-manifest": "^2.2.3",
-    "npm-registry-fetch": "^3.9.0",
+    "npm-registry-fetch": "^3.9.1",
     "npm-user-validate": "~1.0.0",
     "npmlog": "~4.1.2",
     "once": "~1.4.0",
