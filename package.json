@@ -272,7 +272,7 @@
     "deep-equal": "^1.0.1",
     "get-stream": "^4.1.0",
     "licensee": "^7.0.2",
-    "marked": "^0.6.0",
+    "marked": "^0.6.3",
     "marked-man": "^0.2.1",
     "npm-registry-couchapp": "^2.7.2",
     "npm-registry-mock": "^1.2.1",
