@@ -7,6 +7,12 @@ var readCmdShim = require('read-cmd-shim')
 var isWindows = require('../lib/utils/is-windows.js')
 var Bluebird = require('bluebird')
 
+// remove any git envs so that we don't mess with the main repo
+// when running git subprocesses in tests
+Object.keys(process.env).filter(k => /^GIT/.test(k)).forEach(
+  k => delete process.env[k]
+)
+
 // cheesy hackaround for test deps (read: nock) that rely on setImmediate
 if (!global.setImmediate || !require('timers').setImmediate) {
   require('timers').setImmediate = global.setImmediate = function () {
