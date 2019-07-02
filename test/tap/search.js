@@ -35,6 +35,7 @@ test('notifies when there are no results', function (t) {
   const query = qs.stringify({
     text: 'none',
     size: 20,
+    from: 0,
     quality: 0.65,
     popularity: 0.98,
     maintenance: 0.5
@@ -60,6 +61,7 @@ test('spits out a useful error when no cache nor network', function (t) {
   const query = qs.stringify({
     text: 'foo',
     size: 20,
+    from: 0,
     quality: 0.65,
     popularity: 0.98,
     maintenance: 0.5
@@ -91,6 +93,7 @@ test('can switch to JSON mode', function (t) {
   const query = qs.stringify({
     text: 'oo',
     size: 20,
+    from: 0,
     quality: 0.65,
     popularity: 0.98,
     maintenance: 0.5
@@ -130,6 +133,7 @@ test('JSON mode does not notify on empty', function (t) {
   const query = qs.stringify({
     text: 'oo',
     size: 20,
+    from: 0,
     quality: 0.65,
     popularity: 0.98,
     maintenance: 0.5
@@ -157,6 +161,7 @@ test('can switch to tab separated mode', function (t) {
   const query = qs.stringify({
     text: 'oo',
     size: 20,
+    from: 0,
     quality: 0.65,
     popularity: 0.98,
     maintenance: 0.5
@@ -187,6 +192,7 @@ test('tab mode does not notify on empty', function (t) {
   const query = qs.stringify({
     text: 'oo',
     size: 20,
+    from: 0,
     quality: 0.65,
     popularity: 0.98,
     maintenance: 0.5

@@ -146,6 +146,7 @@ searches.forEach(function (search) {
     const query = qs.stringify({
       text: search.term,
       size: 20,
+      from: 0,
       quality: 0.65,
       popularity: 0.98,
       maintenance: 0.5
