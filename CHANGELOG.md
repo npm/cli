@@ -42,6 +42,13 @@
   `worker-farm@1.7.0` ([@isaacs](https://github.com/isaacs))
 * [`8dfbe8610`](https://github.com/npm/cli/commit/8dfbe861085dfa8fa56bb504b4a00fba04c34f9d)
   `readable-stream@3.4.0` ([@isaacs](https://github.com/isaacs))
+* [`f6164d5dd`](https://github.com/npm/cli/commit/f6164d5ddd072eabdf2237f1694a31efd746eb1d)
+  [isaacs/chownr#21](https://github.com/isaacs/chownr/pull/21)
+  [isaacs/chownr#20](https://github.com/isaacs/chownr/issues/20)
+  [npm.community#7901](https://npm.community/t/7901/)
+  [npm.community#8203](https://npm.community/t/8203) `chownr@1.1.2` This
+  fixes an EISDIR error from cacache on Darwin in Node versions prior to
+  10.6. ([@isaacs](https://github.com/isaacs))
 
 ## v6.10.0 (2019-07-03):
 
