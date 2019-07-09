@@ -89,7 +89,7 @@
     "mississippi": "^3.0.0",
     "mkdirp": "~0.5.1",
     "move-concurrently": "^1.0.1",
-    "node-gyp": "^4.0.0",
+    "node-gyp": "^5.0.2",
     "nopt": "~4.0.1",
     "normalize-package-data": "^2.5.0",
     "npm-audit-report": "^1.3.2",
