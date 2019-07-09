@@ -1,5 +1,5 @@
 # vim: set softtabstop=2 shiftwidth=2:
-SHELL = bash
+SHELL = sh
 
 PUBLISHTAG = $(shell node scripts/publish-tag.js)
 BRANCH = $(shell git rev-parse --abbrev-ref HEAD)
@@ -182,7 +182,7 @@ publish: gitclean ls-ok link doc-clean doc
 
 release: gitclean ls-ok markedclean marked-manclean doc-clean doc
 	node bin/npm-cli.js prune --production --no-save
-	@bash scripts/release.sh
+	@${SHELL} scripts/release.sh
 
 sandwich:
 	@[ $$(whoami) = "root" ] && (echo "ok"; echo "ham" > sandwich) || (echo "make it yourself" && exit 13)

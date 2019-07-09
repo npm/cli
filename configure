@@ -1,33 +1,32 @@
-#!/bin/bash
+#!/bin/sh
 
 # set configurations that will be "sticky" on this system,
 # surviving npm self-updates.
 
-CONFIGS=()
-i=0
-
 # get the location of this file.
-unset CDPATH
+CDPATH=
 CONFFILE=$(cd $(dirname "$0"); pwd -P)/npmrc
+
+CONFIGS=
+NL="
+"
 
 while [ $# -gt 0 ]; do
   conf="$1"
-  case $conf in
+  case "$conf" in
     --help)
       echo "./configure --param=value ..."
       exit 0
       ;;
     --*)
-      CONFIGS[$i]="${conf:2}"
+      CONFIGS="$CONFIGS${conf#--*}$NL"
       ;;
     *)
-      CONFIGS[$i]="$conf"
+      CONFIGS="$CONFIGS$conf$NL"
       ;;
   esac
   let i++
   shift
 done
 
-for c in "${CONFIGS[@]}"; do
-  echo "$c" >> "$CONFFILE"
-done
+printf %s "$CONFIGS" > "$CONFFILE"

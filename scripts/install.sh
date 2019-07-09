@@ -146,13 +146,6 @@ else
   make=NOMAKE
 fi
 
-# If there's no bash, then don't even try to clean
-if [ -x "/bin/bash" ]; then
-  (exit 0)
-else
-  clean="no"
-fi
-
 node_version=`"$node" --version 2>&1`
 ret=$?
 if [ $ret -ne 0 ]; then

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Change the cli shebang to point at the specified node
 # Useful for when the program is moved around after install.
@@ -6,7 +6,7 @@
 # npm at the newly installed node, rather than the first one
 # in the PATH, which would be the default otherwise.
 
-# bash /path/to/npm/scripts/relocate.sh $nodepath
+# sh /path/to/npm/scripts/relocate.sh $nodepath
 # If $nodepath is blank, then it'll use /usr/bin/env
 
 dir="$(dirname "$(dirname "$0")")"

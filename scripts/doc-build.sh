@@ -1,6 +1,6 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
-if [[ $DEBUG != "" ]]; then
+if [ -n "$DEBUG" ]; then
   set -x
 fi
 set -o errexit
@@ -15,7 +15,7 @@ version=$(node bin/npm-cli.js -v)
 mkdir -p $(dirname $dest)
 
 html_replace_tokens () {
-	local url=$1
+	url=$1
 	sed "s|@NAME@|$name|g" \
 	| sed "s|@DATE@|$date|g" \
 	| sed "s|@URL@|$url|g" \
@@ -29,7 +29,7 @@ html_replace_tokens () {
 	| perl -p -e 's/([^"-])([^\(> ]+)(\(5\))/\1<a href="..\/files\/\2.html">\2\3<\/a>/g' \
 	| perl -p -e 's/([^"-])([^\(> ]+)(\(7\))/\1<a href="..\/misc\/\2.html">\2\3<\/a>/g' \
 	| perl -p -e 's/\([1357]\)<\/a><\/h1>/<\/a><\/h1>/g' \
-	| (if [ $(basename $(dirname $dest)) == "doc" ]; then
+	| (if [ $(basename $(dirname $dest)) = "doc" ]; then
 			perl -p -e 's/ href="\.\.\// href="/g'
 		else
 			cat
@@ -52,7 +52,7 @@ case $dest in
     exit $?
     ;;
   *.html)
-    url=${dest/html\//}
+    url=$(echo $dest | sed -e 's/html\///g')
     (cat html/dochead.html && \
      cat $src | ./node_modules/.bin/marked &&
      cat html/docfoot.html)\

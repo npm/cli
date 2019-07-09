@@ -1,8 +1,8 @@
-#!/bin/bash
+#!/bin/sh
 
 # script for creating a zip and tarball for inclusion in node
 
-unset CDPATH
+CDPATH=
 
 set -e
 
