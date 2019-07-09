@@ -3,8 +3,7 @@
 if [ -n "$DEBUG" ]; then
   set -x
 fi
-set -o errexit
-set -o pipefail
+set -e
 
 src=$1
 dest=$2
