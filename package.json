@@ -72,7 +72,7 @@
     "is-cidr": "^3.0.0",
     "json-parse-better-errors": "^1.0.2",
     "lazy-property": "~1.0.0",
-    "libcipm": "^3.0.3",
+    "libcipm": "^4.0.0",
     "libnpm": "^2.0.1",
     "libnpmhook": "^5.0.2",
     "libnpmsearch": "^2.0.1",
