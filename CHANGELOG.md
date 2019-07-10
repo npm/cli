@@ -11,9 +11,23 @@
 * [`172f9aca6`](https://github.com/npm/cli/commit/172f9aca67a66ee303c17f90a994cd52fc66552a)
   [#179](https://github.com/npm/cli/pull/179) fix-xmas-underline
   ([@raywu0123](https://github.com/raywu0123))
+* [`f52673fc7`](https://github.com/npm/cli/commit/f52673fc7284e58af8c04533e82b76bf7add72cf)
+  [#212](https://github.com/npm/cli/pull/212) build: use `/usr/bin/env` to
+  load bash ([@rsmarples](https://github.com/rsmarples))
 
 ### DEPENDENCIES
 
+* [`ef4445ad3`](https://github.com/npm/cli/commit/ef4445ad34a53b5639499c8e3c9752f62ee6f37c)
+  [#208](https://github.com/npm/cli/pull/208) `node-gyp@5.0.2`
+  ([@irega](https://github.com/irega))
+* [`c0d611356`](https://github.com/npm/cli/commit/c0d611356f7b23077e97574b01c8886e544db425)
+  `npm-lifecycle@3.0.0` ([@isaacs](https://github.com/isaacs))
+* [`7716ba972`](https://github.com/npm/cli/commit/7716ba9720270d5b780755a5bb1ce79702067f1f)
+  `libcipm@4.0.0` ([@isaacs](https://github.com/isaacs))
+* [`42d22e837`](https://github.com/npm/cli/commit/42d22e8374c7d303d94e405d7385d94dd2558814)
+  `libnpm@3.0.0` ([@isaacs](https://github.com/isaacs))
+* [`a2ea7f9ff`](https://github.com/npm/cli/commit/a2ea7f9ff64ae743d05fdbf7d46fb9afafa8aa6f)
+  `semver@5.7.0` ([@isaacs](https://github.com/isaacs))
 * [`429226a5e`](https://github.com/npm/cli/commit/429226a5e992cd907d4f19bd738037007cf78c1f)
   `lru-cache@5.1.1` ([@isaacs](https://github.com/isaacs))
 * [`175670ea6`](https://github.com/npm/cli/commit/175670ea65cca03f8b2e957df3dd4b8b0efd0e1f)
