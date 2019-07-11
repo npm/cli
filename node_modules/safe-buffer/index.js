@@ -20,8 +20,6 @@ function SafeBuffer (arg, encodingOrOffset, length) {
   return Buffer(arg, encodingOrOffset, length)
 }
 
-SafeBuffer.prototype = Object.create(Buffer.prototype)
-
 // Copy static methods from Buffer
 copyProps(Buffer, SafeBuffer)
 
