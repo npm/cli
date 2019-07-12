@@ -2,6 +2,55 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [12.0.0](https://github.com/zkat/cacache/compare/v11.3.3...v12.0.0) (2019-07-15)
+
+
+### Features
+
+* infer uid/gid instead of accepting as options ([ac84d14](https://github.com/zkat/cacache/commit/ac84d14))
+* **i18n:** add another error message ([676cb32](https://github.com/zkat/cacache/commit/676cb32))
+
+
+### BREAKING CHANGES
+
+* the uid gid options are no longer respected or
+necessary.  As of this change, cacache will always match the cache
+contents to the ownership of the cache directory (or its parent
+directory), regardless of what the caller passes in.
+
+Reasoning:
+
+The number one reason to use a uid or gid option was to keep root-owned
+files from causing problems in the cache.  In npm's case, this meant
+that CLI's ./lib/command.js had to work out the appropriate uid and gid,
+then pass it to the libnpmcommand module, which had to in turn pass the
+uid and gid to npm-registry-fetch, which then passed it to
+make-fetch-happen, which passed it to cacache.  (For package fetching,
+pacote would be in that mix as well.)
+
+Added to that, `cacache.rm()` will actually _write_ a file into the
+cache index, but has no way to accept an option so that its call to
+entry-index.js will write the index with the appropriate uid/gid.
+Little ownership bugs were all over the place, and tricky to trace
+through.  (Why should make-fetch-happen even care about accepting or
+passing uids and gids?  It's an http library.)
+
+This change allows us to keep the cache from having mixed ownership in
+any situation.
+
+Of course, this _does_ mean that if you have a root-owned but
+user-writable folder (for example, `/tmp`), then the cache will try to
+chown everything to root.
+
+The solution is for the user to create a folder, make it user-owned, and
+use that, rather than relying on cacache to create the root cache folder.
+
+If we decide to restore the uid/gid opts, and use ownership inferrence
+only when uid/gid are unset, then take care to also make rm take an
+option object, and pass it through to entry-index.js.
+
+
+
 ### [11.3.3](https://github.com/zkat/cacache/compare/v11.3.2...v11.3.3) (2019-06-17)
 
 
