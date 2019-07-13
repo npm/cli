@@ -292,6 +292,7 @@
     "tap-cover": "tap -J --nyc-arg=--cache --coverage --timeout 600",
     "pretest": "standard",
     "test": "npm run test-tap --",
+    "sudotest": "sudo npm run tap -- \"test/tap/*.js\"",
     "posttest": "rimraf test/npm_cache*",
     "test-coverage": "npm run tap-cover -- \"test/tap/*.js\" \"test/network/*.js\" \"test/broken-under-*/*.js\"",
     "test-tap": "npm run tap -- \"test/tap/*.js\" \"test/network/*.js\" \"test/broken-under-*/*.js\"",
