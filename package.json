@@ -74,6 +74,7 @@
     "lazy-property": "~1.0.0",
     "libcipm": "^4.0.0",
     "libnpm": "^3.0.1",
+    "libnpmaccess": "^3.0.2",
     "libnpmhook": "^5.0.2",
     "libnpmsearch": "^2.0.1",
     "libnpx": "^10.2.0",
