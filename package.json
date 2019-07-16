@@ -75,7 +75,7 @@
     "libcipm": "^4.0.0",
     "libnpm": "^3.0.1",
     "libnpmaccess": "^3.0.2",
-    "libnpmhook": "^5.0.2",
+    "libnpmhook": "^5.0.3",
     "libnpmsearch": "^2.0.1",
     "libnpx": "^10.2.0",
     "lock-verify": "^2.1.0",
