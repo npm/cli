@@ -102,6 +102,7 @@
     "npm-package-arg": "^6.1.0",
     "npm-packlist": "^1.4.4",
     "npm-pick-manifest": "^2.2.3",
+    "npm-profile": "^4.0.2",
     "npm-registry-fetch": "^4.0.0",
     "npm-user-validate": "~1.0.0",
     "npmlog": "~4.1.2",
