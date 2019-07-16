@@ -4,7 +4,7 @@ npm-publish(1) -- Publish a package
 
 ## SYNOPSIS
 
-    npm publish [<tarball>|<folder>] [--tag <tag>] [--access <public|restricted>] [--otp otpcode] [--dry-run]
+    npm publish [<tarball>|<folder>] [--tag <tag>] [--access public|restricted] [--otp otpcode] [--dry-run]
 
     Publishes '.' if no argument supplied
     Sets tag 'latest' if no --tag specified
@@ -35,7 +35,7 @@ specifying a different default registry or using a `npm-scope(7)` in the name
   and `npm install` installs the `latest` tag. See `npm-dist-tag(1)` for
   details about tags.
 
-* `[--access <public|restricted>]`
+* `[--access public|restricted]`
   Tells the registry whether this package should be published as public or
   restricted. Only applies to scoped packages, which default to `restricted`.
   If you don't have a paid account, you must publish with `--access public`

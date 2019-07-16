@@ -5,7 +5,7 @@ npm-hook(1) -- Manage registry hooks
 
     npm hook ls [pkg]
     npm hook add <entity> <url> <secret>
-    npm hook update <id> <url> [secret]
+    npm hook update <id> <url> [<secret>]
     npm hook rm <id>
 
 ## EXAMPLE

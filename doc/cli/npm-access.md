@@ -6,7 +6,7 @@ npm-access(1) -- Set access level on published packages
     npm access public [<package>]
     npm access restricted [<package>]
 
-    npm access grant <read-only|read-write> <scope:team> [<package>]
+    npm access grant read-only|read-write <scope:team> [<package>]
     npm access revoke <scope:team> [<package>]
 
     npm access 2fa-required [<package>]

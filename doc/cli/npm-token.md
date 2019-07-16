@@ -5,7 +5,7 @@ npm-token(1) -- Manage your authentication tokens
 
     npm token list [--json|--parseable]
     npm token create [--read-only] [--cidr=1.1.1.1/24,2.2.2.2/16]
-    npm token revoke <id|token>
+    npm token revoke <id>|<token>
 
 ## DESCRIPTION
 
