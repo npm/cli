@@ -1,3 +1,84 @@
+## v6.10.2 (2019-07-23):
+
+tl;dr - Fixes several issues with the cache when npm is run as `sudo` on
+Unix systems.
+
+### TESTING
+
+* [`2a78b96f8`](https://github.com/npm/cli/commit/2a78b96f830bbd834720ccc9eacccc54915ae6f7)
+  check test cache for root-owned files
+  ([@isaacs](https://github.com/isaacs))
+* [`108646ebc`](https://github.com/npm/cli/commit/108646ebc12f3eeebaa0a45884c45991a45e57e4)
+  run sudo tests on Travis-CI ([@isaacs](https://github.com/isaacs))
+* [`cf984e946`](https://github.com/npm/cli/commit/cf984e946f453cbea2fcc7a59608de3f24ab74c3)
+  set --no-esm tap flag ([@isaacs](https://github.com/isaacs))
+* [`8e0a3100d`](https://github.com/npm/cli/commit/8e0a3100dffb3965bb3dc4240e82980dfadf2f3c)
+  add script to run tests and leave fixtures for inspection and debugging
+  ([@isaacs](https://github.com/isaacs))
+
+### BUGFIXES
+
+* [`25f4f73f6`](https://github.com/npm/cli/commit/25f4f73f6dc9744757787c82351120cd1baee5f8)
+  add a util for writing arbitrary files to cache This prevents metrics
+  timing and debug logs from becoming root-owned.
+  ([@isaacs](https://github.com/isaacs))
+* [`2c61ce65d`](https://github.com/npm/cli/commit/2c61ce65d6b67100fdf3fcb9729055b669cb1a1d)
+  infer cache owner from parent dir in `correct-mkdir` util
+  ([@isaacs](https://github.com/isaacs))
+* [`235e5d6df`](https://github.com/npm/cli/commit/235e5d6df6f427585ec58425f1f3339d08f39d8a)
+  ensure correct owner on cached all-packages metadata
+  ([@isaacs](https://github.com/isaacs))
+
+### DEPENDENCIES
+
+* [`6bb8e9377`](https://github.com/npm/cli/commit/6bb8e93774e93765462938192f38e7f2fb9fd599)
+  `cacache@12.0.0` ([@isaacs](https://github.com/isaacs))
+    * infer uid/gid instead of accepting as options, preventing the
+      overwhelming majority of cases where root-owned files end up in the
+      cache folder.
+      ([ac84d14](https://github.com/npm/cacache/commit/ac84d14))
+      ([@isaacs](https://github.com/isaacs))
+      ([#1](https://github.com/npm/cacache/pull/1))
+    * **i18n:** add another error message
+      ([676cb32](https://github.com/npm/cacache/commit/676cb32))
+      ([@zkat](https://github.com/zkat))
+* [`e1d87a392`](https://github.com/npm/cli/commit/e1d87a392371a070b0788ab7bfc62be18b21e9ad)
+  `pacote@9.5.4` ([@isaacs](https://github.com/isaacs))
+    * git: ensure stream failures are reported
+      ([7f07b5d](https://github.com/npm/pacote/commit/7f07b5d))
+      [#1](https://github.com/npm/pacote/issues/1)
+      ([@lddubeau](https://github.com/lddubeau))
+* [`ba3283112`](https://github.com/npm/cli/commit/ba32831126591d2f6f48e31a4a2329b533b1ff19)
+  `npm-registry-fetch@4.0.0`
+  ([@isaacs](https://github.com/isaacs))
+* [`ee90c334d`](https://github.com/npm/cli/commit/ee90c334d271383d0325af42f20f80f34cb61f07)
+  `libnpm@3.0.1`
+  ([@isaacs](https://github.com/isaacs))
+* [`1e480c384`](https://github.com/npm/cli/commit/1e480c38416982ae28b5cdd48c698ca59d3c0395)
+  `libnpmaccess@3.0.2`
+  ([@isaacs](https://github.com/isaacs))
+* [`7662ee850`](https://github.com/npm/cli/commit/7662ee850220c71ecaec639adbc7715286f0d28b)
+  `libnpmhook@5.0.3`
+  ([@isaacs](https://github.com/isaacs))
+* [`1357fadc6`](https://github.com/npm/cli/commit/1357fadc613d0bfeb40f9a8f3ecace2face2fe2c)
+  `libnpmorg@1.0.1`
+  ([@isaacs](https://github.com/isaacs))
+* [`a621b5cb6`](https://github.com/npm/cli/commit/a621b5cb6c881f95a11af86a8051754a67ae017c)
+  `libnpmsearch@2.0.2`
+  ([@isaacs](https://github.com/isaacs))
+* [`560cd31dd`](https://github.com/npm/cli/commit/560cd31dd51b6aa2e396ccdd7289fab0a50b5608)
+  `libnpmteam@1.0.2`
+  ([@isaacs](https://github.com/isaacs))
+* [`de7ae0867`](https://github.com/npm/cli/commit/de7ae0867d4c0180edc283457ce0b4e8e5eee554)
+  `npm-profile@4.0.2`
+  ([@isaacs](https://github.com/isaacs))
+* [`e95da463c`](https://github.com/npm/cli/commit/e95da463cb7a325457ef411a569d7ef4bf76901d)
+  `libnpm@3.0.1`
+  ([@isaacs](https://github.com/isaacs))
+* [`554b641d4`](https://github.com/npm/cli/commit/554b641d49d135ae8d137e83aa288897c32dacc6)
+  `npm-registry-fetch@4.0.0`
+  ([@isaacs](https://github.com/isaacs))
+
 ## v6.10.1 (2019-07-11):
 
 ### BUGFIXES
