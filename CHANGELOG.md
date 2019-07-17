@@ -90,7 +90,7 @@ Unix systems.
       [#29](https://github.com/npm/npm-lifecycle/issue/29)
       [#30](https://github.com/npm/npm-lifecycle/pull/30) Use platform
       specific path casing if present
-      ([@mattezell](https://github.com/mattezell)
+      ([@mattezell](https://github.com/mattezell))
 
 ## v6.10.1 (2019-07-11):
 
