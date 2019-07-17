@@ -49,35 +49,48 @@ Unix systems.
       [#1](https://github.com/npm/pacote/issues/1)
       ([@lddubeau](https://github.com/lddubeau))
 * [`ba3283112`](https://github.com/npm/cli/commit/ba32831126591d2f6f48e31a4a2329b533b1ff19)
-  `npm-registry-fetch@4.0.0`
-  ([@isaacs](https://github.com/isaacs))
+  `npm-registry-fetch@4.0.0` ([@isaacs](https://github.com/isaacs))
 * [`ee90c334d`](https://github.com/npm/cli/commit/ee90c334d271383d0325af42f20f80f34cb61f07)
-  `libnpm@3.0.1`
-  ([@isaacs](https://github.com/isaacs))
+  `libnpm@3.0.1` ([@isaacs](https://github.com/isaacs))
 * [`1e480c384`](https://github.com/npm/cli/commit/1e480c38416982ae28b5cdd48c698ca59d3c0395)
-  `libnpmaccess@3.0.2`
-  ([@isaacs](https://github.com/isaacs))
+  `libnpmaccess@3.0.2` ([@isaacs](https://github.com/isaacs))
 * [`7662ee850`](https://github.com/npm/cli/commit/7662ee850220c71ecaec639adbc7715286f0d28b)
-  `libnpmhook@5.0.3`
-  ([@isaacs](https://github.com/isaacs))
+  `libnpmhook@5.0.3` ([@isaacs](https://github.com/isaacs))
 * [`1357fadc6`](https://github.com/npm/cli/commit/1357fadc613d0bfeb40f9a8f3ecace2face2fe2c)
-  `libnpmorg@1.0.1`
-  ([@isaacs](https://github.com/isaacs))
+  `libnpmorg@1.0.1` ([@isaacs](https://github.com/isaacs))
 * [`a621b5cb6`](https://github.com/npm/cli/commit/a621b5cb6c881f95a11af86a8051754a67ae017c)
-  `libnpmsearch@2.0.2`
-  ([@isaacs](https://github.com/isaacs))
+  `libnpmsearch@2.0.2` ([@isaacs](https://github.com/isaacs))
 * [`560cd31dd`](https://github.com/npm/cli/commit/560cd31dd51b6aa2e396ccdd7289fab0a50b5608)
-  `libnpmteam@1.0.2`
-  ([@isaacs](https://github.com/isaacs))
+  `libnpmteam@1.0.2` ([@isaacs](https://github.com/isaacs))
 * [`de7ae0867`](https://github.com/npm/cli/commit/de7ae0867d4c0180edc283457ce0b4e8e5eee554)
-  `npm-profile@4.0.2`
-  ([@isaacs](https://github.com/isaacs))
+  `npm-profile@4.0.2` ([@isaacs](https://github.com/isaacs))
 * [`e95da463c`](https://github.com/npm/cli/commit/e95da463cb7a325457ef411a569d7ef4bf76901d)
-  `libnpm@3.0.1`
-  ([@isaacs](https://github.com/isaacs))
+  `libnpm@3.0.1` ([@isaacs](https://github.com/isaacs))
 * [`554b641d4`](https://github.com/npm/cli/commit/554b641d49d135ae8d137e83aa288897c32dacc6)
-  `npm-registry-fetch@4.0.0`
-  ([@isaacs](https://github.com/isaacs))
+  `npm-registry-fetch@4.0.0` ([@isaacs](https://github.com/isaacs))
+* [`06772f34a`](https://github.com/npm/cli/commit/06772f34ab851440dcd78574736936c674a84aed)
+  `node-gyp@5.0.3` ([@isaacs](https://github.com/isaacs))
+* [`42a1780fc`](https://github.com/npm/cli/commit/42a1780fc11e8b81aaa55eacf60e0ce933f5ea43)
+  `npm-lifecycle@3.1.0` ([@isaacs](https://github.com/isaacs))
+    * [`051cf20`](https://github.com/npm/npm-lifecycle/commit/051cf20072a01839c17920d2e841756251c4f924)
+      [#26](https://github.com/npm/npm-lifecycle/pull/26) fix switches for
+      alternative shells on Windows
+      ([@gucong3000](https://github.com/gucong3000))
+    * [`3aaf954`](https://github.com/npm/npm-lifecycle/commit/3aaf95435965e8f7acfd955582cf85237afd2c9b)
+      [#25](https://github.com/npm/npm-lifecycle/pull/25) set only one PATH
+      env variable for child process on Windows
+      ([@zkochan](https://github.com/zkochan))
+    * [`ea18ed2`](https://github.com/npm/npm-lifecycle/commit/ea18ed2b754ca7f11998cad70d88e9004c5bef4a)
+      [#36](https://github.com/npm/npm-lifecycle/pull/36)
+      [#11](https://github.com/npm/npm-lifecycle/issue/11)
+      [#18](https://github.com/npm/npm-lifecycle/issue/18) remove
+      procInterrupt listener on SIGINT in procError
+      ([@mattshin](https://github.com/mattshin))
+    * [`5523951`](https://github.com/npm/npm-lifecycle/commit/55239519c57b82521605622e6c71640a31ed4586)
+      [#29](https://github.com/npm/npm-lifecycle/issue/29)
+      [#30](https://github.com/npm/npm-lifecycle/pull/30) Use platform
+      specific path casing if present
+      ([@mattezell](https://github.com/mattezell)
 
 ## v6.10.1 (2019-07-11):
 
