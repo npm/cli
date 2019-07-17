@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.1.0"></a>
+# [3.1.0](https://github.com/npm/lifecycle/compare/v3.0.0...v3.1.0) (2019-07-17)
+
+
+### Bug Fixes
+
+* remove procInterrupt listener on SIGINT in procError ([ea18ed2](https://github.com/npm/lifecycle/commit/ea18ed2)), closes [#36](https://github.com/npm/lifecycle/issues/36) [#11](https://github.com/npm/lifecycle/issues/11) [#18](https://github.com/npm/lifecycle/issues/18)
+* set only one PATH env variable for child proc ([3aaf954](https://github.com/npm/lifecycle/commit/3aaf954)), closes [#22](https://github.com/npm/lifecycle/issues/22) [#25](https://github.com/npm/lifecycle/issues/25)
+
+
+### Features
+
+* **process.env.path:** Use platform specific path casing if present ([5523951](https://github.com/npm/lifecycle/commit/5523951)), closes [#29](https://github.com/npm/lifecycle/issues/29) [#30](https://github.com/npm/lifecycle/issues/30)
+
+
+
 <a name="3.0.0"></a>
 # [3.0.0](https://github.com/npm/lifecycle/compare/v2.1.1...v3.0.0) (2019-07-10)
 
