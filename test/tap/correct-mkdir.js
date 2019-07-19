@@ -12,7 +12,7 @@ test('correct-mkdir: no race conditions', function (t) {
     if (path === cache_dir) {
       // Return a non-matching owner
       cb(null, {
-        uid: +process.uid + 1,
+        uid: +process.getuid() + 1,
         isDirectory: function () {
           return true
         }
@@ -35,7 +35,8 @@ test('correct-mkdir: no race conditions', function (t) {
   }
   var mocks = {
     'graceful-fs': mock_fs,
-    'chownr': mock_chownr
+    'chownr': mock_chownr,
+    'infer-owner': requireInject('infer-owner', { fs: mock_fs })
   }
   var correctMkdir = requireInject('../../lib/utils/correct-mkdir.js', mocks)
 
