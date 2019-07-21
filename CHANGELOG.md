@@ -30,12 +30,25 @@ Unix systems.
   ([@isaacs](https://github.com/isaacs))
 * [`fa6acd2ea`](https://github.com/npm/cli/commit/fa6acd2ea035bf26c04d7885b534d03d5b77e7ba)
   [npm.community#8450](https://npm.community/t/npm-audit-fails-with-child-requires-fails-because-requires-must-be-an-object/8540)
-  audit: report server error on failure ([@isaacs](https://github.com/isaacs))
+  audit: report server error on failure
+  ([@isaacs](https://github.com/isaacs))
+* [`e2d377bb6`](https://github.com/npm/cli/commit/e2d377bb6419d8a3c1d80a73dba46062b4dad336)
+  [npm.community#8540](https://npm.community/t/npm-audit-fails-with-child-requires-fails-because-requires-must-be-an-object/8540)
+  audit: report server error on failure
+  ([@isaacs](https://github.com/isaacs))
+* [`52576a39e`](https://github.com/npm/cli/commit/52576a39ed75d94c46bb2c482fd38d2c6ea61c56)
+  [#216](https://github.com/npm/cli/pull/216)
+  [npm.community#5385](https://npm.community/t/6-8-0-npm-ci-fails-with-local-dependency/5385)
+  [npm.community#6076](https://npm.community/t/npm-ci-fail-to-local-packages/6076)
+  Fix `npm ci` with `file:` dependencies.  Partially reverts
+  [#40](https://github.com/npm/cli/pull/40)/[#86](https://github.com/npm/cli/pull/86),
+  recording dependencies of linked deps in order for `npm ci` to work.
+  ([@jfirebaugh](https://github.com/jfirebaugh))
 
 ### DEPENDENCIES
 
-* [`6bb8e9377`](https://github.com/npm/cli/commit/6bb8e93774e93765462938192f38e7f2fb9fd599)
-  `cacache@12.0.0` ([@isaacs](https://github.com/isaacs))
+* [`0fefdee13`](https://github.com/npm/cli/commit/0fefdee130fd7d0dbb240fb9ecb50a793fbf3d29)
+  `cacache@12.0.2` ([@isaacs](https://github.com/isaacs))
     * infer uid/gid instead of accepting as options, preventing the
       overwhelming majority of cases where root-owned files end up in the
       cache folder.
@@ -51,6 +64,8 @@ Unix systems.
       ([7f07b5d](https://github.com/npm/pacote/commit/7f07b5d))
       [#1](https://github.com/npm/pacote/issues/1)
       ([@lddubeau](https://github.com/lddubeau))
+* [`3f035bf09`](https://github.com/npm/cli/commit/3f035bf098e2feea76574cec18b04812659aa16d)
+  `infer-owner@1.0.4` ([@isaacs](https://github.com/isaacs))
 * [`ba3283112`](https://github.com/npm/cli/commit/ba32831126591d2f6f48e31a4a2329b533b1ff19)
   `npm-registry-fetch@4.0.0` ([@isaacs](https://github.com/isaacs))
 * [`ee90c334d`](https://github.com/npm/cli/commit/ee90c334d271383d0325af42f20f80f34cb61f07)
