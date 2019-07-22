@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.1.2"></a>
+## [3.1.2](https://github.com/npm/lifecycle/compare/v3.1.1...v3.1.2) (2019-07-22)
+
+
+### Bug Fixes
+
+* do not exclude /path/ from process.env copying ([53e6318](https://github.com/npm/lifecycle/commit/53e6318))
+
+
+
 <a name="3.1.0"></a>
 # [3.1.0](https://github.com/npm/lifecycle/compare/v3.0.0...v3.1.0) (2019-07-17)
 
