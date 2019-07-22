@@ -88,8 +88,8 @@ Unix systems.
   `npm-registry-fetch@4.0.0` ([@isaacs](https://github.com/isaacs))
 * [`06772f34a`](https://github.com/npm/cli/commit/06772f34ab851440dcd78574736936c674a84aed)
   `node-gyp@5.0.3` ([@isaacs](https://github.com/isaacs))
-* [`42a1780fc`](https://github.com/npm/cli/commit/42a1780fc11e8b81aaa55eacf60e0ce933f5ea43)
-  `npm-lifecycle@3.1.0` ([@isaacs](https://github.com/isaacs))
+* [`85358db80`](https://github.com/npm/cli/commit/85358db80d6ccb5f7bc9a0b4d558ac6dd2468394)
+  `npm-lifecycle@3.1.2` ([@isaacs](https://github.com/isaacs))
     * [`051cf20`](https://github.com/npm/npm-lifecycle/commit/051cf20072a01839c17920d2e841756251c4f924)
       [#26](https://github.com/npm/npm-lifecycle/pull/26) fix switches for
       alternative shells on Windows
