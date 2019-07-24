@@ -28,10 +28,6 @@ Unix systems.
 * [`235e5d6df`](https://github.com/npm/cli/commit/235e5d6df6f427585ec58425f1f3339d08f39d8a)
   ensure correct owner on cached all-packages metadata
   ([@isaacs](https://github.com/isaacs))
-* [`fa6acd2ea`](https://github.com/npm/cli/commit/fa6acd2ea035bf26c04d7885b534d03d5b77e7ba)
-  [npm.community#8450](https://npm.community/t/npm-audit-fails-with-child-requires-fails-because-requires-must-be-an-object/8540)
-  audit: report server error on failure
-  ([@isaacs](https://github.com/isaacs))
 * [`e2d377bb6`](https://github.com/npm/cli/commit/e2d377bb6419d8a3c1d80a73dba46062b4dad336)
   [npm.community#8540](https://npm.community/t/npm-audit-fails-with-child-requires-fails-because-requires-must-be-an-object/8540)
   audit: report server error on failure
