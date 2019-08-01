@@ -1,3 +1,22 @@
+## v6.10.3 (2019-08-06):
+
+### BUGFIXES
+
+* [`27cccfbda`](https://github.com/npm/cli/commit/27cccfbdac8526cc807b07f416355949b1372a9b)
+  [#223](https://github.com/npm/cli/pull/223) vulns → vulnerabilities in
+  npm audit output ([@sapegin](https://github.com/sapegin))
+* [`d5e865eb7`](https://github.com/npm/cli/commit/d5e865eb79329665a927cc2767b4395c03045dbb)
+  [#222](https://github.com/npm/cli/pull/222)
+  [#226](https://github.com/npm/cli/pull/226) install, doctor: don't crash
+  if registry unset ([@isaacs](https://github.com/isaacs))
+
+### DEPENDENCIES
+
+* [`77516df6e`](https://github.com/npm/cli/commit/77516df6eac94a6d7acb5e9ca06feaa0868d779b)
+  `licensee@7.0.3` ([@isaacs](https://github.com/isaacs))
+* [`ceb993590`](https://github.com/npm/cli/commit/ceb993590e4e376a9a78264ce7bb4327fbbb37fe)
+  `query-string@6.8.2` ([@isaacs](https://github.com/isaacs))
+
 ## v6.10.2 (2019-07-23):
 
 tl;dr - Fixes several issues with the cache when npm is run as `sudo` on
