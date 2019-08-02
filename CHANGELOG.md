@@ -9,6 +9,11 @@
   [#222](https://github.com/npm/cli/pull/222)
   [#226](https://github.com/npm/cli/pull/226) install, doctor: don't crash
   if registry unset ([@isaacs](https://github.com/isaacs))
+* [`5b3890226`](https://github.com/npm/cli/commit/5b389022652abeb0e1c278a152550eb95bc6c452)
+  [#227](https://github.com/npm/cli/pull/227)
+  [npm.community#9167](https://npm.community/t/npm-err-cb-never-called-permission-denied/9167/5)
+  Handle unhandledRejections, tell user what to do when encountering an
+  `EACCES` error in the cache.  ([@isaacs](https://github.com/isaacs))
 
 ### DEPENDENCIES
 
