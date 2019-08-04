@@ -8,6 +8,12 @@
 #   pr <url|number> [<upstream remote>=origin]
 
 main () {
+  if [ "$1" = "finish" ]; then
+    shift
+    finish "$@"
+    return $?
+  fi
+
   local url="$(prurl "$@")"
   local num=$(basename $url)
   local prpath="${url#git@github.com:}"
@@ -49,9 +55,52 @@ main () {
     git pull --rebase origin pull/$num/head
   fi
 
-  # add the PR-URL to the last commit, after squashing
-
   git rebase -i $curbranch # squash and test
+
+  if [ $? -eq 0 ]; then
+    finish "${curbranch}"
+  else
+    echo "resolve conflicts and run: $0 finish "'"'${curbranch}'"'
+  fi
+}
+
+# add the PR-URL to the last commit, after squashing
+finish () {
+  if [ $# -eq 0 ]; then
+    echo "Usage: $0 finish <branch> (while on a PR-### branch)" >&2
+    return 1
+  fi
+
+  local curbranch="$1"
+  local ref=$(cat .git/HEAD)
+  local prnum
+  case $ref in
+    "ref: refs/heads/PR-"*)
+      prnum=${ref#ref: refs/heads/PR-}
+      ;;
+    *)
+      echo "not on the PR-## branch any more!" >&2
+      return 1
+      ;;
+  esac
+
+  local me=$(git config github.user || git config user.name)
+  if [ "$me" == "" ]; then
+    echo "run 'git config --add github.user <username>'" >&2
+    return 1
+  fi
+
+  set -x
+
+  local url="$(prurl "$prnum")"
+  local num=$prnum
+  local prpath="${url#git@github.com:}"
+  local repo=${prpath%/pull/$num}
+  local prweb="https://github.com/$prpath"
+  local root="$(prroot "$url")"
+
+  local api="https://api.github.com/repos/${repo}/pulls/${num}"
+  local user=$(curl -s $api | json user.login)
 
   local lastmsg="$(git log -1 --pretty=%B)"
   local newmsg="${lastmsg}
@@ -63,8 +112,10 @@ Reviewed-by: @${me}
 "
   git commit --amend -m "$newmsg"
   git checkout $curbranch
-  git merge $branch --ff-only
+  git merge PR-${prnum} --ff-only
+  set +x
 }
+
 
 prurl () {
   local url="$1"
