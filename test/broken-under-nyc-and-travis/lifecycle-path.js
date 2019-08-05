@@ -4,6 +4,7 @@ var path = require('path')
 var mkdirp = require('mkdirp')
 var osenv = require('osenv')
 var rimraf = require('rimraf')
+var which = require('which')
 var test = require('tap').test
 
 var common = require('../common-tap.js')
@@ -20,6 +21,9 @@ if (isWindows) {
   // On non-Windows, without the path to the shell, nothing usually works.
   PATH = '/bin:/usr/bin'
 }
+
+var systemNode = which.sync('node', { nothrow: true, path: PATH })
+// the path to the system wide node (null if none)
 
 test('setup', function (t) {
   cleanup()
@@ -183,6 +187,12 @@ function checkPath (testconfig, t) {
             'The node binary used for scripts is.*' +
             process.execPath.replace(/[/\\]/g, '.'))
           t.match(stderr, regex, 'reports the current binary vs conflicting')
+        } else if (systemNode !== null) {
+          var regexSystemNode = new RegExp(
+            'The node binary used for scripts is.*' +
+            systemNode.replace(/[/\\]/g, '.')
+          )
+          t.match(stderr, regexSystemNode, 'reports the system binary vs conflicting')
         } else {
           t.match(stderr, /there is no node binary in the current PATH/, 'informs user that there is no node binary in PATH')
         }
