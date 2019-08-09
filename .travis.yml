@@ -21,7 +21,7 @@ matrix:
       script:
       - "npx standard"
       - "node . run licenses"
-      - "node . run tap -- \"test/tap/*.js\" \"test/broken-under-nyc/*.js\""
+      - "node . run tap -- \"test/tap/*.js\"
     - node_js: "8"
       env: DEPLOY_VERSION=testing
     - node_js: "6"
