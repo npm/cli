@@ -62,7 +62,9 @@ after packing it up into a tarball (b).
 
     With the `--production` flag (or when the `NODE_ENV` environment variable
     is set to `production`), npm will not install modules listed in
-    `devDependencies`.
+    `devDependencies`. To install all modules listed in both `dependencies` 
+    and `devDependencies` when `NODE_ENV` environment variable is set to `production`, 
+    you can use `--production=false`.
 
     > NOTE: The `--production` flag has no particular meaning when adding a
     dependency to a project.
