@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.5.5"></a>
+## [9.5.5](https://github.com/npm/pacote/compare/v9.5.4...v9.5.5) (2019-08-12)
+
+
+### Bug Fixes
+
+* don't pass uid/gid to cacache ([0a0c73c](https://github.com/npm/pacote/commit/0a0c73c))
+* Infer owner of all unpacked files ([f12e7ef](https://github.com/npm/pacote/commit/f12e7ef))
+* invalid arg detection in extract() ([b4dc363](https://github.com/npm/pacote/commit/b4dc363)), closes [#5](https://github.com/npm/pacote/issues/5) [#6](https://github.com/npm/pacote/issues/6)
+
+
+
 <a name="9.5.4"></a>
 ## [9.5.4](https://github.com/npm/pacote/compare/v9.5.3...v9.5.4) (2019-07-16)
 
