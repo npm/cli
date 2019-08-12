@@ -71,8 +71,8 @@ A few meaty bugfixes, and introducing `peerDependenciesMeta`.
     PowerShell ([@ExE-Boss](https://github.com/ExE-Boss))
 * [`a4e279544`](https://github.com/npm/cli/commit/a4e279544f7983e0adff1e475e3760f1ea85825a)
   `npm-lifecycle@3.1.3` ([@isaacs](https://github.com/isaacs))
-* [`ab66c9aa8`](https://github.com/npm/cli/commit/ab66c9aa8c52eefc722b901c4ba2aa5ac1822e9d)
-  `libcipm@4.0.2` ([@isaacs](https://github.com/isaacs))
+* [`7086a1809`](https://github.com/npm/cli/commit/7086a1809bbfda9be81344b3949c7d3ac687ffc4)
+  `libcipm@4.0.3` ([@isaacs](https://github.com/isaacs))
 
 ### TESTS
 
