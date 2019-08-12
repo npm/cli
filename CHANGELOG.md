@@ -1,3 +1,88 @@
+## v6.11.0 (2019-08-20):
+
+A few meaty bugfixes, and introducing `peerDependenciesMeta`.
+
+### FEATURES
+
+* [`a12341088`](https://github.com/npm/cli/commit/a12341088820c0e7ef6c1c0db3c657f0c2b3943e)
+  [#224](https://github.com/npm/cli/pull/224) Implements
+  peerDependenciesMeta ([@arcanis](https://github.com/arcanis))
+
+### BUGFIXES
+
+* [`24acc9fc8`](https://github.com/npm/cli/commit/24acc9fc89d99d87cc66206c6c6f7cdc82fbf763)
+  and
+  [`45772af0d`](https://github.com/npm/cli/commit/45772af0ddca54b658cb2ba2182eec26d0a4729d)
+  [#217](https://github.com/npm/cli/pull/217)
+  [npm.community#8863](https://npm.community/t/installing-the-same-module-under-multiple-relative-paths-fails-on-linux/8863)
+  [npm.community#9327](https://npm.community/t/reinstall-breaks-after-npm-update-to-6-10-2/9327,)
+  do not descend into directory deps' child modules, fix shrinkwrap files
+  that inappropriately list child nodes of symlink packages
+  ([@isaacs](https://github.com/isaacs) and
+  [@salomvary](https://github.com/salomvary))
+* [`50cfe113d`](https://github.com/npm/cli/commit/50cfe113da5fcc59c1d99b0dcf1050ace45803c7)
+  [#229](https://github.com/npm/cli/pull/229) fixed typo in semver doc
+  ([@gall0ws](https://github.com/gall0ws))
+* [`e8fb2a1bd`](https://github.com/npm/cli/commit/e8fb2a1bd9785e0092e9926f4fd65ad431e38452)
+  [#231](https://github.com/npm/cli/pull/231) Fix spelling mistakes in
+  CHANGELOG-3.md ([@XhmikosR](https://github.com/XhmikosR))
+* [`769d2e057`](https://github.com/npm/cli/commit/769d2e057daf5a2cbfe0ce86f02550e59825a691)
+  Better error on invalid --user/--group This addresses the issue when
+  people fail to install binary packages on Docker and other environments
+  where there is no 'nobody' user.  ([@isaacs](https://github.com/isaacs))
+* [`8b43c9624`](https://github.com/npm/cli/commit/8b43c962498c8e2707527e4fca442d7a4fa51595)
+  [nodejs/node#28987](https://github.com/nodejs/node/issues/28987)
+  [npm.community#6032](https://npm.community/t/npm-ci-doesnt-respect-npmrc-variables/6032)
+  [npm.community#6658](https://npm.community/t/npm-ci-doesnt-fill-anymore-the-process-env-npm-config-cache-variable-on-post-install-scripts/6658)
+  [npm.community#6069](https://npm.community/t/npm-ci-does-not-compile-native-dependencies-according-to-npmrc-configuration/6069)
+  [npm.community#9323](https://npm.community/t/npm-6-9-x-not-passing-environment-to-node-gyp-regression-from-6-4-x/9323/2)
+  Fix the regression where random config values in a .npmrc file are not
+  passed to lifecycle scripts, breaking build processes which rely on them.
+  ([@isaacs](https://github.com/isaacs))
+
+### DEPENDENCIES
+
+* [`e7e98952b`](https://github.com/npm/cli/commit/e7e98952be9bcdd1c7403755d0038f996198653b)
+  `pacote@9.5.5`: Infer the ownership of all unpacked files in
+  `node_modules`, so that we never have user-owned files in root-owned
+  folders, or root-owned files in user-owned folders.
+  ([@isaacs](https://github.com/isaacs))
+* [`aa22ff6ea`](https://github.com/npm/cli/commit/aa22ff6ea28dcb17e9f2b1bc87f2a4b5b868bf8a)
+  `cmd-shim@2.1.0`:
+  * [`9c93ac3`](https://github.com/npm/cmd-shim/commit/9c93ac39e95b0d6ae852e842e4c5dba5e19687c2)
+    [#2](https://github.com/npm/cmd-shim/pull/2)
+    [npm#3380](https://github.com/npm/npm/issues/3380) Handle environment
+    variables properly ([@basbossink](https://github.com/basbossink))
+  * [`2d277f8`](https://github.com/npm/cmd-shim/commit/2d277f8e84d45401747b0b9470058f168b974ad5)
+    [#25](https://github.com/npm/cmd-shim/pull/25)
+    [#36](https://github.com/npm/cmd-shim/pull/36)
+    [#35](https://github.com/npm/cmd-shim/pull/35) Fix 'no shebang' case by
+    always providing `$basedir` in shell script
+    ([@igorklopov](https://github.com/igorklopov))
+  * [`adaf20b`](https://github.com/npm/cmd-shim/commit/adaf20b7fa2c09c2111a2506c6a3e53ed0831f88)
+    [#26](https://github.com/npm/cmd-shim/pull/26) Fix `$*` causing an
+    error when arguments contain parentheses
+    ([@satazor](https://github.com/satazor))
+  * [`49f0c13`](https://github.com/npm/cmd-shim/commit/49f0c1318fd384e0031c3fd43801f0e22e1e555f)
+    [#30](https://github.com/npm/cmd-shim/pull/30) Fix paths for MSYS/MINGW
+    bash ([@dscho](https://github.com/dscho))
+  * [`51a8af3`](https://github.com/npm/cmd-shim/commit/51a8af30990cb072cb30d67fc1b564b14746bba9)
+    [#34](https://github.com/npm/cmd-shim/pull/34) Add proper support for
+    PowerShell ([@ExE-Boss](https://github.com/ExE-Boss))
+* [`a4e279544`](https://github.com/npm/cli/commit/a4e279544f7983e0adff1e475e3760f1ea85825a)
+  `npm-lifecycle@3.1.3` ([@isaacs](https://github.com/isaacs))
+* [`ab66c9aa8`](https://github.com/npm/cli/commit/ab66c9aa8c52eefc722b901c4ba2aa5ac1822e9d)
+  `libcipm@4.0.2` ([@isaacs](https://github.com/isaacs))
+
+### TESTS
+
+* [`b6df0913c`](https://github.com/npm/cli/commit/b6df0913ca73246f1fa6cfa0e81e34ba5f2b6204)
+  [#228](https://github.com/npm/cli/pull/228) Proper handing of
+  /usr/bin/node lifecycle-path test
+  ([@olivr70](https://github.com/olivr70))
+* [`aaf98e88c`](https://github.com/npm/cli/commit/aaf98e88c78fd6c850d0a3d3ee2f61c02f63bc8c)
+  `npm-registry-mock@1.3.0` ([@isaacs](https://github.com/isaacs))
+
 ## v6.10.3 (2019-08-06):
 
 ### BUGFIXES
