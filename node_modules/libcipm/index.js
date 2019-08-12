@@ -370,7 +370,7 @@ class Installer {
         pkg, stage, pkgPath, LifecycleOpts(this.opts).concat({
           // TODO: can be removed once npm-lifecycle is updated to modern
           //       config practices.
-          config: this.opts,
+          config: Object.assign({}, this.opts, { log: null }),
           dir: this.prefix
         }))
       ).tap(() => { this.timings.scripts += Date.now() - start })
