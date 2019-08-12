@@ -21,25 +21,6 @@ const statAsync = BB.promisify(fs.stat)
 const symlinkAsync = BB.promisify(fs.symlink)
 const writeFileAsync = BB.promisify(fs.writeFile)
 
-const CipmOpts = figgyPudding({
-  also: {},
-  dev: 'development',
-  development: {},
-  dirPacker: {},
-  force: {},
-  global: {},
-  ignoreScripts: 'ignore-scripts',
-  'ignore-scripts': {},
-  log: {},
-  loglevel: {},
-  only: {},
-  prefix: {},
-  prod: 'production',
-  production: {},
-  Promise: { default: () => BB },
-  umask: {}
-})
-
 const LifecycleOpts = figgyPudding({
   config: {},
   'script-shell': {},
@@ -59,7 +40,7 @@ const LifecycleOpts = figgyPudding({
 
 class Installer {
   constructor (opts) {
-    this.opts = CipmOpts(opts)
+    this.opts = opts
 
     // Stats
     this.startTime = Date.now()
