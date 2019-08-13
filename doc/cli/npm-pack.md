@@ -17,6 +17,9 @@ If the same package is specified multiple times, then the file will be
 overwritten the second time.
 
 If no arguments are supplied, then npm packs the current package folder.
+In that case, `prepack` and `postpack` script hooks are invoked. `postpack` is 
+invoked with the **npm_lifecycle_postpack_archive** environment variable holding the full path of the
+generated archive.
 
 The `--dry-run` argument will do everything that pack usually does without
 actually packing anything. Reports on what would have gone into the tarball.

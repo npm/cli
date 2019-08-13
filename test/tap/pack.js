@@ -197,3 +197,32 @@ test('postpack', (t) => {
     })
     .then(() => rimraf(testDir))
 })
+
+test('postpack-env', (t) => {
+  const fixture = new Tacks(new Dir({
+    'package.json': new File({
+      name: 'generic-package',
+      version: '90000.100001.5',
+      scripts: {
+        postpack: 'node -e "var fs = require(\'fs\'); fs.writeFileSync(\'../myenv.json\',JSON.stringify(process.env,null,2)); if (!fs.existsSync(process.env.npm_lifecycle_postpack_archive)) { throw new Error(\'tar archive does not exist on postpack\') }"'
+      }
+    })
+  }))
+
+  return rimraf(testDir)
+    .then(() => fixture.create(testDir))
+    .then(() => common.npm([
+      'pack',
+      '--loglevel', 'notice',
+      '--cache', cache,
+      '--tmp', tmp,
+      '--prefix', testDir,
+      '--no-global'
+    ], {
+      cwd: testDir
+    }))
+    .spread((code, stdout, stderr) => {
+      t.equal(code, 0, 'npm pack exited ok')
+    })
+    .then(() => rimraf(testDir))
+})

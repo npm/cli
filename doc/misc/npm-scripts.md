@@ -20,11 +20,11 @@ following scripts:
   run BEFORE a tarball is packed (on `npm pack`, `npm publish`, and when
   installing git dependencies)
 * postpack:
-  Run AFTER the tarball has been generated and moved to its final destination.
+  Run AFTER the tarball has been generated and moved to its final local destination (on `npm pack`, `npm publish` in temporaty file just before upload).
 * publish, postpublish:
   Run AFTER the package is published.
 * preinstall:
-  Run BEFORE the package is installed
+  Run BEFORE the package is installed.
 * install, postinstall:
   Run AFTER the package is installed.
 * preuninstall, uninstall:

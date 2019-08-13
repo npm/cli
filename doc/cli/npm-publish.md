@@ -64,6 +64,11 @@ installs will use the strongest supported algorithm to verify downloads.
 Similar to `--dry-run` see `npm-pack(1)`, which figures out the files to be
 included and packs them into a tarball to be uploaded to the registry.
 
+The following script hooks are invoked : 
+- `prepublishOnly` and then `prepack` before any processing
+- `postpack` after generating the archive (path to the archive is available in the **npm_lifecycle_postpack_archive** environment variable)
+- `publish` and than `postpublish` after uploading
+
 ## SEE ALSO
 
 * npm-registry(7)
@@ -74,3 +79,4 @@ included and packs them into a tarball to be uploaded to the registry.
 * npm-dist-tag(1)
 * npm-pack(1)
 * npm-profile(1)
+* npm-scripts(7)
