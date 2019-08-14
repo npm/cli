@@ -49,8 +49,8 @@ A few meaty bugfixes, and introducing `peerDependenciesMeta`.
   `node_modules`, so that we never have user-owned files in root-owned
   folders, or root-owned files in user-owned folders.
   ([@isaacs](https://github.com/isaacs))
-* [`aa22ff6ea`](https://github.com/npm/cli/commit/aa22ff6ea28dcb17e9f2b1bc87f2a4b5b868bf8a)
-  `cmd-shim@2.1.0`:
+* [`bb33940c3`](https://github.com/npm/cli/commit/bb33940c32aad61704084e61ebd1bd8e7cacccc8)
+  `cmd-shim@3.0.0`:
   * [`9c93ac3`](https://github.com/npm/cmd-shim/commit/9c93ac39e95b0d6ae852e842e4c5dba5e19687c2)
     [#2](https://github.com/npm/cmd-shim/pull/2)
     [npm#3380](https://github.com/npm/npm/issues/3380) Handle environment
@@ -71,11 +71,20 @@ A few meaty bugfixes, and introducing `peerDependenciesMeta`.
   * [`51a8af3`](https://github.com/npm/cmd-shim/commit/51a8af30990cb072cb30d67fc1b564b14746bba9)
     [#34](https://github.com/npm/cmd-shim/pull/34) Add proper support for
     PowerShell ([@ExE-Boss](https://github.com/ExE-Boss))
+  * [`4c37e04`](https://github.com/npm/cmd-shim/commit/4c37e048dee672237e8962fdffca28e20e9f976d)
+    [#10](https://github.com/npm/cmd-shim/issues/10) Work around quoted
+    batch file names ([@isaacs](https://github.com/isaacs))
 * [`a4e279544`](https://github.com/npm/cli/commit/a4e279544f7983e0adff1e475e3760f1ea85825a)
   `npm-lifecycle@3.1.3` ([@isaacs](https://github.com/isaacs)):
     * fail properly if `uid-number` raises an error
 * [`7086a1809`](https://github.com/npm/cli/commit/7086a1809bbfda9be81344b3949c7d3ac687ffc4)
   `libcipm@4.0.3` ([@isaacs](https://github.com/isaacs))
+* [`8845141f9`](https://github.com/npm/cli/commit/8845141f9d7827dae572c8cf26f2c775db905bd3)
+  `read-package-json@2.1.0` ([@isaacs](https://github.com/isaacs))
+* [`51c028215`](https://github.com/npm/cli/commit/51c02821575d80035ebe853492d110db11a7d1b9)
+  `bin-links@1.1.3` ([@isaacs](https://github.com/isaacs))
+* [`534a5548c`](https://github.com/npm/cli/commit/534a5548c9ebd59f0dd90e9ccca148ed8946efa6)
+  `read-cmd-shim@1.0.3` ([@isaacs](https://github.com/isaacs))
 
 ### TESTS
 
