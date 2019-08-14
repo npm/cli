@@ -27,9 +27,11 @@ A few meaty bugfixes, and introducing `peerDependenciesMeta`.
   [#231](https://github.com/npm/cli/pull/231) Fix spelling mistakes in
   CHANGELOG-3.md ([@XhmikosR](https://github.com/XhmikosR))
 * [`769d2e057`](https://github.com/npm/cli/commit/769d2e057daf5a2cbfe0ce86f02550e59825a691)
-  Better error on invalid --user/--group This addresses the issue when
-  people fail to install binary packages on Docker and other environments
-  where there is no 'nobody' user.  ([@isaacs](https://github.com/isaacs))
+  [npm/uid-number#7](https://github.com/npm/uid-number/issues/7) Better
+  error on invalid `--user`/`--group` configs. This addresses the issue
+  when people fail to install binary packages on Docker and other
+  environments where there is no 'nobody' user.
+  ([@isaacs](https://github.com/isaacs))
 * [`8b43c9624`](https://github.com/npm/cli/commit/8b43c962498c8e2707527e4fca442d7a4fa51595)
   [nodejs/node#28987](https://github.com/nodejs/node/issues/28987)
   [npm.community#6032](https://npm.community/t/npm-ci-doesnt-respect-npmrc-variables/6032)
@@ -70,7 +72,8 @@ A few meaty bugfixes, and introducing `peerDependenciesMeta`.
     [#34](https://github.com/npm/cmd-shim/pull/34) Add proper support for
     PowerShell ([@ExE-Boss](https://github.com/ExE-Boss))
 * [`a4e279544`](https://github.com/npm/cli/commit/a4e279544f7983e0adff1e475e3760f1ea85825a)
-  `npm-lifecycle@3.1.3` ([@isaacs](https://github.com/isaacs))
+  `npm-lifecycle@3.1.3` ([@isaacs](https://github.com/isaacs)):
+    * fail properly if `uid-number` raises an error
 * [`7086a1809`](https://github.com/npm/cli/commit/7086a1809bbfda9be81344b3949c7d3ac687ffc4)
   `libcipm@4.0.3` ([@isaacs](https://github.com/isaacs))
 
