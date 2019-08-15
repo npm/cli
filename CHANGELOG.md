@@ -85,6 +85,10 @@ A few meaty bugfixes, and introducing `peerDependenciesMeta`.
   `bin-links@1.1.3` ([@isaacs](https://github.com/isaacs))
 * [`534a5548c`](https://github.com/npm/cli/commit/534a5548c9ebd59f0dd90e9ccca148ed8946efa6)
   `read-cmd-shim@1.0.3` ([@isaacs](https://github.com/isaacs))
+* [`3038f2fd5`](https://github.com/npm/cli/commit/3038f2fd5b1d7dd886ee72798241d8943690f508)
+  `gentle-fs@2.2.1` ([@isaacs](https://github.com/isaacs))
+* [`049b0a5f8`](https://github.com/npm/cli/commit/049b0a5f8a8eed92b7b148877c5b9e1141e56666)
+  `pacote@9.5.6` ([@isaacs](https://github.com/isaacs))
 
 ### TESTS
 
