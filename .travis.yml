@@ -25,6 +25,7 @@ matrix:
       env: DEPLOY_VERSION=testing
     - node_js: "6"
       env: DEPLOY_VERSION=testing
+      cache: false
 notifications:
     slack: npm-inc:kRqQjto7YbINqHPb1X6nS3g8
 install:
