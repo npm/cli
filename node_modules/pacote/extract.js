@@ -11,7 +11,7 @@ const path = require('path')
 const rimraf = BB.promisify(require('rimraf'))
 const withTarballStream = require('./lib/with-tarball-stream.js')
 const inferOwner = require('infer-owner')
-const chown = BB.promisify(fs.chown)
+const chown = BB.promisify(require('chownr'))
 
 const truncateAsync = BB.promisify(fs.truncate)
 const readFileAsync = BB.promisify(fs.readFile)
@@ -72,12 +72,12 @@ function tryExtract (spec, tarStream, dest, opts) {
 
     rimraf(dest)
       .then(() => mkdirp(dest))
-      .then(() => {
+      .then((made) => {
         // respect the current ownership of unpack targets
         if (typeof selfOwner.uid === 'number' &&
             typeof selfOwner.gid === 'number' &&
             selfOwner.uid !== opts.uid && selfOwner.gid !== opts.gid) {
-          return chown(dest, opts.uid, opts.gid)
+          return chown(made || dest, opts.uid, opts.gid)
         }
       })
       .then(() => {
