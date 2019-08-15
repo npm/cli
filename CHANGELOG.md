@@ -41,6 +41,12 @@ A few meaty bugfixes, and introducing `peerDependenciesMeta`.
   Fix the regression where random config values in a .npmrc file are not
   passed to lifecycle scripts, breaking build processes which rely on them.
   ([@isaacs](https://github.com/isaacs))
+* [`8b85eaa47`](https://github.com/npm/cli/commit/8b85eaa47da3abaacc90fe23162a68cc6e1f0404)
+  save files with inferred ownership rather than relying on `SUDO_UID` and
+  `SUDO_GID`. ([@isaacs](https://github.com/isaacs))
+* [`b7f6e5f02`](https://github.com/npm/cli/commit/b7f6e5f0285515087b4614d81db17206524c0fdb)
+  Infer ownership of shrinkwrap files
+  ([@isaacs](https://github.com/isaacs))
 
 ### DEPENDENCIES
 
