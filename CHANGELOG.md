@@ -47,6 +47,9 @@ A few meaty bugfixes, and introducing `peerDependenciesMeta`.
 * [`b7f6e5f02`](https://github.com/npm/cli/commit/b7f6e5f0285515087b4614d81db17206524c0fdb)
   Infer ownership of shrinkwrap files
   ([@isaacs](https://github.com/isaacs))
+* [`54b095d77`](https://github.com/npm/cli/commit/54b095d77b3b131622b3cf4cb5c689aa2dd10b6b)
+  [#235](https://github.com/npm/cli/pull/235) Add spec to dist-tag remove
+  function ([@theberbie](https://github.com/theberbie))
 
 ### DEPENDENCIES
 
@@ -95,6 +98,8 @@ A few meaty bugfixes, and introducing `peerDependenciesMeta`.
   `gentle-fs@2.2.1` ([@isaacs](https://github.com/isaacs))
 * [`049b0a5f8`](https://github.com/npm/cli/commit/049b0a5f8a8eed92b7b148877c5b9e1141e56666)
   `pacote@9.5.6` ([@isaacs](https://github.com/isaacs))
+* [`a609a1648`](https://github.com/npm/cli/commit/a609a16489f76791697d270b499fd4949ab1f8c3)
+  `graceful-fs@4.2.2` ([@isaacs](https://github.com/isaacs))
 
 ### TESTS
 
