@@ -53,8 +53,8 @@ A few meaty bugfixes, and introducing `peerDependenciesMeta`.
 
 ### DEPENDENCIES
 
-* [`e7e98952b`](https://github.com/npm/cli/commit/e7e98952be9bcdd1c7403755d0038f996198653b)
-  `pacote@9.5.5`: Infer the ownership of all unpacked files in
+* [`dc8f9e52f`](https://github.com/npm/cli/commit/dc8f9e52f0bb107c0a6b20cc0c97cbc3b056c1b3)
+  `pacote@9.5.7`: Infer the ownership of all unpacked files in
   `node_modules`, so that we never have user-owned files in root-owned
   folders, or root-owned files in user-owned folders.
   ([@isaacs](https://github.com/isaacs))
@@ -100,6 +100,8 @@ A few meaty bugfixes, and introducing `peerDependenciesMeta`.
   `pacote@9.5.6` ([@isaacs](https://github.com/isaacs))
 * [`a609a1648`](https://github.com/npm/cli/commit/a609a16489f76791697d270b499fd4949ab1f8c3)
   `graceful-fs@4.2.2` ([@isaacs](https://github.com/isaacs))
+* [`f0346f754`](https://github.com/npm/cli/commit/f0346f75490619a81b310bfc18646ae5ae2e0ea4)
+  `cacache@12.0.3` ([@isaacs](https://github.com/isaacs))
 
 ### TESTS
 
