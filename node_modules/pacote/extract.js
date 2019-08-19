@@ -74,7 +74,8 @@ function tryExtract (spec, tarStream, dest, opts) {
       .then(() => mkdirp(dest))
       .then((made) => {
         // respect the current ownership of unpack targets
-        if (typeof selfOwner.uid === 'number' &&
+        // but don't try to chown if we're not root.
+        if (selfOwner.uid === 0 &&
             typeof selfOwner.gid === 'number' &&
             selfOwner.uid !== opts.uid && selfOwner.gid !== opts.gid) {
           return chown(made || dest, opts.uid, opts.gid)
