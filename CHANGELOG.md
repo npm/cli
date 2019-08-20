@@ -7,6 +7,9 @@ A few meaty bugfixes, and introducing `peerDependenciesMeta`.
 * [`a12341088`](https://github.com/npm/cli/commit/a12341088820c0e7ef6c1c0db3c657f0c2b3943e)
   [#224](https://github.com/npm/cli/pull/224) Implements
   peerDependenciesMeta ([@arcanis](https://github.com/arcanis))
+* [`2f3b79bba`](https://github.com/npm/cli/commit/2f3b79bbad820fd4a398aa494b19f79b7fd520a1)
+  [#234](https://github.com/npm/cli/pull/234) add new forbidden 403 error
+  code ([@claudiahdz](https://github.com/claudiahdz))
 
 ### BUGFIXES
 
@@ -96,12 +99,14 @@ A few meaty bugfixes, and introducing `peerDependenciesMeta`.
   `read-cmd-shim@1.0.3` ([@isaacs](https://github.com/isaacs))
 * [`3038f2fd5`](https://github.com/npm/cli/commit/3038f2fd5b1d7dd886ee72798241d8943690f508)
   `gentle-fs@2.2.1` ([@isaacs](https://github.com/isaacs))
-* [`049b0a5f8`](https://github.com/npm/cli/commit/049b0a5f8a8eed92b7b148877c5b9e1141e56666)
-  `pacote@9.5.6` ([@isaacs](https://github.com/isaacs))
 * [`a609a1648`](https://github.com/npm/cli/commit/a609a16489f76791697d270b499fd4949ab1f8c3)
   `graceful-fs@4.2.2` ([@isaacs](https://github.com/isaacs))
 * [`f0346f754`](https://github.com/npm/cli/commit/f0346f75490619a81b310bfc18646ae5ae2e0ea4)
   `cacache@12.0.3` ([@isaacs](https://github.com/isaacs))
+* [`ca9c615c8`](https://github.com/npm/cli/commit/ca9c615c8cff5c7db125735eb09f84d912d18694)
+  `npm-pick-manifest@3.0.0` ([@isaacs](https://github.com/isaacs))
+* [`b417affbf`](https://github.com/npm/cli/commit/b417affbf7133dc7687fd809e4956a43eae3438a)
+  `pacote@9.5.8` ([@isaacs](https://github.com/isaacs))
 
 ### TESTS
 
