@@ -122,10 +122,10 @@ function writeShim_ (from, to, prog, args, variables, cb) {
   // Subroutine trick to fix https://github.com/npm/cmd-shim/issues/10
   var head = '@ECHO off\r\n' +
     'SETLOCAL\r\n' +
-    'CALL find_dp0\r\n'
+    'CALL :find_dp0\r\n'
   var foot = 'ENDLOCAL\r\n' +
     'EXIT /b\r\n' +
-    'find_dp0:\r\n' +
+    ':find_dp0\r\n' +
     'SET dp0=%~dp0\r\n' +
     'EXIT /b\r\n'
 
