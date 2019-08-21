@@ -113,7 +113,7 @@ function writeShim_ (from, to, prog, args, variables, cb) {
   //
   // "%_prog%" "%dp0%\.\node_modules\npm\bin\npm-cli.js" %*
   // @ENDLOCAL
-  // @EXIT /b
+  // @EXIT /b %errorlevel%
   //
   // :find_dp0
   // SET dp0=%~dp0
@@ -124,7 +124,7 @@ function writeShim_ (from, to, prog, args, variables, cb) {
     'SETLOCAL\r\n' +
     'CALL :find_dp0\r\n'
   var foot = 'ENDLOCAL\r\n' +
-    'EXIT /b\r\n' +
+    'EXIT /b %errorlevel%\r\n' +
     ':find_dp0\r\n' +
     'SET dp0=%~dp0\r\n' +
     'EXIT /b\r\n'

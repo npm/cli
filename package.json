@@ -48,7 +48,7 @@
     "ci-info": "^2.0.0",
     "cli-columns": "^3.1.2",
     "cli-table3": "^0.5.1",
-    "cmd-shim": "^3.0.2",
+    "cmd-shim": "^3.0.3",
     "columnify": "~1.5.4",
     "config-chain": "^1.1.12",
     "detect-indent": "~5.0.0",
