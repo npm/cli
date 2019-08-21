@@ -1,3 +1,10 @@
+## 6.11.1 (2019-08-20):
+
+Fix a regression for windows command shim syntax.
+
+* [`37db29647`](https://github.com/npm/cli/commit/37db2964710c80003604b7e3c1527d17be7ed3d0)
+  `cmd-shim@3.0.2` ([@isaacs](https://github.com/isaacs))
+
 ## v6.11.0 (2019-08-20):
 
 A few meaty bugfixes, and introducing `peerDependenciesMeta`.
