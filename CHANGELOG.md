@@ -1,3 +1,33 @@
+## 6.11.2 (2019-08-22):
+
+Fix a recent Windows regression, and two long-standing Windows bugs.  Also,
+get CI running on Windows, so these things are less likely in the future.
+
+### DEPENDENCIES
+
+* [`9778a1b87`](https://github.com/npm/cli/commit/9778a1b878aaa817af6e99385e7683c2a389570d)
+  `cmd-shim@3.0.3`: Fix regression where shims fail to preserve exit code
+  ([@isaacs](https://github.com/isaacs))
+* [`bf93e91d8`](https://github.com/npm/cli/commit/bf93e91d879c816a055d5913e6e4210d7299f299)
+  `npm-package-arg@6.1.1`: Properly handle git+file: urls on Windows when a
+  drive letter is included.  ([@isaacs](https://github.com/isaacs))
+
+### BUGFIXES
+
+* [`6cc4cc66f`](https://github.com/npm/cli/commit/6cc4cc66f1fb050dc4113e35cab59197fd48e04a)
+  escape args properly on Windows Bash Despite being bash, Node.js running
+  on windows git mingw bash still executes child processes using cmd.exe.
+  As a result, arguments in this environment need to be escaped in the
+  style of cmd.exe, not bash.  ([@isaacs](https://github.com/isaacs))
+
+### TESTS
+
+* [`291aba7b8`](https://github.com/npm/cli/commit/291aba7b821e247b96240b1ec037310ead69a594)
+  make tests pass on Windows ([@isaacs](https://github.com/isaacs))
+* [`fea3a023a`](https://github.com/npm/cli/commit/fea3a023a80863f32a5f97f5132401b1a16161b8)
+  travis: run tests on Windows as well
+  ([@isaacs](https://github.com/isaacs))
+
 ## 6.11.1 (2019-08-20):
 
 Fix a regression for windows command shim syntax.
