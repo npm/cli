@@ -167,13 +167,9 @@ test('\'npm install\' should install local packages', function (t) {
       'install', '.'
     ],
     EXEC_OPTS,
-    function (err, code, stdout, stderr) {
+    function (err, code) {
       t.ifError(err, 'error should not exist')
       t.notOk(code, 'npm install exited with code 0')
-      // if the test fails, let's see why
-      if (err || code) {
-        console.error({code, stdout, stderr})
-      }
       t.end()
     }
   )
