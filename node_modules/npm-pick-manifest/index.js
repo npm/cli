@@ -96,6 +96,10 @@ function pickManifest (packument, wanted, opts) {
     target = stillFresh[0]
   }
 
+  if (!target && restrictedVersions) {
+    target = semver.maxSatisfying(restrictedVersions, wanted, true)
+  }
+
   const manifest = (
     target &&
     packument.versions[target]
