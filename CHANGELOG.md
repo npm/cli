@@ -1,3 +1,34 @@
+## 6.11.3 (2019-09-03):
+
+Fix npm ci regressions and npm outdated depth.
+
+### BUG FIXES
+
+* [`235ed1d28`](https://github.com/npm/cli/commit/235ed1d2838ef302bb995e183980209d16c51b9b)
+  [#239](https://github.com/npm/cli/pull/239)
+  Don't override user specified depth in outdated
+  Restores ability to update packages using `--depth` as suggested by `npm audit`.
+  ([@G-Rath](https://github.com/G-Rath))
+* [`1fafb5151`](https://github.com/npm/cli/commit/1fafb51513466cd793866b576dfea9a8963a3335)
+  [#242](https://github.com/npm/cli/pull/242)
+  [npm.community#9586](https://npm.community/t/6-11-1-some-dependencies-are-no-longer-being-installed/9586/4)
+  Revert "install: do not descend into directory deps' child modules"
+  ([@isaacs](https://github.com/isaacs))
+* [`cebf542e6`](https://github.com/npm/cli/commit/cebf542e61dcabdd2bd3b876272bf8eebf7d01cc)
+  [#243](https://github.com/npm/cli/pull/243)
+  [npm.community#9720](https://npm.community/t/6-11-2-npm-ci-installs-package-with-wrong-permissions/9720)
+  ci: pass appropriate configs for file/dir modes
+  ([@isaacs](https://github.com/isaacs))
+
+### DEPENDENCIES
+
+* [`e5fbb7ed1`](https://github.com/npm/cli/commit/e5fbb7ed1fc7ef5c6ca4790e2d0dc441e0ac1596)
+  `read-cmd-shim@1.0.4`
+  ([@claudiahdz](https://github.com/claudiahdz))
+* [`23ce65616`](https://github.com/npm/cli/commit/23ce65616c550647c586f7babc3c2f60115af2aa)
+  `npm-pick-manifest@3.0.2`
+  ([@claudiahdz](https://github.com/claudiahdz))
+
 ## 6.11.2 (2019-08-22):
 
 Fix a recent Windows regression, and two long-standing Windows bugs.  Also,
