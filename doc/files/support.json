@@ -1,0 +1,57 @@
+spuport.json(5) -- Specifics of npm's support.json handling
+===========================================================
+
+## DESCRIPTION
+
+This document describes the format of `support.json` files, which you
+can use to share information about how to support your work and projects
+through `npm support`.
+
+`support.json` data must be actual JSON, not just a JavaScript object
+literal.
+
+## contributors
+
+Each `support.json` file must contain a `contributors` property whose
+value is an array.  That array can contain two types of objects.
+
+Contributor objects provide information about people and organizations
+that produce a package, and how to suppor them.  For example:
+
+```json
+{
+  "name": "Ana Exemplar",
+  "homepage": "http://example.com/anaexemplar",
+  "links": [
+    "http://patreon.com/anaexemplar"
+  ]
+}
+```
+
+```json
+{
+  "name": "Ana Exemplar",
+  "homepage": "http://example.com/anaexemplar",
+  "links": [
+    "http://patreon.com/anaexemplar"
+  ]
+}
+
+```json
+{
+  "name": "JS Foundation",
+  "type": "organization",
+  "homepage": "https://js.foundation",
+  "links": [
+    "https://js.foundation/about/donate"
+  ]
+}
+```
+
+`contributors` array items may also include URLs for contributor objects:
+
+```json
+{
+  "url": "http://example.com/support-anaexemplar.json"
+}
+```

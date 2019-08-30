@@ -170,6 +170,25 @@ Both email and url are optional either way.
 
 npm also sets a top-level "maintainers" field with your npm user info.
 
+## support
+
+You can specify an HTTP endpoint for up-to-date information about ways
+to support development of your package:
+
+    { "support": "https://example.com/support.json" }
+
+For example, you might like to develop your support data file in your
+source code repository:
+
+    { "support": "https://raw.githubusercontent.com/{user}/{repo}/master/support.json" }
+
+The URL you specify should respond to unauthenticated GET requests
+with a JSON object.  If the JSON object contains a `contributors`
+array, `npm support` will interpret it as a `support.json` file.
+If the JSON object contains a `versions` array, `npm support`
+will interpret it as [Node.js Package Maintenance Working
+Group](https://github.com/nodejs/package-maintenance) metadata.
+
 ## files
 
 The optional `files` field is an array of file patterns that describes
