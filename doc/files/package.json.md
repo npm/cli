@@ -170,6 +170,16 @@ Both email and url are optional either way.
 
 npm also sets a top-level "maintainers" field with your npm user info.
 
+## support
+
+You can specify a URL for up-to-date information about ways to support
+development of your package:
+
+    { "support": "https://example.com/project/support" }
+
+Users can use the `npm support` subcommand to list the `support` URLs
+of all dependencies of the project, direct and indirect.
+
 ## files
 
 The optional `files` field is an array of file patterns that describes
