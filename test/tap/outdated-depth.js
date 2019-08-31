@@ -68,6 +68,8 @@ test('outdated depth zero', function (t) {
               if (err) {
                 throw err
               }
+              t.is(process.exitCode, 1, 'exit code set to 1')
+              process.exitCode = 0
               s.close()
               t.end()
             })
