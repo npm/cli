@@ -16,7 +16,7 @@ Each `support.json` file must contain a `contributors` property whose
 value is an array.  That array can contain two types of objects.
 
 Contributor objects provide information about people and organizations
-that produce a package, and how to suppor them.  For example:
+that produce a package, and how to support them.  For example:
 
 ```json
 {
