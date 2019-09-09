@@ -389,14 +389,14 @@ Makes various commands more forceful.
 
 ### format-package-lock
 
-* Default: false
+* Default: true
 * Type: Boolean
 
 Format `package-lock.json` as a human readable file.
 
 ### format-shrinkwrap
 
-* Default: false
+* Default: true
 * Type: Boolean
 
 Format `npm-shrinkwrap.json` as a human readable file.
