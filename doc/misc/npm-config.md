@@ -392,14 +392,7 @@ Makes various commands more forceful.
 * Default: true
 * Type: Boolean
 
-Format `package-lock.json` as a human readable file.
-
-### format-shrinkwrap
-
-* Default: true
-* Type: Boolean
-
-Format `npm-shrinkwrap.json` as a human readable file.
+Format `package-lock.json` or `npm-shrinkwrap.json` as a human readable file.
 
 ### fetch-retries
 
