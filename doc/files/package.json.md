@@ -172,22 +172,13 @@ npm also sets a top-level "maintainers" field with your npm user info.
 
 ## support
 
-You can specify an HTTP endpoint for up-to-date information about ways
-to support development of your package:
+You can specify a URL for up-to-date information about ways to support
+development of your package:
 
-    { "support": "https://example.com/support.json" }
+    { "support": "https://example.com/project/support" }
 
-For example, you might like to develop your support data file in your
-source code repository:
-
-    { "support": "https://raw.githubusercontent.com/{user}/{repo}/master/support.json" }
-
-The URL you specify should respond to unauthenticated GET requests
-with a JSON object.  If the JSON object contains a `contributors`
-array, `npm support` will interpret it as a `support.json` file.
-If the JSON object contains a `versions` array, `npm support`
-will interpret it as [Node.js Package Maintenance Working
-Group](https://github.com/nodejs/package-maintenance) metadata.
+Users can use the `npm support` subcommand to all the dependencies of
+their project with `support` URLs.
 
 ## files
 
