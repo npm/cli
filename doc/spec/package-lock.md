@@ -87,7 +87,7 @@ this resource.
   npm install --registry https://registry.example.com
   ```
 
-  the package will be eventually fetched from the custom-defined registry:
+  the package will be fetched from the custom-defined registry:
 
   ```
   https://registry.example.com/example/-/example-1.0.0.tgz
