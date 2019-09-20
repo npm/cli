@@ -36,8 +36,9 @@ case `uname` in
     ;;
 esac
 
-if [ isexe==1 ] && [ -f "/bin/wslpath" ]; then # normalize path back to Windows path
-  NPX_CLI_JS=`wslpath -w "$NPX_CLI_JS"`
+if [ isexe==1 ] && [ -f "/bin/wslpath" ]; then # run the corresponding cmd instead
+  cmd.exe /c `wslpath -w "$basedir/npx.cmd"` "$@"
+  return
 fi
 
 "$NODE_EXE" "$NPX_CLI_JS" "$@"
