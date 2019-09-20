@@ -38,8 +38,9 @@ case `uname` in
     ;;
 esac
 
-if [ isexe==1 ] && [ -f "/bin/wslpath" ]; then # normalize path back to Windows path
-  NPM_CLI_JS=`wslpath -w "$NPM_CLI_JS"`
+if [ isexe==1 ] && [ -f "/bin/wslpath" ]; then # run the corresponding command prompt when Node for Windows is executed within WSL
+  cmd.exe /c `wslpath -w "$basedir/npm.cmd"` "$@"
+  return
 fi
 
 "$NODE_EXE" "$NPM_CLI_JS" "$@"
