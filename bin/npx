@@ -37,7 +37,7 @@ case `uname` in
 esac
 
 if [ isexe==1 ] && [ -f "/bin/wslpath" ]; then # normalize path back to Windows path
-  NPM_CLI_JS=`wslpath -w "$NPM_CLI_JS"`
+  NPX_CLI_JS=`wslpath -w "$NPX_CLI_JS"`
 fi
 
 "$NODE_EXE" "$NPX_CLI_JS" "$@"
