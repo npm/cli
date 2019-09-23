@@ -2,15 +2,15 @@
 (set -o igncr) 2>/dev/null && set -o igncr; # cygwin encoding fix
 
 basedir=`dirname "$0"`
-isexe=0
 
 case `uname` in
     *CYGWIN*) basedir=`cygpath -w "$basedir"`;;
 esac
 
 NODE_EXE="$basedir/node.exe"
-if [ -x "$NODE_EXE" ]; then
-  isexe=1
+if [ -x "$NODE_EXE" ] && [ -f "/bin/wslpath" ]; then # run the corresponding command prompt when Node for Windows is executed within WSL
+  cmd.exe /c `wslpath -w "$basedir/npx.cmd"` "$@"
+  exit $?
 fi
 if ! [ -x "$NODE_EXE" ]; then
   NODE_EXE=node
@@ -35,10 +35,5 @@ case `uname` in
     fi
     ;;
 esac
-
-if [ isexe==1 ] && [ -f "/bin/wslpath" ]; then # run the corresponding cmd instead
-  cmd.exe /c `wslpath -w "$basedir/npx.cmd"` "$@"
-  return
-fi
 
 "$NODE_EXE" "$NPX_CLI_JS" "$@"
