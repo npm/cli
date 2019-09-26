@@ -1,3 +1,27 @@
+## 6.12.0 (2019-10-01):
+
+Now `npm ci` runs prepare scripts for git dependencies, and respects the `--no-optional` argument.
+
+### BUG FIXES
+
+* [`890b245dc`](https://github.com/npm/cli/commit/890b245dc1f609590d8ab993fac7cf5a37ed46a5)
+  [#252](https://github.com/npm/cli/pull/252)
+  chore(ci): add dirPacker to options
+  ([@claudiahdz](https://github.com/claudiahdz))
+
+### DEPENDENCIES
+
+* [`0ca063c5d`](https://github.com/npm/cli/commit/0ca063c5dc961c4aa17373f4b33fb54c51c8c8d6)
+  `npm-lifecycle@3.1.4`:
+  - fix: filter functions and undefined out of makeEnv ([@isaacs](https://github.com/isaacs))
+* [`5df6b0ea2`](https://github.com/npm/cli/commit/5df6b0ea2e3106ba65bba649cc8d7f02f4738236)
+  `libcipm@4.0.4`:
+  - fix: pack git directories properly ([@claudiahdz](https://github.com/claudiahdz))
+  - respect no-optional argument ([@cruzdanilo](https://github.com/cruzdanilo))
+* [`7e04f728c`](https://github.com/npm/cli/commit/7e04f728cc4cd4853a8fc99e2df0a12988897589)
+  `tar@4.4.12`
+  
+
 ## 6.11.3 (2019-09-03):
 
 Fix npm ci regressions and npm outdated depth.
