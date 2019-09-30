@@ -1,6 +1,7 @@
 ## 6.12.0 (2019-10-01):
 
-Now `npm ci` runs prepare scripts for git dependencies, and respects the `--no-optional` argument.
+Now `npm ci` runs prepare scripts for git dependencies, and respects the
+`--no-optional` argument.
 
 ### BUG FIXES
 
@@ -8,6 +9,28 @@ Now `npm ci` runs prepare scripts for git dependencies, and respects the `--no-o
   [#252](https://github.com/npm/cli/pull/252)
   chore(ci): add dirPacker to options
   ([@claudiahdz](https://github.com/claudiahdz))
+* [`5aba50ad0`](https://github.com/npm/cli/commit/5aba50ad0889d468ecfa9d6d0446a89f70db73d5)
+  [#257](https://github.com/npm/cli/pull/257)
+  [npm.community#4792](https://npm.community/t/engines-and-engines-strict-ignored/4792)
+  warn message on engine mismatch
+  ([@ruyadorno](https://github.com/ruyadorno))
+* [`bbc92fb8f`](https://github.com/npm/cli/commit/bbc92fb8f3478ff67071ebaff551f01c1ea42ced)
+  [#259](https://github.com/npm/cli/pull/259)
+  [npm.community#10288](https://npm.community/t/npm-token-err-figgypudding-options-cannot-be-modified-use-concat-instead/10288)
+  Fix figgyPudding error in `npm token`
+  ([@benblank](https://github.com/benblank))
+
+### FEATURES
+
+* [`ed993a29c`](https://github.com/npm/cli/commit/ed993a29ccf923425317c433844d55dbea2f23ee)
+  [#249](https://github.com/npm/cli/pull/249)
+  Add CI environment variables to user-agent
+  ([@isaacs](https://github.com/isaacs))
+* [`f6b0459a4`](https://github.com/npm/cli/commit/f6b0459a466a2c663dbd549cdc331e7732552dca)
+  [#248](https://github.com/npm/cli/pull/248)
+  Add option to save package-lock without formatting
+  Adds a new config `--format-package-lock`, which defaults to true.
+  ([@bl00mber](https://github.com/bl00mber))
 
 ### DEPENDENCIES
 
@@ -20,7 +43,14 @@ Now `npm ci` runs prepare scripts for git dependencies, and respects the `--no-o
   - respect no-optional argument ([@cruzdanilo](https://github.com/cruzdanilo))
 * [`7e04f728c`](https://github.com/npm/cli/commit/7e04f728cc4cd4853a8fc99e2df0a12988897589)
   `tar@4.4.12`
-  
+* [`5c380e5a3`](https://github.com/npm/cli/commit/5c380e5a33d760bb66a4285b032ae5f50af27199)
+  `stringify-package@1.0.1`
+  ([@isaacs](https://github.com/isaacs))
+* [`bee6d42c6`](https://github.com/npm/cli/commit/bee6d42c68733fb59d3698f5d80fb748901f2a60)
+  [#260](https://github.com/npm/cli/pull/260)
+  `node-gyp@5.0.4`:
+  ([@isaacs](https://github.com/isaacs))
+
 
 ## 6.11.3 (2019-09-03):
 
