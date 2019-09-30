@@ -50,6 +50,9 @@ Now `npm ci` runs prepare scripts for git dependencies, and respects the
   [#260](https://github.com/npm/cli/pull/260)
   `node-gyp@5.0.4`:
   ([@isaacs](https://github.com/isaacs))
+* [`0ff0ea47a`](https://github.com/npm/cli/commit/0ff0ea47a8840dd7d952bde7f7983a5016cda8ea)
+  `npm-install-checks@3.0.2`
+  ([@isaacs](https://github.com/isaacs))
 
 
 ## 6.11.3 (2019-09-03):
