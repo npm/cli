@@ -1,4 +1,4 @@
-## 6.12.0 (2019-10-01):
+## 6.12.0 (2019-10-08):
 
 Now `npm ci` runs prepare scripts for git dependencies, and respects the
 `--no-optional` argument.
