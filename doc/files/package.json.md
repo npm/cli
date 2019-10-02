@@ -177,8 +177,8 @@ development of your package:
 
     { "support": "https://example.com/project/support" }
 
-Users can use the `npm support` subcommand to all the dependencies of
-their project with `support` URLs.
+Users can use the `npm support` subcommand to list the `support` URLs
+of all dependencies of the project, direct and indirect.
 
 ## files
 
