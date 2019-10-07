@@ -63,7 +63,7 @@
     "glob": "^7.1.4",
     "graceful-fs": "^4.2.2",
     "has-unicode": "~2.0.1",
-    "hosted-git-info": "^2.8.2",
+    "hosted-git-info": "^2.8.5",
     "iferr": "^1.0.2",
     "infer-owner": "^1.0.4",
     "inflight": "~1.0.6",
