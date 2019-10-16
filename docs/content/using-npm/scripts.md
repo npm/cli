@@ -13,7 +13,7 @@ description: How npm handles the "scripts" field
 npm supports the "scripts" property of the package.json file, for the
 following scripts:
 
-* **prepublish**:
+* **prepublish** (_as of npm@5, `prepublish` is deprecated. Use `prepare` for build steps and `prepublishOnly` for upload-only._):
   Run BEFORE the package is packed and published, as well as on local `npm
   install` without any arguments. (See below)
 * **prepare**:
