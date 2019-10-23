@@ -109,6 +109,14 @@ When "prod" or "production", is an alias to `production`.
 
 Display only dependencies which are linked
 
+#### unicode
+
+* Type: Boolean
+* Default: true
+
+Whether to represent the tree structure using unicode characters.
+Set it to false in order to use all-ansi output.
+
 ### See Also
 
 * [npm config](/cli-commands/npm-config)

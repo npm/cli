@@ -357,6 +357,10 @@ local copy exists on disk.
 npm install sax --force
 ```
 
+The `--no-fund` argument will hide the message displayed at the end of each
+install that aknowledges the number of dependencies looking for funding.
+See `npm-fund(1)`
+
 The `-g` or `--global` argument will cause npm to install the package globally
 rather than locally.  See [npm-folders](/docs/configuring-npm/folders).
 
@@ -481,6 +485,7 @@ affects a real use-case, it will be investigated.
 * [npm folders](/configuring-npm/folders)
 * [npm update](/cli-commands/npm-update)
 * [npm audit](/cli-commands/npm-audit)
+* [npm fund](/cli-commands/npm-fund)
 * [npm link](/cli-commands/npm-link)
 * [npm rebuild](/cli-commands/npm-rebuild)
 * [npm scripts](/using-npm/scripts)

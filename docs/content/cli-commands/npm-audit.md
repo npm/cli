@@ -8,7 +8,7 @@ description: Run a security audit
 
 ## Run a security audit
 
-### Synposis
+### Synopsis
 
 ```bash
 npm audit [--json|--parseable|--audit-level=(low|moderate|high|critical)]

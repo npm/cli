@@ -449,6 +449,15 @@ packages.
 The "maxTimeout" config for the `retry` module to use when fetching
 packages.
 
+#### fund
+
+* Default: true
+* Type: Boolean
+
+When "true" displays the message at the end of each `npm install`
+aknowledging the number of dependencies looking for funding.
+See [`npm-fund`](/docs/cli-commands/npm-fund) for details.
+
 #### git
 
 * Default: `"git"`
