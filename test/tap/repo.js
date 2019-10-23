@@ -41,6 +41,24 @@ test('npm repo underscore', function (t) {
   })
 })
 
+test('npm repo underscore --json', function (t) {
+  mr({ port: common.port }, function (er, s) {
+    common.npm([
+      'repo', 'underscore',
+      '--json',
+      '--registry=' + common.registry,
+      '--loglevel=silent',
+      '--browser=undefined'
+    ], opts, function (err, code, stdout, stderr) {
+      t.ifError(err, 'repo command ran without error')
+      t.equal(code, 0, 'exit ok')
+      t.matchSnapshot(stdout, 'should print json result')
+      s.close()
+      t.end()
+    })
+  })
+})
+
 test('npm repo optimist - github (https://)', function (t) {
   mr({ port: common.port }, function (er, s) {
     common.npm([

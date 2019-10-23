@@ -170,15 +170,25 @@ Both email and url are optional either way.
 
 npm also sets a top-level "maintainers" field with your npm user info.
 
-## support
+## funding
 
-You can specify a URL for up-to-date information about ways to support
-development of your package:
+You can specify an object containing an URL that provides up-to-date
+information about ways to help fund development of your package:
 
-    { "support": "https://example.com/project/support" }
+    "funding": {
+      "type" : "individual",
+      "url" : "http://example.com/donate"
+    }
 
-Users can use the `npm support` subcommand to list the `support` URLs
-of all dependencies of the project, direct and indirect.
+    "funding": {
+      "type" : "patreon",
+      "url" : "https://www.patreon.com/my-account"
+    }
+
+Users can use the `npm fund` subcommand to list the `funding` URLs of all
+dependencies of their project, direct and indirect. A shortcut to visit each
+funding url is also available when providing the project name such as:
+`npm fund <projectname>`.
 
 ## files
 
