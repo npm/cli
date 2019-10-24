@@ -24,5 +24,5 @@ the new binary.
 
 ### See Also
 
-* [npm-build](npm-build)
-* [npm-install](npm-install)
+* [npm-build](/cli-commands/npm-build)
+* [npm-install](/cli-commands/npm-install)

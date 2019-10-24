@@ -67,5 +67,5 @@ find /usr/local/{lib/node,bin} -exec grep -l npm \{\} \; ;
 ### See also
 
 * README
-* [npm-uninstall](/docs/cli-commands/npm-uninstall)
-* [npm-prune](/docs/cli-commands/npm-prune)
+* [npm-uninstall](/cli-commands/npm-uninstall)
+* [npm-prune](/cli-commands/npm-prune)

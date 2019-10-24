@@ -111,11 +111,11 @@ Display only dependencies which are linked
 
 ### See Also
 
-* [npm-config](npm-config)
-* [npmrc](/docs/configuring-npm/npmrc)
-* [npm-folders](/docs/configuring-npm/folders)
-* [npm-install](npm-install)
-* [npm-link](npm-link)
-* [npm-prune](npm-prune)
-* [npm-outdated](npm-outdated)
-* [npm-update](npm-update)
+* [npm-config](/cli-commands/npm-config)
+* [npmrc](/configuring-npm/npmrc)
+* [npm-folders](/configuring-npm/folders)
+* [npm-install](/cli-commands/npm-install)
+* [npm-link](/cli-commands/npm-link)
+* [npm-prune](/cli-commands/npm-prune)
+* [npm-outdated](/cli-commands/npm-outdated)
+* [npm-update](/cli-commands/npm-update)

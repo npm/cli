@@ -177,7 +177,7 @@ pre-`npm@5.7.0` versions of npm 5, albeit a bit more noisily. Note that if
 ### See Also
 
 * https://medium.com/@sdboyer/so-you-want-to-write-a-package-manager-4ae9c17d9527
-* [package.json](package.json)
-* [package-lock.json](package-lock.json)
-* [npm-shrinkwrap.json](shrinkwrap.json)
-* [npm-shrinkwrap](/docs/cli-commands/npm-shrinkwrap)
+* [package.json](/configuring-npm/package.json)
+* [package-lock.json](/configuring-npm/package-lock.json)
+* [npm-shrinkwrap.json](/configuring-npm/shrinkwrap.json)
+* [npm-shrinkwrap](/cli-commands/npm-shrinkwrap)

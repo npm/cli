@@ -26,7 +26,7 @@ const DarkBlock = () => {
           Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod Lorem ipsum dolor sit amet, tetuer adipiscing elit, sed diam nonummy nibmod
           Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod Lorem ipsum dolor sit amet, tetuer adipiscing elit, sed diam nonummy nibmod
         </Text>
-        <Box pt={4}><LinkButton to="/docs/cli-commands/npm" w={'120px'}>read docs</LinkButton></Box>
+        <Box pt={4}><LinkButton to="cli-commands/npm" w={'120px'}>read docs</LinkButton></Box>
       </ContentWrapper>
     </Container>
   );

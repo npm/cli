@@ -100,8 +100,8 @@ Yes, head over to <https://www.npmjs.com/>
 
 ### See also
 
-* [npm-config](/docs/cli-commands/npm-config)
-* [config](config)
-* [npmrc](/docs/configuring-npm/npmrc)
-* [npm-developers](developers)
-* [npm-disputes](disputes)
+* [npm-config](/cli-commands/npm-config)
+* [config](/using-npm/config)
+* [npmrc](/configuring-npm/npmrc)
+* [npm-developers](/using-npm/developers)
+* [npm-disputes](/using-npm/disputes)

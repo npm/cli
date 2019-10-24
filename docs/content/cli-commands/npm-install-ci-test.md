@@ -22,5 +22,5 @@ This command runs an `npm ci` followed immediately by an `npm test`.
 
 ### See Also
 
-* [npm-ci](npm-ci)
-* [npm-test](npm-test)
+* [npm-ci](/cli-commands/npm-ci)
+* [npm-test](/cli-commands/npm-test)

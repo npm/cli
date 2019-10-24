@@ -8,6 +8,8 @@ import MobileSidebar from '../components/MobileSidebar';
 import hamburger from '../images/hamburger.svg';
 import hamburgerClose from '../images/hamburger-close.svg';
 
+const IS_STATIC = !!process.env.GATSBY_IS_STATIC
+
 const Container = styled(Flex)`
   width: 100%;
   border-bottom: 1px solid #86838333;
@@ -108,7 +110,7 @@ class Navbar extends React.Component {
             </Link>
             <Links>
               <NavLink 
-                to="/docs/cli-commands/npm" 
+                to={`cli-commands/npm${IS_STATIC?'/index.html' : ''}`} 
                 partiallyActive={true}
                 activeClassName="active-navbar-link"
               >

@@ -48,8 +48,7 @@ npm logout --scope=@myco
 
 ### See Also
 
-* [npm-adduser](npm-adduser)
-* [npm-registry](/docs/using-npm/registry)
-* [npm-config](npm-config)
-* [npm-config](npm-config)
-* [npm-whoami](npm-whoami)
+* [npm-adduser](/cli-commands/npm-adduser)
+* [npm-registry](/using-npm/registry)
+* [npm-config](/cli-commands/npm-config)
+* [npm-whoami](/cli-commands/npm-whoami)

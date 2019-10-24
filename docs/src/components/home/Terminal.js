@@ -108,7 +108,7 @@ const Terminal = ({onClose, top, left}) => {
           The intelligent package manager for the Node Javascript Platform. Install stuff and get coding!
         </Text>
         <Box mx={'auto'} my={4}>
-          <LinkButton to="/docs/cli-commands/npm">
+          <LinkButton to="/cli-commands/npm">
             read docs
           </LinkButton>
         </Box>

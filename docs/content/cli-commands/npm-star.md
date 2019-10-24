@@ -26,6 +26,6 @@ It's a boolean thing.  Starring repeatedly has no additional effect.
 
 ### See Also
 
-* [npm-view](npm-view)
-* [npm-whoami](npm-whoami)
-* [npm-adduser](npm-adduser)
+* [npm-view](/cli-commands/npm-view)
+* [npm-whoami](/cli-commands/npm-whoami)
+* [npm-adduser](/cli-commands/npm-adduser)

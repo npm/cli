@@ -40,8 +40,8 @@ The command to run for `npm edit` or `npm config edit`.
 
 ### See Also
 
-* [npm-folders](/docs/configuring-npm/folders)
-* [npm-explore](npm-explore)
-* [npm-install](npm-install)
-* [npm-config](npm-config)
-* [npmrc](/docs/configuring-npm/npmrc)
+* [npm-folders](/configuring-npm/folders)
+* [npm-explore](/cli-commands/npm-explore)
+* [npm-install](/cli-commands/npm-install)
+* [npm-config](/cli-commands/npm-config)
+* [npmrc](/configuring-npm/npmrc)

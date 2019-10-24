@@ -15,8 +15,6 @@ cli_mandocs = $(shell find docs/content/cli-commands -name '*.md' \
 files_mandocs = $(shell find docs/content/configuring-npm -name '*.md' \
                |sed 's|.md|.5|g' \
                |sed 's|docs/content/configuring-npm/|man/man5/|g' ) \
-               man/man5/npm-json.5 \
-               man/man5/npm-global.5
 
 misc_mandocs = $(shell find docs/content/using-npm -name '*.md' \
                |sed 's|.md|.7|g' \

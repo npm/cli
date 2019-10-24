@@ -78,8 +78,8 @@ global config.
 
 ### See Also
 
-* [npm-folders](/docs/configuring-npm/folders)
-* [npm-config](npm-config)
-* [package.json](/docs/configuring-npm/package.json)
-* [npmrc](/docs/configuring-npm/npmrc)
-* [npm](npm)
+* [npm-folders](/configuring-npm/folders)
+* [npm-config](/cli-commands/npm-config)
+* [package.json](/configuring-npm/package.json)
+* [npmrc](/configuring-npm/npmrc)
+* [npm](/cli-commands/npm)

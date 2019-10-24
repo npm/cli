@@ -108,7 +108,7 @@ setting.
 
 ### See Also
 
-* [npm-registry](/docs/using-npm/registry)
-* [npm-config](npm-config)
-* [npmrc](/docs/configuring-npm/npmrc)
-* [npm-view](npm-view)
+* [npm-registry](/using-npm/registry)
+* [npm-config](/cli-commands/npm-config)
+* [npmrc](/configuring-npm/npmrc)
+* [npm-view](/cli-commands/npm-view)

@@ -133,5 +133,5 @@ License.
 
 ### See also
 
-* [npm-registry](registry)
-* [npm-owner](/docs/cli-commands/npm-owner)
+* [npm-registry](/using-npm/registry)
+* [npm-owner](/cli-commands/npm-owner)

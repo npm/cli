@@ -117,8 +117,8 @@ the field name.
 
 ### See Also
 
-* [npm-search](npm-search)
-* [npm-registry](/docs/using-npm/registry)
-* [npm-config](npm-config)
-* [npmrc](/docs/configuring-npm/npmrc)
-* [npm-docs](npm-docs)
+* [npm-search](/cli-commands/npm-search)
+* [npm-registry](/using-npm/registry)
+* [npm-config](/cli-commands/npm-config)
+* [npmrc](/configuring-npm/npmrc)
+* [npm-docs](/cli-commands/npm-docs)

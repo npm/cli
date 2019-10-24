@@ -871,11 +871,11 @@ npm will default some values based on package contents.
 
 ### SEE ALSO
 
-* [semver](/docs/using-npm/semver)
-* [npm-init](/docs/cli-commands/npm-init)
-* [npm-version](/docs/cli-commands/npm-version)
-* [npm-config](/docs/cli-commands/npm-config)
-* [npm-help](/docs/cli-commands/npm-help)
-* [npm-install](/docs/cli-commands/npm-install)
-* [npm-publish](/docs/cli-commands/npm-publish)
-* [npm-uninstall](/docs/cli-commands/npm-uninstall)
+* [semver](/using-npm/semver)
+* [npm-init](/cli-commands/npm-init)
+* [npm-version](/cli-commands/npm-version)
+* [npm-config](/cli-commands/npm-config)
+* [npm-help](/cli-commands/npm-help)
+* [npm-install](/cli-commands/npm-install)
+* [npm-publish](/cli-commands/npm-publish)
+* [npm-uninstall](/cli-commands/npm-uninstall)

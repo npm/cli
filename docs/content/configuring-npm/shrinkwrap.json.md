@@ -28,7 +28,7 @@ to the manual page for [package-lock.json](package-lock.json).
 
 ### See also
 
-* [npm-shrinkwrap](/docs/cli-commands/npm-shrinkwrap)
-* [package-lock.json](package-lock.json)
-* [package.json](package.json)
-* [npm-install](/docs/cli-commands/npm-install)
+* [npm-shrinkwrap](/cli-commands/npm-shrinkwrap)
+* [package-lock.json](/configuring-npm/package-lock.json)
+* [package.json](/configuring-npm/package.json)
+* [npm-install](/cli-commands/npm-install)

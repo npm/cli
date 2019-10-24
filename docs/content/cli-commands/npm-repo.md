@@ -4,7 +4,7 @@ title: npm-repo
 description: Open package repository page in the browser
 ---
 
-# npm-repod
+# npm-repo
 
 ## Open package repository page in the browser
 
@@ -32,5 +32,5 @@ The browser that is called by the `npm repo` command to open websites.
 
 ### See Also
 
-* [npm-docs](npm-docs)
-* [npm-config](npm-config)
+* [npm-docs](/cli-commands/npm-docs)
+* [npm-config](/cli-commands/npm-config)

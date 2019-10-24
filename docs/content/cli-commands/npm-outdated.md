@@ -118,7 +118,7 @@ Max depth for checking dependency tree.
 
 ### See Also
 
-* [npm-update](npm-update)
-* [npm-dist-tag](npm-dist-tag)
-* [npm-registry](/docs/using-npm/registry)
-* [npm-folders](/docs/configuring-npm/folders)
+* [npm-update](/cli-commands/npm-update)
+* [npm-dist-tag](/cli-commands/npm-dist-tag)
+* [npm-registry](/using-npm/registry)
+* [npm-folders](/configuring-npm/folders)

@@ -243,10 +243,10 @@ Tell the world how easy it is to install your program!
 
 ### See also
 
-* [npm](/docs/cli-commands/npm)
-* [npm-init](/docs/cli-commands/npm-init)
-* [package.json](/docs/configuring-npm/package.json)
-* [npm-scripts](scripts)
-* [npm-publish](/docs/cli-commands/npm-publish)
-* [npm-adduser](/docs/cli-commands/npm-adduser)
-* [npm-registry](registry)
+* [npm](/cli-commands/npm)
+* [npm-init](/cli-commands/npm-init)
+* [package.json](/configuring-npm/package.json)
+* [npm-scripts](/using-npm/scripts)
+* [npm-publish](/cli-commands/npm-publish)
+* [npm-adduser](/cli-commands/npm-adduser)
+* [npm-registry](/using-npm/registry)

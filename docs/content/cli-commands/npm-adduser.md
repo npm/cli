@@ -90,8 +90,8 @@ username/password entry in legacy npm.
 
 ### See Also
 
-* [npm-registry](/docs/using-npm/registry)
-* [npm-config](npm-config)
-* [npmrc](/docs/configuring-npm/npmrc)
-* [npm-owner](npm-owner)
-* [npm-whoami](npm-whoami)
+* [npm-registry](/using-npm/registry)
+* [npm-config](/cli-commands/npm-config)
+* [npmrc](/configuring-npm/npmrc)
+* [npm-owner](/cli-commands/npm-owner)
+* [npm-whoami](/cli-commands/npm-whoami)

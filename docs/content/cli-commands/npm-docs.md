@@ -45,9 +45,9 @@ The base URL of the npm package registry.
 
 ### See Also
 
-* [npm-view](npm-view)
-* [npm-publish](npm-publish)
-* [npm-registry](/docs/using-npm/registry)
-* [npm-config](npm-config)
-* [npmrc](/docs/configuring-npm/npmrc)
-* [package.json](/docs/configuring-npm/package.json)
+* [npm-view](/cli-commands/npm-view)
+* [npm-publish](/cli-commands/npm-publish)
+* [npm-registry](/using-npm/registry)
+* [npm-config](/cli-commands/npm-config)
+* [npmrc](/configuring-npm/npmrc)
+* [package.json](/configuring-npm/package.json)

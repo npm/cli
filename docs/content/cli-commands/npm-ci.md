@@ -63,5 +63,5 @@ In short, the main differences between using `npm install` and `npm ci` are:
 
 ### See Also
 
-* [npm-install](npm-install)
-* [npm-package-locks](/docs/configuring-npm/package-locks)
+* [npm-install](/cli-commands/npm-install)
+* [npm-package-locks](/configuring-npm/package-locks)

@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: `${__dirname}/public`,
   siteMetadata: {
     title: 'npm cli documentation',
     description: 'Documentation for the npm cli.',
@@ -26,7 +27,7 @@ module.exports = {
         background_color: '#663399',
         theme_color: '#663399',
         display: 'minimal-ui',
-        icon: 'src/images/gatsby-icon.png', // This path is relative to the root of the site.
+        icon: 'src/images/npm-icon.png', // This path is relative to the root of the site.
       },
     },
     {

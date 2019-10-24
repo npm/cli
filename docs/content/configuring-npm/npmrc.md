@@ -96,8 +96,8 @@ manner.
 
 ### See also
 
-* [npm-folders](folders)
-* [npm-config](/docs/cli-commands/npm-config)
-* [config](/docs/using-npm/config)
-* [package.json](package.json)
-* [npm](/docs/cli-commands/npm)
+* [npm-folders](/configuring-npm/folders)
+* [npm-config](/cli-commands/npm-config)
+* [config](/using-npm/config)
+* [package.json](/configuring-npm/package.json)
+* [npm](/cli-commands/npm)

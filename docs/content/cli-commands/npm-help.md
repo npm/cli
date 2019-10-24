@@ -36,11 +36,10 @@ Set to `"browser"` to view html help content in the default web browser.
 
 ### See Also
 
-* [npm](npm)
-* README
-* [npm-folders](/docs/configuring-npm/folders)
-* [npm-config](npm-config)
-* [npmrc](/docs/configuring-npm/npmrc)
-* [package.json](/docs/configuring-npm/package.json)
-* [npm-help-search](npm-help-search)
-* [npm-index](npm-index)
+* [npm](/cli-commands/npm)
+* [npm-folders](/configuring-npm/folders)
+* [npm-config](/cli-commands/npm-config)
+* [npmrc](/configuring-npm/npmrc)
+* [package.json](/configuring-npm/package.json)
+* [npm-help-search](/cli-commands/npm-help-search)
+* [npm-index](/cli-commands/npm-index)

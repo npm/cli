@@ -214,11 +214,11 @@ cannot be found elsewhere.  See [`package.json`](/docs/configuring-npm/package.j
 
 ### See also
 
-* [package.json](package.json)
-* [npm-install](/docs/cli-commands/npm-install)
-* [npm-pack](/docs/cli-commands/npm-pack)
-* [npm-cache](/docs/cli-commands/npm-cache)
-* [npm-config](/docs/cli-commands/npm-config)
-* [npmrc](npmrc)
-* [config](/docs/using-npm/config)
-* [npm-publish](/docs/cli-commands/npm-publish)
+* [package.json](/configuring-npm/package.json)
+* [npm-install](/cli-commands/npm-install)
+* [npm-pack](/cli-commands/npm-pack)
+* [npm-cache](/cli-commands/npm-cache)
+* [npm-config](/cli-commands/npm-config)
+* [npmrc](/configuring-npm/npmrc)
+* [config](/using-npm/config)
+* [npm-publish](/cli-commands/npm-publish)

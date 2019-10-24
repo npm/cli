@@ -283,7 +283,7 @@ above.
 
 ### See Also
 
-* [npm-run-script](/docs/cli-commands/npm-run-script)
-* [package.json](/docs/configuring-npm/package.json)
-* [npm-developers](developers)
-* [npm-install](/docs/cli-commands/npm-install)
+* [npm-run-script](/cli-commands/npm-run-script)
+* [package.json](/configuring-npm/package.json)
+* [npm-developers](/using-npm/developers)
+* [npm-install](/cli-commands/npm-install)
