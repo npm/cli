@@ -1,9 +1,9 @@
-import React from 'react';
-import styled, {keyframes}  from 'styled-components';
-import {Flex, Box, Button as RebassButton} from 'rebass';
-import closeX from '../../images/x.svg';
-import {LinkButton} from '../Button';
-import bracket from '../../images/bracket.svg';
+import React from 'react'
+import styled, {keyframes} from 'styled-components'
+import {Flex, Box, Button as RebassButton} from 'rebass'
+import closeX from '../../images/x.svg'
+import {LinkButton} from '../Button'
+import bracket from '../../images/bracket.svg'
 
 const TerminalBody = styled(Flex)`
   background-color: ${(props) => props.theme.colors.purpleBlack};
@@ -19,12 +19,12 @@ const TerminalBody = styled(Flex)`
   left: ${(props) => props.left};  
   right: 0;
   position: absolute;
-`;
+`
 
 const Top = styled(Flex)`
   background-color: ${(props) => props.theme.colors.white};
   height: 18px;
-`;
+`
 
 const SiteName = styled(Flex)`
   font-size: 45px;
@@ -36,7 +36,7 @@ const SiteName = styled(Flex)`
   @media screen and (min-width: ${(props) => props.theme.breakpoints.TABLET}) {
     font-size: 70px;
   }
-`;
+`
 
 const Bottom = styled(Flex)`
   flex-direction: column;
@@ -47,7 +47,7 @@ const Bottom = styled(Flex)`
     padding: 30px 50px;
 
   }
-`;
+`
 
 const blink = keyframes`
   0% {
@@ -59,7 +59,7 @@ const blink = keyframes`
   100% {
     opacity: 0;
   }
-`;
+`
 
 const Cursor = styled.span`
   color: ${(props) => props.theme.colors.red};
@@ -69,14 +69,14 @@ const Cursor = styled.span`
   animation-duration: 3s;
   animation-iteration-count: infinite;
   animation-fill-mode: both;
-`;
+`
 
 const Bracket = styled.span`
   background: center / contain no-repeat url(${bracket});
   width: 25px;
   margin-right: 5px;
   margin-top: 10px;
-`;
+`
 
 const Text = styled.strong`
   font-size: 15px;
@@ -87,34 +87,34 @@ const Text = styled.strong`
   @media screen and (min-width: ${(props) => props.theme.breakpoints.TABLET}) {
     font-size: 18px;
   }
-`;
+`
 
 const ModalButton = styled(RebassButton)`
   cursor: pointer;
   background: center no-repeat  url(${closeX});
   width: 14px;
   height: 14px;
-`;
+`
 
 const Terminal = ({onClose, top, left}) => {
-  return(
+  return (
     <TerminalBody m={'auto'} top={top} left={left}>
-      <Top alignItems="center">
+      <Top alignItems='center'>
         <ModalButton onClick={onClose} ml={1} p={1} />
       </Top>
       <Bottom>
-        <SiteName py={3}><Bracket/>npm cli <Cursor>_</Cursor></SiteName>
+        <SiteName py={3}><Bracket />npm cli <Cursor>_</Cursor></SiteName>
         <Text>
           The intelligent package manager for the Node Javascript Platform. Install stuff and get coding!
         </Text>
         <Box mx={'auto'} my={4}>
-          <LinkButton to="/cli-commands/npm">
+          <LinkButton to='/cli-commands/npm'>
             read docs
           </LinkButton>
         </Box>
       </Bottom>
     </TerminalBody>
-  );
-};
+  )
+}
 
-export default Terminal;
+export default Terminal

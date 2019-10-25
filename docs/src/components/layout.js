@@ -1,18 +1,18 @@
-import React from 'react';
-import Navbar from './Navbar';
-import Sidebar from './Sidebar';
-import {Flex, Box} from 'rebass';
+import React from 'react'
+import Navbar from './Navbar'
+import Sidebar from './Sidebar'
+import {Flex, Box} from 'rebass'
 
 const Layout = ({children, showSidebar}) => {
-  return(
-    <>
-      <Navbar/>
+  return (
+    <React.Fragment>
+      <Navbar />
       <Flex w={1}>
-        {showSidebar && <Sidebar/>}
+        {showSidebar && <Sidebar />}
         <Box width={1}>{children}</Box>
       </Flex>
-    </>
-  );
-};
+    </React.Fragment>
+  )
+}
 
-export default Layout;
+export default Layout

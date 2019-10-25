@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 const IS_STATIC = process.env.GATSBY_IS_STATIC
 
@@ -11,16 +11,13 @@ const Scripts = () => {
           // Workaround: Make links on our Markdown files work on the static site
           var anchors = document.querySelectorAll("#see-also + ul li a")
           Array.prototype.slice.call(anchors).map(function(el) { el.href = el + "/index.html" })
-          `,
+          `
         }}
       />
     )
   }
 
   return null
-
 }
 
-export default Scripts;
-
-
+export default Scripts

@@ -1,7 +1,7 @@
-import React from 'react';
-import styled from 'styled-components';
-import downCarrot from '../images/down-carrot.svg';
-import upCarrot from '../images/up-carrot.svg';
+import React from 'react'
+import styled from 'styled-components'
+import downCarrot from '../images/down-carrot.svg'
+import upCarrot from '../images/up-carrot.svg'
 
 const SectionButton = styled.button`
   outline: none;
@@ -25,29 +25,33 @@ const SectionButton = styled.button`
   &:hover {
     opacity: .6;
   }
-`;
+`
 
 class Accordion extends React.Component {
-  state = {
-    isOpen: true,
-  };
-
-  onHide = () => {
-    this.setState({isOpen: !this.state.isOpen});
+  constructor (props) {
+    super(props)
+    this.state = {
+      isOpen: true
+    }
+    this.onHide = this.onHide.bind(this)
   }
 
-  render() {
-    return(
+  onHide () {
+    this.setState({isOpen: !this.state.isOpen})
+  }
+
+  render () {
+    return (
       <div>
         <SectionButton isOpen={this.state.isOpen} onClick={this.onHide}>{this.props.section}</SectionButton>
-        {this.state.isOpen && 
-          <>
+        {this.state.isOpen &&
+          <div>
             {this.props.children}
-          </>
+          </div>
         }
       </div>
-    );
+    )
   }
 }
 
-export default Accordion;
+export default Accordion

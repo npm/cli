@@ -1,6 +1,6 @@
-import {Link} from 'gatsby';
-import {colors} from '../theme';
-import styled from 'styled-components';
+import {Link} from 'gatsby'
+import {colors} from '../theme'
+import styled from 'styled-components'
 
 export const LinkButton = styled(Link)`
   background-color: ${colors.red};
@@ -19,4 +19,4 @@ export const LinkButton = styled(Link)`
   &:hover {
     opacity: .8;
   }
-`;
+`

@@ -1,7 +1,7 @@
-import React from 'react';
-import styled from 'styled-components';
-import DocLinks from './DocLinks';
-import {} from '../components/Sidebar';
+import React from 'react'
+import styled from 'styled-components'
+import DocLinks from './DocLinks'
+import {} from '../components/Sidebar'
 
 const MobileContainer = styled.div`
   border-left: 1px solid #86838333;
@@ -20,14 +20,14 @@ const MobileContainer = styled.div`
   @media screen and (min-width: ${(props) => props.theme.breakpoints.TABLET}) {
     display: none;
   } 
-`;
+`
 
 const MobileSidebar = () => {
-  return(
-    <MobileContainer flexDirection="column">
-      <DocLinks/>
+  return (
+    <MobileContainer flexDirection='column'>
+      <DocLinks />
     </MobileContainer>
-  );
-};
+  )
+}
 
-export default MobileSidebar;
+export default MobileSidebar

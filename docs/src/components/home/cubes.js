@@ -1,15 +1,15 @@
-import styled, {css, keyframes} from 'styled-components';
-import purpleCube from '../../images/purple-cube.svg';
-import orangeCube from '../../images/orange-cube.svg';
-import redCube from '../../images/red-cube.svg';
-import purpleGradientCube from '../../images/purple-gradient-cube.svg';
-import pinkGradientCube from '../../images/pink-gradient-cube.svg';
+import styled, {css, keyframes} from 'styled-components'
+import purpleCube from '../../images/purple-cube.svg'
+import orangeCube from '../../images/orange-cube.svg'
+import redCube from '../../images/red-cube.svg'
+import purpleGradientCube from '../../images/purple-gradient-cube.svg'
+import pinkGradientCube from '../../images/pink-gradient-cube.svg'
 
 const commonCubeStyles = css`
   background-position: center;
   background-repeat: no-repeat;
   position: absolute;
-`;
+`
 
 const wiggle = keyframes`
   0% {
@@ -21,7 +21,7 @@ const wiggle = keyframes`
   100% {
     transform: rotate(0deg);
   }
-`;
+`
 
 export const CubeTopLeft = styled.div`
   ${commonCubeStyles};
@@ -37,8 +37,7 @@ export const CubeTopLeft = styled.div`
   animation-iteration-count: infinite;
   animation-fill-mode: both;
   animation-timing-function: ease-in-out;
-`;
-
+`
 
 export const CubeMiddleLeft = styled.span`
   ${commonCubeStyles};
@@ -53,7 +52,7 @@ export const CubeMiddleLeft = styled.span`
   animation-iteration-count: infinite;
   animation-fill-mode: both;
   animation-timing-function: ease-in-out;
-`;
+`
 
 export const CubeBottomLeft = styled.span`
   ${commonCubeStyles};
@@ -68,7 +67,7 @@ export const CubeBottomLeft = styled.span`
   animation-iteration-count: infinite;
   animation-fill-mode: both;
   animation-timing-function: ease-in-out;
-`;
+`
 
 export const CubeBottomRight = styled.span`
   ${commonCubeStyles};
@@ -84,7 +83,7 @@ export const CubeBottomRight = styled.span`
   animation-delay: .3s;
   animation-fill-mode: both;
   animation-timing-function: ease-in-out;
-`;
+`
 
 export const CubeTopRight = styled.span`
   ${commonCubeStyles};
@@ -99,4 +98,4 @@ export const CubeTopRight = styled.span`
   animation-iteration-count: infinite;
   animation-fill-mode: backwards;
   animation-timing-function: ease-in-out;
-`;
+`

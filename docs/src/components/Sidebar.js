@@ -1,6 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
-import DocLinks from './DocLinks';
+import React from 'react'
+import styled from 'styled-components'
+import DocLinks from './DocLinks'
 
 const Container = styled.nav`
   border-right: 1px solid #86838333;
@@ -17,14 +17,14 @@ const Container = styled.nav`
   @media screen and (min-width: ${(props) => props.theme.breakpoints.TABLET}) {
     display: block;
   } 
-`;
+`
 
 const Sidebar = () => {
-  return(
+  return (
     <Container>
-      <DocLinks/>
+      <DocLinks />
     </Container>
-  );
-};
+  )
+}
 
-export default Sidebar;
+export default Sidebar

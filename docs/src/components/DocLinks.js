@@ -1,9 +1,9 @@
-import React from 'react';
-import styled from 'styled-components';
-import {StaticQuery, graphql} from 'gatsby';
-import {Flex} from 'rebass';
-import {SidebarLink} from './links';
-import Accordion from './Accordion';
+import React from 'react'
+import styled from 'styled-components'
+import {StaticQuery, graphql} from 'gatsby'
+import {Flex} from 'rebass'
+import {SidebarLink} from './links'
+import Accordion from './Accordion'
 
 const IS_STATIC = process.env.GATSBY_IS_STATIC
 
@@ -14,39 +14,36 @@ const LinkDesc = styled.span`
   display: block;
   font-weight: 400;
   color: ${(props) => props.theme.colors.darkGray};
-`;  
+`
 
 const DocLinks = ({data}) => {
-  const linkInfo = data.allMarkdownRemark.nodes;
-  const sections = ['cli-commands', 'configuring-npm', 'using-npm'];
-  let sortedData = {};
+  const linkInfo = data.allMarkdownRemark.nodes
+  const sections = ['cli-commands', 'configuring-npm', 'using-npm']
+  let sortedData = {}
 
   sections.map((section) => (
-    sortedData[section] = linkInfo.filter(function(item) {
-      return item.frontmatter.section == section;
+    sortedData[section] = linkInfo.filter(function (item) {
+      return item.frontmatter.section === section
     })
-  ));
+  ))
 
-  return(
-    <>
-      {sections.map((section, index) => (
-        <Accordion key={index} section={section}>
-          {sortedData[section].map((linkData, index) => (
-            <Flex flexDirection="column" key={index}>
-              <SidebarLink 
-                to={`${linkData.fields.slug}${IS_STATIC?'/index.html' : ''}`} 
-                activeClassName="active-sidebar-link"
-              >
-                {linkData.frontmatter.title}
-                <LinkDesc>{linkData.frontmatter.description}</LinkDesc>
-              </SidebarLink>
-            </Flex>
-          ))}
-        </Accordion>
+  return sections.map((section, index) => (
+    <Accordion key={index} section={section}>
+      {sortedData[section].map((linkData, index) => (
+        <Flex flexDirection='column' key={index}>
+          <SidebarLink
+            to={`${linkData.fields.slug}${IS_STATIC ? '/index.html' : ''}`}
+            activeClassName='active-sidebar-link'
+          >
+            {linkData.frontmatter.title}
+            <LinkDesc>{linkData.frontmatter.description}</LinkDesc>
+          </SidebarLink>
+        </Flex>
       ))}
-    </>
-  );
-};
+    </Accordion>
+  )
+  )
+}
 
 export default props => (
   <StaticQuery
@@ -68,4 +65,4 @@ export default props => (
     `}
     render={data => <DocLinks data={data} {...props} />}
   />
-);
+)

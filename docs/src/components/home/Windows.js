@@ -1,6 +1,6 @@
-import React from 'react';
-import Terminal from './Terminal';
-import styled from 'styled-components';
+import React from 'react'
+import Terminal from './Terminal'
+import styled from 'styled-components'
 
 const Container = styled.div`
   position: relative;
@@ -12,58 +12,62 @@ const Container = styled.div`
   @media screen and (min-width: ${(props) => props.theme.breakpoints.TABLET}) {
     height: 400px;
   }
-`;
+`
 
 class Windows extends React.Component {
-  state = {
-    showTopTerminal: true,
-    showMiddleTerminal: true,
-    showBottomTerminal: true,
-    counter: 0,
-  };
+  constructor (props) {
+    super(props)
+    this.state = {
+      showTopTerminal: true,
+      showMiddleTerminal: true,
+      showBottomTerminal: true,
+      counter: 0
+    }
+    this.onHide = this.onHide.bind(this)
+  }
 
-  onHide = (terminal) => {
-    this.setState({ [terminal]: false, counter: this.state.counter + 1}, () => {
-      if (this.state.counter == 3) {
+  onHide (terminal) {
+    this.setState({ [terminal]: false, counter: this.state.counter + 1 }, () => {
+      if (this.state.counter === 3) {
         this.setState({
           showTopTerminal: true,
           showMiddleTerminal: true,
           showBottomTerminal: true,
-          counter: 0,
-        });
+          counter: 0
+        })
       }
-    });
+    })
   }
- 
-  render() {
-    return(
+
+  render () {
+    return (
       <Container>
-        {this.state.showTopTerminal && 
-          <Terminal 
+        {this.state.showTopTerminal &&
+          <Terminal
             onClose={() => this.onHide('showTopTerminal')}
-            top={'0%'} 
+            top={'0%'}
             left={'0%'}
           />
         }
 
-        {this.state.showMiddleTerminal && 
-          <Terminal 
+        {this.state.showMiddleTerminal &&
+          <Terminal
             onClose={() => this.onHide('showMiddleTerminal')}
-            top={'8%'} 
+            top={'8%'}
             left={'5%'}
           />
         }
 
-        {this.state.showBottomTerminal && 
+        {this.state.showBottomTerminal &&
           <Terminal
             onClose={() => this.onHide('showBottomTerminal')}
-            top={'16%'} 
+            top={'16%'}
             left={'10%'}
           />
         }
       </Container>
-    );
+    )
   }
 }
- 
-export default Windows;
+
+export default Windows
