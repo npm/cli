@@ -1,20 +1,13 @@
----
-section: using-npm
-title: semver
-description: The semantic versioner for npm
----
+semver(7) -- The semantic versioner for npm
+===========================================
 
-# semver
-
-## The semantic versioner for npm
-
-### Install
+## Install
 
 ```bash
 npm install --save semver
-```
+````
 
-### Usage
+## Usage
 
 As a node module:
 
@@ -34,7 +27,7 @@ semver.valid(semver.coerce('42.6.7.9.3-alpha')) // '42.6.7'
 
 As a command-line utility:
 
-```bash
+```
 $ semver -h
 
 A JavaScript implementation of the https://semver.org/ specification
@@ -76,14 +69,14 @@ Versions are printed in ascending order, so supplying
 multiple versions to the utility will just sort them.
 ```
 
-### Versions
+## Versions
 
 A "version" is described by the `v2.0.0` specification found at
 <https://semver.org/>.
 
 A leading `"="` or `"v"` character is stripped off and ignored.
 
-### Ranges
+## Ranges
 
 A `version range` is a set of `comparators` which specify versions
 that satisfy the range.
@@ -117,7 +110,7 @@ or `1.1.0`.
 The range `1.2.7 || >=1.2.9 <2.0.0` would match the versions `1.2.7`,
 `1.2.9`, and `1.4.6`, but not the versions `1.2.8` or `2.0.0`.
 
-#### Prerelease Tags
+### Prerelease Tags
 
 If a version has a prerelease tag (for example, `1.2.3-alpha.3`) then
 it will only be allowed to satisfy comparator sets if at least one
@@ -176,7 +169,7 @@ $ semver 1.2.4-beta.0 -i prerelease
 1.2.4-beta.1
 ```
 
-#### Advanced Range Syntax
+### Advanced Range Syntax
 
 Advanced range syntax desugars to primitive comparators in
 deterministic ways.
@@ -184,7 +177,7 @@ deterministic ways.
 Advanced ranges may be combined in the same way as primitive
 comparators using white space or `||`.
 
-##### Hyphen Ranges `X.Y.Z - A.B.C`
+#### Hyphen Ranges `X.Y.Z - A.B.C`
 
 Specifies an inclusive set.
 
@@ -203,7 +196,7 @@ provided tuple parts.
 * `1.2.3 - 2.3` := `>=1.2.3 <2.4.0`
 * `1.2.3 - 2` := `>=1.2.3 <3.0.0`
 
-##### X-Ranges `1.2.x` `1.X` `1.2.*` `*`
+#### X-Ranges `1.2.x` `1.X` `1.2.*` `*`
 
 Any of `X`, `x`, or `*` may be used to "stand in" for one of the
 numeric values in the `[major, minor, patch]` tuple.
@@ -219,7 +212,7 @@ character is in fact optional.
 * `1` := `1.x.x` := `>=1.0.0 <2.0.0`
 * `1.2` := `1.2.x` := `>=1.2.0 <1.3.0`
 
-##### Tilde Ranges `~1.2.3` `~1.2` `~1`
+#### Tilde Ranges `~1.2.3` `~1.2` `~1`
 
 Allows patch-level changes if a minor version is specified on the
 comparator.  Allows minor-level changes if not.
@@ -236,7 +229,7 @@ comparator.  Allows minor-level changes if not.
   `1.2.4-beta.2` would not, because it is a prerelease of a
   different `[major, minor, patch]` tuple.
 
-##### Caret Ranges `^1.2.3` `^0.2.5` `^0.0.4`
+#### Caret Ranges `^1.2.3` `^0.2.5` `^0.0.4`
 
 Allows changes that do not modify the left-most non-zero digit in the
 `[major, minor, patch]` tuple.  In other words, this allows patch and
@@ -279,7 +272,7 @@ zero.
 * `^1.x` := `>=1.0.0 <2.0.0`
 * `^0.x` := `>=0.0.0 <1.0.0`
 
-#### Range Grammar
+### Range Grammar
 
 Putting all this together, here is a Backus-Naur grammar for ranges,
 for the benefit of parser authors:
@@ -303,7 +296,7 @@ parts      ::= part ( '.' part ) *
 part       ::= nr | [-0-9A-Za-z]+
 ```
 
-### Functions
+## Functions
 
 All methods and classes take a final `options` object argument.  All
 options in this object are `false` by default.  The options supported
@@ -343,7 +336,7 @@ strings that they parse.
 * `parse(v)`: Attempt to parse a string as a semantic version, returning either
   a `SemVer` object or `null`.
 
-#### Comparison
+### Comparison
 
 * `gt(v1, v2)`: `v1 > v2`
 * `gte(v1, v2)`: `v1 >= v2`
@@ -365,11 +358,11 @@ strings that they parse.
   (`major`, `premajor`, `minor`, `preminor`, `patch`, `prepatch`, or `prerelease`),
   or null if the versions are the same.
 
-#### Comparators
+### Comparators
 
 * `intersects(comparator)`: Return true if the comparators intersect
 
-#### Ranges
+### Ranges
 
 * `validRange(range)`: Return the valid range or null if it's not valid
 * `satisfies(version, range)`: Return true if the version satisfies the
@@ -401,7 +394,7 @@ satisfy the range.
 If you want to know if a version satisfies or does not satisfy a
 range, use the `satisfies(version, range)` function.
 
-#### Coercion
+### Coercion
 
 * `coerce(version)`: Coerces a string to semver if possible
 
