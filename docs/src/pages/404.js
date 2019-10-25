@@ -1,10 +1,10 @@
 import React from 'react'
 
-import Layout from '../components/Layout'
-import SEO from '../components/seo'
+import Layout from 'src/components/Layout'
+import SEO from 'src/components/seo'
 
 import {ThemeProvider} from 'styled-components'
-import {theme} from '../theme'
+import {theme} from 'src/theme'
 
 const NotFoundPage = () => (
   <ThemeProvider theme={theme}>

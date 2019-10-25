@@ -1,12 +1,12 @@
 import React from 'react'
-import Layout from '../components/Layout'
-import Features from '../components/home/Features'
-import SEO from '../components/seo'
-import Hero from '../components/home/Hero'
-import DarkBlock from '../components/home/DarkBlock'
-import Footer from '../components/home/footer'
+import Layout from 'src/components/Layout'
+import Features from 'src/components/home/Features'
+import SEO from 'src/components/seo'
+import Hero from 'src/components/home/Hero'
+import DarkBlock from 'src/components/home/DarkBlock'
+import Footer from 'src/components/home/footer'
 import {ThemeProvider} from 'styled-components'
-import {theme} from '../theme'
+import {theme} from 'src/theme'
 
 const IndexPage = () => (
   <ThemeProvider theme={theme}>

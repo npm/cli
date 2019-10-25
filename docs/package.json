@@ -21,6 +21,7 @@
     "gatsby-source-filesystem": "^2.1.21",
     "gatsby-transformer-remark": "^2.6.22",
     "gatsby-transformer-sharp": "^2.2.7",
+    "gatsby-plugin-root-import": "^2.0.5",
     "prismjs": "^1.17.1",
     "prop-types": "^15.7.2",
     "react": "^16.9.0",

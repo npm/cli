@@ -1,10 +1,10 @@
 import React from 'react'
-import Layout from '../components/Layout'
+import Layout from 'src/components/Layout'
 import {graphql} from 'gatsby'
 import styled, { ThemeProvider } from 'styled-components'
-import {theme} from '../theme'
-import FoundTypo from '../components/FoundTypo'
-import Scripts from '../components/Scripts'
+import {theme} from 'src/theme'
+import FoundTypo from 'src/components/FoundTypo'
+import Scripts from 'src/components/Scripts'
 
 const Content = styled.div`
   max-width: 760px;
