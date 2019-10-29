@@ -1,0 +1,43 @@
+name: Node CI
+
+on: [push]
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        node-version: [8.x, 10.x, 12.x]
+        os: [ubuntu-latest, windows-latest]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      # Checkout the npm/cli repo
+    - uses: actions/checkout@v1
+
+      # Installs the specific version of Node.js
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+
+      # Run the installer script
+    - name: Install dependencies
+      run: node . install
+
+      # Run the tests
+    - name: Run Tap tests
+      run: node . run tap -- "test/tap/*.js" -t600 -Rclassic -c
+      env:
+        DEPLOY_VERSION: testing
+        COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_OPTIONAL_TOKEN }}
+
+    # - name: Run sudo tests on Linux
+    #   if: matrix.os == 'ubuntu-latest'
+    #   run: sudo PATH=$PATH $(which node) . run tap -- "test/tap/*.js" --coverage  --timeout 600
+
+    - name: Lint
+      run: npx standard
+
+    - name: Validate licenses
+      run: node . run licenses
