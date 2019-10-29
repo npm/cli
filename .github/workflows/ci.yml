@@ -32,9 +32,9 @@ jobs:
         DEPLOY_VERSION: testing
         COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_OPTIONAL_TOKEN }}
 
-    - name: Run sudo tests on Linux
-      if: matrix.os == 'ubuntu-latest'
-      run: sudo PATH=$PATH $(which node) . run tap -- "test/tap/*.js" --coverage  --timeout 600
+    # - name: Run sudo tests on Linux
+    #   if: matrix.os == 'ubuntu-latest'
+    #   run: sudo PATH=$PATH $(which node) . run tap -- "test/tap/*.js" --coverage  --timeout 600
 
     - name: Lint
       run: npx standard
