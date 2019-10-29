@@ -21,9 +21,9 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
 
-    - name: Run sudo tests on Linux
-      if: matrix.os == 'ubuntu-latest'
-      run: sudo PATH=$PATH $(which node) . run tap -- "test/tap/*.js" --coverage  --timeout 600
+    # - name: Run sudo tests on Linux
+    #   if: matrix.os == 'ubuntu-latest'
+    #   run: sudo PATH=$PATH $(which node) . run tap -- "test/tap/*.js" --coverage  --timeout 600
 
       # Run the installer script
     - name: Install dependencies
