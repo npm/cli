@@ -21,17 +21,23 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
 
+    - name: Run sudo tests on Linux
+      if: ${{ matrix.os }} === ubuntu-latest
+      run: sudo PATH=$PATH $(which node) . run tap -- \"test/tap/*.js\" --coverage  --timeout 600
+
       # Run the installer script
-    - run: node . install
+    - name: Install dependencies
+      run: node . install
 
       # Run the tests
-    - run: node . run tap -- \"test/tap/*.js\" -t600 -Rclassic -c
+    - name: Run Tap tests
+      run: node . run tap -- "test/tap/*.js" -t600 -Rclassic -c
       env:
         DEPLOY_VERSION: testing
         COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_OPTIONAL_TOKEN }}
 
-      # Run the linter
-    - run: npx standard
+    - name: Lint
+      run: npx standard
 
-      # Validate licenses
-    - run: node . run licenses
+    - name: Validate licenses
+      run: node . run licenses
