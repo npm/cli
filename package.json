@@ -290,10 +290,11 @@
     "tar-stream": "^2.1.0"
   },
   "scripts": {
-    "docs:create": "make -j4 doc && npm run docs:html",
+    "docs:man": "make -j4 doc",
     "docs:html": "cd docs && npm i && npm run static-build && rimraf ./node_modules ./.cache",
     "dumpconf": "env | grep npm | sort | uniq",
-    "prepare": "node bin/npm-cli.js rebuild && node bin/npm-cli.js --no-audit --no-timing prune --prefix=. --no-global && rimraf test/*/*/node_modules && npm run docs:create",
+    "prepublishOnly": "npm run docs:html",
+    "prepare": "node bin/npm-cli.js rebuild && node bin/npm-cli.js --no-audit --no-timing prune --prefix=. --no-global && rimraf test/*/*/node_modules && npm run docs:man",
     "preversion": "bash scripts/update-authors.sh && git add AUTHORS && git commit -m \"update AUTHORS\" || true",
     "licenses": "licensee --production --errors-only",
     "tap": "tap -J --timeout 300 --no-esm",
