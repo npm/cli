@@ -1,3 +1,19 @@
+## 6.13.0 (2019-11-05)
+
+* [`9a2d8af84`](https://github.com/npm/cli/commit/9a2d8af84f7328f13d8f578cf4b150b9d5f09517)
+  [#240](https://github.com/npm/cli/pull/240)
+  Clean up some test flakiness and inconsistency
+  ([@isaacs](https://github.com/isaacs))
+* [`688cd97be`](https://github.com/npm/cli/commit/688cd97be94ca949719424ff69ff515a68c5caba)
+  [#272](https://github.com/npm/cli/pull/272)
+  use github actions for CI
+  ([@JasonEtco](https://github.com/JasonEtco))
+
+### DEPENDENCIES
+
+* [`a37296b20`](https://github.com/npm/cli/commit/a37296b20ca3e19c2bbfa78fedcfe695e03fda69)
+  `pacote@9.5.9`
+
 ## 6.12.1 (2019-10-29)
 
 ### BUG FIXES
