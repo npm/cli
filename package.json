@@ -291,7 +291,8 @@
   },
   "scripts": {
     "docs:man": "make -j4 doc",
-    "docs:html": "cd docs && npm i && npm run static-build && rimraf ./node_modules ./.cache",
+    "docs:html": "cd docs && npm run build:static",
+    "docs:create": "npm run docs:man && npm run docs:html",
     "dumpconf": "env | grep npm | sort | uniq",
     "prepublishOnly": "npm run docs:html",
     "prepare": "node bin/npm-cli.js rebuild && node bin/npm-cli.js --no-audit --no-timing prune --prefix=. --no-global && rimraf test/*/*/node_modules && npm run docs:man",

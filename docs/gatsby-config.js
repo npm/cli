@@ -17,7 +17,9 @@ module.exports = {
         path: `${__dirname}/content/`
       }
     },
-    'gatsby-transformer-sharp',
+    {
+      resolve: 'gatsby-plugin-no-sourcemaps'
+    },
     'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-plugin-manifest',
