@@ -58,7 +58,7 @@ an argument to `git checkout`.  The default is `master`.
 You need to have a `package.json` file in the root of your project to do
 much of anything with npm.  That is basically the whole interface.
 
-See [`package.json`](/docs/configuring-npm/package.json) for details about what goes in that file.  At the very
+See [`package.json`](/docs/configuring-npm/package-json) for details about what goes in that file.  At the very
 least, you need:
 
 * name:
@@ -245,7 +245,7 @@ Tell the world how easy it is to install your program!
 
 * [npm](/cli-commands/npm)
 * [npm-init](/cli-commands/npm-init)
-* [package.json](/configuring-npm/package.json)
+* [package.json](/configuring-npm/package-json)
 * [npm-scripts](/using-npm/scripts)
 * [npm-publish](/cli-commands/npm-publish)
 * [npm-adduser](/cli-commands/npm-adduser)

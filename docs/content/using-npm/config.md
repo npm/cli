@@ -134,7 +134,7 @@ then the user could change the behavior by doing:
 npm config set foo:port 80
 ```
 
-See [package.json](/docs/configuring-npm/package.json) for more information.
+See [package.json](/docs/configuring-npm/package-json) for more information.
 
 ### Config Settings
 

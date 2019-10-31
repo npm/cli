@@ -40,6 +40,6 @@ Set to `"browser"` to view html help content in the default web browser.
 * [npm-folders](/configuring-npm/folders)
 * [npm-config](/cli-commands/npm-config)
 * [npmrc](/configuring-npm/npmrc)
-* [package.json](/configuring-npm/package.json)
+* [package.json](/configuring-npm/package-json)
 * [npm-help-search](/cli-commands/npm-help-search)
 * [npm-index](/cli-commands/npm-index)

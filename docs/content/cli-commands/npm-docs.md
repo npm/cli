@@ -50,4 +50,4 @@ The base URL of the npm package registry.
 * [npm-registry](/using-npm/registry)
 * [npm-config](/cli-commands/npm-config)
 * [npmrc](/configuring-npm/npmrc)
-* [package.json](/configuring-npm/package.json)
+* [package.json](/configuring-npm/package-json)

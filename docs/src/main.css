@@ -75,6 +75,11 @@ ul {
 	padding: 10px 0;
 }
 
+strong {
+	font-weight: bold;
+	color: #cc33ff;
+}
+
 li {
 	list-style-type: disc;
 	list-style-position: inside;

@@ -163,7 +163,7 @@ reproduction to report.
 
 ### See Also
 * [npm-help](/cli-commands/npm-help)
-* [package.json](/configuring-npm/package.json)
+* [package.json](/configuring-npm/package-json)
 * [npm-install](/cli-commands/npm-install)
 * [npm-config](/cli-commands/npm-config)
 * [npmrc](/configuring-npm/npmrc)

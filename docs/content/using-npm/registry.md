@@ -81,7 +81,7 @@ published at all, or
 `"publishConfig":{"registry":"http://my-internal-registry.local"}`
 to force it to be published only to your internal registry.
 
-See [`package.json`](/docs/configuring-npm/package.json) for more info on what goes in the package.json file.
+See [`package.json`](/docs/configuring-npm/package-json) for more info on what goes in the package.json file.
 
 ### Will you replicate from my registry into the public one?
 

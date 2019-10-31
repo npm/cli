@@ -13,47 +13,47 @@ description: How npm handles the "scripts" field
 npm supports the "scripts" property of the package.json file, for the
 following scripts:
 
-* prepublish:
+* **prepublish**:
   Run BEFORE the package is packed and published, as well as on local `npm
   install` without any arguments. (See below)
-* prepare:
+* **prepare**:
   Run both BEFORE the package is packed and published, on local `npm
   install` without any arguments, and when installing git dependencies (See
   below). This is run AFTER `prepublish`, but BEFORE `prepublishOnly`.
-* prepublishOnly:
+* **prepublishOnly**:
   Run BEFORE the package is prepared and packed, ONLY on `npm publish`. (See
   below.)
-* prepack:
+* **prepack**:
   run BEFORE a tarball is packed (on `npm pack`, `npm publish`, and when
   installing git dependencies)
-* postpack:
+* **postpack**:
   Run AFTER the tarball has been generated and moved to its final destination.
-* publish, postpublish:
+* **publish**, **postpublish**:
   Run AFTER the package is published.
-* preinstall:
+* **preinstall**:
   Run BEFORE the package is installed
-* install, postinstall:
+* **install**, **postinstall**:
   Run AFTER the package is installed.
-* preuninstall, uninstall:
+* **preuninstall**, **uninstall**:
   Run BEFORE the package is uninstalled.
-* postuninstall:
+* **postuninstall**:
   Run AFTER the package is uninstalled.
-* preversion:
+* **preversion**:
   Run BEFORE bumping the package version.
-* version:
+* **version**:
   Run AFTER bumping the package version, but BEFORE commit.
-* postversion:
+* **postversion**:
   Run AFTER bumping the package version, and AFTER commit.
-* pretest, test, posttest:
+* **pretest**, **test**, **posttest**:
   Run by the `npm test` command.
-* prestop, stop, poststop:
+* **prestop**, **stop**, **poststop**:
   Run by the `npm stop` command.
-* prestart, start, poststart:
+* **prestart**, **start**, **poststart**:
   Run by the `npm start` command.
-* prerestart, restart, postrestart:
+* **prerestart**, **restart**, **postrestart**:
   Run by the `npm restart` command. Note: `npm restart` will run the
   stop and start scripts if no `restart` script is provided.
-* preshrinkwrap, shrinkwrap, postshrinkwrap:
+* **preshrinkwrap**, **shrinkwrap**, **postshrinkwrap**:
   Run by the `npm shrinkwrap` command.
 
 Additionally, arbitrary scripts can be executed by running `npm
@@ -265,7 +265,7 @@ above.
   only will prevent some optional features, then it's better to just
   print a warning and exit successfully.
 * Try not to use scripts to do what npm can do for you.  Read through
-  [`package.json`](/docs/configuring-npm/package.json) to see all the things that you can specify and enable
+  [`package.json`](/docs/configuring-npm/package-json) to see all the things that you can specify and enable
   by simply describing your package appropriately.  In general, this
   will lead to a more robust and consistent state.
 * Inspect the env to determine where to put things.  For instance, if
@@ -284,6 +284,6 @@ above.
 ### See Also
 
 * [npm-run-script](/cli-commands/npm-run-script)
-* [package.json](/configuring-npm/package.json)
+* [package.json](/configuring-npm/package-json)
 * [npm-developers](/using-npm/developers)
 * [npm-install](/cli-commands/npm-install)

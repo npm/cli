@@ -214,7 +214,7 @@ cannot be found elsewhere.  See [`package.json`](/docs/configuring-npm/package.j
 
 ### See also
 
-* [package.json](/configuring-npm/package.json)
+* [package.json](/configuring-npm/package-json)
 * [npm-install](/cli-commands/npm-install)
 * [npm-pack](/cli-commands/npm-pack)
 * [npm-cache](/cli-commands/npm-cache)
