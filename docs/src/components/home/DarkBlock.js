@@ -18,13 +18,19 @@ const Text = styled.p`
   text-align: center;
 `
 
+const aStyle = {
+  color: '#fb3b49',
+  textDecoration: 'none'
+}
+
 const DarkBlock = () => {
   return (
     <Container>
       <ContentWrapper px={4} py={6} m='auto' flexDirection='column'>
         <Text>
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod Lorem ipsum dolor sit amet, tetuer adipiscing elit, sed diam nonummy nibmod
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod Lorem ipsum dolor sit amet, tetuer adipiscing elit, sed diam nonummy nibmod
+          <p>The current stable version of npm is <a href={'https://github.com/npm/cli/releases/latest'} style={aStyle}>available on GitHub.</a></p>
+          <p>To upgrade, run: <code className={'language-text'} style={{color: 'white'}}>npm install npm@latest -g</code></p>
+          <p>To report bugs or submit feature requests, <a href={'#'} style={aStyle}>please XXX.</a></p>
         </Text>
         <Box pt={4}><LinkButton to='cli-commands/npm' w={'120px'}>read docs</LinkButton></Box>
       </ContentWrapper>
