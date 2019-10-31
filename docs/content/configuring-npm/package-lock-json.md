@@ -28,7 +28,7 @@ various purposes:
 
 One key detail about `package-lock.json` is that it cannot be published, and it
 will be ignored if found in any place other than the toplevel package. It shares
-a format with [npm-shrinkwrap.json](shrinkwrap.json), which is essentially the same file, but
+a format with [npm-shrinkwrap.json](docs/configuring-npm/shrinkwrap-json), which is essentially the same file, but
 allows publication. This is not recommended unless deploying a CLI tool or
 otherwise using the publication process for producing production packages.
 
@@ -143,7 +143,7 @@ The dependencies of this dependency, exactly as at the top level.
 ### See also
 
 * [npm-shrinkwrap](/cli-commands/npm-shrinkwrap)
-* [npm-shrinkwrap.json](/configuring-npm/shrinkwrap.json)
+* [npm-shrinkwrap.json](/configuring-npm/shrinkwrap-json)
 * [npm-package-locks](/configuring-npm/package-locks)
-* [package.json](/configuring-npm/package.json)
+* [package.json](/configuring-npm/package-json)
 * [npm-install](/cli-commands/npm-install)

@@ -10,7 +10,7 @@ description: An explanation of npm lockfiles
 
 ### Description
 
-Conceptually, the "input" to [`npm-install`](/docs/cli-commands/npm-install) is a [package.json](/docs/configuring-npm/package.json), while its
+Conceptually, the "input" to [`npm-install`](/docs/cli-commands/npm-install) is a [package.json](/docs/configuring-npm/package-json), while its
 "output" is a fully-formed `node_modules` tree: a representation of the
 dependencies you declared. In an ideal world, npm would work like a pure
 function: the same `package.json` should produce the exact same `node_modules`
@@ -83,7 +83,7 @@ author are not the same person, there's no way for A's author to say
 that he or she does not want to pull in newly published versions of C
 when B hasn't changed at all.
 
-To prevent this potential issue, npm uses [package-lock.json](package-lock.json) or, if present,
+To prevent this potential issue, npm uses [package-lock.json](/docs/configuring-npm/package-lock-json) or, if present,
 [npm-shrinkwrap.json](shrinkwrap.json). These files are called package locks, or lockfiles.
 
 Whenever you run `npm install`, npm generates or updates your package lock,
@@ -112,7 +112,7 @@ which will look something like this:
 This file describes an *exact*, and more importantly *reproducible*
 `node_modules` tree. Once it's present, any future installation will base its
 work off this file, instead of recalculating dependency versions off
-[package.json](/docs/configuring-npm/package.json).
+[package.json](/docs/configuring-npm/package-json).
 
 The presence of a package lock changes the installation behavior such that:
 
@@ -177,7 +177,7 @@ pre-`npm@5.7.0` versions of npm 5, albeit a bit more noisily. Note that if
 ### See Also
 
 * https://medium.com/@sdboyer/so-you-want-to-write-a-package-manager-4ae9c17d9527
-* [package.json](/configuring-npm/package.json)
-* [package-lock.json](/configuring-npm/package-lock.json)
-* [npm-shrinkwrap.json](/configuring-npm/shrinkwrap.json)
+* [package.json](/configuring-npm/package-json)
+* [package-lock.json](/configuring-npm/package-lock-json)
+* [npm-shrinkwrap.json](/configuring-npm/shrinkwrap-json)
 * [npm-shrinkwrap](/cli-commands/npm-shrinkwrap)

@@ -27,7 +27,7 @@ package, as well as details on how the package is built.
 
 By default npm will publish to the public registry. This can be overridden by
 specifying a different default registry or using a [`npm-scope`](npm-scope) in the name
-(see [`package.json`](/docs/configuring-npm/package.json)).
+(see [`package.json`](/docs/configuring-npm/package-json)).
 
 * `<folder>`:
   A folder containing a package.json file

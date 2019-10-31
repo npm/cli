@@ -35,7 +35,7 @@ files exist. See [package-lock.json](/docs/configuring-npm/package-lock.json) an
 
 A `package` is:
 
-* a) a folder containing a program described by a [`package.json`](/docs/configuring-npm/package.json) file
+* a) a folder containing a program described by a [`package.json`](/docs/configuring-npm/package-json) file
 * b) a gzipped tarball containing (a)
 * c) a url that resolves to (b)
 * d) a `<name>@<version>` that is published on the registry (see [`npm-registry`](npm-registry)) with (c)
@@ -58,7 +58,7 @@ after packing it up into a tarball (b).
     directory) as a global package.
 
     By default, `npm install` will install all modules listed as dependencies
-    in [`package.json`](/docs/configuring-npm/package.json).
+    in [`package.json`](/docs/configuring-npm/package-json).
 
     With the `--production` flag (or when the `NODE_ENV` environment variable
     is set to `production`), npm will not install modules listed in
@@ -188,7 +188,7 @@ after packing it up into a tarball (b).
 * `npm install [<@scope>/]<name>@<version range>`:
 
     Install a version of the package matching the specified version range.  This
-    will follow the same rules for resolving dependencies described in [`package.json`](/docs/configuring-npm/package.json).
+    will follow the same rules for resolving dependencies described in [`package.json`](/docs/configuring-npm/package-json).
 
     Note that most version ranges must be put in quotes so that your shell will
     treat it as a single argument.
@@ -491,4 +491,4 @@ affects a real use-case, it will be investigated.
 * [npm-dist-tag](/cli-commands/npm-dist-tag)
 * [npm-uninstall](/cli-commands/npm-uninstall)
 * [npm-shrinkwrap](/cli-commands/npm-shrinkwrap)
-* [package.json](/configuring-npm/package.json)
+* [package.json](/configuring-npm/package-json)

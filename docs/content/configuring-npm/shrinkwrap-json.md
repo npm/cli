@@ -24,11 +24,11 @@ Additionally, if both `package-lock.json` and `npm-shrinkwrap.json` are present
 in a package root, `package-lock.json` will be ignored in favor of this file.
 
 For full details and description of the `npm-shrinkwrap.json` file format, refer
-to the manual page for [package-lock.json](package-lock.json).
+to the manual page for [package-lock.json](/docs/configuring-npm/package-lock-json).
 
 ### See also
 
 * [npm-shrinkwrap](/cli-commands/npm-shrinkwrap)
-* [package-lock.json](/configuring-npm/package-lock.json)
-* [package.json](/configuring-npm/package.json)
+* [package-lock.json](/configuring-npm/package-lock-json)
+* [package.json](/configuring-npm/package-json)
 * [npm-install](/cli-commands/npm-install)

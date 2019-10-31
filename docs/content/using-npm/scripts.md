@@ -265,7 +265,7 @@ above.
   only will prevent some optional features, then it's better to just
   print a warning and exit successfully.
 * Try not to use scripts to do what npm can do for you.  Read through
-  [`package.json`](/docs/configuring-npm/package.json) to see all the things that you can specify and enable
+  [`package.json`](/docs/configuring-npm/package-json) to see all the things that you can specify and enable
   by simply describing your package appropriately.  In general, this
   will lead to a more robust and consistent state.
 * Inspect the env to determine where to put things.  For instance, if
@@ -284,6 +284,6 @@ above.
 ### See Also
 
 * [npm-run-script](/cli-commands/npm-run-script)
-* [package.json](/configuring-npm/package.json)
+* [package.json](/configuring-npm/package-json)
 * [npm-developers](/using-npm/developers)
 * [npm-install](/cli-commands/npm-install)
