@@ -115,12 +115,7 @@ function checkOutput (t, { code, stdout, stderr }) {
 }
 
 function jsonTest (t, { assertionMsg, expected, stdout }) {
-  let parsed = stdout
-
-  t.doesNotThrow(function () {
-    parsed = JSON.parse(stdout)
-  }, 'valid JSON')
-
+  let parsed = JSON.parse(stdout)
   t.deepEqual(parsed, expected, assertionMsg)
 }
 
@@ -134,11 +129,10 @@ function testFundCmd ({ title, assertionMsg, args = [], opts = {}, output = chec
 
     output(t, { code, stdout, stderr })
     assertion(t, { assertionMsg, expected, stdout })
-
-    t.end()
   }
 
-  test(title, (t) => {
+  return test(title, (t) => {
+    t.plan(3)
     common.npm(['fund', '--unicode=false'].concat(args), opts, validate(t))
   })
 }
