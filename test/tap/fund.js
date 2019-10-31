@@ -114,29 +114,32 @@ function checkOutput (t, { code, stdout, stderr }) {
   t.is(stderr, '', 'no warnings')
 }
 
-function testFundCmd ({ title, expect, args = [], opts = {}, output = checkOutput }) {
-  const validate = (t, json) => (err, code, stdout, stderr) => {
+function jsonTest (t, { assertionMsg, expected, stdout }) {
+  let parsed = stdout
+
+  t.doesNotThrow(function () {
+    parsed = JSON.parse(stdout)
+  }, 'valid JSON')
+
+  t.deepEqual(parsed, expected, assertionMsg)
+}
+
+function snapshotTest (t, { stdout, assertionMsg }) {
+  t.matchSnapshot(stdout, assertionMsg)
+}
+
+function testFundCmd ({ title, assertionMsg, args = [], opts = {}, output = checkOutput, assertion = snapshotTest, expected }) {
+  const validate = (t) => (err, code, stdout, stderr) => {
     if (err) throw err
 
     output(t, { code, stdout, stderr })
+    assertion(t, { assertionMsg, expected, stdout })
 
-    let parsed = stdout
-    if (json) {
-      t.doesNotThrow(function () {
-        parsed = JSON.parse(stdout)
-      }, 'valid JSON')
-    }
-
-    t.matchSnapshot(parsed, expect)
     t.end()
   }
 
   test(title, (t) => {
-    common.npm(['fund'].concat(args), opts, validate(t))
-  })
-
-  test(`${title}, using --json option`, (t) => {
-    common.npm(['fund', '--json'].concat(args), opts, validate(t, true))
+    common.npm(['fund', '--unicode=false'].concat(args), opts, validate(t))
   })
 }
 
@@ -148,25 +151,81 @@ test('setup', function (t) {
 
 testFundCmd({
   title: 'fund with no package containing funding',
-  expect: 'should print empty funding info',
+  assertionMsg: 'should print empty funding info',
   opts: { cwd: noFunding }
 })
 
 testFundCmd({
   title: 'fund in which same maintainer owns all its deps',
-  expect: 'should print stack packages together',
+  assertionMsg: 'should print stack packages together',
   opts: { cwd: maintainerOwnsAllDeps }
 })
 
 testFundCmd({
+  title: 'fund in which same maintainer owns all its deps, using --json option',
+  assertionMsg: 'should print stack packages together',
+  args: ['--json'],
+  opts: { cwd: maintainerOwnsAllDeps },
+  assertion: jsonTest,
+  expected: {
+    length: 3,
+    name: 'maintainer-owns-all-deps',
+    version: '1.0.0',
+    funding: { type: 'individual', url: 'http://example.com/donate' },
+    dependencies: {
+      'dep-bar': {
+        version: '1.0.0',
+        funding: { type: 'individual', url: 'http://example.com/donate' }
+      },
+      'dep-foo': {
+        version: '1.0.0',
+        funding: { type: 'individual', url: 'http://example.com/donate' },
+        dependencies: {
+          'dep-sub-foo': {
+            version: '1.0.0',
+            funding: { type: 'individual', url: 'http://example.com/donate' }
+          }
+        }
+      }
+    }
+  }
+})
+
+testFundCmd({
   title: 'fund containing multi-level nested deps with no funding',
-  expect: 'should omit dependencies with no funding declared',
+  assertionMsg: 'should omit dependencies with no funding declared',
   opts: { cwd: nestedNoFundingPackages }
 })
 
 testFundCmd({
+  title: 'fund containing multi-level nested deps with no funding, using --json option',
+  assertionMsg: 'should omit dependencies with no funding declared',
+  args: ['--json'],
+  opts: { cwd: nestedNoFundingPackages },
+  assertion: jsonTest,
+  expected: {
+    length: 3,
+    name: 'nested-no-funding-packages',
+    version: '1.0.0',
+    dependencies: {
+      lorem: { version: '1.0.0', funding: { url: 'https://example.com/lorem' } },
+      bar: {
+        version: '1.0.0',
+        funding: { type: 'individual', url: 'http://example.com/donate' },
+        dependencies: {
+          'sub-bar': {
+            version: '1.0.0',
+            funding: { url: 'https://example.com/sponsor' }
+          }
+        }
+      }
+    }
+  }
+})
+
+testFundCmd({
   title: 'fund does not support global',
-  expect: 'should throw EFUNDGLOBAL error',
+  assertionMsg: 'should throw EFUNDGLOBAL error',
   args: ['--global'],
   output: (t, { code, stdout, stderr }) => {
     t.is(code, 1, `exited code 0`)
@@ -176,10 +235,41 @@ testFundCmd({
 })
 
 testFundCmd({
+  title: 'fund does not support global, using --json option',
+  assertionMsg: 'should throw EFUNDGLOBAL error',
+  args: ['--global', '--json'],
+  output: (t, { code, stdout, stderr }) => {
+    t.is(code, 1, `exited code 0`)
+    const [ errCode, errCmd ] = stderr.split('\n')
+    t.matchSnapshot(`${errCode}\n${errCmd}`, 'should write error msgs to stderr')
+  },
+  assertion: jsonTest,
+  expected: {
+    error: {
+      code: 'EFUNDGLOBAL',
+      summary: '\`npm fund\` does not support globals',
+      detail: ''
+    }
+  }
+})
+
+testFundCmd({
   title: 'fund using package argument with no browser',
-  expect: 'should open funding url',
+  assertionMsg: 'should open funding url',
   args: ['--browser', 'undefined', '.'],
   opts: { cwd: maintainerOwnsAllDeps }
+})
+
+testFundCmd({
+  title: 'fund using package argument with no browser, using --json option',
+  assertionMsg: 'should open funding url',
+  args: ['--json', '--browser', 'undefined', '.'],
+  opts: { cwd: maintainerOwnsAllDeps },
+  assertion: jsonTest,
+  expected: {
+    title: 'individual funding available at the following URL',
+    url: 'http://example.com/donate'
+  }
 })
 
 test('fund using package argument', function (t) {
