@@ -25,7 +25,7 @@ const featureTexts = {
   textOne: 'Download, install, and configure.',
   textTwo: 'All available npm commands.',
   textThree: 'How npm things work.',
-  textFour: 'Publish your own public or private packages to the registry.'
+  textFour: 'Publish your own public or private packages to the registry with a free or paid account on npmjs.com from npm, Inc.'
 }
 
 const featureTitles = {
