@@ -8,6 +8,7 @@ const Tacks = require('tacks')
 const Dir = Tacks.Dir
 const File = Tacks.File
 const common = require('../common-tap.js')
+const isWindows = require('../../lib/utils/is-windows.js')
 
 const base = common.pkg
 const noFunding = path.join(base, 'no-funding-package')
@@ -241,7 +242,7 @@ testFundCmd({
   expected: {
     error: {
       code: 'EFUNDGLOBAL',
-      summary: '\`npm fund\` does not support globals',
+      summary: '`npm fund` does not support globals',
       detail: ''
     }
   }
@@ -250,14 +251,14 @@ testFundCmd({
 testFundCmd({
   title: 'fund using package argument with no browser',
   assertionMsg: 'should open funding url',
-  args: ['--browser', 'undefined', '.'],
+  args: ['.', '--no-browser'],
   opts: { cwd: maintainerOwnsAllDeps }
 })
 
 testFundCmd({
   title: 'fund using package argument with no browser, using --json option',
   assertionMsg: 'should open funding url',
-  args: ['--json', '--browser', 'undefined', '.'],
+  args: ['.', '--json', '--no-browser'],
   opts: { cwd: maintainerOwnsAllDeps },
   assertion: jsonTest,
   expected: {
@@ -266,27 +267,29 @@ testFundCmd({
   }
 })
 
-test('fund using package argument', function (t) {
-  const fakeBrowser = path.join(common.pkg, '_script.sh')
-  const outFile = path.join(common.pkg, '_output')
+if (!isWindows) {
+  test('fund using package argument', function (t) {
+    const fakeBrowser = path.join(common.pkg, '_script.sh')
+    const outFile = path.join(common.pkg, '_output')
 
-  const s = '#!/usr/bin/env bash\n' +
-          'echo "$@" > ' + JSON.stringify(common.pkg) + '/_output\n'
-  fs.writeFileSync(fakeBrowser, s)
-  fs.chmodSync(fakeBrowser, '0755')
+    const s = '#!/usr/bin/env bash\n' +
+            'echo "$@" > ' + JSON.stringify(common.pkg) + '/_output\n'
+    fs.writeFileSync(fakeBrowser, s)
+    fs.chmodSync(fakeBrowser, '0755')
 
-  common.npm([
-    'fund', '.',
-    '--loglevel=silent',
-    '--browser=' + fakeBrowser
-  ], { cwd: maintainerOwnsAllDeps }, function (err, code, stdout, stderr) {
-    t.ifError(err, 'repo command ran without error')
-    t.equal(code, 0, 'exit ok')
-    var res = fs.readFileSync(outFile, 'utf8')
-    t.equal(res, 'http://example.com/donate\n')
-    t.end()
+    common.npm([
+      'fund', '.',
+      '--loglevel=silent',
+      '--browser=' + fakeBrowser
+    ], { cwd: maintainerOwnsAllDeps }, function (err, code, stdout, stderr) {
+      t.ifError(err, 'repo command ran without error')
+      t.equal(code, 0, 'exit ok')
+      var res = fs.readFileSync(outFile, 'utf8')
+      t.equal(res, 'http://example.com/donate\n')
+      t.end()
+    })
   })
-})
+}
 
 test('cleanup', function (t) {
   t.pass(base)

@@ -12,3 +12,10 @@ exports[`test/tap/repo.js TAP npm repo underscore --json > should print json res
 }
 
 `
+
+exports[`test/tap/repo.js TAP npm repo underscore --no-browser > should print alternative msg 1`] = `
+repository available at the following URL:
+
+https://github.com/jashkenas/underscore
+
+`

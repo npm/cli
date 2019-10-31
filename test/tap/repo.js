@@ -48,11 +48,28 @@ test('npm repo underscore --json', function (t) {
       '--json',
       '--registry=' + common.registry,
       '--loglevel=silent',
-      '--browser=undefined'
+      '--no-browser'
     ], opts, function (err, code, stdout, stderr) {
       t.ifError(err, 'repo command ran without error')
       t.equal(code, 0, 'exit ok')
       t.matchSnapshot(stdout, 'should print json result')
+      s.close()
+      t.end()
+    })
+  })
+})
+
+test('npm repo underscore --no-browser', function (t) {
+  mr({ port: common.port }, function (er, s) {
+    common.npm([
+      'repo', 'underscore',
+      '--no-browser',
+      '--registry=' + common.registry,
+      '--loglevel=silent'
+    ], opts, function (err, code, stdout, stderr) {
+      t.ifError(err, 'repo command ran without error')
+      t.equal(code, 0, 'exit ok')
+      t.matchSnapshot(stdout, 'should print alternative msg')
       s.close()
       t.end()
     })
