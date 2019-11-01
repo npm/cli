@@ -1,0 +1,49 @@
+---
+name: Benchmark Suite
+
+on:
+  push:
+    branches:
+      - "latest"
+  pull_request:
+    branches:
+      - "**"
+
+jobs:
+  build:
+    name: Trigger Benchmarks
+
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the npm/cli repo
+      - uses: actions/checkout@v1.1.0
+
+      # Installs the specific version of nodejs
+      - name: Use nodejs 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: "12.x"
+
+      # Trigger Webhook
+      - name: Trigger Webhook
+        env:
+          DISPATCH_REPO: "benchmarks"
+          DISPATCH_OWNER: "npm"
+        run: |
+          curl \
+            -s \
+            -X POST https://api.github.com/repos/${DISPATCH_OWNER}/${DISPATCH_REPO}/dispatches \
+            -H "Accept: application/vnd.github.everest-preview+json" \
+            -H "Authorization: token ${{ secrets.NPM_DEPLOY_USER_PAT }}" \
+            -d \
+            '
+            {
+              "event_type": "${{ github.event_name }}",
+              "client_payload": {
+                "pr_id": "${{ github.event.pull_request.number }}",
+                "repo": "${{ github.event.repository.name }}",
+                "owner": "${{ github.event.repository.owner.login }}",
+                "commit_sha": "${{ github.event.after }}"
+              }
+            }'
