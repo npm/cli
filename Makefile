@@ -22,7 +22,7 @@ misc_mandocs = $(shell find docs/content/using-npm -name '*.md' \
 
 mandocs = $(cli_mandocs) $(files_mandocs) $(misc_mandocs)
 
-all: doc
+all: docs
 
 latest:
 	@echo "Installing latest published npm"
@@ -39,14 +39,23 @@ dev: install
 link: uninstall
 	node bin/npm-cli.js link -f
 
-clean: markedclean marked-manclean doc-clean
+clean: markedclean marked-manclean docs-clean
 	rm -rf npmrc
 	node bin/npm-cli.js cache clean --force
 
 uninstall:
 	node bin/npm-cli.js rm npm -g -f
 
-doc: $(mandocs) 
+mandocs: $(mandocs)
+
+htmldocs:
+	cd docs && node ../bin/npm-cli.js install && \
+	node ../bin/npm-cli.js run build:static echo>&2 && \
+	rm -rf node_modules .cache public/*js public/*json public/404* public/page-data public/manifest*
+	find docs/public -name '*.html' -exec \
+	node scripts/docs-build.js {} \;
+
+docs: mandocs htmldocs
 
 markedclean:
 	rm -rf node_modules/marked node_modules/.bin/marked .building_marked
@@ -54,25 +63,28 @@ markedclean:
 marked-manclean:
 	rm -rf node_modules/marked-man node_modules/.bin/marked-man .building_marked-man
 
-docclean: doc-clean
-doc-clean:
+docsclean: docs-clean
+docs-clean:
 	rm -rf \
     .building_marked \
     .building_marked-man \
-    man
+    man \
+    docs/node_modules \
+    docs/public \
+    docs/.cache
 
 ## build-time tools for the documentation
 build-doc-tools := node_modules/.bin/marked \
                    node_modules/.bin/marked-man
 
 # use `npm install marked-man` for this to work.
-man/man1/npm-README.1: README.md scripts/doc-build.sh package.json $(build-doc-tools)
+man/man1/npm-README.1: README.md scripts/docs-build.js package.json $(build-doc-tools)
 	@[ -d man/man1 ] || mkdir -p man/man1
-	scripts/doc-build.sh $< $@
+	node scripts/docs-build.js $< $@
 
-man/man1/%.1: docs/content/cli-commands/%.md scripts/doc-build.sh package.json $(build-doc-tools)
+man/man1/%.1: docs/content/cli-commands/%.md scripts/docs-build.js package.json $(build-doc-tools)
 	@[ -d man/man1 ] || mkdir -p man/man1
-	scripts/doc-build.sh $< $@
+	node scripts/docs-build.js $< $@
 
 man/man1/npx.1: node_modules/libnpx/libnpx.1
 	cat $< | sed s/libnpx/npx/ > $@
@@ -80,16 +92,16 @@ man/man1/npx.1: node_modules/libnpx/libnpx.1
 man/man5/npm-json.5: man/man5/package.json.5
 	cp $< $@
 
-man/man5/npm-global.5: man/man5/folders.5
+man/man5/npm-global.5: man/man5/foslders.5
 	cp $< $@
 
-man/man5/%.5: docs/content/configuring-npm/%.md scripts/doc-build.sh package.json $(build-doc-tools)
+man/man5/%.5: docs/content/configuring-npm/%.md scripts/docs-build.js package.json $(build-doc-tools)
 	@[ -d man/man5 ] || mkdir -p man/man5
-	scripts/doc-build.sh $< $@
+	node scripts/docs-build.js $< $@
 
-man/man7/%.7: docs/content/using-npm/%.md scripts/doc-build.sh package.json $(build-doc-tools)
+man/man7/%.7: docs/content/using-npm/%.md scripts/docs-build.js package.json $(build-doc-tools)
 	@[ -d man/man7 ] || mkdir -p man/man7
-	scripts/doc-build.sh $< $@
+	node scripts/docs-build.js $< $@
 
 marked: node_modules/.bin/marked
 
@@ -101,11 +113,7 @@ marked-man: node_modules/.bin/marked-man
 node_modules/.bin/marked-man:
 	node bin/npm-cli.js install marked-man --no-global --no-timing --no-save
 
-doc: man
-
-man: $(cli_docs)
-
-test: doc
+test: docs
 	node bin/npm-cli.js test
 
 tag:
@@ -117,17 +125,17 @@ ls-ok:
 gitclean:
 	git clean -fd
 
-publish: gitclean ls-ok link doc-clean doc
+publish: gitclean ls-ok link docs-clean docs
 	@git push origin :v$(shell node bin/npm-cli.js --no-timing -v) 2>&1 || true
 	git push origin $(BRANCH) &&\
 	git push origin --tags &&\
 	node bin/npm-cli.js publish --tag=$(PUBLISHTAG)
 
-release: gitclean ls-ok markedclean marked-manclean doc-clean doc
+release: gitclean ls-ok markedclean marked-manclean docs-clean doc
 	node bin/npm-cli.js prune --production --no-save
 	@bash scripts/release.sh
 
 sandwich:
 	@[ $$(whoami) = "root" ] && (echo "ok"; echo "ham" > sandwich) || (echo "make it yourself" && exit 13)
 
-.PHONY: all latest install dev link doc clean uninstall test man doc-clean docclean release ls-ok realclean
+.PHONY: all latest install dev link doc clean uninstall test man docs-clean docclean release ls-ok realclean

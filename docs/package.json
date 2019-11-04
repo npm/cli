@@ -3,6 +3,11 @@
   "description": "npm cli docs",
   "version": "0.1.0",
   "author": "Tanya Brassie <tanyabrassie@tanyascmachine2.home>",
+  "license": "Artistic-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/npm/cli"
+  },
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.6",
     "eslint": "^6.3.0",
@@ -33,10 +38,7 @@
     "develop": "gatsby develop",
     "start": "npm run develop",
     "build": "gatsby build",
-    "build:clean": "rm -rf node_modules .cache public/*js public/*json public/404* public/page-data public/manifest*",
-    "prebuild:static": "rm -rf public && npm i",
     "build:static": "GATSBY_IS_STATIC=true gatsby build --prefix-paths",
-    "postbuild:static": "npm run build:clean",
     "serve": "gatsby serve"
   }
 }
