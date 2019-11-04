@@ -47,8 +47,8 @@ The scope is optional and follows the usual rules for [`npm-scope`](/docs/using-
 
 ### See Also
 
-* [npm-deprecate](/cli-commands/npm-deprecate)
-* [npm-publish](/cli-commands/npm-publish)
-* [npm-registry](/using-npm/registry)
-* [npm-adduser](/cli-commands/npm-adduser)
-* [npm-owner](/cli-commands/npm-owner)
+* [npm deprecate](/cli-commands/npm-deprecate)
+* [npm publish](/cli-commands/npm-publish)
+* [npm registry](/using-npm/registry)
+* [npm adduser](/cli-commands/npm-adduser)
+* [npm owner](/cli-commands/npm-owner)

@@ -26,8 +26,8 @@ more details.
 
 ### See Also
 
-* [npm-run-script](/cli-commands/npm-run-script)
-* [npm-scripts](/using-npm/scripts)
-* [npm-test](/cli-commands/npm-test)
-* [npm-restart](/cli-commands/npm-restart)
-* [npm-stop](/cli-commands/npm-stop)
+* [npm run-script](/cli-commands/npm-run-script)
+* [npm scripts](/using-npm/scripts)
+* [npm test](/cli-commands/npm-test)
+* [npm restart](/cli-commands/npm-restart)
+* [npm stop](/cli-commands/npm-stop)

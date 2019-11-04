@@ -14,12 +14,13 @@ const Content = styled.div`
 
 const Page = ({data}) => {
   const pageData = data.markdownRemark
+  const html = pageData.html.replace(/(npm-)+([a-zA-Z\\.-]*)<\/h1>/g, 'npm $2</h1>')
 
   return (
     <ThemeProvider theme={theme}>
       <Layout showSidebar>
         <Content className='documentation'>
-          <div dangerouslySetInnerHTML={{ __html: pageData.html }} />
+          <div dangerouslySetInnerHTML={{ __html: html }} />
           <FoundTypo />
           <Scripts />
         </Content>

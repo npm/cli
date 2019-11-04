@@ -1,6 +1,6 @@
 ---
 section: configuring-npm
-title: 00 install
+title: install
 description: Download and install node and npm
 ---
 

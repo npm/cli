@@ -215,10 +215,10 @@ cannot be found elsewhere.  See [`package.json`](/docs/configuring-npm/package.j
 ### See also
 
 * [package.json](/configuring-npm/package-json)
-* [npm-install](/cli-commands/npm-install)
-* [npm-pack](/cli-commands/npm-pack)
-* [npm-cache](/cli-commands/npm-cache)
-* [npm-config](/cli-commands/npm-config)
+* [npm install](/cli-commands/npm-install)
+* [npm pack](/cli-commands/npm-pack)
+* [npm cache](/cli-commands/npm-cache)
+* [npm config](/cli-commands/npm-config)
 * [npmrc](/configuring-npm/npmrc)
 * [config](/using-npm/config)
-* [npm-publish](/cli-commands/npm-publish)
+* [npm publish](/cli-commands/npm-publish)

@@ -872,10 +872,10 @@ npm will default some values based on package contents.
 ### SEE ALSO
 
 * [semver](/using-npm/semver)
-* [npm-init](/cli-commands/npm-init)
-* [npm-version](/cli-commands/npm-version)
-* [npm-config](/cli-commands/npm-config)
-* [npm-help](/cli-commands/npm-help)
-* [npm-install](/cli-commands/npm-install)
-* [npm-publish](/cli-commands/npm-publish)
-* [npm-uninstall](/cli-commands/npm-uninstall)
+* [npm init](/cli-commands/npm-init)
+* [npm version](/cli-commands/npm-version)
+* [npm config](/cli-commands/npm-config)
+* [npm help](/cli-commands/npm-help)
+* [npm install](/cli-commands/npm-install)
+* [npm publish](/cli-commands/npm-publish)
+* [npm uninstall](/cli-commands/npm-uninstall)

@@ -92,6 +92,6 @@ npm access ls-collaborators <pkg>
 
 ### See also
 
-* [npm-team](/cli-commands/npm-team)
-* [npm-access](/cli-commands/npm-access)
-* [npm-scope](/using-npm/scope)
+* [npm team](/cli-commands/npm-team)
+* [npm access](/cli-commands/npm-access)
+* [npm scope](/using-npm/scope)

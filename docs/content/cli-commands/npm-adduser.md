@@ -1,4 +1,4 @@
----
+ ---
 section: cli-commands
 title: npm-adduser
 description: Set access level on published packages
@@ -90,8 +90,8 @@ username/password entry in legacy npm.
 
 ### See Also
 
-* [npm-registry](/using-npm/registry)
-* [npm-config](/cli-commands/npm-config)
+* [npm registry](/using-npm/registry)
+* [npm config](/cli-commands/npm-config)
 * [npmrc](/configuring-npm/npmrc)
-* [npm-owner](/cli-commands/npm-owner)
-* [npm-whoami](/cli-commands/npm-whoami)
+* [npm owner](/cli-commands/npm-owner)
+* [npm whoami](/cli-commands/npm-whoami)

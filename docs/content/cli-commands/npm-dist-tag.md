@@ -1,4 +1,4 @@
----
+ ---
 section: cli-commands 
 title: npm-dist-tag
 description: Modify package distribution tags
@@ -92,9 +92,9 @@ begin with a number or the letter `v`.
 
 ### See Also
 
-* [npm-publish](/cli-commands/npm-publish)
-* [npm-install](/cli-commands/npm-install)
-* [npm-dedupe](/cli-commands/npm-dedupe)
-* [npm-registry](/using-npm/registry)
-* [npm-config](/cli-commands/npm-config)
+* [npm publish](/cli-commands/npm-publish)
+* [npm install](/cli-commands/npm-install)
+* [npm dedupe](/cli-commands/npm-dedupe)
+* [npm registry](/using-npm/registry)
+* [npm config](/cli-commands/npm-config)
 * [npmrc](/configuring-npm/npmrc)

@@ -29,20 +29,26 @@ const DocLinks = ({data}) => {
 
   return sections.map((section, index) => (
     <Accordion key={index} section={section}>
-      {sortedData[section].map((linkData, index) => (
-        <Flex flexDirection='column' key={index}>
-          <SidebarLink
-            to={`${linkData.fields.slug}${IS_STATIC ? '/index.html' : ''}`}
-            activeClassName='active-sidebar-link'
-          >
-            {linkData.frontmatter.title}
-            <LinkDesc>{linkData.frontmatter.description}</LinkDesc>
-          </SidebarLink>
-        </Flex>
-      ))}
+      {sortedData[section].map((linkData, index) => {
+        const title = section === 'cli-commands'
+          ? linkData.frontmatter.title.replace(/(npm-)+([a-zA-Z\\.-]*)/, 'npm $2')
+          : linkData.frontmatter.title
+
+        return (
+          <Flex flexDirection='column' key={index}>
+            <SidebarLink
+              to={`${linkData.fields.slug}${IS_STATIC ? '/index.html' : ''}`}
+              activeClassName='active-sidebar-link'
+            >
+              {title}
+              <LinkDesc>{linkData.frontmatter.description}</LinkDesc>
+            </SidebarLink>
+          </Flex>
+        )
+      })
+      }
     </Accordion>
-  )
-  )
+  ))
 }
 
 export default props => (

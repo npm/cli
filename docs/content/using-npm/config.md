@@ -1284,8 +1284,8 @@ Set to `"browser"` to view html help content in the default web browser.
 
 ### See also
 
-* [npm-config](/cli-commands/npm-config)
+* [npm config](/cli-commands/npm-config)
 * [npmrc](/configuring-npm/npmrc)
-* [npm-scripts](/using-npm/scripts)
-* [npm-folders](/configuring-npm/folders)
+* [npm scripts](/using-npm/scripts)
+* [npm folders](/configuring-npm/folders)
 * [npm](/cli-commands/npm)

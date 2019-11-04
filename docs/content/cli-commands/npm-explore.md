@@ -1,4 +1,4 @@
----
+ ---
 section: cli-commands 
 title: npm-explore
 description: Browse an installed package
@@ -43,8 +43,8 @@ The shell to run for the `npm explore` command.
 
 ### See Also
 
-* [npm-folders](/configuring-npm/folders)
-* [npm-edit](/cli-commands/npm-edit)
-* [npm-rebuild](/cli-commands/npm-rebuild)
-* [npm-build](/cli-commands/npm-build)
-* [npm-install](/cli-commands/npm-install)
+* [npm folders](/configuring-npm/folders)
+* [npm edit](/cli-commands/npm-edit)
+* [npm rebuild](/cli-commands/npm-rebuild)
+* [npm build](/cli-commands/npm-build)
+* [npm install](/cli-commands/npm-install)

@@ -25,8 +25,8 @@ If `-g` is specified, this will be the value of the global prefix. See
 
 ### See Also
 
-* [npm-root](/cli-commands/npm-root)
-* [npm-bin](/cli-commands/npm-bin)
-* [npm-folders](/configuring-npm/folders)
-* [npm-config](/cli-commands/npm-config)
+* [npm root](/cli-commands/npm-root)
+* [npm bin](/cli-commands/npm-bin)
+* [npm folders](/configuring-npm/folders)
+* [npm config](/cli-commands/npm-config)
 * [npmrc](/configuring-npm/npmrc)

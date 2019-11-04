@@ -73,11 +73,11 @@ included and packs them into a tarball to be uploaded to the registry.
 
 ### See Also
 
-* [npm-registry](/using-npm/registry)
-* [npm-scope](/using-npm/scope)
-* [npm-adduser](/cli-commands/npm-adduser)
-* [npm-owner](/cli-commands/npm-owner)
-* [npm-deprecate](/cli-commands/npm-deprecate)
-* [npm-dist-tag](/cli-commands/npm-dist-tag)
-* [npm-pack](/cli-commands/npm-pack)
-* [npm-profile](/cli-commands/npm-profile)
+* [npm registry](/using-npm/registry)
+* [npm scope](/using-npm/scope)
+* [npm adduser](/cli-commands/npm-adduser)
+* [npm owner](/cli-commands/npm-owner)
+* [npm deprecate](/cli-commands/npm-deprecate)
+* [npm dist-tag](/cli-commands/npm-dist-tag)
+* [npm pack](/cli-commands/npm-pack)
+* [npm profile](/cli-commands/npm-profile)

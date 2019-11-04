@@ -125,7 +125,7 @@ that registry instead.
 
 ### See also
 
-* [npm-install](/cli-commands/npm-install)
-* [npm-publish](/cli-commands/npm-publish)
-* [npm-access](/cli-commands/npm-access)
-* [npm-registry](/using-npm/registry)
+* [npm install](/cli-commands/npm-install)
+* [npm publish](/cli-commands/npm-publish)
+* [npm access](/cli-commands/npm-access)
+* [npm registry](/using-npm/registry)

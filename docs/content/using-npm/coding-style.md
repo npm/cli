@@ -208,5 +208,5 @@ Boolean objects are forbidden.
 
 ### See Also
 
-* [npm-developers](/using-npm/developers)
+* [npm developers](/using-npm/developers)
 * [npm](/cli-commands/npm)

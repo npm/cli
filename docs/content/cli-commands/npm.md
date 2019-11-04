@@ -162,8 +162,8 @@ reproduction to report.
 <i@izs.me>
 
 ### See Also
-* [npm-help](/cli-commands/npm-help)
+* [npm help](/cli-commands/npm-help)
 * [package.json](/configuring-npm/package-json)
-* [npm-install](/cli-commands/npm-install)
-* [npm-config](/cli-commands/npm-config)
+* [npm install](/cli-commands/npm-install)
+* [npm config](/cli-commands/npm-config)
 * [npmrc](/configuring-npm/npmrc)
