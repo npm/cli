@@ -117,7 +117,7 @@
     "query-string": "^6.8.2",
     "qw": "~1.0.1",
     "read": "~1.0.7",
-    "read-cmd-shim": "^1.0.4",
+    "read-cmd-shim": "^1.0.5",
     "read-installed": "~4.0.3",
     "read-package-json": "^2.1.0",
     "read-package-tree": "^5.3.1",
