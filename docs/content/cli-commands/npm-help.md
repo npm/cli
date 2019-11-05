@@ -42,4 +42,3 @@ Set to `"browser"` to view html help content in the default web browser.
 * [npmrc](/configuring-npm/npmrc)
 * [package.json](/configuring-npm/package-json)
 * [npm help-search](/cli-commands/npm-help-search)
-* [npm index](/cli-commands/npm-index)
