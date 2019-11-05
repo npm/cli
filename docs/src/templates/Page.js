@@ -5,6 +5,7 @@ import styled, { ThemeProvider } from 'styled-components'
 import {theme} from 'src/theme'
 import FoundTypo from 'src/components/FoundTypo'
 import Scripts from 'src/components/Scripts'
+const version = require('../../../package.json').version
 
 const Content = styled.div`
   max-width: 760px;
@@ -20,7 +21,9 @@ const Page = ({data}) => {
     <ThemeProvider theme={theme}>
       <Layout showSidebar>
         <Content className='documentation'>
-          <div dangerouslySetInnerHTML={{ __html: html }} />
+          <div dangerouslySetInnerHTML={{
+            __html: html.replace(/@VERSION@/g, version)
+          }} />
           <FoundTypo />
           <Scripts />
         </Content>

@@ -52,8 +52,6 @@ htmldocs:
 	cd docs && node ../bin/npm-cli.js install && \
 	node ../bin/npm-cli.js run build:static echo>&2 && \
 	rm -rf node_modules .cache public/*js public/*json public/404* public/page-data public/manifest*
-	find docs/public -name '*.html' -exec \
-	node scripts/docs-build.js {} \;
 
 docs: mandocs htmldocs
 
@@ -92,7 +90,7 @@ man/man1/npx.1: node_modules/libnpx/libnpx.1
 man/man5/npm-json.5: man/man5/package.json.5
 	cp $< $@
 
-man/man5/npm-global.5: man/man5/foslders.5
+man/man5/npm-global.5: man/man5/folders.5
 	cp $< $@
 
 man/man5/%.5: docs/content/configuring-npm/%.md scripts/docs-build.js package.json $(build-doc-tools)
