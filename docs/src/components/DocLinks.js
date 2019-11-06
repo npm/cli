@@ -5,8 +5,6 @@ import {Flex} from 'rebass'
 import {SidebarLink} from './links'
 import Accordion from './Accordion'
 
-const IS_STATIC = process.env.GATSBY_IS_STATIC
-
 const LinkDesc = styled.span`
   font-size: 11px; 
   line-height: 1.5; 
@@ -37,7 +35,7 @@ const DocLinks = ({data}) => {
         return (
           <Flex flexDirection='column' key={index}>
             <SidebarLink
-              to={`${linkData.fields.slug}${IS_STATIC ? '/index.html' : ''}`}
+              to={`${linkData.fields.slug}`}
               activeClassName='active-sidebar-link'
             >
               {title}

@@ -4,7 +4,7 @@ title: npm-version
 description: Bump a package version
 ---
 
-# npm-version
+# npm-version(1)
 
 ## Bump a package version
 
@@ -129,6 +129,6 @@ Note that you must have a default GPG key set up in your git config for this to 
 * [npm init](/cli-commands/npm-init)
 * [npm run-script](/cli-commands/npm-run-script)
 * [npm scripts](/using-npm/scripts)
-* [package.json](/docs/configuring-npm/package-json)
+* [package.json](/configuring-npm/package-json)
 * [semver](/using-npm/semver)
 * [config](/using-npm/config)

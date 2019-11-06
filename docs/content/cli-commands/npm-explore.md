@@ -4,9 +4,9 @@ title: npm-explore
 description: Browse an installed package
 ---
 
-# npm-explore
+# npm-explore(1)
 
-## description: Browse an installed package
+## Browse an installed package
 
 ### Synopsis
 

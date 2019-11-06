@@ -4,7 +4,7 @@ title: npm-update
 description: Update a package
 ---
 
-# npm-update
+# npm-update(1)
 
 ## Update a package
 

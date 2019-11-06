@@ -4,7 +4,7 @@ title: npm-stars
 description: View packages marked as favorites
 ---
 
-# npm-stars
+# npm-stars(1)
 
 ## View packages marked as favorites
 

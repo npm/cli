@@ -4,7 +4,7 @@ title: npm-repo
 description: Open package repository page in the browser
 ---
 
-# npm-repo
+# npm-repo(1)
 
 ## Open package repository page in the browser
 

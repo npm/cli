@@ -4,7 +4,7 @@ title: npm-bugs
 description: Bugs for a package in a web browser maybe
 ---
 
-# npm-bugs
+# npm-bugs(1)
 
 ## Bugs for a package in a web browser maybe
 

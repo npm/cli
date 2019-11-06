@@ -3,7 +3,7 @@ section: cli-commands
 title: npm-deprecate
 description: Deprecate a version of a package
 ---
-# npm-deprecate
+# npm-deprecate(1)
 
 ## Deprecate a version of a package
 

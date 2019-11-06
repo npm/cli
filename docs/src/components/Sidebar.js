@@ -21,7 +21,7 @@ const Container = styled.nav`
 
 const Sidebar = () => {
   return (
-    <Container>
+    <Container className='sidebar'>
       <DocLinks />
     </Container>
   )

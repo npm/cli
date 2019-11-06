@@ -4,7 +4,7 @@ title: npm-completion
 description: Tab Completion for npm
 ---
 
-# npm-completion
+# npm-completion(1)
 
 ## Tab Completion for npm
 

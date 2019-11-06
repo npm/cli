@@ -4,7 +4,7 @@ title: npm-doctor
 description: Check your environments
 ---
 
-# npm-doctor
+# npm-doctor(1)
 
 ## Check your environments
 

@@ -4,7 +4,7 @@ title: npm-build
 description: Build a package
 ---
 
-# npm-build
+# npm-build(1)
 
 ## Build a package
 

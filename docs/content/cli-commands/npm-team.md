@@ -4,7 +4,7 @@ title: npm-team
 description: Manage organization teams and team memberships
 ---
 
-# npm-team
+# npm-team(1)
 
 ## Manage organization teams and team memberships
 
@@ -29,8 +29,7 @@ handle permissions for packages.
 
 Teams must always be fully qualified with the organization/scope they belong to
 when operating on them, separated by a colon (`:`). That is, if you have a
-`developers` team on a `foo` organization, you must always refer to that team as
-`foo:developers` in these commands.
+`developers` team on a `foo` organization, you must always refer to that team as `foo:developers` in these commands.
 
 * create / destroy:
   Create a new team, or destroy an existing one.

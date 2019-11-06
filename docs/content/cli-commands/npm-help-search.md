@@ -4,7 +4,7 @@ title: npm-help-search
 description: Search npm help documentation
 ---
 
-# npm-help-search
+# npm-help-search(1)
 
 ## Search npm help documentation
 

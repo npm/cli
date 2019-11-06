@@ -4,7 +4,7 @@ title: npm-search
 description: Search for packages
 ---
 
-# npm-search
+# npm-search(1)
 
 ## Search for packages
 

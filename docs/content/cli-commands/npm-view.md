@@ -4,7 +4,7 @@ title: npm-view
 description: View registry info
 ---
 
-# npm-view
+# npm-view(1)
 
 ## View registry info
 
@@ -80,7 +80,7 @@ npm view express contributors.name contributors.email
 
 "Person" fields are shown as a string if they would be shown as an
 object.  So, for example, this will show the list of npm contributors in
-the shortened string format.  (See [`package.json`](/docs/configuring-npm/package.json) for more on this.)
+the shortened string format.  (See [`package.json`](/configuring-npm/package.json) for more on this.)
 
 ```bash
 npm view npm contributors
