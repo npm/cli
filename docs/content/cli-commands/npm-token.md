@@ -4,7 +4,7 @@ title: npm-token
 description: Manage your authentication tokens
 ---
 
-# npm-token
+# npm-token(1)
 
 ## Manage your authentication tokens
 

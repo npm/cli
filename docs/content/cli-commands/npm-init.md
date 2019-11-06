@@ -4,7 +4,7 @@ title: npm-init
 description: create a package.json file
 ---
 
-# npm-init
+# npm-init(1)
 
 ## create a package.json file
 

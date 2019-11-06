@@ -4,7 +4,7 @@ title: coding-style
 description: npm's "funny" coding style
 ---
 
-# coding-style
+# coding-style(7)
 ## npm's "funny" coding style
 
 ### Description
@@ -173,7 +173,7 @@ logging the same object over and over again is not helpful.  Logs should
 report what's happening so that it's easier to track down where a fault
 occurs.
 
-Use appropriate log levels.  See [`npm-config`](/docs/using-npm/config) and search for
+Use appropriate log levels.  See [`config`](/using-npm/config) and search for
 "loglevel".
 
 ### Case, naming, etc.

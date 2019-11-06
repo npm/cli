@@ -4,7 +4,7 @@ title: npm-owner
 description: Manage package owners
 ---
 
-# npm-owner
+# npm-owner(1)
 ## Manage package owners
 
 ### Synopsis

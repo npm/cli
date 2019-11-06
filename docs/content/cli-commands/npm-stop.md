@@ -4,7 +4,7 @@ title: npm-stop
 description: Stop a package
 ---
 
-# npm-stop
+# npm-stop(1)
 
 ## Stop a package
 

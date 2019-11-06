@@ -4,7 +4,7 @@ title: npm-profile
 description: Change settings on your registry profile
 ---
 
-# npm-profile
+# npm-profile(1)
 ## Change settings on your registry profile
 
 ### Synopsis

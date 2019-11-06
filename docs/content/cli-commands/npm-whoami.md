@@ -4,7 +4,7 @@ title: npm-whoami
 description: Display npm username
 ---
 
-# npm-whoami
+# npm-whoami(1)
 ## Display npm username
 
 ### Synopsis

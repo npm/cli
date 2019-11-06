@@ -4,7 +4,7 @@ title: npm-test
 description: Test a package
 ---
 
-# npm-test
+# npm-test(1)
 
 ## Test a package
 

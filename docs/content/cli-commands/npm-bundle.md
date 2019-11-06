@@ -4,7 +4,7 @@ title: npm-bundle
 description: REMOVED
 ---
 
-# npm-bundle
+# npm-bundle(1)
 
 ## REMOVED
 

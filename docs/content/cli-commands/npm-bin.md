@@ -4,7 +4,7 @@ title: npm-bin
 description: Display npm bin folder
 ---
 
-# npm-bin
+# npm-bin(1)
 
 ## Display npm bin folder
 

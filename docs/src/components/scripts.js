@@ -9,8 +9,12 @@ const Scripts = () => {
         dangerouslySetInnerHTML={{
           __html: `
           // Workaround: Make links on our Markdown files work on the static site
-          var anchors = document.querySelectorAll("#see-also + ul li a")
-          Array.prototype.slice.call(anchors).map(function(el) { el.href = el + "/index.html" })
+          var anchors = document.querySelectorAll(".sidebar a, .documentation a")
+          Array.prototype.slice.call(anchors).map(function(el) {
+            if (el.href.match(/file:\\/\\//)) {
+              el.href = el.href + "/index.html"
+            }
+          })
           `
         }}
       />

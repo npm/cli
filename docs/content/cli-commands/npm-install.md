@@ -4,7 +4,7 @@ title: npm-install
 description: Install a package
 ---
 
-# npm-install
+# npm-install(1)
 
 ## Install a package
 
@@ -31,15 +31,15 @@ common options: [-P|--save-prod|-D|--save-dev|-O|--save-optional] [-E|--save-exa
 This command installs a package, and any packages that it depends on. If the
 package has a package-lock or shrinkwrap file, the installation of dependencies
 will be driven by that, with an `npm-shrinkwrap.json` taking precedence if both
-files exist. See [package-lock.json](/docs/configuring-npm/package-lock.json) and [`npm-shrinkwrap`](npm-shrinkwrap).
+files exist. See [package-lock.json](/configuring-npm/package-lock-json) and [`npm shrinkwrap`](/cli-commands/npm-shrinkwrap).
 
 A `package` is:
 
-* a) a folder containing a program described by a [`package.json`](/docs/configuring-npm/package-json) file
+* a) a folder containing a program described by a [`package.json`](/configuring-npm/package-json) file
 * b) a gzipped tarball containing (a)
 * c) a url that resolves to (b)
-* d) a `<name>@<version>` that is published on the registry (see [`npm-registry`](npm-registry)) with (c)
-* e) a `<name>@<tag>` (see [`npm-dist-tag`](npm-dist-tag)) that points to (d)
+* d) a `<name>@<version>` that is published on the registry (see [`npm-registry`](/using-npm/registry)) with (c)
+* e) a `<name>@<tag>` (see [`npm dist-tag`](/cli-commands/npm-dist-tag)) that points to (d)
 * f) a `<name>` that has a "latest" tag satisfying (e)
 * g) a `<git remote url>` that resolves to (a)
 
@@ -58,7 +58,7 @@ after packing it up into a tarball (b).
     directory) as a global package.
 
     By default, `npm install` will install all modules listed as dependencies
-    in [`package.json`](/docs/configuring-npm/package-json).
+    in [`package.json`](/configuring-npm/package-json).
 
     With the `--production` flag (or when the `NODE_ENV` environment variable
     is set to `production`), npm will not install modules listed in
@@ -102,7 +102,7 @@ after packing it up into a tarball (b).
 * `npm install [<@scope>/]<name>`:
 
     Do a `<name>@<tag>` install, where `<tag>` is the "tag" config. (See
-    [`npm-config`](/docs/using-npm/config). The config's default value is `latest`.)
+    [`config`](/using-npm/config). The config's default value is `latest`.)
 
     In most cases, this will install the version of the modules tagged as
     `latest` on the npm registry.
@@ -138,7 +138,7 @@ after packing it up into a tarball (b).
 
     `<scope>` is optional. The package will be downloaded from the registry
     associated with the specified scope. If no registry is associated with
-    the given scope the default registry is assumed. See [`npm-scope`](/docs/using-npm/scope).
+    the given scope the default registry is assumed. See [`scope`](/using-npm/scope).
 
     Note: if you do not include the @-symbol on your scope name, npm will
     interpret this as a GitHub repository instead, see below. Scopes names
@@ -188,7 +188,7 @@ after packing it up into a tarball (b).
 * `npm install [<@scope>/]<name>@<version range>`:
 
     Install a version of the package matching the specified version range.  This
-    will follow the same rules for resolving dependencies described in [`package.json`](/docs/configuring-npm/package-json).
+    will follow the same rules for resolving dependencies described in [`package.json`](/configuring-npm/package-json).
 
     Note that most version ranges must be put in quotes so that your shell will
     treat it as a single argument.
@@ -362,7 +362,7 @@ install that aknowledges the number of dependencies looking for funding.
 See `npm-fund(1)`
 
 The `-g` or `--global` argument will cause npm to install the package globally
-rather than locally.  See [npm-folders](/docs/configuring-npm/folders).
+rather than locally.  See [folders](/configuring-npm/folders).
 
 The `--global-style` argument will cause npm to install the package into
 your local `node_modules` folder with the same layout it uses with the
@@ -371,7 +371,7 @@ global `node_modules` folder. Only your direct dependencies will show in
 `node_modules` folders. This obviously will eliminate some deduping.
 
 The `--ignore-scripts` argument will cause npm to not execute any
-scripts defined in the package.json. See [`npm-scripts`](/docs/using-npm/scripts).
+scripts defined in the package.json. See [`scripts`](/using-npm/scripts).
 
 The `--legacy-bundling` argument will cause npm to install the package such
 that versions of npm prior to 1.4, such as the one included with node 0.8,
@@ -402,7 +402,7 @@ The `--only={prod[uction]|dev[elopment]}` argument will cause either only
 The `--no-audit` argument can be used to disable sending of audit reports to
 the configured registries.  See [`npm-audit`](npm-audit) for details on what is sent.
 
-See [`npm-config`](/docs/using-npm/config).  Many of the configuration params have some
+See [`config`](/using-npm/config).  Many of the configuration params have some
 effect on installation, since that's most of what npm does.
 
 #### Algorithm
@@ -450,8 +450,7 @@ privately for itself. This algorithm is deterministic, but different trees may
 be produced if two dependencies are requested for installation in a different
 order.
 
-See [npm-folders](/docs/configuring-npm/folders) for a more detailed description of the specific
-folder structures that npm creates.
+See [folders](/configuring-npm/folders) for a more detailed description of the specific folder structures that npm creates.
 
 ### Limitations of npm's Install Algorithm
 

@@ -4,7 +4,7 @@ title: npm-star
 description: Mark your favorite packages
 ---
 
-# npm-star
+# npm-star(1)
 
 ## Mark your favorite packages
 

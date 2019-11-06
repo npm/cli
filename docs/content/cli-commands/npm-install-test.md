@@ -4,7 +4,7 @@ title: npm-install-test
 description: Install package(s) and run tests
 ---
 
-# npm install-test
+# npm install-test(1)
 
 ## Install package(s) and run tests
 

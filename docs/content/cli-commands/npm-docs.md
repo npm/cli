@@ -4,10 +4,9 @@ title: npm-docs
 description: Docs for a package in a web browser maybe
 ---
 
-# npm-docs 
+# npm-docs(1) 
 
 ## Docs for a package in a web browser maybe
-
 
 ### Synopsis
 
