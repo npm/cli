@@ -358,7 +358,7 @@ npm install sax --force
 ```
 
 The `--no-fund` argument will hide the message displayed at the end of each
-install that aknowledges the number of dependencies looking for funding.
+install that acknowledges the number of dependencies looking for funding.
 See `npm-fund(1)`
 
 The `-g` or `--global` argument will cause npm to install the package globally
