@@ -1,8 +1,6 @@
 import React from 'react'
-import Layout from 'src/components/Layout'
 import {graphql} from 'gatsby'
-import styled, { ThemeProvider } from 'styled-components'
-import {theme} from 'src/theme'
+import styled from 'styled-components'
 import FoundTypo from 'src/components/FoundTypo'
 import Scripts from 'src/components/Scripts'
 const version = require('../../../package.json').version
@@ -20,15 +18,11 @@ const Page = ({data}) => {
     .replace(/([a-zA-Z\\.-]*)(\((1|5|7)\))<\/h1>/, '$1</h1>')
 
   return (
-    <ThemeProvider theme={theme}>
-      <Layout showSidebar>
-        <Content className='documentation'>
-          <div dangerouslySetInnerHTML={{ __html: html }} />
-          <FoundTypo />
-          <Scripts />
-        </Content>
-      </Layout>
-    </ThemeProvider>
+    <Content className='documentation'>
+      <div dangerouslySetInnerHTML={{ __html: html }} />
+      <FoundTypo />
+      <Scripts />
+    </Content>
   )
 }
 

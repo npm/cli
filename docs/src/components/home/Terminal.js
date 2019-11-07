@@ -78,7 +78,7 @@ const Bracket = styled.span`
   margin-top: 10px;
 `
 
-const Text = styled.strong`
+const Text = styled.span`
   font-size: 15px;
   font-weight: 400;
   letter-spacing: 1px;
