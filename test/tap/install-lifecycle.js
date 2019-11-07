@@ -29,7 +29,7 @@ test('npm install execution order', function (t) {
     const expectedLines = steps.map(function (step) {
       return '> ' + packageJson.name + '@' + packageJson.version + ' ' + step
     })
-    t.match(stdout, new RegExp(expectedLines.map(common.escapeForRe).join('.*'), 's'))
+    t.match(stdout, new RegExp(expectedLines.map(common.escapeForRe).join('(.|\n)*')))
     t.end()
   })
 })
