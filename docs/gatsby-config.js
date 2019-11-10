@@ -1,5 +1,5 @@
 module.exports = {
-  pathPrefix: `${__dirname}/public`,
+  pathPrefix: './public',
   siteMetadata: {
     title: 'npm cli documentation',
     description: 'Documentation for the npm cli.',
