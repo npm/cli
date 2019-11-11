@@ -6,6 +6,7 @@ npm-debug.log
 node_modules/marked
 node_modules/marked-man
 node_modules/tap
+tap-snapshots
 node_modules/.bin
 node_modules/npm-registry-mock
 /npmrc
