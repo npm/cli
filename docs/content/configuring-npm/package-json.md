@@ -30,7 +30,7 @@ Some rules:
 
 * The name must be less than or equal to 214 characters. This includes the scope for
   scoped packages.
-* The name can't start with a dot or an underscore.
+* The names of scoped packages can begin with a dot or an underscore. This is not permitted without a scope.
 * New packages must not have uppercase letters in the name.
 * The name ends up being part of a URL, an argument on the command line, and a
   folder name. Therefore, the name can't contain any non-URL-safe characters.

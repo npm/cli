@@ -38,7 +38,7 @@ A `package` is:
 * a) a folder containing a program described by a [`package.json`](/configuring-npm/package-json) file
 * b) a gzipped tarball containing (a)
 * c) a url that resolves to (b)
-* d) a `<name>@<version>` that is published on the registry (see [`npm-registry`](/using-npm/registry)) with (c)
+* d) a `<name>@<version>` that is published on the registry (see [`registry`](/using-npm/registry)) with (c)
 * e) a `<name>@<tag>` (see [`npm dist-tag`](/cli-commands/npm-dist-tag)) that points to (d)
 * f) a `<name>` that has a "latest" tag satisfying (e)
 * g) a `<git remote url>` that resolves to (a)
