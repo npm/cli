@@ -1,5 +1,5 @@
 import React from 'react'
-import Navbar from './Navbar'
+import Navbar from './navbar'
 import Sidebar from './Sidebar'
 import {Flex, Box} from 'rebass'
 import { theme } from 'src/theme'
