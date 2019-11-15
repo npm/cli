@@ -1,11 +1,12 @@
 language: node_js
 node_js:
-  - 4
   - 6
-  - 7
+  - 8
+  - 10
+  - 12
   - stable
 
-before_script: 
+before_script:
   - npm install -g typescript
   - tsc -p ./
 
