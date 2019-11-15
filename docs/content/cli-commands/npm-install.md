@@ -16,6 +16,7 @@ npm install [<@scope>/]<name>
 npm install [<@scope>/]<name>@<tag>
 npm install [<@scope>/]<name>@<version>
 npm install [<@scope>/]<name>@<version range>
+npm install <alias>@npm:<name>
 npm install <git-host>:<git-user>/<repo-name>
 npm install <git repo url>
 npm install <tarball file>
@@ -112,6 +113,24 @@ after packing it up into a tarball (b).
     Example:
 
           npm install sax
+
+* `npm install <alias>@npm:<name>`:
+
+    Install a package under a custom alias. Allows multiple versions of
+    a same-name package side-by-side, more convenient import names for
+    packages with otherwise long ones and using git forks replacements
+    or forked npm packages as replacements. Aliasing works only on your
+    project and does not rename packages in transitive dependencies.
+    Aliases should follow the naming conventions stated in
+    [`validate-npm-package-name`](https://www.npmjs.com/package/validate-npm-package-name#naming-rules).
+
+    Examples:
+
+          npm install my-react@npm:react
+          npm install jquery2@npm:jquery@2
+          npm install jquery3@npm:jquery@3
+          npm install npa@npm:npm-package-arg
+
 
     `npm install` saves any specified packages into `dependencies` by default.
     Additionally, you can control where and how they get saved with some
