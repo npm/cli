@@ -1,5 +1,6 @@
 *.swp
 .*.swp
+netlify.toml
 npm-debug.log
 /.github
 /test
