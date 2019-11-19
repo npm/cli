@@ -47,6 +47,13 @@ http://example.com/donate
 
 `
 
+exports[`test/tap/fund.js TAP fund using string shorthand > should open string-only url 1`] = `
+Funding available at the following URL:
+
+https://example.com/sponsor
+
+`
+
 exports[`test/tap/fund.js TAP fund with no package containing funding > should print empty funding info 1`] = `
 no-funding-package@0.0.0
 
