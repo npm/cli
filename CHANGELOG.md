@@ -1,3 +1,36 @@
+## 6.13.2 (2019-12-03)
+
+### BUG FIXES
+
+* [`4429645b3`](https://github.com/npm/cli/commit/4429645b3538e1cda54d8d1b7ecb3da7a88fdd3c)
+  [#546](https://github.com/npm/cli/pull/546)
+  fix docs target typo
+  ([@richardlau](https://github.com/richardlau))
+* [`867642942`](https://github.com/npm/cli/commit/867642942bec69bb9ab71cff1914fb6a9fe67de8)
+  [#142](https://github.com/npm/cli/pull/142)
+  fix(packageRelativePath): fix 'where' for file deps
+  ([@larsgw](https://github.com/larsgw))
+* [`d480f2c17`](https://github.com/npm/cli/commit/d480f2c176e6976b3cca3565e4c108b599b0379b)
+  [#527](https://github.com/npm/cli/pull/527)
+  Revert "windows: Add preliminary WSL support for npm and npx"
+  ([@craigloewen-msft](https://github.com/craigloewen-msft))
+* [`e4b97962e`](https://github.com/npm/cli/commit/e4b97962e5fce0d49beb541ce5a0f96aee0525de)
+  [#504](https://github.com/npm/cli/pull/504)
+  remove unnecessary package.json read when reading shrinkwrap
+  ([@Lighting-Jack](https://github.com/Lighting-Jack))
+* [`1c65d26ac`](https://github.com/npm/cli/commit/1c65d26ac9f10ac0037094c207d216fbf0e969bf)
+  [#501](https://github.com/npm/cli/pull/501)
+  fix(fund): open url for string shorthand
+  ([@ruyadorno](https://github.com/ruyadorno))
+* [`ae7afe565`](https://github.com/npm/cli/commit/ae7afe56504dbffabf9f73d55b6dac1e3e9fed4a)
+  [#263](https://github.com/npm/cli/pull/263)
+  Don't log error message if git tagging is disabled
+  ([@woppa684](https://github.com/woppa684))
+* [`4c1b16f6a`](https://github.com/npm/cli/commit/4c1b16f6aecaf78956b9335734cfde2ac076ee11)
+  [#182](https://github.com/npm/cli/pull/182)
+  Warn the user that it is uninstalling npm-install
+  ([@Hoidberg](https://github.com/Hoidberg))
+
 ## 6.13.1 (2019-11-18)
 
 ### BUG FIXES
