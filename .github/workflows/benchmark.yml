@@ -35,7 +35,6 @@ jobs:
             -s \
             -X POST https://api.github.com/repos/${DISPATCH_OWNER}/${DISPATCH_REPO}/dispatches \
             -H "Accept: application/vnd.github.everest-preview+json" \
-            -H "Authorization: token ${{ secrets.NPM_DEPLOY_USER_PAT }}" \
             -d \
             '
             {
