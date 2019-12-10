@@ -1,3 +1,27 @@
+## 6.13.3 (2019-12-09)
+
+### DEPENDENCIES
+
+* [`19ce061a2`](https://github.com/npm/cli/commit/19ce061a2ee165d8de862c8f0f733c222846b9e1)
+  `bin-links@1.1.5` Properly normalize, sanitize, and verify `bin` entries
+  in `package.json`.
+* [`59c836aae`](https://github.com/npm/cli/commit/59c836aae8d0104a767e80c540b963c91774012a)
+  `npm-packlist@1.4.7`
+* [`fb4ecd7d2`](https://github.com/npm/cli/commit/fb4ecd7d2810b0b4897daaf081a5e2f3f483b310)
+  `pacote@9.5.11`
+    * [`5f33040`](https://github.com/npm/pacote/commit/5f3304028b6985fd380fc77c4840ff12a4898301)
+      [#476](https://github.com/npm/cli/issues/476)
+      [npm/pacote#22](https://github.com/npm/pacote/issues/22)
+      [npm/pacote#14](https://github.com/npm/pacote/issues/14) fix: Do not
+      drop perms in git when not root ([isaacs](https://github.com/isaacs),
+      [@darcyclarke](https://github.com/darcyclarke))
+    * [`6f229f7`](https://github.com/npm/pacote/6f229f78d9911b4734f0a19c6afdc5454034c759)
+      sanitize and normalize package bin field
+      ([isaacs](https://github.com/isaacs))
+* [`1743cb339`](https://github.com/npm/cli/commit/1743cb339767e86431dcd565c7bdb0aed67b293d)
+  `read-package-json@2.1.1`
+
+
 ## 6.13.2 (2019-12-03)
 
 ### BUG FIXES
