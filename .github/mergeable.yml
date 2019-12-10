@@ -1,0 +1,7 @@
+version: 2
+mergeable:
+  - when: 'pull_request.*'
+    validate:
+      - do: approvals
+        min:
+          count: 1
