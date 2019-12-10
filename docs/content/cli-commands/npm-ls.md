@@ -117,6 +117,14 @@ Display only dependencies which are linked
 Whether to represent the tree structure using unicode characters.
 Set it to false in order to use all-ansi output.
 
+#### include-extraneous-dep
+
+* Type: Boolean
+* Default: false
+
+Display the complete dependency tree, including the nested dependencies
+brought in by extraneous packages.
+
 ### See Also
 
 * [npm config](/cli-commands/npm-config)

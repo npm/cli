@@ -563,6 +563,14 @@ If true, npm will not run `prepublish` scripts.
 
 If true, npm does not run scripts specified in package.json files.
 
+#### include-extraneous-dep
+
+* Default: false
+* Type: Boolean
+
+If true, `npm ls` outputs the complete dependency tree,
+including the nested dependencies brought in by extraneous packages.
+
 #### init-module
 
 * Default: ~/.npm-init.js

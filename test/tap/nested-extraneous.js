@@ -11,7 +11,7 @@ var pj = {
   version: '1.2.3'
 }
 
-var dep = path.resolve(pkg, 'node_modules', 'dep')
+var dep = path.resolve(pkg, 'node_modules', 'nested-extraneous-dep')
 var deppj = {
   name: 'nested-extraneous-dep',
   version: '1.2.3',
@@ -20,10 +20,10 @@ var deppj = {
   }
 }
 
-var depdep = path.resolve(dep, 'node_modules', 'depdep')
+var depdep = path.resolve(dep, 'node_modules', 'nested-extra-depdep')
 var depdeppj = {
   name: 'nested-extra-depdep',
-  version: '1.2.3'
+  version: '2.3.4'
 }
 
 test('setup', function (t) {
@@ -40,9 +40,25 @@ test('test', function (t) {
     cwd: pkg
   }, function (er, code, sto, ste) {
     if (er) throw er
-    t.notEqual(code, 0)
+    t.strictEqual(code, 1)
+    t.similar(ste, /dep@1\.2\.3/)
     t.notSimilar(ste, /depdep/)
+    t.similar(sto, /dep@1\.2\.3/)
     t.notSimilar(sto, /depdep/)
+    t.end()
+  })
+})
+
+test('test include-extraneous-dep', function (t) {
+  common.npm(['ls', '--include-extraneous-dep'], {
+    cwd: pkg
+  }, function (er, code, sto, ste) {
+    if (er) throw er
+    t.strictEqual(code, 1)
+    t.similar(ste, /dep@1\.2\.3/)
+    t.similar(ste, /depdep/)
+    t.similar(sto, /dep@1\.2\.3/)
+    t.similar(sto, /depdep/)
     t.end()
   })
 })
