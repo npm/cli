@@ -3,8 +3,9 @@
 const path = require('path')
 const fs = require('graceful-fs')
 const BB = require('bluebird')
-const linkIfExists = BB.promisify(require('gentle-fs').linkIfExists)
-const cmdShimIfExists = BB.promisify(require('cmd-shim').ifExists)
+const gentleFs = require('gentle-fs')
+const linkIfExists = BB.promisify(gentleFs.linkIfExists)
+const gentleFsBinLink = BB.promisify(gentleFs.binLink)
 const open = BB.promisify(fs.open)
 const close = BB.promisify(fs.close)
 const read = BB.promisify(fs.read, {multiArgs: true})
@@ -42,9 +43,9 @@ function isHashbangFile (file) {
     return read(fileHandle, Buffer.alloc(2), 0, 2, 0).spread((_, buf) => {
       if (!hasHashbang(buf)) return []
       return read(fileHandle, Buffer.alloc(2048), 0, 2048, 0)
-    }).spread((_, buf) => buf && hasCR(buf), () => false)
+    }).spread((_, buf) => buf && hasCR(buf), /* istanbul ignore next */ () => false)
       .finally(() => close(fileHandle))
-  }).catch(() => false)
+  }).catch(/* istanbul ignore next */ () => false)
 }
 
 function hasHashbang (buf) {
@@ -109,6 +110,7 @@ function linkBins (pkg, folder, parent, gtop, opts) {
         opts.log.showProgress()
       }
     }).catch(err => {
+      /* istanbul ignore next */
       if (err.code === 'ENOENT' && opts.ignoreScripts) return
       throw err
     })
@@ -116,11 +118,11 @@ function linkBins (pkg, folder, parent, gtop, opts) {
 }
 
 function linkBin (from, to, opts) {
-  if (process.platform !== 'win32') {
-    return linkIfExists(from, to, opts)
-  } else {
-    return cmdShimIfExists(from, to)
+  // do not clobber global bins
+  if (opts.globalBin && to.indexOf(opts.globalBin) === 0) {
+    opts.clobberLinkGently = true
   }
+  return gentleFsBinLink(from, to, opts)
 }
 
 function linkMans (pkg, folder, parent, gtop, opts) {
@@ -132,17 +134,22 @@ function linkMans (pkg, folder, parent, gtop, opts) {
   // make sure that the mans are unique.
   // otherwise, if there are dupes, it'll fail with EEXIST
   var set = pkg.man.reduce(function (acc, man) {
+    if (typeof man !== 'string') {
+      return acc
+    }
     const cleanMan = path.join('/', man).replace(/\\|:/g, '/').substr(1)
     acc[path.basename(man)] = cleanMan
     return acc
   }, {})
   var manpages = pkg.man.filter(function (man) {
+    if (typeof man !== 'string') {
+      return false
+    }
     const cleanMan = path.join('/', man).replace(/\\|:/g, '/').substr(1)
     return set[path.basename(man)] === cleanMan
   })
 
   return BB.map(manpages, man => {
-    if (typeof man !== 'string') return
     opts.log.silly('linkMans', 'preparing to link', man)
     var parseMan = man.match(/(.*\.([0-9]+)(\.gz)?)$/)
     if (!parseMan) {
@@ -164,6 +171,11 @@ function linkMans (pkg, folder, parent, gtop, opts) {
     }
 
     var manDest = path.join(manRoot, 'man' + sxn, bn)
+
+    // man pages should always be clobbering gently, because they are
+    // only installed for top-level global packages, so never destroy
+    // a link if it doesn't point into the folder we're linking
+    opts.clobberLinkGently = true
 
     return linkIfExists(manSrc, manDest, getLinkOpts(opts, gtop && folder))
   })
