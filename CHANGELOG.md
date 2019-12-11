@@ -1,3 +1,22 @@
+## 6.13.4 (2019-12-11)
+
+## BUGFIXES
+
+* [`320ac9aee`](https://github.com/npm/cli/commit/320ac9aeeafd11bb693c53b31148b8d10c4165e8)
+  [npm/bin-links#12](https://github.com/npm/bin-links/pull/12)
+  [npm/gentle-fs#7](https://github.com/npm/gentle-fs/pull/7)
+  Do not remove global bin/man links inappropriately
+  ([@isaacs](https://github.com/isaacs))
+
+## DEPENDENCIES
+
+* [`52fd21061`](https://github.com/npm/cli/commit/52fd21061ff8b1a73429294620ffe5ebaaa60d3e)
+  `gentle-fs@2.3.0`
+  ([@isaacs](https://github.com/isaacs))
+* [`d06f5c0b0`](https://github.com/npm/cli/commit/d06f5c0b0611c43b6e70ded92af24fa5d83a0f48)
+  `bin-links@1.1.6`
+  ([@isaacs](https://github.com/isaacs))
+
 ## 6.13.3 (2019-12-09)
 
 ### DEPENDENCIES
