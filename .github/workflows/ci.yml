@@ -45,7 +45,7 @@ jobs:
     #   run: sudo PATH=$PATH $(which node) . run tap -- "test/tap/*.js" --coverage  --timeout 600
 
     - name: Lint
-      run: npx standard
+      run: node . run lint
 
     - name: Validate licenses
       run: node . run licenses
