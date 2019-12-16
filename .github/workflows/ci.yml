@@ -22,6 +22,16 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
 
+      # Cache the global npm folder
+    - name: Set up npm cache
+      uses: actions/cache@v1
+      with:
+        path: ~/.npm
+        key: ${{ runner.os }}-node-v${{ matrix.node-version }}-${{ hashFiles('package.json') }}-${{ hashFiles('package-lock.json') }}-${{ hashFiles('.github/workflows/ci.yml') }}
+        restore-keys: |
+          ${{ runner.OS }}-node-v${{ matrix.node-version }}-${{ hashFiles('package.json') }}-${{ hashFiles('package-lock.json') }}-${{ hashFiles('.github/workflows/ci.yml') }}
+          ${{ runner.OS }}-node-v${{ matrix.node-version }}-
+
       # Run the installer script
     - name: Install dependencies
       run: node . install
