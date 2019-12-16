@@ -14,7 +14,7 @@ jobs:
 
     steps:
       # Checkout the npm/cli repo
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
 
       # Installs the specific version of Node.js
     - name: Use Node.js ${{ matrix.node-version }}
