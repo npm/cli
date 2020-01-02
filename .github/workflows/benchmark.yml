@@ -30,7 +30,9 @@ jobs:
         env:
           DISPATCH_REPO: "benchmarks"
           DISPATCH_OWNER: "npm"
+          GITHUB_CONTEXT_EVENT: ${{ toJson(github.event) }}
         run: |
+          echo "${GITHUB_CONTEXT_EVENT}"
           curl \
             -s \
             -X POST https://api.github.com/repos/${DISPATCH_OWNER}/${DISPATCH_REPO}/dispatches \
