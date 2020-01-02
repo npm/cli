@@ -17,7 +17,7 @@ jobs:
 
     steps:
       # Checkout the npm/cli repo
-      - uses: actions/checkout@v1.1.0
+      - uses: actions/checkout@v2
 
       # Installs the specific version of nodejs
       - name: Use nodejs 12.x
