@@ -11,7 +11,7 @@ const readBin = bin => new Promise((resolve, reject) => {
     if (er) {
       reject(er)
     } else {
-      resolve(path.resolve(pkg + '/global/bin', target))
+      resolve(path.resolve(path.dirname(bin), target))
     }
   })
 })
