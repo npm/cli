@@ -1,3 +1,13 @@
+## 6.13.6 (2020-01-09)
+
+### DEPENDENCIES
+
+* [`6dba897a1`](https://github.com/npm/cli/commit/6dba897a1e2d56388fb6df0c814b0bb85af366b4)
+  `pacote@9.5.12`:
+    * [`d2f4176`](https://github.com/npm/pacote/commit/d2f4176b6af393d7e29de27e9b638dbcbab9a0c7)
+      fix(git): Do not drop uid/gid when executing in root-owned directory
+      ([@isaacs](https://github.com/isaacs))
+
 ## 6.13.5 (2020-01-09)
 
 ### BUG FIXES
