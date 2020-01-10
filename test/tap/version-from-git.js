@@ -39,7 +39,7 @@ test('npm version from-git with a valid tag creates a new commit', function (t) 
   function checkCommit (er, log, stderr) {
     t.ifError(er, 'git log ran without issue')
     t.notOk(stderr, 'no error output')
-    t.ok(log.indexOf(version) !== -1, 'commit was created')
+    t.ok(log.includes(version), 'commit was created')
     t.end()
   }
 })
@@ -95,8 +95,8 @@ test('npm version from-git strips tag-version-prefix', function (t) {
   function checkCommit (er, log, stderr) {
     t.ifError(er, 'git log ran without issue')
     t.notOk(stderr, 'no error output')
-    t.ok(log.indexOf(tag) === -1, 'commit should not include prefix')
-    t.ok(log.indexOf(version) !== -1, 'commit should include version')
+    t.ok(!log.includes(tag), 'commit should not include prefix')
+    t.ok(log.includes(version), 'commit should include version')
     t.end()
   }
 })
@@ -128,7 +128,7 @@ test('npm version from-git only strips tag-version-prefix if it is a prefix', fu
   function checkCommit (er, log, stderr) {
     t.ifError(er, 'git log ran without issue')
     t.notOk(stderr, 'no error output')
-    t.ok(log.indexOf(version) !== -1, 'commit should include the full version')
+    t.ok(log.includes(version), 'commit should include the full version')
     t.end()
   }
 })

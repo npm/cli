@@ -31,7 +31,7 @@ test('gitlab-shortcut-package', function (t) {
     'child_process': {
       'execFile': function (cmd, args, options, cb) {
         process.nextTick(function () {
-          if (args.indexOf('clone') === -1) return cb(null, '', '')
+          if (!args.includes('clone')) return cb(null, '', '')
           var cloneUrl = cloneUrls.shift()
           if (cloneUrl) {
             t.is(args[args.length - 2], cloneUrl[0], cloneUrl[1])

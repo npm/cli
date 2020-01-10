@@ -7,7 +7,7 @@ var bundled = manifest.bundleDependencies
 test('all deps are bundled deps or dev deps', function (t) {
   deps.forEach(function (name) {
     t.assert(
-      bundled.indexOf(name) !== -1,
+      bundled.includes(name),
       name + ' is in bundledDependencies'
     )
   })

@@ -72,7 +72,7 @@ test('get lines', function (t) {
               line: i
             }
           }
-        } else if (exceptions.indexOf(f) === -1 && f.indexOf('.cache') === -1) {
+        } else if (!exceptions.includes(f) && !f.includes('.cache')) {
           t.fail('non-string-literal config used in ' + f + ':' + i)
         }
       })
@@ -105,8 +105,8 @@ test('check configs', function (t) {
     if (CONFS[c1].file.indexOf(lib) === 0) {
       t.ok(DOC[c1], 'should be documented ' + c1 + ' ' +
            CONFS[c1].file + ':' + CONFS[c1].line)
-      t.ok(types.indexOf(c1) !== -1, 'should be defined in npmconf ' + c1)
-      t.ok(defaults.indexOf(c1) !== -1, 'should have default in npmconf ' + c1)
+      t.ok(types.includes(c1), 'should be defined in npmconf ' + c1)
+      t.ok(defaults.includes(c1), 'should have default in npmconf ' + c1)
     }
   }
 
