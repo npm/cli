@@ -13,13 +13,13 @@ description: Remove a package from the registry
 #### Unpublishing a single version of a package
 
 ```bash
-npm unpublish <package-name>@<version>
+npm unpublish [<@scope>/]<pkg>@<version>
 ```
 
 #### Unpublishing an entire package
 
 ```bash
-npm unpublish <package-name> -f
+npm unpublish [<@scope>/]<pkg> --force
 ```
 
 ### Warning
