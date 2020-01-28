@@ -80,7 +80,7 @@
     "libnpmorg": "^1.0.1",
     "libnpmsearch": "^2.0.2",
     "libnpmteam": "^1.0.2",
-    "libnpx": "^10.2.0",
+    "libnpx": "^10.2.2",
     "lock-verify": "^2.1.0",
     "lockfile": "^1.0.4",
     "lodash._baseuniq": "~4.6.0",
