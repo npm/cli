@@ -122,7 +122,9 @@ version that satisfies `^0.4.0` (`>= 0.4.0 <0.5.0`)
 
 `npm update -g` will apply the `update` action to each globally installed
 package that is `outdated` -- that is, has a version that is different from
-`latest`.
+`wanted`.
+
+Note: Globally installed packages are treated as if they are installed with a caret semver range specified. So if you require to update to `latest` you may need to run `npm install -g [<pkg>...]`
 
 NOTE: If a package has been upgraded to a version newer than `latest`, it will
 be _downgraded_.
