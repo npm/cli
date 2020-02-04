@@ -5,10 +5,9 @@ os:
   - windows
 
 node_js:
+  - 13
   - 12
   - 10
-  - 8
-  - 6
 
 env: "DEPLOY_VERSION=testing"
 
