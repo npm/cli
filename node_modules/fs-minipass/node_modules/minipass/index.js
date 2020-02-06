@@ -1,5 +1,6 @@
 'use strict'
 const EE = require('events')
+const Stream = require('stream')
 const Yallist = require('yallist')
 const SD = require('string_decoder').StringDecoder
 
@@ -29,12 +30,6 @@ const ASYNCITERATOR = doIter && Symbol.asyncIterator
 const ITERATOR = doIter && Symbol.iterator
   || Symbol('iterator not implemented')
 
-// Buffer in node 4.x < 4.5.0 doesn't have working Buffer.from
-// or Buffer.alloc, and Buffer in node 10 deprecated the ctor.
-// .M, this is fine .\^/M..
-const B = Buffer.alloc ? Buffer
-  : /* istanbul ignore next */ require('safe-buffer').Buffer
-
 // events that mean 'the stream is over'
 // these are treated specially, and re-emitted
 // if they are listened for after emitting.
@@ -49,9 +44,9 @@ const isArrayBuffer = b => b instanceof ArrayBuffer ||
   b.constructor.name === 'ArrayBuffer' &&
   b.byteLength >= 0
 
-const isArrayBufferView = b => !B.isBuffer(b) && ArrayBuffer.isView(b)
+const isArrayBufferView = b => !Buffer.isBuffer(b) && ArrayBuffer.isView(b)
 
-module.exports = class Minipass extends EE {
+module.exports = class Minipass extends Stream {
   constructor (options) {
     super()
     this[FLOWING] = false
@@ -126,11 +121,11 @@ module.exports = class Minipass extends EE {
     // at some point in the future, we may want to do the opposite!
     // leave strings and buffers as-is
     // anything else switches us into object mode
-    if (!this[OBJECTMODE] && !B.isBuffer(chunk)) {
+    if (!this[OBJECTMODE] && !Buffer.isBuffer(chunk)) {
       if (isArrayBufferView(chunk))
-        chunk = B.from(chunk.buffer, chunk.byteOffset, chunk.byteLength)
+        chunk = Buffer.from(chunk.buffer, chunk.byteOffset, chunk.byteLength)
       else if (isArrayBuffer(chunk))
-        chunk = B.from(chunk)
+        chunk = Buffer.from(chunk)
       else if (typeof chunk !== 'string')
         // use the setter so we throw if we have encoding set
         this.objectMode = true
@@ -152,10 +147,10 @@ module.exports = class Minipass extends EE {
     if (typeof chunk === 'string' && !this[OBJECTMODE] &&
         // unless it is a string already ready for us to use
         !(encoding === this[ENCODING] && !this[DECODER].lastNeed)) {
-      chunk = B.from(chunk, encoding)
+      chunk = Buffer.from(chunk, encoding)
     }
 
-    if (B.isBuffer(chunk) && this[ENCODING])
+    if (Buffer.isBuffer(chunk) && this[ENCODING])
       chunk = this[DECODER].write(chunk)
 
     try {
@@ -188,7 +183,7 @@ module.exports = class Minipass extends EE {
           ])
         else
           this.buffer = new Yallist([
-            B.concat(Array.from(this.buffer), this[BUFFERLENGTH])
+            Buffer.concat(Array.from(this.buffer), this[BUFFERLENGTH])
           ])
       }
 
@@ -423,12 +418,17 @@ module.exports = class Minipass extends EE {
   // const all = await stream.collect()
   collect () {
     const buf = []
-    buf.dataLength = 0
+    if (!this[OBJECTMODE])
+      buf.dataLength = 0
+    // set the promise first, in case an error is raised
+    // by triggering the flow here.
+    const p = this.promise()
     this.on('data', c => {
       buf.push(c)
-      buf.dataLength += c.length
+      if (!this[OBJECTMODE])
+        buf.dataLength += c.length
     })
-    return this.promise().then(() => buf)
+    return p.then(() => buf)
   }
 
   // const data = await stream.concat()
@@ -438,7 +438,7 @@ module.exports = class Minipass extends EE {
       : this.collect().then(buf =>
           this[OBJECTMODE]
             ? Promise.reject(new Error('cannot concat in objectMode'))
-            : this[ENCODING] ? buf.join('') : B.concat(buf, buf.dataLength))
+            : this[ENCODING] ? buf.join('') : Buffer.concat(buf, buf.dataLength))
   }
 
   // stream.promise().then(() => done, er => emitted error)
@@ -529,9 +529,10 @@ module.exports = class Minipass extends EE {
   }
 
   static isStream (s) {
-    return !!s && (s instanceof Minipass || s instanceof EE && (
-      typeof s.pipe === 'function' || // readable
-      (typeof s.write === 'function' && typeof s.end === 'function') // writable
-    ))
+    return !!s && (s instanceof Minipass || s instanceof Stream ||
+      s instanceof EE && (
+        typeof s.pipe === 'function' || // readable
+        (typeof s.write === 'function' && typeof s.end === 'function') // writable
+      ))
   }
 }
