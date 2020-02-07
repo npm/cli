@@ -3,8 +3,6 @@
 const fs = require('fs')
 const path = require('path')
 
-const osenv = require('osenv')
-const rimraf = require('rimraf')
 const test = require('tap').test
 const mr = require('npm-registry-mock')
 
@@ -14,7 +12,7 @@ const common = require('../common-tap.js')
 const testdir = common.pkg
 const repo = path.join(testdir, 'repo')
 const prefix = path.join(testdir, 'prefix')
-const cache = path.join(testdir, 'cache')
+const cache = common.cache
 
 var Tacks = require('tacks')
 var Dir = Tacks.Dir
@@ -30,7 +28,6 @@ process.env.npm_config_prefix = prefix
 const fixture = new Tacks(Dir({
   repo: Dir({}),
   prefix: Dir({}),
-  cache: Dir({}),
   deps: Dir({
     parent: Dir({
       'package.json': File({
@@ -69,7 +66,7 @@ const fixture = new Tacks(Dir({
 }))
 
 test('setup', function (t) {
-  bootstrap()
+  fixture.create(testdir)
   setup(function (er, r) {
     t.ifError(er, 'git started up successfully')
 
@@ -116,16 +113,9 @@ test('install from git repo with prepare script', function (t) {
 
 test('clean', function (t) {
   mockRegistry.close()
-  daemon.on('close', function () {
-    cleanup()
-    t.end()
-  })
+  daemon.on('close', t.end)
   process.kill(daemonPID)
 })
-
-function bootstrap () {
-  fixture.create(testdir)
-}
 
 function setup (cb) {
   npm.load({
@@ -173,9 +163,4 @@ function setup (cb) {
       ]
     }, cb)
   })
-}
-
-function cleanup () {
-  process.chdir(osenv.tmpdir())
-  rimraf.sync(testdir)
 }

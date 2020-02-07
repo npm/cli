@@ -1,8 +1,4 @@
-module.exports = exports = findVisualStudio
-module.exports.test = {
-  VisualStudioFinder: VisualStudioFinder,
-  findVisualStudio: findVisualStudio
-}
+'use strict'
 
 const log = require('npmlog')
 const execFile = require('child_process').execFile
@@ -132,9 +128,13 @@ VisualStudioFinder.prototype = {
     var ps = path.join(process.env.SystemRoot, 'System32',
       'WindowsPowerShell', 'v1.0', 'powershell.exe')
     var csFile = path.join(__dirname, 'Find-VisualStudio.cs')
-    var psArgs = ['-ExecutionPolicy', 'Unrestricted', '-NoProfile',
-      '-Command', '&{Add-Type -Path \'' + csFile + '\';' +
-      '[VisualStudioConfiguration.Main]::PrintJson()}']
+    var psArgs = [
+      '-ExecutionPolicy',
+      'Unrestricted',
+      '-NoProfile',
+      '-Command',
+      '&{Add-Type -Path \'' + csFile + '\';' + '[VisualStudioConfiguration.Main]::PrintJson()}'
+    ]
 
     this.log.silly('Running', ps, psArgs)
     var child = execFile(ps, psArgs, { encoding: 'utf8' },
@@ -188,7 +188,9 @@ VisualStudioFinder.prototype = {
 
     // Remove future versions or errors parsing version number
     vsInfo = vsInfo.filter((info) => {
-      if (info.versionYear) { return true }
+      if (info.versionYear) {
+        return true
+      }
       this.addLog(`unknown version "${info.version}" found at "${info.path}"`)
       return false
     })
@@ -277,15 +279,22 @@ VisualStudioFinder.prototype = {
   // Helper - process toolset information
   getToolset: function getToolset (info, versionYear) {
     const pkg = 'Microsoft.VisualStudio.Component.VC.Tools.x86.x64'
+    const express = 'Microsoft.VisualStudio.WDExpress'
+
     if (info.packages.indexOf(pkg) !== -1) {
       this.log.silly('- found VC.Tools.x86.x64')
-      if (versionYear === 2017) {
-        return 'v141'
-      }
-      if (versionYear === 2019) {
-        return 'v142'
-      }
+    } else if (info.packages.indexOf(express) !== -1) {
+      this.log.silly('- found Visual Studio Express (looking for toolset)')
+    } else {
+      return null
     }
+
+    if (versionYear === 2017) {
+      return 'v141'
+    } else if (versionYear === 2019) {
+      return 'v142'
+    }
+    this.log.silly('- invalid versionYear:', versionYear)
     return null
   },
 
@@ -403,15 +412,23 @@ VisualStudioFinder.prototype = {
       this.addLog('- msvs_version does not match this version')
       return false
     }
-    if (this.configPath && this.configPath !== vsPath) {
+    if (this.configPath &&
+        path.relative(this.configPath, vsPath) !== '') {
       this.addLog('- msvs_version does not point to this installation')
       return false
     }
-    if (this.envVcInstallDir && this.envVcInstallDir !== vsPath) {
+    if (this.envVcInstallDir &&
+        path.relative(this.envVcInstallDir, vsPath) !== '') {
       this.addLog('- does not match this Visual Studio Command Prompt')
       return false
     }
 
     return true
   }
+}
+
+module.exports = findVisualStudio
+module.exports.test = {
+  VisualStudioFinder: VisualStudioFinder,
+  findVisualStudio: findVisualStudio
 }

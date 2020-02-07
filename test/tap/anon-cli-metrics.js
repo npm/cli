@@ -11,7 +11,7 @@ var common = require('../common-tap.js')
 
 var basedir = common.pkg
 var testdir = path.join(basedir, 'testdir')
-var cachedir = path.join(basedir, 'cache')
+var cachedir = common.cache
 var globaldir = path.join(basedir, 'global')
 var tmpdir = path.join(basedir, 'tmp')
 var metricsFile = path.join(cachedir, 'anonymous-cli-metrics.json')
@@ -54,7 +54,7 @@ var fixture = new Tacks(Dir({
         name: 'slow',
         version: '1.0.0',
         scripts: {
-          preinstall: "node -e 'setTimeout(function(){}, 500)'"
+          preinstall: 'node -e "setTimeout(function(){}, 500)"'
         }
       })
     }),

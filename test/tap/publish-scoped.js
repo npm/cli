@@ -2,8 +2,6 @@ var fs = require('fs')
 var path = require('path')
 
 var test = require('tap').test
-var mkdirp = require('mkdirp')
-var rimraf = require('rimraf')
 var common = require('../common-tap')
 var mr = require('npm-registry-mock')
 
@@ -12,9 +10,6 @@ var pkg = common.pkg
 var server
 
 function setup () {
-  cleanup()
-  mkdirp.sync(path.join(pkg, 'cache'))
-
   fs.writeFileSync(
     path.join(pkg, 'package.json'),
     JSON.stringify({
@@ -40,7 +35,7 @@ test('npm publish should honor scoping', function (t) {
 
   var configuration = [
     'progress=false',
-    'cache=' + path.join(pkg, 'cache'),
+    'cache=' + common.cache,
     'registry=http://nonexistent.lvh.me',
     '//localhost:' + common.port + '/:username=username',
     '//localhost:' + common.port + '/:_password=' + Buffer.from('password').toString('base64'),
@@ -51,7 +46,7 @@ test('npm publish should honor scoping', function (t) {
 
   fs.writeFileSync(configFile, configuration.join('\n') + '\n')
 
-  common.npm(['publish'], {'cwd': pkg}, function (err, code, stdout, stderr) {
+  common.npm(['publish'], {'cwd': pkg, nodeExecPath: process.execPath}, function (err, code, stdout, stderr) {
     if (err) throw err
     t.is(code, 0, 'published without error')
     server.done()
@@ -81,11 +76,6 @@ test('npm publish should honor scoping', function (t) {
 
 test('cleanup', function (t) {
   server.close()
-  t.end()
-  cleanup()
-})
-
-function cleanup () {
   process.chdir(__dirname)
-  rimraf.sync(pkg)
-}
+  t.end()
+})

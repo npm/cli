@@ -1,21 +1,13 @@
 var common = require('../common-tap.js')
 var test = require('tap').test
-var osenv = require('osenv')
-var mkdirp = require('mkdirp')
-var rimraf = require('rimraf')
 
 var pkg = common.pkg
 
-test('setup', function (t) {
-  setup()
-  t.end()
-})
-
 test('npm version in a prefix with no package.json', function (t) {
-  setup()
+  process.chdir(pkg)
   common.npm(
     ['version', '--json', '--prefix', pkg],
-    { cwd: pkg },
+    { cwd: pkg, nodeExecPath: process.execPath },
     function (er, code, stdout, stderr) {
       t.ifError(er, "npm version doesn't care that there's no package.json")
       t.notOk(code, 'npm version ran without barfing')
@@ -29,15 +21,3 @@ test('npm version in a prefix with no package.json', function (t) {
     }
   )
 })
-
-test('cleanup', function (t) {
-  process.chdir(osenv.tmpdir())
-
-  rimraf.sync(pkg)
-  t.end()
-})
-
-function setup () {
-  mkdirp.sync(pkg)
-  process.chdir(pkg)
-}

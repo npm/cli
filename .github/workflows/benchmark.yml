@@ -1,0 +1,68 @@
+---
+name: Benchmark Suite
+
+on:
+  push:
+    branches:
+      - "latest"
+  pull_request:
+    branches:
+      - "**"
+
+jobs:
+  build:
+    name: Trigger Benchmarks
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Handle Incoming Pull-Request
+        env:
+          DISPATCH_REPO: "benchmarks"
+          DISPATCH_OWNER: "npm"
+          EVENT_NAME: ${{ github.event_name }}
+          EVENT_ACTION: ${{ github.event.action }}
+          REPO: ${{ github.event.repository.name }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          PR_OWNER: ${{ github.event.pull_request.head.repo.owner.login }}
+          PR_COMMITS_URL: ${{ github.event.pull_request.commits_url }}
+          PR_COMMIT_SHA: ${{ github.event.pull_request.head.sha }}
+          AUTH_TOKEN: ${{ secrets.NPM_DEPLOY_USER_PAT }}
+        run: |
+          # Dispatch Handler
+
+          dispatch_request () {
+            echo "Dispatching request..."
+            REF_SHA=$1
+            curl \
+              -s \
+              -X POST https://api.github.com/repos/${DISPATCH_OWNER}/${DISPATCH_REPO}/dispatches \
+              -H "Accept: application/vnd.github.everest-preview+json" \
+              -H "Authorization: token ${AUTH_TOKEN}" \
+              -d \
+              '
+              {
+                "event_type": "'"${EVENT_NAME}"'",
+                "client_payload": {
+                  "pr_id": "'"${PR_NUMBER}"'",
+                  "repo": "'"${REPO}"'",
+                  "owner": "'"${PR_OWNER}"'",
+                  "commit_sha": "'"${REF_SHA}"'"
+                }
+              }'
+          }
+
+          if [ "${AUTH_TOKEN}" != "" ]; then
+            if [ "${EVENT_ACTION}" == "opened" ]; then
+              # Fetch the head commit sha, since it doesn't exist in the body of this event
+              COMMIT_SHA=$(curl -s "${PR_COMMITS_URL}" | jq -r '.[0].sha')
+
+              # Dispatch request for benchmarks
+              dispatch_request "${COMMIT_SHA}"
+            else
+              # Dispatch request for benchmarks
+              dispatch_request "${PR_COMMIT_SHA}"
+            fi
+          else
+            echo "NO AUTH - FORK PULL REQUEST"
+          fi
