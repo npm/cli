@@ -145,7 +145,7 @@ if (!oldPolicy.satisfiesWithoutRevalidation(newRequest)) {
     newRequest.headers = oldPolicy.revalidationHeaders(newRequest);
 
     // Send request to the origin server. The server may respond with status 304
-    const newResponse = await makeRequest(newResponse);
+    const newResponse = await makeRequest(newRequest);
 
     // Create updated policy and combined response from the old and new data
     const { policy, modified } = oldPolicy.revalidatedPolicy(

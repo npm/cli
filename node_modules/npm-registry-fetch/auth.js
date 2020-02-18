@@ -1,17 +1,14 @@
 'use strict'
 
-const config = require('./config.js')
+const defaultOpts = require('./default-opts.js')
 const url = require('url')
 
 module.exports = getAuth
-function getAuth (registry, opts) {
+function getAuth (registry, opts_ = {}) {
   if (!registry) { throw new Error('registry is required') }
-  opts = config(opts)
+  const opts = opts_.forceAuth ? opts_.forceAuth : { ...defaultOpts, ...opts_ }
   const AUTH = {}
   const regKey = registry && registryKey(registry)
-  if (opts.forceAuth) {
-    opts = opts.forceAuth
-  }
   const doKey = (key, alias) => addKey(opts, AUTH, regKey, key, alias)
   doKey('token')
   doKey('_authToken', 'token')

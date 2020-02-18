@@ -2,6 +2,31 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [8.0.0](https://github.com/npm/ssri/compare/v7.1.0...v8.0.0) (2020-02-18)
+
+
+### ⚠ BREAKING CHANGES
+
+* SRI values with `../` in the algorithm name now throw
+as invalid (which they always probably should have!)
+* adds a new error that will be thrown.  Empty SRIs are
+no longer considered valid for checking, only when using integrityStream
+to calculate the SRI value.
+
+PR-URL: https://github.com/npm/ssri/pull/12
+Credit: @claudiahdz
+
+### Features
+
+* remove figgy-pudding ([0e78fd7](https://github.com/npm/ssri/commit/0e78fd7b754e2d098875eb4c57238709d96d7c27))
+
+
+### Bug Fixes
+
+* harden SRI parsing against ../ funny business ([4062735](https://github.com/npm/ssri/commit/4062735d1281941fd32ac4320b9f9965fcec278b))
+* IntegrityStream responds to mutating opts object mid-stream ([4a963e5](https://github.com/npm/ssri/commit/4a963e5982478c6b07f86848cdb72d142c765195))
+* throw null when sri is empty or bad ([a6811cb](https://github.com/npm/ssri/commit/a6811cba71e20ea1fdefa6e50c9ea3c67efc2500)), closes [#12](https://github.com/npm/ssri/issues/12)
+
 ## [7.1.0](https://github.com/npm/ssri/compare/v7.0.1...v7.1.0) (2019-10-24)
 
 
