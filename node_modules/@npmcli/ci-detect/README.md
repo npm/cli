@@ -29,15 +29,24 @@ at the appropriate environment variables.
 * `'jenkins'` Jenkins
 * `'bamboo'` Bamboo
 * `'gocd'` GoCD
-* `'codeship'` CodeShip (or any that set `CI_NAME` environment variable)
+* `'wercker'` Oracle Wercker
+* `'netlify'` Netlify
+* `'now-github'` Zeit.co's Now for GitHub deployment service
+* `'now-bitbucket'` Zeit.co's Now for BitBucket deployment service
+* `'now-gitlab'` Zeit.co's Now for GitLab deployment service
+* `'codeship'` CodeShip
+* Anything that sets the `CI_NAME` environment variable will return the
+  value as the result.  (This is how CodeShip is detected.)
 * `'travis-ci'` Travis-CI - A few other CI systems set `TRAVIS=1` in the
   environment, because devs use that to indicate "test mode", so this one
-  can get some false positives.
+  can get some false positives, and is tested later in the process to
+  minimize this effect.
 * `'aws-codebuild'` AWS CodeBuild
 * `'builder'` Google Cloud Builder - This one is a bit weird.  It doesn't
   really set anything that can be reliably detected except
   `BUILDER_OUTPUT`, so it can get false positives pretty easily.
-* `'custom'` anything else that sets `CI` environment variable
+* `'custom'` anything else that sets `CI` environment variable to either
+  `'1'` or `'true'`.
 
 ## Caveats
 

@@ -85,7 +85,7 @@ class DirFetcher extends Fetcher {
     return readPackageJson(this.resolved + '/package.json')
       .then(mani => this.package = {
         ...mani,
-        _integrity: String(this.integrity),
+        _integrity: this.integrity && String(this.integrity),
         _resolved: this.resolved,
         _from: this.from,
       })

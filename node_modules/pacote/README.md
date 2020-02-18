@@ -134,9 +134,9 @@ See below for valid `opts` values.
   on the `process` object.
 * `preferOnline` Prefer to revalidate cache entries, even when it would not
   be strictly necessary.  Default `false`.
-* `enjoyBy` When picking a manifest from a packument, only consider
+* `before` When picking a manifest from a packument, only consider
   packages published before the specified date.  Default `null`.
-* `tag` The default `dist-tag` to use when choosing a manifest from a
+* `defaultTag` The default `dist-tag` to use when choosing a manifest from a
   packument.  Defaults to `latest`.
 * `registry` The npm registry to use by default.  Defaults to
   `https://registry.npmjs.org/`.
@@ -229,4 +229,4 @@ For Pacote's purposes, the following fields are relevant:
 * `dist-tags` An object mapping dist-tags to version numbers.  This is how
   `foo@latest` gets turned into `foo@1.2.3`.
 * `time` In the full packument, an object mapping version numbers to
-  publication times, for the `opts.enjoyBy` functionality.
+  publication times, for the `opts.before` functionality.

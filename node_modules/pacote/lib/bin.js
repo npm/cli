@@ -108,6 +108,7 @@ const parseArg = arg => {
   const v = split.join('=')
   const no = /^no-/.test(k) && !v
   const key = (no ? k.substr(3) : k)
+    .replace(/^tag$/, 'defaultTag')
     .replace(/-([a-z])/g, (_, c) => c.toUpperCase())
   const value = v ? v.replace(/^~/, process.env.HOME) : !no
   return { key, value }

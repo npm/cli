@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [15.0.0](https://github.com/npm/cacache/compare/v14.0.0...v15.0.0) (2020-02-18)
+
+
+### ⚠ BREAKING CHANGES
+
+* drop figgy-pudding and use canonical option names.
+
+### Features
+
+* remove figgy-pudding ([57d11bc](https://github.com/npm/cacache/commit/57d11bce34f979247d1057d258acc204c4944491))
+
 ## [14.0.0](https://github.com/npm/cacache/compare/v13.0.1...v14.0.0) (2020-01-28)
 
 

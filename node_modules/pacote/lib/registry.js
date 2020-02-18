@@ -26,8 +26,8 @@ class RegistryFetcher extends Fetcher {
     // handle case when npm-package-arg guesses wrong.
     if (this.spec.type === 'tag' &&
         this.spec.rawSpec === '' &&
-        this.tag !== 'latest')
-      this.spec = npa(`${this.spec.name}@${this.tag}`)
+        this.defaultTag !== 'latest')
+      this.spec = npa(`${this.spec.name}@${this.defaultTag}`)
     this.registry = fetch.pickRegistry(spec, opts)
     this.packumentUrl = this.registry.replace(/\/*$/, '/') +
       this.spec.escapedName
@@ -98,8 +98,8 @@ class RegistryFetcher extends Fetcher {
     return this.packument()
       .then(packument => pickManifest(packument, this.spec.fetchSpec, {
         ...this.opts,
-        defaultTag: this.tag,
-        enjoyBy: this.enjoyBy,
+        defaultTag: this.defaultTag,
+        before: this.before,
       }) /* XXX add ETARGET and E403 revalidation of cached packuments here */)
       .then(mani => {
         // add _resolved and _integrity from dist object
@@ -108,7 +108,7 @@ class RegistryFetcher extends Fetcher {
           this.resolved = mani._resolved = dist.tarball
           mani._from = this.from
           const distIntegrity = dist.integrity ? ssri.parse(dist.integrity)
-            : dist.shasum ? ssri.fromHex(dist.shasum, 'sha1', this.opts)
+            : dist.shasum ? ssri.fromHex(dist.shasum, 'sha1', {...this.opts})
             : null
           if (distIntegrity) {
             if (!this.integrity)
@@ -130,8 +130,9 @@ class RegistryFetcher extends Fetcher {
                 }
               }
               // made it this far, the integrity is worthwhile.  accept it.
-              this.integrity = this.integrity.concat(distIntegrity)
-              this.opts.integrity = this.integrity
+              // the setter here will take care of merging it into what we
+              // already had.
+              this.integrity = distIntegrity
             }
           }
         }

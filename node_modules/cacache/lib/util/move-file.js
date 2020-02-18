@@ -1,6 +1,6 @@
 'use strict'
 
-const fs = require('graceful-fs')
+const fs = require('fs')
 const util = require('util')
 const chmod = util.promisify(fs.chmod)
 const unlink = util.promisify(fs.unlink)

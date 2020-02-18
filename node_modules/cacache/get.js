@@ -1,8 +1,6 @@
 'use strict'
 
 const util = require('util')
-
-const figgyPudding = require('figgy-pudding')
 const fs = require('fs')
 const index = require('./lib/entry-index')
 const memo = require('./lib/memoization')
@@ -14,12 +12,6 @@ const Pipeline = require('minipass-pipeline')
 
 const writeFile = util.promisify(fs.writeFile)
 
-const GetOpts = figgyPudding({
-  integrity: {},
-  memoize: {},
-  size: {}
-})
-
 module.exports = function get (cache, key, opts) {
   return getData(false, cache, key, opts)
 }
@@ -27,12 +19,12 @@ module.exports.byDigest = function getByDigest (cache, digest, opts) {
   return getData(true, cache, digest, opts)
 }
 
-function getData (byDigest, cache, key, opts) {
-  opts = GetOpts(opts)
+function getData (byDigest, cache, key, opts = {}) {
+  const { integrity, memoize, size } = opts
   const memoized = byDigest
     ? memo.get.byDigest(cache, key, opts)
     : memo.get(cache, key, opts)
-  if (memoized && opts.memoize !== false) {
+  if (memoized && memoize !== false) {
     return Promise.resolve(
       byDigest
         ? memoized
@@ -50,23 +42,23 @@ function getData (byDigest, cache, key, opts) {
         throw new index.NotFoundError(cache, key)
       }
       return read(cache, byDigest ? key : entry.integrity, {
-        integrity: opts.integrity,
-        size: opts.size
+        integrity,
+        size
       })
         .then((data) =>
           byDigest
             ? data
             : {
+              data,
               metadata: entry.metadata,
-              data: data,
               size: entry.size,
               integrity: entry.integrity
             }
         )
         .then((res) => {
-          if (opts.memoize && byDigest) {
+          if (memoize && byDigest) {
             memo.put.byDigest(cache, key, res, opts)
-          } else if (opts.memoize) {
+          } else if (memoize) {
             memo.put(cache, entry, res.data, opts)
           }
           return res
@@ -82,12 +74,12 @@ module.exports.sync.byDigest = function getByDigest (cache, digest, opts) {
   return getDataSync(true, cache, digest, opts)
 }
 
-function getDataSync (byDigest, cache, key, opts) {
-  opts = GetOpts(opts)
+function getDataSync (byDigest, cache, key, opts = {}) {
+  const { integrity, memoize, size } = opts
   const memoized = byDigest
     ? memo.get.byDigest(cache, key, opts)
     : memo.get(cache, key, opts)
-  if (memoized && opts.memoize !== false) {
+  if (memoized && memoize !== false) {
     return byDigest
       ? memoized
       : {
@@ -102,8 +94,8 @@ function getDataSync (byDigest, cache, key, opts) {
     throw new index.NotFoundError(cache, key)
   }
   const data = read.sync(cache, byDigest ? key : entry.integrity, {
-    integrity: opts.integrity,
-    size: opts.size
+    integrity: integrity,
+    size: size
   })
   const res = byDigest
     ? data
@@ -113,9 +105,9 @@ function getDataSync (byDigest, cache, key, opts) {
       size: entry.size,
       integrity: entry.integrity
     }
-  if (opts.memoize && byDigest) {
+  if (memoize && byDigest) {
     memo.put.byDigest(cache, key, res, opts)
-  } else if (opts.memoize) {
+  } else if (memoize) {
     memo.put(cache, entry, res.data, opts)
   }
   return res
@@ -134,10 +126,10 @@ const getMemoizedStream = (memoized) => {
   return stream
 }
 
-function getStream (cache, key, opts) {
-  opts = GetOpts(opts)
+function getStream (cache, key, opts = {}) {
+  const { memoize, size } = opts
   const memoized = memo.get(cache, key, opts)
-  if (memoized && opts.memoize !== false) {
+  if (memoized && memoize !== false) {
     return getMemoizedStream(memoized)
   }
 
@@ -160,12 +152,10 @@ function getStream (cache, key, opts) {
       const src = read.readStream(
         cache,
         entry.integrity,
-        opts.concat({
-          size: opts.size == null ? entry.size : opts.size
-        })
+        { ...opts, size: typeof size !== 'number' ? entry.size : size }
       )
 
-      if (opts.memoize) {
+      if (memoize) {
         const memoStream = new Collect.PassThrough()
         memoStream.on('collect', data => memo.put(cache, entry, data, opts))
         stream.unshift(memoStream)
@@ -179,16 +169,16 @@ function getStream (cache, key, opts) {
 
 module.exports.stream.byDigest = getStreamDigest
 
-function getStreamDigest (cache, integrity, opts) {
-  opts = GetOpts(opts)
+function getStreamDigest (cache, integrity, opts = {}) {
+  const { memoize } = opts
   const memoized = memo.get.byDigest(cache, integrity, opts)
-  if (memoized && opts.memoize !== false) {
+  if (memoized && memoize !== false) {
     const stream = new Minipass()
     stream.end(memoized)
     return stream
   } else {
     const stream = read.readStream(cache, integrity, opts)
-    if (!opts.memoize) {
+    if (!memoize) {
       return stream
     }
     const memoStream = new Collect.PassThrough()
@@ -204,10 +194,10 @@ function getStreamDigest (cache, integrity, opts) {
 
 module.exports.info = info
 
-function info (cache, key, opts) {
-  opts = GetOpts(opts)
+function info (cache, key, opts = {}) {
+  const { memoize } = opts
   const memoized = memo.get(cache, key, opts)
-  if (memoized && opts.memoize !== false) {
+  if (memoized && memoize !== false) {
     return Promise.resolve(memoized.entry)
   } else {
     return index.find(cache, key)
@@ -228,8 +218,7 @@ function cpDigest (cache, digest, dest, opts) {
 
 module.exports.copy.byDigest = cpDigest
 
-function copy (byDigest, cache, key, dest, opts) {
-  opts = GetOpts(opts)
+function copy (byDigest, cache, key, dest, opts = {}) {
   if (read.copy) {
     return (byDigest
       ? Promise.resolve(null)

@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [6.0.0](https://github.com/npm/npm-pick-manifest/compare/v5.0.0...v6.0.0) (2020-02-18)
+
+
+### ⚠ BREAKING CHANGES
+
+* 'enjoyBy' is no longer an acceptable alias.
+
+### Features
+
+* add GitHub Actions file for ci ([8985247](https://github.com/npm/npm-pick-manifest/commit/898524727fa157f46fdf4eb0c11148ae4808226b))
+
+
+### Bug Fixes
+
+* Handle edge cases around before:Date and filtering staged publishes ([ed2f92e](https://github.com/npm/npm-pick-manifest/commit/ed2f92e7fdc9cc7836b13ebc73e17d8fd296a07e))
+* remove figgy pudding ([c24fed2](https://github.com/npm/npm-pick-manifest/commit/c24fed25b8f77fbbcc3107030f2dfed55fa54222))
+* remove outdated cruft from docs ([aae7ef7](https://github.com/npm/npm-pick-manifest/commit/aae7ef7625ddddbac0548287e5d57b8f76593322))
+* update some missing {loose:true} semver configs ([4015424](https://github.com/npm/npm-pick-manifest/commit/40154244a3fe1af86462bc1d6165199fc3315c10))
+* Use canonical 'before' config name ([029de59](https://github.com/npm/npm-pick-manifest/commit/029de59bda6d3376f03760a00efe4ac9d997c623))
+
 ## [5.0.0](https://github.com/npm/npm-pick-manifest/compare/v4.0.0...v5.0.0) (2019-12-15)
 
 

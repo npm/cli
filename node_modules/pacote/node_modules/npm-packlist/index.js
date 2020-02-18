@@ -123,6 +123,23 @@ const npmWalker = Class => class Walker extends Class {
       return super.onReaddir(entries)
     }
 
+    // when the cache has been seeded with the root manifest,
+    // we must respect that (it may differ from the filesystem)
+    const ig = path.resolve(this.path, 'package.json')
+
+    if (this.packageJsonCache.has(ig)) {
+      const pkg = this.packageJsonCache.get(ig)
+
+      // fall back to filesystem when seeded manifest is invalid
+      if (!pkg || typeof pkg !== 'object') {
+        return this.readPackageJson(entries)
+      }
+
+      // feels wonky, but this ensures package bin is _always_
+      // normalized, as well as guarding against invalid JSON
+      return this.getPackageFiles(entries, JSON.stringify(pkg))
+    }
+
     this.readPackageJson(entries)
   }
 

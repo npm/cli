@@ -49,7 +49,8 @@ class RemoteFetcher extends Fetcher {
       'pacote-version': pacoteVersion,
       'pacote-req-type': 'tarball',
       'pacote-pkg-id': this.pkgid,
-      'pacote-integrity': String(this.integrity),
+      ...(this.integrity ? { 'pacote-integrity': String(this.integrity) }
+        : {}),
     }
   }
 
