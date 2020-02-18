@@ -1,6 +1,5 @@
 'use strict'
 
-const figgyPudding = require('figgy-pudding')
 const index = require('./lib/entry-index')
 const memo = require('./lib/memoization')
 const write = require('./lib/content/write')
@@ -8,31 +7,21 @@ const Flush = require('minipass-flush')
 const { PassThrough } = require('minipass-collect')
 const Pipeline = require('minipass-pipeline')
 
-const PutOpts = figgyPudding({
-  algorithms: {
-    default: ['sha512']
-  },
-  integrity: {},
-  memoize: {},
-  metadata: {},
-  pickAlgorithm: {},
-  size: {},
-  tmpPrefix: {},
-  single: {},
-  sep: {},
-  error: {},
-  strict: {}
+const putOpts = (opts) => ({
+  algorithms: ['sha512'],
+  ...opts
 })
 
 module.exports = putData
 
-function putData (cache, key, data, opts) {
-  opts = PutOpts(opts)
+function putData (cache, key, data, opts = {}) {
+  const { memoize } = opts
+  opts = putOpts(opts)
   return write(cache, data, opts).then((res) => {
     return index
-      .insert(cache, key, res.integrity, opts.concat({ size: res.size }))
+      .insert(cache, key, res.integrity, { ...opts, size: res.size })
       .then((entry) => {
-        if (opts.memoize) {
+        if (memoize) {
           memo.put(cache, entry, data, opts)
         }
         return res.integrity
@@ -42,8 +31,9 @@ function putData (cache, key, data, opts) {
 
 module.exports.stream = putStream
 
-function putStream (cache, key, opts) {
-  opts = PutOpts(opts)
+function putStream (cache, key, opts = {}) {
+  const { memoize } = opts
+  opts = putOpts(opts)
   let integrity
   let size
 
@@ -51,7 +41,7 @@ function putStream (cache, key, opts) {
   const pipeline = new Pipeline()
   // first item in the pipeline is the memoizer, because we need
   // that to end first and get the collected data.
-  if (opts.memoize) {
+  if (memoize) {
     const memoizer = new PassThrough().on('collect', data => {
       memoData = data
     })
@@ -75,9 +65,9 @@ function putStream (cache, key, opts) {
   pipeline.push(new Flush({
     flush () {
       return index
-        .insert(cache, key, integrity, opts.concat({ size }))
+        .insert(cache, key, integrity, { ...opts, size })
         .then((entry) => {
-          if (opts.memoize && memoData) {
+          if (memoize && memoData) {
             memo.put(cache, entry, memoData, opts)
           }
           if (integrity) {

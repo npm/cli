@@ -1,12 +1,13 @@
 'use strict'
 
-const config = require('./config.js')
 const errors = require('./errors.js')
 const LRU = require('lru-cache')
 const { Response } = require('minipass-fetch')
+const defaultOpts = require('./default-opts.js')
+
 module.exports = checkResponse
-function checkResponse (method, res, registry, startTime, opts) {
-  opts = config(opts)
+function checkResponse (method, res, registry, startTime, opts_ = {}) {
+  const opts = { ...defaultOpts, ...opts_ }
   if (res.headers.has('npm-notice') && !res.headers.has('x-local-cache')) {
     opts.log.notice('', res.headers.get('npm-notice'))
   }
