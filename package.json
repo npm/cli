@@ -1,5 +1,5 @@
 {
-  "version": "6.13.6",
+  "version": "6.13.7",
   "name": "npm",
   "description": "a package manager for JavaScript",
   "keywords": [
@@ -39,7 +39,7 @@
     "ansistyles": "~0.1.3",
     "aproba": "^2.0.0",
     "archy": "~1.0.0",
-    "bin-links": "^1.1.7",
+    "bin-links": "^2.0.0",
     "bluebird": "^3.5.5",
     "byte-size": "^5.0.1",
     "cacache": "^12.0.3",
