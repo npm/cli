@@ -85,6 +85,7 @@ const _force = Symbol('force')
 // defined by Ideal mixin
 const _idealTreePrune = Symbol.for('idealTreePrune')
 const _explicitRootInstalls = Symbol.for('explicitRootInstalls')
+const _resolvedAdd = Symbol.for('resolvedAdd')
 
 module.exports = cls => class Reifier extends Ideal(cls) {
   constructor (options) {
@@ -711,10 +712,10 @@ module.exports = cls => class Reifier extends Ideal(cls) {
     if (options.save === false)
       return
 
-    if (options.add) {
+    if (this[_resolvedAdd]) {
       const pkg = this.idealTree.package
       // need to save these more nicely, now that we know what they are
-      for (const [type, specs] of Object.entries(options.add)) {
+      for (const [type, specs] of Object.entries(this[_resolvedAdd])) {
         if (!specs || typeof specs !== 'object' || Array.isArray(specs))
           continue
 

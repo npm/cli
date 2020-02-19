@@ -56,7 +56,7 @@ const _pruneForReplacement = Symbol('pruneForReplacement')
 const _fixDepFlags = Symbol('fixDepFlags')
 const _resolveLinks = Symbol('resolveLinks')
 const _rootNodeFromPackage = Symbol('rootNodeFromPackage')
-const _addRm = Symbol('addRm')
+const _add = Symbol('add')
 const _explicitRequests = Symbol('explicitRequests')
 const _queueNamedUpdates = Symbol('queueNamedUpdates')
 const _shouldUpdateNode = Symbol('shouldUpdateNode')
@@ -68,6 +68,7 @@ const _follow = Symbol('follow')
 
 // used by Reify mixin
 const _idealTreePrune = Symbol.for('idealTreePrune')
+const _resolvedAdd = Symbol.for('resolvedAdd')
 
 const Virtual = require('./load-virtual.js')
 const Actual = require('./load-actual.js')
@@ -191,40 +192,72 @@ module.exports = cls => class IdealTreeBuilder extends Tracker(Virtual(Actual(cl
   // process the add/rm requests by modifying the root node, and the
   // update.names request by queueing nodes dependent on those named.
   [_applyUserRequests] (options) {
-    // these just add and remove to/from the root node
-    // but both mean we have to do a full walk, not just fixing problems
-    // and stopping when we no longer see any problems.
-    if (options.add || options.rm)
-      this[_addRm](options)
-
-    // get the list of deps that we're explicitly requesting, so that
-    // 'npm install foo' will reinstall, even if we already have it.
-    if (options.add) {
-      for (const [type, specs] of Object.entries(options.add)) {
-        if (type === 'dependencies' || type === 'devDependencies' ||
-            type === 'optionalDependencies' || type === 'peerDependencies') {
-          for (const name of Object.keys(options.add[type])) {
-            this[_explicitRequests].add(name)
-          }
-        }
-      }
-    }
-
     // If we have a list of package names to update, and we know it's
     // going to update them wherever they are, add any paths into those
     // named nodes to the buildIdealTree queue.
     if (this[_updateNames].length)
       this[_queueNamedUpdates]()
+
+    if (options.rm && options.rm.length)
+      addRmPkgDeps.rm(this.idealTree.package, options.rm)
+
+    // triggers a refresh of all edgesOut
+    const after = () => this.idealTree.package = this.idealTree.package
+
+    // these just add and remove to/from the root node
+    return (options.add)
+      ? this[_add](options.add).then(after)
+      : after()
   }
 
-  [_addRm] ({ add, rm }) {
-    const pkg = this.idealTree.package
-    if (rm && rm.length)
-      addRmPkgDeps.rm(pkg, rm)
-    if (add)
-      addRmPkgDeps.add(pkg, add)
-    // triggers a refresh of all edgesOut
-    this.idealTree.package = pkg
+
+  // add => might return promise
+    // might not have name, call pacote.manifest (find name)
+  [_add] (add) {
+    const promises = []
+    this[_resolvedAdd] = {}
+
+    // not going to work for:
+    // peerDepsMeta
+    // bundledDeps
+    for (const [type, specs] of Object.entries(add)) {
+      const p = Promise.all(specs.map(s => {
+        const spec = npa(s, this.path)
+        if (spec.name) {
+          return spec
+        } else {
+          return pacote.manifest(spec).then(mani => {
+            spec.name = mani.name
+            return spec
+          })
+        }
+      })).then(specs => {
+        for (const spec of specs) {
+          if (type === 'bundleDependencies') {
+            this[_resolvedAdd][type] = this[_resolvedAdd][type] || []
+            this[_resolvedAdd][type].push(spec.name)
+          } else {
+            this[_resolvedAdd][type] = this[_resolvedAdd][type] || {}
+            this[_resolvedAdd][type][spec.name] = spec.rawSpec
+          }
+        }
+      })
+      promises.push(p)
+    }
+    return Promise.all(promises).then(() => {
+      // get the list of deps that we're explicitly requesting, so that
+      // 'npm install foo' will reinstall, even if we already have it.
+      for (const [type, specs] of Object.entries(this[_resolvedAdd])) {
+        if (type === 'dependencies' || type === 'devDependencies' ||
+            type === 'optionalDependencies' || type === 'peerDependencies') {
+          for (const name of Object.keys(this[_resolvedAdd][type])) {
+            this[_explicitRequests].add(name)
+          }
+        }
+      }
+
+      addRmPkgDeps.add(this.idealTree.package, this[_resolvedAdd])
+    })
   }
 
   [_queueNamedUpdates] () {
