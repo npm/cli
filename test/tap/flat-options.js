@@ -85,6 +85,7 @@ class MockConfig {
       'package-lock-only': 'package-lock-only',
       'global-style': 'global-style',
       'legacy-bundling': 'legacy-bundling',
+      'script-shell': 'script-shell',
       omit: [],
       include: [],
       save: 'save',

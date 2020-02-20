@@ -295,18 +295,23 @@
     "prepare": "node bin/npm-cli.js rebuild && node bin/npm-cli.js --no-audit --no-timing prune --prefix=. --no-global && rimraf test/*/*/node_modules && make -j4 mandocs",
     "preversion": "bash scripts/update-authors.sh && git add AUTHORS && git commit -m \"update AUTHORS\" || true",
     "licenses": "licensee --production --errors-only",
-    "tap": "tap -J --timeout 300 --no-esm",
+    "tap": "tap",
     "tap-cover": "tap -J --nyc-arg=--cache --coverage --timeout 600 --no-esm",
-    "lint": "standard",
-    "pretest": "npm run lint",
     "test": "npm run test-tap --",
+    "snap": "tap",
     "test:nocleanup": "NO_TEST_CLEANUP=1 npm run test --",
     "sudotest": "sudo npm run tap -- \"test/tap/*.js\"",
     "sudotest:nocleanup": "sudo NO_TEST_CLEANUP=1 npm run tap -- \"test/tap/*.js\"",
-    "posttest": "rimraf test/npm_cache*",
+    "posttest": "npm run lint",
+    "lint": "standard",
+    "prelint": "rimraf test/npm_cache*",
     "test-coverage": "npm run tap-cover -- \"test/tap/*.js\" \"test/network/*.js\"",
     "test-tap": "npm run tap -- \"test/tap/*.js\" \"test/network/*.js\"",
     "test-node": "tap --timeout 240 \"test/tap/*.js\" \"test/network/*.js\""
+  },
+  "tap": {
+    "esm": false,
+    "timeout": 600
   },
   "license": "Artistic-2.0",
   "engines": {
