@@ -1,5 +1,5 @@
 ---
-section: cli-commands 
+section: cli-commands
 title: npm-cache
 description: Manipulates packages cache
 ---
@@ -75,7 +75,7 @@ verify`.
 
 #### cache
 
-Default: `~/.npm` on Posix, or `%AppData%/npm-cache` on Windows.
+Default: `~/.npm` on Posix, or `%LOCALAPPDATA%/npm-cache` on Windows.
 
 The root cache folder.
 

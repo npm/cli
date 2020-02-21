@@ -267,7 +267,7 @@ well as for the CA information to be stored in a file on disk.
 
 #### cache
 
-* Default: Windows: `%AppData%\npm-cache`, Posix: `~/.npm`
+* Default: Windows: `%LOCALAPPDATA%\npm-cache`, Posix: `~/.npm`
 * Type: path
 
 The location of npm's cache directory.  See [`npm cache`](/cli-commands/npm-cache)

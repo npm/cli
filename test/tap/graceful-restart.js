@@ -83,7 +83,7 @@ function createChild (args, cb) {
   }
 
   if (process.platform === 'win32') {
-    env.npm_config_cache = '%APPDATA%\\npm-cache'
+    env.npm_config_cache = '%LOCALAPPDATA%\\npm-cache'
   }
 
   return common.npm(args, {
