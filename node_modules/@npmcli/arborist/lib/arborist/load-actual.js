@@ -12,12 +12,12 @@ const Node = require('../node.js')
 const Link = require('../link.js')
 const realpath = require('../realpath.js')
 
-const loadFSNode = Symbol('loadFSNode')
-const newNode = Symbol('newNode')
-const newLink = Symbol('newLink')
-const loadFSTree = Symbol('loadFSTree')
-const loadFSChildren = Symbol('loadFSChildren')
-const findFSParents = Symbol('findFSParents')
+const _loadFSNode = Symbol('loadFSNode')
+const _newNode = Symbol('newNode')
+const _newLink = Symbol('newLink')
+const _loadFSTree = Symbol('loadFSTree')
+const _loadFSChildren = Symbol('loadFSChildren')
+const _findFSParents = Symbol('findFSParents')
 
 const _actualTreeLoaded = Symbol('actualTreeLoaded')
 const _rpcache = Symbol('realpathCache')
@@ -27,9 +27,14 @@ const _cache = Symbol('nodeLoadingCache')
 const _loadActualVirtually = Symbol('loadActualVirtually')
 const _loadActualActually = Symbol('loadActualActually')
 
+const _filter = Symbol('filter')
+const _global = Symbol.for('global')
+
 module.exports = cls => class ActualLoader extends cls {
   constructor (options) {
     super(options)
+
+    this[_global] = !!options.global
 
     // the tree of nodes on disk
     this.actualTree = options.actualTree
@@ -58,13 +63,28 @@ module.exports = cls => class ActualLoader extends cls {
   }
 
   // public method
-  loadActual () {
+  loadActual (options = {}) {
     // mostly realpath to throw if the root doesn't exist
     if (this.actualTree)
       return Promise.resolve(this.actualTree)
 
+    const { global = false, filter = () => true } = options
+    this[_filter] = filter
+    if (global) {
+      return realpath(this.path, this[_rpcache], this[_stcache])
+        .then(real => this[this.path === real ? _newNode : _newLink]({
+          path: this.path,
+          realpath: real,
+          pkg: {},
+          global,
+        })).then(node => {
+          this.actualTree = node
+          return this[_loadActualActually]()
+        })
+    }
+
     return realpath(this.path, this[_rpcache], this[_stcache])
-      .then(real => this[loadFSNode]({ path: this.path, real }))
+      .then(real => this[_loadFSNode]({ path: this.path, real }))
       .then(node => {
         // XXX only rely on this if the hidden lockfile is the newest thing?
         // need some kind of heuristic, like if the package.json or sw have
@@ -72,6 +92,7 @@ module.exports = cls => class ActualLoader extends cls {
         // user switches back and forth between Arborist and another way of
         // mutating the node_modules folder.
         this.actualTree = node
+
         return Shrinkwrap.load({
           path: node.realpath,
           hiddenLockfile: true,
@@ -107,17 +128,17 @@ module.exports = cls => class ActualLoader extends cls {
     this[_actualTreeLoaded] = new Set()
     // did is a set of all realpaths visited on this walk
     // important when a link points at a node we end up visiting later.
-    return this[loadFSTree](this.actualTree)
-      .then(() => this[findFSParents]())
+    return this[_loadFSTree](this.actualTree)
+      .then(() => this[_findFSParents]())
       .then(() => calcDepFlags(this.actualTree))
       .then(() => this.actualTree)
   }
 
-  [loadFSNode] ({ path, parent, real, root }) {
+  [_loadFSNode] ({ path, parent, real, root }) {
     if (!real)
       return realpath(path, this[_rpcache], this[_stcache])
         .then(
-          real => this[loadFSNode]({ path, parent, real, root }),
+          real => this[_loadFSNode]({ path, parent, real, root }),
           // if realpath fails, just provide a dummy error node
           error => new Node({ error, path, realpath: path, parent, root })
         )
@@ -139,7 +160,7 @@ module.exports = cls => class ActualLoader extends cls {
       // soldier on if read-package-json raises an error
       .then(pkg => [pkg, null], error => [null, error])
       .then(([pkg, error]) => {
-        return this[path === real ? newNode : newLink]({
+        return this[path === real ? _newNode : _newLink]({
           path,
           realpath: real,
           pkg,
@@ -163,7 +184,7 @@ module.exports = cls => class ActualLoader extends cls {
   // the tree or attempting to load children.  However, it IS remarkably
   // difficult to get to happen in a test environment to verify reliably.
   // Hence this kludge.
-  [newNode] (options) {
+  [_newNode] (options) {
     // check it for an fsParent if it's a tree top.  there's a decent chance
     // it'll get parented later, making the fsParent scan a no-op, but better
     // safe than sorry, since it's cheap.
@@ -175,7 +196,7 @@ module.exports = cls => class ActualLoader extends cls {
       : new Node(options)
   }
 
-  [newLink] (options) {
+  [_newLink] (options) {
     const { realpath } = options
     this[_linkTargets].add(realpath)
     const target = this[_cache].get(realpath)
@@ -189,8 +210,8 @@ module.exports = cls => class ActualLoader extends cls {
       // pick up peers of that node in the node_modules tree.  This is how
       // we can read pnpm trees properly. Defer loading until this is done.
       if (nmParent) {
-        return this[loadFSNode]({ path: nmParent, root: link.root })
-          .then(node => this[loadFSTree](node))
+        return this[_loadFSNode]({ path: nmParent, root: link.root })
+          .then(node => this[_loadFSTree](node))
           .then(() => link)
       }
     } else if (target.then)
@@ -199,14 +220,14 @@ module.exports = cls => class ActualLoader extends cls {
     return link
   }
 
-  [loadFSTree] (node) {
+  [_loadFSTree] (node) {
     const did = this[_actualTreeLoaded]
     node = node.target || node
 
     // if a Link target has started, but not completed, then
     // a Promise will be in the cache to indicate this.
     if (node.then)
-      return node.then(node => this[loadFSTree](node))
+      return node.then(node => this[_loadFSTree](node))
 
     // impossible except in pathological ELOOP cases
     /* istanbul ignore next */
@@ -214,25 +235,26 @@ module.exports = cls => class ActualLoader extends cls {
       return Promise.resolve(node)
 
     did.add(node.realpath)
-    return this[loadFSChildren](node)
+    return this[_loadFSChildren](node)
       .then(() => Promise.all(
         [...node.children.entries()]
           .filter(([name, kid]) => !did.has(kid.realpath))
-          .map(([name, kid]) => this[loadFSTree](kid))))
+          .map(([name, kid]) => this[_loadFSTree](kid))))
   }
 
   // create child nodes for all the entries in node_modules
   // and attach them to the node as a parent
-  [loadFSChildren] (node) {
+  [_loadFSChildren] (node) {
     const nm = resolve(node.realpath, 'node_modules')
     return readdir(nm).then(kids => {
       return Promise.all(
       // ignore . dirs and retired scoped package folders
       kids.filter(kid => !/^(@[^/]+\/)?\./.test(kid))
-      .map(kid => this[loadFSNode]({
-        parent: node,
-        path: resolve(nm, kid),
-      })))
+        .filter(kid => this[_filter](node, kid))
+        .map(kid => this[_loadFSNode]({
+          parent: node,
+          path: resolve(nm, kid),
+        })))
     },
       // error in the readdir is not fatal, just means no kids
       () => {})
@@ -242,7 +264,7 @@ module.exports = cls => class ActualLoader extends cls {
   // node_modules tree sense, of any link targets.  this allows us to
   // resolve deps that node will find, but a legacy npm view of the
   // world would not have noticed.
-  [findFSParents] () {
+  [_findFSParents] () {
     for (const path of this[_linkTargets]) {
       const node = this[_cache].get(path)
       if (!node.parent && !node.fsParent) {
