@@ -76,15 +76,21 @@ arb.buildIdealTree(options).then(() => {
   // next step is to reify that ideal tree onto disk.
   // options can be:
   // rm: array of package names to remove at top level
-  // add: object with the following potential properties:
-  //   - dependencies
-  //   - peerDependencies
-  //   - optionalDependencies
-  //   - devDependencies
-  //   - peerDependenciesMeta
-  //   Each is an array of package specifiers, which would be passed to
-  //   `npm install`. They're added to the root node's requirements, and
-  //   then the tree is built.
+  // add: Array of package specifiers to add at the top level.  Each of
+  //   these will be resolved with pacote.manifest if the name can't be
+  //   determined from the spec.  (Eg, `github:foo/bar` vs `foo@somespec`.)
+  //   The dep will be saved in the location where it already exists,
+  //   (or pkg.dependencies) unless a different saveType is specified.
+  // saveType: Save added packages in a specific dependency set.
+  //   - null (default) Wherever they exist already, or 'dependencies'
+  //   - prod: definitely in 'dependencies'
+  //   - optional: in 'optionalDependencies'
+  //   - dev: devDependencies
+  //   - peer: save in peerDependencies, and remove any optional flag from
+  //     peerDependenciesMeta if one exists
+  //   - peerOptional: save in peerDependencies, and add a
+  //     peerDepsMeta[name].optional flag
+  // saveBundle: add newly added deps to the bundleDependencies list
   // update: Either `true` to just go ahead and update everything, or an
   //   object with any or all of the following fields:
   //   - all: boolean.  set to true to just update everything

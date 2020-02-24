@@ -26,9 +26,9 @@ module.exports = (gitArgs, gitOpts, opts = {}) => {
       })
       .then(({stdout}) => stdout)
   }, opts.retry !== null && opts.retry !== undefined ? opts.retry : {
-    retries: opts['fetch-retries'] || 2,
-    factor: opts['fetch-retry-factor'] || 10,
-    maxTimeout: opts['fetch-retry-maxtimeout'] || 60000,
-    minTimeout: opts['fetch-retry-mintimeout'] || 1000,
+    retries: opts.fetchRetries || 2,
+    factor: opts.fetchRetryFactor || 10,
+    maxTimeout: opts.fetchRetryMaxtimeout || 60000,
+    minTimeout: opts.fetchRetryMintimeout || 1000,
   })
 }

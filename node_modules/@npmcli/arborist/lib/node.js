@@ -33,6 +33,7 @@ const Edge = require('./edge.js')
 const Inventory = require('./inventory.js')
 const Shrinkwrap = require('./shrinkwrap.js')
 const {normalize} = require('read-package-json-fast')
+const {getPaths: getBinPaths} = require('bin-links')
 
 /* istanbul ignore next */
 const dassert = /\barborist\b/.test(process.env.NODE_DEBUG || '')
@@ -53,6 +54,7 @@ const _refreshLocation = Symbol('_refreshLocation')
 const _refreshTopMeta = Symbol('_refreshTopMeta')
 const _refreshPath = Symbol('_refreshPath')
 const _delistFromMeta = Symbol('_delistFromMeta')
+const _global = Symbol.for('global')
 
 const relpath = require('./relpath.js')
 const consistentResolve = require('./consistent-resolve.js')
@@ -84,7 +86,11 @@ class Node {
       optional = true,
       devOptional = true,
       peer = true,
+      global = false,
     } = options
+
+    // true if part of a global install
+    this[_global] = global
 
     this.errors = error ? [error] : []
     const pkg = normalize(options.pkg || {})
@@ -192,22 +198,25 @@ class Node {
     this[_loadDeps]()
   }
 
+  get global () {
+    return this.root[_global]
+  }
+
+  // true for packages installed directly in the global node_modules folder
+  get globalTop () {
+    return this.global && this.parent.isRoot
+  }
+
   get binPaths () {
     if (!this.parent)
       return []
 
-    // just use a string resolution rather than path functions because
-    // we already know that the path is .../node_modules/node.name
-    const base = this.path.slice(0, -1 * this.name.length)
-    const nmbin = resolve(base, '.bin')
-
-    const paths = []
-    for (const bin of Object.keys(this[_package].bin || {})) {
-      paths.push(resolve(nmbin, bin))
-      paths.push(resolve(nmbin, bin + '.cmd'))
-      paths.push(resolve(nmbin, bin + '.ps1'))
-    }
-    return paths
+    return getBinPaths({
+      pkg: this[_package],
+      path: this.path,
+      global: this.global,
+      top: this.globalTop,
+    })
   }
 
   get hasInstallScript () {
