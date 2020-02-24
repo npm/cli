@@ -501,14 +501,6 @@ using
 If the request URI already has a query string, it will be merged with
 `opts.query`, preferring `opts.query` values.
 
-##### <a name="opts-refer"></a> `opts.refer`
-
-* Type: String
-* Default: null
-
-Value to use for the `Referer` header. The npm CLI itself uses this to serialize
-the npm command line using the given request.
-
 ##### <a name="opts-registry"></a> `opts.registry`
 
 * Type: URL

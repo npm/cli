@@ -113,7 +113,6 @@ function regFetch (uri, /* istanbul ignore next */ opts_ = {}) {
     method: method,
     noProxy: opts.noProxy,
     proxy: opts.httpsProxy || opts.proxy,
-    referer: opts.refer,
     retry: opts.retry ? opts.retry : {
       retries: opts.fetchRetries,
       factor: opts.fetchRetryFactor,
@@ -176,11 +175,16 @@ function getCacheMode (opts) {
 function getHeaders (registry, uri, opts) {
   const headers = Object.assign({
     'npm-in-ci': !!opts.isFromCI,
-    'npm-scope': opts.projectScope,
-    'npm-session': opts.npmSession,
-    'user-agent': opts.userAgent,
-    referer: opts.refer
+    'user-agent': opts.userAgent
   }, opts.headers || {})
+
+  if (opts.projectScope) {
+    headers['npm-scope'] = opts.projectScope
+  }
+
+  if (opts.npmSession) {
+    headers['npm-session'] = opts.npmSession
+  }
 
   const auth = getAuth(registry, opts)
   // If a tarball is hosted on a different place than the manifest, only send

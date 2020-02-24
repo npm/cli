@@ -113,6 +113,14 @@ See below for valid `opts` values.
 
 ### Options
 
+Options are passed to
+[`npm-registry-fetch`](http://npm.im/npm-registry-fetch) and
+[`cacache`](http://npm.im/cacache), so in addition to these, anything for
+those modules can be given to pacote as well.
+
+Options object is cloned, and mutated along the way to add integrity,
+resolved, and other properties, as they are determined.
+
 * `cache` Where to store cache entries and temp files.  Passed to
   [`cacache`](http://npm.im/cacache).  Defaults to the same cache directory
   that npm will use by default, based on platform and environment.
@@ -140,6 +148,10 @@ See below for valid `opts` values.
   packument.  Defaults to `latest`.
 * `registry` The npm registry to use by default.  Defaults to
   `https://registry.npmjs.org/`.
+* `fullMetadata` Fetch the full metadata from the registry for packuments,
+  including information not strictly required for installation (author,
+  description, etc.)  Defaults to `true` when `before` is set, since the
+  version publish time is part of the extended packument metadata.
 
 ## Extracted File Modes
 

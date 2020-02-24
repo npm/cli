@@ -14,6 +14,7 @@ binaries and man pages for Javascript packages
 * [Contributing](#contributing)
 * [API](#api)
   * [`binLinks`](#binLinks)
+  * [`binLinks.getPaths()`](#getPaths)
 
 ### Example
 
@@ -58,6 +59,13 @@ jump in if you'd like to, or even ask us questions if something isn't clear.
 #### <a name="binLinks"></a> `> binLinks({path, pkg, force, global, top})`
 
 Returns a Promise that resolves when the requisite things have been linked.
+
+#### <a name="getPaths"></a> `> binLinks.getPaths({path, pkg, global, top })`
+
+Returns an array of all the paths of links and shims that _might_ be
+created (assuming that they exist!) for the package at the specified path.
+
+Does not touch the filesystem.
 
 ##### Example
 

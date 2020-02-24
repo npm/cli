@@ -5,35 +5,96 @@ const removeFromOthers = (name, type, pkg) => {
     'dependencies',
     'optionalDependencies',
     'devDependencies',
+    'peerDependenciesMeta',
+    'peerDependencies',
   ])
-  // these two ride along together
-  if (type !== 'peerDependencies' && type !== 'peerDependenciesMeta') {
-    others.delete(type)
-    others.add('peerDependenciesMeta')
-    others.add('peerDependencies')
+
+  switch (type) {
+    case 'prod':
+      others.delete('dependencies')
+      break
+    case 'dev':
+      others.delete('devDependencies')
+      break
+    case 'optional':
+      others.delete('optionalDependencies')
+      break
+    case 'peer':
+    case 'peerOptional':
+      others.delete('peerDependencies')
+      others.delete('peerDependenciesMeta')
+      break
   }
+
   for (const other of others) {
     deleteSubKey(pkg, other, name)
   }
 }
 
-const add = (pkg, add) => {
-  // if adding to one kind of dependency set, remove from others
-  for (const [type, specs] of Object.entries(add)) {
-    if (type === 'bundleDependencies') {
-      pkg.bundleDependencies = pkg.bundleDependencies || []
-      pkg.bundleDependencies.push(...specs)
-    } else {
-      // keep the existing value if it's ''
-      for (const [name, spec] of Object.entries(specs)) {
-        removeFromOthers(name, type, pkg)
-        pkg[type] = pkg[type] || {}
-        if (spec !== '' || pkg[type][name] === undefined)
-          pkg[type][name] = spec
-      }
-    }
+const add = ({pkg, add, saveBundle, saveType}) => {
+  for (const spec of add) {
+    addSingle({pkg, spec, saveBundle, saveType})
   }
   return pkg
+}
+
+const addSingle = ({pkg, spec, saveBundle, saveType}) => {
+  if (!saveType)
+    saveType = getSaveType(pkg, spec)
+
+  const {name} = spec
+  removeFromOthers(name, saveType, pkg)
+  const type = saveType === 'prod' ? 'dependencies'
+    : saveType === 'dev' ? 'devDependencies'
+    : saveType === 'optional' ? 'optionalDependencies'
+    : saveType === 'peer' || saveType === 'peerOptional' ? 'peerDependencies'
+    : /* istanbul ignore next */ null
+
+  pkg[type] = pkg[type] || {}
+  if (spec.rawSpec !== '' || pkg[type][name] === undefined)
+    pkg[type][name] = spec.rawSpec || '*'
+
+  if (saveType === 'peer' || saveType === 'peerOptional') {
+    const pdm = pkg.peerDependenciesMeta || {}
+    if (saveType === 'peer' && pdm[name] && pdm[name].optional)
+      pdm[name].optional = false
+    else if (saveType === 'peerOptional') {
+      pdm[name] = pdm[name] || {}
+      pdm[name].optional = true
+      pkg.peerDependenciesMeta = pdm
+    }
+  }
+
+  if (saveBundle) {
+    // keep it sorted, keep it unique
+    const bd = new Set(pkg.bundleDependencies || [])
+    bd.add(spec.name)
+    pkg.bundleDependencies = [...bd].sort((a, b) => a.localeCompare(b))
+  }
+}
+
+const getSaveType = (pkg, spec) => {
+  const {name} = spec
+  const {
+    // these names are so lonnnnngggg
+    dependencies: deps,
+    devDependencies: devDeps,
+    optionalDependencies: optDeps,
+    peerDependencies: peerDeps,
+    peerDependenciesMeta: peerDepsMeta,
+  } = pkg
+
+  if (devDeps && devDeps[name] !== undefined)
+    return 'dev'
+  else if (optDeps && optDeps[name] !== undefined)
+    return 'optional'
+  else if (peerDeps && peerDeps[name] !== undefined) {
+    if (peerDepsMeta && peerDepsMeta[name] && peerDepsMeta[name].optional)
+      return 'peerOptional'
+    else
+      return 'peer'
+  } else
+    return 'prod'
 }
 
 const deleteSubKey = (obj, k, sk) => {
