@@ -47,7 +47,7 @@ function fromUrl (giturl, opts) {
       var gitHostInfo = gitHosts[gitHostName]
       var auth = null
       if (parsed.auth && authProtocols[parsed.protocol]) {
-        auth = decodeURIComponent(parsed.auth)
+        auth = parsed.auth
       }
       var committish = parsed.hash ? decodeURIComponent(parsed.hash.substr(1)) : null
       var user = null
@@ -106,7 +106,15 @@ function fixupUnqualifiedGist (giturl) {
 
 function parseGitUrl (giturl) {
   var matched = giturl.match(/^([^@]+)@([^:/]+):[/]?((?:[^/]+[/])?[^/]+?)(?:[.]git)?(#.*)?$/)
-  if (!matched) return url.parse(giturl)
+  if (!matched) {
+    var legacy = url.parse(giturl)
+    if (legacy.auth) {
+      var whatwg = new url.URL(giturl)
+      legacy.auth = whatwg.username || ''
+      if (whatwg.password) legacy.auth += ':' + whatwg.password
+    }
+    return legacy
+  }
   return {
     protocol: 'git+ssh:',
     slashes: true,
