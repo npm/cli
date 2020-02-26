@@ -1,3 +1,11 @@
+## 6.14.1 (2020-02-26)
+
+* [`303e5c11e`](https://github.com/npm/cli/commit/303e5c11e7db34cf014107aecd2e81c821bfde8d)
+  `hosted-git-info@2.8.7`
+  Fixes a regression where scp-style git urls are passed to the WhatWG URL
+  parser, which does not handle them properly.
+  ([@isaacs](https://github.com/isaacs))
+
 ## 6.14.0 (2020-02-25)
 
 ### FEATURES
