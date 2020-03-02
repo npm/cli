@@ -75,7 +75,7 @@
     "json-parse-better-errors": "^1.0.2",
     "lazy-property": "~1.0.0",
     "libcipm": "^4.0.7",
-    "libnpmaccess": "^3.0.2",
+    "libnpmaccess": "^4.0.0",
     "libnpmhook": "^6.0.0",
     "libnpmorg": "^2.0.0",
     "libnpmpublish": "^1.1.2",
