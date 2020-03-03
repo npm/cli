@@ -1,3 +1,17 @@
+## 6.14.2 (2020-03-03)
+
+### DOCUMENTATION
+* [`f9248c0be`](https://github.com/npm/cli/commit/f9248c0be63fba37a30098dc9215c752474380e3) [#730](https://github.com/npm/cli/pull/730) chore(docs): update unpublish docs & policy reference ([@nomadtechie](https://github.com/nomadtechie), [@mikemimik](https://github.com/mikemimik))
+
+### DEPENDENCIES
+
+* [`909cc3918`](https://github.com/npm/cli/commit/909cc39180a352f206898481add5772206c8b65f) `hosted-git-info@2.8.8` ([@darcyclarke](https://github.com/darcyclarke))
+  * [`5038b1891`](https://github.com/npm/hosted-git-info/commit/5038b1891a61ca3cd7453acbf85d7011fe0086bb) fix: regression in old node versions w/ respect to url.URL implmentation
+* [`9204ffa58`](https://github.com/npm/cli/commit/9204ffa584c140c5e22b1ee37f6df2c98f5dc70b) `npm-profile@4.0.4` ([@isaacs](https://github.com/isaacs))
+  * [`6bcf0860a`](https://github.com/npm/npm-profile/commit/6bcf0860a3841865099d0115dbcbde8b78109bd9) fix: treat non-http/https login urls as invalid
+* [`0365d39bd`](https://github.com/npm/cli/commit/0365d39bdc74960a18caac674f51d0e2a98b31e6) `glob@7.1.6` ([@isaacs](https://github.com/isaacs))
+* [`dab030536`](https://github.com/nodejs/node-gyp/commit/dab030536b6a70ecae37debc74c581db9e5280fd) `node-gyp@5.1.0` ([@rvagg](https://github.com/rvagg))
+
 ## 6.14.1 (2020-02-26)
 
 * [`303e5c11e`](https://github.com/npm/cli/commit/303e5c11e7db34cf014107aecd2e81c821bfde8d)
