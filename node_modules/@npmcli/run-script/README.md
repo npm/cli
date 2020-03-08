@@ -11,6 +11,9 @@ runScript({
   // required, the script to run
   event: 'install',
 
+  // extra args to pass to the command, defaults to []
+  args: [],
+
   // required, the folder where the package lives
   path: '/path/to/package/folder',
 
