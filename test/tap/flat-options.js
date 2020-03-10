@@ -155,11 +155,7 @@ t.test('get preferOffline from cache-min', t => {
   t.equal(opts.preferOffline, true, 'got preferOffline from cache min')
   logs.length = 0
   t.equal(opts.cacheMin, 9999999, 'opts.cacheMin is set')
-  t.match(logs, [[
-    'warn',
-    'FIXME',
-    'using deprecated cacheMin option, should use offline/preferOffline/preferOnline'
-  ]])
+  t.match(logs, [])
   logs.length = 0
   t.end()
 })
@@ -173,11 +169,7 @@ t.test('get preferOnline from cache-max', t => {
   t.equal(opts.preferOnline, true, 'got preferOnline from cache min')
   logs.length = 0
   t.equal(opts.cacheMax, -1, 'opts.cacheMax is set')
-  t.match(logs, [[
-    'warn',
-    'FIXME',
-    'using deprecated cacheMax option, should use offline/preferOffline/preferOnline'
-  ]])
+  t.match(logs, [])
   logs.length = 0
   t.end()
 })
@@ -185,11 +177,7 @@ t.test('get preferOnline from cache-max', t => {
 t.test('tag emits warning', t => {
   const npm = new Mocknpm({ tag: 'foobar' })
   t.equal(flatOptions(npm).tag, 'foobar', 'tag is foobar')
-  t.match(logs, [[
-    'warn',
-    'FIXME',
-    'using tag option, should be defaultTag'
-  ]])
+  t.match(logs, [])
   logs.length = 0
   t.end()
 })
@@ -198,11 +186,7 @@ t.test('scope emits warning', t => {
   const npm = new Mocknpm()
   logs.length = 0
   t.equal(flatOptions(npm).scope, '@npmcli')
-  t.match(logs, [[
-    'warn',
-    'FIXME',
-    'using opts.scope instead of opts.projectScope'
-  ]])
+  t.match(logs, [])
   logs.length = 0
   t.end()
 })
