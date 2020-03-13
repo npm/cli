@@ -83,6 +83,7 @@
     "libnpmpublish": "^1.1.2",
     "libnpmsearch": "^3.0.0",
     "libnpmteam": "^2.0.1",
+    "libnpmversion": "^1.0.2",
     "libnpx": "^10.2.2",
     "lock-verify": "^2.1.0",
     "lockfile": "^1.0.4",
