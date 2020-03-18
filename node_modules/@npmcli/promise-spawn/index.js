@@ -35,16 +35,24 @@ const promiseSpawnUid = (cmd, args, opts, extra) =>
     const stdout = []
     const stderr = []
     const reject = er => rej(Object.assign(er, {
+      cmd,
+      args,
       ...stdioResult(stdout, stderr, opts),
       ...extra,
     }))
     proc.on('error', reject)
-    if (proc.stdout)
+    if (proc.stdout) {
       proc.stdout.on('data', c => stdout.push(c)).on('error', reject)
-    if (proc.stderr)
+      proc.stdout.on('error', er => reject(er))
+    }
+    if (proc.stderr) {
       proc.stderr.on('data', c => stderr.push(c)).on('error', reject)
+      proc.stderr.on('error', er => reject(er))
+    }
     proc.on('close', (code, signal) => {
       const result = {
+        cmd,
+        args,
         code,
         signal,
         ...stdioResult(stdout, stderr, opts),

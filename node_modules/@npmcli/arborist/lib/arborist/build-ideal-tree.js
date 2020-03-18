@@ -110,6 +110,10 @@ module.exports = cls => class IdealTreeBuilder extends Tracker(Virtual(Actual(cl
     this[_manifests] = new Map()
   }
 
+  get explicitRequests () {
+    return new Set(this[_explicitRequests])
+  }
+
   // public method
   buildIdealTree (options = {}) {
     if (this.idealTree)
