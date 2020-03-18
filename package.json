@@ -91,7 +91,7 @@
     "lru-cache": "^5.1.1",
     "meant": "~1.0.1",
     "mississippi": "^3.0.0",
-    "mkdirp": "~0.5.1",
+    "mkdirp": "^0.5.3",
     "move-concurrently": "^1.0.1",
     "node-gyp": "^5.1.0",
     "nopt": "~4.0.1",
