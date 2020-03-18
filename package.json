@@ -125,7 +125,7 @@
     "readdir-scoped-modules": "^1.1.0",
     "request": "^2.88.0",
     "retry": "^0.12.0",
-    "rimraf": "^2.6.3",
+    "rimraf": "^2.7.1",
     "safe-buffer": "^5.1.2",
     "semver": "^5.7.1",
     "sha": "^3.0.0",
