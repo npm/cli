@@ -35,7 +35,6 @@ const promiseCallLimit = require('promise-call-limit')
 const Ideal = require('./build-ideal-tree.js')
 const optionalSet = require('../optional-set.js')
 
-const _diff = Symbol('diff')
 const _retiredPaths = Symbol('retiredPaths')
 const _retiredUnchanged = Symbol('retiredUnchanged')
 const _sparseTreeDirs = Symbol('sparseTreeDirs')
@@ -109,7 +108,7 @@ module.exports = cls => class Reifier extends Ideal(cls) {
     this[_scriptShell] = scriptShell
     this[_savePrefix] = savePrefix
 
-    this[_diff] = null
+    this.diff = null
     this[_retiredPaths] = {}
     this[_retiredUnchanged] = {}
     this[_sparseTreeDirs] = new Set()
@@ -169,11 +168,11 @@ module.exports = cls => class Reifier extends Ideal(cls) {
 
     // find all the nodes that need to change between the actual
     // and ideal trees.
-    this[_diff] = Diff.calculate({
+    this.diff = Diff.calculate({
       actual: this.actualTree,
       ideal: this.idealTree,
     })
-    for (const node of this[_diff].removed) {
+    for (const node of this.diff.removed) {
       this[_addNodeToTrashList](node)
     }
   }
@@ -199,7 +198,7 @@ module.exports = cls => class Reifier extends Ideal(cls) {
   // changed or removed, so that we can rollback if necessary.
   [_retireShallowNodes] () {
     const moves = this[_retiredPaths] = {}
-    for (const diff of this[_diff].children) {
+    for (const diff of this.diff.children) {
       if (diff.action === 'CHANGE' || diff.action === 'REMOVE') {
         // we'll have to clean these up at the end, so add them to the list
         this[_addNodeToTrashList](diff.actual, true)
@@ -259,7 +258,7 @@ module.exports = cls => class Reifier extends Ideal(cls) {
   [_createSparseTree] () {
     // if we call this fn again, we look for the previous list
     // so that we can avoid making the same directory multiple times
-    const dirs = this[_diff].leaves
+    const dirs = this.diff.leaves
       .filter(diff => {
         return (diff.action === 'ADD' || diff.action === 'CHANGE') &&
           !this[_sparseTreeDirs].has(diff.ideal.path)
@@ -289,7 +288,7 @@ module.exports = cls => class Reifier extends Ideal(cls) {
   // we need to unpack them, read that shrinkwrap file, and then update
   // the tree by calling loadVirtual with the node as the root.
   [_loadShrinkwrapsAndUpdateTrees] (seen = new Set()) {
-    const shrinkwraps = this[_diff].leaves
+    const shrinkwraps = this.diff.leaves
       .filter(d => (d.action === 'CHANGE' || d.action === 'ADD') &&
         d.ideal.hasShrinkwrap && !seen.has(d.ideal) &&
         !this[_trashList].has(d.ideal.path))
@@ -498,7 +497,7 @@ module.exports = cls => class Reifier extends Ideal(cls) {
     const bundlesByDepth = new Map()
     let maxBundleDepth = -1
     dfwalk({
-      tree: this[_diff],
+      tree: this.diff,
       visit: diff => {
         const node = diff.ideal
         if (node && !node.isRoot && node.package.bundleDependencies &&
@@ -524,7 +523,7 @@ module.exports = cls => class Reifier extends Ideal(cls) {
   [_unpackNewModules] () {
     const unpacks = []
     dfwalk({
-      tree: this[_diff],
+      tree: this.diff,
       filter: diff => diff.ideal,
       visit: diff => {
         const node = diff.ideal
@@ -555,7 +554,7 @@ module.exports = cls => class Reifier extends Ideal(cls) {
     // shallowest nodes that we moved aside in the first place.
     const moves = this[_retiredPaths]
     this[_retiredUnchanged] = {}
-    return promiseAllRejectLate(this[_diff].children.map(diff => {
+    return promiseAllRejectLate(this.diff.children.map(diff => {
       const realFolder = (diff.actual || diff.ideal).path
       const retireFolder = moves[realFolder]
       this[_retiredUnchanged][retireFolder] = []
@@ -620,7 +619,7 @@ module.exports = cls => class Reifier extends Ideal(cls) {
     // deps before attempting to build it itself
     const installedNodes = []
     dfwalk({
-      tree: this[_diff],
+      tree: this.diff,
       leave: diff => installedNodes.push(diff.ideal),
       // process adds before changes, ignore removals
       getChildren: diff => diff && diff.children,
