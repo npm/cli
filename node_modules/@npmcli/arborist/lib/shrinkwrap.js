@@ -27,6 +27,7 @@ const lockfileVersion = 2
 
 const YarnLock = require('./yarn-lock.js')
 const {promisify} = require('util')
+const rimraf = promisify(require('rimraf'))
 const fs = require('fs')
 const readFile = promisify(fs.readFile)
 const writeFile = promisify(fs.writeFile)
@@ -654,7 +655,17 @@ class Shrinkwrap {
 
     const json = stringify(this.commit(), swKeyOrder, this.indent)
     return Promise.all([
-      writeFile(this.filename, json),
+      writeFile(this.filename, json).catch(er => {
+        if (this.hiddenLockfile) {
+          // well, we did our best.
+          // if we reify, and there's nothing there, then it might be lacking
+          // a node_modules folder, but then the lockfile is not important.
+          // Remove the file, so that in case there WERE deps, but we just
+          // failed to update the file for some reason, it's not out of sync.
+          return rimraf(this.filename)
+        }
+        throw er
+      }),
       this.yarnLock && this.yarnLock.entries.size &&
         writeFile(this.path + '/yarn.lock', this.yarnLock.toString())
     ])
