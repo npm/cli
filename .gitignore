@@ -25,3 +25,4 @@ npm-debug.log
 /test/npm_cache*
 /node_modules/.cache
 .DS_Store
+**/.DS_Store
