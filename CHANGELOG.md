@@ -1,4 +1,4 @@
-## 6.14.4 (2020-03-24)
+## 6.14.5 (2020-03-25)
 
 ### DEPENDENCIES
 
@@ -14,6 +14,10 @@
 * [`136832dca`](https://github.com/npm/cli/commit/136832dcae13cb5518b1fe17bd63ea9b2a195f92) `mkdirp@0.5.4`
 * [`8bf99b2b5`](https://github.com/npm/cli/commit/8bf99b2b58c14d45dc6739fce77de051ebc8ffb7) [#1053](https://github.com/npm/cli/pull/1053) deps: updates term-size to use signed binary
   * [`d2f08a1bdb`](https://github.com/nodejs/node/commit/d2f08a1bdb78655c4a3fc49825986c148d14117e) ([@rvagg](https://github.com/rvagg))
+
+## 6.14.4 (2020-03-25)
+
+* Note: Skipped patch version; Publish failed
 
 ## 6.14.3 (2020-03-19)
 
