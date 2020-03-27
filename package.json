@@ -80,6 +80,7 @@
     "libnpmaccess": "^4.0.0",
     "libnpmhook": "^6.0.0",
     "libnpmorg": "^2.0.0",
+    "libnpmpack": "^2.0.0",
     "libnpmpublish": "^3.0.1",
     "libnpmsearch": "^3.0.0",
     "libnpmteam": "^2.0.1",
