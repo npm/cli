@@ -110,15 +110,6 @@ test('check configs', function (t) {
     }
   }
 
-  // TODO - needs better figgy-pudding introspection
-  // for (var c2 in DOC) {
-  //   if (c2 !== 'versions' && c2 !== 'version' && c2 !== 'init.version' && c2 !== 'ham-it-up') {
-  //     t.ok(CONFS[c2], 'config in doc should be used somewhere ' + c2)
-  //     t.ok(types.indexOf(c2) !== -1, 'should be defined in npmconf ' + c2)
-  //     t.ok(defaults.indexOf(c2) !== -1, 'should have default in npmconf ' + c2)
-  //   }
-  // }
-
   types.forEach(function (c) {
     if (!c.match(/^_/) && c !== 'argv' && !c.match(/^versions?$/) && c !== 'ham-it-up') {
       t.ok(DOC[c], 'defined type should be documented ' + c)
