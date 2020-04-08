@@ -73,7 +73,7 @@ All interactions in the npm repository are covered by the [npm Code of Conduct](
 # Make sure you install the dependencies first before running tests.
 $ npm install
 
-# Run tests for the CLI (it could take awhile).
+# Run tests for the CLI (it could take a while).
 $ npm run test
 ```
 
@@ -97,7 +97,7 @@ $ make link
 #################
 # ALTERNATIVELY
 #################
-# If ou're working on a feature or bug, you can run the same command on your
+# If you're working on a feature or bug, you can run the same command on your
 # working branch and link that code.
 
 # Create new branch to work from (there are many ways)
@@ -123,14 +123,14 @@ We often want to know if the bug we've fixed for the feature we've added has any
 1. Make a pull-request against this repository
 2. Add the following comment to the pull-request: "`test this please ✅`"
 
-This will trigger the [benmark suite](https://github.com/npm/benchmarks) to run against your pull-request, and when it's finished running it will post a comment on your pull-request just like bellow. You'll be able to see the results from the suite inline in your pull-request.
+This will trigger the [benchmark suite](https://github.com/npm/benchmarks) to run against your pull-request, and when it's finished running it will post a comment on your pull-request just like below. You'll be able to see the results from the suite inline in your pull-request.
 
 > You'll notice that the bot-user will also add a 🚀 reaction to your comment to
 let you know that it's sent the request to start the benchmark suite.
 
 ![image](https://user-images.githubusercontent.com/2818462/72312698-e2e57f80-3656-11ea-9fcf-4a8f6b97b0d1.png)
 
-If you've updated your pull-reuqest and you'd like to run the the benchmark suite again, simple update your original comment, by adding `test this please ✅` again, or simply just adding another emoji to the **end**. _(The trigger is the phrase "test this please ✅" at the beginning of a comment. Updates will trigger as well, so long as the phrase stays at the beginning.)_.
+If you've updated your pull-request and you'd like to run the the benchmark suite again, simple update your original comment, by adding `test this please ✅` again, or simply just adding another emoji to the **end**. _(The trigger is the phrase "test this please ✅" at the beginning of a comment. Updates will trigger as well, so long as the phrase stays at the beginning.)_.
 
 ![image](https://user-images.githubusercontent.com/2818462/72313006-ec231c00-3657-11ea-9bd9-227634d67362.png)
 
@@ -186,7 +186,6 @@ You'll need a few things installed in order to update and test the CLI project d
 
 > Package vendoring is commonly referred to as the case where dependent packages are stored in the same place as your project. That usually means you dependencies are checked into your source management system, such as Git.
 
-The CLI project vendors it's dependencies in the `node_modules/` folder. Meaning all the dependencies that the CLI project uses are contained withing the project itself. This is represented by the `bundledDependencies` section in the root level `package.json` file. The main reason for this is because the `npm` CLI project is distributed with the NodeJS runtime and needs to work out of the box, which means all dependencies need to be available after the runtime is installed.
+The CLI project vendors its dependencies in the `node_modules/` folder. Meaning all the dependencies that the CLI project uses are contained withing the project itself. This is represented by the `bundledDependencies` section in the root level `package.json` file. The main reason for this is because the `npm` CLI project is distributed with the NodeJS runtime and needs to work out of the box, which means all dependencies need to be available after the runtime is installed.
 
 There are a couple scripts created to help manage this process in the `scripts/` folder.
-
