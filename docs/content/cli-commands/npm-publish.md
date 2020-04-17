@@ -60,22 +60,22 @@ the specified registry.
 
 Once a package is published with a given name and version, that
 specific name and version combination can never be used again, even if
-it is removed with [`npm unpublish`](/cli-commands/npm-unpublish).
+it is removed with [`npm unpublish`](/cli-commands/unpublish).
 
 As of `npm@5`, both a sha1sum and an integrity field with a sha512sum of the
 tarball will be submitted to the registry during publication. Subsequent
 installs will use the strongest supported algorithm to verify downloads.
 
-Similar to `--dry-run` see [`npm pack`](/cli-commands/npm-pack), which figures out the files to be
+Similar to `--dry-run` see [`npm pack`](/cli-commands/pack), which figures out the files to be
 included and packs them into a tarball to be uploaded to the registry.
 
 ### See Also
 
 * [npm registry](/using-npm/registry)
 * [npm scope](/using-npm/scope)
-* [npm adduser](/cli-commands/npm-adduser)
-* [npm owner](/cli-commands/npm-owner)
-* [npm deprecate](/cli-commands/npm-deprecate)
-* [npm dist-tag](/cli-commands/npm-dist-tag)
-* [npm pack](/cli-commands/npm-pack)
-* [npm profile](/cli-commands/npm-profile)
+* [npm adduser](/cli-commands/adduser)
+* [npm owner](/cli-commands/owner)
+* [npm deprecate](/cli-commands/deprecate)
+* [npm dist-tag](/cli-commands/dist-tag)
+* [npm pack](/cli-commands/pack)
+* [npm profile](/cli-commands/profile)

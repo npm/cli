@@ -197,7 +197,8 @@ npm also sets a top-level "maintainers" field with your npm user info.
 ### funding
 
 You can specify an object containing an URL that provides up-to-date
-information about ways to help fund development of your package:
+information about ways to help fund development of your package, or
+a string URL, or an array of these:
 
     "funding": {
       "type" : "individual",
@@ -209,10 +210,26 @@ information about ways to help fund development of your package:
       "url" : "https://www.patreon.com/my-account"
     }
 
+    "funding": "http://example.com/donate"
+
+    "funding": [
+      {
+        "type" : "individual",
+        "url" : "http://example.com/donate"
+      },
+      "http://example.com/donateAlso",
+      {
+        "type" : "patreon",
+        "url" : "https://www.patreon.com/my-account"
+      }
+    ]
+
+
 Users can use the `npm fund` subcommand to list the `funding` URLs of all
 dependencies of their project, direct and indirect. A shortcut to visit each
 funding url is also available when providing the project name such as:
-`npm fund <projectname>`.
+`npm fund <projectname>` (when there are multiple URLs, the first one will be
+visited)
 
 ### files
 
@@ -516,7 +533,7 @@ See [semver](/using-npm/semver) for more details about specifying version ranges
 * `range1 || range2` Passes if either range1 or range2 are satisfied.
 * `git...` See 'Git URLs as Dependencies' below
 * `user/repo` See 'GitHub URLs' below
-* `tag` A specific version tagged and published as `tag`  See [`npm dist-tag`](/cli-commands/npm-dist-tag)
+* `tag` A specific version tagged and published as `tag`  See [`npm dist-tag`](/cli-commands/dist-tag)
 * `path/path/path` See [Local Paths](#local-paths) below
 
 For example, these are all valid:
@@ -740,7 +757,8 @@ If a dependency can be used, but you would like npm to proceed if it cannot be
 found or fails to install, then you may put it in the `optionalDependencies`
 object.  This is a map of package name to version or url, just like the
 `dependencies` object.  The difference is that build failures do not cause
-installation to fail.
+installation to fail.  Running `npm install --no-optional` will prevent these
+dependencies from being installed.
 
 It is still your program's responsibility to handle the lack of the
 dependency.  For example, something like this:
@@ -892,10 +910,10 @@ npm will default some values based on package contents.
 ### SEE ALSO
 
 * [semver](/using-npm/semver)
-* [npm init](/cli-commands/npm-init)
-* [npm version](/cli-commands/npm-version)
-* [npm config](/cli-commands/npm-config)
-* [npm help](/cli-commands/npm-help)
-* [npm install](/cli-commands/npm-install)
-* [npm publish](/cli-commands/npm-publish)
-* [npm uninstall](/cli-commands/npm-uninstall)
+* [npm init](/cli-commands/init)
+* [npm version](/cli-commands/version)
+* [npm config](/cli-commands/config)
+* [npm help](/cli-commands/help)
+* [npm install](/cli-commands/install)
+* [npm publish](/cli-commands/publish)
+* [npm uninstall](/cli-commands/uninstall)

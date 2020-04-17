@@ -11,6 +11,7 @@ const request = require('request')
 const mkdir = require('mkdirp')
 const processRelease = require('./process-release')
 const win = process.platform === 'win32'
+const getProxyFromURI = require('./proxy')
 
 function install (fs, gyp, argv, callback) {
   var release = processRelease(argv, gyp, process.version, process.release)
@@ -224,8 +225,8 @@ function install (fs, gyp, argv, callback) {
         var installVersionPath = path.resolve(devDir, 'installVersion')
         fs.writeFile(installVersionPath, gyp.package.installVersion + '\n', deref)
 
-        // Only download SHASUMS.txt if not using tarPath override
-        if (!tarPath) {
+        // Only download SHASUMS.txt if we downloaded something in need of SHA verification
+        if (!tarPath || win) {
           // download SHASUMS.txt
           async++
           downloadShasums(deref)
@@ -323,7 +324,7 @@ function install (fs, gyp, argv, callback) {
 
             req.on('error', done)
             req.on('response', function (res) {
-              if (res.statusCode === 404) {
+              if (res.statusCode === 403 || res.statusCode === 404) {
                 if (arch === 'arm64') {
                   // Arm64 is a newer platform on Windows and not all node distributions provide it.
                   log.verbose(`${name} was not found in ${libUrl}`)
@@ -410,10 +411,7 @@ function download (gyp, env, url) {
   }
 
   // basic support for a proxy server
-  var proxyUrl = gyp.opts.proxy ||
-              env.http_proxy ||
-              env.HTTP_PROXY ||
-              env.npm_config_proxy
+  var proxyUrl = getProxyFromURI(gyp, env, url)
   if (proxyUrl) {
     if (/^https?:\/\//i.test(proxyUrl)) {
       log.verbose('download', 'using proxy url: "%s"', proxyUrl)

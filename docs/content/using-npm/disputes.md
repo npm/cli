@@ -105,7 +105,7 @@ If you see bad behavior like this, please report it to <abuse@npmjs.com> right
 away. **You are never expected to resolve abusive behavior on your own. We are
 here to help.**
 
-### Trademarkss
+### Trademarks
 
 If you think another npm publisher is infringing your trademark, such as by
 using a confusingly similar package name, email <abuse@npmjs.com> with a link to
@@ -134,4 +134,4 @@ License.
 ### See also
 
 * [npm registry](/using-npm/registry)
-* [npm owner](/cli-commands/npm-owner)
+* [npm owner](/cli-commands/owner)

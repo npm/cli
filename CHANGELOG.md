@@ -1,3 +1,109 @@
+## 6.14.4 (2020-03-24)
+
+### DEPENDENCIES
+
+* Bump `minimist@1.2.5` transitive dep to resolve security issue
+  * [`9c554fd8c`](https://github.com/npm/cli/commit/9c554fd8cd1e9aeb8eb122ccfa3c78d12af4097a) `update-notifier@2.5.0`
+  * bump `deep-extend@1.2.5`
+  * bump `deep-extend@0.6.0`
+  * bump `is-ci@1.2.1`
+  * bump `is-retry-allowed@1.2.0`
+  * bump `rc@1.2.8`
+  * bump `registry-auth-token@3.4.0`
+  * bump `widest-line@2.0.1`
+* [`136832dca`](https://github.com/npm/cli/commit/136832dcae13cb5518b1fe17bd63ea9b2a195f92) `mkdirp@0.5.4`
+* [`8bf99b2b5`](https://github.com/npm/cli/commit/8bf99b2b58c14d45dc6739fce77de051ebc8ffb7) [#1053](https://github.com/npm/cli/pull/1053) deps: updates term-size to use signed binary
+  * [`d2f08a1bdb`](https://github.com/nodejs/node/commit/d2f08a1bdb78655c4a3fc49825986c148d14117e) ([@rvagg](https://github.com/rvagg))
+
+## 6.14.3 (2020-03-19)
+
+### DOCUMENTATION
+
+* [`4ad221487`](https://github.com/npm/cli/commit4ad2214873cddfd4a0eff1bd188516b08fae9f9e) [#1020](https://github.com/npm/cli/pull/1020) docs(teams): updated team docs to reflect MFA workflow ([@blkdm0n](https://github.com/blkdm0n))
+* [`4a31a4ba2`](https://github.com/npm/cli/commit/4a31a4ba2db0a5db2d1d0890ee934ba1babb73a6) [#1034](https://github.com/npm/cli/pull/1034) docs: cleanup ([@ruyadorno](https://github.com/ruyadorno))
+* [`0eac801cd`](https://github.com/npm/cli/commit/0eac801cdef344e9fbda6270145e062211255b0e) [#1013](https://github.com/npm/cli/pull/1013) docs: fix links to cli commands ([@alenros](https://github.com/alenros))
+* [`7d8e5b99c`](https://github.com/npm/cli/commit/7d8e5b99c4ef8c394cffa7fc845f54a25ff37e3a) [#755](https://github.com/npm/cli/pull/755) docs: correction to `npm update -g` behaviour ([@johnkennedy9147](https://github.com/johnkennedy9147))
+
+### DEPENDENCIES
+
+* [`e11167646`](https://github.com/npm/cli/commit/e111676467f090f73802b97e8da7ece481b18f99) `mkdirp@0.5.3`
+  * [`c5b97d17d`](https://github.com/isaacs/node-mkdirp/commit/c5b97d17d45a22bcf4c815645cbb989dab57ddd8) fix: bump `minimist` dep to resolve security issue ([@isaacs](https://github.com/isaacs))
+* [`c50d679c6`](https://github.com/npm/cli/commit/c50d679c68b39dd03ad127d34f540ddcb1b1e804) `rimraf@2.7.1`
+* [`a2de99ff9`](https://github.com/npm/cli/commit/a2de99ff9e02425a3ccc25280f390178be755a36) `npm-registry-mock@1.3.1`
+* [`217debeb9`](https://github.com/npm/cli/commit/217debeb9812e037a6686cbf6ec67a0cd47fa68a) `npm-registry-couchapp@2.7.4`
+
+## 6.14.2 (2020-03-03)
+
+### DOCUMENTATION
+* [`f9248c0be`](https://github.com/npm/cli/commit/f9248c0be63fba37a30098dc9215c752474380e3) [#730](https://github.com/npm/cli/pull/730) chore(docs): update unpublish docs & policy reference ([@nomadtechie](https://github.com/nomadtechie), [@mikemimik](https://github.com/mikemimik))
+
+### DEPENDENCIES
+
+* [`909cc3918`](https://github.com/npm/cli/commit/909cc39180a352f206898481add5772206c8b65f) `hosted-git-info@2.8.8` ([@darcyclarke](https://github.com/darcyclarke))
+  * [`5038b1891`](https://github.com/npm/hosted-git-info/commit/5038b1891a61ca3cd7453acbf85d7011fe0086bb) fix: regression in old node versions w/ respect to url.URL implmentation
+* [`9204ffa58`](https://github.com/npm/cli/commit/9204ffa584c140c5e22b1ee37f6df2c98f5dc70b) `npm-profile@4.0.4` ([@isaacs](https://github.com/isaacs))
+  * [`6bcf0860a`](https://github.com/npm/npm-profile/commit/6bcf0860a3841865099d0115dbcbde8b78109bd9) fix: treat non-http/https login urls as invalid
+* [`0365d39bd`](https://github.com/npm/cli/commit/0365d39bdc74960a18caac674f51d0e2a98b31e6) `glob@7.1.6` ([@isaacs](https://github.com/isaacs))
+* [`dab030536`](https://github.com/nodejs/node-gyp/commit/dab030536b6a70ecae37debc74c581db9e5280fd) `node-gyp@5.1.0` ([@rvagg](https://github.com/rvagg))
+
+## 6.14.1 (2020-02-26)
+
+* [`303e5c11e`](https://github.com/npm/cli/commit/303e5c11e7db34cf014107aecd2e81c821bfde8d)
+  `hosted-git-info@2.8.7`
+  Fixes a regression where scp-style git urls are passed to the WhatWG URL
+  parser, which does not handle them properly.
+  ([@isaacs](https://github.com/isaacs))
+
+## 6.14.0 (2020-02-25)
+
+### FEATURES
+* [`30f170877`](https://github.com/npm/cli/commit/30f170877954acd036cb234a581e4eb155049b82) [#731](https://github.com/npm/cli/pull/731) add support for multiple funding sources ([@ljharb](https://github.com/ljharb) & [@ruyadorno](hhttps://github.com/ruyadorno/))
+
+### BUG FIXES
+* [`55916b130`](https://github.com/npm/cli/commit/55916b130ef52984584678f2cc17c15c1f031cb5) [#508](https://github.com/npm/cli/pull/508) fix: check `npm.config` before accessing its members ([@kaiyoma](https://github.com/kaiyoma))
+* [`7d0cd65b2`](https://github.com/npm/cli/commit/7d0cd65b23c0986b631b9b54d87bbe74902cc023) [#733](https://github.com/npm/cli/pull/733) fix: access grant with unscoped packages ([@netanelgilad](https://github.com/netanelgilad))
+* [`28c3d40d6`](https://github.com/npm/cli/commit/28c3d40d65eef63f9d6ccb60b99ac57f5057a46e), [`0769c5b20`](https://github.com/npm/cli/commit/30f170877954acd036cb234a581e4eb155049b82) [#945](https://github.com/npm/cli/pull/945), [#697](https://github.com/npm/cli/pull/697) fix: allow new major versions of node to be automatically considered "supported" ([@isaacs](https://github.com/isaacs), [@ljharb](https://github.com/ljharb))
+
+### DEPENDENCIES
+* [`6f39e93`](https://github.com/npm/hosted-git-info/commit/6f39e93bae9162663af6f15a9d10bce675dd5de3) `hosted-git-info@2.8.6` ([@darcyclarke](https://github.com/darcyclarke))
+  * fix: passwords & usernames are escaped properly in git deps ([@stevenhilder](https://github.com/stevenhilder))
+* [`f14b594ee`](https://github.com/npm/cli/commit/f14b594ee9dbfc98ed0b65c65d904782db4f31ad) `chownr@1.1.4` ([@isaacs](https://github.com/isaacs))
+* [`77044150b`](https://github.com/npm/cli/commit/77044150b763d67d997f9ff108219132ea922678) `npm-packlist@1.4.8` ([@isaacs](https://github.com/isaacs))
+* [`1d112461a`](https://github.com/npm/cli/commit/1d112461ad8dc99e5ff7fabb5177e8c2f89a9755) `npm-registry-fetch@4.0.3` ([@isaacs](https://github.com/isaacs))
+  * [`ba8b4fe`](https://github.com/npm/npm-registry-fetch/commit/ba8b4fe60eb6cdf9b39012560aec596eda8ce924) fix: always bypass cache when ?write=true
+* [`a47fed760`](https://github.com/npm/cli/commit/a47fed7603a6ed31dcc314c0c573805f05a96830) `readable-stream@3.6.0`
+  * [`3bbf2d6`](https://github.com/nodejs/readable-stream/commit/3bbf2d6feb45b03f4e46a2ae8251601ad2262121) fix: babel's "loose mode" class transform enbrittles BufferList ([@ljharb](https://github.com/ljharb))
+
+### DOCUMENTATION
+* [`284c1c055`](https://github.com/npm/cli/commit/284c1c055a28c4b334496101799acefe3c54ceb3), [`fbb5f0e50`](https://github.com/npm/cli/commit/fbb5f0e50e54425119fa3f03c5de93e4cb6bfda7) [#729](https://github.com/npm/cli/pull/729) update lifecycle hooks docs
+  ([@seanhealy](https://github.com/seanhealy), [@mikemimik](https://github.com/mikemimik))
+* [`1c272832d`](https://github.com/npm/cli/commit/1c272832d048300e409882313305c416dc6f21a2) [#787](https://github.com/npm/cli/pull/787) fix: trademarks typo ([@dnicolson](https://github.com/dnicolson))
+* [`f6ff41776`](https://github.com/npm/cli/commit/f6ff417767d52418cc8c9e7b9731ede2c3916d2e) [#936](https://github.com/npm/cli/pull/936) fix: postinstall example ([@ajaymathur](https://github.com/ajaymathur))
+* [`373224b16`](https://github.com/npm/cli/commit/373224b16e019b7b63d8f0b4c5d4adb7e5cb80dd) [#939](https://github.com/npm/cli/pull/939) fix: bad links in publish docs ([@vit100](https://github.com/vit100))
+
+### MISCELLANEOUS
+* [`85c79636d`](https://github.com/npm/cli/commit/85c79636df31bac586c0e380c4852ee155a7723c) [#736](https://github.com/npm/cli/pull/736) add script to update dist-tags ([@mikemimik](https://github.com/mikemimik))
+
+## 6.13.7 (2020-01-28)
+
+### BUG FIXES
+* [`7dbb91438`](https://github.com/npm/cli/commit/7dbb914382ecd2074fffb7eba81d93262e2d23c6)
+  [#655](https://github.com/npm/cli/pull/655)
+  Update CI detection cases
+  ([@isaacs](https://github.com/isaacs))
+
+### DEPENDENCIES
+* [`0fb1296c7`](https://github.com/npm/cli/commit/0fb1296c7d6d4bb9e78c96978c433cd65e55c0ea)
+  `libnpx@10.2.2`
+  ([@mikemimik](https://github.com/mikemimik))
+* [`c9b69d569`](https://github.com/npm/cli/commit/c9b69d569fec7944375a746e9c08a6fa9bec96ff)
+  `node-gyp@5.0.7`
+  ([@mikemimik](https://github.com/mikemimik))
+* [`e8dbaf452`](https://github.com/npm/cli/commit/e8dbaf452a1f6c5350bb0c37059b89a7448e7986)
+  `bin-links@1.1.7`
+  ([@mikemimik](https://github.com/mikemimik))
+  * [#613](https://github.com/npm/cli/issues/613) Fixes bin entry for package
+
 ## 6.13.6 (2020-01-09)
 
 ### DEPENDENCIES
