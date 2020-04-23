@@ -29,9 +29,10 @@ const stdioResult = (stdout, stderr, {stdioString}) =>
     stderr: Buffer.concat(stderr),
   }
 
-const promiseSpawnUid = (cmd, args, opts, extra) =>
-  new Promise((res, rej) => {
-    const proc = spawn(cmd, args, opts)
+const promiseSpawnUid = (cmd, args, opts, extra) => {
+  let proc
+  const p = new Promise((res, rej) => {
+    proc = spawn(cmd, args, opts)
     const stdout = []
     const stderr = []
     const reject = er => rej(Object.assign(er, {
@@ -64,5 +65,9 @@ const promiseSpawnUid = (cmd, args, opts, extra) =>
         res(result)
     })
   })
+
+  p.stdin = proc.stdin
+  return p
+}
 
 module.exports = promiseSpawn

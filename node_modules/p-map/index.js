@@ -14,11 +14,11 @@ module.exports = async (
 			throw new TypeError('Mapper function is required');
 		}
 
-		if (!(typeof concurrency === 'number' && concurrency >= 1)) {
-			throw new TypeError(`Expected \`concurrency\` to be a number from 1 and up, got \`${concurrency}\` (${typeof concurrency})`);
+		if (!((Number.isSafeInteger(concurrency) || concurrency === Infinity) && concurrency >= 1)) {
+			throw new TypeError(`Expected \`concurrency\` to be an integer from 1 and up or \`Infinity\`, got \`${concurrency}\` (${typeof concurrency})`);
 		}
 
-		const ret = [];
+		const result = [];
 		const errors = [];
 		const iterator = iterable[Symbol.iterator]();
 		let isRejected = false;
@@ -32,7 +32,7 @@ module.exports = async (
 			}
 
 			const nextItem = iterator.next();
-			const i = currentIndex;
+			const index = currentIndex;
 			currentIndex++;
 
 			if (nextItem.done) {
@@ -42,7 +42,7 @@ module.exports = async (
 					if (!stopOnError && errors.length !== 0) {
 						reject(new AggregateError(errors));
 					} else {
-						resolve(ret);
+						resolve(result);
 					}
 				}
 
@@ -54,7 +54,7 @@ module.exports = async (
 			(async () => {
 				try {
 					const element = await nextItem.value;
-					ret[i] = await mapper(element, i);
+					result[index] = await mapper(element, index);
 					resolvingCount--;
 					next();
 				} catch (error) {

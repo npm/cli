@@ -45,6 +45,10 @@ Result or error will be decorated with the properties in the `extra`
 object.  You can use this to attach some helpful info about _why_ the
 command is being run, if it makes sense for your use case.
 
+Returned promise is decorated with the `stdin` stream if the process is set
+to pipe from `stdin`.  Writing to this stream writes to the `stdin` of the
+spawned process.
+
 #### Options
 
 - `stdioString` Boolean, default `false`.  Return stdio/stderr output as

@@ -5,12 +5,13 @@ const calcDepFlags = tree => {
   tree.optional = false
   tree.devOptional = false
   tree.peer = false
-  return depth({
+  const ret = depth({
     tree,
     visit: node => calcDepFlagsStep(node),
     filter: node => node,
     getChildren: node => [...node.edgesOut.values()].map(edge => edge.to),
   })
+  return ret
 }
 
 const calcDepFlagsStep = (node) => {

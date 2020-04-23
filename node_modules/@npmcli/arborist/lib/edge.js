@@ -1,6 +1,7 @@
 // An edge in the dependency graph
 // Represents a dependency relationship of some kind
 
+const npa = require('npm-package-arg')
 const depValid = require('./dep-valid.js')
 const _from = Symbol('_from')
 const _to = Symbol('_to')
@@ -18,6 +19,7 @@ const types = new Set([
   'optional',
   'peer',
   'peerOptional',
+  'workspace'
 ])
 
 class Edge {
@@ -26,6 +28,10 @@ class Edge {
 
     if (typeof spec !== 'string')
       throw new TypeError('must provide string spec')
+
+    if (type === 'workspace' && npa(spec).type !== 'directory')
+      throw new TypeError('workspace edges must be a symlink')
+
     this[_spec] = spec
 
     if (accept !== undefined) {

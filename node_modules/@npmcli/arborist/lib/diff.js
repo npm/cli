@@ -99,6 +99,7 @@ const getChildren = diff => {
 
 const diffNode = (actual, ideal, children, unchanged, removed) => {
   const action = getAction({actual, ideal})
+
   // if it's a match, then get its children
   // otherwise, this is the child diff node
   if (action) {
@@ -117,11 +118,23 @@ const diffNode = (actual, ideal, children, unchanged, removed) => {
     // diffing trees can mutate them, but otherwise we have to walk over
     // all unchanging bundlers and correct the diff later, so it's more
     // efficient to just fix it while we're passing through already.
+    //
+    // Note that moving over a bundled dep will break the links to other
+    // deps under this parent, which may have been transitively bundled.
+    // Breaking those links means that we'll no longer see the transitive
+    // dependency, meaning that it won't appear as bundled any longer!
+    // In order to not end up dropping transitively bundled deps, we have
+    // to get the list of nodes to move, then move them all at once, rather
+    // than moving them one at a time in the first loop.
     const bd = ideal.package.bundleDependencies
     if (actual && bd && bd.length) {
+      const bundledChildren = []
       for (const [name, node] of actual.children.entries()) {
         if (node.inBundle)
-          node.parent = ideal
+          bundledChildren.push(node)
+      }
+      for (const node of bundledChildren) {
+        node.parent = ideal
       }
     }
     children.push(...getChildren({actual, ideal, unchanged, removed}))

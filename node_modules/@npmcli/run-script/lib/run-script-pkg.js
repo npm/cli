@@ -29,7 +29,7 @@ const runScriptPkg = options => {
     console.log(banner(pkg._id, event, cmd))
   }
 
-  return promiseSpawn(...makeSpawnArgs({
+  const p = promiseSpawn(...makeSpawnArgs({
     event,
     path,
     scriptShell,
@@ -43,6 +43,9 @@ const runScriptPkg = options => {
     pkgid: pkg._id,
     path,
   })
+  if (p.stdin)
+    p.stdin.end()
+  return p
 }
 
 module.exports = runScriptPkg

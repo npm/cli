@@ -4,13 +4,11 @@
 
 Useful when you need to run promise-returning & async functions multiple times with different inputs concurrently.
 
-
 ## Install
 
 ```
 $ npm install p-map
 ```
-
 
 ## Usage
 
@@ -61,19 +59,24 @@ Type: `object`
 
 ##### concurrency
 
-Type: `number`<br>
-Default: `Infinity`<br>
+Type: `number` (Integer)\
+Default: `Infinity`\
 Minimum: `1`
 
 Number of concurrently pending promises returned by `mapper`.
 
 ##### stopOnError
 
-Type: `boolean`<br>
+Type: `boolean`\
 Default: `true`
 
 When set to `false`, instead of stopping when a promise rejects, it will wait for all the promises to settle and then reject with an [aggregated error](https://github.com/sindresorhus/aggregate-error) containing all the errors from the rejected promises.
 
+## p-map for enterprise
+
+Available as part of the Tidelift Subscription.
+
+The maintainers of p-map and thousands of other packages are working with Tidelift to deliver commercial support and maintenance for the open source dependencies you use to build your applications. Save time, reduce risk, and improve code health, while paying the maintainers of the exact dependencies you use. [Learn more.](https://tidelift.com/subscription/pkg/npm-p-map?utm_source=npm-p-map&utm_medium=referral&utm_campaign=enterprise&utm_term=repo)
 
 ## Related
 
@@ -84,16 +87,3 @@ When set to `false`, instead of stopping when a promise rejects, it will wait fo
 - [p-map-series](https://github.com/sindresorhus/p-map-series) - Map over promises serially
 - [p-queue](https://github.com/sindresorhus/p-queue) - Promise queue with concurrency control
 - [More…](https://github.com/sindresorhus/promise-fun)
-
-
----
-
-<div align="center">
-	<b>
-		<a href="https://tidelift.com/subscription/pkg/npm-p-map?utm_source=npm-p-map&utm_medium=referral&utm_campaign=readme">Get professional support for this package with a Tidelift subscription</a>
-	</b>
-	<br>
-	<sub>
-		Tidelift helps make open source sustainable for maintainers while giving companies<br>assurances about security, maintenance, and licensing for their dependencies.
-	</sub>
-</div>

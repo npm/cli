@@ -3,6 +3,8 @@ declare namespace pMap {
 		/**
 		Number of concurrently pending promises returned by `mapper`.
 
+		Must be an integer from 1 and up or `Infinity`.
+
 		@default Infinity
 		*/
 		readonly concurrency?: number;
@@ -21,7 +23,7 @@ declare namespace pMap {
 	@param element - Iterated element.
 	@param index - Index of the element in the source array.
 	*/
-	type Mapper<Element = any, NewElement = any> = (
+	type Mapper<Element = any, NewElement = unknown> = (
 		element: Element,
 		index: number
 	) => NewElement | Promise<NewElement>;

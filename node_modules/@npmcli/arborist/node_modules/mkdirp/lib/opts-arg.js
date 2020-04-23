@@ -2,9 +2,9 @@ const { promisify } = require('util')
 const fs = require('fs')
 const optsArg = opts => {
   if (!opts)
-    opts = { mode: 0o777 & (~process.umask()), fs }
+    opts = { mode: 0o777, fs }
   else if (typeof opts === 'object')
-    opts = { mode: 0o777 & (~process.umask()), fs, ...opts }
+    opts = { mode: 0o777, fs, ...opts }
   else if (typeof opts === 'number')
     opts = { mode: opts, fs }
   else if (typeof opts === 'string')

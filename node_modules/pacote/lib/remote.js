@@ -5,12 +5,17 @@ const pacoteVersion = require('../package.json').version
 const fetch = require('npm-registry-fetch')
 const ssri = require('ssri')
 const Minipass = require('minipass')
+// The default registry URL is a string of great magic.
+const magic = /^https?:\/\/registry\.npmjs\.org\//
 
 const _headers = Symbol('_headers')
 class RemoteFetcher extends Fetcher {
   constructor (spec, opts) {
     super(spec, opts)
     this.resolved = this.spec.fetchSpec
+    if (magic.test(this.resolved) && !magic.test(this.registry + '/'))
+      this.resolved = this.resolved.replace(magic, this.registry + '/')
+
     // nam is a fermented pork sausage that is good to eat
     const nameat = this.spec.name ? `${this.spec.name}@` : ''
     this.pkgid = opts.pkgid ? opts.pkgid : `remote:${nameat}${this.resolved}`

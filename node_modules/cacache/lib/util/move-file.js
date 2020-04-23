@@ -5,7 +5,7 @@ const util = require('util')
 const chmod = util.promisify(fs.chmod)
 const unlink = util.promisify(fs.unlink)
 const stat = util.promisify(fs.stat)
-const move = require('move-concurrently')
+const move = require('move-file')
 const pinflight = require('promise-inflight')
 
 module.exports = moveFile
@@ -61,7 +61,8 @@ function moveFile (src, dest) {
             throw err
           }
           // file doesn't already exist! let's try a rename -> copy fallback
-          return move(src, dest, { Promise, fs })
+          // only delete if it successfully copies
+          return move(src, dest)
         })
       })
     })

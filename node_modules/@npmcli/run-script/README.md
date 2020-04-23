@@ -68,6 +68,10 @@ Returns a promise that resolves to the result of the execution.  Promise
 rejects if the execution fails (exits non-zero) or has any other error.
 Rejected errors are decorated with the same values as the result object.
 
+If the stdio options mean that it'll have a piped stdin, then the stdin is
+ended immediately on the child process.  If stdin is shared with the parent
+terminal, then it is up to the user to end it, of course.
+
 ### Results
 
 - `code` Process exit code
