@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [6.1.0](https://github.com/npm/npm-pick-manifest/compare/v6.0.0...v6.1.0) (2020-04-07)
+
+
+### Features
+
+* add 'avoid' semver range option ([c64973d](https://github.com/npm/npm-pick-manifest/commit/c64973d63ddf6797edf41c20df641f816d30ff03))
+* add avoidStrict option to strictly avoid ([c268796](https://github.com/npm/npm-pick-manifest/commit/c2687967b6294f5ce01aa6b59071e79272dc57de)), closes [#30](https://github.com/npm/npm-pick-manifest/issues/30)
+
 ## [6.0.0](https://github.com/npm/npm-pick-manifest/compare/v5.0.0...v6.0.0) (2020-02-18)
 
 

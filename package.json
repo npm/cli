@@ -106,7 +106,7 @@
     "npm-lifecycle": "^3.1.4",
     "npm-package-arg": "^8.0.1",
     "npm-packlist": "^2.1.0",
-    "npm-pick-manifest": "^6.0.0",
+    "npm-pick-manifest": "^6.1.0",
     "npm-profile": "^5.0.1",
     "npm-registry-fetch": "^8.0.0",
     "npm-user-validate": "~1.0.0",
