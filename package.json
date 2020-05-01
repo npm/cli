@@ -94,7 +94,7 @@
     "mkdirp": "^0.5.5",
     "move-concurrently": "^1.0.1",
     "node-gyp": "^5.1.0",
-    "nopt": "~4.0.1",
+    "nopt": "^4.0.3",
     "normalize-package-data": "^2.5.0",
     "npm-audit-report": "^1.3.2",
     "npm-cache-filename": "~1.0.2",
