@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [8.0.2](https://github.com/npm/registry-fetch/compare/v8.0.1...v8.0.2) (2020-05-04)
+
+
+### Bug Fixes
+
+* update make-fetch-happen to 8.0.6 ([226df2c](https://github.com/npm/registry-fetch/commit/226df2c32e3f9ed8ceefcfdbd11efb178181b442))
+
 ## [8.0.0](https://github.com/npm/registry-fetch/compare/v7.0.1...v8.0.0) (2020-02-24)
 
 

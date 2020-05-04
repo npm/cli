@@ -277,7 +277,7 @@ class Node {
     return false
   }
 
-  getBundler (path) {
+  getBundler (path = []) {
     // made a cycle, definitely not bundled!
     if (path.includes(this))
       return null
@@ -315,7 +315,7 @@ class Node {
   }
 
   get inBundle () {
-    return !!this.getBundler([])
+    return !!this.getBundler()
   }
 
   get isRoot () {

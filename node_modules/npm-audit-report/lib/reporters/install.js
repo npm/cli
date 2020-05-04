@@ -65,7 +65,7 @@ const calculate = (data, { color }) => {
   const summary = output.join('\n')
   return {
     summary,
-    report: someUnfixable ? `${summary}\n\nRun \`npm audit\` for details.`
+    report: vulnCount > 0 ? `${summary}\n\nRun \`npm audit\` for details.`
       : summary
   }
 }

@@ -571,7 +571,7 @@ See also [`opts.ca`](#opts-ca).
 ##### <a name="opts-timeout"></a> `opts.timeout`
 
 * Type: Milliseconds
-* Default: 30000 (30 seconds)
+* Default: 300000 (5 minutes)
 
 Time before a hanging request times out.
 

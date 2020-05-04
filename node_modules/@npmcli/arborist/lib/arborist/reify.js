@@ -844,6 +844,9 @@ module.exports = cls => class Reifier extends Ideal(cls) {
 
     // XXX preserve indentation maybe?
     const pj = resolve(this.idealTree.path, 'package.json')
+    if (this.idealTree.meta.yarnLock)
+      this.idealTree.meta.yarnLock.fromTree(this.idealTree)
+
     return Promise.all([
       this.idealTree.meta.save(),
       writeFile(pj, JSON.stringify({

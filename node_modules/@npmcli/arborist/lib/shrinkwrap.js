@@ -559,7 +559,6 @@ class Shrinkwrap {
     // will be actually updated on read
     const loc = relpath(this.path, node.path)
     this[_awaitingUpdate].set(loc, node)
-    return
   }
 
   [_updateWaitingNode] (loc) {
