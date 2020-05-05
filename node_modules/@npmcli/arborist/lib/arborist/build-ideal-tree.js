@@ -593,6 +593,21 @@ module.exports = cls => class IdealTreeBuilder extends Tracker(Virtual(Actual(cl
         ...this.options,
         avoid: this[_avoidRange](spec.name),
       }
+      const { yarnLock } = this.idealTree.meta
+      const fromYarn = yarnLock && yarnLock.entries.get(spec.raw)
+      if (fromYarn && fromYarn.version) {
+        // if it's the yarn or npm default registry, use the version as
+        // our effective spec.  if it's any other kind of thing, use that.
+        const yarnRegRe = /^https?:\/\/registry.yarnpkg.com\//
+        const npmRegRe = /^https?:\/\/registry.npmjs.org\//
+        const {resolved, version} = fromYarn
+        const isYarnReg = yarnRegRe.test(resolved)
+        const isnpmReg = !isYarnReg && npmRegRe.test(resolved)
+        const yspec = (isYarnReg || isnpmReg) && version || resolved
+        if (yspec)
+          spec = npa(`${spec.name}@${yspec}`)
+      }
+
       const p = pacote.manifest(spec, options)
       this[_manifests].set(spec.raw, p)
       return p

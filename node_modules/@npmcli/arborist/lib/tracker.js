@@ -81,7 +81,7 @@ module.exports = cls => class Tracker extends cls {
       const keys = this[_progress].keys()
       for (const key of keys) {
         if (key.match(new RegExp(section + ':'))) {
-          this[_onError](`Tracker "${section}" contains unfinished child: ${key}`)
+          this.finishTracker(section, key)
         }
       }
 
@@ -103,7 +103,7 @@ module.exports = cls => class Tracker extends cls {
 
     // 2. existing parent tracker, no subsection
     else if (hasTracker && !hasSubtracker) {
-      this[_onError](`Subtracker "${subsection}" does not exist`)
+      return
     }
 
     // 3. subtracker exists

@@ -168,10 +168,18 @@ class AuditReport extends Map {
 
     // if we can't avoid the vulnerable version range within the spec
     // required, then the dep range is entirely vulnerable.
-    return pickManifest(paku, spec, {
-      ...this.options,
-      avoid,
-    })._shouldAvoid
+    try {
+      return pickManifest(paku, spec, {
+        ...this.options,
+        before: null,
+        avoid,
+      })._shouldAvoid
+    } catch (er) {
+      // not vulnerable per se, but also not installable, so best avoided
+      // this can happen when dep versions are unpublished.
+      /* istanbul ignore next */
+      return true
+    }
   }
 
   // see if the top node CAN be fixed, even with a semver major update
@@ -188,6 +196,7 @@ class AuditReport extends Map {
         name,
       } = pickManifest(paku, spec, {
         ...this.options,
+        before: null,
         avoid,
         avoidStrict: true,
       })
