@@ -644,6 +644,25 @@ such as the one included with node 0.8, can install the package.  This
 eliminates all automatic deduping. If used with `global-style` this option
 will be preferred.
 
+#### legacy-peer-deps
+
+* Default: false
+* Type: Boolean
+
+Causes npm to completely ignore `peerDependencies` when building a package
+tree, as in npm versions 3 through 6.
+
+If a package cannot be installed because of overly strict
+`peerDependencies` that collide, it provides a way to move forward
+resolving the situation.
+
+This differs from `--omit=peer`, in that `--omit=peer` will avoid unpacking
+`peerDependencies` on disk, but will still design a tree such that
+`peerDependencies` _could_ be unpacked in a correct place.
+
+Use of `legacy-peer-deps` is not recommended, as it will not enforce the
+`peerDependencies` contract that meta-dependencies may rely on.
+
 #### link
 
 * Default: false
