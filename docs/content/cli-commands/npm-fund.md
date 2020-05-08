@@ -25,7 +25,7 @@ config param; if there are multiple funding sources for the package, the
 user will be instructed to pass the `--which` command to disambiguate.
 
 The list will avoid duplicated entries and will stack all packages
-that share the same type/url as a single entry. Given this nature the
+that share the same url as a single entry. Given this nature the
 list is not going to have the same shape of the output from `npm ls`.
 
 ### Configuration
