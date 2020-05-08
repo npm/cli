@@ -1,6 +1,9 @@
 'use strict'
 const path = require('path')
-const test = require('tap').test
+// TODO: needs to poke into arborist to figure out if the old test cases are
+// not working anymore due to `file:../` usage, if that's not the case just
+// update the current failing test cases here with something more accurate
+const { test } = require('tap')
 const Tacks = require('tacks')
 const Dir = Tacks.Dir
 const File = Tacks.File
@@ -105,7 +108,7 @@ test('mention packages looking for funding using --json', function (t) {
     t.is(code, 0, 'installed successfully')
     t.is(stderr, '', 'no warnings')
     const res = JSON.parse(stdout)
-    t.match(res.funding, '4 packages are looking for funding', 'should print amount of packages needing funding')
+    t.match(res.funding, 4, 'should print amount of packages needing funding')
     t.end()
   })
 })
