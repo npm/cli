@@ -403,12 +403,23 @@ the current Node.js version.
 * Default: false
 * Type: Boolean
 
-Makes various commands more forceful.
+Removes various protections against unfortunate side effects, common
+mistakes, unnecessary performance degradation, and malicious input.
 
-* lifecycle script failure does not block progress.
-* publishing clobbers previously published versions.
-* skips cache when requesting from the registry.
-* prevents checks against clobbering non-npm files.
+* Allow clobbering non-npm files in global installs.
+* Allow the `npm version` command to work on an unclean git repository.
+* Allow deleting the cache folder with `npm cache clean`.
+* Allow installing packages that have an `engines` declaration requiring a
+  different version of npm.
+* Allow installing packages that have an `engines` declaration requiring a
+  different version of `node`, even if `--engines-strict` is enabled.
+* Allow `npm audit fix` to install modules outside your stated dependency
+  range (including SemVer-major changes).
+* Allow a module to be installed as a direct dependency of itself.
+* Allow unpublishing all versions of a published package.
+
+If you don't have a clear idea of what you want to do, it is strongly
+recommended that you do not use this option!
 
 #### format-package-lock
 
