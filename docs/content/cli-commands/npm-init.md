@@ -45,7 +45,7 @@ $ npm init -y
 `npm init <initializer>` can be used to set up a new or existing npm package.
 
 `initializer` in this case is an npm package named `create-<initializer>`, which
-will be installed by [`npx`](https://npm.im/npx), and then have its main bin
+will be installed by [`npx`](https://github.com/npm/npx), and then have its main bin
 executed -- presumably creating or updating `package.json` and running any other
 initialization-related operations.
 
