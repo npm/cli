@@ -272,15 +272,13 @@ Conversely, some files are always ignored:
 * `.hg`
 * `.lock-wscript`
 * `.wafpickle-N`
-* `.*.swp`
 * `.DS_Store`
-* `._*`
 * `npm-debug.log`
 * `.npmrc`
 * `node_modules`
 * `config.gypi`
-* `*.orig`
 * `package-lock.json` (use shrinkwrap instead)
+* All files containing a `*` character (incompatible with Windows) 
 
 ### main
 
