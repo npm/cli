@@ -186,6 +186,10 @@ function getHeaders (registry, uri, opts) {
     headers['npm-session'] = opts.npmSession
   }
 
+  if (opts.npmCommand) {
+    headers['npm-command'] = opts.npmCommand
+  }
+
   const auth = getAuth(registry, opts)
   // If a tarball is hosted on a different place than the manifest, only send
   // credentials on `alwaysAuth`

@@ -6,7 +6,7 @@ const AuditReport = require('../audit-report.js')
 // shared with reify
 const _global = Symbol.for('global')
 
-module.exports = cls => class Auditor extends Reifier(cls) {
+module.exports = cls => class Auditor extends cls {
   async audit (options = {}) {
     if (this[_global])
       throw Object.assign(

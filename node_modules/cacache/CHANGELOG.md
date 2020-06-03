@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [15.0.4](https://github.com/npm/cacache/compare/v15.0.3...v15.0.4) (2020-06-03)
+
+
+### Bug Fixes
+
+* replace move-file dep with @npmcli/move-file ([bf88af0](https://github.com/npm/cacache/commit/bf88af04e50cca9b54041151139ffc1fd415e2dc)), closes [#37](https://github.com/npm/cacache/issues/37)
+
 ### [15.0.3](https://github.com/npm/cacache/compare/v15.0.2...v15.0.3) (2020-04-28)
 
 

@@ -1,10 +1,12 @@
 const { depth } = require('treeverse')
 
-const calcDepFlags = tree => {
-  tree.dev = false
-  tree.optional = false
-  tree.devOptional = false
-  tree.peer = false
+const calcDepFlags = (tree, resetRoot = true) => {
+  if (resetRoot) {
+    tree.dev = false
+    tree.optional = false
+    tree.devOptional = false
+    tree.peer = false
+  }
   const ret = depth({
     tree,
     visit: node => calcDepFlagsStep(node),

@@ -296,7 +296,7 @@ pruning nodes from the tree.
 |            |      |     |          |             | peer dependencies   |                   |
 |------------+------+-----+----------+-------------+---------------------+-------------------|
 |            |  X   |  X  |          |      X      | peer dependency of  | if pruning peer   |
-|            |      |     |          | not in lock | dev node heirarchy  | OR dev deps       |
+|            |      |     |          | not in lock | dev node hierarchy  | OR dev deps       |
 |------------+------+-----+----------+-------------+---------------------+-------------------|
 |            |  X   |     |    X     |      X      | peer dependency of  | if pruning peer   |
 |            |      |     |          | not in lock | optional nodes, or  | OR optional deps  |
@@ -304,11 +304,11 @@ pruning nodes from the tree.
 |------------+------+-----+----------+-------------+---------------------+-------------------|
 |            |  X   |  X  |    X     |      X      | peer optional deps  | if pruning peer   |
 |            |      |     |          | not in lock | of the dev dep      | OR optional OR    |
-|            |      |     |          |             | heirarchy           | dev               |
+|            |      |     |          |             | hierarchy           | dev               |
 |------------+------+-----+----------+-------------+---------------------+-------------------|
 |            |  X   |     |          |      X      | BOTH a non-optional | if pruning peers  |
 |            |      |     |          |   in lock   | peer dep within the | OR:               |
-|            |      |     |          |             | dev heirarchy, AND  | BOTH optional     |
+|            |      |     |          |             | dev hierarchy, AND  | BOTH optional     |
 |            |      |     |          |             | a peer optional dep | AND dev deps      |
 +------------+------+-----+----------+-------------+---------------------+-------------------+
 ```

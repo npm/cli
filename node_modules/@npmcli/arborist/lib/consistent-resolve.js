@@ -4,7 +4,7 @@
 // lockfiles, and for converting hosted git repos to a consistent url type.
 const npa = require('npm-package-arg')
 const relpath = require('./relpath.js')
-const consistentResolve = (resolved, fromPath, toPath) => {
+const consistentResolve = (resolved, fromPath, toPath, relPaths = false) => {
   if (!resolved)
     return null
 
@@ -17,8 +17,9 @@ const consistentResolve = (resolved, fromPath, toPath) => {
       rawSpec,
       raw,
     } = npa(resolved, fromPath)
-    return type === 'file' || type === 'directory'
-        ? 'file:' + (toPath ? relpath(toPath, fetchSpec) : fetchSpec)
+    const isPath = type === 'file' || type === 'directory'
+    return isPath && !relPaths ? `file:${fetchSpec}`
+      : isPath ? 'file:' + (toPath ? relpath(toPath, fetchSpec) : fetchSpec)
       : hosted ? 'git+' + hosted.sshurl({ noCommittish: false })
       : type === 'git' ? saveSpec
       // always return something.  'foo' is interpreted as 'foo@' otherwise.

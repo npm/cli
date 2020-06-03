@@ -398,6 +398,15 @@ If provided, will be sent in the `npm-session` header. This header is used by
 the npm registry to identify individual user sessions (usually individual
 invocations of the CLI).
 
+##### <a name="opts-npmCommand"></a> `opts.npmCommand`
+
+* Type: String
+* Default: null
+
+If provided, it will be sent in the `npm-command` header.  This yeader is
+used by the npm registry to identify the npm command that caused this
+request to be made.
+
 ##### <a name="opts-offline"></a> `opts.offline`
 
 * Type: Boolean

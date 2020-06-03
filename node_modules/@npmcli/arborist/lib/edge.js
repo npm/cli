@@ -60,6 +60,10 @@ class Edge {
     return depValid(node, this.spec, this.accept, this.from)
   }
 
+  get workspace () {
+    return this[_type] === 'workspace'
+  }
+
   get dev () {
     return this[_type] === 'dev'
   }
@@ -90,6 +94,18 @@ class Edge {
 
   get valid () {
     return !this.error
+  }
+
+  get missing () {
+    return this.error === 'MISSING'
+  }
+
+  get invalid () {
+    return this.error === 'INVALID'
+  }
+
+  get peerLocal () {
+    return this.error === 'PEER LOCAL'
   }
 
   get error () {

@@ -172,7 +172,8 @@ class YarnLock {
         this.current.resolved = consistentResolve(
           node.resolved,
           node.isLink ? dirname(node.path) : node.path,
-          node.root.path
+          node.root.path,
+          true
         )
       if (node.integrity)
         this.current.integrity = node.integrity

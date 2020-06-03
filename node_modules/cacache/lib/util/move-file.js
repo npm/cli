@@ -5,7 +5,7 @@ const util = require('util')
 const chmod = util.promisify(fs.chmod)
 const unlink = util.promisify(fs.unlink)
 const stat = util.promisify(fs.stat)
-const move = require('move-file')
+const move = require('@npmcli/move-file')
 const pinflight = require('promise-inflight')
 
 module.exports = moveFile

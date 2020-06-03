@@ -169,39 +169,7 @@ module.exports = class Cache {
         ckey,
         cacheOpts
       )
-
-      // See: https://github.com/npm/npm-registry-fetch/issues/23#issuecomment-623558888
-      //
-      // XXX why does this fix the glitch??
-      //
-      // Something weird is going on here.  This SHOULD be fine as a simple
-      // pipe(), but for some reason, backpressure from the cache stream
-      // can cause the pipeline to drop the first chunk of data, resulting
-      // in invalid JSON.  Until that is fixed, just write into the cache
-      // without any backpressure.
-      //
-      // The only hazard is that, if the fs is truly very slow, and the rest
-      // of the consumption pipeline is very fast, then we'll back up into
-      // memory and use more than we ought to, rather than pushing back on
-      // the incoming stream.  However, this isn't likely to ever be a problem
-      // due to how npm does HTTP.  Either it's fetching a JSON response,
-      // or a tarball (which is also either unpacking to disk, or streaming
-      // directly to a tarball file on disk).  So, if the disk is slow, and
-      // it's a tarball request, we're likely to get backpressure from the
-      // main pipeline anyway.  It can only become a problem if the JSON
-      // response is large enough to span multiple chunks, and also the fs
-      // is loaded enough to start slowing down.  In the JSON response case,
-      // we're going to load the whole thing in memory anyway, so nothing is
-      // made particularly *worse* by this lack of backpressure.
-      //
-      // It is possible that the root cause of this bug exists either in
-      // cacache, minipass-pipeline, or minipass itself.  But since we don't
-      // do a multi-pipe tee stream anywhere else in npm's stack, this is
-      // the only spot where it can make itself known.
-      tee.on('data', d => cacheStream.write(d))
-      tee.on('end', () => cacheStream.end())
-      // tee.pipe(cacheStream)
-
+      tee.pipe(cacheStream)
       cacheStream.promise().then(cacheWriteResolve, cacheWriteReject)
       newBody.unshift(tee)
     }

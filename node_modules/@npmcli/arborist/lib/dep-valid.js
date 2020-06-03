@@ -7,15 +7,20 @@
 const semver = require('semver')
 const npa = require('npm-package-arg')
 const {resolve, relative} = require('path')
+const fromPath = require('./from-path.js')
 
 const depValid = (child, requested, requestor) => {
   // NB: we don't do much to verify 'tag' type requests.
   // Just verify that we got a remote resolution.  Presumably, it
   // came from a registry and was tagged at some point.
+
   if (typeof requested === 'string') {
-    // '' is equivalent to '*'
     try {
-      requested = npa.resolve(child.name, requested || '*', requestor.realpath)
+      // tarball/dir must have resolved to the same tgz on disk, but for
+      // file: deps that depend on other files/dirs, we must resolve the
+      // location based on the *requestor* file/dir, not where it ends up.
+      // '' is equivalent to '*'
+      requested = npa.resolve(child.name, requested || '*', fromPath(requestor))
     } catch (er) {
       // Not invalid because the child doesn't match, but because
       // the spec itself is not supported.  Nothing would match,
@@ -52,9 +57,7 @@ const depValid = (child, requested, requestor) => {
         relative(child.realpath, requested.fetchSpec) === ''
 
     case 'file':
-      // tarball must have resolved to the same tgz on disk
-      return !child.isLink && !!child.resolved &&
-        npa(child.resolved, child.path).fetchSpec === requested.fetchSpec
+      return tarballValid(child, requested, requestor)
 
     case 'alias':
       // check that the alias target is valid
@@ -101,6 +104,24 @@ const depValid = (child, requested, requestor) => {
   er.dependency = child.name
   er.requested = requested
   requestor.errors.push(er)
+  return false
+}
+
+const tarballValid = (child, requested, requestor) => {
+  if (child.isLink)
+    return false
+
+  if (child.resolved)
+    return child.resolved === `file:${requested.fetchSpec}`
+
+  // if we have a legacy mutated package.json file.  we can't be 100%
+  // sure that it resolved to the same file, but if it was the same
+  // request, that's a pretty good indicator of sameness.
+  if (child.package._requested)
+    return child.package._requested.saveSpec === requested.saveSpec
+
+  // ok, we're probably dealing with some legacy cruft here, not much
+  // we can do at this point unfortunately.
   return false
 }
 

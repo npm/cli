@@ -41,7 +41,7 @@ class Inventory extends Map {
     for (const [key, map] of this[_index].entries()) {
       const val_ = node[key] || (node.package && node.package[key])
       const val = typeof val_ === 'string' ? val_
-        : typeof val_ === 'object'
+        : (val_ && typeof val_ === 'object')
         ? ( key === 'license' ? val_.type
           : key === 'funding' ? val_.url
           : /* istanbul ignore next */ val_)
