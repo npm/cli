@@ -188,5 +188,5 @@ You'll need a few things installed in order to update and test the CLI project d
 
 The CLI project vendors it's dependencies in the `node_modules/` folder. Meaning all the dependencies that the CLI project uses are contained withing the project itself. This is represented by the `bundledDependencies` section in the root level `package.json` file. The main reason for this is because the `npm` CLI project is distributed with the NodeJS runtime and needs to work out of the box, which means all dependencies need to be available after the runtime is installed.
 
-There are a couple scripts created to help manage this process in the `scripts/` folder.
+There are a couple scripts created to help manage this process in the `scripts/` folder..
 
