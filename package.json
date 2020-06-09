@@ -32,6 +32,15 @@
     "npm": "bin/npm-cli.js",
     "npx": "bin/npx-cli.js"
   },
+  "exports": {
+    ".": [
+      {
+        "default": "./lib/npm.js"
+      },
+      "./lib/npm.js"
+    ],
+    "./package.json": "./package.json"
+  },
   "dependencies": {
     "@npmcli/arborist": "^0.0.12",
     "@npmcli/ci-detect": "^1.2.0",
