@@ -3,7 +3,7 @@
 const BB = require('bluebird')
 
 const common = require('../common-tap.js')
-const mockTar = require('../util/mock-tarball.js')
+const pacote = require('pacote')
 const mr = common.fakeRegistry.compat
 const path = require('path')
 const rimraf = BB.promisify(require('rimraf'))
@@ -27,6 +27,14 @@ test('installs an npm package before a certain date', t => {
   const fixture = new Tacks(Dir({
     'package.json': File({})
   }))
+
+  const testDir = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'foo',
+      version: '1.2.3'
+    }, null, 2),
+  })
+
   fixture.create(testDir)
   const packument = {
     name: 'foo',
@@ -55,32 +63,29 @@ test('installs an npm package before a certain date', t => {
     }
   }
   server.get('/foo').reply(200, packument)
-  return mockTar({
-    'package.json': JSON.stringify({
-      name: 'foo',
-      version: '1.2.3'
+
+  return pacote.tarball(`file:${testDir}`)
+    .then(tarball => {
+      server.get('/foo/-/foo-1.2.3.tgz').reply(200, tarball)
+      server.get('/foo/-/foo-1.2.4.tgz').reply(500)
+      return common.npm([
+        'install', 'foo',
+        '--before', '2018',
+        '--json',
+        '--cache', path.join(testDir, 'npmcache'),
+        '--registry', server.registry
+      ], { cwd: testDir })
+    }).then(([code, stdout, stderr]) => {
+      t.comment(stdout)
+      t.comment(stderr)
+      t.like(JSON.parse(stdout), {
+        added: [{
+          action: 'add',
+          name: 'foo',
+          version: '1.2.3'
+        }]
+      }, 'installed the 2017 version of the package')
     })
-  }).then(tarball => {
-    server.get('/foo/-/foo-1.2.3.tgz').reply(200, tarball)
-    server.get('/foo/-/foo-1.2.4.tgz').reply(500)
-    return common.npm([
-      'install', 'foo',
-      '--before', '2018',
-      '--json',
-      '--cache', path.join(testDir, 'npmcache'),
-      '--registry', server.registry
-    ], { cwd: testDir })
-  }).then(([code, stdout, stderr]) => {
-    t.comment(stdout)
-    t.comment(stderr)
-    t.like(JSON.parse(stdout), {
-      added: [{
-        action: 'add',
-        name: 'foo',
-        version: '1.2.3'
-      }]
-    }, 'installed the 2017 version of the package')
-  })
 })
 
 test('cleanup', t => {
