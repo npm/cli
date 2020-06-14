@@ -455,7 +455,7 @@ packages.
 * Type: Boolean
 
 When "true" displays the message at the end of each `npm install`
-aknowledging the number of dependencies looking for funding.
+acknowledging the number of dependencies looking for funding.
 See [`npm fund`](/cli-commands/npm-fund) for details.
 
 #### git
