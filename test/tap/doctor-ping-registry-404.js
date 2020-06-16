@@ -54,18 +54,18 @@ t.test('setup', (t) => {
               _hasShrinkwrap: false,
               dist: {
                 shasum: 'deadbeef',
-                tarball: 'https://reg.eh/npm-0.0.0.tgz',
-              },
-            },
-          },
+                tarball: 'https://reg.eh/npm-0.0.0.tgz'
+              }
+            }
+          }
         })
       )
       const fixture = new Tacks(
         Dir({
           [path.basename(PKG)]: Dir({
-            'package.json': File({ name: 'npm', version: '0.0.0' }),
+            'package.json': File({ name: 'npm', version: '0.0.0' })
           }),
-          [path.basename(PREFIX)]: Dir({}),
+          [path.basename(PREFIX)]: Dir({})
         })
       )
       fixture.create(ROOT)
@@ -75,7 +75,7 @@ t.test('setup', (t) => {
           loglevel: 'silent',
           cache: CACHE,
           tmp: TMP,
-          prefix: PREFIX,
+          prefix: PREFIX
         },
         (err) => {
           t.ifError(err, 'npm loaded successfully')
