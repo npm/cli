@@ -307,6 +307,7 @@
     "test-node": "tap --timeout 240 \"test/tap/*.js\" \"test/network/*.js\""
   },
   "tap": {
+    "coverage-map": "test/coverage-map.js",
     "esm": false,
     "timeout": 600
   },
