@@ -1,4 +1,5 @@
 const { test } = require('tap')
+const prune = require('../../lib/prune.js')
 const requireInject = require('require-inject')
 
 test('should prune using Arborist', (t) => {
@@ -21,6 +22,13 @@ test('should prune using Arborist', (t) => {
     }
   })
   prune(null, () => {
+    t.ok(true, 'callback is called')
+    t.end()
+  })
+})
+
+test('calls completion', (t) => {
+  prune.completion(() => {
     t.ok(true, 'callback is called')
     t.end()
   })
