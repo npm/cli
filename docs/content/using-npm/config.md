@@ -189,6 +189,14 @@ for [`npm audit`](/cli-commands/audit) for details on what is submitted.
 The minimum level of vulnerability for `npm audit` to exit with
 a non-zero exit code.
 
+#### acknowledged-issues
+
+* Default: `''`
+* Type: String
+
+Comma separated list of acknowledged issues that should not cause `npm audit` to exit with
+a non-zero exit code.
+
 #### auth-type
 
 * Default: `'legacy'`

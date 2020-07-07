@@ -87,6 +87,112 @@ const quickAuditResult = {
   }
 }
 
+function _runAuditTest (t, params, expectedCode) {
+  const fixture = new Tacks(new Dir({
+    'package.json': new File({
+      name: 'foo',
+      version: '1.0.0',
+      dependencies: {
+        baddep: '1.0.0'
+      }
+    })
+  }))
+  fixture.create(testDir)
+  return tmock(t).then(srv => {
+    srv.filteringRequestBody(req => 'ok')
+    srv.post('/-/npm/v1/security/audits/quick', 'ok').reply(200, quickAuditResult)
+    srv.get('/baddep').twice().reply(200, {
+      name: 'baddep',
+      'dist-tags': {
+        'latest': '1.2.3'
+      },
+      versions: {
+        '1.0.0': {
+          name: 'baddep',
+          version: '1.0.0',
+          _hasShrinkwrap: false,
+          dist: {
+            shasum: 'deadbeef',
+            tarball: common.registry + '/idk/-/idk-1.0.0.tgz'
+          }
+        },
+        '1.2.3': {
+          name: 'baddep',
+          version: '1.2.3',
+          _hasShrinkwrap: false,
+          dist: {
+            shasum: 'deadbeef',
+            tarball: common.registry + '/idk/-/idk-1.2.3.tgz'
+          }
+        }
+      }
+    })
+    return common.npm([
+      'install',
+      '--audit',
+      '--json',
+      '--package-lock-only',
+      '--registry', common.registry,
+      '--cache', path.join(testDir, 'npm-cache')
+    ], EXEC_OPTS).then(([code, stdout, stderr]) => {
+      const result = JSON.parse(stdout)
+      t.same(result.audit, quickAuditResult, 'printed quick audit result')
+      srv.filteringRequestBody(req => 'ok')
+      srv.post('/-/npm/v1/security/audits', 'ok').reply(200, {
+        actions: [{
+          action: 'update',
+          module: 'baddep',
+          target: '1.2.3',
+          resolves: [{ path: 'baddep' }]
+        }],
+        metadata: {
+          vulnerabilities: {
+            low: 1
+          }
+        },
+        advisories: {
+          '1316': {
+            'id': 1316,
+            'severity': 'high'
+          }
+        }
+      })
+      return common.npm([
+        'audit',
+        '--json',
+        '--registry', common.registry,
+        '--cache', path.join(testDir, 'npm-cache')
+      ].concat(params), EXEC_OPTS).then(([code, stdout, stderr]) => {
+        t.equal(code, expectedCode, 'exited as expected')
+      })
+    })
+  })
+}
+
+test('exits with zero exit code when auditing for vulnerability that is marked as known', t => {
+  return _runAuditTest(t, ['--acknowledged-issues', '1316'], 0)
+})
+
+test('exits with non zero exit code when auditing for vulnerabilities that are not marked as known', t => {
+  return _runAuditTest(t, ['--acknowledged-issues', '6131'], 1)
+})
+
+test('exits with zero exit code when auditing for vulnerabilities that are marked as known', t => {
+  return _runAuditTest(t, ['--acknowledged-issues', '1316,1234,5311'], 0)
+})
+
+test('exits with zero exit code when auditing for vulnerability that is marked as known and is below audit-level', t => {
+  return _runAuditTest(t, ['--acknowledged-issues', '1316', '--audit-level', 'critical'], 0)
+})
+
+test('exits with zero exit code when auditing for vulnerabilities that is marked as known and are above audit-level', t => {
+  return _runAuditTest(t, ['--acknowledged-issues', '1316', '--audit-level', 'low'], 0)
+})
+
+test('exits with zero exit code when issue is above audit-level and it is not acknowledged', t => {
+  return _runAuditTest(t, ['--acknowledged-issues', '6131', '--audit-level', 'low'], 1)
+})
+
 test('exits with zero exit code for vulnerabilities below the `audit-level` flag', t => {
   const fixture = new Tacks(new Dir({
     'package.json': new File({

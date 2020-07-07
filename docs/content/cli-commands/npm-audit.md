@@ -11,7 +11,7 @@ description: Run a security audit
 ### Synopsis
 
 ```bash
-npm audit [--json|--parseable|--audit-level=(low|moderate|high|critical)]
+npm audit [--json|--parseable|--audit-level=(low|moderate|high|critical)|--acknowledged-issues=(comma,separated,list,of,issues)]
 npm audit fix [--force|--package-lock-only|--dry-run]
 
 common options: [--production] [--only=(dev|prod)]
@@ -76,6 +76,11 @@ Fail an audit only if the results include a vulnerability with a level of modera
 $ npm audit --audit-level=moderate
 ```
 
+Do not fail an audit if the only reason for failure would be issues: 1234 and 2314
+```bash
+$ npm audit --acknowledged-issues 1234,2314
+```
+
 ### Description
 
 The audit command submits a description of the dependencies configured in
@@ -93,8 +98,9 @@ installer will also apply to `npm install` -- so things like `npm audit fix
 
 By default, the audit command will exit with a non-zero code if any vulnerability
 is found. It may be useful in CI environments to include the `--audit-level` parameter
-to specify the minimum vulnerability level that will cause the command to fail. This
-option does not filter the report output, it simply changes the command's failure
+to specify the minimum vulnerability level that will cause the command to fail. One
+can also acknowledge issues by using `--acknowledged-issues` option.
+These options do not filter the report output, it simply changes the command's failure
 threshold.
 
 ### Content Submitted
@@ -127,7 +133,7 @@ different between runs.
 The `npm audit` command will exit with a 0 exit code if no vulnerabilities were found.
 
 If vulnerabilities were found the exit code will depend on the `audit-level`
-configuration setting.
+and `acknowledged-issues` configuration setting.
 
 ### See Also
 
