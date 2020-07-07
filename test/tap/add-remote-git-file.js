@@ -1,48 +1,60 @@
 'use strict'
 
-var fs = require('fs')
-var resolve = require('path').resolve
-var url = require('url')
+const pacote = require('pacote')
+const fs = require('fs')
+const resolve = require('path').resolve
+const url = require('url')
 
-var mkdirp = require('mkdirp')
-var test = require('tap').test
+const mkdirp = require('mkdirp')
+const test = require('tap').test
 
-var npm = require('../../lib/npm.js')
-var fetchPackageMetadata = require('../../lib/fetch-package-metadata.js')
-var common = require('../common-tap.js')
+const npm = require('../../lib/npm.js')
+const common = require('../common-tap.js')
 
-var pkg = resolve(common.pkg, 'package')
-var repo = resolve(common.pkg, 'repo')
+const cache = common.cache
+const pkg = resolve(common.pkg, 'package')
+const repo = resolve(common.pkg, 'repo')
 mkdirp.sync(pkg)
 
-var git
-var cloneURL = 'git+file://' + resolve(pkg, 'child.git')
+let git
+const cloneURL = 'git+file://' + resolve(pkg, 'child.git')
 
-var pjChild = JSON.stringify({
+const pjChild = JSON.stringify({
   name: 'child',
   version: '1.0.3'
 }, null, 2) + '\n'
 
-test('setup', function (t) {
-  setup(function (er, r) {
-    t.ifError(er, 'git started up successfully')
+test('setup', { bail: true }, function (t) {
+  mkdirp.sync(repo)
+  fs.writeFileSync(resolve(repo, 'package.json'), pjChild)
+  npm.load({
+    cache,
+    registry: common.registry,
+    loglevel: 'silent'
+  }, function () {
+    git = require('../../lib/utils/git.js')
 
-    t.end()
+    common.makeGitRepo({
+      path: repo,
+      commands: [git.chainableExec(
+        ['clone', '--bare', repo, 'child.git'],
+        { cwd: pkg, env: process.env }
+      )]
+    }, er => {
+      t.ifError(er)
+      t.end()
+    })
   })
 })
 
-test('cache from repo', function (t) {
+test('cache from repo', async t => {
   process.chdir(pkg)
-  fetchPackageMetadata(cloneURL, process.cwd(), {}, (err, manifest) => {
-    if (err) t.fail(err.message)
-    t.equal(
-      url.parse(manifest._resolved).protocol,
-      'git+file:',
-      'npm didn\'t go crazy adding git+git+git+git'
-    )
-    t.equal(manifest._requested.type, 'git', 'cached git')
-    t.end()
-  })
+  const manifest = await pacote.manifest(cloneURL, npm.flatOptions)
+  t.equal(
+    url.parse(manifest._resolved).protocol,
+    'git+file:',
+    'npm didn\'t go crazy adding git+git+git+git'
+  )
 })
 
 test('save install', function (t) {
@@ -51,13 +63,13 @@ test('save install', function (t) {
     name: 'parent',
     version: '5.4.3'
   }, null, 2) + '\n')
-  var prev = npm.config.get('save')
+  const prev = npm.config.get('save')
   npm.config.set('save', true)
   npm.commands.install('.', [cloneURL], function (er) {
     npm.config.set('save', prev)
     t.ifError(er, 'npm installed via git')
-    var pj = JSON.parse(fs.readFileSync('package.json', 'utf-8'))
-    var dep = pj.dependencies.child
+    const pj = JSON.parse(fs.readFileSync('package.json', 'utf-8'))
+    const dep = pj.dependencies.child
     t.equal(
       url.parse(dep).protocol,
       'git+file:',
@@ -67,19 +79,3 @@ test('save install', function (t) {
     t.end()
   })
 })
-
-function setup (cb) {
-  mkdirp.sync(repo)
-  fs.writeFileSync(resolve(repo, 'package.json'), pjChild)
-  npm.load({ registry: common.registry, loglevel: 'silent' }, function () {
-    git = require('../../lib/utils/git.js')
-
-    common.makeGitRepo({
-      path: repo,
-      commands: [git.chainableExec(
-        ['clone', '--bare', repo, 'child.git'],
-        { cwd: pkg, env: process.env }
-      )]
-    }, cb)
-  })
-}

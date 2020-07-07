@@ -227,9 +227,14 @@ ostensibly Unix systems.
 #### browser
 
 * Default: OS X: `"open"`, Windows: `"start"`, Others: `"xdg-open"`
-* Type: String
+* Type: String or Boolean
 
-The browser that is called by the `npm docs` command to open websites.
+The browser that is called by npm commands to open websites.
+
+Set to `false` to suppress browser behavior and instead print urls to
+terminal.
+
+Set to `true` to use default system URL opener.
 
 #### ca
 
