@@ -33,7 +33,7 @@
     "npx": "./bin/npx-cli.js"
   },
   "dependencies": {
-    "@npmcli/arborist": "0.0.0-pre.20",
+    "@npmcli/arborist": "0.0.0-pre.21",
     "@npmcli/run-script": "^1.3.1",
     "JSONStream": "^1.3.5",
     "abbrev": "~1.1.1",
@@ -75,7 +75,7 @@
     "json-parse-even-better-errors": "^2.2.0",
     "lazy-property": "~1.0.0",
     "libnpmaccess": "^4.0.0",
-    "libnpmfund": "0.0.0-pre.2",
+    "libnpmfund": "github:npm/libnpmfund#isaacs/arborist-21",
     "libnpmhook": "^6.0.0",
     "libnpmorg": "^2.0.0",
     "libnpmpack": "^2.0.0",

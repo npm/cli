@@ -125,8 +125,13 @@ module.exports = cls => class VirtualLoader extends cls {
         node[ptype] = parent
         // read inBundle from package because 'package' here is
         // actually a v2 lockfile metadata entry.
-        if (ptype === 'parent' && node.package.inBundle && parent.edgesOut.has(name)) {
-          const ppkg = parent.package
+        // If the *parent* is also bundled, though, then we assume
+        // that it's being pulled in just by virtue of that.
+        const {inBundle} = node.package
+        const ppkg = parent.package
+        const {inBundle: parentBundled} = ppkg
+        const hasEdge = parent.edgesOut.has(name)
+        if (ptype === 'parent' && inBundle && hasEdge && !parentBundled) {
           if (!ppkg.bundleDependencies)
             ppkg.bundleDependencies = [name]
           else if (!ppkg.bundleDependencies.includes(name))
