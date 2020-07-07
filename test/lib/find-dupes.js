@@ -16,7 +16,7 @@ test('should run dedupe in dryRun mode', (t) => {
 })
 
 test('calls completion', (t) => {
-  findDupes.completion(() => {
+  findDupes.completion({}, () => {
     t.ok(true, 'callback is called')
     t.end()
   })

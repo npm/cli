@@ -28,7 +28,7 @@ test('should prune using Arborist', (t) => {
 })
 
 test('calls completion', (t) => {
-  prune.completion(() => {
+  prune.completion({}, () => {
     t.ok(true, 'callback is called')
     t.end()
   })
