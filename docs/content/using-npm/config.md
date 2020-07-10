@@ -789,14 +789,6 @@ A comma-separated string or an array of domain extensions that a proxy should no
 Force offline mode: no network requests will be done during install. To allow
 the CLI to fill in missing cache data, see `--prefer-offline`.
 
-#### onload-script
-
-* Default: false
-* Type: path
-
-A node module to `require()` when npm loads.  Useful for programmatic
-usage.
-
 #### only
 
 * Default: null
