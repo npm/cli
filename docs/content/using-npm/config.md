@@ -720,21 +720,6 @@ What level of logs to report.  On failure, *all* logs are written to
 
 Any logs of a higher level than the setting are shown. The default is "notice".
 
-#### logstream
-
-* Default: process.stderr
-* Type: Stream
-
-This is the stream that is passed to the
-[npmlog](https://github.com/npm/npmlog) module at run time.
-
-It cannot be set from the command line, but if you are using npm
-programmatically, you may wish to send logs to somewhere other than
-stderr.
-
-If the `color` config is set to true, then this stream will receive
-colored output if it is a TTY.
-
 #### logs-max
 
 * Default: 10
