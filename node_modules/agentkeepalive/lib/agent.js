@@ -85,6 +85,16 @@ class Agent extends OriginalAgent {
     // including free socket timeout counter
     this.timeoutSocketCount = 0;
     this.timeoutSocketCountLastCheck = 0;
+
+    this.on('free', socket => {
+      // https://github.com/nodejs/node/pull/32000
+      // Node.js native agent will check socket timeout eqs agent.options.timeout.
+      // Use the ttl or freeSocketTimeout to overwrite.
+      const timeout = this.calcSocketTimeout(socket);
+      if (timeout > 0 && socket.timeout !== timeout) {
+        socket.setTimeout(timeout);
+      }
+    });
   }
 
   get freeSocketKeepAliveTimeout() {
@@ -102,29 +112,22 @@ class Agent extends OriginalAgent {
     return this.options.socketActiveTTL;
   }
 
-  keepSocketAlive(socket) {
-    const result = super.keepSocketAlive(socket);
-    // should not keepAlive, do nothing
-    if (!result) return result;
-
+  calcSocketTimeout(socket) {
+    /**
+     * return <= 0: should free socket
+     * return > 0: should update socket timeout
+     * return undefined: not find custom timeout
+     */
     let freeSocketTimeout = this.options.freeSocketTimeout;
     const socketActiveTTL = this.options.socketActiveTTL;
     if (socketActiveTTL) {
       // check socketActiveTTL
       const aliveTime = Date.now() - socket[SOCKET_CREATED_TIME];
       const diff = socketActiveTTL - aliveTime;
-      // destroy it
       if (diff <= 0) {
-        debug('%s(requests: %s, finished: %s) free but need to destroy by TTL, alive %sms(max %sms)',
-          socket[SOCKET_NAME], socket[SOCKET_REQUEST_COUNT], socket[SOCKET_REQUEST_FINISHED_COUNT],
-          aliveTime, socketActiveTTL);
-        return false;
+        return diff;
       }
-
       if (freeSocketTimeout && diff < freeSocketTimeout) {
-        debug('%s(requests: %s, finished: %s) free and wait for %sms TTL timeout',
-          socket[SOCKET_NAME], socket[SOCKET_REQUEST_COUNT], socket[SOCKET_REQUEST_FINISHED_COUNT],
-          diff);
         freeSocketTimeout = diff;
       }
     }
@@ -134,12 +137,26 @@ class Agent extends OriginalAgent {
       // try to use socket custom freeSocketTimeout first, support headers['keep-alive']
       // https://github.com/node-modules/urllib/blob/b76053020923f4d99a1c93cf2e16e0c5ba10bacf/lib/urllib.js#L498
       const customFreeSocketTimeout = socket.freeSocketTimeout || socket.freeSocketKeepAliveTimeout;
-      if (customFreeSocketTimeout && customFreeSocketTimeout < freeSocketTimeout) {
-        freeSocketTimeout = customFreeSocketTimeout;
-      }
-      // FIXME: need to make setRequestSocket as a method on Agent class
-      // then we can reset the agent.options.timeout when free socket is reused.
-      socket.setTimeout(freeSocketTimeout);
+      return customFreeSocketTimeout || freeSocketTimeout;
+    }
+  }
+
+  keepSocketAlive(socket) {
+    const result = super.keepSocketAlive(socket);
+    // should not keepAlive, do nothing
+    if (!result) return result;
+
+    const customTimeout = this.calcSocketTimeout(socket);
+    if (typeof customTimeout === 'undefined') {
+      return true;
+    }
+    if (customTimeout <= 0) {
+      debug('%s(requests: %s, finished: %s) free but need to destroy by TTL, request count %s, diff is %s',
+        socket[SOCKET_NAME], socket[SOCKET_REQUEST_COUNT], socket[SOCKET_REQUEST_FINISHED_COUNT], customTimeout);
+      return false;
+    }
+    if (socket.timeout !== customTimeout) {
+      socket.setTimeout(customTimeout);
     }
     return true;
   }

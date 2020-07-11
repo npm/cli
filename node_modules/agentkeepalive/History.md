@@ -1,4 +1,10 @@
 
+4.1.3 / 2020-06-15
+==================
+
+**fixes**
+  * [[`4ba9f9c`](http://github.com/node-modules/agentkeepalive/commit/4ba9f9c844f2a6b8037ce56599d25c69ef054d91)] - fix: compatible with node v12.16.3 (#91) (killa <<killa123@126.com>>)
+
 4.1.2 / 2020-04-25
 ==================
 

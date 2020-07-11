@@ -68,6 +68,7 @@ npm.load(conf, function (er) {
     // XXX move update notifier stuff into separate module
     const pkg = require('../package.json')
     let notifier = require('update-notifier')({pkg})
+    // XXX should use @npmcli/ci-detect
     const isCI = require('ci-info').isCI
     if (
       notifier.update &&
