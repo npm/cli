@@ -47,9 +47,3 @@ test('should remove dupes using Arborist - no arguments', (t) => {
   })
 })
 
-test('calls completion', (t) => {
-  dedupe.completion({}, () => {
-    t.ok(true, 'callback is called')
-    t.end()
-  })
-})
