@@ -18,6 +18,15 @@ module.exports = Object.assign((data, options = {}) => {
     auditLevel = 'low'
   } = options
 
+  if (!data)
+    throw Object.assign(
+      new TypeError('ENOAUDITDATA'),
+      {
+        code: 'ENOAUDITDATA',
+        message: 'missing audit data'
+      }
+    )
+
   if (typeof data.toJSON === 'function')
     data = data.toJSON()
 
