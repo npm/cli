@@ -4,8 +4,7 @@ process.title = 'npm'
 
 const {
   checkForBrokenNode,
-  checkForUnsupportedNode,
-  checkVersion
+  checkForUnsupportedNode
 } = require('../lib/utils/unsupported.js')
 
 checkForBrokenNode()
@@ -49,71 +48,14 @@ log.info('using', 'node@%s', process.version)
 process.on('uncaughtException', errorHandler)
 process.on('unhandledRejection', errorHandler)
 
-const isGlobalNpmUpdate = npm => {
-  return npm.config.get('global') &&
-    ['install', 'update'].includes(npm.command) &&
-    npm.argv.includes('npm')
-}
-
 // now actually fire up npm and run the command.
 // this is how to use npm programmatically:
 conf._exit = true
+const updateNotifier = require('../lib/utils/update-notifier.js')
 npm.load(conf, function (er) {
   if (er) return errorHandler(er)
-  if (
-    !isGlobalNpmUpdate(npm) &&
-    npm.config.get('update-notifier') &&
-    !checkVersion(process.version).unsupported
-  ) {
-    // XXX move update notifier stuff into separate module
-    const pkg = require('../package.json')
-    let notifier = require('update-notifier')({pkg})
-    // XXX should use @npmcli/ci-detect
-    const isCI = require('ci-info').isCI
-    if (
-      notifier.update &&
-      notifier.update.latest !== pkg.version &&
-      !isCI
-    ) {
-      const color = require('ansicolors')
-      const useColor = npm.color
-      const useUnicode = npm.config.get('unicode')
-      const old = notifier.update.current
-      const latest = notifier.update.latest
-      let type = notifier.update.type
-      if (useColor) {
-        switch (type) {
-          case 'major':
-            type = color.red(type)
-            break
-          case 'minor':
-            type = color.yellow(type)
-            break
-          case 'patch':
-            type = color.green(type)
-            break
-        }
-      }
-      const changelog = `https://github.com/npm/cli/releases/tag/v${latest}`
-      notifier.notify({
-        message: `New ${type} version of ${pkg.name} available! ${
-          useColor ? color.red(old) : old
-        } ${useUnicode ? '→' : '->'} ${
-          useColor ? color.green(latest) : latest
-        }\n` +
-        `${
-          useColor ? color.yellow('Changelog:') : 'Changelog:'
-        } ${
-          useColor ? color.cyan(changelog) : changelog
-        }\n` +
-        `Run ${
-          useColor
-            ? color.green(`npm install -g ${pkg.name}`)
-            : `npm i -g ${pkg.name}`
-        } to update!`
-      })
-    }
-  }
+
+  updateNotifier(npm)
 
   const cmd = npm.argv.shift()
   const impl = npm.commands[cmd]
