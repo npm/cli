@@ -109,6 +109,7 @@
     "opener": "^1.5.1",
     "osenv": "^0.1.5",
     "pacote": "^11.1.10",
+    "parse-conflict-json": "^1.1.0",
     "path-is-inside": "~1.0.2",
     "promise-inflight": "~1.0.1",
     "qrcode-terminal": "^0.12.0",
@@ -254,7 +255,8 @@
     "validate-npm-package-name",
     "which",
     "worker-farm",
-    "write-file-atomic"
+    "write-file-atomic",
+    "parse-conflict-json"
   ],
   "devDependencies": {
     "deep-equal": "^1.0.1",
