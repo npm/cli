@@ -396,8 +396,8 @@ module.exports = cls => class Reifier extends cls {
     // Do the best with what we have, or else remove it from the tree
     // entirely, since we can't possibly reify it.
     const res = node.resolved ? this[_registryResolved](node.resolved)
-      : node.package.name && node.package.version
-        ? `${node.package.name}@${node.package.version}`
+      : node.package.name && node.version
+        ? `${node.package.name}@${node.version}`
       : null
 
     // no idea what this thing is.  remove it from the tree.
@@ -755,7 +755,7 @@ module.exports = cls => class Reifier extends cls {
         const res = npa(child.resolved)
 
         if (req.registry) {
-          const version = child.package.version
+          const version = child.version
           const range = this[_savePrefix] + version
           const pname = child.package.name
           const alias = name !== pname

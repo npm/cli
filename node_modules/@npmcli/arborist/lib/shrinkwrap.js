@@ -715,7 +715,7 @@ class Shrinkwrap {
     const entry = this.yarnLock.entries.get(`${node.name}@${edge.spec}`)
 
     if (!entry ||
-        mismatch(node.package.version, entry.version) ||
+        mismatch(node.version, entry.version) ||
         mismatch(node.integrity, entry.integrity) ||
         mismatch(pathFixed, entry.resolved))
       return
@@ -765,8 +765,8 @@ class Shrinkwrap {
     if (node === this.tree) {
       // the root node
       lock.name = node.package.name || node.name
-      if (node.package.version)
-        lock.version = node.package.version
+      if (node.version)
+        lock.version = node.version
     }
 
     // npm v6 and before tracked 'from', meaning "the request that led
@@ -811,9 +811,9 @@ class Shrinkwrap {
         node.package &&
         node.package.name &&
         node.package.name !== node.name)
-      lock.version = `npm:${node.package.name}@${node.package.version}`
-    else if (node.package && node.package.version)
-      lock.version = node.package.version
+      lock.version = `npm:${node.package.name}@${node.version}`
+    else if (node.package && node.version)
+      lock.version = node.version
 
     if (node.inBundle)
       lock.bundled = true

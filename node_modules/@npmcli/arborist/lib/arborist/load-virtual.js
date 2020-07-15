@@ -37,8 +37,10 @@ module.exports = cls => class VirtualLoader extends cls {
       return this[loadFromShrinkwrap](options.root.meta, options.root)
 
     return Shrinkwrap.load({ path: this.path }).then(s => {
-      if (!s.loadedFromDisk && !options.root)
-        throw new Error('loadVirtual requires existing shrinkwrap file')
+      if (!s.loadedFromDisk && !options.root) {
+        const er = new Error('loadVirtual requires existing shrinkwrap file')
+        throw Object.assign(er, { code: 'ENOLOCK' })
+      }
 
       // when building the ideal tree, we pass in a root node to this function
       // otherwise, load it from the root package in the lockfile

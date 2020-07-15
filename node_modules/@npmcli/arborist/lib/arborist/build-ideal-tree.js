@@ -338,9 +338,9 @@ module.exports = cls => class IdealTreeBuilder extends cls {
         // be printed by npm-audit-report as if they can be fixed, because
         // they can't.
         if (bundler) {
-          this.log.warn(`audit fix ${node.name}@${node.package.version}`,
+          this.log.warn(`audit fix ${node.name}@${node.version}`,
             `${node.location}\nis a bundled dependency of\n${
-            bundler.name}@${bundler.package.version} at ${bundler.location}\n` +
+            bundler.name}@${bundler.version} at ${bundler.location}\n` +
             'It cannot be fixed automatically.\n' +
             `Check for updates to the ${bundler.name} package.`)
           continue
@@ -916,8 +916,8 @@ module.exports = cls => class IdealTreeBuilder extends cls {
       }
 
       // if the version is greater, try to use the new one
-      const curVer = current.package.version
-      const newVer = dep.package.version
+      const curVer = current.version
+      const newVer = dep.version
       // always try to replace if the version is greater
       const tryReplace = curVer && newVer && semver.gte(newVer, curVer)
       if (tryReplace && current.canReplaceWith(dep)) {

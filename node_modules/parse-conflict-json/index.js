@@ -89,4 +89,4 @@ const resolve = (parent, ours, theirs) => {
   return theirs
 }
 
-module.exports = parseConflictJSON
+module.exports = Object.assign(parseConflictJSON, { isDiff })

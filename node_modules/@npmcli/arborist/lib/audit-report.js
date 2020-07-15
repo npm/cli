@@ -252,7 +252,7 @@ class AuditReport extends Map {
           const metaVuln = []
           if (!paku) {
             // not a dep that comes from the registry, apparently
-            metaVuln.push(p.package.version)
+            metaVuln.push(p.version)
           } else {
             for (const [version, pmani] of Object.entries(paku.versions)) {
               const spec = this[_getDepSpec](pmani, name)
@@ -425,7 +425,7 @@ const prepareBulkData = (tree, opts) => {
   for (const name of tree.inventory.query('name')) {
     const set = new Set()
     for (const node of tree.inventory.query('name', name)) {
-      set.add(node.package.version)
+      set.add(node.version)
     }
     payload[name] = [...set]
   }

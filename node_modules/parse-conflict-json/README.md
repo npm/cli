@@ -17,6 +17,9 @@ const data = fs.readFileSync('package-lock.json', 'utf8')
 // preference defaults to 'ours', set to 'theirs' to prefer the other
 // side's changes.
 const parsed = parseConflictJson(data, reviverFunction, preference)
+
+// returns true if the data looks like a conflicted diff file
+parsed.isDiff(data)
 ```
 
 ## Algorithm

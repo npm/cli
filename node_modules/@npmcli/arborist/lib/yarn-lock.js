@@ -270,8 +270,8 @@ class YarnLock {
       n.dependencies = node.package.dependencies
     if (node.package.optionalDependencies)
       n.optionalDependencies = node.package.optionalDependencies
-    if (node.package.version)
-      n.version = node.package.version
+    if (node.version)
+      n.version = node.version
     if (node.resolved)
       n.resolved = consistentResolve(
         node.resolved,
