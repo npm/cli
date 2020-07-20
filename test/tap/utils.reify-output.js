@@ -1,23 +1,30 @@
 'use strict'
 
-const { test } = require('tap')
+const t = require('tap')
 const requireInject = require('require-inject')
 
+const log = require('npmlog')
+log.level = 'warn'
+
+t.cleanSnapshot = str => str.replace(/in [0-9]+ms/g, 'in {TIME}ms')
+
+const settings = {
+  fund: true
+}
+const npmock = {
+  started: Date.now(),
+  flatOptions: settings
+}
 const getReifyOutput = tester =>
   requireInject(
     '../../lib/utils/reify-output.js',
     {
-      '../../lib/npm.js': ({
-        started: Date.now(),
-        flatOptions: {
-          fund: true
-        }
-      }),
+      '../../lib/npm.js': npmock,
       '../../lib/utils/output.js': tester
     }
   )
 
-test('missing info', (t) => {
+t.test('missing info', (t) => {
   t.plan(1)
   const reifyOutput = getReifyOutput(
     out => t.doesNotHave(
@@ -37,7 +44,7 @@ test('missing info', (t) => {
   })
 })
 
-test('single package', (t) => {
+t.test('single package', (t) => {
   t.plan(1)
   const reifyOutput = getReifyOutput(
     out => {
@@ -77,7 +84,46 @@ test('single package', (t) => {
   })
 })
 
-test('print appropriate message for many packages', (t) => {
+t.test('no message when funding config is false', (t) => {
+  t.teardown(() => { settings.fund = true })
+  settings.fund = false
+  const reifyOutput = getReifyOutput(
+    out => {
+      if (out.endsWith('looking for funding')) {
+        t.fail('should not print funding info', { actual: out })
+      }
+    }
+  )
+
+  reifyOutput({
+    actualTree: {
+      name: 'foo',
+      package: {
+        name: 'foo',
+        version: '1.0.0'
+      },
+      edgesOut: new Map([
+        ['bar', {
+          to: {
+            name: 'bar',
+            package: {
+              name: 'bar',
+              version: '1.0.0',
+              funding: { type: 'foo', url: 'http://example.com' }
+            }
+          }
+        }]
+      ])
+    },
+    diff: {
+      children: []
+    }
+  })
+
+  t.end()
+})
+
+t.test('print appropriate message for many packages', (t) => {
   t.plan(1)
   const reifyOutput = getReifyOutput(
     out => {
@@ -135,4 +181,104 @@ test('print appropriate message for many packages', (t) => {
       children: []
     }
   })
+})
+
+t.test('no output when silent', t => {
+  const reifyOutput = getReifyOutput(out => {
+    t.fail('should not get output when silent', { actual: out })
+  })
+  t.teardown(() => log.level = 'warn')
+  log.level = 'silent'
+  reifyOutput({
+    actualTree: { inventory: { size: 999 }, children: [] },
+    auditReport: {
+      toJSON: () => mock.auditReport,
+      vulnerabilities: {},
+      metadata: {
+        vulnerabilities: {
+          total: 99
+        }
+      }
+    },
+    diff: {
+      children: [
+        { action: 'ADD', ideal: { location: 'loc' } }
+      ]
+    }
+  })
+  t.end()
+})
+
+t.test('packages changed message', t => {
+  const output = []
+  const reifyOutput = getReifyOutput(out => {
+    output.push(out)
+  })
+
+  // return a test function that builds up the mock and snapshots output
+  const testCase = (t, added, removed, changed, audited, json, command) => {
+    settings.json = json
+    npmock.command = command
+    const mock = {
+      actualTree: { inventory: { size: audited }, children: [] },
+      auditReport: audited ? {
+        toJSON: () => mock.auditReport,
+        vulnerabilities: {},
+        metadata: {
+          vulnerabilities: {
+            total: 0
+          }
+        }
+      } : null,
+      diff: {
+        children: [
+          { action: 'some random unexpected junk' }
+        ]
+      }
+    }
+    for (let i = 0; i < added; i++) {
+      mock.diff.children.push({ action: 'ADD', ideal: { location: 'loc' } })
+    }
+    for (let i = 0; i < removed; i++) {
+      mock.diff.children.push({ action: 'REMOVE', actual: { location: 'loc' } })
+    }
+    for (let i = 0; i < changed; i++) {
+      const actual = { location: 'loc' }
+      const ideal = { location: 'loc' }
+      mock.diff.children.push({ action: 'CHANGE', actual, ideal })
+    }
+    output.length = 0
+    reifyOutput(mock)
+    t.matchSnapshot(output.join('\n'), JSON.stringify({
+      added,
+      removed,
+      changed,
+      audited,
+      json
+    }))
+  }
+
+  const cases = []
+  for (const added of [0, 1, 2]) {
+    for (const removed of [0, 1, 2]) {
+      for (const changed of [0, 1, 2]) {
+        for (const audited of [0, 1, 2]) {
+          for (const json of [true, false]) {
+            cases.push([added, removed, changed, audited, json, 'install'])
+          }
+        }
+      }
+    }
+  }
+
+  // add case for when audit is the command
+  cases.push([0, 0, 0, 2, true, 'audit'])
+  cases.push([0, 0, 0, 2, false, 'audit'])
+
+  t.plan(cases.length)
+  for (const [added, removed, changed, audited, json, command] of cases) {
+    testCase(t, added, removed, changed, audited, json, command)
+  }
+
+  t.end()
 })
