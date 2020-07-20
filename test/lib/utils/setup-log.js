@@ -9,6 +9,18 @@ t.afterEach(cb => {
 
 const setupLog = requireInject('../../../lib/utils/setup-log.js', {
   npmlog: {
+    level: 'warn',
+    levels: {
+      silly: -Infinity,
+      verbose: 1000,
+      info: 2000,
+      timing: 2500,
+      http: 3000,
+      notice: 3500,
+      warn: 4000,
+      error: 5000,
+      silent: Infinity
+    },
     settings,
     enableColor: () => { settings.color = true },
     disableColor: () => { settings.color = false },
@@ -206,5 +218,25 @@ t.test('set loglevel to timing', t => {
     loglevel: 'notice'
   }))
   t.equal(settings.level, 'timing')
+  t.end()
+})
+
+t.test('silent has no logging', t => {
+  const { isTTY: stderrIsTTY } = process.stderr
+  const { isTTY: stdoutIsTTY } = process.stdout
+  const { TERM } = process.env
+  t.teardown(() => {
+    process.stderr.isTTY = stderrIsTTY
+    process.stdout.isTTY = stdoutIsTTY
+    process.env.TERM = TERM
+  })
+  process.stderr.isTTY = true
+  process.stdout.isTTY = true
+  process.env.TERM = 'totes not dum'
+
+  setupLog(config({
+    loglevel: 'silent'
+  }))
+  t.equal(settings.progress, false, 'progress disabled when silent')
   t.end()
 })
