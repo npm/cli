@@ -1,4 +1,3 @@
-// const common = require('../common-tap.js')
 const t = require('tap')
 
 process.env.NODE = '/path/to/some/node'
@@ -118,7 +117,7 @@ class MockConfig {
   }
 }
 
-const flatOptions = require('../../lib/config/flat-options.js')
+const flatOptions = require('../../../lib/config/flat-options.js')
 t.match(logs, [[
   'verbose',
   'npm-session',
@@ -133,7 +132,8 @@ t.test('basic', t => {
     ...generatedFlat,
     npmBin: '/path/to/npm/bin.js',
     log: {},
-    npmSession: '12345'
+    npmSession: '12345',
+    cache: generatedFlat.cache.replace(/\\/g, '/')
   }
   t.matchSnapshot(clean, 'flat options')
   t.equal(generatedFlat.npmBin, require.main.filename)
@@ -268,5 +268,60 @@ t.test('omit/include options', t => {
 t.test('get the node without the environ', t => {
   delete process.env.NODE
   t.equal(flatOptions(new Mocknpm()).nodeBin, process.execPath)
+  t.end()
+})
+
+t.test('various default values and falsey fallbacks', t => {
+  const npm = new Mocknpm({
+    'script-shell': false,
+    registry: 'http://example.com',
+    'metrics-registry': null,
+    'searchlimit': 0,
+    'save-exact': false,
+    'save-prefix': '>='
+  })
+  const opts = flatOptions(npm)
+  t.equal(opts.scriptShell, undefined, 'scriptShell is undefined if falsey')
+  t.equal(opts.metricsRegistry, 'http://example.com',
+    'metricsRegistry defaults to registry')
+  t.equal(opts.search.limit, 20, 'searchLimit defaults to 20')
+  t.equal(opts.savePrefix, '>=', 'save-prefix respected if no save-exact')
+  logs.length = 0
+  t.end()
+})
+
+t.test('save-type', t => {
+  const base = {
+    'save-optional': false,
+    'save-peer': false,
+    'save-dev': false,
+    'save-prod': false
+  }
+  const cases = [
+    ['peerOptional', {
+      'save-optional': true,
+      'save-peer': true,
+    }],
+    ['optional', {
+      'save-optional': true
+    }],
+    ['dev', {
+      'save-dev': true
+    }],
+    ['peer', {
+      'save-peer': true
+    }],
+    ['prod', {
+      'save-prod': true
+    }],
+    [null, {}]
+  ]
+  for (const [expect, options] of cases) {
+    const opts = flatOptions(new Mocknpm({
+      ...base,
+      ...options
+    }))
+    t.equal(opts.saveType, expect, JSON.stringify(options))
+  }
   t.end()
 })
