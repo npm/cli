@@ -17,10 +17,10 @@ const npmock = {
 }
 const getReifyOutput = tester =>
   requireInject(
-    '../../lib/utils/reify-output.js',
+    '../../../lib/utils/reify-output.js',
     {
-      '../../lib/npm.js': npmock,
-      '../../lib/utils/output.js': tester
+      '../../../lib/npm.js': npmock,
+      '../../../lib/utils/output.js': tester
     }
   )
 
