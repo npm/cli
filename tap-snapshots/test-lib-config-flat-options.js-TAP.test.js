@@ -5,11 +5,12 @@
  * Make sure to inspect the output below.  Do not ignore changes!
  */
 'use strict'
-exports[`test/tap/flat-options.js TAP basic > flat options 1`] = `
+exports[`test/lib/config/flat-options.js TAP basic > flat options 1`] = `
 Object {
   "@scope:registry": "@scope:registry",
   "//nerf.dart:_authToken": "//nerf.dart:_authToken",
   "access": "access",
+  "all": undefined,
   "allowSameVersion": "allow-same-version",
   "alwaysAuth": "always-auth",
   "audit": "audit",
@@ -51,6 +52,7 @@ Object {
   "json": undefined,
   "key": "key",
   "legacyBundling": "legacy-bundling",
+  "legacyPeerDeps": undefined,
   "localPrefix": "/path/to/npm/cli",
   "lockFile": Object {
     "retries": "cache-lock-retries",
@@ -102,6 +104,7 @@ Object {
     "staleness": "searchstaleness",
   },
   "sendMetrics": "send-metrics",
+  "shell": undefined,
   "signGitCommit": "sign-git-commit",
   "signGitTag": "sign-git-tag",
   "ssoPollFrequency": undefined,
@@ -114,5 +117,6 @@ Object {
   "unicode": undefined,
   "userAgent": "user-agent",
   "viewer": "viewer",
+  "which": undefined,
 }
 `
