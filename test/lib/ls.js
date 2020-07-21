@@ -81,6 +81,7 @@ let result = ''
 // note this _flatOptions representations is for tests-only and does not
 // represent exactly the properties found in the actual flatOptions obj
 const _flatOptions = {
+  all: true,
   color: false,
   dev: false,
   depth: Infinity,
@@ -270,7 +271,31 @@ test('ls', (t) => {
     })
   })
 
+  t.test('default --depth value should be 0', (t) => {
+    _flatOptions.all = false
+    _flatOptions.depth = undefined
+    prefix = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'test-npm-ls',
+        version: '1.0.0',
+        dependencies: {
+          foo: '^1.0.0',
+          lorem: '^1.0.0'
+        }
+      }),
+      ...simpleNmFixture
+    })
+    ls([], (err) => {
+      t.ifError(err, 'npm ls')
+      t.matchSnapshot(redactCwd(result), 'should output tree containing only top-level dependencies')
+      _flatOptions.all = true
+      _flatOptions.depth = Infinity
+      t.end()
+    })
+  })
+
   t.test('--depth=0', (t) => {
+    _flatOptions.all = false
     _flatOptions.depth = 0
     prefix = t.testdir({
       'package.json': JSON.stringify({
@@ -286,12 +311,14 @@ test('ls', (t) => {
     ls([], (err) => {
       t.ifError(err, 'npm ls')
       t.matchSnapshot(redactCwd(result), 'should output tree containing only top-level dependencies')
+      _flatOptions.all = true
       _flatOptions.depth = Infinity
       t.end()
     })
   })
 
   t.test('--depth=1', (t) => {
+    _flatOptions.all = false
     _flatOptions.depth = 1
     prefix = t.testdir({
       'package.json': JSON.stringify({
@@ -345,13 +372,13 @@ test('ls', (t) => {
     ls([], (err) => {
       t.ifError(err, 'npm ls')
       t.matchSnapshot(redactCwd(result), 'should output tree containing top-level deps and their deps only')
+      _flatOptions.all = true
       _flatOptions.depth = Infinity
       t.end()
     })
   })
 
   t.test('missing/invalid/extraneous', (t) => {
-    _flatOptions.depth = 1
     prefix = t.testdir({
       'package.json': JSON.stringify({
         name: 'test-npm-ls',
@@ -373,7 +400,6 @@ test('ls', (t) => {
         'should log missing/invalid/extraneous errors'
       )
       t.matchSnapshot(redactCwd(result), 'should output tree containing missing, invalid, extraneous labels')
-      _flatOptions.depth = Infinity
       t.end()
     })
   })
@@ -584,6 +610,7 @@ test('ls', (t) => {
   })
 
   t.test('--long --depth=0', (t) => {
+    _flatOptions.all = false
     _flatOptions.depth = 0
     _flatOptions.long = true
     prefix = t.testdir({
@@ -608,6 +635,7 @@ test('ls', (t) => {
     })
     ls([], () => {
       t.matchSnapshot(redactCwd(result), 'should output tree containing top-level deps with descriptions')
+      _flatOptions.all = true
       _flatOptions.depth = Infinity
       _flatOptions.long = false
       t.end()
@@ -1040,7 +1068,7 @@ test('ls --parseable', (t) => {
     })
     ls(['notadep'], (err) => {
       t.ifError(err, 'npm ls')
-      t.matchSnapshot(redactCwd(result), 'should output tree containing no dependencies info')
+      t.matchSnapshot(redactCwd(result), 'should output parseable output containing no dependencies info')
       t.equal(
         process.exitCode,
         1,
@@ -1051,7 +1079,31 @@ test('ls --parseable', (t) => {
     })
   })
 
+  t.test('default --depth value should be 0', (t) => {
+    _flatOptions.all = false
+    _flatOptions.depth = undefined
+    prefix = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'test-npm-ls',
+        version: '1.0.0',
+        dependencies: {
+          foo: '^1.0.0',
+          lorem: '^1.0.0'
+        }
+      }),
+      ...simpleNmFixture
+    })
+    ls([], (err) => {
+      t.ifError(err, 'npm ls')
+      t.matchSnapshot(redactCwd(result), 'should output parseable output containing only top-level dependencies')
+      _flatOptions.all = true
+      _flatOptions.depth = Infinity
+      t.end()
+    })
+  })
+
   t.test('--depth=0', (t) => {
+    _flatOptions.all = false
     _flatOptions.depth = 0
     prefix = t.testdir({
       'package.json': JSON.stringify({
@@ -1067,12 +1119,14 @@ test('ls --parseable', (t) => {
     ls([], (err) => {
       t.ifError(err, 'npm ls')
       t.matchSnapshot(redactCwd(result), 'should output tree containing only top-level dependencies')
+      _flatOptions.all = true
       _flatOptions.depth = Infinity
       t.end()
     })
   })
 
   t.test('--depth=1', (t) => {
+    _flatOptions.all = false
     _flatOptions.depth = 1
     prefix = t.testdir({
       'package.json': JSON.stringify({
@@ -1088,6 +1142,7 @@ test('ls --parseable', (t) => {
     ls([], (err) => {
       t.ifError(err, 'npm ls')
       t.matchSnapshot(redactCwd(result), 'should output parseable containing top-level deps and their deps only')
+      _flatOptions.all = true
       _flatOptions.depth = Infinity
       t.end()
     })
@@ -1377,6 +1432,7 @@ test('ls --parseable', (t) => {
   })
 
   t.test('--long --depth=0', (t) => {
+    _flatOptions.all = false
     _flatOptions.depth = 0
     _flatOptions.long = true
     prefix = t.testdir({
@@ -1401,6 +1457,7 @@ test('ls --parseable', (t) => {
     })
     ls([], () => {
       t.matchSnapshot(redactCwd(result), 'should output tree containing top-level deps with descriptions')
+      _flatOptions.all = true
       _flatOptions.depth = Infinity
       _flatOptions.long = false
       t.end()
@@ -1923,7 +1980,46 @@ test('ls --json', (t) => {
     })
   })
 
+  t.test('default --depth value should now be 0', (t) => {
+    _flatOptions.all = false
+    _flatOptions.depth = undefined
+    prefix = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'test-npm-ls',
+        version: '1.0.0',
+        dependencies: {
+          foo: '^1.0.0',
+          lorem: '^1.0.0'
+        }
+      }),
+      ...simpleNmFixture
+    })
+    ls([], (err) => {
+      t.ifError(err, 'npm ls')
+      t.deepEqual(
+        jsonParse(result),
+        {
+          name: 'test-npm-ls',
+          version: '1.0.0',
+          'dependencies': {
+            'foo': {
+              'version': '1.0.0'
+            },
+            'lorem': {
+              'version': '1.0.0'
+            }
+          }
+        },
+        'should output json containing only top-level dependencies'
+      )
+      _flatOptions.all = true
+      _flatOptions.depth = Infinity
+      t.end()
+    })
+  })
+
   t.test('--depth=0', (t) => {
+    _flatOptions.all = false
     _flatOptions.depth = 0
     prefix = t.testdir({
       'package.json': JSON.stringify({
@@ -1954,12 +2050,14 @@ test('ls --json', (t) => {
         },
         'should output json containing only top-level dependencies'
       )
+      _flatOptions.all = true
       _flatOptions.depth = Infinity
       t.end()
     })
   })
 
   t.test('--depth=1', (t) => {
+    _flatOptions.all = false
     _flatOptions.depth = 1
     prefix = t.testdir({
       'package.json': JSON.stringify({
@@ -1995,13 +2093,13 @@ test('ls --json', (t) => {
         },
         'should output json containing top-level deps and their deps only'
       )
+      _flatOptions.all = true
       _flatOptions.depth = Infinity
       t.end()
     })
   })
 
   t.test('missing/invalid/extraneous', (t) => {
-    _flatOptions.depth = 1
     prefix = t.testdir({
       'package.json': JSON.stringify({
         name: 'test-npm-ls',
@@ -2056,7 +2154,6 @@ test('ls --json', (t) => {
         },
         'should output json containing top-level deps and their deps only'
       )
-      _flatOptions.depth = Infinity
       t.end()
     })
   })
@@ -2555,6 +2652,7 @@ test('ls --json', (t) => {
   })
 
   t.test('--long --depth=0', (t) => {
+    _flatOptions.all = false
     _flatOptions.depth = 0
     _flatOptions.long = true
     prefix = t.testdir({
@@ -2649,6 +2747,7 @@ test('ls --json', (t) => {
         },
         'should output json containing top-level deps in long format'
       )
+      _flatOptions.all = true
       _flatOptions.depth = Infinity
       _flatOptions.long = false
       t.end()

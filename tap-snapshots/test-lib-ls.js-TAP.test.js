@@ -193,6 +193,12 @@ exports[`test/lib/ls.js TAP ls --parseable cycle deps > should print tree output
 {CWD}/ls-ls-parseable-cycle-deps/node_modules/b
 `
 
+exports[`test/lib/ls.js TAP ls --parseable default --depth value should be 0 > should output parseable output containing only top-level dependencies 1`] = `
+{CWD}/ls-ls-parseable-default-depth-value-should-be-0
+{CWD}/ls-ls-parseable-default-depth-value-should-be-0/node_modules/foo
+{CWD}/ls-ls-parseable-default-depth-value-should-be-0/node_modules/lorem
+`
+
 exports[`test/lib/ls.js TAP ls --parseable empty location > should print empty result 1`] = `
 {CWD}/ls-ls-parseable-empty-location
 `
@@ -282,7 +288,7 @@ exports[`test/lib/ls.js TAP ls --parseable with filter arg nested dep > should o
 {CWD}/ls-ls-parseable-with-filter-arg-nested-dep/node_modules/bar
 `
 
-exports[`test/lib/ls.js TAP ls --parseable with missing filter arg > should output tree containing no dependencies info 1`] = `
+exports[`test/lib/ls.js TAP ls --parseable with missing filter arg > should output parseable output containing no dependencies info 1`] = `
 
 `
 
@@ -320,6 +326,13 @@ test-npm-ls@1.0.0 {CWD}/ls-ls-cycle-deps
 \`-- a@1.0.0
   \`-- b@1.0.0
     \`-- a@1.0.0 deduped
+
+`
+
+exports[`test/lib/ls.js TAP ls default --depth value should be 0 > should output tree containing only top-level dependencies 1`] = `
+test-npm-ls@1.0.0 {CWD}/ls-ls-default-depth-value-should-be-0
++-- foo@1.0.0
+\`-- lorem@1.0.0
 
 `
 
