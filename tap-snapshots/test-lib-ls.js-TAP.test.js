@@ -215,6 +215,13 @@ exports[`test/lib/ls.js TAP ls --parseable from and resolved properties > should
 {CWD}/ls-ls-parseable-from-and-resolved-properties/node_modules/simple-output
 `
 
+exports[`test/lib/ls.js TAP ls --parseable global > should print parseable output for global deps 1`] = `
+{CWD}/ls-ls-parseable-global
+{CWD}/ls-ls-parseable-global/node_modules/a
+{CWD}/ls-ls-parseable-global/node_modules/b
+{CWD}/ls-ls-parseable-global/node_modules/b/node_modules/c
+`
+
 exports[`test/lib/ls.js TAP ls --parseable json read problems > should print empty result 1`] = `
 {CWD}/ls-ls-parseable-json-read-problems
 `
@@ -353,6 +360,14 @@ test-npm-ls@1.0.0 {CWD}/ls-ls-extraneous-deps
 exports[`test/lib/ls.js TAP ls from and resolved properties > should not be printed in tree output 1`] = `
 test-npm-ls@1.0.0 {CWD}/ls-ls-from-and-resolved-properties
 \`-- simple-output@2.1.1
+
+`
+
+exports[`test/lib/ls.js TAP ls global > should print tree and not mark top-level items extraneous 1`] = `
+{CWD}/ls-ls-global
++-- a@1.0.0
+\`-- b@1.0.0
+  \`-- c@1.0.0
 
 `
 

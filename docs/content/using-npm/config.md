@@ -148,6 +148,15 @@ you want your scoped package to be publicly viewable (and installable) set
 `--access=public`. The only valid values for `access` are `public` and
 `restricted`. Unscoped packages _always_ have an access level of `public`.
 
+#### all
+
+* Default: `false`
+* Type: Boolean
+
+When running `npm outdated` and `npm ls`, setting `--all` will show all
+outdated or installed packages, rather than only those directly depended
+upon by the current project.
+
 #### allow-same-version
 
 * Default: false
@@ -350,16 +359,12 @@ disabled when the environment variable `NO_COLOR` is set to any value.
 
 #### depth
 
-* Default: Infinity
+* Default: 0
 * Type: Number
 
-The depth to go when recursing directories for `npm ls`,
-`npm cache ls`, and `npm outdated`.
+The depth to go when recursing packages for `npm ls`.
 
-For `npm outdated`, a setting of `Infinity` will be treated as `0`
-since that gives more useful information.  To show the outdated status
-of all packages and dependents, use a large integer value,
-e.g., `npm outdated --depth 9999`
+To make this default to `Infinity` instead of `0`, set `--all`.
 
 #### description
 

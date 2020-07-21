@@ -1,3 +1,5 @@
+const { resolve } = require('path')
+
 const { test } = require('tap')
 const requireInject = require('require-inject')
 
@@ -77,6 +79,7 @@ const diffDepTypesNmFixture = {
 }
 
 let prefix
+let globalDir = 'MISSING_GLOBAL_DIR'
 let result = ''
 // note this _flatOptions representations is for tests-only and does not
 // represent exactly the properties found in the actual flatOptions obj
@@ -85,10 +88,12 @@ const _flatOptions = {
   color: false,
   dev: false,
   depth: Infinity,
+  global: false,
   json: false,
   link: false,
   only: null,
   parseable: false,
+  get prefix () { return prefix },
   production: false
 }
 const ls = requireInject('../../lib/ls.js', {
@@ -97,8 +102,8 @@ const ls = requireInject('../../lib/ls.js', {
     limit: {
       fetch: 3
     },
-    get prefix () { return prefix },
-    globalDir: '/foo',
+    get prefix () { return _flatOptions.prefix },
+    get globalDir () { return globalDir },
     config: {
       get (key) {
         return _flatOptions[key]
@@ -928,6 +933,44 @@ test('ls', (t) => {
     })
   })
 
+  t.test('global', (t) => {
+    _flatOptions.global = true
+    const fixtures = t.testdir({
+      node_modules: {
+        a: {
+          'package.json': JSON.stringify({
+            name: 'a',
+            version: '1.0.0'
+          })
+        },
+        b: {
+          'package.json': JSON.stringify({
+            name: 'b',
+            version: '1.0.0'
+          }),
+          node_modules: {
+            c: {
+              'package.json': JSON.stringify({
+                name: 'c',
+                version: '1.0.0'
+              })
+            }
+          }
+        }
+      }
+    })
+
+    // mimics lib/npm.js globalDir getter but pointing to fixtures
+    globalDir = resolve(fixtures, 'node_modules')
+
+    ls([], () => {
+      t.matchSnapshot(redactCwd(result), 'should print tree and not mark top-level items extraneous')
+      globalDir = 'MISSING_GLOBAL_DIR'
+      _flatOptions.global = false
+      t.end()
+    })
+  })
+
   t.end()
 })
 
@@ -1364,7 +1407,7 @@ test('ls --parseable', (t) => {
     })
     ls([], (err) => {
       t.equal(err.code, 'ELSPROBLEMS', 'should have error code')
-      t.match(err.message, 'extraneous: lorem@1.0.0 /Users/ruyadorno/Documents/workspace/cli/test/lib/ls-ls-parseable--long-with-extraneous-deps/node_modules/lorem', 'should have error code')
+      t.match(redactCwd(err.message), 'extraneous: lorem@1.0.0 {CWD}/ls-ls-parseable--long-with-extraneous-deps/node_modules/lorem', 'should have error code')
       t.matchSnapshot(redactCwd(result), 'should output long parseable output with extraneous info')
       t.end()
     })
@@ -1680,6 +1723,44 @@ test('ls --parseable', (t) => {
     })
     ls([], () => {
       t.matchSnapshot(redactCwd(result), 'should not be printed in tree output')
+      t.end()
+    })
+  })
+
+  t.test('global', (t) => {
+    _flatOptions.global = true
+    const fixtures = t.testdir({
+      node_modules: {
+        a: {
+          'package.json': JSON.stringify({
+            name: 'a',
+            version: '1.0.0'
+          })
+        },
+        b: {
+          'package.json': JSON.stringify({
+            name: 'b',
+            version: '1.0.0'
+          }),
+          node_modules: {
+            c: {
+              'package.json': JSON.stringify({
+                name: 'c',
+                version: '1.0.0'
+              })
+            }
+          }
+        }
+      }
+    })
+
+    // mimics lib/npm.js globalDir getter but pointing to fixtures
+    globalDir = resolve(fixtures, 'node_modules')
+
+    ls([], () => {
+      t.matchSnapshot(redactCwd(result), 'should print parseable output for global deps')
+      globalDir = 'MISSING_GLOBAL_DIR'
+      _flatOptions.global = false
       t.end()
     })
   })
@@ -3128,6 +3209,62 @@ test('ls --json', (t) => {
         },
         'should use node.name as key in json result obj'
       )
+      t.end()
+    })
+  })
+
+  t.test('global', (t) => {
+    _flatOptions.global = true
+    const fixtures = t.testdir({
+      node_modules: {
+        a: {
+          'package.json': JSON.stringify({
+            name: 'a',
+            version: '1.0.0'
+          })
+        },
+        b: {
+          'package.json': JSON.stringify({
+            name: 'b',
+            version: '1.0.0'
+          }),
+          node_modules: {
+            c: {
+              'package.json': JSON.stringify({
+                name: 'c',
+                version: '1.0.0'
+              })
+            }
+          }
+        }
+      }
+    })
+
+    // mimics lib/npm.js globalDir getter but pointing to fixtures
+    globalDir = resolve(fixtures, 'node_modules')
+
+    ls([], () => {
+      t.deepEqual(
+        jsonParse(result),
+        {
+          'dependencies': {
+            'a': {
+              'version': '1.0.0'
+            },
+            'b': {
+              'version': '1.0.0',
+              'dependencies': {
+                'c': {
+                  'version': '1.0.0'
+                }
+              }
+            }
+          }
+        },
+        'should print json output for global deps'
+      )
+      globalDir = 'MISSING_GLOBAL_DIR'
+      _flatOptions.global = false
       t.end()
     })
   })
