@@ -186,6 +186,7 @@ test('ls', (t) => {
   })
 
   t.test('with filter arg', (t) => {
+    _flatOptions.color = true
     prefix = t.testdir({
       'package.json': JSON.stringify({
         name: 'test-npm-ls',
@@ -199,7 +200,8 @@ test('ls', (t) => {
     })
     ls(['lorem'], (err) => {
       t.ifError(err, 'npm ls')
-      t.matchSnapshot(redactCwd(result), 'should output tree contaning only occurences of filtered by package')
+      t.matchSnapshot(redactCwd(result), 'should output tree contaning only occurences of filtered by package and coloured output')
+      _flatOptions.color = false
       t.end()
     })
   })
@@ -775,6 +777,198 @@ test('ls', (t) => {
       }
     })
     ls([], (err) => {
+      t.ifError(err, 'npm ls')
+      t.matchSnapshot(redactCwd(result), 'should print tree output containing deduped ref')
+      t.end()
+    })
+  })
+
+  t.test('with no args dedupe entries', (t) => {
+    prefix = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'dedupe-entries',
+        version: '1.0.0',
+        dependencies: {
+          '@npmcli/a': '^1.0.0',
+          '@npmcli/b': '^1.0.0',
+          '@npmcli/c': '^1.0.0'
+        }
+      }),
+      node_modules: {
+        '@npmcli': {
+          'a': {
+            'package.json': JSON.stringify({
+              name: '@npmcli/a',
+              version: '1.0.0',
+              dependencies: {
+                '@npmcli/b': '^1.0.0'
+              }
+            })
+          },
+          'b': {
+            'package.json': JSON.stringify({
+              name: '@npmcli/b',
+              version: '1.1.2'
+            })
+          },
+          'c': {
+            'package.json': JSON.stringify({
+              name: '@npmcli/c',
+              version: '1.0.0',
+              dependencies: {
+                '@npmcli/b': '^1.0.0'
+              }
+            })
+          }
+        }
+      }
+    })
+    ls([], (err) => {
+      t.ifError(err, 'npm ls')
+      t.matchSnapshot(redactCwd(result), 'should print tree output containing deduped ref')
+      t.end()
+    })
+  })
+
+  t.test('with no args dedupe entries and not displaying all', (t) => {
+    _flatOptions.all = false
+    _flatOptions.depth = 0
+    prefix = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'dedupe-entries',
+        version: '1.0.0',
+        dependencies: {
+          '@npmcli/a': '^1.0.0',
+          '@npmcli/b': '^1.0.0',
+          '@npmcli/c': '^1.0.0'
+        }
+      }),
+      node_modules: {
+        '@npmcli': {
+          'a': {
+            'package.json': JSON.stringify({
+              name: '@npmcli/a',
+              version: '1.0.0',
+              dependencies: {
+                '@npmcli/b': '^1.0.0'
+              }
+            })
+          },
+          'b': {
+            'package.json': JSON.stringify({
+              name: '@npmcli/b',
+              version: '1.1.2'
+            })
+          },
+          'c': {
+            'package.json': JSON.stringify({
+              name: '@npmcli/c',
+              version: '1.0.0',
+              dependencies: {
+                '@npmcli/b': '^1.0.0'
+              }
+            })
+          }
+        }
+      }
+    })
+    ls([], (err) => {
+      t.ifError(err, 'npm ls')
+      t.matchSnapshot(redactCwd(result), 'should print tree output containing deduped ref')
+      _flatOptions.all = true
+      _flatOptions.depth = Infinity
+      t.end()
+    })
+  })
+
+  t.test('with args and dedupe entries', (t) => {
+    prefix = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'dedupe-entries',
+        version: '1.0.0',
+        dependencies: {
+          '@npmcli/a': '^1.0.0',
+          '@npmcli/b': '^1.0.0',
+          '@npmcli/c': '^1.0.0'
+        }
+      }),
+      node_modules: {
+        '@npmcli': {
+          'a': {
+            'package.json': JSON.stringify({
+              name: '@npmcli/a',
+              version: '1.0.0',
+              dependencies: {
+                '@npmcli/b': '^1.0.0'
+              }
+            })
+          },
+          'b': {
+            'package.json': JSON.stringify({
+              name: '@npmcli/b',
+              version: '1.1.2'
+            })
+          },
+          'c': {
+            'package.json': JSON.stringify({
+              name: '@npmcli/c',
+              version: '1.0.0',
+              dependencies: {
+                '@npmcli/b': '^1.0.0'
+              }
+            })
+          }
+        }
+      }
+    })
+    ls(['@npmcli/b'], (err) => {
+      t.ifError(err, 'npm ls')
+      t.matchSnapshot(redactCwd(result), 'should print tree output containing deduped ref')
+      t.end()
+    })
+  })
+
+  t.test('with args and different order of items', (t) => {
+    prefix = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'dedupe-entries',
+        version: '1.0.0',
+        dependencies: {
+          '@npmcli/a': '^1.0.0',
+          '@npmcli/b': '^1.0.0',
+          '@npmcli/c': '^1.0.0'
+        }
+      }),
+      node_modules: {
+        '@npmcli': {
+          'a': {
+            'package.json': JSON.stringify({
+              name: '@npmcli/a',
+              version: '1.0.0',
+              dependencies: {
+                '@npmcli/c': '^1.0.0'
+              }
+            })
+          },
+          'b': {
+            'package.json': JSON.stringify({
+              name: '@npmcli/b',
+              version: '1.1.2',
+              dependencies: {
+                '@npmcli/c': '^1.0.0'
+              }
+            })
+          },
+          'c': {
+            'package.json': JSON.stringify({
+              name: '@npmcli/c',
+              version: '1.0.0'
+            })
+          }
+        }
+      }
+    })
+    ls(['@npmcli/c'], (err) => {
       t.ifError(err, 'npm ls')
       t.matchSnapshot(redactCwd(result), 'should print tree output containing deduped ref')
       t.end()

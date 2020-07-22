@@ -454,15 +454,34 @@ test-npm-ls@1.0.0 {CWD}/ls-ls-using-aliases
 
 `
 
-exports[`test/lib/ls.js TAP ls with filter arg > should output tree contaning only occurences of filtered by package 1`] = `
-test-npm-ls@1.0.0 {CWD}/ls-ls-with-filter-arg
-\`-- lorem@1.0.0
+exports[`test/lib/ls.js TAP ls with args and dedupe entries > should print tree output containing deduped ref 1`] = `
+dedupe-entries@1.0.0 {CWD}/ls-ls-with-args-and-dedupe-entries
++-- @npmcli/a@1.0.0
+| \`-- @npmcli/b@1.1.2 deduped
++-- @npmcli/b@1.1.2
+\`-- @npmcli/c@1.0.0
+  \`-- @npmcli/b@1.1.2 deduped
 
+`
+
+exports[`test/lib/ls.js TAP ls with args and different order of items > should print tree output containing deduped ref 1`] = `
+dedupe-entries@1.0.0 {CWD}/ls-ls-with-args-and-different-order-of-items
++-- @npmcli/a@1.0.0
+| \`-- @npmcli/c@1.0.0 deduped
++-- @npmcli/b@1.1.2
+| \`-- @npmcli/c@1.0.0 deduped
+\`-- @npmcli/c@1.0.0
+
+`
+
+exports[`test/lib/ls.js TAP ls with filter arg > should output tree contaning only occurences of filtered by package and coloured output 1`] = `
+[0mtest-npm-ls@1.0.0 {CWD}/ls-ls-with-filter-arg[0m
+[0m\`-- [33m[40mlorem@1.0.0[49m[39m[0m
+[0m[0m
 `
 
 exports[`test/lib/ls.js TAP ls with filter arg nested dep > should output tree contaning only occurences of filtered package and its ancestors 1`] = `
 test-npm-ls@1.0.0 {CWD}/ls-ls-with-filter-arg-nested-dep
-+-- (empty)
 \`-- foo@1.0.0
   \`-- bar@1.0.0
 
@@ -479,5 +498,23 @@ test-npm-ls@1.0.0 {CWD}/ls-ls-with-multiple-filter-args
 +-- foo@1.0.0
 | \`-- bar@1.0.0
 \`-- lorem@1.0.0
+
+`
+
+exports[`test/lib/ls.js TAP ls with no args dedupe entries > should print tree output containing deduped ref 1`] = `
+dedupe-entries@1.0.0 {CWD}/ls-ls-with-no-args-dedupe-entries
++-- @npmcli/a@1.0.0
+| \`-- @npmcli/b@1.1.2 deduped
++-- @npmcli/b@1.1.2
+\`-- @npmcli/c@1.0.0
+  \`-- @npmcli/b@1.1.2 deduped
+
+`
+
+exports[`test/lib/ls.js TAP ls with no args dedupe entries and not displaying all > should print tree output containing deduped ref 1`] = `
+dedupe-entries@1.0.0 {CWD}/ls-ls-with-no-args-dedupe-entries-and-not-displaying-all
++-- @npmcli/a@1.0.0
++-- @npmcli/b@1.1.2
+\`-- @npmcli/c@1.0.0
 
 `
