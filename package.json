@@ -96,7 +96,7 @@
     "ms": "^2.1.2",
     "nopt": "^4.0.3",
     "normalize-package-data": "^2.5.0",
-    "npm-audit-report": "^2.1.2",
+    "npm-audit-report": "^2.1.3",
     "npm-package-arg": "^8.0.1",
     "npm-packlist": "^2.1.0",
     "npm-pick-manifest": "^6.1.0",
@@ -147,13 +147,14 @@
   },
   "bundleDependencies": [
     "@npmcli/arborist",
+    "@npmcli/ci-detect",
     "@npmcli/run-script",
-    "JSONStream",
     "abbrev",
     "ansicolors",
     "ansistyles",
     "aproba",
     "archy",
+    "bin-links",
     "byte-size",
     "cacache",
     "call-limit",
@@ -183,6 +184,7 @@
     "is-cidr",
     "json-parse-better-errors",
     "json-parse-even-better-errors",
+    "JSONStream",
     "lazy-property",
     "libnpmaccess",
     "libnpmfund",
@@ -203,6 +205,7 @@
     "lodash.without",
     "meant",
     "mkdirp",
+    "mkdirp-infer-owner",
     "ms",
     "nopt",
     "normalize-package-data",
@@ -218,13 +221,13 @@
     "opener",
     "osenv",
     "pacote",
+    "parse-conflict-json",
     "path-is-inside",
     "promise-inflight",
     "qrcode-terminal",
     "query-string",
     "qw",
     "read",
-    "read-cmd-shim",
     "read-installed",
     "read-package-json",
     "read-package-tree",
@@ -253,10 +256,10 @@
     "validate-npm-package-name",
     "which",
     "worker-farm",
-    "write-file-atomic",
-    "parse-conflict-json"
+    "write-file-atomic"
   ],
   "devDependencies": {
+    "ajv": "^5.5.2",
     "deep-equal": "^1.0.1",
     "licensee": "^7.0.3",
     "marked": "^0.6.3",
@@ -285,11 +288,11 @@
     "lint": "standard",
     "prelint": "rimraf test/npm_cache*"
   },
+  "//": [
+    "XXX temporarily only run unit tests while v7 beta is in progress",
+    "Remove the 'files' below once we're done porting old tests over"
+  ],
   "tap": {
-    "//": [
-      "XXX temporarily only run unit tests while v7 beta is in progress",
-      "Remove the 'files' below once we're done porting old tests over"
-    ],
     "files": "test/lib",
     "coverage-map": "test/coverage-map.js",
     "esm": false,

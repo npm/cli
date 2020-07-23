@@ -9,7 +9,7 @@ const validateName = name => {
 }
 
 const validateValue = value => {
-  value = `${value}`;
+  value = `${value}`
   if (invalidHeaderCharRegex.test(value))
     throw new TypeError(`${value} is not a legal HTTP header value`)
 }
@@ -85,7 +85,7 @@ class Headers {
   }
 
   forEach (callback, thisArg = undefined) {
-    let pairs = getHeaders(this);
+    let pairs = getHeaders(this)
     for (let i = 0; i < pairs.length; i++) {
       const [name, value] = pairs[i]
       callback.call(thisArg, value, name, this)
@@ -179,7 +179,7 @@ class Headers {
           if (headers[MAP][name] === undefined)
             headers[MAP][name] = [val]
           else
-            headers[MAP][name].push(val);
+            headers[MAP][name].push(val)
         }
       } else if (!invalidHeaderCharRegex.test(obj[name]))
         headers[MAP][name] = [obj[name]]

@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [8.1.3](https://github.com/npm/registry-fetch/compare/v8.1.2...v8.1.3) (2020-07-21)
+
 ### [8.1.2](https://github.com/npm/registry-fetch/compare/v8.1.1...v8.1.2) (2020-07-11)
 
 ### [8.1.1](https://github.com/npm/registry-fetch/compare/v8.1.0...v8.1.1) (2020-06-30)

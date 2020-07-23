@@ -18,3 +18,12 @@ cases.
 ## API
 
 See [node-fetch](http://npm.im/node-fetch)
+
+Differences from `node-fetch` (and, by extension, from the WhatWG Fetch
+specification):
+
+- Returns [minipass](http://npm.im/minipass) streams instead of node-core
+  streams.
+- Supports the full set of [TLS Options that may be provided to
+  `https.request()`](https://nodejs.org/api/https.html#https_https_request_options_callback)
+  when making `https` requests.
