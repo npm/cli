@@ -455,13 +455,13 @@ test-npm-ls@1.0.0 {CWD}/ls-ls-using-aliases
 `
 
 exports[`test/lib/ls.js TAP ls with args and dedupe entries > should print tree output containing deduped ref 1`] = `
-dedupe-entries@1.0.0 {CWD}/ls-ls-with-args-and-dedupe-entries
-+-- @npmcli/a@1.0.0
-| \`-- @npmcli/b@1.1.2 deduped
-+-- @npmcli/b@1.1.2
-\`-- @npmcli/c@1.0.0
-  \`-- @npmcli/b@1.1.2 deduped
-
+[0mdedupe-entries@1.0.0 {CWD}/ls-ls-with-args-and-dedupe-entries[0m
+[0m+-- @npmcli/a@1.0.0[0m
+[0m| \`-- [33m[40m@npmcli/b@1.1.2[49m[39m[90m deduped[39m[0m
+[0m+-- [33m[40m@npmcli/b@1.1.2[49m[39m[0m
+[0m\`-- @npmcli/c@1.0.0[0m
+[0m  \`-- [33m[40m@npmcli/b@1.1.2[49m[39m[90m deduped[39m[0m
+[0m[0m
 `
 
 exports[`test/lib/ls.js TAP ls with args and different order of items > should print tree output containing deduped ref 1`] = `

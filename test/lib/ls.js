@@ -905,6 +905,7 @@ test('ls', (t) => {
   })
 
   t.test('with args and dedupe entries', (t) => {
+    _flatOptions.color = true
     prefix = t.testdir({
       'package.json': JSON.stringify({
         name: 'dedupe-entries',
@@ -947,6 +948,7 @@ test('ls', (t) => {
     ls(['@npmcli/b'], (err) => {
       t.ifError(err, 'npm ls')
       t.matchSnapshot(redactCwd(result), 'should print tree output containing deduped ref')
+      _flatOptions.color = false
       t.end()
     })
   })
