@@ -719,6 +719,36 @@ test('ls', (t) => {
     })
   })
 
+  t.test('deduped missing dep', (t) => {
+    prefix = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'test-npm-ls',
+        version: '1.0.0',
+        dependencies: {
+          'a': '^1.0.0',
+          'b': '^1.0.0'
+        }
+      }),
+      node_modules: {
+        a: {
+          'package.json': JSON.stringify({
+            name: 'a',
+            version: '1.0.0',
+            dependencies: {
+              b: '^1.0.0'
+            }
+          })
+        }
+      }
+    })
+    ls([], (err) => {
+      t.match(err.code, 'ELSPROBLEMS', 'should have ELSPROBLEMS error code')
+      t.match(err.message, /missing: b@\^1.0.0/, 'should list missing dep problem')
+      t.matchSnapshot(redactCwd(result), 'should output parseable signaling missing peer dep in problems')
+      t.end()
+    })
+  })
+
   t.test('unmet peer dep', (t) => {
     prefix = t.testdir({
       'package.json': JSON.stringify({

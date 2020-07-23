@@ -336,6 +336,14 @@ test-npm-ls@1.0.0 {CWD}/ls-ls-cycle-deps
 
 `
 
+exports[`test/lib/ls.js TAP ls deduped missing dep > should output parseable signaling missing peer dep in problems 1`] = `
+test-npm-ls@1.0.0 {CWD}/ls-ls-deduped-missing-dep
++-- a@1.0.0
+| \`-- UNMET DEPENDENCY b@^1.0.0 deduped
+\`-- UNMET DEPENDENCY b@^1.0.0
+
+`
+
 exports[`test/lib/ls.js TAP ls default --depth value should be 0 > should output tree containing only top-level dependencies 1`] = `
 test-npm-ls@1.0.0 {CWD}/ls-ls-default-depth-value-should-be-0
 +-- foo@1.0.0
