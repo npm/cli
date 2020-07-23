@@ -206,6 +206,29 @@ test('ls', (t) => {
     })
   })
 
+  t.test('with dot filter arg', (t) => {
+    _flatOptions.all = false
+    _flatOptions.depth = 0
+    prefix = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'test-npm-ls',
+        version: '1.0.0',
+        dependencies: {
+          foo: '^1.0.0',
+          ipsum: '^1.0.0'
+        }
+      }),
+      ...simpleNmFixture
+    })
+    ls(['.'], (err) => {
+      t.ifError(err, 'should not throw on missing dep above current level')
+      t.matchSnapshot(redactCwd(result), 'should output tree contaning only occurences of filtered by package and coloured output')
+      _flatOptions.all = true
+      _flatOptions.depth = Infinity
+      t.end()
+    })
+  })
+
   t.test('with filter arg nested dep', (t) => {
     prefix = t.testdir({
       'package.json': JSON.stringify({

@@ -474,6 +474,12 @@ dedupe-entries@1.0.0 {CWD}/ls-ls-with-args-and-different-order-of-items
 
 `
 
+exports[`test/lib/ls.js TAP ls with dot filter arg > should output tree contaning only occurences of filtered by package and coloured output 1`] = `
+test-npm-ls@1.0.0 {CWD}/ls-ls-with-dot-filter-arg
+\`-- (empty)
+
+`
+
 exports[`test/lib/ls.js TAP ls with filter arg > should output tree contaning only occurences of filtered by package and coloured output 1`] = `
 [0mtest-npm-ls@1.0.0 {CWD}/ls-ls-with-filter-arg[0m
 [0m\`-- [33m[40mlorem@1.0.0[49m[39m[0m
