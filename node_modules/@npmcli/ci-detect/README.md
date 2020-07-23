@@ -34,6 +34,22 @@ at the appropriate environment variables.
 * `'now-github'` Zeit.co's Now for GitHub deployment service
 * `'now-bitbucket'` Zeit.co's Now for BitBucket deployment service
 * `'now-gitlab'` Zeit.co's Now for GitLab deployment service
+* `'now'` Zeit.co's Now service, but not GitHub/BitBucket/GitLab
+* `'azure-pipelines'` Azure Pipelines
+* `'bitrise'` Bitrise
+* `'buddy'` Buddy
+* `'buildkite'` Buildkite
+* `'cirrus'` Cirrus CI
+* `'dsari'` dsari CI
+* `'strider'` Strider CI
+* `'taskcluster'` Mozilla Taskcluster
+* `'hudson'` Hudson CI
+* `'magnum'` Magnum CI
+* `'nevercode'` Nevercode
+* `'render'` Render CI
+* `'sail'` Sail CI
+* `'shippable'` Shippable
+* `'heroku'` Heroku
 * `'codeship'` CodeShip
 * Anything that sets the `CI_NAME` environment variable will return the
   value as the result.  (This is how CodeShip is detected.)

@@ -83,13 +83,23 @@ const npmWalker = Class => class Walker extends Class {
     opt.path = opt.path || process.cwd()
     const dirName = path.basename(opt.path)
     const parentName = path.basename(path.dirname(opt.path))
-    opt.follow =
-      dirName === 'node_modules' ||
-      (parentName === 'node_modules' && /^@/.test(dirName))
+
+    // only follow links in the root node_modules folder, because if those
+    // folders are included, it's because they're bundled, and bundles
+    // should include the contents, not the symlinks themselves.
+    // This regexp tests to see that we're either a node_modules folder,
+    // or a @scope within a node_modules folder, in the root's node_modules
+    // hierarchy (ie, not in test/foo/node_modules/ or something).
+    const followRe = /^(?:\/node_modules\/(?:@[^\/]+\/[^\/]+|[^\/]+)\/)*\/node_modules(?:\/@[^\/]+)?$/
+    const rootPath = opt.parent ? opt.parent.root : opt.path
+    const followTestPath = opt.path.replace(/\\/g, '/').substr(rootPath.length)
+    opt.follow = followRe.test(followTestPath)
+
     super(opt)
 
     // ignore a bunch of things by default at the root level.
-    // also ignore anything in node_modules, except bundled dependencies
+    // also ignore anything in the main project node_modules hierarchy,
+    // except bundled dependencies
     if (!this.parent) {
       this.bundled = opt.bundled || []
       this.bundledScopes = Array.from(new Set(

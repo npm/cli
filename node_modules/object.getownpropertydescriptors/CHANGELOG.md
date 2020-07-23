@@ -1,3 +1,19 @@
+2.1.0 / 2019-12-12
+=================
+  * [New] add auto entry point
+  * [Refactor] use split-up `es-abstract` (78% bundle size decrease)
+  * [readme] fix repo URLs, remove testling
+  * [Docs] Fix formatting in the README (#30)
+  * [Deps] update `define-properties`, `es-abstract`
+  * [Dev Deps] update `eslint`, `@ljharb/eslint-config`, `functions-have-names`, `covert`, `replace`, `semver`, `tape`, `@es-shims/api`; add `safe-publish-latest`
+  * [meta] add `funding` field
+  * [meta] Only apps should have lockfiles.
+  * [Tests] use shared travis-ci configs
+  * [Tests] use `functions-have-names`
+  * [Tests] use `npx aud` instead of `nsp` or `npm audit` with hoops
+  * [Tests] remove `jscs`
+  * [actions] add automatic rebasing / merge commit blocking
+
 2.0.3 / 2016-07-26
 =================
   * [Fix] Update implementation to not return `undefined` descriptors

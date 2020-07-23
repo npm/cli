@@ -105,7 +105,7 @@ class Body {
 
     // body is null
     if (this.body === null) {
-      return Promise.resolve(Buffer.alloc(0));
+      return Promise.resolve(Buffer.alloc(0))
     }
 
     if (Buffer.isBuffer(this.body))
@@ -115,7 +115,7 @@ class Body {
 
     /* istanbul ignore if: should never happen */
     if (!Minipass.isStream(upstream))
-      return Promise.resolve(Buffer.alloc(0));
+      return Promise.resolve(Buffer.alloc(0))
 
     const stream = this.size && upstream instanceof MinipassSized ? upstream
       : !this.size && upstream instanceof Minipass &&
@@ -218,7 +218,7 @@ class Body {
   }
 
   static writeToStream (dest, instance) {
-    const {body} = instance;
+    const {body} = instance
 
     if (body === null || body === undefined)
       dest.end()
@@ -241,7 +241,7 @@ Object.defineProperties(Body.prototype, {
   blob: { enumerable: true },
   json: { enumerable: true },
   text: { enumerable: true }
-});
+})
 
 
 const isURLSearchParams = obj =>

@@ -146,7 +146,7 @@ const fetch = (url, opts) => {
             // HTTP-redirect fetch step 5
             if (request.counter >= request.follow) {
               reject(new FetchError(`maximum redirect reached at: ${
-                request.url}`, 'max-redirect'));
+                request.url}`, 'max-redirect'))
               finalize()
               return
             }
