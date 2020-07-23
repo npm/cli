@@ -21,7 +21,7 @@ const ll = requireInject('../../lib/ll.js', {
 const ls = require('../../lib/ls.js')
 const { usage, completion } = ls
 t.equal(ll.usage, usage)
-t.equal(ll.completion, completion)
+t.equal(ll.completion.toString(), completion.toString())
 t.test('the ll command', t => {
   ll([], () => {
     t.equal(lsCalled, true)
