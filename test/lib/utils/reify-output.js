@@ -6,7 +6,7 @@ const requireInject = require('require-inject')
 const log = require('npmlog')
 log.level = 'warn'
 
-t.cleanSnapshot = str => str.replace(/in [0-9]+ms/g, 'in {TIME}ms')
+t.cleanSnapshot = str => str.replace(/in [0-9]+m?s/g, 'in {TIME}')
 
 const settings = {
   fund: true
