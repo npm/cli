@@ -321,10 +321,10 @@ npm-broken-resolved-field-test@1.0.0 {CWD}/ls-ls-broken-resolved-field
 
 exports[`test/lib/ls.js TAP ls coloured output > should output tree containing color info 1`] = `
 [0mtest-npm-ls@1.0.0 {CWD}/ls-ls-coloured-output[0m
-[0m+-- foo@1.0.0[31m[40m invalid[49m[39m[0m
+[0m+-- foo@1.0.0 [31m[40minvalid[49m[39m[0m
 [0m| \`-- bar@1.0.0[0m
-[0m+-- [31m[40mUNMET DEPENDENCY [49m[39mipsum@^1.0.0[0m
-[0m\`-- lorem@1.0.0[32m[40m extraneous[49m[39m[0m
+[0m+-- [31m[40mUNMET DEPENDENCY[49m[39m ipsum@^1.0.0[0m
+[0m\`-- lorem@1.0.0 [32m[40mextraneous[49m[39m[0m
 [0m[0m
 `
 
@@ -334,6 +334,14 @@ test-npm-ls@1.0.0 {CWD}/ls-ls-cycle-deps
   \`-- b@1.0.0
     \`-- a@1.0.0 deduped
 
+`
+
+exports[`test/lib/ls.js TAP ls cycle deps with filter args > should print tree output containing deduped ref 1`] = `
+[0mtest-npm-ls@1.0.0 {CWD}/ls-ls-cycle-deps-with-filter-args[0m
+[0m\`-- [33m[40ma@1.0.0[49m[39m[0m
+[0m  \`-- b@1.0.0[0m
+[0m    \`-- [33m[40ma@1.0.0[49m[39m [90mdeduped[39m[0m
+[0m[0m
 `
 
 exports[`test/lib/ls.js TAP ls deduped missing dep > should output parseable signaling missing peer dep in problems 1`] = `
@@ -377,6 +385,14 @@ exports[`test/lib/ls.js TAP ls global > should print tree and not mark top-level
 \`-- b@1.0.0
   \`-- c@1.0.0
 
+`
+
+exports[`test/lib/ls.js TAP ls invalid deduped dep > should output tree signaling mismatching peer dep in problems 1`] = `
+[0minvalid-deduped-dep@1.0.0 {CWD}/ls-ls-invalid-deduped-dep[0m
+[0m+-- a@1.0.0[0m
+[0m| \`-- b@1.0.0 [90mdeduped[39m [31m[40minvalid[49m[39m[0m
+[0m\`-- b@1.0.0 [31m[40minvalid[49m[39m[0m
+[0m[0m
 `
 
 exports[`test/lib/ls.js TAP ls invalid peer dep > should output tree signaling mismatching peer dep in problems 1`] = `
@@ -430,6 +446,14 @@ test-npm-ls@1.0.0 {CWD}/ls-ls-no-args
 
 `
 
+exports[`test/lib/ls.js TAP ls print deduped symlinks > should output tree containing linked deps 1`] = `
+print-deduped-symlinks@1.0.0 {CWD}/ls-ls-print-deduped-symlinks
++-- a@1.0.0
+| \`-- b@1.0.0 deduped -> {CWD}/ls-ls-print-deduped-symlinks/b
+\`-- b@1.0.0 -> {CWD}/ls-ls-print-deduped-symlinks/b
+
+`
+
 exports[`test/lib/ls.js TAP ls resolved points to git ref > should output tree containing git refs 1`] = `
 test-npm-ls@1.0.0 {CWD}/ls-ls-resolved-points-to-git-ref
 \`-- abbrev@1.1.1 (git+ssh://git@github.com/isaacs/abbrev-js.git#b8f3a2fc0c3bb8ffd8b0d0072cc6b5a3667e963c)
@@ -442,8 +466,8 @@ exports[`test/lib/ls.js TAP ls unmet optional dep > should output tree with empt
 [0m| \`-- foo@1.0.0[0m
 [0m|   \`-- bar@1.0.0[0m
 [0m+-- lorem@1.0.0[0m
-[0m+-- [33m[40mUNMET OPTIONAL DEPENDENCY [49m[39mmissing-optional-dep@^1.0.0[0m
-[0m+-- optional-dep@1.0.0[31m[40m invalid[49m[39m[0m
+[0m+-- [33m[40mUNMET OPTIONAL DEPENDENCY[49m[39m missing-optional-dep@^1.0.0[0m
+[0m+-- optional-dep@1.0.0 [31m[40minvalid[49m[39m[0m
 [0m+-- peer-dep@1.0.0[0m
 [0m\`-- prod-dep@1.0.0[0m
 [0m  \`-- bar@2.0.0[0m
@@ -465,10 +489,10 @@ test-npm-ls@1.0.0 {CWD}/ls-ls-using-aliases
 exports[`test/lib/ls.js TAP ls with args and dedupe entries > should print tree output containing deduped ref 1`] = `
 [0mdedupe-entries@1.0.0 {CWD}/ls-ls-with-args-and-dedupe-entries[0m
 [0m+-- @npmcli/a@1.0.0[0m
-[0m| \`-- [33m[40m@npmcli/b@1.1.2[49m[39m[90m deduped[39m[0m
+[0m| \`-- [33m[40m@npmcli/b@1.1.2[49m[39m [90mdeduped[39m[0m
 [0m+-- [33m[40m@npmcli/b@1.1.2[49m[39m[0m
 [0m\`-- @npmcli/c@1.0.0[0m
-[0m  \`-- [33m[40m@npmcli/b@1.1.2[49m[39m[90m deduped[39m[0m
+[0m  \`-- [33m[40m@npmcli/b@1.1.2[49m[39m [90mdeduped[39m[0m
 [0m[0m
 `
 

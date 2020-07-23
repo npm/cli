@@ -552,6 +552,42 @@ test('ls', (t) => {
     })
   })
 
+  t.test('print deduped symlinks', (t) => {
+    prefix = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'print-deduped-symlinks',
+        version: '1.0.0',
+        dependencies: {
+          'a': '^1.0.0',
+          'b': '^1.0.0'
+        }
+      }),
+      'b': {
+        'package.json': JSON.stringify({
+          name: 'b',
+          version: '1.0.0'
+        })
+      },
+      node_modules: {
+        a: {
+          'package.json': JSON.stringify({
+            name: 'a',
+            version: '1.0.0',
+            dependencies: {
+              b: '^1.0.0'
+            }
+          })
+        },
+        'b': t.fixture('symlink', '../b')
+      }
+    })
+    ls([], () => {
+      t.matchSnapshot(redactCwd(result), 'should output tree containing linked deps')
+      _flatOptions.link = false
+      t.end()
+    })
+  })
+
   t.test('--production', (t) => {
     _flatOptions.production = true
     prefix = t.testdir({
@@ -719,6 +755,42 @@ test('ls', (t) => {
     })
   })
 
+  t.test('invalid deduped dep', (t) => {
+    _flatOptions.color = true
+    prefix = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'invalid-deduped-dep',
+        version: '1.0.0',
+        dependencies: {
+          'a': '^1.0.0',
+          'b': '^2.0.0'
+        }
+      }),
+      node_modules: {
+        a: {
+          'package.json': JSON.stringify({
+            name: 'a',
+            version: '1.0.0',
+            dependencies: {
+              b: '^2.0.0'
+            }
+          })
+        },
+        b: {
+          'package.json': JSON.stringify({
+            name: 'b',
+            version: '1.0.0'
+          })
+        }
+      }
+    })
+    ls([], () => {
+      t.matchSnapshot(redactCwd(result), 'should output tree signaling mismatching peer dep in problems')
+      _flatOptions.color = false
+      t.end()
+    })
+  })
+
   t.test('deduped missing dep', (t) => {
     prefix = t.testdir({
       'package.json': JSON.stringify({
@@ -832,6 +904,45 @@ test('ls', (t) => {
     ls([], (err) => {
       t.ifError(err, 'npm ls')
       t.matchSnapshot(redactCwd(result), 'should print tree output containing deduped ref')
+      t.end()
+    })
+  })
+
+  t.test('cycle deps with filter args', (t) => {
+    _flatOptions.color = true
+    prefix = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'test-npm-ls',
+        version: '1.0.0',
+        dependencies: {
+          'a': '^1.0.0'
+        }
+      }),
+      node_modules: {
+        'a': {
+          'package.json': JSON.stringify({
+            name: 'a',
+            version: '1.0.0',
+            dependencies: {
+              b: '^1.0.0'
+            }
+          })
+        },
+        'b': {
+          'package.json': JSON.stringify({
+            name: 'b',
+            version: '1.0.0',
+            dependencies: {
+              a: '^1.0.0'
+            }
+          })
+        }
+      }
+    })
+    ls(['a'], (err) => {
+      t.ifError(err, 'npm ls')
+      t.matchSnapshot(redactCwd(result), 'should print tree output containing deduped ref')
+      _flatOptions.color = false
       t.end()
     })
   })
