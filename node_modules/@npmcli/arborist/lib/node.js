@@ -348,6 +348,14 @@ class Node {
     return !!this.getBundler()
   }
 
+  // when reifying, if a package is technically in a bundleDependencies list,
+  // but that list is the root project, we still have to install it.  This
+  // getter returns true if it's in a dependency's bundle list, not the root's.
+  get inDepBundle () {
+    const bundler = this.getBundler()
+    return !!bundler && bundler !== this.root
+  }
+
   get isRoot () {
     return this === this.root
   }

@@ -64,6 +64,10 @@ class Edge {
     return this[_type] === 'workspace'
   }
 
+  get prod () {
+    return this[_type] === 'prod'
+  }
+
   get dev () {
     return this[_type] === 'dev'
   }
