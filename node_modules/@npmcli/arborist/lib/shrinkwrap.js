@@ -134,20 +134,22 @@ const metaFieldFromPkg = (pkg, key) => {
 }
 
 // check to make sure that there are no packages newer than the hidden lockfile
-const assertNoNewer = async (path, data, lockTime, dir = path) => {
+const assertNoNewer = async (path, data, lockTime, dir = path, seen = null) => {
   const base = basename(dir)
   const isNM = dir !== path && base === 'node_modules'
   const isScope = dir !== path && !isNM && base.charAt(0) === '@'
   const isParent = dir === path || isNM || isScope
 
+  const rel = relpath(path, dir)
   if (dir !== path) {
     const dirTime = (await stat(dir)).mtime
-    const rel = relpath(path, dir)
     if (dirTime > lockTime)
       throw 'out of date, updated: ' + rel
     if (!isScope && !isNM && !data.packages[rel])
       throw 'missing from lockfile: ' + rel
-  }
+    seen.add(rel)
+  } else
+    seen = new Set([rel])
 
   const parent = isParent ? dir : resolve(dir, 'node_modules')
   const children = dir === path
@@ -157,8 +159,17 @@ const assertNoNewer = async (path, data, lockTime, dir = path) => {
   return children.catch(() => [])
     .then(ents => Promise.all(
       ents.filter(ent => ent.isDirectory() && !/^\./.test(ent.name))
-      .map(ent => assertNoNewer(path, data, lockTime, resolve(parent, ent.name)))
-    ))
+      .map(ent => assertNoNewer(path, data, lockTime, resolve(parent, ent.name), seen))
+    )).then(() => {
+      if (dir !== path)
+        return
+
+      // assert that all the entries in the lockfile were seen
+      for (const loc of new Set(Object.keys(data.packages))) {
+        if (!seen.has(loc))
+          throw 'missing from node_modules: ' + loc
+      }
+    })
 }
 
 const _awaitingUpdate = Symbol('_awaitingUpdate')

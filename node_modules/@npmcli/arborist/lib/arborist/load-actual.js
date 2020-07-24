@@ -213,9 +213,12 @@ module.exports = cls => class ActualLoader extends cls {
           root,
         })
       })
+      .then(node => {
+        this[_cache].set(path, node)
+        return node
+      })
 
     this[_cache].set(path, p)
-    p.then(node => this[_cache].set(path, node))
     return p
   }
 

@@ -607,9 +607,16 @@ module.exports = cls => class Reifier extends cls {
         const node = diff.ideal
         const bd = node.package.bundleDependencies
         const sw = node.hasShrinkwrap
-        // should inBundle differentiate if it's in the root's bundle?
-        // because in that case, it should still be installed.
-        if (node && !node.isRoot && !(bd && bd.length) && !sw && !node.inBundle)
+
+        // check whether we still need to unpack this one.
+        // test the inDepBundle last, since that's potentially a tree walk.
+        const doUnpack = node && // can't unpack if removed!
+          !node.isRoot && // root node already exists
+          !(bd && bd.length) && // already unpacked to read bundle
+          !sw && // already unpacked to read sw
+          !node.inDepBundle // already unpacked by another dep's bundle
+
+        if (doUnpack)
           unpacks.push(this[_reifyNode](node))
       },
       getChildren: diff => diff.children,
@@ -643,10 +650,9 @@ module.exports = cls => class Reifier extends cls {
         if (node.isLink)
           return mkdirp(dirname(node.path)).then(() => this[_reifyNode](node))
 
-        if (node.inBundle) {
-          // will have been moved/unpacked along with bundler
+        // will have been moved/unpacked along with bundler
+        if (node.inDepBundle)
           return
-        }
 
         this[_retiredUnchanged][retireFolder].push(node)
 

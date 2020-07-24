@@ -330,25 +330,29 @@ class AuditReport extends Map {
     } else if (!this.advisoryVulns.has(name))
       this.dependencyVulns.set(name, vuln)
 
-    process.emit('time', `auditReport:add:${name}@${range}`)
+    // wrap in try/finally to ensure we end the timer properly
+    // and don't leave it hanging to conflict with a future one.
+    try {
+      process.emit('time', `auditReport:add:${name}@${range}`)
 
-    for (const node of this.tree.inventory.query('name', name)) {
-      if (vuln.nodes.has(node) || !vuln.isVulnerable(node))
-        continue
+      for (const node of this.tree.inventory.query('name', name)) {
+        if (vuln.nodes.has(node) || !vuln.isVulnerable(node))
+          continue
 
-      for (const {from} of node.edgesIn) {
-        this[_vulnDependents].add(from)
+        for (const {from} of node.edgesIn) {
+          this[_vulnDependents].add(from)
+        }
       }
+
+      // if we didn't get anything, then why is this even here??
+      if (vuln.nodes.size === 0)
+        return this.delete(name)
+
+      if (!vuln.packument)
+        vuln.packument = await this[_packument](name)
+    } finally {
+      process.emit('timeEnd', `auditReport:add:${name}@${range}`)
     }
-
-    // if we didn't get anything, then why is this even here??
-    if (vuln.nodes.size === 0)
-      return this.delete(name)
-
-    if (!vuln.packument)
-      vuln.packument = await this[_packument](name)
-
-    process.emit('timeEnd', `auditReport:add:${name}@${range}`)
   }
 
   // convert a quick-audit into a bulk advisory listing

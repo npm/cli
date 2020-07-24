@@ -39,11 +39,11 @@ class Diff {
 
 const getAction = ({actual, ideal}) =>
   !ideal ? 'REMOVE'
-  // bundled deps are copied over to the ideal tree when we visit it, so
-  // they'll appear to be missing here.  There's no need to handle them in
-  // the diff, though, because they'll be replaced at reify time anyway
+  // bundled meta-deps are copied over to the ideal tree when we visit it,
+  // so they'll appear to be missing here.  There's no need to handle them
+  // in the diff, though, because they'll be replaced at reify time anyway
   // Otherwise, add the missing node.
-  : !actual ? (ideal.inBundle ? null : 'ADD')
+  : !actual ? (ideal.inDepBundle ? null : 'ADD')
   // always ignore the root node
   : ideal.isRoot && actual.isRoot ||
   // top nodes, links, and git deps won't have integrity, but do have resolved
