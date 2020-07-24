@@ -44,8 +44,5 @@ jobs:
     #   if: matrix.os == 'ubuntu-latest'
     #   run: sudo PATH=$PATH $(which node) . test -- --coverage  --timeout 600
 
-    - name: Lint
-      run: node . run lint
-
     - name: Validate licenses
       run: node . run licenses
