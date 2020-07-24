@@ -259,7 +259,6 @@
     "write-file-atomic"
   ],
   "devDependencies": {
-    "ajv": "^5.5.2",
     "deep-equal": "^1.0.1",
     "eslint": "^7.5.0",
     "eslint-plugin-import": "^2.22.0",
