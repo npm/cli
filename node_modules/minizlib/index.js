@@ -9,6 +9,7 @@ const Minipass = require('minipass')
 
 const OriginalBufferConcat = Buffer.concat
 
+const _superWrite = Symbol('_superWrite')
 class ZlibError extends Error {
   constructor (err) {
     super('zlib: ' + err.message)
@@ -164,18 +165,22 @@ class ZlibBase extends Minipass {
       if (Array.isArray(result) && result.length > 0) {
         // The first buffer is always `handle._outBuffer`, which would be
         // re-used for later invocations; so, we always have to copy that one.
-        writeReturn = super.write(Buffer.from(result[0]))
+        writeReturn = this[_superWrite](Buffer.from(result[0]))
         for (let i = 1; i < result.length; i++) {
-          writeReturn = super.write(result[i])
+          writeReturn = this[_superWrite](result[i])
         }
       } else {
-        writeReturn = super.write(Buffer.from(result))
+        writeReturn = this[_superWrite](Buffer.from(result))
       }
     }
 
     if (cb)
       cb()
     return writeReturn
+  }
+
+  [_superWrite] (data) {
+    return super.write(data)
   }
 }
 
@@ -243,9 +248,22 @@ class Inflate extends Zlib {
 }
 
 // gzip - bigger header, same deflate compression
+const _portable = Symbol('_portable')
 class Gzip extends Zlib {
   constructor (opts) {
     super(opts, 'Gzip')
+    this[_portable] = opts && !!opts.portable
+  }
+
+  [_superWrite] (data) {
+    if (!this[_portable])
+      return super[_superWrite](data)
+
+    // we'll always get the header emitted in one first chunk
+    // overwrite the OS indicator byte with 0xFF
+    this[_portable] = false
+    data[9] = 255
+    return super[_superWrite](data)
   }
 }
 
