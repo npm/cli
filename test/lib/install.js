@@ -4,31 +4,69 @@ const install = require('../../lib/install.js')
 const requireInject = require('require-inject')
 
 test('should install using Arborist', (t) => {
+  const SCRIPTS = []
+  let ARB_ARGS = null
+  let REIFY_CALLED = false
+  let ARB_OBJ = null
+
   const install = requireInject('../../lib/install.js', {
     '../../lib/npm.js': {
       globalDir: 'path/to/node_modules/',
       prefix: 'foo',
-      flatOptions: {},
+      flatOptions: {
+        global: false
+      },
       config: {
         get: () => true
       }
+    },
+    '@npmcli/run-script': ({ event }) => {
+      SCRIPTS.push(event)
     },
     'npmlog': {
       warn: () => {}
     },
     '@npmcli/arborist': function (args) {
-      t.ok(args, 'gets options object')
+      ARB_ARGS = args
+      ARB_OBJ = this
       this.reify = () => {
-        t.ok(true, 'reify is called')
+        REIFY_CALLED = true
       }
     },
-    '../../lib/utils/reify-output.js': function (arb) {
-      t.ok(arb, 'gets arborist tree')
+    '../../lib/utils/reify-output.js': arb => {
+      if (arb !== ARB_OBJ) {
+        throw new Error('got wrong object passed to reify-output')
+      }
     }
   })
-  install(['fizzbuzz'], () => {
-    t.end()
+
+  t.test('with args', t => {
+    install(['fizzbuzz'], () => {
+      t.match(ARB_ARGS, { global: false, path: 'foo' })
+      t.equal(REIFY_CALLED, true, 'called reify')
+      t.strictSame(SCRIPTS, [], 'no scripts when adding dep')
+      t.end()
+    })
   })
+
+  t.test('just a local npm install', t => {
+    install([], () => {
+      t.match(ARB_ARGS, { global: false, path: 'foo' })
+      t.equal(REIFY_CALLED, true, 'called reify')
+      t.strictSame(SCRIPTS, [
+        'preinstall',
+        'install',
+        'postinstall',
+        'prepublish',
+        'preprepare',
+        'prepare',
+        'postprepare'
+      ], 'exec scripts when doing local build')
+      t.end()
+    })
+  })
+
+  t.end()
 })
 
 test('should install globally using Arborist', (t) => {
