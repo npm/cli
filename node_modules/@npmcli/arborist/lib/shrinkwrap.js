@@ -826,7 +826,7 @@ class Shrinkwrap {
     else if (node.package && node.version)
       lock.version = node.version
 
-    if (node.inBundle)
+    if (node.inDepBundle)
       lock.bundled = true
 
     // when we didn't resolve to git, file, or dir, and didn't request
