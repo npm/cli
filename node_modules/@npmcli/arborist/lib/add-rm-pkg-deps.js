@@ -1,5 +1,7 @@
 // add and remove dependency specs to/from pkg manifest
 
+const relpath = require('./relpath.js')
+
 const removeFromOthers = (name, type, pkg) => {
   const others = new Set([
     'dependencies',
@@ -31,18 +33,18 @@ const removeFromOthers = (name, type, pkg) => {
   }
 }
 
-const add = ({pkg, add, saveBundle, saveType}) => {
+const add = ({pkg, add, saveBundle, saveType, path}) => {
   for (const spec of add) {
-    addSingle({pkg, spec, saveBundle, saveType})
+    addSingle({pkg, spec, saveBundle, saveType, path})
   }
   return pkg
 }
 
-const addSingle = ({pkg, spec, saveBundle, saveType}) => {
+const addSingle = ({pkg, spec, saveBundle, saveType, path}) => {
   if (!saveType)
     saveType = getSaveType(pkg, spec)
 
-  const {name} = spec
+  const {name, rawSpec, type: specType, fetchSpec } = spec
   removeFromOthers(name, saveType, pkg)
   const type = saveType === 'prod' ? 'dependencies'
     : saveType === 'dev' ? 'devDependencies'
@@ -51,8 +53,11 @@ const addSingle = ({pkg, spec, saveBundle, saveType}) => {
     : /* istanbul ignore next */ null
 
   pkg[type] = pkg[type] || {}
-  if (spec.rawSpec !== '' || pkg[type][name] === undefined)
-    pkg[type][name] = spec.rawSpec || '*'
+  if (rawSpec !== '' || pkg[type][name] === undefined) {
+    // if we're in global mode, file specs are based on cwd, not arb path
+    pkg[type][name] = specType === 'file' ? `file:${relpath(path, fetchSpec)}`
+      : (rawSpec || '*')
+  }
 
   if (saveType === 'peer' || saveType === 'peerOptional') {
     const pdm = pkg.peerDependenciesMeta || {}
