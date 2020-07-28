@@ -116,7 +116,8 @@ class Pipeline extends Minipass {
       this.emit('drain')
   }
   write (chunk, enc, cb) {
-    return this[_head].write(chunk, enc, cb) && this.flowing
+    return this[_head].write(chunk, enc, cb) &&
+      (this.flowing || this.buffer.length === 0)
   }
   end (chunk, enc, cb) {
     this[_head].end(chunk, enc, cb)
