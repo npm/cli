@@ -121,7 +121,7 @@ test('should log tarball contents', (t) => {
   })
 })
 
-test('shows usage with wrong set of arguments', async (t) => {
+test('shows usage with wrong set of arguments', (t) => {
   const publish = requireInject('../../lib/publish.js', {
     '../../lib/npm.js': {
       flatOptions: {
@@ -131,16 +131,10 @@ test('shows usage with wrong set of arguments', async (t) => {
     }
   })
 
-  const printUsage = async () => {
-    let usage
-    await publish(['a', 'b', 'c'], (str) => {
-      if (str) usage = str
-    })
-    return usage
-  }
-  const info = await printUsage()
-
-  t.matchSnapshot(info)
+  publish(['a', 'b', 'c'], (result) => {
+    t.matchSnapshot(result, 'should print usage')
+    t.end()
+  })
 })
 
 test('throws when invalid tag', (t) => {

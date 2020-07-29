@@ -5,7 +5,7 @@
  * Make sure to inspect the output below.  Do not ignore changes!
  */
 'use strict'
-exports[`test/lib/publish.js TAP shows usage with wrong set of arguments > must match snapshot 1`] = `
+exports[`test/lib/publish.js TAP shows usage with wrong set of arguments > should print usage 1`] = `
 npm publish [<folder>] [--tag <tag>] [--access <public|restricted>] [--dry-run]
 
 Publishes '.' if no argument supplied
