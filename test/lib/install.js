@@ -109,7 +109,8 @@ test('completion to folder', (t) => {
     partialWord: '/ar'
   }, (er, res) => {
     t.equal(er, null)
-    t.strictSame(res, ['/arborist'], 'package dir match')
+    const expect = process.platform === 'win32' ? '\\arborist' : '/arborist'
+    t.strictSame(res, [expect], 'package dir match')
     t.end()
   })
 })

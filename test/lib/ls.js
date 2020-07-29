@@ -1,7 +1,9 @@
 const { resolve } = require('path')
 
-const { test } = require('tap')
+const t = require('tap')
 const requireInject = require('require-inject')
+
+t.cleanSnapshot = str => str.split(/\r\n/).join('\n')
 
 const simpleNmFixture = {
   node_modules: {
@@ -114,17 +116,16 @@ const ls = requireInject('../../lib/ls.js', {
 })
 
 const redactCwd = res =>
-  res && res.replace(/\\/g, '/').replace(new RegExp(__dirname.replace(/\\/g, '/'), 'gi'), '{CWD}')
+  res && res.replace(/\\+/g, '/').replace(new RegExp(__dirname.replace(/\\+/g, '/'), 'gi'), '{CWD}')
 
-const jsonParse = res =>
-  JSON.parse(redactCwd(res))
+const jsonParse = res => JSON.parse(redactCwd(res))
 
 const cleanUpResult = (done, t) => {
   result = ''
   done()
 }
 
-test('ls', (t) => {
+t.test('ls', (t) => {
   t.beforeEach(cleanUpResult)
   _flatOptions.json = false
   _flatOptions.unicode = false
@@ -423,7 +424,7 @@ test('ls', (t) => {
     ls([], (err) => {
       t.equal(err.code, 'ELSPROBLEMS', 'should have error code')
       t.equal(
-        redactCwd(err.message),
+        redactCwd(err.message).replace(/\r\n/g, '\n'),
         'invalid: foo@1.0.0 {CWD}/ls-ls-missing-invalid-extraneous/node_modules/foo\n' +
         'missing: ipsum@^1.0.0, required by test-npm-ls@1.0.0\n' +
         'extraneous: lorem@1.0.0 {CWD}/ls-ls-missing-invalid-extraneous/node_modules/lorem',
@@ -1334,7 +1335,7 @@ test('ls', (t) => {
   t.end()
 })
 
-test('ls --parseable', (t) => {
+t.test('ls --parseable', (t) => {
   t.beforeEach(cleanUpResult)
   _flatOptions.json = false
   _flatOptions.unicode = false
@@ -2128,7 +2129,7 @@ test('ls --parseable', (t) => {
   t.end()
 })
 
-test('ls --json', (t) => {
+t.test('ls --json', (t) => {
   t.beforeEach(cleanUpResult)
   _flatOptions.json = true
   _flatOptions.parseable = false
