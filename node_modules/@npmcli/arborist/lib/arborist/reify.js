@@ -207,7 +207,11 @@ module.exports = cls => class Reifier extends cls {
       ideal: this.idealTree,
     })
     for (const node of this.diff.removed) {
-      this[_addNodeToTrashList](node)
+      // a node in a dep bundle will only be removed if its bundling dep
+      // is removed as well.  in which case, we don't have to delete it!
+      if (!node.inDepBundle) {
+        this[_addNodeToTrashList](node)
+      }
     }
     process.emit('timeEnd', 'reify:diffTrees')
   }
@@ -219,6 +223,7 @@ module.exports = cls => class Reifier extends cls {
   [_addNodeToTrashList] (node, retire) {
     const paths = [ node.path, ...node.binPaths ]
     const moves = this[_retiredPaths]
+    this.log.silly('reify', 'mark', retire ? 'retired' : 'deleted', paths)
     for (const path of paths) {
       if (retire) {
         const retired = retirePath(path)
@@ -240,6 +245,7 @@ module.exports = cls => class Reifier extends cls {
         this[_addNodeToTrashList](diff.actual, true)
       }
     }
+    this.log.silly('reify', 'moves', moves)
     let errState = null
     const movePromises = Object.entries(moves)
       .map(([from, to]) => this[_renamePath](from, to))
@@ -403,6 +409,7 @@ module.exports = cls => class Reifier extends cls {
     // no idea what this thing is.  remove it from the tree.
     if (!res) {
       node.parent = null
+      this.log.verbose('reify', 'unrecognized node in tree', node.path)
       this[_addNodeToTrashList](node)
       return
     }
@@ -481,6 +488,7 @@ module.exports = cls => class Reifier extends cls {
     return (node.optional ? p.catch(er => {
       const set = optionalSet(node)
       for (node of set) {
+        this.log.verbose('reify', 'failed optional dependency', node.path)
         this[_addNodeToTrashList](node)
       }
     }) : p).then(() => node)

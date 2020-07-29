@@ -134,6 +134,10 @@ module.exports = cls => class IdealTreeBuilder extends cls {
     if (this.idealTree)
       return Promise.resolve(this.idealTree)
 
+    // allow the user to set reify options on the ctor as well.
+    // XXX: deprecate separate reify() options object.
+    options = { ...this.options, ...options }
+
     process.emit('time', 'idealTree')
 
     if (!options.add && !options.rm && this[_global])
