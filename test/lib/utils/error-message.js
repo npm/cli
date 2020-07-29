@@ -26,6 +26,7 @@ const bePosix = () => {
   delete require.cache[require.resolve('../../../lib/utils/is-windows.js')]
 }
 
+const { resolve } = require('path')
 const npm = require('../../../lib/npm.js')
 const CACHE = '/some/cache/dir'
 npm.config = {
@@ -257,9 +258,9 @@ t.test('json parse', t => {
     })
     Object.defineProperty(npm, 'prefix', { value: dir, configurable: true })
     process.argv = ['arg', 'v']
-    t.matchSnapshot(errorMessage(Object.assign(new Error('conflicted'), {
+    const ok = t.matchSnapshot(errorMessage(Object.assign(new Error('conflicted'), {
       code: 'EJSONPARSE',
-      file: `${dir}/package.json`
+      file: resolve(dir, 'package.json')
     })))
     t.end()
   })

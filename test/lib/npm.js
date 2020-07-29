@@ -1,4 +1,5 @@
 const t = require('tap')
+const fs = require('fs')
 
 // delete this so that we don't have configs from the fact that it
 // is being run by 'npm test'
@@ -7,6 +8,8 @@ for (env of Object.keys(process.env).filter(e => /^npm_/.test(e))) {
 }
 
 const { resolve } = require('path')
+
+const actualPlatform = process.platform
 
 const beWindows = () => {
   Object.defineProperty(process, 'platform', {
@@ -126,7 +129,7 @@ t.test('npm.load', t => {
       ])
       logs.length = 0
 
-      t.equal(npm.cache, CACHE, 'cache is cache')
+      t.equal(resolve(npm.cache), resolve(CACHE), 'cache is cache')
       const newCache = t.testdir()
       npm.cache = newCache
       t.equal(npm.config.get('cache'), newCache, 'cache setter sets config')
@@ -152,10 +155,10 @@ t.test('npm.load', t => {
       npm.config.set('global', true)
       t.equal(npm.prefix, npm.globalPrefix, 'prefix is global prefix after setting global')
       t.notEqual(npm.prefix, npm.localPrefix, 'prefix is not local prefix after setting global')
-      t.equal(npm.bin, npm.globalBin, 'bin is global bin after prefix setter')
-      t.notEqual(npm.bin, npm.localBin, 'bin is not local bin after prefix setter')
-      t.equal(npm.dir, npm.globalDir, 'dir is global dir after prefix setter')
-      t.notEqual(npm.dir, npm.localDir, 'dir is not local dir after prefix setter')
+      t.equal(npm.bin, npm.globalBin, 'bin is global bin after setting global')
+      t.notEqual(npm.bin, npm.localBin, 'bin is not local bin after setting global')
+      t.equal(npm.dir, npm.globalDir, 'dir is global dir after setting global')
+      t.notEqual(npm.dir, npm.localDir, 'dir is not local dir after setting global')
 
       npm.prefix = dir + '/new/global/prefix'
       t.equal(npm.prefix, npm.globalPrefix, 'prefix is global prefix after prefix setter')
@@ -214,11 +217,14 @@ t.test('npm.load', t => {
   })
 
   t.test('node is a symlink', t => {
-    const node = process.platform === 'win32' ? 'node.exe' : 'node'
+    const node = actualPlatform === 'win32' ? 'node.exe' : 'node'
     const dir = t.testdir({
-      [node]: t.fixture('symlink', process.execPath),
       '.npmrc': 'foo = bar'
     })
+
+    // create manually to set the 'file' option in windows
+    fs.symlinkSync(process.execPath, resolve(dir, node), 'file')
+
     const PATH = process.env.PATH || process.env.Path
     process.env.PATH = dir
     const { execPath } = process
