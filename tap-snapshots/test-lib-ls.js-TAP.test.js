@@ -373,6 +373,16 @@ test-npm-ls@1.0.0 {CWD}/ls-ls-extraneous-deps
 
 `
 
+exports[`test/lib/ls.js TAP ls filtering by child of missing dep > should print tree and not duplicate child of missing items 1`] = `
+filter-by-child-of-missing-dep@1.0.0 {CWD}/ls-ls-filtering-by-child-of-missing-dep
++-- b@1.0.0 extraneous
+| \`-- c@1.0.0 deduped
++-- c@1.0.0 extraneous
+\`-- d@1.0.0 extraneous
+  \`-- c@2.0.0 extraneous
+
+`
+
 exports[`test/lib/ls.js TAP ls from and resolved properties > should not be printed in tree output 1`] = `
 test-npm-ls@1.0.0 {CWD}/ls-ls-from-and-resolved-properties
 \`-- simple-output@2.1.1

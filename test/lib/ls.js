@@ -1332,6 +1332,58 @@ t.test('ls', (t) => {
     })
   })
 
+  t.test('filtering by child of missing dep', (t) => {
+    prefix = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'filter-by-child-of-missing-dep',
+        version: '1.0.0',
+        dependencies: {
+          'a': '^1.0.0'
+        }
+      }),
+      node_modules: {
+        b: {
+          'package.json': JSON.stringify({
+            name: 'b',
+            version: '1.0.0',
+            dependencies: {
+              c: '^1.0.0'
+            }
+          })
+        },
+        c: {
+          'package.json': JSON.stringify({
+            name: 'c',
+            version: '1.0.0'
+          })
+        },
+        d: {
+          'package.json': JSON.stringify({
+            name: 'd',
+            version: '1.0.0',
+            dependencies: {
+              c: '^2.0.0'
+            }
+          }),
+          node_modules: {
+            c: {
+              'package.json': JSON.stringify({
+                name: 'c',
+                version: '2.0.0'
+              })
+            }
+          }
+        }
+      }
+    })
+
+    ls(['c'], (err) => {
+      t.match(err.code, 'ELSPROBLEMS', 'should have ELSPROBLEMS error code')
+      t.matchSnapshot(redactCwd(result), 'should print tree and not duplicate child of missing items')
+      t.end()
+    })
+  })
+
   t.end()
 })
 
