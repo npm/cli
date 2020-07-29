@@ -1,0 +1,14 @@
+{
+  "threshold": 95,
+  "ignore": [
+    "node_modules/**/*.*",
+    "bower_components/**/*.*",
+    ".git/**/*.*",
+    "test/**/*.*",
+    "man/**/*.*",
+    "docs/**/*.*",
+    "changelogs/**/*.*"
+  ],
+  "minLines": 5,
+  "minChars": 50
+}
