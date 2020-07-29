@@ -33,6 +33,10 @@ module.exports = cls => class VirtualLoader extends cls {
     if (this.virtualTree)
       return Promise.resolve(this.virtualTree)
 
+    // allow the user to set reify options on the ctor as well.
+    // XXX: deprecate separate reify() options object.
+    options = { ...this.options, ...options }
+
     if (options.root && options.root.meta)
       return this[loadFromShrinkwrap](options.root.meta, options.root)
 

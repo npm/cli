@@ -14,6 +14,10 @@ module.exports = cls => class Auditor extends cls {
         { code: 'EAUDITGLOBAL' }
       )
 
+    // allow the user to set options on the ctor as well.
+    // XXX: deprecate separate method options objects.
+    options = { ...this.options, ...options }
+
     process.emit('time', 'audit')
     const tree = await this.loadVirtual()
     this.auditReport = await AuditReport.load(tree, this.options)

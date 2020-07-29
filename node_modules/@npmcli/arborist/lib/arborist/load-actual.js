@@ -72,6 +72,10 @@ module.exports = cls => class ActualLoader extends cls {
 
   // public method
   async loadActual (options = {}) {
+    // allow the user to set options on the ctor as well.
+    // XXX: deprecate separate method options objects.
+    options = { ...this.options, ...options }
+
     // stash the promise so that we don't ever have more than one
     // going at the same time.  This is so that buildIdealTree can
     // default to the actualTree if no shrinkwrap present, but
