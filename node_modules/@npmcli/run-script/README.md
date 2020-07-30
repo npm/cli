@@ -42,6 +42,12 @@ runScript({
   // npm cli sets this to 'inherit' for explicit run-scripts (test, etc.)
   // but leaves it as 'pipe' for install scripts that run in parallel.
   stdio: 'inherit',
+
+  // print the package id and script, and the command to be run, like:
+  // > somepackage@1.2.3 postinstall
+  // > make all-the-things
+  // Defaults true when stdio:'inherit', otherwise suppressed
+  banner: true,
 })
   .then(({ code, signal, stdout, stderr, pkgid, path, event, script }) => {
     // do something with the results
@@ -104,6 +110,10 @@ terminal, then it is up to the user to end it, of course.
   something else, which will be run in an otherwise matching environment.
 - `stdioString` Optional, defaults to `false`.  Return string values for
   `stderr` and `stdout` rather than Buffers.
+- `banner` Optional, defaults to `true`.  If the `stdio` option is set to
+  `'inherit'`, then print a banner with the package name and version, event
+  name, and script command to be run.  Set explicitly to `false` to disable
+  for inherited stdio.
 
 Note that this does _not_ run pre-event and post-event scripts.  The
 caller has to manage that process themselves.

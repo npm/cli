@@ -1,7 +1,8 @@
 const makeSpawnArgs = require('./make-spawn-args.js')
 const promiseSpawn = require('@npmcli/promise-spawn')
 
-const banner = (id, event, cmd) =>`> ${id ? id + ' ' : ''}${event}\n> ${cmd}`
+// you wouldn't like me when I'm angry...
+const bruce = (id, event, cmd) =>`\n> ${id ? id + ' ' : ''}${event}\n> ${cmd}\n`
 
 const runScriptPkg = options => {
   const {
@@ -13,6 +14,8 @@ const runScriptPkg = options => {
     pkg,
     args = [],
     stdioString = false,
+    // note: only used when stdio:inherit
+    banner = true,
   } = options
 
   const cmd = options.cmd ? options.cmd
@@ -24,9 +27,9 @@ const runScriptPkg = options => {
   if (!cmd)
     return Promise.resolve({ code: 0, signal: null })
 
-  if (stdio === 'inherit') {
+  if (stdio === 'inherit' && banner !== false) {
     // we're dumping to the parent's stdout, so print the banner
-    console.log(banner(pkg._id, event, cmd))
+    console.log(bruce(pkg._id, event, cmd))
   }
 
   const p = promiseSpawn(...makeSpawnArgs({
