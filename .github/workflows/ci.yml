@@ -7,10 +7,21 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node-version: [10.x, 12.x, 14.x]
-        os: [ubuntu-latest, windows-latest, macOS-latest]
+        node-version: [6.x, 8.x, 10.x, 12.x]
+        platform:
+        - os: ubuntu-latest
+          shell: bash
+        - os: macos-latest
+          shell: bash
+        - os: windows-latest
+          shell: bash
+        - os: windows-latest
+          shell: powershell
 
-    runs-on: ${{ matrix.os }}
+    runs-on: ${{ matrix.platform.os }}
+    defaults:
+      run:
+        shell: ${{ matrix.platform.shell }}
 
     steps:
       # Checkout the npm/cli repo
