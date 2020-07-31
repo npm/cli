@@ -9,8 +9,7 @@ markdowns = $(shell find docs -name '*.md' | grep -v 'index') README.md
 cli_mandocs = $(shell find docs/content/cli-commands -name '*.md' \
                |sed 's|.md|.1|g' \
                |sed 's|docs/content/cli-commands/|man/man1/|g' ) \
-               man/man1/npm-README.1 \
-               man/man1/npx.1
+               man/man1/npm-README.1
 
 files_mandocs = $(shell find docs/content/configuring-npm -name '*.md' \
                |sed 's|.md|.5|g' \
@@ -83,9 +82,6 @@ man/man1/npm-README.1: README.md scripts/docs-build.js package.json $(build-doc-
 man/man1/%.1: docs/content/cli-commands/%.md scripts/docs-build.js package.json $(build-doc-tools)
 	@[ -d man/man1 ] || mkdir -p man/man1
 	node scripts/docs-build.js $< $@
-
-man/man1/npx.1: node_modules/libnpx/libnpx.1
-	cat $< | sed s/libnpx/npx/ > $@
 
 man/man5/npm-json.5: man/man5/package.json.5
 	cp $< $@

@@ -82,7 +82,6 @@
     "libnpmsearch": "^3.0.0",
     "libnpmteam": "^2.0.1",
     "libnpmversion": "^1.0.2",
-    "libnpx": "^10.2.2",
     "lock-verify": "^2.1.0",
     "lockfile": "^1.0.4",
     "lodash._baseuniq": "~4.6.0",
@@ -194,7 +193,6 @@
     "libnpmsearch",
     "libnpmteam",
     "libnpmversion",
-    "libnpx",
     "lock-verify",
     "lockfile",
     "lodash._baseuniq",
@@ -297,7 +295,7 @@
     "Remove the 'files' below once we're done porting old tests over"
   ],
   "tap": {
-    "files": "test/lib",
+    "files": "test/{lib,bin}",
     "coverage-map": "test/coverage-map.js",
     "esm": false,
     "timeout": 600
