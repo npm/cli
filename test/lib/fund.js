@@ -183,6 +183,7 @@ const conflictingFundingPackages = {
 let result = ''
 let printUrl = ''
 const _flatOptions = {
+  color: false,
   json: false,
   global: false,
   prefix: undefined,
@@ -724,6 +725,71 @@ test('fund a package with type and multiple sources', t => {
     t.matchSnapshot(result, 'should print prompt select message')
 
     result = ''
+    t.end()
+  })
+})
+
+test('fund colors', t => {
+  _flatOptions.prefix = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'test-fund-colors',
+      version: '1.0.0',
+      dependencies: {
+        a: '^1.0.0',
+        b: '^1.0.0',
+        c: '^1.0.0'
+      }
+    }),
+    node_modules: {
+      a: {
+        'package.json': JSON.stringify({
+          name: 'a',
+          version: '1.0.0',
+          funding: 'http://example.com/a'
+        })
+      },
+      b: {
+        'package.json': JSON.stringify({
+          name: 'b',
+          version: '1.0.0',
+          funding: 'http://example.com/b',
+          dependencies: {
+            d: '^1.0.0',
+            e: '^1.0.0'
+          }
+        })
+      },
+      c: {
+        'package.json': JSON.stringify({
+          name: 'c',
+          version: '1.0.0',
+          funding: 'http://example.com/b'
+        })
+      },
+      d: {
+        'package.json': JSON.stringify({
+          name: 'd',
+          version: '1.0.0',
+          funding: 'http://example.com/d'
+        })
+      },
+      e: {
+        'package.json': JSON.stringify({
+          name: 'e',
+          version: '1.0.0',
+          funding: 'http://example.com/e'
+        })
+      },
+    }
+  })
+  _flatOptions.color = true
+
+  fund([], (err) => {
+    t.ifError(err, 'should not error out')
+    t.matchSnapshot(result, 'should print output with color info')
+
+    result = ''
+    _flatOptions.color = false
     t.end()
   })
 })
