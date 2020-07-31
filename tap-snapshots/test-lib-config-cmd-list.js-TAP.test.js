@@ -86,6 +86,7 @@ Object {
     "urn": "run-script",
     "v": "view",
     "verison": "version",
+    "x": "exec",
   },
   "cmdList": Array [
     "ci",
@@ -149,6 +150,7 @@ Object {
     "run-script",
     "completion",
     "doctor",
+    "exec",
   ],
   "plumbing": Array [
     "birthday",
@@ -174,6 +176,7 @@ Object {
     "unstar": "star",
     "up": "update",
     "v": "view",
+    "x": "exec",
   },
 }
 `
