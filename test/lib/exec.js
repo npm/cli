@@ -21,6 +21,7 @@ class Arborist {
 let PROGRESS_ENABLED = true
 const npm = {
   flatOptions: {
+    yes: true,
     call: '',
     package: []
   },
@@ -61,11 +62,20 @@ const pacote = {
 const MKDIRPS = []
 const mkdirp = async path => MKDIRPS.push(path)
 
+let READ_RESULT = ''
+let READ_ERROR = null
+const READ = []
+const read = (options, cb) => {
+  READ.push(options)
+  process.nextTick(() => cb(READ_ERROR, READ_RESULT))
+}
+
 const exec = requireInject('../../lib/exec.js', {
   '@npmcli/arborist': Arborist,
   '@npmcli/run-script': runScript,
   '../../lib/npm.js': npm,
   pacote,
+  read,
   'mkdirp-infer-owner': mkdirp
 })
 
@@ -74,6 +84,9 @@ t.afterEach(cb => {
   ARB_CTOR.length = 0
   ARB_REIFY.length = 0
   RUN_SCRIPTS.length = 0
+  READ.length = 0
+  READ_RESULT = ''
+  READ_ERROR = null
   npm.flatOptions.package = []
   npm.flatOptions.call = ''
   cb()
@@ -308,14 +321,14 @@ t.test('npm exec @foo/bar -- --some=arg, locally installed', async t => {
 
 t.test('run command with 2 packages, need install, verify sort', t => {
   // test both directions, should use same install dir both times
+  // also test the read() call here, verify that the prompts match
   const cases = [['foo', 'bar'], ['bar', 'foo']]
   t.plan(cases.length)
   for (const packages of cases) {
     t.test(packages.join(', '), async t => {
       npm.flatOptions.package = packages
-      const add = packages.map(p => `${p}@`)
+      const add = packages.map(p => `${p}@`).sort((a, b) => a.localeCompare(b))
       const path = t.testdir()
-      // XXX
       const installDir = resolve('cache-dir/_npx/07de77790e5f40f2')
       npm.localPrefix = path
       ARB_ACTUAL_TREE[path] = {
@@ -446,9 +459,200 @@ t.test('npm exec -p foo -c "ls -laF"', async t => {
 
 t.test('positional args and --call together is an error', t => {
   npm.flatOptions.call = 'true'
-  return t.rejects(exec(['foo'], er => {
+  return exec(['foo'], er => t.equal(er, exec.usage))
+})
+
+t.test('prompt when installs are needed if not already present', async t => {
+  const packages = ['foo', 'bar']
+  READ_RESULT = 'yolo'
+
+  npm.flatOptions.package = packages
+  npm.flatOptions.yes = undefined
+
+  const add = packages.map(p => `${p}@`).sort((a, b) => a.localeCompare(b))
+  const path = t.testdir()
+  const installDir = resolve('cache-dir/_npx/07de77790e5f40f2')
+  npm.localPrefix = path
+  ARB_ACTUAL_TREE[path] = {
+    children: new Map()
+  }
+  ARB_ACTUAL_TREE[installDir] = {
+    children: new Map()
+  }
+  MANIFESTS.foo = {
+    name: 'foo',
+    version: '1.2.3',
+    bin: {
+      foo: 'foo'
+    },
+    _from: 'foo@'
+  }
+  MANIFESTS.bar = {
+    name: 'bar',
+    version: '1.2.3',
+    bin: {
+      bar: 'bar'
+    },
+    _from: 'bar@'
+  }
+  await exec(['foobar'], er => {
     if (er) {
       throw er
     }
-  }), exec.usage)
+  })
+  t.strictSame(MKDIRPS, [installDir], 'need to make install dir')
+  t.match(ARB_CTOR, [ { package: packages, path } ])
+  t.strictSame(ARB_REIFY, [{add}], 'need to install both packages')
+  t.equal(PROGRESS_ENABLED, true, 'progress re-enabled')
+  const PATH = `${resolve(installDir, 'node_modules', '.bin')}${delimiter}${process.env.PATH}`
+  t.match(RUN_SCRIPTS, [{
+    pkg: { scripts: { npx: 'foobar' } },
+    banner: false,
+    path: process.cwd(),
+    stdioString: true,
+    event: 'npx',
+    env: { PATH },
+    stdio: 'inherit'
+  }])
+  t.strictSame(READ, [{
+    prompt: 'Need to install the following packages:\n  bar\n  foo\nOk to proceed? ',
+    default: 'y'
+  }])
+})
+
+t.test('abort if prompt rejected', async t => {
+  const packages = ['foo', 'bar']
+  READ_RESULT = 'no, why would I want such a thing??'
+
+  npm.flatOptions.package = packages
+  npm.flatOptions.yes = undefined
+
+  const add = packages.map(p => `${p}@`).sort((a, b) => a.localeCompare(b))
+  const path = t.testdir()
+  const installDir = resolve('cache-dir/_npx/07de77790e5f40f2')
+  npm.localPrefix = path
+  ARB_ACTUAL_TREE[path] = {
+    children: new Map()
+  }
+  ARB_ACTUAL_TREE[installDir] = {
+    children: new Map()
+  }
+  MANIFESTS.foo = {
+    name: 'foo',
+    version: '1.2.3',
+    bin: {
+      foo: 'foo'
+    },
+    _from: 'foo@'
+  }
+  MANIFESTS.bar = {
+    name: 'bar',
+    version: '1.2.3',
+    bin: {
+      bar: 'bar'
+    },
+    _from: 'bar@'
+  }
+  await exec(['foobar'], er => {
+    t.equal(er, 'canceled', 'should be canceled')
+  })
+  t.strictSame(MKDIRPS, [installDir], 'need to make install dir')
+  t.match(ARB_CTOR, [ { package: packages, path } ])
+  t.strictSame(ARB_REIFY, [], 'no install performed')
+  t.equal(PROGRESS_ENABLED, true, 'progress re-enabled')
+  t.strictSame(RUN_SCRIPTS, [])
+  t.strictSame(READ, [{
+    prompt: 'Need to install the following packages:\n  bar\n  foo\nOk to proceed? ',
+    default: 'y'
+  }])
+})
+
+t.test('abort if prompt false', async t => {
+  const packages = ['foo', 'bar']
+  READ_ERROR = 'canceled'
+
+  npm.flatOptions.package = packages
+  npm.flatOptions.yes = undefined
+
+  const add = packages.map(p => `${p}@`).sort((a, b) => a.localeCompare(b))
+  const path = t.testdir()
+  const installDir = resolve('cache-dir/_npx/07de77790e5f40f2')
+  npm.localPrefix = path
+  ARB_ACTUAL_TREE[path] = {
+    children: new Map()
+  }
+  ARB_ACTUAL_TREE[installDir] = {
+    children: new Map()
+  }
+  MANIFESTS.foo = {
+    name: 'foo',
+    version: '1.2.3',
+    bin: {
+      foo: 'foo'
+    },
+    _from: 'foo@'
+  }
+  MANIFESTS.bar = {
+    name: 'bar',
+    version: '1.2.3',
+    bin: {
+      bar: 'bar'
+    },
+    _from: 'bar@'
+  }
+  await exec(['foobar'], er => {
+    t.equal(er, 'canceled', 'should be canceled')
+  })
+  t.strictSame(MKDIRPS, [installDir], 'need to make install dir')
+  t.match(ARB_CTOR, [ { package: packages, path } ])
+  t.strictSame(ARB_REIFY, [], 'no install performed')
+  t.equal(PROGRESS_ENABLED, true, 'progress re-enabled')
+  t.strictSame(RUN_SCRIPTS, [])
+  t.strictSame(READ, [{
+    prompt: 'Need to install the following packages:\n  bar\n  foo\nOk to proceed? ',
+    default: 'y'
+  }])
+})
+
+t.test('abort if -n provided', async t => {
+  const packages = ['foo', 'bar']
+
+  npm.flatOptions.package = packages
+  npm.flatOptions.yes = false
+
+  const add = packages.map(p => `${p}@`).sort((a, b) => a.localeCompare(b))
+  const path = t.testdir()
+  const installDir = resolve('cache-dir/_npx/07de77790e5f40f2')
+  npm.localPrefix = path
+  ARB_ACTUAL_TREE[path] = {
+    children: new Map()
+  }
+  ARB_ACTUAL_TREE[installDir] = {
+    children: new Map()
+  }
+  MANIFESTS.foo = {
+    name: 'foo',
+    version: '1.2.3',
+    bin: {
+      foo: 'foo'
+    },
+    _from: 'foo@'
+  }
+  MANIFESTS.bar = {
+    name: 'bar',
+    version: '1.2.3',
+    bin: {
+      bar: 'bar'
+    },
+    _from: 'bar@'
+  }
+  await exec(['foobar'], er => {
+    t.equal(er, 'canceled', 'should be canceled')
+  })
+  t.strictSame(MKDIRPS, [installDir], 'need to make install dir')
+  t.match(ARB_CTOR, [ { package: packages, path } ])
+  t.strictSame(ARB_REIFY, [], 'no install performed')
+  t.equal(PROGRESS_ENABLED, true, 'progress re-enabled')
+  t.strictSame(RUN_SCRIPTS, [])
+  t.strictSame(READ, [])
 })

@@ -41,7 +41,10 @@ where all specified packages are available.
 
 If any requested packages are not present in the local project
 dependencies, then they are installed to a folder in the npm cache, which
-is added to the `PATH` environment variable in the executed process.
+is added to the `PATH` environment variable in the executed process.  A
+prompt is printed (which can be suppressed by providing either `--yes` or
+`--no`).
+
 Package names provided without a specifier will be matched with whatever
 version exists in the local project.  Package names with a specifier will
 only be considered a match if they have the exact same name and version as
@@ -136,6 +139,34 @@ Run an arbitrary shell script, in the context of the current project:
 $ npm x -c 'eslint && say "hooray, lint passed"'
 $ npx -c 'eslint && say "hooray, lint passed"'
 ```
+
+### Compatibility with Older npx Versions
+
+The `npx` binary was rewritten in npm v7.0.0, and the standalone `npx`
+package deprecated at that time.  `npx` uses the `npm exec`
+command instead of a separate argument parser and install process, with
+some affordances to maintain backwards compatibility with the arguments it
+accepted in previous versions.
+
+This resulted in some shifts in its functionality:
+
+- Any `npm` config value may be provided.
+- To prevent security and user-experience problems from mistyping package
+  names, `npx` prompts before installing anything.  Suppress this
+  prompt with the `-y` or `--yes` option.
+- The `--no-install` option is deprecated, and will be converted to `--no`.
+- Shell fallback functionality is removed, as it is not advisable.
+- The `-p` argument is a shorthand for `--parseable` in npm, but shorthand
+  for `--package` in npx.  This is maintained, but only for the `npx`
+  executable.
+- The `--ignore-existing` option is removed.  Locally installed bins are
+  always present in the executed process `PATH`.
+- The `--npm` option is removed.  `npx` will always use the `npm` it ships
+  with.
+- The `--node-arg` and `-n` options are removed.
+- The `--always-spawn` option is redundant, and thus removed.
+- The `--shell` option is replaced with `--script-shell`, but maintained
+  in the `npx` executable for backwards compatibility.
 
 ### See Also
 

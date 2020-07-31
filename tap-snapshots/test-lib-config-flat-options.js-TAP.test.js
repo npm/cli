@@ -120,5 +120,6 @@ Object {
   "userAgent": "user-agent",
   "viewer": "viewer",
   "which": undefined,
+  "yes": undefined,
 }
 `
