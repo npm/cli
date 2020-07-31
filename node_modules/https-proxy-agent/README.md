@@ -1,7 +1,7 @@
 https-proxy-agent
 ================
 ### An HTTP(s) proxy `http.Agent` implementation for HTTPS
-[![Build Status](https://travis-ci.org/TooTallNate/node-https-proxy-agent.svg?branch=master)](https://travis-ci.org/TooTallNate/node-https-proxy-agent)
+[![Build Status](https://github.com/TooTallNate/node-https-proxy-agent/workflows/Node%20CI/badge.svg)](https://github.com/TooTallNate/node-https-proxy-agent/actions?workflow=Node+CI)
 
 This module provides an `http.Agent` implementation that connects to a specified
 HTTP or HTTPS proxy server, and can be used with the built-in `https` module.
@@ -103,7 +103,7 @@ The `options` argument may either be a string URI of the proxy server to use, or
 
   * `host` - String - Proxy host to connect to (may use `hostname` as well). Required.
   * `port` - Number - Proxy port to connect to. Required.
-  * `secureProxy` - Boolean - If `true`, then use TLS to connect to the proxy. Defaults to `false`.
+  * `protocol` - String - If `https:`, then use TLS to connect to the proxy.
   * `headers` - Object - Additional HTTP headers to be sent on the HTTP CONNECT method.
   * Any other options given are passed to the `net.connect()`/`tls.connect()` functions.
 

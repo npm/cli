@@ -4,18 +4,13 @@ const BB = require('bluebird')
 
 const common = require('../common-tap')
 const fs = require('fs')
-const mkdirp = require('mkdirp')
 const mr = BB.promisify(require('npm-registry-mock'))
 const path = require('path')
-const rimraf = require('rimraf')
 const test = require('tap').test
 
-const testDir = path.join(__dirname, 'publish_test_package')
+const testDir = common.pkg
 
 function setup () {
-  cleanup()
-  mkdirp.sync(path.join(testDir, 'cache'))
-
   fs.writeFileSync(
     path.join(testDir, 'package.json'),
     JSON.stringify({
@@ -52,12 +47,15 @@ test('basic npm publish', (t) => {
     return common.npm([
       'publish',
       '--no-color',
-      '--cache', path.join(testDir, 'cache'),
+      '--cache', common.cache,
       '--registry=' + common.registry.replace(common.port, server.port),
       `--//localhost:${server.port}/:username=username`,
       `--//localhost:${server.port}/:_password=` + Buffer.from('password').toString('base64'),
       `--//localhost:${server.port}/:email=` + 'ogd@aoaioxxysz.net'
-    ], {'cwd': testDir})
+    ], {
+      'cwd': testDir,
+      nodeExecPath: process.execPath
+    })
       .spread((code, stdout, stderr) => {
         t.comment(stdout)
         t.comment(stderr)
@@ -92,7 +90,7 @@ test('npm publish --dry-run', (t) => {
     'publish',
     '--dry-run',
     '--registry=https://example.registry/fake',
-    '--cache', path.join(testDir, 'cache'),
+    '--cache', common.cache,
     '--loglevel=notice',
     '--no-color'
   ], {'cwd': testDir})
@@ -115,7 +113,7 @@ test('npm publish --json', (t) => {
       'publish',
       '--json',
       '--registry', common.registry.replace(common.port, server.port),
-      '--cache', path.join(testDir, 'cache')
+      '--cache', common.cache
     ], {'cwd': testDir})
       .spread((code, stdout, stderr) => {
         t.comment(stdout)
@@ -125,8 +123,8 @@ test('npm publish --json', (t) => {
           name: 'publish-organized',
           version: '1.2.5',
           files: [
-            {path: 'package.json'},
-            {path: 'index.js'}
+            {path: 'index.js'},
+            {path: 'package.json'}
           ],
           entryCount: 2
         }, 'JSON output reflects package contents')
@@ -142,7 +140,7 @@ test('npm publish --dry-run --json', (t) => {
     '--dry-run',
     '--json',
     '--registry=https://example.registry/fake',
-    '--cache', path.join(testDir, 'cache'),
+    '--cache', common.cache,
     '--loglevel=notice',
     '--no-color'
   ], {'cwd': testDir})
@@ -154,21 +152,11 @@ test('npm publish --dry-run --json', (t) => {
         name: 'publish-organized',
         version: '1.2.5',
         files: [
-          {path: 'package.json'},
-          {path: 'index.js'}
+          {path: 'index.js'},
+          {path: 'package.json'}
         ],
         entryCount: 2
       }, 'JSON output reflects package contents')
       t.equal(stderr.trim(), '', 'nothing on stderr')
     })
 })
-
-test('cleanup', (t) => {
-  cleanup()
-  t.end()
-})
-
-function cleanup () {
-  process.chdir(__dirname)
-  rimraf.sync(testDir)
-}

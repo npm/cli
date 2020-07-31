@@ -4,7 +4,7 @@ var common = require('../common-tap.js')
 var path = require('path')
 var rimraf = require('rimraf')
 var mkdirp = require('mkdirp')
-var basepath = path.resolve(__dirname, path.basename(__filename, '.js'))
+var basepath = common.pkg
 var fixturepath = path.resolve(basepath, 'npm-test-test-package')
 var modulepath = path.resolve(basepath, 'node_modules')
 var installedpath = path.resolve(modulepath, 'npm-test-test-package')
@@ -42,7 +42,7 @@ test('test-package', function (t) {
 
   function testCheckAndRemove (err, code, stdout, stderr) {
     if (err) throw err
-    t.is(code, 0, 'npm test w/o test is ok')
+    t.is(code, 1, 'npm test w/o test should return error')
     common.npm(['rm', fixturepath], {cwd: basepath}, removeCheckAndDone)
   }
 

@@ -11,9 +11,9 @@ var Dir = Tacks.Dir
 var common = require('../common-tap.js')
 var isWindows = require('../../lib/utils/is-windows.js')
 
-var basedir = path.join(__dirname, path.basename(__filename, '.js'))
+var basedir = common.pkg
 var testdir = path.join(basedir, 'testdir')
-var cachedir = path.join(basedir, 'cache')
+var cachedir = common.cache
 var globaldir = path.join(basedir, 'global')
 var tmpdir = path.join(basedir, 'tmp')
 
@@ -585,7 +585,9 @@ test('save behavior', function (t) {
       var deps = pjson.dependencies || {}
       t.is(deps['sb-transitive'], 'file:../sb-transitive', 'package.json')
       var sdep = shrinkwrap.dependencies['sb-transitive'] || {}
-      t.like(sdep, {bundled: null, dependencies: null, version: 'file:../sb-transitive'}, 'npm-shrinkwrap.json direct dep')
+      var tdep = sdep.dependencies.sbta
+      t.like(tdep, {bundled: null, version: 'file:../sb-transitive/sbta'}, 'npm-shrinkwrap.json transitive dep')
+      t.like(sdep, {bundled: null, version: 'file:../sb-transitive'}, 'npm-shrinkwrap.json direct dep')
       t.done()
     })
   })

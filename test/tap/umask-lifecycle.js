@@ -1,5 +1,4 @@
 var fs = require('fs')
-var path = require('path')
 
 var mkdirp = require('mkdirp')
 var rimraf = require('rimraf')
@@ -9,7 +8,7 @@ var sprintf = require('sprintf-js').sprintf
 var escapeExecPath = require('../../lib/utils/escape-exec-path.js')
 var escapeArg = require('../../lib/utils/escape-arg.js')
 var common = require('../common-tap.js')
-var pkg = path.resolve(__dirname, 'umask-lifecycle')
+var pkg = common.pkg
 
 var nodeCmd = escapeExecPath(common.nodeBin)
 var npmCmd = nodeCmd + ' ' + escapeArg(common.bin)
@@ -24,7 +23,7 @@ var pj = JSON.stringify({
 var umask = process.umask()
 var expected = [
   '',
-  '> x@1.2.3 umask ' + path.join(__dirname, 'umask-lifecycle'),
+  '> x@1.2.3 umask ' + pkg,
   '> ' + umaskScript,
   '',
   sprintf('%04o', umask),
@@ -41,12 +40,13 @@ test('setup', function (t) {
 })
 
 test('umask script', function (t) {
-  common.npm(['run', 'umask'], {
+  common.npm(['run', 'umask', '--scripts-prepend-node-path'], {
     cwd: pkg,
     env: {
       PATH: process.env.PATH,
       Path: process.env.Path,
-      'npm_config_loglevel': 'warn'
+      'npm_config_loglevel': 'warn',
+      nodeExecPath: process.execPath
     }
   }, function (er, code, sout, serr) {
     t.equal(sout, expected)

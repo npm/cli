@@ -6,7 +6,7 @@
 ## Install
 
 ```
-$ npm install get-stream
+$ npm install --save get-stream
 ```
 
 
@@ -15,11 +15,10 @@ $ npm install get-stream
 ```js
 const fs = require('fs');
 const getStream = require('get-stream');
+const stream = fs.createReadStream('unicorn.txt');
 
-(async () => {
-	const stream = fs.createReadStream('unicorn.txt');
-
-	console.log(await getStream(stream));
+getStream(stream).then(str => {
+	console.log(str);
 	/*
 	              ,,))))))));,
 	           __)))))))))))))),
@@ -41,7 +40,7 @@ const getStream = require('get-stream');
 	                                   \~\
 	                                    ~~
 	*/
-})();
+});
 ```
 
 
@@ -55,8 +54,6 @@ Get the `stream` as a string.
 
 #### options
 
-Type: `Object`
-
 ##### encoding
 
 Type: `string`<br>
@@ -69,7 +66,7 @@ Default: `utf8`
 Type: `number`<br>
 Default: `Infinity`
 
-Maximum length of the returned string. If it exceeds this value before the stream ends, the promise will be rejected with a `getStream.MaxBufferError` error.
+Maximum length of the returned string. If it exceeds this value before the stream ends, the promise will be rejected.
 
 ### getStream.buffer(stream, [options])
 
@@ -95,14 +92,11 @@ It honors both the `maxBuffer` and `encoding` options. The behavior changes slig
 If the input stream emits an `error` event, the promise will be rejected with the error. The buffered data will be attached to the `bufferedData` property of the error.
 
 ```js
-(async () => {
-	try {
-		await getStream(streamThatErrorsAtTheEnd('unicorn'));
-	} catch (error) {
-		console.log(error.bufferedData);
+getStream(streamThatErrorsAtTheEnd('unicorn'))
+	.catch(err => {
+		console.log(err.bufferedData);
 		//=> 'unicorn'
-	}
-})()
+	});
 ```
 
 

@@ -6,9 +6,9 @@ var join = require('path').join
 var mkdirp = require('mkdirp')
 var rimraf = require('rimraf')
 
-var pkg = join(__dirname, 'prepare_package')
+var pkg = common.pkg
 var tmp = join(pkg, 'tmp')
-var cache = join(pkg, 'cache')
+var cache = common.cache
 
 test('setup', function (t) {
   var n = 0
@@ -55,7 +55,11 @@ test('test', function (t) {
   common.npm([
     'pack',
     '--loglevel', 'warn'
-  ], { cwd: pkg, env: env }, function (err, code, stdout, stderr) {
+  ], {
+    cwd: pkg,
+    env: env,
+    nodeExecPath: process.execPath
+  }, function (err, code, stdout, stderr) {
     t.equal(code, 0, 'pack finished successfully')
     t.ifErr(err, 'pack finished successfully')
 

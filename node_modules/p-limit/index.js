@@ -21,7 +21,7 @@ module.exports = concurrency => {
 		const run = () => {
 			activeCount++;
 
-			pTry(() => fn()).then(
+			pTry(fn).then(
 				val => {
 					resolve(val);
 					next();

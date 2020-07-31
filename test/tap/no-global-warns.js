@@ -2,12 +2,10 @@
 var path = require('path')
 var test = require('tap').test
 var mkdirp = require('mkdirp')
-var osenv = require('osenv')
-var rimraf = require('rimraf')
 var writeFileSync = require('fs').writeFileSync
 var common = require('../common-tap.js')
 
-var base = path.join(__dirname, path.basename(__filename, '.js'))
+var base = common.pkg
 var mockGlobal = path.join(base, 'global')
 var toInstall = path.join(base, 'to-install')
 
@@ -30,15 +28,18 @@ var installJSON = {
   version: '1.0.0',
   description: '',
   main: 'index.js',
-  scripts: {
-    test: 'echo "Error: no test specified" && exit 1'
-  },
   author: '',
   license: 'ISC'
 }
 
 test('setup', function (t) {
-  setup()
+  mkdirp.sync(mockGlobal)
+  mkdirp.sync(toInstall)
+  writeFileSync(
+    path.join(toInstall, 'package.json'),
+    JSON.stringify(installJSON, null, 2)
+  )
+  writeFileSync(configPath, config)
   t.end()
 })
 
@@ -59,24 +60,3 @@ test('no-global-warns', function (t) {
       t.end()
     })
 })
-
-test('cleanup', function (t) {
-  process.chdir(osenv.tmpdir())
-  cleanup()
-  t.end()
-})
-
-function cleanup () {
-  rimraf.sync(base)
-}
-
-function setup () {
-  cleanup()
-  mkdirp.sync(mockGlobal)
-  mkdirp.sync(toInstall)
-  writeFileSync(
-    path.join(toInstall, 'package.json'),
-    JSON.stringify(installJSON, null, 2)
-  )
-  writeFileSync(configPath, config)
-}
