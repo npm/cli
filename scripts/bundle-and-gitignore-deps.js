@@ -25,6 +25,7 @@ arb.loadVirtual().then(tree => {
     .join('\n')
   const ignoreData = `# Automatically generated to ignore dev deps
 /.package-lock.json
+package-lock.json
 ${ignores}
 `
   writeFileSync(ignore, ignoreData)
