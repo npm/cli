@@ -33,7 +33,7 @@
     "npx": "bin/npx-cli.js"
   },
   "dependencies": {
-    "@npmcli/arborist": "^0.0.10",
+    "@npmcli/arborist": "^0.0.11",
     "@npmcli/ci-detect": "^1.2.0",
     "@npmcli/run-script": "^1.4.0",
     "abbrev": "~1.1.1",
