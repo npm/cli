@@ -78,7 +78,7 @@ const _scriptShell = Symbol('scriptShell')
 
 // defined by Ideal mixin
 const _force = Symbol.for('force')
-const _idealTreePrune = Symbol.for('idealTreePrune')
+const _pruneBundledMetadeps = Symbol.for('pruneBundledMetadeps')
 const _explicitRequests = Symbol.for('explicitRequests')
 const _resolvedAdd = Symbol.for('resolvedAdd')
 const _usePackageLock = Symbol.for('usePackageLock')
@@ -224,6 +224,7 @@ module.exports = cls => class Reifier extends cls {
     const paths = [ node.path, ...node.binPaths ]
     const moves = this[_retiredPaths]
     this.log.silly('reify', 'mark', retire ? 'retired' : 'deleted', paths)
+    node.parent = null
     for (const path of paths) {
       if (retire) {
         const retired = retirePath(path)
@@ -518,9 +519,8 @@ module.exports = cls => class Reifier extends cls {
     const maxBundleDepth = bundlesByDepth.get('maxBundleDepth')
     if (depth > maxBundleDepth) {
       // if we did something, then prune the tree and update the diffs
-      // XXX this is two full tree scans, find a better way to do this.
       if (maxBundleDepth !== -1) {
-        this[_idealTreePrune]()
+        this[_pruneBundledMetadeps](bundlesByDepth)
         this[_diffTrees]()
       }
       process.emit('timeEnd', 'reify:loadBundles')
@@ -575,6 +575,57 @@ module.exports = cls => class Reifier extends cls {
 
     bundlesByDepth.set('maxBundleDepth', maxBundleDepth)
     return bundlesByDepth
+  }
+
+  // https://github.com/npm/cli/issues/1597#issuecomment-667639545
+  [_pruneBundledMetadeps] (bundlesByDepth) {
+    const bundleShadowed = new Set()
+    // create the list of nodes shadowed by children of bundlers
+    for (const bundles of bundlesByDepth.values()) {
+      // skip the 'maxBundleDepth' item
+      if (!Array.isArray(bundles))
+        continue
+      for (const node of bundles) {
+        for (const name of node.children.keys()) {
+          const shadow = node.parent.resolve(name)
+          if (!shadow)
+            continue
+          bundleShadowed.add(shadow)
+          shadow.extraneous = true
+        }
+      }
+    }
+    let changed = true
+    let removedAll = false
+    while (changed) {
+      changed = false
+      for (const shadow of bundleShadowed) {
+        if (!shadow.extraneous) {
+          bundleShadowed.delete(shadow)
+          continue
+        }
+
+        for (const edge of shadow.edgesIn) {
+          if (!edge.from.extraneous) {
+            shadow.extraneous = false
+            bundleShadowed.delete(shadow)
+            changed = true
+          } else {
+            for (const shadDep of shadow.edgesOut.values()) {
+              /* istanbul ignore else - pretty unusual situation, just being
+               * defensive here. Would mean that a bundled dep has a dependency
+               * that is unmet. which, weird, but if you bundle it, we take
+               * whatever you put there and assume the publisher knows best. */
+              if (shadDep.to)
+                bundleShadowed.add(shadDep.to)
+            }
+          }
+        }
+      }
+    }
+    for (const shadow of bundleShadowed) {
+      this[_addNodeToTrashList](shadow)
+    }
   }
 
   [_submitQuickAudit] () {
