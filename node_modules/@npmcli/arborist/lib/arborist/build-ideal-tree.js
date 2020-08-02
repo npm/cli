@@ -485,13 +485,17 @@ module.exports = cls => class IdealTreeBuilder extends cls {
 
     const node = this[_depsQueue].shift()
 
+    const bd = node.package.bundleDependencies
+    const hasBundle = bd && Array.isArray(bd) && bd.length
+    const { hasShrinkwrap } = node
+
     // if the node was already visited, or has since been removed from the
     // tree, skip over it and process the rest of the queue.  If a node has
     // a shrinkwrap, also skip it, because it's going to get its deps
     // satisfied by whatever's in that file anyway.
     if (this[_depsSeen].has(node) ||
         node.root !== this.idealTree ||
-        node.hasShrinkwrap && !this[_complete])
+        hasShrinkwrap && !this[_complete])
       return this[_buildDepStep]()
 
     this[_depsSeen].add(node)
@@ -505,25 +509,24 @@ module.exports = cls => class IdealTreeBuilder extends cls {
     // ideal tree by reading bundles/shrinkwraps in place.
     // Don't bother if the node is from the actual tree and hasn't
     // been resolved, because we can't fetch it anyway, could be anything!
-    if (this[_complete] && node !== this.idealTree && node.resolved) {
+    const crackOpen = this[_complete] &&
+      node !== this.idealTree &&
+      node.resolved &&
+      (hasBundle || hasShrinkwrap)
+    if (crackOpen) {
       const Arborist = this.constructor
-      const bd = node.package.bundleDependencies
-      const hasBundle = bd && Array.isArray(bd) && bd.length
-      const { hasShrinkwrap } = node
-      if (hasBundle || hasShrinkwrap) {
-        const opt = { ...this.options }
-        await cacache.tmp.withTmp(this.cache, opt, async path => {
-          await pacote.extract(node.resolved, path, opt)
+      const opt = { ...this.options }
+      await cacache.tmp.withTmp(this.cache, opt, async path => {
+        await pacote.extract(node.resolved, path, opt)
 
-          if (hasShrinkwrap)
-            await new Arborist({ ...this.options, path })
-              .loadVirtual({ root: node })
+        if (hasShrinkwrap)
+          await new Arborist({ ...this.options, path })
+            .loadVirtual({ root: node })
 
-          if (hasBundle)
-            await new Arborist({ ...this.options, path })
-              .loadActual({ root: node, ignoreMissing: true })
-        })
-      }
+        if (hasBundle)
+          await new Arborist({ ...this.options, path })
+            .loadActual({ root: node, ignoreMissing: true })
+      })
     }
 
     // if any deps are missing or invalid, then we fetch the manifest for
