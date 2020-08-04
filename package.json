@@ -231,6 +231,7 @@
   "tap": {
     "files": "test/{lib,bin}",
     "coverage-map": "test/coverage-map.js",
+    "check-coverage": true,
     "esm": false,
     "timeout": 600
   },

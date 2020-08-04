@@ -129,6 +129,7 @@ t.test('npm.load', t => {
       ])
       logs.length = 0
 
+      bePosix()
       t.equal(resolve(npm.cache), resolve(CACHE), 'cache is cache')
       const newCache = t.testdir()
       npm.cache = newCache
