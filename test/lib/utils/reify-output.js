@@ -44,6 +44,24 @@ t.test('missing info', (t) => {
   })
 })
 
+t.test('even more missing info', t => {
+  t.plan(1)
+  const reifyOutput = getReifyOutput(
+    out => t.doesNotHave(
+      out,
+      'looking for funding',
+      'should not print fund message if missing info'
+    )
+  )
+
+  reifyOutput({
+    actualTree: {
+      children: []
+    }
+  })
+})
+
+
 t.test('single package', (t) => {
   t.plan(1)
   const reifyOutput = getReifyOutput(
