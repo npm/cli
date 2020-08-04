@@ -41,7 +41,7 @@ t.test('setup', (t) => {
             'dist': {}
           },
           '1.0.1': {}
-        }        
+        }
       }],
       '/cyan': [200, {
         '_npmUser': {
@@ -56,7 +56,7 @@ t.test('setup', (t) => {
             'dist': {}
           },
           '1.0.1': {}
-        }        
+        }
       }],
       '/brown': [200, {
         'name': 'brown'
@@ -74,8 +74,8 @@ t.test('setup', (t) => {
               { 'name': 'claudia', 'email': 'c@yellow.com', 'twitter': 'cyellow' },
               { 'name': 'isaacs', 'email': 'i@yellow.com', 'twitter': 'iyellow' }
             ]
-          }, 
-          '1.0.1': {} 
+          },
+          '1.0.1': {}
         }
       }],
       '/purple': [200, {
@@ -86,8 +86,8 @@ t.test('setup', (t) => {
             'maintainers': [
               { 'name': 'claudia' }
             ]
-          }, 
-          '1.0.1': {} 
+          },
+          '1.0.1': {}
         }
       }],
       '/green': [200, {
@@ -118,8 +118,8 @@ t.test('setup', (t) => {
               'fileCount': 1,
               'unpackedSize': 1
             }
-          }, 
-          '1.0.1': {} 
+          },
+          '1.0.1': {}
         }
       }],
       '/black': [200, {
@@ -143,8 +143,8 @@ t.test('setup', (t) => {
               'fileCount': 1,
               'unpackedSize': 1
             }
-          }, 
-          '1.0.1': {} 
+          },
+          '1.0.1': {}
         }
       }],
       '/pink': [200, {
@@ -165,8 +165,8 @@ t.test('setup', (t) => {
               'fileCount': 1,
               'unpackedSize': 1
             }
-          }, 
-          '1.0.1': {} 
+          },
+          '1.0.1': {}
         }
       }],
       '/orange': [200, {
@@ -183,8 +183,8 @@ t.test('setup', (t) => {
               'fileCount': 1,
               'unpackedSize': 1
             }
-          }, 
-          '1.0.1': {} 
+          },
+          '1.0.1': {}
         }
       }]
     }
@@ -205,7 +205,7 @@ t.test('should log package info', t => {
       }
     }
   })
-  
+
   t.test('mkdirp@0.3.5', t => {
     view(['mkdirp@0.3.5'], () => {
       t.matchSnapshot(logs)
@@ -329,14 +329,14 @@ t.test('should log info by field name', t => {
   })
 
   t.test('several fields', t => {
-    viewJson(['underscore@1.3.1', 'name', 'version', 'foo[bar]'], () => {  
+    viewJson(['underscore@1.3.1', 'name', 'version', 'foo[bar]'], () => {
       t.matchSnapshot(logs)
       t.end()
     })
   })
 
   t.test('several fields with several versions', t => {
-    view(['underscore@1.x.x', 'author'], () => {  
+    view(['underscore@1.x.x', 'author'], () => {
       t.matchSnapshot(logs)
       t.end()
     })
@@ -362,7 +362,7 @@ t.test('should log info by field name', t => {
       t.end()
     })
   })
-  
+
   t.test('unknown nested field ', t => {
     view(['underscore@1.3.1', 'dist.foobar'], () => {
       t.matchSnapshot(logs)
@@ -425,7 +425,7 @@ t.test('throws when unpublished', (t) => {
     '../../lib/npm.js': {
       flatOptions: {
         defaultTag: '1.0.1',
-        registry: REG, 
+        registry: REG,
         global: false
       }
     }
@@ -436,32 +436,16 @@ t.test('throws when unpublished', (t) => {
   })
 })
 
-t.test('should be silent', (t) => {
-  const view = requireInject('../../lib/view.js', {
-    '../../lib/npm.js': {
-      flatOptions: {
-        defaultTag: '1.0.1',
-        registry: REG, 
-        global: false
-      }
-    }
-  })
-  view(['blue'], true, (err) => {
-    t.notOk(logs.length, 'no logs')
-    t.end()
-  })
-})
-
 t.test('completion', (t) => {
   const view = requireInject('../../lib/view.js', {
     '../../lib/npm.js': {
       flatOptions: {
         defaultTag: '1.0.1',
-        registry: REG, 
+        registry: REG,
         global: false
       }
     }
-  })  
+  })
   view.completion({
     conf: { argv: { remain: ['npm', 'view', 'mkdirp@0.3.5'] } }
   }, (err, res) => {
@@ -477,7 +461,7 @@ t.test('no registry completion', (t) => {
         defaultTag: '1.0.1',
       }
     }
-  })  
+  })
   view.completion({
     conf: { argv: { remain: ['npm', 'view'] } }
   }, (err) => {
