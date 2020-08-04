@@ -18,6 +18,7 @@ const rimraf = promisify(require('rimraf'))
 const rm = path => rimraf(path, { glob: false })
 
 const SKIP = Symbol('skip - missing or already installed')
+const CLOBBER  = Symbol('clobber - ours or in forceful mode')
 
 const linkGently = ({path, to, from, absFrom, force}) => {
   // if the script or manpage isn't there, just ignore it.
@@ -35,7 +36,7 @@ const linkGently = ({path, to, from, absFrom, force}) => {
     // exists! maybe clobber if we can
     if (stTo) {
       if (!stTo.isSymbolicLink())
-        return force ? rm(to) : Promise.resolve()
+        return force && rm(to).then(() => CLOBBER)
 
       return readlink(to).then(target => {
         if (target === from)
@@ -43,15 +44,22 @@ const linkGently = ({path, to, from, absFrom, force}) => {
 
         target = resolve(dirname(to), target)
         if (target.indexOf(path) === 0 || force)
-          return rm(to)
+          return rm(to).then(() => CLOBBER)
       })
     } else {
       // doesn't exist, dir might not either
       return mkdirp(dirname(to))
     }
   })
-  // this will fail if we didn't remove it
-  .then(skip => skip !== SKIP && symlink(from, to, 'file').then(() => true))
+  .then(skipOrClobber => {
+    if (skipOrClobber === SKIP)
+      return true
+    return symlink(from, to, 'file').catch(er => {
+      if (skipOrClobber === CLOBBER || force)
+        return rm(to).then(() => symlink(from, to, 'file'))
+      throw er
+    }).then(() => true)
+  })
 }
 
 module.exports = linkGently
