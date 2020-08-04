@@ -340,6 +340,13 @@ class AuditReport extends Map {
   }
 
   delete (name) {
+    const vuln = this.get(name)
+    if (vuln) {
+      for (const via of vuln.via) {
+        if (via instanceof Vuln)
+          via.effects.delete(vuln)
+      }
+    }
     super.delete(name)
     this.topVulns.delete(name)
     this.advisoryVulns.delete(name)
@@ -391,6 +398,9 @@ class AuditReport extends Map {
       }
 
       // if we didn't get anything, then why is this even here??
+      // this can happen if you are loading from a lockfile created by
+      // npm v5, since it lists the current version of all deps,
+      // rather than the range that is actually depended upon.
       if (vuln.nodes.size === 0)
         return this.delete(name)
 
