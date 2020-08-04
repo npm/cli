@@ -282,7 +282,7 @@ t.test('json parse', t => {
     process.argv = ['arg', 'v']
     t.matchSnapshot(errorMessage(Object.assign(new Error('not json'), {
       code: 'EJSONPARSE',
-      file: `${dir}/package.json`
+      file: resolve(dir, 'package.json')
     })))
     t.end()
   })
