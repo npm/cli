@@ -1,8 +1,25 @@
-const { test } = require('tap')
+const t = require('tap')
 const requireInject = require('require-inject')
 
-test('should pack current directory with no arguments', (t) => {
+const OUTPUT = []
+const output = (...msg) => OUTPUT.push(msg)
+
+const libnpmpackActual = require('libnpmpack')
+const libnpmpack = async (spec, opts) => {
+ if (!opts) {
+    throw new Error('expected options object')
+  }
+  return ''
+}
+
+t.afterEach(cb => {
+  OUTPUT.length = 0
+  cb()
+})
+
+t.test('should pack current directory with no arguments', (t) => {
   const pack = requireInject('../../lib/pack.js', {
+    '../../lib/utils/output.js': output,
     '../../lib/npm.js': {
       flatOptions: {
         unicode: false,
@@ -10,22 +27,24 @@ test('should pack current directory with no arguments', (t) => {
         dryRun: false
       }
     },
-    'libnpmpack': () => {
-      t.ok(true, 'libnpmpack is called')
-      return ''
-    },
-    'npmlog': {
-      'showProgress': () => {},
-      'clearProgress': () => {}
+    libnpmpack,
+    npmlog: {
+      notice: () => {},
+      showProgress: () => {},
+      clearProgress: () => {}
     }
   })
 
-  pack([], () => {
-    t.end()
+  return pack([], er => {
+    if (er) {
+      throw er
+    }
+    const filename = `npm-${require('../../package.json').version}.tgz`
+    t.strictSame(OUTPUT, [[filename]])
   })
 })
 
-test('should pack given directory', (t) => {
+t.test('should pack given directory', (t) => {
   const testDir = t.testdir({
     'package.json': JSON.stringify({
       name: 'my-cool-pkg',
@@ -34,7 +53,7 @@ test('should pack given directory', (t) => {
   })
 
   const pack = requireInject('../../lib/pack.js', {
-    '../../lib/utils/output.js': () => {},
+    '../../lib/utils/output.js': output,
     '../../lib/npm.js': {
       flatOptions: {
         unicode: true,
@@ -42,23 +61,29 @@ test('should pack given directory', (t) => {
         dryRun: true
       }
     },
-    'libnpmpack': () => '',
-    'npmlog': {
+    libnpmpack,
+    npmlog: {
+      notice: () => {},
       'showProgress': () => {},
       'clearProgress': () => {}
     }
   })
 
-  pack([testDir], () => {
-    t.end()
+  return pack([testDir], er => {
+    if (er) {
+      throw er
+    }
+    const filename = 'my-cool-pkg-1.0.0.tgz'
+    t.strictSame(OUTPUT, [[filename]])
   })
 })
 
-test('should log pack contents', (t) => {
+t.test('should log pack contents', (t) => {
   const pack = requireInject('../../lib/pack.js', {
+    '../../lib/utils/output.js': output,
     '../../lib/utils/tar.js': {
-      'getContents': () => {},
-      'logTar': () => {
+      ...require('../../lib/utils/tar.js'),
+      logTar: () => {
         t.ok(true, 'logTar is called')
       } 
     },
@@ -69,14 +94,19 @@ test('should log pack contents', (t) => {
         dryRun: false
       }
     },
-    'libnpmpack': () => '',
-    'npmlog': {
+    libnpmpack,
+    npmlog: {
+      notice: () => {},
       'showProgress': () => {},
       'clearProgress': () => {}
     }
   })
 
-  pack([], () => {
-    t.end()
+  return pack([], er => {
+    if (er) {
+      throw er
+    }
+    const filename = `npm-${require('../../package.json').version}.tgz`
+    t.strictSame(OUTPUT, [[filename]])
   })
 })
