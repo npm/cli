@@ -744,6 +744,8 @@ module.exports = cls => class IdealTreeBuilder extends cls {
     let canPlace = null
     for (let check = start; check; check = check.resolveParent) {
       const cp = this[_canPlaceDep](dep, check, edge, peerEntryEdge)
+      this.log.silly('placeDep', check.location, `${edge.name}@${edge.spec}`, cp, `for: ${node.package._id}`)
+
       // anything other than a conflict is fine to proceed with
       if (cp !== CONFLICT) {
         canPlace = cp
@@ -763,12 +765,20 @@ module.exports = cls => class IdealTreeBuilder extends cls {
     }
 
     if (!target) {
+      const current = node.resolve(edge.name)
       throw Object.assign(new Error('unable to resolve dependency tree'), {
+        code: 'ERESOLVE',
         package: edge.name,
         spec: edge.spec,
         type: edge.type,
         requiredBy: node.package._id,
         location: node.path,
+        ...(!current ? {} : {
+          current: {
+            pkgid: current.package._id,
+            location: current.location,
+          },
+        })
       })
     }
 
@@ -829,7 +839,7 @@ module.exports = cls => class IdealTreeBuilder extends cls {
             !node.inBundle &&
             node.canReplaceWith(dep)) {
 
-          // don't prune if the is dupe necessary!
+          // don't prune if the dupe is necessary!
           // root (a, d)
           // +-- a (b, c2)
           // |   +-- b (c2) <-- place c2 for b, lands at root

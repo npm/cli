@@ -8,6 +8,7 @@ const _global = Symbol.for('global')
 
 module.exports = cls => class Auditor extends cls {
   async audit (options = {}) {
+    this.addTracker('audit')
     if (this[_global])
       throw Object.assign(
         new Error('`npm audit` does not support testing globals'),
@@ -23,6 +24,7 @@ module.exports = cls => class Auditor extends cls {
     this.auditReport = await AuditReport.load(tree, this.options)
     const ret = options.fix ? this.reify() : this.auditReport
     process.emit('timeEnd', 'audit')
+    this.finishTracker('audit')
     return ret
   }
 }
