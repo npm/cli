@@ -49,7 +49,7 @@ test('should pack given directory', (t) => {
     }
   })
 
-  pack([testDir], false, () => {
+  pack([testDir], () => {
     t.end()
   })
 })
@@ -76,7 +76,7 @@ test('should log pack contents', (t) => {
     }
   })
 
-  pack([], true, () => {
+  pack([], () => {
     t.end()
   })
 })

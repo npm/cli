@@ -10,7 +10,7 @@ const lifecycleCmd = requireInject('../../../lib/utils/lifecycle-cmd.js', {
 
 t.test('create a lifecycle command', t => {
   const cmd = lifecycleCmd('asdf')
-  t.equal(cmd.completion, undefined, 'no completion')
+  t.equal(cmd.completion, require('../../../lib/utils/completion/none.js'), 'empty completion')
   cmd(['some', 'args'], (er, result) => {
     t.strictSame(result, 'called npm.commands.run')
     t.end()
