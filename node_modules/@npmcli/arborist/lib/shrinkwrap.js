@@ -865,7 +865,11 @@ class Shrinkwrap {
     if (depender.edgesOut.size > 0) {
       if (node !== this.tree) {
         lock.requires = [...depender.edgesOut.entries()].reduce((set, [k, v]) => {
-          set[k] = v.spec
+          // omit peer deps from legacy lockfile requires field, because
+          // npm v6 doesn't handle peer deps, and this triggers some bad
+          // behavior if the dep can't be found in the dependencies list.
+          if (!v.peer)
+            set[k] = v.spec
           return set
         }, {})
       } else {
