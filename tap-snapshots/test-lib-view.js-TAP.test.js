@@ -282,7 +282,7 @@ dist
 dist-tags:
 
 
-published [33m12 months ago[39m
+published [33ma year ago[39m
 `
 
 exports[`test/lib/view.js TAP should log package info package with no versions > must match snapshot 1`] = `
