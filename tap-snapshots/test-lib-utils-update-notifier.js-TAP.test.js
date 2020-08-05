@@ -6,73 +6,73 @@
  */
 'use strict'
 exports[`test/lib/utils/update-notifier.js TAP notification situations color and unicode major > must match snapshot 1`] = `
-New [31mmajor[39m version of npm available! [31m<<major>>-beta[39m → [32m7.0.0[39m
+New [31mmajor[39m version of npm available! [31m<<major>>-beta.0[39m → [32m7.0.0[39m
 [33mChangelog:[39m [36mhttps://github.com/npm/cli/releases/tag/v7.0.0[39m
 Run [32mnpm install -g npm[39m to update!
 `
 
 exports[`test/lib/utils/update-notifier.js TAP notification situations color and unicode minor > must match snapshot 1`] = `
-New [33mminor[39m version of npm available! [31m<<minor>>-beta[39m → [32m7.0.0[39m
+New [33mminor[39m version of npm available! [31m<<minor>>-beta.0[39m → [32m7.0.0[39m
 [33mChangelog:[39m [36mhttps://github.com/npm/cli/releases/tag/v7.0.0[39m
 Run [32mnpm install -g npm[39m to update!
 `
 
 exports[`test/lib/utils/update-notifier.js TAP notification situations color and unicode minor > must match snapshot 2`] = `
-New [32mpatch[39m version of npm available! [31m<<patch>>-beta[39m → [32m7.0.0[39m
+New [32mpatch[39m version of npm available! [31m<<patch>>-beta.0[39m → [32m7.0.0[39m
 [33mChangelog:[39m [36mhttps://github.com/npm/cli/releases/tag/v7.0.0[39m
 Run [32mnpm install -g npm[39m to update!
 `
 
 exports[`test/lib/utils/update-notifier.js TAP notification situations color, no unicode major > must match snapshot 1`] = `
-New [31mmajor[39m version of npm available! [31m<<major>>-beta[39m -> [32m7.0.0[39m
+New [31mmajor[39m version of npm available! [31m<<major>>-beta.0[39m -> [32m7.0.0[39m
 [33mChangelog:[39m [36mhttps://github.com/npm/cli/releases/tag/v7.0.0[39m
 Run [32mnpm install -g npm[39m to update!
 `
 
 exports[`test/lib/utils/update-notifier.js TAP notification situations color, no unicode minor > must match snapshot 1`] = `
-New [33mminor[39m version of npm available! [31m<<minor>>-beta[39m -> [32m7.0.0[39m
+New [33mminor[39m version of npm available! [31m<<minor>>-beta.0[39m -> [32m7.0.0[39m
 [33mChangelog:[39m [36mhttps://github.com/npm/cli/releases/tag/v7.0.0[39m
 Run [32mnpm install -g npm[39m to update!
 `
 
 exports[`test/lib/utils/update-notifier.js TAP notification situations color, no unicode minor > must match snapshot 2`] = `
-New [32mpatch[39m version of npm available! [31m<<patch>>-beta[39m -> [32m7.0.0[39m
+New [32mpatch[39m version of npm available! [31m<<patch>>-beta.0[39m -> [32m7.0.0[39m
 [33mChangelog:[39m [36mhttps://github.com/npm/cli/releases/tag/v7.0.0[39m
 Run [32mnpm install -g npm[39m to update!
 `
 
 exports[`test/lib/utils/update-notifier.js TAP notification situations no color, no unicode major > must match snapshot 1`] = `
-New major version of npm available! <<major>>-beta -> 7.0.0
+New major version of npm available! <<major>>-beta.0 -> 7.0.0
 Changelog: https://github.com/npm/cli/releases/tag/v7.0.0
 Run npm i -g npm to update!
 `
 
 exports[`test/lib/utils/update-notifier.js TAP notification situations no color, no unicode minor > must match snapshot 1`] = `
-New minor version of npm available! <<minor>>-beta -> 7.0.0
+New minor version of npm available! <<minor>>-beta.0 -> 7.0.0
 Changelog: https://github.com/npm/cli/releases/tag/v7.0.0
 Run npm i -g npm to update!
 `
 
 exports[`test/lib/utils/update-notifier.js TAP notification situations no color, no unicode minor > must match snapshot 2`] = `
-New patch version of npm available! <<patch>>-beta -> 7.0.0
+New patch version of npm available! <<patch>>-beta.0 -> 7.0.0
 Changelog: https://github.com/npm/cli/releases/tag/v7.0.0
 Run npm i -g npm to update!
 `
 
 exports[`test/lib/utils/update-notifier.js TAP notification situations unicode, no color major > must match snapshot 1`] = `
-New major version of npm available! <<major>>-beta → 7.0.0
+New major version of npm available! <<major>>-beta.0 → 7.0.0
 Changelog: https://github.com/npm/cli/releases/tag/v7.0.0
 Run npm i -g npm to update!
 `
 
 exports[`test/lib/utils/update-notifier.js TAP notification situations unicode, no color minor > must match snapshot 1`] = `
-New minor version of npm available! <<minor>>-beta → 7.0.0
+New minor version of npm available! <<minor>>-beta.0 → 7.0.0
 Changelog: https://github.com/npm/cli/releases/tag/v7.0.0
 Run npm i -g npm to update!
 `
 
 exports[`test/lib/utils/update-notifier.js TAP notification situations unicode, no color minor > must match snapshot 2`] = `
-New patch version of npm available! <<patch>>-beta → 7.0.0
+New patch version of npm available! <<patch>>-beta.0 → 7.0.0
 Changelog: https://github.com/npm/cli/releases/tag/v7.0.0
 Run npm i -g npm to update!
 `
