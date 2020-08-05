@@ -1,3 +1,16 @@
+## v7.0.0-beta.1 (2020-08-05)
+
+Fix some issues found in the beta pubish process, and initial attempts to
+use npm v7 with [citgm](https://github.com/nodejs/citgm/).
+
+* [`2c305e8b7`](https://github.com/npm/cli/commit/2c305e8b7bfa28b07812df74f46983fad2cb85b6)
+  output generated tarball filename
+* [`0808328c9`](https://github.com/npm/cli/commit/0808328c93d9cd975837eeb53202ce3844e1cf70)
+  pack: set correct filename for scoped packages
+  ([@isaacs](https://github.com/isaacs))
+* [`cf27df035`](https://github.com/npm/cli/commit/cf27df035cfba4f859d14859229bb90841b8fda6)
+  `@npmcli/arborist@0.0.14` ([@isaacs](https://github.com/isaacs))
+
 ## v7.0.0-beta.0 (2020-08-04)
 
 Major refactoring and overhaul of, well, pretty much everything.  Almost
