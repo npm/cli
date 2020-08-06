@@ -1,121 +1,210 @@
 const t = require('tap')
 const requireInject = require('require-inject')
-const notifierMock = {}
-const unsupportedMock = {}
-const unsupported = () => unsupportedMock
 let ciMock = null
-const updateNotifier = requireInject.installGlobally('../../../lib/utils/update-notifier.js', {
-  'update-notifier': () => notifierMock,
-  '../../../lib/utils/unsupported.js': { checkVersion: unsupported },
-  '@npmcli/ci-detect': () => ciMock
+const flatOptions = { global: false, cache: t.testdir() + '/_cacache' }
+
+const MANIFEST_REQUEST = []
+const CURRENT_VERSION = '123.420.69'
+const CURRENT_MAJOR = '122.420.69'
+const CURRENT_MINOR = '123.419.69'
+const CURRENT_PATCH = '123.420.68'
+const NEXT_VERSION = '123.421.70'
+const NEXT_MINOR = '123.420.70'
+const NEXT_PATCH = '123.421.69'
+const CURRENT_BETA = '124.0.0-beta.99999'
+const HAVE_BETA = '124.0.0-beta.0'
+
+let PACOTE_ERROR = null
+const pacote = {
+  manifest: async (spec, opts) => {
+    if (!spec.match(/^npm@/)) {
+      console.error(new Error('should only fetch manifest for npm'))
+      process.exit(1)
+    }
+    MANIFEST_REQUEST.push(spec)
+    if (PACOTE_ERROR) {
+      throw PACOTE_ERROR
+    }
+    return {
+      version: spec === 'npm@latest' ? CURRENT_VERSION
+        : /-/.test(spec) ? CURRENT_BETA
+        : NEXT_VERSION
+    }
+  }
+}
+
+const npm = {
+  flatOptions,
+  log: { useColor: () => true },
+  version: CURRENT_VERSION,
+  config: { get: (k) => k !== 'global' },
+  flatOptions,
+  command: 'view',
+  argv: ['npm']
+}
+const npmNoColor = {
+  ...npm,
+  log: { useColor: () => false }
+}
+
+const { basename } = require('path')
+
+let STAT_ERROR = null
+let STAT_MTIME = null
+let WRITE_ERROR = null
+const fs = {
+  stat: (path, cb) => {
+    if (basename(path) !== '_update-notifier-last-checked') {
+      console.error(new Error('should only write to notifier last checked file'))
+      process.exit(1)
+    }
+    process.nextTick(() => cb(STAT_ERROR, { mtime: new Date(STAT_MTIME) }))
+  },
+  writeFile: (path, content, cb) => {
+    if (content !== '') {
+      console.error(new Error('should not be writing content'))
+      process.exit(1)
+    }
+    if (basename(path) !== '_update-notifier-last-checked') {
+      console.error(new Error('should only write to notifier last checked file'))
+      process.exit(1)
+    }
+    process.nextTick(() => cb(WRITE_ERROR))
+  }
+}
+
+const updateNotifier = requireInject('../../../lib/utils/update-notifier.js', {
+  '@npmcli/ci-detect': () => ciMock,
+  pacote,
+  fs
 })
-const { version } = require('../../../package.json')
+
 const semver = require('semver')
 
+t.afterEach(cb => {
+  MANIFEST_REQUEST.length = 0
+  STAT_ERROR = null
+  PACOTE_ERROR = null
+  STAT_MTIME = null
+  WRITE_ERROR = null
+  cb()
+})
+
 t.test('situations in which we do not notify', t => {
-  t.test('nothing to do if notifier disabled', t => {
-    Object.assign(notifierMock, {
-      notify: () => { throw new Error('should not notify!') },
-      update: { latest: '99.99.99' },
-    })
-    updateNotifier({
-      config: { get: (k) => k === 'update-notifier' ? false : true },
-    })
-    t.end()
+  t.test('nothing to do if notifier disabled', async t => {
+    t.equal(await updateNotifier({
+      ...npm,
+      config: { get: (k) => k === 'update-notifier' ? false : true }
+    }), null)
+    t.strictSame(MANIFEST_REQUEST, [], 'no requests for manifests')
   })
 
-  t.test('do not suggest update if already updating', t => {
-    Object.assign(notifierMock, {
-      notify: () => { throw new Error('should not notify!') },
-      update: { latest: '99.99.99' },
-    })
-    updateNotifier({
-      config: { get: (k) => true },
+  t.test('do not suggest update if already updating', async t => {
+    t.equal(await updateNotifier({
+      ...npm,
+      flatOptions: { ...flatOptions, global: true },
       command: 'install',
       argv: ['npm']
-    })
-    t.end()
+    }), null)
+    t.strictSame(MANIFEST_REQUEST, [], 'no requests for manifests')
   })
 
-  t.test('do not suggest update if version if unsupported', t => {
-    t.teardown(() => { delete unsupportedMock.unsupported })
-    unsupportedMock.unsupported = true
-    Object.assign(notifierMock, {
-      notify: () => { throw new Error('should not notify!') },
-      update: { latest: '99.99.99' },
-    })
-    updateNotifier({
-      config: { get: (k) => k !== 'global' },
-      command: 'view',
-      argv: ['npm']
-    })
-    t.end()
+  t.test('do not update if same as latest', async t => {
+    t.equal(await updateNotifier(npm), null)
+    t.strictSame(MANIFEST_REQUEST, ['npm@latest'], 'requested latest version')
+  })
+  t.test('check if stat errors (here for coverage)', async t => {
+    STAT_ERROR = new Error('blorg')
+    t.equal(await updateNotifier(npm), null)
+    t.strictSame(MANIFEST_REQUEST, ['npm@latest'], 'requested latest version')
+  })
+  t.test('ok if write errors (here for coverage)', async t => {
+    WRITE_ERROR = new Error('grolb')
+    t.equal(await updateNotifier(npm), null)
+    t.strictSame(MANIFEST_REQUEST, ['npm@latest'], 'requested latest version')
+  })
+  t.test('ignore pacote failures (here for coverage)', async t => {
+    PACOTE_ERROR = new Error('pah-KO-tchay')
+    t.equal(await updateNotifier(npm), null)
+    t.strictSame(MANIFEST_REQUEST, ['npm@latest'], 'requested latest version')
+  })
+  t.test('do not update if newer than latest, but same as next', async t => {
+    t.equal(await updateNotifier({ ...npm, version: NEXT_VERSION }), null)
+    const reqs = ['npm@latest', `npm@^${NEXT_VERSION}`]
+    t.strictSame(MANIFEST_REQUEST, reqs, 'requested latest and next versions')
+  })
+  t.test('do not update if on the latest beta', async t => {
+    t.equal(await updateNotifier({ ...npm, version: CURRENT_BETA }), null)
+    const reqs = [`npm@^${CURRENT_BETA}`]
+    t.strictSame(MANIFEST_REQUEST, reqs, 'requested latest and next versions')
   })
 
-  t.test('do not update if nothing to update', t => {
-    Object.assign(notifierMock, {
-      notify: () => { throw new Error('should not notify!') },
-      update: { latest: version },
-    })
-    updateNotifier({
-      config: { get: (k) => k !== 'global' },
-      command: 'view',
-      argv: ['npm']
-    })
-    t.end()
-  })
-
-  t.test('do not update in CI', t => {
+  t.test('do not update in CI', async t => {
     t.teardown(() => { ciMock = null })
     ciMock = 'something'
-    Object.assign(notifierMock, {
-      notify: () => { throw new Error('should not notify!') },
-      update: { latest: '99.99.99' },
-    })
-    updateNotifier({
-      config: { get: (k) => k !== 'global' },
-      command: 'view',
-      argv: ['npm']
-    })
-    t.end()
+    t.equal(await updateNotifier(npm), null)
+    t.strictSame(MANIFEST_REQUEST, [], 'no requests for manifests')
+  })
+
+  t.test('only check weekly for GA releases', async t => {
+    // the 10 is fuzz factor for test environment
+    STAT_MTIME = Date.now() - (1000*60*60*24*7) + 10
+    t.equal(await updateNotifier(npm), null)
+    t.strictSame(MANIFEST_REQUEST, [], 'no requests for manifests')
+  })
+
+  t.test('only check daily for betas', async t => {
+    // the 10 is fuzz factor for test environment
+    STAT_MTIME = Date.now() - (1000*60*60*24) + 10
+    t.equal(await updateNotifier({ ...npm, version: HAVE_BETA }), null)
+    t.strictSame(MANIFEST_REQUEST, [], 'no requests for manifests')
   })
 
   t.end()
 })
 
 t.test('notification situations', t => {
-  const runTests = (config, t) => {
-    t.plan(3)
-    t.test('major', t => runTest(config, 'major', t))
-    t.test('minor', t => runTest(config, 'minor', t))
-    t.test('minor', t => runTest(config, 'patch', t))
-  }
+  t.test('new beta available', async t => {
+    const version = HAVE_BETA
+    t.matchSnapshot(await updateNotifier({ ...npm, version }), 'color')
+    t.matchSnapshot(await updateNotifier({ ...npmNoColor, version }), 'no color')
+    t.strictSame(MANIFEST_REQUEST, [`npm@^${version}`, `npm@^${version}`])
+  })
 
-  const runTest = (config, type, t) => {
-    t.plan(1)
-    const latest = type === 'major' ? semver.inc(version, 'major')
-      : type === 'minor' ? semver.inc(version, 'minor')
-      : type === 'patch' ? semver.inc(version, 'patch')
-      : null
+  t.test('patch to next version', async t => {
+    const version = NEXT_PATCH
+    t.matchSnapshot(await updateNotifier({ ...npm, version }), 'color')
+    t.matchSnapshot(await updateNotifier({ ...npmNoColor, version }), 'no color')
+    t.strictSame(MANIFEST_REQUEST, ['npm@latest', `npm@^${version}`, 'npm@latest', `npm@^${version}`])
+  })
 
-    Object.assign(notifierMock, {
-      notify: ({ message }) => {
-        // swap this out so we don't have to regen snapshots each version bump
-        t.matchSnapshot(message.replace(latest, `<<${type}>>`))
-      },
-      update: { latest, type, current: version }
-    })
-    updateNotifier({
-      color: config.color,
-      config: { get: (k) => k === 'update-notifier' ? true : !!config[k] },
-      command: 'view',
-      argv: ['npm']
-    })
-  }
+  t.test('minor to next version', async t => {
+    const version = NEXT_MINOR
+    t.matchSnapshot(await updateNotifier({ ...npm, version }), 'color')
+    t.matchSnapshot(await updateNotifier({ ...npmNoColor, version }), 'no color')
+    t.strictSame(MANIFEST_REQUEST, ['npm@latest', `npm@^${version}`, 'npm@latest', `npm@^${version}`])
+  })
 
-  t.plan(4)
-  t.test('color and unicode', t => runTests({ unicode: true, color: true }, t))
-  t.test('color, no unicode', t => runTests({ color: true }, t))
-  t.test('unicode, no color', t => runTests({ unicode: true }, t))
-  t.test('no color, no unicode', t => runTests({}, t))
+  t.test('patch to current', async t => {
+    const version = CURRENT_PATCH
+    t.matchSnapshot(await updateNotifier({ ...npm, version }), 'color')
+    t.matchSnapshot(await updateNotifier({ ...npmNoColor, version }), 'no color')
+    t.strictSame(MANIFEST_REQUEST, ['npm@latest', 'npm@latest'])
+  })
+
+  t.test('minor to current', async t => {
+    const version = CURRENT_MINOR
+    t.matchSnapshot(await updateNotifier({ ...npm, version }), 'color')
+    t.matchSnapshot(await updateNotifier({ ...npmNoColor, version }), 'no color')
+    t.strictSame(MANIFEST_REQUEST, ['npm@latest', 'npm@latest'])
+  })
+
+  t.test('major to current', async t => {
+    const version = CURRENT_MAJOR
+    t.matchSnapshot(await updateNotifier({ ...npm, version }), 'color')
+    t.matchSnapshot(await updateNotifier({ ...npmNoColor, version }), 'no color')
+    t.strictSame(MANIFEST_REQUEST, ['npm@latest', 'npm@latest'])
+  })
+
+  t.end()
 })

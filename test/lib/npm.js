@@ -115,8 +115,7 @@ t.test('npm.load', t => {
       t.match(npm, {
         loaded: true,
         loading: false,
-        // flatOptions only loaded when we run an actual command
-        flatOptions: null
+        flatOptions: {}
       })
       t.equal(firstCalled, true, 'first callback got called')
       t.equal(secondCalled, true, 'second callback got called')
