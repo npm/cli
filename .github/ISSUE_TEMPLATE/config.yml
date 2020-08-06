@@ -1,17 +1,23 @@
-blank_issues_enabled: false
+blank_issues_enabled: true
 contact_links:
-  - name: Feature Request
+  - name: 🐞 Bug v7
+    url: https://github.com/npm/cli/issues/new?title=[BUG]%20%3Ctitle%3E&template=bug-7.md
+    about: File a bug/issue against v7.x
+  - name: 🐞 Bug v6
+    url: https://github.com/npm/cli/issues/new?title=[BUG]%20%3Ctitle%3E&template=bug-6.md
+    about: File a bug/issue against v6.x
+  - name: ⭐️ Feature Request
     url: https://github.com/npm/rfcs
     about: Feel free to add your idea or create a formal RFC
-  - name: RFC
+  - name: 📃 RFC
     url: https://github.com/npm/rfcs
     about: Create a more formal proposal/idea via our RFC
-  - name: Registry Status
+  - name: 🚥 Registry Status
     url: https://status.npmjs.org
     about: Check the current status of the website/registry
-  - name: Documentation
+  - name: 🗂 Documentation
     url: https://preview-docs.npmjs.com/cli-commands/npm
     about: Preview our new docs
-  - name: Support
+  - name: 📫 Support
     url: https://npm.community
     about: Links to other support options &/or community references

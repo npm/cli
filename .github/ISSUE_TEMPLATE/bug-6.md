@@ -5,23 +5,29 @@ title: '[BUG] <title>'
 assignees:
 labels: 'Bug', 'Needs Triage', 'Release 6.x'
 ---
+<!--
+Note: Please search to see if an issue already exists for your problem: https://github.com/npm/cli/issues
+-->
 
-**Environment:**
-- OS: [e.g. OSX]
-- Node Version: [eg. 10.1.2]
-- NPM Version [e.g. 6.13.4]
+### Current Behavior:
+<!-- ex. a clear & concise description of what you're experiencing. -->
 
-**Describe the bug:**
-A clear and concise description of what the bug is.
+### Expected Behavior:
+<!-- ex. a clear & concise description of what you expected to happen. -->
 
-**Steps To Reproduce:**
-Steps to reproduce the behavior:
-
+### Steps To Reproduce:
+<!--
+ex. steps to reproduce the behavior:
 1. In this environment...
 2. With this config...
 3. Run '...'
 4. See error...
+-->
 
-**Expected Behavior:**
-A clear and concise description of what you expected to happen.
-
+### Environment:
+<!--
+ex.
+- OS: Ubuntu 20.04
+- Node: 13.14.0
+- NPM: 6.4.12
+-->
