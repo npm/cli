@@ -19,7 +19,7 @@
     "url": "https://github.com/npm/cli"
   },
   "bugs": {
-    "url": "https://npm.community/c/bugs"
+    "url": "https://github.com/npm/cli/issues"
   },
   "directories": {
     "bin": "./bin",
