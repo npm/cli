@@ -1,3 +1,18 @@
+## v7.0.0-beta.2 (2020-08-07)
+
+New notification style for updates, and a working doctor.
+
+* [`cf2819210`](https://github.com/npm/cli/commit/cf2819210327952696346486002239f9fc184a3e)
+  [#1622](https://github.com/npm/cli/pull/1622)
+  Improve abbrevs for install and help
+* [`d062b2c02`](https://github.com/npm/cli/commit/d062b2c02a4d6d5f1a274aa8eb9c5969ca6253db)
+  new npm-specific update-notifier implementation
+* [`f6d468a3b`](https://github.com/npm/cli/commit/f6d468a3b4bef0b3cc134065d776969869fca51e)
+  update doctor command
+* [`b8b4d77af`](https://github.com/npm/cli/commit/b8b4d77af836f8c49832dda29a0de1b3c2d39233)
+  [#1638](https://github.com/npm/cli/pull/1638)
+  Direct users to our GitHub issues instead of npm.community
+
 ## v7.0.0-beta.1 (2020-08-05)
 
 Fix some issues found in the beta pubish process, and initial attempts to
