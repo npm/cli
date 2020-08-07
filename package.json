@@ -158,6 +158,7 @@
     "libnpmteam",
     "libnpmversion",
     "lockfile",
+    "make-fetch-happen",
     "meant",
     "mkdirp",
     "mkdirp-infer-owner",
