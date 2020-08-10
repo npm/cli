@@ -78,7 +78,7 @@
     "libnpmpublish": "^3.0.1",
     "libnpmsearch": "^3.0.0",
     "libnpmteam": "^2.0.1",
-    "libnpmversion": "^1.0.2",
+    "libnpmversion": "^1.0.3",
     "lockfile": "^1.0.4",
     "meant": "~1.0.1",
     "mkdirp": "^1.0.4",

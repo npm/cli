@@ -88,6 +88,9 @@ module.exports = async (newversion, opts) => {
     try {
       const sw = await readJson(lock)
       sw.version = newV
+      if (sw.packages && sw.packages['']) {
+        sw.packages[''].version = newV
+      }
       await writeJson(lock, sw)
       haveLocks.push(lock)
     } catch (er) {}
