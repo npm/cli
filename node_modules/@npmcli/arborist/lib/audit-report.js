@@ -3,7 +3,8 @@
 const npa = require('npm-package-arg')
 const pickManifest = require('npm-pick-manifest')
 const pacote = require('pacote')
-const semver = require('semver')
+const {intersects, satisfies, simplifyRange} = require('semver')
+const semverOpt = { loose: true, includePrerelease: true }
 
 const Vuln = require('./vuln.js')
 
@@ -22,6 +23,7 @@ const _packument = Symbol('packument')
 const _packuments = Symbol('packuments')
 const _getDepSpec = Symbol('getDepSpec')
 const _init = Symbol('init')
+const _omit = Symbol('omit')
 const procLog = require('./proc-log.js')
 
 const fetch = require('npm-registry-fetch')
@@ -95,6 +97,7 @@ class AuditReport extends Map {
     this[_specVulnerableMemo] = new Map()
     this[_vulnDependents] = new Set()
     this[_packuments] = new Map()
+    this[_omit] = new Set(opts.omit || [])
     this.topVulns = new Map()
     this.advisoryVulns = new Map()
     this.dependencyVulns = new Map()
@@ -179,7 +182,7 @@ class AuditReport extends Map {
     // if it's a bundle dep, then we must avoid it if the vulnerable
     // range and the dep range intersect, since we can't update in-place.
     if (bundled) {
-      const val = semver.intersects(spec, avoid, { includePrerelease: true })
+      const val = intersects(spec, avoid, { includePrerelease: true })
       if (val)
         this[_specVulnerableMemo].set(key, val)
       return val
@@ -309,7 +312,7 @@ class AuditReport extends Map {
           }
         }
 
-        const mvr = semver.simplifyRange(versions, metaVuln.join(' || '), {
+        const mvr = simplifyRange(versions, metaVuln.join(' || '), {
           includePrerelease:true,
         })
         await this[_addVulnerability](p.name, mvr, vuln)
@@ -386,10 +389,22 @@ class AuditReport extends Map {
     // wrap in try/finally to ensure we end the timer properly
     // and don't leave it hanging to conflict with a future one.
     try {
+      // we always treat metavulns as relevant.  just check advisories
+      // that might not apply to this tree, given omit options.
+      let relevant = via instanceof Vuln
       process.emit('time', `auditReport:add:${name}@${range}`)
 
       for (const node of this.tree.inventory.query('name', name)) {
-        if (vuln.nodes.has(node) || !vuln.isVulnerable(node))
+        if (shouldOmit(node, this[_omit]))
+          continue
+
+        // check if this node would be affected by the advisory or metavuln
+        if (!relevant) {
+          const { version } = node.package
+          relevant = version && satisfies(version, range, semverOpt)
+        }
+
+        if (!vuln.isVulnerable(node))
           continue
 
         for (const {from} of node.edgesIn) {
@@ -400,9 +415,15 @@ class AuditReport extends Map {
       // if we didn't get anything, then why is this even here??
       // this can happen if you are loading from a lockfile created by
       // npm v5, since it lists the current version of all deps,
-      // rather than the range that is actually depended upon.
+      // rather than the range that is actually depended upon,
+      // or if using --omit with the older audit endpoint.
       if (vuln.nodes.size === 0)
         return this.delete(name)
+
+      // if the vuln is valid, but THIS vuln isn't relevant, remove it
+      // from the via list.  happens when using omit with old endpoint.
+      if (!relevant)
+        vuln.deleteVia(via)
 
       if (!vuln.packument)
         vuln.packument = await this[_packument](name)
@@ -447,27 +468,32 @@ class AuditReport extends Map {
     try {
       try {
         // first try the super fast bulk advisory listing
+        const body = prepareBulkData(this.tree, this[_omit])
+
+        // no sense asking if we don't have anything to audit
+        if (!Object.keys(body).length)
+          return {}
+
         const res = await fetch('/-/npm/v1/security/advisories/bulk', {
           ...this.options,
           registry: this.options.auditRegistry || this.options.registry,
           method: 'POST',
           gzip: true,
-          body: prepareBulkData(this.tree, this.options),
+          body,
         })
 
         return await res.json()
       } catch (_) {
         // that failed, try the quick audit endpoint
-
+        const body = prepareData(this.tree, this.options)
         const res = await fetch('/-/npm/v1/security/audits/quick', {
           ...this.options,
           registry: this.options.auditRegistry || this.options.registry,
           method: 'POST',
           gzip: true,
-          body: prepareData(this.tree, this.options),
+          body,
         })
-
-        return await res.json().then(report => AuditReport.auditToBulk(report))
+        return AuditReport.auditToBulk(await res.json())
       }
     } catch (er) {
       this.log.verbose('audit error', er)
@@ -480,14 +506,26 @@ class AuditReport extends Map {
   }
 }
 
-const prepareBulkData = (tree, opts) => {
+// return true if we should ignore this one
+const shouldOmit = (node, omit) =>
+  omit.size === 0 ? false
+  : node.dev && omit.has('dev') ||
+    node.optional && omit.has('optional') ||
+    node.devOptional && omit.has('dev') && omit.has('optional') ||
+    node.peer && omit.has('peer')
+
+const prepareBulkData = (tree, omit) => {
   const payload = {}
   for (const name of tree.inventory.query('name')) {
     const set = new Set()
     for (const node of tree.inventory.query('name', name)) {
+      if (shouldOmit(node, omit))
+        continue
+
       set.add(node.version)
     }
-    payload[name] = [...set]
+    if (set.size)
+      payload[name] = [...set]
   }
   return payload
 }
@@ -498,20 +536,26 @@ const prepareData = (tree, opts) => {
   const { platform, arch } = process
   const { NODE_ENV: node_env } = process.env
   const data = tree.meta.commit()
-  return JSON.stringify({
-    ...data,
+  // the legacy audit endpoint doesn't support any kind of pre-filtering
+  // we just have to get the advisories and skip over them in the report
+  return {
+    name: data.name,
+    version: data.version,
     requires: {
       ...(tree.package.devDependencies || {}),
-      ...(tree.package.peerDependencies|| {}),
-      ...(tree.package.optionalDependencies|| {}),
-      ...(tree.package.dependencies|| {}),
+      ...(tree.package.peerDependencies || {}),
+      ...(tree.package.optionalDependencies || {}),
+      ...(tree.package.dependencies || {}),
     },
-    node_version,
-    npm_version,
-    platform,
-    arch,
-    node_env,
-  }, 0, 2)
+    dependencies: data.dependencies,
+    metadata: {
+      node_version,
+      npm_version,
+      platform,
+      arch,
+      node_env,
+    },
+  }
 }
 
 module.exports = AuditReport

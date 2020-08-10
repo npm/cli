@@ -225,7 +225,6 @@ module.exports = cls => class Reifier extends cls {
     const paths = [ node.path, ...node.binPaths ]
     const moves = this[_retiredPaths]
     this.log.silly('reify', 'mark', retire ? 'retired' : 'deleted', paths)
-    node.parent = null
     for (const path of paths) {
       if (retire) {
         const retired = retirePath(path)
@@ -412,6 +411,7 @@ module.exports = cls => class Reifier extends cls {
     if (!res) {
       node.parent = null
       this.log.verbose('reify', 'unrecognized node in tree', node.path)
+      node.parent = null
       this[_addNodeToTrashList](node)
       return
     }
@@ -625,6 +625,7 @@ module.exports = cls => class Reifier extends cls {
       }
     }
     for (const shadow of bundleShadowed) {
+      shadow.parent = null
       this[_addNodeToTrashList](shadow)
     }
   }

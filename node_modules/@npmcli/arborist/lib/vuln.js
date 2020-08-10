@@ -76,6 +76,15 @@ class Vuln {
     }
   }
 
+  deleteVia (via) {
+    this.via.delete(via)
+    // make sure we have the max severity of all the vulns causing this one
+    this.severity = null
+    for (const via of this.via) {
+      this.addVia(via)
+    }
+  }
+
   addVia (via) {
     this.via.add(via)
     const sev = severities.get(via.severity)
