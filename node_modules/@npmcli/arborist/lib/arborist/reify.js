@@ -206,6 +206,7 @@ module.exports = cls => class Reifier extends cls {
       actual: this.actualTree,
       ideal: this.idealTree,
     })
+
     for (const node of this.diff.removed) {
       // a node in a dep bundle will only be removed if its bundling dep
       // is removed as well.  in which case, we don't have to delete it!
@@ -661,8 +662,11 @@ module.exports = cls => class Reifier extends cls {
     const unpacks = []
     dfwalk({
       tree: this.diff,
-      filter: diff => diff.ideal,
       visit: diff => {
+        // no unpacking if we don't want to change this thing
+        if (diff.action !== 'CHANGE' && diff.action !== 'ADD')
+          return
+
         const node = diff.ideal
         const bd = node.package.bundleDependencies
         const sw = node.hasShrinkwrap
@@ -765,7 +769,10 @@ module.exports = cls => class Reifier extends cls {
     const nodes = []
     dfwalk({
       tree: this.diff,
-      leave: diff => nodes.push(diff.ideal),
+      leave: diff => {
+        if (!diff.ideal.isRoot)
+          nodes.push(diff.ideal)
+      },
       // process adds before changes, ignore removals
       getChildren: diff => diff && diff.children,
       filter: diff => diff.action === 'ADD' || diff.action === 'CHANGE'
