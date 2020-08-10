@@ -1,3 +1,16 @@
+## v7.0.0-beta.3 (2020-08-10)
+
+Bring back support for `npm audit --production`, fix a minor `npm version`
+annoyance, and track down a very serious issue where a project could be
+blown away when it matches a meta-dep in the tree.
+
+* [`5fb217701`](https://github.com/npm/cli/commit/5fb217701c060e37a3fb4a2e985f80fb015157b9)
+  [#1641](https://github.com/npm/cli/issues/1641) `@npmcli/arborist@0.0.15`
+* [`3598fe1f2`](https://github.com/npm/cli/commit/3598fe1f2dfe6c55221bbac8aaf21feab74a936a)
+  `@npmcli/arborist@0.0.16` Add support for `npm audit --production`
+* [`8ba2aeaee`](https://github.com/npm/cli/commit/8ba2aeaeeb77718cb06fe577fdd56dcdcbfe9c52)
+  `libnpmversion@1.0.3`
+
 ## v7.0.0-beta.2 (2020-08-07)
 
 New notification style for updates, and a working doctor.
