@@ -1,3 +1,15 @@
+## v7.0.0-beta.4 (2020-08-11)
+
+Replace some environment variables that were excluded.  This implements the
+[amendment to RFC0021](https://github.com/npm/rfcs/pull/183).
+
+* [`631142f4a`](https://github.com/npm/cli/commit/631142f4a13959fbe02dc115fb6efa55a3368795)
+  @`npmcli/run-script@1.5.0`
+* [`da95386ae`](https://github.com/npm/cli/commit/da95386aedb3f0c0cc51761bfa750b64ac0eabc9)
+  [#1650](https://github.com/npm/cli/pull/1650)
+  [#1652](https://github.com/npm/cli/pull/1652)
+  include booleans, skip already-set envs
+
 ## v7.0.0-beta.3 (2020-08-10)
 
 Bring back support for `npm audit --production`, fix a minor `npm version`
