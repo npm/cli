@@ -38,7 +38,14 @@ t.test('setup', (t) => {
         'versions': {
           '1.0.0': {
             'name': 'blue',
-            'dist': {}
+            'version': 'blue',
+            'dist': {
+              'shasum': '123',
+              'tarball': 'http://hm.blue.com/1.0.0.tgz',
+              'integrity': '---',
+              'fileCount': 1,
+              'unpackedSize': 1              
+            }
           },
           '1.0.1': {}
         }
@@ -52,8 +59,15 @@ t.test('setup', (t) => {
         'dist-tags': {},
         'versions': {
           '1.0.0': {
+            'version': '1.0.0',
             'name': 'cyan',
-            'dist': {}
+            'dist': {
+              'shasum': '123',
+              'tarball': 'http://hm.cyan.com/1.0.0.tgz',
+              'integrity': '---',
+              'fileCount': 1,
+              'unpackedSize': 1
+            }
           },
           '1.0.1': {}
         }
@@ -68,8 +82,10 @@ t.test('setup', (t) => {
           'email': 'foo@yellow.com',
           'twitter': 'foo'
         },
+        'readme': 'a very useful readme',
         'versions': {
           '1.0.0': {
+            'readme': 'a very useful readme',
             'maintainers': [
               { 'name': 'claudia', 'email': 'c@yellow.com', 'twitter': 'cyellow' },
               { 'name': 'isaacs', 'email': 'i@yellow.com', 'twitter': 'iyellow' }
@@ -93,11 +109,12 @@ t.test('setup', (t) => {
       '/green': [200, {
         'name': 'green',
         'dist-tags': {
-          '1.0.1': {}
+          'latest': '1.0.0'
         },
         'keywords': ['colors', 'green', 'crayola'],
         'versions': {
           '1.0.0': {
+            'version': '1.0.0',
             'bugs': {
               'url': 'http://bugs.green.com'
             },
@@ -110,10 +127,12 @@ t.test('setup', (t) => {
               'green': 'bin/green.js'
             },
             'dependencies': {
-              'red': {},
-              'yellow': {}
+              'red': '1.0.0',
+              'yellow': '1.0.0'
             },
             'dist': {
+              'shasum': '123',
+              'tarball': 'http://hm.green.com/1.0.0.tgz',
               'integrity': '---',
               'fileCount': 1,
               'unpackedSize': 1
@@ -125,20 +144,23 @@ t.test('setup', (t) => {
       '/black': [200, {
         'name': 'black',
         'dist-tags': {
-          '1.0.1': {}
+          'latest': '1.0.0'
         },
         'versions': {
           '1.0.0': {
+            'version': '1.0.0',
             'bugs': 'http://bugs.black.com',
             'license': {},
             'dependencies': (() => {
               const deps = {}
               for (i = 0; i < 25; i++) {
-                deps[i] = {}
+                deps[i] = '1.0.0'
               }
               return deps
             })(),
             'dist': {
+              'shasum': '123',
+              'tarball': 'http://hm.black.com/1.0.0.tgz',
               'integrity': '---',
               'fileCount': 1,
               'unpackedSize': 1
@@ -150,17 +172,20 @@ t.test('setup', (t) => {
       '/pink': [200, {
         'name': 'pink',
         'dist-tags': {
-          '1.0.1': {}
+          'latest': '1.0.0'
         },
         'versions': {
           '1.0.0': {
+            'version': '1.0.0',
             'maintainers': [
-              { 'name': 'claudia', 'url': 'http://c.yellow.com' },
-              { 'name': 'isaacs', 'url': 'http://i.yellow.com'  }
+              { 'name': 'claudia', 'url': 'http://c.pink.com' },
+              { 'name': 'isaacs', 'url': 'http://i.pink.com'  }
             ],
             'repository': 'http://repository.pink.com',
             'license': {},
             'dist': {
+              'shasum': '123',
+              'tarball': 'http://hm.pink.com/1.0.0.tgz',
               'integrity': '---',
               'fileCount': 1,
               'unpackedSize': 1
@@ -172,13 +197,16 @@ t.test('setup', (t) => {
       '/orange': [200, {
         'name': 'orange',
         'dist-tags': {
-          '1.0.1': {}
+          'latest': '1.0.0'
         },
         'versions': {
           '1.0.0': {
+            'version': '1.0.0',
             'homepage': 'http://hm.orange.com',
             'license': {},
             'dist': {
+              'shasum': '123',
+              'tarball': 'http://hm.orange.com/1.0.0.tgz',
               'integrity': '---',
               'fileCount': 1,
               'unpackedSize': 1
@@ -202,6 +230,15 @@ t.test('should log package info', t => {
         registry: REG,
         global: false,
         unicode: true
+      }
+    }
+  })
+
+  const viewJson = requireInject('../../lib/view.js', {
+    '../../lib/npm.js': {
+      flatOptions: {
+        registry: REG,
+        json: true
       }
     }
   })
@@ -243,7 +280,7 @@ t.test('should log package info', t => {
 
   t.test('package with no versions', t => {
     view(['brown'], () => {
-      t.matchSnapshot(logs)
+      t.equals(logs, '', 'no info to display')
       t.end()
     })
   })
@@ -258,6 +295,20 @@ t.test('should log package info', t => {
   t.test('package with no modified time', t => {
     view(['cyan@1.0.0'], () => {
       t.matchSnapshot(logs)
+      t.end()
+    })
+  })
+
+  t.test('package with --json and semver range', t => {
+    viewJson(['underscore@^1.3.1'], () => {
+      t.matchSnapshot(logs)
+      t.end()
+    })
+  })
+
+  t.test('package with --json and no versions', t => {
+    viewJson(['brown'], () => {
+      t.equals(logs, '\n', 'no info to display')
       t.end()
     })
   })
@@ -322,7 +373,7 @@ t.test('should log info by field name', t => {
   })
 
   t.test('readme', t => {
-    view(['underscore@1.x.x', 'readme'], () => {
+    view(['yellow@1.0.0', 'readme'], () => {
       t.matchSnapshot(logs)
       t.end()
     })
@@ -365,7 +416,7 @@ t.test('should log info by field name', t => {
 
   t.test('unknown nested field ', t => {
     view(['underscore@1.3.1', 'dist.foobar'], () => {
-      t.matchSnapshot(logs)
+      t.equals(logs, '\n', 'no info to display')
       t.end()
     })
   })
