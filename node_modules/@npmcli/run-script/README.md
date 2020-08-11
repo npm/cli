@@ -30,6 +30,7 @@ runScript({
   // - npm_package_json The package.json file in the folder
   // - npm_lifecycle_event The event that this is being run for
   // - npm_lifecycle_script The script being run
+  // The fields described in https://github.com/npm/rfcs/pull/183
   env: {
     npm_package_from: 'foo@bar',
     npm_package_resolved: 'https://registry.npmjs.org/foo/-/foo-1.2.3.tgz',
@@ -99,6 +100,8 @@ terminal, then it is up to the user to end it, of course.
   - `npm_package_json` The package.json file in the folder
   - `npm_lifecycle_event` The event that this is being run for
   - `npm_lifecycle_script` The script being run
+  - The `package.json` fields described in
+    [RFC183](https://github.com/npm/rfcs/pull/183/files).
 - `scriptShell` Optional, defaults to `/bin/sh` on Unix, defaults to
   `env.comspec` or `cmd` on Windows.  Custom script to use to execute the
   command.

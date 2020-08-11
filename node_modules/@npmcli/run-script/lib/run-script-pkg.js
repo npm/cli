@@ -1,5 +1,6 @@
 const makeSpawnArgs = require('./make-spawn-args.js')
 const promiseSpawn = require('@npmcli/promise-spawn')
+const packageEnvs = require('./package-envs.js')
 
 // you wouldn't like me when I'm angry...
 const bruce = (id, event, cmd) =>`\n> ${id ? id + ' ' : ''}${event}\n> ${cmd}\n`
@@ -36,7 +37,7 @@ const runScriptPkg = options => {
     event,
     path,
     scriptShell,
-    env,
+    env: packageEnvs(env, pkg),
     stdio,
     cmd,
     stdioString,
