@@ -26,3 +26,4 @@ npm-debug.log
 /node_modules/.cache
 .DS_Store
 **/.DS_Store
+.vscode/
