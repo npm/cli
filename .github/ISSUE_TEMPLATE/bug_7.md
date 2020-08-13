@@ -2,9 +2,11 @@
 name: v7 Bug
 about: bug-type issue
 title: '[BUG] <title>'
-assignees:
-labels: 'Bug', 'Needs Triage', 'Release 7.x'
+labels: Bug, Needs Triage, Release 7.x
+assignees: ''
+
 ---
+
 <!--
 Note: Please search to see if an issue already exists for your problem: https://github.com/npm/cli/issues
 -->
