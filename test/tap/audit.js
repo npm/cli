@@ -573,7 +573,7 @@ test('exits with non-zero exit code for vulnerabilities in dependencies when run
   })
 })
 
-test('exits with zero exit code for vulnerabilities below the `audit-level` flag', t => {
+test('exits with zero exit code using metadata in package.json', t => {
   const fixture = new Tacks(new Dir({
     'package.json': new File({
       name: 'foo',
