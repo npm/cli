@@ -164,415 +164,495 @@ test('exits with zero exit code for vulnerabilities below the `audit-level` flag
   })
 })
 
-// test('shows quick audit results summary for human', t => {
-//   const fixture = new Tacks(new Dir({
-//     'package.json': new File({
-//       name: 'foo',
-//       version: '1.0.0',
-//       dependencies: {
-//         baddep: '1.0.0'
-//       }
-//     })
-//   }))
-//   fixture.create(testDir)
-//   return tmock(t).then(srv => {
-//     srv.filteringRequestBody(req => 'ok')
-//     srv.post('/-/npm/v1/security/audits/quick', 'ok').reply(200, quickAuditResult)
-//     srv.get('/baddep').twice().reply(200, {
-//       name: 'baddep',
-//       'dist-tags': {
-//         'latest': '1.2.3'
-//       },
-//       versions: {
-//         '1.0.0': {
-//           name: 'baddep',
-//           version: '1.0.0',
-//           _hasShrinkwrap: false,
-//           dist: {
-//             shasum: 'deadbeef',
-//             tarball: common.registry + '/idk/-/idk-1.0.0.tgz'
-//           }
-//         },
-//         '1.2.3': {
-//           name: 'baddep',
-//           version: '1.2.3',
-//           _hasShrinkwrap: false,
-//           dist: {
-//             shasum: 'deadbeef',
-//             tarball: common.registry + '/idk/-/idk-1.2.3.tgz'
-//           }
-//         }
-//       }
-//     })
-//     return common.npm([
-//       'install',
-//       '--audit',
-//       '--no-json',
-//       '--package-lock-only',
-//       '--registry', common.registry,
-//       '--cache', path.join(testDir, 'npm-cache')
-//     ], EXEC_OPTS).then(([code, stdout, stderr]) => {
-//       t.match(stdout, new RegExp('added 1 package and audited 1 package in .*\\n' +
-//         'found 1 high severity vulnerability\\n' +
-//         '  run `npm audit fix` to fix them, or `npm audit` for details\\n'),
-//       'shows quick audit result')
-//     })
-//   })
-// })
-//
-// test('exits with non-zero exit code for vulnerabilities at the `audit-level` flag', t => {
-//   const fixture = new Tacks(new Dir({
-//     'package.json': new File({
-//       name: 'foo',
-//       version: '1.0.0',
-//       dependencies: {
-//         baddep: '1.0.0'
-//       }
-//     })
-//   }))
-//   fixture.create(testDir)
-//   return tmock(t).then(srv => {
-//     srv.filteringRequestBody(req => 'ok')
-//     srv.post('/-/npm/v1/security/audits/quick', 'ok').reply(200, 'yeah')
-//     srv.get('/baddep').twice().reply(200, {
-//       name: 'baddep',
-//       'dist-tags': {
-//         'latest': '1.2.3'
-//       },
-//       versions: {
-//         '1.0.0': {
-//           name: 'baddep',
-//           version: '1.0.0',
-//           _hasShrinkwrap: false,
-//           dist: {
-//             shasum: 'deadbeef',
-//             tarball: common.registry + '/idk/-/idk-1.0.0.tgz'
-//           }
-//         },
-//         '1.2.3': {
-//           name: 'baddep',
-//           version: '1.2.3',
-//           _hasShrinkwrap: false,
-//           dist: {
-//             shasum: 'deadbeef',
-//             tarball: common.registry + '/idk/-/idk-1.2.3.tgz'
-//           }
-//         }
-//       }
-//     })
-//     return common.npm([
-//       'install',
-//       '--audit',
-//       '--json',
-//       '--package-lock-only',
-//       '--registry', common.registry,
-//       '--cache', path.join(testDir, 'npm-cache')
-//     ], EXEC_OPTS).then(([code, stdout, stderr]) => {
-//       srv.filteringRequestBody(req => 'ok')
-//       srv.post('/-/npm/v1/security/audits', 'ok').reply(200, {
-//         actions: [{
-//           action: 'update',
-//           module: 'baddep',
-//           target: '1.2.3',
-//           resolves: [{path: 'baddep'}]
-//         }],
-//         metadata: {
-//           vulnerabilities: {
-//             high: 1
-//           }
-//         }
-//       })
-//       return common.npm([
-//         'audit',
-//         '--audit-level', 'high',
-//         '--json',
-//         '--registry', common.registry,
-//         '--cache', path.join(testDir, 'npm-cache')
-//       ], EXEC_OPTS).then(([code, stdout, stderr]) => {
-//         t.equal(code, 1, 'exited OK')
-//       })
-//     })
-//   })
-// })
-//
-// test('exits with non-zero exit code for vulnerabilities at the `audit-level` flag', t => {
-//   const fixture = new Tacks(new Dir({
-//     'package.json': new File({
-//       name: 'foo',
-//       version: '1.0.0',
-//       dependencies: {
-//         baddep: '1.0.0'
-//       }
-//     })
-//   }))
-//   fixture.create(testDir)
-//   return tmock(t).then(srv => {
-//     srv.filteringRequestBody(req => 'ok')
-//     srv.post('/-/npm/v1/security/audits/quick', 'ok').reply(200, 'yeah')
-//     srv.get('/baddep').twice().reply(200, {
-//       name: 'baddep',
-//       'dist-tags': {
-//         'latest': '1.2.3'
-//       },
-//       versions: {
-//         '1.0.0': {
-//           name: 'baddep',
-//           version: '1.0.0',
-//           _hasShrinkwrap: false,
-//           dist: {
-//             shasum: 'deadbeef',
-//             tarball: common.registry + '/idk/-/idk-1.0.0.tgz'
-//           }
-//         },
-//         '1.2.3': {
-//           name: 'baddep',
-//           version: '1.2.3',
-//           _hasShrinkwrap: false,
-//           dist: {
-//             shasum: 'deadbeef',
-//             tarball: common.registry + '/idk/-/idk-1.2.3.tgz'
-//           }
-//         }
-//       }
-//     })
-//     return common.npm([
-//       'install',
-//       '--audit',
-//       '--json',
-//       '--package-lock-only',
-//       '--registry', common.registry,
-//       '--cache', path.join(testDir, 'npm-cache')
-//     ], EXEC_OPTS).then(([code, stdout, stderr]) => {
-//       srv.filteringRequestBody(req => 'ok')
-//       srv.post('/-/npm/v1/security/audits', 'ok').reply(200, {
-//         actions: [{
-//           action: 'update',
-//           module: 'baddep',
-//           target: '1.2.3',
-//           resolves: [{path: 'baddep'}]
-//         }],
-//         metadata: {
-//           vulnerabilities: {
-//             high: 1
-//           }
-//         }
-//       })
-//       return common.npm([
-//         'audit',
-//         '--audit-level', 'moderate',
-//         '--json',
-//         '--registry', common.registry,
-//         '--cache', path.join(testDir, 'npm-cache')
-//       ], EXEC_OPTS).then(([code, stdout, stderr]) => {
-//         t.equal(code, 1, 'exited OK')
-//       })
-//     })
-//   })
-// })
-//
-// test('exits with zero exit code for vulnerabilities in devDependencies when running with production flag', t => {
-//   const fixture = new Tacks(new Dir({
-//     'package.json': new File({
-//       name: 'foo',
-//       version: '1.0.0',
-//       dependencies: {
-//         gooddep: '1.0.0'
-//       },
-//       devDependencies: {
-//         baddep: '1.0.0'
-//       }
-//     })
-//   }))
-//   fixture.create(testDir)
-//   return tmock(t).then(srv => {
-//     srv.filteringRequestBody(req => 'ok')
-//     srv.post('/-/npm/v1/security/audits/quick', 'ok').reply(200, 'yeah')
-//     srv.get('/gooddep').twice().reply(200, {
-//       name: 'gooddep',
-//       'dist-tags': {
-//         'latest': '1.2.3'
-//       },
-//       versions: {
-//         '1.0.0': {
-//           name: 'gooddep',
-//           version: '1.0.0',
-//           _hasShrinkwrap: false,
-//           dist: {
-//             shasum: 'deadbeef',
-//             tarball: common.registry + '/idk/-/idk-1.0.0.tgz'
-//           }
-//         },
-//         '1.2.3': {
-//           name: 'gooddep',
-//           version: '1.2.3',
-//           _hasShrinkwrap: false,
-//           dist: {
-//             shasum: 'deadbeef',
-//             tarball: common.registry + '/idk/-/idk-1.2.3.tgz'
-//           }
-//         }
-//       }
-//     })
-//     srv.get('/baddep').twice().reply(200, {
-//       name: 'baddep',
-//       'dist-tags': {
-//         'latest': '1.2.3'
-//       },
-//       versions: {
-//         '1.0.0': {
-//           name: 'baddep',
-//           version: '1.0.0',
-//           _hasShrinkwrap: false,
-//           dist: {
-//             shasum: 'deadbeef',
-//             tarball: common.registry + '/idk/-/idk-1.0.0.tgz'
-//           }
-//         },
-//         '1.2.3': {
-//           name: 'baddep',
-//           version: '1.2.3',
-//           _hasShrinkwrap: false,
-//           dist: {
-//             shasum: 'deadbeef',
-//             tarball: common.registry + '/idk/-/idk-1.2.3.tgz'
-//           }
-//         }
-//       }
-//     })
-//     return common.npm([
-//       'install',
-//       '--audit',
-//       '--json',
-//       '--production',
-//       '--package-lock-only',
-//       '--registry', common.registry,
-//       '--cache', path.join(testDir, 'npm-cache')
-//     ], EXEC_OPTS).then(([code, stdout, stderr]) => {
-//       srv.filteringRequestBody(req => 'ok')
-//       srv.post('/-/npm/v1/security/audits', 'ok').reply(200, {
-//         actions: [],
-//         metadata: {
-//           vulnerabilities: {}
-//         }
-//       })
-//       return common.npm([
-//         'audit',
-//         '--json',
-//         '--production',
-//         '--registry', common.registry,
-//         '--cache', path.join(testDir, 'npm-cache')
-//       ], EXEC_OPTS).then(([code, stdout, stderr]) => {
-//         t.equal(code, 0, 'exited OK')
-//       })
-//     })
-//   })
-// })
-//
-// test('exits with non-zero exit code for vulnerabilities in dependencies when running with production flag', t => {
-//   const fixture = new Tacks(new Dir({
-//     'package.json': new File({
-//       name: 'foo',
-//       version: '1.0.0',
-//       dependencies: {
-//         baddep: '1.0.0'
-//       },
-//       devDependencies: {
-//         gooddep: '1.0.0'
-//       }
-//     })
-//   }))
-//   fixture.create(testDir)
-//   return tmock(t).then(srv => {
-//     srv.filteringRequestBody(req => 'ok')
-//     srv.post('/-/npm/v1/security/audits/quick', 'ok').reply(200, 'yeah')
-//     srv.get('/baddep').twice().reply(200, {
-//       name: 'baddep',
-//       'dist-tags': {
-//         'latest': '1.2.3'
-//       },
-//       versions: {
-//         '1.0.0': {
-//           name: 'baddep',
-//           version: '1.0.0',
-//           _hasShrinkwrap: false,
-//           dist: {
-//             shasum: 'deadbeef',
-//             tarball: common.registry + '/idk/-/idk-1.0.0.tgz'
-//           }
-//         },
-//         '1.2.3': {
-//           name: 'baddep',
-//           version: '1.2.3',
-//           _hasShrinkwrap: false,
-//           dist: {
-//             shasum: 'deadbeef',
-//             tarball: common.registry + '/idk/-/idk-1.2.3.tgz'
-//           }
-//         }
-//       }
-//     })
-//     srv.get('/gooddep').twice().reply(200, {
-//       name: 'gooddep',
-//       'dist-tags': {
-//         'latest': '1.2.3'
-//       },
-//       versions: {
-//         '1.0.0': {
-//           name: 'gooddep',
-//           version: '1.0.0',
-//           _hasShrinkwrap: false,
-//           dist: {
-//             shasum: 'deadbeef',
-//             tarball: common.registry + '/idk/-/idk-1.0.0.tgz'
-//           }
-//         },
-//         '1.2.3': {
-//           name: 'gooddep',
-//           version: '1.2.3',
-//           _hasShrinkwrap: false,
-//           dist: {
-//             shasum: 'deadbeef',
-//             tarball: common.registry + '/idk/-/idk-1.2.3.tgz'
-//           }
-//         }
-//       }
-//     })
-//     return common.npm([
-//       'install',
-//       '--audit',
-//       '--json',
-//       '--production',
-//       '--package-lock-only',
-//       '--registry', common.registry,
-//       '--cache', path.join(testDir, 'npm-cache')
-//     ], EXEC_OPTS).then(([code, stdout, stderr]) => {
-//       srv.filteringRequestBody(req => 'ok')
-//       srv.post('/-/npm/v1/security/audits', 'ok').reply(200, {
-//         actions: [{
-//           action: 'update',
-//           module: 'baddep',
-//           target: '1.2.3',
-//           resolves: [{path: 'baddep'}]
-//         }],
-//         metadata: {
-//           vulnerabilities: {
-//             low: 1
-//           }
-//         }
-//       })
-//       return common.npm([
-//         'audit',
-//         '--json',
-//         '--production',
-//         '--registry', common.registry,
-//         '--cache', path.join(testDir, 'npm-cache')
-//       ], EXEC_OPTS).then(([code, stdout, stderr]) => {
-//         t.equal(code, 1, 'exited OK')
-//       })
-//     })
-//   })
-// })
-//
-// test('cleanup', t => {
-//   return rimraf(testDir)
-// })
+test('shows quick audit results summary for human', t => {
+  const fixture = new Tacks(new Dir({
+    'package.json': new File({
+      name: 'foo',
+      version: '1.0.0',
+      dependencies: {
+        baddep: '1.0.0'
+      }
+    })
+  }))
+  fixture.create(testDir)
+  return tmock(t).then(srv => {
+    srv.filteringRequestBody(req => 'ok')
+    srv.post('/-/npm/v1/security/audits/quick', 'ok').reply(200, quickAuditResult)
+    srv.get('/baddep').twice().reply(200, {
+      name: 'baddep',
+      'dist-tags': {
+        'latest': '1.2.3'
+      },
+      versions: {
+        '1.0.0': {
+          name: 'baddep',
+          version: '1.0.0',
+          _hasShrinkwrap: false,
+          dist: {
+            shasum: 'deadbeef',
+            tarball: common.registry + '/idk/-/idk-1.0.0.tgz'
+          }
+        },
+        '1.2.3': {
+          name: 'baddep',
+          version: '1.2.3',
+          _hasShrinkwrap: false,
+          dist: {
+            shasum: 'deadbeef',
+            tarball: common.registry + '/idk/-/idk-1.2.3.tgz'
+          }
+        }
+      }
+    })
+    return common.npm([
+      'install',
+      '--audit',
+      '--no-json',
+      '--package-lock-only',
+      '--registry', common.registry,
+      '--cache', path.join(testDir, 'npm-cache')
+    ], EXEC_OPTS).then(([code, stdout, stderr]) => {
+      t.match(stdout, new RegExp('added 1 package and audited 1 package in .*\\n' +
+        'found 1 high severity vulnerability\\n' +
+        '  run `npm audit fix` to fix them, or `npm audit` for details\\n'),
+      'shows quick audit result')
+    })
+  })
+})
+
+test('exits with non-zero exit code for vulnerabilities at the `audit-level` flag', t => {
+  const fixture = new Tacks(new Dir({
+    'package.json': new File({
+      name: 'foo',
+      version: '1.0.0',
+      dependencies: {
+        baddep: '1.0.0'
+      }
+    })
+  }))
+  fixture.create(testDir)
+  return tmock(t).then(srv => {
+    srv.filteringRequestBody(req => 'ok')
+    srv.post('/-/npm/v1/security/audits/quick', 'ok').reply(200, 'yeah')
+    srv.get('/baddep').twice().reply(200, {
+      name: 'baddep',
+      'dist-tags': {
+        'latest': '1.2.3'
+      },
+      versions: {
+        '1.0.0': {
+          name: 'baddep',
+          version: '1.0.0',
+          _hasShrinkwrap: false,
+          dist: {
+            shasum: 'deadbeef',
+            tarball: common.registry + '/idk/-/idk-1.0.0.tgz'
+          }
+        },
+        '1.2.3': {
+          name: 'baddep',
+          version: '1.2.3',
+          _hasShrinkwrap: false,
+          dist: {
+            shasum: 'deadbeef',
+            tarball: common.registry + '/idk/-/idk-1.2.3.tgz'
+          }
+        }
+      }
+    })
+    return common.npm([
+      'install',
+      '--audit',
+      '--json',
+      '--package-lock-only',
+      '--registry', common.registry,
+      '--cache', path.join(testDir, 'npm-cache')
+    ], EXEC_OPTS).then(([code, stdout, stderr]) => {
+      srv.filteringRequestBody(req => 'ok')
+      srv.post('/-/npm/v1/security/audits', 'ok').reply(200, {
+        actions: [{
+          action: 'update',
+          module: 'baddep',
+          target: '1.2.3',
+          resolves: [{path: 'baddep'}]
+        }],
+        metadata: {
+          vulnerabilities: {
+            high: 1
+          }
+        }
+      })
+      return common.npm([
+        'audit',
+        '--audit-level', 'high',
+        '--json',
+        '--registry', common.registry,
+        '--cache', path.join(testDir, 'npm-cache')
+      ], EXEC_OPTS).then(([code, stdout, stderr]) => {
+        t.equal(code, 1, 'exited OK')
+      })
+    })
+  })
+})
+
+test('exits with non-zero exit code for vulnerabilities at the `audit-level` flag', t => {
+  const fixture = new Tacks(new Dir({
+    'package.json': new File({
+      name: 'foo',
+      version: '1.0.0',
+      dependencies: {
+        baddep: '1.0.0'
+      }
+    })
+  }))
+  fixture.create(testDir)
+  return tmock(t).then(srv => {
+    srv.filteringRequestBody(req => 'ok')
+    srv.post('/-/npm/v1/security/audits/quick', 'ok').reply(200, 'yeah')
+    srv.get('/baddep').twice().reply(200, {
+      name: 'baddep',
+      'dist-tags': {
+        'latest': '1.2.3'
+      },
+      versions: {
+        '1.0.0': {
+          name: 'baddep',
+          version: '1.0.0',
+          _hasShrinkwrap: false,
+          dist: {
+            shasum: 'deadbeef',
+            tarball: common.registry + '/idk/-/idk-1.0.0.tgz'
+          }
+        },
+        '1.2.3': {
+          name: 'baddep',
+          version: '1.2.3',
+          _hasShrinkwrap: false,
+          dist: {
+            shasum: 'deadbeef',
+            tarball: common.registry + '/idk/-/idk-1.2.3.tgz'
+          }
+        }
+      }
+    })
+    return common.npm([
+      'install',
+      '--audit',
+      '--json',
+      '--package-lock-only',
+      '--registry', common.registry,
+      '--cache', path.join(testDir, 'npm-cache')
+    ], EXEC_OPTS).then(([code, stdout, stderr]) => {
+      srv.filteringRequestBody(req => 'ok')
+      srv.post('/-/npm/v1/security/audits', 'ok').reply(200, {
+        actions: [{
+          action: 'update',
+          module: 'baddep',
+          target: '1.2.3',
+          resolves: [{path: 'baddep'}]
+        }],
+        metadata: {
+          vulnerabilities: {
+            high: 1
+          }
+        }
+      })
+      return common.npm([
+        'audit',
+        '--audit-level', 'moderate',
+        '--json',
+        '--registry', common.registry,
+        '--cache', path.join(testDir, 'npm-cache')
+      ], EXEC_OPTS).then(([code, stdout, stderr]) => {
+        t.equal(code, 1, 'exited OK')
+      })
+    })
+  })
+})
+
+test('exits with zero exit code for vulnerabilities in devDependencies when running with production flag', t => {
+  const fixture = new Tacks(new Dir({
+    'package.json': new File({
+      name: 'foo',
+      version: '1.0.0',
+      dependencies: {
+        gooddep: '1.0.0'
+      },
+      devDependencies: {
+        baddep: '1.0.0'
+      }
+    })
+  }))
+  fixture.create(testDir)
+  return tmock(t).then(srv => {
+    srv.filteringRequestBody(req => 'ok')
+    srv.post('/-/npm/v1/security/audits/quick', 'ok').reply(200, 'yeah')
+    srv.get('/gooddep').twice().reply(200, {
+      name: 'gooddep',
+      'dist-tags': {
+        'latest': '1.2.3'
+      },
+      versions: {
+        '1.0.0': {
+          name: 'gooddep',
+          version: '1.0.0',
+          _hasShrinkwrap: false,
+          dist: {
+            shasum: 'deadbeef',
+            tarball: common.registry + '/idk/-/idk-1.0.0.tgz'
+          }
+        },
+        '1.2.3': {
+          name: 'gooddep',
+          version: '1.2.3',
+          _hasShrinkwrap: false,
+          dist: {
+            shasum: 'deadbeef',
+            tarball: common.registry + '/idk/-/idk-1.2.3.tgz'
+          }
+        }
+      }
+    })
+    srv.get('/baddep').twice().reply(200, {
+      name: 'baddep',
+      'dist-tags': {
+        'latest': '1.2.3'
+      },
+      versions: {
+        '1.0.0': {
+          name: 'baddep',
+          version: '1.0.0',
+          _hasShrinkwrap: false,
+          dist: {
+            shasum: 'deadbeef',
+            tarball: common.registry + '/idk/-/idk-1.0.0.tgz'
+          }
+        },
+        '1.2.3': {
+          name: 'baddep',
+          version: '1.2.3',
+          _hasShrinkwrap: false,
+          dist: {
+            shasum: 'deadbeef',
+            tarball: common.registry + '/idk/-/idk-1.2.3.tgz'
+          }
+        }
+      }
+    })
+    return common.npm([
+      'install',
+      '--audit',
+      '--json',
+      '--production',
+      '--package-lock-only',
+      '--registry', common.registry,
+      '--cache', path.join(testDir, 'npm-cache')
+    ], EXEC_OPTS).then(([code, stdout, stderr]) => {
+      srv.filteringRequestBody(req => 'ok')
+      srv.post('/-/npm/v1/security/audits', 'ok').reply(200, {
+        actions: [],
+        metadata: {
+          vulnerabilities: {}
+        }
+      })
+      return common.npm([
+        'audit',
+        '--json',
+        '--production',
+        '--registry', common.registry,
+        '--cache', path.join(testDir, 'npm-cache')
+      ], EXEC_OPTS).then(([code, stdout, stderr]) => {
+        t.equal(code, 0, 'exited OK')
+      })
+    })
+  })
+})
+
+test('exits with non-zero exit code for vulnerabilities in dependencies when running with production flag', t => {
+  const fixture = new Tacks(new Dir({
+    'package.json': new File({
+      name: 'foo',
+      version: '1.0.0',
+      dependencies: {
+        baddep: '1.0.0'
+      },
+      devDependencies: {
+        gooddep: '1.0.0'
+      }
+    })
+  }))
+  fixture.create(testDir)
+  return tmock(t).then(srv => {
+    srv.filteringRequestBody(req => 'ok')
+    srv.post('/-/npm/v1/security/audits/quick', 'ok').reply(200, 'yeah')
+    srv.get('/baddep').twice().reply(200, {
+      name: 'baddep',
+      'dist-tags': {
+        'latest': '1.2.3'
+      },
+      versions: {
+        '1.0.0': {
+          name: 'baddep',
+          version: '1.0.0',
+          _hasShrinkwrap: false,
+          dist: {
+            shasum: 'deadbeef',
+            tarball: common.registry + '/idk/-/idk-1.0.0.tgz'
+          }
+        },
+        '1.2.3': {
+          name: 'baddep',
+          version: '1.2.3',
+          _hasShrinkwrap: false,
+          dist: {
+            shasum: 'deadbeef',
+            tarball: common.registry + '/idk/-/idk-1.2.3.tgz'
+          }
+        }
+      }
+    })
+    srv.get('/gooddep').twice().reply(200, {
+      name: 'gooddep',
+      'dist-tags': {
+        'latest': '1.2.3'
+      },
+      versions: {
+        '1.0.0': {
+          name: 'gooddep',
+          version: '1.0.0',
+          _hasShrinkwrap: false,
+          dist: {
+            shasum: 'deadbeef',
+            tarball: common.registry + '/idk/-/idk-1.0.0.tgz'
+          }
+        },
+        '1.2.3': {
+          name: 'gooddep',
+          version: '1.2.3',
+          _hasShrinkwrap: false,
+          dist: {
+            shasum: 'deadbeef',
+            tarball: common.registry + '/idk/-/idk-1.2.3.tgz'
+          }
+        }
+      }
+    })
+    return common.npm([
+      'install',
+      '--audit',
+      '--json',
+      '--production',
+      '--package-lock-only',
+      '--registry', common.registry,
+      '--cache', path.join(testDir, 'npm-cache')
+    ], EXEC_OPTS).then(([code, stdout, stderr]) => {
+      srv.filteringRequestBody(req => 'ok')
+      srv.post('/-/npm/v1/security/audits', 'ok').reply(200, {
+        actions: [{
+          action: 'update',
+          module: 'baddep',
+          target: '1.2.3',
+          resolves: [{path: 'baddep'}]
+        }],
+        metadata: {
+          vulnerabilities: {
+            low: 1
+          }
+        }
+      })
+      return common.npm([
+        'audit',
+        '--json',
+        '--production',
+        '--registry', common.registry,
+        '--cache', path.join(testDir, 'npm-cache')
+      ], EXEC_OPTS).then(([code, stdout, stderr]) => {
+        t.equal(code, 1, 'exited OK')
+      })
+    })
+  })
+})
+
+test('exits with zero exit code for vulnerabilities below the `audit-level` flag', t => {
+  const fixture = new Tacks(new Dir({
+    'package.json': new File({
+      name: 'foo',
+      version: '1.0.0',
+      dependencies: {
+        baddep: '1.0.0'
+      },
+      metadata: {
+        'npm-app-id': 'myapp'
+      }
+    })
+  }))
+  fixture.create(testDir)
+  return tmock(t).then(srv => {
+    srv.filteringRequestBody(req => 'ok')
+    srv.post('/-/npm/v1/security/audits/quick', 'ok').reply(200, quickAuditResult)
+    srv.get('/baddep').twice().reply(200, {
+      name: 'baddep',
+      'dist-tags': {
+        'latest': '1.2.3'
+      },
+      versions: {
+        '1.0.0': {
+          name: 'baddep',
+          version: '1.0.0',
+          _hasShrinkwrap: false,
+          dist: {
+            shasum: 'deadbeef',
+            tarball: common.registry + '/idk/-/idk-1.0.0.tgz'
+          }
+        },
+        '1.2.3': {
+          name: 'baddep',
+          version: '1.2.3',
+          _hasShrinkwrap: false,
+          dist: {
+            shasum: 'deadbeef',
+            tarball: common.registry + '/idk/-/idk-1.2.3.tgz'
+          }
+        }
+      }
+    })
+    return common.npm([
+      'install',
+      '--audit',
+      '--json',
+      '--package-lock-only',
+      '--registry', common.registry,
+      '--cache', path.join(testDir, 'npm-cache')
+    ], EXEC_OPTS).then(([code, stdout, stderr]) => {
+      const result = JSON.parse(stdout)
+      t.same(result.audit, quickAuditResult, 'printed quick audit result')
+      srv.filteringRequestBody(req => 'ok')
+      srv.post('/-/npm/v1/security/audits', 'ok').reply(200, {
+        actions: [{
+          action: 'update',
+          module: 'baddep',
+          target: '1.2.3',
+          resolves: [{path: 'baddep'}]
+        }],
+        metadata: {
+          vulnerabilities: {
+            low: 1
+          }
+        }
+      })
+      return common.npm([
+        'audit',
+        '--audit-level', 'high',
+        '--json',
+        '--registry', common.registry,
+        '--cache', path.join(testDir, 'npm-cache')
+      ], EXEC_OPTS).then(([code, stdout, stderr]) => {
+        t.equal(code, 0, 'exited OK')
+      })
+    })
+  })
+})
+
+test('cleanup', t => {
+  return rimraf(testDir)
+})
