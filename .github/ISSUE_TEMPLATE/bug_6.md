@@ -1,10 +1,12 @@
 ---
-name: v6 Bug
-about: bug-type issue
+name: 🐞 Bug v6
+about: File a bug/issue against v7.x
 title: '[BUG] <title>'
-assignees:
-labels: 'Bug', 'Needs Triage', 'Release 6.x'
+labels: Bug, Needs Triage, Release 6.x
+assignees: ''
+
 ---
+
 <!--
 Note: Please search to see if an issue already exists for your problem: https://github.com/npm/cli/issues
 -->

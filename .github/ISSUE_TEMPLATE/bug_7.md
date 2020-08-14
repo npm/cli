@@ -1,6 +1,6 @@
 ---
-name: v7 Bug
-about: bug-type issue
+name: 🐞 Bug v7
+about: File a bug/issue against v7.x
 title: '[BUG] <title>'
 labels: Bug, Needs Triage, Release 7.x
 assignees: ''

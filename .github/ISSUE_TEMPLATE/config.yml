@@ -1,11 +1,5 @@
 blank_issues_enabled: true
 contact_links:
-  - name: 🐞 Bug v7
-    url: https://github.com/npm/cli/issues/new?title=[BUG]%20%3Ctitle%3E&template=bug-7.md&labels=Bug,Needs%20Triage,Release%207.x
-    about: File a bug/issue against v7.x
-  - name: 🐞 Bug v6
-    url: https://github.com/npm/cli/issues/new?title=[BUG]%20%3Ctitle%3E&template=bug-6.md&labels=Bug,Needs%20Triage,Release%206.x
-    about: File a bug/issue against v6.x
   - name: ⭐️ Feature Request
     url: https://github.com/npm/rfcs/discussions/category_choices
     about: Add your request or discuss the project w/ the community
