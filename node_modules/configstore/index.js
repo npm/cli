@@ -5,7 +5,7 @@ const fs = require('graceful-fs');
 const makeDir = require('make-dir');
 const xdgBasedir = require('xdg-basedir');
 const writeFileAtomic = require('write-file-atomic');
-const dotProp = require('dot-prop');
+const dotProp = require('dot-prop-legacy');
 const uniqueString = require('unique-string');
 
 const configDir = xdgBasedir.config || path.join(os.tmpdir(), uniqueString());
