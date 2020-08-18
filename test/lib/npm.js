@@ -1,9 +1,10 @@
+'use strict'
 const t = require('tap')
 const fs = require('fs')
 
 // delete this so that we don't have configs from the fact that it
 // is being run by 'npm test'
-for (env of Object.keys(process.env).filter(e => /^npm_/.test(e))) {
+for (const env of Object.keys(process.env).filter(e => /^npm_/.test(e))) {
   delete process.env[env]
 }
 
@@ -26,7 +27,25 @@ const bePosix = () => {
 }
 
 const npmlog = require('npmlog')
-const npmconf = require('../../lib/config/core.js')
+
+const npmPath = resolve(__dirname, '..', '..')
+const Config = require('@npmcli/config')
+const { types, defaults, shorthands } = require('../../lib/utils/config.js')
+const freshConfig = (opts = {}) => {
+  for (const env of Object.keys(process.env).filter(e => /^npm_/.test(e))) {
+    delete process.env[env]
+  }
+  process.env.npm_config_cache = CACHE
+
+  npm.config = new Config({
+    types,
+    defaults,
+    shorthands,
+    npmPath,
+    log: npmlog,
+    ...opts
+  })
+}
 
 const logs = []
 for (const level of ['silly', 'verbose', 'timing', 'notice', 'warn', 'error']) {
@@ -36,6 +55,7 @@ for (const level of ['silly', 'verbose', 'timing', 'notice', 'warn', 'error']) {
 const npm = require('../../lib/npm.js')
 
 const CACHE = t.testdir()
+process.env.npm_config_cache = CACHE
 
 t.test('not yet loaded', t => {
   t.match(npm, {
@@ -63,28 +83,26 @@ t.test('not yet loaded', t => {
 
 t.test('npm.load', t => {
   t.test('must be called with proper args', t => {
-    const er = new TypeError('must call as: npm.load(options, callback)')
+    const er = new TypeError('must call as: npm.load(callback)')
     t.throws(() => npm.load(), er)
     t.throws(() => npm.load({}), er)
-    t.throws(() => npm.load(() => {}), er)
     t.same(logs, [])
     logs.length = 0
     t.end()
   })
 
   t.test('load error', t => {
-    const { load } = npmconf
+    const { load } = npm.config
     const loadError = new Error('load error')
-    npmconf.load = async () => { throw loadError }
-    npm.load({}, er => {
+    npm.config.load = async () => { throw loadError }
+    npm.load(er => {
       t.equal(er, loadError)
       t.equal(npm.loadErr, loadError)
-      npmconf.load = load
+      npm.config.load = load
       // loading again just returns the same error
-      npm.load({}, er => {
+      npm.load(er => {
         t.equal(er, loadError)
         t.equal(npm.loadErr, loadError)
-        npm.loaded = false
         npm.loadErr = null
         t.end()
       })
@@ -110,7 +128,7 @@ t.test('npm.load', t => {
     const second = () => { secondCalled = true }
 
     t.equal(npm.loading, false, 'not loading yet')
-    const p = npm.load({ global: false, cache: CACHE }, first).then(() => {
+    const p = npm.load(first).then(() => {
       npm.config.set('prefix', dir)
       t.match(npm, {
         loaded: true,
@@ -121,7 +139,7 @@ t.test('npm.load', t => {
       t.equal(secondCalled, true, 'second callback got called')
       let thirdCalled = false
       const third = () => { thirdCalled = true }
-      npm.load({}, third)
+      npm.load(third)
       t.equal(thirdCalled, true, 'third callbback got called')
       t.match(logs, [
         ['timing', 'npm:load', /Completed in [0-9]+ms/]
@@ -181,7 +199,7 @@ t.test('npm.load', t => {
     t.equal(npm.loaded, false, 'not loaded yet')
     t.equal(npm.loading, true, 'working on it tho')
     t.isa(p, Promise, 'npm.load() returned a Promise first time')
-    t.equal(npm.load({ global: true }, second), undefined,
+    t.equal(npm.load(second), undefined,
       'npm.load() returns nothing second time')
 
     return p
@@ -193,30 +211,24 @@ t.test('npm.load', t => {
     t.teardown(() => {
       process.argv[0] = argv0
     })
+    freshConfig({ argv: [...process.argv, '--force', '--color', 'always'] })
     process.argv[0] = 'this exe does not exist or else this test will fail'
-    npm.config.set('force', true)
-    npm.loaded = false
-    return npm.load({force: true}, er => {
+    return npm.load(er => {
       if (er) {
         throw er
       }
-      t.match(logs, [
+      t.match(logs.filter(l => l[0] !== 'timing'), [
         [
           'warn',
           'using --force',
           'Recommended protections disabled.'
-        ],
-        [
-          'timing',
-          'npm:load',
-          /Completed in [0-9]+ms/
-        ],
+        ]
       ])
       logs.length = 0
     })
   })
 
-  t.test('node is a symlink', t => {
+  t.test('node is a symlink', async t => {
     const node = actualPlatform === 'win32' ? 'node.exe' : 'node'
     const dir = t.testdir({
       '.npmrc': 'foo = bar'
@@ -227,12 +239,18 @@ t.test('npm.load', t => {
 
     const PATH = process.env.PATH || process.env.Path
     process.env.PATH = dir
-    const { execPath } = process
-    const [ argv0 ] = process.argv
-    process.argv[0] = node
+    const { execPath, argv: processArgv } = process
+    process.argv = [
+      node,
+      process.argv[1],
+      '--metrics-registry', 'http://example.com',
+      '--prefix', dir,
+      '--userconfig', `${dir}/.npmrc`,
+      '--usage',
+      '--scope=foo'
+    ]
 
-    npm.loaded = false
-    npm.config.loaded = false
+    freshConfig()
     const { log } = console
     const consoleLogs = []
     console.log = (...msg) => consoleLogs.push(msg)
@@ -240,36 +258,25 @@ t.test('npm.load', t => {
     t.teardown(() => {
       console.log = log
       process.env.PATH = PATH
-      npm.loaded = false
+      process.argv = processArgv
+      freshConfig()
       logs.length = 0
       process.execPath = execPath
-      process.argv[0] = argv0
     })
 
     logs.length = 0
-    return npm.load({
-      'metrics-registry': 'http://example.com',
-      prefix: dir,
-      userconfig: `${dir}/.npmrc`,
-      usage: true,
-      scope: 'foo'
-    }, er => {
+
+    await npm.load(er => {
       if (er) {
         throw er
       }
       t.equal(npm.config.get('scope'), '@foo', 'added the @ sign to scope')
       t.equal(npm.config.get('metrics-registry'), 'http://example.com')
-      t.match(logs, [
+      t.match(logs.filter(l => l[0] !== 'timing' || !/^config:/.test(l[1])), [
         [
           'verbose',
           'node symlink',
           resolve(dir, node)
-        ],
-        [
-          'verbose',
-          'config',
-          'Skipping project config: %s. (matches userconfig)',
-          /\.npmrc$/
         ],
         [
           'timing',
@@ -279,41 +286,42 @@ t.test('npm.load', t => {
       ])
       logs.length = 0
       t.equal(process.execPath, resolve(dir, node))
-    }).then(() => {
-      return npm.commands.ll([], (er) => {
-        if (er) {
-          throw er
-        }
-        t.same(consoleLogs, [[require('../../lib/ls.js').usage]], 'print usage')
-        consoleLogs.length = 0
-        npm.config.set('usage', false)
-        t.equal(npm.commands.ll, npm.commands.la, 'same command, different name')
-        logs.length = 0
-        return npm.commands.get(['scope', '\u2010not-a-dash'], (er) => {
-          if (er) {
-            throw er
-          }
-          t.match(logs, [
-            [
-              'error',
-              'arg',
-              'Argument starts with non-ascii dash, this is probably invalid:',
-              '\u2010not-a-dash',
-            ],
-            [
-              'timing',
-              'command:config',
-              /Completed in [0-9]+ms/,
-            ],
-            [
-              'timing',
-              'command:get',
-              /Completed in [0-9]+ms/,
-            ],
-          ])
-          t.same(consoleLogs, [['@foo']])
-        })
-      })
+    })
+
+    await npm.commands.ll([], (er) => {
+      if (er) {
+        throw er
+      }
+      t.same(consoleLogs, [[require('../../lib/ls.js').usage]], 'print usage')
+      consoleLogs.length = 0
+      npm.config.set('usage', false)
+      t.equal(npm.commands.ll, npm.commands.la, 'same command, different name')
+      logs.length = 0
+    })
+
+    await npm.commands.get(['scope', '\u2010not-a-dash'], (er) => {
+      if (er) {
+        throw er
+      }
+      t.match(logs, [
+        [
+          'error',
+          'arg',
+          'Argument starts with non-ascii dash, this is probably invalid:',
+          '\u2010not-a-dash',
+        ],
+        [
+          'timing',
+          'command:config',
+          /Completed in [0-9]+ms/,
+        ],
+        [
+          'timing',
+          'command:get',
+          /Completed in [0-9]+ms/,
+        ],
+      ])
+      t.same(consoleLogs, [['@foo']])
     })
   })
 

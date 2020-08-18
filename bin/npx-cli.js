@@ -24,7 +24,7 @@ const removed = new Set([
   ...removedOpts
 ])
 
-const { types, shorthands } = require('../lib/config/defaults.js')
+const { types, shorthands } = require('../lib/utils/config.js')
 const npmSwitches = Object.entries(types)
   .filter(([key, type]) => type === Boolean ||
     (Array.isArray(type) && type.includes(Boolean)))

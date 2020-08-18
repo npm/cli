@@ -3,7 +3,7 @@ const t = require('tap')
 let LOAD_ERROR = null
 const npmock = {
   version: '99.99.99',
-  load: (config, cb) => cb(LOAD_ERROR),
+  load: cb => cb(LOAD_ERROR),
   argv: [],
   config: {
     settings: {},
@@ -46,10 +46,14 @@ t.test('print the version, and treat npm_g to npm -g', t => {
   const { log } = console
   const consoleLogs = []
   console.log = (...msg) => consoleLogs.push(msg)
+  const { argv } = process
   const proc = {
     argv: ['node', 'npm_g', '-v'],
+    version: '420.69.lol',
     on: () => {}
   }
+  process.argv = proc.argv
+  npmock.config.settings.version = true
 
   cli(proc)
 
@@ -57,13 +61,17 @@ t.test('print the version, and treat npm_g to npm -g', t => {
   t.strictSame(proc.argv, [ 'node', 'npm', '-g', '-v' ])
   t.strictSame(logs, [
     'pause',
-    [ 'verbose', 'cli', [ 'node', 'npm', '-g', '-v' ] ]
+    [ 'verbose', 'cli', [ 'node', 'npm', '-g', '-v' ] ],
+    [ 'info', 'using', 'npm@%s', '99.99.99' ],
+    [ 'info', 'using', 'node@%s', '420.69.lol' ]
   ])
   t.strictSame(consoleLogs, [ [ '99.99.99' ] ])
   t.strictSame(errorHandlerExitCalled, 0)
 
+  delete npmock.config.settings.version
+  process.argv = argv
   console.log = log
-  npmock.argv = 0
+  npmock.argv.length = 0
   proc.argv.length = 0
   logs.length = 0
   consoleLogs.length = 0
@@ -76,14 +84,19 @@ t.test('calling with --versions calls npm version with no args', t => {
   const { log } = console
   const consoleLogs = []
   console.log = (...msg) => consoleLogs.push(msg)
+  const processArgv = process.argv
   const proc = {
     argv: ['node', 'npm', 'install', 'or', 'whatever', '--versions'],
     on: () => {}
   }
+  process.argv = proc.argv
+  npmock.config.set('versions', true)
 
   t.teardown(() => {
+    delete npmock.config.settings.versions
+    process.argv = processArgv
     console.log = log
-    npmock.argv = 0
+    npmock.argv.length = 0
     proc.argv.length = 0
     logs.length = 0
     consoleLogs.length = 0
@@ -120,10 +133,11 @@ t.test('print usage if -h provided', t => {
     argv: ['node', 'npm', 'asdf'],
     on: () => {}
   }
+  npmock.argv = ['asdf']
 
   t.teardown(() => {
     console.log = log
-    npmock.argv = 0
+    npmock.argv.length = 0
     proc.argv.length = 0
     logs.length = 0
     consoleLogs.length = 0

@@ -3,7 +3,7 @@ const npm = require('../../lib/npm.js')
 const t = require('tap')
 const { cmdList } = require('../../lib/config/cmd-list.js')
 
-t.test('load npm', t => npm.load({}, er => {
+t.test('load npm', t => npm.load(er => {
   if (er) {
     throw er
   }
