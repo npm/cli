@@ -1,3 +1,19 @@
+## v7.0.0-beta.5 (2020-08-18)
+
+* [`b718b0e28`](https://github.com/npm/cli/commit/b718b0e2844d9244cc63667f62ccf81864cc1092)
+  [#1657](https://github.com/npm/cli/pull/1657) display multiple versions
+  when using `--json` with `npm view`
+  ([@claudiahdz](https://github.com/claudiahdz))
+* [`9e7cc42f6`](https://github.com/npm/cli/commit/9e7cc42f687b479d96d222b61f76b2a30c7e6507)
+  [#1071](https://github.com/npm/cli/pull/1071) migrate from `meant` to
+  `leven` ([@jamesgeorge007](https://github.com/jamesgeorge007))
+* [`85027f40c`](https://github.com/npm/cli/commit/85027f40ca5237bd750a5633104d12bcc248551c)
+  [#1664](https://github.com/npm/cli/pull/1664) refactor and add tests for
+  `npm adduser` ([@ruyadorno](https://github.com/ruyadorno))
+* [`6e03e5583`](https://github.com/npm/cli/commit/6e03e55833d50fd0f5b7824ed14b7e2b14f70eaf)
+  [#1672](https://github.com/npm/cli/pull/1672) refactor and add tests for
+  `npm audit` ([@claudiahdz](https://github.com/claudiahdz))
+
 ## v7.0.0-beta.4 (2020-08-11)
 
 Replace some environment variables that were excluded.  This implements the
