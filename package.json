@@ -80,7 +80,6 @@
     "libnpmteam": "^2.0.1",
     "libnpmversion": "^1.0.3",
     "lockfile": "^1.0.4",
-    "meant": "~1.0.1",
     "mkdirp": "^1.0.4",
     "mkdirp-infer-owner": "^2.0.0",
     "ms": "^2.1.2",
@@ -117,7 +116,8 @@
     "validate-npm-package-name": "~3.0.0",
     "which": "^2.0.2",
     "write-file-atomic": "^2.4.3",
-    "make-fetch-happen": "^8.0.9"
+    "make-fetch-happen": "^8.0.9",
+    "leven": "^3.1.0"
   },
   "bundleDependencies": [
     "@npmcli/arborist",
@@ -148,6 +148,7 @@
     "ini",
     "init-package-json",
     "is-cidr",
+    "leven",
     "libnpmaccess",
     "libnpmfund",
     "libnpmhook",
@@ -159,7 +160,6 @@
     "libnpmversion",
     "lockfile",
     "make-fetch-happen",
-    "meant",
     "mkdirp",
     "mkdirp-infer-owner",
     "ms",
