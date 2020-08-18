@@ -119,7 +119,7 @@ class MockConfig {
   }
 }
 
-const flatOptions = require('../../../lib/config/flat-options.js')
+const flatOptions = require('../../../lib/utils/flat-options.js')
 t.match(logs, [[
   'verbose',
   'npm-session',

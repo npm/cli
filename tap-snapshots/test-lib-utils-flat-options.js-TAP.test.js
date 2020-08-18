@@ -5,7 +5,7 @@
  * Make sure to inspect the output below.  Do not ignore changes!
  */
 'use strict'
-exports[`test/lib/config/flat-options.js TAP basic > flat options 1`] = `
+exports[`test/lib/utils/flat-options.js TAP basic > flat options 1`] = `
 Object {
   "@scope:registry": "@scope:registry",
   "//nerf.dart:_authToken": "//nerf.dart:_authToken",
