@@ -5,7 +5,7 @@
  * Make sure to inspect the output below.  Do not ignore changes!
  */
 'use strict'
-exports[`test/lib/config/cmd-list.js TAP > must match snapshot 1`] = `
+exports[`test/lib/utils/cmd-list.js TAP > must match snapshot 1`] = `
 Object {
   "affordances": Object {
     "add": "install",

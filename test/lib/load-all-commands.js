@@ -1,7 +1,7 @@
 // just for gathering coverage info
 const npm = require('../../lib/npm.js')
 const t = require('tap')
-const { cmdList } = require('../../lib/config/cmd-list.js')
+const { cmdList } = require('../../lib/utils/cmd-list.js')
 
 t.test('load npm', t => npm.load(er => {
   if (er) {
