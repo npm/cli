@@ -231,7 +231,7 @@
     "lint": "npm run eslint -- \"lib/**/*.js\"",
     "lintfix": "npm run lint -- --fix",
     "prelint": "rimraf test/npm_cache*",
-    "resetdeps": "rm -rf node_modules && git checkout node_modules && node . i --ignore-scripts --no-audit && node scripts/bundle-and-gitignore-deps.js"
+    "resetdeps": "bash scripts/resetdeps.sh"
   },
   "//": [
     "XXX temporarily only run unit tests while v7 beta is in progress",
