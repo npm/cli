@@ -1,6 +1,6 @@
 {
   "name": "read-package-json",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "author": "Isaac Z. Schlueter <i@izs.me> (http://blog.izs.me/)",
   "description": "The thing npm uses to read package.json files with semantics and defaults and validation",
   "repository": {
@@ -17,17 +17,14 @@
   },
   "dependencies": {
     "glob": "^7.1.1",
-    "json-parse-better-errors": "^1.0.1",
     "normalize-package-data": "^2.0.0",
-    "npm-normalize-package-bin": "^1.0.0"
+    "npm-normalize-package-bin": "^1.0.0",
+    "json-parse-even-better-errors": "^2.3.0"
   },
   "devDependencies": {
     "standard": "^11.0.0",
     "standard-version": "^4.3.0",
     "tap": "^11.1.2"
-  },
-  "optionalDependencies": {
-    "graceful-fs": "^4.1.2"
   },
   "license": "ISC",
   "files": [
