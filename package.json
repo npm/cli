@@ -94,7 +94,7 @@
     "once": "~1.4.0",
     "opener": "^1.5.1",
     "pacote": "^11.1.10",
-    "parse-conflict-json": "^1.1.0",
+    "parse-conflict-json": "^1.1.1",
     "qrcode-terminal": "^0.12.0",
     "read": "~1.0.7",
     "read-package-json": "^2.1.1",

@@ -62,11 +62,28 @@ class JSONParseError extends SyntaxError {
   get [Symbol.toStringTag] () { return this.constructor.name }
 }
 
+const kIndent = Symbol.for('indent')
+const kNewline = Symbol.for('newline')
+// only respect indentation if we got a line break, otherwise squash it
+// things other than objects and arrays aren't indented, so ignore those
+const formatRE = /^\s*[{\[]((?:\r?\n)+)([\s\t]*)/
+
 const parseJson = (txt, reviver, context) => {
   const parseText = stripBOM(txt)
   context = context || 20
   try {
-    return JSON.parse(parseText, reviver)
+    // get the indentation so that we can save it back nicely
+    // if the file starts with {" then we have an indent of '', ie, none
+    // otherwise, pick the indentation of the next line after the first \n
+    // If the pattern doesn't match, then it means no indentation.
+    // JSON.stringify ignores symbols, so this is reasonably safe.
+    const [, newline, indent] = parseText.match(formatRE) || [, '', '']
+    const result = JSON.parse(parseText, reviver)
+    if (result && typeof result === 'object') {
+      result[kNewline] = newline
+      result[kIndent] = indent
+    }
+    return result
   } catch (e) {
     if (typeof txt !== 'string' && !Buffer.isBuffer(txt)) {
       const isEmptyArray = Array.isArray(txt) && txt.length === 0

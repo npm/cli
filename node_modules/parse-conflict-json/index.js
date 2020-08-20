@@ -1,4 +1,4 @@
-const parseJSON = require('json-parse-better-errors')
+const parseJSON = require('json-parse-even-better-errors')
 const { diff } = require('just-diff')
 const { diffApply } = require('just-diff-apply')
 

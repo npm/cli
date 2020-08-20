@@ -1,6 +1,6 @@
 {
   "name": "json-parse-even-better-errors",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "JSON.parse with context information on error",
   "main": "index.js",
   "files": [
