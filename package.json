@@ -117,7 +117,8 @@
     "write-file-atomic": "^2.4.3",
     "make-fetch-happen": "^8.0.9",
     "leven": "^3.1.0",
-    "@npmcli/config": "^1.1.5"
+    "@npmcli/config": "^1.1.5",
+    "read-package-json-fast": "^1.2.1"
   },
   "bundleDependencies": [
     "@npmcli/arborist",
@@ -179,6 +180,7 @@
     "qrcode-terminal",
     "read",
     "read-package-json",
+    "read-package-json-fast",
     "request",
     "retry",
     "rimraf",
