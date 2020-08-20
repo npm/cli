@@ -596,27 +596,27 @@ class Config {
     const creds = {}
 
     // you can set always-auth for a single registry, or as a default
-    const alwaysAuthReg = this[_get](`${nerfed}:always-auth`)
+    const alwaysAuthReg = this.get(`${nerfed}:always-auth`)
     if (alwaysAuthReg !== undefined)
       creds.alwaysAuth = !!alwaysAuthReg
     else
-      creds.alwaysAuth = this[_get]('always-auth')
+      creds.alwaysAuth = this.get('always-auth')
 
-    const email = this[_get](`${nerfed}:email`) || this[_get]('email')
+    const email = this.get(`${nerfed}:email`) || this.get('email')
     if (email)
       creds.email = email
 
-    const tokenReg = this[_get](`${nerfed}:_authToken`) ||
-      this[_get](`${nerfed}:-authtoken`) ||
-      nerfed === nerfDart(this[_get]('registry')) && this[_get]('_authToken')
+    const tokenReg = this.get(`${nerfed}:_authToken`) ||
+      this.get(`${nerfed}:-authtoken`) ||
+      nerfed === nerfDart(this.get('registry')) && this.get('_authToken')
 
     if (tokenReg) {
       creds.token = tokenReg
       return creds
     }
 
-    const userReg = this[_get](`${nerfed}:username`)
-    const passReg = this[_get](`${nerfed}:_password`)
+    const userReg = this.get(`${nerfed}:username`)
+    const passReg = this.get(`${nerfed}:_password`)
     if (userReg && passReg) {
       creds.username = userReg
       creds.password = Buffer.from(passReg, 'base64').toString('utf8')
@@ -627,12 +627,12 @@ class Config {
 
     // at this point, we can only use the values if the URI is the
     // default registry.
-    const defaultNerf = nerfDart(this[_get]('registry'))
+    const defaultNerf = nerfDart(this.get('registry'))
     if (nerfed !== defaultNerf)
       return creds
 
-    const userDef = this[_get]('username')
-    const passDef = this[_get]('_password')
+    const userDef = this.get('username')
+    const passDef = this.get('_password')
     if (userDef && passDef) {
       creds.username = userDef
       creds.password = Buffer.from(passDef, 'base64').toString('utf8')
@@ -643,7 +643,7 @@ class Config {
 
     // Handle the old-style _auth=<base64> style for the default
     // registry, if set.
-    const auth = this[_get]('_auth')
+    const auth = this.get('_auth')
     if (!auth)
       return creds
 

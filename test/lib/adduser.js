@@ -1,7 +1,7 @@
 const requireInject = require('require-inject')
 const { test } = require('tap')
-const getCredentialsByURI = require('../../lib/config/get-credentials-by-uri.js')
-const setCredentialsByURI = require('../../lib/config/set-credentials-by-uri.js')
+const { getCredentialsByURI, setCredentialsByURI } =
+  require('@npmcli/config').prototype
 
 let result = ''
 
@@ -24,6 +24,12 @@ const authDummy = () => Promise.resolve({
   }
 })
 
+const deleteMock = (key, where) => {
+  deletedConfig = {
+    ...deletedConfig,
+    [key]: where
+  }
+}
 const adduser = requireInject('../../lib/adduser.js', {
   npmlog: {
     disableProgress: () => null
@@ -31,23 +37,18 @@ const adduser = requireInject('../../lib/adduser.js', {
   '../../lib/npm.js': {
     flatOptions: _flatOptions,
     config: {
-      del (key, where) {
-        deletedConfig = {
-          ...deletedConfig,
-          [key]: where
-        }
-      },
+      del: deleteMock,
+      delete: deleteMock,
       get (key, where) {
         if (!where || where === 'user') {
           return _flatOptions[key]
         }
       },
       getCredentialsByURI,
-      save (_, cb) {
+      async save () {
         if (failSave) {
-          return cb(new Error('error saving user config'))
+          throw new Error('error saving user config')
         }
-        cb()
       },
       set (key, value, where) {
         setConfig = {
@@ -73,6 +74,13 @@ test('simple login', (t) => {
       deletedConfig,
       {
         _token: 'user',
+        _password: 'user',
+        username: 'user',
+        email: 'user',
+        _auth: 'user',
+        _authtoken: 'user',
+        _authToken: 'user',
+        '//registry.npmjs.org/:-authtoken': undefined,
         '//registry.npmjs.org/:_authToken': 'user'
       },
       'should delete token in user config'
