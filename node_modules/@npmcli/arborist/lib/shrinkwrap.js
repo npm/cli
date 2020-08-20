@@ -259,6 +259,7 @@ class Shrinkwrap {
     const {
       path,
       indent = 2,
+      newline = '\n',
       shrinkwrapOnly = false,
       hiddenLockfile = false,
     } = options
@@ -268,6 +269,7 @@ class Shrinkwrap {
     this.filename = null
     this.data = null
     this.indent = indent
+    this.newline = newline
     this.loadedFromDisk = false
     this.type = null
     this.yarnLock = null
@@ -354,12 +356,6 @@ class Shrinkwrap {
     // only npm-shrinkwrap.json.
     return this[_maybeRead]().then(([sw, lock, yarn]) => {
       const data = lock || sw || ''
-      // don't use detect-indent, just pick the first line.
-      // if the file starts with {" then we have an indent of '', ie, none
-      // which will default to 2 at save time.
-      const indent = data.match(/^\{\n?([\s\t]*)"/)
-      if (indent)
-        this.indent = indent[1]
 
       // use shrinkwrap only for deps, otherwise prefer package-lock
       // and ignore npm-shrinkwrap if both are present.
@@ -380,6 +376,16 @@ class Shrinkwrap {
 
       return data ? parseJSON(data) : {}
     }).then(async data => {
+      // don't use detect-indent, just pick the first line.
+      // if the file starts with {" then we have an indent of '', ie, none
+      // which will default to 2 at save time.
+      const {
+        [Symbol.for('indent')]: indent,
+        [Symbol.for('newline')]: newline,
+      } = data
+      this.indent = indent !== undefined ? indent : this.indent
+      this.newline = newline !== undefined ? newline : this.newline
+
       if (!this.hiddenLockfile || !data.packages)
         return data
 
@@ -392,6 +398,7 @@ class Shrinkwrap {
     }).catch(er => {
       this.loadingError = er
       this.loadedFromDisk = false
+      this.ancientLockfile = false
       return {}
     }).then(lock => {
       this.data = {
@@ -402,6 +409,9 @@ class Shrinkwrap {
         ...(this.hiddenLockfile ? {} : {dependencies: lock.dependencies || {}}),
       }
       this.originalLockfileVersion = lock.lockfileVersion
+      this.ancientLockfile = this.loadedFromDisk &&
+        !(lock.lockfileVersion >= 2) && !lock.requires
+
       // load old lockfile deps into the packages listing
       if (lock.dependencies && !lock.packages) {
         return rpj(this.path + '/package.json').then(pkg => pkg, er => ({}))
@@ -905,7 +915,9 @@ class Shrinkwrap {
 
     const { format = true } = options
     const indent = format ? this.indent || 2 : 0
-    const json = stringify(this.commit(), swKeyOrder, indent)
+    const eol = format ? this.newline || '\n' : ''
+    const data = this.commit()
+    const json = stringify(data, swKeyOrder, indent).replace(/\n/g, eol)
     return Promise.all([
       writeFile(this.filename, json).catch(er => {
         if (this.hiddenLockfile) {

@@ -16,6 +16,7 @@ const loadFromShrinkwrap = Symbol('loadFromShrinkwrap')
 const resolveNodes = Symbol('resolveNodes')
 const resolveLinks = Symbol('resolveLinks')
 const assignParentage = Symbol('assignParentage')
+const loadRoot = Symbol('loadRoot')
 const loadNode = Symbol('loadVirtualNode')
 const loadLink = Symbol('loadVirtualLink')
 const loadWorkspaces = Symbol('loadWorkspaces')
@@ -29,7 +30,7 @@ module.exports = cls => class VirtualLoader extends cls {
   }
 
   // public method
-  loadVirtual (options = {}) {
+  async loadVirtual (options = {}) {
     if (this.virtualTree)
       return Promise.resolve(this.virtualTree)
 
@@ -40,23 +41,25 @@ module.exports = cls => class VirtualLoader extends cls {
     if (options.root && options.root.meta)
       return this[loadFromShrinkwrap](options.root.meta, options.root)
 
-    return Shrinkwrap.load({ path: this.path }).then(s => {
-      if (!s.loadedFromDisk && !options.root) {
-        const er = new Error('loadVirtual requires existing shrinkwrap file')
-        throw Object.assign(er, { code: 'ENOLOCK' })
-      }
+    const s = await Shrinkwrap.load({ path: this.path })
+    if (!s.loadedFromDisk && !options.root) {
+      const er = new Error('loadVirtual requires existing shrinkwrap file')
+      throw Object.assign(er, { code: 'ENOLOCK' })
+    }
 
-      // when building the ideal tree, we pass in a root node to this function
-      // otherwise, load it from the root package in the lockfile
-      const {
-        root = this[loadWorkspaces](
-          this[loadNode]('', s.data.packages[''] || {}),
-          s
-        )
-      } = options
+    // when building the ideal tree, we pass in a root node to this function
+    // otherwise, load it from the root package json or the lockfile
+    const {
+      root = this[loadWorkspaces](await this[loadRoot](s), s),
+    } = options
 
-      return this[loadFromShrinkwrap](s, root)
-    })
+    return this[loadFromShrinkwrap](s, root)
+  }
+
+  async [loadRoot] (s) {
+    const pj = this.path + '/package.json'
+    const pkg = await rpj(pj).catch(() => s.data.packages['']) || {}
+    return this[loadNode]('', pkg)
   }
 
   async [loadFromShrinkwrap] (s, root) {
