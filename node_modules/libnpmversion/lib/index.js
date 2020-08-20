@@ -1,4 +1,4 @@
-const readJson = require('./read-json.js')
+const readJson = require('read-package-json-fast')
 const version = require('./version.js')
 const proclog = require('./proc-log.js')
 
