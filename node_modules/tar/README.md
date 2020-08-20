@@ -774,7 +774,7 @@ It has the following fields:
   if it represents a filesystem object.
 - All the fields from the header, extended header, and global extended
   header are added to the ReadEntry object.  So it has `path`, `type`,
-  `size, `mode`, and so on.
+  `size`, `mode`, and so on.
 
 #### constructor(header, extended, globalExtended)
 
