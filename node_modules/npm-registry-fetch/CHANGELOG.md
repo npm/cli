@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [8.1.4](https://github.com/npm/registry-fetch/compare/v8.1.3...v8.1.4) (2020-08-17)
+
+
+### Bug Fixes
+
+* redact passwords from http logs ([3c294eb](https://github.com/npm/registry-fetch/commit/3c294ebbd7821725db4ff1bc5fe368c49613efcc))
+
 ### [8.1.3](https://github.com/npm/registry-fetch/compare/v8.1.2...v8.1.3) (2020-07-21)
 
 ### [8.1.2](https://github.com/npm/registry-fetch/compare/v8.1.1...v8.1.2) (2020-07-11)

@@ -33,9 +33,13 @@ function logRequest (method, res, startTime, opts) {
 
   let urlStr
   try {
+    const { URL } = require('url')
     const url = new URL(res.url)
-    urlStr = res.url.replace(url.password, '***')
-  } catch {
+    if (url.password) {
+      url.password = '***'
+    }
+    urlStr = url.toString()
+  } catch (er) {
     urlStr = res.url
   }
 
