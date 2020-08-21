@@ -37,7 +37,6 @@ const adduser = requireInject('../../lib/adduser.js', {
   '../../lib/npm.js': {
     flatOptions: _flatOptions,
     config: {
-      del: deleteMock,
       delete: deleteMock,
       get (key, where) {
         if (!where || where === 'user') {
