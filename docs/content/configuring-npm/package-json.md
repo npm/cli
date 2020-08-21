@@ -825,8 +825,8 @@ module will run on:
 "os" : [ "darwin", "linux" ]
 ```
 
-You can also blacklist instead of whitelist operating systems,
-just prepend the blacklisted os with a '!':
+You can also block instead of allowing operating systems,
+just prepend the blocked os with a '!':
 
 ```json
 "os" : [ "!win32" ]
@@ -834,7 +834,7 @@ just prepend the blacklisted os with a '!':
 
 The host operating system is determined by `process.platform`
 
-It is allowed to both blacklist, and whitelist, although there isn't any
+It is allowed to both block and allow an item, although there isn't any
 good reason to do this.
 
 ### cpu
@@ -846,7 +846,7 @@ you can specify which ones.
 "cpu" : [ "x64", "ia32" ]
 ```
 
-Like the `os` option, you can also blacklist architectures:
+Like the `os` option, you can also block architectures:
 
 ```json
 "cpu" : [ "!arm", "!mips" ]
