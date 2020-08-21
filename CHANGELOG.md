@@ -1,3 +1,66 @@
+## v7.0.0-beta.6 (2020-08-21)
+
+* [`707207bdd`](https://github.com/npm/cli/commit/707207bddb2900d6f7a57ff864cef26cda75a71a)
+  add `@npmcli/config` dependency
+
+* [`5cb9a1d4d`](https://github.com/npm/cli/commit/5cb9a1d4d985aaa8e988c51fe5ae7f7ed3602811)
+  [#1688](https://github.com/npm/cli/pull/1688) use `@npmcli/config` for
+  configuration ([@isaacs](https://github.com/isaacs))
+
+* [`a4295f5db`](https://github.com/npm/cli/commit/a4295f5db7667e8cc6b83abdad168619ad31a12f)
+  `npm-registry-fetch@8.1.4`:
+
+    * Redact passwords from HTTP logs
+
+* [`a5a6a516d`](https://github.com/npm/cli/commit/a5a6a516d16828c1375eaf41d04468d919df4a57)
+  `json-parse-even-better-errors@2.3.0`:
+
+    * Adds support for indentation/newline formatting preservation
+
+* [`a14054558`](https://github.com/npm/cli/commit/a1405455843db1b14938596303b29fb3ad4f90f0)
+  `read-package-json-fast@1.2.1`:
+
+    * Adds support for indentation/newline formatting preservation
+
+* [`f8603c8af`](https://github.com/npm/cli/commit/f8603c8affefc342d81c109e4676d498a8359b78)
+  `libnpmversion@1.0.4`:
+
+    * Adds support for indentation/newline formatting preservation
+
+* [`9891fa71c`](https://github.com/npm/cli/commit/9891fa71c88f425bef8d881c3795e5823d732e1f)
+  `read-package-json@2.1.2`:
+
+    * Adds support for indentation/newline formatting preservation
+
+* [`b44768aac`](https://github.com/npm/cli/commit/b44768aace0e9c938ebd6d05a5de1cc4368e2d7d)
+  [#1662](https://github.com/npm/cli/issues/1662)
+  [#1693](https://github.com/npm/cli/issues/1693)
+  [#1690](https://github.com/npm/cli/issues/1690)
+  `@npmcli/arborist@0.0.17`:
+
+    * Load root project `package.json` when running loadVirtual.
+    * Fetch metadata from registry when loading tree from outdated
+      package-lock.json file.  This avoids a situation where a lockfile or
+      shrinkwrap from npm v5 would result in deleting dependencies on
+      install.
+    * Preserve `package.json` and `package-lock.json` formatting in all
+      places where these files are written.
+
+* [`281da6fdc`](https://github.com/npm/cli/commit/281da6fdcda3fb3860b73ed35daa234ad228c363)
+  `tar@6.0.5`
+
+* [`1faa5b33d`](https://github.com/npm/cli/commit/1faa5b33dcc6d7e4eba1c0d85ad30cf0c237c9e1)
+  [#1655](https://github.com/npm/cli/issues/1655) show usage when
+  `help-search` finds no results
+
+* [`10fcff73a`](https://github.com/npm/cli/commit/10fcff73a3381ea5e6dcb03888679ae4b501d2f0)
+  [#1695](https://github.com/npm/cli/issues/1695) fix `pulseWhileDone`
+  promise handling
+
+* [`88e4241c5`](https://github.com/npm/cli/commit/88e4241c5d4f512a4e2b09d26fcdcc7f877e65ed)
+  [#1698](https://github.com/npm/cli/pull/1698) add lib/logout.js unit
+  tests ([@ruyadorno](https://github.com/ruyadorno))
+
 ## v7.0.0-beta.5 (2020-08-18)
 
 * [`b718b0e28`](https://github.com/npm/cli/commit/b718b0e2844d9244cc63667f62ccf81864cc1092)
