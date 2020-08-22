@@ -31,5 +31,5 @@ ex. steps to reproduce the behavior:
 ex.
 - OS: Ubuntu 20.04
 - Node: 13.14.0
-- NPM: 6.4.12
+- npm: 6.4.12
 -->
