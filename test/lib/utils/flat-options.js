@@ -17,7 +17,7 @@ class Mocknpm {
     this.color = true
     this.projectScope = '@npmcli'
     this.tmp = '/tmp'
-    this.command = 'test'
+    this.command = null
     this.globalPrefix = '/usr/local'
     this.localPrefix = '/path/to/npm/cli'
     this.prefix = this.localPrefix
@@ -138,6 +138,9 @@ t.test('basic', t => {
     cache: generatedFlat.cache.replace(/\\/g, '/')
   }
   t.matchSnapshot(clean, 'flat options')
+  t.equal(generatedFlat.npmCommand, null, 'command not set yet')
+  npm.command = 'view'
+  t.equal(generatedFlat.npmCommand, 'view', 'command updated via getter')
   t.equal(generatedFlat.npmBin, require.main.filename)
   // test the object is frozen
   generatedFlat.newField = 'asdf'

@@ -67,7 +67,7 @@ Object {
   "nodeBin": "/path/to/some/node",
   "nodeVersion": "1.2.3",
   "npmBin": "/path/to/npm/bin.js",
-  "npmCommand": "test",
+  "npmCommand": null,
   "npmSession": "12345",
   "npmVersion": "7.6.5",
   "offline": "offline",
