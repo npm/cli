@@ -223,6 +223,45 @@ t.test('run pre/post hooks', async t => {
   RUN_SCRIPTS.length = 0
 })
 
+t.test('skip pre/post hooks when using ignoreScripts', async t => {
+  npm.flatOptions.ignoreScripts = true
+
+  npm.localPrefix = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'x',
+      version: '1.2.3',
+      scripts: {
+        preenv: 'echo before the env',
+        postenv: 'echo after the env'
+      }
+    })
+  })
+
+  await runScript(['env'], er => {
+    if (er) {
+      throw er
+    }
+    t.deepEqual(RUN_SCRIPTS, [
+      {
+        path: npm.localPrefix,
+        args: [],
+        scriptShell: undefined,
+        stdio: 'inherit',
+        stdioString: true,
+        pkg: { name: 'x', version: '1.2.3', _id: 'x@1.2.3', scripts: {
+          preenv: 'echo before the env',
+          postenv: 'echo after the env',
+          env: 'env'
+        } },
+        event: 'env'
+      }
+    ])
+
+    delete npm.flatOptions.ignoreScripts
+  })
+  RUN_SCRIPTS.length = 0
+})
+
 t.test('run silent', async t => {
   npmlog.level = 'silent'
   t.teardown(() => { npmlog.level = 'warn' })
