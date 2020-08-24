@@ -323,6 +323,9 @@ t.test('npm.load', t => {
       ])
       t.same(consoleLogs, [['@foo']])
     })
+
+    // need this here or node 10 will improperly end the promise ahead of time
+    await new Promise((res) => setTimeout(res))
   })
 
   t.end()
