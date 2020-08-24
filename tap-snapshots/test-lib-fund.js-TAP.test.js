@@ -82,3 +82,13 @@ no-funding-package@0.0.0
 
 
 `
+
+exports[`test/lib/fund.js TAP sub dep with fund info and a parent with no funding info > should nest sub dep as child of root 1`] = `
+test-multiple-funding-sources@1.0.0
++-- http://example.com/b
+|   \`-- b@1.0.0
+\`-- http://example.com/c
+    \`-- c@1.0.0
+
+
+`

@@ -190,7 +190,7 @@ const _flatOptions = {
   unicode: false,
   which: undefined
 }
-let openUrl = (url, msg, cb) => {
+const openUrl = (url, msg, cb) => {
   if (url === 'http://npmjs.org') {
     cb(new Error('ERROR'))
     return
@@ -212,7 +212,7 @@ const fund = requireInject('../../lib/fund.js', {
   },
   '../../lib/utils/open-url.js': openUrl,
   '../../lib/utils/output.js': msg => { result += msg + '\n' },
-  'pacote': {
+  pacote: {
     manifest: (arg) => arg.name === 'ntl'
       ? Promise.resolve({
         funding: 'http://example.com/pacote'
@@ -220,7 +220,6 @@ const fund = requireInject('../../lib/fund.js', {
       : Promise.reject(new Error('ERROR'))
   }
 })
-
 
 test('fund with no package containing funding', t => {
   _flatOptions.prefix = t.testdir({
@@ -472,7 +471,7 @@ test('fund using symlink ref', t => {
       name: 'using-symlink-ref',
       version: '1.0.0'
     }),
-    'a': {
+    a: {
       'package.json': JSON.stringify({
         name: 'a',
         version: '1.0.0',
@@ -497,6 +496,8 @@ test('fund using symlink ref', t => {
 
     // using target ref
     fund(['./a'], (err) => {
+      t.ifError(err, 'should not error out')
+
       t.match(
         printUrl,
         'http://example.com/a',
@@ -779,7 +780,7 @@ test('fund colors', t => {
           version: '1.0.0',
           funding: 'http://example.com/e'
         })
-      },
+      }
     }
   })
   _flatOptions.color = true
@@ -790,6 +791,55 @@ test('fund colors', t => {
 
     result = ''
     _flatOptions.color = false
+    t.end()
+  })
+})
+
+test('sub dep with fund info and a parent with no funding info', t => {
+  _flatOptions.prefix = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'test-multiple-funding-sources',
+      version: '1.0.0',
+      dependencies: {
+        a: '^1.0.0',
+        b: '^1.0.0'
+      }
+    }),
+    node_modules: {
+      a: {
+        'package.json': JSON.stringify({
+          name: 'a',
+          version: '1.0.0',
+          dependencies: {
+            c: '^1.0.0'
+          }
+        })
+      },
+      b: {
+        'package.json': JSON.stringify({
+          name: 'b',
+          version: '1.0.0',
+          funding: 'http://example.com/b'
+        })
+      },
+      c: {
+        'package.json': JSON.stringify({
+          name: 'c',
+          version: '1.0.0',
+          funding: [
+            'http://example.com/c',
+            'http://example.com/c-other'
+          ]
+        })
+      }
+    }
+  })
+
+  fund([], (err) => {
+    t.ifError(err, 'should not error out')
+    t.matchSnapshot(result, 'should nest sub dep as child of root')
+
+    result = ''
     t.end()
   })
 })
