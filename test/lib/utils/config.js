@@ -28,6 +28,7 @@ const os = { networkInterfaces, tmpdir }
 t.test('working network interfaces, not windows', t => {
   const config = requireInject('../../../lib/utils/config.js', {
     os,
+    '@npmcli/ci-detect': () => false,
     '../../../lib/utils/is-windows.js': false
   })
   t.matchSnapshot(config)
@@ -37,6 +38,7 @@ t.test('working network interfaces, not windows', t => {
 t.test('no working network interfaces, on windows', t => {
   const config = requireInject('../../../lib/utils/config.js', {
     os: { tmpdir, networkInterfaces: networkInterfacesThrow },
+    '@npmcli/ci-detect': () => false,
     '../../../lib/utils/is-windows.js': true
   })
   t.matchSnapshot(config)
@@ -60,6 +62,7 @@ t.test('no process.umask() method', t => {
   })
   const config = requireInject('../../../lib/utils/config.js', {
     os: { tmpdir, networkInterfaces: networkInterfacesThrow },
+    '@npmcli/ci-detect': () => false,
     '../../../lib/utils/is-windows.js': true
   })
   t.equal(config.defaults.umask, 0o22)
@@ -71,6 +74,7 @@ t.test('no comspec on windows', t => {
   delete process.env.ComSpec
   const config = requireInject('../../../lib/utils/config.js', {
     os: { tmpdir, networkInterfaces: networkInterfacesThrow },
+    '@npmcli/ci-detect': () => false,
     '../../../lib/utils/is-windows.js': true
   })
   t.equal(config.defaults.shell, 'cmd')
@@ -81,6 +85,7 @@ t.test('no shell on posix', t => {
   delete process.env.SHELL
   const config = requireInject('../../../lib/utils/config.js', {
     os,
+    '@npmcli/ci-detect': () => false,
     '../../../lib/utils/is-windows.js': false
   })
   t.equal(config.defaults.shell, 'bash')
@@ -91,6 +96,7 @@ t.test('no EDITOR env, use VISUAL', t => {
   delete process.env.EDITOR
   const config = requireInject('../../../lib/utils/config.js', {
     os,
+    '@npmcli/ci-detect': () => false,
     '../../../lib/utils/is-windows.js': false
   })
   t.equal(config.defaults.editor, 'mate')
@@ -101,6 +107,7 @@ t.test('no VISUAL, use system default, not windows', t => {
   delete process.env.VISUAL
   const config = requireInject('../../../lib/utils/config.js', {
     os,
+    '@npmcli/ci-detect': () => false,
     '../../../lib/utils/is-windows.js': false
   })
   t.equal(config.defaults.editor, 'vi')
@@ -111,6 +118,7 @@ t.test('no VISUAL, use system default, not windows', t => {
   delete process.env.VISUAL
   const config = requireInject('../../../lib/utils/config.js', {
     os,
+    '@npmcli/ci-detect': () => false,
     '../../../lib/utils/is-windows.js': true
   })
   t.equal(config.defaults.editor, 'notepad.exe')
