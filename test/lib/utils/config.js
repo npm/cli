@@ -18,6 +18,10 @@ t.formatSnapshot = obj => {
   }
   return {
     ...obj,
+    defaults: {
+      ...obj.defaults,
+      cache: '{CACHE DIR} ' + path.basename(obj.defaults.cache)
+    },
     types: formatTypes(obj.types)
   }
 }
