@@ -1,3 +1,20 @@
+## v7.0.0-beta.7 (2020-08-25)
+
+* [`b38f68acd`](https://github.com/npm/cli/commit/b38f68acd9292b7432c936db3b6d2d12e896f45d)
+  ensure `npm-command` HTTP header is sent properly
+* [`9f200abb9`](https://github.com/npm/cli/commit/9f200abb94ea2127d9a104c225159b1b7080c82c)
+  Properly exit with error status code
+* [`aa0152b58`](https://github.com/npm/cli/commit/aa0152b58f34f8cdae05be63853c6e0ace03236a)
+  [#1719](https://github.com/npm/cli/pull/1719) Detect CI properly
+* [`50f9740ca`](https://github.com/npm/cli/commit/50f9740ca8000b1c4bd3155bf1bc3d58fb6f0e20)
+  [#1717](https://github.com/npm/cli/pull/1717) fund with multiple funding
+  sources ([@ruyadorno](https://github.com/ruyadorno))
+* [`3a63ecb6f`](https://github.com/npm/cli/commit/3a63ecb6f6a0b235660f73a3ffa329b1f131b0c3)
+  [#1718](https://github.com/npm/cli/pull/1718)
+  [RFC-0029](https://github.com/npm/rfcs/blob/latest/accepted/0029-add-ability-to-skip-hooks.md)
+  add ability to skip pre/post hooks to `npm run-script` by using
+  `--ignore-scripts` ([@ruyadorno](https://github.com/ruyadorno))
+
 ## v7.0.0-beta.6 (2020-08-21)
 
 * [`707207bdd`](https://github.com/npm/cli/commit/707207bddb2900d6f7a57ff864cef26cda75a71a)
