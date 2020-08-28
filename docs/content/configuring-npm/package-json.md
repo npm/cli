@@ -823,8 +823,8 @@ module will run on:
 "os" : [ "darwin", "linux" ]
 ```
 
-You can also denylist instead of allowlist operating systems,
-just prepend the denylisted os with a '!':
+You can also block instead of allowing operating systems,
+just prepend the blocked os with a '!':
 
 ```json
 "os" : [ "!win32" ]
