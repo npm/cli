@@ -832,7 +832,7 @@ just prepend the blocked os with a '!':
 
 The host operating system is determined by `process.platform`
 
-It is allowed to both denylist, and allowlist, although there isn't any
+It is allowed to both block and allow an item, although there isn't any
 good reason to do this.
 
 ### cpu
