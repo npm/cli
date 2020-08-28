@@ -844,7 +844,7 @@ you can specify which ones.
 "cpu" : [ "x64", "ia32" ]
 ```
 
-Like the `os` option, you can also denylist architectures:
+Like the `os` option, you can also block architectures:
 
 ```json
 "cpu" : [ "!arm", "!mips" ]
