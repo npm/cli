@@ -23,7 +23,8 @@ const npm = {
   flatOptions: {
     yes: true,
     call: '',
-    package: []
+    package: [],
+    legacyPeerDeps: false
   },
   localPrefix: 'local-prefix',
   config: {
@@ -87,6 +88,7 @@ t.afterEach(cb => {
   READ.length = 0
   READ_RESULT = ''
   READ_ERROR = null
+  npm.flatOptions.legacyPeerDeps = false
   npm.flatOptions.package = []
   npm.flatOptions.call = ''
   cb()
@@ -151,7 +153,7 @@ t.test('npm exec foo, not present locally or in central loc', async t => {
   })
   t.strictSame(MKDIRPS, [installDir], 'need to make install dir')
   t.match(ARB_CTOR, [ { package: ['foo'], path } ])
-  t.strictSame(ARB_REIFY, [{add: ['foo@']}], 'need to install foo@')
+  t.match(ARB_REIFY, [{add: ['foo@'], legacyPeerDeps: false}], 'need to install foo@')
   t.equal(PROGRESS_ENABLED, true, 'progress re-enabled')
   const PATH = `${resolve(installDir, 'node_modules', '.bin')}${delimiter}${process.env.PATH}`
   t.match(RUN_SCRIPTS, [{
@@ -190,7 +192,7 @@ t.test('npm exec foo, not present locally but in central loc', async t => {
   })
   t.strictSame(MKDIRPS, [installDir], 'need to make install dir')
   t.match(ARB_CTOR, [ { package: ['foo'], path } ])
-  t.strictSame(ARB_REIFY, [], 'no need to install again, already there')
+  t.match(ARB_REIFY, [], 'no need to install again, already there')
   t.equal(PROGRESS_ENABLED, true, 'progress re-enabled')
   const PATH = `${resolve(installDir, 'node_modules', '.bin')}${delimiter}${process.env.PATH}`
   t.match(RUN_SCRIPTS, [{
@@ -229,7 +231,7 @@ t.test('npm exec foo, present locally but wrong version', async t => {
   })
   t.strictSame(MKDIRPS, [installDir], 'need to make install dir')
   t.match(ARB_CTOR, [ { package: ['foo'], path } ])
-  t.strictSame(ARB_REIFY, [{ add: ['foo@2.x'] }], 'need to add foo@2.x')
+  t.match(ARB_REIFY, [{ add: ['foo@2.x'], legacyPeerDeps: false }], 'need to add foo@2.x')
   t.equal(PROGRESS_ENABLED, true, 'progress re-enabled')
   const PATH = `${resolve(installDir, 'node_modules', '.bin')}${delimiter}${process.env.PATH}`
   t.match(RUN_SCRIPTS, [{
@@ -360,7 +362,7 @@ t.test('run command with 2 packages, need install, verify sort', t => {
       })
       t.strictSame(MKDIRPS, [installDir], 'need to make install dir')
       t.match(ARB_CTOR, [ { package: packages, path } ])
-      t.strictSame(ARB_REIFY, [{add}], 'need to install both packages')
+      t.match(ARB_REIFY, [{add, legacyPeerDeps: false}], 'need to install both packages')
       t.equal(PROGRESS_ENABLED, true, 'progress re-enabled')
       const PATH = `${resolve(installDir, 'node_modules', '.bin')}${delimiter}${process.env.PATH}`
       t.match(RUN_SCRIPTS, [{
@@ -502,7 +504,7 @@ t.test('prompt when installs are needed if not already present', async t => {
   })
   t.strictSame(MKDIRPS, [installDir], 'need to make install dir')
   t.match(ARB_CTOR, [ { package: packages, path } ])
-  t.strictSame(ARB_REIFY, [{add}], 'need to install both packages')
+  t.match(ARB_REIFY, [{add, legacyPeerDeps: false}], 'need to install both packages')
   t.equal(PROGRESS_ENABLED, true, 'progress re-enabled')
   const PATH = `${resolve(installDir, 'node_modules', '.bin')}${delimiter}${process.env.PATH}`
   t.match(RUN_SCRIPTS, [{
@@ -655,4 +657,32 @@ t.test('abort if -n provided', async t => {
   t.equal(PROGRESS_ENABLED, true, 'progress re-enabled')
   t.strictSame(RUN_SCRIPTS, [])
   t.strictSame(READ, [])
+})
+
+t.test('forward legacyPeerDeps opt', async t => {
+  const path = t.testdir()
+  const installDir = resolve('cache-dir/_npx/f7fbba6e0636f890')
+  npm.localPrefix = path
+  ARB_ACTUAL_TREE[path] = {
+    children: new Map()
+  }
+  ARB_ACTUAL_TREE[installDir] = {
+    children: new Map()
+  }
+  MANIFESTS.foo = {
+    name: 'foo',
+    version: '1.2.3',
+    bin: {
+      foo: 'foo'
+    },
+    _from: 'foo@'
+  }
+  npm.flatOptions.yes = true
+  npm.flatOptions.legacyPeerDeps = true
+  await exec(['foo'], er => {
+    if (er) {
+      throw er
+    }
+  })
+  t.match(ARB_REIFY, [{add: ['foo@'], legacyPeerDeps: true}], 'need to install foo@ using legacyPeerDeps opt')
 })
