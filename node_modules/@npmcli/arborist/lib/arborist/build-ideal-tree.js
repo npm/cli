@@ -5,7 +5,6 @@ const pacote = require('pacote')
 const cacache = require('cacache')
 const semver = require('semver')
 const pickManifest = require('npm-pick-manifest')
-const mapWorkspaces = require('@npmcli/map-workspaces')
 const promiseCallLimit = require('promise-call-limit')
 
 const fromPath = require('../from-path.js')
@@ -51,7 +50,6 @@ const _nodeFromSpec = Symbol('nodeFromSpec')
 const _fetchManifest = Symbol('fetchManifest')
 const _problemEdges = Symbol('problemEdges')
 const _manifests = Symbol('manifests')
-const _mapWorkspaces = Symbol('mapWorkspaces')
 const _linkFromSpec = Symbol('linkFromSpec')
 const _loadPeerSet = Symbol('loadPeerSet')
 const _updateNames = Symbol.for('updateNames')
@@ -235,7 +233,6 @@ module.exports = cls => class IdealTreeBuilder extends cls {
         return root
       })
 
-      .then(tree => this[_mapWorkspaces](tree))
       .then(tree => {
         // null the virtual tree, because we're about to hack away at it
         // if you want another one, load another copy.
@@ -268,15 +265,6 @@ module.exports = cls => class IdealTreeBuilder extends cls {
       global: this[_global],
       legacyPeerDeps: this.legacyPeerDeps,
     })
-  }
-
-  [_mapWorkspaces] (node) {
-    return mapWorkspaces({ cwd: node.path, pkg: node.package })
-      .then(workspaces => {
-        if (workspaces.size)
-          node.workspaces = workspaces
-        return node
-      })
   }
 
   // process the add/rm requests by modifying the root node, and the

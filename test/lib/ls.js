@@ -1384,6 +1384,48 @@ t.test('ls', (t) => {
     })
   })
 
+  t.test('loading a tree containing workspaces', (t) => {
+    prefix = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'filter-by-child-of-missing-dep',
+        version: '1.0.0',
+        workspaces: [
+          './a',
+          './b'
+        ]
+      }),
+      node_modules: {
+        a: t.fixture('symlink', '../a'),
+        b: t.fixture('symlink', '../b')
+      },
+      a: {
+        'package.json': JSON.stringify({
+          name: 'a',
+          version: '1.0.0'
+        })
+      },
+      b: {
+        'package.json': JSON.stringify({
+          name: 'b',
+          version: '1.0.0'
+        })
+      }
+    })
+
+    ls([], (err) => {
+      t.ifError(err, 'should NOT have ELSPROBLEMS error code')
+      t.matchSnapshot(redactCwd(result), 'should list workspaces properly')
+
+      // should also be able to filter out one of the workspaces
+      ls(['a'], (err) => {
+        t.ifError(err, 'should NOT have ELSPROBLEMS error code when filter')
+        t.matchSnapshot(redactCwd(result), 'should filter single workspace')
+
+        t.end()
+      })
+    })
+  })
+
   t.end()
 })
 

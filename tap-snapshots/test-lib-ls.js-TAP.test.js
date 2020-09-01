@@ -424,6 +424,19 @@ exports[`test/lib/ls.js TAP ls json read problems > should print empty result 1`
 
 `
 
+exports[`test/lib/ls.js TAP ls loading a tree containing workspaces > should filter single workspace 1`] = `
+filter-by-child-of-missing-dep@1.0.0 {CWD}/ls-ls-loading-a-tree-containing-workspaces
+\`-- a@1.0.0 -> {CWD}/ls-ls-loading-a-tree-containing-workspaces/a
+
+`
+
+exports[`test/lib/ls.js TAP ls loading a tree containing workspaces > should list workspaces properly 1`] = `
+filter-by-child-of-missing-dep@1.0.0 {CWD}/ls-ls-loading-a-tree-containing-workspaces
++-- a@1.0.0 -> {CWD}/ls-ls-loading-a-tree-containing-workspaces/a
+\`-- b@1.0.0 -> {CWD}/ls-ls-loading-a-tree-containing-workspaces/b
+
+`
+
 exports[`test/lib/ls.js TAP ls missing package.json > should log all extraneous deps on error msg 1`] = `
 extraneous: bar@1.0.0 {CWD}/ls-ls-missing-package-json/node_modules/bar
 extraneous: foo@1.0.0 {CWD}/ls-ls-missing-package-json/node_modules/foo
