@@ -1,3 +1,16 @@
+## v7.0.0-beta.8 (2020-09-01)
+
+* [`834e62a0e`](https://github.com/npm/cli/commit/834e62a0e5b76e97cfe9ea3d3188661579ebc874)
+    * fix: npm ls extraneous workspaces
+    * `@npmcli/arborist@0.0.19`
+* [`758b02358`](https://github.com/npm/cli/commit/758b02358613591ea877e26fcdb76e5b1d40f892)
+  [#1739](https://github.com/npm/cli/pull/1739)
+  add full install options to npm exec
+  ([@ruyadorno](https://github.com/ruyadorno))
+* [`2ee7c8a98`](https://github.com/npm/cli/commit/2ee7c8a98cf01225a3c9ac247139243f868e2e03)
+  `@npmcli/config@1.1.7`
+  ([@ruyadorno](https://github.com/ruyadorno))
+
 ## v7.0.0-beta.7 (2020-08-25)
 
 * [`b38f68acd`](https://github.com/npm/cli/commit/b38f68acd9292b7432c936db3b6d2d12e896f45d)
