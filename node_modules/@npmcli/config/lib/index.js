@@ -300,7 +300,7 @@ class Config {
     const prefix = 'npm_config_'
     const conf = Object.create(null)
     for (const [envKey, envVal] of Object.entries(this.env)) {
-      if (!/^npm_config_/i.test(envKey))
+      if (!/^npm_config_/i.test(envKey) || envVal === '')
         continue
       const key = envKey.substr('npm_config_'.length)
         .replace(/(?!^)_/g, '-') // don't replace _ at the start of the key
