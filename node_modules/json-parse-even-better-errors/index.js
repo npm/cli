@@ -66,7 +66,10 @@ const kIndent = Symbol.for('indent')
 const kNewline = Symbol.for('newline')
 // only respect indentation if we got a line break, otherwise squash it
 // things other than objects and arrays aren't indented, so ignore those
+// Important: in both of these regexps, the $1 capture group is the newline
+// or undefined, and the $2 capture group is the indent, or undefined.
 const formatRE = /^\s*[{\[]((?:\r?\n)+)([\s\t]*)/
+const emptyRE = /^(?:\{\}|\[\])((?:\r?\n)+)?$/
 
 const parseJson = (txt, reviver, context) => {
   const parseText = stripBOM(txt)
@@ -77,7 +80,11 @@ const parseJson = (txt, reviver, context) => {
     // otherwise, pick the indentation of the next line after the first \n
     // If the pattern doesn't match, then it means no indentation.
     // JSON.stringify ignores symbols, so this is reasonably safe.
-    const [, newline, indent] = parseText.match(formatRE) || [, '', '']
+    // if the string is '{}' or '[]', then use the default 2-space indent.
+    const [, newline = '\n', indent = '  '] = parseText.match(emptyRE) ||
+      parseText.match(formatRE) ||
+      [, '', '']
+
     const result = JSON.parse(parseText, reviver)
     if (result && typeof result === 'object') {
       result[kNewline] = newline
