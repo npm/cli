@@ -14,6 +14,7 @@
 // If either visit or leave return a Promise for any node, then the
 // walk returns a Promise.
 
+const depthDescent = require('./depth-descent.js')
 const depth = ({
   visit,
   leave,
@@ -22,6 +23,9 @@ const depth = ({
   getChildren,
   tree,
 }) => {
+  if (!leave)
+    return depthDescent({ visit, filter, getChildren, tree })
+
   if (seen.has(tree))
     return seen.get(tree)
 
@@ -56,8 +60,6 @@ const depth = ({
   }
 
   const leaveNode = kids => {
-    if (!leave)
-      return seen.get(tree)
     const res = leave(seen.get(tree), kids)
     seen.set(tree, res)
     // if it's a promise at this point, the caller deals with it

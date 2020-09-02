@@ -46,8 +46,6 @@ const arb = new Arborist({
   // rather unusual pattern:
   '//registry.foo.com:token': 'blahblahblah',
   '//basic.auth.only.foo.com:_auth': 'aXNhYWNzOm5vdCBteSByZWFsIHBhc3N3b3Jk',
-
-  // in fact, ANY config can be scoped to a registry...
   '//registry.foo.com:always-auth': true,
 })
 
