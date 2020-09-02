@@ -12,7 +12,15 @@ const cleanLogs = (done) => {
   done()
 }
 
-const packument = (nv) => {
+const packument = (nv, opts) => {
+  if (!opts.fullMetadata) {
+    throw new Error('must fetch fullMetadata')
+  }
+
+  if (!opts.preferOnline) {
+    throw new Error('must fetch with preferOnline')
+  }
+
   const mocks = {
     'red': {
       'name' : 'red',
