@@ -104,6 +104,7 @@ class MockConfig {
       'cache-max': 'cache-max',
       'cache-min': 'cache-min',
       'strict-ssl': 'strict-ssl',
+      scope: '',
       tag: 'tag',
       'user-agent': 'user-agent',
       '@scope:registry': '@scope:registry',
@@ -182,15 +183,6 @@ t.test('get preferOnline from cache-max', t => {
 t.test('tag emits warning', t => {
   const npm = new Mocknpm({ tag: 'foobar' })
   t.equal(flatOptions(npm).tag, 'foobar', 'tag is foobar')
-  t.match(logs, [])
-  logs.length = 0
-  t.end()
-})
-
-t.test('scope emits warning', t => {
-  const npm = new Mocknpm()
-  logs.length = 0
-  t.equal(flatOptions(npm).scope, '@npmcli')
   t.match(logs, [])
   logs.length = 0
   t.end()
@@ -291,6 +283,7 @@ t.test('various default values and falsey fallbacks', t => {
     'metricsRegistry defaults to registry')
   t.equal(opts.search.limit, 20, 'searchLimit defaults to 20')
   t.equal(opts.savePrefix, '>=', 'save-prefix respected if no save-exact')
+  t.equal(opts.scope, '', 'scope defaults to empty string')
   logs.length = 0
   t.end()
 })
