@@ -96,7 +96,7 @@ Object {
   "saveBundle": false,
   "savePrefix": "",
   "saveType": "peerOptional",
-  "scope": "@npmcli",
+  "scope": "",
   "scriptShell": "script-shell",
   "search": Object {
     "description": "description",
