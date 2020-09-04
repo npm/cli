@@ -1,3 +1,48 @@
+## v7.0.0-beta.9 (2020-09-04)
+
+* [`ef8f5676b`](https://github.com/npm/cli/commit/ef8f5676b1c90dcf44256b8ed1f61ddb6277c23a)
+  [#1757](https://github.com/npm/cli/pull/1757)
+  view: always fetch fullMetadata, and preferOnline
+* [`ac5aa709a`](https://github.com/npm/cli/commit/ac5aa709a8609ec2beb7a8c60b3bde18f882f4e8)
+  [#1758](https://github.com/npm/cli/pull/1758)
+  fix scope config
+* [`a36e2537f`](https://github.com/npm/cli/commit/a36e2537fd4c81df53fb6de01900beb9fa4fa0aa)
+  outdated: don't throw on non-version/tag/range dep
+* [`371f0f062`](https://github.com/npm/cli/commit/371f0f06215ad8caf598c20e3d0d38ff597531e9)
+  `@npmcli/arborist@0.0.20`
+
+  * Provide explanation objects for `ERESOLVE` errors
+  * Support overriding certain classes of `ERESOLVE` errors with `--force`
+  * Detect changes to package.json requiring package-lock dependency flag
+    re-evaluation
+
+* [`2a4e2e9ef`](https://github.com/npm/cli/commit/2a4e2e9efecb7f86147e5071c59cfc2461a5a7f5)
+  [#1761](https://github.com/npm/cli/pull/1761)
+  Explain `ERESOLVE` errors
+* [`8e3e83bd4`](https://github.com/npm/cli/commit/8e3e83bd4f816bfed0efb8266985143ee9b94b86)
+  `@npmcli/arborist@0.0.21`
+
+    * Remove bin links on prune
+    * Remove unnecessary tree walk for workspace projects
+    * Install workspaces on update:true
+
+* [`d6b134fd9`](https://github.com/npm/cli/commit/d6b134fd9005d911343831270615f80dfead7e3d)
+  [#1738](https://github.com/npm/cli/pull/1738)
+  [#1734](https://github.com/npm/cli/pull/1734)
+  fix package spec parsing during cache add process
+  ([@mjeanroy](https://github.com/mjeanroy))
+* [`f105eb833`](https://github.com/npm/cli/commit/f105eb8333fa3300c5b47464b129c1b0057ed7bf)
+  `npm-audit-report@2.1.4`:
+
+    * Do not crash on cyclical meta-vulnerability references
+
+* [`03a9f569b`](https://github.com/npm/cli/commit/03a9f569b5121a173f14711980db297d4a04ac6b)
+  `opener@1.5.2`
+* [`5616a23b4`](https://github.com/npm/cli/commit/5616a23b4b868d19aa100a6d86d781cc9bfd94f7)
+  @`npmcli/git@2.0.4`
+
+    * Support `.git` files, so that git worktrees are respected
+
 ## v7.0.0-beta.8 (2020-09-01)
 
 * [`834e62a0e`](https://github.com/npm/cli/commit/834e62a0e5b76e97cfe9ea3d3188661579ebc874)
