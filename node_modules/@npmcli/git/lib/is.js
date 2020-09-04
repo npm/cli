@@ -3,7 +3,4 @@ const { promisify } = require('util')
 const fs = require('fs')
 const stat = promisify(fs.stat)
 module.exports = ({ cwd = process.cwd() } = {}) =>
-  stat(cwd + '/.git/index').then(
-    st => st.isFile(),
-    er => false
-  )
+  stat(cwd + '/.git').then(() => true, () => false)
