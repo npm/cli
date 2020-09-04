@@ -57,7 +57,16 @@ npmlog.verbose = (...message) => {
   verboseLogs.push(message)
 }
 
-const errorMessage = require('../../../lib/utils/error-message.js')
+const requireInject = require('require-inject')
+const EXPLAIN_CALLED = []
+const errorMessage = requireInject('../../../lib/utils/error-message.js', {
+  '../../../lib/utils/explain-eresolve.js': {
+    report: (...args) => {
+      EXPLAIN_CALLED.push(args)
+      return 'explanation'
+    }
+  }
+})
 
 t.test('just simple messages', t => {
   npm.command = 'audit'
@@ -414,5 +423,14 @@ t.test('bad platform', t => {
     t.end()
   })
 
+  t.end()
+})
+
+t.test('explain ERESOLVE errors', t => {
+  const er = Object.assign(new Error('could not resolve'), {
+    code: 'ERESOLVE'
+  })
+  t.matchSnapshot(errorMessage(er))
+  t.strictSame(EXPLAIN_CALLED, [[er]])
   t.end()
 })
