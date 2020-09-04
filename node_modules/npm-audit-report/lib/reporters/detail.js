@@ -15,11 +15,9 @@ const fullReport = (data, { color, summary }) => {
 
   const printed = new Set()
   for (const [name, vuln] of Object.entries(data.vulnerabilities)) {
-    if (printed.has(vuln))
-      continue
-
-    printed.add(vuln)
-    output.push(printVuln(vuln, c, data.vulnerabilities, printed))
+    // only print starting from the top-level advisories
+    if (vuln.via.filter(v => typeof v !== 'string').length !== 0)
+      output.push(printVuln(vuln, c, data.vulnerabilities))
   }
 
   output.push(summary)
@@ -27,7 +25,11 @@ const fullReport = (data, { color, summary }) => {
   return output.join('\n')
 }
 
-const printVuln = (vuln, c, vulnerabilities, printed, indent = '') => {
+const printVuln = (vuln, c, vulnerabilities, printed = new Set(), indent = '') => {
+  if (printed.has(vuln))
+    return null
+
+  printed.add(vuln)
   const output = []
 
   output.push(c.white(vuln.name) + '  ' + vuln.range)
@@ -69,11 +71,9 @@ const printVuln = (vuln, c, vulnerabilities, printed, indent = '') => {
 
   for (const effect of vuln.effects) {
     const vuln = vulnerabilities[effect]
-    // still print it again if it has its own advisory as well
-    if (vuln.via.filter(v => typeof v !== 'string').length === 0)
-      printed.add(vuln)
     const e = printVuln(vuln, c, vulnerabilities, printed, '  ')
-    output.push(...e.split('\n'))
+    if (e)
+      output.push(...e.split('\n'))
   }
 
   if (indent === '') {
