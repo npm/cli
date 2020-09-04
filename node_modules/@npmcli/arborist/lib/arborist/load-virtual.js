@@ -58,7 +58,7 @@ module.exports = cls => class VirtualLoader extends cls {
     // when building the ideal tree, we pass in a root node to this function
     // otherwise, load it from the root package json or the lockfile
     const {
-      root = this[loadWorkspaces](await this[loadRoot](s), s),
+      root = await this[loadRoot](s),
     } = options
 
     return this[loadFromShrinkwrap](s, root)
@@ -67,7 +67,7 @@ module.exports = cls => class VirtualLoader extends cls {
   async [loadRoot] (s) {
     const pj = this.path + '/package.json'
     const pkg = await rpj(pj).catch(() => s.data.packages['']) || {}
-    return this[loadNode]('', pkg)
+    return this[loadWorkspaces](this[loadNode]('', pkg))
   }
 
   async [loadFromShrinkwrap] (s, root) {
@@ -131,12 +131,22 @@ module.exports = cls => class VirtualLoader extends cls {
       delete prod[name]
     }
 
+    const lockWS = []
+    const workspaces = mapWorkspaces.virtual({
+      cwd: this.path,
+      lockfile: s.data,
+    })
+    for (const [name, path] of workspaces.entries()) {
+      lockWS.push(['workspace', name, `file:${path}`])
+    }
+
     const lockEdges = [
       ...depsToEdges('prod', prod),
       ...depsToEdges('dev', dev),
       ...depsToEdges('optional', optional),
       ...depsToEdges('peer', peer),
       ...depsToEdges('peerOptional', peerOptional),
+      ...lockWS,
     ].sort(([atype, aname], [btype, bname]) =>
       atype.localeCompare(btype) || aname.localeCompare(bname))
 
@@ -263,10 +273,10 @@ module.exports = cls => class VirtualLoader extends cls {
     return node
   }
 
-  [loadWorkspaces] (node, s) {
-    const workspaces = mapWorkspaces.virtual({
+  async [loadWorkspaces] (node) {
+    const workspaces = await mapWorkspaces({
       cwd: node.path,
-      lockfile: s.data,
+      pkg: node.package,
     })
     if (workspaces.size)
       node.workspaces = workspaces

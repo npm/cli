@@ -5,6 +5,7 @@ const pacote = require('pacote')
 const cacache = require('cacache')
 const semver = require('semver')
 const pickManifest = require('npm-pick-manifest')
+const mapWorkspaces = require('@npmcli/map-workspaces')
 const promiseCallLimit = require('promise-call-limit')
 const getPeerSet = require('../peer-set.js')
 
@@ -52,6 +53,7 @@ const _nodeFromSpec = Symbol('nodeFromSpec')
 const _fetchManifest = Symbol('fetchManifest')
 const _problemEdges = Symbol('problemEdges')
 const _manifests = Symbol('manifests')
+const _mapWorkspaces = Symbol('mapWorkspaces')
 const _linkFromSpec = Symbol('linkFromSpec')
 const _loadPeerSet = Symbol('loadPeerSet')
 const _updateNames = Symbol.for('updateNames')
@@ -233,9 +235,12 @@ module.exports = cls => class IdealTreeBuilder extends cls {
       // cases we don't use a lockfile anyway.
       // Load on a new Arborist object, so the Nodes aren't the same,
       // or else it'll get super confusing when we change them!
+      // Only have to mapWorkspaces if we didn't get it from actual or virtual
       .then(async root => {
         if (!this[_updateAll] && !this[_global] && !root.meta.loadedFromDisk)
           await new this.constructor(this.options).loadActual({ root })
+        else if (!this[_global] && (!this[_usePackageLock] || this[_updateAll]))
+          await this[_mapWorkspaces](root)
         return root
       })
 
@@ -271,6 +276,15 @@ module.exports = cls => class IdealTreeBuilder extends cls {
       global: this[_global],
       legacyPeerDeps: this.legacyPeerDeps,
     })
+  }
+
+  [_mapWorkspaces] (node) {
+    return mapWorkspaces({ cwd: node.path, pkg: node.package })
+      .then(workspaces => {
+        if (workspaces.size)
+          node.workspaces = workspaces
+        return node
+      })
   }
 
   // process the add/rm requests by modifying the root node, and the

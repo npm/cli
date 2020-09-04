@@ -297,7 +297,7 @@ module.exports = cls => class Reifier extends cls {
       node.devOptional && this[_omitOptional] && this[_omitDev]
 
     for (const node of this.idealTree.inventory.filter(filter)) {
-      this[_trashList].add(node.path)
+      this[_addNodeToTrashList](node)
     }
     process.emit('timeEnd', 'reify:trashOmits')
   }
