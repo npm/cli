@@ -782,6 +782,27 @@ Object {
 }
 `
 
+exports[`test/lib/utils/error-message.js TAP explain ERESOLVE errors > must match snapshot 1`] = `
+Object {
+  "detail": Array [
+    Array [
+      "",
+      "",
+    ],
+    Array [
+      "",
+      "explanation",
+    ],
+  ],
+  "summary": Array [
+    Array [
+      "ERESOLVE",
+      "could not resolve",
+    ],
+  ],
+}
+`
+
 exports[`test/lib/utils/error-message.js TAP just simple messages > must match snapshot 1`] = `
 Object {
   "detail": Array [],
