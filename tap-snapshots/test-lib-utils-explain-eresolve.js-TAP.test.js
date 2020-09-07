@@ -170,7 +170,7 @@ Found: [1mreact[22m@[1m16.13.1[22m[2m[22m
   [35mpeer[39m [1mreact[22m@"[1m^16.4.2[22m" from [1mgatsby[22m@[1m2.24.53[22m[2m[22m
   [2mnode_modules/gatsby[22m
     [1mgatsby[22m@"" from the root project
-  26 more (react-dom, @reach/router, gatsby-cli, ...)
+  26 more (react-dom, @reach/router, gatsby-cli, gatsby-link, ...)
 
 Could not add conflicting dependency: [1mreact[22m@[1m16.8.1[22m[2m[22m
 [2mnode_modules/react[22m
@@ -734,7 +734,7 @@ Found: [1mreact[22m@[1m16.13.1[22m[2m[22m
   [35mpeer[39m [1mreact[22m@"[1m^16.4.2[22m" from [1mgatsby[22m@[1m2.24.53[22m[2m[22m
   [2mnode_modules/gatsby[22m
     [1mgatsby[22m@"" from the root project
-  26 more (react-dom, @reach/router, gatsby-cli, ...)
+  26 more (react-dom, @reach/router, gatsby-cli, gatsby-link, ...)
 
 Could not add conflicting dependency: [1mreact[22m@[1m16.8.1[22m[2m[22m
 [2mnode_modules/react[22m
