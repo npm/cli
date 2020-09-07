@@ -1,11 +1,8 @@
 ---
-section: cli-commands 
 title: npm-profile
+section: 1
 description: Change settings on your registry profile
 ---
-
-# npm-profile(1)
-## Change settings on your registry profile
 
 ### Synopsis
 

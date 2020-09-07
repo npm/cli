@@ -1,12 +1,8 @@
 ---
-section: cli-commands 
 title: npm-ping
+section: 1
 description: Ping npm registry
 ---
-
-# npm-ping(1)
-
-## Ping npm registry
 
 ### Synopsis
 

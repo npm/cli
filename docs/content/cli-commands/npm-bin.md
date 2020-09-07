@@ -1,12 +1,8 @@
 ---
-section: cli-commands 
 title: npm-bin
+section: 1
 description: Display npm bin folder
 ---
-
-# npm-bin(1)
-
-## Display npm bin folder
 
 ### Synopsis
 ```bash

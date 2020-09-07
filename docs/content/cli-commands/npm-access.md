@@ -1,12 +1,8 @@
 ---
-section: cli-commands
 title: npm-access
+section: 1
 description: Set access level on published packages
 ---
-
-# npm-access(1)
-
-## Set access level on published packages
 
 ### Synopsis
 

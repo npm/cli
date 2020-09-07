@@ -1,12 +1,8 @@
 ---
-section: cli-commands 
 title: npm-build
+section: 1
 description: Build a package
 ---
-
-# npm-build(1)
-
-## Build a package
 
 ### Synopsis
 ```shell

@@ -1,12 +1,8 @@
 ---
-section: cli-commands 
 title: npm-token
+section: 1
 description: Manage your authentication tokens
 ---
-
-# npm-token(1)
-
-## Manage your authentication tokens
 
 ### Synopsis
 ```bash

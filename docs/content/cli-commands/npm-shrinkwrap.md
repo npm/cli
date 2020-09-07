@@ -1,12 +1,8 @@
 ---
-section: cli-commands 
 title: npm-shrinkwrap
+section: 1
 description: Lock down dependency versions for publication
 ---
-
-# npm-shrinkwrap(1)
-
-## Lock down dependency versions for publication
 
 ### Synopsis
 

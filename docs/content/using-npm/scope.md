@@ -1,11 +1,8 @@
 ---
-section: using-npm
 title: scope
+section: 7
 description: Scoped packages
 ---
-# scope(7)
-
-## Scoped packages
 
 ### Description
 

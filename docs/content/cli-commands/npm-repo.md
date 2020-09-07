@@ -1,12 +1,8 @@
 ---
-section: cli-commands 
 title: npm-repo
+section: 1
 description: Open package repository page in the browser
 ---
-
-# npm-repo(1)
-
-## Open package repository page in the browser
 
 ### Synopsis
 

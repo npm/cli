@@ -1,12 +1,8 @@
 ---
-section: cli-commands 
 title: npm-doctor
+section: 1
 description: Check your environments
 ---
-
-# npm-doctor(1)
-
-## Check your environments
 
 ### Synopsis
 

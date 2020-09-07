@@ -1,12 +1,8 @@
 ---
-section: cli-commands 
 title: npm-ci
+section: 1
 description: Install a project with a clean slate
 ---
-
-# npm-ci(1)
-
-## Install a project with a clean slate
 
 ### Synopsis
 ```bash

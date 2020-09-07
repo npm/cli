@@ -1,12 +1,8 @@
 ---
-section: cli-commands 
 title: npm-star
+section: 1
 description: Mark your favorite packages
 ---
-
-# npm-star(1)
-
-## Mark your favorite packages
 
 ### Synopsis
 

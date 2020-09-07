@@ -1,12 +1,8 @@
 ---
-section: configuring-npm
 title: folders
+section: 5
 description: Folder Structures Used by npm
 ---
-
-# folders(5)
-
-## Folder Structures Used by npm
 
 ### Description
 

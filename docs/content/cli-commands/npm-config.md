@@ -1,12 +1,8 @@
 ---
-section: cli-commands 
 title: npm-config
+section: 1
 description: Manage the npm configuration files
 ---
-
-# npm-config(1)
-
-## Manage the npm configuration files
 
 ### Synopsis
 ```bash

@@ -1,12 +1,8 @@
 ---
-section: cli-commands 
 title: npm-version
+section: 1
 description: Bump a package version
 ---
-
-# npm-version(1)
-
-## Bump a package version
 
 ### Synopsis
 

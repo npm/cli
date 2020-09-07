@@ -1,12 +1,8 @@
 ---
-section: cli-commands 
 title: npm-dedupe
+section: 1
 description: Reduce duplication
 ---
-
-# npm-dedupe(1)
-
-## Reduce duplication
 
 ### Synopsis
 ```bash

@@ -1,12 +1,8 @@
 ---
-section: cli-commands 
 title: npm-start
+section: 1
 description: Start a package
 ---
-
-# npm-start(1)
-
-## Start a package
 
 ### Synopsis
 

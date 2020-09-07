@@ -1,11 +1,8 @@
 ---
-section: cli-commands 
 title: npm-owner
+section: 1
 description: Manage package owners
 ---
-
-# npm-owner(1)
-## Manage package owners
 
 ### Synopsis
 

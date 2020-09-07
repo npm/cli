@@ -1,11 +1,8 @@
 ---
-section: cli-commands 
 title: npm-whoami
+section: 1
 description: Display npm username
 ---
-
-# npm-whoami(1)
-## Display npm username
 
 ### Synopsis
 

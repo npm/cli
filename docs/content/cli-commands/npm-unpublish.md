@@ -1,12 +1,8 @@
 ---
-section: cli-commands 
 title: npm-unpublish
+section: 1
 description: Remove a package from the registry
 ---
-
-# npm-unpublish(1)
-
-## Remove a package from the registry
 
 ### Synopsis
 

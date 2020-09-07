@@ -1,12 +1,8 @@
 ---
-section: cli-commands 
 title: npm-bugs
+section: 1
 description: Bugs for a package in a web browser maybe
 ---
-
-# npm-bugs(1)
-
-## Bugs for a package in a web browser maybe
 
 ### Synopsis
 ```bash

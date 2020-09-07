@@ -1,12 +1,8 @@
 ---
-section: cli-commands 
 title: npm-init
+section: 1
 description: create a package.json file
 ---
-
-# npm-init(1)
-
-## create a package.json file
 
 ### Synopsis
 ```bash
