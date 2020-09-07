@@ -1,5 +1,5 @@
 ---
-section: cli-commands 
+section: cli-commands
 title: npm-ls
 description: List installed packages
 ---
@@ -122,6 +122,7 @@ Set it to false in order to use all-ansi output.
 * [npm config](/cli-commands/config)
 * [npmrc](/configuring-npm/npmrc)
 * [npm folders](/configuring-npm/folders)
+* [npm explain](/cli-commands/explain)
 * [npm install](/cli-commands/install)
 * [npm link](/cli-commands/link)
 * [npm prune](/cli-commands/prune)
