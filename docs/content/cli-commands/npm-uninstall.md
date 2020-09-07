@@ -1,12 +1,8 @@
 ---
-section: cli-commands 
 title: npm-uninstall
+section: 1
 description: Remove a package
 ---
-
-# npm-uninstall(1)
-
-## Remove a package
 
 ### Synopsis
 

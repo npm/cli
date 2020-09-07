@@ -1,12 +1,8 @@
 ---
-section: cli-commands 
 title: npm-rebuild
+section: 1
 description: Rebuild a package
 ---
-
-# npm-rebuild(1)
-
-## Rebuild a package
 
 ### Synopsis
 

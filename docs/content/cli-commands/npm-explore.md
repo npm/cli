@@ -1,12 +1,8 @@
- ---
-section: cli-commands 
+---
 title: npm-explore
+section: 1
 description: Browse an installed package
 ---
-
-# npm-explore(1)
-
-## Browse an installed package
 
 ### Synopsis
 

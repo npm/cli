@@ -1,12 +1,8 @@
 ---
-section: cli-commands 
 title: npm
+section: 1
 description: javascript package manager
 ---
-
-# npm(1)
-
-## javascript package manager
 
 ### Synopsis
 

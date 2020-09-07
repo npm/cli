@@ -1,12 +1,8 @@
- ---
-section: cli-commands
-title: npm-adduser
-description: Set access level on published packages
 ---
-
-# npm-adduser(1)
-
-## Add a registry user account
+title: npm-adduser
+section: 1
+description: Add a registry user account
+---
 
 ### Synopsis
 

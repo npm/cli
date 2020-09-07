@@ -1,12 +1,8 @@
 ---
-section: using-npm
 title: orgs
+section: 7
 description: Working with Teams & Orgs
 ---
-
-# orgs(7)
-
-## Working with Teams & Orgs
 
 ### Description
 

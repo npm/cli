@@ -1,12 +1,8 @@
 ---
-section: configuring-npm
 title: package-locks
+section: 5
 description: An explanation of npm lockfiles
 ---
-
-# package-locks(5)
-
-## An explanation of npm lockfiles
 
 ### Description
 

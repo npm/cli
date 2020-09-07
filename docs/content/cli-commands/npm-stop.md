@@ -1,12 +1,8 @@
 ---
-section: cli-commands 
 title: npm-stop
+section: 1
 description: Stop a package
 ---
-
-# npm-stop(1)
-
-## Stop a package
 
 ### Synopsis
 

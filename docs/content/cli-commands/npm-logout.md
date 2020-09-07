@@ -1,12 +1,8 @@
 ---
-section: cli-commands 
 title: npm-logout
+section: 1
 description: Log out of the registry
 ---
-
-# npm-logout(1)
-
-## Log out of the registry
 
 ### Synopsis
 

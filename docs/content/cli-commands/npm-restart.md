@@ -1,12 +1,8 @@
 ---
-section: cli-commands 
 title: npm-restart
+section: 1
 description: Restart a package
 ---
-
-# npm-restart(1)
-
-## Restart a package
 
 ### Synopsis
 

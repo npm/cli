@@ -1,12 +1,8 @@
 ---
-section: using-npm
 title: developers
+section: 7
 description: Developer Guide
 ---
-
-# developers(7)
-
-## Developer Guide
 
 ### Description
 

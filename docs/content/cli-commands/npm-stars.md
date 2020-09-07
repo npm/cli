@@ -1,12 +1,8 @@
 ---
-section: cli-commands 
 title: npm-stars
+section: 1
 description: View packages marked as favorites
 ---
-
-# npm-stars(1)
-
-## View packages marked as favorites
 
 ### Synopsis
 ```bash

@@ -1,12 +1,8 @@
 ---
-section: cli-commands 
 title: npm-fund
+section: 1
 description: Retrieve funding information
 ---
-
-# npm-fund(1)
-
-## Retrieve funding information
 
 ### Synopsis
 

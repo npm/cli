@@ -1,12 +1,8 @@
 ---
-section: configuring-npm
 title: package-lock.json
+section: 5
 description: A manifestation of the manifest
 ---
-
-# package-lock.json(5)
-
-## A manifestation of the manifest
 
 ### Description
 

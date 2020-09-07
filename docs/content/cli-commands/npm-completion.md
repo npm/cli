@@ -1,12 +1,8 @@
 ---
-section: cli-commands 
 title: npm-completion
+section: 1
 description: Tab Completion for npm
 ---
-
-# npm-completion(1)
-
-## Tab Completion for npm
 
 ### Synopsis
 ```bash
