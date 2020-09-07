@@ -1,12 +1,8 @@
 ---
-section: cli-commands 
 title: npm-bugs
-description: Bugs for a package in a web browser maybe
+section: 1
+description: Report bugs for a package in a web browser
 ---
-
-# npm-bugs(1)
-
-## Report bugs for a package in a web browser
 
 ### Synopsis
 

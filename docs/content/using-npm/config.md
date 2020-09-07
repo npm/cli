@@ -1,12 +1,8 @@
 ---
-section: using-npm
 title: config
+section: 7
 description: More than you probably want to know about npm configuration
 ---
-
-# config(7)
-
-## More than you probably want to know about npm configuration
 
 ### Description
 

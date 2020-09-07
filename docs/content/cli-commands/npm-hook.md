@@ -1,12 +1,8 @@
 ---
-section: cli-commands 
 title: npm-hook
+section: 1
 description: Manage registry hooks
 ---
-
-# npm-hook(1)
-
-## Manage registry hooks
 
 ### Synopsis
 

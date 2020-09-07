@@ -1,13 +1,8 @@
- ---
-section: cli-commands 
+---
 title: npm-dist-tag
+section: 1
 description: Modify package distribution tags
 ---
-
-# npm-dist-tag(1)
-
-## Modify package distribution tags
-
 
 ### Synopsis
 ```bash

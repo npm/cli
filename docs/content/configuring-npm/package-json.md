@@ -1,12 +1,8 @@
 ---
-section: configuring-npm
 title: package.json
+section: 5
 description: Specifics of npm's package.json handling
 ---
-
-# package.json(5)
-
-## Specifics of npm's package.json handling
 
 ### Description
 

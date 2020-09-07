@@ -1,12 +1,8 @@
 ---
-section: cli-commands 
 title: npm-test
+section: 1
 description: Test a package
 ---
-
-# npm-test(1)
-
-## Test a package
 
 ### Synopsis
 

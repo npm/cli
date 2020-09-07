@@ -1,12 +1,8 @@
 ---
-section: cli-commands 
 title: npm-update
+section: 1
 description: Update a package
 ---
-
-# npm-update(1)
-
-## Update a package
 
 ### Synopsis
 

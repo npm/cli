@@ -1,11 +1,8 @@
 ---
-section: cli-commands 
 title: npm-deprecate
+section: 1
 description: Deprecate a version of a package
 ---
-# npm-deprecate(1)
-
-## Deprecate a version of a package
 
 ### Synopsis
 ```bash

@@ -1,12 +1,8 @@
 ---
-section: cli-commands 
 title: npm-help-search
+section: 1
 description: Search npm help documentation
 ---
-
-# npm-help-search(1)
-
-## Search npm help documentation
 
 ### Synopsis
 

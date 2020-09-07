@@ -1,12 +1,8 @@
 ---
-section: cli-commands 
 title: npm-cache
+section: 1
 description: Manipulates packages cache
 ---
-
-# npm-cache(1)
-
-## Manipulates packages cache
 
 ### Synopsis
 

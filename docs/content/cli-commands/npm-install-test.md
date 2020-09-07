@@ -1,12 +1,8 @@
 ---
-section: cli-commands 
 title: npm-install-test
+section: 1
 description: Install package(s) and run tests
 ---
-
-# npm install-test(1)
-
-## Install package(s) and run tests
 
 ### Synopsis
 

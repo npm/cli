@@ -1,12 +1,8 @@
 ---
-section: cli-commands
 title: npm-exec
+section: 1
 description: Run a command from a local or remote npm package
 ---
-
-# npm-exec(1)
-
-## Run a command from a local or remote npm package
 
 ### Synopsis
 

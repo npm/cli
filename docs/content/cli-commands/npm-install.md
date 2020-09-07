@@ -1,12 +1,8 @@
 ---
-section: cli-commands 
 title: npm-install
+section: 1
 description: Install a package
 ---
-
-# npm-install(1)
-
-## Install a package
 
 ### Synopsis
 
