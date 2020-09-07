@@ -1,11 +1,8 @@
 ---
-section: using-npm
 title: workspaces
+section: 7
 description: Working with workspaces
 ---
-# scope(7)
-
-## Workspaces
 
 ### Description
 

@@ -1,12 +1,8 @@
 ---
-section: cli-commands 
 title: npm-publish
+section: 1
 description: Publish a package
 ---
-
-# npm-publish(1)
-
-## Publish a package
 
 ### Synopsis
 ```bash

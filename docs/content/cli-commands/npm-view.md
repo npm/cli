@@ -1,12 +1,8 @@
 ---
-section: cli-commands 
 title: npm-view
+section: 1
 description: View registry info
 ---
-
-# npm-view(1)
-
-## View registry info
 
 ### Synopsis
 

@@ -1,12 +1,8 @@
 ---
-section: configuring-npm
 title: shrinkwrap.json
+section: 5
 description: A publishable lockfile
 ---
-
-# npm-shrinkwrap.json(5)
-
-## A publishable lockfile
 
 ### Description
 

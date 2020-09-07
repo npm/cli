@@ -1,12 +1,8 @@
 ---
-section: cli-commands
 title: npm-docs
-description: Docs for a package in a web browser maybe
+section: 1
+description: Open documentation for a package in a web browser
 ---
-
-# npm-docs(1)
-
-## Open documentation for a package in a web browser
 
 ### Synopsis
 

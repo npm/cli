@@ -1,12 +1,8 @@
 ---
-section: cli-commands 
 title: npm-search
+section: 1
 description: Search for packages
 ---
-
-# npm-search(1)
-
-## Search for packages
 
 ### Synopsis
 

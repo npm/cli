@@ -1,12 +1,8 @@
 ---
-section: using-npm
 title: registry
+section: 7
 description: The JavaScript Package Registry
 ---
-
-# registry(7)
-
-##  The JavaScript Package Registry
 
 ### Description
 

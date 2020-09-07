@@ -1,12 +1,8 @@
 ---
-section: using-npm
 title: removal
+section: 7
 description: Cleaning the Slate
 ---
-
-# removal(7)
-
-## Cleaning the Slate
 
 ### Synopsis
 

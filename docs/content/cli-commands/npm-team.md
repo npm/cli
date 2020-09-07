@@ -1,12 +1,8 @@
 ---
-section: cli-commands 
 title: npm-team
+section: 1
 description: Manage organization teams and team memberships
 ---
-
-# npm-team(1)
-
-## Manage organization teams and team memberships
 
 ### Synopsis
 

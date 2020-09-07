@@ -1,12 +1,8 @@
 ---
-section: cli-commands
 title: npx
+section: 1
 description: Run a command from a local or remote npm package
 ---
-
-# npx(1)
-
-## Run a command from a local or remote npm package
 
 ### Synopsis
 

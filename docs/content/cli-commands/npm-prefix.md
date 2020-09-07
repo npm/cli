@@ -1,12 +1,8 @@
 ---
-section: cli-commands 
 title: npm-prefix
+section: 1
 description: Display prefix
 ---
-
-# npm-prefix(1)
-
-## Display prefix
 
 ### Synopsis
 

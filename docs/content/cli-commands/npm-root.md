@@ -1,12 +1,8 @@
 ---
-section: cli-commands 
 title: npm-root
+section: 1
 description: Display npm root
 ---
-
-# npm-root(1)
-
-## Display npm root
 
 ### Synopsis
 ```bash

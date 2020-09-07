@@ -1,12 +1,8 @@
 ---
-section: cli-commands
 title: npm-explain
+section: 1
 description: Explain installed packages
 ---
-
-# npm-explain(1)
-
-## Explain installed packages
 
 ### Synopsis
 

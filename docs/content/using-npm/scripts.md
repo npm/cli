@@ -1,12 +1,8 @@
 ---
-section: using-npm
 title: scripts
+section: 7
 description: How npm handles the "scripts" field
 ---
-
-# scripts(7)
-
-## How npm handles the "scripts" field
 
 ### Description
 
