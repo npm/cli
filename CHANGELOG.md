@@ -1,3 +1,10 @@
+## v7.0.0-beta.10 (2020-09-08)
+
+* [`7418970f0`](https://github.com/npm/cli/commit/7418970f03229dd2bce7973b99b981779aee6916)
+  Improve output of dependency node explanations
+* [`5e49bdaa3`](https://github.com/npm/cli/commit/5e49bdaa34e29dbd25c687f8e6881747a86b7435)
+  [#1776](https://github.com/npm/cli/pull/1776) Add 'npm explain' command
+
 ## v7.0.0-beta.9 (2020-09-04)
 
 * [`ef8f5676b`](https://github.com/npm/cli/commit/ef8f5676b1c90dcf44256b8ed1f61ddb6277c23a)
