@@ -5,6 +5,7 @@ description: Publish a package
 ---
 
 ### Synopsis
+
 ```bash
 npm publish [<tarball>|<folder>] [--tag <tag>] [--access <public|restricted>] [--otp otpcode] [--dry-run]
 
@@ -31,10 +32,10 @@ specifying a different default registry or using a [`scope`](/using-npm/npm-scop
   with a package.json file inside.
 
 * `[--tag <tag>]`
-  Registers the published package with the given tag, such that `npm install
-  <name>@<tag>` will install this version.  By default, `npm publish` updates
-  and `npm install` installs the `latest` tag. See [`npm-dist-tag`](npm-dist-tag) for
-  details about tags.
+  Registers the published package with the given tag, such that
+  `npm install <name>@<tag>` will install this version.  By default,
+  `npm publish` updates and `npm install` installs the `latest` tag. See
+  [`npm-dist-tag`](npm-dist-tag) for details about tags.
 
 * `[--access <public|restricted>]`
   Tells the registry whether this package should be published as public or
