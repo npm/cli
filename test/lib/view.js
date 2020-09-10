@@ -332,7 +332,7 @@ t.test('should log package info', t => {
 
   t.test('package with --json and no versions', t => {
     viewJson(['brown'], () => {
-      t.equals(logs, '\n', 'no info to display')
+      t.equals(logs, '', 'no info to display')
       t.end()
     })
   })
@@ -446,7 +446,7 @@ t.test('should log info by field name', t => {
 
   t.test('unknown nested field ', t => {
     view(['yellow@1.0.0', 'dist.foobar'], () => {
-      t.equals(logs, '\n', 'no info to display')
+      t.equals(logs, '', 'no info to display')
       t.end()
     })
   })
