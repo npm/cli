@@ -28,9 +28,11 @@ const printLinks = async (opts) => {
   const arb = new Arborist(opts)
   const tree = await arb.loadActual()
   const linkedItems = [...tree.inventory.values()]
+    .sort((a, b) => a.pkgid.localeCompare(b.pkgid))
   for (const item of linkedItems) {
-    if (item.target)
+    if (item.target) {
       res += `${item.path} -> ${item.target.path}\n`
+    }
   }
   return res
 }
@@ -128,6 +130,12 @@ t.test('link global linked pkg to local nm when using args', (t) => {
         version: '1.0.0'
       })
     },
+    'link-me-too': {
+      'package.json': JSON.stringify({
+        name: 'link-me-too',
+        version: '1.0.0'
+      })
+    },
     'scoped-linked': {
       'package.json': JSON.stringify({
         name: '@myscope/linked',
@@ -155,8 +163,12 @@ t.test('link global linked pkg to local nm when using args', (t) => {
   npm.globalDir = resolve(testdir, 'global-prefix', 'lib', 'node_modules')
   npm.prefix = resolve(testdir, 'my-project')
 
+  const _cwd = process.cwd()
+  process.chdir(npm.prefix)
+
   reifyOutput = async () => {
     reifyOutput = undefined
+    process.chdir(_cwd)
 
     const links = await printLinks({
       path: npm.prefix
@@ -170,7 +182,68 @@ t.test('link global linked pkg to local nm when using args', (t) => {
   // - @myscope/linked: scoped pkg linked to globalDir from local fs
   // - @myscope/bar: prev installed scoped package available in globalDir
   // - a: prev installed package available in globalDir
-  link(['test-pkg-link', '@myscope/linked', '@myscope/bar', 'a'], (err) => {
+  // - file:./link-me-too: pkg that needs to be reified in globalDir first
+  link([
+    'test-pkg-link',
+    '@myscope/linked',
+    '@myscope/bar',
+    'a',
+    'file:../link-me-too'
+  ], (err) => {
+    t.ifError(err, 'should not error out')
+  })
+})
+
+t.test('link pkg already in global space', (t) => {
+  t.plan(2)
+
+  const testdir = t.testdir({
+    'global-prefix': {
+      lib: {
+        node_modules: {
+          '@myscope': {
+            linked: t.fixture('symlink', '../../../../scoped-linked')
+          }
+        }
+      }
+    },
+    'scoped-linked': {
+      'package.json': JSON.stringify({
+        name: '@myscope/linked',
+        version: '1.0.0'
+      })
+    },
+    'my-project': {
+      'package.json': JSON.stringify({
+        name: 'my-project',
+        version: '1.0.0'
+      })
+    }
+  })
+  npm.globalDir = resolve(testdir, 'global-prefix', 'lib', 'node_modules')
+  npm.prefix = resolve(testdir, 'my-project')
+
+  const _cwd = process.cwd()
+  process.chdir(npm.prefix)
+
+  reifyOutput = async () => {
+    reifyOutput = undefined
+    process.chdir(_cwd)
+
+    const links = await printLinks({
+      path: npm.prefix
+    })
+
+    t.matchSnapshot(links, 'should create a local symlink to global pkg')
+  }
+
+  // installs examples for:
+  // - test-pkg-link: pkg linked to globalDir from local fs
+  // - @myscope/linked: scoped pkg linked to globalDir from local fs
+  // - @myscope/bar: prev installed scoped package available in globalDir
+  // - a: prev installed package available in globalDir
+  // - file:./link-me-too: pkg that needs to be reified in globalDir first
+  link(['@myscope/linked'], (err) => {
     t.ifError(err, 'should not error out')
   })
 })

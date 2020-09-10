@@ -6,10 +6,16 @@
  */
 'use strict'
 exports[`test/lib/link.js TAP link global linked pkg to local nm when using args > should create a local symlink to global pkg 1`] = `
-{CWD}/test/lib/link-link-global-linked-pkg-to-local-nm-when-using-args/my-project/node_modules/a -> {CWD}/test/lib/link-link-global-linked-pkg-to-local-nm-when-using-args/global-prefix/lib/node_modules/a
 {CWD}/test/lib/link-link-global-linked-pkg-to-local-nm-when-using-args/my-project/node_modules/@myscope/bar -> {CWD}/test/lib/link-link-global-linked-pkg-to-local-nm-when-using-args/global-prefix/lib/node_modules/@myscope/bar
-{CWD}/test/lib/link-link-global-linked-pkg-to-local-nm-when-using-args/my-project/node_modules/test-pkg-link -> {CWD}/test/lib/link-link-global-linked-pkg-to-local-nm-when-using-args/test-pkg-link
 {CWD}/test/lib/link-link-global-linked-pkg-to-local-nm-when-using-args/my-project/node_modules/@myscope/linked -> {CWD}/test/lib/link-link-global-linked-pkg-to-local-nm-when-using-args/scoped-linked
+{CWD}/test/lib/link-link-global-linked-pkg-to-local-nm-when-using-args/my-project/node_modules/a -> {CWD}/test/lib/link-link-global-linked-pkg-to-local-nm-when-using-args/global-prefix/lib/node_modules/a
+{CWD}/test/lib/link-link-global-linked-pkg-to-local-nm-when-using-args/my-project/node_modules/link-me-too -> {CWD}/test/lib/link-link-global-linked-pkg-to-local-nm-when-using-args/link-me-too
+{CWD}/test/lib/link-link-global-linked-pkg-to-local-nm-when-using-args/my-project/node_modules/test-pkg-link -> {CWD}/test/lib/link-link-global-linked-pkg-to-local-nm-when-using-args/test-pkg-link
+
+`
+
+exports[`test/lib/link.js TAP link pkg already in global space > should create a local symlink to global pkg 1`] = `
+{CWD}/test/lib/link-link-pkg-already-in-global-space/my-project/node_modules/@myscope/linked -> {CWD}/test/lib/link-link-pkg-already-in-global-space/scoped-linked
 
 `
 
