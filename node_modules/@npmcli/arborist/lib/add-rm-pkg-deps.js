@@ -55,7 +55,8 @@ const addSingle = ({pkg, spec, saveBundle, saveType, path}) => {
   pkg[type] = pkg[type] || {}
   if (rawSpec !== '' || pkg[type][name] === undefined) {
     // if we're in global mode, file specs are based on cwd, not arb path
-    pkg[type][name] = specType === 'file' ? `file:${relpath(path, fetchSpec)}`
+    pkg[type][name] = specType === 'file' || specType === 'directory'
+      ? `file:${relpath(path, fetchSpec)}`
       : (rawSpec || '*')
   }
 
