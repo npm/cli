@@ -241,6 +241,9 @@ class Config {
     // symbols, as that module also does a bunch of get operations
     this[_loaded] = true
 
+    // set proper globalPrefix now that everything is loaded
+    this.globalPrefix = this.get('prefix')
+
     process.emit('time', 'config:load:setEnvs')
     this.setEnvs()
     process.emit('timeEnd', 'config:load:setEnvs')

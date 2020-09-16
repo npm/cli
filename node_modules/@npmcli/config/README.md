@@ -2,7 +2,7 @@
 
 Configuration management for the npm cli.
 
-This module is the spiritual decendant of
+This module is the spiritual descendant of
 [`npmconf`](http://npm.im/npmconf), and the code that once lived in npm's
 `lib/config/` folder.
 
@@ -27,7 +27,7 @@ The only exceptions:
 - A `builtin` config, read from a `npmrc` file in the root of the npm
   project itself, overrides all defaults.
 
-The resulting heirarchy of configs:
+The resulting hierarchy of configs:
 
 - CLI switches.  eg `--some-key=some-value` on the command line.  These are
   parsed by [`nopt`](http://npm.im/nopt), which is not a great choice, but
