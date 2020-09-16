@@ -100,7 +100,8 @@ test('should remove existing node_modules before installing', (t) => {
     },
     '@npmcli/arborist': function () {
       this.loadVirtual = () => Promise.resolve(true)
-      this.reify = async () => {
+      this.reify = async (options) => {
+        t.equal(options.save, false, 'npm ci should never save')
         // check if node_modules was removed before reifying
         const contents = await readdir(testDir)
         t.equals(contents.indexOf('node_modules'), -1, 'node_modules does not exist')
