@@ -10,14 +10,14 @@
   [#1786](https://github.com/npm/cli/pull/1786)
   add lib/link.js tests ([@ruyadorno](https://github.com/ruyadorno))
 * [`2f8d11968`](https://github.com/npm/cli/commit/2f8d11968607a74c8def3c05266049bee5e313eb)
-  @`npmcli/arborist@0.0.25`
+  `@npmcli/arborist@0.0.25`
     * add meta vulnerability calculator for faster audits
     * changed parsing specs to be relative to cwd
     * fix logging script execution
     * fix properly following resolved symlinks
     * fix package.json dependencies order
 * [`49b2bf5a7`](https://github.com/npm/cli/commit/49b2bf5a798b49d52166744088a80b8a39ccaeb6)
-  @`npmcli/config@1.1.8`
+  `@npmcli/config@1.1.8`
     * fix unkown envs to be passed through
     * fix setting correct globalPrefix on load
 * [`f9aac351d`](https://github.com/npm/cli/commit/f9aac351dd36a19d14e1f951a2e8e20b41545822)
@@ -72,7 +72,7 @@
 * [`03a9f569b`](https://github.com/npm/cli/commit/03a9f569b5121a173f14711980db297d4a04ac6b)
   `opener@1.5.2`
 * [`5616a23b4`](https://github.com/npm/cli/commit/5616a23b4b868d19aa100a6d86d781cc9bfd94f7)
-  @`npmcli/git@2.0.4`
+  `@npmcli/git@2.0.4`
 
     * Support `.git` files, so that git worktrees are respected
 
@@ -191,7 +191,7 @@ Replace some environment variables that were excluded.  This implements the
 [amendment to RFC0021](https://github.com/npm/rfcs/pull/183).
 
 * [`631142f4a`](https://github.com/npm/cli/commit/631142f4a13959fbe02dc115fb6efa55a3368795)
-  @`npmcli/run-script@1.5.0`
+  `@npmcli/run-script@1.5.0`
 * [`da95386ae`](https://github.com/npm/cli/commit/da95386aedb3f0c0cc51761bfa750b64ac0eabc9)
   [#1650](https://github.com/npm/cli/pull/1650)
   [#1652](https://github.com/npm/cli/pull/1652)
