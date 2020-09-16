@@ -1,3 +1,29 @@
+## v7.0.0-beta.11 (2020-09-16)
+
+* [`63005f4a9`](https://github.com/npm/cli/commit/63005f4a98d55786fda46f3bbb3feab044d078df)
+  [#1639](https://github.com/npm/cli/issues/1639)
+  npm view should not output extra newline ([@MylesBorins](https://github.com/MylesBorins))
+* [`3743a42c8`](https://github.com/npm/cli/commit/3743a42c854d9ea7e333d7ff86d206a4b079a352)
+  [#1750](https://github.com/npm/cli/pull/1750)
+  add outdated tests ([@claudiahdz](https://github.com/claudiahdz))
+* [`2019abdf1`](https://github.com/npm/cli/commit/2019abdf159eb13c9fb3a2bd2f35897a8f52b0d9)
+  [#1786](https://github.com/npm/cli/pull/1786)
+  add lib/link.js tests ([@ruyadorno](https://github.com/ruyadorno))
+* [`2f8d11968`](https://github.com/npm/cli/commit/2f8d11968607a74c8def3c05266049bee5e313eb)
+  @`npmcli/arborist@0.0.25`
+    * add meta vulnerability calculator for faster audits
+    * changed parsing specs to be relative to cwd
+    * fix logging script execution
+    * fix properly following resolved symlinks
+    * fix package.json dependencies order
+* [`49b2bf5a7`](https://github.com/npm/cli/commit/49b2bf5a798b49d52166744088a80b8a39ccaeb6)
+  @`npmcli/config@1.1.8`
+    * fix unkown envs to be passed through
+    * fix setting correct globalPrefix on load
+* [`f9aac351d`](https://github.com/npm/cli/commit/f9aac351dd36a19d14e1f951a2e8e20b41545822)
+  `libnpmversion@1.0.5`
+    * fix git ignored lockfiles
+
 ## v7.0.0-beta.10 (2020-09-08)
 
 * [`7418970f0`](https://github.com/npm/cli/commit/7418970f03229dd2bce7973b99b981779aee6916)
