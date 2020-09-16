@@ -100,7 +100,11 @@ module.exports = async (newversion, opts) => {
 
   if (doGit) {
     // - git add, git commit, git tag
-    await git.spawn(['add', `${path}/package.json`, ...haveLocks], opts)
+    await git.spawn(['add', `${path}/package.json`], opts)
+    // sometimes people .gitignore their lockfiles
+    for (const lock of haveLocks) {
+      await git.spawn(['add', lock], opts).catch(() => {})
+    }
     await commit(newV, opts)
     await tag(newV, opts)
   } else
