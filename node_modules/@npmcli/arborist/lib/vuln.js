@@ -6,17 +6,16 @@
 // - range: Set of vulnerable versions
 // - nodes: Set of nodes affected
 // - effects: Set of vulns triggered by this one
-// - via: Set of advisories or vulnerabilities causing this vuln
-//
-// These objects are filled in by the operations in the AuditReport
-// class, which sets the the packument and calls addRange() with
-// the vulnerable range.
+// - advisories: Set of advisories (including metavulns) causing this vuln.
+//   All of the entries in via are vulnerability objects returned by
+//   @npmcli/metavuln-calculator
+// - via: dependency vulns which cause this one
 
 const {satisfies, simplifyRange} = require('semver')
 const semverOpt = { loose: true, includePrerelease: true }
 
+const npa = require('npm-package-arg')
 const _range = Symbol('_range')
-const _ranges = Symbol('_ranges')
 const _simpleRange = Symbol('_simpleRange')
 const _fixAvailable = Symbol('_fixAvailable')
 
@@ -34,21 +33,22 @@ for (const [name, val] of severities.entries()) {
 }
 
 class Vuln {
-  constructor ({ name, via }) {
+  constructor ({ name, advisory }) {
     this.name = name
     this.via = new Set()
+    this.advisories = new Set()
     this.severity = null
-    this.addVia(via)
     this.effects = new Set()
     this.topNodes = new Set()
-    this[_ranges] = new Set()
     this[_range] = null
     this[_simpleRange] = null
     this.nodes = new Set()
-    this.packument = null
     // assume a fix is available unless it hits a top node
     // that locks it in place, setting this to false or {isSemVerMajor, version}.
     this[_fixAvailable] = true
+    this.addAdvisory(advisory)
+    this.packument = advisory.packument
+    this.versions = advisory.versions
   }
 
   get fixAvailable () {
@@ -57,65 +57,108 @@ class Vuln {
   set fixAvailable (f) {
     this[_fixAvailable] = f
     // if there's a fix available for this at the top level, it means that
-    // it will also fix the vulns that led to it being there.
+    // it will also fix the vulns that led to it being there.  to get there,
+    // we set the vias to the most "strict" of fix availables.
+    // - false: no fix is available
+    // - {name, version, isSemVerMajor} fix requires -f, is semver major
+    // - {name, version} fix requires -f, not semver major
+    // - true: fix does not require -f
     for (const v of this.via) {
-      if (v.fixAvailable === true)
+      if (f === false)
+        v.fixAvailable = f
+      else if (v.fixAvailable === true)
+        v.fixAvailable = f
+      else if (typeof f === 'object' && (
+          typeof v.fixAvailable !== 'object' || !v.fixAvailable.isSemVerMajor))
         v.fixAvailable = f
     }
   }
 
+  testSpec (spec) {
+    const specObj = npa(spec)
+    if (!specObj.registry)
+      return true
+
+    for (const v of this.versions) {
+      if (satisfies(v, spec) && !satisfies(v, this.range, semverOpt))
+        return false
+    }
+    return true
+  }
+
   toJSON () {
+    // sort so that they're always in a consistent order
     return {
       name: this.name,
       severity: this.severity,
-      via: [...this.via].map(v => v instanceof Vuln ? v.name : v),
-      effects: [...this.effects].map(v => v.name),
+      // just loop over the advisories, since via is only Vuln objects,
+      // and calculated advisories have all the info we need
+      via: [...this.advisories].map(v => v.type === 'metavuln' ? v.dependency : {
+        ...v,
+        versions: undefined,
+        vulnerableVersions: undefined,
+        id: undefined,
+      }).sort((a, b) =>
+        String(a.source || a).localeCompare(String(b.source || b))),
+      effects: [...this.effects].map(v => v.name)
+        .sort(/* istanbul ignore next */(a, b) => a.localeCompare(b)),
       range: this.simpleRange,
-      nodes: [...this.nodes].map(n => n.location),
+      nodes: [...this.nodes].map(n => n.location)
+        .sort(/* istanbul ignore next */(a, b) => a.localeCompare(b)),
       fixAvailable: this[_fixAvailable],
     }
   }
 
-  deleteVia (via) {
-    this.via.delete(via)
+  addVia (v) {
+    this.via.add(v)
+    v.effects.add(this)
+    // call the setter since we might add vias _after_ setting fixAvailable
+    this.fixAvailable = this.fixAvailable
+  }
+  deleteVia (v) {
+    this.via.delete(v)
+    v.effects.delete(this)
+  }
+
+  deleteAdvisory (advisory) {
+    this.advisories.delete(advisory)
     // make sure we have the max severity of all the vulns causing this one
     this.severity = null
+    this[_range] = null
+    this[_simpleRange] = null
+    // refresh severity
+    for (const advisory of this.advisories) {
+      this.addAdvisory(advisory)
+    }
+
+    // remove any effects that are no longer relevant
+    const vias = new Set([...this.advisories].map(a => a.dependency))
     for (const via of this.via) {
-      this.addVia(via)
+      if (!vias.has(via.name))
+        this.deleteVia(via)
     }
   }
 
-  addVia (via) {
-    this.via.add(via)
-    const sev = severities.get(via.severity)
-    if (sev > severities.get(this.severity))
-      this.severity = via.severity
-
-    if (via instanceof Vuln)
-      via.effects.add(this)
-  }
-
-  hasRange (range) {
-    return this[_ranges].has(range)
-  }
-
-  addRange (range) {
-    this[_ranges].add(range)
-    this[_range] = [...this[_ranges]].join(' || ')
+  addAdvisory (advisory) {
+    this.advisories.add(advisory)
+    const sev = severities.get(advisory.severity)
+    this[_range] = null
     this[_simpleRange] = null
+    if (sev > severities.get(this.severity))
+      this.severity = advisory.severity
   }
 
   get range () {
-    return this[_range] || (this[_range] = [...this[_ranges]].join(' || '))
+    return this[_range] ||
+      (this[_range] = [...this.advisories].map(v => v.range).join(' || '))
   }
 
   get simpleRange () {
     if (this[_simpleRange] && this[_simpleRange] === this[_range])
       return this[_simpleRange]
+
+    const versions = [...this.advisories][0].versions
     const range = this.range
-    if (!this.packument)
-      return range
-    const versions = Object.keys(this.packument.versions)
     const simple = simplifyRange(versions, range, semverOpt)
     return this[_simpleRange] = this[_range] = simple
   }
@@ -125,9 +168,14 @@ class Vuln {
       return true
 
     const { version } = node.package
-    if (version && satisfies(version, this.range, semverOpt)) {
-      this.nodes.add(node)
-      return true
+    if (!version)
+      return false
+
+    for (const v of this.advisories) {
+      if (v.testVersion(version)) {
+        this.nodes.add(node)
+        return true
+      }
     }
 
     return false

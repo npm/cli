@@ -4,7 +4,7 @@ const npa = require('npm-package-arg')
 const pacote = require('pacote')
 const rpj = require('read-package-json-fast')
 const {checkEngine, checkPlatform} = require('npm-install-checks')
-const updateDepSpec = require('../update-dep-spec.js')
+const { orderDeps, updateDepSpec } = require('../dep-spec.js')
 const AuditReport = require('../audit-report.js')
 
 const {dirname, resolve, relative} = require('path')
@@ -852,10 +852,10 @@ module.exports = cls => class Reifier extends cls {
       [Symbol.for('indent')]: indent,
       [Symbol.for('newline')]: newline,
     } = this.idealTree.package
-    const pjData = {
+    const pjData = orderDeps({
       ...this.idealTree.package,
       _id: undefined, // strip this off
-    }
+    })
     const format = indent === undefined ? '  ' : indent
     const eol = newline === undefined ? '\n' : newline
     const json = (JSON.stringify(pjData, null, format) + '\n')

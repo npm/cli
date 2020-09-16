@@ -2,26 +2,13 @@
 
 const npa = require('npm-package-arg')
 const pickManifest = require('npm-pick-manifest')
-const pacote = require('pacote')
-const {intersects, satisfies, simplifyRange} = require('semver')
-const semverOpt = { loose: true, includePrerelease: true }
 
 const Vuln = require('./vuln.js')
+const Calculator = require('@npmcli/metavuln-calculator')
 
 const _getReport = Symbol('getReport')
-const _processDeps = Symbol('processDeps')
-const _processDependent = Symbol('processDependent')
-const _metaVulnSeen = Symbol('metaVulnSeen')
-const _specVulnerableMemo = Symbol('specVulnerableMemo')
-const _addVulnerability = Symbol('addVulnerability')
-const _vulnDependents = Symbol('vulnDependents')
-const _isVulnerable = Symbol('isVulnerable')
-const _specVulnerable = Symbol('specVulnerable')
-const _specVulnCheck = Symbol('specVulnCheck')
 const _fixAvailable = Symbol('fixAvailable')
-const _packument = Symbol('packument')
-const _packuments = Symbol('packuments')
-const _getDepSpec = Symbol('getDepSpec')
+const _checkTopNode = Symbol('checkTopNode')
 const _init = Symbol('init')
 const _omit = Symbol('omit')
 const procLog = require('./proc-log.js')
@@ -83,25 +70,28 @@ class AuditReport extends Map {
     // for each topVuln, figure out if it's fixable with audit fix --force,
     // or if we have to just delete the thing, and if the fix --force will
     // require a semver major update.
+    const vulnerabilities = []
     for (const [name, vuln] of this.entries()) {
-      obj.vulnerabilities[name] = vuln.toJSON()
+      vulnerabilities.push([name, vuln.toJSON()])
       obj.metadata.vulnerabilities[vuln.severity]++
     }
+
+    obj.vulnerabilities = vulnerabilities
+      .sort(([a], [b]) => a.localeCompare(b))
+      .reduce((set, [name, vuln]) => {
+        set[name] = vuln
+        return set
+      }, {})
 
     return obj
   }
 
   constructor (tree, opts = {}) {
     super()
-    this[_metaVulnSeen] = new Set()
-    this[_specVulnerableMemo] = new Map()
-    this[_vulnDependents] = new Set()
-    this[_packuments] = new Map()
     this[_omit] = new Set(opts.omit || [])
     this.topVulns = new Map()
-    this.advisoryVulns = new Map()
-    this.dependencyVulns = new Map()
 
+    this.calculator = new Calculator(opts)
     this.error = null
     this.options = opts
     this.log = opts.log || procLog
@@ -110,11 +100,14 @@ class AuditReport extends Map {
 
   async run () {
     this.report = await this[_getReport]()
-    if (this.report) {
+    if (this.report)
       await this[_init]()
-      await this[_processDeps]()
-    }
     return this
+  }
+
+  isVulnerable (node) {
+    const vuln = this.get(node.package.name)
+    return !!(vuln && vuln.isVulnerable(node))
   }
 
   async [_init] () {
@@ -123,99 +116,126 @@ class AuditReport extends Map {
     const promises = []
     for (const [name, advisories] of Object.entries(this.report)) {
       for (const advisory of advisories) {
-        const { vulnerable_versions: range } = advisory
-        promises.push(this[_addVulnerability](name, range, advisory))
+        promises.push(this.calculator.calculate(name, advisory))
       }
     }
-    await Promise.all(promises)
 
+    // now the advisories are calculated with a set of versions
+    // and the packument.  turn them into our style of vuln objects
+    // which also have the affected nodes, and also create entries
+    // for all the metavulns that we find from dependents.
+    const advisories = new Set(await Promise.all(promises))
+    const seen = new Set()
+    for (const advisory of advisories) {
+      const { name, range } = advisory
+
+      // don't flag the exact same name/range more than once
+      // adding multiple advisories with the same range is fine, but no
+      // need to search for nodes we already would have added.
+      const k = `${name}@${range}`
+      if (seen.has(k)) {
+        continue
+      }
+      seen.add(k)
+
+      const vuln = this.get(name) || new Vuln({ name, advisory })
+      if (this.has(name))
+        vuln.addAdvisory(advisory)
+      super.set(name, vuln)
+
+      const p = []
+      for (const node of this.tree.inventory.query('name', name)) {
+        if (shouldOmit(node, this[_omit])) {
+          continue
+        }
+
+        // if not vulnerable by this advisory, keep searching
+        if (!advisory.testVersion(node.version)) {
+          continue
+        }
+
+        // we will have loaded the source already if this is a metavuln
+        if (advisory.type === 'metavuln') {
+          vuln.addVia(this.get(advisory.dependency))
+        }
+
+        // already marked this one, no need to do it again
+        if (vuln.nodes.has(node)) {
+          continue
+        }
+
+        // haven't marked this one yet.  get its dependents.
+        vuln.nodes.add(node)
+        for (const { from: dep, spec } of node.edgesIn) {
+          if (dep.isTop && !vuln.topNodes.has(dep)) {
+            this[_checkTopNode](dep, vuln, spec)
+          } else {
+            // calculate a metavuln, if necessary
+            p.push(this.calculator.calculate(dep.name, advisory).then(meta => {
+              if (meta.testVersion(dep.version, spec))
+                advisories.add(meta)
+            }))
+          }
+        }
+      }
+      await Promise.all(p)
+
+      // make sure we actually got something.  if not, remove it
+      // this can happen if you are loading from a lockfile created by
+      // npm v5, since it lists the current version of all deps,
+      // rather than the range that is actually depended upon,
+      // or if using --omit with the older audit endpoint.
+      if (this.get(name).nodes.size === 0) {
+        this.delete(name)
+        continue
+      }
+
+      // if the vuln is valid, but THIS advisory doesn't apply to any of
+      // the nodes it references, then remove it from the advisory list.
+      // happens when using omit with old audit endpoint.
+      for (const advisory of vuln.advisories) {
+        const relevant = [...vuln.nodes].some(n => advisory.testVersion(n.version))
+        if (!relevant)
+          vuln.deleteAdvisory(advisory)
+      }
+    }
     process.emit('timeEnd', 'auditReport:init')
   }
 
-  // for each node P
-  //  for each vulnerable dep Q
-  //    pickManifest(Q, P's dep on Q, {avoid})
-  //    if resulting version is vunlerable, then P@version is vulnerable
-  //      find all versions of P depending on unsafe Q
-  async [_processDeps] () {
-    process.emit('time', 'auditReport:process')
-    for (const p of this[_vulnDependents]) {
-      await this[_processDependent](p)
+  [_checkTopNode] (topNode, vuln, spec) {
+    vuln.fixAvailable = this[_fixAvailable](topNode, vuln, spec)
+
+    if (vuln.fixAvailable !== true) {
+      // now we know the top node is vulnerable, and cannot be
+      // upgraded out of the bad place without --force.  But, there's
+      // no need to add it to the actual vulns list, because nothing
+      // depends on root.
+      this.topVulns.set(vuln.name, vuln)
+      vuln.topNodes.add(topNode)
     }
-    process.emit('timeEnd', 'auditReport:process')
   }
 
-  isVulnerable (node) {
-    return node && this.has(node.name) &&
-      this.get(node.name).isVulnerable(node)
-  }
+  // check whether the top node is vulnerable.
+  // check whether we can get out of the bad place with --force, and if
+  // so, whether that update is SemVer Major
+  [_fixAvailable] (topNode, vuln, spec) {
+    // this will always be set to at least {name, versions:{}}
+    const paku = vuln.packument
 
-  [_specVulnCheck] (paku, spec) {
-    // if it's not a thing that came from the registry, and for whatever
-    // reason, it's vulnerable, and we have to assume we can't fix that.
-    if (!paku || !paku.versions || typeof paku.versions !== 'object')
-      return false
+    if (!vuln.testSpec(spec)) {
+      return true
+    }
 
-    // similarly, even if we HAVE a packument, but we're looking for a version
-    // that doesn't come out of that packument, and what we've got is
-    // vulnerable, then we're stuck with it.
+    // similarly, even if we HAVE a packument, but we're looking for it
+    // somewhere other than the registry, and we got something vulnerable,
+    // then we're stuck with it.
     const specObj = npa(spec)
     if (!specObj.registry)
       return false
 
-    return spec
-  }
-
-  // pass in the packument for the vulnerable dep, the spec that is
-  // depended upon, and the range of dep versions to avoid.
-  // returns true if every satisfying version is vulnerable.
-  [_specVulnerable] (paku, spec, avoid, bundled) {
-    spec = this[_specVulnCheck](paku, spec)
-    if (spec === false)
-      return true
-
-    const key = `${paku.name}@${spec} !${avoid} bundled=${bundled}`
-    if (this[_specVulnerableMemo].has(key)) {
-      return this[_specVulnerableMemo].get(key)
-    }
-
-    // if it's a bundle dep, then we must avoid it if the vulnerable
-    // range and the dep range intersect, since we can't update in-place.
-    if (bundled) {
-      const val = intersects(spec, avoid, { includePrerelease: true })
-      if (val)
-        this[_specVulnerableMemo].set(key, val)
-      return val
-    }
-
-    // if we can't avoid the vulnerable version range within the spec
-    // required, then the dep range is entirely vulnerable.
-    try {
-      const val = pickManifest(paku, spec, {
-        ...this.options,
-        before: null,
-        avoid,
-      })._shouldAvoid
-      if (val)
-        this[_specVulnerableMemo].set(key, val)
-      return val
-    } catch (er) {
-      // not vulnerable per se, but also not installable, so best avoided
-      // this can happen when dep versions are unpublished.
-      /* istanbul ignore next */
-      this[_specVulnerableMemo].set(key, true)
-      /* istanbul ignore next */
-      return true
-    }
-  }
-
-  // see if the top node CAN be fixed, even with a semver major update
-  // if not, then the user just has to find a different thing to use.
-  [_fixAvailable] (paku, spec, avoid) {
-    spec = this[_specVulnCheck](paku, spec)
-    if (spec === false)
-      return false
-
+    // We don't provide fixes for top nodes other than root, but we
+    // still check to see if the node is fixable with a different version,
+    // and if that is a semver major bump.
     try {
       const {
         _isSemVerMajor: isSemVerMajor,
@@ -224,7 +244,7 @@ class AuditReport extends Map {
       } = pickManifest(paku, spec, {
         ...this.options,
         before: null,
-        avoid,
+        avoid: vuln.range,
         avoidStrict: true,
       })
       return {name, version, isSemVerMajor}
@@ -233,203 +253,8 @@ class AuditReport extends Map {
     }
   }
 
-  // p is a node that depends on a known-vulnerable node q in the tree
-  // loop over versions of p to figure out which ones are dependent exclusively
-  // upon vulnerable versions of q
-  // add those p versions to a metavuln list, and add the new vuln on p
-  async [_processDependent] (p) {
-    const loc = p.location || '#ROOT'
-    process.emit('time', `auditReport:dep:${loc}`)
-    // remove it from the queue so we can process it again if another
-    // vulnerability will affect it.
-    this[_vulnDependents].delete(p)
-    const bd = p.package.bundleDependencies || []
-    for (const edge of p.edgesOut.values()) {
-      const { to: dep, spec } = edge
-
-      // if this isn't a dependency on a vulnerable module, skip it
-      if (!this.isVulnerable(dep)) {
-        continue
-      }
-
-      const vuln = this.get(dep.name)
-
-      // stop me if you've heard this one before
-      const key = `${p.package.name} -> ${dep.name}@${vuln.simpleRange}`
-      if (this[_metaVulnSeen].has(key)) {
-        continue
-      }
-      this[_metaVulnSeen].add(key)
-
-      const bundled = bd.includes(dep.name)
-      const {packument: depPaku, range: avoid} = vuln
-
-      // if the range is not entirely vulnerable, this can be fixed
-      // no metavuln required
-      if (!this[_specVulnerable](depPaku, spec, avoid, bundled)) {
-        continue
-      }
-
-      process.emit('time', `auditReport:dep:${loc}:${edge.to.location}`)
-      this.log.silly('audit', 'processing', key)
-
-      if (p.isTop) {
-        // this indicates that the root is vulnerable, and cannot be
-        // upgraded out of the bad place without --force.  But, there's
-        // no need to add it to the actual vulns list, because nothing
-        // depends on root.
-        this.topVulns.set(dep.name, vuln)
-        vuln.topNodes.add(p)
-        // We don't provide fixes for top nodes other than root, but we
-        // still check to see if the node is fixable, and if semver major
-        vuln.fixAvailable = this[_fixAvailable](depPaku, spec, avoid)
-      } else {
-        // p is vulnerable!
-        // mark all versions with this problem, and then add the
-        // vulnerability for the dependent
-        const paku = await this[_packument](p.package.name)
-        const metaVuln = []
-        const versions = []
-        if (!paku) {
-          // not a dep that comes from the registry, apparently
-          metaVuln.push(p.version)
-        } else {
-          for (const [version, pmani] of Object.entries(paku.versions)) {
-            this.log.silly('audit', 'processing', dep.name, `${p.name}@${version}`)
-            // XXX if version already vulnerable, don't bother checking it
-            versions.push(version)
-
-            const spec = this[_getDepSpec](pmani, dep.name)
-            // if we don't even depend on the thing, we're in the clear
-            if (typeof spec !== 'string')
-              continue
-            const bd = pmani.bundleDependencies || []
-            const bundled = bd.includes(dep.name)
-            const specVuln = this[_specVulnerable](depPaku, spec, avoid, bundled)
-            if (specVuln) {
-              metaVuln.push(version)
-            }
-          }
-        }
-
-        const mvr = simplifyRange(versions, metaVuln.join(' || '), {
-          includePrerelease:true,
-        })
-        await this[_addVulnerability](p.name, mvr, vuln)
-      }
-
-      process.emit('timeEnd', `auditReport:dep:${loc}:${edge.to.location}`)
-    }
-    process.emit('timeEnd', `auditReport:dep:${loc}`)
-  }
-
-  async [_packument] (name) {
-    return this[_packuments].has(name) ? this[_packuments].get(name)
-      : pacote.packument(name, { ...this.options })
-        .catch(() => null)
-        .then(packument => {
-          this[_packuments].set(name, packument)
-          return packument
-        })
-  }
-
-  [_getDepSpec] (mani, name) {
-    // skip dev because that only matters at the root,
-    // where we aren't fetching a manifest from the registry
-    // with multiple versions anyway.
-    return mani.dependencies && mani.dependencies[name] ||
-      mani.optionalDependencies && mani.optionalDependencies[name] ||
-      mani.peerDependencies && mani.peerDependencies[name]
-  }
-
-  delete (name) {
-    const vuln = this.get(name)
-    if (vuln) {
-      for (const via of vuln.via) {
-        if (via instanceof Vuln)
-          via.effects.delete(vuln)
-      }
-    }
-    super.delete(name)
-    this.topVulns.delete(name)
-    this.advisoryVulns.delete(name)
-    this.dependencyVulns.delete(name)
-  }
-
   set () {
     throw new Error('do not call AuditReport.set() directly')
-  }
-
-  async [_addVulnerability] (name, range, via) {
-    this.log.silly('audit', 'add vuln', name, range)
-    const has = this.has(name)
-    const vuln = has ? this.get(name) : new Vuln({ name, via })
-
-    if (has)
-      vuln.addVia(via)
-    else
-      super.set(name, vuln)
-
-    // if we've already seen this exact range, just make sure that
-    // we have the advisory or source already, but do nothing else,
-    // because all the matching have already been collected.
-    if (vuln.hasRange(range))
-      return
-
-    vuln.addRange(range)
-
-    // track it in the appropriate maps for reporting on later
-    super.set(name, vuln)
-    if (!(via instanceof Vuln)) {
-      this.dependencyVulns.delete(name)
-      this.advisoryVulns.set(name, vuln)
-    } else if (!this.advisoryVulns.has(name))
-      this.dependencyVulns.set(name, vuln)
-
-    // wrap in try/finally to ensure we end the timer properly
-    // and don't leave it hanging to conflict with a future one.
-    try {
-      // we always treat metavulns as relevant.  just check advisories
-      // that might not apply to this tree, given omit options.
-      let relevant = via instanceof Vuln
-      process.emit('time', `auditReport:add:${name}@${range}`)
-
-      for (const node of this.tree.inventory.query('name', name)) {
-        if (shouldOmit(node, this[_omit]))
-          continue
-
-        // check if this node would be affected by the advisory or metavuln
-        if (!relevant) {
-          const { version } = node.package
-          relevant = version && satisfies(version, range, semverOpt)
-        }
-
-        if (!vuln.isVulnerable(node))
-          continue
-
-        for (const {from} of node.edgesIn) {
-          this[_vulnDependents].add(from)
-        }
-      }
-
-      // if we didn't get anything, then why is this even here??
-      // this can happen if you are loading from a lockfile created by
-      // npm v5, since it lists the current version of all deps,
-      // rather than the range that is actually depended upon,
-      // or if using --omit with the older audit endpoint.
-      if (vuln.nodes.size === 0)
-        return this.delete(name)
-
-      // if the vuln is valid, but THIS vuln isn't relevant, remove it
-      // from the via list.  happens when using omit with old endpoint.
-      if (!relevant)
-        vuln.deleteVia(via)
-
-      if (!vuln.packument)
-        vuln.packument = await this[_packument](name)
-    } finally {
-      process.emit('timeEnd', `auditReport:add:${name}@${range}`)
-    }
   }
 
   // convert a quick-audit into a bulk advisory listing
@@ -461,8 +286,9 @@ class AuditReport extends Map {
 
   async [_getReport] () {
     // if we're not auditing, just return false
-    if (this.options.audit === false || this.tree.inventory.size === 0)
+    if (this.options.audit === false || this.tree.inventory.size === 0) {
       return null
+    }
 
     process.emit('time', 'auditReport:getReport')
     try {
@@ -508,7 +334,8 @@ class AuditReport extends Map {
 
 // return true if we should ignore this one
 const shouldOmit = (node, omit) =>
-  omit.size === 0 ? false
+  !node.version ? true
+  : omit.size === 0 ? false
   : node.dev && omit.has('dev') ||
     node.optional && omit.has('optional') ||
     node.devOptional && omit.has('dev') && omit.has('optional') ||
