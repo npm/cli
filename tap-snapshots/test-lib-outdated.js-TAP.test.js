@@ -22,7 +22,7 @@ exports[`test/lib/outdated.js TAP should display outdated deps outdated --json -
     "wanted": "1.0.1",
     "latest": "1.0.1",
     "dependent": "outdated-should-display-outdated-deps",
-    "location": "/cli/test/lib/outdated-should-display-outdated-deps/node_modules/alpha",
+    "location": "{CWD}/test/lib/outdated-should-display-outdated-deps/node_modules/alpha",
     "type": "dependencies"
   },
   "beta": {
@@ -30,7 +30,7 @@ exports[`test/lib/outdated.js TAP should display outdated deps outdated --json -
     "wanted": "1.0.1",
     "latest": "1.0.1",
     "dependent": "outdated-should-display-outdated-deps",
-    "location": "/cli/test/lib/outdated-should-display-outdated-deps/node_modules/beta",
+    "location": "{CWD}/test/lib/outdated-should-display-outdated-deps/node_modules/beta",
     "type": "peerDependencies"
   },
   "gamma": {
@@ -38,7 +38,7 @@ exports[`test/lib/outdated.js TAP should display outdated deps outdated --json -
     "wanted": "1.0.1",
     "latest": "2.0.0",
     "dependent": "outdated-should-display-outdated-deps",
-    "location": "/cli/test/lib/outdated-should-display-outdated-deps/node_modules/gamma",
+    "location": "{CWD}/test/lib/outdated-should-display-outdated-deps/node_modules/gamma",
     "type": "dependencies"
   },
   "theta": {
@@ -58,21 +58,21 @@ exports[`test/lib/outdated.js TAP should display outdated deps outdated --json >
     "wanted": "1.0.1",
     "latest": "1.0.1",
     "dependent": "outdated-should-display-outdated-deps",
-    "location": "/cli/test/lib/outdated-should-display-outdated-deps/node_modules/alpha"
+    "location": "{CWD}/test/lib/outdated-should-display-outdated-deps/node_modules/alpha"
   },
   "beta": {
     "current": "1.0.0",
     "wanted": "1.0.1",
     "latest": "1.0.1",
     "dependent": "outdated-should-display-outdated-deps",
-    "location": "/cli/test/lib/outdated-should-display-outdated-deps/node_modules/beta"
+    "location": "{CWD}/test/lib/outdated-should-display-outdated-deps/node_modules/beta"
   },
   "gamma": {
     "current": "1.0.1",
     "wanted": "1.0.1",
     "latest": "2.0.0",
     "dependent": "outdated-should-display-outdated-deps",
-    "location": "/cli/test/lib/outdated-should-display-outdated-deps/node_modules/gamma"
+    "location": "{CWD}/test/lib/outdated-should-display-outdated-deps/node_modules/gamma"
   },
   "theta": {
     "wanted": "1.0.1",
@@ -93,17 +93,17 @@ theta    MISSING   1.0.1   1.0.1  -                   outdated-should-display-ou
 
 exports[`test/lib/outdated.js TAP should display outdated deps outdated --parseable --long > must match snapshot 1`] = `
 
-/cli/test/lib/outdated-should-display-outdated-deps/node_modules/alpha:alpha@1.0.1:alpha@1.0.0:alpha@1.0.1:outdated-should-display-outdated-deps:dependencies:
-/cli/test/lib/outdated-should-display-outdated-deps/node_modules/beta:beta@1.0.1:beta@1.0.0:beta@1.0.1:outdated-should-display-outdated-deps:peerDependencies:
-/cli/test/lib/outdated-should-display-outdated-deps/node_modules/gamma:gamma@1.0.1:gamma@1.0.1:gamma@2.0.0:outdated-should-display-outdated-deps:dependencies:
+{CWD}/test/lib/outdated-should-display-outdated-deps/node_modules/alpha:alpha@1.0.1:alpha@1.0.0:alpha@1.0.1:outdated-should-display-outdated-deps:dependencies:
+{CWD}/test/lib/outdated-should-display-outdated-deps/node_modules/beta:beta@1.0.1:beta@1.0.0:beta@1.0.1:outdated-should-display-outdated-deps:peerDependencies:
+{CWD}/test/lib/outdated-should-display-outdated-deps/node_modules/gamma:gamma@1.0.1:gamma@1.0.1:gamma@2.0.0:outdated-should-display-outdated-deps:dependencies:
 :theta@1.0.1:MISSING:theta@1.0.1:outdated-should-display-outdated-deps:dependencies:
 `
 
 exports[`test/lib/outdated.js TAP should display outdated deps outdated --parseable > must match snapshot 1`] = `
 
-/cli/test/lib/outdated-should-display-outdated-deps/node_modules/alpha:alpha@1.0.1:alpha@1.0.0:alpha@1.0.1:outdated-should-display-outdated-deps
-/cli/test/lib/outdated-should-display-outdated-deps/node_modules/beta:beta@1.0.1:beta@1.0.0:beta@1.0.1:outdated-should-display-outdated-deps
-/cli/test/lib/outdated-should-display-outdated-deps/node_modules/gamma:gamma@1.0.1:gamma@1.0.1:gamma@2.0.0:outdated-should-display-outdated-deps
+{CWD}/test/lib/outdated-should-display-outdated-deps/node_modules/alpha:alpha@1.0.1:alpha@1.0.0:alpha@1.0.1:outdated-should-display-outdated-deps
+{CWD}/test/lib/outdated-should-display-outdated-deps/node_modules/beta:beta@1.0.1:beta@1.0.0:beta@1.0.1:outdated-should-display-outdated-deps
+{CWD}/test/lib/outdated-should-display-outdated-deps/node_modules/gamma:gamma@1.0.1:gamma@1.0.1:gamma@2.0.0:outdated-should-display-outdated-deps
 :theta@1.0.1:MISSING:theta@1.0.1:outdated-should-display-outdated-deps
 `
 

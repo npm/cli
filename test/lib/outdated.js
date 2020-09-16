@@ -105,12 +105,16 @@ const outdated = (dir, opts) => requireInject(
 )
 
 t.beforeEach(cleanLogs)
-t.cleanSnapshot = s => {
-  return s.replace(
-    /(\/.*)(cli\/test\/lib\/)|(D:\\.*)(cli(\\\\|\\)test(\\\\|\\)lib(\\\\|\\))/g,
-    '/cli/test/lib/'
-  ).replace(/(\\\\|\\)/g, '/')
+
+const redactCwd = (path) => {
+  const normalizePath = p => p
+    .replace(/\\+/g, '/')
+    .replace(/\r\n/g, '\n')
+  return normalizePath(path)
+    .replace(new RegExp(normalizePath(process.cwd()), 'g'), '{CWD}')
 }
+
+t.cleanSnapshot = (str) => redactCwd(str)
 
 t.test('should display outdated deps', t => {
   const testDir = t.testdir({
