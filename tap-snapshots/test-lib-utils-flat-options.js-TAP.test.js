@@ -111,6 +111,7 @@ Object {
   "signGitTag": "sign-git-tag",
   "ssoPollFrequency": undefined,
   "ssoType": undefined,
+  "strictPeerDeps": undefined,
   "strictSSL": "strict-ssl",
   "tag": "tag",
   "tagVersionPrefix": "tag-version-prefix",
