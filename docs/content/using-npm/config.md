@@ -1161,6 +1161,24 @@ should be polled while the user is completing authentication.
 
 If `--auth-type=sso`, the type of SSO type to use.
 
+#### strict-peer-deps
+
+* Default: false
+* Type: Boolean
+
+If set to `true`, and `--legacy-peer-deps` is not set, then _any_
+conflicting `peerDependencies` will be treated as an install failure, even
+if npm could reasonably guess the appropriate resolution based on non-peer
+dependency relationships.
+
+By default, conflicting `peerDependencies` in the dependency graph will be
+resolved using the nearest non-peer dependency specification, even if doing
+so will result in some packages receiving a peer dependency outside the
+range set in their package's `peerDependencies` object.  When such and
+override is performed, a warning is printed, explaining the conflict and
+the packages involved.  If `--strict-peer-deps` is set, then the warning is
+treated as a failure.
+
 #### strict-ssl
 
 * Default: true
