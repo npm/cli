@@ -10,6 +10,7 @@ const promiseCallLimit = require('promise-call-limit')
 const {resolve} = require('path')
 
 const boolEnv = b => b ? '1' : ''
+const sortNodes = (a, b) => (a.depth - b.depth) || a.path.localeCompare(b.path)
 
 const _rebuildBundle = Symbol('rebuildBundle')
 const _ignoreScripts = Symbol('ignoreScripts')
@@ -112,8 +113,7 @@ module.exports = cls => class Builder extends cls {
     // run in the same predictable order that buildIdealTree uses
     // there's no particular reason for doing it in this order rather
     // than another, but sorting *somehow* makes it consistent.
-    const queue = [...set].sort((a, b) =>
-      (a.depth - b.depth) || a.path.localeCompare(b.path))
+    const queue = [...set].sort(sortNodes)
 
     for (const node of queue) {
       const { package: { bin, scripts = {} } } = node
@@ -234,7 +234,9 @@ module.exports = cls => class Builder extends cls {
 
     process.emit('time', 'build:link')
     const promises = []
-    for (const node of queue) {
+    // sort the queue by node path, so that the module-local collision
+    // detector in bin-links will always resolve the same way.
+    for (const node of queue.sort(sortNodes)) {
       promises.push(this[_createBinLinks](node))
     }
     await promiseAllRejectLate(promises)

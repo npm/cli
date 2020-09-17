@@ -64,6 +64,10 @@ class Vuln {
     // - {name, version} fix requires -f, not semver major
     // - true: fix does not require -f
     for (const v of this.via) {
+      // don't blow up on loops
+      if (v.fixAvailable === f)
+        continue
+
       if (f === false)
         v.fixAvailable = f
       else if (v.fixAvailable === true)

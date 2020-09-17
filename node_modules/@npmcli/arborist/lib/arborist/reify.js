@@ -329,7 +329,7 @@ module.exports = cls => class Reifier extends cls {
     return promiseAllRejectLate(unlinks)
       .then(() => {
         if (failures.length)
-          this.log.warn('Failed to clean up some directories', failures)
+          this.log.warn('cleanup', 'Failed to remove some directories', failures)
       })
       .then(() => process.emit('timeEnd', 'reify:rollback:createSparse'))
       .then(() => this[_rollbackRetireShallowNodes](er))
@@ -481,7 +481,11 @@ module.exports = cls => class Reifier extends cls {
       try {
         c()
       } catch (er) {
-        this.log.warn(er)
+        this.log.warn(er.code, er.message, {
+          package: er.pkgid,
+          required: er.required,
+          current: er.current,
+        })
       }
     }
   }
@@ -802,7 +806,7 @@ module.exports = cls => class Reifier extends cls {
 
     return promiseAllRejectLate(promises).then(() => {
       if (failures.length)
-        this.log.warn('Failed to clean up some directories', failures)
+        this.log.warn('cleanup', 'Failed to remove some directories', failures)
     })
     .then(() => process.emit('timeEnd', 'reify:trash'))
   }

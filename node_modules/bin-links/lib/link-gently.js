@@ -13,6 +13,12 @@ const readlink = promisify(fs.readlink)
 const lstat = promisify(fs.lstat)
 const throwNonEnoent = er => { if (er.code !== 'ENOENT') throw er }
 
+// even in --force mode, we never create a link over a link we've
+// already created.  you can have multiple packages in a tree trying
+// to contend for the same bin, or the same manpage listed multiple times,
+// which creates a race condition and nondeterminism.
+const seen = new Set()
+
 // disable glob in our rimraf calls
 const rimraf = promisify(require('rimraf'))
 const rm = path => rimraf(path, { glob: false })
@@ -20,7 +26,11 @@ const rm = path => rimraf(path, { glob: false })
 const SKIP = Symbol('skip - missing or already installed')
 const CLOBBER  = Symbol('clobber - ours or in forceful mode')
 
-const linkGently = ({path, to, from, absFrom, force}) => {
+const linkGently = async ({path, to, from, absFrom, force}) => {
+  if (seen.has(to))
+    return true
+  seen.add(to)
+
   // if the script or manpage isn't there, just ignore it.
   // this arguably *should* be an install error of some sort,
   // or at least a warning, but npm has always behaved this
@@ -62,4 +72,10 @@ const linkGently = ({path, to, from, absFrom, force}) => {
   })
 }
 
-module.exports = linkGently
+const resetSeen = () => {
+  for (const p of seen) {
+    seen.delete(p)
+  }
+}
+
+module.exports = Object.assign(linkGently, { resetSeen })

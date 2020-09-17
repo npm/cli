@@ -9,6 +9,12 @@ const readCmdShim = require('read-cmd-shim')
 
 const fixBin = require('./fix-bin.js')
 
+// even in --force mode, we never create a shim over a shim we've
+// already created.  you can have multiple packages in a tree trying
+// to contend for the same bin, which creates a race condition and
+// nondeterminism.
+const seen = new Set()
+
 const failEEXIST = ({path, to, from}) =>
   Promise.reject(Object.assign(new Error('EEXIST: file already exists'), {
     path: to,
@@ -28,6 +34,13 @@ const shimBin = ({path, to, from, absFrom, force}) => {
     to + '.cmd',
     to + '.ps1',
   ]
+
+  for (const shim of shims) {
+    if (seen.has(shim))
+      return true
+    seen.add(shim)
+  }
+
   return Promise.all([
     ...shims,
     absFrom,
@@ -61,4 +74,10 @@ const shimBin = ({path, to, from, absFrom, force}) => {
 const doShim = (absFrom, to) =>
   cmdShim(absFrom, to).then(() => fixBin(absFrom))
 
-module.exports = shimBin
+const resetSeen = () => {
+  for (const p of seen) {
+    seen.delete(p)
+  }
+}
+
+module.exports = Object.assign(shimBin, { resetSeen })
