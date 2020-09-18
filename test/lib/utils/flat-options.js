@@ -110,6 +110,8 @@ class MockConfig {
       'user-agent': 'user-agent',
       '@scope:registry': '@scope:registry',
       '//nerf.dart:_authToken': '//nerf.dart:_authToken',
+      'proxy': 'proxy',
+      'noproxy': 'noproxy',
       ...opts
     }]
   }
