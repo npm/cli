@@ -190,7 +190,8 @@
     "marked-man": "^0.7.0",
     "require-inject": "^1.4.4",
     "tap": "^14.11.0",
-    "yaml": "^1.10.0"
+    "yaml": "^1.10.0",
+    "twly": "^4.0.4"
   },
   "scripts": {
     "dumpconf": "env | grep npm | sort | uniq",
