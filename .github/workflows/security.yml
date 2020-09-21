@@ -10,8 +10,8 @@ on:
 jobs:
   build:
     name: Security Checks
-    runs-on: ubuntu-latest
-    strategy:
+    runs-on: ubuntu-latest # Workflow should run on latest version of ubuntu
+    strategy: #Specifies build matrix that runs project on three Node.js versions: 10.x, 12.x, and 14.x
       matrix:
         node-version: [10.x, 12.x, 14.x]
 
@@ -23,15 +23,15 @@ jobs:
           node-version: ${{ matrix.node-version }}
       
       # Installs packages defined in package.json file so that twly can be properly used.
-      - name: Install NPM Packages
+      - name: Install npm Packages
         run: npm install
       
       # Dependencies fail an audit if the results include a vulnerability with a level of moderate or higher
-      - name: NPM Audit Production Level Moderate
+      - name: npm Audit Production Level Moderate
         run: npm audit --production --audit-level=moderate
       
       # Dependencies fail an audit if the results include a vulnerability with a level of critical or higher
-      - name: NPM Audit level Critical
+      - name: npm Audit level Critical
         run: npm audit --audit-level=critical
       
       # Runs Twly to determine how "dry" The codebase is
