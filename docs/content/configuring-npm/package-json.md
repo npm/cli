@@ -720,7 +720,7 @@ this. If you depend on features introduced in 1.5.2, use `">= 1.5.2 < 2"`.
 
 ### peerDependenciesMeta
 
-When a user installs a your package, npm will emit warnings if packages specified in `peerDependencies` are not already installed. The `peerDependenciesMeta` field serves to provide npm more information on how your peer dependencies are to be used. Specifically, it allows peer dependencies to be marked as optional.
+When a user installs your package, npm will emit warnings if packages specified in `peerDependencies` are not already installed. The `peerDependenciesMeta` field serves to provide npm more information on how your peer dependencies are to be used. Specifically, it allows peer dependencies to be marked as optional.
 
 For example:
 
