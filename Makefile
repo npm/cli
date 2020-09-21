@@ -6,9 +6,9 @@ BRANCH = $(shell git rev-parse --abbrev-ref HEAD)
 
 markdowns = $(shell find docs -name '*.md' | grep -v 'index') README.md
 
-cli_mandocs = $(shell find docs/content/cli-commands -name '*.md' \
+cli_mandocs = $(shell find docs/content/commands -name '*.md' \
                |sed 's|.md|.1|g' \
-               |sed 's|docs/content/cli-commands/|man/man1/|g' ) \
+               |sed 's|docs/content/commands/|man/man1/|g' ) \
                man/man1/npm-README.1 \
                man/man1/npx.1
 
@@ -80,7 +80,7 @@ man/man1/npm-README.1: README.md scripts/docs-build.js package.json $(build-doc-
 	@[ -d man/man1 ] || mkdir -p man/man1
 	node scripts/docs-build.js $< $@
 
-man/man1/%.1: docs/content/cli-commands/%.md scripts/docs-build.js package.json $(build-doc-tools)
+man/man1/%.1: docs/content/commands/%.md scripts/docs-build.js package.json $(build-doc-tools)
 	@[ -d man/man1 ] || mkdir -p man/man1
 	node scripts/docs-build.js $< $@
 
