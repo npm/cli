@@ -28,7 +28,7 @@ common options: [-P|--save-prod|-D|--save-dev|-O|--save-optional] [-E|--save-exa
 This command installs a package, and any packages that it depends on. If the
 package has a package-lock or shrinkwrap file, the installation of dependencies
 will be driven by that, with an `npm-shrinkwrap.json` taking precedence if both
-files exist. See [package-lock.json](/configuring-npm/package-lock-json) and [`npm shrinkwrap`](/cli-commands/npm-shrinkwrap).
+files exist. See [package-lock.json](/configuring-npm/package-lock-json) and [`npm shrinkwrap`](/commands/npm-shrinkwrap).
 
 A `package` is:
 
@@ -36,7 +36,7 @@ A `package` is:
 * b) a gzipped tarball containing (a)
 * c) a url that resolves to (b)
 * d) a `<name>@<version>` that is published on the registry (see [`registry`](/using-npm/registry)) with (c)
-* e) a `<name>@<tag>` (see [`npm dist-tag`](/cli-commands/npm-dist-tag)) that points to (d)
+* e) a `<name>@<tag>` (see [`npm dist-tag`](/commands/npm-dist-tag)) that points to (d)
 * f) a `<name>` that has a "latest" tag satisfying (e)
 * g) a `<git remote url>` that resolves to (a)
 
@@ -499,17 +499,17 @@ affects a real use-case, it will be investigated.
 ### See Also
 
 * [npm folders](/configuring-npm/folders)
-* [npm update](/cli-commands/npm-update)
-* [npm audit](/cli-commands/npm-audit)
-* [npm fund](/cli-commands/npm-fund)
-* [npm link](/cli-commands/npm-link)
-* [npm rebuild](/cli-commands/npm-rebuild)
+* [npm update](/commands/npm-update)
+* [npm audit](/commands/npm-audit)
+* [npm fund](/commands/npm-fund)
+* [npm link](/commands/npm-link)
+* [npm rebuild](/commands/npm-rebuild)
 * [npm scripts](/using-npm/scripts)
-* [npm build](/cli-commands/npm-build)
-* [npm config](/cli-commands/npm-config)
+* [npm build](/commands/npm-build)
+* [npm config](/commands/npm-config)
 * [npmrc](/configuring-npm/npmrc)
 * [npm registry](/using-npm/registry)
-* [npm dist-tag](/cli-commands/npm-dist-tag)
-* [npm uninstall](/cli-commands/npm-uninstall)
-* [npm shrinkwrap](/cli-commands/npm-shrinkwrap)
+* [npm dist-tag](/commands/npm-dist-tag)
+* [npm uninstall](/commands/npm-uninstall)
+* [npm shrinkwrap](/commands/npm-shrinkwrap)
 * [package.json](/configuring-npm/package-json)

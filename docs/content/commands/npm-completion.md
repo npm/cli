@@ -35,4 +35,4 @@ completions based on the arguments.
 ### See Also
 
 * [npm developers](/using-npm/developers)
-* [npm](/cli-commands/npm)
+* [npm](/commands/npm)

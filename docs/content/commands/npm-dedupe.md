@@ -58,6 +58,6 @@ result in new modules being installed.
 
 ### See Also
 
-* [npm ls](/cli-commands/npm-ls)
-* [npm update](/cli-commands/npm-update)
-* [npm install](/cli-commands/npm-install)
+* [npm ls](/commands/npm-ls)
+* [npm update](/commands/npm-update)
+* [npm install](/commands/npm-install)

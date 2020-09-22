@@ -16,6 +16,6 @@ Print the `username` config to standard output.
 
 ### See Also
 
-* [npm config](/cli-commands/npm-config)
+* [npm config](/commands/npm-config)
 * [npmrc](/configuring-npm/npmrc)
-* [npm adduser](/cli-commands/npm-adduser)
+* [npm adduser](/commands/npm-adduser)

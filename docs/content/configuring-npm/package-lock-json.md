@@ -138,8 +138,8 @@ The dependencies of this dependency, exactly as at the top level.
 
 ### See also
 
-* [npm shrinkwrap](/cli-commands/npm-shrinkwrap)
+* [npm shrinkwrap](/commands/npm-shrinkwrap)
 * [shrinkwrap.json](/configuring-npm/shrinkwrap-json)
 * [package-locks](/configuring-npm/package-locks)
 * [package.json](/configuring-npm/package-json)
-* [npm install](/cli-commands/npm-install)
+* [npm install](/commands/npm-install)

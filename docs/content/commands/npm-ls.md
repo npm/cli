@@ -115,11 +115,11 @@ Set it to false in order to use all-ansi output.
 
 ### See Also
 
-* [npm config](/cli-commands/npm-config)
+* [npm config](/commands/npm-config)
 * [npmrc](/configuring-npm/npmrc)
 * [npm folders](/configuring-npm/folders)
-* [npm install](/cli-commands/npm-install)
-* [npm link](/cli-commands/npm-link)
-* [npm prune](/cli-commands/npm-prune)
-* [npm outdated](/cli-commands/npm-outdated)
-* [npm update](/cli-commands/npm-update)
+* [npm install](/commands/npm-install)
+* [npm link](/commands/npm-link)
+* [npm prune](/commands/npm-prune)
+* [npm outdated](/commands/npm-outdated)
+* [npm update](/commands/npm-update)

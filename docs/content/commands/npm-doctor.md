@@ -102,6 +102,6 @@ cache, you should probably run `npm cache clean` and reset the cache.
 
 ### See Also
 
-* [npm bugs](/cli-commands/npm-bugs)
-* [npm help](/cli-commands/npm-help)
-* [npm ping](/cli-commands/npm-ping)
+* [npm bugs](/commands/npm-bugs)
+* [npm help](/commands/npm-help)
+* [npm ping](/commands/npm-ping)

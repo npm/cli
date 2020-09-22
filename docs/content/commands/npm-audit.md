@@ -127,6 +127,6 @@ configuration setting.
 
 ### See Also
 
-* [npm install](/cli-commands/npm-install)
+* [npm install](/commands/npm-install)
 * [package-locks](/configuring-npm/package-locks)
 * [config](/using-npm/config)
