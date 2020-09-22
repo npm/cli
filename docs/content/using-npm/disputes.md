@@ -130,4 +130,4 @@ License.
 ### See also
 
 * [npm registry](/using-npm/registry)
-* [npm owner](/cli-commands/npm-owner)
+* [npm owner](/commands/npm-owner)

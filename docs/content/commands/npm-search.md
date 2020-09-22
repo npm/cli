@@ -105,6 +105,6 @@ setting.
 ### See Also
 
 * [npm registry](/using-npm/registry)
-* [npm config](/cli-commands/npm-config)
+* [npm config](/commands/npm-config)
 * [npmrc](/configuring-npm/npmrc)
-* [npm view](/cli-commands/npm-view)
+* [npm view](/commands/npm-view)

@@ -75,7 +75,7 @@ global config.
 ### See Also
 
 * [npm folders](/configuring-npm/folders)
-* [npm config](/cli-commands/npm-config)
+* [npm config](/commands/npm-config)
 * [package.json](/configuring-npm/package-json)
 * [npmrc](/configuring-npm/npmrc)
-* [npm](/cli-commands/npm)
+* [npm](/commands/npm)

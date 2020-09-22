@@ -29,7 +29,7 @@ fs.readFile(src, 'utf8', function (err, data) {
 
   var result = data.replace(/@VERSION@/g, npm.version)
     .replace(/^---\n([\s\S]+\n)---/, frontmatter)
-    .replace(/\[([^\]]+)\]\(\/cli-commands\/([^)]+)\)/g, replacer)
+    .replace(/\[([^\]]+)\]\(\/commands\/([^)]+)\)/g, replacer)
     .replace(/\[([^\]]+)\]\(\/configuring-npm\/([^)]+)\)/g, replacer)
     .replace(/\[([^\]]+)\]\(\/using-npm\/([^)]+)\)/g, replacer)
     .trim()

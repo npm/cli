@@ -19,7 +19,7 @@ you will most certainly enjoy this command.
 
 ### See Also
 
-* [npm star](/cli-commands/npm-star)
-* [npm view](/cli-commands/npm-view)
-* [npm whoami](/cli-commands/npm-whoami)
-* [npm adduser](/cli-commands/npm-adduser)
+* [npm star](/commands/npm-star)
+* [npm view](/commands/npm-view)
+* [npm whoami](/commands/npm-whoami)
+* [npm adduser](/commands/npm-adduser)
