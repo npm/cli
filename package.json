@@ -45,7 +45,7 @@
     "@npmcli/arborist": "^0.0.27",
     "@npmcli/ci-detect": "^1.2.0",
     "@npmcli/config": "^1.1.8",
-    "@npmcli/run-script": "^1.5.0",
+    "@npmcli/run-script": "^1.6.0",
     "abbrev": "~1.1.1",
     "ansicolors": "~0.3.2",
     "ansistyles": "~0.1.3",
