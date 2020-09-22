@@ -40,7 +40,7 @@ The shell to run for the `npm explore` command.
 ### See Also
 
 * [npm folders](/configuring-npm/folders)
-* [npm edit](/commands/edit)
-* [npm rebuild](/commands/rebuild)
-* [npm build](/commands/build)
-* [npm install](/commands/install)
+* [npm edit](/commands/npm-edit)
+* [npm rebuild](/commands/npm-rebuild)
+* [npm build](/commands/npm-build)
+* [npm install](/commands/npm-install)

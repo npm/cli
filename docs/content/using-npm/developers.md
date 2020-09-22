@@ -96,8 +96,8 @@ least, you need:
   they'll get installed just like these ones.
 
 You can use `npm init` in the root of your package in order to get you
-started with a pretty basic package.json file.  See [`npm init`](/commands/npm-init) for
-more info.
+started with a pretty basic package.json file.  See
+[`npm init`](/commands/npm-init) for more info.
 
 ### Keeping files *out* of your package
 

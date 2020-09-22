@@ -58,5 +58,5 @@ use the `npm access` command to grant or revoke the appropriate permissions.
 
 ### See Also
 
-* [npm access](/commands/access)
+* [npm access](/commands/npm-access)
 * [npm registry](/using-npm/registry)

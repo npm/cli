@@ -86,8 +86,8 @@ without breaking the execution chain.
 ### See Also
 
 * [npm scripts](/using-npm/scripts)
-* [npm test](/commands/test)
-* [npm start](/commands/start)
-* [npm restart](/commands/restart)
-* [npm stop](/commands/stop)
-* [npm config](/commands/config)
+* [npm test](/commands/npm-test)
+* [npm start](/commands/npm-start)
+* [npm restart](/commands/npm-restart)
+* [npm stop](/commands/npm-stop)
+* [npm config](/commands/npm-config)

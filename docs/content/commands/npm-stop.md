@@ -16,8 +16,8 @@ This runs a package's "stop" script, if one was provided.
 
 ### See Also
 
-* [npm run-script](/commands/run-script)
+* [npm run-script](/commands/npm-run-script)
 * [npm scripts](/using-npm/scripts)
-* [npm test](/commands/test)
-* [npm start](/commands/start)
-* [npm restart](/commands/restart)
+* [npm test](/commands/npm-test)
+* [npm start](/commands/npm-start)
+* [npm restart](/commands/npm-restart)

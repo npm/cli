@@ -29,7 +29,7 @@ available at <https://github.com/npm/npm-registry-couchapp>.
 
 The registry URL used is determined by the scope of the package (see
 [`scope`](/using-npm/scope). If no scope is specified, the default registry is used, which is
-supplied by the `registry` config parameter.  See [`npm config`](/commands/config),
+supplied by the `registry` config parameter.  See [`npm config`](/commands/npm-config),
 [`npmrc`](/configuring-npm/npmrc), and [`config`](/using-npm/config) for more on managing npm's configuration.
 
 ### Does npm send any information about me back to the registry?
@@ -96,7 +96,7 @@ Yes, head over to <https://www.npmjs.com/>
 
 ### See also
 
-* [npm config](/commands/config)
+* [npm config](/commands/npm-config)
 * [config](/using-npm/config)
 * [npmrc](/configuring-npm/npmrc)
 * [npm developers](/using-npm/developers)

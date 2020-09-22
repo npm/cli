@@ -113,7 +113,7 @@ Display all outdated dependencies on the tree.
 
 ### See Also
 
-* [npm update](/commands/update)
-* [npm dist-tag](/commands/dist-tag)
+* [npm update](/commands/npm-update)
+* [npm dist-tag](/commands/npm-dist-tag)
 * [npm registry](/using-npm/registry)
 * [npm folders](/configuring-npm/folders)

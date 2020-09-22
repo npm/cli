@@ -31,7 +31,7 @@ format an empty string.
 
 ### See Also
 
-* [npm publish](/commands/publish)
+* [npm publish](/commands/npm-publish)
 * [npm registry](/using-npm/registry)
 * [npm owner](/cli-commands/owner)
 * [npm owner](/cli-commands/adduser)

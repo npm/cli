@@ -16,8 +16,8 @@ Print the folder where npm will install executables.
 
 ### See Also
 
-* [npm prefix](/commands/prefix)
-* [npm root](/commands/root)
+* [npm prefix](/commands/npm-prefix)
+* [npm root](/commands/npm-root)
 * [npm folders](/configuring-npm/folders)
-* [npm config](/commands/config)
+* [npm config](/commands/npm-config)
 * [npmrc](/configuring-npm/npmrc)

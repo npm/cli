@@ -85,11 +85,11 @@ When running it with:
 
 This demonstrates how the nature of `node_modules` resolution allows for
 **workspaces** to enable a portable workflow for requiring each **workspace**
-in such a way that is also easy to [publish](/cli-commands/publish) these
+in such a way that is also easy to [publish](/commands/npm-publish) these
 nested workspaces to be consumed elsewhere.
 
 ### See also
 
-* [npm install](/cli-commands/install)
-* [npm publish](/cli-commands/publish)
+* [npm install](/commands/npm-install)
+* [npm publish](/commands/npm-publish)
 

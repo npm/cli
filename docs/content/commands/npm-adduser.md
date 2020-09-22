@@ -85,7 +85,7 @@ username/password entry in legacy npm.
 ### See Also
 
 * [npm registry](/using-npm/registry)
-* [npm config](/commands/config)
+* [npm config](/commands/npm-config)
 * [npmrc](/configuring-npm/npmrc)
-* [npm owner](/commands/owner)
-* [npm whoami](/commands/whoami)
+* [npm owner](/commands/npm-owner)
+* [npm whoami](/commands/npm-whoami)

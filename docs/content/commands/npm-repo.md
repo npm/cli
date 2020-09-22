@@ -33,5 +33,5 @@ Set to `true` to use default system URL opener.
 
 ### See Also
 
-* [npm docs](/commands/docs)
-* [npm config](/commands/config)
+* [npm docs](/commands/npm-docs)
+* [npm config](/commands/npm-config)

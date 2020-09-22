@@ -62,12 +62,12 @@ Show information in JSON format.
 
 ### See Also
 
-* [npm config](/commands/config)
+* [npm config](/commands/npm-config)
 * [npmrc](/configuring-npm/npmrc)
 * [npm folders](/configuring-npm/folders)
-* [npm ls](/commands/ls)
-* [npm install](/commands/install)
-* [npm link](/commands/link)
-* [npm prune](/commands/prune)
-* [npm outdated](/commands/outdated)
-* [npm update](/commands/update)
+* [npm ls](/commands/npm-ls)
+* [npm install](/commands/npm-install)
+* [npm link](/commands/npm-link)
+* [npm prune](/commands/npm-prune)
+* [npm outdated](/commands/npm-outdated)
+* [npm update](/commands/npm-update)
