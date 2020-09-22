@@ -1,3 +1,36 @@
+## v7.0.0-beta.12 (2020-09-22)
+
+* [`24f3a5448`](https://github.com/npm/cli/commit/24f3a5448f021ad603046dfb9fd97ed66bd63bba)
+  [#1811](https://github.com/npm/cli/issues/1811)
+  npm ci should never save package.json or lockfile
+  ([@isaacs](https://github.com/isaacs))
+* [`5e780a5f0`](https://github.com/npm/cli/commit/5e780a5f067476c1d207173fc9249faf9eaac0c2)
+  remove unused spec parameter, assign error code
+  ([@nlf](https://github.com/nlf))
+* [`f019a248a`](https://github.com/npm/cli/commit/f019a248a67e8c46dbe41bf31f4818c5ca2138bf)
+  Remove unused npx binary
+  ([@isaacs](https://github.com/isaacs))
+* [`db157b3ce`](https://github.com/npm/cli/commit/db157b3ceb46327ca2089604d5f4fc9de391584e)
+  `@npmcli/arborist@0.0.27`
+    * Resolve race condition with conflicting bin links in local installs
+    * [#1812](https://github.com/npm/cli/issues/1812) Log engine mismatches more usefully
+    * [#1814](https://github.com/npm/cli/issues/1814) Do not loop trying to resolve dependencies that fail to load
+    * [npm/rfcs#224](https://github.com/npm/rfcs/pull/224) Do not automatically install optional peer dependencies
+    * Add the `strictPeerDeps` option, defaulting to `false`
+    * fix forwarding configs to resolve pkg spec when adding new deps
+* [`b3a50d275`](https://github.com/npm/cli/commit/b3a50d27501e47c61b52c3cc4de99ff4e4641efe)
+  [#1846](https://github.com/npm/cli/pull/1846)
+  `@npmcli/run-script@1.6.0`
+    * This updates node-gyp to v7, allowing us to deduplicate a lot of significant dependencies.
+* [`a1d375f6b`](https://github.com/npm/cli/commit/a1d375f6b0ee358be41110a49acc1c9fdb775fbe)
+  [#1819](https://github.com/npm/cli/pull/1819)
+  Add `--strict-peer-deps` option
+  ([@isaacs](https://github.com/isaacs))
+* [`5837a4843`](https://github.com/npm/cli/commit/5837a4843ab1f19fb62f60151f522ca0fa5449ae)
+  [#1699](https://github.com/npm/cli/pull/1699)
+  Use allow/deny list in docs
+  ([@luciomartinez](https://github.com/luciomartinez))
+
 ## v7.0.0-beta.11 (2020-09-16)
 
 * [`63005f4a9`](https://github.com/npm/cli/commit/63005f4a98d55786fda46f3bbb3feab044d078df)
