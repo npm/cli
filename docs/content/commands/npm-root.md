@@ -15,8 +15,8 @@ Print the effective `node_modules` folder to standard out.
 
 ### See Also
 
-* [npm prefix](/cli-commands/prefix)
-* [npm bin](/cli-commands/bin)
+* [npm prefix](/commands/prefix)
+* [npm bin](/commands/bin)
 * [npm folders](/configuring-npm/folders)
-* [npm config](/cli-commands/config)
+* [npm config](/commands/config)
 * [npmrc](/configuring-npm/npmrc)

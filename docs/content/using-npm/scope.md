@@ -52,7 +52,7 @@ Or in `package.json`:
 ```
 
 Note that if the `@` symbol is omitted, in either case, npm will instead attempt to
-install from GitHub; see [`npm install`](/cli-commands/install).
+install from GitHub; see [`npm install`](/commands/install).
 
 ### Requiring scoped packages
 
@@ -122,7 +122,7 @@ that registry instead.
 
 ### See also
 
-* [npm install](/cli-commands/install)
-* [npm publish](/cli-commands/publish)
-* [npm access](/cli-commands/access)
+* [npm install](/commands/install)
+* [npm publish](/commands/publish)
+* [npm access](/commands/access)
 * [npm registry](/using-npm/registry)

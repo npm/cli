@@ -18,6 +18,6 @@ This command runs `npm ci` followed immediately by `npm test`.
 
 ### See Also
 
-* [npm install-test](/cli-commands/install-test)
-* [npm ci](/cli-commands/ci)
-* [npm test](/cli-commands/test)
+* [npm install-test](/commands/install-test)
+* [npm ci](/commands/ci)
+* [npm test](/commands/test)

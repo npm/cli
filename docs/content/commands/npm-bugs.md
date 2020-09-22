@@ -42,10 +42,10 @@ The base URL of the npm package registry.
 
 ### See Also
 
-* [npm docs](/cli-commands/docs)
-* [npm view](/cli-commands/view)
-* [npm publish](/cli-commands/publish)
+* [npm docs](/commands/docs)
+* [npm view](/commands/view)
+* [npm publish](/commands/publish)
 * [npm registry](/using-npm/registry)
-* [npm config](/cli-commands/config)
+* [npm config](/commands/config)
 * [npmrc](/configuring-npm/npmrc)
 * [package.json](/configuring-npm/package-json)

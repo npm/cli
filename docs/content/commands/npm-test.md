@@ -18,8 +18,8 @@ This runs a package's "test" script, if one was provided.
 
 ### See Also
 
-* [npm run-script](/cli-commands/run-script)
+* [npm run-script](/commands/run-script)
 * [npm scripts](/using-npm/scripts)
-* [npm start](/cli-commands/start)
-* [npm restart](/cli-commands/restart)
-* [npm stop](/cli-commands/stop)
+* [npm start](/commands/start)
+* [npm restart](/commands/restart)
+* [npm stop](/commands/stop)

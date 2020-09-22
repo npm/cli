@@ -35,7 +35,7 @@ following order of precedence:
 * `yarn.lock`
 
 See [package-lock.json](/configuring-npm/package-lock-json) and [`npm
-shrinkwrap`](/cli-commands/shrinkwrap).
+shrinkwrap`](/commands/shrinkwrap).
 
 A `package` is:
 
@@ -45,7 +45,7 @@ A `package` is:
 * c) a url that resolves to (b)
 * d) a `<name>@<version>` that is published on the registry (see
   [`registry`](/using-npm/registry)) with (c)
-* e) a `<name>@<tag>` (see [`npm dist-tag`](/cli-commands/dist-tag)) that
+* e) a `<name>@<tag>` (see [`npm dist-tag`](/commands/dist-tag)) that
   points to (d)
 * f) a `<name>` that has a "latest" tag satisfying (e)
 * g) a `<git remote url>` that resolves to (a)
@@ -88,7 +88,7 @@ into a tarball (b).
 
     Install a package that is sitting on the filesystem.  Note: if you just
     want to link a dev directory into your npm root, you can do this more
-    easily by using [`npm link`](/cli-commands/npm-link).
+    easily by using [`npm link`](/commands/npm-link).
 
     Tarball requirements:
     * The filename *must* use `.tar`, `.tar.gz`, or `.tgz` as the
@@ -487,7 +487,7 @@ Legacy shorthands for `omit` settings are:
 
 * `--no-fund`: suppress the message displayed at the end of each install
   that acknowledges the number of dependencies looking for funding.  See
-  [`npm-fund`](/cli-commands/npm-fund)
+  [`npm-fund`](/commands/npm-fund)
 
 * `--dry-run`: Do not actually install anything into the `node_modules`
   folder.  Just build the intended tree in memory, and report on it.
@@ -532,18 +532,18 @@ the specific folder structures that npm creates.
 ### See Also
 
 * [npm folders](/configuring-npm/folders)
-* [npm update](/cli-commands/update)
-* [npm audit](/cli-commands/audit)
-* [npm fund](/cli-commands/fund)
-* [npm link](/cli-commands/link)
-* [npm rebuild](/cli-commands/rebuild)
+* [npm update](/commands/update)
+* [npm audit](/commands/audit)
+* [npm fund](/commands/fund)
+* [npm link](/commands/link)
+* [npm rebuild](/commands/rebuild)
 * [npm scripts](/using-npm/scripts)
-* [npm build](/cli-commands/build)
-* [npm config](/cli-commands/config)
+* [npm build](/commands/build)
+* [npm config](/commands/config)
 * [npmrc](/configuring-npm/npmrc)
 * [npm registry](/using-npm/registry)
-* [npm dist-tag](/cli-commands/dist-tag)
-* [npm uninstall](/cli-commands/uninstall)
-* [npm shrinkwrap](/cli-commands/shrinkwrap)
+* [npm dist-tag](/commands/dist-tag)
+* [npm uninstall](/commands/uninstall)
+* [npm shrinkwrap](/commands/shrinkwrap)
 * [package.json](/configuring-npm/package-json)
 * [workspaces](/using-npm/workspaces)

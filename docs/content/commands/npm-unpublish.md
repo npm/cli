@@ -39,8 +39,8 @@ To learn more about how unpublish is treated on the npm registry, see our <a hre
 
 ### See Also
 
-* [npm deprecate](/cli-commands/deprecate)
-* [npm publish](/cli-commands/publish)
+* [npm deprecate](/commands/deprecate)
+* [npm publish](/commands/publish)
 * [npm registry](/using-npm/registry)
-* [npm adduser](/cli-commands/adduser)
-* [npm owner](/cli-commands/owner)
+* [npm adduser](/commands/adduser)
+* [npm owner](/commands/owner)

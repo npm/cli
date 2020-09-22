@@ -102,6 +102,6 @@ reset the cache.
 
 ### See Also
 
-* [npm bugs](/cli-commands/bugs)
-* [npm help](/cli-commands/help)
-* [npm ping](/cli-commands/ping)
+* [npm bugs](/commands/bugs)
+* [npm help](/commands/help)
+* [npm ping](/commands/ping)

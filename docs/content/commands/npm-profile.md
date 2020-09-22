@@ -76,4 +76,4 @@ available on non npmjs.com registries.
 
 ### See Also
 
-* [npm config](/cli-commands/config)
+* [npm config](/commands/config)

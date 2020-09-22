@@ -53,8 +53,8 @@ npm uninstall lodash --no-save
 
 ### See Also
 
-* [npm prune](/cli-commands/prune)
-* [npm install](/cli-commands/install)
+* [npm prune](/commands/prune)
+* [npm install](/commands/install)
 * [npm folders](/configuring-npm/folders)
-* [npm config](/cli-commands/config)
+* [npm config](/commands/config)
 * [npmrc](/configuring-npm/npmrc)

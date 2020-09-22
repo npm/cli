@@ -38,7 +38,7 @@ with `--otp`.
 
 ### See Also
 
-* [npm publish](/cli-commands/publish)
+* [npm publish](/commands/publish)
 * [npm registry](/using-npm/registry)
-* [npm adduser](/cli-commands/adduser)
+* [npm adduser](/commands/adduser)
 * [npm disputes](/using-npm/disputes)

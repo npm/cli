@@ -35,5 +35,5 @@ If false, then help-search will just list out the help topics found.
 
 ### See Also
 
-* [npm](/cli-commands/npm)
-* [npm help](/cli-commands/help)
+* [npm](/commands/npm)
+* [npm help](/commands/help)

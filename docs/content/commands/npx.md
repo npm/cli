@@ -166,10 +166,10 @@ This resulted in some shifts in its functionality:
 
 ### See Also
 
-* [npm run-script](/cli-commands/run-script)
+* [npm run-script](/commands/run-script)
 * [npm scripts](/using-npm/scripts)
-* [npm test](/cli-commands/test)
-* [npm start](/cli-commands/start)
-* [npm restart](/cli-commands/restart)
-* [npm stop](/cli-commands/stop)
-* [npm config](/cli-commands/config)
+* [npm test](/commands/test)
+* [npm start](/commands/start)
+* [npm restart](/commands/restart)
+* [npm stop](/commands/stop)
+* [npm config](/commands/config)
