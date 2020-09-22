@@ -529,7 +529,7 @@ See [semver](/using-npm/semver) for more details about specifying version ranges
 * `range1 || range2` Passes if either range1 or range2 are satisfied.
 * `git...` See 'Git URLs as Dependencies' below
 * `user/repo` See 'GitHub URLs' below
-* `tag` A specific version tagged and published as `tag`  See [`npm dist-tag`](/commands/dist-tag)
+* `tag` A specific version tagged and published as `tag`  See [`npm dist-tag`](/commands/npm-dist-tag)
 * `path/path/path` See [Local Paths](#local-paths) below
 
 For example, these are all valid:
@@ -932,10 +932,10 @@ npm will default some values based on package contents.
 
 * [semver](/using-npm/semver)
 * [workspaces](/using-npm/workspaces)
-* [npm init](/commands/init)
-* [npm version](/commands/version)
-* [npm config](/commands/config)
-* [npm help](/commands/help)
-* [npm install](/commands/install)
-* [npm publish](/commands/publish)
-* [npm uninstall](/commands/uninstall)
+* [npm init](/commands/npm-init)
+* [npm version](/commands/npm-version)
+* [npm config](/commands/npm-config)
+* [npm help](/commands/npm-help)
+* [npm install](/commands/npm-install)
+* [npm publish](/commands/npm-publish)
+* [npm uninstall](/commands/npm-uninstall)

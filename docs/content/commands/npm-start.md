@@ -17,12 +17,12 @@ its `"scripts"` object. If no `"start"` property is specified on the
 `"scripts"` object, it will run `node server.js`.
 
 As of [`npm@2.0.0`](https://blog.npmjs.org/post/98131109725/npm-2-0-0), you can
-use custom arguments when executing scripts. Refer to [`npm run-script`](/commands/run-script) for more details.
+use custom arguments when executing scripts. Refer to [`npm run-script`](/commands/npm-run-script) for more details.
 
 ### See Also
 
-* [npm run-script](/commands/run-script)
+* [npm run-script](/commands/npm-run-script)
 * [npm scripts](/using-npm/scripts)
-* [npm test](/commands/test)
-* [npm restart](/commands/restart)
-* [npm stop](/commands/stop)
+* [npm test](/commands/npm-test)
+* [npm restart](/commands/npm-restart)
+* [npm stop](/commands/npm-stop)

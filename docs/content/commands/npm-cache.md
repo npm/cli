@@ -82,11 +82,11 @@ The root cache folder.
 ### See Also
 
 * [npm folders](/configuring-npm/folders)
-* [npm config](/commands/config)
+* [npm config](/commands/npm-config)
 * [npmrc](/configuring-npm/npmrc)
-* [npm install](/commands/install)
-* [npm publish](/commands/publish)
-* [npm pack](/commands/pack)
+* [npm install](/commands/npm-install)
+* [npm publish](/commands/npm-publish)
+* [npm pack](/commands/npm-pack)
 * https://npm.im/cacache
 * https://npm.im/pacote
 * https://npm.im/@npmcli/arborist

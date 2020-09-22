@@ -29,5 +29,5 @@ format an empty string.
 
 ### See Also
 
-* [npm publish](/commands/publish)
+* [npm publish](/commands/npm-publish)
 * [npm registry](/using-npm/registry)

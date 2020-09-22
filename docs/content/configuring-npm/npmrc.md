@@ -93,7 +93,7 @@ manner.
 ### See also
 
 * [npm folders](/configuring-npm/folders)
-* [npm config](/commands/config)
+* [npm config](/commands/npm-config)
 * [config](/using-npm/config)
 * [package.json](/configuring-npm/package-json)
 * [npm](/commands/npm)

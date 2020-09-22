@@ -34,7 +34,7 @@ order of precedence:
 * `package-lock.json`
 * `yarn.lock`
 
-See [package-lock.json](/configuring-npm/package-lock-json) and [`npm shrinkwrap`](/commands/shrinkwrap).
+See [package-lock.json](/configuring-npm/package-lock-json) and [`npm shrinkwrap`](/commands/npm-shrinkwrap).
 
 A `package` is:
 
@@ -42,7 +42,7 @@ A `package` is:
 * b) a gzipped tarball containing (a)
 * c) a url that resolves to (b)
 * d) a `<name>@<version>` that is published on the registry (see [`registry`](/using-npm/registry)) with (c)
-* e) a `<name>@<tag>` (see [`npm dist-tag`](/commands/dist-tag)) that points to (d)
+* e) a `<name>@<tag>` (see [`npm dist-tag`](/commands/npm-dist-tag)) that points to (d)
 * f) a `<name>` that has a "latest" tag satisfying (e)
 * g) a `<git remote url>` that resolves to (a)
 
@@ -476,18 +476,18 @@ specific folder structures that npm creates.
 ### See Also
 
 * [npm folders](/configuring-npm/folders)
-* [npm update](/commands/update)
-* [npm audit](/commands/audit)
-* [npm fund](/commands/fund)
-* [npm link](/commands/link)
-* [npm rebuild](/commands/rebuild)
+* [npm update](/commands/npm-update)
+* [npm audit](/commands/npm-audit)
+* [npm fund](/commands/npm-fund)
+* [npm link](/commands/npm-link)
+* [npm rebuild](/commands/npm-rebuild)
 * [npm scripts](/using-npm/scripts)
-* [npm build](/commands/build)
-* [npm config](/commands/config)
+* [npm build](/commands/npm-build)
+* [npm config](/commands/npm-config)
 * [npmrc](/configuring-npm/npmrc)
 * [npm registry](/using-npm/registry)
-* [npm dist-tag](/commands/dist-tag)
-* [npm uninstall](/commands/uninstall)
-* [npm shrinkwrap](/commands/shrinkwrap)
+* [npm dist-tag](/commands/npm-dist-tag)
+* [npm uninstall](/commands/npm-uninstall)
+* [npm shrinkwrap](/commands/npm-shrinkwrap)
 * [package.json](/configuring-npm/package-json)
 * [workspaces](/using-npm/workspaces)

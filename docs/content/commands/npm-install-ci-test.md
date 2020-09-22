@@ -18,5 +18,5 @@ This command runs an `npm ci` followed immediately by an `npm test`.
 
 ### See Also
 
-* [npm ci](/commands/ci)
-* [npm test](/commands/test)
+* [npm ci](/commands/npm-ci)
+* [npm test](/commands/npm-test)

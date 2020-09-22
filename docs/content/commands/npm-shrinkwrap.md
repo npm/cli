@@ -20,11 +20,11 @@ of package locks in npm, see [package-locks](/configuring-npm/package-locks).
 
 ### See Also
 
-* [npm install](/commands/install)
-* [npm run-script](/commands/run-script)
+* [npm install](/commands/npm-install)
+* [npm run-script](/commands/npm-run-script)
 * [npm scripts](/using-npm/scripts)
 * [package.js](/configuring-npm/package-json)
 * [package-locks](/configuring-npm/package-locks)
 * [package-lock.json](/configuring-npm/package-lock-json)
 * [shrinkwrap.json](/configuring-npm/shrinkwrap-json)
-* [npm ls](/commands/ls)
+* [npm ls](/commands/npm-ls)

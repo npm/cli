@@ -115,12 +115,12 @@ Set it to false in order to use all-ansi output.
 
 ### See Also
 
-* [npm config](/commands/config)
+* [npm config](/commands/npm-config)
 * [npmrc](/configuring-npm/npmrc)
 * [npm folders](/configuring-npm/folders)
-* [npm explain](/commands/explain)
-* [npm install](/commands/install)
-* [npm link](/commands/link)
-* [npm prune](/commands/prune)
-* [npm outdated](/commands/outdated)
-* [npm update](/commands/update)
+* [npm explain](/commands/npm-explain)
+* [npm install](/commands/npm-install)
+* [npm link](/commands/npm-link)
+* [npm prune](/commands/npm-prune)
+* [npm outdated](/commands/npm-outdated)
+* [npm update](/commands/npm-update)

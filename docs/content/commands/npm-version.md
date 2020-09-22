@@ -122,8 +122,8 @@ Note that you must have a default GPG key set up in your git config for this to 
 
 ### See Also
 
-* [npm init](/commands/init)
-* [npm run-script](/commands/run-script)
+* [npm init](/commands/npm-init)
+* [npm run-script](/commands/npm-run-script)
 * [npm scripts](/using-npm/scripts)
 * [package.json](/configuring-npm/package-json)
 * [semver](/using-npm/semver)

@@ -28,7 +28,7 @@ actually packing anything. Reports on what would have gone into the tarball.
 
 ### See Also
 
-* [npm cache](/commands/cache)
-* [npm publish](/commands/publish)
-* [npm config](/commands/config)
+* [npm cache](/commands/npm-cache)
+* [npm publish](/commands/npm-publish)
+* [npm config](/commands/npm-config)
 * [npmrc](/configuring-npm/npmrc)

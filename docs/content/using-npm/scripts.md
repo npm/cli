@@ -74,7 +74,7 @@ The advantage of doing these things at `prepublish` time is that they can be don
 
 ### Life Cycle Operation Order
 
-#### [`npm publish`](/commands/publish)
+#### [`npm publish`](/commands/npm-publish)
 
 * `prepublishOnly`
 * `prepare`
@@ -82,12 +82,12 @@ The advantage of doing these things at `prepublish` time is that they can be don
 * `publish`
 * `postpublish`
 
-#### [`npm pack`](/commands/pack)
+#### [`npm pack`](/commands/npm-pack)
 
 * `prepack`
 * `postpack`
 
-#### [`npm install`](/commands/install)
+#### [`npm install`](/commands/npm-install)
 
 * `preinstall`
 * `install`
@@ -98,7 +98,7 @@ Also triggers
 * `prepublish` (when on local)
 * `prepare` (when on local or workspaces)
 
-#### [`npm start`](/commands/start)
+#### [`npm start`](/commands/npm-start)
 
 `npm run start` has an `npm start` shorthand.
 
@@ -300,7 +300,7 @@ above.
 
 ### See Also
 
-* [npm run-script](/commands/run-script)
+* [npm run-script](/commands/npm-run-script)
 * [package.json](/configuring-npm/package-json)
 * [npm developers](/using-npm/developers)
-* [npm install](/commands/install)
+* [npm install](/commands/npm-install)

@@ -37,9 +37,9 @@ behavior will be accompanied by an increase in major version number
 
 ### See Also
 
-* [npm run-script](/commands/run-script)
+* [npm run-script](/commands/npm-run-script)
 * [npm scripts](/using-npm/scripts)
-* [npm test](/commands/test)
-* [npm start](/commands/start)
-* [npm stop](/commands/stop)
-* [npm restart](/commands/restart)
+* [npm test](/commands/npm-test)
+* [npm start](/commands/npm-start)
+* [npm stop](/commands/npm-stop)
+* [npm restart](/commands/npm-restart)

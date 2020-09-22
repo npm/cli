@@ -66,5 +66,5 @@ will create a scoped package.
 
 * <https://github.com/npm/init-package-json>
 * [package.json](/configuring-npm/package-json)
-* [npm version](/commands/version)
+* [npm version](/commands/npm-version)
 * [npm scope](/using-npm/scope)

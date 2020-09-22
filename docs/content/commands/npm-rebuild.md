@@ -18,5 +18,5 @@ This command runs the `npm build` command on the matched folders.  This is usefu
 
 ### See Also
 
-* [npm build](/commands/build)
-* [npm install](/commands/install)
+* [npm build](/commands/npm-build)
+* [npm install](/commands/npm-install)
