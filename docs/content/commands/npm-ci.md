@@ -67,5 +67,5 @@ cache:
 
 ### See Also
 
-* [npm install](/cli-commands/install)
+* [npm install](/commands/install)
 * [package-locks](/configuring-npm/package-locks)

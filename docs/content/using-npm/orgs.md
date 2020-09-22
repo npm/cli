@@ -20,8 +20,8 @@ The developer will be able to access packages based on the teams they are on. Ac
 
 There are two main commands:
 
-1. `npm team` see [npm team](/cli-commands/team) for more details
-2. `npm access` see [npm access](/cli-commands/access) for more details
+1. `npm team` see [npm team](/commands/team) for more details
+2. `npm access` see [npm access](/commands/access) for more details
 
 ### Team Admins create teams
 
@@ -88,6 +88,6 @@ npm access ls-collaborators <pkg>
 
 ### See also
 
-* [npm team](/cli-commands/team)
-* [npm access](/cli-commands/access)
+* [npm team](/commands/team)
+* [npm access](/commands/access)
 * [npm scope](/using-npm/scope)

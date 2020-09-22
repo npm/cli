@@ -69,7 +69,7 @@ Man pages are not installed on Windows systems.
 
 #### Cache
 
-See [`npm cache`](/cli-commands/cache).  Cache files are stored in `~/.npm` on Posix, or
+See [`npm cache`](/commands/cache).  Cache files are stored in `~/.npm` on Posix, or
 `%AppData%/npm-cache` on Windows.
 
 This is controlled by the `cache` configuration param.
@@ -210,10 +210,10 @@ cannot be found elsewhere.  See [`package.json`](/configuring-npm/package.json) 
 ### See also
 
 * [package.json](/configuring-npm/package-json)
-* [npm install](/cli-commands/install)
-* [npm pack](/cli-commands/pack)
-* [npm cache](/cli-commands/cache)
-* [npm config](/cli-commands/config)
+* [npm install](/commands/install)
+* [npm pack](/commands/pack)
+* [npm cache](/commands/cache)
+* [npm config](/commands/config)
 * [npmrc](/configuring-npm/npmrc)
 * [config](/using-npm/config)
-* [npm publish](/cli-commands/publish)
+* [npm publish](/commands/publish)

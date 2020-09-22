@@ -87,9 +87,9 @@ begin with a number or the letter `v`.
 
 ### See Also
 
-* [npm publish](/cli-commands/publish)
-* [npm install](/cli-commands/install)
-* [npm dedupe](/cli-commands/dedupe)
+* [npm publish](/commands/publish)
+* [npm install](/commands/install)
+* [npm dedupe](/commands/dedupe)
 * [npm registry](/using-npm/registry)
-* [npm config](/cli-commands/config)
+* [npm config](/commands/config)
 * [npmrc](/configuring-npm/npmrc)

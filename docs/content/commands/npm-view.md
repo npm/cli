@@ -113,8 +113,8 @@ the field name.
 
 ### See Also
 
-* [npm search](/cli-commands/search)
+* [npm search](/commands/search)
 * [npm registry](/using-npm/registry)
-* [npm config](/cli-commands/config)
+* [npm config](/commands/config)
 * [npmrc](/configuring-npm/npmrc)
-* [npm docs](/cli-commands/docs)
+* [npm docs](/commands/docs)

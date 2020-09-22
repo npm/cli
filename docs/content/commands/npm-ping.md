@@ -25,5 +25,5 @@ Ping error: {*Detail about error}
 
 ### See Also
 
-* [npm config](/cli-commands/config)
+* [npm config](/commands/config)
 * [npmrc](/configuring-npm/npmrc)

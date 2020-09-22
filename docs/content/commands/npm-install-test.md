@@ -27,5 +27,5 @@ takes exactly the same arguments as `npm install`.
 
 ### See Also
 
-* [npm install](/cli-commands/install)
-* [npm test](/cli-commands/test)
+* [npm install](/commands/install)
+* [npm test](/commands/test)
