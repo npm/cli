@@ -59,18 +59,21 @@ process.env.npm_config_other_env_thing = '1000'
 process.env.random_env_var = 'asdf'
 process.env.npm_config__underbar_env_thing = 'underful'
 process.env.NPM_CONFIG_UPPERCASE_ENV_THING = '42'
+process.env['npm_config_url_//this_is_a_test:_password'] = 'fixes urls and paths'
 
 exports.envData = {
   userconfig: exports.userconfig,
   '_underbar-env-thing': 'underful',
   'uppercase-env-thing': '42',
-  'other-env-thing': '1000'
+  'other-env-thing': '1000',
+  'url-//this_is_a_test:_password': 'fixes urls and paths'
 }
 exports.envDataFix = {
   userconfig: exports.userconfig,
   '_underbar-env-thing': 'underful',
   'uppercase-env-thing': 42,
-  'other-env-thing': 1000
+  'other-env-thing': 1000,
+  'url-//this_is_a_test:_password': 'fixes urls and paths'
 }
 
 var projectConf = path.resolve(__dirname, '..', '.npmrc')
