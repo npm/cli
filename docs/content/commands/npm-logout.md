@@ -36,7 +36,7 @@ it takes precedence.
 
 Default: The scope of your current project, if any, otherwise none.
 
-If specified, you will be logged out of the specified scope. See [`scope`](/using-npm/npm-scope).
+If specified, you will be logged out of the specified scope. See [`scope`](/using-npm/scope).
 
 ```bash
 npm logout --scope=@myco

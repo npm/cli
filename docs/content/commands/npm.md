@@ -85,7 +85,7 @@ If you're using npm to develop and publish your code, check out the
 following help topics:
 
 * json:
-  Make a package.json file.  See [`package.json`](/configuring-npm/package.json).
+  Make a package.json file.  See [`package.json`](/configuring-npm/package-json).
 * link:
   For linking your current working code into Node's path, so that you
   don't have to reinstall every time you make a change.  Use
