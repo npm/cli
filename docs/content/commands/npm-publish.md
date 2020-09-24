@@ -22,7 +22,7 @@ files in the package directory are included if no local `.gitignore` or
 [`developers`](/using-npm/developers) for full details on what's included in the published package, as well as details on how the package is built.
 
 By default npm will publish to the public registry. This can be overridden by
-specifying a different default registry or using a [`scope`](/using-npm/npm-scope) in the name (see [`package.json`](/configuring-npm/package-json)).
+specifying a different default registry or using a [`scope`](/using-npm/scope) in the name (see [`package.json`](/configuring-npm/package-json)).
 
 * `<folder>`:
   A folder containing a package.json file
@@ -70,9 +70,9 @@ included and packs them into a tarball to be uploaded to the registry.
 
 * [npm registry](/using-npm/registry)
 * [npm scope](/using-npm/scope)
-* [npm adduser](/commands/adduser)
-* [npm owner](/commands/owner)
-* [npm deprecate](/commands/deprecate)
-* [npm dist-tag](/commands/dist-tag)
-* [npm pack](/commands/pack)
-* [npm profile](/commands/profile)
+* [npm adduser](/commands/npm-adduser)
+* [npm owner](/commands/npm-owner)
+* [npm deprecate](/commands/npm-deprecate)
+* [npm dist-tag](/commands/npm-dist-tag)
+* [npm pack](/commands/npm-pack)
+* [npm profile](/commands/npm-profile)
