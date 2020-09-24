@@ -3,53 +3,53 @@ const requireInject = require('require-inject')
 
 const packument = spec => {
   const mocks = {
-    'alpha': {
-      'name': 'alpha',
+    alpha: {
+      name: 'alpha',
       'dist-tags': {
-        'latest': '1.0.1'
+        latest: '1.0.1'
       },
-      'versions': {
+      versions: {
         '1.0.1': {
-          'version': '1.0.1',
-          'dependencies': {
-            'gamma': '2.0.0'
+          version: '1.0.1',
+          dependencies: {
+            gamma: '2.0.0'
           }
         }
       }
     },
-    'beta': {
-      'name': 'beta',
+    beta: {
+      name: 'beta',
       'dist-tags': {
-        'latest': '1.0.1'
+        latest: '1.0.1'
       },
-      'versions': {
+      versions: {
         '1.0.1': {
-          'version': '1.0.1'
+          version: '1.0.1'
         }
       }
     },
-    'gamma': {
-      'name': 'gamma',
+    gamma: {
+      name: 'gamma',
       'dist-tags': {
-        'latest': '2.0.0'
+        latest: '2.0.0'
       },
-      'versions': {
+      versions: {
         '1.0.1': {
-          'version': '1.0.1',
-        }, 
+          version: '1.0.1'
+        },
         '2.0.0': {
-          'version': '2.0.0'
+          version: '2.0.0'
         }
       }
     },
-    'theta': {
-      'name': 'theta',
+    theta: {
+      name: 'theta',
       'dist-tags': {
-        'latest': '1.0.1'
+        latest: '1.0.1'
       },
-      'versions': {
+      versions: {
         '1.0.1': {
-          'version': '1.0.1'
+          version: '1.0.1'
         }
       }
     }
@@ -73,15 +73,18 @@ const cleanLogs = (done) => {
   logs = ''
   const fn = (...args) => {
     logs += '\n'
-    args.map(el => logs += el)
+    args.map(el => {
+      logs += el
+      return logs
+    })
   }
   console.log = fn
   done()
 }
 
 const globalDir = t.testdir({
-  'node_modules': {
-    'alpha': {
+  node_modules: {
+    alpha: {
       'package.json': JSON.stringify({
         name: 'alpha',
         version: '1.0.0'
@@ -91,14 +94,14 @@ const globalDir = t.testdir({
 })
 
 const outdated = (dir, opts) => requireInject(
-  '../../lib/outdated.js', 
+  '../../lib/outdated.js',
   {
     '../../lib/npm.js': {
       prefix: dir,
       globalDir: `${globalDir}/node_modules`,
       flatOptions: opts
     },
-    'pacote': {
+    pacote: {
       packument
     }
   }
@@ -133,8 +136,8 @@ t.test('should display outdated deps', t => {
         beta: '^1.0.0'
       }
     }, null, 2),
-    'node_modules': {
-      'alpha': {
+    node_modules: {
+      alpha: {
         'package.json': JSON.stringify({
           name: 'alpha',
           version: '1.0.0',
@@ -142,8 +145,8 @@ t.test('should display outdated deps', t => {
             gamma: '2.0.0'
           }
         }, null, 2),
-        'node_modules': {
-          'gamma': {
+        node_modules: {
+          gamma: {
             'package.json': JSON.stringify({
               name: 'gamma',
               version: '2.0.0'
@@ -151,19 +154,19 @@ t.test('should display outdated deps', t => {
           }
         }
       },
-      'beta': {
+      beta: {
         'package.json': JSON.stringify({
           name: 'beta',
           version: '1.0.0'
         }, null, 2)
-      }, 
-      'gamma': {
+      },
+      gamma: {
         'package.json': JSON.stringify({
           name: 'gamma',
           version: '1.0.1'
         }, null, 2)
       },
-      'zeta': {
+      zeta: {
         'package.json': JSON.stringify({
           name: 'zeta',
           version: '1.0.0'
@@ -174,7 +177,7 @@ t.test('should display outdated deps', t => {
 
   t.test('outdated global', t => {
     outdated(null, {
-     global: true,
+      global: true
     })([], () => {
       t.matchSnapshot(logs)
       t.end()
@@ -183,8 +186,8 @@ t.test('should display outdated deps', t => {
 
   t.test('outdated', t => {
     outdated(testDir, {
-     global: false,
-     color: true
+      global: false,
+      color: true
     })([], () => {
       t.matchSnapshot(logs)
       t.end()
@@ -193,8 +196,8 @@ t.test('should display outdated deps', t => {
 
   t.test('outdated --long', t => {
     outdated(testDir, {
-     global: false,
-     long: true,
+      global: false,
+      long: true
     })([], () => {
       t.matchSnapshot(logs)
       t.end()
@@ -203,8 +206,8 @@ t.test('should display outdated deps', t => {
 
   t.test('outdated --json', t => {
     outdated(testDir, {
-     global: false,
-     json: true,
+      global: false,
+      json: true
     })([], () => {
       t.matchSnapshot(logs)
       t.end()
@@ -213,9 +216,9 @@ t.test('should display outdated deps', t => {
 
   t.test('outdated --json --long', t => {
     outdated(testDir, {
-     global: false,
-     json: true,
-     long: true
+      global: false,
+      json: true,
+      long: true
     })([], () => {
       t.matchSnapshot(logs)
       t.end()
@@ -224,8 +227,8 @@ t.test('should display outdated deps', t => {
 
   t.test('outdated --parseable', t => {
     outdated(testDir, {
-     global: false,
-     parseable: true,
+      global: false,
+      parseable: true
     })([], () => {
       t.matchSnapshot(logs)
       t.end()
@@ -234,9 +237,9 @@ t.test('should display outdated deps', t => {
 
   t.test('outdated --parseable --long', t => {
     outdated(testDir, {
-     global: false,
-     parseable: true,
-     long: true
+      global: false,
+      parseable: true,
+      long: true
     })([], () => {
       t.matchSnapshot(logs)
       t.end()
@@ -245,7 +248,7 @@ t.test('should display outdated deps', t => {
 
   t.test('outdated --all', t => {
     outdated(testDir, {
-     all: true,
+      all: true
     })([], () => {
       t.matchSnapshot(logs)
       t.end()
@@ -254,7 +257,7 @@ t.test('should display outdated deps', t => {
 
   t.test('outdated specific dep', t => {
     outdated(testDir, {
-     global: false,
+      global: false
     })(['alpha'], () => {
       t.matchSnapshot(logs)
       t.end()
@@ -262,7 +265,6 @@ t.test('should display outdated deps', t => {
   })
 
   t.end()
-
 })
 
 t.test('should return if no outdated deps', t => {
@@ -274,8 +276,8 @@ t.test('should return if no outdated deps', t => {
         alpha: '^1.0.0'
       }
     }, null, 2),
-    'node_modules': {
-      'alpha': {
+    node_modules: {
+      alpha: {
         'package.json': JSON.stringify({
           name: 'alpha',
           version: '1.0.1'
@@ -285,11 +287,11 @@ t.test('should return if no outdated deps', t => {
   })
 
   outdated(testDir, {
-    global: false,
-   })([], () => {
+    global: false
+  })([], () => {
     t.equals(logs.length, 0, 'no logs')
     t.end()
-   })
+  })
 })
 
 t.test('throws if error with a dep', t => {
@@ -301,8 +303,8 @@ t.test('throws if error with a dep', t => {
         eta: '^1.0.0'
       }
     }, null, 2),
-    'node_modules': {
-      'eta': {
+    node_modules: {
+      eta: {
         'package.json': JSON.stringify({
           name: 'eta',
           version: '1.0.1'
@@ -312,11 +314,11 @@ t.test('throws if error with a dep', t => {
   })
 
   outdated(testDir, {
-    global: false,
-   })([], (err) => {
+    global: false
+  })([], (err) => {
     t.equals(err.message, 'There is an error with this package.')
     t.end()
-   })
+  })
 })
 
 t.test('should skip missing non-prod deps', t => {
@@ -328,13 +330,63 @@ t.test('should skip missing non-prod deps', t => {
         beta: '^1.0.0'
       }
     }, null, 2),
-    'node_modules': {}
+    node_modules: {}
   })
 
   outdated(testDir, {
-    global: false,
-   })([], () => {
-    //t.equals(logs.length, 0, 'no logs')
+    global: false
+  })([], () => {
+    t.equals(logs.length, 0, 'no logs')
     t.end()
-   })
+  })
+})
+
+t.test('should skip invalid pkg ranges', t => {
+  const testDir = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'delta',
+      version: '1.0.0',
+      dependencies: {
+        alpha: '>=^2'
+      }
+    }, null, 2),
+    node_modules: {
+      alpha: {
+        'package.json': JSON.stringify({
+          name: 'alpha',
+          version: '1.0.0'
+        }, null, 2)
+      }
+    }
+  })
+
+  outdated(testDir, {})([], () => {
+    t.equals(logs.length, 0, 'no logs')
+    t.end()
+  })
+})
+
+t.test('should skip git specs', t => {
+  const testDir = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'delta',
+      version: '1.0.0',
+      dependencies: {
+        alpha: 'github:username/foo'
+      }
+    }, null, 2),
+    node_modules: {
+      alpha: {
+        'package.json': JSON.stringify({
+          name: 'alpha',
+          version: '1.0.0'
+        }, null, 2)
+      }
+    }
+  })
+
+  outdated(testDir, {})([], () => {
+    t.equals(logs.length, 0, 'no logs')
+    t.end()
+  })
 })
