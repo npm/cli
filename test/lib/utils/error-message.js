@@ -406,8 +406,15 @@ t.test('404', t => {
 t.test('bad platform', t => {
   t.test('string os/arch', t => {
     const er = Object.assign(new Error('a bad plat'), {
-      os: '!yours',
-      cpu: 'x420',
+      pkgid: 'lodash@1.0.0',
+      current: {
+        os: 'posix',
+        cpu: 'x64'
+      },
+      required: {
+        os: '!yours',
+        cpu: 'x420'
+      },
       code: 'EBADPLATFORM'
     })
     t.matchSnapshot(errorMessage(er))
@@ -415,8 +422,15 @@ t.test('bad platform', t => {
   })
   t.test('array os/arch', t => {
     const er = Object.assign(new Error('a bad plat'), {
-      os: ['!yours', 'mine'],
-      cpu: ['x420', 'x69'],
+      pkgid: 'lodash@1.0.0',
+      current: {
+        os: 'posix',
+        cpu: 'x64'
+      },
+      required: {
+        os: ['!yours', 'mine'],
+        cpu: ['x420', 'x69']
+      },
       code: 'EBADPLATFORM'
     })
     t.matchSnapshot(errorMessage(er))
