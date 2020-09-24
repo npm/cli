@@ -556,8 +556,9 @@ The string that starts all the debugging log output.
 * Type: url
 
 A proxy to use for outgoing https requests. If the `HTTPS_PROXY` or
-`https_proxy` or `HTTP_PROXY` or `http_proxy` environment variables are set,
-proxy settings will be honored by the underlying `request` library.
+`https_proxy` environment variables are set, proxy settings will be honored
+by the underlying `request` library. "npm config" prior to environment config.
+You can set a socks server address in this field to use a socks proxy.
 
 #### if-present
 
@@ -779,7 +780,7 @@ The node version to use when checking a package's `engines` map.
 * Default: null
 * Type: String or Array
 
-A comma-separated string or an array of domain extensions that a proxy should not be used for.
+A comma-separated string of domain extensions that a proxy should not be used for.
 
 #### offline
 
@@ -914,9 +915,10 @@ Set to `false` to suppress the progress bar.
 * Default: null
 * Type: url
 
-A proxy to use for outgoing http requests. If the `HTTP_PROXY` or
-`http_proxy` environment variables are set, proxy settings will be
-honored by the underlying `request` library.
+A proxy to use for outgoing https requests. If the `HTTPS_PROXY` or
+`https_proxy` environment variables are set, proxy settings will be honored
+by the underlying `request` library. "npm config" prior to environment config.
+You can set a socks server address in this field to use a socks proxy.
 
 #### read-only
 
