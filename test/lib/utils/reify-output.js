@@ -238,7 +238,7 @@ t.test('packages changed message', t => {
     settings.json = json
     npmock.command = command
     const mock = {
-      actualTree: { inventory: { size: audited }, children: [] },
+      actualTree: { inventory: { size: audited, has: () => true }, children: [] },
       auditReport: audited ? {
         toJSON: () => mock.auditReport,
         vulnerabilities: {},
@@ -298,5 +298,50 @@ t.test('packages changed message', t => {
     testCase(t, added, removed, changed, audited, json, command)
   }
 
+  t.end()
+})
+
+t.test('added packages should be looked up within returned tree', t => {
+  t.test('has added pkg in inventory', t => {
+    t.plan(1)
+    const reifyOutput = getReifyOutput(
+      out => t.matchSnapshot(out)
+    )
+
+    reifyOutput({
+      actualTree: {
+        name: 'foo',
+        inventory: {
+          has: () => true
+        }
+      },
+      diff: {
+        children: [
+          { action: 'ADD', ideal: { name: 'baz' } }
+        ]
+      }
+    })
+  })
+
+  t.test('missing added pkg in inventory', t => {
+    t.plan(1)
+    const reifyOutput = getReifyOutput(
+      out => t.matchSnapshot(out)
+    )
+
+    reifyOutput({
+      actualTree: {
+        name: 'foo',
+        inventory: {
+          has: () => false
+        }
+      },
+      diff: {
+        children: [
+          { action: 'ADD', ideal: { name: 'baz' } }
+        ]
+      }
+    })
+  })
   t.end()
 })

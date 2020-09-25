@@ -5,6 +5,16 @@
  * Make sure to inspect the output below.  Do not ignore changes!
  */
 'use strict'
+exports[`test/lib/utils/reify-output.js TAP added packages should be looked up within returned tree has added pkg in inventory > must match snapshot 1`] = `
+
+added 1 package in {TIME}
+`
+
+exports[`test/lib/utils/reify-output.js TAP added packages should be looked up within returned tree missing added pkg in inventory > must match snapshot 1`] = `
+
+up to date in {TIME}
+`
+
 exports[`test/lib/utils/reify-output.js TAP packages changed message > {"added":0,"removed":0,"changed":0,"audited":0,"json":false} 1`] = `
 
 up to date in {TIME}
