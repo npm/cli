@@ -373,6 +373,26 @@ test-npm-ls@1.0.0 {CWD}/ls-ls-extraneous-deps
 
 `
 
+exports[`test/lib/ls.js TAP ls filter pkg arg using depth option > should list a in top-level only 1`] = `
+test-pkg-arg-filter-with-depth-opt@1.0.0 {CWD}/ls-ls-filter-pkg-arg-using-depth-option
+\`-- a@1.0.0
+
+`
+
+exports[`test/lib/ls.js TAP ls filter pkg arg using depth option > should print empty results msg 1`] = `
+test-pkg-arg-filter-with-depth-opt@1.0.0 {CWD}/ls-ls-filter-pkg-arg-using-depth-option
+\`-- (empty)
+
+`
+
+exports[`test/lib/ls.js TAP ls filter pkg arg using depth option > should print expected result 1`] = `
+test-pkg-arg-filter-with-depth-opt@1.0.0 {CWD}/ls-ls-filter-pkg-arg-using-depth-option
+\`-- b@1.0.0
+  \`-- c@1.0.0
+    \`-- d@1.0.0
+
+`
+
 exports[`test/lib/ls.js TAP ls filtering by child of missing dep > should print tree and not duplicate child of missing items 1`] = `
 filter-by-child-of-missing-dep@1.0.0 {CWD}/ls-ls-filtering-by-child-of-missing-dep
 +-- b@1.0.0 extraneous

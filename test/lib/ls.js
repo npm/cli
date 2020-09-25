@@ -1426,6 +1426,77 @@ t.test('ls', (t) => {
     })
   })
 
+  t.test('filter pkg arg using depth option', (t) => {
+    _flatOptions.depth = 0
+    prefix = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'test-pkg-arg-filter-with-depth-opt',
+        version: '1.0.0',
+        dependencies: {
+          a: '^1.0.0',
+          b: '^1.0.0'
+        }
+      }),
+      node_modules: {
+        a: {
+          'package.json': JSON.stringify({
+            name: 'a',
+            version: '1.0.0'
+          })
+        },
+        b: {
+          'package.json': JSON.stringify({
+            name: 'b',
+            version: '1.0.0',
+            dependencies: {
+              c: '^1.0.0'
+            }
+          })
+        },
+        c: {
+          'package.json': JSON.stringify({
+            name: 'c',
+            version: '1.0.0',
+            dependencies: {
+              d: '^1.0.0'
+            }
+          })
+        },
+        d: {
+          'package.json': JSON.stringify({
+            name: 'd',
+            version: '1.0.0',
+            dependencies: {
+              a: '^1.0.0'
+            }
+          })
+        }
+      }
+    })
+
+    t.plan(6)
+    ls(['a'], (err) => {
+      t.ifError(err, 'should NOT have ELSPROBLEMS error code')
+      t.matchSnapshot(redactCwd(result), 'should list a in top-level only')
+
+      ls(['d'], (err) => {
+        t.ifError(err, 'should NOT have ELSPROBLEMS error code when filter')
+        t.matchSnapshot(redactCwd(result), 'should print empty results msg')
+
+        // if no --depth config is defined, should print path to dep
+        _flatOptions.depth = null // default config value
+        ls(['d'], (err) => {
+          t.ifError(err, 'should NOT have ELSPROBLEMS error code when filter')
+          t.matchSnapshot(redactCwd(result), 'should print expected result')
+        })
+      })
+    })
+  })
+
+  t.teardown(() => {
+    _flatOptions.depth = Infinity
+  })
+
   t.end()
 })
 
