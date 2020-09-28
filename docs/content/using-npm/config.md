@@ -470,6 +470,13 @@ packages.
 The "maxTimeout" config for the `retry` module to use when fetching
 packages.
 
+#### fetch-timeout
+
+* Default: 300000 (5 minutes)
+* Type: Number
+
+The maximum amount of time to wait for HTTP requests to complete.
+
 #### fund
 
 * Default: true

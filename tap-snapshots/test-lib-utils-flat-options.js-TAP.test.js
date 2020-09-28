@@ -115,6 +115,7 @@ Object {
   "strictSSL": "strict-ssl",
   "tag": "tag",
   "tagVersionPrefix": "tag-version-prefix",
+  "timeout": "fetch-timeout",
   "tmp": "/tmp",
   "umask": 18,
   "unicode": undefined,
