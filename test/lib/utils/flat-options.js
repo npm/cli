@@ -73,6 +73,7 @@ class MockConfig {
       'fetch-retry-factor': 'fetch-retry-factor',
       'fetch-retry-mintimeout': 'fetch-retry-mintimeout',
       'fetch-retry-maxtimeout': 'fetch-retry-maxtimeout',
+      'fetch-timeout': 'fetch-timeout',
       force: 'force',
       'format-package-lock': 'format-package-lock',
       fund: 'fund',
