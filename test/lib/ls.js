@@ -1396,12 +1396,21 @@ t.test('ls', (t) => {
       }),
       node_modules: {
         a: t.fixture('symlink', '../a'),
-        b: t.fixture('symlink', '../b')
+        b: t.fixture('symlink', '../b'),
+        c: {
+          'package.json': JSON.stringify({
+            name: 'c',
+            version: '1.0.0'
+          })
+        }
       },
       a: {
         'package.json': JSON.stringify({
           name: 'a',
-          version: '1.0.0'
+          version: '1.0.0',
+          dependencies: {
+            c: '^1.0.0'
+          }
         })
       },
       b: {

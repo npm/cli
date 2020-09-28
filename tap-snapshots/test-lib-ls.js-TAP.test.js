@@ -433,6 +433,7 @@ filter-by-child-of-missing-dep@1.0.0 {CWD}/ls-ls-loading-a-tree-containing-works
 exports[`test/lib/ls.js TAP ls loading a tree containing workspaces > should list workspaces properly 1`] = `
 filter-by-child-of-missing-dep@1.0.0 {CWD}/ls-ls-loading-a-tree-containing-workspaces
 +-- a@1.0.0 -> {CWD}/ls-ls-loading-a-tree-containing-workspaces/a
+| \`-- c@1.0.0
 \`-- b@1.0.0 -> {CWD}/ls-ls-loading-a-tree-containing-workspaces/b
 
 `
