@@ -161,7 +161,7 @@ Object {
   "summary": Array [
     Array [
       "notsup",
-      "Unsupported platform for undefined: wanted {\\"os\\":\\"!yours,mine\\",\\"arch\\":\\"x420,x69\\"} (current: {\\"os\\":\\"posix\\",\\"arch\\":\\"x64\\"})",
+      "Unsupported platform for lodash@1.0.0: wanted {\\"os\\":\\"!yours,mine\\",\\"arch\\":\\"x420,x69\\"} (current: {\\"os\\":\\"posix\\",\\"arch\\":\\"x64\\"})",
     ],
   ],
 }
@@ -178,7 +178,7 @@ Object {
   "summary": Array [
     Array [
       "notsup",
-      "Unsupported platform for undefined: wanted {\\"os\\":\\"!yours\\",\\"arch\\":\\"x420\\"} (current: {\\"os\\":\\"posix\\",\\"arch\\":\\"x64\\"})",
+      "Unsupported platform for lodash@1.0.0: wanted {\\"os\\":\\"!yours\\",\\"arch\\":\\"x420\\"} (current: {\\"os\\":\\"posix\\",\\"arch\\":\\"x64\\"})",
     ],
   ],
 }
