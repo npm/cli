@@ -1,3 +1,43 @@
+## v7.0.0-beta.13 (2020-09-29)
+
+* [`405e051f7`](https://github.com/npm/cli/commit/405e051f724a2e79844f78f8ea9ba019fdc513aa)
+  Fix EBADPLATFORM error message
+  ([@#1876](https://github.com/#1876))
+* [`e4d911d21`](https://github.com/npm/cli/commit/e4d911d219899c0fdc12f8951b7d70e0887909f8)
+  `@npmcli/arborist@0.0.28`
+    * fix: workspaces install entering an infinite loop
+    * Save provided range if not a subset of savePrefix
+    * package-lock.json custom indentation
+    * Check engine and platform when building ideal tree
+* [`90550b2e0`](https://github.com/npm/cli/commit/90550b2e023e7638134e91c80ed96828afb41539)
+  [#1853](https://github.com/npm/cli/pull/1853)
+  test coverage and refactor for token command
+  ([@nlf](https://github.com/nlf))
+* [`2715220c9`](https://github.com/npm/cli/commit/2715220c9b5d3f325e65e95bae2b5af8a485a579)
+  [#1858](https://github.com/npm/cli/pull/1858)
+  [#1813](https://github.com/npm/cli/issues/1813)
+  do not include omitted optional dependencies in install output
+  ([@ruyadorno](https://github.com/ruyadorno))
+* [`e225ddcf8`](https://github.com/npm/cli/commit/e225ddcf8d74a6b1cfb24ec49e37e3f5d06e5151)
+  [#1862](https://github.com/npm/cli/pull/1862)
+  [#1861](https://github.com/npm/cli/issues/1861)
+  respect depth when running `npm ls <pkg>`
+  ([@ruyadorno](https://github.com/ruyadorno))
+* [`2469ae515`](https://github.com/npm/cli/commit/2469ae5153fa4114a72684376a1b226aa07edf81)
+  [#1870](https://github.com/npm/cli/pull/1870)
+  [#1780](https://github.com/npm/cli/issues/1780)
+  Add 'fetch-timeout' config
+  ([@isaacs](https://github.com/isaacs))
+* [`52114b75e`](https://github.com/npm/cli/commit/52114b75e83db8a5e08f23889cce41c89af9eb93)
+  [#1871](https://github.com/npm/cli/pull/1871)
+  fix `npm ls` for linked dependencies
+  ([@ruyadorno](https://github.com/ruyadorno))
+* [`9981211c0`](https://github.com/npm/cli/commit/9981211c070ce2b1e34d30223d12bd275adcacf5)
+  [#1857](https://github.com/npm/cli/pull/1857)
+  [#1703](https://github.com/npm/cli/issues/1703)
+  fix `npm outdated` parsing invalid specs
+  ([@ruyadorno](https://github.com/ruyadorno))
+
 ## v7.0.0-beta.12 (2020-09-22)
 
 * [`24f3a5448`](https://github.com/npm/cli/commit/24f3a5448f021ad603046dfb9fd97ed66bd63bba)
