@@ -31,7 +31,6 @@
 const nameFromFolder = require('@npmcli/name-from-folder')
 const Edge = require('./edge.js')
 const Inventory = require('./inventory.js')
-const Shrinkwrap = require('./shrinkwrap.js')
 const {normalize} = require('read-package-json-fast')
 const {getPaths: getBinPaths} = require('bin-links')
 const npa = require('npm-package-arg')
@@ -40,12 +39,11 @@ const npa = require('npm-package-arg')
 const dassert = /\barborist\b/.test(process.env.NODE_DEBUG || '')
   ? require('assert') : () => {}
 
-const {join, resolve, relative, dirname, basename} = require('path')
+const {resolve, relative, dirname, basename} = require('path')
 const _package = Symbol('_package')
 const _parent = Symbol('_parent')
 const _fsParent = Symbol('_fsParent')
 const _reloadEdges = Symbol('_reloadEdges')
-const _loadType = Symbol('_loadType')
 const _loadDepType = Symbol('_loadDepType')
 const _loadWorkspaces = Symbol('_loadWorkspaces')
 const _reloadNamedEdges = Symbol('_reloadNamedEdges')
@@ -217,14 +215,12 @@ class Node {
     // mostly a convenience for testing, but also a way to create
     // trees in a more declarative way than setting parent on each
     if (children) {
-      for (const c of children) {
+      for (const c of children)
         new Node({ ...c, parent: this })
-      }
     }
     if (fsChildren) {
-      for (const c of fsChildren) {
+      for (const c of fsChildren)
         new Node({ ...c, fsParent: this })
-      }
     }
 
     // now load all the dep edges
@@ -246,10 +242,12 @@ class Node {
 
   set workspaces (workspaces) {
     // deletes edges if they already exists
-    if (this[_workspaces])
-      for (const [name, path] of this[_workspaces].entries()) {
-        if (!workspaces.has(name)) this.edgesOut.get(name).detach()
+    if (this[_workspaces]) {
+      for (const name of this[_workspaces].keys()) {
+        if (!workspaces.has(name))
+          this.edgesOut.get(name).detach()
       }
+    }
 
     this[_workspaces] = workspaces
     this[_loadWorkspaces]()
@@ -290,6 +288,7 @@ class Node {
   get package () {
     return this[_package]
   }
+
   set package (pkg) {
     // just detach them all.  we could make this _slightly_ more efficient
     // by only detaching the ones that changed, but we'd still have to walk
@@ -297,9 +296,8 @@ class Node {
     // only do this more than once at the root level, so the resolve() calls
     // are only one level deep, and there's not much to be saved, anyway.
     // simpler to just toss them all out.
-    for (const edge of this.edgesOut.values()) {
+    for (const edge of this.edgesOut.values())
       edge.detach()
-    }
 
     this[_explanation] = null
     this[_package] = pkg
@@ -322,7 +320,7 @@ class Node {
   [_explain] (edge, seen) {
     if (this.isRoot && !this.sourceReference) {
       return {
-        location: this.path
+        location: this.path,
       }
     }
 
@@ -332,7 +330,7 @@ class Node {
     }
     if (this.errors.length || !this.package.name || !this.package.version) {
       why.errors = this.errors.length ? this.errors : [
-        new Error('invalid package: lacks name and/or version')
+        new Error('invalid package: lacks name and/or version'),
       ]
       why.package = this.package
     }
@@ -359,9 +357,9 @@ class Node {
     seen = seen.concat(this)
 
     why.dependents = []
-    if (edge) {
+    if (edge)
       why.dependents.push(this[_explainEdge](edge, seen))
-    } else {
+    else {
       // if we have an edge from the root, just show that, and stop there
       // no need to go deeper, because it doesn't provide much more value.
       const edges = []
@@ -377,9 +375,8 @@ class Node {
 
         edges.push(edge)
       }
-      for (const edge of edges) {
+      for (const edge of edges)
         why.dependents.push(this[_explainEdge](edge, seen))
-      }
     }
     return why
   }
@@ -459,11 +456,11 @@ class Node {
     const nullRoot = root === null
     if (nullRoot)
       root = this
-    else
+    else {
       // should only ever be 1 step
-      while (root.root !== root) {
+      while (root.root !== root)
         root = root.root
-      }
+    }
 
     if (root === this.root)
       return
@@ -491,9 +488,8 @@ class Node {
   [_loadWorkspaces] () {
     if (!this[_workspaces]) return
 
-    for (const [name, path] of this[_workspaces].entries()) {
+    for (const [name, path] of this[_workspaces].entries())
       new Edge({ from: this, name, spec: `file:${path}`, type: 'workspace' })
-    }
   }
 
   [_loadDeps] () {
@@ -534,9 +530,8 @@ class Node {
       const accept = ad[name]
       // if it's already set, then we keep the existing edge
       // NB: the Edge ctor adds itself to from.edgesOut
-      if (!this.edgesOut.get(name)) {
+      if (!this.edgesOut.get(name))
         new Edge({ from, name, spec, accept, type })
-      }
     }
   }
 
@@ -616,6 +611,7 @@ class Node {
 
     return true
   }
+
   canReplace (node) {
     return node.canReplaceWith(this)
   }
@@ -802,9 +798,9 @@ class Node {
     // changes, so if there's a portion of the tree blocked by a different
     // instance, or already updated by the previous in/out reloading, it won't
     // needlessly re-resolve deps that won't need to be changed.
-    if (parent) {
+    if (parent)
       parent[_reloadNamedEdges](this.name, true)
-    }
+
     // since loading a parent can add *or change* resolutions, we also
     // walk the tree from this point reloading all edges.
     this[_reloadEdges](e => true)
@@ -869,9 +865,8 @@ class Node {
     if (!this.isLink) {
       this.realpath = this.path
       if (this.linksIn.size) {
-        for (const link of this.linksIn) {
+        for (const link of this.linksIn)
           link.realpath = newPath
-        }
       }
     }
 
@@ -879,7 +874,6 @@ class Node {
     this.fsChildren.forEach(c => c[_refreshPath](this, oldPath))
     this.children.forEach(c => c[_refreshPath](this, oldPath))
   }
-
 
   // Called whenever the root/parent is changed.
   // NB: need to remove from former root's meta/inventory and then update
@@ -932,12 +926,11 @@ class Node {
         return
       }
     }
-    for (const c of this.children.values()) {
+    for (const c of this.children.values())
       c[_reloadNamedEdges](name)
-    }
-    for (const c of this.fsChildren) {
+
+    for (const c of this.fsChildren)
       c[_reloadNamedEdges](name)
-    }
   }
 
   get isLink () {

@@ -13,7 +13,7 @@ const gatherDepSet = (set, edgeFilter) => {
   // add the full set of dependencies.  note that this loop will continue
   // as the deps set increases in size.
   for (const node of deps) {
-    for (const [name, edge] of node.edgesOut.entries()) {
+    for (const edge of node.edgesOut.values()) {
       if (edge.to && edgeFilter(edge))
         deps.add(edge.to)
     }

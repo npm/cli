@@ -26,7 +26,6 @@
 // the base class, so that the overall voltron class is easier to test and
 // cover, and separation of concerns can be maintained.
 
-const Auditor = require('./audit.js')
 const {resolve} = require('path')
 const {homedir} = require('os')
 

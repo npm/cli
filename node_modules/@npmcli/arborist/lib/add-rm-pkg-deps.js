@@ -26,15 +26,14 @@ const removeFromOthers = (name, type, pkg) => {
       break
   }
 
-  for (const other of others) {
+  for (const other of others)
     deleteSubKey(pkg, other, name)
-  }
 }
 
 const add = ({pkg, add, saveBundle, saveType}) => {
-  for (const spec of add) {
+  for (const spec of add)
     addSingle({pkg, spec, saveBundle, saveType})
-  }
+
   return pkg
 }
 
@@ -42,7 +41,7 @@ const addSingle = ({pkg, spec, saveBundle, saveType}) => {
   if (!saveType)
     saveType = getSaveType(pkg, spec)
 
-  const {name, rawSpec, type: specType, fetchSpec } = spec
+  const { name, rawSpec } = spec
   removeFromOthers(name, saveType, pkg)
   const type = saveType === 'prod' ? 'dependencies'
     : saveType === 'dev' ? 'devDependencies'
@@ -51,9 +50,8 @@ const addSingle = ({pkg, spec, saveBundle, saveType}) => {
     : /* istanbul ignore next */ null
 
   pkg[type] = pkg[type] || {}
-  if (rawSpec !== '' || pkg[type][name] === undefined) {
+  if (rawSpec !== '' || pkg[type][name] === undefined)
     pkg[type][name] = rawSpec || '*'
-  }
 
   if (saveType === 'peer' || saveType === 'peerOptional') {
     const pdm = pkg.peerDependenciesMeta || {}
@@ -78,7 +76,6 @@ const getSaveType = (pkg, spec) => {
   const {name} = spec
   const {
     // these names are so lonnnnngggg
-    dependencies: deps,
     devDependencies: devDeps,
     optionalDependencies: optDeps,
     peerDependencies: peerDeps,
@@ -114,9 +111,8 @@ const rm = (pkg, rm) => {
     'peerDependenciesMeta',
     'devDependencies',
   ]) {
-    for (const name of rm) {
+    for (const name of rm)
       deleteSubKey(pkg, type, name)
-    }
   }
   if (pkg.bundleDependencies) {
     pkg.bundleDependencies = pkg.bundleDependencies

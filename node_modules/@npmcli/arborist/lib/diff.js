@@ -63,9 +63,8 @@ const allChildren = node => {
 
   const kids = new Map()
   for (const n of [node, ...node.fsChildren]) {
-    for (const kid of n.children.values()) {
+    for (const kid of n.children.values())
       kids.set(kid.path, kid)
-    }
   }
   return kids
 }
@@ -89,7 +88,6 @@ const getChildren = diff => {
     const ideal = idealKids.get(path)
     diffNode(actual, ideal, children, unchanged, removed)
   }
-
 
   if (diff.leaves && !children.length)
     diff.leaves.push(diff)
@@ -129,13 +127,12 @@ const diffNode = (actual, ideal, children, unchanged, removed) => {
     const bd = ideal.package.bundleDependencies
     if (actual && bd && bd.length) {
       const bundledChildren = []
-      for (const [name, node] of actual.children.entries()) {
+      for (const node of actual.children.values()) {
         if (node.inBundle)
           bundledChildren.push(node)
       }
-      for (const node of bundledChildren) {
+      for (const node of bundledChildren)
         node.parent = ideal
-      }
     }
     children.push(...getChildren({actual, ideal, unchanged, removed}))
   }

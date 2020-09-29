@@ -19,11 +19,12 @@ class Inventory extends Map {
   get primaryKey () {
     return this[_primaryKey]
   }
+
   get indexes () {
     return [...this[_index].keys()]
   }
 
-  *filter (fn) {
+  * filter (fn) {
     for (const node of this.values()) {
       if (fn(node))
         yield node
@@ -41,11 +42,10 @@ class Inventory extends Map {
     for (const [key, map] of this[_index].entries()) {
       const val_ = node[key] || (node.package && node.package[key])
       const val = typeof val_ === 'string' ? val_
-        : (val_ && typeof val_ === 'object')
-        ? ( key === 'license' ? val_.type
-          : key === 'funding' ? val_.url
-          : /* istanbul ignore next */ val_)
-        : val_
+        : !val_ || typeof val_ !== 'object' ? val_
+        : key === 'license' ? val_.type
+        : key === 'funding' ? val_.url
+        : /* istanbul ignore next - not used */ val_
       const set = map.get(val) || new Set()
       set.add(node)
       map.set(val, set)
@@ -70,8 +70,8 @@ class Inventory extends Map {
 
   query (key, val) {
     const map = this[_index].get(key)
-    return map && (arguments.length === 2 ? map.get(val) : map.keys())
-      || new Set()
+    return map && (arguments.length === 2 ? map.get(val) : map.keys()) ||
+      new Set()
   }
 
   has (node) {

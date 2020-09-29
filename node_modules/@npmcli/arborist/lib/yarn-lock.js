@@ -28,10 +28,15 @@
 // is an impenetrable 10kloc of webpack flow output, which is overkill
 // for something relatively simple and tailored to Arborist's use case.
 
-const npa = require('npm-package-arg')
 const consistentResolve = require('./consistent-resolve.js')
 const {dirname} = require('path')
 const {breadth} = require('treeverse')
+
+// sort a key/value object into a string of JSON stringified keys and vals
+const sortKV = obj => Object.keys(obj)
+  .sort((a, b) => a.localeCompare(b))
+  .map(k => `    ${JSON.stringify(k)} ${JSON.stringify(obj[k])}`)
+  .join('\n')
 
 // for checking against previous entries
 const match = (p, n) =>
@@ -69,9 +74,9 @@ class YarnLock {
 
   parse (data) {
     const ENTRY_START = /^[^\s].*:$/
-    const SUBKEY = /^  [^\s]+:$/
-    const SUBVAL = /^    [^\s]+ .+$/
-    const METADATA = /^  [^\s]+ .+$/
+    const SUBKEY = /^ {2}[^\s]+:$/
+    const SUBVAL = /^ {4}[^\s]+ .+$/
+    const METADATA = /^ {2}[^\s]+ .+$/
     this.entries = new Map()
     this.current = null
     const linere = /([^\n]*)\n/gm
@@ -81,7 +86,7 @@ class YarnLock {
       data += '\n'
     while (match = linere.exec(data)) {
       const line = match[1]
-      lineNum ++
+      lineNum++
       if (line.charAt(0) === '#')
         continue
       if (line === '') {
@@ -254,9 +259,8 @@ class YarnLock {
     // if we never found a matching prior, then this is a whole new thing
     if (!priorEntry) {
       const entry = Object.assign(new YarnLockEntry(newSpecs), n)
-      for (const s of newSpecs) {
+      for (const s of newSpecs)
         this.entries.set(s, entry)
-      }
     } else {
       // pick up any new info that we got for this node, so that we can
       // decorate with integrity/resolved/etc.
@@ -272,13 +276,14 @@ class YarnLock {
       n.optionalDependencies = node.package.optionalDependencies
     if (node.version)
       n.version = node.version
-    if (node.resolved)
+    if (node.resolved) {
       n.resolved = consistentResolve(
         node.resolved,
         node.isLink ? dirname(node.path) : node.path,
         node.root.path,
         true
       )
+    }
     if (node.integrity)
       n.integrity = node.integrity
 
@@ -304,26 +309,23 @@ class YarnLockEntry {
   toString () {
     // sort objects to the bottom, then alphabetical
     return ([...this[_specs]]
-        .sort((a, b) => a.localeCompare(b))
-        .map(JSON.stringify).join(', ') +
+      .sort((a, b) => a.localeCompare(b))
+      .map(JSON.stringify).join(', ') +
       ':\n' +
       Object.getOwnPropertyNames(this)
-      .filter(prop => this[prop] !== null)
-      .sort(
-        (a, b) =>
+        .filter(prop => this[prop] !== null)
+        .sort(
+          (a, b) =>
           /* istanbul ignore next - sort call order is unpredictable */
-          (typeof this[a] === 'object') === (typeof this[b] === 'object')
-            ? a.localeCompare(b)
-            : typeof this[a] === 'object' ? 1 : -1)
-      .map(prop =>
-        typeof this[prop] !== 'object'
-          ? `  ${JSON.stringify(prop)} ${JSON.stringify(this[prop])}`
-        : Object.keys(this[prop]).length === 0 ? ''
-        : (`  ${prop}:\n` +
-          Object.keys(this[prop]).sort((a, b) => a.localeCompare(b)).map(k =>
-            `    ${JSON.stringify(k)} ${JSON.stringify(this[prop][k])}`)
-          .join('\n')))
-      .join('\n')).trim()
+            (typeof this[a] === 'object') === (typeof this[b] === 'object')
+              ? a.localeCompare(b)
+              : typeof this[a] === 'object' ? 1 : -1)
+        .map(prop =>
+          typeof this[prop] !== 'object'
+            ? `  ${JSON.stringify(prop)} ${JSON.stringify(this[prop])}\n`
+            : Object.keys(this[prop]).length === 0 ? ''
+            : `  ${prop}:\n` + sortKV(this[prop]) + '\n')
+        .join('')).trim()
   }
 
   addSpec (spec) {

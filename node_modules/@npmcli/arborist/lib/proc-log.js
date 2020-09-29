@@ -9,14 +9,13 @@ const LEVELS = [
   'http',
   'silly',
   'pause',
-  'resume'
+  'resume',
 ]
 
 const log = level => (...args) => process.emit('log', level, ...args)
 
 const logger = {}
-for (const level of LEVELS) {
+for (const level of LEVELS)
   logger[level] = log(level)
-}
 
 module.exports = logger

@@ -56,7 +56,7 @@ module.exports = cls => class ActualLoader extends cls {
     // caches for cached realpath calls
     const cwd = process.cwd()
     // assume that the cwd is real enough for our purposes
-    this[_rpcache] = new Map([[ cwd, cwd ]])
+    this[_rpcache] = new Map([[cwd, cwd]])
     this[_stcache] = new Map()
 
     // cache of nodes when loading the actualTree, so that we avoid
@@ -175,9 +175,9 @@ module.exports = cls => class ActualLoader extends cls {
     // re-roots the target, but without updating its realpath, so
     // we have to re-root the targets first so their location is
     // updated appropriately.
-    for (const node of this[_actualTree].fsChildren) {
+    for (const node of this[_actualTree].fsChildren)
       node.fsParent = root
-    }
+
     for (const node of this[_actualTree].children.values()) {
       if (this[_transplantFilter](node))
         node.parent = root
@@ -186,13 +186,14 @@ module.exports = cls => class ActualLoader extends cls {
   }
 
   [_loadFSNode] ({ path, parent, real, root }) {
-    if (!real)
+    if (!real) {
       return realpath(path, this[_rpcache], this[_stcache])
         .then(
           real => this[_loadFSNode]({ path, parent, real, root }),
           // if realpath fails, just provide a dummy error node
           error => new Node({ error, path, realpath: path, parent, root })
         )
+    }
 
     // cache temporarily holds a promise placeholder so we don't try to create
     // the same node multiple times.  this is rare to encounter, given the
@@ -243,7 +244,7 @@ module.exports = cls => class ActualLoader extends cls {
     // check it for an fsParent if it's a tree top.  there's a decent chance
     // it'll get parented later, making the fsParent scan a no-op, but better
     // safe than sorry, since it's cheap.
-    const { parent, realpath, path } = options
+    const { parent, realpath } = options
     if (!parent)
       this[_topNodes].add(realpath)
     return process.env._TEST_ARBORIST_SLOW_LINK_TARGET_ === '1'
@@ -297,21 +298,21 @@ module.exports = cls => class ActualLoader extends cls {
     return readdir(nm).then(kids => {
       return Promise.all(
       // ignore . dirs and retired scoped package folders
-      kids.filter(kid => !/^(@[^/]+\/)?\./.test(kid))
-        .filter(kid => this[_filter](node, kid))
-        .map(kid => this[_loadFSNode]({
-          parent: node,
-          path: resolve(nm, kid),
-        })))
+        kids.filter(kid => !/^(@[^/]+\/)?\./.test(kid))
+          .filter(kid => this[_filter](node, kid))
+          .map(kid => this[_loadFSNode]({
+            parent: node,
+            path: resolve(nm, kid),
+          })))
     },
-      // error in the readdir is not fatal, just means no kids
-      () => {})
+    // error in the readdir is not fatal, just means no kids
+    () => {})
   }
 
   async [_mapWorkspaces] (node) {
     const workspaces = await mapWorkspaces({
       cwd: node.path,
-      pkg: node.package
+      pkg: node.package,
     })
 
     if (workspaces.size)
@@ -348,7 +349,7 @@ module.exports = cls => class ActualLoader extends cls {
           // allows for finding the transitive deps of link targets.
           // ie, if it has to go up and back out to get to the path
           // from the nearest common ancestor, we've gone too far.
-          if (ancestor && /^\.\.(?:[\\\/]|$)/.test(relative(ancestor, p)))
+          if (ancestor && /^\.\.(?:[\\/]|$)/.test(relative(ancestor, p)))
             break
 
           const entries = nmContents.get(p) ||

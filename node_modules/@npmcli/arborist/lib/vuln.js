@@ -28,9 +28,8 @@ const severities = new Map([
   [null, -1],
 ])
 
-for (const [name, val] of severities.entries()) {
+for (const [name, val] of severities.entries())
   severities.set(val, name)
-}
 
 class Vuln {
   constructor ({ name, advisory }) {
@@ -54,6 +53,7 @@ class Vuln {
   get fixAvailable () {
     return this[_fixAvailable]
   }
+
   set fixAvailable (f) {
     this[_fixAvailable] = f
     // if there's a fix available for this at the top level, it means that
@@ -73,7 +73,7 @@ class Vuln {
       else if (v.fixAvailable === true)
         v.fixAvailable = f
       else if (typeof f === 'object' && (
-          typeof v.fixAvailable !== 'object' || !v.fixAvailable.isSemVerMajor))
+        typeof v.fixAvailable !== 'object' || !v.fixAvailable.isSemVerMajor))
         v.fixAvailable = f
     }
   }
@@ -119,6 +119,7 @@ class Vuln {
     // call the setter since we might add vias _after_ setting fixAvailable
     this.fixAvailable = this.fixAvailable
   }
+
   deleteVia (v) {
     this.via.delete(v)
     v.effects.delete(this)
@@ -131,9 +132,8 @@ class Vuln {
     this[_range] = null
     this[_simpleRange] = null
     // refresh severity
-    for (const advisory of this.advisories) {
+    for (const advisory of this.advisories)
       this.addAdvisory(advisory)
-    }
 
     // remove any effects that are no longer relevant
     const vias = new Set([...this.advisories].map(a => a.dependency))

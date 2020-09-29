@@ -76,9 +76,8 @@ const realpathChild = (dir, base, rpcache, stcache, depth) => {
       return realish
     }
 
-    let res
     return readlink(realish).then(target => {
-      const resolved = res = resolve(realdir, target)
+      const resolved = resolve(realdir, target)
       if (realish === resolved)
         throw eloop(realish)
 

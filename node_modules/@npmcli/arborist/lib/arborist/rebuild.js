@@ -26,7 +26,6 @@ const _queues = Symbol('queues')
 const _scriptShell = Symbol('scriptShell')
 
 const _force = Symbol.for('force')
-const _global = Symbol.for('global')
 
 // defined by reify mixin
 const _handleOptionalFailure = Symbol.for('handleOptionalFailure')
@@ -162,9 +161,8 @@ module.exports = cls => class Builder extends cls {
       }
     }
 
-    if (bin || preinstall || install || postinstall) {
+    if (bin || preinstall || install || postinstall)
       set.add(node)
-    }
   }
 
   async [_runScripts] (event) {
@@ -236,9 +234,9 @@ module.exports = cls => class Builder extends cls {
     const promises = []
     // sort the queue by node path, so that the module-local collision
     // detector in bin-links will always resolve the same way.
-    for (const node of queue.sort(sortNodes)) {
+    for (const node of queue.sort(sortNodes))
       promises.push(this[_createBinLinks](node))
-    }
+
     await promiseAllRejectLate(promises)
     process.emit('timeEnd', 'build:link')
   }

@@ -24,39 +24,31 @@ module.exports = cls => class Tracker extends cls {
     const hasTracker = this[_progress].has(section)
     const hasSubtracker = this[_progress].has(`${section}:${key}`)
 
-    // 0. existing tracker, no subsection
-    if (hasTracker && subsection === null) {
+    if (hasTracker && subsection === null)
+      // 0. existing tracker, no subsection
       this[_onError](`Tracker "${section}" already exists`)
-    }
 
-    // 1. no existing tracker, no subsection
-    // Create a new tracker from this.log
-     else if (!hasTracker && subsection === null) {
+    else if (!hasTracker && subsection === null) {
+      // 1. no existing tracker, no subsection
+      // Create a new tracker from this.log
       // starts progress bar
-      if(this[_progress].size === 0) {
+      if (this[_progress].size === 0)
         this.log.enableProgress()
-      }
+
       this[_progress].set(section, this.log.newGroup(section))
-    }
-
-    // 2. no parent tracker and subsection 
-    else if (!hasTracker && subsection !== null) {
+    } else if (!hasTracker && subsection !== null)
+      // 2. no parent tracker and subsection
       this[_onError](`Parent tracker "${section}" does not exist`)
-    }
 
-    // 3. existing parent tracker, existing subsection tracker
-    // skip it
-    else if (hasTracker && hasSubtracker) {
-      return
-    }
-
-    // 4. existing parent tracker, no subsection tracker
-    // Create a new subtracker in this[_progress] from parent tracker
-    else {
+    else if (!hasTracker || !hasSubtracker) {
+      // 3. existing parent tracker, no subsection tracker
+      // Create a new subtracker in this[_progress] from parent tracker
       this[_progress].set(`${section}:${key}`,
         this[_progress].get(section).newGroup(`${section}:${subsection}`)
       )
     }
+    // 4. existing parent tracker, existing subsection tracker
+    // skip it
   }
 
   finishTracker (section, subsection = null, key = null) {
@@ -80,9 +72,8 @@ module.exports = cls => class Tracker extends cls {
       // not have any remaining children
       const keys = this[_progress].keys()
       for (const key of keys) {
-        if (key.match(new RegExp(section + ':'))) {
+        if (key.match(new RegExp(section + ':')))
           this.finishTracker(section, key)
-        }
       }
 
       // remove parent tracker
@@ -91,27 +82,19 @@ module.exports = cls => class Tracker extends cls {
 
       // remove progress bar if all
       // trackers are finished
-      if(this[_progress].size === 0) {
+      if (this[_progress].size === 0)
         this.log.disableProgress()
-      }
-    }
-
-    // 1. no existing parent tracker, no subsection
-    else if (!hasTracker && subsection === null) {
+    } else if (!hasTracker && subsection === null)
+      // 1. no existing parent tracker, no subsection
       this[_onError](`Tracker "${section}" does not exist`)
-    }
 
-    // 2. existing parent tracker, no subsection
-    else if (hasTracker && !hasSubtracker) {
-      return
-    }
-
-    // 3. subtracker exists
-    // Finish subtracker and remove from this[_progress]
-    else {
+    else if (!hasTracker || hasSubtracker) {
+      // 2. subtracker exists
+      // Finish subtracker and remove from this[_progress]
       this[_progress].get(`${section}:${key}`).finish()
       this[_progress].delete(`${section}:${key}`)
     }
+    // 3. existing parent tracker, no subsection
   }
 
   [_onError] (msg) {

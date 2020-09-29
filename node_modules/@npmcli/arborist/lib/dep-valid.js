@@ -6,7 +6,7 @@
 
 const semver = require('semver')
 const npa = require('npm-package-arg')
-const {resolve, relative} = require('path')
+const {relative} = require('path')
 const fromPath = require('./from-path.js')
 
 const depValid = (child, requested, requestor) => {
@@ -72,7 +72,7 @@ const depValid = (child, requested, requestor) => {
       // verify that we got it from the desired location
       return child.resolved === requested.fetchSpec
 
-    case 'git':
+    case 'git': {
       // if it's a git type, verify that they're the same repo
       //
       // if it specifies a definite commit, then it must have the
@@ -90,11 +90,11 @@ const depValid = (child, requested, requestor) => {
         : resRepo.fetchSpec === requested.fetchSpec
 
       return !sameRepo ? false
-        : requested.gitRange ?
-          semver.satisfies(child.package.version, requested.gitRange, {
-            loose: true,
-          })
-        : true
+        : !requested.gitRange ? true
+        : semver.satisfies(child.package.version, requested.gitRange, {
+          loose: true,
+        })
+    }
 
     default: // unpossible, just being cautious
       break

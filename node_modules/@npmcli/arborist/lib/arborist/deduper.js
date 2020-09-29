@@ -12,7 +12,7 @@ module.exports = cls => class Deduper extends cls {
     return this.reify({
       ...options,
       preferDedupe: true,
-      update: { names }
+      update: { names },
     })
   }
 }

@@ -11,11 +11,10 @@ const specFromLock = (name, lock, where) => {
     if (lock.from) {
       // legacy metadata includes "from", but not integrity
       const spec = npa.resolve(name, lock.from, where)
-      if (spec.registry && lock.version) {
+      if (spec.registry && lock.version)
         return npa.resolve(name, lock.version, where)
-      } else if (!lock.resolved) {
+      else if (!lock.resolved)
         return spec
-      }
     }
     if (lock.resolved)
       return npa.resolve(name, lock.resolved, where)

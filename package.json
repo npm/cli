@@ -42,7 +42,7 @@
     "./package.json": "./package.json"
   },
   "dependencies": {
-    "@npmcli/arborist": "^0.0.27",
+    "@npmcli/arborist": "^0.0.28",
     "@npmcli/ci-detect": "^1.2.0",
     "@npmcli/config": "^1.1.8",
     "@npmcli/run-script": "^1.6.0",

@@ -1,3 +1,4 @@
+/* eslint node/no-deprecated-api: "off" */
 const semver = require('semver')
 const {basename} = require('path')
 const {parse} = require('url')

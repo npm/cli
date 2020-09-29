@@ -64,6 +64,7 @@ class Link extends Node {
       ? `file:${relpath(dirname(this.path), this.realpath)}`
       : null
   }
+
   set resolved (r) {}
 
   // deps are resolved on the target, not the Link
@@ -76,6 +77,7 @@ class Link extends Node {
   get children () {
     return new Map()
   }
+
   set children (c) {}
 
   get isLink () {

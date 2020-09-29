@@ -19,7 +19,7 @@ const types = new Set([
   'optional',
   'peer',
   'peerOptional',
-  'workspace'
+  'workspace',
 ])
 
 class Edge {
@@ -119,12 +119,8 @@ class Edge {
 
   [_loadError] () {
     return !this[_to] ? (this.optional ? null : 'MISSING')
-      : this.peer &&
-          this.from === this.to.parent &&
-          !this.from.isTop
-        ? 'PEER LOCAL'
-      : !depValid(this.to, this.spec, this.accept, this.from)
-        ? 'INVALID'
+      : this.peer && this.from === this.to.parent && !this.from.isTop ? 'PEER LOCAL'
+      : !depValid(this.to, this.spec, this.accept, this.from) ? 'INVALID'
       : 'OK'
   }
 

@@ -127,18 +127,16 @@ module.exports = cls => class VirtualLoader extends cls {
         }
       }
     }
-    for (const name of Object.keys(optional)) {
+    for (const name of Object.keys(optional))
       delete prod[name]
-    }
 
     const lockWS = []
     const workspaces = mapWorkspaces.virtual({
       cwd: this.path,
       lockfile: s.data,
     })
-    for (const [name, path] of workspaces.entries()) {
+    for (const [name, path] of workspaces.entries())
       lockWS.push(['workspace', name, `file:${path}`])
-    }
 
     const lockEdges = [
       ...depsToEdges('prod', prod),
@@ -163,9 +161,8 @@ module.exports = cls => class VirtualLoader extends cls {
     for (let i = 0; i < lockEdges.length; i++) {
       if (rootEdges[i][0] !== lockEdges[i][0] ||
           rootEdges[i][1] !== lockEdges[i][1] ||
-          rootEdges[i][2] !== lockEdges[i][2]) {
+          rootEdges[i][2] !== lockEdges[i][2])
         return this[flagsSuspect] = true
-      }
     }
   }
 
