@@ -57,7 +57,7 @@
     "chalk": "^4.1.0",
     "chownr": "^2.0.0",
     "cli-columns": "^3.1.2",
-    "cli-table3": "^0.5.1",
+    "cli-table3": "^0.6.0",
     "columnify": "~1.5.4",
     "config-chain": "^1.1.12",
     "editor": "~1.0.0",
