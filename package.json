@@ -210,7 +210,6 @@
     "npm-registry-mock": "^1.3.0",
     "require-inject": "^1.4.4",
     "sprintf-js": "^1.1.2",
-    "tacks": "^1.3.0",
     "tap": "^14.10.8"
   },
   "scripts": {
