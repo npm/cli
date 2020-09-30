@@ -117,7 +117,7 @@
     "uuid": "^8.3.0",
     "validate-npm-package-name": "~3.0.0",
     "which": "^2.0.2",
-    "write-file-atomic": "^2.4.3"
+    "write-file-atomic": "^3.0.3"
   },
   "bundleDependencies": [
     "@npmcli/arborist",
