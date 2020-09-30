@@ -205,7 +205,6 @@
     "eslint-plugin-standard": "^4.0.1",
     "marked-man": "^0.7.0",
     "require-inject": "^1.4.4",
-    "sprintf-js": "^1.1.2",
     "tap": "^14.10.8"
   },
   "scripts": {
