@@ -15,6 +15,7 @@ binaries and man pages for Javascript packages
 * [API](#api)
   * [`binLinks`](#binLinks)
   * [`binLinks.getPaths()`](#getPaths)
+  * [`binLinks.checkBins()`](#checkBins)
 
 ### Example
 
@@ -66,6 +67,21 @@ Returns an array of all the paths of links and shims that _might_ be
 created (assuming that they exist!) for the package at the specified path.
 
 Does not touch the filesystem.
+
+#### <a name="checkBins"></a> `> binLinks.checkBins({path, pkg, global, top, force })`
+
+Checks if there are any conflicting bins which will prevent the linking of
+bins for the given package.  Returns a Promise that resolves with no value
+if the way is clear, and rejects if there's something in the way.
+
+Always returns successfully if `global` or `top` are false, or if `force`
+is true, or if the `pkg` object does not contain any bins to link.
+
+Note that changes to the file system _may_ still cause the `binLinks`
+method to fail even if this method succeeds.  Does not check for
+conflicting `man` links.
+
+Reads from the filesystem but does not make any changes.
 
 ##### Example
 

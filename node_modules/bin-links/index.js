@@ -33,9 +33,11 @@ const resetSeen = () => {
   linkGently.resetSeen()
 }
 
+const checkBins = require('./lib/check-bins.js')
 const getPaths = require('./lib/get-paths.js')
 
 module.exports = Object.assign(binLinks, {
+  checkBins,
   resetSeen,
   getPaths,
 })

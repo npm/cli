@@ -5,7 +5,7 @@ const { promisify } = require('util')
 
 const execMode = 0o777 & (~process.umask())
 
-const writeFileAtomic = promisify(require('write-file-atomic'))
+const writeFileAtomic = require('write-file-atomic')
 const open = promisify(fs.open)
 const close = promisify(fs.close)
 const read = promisify(fs.read)
