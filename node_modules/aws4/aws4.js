@@ -259,7 +259,7 @@ RequestSigner.prototype.canonicalString = function() {
       if (normalizePath && piece === '..') {
         path.pop()
       } else if (!normalizePath || piece !== '.') {
-        if (decodePath) piece = decodeURIComponent(piece).replace(/\+/g, ' ')
+        if (decodePath) piece = decodeURIComponent(piece.replace(/\+/g, ' '))
         path.push(encodeRfc3986Full(piece))
       }
       return path

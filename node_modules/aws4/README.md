@@ -20,11 +20,11 @@ Example
 -------
 
 ```javascript
-var http = require('https')
+var https = require('https')
 var aws4  = require('aws4')
 
 // to illustrate usage, we'll create a utility function to request and pipe to stdout
-function request(opts) { http.request(opts, function(res) { res.pipe(process.stdout) }).end(opts.body || '') }
+function request(opts) { https.request(opts, function(res) { res.pipe(process.stdout) }).end(opts.body || '') }
 
 // aws4 will sign an options object as you'd pass to http.request, with an AWS service and region
 var opts = { host: 'my-bucket.s3.us-west-1.amazonaws.com', path: '/my-object', service: 's3', region: 'us-west-1' }
@@ -94,6 +94,15 @@ request(aws4.sign({
 ...
 */
 
+// The raw RequestSigner can be used to generate CodeCommit Git passwords
+var signer = new aws4.RequestSigner({
+  service: 'codecommit',
+  host: 'git-codecommit.us-east-1.amazonaws.com',
+  method: 'GIT',
+  path: '/v1/repos/MyAwesomeRepo',
+})
+var password = signer.getDateTime() + 'Z' + signer.signature()
+
 // see example.js for examples with other services
 ```
 
@@ -102,11 +111,10 @@ API
 
 ### aws4.sign(requestOptions, [credentials])
 
-This calculates and populates the `Authorization` header of
-`requestOptions`, and any other necessary AWS headers and/or request
-options. Returns `requestOptions` as a convenience for chaining.
+Calculates and populates any necessary AWS headers and/or request
+options on `requestOptions`. Returns `requestOptions` as a convenience for chaining.
 
-`requestOptions` is an object holding the same options that the node.js
+`requestOptions` is an object holding the same options that the Node.js
 [http.request](https://nodejs.org/docs/latest/api/http.html#http_http_request_options_callback)
 function takes.
 
@@ -119,6 +127,7 @@ populated if they don't already exist:
 - `body` (will use `''` if not given)
 - `service` (will try to be calculated from `hostname` or `host` if not given)
 - `region` (will try to be calculated from `hostname` or `host` or use `'us-east-1'` if not given)
+- `signQuery` (to sign the query instead of adding an `Authorization` header, defaults to false)
 - `headers['Host']` (will use `hostname` or `host` or be calculated if not given)
 - `headers['Content-Type']` (will use `'application/x-www-form-urlencoded; charset=utf-8'`
   if not given and there is a `body`)
@@ -170,5 +179,5 @@ Thanks to [@jed](https://github.com/jed) for his
 committed and subsequently extracted this code.
 
 Also thanks to the
-[official node.js AWS SDK](https://github.com/aws/aws-sdk-js) for giving
+[official Node.js AWS SDK](https://github.com/aws/aws-sdk-js) for giving
 me a start on implementing the v4 signature.

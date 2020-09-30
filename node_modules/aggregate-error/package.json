@@ -1,6 +1,6 @@
 {
 	"name": "aggregate-error",
-	"version": "3.0.1",
+	"version": "3.1.0",
 	"description": "Create an error from multiple errors",
 	"license": "MIT",
 	"repository": "sindresorhus/aggregate-error",

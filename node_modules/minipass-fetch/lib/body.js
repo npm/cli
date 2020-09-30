@@ -130,6 +130,12 @@ class Body {
           this.url} (over ${this.timeout}ms)`, 'body-timeout'))
     }, this.timeout) : null
 
+    // do not keep the process open just for this timeout, even
+    // though we expect it'll get cleared eventually.
+    if (resTimeout) {
+      resTimeout.unref()
+    }
+
     // do the pipe in the promise, because the pipe() can send too much
     // data through right away and upset the MP Sized object
     return new Promise((resolve, reject) => {

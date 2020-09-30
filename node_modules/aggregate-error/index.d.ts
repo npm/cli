@@ -1,7 +1,7 @@
 /**
 Create an error from multiple errors.
 */
-declare class AggregateError extends Error implements Iterable<Error> {
+declare class AggregateError<T extends Error = Error> extends Error implements Iterable<T> {
 	readonly name: 'AggregateError';
 
 	/**
@@ -43,9 +43,9 @@ declare class AggregateError extends Error implements Iterable<Error> {
 	//=> [Error: baz]
 	```
 	*/
-	constructor(errors: ReadonlyArray<Error | {[key: string]: any} | string>);
+	constructor(errors: ReadonlyArray<T | {[key: string]: any} | string>);
 
-	[Symbol.iterator](): IterableIterator<Error>;
+	[Symbol.iterator](): IterableIterator<T>;
 }
 
 export = AggregateError;
