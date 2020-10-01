@@ -1,11 +1,12 @@
 const makeSpawnArgs = require('./make-spawn-args.js')
 const promiseSpawn = require('@npmcli/promise-spawn')
 const packageEnvs = require('./package-envs.js')
+const { isNodeGypPackage, defaultGypInstallScript } = require('@npmcli/node-gyp')
 
 // you wouldn't like me when I'm angry...
 const bruce = (id, event, cmd) =>`\n> ${id ? id + ' ' : ''}${event}\n> ${cmd}\n`
 
-const runScriptPkg = options => {
+const runScriptPkg = async options => {
   const {
     event,
     path,
@@ -19,11 +20,19 @@ const runScriptPkg = options => {
     banner = true,
   } = options
 
-  const cmd = options.cmd ? options.cmd
-    : pkg.scripts && pkg.scripts[event]
-      ? pkg.scripts[event] +
-        args.map(a => ` ${JSON.stringify(a)}`).join('')
-    : null
+  let cmd = null
+  if (options.cmd) {
+    cmd = options.cmd
+  } else if (pkg.scripts && pkg.scripts[event]) {
+    cmd = pkg.scripts[event] + args.map(a => ` ${JSON.stringify(a)}`).join('')
+  } else if ( // If there is no preinstall or install script, default to rebuilding node-gyp packages.
+    event === 'install' &&
+    ! pkg.scripts.install &&
+    ! pkg.scripts.preinstall &&
+    await isNodeGypPackage(path)
+  ) {
+    cmd = defaultGypInstallScript
+  }
 
   if (!cmd)
     return Promise.resolve({ code: 0, signal: null })

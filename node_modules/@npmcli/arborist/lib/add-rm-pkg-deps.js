@@ -21,6 +21,7 @@ const removeFromOthers = (name, type, pkg) => {
       break
     case 'peer':
     case 'peerOptional':
+      others.delete('devDependencies')
       others.delete('peerDependencies')
       others.delete('peerDependenciesMeta')
       break
@@ -44,9 +45,9 @@ const addSingle = ({pkg, spec, saveBundle, saveType}) => {
   const { name, rawSpec } = spec
   removeFromOthers(name, saveType, pkg)
   const type = saveType === 'prod' ? 'dependencies'
-    : saveType === 'dev' ? 'devDependencies'
     : saveType === 'optional' ? 'optionalDependencies'
     : saveType === 'peer' || saveType === 'peerOptional' ? 'peerDependencies'
+    : saveType === 'dev' ? 'devDependencies'
     : /* istanbul ignore next */ null
 
   pkg[type] = pkg[type] || {}
@@ -62,6 +63,10 @@ const addSingle = ({pkg, spec, saveBundle, saveType}) => {
       pdm[name].optional = true
       pkg.peerDependenciesMeta = pdm
     }
+    // peerDeps are often also a devDep, so that they can be tested when
+    // using package managers that don't auto-install peer deps
+    if (pkg.devDependencies && pkg.devDependencies[name] !== undefined)
+      pkg.devDependencies[name] = pkg.peerDependencies[name]
   }
 
   if (saveBundle) {
@@ -82,16 +87,16 @@ const getSaveType = (pkg, spec) => {
     peerDependenciesMeta: peerDepsMeta,
   } = pkg
 
-  if (devDeps && devDeps[name] !== undefined)
-    return 'dev'
-  else if (optDeps && optDeps[name] !== undefined)
-    return 'optional'
-  else if (peerDeps && peerDeps[name] !== undefined) {
+  if (peerDeps && peerDeps[name] !== undefined) {
     if (peerDepsMeta && peerDepsMeta[name] && peerDepsMeta[name].optional)
       return 'peerOptional'
     else
       return 'peer'
-  } else
+  } else if (devDeps && devDeps[name] !== undefined)
+    return 'dev'
+  else if (optDeps && optDeps[name] !== undefined)
+    return 'optional'
+  else
     return 'prod'
 }
 

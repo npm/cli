@@ -87,7 +87,7 @@ async function mapWorkspaces (opts = {}) {
   const { workspaces = [] } = opts.pkg
   const patterns = getPatterns(workspaces)
   const results = new Map()
-  const seen = new Set()
+  const seen = new Map()
 
   if (isEmpty(patterns)) {
     return results
@@ -126,7 +126,7 @@ async function mapWorkspaces (opts = {}) {
       if (item.negate) {
         results.delete(packagePathname, name)
       } else {
-        if (seen.has(name)) {
+        if (seen.has(name) && seen.get(name) !== packagePathname) {
           throw getError({
             Type: Error,
             message: 'must not have multiple workspaces with the same name',
@@ -134,7 +134,7 @@ async function mapWorkspaces (opts = {}) {
           })
         }
 
-        seen.add(name)
+        seen.set(name, packagePathname)
         results.set(packagePathname, name)
       }
     }

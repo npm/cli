@@ -42,6 +42,8 @@ const _createSparseTree = Symbol.for('createSparseTree')
 const _loadShrinkwrapsAndUpdateTrees = Symbol.for('loadShrinkwrapsAndUpdateTrees')
 const _reifyNode = Symbol.for('reifyNode')
 const _extractOrLink = Symbol('extractOrLink')
+// defined by rebuild mixin
+const _checkBins = Symbol.for('checkBins')
 const _symlink = Symbol('symlink')
 const _warnDeprecated = Symbol('warnDeprecated')
 const _loadAncientPackageDetails = Symbol('loadAncientPackageDetails')
@@ -377,6 +379,7 @@ module.exports = cls => class Reifier extends cls {
     this.addTracker('reify', node.name, node.location)
 
     const p = Promise.resolve()
+      .then(() => this[_checkBins](node))
       .then(() => this[_extractOrLink](node))
       .then(() => this[_warnDeprecated](node))
       .then(() => this[_loadAncientPackageDetails](node))
