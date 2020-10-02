@@ -1,3 +1,18 @@
+## v7.0.0-rc.1 (2020-10-02)
+
+* [`281a7f39a`](https://github.com/npm/cli/commit/281a7f39ac314bd7657ce2bcd7918b21eee99210)
+  `@npmcli/arborist@0.0.31`
+    * Allow `npm update` to update bundled root dependencies
+    * Only do implicit node-gyp build for gyp files named `binding.gyp`
+* [`384f5ec47`](https://github.com/npm/cli/commit/384f5ec47091eed66c2a47f2c98df3ba7506ec9f)
+  update minipass-fetch to fix many 'cb() never called' errors
+* [`7b1e75906`](https://github.com/npm/cli/commit/7b1e75906351bd73cde2f745ccaf63b9ad7de435)
+  `@npmcli/run-script@1.7.1`
+    * Only do implicit node-gyp build for gyp files named `binding.gyp`
+* [`c20e2f0c7`](https://github.com/npm/cli/commit/c20e2f0c7766a04f999fdc64faad29277904c2d3)
+  [#1892](https://github.com/npm/cli/pull/1892)
+  Support `--omit` options in npm outdated
+
 ## v7.0.0-rc.0 (2020-10-01)
 
 * [`3b417055c`](https://github.com/npm/cli/commit/3b417055cf07c4ef8e4c5063f00d3c24b5f5cbd2)
