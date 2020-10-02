@@ -194,6 +194,39 @@ t.test('should display outdated deps', t => {
     })
   })
 
+  t.test('outdated --omit=dev', t => {
+    outdated(testDir, {
+      global: false,
+      color: true,
+      omit: ['dev']
+    })([], () => {
+      t.matchSnapshot(logs)
+      t.end()
+    })
+  })
+
+  t.test('outdated --omit=dev --omit=peer', t => {
+    outdated(testDir, {
+      global: false,
+      color: true,
+      omit: ['dev', 'peer']
+    })([], () => {
+      t.matchSnapshot(logs)
+      t.end()
+    })
+  })
+
+  t.test('outdated --omit=prod', t => {
+    outdated(testDir, {
+      global: false,
+      color: true,
+      omit: ['prod']
+    })([], () => {
+      t.matchSnapshot(logs)
+      t.end()
+    })
+  })
+
   t.test('outdated --long', t => {
     outdated(testDir, {
       global: false,
