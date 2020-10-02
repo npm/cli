@@ -29,13 +29,14 @@ const runScriptPkg = async options => {
     event === 'install' &&
     ! pkg.scripts.install &&
     ! pkg.scripts.preinstall &&
+    pkg.gypfile !== false &&
     await isNodeGypPackage(path)
   ) {
     cmd = defaultGypInstallScript
   }
 
   if (!cmd)
-    return Promise.resolve({ code: 0, signal: null })
+    return { code: 0, signal: null }
 
   if (stdio === 'inherit' && banner !== false) {
     // we're dumping to the parent's stdout, so print the banner
