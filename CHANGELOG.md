@@ -1,3 +1,10 @@
+## v7.0.0-rc.2 (2020-10-02)
+
+* [`6de81a013`](https://github.com/npm/cli/commit/6de81a013833e0961abdec6f7c1ad50b63faaae6)
+  `@npmcli/run-script@1.7.2`
+    * Fix regression running 'install' scripts when package.json does not
+    contain a scripts object
+
 ## v7.0.0-rc.1 (2020-10-02)
 
 * [`281a7f39a`](https://github.com/npm/cli/commit/281a7f39ac314bd7657ce2bcd7918b21eee99210)
