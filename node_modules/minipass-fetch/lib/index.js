@@ -205,7 +205,9 @@ const fetch = (url, opts) => {
       const body = new Minipass()
       // exceedingly rare that the stream would have an error,
       // but just in case we proxy it to the stream in use.
-      res.on('error', /* istanbul ignore next */ er => body.emit('error', er)).pipe(body)
+      res.on('error', /* istanbul ignore next */ er => body.emit('error', er))
+      res.on('data', (chunk) => body.write(chunk))
+      res.on('end', () => body.end())
 
       const responseOptions = {
         url: request.url,
