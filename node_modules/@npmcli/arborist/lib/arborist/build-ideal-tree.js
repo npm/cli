@@ -545,7 +545,7 @@ module.exports = cls => class IdealTreeBuilder extends cls {
   [_shouldUpdateNode] (node) {
     return this[_updateNames].includes(node.name) &&
       !node.isTop &&
-      !node.inBundle &&
+      !node.inDepBundle &&
       !node.inShrinkwrap
   }
 

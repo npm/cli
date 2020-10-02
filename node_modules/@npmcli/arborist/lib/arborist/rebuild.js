@@ -8,7 +8,10 @@ const binLinks = require('bin-links')
 const runScript = require('@npmcli/run-script')
 const promiseCallLimit = require('promise-call-limit')
 const {resolve} = require('path')
-const { isNodeGypPackage } = require('@npmcli/node-gyp')
+const {
+  isNodeGypPackage,
+  defaultGypInstallScript,
+} = require('@npmcli/node-gyp')
 
 const boolEnv = b => b ? '1' : ''
 const sortNodes = (a, b) => (a.depth - b.depth) || a.path.localeCompare(b.path)
@@ -140,7 +143,7 @@ module.exports = cls => class Builder extends cls {
     await binLinks.checkBins({ pkg, path, top: true, global: true })
   }
 
-  async [_addToBuildSet] (node, set) {
+  async [_addToBuildSet] (node, set, refreshed = false) {
     if (set.has(node))
       return
 
@@ -151,12 +154,11 @@ module.exports = cls => class Builder extends cls {
     }
 
     const { package: pkg, hasInstallScript } = node
-    const { bin, scripts = {} } = pkg
+    const { gypfile, bin, scripts = {} } = pkg
 
     const { preinstall, install, postinstall } = scripts
     const anyScript = preinstall || install || postinstall
-
-    if (!anyScript && (hasInstallScript || this[_oldMeta])) {
+    if (!refreshed && !anyScript && (hasInstallScript || this[_oldMeta])) {
       // we either have an old metadata (and thus might have scripts)
       // or we have an indication that there's install scripts (but
       // don't yet know what they are) so we have to load the package.json
@@ -169,21 +171,25 @@ module.exports = cls => class Builder extends cls {
       set.delete(node)
 
       const {scripts = {}} = pkg
-      if (scripts.preinstall || scripts.install || scripts.postinstall) {
-        node.package.scripts = pkg.scripts
-        return this[_addToBuildSet](node, set)
-      }
+      node.package.scripts = scripts
+      return this[_addToBuildSet](node, set, true)
     }
 
-    if (bin || preinstall || install || postinstall) {
+    // Rebuild node-gyp dependencies lacking an install or preinstall script
+    // note that 'scripts' might be missing entirely, and the package may
+    // set gypfile:false to avoid this automatic detection.
+    const isGyp = gypfile !== false &&
+      !install &&
+      !preinstall &&
+      await isNodeGypPackage(node.path)
+
+    if (bin || preinstall || install || postinstall || isGyp) {
       if (bin)
         await this[_checkBins](node)
-      set.add(node)
-    } else if (!install && !preinstall && await isNodeGypPackage(node.path)) {
-      // Rebuild node-gyp dependencies lacking an install or preinstall script
-      // note that 'scripts' might be missing entirely.
-      scripts.install = 'node-gyp rebuild'
-      node.package.scripts = scripts
+      if (isGyp) {
+        scripts.install = defaultGypInstallScript
+        node.package.scripts = scripts
+      }
       set.add(node)
     }
   }
