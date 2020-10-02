@@ -91,6 +91,31 @@ gamma      1.0.1   1.0.1   2.0.0  node_modules/gamma  outdated-should-display-ou
 theta    MISSING   1.0.1   1.0.1  -                   outdated-should-display-outdated-deps  dependencies
 `
 
+exports[`test/lib/outdated.js TAP should display outdated deps outdated --omit=dev --omit=peer > must match snapshot 1`] = `
+
+[4mPackage[24m  [4mCurrent[24m  [4mWanted[24m  [4mLatest[24m  [4mLocation[24m            [4mDepended by[24m
+[31malpha[39m      1.0.0   [32m1.0.1[39m   [35m1.0.1[39m  node_modules/alpha  outdated-should-display-outdated-deps
+[33mgamma[39m      1.0.1   [32m1.0.1[39m   [35m2.0.0[39m  node_modules/gamma  outdated-should-display-outdated-deps
+[31mtheta[39m    MISSING   [32m1.0.1[39m   [35m1.0.1[39m  -                   outdated-should-display-outdated-deps
+`
+
+exports[`test/lib/outdated.js TAP should display outdated deps outdated --omit=dev > must match snapshot 1`] = `
+
+[4mPackage[24m  [4mCurrent[24m  [4mWanted[24m  [4mLatest[24m  [4mLocation[24m            [4mDepended by[24m
+[31malpha[39m      1.0.0   [32m1.0.1[39m   [35m1.0.1[39m  node_modules/alpha  outdated-should-display-outdated-deps
+[31mbeta[39m       1.0.0   [32m1.0.1[39m   [35m1.0.1[39m  node_modules/beta   outdated-should-display-outdated-deps
+[33mgamma[39m      1.0.1   [32m1.0.1[39m   [35m2.0.0[39m  node_modules/gamma  outdated-should-display-outdated-deps
+[31mtheta[39m    MISSING   [32m1.0.1[39m   [35m1.0.1[39m  -                   outdated-should-display-outdated-deps
+`
+
+exports[`test/lib/outdated.js TAP should display outdated deps outdated --omit=prod > must match snapshot 1`] = `
+
+[4mPackage[24m  [4mCurrent[24m  [4mWanted[24m  [4mLatest[24m  [4mLocation[24m            [4mDepended by[24m
+[31malpha[39m      1.0.0   [32m1.0.1[39m   [35m1.0.1[39m  node_modules/alpha  outdated-should-display-outdated-deps
+[31mbeta[39m       1.0.0   [32m1.0.1[39m   [35m1.0.1[39m  node_modules/beta   outdated-should-display-outdated-deps
+[33mgamma[39m      1.0.1   [32m1.0.1[39m   [35m2.0.0[39m  node_modules/gamma  outdated-should-display-outdated-deps
+`
+
 exports[`test/lib/outdated.js TAP should display outdated deps outdated --parseable --long > must match snapshot 1`] = `
 
 {CWD}/test/lib/outdated-should-display-outdated-deps/node_modules/alpha:alpha@1.0.1:alpha@1.0.0:alpha@1.0.1:outdated-should-display-outdated-deps:dependencies:
