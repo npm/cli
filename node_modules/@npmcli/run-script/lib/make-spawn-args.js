@@ -1,3 +1,4 @@
+/* eslint camelcase: "off" */
 const isWindows = require('./is-windows.js')
 const setPATH = require('./set-path.js')
 const {resolve} = require('path')

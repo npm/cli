@@ -8,7 +8,6 @@ const validateOptions = options => {
     scriptShell,
     env = {},
     stdio = 'pipe',
-    pkg,
     args = [],
     cmd,
   } = options
