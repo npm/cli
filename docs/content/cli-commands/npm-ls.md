@@ -122,7 +122,7 @@ Set it to false in order to use all-ansi output.
 * [npm config](/cli-commands/npm-config)
 * [npmrc](/configuring-npm/npmrc)
 * [npm folders](/configuring-npm/folders)
-* [npm install](/cli-commands/npm-install)
+* [npm install](/cli-commands/install)
 * [npm link](/cli-commands/npm-link)
 * [npm prune](/cli-commands/npm-prune)
 * [npm outdated](/cli-commands/npm-outdated)

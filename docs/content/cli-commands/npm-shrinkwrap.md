@@ -24,7 +24,7 @@ of package locks in npm, see [package-locks](/configuring-npm/package-locks).
 
 ### See Also
 
-* [npm install](/cli-commands/npm-install)
+* [npm install](/cli-commands/install)
 * [npm run-script](/cli-commands/npm-run-script)
 * [npm scripts](/using-npm/scripts)
 * [package.js](/configuring-npm/package-json)

@@ -84,7 +84,7 @@ The root cache folder.
 * [npm folders](/configuring-npm/folders)
 * [npm config](/cli-commands/npm-config)
 * [npmrc](/configuring-npm/npmrc)
-* [npm install](/cli-commands/npm-install)
+* [npm install](/cli-commands/install)
 * [npm publish](/cli-commands/npm-publish)
 * [npm pack](/cli-commands/npm-pack)
 * https://npm.im/cacache

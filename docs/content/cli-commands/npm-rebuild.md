@@ -23,4 +23,4 @@ This command runs the `npm build` command on the matched folders.  This is usefu
 ### See Also
 
 * [npm build](/cli-commands/npm-build)
-* [npm install](/cli-commands/npm-install)
+* [npm install](/cli-commands/install)

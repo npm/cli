@@ -42,6 +42,6 @@ The command to run for `npm edit` or `npm config edit`.
 
 * [npm folders](/configuring-npm/folders)
 * [npm explore](/cli-commands/npm-explore)
-* [npm install](/cli-commands/npm-install)
+* [npm install](/cli-commands/install)
 * [npm config](/cli-commands/npm-config)
 * [npmrc](/configuring-npm/npmrc)
