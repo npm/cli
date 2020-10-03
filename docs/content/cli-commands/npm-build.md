@@ -29,6 +29,6 @@ directly, run:
 ### See Also
 
 * [npm install](/cli-commands/install)
-* [npm link](/cli-commands/npm-link)
+* [npm link](/cli-commands/link)
 * [npm scripts](/using-npm/scripts)
 * [package.json](/configuring-npm/package-json)
