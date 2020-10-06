@@ -7,7 +7,6 @@ const {promisify} = require('util')
 const readdir = promisify(require('readdir-scoped-modules'))
 const walkUp = require('walk-up-path')
 const ancestorPath = require('common-ancestor-path')
-const mapWorkspaces = require('@npmcli/map-workspaces')
 
 const Shrinkwrap = require('../shrinkwrap.js')
 const calcDepFlags = require('../calc-dep-flags.js')
@@ -31,7 +30,7 @@ const _cache = Symbol('nodeLoadingCache')
 const _loadActual = Symbol('loadActual')
 const _loadActualVirtually = Symbol('loadActualVirtually')
 const _loadActualActually = Symbol('loadActualActually')
-const _mapWorkspaces = Symbol('mapWorkspaces')
+const _loadWorkspaces = Symbol.for('loadWorkspaces')
 const _actualTreePromise = Symbol('actualTreePromise')
 const _actualTree = Symbol('actualTree')
 const _transplant = Symbol('transplant')
@@ -162,7 +161,7 @@ module.exports = cls => class ActualLoader extends cls {
     this[_findFSParents]()
     this[_transplant](root)
 
-    await this[_mapWorkspaces](this[_actualTree])
+    await this[_loadWorkspaces](this[_actualTree])
     // only reset root flags if we're not re-rooting, otherwise leave as-is
     calcDepFlags(this[_actualTree], !root)
     return this[_actualTree]
@@ -307,18 +306,6 @@ module.exports = cls => class ActualLoader extends cls {
     },
     // error in the readdir is not fatal, just means no kids
     () => {})
-  }
-
-  async [_mapWorkspaces] (node) {
-    const workspaces = await mapWorkspaces({
-      cwd: node.path,
-      pkg: node.package,
-    })
-
-    if (workspaces.size)
-      node.workspaces = workspaces
-
-    return node
   }
 
   async [_findMissingEdges] () {

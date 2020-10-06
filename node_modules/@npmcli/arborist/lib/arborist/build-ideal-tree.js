@@ -4,7 +4,6 @@ const npa = require('npm-package-arg')
 const pacote = require('pacote')
 const cacache = require('cacache')
 const semver = require('semver')
-const mapWorkspaces = require('@npmcli/map-workspaces')
 const promiseCallLimit = require('promise-call-limit')
 const getPeerSet = require('../peer-set.js')
 const realpath = require('../../lib/realpath.js')
@@ -54,7 +53,7 @@ const _nodeFromSpec = Symbol('nodeFromSpec')
 const _fetchManifest = Symbol('fetchManifest')
 const _problemEdges = Symbol('problemEdges')
 const _manifests = Symbol('manifests')
-const _mapWorkspaces = Symbol('mapWorkspaces')
+const _loadWorkspaces = Symbol.for('loadWorkspaces')
 const _linkFromSpec = Symbol('linkFromSpec')
 const _loadPeerSet = Symbol('loadPeerSet')
 const _updateNames = Symbol.for('updateNames')
@@ -268,6 +267,7 @@ module.exports = cls => class IdealTreeBuilder extends cls {
         pkg => this[_rootNodeFromPackage](pkg),
         er => this[_rootNodeFromPackage]({})
       ))
+      .then(root => this[_loadWorkspaces](root))
       // ok to not have a virtual tree.  probably initial install.
       // When updating all, we load the shrinkwrap, but don't bother
       // to build out the full virtual tree from it, since we'll be
@@ -288,11 +288,8 @@ module.exports = cls => class IdealTreeBuilder extends cls {
       .then(async root => {
         if (!this[_updateAll] && !this[_global] && !root.meta.loadedFromDisk)
           await new this.constructor(this.options).loadActual({ root })
-        else if (!this[_global] && (!this[_usePackageLock] || this[_updateAll]))
-          await this[_mapWorkspaces](root)
         return root
       })
-
       .then(tree => {
         // null the virtual tree, because we're about to hack away at it
         // if you want another one, load another copy.
@@ -325,15 +322,6 @@ module.exports = cls => class IdealTreeBuilder extends cls {
       global: this[_global],
       legacyPeerDeps: this.legacyPeerDeps,
     })
-  }
-
-  [_mapWorkspaces] (node) {
-    return mapWorkspaces({ cwd: node.path, pkg: node.package })
-      .then(workspaces => {
-        if (workspaces.size)
-          node.workspaces = workspaces
-        return node
-      })
   }
 
   // process the add/rm requests by modifying the root node, and the

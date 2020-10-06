@@ -1,7 +1,6 @@
 // mixin providing the loadVirtual method
 
 const {dirname, resolve} = require('path')
-const mapWorkspaces = require('@npmcli/map-workspaces')
 const walkUp = require('walk-up-path')
 
 const nameFromFolder = require('@npmcli/name-from-folder')
@@ -20,7 +19,8 @@ const assignParentage = Symbol('assignParentage')
 const loadRoot = Symbol('loadRoot')
 const loadNode = Symbol('loadVirtualNode')
 const loadLink = Symbol('loadVirtualLink')
-const loadWorkspaces = Symbol('loadWorkspaces')
+const loadWorkspaces = Symbol.for('loadWorkspaces')
+const loadWorkspacesVirtual = Symbol.for('loadWorkspacesVirtual')
 const flagsSuspect = Symbol.for('flagsSuspect')
 const reCalcDepFlags = Symbol('reCalcDepFlags')
 const checkRootEdges = Symbol('checkRootEdges')
@@ -131,7 +131,7 @@ module.exports = cls => class VirtualLoader extends cls {
       delete prod[name]
 
     const lockWS = []
-    const workspaces = mapWorkspaces.virtual({
+    const workspaces = this[loadWorkspacesVirtual]({
       cwd: this.path,
       lockfile: s.data,
     })
@@ -267,16 +267,6 @@ module.exports = cls => class VirtualLoader extends cls {
     node.peer = !!sw.peer
     node.optional = !!sw.optional
     node.dev = !!sw.dev
-    return node
-  }
-
-  async [loadWorkspaces] (node) {
-    const workspaces = await mapWorkspaces({
-      cwd: node.path,
-      pkg: node.package,
-    })
-    if (workspaces.size)
-      node.workspaces = workspaces
     return node
   }
 
