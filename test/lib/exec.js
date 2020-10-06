@@ -20,6 +20,7 @@ class Arborist {
 
 let PROGRESS_ENABLED = true
 const LOG_WARN = []
+let PROGRESS_IGNORED = false
 const npm = {
   flatOptions: {
     yes: true,
@@ -28,6 +29,8 @@ const npm = {
     legacyPeerDeps: false
   },
   localPrefix: 'local-prefix',
+  localBin: 'local-bin',
+  globalBin: 'global-bin',
   config: {
     get: k => {
       if (k !== 'cache') {
@@ -52,7 +55,7 @@ const npm = {
 const RUN_SCRIPTS = []
 const runScript = async opt => {
   RUN_SCRIPTS.push(opt)
-  if (PROGRESS_ENABLED) {
+  if (!PROGRESS_IGNORED && PROGRESS_ENABLED) {
     throw new Error('progress not disabled during run script!')
   }
 }
@@ -75,6 +78,8 @@ const read = (options, cb) => {
   process.nextTick(() => cb(READ_ERROR, READ_RESULT))
 }
 
+const PATH = require('../../lib/utils/path.js')
+
 const exec = requireInject('../../lib/exec.js', {
   '@npmcli/arborist': Arborist,
   '@npmcli/run-script': runScript,
@@ -93,10 +98,61 @@ t.afterEach(cb => {
   READ_RESULT = ''
   READ_ERROR = null
   LOG_WARN.length = 0
+  PROGRESS_IGNORED = false
   npm.flatOptions.legacyPeerDeps = false
   npm.flatOptions.package = []
   npm.flatOptions.call = ''
+  npm.localBin = 'local-bin'
+  npm.globalBin = 'global-bin'
   cb()
+})
+
+t.test('npx foo, bin already exists locally', async t => {
+  const path = t.testdir({
+    foo: 'just some file'
+  })
+
+  PROGRESS_IGNORED = true
+  npm.localBin = path
+
+  await exec(['foo'], er => {
+    t.ifError(er, 'npm exec')
+  })
+  t.strictSame(RUN_SCRIPTS, [{
+    cmd: 'foo',
+    banner: false,
+    path: process.cwd(),
+    stdioString: true,
+    event: 'npx',
+    env: {
+      PATH: [path, ...PATH].join(delimiter)
+    },
+    stdio: 'inherit'
+  }])
+})
+
+t.test('npx foo, bin already exists globally', async t => {
+  const path = t.testdir({
+    foo: 'just some file'
+  })
+
+  PROGRESS_IGNORED = true
+  npm.globalBin = path
+
+  await exec(['foo'], er => {
+    t.ifError(er, 'npm exec')
+  })
+  t.strictSame(RUN_SCRIPTS, [{
+    cmd: 'foo',
+    banner: false,
+    path: process.cwd(),
+    stdioString: true,
+    event: 'npx',
+    env: {
+      PATH: [path, ...PATH].join(delimiter)
+    },
+    stdio: 'inherit'
+  }])
 })
 
 t.test('npm exec foo, already present locally', async t => {
