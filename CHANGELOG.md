@@ -1,3 +1,25 @@
+## v7.0.0-rc.3 (2020-10-06)
+
+* [`d816c2efa`](https://github.com/npm/cli/commit/d816c2efae41930cbdf4fff8657e0adc450d1dd4)
+  [`c8f0d5457`](https://github.com/npm/cli/commit/c8f0d5457dd913b425987ae30a611d4eb9e84b7d)
+  [`d48086d0d`](https://github.com/npm/cli/commit/d48086d0d3e006e76f364fb2c62b406a97ce8f68)
+  [`f34595f2e`](https://github.com/npm/cli/commit/f34595f2e5814a929049aca0349ce418a7f400c6)
+  [#1902](https://github.com/npm/cli/pull/1902)
+  tests for several commands
+  ([@nlf](https://github.com/nlf))
+* [`6d49207db`](https://github.com/npm/cli/commit/6d49207dbc5d66f91f4f462f05dd8916046e3a7b)
+  [#1903](https://github.com/npm/cli/pull/1903)
+  Revert "Remove unused npx binary"
+  ([@MylesBorins](https://github.com/MylesBorins))
+* [`138dfc202`](https://github.com/npm/cli/commit/138dfc202f401d2d93b4b5d2499799be6eb4ff0b)
+  set executable permissions on bins that node installer uses
+* [`b06d68078`](https://github.com/npm/cli/commit/b06d68078830cc2446b1e51553db10e87591865b)
+  `@npmcli/arborist@0.0.32`
+    * Do not remove `node_modules` folders from Workspaces when
+      `loadActual` races with `buildIdealTree` ([@ruyadorno](https://github.com/ruyadorno))
+* [`2509e3a1b`](https://github.com/npm/cli/commit/2509e3a1bf76289062f1f6f06eee184df386054b)
+  `uuid@8.3.1`
+
 ## v7.0.0-rc.2 (2020-10-02)
 
 * [`6de81a013`](https://github.com/npm/cli/commit/6de81a013833e0961abdec6f7c1ad50b63faaae6)
