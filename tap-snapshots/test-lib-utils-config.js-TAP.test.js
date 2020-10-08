@@ -349,10 +349,6 @@ Object {
     "global": "{Boolean TYPE}",
     "global-style": "{Boolean TYPE}",
     "globalconfig": "{PATH MODULE}",
-    "group": Array [
-      "{Number TYPE}",
-      "{String TYPE}",
-    ],
     "heading": "{String TYPE}",
     "https-proxy": Array [
       null,
@@ -863,10 +859,6 @@ Object {
     "global": "{Boolean TYPE}",
     "global-style": "{Boolean TYPE}",
     "globalconfig": "{PATH MODULE}",
-    "group": Array [
-      "{Number TYPE}",
-      "{String TYPE}",
-    ],
     "heading": "{String TYPE}",
     "https-proxy": Array [
       null,
@@ -1377,10 +1369,6 @@ Object {
     "global": "{Boolean TYPE}",
     "global-style": "{Boolean TYPE}",
     "globalconfig": "{PATH MODULE}",
-    "group": Array [
-      "{Number TYPE}",
-      "{String TYPE}",
-    ],
     "heading": "{String TYPE}",
     "https-proxy": Array [
       null,
