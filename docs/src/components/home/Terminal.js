@@ -105,7 +105,7 @@ const Terminal = ({onClose, top, left}) => {
       <Bottom>
         <SiteName py={3}><Bracket />npm cli <Cursor>_</Cursor></SiteName>
         <Text>
-          The intelligent package manager for the Node Javascript Platform. Install stuff and get coding!
+          The intelligent package manager for the Node JavaScript platform. Install stuff and get coding!
         </Text>
         <Box mx={'auto'} my={4}>
           <LinkButton to='/cli-commands/npm'>
