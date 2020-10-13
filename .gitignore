@@ -1,7 +1,6 @@
 *.swp
 npm-debug.log
-.nyc_output/
-/test/bin
+/.nyc_output
 /test/output.log
 /test/*/*/node_modules
 /test/packages/npm-test-depends-on-spark/which-spark.log
@@ -26,4 +25,6 @@ npm-debug.log
 /node_modules/.cache
 .DS_Store
 **/.DS_Store
-.vscode/
+/coverage
+/*.tgz
+/.editorconfig

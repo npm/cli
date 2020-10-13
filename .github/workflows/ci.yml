@@ -7,10 +7,21 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node-version: [6.x, 8.x, 10.x, 12.x]
-        os: [ubuntu-latest, windows-latest, macOS-latest]
+        node-version: [10.x, 12.x, 14.x]
+        platform:
+        - os: ubuntu-latest
+          shell: bash
+        - os: macos-latest
+          shell: bash
+        - os: windows-latest
+          shell: bash
+        - os: windows-latest
+          shell: powershell
 
-    runs-on: ${{ matrix.os }}
+    runs-on: ${{ matrix.platform.os }}
+    defaults:
+      run:
+        shell: ${{ matrix.platform.shell }}
 
     steps:
       # Checkout the npm/cli repo
@@ -26,26 +37,27 @@ jobs:
     - name: Install dependencies
       run: node . install
 
-      # Run the tests
+      # Run the tests, but not if we're just gonna do coveralls later anyway
     - name: Run Tap tests
-      run: node . run tap -- "test/tap/*.js" -t600 -Rclassic -c
+      if: matrix.platform.os != 'ubuntu-latest' || matrix.node-version != '12.x'
+      run: node . test -- -t600 -Rbase -c
       env:
         DEPLOY_VERSION: testing
 
       # Run coverage check
     - name: Run coverage report
-      if: matrix.os == 'ubuntu-latest' && matrix.node-version == '12.x'
-      run: node . run tap -- "test/tap/*.js" -t600 -Rclassic -c
+      if: matrix.platform.os == 'ubuntu-latest' && matrix.node-version == '12.x'
+      # turn off --check-coverage until 100%, so CI failure is relevant
+      run: node . run check-coverage -- -t600 --no-check-coverage -Rbase -c
       env:
         DEPLOY_VERSION: testing
         COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_OPTIONAL_TOKEN }}
 
     # - name: Run sudo tests on Linux
     #   if: matrix.os == 'ubuntu-latest'
-    #   run: sudo PATH=$PATH $(which node) . run tap -- "test/tap/*.js" --coverage  --timeout 600
+    #   run: sudo PATH=$PATH $(which node) . test -- --coverage  --timeout 600
 
-    - name: Lint
-      run: node . run lint
-
+    # no need to check licenses everywhere, they don't change between versions
     - name: Validate licenses
+      if: matrix.os == 'ubuntu-latest' && matrix.node-version == '12.x'
       run: node . run licenses
