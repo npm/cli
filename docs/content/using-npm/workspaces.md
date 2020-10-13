@@ -66,6 +66,31 @@ structure of files and folders:
    `-- package.json
 ```
 
+### Using workspaces
+
+Given the [specifities of how Node.js handles module resolution](https://nodejs.org/dist/latest-v14.x/docs/api/modules.html#modules_all_together) it's possible to consume any defined workspace
+by it's declared `package.json` `name`. Continuing from the example defined
+above, let's also create a Node.js script that will require the `workspace-a`
+example module, e.g:
+
+```
+// ./workspace-a/index.js
+module.exports = 'a'
+
+// ./lib/index.js
+const moduleA = require('workspace-a')
+console.log(moduleA) // -> a
+```
+
+When running it with:
+
+`node lib/index.js`
+
+This demonstrates how the nature of `node_modules` resolution allows for
+**workspaces** to enable a portable workflow for requiring each **workspace**
+in such a way that is also easy to [publish](/cli-commands/publish) these
+nested workspaces to be consumed elsewhere.
+
 ### See also
 
 * [npm install](/cli-commands/install)
