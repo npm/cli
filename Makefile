@@ -49,9 +49,8 @@ uninstall:
 mandocs: $(mandocs)
 
 htmldocs:
-	cd docs && node ../bin/npm-cli.js install && \
-	node ../bin/npm-cli.js run build:static echo>&2 && \
-	rm -rf node_modules .cache public/*js public/*json public/404* public/page-data public/manifest*
+	cd docs && node ../bin/npm-cli.js install --legacy-peer-deps --no-audit && \
+	node ../bin/npm-cli.js run build >&2
 
 docs: mandocs htmldocs
 
@@ -68,7 +67,7 @@ docs-clean:
     .building_marked-man \
     man \
     docs/node_modules \
-    docs/public \
+    docs/output \
     docs/.cache
 
 ## build-time tools for the documentation
