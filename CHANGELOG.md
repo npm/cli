@@ -1,3 +1,32 @@
+## 7.0.1 (2020-10-15)
+
+### DOCUMENTATION
+
+* [`03fca6a3b`](https://github.com/npm/cli/commit/03fca6a3b227f71562863bec7a1de1732bd719f1)
+  Adds docs on workspaces, explaining its basic concept and how to use it.
+  ([@ruyadorno](https://github.com/ruyadorno))
+
+### BUG FIXES
+
+* [`2ccb63659`](https://github.com/npm/cli/commit/2ccb63659f9a757201658d5d019099b492d04a5b)
+  [#1951](https://github.com/npm/cli/issues/1951)
+  [#1956](https://github.com/npm/cli/pull/1956)
+  Handle errors from audit endpoint appropriately
+  ([@isaacs](https://github.com/isaacs))
+
+### DEPENDENCIES
+
+* [`120e62736`](https://github.com/npm/cli/commit/120e6273604f15a2ce55668dfb2c23d06bf1e06c)
+  `node-gyp@7.1.1`
+* [`6560b8d95`](https://github.com/npm/cli/commit/6560b8d952a613cefbd900186aa38df53bc201d1)
+  `@npmcli/arborist@1.0.2`
+    * do not drop scope information when fetching scoped package tarballs
+    * fix cycles/ordering resolution when peer deps require nesting
+* [`282a1e008`](https://github.com/npm/cli/commit/282a1e00820b9abfb3465d044b30b2cade107909)
+  `npm-user-validate@1.0.1`
+* [`b259edcb4`](https://github.com/npm/cli/commit/b259edcb4bac37e6f26d56af5f6666afbda8c126)
+  `hosted-git-info@3.0.7`
+
 ## v7.0.0 (2020-10-12)
 
 ### BUG FIXES
