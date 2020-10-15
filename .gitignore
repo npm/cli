@@ -8,8 +8,7 @@ npm-debug.log
 /test/packages/test-package/random-data.txt
 /test/root
 /node_modules/.bin
-/docs/public/
-/docs/.cache/
+/docs/output/
 /docs/node_modules/
 /man/
 /npmrc
