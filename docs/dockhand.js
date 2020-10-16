@@ -75,11 +75,14 @@ function translate(childPath) {
     const html = template.replace(/\{\{\s*([\w\.]+)\s*\}\}/g, (token, key) => {
         switch (key) {
             case 'content':
-                return content;
+                return `<div id="_content">${content}</div>`;
             case 'path':
                 return childPath;
             case 'url_path':
                 return encodeURI(childPath);
+
+            case 'toc':
+                return '<div id="_table_of_contents"></div>';
 
             case 'title':
             case 'section':
@@ -141,7 +144,7 @@ function translate(childPath) {
         let headerId = headerText;
         let headerIncrement = 1;
 
-        while (headerIds.includes(headerId)) {
+        while (document.getElementById(headerId) !== null) {
             headerId = headerText + (++headerIncrement);
         }
 
@@ -149,10 +152,74 @@ function translate(childPath) {
         header.setAttribute('id', headerId);
     }
 
+    // Walk the dom and build a table of contents
+    const toc = document.getElementById('_table_of_contents');
+
+    if (toc) {
+        toc.appendChild(generateTableOfContents(document));
+    }
+
+    // Write the final output
     const output = dom.serialize();
 
     mkdirp.sync(path.dirname(outputPath));
     fs.writeFileSync(outputPath, output);
+}
+
+function generateTableOfContents(document) {
+    const headers = [ ];
+    walkHeaders(document.getElementById('_content'), headers);
+
+    let parent = null;
+
+    // The nesting depth of headers are not necessarily the header level.
+    // (eg, h1 > h3 > h5 is a depth of three even though there's an h5.)
+    const hierarchy = [ ];
+    for (let header of headers) {
+        const level = headerLevel(header);
+
+        while (hierarchy.length && hierarchy[hierarchy.length - 1].headerLevel > level) {
+            hierarchy.pop();
+        }
+
+        if (!hierarchy.length || hierarchy[hierarchy.length - 1].headerLevel < level) {
+            const newList = document.createElement('ul');
+            newList.headerLevel = level;
+
+            if (hierarchy.length) {
+                hierarchy[hierarchy.length - 1].appendChild(newList);
+            }
+
+            hierarchy.push(newList);
+        }
+
+        const element = document.createElement('li');
+
+        const link = document.createElement('a');
+        link.setAttribute('href', `#${header.getAttribute('id')}`);
+        link.innerHTML = header.innerHTML;
+        element.appendChild(link);
+
+        const list = hierarchy[hierarchy.length - 1];
+        list.appendChild(element);
+    }
+
+    return hierarchy[0];
+}
+
+function walkHeaders(element, headers) {
+    for (let child of element.childNodes) {
+        if (headerLevel(child)) {
+            headers.push(child);
+        }
+
+        walkHeaders(child, headers);
+    }
+}
+
+function headerLevel(node) {
+    const level = node.tagName ? node.tagName.match(/^[Hh]([123456])$/) : null;
+    return level ? level[1] : 0;
 }
 
 function debug(str) {
