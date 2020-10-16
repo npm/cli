@@ -3614,13 +3614,12 @@ def _AddSources2(
                     extension_to_rule_name,
                     _GetUniquePlatforms(spec),
                 )
-                if group == "compile":
-                    # Always add an <ObjectFileName> value to support duplicate
-                    # source file basenames.
+                if group == "compile" and not os.path.isabs(source):
+                    # Add an <ObjectFileName> value to support duplicate source
+                    # file basenames, except for absolute paths to avoid paths
+                    # with more than 260 characters.
                     file_name = os.path.splitext(source)[0] + ".obj"
-                    if os.path.isabs(file_name):
-                        file_name = os.path.splitdrive(file_name)[1]
-                    elif file_name.startswith("..\\"):
+                    if file_name.startswith("..\\"):
                         file_name = re.sub(r"^(\.\.\\)+", "", file_name)
                     elif file_name.startswith("$("):
                         file_name = re.sub(r"^\$\([^)]+\)\\", "", file_name)
