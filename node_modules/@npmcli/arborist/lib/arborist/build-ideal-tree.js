@@ -1210,7 +1210,7 @@ This is a one-time fix-up, please be patient...
         continue
       const peer = virtualRoot.children.get(peerEdge.name)
       const peerPlaced = this[_placeDep](
-        peer, newDep, peerEdge, peerEntryEdge || edge)
+        peer, newDep, peerEdge, peerEntryEdge || edge, peerPath)
       placed.push(...peerPlaced)
     }
 
@@ -1262,10 +1262,20 @@ This is a one-time fix-up, please be patient...
   [_canPlaceDep] (dep, target, edge, peerEntryEdge = null, peerPath = []) {
     const entryEdge = peerEntryEdge || edge
     const source = this[_peerSetSource].get(dep)
-
     const isSource = target === source
     const { isRoot, isWorkspace } = source || {}
     const isMine = isRoot || isWorkspace
+
+    // XXX - Useful testing thingie right here.
+    // This assertion is commented out because we don't want to blow up user
+    // projects if it happens.  But the peerEntryEdge should *always* be a
+    // non-peer dependency, or a peer dependency from the root node.  When we
+    // get spurious ERESOLVE errors, or *don't* get ERESOLVE errors when we
+    // should, try uncommenting this and seeing if it fails, because it means
+    // we got off track somehow.
+    // if (peerEntryEdge && peerEntryEdge.peer && !peerEntryEdge.from.isTop) {
+    //   throw new Error('this should never happen')
+    // }
 
     if (target.children.has(edge.name)) {
       const current = target.children.get(edge.name)
@@ -1420,18 +1430,14 @@ This is a one-time fix-up, please be patient...
     if (!dep.parent || peerEntryEdge && peerPath.includes(dep))
       return ret
 
+    const entryEdge = peerEntryEdge || edge
     peerPath = [...peerPath, dep]
-    for (const peer of dep.parent.children.values()) {
-      if (peer === dep)
-        continue
 
-      // we only have to pick the first one, because ALL peer edgesIn will
-      // be checked before we decide to accept an existing dep in the tree
-      const peerEdge = [...peer.edgesIn].find(e => e.peer && e !== edge)
-      if (!peerEdge)
+    for (const peerEdge of dep.edgesOut.values()) {
+      if (!peerEdge.peer || !peerEdge.to)
         continue
-
-      const canPlacePeer = this[_canPlaceDep](peer, target, peerEdge, edge, peerPath)
+      const peer = peerEdge.to
+      const canPlacePeer = this[_canPlaceDep](peer, target, peerEdge, entryEdge, peerPath)
       if (canPlacePeer !== CONFLICT)
         continue
 
