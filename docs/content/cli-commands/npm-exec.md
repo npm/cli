@@ -12,9 +12,9 @@ description: Run a command from a local or remote npm package
 
 ```bash
 npm exec -- <pkg>[@<version>] [args...]
-npm exec -p <pkg>[@<version>] -- <cmd> [args...]
+npm exec --package=<pkg>[@<version>] -- <cmd> [args...]
 npm exec -c '<cmd> [args...]'
-npm exec -p foo -c '<cmd> [args...]'
+npm exec --package=foo -c '<cmd> [args...]'
 
 npx <pkg>[@<specifier>] [args...]
 npx -p <pkg>[@<specifier>] <cmd> [args...]
@@ -23,7 +23,8 @@ npx -p <pkg>[@<specifier>] -c '<cmd> [args...]'
 
 alias: npm x, npx
 
--p <pkg> --package=<pkg> (may be specified multiple times)
+--package=<pkg> (may be specified multiple times)
+-p is a shorthand for --package only when using npx executable
 -c <cmd> --call=<cmd> (may not be mixed with positional arguments)
 ```
 
@@ -33,9 +34,9 @@ This command allows you to run an arbitrary command from an npm package
 (either one installed locally, or fetched remotely), in a similar context
 as running it via `npm run`.
 
-Whatever packages are specified by the `--package` or `-p` option will be
+Whatever packages are specified by the `--package` option will be
 provided in the `PATH` of the executed command, along with any locally
-installed package executables.  The `--package` or `-p` option may be
+installed package executables.  The `--package` option may be
 specified multiple times, to execute the supplied command in an environment
 where all specified packages are available.
 
@@ -51,7 +52,7 @@ only be considered a match if they have the exact same name and version as
 the local dependency.
 
 If no `-c` or `--call` option is provided, then the positional arguments
-are used to generate the command string.  If no `-p` or `--package` options
+are used to generate the command string.  If no `--package` options
 are provided, then npm will attempt to determine the executable name from
 the package specifier provided as the first positional argument according
 to the following heuristic:
