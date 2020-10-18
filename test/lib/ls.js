@@ -2476,6 +2476,12 @@ t.test('ls --json', (t) => {
         },
         'should output json contaning only occurences of filtered by package'
       )
+      t.equal(
+        process.exitCode,
+        0,
+        'should exit with error code 1'
+      )
+      process.exitCode = 0
       t.end()
     })
   })
