@@ -5,10 +5,17 @@ const redactCwd = (path) => {
   const normalizePath = p => p
     .replace(/\\+/g, '/')
     .replace(/\r\n/g, '\n')
-  return normalizePath(path)
+  const replaceCwd = p => p
     .replace(new RegExp(normalizePath(process.cwd()), 'g'), '{CWD}')
-    .replace(process.execPath, '/path/to/node')
-    .replace(process.env.HOME, '~/')
+  const cleanupWinPaths = p => p
+    .replace(normalizePath(process.execPath), '/path/to/node')
+    .replace(normalizePath(process.env.HOME), '~/')
+
+  return cleanupWinPaths(
+    replaceCwd(
+      normalizePath(path)
+    )
+  )
 }
 
 t.cleanSnapshot = (str) => redactCwd(str)
@@ -167,10 +174,11 @@ t.test('config list --json', t => {
 t.test('config delete no args', t => {
   config(['delete'], (err) => {
     t.equal(
-      err,
+      err.message,
       'usage instructions',
       'should throw usage error'
     )
+    t.equal(err.code, 'EUSAGE', 'should throw expected error code')
     t.end()
   })
 })
@@ -224,7 +232,7 @@ t.test('config delete key --global', t => {
 t.test('config set no args', t => {
   config(['set'], (err) => {
     t.equal(
-      err,
+      err.message,
       'usage instructions',
       'should throw usage error'
     )
@@ -366,12 +374,11 @@ t.test('config get no args', t => {
 })
 
 t.test('config get key', t => {
-  t.plan(3)
+  t.plan(2)
 
   const npmConfigGet = npm.config.get
-  npm.config.get = (key, where) => {
+  npm.config.get = (key) => {
     t.equal(key, 'foo', 'should use expected key')
-    t.equal(where, 'user', 'should retrieve key from user config by default')
     return 'bar'
   }
 
@@ -384,32 +391,6 @@ t.test('config get key', t => {
   })
 
   t.teardown(() => {
-    npm.config.get = npmConfigGet
-    delete npm.config.save
-  })
-})
-
-t.test('config get key --global', t => {
-  t.plan(3)
-
-  flatOptions.global = true
-  const npmConfigGet = npm.config.get
-  npm.config.get = (key, where) => {
-    t.equal(key, 'foo', 'should use expected global key')
-    t.equal(where, 'global', 'should retrieve key from global config')
-    return 'bar'
-  }
-
-  npm.config.save = where => {
-    throw new Error('should not save')
-  }
-
-  config(['get', 'foo'], (err) => {
-    t.ifError(err, 'npm config get key --global')
-  })
-
-  t.teardown(() => {
-    flatOptions.global = false
     npm.config.get = npmConfigGet
     delete npm.config.save
   })
