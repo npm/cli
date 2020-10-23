@@ -1,3 +1,59 @@
+## 7.0.4 (2020-10-23)
+
+### DOCUMENTATION
+
+* [`cc026daf8`](https://github.com/npm/cli/commit/cc026daf8c8330256de01375350a1407064562f9)
+  docs: `npm-dedupe` through `npm-install`
+* [`aec77acf8`](https://github.com/npm/cli/commit/aec77acf886d73f85e747cafdf7a2b360befba16)
+  [#1915](https://github.com/npm/cli/pull/1915)
+  use "dockhand" for faster static documentation generation
+  ([@ethomson](https://github.com/ethomson))
+* [`aeb10d210`](https://github.com/npm/cli/commit/aeb10d210816cf6829e0ac557c79d9efd8c4bdd1)
+  [#2024](https://github.com/npm/cli/pull/2024)
+  Fix post-install script name
+  ([@irajtaghlidi](https://github.com/irajtaghlidi))
+
+### BUG FIXES
+
+* [`59e8dd6c6`](https://github.com/npm/cli/commit/59e8dd6c621f9a5c6e0b65533d8256be87a8e0d3)
+  [#2015](https://github.com/npm/cli/issues/2015)
+  [#2016](https://github.com/npm/cli/pull/2016)
+  Properly set `npm_command` environment variable.
+
+### TESTS
+
+* [`39ad1ad9e`](https://github.com/npm/cli/commit/39ad1ad9e1e1a9530db5b90a588b5081b71abc8d)
+  [#2001](https://github.com/npm/cli/pull/2001)
+  `npm config` tests
+  ([@ruyadorno](https://github.com/ruyadorno))
+* [`b9c1caa8e`](https://github.com/npm/cli/commit/b9c1caa8e4cc7c900d09657425ea361db5974319)
+  [#2026](https://github.com/npm/cli/pull/2026)
+  `npm owner` test and refactor
+  ([@ruyadorno](https://github.com/ruyadorno))
+
+### DEPENDENCIES
+
+* [`ed6e6a9d3`](https://github.com/npm/cli/commit/ed6e6a9d3c36ffc5fb77fc25b6d66dbcb26beeb9)
+  `eslint-plugin-standard@4.0.2`
+* [`b737ee999`](https://github.com/npm/cli/commit/b737ee99961364827bacf210a3e5ca5d2b7edad2)
+  [#2009](https://github.com/npm/cli/issues/2009)
+  [#2007](https://github.com/npm/cli/issues/2007)
+  `npm-packlist@2.1.4`:
+
+    * Maintain order in package.json files array globs
+    * Strip slashes from package files list results
+
+* [`783965508`](https://github.com/npm/cli/commit/783965508d49f8ab0d8ceff38bee700cd0a06a54)
+  [#1997](https://github.com/npm/cli/issues/1997)
+  [#2000](https://github.com/npm/cli/issues/2000)
+  [#2005](https://github.com/npm/cli/issues/2005)
+  `@npmcli/arborist@1.0.4`
+
+    * Ensure that root is added when root.meta is set
+    * Include all edges in explain() output when a root edge exists
+    * Do not conflict on meta-peers that will not be replaced
+    * Install peerOptionals if explicitly requested, or dev
+
 ## 7.0.3 (2020-10-20)
 
 ### BUG FIXES
