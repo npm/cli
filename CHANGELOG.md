@@ -1,3 +1,8 @@
+## 7.0.5 (2020-10-23)
+
+* [`77ad86b5e`](https://github.com/npm/cli/commit/77ad86b5eedf139dda3329a6686d5f104dc233bb)
+  Merge docs deps with main project
+
 ## 7.0.4 (2020-10-23)
 
 ### DOCUMENTATION
