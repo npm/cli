@@ -34,8 +34,8 @@ following order of precedence:
 * `package-lock.json`
 * `yarn.lock`
 
-See [package-lock.json](/configuring-npm/package-lock-json) and [`npm
-shrinkwrap`](/commands/npm-shrinkwrap).
+See [package-lock.json](/configuring-npm/package-lock-json) and
+[`npm shrinkwrap`](/commands/npm-shrinkwrap).
 
 A `package` is:
 
