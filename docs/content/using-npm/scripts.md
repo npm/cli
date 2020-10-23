@@ -228,7 +228,7 @@ For example, if your package.json contains this:
 { 
   "scripts" : { 
     "install" : "scripts/install.js", 
-    "postinstall" : "scripts/install.js", 
+    "postinstall" : "scripts/postinstall.js", 
     "uninstall" : "scripts/uninstall.js"
   }
 }
