@@ -48,8 +48,7 @@ uninstall:
 mandocs: $(mandocs)
 
 htmldocs:
-	cd docs && node ../bin/npm-cli.js install --legacy-peer-deps --no-audit && \
-	node ../bin/npm-cli.js run build >&2
+	cd docs && node dockhand.js >&2
 
 docs: mandocs htmldocs
 
@@ -131,4 +130,4 @@ release: gitclean ls-ok markedclean marked-manclean docs-clean docs
 sandwich:
 	@[ $$(whoami) = "root" ] && (echo "ok"; echo "ham" > sandwich) || (echo "make it yourself" && exit 13)
 
-.PHONY: all latest install dev link docs clean uninstall test man docs-clean docclean release ls-ok realclean
+.PHONY: all latest install dev link docs clean uninstall test man docs-clean docsclean release ls-ok realclean
