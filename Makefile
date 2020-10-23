@@ -6,6 +6,12 @@ BRANCH = $(shell git rev-parse --abbrev-ref HEAD)
 
 markdowns = $(shell find docs -name '*.md' | grep -v 'index') README.md
 
+# these docs have the @VERSION@ tag in them, so they have to be rebuilt
+# whenever the package.json is touched, in case the version changed.
+version_mandocs = $(shell grep -rl '@VERSION@' docs/content \
+									|sed 's|.md|.1|g' \
+									|sed 's|docs/content/commands/|man/man1/|g' )
+
 cli_mandocs = $(shell find docs/content/commands -name '*.md' \
                |sed 's|.md|.1|g' \
                |sed 's|docs/content/commands/|man/man1/|g' ) \
@@ -47,6 +53,8 @@ uninstall:
 
 mandocs: $(mandocs)
 
+$(version_mandocs): package.json
+
 htmldocs:
 	cd docs && node dockhand.js >&2
 
@@ -73,11 +81,11 @@ build-doc-tools := node_modules/.bin/marked \
                    node_modules/.bin/marked-man
 
 # use `npm install marked-man` for this to work.
-man/man1/npm-README.1: README.md scripts/docs-build.js package.json $(build-doc-tools)
+man/man1/npm-README.1: README.md scripts/docs-build.js $(build-doc-tools)
 	@[ -d man/man1 ] || mkdir -p man/man1
 	node scripts/docs-build.js $< $@
 
-man/man1/%.1: docs/content/commands/%.md scripts/docs-build.js package.json $(build-doc-tools)
+man/man1/%.1: docs/content/commands/%.md scripts/docs-build.js $(build-doc-tools)
 	@[ -d man/man1 ] || mkdir -p man/man1
 	node scripts/docs-build.js $< $@
 
@@ -87,11 +95,11 @@ man/man5/npm-json.5: man/man5/package.json.5
 man/man5/npm-global.5: man/man5/folders.5
 	cp $< $@
 
-man/man5/%.5: docs/content/configuring-npm/%.md scripts/docs-build.js package.json $(build-doc-tools)
+man/man5/%.5: docs/content/configuring-npm/%.md scripts/docs-build.js $(build-doc-tools)
 	@[ -d man/man5 ] || mkdir -p man/man5
 	node scripts/docs-build.js $< $@
 
-man/man7/%.7: docs/content/using-npm/%.md scripts/docs-build.js package.json $(build-doc-tools)
+man/man7/%.7: docs/content/using-npm/%.md scripts/docs-build.js $(build-doc-tools)
 	@[ -d man/man7 ] || mkdir -p man/man7
 	node scripts/docs-build.js $< $@
 
