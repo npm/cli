@@ -3,22 +3,25 @@ section: cli-commands
 title: npm-deprecate
 description: Deprecate a version of a package
 ---
+
 # npm-deprecate(1)
 
 ## Deprecate a version of a package
 
 ### Synopsis
+
 ```bash
 npm deprecate <pkg>[@<version>] <message>
 ```
 
 ### Description
 
-This command will update the npm registry entry for a package, providing
-a deprecation warning to all who attempt to install it.
+This command will update the npm registry entry for a package, providing a
+deprecation warning to all who attempt to install it.
 
-It works on [version ranges](https://semver.npmjs.com/) as well as specific 
+It works on [version ranges](https://semver.npmjs.com/) as well as specific
 versions, so you can do something like this:
+
 ```bash
 npm deprecate my-thing@"< 0.2.3" "critical bug fixed in v0.2.3"
 ```
@@ -34,3 +37,5 @@ format an empty string.
 
 * [npm publish](/cli-commands/publish)
 * [npm registry](/using-npm/registry)
+* [npm owner](/cli-commands/owner)
+* [npm owner](/cli-commands/adduser)

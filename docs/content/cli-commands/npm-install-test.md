@@ -1,5 +1,5 @@
 ---
-section: cli-commands 
+section: cli-commands
 title: npm-install-test
 description: Install package(s) and run tests
 ---
@@ -32,4 +32,5 @@ takes exactly the same arguments as `npm install`.
 ### See Also
 
 * [npm install](/cli-commands/install)
+* [npm install-ci-test](/cli-commands/install-ci-test)
 * [npm test](/cli-commands/test)

@@ -11,15 +11,14 @@ description: Edit an installed package
 ### Synopsis
 
 ```bash
-npm edit <pkg>[/<subpkg>...]
+npm edit <pkg>
 ```
 
 ### Description
 
-Selects a (sub)dependency in the current
-working directory and opens the package folder in the default editor
-(or whatever you've configured as the npm `editor` config -- see
-[`npm-config`](npm-config).)
+Selects a dependency in the current project and opens the package folder in
+the default editor (or whatever you've configured as the npm `editor`
+config -- see [`npm-config`](npm-config).)
 
 After it has been edited, the package is rebuilt so as to pick up any
 changes in compiled packages.

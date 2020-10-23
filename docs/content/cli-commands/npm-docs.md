@@ -1,12 +1,12 @@
 ---
-section: cli-commands 
+section: cli-commands
 title: npm-docs
 description: Docs for a package in a web browser maybe
 ---
 
-# npm-docs(1) 
+# npm-docs(1)
 
-## Docs for a package in a web browser maybe
+## Open documentation for a package in a web browser
 
 ### Synopsis
 
@@ -19,10 +19,10 @@ aliases: home
 ### Description
 
 This command tries to guess at the likely location of a package's
-documentation URL, and then tries to open it using the `--browser`
-config param. You can pass multiple package names at once. If no
-package name is provided, it will search for a `package.json` in
-the current folder and use the `name` property.
+documentation URL, and then tries to open it using the `--browser` config
+param. You can pass multiple package names at once. If no package name is
+provided, it will search for a `package.json` in the current folder and use
+the `name` property.
 
 ### Configuration
 
@@ -44,7 +44,6 @@ Set to `true` to use default system URL opener.
 * Type: url
 
 The base URL of the npm package registry.
-
 
 ### See Also
 

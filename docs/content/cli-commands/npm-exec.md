@@ -12,9 +12,9 @@ description: Run a command from a local or remote npm package
 
 ```bash
 npm exec -- <pkg>[@<version>] [args...]
-npm exec -p <pkg>[@<version>] -- <cmd> [args...]
+npm exec --package=<pkg>[@<version>] -- <cmd> [args...]
 npm exec -c '<cmd> [args...]'
-npm exec -p foo -c '<cmd> [args...]'
+npm exec --package=foo -c '<cmd> [args...]'
 
 npx <pkg>[@<specifier>] [args...]
 npx -p <pkg>[@<specifier>] <cmd> [args...]
@@ -23,7 +23,8 @@ npx -p <pkg>[@<specifier>] -c '<cmd> [args...]'
 
 alias: npm x, npx
 
--p <pkg> --package=<pkg> (may be specified multiple times)
+--package=<pkg> (may be specified multiple times)
+-p is a shorthand for --package only when using npx executable
 -c <cmd> --call=<cmd> (may not be mixed with positional arguments)
 ```
 

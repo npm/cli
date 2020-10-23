@@ -1,5 +1,5 @@
 ---
-section: cli-commands 
+section: cli-commands
 title: npm-help
 description: Get help on npm
 ---
@@ -18,10 +18,10 @@ npm help <term> [<terms..>]
 
 If supplied a topic, then show the appropriate documentation page.
 
-If the topic does not exist, or if multiple terms are provided, then run
-the `help-search` command to find a match.  Note that, if `help-search`
-finds a single subject, then it will run `help` on that topic, so unique
-matches are equivalent to specifying a topic name.
+If the topic does not exist, or if multiple terms are provided, then npm
+will run the `help-search` command to find a match.  Note that, if
+`help-search` finds a single subject, then it will run `help` on that
+topic, so unique matches are equivalent to specifying a topic name.
 
 ### Configuration
 

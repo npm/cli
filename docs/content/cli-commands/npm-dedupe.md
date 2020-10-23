@@ -1,5 +1,5 @@
 ---
-section: cli-commands 
+section: cli-commands
 title: npm-dedupe
 description: Reduce duplication
 ---
@@ -25,7 +25,7 @@ be more effectively shared by multiple dependent packages.
 
 For example, consider this dependency graph:
 
-```bash
+```
 a
 +-- b <-- depends on c@1.0.x
 |   `-- c@1.0.3
@@ -46,20 +46,35 @@ Because of the hierarchical nature of node's module lookup, b and d
 will both get their dependency met by the single c package at the root
 level of the tree.
 
-The deduplication algorithm walks the tree, moving each dependency as far
-up in the tree as possible, even if duplicates are not found. This will
-result in both a flat and deduplicated tree.
+In some cases, you may have a dependency graph like this:
 
-If a suitable version exists at the target location in the tree
-already, then it will be left untouched, but the other duplicates will
-be deleted.
+```
+a
++-- b <-- depends on c@1.0.x
++-- c@1.0.3
+`-- d <-- depends on c@1.x
+    `-- c@1.9.9
+```
+
+During the installation process, the `c@1.0.3` dependency for `b` was
+placed in the root of the tree.  Though `d`'s dependency on `c@1.x` could
+have been satisfied by `c@1.0.3`, the newer `c@1.9.0` dependency was used,
+because npm favors updates by default, even when doing so causes
+duplication.
+
+Running `npm dedupe` will cause npm to note the duplication and
+re-evaluate, deleting the nested `c` module, because the one in the root is
+sufficient.
+
+To prefer deduplication over novelty during the installation process, run
+`npm install --prefer-dedupe` or `npm config set prefer-dedupe true`.
 
 Arguments are ignored. Dedupe always acts on the entire tree.
 
 Note that this operation transforms the dependency tree, but will never
 result in new modules being installed.
 
-Using `npm find-dupes` will run the command in dryRun mode.
+Using `npm find-dupes` will run the command in `--dry-run` mode.
 
 ### See Also
 

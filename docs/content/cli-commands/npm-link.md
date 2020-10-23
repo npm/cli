@@ -1,5 +1,5 @@
 ---
-section: cli-commands 
+section: cli-commands
 title: npm-link
 description: Symlink a package folder
 ---
