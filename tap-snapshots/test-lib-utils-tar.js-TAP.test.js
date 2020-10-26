@@ -11,8 +11,7 @@ exports[`test/lib/utils/tar.js TAP should log tarball contents > must match snap
 package: my-cool-pkg@1.0.0
 === Tarball Contents ===
 
-4B  node_modules/bundle-dep
-97B package.json           
+97B package.json
 === Bundled Dependencies ===
 
 bundle-dep
