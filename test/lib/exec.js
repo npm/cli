@@ -80,9 +80,12 @@ const read = (options, cb) => {
 
 const PATH = require('../../lib/utils/path.js')
 
+let CI_NAME = 'travis-ci'
+
 const exec = requireInject('../../lib/exec.js', {
   '@npmcli/arborist': Arborist,
   '@npmcli/run-script': runScript,
+  '@npmcli/ci-detect': () => CI_NAME,
   '../../lib/npm.js': npm,
   pacote,
   read,
@@ -531,9 +534,11 @@ t.test('prompt when installs are needed if not already present and shell is a TT
   t.teardown(() => {
     process.stdout.isTTY = stdoutTTY
     process.stdin.isTTY = stdinTTY
+    CI_NAME = 'travis-ci'
   })
   process.stdout.isTTY = true
   process.stdin.isTTY = true
+  CI_NAME = false
 
   const packages = ['foo', 'bar']
   READ_RESULT = 'yolo'
@@ -598,9 +603,11 @@ t.test('skip prompt when installs are needed if not already present and shell is
   t.teardown(() => {
     process.stdout.isTTY = stdoutTTY
     process.stdin.isTTY = stdinTTY
+    CI_NAME = 'travis-ci'
   })
   process.stdout.isTTY = false
   process.stdin.isTTY = false
+  CI_NAME = false
 
   const packages = ['foo', 'bar']
   READ_RESULT = 'yolo'
@@ -663,9 +670,11 @@ t.test('skip prompt when installs are needed if not already present and shell is
   t.teardown(() => {
     process.stdout.isTTY = stdoutTTY
     process.stdin.isTTY = stdinTTY
+    CI_NAME = 'travis-ci'
   })
   process.stdout.isTTY = false
   process.stdin.isTTY = false
+  CI_NAME = false
 
   const packages = ['foo']
   READ_RESULT = 'yolo'
@@ -720,9 +729,11 @@ t.test('abort if prompt rejected', async t => {
   t.teardown(() => {
     process.stdout.isTTY = stdoutTTY
     process.stdin.isTTY = stdinTTY
+    CI_NAME = 'travis-ci'
   })
   process.stdout.isTTY = true
   process.stdin.isTTY = true
+  CI_NAME = false
 
   const packages = ['foo', 'bar']
   READ_RESULT = 'no, why would I want such a thing??'
@@ -776,9 +787,11 @@ t.test('abort if prompt false', async t => {
   t.teardown(() => {
     process.stdout.isTTY = stdoutTTY
     process.stdin.isTTY = stdinTTY
+    CI_NAME = 'travis-ci'
   })
   process.stdout.isTTY = true
   process.stdin.isTTY = true
+  CI_NAME = false
 
   const packages = ['foo', 'bar']
   READ_ERROR = 'canceled'
@@ -832,9 +845,11 @@ t.test('abort if -n provided', async t => {
   t.teardown(() => {
     process.stdout.isTTY = stdoutTTY
     process.stdin.isTTY = stdinTTY
+    CI_NAME = 'travis-ci'
   })
   process.stdout.isTTY = true
   process.stdin.isTTY = true
+  CI_NAME = false
 
   const packages = ['foo', 'bar']
 
