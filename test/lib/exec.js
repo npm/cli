@@ -528,12 +528,15 @@ t.test('positional args and --call together is an error', t => {
 t.test('prompt when installs are needed if not already present and shell is a TTY', async t => {
   const stdoutTTY = process.stdout.isTTY
   const stdinTTY = process.stdin.isTTY
+  const travisEnv = process.env.TRAVIS
   t.teardown(() => {
     process.stdout.isTTY = stdoutTTY
     process.stdin.isTTY = stdinTTY
+    process.env.TRAVIS = travisEnv
   })
   process.stdout.isTTY = true
   process.stdin.isTTY = true
+  delete process.env.TRAVIS
 
   const packages = ['foo', 'bar']
   READ_RESULT = 'yolo'
@@ -595,12 +598,15 @@ t.test('prompt when installs are needed if not already present and shell is a TT
 t.test('skip prompt when installs are needed if not already present and shell is not a tty (multiple packages)', async t => {
   const stdoutTTY = process.stdout.isTTY
   const stdinTTY = process.stdin.isTTY
+  const travisEnv = process.env.TRAVIS
   t.teardown(() => {
     process.stdout.isTTY = stdoutTTY
     process.stdin.isTTY = stdinTTY
+    process.env.TRAVIS = travisEnv
   })
   process.stdout.isTTY = false
   process.stdin.isTTY = false
+  delete process.env.TRAVIS
 
   const packages = ['foo', 'bar']
   READ_RESULT = 'yolo'
@@ -660,12 +666,15 @@ t.test('skip prompt when installs are needed if not already present and shell is
 t.test('skip prompt when installs are needed if not already present and shell is not a tty (single package)', async t => {
   const stdoutTTY = process.stdout.isTTY
   const stdinTTY = process.stdin.isTTY
+  const travisEnv = process.env.TRAVIS
   t.teardown(() => {
     process.stdout.isTTY = stdoutTTY
     process.stdin.isTTY = stdinTTY
+    process.env.TRAVIS = travisEnv
   })
   process.stdout.isTTY = false
   process.stdin.isTTY = false
+  delete process.env.TRAVIS
 
   const packages = ['foo']
   READ_RESULT = 'yolo'
@@ -717,12 +726,15 @@ t.test('skip prompt when installs are needed if not already present and shell is
 t.test('abort if prompt rejected', async t => {
   const stdoutTTY = process.stdout.isTTY
   const stdinTTY = process.stdin.isTTY
+  const travisEnv = process.env.TRAVIS
   t.teardown(() => {
     process.stdout.isTTY = stdoutTTY
     process.stdin.isTTY = stdinTTY
+    process.env.TRAVIS = travisEnv
   })
   process.stdout.isTTY = true
   process.stdin.isTTY = true
+  delete process.env.TRAVIS
 
   const packages = ['foo', 'bar']
   READ_RESULT = 'no, why would I want such a thing??'
@@ -773,12 +785,15 @@ t.test('abort if prompt rejected', async t => {
 t.test('abort if prompt false', async t => {
   const stdoutTTY = process.stdout.isTTY
   const stdinTTY = process.stdin.isTTY
+  const travisEnv = process.env.TRAVIS
   t.teardown(() => {
     process.stdout.isTTY = stdoutTTY
     process.stdin.isTTY = stdinTTY
+    process.env.TRAVIS = travisEnv
   })
   process.stdout.isTTY = true
   process.stdin.isTTY = true
+  delete process.env.TRAVIS
 
   const packages = ['foo', 'bar']
   READ_ERROR = 'canceled'
@@ -829,12 +844,15 @@ t.test('abort if prompt false', async t => {
 t.test('abort if -n provided', async t => {
   const stdoutTTY = process.stdout.isTTY
   const stdinTTY = process.stdin.isTTY
+  const travisEnv = process.env.TRAVIS
   t.teardown(() => {
     process.stdout.isTTY = stdoutTTY
     process.stdin.isTTY = stdinTTY
+    process.env.TRAVIS = travisEnv
   })
   process.stdout.isTTY = true
   process.stdin.isTTY = true
+  delete process.env.TRAVIS
 
   const packages = ['foo', 'bar']
 
