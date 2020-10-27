@@ -8,6 +8,7 @@ const promiseCallLimit = require('promise-call-limit')
 const getPeerSet = require('../peer-set.js')
 const realpath = require('../../lib/realpath.js')
 
+const debug = require('../debug.js')
 const fromPath = require('../from-path.js')
 const calcDepFlags = require('../calc-dep-flags.js')
 const Shrinkwrap = require('../shrinkwrap.js')
@@ -1269,16 +1270,16 @@ This is a one-time fix-up, please be patient...
     const { isRoot, isWorkspace } = source || {}
     const isMine = isRoot || isWorkspace
 
-    // XXX - Useful testing thingie right here.
-    // This assertion is commented out because we don't want to blow up user
-    // projects if it happens.  But the peerEntryEdge should *always* be a
-    // non-peer dependency, or a peer dependency from the root node.  When we
-    // get spurious ERESOLVE errors, or *don't* get ERESOLVE errors when we
-    // should, try uncommenting this and seeing if it fails, because it means
-    // we got off track somehow.
-    // if (peerEntryEdge && peerEntryEdge.peer && !peerEntryEdge.from.isTop) {
-    //   throw new Error('this should never happen')
-    // }
+    // Useful testing thingie right here.
+    // peerEntryEdge should *always* be a non-peer dependency, or a peer
+    // dependency from the root node.  When we get spurious ERESOLVE errors,
+    // or *don't* get ERESOLVE errors when we should, check to see if this
+    // fails, because it MAY mean we got off track somehow.
+    /* istanbul ignore next - debug check, should be impossible */
+    debug(() => {
+      if (peerEntryEdge && peerEntryEdge.peer && !peerEntryEdge.from.isTop)
+        throw new Error('lost original peerEntryEdge somehow?')
+    })
 
     if (target.children.has(edge.name)) {
       const current = target.children.get(edge.name)
