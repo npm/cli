@@ -2,6 +2,7 @@ const makeSpawnArgs = require('./make-spawn-args.js')
 const promiseSpawn = require('@npmcli/promise-spawn')
 const packageEnvs = require('./package-envs.js')
 const { isNodeGypPackage, defaultGypInstallScript } = require('@npmcli/node-gyp')
+const signalManager = require('./signal-manager.js')
 
 // you wouldn't like me when I'm angry...
 const bruce = (id, event, cmd) => `\n> ${id ? id + ' ' : ''}${event}\n> ${cmd}\n`
@@ -57,8 +58,13 @@ const runScriptPkg = async options => {
     pkgid: pkg._id,
     path,
   })
+
+  if (stdio === 'inherit')
+    signalManager.add(p.process)
+
   if (p.stdin)
     p.stdin.end()
+
   return p
 }
 
