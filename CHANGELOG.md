@@ -1,3 +1,43 @@
+## 7.0.6 (2020-10-27)
+
+### BUG FIXES
+
+* [`46c7f792a`](https://github.com/npm/cli/commit/46c7f792ab16dd0b091e1ad6d37de860c8885883)
+  [#2047](https://github.com/npm/cli/pull/2047)
+  [#1935](https://github.com/npm/cli/issues/1935)
+  skip the prompt when in a known ci environment
+  ([@nlf](https://github.com/nlf))
+* [`f8f6e1fad`](https://github.com/npm/cli/commit/f8f6e1fad8057edc02e4ce4382b1bc086d01211c)
+  [#2049](https://github.com/npm/cli/pull/2049)
+  properly remove pycache in release script
+  ([@MylesBorins](https://github.com/MylesBorins))
+* [`5db95b393`](https://github.com/npm/cli/commit/5db95b393e9c461ad34c1774f3515c322bf375bf)
+  [#2050](https://github.com/npm/cli/pull/2050)
+  pack: do not show individual files of bundled deps
+  ([@isaacs](https://github.com/isaacs))
+* [`3ee8f3b34`](https://github.com/npm/cli/commit/3ee8f3b34055da2ef1e735e1a06f64593512f1e3)
+  [#2051](https://github.com/npm/cli/pull/2051)
+  view: Better errors when package.json is not JSON
+  ([@isaacs](https://github.com/isaacs))
+
+### DEPENDENCIES
+
+* [`99ae633f6`](https://github.com/npm/cli/commit/99ae633f6ccc8aa93dc3dcda863071658b0653db)
+  `libnpmversion@1.0.6`
+    - respect gitTagVersion = false
+* [`d4173f58d`](https://github.com/npm/cli/commit/d4173f58ddefdd5456145f34f3c9f4ba5fca407e)
+  `@npmcli/promise-spawn@1.3.1`
+    - do not return empty buffer when stdio is inherited
+    - attach child process to returned promise
+* [`c09380fa5`](https://github.com/npm/cli/commit/c09380fa51b720141a9971602f4bb7aabd4d6242)
+  `@npmcli/run-script@1.7.3`
+    - forward SIGINT and SIGTERM to children that inherit stdio
+* [`b154861ad`](https://github.com/npm/cli/commit/b154861ad244b6a14020c43738d0cce1948bfdd3)
+  `@npmcli/arborist@1.0.5`
+* [`ffea6596b`](https://github.com/npm/cli/commit/ffea6596b8653da32a2b4c9a4903970e7146eee4)
+  `agent-base@6.0.2`
+    - support http proxy for https registries
+
 ## 7.0.5 (2020-10-23)
 
 * [`77ad86b5e`](https://github.com/npm/cli/commit/77ad86b5eedf139dda3329a6686d5f104dc233bb)
