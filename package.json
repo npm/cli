@@ -194,7 +194,6 @@
   },
   "scripts": {
     "dumpconf": "env | grep npm | sort | uniq",
-    "prepare": "node bin/npm-cli.js rebuild && make -j4",
     "preversion": "bash scripts/update-authors.sh && git add AUTHORS && git commit -m \"update AUTHORS\" || true",
     "licenses": "licensee --production --errors-only",
     "test": "tap",
