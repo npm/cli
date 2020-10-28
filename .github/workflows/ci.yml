@@ -35,7 +35,9 @@ jobs:
 
       # Run the installer script
     - name: Install dependencies
-      run: node . install
+      run: |
+        node . install --ignore-scripts --no-audit
+        node . rebuild
 
       # Run the tests, but not if we're just gonna do coveralls later anyway
     - name: Run Tap tests
