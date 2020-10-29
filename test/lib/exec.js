@@ -82,7 +82,7 @@ const PATH = require('../../lib/utils/path.js')
 
 let CI_NAME = 'travis-ci'
 
-const exec = requireInject('../../lib/exec.js', {
+const mocks = {
   '@npmcli/arborist': Arborist,
   '@npmcli/run-script': runScript,
   '@npmcli/ci-detect': () => CI_NAME,
@@ -90,7 +90,8 @@ const exec = requireInject('../../lib/exec.js', {
   pacote,
   read,
   'mkdirp-infer-owner': mkdirp
-})
+}
+const exec = requireInject('../../lib/exec.js', mocks)
 
 t.afterEach(cb => {
   MKDIRPS.length = 0
@@ -122,7 +123,7 @@ t.test('npx foo, bin already exists locally', async t => {
     t.ifError(er, 'npm exec')
   })
   t.strictSame(RUN_SCRIPTS, [{
-    cmd: 'foo',
+    pkg: { scripts: { npx: 'foo' }},
     banner: false,
     path: process.cwd(),
     stdioString: true,
@@ -146,7 +147,7 @@ t.test('npx foo, bin already exists globally', async t => {
     t.ifError(er, 'npm exec')
   })
   t.strictSame(RUN_SCRIPTS, [{
-    cmd: 'foo',
+    pkg: { scripts: { npx: 'foo' }},
     banner: false,
     path: process.cwd(),
     stdioString: true,
