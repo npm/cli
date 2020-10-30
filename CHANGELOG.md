@@ -1,3 +1,36 @@
+## 7.0.7 (2020-10-30)
+
+### BUG FIXES
+
+* [`3990b422d`](https://github.com/npm/cli/commit/3990b422d3ff63c54d96b61596bdb8f26a45ca7b)
+  [#2067](https://github.com/npm/cli/pull/2067)
+  use sh as default unix shell, not bash
+  ([@isaacs](https://github.com/isaacs))
+* [`81d6ceef6`](https://github.com/npm/cli/commit/81d6ceef6947e46355eb3ddb05a73da50870dfc1)
+  [#1975](https://github.com/npm/cli/issues/1975)
+  fix npm exec on folders missing package.json
+  ([@ruyadorno](https://github.com/ruyadorno))
+* [`2a680e91a`](https://github.com/npm/cli/commit/2a680e91a2be1f3f03a6fbd946f74628ee1cb370)
+  [#2083](https://github.com/npm/cli/pull/2083)
+  delete the contents of `node_modules` only in `npm ci`
+  ([@nlf](https://github.com/nlf))
+* [`2636fe1f4`](https://github.com/npm/cli/commit/2636fe1f45383cb1b6fc164564dc49318815db37)
+  [#2086](https://github.com/npm/cli/pull/2086)
+  disable banner output if loglevel is silent in `npm run-script`
+  ([@macno](https://github.com/macno))
+
+### DEPENDENCIES
+
+* [`4156f053e`](https://github.com/npm/cli/commit/4156f053ee8712a4b53a210e62fba1e6562ba43a)
+  `@npmcli/run-script@1.7.4`
+    * restore the default `npm start` script
+* [`1900ae9ad`](https://github.com/npm/cli/commit/1900ae9adecd227dd6f8b49de61a99c978ba89cf)
+  `@npmcli/promise-spawn@1.3.2`
+    * fix errors when processing scripts as root
+* [`8cb0c166c`](https://github.com/npm/cli/commit/8cb0c166ccc019146a7a94d13c12723f001d2551)
+  `@npmcli/arborist@1.0.6`
+    * make sure missing bin links get set on reify
+
 ## 7.0.6 (2020-10-27)
 
 ### BUG FIXES
