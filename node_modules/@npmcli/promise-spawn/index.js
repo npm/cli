@@ -11,18 +11,13 @@ const isPipe = (stdio = 'pipe', fd) =>
 const promiseSpawn = (cmd, args, opts, extra = {}) => {
   const cwd = opts.cwd || process.cwd()
   const isRoot = process.getuid && process.getuid() === 0
-  return !isRoot ? promiseSpawnUid(cmd, args, {
-    ...opts,
-    cwd,
-    uid: undefined,
-    gid: undefined,
-  }, extra)
-  : inferOwner(cwd).then(({uid, gid}) => promiseSpawnUid(cmd, args, {
+  const { uid, gid } = isRoot ? inferOwner.sync(cwd) : {}
+  return promiseSpawnUid(cmd, args, {
     ...opts,
     cwd,
     uid,
-    gid,
-  }, extra))
+    gid
+  }, extra)
 }
 
 const stdioResult = (stdout, stderr, {stdioString, stdio}) =>
