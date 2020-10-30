@@ -33,8 +33,7 @@ const add = proc => {
   if (!handlersInstalled)
     setupListeners()
 
-  proc.once('exit', ({ code }) => {
-    process.exitCode = process.exitCode || code
+  proc.once('exit', () => {
     runningProcs.delete(proc)
     cleanupListeners()
   })

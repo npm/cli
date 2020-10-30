@@ -3,6 +3,7 @@ const promiseSpawn = require('@npmcli/promise-spawn')
 const packageEnvs = require('./package-envs.js')
 const { isNodeGypPackage, defaultGypInstallScript } = require('@npmcli/node-gyp')
 const signalManager = require('./signal-manager.js')
+const isServerPackage = require('./is-server-package.js')
 
 // you wouldn't like me when I'm angry...
 const bruce = (id, event, cmd) => `\n> ${id ? id + ' ' : ''}${event}\n> ${cmd}\n`
@@ -35,6 +36,8 @@ const runScriptPkg = async options => {
     await isNodeGypPackage(path)
   )
     cmd = defaultGypInstallScript
+  else if (event === 'start' && await isServerPackage(path))
+    cmd = 'node server.js' + args.map(a => ` ${JSON.stringify(a)}`).join('')
 
   if (!cmd)
     return { code: 0, signal: null }
