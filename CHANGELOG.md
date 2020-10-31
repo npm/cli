@@ -602,7 +602,7 @@
   sources ([@ruyadorno](https://github.com/ruyadorno))
 * [`3a63ecb6f`](https://github.com/npm/cli/commit/3a63ecb6f6a0b235660f73a3ffa329b1f131b0c3)
   [#1718](https://github.com/npm/cli/pull/1718)
-  [RFC-0029](https://github.com/npm/rfcs/blob/latest/accepted/0029-add-ability-to-skip-hooks.md)
+  [RFC-0029](https://github.com/npm/rfcs/blob/latest/implemented/0029-add-ability-to-skip-hooks.md)
   add ability to skip pre/post hooks to `npm run-script` by using
   `--ignore-scripts` ([@ruyadorno](https://github.com/ruyadorno))
 
@@ -829,7 +829,7 @@ Now on to the list of **BREAKING CHANGES**!
 ### Programmatic Usage
 
 - [RFC
-  20](https://github.com/npm/rfcs/blob/latest/accepted/0020-npm-option-handling.md)
+  20](https://github.com/npm/rfcs/blob/latest/implemented/0020-npm-option-handling.md)
   The CLI and its dependencies no longer use the `figgy-pudding` library
   for configs.  Configuration is done using a flat plain old JavaScript
   object.
@@ -859,7 +859,7 @@ The environment for lifecycle scripts (eg, build scripts, `npm test`, etc.)
 has changed.
 
 - [RFC
-  21](https://github.com/npm/rfcs/blob/latest/accepted/0021-reduce-lifecycle-script-environment.md)
+  21](https://github.com/npm/rfcs/blob/latest/implemented/0021-reduce-lifecycle-script-environment.md)
   Environment no longer includes `npm_package_*` fields, or `npm_config_*`
   fields for default configs.  `npm_package_json`, `npm_package_integrity`,
   `npm_package_resolved`, and `npm_command` environment variables added.
@@ -868,13 +868,13 @@ has changed.
     release](https://github.com/npm/rfcs/pull/183))
 
 - [RFC
-  22](https://github.com/npm/rfcs/blob/latest/accepted/0022-quieter-install-scripts.md)
+  22](https://github.com/npm/rfcs/blob/latest/implemented/0022-quieter-install-scripts.md)
   Scripts run during the normal course of installation are silenced unless
   they exit in error (ie, with a signal or non-zero exit status code), and
   are for a non-optional dependency.
 
 - [RFC
-  24](https://github.com/npm/rfcs/blob/latest/accepted/0024-npm-run-traverse-directory-tree.md)
+  24](https://github.com/npm/rfcs/blob/latest/implemented/0024-npm-run-traverse-directory-tree.md)
   `PATH` environment variable includes all `node_modules/.bin` folders,
   even if found outside of an existing `node_modules` folder hierarchy.
 
@@ -924,7 +924,7 @@ We do intend to continue supporting the `npx` that npm ships; just not the
 ### Files On Disk
 
 - [RFC
-  13](https://github.com/npm/rfcs/blob/latest/accepted/0013-no-package-json-_fields.md)
+  13](https://github.com/npm/rfcs/blob/latest/implemented/0013-no-package-json-_fields.md)
   Installed `package.json` files no longer are mutated to include extra
   metadata.  (This extra metadata is stored in the lockfile.)
 - `package-lock.json` is updated to a newer format, using
@@ -940,7 +940,7 @@ These changes affect `install`, `ci`, `install-test`, `install-ci-test`,
 `update`, `prune`, `dedupe`, `uninstall`, `link`, and `audit fix`.
 
 - [RFC
-  25](https://github.com/npm/rfcs/blob/latest/accepted/0025-install-peer-deps.md)
+  25](https://github.com/npm/rfcs/blob/latest/implemented/0025-install-peer-deps.md)
   `peerDependencies` are installed by default.  This behavior can be
   disabled by setting the `legacy-peer-deps` configuration flag.
 
@@ -951,7 +951,7 @@ These changes affect `install`, `ci`, `install-test`, `install-ci-test`,
     of correctness.  Use the `--legacy-peer-deps` config flag if impacted.
 
 - [RFC
-  23](https://github.com/npm/rfcs/blob/latest/accepted/0023-acceptDependencies.md)
+  23](https://github.com/npm/rfcs/blob/latest/implemented/0023-acceptDependencies.md)
   Support for `acceptDependencies` is added.  This can result in dependency
   resolutions that previous versions of npm will incorrectly flag as invalid.
 
@@ -973,7 +973,7 @@ These changes affect `install`, `ci`, `install-test`, `install-ci-test`,
 ### Workspaces
 
 - [RFC
-  26](https://github.com/npm/rfcs/blob/latest/accepted/0026-workspaces.md)
+  26](https://github.com/npm/rfcs/blob/latest/implemented/0026-workspaces.md)
   First phase of `workspaces` support is added.  This changes npm's
   behavior when a root project's `package.json` file contains a
   `workspaces` field.
@@ -981,7 +981,7 @@ These changes affect `install`, `ci`, `install-test`, `install-ci-test`,
 ### `npm update`
 
 - [RFC
-  19](https://github.com/npm/rfcs/blob/latest/accepted/0019-remove-update-depth-option.md)
+  19](https://github.com/npm/rfcs/blob/latest/implemented/0019-remove-update-depth-option.md)
   Update all dependencies when `npm update` is run without any arguments.
   As it is no longer relevant, `--depth` config flag removed from `npm
   update`.
@@ -989,7 +989,7 @@ These changes affect `install`, `ci`, `install-test`, `install-ci-test`,
 ### `npm outdated`
 
 - [RFC
-  27](https://github.com/npm/rfcs/blob/latest/accepted/0027-remove-depth-outdated.md)
+  27](https://github.com/npm/rfcs/blob/latest/implemented/0027-remove-depth-outdated.md)
   Remove `--depth` config from `npm outdated`.  Only top-level dependencies
   are shown, unless `--all` config option is set.
 
