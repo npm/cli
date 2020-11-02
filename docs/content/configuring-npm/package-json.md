@@ -155,7 +155,7 @@ array of license objects:
 Those styles are now deprecated. Instead, use SPDX expressions, like this:
 
 ```json
-{ "license": "ISC" }
+{ "license": "MIT" }
 
 { "license": "(MIT OR Apache-2.0)" }
 ```
