@@ -53,8 +53,8 @@ function printCommit (c) {
     .replace(/^/mg, '  ')
     .replace(/\n$/, '')
     // backtickify package@version
-    .replace(/^(\s*[^@\s]+@\d+[.]\d+[.]\d+)(\s*\S)/g, '$1:$2')
-    .replace(/\b([^@\s]+@\d+[.]\d+[.]\d+)\b/g, '`$1`')
+    .replace(/^(\s*@?[^@\s]+@\d+[.]\d+[.]\d+)(\s*\S)/g, '$1:$2')
+    .replace(/((?:\b|@)[^@\s]+@\d+[.]\d+[.]\d+)\b/g, '`$1`')
     // linkify commitids
     .replace(/\b([a-f0-9]{7,8})\b/g, '[`$1`](https://github.com/npm/cli/commit/$1)')
     .replace(/\b#(\d+)\b/g, '[#$1](https://npm.community/t/$1)')
