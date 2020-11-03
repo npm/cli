@@ -1,3 +1,59 @@
+## 7.0.8 (2020-11-03)
+
+### DOCUMENTATION
+
+* [`052e977b9`](https://github.com/npm/cli/commit/052e977b9d071e1b3654976881d10cd3ddcba788)
+  [#1822](https://github.com/npm/cli/issues/1822)
+  [#1247](https://github.com/npm/cli/issues/1247)
+  add section on peerDependenciesMeta field in package.json
+  ([@foxxyz](https://github.com/foxxyz))
+* [`52d32d175`](https://github.com/npm/cli/commit/52d32d1758c5ebc58944a1e8d98d57e30048e527)
+  [#1970](https://github.com/npm/cli/issues/1970)
+  match npm-exec.md -p usage with lib/exec.js
+  ([@dr-js](https://github.com/dr-js))
+* [`48ee8d01e`](https://github.com/npm/cli/commit/48ee8d01edd11ed6186c483e1169ff4d2070b963)
+  [#2096](https://github.com/npm/cli/issues/2096)
+  Fix RFC links in changelog
+  ([@jtojnar](https://github.com/jtojnar))
+
+
+### BUG FIXES
+
+* [`6cd3cd08a`](https://github.com/npm/cli/commit/6cd3cd08af56445e13757cac3af87f3e7d54ed27)
+  Support *all* conf keys in publishConfig
+* [`a1f9be8a7`](https://github.com/npm/cli/commit/a1f9be8a7f9b7a3a813fc3e5e705bc982470b0e2)
+  [#2074](https://github.com/npm/cli/issues/2074)
+  Support publishing any kind of spec, not just directories
+
+### DEPENDENCIES
+
+* [`545382df6`](https://github.com/npm/cli/commit/545382df62e3014f3e51d7034e52498fb2b01a37)
+  `libnpmpublish@4.0.0`:
+    * Support publishing things other than folders
+* [`7d88f1719`](https://github.com/npm/cli/commit/7d88f17197e3c8cca9b277378d6f9b054b1b7886)
+  `npm-registry-fetch@9.0.0`
+* [`823b40a4e`](https://github.com/npm/cli/commit/823b40a4e9c6ef76388af6fe01a3624f6f7675be)
+  `pacote@11.1.12`
+* [`90bf57826`](https://github.com/npm/cli/commit/90bf57826edf2f78ddf8deb0793115ead8a8b556)
+  `npm-profile@5.0.2`
+* [`e5a413577`](https://github.com/npm/cli/commit/e5a4135770d13cf114fac439167637181f87d824)
+  `libnpmteam@2.0.2`
+* [`fc5aa7b4a`](https://github.com/npm/cli/commit/fc5aa7b4ad45cb65893f734e1229a6720f7966e5)
+  `libnpmsearch@3.0.1`
+* [`9fc1dee13`](https://github.com/npm/cli/commit/9fc1dee138ca33ecdbd57e63142b27c60cf88f9b)
+  `libnpmorg@2.0.1`
+* [`0ea870ec5`](https://github.com/npm/cli/commit/0ea870ec5d2be1d44f050ad8bc24ed936cc45fde)
+  `libnpmhook@6.0.1`
+* [`32fd744ea`](https://github.com/npm/cli/commit/32fd744ea745f297f0be79a80955f077a57c4ac7)
+  `libnpmaccess@4.0.1`
+* [`fc76f3d9f`](https://github.com/npm/cli/commit/fc76f3d9fcf19e65a9373ab3d9068c4326d2f782)
+  `@npmcli/arborist@1.0.8`
+    * Fix `cannot read property 'description' of undefined` in `npm ls`
+      when `package-lock.json` is corrupted
+    * Do not allow peerDependencies to be nested under dependents in any
+      circumstances
+    * Always resolve peerDependencies in `--prefer-dedupe` mode
+
 ## 7.0.7 (2020-10-30)
 
 ### BUG FIXES
