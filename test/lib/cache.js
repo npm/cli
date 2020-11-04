@@ -10,8 +10,7 @@ const flatOptions = {
 
 const npm = {
   flatOptions,
-  cache: '/fake/path',
-  prefix: '/fake/prefix'
+  cache: '/fake/path'
 }
 
 let rimrafPath = ''
@@ -136,7 +135,7 @@ t.test('cache add pkg only', t => {
       ['silly', 'cache add', 'spec', 'mypkg']
     ], 'logs correctly')
     t.equal(tarballStreamSpec, 'mypkg', 'passes the correct spec to pacote')
-    t.same(tarballStreamOpts, { ...flatOptions, where: npm.prefix }, 'passes the correct options to pacote')
+    t.same(tarballStreamOpts, flatOptions, 'passes the correct options to pacote')
     t.end()
   })
 })
@@ -155,7 +154,7 @@ t.test('cache add pkg w/ spec modifier', t => {
       ['silly', 'cache add', 'spec', 'mypkg@latest']
     ], 'logs correctly')
     t.equal(tarballStreamSpec, 'mypkg@latest', 'passes the correct spec to pacote')
-    t.same(tarballStreamOpts, { ...flatOptions, where: npm.prefix }, 'passes the correct options to pacote')
+    t.same(tarballStreamOpts, flatOptions, 'passes the correct options to pacote')
     t.end()
   })
 })
