@@ -1,5 +1,6 @@
 const t = require('tap')
 const requireInject = require('require-inject')
+const path = require('path')
 
 const usageUtil = () => 'usage instructions'
 
@@ -95,7 +96,7 @@ t.test('cache clean (force)', t => {
 
   cache(['clear'], err => {
     t.ifError(err)
-    t.equal(rimrafPath, '/fake/path/_cacache')
+    t.equal(rimrafPath, path.join(npm.cache, '_cacache'))
     t.end()
   })
 })
@@ -168,7 +169,7 @@ t.test('cache verify', t => {
   cache(['verify'], err => {
     t.ifError(err)
     t.match(outputOutput, [
-      'Cache verified and compressed (/fake/path/_cacache)',
+      `Cache verified and compressed (${path.join(npm.cache, '_cacache')})`,
       'Content verified: 1 (100 bytes)',
       'Index entries: 1',
       'Finished in 2s'
@@ -196,7 +197,7 @@ t.test('cache verify w/ extra output', t => {
   cache(['check'], err => {
     t.ifError(err)
     t.match(outputOutput, [
-      'Cache verified and compressed (~/fake/path/_cacache)',
+      `Cache verified and compressed (~${path.join('/fake/path', '_cacache')})`,
       'Content verified: 1 (100 bytes)',
       'Corrupted content removed: 1',
       'Content garbage-collected: 2 (200 bytes)',
