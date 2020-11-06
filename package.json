@@ -76,7 +76,7 @@
     "libnpmpublish": "^4.0.0",
     "libnpmsearch": "^3.0.1",
     "libnpmteam": "^2.0.2",
-    "libnpmversion": "^1.0.6",
+    "libnpmversion": "^1.0.7",
     "make-fetch-happen": "^8.0.9",
     "mkdirp": "^1.0.4",
     "mkdirp-infer-owner": "^2.0.0",
