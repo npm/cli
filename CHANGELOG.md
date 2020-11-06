@@ -1,3 +1,46 @@
+## 7.0.9 (2020-11-06)
+
+### BUG FIXES
+
+* [`96a0d2802`](https://github.com/npm/cli/commit/96a0d2802d3e619c6ea47290f5c460edfe94070a)
+  default the 'start' script when server.js present
+  ([@isaacs](https://github.com/isaacs))
+* [`7716e423e`](https://github.com/npm/cli/commit/7716e423ee92a81730c0dfe5b9ecb4bb41a3f947)
+  [#2075](https://github.com/npm/cli/issues/2075)
+  [#2071](https://github.com/npm/cli/issues/2071) print the registry when
+  using 'npm login' ([@Wicked7000](https://github.com/Wicked7000))
+* [`7046fe10c`](https://github.com/npm/cli/commit/7046fe10c5035ac57246a31ca8a6b09e3f5562bf)
+  [#2122](https://github.com/npm/cli/issues/2122) tests for `npm cache`
+  command ([@nlf](https://github.com/nlf))
+
+### DEPENDENCIES
+
+* [`74325f53b`](https://github.com/npm/cli/commit/74325f53b9d813b0e42203c037189418fad2f64a)
+  [#2124](https://github.com/npm/cli/issues/2124)
+  `@npmcli/run-script@1.7.5`:
+    * Export the `isServerPackage` method
+    * Proxy signals to and from foreground child processes
+* [`0e58e6f6b`](https://github.com/npm/cli/commit/0e58e6f6b8f0cd62294642a502c17561aaf46553)
+  [#1984](https://github.com/npm/cli/issues/1984)
+  [#2079](https://github.com/npm/cli/issues/2079)
+  [#1923](https://github.com/npm/cli/issues/1923)
+  [#606](https://github.com/npm/cli/issues/606)
+  [#2031](https://github.com/npm/cli/issues/2031) `@npmcli/arborist@1.0.9`:
+    * Process deps for all link nodes
+    * Use junctions instead of symlinks
+    * Use @npmcli/move-file instead of fs.rename
+* [`1dad328a1`](https://github.com/npm/cli/commit/1dad328a17d93def7799545596b4eba9833b35aa)
+  [#1865](https://github.com/npm/cli/issues/1865)
+  [#2106](https://github.com/npm/cli/issues/2106)
+  [#2084](https://github.com/npm/cli/issues/2084) `pacote@11.1.13`:
+    * Properly set the installation command for `prepare` scripts when
+      installing git/dir deps
+* [`e090d706c`](https://github.com/npm/cli/commit/e090d706ca637d4df96d28bff1660590aa3f3b62)
+  [#2097](https://github.com/npm/cli/issues/2097) `libnpmversion@1.0.7`:
+    * Do not crash when the package.json file lacks a 'version' field
+* [`8fa541a10`](https://github.com/npm/cli/commit/8fa541a10dbdc09376175db7a378cc9b33e8b17b)
+  `cmark-gfm@0.8.4`
+
 ## 7.0.8 (2020-11-03)
 
 ### DOCUMENTATION
