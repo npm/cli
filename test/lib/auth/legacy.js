@@ -2,7 +2,6 @@ const requireInject = require('require-inject')
 const { test } = require('tap')
 
 let log = ''
-let registryOutput = ''
 
 const token = '24528a24f240'
 const profile = {}
@@ -11,9 +10,6 @@ const legacy = requireInject('../../../lib/auth/legacy.js', {
   npmlog: {
     info: (...msgs) => {
       log += msgs.join(' ')
-    },
-    notice: (_, msg) => {
-      registryOutput = msg
     }
   },
   'npm-profile': profile,
@@ -48,12 +44,6 @@ test('login using username/password with token result', async (t) => {
     registry: 'https://registry.npmjs.org/',
     scope: ''
   })
-
-  t.equal(
-    registryOutput,
-    'Log in on https://registry.npmjs.org/',
-    'should have correct message result'
-  )
 
   t.equal(
     message,
@@ -97,12 +87,6 @@ test('login using username/password with user info result', async (t) => {
   })
 
   t.equal(
-    registryOutput,
-    'Log in on https://registry.npmjs.org/',
-    'should have correct message result'
-  )
-
-  t.equal(
     message,
     'Logged in as u on https://registry.npmjs.org/.',
     'should have correct message result'
@@ -124,7 +108,7 @@ test('login using username/password with user info result', async (t) => {
 })
 
 test('login otp requested', async (t) => {
-  t.plan(6)
+  t.plan(5)
 
   profile.login = () => Promise.reject(Object.assign(
     new Error('needs otp'),
@@ -152,12 +136,6 @@ test('login otp requested', async (t) => {
     registry: 'https://registry.npmjs.org/',
     scope: ''
   })
-
-  t.equal(
-    registryOutput,
-    'Log in on https://registry.npmjs.org/',
-    'should have correct message result'
-  )
 
   t.equal(
     message,
@@ -201,7 +179,7 @@ test('login missing basic credential info', async (t) => {
 })
 
 test('create new user when user not found', async (t) => {
-  t.plan(7)
+  t.plan(6)
 
   profile.login = () => Promise.reject(Object.assign(
     new Error('User does not exist'),
@@ -230,12 +208,6 @@ test('create new user when user not found', async (t) => {
   })
 
   t.equal(
-    registryOutput,
-    'Log in on https://registry.npmjs.org/',
-    'should have correct message result'
-  )
-
-  t.equal(
     message,
     'Logged in as u on https://registry.npmjs.org/.',
     'should have correct message result'
@@ -259,7 +231,7 @@ test('create new user when user not found', async (t) => {
 })
 
 test('prompts for user info if required', async (t) => {
-  t.plan(5)
+  t.plan(4)
 
   profile.login = async (opener, prompt, opts) => {
     t.equal(opts.creds.alwaysAuth, true, 'should have refs to creds if any')
@@ -281,12 +253,6 @@ test('prompts for user info if required', async (t) => {
     registry: 'https://registry.npmjs.org/',
     scope: ''
   })
-
-  t.equal(
-    registryOutput,
-    'Log in on https://registry.npmjs.org/',
-    'should have correct message result'
-  )
 
   t.equal(
     message,
@@ -421,12 +387,6 @@ test('login no credentials provided', async (t) => {
   })
 
   t.equal(
-    registryOutput,
-    'Log in on https://registry.npmjs.org/',
-    'should have correct message result'
-  )
-
-  t.equal(
     log,
     'login Authorized',
     'should have correct message result'
@@ -449,12 +409,6 @@ test('scoped login', async (t) => {
     registry: 'https://diff-registry.npmjs.org/',
     scope: 'myscope'
   })
-
-  t.equal(
-    registryOutput,
-    'Log in on https://diff-registry.npmjs.org/',
-    'should have correct message result'
-  )
 
   t.equal(
     message,
