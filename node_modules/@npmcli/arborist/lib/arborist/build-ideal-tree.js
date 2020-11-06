@@ -790,6 +790,11 @@ This is a one-time fix-up, please be patient...
     }
     await Promise.all(promises)
 
+    for (const { to } of node.edgesOut.values()) {
+      if (to && to.isLink)
+        this[_linkNodes].add(to)
+    }
+
     return this[_buildDepStep]()
   }
 
@@ -1539,9 +1544,14 @@ This is a one-time fix-up, please be patient...
         }
       }
 
-      // didn't find a parent for it, but we're filling in external
-      // link targets, so go ahead and process it.
-      if (this[_follow] && !link.target.parent && !link.target.fsParent) {
+      // didn't find a parent for it or it has not been seen yet
+      // so go ahead and process it.
+      const unseenLink = (link.target.parent || link.target.fsParent)
+        && !this[_depsSeen].has(link.target)
+      if (this[_follow]
+        && !link.target.parent
+        && !link.target.fsParent
+        || unseenLink) {
         this.addTracker('idealTree', link.target.name, link.target.location)
         this[_depsQueue].push(link.target)
       }
