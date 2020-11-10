@@ -204,11 +204,18 @@ module.exports = cls => class VirtualLoader extends cls {
 
   [assignParentage] (nodes) {
     for (const [location, node] of nodes) {
+      // Skip assignment of parentage for the root package
+      if (!location)
+        continue
       const { path, name } = node
       for (const p of walkUp(dirname(path))) {
         const ploc = relpath(this.path, p)
         const parent = nodes.get(ploc)
         if (!parent)
+          continue
+        // Safety check: avoid self-assigning nodes as their own parents
+        /* istanbul ignore if - should be obviated by parentage skip check */
+        if (parent === node)
           continue
 
         const locTest = `${ploc}/node_modules/${name}`.replace(/^\//, '')
