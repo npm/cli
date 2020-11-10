@@ -1,3 +1,27 @@
+## 7.0.10 (2020-11-10)
+
+### DOCUMENTATION
+
+* [`e48badb03`](https://github.com/npm/cli/commit/e48badb03058286a557584d7319db4143049cc6b)
+  [#2148](https://github.com/npm/cli/issues/2148)
+  Fix link in documentation
+  ([@gurdiga](https://github.com/gurdiga))
+
+### BUG FIXES
+
+* [`8edbbdc70`](https://github.com/npm/cli/commit/8edbbdc706694fa32f52d0991c76ae9f207b7bbc)
+  [#1972](https://github.com/npm/cli/issues/1972)
+  Support exec auto pick bin when all bin is alias
+  ([@dr-js](https://github.com/dr-js))
+
+### DEPENDENCIES
+
+* [`04a3e8c10`](https://github.com/npm/cli/commit/04a3e8c10c3f38e1c7a35976d77c2929bdc39868)
+  [#1962](https://github.com/npm/cli/issues/1962)
+  `@npmcli/arborist@1.0.10`:
+    * prevent self-assignment of parent/fsParent
+    * Support update options in global package space
+
 ## 7.0.9 (2020-11-06)
 
 ### BUG FIXES
