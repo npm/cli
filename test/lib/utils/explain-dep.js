@@ -143,6 +143,14 @@ cases.manyDeps = {
     {
       type: 'prod',
       name: 'manydep',
+      spec:'>1.0.0-beta <1.0.1',
+      from: {
+        location: '/path/to/project',
+      },
+    },
+    {
+      type: 'prod',
+      name: 'manydep',
       spec: '1',
       from: {
         name: 'a package with a pretty long name',
