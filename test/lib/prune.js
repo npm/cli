@@ -1,8 +1,7 @@
-const { test } = require('tap')
-const requireInject = require('require-inject')
+const t = require('tap')
 
-test('should prune using Arborist', (t) => {
-  const prune = requireInject('../../lib/prune.js', {
+t.test('should prune using Arborist', (t) => {
+  const prune = t.mock('../../lib/prune.js', {
     '../../lib/npm.js': {
       prefix: 'foo',
       flatOptions: {

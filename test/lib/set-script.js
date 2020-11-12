@@ -1,13 +1,12 @@
-const test = require('tap')
-const requireInject = require('require-inject')
+const t = require('tap')
 const setScriptDefault = require('../../lib/set-script.js')
 const parseJSON = require('json-parse-even-better-errors')
 
-test.type(setScriptDefault, 'function', 'command is function')
-test.equal(setScriptDefault.completion, require('../../lib/utils/completion/none.js'), 'empty completion')
-test.equal(setScriptDefault.usage, 'npm set-script [<script>] [<command>]', 'usage matches')
-test.test('fails on invalid arguments', (t) => {
-  const setScript = requireInject('../../lib/set-script.js', {
+t.type(setScriptDefault, 'function', 'command is function')
+t.equal(setScriptDefault.completion, require('../../lib/utils/completion/none.js'), 'empty completion')
+t.equal(setScriptDefault.usage, 'npm set-script [<script>] [<command>]', 'usage matches')
+t.test('fails on invalid arguments', (t) => {
+  const setScript = t.mock('../../lib/set-script.js', {
     fs: {},
     npmlog: {},
   })
@@ -16,10 +15,10 @@ test.test('fails on invalid arguments', (t) => {
   setScript(['arg1', 'arg2', 'arg3'], (fail) => t.match(fail, /Expected 2 arguments: got 3/))
   setScript(['arg1', 'arg2', 'arg3', 'arg4'], (fail) => t.match(fail, /Expected 2 arguments: got 4/))
 })
-test.test('fails if run in postinstall script', (t) => {
+t.test('fails if run in postinstall script', (t) => {
   var originalVar = process.env.npm_lifecycle_event
   process.env.npm_lifecycle_event = 'postinstall'
-  const setScript = requireInject('../../lib/set-script.js', {
+  const setScript = t.mock('../../lib/set-script.js', {
     fs: {},
     npmlog: {},
   })
@@ -27,8 +26,8 @@ test.test('fails if run in postinstall script', (t) => {
   setScript(['arg1', 'arg2'], (fail) => t.equal(fail.toString(), 'Error: Scripts can’t set from the postinstall script'))
   process.env.npm_lifecycle_event = originalVar
 })
-test.test('fails when package.json not found', (t) => {
-  const setScript = requireInject('../../lib/set-script.js', {
+t.test('fails when package.json not found', (t) => {
+  const setScript = t.mock('../../lib/set-script.js', {
     '../../lib/npm.js': {
       localPrefix: 'IDONTEXIST',
     },
@@ -36,8 +35,8 @@ test.test('fails when package.json not found', (t) => {
   t.plan(1)
   setScript(['arg1', 'arg2'], (fail) => t.match(fail, /package.json not found/))
 })
-test.test('fails on invalid JSON', (t) => {
-  const setScript = requireInject('../../lib/set-script.js', {
+t.test('fails on invalid JSON', (t) => {
+  const setScript = t.mock('../../lib/set-script.js', {
     fs: {
       readFileSync: (name, charcode) => {
         return 'iamnotjson'
@@ -47,9 +46,9 @@ test.test('fails on invalid JSON', (t) => {
   t.plan(1)
   setScript(['arg1', 'arg2'], (fail) => t.match(fail, /Invalid package.json: JSONParseError/))
 })
-test.test('creates scripts object', (t) => {
+t.test('creates scripts object', (t) => {
   var mockFile = ''
-  const setScript = requireInject('../../lib/set-script.js', {
+  const setScript = t.mock('../../lib/set-script.js', {
     fs: {
       readFileSync: (name, charcode) => {
         return '{}'
@@ -71,9 +70,9 @@ test.test('creates scripts object', (t) => {
     t.assert(parseJSON(mockFile), {scripts: {arg1: 'arg2'}})
   })
 })
-test.test('warns before overwriting', (t) => {
+t.test('warns before overwriting', (t) => {
   var warningListened = ''
-  const setScript = requireInject('../../lib/set-script.js', {
+  const setScript = t.mock('../../lib/set-script.js', {
     fs: {
       readFileSync: (name, charcode) => {
         return JSON.stringify({
@@ -102,9 +101,9 @@ test.test('warns before overwriting', (t) => {
     t.equal(warningListened, 'Script "arg1" was overwritten')
   })
 })
-test.test('provided indentation and eol is used', (t) => {
+t.test('provided indentation and eol is used', (t) => {
   var mockFile = ''
-  const setScript = requireInject('../../lib/set-script.js', {
+  const setScript = t.mock('../../lib/set-script.js', {
     fs: {
       readFileSync: (name, charcode) => {
         return '{}'
@@ -127,9 +126,9 @@ test.test('provided indentation and eol is used', (t) => {
     t.equal(mockFile.split('\r\n').every((value) => !value.startsWith(' ') || value.startsWith(' '.repeat(6))), true)
   })
 })
-test.test('goes to default when undefined indent and eol provided', (t) => {
+t.test('goes to default when undefined indent and eol provided', (t) => {
   var mockFile = ''
-  const setScript = requireInject('../../lib/set-script.js', {
+  const setScript = t.mock('../../lib/set-script.js', {
     fs: {
       readFileSync: (name, charcode) => {
         return '{}'

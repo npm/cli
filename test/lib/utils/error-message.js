@@ -10,22 +10,6 @@ Object.defineProperty(process, 'arch', {
   configurable: true,
 })
 
-const beWindows = () => {
-  Object.defineProperty(process, 'platform', {
-    value: 'win32',
-    configurable: true,
-  })
-  delete require.cache[require.resolve('../../../lib/utils/is-windows.js')]
-}
-
-const bePosix = () => {
-  Object.defineProperty(process, 'platform', {
-    value: 'posix',
-    configurable: true,
-  })
-  delete require.cache[require.resolve('../../../lib/utils/is-windows.js')]
-}
-
 const { resolve } = require('path')
 const npm = require('../../../lib/npm.js')
 const CACHE = '/some/cache/dir'
@@ -56,16 +40,39 @@ npmlog.verbose = (...message) => {
   verboseLogs.push(message)
 }
 
-const requireInject = require('require-inject')
 const EXPLAIN_CALLED = []
-const errorMessage = requireInject('../../../lib/utils/error-message.js', {
+const mocks = {
   '../../../lib/utils/explain-eresolve.js': {
     report: (...args) => {
       EXPLAIN_CALLED.push(args)
       return 'explanation'
     },
   },
-})
+  '../../../lib/npm.js': npm,
+}
+const errorMessage = t.mock('../../../lib/utils/error-message.js', mocks)
+
+const beWindows = () => {
+  Object.defineProperty(process, 'platform', {
+    value: 'win32',
+    configurable: true,
+  })
+  return t.mock('../../../lib/utils/error-message.js', {
+    ...mocks,
+    '../../../lib/utils/is-windows.js': true,
+  })
+}
+
+const bePosix = () => {
+  Object.defineProperty(process, 'platform', {
+    value: 'posix',
+    configurable: true,
+  })
+  return t.mock('../../../lib/utils/error-message.js', {
+    ...mocks,
+    '../../../lib/utils/is-windows.js': false,
+  })
+}
 
 t.test('just simple messages', t => {
   npm.command = 'audit'
@@ -194,10 +201,9 @@ t.test('default message', t => {
 
 t.test('eacces/eperm', t => {
   const runTest = (windows, loaded, cachePath, cacheDest) => t => {
-    if (windows)
-      beWindows()
-    else
-      bePosix()
+    const errorMessage = windows
+      ? beWindows()
+      : bePosix()
 
     npm.config.loaded = loaded
     const path = `${cachePath ? CACHE : '/not/cache/dir'}/path`

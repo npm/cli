@@ -1,5 +1,4 @@
-const { test } = require('tap')
-const requireInject = require('require-inject')
+const t = require('tap')
 
 let getIdentityImpl = () => 'someperson'
 let npmFetchBody = null
@@ -17,7 +16,7 @@ npmFetch.json = async (uri, opts) => {
   }
 }
 
-const deprecate = requireInject('../../lib/deprecate.js', {
+const deprecate = t.mock('../../lib/deprecate.js', {
   '../../lib/npm.js': {
     flatOptions: { registry: 'https://registry.npmjs.org' },
   },
@@ -29,7 +28,7 @@ const deprecate = requireInject('../../lib/deprecate.js', {
   'npm-registry-fetch': npmFetch,
 })
 
-test('completion', async t => {
+t.test('completion', async t => {
   const defaultIdentityImpl = getIdentityImpl
   t.teardown(() => {
     getIdentityImpl = defaultIdentityImpl
@@ -62,28 +61,28 @@ test('completion', async t => {
   t.rejects(testComp([], []), /unknown failure/)
 })
 
-test('no args', t => {
+t.test('no args', t => {
   deprecate([], (err) => {
     t.match(err, /Usage: npm deprecate/, 'logs usage')
     t.end()
   })
 })
 
-test('only one arg', t => {
+t.test('only one arg', t => {
   deprecate(['foo'], (err) => {
     t.match(err, /Usage: npm deprecate/, 'logs usage')
     t.end()
   })
 })
 
-test('invalid semver range', t => {
+t.test('invalid semver range', t => {
   deprecate(['foo@notaversion', 'this will fail'], (err) => {
     t.match(err, /invalid version range/, 'logs semver error')
     t.end()
   })
 })
 
-test('deprecates given range', t => {
+t.test('deprecates given range', t => {
   t.teardown(() => {
     npmFetchBody = null
   })
@@ -109,7 +108,7 @@ test('deprecates given range', t => {
   })
 })
 
-test('deprecates all versions when no range is specified', t => {
+t.test('deprecates all versions when no range is specified', t => {
   t.teardown(() => {
     npmFetchBody = null
   })

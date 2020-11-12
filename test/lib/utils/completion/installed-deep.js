@@ -1,6 +1,5 @@
 const { resolve } = require('path')
-const { test } = require('tap')
-const requireInject = require('require-inject')
+const t = require('tap')
 
 let prefix
 let globalDir = 'MISSING_GLOBAL_DIR'
@@ -11,7 +10,7 @@ const _flatOptions = {
     return prefix
   },
 }
-const installedDeep = requireInject('../../../../lib/utils/completion/installed-deep.js', {
+const installedDeep = t.mock('../../../../lib/utils/completion/installed-deep.js', {
   '../../../../lib/npm.js': {
     flatOptions: _flatOptions,
     get prefix () {
@@ -144,7 +143,7 @@ const globalFixture = {
   },
 }
 
-test('get list of package names', (t) => {
+t.test('get list of package names', (t) => {
   const fix = t.testdir({
     local: fixture,
     global: globalFixture,
@@ -171,7 +170,7 @@ test('get list of package names', (t) => {
   })
 })
 
-test('get list of package names as global', (t) => {
+t.test('get list of package names as global', (t) => {
   const fix = t.testdir({
     local: fixture,
     global: globalFixture,
@@ -198,7 +197,7 @@ test('get list of package names as global', (t) => {
   })
 })
 
-test('limit depth', (t) => {
+t.test('limit depth', (t) => {
   const fix = t.testdir({
     local: fixture,
     global: globalFixture,
@@ -228,7 +227,7 @@ test('limit depth', (t) => {
   })
 })
 
-test('limit depth as global', (t) => {
+t.test('limit depth as global', (t) => {
   const fix = t.testdir({
     local: fixture,
     global: globalFixture,

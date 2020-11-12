@@ -1,5 +1,4 @@
 const t = require('tap')
-const requireInject = require('require-inject')
 
 let RPJ_ERROR = null
 let RPJ_CALLED = ''
@@ -46,7 +45,7 @@ const mockRunScript = ({ pkg, banner, path, event, stdio }) => {
 const output = []
 let ERROR_HANDLER_CALLED = null
 const logs = []
-const getExplore = windows => requireInject('../../lib/explore.js', {
+const getExplore = windows => t.mock('../../lib/explore.js', {
   '../../lib/utils/is-windows.js': windows,
   path: require('path')[windows ? 'win32' : 'posix'],
   '../../lib/utils/error-handler.js': er => {

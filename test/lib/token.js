@@ -1,5 +1,4 @@
-const { test } = require('tap')
-const requireInject = require('require-inject')
+const t = require('tap')
 
 const mocks = {
   npm: {},
@@ -9,7 +8,7 @@ const mocks = {
   readUserInfo: {},
 }
 
-const tokenMock = requireInject('../../lib/token.js', {
+const tokenMock = t.mock('../../lib/token.js', {
   '../../lib/npm.js': mocks.npm,
   '../../lib/utils/output.js': (...args) => mocks.output(...args),
   '../../lib/utils/otplease.js': (opts, fn) => {
@@ -44,7 +43,7 @@ const tokenWithMocks = (mockRequests) => {
   return [tokenMock, reset]
 }
 
-test('completion', (t) => {
+t.test('completion', (t) => {
   t.plan(5)
 
   const testComp = (argv, expect) => {
@@ -71,7 +70,7 @@ test('completion', (t) => {
   })
 })
 
-test('token foobar', (t) => {
+t.test('token foobar', (t) => {
   t.plan(2)
 
   const [, reset] = tokenWithMocks({
@@ -91,7 +90,7 @@ test('token foobar', (t) => {
   })
 })
 
-test('token list', (t) => {
+t.test('token list', (t) => {
   t.plan(15)
 
   const now = new Date().toISOString()
@@ -159,7 +158,7 @@ test('token list', (t) => {
   })
 })
 
-test('token list json output', (t) => {
+t.test('token list json output', (t) => {
   t.plan(8)
 
   const now = new Date().toISOString()
@@ -213,7 +212,7 @@ test('token list json output', (t) => {
   })
 })
 
-test('token list parseable output', (t) => {
+t.test('token list parseable output', (t) => {
   t.plan(12)
 
   const now = new Date().toISOString()
@@ -281,7 +280,7 @@ test('token list parseable output', (t) => {
   })
 })
 
-test('token revoke', (t) => {
+t.test('token revoke', (t) => {
   t.plan(10)
 
   const [token, reset] = tokenWithMocks({
@@ -334,7 +333,7 @@ test('token revoke', (t) => {
   })
 })
 
-test('token revoke multiple tokens', (t) => {
+t.test('token revoke multiple tokens', (t) => {
   t.plan(10)
 
   const [token, reset] = tokenWithMocks({
@@ -386,7 +385,7 @@ test('token revoke multiple tokens', (t) => {
   })
 })
 
-test('token revoke json output', (t) => {
+t.test('token revoke json output', (t) => {
   t.plan(10)
 
   const [token, reset] = tokenWithMocks({
@@ -438,7 +437,7 @@ test('token revoke json output', (t) => {
   })
 })
 
-test('token revoke parseable output', (t) => {
+t.test('token revoke parseable output', (t) => {
   t.plan(9)
 
   const [token, reset] = tokenWithMocks({
@@ -488,7 +487,7 @@ test('token revoke parseable output', (t) => {
   })
 })
 
-test('token revoke by token', (t) => {
+t.test('token revoke by token', (t) => {
   t.plan(9)
 
   const [token, reset] = tokenWithMocks({
@@ -538,7 +537,7 @@ test('token revoke by token', (t) => {
   })
 })
 
-test('token revoke requires an id', (t) => {
+t.test('token revoke requires an id', (t) => {
   t.plan(2)
 
   const [token, reset] = tokenWithMocks({
@@ -558,7 +557,7 @@ test('token revoke requires an id', (t) => {
   })
 })
 
-test('token revoke ambiguous id errors', (t) => {
+t.test('token revoke ambiguous id errors', (t) => {
   t.plan(7)
 
   const [token, reset] = tokenWithMocks({
@@ -603,7 +602,7 @@ test('token revoke ambiguous id errors', (t) => {
   })
 })
 
-test('token revoke unknown id errors', (t) => {
+t.test('token revoke unknown id errors', (t) => {
   t.plan(7)
 
   const [token, reset] = tokenWithMocks({
@@ -647,7 +646,7 @@ test('token revoke unknown id errors', (t) => {
   })
 })
 
-test('token create', (t) => {
+t.test('token create', (t) => {
   t.plan(15)
 
   const now = new Date().toISOString()
@@ -711,7 +710,7 @@ test('token create', (t) => {
   })
 })
 
-test('token create json output', (t) => {
+t.test('token create json output', (t) => {
   t.plan(10)
 
   const now = new Date().toISOString()
@@ -770,7 +769,7 @@ test('token create json output', (t) => {
   })
 })
 
-test('token create parseable output', (t) => {
+t.test('token create parseable output', (t) => {
   t.plan(12)
 
   const now = new Date().toISOString()
@@ -836,7 +835,7 @@ test('token create parseable output', (t) => {
   })
 })
 
-test('token create ipv6 cidr', (t) => {
+t.test('token create ipv6 cidr', (t) => {
   t.plan(4)
 
   const password = 'thisisnotreallyapassword'
@@ -871,7 +870,7 @@ test('token create ipv6 cidr', (t) => {
   })
 })
 
-test('token create invalid cidr', (t) => {
+t.test('token create invalid cidr', (t) => {
   t.plan(4)
 
   const password = 'thisisnotreallyapassword'

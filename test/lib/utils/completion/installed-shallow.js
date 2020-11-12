@@ -1,11 +1,10 @@
-const requireInject = require('require-inject')
 const flatOptions = { global: false }
 const npm = { flatOptions }
 const t = require('tap')
 const { resolve } = require('path')
 
 const p = '../../../../lib/utils/completion/installed-shallow.js'
-const installed = requireInject(p, {
+const installed = t.mock(p, {
   '../../../../lib/npm.js': npm,
 })
 

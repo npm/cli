@@ -1,5 +1,4 @@
 const t = require('tap')
-const requireInject = require('require-inject')
 let ciMock = null
 const flatOptions = { global: false, cache: t.testdir() + '/_cacache' }
 
@@ -72,7 +71,7 @@ const fs = {
   },
 }
 
-const updateNotifier = requireInject('../../../lib/utils/update-notifier.js', {
+const updateNotifier = t.mock('../../../lib/utils/update-notifier.js', {
   '@npmcli/ci-detect': () => ciMock,
   pacote,
   fs,

@@ -2,7 +2,6 @@ const { resolve } = require('path')
 
 const Arborist = require('@npmcli/arborist')
 const t = require('tap')
-const requireInject = require('require-inject')
 
 const redactCwd = (path) => {
   const normalizePath = p => p
@@ -14,7 +13,7 @@ const redactCwd = (path) => {
 
 t.cleanSnapshot = (str) => redactCwd(str)
 
-let reifyOutput
+let reifyFinish
 const npm = {
   globalDir: null,
   prefix: null,
@@ -41,10 +40,10 @@ const printLinks = async (opts) => {
 
 const mocks = {
   '../../lib/npm.js': npm,
-  '../../lib/utils/reify-output.js': () => reifyOutput(),
+  '../../lib/utils/reify-finish.js': () => reifyFinish(),
 }
 
-const link = requireInject('../../lib/link.js', mocks)
+const link = t.mock('../../lib/link.js', mocks)
 
 t.test('link to globalDir when in current working dir of pkg and no args', (t) => {
   t.plan(2)
@@ -72,8 +71,8 @@ t.test('link to globalDir when in current working dir of pkg and no args', (t) =
   npm.globalDir = resolve(testdir, 'global-prefix', 'lib', 'node_modules')
   npm.prefix = resolve(testdir, 'test-pkg-link')
 
-  reifyOutput = async () => {
-    reifyOutput = undefined
+  reifyFinish = async () => {
+    reifyFinish = undefined
 
     const links = await printLinks({
       path: resolve(npm.globalDir, '..'),
@@ -168,8 +167,8 @@ t.test('link global linked pkg to local nm when using args', (t) => {
   const _cwd = process.cwd()
   process.chdir(npm.prefix)
 
-  reifyOutput = async () => {
-    reifyOutput = undefined
+  reifyFinish = async () => {
+    reifyFinish = undefined
     process.chdir(_cwd)
 
     const links = await printLinks({
@@ -230,8 +229,8 @@ t.test('link pkg already in global space', (t) => {
   const _cwd = process.cwd()
   process.chdir(npm.prefix)
 
-  reifyOutput = async () => {
-    reifyOutput = undefined
+  reifyFinish = async () => {
+    reifyFinish = undefined
     process.chdir(_cwd)
     npm.config.find = () => null
 

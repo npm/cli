@@ -1,8 +1,7 @@
 const { test } = require('tap')
-const requireInject = require('require-inject')
 
 test('should remove dupes using Arborist', (t) => {
-  const dedupe = requireInject('../../lib/dedupe.js', {
+  const dedupe = t.mock('../../lib/dedupe.js', {
     '../../lib/npm.js': {
       prefix: 'foo',
       flatOptions: {
@@ -30,7 +29,7 @@ test('should remove dupes using Arborist', (t) => {
 })
 
 test('should remove dupes using Arborist - no arguments', (t) => {
-  const dedupe = requireInject('../../lib/dedupe.js', {
+  const dedupe = t.mock('../../lib/dedupe.js', {
     '../../lib/npm.js': {
       prefix: 'foo',
       flatOptions: {

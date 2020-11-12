@@ -1,5 +1,4 @@
 const t = require('tap')
-const requireInject = require('require-inject')
 const path = require('path')
 
 const usageUtil = () => 'usage instructions'
@@ -68,7 +67,7 @@ const mocks = {
   '../../lib/utils/usage.js': usageUtil,
 }
 
-const cache = requireInject('../../lib/cache.js', mocks)
+const cache = t.mock('../../lib/cache.js', mocks)
 
 t.test('cache no args', t => {
   cache([], err => {

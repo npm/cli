@@ -1,5 +1,4 @@
-const requireInject = require('require-inject')
-const { test } = require('tap')
+const t = require('tap')
 
 let prefix
 const _flatOptions = {
@@ -10,13 +9,13 @@ const _flatOptions = {
   },
 }
 
-const readLocalPackageName = requireInject('../../../lib/utils/read-local-package.js', {
+const readLocalPackageName = t.mock('../../../lib/utils/read-local-package.js', {
   '../../../lib/npm.js': {
     flatOptions: _flatOptions,
   },
 })
 
-test('read local package.json', async (t) => {
+t.test('read local package.json', async (t) => {
   prefix = t.testdir({
     'package.json': JSON.stringify({
       name: 'my-local-package',
@@ -31,7 +30,7 @@ test('read local package.json', async (t) => {
   )
 })
 
-test('read local scoped-package.json', async (t) => {
+t.test('read local scoped-package.json', async (t) => {
   prefix = t.testdir({
     'package.json': JSON.stringify({
       name: '@my-scope/my-local-package',
@@ -46,7 +45,7 @@ test('read local scoped-package.json', async (t) => {
   )
 })
 
-test('read using --global', async (t) => {
+t.test('read using --global', async (t) => {
   prefix = t.testdir({})
   _flatOptions.global = true
   const packageName = await readLocalPackageName()

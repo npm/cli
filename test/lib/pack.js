@@ -1,5 +1,4 @@
 const t = require('tap')
-const requireInject = require('require-inject')
 
 const OUTPUT = []
 const output = (...msg) => OUTPUT.push(msg)
@@ -17,7 +16,7 @@ t.afterEach(cb => {
 })
 
 t.test('should pack current directory with no arguments', (t) => {
-  const pack = requireInject('../../lib/pack.js', {
+  const pack = t.mock('../../lib/pack.js', {
     '../../lib/utils/output.js': output,
     '../../lib/npm.js': {
       flatOptions: {
@@ -51,7 +50,7 @@ t.test('should pack given directory', (t) => {
     }, null, 2),
   })
 
-  const pack = requireInject('../../lib/pack.js', {
+  const pack = t.mock('../../lib/pack.js', {
     '../../lib/utils/output.js': output,
     '../../lib/npm.js': {
       flatOptions: {
@@ -85,7 +84,7 @@ t.test('should pack given directory for scoped package', (t) => {
     }, null, 2),
   })
 
-  const pack = requireInject('../../lib/pack.js', {
+  const pack = t.mock('../../lib/pack.js', {
     '../../lib/utils/output.js': output,
     '../../lib/npm.js': {
       flatOptions: {
@@ -112,7 +111,7 @@ t.test('should pack given directory for scoped package', (t) => {
 })
 
 t.test('should log pack contents', (t) => {
-  const pack = requireInject('../../lib/pack.js', {
+  const pack = t.mock('../../lib/pack.js', {
     '../../lib/utils/output.js': output,
     '../../lib/utils/tar.js': {
       ...require('../../lib/utils/tar.js'),

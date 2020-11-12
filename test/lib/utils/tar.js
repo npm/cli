@@ -1,7 +1,6 @@
 const { test } = require('tap')
 const pack = require('libnpmpack')
 const ssri = require('ssri')
-const requireInject = require('require-inject')
 
 const { logTar, getContents } = require('../../../lib/utils/tar.js')
 
@@ -43,7 +42,7 @@ test('should log tarball contents', async (t) => {
 })
 
 test('should log tarball contents with unicode', async (t) => {
-  const { logTar } = requireInject('../../../lib/utils/tar.js', {
+  const { logTar } = t.mock('../../../lib/utils/tar.js', {
     npmlog: {
       notice: (str) => {
         t.ok(true, 'defaults to npmlog')
@@ -61,7 +60,7 @@ test('should log tarball contents with unicode', async (t) => {
 })
 
 test('should default to npmlog', async (t) => {
-  const { logTar } = requireInject('../../../lib/utils/tar.js', {
+  const { logTar } = t.mock('../../../lib/utils/tar.js', {
     npmlog: {
       notice: (str) => {
         t.ok(true, 'defaults to npmlog')

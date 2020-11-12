@@ -1,10 +1,9 @@
-const requireInject = require('require-inject')
 const t = require('tap')
 
 t.test('unstar', t => {
   t.plan(3)
 
-  const unstar = requireInject('../../lib/unstar.js', {
+  const unstar = t.mock('../../lib/unstar.js', {
     '../../lib/npm.js': {
       config: {
         set: (key, value) => {

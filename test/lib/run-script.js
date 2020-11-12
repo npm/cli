@@ -1,5 +1,4 @@
 const t = require('tap')
-const requireInject = require('require-inject')
 
 const RUN_SCRIPTS = []
 const npm = {
@@ -23,7 +22,7 @@ const npm = {
 const output = []
 
 const npmlog = { level: 'warn' }
-const getRS = windows => requireInject('../../lib/run-script.js', {
+const getRS = windows => t.mock('../../lib/run-script.js', {
   '@npmcli/run-script': Object.assign(async opts => {
     RUN_SCRIPTS.push(opts)
   }, {

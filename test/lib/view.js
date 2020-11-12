@@ -1,5 +1,4 @@
 const t = require('tap')
-const requireInject = require('require-inject')
 
 let logs
 const cleanLogs = (done) => {
@@ -238,7 +237,7 @@ const packument = (nv, opts) => {
 
 t.beforeEach(cleanLogs)
 t.test('should log package info', t => {
-  const view = requireInject('../../lib/view.js', {
+  const view = t.mock('../../lib/view.js', {
     '../../lib/npm.js': {
       flatOptions: {
         global: false,
@@ -249,7 +248,7 @@ t.test('should log package info', t => {
     },
   })
 
-  const viewJson = requireInject('../../lib/view.js', {
+  const viewJson = t.mock('../../lib/view.js', {
     '../../lib/npm.js': {
       flatOptions: {
         json: true,
@@ -260,7 +259,7 @@ t.test('should log package info', t => {
     },
   })
 
-  const viewUnicode = requireInject('../../lib/view.js', {
+  const viewUnicode = t.mock('../../lib/view.js', {
     '../../lib/npm.js': {
       flatOptions: {
         global: false,
@@ -346,7 +345,7 @@ t.test('should log info of package in current working dir', t => {
     }, null, 2),
   })
 
-  const view = requireInject('../../lib/view.js', {
+  const view = t.mock('../../lib/view.js', {
     '../../lib/npm.js': {
       prefix: testDir,
       flatOptions: {
@@ -377,7 +376,7 @@ t.test('should log info of package in current working dir', t => {
 })
 
 t.test('should log info by field name', t => {
-  const viewJson = requireInject('../../lib/view.js', {
+  const viewJson = t.mock('../../lib/view.js', {
     '../../lib/npm.js': {
       flatOptions: {
         json: true,
@@ -389,7 +388,7 @@ t.test('should log info by field name', t => {
     },
   })
 
-  const view = requireInject('../../lib/view.js', {
+  const view = t.mock('../../lib/view.js', {
     '../../lib/npm.js': {
       flatOptions: {
         global: false,
@@ -467,7 +466,7 @@ t.test('should log info by field name', t => {
 })
 
 t.test('throw error if global mode', (t) => {
-  const view = requireInject('../../lib/view.js', {
+  const view = t.mock('../../lib/view.js', {
     '../../lib/npm.js': {
       flatOptions: {
         global: true,
@@ -483,7 +482,7 @@ t.test('throw error if global mode', (t) => {
 t.test('throw ENOENT error if package.json misisng', (t) => {
   const testDir = t.testdir({})
 
-  const view = requireInject('../../lib/view.js', {
+  const view = t.mock('../../lib/view.js', {
     '../../lib/npm.js': {
       prefix: testDir,
       flatOptions: {
@@ -502,7 +501,7 @@ t.test('throw EJSONPARSE error if package.json not json', (t) => {
     'package.json': 'not json, nope, not even a little bit!',
   })
 
-  const view = requireInject('../../lib/view.js', {
+  const view = t.mock('../../lib/view.js', {
     '../../lib/npm.js': {
       prefix: testDir,
       flatOptions: {
@@ -521,7 +520,7 @@ t.test('throw error if package.json has no name', (t) => {
     'package.json': '{}',
   })
 
-  const view = requireInject('../../lib/view.js', {
+  const view = t.mock('../../lib/view.js', {
     '../../lib/npm.js': {
       prefix: testDir,
       flatOptions: {
@@ -536,7 +535,7 @@ t.test('throw error if package.json has no name', (t) => {
 })
 
 t.test('throws when unpublished', (t) => {
-  const view = requireInject('../../lib/view.js', {
+  const view = t.mock('../../lib/view.js', {
     '../../lib/npm.js': {
       flatOptions: {
         defaultTag: '1.0.1',
@@ -554,7 +553,7 @@ t.test('throws when unpublished', (t) => {
 })
 
 t.test('completion', (t) => {
-  const view = requireInject('../../lib/view.js', {
+  const view = t.mock('../../lib/view.js', {
     '../../lib/npm.js': {
       flatOptions: {
         defaultTag: '1.0.1',
@@ -576,7 +575,7 @@ t.test('completion', (t) => {
 })
 
 t.test('no registry completion', (t) => {
-  const view = requireInject('../../lib/view.js', {
+  const view = t.mock('../../lib/view.js', {
     '../../lib/npm.js': {
       flatOptions: {
         defaultTag: '1.0.1',

@@ -2,11 +2,9 @@ const fs = require('fs')
 const util = require('util')
 const readdir = util.promisify(fs.readdir)
 
-const { test } = require('tap')
+const t = require('tap')
 
-const requireInject = require('require-inject')
-
-test('should use Arborist and run-script', (t) => {
+t.test('should use Arborist and run-script', (t) => {
   const scripts = [
     'preinstall',
     'install',
@@ -16,7 +14,7 @@ test('should use Arborist and run-script', (t) => {
     'prepare',
     'postprepare',
   ]
-  const ci = requireInject('../../lib/ci.js', {
+  const ci = t.mock('../../lib/ci.js', {
     '../../lib/npm.js': {
       prefix: 'foo',
       flatOptions: {
@@ -57,8 +55,8 @@ test('should use Arborist and run-script', (t) => {
   })
 })
 
-test('should pass flatOptions to Arborist.reify', (t) => {
-  const ci = requireInject('../../lib/ci.js', {
+t.test('should pass flatOptions to Arborist.reify', (t) => {
+  const ci = t.mock('../../lib/ci.js', {
     '../../lib/npm.js': {
       prefix: 'foo',
       flatOptions: {
@@ -81,13 +79,13 @@ test('should pass flatOptions to Arborist.reify', (t) => {
   })
 })
 
-test('should throw if package-lock.json or npm-shrinkwrap missing', (t) => {
+t.test('should throw if package-lock.json or npm-shrinkwrap missing', (t) => {
   const testDir = t.testdir({
     'index.js': 'some contents',
     'package.json': 'some info',
   })
 
-  const ci = requireInject('../../lib/ci.js', {
+  const ci = t.mock('../../lib/ci.js', {
     '../../lib/npm.js': {
       prefix: testDir,
       flatOptions: {
@@ -109,8 +107,8 @@ test('should throw if package-lock.json or npm-shrinkwrap missing', (t) => {
   })
 })
 
-test('should throw ECIGLOBAL', (t) => {
-  const ci = requireInject('../../lib/ci.js', {
+t.test('should throw ECIGLOBAL', (t) => {
+  const ci = t.mock('../../lib/ci.js', {
     '../../lib/npm.js': {
       prefix: 'foo',
       flatOptions: {
@@ -127,14 +125,14 @@ test('should throw ECIGLOBAL', (t) => {
   })
 })
 
-test('should remove existing node_modules before installing', (t) => {
+t.test('should remove existing node_modules before installing', (t) => {
   const testDir = t.testdir({
     node_modules: {
       'some-file': 'some contents',
     },
   })
 
-  const ci = requireInject('../../lib/ci.js', {
+  const ci = t.mock('../../lib/ci.js', {
     '../../lib/npm.js': {
       prefix: testDir,
       flatOptions: {

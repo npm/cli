@@ -1,5 +1,4 @@
 const t = require('tap')
-const requireInject = require('require-inject')
 
 const log = require('npmlog')
 log.level = 'warn'
@@ -14,7 +13,7 @@ const npmock = {
   flatOptions: settings,
 }
 const getReifyOutput = tester =>
-  requireInject(
+  t.mock(
     '../../../lib/utils/reify-output.js',
     {
       '../../../lib/npm.js': npmock,

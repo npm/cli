@@ -1,7 +1,6 @@
 const { resolve } = require('path')
 
 const t = require('tap')
-const requireInject = require('require-inject')
 
 t.cleanSnapshot = str => str.split(/\r\n/).join('\n')
 
@@ -100,24 +99,25 @@ const _flatOptions = {
   },
   production: false,
 }
-const ls = requireInject('../../lib/ls.js', {
-  '../../lib/npm.js': {
-    flatOptions: _flatOptions,
-    limit: {
-      fetch: 3,
-    },
-    get prefix () {
-      return _flatOptions.prefix
-    },
-    get globalDir () {
-      return globalDir
-    },
-    config: {
-      get (key) {
-        return _flatOptions[key]
-      },
+const npm = {
+  flatOptions: _flatOptions,
+  limit: {
+    fetch: 3,
+  },
+  get prefix () {
+    return _flatOptions.prefix
+  },
+  get globalDir () {
+    return globalDir
+  },
+  config: {
+    get (key) {
+      return _flatOptions[key]
     },
   },
+}
+const ls = t.mock('../../lib/ls.js', {
+  '../../lib/npm.js': npm,
   '../../lib/utils/output.js': msg => {
     result = msg
   },

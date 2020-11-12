@@ -1,5 +1,4 @@
-const { test } = require('tap')
-const requireInject = require('require-inject')
+const t = require('tap')
 
 const { join } = require('path')
 const fs = require('fs')
@@ -120,7 +119,7 @@ const cacache = {
   },
 }
 
-const doctor = requireInject('../../lib/doctor.js', {
+const doctor = t.mock('../../lib/doctor.js', {
   '../../lib/utils/is-windows.js': false,
   '../../lib/utils/ping.js': ping,
   '../../lib/utils/output.js': (data) => {
@@ -133,7 +132,7 @@ const doctor = requireInject('../../lib/doctor.js', {
   which,
 })
 
-test('npm doctor checks ok', t => {
+t.test('npm doctor checks ok', t => {
   const dir = t.testdir()
   npm.cache = npm.flatOptions.cache = dir
   npm.localDir = dir
@@ -180,7 +179,7 @@ test('npm doctor checks ok', t => {
   })
 })
 
-test('npm doctor supports silent', t => {
+t.test('npm doctor supports silent', t => {
   const dir = t.testdir()
   npm.cache = npm.flatOptions.cache = dir
   npm.localDir = dir
@@ -219,7 +218,7 @@ test('npm doctor supports silent', t => {
   })
 })
 
-test('npm doctor supports color', t => {
+t.test('npm doctor supports color', t => {
   const dir = t.testdir()
   npm.cache = npm.flatOptions.cache = dir
   npm.localDir = dir
@@ -270,8 +269,8 @@ test('npm doctor supports color', t => {
   })
 })
 
-test('npm doctor skips some tests in windows', t => {
-  const winDoctor = requireInject('../../lib/doctor.js', {
+t.test('npm doctor skips some tests in windows', t => {
+  const winDoctor = t.mock('../../lib/doctor.js', {
     '../../lib/utils/is-windows.js': true,
     '../../lib/utils/ping.js': ping,
     '../../lib/utils/output.js': (data) => {
@@ -325,7 +324,7 @@ test('npm doctor skips some tests in windows', t => {
   })
 })
 
-test('npm doctor ping error E{3}', t => {
+t.test('npm doctor ping error E{3}', t => {
   const dir = t.testdir()
   npm.cache = npm.flatOptions.cache = dir
   npm.localDir = dir
@@ -374,7 +373,7 @@ test('npm doctor ping error E{3}', t => {
   })
 })
 
-test('npm doctor generic ping error', t => {
+t.test('npm doctor generic ping error', t => {
   const dir = t.testdir()
   npm.cache = npm.flatOptions.cache = dir
   npm.localDir = dir
@@ -423,7 +422,7 @@ test('npm doctor generic ping error', t => {
   })
 })
 
-test('npm doctor outdated npm version', t => {
+t.test('npm doctor outdated npm version', t => {
   const dir = t.testdir()
   npm.cache = npm.flatOptions.cache = dir
   npm.localDir = dir
@@ -472,7 +471,7 @@ test('npm doctor outdated npm version', t => {
   })
 })
 
-test('npm doctor outdated nodejs version', t => {
+t.test('npm doctor outdated nodejs version', t => {
   const dir = t.testdir()
   npm.cache = npm.flatOptions.cache = dir
   npm.localDir = dir
@@ -521,7 +520,7 @@ test('npm doctor outdated nodejs version', t => {
   })
 })
 
-test('npm doctor file permission checks', t => {
+t.test('npm doctor file permission checks', t => {
   const dir = t.testdir({
     cache: {
       one: 'one',
@@ -601,7 +600,7 @@ test('npm doctor file permission checks', t => {
     }
   }
 
-  const doctor = requireInject('../../lib/doctor.js', {
+  const doctor = t.mock('../../lib/doctor.js', {
     '../../lib/utils/is-windows.js': false,
     '../../lib/utils/ping.js': ping,
     '../../lib/utils/output.js': (data) => {
@@ -667,7 +666,7 @@ test('npm doctor file permission checks', t => {
   })
 })
 
-test('npm doctor missing git', t => {
+t.test('npm doctor missing git', t => {
   const dir = t.testdir()
   npm.cache = npm.flatOptions.cache = dir
   npm.localDir = dir
@@ -716,7 +715,7 @@ test('npm doctor missing git', t => {
   })
 })
 
-test('npm doctor cache verification showed bad content', t => {
+t.test('npm doctor cache verification showed bad content', t => {
   const dir = t.testdir()
   npm.cache = npm.flatOptions.cache = dir
   npm.localDir = dir
@@ -774,7 +773,7 @@ test('npm doctor cache verification showed bad content', t => {
   })
 })
 
-test('npm doctor cache verification showed reclaimed content', t => {
+t.test('npm doctor cache verification showed reclaimed content', t => {
   const dir = t.testdir()
   npm.cache = npm.flatOptions.cache = dir
   npm.localDir = dir
@@ -833,7 +832,7 @@ test('npm doctor cache verification showed reclaimed content', t => {
   })
 })
 
-test('npm doctor cache verification showed missing content', t => {
+t.test('npm doctor cache verification showed missing content', t => {
   const dir = t.testdir()
   npm.cache = npm.flatOptions.cache = dir
   npm.localDir = dir
@@ -891,7 +890,7 @@ test('npm doctor cache verification showed missing content', t => {
   })
 })
 
-test('npm doctor not using default registry', t => {
+t.test('npm doctor not using default registry', t => {
   const dir = t.testdir()
   npm.cache = npm.flatOptions.cache = dir
   npm.localDir = dir

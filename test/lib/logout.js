@@ -1,5 +1,4 @@
-const requireInject = require('require-inject')
-const { test } = require('tap')
+const t = require('tap')
 
 const _flatOptions = {
   registry: 'https://registry.npmjs.org/',
@@ -23,9 +22,9 @@ const mocks = {
   },
 }
 
-const logout = requireInject('../../lib/logout.js', mocks)
+const logout = t.mock('../../lib/logout.js', mocks)
 
-test('token logout', async (t) => {
+t.test('token logout', async (t) => {
   t.plan(6)
 
   _flatOptions.token = '@foo/'
@@ -83,7 +82,7 @@ test('token logout', async (t) => {
   })
 })
 
-test('token scoped logout', async (t) => {
+t.test('token scoped logout', async (t) => {
   t.plan(8)
 
   _flatOptions.token = '@foo/'
@@ -155,7 +154,7 @@ test('token scoped logout', async (t) => {
   })
 })
 
-test('user/pass logout', async (t) => {
+t.test('user/pass logout', async (t) => {
   t.plan(3)
 
   _flatOptions.username = 'foo'
@@ -188,7 +187,7 @@ test('user/pass logout', async (t) => {
   })
 })
 
-test('missing credentials', (t) => {
+t.test('missing credentials', (t) => {
   logout([], (err) => {
     t.match(
       err.message,
@@ -200,7 +199,7 @@ test('missing credentials', (t) => {
   })
 })
 
-test('ignore invalid scoped registry config', async (t) => {
+t.test('ignore invalid scoped registry config', async (t) => {
   t.plan(5)
 
   _flatOptions.token = '@foo/'

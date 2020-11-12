@@ -1,5 +1,4 @@
 const t = require('tap')
-const requireInject = require('require-inject')
 
 let result = ''
 const libnpmteam = {
@@ -28,7 +27,7 @@ t.afterEach(cb => {
   cb()
 })
 
-const team = requireInject('../../lib/team.js', mocks)
+const team = t.mock('../../lib/team.js', mocks)
 
 t.test('no args', t => {
   team([], err => {
@@ -230,7 +229,7 @@ t.test('team ls <scope>', t => {
     },
   }
 
-  const team = requireInject('../../lib/team.js', {
+  const team = t.mock('../../lib/team.js', {
     ...mocks,
     libnpmteam,
   })
@@ -296,7 +295,7 @@ t.test('team ls <scope>', t => {
       },
     }
 
-    const team = requireInject('../../lib/team.js', {
+    const team = t.mock('../../lib/team.js', {
       ...mocks,
       libnpmteam,
     })
@@ -317,7 +316,7 @@ t.test('team ls <scope>', t => {
       },
     }
 
-    const team = requireInject('../../lib/team.js', {
+    const team = t.mock('../../lib/team.js', {
       ...mocks,
       libnpmteam,
     })
@@ -340,7 +339,7 @@ t.test('team ls <scope:team>', t => {
       return ['nlf', 'ruyadorno', 'darcyclarke', 'isaacs']
     },
   }
-  const team = requireInject('../../lib/team.js', {
+  const team = t.mock('../../lib/team.js', {
     ...mocks,
     libnpmteam,
   })
@@ -407,7 +406,7 @@ t.test('team ls <scope:team>', t => {
       },
     }
 
-    const team = requireInject('../../lib/team.js', {
+    const team = t.mock('../../lib/team.js', {
       ...mocks,
       libnpmteam,
     })
@@ -428,7 +427,7 @@ t.test('team ls <scope:team>', t => {
       },
     }
 
-    const team = requireInject('../../lib/team.js', {
+    const team = t.mock('../../lib/team.js', {
       ...mocks,
       libnpmteam,
     })

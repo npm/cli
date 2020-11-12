@@ -1,5 +1,4 @@
 const t = require('tap')
-const requireInject = require('require-inject')
 
 const npm = {
   lockfileVersion: 2,
@@ -79,7 +78,7 @@ t.test('no args', t => {
     },
   }
 
-  const shrinkwrap = requireInject('../../lib/shrinkwrap.js', {
+  const shrinkwrap = t.mock('../../lib/shrinkwrap.js', {
     ...mocks,
     npmlog,
     '@npmcli/arborist': Arborist,
@@ -133,7 +132,7 @@ t.test('no virtual tree', t => {
     },
   }
 
-  const shrinkwrap = requireInject('../../lib/shrinkwrap.js', {
+  const shrinkwrap = t.mock('../../lib/shrinkwrap.js', {
     ...mocks,
     npmlog,
     '@npmcli/arborist': Arborist,
@@ -193,7 +192,7 @@ t.test('existing package-json file', t => {
     },
   }
 
-  const shrinkwrap = requireInject('../../lib/shrinkwrap.js', {
+  const shrinkwrap = t.mock('../../lib/shrinkwrap.js', {
     ...mocks,
     fs,
     npmlog,
@@ -247,7 +246,7 @@ t.test('update shrinkwrap file version', t => {
     },
   }
 
-  const shrinkwrap = requireInject('../../lib/shrinkwrap.js', {
+  const shrinkwrap = t.mock('../../lib/shrinkwrap.js', {
     ...mocks,
     npmlog,
     '@npmcli/arborist': Arborist,
@@ -300,7 +299,7 @@ t.test('update to date shrinkwrap file', t => {
     },
   }
 
-  const shrinkwrap = requireInject('../../lib/shrinkwrap.js', {
+  const shrinkwrap = t.mock('../../lib/shrinkwrap.js', {
     ...mocks,
     npmlog,
     '@npmcli/arborist': Arborist,
@@ -313,7 +312,7 @@ t.test('update to date shrinkwrap file', t => {
 })
 
 t.test('shrinkwrap --global', t => {
-  const shrinkwrap = requireInject('../../lib/shrinkwrap.js', mocks)
+  const shrinkwrap = t.mock('../../lib/shrinkwrap.js', mocks)
 
   npm.flatOptions.global = true
 

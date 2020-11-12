@@ -1,7 +1,6 @@
 const fs = require('fs')
 const { resolve } = require('path')
 const t = require('tap')
-const requireInject = require('require-inject')
 
 let result = ''
 
@@ -20,7 +19,7 @@ const mocks = {
   '../../lib/utils/usage.js': () => 'usage instructions',
 }
 
-const rebuild = requireInject('../../lib/rebuild.js', mocks)
+const rebuild = t.mock('../../lib/rebuild.js', mocks)
 
 t.afterEach(cb => {
   npm.prefix = ''

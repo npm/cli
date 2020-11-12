@@ -1,7 +1,6 @@
 /* eslint-disable no-extend-native */
 /* eslint-disable no-global-assign */
 const EventEmitter = require('events')
-const requireInject = require('require-inject')
 const t = require('tap')
 
 // NOTE: Although these unit tests may look like the rest on the surface,
@@ -128,8 +127,7 @@ const mocks = {
   '../../../lib/utils/cache-file.js': cacheFile,
 }
 
-requireInject.installGlobally('../../../lib/utils/error-handler.js', mocks)
-let errorHandler = require('../../../lib/utils/error-handler.js')
+const errorHandler = t.mock('../../../lib/utils/error-handler.js', mocks)
 
 t.test('default exit code', (t) => {
   t.plan(1)
@@ -376,9 +374,7 @@ t.test('it worked', (t) => {
 t.test('uses code from errno', (t) => {
   t.plan(1)
 
-  // RESET MODULE INTERNAL VARS AND GLOBAL REFS
-  requireInject.installGlobally.andClearCache('../../../lib/utils/error-handler.js', mocks)
-  errorHandler = require('../../../lib/utils/error-handler.js')
+  const errorHandler = t.mock('../../../lib/utils/error-handler.js', mocks)
 
   npmlog.level = 'silent'
   const _exit = process.exit
@@ -402,12 +398,7 @@ t.test('uses code from errno', (t) => {
 t.test('uses exitCode as code if using a number', (t) => {
   t.plan(1)
 
-  // RESET MODULE INTERNAL VARS AND GLOBAL REFS
-  requireInject.installGlobally.andClearCache(
-    '../../../lib/utils/error-handler.js',
-    mocks
-  )
-  errorHandler = require('../../../lib/utils/error-handler.js')
+  const errorHandler = t.mock('../../../lib/utils/error-handler.js', mocks)
 
   npmlog.level = 'silent'
   const _exit = process.exit
@@ -431,12 +422,7 @@ t.test('uses exitCode as code if using a number', (t) => {
 t.test('call errorHandler with no error', (t) => {
   t.plan(1)
 
-  // RESET MODULE INTERNAL VARS AND GLOBAL REFS
-  requireInject.installGlobally.andClearCache(
-    '../../../lib/utils/error-handler.js',
-    mocks
-  )
-  errorHandler = require('../../../lib/utils/error-handler.js')
+  const errorHandler = t.mock('../../../lib/utils/error-handler.js', mocks)
 
   const _exit = process.exit
   process.exit = (code) => {
@@ -494,12 +480,7 @@ t.test('defaults to log error msg if stack is missing', (t) => {
 t.test('set it worked', (t) => {
   t.plan(1)
 
-  // RESET MODULE INTERNAL VARS AND GLOBAL REFS
-  requireInject.installGlobally.andClearCache(
-    '../../../lib/utils/error-handler.js',
-    mocks
-  )
-  errorHandler = require('../../../lib/utils/error-handler.js')
+  const errorHandler = t.mock('../../../lib/utils/error-handler.js', mocks)
 
   const _exit = process.exit
   process.exit = () => {

@@ -1,4 +1,3 @@
-const requireInject = require('require-inject')
 const t = require('tap')
 
 let result = ''
@@ -18,7 +17,7 @@ const mocks = {
   '../../lib/utils/usage.js': () => 'usage instructions',
 }
 
-const stars = requireInject('../../lib/stars.js', mocks)
+const stars = t.mock('../../lib/stars.js', mocks)
 
 t.afterEach(cb => {
   npm.config = { get () {} }

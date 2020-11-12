@@ -1,6 +1,5 @@
 const t = require('tap')
 
-const requireInject = require('require-inject')
 const pacote = {
   manifest: async (spec, options) => {
     return spec === 'nodocs' ? {
@@ -39,7 +38,7 @@ const openUrl = (url, errMsg, cb) => {
   process.nextTick(cb)
 }
 
-const docs = requireInject('../../lib/docs.js', {
+const docs = t.mock('../../lib/docs.js', {
   pacote,
   '../../lib/utils/open-url.js': openUrl,
 })

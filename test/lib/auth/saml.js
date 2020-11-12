@@ -1,4 +1,3 @@
-const requireInject = require('require-inject')
 const { test } = require('tap')
 
 test('saml login', (t) => {
@@ -9,7 +8,7 @@ test('saml login', (t) => {
     scope: 'myscope',
   }
 
-  const saml = requireInject('../../../lib/auth/saml.js', {
+  const saml = t.mock('../../../lib/auth/saml.js', {
     '../../../lib/auth/sso.js': (opts) => {
       t.equal(opts, samlOpts, 'should forward opts')
     },

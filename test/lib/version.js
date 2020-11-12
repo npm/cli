@@ -1,5 +1,4 @@
 const t = require('tap')
-const requireInject = require('require-inject')
 
 let result = []
 
@@ -21,7 +20,7 @@ const mocks = {
   '../../lib/utils/usage.js': () => 'usage instructions',
 }
 
-const version = requireInject('../../lib/version.js', mocks)
+const version = t.mock('../../lib/version.js', mocks)
 
 const _processVersions = process.versions
 t.afterEach(cb => {
@@ -137,7 +136,7 @@ t.test('--json option', t => {
 })
 
 t.test('with one arg', t => {
-  const version = requireInject('../../lib/version.js', {
+  const version = t.mock('../../lib/version.js', {
     ...mocks,
     libnpmversion: (arg, opts) => {
       t.equal(arg, 'major', 'should forward expected value')

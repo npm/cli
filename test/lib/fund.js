@@ -1,5 +1,4 @@
-const { test } = require('tap')
-const requireInject = require('require-inject')
+const t = require('tap')
 
 const version = '1.0.0'
 const funding = {
@@ -203,13 +202,14 @@ const openUrl = (url, msg, cb) => {
 
   cb()
 }
-const fund = requireInject('../../lib/fund.js', {
-  '../../lib/npm.js': {
-    flatOptions: _flatOptions,
-    get prefix () {
-      return _flatOptions.prefix
-    },
+const npm = {
+  flatOptions: _flatOptions,
+  get prefix () {
+    return _flatOptions.prefix
   },
+}
+const fund = t.mock('../../lib/fund.js', {
+  '../../lib/npm.js': npm,
   '../../lib/utils/open-url.js': openUrl,
   '../../lib/utils/output.js': msg => {
     result += msg + '\n'
@@ -223,7 +223,7 @@ const fund = requireInject('../../lib/fund.js', {
   },
 })
 
-test('fund with no package containing funding', t => {
+t.test('fund with no package containing funding', t => {
   _flatOptions.prefix = t.testdir({
     'package.json': JSON.stringify({
       name: 'no-funding-package',
@@ -239,7 +239,7 @@ test('fund with no package containing funding', t => {
   })
 })
 
-test('fund in which same maintainer owns all its deps', t => {
+t.test('fund in which same maintainer owns all its deps', t => {
   _flatOptions.prefix = t.testdir(maintainerOwnsAllDeps)
 
   fund([], (err) => {
@@ -250,7 +250,7 @@ test('fund in which same maintainer owns all its deps', t => {
   })
 })
 
-test('fund in which same maintainer owns all its deps, using --json option', t => {
+t.test('fund in which same maintainer owns all its deps, using --json option', t => {
   _flatOptions.json = true
   _flatOptions.prefix = t.testdir(maintainerOwnsAllDeps)
 
@@ -289,7 +289,7 @@ test('fund in which same maintainer owns all its deps, using --json option', t =
   })
 })
 
-test('fund containing multi-level nested deps with no funding', t => {
+t.test('fund containing multi-level nested deps with no funding', t => {
   _flatOptions.prefix = t.testdir(nestedNoFundingPackages)
 
   fund([], (err) => {
@@ -304,7 +304,7 @@ test('fund containing multi-level nested deps with no funding', t => {
   })
 })
 
-test('fund containing multi-level nested deps with no funding, using --json option', t => {
+t.test('fund containing multi-level nested deps with no funding, using --json option', t => {
   _flatOptions.prefix = t.testdir(nestedNoFundingPackages)
   _flatOptions.json = true
 
@@ -336,7 +336,7 @@ test('fund containing multi-level nested deps with no funding, using --json opti
   })
 })
 
-test('fund containing multi-level nested deps with no funding, using --json option', t => {
+t.test('fund containing multi-level nested deps with no funding, using --json option', t => {
   _flatOptions.prefix = t.testdir(nestedMultipleFundingPackages)
   _flatOptions.json = true
 
@@ -393,7 +393,7 @@ test('fund containing multi-level nested deps with no funding, using --json opti
   })
 })
 
-test('fund does not support global', t => {
+t.test('fund does not support global', t => {
   _flatOptions.prefix = t.testdir({})
   _flatOptions.global = true
 
@@ -406,7 +406,7 @@ test('fund does not support global', t => {
   })
 })
 
-test('fund using package argument', t => {
+t.test('fund using package argument', t => {
   _flatOptions.prefix = t.testdir(maintainerOwnsAllDeps)
 
   fund(['.'], (err) => {
@@ -418,7 +418,7 @@ test('fund using package argument', t => {
   })
 })
 
-test('fund does not support global, using --json option', t => {
+t.test('fund does not support global, using --json option', t => {
   _flatOptions.prefix = t.testdir({})
   _flatOptions.global = true
   _flatOptions.json = true
@@ -437,7 +437,7 @@ test('fund does not support global, using --json option', t => {
   })
 })
 
-test('fund using string shorthand', t => {
+t.test('fund using string shorthand', t => {
   _flatOptions.prefix = t.testdir({
     'package.json': JSON.stringify({
       name: 'funding-string-shorthand',
@@ -455,7 +455,7 @@ test('fund using string shorthand', t => {
   })
 })
 
-test('fund using nested packages with multiple sources', t => {
+t.test('fund using nested packages with multiple sources', t => {
   _flatOptions.prefix = t.testdir(nestedMultipleFundingPackages)
 
   fund(['.'], (err) => {
@@ -467,7 +467,7 @@ test('fund using nested packages with multiple sources', t => {
   })
 })
 
-test('fund using symlink ref', t => {
+t.test('fund using symlink ref', t => {
   _flatOptions.prefix = t.testdir({
     'package.json': JSON.stringify({
       name: 'using-symlink-ref',
@@ -513,7 +513,7 @@ test('fund using symlink ref', t => {
   })
 })
 
-test('fund using data from actual tree', t => {
+t.test('fund using data from actual tree', t => {
   _flatOptions.prefix = t.testdir({
     'package.json': JSON.stringify({
       name: 'using-actual-tree',
@@ -560,7 +560,7 @@ test('fund using data from actual tree', t => {
   })
 })
 
-test('fund using nested packages with multiple sources, with a source number', t => {
+t.test('fund using nested packages with multiple sources, with a source number', t => {
   _flatOptions.prefix = t.testdir(nestedMultipleFundingPackages)
   _flatOptions.which = '1'
 
@@ -574,7 +574,7 @@ test('fund using nested packages with multiple sources, with a source number', t
   })
 })
 
-test('fund using pkg name while having conflicting versions', t => {
+t.test('fund using pkg name while having conflicting versions', t => {
   _flatOptions.prefix = t.testdir(conflictingFundingPackages)
   _flatOptions.which = '1'
 
@@ -587,7 +587,7 @@ test('fund using pkg name while having conflicting versions', t => {
   })
 })
 
-test('fund using package argument with no browser, using --json option', t => {
+t.test('fund using package argument with no browser, using --json option', t => {
   _flatOptions.prefix = t.testdir(maintainerOwnsAllDeps)
   _flatOptions.json = true
 
@@ -608,7 +608,7 @@ test('fund using package argument with no browser, using --json option', t => {
   })
 })
 
-test('fund using package info fetch from registry', t => {
+t.test('fund using package info fetch from registry', t => {
   _flatOptions.prefix = t.testdir({})
 
   fund(['ntl'], (err) => {
@@ -624,7 +624,7 @@ test('fund using package info fetch from registry', t => {
   })
 })
 
-test('fund tries to use package info fetch from registry but registry has nothing', t => {
+t.test('fund tries to use package info fetch from registry but registry has nothing', t => {
   _flatOptions.prefix = t.testdir({})
 
   fund(['foo'], (err) => {
@@ -640,7 +640,7 @@ test('fund tries to use package info fetch from registry but registry has nothin
   })
 })
 
-test('fund but target module has no funding info', t => {
+t.test('fund but target module has no funding info', t => {
   _flatOptions.prefix = t.testdir(nestedNoFundingPackages)
 
   fund(['foo'], (err) => {
@@ -656,7 +656,7 @@ test('fund but target module has no funding info', t => {
   })
 })
 
-test('fund using bad which value', t => {
+t.test('fund using bad which value', t => {
   _flatOptions.prefix = t.testdir(nestedMultipleFundingPackages)
   _flatOptions.which = 3
 
@@ -674,7 +674,7 @@ test('fund using bad which value', t => {
   })
 })
 
-test('fund pkg missing version number', t => {
+t.test('fund pkg missing version number', t => {
   _flatOptions.prefix = t.testdir({
     'package.json': JSON.stringify({
       name: 'foo',
@@ -690,7 +690,7 @@ test('fund pkg missing version number', t => {
   })
 })
 
-test('fund a package throws on openUrl', t => {
+t.test('fund a package throws on openUrl', t => {
   _flatOptions.prefix = t.testdir({
     'package.json': JSON.stringify({
       name: 'foo',
@@ -706,7 +706,7 @@ test('fund a package throws on openUrl', t => {
   })
 })
 
-test('fund a package with type and multiple sources', t => {
+t.test('fund a package with type and multiple sources', t => {
   _flatOptions.prefix = t.testdir({
     'package.json': JSON.stringify({
       name: 'foo',
@@ -732,7 +732,7 @@ test('fund a package with type and multiple sources', t => {
   })
 })
 
-test('fund colors', t => {
+t.test('fund colors', t => {
   _flatOptions.prefix = t.testdir({
     'package.json': JSON.stringify({
       name: 'test-fund-colors',
@@ -797,7 +797,7 @@ test('fund colors', t => {
   })
 })
 
-test('sub dep with fund info and a parent with no funding info', t => {
+t.test('sub dep with fund info and a parent with no funding info', t => {
   _flatOptions.prefix = t.testdir({
     'package.json': JSON.stringify({
       name: 'test-multiple-funding-sources',

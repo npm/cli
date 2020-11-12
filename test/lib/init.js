@@ -1,5 +1,4 @@
 const t = require('tap')
-const requireInject = require('require-inject')
 
 let result = ''
 const npmLog = {
@@ -23,7 +22,7 @@ const mocks = {
     result += msg.join('\n')
   },
 }
-const init = requireInject('../../lib/init.js', mocks)
+const init = t.mock('../../lib/init.js', mocks)
 
 t.afterEach(cb => {
   result = ''
@@ -206,7 +205,7 @@ t.test('should not rewrite flatOptions', t => {
 
 t.test('npm init cancel', t => {
   t.plan(3)
-  const init = requireInject('../../lib/init.js', {
+  const init = t.mock('../../lib/init.js', {
     ...mocks,
     'init-package-json': (dir, initFile, config, cb) => cb(
       new Error('canceled')
@@ -223,7 +222,7 @@ t.test('npm init cancel', t => {
 })
 
 t.test('npm init error', t => {
-  const init = requireInject('../../lib/init.js', {
+  const init = t.mock('../../lib/init.js', {
     ...mocks,
     'init-package-json': (dir, initFile, config, cb) => cb(
       new Error('Unknown Error')

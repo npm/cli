@@ -1,5 +1,4 @@
 const t = require('tap')
-const requireInject = require('require-inject')
 
 const npm = {
   config: {
@@ -30,7 +29,7 @@ const fs = {
   },
 }
 
-const reifyFinish = requireInject('../../../lib/utils/reify-finish.js', {
+const reifyFinish = t.mock('../../../lib/utils/reify-finish.js', {
   fs,
   '../../../lib/npm.js': npm,
   '../../../lib/utils/reify-output.js': reifyOutput,

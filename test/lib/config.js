@@ -1,5 +1,4 @@
 const t = require('tap')
-const requireInject = require('require-inject')
 const { EventEmitter } = require('events')
 
 const redactCwd = (path) => {
@@ -75,7 +74,7 @@ const mocks = {
   '../../lib/utils/usage.js': usageUtil,
 }
 
-const config = requireInject('../../lib/config.js', mocks)
+const config = t.mock('../../lib/config.js', mocks)
 
 t.test('config no args', t => {
   config([], (err) => {
@@ -450,7 +449,7 @@ sign-git-commit=true`
       },
     },
   }
-  const config = requireInject('../../lib/config.js', editMocks)
+  const config = t.mock('../../lib/config.js', editMocks)
   config(['edit'], (err) => {
     t.ifError(err, 'npm config edit')
 
@@ -458,7 +457,7 @@ sign-git-commit=true`
     editMocks.fs.readFile = (p, e, cb) => {
       cb(new Error('ERR'))
     }
-    const config = requireInject('../../lib/config.js', editMocks)
+    const config = t.mock('../../lib/config.js', editMocks)
     config(['edit'], (err) => {
       t.ifError(err, 'npm config edit')
     })
@@ -506,7 +505,7 @@ t.test('config edit --global', t => {
       },
     },
   }
-  const config = requireInject('../../lib/config.js', editMocks)
+  const config = t.mock('../../lib/config.js', editMocks)
   config(['edit'], (err) => {
     t.match(err, /exited with code: 137/, 'propagated exit code from editor')
   })

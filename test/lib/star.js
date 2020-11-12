@@ -1,4 +1,3 @@
-const requireInject = require('require-inject')
 const t = require('tap')
 
 let result = ''
@@ -18,7 +17,7 @@ const mocks = {
   '../../lib/utils/usage.js': () => 'usage instructions',
 }
 
-const star = requireInject('../../lib/star.js', mocks)
+const star = t.mock('../../lib/star.js', mocks)
 
 t.afterEach(cb => {
   npm.config = { get () {} }
@@ -129,7 +128,7 @@ t.test('unicode', async t => {
 })
 
 t.test('logged out user', t => {
-  const star = requireInject('../../lib/star.js', {
+  const star = t.mock('../../lib/star.js', {
     ...mocks,
     '../../lib/utils/get-identity.js': async () => undefined,
   })

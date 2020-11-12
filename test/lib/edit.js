@@ -1,6 +1,5 @@
-const { test } = require('tap')
+const t = require('tap')
 const { resolve } = require('path')
-const requireInject = require('require-inject')
 const { EventEmitter } = require('events')
 
 let editorBin = null
@@ -38,13 +37,13 @@ const npm = {
 }
 
 const gracefulFs = require('graceful-fs')
-const edit = requireInject('../../lib/edit.js', {
+const edit = t.mock('../../lib/edit.js', {
   '../../lib/npm.js': npm,
   child_process: childProcess,
   'graceful-fs': gracefulFs,
 })
 
-test('npm edit', t => {
+t.test('npm edit', t => {
   t.teardown(() => {
     rebuildArgs = null
     editorBin = null
@@ -65,7 +64,7 @@ test('npm edit', t => {
   })
 })
 
-test('npm edit editor has flags', t => {
+t.test('npm edit editor has flags', t => {
   EDITOR = 'code -w'
   t.teardown(() => {
     rebuildArgs = null
@@ -88,14 +87,14 @@ test('npm edit editor has flags', t => {
   })
 })
 
-test('npm edit no args', t => {
+t.test('npm edit no args', t => {
   return edit([], (err) => {
     t.match(err, /npm edit/, 'throws usage error')
     t.end()
   })
 })
 
-test('npm edit lstat error propagates', t => {
+t.test('npm edit lstat error propagates', t => {
   const _lstat = gracefulFs.lstat
   gracefulFs.lstat = (dir, cb) => {
     return cb(new Error('lstat failed'))
@@ -110,7 +109,7 @@ test('npm edit lstat error propagates', t => {
   })
 })
 
-test('npm edit editor exit code error propagates', t => {
+t.test('npm edit editor exit code error propagates', t => {
   EDITOR_CODE = 137
   t.teardown(() => {
     EDITOR_CODE = 0

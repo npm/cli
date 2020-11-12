@@ -1,5 +1,4 @@
 const t = require('tap')
-const requireInject = require('require-inject')
 const npm = {
   prefix: null,
   color: true,
@@ -9,7 +8,7 @@ const { resolve } = require('path')
 
 const OUTPUT = []
 
-const explain = requireInject('../../lib/explain.js', {
+const explain = t.mock('../../lib/explain.js', {
   '../../lib/npm.js': npm,
 
   '../../lib/utils/output.js': (...args) => {

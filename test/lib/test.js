@@ -1,5 +1,4 @@
 const t = require('tap')
-const requireInject = require('require-inject')
 let RUN_ARGS = null
 const npmock = {
   commands: {
@@ -9,7 +8,7 @@ const npmock = {
     },
   },
 }
-const test = requireInject('../../lib/test.js', {
+const test = t.mock('../../lib/test.js', {
   '../../lib/npm.js': npmock,
 })
 

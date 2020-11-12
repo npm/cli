@@ -1,5 +1,4 @@
-const requireInject = require('require-inject')
-const { test } = require('tap')
+const t = require('tap')
 const { getCredentialsByURI, setCredentialsByURI } =
   require('@npmcli/config').prototype
 
@@ -31,7 +30,7 @@ const deleteMock = (key, where) => {
     [key]: where,
   }
 }
-const adduser = requireInject('../../lib/adduser.js', {
+const adduser = t.mock('../../lib/adduser.js', {
   npmlog: {
     disableProgress: () => null,
     notice: (_, msg) => {
@@ -69,7 +68,7 @@ const adduser = requireInject('../../lib/adduser.js', {
   '../../lib/auth/legacy.js': authDummy,
 })
 
-test('simple login', (t) => {
+t.test('simple login', (t) => {
   adduser([], (err) => {
     t.ifError(err, 'npm adduser')
 
@@ -120,7 +119,7 @@ test('simple login', (t) => {
   })
 })
 
-test('bad auth type', (t) => {
+t.test('bad auth type', (t) => {
   _flatOptions.authType = 'foo'
 
   adduser([], (err) => {
@@ -138,7 +137,7 @@ test('bad auth type', (t) => {
   })
 })
 
-test('scoped login', (t) => {
+t.test('scoped login', (t) => {
   _flatOptions.scope = '@myscope'
 
   adduser([], (err) => {
@@ -158,7 +157,7 @@ test('scoped login', (t) => {
   })
 })
 
-test('scoped login with valid scoped registry config', (t) => {
+t.test('scoped login with valid scoped registry config', (t) => {
   _flatOptions['@myscope:registry'] = 'https://diff-registry.npmjs.com/'
   _flatOptions.scope = '@myscope'
 
@@ -180,7 +179,7 @@ test('scoped login with valid scoped registry config', (t) => {
   })
 })
 
-test('save config failure', (t) => {
+t.test('save config failure', (t) => {
   failSave = true
 
   adduser([], (err) => {

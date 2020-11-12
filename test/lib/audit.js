@@ -1,5 +1,4 @@
 const t = require('tap')
-const requireInject = require('require-inject')
 const audit = require('../../lib/audit.js')
 
 t.test('should audit using Arborist', t => {
@@ -10,7 +9,7 @@ t.test('should audit using Arborist', t => {
   let OUTPUT_CALLED = false
   let ARB_OBJ = null
 
-  const audit = requireInject('../../lib/audit.js', {
+  const audit = t.mock('../../lib/audit.js', {
     '../../lib/npm.js': {
       prefix: 'foo',
       flatOptions: {
@@ -64,7 +63,7 @@ t.test('should audit using Arborist', t => {
 })
 
 t.test('should audit - json', t => {
-  const audit = requireInject('../../lib/audit.js', {
+  const audit = t.mock('../../lib/audit.js', {
     '../../lib/npm.js': {
       prefix: 'foo',
       flatOptions: {
@@ -132,8 +131,8 @@ t.test('report endpoint error', t => {
         },
       }
       // have to pass mocks to both to get the npm and output set right
-      const auditError = requireInject('../../lib/utils/audit-error.js', mocks)
-      const audit = requireInject('../../lib/audit.js', {
+      const auditError = t.mock('../../lib/utils/audit-error.js', mocks)
+      const audit = t.mock('../../lib/audit.js', {
         ...mocks,
         '../../lib/utils/audit-error.js': auditError,
       })

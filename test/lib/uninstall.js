@@ -1,7 +1,6 @@
 const fs = require('fs')
 const { resolve } = require('path')
 const t = require('tap')
-const requireInject = require('require-inject')
 
 const npm = {
   globalDir: '',
@@ -17,7 +16,7 @@ const mocks = {
   '../../lib/utils/usage.js': () => 'usage instructions',
 }
 
-const uninstall = requireInject('../../lib/uninstall.js', mocks)
+const uninstall = t.mock('../../lib/uninstall.js', mocks)
 
 t.afterEach(cb => {
   npm.globalDir = ''
@@ -232,7 +231,7 @@ t.test('no args global but no package.json', t => {
 t.test('unknown error reading from localPrefix package.json', t => {
   const path = t.testdir({})
 
-  const uninstall = requireInject('../../lib/uninstall.js', {
+  const uninstall = t.mock('../../lib/uninstall.js', {
     ...mocks,
     'read-package-json-fast': () => Promise.reject(new Error('ERR')),
   })

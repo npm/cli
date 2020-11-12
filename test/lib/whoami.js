@@ -1,9 +1,8 @@
-const { test } = require('tap')
-const requireInject = require('require-inject')
+const t = require('tap')
 
-test('whoami', (t) => {
+t.test('whoami', (t) => {
   t.plan(3)
-  const whoami = requireInject('../../lib/whoami.js', {
+  const whoami = t.mock('../../lib/whoami.js', {
     '../../lib/utils/get-identity.js': () => Promise.resolve('foo'),
     '../../lib/npm.js': { flatOptions: {} },
     '../../lib/utils/output.js': (output) => {
@@ -17,9 +16,9 @@ test('whoami', (t) => {
   })
 })
 
-test('whoami json', (t) => {
+t.test('whoami json', (t) => {
   t.plan(3)
-  const whoami = requireInject('../../lib/whoami.js', {
+  const whoami = t.mock('../../lib/whoami.js', {
     '../../lib/utils/get-identity.js': () => Promise.resolve('foo'),
     '../../lib/npm.js': { flatOptions: { json: true } },
     '../../lib/utils/output.js': (output) => {

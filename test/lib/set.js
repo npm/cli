@@ -1,5 +1,4 @@
-const { test } = require('tap')
-const requireInject = require('require-inject')
+const t = require('tap')
 
 let configArgs = null
 const npm = {
@@ -11,18 +10,18 @@ const npm = {
   },
 }
 
-const set = requireInject('../../lib/set.js', {
+const set = t.mock('../../lib/set.js', {
   '../../lib/npm.js': npm,
 })
 
-test('npm set - no args', t => {
+t.test('npm set - no args', t => {
   return set([], (err) => {
     t.match(err, /npm set/, 'prints usage')
     t.end()
   })
 })
 
-test('npm set', t => {
+t.test('npm set', t => {
   return set(['email', 'me@me.me'], (err) => {
     if (err)
       throw err

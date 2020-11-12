@@ -1,12 +1,11 @@
-const { test } = require('tap')
-const requireInject = require('require-inject')
+const t = require('tap')
 
-test('pings', (t) => {
+t.test('pings', (t) => {
   t.plan(8)
 
   const flatOptions = { registry: 'https://registry.npmjs.org' }
   let noticeCalls = 0
-  const ping = requireInject('../../lib/ping.js', {
+  const ping = t.mock('../../lib/ping.js', {
     '../../lib/npm.js': { flatOptions },
     '../../lib/utils/ping.js': function (spec) {
       t.equal(spec, flatOptions, 'passes flatOptions')
@@ -33,13 +32,13 @@ test('pings', (t) => {
   })
 })
 
-test('pings and logs details', (t) => {
+t.test('pings and logs details', (t) => {
   t.plan(10)
 
   const flatOptions = { registry: 'https://registry.npmjs.org' }
   const details = { extra: 'data' }
   let noticeCalls = 0
-  const ping = requireInject('../../lib/ping.js', {
+  const ping = t.mock('../../lib/ping.js', {
     '../../lib/npm.js': { flatOptions },
     '../../lib/utils/ping.js': function (spec) {
       t.equal(spec, flatOptions, 'passes flatOptions')
@@ -70,13 +69,13 @@ test('pings and logs details', (t) => {
   })
 })
 
-test('pings and returns json', (t) => {
+t.test('pings and returns json', (t) => {
   t.plan(11)
 
   const flatOptions = { registry: 'https://registry.npmjs.org', json: true }
   const details = { extra: 'data' }
   let noticeCalls = 0
-  const ping = requireInject('../../lib/ping.js', {
+  const ping = t.mock('../../lib/ping.js', {
     '../../lib/npm.js': { flatOptions },
     '../../lib/utils/ping.js': function (spec) {
       t.equal(spec, flatOptions, 'passes flatOptions')

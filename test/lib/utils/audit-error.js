@@ -1,5 +1,4 @@
 const t = require('tap')
-const requireInject = require('require-inject')
 
 const LOGS = []
 const npm = {
@@ -11,7 +10,7 @@ const npm = {
 }
 const OUTPUT = []
 const output = (...msg) => OUTPUT.push(msg)
-const auditError = requireInject('../../../lib/utils/audit-error.js', {
+const auditError = t.mock('../../../lib/utils/audit-error.js', {
   '../../../lib/npm.js': npm,
   '../../../lib/utils/output.js': output,
 })

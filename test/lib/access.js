@@ -1,13 +1,12 @@
-const { test } = require('tap')
-const requireInject = require('require-inject')
+const t = require('tap')
 
-const emptyMock = requireInject('../../lib/access.js', {
+const emptyMock = t.mock('../../lib/access.js', {
   '../../lib/npm.js': {
     flatOptions: {},
   },
 })
 
-test('completion', t => {
+t.test('completion', t => {
   const { completion } = emptyMock
 
   const testComp = (argv, expect) => {
@@ -49,7 +48,7 @@ test('completion', t => {
   t.end()
 })
 
-test('subcommand required', t => {
+t.test('subcommand required', t => {
   const access = emptyMock
   access([], (err) => {
     t.equal(err, '\nUsage: Subcommand is required.\n\n' + access.usage)
@@ -57,7 +56,7 @@ test('subcommand required', t => {
   })
 })
 
-test('unrecognized subcommand', (t) => {
+t.test('unrecognized subcommand', (t) => {
   const access = emptyMock
 
   access(['blerg'], (err) => {
@@ -70,7 +69,7 @@ test('unrecognized subcommand', (t) => {
   })
 })
 
-test('edit', (t) => {
+t.test('edit', (t) => {
   const access = emptyMock
 
   access([
@@ -86,13 +85,13 @@ test('edit', (t) => {
   })
 })
 
-test('access public on unscoped package', (t) => {
+t.test('access public on unscoped package', (t) => {
   const prefix = t.testdir({
     'package.json': JSON.stringify({
       name: 'npm-access-public-pkg',
     }),
   })
-  const access = requireInject('../../lib/access.js', {
+  const access = t.mock('../../lib/access.js', {
     '../../lib/npm.js': { prefix },
   })
   access([
@@ -107,13 +106,13 @@ test('access public on unscoped package', (t) => {
   })
 })
 
-test('access public on scoped package', (t) => {
+t.test('access public on scoped package', (t) => {
   t.plan(4)
   const name = '@scoped/npm-access-public-pkg'
   const prefix = t.testdir({
     'package.json': JSON.stringify({ name }),
   })
-  const access = requireInject('../../lib/access.js', {
+  const access = t.mock('../../lib/access.js', {
     libnpmaccess: {
       public: (pkg, { registry }) => {
         t.equal(pkg, name, 'should use pkg name ref')
@@ -140,11 +139,11 @@ test('access public on scoped package', (t) => {
   })
 })
 
-test('access public on missing package.json', (t) => {
+t.test('access public on missing package.json', (t) => {
   const prefix = t.testdir({
     node_modules: {},
   })
-  const access = requireInject('../../lib/access.js', {
+  const access = t.mock('../../lib/access.js', {
     '../../lib/npm.js': { prefix },
   })
   access([
@@ -159,12 +158,12 @@ test('access public on missing package.json', (t) => {
   })
 })
 
-test('access public on invalid package.json', (t) => {
+t.test('access public on invalid package.json', (t) => {
   const prefix = t.testdir({
     'package.json': '{\n',
     node_modules: {},
   })
-  const access = requireInject('../../lib/access.js', {
+  const access = t.mock('../../lib/access.js', {
     '../../lib/npm.js': { prefix },
   })
   access([
@@ -179,13 +178,13 @@ test('access public on invalid package.json', (t) => {
   })
 })
 
-test('access restricted on unscoped package', (t) => {
+t.test('access restricted on unscoped package', (t) => {
   const prefix = t.testdir({
     'package.json': JSON.stringify({
       name: 'npm-access-restricted-pkg',
     }),
   })
-  const access = requireInject('../../lib/access.js', {
+  const access = t.mock('../../lib/access.js', {
     '../../lib/npm.js': { prefix },
   })
   access([
@@ -200,13 +199,13 @@ test('access restricted on unscoped package', (t) => {
   })
 })
 
-test('access restricted on scoped package', (t) => {
+t.test('access restricted on scoped package', (t) => {
   t.plan(4)
   const name = '@scoped/npm-access-restricted-pkg'
   const prefix = t.testdir({
     'package.json': JSON.stringify({ name }),
   })
-  const access = requireInject('../../lib/access.js', {
+  const access = t.mock('../../lib/access.js', {
     libnpmaccess: {
       restricted: (pkg, { registry }) => {
         t.equal(pkg, name, 'should use pkg name ref')
@@ -233,11 +232,11 @@ test('access restricted on scoped package', (t) => {
   })
 })
 
-test('access restricted on missing package.json', (t) => {
+t.test('access restricted on missing package.json', (t) => {
   const prefix = t.testdir({
     node_modules: {},
   })
-  const access = requireInject('../../lib/access.js', {
+  const access = t.mock('../../lib/access.js', {
     '../../lib/npm.js': { prefix },
   })
   access([
@@ -252,12 +251,12 @@ test('access restricted on missing package.json', (t) => {
   })
 })
 
-test('access restricted on invalid package.json', (t) => {
+t.test('access restricted on invalid package.json', (t) => {
   const prefix = t.testdir({
     'package.json': '{\n',
     node_modules: {},
   })
-  const access = requireInject('../../lib/access.js', {
+  const access = t.mock('../../lib/access.js', {
     '../../lib/npm.js': { prefix },
   })
   access([
@@ -272,9 +271,9 @@ test('access restricted on invalid package.json', (t) => {
   })
 })
 
-test('access grant read-only', (t) => {
+t.test('access grant read-only', (t) => {
   t.plan(5)
-  const access = requireInject('../../lib/access.js', {
+  const access = t.mock('../../lib/access.js', {
     libnpmaccess: {
       grant: (spec, team, permissions) => {
         t.equal(spec, '@scoped/another', 'should use expected spec')
@@ -296,9 +295,9 @@ test('access grant read-only', (t) => {
   })
 })
 
-test('access grant read-write', (t) => {
+t.test('access grant read-write', (t) => {
   t.plan(5)
-  const access = requireInject('../../lib/access.js', {
+  const access = t.mock('../../lib/access.js', {
     libnpmaccess: {
       grant: (spec, team, permissions) => {
         t.equal(spec, '@scoped/another', 'should use expected spec')
@@ -320,14 +319,14 @@ test('access grant read-write', (t) => {
   })
 })
 
-test('access grant current cwd', (t) => {
+t.test('access grant current cwd', (t) => {
   t.plan(5)
   const prefix = t.testdir({
     'package.json': JSON.stringify({
       name: 'yargs',
     }),
   })
-  const access = requireInject('../../lib/access.js', {
+  const access = t.mock('../../lib/access.js', {
     libnpmaccess: {
       grant: (spec, team, permissions) => {
         t.equal(spec, 'yargs', 'should use expected spec')
@@ -348,7 +347,7 @@ test('access grant current cwd', (t) => {
   })
 })
 
-test('access grant others', (t) => {
+t.test('access grant others', (t) => {
   const access = emptyMock
 
   access([
@@ -366,7 +365,7 @@ test('access grant others', (t) => {
   })
 })
 
-test('access grant missing team args', (t) => {
+t.test('access grant missing team args', (t) => {
   const access = emptyMock
 
   access([
@@ -384,7 +383,7 @@ test('access grant missing team args', (t) => {
   })
 })
 
-test('access grant malformed team arg', (t) => {
+t.test('access grant malformed team arg', (t) => {
   const access = emptyMock
 
   access([
@@ -402,9 +401,9 @@ test('access grant malformed team arg', (t) => {
   })
 })
 
-test('access 2fa-required/2fa-not-required', t => {
+t.test('access 2fa-required/2fa-not-required', t => {
   t.plan(2)
-  const access = requireInject('../../lib/access.js', {
+  const access = t.mock('../../lib/access.js', {
     libnpmaccess: {
       tfaRequired: (spec) => {
         t.equal(spec, '@scope/pkg', 'should use expected spec')
@@ -429,9 +428,9 @@ test('access 2fa-required/2fa-not-required', t => {
   })
 })
 
-test('access revoke', (t) => {
+t.test('access revoke', (t) => {
   t.plan(4)
-  const access = requireInject('../../lib/access.js', {
+  const access = t.mock('../../lib/access.js', {
     libnpmaccess: {
       revoke: (spec, team) => {
         t.equal(spec, '@scoped/another', 'should use expected spec')
@@ -451,7 +450,7 @@ test('access revoke', (t) => {
   })
 })
 
-test('access revoke missing team args', (t) => {
+t.test('access revoke missing team args', (t) => {
   const access = emptyMock
 
   access([
@@ -468,7 +467,7 @@ test('access revoke missing team args', (t) => {
   })
 })
 
-test('access revoke malformed team arg', (t) => {
+t.test('access revoke malformed team arg', (t) => {
   const access = emptyMock
 
   access([
@@ -485,9 +484,9 @@ test('access revoke malformed team arg', (t) => {
   })
 })
 
-test('npm access ls-packages with no team', (t) => {
+t.test('npm access ls-packages with no team', (t) => {
   t.plan(3)
-  const access = requireInject('../../lib/access.js', {
+  const access = t.mock('../../lib/access.js', {
     libnpmaccess: {
       lsPackages: (entity) => {
         t.equal(entity, 'foo', 'should use expected entity')
@@ -506,9 +505,9 @@ test('npm access ls-packages with no team', (t) => {
   })
 })
 
-test('access ls-packages on team', (t) => {
+t.test('access ls-packages on team', (t) => {
   t.plan(3)
-  const access = requireInject('../../lib/access.js', {
+  const access = t.mock('../../lib/access.js', {
     libnpmaccess: {
       lsPackages: (entity) => {
         t.equal(entity, 'myorg:myteam', 'should use expected entity')
@@ -527,14 +526,14 @@ test('access ls-packages on team', (t) => {
   })
 })
 
-test('access ls-collaborators on current', (t) => {
+t.test('access ls-collaborators on current', (t) => {
   t.plan(3)
   const prefix = t.testdir({
     'package.json': JSON.stringify({
       name: 'yargs',
     }),
   })
-  const access = requireInject('../../lib/access.js', {
+  const access = t.mock('../../lib/access.js', {
     libnpmaccess: {
       lsCollaborators: (spec) => {
         t.equal(spec, 'yargs', 'should use expected spec')
@@ -552,9 +551,9 @@ test('access ls-collaborators on current', (t) => {
   })
 })
 
-test('access ls-collaborators on spec', (t) => {
+t.test('access ls-collaborators on spec', (t) => {
   t.plan(3)
-  const access = requireInject('../../lib/access.js', {
+  const access = t.mock('../../lib/access.js', {
     libnpmaccess: {
       lsCollaborators: (spec) => {
         t.equal(spec, 'yargs', 'should use expected spec')

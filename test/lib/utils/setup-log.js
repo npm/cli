@@ -1,5 +1,4 @@
 const t = require('tap')
-const requireInject = require('require-inject')
 
 const settings = {
   level: 'warn',
@@ -61,7 +60,7 @@ const npmlog = {
 }
 
 const EXPLAIN_CALLED = []
-const setupLog = requireInject('../../../lib/utils/setup-log.js', {
+const setupLog = t.mock('../../../lib/utils/setup-log.js', {
   '../../../lib/utils/explain-eresolve.js': {
     explain: (...args) => {
       EXPLAIN_CALLED.push(args)

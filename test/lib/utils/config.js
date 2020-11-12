@@ -1,5 +1,4 @@
 const t = require('tap')
-const requireInject = require('require-inject')
 Object.defineProperty(process, 'umask', {
   value: () => 0o26,
   writable: true,
@@ -72,7 +71,7 @@ const os = { networkInterfaces, tmpdir }
 const pkg = { version: '7.0.0' }
 
 t.test('working network interfaces, not windows', t => {
-  const config = requireInject('../../../lib/utils/config.js', {
+  const config = t.mock('../../../lib/utils/config.js', {
     os,
     '@npmcli/ci-detect': () => false,
     '../../../lib/utils/is-windows.js': false,
@@ -83,7 +82,7 @@ t.test('working network interfaces, not windows', t => {
 })
 
 t.test('no working network interfaces, on windows', t => {
-  const config = requireInject('../../../lib/utils/config.js', {
+  const config = t.mock('../../../lib/utils/config.js', {
     os: { tmpdir, networkInterfaces: networkInterfacesThrow },
     '@npmcli/ci-detect': () => false,
     '../../../lib/utils/is-windows.js': true,
@@ -108,7 +107,7 @@ t.test('no process.umask() method', t => {
       enumerable: true,
     })
   })
-  const config = requireInject('../../../lib/utils/config.js', {
+  const config = t.mock('../../../lib/utils/config.js', {
     os: { tmpdir, networkInterfaces: networkInterfacesThrow },
     '@npmcli/ci-detect': () => false,
     '../../../lib/utils/is-windows.js': true,
@@ -121,7 +120,7 @@ t.test('no process.umask() method', t => {
 
 t.test('no comspec on windows', t => {
   delete process.env.ComSpec
-  const config = requireInject('../../../lib/utils/config.js', {
+  const config = t.mock('../../../lib/utils/config.js', {
     os: { tmpdir, networkInterfaces: networkInterfacesThrow },
     '@npmcli/ci-detect': () => false,
     '../../../lib/utils/is-windows.js': true,
@@ -132,7 +131,7 @@ t.test('no comspec on windows', t => {
 
 t.test('no shell on posix', t => {
   delete process.env.SHELL
-  const config = requireInject('../../../lib/utils/config.js', {
+  const config = t.mock('../../../lib/utils/config.js', {
     os,
     '@npmcli/ci-detect': () => false,
     '../../../lib/utils/is-windows.js': false,
@@ -143,7 +142,7 @@ t.test('no shell on posix', t => {
 
 t.test('no EDITOR env, use VISUAL', t => {
   delete process.env.EDITOR
-  const config = requireInject('../../../lib/utils/config.js', {
+  const config = t.mock('../../../lib/utils/config.js', {
     os,
     '@npmcli/ci-detect': () => false,
     '../../../lib/utils/is-windows.js': false,
@@ -154,7 +153,7 @@ t.test('no EDITOR env, use VISUAL', t => {
 
 t.test('no VISUAL, use system default, not windows', t => {
   delete process.env.VISUAL
-  const config = requireInject('../../../lib/utils/config.js', {
+  const config = t.mock('../../../lib/utils/config.js', {
     os,
     '@npmcli/ci-detect': () => false,
     '../../../lib/utils/is-windows.js': false,
@@ -165,7 +164,7 @@ t.test('no VISUAL, use system default, not windows', t => {
 
 t.test('no VISUAL, use system default, not windows', t => {
   delete process.env.VISUAL
-  const config = requireInject('../../../lib/utils/config.js', {
+  const config = t.mock('../../../lib/utils/config.js', {
     os,
     '@npmcli/ci-detect': () => false,
     '../../../lib/utils/is-windows.js': true,

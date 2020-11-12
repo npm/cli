@@ -1,7 +1,6 @@
-const { test } = require('tap')
-const requireInject = require('require-inject')
+const t = require('tap')
 
-test('birthday (nope)', (t) => {
+t.test('birthday (nope)', (t) => {
   t.plan(1)
   const B = global[Buffer.from([66, 117, 102, 102, 101, 114])]
   const f = B.from([102, 114, 111, 109])
@@ -20,13 +19,13 @@ test('birthday (nope)', (t) => {
     global[B[f]([68, 97, 116, 101])] = D
     console.log = consoleLog
   })
-  const birthday = requireInject('../../lib/birthday', {})
+  const birthday = t.mock('../../lib/birthday', {})
   birthday([], (err) => {
     t.match(err, 'try again', 'not telling you the secret that easily are we?')
   })
 })
 
-test('birthday (nope again)', (t) => {
+t.test('birthday (nope again)', (t) => {
   t.plan(1)
   const B = global[Buffer.from([66, 117, 102, 102, 101, 114])]
   const f = B.from([102, 114, 111, 109])
@@ -50,13 +49,13 @@ test('birthday (nope again)', (t) => {
     global[B[f]([68, 97, 116, 101])] = D
     console.log = consoleLog
   })
-  const birthday = requireInject('../../lib/birthday', {})
+  const birthday = t.mock('../../lib/birthday', {})
   birthday([], (err) => {
     t.match(err, 'try again', 'not telling you the secret that easily are we?')
   })
 })
 
-test('birthday (yup)', (t) => {
+t.test('birthday (yup)', (t) => {
   t.plan(1)
   const B = global[Buffer.from([66, 117, 102, 102, 101, 114])]
   const f = B.from([102, 114, 111, 109])
@@ -79,7 +78,7 @@ test('birthday (yup)', (t) => {
     global[B[f]([68, 97, 116, 101])] = D
     console.log = consoleLog
   })
-  const birthday = requireInject('../../lib/birthday', {})
+  const birthday = t.mock('../../lib/birthday', {})
   birthday([], (err) => {
     t.ifError(err, 'npm birthday')
   })

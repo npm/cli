@@ -1,4 +1,3 @@
-const requireInject = require('require-inject')
 const t = require('tap')
 
 let result = ''
@@ -31,7 +30,7 @@ const npmcliMaintainers = [
   { email: 'i@izs.me', name: 'isaacs' },
 ]
 
-const owner = requireInject('../../lib/owner.js', mocks)
+const owner = t.mock('../../lib/owner.js', mocks)
 
 t.test('owner no args', t => {
   result = ''

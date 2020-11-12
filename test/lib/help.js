@@ -1,5 +1,4 @@
-const { test } = require('tap')
-const requireInject = require('require-inject')
+const t = require('tap')
 const { EventEmitter } = require('events')
 
 let npmUsageArg = null
@@ -71,7 +70,7 @@ const openUrl = (url, msg, cb) => {
   return cb()
 }
 
-const help = requireInject('../../lib/help.js', {
+const help = t.mock('../../lib/help.js', {
   '../../lib/npm.js': npm,
   '../../lib/utils/npm-usage.js': npmUsage,
   '../../lib/utils/open-url.js': openUrl,
@@ -80,7 +79,7 @@ const help = requireInject('../../lib/help.js', {
   glob,
 })
 
-test('npm help', t => {
+t.test('npm help', t => {
   t.teardown(() => {
     npmUsageArg = null
   })
@@ -94,7 +93,7 @@ test('npm help', t => {
   })
 })
 
-test('npm help completion', async t => {
+t.test('npm help completion', async t => {
   t.teardown(() => {
     globErr = null
   })
@@ -114,7 +113,7 @@ test('npm help completion', async t => {
   t.rejects(completion({ conf: { argv: { remain: [] } } }), /glob failed/, 'glob errors propagate')
 })
 
-test('npm help -h', t => {
+t.test('npm help -h', t => {
   npmConfig.usage = true
   t.teardown(() => {
     npmConfig.usage = false
@@ -130,7 +129,7 @@ test('npm help -h', t => {
   })
 })
 
-test('npm help multiple args calls search', t => {
+t.test('npm help multiple args calls search', t => {
   t.teardown(() => {
     helpSearchArgs = null
   })
@@ -144,7 +143,7 @@ test('npm help multiple args calls search', t => {
   })
 })
 
-test('npm help no matches calls search', t => {
+t.test('npm help no matches calls search', t => {
   globResult = []
   t.teardown(() => {
     helpSearchArgs = null
@@ -160,7 +159,7 @@ test('npm help no matches calls search', t => {
   })
 })
 
-test('npm help glob errors propagate', t => {
+t.test('npm help glob errors propagate', t => {
   globErr = new Error('glob failed')
   t.teardown(() => {
     globErr = null
@@ -174,7 +173,7 @@ test('npm help glob errors propagate', t => {
   })
 })
 
-test('npm help whoami', t => {
+t.test('npm help whoami', t => {
   globResult = ['/root/man/man1/npm-whoami.1.xz']
   t.teardown(() => {
     globResult = globDefaults
@@ -192,7 +191,7 @@ test('npm help whoami', t => {
   })
 })
 
-test('npm help 1 install', t => {
+t.test('npm help 1 install', t => {
   npmConfig.viewer = 'browser'
   globResult = [
     '/root/man/man5/install.5',
@@ -215,7 +214,7 @@ test('npm help 1 install', t => {
   })
 })
 
-test('npm help 5 install', t => {
+t.test('npm help 5 install', t => {
   npmConfig.viewer = 'browser'
   globResult = [
     '/root/man/man5/install.5',
@@ -238,7 +237,7 @@ test('npm help 5 install', t => {
   })
 })
 
-test('npm help 7 config', t => {
+t.test('npm help 7 config', t => {
   npmConfig.viewer = 'browser'
   globResult = [
     '/root/man/man1/npm-config.1',
@@ -260,7 +259,7 @@ test('npm help 7 config', t => {
   })
 })
 
-test('npm help with browser viewer and invalid section throws', t => {
+t.test('npm help with browser viewer and invalid section throws', t => {
   npmConfig.viewer = 'browser'
   globResult = [
     '/root/man/man1/npm-config.1',
@@ -280,7 +279,7 @@ test('npm help with browser viewer and invalid section throws', t => {
   })
 })
 
-test('npm help global redirects to folders', t => {
+t.test('npm help global redirects to folders', t => {
   globResult = ['/root/man/man5/folders.5']
   t.teardown(() => {
     globResult = globDefaults
@@ -298,7 +297,7 @@ test('npm help global redirects to folders', t => {
   })
 })
 
-test('npm help package.json redirects to package-json', t => {
+t.test('npm help package.json redirects to package-json', t => {
   globResult = ['/root/man/man5/package-json.5']
   t.teardown(() => {
     globResult = globDefaults
@@ -316,7 +315,7 @@ test('npm help package.json redirects to package-json', t => {
   })
 })
 
-test('npm help ?(un)star', t => {
+t.test('npm help ?(un)star', t => {
   npmConfig.viewer = 'woman'
   globResult = [
     '/root/man/man1/npm-star.1',
@@ -339,7 +338,7 @@ test('npm help ?(un)star', t => {
   })
 })
 
-test('npm help un*', t => {
+t.test('npm help un*', t => {
   globResult = [
     '/root/man/man1/npm-unstar.1',
     '/root/man/man1/npm-uninstall.1',

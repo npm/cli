@@ -1,5 +1,4 @@
 const t = require('tap')
-const requireInject = require('require-inject')
 
 const packument = spec => {
   const mocks = {
@@ -92,7 +91,7 @@ const globalDir = t.testdir({
   },
 })
 
-const outdated = (dir, opts) => requireInject(
+const outdated = (dir, opts) => t.mock(
   '../../lib/outdated.js',
   {
     '../../lib/npm.js': {

@@ -1,6 +1,5 @@
-const { test } = require('tap')
+const t = require('tap')
 const { join } = require('path')
-const requireInject = require('require-inject')
 const ansicolors = require('ansicolors')
 
 const OUTPUT = []
@@ -42,14 +41,14 @@ const globDir = {
 }
 const glob = (p, cb) => cb(null, Object.keys(globDir).map((file) => join(globRoot, file)))
 
-const helpSearch = requireInject('../../lib/help-search.js', {
+const helpSearch = t.mock('../../lib/help-search.js', {
   '../../lib/npm.js': npm,
   '../../lib/utils/npm-usage.js': npmUsage,
   '../../lib/utils/output.js': output,
   glob,
 })
 
-test('npm help-search', t => {
+t.test('npm help-search', t => {
   globRoot = t.testdir(globDir)
   t.teardown(() => {
     OUTPUT.length = 0
@@ -66,7 +65,7 @@ test('npm help-search', t => {
   })
 })
 
-test('npm help-search multiple terms', t => {
+t.test('npm help-search multiple terms', t => {
   globRoot = t.testdir(globDir)
   t.teardown(() => {
     OUTPUT.length = 0
@@ -83,7 +82,7 @@ test('npm help-search multiple terms', t => {
   })
 })
 
-test('npm help-search single result prints full section', t => {
+t.test('npm help-search single result prints full section', t => {
   globRoot = t.testdir(globDir)
   t.teardown(() => {
     OUTPUT.length = 0
@@ -100,7 +99,7 @@ test('npm help-search single result prints full section', t => {
   })
 })
 
-test('npm help-search single result propagates error', t => {
+t.test('npm help-search single result propagates error', t => {
   globRoot = t.testdir(globDir)
   npmHelpErr = new Error('help broke')
   t.teardown(() => {
@@ -117,7 +116,7 @@ test('npm help-search single result propagates error', t => {
   })
 })
 
-test('npm help-search long output', t => {
+t.test('npm help-search long output', t => {
   globRoot = t.testdir(globDir)
   npm.flatOptions.long = true
   t.teardown(() => {
@@ -135,7 +134,7 @@ test('npm help-search long output', t => {
   })
 })
 
-test('npm help-search long output with color', t => {
+t.test('npm help-search long output with color', t => {
   globRoot = t.testdir(globDir)
   npm.flatOptions.long = true
   npm.color = true
@@ -156,14 +155,14 @@ test('npm help-search long output with color', t => {
   })
 })
 
-test('npm help-search no args', t => {
+t.test('npm help-search no args', t => {
   return helpSearch([], (err) => {
     t.match(err, /npm help-search/, 'throws usage')
     t.end()
   })
 })
 
-test('npm help-search no matches', t => {
+t.test('npm help-search no matches', t => {
   globRoot = t.testdir(globDir)
   t.teardown(() => {
     OUTPUT.length = 0

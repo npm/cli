@@ -1,5 +1,4 @@
 const t = require('tap')
-const requireInject = require('require-inject')
 const { resolve, delimiter } = require('path')
 const OUTPUT = []
 const output = (...msg) => OUTPUT.push(msg)
@@ -96,7 +95,7 @@ const mocks = {
   'mkdirp-infer-owner': mkdirp,
   '../../lib/utils/output.js': output,
 }
-const exec = requireInject('../../lib/exec.js', mocks)
+const exec = t.mock('../../lib/exec.js', mocks)
 
 t.afterEach(cb => {
   MKDIRPS.length = 0

@@ -1,5 +1,4 @@
 const t = require('tap')
-const requireInject = require('require-inject')
 
 // mock config
 const {defaults} = require('../../lib/utils/config.js')
@@ -18,7 +17,7 @@ t.test('should publish with libnpmpublish, respecting publishConfig', (t) => {
     }, null, 2),
   })
 
-  const publish = requireInject('../../lib/publish.js', {
+  const publish = t.mock('../../lib/publish.js', {
     '../../lib/npm.js': {
       flatOptions: {
         json: true,
@@ -72,7 +71,7 @@ t.test('re-loads publishConfig if added during script process', (t) => {
     }, null, 2),
   })
 
-  const publish = requireInject('../../lib/publish.js', {
+  const publish = t.mock('../../lib/publish.js', {
     '../../lib/npm.js': {
       flatOptions: {
         json: true,
@@ -125,7 +124,7 @@ t.test('should not log if silent', (t) => {
     }, null, 2),
   })
 
-  const publish = requireInject('../../lib/publish.js', {
+  const publish = t.mock('../../lib/publish.js', {
     '../../lib/npm.js': {
       flatOptions: {
         json: false,
@@ -175,7 +174,7 @@ t.test('should log tarball contents', (t) => {
     }, null, 2),
   })
 
-  const publish = requireInject('../../lib/publish.js', {
+  const publish = t.mock('../../lib/publish.js', {
     '../../lib/npm.js': {
       flatOptions: {
         json: false,
@@ -215,7 +214,7 @@ t.test('should log tarball contents', (t) => {
 
 t.test('shows usage with wrong set of arguments', (t) => {
   t.plan(1)
-  const publish = requireInject('../../lib/publish.js', {
+  const publish = t.mock('../../lib/publish.js', {
     '../../lib/npm.js': {
       flatOptions: {
         json: false,
@@ -230,7 +229,7 @@ t.test('shows usage with wrong set of arguments', (t) => {
 
 t.test('throws when invalid tag', (t) => {
   t.plan(1)
-  const publish = requireInject('../../lib/publish.js', {
+  const publish = t.mock('../../lib/publish.js', {
     '../../lib/npm.js': {
       flatOptions: {
         json: false,
@@ -269,7 +268,7 @@ t.test('can publish a tarball', t => {
   fs.rmdirSync(`${testDir}/package`)
 
   const tarFile = fs.readFileSync(`${testDir}/package.tgz`)
-  const publish = requireInject('../../lib/publish.js', {
+  const publish = t.mock('../../lib/publish.js', {
     '../../lib/npm.js': {
       flatOptions: {
         json: true,

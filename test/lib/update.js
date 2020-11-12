@@ -1,6 +1,5 @@
 const { resolve } = require('path')
 const t = require('tap')
-const requireInject = require('require-inject')
 
 const noop = () => null
 const npm = {
@@ -47,7 +46,7 @@ t.test('no args', t => {
     }
   }
 
-  const update = requireInject('../../lib/update.js', {
+  const update = t.mock('../../lib/update.js', {
     ...mocks,
     '../../lib/utils/reify-finish.js': (arb) => {
       t.isLike(arb, Arborist, 'should reify-finish with arborist instance')
@@ -80,7 +79,7 @@ t.test('with args', t => {
     }
   }
 
-  const update = requireInject('../../lib/update.js', {
+  const update = t.mock('../../lib/update.js', {
     ...mocks,
     '../../lib/utils/reify-finish.js': (arb) => {
       t.isLike(arb, Arborist, 'should reify-finish with arborist instance')
@@ -100,7 +99,7 @@ t.test('update --depth=<number>', t => {
   npm.prefix = '/project/a'
   npm.flatOptions.depth = 1
 
-  const update = requireInject('../../lib/update.js', {
+  const update = t.mock('../../lib/update.js', {
     ...mocks,
     npmlog: {
       warn: (title, msg) => {
@@ -150,7 +149,7 @@ t.test('update --global', t => {
     reify () {}
   }
 
-  const update = requireInject('../../lib/update.js', {
+  const update = t.mock('../../lib/update.js', {
     ...mocks,
     '@npmcli/arborist': Arborist,
   })

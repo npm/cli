@@ -1,5 +1,4 @@
 const t = require('tap')
-const requireInject = require('require-inject')
 
 let result = ''
 const noop = () => null
@@ -78,7 +77,7 @@ t.test('no args --force', t => {
     },
   }
 
-  const unpublish = requireInject('../../lib/unpublish.js', {
+  const unpublish = t.mock('../../lib/unpublish.js', {
     ...mocks,
     npmlog,
     libnpmpublish,
@@ -104,7 +103,7 @@ t.test('no args --force', t => {
 t.test('no args --force missing package.json', t => {
   npm.flatOptions.force = true
 
-  const unpublish = requireInject('../../lib/unpublish.js', {
+  const unpublish = t.mock('../../lib/unpublish.js', {
     ...mocks,
     'read-package-json': (path, cb) => cb(Object.assign(
       new Error('ENOENT'),
@@ -125,7 +124,7 @@ t.test('no args --force missing package.json', t => {
 t.test('no args --force unknown error reading package.json', t => {
   npm.flatOptions.force = true
 
-  const unpublish = requireInject('../../lib/unpublish.js', {
+  const unpublish = t.mock('../../lib/unpublish.js', {
     ...mocks,
     'read-package-json': (path, cb) => cb(new Error('ERR')),
   })
@@ -141,7 +140,7 @@ t.test('no args --force unknown error reading package.json', t => {
 })
 
 t.test('no args', t => {
-  const unpublish = requireInject('../../lib/unpublish.js', {
+  const unpublish = t.mock('../../lib/unpublish.js', {
     ...mocks,
   })
 
@@ -156,7 +155,7 @@ t.test('no args', t => {
 })
 
 t.test('too many args', t => {
-  const unpublish = requireInject('../../lib/unpublish.js', {
+  const unpublish = t.mock('../../lib/unpublish.js', {
     ...mocks,
   })
 
@@ -206,7 +205,7 @@ t.test('unpublish <pkg>@version', t => {
     },
   }
 
-  const unpublish = requireInject('../../lib/unpublish.js', {
+  const unpublish = t.mock('../../lib/unpublish.js', {
     ...mocks,
     npmlog,
     libnpmpublish,
@@ -235,7 +234,7 @@ t.test('no version found in package.json', t => {
 
   npa.resolve = () => ''
 
-  const unpublish = requireInject('../../lib/unpublish.js', {
+  const unpublish = t.mock('../../lib/unpublish.js', {
     ...mocks,
     'npm-package-arg': npa,
     'read-package-json': (path, cb) => cb(null, {
@@ -259,7 +258,7 @@ t.test('no version found in package.json', t => {
 t.test('unpublish <pkg> --force no version set', t => {
   npm.flatOptions.force = true
 
-  const unpublish = requireInject('../../lib/unpublish.js', {
+  const unpublish = t.mock('../../lib/unpublish.js', {
     ...mocks,
     'npm-package-arg': () => ({
       name: 'pkg',
@@ -292,7 +291,7 @@ t.test('silent', t => {
 
   npa.resolve = () => ''
 
-  const unpublish = requireInject('../../lib/unpublish.js', {
+  const unpublish = t.mock('../../lib/unpublish.js', {
     ...mocks,
     'npm-package-arg': npa,
   })
@@ -322,7 +321,7 @@ t.test('completion', t => {
     })
 
   t.test('completing with multiple versions from the registry', async t => {
-    const { completion } = requireInject('../../lib/unpublish.js', {
+    const { completion } = t.mock('../../lib/unpublish.js', {
       ...mocks,
       libnpmaccess: {
         async lsPackages () {
@@ -359,7 +358,7 @@ t.test('completion', t => {
   })
 
   t.test('no versions retrieved', async t => {
-    const { completion } = requireInject('../../lib/unpublish.js', {
+    const { completion } = t.mock('../../lib/unpublish.js', {
       ...mocks,
       libnpmaccess: {
         async lsPackages () {
@@ -391,7 +390,7 @@ t.test('completion', t => {
   })
 
   t.test('packages starting with same letters', async t => {
-    const { completion } = requireInject('../../lib/unpublish.js', {
+    const { completion } = t.mock('../../lib/unpublish.js', {
       ...mocks,
       libnpmaccess: {
         async lsPackages () {
@@ -418,7 +417,7 @@ t.test('completion', t => {
   })
 
   t.test('no packages retrieved', async t => {
-    const { completion } = requireInject('../../lib/unpublish.js', {
+    const { completion } = t.mock('../../lib/unpublish.js', {
       ...mocks,
       libnpmaccess: {
         async lsPackages () {
@@ -437,7 +436,7 @@ t.test('completion', t => {
   })
 
   t.test('no pkg name to complete', async t => {
-    const { completion } = requireInject('../../lib/unpublish.js', {
+    const { completion } = t.mock('../../lib/unpublish.js', {
       ...mocks,
       libnpmaccess: {
         async lsPackages () {
@@ -459,7 +458,7 @@ t.test('completion', t => {
   })
 
   t.test('no pkg names retrieved from user account', async t => {
-    const { completion } = requireInject('../../lib/unpublish.js', {
+    const { completion } = t.mock('../../lib/unpublish.js', {
       ...mocks,
       libnpmaccess: {
         async lsPackages () {
@@ -478,7 +477,7 @@ t.test('completion', t => {
   })
 
   t.test('logged out user', async t => {
-    const { completion } = requireInject('../../lib/unpublish.js', {
+    const { completion } = t.mock('../../lib/unpublish.js', {
       ...mocks,
       '../../lib/utils/get-identity.js': () => Promise.reject(new Error('ERR')),
     })
@@ -492,7 +491,7 @@ t.test('completion', t => {
   })
 
   t.test('too many args', async t => {
-    const { completion } = requireInject('../../lib/unpublish.js', mocks)
+    const { completion } = t.mock('../../lib/unpublish.js', mocks)
 
     await testComp(t, {
       completion,

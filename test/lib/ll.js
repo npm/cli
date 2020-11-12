@@ -1,8 +1,7 @@
 const t = require('tap')
-const requireInject = require('require-inject')
 const configs = {}
 let lsCalled = false
-const ll = requireInject('../../lib/ll.js', {
+const ll = t.mock('../../lib/ll.js', {
   '../../lib/npm.js': {
     config: {
       set: (k, v) => {
