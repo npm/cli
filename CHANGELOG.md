@@ -1,3 +1,48 @@
+## 7.0.11 (2020-11-13)
+
+### DEPENDENCIES
+
+* [`629a667a9`](https://github.com/npm/cli/commit/629a667a9b30b0b870075da965606979622a5e2e)
+  `eslint@7.13.0`
+* [`de9891bd2`](https://github.com/npm/cli/commit/de9891bd2a16fe890ff5cfb140c7b1209aeac0de)
+  `eslint-plugin-standard@4.1.0`
+* [`c3e7aa31c`](https://github.com/npm/cli/commit/c3e7aa31c565dfe21cd1f55a8433bfbcf58aa289)
+  [#2123](https://github.com/npm/cli/issues/2123)
+  [#1957](https://github.com/npm/cli/issues/1957)
+  `@npmcli/arborist@1.0.11`
+
+### BUG FIXES
+
+* [`a8aa38513`](https://github.com/npm/cli/commit/a8aa38513ad5c4ad44e6bb3e1499bfc40c31e213)
+  [#2134](https://github.com/npm/cli/issues/2134)
+  [#2156](https://github.com/npm/cli/issues/2156)
+  Fix `cannot read property length of undefined` in `ERESOLVE` explanation code
+  ([@isaacs](https://github.com/isaacs))
+* [`1dbf0f9bb`](https://github.com/npm/cli/commit/1dbf0f9bb26ba70f4c6d0a807701d7652c31d7d4)
+  [#2150](https://github.com/npm/cli/issues/2150)
+  [#2155](https://github.com/npm/cli/issues/2155)
+  send json errors to stderr, not stdout
+  ([@isaacs](https://github.com/isaacs))
+* [`fd1d7a21b`](https://github.com/npm/cli/commit/fd1d7a21b247bb35d112c51ff8d8a06fd83c8b44)
+  [#1927](https://github.com/npm/cli/issues/1927)
+  [#2154](https://github.com/npm/cli/issues/2154)
+  Set process.title a bit more usefully
+  ([@isaacs](https://github.com/isaacs))
+* [`2a80c67ef`](https://github.com/npm/cli/commit/2a80c67ef8c12c3d9d254f5be6293a6461067d99)
+  [#2008](https://github.com/npm/cli/issues/2008)
+  [#2153](https://github.com/npm/cli/issues/2153)
+  Support legacy auth tokens for registries that use them
+  ([@ruyadorno](https://github.com/ruyadorno))
+* [`786e36404`](https://github.com/npm/cli/commit/786e36404068fd51657ddac766e066a98754edbf)
+  [#2017](https://github.com/npm/cli/issues/2017)
+  [#2159](https://github.com/npm/cli/issues/2159)
+  pass all options to Arborist for `npm ci`
+  ([@darcyclarke](https://github.com/darcyclarke))
+* [`b47ada7d1`](https://github.com/npm/cli/commit/b47ada7d1623e9ee586ee0cf781ee3ac5ea3c223)
+  [#2161](https://github.com/npm/cli/issues/2161)
+  fixed typo
+  ([@scarabedore](https://github.com/scarabedore))
+
 ## 7.0.10 (2020-11-10)
 
 ### DOCUMENTATION
