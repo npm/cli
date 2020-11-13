@@ -60,6 +60,7 @@ const _rollbackRetireShallowNodes = Symbol.for('rollbackRetireShallowNodes')
 const _rollbackCreateSparseTree = Symbol.for('rollbackCreateSparseTree')
 const _rollbackMoveBackRetiredUnchanged = Symbol.for('rollbackMoveBackRetiredUnchanged')
 const _saveIdealTree = Symbol.for('saveIdealTree')
+const _saveLockFile = Symbol('saveLockFile')
 const _copyIdealToActual = Symbol('copyIdealToActual')
 const _addOmitsToTrashList = Symbol('addOmitsToTrashList')
 const _packageLockOnly = Symbol('packageLockOnly')
@@ -438,23 +439,29 @@ module.exports = cls => class Reifier extends cls {
       this.log.warn('deprecated', `${_id}: ${deprecated}`)
   }
 
-  [_loadAncientPackageDetails] (node) {
+  async [_loadAncientPackageDetails] (node, forceReload = false) {
     // If we're loading from a v1 lockfile, load details from the package.json
     // that weren't recorded in the old format.
     const {meta} = this.idealTree
     const ancient = meta.ancientLockfile
     const old = meta.loadedFromDisk && !(meta.originalLockfileVersion >= 2)
+
     // already replaced with the manifest if it's truly ancient
-    if (old && !ancient) {
+    if (node.path && (forceReload || (old && !ancient))) {
       // XXX should have a shared location where package.json is read,
       // so we don't ever read the same pj more than necessary.
-      return rpj(node.path + '/package.json').then(pkg => {
+      let pkg
+      try {
+        pkg = await rpj(node.path + '/package.json')
+      } catch (err) {}
+
+      if (pkg) {
         node.package.bin = pkg.bin
         node.package.os = pkg.os
         node.package.cpu = pkg.cpu
         node.package.engines = pkg.engines
         meta.add(node)
-      })
+      }
     }
   }
 
@@ -841,10 +848,26 @@ module.exports = cls => class Reifier extends cls {
       format: (this[_formatPackageLock] && format) ? format
       : this[_formatPackageLock],
     }
+
     return Promise.all([
-      this[_usePackageLock] && this.idealTree.meta.save(saveOpt),
+      this[_saveLockFile](saveOpt),
       writeFile(pj, json),
     ]).then(() => process.emit('timeEnd', 'reify:save'))
+  }
+
+  async [_saveLockFile] (saveOpt) {
+    if (!this[_usePackageLock])
+      return
+
+    const { meta } = this.idealTree
+
+    // might have to update metadata for bins and stuff that gets lost
+    if (meta.loadedFromDisk && !(meta.originalLockfileVersion >= 2)) {
+      for (const node of this.idealTree.inventory.values())
+        await this[_loadAncientPackageDetails](node, true)
+    }
+
+    return meta.save(saveOpt)
   }
 
   [_copyIdealToActual] () {

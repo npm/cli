@@ -35,6 +35,7 @@ const {normalize} = require('read-package-json-fast')
 const {getPaths: getBinPaths} = require('bin-links')
 const npa = require('npm-package-arg')
 const debug = require('./debug.js')
+const gatherDepSet = require('./gather-dep-set.js')
 
 const {resolve, relative, dirname, basename} = require('path')
 const _package = Symbol('_package')
@@ -640,8 +641,14 @@ class Node {
     if (node.name !== this.name)
       return false
 
+    // gather up all the deps of this node and that are only depended
+    // upon by deps of this node.  those ones don't count, since
+    // they'll be replaced if this node is replaced anyway.
+    const depSet = gatherDepSet([this], e => e.to !== this && e.valid)
+
     for (const edge of this.edgesIn) {
-      if (!edge.satisfiedBy(node))
+      // only care about edges that don't originate from this node
+      if (!depSet.has(edge.from) && !edge.satisfiedBy(node))
         return false
     }
 
