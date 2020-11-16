@@ -1,7 +1,7 @@
 blank_issues_enabled: true
 contact_links:
   - name: ⭐️ Feature Request
-    url: https://github.com/npm/rfcs/discussions/category_choices
+    url: https://github.com/npm/feedback
     about: Add your request or discuss the project w/ the community
   - name: 📃 RFC
     url: https://github.com/npm/rfcs
