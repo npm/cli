@@ -5,7 +5,7 @@ const audit = require('../../lib/audit.js')
 t.test('should audit using Arborist', t => {
   let ARB_ARGS = null
   let AUDIT_CALLED = false
-  let REIFY_OUTPUT_CALLED = false
+  let REIFY_FINISH_CALLED = false
   let AUDIT_REPORT_CALLED = false
   let OUTPUT_CALLED = false
   let ARB_OBJ = null
@@ -32,11 +32,11 @@ t.test('should audit using Arborist', t => {
         this.auditReport = {}
       }
     },
-    '../../lib/utils/reify-output.js': arb => {
+    '../../lib/utils/reify-finish.js': arb => {
       if (arb !== ARB_OBJ) {
         throw new Error('got wrong object passed to reify-output')
       }
-      REIFY_OUTPUT_CALLED = true
+      REIFY_FINISH_CALLED = true
     },
     '../../lib/utils/output.js': () => {
       OUTPUT_CALLED = true
@@ -55,7 +55,7 @@ t.test('should audit using Arborist', t => {
 
   t.test('audit fix', t => {
     audit(['fix'], () => {
-      t.equal(REIFY_OUTPUT_CALLED, true, 'called reify output')
+      t.equal(REIFY_FINISH_CALLED, true, 'called reify output')
       t.end()
     })
   })
