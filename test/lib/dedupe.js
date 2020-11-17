@@ -18,11 +18,13 @@ test('should remove dupes using Arborist', (t) => {
         t.ok(true, 'dedupe is called')
       }
     },
-    '../../lib/utils/reify-output.js': (arb) => {
+    '../../lib/utils/reify-finish.js': (arb) => {
       t.ok(arb, 'gets arborist tree')
     }
   })
-  dedupe({ dryRun: true }, () => {
+  dedupe({ dryRun: true }, er => {
+    if (er)
+      throw er
     t.ok(true, 'callback is called')
     t.end()
   })

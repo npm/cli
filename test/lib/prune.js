@@ -17,11 +17,13 @@ test('should prune using Arborist', (t) => {
         t.ok(true, 'prune is called')
       }
     },
-    '../../lib/utils/reify-output.js': (arb) => {
+    '../../lib/utils/reify-finish.js': (arb) => {
       t.ok(arb, 'gets arborist tree')
     }
   })
-  prune(null, () => {
+  prune(null, er => {
+    if (er)
+      throw er
     t.ok(true, 'callback is called')
     t.end()
   })
