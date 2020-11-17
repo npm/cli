@@ -1,5 +1,4 @@
 const { test } = require('tap')
-const dedupe = require('../../lib/dedupe.js')
 const requireInject = require('require-inject')
 
 test('should remove dupes using Arborist', (t) => {
@@ -7,8 +6,8 @@ test('should remove dupes using Arborist', (t) => {
     '../../lib/npm.js': {
       prefix: 'foo',
       flatOptions: {
-        'dryRun': 'false'
-      }
+        dryRun: 'false',
+      },
     },
     '@npmcli/arborist': function (args) {
       t.ok(args, 'gets options object')
@@ -20,7 +19,7 @@ test('should remove dupes using Arborist', (t) => {
     },
     '../../lib/utils/reify-finish.js': (arb) => {
       t.ok(arb, 'gets arborist tree')
-    }
+    },
   })
   dedupe({ dryRun: true }, er => {
     if (er)
@@ -35,17 +34,16 @@ test('should remove dupes using Arborist - no arguments', (t) => {
     '../../lib/npm.js': {
       prefix: 'foo',
       flatOptions: {
-        'dryRun': 'true'
-      }
+        dryRun: 'true',
+      },
     },
     '@npmcli/arborist': function (args) {
       t.ok(args.dryRun, 'gets dryRun from flatOptions')
       this.dedupe = () => {}
     },
-    '../../lib/utils/reify-output.js': () => {}
+    '../../lib/utils/reify-output.js': () => {},
   })
   dedupe(null, () => {
     t.end()
   })
 })
-
