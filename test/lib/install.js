@@ -33,15 +33,17 @@ test('should install using Arborist', (t) => {
         REIFY_CALLED = true
       }
     },
-    '../../lib/utils/reify-output.js': arb => {
+    '../../lib/utils/reify-finish.js': arb => {
       if (arb !== ARB_OBJ) {
-        throw new Error('got wrong object passed to reify-output')
+        throw new Error('got wrong object passed to reify-finish')
       }
     }
   })
 
   t.test('with args', t => {
-    install(['fizzbuzz'], () => {
+    install(['fizzbuzz'], er => {
+      if (er)
+        throw er
       t.match(ARB_ARGS, { global: false, path: 'foo' })
       t.equal(REIFY_CALLED, true, 'called reify')
       t.strictSame(SCRIPTS, [], 'no scripts when adding dep')
@@ -50,7 +52,9 @@ test('should install using Arborist', (t) => {
   })
 
   t.test('just a local npm install', t => {
-    install([], () => {
+    install([], er => {
+      if (er)
+        throw er
       t.match(ARB_ARGS, { global: false, path: 'foo' })
       t.equal(REIFY_CALLED, true, 'called reify')
       t.strictSame(SCRIPTS, [
@@ -71,6 +75,7 @@ test('should install using Arborist', (t) => {
 
 test('should install globally using Arborist', (t) => {
   const install = requireInject('../../lib/install.js', {
+    '../../lib/utils/reify-finish.js': async () => {},
     '../../lib/npm.js': {
       globalDir: 'path/to/node_modules/',
       prefix: 'foo',
@@ -85,13 +90,16 @@ test('should install globally using Arborist', (t) => {
       this.reify = () => {}
     },
   })
-  install([], () => {
+  install([], er => {
+    if (er)
+      throw er
     t.end()
   })
 })
 
 test('completion to folder', (t) => {
   const install = requireInject('../../lib/install.js', {
+    '../../lib/utils/reify-finish.js': async () => {},
     'util': {
       'promisify': (fn) => fn
     },
@@ -117,6 +125,7 @@ test('completion to folder', (t) => {
 
 test('completion to folder - invalid dir', (t) => {
   const install = requireInject('../../lib/install.js', {
+    '../../lib/utils/reify-finish.js': async () => {},
     'util': {
       'promisify': (fn) => fn
     },
@@ -137,6 +146,7 @@ test('completion to folder - invalid dir', (t) => {
 
 test('completion to folder - no matches', (t) => {
   const install = requireInject('../../lib/install.js', {
+    '../../lib/utils/reify-finish.js': async () => {},
     'util': {
       'promisify': (fn) => fn
     },
@@ -157,6 +167,7 @@ test('completion to folder - no matches', (t) => {
 
 test('completion to folder - match is not a package', (t) => {
   const install = requireInject('../../lib/install.js', {
+    '../../lib/utils/reify-finish.js': async () => {},
     'util': {
       'promisify': (fn) => fn
     },

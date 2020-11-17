@@ -15,6 +15,7 @@ test('should use Arborist', (t) => {
         global: false
       }
     },
+    '../../lib/utils/reify-finish.js': async () => {},
     '@npmcli/arborist': function (args) {
       t.ok(args, 'gets options object')
       this.loadVirtual = () => {
@@ -37,7 +38,9 @@ test('should use Arborist', (t) => {
       t.ok(arb, 'gets arborist tree')
     }
   })
-  ci(null, () => {
+  ci(null, er => {
+    if (er)
+      throw er
     t.end()
   })
 })
@@ -50,6 +53,7 @@ test('should pass flatOptions to Arborist.reify', (t) => {
         production: true
       }
     },
+    '../../lib/utils/reify-finish.js': async () => {},
     '@npmcli/arborist': function () {
       this.loadVirtual = () => Promise.resolve(true)
       this.reify = async (options) => {
@@ -58,7 +62,10 @@ test('should pass flatOptions to Arborist.reify', (t) => {
       }
     }
   })
-  ci(null, () => {})
+  ci(null, er => {
+    if (er)
+      throw er
+  })
 })
 
 test('should throw if package-lock.json or npm-shrinkwrap missing', (t) => {
@@ -74,6 +81,7 @@ test('should throw if package-lock.json or npm-shrinkwrap missing', (t) => {
         global: false
       }
     },
+    '../../lib/utils/reify-finish.js': async () => {},
     'npmlog': {
       verbose: () => {
         t.ok(true, 'log fn called')
@@ -94,7 +102,8 @@ test('should throw ECIGLOBAL', (t) => {
       flatOptions: {
         global: true
       }
-    }
+    },
+    '../../lib/utils/reify-finish.js': async () => {},
   })
   ci(null, (err, res) => {
     t.equals(err.code, 'ECIGLOBAL', 'throws error with global packages')
@@ -117,6 +126,7 @@ test('should remove existing node_modules before installing', (t) => {
         global: false
       }
     },
+    '../../lib/utils/reify-finish.js': async () => {},
     '@npmcli/arborist': function () {
       this.loadVirtual = () => Promise.resolve(true)
       this.reify = async (options) => {
@@ -130,5 +140,8 @@ test('should remove existing node_modules before installing', (t) => {
     }
   })
 
-  ci(null, () => {})
+  ci(null, er => {
+    if (er)
+      throw er
+  })
 })
