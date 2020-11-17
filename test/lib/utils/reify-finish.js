@@ -74,5 +74,7 @@ t.test('should write if everything above passes', async t => {
       inventory: new Map([['node_modules/npm', {path}]]),
     },
   })
-  t.matchSnapshot(fs.readFileSync(`${path}/npmrc`, 'utf8'), 'written config')
+  // windowwwwwwssss!!!!!
+  const data = fs.readFileSync(`${path}/npmrc`, 'utf8').replace(/\r\n/g, '\n')
+  t.matchSnapshot(data, 'written config')
 })
