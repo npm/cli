@@ -95,7 +95,7 @@ t.test('unstar a package', t => {
   })
 })
 
-t.test('unicode', { skip: process.platform === 'win32' && '*nix specific test' }, async t => {
+t.test('unicode', async t => {
   t.test('star a package', t => {
     npm.flatOptions.unicode = true
     npmFetch.json = async (uri, opts) => ({})
