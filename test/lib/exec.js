@@ -1,6 +1,8 @@
 const t = require('tap')
 const requireInject = require('require-inject')
 const { resolve, delimiter } = require('path')
+const OUTPUT = []
+const output = (...msg) => OUTPUT.push(msg)
 
 const ARB_CTOR = []
 const ARB_ACTUAL_TREE = {}
@@ -29,6 +31,7 @@ const npm = {
     call: '',
     package: [],
     legacyPeerDeps: false,
+    shell: 'shell-cmd',
   },
   localPrefix: 'local-prefix',
   localBin: 'local-bin',
@@ -91,6 +94,7 @@ const mocks = {
   pacote,
   read,
   'mkdirp-infer-owner': mkdirp,
+  '../../lib/utils/output.js': output,
 }
 const exec = requireInject('../../lib/exec.js', mocks)
 
@@ -123,7 +127,7 @@ t.test('npx foo, bin already exists locally', async t => {
   await exec(['foo'], er => {
     t.ifError(er, 'npm exec')
   })
-  t.strictSame(RUN_SCRIPTS, [{
+  t.match(RUN_SCRIPTS, [{
     pkg: { scripts: { npx: 'foo' }},
     banner: false,
     path: process.cwd(),
@@ -147,7 +151,7 @@ t.test('npx foo, bin already exists globally', async t => {
   await exec(['foo'], er => {
     t.ifError(er, 'npm exec')
   })
-  t.strictSame(RUN_SCRIPTS, [{
+  t.match(RUN_SCRIPTS, [{
     pkg: { scripts: { npx: 'foo' }},
     banner: false,
     path: process.cwd(),
@@ -184,6 +188,33 @@ t.test('npm exec foo, already present locally', async t => {
   t.equal(PROGRESS_ENABLED, true, 'progress re-enabled')
   t.match(RUN_SCRIPTS, [{
     pkg: { scripts: { npx: 'foo' } },
+    banner: false,
+    path: process.cwd(),
+    stdioString: true,
+    event: 'npx',
+    env: { PATH: process.env.PATH },
+    stdio: 'inherit',
+  }])
+})
+
+t.test('npm exec <noargs>, run interactive shell', async t => {
+  ARB_CTOR.length = 0
+  MKDIRPS.length = 0
+  ARB_REIFY.length = 0
+  OUTPUT.length = 0
+  await exec([], er => {
+    if (er)
+      throw er
+  })
+  t.strictSame(OUTPUT, [
+    ['\nEntering npm script environment\nType \'exit\' or ^D when finished\n'],
+  ], 'printed message about interactive shell')
+  t.strictSame(MKDIRPS, [], 'no need to make any dirs')
+  t.strictSame(ARB_CTOR, [], 'no need to instantiate arborist')
+  t.strictSame(ARB_REIFY, [], 'no need to reify anything')
+  t.equal(PROGRESS_ENABLED, true, 'progress re-enabled')
+  t.match(RUN_SCRIPTS, [{
+    pkg: { scripts: { npx: 'shell-cmd' } },
     banner: false,
     path: process.cwd(),
     stdioString: true,
