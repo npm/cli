@@ -18,7 +18,6 @@ npx -c '<cmd> [args...]'
 npx -p <pkg>[@<specifier>] -c '<cmd> [args...]'
 Run without --call or positional args to open interactive subshell
 
-
 alias: npm x, npx
 
 common options:
@@ -35,7 +34,8 @@ as running it via `npm run`.
 
 Run without positional arguments or `--call`, this allows you to
 interactively run commands in the same sort of shell environment that
-`package.json` scripts are run.
+`package.json` scripts are run.  Interactive mode is not supported in CI
+environments when standard input is a TTY, to prevent hangs.
 
 Whatever packages are specified by the `--package` option will be
 provided in the `PATH` of the executed command, along with any locally
