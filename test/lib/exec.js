@@ -198,30 +198,69 @@ t.test('npm exec foo, already present locally', async t => {
 })
 
 t.test('npm exec <noargs>, run interactive shell', async t => {
-  ARB_CTOR.length = 0
-  MKDIRPS.length = 0
-  ARB_REIFY.length = 0
-  OUTPUT.length = 0
-  await exec([], er => {
-    if (er)
-      throw er
+  CI_NAME = null
+  const { isTTY } = process.stdin
+  process.stdin.isTTY = true
+  t.teardown(() => process.stdin.isTTY = isTTY)
+
+  const run = async (t, doRun = true) => {
+    LOG_WARN.length = 0
+    ARB_CTOR.length = 0
+    MKDIRPS.length = 0
+    ARB_REIFY.length = 0
+    OUTPUT.length = 0
+    await exec([], er => {
+      if (er)
+        throw er
+    })
+    t.strictSame(MKDIRPS, [], 'no need to make any dirs')
+    t.strictSame(ARB_CTOR, [], 'no need to instantiate arborist')
+    t.strictSame(ARB_REIFY, [], 'no need to reify anything')
+    t.equal(PROGRESS_ENABLED, true, 'progress re-enabled')
+    if (doRun) {
+      t.match(RUN_SCRIPTS, [{
+        pkg: { scripts: { npx: 'shell-cmd' } },
+        banner: false,
+        path: process.cwd(),
+        stdioString: true,
+        event: 'npx',
+        env: { PATH: process.env.PATH },
+        stdio: 'inherit',
+      }])
+    } else
+      t.strictSame(RUN_SCRIPTS, [])
+    RUN_SCRIPTS.length = 0
+  }
+
+  t.test('print message when tty and not in CI', async t => {
+    CI_NAME = null
+    process.stdin.isTTY = true
+    await run(t)
+    t.strictSame(LOG_WARN, [])
+    t.strictSame(OUTPUT, [
+      ['\nEntering npm script environment\nType \'exit\' or ^D when finished\n'],
+    ], 'printed message about interactive shell')
   })
-  t.strictSame(OUTPUT, [
-    ['\nEntering npm script environment\nType \'exit\' or ^D when finished\n'],
-  ], 'printed message about interactive shell')
-  t.strictSame(MKDIRPS, [], 'no need to make any dirs')
-  t.strictSame(ARB_CTOR, [], 'no need to instantiate arborist')
-  t.strictSame(ARB_REIFY, [], 'no need to reify anything')
-  t.equal(PROGRESS_ENABLED, true, 'progress re-enabled')
-  t.match(RUN_SCRIPTS, [{
-    pkg: { scripts: { npx: 'shell-cmd' } },
-    banner: false,
-    path: process.cwd(),
-    stdioString: true,
-    event: 'npx',
-    env: { PATH: process.env.PATH },
-    stdio: 'inherit',
-  }])
+
+  t.test('no message when not TTY', async t => {
+    CI_NAME = null
+    process.stdin.isTTY = false
+    await run(t)
+    t.strictSame(LOG_WARN, [])
+    t.strictSame(OUTPUT, [], 'no message about interactive shell')
+  })
+
+  t.test('print warning when in CI and interactive', async t => {
+    CI_NAME = 'travis-ci'
+    process.stdin.isTTY = true
+    await run(t, false)
+    t.strictSame(LOG_WARN, [
+      ['exec', 'Interactive mode disabled in CI environment'],
+    ])
+    t.strictSame(OUTPUT, [], 'no message about interactive shell')
+  })
+
+  t.end()
 })
 
 t.test('npm exec foo, not present locally or in central loc', async t => {
