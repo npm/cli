@@ -22,6 +22,8 @@
 * [`518a66450`](https://github.com/npm/cli/commit/518a664500bcde30475788e8c1c3e651f23e881b)
   `@npmcli/config@1.2.4`:
     * Do not allow path options to be set to a boolean `false` value
+* [`3d7aff9d8`](https://github.com/npm/cli/commit/3d7aff9d8dd1cf29956aa306464cd44fbc2af426)
+  update all dependencies using latest npm to install them
 
 ### TESTS
 
