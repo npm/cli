@@ -58,7 +58,6 @@
     "cli-columns": "^3.1.2",
     "cli-table3": "^0.6.0",
     "columnify": "~1.5.4",
-    "editor": "~1.0.0",
     "glob": "^7.1.4",
     "graceful-fs": "^4.2.3",
     "hosted-git-info": "^3.0.6",
