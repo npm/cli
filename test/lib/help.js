@@ -1,7 +1,6 @@
 const { test } = require('tap')
 const requireInject = require('require-inject')
 const { EventEmitter } = require('events')
-const path = require('path')
 
 let npmUsageArg = null
 const npmUsage = (arg) => {
