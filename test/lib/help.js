@@ -1,6 +1,7 @@
 const { test } = require('tap')
 const requireInject = require('require-inject')
 const { EventEmitter } = require('events')
+const path = require('path')
 
 let npmUsageArg = null
 const npmUsage = (arg) => {
@@ -210,7 +211,7 @@ test('npm help 1 install', t => {
     if (err)
       throw err
 
-    t.match(openUrlArg, /commands\/npm-install.html$/, 'attempts to open the correct url')
+    t.match(openUrlArg, /commands(\/|\\)npm-install.html$/, 'attempts to open the correct url')
     t.end()
   })
 })
@@ -233,7 +234,7 @@ test('npm help 5 install', t => {
     if (err)
       throw err
 
-    t.match(openUrlArg, /configuring-npm\/install.html$/, 'attempts to open the correct url')
+    t.match(openUrlArg, /configuring-npm(\/|\\)install.html$/, 'attempts to open the correct url')
     t.end()
   })
 })
@@ -255,7 +256,7 @@ test('npm help 7 config', t => {
     if (err)
       throw err
 
-    t.match(openUrlArg, /using-npm\/config.html$/, 'attempts to open the correct url')
+    t.match(openUrlArg, /using-npm(\/|\\)config.html$/, 'attempts to open the correct url')
     t.end()
   })
 })
