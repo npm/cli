@@ -342,7 +342,7 @@ t.test('npm.load', t => {
           /Completed in [0-9]+ms/,
         ],
       ])
-      t.same(consoleLogs, [['@foo']])
+      t.same(consoleLogs, [['scope=@foo\n\u2010not-a-dash=undefined']])
     })
 
     // need this here or node 10 will improperly end the promise ahead of time
