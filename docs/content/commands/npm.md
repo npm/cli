@@ -143,6 +143,8 @@ the contributing guidelines and check the issues list.
 When you find issues, please report them:
 
 * web:
+  <https://github.com/npm/npm/issues>
+* archived web:
   <https://npm.community/c/bugs>
 
 Be sure to follow the template and bug reporting guidelines. You can also ask
