@@ -122,7 +122,7 @@ t.test('config list overrides', t => {
 
   config(['list'], (err) => {
     t.ifError(err, 'npm config list')
-    t.matchSnapshot(result, 'should list overriden configs')
+    t.matchSnapshot(result, 'should list overridden configs')
   })
 })
 
