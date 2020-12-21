@@ -223,7 +223,7 @@ module.exports = cls => class IdealTreeBuilder extends cls {
     return Promise.resolve()
       .then(() => {
         for (const node of this.idealTree.inventory.values()) {
-          if (!node.optional) {
+          if (!node.optional && !node.devOptional) {
             this[_checkEngine](node)
             this[_checkPlatform](node)
           }
