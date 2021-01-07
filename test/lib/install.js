@@ -82,7 +82,7 @@ test('should ignore scripts with --ignore-scripts', (t) => {
       prefix: 'foo',
       flatOptions: {
         global: false,
-        ignoreScripts: true
+        ignoreScripts: true,
       },
       config: {
         get: () => false,
