@@ -275,6 +275,7 @@
     "write-file-atomic"
   ],
   "devDependencies": {
+    "bl": "^3.0.1",
     "deep-equal": "^1.0.1",
     "get-stream": "^4.1.0",
     "licensee": "^7.0.3",

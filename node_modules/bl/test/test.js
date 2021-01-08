@@ -431,6 +431,22 @@ tape('test toString encoding', function (t) {
   t.end()
 })
 
+tape('uninitialized memory', function (t) {
+  const secret = crypto.randomBytes(256)
+  for (let i = 0; i < 1e6; i++) {
+    const clone = Buffer.from(secret)
+    const bl = new BufferList()
+    bl.append(Buffer.from('a'))
+    bl.consume(-1024)
+    const buf = bl.slice(1)
+    if (buf.indexOf(clone) !== -1) {
+      t.fail(`Match (at ${i})`)
+      break
+    }
+  }
+  t.end()
+})
+
 !process.browser && tape('test stream', function (t) {
   var random = crypto.randomBytes(65534)
     , rndhash = hash(random, 'md5')
