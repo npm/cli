@@ -329,7 +329,6 @@ t.test('throw if no registry', async t => {
     '../../lib/npm.js': {
       flatOptions: {
         json: false,
-        defaultTag: '0.0.13',
         registry: null,
       },
       config,
@@ -350,7 +349,6 @@ t.test('throw if not logged in', async t => {
     '../../lib/npm.js': {
       flatOptions: {
         json: false,
-        defaultTag: '0.0.13',
         registry: 'https://registry.npmjs.org/',
       },
       config: {
