@@ -39,14 +39,14 @@ the root of a project.
 The difference is that `package-lock.json` is that it cannot be published,
 and it will be ignored if found in any place other than the root project.
 
-In contrast, [npm-shrinkwrap.json](/configuring-npm/shrinkwrap-json) allows
+In contrast, [npm-shrinkwrap.json](/configuring-npm/npm-shrinkwrap-json) allows
 publication, and defines the dependency tree from the point encountered.
 This is not recommended unless deploying a CLI tool or otherwise using the
 publication process for producing production packages.
 
 If both `package-lock.json` and `npm-shrinkwrap.json` are present in the
-root of a project, `package-lock.json` will take precedence and
-`npm-shrinkwrap.json` will be ignored.
+root of a project, `npm-shrinkwrap.json` will take precedence and
+`package-lock.json` will be ignored.
 
 ### Hidden Lockfiles
 
@@ -231,7 +231,6 @@ Dependency objects have the following fields:
 ### See also
 
 * [npm shrinkwrap](/commands/npm-shrinkwrap)
-* [shrinkwrap.json](/configuring-npm/shrinkwrap-json)
-* [package-locks](/configuring-npm/package-locks)
+* [npm-shrinkwrap.json](/configuring-npm/npm-shrinkwrap-json)
 * [package.json](/configuring-npm/package-json)
 * [npm install](/commands/npm-install)
