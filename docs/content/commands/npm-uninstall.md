@@ -51,7 +51,7 @@ sax will no longer be in your `package.json`, `npm-shrinkwrap.json`, or
 npm uninstall lodash --no-save
 ```
 
-lodash will not be removed fromy your `package.json`,
+lodash will not be removed from your `package.json`,
 `npm-shrinkwrap.json`, or `package-lock.json` files.
 
 ### See Also
