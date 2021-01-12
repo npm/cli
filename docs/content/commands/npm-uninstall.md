@@ -7,7 +7,7 @@ description: Remove a package
 ### Synopsis
 
 ```bash
-npm uninstall [<@scope>/]<pkg>[@<version>]... [--save|--no-save]
+npm uninstall [<@scope>/]<pkg>[@<version>]... [-S|--save|--no-save]
 
 aliases: remove, rm, r, un, unlink
 ```
@@ -27,10 +27,10 @@ will update those files as well.
 `--no-save` will tell npm not to remove the package from your
 `package.json`, `npm-shrinkwrap.json`, or `package-lock.json` files.
 
-`--save` will tell npm to remove the package from your `package.json`,
-`npm-shrinkwrap.json`, and `package-lock.json` files.  This is the
-default, but you may need to use this if you have for instance
-`save=false` in your `npmrc` file
+`--save` or `-S` will tell npm to remove the package from your
+`package.json`, `npm-shrinkwrap.json`, and `package-lock.json` files.
+This is the default, but you may need to use this if you have for
+instance `save=false` in your `npmrc` file
 
 In global mode (ie, with `-g` or `--global` appended to the command),
 it uninstalls the current package context as a global package.
