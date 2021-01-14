@@ -44,7 +44,7 @@ Scope is optional and follows the usual rules for [`scope`](/using-npm/scope).
 npm uninstall sax
 ```
 
-sax will no longer be in your `package.json`, `npm-shrinkwrap.json`, or
+`sax` will no longer be in your `package.json`, `npm-shrinkwrap.json`, or
 `package-lock.json` files.
 
 ```bash
