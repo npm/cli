@@ -51,7 +51,7 @@ npm uninstall sax
 npm uninstall lodash --no-save
 ```
 
-lodash will not be removed from your `package.json`,
+`lodash` will not be removed from your `package.json`,
 `npm-shrinkwrap.json`, or `package-lock.json` files.
 
 ### See Also
