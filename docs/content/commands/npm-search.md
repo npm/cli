@@ -17,7 +17,8 @@ aliases: s, se, find
 Search the registry for packages matching the search terms. `npm search`
 performs a linear, incremental, lexically-ordered search through package
 metadata for all files in the registry. If your terminal has color
-enabled, it will further highlight the matches in the results.
+support, it will further highlight the matches in the results.  This can
+be disabled with the config item `color`
 
 Additionally, using the `--searchopts` and `--searchexclude` options
 paired with more search terms will include and exclude further patterns.
@@ -44,8 +45,13 @@ parameters to the cli prefixed with `--` (e.g. `--json`)
 * Default: true
 * Type: Boolean
 
-Used as `--no-description`, disables search matching in package descriptions and
-suppresses display of that field in results.
+#### color
+
+ * Default: true
+ * Type: Boolean
+
+Used as `--no-color`, disables color highlighting of matches in the
+results.
 
 #### json
 
