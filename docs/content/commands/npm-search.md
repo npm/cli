@@ -105,7 +105,7 @@ searching.
 
 The npm cli caches search results with the same terms and options
 locally in its cache. You can use the following to change how and when
-the cli uses this cache. See [npm cache](/commands/npm-cache) for more
+the cli uses this cache. See [`npm cache`](/commands/npm-cache) for more
 on how the cache works.
 
 #### prefer-online
