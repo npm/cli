@@ -1,3 +1,15 @@
+## v7.4.2 (2021-01-15)
+
+### DEPENDENCIES
+
+* [`e5ce6bbba`](https://github.com/npm/cli/commit/e5ce6bbbad82b85c8e74a4558503513e4f337476)
+  * `@npmcli/arborist@2.0.5`
+    * fix creating missing dirs when using --prefix and --global
+    * fix omit types of deps in global installs
+    * fix prioritizing npm-shrinkwrap.json over package-lock.json
+    * better cache system for packuments
+    * improves audit performance
+
 ## v7.4.1 (2021-01-14)
 
 ### BUG FIXES
