@@ -45,6 +45,7 @@
     "@npmcli/arborist": "^2.0.5",
     "@npmcli/ci-detect": "^1.2.0",
     "@npmcli/config": "^1.2.8",
+    "@npmcli/metavuln-calculator": "^1.0.1",
     "@npmcli/run-script": "^1.8.1",
     "abbrev": "~1.1.1",
     "ansicolors": "~0.3.2",
