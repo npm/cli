@@ -1,4 +1,4 @@
-npm(1) -- a JavaScript package manager
+npm - a JavaScript package manager
 ==============================
 
 [![Build Status](https://img.shields.io/travis/npm/cli/latest.svg)](https://travis-ci.org/npm/cli)
@@ -6,11 +6,9 @@ npm(1) -- a JavaScript package manager
 ## SYNOPSIS
 
 This is just enough info to get you up and running.
-
-Much more info will be available via `npm help` once it's installed.
+More info will be available via `npm help` once it's installed.
 
 ## IMPORTANT
-
 **You need node v6 or higher to run this program.**
 
 To install an old **and unsupported** version of npm that works on node v5
@@ -51,7 +49,7 @@ There's a pretty robust install script at
 Here's an example using curl:
 
 ```sh
-curl -L https://www.npmjs.com/install.sh | sh
+curl -fsSL https://www.npmjs.com/install.sh | sh
 ```
 
 ### Slightly Fancier
