@@ -16,7 +16,7 @@
   "author": "Isaac Z. Schlueter <i@izs.me> (http://blog.izs.me)",
   "repository": {
     "type": "git",
-    "url": "https://github.com/npm/cli"
+    "url": "git+https://github.com/npm/cli.git"
   },
   "bugs": {
     "url": "https://github.com/npm/cli/issues"
