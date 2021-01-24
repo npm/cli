@@ -61,5 +61,5 @@ jobs:
 
     # no need to check licenses everywhere, they don't change between versions
     - name: Validate licenses
-      if: matrix.os == 'ubuntu-latest' && matrix.node-version == '12.x'
+      if: matrix.platform.os == 'ubuntu-latest' && matrix.node-version == '12.x'
       run: node . run licenses
