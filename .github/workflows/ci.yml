@@ -9,14 +9,14 @@ jobs:
       matrix:
         node-version: [10.x, 12.x, 14.x]
         platform:
-        - os: ubuntu-latest
-          shell: bash
-        - os: macos-latest
-          shell: bash
-        - os: windows-latest
-          shell: bash
-        - os: windows-latest
-          shell: powershell
+          - os: ubuntu-latest
+            shell: bash
+          - os: macos-latest
+            shell: bash
+          - os: windows-latest
+            shell: bash
+          - os: windows-latest
+            shell: powershell
 
     runs-on: ${{ matrix.platform.os }}
     defaults:
@@ -24,42 +24,42 @@ jobs:
         shell: ${{ matrix.platform.shell }}
 
     steps:
-      # Checkout the npm/cli repo
-    - uses: actions/checkout@v2
+        # Checkout the npm/cli repo
+      - uses: actions/checkout@v2
 
-      # Installs the specific version of Node.js
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
+        # Installs the specific version of Node.js
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
 
-      # Run the installer script
-    - name: Install dependencies
-      run: |
-        node . install --ignore-scripts --no-audit
-        node . rebuild
+        # Run the installer script
+      - name: Install dependencies
+        run: |
+          node . install --ignore-scripts --no-audit
+          node . rebuild
 
-      # Run the tests, but not if we're just gonna do coveralls later anyway
-    - name: Run Tap tests
-      if: matrix.platform.os != 'ubuntu-latest' || matrix.node-version != '12.x'
-      run: node . test -- -t600 -Rbase -c
-      env:
-        DEPLOY_VERSION: testing
+        # Run the tests, but not if we're just gonna do coveralls later anyway
+      - name: Run Tap tests
+        if: matrix.platform.os != 'ubuntu-latest' || matrix.node-version != '12.x'
+        run: node . test -- -t600 -Rbase -c
+        env:
+          DEPLOY_VERSION: testing
 
-      # Run coverage check
-    - name: Run coverage report
-      if: matrix.platform.os == 'ubuntu-latest' && matrix.node-version == '12.x'
-      # turn off --check-coverage until 100%, so CI failure is relevant
-      run: node . run check-coverage -- -t600 --no-check-coverage -Rbase -c
-      env:
-        DEPLOY_VERSION: testing
-        COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_OPTIONAL_TOKEN }}
+        # Run coverage check
+      - name: Run coverage report
+        if: matrix.platform.os == 'ubuntu-latest' && matrix.node-version == '12.x'
+        # turn off --check-coverage until 100%, so CI failure is relevant
+        run: node . run check-coverage -- -t600 --no-check-coverage -Rbase -c
+        env:
+          DEPLOY_VERSION: testing
+          COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_OPTIONAL_TOKEN }}
 
-    # - name: Run sudo tests on Linux
-    #   if: matrix.os == 'ubuntu-latest'
-    #   run: sudo PATH=$PATH $(which node) . test -- --coverage  --timeout 600
+      # - name: Run sudo tests on Linux
+      #   if: matrix.os == 'ubuntu-latest'
+      #   run: sudo PATH=$PATH $(which node) . test -- --coverage  --timeout 600
 
-    # no need to check licenses everywhere, they don't change between versions
-    - name: Validate licenses
-      if: matrix.os == 'ubuntu-latest' && matrix.node-version == '12.x'
-      run: node . run licenses
+      # no need to check licenses everywhere, they don't change between versions
+      - name: Validate licenses
+        if: matrix.os == 'ubuntu-latest' && matrix.node-version == '12.x'
+        run: node . run licenses
