@@ -100,7 +100,7 @@ This scrubbing has been removed from npm as of version 7.
 #### Calculating Meta-Vulnerabilities and Remediations
 
 npm uses the
-[`@npmcli/metavuln-calculator`](http://npm.im/@npmcli/metavuln-calculator)
+[`@npmcli/metavuln-calculator`](https://npm.im/@npmcli/metavuln-calculator)
 module to turn a set of security advisories into a set of "vulnerability"
 objects.  A "meta-vulnerability" is a dependency that is vulnerable by
 virtue of dependence on vulnerable versions of a vulnerable package.

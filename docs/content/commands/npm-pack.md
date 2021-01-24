@@ -29,7 +29,7 @@ into the tarball, but nothing else.
 
 ### See Also
 
-* [npm-packlist package](http://npm.im/npm-packlist)
+* [npm-packlist package](https://npm.im/npm-packlist)
 * [npm cache](/commands/npm-cache)
 * [npm publish](/commands/npm-publish)
 * [npm config](/commands/npm-config)

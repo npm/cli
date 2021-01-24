@@ -40,7 +40,7 @@ Used to add, list, or clean the npm cache folder.
 
 npm stores cache data in an opaque directory within the configured `cache`,
 named `_cacache`. This directory is a
-[`cacache`](http://npm.im/cacache)-based content-addressable cache that
+[`cacache`](https://npm.im/cacache)-based content-addressable cache that
 stores all http request data as well as other package-related data. This
 directory is primarily accessed through `pacote`, the library responsible
 for all package fetching as of npm@5.

@@ -73,7 +73,7 @@ $ npm init -y
 
 ### See Also
 
-* [init-package-json module](http://npm.im/init-package-json)
+* [init-package-json module](https://npm.im/init-package-json)
 * [package.json](/configuring-npm/package-json)
 * [npm version](/commands/npm-version)
 * [npm scope](/using-npm/scope)
