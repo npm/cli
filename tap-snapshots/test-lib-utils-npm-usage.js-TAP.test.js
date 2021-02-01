@@ -37,7 +37,7 @@ or on the command line via: npm <command> --key=value
 More configuration info: npm help config
 Configuration fields: npm help 7 config
 
-npm@7.99.9999 {BASEDIR}
+npm@{VERSION} {BASEDIR}
 
 `
 
@@ -73,7 +73,7 @@ or on the command line via: npm <command> --key=value
 More configuration info: npm help config
 Configuration fields: npm help 7 config
 
-npm@7.99.9999 {BASEDIR}
+npm@{VERSION} {BASEDIR}
 
 `
 
@@ -116,7 +116,7 @@ or on the command line via: npm <command> --key=value
 More configuration info: npm help config
 Configuration fields: npm help 7 config
 
-npm@7.99.9999 {BASEDIR}
+npm@{VERSION} {BASEDIR}
 
 `
 
@@ -152,7 +152,7 @@ or on the command line via: npm <command> --key=value
 More configuration info: npm help config
 Configuration fields: npm help 7 config
 
-npm@7.99.9999 {BASEDIR}
+npm@{VERSION} {BASEDIR}
 
 `
 
@@ -188,7 +188,7 @@ or on the command line via: npm <command> --key=value
 More configuration info: npm help config
 Configuration fields: npm help 7 config
 
-npm@7.99.9999 {BASEDIR}
+npm@{VERSION} {BASEDIR}
 
 `
 
@@ -470,7 +470,7 @@ All commands:
     version         npm version [<newversion> | major | minor | patch | premajor | preminor | prepatch | prerelease [--preid=<prerelease-id>] | from-git]
                     (run in package dir)
                     
-                    'npm -v' or 'npm --version' to print npm version (7.5.0)
+                    'npm -v' or 'npm --version' to print npm version ({VERSION})
                     'npm view <pkg> version' to view a package's published version
                     'npm ls' to inspect current package/dependency versions
                     
@@ -490,6 +490,6 @@ or on the command line via: npm <command> --key=value
 More configuration info: npm help config
 Configuration fields: npm help 7 config
 
-npm@7.99.9999 {BASEDIR}
+npm@{VERSION} {BASEDIR}
 
 `

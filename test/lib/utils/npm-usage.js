@@ -20,7 +20,7 @@ const npm = {
     },
   },
   log: {},
-  version: '7.99.9999',
+  version: '{VERSION}',
 }
 
 const OUTPUT = []
@@ -29,6 +29,7 @@ const output = (...msg) => OUTPUT.push(msg)
 const { dirname } = require('path')
 const basedir = dirname(dirname(dirname(__dirname)))
 t.cleanSnapshot = str => str.split(basedir).join('{BASEDIR}')
+  .split(require('../../../package.json').version).join('{VERSION}')
 
 const requireInject = require('require-inject')
 const usage = requireInject('../../../lib/utils/npm-usage.js', {
