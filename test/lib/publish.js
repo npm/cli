@@ -323,26 +323,6 @@ t.test('can publish a tarball', t => {
   })
 })
 
-t.test('throw if no registry', async t => {
-  t.plan(1)
-  const publish = requireInject('../../lib/publish.js', {
-    '../../lib/npm.js': {
-      flatOptions: {
-        json: false,
-        registry: null,
-      },
-      config,
-    },
-  })
-
-  return publish([], (err) => {
-    t.match(err, {
-      message: 'No registry specified.',
-      code: 'ENOREGISTRY',
-    }, 'throws when registry unset')
-  })
-})
-
 t.test('throw if not logged in', async t => {
   t.plan(1)
   const publish = requireInject('../../lib/publish.js', {
