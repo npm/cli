@@ -61,7 +61,7 @@
     "graceful-fs": "^4.2.3",
     "hosted-git-info": "^3.0.8",
     "ini": "^2.0.0",
-    "init-package-json": "^2.0.1",
+    "init-package-json": "^2.0.2",
     "is-cidr": "^4.0.2",
     "json-parse-even-better-errors": "^2.3.1",
     "leven": "^3.1.0",
