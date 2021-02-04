@@ -8,11 +8,11 @@ const credentials = {
     email: 'me@example.com',
   },
   'https://scope.specific.registry': {
-    token: 'some.regsitry.token',
+    token: 'some.registry.token',
     alwaysAuth: false,
   },
   'https://some.registry': {
-    token: 'some.regsitry.token',
+    token: 'some.registry.token',
     alwaysAuth: false,
   },
   'https://registry.npmjs.org/': {
@@ -22,9 +22,6 @@ const credentials = {
 }
 const config = {
   list: [defaults],
-  getCredentialsByURI: (uri) => {
-    return credentials[uri]
-  },
 }
 
 const registryCredentials = (t, registry) => {
@@ -155,9 +152,10 @@ t.test('re-loads publishConfig if added during script process', (t) => {
   })
 })
 
-t.test('should not log if silent', (t) => {
+t.test('should not log if silent (dry run)', (t) => {
   t.plan(2)
 
+  const registry = 'https://registry.npmjs.org'
   const testDir = t.testdir({
     'package.json': JSON.stringify({
       name: 'my-cool-pkg',
@@ -171,9 +169,14 @@ t.test('should not log if silent', (t) => {
         json: false,
         defaultTag: 'latest',
         dryRun: true,
-        registry: 'https://registry.npmjs.org/',
+        registry,
       },
-      config,
+      config: {
+        ...config,
+        getCredentialsByURI: () => {
+          throw new Error('should not call getCredentialsByURI in dry run')
+        },
+      },
     },
     '../../lib/utils/tar.js': {
       getContents: () => ({}),
@@ -195,7 +198,7 @@ t.test('should not log if silent', (t) => {
     libnpmpack: async () => '',
     libnpmpublish: {
       publish: (manifest, tarData, opts) => {
-        throw new Error('should not call libnpmpublish!')
+        throw new Error('should not call libnpmpublish in dry run')
       },
     },
   })
@@ -207,8 +210,10 @@ t.test('should not log if silent', (t) => {
   })
 })
 
-t.test('should log tarball contents', (t) => {
+t.test('should log tarball contents (dry run)', (t) => {
   t.plan(3)
+
+  const registry = 'https://registry.npmjs.org'
   const testDir = t.testdir({
     'package.json': JSON.stringify({
       name: 'my-cool-pkg',
@@ -222,12 +227,12 @@ t.test('should log tarball contents', (t) => {
         json: false,
         defaultTag: 'latest',
         dryRun: true,
-        registry: 'https://registry.npmjs.org/',
+        registry,
       },
       config: {
         ...config,
         getCredentialsByURI: () => {
-          throw new Error('should not call getCredentialsByURI!')
+          throw new Error('should not call getCredentialsByURI in dry run')
         }},
     },
     '../../lib/utils/tar.js': {
@@ -247,7 +252,7 @@ t.test('should log tarball contents', (t) => {
     libnpmpack: async () => '',
     libnpmpublish: {
       publish: () => {
-        throw new Error('should not call libnpmpublish!')
+        throw new Error('should not call libnpmpublish in dry run')
       },
     },
   })
@@ -277,12 +282,15 @@ t.test('shows usage with wrong set of arguments', (t) => {
 
 t.test('throws when invalid tag', (t) => {
   t.plan(1)
+
+  const registry = 'https://registry.npmjs.org'
+
   const publish = requireInject('../../lib/publish.js', {
     '../../lib/npm.js': {
       flatOptions: {
         json: false,
         defaultTag: '0.0.13',
-        registry: 'https://registry.npmjs.org/',
+        registry,
       },
       config,
     },
@@ -296,7 +304,9 @@ t.test('throws when invalid tag', (t) => {
 })
 
 t.test('can publish a tarball', t => {
-  t.plan(3)
+  t.plan(4)
+
+  const registry = 'https://registry.npmjs.org/'
   const testDir = t.testdir({
     package: {
       'package.json': JSON.stringify({
@@ -322,9 +332,12 @@ t.test('can publish a tarball', t => {
       flatOptions: {
         json: true,
         defaultTag: 'latest',
-        registry: 'https://registry.npmjs.org/',
+        registry,
       },
-      config,
+      config: {
+        ...config,
+        getCredentialsByURI: registryCredentials(t, registry),
+      },
     },
     '../../lib/utils/tar.js': {
       getContents: () => ({
@@ -355,14 +368,19 @@ t.test('can publish a tarball', t => {
 })
 
 t.test('throw if not logged in', async t => {
-  t.plan(1)
+  t.plan(2)
+  const registry = 'https://unauthed.registry'
+
   const publish = requireInject('../../lib/publish.js', {
     '../../lib/npm.js': {
       flatOptions: {
         json: false,
-        registry: 'https://unauthed.registry',
+        registry,
       },
-      config,
+      config: {
+        ...config,
+        getCredentialsByURI: registryCredentials(t, registry),
+      },
     },
   })
 
@@ -375,9 +393,10 @@ t.test('throw if not logged in', async t => {
 })
 
 t.test('read registry only from publishConfig', t => {
-  t.plan(3)
+  t.plan(4)
 
-  const publishConfig = { registry: 'https://some.registry' }
+  const registry = 'https://some.registry'
+  const publishConfig = { registry }
   const testDir = t.testdir({
     'package.json': JSON.stringify({
       name: 'my-cool-pkg',
@@ -391,7 +410,10 @@ t.test('read registry only from publishConfig', t => {
       flatOptions: {
         json: false,
       },
-      config,
+      config: {
+        ...config,
+        getCredentialsByURI: registryCredentials(t, registry),
+      },
     },
     '../../lib/utils/tar.js': {
       getContents: () => ({
@@ -403,7 +425,7 @@ t.test('read registry only from publishConfig', t => {
     libnpmpublish: {
       publish: (manifest, tarData, opts) => {
         t.match(manifest, { name: 'my-cool-pkg', version: '1.0.0' }, 'gets manifest')
-        t.same(opts.registry, publishConfig.registry, 'publishConfig is passed through')
+        t.same(opts.registry, registry, 'publishConfig is passed through')
       },
     },
   })
