@@ -4,13 +4,29 @@ const requireInject = require('require-inject')
 // mock config
 const {defaults} = require('../../lib/utils/config.js')
 const credentials = {
-  token: 'asdfasdf',
-  alwaysAuth: false,
+  'https://unauthed.registry': {
+    email: 'me@example.com',
+  },
+  'https://scope.specific.registry': {
+    token: 'some.regsitry.token',
+    alwaysAuth: false,
+  },
+  'https://some.registry': {
+    token: 'some.regsitry.token',
+    alwaysAuth: false,
+  },
+  'https://registry.npmjs.org/': {
+    token: 'npmjs.registry.token',
+    alwaysAuth: false,
+  },
 }
 const config = {
   list: [defaults],
-  getCredentialsByURI: () => credentials,
+  getCredentialsByURI: (uri) => {
+    return credentials[uri]
+  },
 }
+
 const fs = require('fs')
 
 t.test('should publish with libnpmpublish, respecting publishConfig', (t) => {
@@ -329,14 +345,9 @@ t.test('throw if not logged in', async t => {
     '../../lib/npm.js': {
       flatOptions: {
         json: false,
-        registry: 'https://registry.npmjs.org/',
+        registry: 'https://unauthed.registry',
       },
-      config: {
-        ...config,
-        getCredentialsByURI: () => ({
-          email: 'me@example.com',
-        }),
-      },
+      config,
     },
   })
 
@@ -382,6 +393,50 @@ t.test('read registry only from publishConfig', t => {
     },
   })
 
+  return publish([testDir], (er) => {
+    if (er)
+      throw er
+    t.pass('got to callback')
+  })
+})
+
+t.test('should check auth for scope specific registry', t => {
+  const testDir = t.testdir({
+    'package.json': JSON.stringify({
+      name: '@npm/my-cool-pkg',
+      version: '1.0.0',
+    }, null, 2),
+  })
+
+  const registry = 'https://scope.specific.registry'
+  const publish = requireInject('../../lib/publish.js', {
+    '../../lib/npm.js': {
+      flatOptions: {
+        json: false,
+        '@npm:registry': registry,
+      },
+      config: {
+        ...config,
+        getCredentialsByURI: (uri) => {
+          t.same(uri, registry, 'gets credentials for scope specific registry')
+          return credentials[uri]
+        },
+      },
+    },
+    '../../lib/utils/tar.js': {
+      getContents: () => ({
+        id: 'someid',
+      }),
+      logTar: () => {},
+    },
+    '../../lib/utils/output.js': () => {},
+    '../../lib/utils/otplease.js': (opts, fn) => {
+      return Promise.resolve().then(() => fn(opts))
+    },
+    libnpmpublish: {
+      publish: () => '',
+    },
+  })
   return publish([testDir], (er) => {
     if (er)
       throw er
