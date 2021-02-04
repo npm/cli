@@ -27,12 +27,20 @@ const config = {
   },
 }
 
+const registryCredentials = (t, registry) => {
+  return (uri) => {
+    t.same(uri, registry, 'gets credentials for expected registry')
+    return credentials[uri]
+  }
+}
+
 const fs = require('fs')
 
 t.test('should publish with libnpmpublish, respecting publishConfig', (t) => {
-  t.plan(5)
+  t.plan(6)
 
-  const publishConfig = { registry: 'https://some.registry' }
+  const registry = 'https://some.registry'
+  const publishConfig = { registry }
   const testDir = t.testdir({
     'package.json': JSON.stringify({
       name: 'my-cool-pkg',
@@ -46,9 +54,12 @@ t.test('should publish with libnpmpublish, respecting publishConfig', (t) => {
       flatOptions: {
         json: true,
         defaultTag: 'latest',
-        registry: 'https://registry.npmjs.org',
+        registry,
       },
-      config,
+      config: {
+        ...config,
+        getCredentialsByURI: registryCredentials(t, registry),
+      },
     },
     '../../lib/utils/tar.js': {
       getContents: () => ({
@@ -87,8 +98,9 @@ t.test('should publish with libnpmpublish, respecting publishConfig', (t) => {
 })
 
 t.test('re-loads publishConfig if added during script process', (t) => {
-  t.plan(5)
-  const publishConfig = { registry: 'https://some.registry' }
+  t.plan(6)
+  const registry = 'https://some.registry'
+  const publishConfig = { registry }
   const testDir = t.testdir({
     'package.json': JSON.stringify({
       name: 'my-cool-pkg',
@@ -103,7 +115,10 @@ t.test('re-loads publishConfig if added during script process', (t) => {
         defaultTag: 'latest',
         registry: 'https://registry.npmjs.org/',
       },
-      config,
+      config: {
+        ...config,
+        getCredentialsByURI: registryCredentials(t, registry),
+      },
     },
     '../../lib/utils/tar.js': {
       getContents: () => ({
@@ -128,7 +143,7 @@ t.test('re-loads publishConfig if added during script process', (t) => {
         t.match(manifest, { name: 'my-cool-pkg', version: '1.0.0' }, 'gets manifest')
         t.isa(tarData, Buffer, 'tarData is a buffer')
         t.ok(opts, 'gets opts object')
-        t.same(opts.registry, publishConfig.registry, 'publishConfig is passed through')
+        t.same(opts.registry, registry, 'publishConfig is passed through')
       },
     },
   })
@@ -417,10 +432,7 @@ t.test('should check auth for scope specific registry', t => {
       },
       config: {
         ...config,
-        getCredentialsByURI: (uri) => {
-          t.same(uri, registry, 'gets credentials for scope specific registry')
-          return credentials[uri]
-        },
+        getCredentialsByURI: registryCredentials(t, registry),
       },
     },
     '../../lib/utils/tar.js': {
