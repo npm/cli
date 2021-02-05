@@ -76,9 +76,9 @@ The advantage of doing these things at `prepublish` time is that they can be don
 
 #### [`npm publish`](/commands/npm-publish)
 
-* `prepublishOnly`
-* `prepare`
 * `prepublish`
+* `prepare`
+* `prepublishOnly`
 * `publish`
 * `postpublish`
 
