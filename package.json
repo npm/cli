@@ -58,7 +58,7 @@
     "cli-table3": "^0.6.0",
     "columnify": "~1.5.4",
     "glob": "^7.1.4",
-    "graceful-fs": "^4.2.3",
+    "graceful-fs": "^4.2.5",
     "hosted-git-info": "^3.0.8",
     "ini": "^2.0.0",
     "init-package-json": "^2.0.2",
