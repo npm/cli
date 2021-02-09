@@ -155,7 +155,7 @@ located within the folder `./lib/` and changed lines of code within the
 
 #### diff
 
-* Type: Array&lt;String&gt;
+* Type: Array
 * Default: null
 
 Defines npm package specifiers to compare using the `npm diff` command.
