@@ -85,6 +85,7 @@
     "node-gyp": "^7.1.2",
     "nopt": "^5.0.0",
     "npm-audit-report": "^2.1.4",
+    "npm-install-checks": "^4.0.0",
     "npm-package-arg": "^8.1.0",
     "npm-pick-manifest": "^6.1.0",
     "npm-profile": "^5.0.2",
@@ -194,6 +195,7 @@
     "yaml": "^1.10.0"
   },
   "scripts": {
+    "preinstall": "node scripts/preinstall.js",
     "dumpconf": "env | grep npm | sort | uniq",
     "preversion": "bash scripts/update-authors.sh && git add AUTHORS && git commit -m \"update AUTHORS\" || true",
     "licenses": "licensee --production --errors-only",
