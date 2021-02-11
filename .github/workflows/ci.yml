@@ -3,20 +3,54 @@ name: Node CI
 on: [push, pull_request]
 
 jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout the npm/cli repo
+      - uses: actions/checkout@v2
+      - name: Use Node.js 14.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+      - name: Install dependencies
+        run: |
+          node . install --ignore-scripts --no-audit
+          node . rebuild
+      - name: Run linting
+        run: node . run posttest
+        env:
+          DEPLOY_VERSION: testing
+  
+  licenses:
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout the npm/cli repo
+      - uses: actions/checkout@v2
+      - name: Use Node.js 14.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+      - name: Install dependencies
+        run: |
+          node . install --ignore-scripts --no-audit
+          node . rebuild
+      - name: Run linting
+        run: node . run licenses
+
   build:
     strategy:
       fail-fast: false
       matrix:
         node-version: [10.x, 12.x, 14.x]
         platform:
-        - os: ubuntu-latest
-          shell: bash
-        - os: macos-latest
-          shell: bash
-        - os: windows-latest
-          shell: bash
-        - os: windows-latest
-          shell: powershell
+          - os: ubuntu-latest
+            shell: bash
+          - os: macos-latest
+            shell: bash
+          - os: windows-latest
+            shell: bash
+          - os: windows-latest
+            shell: powershell
 
     runs-on: ${{ matrix.platform.os }}
     defaults:
@@ -42,7 +76,7 @@ jobs:
       # Run the tests, but not if we're just gonna do coveralls later anyway
     - name: Run Tap tests
       if: matrix.platform.os != 'ubuntu-latest' || matrix.node-version != '12.x'
-      run: node . test -- -t600 -Rbase -c
+      run: node . run --ignore-scripts test -- -t600 -Rbase -c
       env:
         DEPLOY_VERSION: testing
 
@@ -58,8 +92,3 @@ jobs:
     # - name: Run sudo tests on Linux
     #   if: matrix.os == 'ubuntu-latest'
     #   run: sudo PATH=$PATH $(which node) . test -- --coverage  --timeout 600
-
-    # no need to check licenses everywhere, they don't change between versions
-    - name: Validate licenses
-      if: matrix.os == 'ubuntu-latest' && matrix.node-version == '12.x'
-      run: node . run licenses
