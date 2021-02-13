@@ -1,5 +1,8 @@
 blank_issues_enabled: true
 contact_links:
+  - name: 🐞 Bug v6
+    url: https://github.community/c/software-development/47
+    about: Find/file tickets with the community
   - name: ⭐️ Feature Request
     url: https://github.com/npm/feedback
     about: Add your request or discuss the project w/ the community
