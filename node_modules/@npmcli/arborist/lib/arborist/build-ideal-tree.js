@@ -1121,8 +1121,11 @@ This is a one-time fix-up, please be patient...
       // we don't like it.  always fail strictly, always allow forcibly or
       // in non-strict mode if it's not our fault.  don't warn here, because
       // we are going to warn again when we place the deps, if we end up
-      // overriding for something else.
-      if (conflictOK)
+      // overriding for something else.  If the thing that has this dep
+      // isn't also required, then there's a good chance we won't need it,
+      // so allow it for now and let it conflict if it turns out to actually
+      // be necessary for the installation.
+      if (conflictOK || !required.has(edge.from))
         continue
 
       // ok, it's the root, or we're in unforced strict mode, so this is bad
