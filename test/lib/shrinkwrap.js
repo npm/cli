@@ -52,7 +52,7 @@ t.test('no args', t => {
       t.deepEqual(
         args,
         { ...npm.flatOptions, path: npm.prefix },
-        'should call arborist contructor with expected args'
+        'should call arborist constructor with expected args'
       )
     }
 
@@ -102,7 +102,7 @@ t.test('no virtual tree', t => {
       t.deepEqual(
         args,
         { ...npm.flatOptions, path: npm.prefix },
-        'should call arborist contructor with expected args'
+        'should call arborist constructor with expected args'
       )
     }
 
@@ -156,7 +156,7 @@ t.test('existing package-json file', t => {
       t.deepEqual(
         args,
         { ...npm.flatOptions, path: npm.prefix },
-        'should call arborist contructor with expected args'
+        'should call arborist constructor with expected args'
       )
     }
 
@@ -217,7 +217,7 @@ t.test('update shrinkwrap file version', t => {
       t.deepEqual(
         args,
         { ...npm.flatOptions, path: npm.prefix },
-        'should call arborist contructor with expected args'
+        'should call arborist constructor with expected args'
       )
     }
 
@@ -270,7 +270,7 @@ t.test('update to date shrinkwrap file', t => {
       t.deepEqual(
         args,
         { ...npm.flatOptions, path: npm.prefix },
-        'should call arborist contructor with expected args'
+        'should call arborist constructor with expected args'
       )
     }
 
