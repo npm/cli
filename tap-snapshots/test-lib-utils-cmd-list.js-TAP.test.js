@@ -173,6 +173,14 @@ Object {
     "birthday",
     "help-search",
   ],
+  "shellouts": Array [
+    "exec",
+    "run-script",
+    "test",
+    "start",
+    "stop",
+    "restart",
+  ],
   "shorthands": Object {
     "c": "config",
     "cit": "install-ci-test",
