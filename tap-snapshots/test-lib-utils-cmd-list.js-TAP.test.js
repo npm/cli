@@ -180,6 +180,7 @@ Object {
     "start",
     "stop",
     "restart",
+    "birthday",
   ],
   "shorthands": Object {
     "c": "config",
