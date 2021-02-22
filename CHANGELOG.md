@@ -1,3 +1,29 @@
+## v7.5.6 (2021-02-22
+
+### BUG FIXES
+
+* [`4e58274ed`](https://github.com/npm/cli/commit/4e58274ed0fd2dd29d3c8d6c7c47f37a37dc0f0f)
+  [#2742](https://github.com/npm/cli/issues/2742)
+  Do not print error banner for shell proxy commands
+  ([@isaacs](https://github.com/isaacs))
+
+### DOCS
+
+* [`3c72ab441`](https://github.com/npm/cli/commit/3c72ab4412111c708736e3a7b8342150372a4af4)
+  [#2749](https://github.com/npm/cli/issues/2749)
+  Capitalize Package in a Heading
+  ([@MrBrain295](https://github.com/MrBrain295))
+
+### DEPENDENCIES
+
+* [`f3ae6ed0d`](https://github.com/npm/cli/commit/f3ae6ed0d25ce80868f59353ef71c09ac77b1cf5)
+  `read-package-json@3.0.1`, `read-package-json-fast@2.0.2`
+* [`9b311fe52`](https://github.com/npm/cli/commit/9b311fe522077c7f8a242b94b0e1dbe746992bef)
+  [#2736](https://github.com/npm/cli/issue/2736) `@npmcli/arborist@2.2.4`:
+  * Do not rely on underscore fields in `package.json` files
+  * Do not remove global packages when updating by name
+  * Keep `yarn.lock` and `package-lock.json` more in sync
+
 ## v7.5.5 (2021-02-22)
 
 ### BUG FIXES
