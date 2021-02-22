@@ -236,9 +236,9 @@ module.exports = cls => class Reifier extends cls {
     const actualOpt = this[_global] ? {
       ignoreMissing: true,
       global: true,
-      filter: (node, kid) => this[_explicitRequests].size === 0 || !node.isProjectRoot
-        ? true
-        : (node.edgesOut.has(kid) || this[_explicitRequests].has(kid)),
+      filter: (node, kid) =>
+        this[_explicitRequests].size === 0 || !node.isProjectRoot ? true
+        : (this.idealTree.edgesOut.has(kid) || this[_explicitRequests].has(kid)),
     } : { ignoreMissing: true }
 
     if (!this[_global]) {
