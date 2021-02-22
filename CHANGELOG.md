@@ -1,3 +1,85 @@
+## v7.5.5 (2021-02-22)
+
+### BUG FIXES
+* [`49c95375a`](https://github.com/npm/cli/commit/49c95375af49308e2db6ba28e91c65193754e091)
+  [#2688](https://github.com/npm/cli/issues/2688)
+  fix shrinkwrap in node v10.0
+  ([@ljharb](https://github.com/ljharb))
+* [`00afa3161`](https://github.com/npm/cli/commit/00afa316195f2db903146110a07ffdaec9bb6aa2)
+  [#2718](https://github.com/npm/cli/issues/2718)
+  restore the prefix on output from `npm version <inc>`
+  ([@nlf](https://github.com/nlf))
+* [`69e0c4e8c`](https://github.com/npm/cli/commit/69e0c4e8cd684c475a4450c40dfb32c995061aea)
+  [#2716](https://github.com/npm/cli/issues/2716)
+  throw an error when trying to dedupe in global mode
+  ([@nlf](https://github.com/nlf))
+* [`b018eb842`](https://github.com/npm/cli/commit/b018eb84266dc5a02274849135ca148cb59cc349)
+  [#2719](https://github.com/npm/cli/issues/2719)
+  obey silent loglevel in run-script
+  ([@wraithgar](https://github.com/wraithgar))
+
+### DEPENDENCIES
+* [`8c36697df`](https://github.com/npm/cli/commit/8c36697dfffe8b5e853fe889c9ead5578100c413)
+  `@npmcli/arborist@2.2.3`
+    * [#1875](https://github.com/npm/cli/issues/1875)
+      [arborist#230](https://github.com/npm/arborist/pull/230)
+      Set default advisory `severity`/`vulnerable_range` when missing from audit endpoint data
+      ([@isaacs](https://github.com/isaacs))
+    * [npm/arborist#231](https://github.com/npm/arborist/pull/231)
+      skip optional deps with mismatched platform or engine
+      ([@nlf](https://github.com/nlf))
+    * [#2251](https://github.com/npm/cli/issues/2251)
+      Unpack shrinkwrapped deps not already unpacked
+      ([@isaacs](https://github.com/isaacs),
+      [@nlf](https://github.com/nlf))
+    * [#2714](https://github.com/npm/cli/issues/2714)
+      Do not write package.json if nothing changed
+      ([@isaacs](https://github.com/isaacs))
+    * [npm/rfcs#324](https://github.com/npm/rfcs/issues/324)
+      Prefer peer over prod dep, if both specified
+      ([@isaacs](https://github.com/isaacs))
+    * [npm/arborist#236](https://github.com/npm/arborist/issues/236)
+      Fix additional peerOptional conflict cases
+      ([@isaacs](https://github.com/isaacs))
+* [`d865b101f`](https://github.com/npm/cli/commit/d865b101f72142619531311645479f0596a68a1a)
+  `libnpmpack@2.0.1`
+    * respect silent loglevel
+* [`e606953e5`](https://github.com/npm/cli/commit/e606953e5795803a7c4eddb4ea993735ef65ec95)
+  `libnpmversion@1.0.11`
+    * respect silent loglevel
+* [`9c51005a1`](https://github.com/npm/cli/commit/9c51005a19fd4c3e7cd4c987d2e39d1b763036bf)
+  `npm-package-arg@8.1.1`
+    * do a better job of detecting git specifiers like `git@github.com:npm/cli`
+* [`8b6bf0db4`](https://github.com/npm/cli/commit/8b6bf0db49a3378bd85a0d1ffdd19fbdd68a944a)
+  `pacote@11.2.7`
+    * respect silent loglevel
+    * fix INVALID_URL errors for certain git dependencies
+
+### TESTS
+* [`80c2ac995`](https://github.com/npm/cli/commit/80c2ac995170a05b26856a2b72fe9c8163b2c999)
+  [#2717](https://github.com/npm/cli/issues/2717)
+  refactor publish tests
+  ([@wraithgar](https://github.com/wraithgar))
+* [`9d81e0ceb`](https://github.com/npm/cli/commit/9d81e0ceba7d69e0651662508415ee3705bddfd9)
+  [#2729](https://github.com/npm/cli/issues/2729)
+  fix typo in shrinkwrap tests
+  ([@eltociear](https://github.com/eltociear))
+
+### DOCUMENTATION
+* [`e3de7befb`](https://github.com/npm/cli/commit/e3de7befb3a9e2fcb7aac5b740d09b3b7d99d724)
+  [#2685](https://github.com/npm/cli/issues/2685)
+  docs(readme): add note back about branding/origin
+  ([@darcyclarke](https://github.com/darcyclarke))
+* [`38d87e7c2`](https://github.com/npm/cli/commit/38d87e7c24aea13b0f1c1157aad58d9d15bf8e63)
+  [#2698](https://github.com/npm/cli/issues/2698)
+  mention nodenv in README.md
+  ([@RA80533](https://github.com/RA80533))
+* [`af4422cdb`](https://github.com/npm/cli/commit/af4422cdbc110f93203667efc08b16f7aa74ac2f)
+  [#2711](https://github.com/npm/cli/issues/2711)
+  validate that the docs can be parsed by mdx
+  ([@ethomson](https://github.com/ethomson))
+
+
 ## v7.5.4 (2021-02-12)
 
 ### BUG FIXES
