@@ -393,11 +393,10 @@ All commands:
 
     prefix          npm prefix [-g]
 
-    profile         npm profile disable-2fa
-                    
-                    
-                    common options: npm profile get [<key>]
-                    
+    profile         npm profile enable-2fa [auth-only|auth-and-writes]
+                    npm profile disable-2fa
+                    npm profile get [<key>]
+                    npm profile set <key> <value>
 
     prune           npm prune [[<@scope>/]<pkg>...] [--production]
 
