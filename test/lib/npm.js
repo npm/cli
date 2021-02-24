@@ -16,7 +16,7 @@ for (const env of Object.keys(process.env).filter(e => /^npm_/.test(e))) {
         'should match "npm test" or "npm run test"'
       )
     } else
-      t.match(process.env[env], 'run-script')
+      t.match(process.env[env], /^(run)|(run-script)|(exec)$/)
   }
   delete process.env[env]
 }
@@ -310,10 +310,10 @@ t.test('npm.load', t => {
       if (er)
         throw er
 
-      t.same(consoleLogs, [[require('../../lib/ls.js').usage]], 'print usage')
+      t.same(consoleLogs, [[npm.commands.ll.usage]], 'print usage')
       consoleLogs.length = 0
       npm.config.set('usage', false)
-      t.equal(npm.commands.ll, npm.commands.la, 'same command, different name')
+      t.equal(npm.commands.ll, npm.commands.ll, 'same command, different name')
       logs.length = 0
     })
 
@@ -352,13 +352,15 @@ t.test('npm.load', t => {
 t.test('loading as main will load the cli', t => {
   const { spawn } = require('child_process')
   const npm = require.resolve('../../lib/npm.js')
+  const LS = require('../../lib/ls.js')
+  const ls = new LS({})
   const p = spawn(process.execPath, [npm, 'ls', '-h'])
   const out = []
   p.stdout.on('data', c => out.push(c))
   p.on('close', (code, signal) => {
     t.equal(code, 0)
     t.equal(signal, null)
-    t.equal(Buffer.concat(out).toString().trim(), require('../../lib/ls.js').usage)
+    t.equal(Buffer.concat(out).toString().trim(), ls.usage)
     t.end()
   })
 })
