@@ -487,7 +487,7 @@ test('node versions', t => {
         const dir = st.testdir({
           cache: {
             one: 'one',
-            link: st.fixture('symlink', './one'),
+            link: st.fixture('symlink', './baddir'),
             unreadable: 'unreadable',
             baddir: {},
           },

@@ -1,5 +1,4 @@
 const t = require('tap')
-const fs = require('fs')
 
 // delete this so that we don't have configs from the fact that it
 // is being run by 'npm test'
@@ -21,7 +20,7 @@ for (const env of Object.keys(process.env).filter(e => /^npm_/.test(e))) {
   delete process.env[env]
 }
 
-const { resolve } = require('path')
+const { resolve, dirname } = require('path')
 
 const actualPlatform = process.platform
 
@@ -249,13 +248,11 @@ t.test('npm.load', t => {
     const node = actualPlatform === 'win32' ? 'node.exe' : 'node'
     const dir = t.testdir({
       '.npmrc': 'foo = bar',
+      bin: t.fixture('symlink', dirname(process.execPath)),
     })
 
-    // create manually to set the 'file' option in windows
-    fs.symlinkSync(process.execPath, resolve(dir, node), 'file')
-
     const PATH = process.env.PATH || process.env.Path
-    process.env.PATH = dir
+    process.env.PATH = resolve(dir, 'bin')
     const { execPath, argv: processArgv } = process
     process.argv = [
       node,
@@ -294,7 +291,7 @@ t.test('npm.load', t => {
         [
           'verbose',
           'node symlink',
-          resolve(dir, node),
+          resolve(dir, 'bin', node),
         ],
         [
           'timing',
@@ -303,7 +300,7 @@ t.test('npm.load', t => {
         ],
       ])
       logs.length = 0
-      t.equal(process.execPath, resolve(dir, node))
+      t.equal(process.execPath, resolve(dir, 'bin', node))
     })
 
     await npm.commands.ll([], (er) => {
