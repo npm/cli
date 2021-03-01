@@ -6,7 +6,12 @@ let readLocalPkgResponse = null
 
 const noop = () => null
 
-const npm = { flatOptions: {} }
+const npm = {
+  flatOptions: {},
+  output: (msg) => {
+    result = result ? `${result}\n${msg}` : msg
+  },
+}
 const npmFetch = { json: noop }
 const npmlog = { error: noop, info: noop, verbose: noop }
 const pacote = { packument: noop }
@@ -15,9 +20,6 @@ const mocks = {
   npmlog,
   'npm-registry-fetch': npmFetch,
   pacote,
-  '../../lib/utils/output.js': (...msg) => {
-    result += msg.join('\n')
-  },
   '../../lib/utils/otplease.js': async (opts, fn) => fn({ otp: '123456', opts }),
   '../../lib/utils/read-local-package.js': async () => readLocalPkgResponse,
   '../../lib/utils/usage.js': () => 'usage instructions',
