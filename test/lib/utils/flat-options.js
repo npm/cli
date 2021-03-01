@@ -150,9 +150,6 @@ t.test('basic', t => {
   // test the object is frozen
   generatedFlat.newField = 'asdf'
   t.equal(generatedFlat.newField, undefined, 'object is frozen')
-  const preExistingOpts = { flat: 'options' }
-  npm.flatOptions = preExistingOpts
-  t.equal(flatOptions(npm), preExistingOpts, 'use pre-existing npm.flatOptions')
   t.end()
 })
 
