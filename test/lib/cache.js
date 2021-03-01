@@ -8,9 +8,14 @@ const flatOptions = {
   force: false,
 }
 
+let outputOutput = []
+
 const npm = {
   flatOptions,
   cache: '/fake/path',
+  output: (msg) => {
+    outputOutput.push(msg)
+  },
 }
 
 let rimrafPath = ''
@@ -41,11 +46,6 @@ const pacote = {
   },
 }
 
-let outputOutput = []
-const output = (msg) => {
-  outputOutput.push(msg)
-}
-
 const cacacheVerifyStats = {
   keptSize: 100,
   verifiedContent: 1,
@@ -63,7 +63,6 @@ const Cache = requireInject('../../lib/cache.js', {
   npmlog,
   pacote,
   rimraf,
-  '../../lib/utils/output.js': output,
   '../../lib/utils/usage.js': usageUtil,
 })
 

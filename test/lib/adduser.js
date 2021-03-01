@@ -61,6 +61,9 @@ const npm = {
     },
     setCredentialsByURI,
   },
+  output: msg => {
+    result = msg
+  },
 }
 
 const AddUser = requireInject('../../lib/adduser.js', {
@@ -69,9 +72,6 @@ const AddUser = requireInject('../../lib/adduser.js', {
     notice: (_, msg) => {
       registryOutput = msg
     },
-  },
-  '../../lib/utils/output.js': msg => {
-    result = msg
   },
   '../../lib/auth/legacy.js': authDummy,
 })

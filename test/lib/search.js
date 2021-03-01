@@ -12,7 +12,12 @@ const flatOptions = {
     opts: '',
   },
 }
-const npm = { flatOptions: { ...flatOptions } }
+const npm = {
+  flatOptions: { ...flatOptions },
+  output: (...msg) => {
+    result += msg.join('\n')
+  },
+}
 const npmlog = {
   silly () {},
   clearProgress () {},
@@ -23,9 +28,6 @@ const libnpmsearch = {
 const mocks = {
   npmlog,
   libnpmsearch,
-  '../../lib/utils/output.js': (...msg) => {
-    result += msg.join('\n')
-  },
   '../../lib/utils/usage.js': () => 'usage instructions',
   // '../../lib/search/format-package-stream.js': a => a,
 }
