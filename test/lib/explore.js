@@ -55,9 +55,6 @@ const getExplore = (windows) => {
     },
     'read-package-json-fast': mockRPJ,
     '@npmcli/run-script': mockRunScript,
-    '../../lib/utils/output.js': out => {
-      output.push(out)
-    },
   })
   const npm = {
     dir: windows ? 'c:\\npm\\dir' : '/npm/dir',
@@ -68,6 +65,9 @@ const getExplore = (windows) => {
     },
     flatOptions: {
       shell: 'shell-command',
+    },
+    output: out => {
+      output.push(out)
     },
   }
   return new Explore(npm)

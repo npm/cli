@@ -62,15 +62,15 @@ const npm = {
       return true
     },
   },
+  output: msg => {
+    result = msg
+  },
 }
 
 const usageUtil = () => 'usage instructions'
 
 const mocks = {
   '../../lib/utils/config.js': { defaults, types },
-  '../../lib/utils/output.js': msg => {
-    result = msg
-  },
   '../../lib/utils/usage.js': usageUtil,
 }
 
