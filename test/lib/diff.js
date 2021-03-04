@@ -951,12 +951,13 @@ t.test('first arg is a valid semver range', t => {
 
 t.test('first arg is an unknown dependency name', t => {
   t.test('second arg is a qualified spec', t => {
-    t.plan(3)
+    t.plan(4)
 
     libnpmdiff = async ([a, b], opts) => {
       t.equal(a, 'bar@latest', 'should set expected first spec')
       t.equal(b, 'bar@2.0.0', 'should set expected second spec')
       t.match(opts, npm.flatOptions, 'should forward flat options')
+      t.match(opts, { where: '.' }, 'should forward pacote options')
     }
 
     npm.flatOptions.diff = ['bar', 'bar@2.0.0']
