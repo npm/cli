@@ -338,7 +338,7 @@ t.test('usage if no pkg provided', t => {
   for (const args of noPkg) {
     t.test(JSON.stringify(args), t => {
       posixExplore.exec(args, er => {
-        t.equal(er, 'npm explore <pkg> [ -- <command>]')
+        t.match(er, 'Usage:')
         t.strictSame({
           ERROR_HANDLER_CALLED: null,
           RPJ_CALLED,

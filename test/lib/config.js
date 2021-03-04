@@ -180,12 +180,7 @@ t.test('config list --json', t => {
 
 t.test('config delete no args', t => {
   config.exec(['delete'], (err) => {
-    t.equal(
-      err.message,
-      'usage instructions',
-      'should throw usage error'
-    )
-    t.equal(err.code, 'EUSAGE', 'should throw expected error code')
+    t.match(err, { message: '\nUsage: usage instructions' })
     t.end()
   })
 })
@@ -265,11 +260,7 @@ t.test('config delete key --global', t => {
 
 t.test('config set no args', t => {
   config.exec(['set'], (err) => {
-    t.equal(
-      err.message,
-      'usage instructions',
-      'should throw usage error'
-    )
+    t.match(err, { message: '\nUsage: usage instructions' })
     t.end()
   })
 })
