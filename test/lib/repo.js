@@ -108,10 +108,9 @@ const pacote = {
 
 // keep a tally of which urls got opened
 const opened = {}
-const openUrl = async (npm, url, errMsg, cb) => {
+const openUrl = async (npm, url, errMsg) => {
   opened[url] = opened[url] || 0
   opened[url]++
-  process.nextTick(cb)
 }
 
 const Repo = requireInject('../../lib/repo.js', {

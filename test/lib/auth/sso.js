@@ -22,14 +22,12 @@ const sso = requireInject('../../../lib/auth/sso.js', {
   },
   'npm-profile': profile,
   'npm-registry-fetch': npmFetch,
-  '../../../lib/utils/open-url.js': (npm, url, msg, cb) => {
-    if (url)
-      cb()
-    else {
-      cb(Object.assign(
+  '../../../lib/utils/open-url.js': async (npm, url, msg) => {
+    if (!url) {
+      throw Object.assign(
         new Error('failed open url'),
         { code: 'ERROR' }
-      ))
+      )
     }
   },
   '../../../lib/utils/otplease.js': (opts, fn) => {
