@@ -2,7 +2,7 @@ const { test } = require('tap')
 const requireInject = require('require-inject')
 
 test('bin', (t) => {
-  t.plan(3)
+  t.plan(4)
   const dir = '/bin/dir'
 
   const Bin = require('../../lib/bin.js')
@@ -15,6 +15,7 @@ test('bin', (t) => {
     },
   }
   const bin = new Bin(npm)
+  t.match(bin.usage, 'bin', 'usage has command name in it')
 
   bin.exec([], (err) => {
     t.ifError(err, 'npm bin')

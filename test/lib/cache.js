@@ -70,7 +70,7 @@ const cache = new Cache(npm)
 
 t.test('cache no args', t => {
   cache.exec([], err => {
-    t.equal(err.message, 'usage instructions', 'should throw usage instructions')
+    t.match(err.message, 'usage instructions', 'should throw usage instructions')
     t.end()
   })
 })

@@ -41,7 +41,7 @@ test('completion', t => {
 test('subcommand required', t => {
   const access = new Access({ flatOptions: {} })
   access.exec([], (err) => {
-    t.equal(err, '\nUsage: Subcommand is required.\n\n' + access.usage)
+    t.match(err, access.usageError('Subcommand is required.'))
     t.end()
   })
 })
