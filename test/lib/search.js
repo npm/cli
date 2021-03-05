@@ -80,6 +80,48 @@ t.test('search <name>', t => {
   src.end()
 })
 
+t.test('search <name> --json', (t) => {
+  const src = new Minipass()
+  src.objectMode = true
+
+  flatOptions.json = true
+  const libnpmsearch = {
+    stream () {
+      return src
+    },
+  }
+
+  const Search = requireInject('../../lib/search.js', {
+    ...mocks,
+    libnpmsearch,
+  })
+  const search = new Search(npm)
+
+  search.exec(['libnpm'], (err) => {
+    if (err)
+      throw err
+
+    const parsedResult = JSON.parse(result)
+    parsedResult.forEach((entry) => {
+      entry.date = new Date(entry.date)
+    })
+
+    t.same(
+      parsedResult,
+      libnpmsearchResultFixture,
+      'should have expected search results as json'
+    )
+
+    flatOptions.json = false
+    t.end()
+  })
+
+  for (const i of libnpmsearchResultFixture)
+    src.write(i)
+
+  src.end()
+})
+
 t.test('search <name> --searchexclude --searchopts', t => {
   npm.flatOptions.search = {
     ...flatOptions.search,
