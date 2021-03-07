@@ -149,6 +149,8 @@ Object {
     "version": false,
     "versions": false,
     "viewer": "browser",
+    "workspace": Array [],
+    "workspaces": false,
   },
   "shorthands": Object {
     "?": Array [
@@ -269,6 +271,9 @@ Object {
     "verbose": Array [
       "--loglevel",
       "verbose",
+    ],
+    "w": Array [
+      "--workspace",
     ],
     "y": Array [
       "--yes",
@@ -552,6 +557,11 @@ Object {
     "version": "{Boolean TYPE}",
     "versions": "{Boolean TYPE}",
     "viewer": "{String TYPE}",
+    "workspace": Array [
+      "{String TYPE}",
+      "{Array TYPE}",
+    ],
+    "workspaces": "{Boolean TYPE}",
   },
 }
 `
@@ -700,6 +710,8 @@ Object {
     "version": false,
     "versions": false,
     "viewer": "man",
+    "workspace": Array [],
+    "workspaces": false,
   },
   "shorthands": Object {
     "?": Array [
@@ -820,6 +832,9 @@ Object {
     "verbose": Array [
       "--loglevel",
       "verbose",
+    ],
+    "w": Array [
+      "--workspace",
     ],
     "y": Array [
       "--yes",
@@ -1105,6 +1120,11 @@ Object {
     "version": "{Boolean TYPE}",
     "versions": "{Boolean TYPE}",
     "viewer": "{String TYPE}",
+    "workspace": Array [
+      "{String TYPE}",
+      "{Array TYPE}",
+    ],
+    "workspaces": "{Boolean TYPE}",
   },
 }
 `
