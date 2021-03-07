@@ -108,6 +108,7 @@ t.afterEach(cb => {
   LOG_WARN.length = 0
   PROGRESS_IGNORED = false
   flatOptions.legacyPeerDeps = false
+  config.color = false
   config.package = []
   flatOptions.package = []
   config.call = ''
@@ -241,14 +242,27 @@ t.test('npm exec <noargs>, run interactive shell', t => {
       cb()
     })
   }
-
   t.test('print message when tty and not in CI', t => {
     CI_NAME = null
     process.stdin.isTTY = true
     run(t, true, () => {
       t.strictSame(LOG_WARN, [])
       t.strictSame(OUTPUT, [
-        ['\nEntering npm script environment\nType \'exit\' or ^D when finished\n'],
+        [`\nEntering npm script environment at location:\n${process.cwd()}\nType 'exit' or ^D when finished\n`],
+      ], 'printed message about interactive shell')
+      t.end()
+    })
+  })
+
+  t.test('print message with color when tty and not in CI', t => {
+    CI_NAME = null
+    process.stdin.isTTY = true
+    config.color = true
+
+    run(t, true, () => {
+      t.strictSame(LOG_WARN, [])
+      t.strictSame(OUTPUT, [
+        [`\u001b[0m\u001b[0m\n\u001b[0mEntering npm script environment\u001b[0m\u001b[0m at location:\u001b[0m\n\u001b[0m\u001b[2m${process.cwd()}\u001b[22m\u001b[0m\u001b[1m\u001b[22m\n\u001b[1mType 'exit' or ^D when finished\u001b[22m\n\u001b[1m\u001b[22m`],
       ], 'printed message about interactive shell')
       t.end()
     })
@@ -419,7 +433,7 @@ t.test('npm exec --package=foo bar', t => {
     if (er)
       throw er
     t.strictSame(MKDIRPS, [], 'no need to make any dirs')
-    t.match(ARB_CTOR, [{ package: ['foo'], path }])
+    t.match(ARB_CTOR, [{ path }])
     t.strictSame(ARB_REIFY, [], 'no need to reify anything')
     t.equal(PROGRESS_ENABLED, true, 'progress re-enabled')
     t.match(RUN_SCRIPTS, [{
@@ -1083,4 +1097,94 @@ t.test('forward legacyPeerDeps opt', t => {
     t.match(ARB_REIFY, [{add: ['foo@'], legacyPeerDeps: true}], 'need to install foo@ using legacyPeerDeps opt')
     t.done()
   })
+})
+
+t.test('workspaces', t => {
+  npm.localPrefix = t.testdir({
+    node_modules: {
+      '.bin': {
+        foo: '',
+      },
+    },
+    packages: {
+      a: {
+        'package.json': JSON.stringify({
+          name: 'a',
+          version: '1.0.0',
+          bin: 'cli.js',
+        }),
+        'cli.js': '',
+      },
+      b: {
+        'package.json': JSON.stringify({
+          name: 'b',
+          version: '1.0.0',
+        }),
+      },
+    },
+    'package.json': JSON.stringify({
+      name: 'root',
+      version: '1.0.0',
+      workspaces: ['packages/*'],
+    }),
+  })
+
+  PROGRESS_IGNORED = true
+  npm.localBin = resolve(npm.localPrefix, 'node_modules/.bin')
+
+  t.test('with args, run scripts in the context of a workspace', t => {
+    exec.execWorkspaces(['foo', 'one arg', 'two arg'], ['a', 'b'], er => {
+      if (er)
+        throw er
+
+      t.match(RUN_SCRIPTS, [{
+        pkg: { scripts: { npx: 'foo' }},
+        args: ['one arg', 'two arg'],
+        banner: false,
+        path: process.cwd(),
+        stdioString: true,
+        event: 'npx',
+        env: {
+          PATH: [npm.localBin, ...PATH].join(delimiter),
+        },
+        stdio: 'inherit',
+      }])
+      t.end()
+    })
+  })
+
+  t.test('no args, spawn interactive shell', async t => {
+    CI_NAME = null
+    process.stdin.isTTY = true
+
+    await new Promise((res, rej) => {
+      exec.execWorkspaces([], ['a'], er => {
+        if (er)
+          return rej(er)
+
+        t.strictSame(LOG_WARN, [])
+        t.strictSame(OUTPUT, [
+          [`\nEntering npm script environment in workspace a@1.0.0 at location:\n${resolve(npm.localPrefix, 'packages/a')}\nType 'exit' or ^D when finished\n`],
+        ], 'printed message about interactive shell')
+        res()
+      })
+    })
+
+    config.color = true
+    OUTPUT.length = 0
+    await new Promise((res, rej) => {
+      exec.execWorkspaces([], ['a'], er => {
+        if (er)
+          return rej(er)
+
+        t.strictSame(LOG_WARN, [])
+        t.strictSame(OUTPUT, [
+          [`\u001b[0m\u001b[0m\n\u001b[0mEntering npm script environment\u001b[0m\u001b[0m in workspace \u001b[32ma@1.0.0\u001b[39m at location:\u001b[0m\n\u001b[0m\u001b[2m${resolve(npm.localPrefix, 'packages/a')}\u001b[22m\u001b[0m\u001b[1m\u001b[22m\n\u001b[1mType 'exit' or ^D when finished\u001b[22m\n\u001b[1m\u001b[22m`],
+        ], 'printed message about interactive shell')
+        res()
+      })
+    })
+  })
+
+  t.end()
 })
