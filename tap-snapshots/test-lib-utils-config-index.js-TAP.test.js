@@ -120,6 +120,12 @@ Object {
     "--loglevel",
     "verbose",
   ],
+  "w": Array [
+    "--workspace",
+  ],
+  "ws": Array [
+    "--workspaces",
+  ],
   "y": Array [
     "--yes",
   ],

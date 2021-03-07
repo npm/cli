@@ -348,6 +348,84 @@ t.test('npm.load', t => {
     await new Promise((res) => setTimeout(res))
   })
 
+  t.test('workpaces-aware configs and commands', async t => {
+    const dir = t.testdir({
+      packages: {
+        a: {
+          'package.json': JSON.stringify({
+            name: 'a',
+            version: '1.0.0',
+            scripts: { test: 'echo test a' },
+          }),
+        },
+        b: {
+          'package.json': JSON.stringify({
+            name: 'b',
+            version: '1.0.0',
+            scripts: { test: 'echo test b' },
+          }),
+        },
+      },
+      'package.json': JSON.stringify({
+        name: 'root',
+        version: '1.0.0',
+        workspaces: ['./packages/*'],
+      }),
+      '.npmrc': '',
+    })
+
+    const { log } = console
+    const consoleLogs = []
+    console.log = (...msg) => consoleLogs.push(msg)
+
+    const { execPath } = process
+    t.teardown(() => {
+      console.log = log
+    })
+
+    freshConfig({
+      argv: [
+        execPath,
+        process.argv[1],
+        '--userconfig',
+        resolve(dir, '.npmrc'),
+        '--color',
+        'false',
+        '--workspaces',
+        'true',
+      ],
+    })
+
+    await npm.load(er => {
+      if (er)
+        throw er
+    })
+
+    npm.localPrefix = dir
+
+    await new Promise((res, rej) => {
+      npm.commands['run-script']([], er => {
+        if (er)
+          rej(er)
+
+        t.match(
+          consoleLogs,
+          [
+            ['Lifecycle scripts included in a@1.0.0:'],
+            ['  test\n    echo test a'],
+            [''],
+            ['Lifecycle scripts included in b@1.0.0:'],
+            ['  test\n    echo test b'],
+            [''],
+          ],
+          'should exec workspaces version of commands'
+        )
+
+        res()
+      })
+    })
+  })
+
   t.end()
 })
 
