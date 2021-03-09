@@ -1,33 +1,31 @@
 const t = require('tap')
 const requireInject = require('require-inject')
+const mockNpm = require('../fixtures/mock-npm')
 
 const RUN_SCRIPTS = []
-const npm = {
-  localPrefix: __dirname,
-  flatOptions: {
-    scriptShell: undefined,
-    json: false,
-    parseable: false,
-  },
-  config: {
-    settings: {
-      'if-present': false,
-    },
-    get: k => npm.config.settings[k],
-    set: (k, v) => {
-      npm.config.settings[k] = v
-    },
-  },
-  output: (...msg) => output.push(msg),
+const flatOptions = {
+  scriptShell: undefined,
 }
+const config = {
+  json: false,
+  parseable: false,
+  'if-present': false,
+}
+
+const npm = mockNpm({
+  localPrefix: __dirname,
+  flatOptions,
+  config,
+  output: (...msg) => output.push(msg),
+})
 
 const output = []
 
 t.afterEach(cb => {
   output.length = 0
   RUN_SCRIPTS.length = 0
-  npm.flatOptions.json = false
-  npm.flatOptions.parseable = false
+  config.json = false
+  config.parseable = false
   cb()
 })
 
@@ -331,7 +329,7 @@ t.test('run pre/post hooks', t => {
 })
 
 t.test('skip pre/post hooks when using ignoreScripts', t => {
-  npm.flatOptions.ignoreScripts = true
+  config['ignore-scripts'] = true
 
   npm.localPrefix = t.testdir({
     'package.json': JSON.stringify({
@@ -368,7 +366,7 @@ t.test('skip pre/post hooks when using ignoreScripts', t => {
       },
     ])
     t.end()
-    delete npm.flatOptions.ignoreScripts
+    delete config['ignore-scripts']
   })
 })
 
@@ -466,7 +464,7 @@ t.test('list scripts', t => {
   })
   t.test('warn json', t => {
     npmlog.level = 'warn'
-    npm.flatOptions.json = true
+    config.json = true
     runScript.exec([], er => {
       if (er)
         throw er
@@ -476,7 +474,7 @@ t.test('list scripts', t => {
   })
 
   t.test('parseable', t => {
-    npm.flatOptions.parseable = true
+    config.parseable = true
     runScript.exec([], er => {
       if (er)
         throw er

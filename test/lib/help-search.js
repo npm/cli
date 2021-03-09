@@ -2,6 +2,7 @@ const { test } = require('tap')
 const { join } = require('path')
 const requireInject = require('require-inject')
 const ansicolors = require('ansicolors')
+const mockNpm = require('../fixtures/mock-npm')
 
 const OUTPUT = []
 const output = (msg) => {
@@ -10,11 +11,12 @@ const output = (msg) => {
 
 let npmHelpArgs = null
 let npmHelpErr = null
-const npm = {
+const config = {
+  long: false,
+}
+const npm = mockNpm({
   color: false,
-  flatOptions: {
-    long: false,
-  },
+  config,
   commands: {
     help: (args, cb) => {
       npmHelpArgs = args
@@ -22,7 +24,7 @@ const npm = {
     },
   },
   output,
-}
+})
 
 let npmUsageArg = null
 const npmUsage = (npm, arg) => {
@@ -120,10 +122,10 @@ test('npm help-search single result propagates error', t => {
 
 test('npm help-search long output', t => {
   globRoot = t.testdir(globDir)
-  npm.flatOptions.long = true
+  config.long = true
   t.teardown(() => {
     OUTPUT.length = 0
-    npm.flatOptions.long = false
+    config.long = false
     globRoot = null
   })
 
@@ -138,11 +140,11 @@ test('npm help-search long output', t => {
 
 test('npm help-search long output with color', t => {
   globRoot = t.testdir(globDir)
-  npm.flatOptions.long = true
+  config.long = true
   npm.color = true
   t.teardown(() => {
     OUTPUT.length = 0
-    npm.flatOptions.long = false
+    config.long = false
     npm.color = false
     globRoot = null
   })
