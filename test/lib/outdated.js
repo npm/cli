@@ -177,6 +177,7 @@ t.test('should display outdated deps', t => {
     outdated(null, {
       config: { global: true },
     }).exec([], () => {
+      console.log(logs)
       t.matchSnapshot(logs)
       t.end()
     })
