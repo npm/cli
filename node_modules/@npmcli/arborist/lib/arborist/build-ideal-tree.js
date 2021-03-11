@@ -883,6 +883,8 @@ This is a one-time fix-up, please be patient...
     // create a virtual root node with the same deps as the node that
     // is requesting this one, so that we can get all the peer deps in
     // a context where they're likely to be resolvable.
+    // Note that the virtual root will also have virtual copies of the
+    // targets of any child Links, so that they resolve appropriately.
     const parent = parent_ || this[_virtualRoot](edge.from)
     const realParent = edge.peer ? edge.from.resolveParent : edge.from
 
@@ -936,10 +938,22 @@ This is a one-time fix-up, please be patient...
       return this[_virtualRoots].get(node)
 
     const vr = new Node({
-      path: '/virtual-root',
+      path: node.realpath,
       sourceReference: node,
       legacyPeerDeps: this.legacyPeerDeps,
     })
+
+    // also need to set up any targets from any link deps, so that
+    // they are properly reflected in the virtual environment
+    for (const child of node.children.values()) {
+      if (child.isLink) {
+        new Node({
+          path: child.realpath,
+          sourceReference: child.target,
+          root: vr,
+        })
+      }
+    }
 
     this[_virtualRoots].set(node, vr)
     return vr
