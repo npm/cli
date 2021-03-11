@@ -2,33 +2,29 @@ const { test } = require('tap')
 const { join } = require('path')
 const requireInject = require('require-inject')
 const ansicolors = require('ansicolors')
-const mockNpm = require('../fixtures/mock-npm')
 
 const OUTPUT = []
 const output = (msg) => {
   OUTPUT.push(msg)
 }
 
-let npmHelpArgs = null
-let npmHelpErr = null
-const config = {
+const config = new Map(Object.entries({
   long: false,
-}
-const npm = mockNpm({
+}))
+const npmHelpErr = null
+const npm = {
   color: false,
   config,
+  flatOptions: {
+    long: false,
+  },
+  usage: 'npm test usage',
   commands: {
     help: (args, cb) => {
-      npmHelpArgs = args
       return cb(npmHelpErr)
     },
   },
   output,
-})
-
-let npmUsageArg = null
-const npmUsage = (npm, arg) => {
-  npmUsageArg = arg
 }
 
 let globRoot = null
@@ -47,7 +43,6 @@ const glob = (p, cb) =>
   cb(null, Object.keys(globDir).map((file) => join(globRoot, file)))
 
 const HelpSearch = requireInject('../../lib/help-search.js', {
-  '../../lib/utils/npm-usage.js': npmUsage,
   glob,
 })
 const helpSearch = new HelpSearch(npm)
@@ -63,8 +58,7 @@ test('npm help-search', t => {
     if (err)
       throw err
 
-    t.match(OUTPUT, /Top hits for/, 'outputs results')
-    t.match(OUTPUT, /Did you mean this\?\n\s+exec/, 'matched command, so suggest it')
+    t.match(OUTPUT, /Top hits for "exec"/, 'outputs results')
     t.end()
   })
 })
@@ -86,46 +80,12 @@ test('npm help-search multiple terms', t => {
   })
 })
 
-test('npm help-search single result prints full section', t => {
-  globRoot = t.testdir(globDir)
-  t.teardown(() => {
-    OUTPUT.length = 0
-    npmHelpArgs = null
-    globRoot = null
-  })
-
-  return helpSearch.exec(['does not exist in'], (err) => {
-    if (err)
-      throw err
-
-    t.strictSame(npmHelpArgs, ['npm-install'], 'identified the correct man page and called help with it')
-    t.end()
-  })
-})
-
-test('npm help-search single result propagates error', t => {
-  globRoot = t.testdir(globDir)
-  npmHelpErr = new Error('help broke')
-  t.teardown(() => {
-    OUTPUT.length = 0
-    npmHelpArgs = null
-    npmHelpErr = null
-    globRoot = null
-  })
-
-  return helpSearch.exec(['does not exist in'], (err) => {
-    t.strictSame(npmHelpArgs, ['npm-install'], 'identified the correct man page and called help with it')
-    t.match(err, /help broke/, 'propagated the error from help')
-    t.end()
-  })
-})
-
 test('npm help-search long output', t => {
   globRoot = t.testdir(globDir)
-  config.long = true
+  config.set('long', true)
   t.teardown(() => {
     OUTPUT.length = 0
-    config.long = false
+    config.set('long', false)
     globRoot = null
   })
 
@@ -140,11 +100,11 @@ test('npm help-search long output', t => {
 
 test('npm help-search long output with color', t => {
   globRoot = t.testdir(globDir)
-  config.long = true
+  config.set('long', true)
   npm.color = true
   t.teardown(() => {
     OUTPUT.length = 0
-    config.long = false
+    config.set('long', false)
     npm.color = false
     globRoot = null
   })
@@ -161,7 +121,8 @@ test('npm help-search long output with color', t => {
 
 test('npm help-search no args', t => {
   return helpSearch.exec([], (err) => {
-    t.match(err, /npm help-search/, 'throws usage')
+    t.notOk(err)
+    t.match(OUTPUT, /npm help-search/, 'outputs usage')
     t.end()
   })
 })
@@ -170,7 +131,6 @@ test('npm help-search no matches', t => {
   globRoot = t.testdir(globDir)
   t.teardown(() => {
     OUTPUT.length = 0
-    npmUsageArg = null
     globRoot = null
   })
 
@@ -178,7 +138,7 @@ test('npm help-search no matches', t => {
     if (err)
       throw err
 
-    t.equal(npmUsageArg, false, 'called npmUsage for no matches')
+    t.match(OUTPUT, /No matches/)
     t.end()
   })
 })

@@ -144,6 +144,7 @@ t.test('npm.load', t => {
 
     t.equal(npm.loading, false, 'not loading yet')
     const p = npm.load(first).then(() => {
+      t.ok(npm.usage, 'has usage')
       npm.config.set('prefix', dir)
       t.match(npm, {
         loaded: true,

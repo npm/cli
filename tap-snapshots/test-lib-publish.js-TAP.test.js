@@ -8,6 +8,8 @@
 exports[`test/lib/publish.js TAP shows usage with wrong set of arguments > should print usage 1`] = `
 npm publish
 
+Publish a package
+
 Usage:
 npm publish [<folder>] [--tag <tag>] [--access <public|restricted>] [--dry-run]
 

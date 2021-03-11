@@ -16,6 +16,11 @@ const npm = mockNpm({
   localPrefix: __dirname,
   flatOptions,
   config,
+  commands: {
+    help: {
+      description: 'test help description',
+    },
+  },
   output: (...msg) => output.push(msg),
 })
 
@@ -259,20 +264,35 @@ t.test('try to run missing script', t => {
   npm.localPrefix = t.testdir({
     'package.json': JSON.stringify({
       scripts: { hello: 'world' },
+      bin: { goodnight: 'moon' },
     }),
   })
   t.test('no suggestions', t => {
     runScript.exec(['notevenclose'], er => {
       t.match(er, {
-        message: 'missing script: notevenclose',
+        message: 'Unknown command: "notevenclose"',
       })
       t.end()
     })
   })
-  t.test('suggestions', t => {
+  t.test('script suggestions', t => {
     runScript.exec(['helo'], er => {
       t.match(er, {
-        message: 'missing script: helo\n\nDid you mean this?\n    hello',
+        message: 'Unknown command: "helo"',
+      })
+      t.match(er, {
+        message: 'npm run hello',
+      })
+      t.end()
+    })
+  })
+  t.test('bin suggestions', t => {
+    runScript.exec(['goodneght'], er => {
+      t.match(er, {
+        message: 'Unknown command: "goodneght"',
+      })
+      t.match(er, {
+        message: 'npm exec goodnight',
       })
       t.end()
     })
