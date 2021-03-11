@@ -11,5 +11,5 @@ npm publish
 Usage:
 npm publish [<folder>] [--tag <tag>] [--access <public|restricted>] [--dry-run]
 
-Run "npm publish help" for more info
+Run "npm help publish" for more info
 `

@@ -15,7 +15,7 @@ npm dist-tag ls [<pkg>]
 
 alias: dist-tags
 
-Run "npm dist-tag help" for more info
+Run "npm help dist-tag" for more info
 `
 
 exports[`test/lib/dist-tag.js TAP add missing pkg name > should exit usage error message 1`] = `
@@ -28,7 +28,7 @@ npm dist-tag ls [<pkg>]
 
 alias: dist-tags
 
-Run "npm dist-tag help" for more info
+Run "npm help dist-tag" for more info
 `
 
 exports[`test/lib/dist-tag.js TAP add new tag > should return success msg 1`] = `
@@ -50,7 +50,7 @@ npm dist-tag ls [<pkg>]
 
 alias: dist-tags
 
-Run "npm dist-tag help" for more info
+Run "npm help dist-tag" for more info
 `
 
 exports[`test/lib/dist-tag.js TAP ls in current package > should list available tags for current package 1`] = `
@@ -69,7 +69,7 @@ npm dist-tag ls [<pkg>]
 
 alias: dist-tags
 
-Run "npm dist-tag help" for more info
+Run "npm help dist-tag" for more info
 `
 
 exports[`test/lib/dist-tag.js TAP ls on missing package > should log no dist-tag found msg 1`] = `
@@ -118,7 +118,7 @@ npm dist-tag ls [<pkg>]
 
 alias: dist-tags
 
-Run "npm dist-tag help" for more info
+Run "npm help dist-tag" for more info
 `
 
 exports[`test/lib/dist-tag.js TAP remove non-existing tag > should log error msg 1`] = `

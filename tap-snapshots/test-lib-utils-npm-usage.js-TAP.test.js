@@ -220,7 +220,7 @@ All commands:
                     npm access ls-collaborators [<package> [<user>]]
                     npm access edit [<package>]
                     
-                    Run "npm access help" for more info
+                    Run "npm help access" for more info
 
     adduser         npm adduser
                     
@@ -229,7 +229,7 @@ All commands:
                     
                     aliases: login, add-user
                     
-                    Run "npm adduser help" for more info
+                    Run "npm help adduser" for more info
 
     audit           npm audit
                     
@@ -237,14 +237,14 @@ All commands:
                     npm audit [--json] [--production]
                     npm audit fix [--force|--package-lock-only|--dry-run|--production|--only=(dev|prod)]
                     
-                    Run "npm audit help" for more info
+                    Run "npm help audit" for more info
 
     bin             npm bin
                     
                     Usage:
                     npm bin [-g]
                     
-                    Run "npm bin help" for more info
+                    Run "npm help bin" for more info
 
     bugs            npm bugs
                     
@@ -253,7 +253,7 @@ All commands:
                     
                     alias: issues
                     
-                    Run "npm bugs help" for more info
+                    Run "npm help bugs" for more info
 
     cache           npm cache
                     
@@ -266,7 +266,7 @@ All commands:
                     npm cache clean
                     npm cache verify
                     
-                    Run "npm cache help" for more info
+                    Run "npm help cache" for more info
 
     ci              npm ci
                     
@@ -275,7 +275,7 @@ All commands:
                     
                     aliases: clean-install, ic, install-clean, isntall-clean
                     
-                    Run "npm ci help" for more info
+                    Run "npm help ci" for more info
 
     completion      npm completion
                     
@@ -284,7 +284,7 @@ All commands:
                     Usage:
                     npm completion
                     
-                    Run "npm completion help" for more info
+                    Run "npm help completion" for more info
 
     config          npm config
                     
@@ -297,7 +297,7 @@ All commands:
                     
                     alias: c
                     
-                    Run "npm config help" for more info
+                    Run "npm help config" for more info
 
     dedupe          npm dedupe
                     
@@ -306,14 +306,14 @@ All commands:
                     
                     alias: ddp
                     
-                    Run "npm dedupe help" for more info
+                    Run "npm help dedupe" for more info
 
     deprecate       npm deprecate
                     
                     Usage:
                     npm deprecate <pkg>[@<version>] <message>
                     
-                    Run "npm deprecate help" for more info
+                    Run "npm help deprecate" for more info
 
     diff            npm diff
                     
@@ -324,7 +324,7 @@ All commands:
                     npm diff --diff=<spec-a> [--diff=<spec-b>] [...<paths>]
                     npm diff [--diff-ignore-all-space] [--diff-name-only] [...<paths>] [...<paths>]
                     
-                    Run "npm diff help" for more info
+                    Run "npm help diff" for more info
 
     dist-tag        npm dist-tag
                     
@@ -335,7 +335,7 @@ All commands:
                     
                     alias: dist-tags
                     
-                    Run "npm dist-tag help" for more info
+                    Run "npm help dist-tag" for more info
 
     docs            npm docs [<pkgname> [<pkgname> ...]]
                     
@@ -346,14 +346,14 @@ All commands:
                     Usage:
                     npm doctor
                     
-                    Run "npm doctor help" for more info
+                    Run "npm help doctor" for more info
 
     edit            npm edit
                     
                     Usage:
                     npm edit <pkg>[/<subpkg>...]
                     
-                    Run "npm edit help" for more info
+                    Run "npm help edit" for more info
 
     exec            npm exec
                     
@@ -367,7 +367,7 @@ All commands:
                     
                     alias: x
                     
-                    Run "npm exec help" for more info
+                    Run "npm help exec" for more info
 
     explain         npm explain
                     
@@ -376,35 +376,35 @@ All commands:
                     
                     alias: why
                     
-                    Run "npm explain help" for more info
+                    Run "npm help explain" for more info
 
     explore         npm explore
                     
                     Usage:
                     npm explore <pkg> [ -- <command>]
                     
-                    Run "npm explore help" for more info
+                    Run "npm help explore" for more info
 
     find-dupes      npm find-dupes
                     
                     Usage:
                     npm find-dupes
                     
-                    Run "npm find-dupes help" for more info
+                    Run "npm help find-dupes" for more info
 
     fund            npm fund
                     
                     Usage:
                     npm fund [--json] [--browser] [--unicode] [[<@scope>/]<pkg> [--which=<fundingSourceNumber>]
                     
-                    Run "npm fund help" for more info
+                    Run "npm help fund" for more info
 
     get             npm get
                     
                     Usage:
                     npm get [<key> ...] (See \`npm config\`)
                     
-                    Run "npm get help" for more info
+                    Run "npm help get" for more info
 
     help            npm help
                     
@@ -423,7 +423,7 @@ All commands:
                     npm hook rm <id>
                     npm hook update <id> <url> <secret>
                     
-                    Run "npm hook help" for more info
+                    Run "npm help hook" for more info
 
     init            npm init
                     
@@ -434,7 +434,7 @@ All commands:
                     
                     aliases: create, innit
                     
-                    Run "npm init help" for more info
+                    Run "npm help init" for more info
 
     install         npm install
                     
@@ -452,7 +452,7 @@ All commands:
                     
                     aliases: i, in, ins, inst, insta, instal, isnt, isnta, isntal, add
                     
-                    Run "npm install help" for more info
+                    Run "npm help install" for more info
 
     install-ci-test npm install-ci-test
                     
@@ -461,7 +461,7 @@ All commands:
                     
                     alias: cit
                     
-                    Run "npm install-ci-test help" for more info
+                    Run "npm help install-ci-test" for more info
 
     install-test    npm install-test
                     
@@ -479,7 +479,7 @@ All commands:
                     
                     alias: it
                     
-                    Run "npm install-test help" for more info
+                    Run "npm help install-test" for more info
 
     link            npm link
                     
@@ -489,7 +489,7 @@ All commands:
                     
                     alias: ln
                     
-                    Run "npm link help" for more info
+                    Run "npm help link" for more info
 
     ll              npm ll
                     
@@ -498,7 +498,7 @@ All commands:
                     
                     alias: la
                     
-                    Run "npm ll help" for more info
+                    Run "npm help ll" for more info
 
     login           npm adduser
                     
@@ -507,14 +507,14 @@ All commands:
                     
                     aliases: login, add-user
                     
-                    Run "npm adduser help" for more info
+                    Run "npm help adduser" for more info
 
     logout          npm logout
                     
                     Usage:
                     npm logout [--registry=<url>] [--scope=<@scope>]
                     
-                    Run "npm logout help" for more info
+                    Run "npm help logout" for more info
 
     ls              npm ls
                     
@@ -523,7 +523,7 @@ All commands:
                     
                     alias: list
                     
-                    Run "npm ls help" for more info
+                    Run "npm help ls" for more info
 
     org             npm org
                     
@@ -534,14 +534,14 @@ All commands:
                     
                     alias: ogr
                     
-                    Run "npm org help" for more info
+                    Run "npm help org" for more info
 
     outdated        npm outdated
                     
                     Usage:
                     npm outdated [[<@scope>/]<pkg> ...]
                     
-                    Run "npm outdated help" for more info
+                    Run "npm help outdated" for more info
 
     owner           npm owner
                     
@@ -552,14 +552,14 @@ All commands:
                     
                     alias: author
                     
-                    Run "npm owner help" for more info
+                    Run "npm help owner" for more info
 
     pack            npm pack
                     
                     Usage:
                     npm pack [[<@scope>/]<pkg>...] [--dry-run]
                     
-                    Run "npm pack help" for more info
+                    Run "npm help pack" for more info
 
     ping            npm ping
                     
@@ -568,14 +568,14 @@ All commands:
                     Usage:
                     npm ping
                     
-                    Run "npm ping help" for more info
+                    Run "npm help ping" for more info
 
     prefix          npm prefix
                     
                     Usage:
                     npm prefix [-g]
                     
-                    Run "npm prefix help" for more info
+                    Run "npm help prefix" for more info
 
     profile         npm profile
                     
@@ -585,21 +585,21 @@ All commands:
                     npm profile get [<key>]
                     npm profile set <key> <value>
                     
-                    Run "npm profile help" for more info
+                    Run "npm help profile" for more info
 
     prune           npm prune
                     
                     Usage:
                     npm prune [[<@scope>/]<pkg>...] [--production]
                     
-                    Run "npm prune help" for more info
+                    Run "npm help prune" for more info
 
     publish         npm publish
                     
                     Usage:
                     npm publish [<folder>] [--tag <tag>] [--access <public|restricted>] [--dry-run]
                     
-                    Run "npm publish help" for more info
+                    Run "npm help publish" for more info
 
     rebuild         npm rebuild
                     
@@ -608,28 +608,28 @@ All commands:
                     
                     alias: rb
                     
-                    Run "npm rebuild help" for more info
+                    Run "npm help rebuild" for more info
 
     repo            npm repo
                     
                     Usage:
                     npm repo [<pkgname> [<pkgname> ...]]
                     
-                    Run "npm repo help" for more info
+                    Run "npm help repo" for more info
 
     restart         npm restart
                     
                     Usage:
                     npm restart [-- <args>]
                     
-                    Run "npm restart help" for more info
+                    Run "npm help restart" for more info
 
     root            npm root
                     
                     Usage:
                     npm root [-g]
                     
-                    Run "npm root help" for more info
+                    Run "npm help root" for more info
 
     run-script      npm run-script
                     
@@ -638,7 +638,7 @@ All commands:
                     
                     aliases: run, rum, urn
                     
-                    Run "npm run-script help" for more info
+                    Run "npm help run-script" for more info
 
     search          npm search
                     
@@ -647,56 +647,56 @@ All commands:
                     
                     aliases: s, se, find
                     
-                    Run "npm search help" for more info
+                    Run "npm help search" for more info
 
     set             npm set
                     
                     Usage:
                     npm set <key>=<value> [<key>=<value> ...] (See \`npm config\`)
                     
-                    Run "npm set help" for more info
+                    Run "npm help set" for more info
 
     set-script      npm set-script
                     
                     Usage:
                     npm set-script [<script>] [<command>]
                     
-                    Run "npm set-script help" for more info
+                    Run "npm help set-script" for more info
 
     shrinkwrap      npm shrinkwrap
                     
                     Usage:
                     npm shrinkwrap
                     
-                    Run "npm shrinkwrap help" for more info
+                    Run "npm help shrinkwrap" for more info
 
     star            npm star
                     
                     Usage:
                     npm star [<pkg>...]
                     
-                    Run "npm star help" for more info
+                    Run "npm help star" for more info
 
     stars           npm stars
                     
                     Usage:
                     npm stars [<user>]
                     
-                    Run "npm stars help" for more info
+                    Run "npm help stars" for more info
 
     start           npm start
                     
                     Usage:
                     npm start [-- <args>]
                     
-                    Run "npm start help" for more info
+                    Run "npm help start" for more info
 
     stop            npm stop
                     
                     Usage:
                     npm stop [-- <args>]
                     
-                    Run "npm stop help" for more info
+                    Run "npm help stop" for more info
 
     team            npm team
                     
@@ -707,7 +707,7 @@ All commands:
                     npm team rm <scope:team> <user> [--otp <otpcode>]
                     npm team ls <scope>|<scope:team>
                     
-                    Run "npm team help" for more info
+                    Run "npm help team" for more info
 
     test            npm test
                     
@@ -716,7 +716,7 @@ All commands:
                     
                     aliases: tst, t
                     
-                    Run "npm test help" for more info
+                    Run "npm help test" for more info
 
     token           npm token
                     
@@ -725,7 +725,7 @@ All commands:
                     npm token revoke <id|token>
                     npm token create [--read-only] [--cidr=list]
                     
-                    Run "npm token help" for more info
+                    Run "npm help token" for more info
 
     uninstall       npm uninstall
                     
@@ -734,21 +734,21 @@ All commands:
                     
                     aliases: un, unlink, remove, rm, r
                     
-                    Run "npm uninstall help" for more info
+                    Run "npm help uninstall" for more info
 
     unpublish       npm unpublish
                     
                     Usage:
                     npm unpublish [<@scope>/]<pkg>[@<version>]
                     
-                    Run "npm unpublish help" for more info
+                    Run "npm help unpublish" for more info
 
     unstar          npm unstar
                     
                     Usage:
                     npm unstar [<pkg>...]
                     
-                    Run "npm unstar help" for more info
+                    Run "npm help unstar" for more info
 
     update          npm update
                     
@@ -757,7 +757,7 @@ All commands:
                     
                     aliases: up, upgrade, udpate
                     
-                    Run "npm update help" for more info
+                    Run "npm help update" for more info
 
     version         npm version
                     
@@ -766,7 +766,7 @@ All commands:
                     
                     alias: verison
                     
-                    Run "npm version help" for more info
+                    Run "npm help version" for more info
 
     view            npm view
                     
@@ -775,7 +775,7 @@ All commands:
                     
                     aliases: v, info, show
                     
-                    Run "npm view help" for more info
+                    Run "npm help view" for more info
 
     whoami          npm whoami
                     
@@ -784,7 +784,7 @@ All commands:
                     Usage:
                     npm whoami [--registry <registry>]
                     
-                    Run "npm whoami help" for more info
+                    Run "npm help whoami" for more info
 
 Specify configs in the ini-formatted file:
     /some/config/file/.npmrc
