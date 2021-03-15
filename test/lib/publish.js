@@ -11,7 +11,11 @@ const log = require('npmlog')
 log.level = 'silent'
 
 // mock config
-const {defaults} = require('../../lib/utils/config.js')
+const {definitions} = require('../../lib/utils/config')
+const defaults = Object.entries(definitions).reduce((defaults, [key, def]) => {
+  defaults[key] = def.default
+  return defaults
+}, {})
 
 const config = defaults
 
@@ -488,11 +492,12 @@ t.test('able to publish after if encountered multiple configs', t => {
     }, null, 2),
   })
 
-  const configList = [
-    { ...defaults, tag },
-    { ...defaults, registry: `https://other.registry`, tag: 'some-tag' },
-    defaults,
-  ]
+  const configList = [defaults]
+  configList.unshift(Object.assign(Object.create(configList[0]), {
+    registry: `https://other.registry`,
+    tag: 'some-tag',
+  }))
+  configList.unshift(Object.assign(Object.create(configList[0]), { tag }))
 
   const Publish = requireInject('../../lib/publish.js', {
     libnpmpublish: {
@@ -502,7 +507,13 @@ t.test('able to publish after if encountered multiple configs', t => {
     },
   })
   const publish = new Publish({
+    // what would be flattened by the configList created above
+    flatOptions: {
+      defaultTag: 'better-tag',
+      registry: 'https://other.registry',
+    },
     config: {
+      get: key => configList[0][key],
       list: configList,
       getCredentialsByURI: (uri) => {
         t.same(uri, registry, 'gets credentials for expected registry')
