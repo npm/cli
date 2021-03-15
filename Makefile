@@ -47,7 +47,7 @@ docs-clean:
 
 ## build-time dependencies for the documentation
 dev-deps:
-	node bin/npm-cli.js install --only=dev --no-audit --ignore-scripts
+	node bin/npm-cli.js install --no-audit --ignore-scripts
 
 ## targets for man files, these are encouraged to be only built by running `make docs` or `make mandocs`
 man/man1/%.1: docs/content/commands/%.md scripts/docs-build.js
@@ -67,6 +67,11 @@ man/man5/%.5: docs/content/configuring-npm/%.md scripts/docs-build.js
 man/man7/%.7: docs/content/using-npm/%.md scripts/docs-build.js
 	@[ -d man/man7 ] || mkdir -p man/man7
 	node scripts/docs-build.js $< $@
+
+# Any time the config definitions description changes, automatically
+# update the documentation to account for it
+docs/content/using-npm/config.md: scripts/config-doc.js lib/utils/config/*.js
+	node scripts/config-doc.js
 
 test: dev-deps
 	node bin/npm-cli.js test
