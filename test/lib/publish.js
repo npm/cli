@@ -473,3 +473,48 @@ t.test('read registry only from publishConfig', t => {
     t.end()
   })
 })
+
+t.test('able to publish after if encountered multiple configs', t => {
+  t.plan(3)
+
+  const registry = 'https://some.registry'
+  const tag = 'better-tag'
+  const publishConfig = { registry }
+  const testDir = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'my-cool-pkg',
+      version: '1.0.0',
+      publishConfig,
+    }, null, 2),
+  })
+
+  const configList = [
+    { ...defaults, tag },
+    { ...defaults, registry: `https://other.registry`, tag: 'some-tag' },
+    defaults,
+  ]
+
+  const Publish = requireInject('../../lib/publish.js', {
+    libnpmpublish: {
+      publish: (manifest, tarData, opts) => {
+        t.same(opts.defaultTag, tag, 'gets option for expected tag')
+      },
+    },
+  })
+  const publish = new Publish({
+    config: {
+      list: configList,
+      getCredentialsByURI: (uri) => {
+        t.same(uri, registry, 'gets credentials for expected registry')
+        return { token: 'some.registry.token' }
+      },
+    },
+  })
+
+  publish.exec([testDir], (er) => {
+    if (er)
+      throw er
+    t.pass('got to callback')
+    t.end()
+  })
+})
