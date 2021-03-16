@@ -325,6 +325,8 @@ This should be a module relative to the root of your package folder.
 For most modules, it makes the most sense to have a main script and often
 not much else.
 
+If `main` is not set it defaults to `index.js` in the packages root folder.
+
 ### browser
 
 If your module is meant to be used client-side the browser field should be
