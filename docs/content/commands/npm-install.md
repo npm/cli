@@ -34,18 +34,18 @@ following order of precedence:
 * `package-lock.json`
 * `yarn.lock`
 
-See [package-lock.json](/configuring-npm/package-lock-json) and
-[`npm shrinkwrap`](/commands/npm-shrinkwrap).
+See [package-lock.json](../configuring-npm/package-lock-json) and
+[`npm shrinkwrap`](../commands/npm-shrinkwrap).
 
 A `package` is:
 
 * a) a folder containing a program described by a
-  [`package.json`](/configuring-npm/package-json) file
+  [`package.json`](../configuring-npm/package-json) file
 * b) a gzipped tarball containing (a)
 * c) a url that resolves to (b)
 * d) a `<name>@<version>` that is published on the registry (see
-  [`registry`](/using-npm/registry)) with (c)
-* e) a `<name>@<tag>` (see [`npm dist-tag`](/commands/npm-dist-tag)) that
+  [`registry`](../using-npm/registry)) with (c)
+* e) a `<name>@<tag>` (see [`npm dist-tag`](../commands/npm-dist-tag)) that
   points to (d)
 * f) a `<name>` that has a "latest" tag satisfying (e)
 * g) a `<git remote url>` that resolves to (a)
@@ -65,7 +65,7 @@ into a tarball (b).
     directory) as a global package.
 
     By default, `npm install` will install all modules listed as
-    dependencies in [`package.json`](/configuring-npm/package-json).
+    dependencies in [`package.json`](../configuring-npm/package-json).
 
     With the `--production` flag (or when the `NODE_ENV` environment
     variable is set to `production`), npm will not install modules listed
@@ -88,7 +88,7 @@ into a tarball (b).
 
     Install a package that is sitting on the filesystem.  Note: if you just
     want to link a dev directory into your npm root, you can do this more
-    easily by using [`npm link`](/commands/npm-link).
+    easily by using [`npm link`](../commands/npm-link).
 
     Tarball requirements:
     * The filename *must* use `.tar`, `.tar.gz`, or `.tgz` as the
@@ -120,7 +120,7 @@ into a tarball (b).
 * `npm install [<@scope>/]<name>`:
 
     Do a `<name>@<tag>` install, where `<tag>` is the "tag" config. (See
-    [`config`](/using-npm/config). The config's default value is `latest`.)
+    [`config`](../using-npm/config). The config's default value is `latest`.)
 
     In most cases, this will install the version of the modules tagged as
     `latest` on the npm registry.
@@ -160,7 +160,7 @@ into a tarball (b).
     `<scope>` is optional. The package will be downloaded from the registry
     associated with the specified scope. If no registry is associated with
     the given scope the default registry is assumed. See
-    [`scope`](/using-npm/scope).
+    [`scope`](../using-npm/scope).
 
     Note: if you do not include the @-symbol on your scope name, npm will
     interpret this as a GitHub repository instead, see below. Scopes names
@@ -230,7 +230,7 @@ into a tarball (b).
 
     Install a version of the package matching the specified version range.
     This will follow the same rules for resolving dependencies described in
-    [`package.json`](/configuring-npm/package-json).
+    [`package.json`](../configuring-npm/package-json).
 
     Note that most version ranges must be put in quotes so that your shell
     will treat it as a single argument.
@@ -405,7 +405,7 @@ npm install sax --force
 
 ### Configuration
 
-See the [`config`](/using-npm/config) help doc.  Many of the configuration
+See the [`config`](../using-npm/config) help doc.  Many of the configuration
 params have some effect on installation, since that's most of what npm
 does.
 
@@ -414,7 +414,7 @@ These are some of the most common options related to installation.
 #### Configuration Options Affecting Dependency Resolution And Tree Design
 
 * `-g` or `--global`: install the package globally rather than locally.
-  See [folders](/configuring-npm/folders).
+  See [folders](../configuring-npm/folders).
 
 * `--global-style`: install the package into your local `node_modules`
   folder with the same layout it uses with the global `node_modules`
@@ -477,7 +477,7 @@ Legacy shorthands for `omit` settings are:
 #### Configuration Options Affecting Build Process
 
 * `--ignore-scripts`: do not execute any scripts defined in the
-  package.json. See [`scripts`](/using-npm/scripts).
+  package.json. See [`scripts`](../using-npm/scripts).
 
 * `--no-audit`: disable sending audit reports to the configured registries.
   See [`npm-audit`](npm-audit) for details on what is sent.
@@ -487,7 +487,7 @@ Legacy shorthands for `omit` settings are:
 
 * `--no-fund`: suppress the message displayed at the end of each install
   that acknowledges the number of dependencies looking for funding.  See
-  [`npm-fund`](/commands/npm-fund)
+  [`npm-fund`](../commands/npm-fund)
 
 * `--dry-run`: Do not actually install anything into the `node_modules`
   folder.  Just build the intended tree in memory, and report on it.
@@ -526,24 +526,24 @@ D@2 privately for itself. This algorithm is deterministic, but different
 trees may be produced if two dependencies are requested for installation in
 a different order.
 
-See [folders](/configuring-npm/folders) for a more detailed description of
+See [folders](../configuring-npm/folders) for a more detailed description of
 the specific folder structures that npm creates.
 
 ### See Also
 
-* [npm folders](/configuring-npm/folders)
-* [npm update](/commands/npm-update)
-* [npm audit](/commands/npm-audit)
-* [npm fund](/commands/npm-fund)
-* [npm link](/commands/npm-link)
-* [npm rebuild](/commands/npm-rebuild)
-* [npm scripts](/using-npm/scripts)
-* [npm build](/commands/npm-build)
-* [npm config](/commands/npm-config)
-* [npmrc](/configuring-npm/npmrc)
-* [npm registry](/using-npm/registry)
-* [npm dist-tag](/commands/npm-dist-tag)
-* [npm uninstall](/commands/npm-uninstall)
-* [npm shrinkwrap](/commands/npm-shrinkwrap)
-* [package.json](/configuring-npm/package-json)
-* [workspaces](/using-npm/workspaces)
+* [npm folders](../configuring-npm/folders)
+* [npm update](../commands/npm-update)
+* [npm audit](../commands/npm-audit)
+* [npm fund](../commands/npm-fund)
+* [npm link](../commands/npm-link)
+* [npm rebuild](../commands/npm-rebuild)
+* [npm scripts](../using-npm/scripts)
+* [npm build](../commands/npm-build)
+* [npm config](../commands/npm-config)
+* [npmrc](../configuring-npm/npmrc)
+* [npm registry](../using-npm/registry)
+* [npm dist-tag](../commands/npm-dist-tag)
+* [npm uninstall](../commands/npm-uninstall)
+* [npm shrinkwrap](../commands/npm-shrinkwrap)
+* [package.json](../configuring-npm/package-json)
+* [workspaces](../using-npm/workspaces)
