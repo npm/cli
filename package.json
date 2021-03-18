@@ -85,7 +85,7 @@
     "nopt": "^5.0.0",
     "npm-audit-report": "^2.1.4",
     "npm-package-arg": "^8.1.2",
-    "npm-pick-manifest": "^6.1.0",
+    "npm-pick-manifest": "^6.1.1",
     "npm-profile": "^5.0.2",
     "npm-registry-fetch": "^9.0.0",
     "npm-user-validate": "^1.0.1",
