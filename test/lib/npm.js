@@ -42,7 +42,7 @@ const npmlog = require('npmlog')
 
 const npmPath = resolve(__dirname, '..', '..')
 const Config = require('@npmcli/config')
-const { definitions, shorthands } = require('../../lib/utils/config')
+const { definitions, shorthands, flatten } = require('../../lib/utils/config')
 const freshConfig = (opts = {}) => {
   for (const env of Object.keys(process.env).filter(e => /^npm_/.test(e)))
     delete process.env[env]
@@ -55,6 +55,7 @@ const freshConfig = (opts = {}) => {
     npmPath,
     log: npmlog,
     ...opts,
+    flatten,
   })
 }
 
@@ -312,6 +313,9 @@ t.test('npm.load', t => {
       if (er)
         throw er
 
+      t.equal(npm.command, 'll', 'command set to first npm command')
+      t.equal(npm.flatOptions.npmCommand, 'll', 'npmCommand flatOption set')
+
       t.same(consoleLogs, [[npm.commands.ll.usage]], 'print usage')
       consoleLogs.length = 0
       npm.config.set('usage', false)
@@ -322,6 +326,9 @@ t.test('npm.load', t => {
     await npm.commands.get(['scope', '\u2010not-a-dash'], (er) => {
       if (er)
         throw er
+
+      t.strictSame([npm.command, npm.flatOptions.npmCommand], ['ll', 'll'],
+        'does not change npm.command when another command is called')
 
       t.match(logs, [
         [
