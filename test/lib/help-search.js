@@ -1,6 +1,7 @@
 const { test } = require('tap')
 const { join } = require('path')
 const requireInject = require('require-inject')
+const mockNpm = require('../fixtures/mock-npm')
 const ansicolors = require('ansicolors')
 
 const OUTPUT = []
@@ -8,11 +9,11 @@ const output = (msg) => {
   OUTPUT.push(msg)
 }
 
-const config = new Map(Object.entries({
+const config = {
   long: false,
-}))
+}
 const npmHelpErr = null
-const npm = {
+const npm = mockNpm({
   color: false,
   config,
   flatOptions: {
@@ -25,7 +26,7 @@ const npm = {
     },
   },
   output,
-}
+})
 
 let globRoot = null
 const globDir = {
@@ -82,10 +83,10 @@ test('npm help-search multiple terms', t => {
 
 test('npm help-search long output', t => {
   globRoot = t.testdir(globDir)
-  config.set('long', true)
+  config.long = true
   t.teardown(() => {
     OUTPUT.length = 0
-    config.set('long', false)
+    config.long = false
     globRoot = null
   })
 
@@ -100,11 +101,11 @@ test('npm help-search long output', t => {
 
 test('npm help-search long output with color', t => {
   globRoot = t.testdir(globDir)
-  config.set('long', true)
+  config.long = true
   npm.color = true
   t.teardown(() => {
     OUTPUT.length = 0
-    config.set('long', false)
+    config.long = false
     npm.color = false
     globRoot = null
   })
