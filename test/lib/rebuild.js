@@ -36,7 +36,7 @@ t.test('no args', t => {
           version: '1.0.0',
           bin: 'cwd',
           scripts: {
-            preinstall: `node -e 'require("fs").writeFileSync("cwd", "")'`,
+            preinstall: "node -e \"require('fs').writeFileSync('cwd', '')\"",
           },
         }),
       },
@@ -46,7 +46,7 @@ t.test('no args', t => {
           version: '1.0.0',
           bin: 'cwd',
           scripts: {
-            preinstall: `node -e 'require("fs").writeFileSync("cwd", "")'`,
+            preinstall: "node -e \"require('fs').writeFileSync('cwd', '')\"",
           },
         }),
       },
