@@ -187,7 +187,10 @@ All commands:
                     Add a registry user account
                     
                     Usage:
-                    npm adduser [--registry=url] [--scope=@orgname] [--always-auth]
+                    npm adduser
+                    
+                    Options:
+                    [--registry <registry>] [--scope <@scope>] [--always-auth]
                     
                     aliases: login, add-user
                     
@@ -198,8 +201,10 @@ All commands:
                     Run a security audit
                     
                     Usage:
-                    npm audit [--json] [--production]
-                    npm audit fix [--force|--package-lock-only|--dry-run|--production|--only=(dev|prod)]
+                    npm audit [fix]
+                    
+                    Options:
+                    [--dry-run] [-f|--force] [--json] [--package-lock-only] [--production]
                     
                     Run "npm help audit" for more info
 
@@ -208,7 +213,10 @@ All commands:
                     Display npm bin folder
                     
                     Usage:
-                    npm bin [-g]
+                    npm bin
+                    
+                    Options:
+                    [-g|--global]
                     
                     Run "npm help bin" for more info
 
@@ -396,7 +404,10 @@ All commands:
                     Retrieve funding information
                     
                     Usage:
-                    npm fund [--json] [--browser] [--unicode] [[<@scope>/]<pkg> [--which=<fundingSourceNumber>]
+                    npm fund [[<@scope>/]<pkg>]
+                    
+                    Options:
+                    [--json] [--browser|--browser <browser>] [--unicode] [--which <fundingSourceNumber>]
                     
                     Run "npm help fund" for more info
 
@@ -459,7 +470,10 @@ All commands:
                     npm install <tarball file>
                     npm install <tarball url>
                     npm install <git:// url>
-                    npm install <github username>/<github project> [--save-prod|--save-dev|--save-optional|--save-peer] [--save-exact] [--no-save]
+                    npm install <github username>/<github project>
+                    
+                    Options:
+                    [-S|--save|--no-save|--save-prod|--save-dev|--save-optional|--save-peer] [-E|--save-exact]
                     
                     aliases: i, in, ins, inst, insta, instal, isnt, isnta, isntal, add
                     
@@ -490,7 +504,10 @@ All commands:
                     npm install-test <tarball file>
                     npm install-test <tarball url>
                     npm install-test <git:// url>
-                    npm install-test <github username>/<github project> [--save-prod|--save-dev|--save-optional|--save-peer] [--save-exact] [--no-save]
+                    npm install-test <github username>/<github project>
+                    
+                    Options:
+                    [-S|--save|--no-save|--save-prod|--save-dev|--save-optional|--save-peer] [-E|--save-exact]
                     
                     alias: it
                     
@@ -524,7 +541,10 @@ All commands:
                     Add a registry user account
                     
                     Usage:
-                    npm adduser [--registry=url] [--scope=@orgname] [--always-auth]
+                    npm adduser
+                    
+                    Options:
+                    [--registry <registry>] [--scope <@scope>] [--always-auth]
                     
                     aliases: login, add-user
                     
@@ -535,7 +555,10 @@ All commands:
                     Log out of the registry
                     
                     Usage:
-                    npm logout [--registry=<url>] [--scope=<@scope>]
+                    npm logout
+                    
+                    Options:
+                    [--registry <registry>] [--scope <@scope>]
                     
                     Run "npm help logout" for more info
 
@@ -590,7 +613,10 @@ All commands:
                     Create a tarball from a package
                     
                     Usage:
-                    npm pack [[<@scope>/]<pkg>...] [--dry-run]
+                    npm pack [[<@scope>/]<pkg>...]
+                    
+                    Options:
+                    [--dry-run]
                     
                     Run "npm help pack" for more info
 
@@ -600,6 +626,9 @@ All commands:
                     
                     Usage:
                     npm ping
+                    
+                    Options:
+                    [--registry <registry>]
                     
                     Run "npm help ping" for more info
 
@@ -629,7 +658,10 @@ All commands:
                     Remove extraneous packages
                     
                     Usage:
-                    npm prune [[<@scope>/]<pkg>...] [--production]
+                    npm prune [[<@scope>/]<pkg>...]
+                    
+                    Options:
+                    [--production]
                     
                     Run "npm help prune" for more info
 
@@ -638,7 +670,10 @@ All commands:
                     Publish a package
                     
                     Usage:
-                    npm publish [<folder>] [--tag <tag>] [--access <public|restricted>] [--dry-run]
+                    npm publish [<folder>]
+                    
+                    Options:
+                    [--tag <tag>] [--access <restricted|public>] [--dry-run]
                     
                     Run "npm help publish" for more info
 
@@ -676,7 +711,10 @@ All commands:
                     Display npm root
                     
                     Usage:
-                    npm root [-g]
+                    npm root
+                    
+                    Options:
+                    [-g|--global]
                     
                     Run "npm help root" for more info
 
@@ -696,7 +734,10 @@ All commands:
                     Search for pacakges
                     
                     Usage:
-                    npm search [-l|--long] [--json] [--parseable] [--no-description] [search terms ...]
+                    npm search [search terms ...]
+                    
+                    Options:
+                    [-l|--long] [--json] [-p|--parseable] [--no-description]
                     
                     aliases: s, se, find
                     
@@ -805,7 +846,10 @@ All commands:
                     Remove a package
                     
                     Usage:
-                    npm uninstall [<@scope>/]<pkg>[@<version>]... [-S|--save|--no-save]
+                    npm uninstall [<@scope>/]<pkg>...
+                    
+                    Options:
+                    [-S|--save|--no-save|--save-prod|--save-dev|--save-optional|--save-peer]
                     
                     aliases: un, unlink, remove, rm, r
                     
@@ -834,7 +878,10 @@ All commands:
                     Update packages
                     
                     Usage:
-                    npm update [-g] [<pkg>...]
+                    npm update [<pkg>...]
+                    
+                    Options:
+                    [-g|--global]
                     
                     aliases: up, upgrade, udpate
                     
@@ -867,7 +914,10 @@ All commands:
                     Display npm username
                     
                     Usage:
-                    npm whoami [--registry <registry>]
+                    npm whoami
+                    
+                    Options:
+                    [--registry <registry>]
                     
                     Run "npm help whoami" for more info
 

@@ -1192,6 +1192,13 @@ The program to use to view help content.
 
 Set to \`"browser"\` to view html help content in the default web browser.
 
+#### \`which\`
+
+* Default: null
+* Type: null or Number
+
+If there are multiple funding sources, which 1-indexed source URL to open.
+
 #### \`workspace\`
 
 * Default:

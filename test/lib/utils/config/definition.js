@@ -21,6 +21,8 @@ t.test('basic definition', async t => {
     default: 'some default value',
     defaultDescription: '"some default value"',
     type: [Number, String],
+    hint: '<key>',
+    usage: '--key <key>|--key <key>',
     typeDescription: 'Number or String',
     description: 'just a test thingie',
   })
@@ -78,6 +80,39 @@ t.test('basic definition', async t => {
     description: 'asdf',
   })
   t.equal(multi123Semver.typeDescription, '1, 2, 3, or SemVer string (can be set multiple times)')
+  const hasUsage = new Definition('key', {
+    default: 'test default',
+    type: String,
+    description: 'test description',
+    usage: 'test usage',
+  })
+  t.equal(hasUsage.usage, 'test usage')
+  const hasShort = new Definition('key', {
+    default: 'test default',
+    short: 't',
+    type: String,
+    description: 'test description',
+  })
+  t.equal(hasShort.usage, '-t|--key <key>')
+  const hardCodedTypes = new Definition('key', {
+    default: 'test default',
+    type: ['string1', 'string2'],
+    description: 'test description',
+  })
+  t.equal(hardCodedTypes.usage, '--key <string1|string2>')
+  const hardCodedOptionalTypes = new Definition('key', {
+    default: 'test default',
+    type: [null, 'string1', 'string2'],
+    description: 'test description',
+  })
+  t.equal(hardCodedOptionalTypes.usage, '--key <string1|string2>')
+  const hasHint = new Definition('key', {
+    default: 'test default',
+    type: String,
+    description: 'test description',
+    hint: '<testparam>',
+  })
+  t.equal(hasHint.usage, '--key <testparam>')
 })
 
 t.test('missing fields', async t => {

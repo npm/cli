@@ -37,6 +37,7 @@ const mocks = {
     }
   },
   '../../lib/utils/usage.js': () => 'usage instructions',
+  '../../lib/utils/config/definitions.js': {},
 }
 
 t.afterEach(cb => {

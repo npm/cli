@@ -144,6 +144,7 @@ Array [
   "version",
   "versions",
   "viewer",
+  "which",
   "workspace",
   "workspaces",
   "yes",
