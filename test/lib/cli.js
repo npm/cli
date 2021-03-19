@@ -46,7 +46,7 @@ const npmlogMock = {
 const requireInject = require('require-inject')
 const cli = requireInject.installGlobally('../../lib/cli.js', {
   '../../lib/npm.js': npmock,
-  '../../lib/utils/did-you-mean.js': () => 'test did you mean',
+  '../../lib/utils/did-you-mean.js': () => '\ntest did you mean',
   '../../lib/utils/unsupported.js': unsupportedMock,
   '../../lib/utils/error-handler.js': errorHandlerMock,
   npmlog: npmlogMock,
@@ -160,7 +160,7 @@ t.test('print usage if non-command param provided', t => {
   npmock.argv = ['asdf']
   npmock.output = (msg) => {
     if (msg) {
-      t.match(msg, 'test did you mean', 'outputs did you mean')
+      t.match(msg, 'Unknown command: "asdf"\ntest did you mean', 'outputs did you mean')
       t.end()
     }
   }

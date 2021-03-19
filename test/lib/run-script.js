@@ -290,7 +290,7 @@ t.test('try to run missing script', t => {
   t.test('no suggestions', t => {
     runScript.exec(['notevenclose'], er => {
       t.match(er, {
-        message: 'Unknown command: "notevenclose"',
+        message: 'Missing script: "notevenclose"',
       })
       t.end()
     })
@@ -298,7 +298,7 @@ t.test('try to run missing script', t => {
   t.test('script suggestions', t => {
     runScript.exec(['helo'], er => {
       t.match(er, {
-        message: 'Unknown command: "helo"',
+        message: 'Missing script: "helo"',
       })
       t.match(er, {
         message: 'npm run hello',
@@ -309,7 +309,7 @@ t.test('try to run missing script', t => {
   t.test('bin suggestions', t => {
     runScript.exec(['goodneght'], er => {
       t.match(er, {
-        message: 'Unknown command: "goodneght"',
+        message: 'Missing script: "goodneght"',
       })
       t.match(er, {
         message: 'npm exec goodnight',
@@ -896,27 +896,27 @@ t.test('workspaces', t => {
       t.match(RUN_SCRIPTS, [])
       t.strictSame(LOG.map(cleanOutput), [
         'Lifecycle script `missing-script` failed with error:',
-        'Error: Unknown command: "missing-script"',
+        'Error: Missing script: "missing-script"',
         '  in workspace: a@1.0.0',
         '  at location: {CWD}/test/lib/run-script-workspaces/packages/a',
         'Lifecycle script `missing-script` failed with error:',
-        'Error: Unknown command: "missing-script"',
+        'Error: Missing script: "missing-script"',
         '  in workspace: b@2.0.0',
         '  at location: {CWD}/test/lib/run-script-workspaces/packages/b',
         'Lifecycle script `missing-script` failed with error:',
-        'Error: Unknown command: "missing-script"',
+        'Error: Missing script: "missing-script"',
         '  in workspace: c@1.0.0',
         '  at location: {CWD}/test/lib/run-script-workspaces/packages/c',
         'Lifecycle script `missing-script` failed with error:',
-        'Error: Unknown command: "missing-script"',
+        'Error: Missing script: "missing-script"',
         '  in workspace: d@1.0.0',
         '  at location: {CWD}/test/lib/run-script-workspaces/packages/d',
         'Lifecycle script `missing-script` failed with error:',
-        'Error: Unknown command: "missing-script"',
+        'Error: Missing script: "missing-script"',
         '  in workspace: e',
         '  at location: {CWD}/test/lib/run-script-workspaces/packages/e',
         'Lifecycle script `missing-script` failed with error:',
-        'Error: Unknown command: "missing-script"',
+        'Error: Missing script: "missing-script"',
         '  in workspace: noscripts@1.0.0',
         '  at location: {CWD}/test/lib/run-script-workspaces/packages/noscripts',
       ], 'should log error msgs for each workspace script')
@@ -937,11 +937,11 @@ t.test('workspaces', t => {
       t.match(RUN_SCRIPTS, [])
       t.strictSame(LOG.map(cleanOutput), [
         'Lifecycle script `test` failed with error:',
-        'Error: Unknown command: "test"',
+        'Error: Missing script: "test"',
         '  in workspace: a@1.0.0',
         '  at location: {CWD}/test/lib/run-script-workspaces/packages/a',
         'Lifecycle script `test` failed with error:',
-        'Error: Unknown command: "test"',
+        'Error: Missing script: "test"',
         '  in workspace: b@2.0.0',
         '  at location: {CWD}/test/lib/run-script-workspaces/packages/b',
       ], 'should log error msgs for each workspace script')
