@@ -186,7 +186,7 @@ const config = {
   json: false,
   global: false,
   unicode: false,
-  which: undefined,
+  which: null,
 }
 const openUrl = async (npm, url, msg) => {
   if (url === 'http://npmjs.org')
@@ -563,7 +563,7 @@ test('fund using nested packages with multiple sources, with a source number', t
     t.ifError(err, 'should not error out')
     t.matchSnapshot(printUrl, 'should open the numbered URL')
 
-    config.which = undefined
+    config.which = null
     printUrl = ''
     t.end()
   })
@@ -663,7 +663,7 @@ test('fund using bad which value', t => {
       'should have bad which option error message'
     )
 
-    config.which = undefined
+    config.which = null
     result = ''
     t.end()
   })
