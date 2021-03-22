@@ -945,7 +945,7 @@ t.test('abort if prompt rejected', t => {
     _from: 'bar@',
   }
   exec.exec(['foobar'], er => {
-    t.equal(er, 'canceled', 'should be canceled')
+    t.match(er, /canceled/, 'should be canceled')
     t.strictSame(MKDIRPS, [installDir], 'need to make install dir')
     t.match(ARB_CTOR, [{ path }])
     t.strictSame(ARB_REIFY, [], 'no install performed')
@@ -1060,7 +1060,7 @@ t.test('abort if -n provided', t => {
     _from: 'bar@',
   }
   exec.exec(['foobar'], er => {
-    t.equal(er, 'canceled', 'should be canceled')
+    t.match(er, /canceled/, 'should be canceled')
     t.strictSame(MKDIRPS, [installDir], 'need to make install dir')
     t.match(ARB_CTOR, [{ path }])
     t.strictSame(ARB_REIFY, [], 'no install performed')
