@@ -204,7 +204,7 @@ All commands:
                     npm audit [fix]
                     
                     Options:
-                    [--dry-run] [-f|--force] [--json] [--package-lock-only] [--production]
+                    [--audit-level <info|low|moderate|high|critical|none>] [--dry-run] [-f|--force] [--json] [--package-lock-only] [--production]
                     
                     Run "npm help audit" for more info
 
