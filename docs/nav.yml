@@ -66,6 +66,9 @@
   - title: npm explore
     url: /commands/npm-explore
     description: Browse an installed package
+  - title: npm find-dupes
+    url: /commands/npm-find-dupes
+    description: Find duplication in the package tree
   - title: npm fund
     url: /commands/npm-fund
     description: Retrieve funding information

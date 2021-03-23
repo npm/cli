@@ -1343,8 +1343,8 @@ workspaces.
 
 #### `yes`
 
-* Default: false
-* Type: Boolean
+* Default: null
+* Type: null or Boolean
 
 Automatically answer "yes" to any prompts that npm might print on the
 command line.
