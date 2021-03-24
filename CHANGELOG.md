@@ -1,4 +1,4 @@
-## v7.7.2 (2021-03-24)
+## v7.7.3 (2021-03-24)
 
 ### BUG FIXES
 
@@ -34,7 +34,7 @@
   `npm-registry-fetch` are looking for it.
   ([@wraithgar](https://github.com/wraithgar))
 
-## v7.7.1 (2021-03-24)
+## v7.7.2 (2021-03-24)
 
 ### BUG FIXES
 * [`a4df2b98d`](https://github.com/npm/cli/commit/a4df2b98d89429b19cd29b5fc895cdbfc0a6bd78)
