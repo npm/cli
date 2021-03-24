@@ -695,3 +695,18 @@ t.test('user-agent', t => {
   t.equal(flat.userAgent, expectCI)
   t.end()
 })
+
+t.test('save-prefix', t => {
+  const obj = {
+    'save-exact': true,
+    'save-prefix': '~1.2.3',
+  }
+  const flat = {}
+  definitions['save-prefix']
+    .flatten('save-prefix', { ...obj, 'save-exact': true }, flat)
+  t.strictSame(flat, { savePrefix: '' })
+  definitions['save-prefix']
+    .flatten('save-prefix', { ...obj, 'save-exact': false }, flat)
+  t.strictSame(flat, { savePrefix: '~1.2.3' })
+  t.end()
+})
