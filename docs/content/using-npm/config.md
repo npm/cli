@@ -1382,6 +1382,14 @@ What authentication strategy to use with `adduser`/`login`.
 
 `--cache-min=9999 (or bigger)` is an alias for `--prefer-offline`.
 
+#### `dev`
+
+* Default: false
+* Type: Boolean
+* DEPRECATED: Please use --include=dev instead.
+
+Alias for `--include=dev`.
+
 #### `init.author.email`
 
 * Default: ""
