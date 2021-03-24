@@ -1,6 +1,21 @@
 ## v7.7.1 (2021-03-24)
 
 ### BUG FIXES
+* [`a4df2b98d`](https://github.com/npm/cli/commit/a4df2b98d89429b19cd29b5fc895cdbfc0a6bd78)
+  [#2942](https://github.com/npm/cli/issues/2942)
+  Restore --dev flag, unify --omit flatteners
+  ([@isaacs](https://github.com/isaacs))
+
+### DEPENDENCIES
+* [`2cbfaac0e`](https://github.com/npm/cli/commit/2cbfaac0ecd5810316f6d76168ed9618bd11bf3a)
+  `hosted-git-info@4.0.2`
+    * [#83](https://github.com/npm/hosted-git-info/pull/83) Do not parse
+        urls for gitlab
+  ([@nlf](https://github.com/nlf))
+
+## v7.7.1 (2021-03-24)
+
+### BUG FIXES
 
 * [`543b0e39b`](https://github.com/npm/cli/commit/543b0e39bcb94fc408804b01ca9c0d7b960b2681)
   [#2930](https://github.com/npm/cli/issues/2930)
