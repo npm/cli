@@ -1338,8 +1338,8 @@ Alias for --include=optional or --omit=optional
 
 #### \`production\`
 
-* Default: false
-* Type: Boolean
+* Default: null
+* Type: null or Boolean
 * DEPRECATED: Use \`--omit=dev\` instead.
 
 Alias for \`--omit=dev\`

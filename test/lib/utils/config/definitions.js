@@ -310,9 +310,9 @@ t.test('flatteners that populate flat.omit array', t => {
     definitions.production.flatten('production', obj, flat)
     t.strictSame(obj, {
       production: false,
-      include: [],
+      include: ['dev'],
       omit: [],
-    }, '--no-production has no effect')
+    }, '--no-production explicitly includes dev')
     t.strictSame(flat, { omit: [] }, '--no-production has no effect')
 
     obj.production = true
