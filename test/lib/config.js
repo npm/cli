@@ -93,6 +93,13 @@ t.test('config no args', t => {
   })
 })
 
+t.test('config ignores workspaces', t => {
+  config.execWorkspaces([], [], (err) => {
+    t.match(err, /usage instructions/, 'should not error out when workspaces are defined')
+    t.end()
+  })
+})
+
 t.test('config list', t => {
   t.plan(2)
 
