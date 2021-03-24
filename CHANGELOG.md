@@ -1,3 +1,16 @@
+## v7.7.4 (2021-03-24)
+
+### BUG FIXES
+
+* [`200bee74b`](https://github.com/npm/cli/commit/200bee74b31a738687446b7b535cac67b1c582fd)
+  [#2951](https://github.com/npm/cli/issues/2951)
+  fix(config): accept explicit `production=false`
+  ([@wraithgar](https://github.com/wraithgar))
+* [`7b45e9df6`](https://github.com/npm/cli/commit/7b45e9df6102c7bd6e403d1fdc9939581c38f546)
+  [#2950](https://github.com/npm/cli/issues/2950)
+  warn if using workspaces config options in `npm config`
+  ([@ruyadorno](https://github.com/ruyadorno))
+
 ## v7.7.3 (2021-03-24)
 
 ### BUG FIXES
