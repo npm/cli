@@ -37,6 +37,48 @@ jobs:
       - name: Run linting
         run: node . run licenses
 
+  smoke-tests:
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version: [10.x, 12.x, 14.x]
+        platform:
+          - os: ubuntu-latest
+            shell: bash
+          - os: macos-latest
+            shell: bash
+          - os: windows-latest
+            shell: bash
+          - os: windows-latest
+            shell: powershell
+
+    runs-on: ${{ matrix.platform.os }}
+    defaults:
+      run:
+        shell: ${{ matrix.platform.shell }}
+
+    steps:
+      # Checkout the npm/cli repo
+    - uses: actions/checkout@v2
+
+      # Installs the specific version of Node.js
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+
+      # Run the installer script
+    - name: Install dependencies
+      run: |
+        node . install --ignore-scripts --no-audit
+        node . rebuild
+
+      # Run the smoke tests
+    - name: Run Smoke tests
+      run: node . run --ignore-scripts smoke-tests -- --no-check-coverage -t600 -Rbase -c
+      env:
+        DEPLOY_VERSION: testing
+
   build:
     strategy:
       fail-fast: false
