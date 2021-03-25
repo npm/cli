@@ -760,3 +760,18 @@ t.test('save-prefix', t => {
   t.strictSame(flat, { savePrefix: '~1.2.3' })
   t.end()
 })
+
+t.test('save-exact', t => {
+  const obj = {
+    'save-exact': true,
+    'save-prefix': '~1.2.3',
+  }
+  const flat = {}
+  definitions['save-exact']
+    .flatten('save-exact', { ...obj, 'save-exact': true }, flat)
+  t.strictSame(flat, { savePrefix: '' })
+  definitions['save-exact']
+    .flatten('save-exact', { ...obj, 'save-exact': false }, flat)
+  t.strictSame(flat, { savePrefix: '~1.2.3' })
+  t.end()
+})
