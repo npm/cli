@@ -733,10 +733,16 @@ t.test('user-agent', t => {
     `${process.platform} ${process.arch}`
   definitions['user-agent'].flatten('user-agent', obj, flat)
   t.equal(flat.userAgent, expectNoCI)
+  t.equal(process.env.npm_config_user_agent, flat.userAgent, 'npm_user_config environment is set')
+  t.equal(obj['user-agent'], flat.userAgent, 'config user-agent template is translated')
+
   obj['ci-name'] = 'foo'
+  obj['user-agent'] = definitions['user-agent'].default
   const expectCI = `${expectNoCI} ci/foo`
   definitions['user-agent'].flatten('user-agent', obj, flat)
   t.equal(flat.userAgent, expectCI)
+  t.equal(process.env.npm_config_user_agent, flat.userAgent, 'npm_user_config environment is set')
+  t.equal(obj['user-agent'], flat.userAgent, 'config user-agent template is translated')
   t.end()
 })
 
