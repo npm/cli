@@ -334,6 +334,9 @@ All commands:
                     Usage:
                     npm docs [<pkgname> [<pkgname> ...]]
                     
+                    Options:
+                    [--browser|--browser <browser>] [-w|--workspace <workspace-name> [<workspace-name> ...]] [-ws|--workspaces]
+                    
                     alias: home
                     
                     Run "npm help docs" for more info
@@ -365,6 +368,9 @@ All commands:
                     npm exec --package=<pkg>[@<version>] -- <cmd> [args...]
                     npm exec -c '<cmd> [args...]'
                     npm exec --package=foo -c '<cmd> [args...]'
+                    
+                    Options:
+                    [-w|--workspace <workspace-name> [<workspace-name> ...]] [-ws|--workspaces]
                     
                     alias: x
                     
@@ -695,6 +701,9 @@ All commands:
                     Usage:
                     npm repo [<pkgname> [<pkgname> ...]]
                     
+                    Options:
+                    [--browser|--browser <browser>] [-w|--workspace <workspace-name> [<workspace-name> ...]] [-ws|--workspaces]
+                    
                     Run "npm help repo" for more info
 
     restart         npm restart
@@ -724,6 +733,9 @@ All commands:
                     
                     Usage:
                     npm run-script <command> [-- <args>]
+                    
+                    Options:
+                    [-w|--workspace <workspace-name> [<workspace-name> ...]] [-ws|--workspaces]
                     
                     aliases: run, rum, urn
                     

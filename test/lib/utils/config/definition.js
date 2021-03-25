@@ -22,7 +22,7 @@ t.test('basic definition', async t => {
     defaultDescription: '"some default value"',
     type: [Number, String],
     hint: '<key>',
-    usage: '--key <key>|--key <key>',
+    usage: '--key <key>',
     typeDescription: 'Number or String',
     description: 'just a test thingie',
   })
@@ -113,6 +113,12 @@ t.test('basic definition', async t => {
     hint: '<testparam>',
   })
   t.equal(hasHint.usage, '--key <testparam>')
+  const optionalBool = new Definition('key', {
+    default: null,
+    type: [null, Boolean],
+    description: 'asdf',
+  })
+  t.equal(optionalBool.usage, '--key')
 })
 
 t.test('missing fields', async t => {
