@@ -77,7 +77,7 @@ test: dev-deps
 	node bin/npm-cli.js test
 
 smoke-tests: dev-deps
-	node bin/npm-cli.js run smoke-tests
+	node bin/npm-cli.js run smoke-tests -- --no-check-coverage
 
 ls-ok:
 	node . ls --production >/dev/null
