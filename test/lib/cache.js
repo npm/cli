@@ -20,6 +20,12 @@ const npmlog = {
   },
 }
 
+const pipeline = {
+  pipe: () => pipeline,
+  promise: () => Promise.resolve(),
+  resume: () => {},
+}
+
 let tarballStreamSpec = ''
 let tarballStreamOpts = {}
 const pacote = {
@@ -27,10 +33,7 @@ const pacote = {
     stream: (spec, handler, opts) => {
       tarballStreamSpec = spec
       tarballStreamOpts = opts
-      return handler({
-        resume: () => {},
-        promise: () => Promise.resolve(),
-      })
+      return handler(pipeline)
     },
   },
 }
@@ -41,9 +44,15 @@ const cacacheVerifyStats = {
   totalEntries: 1,
   runTime: { total: 2000 },
 }
+
 const cacache = {
   verify: (path) => {
     return cacacheVerifyStats
+  },
+  put: {
+    stream: (cache, stream) => {
+      return pipeline
+    },
   },
 }
 
