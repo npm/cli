@@ -38,7 +38,7 @@ or on the command line via: npm <command> --key=value
 More configuration info: npm help config
 Configuration fields: npm help 7 config
 
-npm@7.7.5 {CWD}
+npm {CWD}
 
 `
 
