@@ -12,6 +12,7 @@ t.cleanSnapshot = s => s.split(cwd).join('{CWD}')
   .split(process.cwd()).join('{CWD}')
   .replace(/\\+/g, '/')
   .replace(/\r\n/g, '\n')
+  .replace(/\ \(in a browser\)/g, '')
 
 // setup server
 const registryServer = require('./server.js')
@@ -53,6 +54,19 @@ t.test('npm init', async t => {
   const pkg = JSON.parse(fs.readFileSync(resolve(localPrefix, 'package.json')))
   t.equal(pkg.name, 'project', 'should have expected generated name')
   t.equal(pkg.version, '1.0.0', 'should have expected generated version')
+})
+
+t.test('npm (no args)', async t => {
+  const cmd = `"${process.execPath}" "${npmLocation}" --no-audit --no-update-notifier`
+  const cmdRes = await execAsync(cmd, { cwd: localPrefix, env })
+    .catch(err => {
+      t.equal(err.code, 1, 'should exit with error code')
+      return err
+    })
+
+  t.equal(cmdRes.stderr, '', 'should have no stderr output')
+  t.matchSnapshot(String(cmdRes.stdout),
+    'should have expected no args output')
 })
 
 t.test('npm install prodDep@version', async t => {
