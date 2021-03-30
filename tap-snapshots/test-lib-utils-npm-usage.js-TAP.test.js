@@ -920,6 +920,9 @@ All commands:
                     Usage:
                     npm view [<@scope>/]<pkg>[@<version>] [<field>[.subfield]...]
                     
+                    Options:
+                    [--json] [-w|--workspace <workspace>|-w|--workspace <workspace>] [-ws|--workspaces]
+                    
                     aliases: v, info, show
                     
                     Run "npm help view" for more info
