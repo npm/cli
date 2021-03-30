@@ -771,6 +771,9 @@ All commands:
                     Usage:
                     npm set-script [<script>] [<command>]
                     
+                    Options:
+                    [-w|--workspace <workspace>|-w|--workspace <workspace>] [-ws|--workspaces]
+                    
                     Run "npm help set-script" for more info
 
     shrinkwrap      npm shrinkwrap
