@@ -335,7 +335,7 @@ All commands:
                     npm docs [<pkgname> [<pkgname> ...]]
                     
                     Options:
-                    [--browser|--browser <browser>] [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]] [-ws|--workspaces]
+                    [--browser|--browser <browser>] [--registry <registry>] [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]] [-ws|--workspaces]
                     
                     alias: home
                     
