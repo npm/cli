@@ -772,7 +772,7 @@ All commands:
                     npm set-script [<script>] [<command>]
                     
                     Options:
-                    [-w|--workspace <workspace>|-w|--workspace <workspace>] [-ws|--workspaces]
+                    [-w|--workspace <workspace-name> [<workspace-name> ...]] [-ws|--workspaces]
                     
                     Run "npm help set-script" for more info
 
@@ -921,7 +921,7 @@ All commands:
                     npm view [<@scope>/]<pkg>[@<version>] [<field>[.subfield]...]
                     
                     Options:
-                    [--json] [-w|--workspace <workspace>|-w|--workspace <workspace>] [-ws|--workspaces]
+                    [--json] [-w|--workspace <workspace-name> [<workspace-name> ...]] [-ws|--workspaces]
                     
                     aliases: v, info, show
                     
