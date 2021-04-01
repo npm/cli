@@ -25,6 +25,7 @@ t.test('basic definition', async t => {
     usage: '--key <key>',
     typeDescription: 'Number or String',
     description: 'just a test thingie',
+    envExport: true,
   })
   t.matchSnapshot(def.describe(), 'human-readable description')
 
@@ -119,6 +120,25 @@ t.test('basic definition', async t => {
     description: 'asdf',
   })
   t.equal(optionalBool.usage, '--key')
+
+  const noExported = new Definition('methane', {
+    envExport: false,
+    type: String,
+    typeDescription: 'Greenhouse Gas',
+    default: 'CH4',
+    description: `
+      This is bad for the environment, for our children, do not put it there.
+    `,
+  })
+  t.equal(noExported.envExport, false, 'envExport flag is false')
+  t.equal(noExported.describe(), `#### \`methane\`
+
+* Default: "CH4"
+* Type: Greenhouse Gas
+
+This is bad for the environment, for our children, do not put it there.
+
+This value is not exported to the environment for child processes.`)
 })
 
 t.test('missing fields', async t => {
