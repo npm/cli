@@ -185,7 +185,7 @@ registry and all registries configured for scopes. See the documentation for
 #### `audit-level`
 
 * Default: null
-* Type: "info", "low", "moderate", "high", "critical", "none", or null
+* Type: null, "info", "low", "moderate", "high", "critical", or "none"
 
 The minimum level of vulnerability for `npm audit` to exit with a non-zero
 exit code.

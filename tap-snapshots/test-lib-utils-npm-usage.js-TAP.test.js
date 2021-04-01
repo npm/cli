@@ -335,7 +335,7 @@ All commands:
                     npm docs [<pkgname> [<pkgname> ...]]
                     
                     Options:
-                    [--browser|--browser <browser>] [-w|--workspace <workspace-name> [<workspace-name> ...]] [-ws|--workspaces]
+                    [--browser|--browser <browser>] [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]] [-ws|--workspaces]
                     
                     alias: home
                     
@@ -370,7 +370,7 @@ All commands:
                     npm exec --package=foo -c '<cmd> [args...]'
                     
                     Options:
-                    [-w|--workspace <workspace-name> [<workspace-name> ...]] [-ws|--workspaces]
+                    [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]] [-ws|--workspaces]
                     
                     alias: x
                     
@@ -702,7 +702,7 @@ All commands:
                     npm repo [<pkgname> [<pkgname> ...]]
                     
                     Options:
-                    [--browser|--browser <browser>] [-w|--workspace <workspace-name> [<workspace-name> ...]] [-ws|--workspaces]
+                    [--browser|--browser <browser>] [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]] [-ws|--workspaces]
                     
                     Run "npm help repo" for more info
 
@@ -735,7 +735,7 @@ All commands:
                     npm run-script <command> [-- <args>]
                     
                     Options:
-                    [-w|--workspace <workspace-name> [<workspace-name> ...]] [-ws|--workspaces]
+                    [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]] [-ws|--workspaces]
                     
                     aliases: run, rum, urn
                     
@@ -772,7 +772,7 @@ All commands:
                     npm set-script [<script>] [<command>]
                     
                     Options:
-                    [-w|--workspace <workspace-name> [<workspace-name> ...]] [-ws|--workspaces]
+                    [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]] [-ws|--workspaces]
                     
                     Run "npm help set-script" for more info
 
@@ -921,7 +921,7 @@ All commands:
                     npm view [<@scope>/]<pkg>[@<version>] [<field>[.subfield]...]
                     
                     Options:
-                    [--json] [-w|--workspace <workspace-name> [<workspace-name> ...]] [-ws|--workspaces]
+                    [--json] [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]] [-ws|--workspaces]
                     
                     aliases: v, info, show
                     
