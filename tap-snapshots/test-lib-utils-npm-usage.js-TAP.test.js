@@ -625,7 +625,7 @@ All commands:
                     npm pack [[<@scope>/]<pkg>...]
                     
                     Options:
-                    [--dry-run]
+                    [--dry-run] [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]] [-ws|--workspaces]
                     
                     Run "npm help pack" for more info
 
