@@ -291,3 +291,4 @@ project.
 * [npm restart](/commands/npm-restart)
 * [npm stop](/commands/npm-stop)
 * [npm config](/commands/npm-config)
+* [npm workspaces](/using-npm/workspaces)
