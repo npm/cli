@@ -966,7 +966,8 @@ installation of packages specified according to the pattern
 * Default: '/bin/sh' on POSIX systems, 'cmd.exe' on Windows
 * Type: null or String
 
-The shell to use for scripts run with the \`npm run\` command.
+The shell to use for scripts run with the \`npm exec\`, \`npm run\` and \`npm
+init <pkg>\` commands.
 
 #### \`searchexclude\`
 
