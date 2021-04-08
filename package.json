@@ -132,7 +132,7 @@
     "slide": "~1.1.6",
     "sorted-object": "~2.0.1",
     "sorted-union-stream": "~2.1.3",
-    "ssri": "^6.0.1",
+    "ssri": "^6.0.2",
     "stringify-package": "^1.0.1",
     "tar": "^4.4.13",
     "text-table": "~0.2.0",
