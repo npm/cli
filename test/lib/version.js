@@ -5,6 +5,7 @@ let result = []
 
 const noop = () => null
 const config = {
+  'git-tag-version': true,
   'tag-version-prefix': 'v',
   json: false,
 }
@@ -155,4 +156,175 @@ t.test('with one arg', t => {
     t.same(result, ['v4.0.0'], 'outputs the new version prefixed by the tagVersionPrefix')
     t.end()
   })
+})
+
+t.test('workspaces', t => {
+  t.teardown(() => {
+    npm.localPrefix = ''
+    npm.prefix = ''
+  })
+
+  t.test('no args, all workspaces', t => {
+    const testDir = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'workspaces-test',
+        version: '1.0.0',
+        workspaces: ['workspace-a', 'workspace-b'],
+      }, null, 2),
+      'workspace-a': {
+        'package.json': JSON.stringify({
+          name: 'workspace-a',
+          version: '1.0.0',
+        }),
+      },
+      'workspace-b': {
+        'package.json': JSON.stringify({
+          name: 'workspace-b',
+          version: '1.0.0',
+        }),
+      },
+    })
+    npm.localPrefix = testDir
+    npm.prefix = testDir
+    const version = new Version(npm)
+    version.execWorkspaces([], [], err => {
+      if (err)
+        throw err
+      t.same(result, [{
+        'workspaces-test': '1.0.0',
+        'workspace-a': '1.0.0',
+        'workspace-b': '1.0.0',
+        npm: '1.0.0',
+      }], 'outputs includes main package and workspace versions')
+      t.end()
+    })
+  })
+
+  t.test('no args, single workspaces', t => {
+    const testDir = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'workspaces-test',
+        version: '1.0.0',
+        workspaces: ['workspace-a', 'workspace-b'],
+      }, null, 2),
+      'workspace-a': {
+        'package.json': JSON.stringify({
+          name: 'workspace-a',
+          version: '1.0.0',
+        }),
+      },
+      'workspace-b': {
+        'package.json': JSON.stringify({
+          name: 'workspace-b',
+          version: '1.0.0',
+        }),
+      },
+    })
+    npm.localPrefix = testDir
+    npm.prefix = testDir
+    const version = new Version(npm)
+    version.execWorkspaces([], ['workspace-a'], err => {
+      if (err)
+        throw err
+      t.same(result, [{
+        'workspaces-test': '1.0.0',
+        'workspace-a': '1.0.0',
+        npm: '1.0.0',
+      }], 'outputs includes main package and requested workspace versions')
+      t.end()
+    })
+  })
+
+  t.test('no args, all workspaces, workspace with missing name or version', t => {
+    const testDir = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'workspaces-test',
+        version: '1.0.0',
+        workspaces: ['workspace-a', 'workspace-b', 'workspace-c'],
+      }, null, 2),
+      'workspace-a': {
+        'package.json': JSON.stringify({
+          name: 'workspace-a',
+          version: '1.0.0',
+        }),
+      },
+      'workspace-b': {
+        'package.json': JSON.stringify({
+          name: 'workspace-b',
+        }),
+      },
+      'workspace-c': {
+        'package.json': JSON.stringify({
+          version: '1.0.0',
+        }),
+      },
+    })
+    npm.localPrefix = testDir
+    npm.prefix = testDir
+    const version = new Version(npm)
+    version.execWorkspaces([], [], err => {
+      if (err)
+        throw err
+      t.same(result, [{
+        'workspaces-test': '1.0.0',
+        'workspace-a': '1.0.0',
+        npm: '1.0.0',
+      }], 'outputs includes main package and valid workspace versions')
+      t.end()
+    })
+  })
+
+  t.test('with one arg, all workspaces', t => {
+    const libNpmVersionArgs = []
+    const testDir = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'workspaces-test',
+        version: '1.0.0',
+        workspaces: ['workspace-a', 'workspace-b'],
+      }, null, 2),
+      'workspace-a': {
+        'package.json': JSON.stringify({
+          name: 'workspace-a',
+          version: '1.0.0',
+        }),
+      },
+      'workspace-b': {
+        'package.json': JSON.stringify({
+          name: 'workspace-b',
+          version: '1.0.0',
+        }),
+      },
+    })
+    const Version = t.mock('../../lib/version.js', {
+      ...mocks,
+      libnpmversion: (arg, opts) => {
+        libNpmVersionArgs.push([arg, opts])
+        return '2.0.0'
+      },
+    })
+    npm.localPrefix = testDir
+    npm.prefix = testDir
+    const version = new Version(npm)
+
+    version.execWorkspaces(['major'], [], err => {
+      if (err)
+        throw err
+      t.same(result, ['workspace-a', 'v2.0.0', 'workspace-b', 'v2.0.0'], 'outputs the new version for only the workspaces prefixed by the tagVersionPrefix')
+      t.end()
+    })
+  })
+
+  t.test('too many args', t => {
+    version.execWorkspaces(['foo', 'bar'], [], err => {
+      t.match(
+        err,
+        'npm version',
+        'should throw usage instructions error'
+      )
+
+      t.end()
+    })
+  })
+
+  t.end()
 })

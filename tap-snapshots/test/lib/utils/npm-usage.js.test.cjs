@@ -204,7 +204,8 @@ All commands:
                     npm audit [fix]
                     
                     Options:
-                    [--audit-level <info|low|moderate|high|critical|none>] [--dry-run] [-f|--force] [--json] [--package-lock-only] [--production]
+                    [--audit-level <info|low|moderate|high|critical|none>] [--dry-run] [-f|--force]
+                    [--json] [--package-lock-only] [--production]
                     
                     Run "npm help audit" for more info
 
@@ -324,7 +325,8 @@ All commands:
                     npm dist-tag ls [<pkg>]
                     
                     Options:
-                    [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]] [-ws|--workspaces]
+                    [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+                    [-ws|--workspaces]
                     
                     alias: dist-tags
                     
@@ -338,7 +340,9 @@ All commands:
                     npm docs [<pkgname> [<pkgname> ...]]
                     
                     Options:
-                    [--browser|--browser <browser>] [--registry <registry>] [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]] [-ws|--workspaces]
+                    [--browser|--browser <browser>] [--registry <registry>]
+                    [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+                    [-ws|--workspaces]
                     
                     alias: home
                     
@@ -373,7 +377,8 @@ All commands:
                     npm exec --package=foo -c '<cmd> [args...]'
                     
                     Options:
-                    [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]] [-ws|--workspaces]
+                    [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+                    [-ws|--workspaces]
                     
                     alias: x
                     
@@ -416,7 +421,8 @@ All commands:
                     npm fund [[<@scope>/]<pkg>]
                     
                     Options:
-                    [--json] [--browser|--browser <browser>] [--unicode] [--which <fundingSourceNumber>]
+                    [--json] [--browser|--browser <browser>] [--unicode]
+                    [--which <fundingSourceNumber>]
                     
                     Run "npm help fund" for more info
 
@@ -482,7 +488,8 @@ All commands:
                     npm install <github username>/<github project>
                     
                     Options:
-                    [-S|--save|--no-save|--save-prod|--save-dev|--save-optional|--save-peer] [-E|--save-exact]
+                    [-S|--save|--no-save|--save-prod|--save-dev|--save-optional|--save-peer]
+                    [-E|--save-exact]
                     
                     aliases: i, in, ins, inst, insta, instal, isnt, isnta, isntal, add
                     
@@ -516,7 +523,8 @@ All commands:
                     npm install-test <github username>/<github project>
                     
                     Options:
-                    [-S|--save|--no-save|--save-prod|--save-dev|--save-optional|--save-peer] [-E|--save-exact]
+                    [-S|--save|--no-save|--save-prod|--save-dev|--save-optional|--save-peer]
+                    [-E|--save-exact]
                     
                     alias: it
                     
@@ -625,7 +633,9 @@ All commands:
                     npm pack [[<@scope>/]<pkg>...]
                     
                     Options:
-                    [--dry-run] [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]] [-ws|--workspaces]
+                    [--dry-run]
+                    [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+                    [-ws|--workspaces]
                     
                     Run "npm help pack" for more info
 
@@ -705,7 +715,9 @@ All commands:
                     npm repo [<pkgname> [<pkgname> ...]]
                     
                     Options:
-                    [--browser|--browser <browser>] [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]] [-ws|--workspaces]
+                    [--browser|--browser <browser>]
+                    [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+                    [-ws|--workspaces]
                     
                     Run "npm help repo" for more info
 
@@ -738,7 +750,8 @@ All commands:
                     npm run-script <command> [-- <args>]
                     
                     Options:
-                    [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]] [-ws|--workspaces]
+                    [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+                    [-ws|--workspaces]
                     
                     aliases: run, rum, urn
                     
@@ -775,7 +788,8 @@ All commands:
                     npm set-script [<script>] [<command>]
                     
                     Options:
-                    [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]] [-ws|--workspaces]
+                    [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+                    [-ws|--workspaces]
                     
                     Run "npm help set-script" for more info
 
@@ -910,7 +924,13 @@ All commands:
                     Bump a package version
                     
                     Usage:
-                    npm version [<newversion> | major | minor | patch | premajor | preminor | prepatch | prerelease [--preid=<prerelease-id>] | from-git]
+                    npm version [<newversion> | major | minor | patch | premajor | preminor | prepatch | prerelease | from-git]
+                    
+                    Options:
+                    [--allow-same-version] [--commit-hooks] [--git-tag-version] [--json]
+                    [--preid prerelease-id] [--sign-git-tag]
+                    [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+                    [-ws|--workspaces]
                     
                     alias: verison
                     
@@ -924,7 +944,8 @@ All commands:
                     npm view [<@scope>/]<pkg>[@<version>] [<field>[.subfield]...]
                     
                     Options:
-                    [--json] [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]] [-ws|--workspaces]
+                    [--json] [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+                    [-ws|--workspaces]
                     
                     aliases: v, info, show
                     

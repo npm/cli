@@ -16,7 +16,8 @@ npm dist-tag rm <pkg> <tag>
 npm dist-tag ls [<pkg>]
 
 Options:
-[-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]] [-ws|--workspaces]
+[-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+[-ws|--workspaces]
 
 alias: dist-tags
 
@@ -34,7 +35,8 @@ npm dist-tag rm <pkg> <tag>
 npm dist-tag ls [<pkg>]
 
 Options:
-[-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]] [-ws|--workspaces]
+[-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+[-ws|--workspaces]
 
 alias: dist-tags
 
@@ -61,7 +63,8 @@ npm dist-tag rm <pkg> <tag>
 npm dist-tag ls [<pkg>]
 
 Options:
-[-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]] [-ws|--workspaces]
+[-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+[-ws|--workspaces]
 
 alias: dist-tags
 
@@ -85,7 +88,8 @@ npm dist-tag rm <pkg> <tag>
 npm dist-tag ls [<pkg>]
 
 Options:
-[-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]] [-ws|--workspaces]
+[-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+[-ws|--workspaces]
 
 alias: dist-tags
 
@@ -139,7 +143,8 @@ npm dist-tag rm <pkg> <tag>
 npm dist-tag ls [<pkg>]
 
 Options:
-[-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]] [-ws|--workspaces]
+[-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+[-ws|--workspaces]
 
 alias: dist-tags
 
