@@ -31,6 +31,16 @@ const pacote = {
         version: '1.2.3',
         repository: { url: 'https://github.com/foo/repoobj' },
       }
+      : spec === 'mailtest' ? {
+        name: 'mailtest',
+        version: '3.7.4',
+        bugs: { email: 'hello@example.com' },
+      }
+      : spec === 'secondmailtest' ? {
+        name: 'secondmailtest',
+        version: '0.1.1',
+        bugs: { email: 'ABC432abc@a.b.example.net' },
+      }
       : spec === '.' ? {
         name: 'thispkg',
         version: '1.2.3',
@@ -59,7 +69,7 @@ t.test('usage', (t) => {
   t.end()
 })
 
-t.test('open bugs urls', t => {
+t.test('open bugs urls & emails', t => {
   const expect = {
     nobugs: 'https://www.npmjs.com/package/nobugs',
     'bugsobj-nourl': 'https://www.npmjs.com/package/bugsobj-nourl',
@@ -67,6 +77,8 @@ t.test('open bugs urls', t => {
     bugsobj: 'https://bugzilla.localhost/bugsobj',
     repourl: 'https://github.com/foo/repourl/issues',
     repoobj: 'https://github.com/foo/repoobj/issues',
+    mailtest: 'mailto:hello@example.com',
+    secondmailtest: 'mailto:ABC432abc@a.b.example.net',
     '.': 'https://example.com',
   }
   const keys = Object.keys(expect)
