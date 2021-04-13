@@ -1,6 +1,5 @@
 const t = require('tap')
 
-const requireInject = require('require-inject')
 const pacote = {
   manifest: async (spec, options) => {
     return spec === 'nobugs' ? {
@@ -48,7 +47,7 @@ const openUrl = async (npm, url, errMsg) => {
   opened[url]++
 }
 
-const Bugs = requireInject('../../lib/bugs.js', {
+const Bugs = t.mock('../../lib/bugs.js', {
   pacote,
   '../../lib/utils/open-url.js': openUrl,
 })

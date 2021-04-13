@@ -16,9 +16,9 @@ t.cleanSnapshot = s => s.split(cwd).join('{CWD}')
   .replace(/^npm@.*\ /mg, 'npm ')
 
 // setup server
-const registryServer = require('./server.js')
-const { registry } = registryServer
-t.test('setup server', { bail: true, buffered: false }, registryServer)
+const { start, stop, registry } = require('./server.js')
+t.before(start)
+t.teardown(stop)
 
 // setup fixtures
 const path = t.testdir({

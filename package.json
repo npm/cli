@@ -188,8 +188,7 @@
     "jsdom": "^16.5.2",
     "licensee": "^8.1.0",
     "marked-man": "^0.7.0",
-    "require-inject": "^1.4.4",
-    "tap": "^14.11.0",
+    "tap": "^15.0.2",
     "yaml": "^1.10.2"
   },
   "scripts": {
@@ -219,7 +218,6 @@
     "files": "test/{lib,bin}",
     "coverage-map": "test/coverage-map.js",
     "check-coverage": true,
-    "esm": false,
     "timeout": 600
   },
   "license": "Artistic-2.0",

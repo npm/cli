@@ -1,5 +1,4 @@
 const t = require('tap')
-const requireInject = require('require-inject')
 const mockNpm = require('../fixtures/mock-npm')
 
 let result = []
@@ -22,16 +21,15 @@ const mocks = {
   libnpmversion: noop,
 }
 
-const Version = requireInject('../../lib/version.js', mocks)
+const Version = t.mock('../../lib/version.js', mocks)
 const version = new Version(npm)
 
 const _processVersions = process.versions
-t.afterEach(cb => {
+t.afterEach(() => {
   config.json = false
   npm.prefix = ''
   process.versions = _processVersions
   result = []
-  cb()
 })
 
 t.test('no args', t => {
@@ -48,7 +46,7 @@ t.test('no args', t => {
     if (err)
       throw err
 
-    t.deepEqual(
+    t.same(
       result,
       [{
         'test-version-no-args': '3.2.1',
@@ -103,7 +101,7 @@ t.test('failure reading package.json', t => {
     if (err)
       throw err
 
-    t.deepEqual(
+    t.same(
       result,
       [{
         npm: '1.0.0',
@@ -125,7 +123,7 @@ t.test('--json option', t => {
   version.exec([], err => {
     if (err)
       throw err
-    t.deepEqual(
+    t.same(
       result,
       ['{\n  "npm": "1.0.0"\n}'],
       'should return json stringified result'
@@ -135,11 +133,11 @@ t.test('--json option', t => {
 })
 
 t.test('with one arg', t => {
-  const Version = requireInject('../../lib/version.js', {
+  const Version = t.mock('../../lib/version.js', {
     ...mocks,
     libnpmversion: (arg, opts) => {
       t.equal(arg, 'major', 'should forward expected value')
-      t.deepEqual(
+      t.same(
         opts,
         {
           path: '',
