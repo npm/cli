@@ -24,7 +24,7 @@ const { basename, resolve } = require('path')
 
 const revs = require('./revs.js')
 const spawn = require('./spawn.js')
-const { isWindows, escapePath } = require('./utils.js')
+const { isWindows } = require('./utils.js')
 
 const pickManifest = require('npm-pick-manifest')
 const fs = require('fs')
@@ -112,7 +112,7 @@ const branch = (repo, revDoc, target, opts) => {
     '-b',
     revDoc.ref,
     repo,
-    escapePath(target, opts),
+    target,
     '--recurse-submodules'
   ]
   if (maybeShallow(repo, opts)) { args.push('--depth=1') }
@@ -125,7 +125,7 @@ const plain = (repo, revDoc, target, opts) => {
   const args = [
     'clone',
     repo,
-    escapePath(target, opts),
+    target,
     '--recurse-submodules'
   ]
   if (maybeShallow(repo, opts)) { args.push('--depth=1') }
@@ -151,7 +151,7 @@ const unresolved = (repo, ref, target, opts) => {
   // can't do this one shallowly, because the ref isn't advertised
   // but we can avoid checking out the working dir twice, at least
   const lp = isWindows(opts) ? ['--config', 'core.longpaths=true'] : []
-  const cloneArgs = ['clone', '--mirror', '-q', repo, escapePath(target + '/.git', opts)]
+  const cloneArgs = ['clone', '--mirror', '-q', repo, target + '/.git']
   const git = (args) => spawn(args, { ...opts, cwd: target })
   return mkdirp(target)
     .then(() => git(cloneArgs.concat(lp)))

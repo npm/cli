@@ -7,5 +7,6 @@ const gitEnv = {
 module.exports = (opts = {}) => ({
   stdioString: true,
   ...opts,
+  shell: false,
   env: opts.env || { ...gitEnv, ...process.env }
 })

@@ -1,4 +1,3 @@
-const { escapePath } = require('./utils.js')
 const which = require('which')
 
 let gitPath
@@ -13,5 +12,5 @@ module.exports = (opts = {}) => {
   if (!gitPath || opts.git === false) {
     return Object.assign(new Error('No git binary found in $PATH'), { code: 'ENOGIT' })
   }
-  return escapePath(gitPath, opts)
+  return gitPath
 }
