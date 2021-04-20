@@ -189,7 +189,7 @@ children workspaces)
 
 #### workspaces
 
-* Alias: `-ws`
+* Alias: `--ws`
 * Type: Boolean
 * Default: `false`
 
