@@ -2489,6 +2489,48 @@ t.test('ls --json', (t) => {
     })
   })
 
+  t.test('missing deps --long', (t) => {
+    config.long = true
+    npm.prefix = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'test-npm-ls',
+        version: '1.0.0',
+        dependencies: {
+          foo: '^1.0.0',
+          bar: '^1.0.0',
+          lorem: '^1.0.0',
+          ipsum: '^1.0.0',
+        },
+      }),
+      ...simpleNmFixture,
+    })
+    ls.exec([], (err) => {
+      t.equal(
+        redactCwd(err.message),
+        'missing: ipsum@^1.0.0, required by test-npm-ls@1.0.0',
+        'should log missing dep as error'
+      )
+      t.equal(
+        err.code,
+        'ELSPROBLEMS',
+        'should have ELSPROBLEMS error code'
+      )
+      t.match(
+        jsonParse(result),
+        {
+          name: 'test-npm-ls',
+          version: '1.0.0',
+          problems: [
+            'missing: ipsum@^1.0.0, required by test-npm-ls@1.0.0',
+          ],
+        },
+        'should output json containing problems info'
+      )
+      config.long = false
+      t.end()
+    })
+  })
+
   t.test('with filter arg', (t) => {
     npm.prefix = t.testdir({
       'package.json': JSON.stringify({
