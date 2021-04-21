@@ -36,8 +36,7 @@ t.test('should remove dupes using Arborist', (t) => {
   })
   const dedupe = new Dedupe(npm)
   dedupe.exec([], er => {
-    if (er)
-      throw er
+    t.error(er, { bail: true })
     t.ok(true, 'callback is called')
     t.end()
   })

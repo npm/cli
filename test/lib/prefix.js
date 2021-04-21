@@ -13,7 +13,7 @@ t.test('prefix', (t) => {
   })
 
   prefix.exec([], (err) => {
-    t.error(err, 'npm prefix')
+    t.error(err, { bail: true })
     t.ok('should have printed directory')
   })
 })

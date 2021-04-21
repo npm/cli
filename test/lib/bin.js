@@ -18,7 +18,7 @@ t.test('bin', (t) => {
   t.match(bin.usage, 'bin', 'usage has command name in it')
 
   bin.exec([], (err) => {
-    t.error(err, 'npm bin')
+    t.error(err, { bail: true })
     t.ok('should have printed directory')
   })
 })
@@ -49,7 +49,7 @@ t.test('bin -g', (t) => {
   const bin = new Bin(npm)
 
   bin.exec([], (err) => {
-    t.error(err, 'npm bin')
+    t.error(err, { bail: true })
     t.ok('should have printed directory')
   })
 })
@@ -79,7 +79,7 @@ t.test('bin -g (not in path)', (t) => {
   const bin = new Bin(npm)
 
   bin.exec([], (err) => {
-    t.error(err, 'npm bin')
+    t.error(err, { bail: true })
     t.ok('should have printed directory')
   })
 })

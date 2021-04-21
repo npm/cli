@@ -154,7 +154,7 @@ t.test('token list', (t) => {
   t.teardown(reset)
 
   token.exec([], (err) => {
-    t.error(err, 'npm token list')
+    t.error(err, { bail: true })
   })
 })
 
@@ -208,7 +208,7 @@ t.test('token list json output', (t) => {
   t.teardown(reset)
 
   token.exec(['list'], (err) => {
-    t.error(err, 'npm token list')
+    t.error(err, { bail: true })
   })
 })
 
@@ -276,7 +276,7 @@ t.test('token list parseable output', (t) => {
   t.teardown(reset)
 
   token.exec(['list'], (err) => {
-    t.error(err, 'npm token list')
+    t.error(err, { bail: true })
   })
 })
 
@@ -329,7 +329,7 @@ t.test('token revoke', (t) => {
   t.teardown(reset)
 
   token.exec(['rm', 'abcd'], (err) => {
-    t.error(err, 'npm token rm')
+    t.error(err, { bail: true })
   })
 })
 
@@ -381,7 +381,7 @@ t.test('token revoke multiple tokens', (t) => {
   t.teardown(reset)
 
   token.exec(['revoke', 'abcd', 'efgh'], (err) => {
-    t.error(err, 'npm token rm')
+    t.error(err, { bail: true })
   })
 })
 
@@ -433,7 +433,7 @@ t.test('token revoke json output', (t) => {
   t.teardown(reset)
 
   token.exec(['delete', 'abcd'], (err) => {
-    t.error(err, 'npm token rm')
+    t.error(err, { bail: true })
   })
 })
 
@@ -483,7 +483,7 @@ t.test('token revoke parseable output', (t) => {
   t.teardown(reset)
 
   token.exec(['remove', 'abcd'], (err) => {
-    t.error(err, 'npm token rm')
+    t.error(err, { bail: true })
   })
 })
 
@@ -533,7 +533,7 @@ t.test('token revoke by token', (t) => {
   t.teardown(reset)
 
   token.exec(['rm', 'efgh5678'], (err) => {
-    t.error(err, 'npm token rm')
+    t.error(err, { bail: true })
   })
 })
 
@@ -706,7 +706,7 @@ t.test('token create', (t) => {
   t.teardown(reset)
 
   token.exec(['create'], (err) => {
-    t.error(err, 'npm token create')
+    t.error(err, { bail: true })
   })
 })
 
@@ -765,7 +765,7 @@ t.test('token create json output', (t) => {
   t.teardown(reset)
 
   token.exec(['create'], (err) => {
-    t.error(err, 'npm token create')
+    t.error(err, { bail: true })
   })
 })
 
@@ -831,7 +831,7 @@ t.test('token create parseable output', (t) => {
   t.teardown(reset)
 
   token.exec(['create'], (err) => {
-    t.error(err, 'npm token create')
+    t.error(err, { bail: true })
   })
 })
 

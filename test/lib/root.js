@@ -13,7 +13,7 @@ t.test('root', (t) => {
   })
 
   root.exec([], (err) => {
-    t.error(err, 'npm root')
+    t.error(err, { bail: true })
     t.ok('should have printed directory')
   })
 })

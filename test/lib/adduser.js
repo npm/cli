@@ -83,7 +83,7 @@ t.test('usage', (t) => {
 })
 t.test('simple login', (t) => {
   adduser.exec([], (err) => {
-    t.error(err, 'npm adduser')
+    t.error(err, { bail: true })
 
     t.equal(
       registryOutput,
@@ -154,7 +154,7 @@ t.test('scoped login', (t) => {
   _flatOptions.scope = '@myscope'
 
   adduser.exec([], (err) => {
-    t.error(err, 'npm adduser')
+    t.error(err, { bail: true })
 
     t.same(
       setConfig['@myscope:registry'],
@@ -175,7 +175,7 @@ t.test('scoped login with valid scoped registry config', (t) => {
   _flatOptions.scope = '@myscope'
 
   adduser.exec([], (err) => {
-    t.error(err, 'npm adduser')
+    t.error(err, { bail: true })
 
     t.same(
       setConfig['@myscope:registry'],

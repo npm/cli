@@ -229,8 +229,7 @@ t.test('open repo urls', t => {
   keys.forEach(pkg => {
     t.test(pkg, t => {
       repo.exec([['.', pkg].join(sep)], (err) => {
-        if (err)
-          throw err
+        t.error(err, { bail: true })
         const url = expect[pkg]
         t.match({
           [url]: 1,
@@ -264,9 +263,8 @@ t.test('fail if cannot figure out repo url', t => {
 
 t.test('open default package if none specified', t => {
   flatOptions.where = pkgDirs
-  repo.exec([], (er) => {
-    if (er)
-      throw er
+  repo.exec([], (err) => {
+    t.error(err, { bail: true })
     t.equal(opened['https://example.com/thispkg'], 1, 'opened expected url', {opened})
     t.end()
   })

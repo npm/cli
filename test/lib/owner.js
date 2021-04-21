@@ -71,7 +71,7 @@ t.test('owner ls no args', t => {
   })
 
   owner.exec(['ls'], err => {
-    t.error(err, 'npm owner ls no args')
+    t.error(err, { bail: true })
     t.matchSnapshot(result, 'should output owners of cwd package')
   })
 })
@@ -139,7 +139,7 @@ t.test('owner ls <pkg>', t => {
   })
 
   owner.exec(['ls', '@npmcli/map-workspaces'], err => {
-    t.error(err, 'npm owner ls <pkg>')
+    t.error(err, { bail: true })
     t.matchSnapshot(result, 'should output owners of <pkg>')
   })
 })
@@ -155,7 +155,7 @@ t.test('owner ls <pkg> no maintainers', t => {
   })
 
   owner.exec(['ls', '@npmcli/map-workspaces'], err => {
-    t.error(err, 'npm owner ls <pkg> no maintainers')
+    t.error(err, { bail: true })
     t.equal(result, 'no admin found', 'should output no admint found msg')
     t.end()
   })
@@ -226,7 +226,7 @@ t.test('owner add <user> <pkg>', t => {
   })
 
   owner.exec(['add', 'foo', '@npmcli/map-workspaces'], err => {
-    t.error(err, 'npm owner add <user> <pkg>')
+    t.error(err, { bail: true })
     t.equal(result, '+ foo (@npmcli/map-workspaces)', 'should output add result')
   })
 })
@@ -259,7 +259,7 @@ t.test('owner add <user> cwd package', t => {
   })
 
   owner.exec(['add', 'foo'], err => {
-    t.error(err, 'npm owner add <user> cwd package')
+    t.error(err, { bail: true })
     t.equal(result, '+ foo (@npmcli/map-workspaces)', 'should output add result')
     t.end()
   })
@@ -302,7 +302,7 @@ t.test('owner add <user> <pkg> already an owner', t => {
   })
 
   owner.exec(['add', 'ruyadorno', '@npmcli/map-workspaces'], err => {
-    t.error(err, 'npm owner add <user> <pkg> already an owner')
+    t.error(err, { bail: true })
   })
 })
 
@@ -447,7 +447,7 @@ t.test('owner add <user> <pkg> no previous maintainers property from server', t 
   })
 
   owner.exec(['add', 'foo', '@npmcli/no-owners-pkg'], err => {
-    t.error(err, 'npm owner add <user> <pkg>')
+    t.error(err, { bail: true })
     t.equal(result, '+ foo (@npmcli/no-owners-pkg)', 'should output add result')
     t.end()
   })
@@ -535,7 +535,7 @@ t.test('owner rm <user> <pkg>', t => {
   })
 
   owner.exec(['rm', 'ruyadorno', '@npmcli/map-workspaces'], err => {
-    t.error(err, 'npm owner rm <user> <pkg>')
+    t.error(err, { bail: true })
     t.equal(result, '- ruyadorno (@npmcli/map-workspaces)', 'should output rm result')
   })
 })
@@ -575,7 +575,7 @@ t.test('owner rm <user> <pkg> not a current owner', t => {
   })
 
   owner.exec(['rm', 'foo', '@npmcli/map-workspaces'], err => {
-    t.error(err, 'npm owner rm <user> <pkg> not a current owner')
+    t.error(err, { bail: true })
   })
 })
 
@@ -607,7 +607,7 @@ t.test('owner rm <user> cwd package', t => {
   })
 
   owner.exec(['rm', 'ruyadorno'], err => {
-    t.error(err, 'npm owner rm <user> cwd package')
+    t.error(err, { bail: true })
     t.equal(result, '- ruyadorno (@npmcli/map-workspaces)', 'should output rm result')
     t.end()
   })

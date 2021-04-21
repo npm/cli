@@ -597,7 +597,7 @@ t.test('workspaces', t => {
 
   t.test('all workspaces', t => {
     view.execWorkspaces([], [], (err) => {
-      t.error(err)
+      t.error(err, { bail: true })
       t.matchSnapshot(logs)
       t.end()
     })
@@ -605,7 +605,7 @@ t.test('workspaces', t => {
 
   t.test('one specific workspace', t => {
     view.execWorkspaces([], ['green'], (err) => {
-      t.error(err)
+      t.error(err, { bail: true })
       t.matchSnapshot(logs)
       t.end()
     })
@@ -614,7 +614,7 @@ t.test('workspaces', t => {
   t.test('all workspaces --json', t => {
     config.json = true
     view.execWorkspaces([], [], (err) => {
-      t.error(err)
+      t.error(err, { bail: true })
       t.matchSnapshot(logs)
       t.end()
     })
@@ -622,7 +622,7 @@ t.test('workspaces', t => {
 
   t.test('all workspaces single field', t => {
     view.execWorkspaces(['.', 'name'], [], (err) => {
-      t.error(err)
+      t.error(err, { bail: true })
       t.matchSnapshot(logs)
       t.end()
     })
@@ -630,7 +630,7 @@ t.test('workspaces', t => {
 
   t.test('all workspaces nonexistent field', t => {
     view.execWorkspaces(['.', 'foo'], [], (err) => {
-      t.error(err)
+      t.error(err, { bail: true })
       t.matchSnapshot(logs)
       t.end()
     })
@@ -639,7 +639,7 @@ t.test('workspaces', t => {
   t.test('all workspaces nonexistent field --json', t => {
     config.json = true
     view.execWorkspaces(['.', 'foo'], [], (err) => {
-      t.error(err)
+      t.error(err, { bail: true })
       t.matchSnapshot(logs)
       t.end()
     })
@@ -648,7 +648,7 @@ t.test('workspaces', t => {
   t.test('all workspaces single field --json', t => {
     config.json = true
     view.execWorkspaces(['.', 'name'], [], (err) => {
-      t.error(err)
+      t.error(err, { bail: true })
       t.matchSnapshot(logs)
       t.end()
     })
@@ -657,7 +657,7 @@ t.test('workspaces', t => {
   t.test('single workspace --json', t => {
     config.json = true
     view.execWorkspaces([], ['green'], (err) => {
-      t.error(err)
+      t.error(err, { bail: true })
       t.matchSnapshot(logs)
       t.end()
     })
@@ -665,7 +665,7 @@ t.test('workspaces', t => {
 
   t.test('remote package name', t => {
     view.execWorkspaces(['pink'], [], (err) => {
-      t.error(err)
+      t.error(err, { bail: true })
       t.matchSnapshot(warnMsg)
       t.matchSnapshot(logs)
       t.end()

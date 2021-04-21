@@ -106,8 +106,7 @@ t.test('explain some nodes', t => {
   t.test('works with the location', t => {
     const path = 'node_modules/foo'
     explain.exec([path], er => {
-      if (er)
-        throw er
+      t.error(er, { bail: true })
       t.strictSame(OUTPUT, [['foo@1.2.3 depth=Infinity color=true']])
       t.end()
     })
@@ -115,8 +114,7 @@ t.test('explain some nodes', t => {
   t.test('works with a full actual path', t => {
     const path = resolve(npm.prefix, 'node_modules/foo')
     explain.exec([path], er => {
-      if (er)
-        throw er
+      t.error(er, { bail: true })
       t.strictSame(OUTPUT, [['foo@1.2.3 depth=Infinity color=true']])
       t.end()
     })
@@ -124,8 +122,7 @@ t.test('explain some nodes', t => {
 
   t.test('finds all nodes by name', t => {
     explain.exec(['bar'], er => {
-      if (er)
-        throw er
+      t.error(er, { bail: true })
       t.strictSame(OUTPUT, [[
         'bar@1.2.3 depth=Infinity color=true\n\n' +
         'bar@2.3.4 depth=Infinity color=true',
@@ -136,8 +133,7 @@ t.test('explain some nodes', t => {
 
   t.test('finds only nodes that match the spec', t => {
     explain.exec(['bar@1'], er => {
-      if (er)
-        throw er
+      t.error(er, { bail: true })
       t.strictSame(OUTPUT, [['bar@1.2.3 depth=Infinity color=true']])
       t.end()
     })
@@ -145,8 +141,7 @@ t.test('explain some nodes', t => {
 
   t.test('finds extraneous nodes', t => {
     explain.exec(['extra'], er => {
-      if (er)
-        throw er
+      t.error(er, { bail: true })
       t.strictSame(OUTPUT, [['extra@99.9999.999999 depth=Infinity color=true']])
       t.end()
     })
@@ -155,8 +150,7 @@ t.test('explain some nodes', t => {
   t.test('json output', t => {
     npm.flatOptions.json = true
     explain.exec(['node_modules/foo'], er => {
-      if (er)
-        throw er
+      t.error(er, { bail: true })
       t.match(JSON.parse(OUTPUT[0][0]), [{
         name: 'foo',
         version: '1.2.3',

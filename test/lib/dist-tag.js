@@ -85,7 +85,7 @@ t.test('ls in current package', (t) => {
     }),
   })
   distTag.exec(['ls'], (err) => {
-    t.error(err, 'npm dist-tags ls')
+    t.error(err, { bail: true })
     t.matchSnapshot(
       result,
       'should list available tags for current package'
@@ -101,7 +101,7 @@ t.test('no args in current package', (t) => {
     }),
   })
   distTag.exec([], (err) => {
-    t.error(err, 'npm dist-tags ls')
+    t.error(err, { bail: true })
     t.matchSnapshot(
       result,
       'should default to listing available tags for current package'
@@ -121,7 +121,7 @@ t.test('borked cmd usage', (t) => {
 t.test('ls on named package', (t) => {
   npm.prefix = t.testdir({})
   distTag.exec(['ls', '@scoped/another'], (err) => {
-    t.error(err, 'npm dist-tags ls')
+    t.error(err, { bail: true })
     t.matchSnapshot(
       result,
       'should list tags for the specified package'
@@ -163,7 +163,7 @@ t.test('ls on missing name in current package', (t) => {
 t.test('only named package arg', (t) => {
   npm.prefix = t.testdir({})
   distTag.exec(['@scoped/another'], (err) => {
-    t.error(err, 'npm dist-tags ls')
+    t.error(err, { bail: true })
     t.matchSnapshot(
       result,
       'should default to listing tags for the specified package'
@@ -201,7 +201,7 @@ t.test('workspaces', (t) => {
 
   t.test('no args', t => {
     distTag.execWorkspaces([], [], (err) => {
-      t.error(err)
+      t.error(err, { bail: true })
       t.matchSnapshot(result, 'printed the expected output')
       t.end()
     })
@@ -209,7 +209,7 @@ t.test('workspaces', (t) => {
 
   t.test('no args, one workspace', t => {
     distTag.execWorkspaces([], ['workspace-a'], (err) => {
-      t.error(err)
+      t.error(err, { bail: true })
       t.matchSnapshot(result, 'printed the expected output')
       t.end()
     })
@@ -217,7 +217,7 @@ t.test('workspaces', (t) => {
 
   t.test('one arg -- .', t => {
     distTag.execWorkspaces(['.'], [], (err) => {
-      t.error(err)
+      t.error(err, { bail: true })
       t.matchSnapshot(result, 'printed the expected output')
       t.end()
     })
@@ -225,7 +225,7 @@ t.test('workspaces', (t) => {
 
   t.test('one arg -- .@1, ignores version spec', t => {
     distTag.execWorkspaces(['.@'], [], (err) => {
-      t.error(err)
+      t.error(err, { bail: true })
       t.matchSnapshot(result, 'printed the expected output')
       t.end()
     })
@@ -233,7 +233,7 @@ t.test('workspaces', (t) => {
 
   t.test('one arg -- list', t => {
     distTag.execWorkspaces(['list'], [], (err) => {
-      t.error(err)
+      t.error(err, { bail: true })
       t.matchSnapshot(result, 'printed the expected output')
       t.end()
     })
@@ -241,7 +241,7 @@ t.test('workspaces', (t) => {
 
   t.test('two args -- list, .', t => {
     distTag.execWorkspaces(['list', '.'], [], (err) => {
-      t.error(err)
+      t.error(err, { bail: true })
       t.matchSnapshot(result, 'printed the expected output')
       t.end()
     })
@@ -249,7 +249,7 @@ t.test('workspaces', (t) => {
 
   t.test('two args -- list, .@1, ignores version spec', t => {
     distTag.execWorkspaces(['list', '.@'], [], (err) => {
-      t.error(err)
+      t.error(err, { bail: true })
       t.matchSnapshot(result, 'printed the expected output')
       t.end()
     })
@@ -257,7 +257,7 @@ t.test('workspaces', (t) => {
 
   t.test('two args -- list, @scoped/pkg, logs a warning and ignores workspaces', t => {
     distTag.execWorkspaces(['list', '@scoped/pkg'], [], (err) => {
-      t.error(err)
+      t.error(err, { bail: true })
       t.match(log, 'Ignoring workspaces for specified package', 'logs a warning')
       t.matchSnapshot(result, 'printed the expected output')
       t.end()
@@ -298,7 +298,7 @@ t.test('workspaces', (t) => {
     })
 
     distTag.execWorkspaces([], [], (err) => {
-      t.error(err)
+      t.error(err, { bail: true })
       t.equal(process.exitCode, 1, 'set the error status')
       process.exitCode = 0
       t.match(log, 'dist-tag ls Couldn\'t get dist-tag data for workspace-d@latest', 'logs the error')
@@ -322,7 +322,7 @@ t.test('add new tag', (t) => {
   }
   npm.prefix = t.testdir({})
   distTag.exec(['add', '@scoped/another@7.7.7', 'c'], (err) => {
-    t.error(err, 'npm dist-tags add')
+    t.error(err, { bail: true })
     t.matchSnapshot(
       result,
       'should return success msg'
@@ -366,7 +366,7 @@ t.test('add missing pkg name', (t) => {
 t.test('set existing version', (t) => {
   npm.prefix = t.testdir({})
   distTag.exec(['set', '@scoped/another@0.6.0', 'b'], (err) => {
-    t.error(err, 'npm dist-tags set')
+    t.error(err, { bail: true })
     t.matchSnapshot(
       log,
       'should log warn msg'
@@ -386,7 +386,7 @@ t.test('remove existing tag', (t) => {
   }
   npm.prefix = t.testdir({})
   distTag.exec(['rm', '@scoped/another', 'c'], (err) => {
-    t.error(err, 'npm dist-tags rm')
+    t.error(err, { bail: true })
     t.matchSnapshot(log, 'should log remove info')
     t.matchSnapshot(result, 'should return success msg')
     t.end()

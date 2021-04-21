@@ -32,7 +32,7 @@ t.test('pings', (t) => {
 
   ping.exec([], (err) => {
     t.equal(noticeCalls, 2, 'should have logged 2 lines')
-    t.error(err, 'npm ping')
+    t.error(err, { bail: true })
     t.ok('should be able to ping')
   })
 })
@@ -73,7 +73,7 @@ t.test('pings and logs details', (t) => {
 
   ping.exec([], (err) => {
     t.equal(noticeCalls, 3, 'should have logged 3 lines')
-    t.error(err, 'npm ping')
+    t.error(err, { bail: true })
     t.ok('should be able to ping')
   })
 })
@@ -116,7 +116,7 @@ t.test('pings and returns json', (t) => {
 
   ping.exec([], (err) => {
     t.equal(noticeCalls, 2, 'should have logged 2 lines')
-    t.error(err, 'npm ping')
+    t.error(err, { bail: true })
     t.ok('should be able to ping')
   })
 })

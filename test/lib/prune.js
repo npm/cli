@@ -20,8 +20,7 @@ t.test('should prune using Arborist', (t) => {
     },
   })
   prune.exec(null, er => {
-    if (er)
-      throw er
+    t.error(er, { bail: true })
     t.ok(true, 'callback is called')
     t.end()
   })

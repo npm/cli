@@ -120,7 +120,7 @@ t.test('config list', t => {
   })
 
   config.exec(['list'], (err) => {
-    t.error(err, 'npm config list')
+    t.error(err, { bail: true })
     t.matchSnapshot(result, 'should list configs')
   })
 })
@@ -146,7 +146,7 @@ t.test('config list overrides', t => {
   })
 
   config.exec(['list'], (err) => {
-    t.error(err, 'npm config list')
+    t.error(err, { bail: true })
     t.matchSnapshot(result, 'should list overridden configs')
   })
 })
@@ -164,7 +164,7 @@ t.test('config list --long', t => {
   })
 
   config.exec(['list'], (err) => {
-    t.error(err, 'npm config list --long')
+    t.error(err, { bail: true })
     t.matchSnapshot(result, 'should list all configs')
   })
 })
@@ -189,7 +189,7 @@ t.test('config list --json', t => {
   })
 
   config.exec(['list'], (err) => {
-    t.error(err, 'npm config list --json')
+    t.error(err, { bail: true })
     t.same(
       JSON.parse(result),
       {
@@ -223,7 +223,7 @@ t.test('config delete key', t => {
   }
 
   config.exec(['delete', 'foo'], (err) => {
-    t.error(err, 'npm config delete key')
+    t.error(err, { bail: true })
   })
 
   t.teardown(() => {
@@ -250,7 +250,7 @@ t.test('config delete multiple key', t => {
   }
 
   config.exec(['delete', 'foo', 'bar'], (err) => {
-    t.error(err, 'npm config delete keys')
+    t.error(err, { bail: true })
   })
 
   t.teardown(() => {
@@ -273,7 +273,7 @@ t.test('config delete key --global', t => {
 
   cliConfig.global = true
   config.exec(['delete', 'foo'], (err) => {
-    t.error(err, 'npm config delete key --global')
+    t.error(err, { bail: true })
   })
 
   t.teardown(() => {
@@ -304,7 +304,7 @@ t.test('config set key', t => {
   }
 
   config.exec(['set', 'foo', 'bar'], (err) => {
-    t.error(err, 'npm config set key')
+    t.error(err, { bail: true })
   })
 
   t.teardown(() => {
@@ -327,7 +327,7 @@ t.test('config set key=val', t => {
   }
 
   config.exec(['set', 'foo=bar'], (err) => {
-    t.error(err, 'npm config set key')
+    t.error(err, { bail: true })
   })
 
   t.teardown(() => {
@@ -358,7 +358,7 @@ t.test('config set multiple keys', t => {
   }
 
   config.exec(['set', ...args], (err) => {
-    t.error(err, 'npm config set key')
+    t.error(err, { bail: true })
   })
 
   t.teardown(() => {
@@ -381,7 +381,7 @@ t.test('config set key to empty value', t => {
   }
 
   config.exec(['set', 'foo'], (err) => {
-    t.error(err, 'npm config set key to empty value')
+    t.error(err, { bail: true })
   })
 
   t.teardown(() => {
@@ -409,7 +409,7 @@ t.test('config set invalid key', t => {
   })
 
   config.exec(['set', 'foo', 'bar'], (err) => {
-    t.error(err, 'npm config set invalid key')
+    t.error(err, { bail: true })
   })
 })
 
@@ -428,7 +428,7 @@ t.test('config set key --global', t => {
 
   cliConfig.global = true
   config.exec(['set', 'foo', 'bar'], (err) => {
-    t.error(err, 'npm config set key --global')
+    t.error(err, { bail: true })
   })
 
   t.teardown(() => {
@@ -449,7 +449,7 @@ t.test('config get no args', t => {
   })
 
   config.exec(['get'], (err) => {
-    t.error(err, 'npm config get no args')
+    t.error(err, { bail: true })
     t.matchSnapshot(result, 'should list configs on config get no args')
   })
 })
@@ -468,7 +468,7 @@ t.test('config get key', t => {
   }
 
   config.exec(['get', 'foo'], (err) => {
-    t.error(err, 'npm config get key')
+    t.error(err, { bail: true })
   })
 
   t.teardown(() => {
@@ -496,7 +496,7 @@ t.test('config get multiple keys', t => {
   }
 
   config.exec(['get', 'foo', 'bar'], (err) => {
-    t.error(err, 'npm config get multiple keys')
+    t.error(err, { bail: true })
     t.equal(result, 'foo=asdf\nbar=asdf')
   })
 
@@ -558,7 +558,7 @@ sign-git-commit=true`
   const config = new Config(npm)
 
   config.exec(['edit'], (err) => {
-    t.error(err, 'npm config edit')
+    t.error(err, { bail: true })
 
     // test no config file result
     editMocks.fs.readFile = (p, e, cb) => {
@@ -567,7 +567,7 @@ sign-git-commit=true`
     const Config = t.mock('../../lib/config.js', editMocks)
     const config = new Config(npm)
     config.exec(['edit'], (err) => {
-      t.error(err, 'npm config edit')
+      t.error(err, { bail: true })
     })
   })
 

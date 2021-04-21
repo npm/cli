@@ -88,7 +88,7 @@ t.test('cache clean (force)', t => {
   })
 
   cache.exec(['clear'], err => {
-    t.error(err)
+    t.error(err, { bail: true })
     t.equal(rimrafPath, path.join(npm.cache, '_cacache'))
     t.end()
   })
@@ -123,7 +123,7 @@ t.test('cache add pkg only', t => {
   })
 
   cache.exec(['add', 'mypkg'], err => {
-    t.error(err)
+    t.error(err, { bail: true })
     t.strictSame(logOutput, [
       ['silly', 'cache add', 'args', ['mypkg']],
       ['silly', 'cache add', 'spec', 'mypkg'],
@@ -142,7 +142,7 @@ t.test('cache add pkg w/ spec modifier', t => {
   })
 
   cache.exec(['add', 'mypkg', 'latest'], err => {
-    t.error(err)
+    t.error(err, { bail: true })
     t.strictSame(logOutput, [
       ['silly', 'cache add', 'args', ['mypkg', 'latest']],
       ['silly', 'cache add', 'spec', 'mypkg@latest'],
@@ -159,7 +159,7 @@ t.test('cache verify', t => {
   })
 
   cache.exec(['verify'], err => {
-    t.error(err)
+    t.error(err, { bail: true })
     t.match(outputOutput, [
       `Cache verified and compressed (${path.join(npm.cache, '_cacache')})`,
       'Content verified: 1 (100 bytes)',
@@ -186,7 +186,7 @@ t.test('cache verify w/ extra output', t => {
   })
 
   cache.exec(['check'], err => {
-    t.error(err)
+    t.error(err, { bail: true })
     t.match(outputOutput, [
       `Cache verified and compressed (~${path.join('/fake/path', '_cacache')})`,
       'Content verified: 1 (100 bytes)',

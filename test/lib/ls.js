@@ -138,7 +138,7 @@ t.test('ls', (t) => {
       ...simpleNmFixture,
     })
     ls.exec([], (err) => {
-      t.error(err, 'npm ls')
+      t.error(err, { bail: true })
       t.matchSnapshot(redactCwd(result), 'should output tree representation of dependencies structure')
       t.end()
     })
@@ -196,7 +196,7 @@ t.test('ls', (t) => {
       ...simpleNmFixture,
     })
     ls.exec(['lorem'], (err) => {
-      t.error(err, 'npm ls')
+      t.error(err, { bail: true })
       t.matchSnapshot(redactCwd(result), 'should output tree contaning only occurrences of filtered by package and colored output')
       npm.color = false
       t.end()
@@ -218,7 +218,7 @@ t.test('ls', (t) => {
       ...simpleNmFixture,
     })
     ls.exec(['.'], (err) => {
-      t.error(err, 'should not throw on missing dep above current level')
+      t.error(err, 'should not throw on missing dep above current level', { bail: true })
       t.matchSnapshot(redactCwd(result), 'should output tree contaning only occurrences of filtered by package and colored output')
       config.all = true
       config.depth = Infinity
@@ -239,7 +239,7 @@ t.test('ls', (t) => {
       ...simpleNmFixture,
     })
     ls.exec(['bar'], (err) => {
-      t.error(err, 'npm ls')
+      t.error(err, { bail: true })
       t.matchSnapshot(redactCwd(result), 'should output tree contaning only occurrences of filtered package and its ancestors')
       t.end()
     })
@@ -267,7 +267,7 @@ t.test('ls', (t) => {
       },
     })
     ls.exec(['bar@*', 'lorem@1.0.0'], (err) => {
-      t.error(err, 'npm ls')
+      t.error(err, { bail: true })
       t.matchSnapshot(redactCwd(result), 'should output tree contaning only occurrences of multiple filtered packages and their ancestors')
       t.end()
     })
@@ -286,7 +286,7 @@ t.test('ls', (t) => {
       ...simpleNmFixture,
     })
     ls.exec(['notadep'], (err) => {
-      t.error(err, 'npm ls')
+      t.error(err, { bail: true })
       t.matchSnapshot(redactCwd(result), 'should output tree containing no dependencies info')
       t.equal(
         process.exitCode,
@@ -313,7 +313,7 @@ t.test('ls', (t) => {
       ...simpleNmFixture,
     })
     ls.exec([], (err) => {
-      t.error(err, 'npm ls')
+      t.error(err, { bail: true })
       t.matchSnapshot(redactCwd(result), 'should output tree containing only top-level dependencies')
       config.all = true
       config.depth = Infinity
@@ -336,7 +336,7 @@ t.test('ls', (t) => {
       ...simpleNmFixture,
     })
     ls.exec([], (err) => {
-      t.error(err, 'npm ls')
+      t.error(err, { bail: true })
       t.matchSnapshot(redactCwd(result), 'should output tree containing only top-level dependencies')
       config.all = true
       config.depth = Infinity
@@ -397,7 +397,7 @@ t.test('ls', (t) => {
       },
     })
     ls.exec([], (err) => {
-      t.error(err, 'npm ls')
+      t.error(err, { bail: true })
       t.matchSnapshot(redactCwd(result), 'should output tree containing top-level deps and their deps only')
       config.all = true
       config.depth = Infinity
@@ -719,7 +719,7 @@ t.test('ls', (t) => {
   t.test('empty location', (t) => {
     npm.prefix = t.testdir({})
     ls.exec([], (err) => {
-      t.error(err, 'should not error out on empty locations')
+      t.error(err, 'should not error out on empty locations', { bail: true })
       t.matchSnapshot(redactCwd(result), 'should print empty result')
       t.end()
     })
@@ -899,7 +899,7 @@ t.test('ls', (t) => {
       },
     })
     ls.exec([], (err) => {
-      t.error(err, 'npm ls')
+      t.error(err, { bail: true })
       t.matchSnapshot(redactCwd(result), 'should print tree output containing deduped ref')
       t.end()
     })
@@ -937,7 +937,7 @@ t.test('ls', (t) => {
       },
     })
     ls.exec(['a'], (err) => {
-      t.error(err, 'npm ls')
+      t.error(err, { bail: true })
       t.matchSnapshot(redactCwd(result), 'should print tree output containing deduped ref')
       npm.color = false
       t.end()
@@ -985,7 +985,7 @@ t.test('ls', (t) => {
       },
     })
     ls.exec([], (err) => {
-      t.error(err, 'npm ls')
+      t.error(err, { bail: true })
       t.matchSnapshot(redactCwd(result), 'should print tree output containing deduped ref')
       t.end()
     })
@@ -1034,7 +1034,7 @@ t.test('ls', (t) => {
       },
     })
     ls.exec([], (err) => {
-      t.error(err, 'npm ls')
+      t.error(err, { bail: true })
       t.matchSnapshot(redactCwd(result), 'should print tree output containing deduped ref')
       config.all = true
       config.depth = Infinity
@@ -1084,7 +1084,7 @@ t.test('ls', (t) => {
       },
     })
     ls.exec(['@npmcli/b'], (err) => {
-      t.error(err, 'npm ls')
+      t.error(err, { bail: true })
       t.matchSnapshot(redactCwd(result), 'should print tree output containing deduped ref')
       npm.color = false
       t.end()
@@ -1132,7 +1132,7 @@ t.test('ls', (t) => {
       },
     })
     ls.exec(['@npmcli/c'], (err) => {
-      t.error(err, 'npm ls')
+      t.error(err, { bail: true })
       t.matchSnapshot(redactCwd(result), 'should print tree output containing deduped ref')
       t.end()
     })
@@ -1222,7 +1222,7 @@ t.test('ls', (t) => {
     })
     touchHiddenPackageLock(npm.prefix)
     ls.exec([], (err) => {
-      t.error(err, 'npm ls')
+      t.error(err, { bail: true })
       t.matchSnapshot(redactCwd(result), 'should output tree containing git refs')
       t.end()
     })
@@ -1266,7 +1266,7 @@ t.test('ls', (t) => {
       }),
     })
     ls.exec([], (err) => {
-      t.error(err, 'npm ls')
+      t.error(err, { bail: true })
       t.matchSnapshot(redactCwd(result), 'should NOT print git refs in output tree')
       t.end()
     })
@@ -1454,12 +1454,12 @@ t.test('ls', (t) => {
     })
 
     ls.exec([], (err) => {
-      t.error(err, 'should NOT have ELSPROBLEMS error code')
+      t.error(err, 'should NOT have ELSPROBLEMS error code', { bail: true })
       t.matchSnapshot(redactCwd(result), 'should list workspaces properly')
 
       // should also be able to filter out one of the workspaces
       ls.exec(['a'], (err) => {
-        t.error(err, 'should NOT have ELSPROBLEMS error code when filter')
+        t.error(err, 'should NOT have ELSPROBLEMS error code when filter', { bail: true })
         t.matchSnapshot(redactCwd(result), 'should filter single workspace')
 
         t.end()
@@ -1517,17 +1517,17 @@ t.test('ls', (t) => {
 
     t.plan(6)
     ls.exec(['a'], (err) => {
-      t.error(err, 'should NOT have ELSPROBLEMS error code')
+      t.error(err, 'should NOT have ELSPROBLEMS error code', { bail: true })
       t.matchSnapshot(redactCwd(result), 'should list a in top-level only')
 
       ls.exec(['d'], (err) => {
-        t.error(err, 'should NOT have ELSPROBLEMS error code when filter')
+        t.error(err, 'should NOT have ELSPROBLEMS error code when filter', { bail: true })
         t.matchSnapshot(redactCwd(result), 'should print empty results msg')
 
         // if no --depth config is defined, should print path to dep
         config.depth = null // default config value
         ls.exec(['d'], (err) => {
-          t.error(err, 'should NOT have ELSPROBLEMS error code when filter')
+          t.error(err, 'should NOT have ELSPROBLEMS error code when filter', { bail: true })
           t.matchSnapshot(redactCwd(result), 'should print expected result')
         })
       })
@@ -1559,7 +1559,7 @@ t.test('ls --parseable', (t) => {
       ...simpleNmFixture,
     })
     ls.exec([], (err) => {
-      t.error(err, 'npm ls')
+      t.error(err, { bail: true })
       t.matchSnapshot(redactCwd(result), 'should output parseable representation of dependencies structure')
       t.end()
     })
@@ -1611,7 +1611,7 @@ t.test('ls --parseable', (t) => {
       ...simpleNmFixture,
     })
     ls.exec(['lorem'], (err) => {
-      t.error(err, 'npm ls')
+      t.error(err, { bail: true })
       t.matchSnapshot(redactCwd(result), 'should output parseable contaning only occurrences of filtered by package')
       t.end()
     })
@@ -1630,7 +1630,7 @@ t.test('ls --parseable', (t) => {
       ...simpleNmFixture,
     })
     ls.exec(['bar'], (err) => {
-      t.error(err, 'npm ls')
+      t.error(err, { bail: true })
       t.matchSnapshot(redactCwd(result), 'should output parseable contaning only occurrences of filtered package')
       t.end()
     })
@@ -1658,7 +1658,7 @@ t.test('ls --parseable', (t) => {
       },
     })
     ls.exec(['bar@*', 'lorem@1.0.0'], (err) => {
-      t.error(err, 'npm ls')
+      t.error(err, { bail: true })
       t.matchSnapshot(redactCwd(result), 'should output parseable contaning only occurrences of multiple filtered packages and their ancestors')
       t.end()
     })
@@ -1677,7 +1677,7 @@ t.test('ls --parseable', (t) => {
       ...simpleNmFixture,
     })
     ls.exec(['notadep'], (err) => {
-      t.error(err, 'npm ls')
+      t.error(err, { bail: true })
       t.matchSnapshot(redactCwd(result), 'should output parseable output containing no dependencies info')
       t.equal(
         process.exitCode,
@@ -1704,7 +1704,7 @@ t.test('ls --parseable', (t) => {
       ...simpleNmFixture,
     })
     ls.exec([], (err) => {
-      t.error(err, 'npm ls')
+      t.error(err, { bail: true })
       t.matchSnapshot(redactCwd(result), 'should output parseable output containing only top-level dependencies')
       config.all = true
       config.depth = Infinity
@@ -1727,7 +1727,7 @@ t.test('ls --parseable', (t) => {
       ...simpleNmFixture,
     })
     ls.exec([], (err) => {
-      t.error(err, 'npm ls')
+      t.error(err, { bail: true })
       t.matchSnapshot(redactCwd(result), 'should output tree containing only top-level dependencies')
       config.all = true
       config.depth = Infinity
@@ -1750,7 +1750,7 @@ t.test('ls --parseable', (t) => {
       ...simpleNmFixture,
     })
     ls.exec([], (err) => {
-      t.error(err, 'npm ls')
+      t.error(err, { bail: true })
       t.matchSnapshot(redactCwd(result), 'should output parseable containing top-level deps and their deps only')
       config.all = true
       config.depth = Infinity
@@ -2034,7 +2034,7 @@ t.test('ls --parseable', (t) => {
       },
     })
     ls.exec([], (err) => {
-      t.error(err, 'npm ls')
+      t.error(err, { bail: true })
       t.matchSnapshot(redactCwd(result), 'should output parseable results with symlink targets')
       config.long = false
       t.end()
@@ -2088,7 +2088,7 @@ t.test('ls --parseable', (t) => {
   t.test('empty location', (t) => {
     npm.prefix = t.testdir({})
     ls.exec([], (err) => {
-      t.error(err, 'should not error out on empty locations')
+      t.error(err, 'should not error out on empty locations', { bail: true })
       t.matchSnapshot(redactCwd(result), 'should print empty result')
       t.end()
     })
@@ -2383,7 +2383,7 @@ t.test('ls --json', (t) => {
       ...simpleNmFixture,
     })
     ls.exec([], (err) => {
-      t.error(err, 'npm ls')
+      t.error(err, { bail: true })
       t.same(
         jsonParse(result),
         {
@@ -2525,7 +2525,7 @@ t.test('ls --json', (t) => {
       ...simpleNmFixture,
     })
     ls.exec(['lorem'], (err) => {
-      t.error(err, 'npm ls')
+      t.error(err, { bail: true })
       t.same(
         jsonParse(result),
         {
@@ -2561,7 +2561,7 @@ t.test('ls --json', (t) => {
       ...simpleNmFixture,
     })
     ls.exec(['bar'], (err) => {
-      t.error(err, 'npm ls')
+      t.error(err, { bail: true })
       t.same(
         jsonParse(result),
         {
@@ -2606,7 +2606,7 @@ t.test('ls --json', (t) => {
       },
     })
     ls.exec(['bar@*', 'lorem@1.0.0'], (err) => {
-      t.error(err, 'npm ls')
+      t.error(err, { bail: true })
       t.same(
         jsonParse(result),
         {
@@ -2645,7 +2645,7 @@ t.test('ls --json', (t) => {
       ...simpleNmFixture,
     })
     ls.exec(['notadep'], (err) => {
-      t.error(err, 'npm ls')
+      t.error(err, { bail: true })
       t.same(
         jsonParse(result),
         {
@@ -2679,7 +2679,7 @@ t.test('ls --json', (t) => {
       ...simpleNmFixture,
     })
     ls.exec([], (err) => {
-      t.error(err, 'npm ls')
+      t.error(err, { bail: true })
       t.same(
         jsonParse(result),
         {
@@ -2717,7 +2717,7 @@ t.test('ls --json', (t) => {
       ...simpleNmFixture,
     })
     ls.exec([], (err) => {
-      t.error(err, 'npm ls')
+      t.error(err, { bail: true })
       t.same(
         jsonParse(result),
         {
@@ -2755,7 +2755,7 @@ t.test('ls --json', (t) => {
       ...simpleNmFixture,
     })
     ls.exec([], (err) => {
-      t.error(err, 'npm ls')
+      t.error(err, { bail: true })
       t.same(
         jsonParse(result),
         {
@@ -3462,7 +3462,7 @@ t.test('ls --json', (t) => {
   t.test('empty location', (t) => {
     npm.prefix = t.testdir({})
     ls.exec([], (err) => {
-      t.error(err, 'should not error out on empty locations')
+      t.error(err, 'should not error out on empty locations', { bail: true })
       t.same(
         jsonParse(result),
         {},

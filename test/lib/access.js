@@ -117,7 +117,7 @@ t.test('access public on scoped package', (t) => {
   access.exec([
     'public',
   ], (err) => {
-    t.error(err, 'npm access')
+    t.error(err, { bail: true })
     t.ok('should successfully access public on scoped package')
   })
 })
@@ -202,7 +202,7 @@ t.test('access restricted on scoped package', (t) => {
   access.exec([
     'restricted',
   ], (err) => {
-    t.error(err, 'npm access')
+    t.error(err, { bail: true })
     t.ok('should successfully access restricted on scoped package')
   })
 })
@@ -261,7 +261,7 @@ t.test('access grant read-only', (t) => {
     'myorg:myteam',
     '@scoped/another',
   ], (err) => {
-    t.error(err, 'npm access')
+    t.error(err, { bail: true })
     t.ok('should successfully access grant read-only')
   })
 })
@@ -285,7 +285,7 @@ t.test('access grant read-write', (t) => {
     'myorg:myteam',
     '@scoped/another',
   ], (err) => {
-    t.error(err, 'npm access')
+    t.error(err, { bail: true })
     t.ok('should successfully access grant read-write')
   })
 })
@@ -313,7 +313,7 @@ t.test('access grant current cwd', (t) => {
     'read-write',
     'myorg:myteam',
   ], (err) => {
-    t.error(err, 'npm access')
+    t.error(err, { bail: true })
     t.ok('should successfully access grant current cwd')
   })
 })
@@ -370,7 +370,7 @@ t.test('access grant malformed team arg', (t) => {
 })
 
 t.test('access 2fa-required/2fa-not-required', t => {
-  t.plan(2)
+  t.plan(4)
   const Access = t.mock('../../lib/access.js', {
     libnpmaccess: {
       tfaRequired: (spec) => {
@@ -385,14 +385,12 @@ t.test('access 2fa-required/2fa-not-required', t => {
   })
   const access = new Access({})
 
-  access.exec(['2fa-required', '@scope/pkg'], er => {
-    if (er)
-      throw er
+  access.exec(['2fa-required', '@scope/pkg'], err => {
+    t.error(err, { bail: true })
   })
 
-  access.exec(['2fa-not-required', 'unscoped-pkg'], er => {
-    if (er)
-      throw er
+  access.exec(['2fa-not-required', 'unscoped-pkg'], err => {
+    t.error(err, { bail: true })
   })
 })
 
@@ -413,7 +411,7 @@ t.test('access revoke', (t) => {
     'myorg:myteam',
     '@scoped/another',
   ], (err) => {
-    t.error(err, 'npm access')
+    t.error(err, { bail: true })
     t.ok('should successfully access revoke')
   })
 })
@@ -465,7 +463,7 @@ t.test('npm access ls-packages with no team', (t) => {
   access.exec([
     'ls-packages',
   ], (err) => {
-    t.error(err, 'npm access')
+    t.error(err, { bail: true })
     t.ok('should successfully access ls-packages with no team')
   })
 })
@@ -485,7 +483,7 @@ t.test('access ls-packages on team', (t) => {
     'ls-packages',
     'myorg:myteam',
   ], (err) => {
-    t.error(err, 'npm access')
+    t.error(err, { bail: true })
     t.ok('should successfully access ls-packages on team')
   })
 })
@@ -509,7 +507,7 @@ t.test('access ls-collaborators on current', (t) => {
   access.exec([
     'ls-collaborators',
   ], (err) => {
-    t.error(err, 'npm access')
+    t.error(err, { bail: true })
     t.ok('should successfully access ls-collaborators on current')
   })
 })
@@ -529,7 +527,7 @@ t.test('access ls-collaborators on spec', (t) => {
     'ls-collaborators',
     'yargs',
   ], (err) => {
-    t.error(err, 'npm access')
+    t.error(err, { bail: true })
     t.ok('should successfully access ls-packages with no team')
   })
 })

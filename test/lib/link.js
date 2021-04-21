@@ -80,7 +80,7 @@ t.test('link to globalDir when in current working dir of pkg and no args', (t) =
   }
 
   link.exec([], (err) => {
-    t.error(err, 'should not error out')
+    t.error(err, { bail: true })
   })
 })
 
@@ -188,7 +188,7 @@ t.test('link global linked pkg to local nm when using args', (t) => {
     'a',
     'file:../link-me-too',
   ], (err) => {
-    t.error(err, 'should not error out')
+    t.error(err, { bail: true })
   })
 })
 
@@ -251,7 +251,7 @@ t.test('link pkg already in global space', (t) => {
   // - a: prev installed package available in globalDir
   // - file:./link-me-too: pkg that needs to be reified in globalDir first
   link.exec(['@myscope/linked'], (err) => {
-    t.error(err, 'should not error out')
+    t.error(err, { bail: true })
   })
 })
 
@@ -309,7 +309,7 @@ t.test('link pkg already in global space when prefix is a symlink', (t) => {
   }
 
   link.exec(['@myscope/linked'], (err) => {
-    t.error(err, 'should not error out')
+    t.error(err, { bail: true })
   })
 })
 

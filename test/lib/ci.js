@@ -33,8 +33,7 @@ t.test('should ignore scripts with --ignore-scripts', (t) => {
   const ci = new CI(npm)
 
   ci.exec([], er => {
-    if (er)
-      throw er
+    t.error(er, { bail: true })
     t.equal(REIFY_CALLED, true, 'called reify')
     t.strictSame(SCRIPTS, [], 'no scripts when running ci')
     t.end()
@@ -122,8 +121,7 @@ t.test('should use Arborist and run-script', (t) => {
   const ci = new CI(npm)
 
   ci.exec(null, er => {
-    if (er)
-      throw er
+    t.error(er, { bail: true })
     for (const [msg, result] of Object.entries(timers))
       t.notOk(result, `properly resolved ${msg} timer`)
     t.match(timers, { 'npm-ci:rm': false }, 'saw the rimraf timer')
@@ -141,7 +139,6 @@ t.test('should pass flatOptions to Arborist.reify', (t) => {
       this.loadVirtual = () => Promise.resolve(true)
       this.reify = async (options) => {
         t.equal(options.production, true, 'should pass flatOptions to Arborist.reify')
-        t.end()
       }
     },
   })
@@ -153,8 +150,8 @@ t.test('should pass flatOptions to Arborist.reify', (t) => {
   })
   const ci = new CI(npm)
   ci.exec(null, er => {
-    if (er)
-      throw er
+    t.error(er, { bail: true })
+    t.end()
   })
 })
 
@@ -224,7 +221,6 @@ t.test('should remove existing node_modules before installing', (t) => {
         const contents = await readdir(testDir)
         const nodeModules = contents.filter((path) => path.startsWith('node_modules'))
         t.same(nodeModules, ['node_modules'], 'should only have the node_modules directory')
-        t.end()
       }
     },
   })
@@ -238,7 +234,7 @@ t.test('should remove existing node_modules before installing', (t) => {
   const ci = new CI(npm)
 
   ci.exec(null, er => {
-    if (er)
-      throw er
+    t.error(er, { bail: true })
+    t.end()
   })
 })

@@ -54,7 +54,7 @@ t.test('token logout', async (t) => {
 
   await new Promise((res, rej) => {
     logout.exec([], (err) => {
-      t.error(err, 'should not error out')
+      t.error(err, { bail: true })
 
       t.same(
         result,
@@ -125,7 +125,7 @@ t.test('token scoped logout', async (t) => {
 
   await new Promise((res, rej) => {
     logout.exec([], (err) => {
-      t.error(err, 'should not error out')
+      t.error(err, { bail: true })
 
       t.same(
         result,
@@ -178,7 +178,7 @@ t.test('user/pass logout', async (t) => {
 
   await new Promise((res, rej) => {
     logout.exec([], (err) => {
-      t.error(err, 'should not error out')
+      t.error(err, { bail: true })
 
       delete flatOptions.username
       delete flatOptions.password
@@ -232,7 +232,7 @@ t.test('ignore invalid scoped registry config', async (t) => {
 
   await new Promise((res, rej) => {
     logout.exec([], (err) => {
-      t.error(err, 'should not error out')
+      t.error(err, { bail: true })
 
       t.same(
         result,

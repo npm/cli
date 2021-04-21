@@ -39,8 +39,7 @@ t.test('should install using Arborist', (t) => {
 
   t.test('with args', t => {
     install.exec(['fizzbuzz'], er => {
-      if (er)
-        throw er
+      t.error(er, { bail: true })
       t.match(ARB_ARGS,
         { global: false, path: 'foo', auditLevel: null },
         'Arborist gets correct args and ignores auditLevel')
@@ -52,8 +51,7 @@ t.test('should install using Arborist', (t) => {
 
   t.test('just a local npm install', t => {
     install.exec([], er => {
-      if (er)
-        throw er
+      t.error(er, { bail: true })
       t.match(ARB_ARGS, { global: false, path: 'foo' })
       t.equal(REIFY_CALLED, true, 'called reify')
       t.strictSame(SCRIPTS, [
@@ -97,8 +95,7 @@ t.test('should ignore scripts with --ignore-scripts', (t) => {
   })
   const install = new Install(npm)
   install.exec([], er => {
-    if (er)
-      throw er
+    t.error(er, { bail: true })
     t.equal(REIFY_CALLED, true, 'called reify')
     t.strictSame(SCRIPTS, [], 'no scripts when adding dep')
     t.end()
@@ -120,8 +117,7 @@ t.test('should install globally using Arborist', (t) => {
   })
   const install = new Install(npm)
   install.exec([], er => {
-    if (er)
-      throw er
+    t.error(er, { bail: true })
     t.end()
   })
 })

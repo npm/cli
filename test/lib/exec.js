@@ -125,7 +125,7 @@ t.test('npx foo, bin already exists locally', t => {
   npm.localBin = path
 
   exec.exec(['foo', 'one arg', 'two arg'], er => {
-    t.error(er, 'npm exec')
+    t.error(er, { bail: true })
     t.match(RUN_SCRIPTS, [{
       pkg: { scripts: { npx: 'foo' }},
       args: ['one arg', 'two arg'],
@@ -151,7 +151,7 @@ t.test('npx foo, bin already exists globally', t => {
   npm.globalBin = path
 
   exec.exec(['foo', 'one arg', 'two arg'], er => {
-    t.error(er, 'npm exec')
+    t.error(er, { bail: true })
     t.match(RUN_SCRIPTS, [{
       pkg: { scripts: { npx: 'foo' }},
       args: ['one arg', 'two arg'],
@@ -183,8 +183,7 @@ t.test('npm exec foo, already present locally', t => {
     _from: 'foo@',
   }
   exec.exec(['foo', 'one arg', 'two arg'], er => {
-    if (er)
-      throw er
+    t.error(er, { bail: true })
     t.strictSame(MKDIRPS, [], 'no need to make any dirs')
     t.match(ARB_CTOR, [{ path }])
     t.strictSame(ARB_REIFY, [], 'no need to reify anything')
@@ -216,8 +215,7 @@ t.test('npm exec <noargs>, run interactive shell', t => {
     ARB_REIFY.length = 0
     OUTPUT.length = 0
     exec.exec([], er => {
-      if (er)
-        throw er
+      t.error(er, { bail: true })
       t.strictSame(MKDIRPS, [], 'no need to make any dirs')
       t.strictSame(ARB_CTOR, [], 'no need to instantiate arborist')
       t.strictSame(ARB_REIFY, [], 'no need to reify anything')
@@ -310,8 +308,7 @@ t.test('npm exec foo, not present locally or in central loc', t => {
     _from: 'foo@',
   }
   exec.exec(['foo', 'one arg', 'two arg'], er => {
-    if (er)
-      throw er
+    t.error(er, { bail: true })
     t.strictSame(MKDIRPS, [installDir], 'need to make install dir')
     t.match(ARB_CTOR, [{ path }])
     t.match(ARB_REIFY, [{add: ['foo@'], legacyPeerDeps: false}], 'need to install foo@')
@@ -350,8 +347,7 @@ t.test('npm exec foo, not present locally but in central loc', t => {
     _from: 'foo@',
   }
   exec.exec(['foo', 'one arg', 'two arg'], er => {
-    if (er)
-      throw er
+    t.error(er, { bail: true })
     t.strictSame(MKDIRPS, [installDir], 'need to make install dir')
     t.match(ARB_CTOR, [{ path }])
     t.match(ARB_REIFY, [], 'no need to install again, already there')
@@ -390,8 +386,7 @@ t.test('npm exec foo, present locally but wrong version', t => {
     _from: 'foo@2.x',
   }
   exec.exec(['foo@2.x', 'one arg', 'two arg'], er => {
-    if (er)
-      throw er
+    t.error(er, { bail: true })
     t.strictSame(MKDIRPS, [installDir], 'need to make install dir')
     t.match(ARB_CTOR, [{ path }])
     t.match(ARB_REIFY, [{ add: ['foo@2.x'], legacyPeerDeps: false }], 'need to add foo@2.x')
@@ -428,8 +423,7 @@ t.test('npm exec --package=foo bar', t => {
   config.package = ['foo']
   flatOptions.package = ['foo']
   exec.exec(['bar', 'one arg', 'two arg'], er => {
-    if (er)
-      throw er
+    t.error(er, { bail: true })
     t.strictSame(MKDIRPS, [], 'no need to make any dirs')
     t.match(ARB_CTOR, [{ path }])
     t.strictSame(ARB_REIFY, [], 'no need to reify anything')
@@ -470,8 +464,7 @@ t.test('npm exec @foo/bar -- --some=arg, locally installed', t => {
   }
   MANIFESTS['@foo/bar'] = foobarManifest
   exec.exec(['@foo/bar', '--some=arg'], er => {
-    if (er)
-      throw er
+    t.error(er, { bail: true })
     t.strictSame(MKDIRPS, [], 'no need to make any dirs')
     t.match(ARB_CTOR, [{ path }])
     t.strictSame(ARB_REIFY, [], 'no need to reify anything')
@@ -513,8 +506,7 @@ t.test('npm exec @foo/bar, with same bin alias and no unscoped named bin, locall
   }
   MANIFESTS['@foo/bar'] = foobarManifest
   exec.exec(['@foo/bar', 'one arg', 'two arg'], er => {
-    if (er)
-      throw er
+    t.error(er, { bail: true })
     t.strictSame(MKDIRPS, [], 'no need to make any dirs')
     t.match(ARB_CTOR, [{ path }])
     t.strictSame(ARB_REIFY, [], 'no need to reify anything')
@@ -594,8 +586,7 @@ t.test('run command with 2 packages, need install, verify sort', t => {
         _from: 'bar@',
       }
       exec.exec(['foobar', 'one arg', 'two arg'], er => {
-        if (er)
-          throw er
+        t.error(er, { bail: true })
         t.strictSame(MKDIRPS, [installDir], 'need to make install dir')
         t.match(ARB_CTOR, [{ path }])
         t.match(ARB_REIFY, [{add, legacyPeerDeps: false}], 'need to install both packages')
@@ -677,8 +668,7 @@ t.test('npm exec -p foo -c "ls -laF"', t => {
     _from: 'foo@',
   }
   exec.exec([], er => {
-    if (er)
-      throw er
+    t.error(er, { bail: true })
     t.strictSame(MKDIRPS, [], 'no need to make any dirs')
     t.match(ARB_CTOR, [{ path }])
     t.strictSame(ARB_REIFY, [], 'no need to reify anything')
@@ -749,8 +739,7 @@ t.test('prompt when installs are needed if not already present and shell is a TT
     _from: 'bar@',
   }
   exec.exec(['foobar'], er => {
-    if (er)
-      throw er
+    t.error(er, { bail: true })
     t.strictSame(MKDIRPS, [installDir], 'need to make install dir')
     t.match(ARB_CTOR, [{ path }])
     t.match(ARB_REIFY, [{add, legacyPeerDeps: false}], 'need to install both packages')
@@ -818,8 +807,7 @@ t.test('skip prompt when installs are needed if not already present and shell is
     _from: 'bar@',
   }
   exec.exec(['foobar'], er => {
-    if (er)
-      throw er
+    t.error(er, { bail: true })
     t.strictSame(MKDIRPS, [installDir], 'need to make install dir')
     t.match(ARB_CTOR, [{ path }])
     t.match(ARB_REIFY, [{add, legacyPeerDeps: false}], 'need to install both packages')
@@ -877,8 +865,7 @@ t.test('skip prompt when installs are needed if not already present and shell is
     _from: 'foo@',
   }
   exec.exec(['foobar'], er => {
-    if (er)
-      throw er
+    t.error(er, { bail: true })
     t.strictSame(MKDIRPS, [installDir], 'need to make install dir')
     t.match(ARB_CTOR, [{ path }])
     t.match(ARB_REIFY, [{add, legacyPeerDeps: false}], 'need to install the package')
@@ -1090,8 +1077,7 @@ t.test('forward legacyPeerDeps opt', t => {
   config.yes = true
   flatOptions.legacyPeerDeps = true
   exec.exec(['foo'], er => {
-    if (er)
-      throw er
+    t.error(er, { bail: true })
     t.match(ARB_REIFY, [{add: ['foo@'], legacyPeerDeps: true}], 'need to install foo@ using legacyPeerDeps opt')
     t.end()
   })
@@ -1132,8 +1118,7 @@ t.test('workspaces', t => {
 
   t.test('with args, run scripts in the context of a workspace', t => {
     exec.execWorkspaces(['foo', 'one arg', 'two arg'], ['a', 'b'], er => {
-      if (er)
-        throw er
+      t.error(er, { bail: true })
 
       t.match(RUN_SCRIPTS, [{
         pkg: { scripts: { npx: 'foo' }},
@@ -1157,8 +1142,7 @@ t.test('workspaces', t => {
 
     await new Promise((res, rej) => {
       exec.execWorkspaces([], ['a'], er => {
-        if (er)
-          return rej(er)
+        t.error(er, { bail: true })
 
         t.strictSame(LOG_WARN, [])
         t.strictSame(OUTPUT, [
@@ -1172,8 +1156,7 @@ t.test('workspaces', t => {
     OUTPUT.length = 0
     await new Promise((res, rej) => {
       exec.execWorkspaces([], ['a'], er => {
-        if (er)
-          return rej(er)
+        t.error(er, { bail: true })
 
         t.strictSame(LOG_WARN, [])
         t.strictSame(OUTPUT, [

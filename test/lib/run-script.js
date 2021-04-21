@@ -115,8 +115,7 @@ t.test('default env, start, and restart scripts', t => {
 
   t.test('start', t => {
     runScript.exec(['start'], er => {
-      if (er)
-        throw er
+      t.error(er, { bail: true })
 
       t.match(RUN_SCRIPTS, [
         {
@@ -135,8 +134,7 @@ t.test('default env, start, and restart scripts', t => {
 
   t.test('env', t => {
     runScript.exec(['env'], er => {
-      if (er)
-        throw er
+      t.error(er, { bail: true })
 
       t.match(RUN_SCRIPTS, [
         {
@@ -162,8 +160,7 @@ t.test('default env, start, and restart scripts', t => {
 
   t.test('windows env', t => {
     runScriptWin.exec(['env'], er => {
-      if (er)
-        throw er
+      t.error(er, { bail: true })
 
       t.match(RUN_SCRIPTS, [
         {
@@ -187,8 +184,7 @@ t.test('default env, start, and restart scripts', t => {
 
   t.test('restart', t => {
     runScript.exec(['restart'], er => {
-      if (er)
-        throw er
+      t.error(er, { bail: true })
 
       t.match(RUN_SCRIPTS, [
         {
@@ -225,8 +221,7 @@ t.test('non-default env script', t => {
 
   t.test('env', t => {
     runScript.exec(['env'], er => {
-      if (er)
-        throw er
+      t.error(er, { bail: true })
 
       t.match(RUN_SCRIPTS, [
         {
@@ -252,8 +247,7 @@ t.test('non-default env script', t => {
 
   t.test('env windows', t => {
     runScriptWin.exec(['env'], er => {
-      if (er)
-        throw er
+      t.error(er, { bail: true })
 
       t.match(RUN_SCRIPTS, [
         {
@@ -318,8 +312,7 @@ t.test('try to run missing script', t => {
   t.test('with --if-present', t => {
     config['if-present'] = true
     runScript.exec(['goodbye'], er => {
-      if (er)
-        throw er
+      t.error(er, { bail: true })
 
       t.strictSame(RUN_SCRIPTS, [], 'did not try to run anything')
       t.end()
@@ -341,8 +334,7 @@ t.test('run pre/post hooks', t => {
   })
 
   runScript.exec(['env'], er => {
-    if (er)
-      throw er
+    t.error(er, { bail: true })
 
     t.match(RUN_SCRIPTS, [
       { event: 'preenv' },
@@ -381,8 +373,7 @@ t.test('skip pre/post hooks when using ignoreScripts', t => {
   })
 
   runScript.exec(['env'], er => {
-    if (er)
-      throw er
+    t.error(er, { bail: true })
 
     t.same(RUN_SCRIPTS, [
       {
@@ -426,8 +417,7 @@ t.test('run silent', t => {
   })
 
   runScript.exec(['env'], er => {
-    if (er)
-      throw er
+    t.error(er, { bail: true })
 
     t.match(RUN_SCRIPTS, [
       {
@@ -476,8 +466,7 @@ t.test('list scripts', t => {
 
   t.test('no args', t => {
     runScript.exec([], er => {
-      if (er)
-        throw er
+      t.error(er, { bail: true })
       t.strictSame(output, [
         ['Lifecycle scripts included in x@1.2.3:'],
         ['  test\n    exit 2'],
@@ -495,8 +484,7 @@ t.test('list scripts', t => {
   t.test('silent', t => {
     npmlog.level = 'silent'
     runScript.exec([], er => {
-      if (er)
-        throw er
+      t.error(er, { bail: true })
       t.strictSame(output, [])
       t.end()
     })
@@ -505,8 +493,7 @@ t.test('list scripts', t => {
     npmlog.level = 'warn'
     config.json = true
     runScript.exec([], er => {
-      if (er)
-        throw er
+      t.error(er, { bail: true })
       t.strictSame(output, [[JSON.stringify(scripts, 0, 2)]], 'json report')
       t.end()
     })
@@ -515,8 +502,7 @@ t.test('list scripts', t => {
   t.test('parseable', t => {
     config.parseable = true
     runScript.exec([], er => {
-      if (er)
-        throw er
+      t.error(er, { bail: true })
       t.strictSame(output, [
         ['test:exit 2'],
         ['start:node server.js'],
@@ -539,8 +525,7 @@ t.test('list scripts when no scripts', t => {
   })
 
   runScript.exec([], er => {
-    if (er)
-      throw er
+    t.error(er, { bail: true })
     t.strictSame(output, [], 'nothing to report')
     t.end()
   })
@@ -556,8 +541,7 @@ t.test('list scripts, only commands', t => {
   })
 
   runScript.exec([], er => {
-    if (er)
-      throw er
+    t.error(er, { bail: true })
     t.strictSame(output, [
       ['Lifecycle scripts included in x@1.2.3:'],
       ['  preversion\n    echo doing the version dance'],
@@ -577,8 +561,7 @@ t.test('list scripts, only non-commands', t => {
   })
 
   runScript.exec([], er => {
-    if (er)
-      throw er
+    t.error(er, { bail: true })
     t.strictSame(output, [
       ['Scripts available in x@1.2.3 via `npm run-script`:'],
       ['  glorp\n    echo doing the glerp glop'],
@@ -648,8 +631,7 @@ t.test('workspaces', t => {
 
   t.test('list all scripts', t => {
     runScript.execWorkspaces([], [], er => {
-      if (er)
-        throw er
+      t.error(er, { bail: true })
       t.strictSame(output, [
         ['Scripts available in a@1.0.0 via `npm run-script`:'],
         ['  glorp\n    echo a doing the glerp glop'],
@@ -678,8 +660,7 @@ t.test('workspaces', t => {
 
   t.test('list regular scripts, filtered by name', t => {
     runScript.execWorkspaces([], ['a', 'b'], er => {
-      if (er)
-        throw er
+      t.error(er, { bail: true })
       t.strictSame(output, [
         ['Scripts available in a@1.0.0 via `npm run-script`:'],
         ['  glorp\n    echo a doing the glerp glop'],
@@ -694,8 +675,7 @@ t.test('workspaces', t => {
 
   t.test('list regular scripts, filtered by path', t => {
     runScript.execWorkspaces([], ['./packages/a'], er => {
-      if (er)
-        throw er
+      t.error(er, { bail: true })
       t.strictSame(output, [
         ['Scripts available in a@1.0.0 via `npm run-script`:'],
         ['  glorp\n    echo a doing the glerp glop'],
@@ -707,8 +687,7 @@ t.test('workspaces', t => {
 
   t.test('list regular scripts, filtered by parent folder', t => {
     runScript.execWorkspaces([], ['./packages'], er => {
-      if (er)
-        throw er
+      t.error(er, { bail: true })
       t.strictSame(output, [
         ['Scripts available in a@1.0.0 via `npm run-script`:'],
         ['  glorp\n    echo a doing the glerp glop'],
@@ -738,8 +717,7 @@ t.test('workspaces', t => {
   t.test('list all scripts with colors', t => {
     npm.color = true
     runScript.execWorkspaces([], [], er => {
-      if (er)
-        throw er
+      t.error(er, { bail: true })
       t.strictSame(output, [
         [
           '\u001b[1mScripts\u001b[22m available in \x1B[32ma@1.0.0\x1B[39m via `\x1B[34mnpm run-script\x1B[39m`:',
@@ -779,8 +757,7 @@ t.test('workspaces', t => {
   t.test('list all scripts --json', t => {
     config.json = true
     runScript.execWorkspaces([], [], er => {
-      if (er)
-        throw er
+      t.error(er, { bail: true })
       t.strictSame(output, [
         [
           '{\n' +
@@ -814,8 +791,7 @@ t.test('workspaces', t => {
   t.test('list all scripts --parseable', t => {
     config.parseable = true
     runScript.execWorkspaces([], [], er => {
-      if (er)
-        throw er
+      t.error(er, { bail: true })
       t.strictSame(output, [
         ['a:glorp:echo a doing the glerp glop'],
         ['b:glorp:echo b doing the glerp glop'],
@@ -834,8 +810,7 @@ t.test('workspaces', t => {
   t.test('list no scripts --loglevel=silent', t => {
     npmlog.level = 'silent'
     runScript.execWorkspaces([], [], er => {
-      if (er)
-        throw er
+      t.error(er, { bail: true })
       t.strictSame(output, [])
       t.end()
     })
@@ -843,8 +818,7 @@ t.test('workspaces', t => {
 
   t.test('run scripts across all workspaces', t => {
     runScript.execWorkspaces(['test'], [], er => {
-      if (er)
-        throw er
+      t.error(er, { bail: true })
 
       t.match(RUN_SCRIPTS, [
         {
@@ -929,8 +903,7 @@ t.test('workspaces', t => {
       LOG.push(String(err))
     }
     runScript.execWorkspaces(['test'], ['a', 'b', 'c', 'd'], er => {
-      if (er)
-        throw er
+      t.error(er, { bail: true })
 
       t.match(RUN_SCRIPTS, [])
       t.strictSame(LOG.map(cleanOutput), [

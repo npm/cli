@@ -16,7 +16,7 @@ t.test('whoami', (t) => {
   const whoami = new Whoami(npm)
 
   whoami.exec([], (err) => {
-    t.error(err, 'npm whoami')
+    t.error(err, { bail: true })
     t.ok('should successfully print username')
   })
 })
@@ -35,7 +35,7 @@ t.test('whoami json', (t) => {
   const whoami = new Whoami(npm)
 
   whoami.exec([], (err) => {
-    t.error(err, 'npm whoami')
+    t.error(err, { bail: true })
     t.ok('should successfully print username as json')
   })
 })

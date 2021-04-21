@@ -79,8 +79,7 @@ t.test('basic interactive', t => {
   t.afterEach(() => output.length = 0)
 
   t.test('windows', t => windowsExplore.exec(['pkg'], er => {
-    if (er)
-      throw er
+    t.error(er, { bail: true })
 
     t.strictSame({
       ERROR_HANDLER_CALLED,
@@ -98,8 +97,7 @@ t.test('basic interactive', t => {
   }))
 
   t.test('posix', t => posixExplore.exec(['pkg'], er => {
-    if (er)
-      throw er
+    t.error(er, { bail: true })
 
     t.strictSame({
       ERROR_HANDLER_CALLED,
@@ -132,8 +130,7 @@ t.test('interactive tracks exit code', t => {
   })
 
   t.test('windows', t => windowsExplore.exec(['pkg'], er => {
-    if (er)
-      throw er
+    t.error(er, { bail: true })
 
     t.strictSame({
       ERROR_HANDLER_CALLED,
@@ -152,8 +149,7 @@ t.test('interactive tracks exit code', t => {
   }))
 
   t.test('posix', t => posixExplore.exec(['pkg'], er => {
-    if (er)
-      throw er
+    t.error(er, { bail: true })
 
     t.strictSame({
       ERROR_HANDLER_CALLED,
@@ -220,8 +216,7 @@ t.test('basic non-interactive', t => {
   t.afterEach(() => output.length = 0)
 
   t.test('windows', t => windowsExplore.exec(['pkg', 'ls'], er => {
-    if (er)
-      throw er
+    t.error(er, { bail: true })
 
     t.strictSame({
       ERROR_HANDLER_CALLED,
@@ -237,8 +232,7 @@ t.test('basic non-interactive', t => {
   }))
 
   t.test('posix', t => posixExplore.exec(['pkg', 'ls'], er => {
-    if (er)
-      throw er
+    t.error(er, { bail: true })
 
     t.strictSame({
       ERROR_HANDLER_CALLED,

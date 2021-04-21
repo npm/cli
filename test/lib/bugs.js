@@ -86,8 +86,7 @@ t.test('open bugs urls & emails', t => {
   keys.forEach(pkg => {
     t.test(pkg, t => {
       bugs.exec([pkg], (er) => {
-        if (er)
-          throw er
+        t.error(er, { bail: true })
         t.equal(opened[expect[pkg]], 1, 'opened expected url', {opened})
         t.end()
       })
@@ -97,8 +96,7 @@ t.test('open bugs urls & emails', t => {
 
 t.test('open default package if none specified', t => {
   bugs.exec([], (er) => {
-    if (er)
-      throw er
+    t.error(er, { bail: true })
     t.equal(opened['https://example.com'], 2, 'opened expected url', {opened})
     t.end()
   })

@@ -21,7 +21,7 @@ const config = defaults
 t.afterEach(() => log.level = 'silent')
 
 t.test('should publish with libnpmpublish, passing through flatOptions and respecting publishConfig.registry', (t) => {
-  t.plan(7)
+  t.plan(8)
 
   const registry = 'https://some.registry'
   const publishConfig = { registry }
@@ -66,15 +66,14 @@ t.test('should publish with libnpmpublish, passing through flatOptions and respe
   const publish = new Publish(npm)
 
   publish.exec([testDir], (er) => {
-    if (er)
-      throw er
+    t.error(er, { bail: true })
     t.pass('got to callback')
     t.end()
   })
 })
 
 t.test('re-loads publishConfig.registry if added during script process', (t) => {
-  t.plan(6)
+  t.plan(7)
   const registry = 'https://some.registry'
   const publishConfig = { registry }
   const testDir = t.testdir({
@@ -110,15 +109,14 @@ t.test('re-loads publishConfig.registry if added during script process', (t) => 
   const publish = new Publish(npm)
 
   publish.exec([testDir], (er) => {
-    if (er)
-      throw er
+    t.error(er, { bail: true })
     t.pass('got to callback')
     t.end()
   })
 })
 
 t.test('if loglevel=info and json, should not output package contents', (t) => {
-  t.plan(4)
+  t.plan(5)
 
   const testDir = t.testdir({
     'package.json': JSON.stringify({
@@ -156,15 +154,14 @@ t.test('if loglevel=info and json, should not output package contents', (t) => {
   const publish = new Publish(npm)
 
   publish.exec([testDir], (er) => {
-    if (er)
-      throw er
+    t.error(er, { bail: true })
     t.pass('got to callback')
     t.end()
   })
 })
 
 t.test('if loglevel=silent and dry-run, should not output package contents or publish or validate credentials, should log tarball contents', (t) => {
-  t.plan(2)
+  t.plan(3)
 
   const testDir = t.testdir({
     'package.json': JSON.stringify({
@@ -202,15 +199,14 @@ t.test('if loglevel=silent and dry-run, should not output package contents or pu
   const publish = new Publish(npm)
 
   publish.exec([testDir], (er) => {
-    if (er)
-      throw er
+    t.error(er, { bail: true })
     t.pass('got to callback')
     t.end()
   })
 })
 
 t.test('if loglevel=info and dry-run, should not publish, should log package contents and log tarball contents', (t) => {
-  t.plan(3)
+  t.plan(4)
 
   const testDir = t.testdir({
     'package.json': JSON.stringify({
@@ -247,8 +243,7 @@ t.test('if loglevel=info and dry-run, should not publish, should log package con
   const publish = new Publish(npm)
 
   publish.exec([testDir], (er) => {
-    if (er)
-      throw er
+    t.error(er, { bail: true })
     t.pass('got to callback')
     t.end()
   })
@@ -283,7 +278,7 @@ t.test('throws when invalid tag', (t) => {
 })
 
 t.test('can publish a tarball', t => {
-  t.plan(4)
+  t.plan(5)
 
   const testDir = t.testdir({
     tarball: {},
@@ -321,8 +316,7 @@ t.test('can publish a tarball', t => {
   const publish = new Publish(npm)
 
   publish.exec([`${testDir}/tarball/package.tgz`], (er) => {
-    if (er)
-      throw er
+    t.error(er, { bail: true })
     t.pass('got to callback')
     t.end()
   })
@@ -401,7 +395,7 @@ t.test('should check auth for scope specific registry', t => {
 })
 
 t.test('should use auth for scope specific registry', t => {
-  t.plan(4)
+  t.plan(5)
   const registry = 'https://some.registry'
   const testDir = t.testdir({
     'package.json': JSON.stringify({
@@ -429,15 +423,14 @@ t.test('should use auth for scope specific registry', t => {
   const publish = new Publish(npm)
 
   publish.exec([testDir], (er) => {
-    if (er)
-      throw er
+    t.error(er, { bail: true })
     t.pass('got to callback')
     t.end()
   })
 })
 
 t.test('read registry only from publishConfig', t => {
-  t.plan(4)
+  t.plan(5)
 
   const registry = 'https://some.registry'
   const publishConfig = { registry }
@@ -467,15 +460,14 @@ t.test('read registry only from publishConfig', t => {
   const publish = new Publish(npm)
 
   publish.exec([testDir], (er) => {
-    if (er)
-      throw er
+    t.error(er, { bail: true })
     t.pass('got to callback')
     t.end()
   })
 })
 
 t.test('able to publish after if encountered multiple configs', t => {
-  t.plan(3)
+  t.plan(4)
 
   const registry = 'https://some.registry'
   const tag = 'better-tag'
@@ -519,8 +511,7 @@ t.test('able to publish after if encountered multiple configs', t => {
   })
 
   publish.exec([testDir], (er) => {
-    if (er)
-      throw er
+    t.error(er, { bail: true })
     t.pass('got to callback')
     t.end()
   })

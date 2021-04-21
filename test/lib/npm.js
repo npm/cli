@@ -129,8 +129,7 @@ t.test('npm.load', t => {
     })
     let firstCalled = false
     const first = (er) => {
-      if (er)
-        throw er
+      t.error(er, { bail: true })
 
       firstCalled = true
       t.equal(npm.loaded, true)
@@ -231,8 +230,7 @@ t.test('npm.load', t => {
     freshConfig({ argv: [...process.argv, '--force', '--color', 'always'] })
     process.argv[0] = 'this exe does not exist or else this test will fail'
     return npm.load(er => {
-      if (er)
-        throw er
+      t.error(er, { bail: true })
 
       t.match(logs.filter(l => l[0] !== 'timing'), [
         [
@@ -284,8 +282,7 @@ t.test('npm.load', t => {
     logs.length = 0
 
     await npm.load(er => {
-      if (er)
-        throw er
+      t.error(er, { bail: true })
 
       t.equal(npm.config.get('scope'), '@foo', 'added the @ sign to scope')
       t.match(logs.filter(l => l[0] !== 'timing' || !/^config:/.test(l[1])), [
@@ -310,8 +307,7 @@ t.test('npm.load', t => {
     })
 
     await npm.commands.ll([], (er) => {
-      if (er)
-        throw er
+      t.error(er, { bail: true })
 
       t.equal(npm.command, 'll', 'command set to first npm command')
       t.equal(npm.flatOptions.npmCommand, 'll', 'npmCommand flatOption set')
@@ -324,8 +320,7 @@ t.test('npm.load', t => {
     })
 
     await npm.commands.get(['scope', '\u2010not-a-dash'], (er) => {
-      if (er)
-        throw er
+      t.error(er, { bail: true })
 
       t.strictSame([npm.command, npm.flatOptions.npmCommand], ['ll', 'll'],
         'does not change npm.command when another command is called')
@@ -404,8 +399,7 @@ t.test('npm.load', t => {
     })
 
     await npm.load(er => {
-      if (er)
-        throw er
+      t.error(er, { bail: true })
     })
 
     npm.localPrefix = dir
@@ -415,8 +409,7 @@ t.test('npm.load', t => {
       // the npm.command property to the full canonical name of the cmd.
       npm.command = null
       npm.commands.run([], er => {
-        if (er)
-          rej(er)
+        t.error(er, { bail: true })
 
         t.equal(npm.command, 'run-script', 'npm.command set to canonical name')
 
@@ -490,8 +483,7 @@ t.test('set process.title', t => {
       ],
     })
     await npm.load(er => {
-      if (er)
-        throw er
+      t.error(er, { bail: true })
       t.equal(npm.title, 'npm ls')
       t.equal(process.title, 'npm ls')
     })
@@ -510,8 +502,7 @@ t.test('set process.title', t => {
       ],
     })
     await npm.load(er => {
-      if (er)
-        throw er
+      t.error(er, { bail: true })
       t.equal(npm.title, 'npm token revoke ***')
       t.equal(process.title, 'npm token revoke ***')
     })
@@ -529,8 +520,7 @@ t.test('set process.title', t => {
       ],
     })
     await npm.load(er => {
-      if (er)
-        throw er
+      t.error(er, { bail: true })
       t.equal(npm.title, 'npm token revoke')
       t.equal(process.title, 'npm token revoke')
     })

@@ -37,7 +37,7 @@ t.afterEach(() => {
 
 t.test('classic npm init no args', t => {
   init.exec([], err => {
-    t.error(err, 'npm init no args')
+    t.error(err, { bail: true })
     t.matchSnapshot(result, 'should print helper info')
     t.end()
   })
@@ -60,7 +60,7 @@ t.test('classic npm init -y', t => {
     t.equal(msg, 'written successfully', 'should print done info')
   }
   init.exec([], err => {
-    t.error(err, 'npm init -y')
+    t.error(err, { bail: true })
     t.equal(result, '')
   })
 })
@@ -77,7 +77,7 @@ t.test('npm init <arg>', t => {
     cb()
   }
   init.exec(['react-app'], err => {
-    t.error(err, 'npm init react-app')
+    t.error(err, { bail: true })
   })
 })
 
@@ -92,7 +92,7 @@ t.test('npm init @scope/name', t => {
     cb()
   }
   init.exec(['@npmcli/something'], err => {
-    t.error(err, 'npm init init @scope/name')
+    t.error(err, { bail: true })
   })
 })
 
@@ -107,7 +107,7 @@ t.test('npm init git spec', t => {
     cb()
   }
   init.exec(['npm/something'], err => {
-    t.error(err, 'npm init init @scope/name')
+    t.error(err, { bail: true })
   })
 })
 
@@ -122,7 +122,7 @@ t.test('npm init @scope', t => {
     cb()
   }
   init.exec(['@npmcli'], err => {
-    t.error(err, 'npm init init @scope/create')
+    t.error(err, { bail: true })
   })
 })
 
@@ -148,7 +148,7 @@ t.test('npm init <arg>@next', t => {
     cb()
   }
   init.exec(['something@next'], err => {
-    t.error(err, 'npm init init something@next')
+    t.error(err, { bail: true })
   })
 })
 
@@ -178,7 +178,7 @@ t.test('should not rewrite flatOptions', t => {
     cb()
   }
   init.exec(['react-app', 'my-app'], err => {
-    t.error(err, 'npm init react-app')
+    t.error(err, { bail: true })
   })
 })
 
@@ -197,7 +197,7 @@ t.test('npm init cancel', t => {
     t.equal(msg, 'canceled', 'should log canceled')
   }
   init.exec([], err => {
-    t.error(err, 'npm init cancel')
+    t.error(err, { bail: true })
   })
 })
 

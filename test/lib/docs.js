@@ -96,8 +96,7 @@ t.test('open docs urls', t => {
   keys.forEach(pkg => {
     t.test(pkg, t => {
       docs.exec([['.', pkg].join(sep)], (err) => {
-        if (err)
-          throw err
+        t.error(err, { bail: true })
         const url = expect[pkg]
         t.match({
           [url]: 1,
@@ -109,9 +108,8 @@ t.test('open docs urls', t => {
 })
 
 t.test('open default package if none specified', t => {
-  docs.exec([], (er) => {
-    if (er)
-      throw er
+  docs.exec([], (err) => {
+    t.error(err, { bail: true })
     t.equal(opened['https://example.com'], 1, 'opened expected url', {opened})
     t.end()
   })
