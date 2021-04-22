@@ -80,6 +80,7 @@ class Auth {
     this.scopeAuthKey = scopeAuthKey
     this.token = null
     this.auth = null
+    this.isBasicAuth = false
     if (token)
       this.token = token
     else if (auth)
@@ -87,6 +88,7 @@ class Auth {
     else if (username && password) {
       const p = Buffer.from(password, 'base64').toString('utf8')
       this.auth = Buffer.from(`${username}:${p}`, 'utf8').toString('base64')
+      this.isBasicAuth = true
     }
   }
 }
