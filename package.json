@@ -69,7 +69,7 @@
     "libnpmdiff": "^2.0.4",
     "libnpmexec": "^1.0.1",
     "libnpmfund": "^1.0.2",
-    "libnpmhook": "^6.0.1",
+    "libnpmhook": "^6.0.2",
     "libnpmorg": "^2.0.1",
     "libnpmpack": "^2.0.1",
     "libnpmpublish": "^4.0.0",
