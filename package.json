@@ -74,7 +74,7 @@
     "libnpmpack": "^2.0.1",
     "libnpmpublish": "^4.0.1",
     "libnpmsearch": "^3.1.1",
-    "libnpmteam": "^2.0.2",
+    "libnpmteam": "^2.0.3",
     "libnpmversion": "^1.2.0",
     "make-fetch-happen": "^8.0.14",
     "minipass": "^3.1.3",
