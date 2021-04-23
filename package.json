@@ -44,7 +44,7 @@
   "dependencies": {
     "@npmcli/arborist": "^2.4.0",
     "@npmcli/ci-detect": "^1.2.0",
-    "@npmcli/config": "^2.1.0",
+    "@npmcli/config": "^2.2.0",
     "@npmcli/run-script": "^1.8.5",
     "abbrev": "~1.1.1",
     "ansicolors": "~0.3.2",
