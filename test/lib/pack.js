@@ -190,6 +190,34 @@ t.test('invalid packument', (t) => {
   })
 })
 
+t.test('real pacote remote integration test', (t) => {
+  const Pack = t.mock('../../lib/pack.js', {
+    libnpmpack,
+    npmlog: {
+      notice: () => {},
+      showProgress: () => {},
+      clearProgress: () => {},
+    },
+  })
+  const npm = mockNpm({
+    config: {
+      unicode: true,
+      json: true,
+      'dry-run': true,
+    },
+    output,
+  })
+  const pack = new Pack(npm)
+
+  return pack.exec(['ory-prettier-styles@1.1.2'], err => {
+    t.error(err, { bail: true })
+
+    const filename = 'ory-prettier-styles-1.1.2.tgz'
+    t.strictSame(OUTPUT, [[filename]])
+    t.end()
+  })
+})
+
 t.test('workspaces', (t) => {
   const testDir = t.testdir({
     'package.json': JSON.stringify({
