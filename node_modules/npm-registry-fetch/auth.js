@@ -27,6 +27,21 @@ const hasAuth = (regKey, opts) => (
   opts[`${regKey}:username`] && opts[`${regKey}:_password`]
 )
 
+const sameHost = (a, b) => {
+  const parsedA = new URL(a)
+  const parsedB = new URL(b)
+  return parsedA.host === parsedB.host
+}
+
+const getRegistry = opts => {
+  const { spec } = opts
+  const { scope: specScope, subSpec } = spec ? npa(spec) : {}
+  const subSpecScope = subSpec && subSpec.scope
+  const scope = subSpec ? subSpecScope : specScope
+  const scopeReg = scope && opts[`${scope}:registry`]
+  return scopeReg || opts.registry
+}
+
 const getAuth = (uri, opts = {}) => {
   const { forceAuth } = opts
   if (!uri)
@@ -44,19 +59,19 @@ const getAuth = (uri, opts = {}) => {
     })
   }
 
-  // no auth for this URI
-  if (!regKey && opts.spec) {
-    // If making a tarball request to a different base URI than the
-    // registry where we logged in, but the same auth SHOULD be sent
-    // to that artifact host, then we track where it was coming in from,
-    // and warn the user if we get a 4xx error on it.
-    const { spec } = opts
-    const { scope: specScope, subSpec } = npa(spec)
-    const subSpecScope = subSpec && subSpec.scope
-    const scope = subSpec ? subSpecScope : specScope
-    const scopeReg = scope && opts[`${scope}:registry`]
-    const scopeAuthKey = scopeReg && regKeyFromURI(scopeReg, opts)
-    return new Auth({ scopeAuthKey })
+  // no auth for this URI, but might have it for the registry
+  if (!regKey) {
+    const registry = getRegistry(opts)
+    if (registry && uri !== registry && sameHost(uri, registry))
+      return getAuth(registry, opts)
+    else if (registry !== opts.registry) {
+      // If making a tarball request to a different base URI than the
+      // registry where we logged in, but the same auth SHOULD be sent
+      // to that artifact host, then we track where it was coming in from,
+      // and warn the user if we get a 4xx error on it.
+      const scopeAuthKey = regKeyFromURI(registry, opts)
+      return new Auth({ scopeAuthKey })
+    }
   }
 
   const {
