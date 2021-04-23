@@ -44,14 +44,6 @@ upon by the current project.
 Prevents throwing an error when \`npm version\` is used to set the new version
 to the same value as the current version.
 
-#### \`always-auth\`
-
-* Default: false
-* Type: Boolean
-
-Force npm to always require authentication when accessing the registry, even
-for \`GET\` requests.
-
 #### \`audit\`
 
 * Default: true
