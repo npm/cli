@@ -2352,6 +2352,106 @@ t.test('ls --parseable', (t) => {
   t.end()
 })
 
+t.test('ignore missing optional deps', async t => {
+  t.beforeEach(cleanUpResult)
+  npm.prefix = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'test-npm-ls-ignore-missing-optional',
+      version: '1.2.3',
+      peerDependencies: {
+        'peer-ok': '1',
+        'peer-missing': '1',
+        'peer-wrong': '1',
+        'peer-optional-ok': '1',
+        'peer-optional-missing': '1',
+        'peer-optional-wrong': '1',
+      },
+      peerDependenciesMeta: {
+        'peer-optional-ok': {
+          optional: true,
+        },
+        'peer-optional-missing': {
+          optional: true,
+        },
+        'peer-optional-wrong': {
+          optional: true,
+        },
+      },
+      optionalDependencies: {
+        'optional-ok': '1',
+        'optional-missing': '1',
+        'optional-wrong': '1',
+      },
+      dependencies: {
+        'prod-ok': '1',
+        'prod-missing': '1',
+        'prod-wrong': '1',
+      },
+    }),
+    node_modules: {
+      'prod-ok': {
+        'package.json': JSON.stringify({name: 'prod-ok', version: '1.2.3' }),
+      },
+      'prod-wrong': {
+        'package.json': JSON.stringify({name: 'prod-wrong', version: '3.2.1' }),
+      },
+      'optional-ok': {
+        'package.json': JSON.stringify({name: 'optional-ok', version: '1.2.3' }),
+      },
+      'optional-wrong': {
+        'package.json': JSON.stringify({name: 'optional-wrong', version: '3.2.1' }),
+      },
+      'peer-optional-ok': {
+        'package.json': JSON.stringify({name: 'peer-optional-ok', version: '1.2.3' }),
+      },
+      'peer-optional-wrong': {
+        'package.json': JSON.stringify({name: 'peer-optional-wrong', version: '3.2.1' }),
+      },
+      'peer-ok': {
+        'package.json': JSON.stringify({name: 'peer-ok', version: '1.2.3' }),
+      },
+      'peer-wrong': {
+        'package.json': JSON.stringify({name: 'peer-wrong', version: '3.2.1' }),
+      },
+    },
+  })
+
+  config.all = true
+  const prefix = npm.prefix.toLowerCase().replace(/\\/g, '/')
+  const cleanupPaths = str =>
+    str.toLowerCase().replace(/\\/g, '/').split(prefix).join('{project}')
+
+  t.test('--json', t => {
+    config.json = true
+    config.parseable = false
+    ls.exec([], (err) => {
+      t.match(err, { code: 'ELSPROBLEMS' })
+      result = JSON.parse(result)
+      const problems = result.problems.map(cleanupPaths)
+      t.matchSnapshot(problems, 'ls --json problems')
+      t.end()
+    })
+  })
+  t.test('--parseable', t => {
+    config.json = false
+    config.parseable = true
+    ls.exec([], (err) => {
+      t.match(err, { code: 'ELSPROBLEMS' })
+      t.matchSnapshot(cleanupPaths(result), 'ls --parseable result')
+      t.end()
+    })
+  })
+  t.test('human output', t => {
+    config.json = false
+    config.parseable = false
+    ls.exec([], (err) => {
+      t.match(err, { code: 'ELSPROBLEMS' })
+      t.matchSnapshot(cleanupPaths(result), 'ls result')
+      t.end()
+    })
+  })
+})
+
 t.test('ls --json', (t) => {
   t.beforeEach(cleanUpResult)
   config.json = true
