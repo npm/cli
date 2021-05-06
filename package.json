@@ -67,7 +67,7 @@
     "leven": "^3.1.0",
     "libnpmaccess": "^4.0.2",
     "libnpmdiff": "^2.0.4",
-    "libnpmexec": "^1.0.1",
+    "libnpmexec": "^1.1.0",
     "libnpmfund": "^1.0.2",
     "libnpmhook": "^6.0.2",
     "libnpmorg": "^2.0.2",
