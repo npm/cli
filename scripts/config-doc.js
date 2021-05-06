@@ -35,8 +35,8 @@ const addShorthands = doc => {
   const body = Object.entries(shorthands)
     .sort(([shorta, expansiona], [shortb, expansionb]) => {
       // sort by what they're short FOR
-      return expansiona.join(' ').localeCompare(expansionb.join(' ')) ||
-        shorta.localeCompare(shortb)
+      return expansiona.join(' ').localeCompare(expansionb.join(' '), 'en') ||
+        shorta.localeCompare(shortb, 'en')
     })
     .map(([short, expansion]) => {
     const dash = short.length === 1 ? '-' : '--'

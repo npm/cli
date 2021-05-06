@@ -216,6 +216,9 @@
     "Remove the 'files' below once we're done porting old tests over"
   ],
   "tap": {
+    "test-env": [
+      "LC_ALL=sk"
+    ],
     "color": 1,
     "files": "test/{lib,bin}",
     "coverage-map": "test/coverage-map.js",

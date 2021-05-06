@@ -18,9 +18,9 @@ arb.loadVirtual().then(tree => {
       bundle.push(node.name)
     }
   }
-  pkg.bundleDependencies = bundle.sort((a, b) => a.localeCompare(b))
+  pkg.bundleDependencies = bundle.sort((a, b) => a.localeCompare(b, 'en'))
 
-  const ignores = shouldIgnore.sort((a, b) => a.localeCompare(b))
+  const ignores = shouldIgnore.sort((a, b) => a.localeCompare(b, 'en'))
     .map(i => `/${i}`)
     .join('\n')
   const ignoreData = `# Automatically generated to ignore dev deps

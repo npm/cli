@@ -601,7 +601,7 @@ t.test('run command with 2 packages, need install, verify sort', t => {
   for (const packages of cases) {
     t.test(packages.join(', '), t => {
       config.package = packages
-      const add = packages.map(p => `${p}@`).sort((a, b) => a.localeCompare(b))
+      const add = packages.map(p => `${p}@`).sort((a, b) => a.localeCompare(b, 'en'))
       const path = t.testdir()
       const installDir = resolve('cache-dir/_npx/07de77790e5f40f2')
       npm.localPrefix = path
@@ -756,7 +756,7 @@ t.test('prompt when installs are needed if not already present and shell is a TT
   config.package = packages
   config.yes = undefined
 
-  const add = packages.map(p => `${p}@`).sort((a, b) => a.localeCompare(b))
+  const add = packages.map(p => `${p}@`).sort((a, b) => a.localeCompare(b, 'en'))
   const path = t.testdir()
   const installDir = resolve('cache-dir/_npx/07de77790e5f40f2')
   npm.localPrefix = path
@@ -825,7 +825,7 @@ t.test('skip prompt when installs are needed if not already present and shell is
   config.package = packages
   config.yes = undefined
 
-  const add = packages.map(p => `${p}@`).sort((a, b) => a.localeCompare(b))
+  const add = packages.map(p => `${p}@`).sort((a, b) => a.localeCompare(b, 'en'))
   const path = t.testdir()
   const installDir = resolve('cache-dir/_npx/07de77790e5f40f2')
   npm.localPrefix = path
@@ -892,7 +892,7 @@ t.test('skip prompt when installs are needed if not already present and shell is
   config.package = packages
   config.yes = undefined
 
-  const add = packages.map(p => `${p}@`).sort((a, b) => a.localeCompare(b))
+  const add = packages.map(p => `${p}@`).sort((a, b) => a.localeCompare(b, 'en'))
   const path = t.testdir()
   const installDir = resolve('cache-dir/_npx/f7fbba6e0636f890')
   npm.localPrefix = path
