@@ -34,7 +34,9 @@ const packument = (nv, opts) => {
     },
     blue: {
       name: 'blue',
-      'dist-tags': {},
+      'dist-tags': {
+        latest: '1.0.0',
+      },
       time: {
         '1.0.0': '2019-08-06T16:21:09.842Z',
       },
@@ -59,7 +61,9 @@ const packument = (nv, opts) => {
         email: 'claudia@cyan.com',
       },
       name: 'cyan',
-      'dist-tags': {},
+      'dist-tags': {
+        latest: '1.0.0',
+      },
       versions: {
         '1.0.0': {
           version: '1.0.0',
@@ -236,6 +240,8 @@ const packument = (nv, opts) => {
       },
     },
   }
+  if (nv.type === 'git')
+    return mocks[nv.hosted.project]
   return mocks[nv.name]
 }
 
@@ -258,7 +264,10 @@ t.test('should log package info', t => {
     },
   })
   const jsonNpm = mockNpm({
-    config: { json: true },
+    config: {
+      json: true,
+      tag: 'latest',
+    },
   })
   const viewJson = new ViewJson(jsonNpm)
 
@@ -271,6 +280,13 @@ t.test('should log package info', t => {
     config: { unicode: true },
   })
   const viewUnicode = new ViewUnicode(unicodeNpm)
+
+  t.test('package from git', t => {
+    view.exec(['https://github.com/npm/green'], () => {
+      t.matchSnapshot(logs)
+      t.end()
+    })
+  })
 
   t.test('package with license, bugs, repository and other fields', t => {
     view.exec(['green@1.0.0'], () => {
@@ -384,6 +400,7 @@ t.test('should log info by field name', t => {
   })
   const jsonNpm = mockNpm({
     config: {
+      tag: 'latest',
       json: true,
     },
   })
@@ -467,7 +484,10 @@ t.test('should log info by field name', t => {
 t.test('throw error if global mode', (t) => {
   const View = t.mock('../../lib/view.js')
   const npm = mockNpm({
-    config: { global: true },
+    config: {
+      global: true,
+      tag: 'latest',
+    },
   })
   const view = new View(npm)
   view.exec([], (err) => {
