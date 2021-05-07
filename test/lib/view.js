@@ -248,7 +248,7 @@ t.test('should log package info', t => {
     },
   })
   const npm = mockNpm({
-    config: { global: false },
+    config: { unicode: false },
   })
   const view = new View(npm)
 
@@ -268,10 +268,7 @@ t.test('should log package info', t => {
     },
   })
   const unicodeNpm = mockNpm({
-    config: {
-      global: false,
-      unicode: true,
-    },
+    config: { unicode: true },
   })
   const viewUnicode = new ViewUnicode(unicodeNpm)
 
@@ -358,7 +355,6 @@ t.test('should log info of package in current working dir', t => {
     prefix: testDir,
     config: {
       tag: '1.0.0',
-      global: false,
     },
   })
   const view = new View(npm)
@@ -389,7 +385,6 @@ t.test('should log info by field name', t => {
   const jsonNpm = mockNpm({
     config: {
       json: true,
-      global: false,
     },
   })
 
@@ -400,9 +395,7 @@ t.test('should log info by field name', t => {
       packument,
     },
   })
-  const npm = mockNpm({
-    config: { global: false },
-  })
+  const npm = mockNpm()
   const view = new View(npm)
 
   t.test('readme', t => {
@@ -489,7 +482,6 @@ t.test('throw ENOENT error if package.json misisng', (t) => {
   const View = t.mock('../../lib/view.js')
   const npm = mockNpm({
     prefix: testDir,
-    config: { global: false },
   })
   const view = new View(npm)
   view.exec([], (err) => {
@@ -506,7 +498,6 @@ t.test('throw EJSONPARSE error if package.json not json', (t) => {
   const View = t.mock('../../lib/view.js')
   const npm = mockNpm({
     prefix: testDir,
-    config: { global: false },
   })
   const view = new View(npm)
   view.exec([], (err) => {
@@ -523,7 +514,6 @@ t.test('throw error if package.json has no name', (t) => {
   const View = t.mock('../../lib/view.js')
   const npm = mockNpm({
     prefix: testDir,
-    config: { global: false },
   })
   const view = new View(npm)
   view.exec([], (err) => {
@@ -541,7 +531,6 @@ t.test('throws when unpublished', (t) => {
   const npm = mockNpm({
     config: {
       tag: '1.0.1',
-      global: false,
     },
   })
   const view = new View(npm)
@@ -581,6 +570,7 @@ t.test('workspaces', t => {
     },
   })
   const config = {
+    unicode: false,
     tag: 'latest',
   }
   let warnMsg
@@ -684,7 +674,6 @@ t.test('completion', async t => {
   const npm = mockNpm({
     config: {
       tag: '1.0.1',
-      global: false,
     },
   })
   const view = new View(npm)
@@ -700,7 +689,6 @@ t.test('no registry completion', async t => {
   const npm = mockNpm({
     config: {
       tag: '1.0.1',
-      global: false,
     },
   })
   const view = new View(npm)
