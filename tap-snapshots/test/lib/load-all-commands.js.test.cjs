@@ -653,7 +653,7 @@ Usage:
 npm pack [[<@scope>/]<pkg>...]
 
 Options:
-[--dry-run]
+[--dry-run] [--json]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [-ws|--workspaces]
 

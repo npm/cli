@@ -7,7 +7,7 @@ description: Create a tarball from a package
 ### Synopsis
 
 ```bash
-npm pack [[<@scope>/]<pkg>...] [--dry-run]
+npm pack [[<@scope>/]<pkg>...] [--dry-run] [--json]
 ```
 
 ### Configuration
