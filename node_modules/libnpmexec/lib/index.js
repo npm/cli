@@ -143,7 +143,7 @@ const exec = async (opts) => {
       },
     }))
       .map(mani => mani._from)
-      .sort((a, b) => a.localeCompare(b))
+      .sort((a, b) => a.localeCompare(b, 'en'))
 
     // no need to install if already present
     if (add.length) {
