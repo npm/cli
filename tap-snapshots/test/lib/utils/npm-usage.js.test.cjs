@@ -210,6 +210,8 @@ All commands:
                     [--audit-level <info|low|moderate|high|critical|none>] [--dry-run] [-f|--force]
                     [--json] [--package-lock-only]
                     [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
+                    [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+                    [-ws|--workspaces]
                     
                     Run "npm help audit" for more info
 
@@ -309,6 +311,8 @@ All commands:
                     [--global-style] [--legacy-bundling] [--strict-peer-deps] [--package-lock]
                     [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]] [--ignore-scripts]
                     [--audit] [--bin-links] [--fund] [--dry-run]
+                    [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+                    [-ws|--workspaces]
                     
                     alias: ddp
                     
@@ -459,6 +463,8 @@ All commands:
                     [--global-style] [--legacy-bundling] [--strict-peer-deps] [--package-lock]
                     [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]] [--ignore-scripts]
                     [--audit] [--bin-links] [--fund]
+                    [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+                    [-ws|--workspaces]
                     
                     Run "npm help find-dupes" for more info
 
@@ -554,6 +560,8 @@ All commands:
                     [--strict-peer-deps] [--package-lock]
                     [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]] [--ignore-scripts]
                     [--audit] [--bin-links] [--fund] [--dry-run]
+                    [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+                    [-ws|--workspaces]
                     
                     aliases: i, in, ins, inst, insta, instal, isnt, isnta, isntal, add
                     
@@ -595,6 +603,8 @@ All commands:
                     [--strict-peer-deps] [--package-lock]
                     [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]] [--ignore-scripts]
                     [--audit] [--bin-links] [--fund] [--dry-run]
+                    [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+                    [-ws|--workspaces]
                     
                     alias: it
                     
@@ -783,7 +793,8 @@ All commands:
                     
                     Options:
                     [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]] [--dry-run]
-                    [--json]
+                    [--json] [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+                    [-ws|--workspaces]
                     
                     Run "npm help prune" for more info
 
@@ -810,6 +821,8 @@ All commands:
                     
                     Options:
                     [-g|--global] [--bin-links] [--ignore-scripts]
+                    [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+                    [-ws|--workspaces]
                     
                     alias: rb
                     
@@ -1018,6 +1031,8 @@ All commands:
                     
                     Options:
                     [-S|--save|--no-save|--save-prod|--save-dev|--save-optional|--save-peer]
+                    [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+                    [-ws|--workspaces]
                     
                     aliases: un, unlink, remove, rm, r
                     
@@ -1058,6 +1073,8 @@ All commands:
                     [-g|--global] [--global-style] [--legacy-bundling] [--strict-peer-deps]
                     [--package-lock] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
                     [--ignore-scripts] [--audit] [--bin-links] [--fund] [--dry-run]
+                    [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+                    [-ws|--workspaces]
                     
                     aliases: up, upgrade, udpate
                     
