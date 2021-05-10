@@ -78,7 +78,7 @@ class AuditReport extends Map {
     }
 
     obj.vulnerabilities = vulnerabilities
-      .sort(([a], [b]) => a.localeCompare(b))
+      .sort(([a], [b]) => a.localeCompare(b, 'en'))
       .reduce((set, [name, vuln]) => {
         set[name] = vuln
         return set

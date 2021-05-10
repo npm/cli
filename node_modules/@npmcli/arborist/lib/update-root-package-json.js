@@ -18,7 +18,7 @@ const orderDeps = (pkg) => {
   for (const type of depTypes) {
     if (pkg && pkg[type]) {
       pkg[type] = Object.keys(pkg[type])
-        .sort((a, b) => a.localeCompare(b))
+        .sort((a, b) => a.localeCompare(b, 'en'))
         .reduce((res, key) => {
           res[key] = pkg[type][key]
           return res

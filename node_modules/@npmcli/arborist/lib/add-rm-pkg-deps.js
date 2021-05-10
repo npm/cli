@@ -75,7 +75,7 @@ const addSingle = ({pkg, spec, saveBundle, saveType, log}) => {
     // keep it sorted, keep it unique
     const bd = new Set(pkg.bundleDependencies || [])
     bd.add(spec.name)
-    pkg.bundleDependencies = [...bd].sort((a, b) => a.localeCompare(b))
+    pkg.bundleDependencies = [...bd].sort((a, b) => a.localeCompare(b, 'en'))
   }
 }
 

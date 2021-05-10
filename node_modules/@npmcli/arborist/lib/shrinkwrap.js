@@ -844,7 +844,7 @@ class Shrinkwrap {
       /* istanbul ignore next - sort calling order is indeterminate */
       return aloc.length > bloc.length ? 1
         : bloc.length > aloc.length ? -1
-        : aloc[aloc.length - 1].localeCompare(bloc[bloc.length - 1])
+        : aloc[aloc.length - 1].localeCompare(bloc[bloc.length - 1], 'en')
     })[0]
 
     const res = consistentResolve(node.resolved, this.path, this.path, true)
