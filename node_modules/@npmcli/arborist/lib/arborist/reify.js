@@ -972,8 +972,15 @@ module.exports = cls => class Reifier extends cls {
           // would allow versions outside the requested range.  Tags and
           // specific versions save with the save-prefix.
           const isRange = (subSpec || req).type === 'range'
-          const range = !isRange || subset(prefixRange, spec, { loose: true })
-            ? prefixRange : spec
+
+          let range = spec
+          if (
+            !isRange ||
+            spec === '*' ||
+            subset(prefixRange, spec, { loose: true })
+          )
+            range = prefixRange
+
           const pname = child.packageName
           const alias = name !== pname
           newSpec = alias ? `npm:${pname}@${range}` : range
