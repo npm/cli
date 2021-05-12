@@ -422,6 +422,7 @@ All commands:
                     
                     Options:
                     [--json] [--browser|--browser <browser>] [--unicode]
+                    [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
                     [--which <fundingSourceNumber>]
                     
                     Run "npm help fund" for more info
