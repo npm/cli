@@ -180,6 +180,9 @@ All commands:
                     npm access ls-collaborators [<package> [<user>]]
                     npm access edit [<package>]
                     
+                    Options:
+                    [--registry <registry>] [--otp <otp>]
+                    
                     Run "npm help access" for more info
 
     adduser         npm adduser
@@ -205,7 +208,8 @@ All commands:
                     
                     Options:
                     [--audit-level <info|low|moderate|high|critical|none>] [--dry-run] [-f|--force]
-                    [--json] [--package-lock-only] [--production]
+                    [--json] [--package-lock-only]
+                    [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
                     
                     Run "npm help audit" for more info
 
@@ -228,6 +232,9 @@ All commands:
                     Usage:
                     npm bugs [<pkgname>]
                     
+                    Options:
+                    [--browser|--browser <browser>] [--registry <registry>]
+                    
                     alias: issues
                     
                     Run "npm help bugs" for more info
@@ -245,6 +252,9 @@ All commands:
                     npm cache clean
                     npm cache verify
                     
+                    Options:
+                    [--cache <cache>]
+                    
                     Run "npm help cache" for more info
 
     ci              npm ci
@@ -253,6 +263,9 @@ All commands:
                     
                     Usage:
                     npm ci
+                    
+                    Options:
+                    [--ignore-scripts] [--script-shell <script-shell>]
                     
                     aliases: clean-install, ic, install-clean, isntall-clean
                     
@@ -278,6 +291,9 @@ All commands:
                     npm config list [--json]
                     npm config edit
                     
+                    Options:
+                    [--json] [-g|--global] [--editor <editor>] [-l|--long]
+                    
                     alias: c
                     
                     Run "npm help config" for more info
@@ -289,6 +305,11 @@ All commands:
                     Usage:
                     npm dedupe
                     
+                    Options:
+                    [--global-style] [--legacy-bundling] [--strict-peer-deps] [--package-lock]
+                    [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]] [--ignore-scripts]
+                    [--audit] [--bin-links] [--fund] [--dry-run]
+                    
                     alias: ddp
                     
                     Run "npm help dedupe" for more info
@@ -299,6 +320,9 @@ All commands:
                     
                     Usage:
                     npm deprecate <pkg>[@<version>] <message>
+                    
+                    Options:
+                    [--registry <registry>] [--otp <otp>]
                     
                     Run "npm help deprecate" for more info
 
@@ -312,6 +336,12 @@ All commands:
                     npm diff --diff=<version-a> [--diff=<version-b>] [...<paths>]
                     npm diff --diff=<spec-a> [--diff=<spec-b>] [...<paths>]
                     npm diff [--diff-ignore-all-space] [--diff-name-only] [...<paths>] [...<paths>]
+                    
+                    Options:
+                    [--diff <diff> [--diff <diff> ...]] [--diff-name-only]
+                    [--diff-unified <diff-unified>] [--diff-ignore-all-space] [--diff-no-prefix]
+                    [--diff-src-prefix <diff-src-prefix>] [--diff-dst-prefix <diff-dst-prefix>]
+                    [--diff-text] [-g|--global] [--tag <tag>]
                     
                     Run "npm help diff" for more info
 
@@ -355,6 +385,9 @@ All commands:
                     Usage:
                     npm doctor
                     
+                    Options:
+                    [--registry <registry>]
+                    
                     Run "npm help doctor" for more info
 
     edit            npm edit
@@ -363,6 +396,9 @@ All commands:
                     
                     Usage:
                     npm edit <pkg>[/<subpkg>...]
+                    
+                    Options:
+                    [--editor <editor>]
                     
                     Run "npm help edit" for more info
 
@@ -377,6 +413,8 @@ All commands:
                     npm exec --package=foo -c '<cmd> [args...]'
                     
                     Options:
+                    [--package <pkg>[@<version>] [--package <pkg>[@<version>] ...]]
+                    [-c|--call <call>]
                     [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
                     [-ws|--workspaces]
                     
@@ -391,6 +429,9 @@ All commands:
                     Usage:
                     npm explain <folder | specifier>
                     
+                    Options:
+                    [--json]
+                    
                     alias: why
                     
                     Run "npm help explain" for more info
@@ -402,6 +443,9 @@ All commands:
                     Usage:
                     npm explore <pkg> [ -- <command>]
                     
+                    Options:
+                    [--shell <shell>]
+                    
                     Run "npm help explore" for more info
 
     find-dupes      npm find-dupes
@@ -410,6 +454,11 @@ All commands:
                     
                     Usage:
                     npm find-dupes
+                    
+                    Options:
+                    [--global-style] [--legacy-bundling] [--strict-peer-deps] [--package-lock]
+                    [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]] [--ignore-scripts]
+                    [--audit] [--bin-links] [--fund]
                     
                     Run "npm help find-dupes" for more info
 
@@ -443,6 +492,9 @@ All commands:
                     Usage:
                     npm help <term> [<terms..>]
                     
+                    Options:
+                    [--viewer <viewer>]
+                    
                     alias: hlep
                     
                     Run "npm help help" for more info
@@ -457,6 +509,9 @@ All commands:
                     npm hook rm <id>
                     npm hook update <id> <url> <secret>
                     
+                    Options:
+                    [--registry <registry>] [--otp <otp>]
+                    
                     Run "npm help hook" for more info
 
     init            npm init
@@ -469,6 +524,7 @@ All commands:
                     npm init [<@scope>/]<name> (same as \`npx [<@scope>/]create-<name>\`)
                     
                     Options:
+                    [-y|--yes] [-f|--force]
                     [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
                     [-ws|--workspaces]
                     
@@ -494,7 +550,10 @@ All commands:
                     
                     Options:
                     [-S|--save|--no-save|--save-prod|--save-dev|--save-optional|--save-peer]
-                    [-E|--save-exact]
+                    [-E|--save-exact] [-g|--global] [--global-style] [--legacy-bundling]
+                    [--strict-peer-deps] [--package-lock]
+                    [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]] [--ignore-scripts]
+                    [--audit] [--bin-links] [--fund] [--dry-run]
                     
                     aliases: i, in, ins, inst, insta, instal, isnt, isnta, isntal, add
                     
@@ -506,6 +565,9 @@ All commands:
                     
                     Usage:
                     npm install-ci-test
+                    
+                    Options:
+                    [--ignore-scripts] [--script-shell <script-shell>]
                     
                     alias: cit
                     
@@ -529,7 +591,10 @@ All commands:
                     
                     Options:
                     [-S|--save|--no-save|--save-prod|--save-dev|--save-optional|--save-peer]
-                    [-E|--save-exact]
+                    [-E|--save-exact] [-g|--global] [--global-style] [--legacy-bundling]
+                    [--strict-peer-deps] [--package-lock]
+                    [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]] [--ignore-scripts]
+                    [--audit] [--bin-links] [--fund] [--dry-run]
                     
                     alias: it
                     
@@ -543,6 +608,13 @@ All commands:
                     npm link (in package dir)
                     npm link [<@scope>/]<pkg>[@<version>]
                     
+                    Options:
+                    [-S|--save|--no-save|--save-prod|--save-dev|--save-optional|--save-peer]
+                    [-E|--save-exact] [-g|--global] [--global-style] [--legacy-bundling]
+                    [--strict-peer-deps] [--package-lock]
+                    [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]] [--ignore-scripts]
+                    [--audit] [--bin-links] [--fund] [--dry-run]
+                    
                     alias: ln
                     
                     Run "npm help link" for more info
@@ -553,6 +625,11 @@ All commands:
                     
                     Usage:
                     npm ll [[<@scope>/]<pkg> ...]
+                    
+                    Options:
+                    [-a|--all] [--json] [-l|--long] [-p|--parseable] [-g|--global] [--depth <depth>]
+                    [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]] [--link]
+                    [--unicode]
                     
                     alias: la
                     
@@ -591,6 +668,11 @@ All commands:
                     Usage:
                     npm ls npm ls [[<@scope>/]<pkg> ...]
                     
+                    Options:
+                    [-a|--all] [--json] [-l|--long] [-p|--parseable] [-g|--global] [--depth <depth>]
+                    [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]] [--link]
+                    [--unicode]
+                    
                     alias: list
                     
                     Run "npm help ls" for more info
@@ -604,6 +686,9 @@ All commands:
                     npm org rm orgname username
                     npm org ls orgname [<username>]
                     
+                    Options:
+                    [--registry <registry>] [--otp <otp>] [--json] [-p|--parseable]
+                    
                     alias: ogr
                     
                     Run "npm help org" for more info
@@ -615,6 +700,9 @@ All commands:
                     Usage:
                     npm outdated [[<@scope>/]<pkg> ...]
                     
+                    Options:
+                    [-a|--all] [--json] [-l|--long] [-p|--parseable] [-g|--global]
+                    
                     Run "npm help outdated" for more info
 
     owner           npm owner
@@ -625,6 +713,9 @@ All commands:
                     npm owner add <user> [<@scope>/]<pkg>
                     npm owner rm <user> [<@scope>/]<pkg>
                     npm owner ls [<@scope>/]<pkg>
+                    
+                    Options:
+                    [--registry <registry>] [--otp <otp>]
                     
                     alias: author
                     
@@ -663,6 +754,9 @@ All commands:
                     Usage:
                     npm prefix [-g]
                     
+                    Options:
+                    [-g|--global]
+                    
                     Run "npm help prefix" for more info
 
     profile         npm profile
@@ -675,6 +769,9 @@ All commands:
                     npm profile get [<key>]
                     npm profile set <key> <value>
                     
+                    Options:
+                    [--registry <registry>] [--json] [-p|--parseable] [--otp <otp>]
+                    
                     Run "npm help profile" for more info
 
     prune           npm prune
@@ -685,7 +782,8 @@ All commands:
                     npm prune [[<@scope>/]<pkg>...]
                     
                     Options:
-                    [--production]
+                    [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]] [--dry-run]
+                    [--json]
                     
                     Run "npm help prune" for more info
 
@@ -697,7 +795,7 @@ All commands:
                     npm publish [<folder>]
                     
                     Options:
-                    [--tag <tag>] [--access <restricted|public>] [--dry-run]
+                    [--tag <tag>] [--access <restricted|public>] [--dry-run] [--otp <otp>]
                     [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
                     [-ws|--workspaces]
                     
@@ -709,6 +807,9 @@ All commands:
                     
                     Usage:
                     npm rebuild [[<@scope>/]<name>[@<version>] ...]
+                    
+                    Options:
+                    [-g|--global] [--bin-links] [--ignore-scripts]
                     
                     alias: rb
                     
@@ -735,6 +836,9 @@ All commands:
                     Usage:
                     npm restart [-- <args>]
                     
+                    Options:
+                    [--ignore-scripts] [--script-shell <script-shell>]
+                    
                     Run "npm help restart" for more info
 
     root            npm root
@@ -758,7 +862,8 @@ All commands:
                     
                     Options:
                     [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-                    [-ws|--workspaces]
+                    [-ws|--workspaces] [--if-present] [--ignore-scripts]
+                    [--script-shell <script-shell>]
                     
                     aliases: run, rum, urn
                     
@@ -772,7 +877,9 @@ All commands:
                     npm search [search terms ...]
                     
                     Options:
-                    [-l|--long] [--json] [-p|--parseable] [--no-description]
+                    [-l|--long] [--json] [--color|--color <always>] [-p|--parseable]
+                    [--no-description] [--searchopts <searchopts>] [--searchexclude <searchexclude>]
+                    [--registry <registry>] [--prefer-online] [--prefer-offline] [--offline]
                     
                     aliases: s, se, find
                     
@@ -816,6 +923,9 @@ All commands:
                     Usage:
                     npm star [<pkg>...]
                     
+                    Options:
+                    [--registry <registry>] [--unicode]
+                    
                     Run "npm help star" for more info
 
     stars           npm stars
@@ -824,6 +934,9 @@ All commands:
                     
                     Usage:
                     npm stars [<user>]
+                    
+                    Options:
+                    [--registry <registry>]
                     
                     Run "npm help stars" for more info
 
@@ -834,6 +947,9 @@ All commands:
                     Usage:
                     npm start [-- <args>]
                     
+                    Options:
+                    [--ignore-scripts] [--script-shell <script-shell>]
+                    
                     Run "npm help start" for more info
 
     stop            npm stop
@@ -842,6 +958,9 @@ All commands:
                     
                     Usage:
                     npm stop [-- <args>]
+                    
+                    Options:
+                    [--ignore-scripts] [--script-shell <script-shell>]
                     
                     Run "npm help stop" for more info
 
@@ -856,6 +975,9 @@ All commands:
                     npm team rm <scope:team> <user> [--otp <otpcode>]
                     npm team ls <scope>|<scope:team>
                     
+                    Options:
+                    [--registry <registry>] [--otp <otp>] [-p|--parseable] [--json]
+                    
                     Run "npm help team" for more info
 
     test            npm test
@@ -864,6 +986,9 @@ All commands:
                     
                     Usage:
                     npm test [-- <args>]
+                    
+                    Options:
+                    [--ignore-scripts] [--script-shell <script-shell>]
                     
                     aliases: tst, t
                     
@@ -877,6 +1002,10 @@ All commands:
                     npm token list
                     npm token revoke <id|token>
                     npm token create [--read-only] [--cidr=list]
+                    
+                    Options:
+                    [--read-only] [--cidr <cidr> [--cidr <cidr> ...]] [--registry <registry>]
+                    [--otp <otp>]
                     
                     Run "npm help token" for more info
 
@@ -901,6 +1030,9 @@ All commands:
                     Usage:
                     npm unpublish [<@scope>/]<pkg>[@<version>]
                     
+                    Options:
+                    [-f|--force]
+                    
                     Run "npm help unpublish" for more info
 
     unstar          npm unstar
@@ -909,6 +1041,9 @@ All commands:
                     
                     Usage:
                     npm unstar [<pkg>...]
+                    
+                    Options:
+                    [--registry <registry>] [--unicode] [--otp <otp>]
                     
                     Run "npm help unstar" for more info
 
@@ -920,7 +1055,9 @@ All commands:
                     npm update [<pkg>...]
                     
                     Options:
-                    [-g|--global]
+                    [-g|--global] [--global-style] [--legacy-bundling] [--strict-peer-deps]
+                    [--package-lock] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
+                    [--ignore-scripts] [--audit] [--bin-links] [--fund] [--dry-run]
                     
                     aliases: up, upgrade, udpate
                     

@@ -200,6 +200,7 @@
     "test": "tap",
     "check-coverage": "tap",
     "snap": "tap",
+    "postsnap": "make -s docs/content/*/*.md",
     "test:nocleanup": "NO_TEST_CLEANUP=1 npm run test --",
     "sudotest": "sudo npm run test --",
     "sudotest:nocleanup": "sudo NO_TEST_CLEANUP=1 npm run test --",

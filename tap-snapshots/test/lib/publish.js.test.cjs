@@ -14,7 +14,7 @@ Usage:
 npm publish [<folder>]
 
 Options:
-[--tag <tag>] [--access <restricted|public>] [--dry-run]
+[--tag <tag>] [--access <restricted|public>] [--dry-run] [--otp <otp>]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [-ws|--workspaces]
 

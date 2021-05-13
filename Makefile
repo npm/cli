@@ -73,6 +73,9 @@ man/man7/%.7: docs/content/using-npm/%.md scripts/docs-build.js
 docs/content/using-npm/config.md: scripts/config-doc.js lib/utils/config/*.js
 	node scripts/config-doc.js
 
+docs/content/commands/npm-%.md: lib/%.js scripts/config-doc-command.js lib/utils/config/*.js
+	node scripts/config-doc-command.js $@ $<
+
 test: dev-deps
 	node bin/npm-cli.js test
 
