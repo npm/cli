@@ -1005,7 +1005,9 @@ Usage:
 npm unpublish [<@scope>/]<pkg>[@<version>]
 
 Options:
-[-f|--force]
+[--dry-run] [-f|--force]
+[-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+[-ws|--workspaces]
 
 Run "npm help unpublish" for more info
 `
