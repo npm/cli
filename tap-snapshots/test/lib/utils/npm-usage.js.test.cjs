@@ -640,6 +640,8 @@ All commands:
                     [-a|--all] [--json] [-l|--long] [-p|--parseable] [-g|--global] [--depth <depth>]
                     [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]] [--link]
                     [--unicode]
+                    [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+                    [-ws|--workspaces]
                     
                     alias: la
                     
@@ -682,6 +684,8 @@ All commands:
                     [-a|--all] [--json] [-l|--long] [-p|--parseable] [-g|--global] [--depth <depth>]
                     [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]] [--link]
                     [--unicode]
+                    [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+                    [-ws|--workspaces]
                     
                     alias: list
                     
