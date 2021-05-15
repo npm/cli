@@ -819,7 +819,7 @@ Run "npm help run-script" for more info
 exports[`test/lib/load-all-commands.js TAP load each command search > must match snapshot 1`] = `
 npm search
 
-Search for pacakges
+Search for packages
 
 Usage:
 npm search [search terms ...]

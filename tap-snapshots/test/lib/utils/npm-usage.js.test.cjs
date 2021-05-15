@@ -884,7 +884,7 @@ All commands:
 
     search          npm search
                     
-                    Search for pacakges
+                    Search for packages
                     
                     Usage:
                     npm search [search terms ...]
