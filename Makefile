@@ -4,187 +4,105 @@ SHELL = bash
 PUBLISHTAG = $(shell node scripts/publish-tag.js)
 BRANCH = $(shell git rev-parse --abbrev-ref HEAD)
 
-markdowns = $(shell find doc -name '*.md' | grep -v 'index') README.md
+markdowns = $(shell find docs -name '*.md' | grep -v 'index')
 
-html_docdeps = html/dochead.html \
-               html/docfoot.html \
-               scripts/doc-build.sh \
-               package.json
+# these docs have the @VERSION@ tag in them, so they have to be rebuilt
+# whenever the package.json is touched, in case the version changed.
+version_mandocs = $(shell grep -rl '@VERSION@' docs/content \
+									|sed 's|.md|.1|g' \
+									|sed 's|docs/content/commands/|man/man1/|g' )
 
-cli_mandocs = $(shell find doc/cli -name '*.md' \
+cli_mandocs = $(shell find docs/content/commands -name '*.md' \
                |sed 's|.md|.1|g' \
-               |sed 's|doc/cli/|man/man1/|g' ) \
-               man/man1/npm-README.1 \
-               man/man1/npx.1
+               |sed 's|docs/content/commands/|man/man1/|g' )
 
-files_mandocs = $(shell find doc/files -name '*.md' \
+files_mandocs = $(shell find docs/content/configuring-npm -name '*.md' \
                |sed 's|.md|.5|g' \
-               |sed 's|doc/files/|man/man5/|g' ) \
-               man/man5/npm-json.5 \
-               man/man5/npm-global.5
+               |sed 's|docs/content/configuring-npm/|man/man5/|g' ) \
 
-misc_mandocs = $(shell find doc/misc -name '*.md' \
+misc_mandocs = $(shell find docs/content/using-npm -name '*.md' \
                |sed 's|.md|.7|g' \
-               |sed 's|doc/misc/|man/man7/|g' ) \
-               man/man7/npm-index.7
-
-cli_htmldocs = $(shell find doc/cli -name '*.md' \
-                |sed 's|.md|.html|g' \
-                |sed 's|doc/cli/|html/doc/cli/|g' ) \
-                html/doc/README.html
-
-files_htmldocs = $(shell find doc/files -name '*.md' \
-                  |sed 's|.md|.html|g' \
-                  |sed 's|doc/files/|html/doc/files/|g' ) \
-                  html/doc/files/npm-json.html \
-                  html/doc/files/npm-global.html
-
-misc_htmldocs = $(shell find doc/misc -name '*.md' \
-                 |sed 's|.md|.html|g' \
-                 |sed 's|doc/misc/|html/doc/misc/|g' ) \
-                 html/doc/index.html
+               |sed 's|docs/content/using-npm/|man/man7/|g' ) \
 
 mandocs = $(cli_mandocs) $(files_mandocs) $(misc_mandocs)
 
-htmldocs = $(cli_htmldocs) $(files_htmldocs) $(misc_htmldocs)
+all: docs
 
-all: doc
+docs: mandocs htmldocs
 
-latest:
-	@echo "Installing latest published npm"
-	@echo "Use 'make install' or 'make link' to install the code"
-	@echo "in this folder that you're looking at right now."
-	node bin/npm-cli.js install -g -f npm ${NPMOPTS}
+mandocs: dev-deps $(mandocs)
 
-install: all
-	node bin/npm-cli.js install -g -f ${NPMOPTS} $(shell node bin/npm-cli.js pack | tail -1)
+$(version_mandocs): package.json
 
-# backwards compat
-dev: install
+htmldocs: dev-deps
+	node bin/npm-cli.js rebuild
+	cd docs && node dockhand.js >&2
 
-link: uninstall
-	node bin/npm-cli.js link -f
+clean: docs-clean gitclean
 
-clean: markedclean marked-manclean doc-clean
-	rm -rf npmrc
-	node bin/npm-cli.js cache clean --force
+docsclean: docs-clean
 
-uninstall:
-	node bin/npm-cli.js rm npm -g -f
+docs-clean:
+	rm -rf man
 
-doc: $(mandocs) $(htmldocs)
+## build-time dependencies for the documentation
+dev-deps:
+	node bin/npm-cli.js install --no-audit --ignore-scripts
 
-markedclean:
-	rm -rf node_modules/marked node_modules/.bin/marked .building_marked
-
-marked-manclean:
-	rm -rf node_modules/marked-man node_modules/.bin/marked-man .building_marked-man
-
-docclean: doc-clean
-doc-clean:
-	rm -rf \
-    .building_marked \
-    .building_marked-man \
-    html/doc \
-    man
-
-## build-time tools for the documentation
-build-doc-tools := node_modules/.bin/marked \
-                   node_modules/.bin/marked-man
-
-# use `npm install marked-man` for this to work.
-man/man1/npm-README.1: README.md scripts/doc-build.sh package.json $(build-doc-tools)
+## targets for man files, these are encouraged to be only built by running `make docs` or `make mandocs`
+man/man1/%.1: docs/content/commands/%.md scripts/docs-build.js
 	@[ -d man/man1 ] || mkdir -p man/man1
-	scripts/doc-build.sh $< $@
-
-man/man1/%.1: doc/cli/%.md scripts/doc-build.sh package.json $(build-doc-tools)
-	@[ -d man/man1 ] || mkdir -p man/man1
-	scripts/doc-build.sh $< $@
-
-man/man1/npx.1: node_modules/libnpx/libnpx.1
-	cat $< | sed s/libnpx/npx/ > $@
+	node scripts/docs-build.js $< $@
 
 man/man5/npm-json.5: man/man5/package.json.5
 	cp $< $@
 
-man/man5/npm-global.5: man/man5/npm-folders.5
+man/man5/npm-global.5: man/man5/folders.5
 	cp $< $@
 
-man/man5/%.5: doc/files/%.md scripts/doc-build.sh package.json $(build-doc-tools)
+man/man5/%.5: docs/content/configuring-npm/%.md scripts/docs-build.js
 	@[ -d man/man5 ] || mkdir -p man/man5
-	scripts/doc-build.sh $< $@
+	node scripts/docs-build.js $< $@
 
-doc/misc/npm-index.md: scripts/index-build.js package.json $(build-doc-tools)
-	node scripts/index-build.js > $@
-
-html/doc/index.html: doc/misc/npm-index.md $(html_docdeps) $(build-doc-tools)
-	@[ -d html/doc ] || mkdir -p html/doc
-	scripts/doc-build.sh $< $@
-
-man/man7/%.7: doc/misc/%.md scripts/doc-build.sh package.json $(build-doc-tools)
+man/man7/%.7: docs/content/using-npm/%.md scripts/docs-build.js
 	@[ -d man/man7 ] || mkdir -p man/man7
-	scripts/doc-build.sh $< $@
+	node scripts/docs-build.js $< $@
 
-html/doc/README.html: README.md $(html_docdeps) $(build-doc-tools)
-	@[ -d html/doc ] || mkdir -p html/doc
-	scripts/doc-build.sh $< $@
+# Any time the config definitions description changes, automatically
+# update the documentation to account for it
+docs/content/using-npm/config.md: scripts/config-doc.js lib/utils/config/*.js
+	node scripts/config-doc.js
 
-html/doc/cli/%.html: doc/cli/%.md $(html_docdeps) $(build-doc-tools)
-	@[ -d html/doc/cli ] || mkdir -p html/doc/cli
-	scripts/doc-build.sh $< $@
-
-html/doc/files/npm-json.html: html/doc/files/package.json.html
-	cp $< $@
-
-html/doc/files/npm-global.html: html/doc/files/npm-folders.html
-	cp $< $@
-
-html/doc/files/%.html: doc/files/%.md $(html_docdeps) $(build-doc-tools)
-	@[ -d html/doc/files ] || mkdir -p html/doc/files
-	scripts/doc-build.sh $< $@
-
-html/doc/misc/%.html: doc/misc/%.md $(html_docdeps) $(build-doc-tools)
-	@[ -d html/doc/misc ] || mkdir -p html/doc/misc
-	scripts/doc-build.sh $< $@
-
-
-marked: node_modules/.bin/marked
-
-node_modules/.bin/marked:
-	node bin/npm-cli.js install marked --no-global --no-timing --no-save
-
-marked-man: node_modules/.bin/marked-man
-
-node_modules/.bin/marked-man:
-	node bin/npm-cli.js install marked-man --no-global --no-timing --no-save
-
-doc: man
-
-man: $(cli_docs)
-
-test: doc
+test: dev-deps
 	node bin/npm-cli.js test
 
-tag:
-	node bin/npm-cli.js tag npm@$(PUBLISHTAG) latest
+smoke-tests: dev-deps
+	node bin/npm-cli.js run smoke-tests -- --no-check-coverage
 
 ls-ok:
-	node . ls >/dev/null
+	node . ls --production >/dev/null
 
 gitclean:
 	git clean -fd
 
-publish: gitclean ls-ok link doc-clean doc
+uninstall:
+	node bin/npm-cli.js rm -g -f npm
+
+link: uninstall
+	node bin/npm-cli.js link -f --ignore-scripts
+
+prune:
+	node bin/npm-cli.js prune --production --no-save --no-audit
+	@[[ "$(shell git status -s)" != "" ]] && echo "ERR: found unpruned files" && exit 1 || echo "git status is clean"
+
+
+publish: gitclean ls-ok link test smoke-tests docs prune
 	@git push origin :v$(shell node bin/npm-cli.js --no-timing -v) 2>&1 || true
 	git push origin $(BRANCH) &&\
 	git push origin --tags &&\
 	node bin/npm-cli.js publish --tag=$(PUBLISHTAG)
 
-release: gitclean ls-ok markedclean marked-manclean doc-clean doc
-	node bin/npm-cli.js prune --production --no-save
+release: gitclean ls-ok docs prune
 	@bash scripts/release.sh
 
-sandwich:
-	@[ $$(whoami) = "root" ] && (echo "ok"; echo "ham" > sandwich) || (echo "make it yourself" && exit 13)
-
-.PHONY: all latest install dev link doc clean uninstall test man doc-clean docclean release ls-ok realclean
+.PHONY: all latest install dev link docs clean uninstall test man docs-clean docsclean release ls-ok dev-deps prune

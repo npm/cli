@@ -1,82 +1,60 @@
-# npm CLI Contributor Roles and Responsibilities
+# Contributing
 
-## Table of Contents
+## Code of Conduct
 
-* [Introduction](#introduction)
-* [Roles](#roles)
-  * [Community Members](#community-members)
-  * [Collaborators](#collaborators)
-  * [npm, Inc Employees](#npm-inc-employees)
+All interactions in the **npm** organization on GitHub are considered to be covered by our standard [Code of Conduct](https://www.npmjs.com/policies/conduct).
 
+## Development
 
-## Introduction
+**1. Clone this repository...**
 
-Welcome to the npm CLI Contributor Guide! This document outlines the npm CLI repository's process for community interaction and contribution. This includes the issue tracker, pull requests, wiki pages, and, to a certain extent, outside communication in the context of the npm CLI. It defines roles, responsibilities, and procedures, and is an entry point for anyone wishing to contribute their time and effort to making npm a better tool for the JavaScript community!
+```bash
+$ git clone git@github.com:npm/cli.git npm
+```
 
-All interactions in the npm repository are covered by the [npm Code of Conduct](https://www.npmjs.com/policies/conduct)
+**2. Navigate into project & install development-specific dependencies...**
 
-## Roles
+```bash
+$ cd ./npm && npm install
+```
 
-There are three main roles for people participating in the npm issue tracker. Each has a specific set of abilities and responsibilities: [Community members](#community-members), [Collaborators](#collaborators), and [npm, Inc employees](#npm-inc-employees).
+**3. Write some code &/or add some tests...**
 
-Failure to comply with the expected responsibilities of each role, or violating the Code of Conduct will result in punitive action relative to the transgression, ranging from a warning to full removal from the project, at the discretion of npm employees.
+```bash
+...
+```
 
-### Community Members
+**4. Run tests & ensure they pass...**
+```
+$ npm run test
+```
 
-This includes anyone who may show up to the npm/npm repo with issues, PRs, comments etc. They may not have any other involvement with npm.
+**5. Open a [Pull Request](https://github.com/npm/cli/pulls) for your work & become the newest contributor to `npm`! 🎉**
 
-#### Abilities
+## Test Coverage
 
-* Open issues and PRs
-* Comment on issues and PRs
+We expect that every new feature or bug fix comes with corresponding tests that validate the solutions. We strive to have as close to, if not exactly, 100% code coverage.
 
-#### Responsibilities
+**You can find out what the current test coverage percentage is by running...**
 
-* Comment on issues when they have a reference to the answer.
-* If community members aren't sure they are correct and don't have a reference to the answer, please leave the issue and try another one.
-* Defer to collaborators and npm employees for answers.
-* Make sure to search for [the troubleshooting posts on npm.community](https://npm.community/c/support/troubleshooting) and search on the issue tracker for similar issues before opening a new one.
-* Any users with urgent support needs are welcome to email support@npmjs.com, and our dedicated support team will be happy to help.
+```bash
+$ npm run check-coverage
+```
 
-PLEASE don't @ collaborators or npm employees on issues. The CLI team is small, and has many outstanding commitments to fulfill.
+## Performance & Benchmarks
 
-### Collaborators
+We've set up an automated [benchmark](https://github.com/npm/benchmarks) integration that will run against all Pull Requests; Posting back a comment with the results of the run.
 
-These are folks who have the ability to label and close issues. The role of collaborators may expand over time, but for now it is a limited (& important) role. This is an excellent way to contribute to npm without writing code.
+**Example:**
 
-Community members may become collaborators by showing consistent, proven track record of quality contributions to the project, a reasonable level of proficiency with the CLI, and regular participation through the tracker and other related mediums, including regular contact with the CLI team itself. This role entails a higher level of responsibility than community member, so we ask for a higher level of understanding and commitment.
+![image](https://user-images.githubusercontent.com/2818462/72312698-e2e57f80-3656-11ea-9fcf-4a8f6b97b0d1.png)
 
-Collaborators who become inactive for 3 months or longer may have their collaborator privileges removed until they are ready to return.
+You can learn more about this tool, including how to run & configure it manually, [here](https://github.com/npm/benchmarks)
 
-#### Abilities
+## Dependency Updates
 
-* Label/triage new issues
-* Respond to ongoing issues
-* Close resolved issues.
+It should be noted that our team does not accept third-party dependency updates/PRs. We have a [release process](https://github.com/npm/cli/wiki/Release-Process) that includes checks to ensure dependencies are staying up-to-date & will ship security patches for CVEs as they occur. If you submit a PR trying to update our dependencies we will close it with or without a reference to these contribution guidelines.
 
-#### Responsibilities
+## Reporting Bugs
 
-* Only answer questions when they know the answer, and provide a reference to the answer.
-* If collaborators aren't totally confident about their answer, please leave the issue and try another one.
-* If they've responded to an issue, it becomes their responsibility to see it to resolution.
-* Defer to fellow Collaborators & npm employees for answers (Again, please don't @ collaborators or npm employees, thank you!)
-* Make sure to search [the troubleshooting posts on npm.community](https://npm.community/c/support/troubleshooting) and search the rest of the forum for similar topics.
-
-### npm, Inc Employees
-
-Folks who work at npm, Inc, who have a responsibility to ensure the stability and functionality of the tools npm offers.
-
-#### Abilities
-
-* Label/triage new issues
-* Respond to ongoing issues
-* Close resolved issues
-* Land PRs
-
-Please note that this is a living document, and the CLI team will put up PRs to it as needed.
-
-#### Responsibilities
-
-* Preserve and promote the health of the CLI, the registry, the website, etc.
-
-In special cases, [Collaborators](#collaborators) may request time to speak with an npm employee directly, by contacting them and coordinating a time/place.
+When submitting a new bug report, please first [search](https://github.com/npm/cli/issues) for an existing or similar report & then use one of our existing [issue templates](https://github.com/npm/cli/issues/new/choose) if you believe you've come across a unique problem. Duplicate issues, or issues that don't use one of our templates may get closed without a response.

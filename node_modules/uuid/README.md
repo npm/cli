@@ -28,7 +28,7 @@ Version 1 (timestamp):
 
 ```javascript
 const uuidv1 = require('uuid/v1');
-uuidv1(); // ⇨ '45745c60-7b1a-11e8-9c9c-2d42b21b1a3e'
+uuidv1(); // ⇨ '2c5ea4c0-4067-11e9-8bad-9b1deb4d3b7d'
 
 ```
 
@@ -56,7 +56,7 @@ Version 4 (random):
 
 ```javascript
 const uuidv4 = require('uuid/v4');
-uuidv4(); // ⇨ '10ba038e-48da-487b-96e8-8d3b99b6d18a'
+uuidv4(); // ⇨ '1b9d6bcd-bbfd-4b2d-9b5d-ab8dfbbd4bed'
 
 ```
 
@@ -78,46 +78,6 @@ uuidv5('http://example.com/hello', uuidv5.URL); // ⇨ '3bbcee75-cecc-5b56-8031-
 const MY_NAMESPACE = '1b671a64-40d5-491e-99b0-da01ff1f3341';
 uuidv5('Hello, World!', MY_NAMESPACE); // ⇨ '630eb68f-e0fa-5ecc-887a-7c7a62614681'
 
-```
-
-## Quickstart - Browser-ready Versions
-
-Browser-ready versions of this module are available via [wzrd.in](https://github.com/jfhbrook/wzrd.in).
-
-For version 1 uuids:
-
-```html
-<script src="http://wzrd.in/standalone/uuid%2Fv1@latest"></script>
-<script>
-uuidv1(); // -> v1 UUID
-</script>
-```
-
-For version 3 uuids:
-
-```html
-<script src="http://wzrd.in/standalone/uuid%2Fv3@latest"></script>
-<script>
-uuidv3('http://example.com/hello', uuidv3.URL); // -> v3 UUID
-</script>
-```
-
-For version 4 uuids:
-
-```html
-<script src="http://wzrd.in/standalone/uuid%2Fv4@latest"></script>
-<script>
-uuidv4(); // -> v4 UUID
-</script>
-```
-
-For version 5 uuids:
-
-```html
-<script src="http://wzrd.in/standalone/uuid%2Fv5@latest"></script>
-<script>
-uuidv5('http://example.com/hello', uuidv5.URL); // -> v5 UUID
-</script>
 ```
 
 ## API
@@ -147,7 +107,7 @@ Generate and return a RFC4122 v1 (timestamp-based) UUID.
 
 Returns `buffer`, if specified, otherwise the string form of the UUID
 
-Note: The <node> id is generated guaranteed to stay constant for the lifetime of the current JS runtime. (Future versions of this module may use persistent storage mechanisms to extend this guarantee.)
+Note: The default [node id](https://tools.ietf.org/html/rfc4122#section-4.1.6) (the last 12 digits in the UUID) is generated once, randomly, on process startup, and then remains unchanged for the duration of the process.
 
 Example: Generate string UUID with fully-specified options
 
@@ -167,8 +127,19 @@ Example: In-place generation of two binary IDs
 ```javascript
 // Generate two ids in an array
 const arr = new Array();
-uuidv1(null, arr, 0);  // ⇨ [ 69, 117, 109, 208, 123, 26, 17, 232, 146, 52, 45, 66, 178, 27, 26, 62 ]
-uuidv1(null, arr, 16); // ⇨ [ 69, 117, 109, 208, 123, 26, 17, 232, 146, 52, 45, 66, 178, 27, 26, 62, 69, 117, 109, 209, 123, 26, 17, 232, 146, 52, 45, 66, 178, 27, 26, 62 ]
+uuidv1(null, arr, 0);  // ⇨ 
+  // [
+  //    44,  94, 164, 192,  64, 103,
+  //    17, 233, 146,  52, 155,  29,
+  //   235,  77,  59, 125
+  // ]
+uuidv1(null, arr, 16); // ⇨ 
+  // [
+  //    44, 94, 164, 192,  64, 103, 17, 233,
+  //   146, 52, 155,  29, 235,  77, 59, 125,
+  //    44, 94, 164, 193,  64, 103, 17, 233,
+  //   146, 52, 155,  29, 235,  77, 59, 125
+  // ]
 
 ```
 
@@ -237,8 +208,20 @@ Example: Generate two IDs in a single buffer
 
 ```javascript
 const buffer = new Array();
-uuidv4(null, buffer, 0);  // ⇨ [ 54, 122, 218, 70, 45, 70, 65, 24, 171, 53, 95, 130, 83, 195, 242, 45 ]
-uuidv4(null, buffer, 16); // ⇨ [ 54, 122, 218, 70, 45, 70, 65, 24, 171, 53, 95, 130, 83, 195, 242, 45, 108, 204, 255, 103, 171, 86, 76, 94, 178, 225, 188, 236, 150, 20, 151, 87 ]
+uuidv4(null, buffer, 0);  // ⇨ 
+  // [
+  //   155, 29, 235,  77,  59,
+  //   125, 75, 173, 155, 221,
+  //    43, 13, 123,  61, 203,
+  //   109
+  // ]
+uuidv4(null, buffer, 16); // ⇨ 
+  // [
+  //   155,  29, 235,  77,  59, 125,  75, 173,
+  //   155, 221,  43,  13, 123,  61, 203, 109,
+  //    27, 157, 107, 205, 187, 253,  75,  45,
+  //   155,  93, 171, 141, 251, 189,  75, 237
+  // ]
 
 ```
 

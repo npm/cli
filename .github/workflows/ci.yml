@@ -1,0 +1,136 @@
+name: Node CI
+
+on: [push, pull_request]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout the npm/cli repo
+      - uses: actions/checkout@v2
+      - name: Use Node.js 14.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+      - name: Install dependencies
+        run: |
+          node . install --ignore-scripts --no-audit
+          node . rebuild
+      - name: Run linting
+        run: node . run posttest
+        env:
+          DEPLOY_VERSION: testing
+  
+  licenses:
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout the npm/cli repo
+      - uses: actions/checkout@v2
+      - name: Use Node.js 14.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+      - name: Install dependencies
+        run: |
+          node . install --ignore-scripts --no-audit
+          node . rebuild
+      - name: Run linting
+        run: node . run licenses
+
+  smoke-tests:
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version: [10.x, 12.x, 14.x]
+        platform:
+          - os: ubuntu-latest
+            shell: bash
+          - os: macos-latest
+            shell: bash
+          - os: windows-latest
+            shell: bash
+          - os: windows-latest
+            shell: powershell
+
+    runs-on: ${{ matrix.platform.os }}
+    defaults:
+      run:
+        shell: ${{ matrix.platform.shell }}
+
+    steps:
+      # Checkout the npm/cli repo
+    - uses: actions/checkout@v2
+
+      # Installs the specific version of Node.js
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+
+      # Run the installer script
+    - name: Install dependencies
+      run: |
+        node . install --ignore-scripts --no-audit
+        node . rebuild
+
+      # Run the smoke tests
+    - name: Run Smoke tests
+      run: node . run --ignore-scripts smoke-tests -- --no-check-coverage -t600 -Rbase -c
+      env:
+        DEPLOY_VERSION: testing
+
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version: ['10.1', 10.x, '12.1', 12.x, '14.1', 14.x]
+        platform:
+          - os: ubuntu-latest
+            shell: bash
+          - os: macos-latest
+            shell: bash
+          - os: windows-latest
+            shell: bash
+          - os: windows-latest
+            shell: powershell
+
+    runs-on: ${{ matrix.platform.os }}
+    defaults:
+      run:
+        shell: ${{ matrix.platform.shell }}
+
+    steps:
+      # Checkout the npm/cli repo
+    - uses: actions/checkout@v2
+
+      # Installs the specific version of Node.js
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+
+      # Run the installer script
+    - name: Install dependencies
+      run: |
+        node . install --ignore-scripts --no-audit
+        node . rebuild
+
+      # Run the tests, but not if we're just gonna do coveralls later anyway
+    - name: Run Tap tests
+      if: matrix.platform.os != 'ubuntu-latest' || matrix.node-version != '12.x'
+      run: node . run --ignore-scripts test -- -t600 -Rbase -c
+      env:
+        DEPLOY_VERSION: testing
+
+      # Run coverage check
+    - name: Run coverage report
+      if: matrix.platform.os == 'ubuntu-latest' && matrix.node-version == '12.x'
+      # turn off --check-coverage until 100%, so CI failure is relevant
+      run: node . run check-coverage -- -t600 --no-check-coverage -Rbase -c
+      env:
+        DEPLOY_VERSION: testing
+        COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_OPTIONAL_TOKEN }}
+
+    # - name: Run sudo tests on Linux
+    #   if: matrix.os == 'ubuntu-latest'
+    #   run: sudo PATH=$PATH $(which node) . test -- --coverage  --timeout 600
