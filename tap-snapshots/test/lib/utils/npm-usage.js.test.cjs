@@ -712,6 +712,7 @@ All commands:
                     
                     Options:
                     [-a|--all] [--json] [-l|--long] [-p|--parseable] [-g|--global]
+                    [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
                     
                     Run "npm help outdated" for more info
 
