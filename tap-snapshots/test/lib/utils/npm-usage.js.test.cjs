@@ -430,7 +430,7 @@ All commands:
                     npm explain <folder | specifier>
                     
                     Options:
-                    [--json]
+                    [--json] [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
                     
                     alias: why
                     
