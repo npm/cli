@@ -16,11 +16,28 @@ on:
   #     - synchronize
 
 jobs:
-  pr-title-format:
+  PR title format:
     runs-on: ubuntu-latest
     steps:
-      # Please look up the latest version from
-      # https://github.com/amannn/action-semantic-pull-request/releases
       - uses: amannn/action-semantic-pull-request@v3.4.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  Clean working dir:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out PR branch
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+          ref: ${{ github.head_ref }}
+          repository: ${{ github.repository }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Install dependencies
+        run: |
+          npm install
+      - name: Check for diff
+        run: |
+          touch lib/utils/config/definitions
+          npm run postsnap
+          make prune
