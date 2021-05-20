@@ -16,14 +16,14 @@ on:
   #     - synchronize
 
 jobs:
-  PR title format:
+  pr-title-format:
     runs-on: ubuntu-latest
     steps:
       - uses: amannn/action-semantic-pull-request@v3.4.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-  Clean working dir:
+  clean-working-dir:
     runs-on: ubuntu-latest
     steps:
       - name: Check out PR branch
