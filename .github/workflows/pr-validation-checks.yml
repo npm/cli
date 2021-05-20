@@ -24,7 +24,7 @@ jobs:
     steps:
       - uses: amannn/action-semantic-pull-request@v3.4.0
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.NPM_ROBOT_USER_PAT }}
 
   clean-working-dir:
     runs-on: ubuntu-latest
@@ -35,7 +35,7 @@ jobs:
           fetch-depth: 1
           ref: ${{ github.head_ref }}
           repository: ${{ github.repository }}
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.NPM_ROBOT_USER_PAT }}
       - name: Install dependencies
         run: |
           node . install
