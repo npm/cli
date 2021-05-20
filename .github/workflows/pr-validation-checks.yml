@@ -40,4 +40,5 @@ jobs:
         run: |
           touch lib/utils/config/definitions
           npm run postsnap
+          git status -s
           make prune
