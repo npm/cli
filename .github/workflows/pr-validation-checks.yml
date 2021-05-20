@@ -9,11 +9,14 @@ on:
     branches:
       - release-next
       - latest
-  # pull_request_target:
-  #   types:
-  #     - opened
-  #     - edited
-  #     - synchronize
+  pull_request_target:
+    types:
+      - opened
+      - edited
+      - synchronize
+    branches:
+      - release-next
+      - latest
 
 jobs:
   pr-title-format:
@@ -40,5 +43,4 @@ jobs:
         run: |
           touch lib/utils/config/definitions.js
           npm run postsnap
-          git status -s
           make prune
