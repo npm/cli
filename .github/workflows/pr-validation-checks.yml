@@ -38,7 +38,7 @@ jobs:
           node . install
       - name: Check for diff
         run: |
-          touch lib/utils/config/definitions
+          touch lib/utils/config/definitions.js
           npm run postsnap
           git status -s
           make prune
