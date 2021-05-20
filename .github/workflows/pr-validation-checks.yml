@@ -35,7 +35,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: Install dependencies
         run: |
-          npm install
+          node . install
       - name: Check for diff
         run: |
           touch lib/utils/config/definitions
