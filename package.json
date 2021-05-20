@@ -88,7 +88,7 @@
     "npm-package-arg": "^8.1.2",
     "npm-pick-manifest": "^6.1.1",
     "npm-profile": "^5.0.3",
-    "npm-registry-fetch": "^10.1.1",
+    "npm-registry-fetch": "^10.1.2",
     "npm-user-validate": "^1.0.1",
     "npmlog": "~4.1.2",
     "opener": "^1.5.2",
