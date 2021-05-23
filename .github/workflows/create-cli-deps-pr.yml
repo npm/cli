@@ -26,7 +26,7 @@ jobs:
       - name: Run dependency updates and create PR
         run: |
           base_branch=$(( "$NPM_VERSION" == "latest" ? `npm view npm@latest version` : "v14.x-staging"))
-          release_branch_name="npm-$NPM_VERSION"
+          release_branch_name="npm-$base_branch"
           echo $base_branch
           echo $NPM_VERSION
           echo $release_branch
