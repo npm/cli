@@ -1,10 +1,10 @@
-name: 'npm@v6.x.x CLI Dependency Update'
+name: "Create CLI Deps PR"
 
 on:
   workflow_dispatch:
     inputs:
       npmVersion:
-        description: 'NPM Version'
+        description: "NPM Version"
         required: true
         default: '"6.x.x" or "latest"'
 
@@ -14,18 +14,18 @@ jobs:
     env:
       GITHUB_TOKEN: ${{ secrets.NPM_ROBOT_TOKEN }}
       NPM_VERSION: ${{ github.event.inputs.npmVersion }}
-      REPO: 'nodejs/node'
+      REPO: "nodejs/node"
     steps:
       - name: Checkout npm/node
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
           ref: master
-          repository: 'npm/node'
+          repository: "npm/node"
           token: ${{ secrets.NPM_ROBOT_TOKEN }}
       - name: Run dependency updates and create PR
         run: |
-          base_branch=$(( "$NPM_VERSION" == "master" ? "v14.x-staging"))
+          base_branch=$(( "$NPM_VERSION" == "latest" ? `npm view npm@latest version` : "v14.x-staging"))
           release_branch_name="npm-$NPM_VERSION"
           echo $base_branch
           echo $NPM_VERSION
