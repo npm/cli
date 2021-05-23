@@ -27,3 +27,4 @@ npm-debug.log
 /coverage
 /*.tgz
 /.editorconfig
+.vscode/
