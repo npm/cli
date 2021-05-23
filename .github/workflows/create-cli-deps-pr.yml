@@ -1,0 +1,42 @@
+name: "Create CLI Deps PR"
+
+on:
+  workflow_dispatch:
+    inputs:
+      npmVersion:
+        description: "NPM Version"
+        required: true
+        default: '"6.x.x" or "latest"'
+
+jobs:
+  create-pull-request:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.NPM_ROBOT_USER_PAT }}
+      NPM_VERSION: ${{ github.event.inputs.npmVersion }}
+    steps:
+      - name: Checkout npm/node
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          ref: master
+          repository: "npm/node"
+          token: ${{ secrets.NPM_ROBOT_USER_PAT }}
+      - name: Run dependency updates and create PR
+        run: |
+          npm_tag=""
+          if [ "$NPM_VERSION" == "latest" ]
+          then 
+            npm_tag=`npm view npm@latest version`
+          else
+            npm_tag="$NPM_VERSION"
+          fi 
+
+          git config user.name "npm-robot"
+          git config user.email "ops+robot@npmjs.com"
+          git checkout -b "npm-$npm_tag"
+          ./tools/update-npm.sh "$npm_tag"
+          git push origin "npm-$npm_tag"
+          gh_release_body=`gh release view v"$npm_tag" -R npm/cli`
+          echo $gh_release_body
+          gh pr create -R "npm/node" -B "$base_branch" -H "npm:$release_branch_name" --title "deps(cli): upgrade npm to $npm_version" --body "$gh_release_body"
