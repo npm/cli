@@ -84,7 +84,7 @@
     "ms": "^2.1.2",
     "node-gyp": "^7.1.2",
     "nopt": "^5.0.0",
-    "npm-audit-report": "^2.1.4",
+    "npm-audit-report": "^2.1.5",
     "npm-package-arg": "^8.1.2",
     "npm-pick-manifest": "^6.1.1",
     "npm-profile": "^5.0.3",
