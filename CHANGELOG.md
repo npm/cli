@@ -1,3 +1,169 @@
+## v7.16.0 (2021-05-27)
+
+### FEATURES
+
+* [`399ff8cbc`](https://github.com/npm/cli/commit/399ff8cbccd5198f637518ccafa86c43bab47a4a)
+  [#3312](https://github.com/npm/cli/issues/3312)
+  feat(link): add workspace support
+  ([@isaacs](https://github.com/isaacs))
+
+### BUG FIXES
+
+* [`83590d40f`](https://github.com/npm/cli/commit/83590d40f94347f21714dbd158b9ddcad9c82de9)
+  [#3272](https://github.com/npm/cli/issues/3272)
+  fix(ls): show relative paths from root
+  ([@isaacs](https://github.com/isaacs))
+* [`a574b518a`](https://github.com/npm/cli/commit/a574b518ae5b8f0664ed388cf1be6288d8c2e68d)
+  [#3304](https://github.com/npm/cli/issues/3304)
+  fix(completion): restore IFS even if `npm completion` returns error
+  ([@NariyasuHeseri](https://github.com/NariyasuHeseri))
+* [`554e8a5cd`](https://github.com/npm/cli/commit/554e8a5cd7034052a59a9ada31e4b8f73712211a)
+  [#3311](https://github.com/npm/cli/issues/3311)
+  set audit exit code properly
+  ([@isaacs](https://github.com/isaacs))
+* [`4a4fbe33c`](https://github.com/npm/cli/commit/4a4fbe33c51413adcd558b4af6f1e204b1b87e41)
+  [#3268](https://github.com/npm/cli/issues/3268)
+  [#3285](https://github.com/npm/cli/issues/3285)
+  fix(publish): skip private workspaces
+  ([@ruyadorno](https://github.com/ruyadorno))
+
+### DEPENDENCIES
+
+* [`7b56bfdf3`](https://github.com/npm/cli/commit/7b56bfdf3f2ac67a926fc7893b883a16b46eb3fd)
+  `cacache@15.2.0`:
+  * feat: allow fully deleting indices
+  * feat: add a validateEntry option to compact
+  * chore: lint
+  * chore: use standard npm style release scripts
+* [`dbbc151a3`](https://github.com/npm/cli/commit/dbbc151a3bcf89e2627dc267063edd185ead1cb8)
+  `npm-audit-report@2.1.5`:
+  * fix(exit-code): account for null auditLevel default (#46)
+* [`5b2604507`](https://github.com/npm/cli/commit/5b26045076477d3d350f539e60adf48a80376fda)
+  chore(package-lock): update devDependencies
+  ([@Gar](https://github.com/Gar))
+
+### DOCUMENTATION
+
+* [`46a9bcbcb`](https://github.com/npm/cli/commit/46a9bcbcb0bb2435dca6f45a61b8631f580c7f06)
+  [#3282](https://github.com/npm/cli/issues/3282)
+  fix(docs): proper postinstall script file name
+  ([@KevinFCormier](https://github.com/KevinFCormier))
+* [`3c53d631f`](https://github.com/npm/cli/commit/3c53d631f557cf2484e2f6a6172c44e36aea4817)
+  [#3307](https://github.com/npm/cli/issues/3307)
+  fix(docs): typo in package-lock.json docs
+  ([@rethab](https://github.com/rethab))
+* [`96367f93f`](https://github.com/npm/cli/commit/96367f93f46c24494d084c8b8d34e4de9cd375da)
+  rebuild npm-pack doc
+  ([@isaacs](https://github.com/isaacs))
+* [`64b13dd10`](https://github.com/npm/cli/commit/64b13dd1082b6ca7eac4e8e329bfdd8cd8daf157)
+  [#3313](https://github.com/npm/cli/issues/3313)
+  Drop stale Python 3<->node-gyp remark
+  ([@spencerwilson](https://github.com/spencerwilson))
+
+### AUTOMATION
+
+* [`3d5df0082`](https://github.com/npm/cli/commit/3d5df0082ae904dacdea8644286e8362d4a2ed50)
+  [#3294](https://github.com/npm/cli/issues/3294)
+  chore(ci): move node release PR workflow into cli
+  ([@gimli01](https://github.com/gimli01))
+
+
+## v7.15.0 (2021-05-27)
+
+* [`46a9bcbcb`](https://github.com/npm/cli/commit/46a9bcbcb0bb2435dca6f45a61b8631f580c7f06)
+  [#3282](https://github.com/npm/cli/issues/3282)
+  fix(docs): proper postinstall script file name
+  I think this change was incorrect: https://github.com/npm/cli/pull/2024
+  The point of this example is that the same script is being used for two different stages (`install` and `post-install`) so it would be a good idea to look at the `npm_lifecycle_event` environment variable inside this script to determine which stage is being run.
+  ([@KevinFCormier](https://github.com/KevinFCormier))
+* [`83590d40f`](https://github.com/npm/cli/commit/83590d40f94347f21714dbd158b9ddcad9c82de9)
+  [#3272](https://github.com/npm/cli/issues/3272)
+  fix(ls): show relative paths from root
+  Change the output in `npm ls` for symlink dependencies (including
+  workspaces) to show the relative path from the project root, rather than
+  the absolute path of the link target.
+  This makes the output much less noisy and more ergonomic when many
+  workspaces and link dependencies are in use, especially when paths are
+  long.
+  It is arguable that this output might be slightly misleading, since the
+  _actual_ workspace symlink from `${root}/node_modules/b` to
+  `${root}/packages/b` has a link value of `../packages/b`, not just
+  `packages/b`.  (Or on Windows, always the full absolute path, because
+  junctions.)  Thus, `npm ls b` will not show the same output as `ls -l
+  node_modules/b`.
+  However, `npm ls` shows the logical tree, not the physical tree, so
+  presenting the user with a path that they can use and interpret is more
+  important than presenting them with the strictly accurate details of
+  their filesystem.
+  ([@isaacs](https://github.com/isaacs))
+* [`dbbc151a3`](https://github.com/npm/cli/commit/dbbc151a3bcf89e2627dc267063edd185ead1cb8)
+  `npm-audit-report@2.1.5`:
+  * fix(exit-code): account for null auditLevel default (#46)
+* [`a574b518a`](https://github.com/npm/cli/commit/a574b518ae5b8f0664ed388cf1be6288d8c2e68d)
+  [#3304](https://github.com/npm/cli/issues/3304)
+  fix(completion): restore IFS even if `npm completion` returns error
+  ([@NariyasuHeseri](https://github.com/NariyasuHeseri))
+* [`3c53d631f`](https://github.com/npm/cli/commit/3c53d631f557cf2484e2f6a6172c44e36aea4817)
+  [#3307](https://github.com/npm/cli/issues/3307)
+  fix(docs): typo in package-lock.json docs
+  ([@rethab](https://github.com/rethab))
+* [`554e8a5cd`](https://github.com/npm/cli/commit/554e8a5cd7034052a59a9ada31e4b8f73712211a)
+  [#3311](https://github.com/npm/cli/issues/3311)
+  set audit exit code properly
+  When running 'npm audit', we properly exited correctly with the
+  appropriate exitCode based on the audit level config and the report
+  results.
+  However, when going through the reifyFinish() function (as we do for
+  'npm audit fix'), we were not setting that properly if the auditLevel
+  was not set.
+  Furthermore, if the auditLevel WAS set, we were setting the exit code to
+  non-zero for *other* reify commands (install, update, etc.), where the
+  audit information should be strictly advisory.
+  When --json and --loglevel=silent were set, the exitCode was never being
+  set properly.
+  This fixes all these problems.
+  ([@isaacs](https://github.com/isaacs))
+* [`96367f93f`](https://github.com/npm/cli/commit/96367f93f46c24494d084c8b8d34e4de9cd375da)
+  rebuild npm-pack doc
+  ([@isaacs](https://github.com/isaacs))
+* [`399ff8cbc`](https://github.com/npm/cli/commit/399ff8cbccd5198f637518ccafa86c43bab47a4a)
+  [#3312](https://github.com/npm/cli/issues/3312)
+  feat(link): add workspace support
+  ([@isaacs](https://github.com/isaacs))
+* [`64b13dd10`](https://github.com/npm/cli/commit/64b13dd1082b6ca7eac4e8e329bfdd8cd8daf157)
+  [#3313](https://github.com/npm/cli/issues/3313)
+  Drop stale Python 3<->node-gyp remark
+  ([@spencerwilson](https://github.com/spencerwilson))
+* [`4a4fbe33c`](https://github.com/npm/cli/commit/4a4fbe33c51413adcd558b4af6f1e204b1b87e41)
+  [#3268](https://github.com/npm/cli/issues/3268)
+  [#3285](https://github.com/npm/cli/issues/3285)
+  fix(publish): skip private workspaces
+  Allow users to publish all workspaces with `npm publish --ws` while also
+  skipping any workspace that might have been intentionally marked as
+  private, using `"private": true` in its package.json file.
+  ([@ruyadorno](https://github.com/ruyadorno))
+* [`5b2604507`](https://github.com/npm/cli/commit/5b26045076477d3d350f539e60adf48a80376fda)
+  chore(package-lock): update devDependencies
+  ([@Gar](https://github.com/Gar))
+* [`35c4df07c`](https://github.com/npm/cli/commit/35c4df07cd3123c368a71af8378dcee33a8696ae)
+  `cmark-gfm@0.9.0`:
+  * devDependency used for building html docs
+* [`b70d797d5`](https://github.com/npm/cli/commit/b70d797d5dd45a0f557615820a9409b66850c896)
+  `cmark-gfm@0.8.5`:
+  0.9.0 does not work in node 10.1 so our CI fails
+* [`7b56bfdf3`](https://github.com/npm/cli/commit/7b56bfdf3f2ac67a926fc7893b883a16b46eb3fd)
+  `cacache@15.2.0`:
+  * feat: allow fully deleting indices
+  * feat: add a validateEntry option to compact
+  * chore: lint
+  * chore: use standard npm style release scripts
+* [`3d5df0082`](https://github.com/npm/cli/commit/3d5df0082ae904dacdea8644286e8362d4a2ed50)
+  [#3294](https://github.com/npm/cli/issues/3294)
+  chore(ci): add input to cli deps pr workflow
+  Moves workflow to create NPM CLI dependency pull request from npm/node.
+  Adds input to workflow dispatch trigger
+  ([@gimli01](https://github.com/gimli01))
+
 ## v7.14.0 (2021-05-20)
 
 ### FEATURES
