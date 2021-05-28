@@ -74,4 +74,4 @@ jobs:
           git rebase --whitespace=fix master
           git push origin "npm-$npm_tag"
           gh_release_body=`gh release view v"$npm_tag" -R npm/cli --json body`
-          gh pr create -R "npm/node" -B "$base_branch" -H "npm:npm-$npm_tag" --title "deps(cli): upgrade npm to $npm_tag" --body "$gh_release_body"
+          gh pr create -R "npm/node" -B "$base_branch" -H "npm:npm-$npm_tag" --title "deps: upgrade npm to $npm_tag" --body "$gh_release_body"
