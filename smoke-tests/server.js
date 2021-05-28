@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 const {join, dirname} = require('path')
 const {existsSync, readFileSync, writeFileSync} = require('fs')
 const PORT = 12345 + (+process.env.TAP_CHILD_ID || 0)
