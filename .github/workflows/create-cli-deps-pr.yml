@@ -26,7 +26,7 @@ jobs:
         with:
           fetch-depth: 0
           ref: master
-          repository: "gimli01/node"
+          repository: "npm/node"
           token: ${{ secrets.NPM_ROBOT_USER_PAT }}
       - name: Run dependency updates and create PR
         run: |
