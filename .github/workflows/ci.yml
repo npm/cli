@@ -41,7 +41,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node-version: [10.x, 12.x, 14.x]
+        node-version: [10.x, 12.x, 14.x, 16.x]
         platform:
           - os: ubuntu-latest
             shell: bash
@@ -83,7 +83,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node-version: ['10.1', 10.x, '12.1', 12.x, '14.1', 14.x]
+        node-version: ['10.1', 10.x, '12.1', 12.x, '14.1', 14.x, '16.1', 16.x]
         platform:
           - os: ubuntu-latest
             shell: bash
