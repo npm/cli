@@ -307,7 +307,7 @@ t.test('npm exec <noargs>, run interactive shell', t => {
         throw er
 
       t.match(RUN_SCRIPTS, [{
-        pkg: { scripts: { npx: undefined } },
+        pkg: { scripts: { npx: /sh|cmd/ } },
       }])
 
       LOG_WARN.length = 0
