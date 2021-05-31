@@ -1,3 +1,21 @@
+## v7.15.1 (2021-05-31)
+
+### BUG FIXES
+
+* [`598a17a26`](https://github.com/npm/cli/commit/598a17a2671c9e3bc204dddd6488169c9a72c6a1)
+  [#3329](https://github.com/npm/cli/issues/3329)
+  fix(libnpmexec): don't detach output from npm
+  ([@wraithgar](https://github.com/wraithgar))
+
+### DEPENDENCIES
+
+* [`c4fc03e9e`](https://github.com/npm/cli/commit/c4fc03e9eb3a6386e8feacb67c19f0a1578dfe38)
+  `@npmcli/arborist@2.6.1`
+    * fixes reifying deps with mismatching version ranges between
+      actual and virtual trees
+* [`9159fa62a`](https://github.com/npm/cli/commit/9159fa62a10dee09daef178fc7be161a02824004)
+  `libnpmexec@1.2.0`
+
 ## v7.15.0 (2021-05-27)
 
 ### FEATURES
