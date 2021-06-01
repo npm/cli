@@ -36,7 +36,7 @@ $(version_mandocs): package.json
 
 htmldocs: dev-deps
 	node bin/npm-cli.js rebuild
-	cd docs && node dockhand.js >&2
+	node bin/npm-cli.js run -w docs build
 
 clean: docs-clean gitclean
 

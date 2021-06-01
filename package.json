@@ -2,6 +2,9 @@
   "version": "7.15.1",
   "name": "npm",
   "description": "a package manager for JavaScript",
+  "workspaces": [
+    "docs"
+  ],
   "keywords": [
     "install",
     "modules",
@@ -180,18 +183,13 @@
     "write-file-atomic"
   ],
   "devDependencies": {
-    "@mdx-js/mdx": "^1.6.22",
-    "cmark-gfm": "^0.8.5",
     "eslint": "^7.26.0",
     "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.1.0",
     "eslint-plugin-standard": "^5.0.0",
-    "jsdom": "^16.5.2",
-    "licensee": "^8.1.0",
-    "marked-man": "^0.7.0",
-    "tap": "^15.0.9",
-    "yaml": "^1.10.2"
+    "licensee": "^8.2.0",
+    "tap": "^15.0.9"
   },
   "scripts": {
     "dumpconf": "env | grep npm | sort | uniq",
@@ -212,10 +210,6 @@
     "resetdeps": "bash scripts/resetdeps.sh",
     "smoke-tests": "tap smoke-tests/index.js"
   },
-  "//": [
-    "XXX temporarily only run unit tests while v7 beta is in progress",
-    "Remove the 'files' below once we're done porting old tests over"
-  ],
   "tap": {
     "test-env": [
       "LC_ALL=sk"

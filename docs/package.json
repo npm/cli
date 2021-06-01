@@ -1,0 +1,19 @@
+{
+  "name": "docs",
+  "description": "The npm cli documentation",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "node dockhand"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/npm/cli"
+  },
+  "devDependencies": {
+    "@mdx-js/mdx": "^1.6.22",
+    "cmark-gfm": "^0.8.3",
+    "jsdom": "^16.4.0",
+    "marked-man": "^0.7.0",
+    "yaml": "^1.10.0"
+  }
+}

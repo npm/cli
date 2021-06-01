@@ -10,7 +10,7 @@ const shouldIgnore = []
 
 arb.loadVirtual().then(tree => {
   for (const [name, node] of tree.children.entries()) {
-    if (node.dev) {
+    if (node.dev || node.isLink) {
       console.error('ignore', node.name)
       shouldIgnore.push(node.name)
     } else if (tree.edgesOut.has(node.name)) {
