@@ -105,6 +105,16 @@ t.test('situations in which we do not notify', t => {
     t.strictSame(MANIFEST_REQUEST, [], 'no requests for manifests')
   })
 
+  t.test('do not suggest update if already updating with spec', async t => {
+    t.equal(await updateNotifier({
+      ...npm,
+      flatOptions: { ...flatOptions, global: true },
+      command: 'install',
+      argv: ['npm@latest'],
+    }), null)
+    t.strictSame(MANIFEST_REQUEST, [], 'no requests for manifests')
+  })
+
   t.test('do not update if same as latest', async t => {
     t.equal(await updateNotifier(npm), null)
     t.strictSame(MANIFEST_REQUEST, ['npm@latest'], 'requested latest version')
