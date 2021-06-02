@@ -139,6 +139,14 @@ t.test('completion to folder', async t => {
         else
           return ['package.json']
       },
+      promises: {
+        readdir: (path) => {
+          if (path === '/')
+            return ['arborist']
+          else
+            return ['package.json']
+        },
+      },
     },
   })
   const install = new Install({})
