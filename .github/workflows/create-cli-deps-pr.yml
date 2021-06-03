@@ -37,7 +37,7 @@ jobs:
           upstream_repository: nodejs/node
           upstream_branch: master
           target_branch: master
-          git_pull_args: --rebase
+          git_pull_args: --ff-only                    # optional arg use, defaults to simple 'pull'
           github_token: ${{ secrets.NPM_ROBOT_USER_PAT }}   # optional, for accessing repos that require authentication
       - name: Run dependency updates and create PR
         run: |
