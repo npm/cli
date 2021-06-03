@@ -32,7 +32,7 @@ jobs:
           token: ${{ secrets.NPM_ROBOT_USER_PAT }}
       - name: Fetch upstream
         run: |
-          git remote add upstream git@github.com:nodejs/node.git
+          git remote add upstream git@github.com:npm/node.git
           git pull upstream master --rebase
       - name: Run dependency updates and create PR
         run: |
