@@ -95,6 +95,7 @@ link: uninstall
 	node bin/npm-cli.js link -f --ignore-scripts
 
 prune:
+	node bin/npm-cli.js run resetdeps
 	node bin/npm-cli.js prune --production --no-save --no-audit
 	@[[ "$(shell git status -s)" != "" ]] && echo "ERR: found unpruned files" && exit 1 || echo "git status is clean"
 
