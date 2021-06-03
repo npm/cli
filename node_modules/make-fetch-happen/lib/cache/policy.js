@@ -2,6 +2,19 @@ const CacheSemantics = require('http-cache-semantics')
 const Negotiator = require('negotiator')
 const ssri = require('ssri')
 
+// HACK: negotiator lazy loads several of its own modules
+// as a micro optimization. we need to be sure that they're
+// in memory as soon as possible at startup so that we do
+// not try to lazy load them after the directory has been
+// retired during a self update of the npm CLI, we do this
+// by calling all of the methods that trigger a lazy load
+// on a fake instance.
+const preloadNegotiator = new Negotiator({ headers: {} })
+preloadNegotiator.charsets()
+preloadNegotiator.encodings()
+preloadNegotiator.languages()
+preloadNegotiator.mediaTypes()
+
 // options passed to http-cache-semantics constructor
 const policyOptions = {
   shared: false,
