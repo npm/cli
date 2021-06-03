@@ -30,10 +30,15 @@ jobs:
           ref: master
           repository: "npm/node"
           token: ${{ secrets.NPM_ROBOT_USER_PAT }}
-      - name: Fetch upstream
-        run: |
-          git remote add upstream git@github.com:npm/node.git
-          git pull upstream master --rebase
+      - name: Pull (Fast-Forward) upstream
+        id: sync
+        uses: aormsby/Fork-Sync-With-Upstream-action@v2.1
+        with:
+          upstream_repository: nodejs/node
+          upstream_branch: master
+          target_branch: master
+          git_pull_args: --rebase
+          github_token: ${{ secrets.NPM_ROBOT_USER_PAT }}   # optional, for accessing repos that require authentication
       - name: Run dependency updates and create PR
         run: |
           npm_tag=""
