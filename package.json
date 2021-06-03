@@ -5,6 +5,13 @@
   "workspaces": [
     "docs"
   ],
+  "files": [
+    "bin",
+    "docs/content/**/*.md",
+    "docs/output/**/*.html",
+    "lib",
+    "man"
+  ],
   "keywords": [
     "install",
     "modules",
