@@ -12,8 +12,8 @@ t.cleanSnapshot = s => s.split(cwd).join('{CWD}')
   .split(process.cwd()).join('{CWD}')
   .replace(/\\+/g, '/')
   .replace(/\r\n/g, '\n')
-  .replace(/\ \(in a browser\)/g, '')
-  .replace(/^npm@.*\ /mg, 'npm ')
+  .replace(/ \(in a browser\)/g, '')
+  .replace(/^npm@.* /mg, 'npm ')
 
 // setup server
 const { start, stop, registry } = require('./server.js')
