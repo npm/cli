@@ -8,19 +8,19 @@ var src = args[0]
 var dest = args[1] || src
 
 fs.readFile(src, 'utf8', function (err, data) {
-  if (err) return console.log(err)
+  if (err)
+    return console.log(err)
 
   function frontmatter (match, p1) {
     const fm = { }
 
     p1.split(/\r?\n/).forEach((kv) => {
-      let result = kv.match(/^([^\s:]+):\s*(.*)/)
-      if (result) {
+      const result = kv.match(/^([^\s:]+):\s*(.*)/)
+      if (result)
         fm[result[1]] = result[2]
-      }
     })
 
-    return `# ${fm['title']}(${fm['section']}) - ${fm['description']}`
+    return `# ${fm.title}(${fm.section}) - ${fm.description}`
   }
 
   function replacer (match, p1) {
@@ -35,6 +35,7 @@ fs.readFile(src, 'utf8', function (err, data) {
     .trim()
 
   fs.writeFile(dest, marked(result), 'utf8', function (err) {
-    if (err) return console.log(err)
+    if (err)
+      return console.log(err)
   })
 })

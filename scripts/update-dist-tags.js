@@ -79,9 +79,9 @@ function parseOTP (args) {
     }
     case 1: {
       // --otp=123456 or --otp123456
-      if (otp) {
+      if (otp)
         return otp
-      }
+
       console.error('Invalid otp value supplied. [CASE 1]')
       process.exit(1)
     }
@@ -89,9 +89,9 @@ function parseOTP (args) {
       // --otp 123456
       // INFO: validating the second argument is an otp code
       const isValidOtp = PARSE_OTP_VALUE.test(args[1])
-      if (isValidOtp) {
+      if (isValidOtp)
         return args[1]
-      }
+
       console.error('Invalid otp value supplied. [CASE 2]')
       process.exit(1)
     }

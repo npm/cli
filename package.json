@@ -204,7 +204,7 @@
     "sudotest:nocleanup": "sudo NO_TEST_CLEANUP=1 npm run test --",
     "posttest": "npm run lint",
     "eslint": "eslint",
-    "lint": "npm run eslint -- test/lib test/bin lib",
+    "lint": "npm run eslint -- test/lib test/bin lib scripts docs smoke-tests",
     "lintfix": "npm run lint -- --fix",
     "prelint": "rimraf test/npm_cache*",
     "resetdeps": "bash scripts/resetdeps.sh",

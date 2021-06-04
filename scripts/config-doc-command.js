@@ -1,6 +1,6 @@
 const { definitions } = require('../lib/utils/config/index.js')
 const { writeFileSync, readFileSync } = require('fs')
-const { resolve, basename, relative } = require('path')
+const { resolve } = require('path')
 
 const configDoc = process.argv[2]
 const commandFile = process.argv[3]

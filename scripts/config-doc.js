@@ -39,9 +39,9 @@ const addShorthands = doc => {
         shorta.localeCompare(shortb, 'en')
     })
     .map(([short, expansion]) => {
-    const dash = short.length === 1 ? '-' : '--'
-    return `* \`${dash}${short}\`: \`${expansion.join(' ')}\``
-  }).join('\n')
+      const dash = short.length === 1 ? '-' : '--'
+      return `* \`${dash}${short}\`: \`${expansion.join(' ')}\``
+    }).join('\n')
   return addBetweenTags(doc, startTag, endTag, body)
 }
 

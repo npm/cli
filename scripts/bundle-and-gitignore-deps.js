@@ -9,7 +9,7 @@ const arb = new Arborist({ path: resolve(__dirname, '..') })
 const shouldIgnore = []
 
 arb.loadVirtual().then(tree => {
-  for (const [name, node] of tree.children.entries()) {
+  for (const node of tree.children.values()) {
     if (node.dev || node.isLink) {
       console.error('ignore', node.name)
       shouldIgnore.push(node.name)
