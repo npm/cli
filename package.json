@@ -3,7 +3,8 @@
   "name": "npm",
   "description": "a package manager for JavaScript",
   "workspaces": [
-    "docs"
+    "docs",
+    "packages/*"
   ],
   "files": [
     "bin",

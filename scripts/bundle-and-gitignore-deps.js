@@ -10,7 +10,10 @@ const shouldIgnore = []
 
 arb.loadVirtual().then(tree => {
   for (const node of tree.children.values()) {
-    if (node.dev || node.isLink) {
+    const has = (obj, key) => Object.prototype.hasOwnProperty.call(obj, key)
+    const nonProdWorkspace =
+      node.isWorkspace && !(has(tree.package.dependencies, node.name))
+    if (node.dev || nonProdWorkspace) {
       console.error('ignore', node.name)
       shouldIgnore.push(node.name)
     } else if (tree.edgesOut.has(node.name)) {
