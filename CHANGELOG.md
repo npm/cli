@@ -1,3 +1,50 @@
+## v7.17.0 (2021-06-10)
+
+## FEATURES
+
+* [`ef668ab57`](https://github.com/npm/cli/commit/ef668ab57b15789c6e2971ac39d8ecb3757629fa)
+  [#3368](https://github.com/npm/cli/issues/3368)
+  feat(diff): add workspace support
+  ([@wraithgar](https://github.com/wraithgar))
+
+## BUG FIXES
+
+* [`26d00c477`](https://github.com/npm/cli/commit/26d00c47785dfb300eab6a926f9d7c4d566776b1)
+  [#3364](https://github.com/npm/cli/issues/3364)
+  fix(tests): mock writeFile in pack tests so we dont create 0 byte files in the repo
+  ([@nlf](https://github.com/nlf))
+* [`f130a81d6`](https://github.com/npm/cli/commit/f130a81d62bf4f540ab252a09ff5a618827f9265)
+  [#3367](https://github.com/npm/cli/issues/3367)
+  fix(linting): add scripts, docs, smoke-tests
+  ([@wraithgar](https://github.com/wraithgar))
+* [`992799cd8`](https://github.com/npm/cli/commit/992799cd8c4427ed8c57270b399b2d6bbc94f2a8)
+  [#3383](https://github.com/npm/cli/issues/3383)
+  fix(login): properly save scope if defined
+  ([@wraithgar](https://github.com/wraithgar))
+
+## DOCUMENTATION
+
+* [`844229519`](https://github.com/npm/cli/commit/844229519dd51d0bcafc8c39109a671b6333cf6c)
+  [#3392](https://github.com/npm/cli/issues/3392)
+  docs(workspaces): update using npm section
+  Added examples of using `npm init` to bootstrap a new workspace and a
+  section on how to add/manage dependencies to workspaces.
+  ([@ruyadorno](https://github.com/ruyadorno))
+
+## DEPENDENCIES
+
+* [`3654890fb`](https://github.com/npm/cli/commit/3654890fb3be8b57e73f7e6ac4d895017603ca9e)
+  remove ignored dep
+  ([@nlf](https://github.com/nlf))
+* [`a4a0e68a9`](https://github.com/npm/cli/commit/a4a0e68a9e34a4c99e10e4fb8c5f89d323a4192f)
+  [#3362](https://github.com/npm/cli/issues/3362)
+  check less stuff into node_modules
+  ([@isaacs](https://github.com/isaacs))
+* [`7d5b049b6`](https://github.com/npm/cli/commit/7d5b049b654f96fc4c49d2f18a19adb4aa0f7d3c)
+  [#3365](https://github.com/npm/cli/issues/3365)
+  chore(package) Use a "files" list
+  ([@isaacs](https://github.com/isaacs))
+
 ## v7.16.0 (2021-06-03)
 
 ## FEATURES
