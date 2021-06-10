@@ -429,7 +429,11 @@ All commands:
                     Explain installed packages
                     
                     Usage:
-                    npm explain <folder | specifier>
+                    npm explain <folder>
+                    npm explain [<@scope>/]<pkg>
+                    npm explain [<@scope>/]<pkg>@<tag>
+                    npm explain [<@scope>/]<pkg>@<version>
+                    npm explain [<@scope>/]<pkg>@<version range>
                     
                     Options:
                     [--json] [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
@@ -715,7 +719,7 @@ All commands:
                     npm outdated [[<@scope>/]<pkg> ...]
                     
                     Options:
-                    [-a|--all] [--json] [-l|--long] [-p|--parseable] [-g|--global]
+                    [-a|--all] [--in-range] [--json] [-l|--long] [-p|--parseable] [-g|--global]
                     [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
                     
                     Run "npm help outdated" for more info

@@ -9,7 +9,6 @@ description: Check for outdated packages
 ```bash
 npm outdated [[<@scope>/]<pkg> ...]
 ```
-
 ### Description
 
 This command will check the registry to see if any (or, specific) installed
@@ -97,6 +96,16 @@ When running `npm outdated` and `npm ls`, setting `--all` will show all
 outdated or installed packages, rather than only those directly depended
 upon by the current project.
 
+#### `in-range`
+
+* Default: null
+* Type: null or Boolean
+
+When running `npm outdated` setting `--in-range` will limit output to only
+those packages with existing versions in range of the current project's
+dependencies. `--no-in-range` will limit output to only those packages with
+updates that are out of range of the current project's dependencies.
+
 #### `json`
 
 * Default: false
@@ -162,6 +171,7 @@ This value is not exported to the environment for child processes.
 ### See Also
 
 * [npm update](/commands/npm-update)
+* [npm explain](/using-npm/explain)
 * [npm dist-tag](/commands/npm-dist-tag)
 * [npm registry](/using-npm/registry)
 * [npm folders](/configuring-npm/folders)

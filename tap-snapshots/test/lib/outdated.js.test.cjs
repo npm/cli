@@ -12,6 +12,18 @@ cat        1.0.0   1.0.1   1.0.1  node_modules/cat   tap-testdir-outdated-should
 chai       1.0.0   1.0.1   1.0.1  node_modules/chai  tap-testdir-outdated-should-display-outdated-deps
 dog        1.0.1   1.0.1   2.0.0  node_modules/dog   tap-testdir-outdated-should-display-outdated-deps
 theta    MISSING   1.0.1   1.0.1  -                  tap-testdir-outdated-should-display-outdated-deps
+
+For more info on why dependencies have been installed at their given versions, see \`npm explain <pkg>\`.
+`
+
+exports[`test/lib/outdated.js TAP should display outdated deps outdated --in-range > must match snapshot 1`] = `
+
+Package  Current  Wanted  Latest  Location           Depended by
+cat        1.0.0   1.0.1   1.0.1  node_modules/cat   tap-testdir-outdated-should-display-outdated-deps
+chai       1.0.0   1.0.1   1.0.1  node_modules/chai  tap-testdir-outdated-should-display-outdated-deps
+theta    MISSING   1.0.1   1.0.1  -                  tap-testdir-outdated-should-display-outdated-deps
+
+For more info on why dependencies have been installed at their given versions, see \`npm explain <pkg>\`.
 `
 
 exports[`test/lib/outdated.js TAP should display outdated deps outdated --json --long > must match snapshot 1`] = `
@@ -89,6 +101,16 @@ cat        1.0.0   1.0.1   1.0.1  node_modules/cat   tap-testdir-outdated-should
 chai       1.0.0   1.0.1   1.0.1  node_modules/chai  tap-testdir-outdated-should-display-outdated-deps  peerDependencies
 dog        1.0.1   1.0.1   2.0.0  node_modules/dog   tap-testdir-outdated-should-display-outdated-deps  dependencies
 theta    MISSING   1.0.1   1.0.1  -                  tap-testdir-outdated-should-display-outdated-deps  dependencies
+
+For more info on why dependencies have been installed at their given versions, see \`npm explain <pkg>\`.
+`
+
+exports[`test/lib/outdated.js TAP should display outdated deps outdated --no-in-range > must match snapshot 1`] = `
+
+Package  Current  Wanted  Latest  Location          Depended by
+dog        1.0.1   1.0.1   2.0.0  node_modules/dog  tap-testdir-outdated-should-display-outdated-deps
+
+For more info on why dependencies have been installed at their given versions, see \`npm explain <pkg>\`.
 `
 
 exports[`test/lib/outdated.js TAP should display outdated deps outdated --omit=dev --omit=peer > must match snapshot 1`] = `
@@ -97,6 +119,8 @@ exports[`test/lib/outdated.js TAP should display outdated deps outdated --omit=d
 [31mcat[39m        1.0.0   [32m1.0.1[39m   [35m1.0.1[39m  node_modules/cat  tap-testdir-outdated-should-display-outdated-deps
 [33mdog[39m        1.0.1   [32m1.0.1[39m   [35m2.0.0[39m  node_modules/dog  tap-testdir-outdated-should-display-outdated-deps
 [31mtheta[39m    MISSING   [32m1.0.1[39m   [35m1.0.1[39m  -                 tap-testdir-outdated-should-display-outdated-deps
+
+For more info on why dependencies have been installed at their given versions, see \`npm explain <pkg>\`.
 `
 
 exports[`test/lib/outdated.js TAP should display outdated deps outdated --omit=dev > must match snapshot 1`] = `
@@ -106,6 +130,8 @@ exports[`test/lib/outdated.js TAP should display outdated deps outdated --omit=d
 [31mchai[39m       1.0.0   [32m1.0.1[39m   [35m1.0.1[39m  node_modules/chai  tap-testdir-outdated-should-display-outdated-deps
 [33mdog[39m        1.0.1   [32m1.0.1[39m   [35m2.0.0[39m  node_modules/dog   tap-testdir-outdated-should-display-outdated-deps
 [31mtheta[39m    MISSING   [32m1.0.1[39m   [35m1.0.1[39m  -                  tap-testdir-outdated-should-display-outdated-deps
+
+For more info on why dependencies have been installed at their given versions, see \`npm explain <pkg>\`.
 `
 
 exports[`test/lib/outdated.js TAP should display outdated deps outdated --omit=prod > must match snapshot 1`] = `
@@ -114,6 +140,8 @@ exports[`test/lib/outdated.js TAP should display outdated deps outdated --omit=p
 [31mcat[39m        1.0.0   [32m1.0.1[39m   [35m1.0.1[39m  node_modules/cat   tap-testdir-outdated-should-display-outdated-deps
 [31mchai[39m       1.0.0   [32m1.0.1[39m   [35m1.0.1[39m  node_modules/chai  tap-testdir-outdated-should-display-outdated-deps
 [33mdog[39m        1.0.1   [32m1.0.1[39m   [35m2.0.0[39m  node_modules/dog   tap-testdir-outdated-should-display-outdated-deps
+
+For more info on why dependencies have been installed at their given versions, see \`npm explain <pkg>\`.
 `
 
 exports[`test/lib/outdated.js TAP should display outdated deps outdated --parseable --long > must match snapshot 1`] = `
@@ -139,18 +167,24 @@ exports[`test/lib/outdated.js TAP should display outdated deps outdated > must m
 [31mchai[39m       1.0.0   [32m1.0.1[39m   [35m1.0.1[39m  node_modules/chai  tap-testdir-outdated-should-display-outdated-deps
 [33mdog[39m        1.0.1   [32m1.0.1[39m   [35m2.0.0[39m  node_modules/dog   tap-testdir-outdated-should-display-outdated-deps
 [31mtheta[39m    MISSING   [32m1.0.1[39m   [35m1.0.1[39m  -                  tap-testdir-outdated-should-display-outdated-deps
+
+For more info on why dependencies have been installed at their given versions, see \`npm explain <pkg>\`.
 `
 
 exports[`test/lib/outdated.js TAP should display outdated deps outdated global > must match snapshot 1`] = `
 
 Package  Current  Wanted  Latest  Location          Depended by
 cat        1.0.0   1.0.1   1.0.1  node_modules/cat  global
+
+For more info on why dependencies have been installed at their given versions, see \`npm explain <pkg>\`.
 `
 
 exports[`test/lib/outdated.js TAP should display outdated deps outdated specific dep > must match snapshot 1`] = `
 
 Package  Current  Wanted  Latest  Location          Depended by
 cat        1.0.0   1.0.1   1.0.1  node_modules/cat  tap-testdir-outdated-should-display-outdated-deps
+
+For more info on why dependencies have been installed at their given versions, see \`npm explain <pkg>\`.
 `
 
 exports[`test/lib/outdated.js TAP workspaces > should display all dependencies 1`] = `
@@ -160,6 +194,8 @@ cat        1.0.0   1.0.1   1.0.1  node_modules/cat   a@1.0.0
 chai       1.0.0   1.0.1   1.0.1  node_modules/chai  foo
 dog        1.0.1   1.0.1   2.0.0  node_modules/dog   tap-testdir-outdated-workspaces
 theta    MISSING   1.0.1   1.0.1  -                  c@1.0.0
+
+For more info on why dependencies have been installed at their given versions, see \`npm explain <pkg>\`.
 `
 
 exports[`test/lib/outdated.js TAP workspaces > should display json results filtered by ws 1`] = `
@@ -179,6 +215,8 @@ exports[`test/lib/outdated.js TAP workspaces > should display missing deps when 
 
 Package  Current  Wanted  Latest  Location  Depended by
 theta    MISSING   1.0.1   1.0.1  -         c@1.0.0
+
+For more info on why dependencies have been installed at their given versions, see \`npm explain <pkg>\`.
 `
 
 exports[`test/lib/outdated.js TAP workspaces > should display nested deps when filtering by ws and using --all 1`] = `
@@ -186,6 +224,8 @@ exports[`test/lib/outdated.js TAP workspaces > should display nested deps when f
 Package  Current  Wanted  Latest  Location           Depended by
 cat        1.0.0   1.0.1   1.0.1  node_modules/cat   a@1.0.0
 chai       1.0.0   1.0.1   1.0.1  node_modules/chai  foo
+
+For more info on why dependencies have been installed at their given versions, see \`npm explain <pkg>\`.
 `
 
 exports[`test/lib/outdated.js TAP workspaces > should display no results if ws has no deps to display 1`] = `
@@ -201,6 +241,8 @@ exports[`test/lib/outdated.js TAP workspaces > should display results filtered b
 
 Package  Current  Wanted  Latest  Location          Depended by
 cat        1.0.0   1.0.1   1.0.1  node_modules/cat  a@1.0.0
+
+For more info on why dependencies have been installed at their given versions, see \`npm explain <pkg>\`.
 `
 
 exports[`test/lib/outdated.js TAP workspaces > should display ws outdated deps human output 1`] = `
@@ -209,6 +251,8 @@ Package  Current  Wanted  Latest  Location          Depended by
 cat        1.0.0   1.0.1   1.0.1  node_modules/cat  a@1.0.0
 dog        1.0.1   1.0.1   2.0.0  node_modules/dog  tap-testdir-outdated-workspaces
 theta    MISSING   1.0.1   1.0.1  -                 c@1.0.0
+
+For more info on why dependencies have been installed at their given versions, see \`npm explain <pkg>\`.
 `
 
 exports[`test/lib/outdated.js TAP workspaces > should display ws outdated deps json output 1`] = `
@@ -249,4 +293,6 @@ exports[`test/lib/outdated.js TAP workspaces > should highlight ws in dependend 
 [31mcat[39m        1.0.0   [32m1.0.1[39m   [35m1.0.1[39m  node_modules/cat  [32ma@1.0.0[39m
 [33mdog[39m        1.0.1   [32m1.0.1[39m   [35m2.0.0[39m  node_modules/dog  tap-testdir-outdated-workspaces
 [31mtheta[39m    MISSING   [32m1.0.1[39m   [35m1.0.1[39m  -                 [32mc@1.0.0[39m
+
+For more info on why dependencies have been installed at their given versions, see \`npm explain <pkg>\`.
 `

@@ -497,6 +497,16 @@ Note that commands explicitly intended to run a particular script, such as
 will still run their intended script if \`ignore-scripts\` is set, but they
 will *not* run any pre- or post-scripts.
 
+#### \`in-range\`
+
+* Default: null
+* Type: null or Boolean
+
+When running \`npm outdated\` setting \`--in-range\` will limit output to only
+those packages with existing versions in range of the current project's
+dependencies. \`--no-in-range\` will limit output to only those packages with
+updates that are out of range of the current project's dependencies.
+
 #### \`include\`
 
 * Default:
