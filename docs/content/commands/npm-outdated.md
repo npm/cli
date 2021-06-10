@@ -171,7 +171,7 @@ This value is not exported to the environment for child processes.
 ### See Also
 
 * [npm update](/commands/npm-update)
-* [npm explain](/using-npm/explain)
+* [npm explain](/commmands/explain)
 * [npm dist-tag](/commands/npm-dist-tag)
 * [npm registry](/using-npm/registry)
 * [npm folders](/configuring-npm/folders)
