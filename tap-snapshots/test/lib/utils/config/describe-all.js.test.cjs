@@ -1211,6 +1211,14 @@ The program to use to view help content.
 
 Set to \`"browser"\` to view html help content in the default web browser.
 
+#### \`virtual\`
+
+* Default: false
+* Type: Boolean
+
+Operates in "virtual" mode, meaning that the dependency tree is based off
+the lockfile rather than the contents of \`node_modules\`.
+
 #### \`which\`
 
 * Default: null
