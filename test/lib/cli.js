@@ -24,20 +24,16 @@ const unsupportedMock = {
   checkForUnsupportedNode: () => {},
 }
 
-let errorHandlerCalled = null
-let errorHandlerNpm = null
-let errorHandlerCb
-const errorHandlerMock = (...args) => {
-  errorHandlerCalled = args
-  if (errorHandlerCb)
-    errorHandlerCb()
+let exitHandlerCalled = null
+let exitHandlerNpm = null
+let exitHandlerCb
+const exitHandlerMock = (...args) => {
+  exitHandlerCalled = args
+  if (exitHandlerCb)
+    exitHandlerCb()
 }
-let errorHandlerExitCalled = null
-errorHandlerMock.exit = code => {
-  errorHandlerExitCalled = code
-}
-errorHandlerMock.setNpm = npm => {
-  errorHandlerNpm = npm
+exitHandlerMock.setNpm = npm => {
+  exitHandlerNpm = npm
 }
 
 const logs = []
@@ -52,7 +48,7 @@ const cli = t.mock('../../lib/cli.js', {
   '../../lib/utils/update-notifier.js': async () => null,
   '../../lib/utils/did-you-mean.js': () => '\ntest did you mean',
   '../../lib/utils/unsupported.js': unsupportedMock,
-  '../../lib/utils/error-handler.js': errorHandlerMock,
+  '../../lib/utils/exit-handler.js': exitHandlerMock,
   npmlog: npmlogMock,
 })
 
@@ -64,7 +60,7 @@ t.test('print the version, and treat npm_g to npm -g', t => {
     proc.argv.length = 0
     logs.length = 0
     npmOutputs.length = 0
-    errorHandlerExitCalled = null
+    exitHandlerCalled = null
   })
 
   const { argv } = process
@@ -87,7 +83,7 @@ t.test('print the version, and treat npm_g to npm -g', t => {
     ['info', 'using', 'node@%s', '420.69.lol'],
   ])
   t.strictSame(npmOutputs, [['99.99.99']])
-  t.strictSame(errorHandlerExitCalled, 0)
+  t.strictSame(exitHandlerCalled, [])
 
   t.end()
 })
@@ -108,7 +104,7 @@ t.test('calling with --versions calls npm version with no args', t => {
     proc.argv.length = 0
     logs.length = 0
     npmOutputs.length = 0
-    errorHandlerExitCalled = null
+    exitHandlerCalled = null
     delete npmock.commands.version
   })
 
@@ -124,7 +120,7 @@ t.test('calling with --versions calls npm version with no args', t => {
     ])
 
     t.strictSame(npmOutputs, [])
-    t.strictSame(errorHandlerExitCalled, null)
+    t.strictSame(exitHandlerCalled, null)
 
     t.strictSame(args, [])
     t.end()
@@ -175,39 +171,17 @@ t.test('gracefully handles error printing usage', t => {
   const { output } = npmock
   t.teardown(() => {
     npmock.output = output
-    errorHandlerCb = null
-    errorHandlerCalled = null
+    exitHandlerCb = null
+    exitHandlerCalled = null
   })
   const proc = {
     argv: ['node', 'npm'],
     on: () => {},
   }
   npmock.argv = []
-  errorHandlerCb = () => {
-    t.match(errorHandlerCalled, [], 'should call errorHandler with no args')
-    t.match(errorHandlerNpm, npmock, 'errorHandler npm is set')
-    t.end()
-  }
-  cli(proc)
-})
-
-t.test('handles output error', t => {
-  const { output } = npmock
-  t.teardown(() => {
-    npmock.output = output
-    errorHandlerCb = null
-    errorHandlerCalled = null
-  })
-  const proc = {
-    argv: ['node', 'npm'],
-    on: () => {},
-  }
-  npmock.argv = []
-  npmock.output = () => {
-    throw new Error('ERR')
-  }
-  errorHandlerCb = () => {
-    t.match(errorHandlerCalled, /ERR/, 'should call errorHandler with error')
+  exitHandlerCb = () => {
+    t.match(exitHandlerCalled, [], 'should call exitHandler with no args')
+    t.match(exitHandlerNpm, npmock, 'exitHandler npm is set')
     t.end()
   }
   cli(proc)
@@ -215,8 +189,8 @@ t.test('handles output error', t => {
 
 t.test('load error calls error handler', t => {
   t.teardown(() => {
-    errorHandlerCb = null
-    errorHandlerCalled = null
+    exitHandlerCb = null
+    exitHandlerCalled = null
     LOAD_ERROR = null
   })
 
@@ -226,8 +200,8 @@ t.test('load error calls error handler', t => {
     argv: ['node', 'npm', 'asdf'],
     on: () => {},
   }
-  errorHandlerCb = () => {
-    t.strictSame(errorHandlerCalled, [er])
+  exitHandlerCb = () => {
+    t.strictSame(exitHandlerCalled, [er])
     t.end()
   }
   cli(proc)
