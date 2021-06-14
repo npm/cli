@@ -107,7 +107,7 @@ const config = {
   only: null,
   parseable: false,
   production: false,
-  virtual: false,
+  'package-lock-only': false,
 }
 const flatOptions = {
 }
@@ -4154,9 +4154,9 @@ t.test('ls --json', (t) => {
   t.end()
 })
 
-t.test('ls --virtual', (t) => {
-  config.virtual = true
-  t.test('ls --virtual --json', (t) => {
+t.test('ls --package-lock-only', (t) => {
+  config['package-lock-only'] = true
+  t.test('ls --package-lock-only --json', (t) => {
     t.beforeEach(cleanUpResult)
     config.json = true
     config.parseable = false
@@ -4724,7 +4724,7 @@ t.test('ls --virtual', (t) => {
             name: 'test-npm-ls',
             version: '1.0.0',
             problems: [
-              'invalid: foo@1.0.0 {CWD}/tap-testdir-ls-ls---virtual-ls---virtual---json-missing-invalid-extraneous/node_modules/foo',
+              'invalid: foo@1.0.0 {CWD}/tap-testdir-ls-ls---package-lock-only-ls---package-lock-only---json-missing-invalid-extraneous/node_modules/foo',
               'missing: ipsum@^1.0.0, required by test-npm-ls@1.0.0',
             ],
             dependencies: {
@@ -4732,7 +4732,7 @@ t.test('ls --virtual', (t) => {
                 version: '1.0.0',
                 invalid: true,
                 problems: [
-                  'invalid: foo@1.0.0 {CWD}/tap-testdir-ls-ls---virtual-ls---virtual---json-missing-invalid-extraneous/node_modules/foo',
+                  'invalid: foo@1.0.0 {CWD}/tap-testdir-ls-ls---package-lock-only-ls---package-lock-only---json-missing-invalid-extraneous/node_modules/foo',
                 ],
                 dependencies: {
                   dog: {

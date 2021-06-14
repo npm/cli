@@ -781,8 +781,14 @@ package-locks disabled use \`npm prune\`.
 * Default: false
 * Type: Boolean
 
-If set to true, it will update only the \`package-lock.json\`, instead of
-checking \`node_modules\` and downloading dependencies.
+If set to true, the current operation will only use the \`package-lock.json\`,
+ignoring \`node_modules\`.
+
+For \`update\` this means only the \`package-lock.json\` will be updated,
+instead of checking \`node_modules\` and downloading dependencies.
+
+For \`list\` this means the output will be based on the tree described by the
+\`package-lock.json\`, rather than the contents of \`node_modules\`.
 
 #### \`parseable\`
 
@@ -1210,14 +1216,6 @@ Only relevant when specified explicitly on the command line.
 The program to use to view help content.
 
 Set to \`"browser"\` to view html help content in the default web browser.
-
-#### \`virtual\`
-
-* Default: false
-* Type: Boolean
-
-Operates in "virtual" mode, meaning that the dependency tree is based off
-the lockfile rather than the contents of \`node_modules\`.
 
 #### \`which\`
 
