@@ -746,6 +746,13 @@ when publishing or changing package permissions with \`npm access\`.
 If not set, and a registry response fails with a challenge for a one-time
 password, npm will prompt on the command line for one.
 
+#### \`pack-destination\`
+
+* Default: "."
+* Type: String
+
+Directory in which \`npm pack\` will save tarballs.
+
 #### \`package\`
 
 * Default:
