@@ -743,18 +743,7 @@ Use of `legacy-peer-deps` is not recommended, as it will not enforce the
 * Default: false
 * Type: Boolean
 
-If true, then local installs will link if there is a suitable globally
-installed package.
-
-Note that this means that local installs can cause things to be installed
-into the global space at the same time. The link is only done if one of the
-two conditions are met:
-
-* The package is not already installed globally, or
-* the globally installed version is identical to the version that is being
-  installed locally.
-
-When used with `npm ls`, only show packages that are linked.
+Used with `npm ls`, limiting output to only those packages that are linked.
 
 #### `local-address`
 
