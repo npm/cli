@@ -678,7 +678,7 @@ All commands:
                     List installed packages
                     
                     Usage:
-                    npm ls npm ls [[<@scope>/]<pkg> ...]
+                    npm ls [[<@scope>/]<pkg> ...]
                     
                     Options:
                     [-a|--all] [--json] [-l|--long] [-p|--parseable] [-g|--global] [--depth <depth>]
