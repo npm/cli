@@ -24,11 +24,13 @@ let PROGRESS_ENABLED = true
 const LOG_WARN = []
 let PROGRESS_IGNORED = false
 const flatOptions = {
+  npxCache: 'npx-cache-dir',
+  cache: 'cache-dir',
   legacyPeerDeps: false,
   package: [],
 }
 const config = {
-  cache: 'cache-dir',
+  cache: 'bad-cache-dir', // this should never show up passed into libnpmexec
   yes: true,
   call: '',
   package: [],
@@ -134,6 +136,8 @@ t.test('npx foo, bin already exists locally', t => {
     t.match(RUN_SCRIPTS, [{
       pkg: { scripts: { npx: 'foo' }},
       args: ['one arg', 'two arg'],
+      cache: flatOptions.cache,
+      npxCache: flatOptions.npxCache,
       banner: false,
       path: process.cwd(),
       stdioString: true,
