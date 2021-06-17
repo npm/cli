@@ -87,9 +87,11 @@ t.test('no args --json', t => {
     t.same(
       parsedResult,
       {
-        code: null,
-        detail: '',
-        summary: 'search must be called with arguments',
+        error: {
+          code: null,
+          detail: '',
+          summary: 'search must be called with arguments',
+        },
       },
       'should output error to STDOUT'
     )
