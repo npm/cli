@@ -157,6 +157,20 @@ variable will be set to `'production'` for all lifecycle scripts.
 
 Used with `npm ls`, limiting output to only those packages that are linked.
 
+#### `package-lock-only`
+
+* Default: false
+* Type: Boolean
+
+If set to true, the current operation will only use the `package-lock.json`,
+ignoring `node_modules`.
+
+For `update` this means only the `package-lock.json` will be updated,
+instead of checking `node_modules` and downloading dependencies.
+
+For `list` this means the output will be based on the tree described by the
+`package-lock.json`, rather than the contents of `node_modules`.
+
 #### `unicode`
 
 * Default: false on windows, true on mac/unix systems with a unicode locale,
