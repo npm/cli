@@ -1449,6 +1449,9 @@ t.test('ls', (t) => {
         bar: {
           'package.json': JSON.stringify({ name: 'bar', version: '1.0.0' }),
         },
+        baz: {
+          'package.json': JSON.stringify({ name: 'baz', version: '1.0.0' }),
+        },
       },
       a: {
         'package.json': JSON.stringify({
@@ -1457,6 +1460,9 @@ t.test('ls', (t) => {
           dependencies: {
             c: '^1.0.0',
             d: '^1.0.0',
+          },
+          devDependencies: {
+            baz: '^1.0.0',
           },
         }),
       },
@@ -1516,6 +1522,21 @@ t.test('ls', (t) => {
 
         t.matchSnapshot(redactCwd(result),
           'should list --all workspaces properly')
+        res()
+      })
+    })
+
+    // --production
+    await new Promise((res, rej) => {
+      config.production = true
+      ls.exec([], (err) => {
+        if (err)
+          rej(err)
+
+        t.matchSnapshot(redactCwd(result),
+          'should list only prod deps of workspaces')
+
+        config.production = false
         res()
       })
     })

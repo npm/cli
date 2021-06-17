@@ -1,3 +1,88 @@
+## v7.18.0 (2021-06-17)
+
+## BUG FIXES
+
+* [`fce30e423`](https://github.com/npm/cli/commit/fce30e423745a2b81530176d2f08ca84896eef4c)
+  [#3435](https://github.com/npm/cli/issues/3435)
+  fix(docs): rebuild config docs
+  ([@wraithgar](https://github.com/wraithgar))
+
+## v7.18.0 (2021-06-17)
+
+## FEATURES
+
+* [`ae285b391`](https://github.com/npm/cli/commit/ae285b39191f3a0c4edfb045a334057bef4567b5)
+  [#3408](https://github.com/npm/cli/issues/3408)
+  feat(ls): support `--package-lock-only` flag
+  ([@G-Rath](https://github.com/G-Rath))
+* [`c984fb59c`](https://github.com/npm/cli/commit/c984fb59c5af087b91acd927cbbacad7c6a46576)
+  [#3420](https://github.com/npm/cli/issues/3420)
+  feat(pack): add pack-destination config
+  ([@wraithgar](https://github.com/wraithgar))
+
+## BUG FIXES
+
+* [`40829ec40`](https://github.com/npm/cli/commit/40829ec40c33a6d23f18715e60e3395bdcb0467e)
+  [#2554](https://github.com/npm/cli/issues/2554)
+  [#3399](https://github.com/npm/cli/issues/3399)
+  fix(link): do not prune packages
+  ([@ruyadorno](https://github.com/ruyadorno))
+* [`102d4e6fb`](https://github.com/npm/cli/commit/102d4e6fb3c3b02148dbeee977a7d1e6372340d5)
+  [#3417](https://github.com/npm/cli/issues/3417)
+  fix(workspaces): explicitly error in global mode
+  ([@wraithgar](https://github.com/wraithgar))
+* [`993df3041`](https://github.com/npm/cli/commit/993df3041f5bdaa496c3c8d80f00d16b9cf0a1e6)
+  [#3423](https://github.com/npm/cli/issues/3423)
+  fix(docs): ls command usage instructions
+  ([@gurdiga](https://github.com/gurdiga))
+* [`dcc13662c`](https://github.com/npm/cli/commit/dcc13662c1d3e22eaf392647a9cddbb5b0710d24)
+  [#3418](https://github.com/npm/cli/issues/3418)
+  fix(config): update link definition
+  ([@wraithgar](https://github.com/wraithgar))
+* [`b19e56c2e`](https://github.com/npm/cli/commit/b19e56c2e54c035518165470c10480201cefa997)
+  [#3382](https://github.com/npm/cli/issues/3382)
+  [#3429](https://github.com/npm/cli/issues/3429)
+  fix(ls): respect prod config for workspaces
+  ([@ruyadorno](https://github.com/ruyadorno))
+* [`c99b8b53c`](https://github.com/npm/cli/commit/c99b8b53c3d7a9b0daa6d4416e9c40202ddd59a2)
+  [#3430](https://github.com/npm/cli/issues/3430)
+  fix(config): add flatOptions.npxCache
+  ([@wraithgar](https://github.com/wraithgar))
+* [`e5abf2a21`](https://github.com/npm/cli/commit/e5abf2a2171d95bafc0993f337230d2b6633a6ed)
+  [#3386](https://github.com/npm/cli/issues/3386)
+  chore(libnpmdiff): added as workspace
+  ([@ruyadorno](https://github.com/ruyadorno))
+* [`c6a8734d7`](https://github.com/npm/cli/commit/c6a8734d7d6e4b6d061110a01e45e1d418d56489)
+  [#3388](https://github.com/npm/cli/issues/3388)
+  chore(refactor): finish passing npm context
+  ([@wraithgar](https://github.com/wraithgar))
+* [`d16ee452a`](https://github.com/npm/cli/commit/d16ee452a4a034caada4e9b96faf5c453a658876)
+  [#3426](https://github.com/npm/cli/issues/3426)
+  chore(tests): use path.resolve
+  ([@wraithgar](https://github.com/wraithgar))
+
+## DEPENDENCIES
+
+* [`6b951c042`](https://github.com/npm/cli/commit/6b951c042084e639be929a7ea783c2d85b311bad)
+  `libnpmversion@1.2.1`:
+    * fix(retrieve-tag): pass match in a way git accepts
+* [`de820a021`](https://github.com/npm/cli/commit/de820a0213f54bbcd155dff25b05d072d5c4a57a)
+  `npm-package-arg@8.1.5`:
+  * fix: Make file: URLs (mostly) RFC 8909 compliant
+* [`16a95c647`](https://github.com/npm/cli/commit/16a95c64731609c69630c17c45b16edb53ee81b2)
+  `@npmcli/arborist@2.6.3`:
+    * fix(inventory) handle old and british forms of 'license'
+    * fix: removes [_complete] check to apply correct metadata
+    * ensure node.fsParent is not set to node itself
+    * fix extraneous deps on load-actual
+* [`d341bd86c`](https://github.com/npm/cli/commit/d341bd86ce05fabe44f3be5888ba2611b61914b4)
+  `make-fetch-happen@9.0.3`:
+    * fix: implement cache modes correctly
+* [`c90612cf5`](https://github.com/npm/cli/commit/c90612cf566d563199553749900d8b05367e2532)
+  `libnpmexec@2.0.0`:
+    * use new npxCache option
+
+
 ## v7.17.0 (2021-06-10)
 
 ## FEATURES
