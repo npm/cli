@@ -1,5 +1,14 @@
 ## v7.18.0 (2021-06-17)
 
+## BUG FIXES
+
+* [`fce30e423`](https://github.com/npm/cli/commit/fce30e423745a2b81530176d2f08ca84896eef4c)
+  [#3435](https://github.com/npm/cli/issues/3435)
+  fix(docs): rebuild config docs
+  ([@wraithgar](https://github.com/wraithgar))
+
+## v7.18.0 (2021-06-17)
+
 ## FEATURES
 
 * [`ae285b391`](https://github.com/npm/cli/commit/ae285b39191f3a0c4edfb045a334057bef4567b5)
