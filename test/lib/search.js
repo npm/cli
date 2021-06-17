@@ -57,6 +57,48 @@ t.test('no args', t => {
   })
 })
 
+t.test('no args --json', t => {
+  const src = new Minipass()
+  src.objectMode = true
+
+  npm.flatOptions.json = true
+  config.json = true
+  const libnpmsearch = {
+    stream () {
+      return src
+    },
+  }
+
+  const Search = t.mock('../../lib/search.js', {
+    ...mocks,
+    libnpmsearch,
+  })
+  const search = new Search(npm)
+
+  search.exec([], err => {
+    const parsedResult = JSON.parse(result)
+
+    t.match(
+      err,
+      /search must be called with arguments/,
+      'should throw usage instructions'
+    )
+
+    t.same(
+      parsedResult,
+      {
+        code: null,
+        detail: '',
+        summary: 'search must be called with arguments',
+      },
+      'should output error to STDOUT'
+    )
+
+    config.json = false
+    t.end()
+  })
+})
+
 t.test('search <name>', t => {
   const src = new Minipass()
   src.objectMode = true

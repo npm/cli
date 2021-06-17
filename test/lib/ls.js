@@ -3036,10 +3036,10 @@ t.test('ls --json', (t) => {
             'invalid: foo@1.0.0 {CWD}/tap-testdir-ls-ls---json-missing-invalid-extraneous/node_modules/foo',
             'missing: ipsum@^1.0.0, required by test-npm-ls@1.0.0',
           ],
-          error: {                                                                                       
-               code: "ELSPROBLEMS",                                                                                
-                summary: "extraneous: chai@1.0.0 {CWD}/tap-testdir-ls-ls---json-missing-invalid-extraneous/node_modules/chai/ninvalid: foo@1.0.0 {CWD}/tap-testdir-ls-ls---json-missing-invalid-extraneous/node_modules/foo/nmissing: ipsum@^1.0.0, required by test-npm-ls@1.0.0",
-                detail: "",                                                                                         
+          error: {
+            code: 'ELSPROBLEMS',
+            summary: 'extraneous: chai@1.0.0 {CWD}/tap-testdir-ls-ls---json-missing-invalid-extraneous/node_modules/chai/ninvalid: foo@1.0.0 {CWD}/tap-testdir-ls-ls---json-missing-invalid-extraneous/node_modules/foo/nmissing: ipsum@^1.0.0, required by test-npm-ls@1.0.0',
+            detail: '',
           },
           dependencies: {
             foo: {
@@ -3737,10 +3737,10 @@ t.test('ls --json', (t) => {
           problems: [
             'invalid: peer-dep@1.0.0 {CWD}/tap-testdir-ls-ls---json-unmet-peer-dep/node_modules/peer-dep',
           ],
-          error: {                                                                                       
-            code: "ELSPROBLEMS",                                                                                
-            summary: "invalid: peer-dep@1.0.0 {CWD}/tap-testdir-ls-ls---json-unmet-peer-dep/node_modules/peer-dep",
-            detail: "",                                                                                         
+          error: {
+            code: 'ELSPROBLEMS',
+            summary: 'invalid: peer-dep@1.0.0 {CWD}/tap-testdir-ls-ls---json-unmet-peer-dep/node_modules/peer-dep',
+            detail: '',
           },
           dependencies: {
             'peer-dep': {
@@ -3803,11 +3803,11 @@ t.test('ls --json', (t) => {
           problems: [
             'invalid: optional-dep@1.0.0 {CWD}/tap-testdir-ls-ls---json-unmet-optional-dep/node_modules/optional-dep', // mismatching optional deps get flagged in problems
           ],
-          error: {                                                                                       
-            code: "ELSPROBLEMS",                                                                                
-            summary: "invalid: optional-dep@1.0.0 {CWD}/tap-testdir-ls-ls---json-unmet-optional-dep/node_modules/optional-dep",
-            detail: "",                                                                                         
-          }, 
+          error: {
+            code: 'ELSPROBLEMS',
+            summary: 'invalid: optional-dep@1.0.0 {CWD}/tap-testdir-ls-ls---json-unmet-optional-dep/node_modules/optional-dep',
+            detail: '',
+          },
           dependencies: {
             'optional-dep': {
               version: '1.0.0',
@@ -4742,10 +4742,10 @@ t.test('ls --package-lock-only', (t) => {
               'invalid: foo@1.0.0 {CWD}/tap-testdir-ls-ls---package-lock-only-ls---package-lock-only---json-missing-invalid-extraneous/node_modules/foo',
               'missing: ipsum@^1.0.0, required by test-npm-ls@1.0.0',
             ],
-            error: {                                                                                       
-              code: "ELSPROBLEMS",                                                                                
-              summary: "invalid: foo@1.0.0 {CWD}/tap-testdir-ls-ls---package-lock-only-ls---package-lock-only---json-missing-invalid-extraneous/node_modules/foo/nmissing: ipsum@^1.0.0, required by test-npm-ls@1.0.0",
-              detail: "",                                                                                         
+            error: {
+              code: 'ELSPROBLEMS',
+              summary: 'invalid: foo@1.0.0 {CWD}/tap-testdir-ls-ls---package-lock-only-ls---package-lock-only---json-missing-invalid-extraneous/node_modules/foo/nmissing: ipsum@^1.0.0, required by test-npm-ls@1.0.0',
+              detail: '',
             },
             dependencies: {
               foo: {
