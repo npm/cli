@@ -355,7 +355,7 @@ t.test('it worked', (t) => {
   const _exit = process.exit
   process.exit = (code) => {
     process.exit = _exit
-    t.false(code, 'should exit with no code')
+    t.notOk(code, 'should exit with no code')
 
     const _info = npmlog.info
     npmlog.info = (msg) => {
