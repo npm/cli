@@ -168,6 +168,54 @@ t.test('report endpoint error', t => {
   t.end()
 })
 
+t.test('licenses', t => {
+  const Audit = require('../../lib/audit.js')
+  t.test('run audit with license type and output json', t => {
+    const prefix = t.testdir({
+      node_modules: {
+        a: {
+          'package.json': JSON.stringify({
+            name: 'a',
+            version: '1.0.0',
+            license: 'MIT',
+          }),
+        },
+        b: {
+          'package.json': JSON.stringify({
+            name: 'b',
+            version: '1.0.0',
+            license: 'ISC',
+          }),
+        },
+      },
+    })
+
+    const OUTPUT = []
+    const npm = mockNpm({
+      prefix: prefix,
+      command: 'audit',
+      config: {
+       "audit-type": "license",
+        json: true
+      },
+      output: (...msg) => {
+        OUTPUT.push(msg)
+      },
+    })
+
+    const audit = new Audit(npm)
+
+    audit.exec([], () => {
+      t.strictSame(JSON.parse(OUTPUT), {
+        a: { name: 'a', version: '1.0.0', approved: true, license: 'MIT' },
+        b: { name: 'b', version: '1.0.0', approved: false, license: 'ISC' }
+      })
+      t.end()
+    })
+  })
+  t.end()
+})
+
 t.test('completion', t => {
   const Audit = require('../../lib/audit.js')
   const audit = new Audit({})
