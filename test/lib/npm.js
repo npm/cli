@@ -1,8 +1,7 @@
 const t = require('tap')
 
 const npmlog = require('npmlog')
-const perf = require('../../lib/utils/perf.js')
-const procLog = require('../../lib/utils/proc-log-listener.js')
+const { real: mockNpm } = require('../fixtures/mock-npm.js')
 
 // delete this so that we don't have configs from the fact that it
 // is being run by 'npm test'
@@ -42,10 +41,6 @@ const bePosix = () => {
 }
 const argv = [...process.argv]
 
-const realLog = {}
-for (const level of ['silly', 'verbose', 'timing', 'notice', 'warn', 'error'])
-  realLog[level] = npmlog[level]
-
 t.afterEach(() => {
   for (const env of Object.keys(process.env).filter(e => /^npm_/.test(e)))
     delete process.env[env]
@@ -55,30 +50,13 @@ t.afterEach(() => {
     value: actualPlatform,
     configurable: true,
   })
-  for (const level of ['silly', 'verbose', 'timing', 'notice', 'warn', 'error'])
-    npmlog[level] = realLog[level]
-  perf.reset()
-  procLog.reset()
 })
-
-const npmMock = () => {
-  const logs = []
-  const outputs = []
-  const npm = t.mock('../../lib/npm.js')
-  for (const level of ['silly', 'verbose', 'timing', 'notice', 'warn', 'error']) {
-    npmlog[level] = (...msg) => {
-      logs.push([level, ...msg])
-    }
-  }
-  npm.output = (...msg) => outputs.push(msg)
-  return { npm, logs, outputs }
-}
 
 const CACHE = t.testdir()
 process.env.npm_config_cache = CACHE
 
 t.test('not yet loaded', t => {
-  const { npm, logs } = npmMock()
+  const { npm, logs } = mockNpm(t)
   t.match(npm, {
     started: Number,
     command: null,
@@ -104,7 +82,7 @@ t.test('not yet loaded', t => {
 
 t.test('npm.load', t => {
   t.test('callback must be a function', t => {
-    const { npm, logs } = npmMock()
+    const { npm, logs } = mockNpm(t)
     const er = new TypeError('callback must be a function if provided')
     t.throws(() => npm.load({}), er)
     t.same(logs, [])
@@ -112,7 +90,7 @@ t.test('npm.load', t => {
   })
 
   t.test('callback style', t => {
-    const { npm } = npmMock()
+    const { npm } = mockNpm(t)
     npm.load((err) => {
       if (err)
         throw err
@@ -122,7 +100,7 @@ t.test('npm.load', t => {
   })
 
   t.test('load error', async t => {
-    const { npm } = npmMock()
+    const { npm } = mockNpm(t)
     const loadError = new Error('load error')
     npm.config.load = async () => {
       throw loadError
@@ -141,7 +119,7 @@ t.test('npm.load', t => {
   })
 
   t.test('basic loading', async t => {
-    const { npm, logs } = npmMock()
+    const { npm, logs } = mockNpm(t)
     const dir = t.testdir({
       node_modules: {},
     })
@@ -209,7 +187,7 @@ t.test('npm.load', t => {
 
   t.test('forceful loading', async t => {
     process.argv = [...process.argv, '--force', '--color', 'always']
-    const { npm, logs } = npmMock()
+    const { npm, logs } = mockNpm(t)
     await npm.load()
     t.match(logs.filter(l => l[0] !== 'timing'), [
       [
@@ -229,7 +207,6 @@ t.test('npm.load', t => {
 
     const PATH = process.env.PATH || process.env.Path
     process.env.PATH = resolve(dir, 'bin')
-    const { execPath } = process
     process.argv = [
       node,
       process.argv[1],
@@ -244,10 +221,9 @@ t.test('npm.load', t => {
 
     t.teardown(() => {
       process.env.PATH = PATH
-      process.execPath = execPath
     })
 
-    const { npm, logs, outputs } = npmMock()
+    const { npm, logs, outputs } = mockNpm(t)
     await npm.load()
     t.equal(npm.config.get('scope'), '@foo', 'added the @ sign to scope')
     t.match(logs.filter(l => l[0] !== 'timing' || !/^config:/.test(l[1])), [
@@ -342,10 +318,8 @@ t.test('npm.load', t => {
       '.npmrc': '',
     })
 
-    const { execPath } = process
-
     process.argv = [
-      execPath,
+      process.execPath,
       process.argv[1],
       '--userconfig',
       resolve(dir, '.npmrc'),
@@ -355,7 +329,7 @@ t.test('npm.load', t => {
       'true',
     ]
 
-    const { npm, outputs } = npmMock()
+    const { npm, outputs } = mockNpm(t)
     await npm.load()
     npm.localPrefix = dir
 
@@ -411,9 +385,8 @@ t.test('npm.load', t => {
         workspaces: ['./packages/*'],
       }),
     })
-    const { execPath } = process
     process.argv = [
-      execPath,
+      process.execPath,
       process.argv[1],
       '--userconfig',
       resolve(dir, '.npmrc'),
@@ -423,7 +396,7 @@ t.test('npm.load', t => {
       '--global',
       'true',
     ]
-    const { npm } = npmMock()
+    const { npm } = mockNpm(t)
     await npm.load()
     npm.localPrefix = dir
     await new Promise((res, rej) => {
@@ -464,7 +437,7 @@ t.test('set process.title', t => {
       '--scope=foo',
       'ls',
     ]
-    const { npm } = npmMock()
+    const { npm } = mockNpm(t)
     await npm.load()
     t.equal(npm.title, 'npm ls')
     t.equal(process.title, 'npm ls')
@@ -480,7 +453,7 @@ t.test('set process.title', t => {
       'revoke',
       'deadbeefcafebad',
     ]
-    const { npm } = npmMock()
+    const { npm } = mockNpm(t)
     await npm.load()
     t.equal(npm.title, 'npm token revoke ***')
     t.equal(process.title, 'npm token revoke ***')
@@ -495,7 +468,7 @@ t.test('set process.title', t => {
       'token',
       'revoke',
     ]
-    const { npm } = npmMock()
+    const { npm } = mockNpm(t)
     await npm.load()
     t.equal(npm.title, 'npm token revoke')
     t.equal(process.title, 'npm token revoke')

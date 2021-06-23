@@ -1,7 +1,7 @@
 const t = require('tap')
 const fs = require('fs')
 const parseJSON = require('json-parse-even-better-errors')
-const mockNpm = require('../fixtures/mock-npm.js')
+const { fake: mockNpm } = require('../fixtures/mock-npm')
 const { resolve } = require('path')
 
 const flatOptions = {}

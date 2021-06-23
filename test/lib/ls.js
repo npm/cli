@@ -3,7 +3,7 @@
 // of them contain the tap testdir folders, which are auto-generated and
 // may change when node-tap is updated.
 const t = require('tap')
-const mockNpm = require('../fixtures/mock-npm')
+const { fake: mockNpm } = require('../fixtures/mock-npm.js')
 
 const { resolve } = require('path')
 const { utimesSync } = require('fs')
