@@ -126,6 +126,7 @@
     "@npmcli/arborist",
     "@npmcli/ci-detect",
     "@npmcli/config",
+    "@npmcli/package-json",
     "@npmcli/run-script",
     "abbrev",
     "ansicolors",
