@@ -1,3 +1,52 @@
+## v7.19.0 (2021-06-24)
+
+### FEATURES
+
+* [`23ce3af19`](https://github.com/npm/cli/commit/23ce3af199c8a14ef16c63fc638a1ac21fd9a9b0)
+  [#3460](https://github.com/npm/cli/issues/3460)
+  feat(ls): report *why* something is invalid
+  ([@isaacs](https://github.com/isaacs))
+
+### BUG FIXES
+
+* [`53f81af31`](https://github.com/npm/cli/commit/53f81af319f298a0fdd8f143184c3e89770f24ea)
+  [#3450](https://github.com/npm/cli/issues/3450)
+  fix(docs): Improve phrasing of workspace example
+  ([@lumaxis](https://github.com/lumaxis))
+* [`78da60ffe`](https://github.com/npm/cli/commit/78da60ffefcfd457a4432ce1492ee7b53d854450)
+  [#3454](https://github.com/npm/cli/issues/3454)
+  chore(linting): add bin and clean up lib/ls.js
+* [`54eae3063`](https://github.com/npm/cli/commit/54eae3063eeb197225ee930525a1316e34ecf34c)
+  [#3416](https://github.com/npm/cli/issues/3416)
+  chore(errorHandler): rename to exit handler
+  ([@wraithgar](https://github.com/wraithgar))
+* [`d0f50b156`](https://github.com/npm/cli/commit/d0f50b156725e5b414050d9e9a59d5fad8a39a3d)
+  [#3451](https://github.com/npm/cli/issues/3451)
+  chore(refactor): async npm.load
+  ([@wraithgar](https://github.com/wraithgar))
+* [`87f67d9ef`](https://github.com/npm/cli/commit/87f67d9efaf6f897cf0d74e738c2625a21044109)
+  [#3458](https://github.com/npm/cli/issues/3458)
+  chore(tests): expose real mock npm object
+  ([@wraithgar](https://github.com/wraithgar))
+* [`f3dce0917`](https://github.com/npm/cli/commit/f3dce0917088dc37795af39e7f6b5089beff984c)
+  [#3459](https://github.com/npm/cli/issues/3459)
+  chore(config): snapshot config descriptions
+  ([@wraithgar](https://github.com/wraithgar))
+* [`6254b6f72`](https://github.com/npm/cli/commit/6254b6f726a301908f73b36ccfa52cd4fd6619e5)
+  [#3234](https://github.com/npm/cli/issues/3234)
+  [#3455](https://github.com/npm/cli/issues/3455)
+  @npmcli/package-json refactor
+  ([@ruyadorno](https://github.com/ruyadorno))
+
+### DEPENDENCIES
+
+* [`fe4138381`](https://github.com/npm/cli/commit/fe4138381fd2e8c919bb9f794e20033ff049f783)
+  `@npmcli/arborist@2.6.4`:
+  * bin: allow turning off timer display with --timers=false
+  * fix: do not try to inflate a fresh lockfile
+  * fix(diff): walk target children if root is a link
+  * chore: @npmcli/package-json refactor
+
 ## v7.18.1 (2021-06-17)
 
 ## BUG FIXES
