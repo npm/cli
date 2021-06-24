@@ -11,7 +11,9 @@ const coverageMap = (filename) => {
   }
   if (testbase === 'load-all-commands.js') {
     const { cmdList } = require('../lib/utils/cmd-list.js')
-    return cmdList.map(cmd => `lib/${cmd}.js`).concat('lib/utils/usage.js')
+    return cmdList.map(cmd => `lib/${cmd}.js`)
+      .concat('lib/utils/usage.js')
+      .concat('lib/base-command.js')
   }
   if (/windows-shims\.js$/.test(filename)) {
     // this one doesn't provide any coverage nyc can track
