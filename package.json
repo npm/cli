@@ -53,7 +53,7 @@
     "./package.json": "./package.json"
   },
   "dependencies": {
-    "@npmcli/arborist": "^2.6.3",
+    "@npmcli/arborist": "^2.6.4",
     "@npmcli/ci-detect": "^1.2.0",
     "@npmcli/config": "^2.2.0",
     "@npmcli/package-json": "^1.0.1",
