@@ -1,8 +1,10 @@
 /* eslint-disable no-extend-native */
 /* eslint-disable no-global-assign */
+const t = require('tap')
 const EventEmitter = require('events')
 const writeFileAtomic = require('write-file-atomic')
-const t = require('tap')
+
+const { real: mockNpm } = require('../../fixtures/mock-npm')
 
 // NOTE: Although these unit tests may look like the rest on the surface,
 // they are in fact very special due to the amount of things hooking directly
@@ -25,23 +27,14 @@ t.cleanSnapshot = (str) => redactCwd(str)
 
 // internal modules mocks
 const cacheFolder = t.testdir({})
-const config = {
-  values: {
-    cache: cacheFolder,
-    timing: true,
-  },
-  loaded: true,
-  updateNotification: null,
-  get (key) {
-    return this.values[key]
-  },
-}
 
-const npm = {
-  version: '1.0.0',
-  config,
-  shelloutCommands: ['exec', 'run-script'],
-}
+const { npm } = mockNpm(t)
+
+t.before(async () => {
+  npm.version = '1.0.0'
+  await npm.load()
+  npm.config.set('cache', cacheFolder)
+})
 
 const npmlog = {
   disableProgress: () => null,
@@ -190,9 +183,15 @@ t.test('handles unknown error', (t) => {
 t.test('npm.config not ready', (t) => {
   t.plan(1)
 
-  config.loaded = false
-
+  const { npm: unloaded } = mockNpm(t)
   const _error = console.error
+
+  t.teardown(() => {
+    console.error = _error
+    exitHandler.setNpm(npm)
+  })
+
+  exitHandler.setNpm(unloaded)
   console.error = (msg) => {
     t.match(
       msg,
@@ -202,25 +201,20 @@ t.test('npm.config not ready', (t) => {
   }
 
   exitHandler()
-
-  t.teardown(() => {
-    console.error = _error
-    config.loaded = true
-  })
 })
 
 t.test('fail to write logfile', (t) => {
   t.plan(1)
 
+  t.teardown(() => {
+    npm.config.set('cache', cacheFolder)
+  })
+
   const badDir = t.testdir({
     _logs: 'is a file',
   })
 
-  config.values.cache = badDir
-
-  t.teardown(() => {
-    config.values.cache = cacheFolder
-  })
+  npm.config.set('cache', badDir)
 
   t.doesNotThrow(
     () => exitHandler(err),
@@ -231,7 +225,11 @@ t.test('fail to write logfile', (t) => {
 t.test('console.log output using --json', (t) => {
   t.plan(1)
 
-  config.values.json = true
+  npm.config.set('json', true)
+  t.teardown(() => {
+    console.error = _error
+    npm.config.set('json', false)
+  })
 
   const _error = console.error
   console.error = (jsonOutput) => {
@@ -249,11 +247,6 @@ t.test('console.log output using --json', (t) => {
   }
 
   exitHandler(new Error('Error: EBADTHING Something happened'))
-
-  t.teardown(() => {
-    console.error = _error
-    delete config.values.json
-  })
 })
 
 t.test('throw a non-error obj', (t) => {
@@ -354,7 +347,12 @@ t.test('on exit handler', (t) => {
 t.test('it worked', (t) => {
   t.plan(2)
 
-  config.values.timing = false
+  npm.config.set('timing', false)
+
+  t.teardown(() => {
+    process.exit = _exit
+    npm.config.set('timing', true)
+  })
 
   const _exit = process.exit
   process.exit = (code) => {
@@ -369,11 +367,6 @@ t.test('it worked', (t) => {
 
     process.emit('exit', 0)
   }
-
-  t.teardown(() => {
-    process.exit = _exit
-    config.values.timing = true
-  })
 
   exitHandler()
 })
@@ -466,6 +459,14 @@ t.test('exit handler called twice', (t) => {
 t.test('defaults to log error msg if stack is missing', (t) => {
   t.plan(1)
 
+  const { npm: unloaded } = mockNpm(t)
+  const _error = console.error
+
+  t.teardown(() => {
+    console.error = _error
+    exitHandler.setNpm(npm)
+  })
+
   const noStackErr = Object.assign(
     new Error('Error with no stack'),
     {
@@ -475,15 +476,11 @@ t.test('defaults to log error msg if stack is missing', (t) => {
   )
   delete noStackErr.stack
 
-  npm.config.loaded = false
-
-  const _error = console.error
   console.error = (msg) => {
-    console.error = _error
-    npm.config.loaded = true
     t.equal(msg, 'Error with no stack', 'should use error msg')
   }
 
+  exitHandler.setNpm(unloaded)
   exitHandler(noStackErr)
 })
 
