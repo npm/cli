@@ -128,6 +128,14 @@ folder instead of the current working directory. See
 
 The command to run for `npm edit` and `npm config edit`.
 
+#### `location`
+
+* Default: "user" unless `--global` is passed, which will also set this value
+  to "global"
+* Type: "global", "user", or "project"
+
+When passed to `npm config` this refers to which config file to use.
+
 #### `long`
 
 * Default: false

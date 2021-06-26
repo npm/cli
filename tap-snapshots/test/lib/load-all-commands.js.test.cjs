@@ -151,7 +151,8 @@ npm config list [--json]
 npm config edit
 
 Options:
-[--json] [-g|--global] [--editor <editor>] [-l|--long]
+[--json] [-g|--global] [--editor <editor>] [-L|--location <global|user|project>]
+[-l|--long]
 
 alias: c
 

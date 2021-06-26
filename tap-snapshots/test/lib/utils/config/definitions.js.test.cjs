@@ -81,6 +81,7 @@ Array [
   "legacy-peer-deps",
   "link",
   "local-address",
+  "location",
   "loglevel",
   "logs-max",
   "long",
@@ -1017,6 +1018,16 @@ exports[`test/lib/utils/config/definitions.js TAP > config description for local
 
 The IP address of the local interface to use when making connections to the
 npm registry. Must be IPv4 in versions of Node prior to 0.12.
+`
+
+exports[`test/lib/utils/config/definitions.js TAP > config description for location 1`] = `
+#### \`location\`
+
+* Default: "user" unless \`--global\` is passed, which will also set this value
+  to "global"
+* Type: "global", "user", or "project"
+
+When passed to \`npm config\` this refers to which config file to use.
 `
 
 exports[`test/lib/utils/config/definitions.js TAP > config description for loglevel 1`] = `
