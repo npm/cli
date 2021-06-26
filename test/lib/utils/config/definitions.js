@@ -805,3 +805,26 @@ t.test('save-exact', t => {
   t.strictSame(flat, { savePrefix: '~1.2.3' })
   t.end()
 })
+
+t.test('location', t => {
+  const obj = {
+    global: true,
+    location: 'user',
+  }
+  const flat = {}
+  definitions.location.flatten('location', obj, flat)
+  // global = true sets location in both places to global
+  t.strictSame(flat, { location: 'global' })
+  t.strictSame(obj, { global: true, location: 'global' })
+
+  obj.global = false
+  obj.location = 'user'
+  delete flat.global
+  delete flat.location
+
+  definitions.location.flatten('location', obj, flat)
+  // global = false leaves location unaltered
+  t.strictSame(flat, { location: 'user' })
+  t.strictSame(obj, { global: false, location: 'user' })
+  t.end()
+})

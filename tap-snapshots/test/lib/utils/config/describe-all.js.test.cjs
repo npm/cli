@@ -637,6 +637,14 @@ Used with \`npm ls\`, limiting output to only those packages that are linked.
 The IP address of the local interface to use when making connections to the
 npm registry. Must be IPv4 in versions of Node prior to 0.12.
 
+#### \`location\`
+
+* Default: "user" unless \`--global\` is passed, which will also set this value
+  to "global"
+* Type: "global", "user", or "project"
+
+When passed to \`npm config\` this refers to which config file to use.
+
 #### \`loglevel\`
 
 * Default: "notice"
