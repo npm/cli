@@ -678,6 +678,24 @@ Options:
 Run "npm help ping" for more info
 `
 
+exports[`test/lib/load-all-commands.js TAP load each command pkg > must match snapshot 1`] = `
+npm pkg
+
+Manages your package.json
+
+Usage:
+npm pkg set <key>=<value> [<key>=<value> ...]
+npm pkg get [<key> [<key> ...]]
+npm pkg delete <key> [<key> ...]
+
+Options:
+[-f|--force] [--json]
+[-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+[-ws|--workspaces]
+
+Run "npm help pkg" for more info
+`
+
 exports[`test/lib/load-all-commands.js TAP load each command prefix > must match snapshot 1`] = `
 npm prefix
 

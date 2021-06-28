@@ -209,3 +209,35 @@ t.test('npm uninstall', async t => {
     'should have expected uninstall lockfile result'
   )
 })
+
+t.test('npm pkg', async t => {
+  let cmd = `${npmBin} pkg get license`
+  let cmdRes = await exec(cmd)
+  t.matchSnapshot(cmdRes.replace(/in.*s/, ''),
+    'should have expected pkg get output')
+
+  cmd = `${npmBin} pkg set tap[test-env][0]=LC_ALL=sk`
+  cmdRes = await exec(cmd)
+  t.matchSnapshot(cmdRes.replace(/in.*s/, ''),
+    'should have expected pkg set output')
+
+  t.matchSnapshot(
+    readFile('package.json'),
+    'should have expected npm pkg set modified package.json result'
+  )
+
+  cmd = `${npmBin} pkg get`
+  cmdRes = await exec(cmd)
+  t.matchSnapshot(cmdRes.replace(/in.*s/, ''),
+    'should print package.json contents')
+
+  cmd = `${npmBin} pkg delete tap`
+  cmdRes = await exec(cmd)
+  t.matchSnapshot(cmdRes.replace(/in.*s/, ''),
+    'should have expected pkg delete output')
+
+  t.matchSnapshot(
+    readFile('package.json'),
+    'should have expected npm pkg delete modified package.json result'
+  )
+})

@@ -495,6 +495,7 @@ mistakes, unnecessary performance degradation, and malicious input.
 * Allow unpublishing all versions of a published package.
 * Allow conflicting peerDependencies to be installed in the root project.
 * Implicitly set `--yes` during `npm init`.
+* Allow clobbering existing values in `npm pkg`
 
 If you don't have a clear idea of what you want to do, it is strongly
 recommended that you do not use this option!
@@ -693,6 +694,9 @@ number, if not already set in package.json.
 * Type: Boolean
 
 Whether or not to output JSON data, rather than the normal output.
+
+* In `npm pkg set` it enables parsing set values with JSON.parse() before
+  saving them to your `package.json`.
 
 Not supported by all npm commands.
 
