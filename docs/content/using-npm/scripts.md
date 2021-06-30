@@ -245,41 +245,7 @@ package.json file, then your package scripts would have the
 in your code with `process.env.npm_package_name` and
 `process.env.npm_package_version`, and so on for other fields.
 
-#### configuration
-
-Configuration parameters are put in the environment with the
-`npm_config_` prefix. For instance, you can view the effective `root`
-config by checking the `npm_config_root` environment variable.
-
-#### Special: package.json "config" object
-
-The package.json "config" keys are overwritten in the environment if
-there is a config param of `<name>[@<version>]:<key>`.  For example,
-if the package.json has this:
-
-```json
-{
-  "name" : "foo",
-  "config" : {
-    "port" : "8080"
-  },
-  "scripts" : {
-    "start" : "node server.js"
-  }
-}
-```
-
-and the server.js is this:
-
-```javascript
-http.createServer(...).listen(process.env.npm_package_config_port)
-```
-
-then the user could change the behavior by doing:
-
-```bash
-  npm config set foo:port 80
-  ```
+See [`package-json.md`](/using-npm/package-json) for more on package configs.
 
 #### current lifecycle event
 
