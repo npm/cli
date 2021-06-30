@@ -307,19 +307,6 @@ Note that these script files don't have to be nodejs or even
 javascript programs. They just have to be some kind of executable
 file.
 
-### Hook Scripts
-
-If you want to run a specific script at a specific lifecycle event for
-ALL packages, then you can use a hook script.
-
-Place an executable file at `node_modules/.hooks/{eventname}`, and
-it'll get run for all packages when they are going through that point
-in the package lifecycle for any packages installed in that root.
-
-Hook scripts are run exactly the same way as package.json scripts.
-That is, they are in a separate child process, with the env described
-above.
-
 ### Best Practices
 
 * Don't exit with a non-zero error code unless you *really* mean it.
