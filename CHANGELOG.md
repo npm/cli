@@ -1,3 +1,38 @@
+## v7.19.1 (2021-07-01)
+
+### BUG FIXES
+
+* [`013f0262d`](https://github.com/npm/cli/commit/013f0262db3e16605820f6117749fd3ebc70f6d1)
+  [#3469](https://github.com/npm/cli/issues/3469)
+  fix(exitHandler): write code to logfile
+  ([@wraithgar](https://github.com/wraithgar))
+* [`0dd0341ac`](https://github.com/npm/cli/commit/0dd0341ac9a65a2df8fc262ad9a56b7351f99d66)
+  [#3474](https://github.com/npm/cli/issues/3474)
+  fix(ping): make "npm ping" echo a right time
+  ([@aluneed](https://github.com/aluneed))
+* [`d2e298f3c`](https://github.com/npm/cli/commit/d2e298f3cbab278071480f94ff7d916d42cbf43b)
+  [#3484](https://github.com/npm/cli/issues/3484)
+  fix(deprecate): add undeprecate support
+  ([@wraithgar](https://github.com/wraithgar))
+
+  ### DOCUMENTATION
+
+* [`9dd32d08e`](https://github.com/npm/cli/commit/9dd32d08e09c21c9a4517161abfc7eed6518faf2)
+  [#3485](https://github.com/npm/cli/issues/3485)
+  fix(docs): remove npm package config override
+  ([@wraithgar](https://github.com/wraithgar))
+* [`a4e095618`](https://github.com/npm/cli/commit/a4e095618cda72244a18aaff9d6660b9082a2b84)
+  [#3486](https://github.com/npm/cli/issues/3486)
+  fix(docs): remove .hooks scripts
+  ([@wraithgar](https://github.com/wraithgar))
+
+### TESTING
+
+* [`5f8ccccef`](https://github.com/npm/cli/commit/5f8ccccef9fc19229320df8cbcae9fcea8d31388)
+  [#3483](https://github.com/npm/cli/issues/3483)
+  chore(tests): clean snapshot for lib/view.js tests
+  ([@wraithgar](https://github.com/wraithgar))
+
 ## v7.19.0 (2021-06-24)
 
 ### FEATURES
