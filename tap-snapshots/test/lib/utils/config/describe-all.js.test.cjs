@@ -49,9 +49,10 @@ to the same value as the current version.
 * Default: true
 * Type: Boolean
 
-When "true" submit audit reports alongside \`npm install\` runs to the default
-registry and all registries configured for scopes. See the documentation for
-[\`npm audit\`](/commands/npm-audit) for details on what is submitted.
+When "true" submit audit reports alongside the current npm command to the
+default registry and all registries configured for scopes. See the
+documentation for [\`npm audit\`](/commands/npm-audit) for details on what is
+submitted.
 
 #### \`audit-level\`
 
