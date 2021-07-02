@@ -463,8 +463,16 @@ t.test('search options', t => {
   t.end()
 })
 
-t.test('noProxy', t => {
+t.test('noProxy - array', t => {
   const obj = { noproxy: ['1.2.3.4,2.3.4.5', '3.4.5.6'] }
+  const flat = {}
+  definitions.noproxy.flatten('noproxy', obj, flat)
+  t.strictSame(flat, { noProxy: '1.2.3.4,2.3.4.5,3.4.5.6' })
+  t.end()
+})
+
+t.test('noProxy - string', t => {
+  const obj = { noproxy: '1.2.3.4,2.3.4.5,3.4.5.6' }
   const flat = {}
   definitions.noproxy.flatten('noproxy', obj, flat)
   t.strictSame(flat, { noProxy: '1.2.3.4,2.3.4.5,3.4.5.6' })
