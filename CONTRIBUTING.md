@@ -2,7 +2,7 @@
 
 ## Code of Conduct
 
-All interactions in the **npm** organization on GitHub are considered to be covered by our standard [Code of Conduct](https://www.npmjs.com/policies/conduct).
+All interactions in the **npm** organization on GitHub are considered to be covered by our standard [Code of Conduct](https://docs.npmjs.com/policies/conduct).
 
 ## Development
 
