@@ -20,7 +20,7 @@
 
 Welcome to the npm CLI Contributor Guide! This document outlines the npm CLI repository's process for community interaction and contribution. This includes the issue tracker, pull requests, wiki pages, and, to a certain extent, outside communication in the context of the npm CLI. This is an entry point for anyone wishing to contribute their time and effort to making npm a better tool for the JavaScript community!
 
-All interactions in the npm repository are covered by the [npm Code of Conduct](https://www.npmjs.com/policies/conduct)
+All interactions in the npm repository are covered by the [npm Code of Conduct](https://docs.npmjs.com/conduct)
 
 
 ## Code Structure

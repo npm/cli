@@ -1364,7 +1364,7 @@ rights, please seek the review of qualified counsel, which is to say, not
 members of the CLI team, none of whom have passed the bar, to my knowledge). At
 the same time the primary registry the CLI uses when looking up and downloading
 packages is a commercial service run by npm, Inc., and it has its own [Terms of
-Use](https://www.npmjs.com/policies/terms).
+Use](https://docs.npmjs.com/terms).
 
 Aside from clarifying the terms of use (and trying to make sure they're more
 widely known), the only recent changes to npm's licenses have been making the
