@@ -965,8 +965,7 @@ On to the actual changes!
 * [`f0f7b0f`](https://github.com/npm/npm/commit/f0f7b0fd025daa2b69994130345e6e8fdaaa0304)
   [#15083](https://github.com/npm/npm/pull/15083)
   Removed dead code.
-  ([@iarna](https://github.com/iarna))
-* [`bc32afe`](https://github.com/npm/npm/commit/bc32afe4d12e3760fb5a26466dc9c26a5a2981d5) [`c8a22fe`](https://github.com/npm/npm/commit/c8a22fe5320550e09c978abe560b62ce732686f4) [`db2666d`](https://github.com/npm/npm/commit/db2666d8c078fc69d0c02c6a3de9b31be1e995e9)
+  ([@iarna](https://github.com/iarna))* [`bc32afe`](https://github.com/npm/npm/commit/bc32afe4d12e3760fb5a26466dc9c26a5a2981d5) [`c8a22fe`](https://github.com/npm/npm/commit/c8a22fe5320550e09c978abe560b62ce732686f4) [`db2666d`](https://github.com/npm/npm/commit/db2666d8c078fc69d0c02c6a3de9b31be1e995e9)
   [#15085](https://github.com/npm/npm/pull/15085)
   Change some network tests so they can run offline.
   ([@iarna](https://github.com/iarna))
@@ -1003,7 +1002,7 @@ v5.  We'll have more for you in early December.
 #### DOCUMENTATION UPDATES
 
 * [`c3ac177`](https://github.com/npm/npm/commit/c3ac177236124c80524c5f252ba8f6670f05dcd8)
-  [#14406](https://github.com/npm/npm/pull/14406)https://docs.npmjs.com
+  [#14406](https://github.com/npm/npm/pull/14406)
   Sync up the dispute policy included with the CLI with the [current official text](https://www.npmjs.com/policies/disputes).
   ([@mike-engel](https://github.com/mike-engel))
 * [`9c663b2`](https://github.com/npm/npm/commit/9c663b2dd8552f892dc0205330bbc73a484ecd81)
