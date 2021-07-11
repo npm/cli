@@ -1,3 +1,5 @@
+[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/npm/cli)
+
 [![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/npm/cli/Node%20CI/latest)](https://github.com/npm/cli/actions?query=workflow%3A%22Node+CI%22+branch%3Alatest) [![Coveralls github branch](https://img.shields.io/coveralls/github/npm/cli/latest)](https://coveralls.io/github/npm/cli?branch=latest)
 
 # npm - a JavaScript package manager
