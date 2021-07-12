@@ -291,6 +291,38 @@ t.test('set single field', t => {
   })
 })
 
+t.test('push to array syntax', t => {
+  const json = {
+    name: 'foo',
+    version: '1.1.1',
+    keywords: [
+      'foo',
+    ],
+  }
+  npm.localPrefix = t.testdir({
+    'package.json': JSON.stringify(json),
+  })
+
+  pkg.exec(['set', 'keywords[]=bar', 'keywords[]=baz'], err => {
+    if (err)
+      throw err
+
+    t.strictSame(
+      readPackageJson(),
+      {
+        ...json,
+        keywords: [
+          'foo',
+          'bar',
+          'baz',
+        ],
+      },
+      'should append to arrays using empty bracket syntax'
+    )
+    t.end()
+  })
+})
+
 t.test('set multiple fields', t => {
   const json = {
     name: 'foo',
