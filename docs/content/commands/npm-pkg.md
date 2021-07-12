@@ -98,6 +98,13 @@ Returned values are always in **json** format.
     npm pkg set contributors[0].name='Foo' contributors[0].email='foo@bar.ca'
     ```
 
+    You may also append items to the end of an array using the special
+    empty bracket notation:
+
+    ```bash
+    npm pkg get contributors[].name='Bar' contributors[].email='bar@bar.ca'
+    ```
+
     It's also possible to parse values as json prior to saving them to your
     `package.json` file, for example in order to set a `"private": true`
     property:

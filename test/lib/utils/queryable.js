@@ -602,6 +602,61 @@ t.test('set arrays', async t => {
     { code: 'EOVERRIDEVALUE' },
     'should throw an override error'
   )
+
+  qqq.set('arr[]', 'c')
+  t.strictSame(
+    qqq.toJSON(),
+    {
+      arr: [
+        'a',
+        'b',
+        'c',
+      ],
+    },
+    'should be able to append to array using empty bracket notation'
+  )
+
+  qqq.set('arr[-2]', 'B')
+  t.strictSame(
+    qqq.toJSON(),
+    {
+      arr: [
+        'a',
+        'B',
+        'c',
+      ],
+    },
+    'should be able to use negative indexes'
+  )
+
+  qqq.set('arr[-1]', 'C')
+  t.strictSame(
+    qqq.toJSON(),
+    {
+      arr: [
+        'a',
+        'B',
+        'C',
+      ],
+    },
+    'should be able to use negative indexes'
+  )
+
+  qqq.set('arr[].foo', 'foo')
+  t.strictSame(
+    qqq.toJSON(),
+    {
+      arr: [
+        'a',
+        'B',
+        'C',
+        {
+          foo: 'foo',
+        },
+      ],
+    },
+    'should be able to append objects to array using empty bracket notation'
+  )
 })
 
 t.test('delete values', async t => {
