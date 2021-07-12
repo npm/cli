@@ -130,6 +130,14 @@ t.test('query', async t => {
     q.query('missing[bar]'),
     undefined,
     'should return undefined also')
+  t.throws(() => q.query('lorem.dolor[]'),
+    { code: 'EINVALIDSYNTAX' },
+    'should throw if using empty brackets notation'
+  )
+  t.throws(() => q.query('lorem.dolor[].sit[0]'),
+    { code: 'EINVALIDSYNTAX' },
+    'should throw if using nested empty brackets notation'
+  )
 
   const qq = new Queryable({
     foo: {
@@ -597,10 +605,262 @@ t.test('set arrays', async t => {
       'b',
     ],
   })
+
+  qqq.set('arr[]', 'c')
+  t.strictSame(
+    qqq.toJSON(),
+    {
+      arr: [
+        'a',
+        'b',
+        'c',
+      ],
+    },
+    'should be able to append to array using empty bracket notation'
+  )
+
+  qqq.set('arr[].foo', 'foo')
+  t.strictSame(
+    qqq.toJSON(),
+    {
+      arr: [
+        'a',
+        'b',
+        'c',
+        {
+          foo: 'foo',
+        },
+      ],
+    },
+    'should be able to append objects to array using empty bracket notation'
+  )
+
+  qqq.set('arr[].bar.name', 'BAR')
+  t.strictSame(
+    qqq.toJSON(),
+    {
+      arr: [
+        'a',
+        'b',
+        'c',
+        {
+          foo: 'foo',
+        },
+        {
+          bar: {
+            name: 'BAR',
+          },
+        },
+      ],
+    },
+    'should be able to append more objects to array using empty brackets'
+  )
+
+  qqq.set('foo.bar.baz[].lorem.ipsum', 'something')
+  t.strictSame(
+    qqq.toJSON(),
+    {
+      arr: [
+        'a',
+        'b',
+        'c',
+        {
+          foo: 'foo',
+        },
+        {
+          bar: {
+            name: 'BAR',
+          },
+        },
+      ],
+      foo: {
+        bar: {
+          baz: [
+            {
+              lorem: {
+                ipsum: 'something',
+              },
+            },
+          ],
+        },
+      },
+    },
+    'should be able to append to array using empty brackets in nested objs'
+  )
+
+  qqq.set('foo.bar.baz[].lorem.array[]', 'new item')
+  t.strictSame(
+    qqq.toJSON(),
+    {
+      arr: [
+        'a',
+        'b',
+        'c',
+        {
+          foo: 'foo',
+        },
+        {
+          bar: {
+            name: 'BAR',
+          },
+        },
+      ],
+      foo: {
+        bar: {
+          baz: [
+            {
+              lorem: {
+                ipsum: 'something',
+              },
+            },
+            {
+              lorem: {
+                array: [
+                  'new item',
+                ],
+              },
+            },
+          ],
+        },
+      },
+    },
+    'should be able to append to array using empty brackets in nested objs'
+  )
+
+  const qqqq = new Queryable({
+    arr: [
+      'a',
+      'b',
+    ],
+  })
   t.throws(
-    () => qqq.set('arr.foo', 'foo'),
-    { code: 'EOVERRIDEVALUE' },
+    () => qqqq.set('arr.foo', 'foo'),
+    { code: 'ENOADDPROP' },
     'should throw an override error'
+  )
+
+  qqqq.set('arr.foo', 'foo', { force: true })
+  t.strictSame(
+    qqqq.toJSON(),
+    {
+      arr: {
+        0: 'a',
+        1: 'b',
+        foo: 'foo',
+      },
+    },
+    'should be able to override arrays with objects when using force=true'
+  )
+
+  qqqq.set('bar[]', 'item', { force: true })
+  t.strictSame(
+    qqqq.toJSON(),
+    {
+      arr: {
+        0: 'a',
+        1: 'b',
+        foo: 'foo',
+      },
+      bar: [
+        'item',
+      ],
+    },
+    'should be able to create new array with item when using force=true'
+  )
+
+  qqqq.set('bar[]', 'something else', { force: true })
+  t.strictSame(
+    qqqq.toJSON(),
+    {
+      arr: {
+        0: 'a',
+        1: 'b',
+        foo: 'foo',
+      },
+      bar: [
+        'item',
+        'something else',
+      ],
+    },
+    'should be able to append items to arrays when using force=true'
+  )
+
+  const qqqqq = new Queryable({
+    arr: [
+      null,
+    ],
+  })
+  qqqqq.set('arr[]', 'b')
+  t.strictSame(
+    qqqqq.toJSON(),
+    {
+      arr: [
+        null,
+        'b',
+      ],
+    },
+    'should be able to append items with empty items'
+  )
+  qqqqq.set('arr[0]', 'a')
+  t.strictSame(
+    qqqqq.toJSON(),
+    {
+      arr: [
+        'a',
+        'b',
+      ],
+    },
+    'should be able to replace empty items in an array'
+  )
+  qqqqq.set('lorem.ipsum', 3)
+  t.strictSame(
+    qqqqq.toJSON(),
+    {
+      arr: [
+        'a',
+        'b',
+      ],
+      lorem: {
+        ipsum: 3,
+      },
+    },
+    'should be able to replace empty items in an array'
+  )
+  t.throws(
+    () => qqqqq.set('lorem[]', 4),
+    { code: 'ENOAPPEND' },
+    'should throw error if using empty square bracket in an non-array item'
+  )
+  qqqqq.set('lorem[0]', 3)
+  t.strictSame(
+    qqqqq.toJSON(),
+    {
+      arr: [
+        'a',
+        'b',
+      ],
+      lorem: {
+        0: 3,
+        ipsum: 3,
+      },
+    },
+    'should be able add indexes as props when finding an object'
+  )
+  qqqqq.set('lorem.1', 3)
+  t.strictSame(
+    qqqqq.toJSON(),
+    {
+      arr: [
+        'a',
+        'b',
+      ],
+      lorem: {
+        0: 3,
+        1: 3,
+        ipsum: 3,
+      },
+    },
+    'should be able add numeric props to an obj'
   )
 })
 
