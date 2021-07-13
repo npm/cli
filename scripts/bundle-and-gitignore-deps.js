@@ -30,7 +30,9 @@ arb.loadVirtual().then(tree => {
 /.package-lock.json
 package-lock.json
 CHANGELOG*
+changelog*
 README*
+readme*
 .editorconfig
 .idea/
 .npmignore
