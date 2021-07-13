@@ -102,7 +102,7 @@ Returned values are always in **json** format.
     empty bracket notation:
 
     ```bash
-    npm pkg get contributors[].name='Bar' contributors[].email='bar@bar.ca'
+    npm pkg set contributors[].name='Bar' contributors[].email='bar@bar.ca'
     ```
 
     It's also possible to parse values as json prior to saving them to your
