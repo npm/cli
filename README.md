@@ -18,7 +18,7 @@ and prior, clone the git repo and dig through the old tags and branches.
 
 **npm is configured to use npm, Inc.'s public registry at
 <https://registry.npmjs.org> by default.** Use of the npm public registry
-is subject to terms of use available at <https://docs.npmjs.com/terms>.
+is subject to terms of use available at <https://docs.npmjs.com/policies/terms>.
 
 You can configure npm to use any compatible registry you
 like, and even run your own registry. Check out the [doc on
