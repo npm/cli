@@ -55,7 +55,7 @@ situations. These scripts happen in addition to the `pre<event>`, `post<event>`,
  installed.
 
 * As of `npm@7` these scripts run in the background.
-  To run see the output, run with: `--foreground-scripts`.
+  To see the output, run with: `--foreground-scripts`.
 
 **prepublish** (DEPRECATED)
 * Does not run during `npm publish`, but does run during `npm ci`
