@@ -54,7 +54,8 @@ situations. These scripts happen in addition to the `pre<event>`, `post<event>`,
  the prepare script will be run, before the package is packaged and
  installed.
 
-* As of `npm@7` these scripts run in the background
+* As of `npm@7` these scripts run in the background.
+  To run see the output, run with: `--foreground-scripts`.
 
 **prepublish** (DEPRECATED)
 * Does not run during `npm publish`, but does run during `npm ci`
