@@ -1,3 +1,89 @@
+## v7.20.0 (2021-07-15)
+
+### FEATURES
+
+* [`f17aca5cd`](https://github.com/npm/cli/commit/f17aca5cdf355aaa7e1f517d1b3bb4213f4df092)
+  [#3487](https://github.com/npm/cli/issues/3487)
+  feat: add `npm pkg` command
+  ([@ruyadorno](https://github.com/ruyadorno))
+* [`98905ae37`](https://github.com/npm/cli/commit/98905ae3759165cd6d6f6306f31acc6a2baa4cde)
+  [#3471](https://github.com/npm/cli/issues/3471)
+  feat(config): introduce `location` parameter
+  ([@nlf](https://github.com/nlf))
+
+### BUG FIXES
+
+* [`4755b0728`](https://github.com/npm/cli/commit/4755b072877f547585cb0e2562261b2c87e2ff0b)
+  [#3498](https://github.com/npm/cli/issues/3498)
+  friendlier errors for `ERR_SOCKET_TIMEOUT`
+  ([@nlf](https://github.com/nlf))
+* [`3ecf19cdc`](https://github.com/npm/cli/commit/3ecf19cdc35684ccb15280b2c34d27496aa1c634)
+  [#3508](https://github.com/npm/cli/issues/3508)
+  fix(config): fix noproxy
+  ([@wraithgar](https://github.com/wraithgar))
+* [`c3bd10e46`](https://github.com/npm/cli/commit/c3bd10e461976a073e6a898c46f8bde28b17668f)
+  [#3499](https://github.com/npm/cli/issues/3499)
+  fix(update-notifier): don't force black background
+  ([@wraithgar](https://github.com/wraithgar))
+* [`89483e888`](https://github.com/npm/cli/commit/89483e888acc56386b9ebc4d70a4676e4a5a5cb1)
+  [#3497](https://github.com/npm/cli/issues/3497)
+  fix(usage): better audit/boolean flag usage output
+  ([@wraithgar](https://github.com/wraithgar))
+* [`feeb8e42a`](https://github.com/npm/cli/commit/feeb8e42a7b0510023175dc86269edb544d97601)
+  [#3495](https://github.com/npm/cli/issues/3495)
+  fix(publish): obey --ignore-scripts flag
+  ([@wraithgar](https://github.com/wraithgar))
+* [`103c8c3ef`](https://github.com/npm/cli/commit/103c8c3ef3ba7ff0483557f32eebc4c6298285e3)
+  [#3479](https://github.com/npm/cli/issues/3479)
+  chore(exit): log any un-ended timings
+  ([@wraithgar](https://github.com/wraithgar))
+* [`efc4313c2`](https://github.com/npm/cli/commit/efc4313c2062ffad22aa24e5198d575a7eb5f20e)
+  [#3482](https://github.com/npm/cli/issues/3482)
+  chore(refactor): refactor exit handler and tests
+  ([@wraithgar](https://github.com/wraithgar))
+* [`d8eb49b70`](https://github.com/npm/cli/commit/d8eb49b705acb50b6bed971bfcce4db6e18e73dd)
+  [#3540](https://github.com/npm/cli/issues/3540)
+  fix(bundle-and-ignore): case sensitivity cleanup
+  ([@wraithgar](https://github.com/wraithgar))
+
+### DOCUMENTATION
+
+* [`339145f64`](https://github.com/npm/cli/commit/339145f64f82d540dbc72ef97b54ae20c34315dd)
+  [#3491](https://github.com/npm/cli/issues/3491)
+  fix(docs): clarify what install type gets `.bin`
+  ([@wraithgar](https://github.com/wraithgar))
+* [`74c99755e`](https://github.com/npm/cli/commit/74c99755e522f9cfc0d602841568d5e1f835fcaf)
+  [#3494](https://github.com/npm/cli/issues/3494)
+  fix(docs): add npm update example
+  ([@wraithgar](https://github.com/wraithgar))
+* [`801a52330`](https://github.com/npm/cli/commit/801a52330636008fecadc812916c76fb945ce1f6)
+  [#3542](https://github.com/npm/cli/issues/3542)
+  fix(docs): correct Node.js JavaScript stylings
+  ([@relrelb](https://github.com/relrelb))
+* [`791416713`](https://github.com/npm/cli/commit/791416713d64c072d73bffbab2daf7b8eb3c4868)
+  [#3546](https://github.com/npm/cli/issues/3546)
+  fix(docs): how to see background script output
+  ([@cinderblock](https://github.com/cinderblock))
+
+### DEPENDENCIES
+
+* [`691816f3d`](https://github.com/npm/cli/commit/691816f3de2a679152644a60f3e2c5962df6a81d)
+  `@npmcli/arborist@2.7.1`
+    * fixes running prepare scripts for workspaces on reify
+    * ensure pacote always compares correct integrity values
+* [`b9597e944`](https://github.com/npm/cli/commit/b9597e944377e74907607ee280ec1e8c31dd3156)
+  `make-fetch-happen@9.0.4`
+    * fix: retry socket timeout failures
+    * fix: clean up invalid indexes and content after cacache read errors
+* [`f573e7c56`](https://github.com/npm/cli/commit/f573e7c56e8505fd6dcc3e5f5b5be401d0a45b58)
+  `minipass-fetch@1.3.4`
+    * fix: correctly handle error events that happen after response events
+* [`2d5797ea0`](https://github.com/npm/cli/commit/2d5797ea01e17b1559d792613446e1435e588a35)
+  `pacote@11.3.5`
+    * fix: show more actionable messages for git pathspec errors
+    * fix: include all dep types when building for prepare
+    * fix: do not set mtime when unpacking
+
 ## v7.19.1 (2021-07-01)
 
 ### BUG FIXES
@@ -2334,7 +2420,7 @@ fix(lib/npm): do not clobber config.execPath
   fix: patch `config.js` to remove duplicate vals
   ([@darcyclarke](https://github.com/darcyclarke))
 
-### DOCUMENTION
+### DOCUMENTATION
 
 * [`60769d757`](https://github.com/npm/cli/commit/60769d757859c88e2cceab66975f182a47822816)
   [#1911](https://github.com/npm/cli/pull/1911) docs: v7 npm-install
