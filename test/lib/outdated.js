@@ -304,6 +304,28 @@ t.test('should display outdated deps', t => {
     })
   })
 
+  t.test('outdated --in-range', t => {
+    outdated(testDir, {
+      config: {
+        'in-range': true,
+      },
+    }).exec([], () => {
+      t.matchSnapshot(logs)
+      t.end()
+    })
+  })
+
+  t.test('outdated --no-in-range', t => {
+    outdated(testDir, {
+      config: {
+        'in-range': false,
+      },
+    }).exec([], () => {
+      t.matchSnapshot(logs)
+      t.end()
+    })
+  })
+
   t.test('outdated specific dep', t => {
     outdated(testDir, {
       config: {

@@ -75,6 +75,7 @@ Array [
   "init.license",
   "init.module",
   "init.version",
+  "in-range",
   "json",
   "key",
   "legacy-bundling",

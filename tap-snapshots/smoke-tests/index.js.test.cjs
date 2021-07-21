@@ -480,6 +480,9 @@ exports[`smoke-tests/index.js TAP npm outdated > should have expected outdated o
 Package  Current  Wanted  Latest  Location             Depended by
 abbrev     1.0.4   1.1.1   1.1.1  node_modules/abbrev  project
 
+For more info on why dependencies have been installed at their current version, see:
+  npm explain <pkg>
+
 `
 
 exports[`smoke-tests/index.js TAP npm pkg > should have expected npm pkg delete modified package.json result 1`] = `
