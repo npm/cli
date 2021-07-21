@@ -199,6 +199,7 @@
     "eslint-plugin-promise": "^5.1.0",
     "eslint-plugin-standard": "^5.0.0",
     "licensee": "^8.2.0",
+    "spawk": "^1.7.1",
     "tap": "^15.0.9"
   },
   "scripts": {
