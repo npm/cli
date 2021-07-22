@@ -1,3 +1,41 @@
+## v7.20.1 (2021-07-22)
+
+### BUG FIXES
+
+* [`009ad1e68`](https://github.com/npm/cli/commit/009ad1e683aa061d7e5c78b9362b0bd1b14ee643)
+  [#3561](https://github.com/npm/cli/issues/3561)
+  fix(exit-handler): always warn if not called
+  ([@wraithgar](https://github.com/wraithgar))
+* [`eb67054c8`](https://github.com/npm/cli/commit/eb67054c8303348b25f9717c8f82c8d8d494a242)
+  [#3563](https://github.com/npm/cli/issues/3563)
+  fix(config): consolidate use of npm.color
+  ([@wraithgar](https://github.com/wraithgar))
+
+### DOCUMENTATION
+
+* [`a014f3d28`](https://github.com/npm/cli/commit/a014f3d284e49cd085cfd060a71a161b93bca9d1)
+  [#3562](https://github.com/npm/cli/issues/3562)
+  fix(docs): typo in `npm cmd` docs
+  ([@wraithgar](https://github.com/wraithgar))
+* [`1fe1c9b74`](https://github.com/npm/cli/commit/1fe1c9b74ea3c3d5bb5b3696b954422b9b55dd91)
+  [#3523](https://github.com/npm/cli/issues/3523)
+  fix(docs): updated policy urls
+  ([@DemiraDimitrova](https://github.com/DemiraDimitrova))
+
+### DEPENDENCIES
+
+* [`d7f29e8c9`](https://github.com/npm/cli/commit/d7f29e8c94ae77661390f82ae72efc1bd6fcfbc3)
+  `read-package-json-fast@2.0.3`:
+  - feat: load directories.bin as a bin object
+* [`b1fefa73d`](https://github.com/npm/cli/commit/b1fefa73db2f8d9c55b4447ffc1cdbaf8e9bb298)
+  `npmlog@5.0.0`
+  * Drop support for node 6 and 8
+* [`b6e09971a`](https://github.com/npm/cli/commit/b6e09971a8f9a3c92188838b69be0a0dda27f0bb)
+  remove ignored files from node_modules
+  ([@Ruy Adorno](https://github.com/Ruy Adorno))
+* [`cf737c505`](https://github.com/npm/cli/commit/cf737c505e76a473850c5244b17f3469efbc3c02)
+  `debug@4.3.2`
+
 ## v7.20.0 (2021-07-15)
 
 ### FEATURES
