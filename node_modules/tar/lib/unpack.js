@@ -14,6 +14,7 @@ const path = require('path')
 const mkdir = require('./mkdir.js')
 const wc = require('./winchars.js')
 const pathReservations = require('./path-reservations.js')
+const stripAbsolutePath = require('./strip-absolute-path.js')
 
 const ONENTRY = Symbol('onEntry')
 const CHECKFS = Symbol('checkFs')
@@ -224,11 +225,10 @@ class Unpack extends Parser {
 
       // absolutes on posix are also absolutes on win32
       // so we only need to test this one to get both
-      if (path.win32.isAbsolute(p)) {
-        const parsed = path.win32.parse(p)
-        entry.path = p.substr(parsed.root.length)
-        const r = parsed.root
-        this.warn('TAR_ENTRY_INFO', `stripping ${r} from absolute path`, {
+      const [root, stripped] = stripAbsolutePath(p)
+      if (root) {
+        entry.path = stripped
+        this.warn('TAR_ENTRY_INFO', `stripping ${root} from absolute path`, {
           entry,
           path: p,
         })
