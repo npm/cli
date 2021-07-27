@@ -68,6 +68,7 @@ exports[`test/lib/config.js TAP config list --json > output matches snapshot 1`]
   "ignore-scripts": false,
   "include": [],
   "include-staged": false,
+  "include-workspace-root": false,
   "init-author-email": "",
   "init-author-name": "",
   "init-author-url": "",
@@ -153,7 +154,7 @@ exports[`test/lib/config.js TAP config list --json > output matches snapshot 1`]
   "viewer": "{VIEWER}",
   "which": null,
   "workspace": [],
-  "workspaces": false,
+  "workspaces": null,
   "yes": null,
   "metrics-registry": "https://registry.npmjs.org/"
 }
@@ -218,6 +219,7 @@ if-present = false
 ignore-scripts = false 
 include = [] 
 include-staged = false 
+include-workspace-root = false 
 init-author-email = "" 
 init-author-name = "" 
 init-author-url = "" 
@@ -305,7 +307,7 @@ versions = false
 viewer = "{VIEWER}" 
 which = null 
 workspace = [] 
-workspaces = false 
+workspaces = null 
 yes = null 
 
 ; "global" config from {GLOBALPREFIX}/npmrc
