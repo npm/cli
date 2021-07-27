@@ -53,7 +53,7 @@ npm publish [<folder>]
 Options:
 [--tag <tag>] [--access <restricted|public>] [--dry-run] [--otp <otp>]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-[-ws|--workspaces]
+[-ws|--workspaces] [--include-workspace-root]
 
 Run "npm help publish" for more info {
   "code": "EUSAGE",

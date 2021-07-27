@@ -63,6 +63,7 @@ Array [
   "ignore-scripts",
   "include",
   "include-staged",
+  "include-workspace-root",
   "init-author-email",
   "init-author-name",
   "init-author-url",
@@ -829,6 +830,19 @@ Allow installing "staged" published packages, as defined by [npm RFC PR
 #92](https://github.com/npm/rfcs/pull/92).
 
 This is experimental, and not implemented by the npm public registry.
+`
+
+exports[`test/lib/utils/config/definitions.js TAP > config description for include-workspace-root 1`] = `
+#### \`include-workspace-root\`
+
+* Default: false
+* Type: Boolean
+
+Include the workspace root when workspaces are enabled for a command.
+
+When false, specifying individual workspaces via the \`workspace\` config, or
+all workspaces via the \`workspaces\` flag, will cause npm to operate only on
+the specified workspaces, and not on the root project.
 `
 
 exports[`test/lib/utils/config/definitions.js TAP > config description for init-author-email 1`] = `
@@ -1839,8 +1853,8 @@ Valid values for the \`workspace\` config are either:
 
 * Workspace names
 * Path to a workspace directory
-* Path to a parent workspace directory (will result to selecting all of the
-  nested workspaces)
+* Path to a parent workspace directory (will result in selecting all
+  workspaces within that folder)
 
 When set for the \`npm init\` command, this may be set to the folder of a
 workspace which does not yet exist, to create the folder and set it up as a
@@ -1852,11 +1866,19 @@ This value is not exported to the environment for child processes.
 exports[`test/lib/utils/config/definitions.js TAP > config description for workspaces 1`] = `
 #### \`workspaces\`
 
-* Default: false
-* Type: Boolean
+* Default: null
+* Type: null or Boolean
 
-Enable running a command in the context of **all** the configured
+Set to true to run the command in the context of **all** configured
 workspaces.
+
+Explicitly setting this to false will cause commands like \`install\` to
+ignore workspaces altogether. When not set explicitly:
+
+- Commands that operate on the \`node_modules\` tree (install, update, etc.)
+will link workspaces into the \`node_modules\` folder. - Commands that do
+other things (test, exec, publish, etc.) will operate on the root project,
+_unless_ one or more workspaces are specified in the \`workspace\` config.
 
 This value is not exported to the environment for child processes.
 `

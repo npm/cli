@@ -83,6 +83,10 @@ const globalDir = t.testdir({
   },
 })
 
+const flatOptions = {
+  workspacesEnabled: true,
+}
+
 const outdated = (dir, opts) => {
   logs = ''
   const Outdated = t.mock('../../lib/outdated.js', {
@@ -94,6 +98,7 @@ const outdated = (dir, opts) => {
     ...opts,
     localPrefix: dir,
     prefix: dir,
+    flatOptions,
     globalDir: `${globalDir}/node_modules`,
     output,
   })
@@ -557,6 +562,30 @@ t.test('workspaces', async t => {
 
       t.matchSnapshot(logs, 'should display ws outdated deps human output')
       t.equal(process.exitCode, 1)
+      res()
+    })
+  })
+
+  await new Promise((res, rej) => {
+    flatOptions.workspacesEnabled = false
+    outdated(testDir, {}).exec([], err => {
+      if (err)
+        rej(err)
+
+      t.matchSnapshot(logs, 'should display only root outdated when ws disabled')
+      flatOptions.workspacesEnabled = true
+      res()
+    })
+  })
+
+  await new Promise((res, rej) => {
+    flatOptions.workspacesEnabled = false
+    outdated(testDir, {}).exec([], err => {
+      if (err)
+        rej(err)
+
+      t.matchSnapshot(logs, 'should display only root outdated when ws disabled')
+      flatOptions.workspacesEnabled = true
       res()
     })
   })
