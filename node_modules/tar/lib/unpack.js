@@ -465,6 +465,19 @@ class Unpack extends Parser {
   }
 
   [CHECKFS2] (entry, done) {
+    // if we are not creating a directory, and the path is in the dirCache,
+    // then that means we are about to delete the directory we created
+    // previously, and it is no longer going to be a directory, and neither
+    // is any of its children.
+    if (entry.type !== 'Directory') {
+      for (const path of this.dirCache.keys()) {
+        if (path === entry.absolute ||
+            path.indexOf(entry.absolute + '/') === 0 ||
+            path.indexOf(entry.absolute + '\\') === 0)
+          this.dirCache.delete(path)
+      }
+    }
+
     this[MKDIR](path.dirname(entry.absolute), this.dmode, er => {
       if (er) {
         done()
@@ -529,6 +542,15 @@ class Unpack extends Parser {
 
 class UnpackSync extends Unpack {
   [CHECKFS] (entry) {
+    if (entry.type !== 'Directory') {
+      for (const path of this.dirCache.keys()) {
+        if (path === entry.absolute ||
+            path.indexOf(entry.absolute + '/') === 0 ||
+            path.indexOf(entry.absolute + '\\') === 0)
+          this.dirCache.delete(path)
+      }
+    }
+
     const er = this[MKDIR](path.dirname(entry.absolute), this.dmode, neverCalled)
     if (er)
       return this[ONERROR](er, entry)
