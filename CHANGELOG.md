@@ -1,3 +1,17 @@
+## V7.20.2 (2021-07-27)
+
+### DEPENDENCIES
+
+* [`f5aab1f88`](https://github.com/npm/cli/commit/f5aab1f8878b4e9a6f4d47dddc449e18a190e201)
+  `tar@6.1.1`
+  * fix: strip absolute paths more comprehensively
+* [`ce8fb0f69`](https://github.com/npm/cli/commit/ce8fb0f69ae1b3fdd8834cf073d3d30c2bfc7bc6)
+  `tar@6.1.2`
+  * fix: Remove paths from dirCache when no longer dirs
+* [`ced85087a`](https://github.com/npm/cli/commit/ced85087ac5fce5984ae28af910357a9a94434d7)
+  `gauge@3.0.1`
+  * add missing dependency to package.json
+
 ## v7.20.1 (2021-07-22)
 
 ### BUG FIXES
