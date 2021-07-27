@@ -803,8 +803,17 @@ Allow installing "staged" published packages, as defined by [npm RFC PR
 
 This is experimental, and not implemented by the npm public registry.
 
+<<<<<<< HEAD
 <!-- automatically generated, do not edit manually -->
 <!-- see lib/utils/config/definitions.js -->
+=======
+#### `include-workspace-root`
+
+* Default: false
+* Type: Boolean
+
+Include the workspace root when workspaces are enabled for a command.
+>>>>>>> 4ef9bb10c (test coverage 100%)
 
 #### `init-author-email`
 
@@ -1744,8 +1753,8 @@ Valid values for the `workspace` config are either:
 
 * Workspace names
 * Path to a workspace directory
-* Path to a parent workspace directory (will result to selecting all of the
-  nested workspaces)
+* Path to a parent workspace directory (will result in selecting all
+  workspaces within that folder)
 
 When set for the `npm init` command, this may be set to the folder of a
 workspace which does not yet exist, to create the folder and set it up as a
@@ -1758,11 +1767,14 @@ This value is not exported to the environment for child processes.
 
 #### `workspaces`
 
-* Default: false
-* Type: Boolean
+* Default: null
+* Type: null or Boolean
 
 Enable running a command in the context of **all** the configured
 workspaces.
+
+Explicitly setting this to false will cause commands like `install` to
+ignore workspaces altogether.
 
 This value is not exported to the environment for child processes.
 

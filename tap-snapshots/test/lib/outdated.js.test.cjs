@@ -177,8 +177,6 @@ exports[`test/lib/outdated.js TAP workspaces > should display json results filte
 
 exports[`test/lib/outdated.js TAP workspaces > should display missing deps when filtering by ws 1`] = `
 
-Package  Current  Wanted  Latest  Location  Depended by
-theta    MISSING   1.0.1   1.0.1  -         c@1.0.0
 `
 
 exports[`test/lib/outdated.js TAP workspaces > should display nested deps when filtering by ws and using --all 1`] = `
@@ -190,6 +188,12 @@ chai       1.0.0   1.0.1   1.0.1  node_modules/chai  foo
 
 exports[`test/lib/outdated.js TAP workspaces > should display no results if ws has no deps to display 1`] = `
 
+`
+
+exports[`test/lib/outdated.js TAP workspaces > should display only root outdated when ws disabled 1`] = `
+
+Package  Current  Wanted  Latest  Location          Depended by
+dog        1.0.1   1.0.1   2.0.0  node_modules/dog  tap-testdir-outdated-workspaces
 `
 
 exports[`test/lib/outdated.js TAP workspaces > should display parseable results filtered by ws 1`] = `
