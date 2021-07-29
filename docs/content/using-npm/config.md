@@ -1080,6 +1080,20 @@ you want to move it to be a non-optional production dependency.
 This is the default behavior if `--save` is true, and neither `--save-dev`
 or `--save-optional` are true.
 
+#### `save-workspace-root`
+
+* Default: true
+* Type: Boolean
+
+When installing a workspace project, npm will place a `.npmrc` file in each
+workspace folder by default specifying the workspace root, so that a command
+from within that folder will behave the same as if it was run from the root
+project with a `--workspace` option.
+
+Set `save-workspace-root` to false to disable this behavior.
+
+This value is not exported to the environment for child processes.
+
 #### `scope`
 
 * Default: the scope of the current project, if any, or ""
@@ -1374,6 +1388,31 @@ Valid values for the `workspace` config are either:
 When set for the `npm init` command, this may be set to the folder of a
 workspace which does not yet exist, to create the folder and set it up as a
 brand new workspace within the project.
+
+This value is not exported to the environment for child processes.
+
+#### `workspace-root`
+
+* Default: null
+* Type: Path
+
+When operating within a workspace folder as the current working directory,
+this config value may be set to tell npm to use the specified folder as the
+project root.
+
+If set in a config file at `./.npmrc` (ie, a project-level config file), no
+other options may be set in that file, as the workspace root's project
+config will supercede it.
+
+When installing a workspace project, npm will place a `.npmrc` file in each
+workspace folder by default specifying the workspace root, so that a command
+from within that folder will behave the same as if it was run from the root
+project with a `--workspace` option.
+
+Note: when set as a relative path within a config file, this option is
+resolved relative to the directory holding the config file. This differs
+from most path-type configs, which are always resolved relative to the
+current working directory.
 
 This value is not exported to the environment for child processes.
 
