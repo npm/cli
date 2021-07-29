@@ -1,4 +1,26 @@
-## V7.20.2 (2021-07-27)
+## v7.20.3 (2021-07-29)
+
+### BUG FIXES
+
+* [`66dc5f94d`](https://github.com/npm/cli/commit/66dc5f94dfb5bc99c715e075cde1ab9c1ec84a83)
+  [#3588](https://github.com/npm/cli/issues/3588)
+  update eresolve explanations for new arborist data provided
+* [`99575acab`](https://github.com/npm/cli/commit/99575acab5c93c03c59cb918c7916647b2c0be51)
+  [#3591](https://github.com/npm/cli/issues/3591)
+  fix(node_modules): remove duplicated file
+  ([@wraithgar](https://github.com/wraithgar))
+
+### DEPENDENCIES
+
+* [`97cb5ec31`](https://github.com/npm/cli/commit/97cb5ec312e151527ba2aab77ed0307917e1d845)
+  `@npmcli/arborist@2.8.0`:
+  * Refactor ideal tree building to handle more complicated
+    peerDependencies use cases.
+  * Do not modify ideal tree while checking if a peerSet can be placed.
+* [`7db1a0a26`](https://github.com/npm/cli/commit/7db1a0a264cf67d2a2a3cdc71bbf09b36dc45075)
+  chore(deps): `mime-types@1.49.0` `mime-db@1.49.0`
+
+## v7.20.2 (2021-07-27)
 
 ### DEPENDENCIES
 
