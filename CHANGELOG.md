@@ -1,3 +1,29 @@
+## v7.20.4 (2021-08-05)
+
+### BUG FIXES
+
+* [`6a8086e25`](https://github.com/npm/cli/commit/6a8086e258aa209b877e182db4b75f11de5b291d)
+  [#3463](https://github.com/npm/cli/issues/3463)
+  fix(tests): move more tests to use real npm
+  ([@wraithgar](https://github.com/wraithgar))
+
+### DEPENDENCIES
+
+* [`15fae4941`](https://github.com/npm/cli/commit/15fae4941475f4398e47d9cc4eb6a73683e15aac)
+  `tar@6.1.6`:
+  * fix: properly handle top-level files when using strip
+  * Avoid an unlikely but theoretically possible redos
+  * WriteEntry backpressure
+  * fix(unpack): always resume parsing after an entry error
+  * fix(unpack): fix hang on large file on open() fail
+  * fix: properly prefix hard links
+* [`745326de0`](https://github.com/npm/cli/commit/745326de0fae9f27f1deaf7729777aae48ac29fc)
+  `libnpmexec@2.0.1`:
+  * Clear progress bar which overlays confirm prompt
+* [`e82bcd4e8`](https://github.com/npm/cli/commit/e82bcd4e8355d083f8f3eedb6251a5f3053d6dfd)
+  `graceful-fs@4.2.7`:
+  * fix: start retrying immediately, stop after 10 attempts
+
 ## v7.20.3 (2021-07-29)
 
 ### BUG FIXES
