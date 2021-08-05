@@ -1,3 +1,12 @@
+## v7.20.5 (2021-08-05)
+
+### DEPENDENCIES
+
+* [`44377738e`](https://github.com/npm/cli/commit/44377738ef6b53607a7b17162aec984d5dcf7c58)
+  `graceful-fs@4.2.8`
+  * fix: start retrying immediately, stop after 60 seconds
+
+
 ## v7.20.4 (2021-08-05)
 
 ### BUG FIXES
