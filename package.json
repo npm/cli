@@ -70,7 +70,7 @@
     "cli-table3": "^0.6.0",
     "columnify": "~1.5.4",
     "glob": "^7.1.7",
-    "graceful-fs": "^4.2.6",
+    "graceful-fs": "^4.2.7",
     "hosted-git-info": "^4.0.2",
     "ini": "^2.0.0",
     "init-package-json": "^2.0.3",
