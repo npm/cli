@@ -64,7 +64,7 @@
     "archy": "~1.0.0",
     "byte-size": "^7.0.1",
     "cacache": "^15.2.0",
-    "chalk": "^4.1.0",
+    "chalk": "^4.1.2",
     "chownr": "^2.0.0",
     "cli-columns": "^3.1.2",
     "cli-table3": "^0.6.0",
