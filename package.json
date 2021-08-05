@@ -114,7 +114,7 @@
     "rimraf": "^3.0.2",
     "semver": "^7.3.5",
     "ssri": "^8.0.1",
-    "tar": "^6.1.2",
+    "tar": "^6.1.6",
     "text-table": "~0.2.0",
     "tiny-relative-date": "^1.3.0",
     "treeverse": "^1.0.4",
