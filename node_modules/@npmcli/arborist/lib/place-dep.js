@@ -268,7 +268,7 @@ class PlaceDep {
       integrity: dep.integrity,
       legacyPeerDeps: this.legacyPeerDeps,
       error: dep.errors[0],
-      ...(dep.isLink ? { target: dep.target, realpath: dep.target.path } : {}),
+      ...(dep.isLink ? { target: dep.target, realpath: dep.realpath } : {}),
     })
 
     this.oldDep = target.children.get(this.name)
