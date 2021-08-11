@@ -8,6 +8,7 @@
 
 const assert = require('assert')
 const normPath = require('./normalize-windows-path.js')
+const { join } = require('path')
 
 module.exports = () => {
   // path => [function or Set]
@@ -19,9 +20,8 @@ module.exports = () => {
   const reservations = new Map()
 
   // return a set of parent dirs for a given path
-  const { join } = require('path')
   const getDirs = path =>
-    normPath(join(path)).split('/').slice(0, -1).reduce((set, path) =>
+    path.split('/').slice(0, -1).reduce((set, path) =>
       set.length ? set.concat(normPath(join(set[set.length - 1], path)))
       : [path], [])
 
@@ -99,6 +99,7 @@ module.exports = () => {
   }
 
   const reserve = (paths, fn) => {
+    paths = paths.map(p => normPath(join(p)).toLowerCase())
     const dirs = new Set(
       paths.map(path => getDirs(path)).reduce((a, b) => a.concat(b))
     )

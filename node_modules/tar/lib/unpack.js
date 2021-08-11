@@ -220,6 +220,8 @@ class Unpack extends Parser {
         const linkparts = normPath(entry.linkpath).split('/')
         if (linkparts.length >= this.strip)
           entry.linkpath = linkparts.slice(this.strip).join('/')
+        else
+          return false
       }
     }
 
