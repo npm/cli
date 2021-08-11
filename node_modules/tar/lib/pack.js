@@ -54,6 +54,7 @@ const ONDRAIN = Symbol('ondrain')
 const fs = require('fs')
 const path = require('path')
 const warner = require('./warn-mixin.js')
+const normPath = require('./normalize-windows-path.js')
 
 const Pack = warner(class Pack extends MiniPass {
   constructor (opt) {
@@ -66,7 +67,7 @@ const Pack = warner(class Pack extends MiniPass {
     this.preservePaths = !!opt.preservePaths
     this.strict = !!opt.strict
     this.noPax = !!opt.noPax
-    this.prefix = (opt.prefix || '').replace(/(\\|\/)+$/, '')
+    this.prefix = normPath(opt.prefix || '')
     this.linkCache = opt.linkCache || new Map()
     this.statCache = opt.statCache || new Map()
     this.readdirCache = opt.readdirCache || new Map()
@@ -133,7 +134,7 @@ const Pack = warner(class Pack extends MiniPass {
   }
 
   [ADDTARENTRY] (p) {
-    const absolute = path.resolve(this.cwd, p.path)
+    const absolute = normPath(path.resolve(this.cwd, p.path))
     // in this case, we don't have to wait for the stat
     if (!this.filter(p.path, p))
       p.resume()
@@ -149,7 +150,7 @@ const Pack = warner(class Pack extends MiniPass {
   }
 
   [ADDFSENTRY] (p) {
-    const absolute = path.resolve(this.cwd, p)
+    const absolute = normPath(path.resolve(this.cwd, p))
     this[QUEUE].push(new PackJob(p, absolute))
     this[PROCESS]()
   }

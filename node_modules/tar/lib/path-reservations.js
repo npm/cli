@@ -7,6 +7,7 @@
 // while still allowing maximal safe parallelization.
 
 const assert = require('assert')
+const normPath = require('./normalize-windows-path.js')
 
 module.exports = () => {
   // path => [function or Set]
@@ -20,8 +21,9 @@ module.exports = () => {
   // return a set of parent dirs for a given path
   const { join } = require('path')
   const getDirs = path =>
-    join(path).split(/[\\/]/).slice(0, -1).reduce((set, path) =>
-      set.length ? set.concat(join(set[set.length - 1], path)) : [path], [])
+    normPath(join(path)).split('/').slice(0, -1).reduce((set, path) =>
+      set.length ? set.concat(normPath(join(set[set.length - 1], path)))
+      : [path], [])
 
   // functions currently running
   const running = new Set()
