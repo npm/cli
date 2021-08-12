@@ -1,3 +1,40 @@
+## v7.20.6 (2021-08-12)
+
+### DEPENDENCIES
+
+* [`5bebf280f`](https://github.com/npm/cli/commit/5bebf280f228e818524f6989caab1cfba1ffaf90)
+  `tar@6.1.8`
+  * fix: reserve paths case-insensitively
+* [`5d89de44d`](https://github.com/npm/cli/commit/5d89de44daa636dc151eaefcafabb357540d35ce)
+  `tar@6.1.7`:
+  * fix: normalize paths on Windows systems
+* [`a1bdbea97`](https://github.com/npm/cli/commit/a1bdbea974ebfc6694b4c8ad5da86215c2924dde)
+  [#3569](https://github.com/npm/cli/issues/3569)
+  * remove byte-size
+  ([@wraithgar](https://github.com/wraithgar))
+* [`61782fa85`](https://github.com/npm/cli/commit/61782fa858c278455ce144f975c6b0e3ea2d9944)
+  `@npmcli/map-workspaces@1.0.4`:
+  * fix: better error message for duplicate workspace names
+* [`b88f770fa`](https://github.com/npm/cli/commit/b88f770faa2651ca0833e1c9eb361e9e07e0bbc3)
+  `@npmcli/arborist@2.8.1`:
+  * [#3632] Fix "cannot read property path of null" error in 'npm dedupe'
+  * fix(shrinkwrap): always set name on the root node
+
+### DOCUMENTATION
+
+* [`001f2c1b7`](https://github.com/npm/cli/commit/001f2c1b7e9474049a45709f0e80ee3c474a4ba9)
+  [#3621](https://github.com/npm/cli/issues/3621)
+  fix(docs): do not include certain files
+  ([@AkiJoey](https://github.com/AkiJoey))
+* [`d1812f1a6`](https://github.com/npm/cli/commit/d1812f1a627d6a4d4cb6d07d7735d2d2cc2cf264)
+  [#3630](https://github.com/npm/cli/issues/3630)
+  fix(docs): update npm-publish access flag info
+  ([@austincho](https://github.com/austincho))
+* [`d5a099c7b`](https://github.com/npm/cli/commit/d5a099c7bf62977a5a5d8242c61f323a88e27c73)
+  [#3615](https://github.com/npm/cli/issues/3615)
+  fix(readme): add nvm-windows to installers links
+  ([@Yash-Singh1](https://github.com/Yash-Singh1))
+
 ## v7.20.5 (2021-08-05)
 
 ### DEPENDENCIES
