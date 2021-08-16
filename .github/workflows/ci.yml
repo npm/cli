@@ -20,7 +20,24 @@ jobs:
         run: node . run posttest
         env:
           DEPLOY_VERSION: testing
-  
+
+  check_docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 14.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+      - name: Install dependencies
+        run: |
+          node . install --ignore-scripts --no-audit
+      - name: Rebuild the docs
+        run: make freshdocs
+      - name: Git should not be dirty
+        run: node scripts/git-dirty.js
+
+
   licenses:
     runs-on: ubuntu-latest
     steps:
