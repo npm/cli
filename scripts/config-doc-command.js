@@ -9,7 +9,10 @@ const commandFile = process.argv[3]
 const { params } = require(resolve(commandFile))
 
 const describeAll = () =>
-  params.map(name => definitions[name].describe()).join('\n\n')
+  params.map(name => definitions[name].describe()).join(
+    '\n\n<!-- automatically generated, do not edit manually -->\n' +
+      '<!-- see lib/utils/config/definitions.js -->\n\n'
+  )
 
 const addBetweenTags = (doc, startTag, endTag, body) => {
   const startSplit = doc.split(startTag)
@@ -23,8 +26,11 @@ const addBetweenTags = (doc, startTag, endTag, body) => {
   return [
     startSplit[0],
     startTag,
-    '\n<!-- automatically generated, do not edit manually -->\n',
+    '\n<!-- automatically generated, do not edit manually -->\n' +
+      '<!-- see lib/utils/config/definitions.js -->\n',
     body,
+    '\n\n<!-- automatically generated, do not edit manually -->\n' +
+      '<!-- see lib/utils/config/definitions.js -->',
     '\n\n',
     endTag,
     endSplit[1],
