@@ -58,7 +58,7 @@
     "@npmcli/config": "^2.2.0",
     "@npmcli/map-workspaces": "^1.0.4",
     "@npmcli/package-json": "^1.0.1",
-    "@npmcli/run-script": "^1.8.5",
+    "@npmcli/run-script": "^1.8.6",
     "abbrev": "~1.1.1",
     "ansicolors": "~0.3.2",
     "ansistyles": "~0.1.3",
