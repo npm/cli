@@ -30,7 +30,12 @@ all: docs
 
 docs: mandocs htmldocs
 
+# don't regenerate the snapshot if we're generating
+# snapshots, since presumably we just did that.
 mandocs: dev-deps $(mandocs)
+	@ ! [ $${npm_lifecycle_event} = "snap" ] && \
+	  ! [ $${npm_lifecycle_event} = "postsnap" ] && \
+	  TAP_SNAPSHOT=1 node test/lib/utils/config/definitions.js || true
 
 $(version_mandocs): package.json
 
