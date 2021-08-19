@@ -1,3 +1,69 @@
+## v7.21.0 (2021-08-19)
+
+### FEATURES
+
+* [`ff34d6cd6`](https://github.com/npm/cli/commit/ff34d6cd6f2077962cba1ef9c893a958ac7174f8)
+  [#3592](https://github.com/npm/cli/issues/3592)
+  feat(cache): initial implementation of ls and rm
+  ([@fritzy](https://github.com/fritzy))
+
+### BUG FIXES
+
+* [`32e88c943`](https://github.com/npm/cli/commit/32e88c94387bda6b25f66019793efcda8f01ef6e)
+  [#3640](https://github.com/npm/cli/issues/3640)
+  fix(did-you-mean): switch levenshtein libraries
+  ([@wraithgar](https://github.com/wraithgar))
+* [`487731cd5`](https://github.com/npm/cli/commit/487731cd56a22272c6ff72ef2fa7822368bf63e3)
+  [#3658](https://github.com/npm/cli/issues/3658)
+  fix(logging): sanitize logged argv
+  ([@wraithgar](https://github.com/wraithgar))
+* [`68a19bb02`](https://github.com/npm/cli/commit/68a19bb02aa0d7a566c8e2245f1e524b915faf09)
+  [#3661](https://github.com/npm/cli/issues/3661)
+  fix(error-message): look for er.path not er.file
+  ([@wraithgar](https://github.com/wraithgar))
+
+### DEPENDENCIES
+
+* [`df57f0d53`](https://github.com/npm/cli/commit/df57f0d532d406b3b1409454ea5f2255fcd08248)
+  `@npmcli/run-script@1.8.6`
+* [`8183976cf`](https://github.com/npm/cli/commit/8183976cfa53bab6e9116ec5de97b04225c5d09b)
+  `normalize-package-data@3.0.3`:
+  * fix: account for "licence" as spelling variant
+* [`f07772401`](https://github.com/npm/cli/commit/f07772401c3712d5f9b0dfeef88e1943229cfa79)
+  `init-package-json@2.0.4`
+* [`991a3bd39`](https://github.com/npm/cli/commit/991a3bd39f0abf8614373f267419c7b8f6e279ac)
+  `read-package-json@4.0.0`
+* [`e9e5ee560`](https://github.com/npm/cli/commit/e9e5ee560e2baf694843df852d027fb9f2dbcb06)
+  `@npmcli/arborist@2.8.2`:
+  * fix: treat top-level global packages as "top" nodes
+  * fix: load global symlinks implicitly as file: deps
+  * fix(reify): debug crash when extracting into symlink
+  * fix: node_modules must be a directory
+  * fix: make Node.children() a case-insensitive Map
+  * fix(reify): verify existing deps in nm are dirs
+* [`b6f40b5f8`](https://github.com/npm/cli/commit/b6f40b5f85094387f2fa8d42b6a624644b8ddcf1)
+  `tar@6.1.10`:
+  * fix: prune dirCache properly for unicode, windows
+  * fix: reserve paths properly for unicode, windows
+  * fix: prevent path escape using drive-relative paths
+  * fix: drop dirCache for symlink on all platforms
+* [`218cacadc`](https://github.com/npm/cli/commit/218cacadcf35879ce178813c699258e7ffe91fe9)
+  `is-core-module@2.6.0`
+* [`7ac621cd1`](https://github.com/npm/cli/commit/7ac621cd14f2ffbf5c15c3258f537fdfddc21ac6)
+  `smart-buffer@4.2.0`
+* [`94f92de13`](https://github.com/npm/cli/commit/94f92de138432c900b195b71949f4933e872f26a)
+  `make-fetch-happen@9.0.5`
+* [`71cdfd898`](https://github.com/npm/cli/commit/71cdfd8983cd0c61f39bdf91f87d40aad3b081c2)
+  `spdx-license-ids@3.0.10`:
+  * update license list to v3.14
+
+### DOCUMENTATION
+
+* [`ff6626ab6`](https://github.com/npm/cli/commit/ff6626ab6ca9b4e189a3bc56a762104927dbeedb)
+  [#3630](https://github.com/npm/cli/issues/3630)
+  fix(docs): update npm-publish access flag info
+  ([@austincho](https://github.com/austincho))
+
 ## v7.20.6 (2021-08-12)
 
 ### DEPENDENCIES
