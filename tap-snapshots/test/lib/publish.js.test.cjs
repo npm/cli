@@ -15,7 +15,7 @@ exports[`test/lib/publish.js TAP private workspaces colorless > should publish a
 Array [
   Object {
     "_id": "@npmcli/b@1.0.0",
-    "gitHead": "718c3e56033b930c016b1f2022597e8af4af0f79",
+    "gitHead": "1e8fd794b3375b083ab63224907213411099fa0e",
     "name": "@npmcli/b",
     "readme": "ERROR: No README data found!",
     "version": "1.0.0",
@@ -33,7 +33,7 @@ exports[`test/lib/publish.js TAP private workspaces with color > should publish 
 Array [
   Object {
     "_id": "@npmcli/b@1.0.0",
-    "gitHead": "718c3e56033b930c016b1f2022597e8af4af0f79",
+    "gitHead": "1e8fd794b3375b083ab63224907213411099fa0e",
     "name": "@npmcli/b",
     "readme": "ERROR: No README data found!",
     "version": "1.0.0",
@@ -72,7 +72,7 @@ exports[`test/lib/publish.js TAP workspaces all workspaces > should publish all 
 Array [
   Object {
     "_id": "workspace-a@1.2.3-a",
-    "gitHead": "718c3e56033b930c016b1f2022597e8af4af0f79",
+    "gitHead": "1e8fd794b3375b083ab63224907213411099fa0e",
     "name": "workspace-a",
     "readme": "ERROR: No README data found!",
     "repository": Object {
@@ -86,7 +86,7 @@ Array [
     "bugs": Object {
       "url": "https://github.com/npm/workspace-b/issues",
     },
-    "gitHead": "718c3e56033b930c016b1f2022597e8af4af0f79",
+    "gitHead": "1e8fd794b3375b083ab63224907213411099fa0e",
     "homepage": "https://github.com/npm/workspace-b#readme",
     "name": "workspace-b",
     "readme": "ERROR: No README data found!",
@@ -98,7 +98,7 @@ Array [
   },
   Object {
     "_id": "workspace-n@1.2.3-n",
-    "gitHead": "718c3e56033b930c016b1f2022597e8af4af0f79",
+    "gitHead": "1e8fd794b3375b083ab63224907213411099fa0e",
     "name": "workspace-n",
     "readme": "ERROR: No README data found!",
     "version": "1.2.3-n",
@@ -128,7 +128,7 @@ exports[`test/lib/publish.js TAP workspaces json > should publish all workspaces
 Array [
   Object {
     "_id": "workspace-a@1.2.3-a",
-    "gitHead": "718c3e56033b930c016b1f2022597e8af4af0f79",
+    "gitHead": "1e8fd794b3375b083ab63224907213411099fa0e",
     "name": "workspace-a",
     "readme": "ERROR: No README data found!",
     "repository": Object {
@@ -142,7 +142,7 @@ Array [
     "bugs": Object {
       "url": "https://github.com/npm/workspace-b/issues",
     },
-    "gitHead": "718c3e56033b930c016b1f2022597e8af4af0f79",
+    "gitHead": "1e8fd794b3375b083ab63224907213411099fa0e",
     "homepage": "https://github.com/npm/workspace-b#readme",
     "name": "workspace-b",
     "readme": "ERROR: No README data found!",
@@ -154,7 +154,7 @@ Array [
   },
   Object {
     "_id": "workspace-n@1.2.3-n",
-    "gitHead": "718c3e56033b930c016b1f2022597e8af4af0f79",
+    "gitHead": "1e8fd794b3375b083ab63224907213411099fa0e",
     "name": "workspace-n",
     "readme": "ERROR: No README data found!",
     "version": "1.2.3-n",
@@ -172,7 +172,7 @@ exports[`test/lib/publish.js TAP workspaces one workspace > should publish given
 Array [
   Object {
     "_id": "workspace-a@1.2.3-a",
-    "gitHead": "718c3e56033b930c016b1f2022597e8af4af0f79",
+    "gitHead": "1e8fd794b3375b083ab63224907213411099fa0e",
     "name": "workspace-a",
     "readme": "ERROR: No README data found!",
     "repository": Object {
