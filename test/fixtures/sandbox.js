@@ -136,21 +136,6 @@ class Sandbox extends EventEmitter {
   cleanSnapshot (snapshot) {
     let clean = normalize(snapshot)
 
-    if (this[_npm]) {
-      // replace default config values with placeholders
-      for (const name of redactedDefaults) {
-        let value = this[_npm].config.defaults[name]
-        clean = clean.split(value).join(`{${name.toUpperCase()}}`)
-      }
-
-      // replace vague default config values that are present within quotes
-      // with placeholders
-      for (const name of vagueRedactedDefaults) {
-        const value = this[_npm].config.defaults[name]
-        clean = clean.split(`"${value}"`).join(`"{${name.toUpperCase()}}"`)
-      }
-    }
-
     const viewer = _process.platform === 'win32'
       ? /"browser"([^:]+|$)/g
       : /"man"([^:]+|$)/g
@@ -179,6 +164,26 @@ class Sandbox extends EventEmitter {
       .split(normalize(homedir())).join('{REALHOME}')
       .split(this[_proxy].platform).join('{PLATFORM}')
       .split(this[_proxy].arch).join('{ARCH}')
+
+    // We do the defaults after everything else so that they don't cause the
+    // other cleaners to miss values we would have clobbered here.  For
+    // instance if execPath is /home/user/.nvm/versions/node/1.0.0/bin/node,
+    // and we replaced the node version first, the real execPath we're trying
+    // to replace would no longer be represented, and be missed.
+    if (this[_npm]) {
+      // replace default config values with placeholders
+      for (const name of redactedDefaults) {
+        let value = this[_npm].config.defaults[name]
+        clean = clean.split(value).join(`{${name.toUpperCase()}}`)
+      }
+
+      // replace vague default config values that are present within quotes
+      // with placeholders
+      for (const name of vagueRedactedDefaults) {
+        const value = this[_npm].config.defaults[name]
+        clean = clean.split(`"${value}"`).join(`"{${name.toUpperCase()}}"`)
+      }
+    }
 
     return clean
   }
