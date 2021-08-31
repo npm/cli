@@ -55,7 +55,7 @@
   "dependencies": {
     "@npmcli/arborist": "^2.8.2",
     "@npmcli/ci-detect": "^1.2.0",
-    "@npmcli/config": "^2.2.0",
+    "@npmcli/config": "^2.3.0",
     "@npmcli/map-workspaces": "^1.0.4",
     "@npmcli/package-json": "^1.0.1",
     "@npmcli/run-script": "^1.8.6",
