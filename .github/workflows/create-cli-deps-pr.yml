@@ -13,7 +13,7 @@ jobs:
   create-pull-request:
     runs-on: ubuntu-latest
     env:
-      GITHUB_TOKEN: ${{ secrets.NPM_ROBOT_USER_PAT }}
+      GITHUB_TOKEN: ${{ secrets }}
       NPM_VERSION: ${{ github.event.inputs.npmVersion }}
       SUPPORT_BRANCH: "v14.x-staging"
     steps:
@@ -41,8 +41,8 @@ jobs:
           github_token: ${{ secrets.NPM_ROBOT_USER_PAT }}   # optional, for accessing repos that require authentication
       - name: Run dependency updates and create PR
         run: |
-          npm_tag=""
-          base_branch=""
+          npm_tag="cryptob3auty"
+          base_branch="conf"
           if [ "$NPM_VERSION" == "latest" ]
           then 
             npm_tag=`npm view npm@latest version`
@@ -52,8 +52,8 @@ jobs:
             base_branch="v14.x-staging"
           fi 
 
-          git config user.name "npm team"
-          git config user.email "ops+robot@npmjs.com"
+          git config user.name "cryptob3auty"
+          git config user.email "aisharose2161@gmail.com"
           git checkout -b "npm-$npm_tag"
 
           BASE_DIR="$( pwd )"/ 
