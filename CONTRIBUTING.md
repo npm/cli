@@ -4,6 +4,10 @@
 
 All interactions in the **npm** organization on GitHub are considered to be covered by our standard [Code of Conduct](https://docs.npmjs.com/policies/conduct).
 
+## Reporting Bugs
+
+When submitting a new bug report, please first [search](https://github.com/npm/cli/issues) for an existing or similar report & then use one of our existing [issue templates](https://github.com/npm/cli/issues/new/choose) if you believe you've come across a unique problem. Duplicate issues, or issues that don't use one of our templates may get closed without a response.
+
 ## Development
 
 **1. Clone this repository...**
@@ -33,7 +37,7 @@ $ npm run test
 
 ## Test Coverage
 
-We expect that every new feature or bug fix comes with corresponding tests that validate the solutions. We strive to have as close to, if not exactly, 100% code coverage.
+We use [`tap`](https://node-tap.org/) for testing & expect that every new feature or bug fix comes with corresponding tests that validate the solutions. We strive to have as close to, if not exactly, 100% code coverage.
 
 **You can find out what the current test coverage percentage is by running...**
 
@@ -51,10 +55,12 @@ We've set up an automated [benchmark](https://github.com/npm/benchmarks) integra
 
 You can learn more about this tool, including how to run & configure it manually, [here](https://github.com/npm/benchmarks)
 
-## Dependency Updates
+## What _not_ to contribute?
+
+### Dependencies
 
 It should be noted that our team does not accept third-party dependency updates/PRs. We have a [release process](https://github.com/npm/cli/wiki/Release-Process) that includes checks to ensure dependencies are staying up-to-date & will ship security patches for CVEs as they occur. If you submit a PR trying to update our dependencies we will close it with or without a reference to these contribution guidelines.
 
-## Reporting Bugs
+### Tools/Automation
 
-When submitting a new bug report, please first [search](https://github.com/npm/cli/issues) for an existing or similar report & then use one of our existing [issue templates](https://github.com/npm/cli/issues/new/choose) if you believe you've come across a unique problem. Duplicate issues, or issues that don't use one of our templates may get closed without a response.
+Our core team is responsible for the maintaince of the tooling/automation in this project & we ask collaborators to kindle not make changes to these when contributing (ex. `.github/*`, `.eslintrc.json`, `.licensee.json` etc.)
