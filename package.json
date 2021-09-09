@@ -168,6 +168,7 @@
     "node-gyp",
     "nopt",
     "npm-audit-report",
+    "npm-install-checks",
     "npm-package-arg",
     "npm-pick-manifest",
     "npm-profile",
