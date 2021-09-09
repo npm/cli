@@ -231,5 +231,20 @@
   "license": "Artistic-2.0",
   "engines": {
     "node": ">=10"
+  },
+  "audit": {  
+    "licenses": {
+      "identifiers": [
+        "MIT",
+        "ISC",
+        "CC0-1.0",
+        "Artistic-2.0",
+        "BSD-3-Clause",
+        "Apache-2.0",
+        "BSD-2-Clause",
+        "CC-BY-3.0",
+        "CC-BY-4.0"
+      ]
+    }
   }
 }
