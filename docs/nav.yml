@@ -117,6 +117,9 @@
   - title: npm ping
     url: /commands/npm-ping
     description: Ping npm registry
+  - title: npm pkg
+    url: /commands/npm-pkg
+    description: Manages your package.json
   - title: npm prefix
     url: /commands/npm-prefix
     description: Display prefix

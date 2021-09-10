@@ -30,7 +30,12 @@ all: docs
 
 docs: mandocs htmldocs
 
+# don't regenerate the snapshot if we're generating
+# snapshots, since presumably we just did that.
 mandocs: dev-deps $(mandocs)
+	@ ! [ $${npm_lifecycle_event} = "snap" ] && \
+	  ! [ $${npm_lifecycle_event} = "postsnap" ] && \
+	  TAP_SNAPSHOT=1 node test/lib/utils/config/definitions.js || true
 
 $(version_mandocs): package.json
 
@@ -76,6 +81,12 @@ docs/content/using-npm/config.md: scripts/config-doc.js lib/utils/config/*.js
 docs/content/commands/npm-%.md: lib/%.js scripts/config-doc-command.js lib/utils/config/*.js
 	node scripts/config-doc-command.js $@ $<
 
+freshdocs:
+	touch lib/utils/config/definitions.js
+	touch scripts/config-doc-command.js
+	touch scripts/config-doc.js
+	make docs
+
 test: dev-deps
 	node bin/npm-cli.js test
 
@@ -109,4 +120,4 @@ publish: gitclean ls-ok link test smoke-tests docs prune
 release: gitclean ls-ok docs prune
 	@bash scripts/release.sh
 
-.PHONY: all latest install dev link docs clean uninstall test man docs-clean docsclean release ls-ok dev-deps prune
+.PHONY: all latest install dev link docs clean uninstall test man docs-clean docsclean release ls-ok dev-deps prune freshdocs

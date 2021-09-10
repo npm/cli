@@ -70,4 +70,3 @@ TemplateItem.prototype.getMinLength = function () {
   if (this.minLength == null) return null
   return this.minLength + this.padLeft + this.padRight
 }
-

@@ -36,8 +36,8 @@ Workspaces are usually defined via the `workspaces` property of the
 ```
 
 Given the above `package.json` example living at a current working
-directory `.` that contains a folder named `workspace-a` that disposes
-of a `package.json` inside it, defining a nodejs package, e.g:
+directory `.` that contains a folder named `workspace-a` that itself contains
+a `package.json` inside it, defining a Node.js package, e.g:
 
 ```
 .
@@ -175,6 +175,16 @@ npm run test --workspaces
 ```
 
 Will run the `test` script in both `./packages/a` and `./packages/b`.
+
+### Ignoring missing scripts
+
+It is not required for all of the workspaces to implement scripts run with the `npm run` command.
+
+By running the command with the `--if-present` flag, npm will ignore workspaces missing target script.
+
+```
+npm run test --workspaces --if-present
+```
 
 ### See also
 

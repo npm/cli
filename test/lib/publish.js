@@ -1,5 +1,5 @@
 const t = require('tap')
-const mockNpm = require('../fixtures/mock-npm')
+const { fake: mockNpm } = require('../fixtures/mock-npm')
 const fs = require('fs')
 
 // The way we set loglevel is kind of convoluted, and there is no way to affect
@@ -9,6 +9,14 @@ const fs = require('fs')
 const log = require('npmlog')
 log.level = 'silent'
 
+const cleanGithead = (result) => {
+  return result.map((r) => {
+    if (r.gitHead)
+      r.gitHead = '{GITHEAD}'
+
+    return r
+  })
+}
 const {definitions} = require('../../lib/utils/config')
 const defaults = Object.entries(definitions).reduce((defaults, [key, def]) => {
   defaults[key] = def.default
@@ -581,7 +589,7 @@ t.test('workspaces', (t) => {
     log.level = 'info'
     publish.execWorkspaces([], [], (err) => {
       t.notOk(err)
-      t.matchSnapshot(publishes, 'should publish all workspaces')
+      t.matchSnapshot(cleanGithead(publishes), 'should publish all workspaces')
       t.matchSnapshot(outputs, 'should output all publishes')
       t.end()
     })
@@ -591,7 +599,7 @@ t.test('workspaces', (t) => {
     log.level = 'info'
     publish.execWorkspaces([], ['workspace-a'], (err) => {
       t.notOk(err)
-      t.matchSnapshot(publishes, 'should publish given workspace')
+      t.matchSnapshot(cleanGithead(publishes), 'should publish given workspace')
       t.matchSnapshot(outputs, 'should output one publish')
       t.end()
     })
@@ -610,7 +618,7 @@ t.test('workspaces', (t) => {
     npm.config.set('json', true)
     publish.execWorkspaces([], [], (err) => {
       t.notOk(err)
-      t.matchSnapshot(publishes, 'should publish all workspaces')
+      t.matchSnapshot(cleanGithead(publishes), 'should publish all workspaces')
       t.matchSnapshot(outputs, 'should output all publishes as json')
       t.end()
     })
@@ -699,7 +707,7 @@ t.test('private workspaces', (t) => {
     npm.color = true
     publish.execWorkspaces([], [], (err) => {
       t.notOk(err)
-      t.matchSnapshot(publishes, 'should publish all non-private workspaces')
+      t.matchSnapshot(cleanGithead(publishes), 'should publish all non-private workspaces')
       t.matchSnapshot(outputs, 'should output all publishes')
       npm.color = false
       t.end()
@@ -726,7 +734,7 @@ t.test('private workspaces', (t) => {
 
     publish.execWorkspaces([], [], (err) => {
       t.notOk(err)
-      t.matchSnapshot(publishes, 'should publish all non-private workspaces')
+      t.matchSnapshot(cleanGithead(publishes), 'should publish all non-private workspaces')
       t.matchSnapshot(outputs, 'should output all publishes')
       t.end()
     })
@@ -761,4 +769,104 @@ t.test('private workspaces', (t) => {
   })
 
   t.end()
+})
+
+t.test('runs correct lifecycle scripts', t => {
+  const testDir = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'my-cool-pkg',
+      version: '1.0.0',
+      scripts: {
+        prepublishOnly: 'echo test prepublishOnly',
+        prepublish: 'echo test prepublish', // should NOT run this one
+        publish: 'echo test publish',
+        postpublish: 'echo test postpublish',
+      },
+    }, null, 2),
+  })
+
+  const scripts = []
+  const Publish = t.mock('../../lib/publish.js', {
+    '@npmcli/run-script': (args) => {
+      scripts.push(args)
+    },
+    '../../lib/utils/tar.js': {
+      getContents: () => ({
+        id: 'someid',
+      }),
+      logTar: () => {
+        t.pass('logTar is called')
+      },
+    },
+    libnpmpublish: {
+      publish: () => {
+        t.pass('publish called')
+      },
+    },
+  })
+  const npm = mockNpm({
+    output: () => {
+      t.pass('output is called')
+    },
+  })
+  npm.config.getCredentialsByURI = (uri) => {
+    t.same(uri, npm.config.get('registry'), 'gets credentials for expected registry')
+    return { token: 'some.registry.token' }
+  }
+  const publish = new Publish(npm)
+  publish.exec([testDir], (er) => {
+    if (er)
+      throw er
+    t.same(
+      scripts.map(s => s.event),
+      ['prepublishOnly', 'publish', 'postpublish'],
+      'runs only expected scripts, in order'
+    )
+    t.end()
+  })
+})
+
+t.test('does not run scripts on --ignore-scripts', t => {
+  const testDir = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'my-cool-pkg',
+      version: '1.0.0',
+    }, null, 2),
+  })
+
+  const Publish = t.mock('../../lib/publish.js', {
+    '@npmcli/run-script': () => {
+      t.fail('should not call run-script')
+    },
+    '../../lib/utils/tar.js': {
+      getContents: () => ({
+        id: 'someid',
+      }),
+      logTar: () => {
+        t.pass('logTar is called')
+      },
+    },
+    libnpmpublish: {
+      publish: () => {
+        t.pass('publish called')
+      },
+    },
+  })
+  const npm = mockNpm({
+    config: { 'ignore-scripts': true },
+    output: () => {
+      t.pass('output is called')
+    },
+  })
+  npm.config.getCredentialsByURI = (uri) => {
+    t.same(uri, npm.config.get('registry'), 'gets credentials for expected registry')
+    return { token: 'some.registry.token' }
+  }
+  const publish = new Publish(npm)
+  publish.exec([testDir], (er) => {
+    if (er)
+      throw er
+    t.pass('got to callback')
+    t.end()
+  })
 })

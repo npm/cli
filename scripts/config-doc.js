@@ -15,9 +15,11 @@ const addBetweenTags = (doc, startTag, endTag, body) => {
   return [
     startSplit[0],
     startTag,
-    '\n<!-- automatically generated, do not edit manually -->\n',
+    '\n<!-- automatically generated, do not edit manually -->\n' +
+      '<!-- see lib/utils/config/definitions.js -->\n',
     body,
-    '\n\n',
+    '\n\n<!-- automatically generated, do not edit manually -->\n' +
+      '<!-- see lib/utils/config/definitions.js -->\n',
     endTag,
     endSplit[1],
   ].join('')

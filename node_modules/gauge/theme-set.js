@@ -112,4 +112,3 @@ ThemeSetProto.newThemeSet = function () {
     defaults: JSON.parse(JSON.stringify(this.defaults || {}))
   })
 }
-

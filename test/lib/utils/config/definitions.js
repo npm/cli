@@ -17,6 +17,11 @@ const defpath = '../../../../lib/utils/config/definitions.js'
 delete process.env.NODE_ENV
 const definitions = require(defpath)
 
+// Tie the definitions to a snapshot so that if they change we are forced to
+// update snapshots, which rebuilds the docs
+for (const key of Object.keys(definitions))
+  t.matchSnapshot(definitions[key].describe(), `config description for ${key}`)
+
 const isWin = '../../../../lib/utils/is-windows.js'
 
 // snapshot these just so we note when they change
@@ -458,8 +463,16 @@ t.test('search options', t => {
   t.end()
 })
 
-t.test('noProxy', t => {
+t.test('noProxy - array', t => {
   const obj = { noproxy: ['1.2.3.4,2.3.4.5', '3.4.5.6'] }
+  const flat = {}
+  definitions.noproxy.flatten('noproxy', obj, flat)
+  t.strictSame(flat, { noProxy: '1.2.3.4,2.3.4.5,3.4.5.6' })
+  t.end()
+})
+
+t.test('noProxy - string', t => {
+  const obj = { noproxy: '1.2.3.4,2.3.4.5,3.4.5.6' }
   const flat = {}
   definitions.noproxy.flatten('noproxy', obj, flat)
   t.strictSame(flat, { noProxy: '1.2.3.4,2.3.4.5,3.4.5.6' })
@@ -790,5 +803,53 @@ t.test('save-exact', t => {
   definitions['save-exact']
     .flatten('save-exact', { ...obj, 'save-exact': false }, flat)
   t.strictSame(flat, { savePrefix: '~1.2.3' })
+  t.end()
+})
+
+t.test('location', t => {
+  const obj = {
+    global: true,
+    location: 'user',
+  }
+  const flat = {}
+  // the global flattener is what sets location, so run that
+  definitions.global.flatten('global', obj, flat)
+  definitions.location.flatten('location', obj, flat)
+  // global = true sets location in both places to global
+  t.strictSame(flat, { global: true, location: 'global' })
+  // location here is still 'user' because flattening doesn't modify the object
+  t.strictSame(obj, { global: true, location: 'user' })
+
+  obj.global = false
+  obj.location = 'user'
+  delete flat.global
+  delete flat.location
+
+  definitions.global.flatten('global', obj, flat)
+  definitions.location.flatten('location', obj, flat)
+  // global = false leaves location unaltered
+  t.strictSame(flat, { global: false, location: 'user' })
+  t.strictSame(obj, { global: false, location: 'user' })
+  t.end()
+})
+
+t.test('package-lock-only', t => {
+  const obj = {
+    'package-lock': false,
+    'package-lock-only': true,
+  }
+  const flat = {}
+
+  definitions['package-lock-only'].flatten('package-lock-only', obj, flat)
+  definitions['package-lock'].flatten('package-lock', obj, flat)
+  t.strictSame(flat, { packageLock: true, packageLockOnly: true })
+
+  obj['package-lock-only'] = false
+  delete flat.packageLock
+  delete flat.packageLockOnly
+
+  definitions['package-lock-only'].flatten('package-lock-only', obj, flat)
+  definitions['package-lock'].flatten('package-lock', obj, flat)
+  t.strictSame(flat, { packageLock: false, packageLockOnly: false })
   t.end()
 })

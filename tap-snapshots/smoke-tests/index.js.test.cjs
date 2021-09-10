@@ -26,10 +26,10 @@ All commands:
     edit, exec, explain, explore, find-dupes, fund, get, help,
     hook, init, install, install-ci-test, install-test, link,
     ll, login, logout, ls, org, outdated, owner, pack, ping,
-    prefix, profile, prune, publish, rebuild, repo, restart,
-    root, run-script, search, set, set-script, shrinkwrap, star,
-    stars, start, stop, team, test, token, uninstall, unpublish,
-    unstar, update, version, view, whoami
+    pkg, prefix, profile, prune, publish, rebuild, repo,
+    restart, root, run-script, search, set, set-script,
+    shrinkwrap, star, stars, start, stop, team, test, token,
+    uninstall, unpublish, unstar, update, version, view, whoami
 
 Specify configs in the ini-formatted file:
     {CWD}/smoke-tests/tap-testdir-index/.npmrc
@@ -340,6 +340,7 @@ exports[`smoke-tests/index.js TAP npm install dev dep > should have expected dev
   "requires": true,
   "packages": {
     "": {
+      "name": "project",
       "version": "1.0.0",
       "license": "ISC",
       "dependencies": {
@@ -426,6 +427,7 @@ exports[`smoke-tests/index.js TAP npm install prodDep@version > should have expe
   "requires": true,
   "packages": {
     "": {
+      "name": "project",
       "version": "1.0.0",
       "license": "ISC",
       "dependencies": {
@@ -482,6 +484,89 @@ abbrev     1.0.4   1.1.1   1.1.1  node_modules/abbrev  project
 
 `
 
+exports[`smoke-tests/index.js TAP npm pkg > should have expected npm pkg delete modified package.json result 1`] = `
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo /"Error: no test specified/" && exit 1",
+    "hello": "echo Hello"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "abbrev": "^1.0.4"
+  }
+}
+
+`
+
+exports[`smoke-tests/index.js TAP npm pkg > should have expected npm pkg set modified package.json result 1`] = `
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo /"Error: no test specified/" && exit 1",
+    "hello": "echo Hello"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "abbrev": "^1.0.4"
+  },
+  "tap": {
+    "test-env": [
+      "LC_ALL=sk"
+    ]
+  }
+}
+
+`
+
+exports[`smoke-tests/index.js TAP npm pkg > should have expected pkg delete output 1`] = `
+
+`
+
+exports[`smoke-tests/index.js TAP npm pkg > should have expected pkg get output 1`] = `
+"ISC"
+
+`
+
+exports[`smoke-tests/index.js TAP npm pkg > should have expected pkg set output 1`] = `
+
+`
+
+exports[`smoke-tests/index.js TAP npm pkg > should print package.json contents 1`] = `
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "",
+  "ma",
+  "scripts": {
+    "test": "echo /"Error: no test specified/" && exit 1",
+    "hello": "echo Hello"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "abbrev": "^1.0.4"
+  },
+  "tap": {
+    "test-env": [
+      "LC_ALL=sk"
+    ]
+  }
+}
+
+`
+
 exports[`smoke-tests/index.js TAP npm prefix > should have expected prefix output 1`] = `
 {CWD}/smoke-tests/tap-testdir-index/project
 
@@ -531,6 +616,7 @@ exports[`smoke-tests/index.js TAP npm uninstall > should have expected uninstall
   "requires": true,
   "packages": {
     "": {
+      "name": "project",
       "version": "1.0.0",
       "license": "ISC",
       "dependencies": {
@@ -588,6 +674,7 @@ exports[`smoke-tests/index.js TAP npm update dep > should have expected update l
   "requires": true,
   "packages": {
     "": {
+      "name": "project",
       "version": "1.0.0",
       "license": "ISC",
       "dependencies": {

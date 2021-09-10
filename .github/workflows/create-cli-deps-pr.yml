@@ -52,7 +52,7 @@ jobs:
             base_branch="v14.x-staging"
           fi 
 
-          git config user.name "npm-robot"
+          git config user.name "npm team"
           git config user.email "ops+robot@npmjs.com"
           git checkout -b "npm-$npm_tag"
 

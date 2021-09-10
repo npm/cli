@@ -84,7 +84,7 @@ Usage:
 npm bugs [<pkgname>]
 
 Options:
-[--browser|--browser <browser>] [--registry <registry>]
+[--no-browser|--browser <browser>] [--registry <registry>]
 
 alias: issues
 
@@ -102,7 +102,8 @@ npm cache add <folder>
 npm cache add <tarball url>
 npm cache add <git url>
 npm cache add <name>@<version>
-npm cache clean
+npm cache clean [<key>]
+npm cache ls [<name>@<version>]
 npm cache verify
 
 Options:
@@ -120,7 +121,7 @@ Usage:
 npm ci
 
 Options:
-[--ignore-scripts] [--script-shell <script-shell>]
+[--no-audit] [--ignore-scripts] [--script-shell <script-shell>]
 
 aliases: clean-install, ic, install-clean, isntall-clean
 
@@ -151,7 +152,8 @@ npm config list [--json]
 npm config edit
 
 Options:
-[--json] [-g|--global] [--editor <editor>] [-l|--long]
+[--json] [-g|--global] [--editor <editor>] [-L|--location <global|user|project>]
+[-l|--long]
 
 alias: c
 
@@ -167,9 +169,9 @@ Usage:
 npm dedupe
 
 Options:
-[--global-style] [--legacy-bundling] [--strict-peer-deps] [--package-lock]
+[--global-style] [--legacy-bundling] [--strict-peer-deps] [--no-package-lock]
 [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]] [--ignore-scripts]
-[--audit] [--bin-links] [--fund] [--dry-run]
+[--no-audit] [--no-bin-links] [--no-fund] [--dry-run]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [-ws|--workspaces]
 
@@ -239,7 +241,7 @@ Usage:
 npm docs [<pkgname> [<pkgname> ...]]
 
 Options:
-[--browser|--browser <browser>] [--registry <registry>]
+[--no-browser|--browser <browser>] [--registry <registry>]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [-ws|--workspaces]
 
@@ -337,9 +339,9 @@ Usage:
 npm find-dupes
 
 Options:
-[--global-style] [--legacy-bundling] [--strict-peer-deps] [--package-lock]
+[--global-style] [--legacy-bundling] [--strict-peer-deps] [--no-package-lock]
 [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]] [--ignore-scripts]
-[--audit] [--bin-links] [--fund]
+[--no-audit] [--no-bin-links] [--no-fund]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [-ws|--workspaces]
 
@@ -355,7 +357,7 @@ Usage:
 npm fund [[<@scope>/]<pkg>]
 
 Options:
-[--json] [--browser|--browser <browser>] [--unicode]
+[--json] [--no-browser|--browser <browser>] [--unicode]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [--which <fundingSourceNumber>]
 
@@ -446,9 +448,9 @@ npm install <github username>/<github project>
 Options:
 [-S|--save|--no-save|--save-prod|--save-dev|--save-optional|--save-peer]
 [-E|--save-exact] [-g|--global] [--global-style] [--legacy-bundling]
-[--strict-peer-deps] [--package-lock]
+[--strict-peer-deps] [--no-package-lock]
 [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]] [--ignore-scripts]
-[--audit] [--bin-links] [--fund] [--dry-run]
+[--no-audit] [--no-bin-links] [--no-fund] [--dry-run]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [-ws|--workspaces]
 
@@ -466,7 +468,7 @@ Usage:
 npm install-ci-test
 
 Options:
-[--ignore-scripts] [--script-shell <script-shell>]
+[--no-audit] [--ignore-scripts] [--script-shell <script-shell>]
 
 alias: cit
 
@@ -493,9 +495,9 @@ npm install-test <github username>/<github project>
 Options:
 [-S|--save|--no-save|--save-prod|--save-dev|--save-optional|--save-peer]
 [-E|--save-exact] [-g|--global] [--global-style] [--legacy-bundling]
-[--strict-peer-deps] [--package-lock]
+[--strict-peer-deps] [--no-package-lock]
 [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]] [--ignore-scripts]
-[--audit] [--bin-links] [--fund] [--dry-run]
+[--no-audit] [--no-bin-links] [--no-fund] [--dry-run]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [-ws|--workspaces]
 
@@ -516,9 +518,9 @@ npm link [<@scope>/]<pkg>[@<version>]
 Options:
 [-S|--save|--no-save|--save-prod|--save-dev|--save-optional|--save-peer]
 [-E|--save-exact] [-g|--global] [--global-style] [--legacy-bundling]
-[--strict-peer-deps] [--package-lock]
+[--strict-peer-deps] [--no-package-lock]
 [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]] [--ignore-scripts]
-[--audit] [--bin-links] [--fund] [--dry-run]
+[--no-audit] [--no-bin-links] [--no-fund] [--dry-run]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [-ws|--workspaces]
 
@@ -678,6 +680,24 @@ Options:
 Run "npm help ping" for more info
 `
 
+exports[`test/lib/load-all-commands.js TAP load each command pkg > must match snapshot 1`] = `
+npm pkg
+
+Manages your package.json
+
+Usage:
+npm pkg set <key>=<value> [<key>=<value> ...]
+npm pkg get [<key> [<key> ...]]
+npm pkg delete <key> [<key> ...]
+
+Options:
+[-f|--force] [--json]
+[-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+[-ws|--workspaces]
+
+Run "npm help pkg" for more info
+`
+
 exports[`test/lib/load-all-commands.js TAP load each command prefix > must match snapshot 1`] = `
 npm prefix
 
@@ -750,7 +770,7 @@ Usage:
 npm rebuild [[<@scope>/]<name>[@<version>] ...]
 
 Options:
-[-g|--global] [--bin-links] [--ignore-scripts]
+[-g|--global] [--no-bin-links] [--ignore-scripts]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [-ws|--workspaces]
 
@@ -768,7 +788,7 @@ Usage:
 npm repo [<pkgname> [<pkgname> ...]]
 
 Options:
-[--browser|--browser <browser>]
+[--no-browser|--browser <browser>]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [-ws|--workspaces]
 
@@ -830,7 +850,7 @@ Usage:
 npm search [search terms ...]
 
 Options:
-[-l|--long] [--json] [--color|--color <always>] [-p|--parseable]
+[-l|--long] [--json] [--color|--no-color|--color always] [-p|--parseable]
 [--no-description] [--searchopts <searchopts>] [--searchexclude <searchexclude>]
 [--registry <registry>] [--prefer-online] [--prefer-offline] [--offline]
 
@@ -1041,8 +1061,8 @@ npm update [<pkg>...]
 
 Options:
 [-g|--global] [--global-style] [--legacy-bundling] [--strict-peer-deps]
-[--package-lock] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
-[--ignore-scripts] [--audit] [--bin-links] [--fund] [--dry-run]
+[--no-package-lock] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
+[--ignore-scripts] [--no-audit] [--no-bin-links] [--no-fund] [--dry-run]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [-ws|--workspaces]
 
@@ -1060,7 +1080,7 @@ Usage:
 npm version [<newversion> | major | minor | patch | premajor | preminor | prepatch | prerelease | from-git]
 
 Options:
-[--allow-same-version] [--commit-hooks] [--git-tag-version] [--json]
+[--allow-same-version] [--no-commit-hooks] [--no-git-tag-version] [--json]
 [--preid prerelease-id] [--sign-git-tag]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [-ws|--workspaces]
