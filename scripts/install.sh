@@ -162,8 +162,6 @@ cd "$TMP" \
   && curl -qSsL -o npm.tgz "$url" \
   && $tar -xzf npm.tgz \
   && cd "$TMP"/package \
-  && echo "removing existing npm" \
-  && "$node" bin/npm-cli.js rm npm -gf --loglevel=silent \
   && echo "installing npm@$t" \
   && "$node" bin/npm-cli.js install -gf ../npm.tgz \
   && cd "$BACK" \
