@@ -1,8 +1,9 @@
 const fs = require('fs')
 const { promisify } = require('util')
 const execAsync = promisify(require('child_process').exec)
-const { resolve } = require('path')
+const { join, resolve } = require('path')
 const t = require('tap')
+const rimraf = promisify(require('rimraf'))
 
 const normalizePath = path => path.replace(/[A-Z]:/, '').replace(/\\/g, '/')
 const cwd = normalizePath(process.cwd())
@@ -46,6 +47,43 @@ const exec = async cmd => {
 }
 const readFile = filename =>
   String(fs.readFileSync(resolve(localPrefix, filename)))
+
+// this test must come first, its package.json will be destroyed and the one
+// created in the next test (npm init) will create a new one that must be
+// present for later tests
+t.test('npm install sends correct user-agent', async t => {
+  const pkgPath = join(localPrefix, 'package.json')
+  const pkgContent = JSON.stringify({
+    name: 'smoke-test-workspaces',
+    workspaces: ['packages/*'],
+  })
+  fs.writeFileSync(pkgPath, pkgContent, { encoding: 'utf8' })
+
+  const wsRoot = join(localPrefix, 'packages')
+  fs.mkdirSync(wsRoot)
+
+  const wsPath = join(wsRoot, 'foo')
+  fs.mkdirSync(wsPath)
+
+  const wsPkgPath = join(wsPath, 'package.json')
+  const wsContent = JSON.stringify({
+    name: 'foo',
+  })
+  fs.writeFileSync(wsPkgPath, wsContent, { encoding: 'utf8' })
+  t.teardown(async () => {
+    await rimraf(`${localPrefix}/*`)
+  })
+
+  const cmd = `${npmBin} install fail_reflect_user_agent`
+  await t.rejects(exec(cmd), {
+    stderr: /workspaces\/false/,
+  }, 'workspaces/false is present in output')
+
+  const wsCmd = `${npmBin} install fail_reflect_user_agent --workspaces`
+  await t.rejects(exec(wsCmd), {
+    stderr: /workspaces\/true/,
+  }, 'workspaces/true is present in output')
+})
 
 t.test('npm init', async t => {
   const cmd = `${npmBin} init -y`

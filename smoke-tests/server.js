@@ -1,5 +1,5 @@
 /* istanbul ignore file */
-const {join, dirname} = require('path')
+const {join, dirname, basename} = require('path')
 const {existsSync, readFileSync, writeFileSync} = require('fs')
 const PORT = 12345 + (+process.env.TAP_CHILD_ID || 0)
 const http = require('http')
@@ -150,6 +150,12 @@ const startServer = () => new Promise((res, rej) => {
     }
 
     const f = join(__dirname, 'content', join('/', req.url.replace(/@/, '').replace(/%2f/i, '/')))
+    // a magic package that causes us to return an error that will be logged
+    if (basename(f) === 'fail_reflect_user_agent') {
+      res.setHeader('npm-notice', req.headers['user-agent'])
+      res.writeHead(404)
+      return res.end()
+    }
     const isCorgi = req.headers.accept.includes('application/vnd.npm.install-v1+json')
     const file = f + (
       isCorgi && existsSync(`${f}.min.json`) ? '.min.json'
