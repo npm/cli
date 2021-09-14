@@ -63,4 +63,4 @@ It should be noted that our team does not accept third-party dependency updates/
 
 ### Tools/Automation
 
-Our core team is responsible for the maintaince of the tooling/automation in this project & we ask collaborators to kindle not make changes to these when contributing (ex. `.github/*`, `.eslintrc.json`, `.licensee.json` etc.)
+Our core team is responsible for the maintenance of the tooling/automation in this project & we ask collaborators to kindly not make changes to these when contributing (ex. `.github/*`, `.eslintrc.json`, `.licensee.json` etc.)
