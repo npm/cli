@@ -24,8 +24,10 @@ else {
     // just load all the files so we measure coverage for the missing tests
     const dir = resolve(__dirname, '../../lib')
     for (const f of glob.sync(`${dir}/**/*.js`)) {
-      require(f)
-      t.pass('loaded ' + f)
+      if (!f.endsWith('no-api.js')) {
+        require(f)
+        t.pass('loaded ' + f)
+      }
     }
     t.pass('loaded all files')
     t.end()
