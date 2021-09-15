@@ -38,7 +38,7 @@
     "lib": "./lib",
     "man": "./man"
   },
-  "main": "./lib/no-api.js",
+  "main": "./index.js",
   "bin": {
     "npm": "bin/npm-cli.js",
     "npx": "bin/npx-cli.js"
@@ -46,9 +46,9 @@
   "exports": {
     ".": [
       {
-        "default": "./lib/no-api.js"
+        "default": "./index.js"
       },
-      "./lib/no-api.js"
+      "./index.js"
     ],
     "./package.json": "./package.json"
   },
@@ -228,7 +228,7 @@
       "LC_ALL=sk"
     ],
     "color": 1,
-    "files": "test/{lib,bin}",
+    "files": "test/{lib,bin,index.js}",
     "coverage-map": "test/coverage-map.js",
     "check-coverage": true,
     "timeout": 600
