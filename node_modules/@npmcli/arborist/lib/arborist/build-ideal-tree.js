@@ -93,6 +93,7 @@ const _checkEngine = Symbol('checkEngine')
 const _checkPlatform = Symbol('checkPlatform')
 const _virtualRoots = Symbol('virtualRoots')
 const _virtualRoot = Symbol('virtualRoot')
+const _includeWorkspaceRoot = Symbol.for('includeWorkspaceRoot')
 
 const _failPeerConflict = Symbol('failPeerConflict')
 const _explainPeerConflict = Symbol('explainPeerConflict')
@@ -115,12 +116,13 @@ module.exports = cls => class IdealTreeBuilder extends cls {
     options.registry = this.registry = registry.replace(/\/+$/, '') + '/'
 
     const {
-      idealTree = null,
-      global = false,
       follow = false,
-      globalStyle = false,
-      legacyPeerDeps = false,
       force = false,
+      global = false,
+      globalStyle = false,
+      idealTree = null,
+      includeWorkspaceRoot = false,
+      legacyPeerDeps = false,
       packageLock = true,
       strictPeerDeps = false,
       workspaces = [],
@@ -162,6 +164,8 @@ module.exports = cls => class IdealTreeBuilder extends cls {
     // don't hold onto references for nodes that are garbage collected.
     this[_peerSetSource] = new WeakMap()
     this[_virtualRoots] = new Map()
+
+    this[_includeWorkspaceRoot] = includeWorkspaceRoot
   }
 
   get explicitRequests () {
@@ -394,8 +398,14 @@ module.exports = cls => class IdealTreeBuilder extends cls {
     if (!this[_workspaces].length) {
       await this[_applyUserRequestsToNode](tree, options)
     } else {
-      await Promise.all(this.workspaceNodes(tree, this[_workspaces])
-        .map(node => this[_applyUserRequestsToNode](node, options)))
+      const nodes = this.workspaceNodes(tree, this[_workspaces])
+      if (this[_includeWorkspaceRoot]) {
+        nodes.push(tree)
+      }
+      const appliedRequests = nodes.map(
+        node => this[_applyUserRequestsToNode](node, options)
+      )
+      await Promise.all(appliedRequests)
     }
 
     process.emit('timeEnd', 'idealTree:userRequests')

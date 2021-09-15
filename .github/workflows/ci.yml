@@ -14,10 +14,10 @@ jobs:
           node-version: 14.x
       - name: Install dependencies
         run: |
-          node . install --ignore-scripts --no-audit
-          node . rebuild
+          node ./bin/npm-cli.js install --ignore-scripts --no-audit
+          node ./bin/npm-cli.js rebuild
       - name: Run linting
-        run: node . run posttest
+        run: node ./bin/npm-cli.js run posttest
         env:
           DEPLOY_VERSION: testing
 
@@ -31,7 +31,7 @@ jobs:
           node-version: 14.x
       - name: Install dependencies
         run: |
-          node . install --ignore-scripts --no-audit
+          node ./bin/npm-cli.js install --ignore-scripts --no-audit
       - name: Rebuild the docs
         run: make freshdocs
       - name: Git should not be dirty
@@ -49,16 +49,16 @@ jobs:
           node-version: 14.x
       - name: Install dependencies
         run: |
-          node . install --ignore-scripts --no-audit
-          node . rebuild
+          node ./bin/npm-cli.js install --ignore-scripts --no-audit
+          node ./bin/npm-cli.js rebuild
       - name: Run linting
-        run: node . run licenses
+        run: node ./bin/npm-cli.js run licenses
 
   smoke-tests:
     strategy:
       fail-fast: false
       matrix:
-        node-version: [10.x, 12.x, 14.x, 16.x]
+        node-version: [12.x, 14.x, 16.x]
         platform:
           - os: ubuntu-latest
             shell: bash
@@ -87,12 +87,12 @@ jobs:
       # Run the installer script
     - name: Install dependencies
       run: |
-        node . install --ignore-scripts --no-audit
-        node . rebuild
+        node ./bin/npm-cli.js install --ignore-scripts --no-audit
+        node ./bin/npm-cli.js rebuild
 
       # Run the smoke tests
     - name: Run Smoke tests
-      run: node . run --ignore-scripts smoke-tests -- --no-check-coverage -t600 -Rbase -c
+      run: node ./bin/npm-cli.js run --ignore-scripts smoke-tests -- --no-check-coverage -t600 -Rbase -c
       env:
         DEPLOY_VERSION: testing
 
@@ -100,7 +100,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node-version: [10.x, 12.x, 14.x, 16.x]
+        node-version: [12.x, 14.x, 16.x]
         platform:
           - os: ubuntu-latest
             shell: bash
@@ -129,11 +129,11 @@ jobs:
       # Run the installer script
     - name: Install dependencies
       run: |
-        node . install --ignore-scripts --no-audit
-        node . rebuild
+        node ./bin/npm-cli.js install --ignore-scripts --no-audit
+        node ./bin/npm-cli.js rebuild
 
     - name: Run workspaces tests
-      run: node . test -w ./packages -- --no-check-coverage -t600 -Rbase -c
+      run: node ./bin/npm-cli.js test -w ./packages -- --no-check-coverage -t600 -Rbase -c
       env:
         DEPLOY_VERSION: testing
 
@@ -141,7 +141,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node-version: ['10.1', 10.x, '12.1', 12.x, '14.1', 14.x, '16.1', 16.x]
+        node-version: ['12.13.0', 12.x, '14.15.0', 14.x, '16.0.0', 16.x]
         platform:
           - os: ubuntu-latest
             shell: bash
@@ -170,21 +170,21 @@ jobs:
       # Run the installer script
     - name: Install dependencies
       run: |
-        node . install --ignore-scripts --no-audit
-        node . rebuild
+        node ./bin/npm-cli.js install --ignore-scripts --no-audit
+        node ./bin/npm-cli.js rebuild
 
       # Run the tests, but not if we're just gonna do coveralls later anyway
     - name: Run Tap tests
-      if: matrix.platform.os != 'ubuntu-latest' || matrix.node-version != '12.x'
-      run: node . run --ignore-scripts test -- -t600 -Rbase -c
+      if: matrix.platform.os != 'ubuntu-latest' || matrix.node-version != '16.x'
+      run: node ./bin/npm-cli.js run --ignore-scripts test -- -t600 -Rbase -c
       env:
         DEPLOY_VERSION: testing
 
       # Run coverage check
     - name: Run coverage report
-      if: matrix.platform.os == 'ubuntu-latest' && matrix.node-version == '12.x'
+      if: matrix.platform.os == 'ubuntu-latest' && matrix.node-version == '16.x'
       # turn off --check-coverage until 100%, so CI failure is relevant
-      run: node . run check-coverage -- -t600 --no-check-coverage -Rbase -c
+      run: node ./bin/npm-cli.js run check-coverage -- -t600 --no-check-coverage -Rbase -c
       env:
         DEPLOY_VERSION: testing
         COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_OPTIONAL_TOKEN }}

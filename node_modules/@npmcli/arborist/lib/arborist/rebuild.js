@@ -34,6 +34,7 @@ const _addToBuildSet = Symbol('addToBuildSet')
 const _checkBins = Symbol.for('checkBins')
 const _queues = Symbol('queues')
 const _scriptShell = Symbol('scriptShell')
+const _includeWorkspaceRoot = Symbol.for('includeWorkspaceRoot')
 
 const _force = Symbol.for('force')
 
@@ -77,7 +78,11 @@ module.exports = cls => class Builder extends cls {
     if (!nodes) {
       const tree = await this.loadActual()
       if (this[_workspaces] && this[_workspaces].length) {
-        const filterSet = this.workspaceDependencySet(tree, this[_workspaces])
+        const filterSet = this.workspaceDependencySet(
+          tree,
+          this[_workspaces],
+          this[_includeWorkspaceRoot]
+        )
         nodes = tree.inventory.filter(node => filterSet.has(node))
       } else {
         nodes = tree.inventory.values()

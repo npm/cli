@@ -30,7 +30,7 @@ const path = t.testdir({
 })
 const localPrefix = resolve(path, 'project')
 const userconfigLocation = resolve(path, '.npmrc')
-const npmLocation = resolve(__dirname, '..')
+const npmLocation = resolve(__dirname, '../bin/npm-cli.js')
 const cacheLocation = resolve(path, 'cache')
 const binLocation = resolve(path, 'bin')
 const env = {
