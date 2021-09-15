@@ -38,7 +38,7 @@
     "lib": "./lib",
     "man": "./man"
   },
-  "main": "./lib/npm.js",
+  "main": "./lib/no-api.js",
   "bin": {
     "npm": "bin/npm-cli.js",
     "npx": "bin/npx-cli.js"
@@ -46,9 +46,9 @@
   "exports": {
     ".": [
       {
-        "default": "./lib/npm.js"
+        "default": "./lib/no-api.js"
       },
-      "./lib/npm.js"
+      "./lib/no-api.js"
     ],
     "./package.json": "./package.json"
   },
@@ -235,6 +235,6 @@
   },
   "license": "Artistic-2.0",
   "engines": {
-    "node": ">=10"
+    "node": "^12.13.0 || ^14.15.0 || >=16"
   }
 }
