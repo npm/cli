@@ -1,3 +1,58 @@
+## v7.24.0 (2021-09-16)
+
+### FEATURES
+
+* [`c7787b3fb`](https://github.com/npm/cli/commit/c7787b3fb7630aab84aae83ebf9a7117c7173b6b)
+  [`1fbbe1e04`](https://github.com/npm/cli/commit/1fbbe1e04be5d79c7b49910324e64c19ed599eeb)
+  bundled npm-install-checks ([@wraithgar](https://github.com/wraithgar))
+
+### BUG FIXES
+
+* [`0320bd77e`](https://github.com/npm/cli/commit/0320bd77e2a38f48a88e377df4b122fd21043a83)
+  [#3739](https://github.com/npm/cli/issues/3739)
+  fix(view): Show the correct publish date for versions selected by range ([@andersk](https://github.com/andersk))
+* [`e4a521857`](https://github.com/npm/cli/commit/e4a5218573583149af795982a39fa64a4116cdab)
+  [#3748](https://github.com/npm/cli/issues/3748)
+  fix(install.sh): don't remove old npm first
+  ([@wraithgar](https://github.com/wraithgar))
+* [`b4aac345b`](https://github.com/npm/cli/commit/b4aac345b0a7cdec4d713c5be4daea37330b2b26)
+  [#3754](https://github.com/npm/cli/issues/3754)
+  fix(config): user-agent properly shows ci
+  ([@wraithgar](https://github.com/wraithgar))
+* [`b807cd62e`](https://github.com/npm/cli/commit/b807cd62eabe337e3243415c9870ea36d9289e12)
+  [#3738](https://github.com/npm/cli/issues/3738)
+  fix(search): return valid json for no results
+  ([@AyushRawal](https://github.com/AyushRawal))
+* [`2def17a3b`](https://github.com/npm/cli/commit/2def17a3b625b92b40c6185ff4b47e8ed006492c)
+  [#3760](https://github.com/npm/cli/issues/3760)
+  fix(install): use configured registry when checking manifest
+  ([@yacoman89](https://github.com/yacoman89))
+* [`ca792acdd`](https://github.com/npm/cli/commit/ca792acdd4ba683d8415c88188ec6739033fb4fd)
+  [#3761](https://github.com/npm/cli/issues/3761)
+  fix(logs): clean args for failed commands
+  ([@wraithgar](https://github.com/wraithgar))
+
+### DEPENDENCIES
+
+* [`59743972c`](https://github.com/npm/cli/commit/59743972c2ae1d2dd601aaa6c59974c686b1cb29)
+  [#3747](https://github.com/npm/cli/issues/3747)
+  fix(did-you-mean): succeed if cwd is not a package
+  ([@wraithgar](https://github.com/wraithgar))
+* [`ac8e4ad18`](https://github.com/npm/cli/commit/ac8e4ad18a6b726dd2c3abcb0f605701cca0ae2c)
+  `init-package-json@2.0.5`:
+  * fix: bin script path
+* [`371655a6b`](https://github.com/npm/cli/commit/371655a6b0e6664fec67f16cb247cc9f174a5197)
+  `minipass@3.1.5`:
+  * fix: re-emit 'error' event if missed and new listener added
+  * fix: do not blow up if process is missing
+
+### DOCUMENTATION
+
+* [`4d93b484a`](https://github.com/npm/cli/commit/4d93b484abb50e3704fb436db572b93fb36c7ac3)
+  [#3759](https://github.com/npm/cli/issues/3759)
+  fix(docs): use correct hyperlink to package-json
+  ([@nategreen](https://github.com/nategreen))
+
 ## v7.23.0 (2021-09-09)
 
 ### FEATURES
