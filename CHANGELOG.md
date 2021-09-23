@@ -1,3 +1,20 @@
+## v7.24.1 (2021-09-23)
+
+### DEPENDENCIES
+
+* [`1be8d41e6`](https://github.com/npm/cli/commit/1be8d41e6f23f7a3d8411a31099ab546fbcb5bfa)
+  `socks-proxy-agent@6.1.0`:
+  * feat: allow passing tls connection options
+* [`eafd55eae`](https://github.com/npm/cli/commit/eafd55eae219a6c15d2857d06b673a67d7f7d060)
+  `glob@7.2.0`
+
+### DOCS
+
+* [`dae5ce305`](https://github.com/npm/cli/commit/dae5ce3055ded57eab8aa3425004c60224a6fe67)
+  [#3784](https://github.com/npm/cli/issues/3784)
+  docs: document special meaning of registry.npmjs.com
+  ([@everett1992](https://github.com/everett1992))
+
 ## v7.24.0 (2021-09-16)
 
 ### FEATURES
