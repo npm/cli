@@ -1,8 +1,8 @@
 {
-  "name": "libnpmdiff",
-  "version": "2.0.4",
+  "name": "npm_pack",
+  "version": "1.0.0",
   "description": "The registry diff",
-  "repository": "https://github.com/npm/libnpmdiff",
+  "repository": "https://github.com/npm/cli/npm_pack",
   "files": [
     "index.js",
     "lib"
