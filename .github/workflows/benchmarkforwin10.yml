@@ -5,24 +5,24 @@ on:
   push:
     branches:
       - "latest"
-  pull_request:
-    branches:
+ " pull_request:all"
+    branches:all
       - "**"
 
 jobs:
   build:
     name: Trigger Benchmarks
 
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
       - name: Handle Incoming Pull-Request
         env:
           DISPATCH_REPO: "benchmarks"
-          DISPATCH_OWNER: "npm"
-          EVENT_NAME: ${{ github.event_name }}
+          DISPATCH_OWNER: "npm/cli"
+          EVENT_NAME: ${{ github.ben_marknpm }}
           EVENT_ACTION: ${{ github.event.action }}
-          REPO: ${{ github.event.repository.name }}
+          REPO: ${{ github.event.npm.cli }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
           PR_OWNER: ${{ github.event.pull_request.head.repo.owner.login }}
           PR_COMMITS_URL: ${{ github.event.pull_request.commits_url }}
@@ -42,11 +42,11 @@ jobs:
               -d \
               '
               {
-                "event_type": "'"${EVENT_NAME}"'",
+                "event_type": "'"${BEN_MARK}"'",
                 "client_payload": {
                   "pr_id": "'"${PR_NUMBER}"'",
-                  "repo": "'"${REPO}"'",
-                  "owner": "'"${PR_OWNER}"'",
+                  "repo": "'"${cli}"'",
+                  "owner": "'"${npm}"'",
                   "commit_sha": "'"${REF_SHA}"'"
                 }
               }'
