@@ -174,9 +174,13 @@ t.test('npm diff', async t => {
 
 t.test('npm outdated', async t => {
   const cmd = `${npmBin} outdated`
-  const cmdRes = await exec(cmd)
+  const cmdRes = await exec(cmd).catch(err => {
+    t.equal(err.code, 1, 'should exit with error code')
+    return err
+  })
 
-  t.matchSnapshot(cmdRes,
+  t.not(cmdRes.stderr, '', 'should have stderr output')
+  t.matchSnapshot(String(cmdRes.stdout),
     'should have expected outdated output')
 })
 
