@@ -357,7 +357,6 @@ t.test('should return if no outdated deps', t => {
     global: false,
   }).exec([], () => {
     t.equal(logs.length, 0, 'no logs')
-    t.equal(process.exitCode, 0)
     t.end()
   })
 })
@@ -405,7 +404,6 @@ t.test('should skip missing non-prod deps', t => {
     global: false,
   }).exec([], () => {
     t.equal(logs.length, 0, 'no logs')
-    t.equal(process.exitCode, 0)
     t.end()
   })
 })
@@ -431,7 +429,6 @@ t.test('should skip invalid pkg ranges', t => {
 
   outdated(testDir, {}).exec([], () => {
     t.equal(logs.length, 0, 'no logs')
-    t.equal(process.exitCode, 0)
     t.end()
   })
 })
@@ -457,7 +454,6 @@ t.test('should skip git specs', t => {
 
   outdated(testDir, {}).exec([], () => {
     t.equal(logs.length, 0, 'no logs')
-    t.equal(process.exitCode, 0)
     t.end()
   })
 })
@@ -687,7 +683,6 @@ t.test('workspaces', async t => {
 
       t.matchSnapshot(logs,
         'should display no results if ws has no deps to display')
-      t.equal(process.exitCode, 0)
       res()
     })
   })
