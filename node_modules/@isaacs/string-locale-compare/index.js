@@ -2,21 +2,41 @@ const hasIntl = typeof Intl === 'object' && !!Intl
 const Collator = hasIntl && Intl.Collator
 const cache = new Map()
 
-const collatorCompare = locale => {
-  const collator = new Collator(locale)
+const collatorCompare = (locale, opts) => {
+  const collator = new Collator(locale, opts)
   return (a, b) => collator.compare(a, b)
 }
 
-const localeCompare = locale => (a, b) => a.localeCompare(b, locale)
+const localeCompare = (locale, opts) => (a, b) => a.localeCompare(b, locale, opts)
 
-module.exports = locale => {
+const knownOptions = [
+  'sensitivity',
+  'numeric',
+  'ignorePunctuation',
+  'caseFirst',
+]
+
+const { hasOwnProperty } = Object.prototype
+
+module.exports = (locale, options = {}) => {
   if (!locale || typeof locale !== 'string')
     throw new TypeError('locale required')
 
-  if (cache.has(locale))
-    return cache.get(locale)
+  const opts = knownOptions.reduce((opts, k) => {
+    if (hasOwnProperty.call(options, k)) {
+      opts[k] = options[k]
+    }
+    return opts
+  }, {})
+  const key = `${locale}\n${JSON.stringify(opts)}`
 
-  const compare = hasIntl ? collatorCompare(locale) : localeCompare(locale)
-  cache.set(locale, compare)
+  if (cache.has(key))
+    return cache.get(key)
+
+  const compare = hasIntl
+    ? collatorCompare(locale, opts)
+    : localeCompare(locale, opts)
+  cache.set(key, compare)
+
   return compare
 }
