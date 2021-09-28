@@ -207,7 +207,7 @@ Options:
 [--diff-no-prefix] [--diff-src-prefix <path>] [--diff-dst-prefix <path>]
 [--diff-text] [-g|--global] [--tag <tag>]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-[-ws|--workspaces]
+[-ws|--workspaces] [--include-workspace-root]
 
 Run "npm help diff" for more info
 `
@@ -224,7 +224,7 @@ npm dist-tag ls [<pkg>]
 
 Options:
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-[-ws|--workspaces]
+[-ws|--workspaces] [--include-workspace-root]
 
 alias: dist-tags
 
@@ -242,7 +242,7 @@ npm docs [<pkgname> [<pkgname> ...]]
 Options:
 [--no-browser|--browser <browser>] [--registry <registry>]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-[-ws|--workspaces]
+[-ws|--workspaces] [--include-workspace-root]
 
 alias: home
 
@@ -292,7 +292,7 @@ Options:
 [--package <pkg>[@<version>] [--package <pkg>[@<version>] ...]]
 [-c|--call <call>]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-[-ws|--workspaces]
+[-ws|--workspaces] [--include-workspace-root]
 
 alias: x
 
@@ -660,7 +660,7 @@ npm pack [[<@scope>/]<pkg>...]
 Options:
 [--dry-run] [--json] [--pack-destination <pack-destination>]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-[-ws|--workspaces]
+[-ws|--workspaces] [--include-workspace-root]
 
 Run "npm help pack" for more info
 `
@@ -755,7 +755,7 @@ npm publish [<folder>]
 Options:
 [--tag <tag>] [--access <restricted|public>] [--dry-run] [--otp <otp>]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-[-ws|--workspaces]
+[-ws|--workspaces] [--include-workspace-root]
 
 Run "npm help publish" for more info
 `
@@ -789,7 +789,7 @@ npm repo [<pkgname> [<pkgname> ...]]
 Options:
 [--no-browser|--browser <browser>]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-[-ws|--workspaces]
+[-ws|--workspaces] [--include-workspace-root]
 
 Run "npm help repo" for more info
 `
@@ -832,7 +832,7 @@ npm run-script <command> [-- <args>]
 
 Options:
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-[-ws|--workspaces] [--if-present] [--ignore-scripts]
+[-ws|--workspaces] [--include-workspace-root] [--if-present] [--ignore-scripts]
 [--script-shell <script-shell>]
 
 aliases: run, rum, urn
@@ -879,7 +879,7 @@ npm set-script [<script>] [<command>]
 
 Options:
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-[-ws|--workspaces]
+[-ws|--workspaces] [--include-workspace-root]
 
 Run "npm help set-script" for more info
 `
@@ -1082,7 +1082,7 @@ Options:
 [--allow-same-version] [--no-commit-hooks] [--no-git-tag-version] [--json]
 [--preid prerelease-id] [--sign-git-tag]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-[-ws|--workspaces]
+[-ws|--workspaces] [--include-workspace-root]
 
 alias: verison
 
@@ -1099,7 +1099,7 @@ npm view [<@scope>/]<pkg>[@<version>] [<field>[.subfield]...]
 
 Options:
 [--json] [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-[-ws|--workspaces]
+[-ws|--workspaces] [--include-workspace-root]
 
 aliases: v, info, show
 

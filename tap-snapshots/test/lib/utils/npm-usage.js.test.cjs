@@ -344,7 +344,7 @@ All commands:
                     [--diff-no-prefix] [--diff-src-prefix <path>] [--diff-dst-prefix <path>]
                     [--diff-text] [-g|--global] [--tag <tag>]
                     [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-                    [-ws|--workspaces]
+                    [-ws|--workspaces] [--include-workspace-root]
                     
                     Run "npm help diff" for more info
 
@@ -359,7 +359,7 @@ All commands:
                     
                     Options:
                     [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-                    [-ws|--workspaces]
+                    [-ws|--workspaces] [--include-workspace-root]
                     
                     alias: dist-tags
                     
@@ -375,7 +375,7 @@ All commands:
                     Options:
                     [--no-browser|--browser <browser>] [--registry <registry>]
                     [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-                    [-ws|--workspaces]
+                    [-ws|--workspaces] [--include-workspace-root]
                     
                     alias: home
                     
@@ -419,7 +419,7 @@ All commands:
                     [--package <pkg>[@<version>] [--package <pkg>[@<version>] ...]]
                     [-c|--call <call>]
                     [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-                    [-ws|--workspaces]
+                    [-ws|--workspaces] [--include-workspace-root]
                     
                     alias: x
                     
@@ -747,7 +747,7 @@ All commands:
                     Options:
                     [--dry-run] [--json] [--pack-destination <pack-destination>]
                     [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-                    [-ws|--workspaces]
+                    [-ws|--workspaces] [--include-workspace-root]
                     
                     Run "npm help pack" for more info
 
@@ -830,7 +830,7 @@ All commands:
                     Options:
                     [--tag <tag>] [--access <restricted|public>] [--dry-run] [--otp <otp>]
                     [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-                    [-ws|--workspaces]
+                    [-ws|--workspaces] [--include-workspace-root]
                     
                     Run "npm help publish" for more info
 
@@ -860,7 +860,7 @@ All commands:
                     Options:
                     [--no-browser|--browser <browser>]
                     [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-                    [-ws|--workspaces]
+                    [-ws|--workspaces] [--include-workspace-root]
                     
                     Run "npm help repo" for more info
 
@@ -897,7 +897,7 @@ All commands:
                     
                     Options:
                     [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-                    [-ws|--workspaces] [--if-present] [--ignore-scripts]
+                    [-ws|--workspaces] [--include-workspace-root] [--if-present] [--ignore-scripts]
                     [--script-shell <script-shell>]
                     
                     aliases: run, rum, urn
@@ -938,7 +938,7 @@ All commands:
                     
                     Options:
                     [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-                    [-ws|--workspaces]
+                    [-ws|--workspaces] [--include-workspace-root]
                     
                     Run "npm help set-script" for more info
 
@@ -1115,7 +1115,7 @@ All commands:
                     [--allow-same-version] [--no-commit-hooks] [--no-git-tag-version] [--json]
                     [--preid prerelease-id] [--sign-git-tag]
                     [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-                    [-ws|--workspaces]
+                    [-ws|--workspaces] [--include-workspace-root]
                     
                     alias: verison
                     
@@ -1130,7 +1130,7 @@ All commands:
                     
                     Options:
                     [--json] [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-                    [-ws|--workspaces]
+                    [-ws|--workspaces] [--include-workspace-root]
                     
                     aliases: v, info, show
                     
