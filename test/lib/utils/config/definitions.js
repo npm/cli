@@ -828,3 +828,16 @@ t.test('location', t => {
   t.strictSame(obj, { global: false, location: 'user' })
   t.end()
 })
+
+t.test('workspaces derived', t => {
+  const obj = {
+    workspaces: ['a'],
+  }
+  const flat = {}
+  definitions.workspaces.flatten('workspaces', obj, flat)
+  t.equal(flat.workspacesEnabled, true)
+  obj.workspaces = null
+  t.equal(flat.workspacesEnabled, true)
+  obj.workspaces = false
+  t.equal(flat.workspacesEnabled, false)
+})

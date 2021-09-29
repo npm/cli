@@ -211,7 +211,7 @@ All commands:
                     [--json] [--package-lock-only]
                     [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
                     [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-                    [-ws|--workspaces]
+                    [-ws|--workspaces] [--include-workspace-root]
                     
                     Run "npm help audit" for more info
 
@@ -313,7 +313,7 @@ All commands:
                     [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]] [--ignore-scripts]
                     [--no-audit] [--no-bin-links] [--no-fund] [--dry-run]
                     [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-                    [-ws|--workspaces]
+                    [-ws|--workspaces] [--include-workspace-root]
                     
                     alias: ddp
                     
@@ -463,7 +463,7 @@ All commands:
                     [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]] [--ignore-scripts]
                     [--no-audit] [--no-bin-links] [--no-fund]
                     [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-                    [-ws|--workspaces]
+                    [-ws|--workspaces] [--include-workspace-root]
                     
                     Run "npm help find-dupes" for more info
 
@@ -560,7 +560,7 @@ All commands:
                     [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]] [--ignore-scripts]
                     [--no-audit] [--no-bin-links] [--no-fund] [--dry-run]
                     [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-                    [-ws|--workspaces]
+                    [-ws|--workspaces] [--include-workspace-root]
                     
                     aliases: i, in, ins, inst, insta, instal, isnt, isnta, isntal, add
                     
@@ -603,7 +603,7 @@ All commands:
                     [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]] [--ignore-scripts]
                     [--no-audit] [--no-bin-links] [--no-fund] [--dry-run]
                     [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-                    [-ws|--workspaces]
+                    [-ws|--workspaces] [--include-workspace-root]
                     
                     alias: it
                     
@@ -624,7 +624,7 @@ All commands:
                     [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]] [--ignore-scripts]
                     [--no-audit] [--no-bin-links] [--no-fund] [--dry-run]
                     [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-                    [-ws|--workspaces]
+                    [-ws|--workspaces] [--include-workspace-root]
                     
                     alias: ln
                     
@@ -642,7 +642,7 @@ All commands:
                     [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]] [--link]
                     [--package-lock-only] [--unicode]
                     [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-                    [-ws|--workspaces]
+                    [-ws|--workspaces] [--include-workspace-root]
                     
                     alias: la
                     
@@ -686,7 +686,7 @@ All commands:
                     [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]] [--link]
                     [--package-lock-only] [--unicode]
                     [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-                    [-ws|--workspaces]
+                    [-ws|--workspaces] [--include-workspace-root]
                     
                     alias: list
                     
@@ -816,7 +816,7 @@ All commands:
                     Options:
                     [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]] [--dry-run]
                     [--json] [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-                    [-ws|--workspaces]
+                    [-ws|--workspaces] [--include-workspace-root]
                     
                     Run "npm help prune" for more info
 
@@ -844,7 +844,7 @@ All commands:
                     Options:
                     [-g|--global] [--no-bin-links] [--ignore-scripts]
                     [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-                    [-ws|--workspaces]
+                    [-ws|--workspaces] [--include-workspace-root]
                     
                     alias: rb
                     
@@ -1054,7 +1054,7 @@ All commands:
                     Options:
                     [-S|--save|--no-save|--save-prod|--save-dev|--save-optional|--save-peer]
                     [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-                    [-ws|--workspaces]
+                    [-ws|--workspaces] [--include-workspace-root]
                     
                     aliases: un, unlink, remove, rm, r
                     
@@ -1098,7 +1098,7 @@ All commands:
                     [--no-package-lock] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
                     [--ignore-scripts] [--no-audit] [--no-bin-links] [--no-fund] [--dry-run]
                     [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-                    [-ws|--workspaces]
+                    [-ws|--workspaces] [--include-workspace-root]
                     
                     aliases: up, upgrade, udpate
                     
