@@ -1,45 +1,8 @@
-/*!
-
- diff v4.0.1
-
-Software License Agreement (BSD License)
-
-Copyright (c) 2009-2015, Kevin Decker <kpdecker@gmail.com>
-
-All rights reserved.
-
-Redistribution and use of this software in source and binary forms, with or without modification,
-are permitted provided that the following conditions are met:
-
-* Redistributions of source code must retain the above
-  copyright notice, this list of conditions and the
-  following disclaimer.
-
-* Redistributions in binary form must reproduce the above
-  copyright notice, this list of conditions and the
-  following disclaimer in the documentation and/or other
-  materials provided with the distribution.
-
-* Neither the name of Kevin Decker nor the names of its
-  contributors may be used to endorse or promote products
-  derived from this software without specific prior
-  written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR
-IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
-FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
-CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
-DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER
-IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
-OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-@license
-*/
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
   typeof define === 'function' && define.amd ? define(['exports'], factory) :
   (global = global || self, factory(global.Diff = {}));
-}(this, function (exports) { 'use strict';
+}(this, (function (exports) { 'use strict';
 
   function Diff() {}
   Diff.prototype = {
@@ -349,7 +312,8 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   };
 
   wordDiff.tokenize = function (value) {
-    var tokens = value.split(/(\s+|[()[\]{}'"]|\b)/); // Join the boundary splits that we do not consider to be boundaries. This is primarily the extended Latin character set.
+    // All whitespace symbols except newline group into one token, each newline - in separate token
+    var tokens = value.split(/([^\S\r\n]+|[()[\]{}'"\r\n]|\b)/); // Join the boundary splits that we do not consider to be boundaries. This is primarily the extended Latin character set.
 
     for (var i = 0; i < tokens.length - 1; i++) {
       // If we have an empty string in the next field and we have only word chars before and after, merge
@@ -432,6 +396,8 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   }
 
   function _typeof(obj) {
+    "@babel/helpers - typeof";
+
     if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
       _typeof = function (obj) {
         return typeof obj;
@@ -446,23 +412,36 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   }
 
   function _toConsumableArray(arr) {
-    return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread();
+    return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();
   }
 
   function _arrayWithoutHoles(arr) {
-    if (Array.isArray(arr)) {
-      for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) arr2[i] = arr[i];
-
-      return arr2;
-    }
+    if (Array.isArray(arr)) return _arrayLikeToArray(arr);
   }
 
   function _iterableToArray(iter) {
-    if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter);
+    if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter);
+  }
+
+  function _unsupportedIterableToArray(o, minLen) {
+    if (!o) return;
+    if (typeof o === "string") return _arrayLikeToArray(o, minLen);
+    var n = Object.prototype.toString.call(o).slice(8, -1);
+    if (n === "Object" && o.constructor) n = o.constructor.name;
+    if (n === "Map" || n === "Set") return Array.from(o);
+    if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
+  }
+
+  function _arrayLikeToArray(arr, len) {
+    if (len == null || len > arr.length) len = arr.length;
+
+    for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
+
+    return arr2;
   }
 
   function _nonIterableSpread() {
-    throw new TypeError("Invalid attempt to spread non-iterable instance");
+    throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
   }
 
   var objectPrototypeToString = Object.prototype.toString;
@@ -651,12 +630,23 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
           chunkHeader = chunkHeaderLine.split(/@@ -(\d+)(?:,(\d+))? \+(\d+)(?:,(\d+))? @@/);
       var hunk = {
         oldStart: +chunkHeader[1],
-        oldLines: +chunkHeader[2] || 1,
+        oldLines: typeof chunkHeader[2] === 'undefined' ? 1 : +chunkHeader[2],
         newStart: +chunkHeader[3],
-        newLines: +chunkHeader[4] || 1,
+        newLines: typeof chunkHeader[4] === 'undefined' ? 1 : +chunkHeader[4],
         lines: [],
         linedelimiters: []
-      };
+      }; // Unified Diff Format quirk: If the chunk size is 0,
+      // the first number is one lower than one would expect.
+      // https://www.artima.com/weblogs/viewpost.jsp?thread=164293
+
+      if (hunk.oldLines === 0) {
+        hunk.oldStart += 1;
+      }
+
+      if (hunk.newLines === 0) {
+        hunk.newStart += 1;
+      }
+
       var addCount = 0,
           removeCount = 0;
 
@@ -849,11 +839,6 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
       diffOffset += _hunk.newLines - _hunk.oldLines;
 
-      if (_toPos < 0) {
-        // Creating a new file
-        _toPos = 0;
-      }
-
       for (var j = 0; j < _hunk.lines.length; j++) {
         var line = _hunk.lines[j],
             operation = line.length > 0 ? line[0] : ' ',
@@ -1024,8 +1009,9 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
               var newEOFNewline = /\n$/.test(newStr);
               var noNlBeforeAdds = lines.length == 0 && curRange.length > hunk.oldLines;
 
-              if (!oldEOFNewline && noNlBeforeAdds) {
+              if (!oldEOFNewline && noNlBeforeAdds && oldStr.length > 0) {
                 // special case: old has no eol and no trailing context; no-nl can end up before adds
+                // however, if the old file is empty, do not output the no-nl line
                 curRange.splice(hunk.oldLines, 0, '\\ No newline at end of file');
               }
 
@@ -1058,12 +1044,11 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       hunks: hunks
     };
   }
-  function createTwoFilesPatch(oldFileName, newFileName, oldStr, newStr, oldHeader, newHeader, options) {
-    var diff = structuredPatch(oldFileName, newFileName, oldStr, newStr, oldHeader, newHeader, options);
+  function formatPatch(diff) {
     var ret = [];
 
-    if (oldFileName == newFileName) {
-      ret.push('Index: ' + oldFileName);
+    if (diff.oldFileName == diff.newFileName) {
+      ret.push('Index: ' + diff.oldFileName);
     }
 
     ret.push('===================================================================');
@@ -1071,12 +1056,26 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     ret.push('+++ ' + diff.newFileName + (typeof diff.newHeader === 'undefined' ? '' : '\t' + diff.newHeader));
 
     for (var i = 0; i < diff.hunks.length; i++) {
-      var hunk = diff.hunks[i];
+      var hunk = diff.hunks[i]; // Unified Diff Format quirk: If the chunk size is 0,
+      // the first number is one lower than one would expect.
+      // https://www.artima.com/weblogs/viewpost.jsp?thread=164293
+
+      if (hunk.oldLines === 0) {
+        hunk.oldStart -= 1;
+      }
+
+      if (hunk.newLines === 0) {
+        hunk.newStart -= 1;
+      }
+
       ret.push('@@ -' + hunk.oldStart + ',' + hunk.oldLines + ' +' + hunk.newStart + ',' + hunk.newLines + ' @@');
       ret.push.apply(ret, hunk.lines);
     }
 
     return ret.join('\n') + '\n';
+  }
+  function createTwoFilesPatch(oldFileName, newFileName, oldStr, newStr, oldHeader, newHeader, options) {
+    return formatPatch(structuredPatch(oldFileName, newFileName, oldStr, newStr, oldHeader, newHeader, options));
   }
   function createPatch(fileName, oldStr, newStr, oldHeader, newHeader, options) {
     return createTwoFilesPatch(fileName, fileName, oldStr, newStr, oldHeader, newHeader, options);
@@ -1557,29 +1556,27 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     return n;
   }
 
-  /* See LICENSE file for terms of use */
-
   exports.Diff = Diff;
-  exports.diffChars = diffChars;
-  exports.diffWords = diffWords;
-  exports.diffWordsWithSpace = diffWordsWithSpace;
-  exports.diffLines = diffLines;
-  exports.diffTrimmedLines = diffTrimmedLines;
-  exports.diffSentences = diffSentences;
-  exports.diffCss = diffCss;
-  exports.diffJson = diffJson;
-  exports.diffArrays = diffArrays;
-  exports.structuredPatch = structuredPatch;
-  exports.createTwoFilesPatch = createTwoFilesPatch;
-  exports.createPatch = createPatch;
   exports.applyPatch = applyPatch;
   exports.applyPatches = applyPatches;
-  exports.parsePatch = parsePatch;
-  exports.merge = merge;
+  exports.canonicalize = canonicalize;
   exports.convertChangesToDMP = convertChangesToDMP;
   exports.convertChangesToXML = convertChangesToXML;
-  exports.canonicalize = canonicalize;
+  exports.createPatch = createPatch;
+  exports.createTwoFilesPatch = createTwoFilesPatch;
+  exports.diffArrays = diffArrays;
+  exports.diffChars = diffChars;
+  exports.diffCss = diffCss;
+  exports.diffJson = diffJson;
+  exports.diffLines = diffLines;
+  exports.diffSentences = diffSentences;
+  exports.diffTrimmedLines = diffTrimmedLines;
+  exports.diffWords = diffWords;
+  exports.diffWordsWithSpace = diffWordsWithSpace;
+  exports.merge = merge;
+  exports.parsePatch = parsePatch;
+  exports.structuredPatch = structuredPatch;
 
   Object.defineProperty(exports, '__esModule', { value: true });
 
-}));
+})));

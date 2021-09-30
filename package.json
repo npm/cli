@@ -54,10 +54,9 @@
   },
   "dependencies": {
     "@isaacs/string-locale-compare": "^1.1.0",
-    "@npmcli/arborist": "npm/arborist#gar/workspace-root",
+    "@npmcli/arborist": "^2.10.0",
     "@npmcli/ci-detect": "^1.2.0",
     "@npmcli/config": "^2.3.0",
-    "@npmcli/arborist": "npm/arborist#gar/workspace-root",
     "@npmcli/map-workspaces": "^1.0.4",
     "@npmcli/package-json": "^1.0.1",
     "@npmcli/run-script": "^1.8.6",
@@ -126,6 +125,7 @@
     "write-file-atomic": "^3.0.3"
   },
   "bundleDependencies": [
+    "@isaacs/string-locale-compare",
     "@npmcli/arborist",
     "@npmcli/ci-detect",
     "@npmcli/config",
