@@ -837,7 +837,10 @@ t.test('workspaces derived', t => {
   definitions.workspaces.flatten('workspaces', obj, flat)
   t.equal(flat.workspacesEnabled, true)
   obj.workspaces = null
+  definitions.workspaces.flatten('workspaces', obj, flat)
   t.equal(flat.workspacesEnabled, true)
   obj.workspaces = false
+  definitions.workspaces.flatten('workspaces', obj, flat)
   t.equal(flat.workspacesEnabled, false)
+  t.end()
 })
