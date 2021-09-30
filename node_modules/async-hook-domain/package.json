@@ -1,0 +1,53 @@
+{
+  "name": "async-hook-domain",
+  "version": "2.0.4",
+  "description": "An implementation of Domain-like error handling, built on async_hooks",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {
+    "source-map-support": "^0.5.16",
+    "tap": "^15.0.9"
+  },
+  "scripts": {
+    "test": "tap test/fixtures",
+    "snap": "tap test/fixtures",
+    "preversion": "npm test",
+    "postversion": "npm publish",
+    "prepublishOnly": "git push origin --follow-tags"
+  },
+  "tap": {
+    "node-arg": [
+      "test/run.js"
+    ],
+    "check-coverage": true
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tapjs/async-hook-domain.git"
+  },
+  "keywords": [
+    "async",
+    "hooks",
+    "async_hooks",
+    "domain",
+    "error",
+    "handling",
+    "handler",
+    "uncaughtException",
+    "unhandledRejection",
+    "catch",
+    "promise",
+    "execution",
+    "context"
+  ],
+  "author": "Isaac Z. Schlueter <i@izs.me> (https://blog.izs.me)",
+  "license": "ISC",
+  "files": [
+    "index.js"
+  ],
+  "engines": {
+    "node": ">=10"
+  }
+}

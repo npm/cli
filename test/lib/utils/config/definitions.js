@@ -879,6 +879,7 @@ t.test('workspace', t => {
 t.test('workspaces derived', t => {
   const obj = {
     workspaces: ['a'],
+    'user-agent': definitions['user-agent'].default,
   }
   const flat = {}
   definitions.workspaces.flatten('workspaces', obj, flat)

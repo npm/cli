@@ -1,0 +1,34 @@
+{
+  "name": "marked-man",
+  "version": "0.7.0",
+  "description": "wrapper adding manpage output to 'marked', inspired by 'ronn'",
+  "files": [
+    "lib",
+    "man",
+    "bin"
+  ],
+  "main": "lib/marked-man.js",
+  "bin": {
+    "marked-man": "./bin/marked-man"
+  },
+  "man": [
+    "./man/marked-man.1"
+  ],
+  "scripts": {
+    "test": "node ./test/compare"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kapouer/marked-man.git"
+  },
+  "keywords": [
+    "markdown",
+    "roff",
+    "ronn"
+  ],
+  "author": "Jérémy Lal <kapouer@melix.org>",
+  "license": "MIT",
+  "peerDependencies": {
+    "marked": "^0.7.0"
+  }
+}

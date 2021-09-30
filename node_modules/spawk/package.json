@@ -1,0 +1,58 @@
+{
+  "name": "spawk",
+  "version": "1.7.1",
+  "description": "child_process.spawn mocking library",
+  "main": "lib/spawk.js",
+  "types": "./types/spawk.d.ts",
+  "scripts": {
+    "lint": "standard",
+    "lint:fix": "standard --fix",
+    "preversion": "npm run test",
+    "posttest": "npm run lint",
+    "test": "nyc mocha --check-leaks"
+  },
+  "enginesStrict": true,
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "files": [
+    "lib/",
+    "types/"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wraithgar/spawk.git"
+  },
+  "keywords": [
+    "child_process.spawn",
+    "mock",
+    "child_process",
+    "process",
+    "spawn"
+  ],
+  "author": "Gar <gar+npm@danger.computer>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wraithgar/spawk/issues"
+  },
+  "homepage": "https://github.com/wraithgar/spawk#readme",
+  "devDependencies": {
+    "chai": "^4.3.0",
+    "faker": "^5.4.0",
+    "mocha": "^9.0.1",
+    "nyc": "^15.1.0",
+    "standard": "^16.0.3"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "branches": 100,
+    "lines": 100,
+    "functions": 100,
+    "statements": 100
+  },
+  "eslintConfig": {
+    "env": {
+      "node": true
+    }
+  }
+}

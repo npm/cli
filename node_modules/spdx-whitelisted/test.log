@@ -1,0 +1,4 @@
+
+> spdx-whitelisted@0.0.0 test /home/kyle/spdx-satisfies.js
+> defence -i javascript README.md | replace-require-self | node
+

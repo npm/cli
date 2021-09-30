@@ -803,17 +803,18 @@ Allow installing "staged" published packages, as defined by [npm RFC PR
 
 This is experimental, and not implemented by the npm public registry.
 
-<<<<<<< HEAD
 <!-- automatically generated, do not edit manually -->
 <!-- see lib/utils/config/definitions.js -->
-=======
+
 #### `include-workspace-root`
 
 * Default: false
 * Type: Boolean
 
 Include the workspace root when workspaces are enabled for a command.
->>>>>>> 4ef9bb10c (test coverage 100%)
+
+<!-- automatically generated, do not edit manually -->
+<!-- see lib/utils/config/definitions.js -->
 
 #### `init-author-email`
 

@@ -1,0 +1,46 @@
+{
+  "name": "licensee",
+  "description": "check dependency licenses against rules",
+  "version": "8.2.0",
+  "author": "Kyle E. Mitchell <kyle@kemitchell.com> (https://kemitchell.com/)",
+  "contributors": [
+    "Jakob Krigovsky <jakob@krigovsky.com>",
+    "Brett Zamir <brett@brett-zamir.name>",
+    "Andrew Monks <a@monks.co>"
+  ],
+  "dependencies": {
+    "@blueoak/list": "^2.0.0",
+    "correct-license-metadata": "^1.0.1",
+    "docopt": "^0.6.2",
+    "fs-access": "^2.0.0",
+    "has": "^1.0.3",
+    "json-parse-errback": "^2.0.1",
+    "npm-license-corrections": "^1.0.0",
+    "read-package-tree": "^5.3.1",
+    "run-parallel": "^1.1.9",
+    "semver": "^6.3.0",
+    "simple-concat": "^1.0.0",
+    "spdx-expression-parse": "^3.0.0",
+    "spdx-expression-validate": "^2.0.0",
+    "spdx-osi": "^3.0.0",
+    "spdx-whitelisted": "^1.0.0"
+  },
+  "bin": "./licensee",
+  "files": [
+    "LICENSE",
+    "index.js",
+    "licensee"
+  ],
+  "devDependencies": {
+    "spawn-sync": "^2.0.0",
+    "standard": "^14.3.1",
+    "tap": "^14.5.0"
+  },
+  "license": "Apache-2.0",
+  "repository": "jslicense/licensee.js",
+  "scripts": {
+    "licenses": "./licensee --errors-only",
+    "lint": "standard index.js licensee test/**/test.js",
+    "test": "tap tests/**/test.js"
+  }
+}

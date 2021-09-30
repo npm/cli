@@ -1,0 +1,277 @@
+#!/usr/bin/env node
+var access = require('fs-access')
+var docopt = require('docopt')
+var fs = require('fs')
+var has = require('has')
+var path = require('path')
+var validSPDX = require('spdx-expression-validate')
+
+var USAGE = [
+  'Check npm package dependency license metadata against rules.',
+  '',
+  'Usage:',
+  '  licensee [options]',
+  '',
+  'Options:',
+  '  --init                  Create a .licensee.json file.',
+  '  --corrections           Use crowdsourced license metadata corrections.',
+  '  --blueoak=RATING        Permit licenses by Blue Oak Council rating.',
+  '  --licenses IDENTIFIERS  Permit licenses matching comma-separated list of SPDX identifiers.',
+  '  --osi                   Permit licenses approved by the Open Source Initiative.',
+  '  --packages LIST         Permit comma-delimited name@range.',
+  '  --errors-only           Only show NOT APPROVED packages.',
+  '  --production            Do not check devDependencies.',
+  '  --ndjson                Print newline-delimited JSON objects.',
+  '  --quiet                 Quiet mode, only exit(0/1).',
+  '  -h, --help              Print this screen to standard output.',
+  '  -v, --version           Print version to standard output.'
+].join('\n')
+
+var options = docopt.docopt(USAGE, {
+  version: require('./package.json').version
+})
+
+var cwd = process.cwd()
+var configuration
+var configurationPath = path.join(cwd, '.licensee.json')
+
+if (options['--init']) {
+  fs.writeFile(
+    configurationPath,
+    JSON.stringify({
+      licenses: {
+        spdx: [
+          'MIT', 'BSD-2-Clause', 'BSD-3-Clause', 'Apache-2.0'
+        ]
+      },
+      packages: (
+        options['--packages']
+          ? parsePackageWhitelist(options['--packages'])
+          : { optimist: '<=0.6.1' }
+      ),
+      corrections: false
+    }, null, 2) + '\n',
+    {
+      encoding: 'utf8',
+      flag: 'wx'
+    },
+    function (error) {
+      if (error) {
+        if (error.code === 'EEXIST') {
+          die(configurationPath + ' already exists.')
+        } else {
+          die('Could not create ' + configurationPath + '.')
+        }
+      } else {
+        process.stdout.write('Created ' + configurationPath + '.\n')
+        process.exit(0)
+      }
+    }
+  )
+} else if (
+  options['--spdx'] ||
+  options['--osi'] ||
+  options['--blueoak'] ||
+  options['--packages']
+) {
+  configuration = {
+    licenses: {
+      spdx: options['--spdx'] || undefined,
+      blueOak: options['--blueoak'] || undefined,
+      osi: options['--osi'] || undefined
+    },
+    packages: options['--packages']
+      ? parsePackageWhitelist(options['--packages'])
+      : {},
+    corrections: options['--corrections']
+  }
+  checkDependencies()
+} else {
+  access(configurationPath, function (error) {
+    if (error) {
+      die(
+        [
+          'Cannot read ' + configurationPath + '.',
+          'Create ' + configurationPath + ' with licensee --init',
+          'or configure with --spdx, --blueoak, --osi, and --packages.',
+          'See licensee --help for more information.'
+        ].join('\n')
+      )
+    } else {
+      fs.readFile(configurationPath, function (error, data) {
+        if (error) {
+          die('Error reading ' + configurationPath)
+        } else {
+          try {
+            configuration = JSON.parse(data)
+          } catch (error) {
+            die('Error parsing ' + configurationPath)
+          }
+          checkDependencies()
+        }
+      })
+    }
+  })
+}
+
+function checkDependencies () {
+  configuration.productionOnly = options['--production']
+  configuration.corrections = configuration.corrections || options['--corrections']
+  require('./')(configuration, cwd, function (error, dependencies) {
+    if (error) {
+      die(error.message + '\n')
+    } else {
+      if (dependencies.length === 0) {
+        process.exit(0)
+      } else {
+        var errorsOnly = !!options['--errors-only']
+        var quiet = !!options['--quiet']
+        var ndjson = !!options['--ndjson']
+        var haveIssue = false
+        dependencies.forEach(function (dependency) {
+          if (!dependency.approved) {
+            haveIssue = true
+          }
+          if (!quiet) {
+            if (errorsOnly) {
+              if (!dependency.approved) {
+                print(dependency, ndjson)
+              }
+            } else {
+              print(dependency, ndjson)
+            }
+          }
+        })
+        process.exit(haveIssue ? 1 : 0)
+      }
+    }
+  })
+}
+
+function print (dependency, ndjson) {
+  if (ndjson) {
+    process.stdout.write(toJSON(dependency) + '\n')
+  } else {
+    process.stdout.write(toText(dependency) + '\n')
+  }
+}
+
+function toText (result) {
+  return (
+    result.name + '@' + result.version + '\n' +
+    (
+      result.approved
+        ? (
+          '  Approved by ' +
+        (result.license ? 'license' : 'package') + '\n'
+        )
+        : '  NOT APPROVED\n'
+    ) +
+    '  Terms: ' + displayLicense(result.license) + '\n' +
+    (
+      result.corrected
+        ? (
+          result.corrected === 'automatic'
+            ? '  Corrected: correct-license-metadata\n'
+            : '  Corrected: npm-license-corrections\n'
+        )
+        : ''
+    ) +
+    '  Repository: ' + formatRepo(result.repository) + '\n' +
+    '  Homepage: ' + formatRepo(result.homepage) + '\n' +
+    '  Author: ' + formatPerson(result.author) + '\n' +
+    '  Contributors:' + formatPeople(result.contributors) + '\n'
+  )
+}
+
+var outputProperties = [
+  'name',
+  'version',
+  'approved',
+  'license',
+  'corrected',
+  'repository',
+  'homepage',
+  'author',
+  'contributors'
+]
+
+function toJSON (dependency) {
+  var returned = {}
+  outputProperties.forEach(function (key) {
+    returned[key] = dependency[key]
+  })
+  return JSON.stringify(returned)
+}
+
+function displayLicense (license) {
+  if (typeof license === 'string') {
+    if (validSPDX(license)) {
+      return license
+    } else {
+      return 'Invalid SPDX expression "' + license + '"'
+    }
+  } else if (Array.isArray(license)) {
+    return JSON.stringify(license)
+  } else {
+    return 'Invalid license metadata'
+  }
+}
+
+function formatPeople (people) {
+  if (Array.isArray(people)) {
+    return '\n' + people
+      .map(function (person) {
+        return '    ' + formatPerson(person)
+      })
+      .join('\n')
+  } else if (typeof people === 'string') {
+    return ' ' + people
+  } else {
+    return ' None listed'
+  }
+}
+
+function formatPerson (person) {
+  if (!person) {
+    return 'None listed'
+  } else if (typeof person === 'string') {
+    return person
+  } else {
+    return (
+      person.name +
+      (person.email ? ' <' + person.email + '>' : '') +
+      (person.url ? ' (' + person.url + ')' : '')
+    )
+  }
+}
+
+function formatRepo (repo) {
+  if (repo) {
+    if (typeof repo === 'string') {
+      return repo
+    } else if (has(repo, 'url')) {
+      return repo.url
+    }
+  } else {
+    return 'None listed'
+  }
+}
+
+function die (message) {
+  process.stderr.write(message + '\n')
+  process.exit(1)
+}
+
+function parsePackageWhitelist (string) {
+  return string
+    .split(',')
+    .map(function (string) {
+      return string.trim()
+    })
+    .reduce(function (whitelist, string) {
+      var split = string.split('@')
+      whitelist[split[0]] = split[1]
+      return whitelist
+    }, {})
+}

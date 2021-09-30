@@ -1,0 +1,19 @@
+{
+  "name": "json-parse-errback",
+  "description": "parse(input, function(error, object) { ... })",
+  "version": "2.0.1",
+  "author": "Kyle E. Mitchell <kyle@kemitchell.com> (https://kemitchell.com/)",
+  "devDependencies": {
+    "defence-cli": "^1.0.5"
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "index.js"
+  ],
+  "license": "MIT",
+  "repository": "kemitchell/json-parse-errback.js",
+  "scripts": {
+    "prepublish": "defence < README.md > index.js"
+  }
+}

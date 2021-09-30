@@ -1,0 +1,36 @@
+{
+  "name": "redeyed",
+  "version": "2.1.1",
+  "description": "Takes JavaScript code, along with a config and returns the original code with tokens wrapped as configured.",
+  "author": "Thorsten Lorenz <thlorenz@gmx.de> (thlorenz.com)",
+  "main": "redeyed.js",
+  "scripts": {
+    "test": "npm run run-test && npm run lint",
+    "run-test": "tape test/*.js",
+    "lint": "standart",
+    "demo-log": "node examples/replace-log",
+    "demo": "cd examples/browser; open index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/thlorenz/redeyed.git"
+  },
+  "keywords": [
+    "ast",
+    "syntax",
+    "tree",
+    "source",
+    "wrap",
+    "metadata"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "cardinal": "~1.0.0",
+    "readdirp": "~2.1.0",
+    "standart": "^6.1.0",
+    "tape": "~4.9.0"
+  },
+  "dependencies": {
+    "esprima": "~4.0.0"
+  }
+}

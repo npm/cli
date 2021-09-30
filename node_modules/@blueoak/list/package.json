@@ -1,0 +1,20 @@
+{
+  "name": "@blueoak/list",
+  "version": "2.0.0",
+  "description": "Blue Oak Council's license list in JSON format",
+  "author": "Blue Oak Council Inc. <github@blueoakcouncil.org>",
+  "repository": "blueoakcouncil/blue-oak-list-npm-package",
+  "license": "CC0-1.0",
+  "files": [
+    "package.json",
+    "index.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "devDependencies": {
+    "json": "^9.0.6"
+  },
+  "scripts": {
+    "prepublish": "curl https://blueoakcouncil.org/list.json | json ratings > index.json"
+  }
+}

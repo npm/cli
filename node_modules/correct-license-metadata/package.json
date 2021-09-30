@@ -1,0 +1,30 @@
+{
+  "name": "correct-license-metadata",
+  "version": "1.4.0",
+  "description": "interpret old-style npm licenses arrays and other aberrations",
+  "author": "Kyle E. Mitchell <kyle@kemitchell.com> (https://kemitchell.com/)",
+  "repository": "jslicense/correct-license-metadata.js",
+  "license": "MIT",
+  "keywords": [
+    "licenses",
+    "metadata",
+    "npm"
+  ],
+  "files": [
+    "index.js",
+    "README.md",
+    "LICENSE"
+  ],
+  "dependencies": {
+    "spdx-expression-validate": "^2.0.0"
+  },
+  "devDependencies": {
+    "defence-cli": "^2.0.1",
+    "replace-require-self": "^1.1.1",
+    "standard": "^12.0.1"
+  },
+  "scripts": {
+    "lint": "standard",
+    "test": "defence README.md | replace-require-self | node"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "name": "spdx-whitelisted",
+  "description": "test whether SPDX expressions satisfy license whitelists",
+  "version": "1.0.0",
+  "author": "Kyle E. Mitchell <kyle@kemitchell.com> (https://kemitchell.com)",
+  "contributors": [
+    "Kyle E. Mitchell <kyle@kemitchell.com> (https://kemitchell.com)",
+    "Dan Butvinik <butvinik@outlook.com>",
+    "Jeff McAffer <jeffmcaffer@gmail.com>"
+  ],
+  "dependencies": {
+    "spdx-compare": "^1.0.0",
+    "spdx-ranges": "^2.0.0"
+  },
+  "devDependencies": {
+    "defence-cli": "^2.0.1",
+    "replace-require-self": "^1.1.1",
+    "spdx-expression-parse": "^3.0.0",
+    "standard": "^11.0.0"
+  },
+  "keywords": [
+    "SPDX",
+    "law",
+    "legal",
+    "license",
+    "metadata",
+    "package",
+    "package.json",
+    "standards"
+  ],
+  "license": "MIT",
+  "repository": "jslicense/spdx-whitelisted.js",
+  "scripts": {
+    "test": "defence -i javascript README.md | replace-require-self | node",
+    "lint": "standard"
+  }
+}

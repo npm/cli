@@ -1,0 +1,34 @@
+{
+  "name": "spdx-expression-validate",
+  "description": "validate SPDX license expressions",
+  "version": "2.0.0",
+  "author": "Kyle E. Mitchell <kyle@kemitchell.com> (http://kemitchell.com)",
+  "files": [
+    "index.js"
+  ],
+  "dependencies": {
+    "spdx-expression-parse": "^3.0.0"
+  },
+  "devDependencies": {
+    "defence-cli": "^2.0.1",
+    "replace-require-self": "^1.0.0",
+    "standard": "^12.0.1"
+  },
+  "homepage": "https://github.com/kemitchell/spdx.js",
+  "keywords": [
+    "SPDX",
+    "law",
+    "legal",
+    "license",
+    "metadata",
+    "package",
+    "package.json",
+    "standards"
+  ],
+  "license": "(MIT AND CC-BY-3.0)",
+  "repository": "kemitchell/spdx-expression-validate.js",
+  "scripts": {
+    "test": "defence -i javascript README.md | replace-require-self | node",
+    "lint": "standard"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "own-or-env",
+  "version": "1.0.2",
+  "description": "Use an objects own property, or an environment variable.  Optionally treat as a boolean if the env should be set to 1 or 0.",
+  "main": "own-or-env.js",
+  "scripts": {
+    "test": "tap test.js --100",
+    "preversion": "npm test",
+    "postversion": "npm publish",
+    "postpublish": "git push origin --all; git push origin --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isaacs/own-or-env.git"
+  },
+  "author": "Isaac Z. Schlueter <i@izs.me> (http://blog.izs.me/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/isaacs/own-or-env/issues"
+  },
+  "homepage": "https://github.com/isaacs/own-or-env#readme",
+  "dependencies": {
+    "own-or": "^1.0.0"
+  },
+  "devDependencies": {
+    "tap": "^11.1.0"
+  }
+}

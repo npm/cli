@@ -1,0 +1,25 @@
+{
+  "name": "spdx-osi",
+  "description": "SPDX license expressions for OSI-approved licenses",
+  "version": "3.0.0",
+  "author": "Kyle E. Mitchell <kyle@kemitchell.com> (https://kemitchell.com/)",
+  "devDependencies": {
+    "spdx-expression-parse": "^3.0.0"
+  },
+  "keywords": [
+    "SPDX",
+    "licenses",
+    "open source",
+    "Open Source Initiative"
+  ],
+  "files": [
+    "index.json"
+  ],
+  "license": "CC0-1.0",
+  "repository": "kemitchell/spdx-osi.json",
+  "scripts": {
+    "pretest": "npm run prepublish",
+    "test": "node test.js",
+    "prepublish": "node build.js > index.json"
+  }
+}

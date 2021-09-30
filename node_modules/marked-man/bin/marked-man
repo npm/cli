@@ -1,0 +1,18 @@
+#!/usr/bin/env node
+
+var marked = require('../');
+
+process.argv = process.argv.map(function(tok) {
+	return tok.replace(/^--version/, "--man-version");
+});
+
+if (process.env.SOURCE_DATE_EPOCH) {
+	marked.defaults.date = new Date(process.env.SOURCE_DATE_EPOCH * 1000).toISOString();
+}
+
+var main = require('marked/bin/marked');
+
+main(process.argv.slice(), function(err, code) {
+	if (err) throw err;
+	return process.exit(code || 0);
+});
