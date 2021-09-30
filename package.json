@@ -57,6 +57,7 @@
     "@npmcli/arborist": "npm/arborist#gar/workspace-root",
     "@npmcli/ci-detect": "^1.2.0",
     "@npmcli/config": "^2.3.0",
+    "@npmcli/arborist": "npm/arborist#gar/workspace-root",
     "@npmcli/map-workspaces": "^1.0.4",
     "@npmcli/package-json": "^1.0.1",
     "@npmcli/run-script": "^1.8.6",

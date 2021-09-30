@@ -196,6 +196,12 @@ Package  Current  Wanted  Latest  Location          Depended by
 dog        1.0.1   1.0.1   2.0.0  node_modules/dog  tap-testdir-outdated-workspaces
 `
 
+exports[`test/lib/outdated.js TAP workspaces > should display only root outdated when ws disabled 2`] = `
+
+Package  Current  Wanted  Latest  Location          Depended by
+dog        1.0.1   1.0.1   2.0.0  node_modules/dog  tap-testdir-outdated-workspaces
+`
+
 exports[`test/lib/outdated.js TAP workspaces > should display parseable results filtered by ws 1`] = `
 
 {CWD}/test/lib/tap-testdir-outdated-workspaces/node_modules/cat:cat@1.0.1:cat@1.0.0:cat@1.0.1:a

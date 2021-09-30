@@ -579,6 +579,18 @@ t.test('workspaces', async t => {
   })
 
   await new Promise((res, rej) => {
+    flatOptions.workspacesEnabled = false
+    outdated(testDir, {}).exec([], err => {
+      if (err)
+        rej(err)
+
+      t.matchSnapshot(logs, 'should display only root outdated when ws disabled')
+      flatOptions.workspacesEnabled = true
+      res()
+    })
+  })
+
+  await new Promise((res, rej) => {
     outdated(testDir, {
       config: {
         json: true,

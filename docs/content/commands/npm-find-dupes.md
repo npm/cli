@@ -191,11 +191,16 @@ This value is not exported to the environment for child processes.
 * Default: null
 * Type: null or Boolean
 
-Enable running a command in the context of **all** the configured
+Set to true to run the command in the context of **all** configured
 workspaces.
 
 Explicitly setting this to false will cause commands like `install` to
-ignore workspaces altogether.
+ignore workspaces altogether. When not set explicitly:
+
+- Commands that operate on the `node_modules` tree (install, update, etc.)
+will link workspaces into the `node_modules` folder. - Commands that do
+other things (test, exec, publish, etc.) will operate on the root project,
+_unless_ one or more workspaces are specified in the `workspace` config.
 
 This value is not exported to the environment for child processes.
 
@@ -208,6 +213,10 @@ This value is not exported to the environment for child processes.
 * Type: Boolean
 
 Include the workspace root when workspaces are enabled for a command.
+
+When false, specifying individual workspaces via the `workspace` config, or
+all workspaces via the `workspaces` flag, will cause npm to operate only on
+the specified workspaces, and not on the root project.
 
 <!-- automatically generated, do not edit manually -->
 <!-- see lib/utils/config/definitions.js -->
