@@ -125,7 +125,6 @@
     "write-file-atomic": "^3.0.3"
   },
   "bundleDependencies": [
-    "@isaacs/string-locale-compare",
     "@npmcli/arborist",
     "@npmcli/ci-detect",
     "@npmcli/config",
