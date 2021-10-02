@@ -4,6 +4,8 @@ section: 5
 description: Specifics of npm's package.json handling
 ---
 
+### Overview
+
 This document is all you need to know about what's required in your
 package.json file.  It must be actual JSON, not just a JavaScript object
 literal.
