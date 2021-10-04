@@ -1,3 +1,41 @@
+## v7.24.2 (2021-10-04)
+
+### BUG FIXES
+
+* [`56d6cfdc0`](https://github.com/npm/cli/commit/56d6cfdc0745fe919645389b94efb36760eb4179)
+  [#3804](https://github.com/npm/cli/issues/3804)
+  encode url before opening
+  ([@isaacs](https://github.com/isaacs))
+* [`075fe5056`](https://github.com/npm/cli/commit/075fe50565ae5c66df727cdd7df9dd5ed8cd4015)
+  [#3799](https://github.com/npm/cli/issues/3799)
+  restore exit code on "npm outdated"
+  ([@gfyoung](https://github.com/gfyoung))
+* [`dbb90f799`](https://github.com/npm/cli/commit/dbb90f7997900b8ae6026dddaa718efe9a1db2f4)
+  [#3809](https://github.com/npm/cli/issues/3809)
+  use Intl.Collator for string sorting when available
+  ([@isaacs](https://github.com/isaacs))
+
+### DEPENDENCIES
+
+* [`69ab10bbf`](https://github.com/npm/cli/commit/69ab10bbf83d42a5d3b5d3f43e5e5b861f3dfed0)
+  `is-core-module@2.7.0`
+* [`e94ddeaca`](https://github.com/npm/cli/commit/e94ddeaca1e75ecc8f54ebcb3df222965e3635d1)
+  `@npmcli/arborist@2.9.0`:
+  * fix: avoid infinite loops in peer dep replacements
+  * fix: use Intl.Collator for string sorting when available
+  * feat(vuln): expose isDirect
+
+### DOCUMENTATION
+
+* [`f425950a6`](https://github.com/npm/cli/commit/f425950a6ca671b2df20703f70b59022c2858d4d)
+  [#3805](https://github.com/npm/cli/issues/3805)
+  remove npm Enterprise from documentation
+  ([@ethomson](https://github.com/ethomson))
+* [`bb0b2da6c`](https://github.com/npm/cli/commit/bb0b2da6c0275dd8c9eda894452ce45b2e8c4c51)
+  [#3699](https://github.com/npm/cli/issues/3699)
+  fix(docs): add note about workspace script order
+  ([@behnammodi](https://github.com/behnammodi))
+
 ## v7.24.1 (2021-09-23)
 
 ### DEPENDENCIES
