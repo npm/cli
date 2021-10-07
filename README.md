@@ -4,7 +4,7 @@
 
 ### Requirements
 
-* [**Node.js** `v10`](https://nodejs.org/en/download/) or higher must be installed to run this program
+* [**Node.js** `v12`](https://nodejs.org/en/download/) or higher must be installed to run this program
 
 ### Installation
 
