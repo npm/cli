@@ -1,7 +1,7 @@
-name: 🐞 Bug v7
-description: File a bug/issue against v7.x
+name: 🐞 Bug v8
+description: File a bug/issue against v8.x
 title: "[BUG] <title>"
-labels: [Bug, Needs Triage, Release 7.x]
+labels: [Bug, Needs Triage, Release 8.x]
 body:
 - type: checkboxes
   attributes:
