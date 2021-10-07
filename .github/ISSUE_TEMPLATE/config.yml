@@ -16,5 +16,5 @@ contact_links:
     url: https://docs.npmjs.com
     about: Preview our new docs
   - name: 📫 Support
-    url: https://www.npmjs.com/support
-    about: Contact npm support staff with problems requiring human intervention
+    url: https://github.community/
+    about: For general support questions please open a topic over at github.community
