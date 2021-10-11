@@ -1,5 +1,5 @@
 {
-  "version": "8.0.0",
+  "version": "8.0.1",
   "name": "npm",
   "description": "a package manager for JavaScript",
   "workspaces": [
@@ -11,7 +11,8 @@
     "docs/content/**/*.md",
     "docs/output/**/*.html",
     "lib",
-    "man"
+    "man",
+    "index.js"
   ],
   "keywords": [
     "install",
