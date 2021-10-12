@@ -82,6 +82,7 @@ Array [
   "link",
   "local-address",
   "location",
+  "lockfile-version",
   "loglevel",
   "logs-max",
   "long",
@@ -1039,6 +1040,30 @@ exports[`test/lib/utils/config/definitions.js TAP > config description for locat
 * Type: "global", "user", or "project"
 
 When passed to \`npm config\` this refers to which config file to use.
+`
+
+exports[`test/lib/utils/config/definitions.js TAP > config description for lockfile-version 1`] = `
+#### \`lockfile-version\`
+
+* Default: Version 2 if no lockfile or current lockfile version less than or
+  equal to 2, otherwise maintain current lockfile version
+* Type: null, 1, 2, or 3
+
+Set the lockfile format version to be used in package-lock.json and
+npm-shrinkwrap-json files. Possible options are:
+
+1: The lockfile version used by npm versions 5 and 6. Lacks some data that
+is used during the install, resulting in slower and possibly less
+deterministic installs. Prevents lockfile churn when interoperating with
+older npm versions.
+
+2: The default lockfile version used by npm version 7. Includes both the
+version 1 lockfile data and version 3 lockfile data, for maximum determinism
+and interoperability, at the expense of more bytes on disk.
+
+3: Only the new lockfile information introduced in npm version 7. Smaller on
+disk than lockfile version 2, but not interoperable with older npm versions.
+Ideal if all users are on npm version 7 and higher.
 `
 
 exports[`test/lib/utils/config/definitions.js TAP > config description for loglevel 1`] = `

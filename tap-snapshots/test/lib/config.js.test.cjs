@@ -86,6 +86,7 @@ exports[`test/lib/config.js TAP config list --json > output matches snapshot 1`]
   "link": false,
   "local-address": null,
   "location": "user",
+  "lockfile-version": null,
   "loglevel": "notice",
   "logs-max": 10,
   "long": false,
@@ -236,6 +237,7 @@ legacy-peer-deps = false
 link = false 
 local-address = null 
 location = "user" 
+lockfile-version = null 
 loglevel = "notice" 
 logs-max = 10 
 ; long = false ; overridden by cli
