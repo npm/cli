@@ -1,3 +1,44 @@
+## v8.1.0 (2021-10-14)
+
+### FEATURES
+
+* [`24273a862`](https://github.com/npm/cli/commit/24273a862e54abfd022df9fc4b8c250bfe77817c)
+  [#3890](https://github.com/npm/cli/issues/3890)
+  feat(workspaces): add --include-workspace-root and explicit --no-workspaces
+  ([@fritzy](https://github.com/fritzy))
+* [`d559d6da8`](https://github.com/npm/cli/commit/d559d6da84c2dae960c6b7c89c6012fb31bcfa37)
+  [#3880](https://github.com/npm/cli/issues/3880)
+  feat(config): Add --lockfile-version config option
+  ([@isaacs](https://github.com/isaacs))
+
+### DEPENDENCIES
+
+* [`ae4bf013d`](https://github.com/npm/cli/commit/ae4bf013d06d84b8600937a28cc7b4c4034f571c)
+  [#3883](https://github.com/npm/cli/issues/3883)
+  `pacote@12.0.2`:
+  * fix: preserve git+ssh url for non-hosted repos
+  * deps: update `npm-packlist@3.0.0`
+  * fix: no longer include ignored bundled link deps
+* [`fbc5a3d08`](https://github.com/npm/cli/commit/fbc5a3d08231176b9d8a7b9dd3371fb40ba6abc9)
+  [#3889](https://github.com/npm/cli/issues/3889)
+  `@npmcli/ci-detect@1.4.0`
+* [`b6bc279e5`](https://github.com/npm/cli/commit/b6bc279e55aa65afff09d9258f9df7168a7dbadb)
+  `@npmcli/arborist@4.0.1`
+* [`0f69d295b`](https://github.com/npm/cli/commit/0f69d295bd5516f496af75ef29e7ae6304fa2ba5)
+  [#3893](https://github.com/npm/cli/issues/3893)
+  `@npmcli/map-workspaces@2.0.0`
+
+### DOCUMENTATION
+
+* [`f77932ca1`](https://github.com/npm/cli/commit/f77932ca1eafbece16fc249a7470f760d652bd94)
+  [#3861](https://github.com/npm/cli/issues/3861)
+  fix(docs): Update Node support in README
+  ([@gfyoung](https://github.com/gfyoung))
+* [`a190f422a`](https://github.com/npm/cli/commit/a190f422a2587a0e56afa5032175e57e55123ea2)
+  [#3878](https://github.com/npm/cli/issues/3878)
+  fix(docs): grammar fix
+  ([@XhmikosR](https://github.com/XhmikosR))
+
 ## v8.0.0 (2021-10-07)
 
 The purpose of this release is to drop support for old node versions and
