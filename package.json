@@ -56,7 +56,7 @@
   "dependencies": {
     "@isaacs/string-locale-compare": "^1.1.0",
     "@npmcli/arborist": "^4.0.0",
-    "@npmcli/ci-detect": "^1.2.0",
+    "@npmcli/ci-detect": "^1.4.0",
     "@npmcli/config": "^2.3.0",
     "@npmcli/map-workspaces": "^1.0.4",
     "@npmcli/package-json": "^1.0.1",
