@@ -448,7 +448,7 @@ npm install <github username>/<github project>
 Options:
 [-S|--save|--no-save|--save-prod|--save-dev|--save-optional|--save-peer]
 [-E|--save-exact] [-g|--global] [--global-style] [--legacy-bundling]
-[--strict-peer-deps] [--no-package-lock]
+[--strict-peer-deps] [--no-package-lock] [--no-prune]
 [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]] [--ignore-scripts]
 [--no-audit] [--no-bin-links] [--no-fund] [--dry-run]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
@@ -495,7 +495,7 @@ npm install-test <github username>/<github project>
 Options:
 [-S|--save|--no-save|--save-prod|--save-dev|--save-optional|--save-peer]
 [-E|--save-exact] [-g|--global] [--global-style] [--legacy-bundling]
-[--strict-peer-deps] [--no-package-lock]
+[--strict-peer-deps] [--no-package-lock] [--no-prune]
 [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]] [--ignore-scripts]
 [--no-audit] [--no-bin-links] [--no-fund] [--dry-run]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]

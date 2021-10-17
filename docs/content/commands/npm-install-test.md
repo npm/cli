@@ -129,9 +129,16 @@ this warning is treated as a failure.
 If set to false, then ignore `package-lock.json` files when installing. This
 will also prevent _writing_ `package-lock.json` if `save` is true.
 
-When package package-locks are disabled, automatic pruning of extraneous
-modules will also be disabled. To remove extraneous modules with
-package-locks disabled use `npm prune`.
+<!-- automatically generated, do not edit manually -->
+<!-- see lib/utils/config/definitions.js -->
+
+#### `prune`
+
+* Default: true
+* Type: Boolean
+
+When set to `false`, automatic pruning of extraneous modules will be
+disabled.
 
 <!-- automatically generated, do not edit manually -->
 <!-- see lib/utils/config/definitions.js -->

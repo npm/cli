@@ -115,6 +115,7 @@ exports[`test/lib/commands/config.js TAP config list --json > output matches sna
   "production": null,
   "progress": true,
   "proxy": null,
+  "prune": true,
   "read-only": false,
   "rebuild-bundle": true,
   "registry": "https://registry.npmjs.org/",
@@ -267,6 +268,7 @@ preid = ""
 production = null 
 progress = true 
 proxy = null 
+prune = true 
 read-only = false 
 rebuild-bundle = true 
 registry = "https://registry.npmjs.org/" 
