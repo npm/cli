@@ -1,3 +1,16 @@
+## v8.1.1 (2021-10-21)
+
+### DEPENDENCIES
+
+* [`51fb83ce9`](https://github.com/npm/cli/commit/51fb83ce93fdd7e289da7b2aabc95b0518f0aa31)
+  [#3921](https://github.com/npm/cli/issues/3921)
+  `@npmcli/arborist@4.0.2`:
+  * fix: skip peer conflict check if there is a current node
+* [`1d07f2187`](https://github.com/npm/cli/commit/1d07f21876994c6d4d69559203cfdac6022536b6)
+  [#3913](https://github.com/npm/cli/issues/3913)
+  `node-gyp@8.3.0`:
+  * feat(gyp): update gyp to v0.10.0
+
 ## v8.1.0 (2021-10-14)
 
 ### FEATURES
