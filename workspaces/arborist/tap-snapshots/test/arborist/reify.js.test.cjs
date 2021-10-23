@@ -32358,6 +32358,16 @@ ArboristNode {
 }
 `
 
+exports[`test/arborist/reify.js TAP run hooks > must match snapshot 1`] = `
+ArboristNode {
+  "isProjectRoot": true,
+  "location": "",
+  "name": "tap-testdir-reify-run-hooks",
+  "packageName": "hook-test-modified",
+  "path": "{CWD}/test/arborist/tap-testdir-reify-run-hooks",
+}
+`
+
 exports[`test/arborist/reify.js TAP running lifecycle scripts of unchanged link nodes on reify > result 1`] = `
 ArboristNode {
   "children": Map {

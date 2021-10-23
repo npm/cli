@@ -99,6 +99,9 @@ const _resolvedAdd = Symbol.for('resolvedAdd')
 const _usePackageLock = Symbol.for('usePackageLock')
 const _formatPackageLock = Symbol.for('formatPackageLock')
 
+// hooks
+const _beforeReify = Symbol.for('beforeReify')
+
 module.exports = cls => class Reifier extends cls {
   constructor (options) {
     super(options)
@@ -147,6 +150,10 @@ module.exports = cls => class Reifier extends cls {
     process.emit('time', 'reify')
     await this[_validatePath]()
     await this[_loadTrees](options)
+    if (options.hooks
+        && typeof options.hooks[_beforeReify] === 'function') {
+      options.hooks[_beforeReify](this)
+    }
     await this[_diffTrees]()
     await this[_reifyPackages]()
     await this[_saveIdealTree](options)

@@ -2432,3 +2432,16 @@ t.test('add local dep with existing dev + peer/optional', async t => {
   t.equal(tree.children.get('abbrev').resolved, 'file:../../dep', 'resolved')
   t.equal(tree.children.size, 1, 'children')
 })
+
+t.test('run hooks', async t => {
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'hook-test',
+    }),
+  })
+  const tree = await reify(path, { hooks: {
+    [Symbol.for('beforeReify')]: (arborist) => {
+      arborist.idealTree.package.name = 'hook-test-modified'
+    } } })
+  t.matchSnapshot(printTree(tree))
+})

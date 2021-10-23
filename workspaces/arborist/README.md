@@ -110,6 +110,12 @@ arb.reify({
   // write the lockfile(s) back to disk, and package.json with any updates
   // defaults to 'true'
   save: true,
+
+  // experimental hooks
+  hooks: {
+    // hook that runs after building the idealTree but before saving it
+    [Symbol.for('beforeReify')]: Arborist => ...
+  }
 }).then(() => {
   // node modules has been written to match the idealTree
 })
