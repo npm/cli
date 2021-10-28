@@ -15,9 +15,10 @@ jobs:
       # Checkout the npm/cli repo
       - uses: actions/checkout@v2
       - name: Use Node.js 14.x
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2
         with:
           node-version: 14.x
+          cache: npm
       - name: Install dependencies
         run: |
           node ./bin/npm-cli.js install --ignore-scripts --no-audit
@@ -32,9 +33,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js 14.x
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2
         with:
           node-version: 14.x
+          cache: npm
       - name: Install dependencies
         run: |
           node ./bin/npm-cli.js install --ignore-scripts --no-audit
@@ -50,9 +52,10 @@ jobs:
       # Checkout the npm/cli repo
       - uses: actions/checkout@v2
       - name: Use Node.js 14.x
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2
         with:
           node-version: 14.x
+          cache: npm
       - name: Install dependencies
         run: |
           node ./bin/npm-cli.js install --ignore-scripts --no-audit
@@ -86,9 +89,10 @@ jobs:
 
       # Installs the specific version of Node.js
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
+        cache: npm
 
       # Run the installer script
     - name: Install dependencies
@@ -128,9 +132,10 @@ jobs:
 
       # Installs the specific version of Node.js
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
+        cache: npm
 
       # Run the installer script
     - name: Install dependencies
@@ -169,9 +174,10 @@ jobs:
 
       # Installs the specific version of Node.js
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
+        cache: npm
 
       # Run the installer script
     - name: Install dependencies
