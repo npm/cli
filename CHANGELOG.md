@@ -1,3 +1,27 @@
+## v8.1.2 (2021-10-28)
+
+### BUG FIXES
+
+* [`cb9f43551`](https://github.com/npm/cli/commit/cb9f43551f46bf27095cd7bd6c1885a441004cd2)
+  [#3949](https://github.com/npm/cli/issues/3949)
+  allow `--lockfile-version` config to be string and coerce to number ([@lukekarrys](https://github.com/lukekarrys))
+* [`070901d7a`](https://github.com/npm/cli/commit/070901d7a6e3110a04ef41d8fcf14ffbfcce1496)
+  [#3943](https://github.com/npm/cli/issues/3943)
+  fix(publish): clean args before logging
+  ([@wraithgar](https://github.com/wraithgar))
+
+### DEPENDENCIES
+
+* [`8af94726b`](https://github.com/npm/cli/commit/8af94726b098031c7c0cae7ed50cc4e2e3499181)
+  [#3953](https://github.com/npm/cli/issues/3953)
+  `arborist@4.0.3`
+  * [`38cee94`](https://github.com/npm/arborist/commit/38cee94afa53d578830cc282348a803a8a6eefad)
+    [#340](https://github.com/npm/arborist/pull/340)
+    fix: set lockfileVersion from file during reset
+  * [`d310bd3`](https://github.com/npm/arborist/commit/d310bd3290c3a81e8285ceeb6eda9c9b5aa867d7)
+    [#339](https://github.com/npm/arborist/pull/339)
+    fix: always set originalLockfileVersion when doing shrinkwrap reset 
+
 ## v8.1.1 (2021-10-21)
 
 ### DEPENDENCIES
