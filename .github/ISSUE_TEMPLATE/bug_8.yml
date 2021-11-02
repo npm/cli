@@ -10,6 +10,13 @@ body:
     options:
     - label: I have searched the existing issues
       required: true
+- type: checkboxes
+  attributes:
+    label: This issue exists in the latest npm version
+    description: Please make sure you have installed the latest npm and verified it is still an issue.
+    options:
+    - label: I am using the latest npm
+      required: true
 - type: textarea
   attributes:
     label: Current Behavior
