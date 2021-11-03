@@ -6,16 +6,17 @@ const { promisify } = require('util')
 const mkdirp = require('mkdirp-infer-owner')
 const npmlog = require('npmlog')
 const rimraf = promisify(require('rimraf'))
-const t = require('tap')
 
-let active = null
 const chain = new Map()
 const sandboxes = new Map()
+
+// Disable lint errors for assigning to process global
+/* global process:writable */
 
 // keep a reference to the real process
 const _process = process
 
-const processHook = createHook({
+createHook({
   init: (asyncId, type, triggerAsyncId, resource) => {
     // track parentage of asyncIds
     chain.set(asyncId, triggerAsyncId)
@@ -23,9 +24,8 @@ const processHook = createHook({
   before: (asyncId) => {
     // find the nearest parent id that has a sandbox
     let parent = asyncId
-    while (chain.has(parent) && !sandboxes.has(parent)) {
+    while (chain.has(parent) && !sandboxes.has(parent))
       parent = chain.get(parent)
-    }
 
     process = sandboxes.has(parent)
       ? sandboxes.get(parent)
@@ -173,7 +173,7 @@ class Sandbox extends EventEmitter {
     if (this[_npm]) {
       // replace default config values with placeholders
       for (const name of redactedDefaults) {
-        let value = this[_npm].config.defaults[name]
+        const value = this[_npm].config.defaults[name]
         clean = clean.split(value).join(`{${name.toUpperCase()}}`)
       }
 
@@ -201,21 +201,19 @@ class Sandbox extends EventEmitter {
 
   // test.teardown hook
   teardown () {
-    if (this[_parent]) {
+    if (this[_parent])
       sandboxes.delete(this[_parent])
-    }
+
     return rimraf(this[_dirs].temp).catch(() => null)
   }
 
   // proxy get handler
   [_get] (target, prop, receiver) {
-    if (this[_data].has(prop)) {
+    if (this[_data].has(prop))
       return this[_data].get(prop)
-    }
 
-    if (this[prop] !== undefined) {
+    if (this[prop] !== undefined)
       return Reflect.get(this, prop, this)
-    }
 
     const actual = Reflect.get(target, prop, receiver)
     if (typeof actual === 'function') {

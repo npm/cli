@@ -26,7 +26,7 @@ const RealMockNpm = (t, otherMocks = {}) => {
   }
   const Npm = t.mock('../../lib/npm.js', otherMocks)
   class MockNpm extends Npm {
-    constructor() {
+    constructor () {
       super()
       for (const level in npmlog.levels) {
         npmlog[level] = (...msg) => {
@@ -79,9 +79,8 @@ class MockNpm {
     const config = base.config || {}
 
     for (const attr in base) {
-      if (attr !== 'config') {
+      if (attr !== 'config')
         this[attr] = base[attr]
-      }
     }
 
     this.flatOptions = base.flatOptions || {}
@@ -91,7 +90,7 @@ class MockNpm {
       find: (k) => ({...realConfig.defaults, ...config})[k],
       get: (k) => ({...realConfig.defaults, ...config})[k],
       set: (k, v) => config[k] = v,
-      list: [{ ...realConfig.defaults, ...config}]
+      list: [{ ...realConfig.defaults, ...config}],
     }
     if (!this.log) {
       this.log = {
@@ -110,7 +109,7 @@ class MockNpm {
     }
   }
 
-  output(...msg) {
+  output (...msg) {
     if (this.base.output)
       return this.base.output(msg)
     this._mockOutputs.push(msg)
@@ -118,10 +117,10 @@ class MockNpm {
 }
 
 const FakeMockNpm = (base = {}) => {
-    return new MockNpm(base)
+  return new MockNpm(base)
 }
 
 module.exports = {
   fake: FakeMockNpm,
-  real: RealMockNpm
+  real: RealMockNpm,
 }

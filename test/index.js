@@ -20,4 +20,3 @@ t.test('loading as main module will load the cli', t => {
     t.end()
   })
 })
-
