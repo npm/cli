@@ -1,7 +1,13 @@
 name: Node CI
 
-on: [push, pull_request]
-
+on:
+  pull_request:
+    branches:
+      - '*'
+  push:
+    branches:
+      - release-next
+      - latest
 jobs:
   lint:
     runs-on: ubuntu-latest
