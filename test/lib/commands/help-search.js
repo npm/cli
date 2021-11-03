@@ -103,8 +103,7 @@ t.test('npm help-search long output with color', async t => {
 })
 
 t.test('npm help-search no args', async t => {
-  await helpSearch.exec([])
-  t.match(OUTPUT, /npm help-search/, 'outputs usage')
+  t.rejects(helpSearch.exec([]), /npm help-search/, 'outputs usage')
 })
 
 t.test('npm help-search no matches', async t => {

@@ -196,7 +196,7 @@ t.test('set no args', async t => {
   })
   await t.rejects(
     pkg.exec(['set']),
-    { code: 'EPKGSET' },
+    { code: 'EUSAGE' },
     'should throw an error if no args'
   )
 })
@@ -207,7 +207,7 @@ t.test('set missing value', async t => {
   })
   await t.rejects(
     pkg.exec(['set', 'key=']),
-    { code: 'EPKGSET' },
+    { code: 'EUSAGE' },
     'should throw an error if missing value'
   )
 })
@@ -218,7 +218,7 @@ t.test('set missing key', async t => {
   })
   await t.rejects(
     pkg.exec(['set', '=value']),
-    { code: 'EPKGSET' },
+    { code: 'EUSAGE' },
     'should throw an error if missing key'
   )
 })
@@ -424,7 +424,7 @@ t.test('delete no args', async t => {
   })
   await t.rejects(
     pkg.exec(['delete']),
-    { code: 'EPKGDELETE' },
+    { code: 'EUSAGE' },
     'should throw an error if deleting no args'
   )
 })
@@ -435,7 +435,7 @@ t.test('delete invalid key', async t => {
   })
   await t.rejects(
     pkg.exec(['delete', '']),
-    { code: 'EPKGDELETE' },
+    { code: 'EUSAGE' },
     'should throw an error if deleting invalid args'
   )
 })

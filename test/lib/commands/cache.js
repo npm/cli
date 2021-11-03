@@ -3,8 +3,6 @@ const { fake: mockNpm } = require('../../fixtures/mock-npm.js')
 const path = require('path')
 const npa = require('npm-package-arg')
 
-const usageUtil = () => 'usage instructions'
-
 let outputOutput = []
 
 let rimrafPath = ''
@@ -140,7 +138,6 @@ const Cache = t.mock('../../../lib/commands/cache.js', {
   npmlog,
   pacote,
   rimraf,
-  '../../../lib/utils/usage.js': usageUtil,
 })
 
 const npm = mockNpm({
@@ -161,7 +158,7 @@ const cache = new Cache(npm)
 t.test('cache no args', async t => {
   await t.rejects(
     cache.exec([]),
-    'usage instructions',
+    { code: 'EUSAGE' },
     'should throw usage instructions'
   )
 })
@@ -194,7 +191,10 @@ t.test('cache add no arg', async t => {
 
   await t.rejects(
     cache.exec(['add']),
-    { code: 'EUSAGE' },
+    {
+      code: 'EUSAGE',
+      message: 'Usage: First argument to `add` is required',
+    },
     'throws usage error'
   )
   t.strictSame(logOutput, [
