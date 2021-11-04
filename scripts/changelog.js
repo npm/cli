@@ -13,21 +13,26 @@ the result to the changelog.
 */
 const execSync = require('child_process').execSync
 const branch = process.argv[2] || 'origin/latest'
-const log = execSync(`git log --reverse --pretty='format:%h %H%d %s (%aN)%n%b%n---%n' ${branch}...`).toString().split(/\n/)
+const log = execSync(`git log --reverse --pretty='format:%h %H%d %s (%aN)%n%b%n---%n' ${branch}...`)
+  .toString()
+  .split(/\n/)
 
 main()
 
 function shortname (url) {
-  const matched = url.match(/https:\/\/github\.com\/([^/]+\/[^/]+)\/(?:pull|issues)\/(\d+)/) ||
-                url.match(/https:\/\/(npm\.community)\/t\/(?:[^/]+\/)(\d+)/)
-  if (!matched)
+  const matched =
+    url.match(/https:\/\/github\.com\/([^/]+\/[^/]+)\/(?:pull|issues)\/(\d+)/) ||
+    url.match(/https:\/\/(npm\.community)\/t\/(?:[^/]+\/)(\d+)/)
+  if (!matched) {
     return false
+  }
   const repo = matched[1]
   const id = matched[2]
-  if (repo !== 'npm/cli')
+  if (repo !== 'npm/cli') {
     return `${repo}#${id}`
-  else
+  } else {
     return `#${id}`
+  }
 }
 
 function printCommit (c) {
@@ -35,21 +40,23 @@ function printCommit (c) {
   if (c.fixes.length) {
     for (const fix of c.fixes) {
       const label = shortname(fix)
-      if (label)
+      if (label) {
         console.log(`  [${label}](${fix})`)
+      }
     }
   } else if (c.prurl) {
     const label = shortname(c.prurl)
-    if (label)
+    if (label) {
       console.log(`  [${label}](${c.prurl})`)
-    else
+    } else {
       console.log(`  [#](${c.prurl})`)
+    }
   }
   const msg = c.message
-    .replace(/^\s+/mg, '')
+    .replace(/^\s+/gm, '')
     .replace(/^[-a-z]+: /, '')
-    .replace(/^/mg, '  ')
-    .replace(/^ {2}Reviewed-by: @.*/mg, '')
+    .replace(/^/gm, '  ')
+    .replace(/^ {2}Reviewed-by: @.*/gm, '')
     .replace(/\n$/, '')
     // backtickify package@version
     .replace(/^(\s*@?[^@\s]+@\d+[.]\d+[.]\d+)\b(\s*\S)/g, '$1:$2')
@@ -63,8 +70,9 @@ function printCommit (c) {
       c.credit.forEach(function (credit) {
         console.log(`  ([@${credit}](https://github.com/${credit}))`)
       })
-    } else
+    } else {
       console.log(`  ([@${c.author}](https://github.com/${c.author}))`)
+    }
   }
 }
 
@@ -74,9 +82,11 @@ function main () {
     line = line.replace(/\r/g, '')
     let m
     /* eslint no-cond-assign:0 */
-    if (/^---$/.test(line))
+    if (/^---$/.test(line)) {
       printCommit(commit)
-    else if (m = line.match(/^([a-f0-9]{7,10}) ([a-f0-9]+) (?:[(]([^)]+)[)] )?(.*?) [(](.*?)[)]/)) {
+    } else if (
+      (m = line.match(/^([a-f0-9]{7,10}) ([a-f0-9]+) (?:[(]([^)]+)[)] )?(.*?) [(](.*?)[)]/))
+    ) {
       commit = {
         shortid: m[1],
         fullid: m[2],
@@ -87,21 +97,23 @@ function main () {
         fixes: [],
         credit: null,
       }
-    } else if (m = line.match(/^PR-URL: (.*)/))
+    } else if ((m = line.match(/^PR-URL: (.*)/))) {
       commit.prurl = m[1]
-    else if (m = line.match(/^Credit: @(.*)/)) {
-      if (!commit.credit)
+    } else if ((m = line.match(/^Credit: @(.*)/))) {
+      if (!commit.credit) {
         commit.credit = []
+      }
       commit.credit.push(m[1])
-    } else if (m = line.match(/^(?:Fix(?:es)|Closes?): #?([0-9]+)/))
+    } else if ((m = line.match(/^(?:Fix(?:es)|Closes?): #?([0-9]+)/))) {
       commit.fixes.push(`https://github.com/npm/cli/issues/${m[1]}`)
-    else if (m = line.match(/^(?:Fix(?:es)|Closes?): ([^#]+)#([0-9]*)/))
+    } else if ((m = line.match(/^(?:Fix(?:es)|Closes?): ([^#]+)#([0-9]*)/))) {
       commit.fixes.push(`https://github.com/${m[1]}/issues/${m[2]}`)
-    else if (m = line.match(/^(?:Fix(?:es)|Closes?): (https?:\/\/.*)/))
+    } else if ((m = line.match(/^(?:Fix(?:es)|Closes?): (https?:\/\/.*)/))) {
       commit.fixes.push(m[1])
-    else if (m = line.match(/^Reviewed-By: @(.*)/))
+    } else if ((m = line.match(/^Reviewed-By: @(.*)/))) {
       commit.reviewed = m[1]
-    else if (/\S/.test(line))
+    } else if (/\S/.test(line)) {
       commit.message += `\n${line}`
+    }
   })
 }

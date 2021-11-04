@@ -22,8 +22,9 @@ const run = async function () {
     const navPaths = await getNavigationPaths()
     const fsPaths = await renderFilesystemPaths()
 
-    if (!ensureNavigationComplete(navPaths, fsPaths))
+    if (!ensureNavigationComplete(navPaths, fsPaths)) {
       process.exit(1)
+    }
   } catch (error) {
     console.error(error)
   }
@@ -32,19 +33,21 @@ const run = async function () {
 run()
 
 function ensureNavigationComplete (navPaths, fsPaths) {
-  const unmatchedNav = { }; const unmatchedFs = { }
+  const unmatchedNav = {}
+  const unmatchedFs = {}
 
-  for (const navPath of navPaths)
+  for (const navPath of navPaths) {
     unmatchedNav[navPath] = true
+  }
 
   for (let fsPath of fsPaths) {
     fsPath = '/' + fsPath.replace(/\.md$/, '')
 
-    if (unmatchedNav[fsPath])
+    if (unmatchedNav[fsPath]) {
       delete unmatchedNav[fsPath]
-
-    else
+    } else {
       unmatchedFs[fsPath] = true
+    }
   }
 
   const missingNav = Object.keys(unmatchedNav).sort()
@@ -56,15 +59,17 @@ function ensureNavigationComplete (navPaths, fsPaths) {
     if (missingNav.length > 0) {
       message += '\nThe following path(s) exist on disk but are not present in nav.yml:\n\n'
 
-      for (const nav of missingNav)
+      for (const nav of missingNav) {
         message += `  ${nav}\n`
+      }
     }
 
     if (missingNav.length > 0 && missingFs.length > 0) {
       message += '\nThe following path(s) exist in nav.yml but are not present on disk:\n\n'
 
-      for (const fs of missingFs)
+      for (const fs of missingFs) {
         message += `  ${fs}\n`
+      }
     }
 
     message += '\nUpdate nav.yml to ensure that all files are listed in the appropriate place.'
@@ -88,11 +93,11 @@ function walkNavigation (entries) {
   const paths = []
 
   for (const entry of entries) {
-    if (entry.children)
+    if (entry.children) {
       paths.push(...walkNavigation(entry.children))
-
-    else
+    } else {
       paths.push(entry.url)
+    }
   }
 
   return paths
@@ -109,15 +114,12 @@ async function walkFilesystem (root, dirRelative) {
   const children = fs.readdirSync(dirPath)
 
   for (const childFilename of children) {
-    const childRelative = dirRelative ?
-      path.join(dirRelative, childFilename) :
-      childFilename
+    const childRelative = dirRelative ? path.join(dirRelative, childFilename) : childFilename
     const childPath = path.join(root, childRelative)
 
-    if (fs.lstatSync(childPath).isDirectory())
-      paths.push(...await walkFilesystem(root, childRelative))
-
-    else {
+    if (fs.lstatSync(childPath).isDirectory()) {
+      paths.push(...(await walkFilesystem(root, childRelative)))
+    } else {
       await renderFile(childRelative)
       paths.push(childRelative)
     }
@@ -137,7 +139,7 @@ async function renderFile (childPath) {
   const outputPath = path.join(outputRoot, childPath.replace(/\.md$/, '.html'))
 
   let md = fs.readFileSync(inputPath).toString()
-  let frontmatter = { }
+  let frontmatter = {}
 
   // Take the leading frontmatter out of the markdown
   md = md.replace(/^---\n([\s\S]+)\n---\n/, (header, fm) => {
@@ -222,8 +224,9 @@ async function renderFile (childPath) {
 
         url = url.replace(/^\//, prefix)
 
-        if (linktype.suffix)
+        if (linktype.suffix) {
           url += linktype.suffix
+        }
 
         tag.setAttribute(linktype.attr, url)
       }
@@ -238,12 +241,16 @@ async function renderFile (childPath) {
       continue
     }
 
-    const headerText = header.textContent.replace(/[A-Z]/g, x => x.toLowerCase()).replace(/ /g, '-').replace(/[^a-z0-9-]/g, '')
+    const headerText = header.textContent
+      .replace(/[A-Z]/g, x => x.toLowerCase())
+      .replace(/ /g, '-')
+      .replace(/[^a-z0-9-]/g, '')
     let headerId = headerText
     let headerIncrement = 1
 
-    while (document.getElementById(headerId) !== null)
-      headerId = headerText + (++headerIncrement)
+    while (document.getElementById(headerId) !== null) {
+      headerId = headerText + ++headerIncrement
+    }
 
     headerIds.push(headerId)
     header.setAttribute('id', headerId)
@@ -252,8 +259,9 @@ async function renderFile (childPath) {
   // Walk the dom and build a table of contents
   const toc = document.getElementById('_table_of_contents')
 
-  if (toc)
+  if (toc) {
     toc.appendChild(generateTableOfContents(document))
+  }
 
   // Write the final output
   const output = dom.serialize()
@@ -272,21 +280,17 @@ function generateTableOfContents (document) {
   for (const header of headers) {
     const level = headerLevel(header)
 
-    while (
-      hierarchy.length &&
-      hierarchy[hierarchy.length - 1].headerLevel > level
-    )
+    while (hierarchy.length && hierarchy[hierarchy.length - 1].headerLevel > level) {
       hierarchy.pop()
+    }
 
-    if (
-      !hierarchy.length ||
-      hierarchy[hierarchy.length - 1].headerLevel < level
-    ) {
+    if (!hierarchy.length || hierarchy[hierarchy.length - 1].headerLevel < level) {
       const newList = document.createElement('ul')
       newList.headerLevel = level
 
-      if (hierarchy.length)
+      if (hierarchy.length) {
         hierarchy[hierarchy.length - 1].appendChild(newList)
+      }
 
       hierarchy.push(newList)
     }
@@ -307,8 +311,9 @@ function generateTableOfContents (document) {
 
 function walkHeaders (element, headers) {
   for (const child of element.childNodes) {
-    if (headerLevel(child))
+    if (headerLevel(child)) {
       headers.push(child)
+    }
 
     walkHeaders(child, headers)
   }

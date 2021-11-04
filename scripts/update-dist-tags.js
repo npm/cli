@@ -20,8 +20,8 @@ const { execSync } = require('child_process')
 const semver = require('semver')
 const path = require('path')
 
-const getMajorVersion = (input) => semver.parse(input).major
-const getMinorVersion = (input) => semver.parse(input).minor
+const getMajorVersion = input => semver.parse(input).major
+const getMinorVersion = input => semver.parse(input).minor
 
 // INFO: String templates to generate the tags to update
 const LATEST_TAG = (strings, major) => `latest-${major}`
@@ -51,7 +51,7 @@ function main () {
     const removeTag = REMOVE_TAG`${major}${minor}`
     const updateList = [].concat(TAG_LIST, latestTag, nextTag)
 
-    updateList.forEach((tag) => {
+    updateList.forEach(tag => {
       setDistTag(tag, version, otp)
     })
     removeDistTag(removeTag, version, otp)
@@ -79,8 +79,9 @@ function parseOTP (args) {
     }
     case 1: {
       // --otp=123456 or --otp123456
-      if (otp)
+      if (otp) {
         return otp
+      }
 
       console.error('Invalid otp value supplied. [CASE 1]')
       process.exit(1)
@@ -89,8 +90,9 @@ function parseOTP (args) {
       // --otp 123456
       // INFO: validating the second argument is an otp code
       const isValidOtp = PARSE_OTP_VALUE.test(args[1])
-      if (isValidOtp)
+      if (isValidOtp) {
         return args[1]
+      }
 
       console.error('Invalid otp value supplied. [CASE 2]')
       process.exit(1)
@@ -104,7 +106,9 @@ function parseOTP (args) {
 
 function setDistTag (tag, version, otp) {
   try {
-    const result = execSync(`npm dist-tag set npm@${version} ${tag} --otp=${otp}`, { encoding: 'utf-8' })
+    const result = execSync(`npm dist-tag set npm@${version} ${tag} --otp=${otp}`, {
+      encoding: 'utf-8',
+    })
     console.log('Result:', result)
   } catch (err) {
     console.error('Bad dist-tag command.')

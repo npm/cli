@@ -35,8 +35,9 @@ t.test('should audit using Arborist', t => {
       }
     },
     '../../../lib/utils/reify-finish.js': (npm, arb) => {
-      if (arb !== ARB_OBJ)
+      if (arb !== ARB_OBJ) {
         throw new Error('got wrong object passed to reify-output')
+      }
 
       REIFY_FINISH_CALLED = true
     },
@@ -122,8 +123,7 @@ t.test('report endpoint error', t => {
                   head: ['ers'],
                 },
                 statusCode: 420,
-                body: json ? { nope: 'lol' }
-                : Buffer.from('i had a vuln but i eated it lol'),
+                body: json ? { nope: 'lol' } : Buffer.from('i had a vuln but i eated it lol'),
               },
             }
           }
@@ -132,27 +132,25 @@ t.test('report endpoint error', t => {
       })
       const audit = new Audit(npm)
 
-      await t.rejects(
-        audit.exec([]),
-        'audit endpoint returned an error'
-      )
+      await t.rejects(audit.exec([]), 'audit endpoint returned an error')
       t.strictSame(OUTPUT, [
         [
-          json ? '{\n' +
-          '  "message": "hello, this didnt work",\n' +
-          '  "method": "POST",\n' +
-          '  "uri": "https://example.com/",\n' +
-          '  "headers": {\n' +
-          '    "head": [\n' +
-          '      "ers"\n' +
-          '    ]\n' +
-          '  },\n' +
-          '  "statusCode": 420,\n' +
-          '  "body": {\n' +
-          '    "nope": "lol"\n' +
-          '  }\n' +
-          '}'
-          : 'i had a vuln but i eated it lol',
+          json
+            ? '{\n' +
+              '  "message": "hello, this didnt work",\n' +
+              '  "method": "POST",\n' +
+              '  "uri": "https://example.com/",\n' +
+              '  "headers": {\n' +
+              '    "head": [\n' +
+              '      "ers"\n' +
+              '    ]\n' +
+              '  },\n' +
+              '  "statusCode": 420,\n' +
+              '  "body": {\n' +
+              '    "nope": "lol"\n' +
+              '  }\n' +
+              '}'
+            : 'i had a vuln but i eated it lol',
         ],
       ])
       t.strictSame(LOGS, [['audit', 'hello, this didnt work']])
@@ -165,20 +163,27 @@ t.test('completion', t => {
   const Audit = require('../../../lib/commands/audit.js')
   const audit = new Audit({})
   t.test('fix', async t => {
-    t.resolveMatch(audit.completion({ conf: { argv: { remain: ['npm', 'audit'] } } }), ['fix'], 'completes to fix')
+    t.resolveMatch(
+      audit.completion({ conf: { argv: { remain: ['npm', 'audit'] } } }),
+      ['fix'],
+      'completes to fix'
+    )
     t.end()
   })
 
   t.test('subcommand fix', t => {
-    t.resolveMatch(audit.completion({ conf: { argv: { remain: ['npm', 'audit', 'fix'] } } }), [], 'resolves to ?')
+    t.resolveMatch(
+      audit.completion({ conf: { argv: { remain: ['npm', 'audit', 'fix'] } } }),
+      [],
+      'resolves to ?'
+    )
     t.end()
   })
 
   t.test('subcommand not recognized', t => {
-    t.rejects(
-      audit.completion({ conf: { argv: { remain: ['npm', 'audit', 'repare'] } } }),
-      { message: 'repare not recognized' }
-    )
+    t.rejects(audit.completion({ conf: { argv: { remain: ['npm', 'audit', 'repare'] } } }), {
+      message: 'repare not recognized',
+    })
     t.end()
   })
 

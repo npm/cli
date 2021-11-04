@@ -7,15 +7,17 @@ const OUTPUT = []
 const output = (...msg) => OUTPUT.push(msg)
 
 const libnpmpack = async (spec, opts) => {
-  if (!opts)
+  if (!opts) {
     throw new Error('expected options object')
+  }
 
   return ''
 }
 const mockPacote = {
-  manifest: (spec) => {
-    if (spec.type === 'directory')
+  manifest: spec => {
+    if (spec.type === 'directory') {
       return pacote.manifest(spec)
+    }
     const m = {
       name: spec.name || 'test-package',
       version: spec.version || '1.0.0-test',
@@ -25,7 +27,7 @@ const mockPacote = {
   },
 }
 
-t.afterEach(() => OUTPUT.length = 0)
+t.afterEach(() => (OUTPUT.length = 0))
 
 t.test('should pack current directory with no arguments', async t => {
   let tarballFileName
@@ -87,10 +89,14 @@ t.test('follows pack-destination config', async t => {
 
 t.test('should pack given directory', async t => {
   const testDir = t.testdir({
-    'package.json': JSON.stringify({
-      name: 'my-cool-pkg',
-      version: '1.0.0',
-    }, null, 2),
+    'package.json': JSON.stringify(
+      {
+        name: 'my-cool-pkg',
+        version: '1.0.0',
+      },
+      null,
+      2
+    ),
   })
 
   const Pack = t.mock('../../../lib/commands/pack.js', {
@@ -122,10 +128,14 @@ t.test('should pack given directory', async t => {
 
 t.test('should pack given directory for scoped package', async t => {
   const testDir = t.testdir({
-    'package.json': JSON.stringify({
-      name: '@cool/my-pkg',
-      version: '1.0.0',
-    }, null, 2),
+    'package.json': JSON.stringify(
+      {
+        name: '@cool/my-pkg',
+        version: '1.0.0',
+      },
+      null,
+      2
+    ),
   })
 
   const Pack = t.mock('../../../lib/commands/pack.js', {
@@ -191,11 +201,15 @@ t.test('should log pack contents', async t => {
 
 t.test('should log output as valid json', async t => {
   const testDir = t.testdir({
-    'package.json': JSON.stringify({
-      name: 'my-cool-pkg',
-      version: '1.0.0',
-      main: './index.js',
-    }, null, 2),
+    'package.json': JSON.stringify(
+      {
+        name: 'my-cool-pkg',
+        version: '1.0.0',
+        main: './index.js',
+      },
+      null,
+      2
+    ),
     'README.md': 'text',
     'index.js': 'void',
   })
@@ -214,13 +228,16 @@ t.test('should log output as valid json', async t => {
         integrity: {
           sha512: [
             {
+              /* eslint-disable-next-line max-len */
               source: 'sha512-JSdyskeR2qonBUaQ4vdlU/vQGSfgCxSq5O+vH+d2yVWRqzso4O3gUzd6QX/V7OWV//zU7kA5o63Zf433jUnOtQ==',
+              /* eslint-disable-next-line max-len */
               digest: 'JSdyskeR2qonBUaQ4vdlU/vQGSfgCxSq5O+vH+d2yVWRqzso4O3gUzd6QX/V7OWV//zU7kA5o63Zf433jUnOtQ==',
               algorithm: 'sha512',
               options: [],
             },
           ],
           toJSON () {
+            /* eslint-disable-next-line max-len */
             return 'sha512-JSdyskeR2qonBUaQ4vdlU/vQGSfgCxSq5O+vH+d2yVWRqzso4O3gUzd6QX/V7OWV//zU7kA5o63Zf433jUnOtQ=='
           },
         },
@@ -256,23 +273,30 @@ t.test('should log output as valid json', async t => {
 
   await pack.exec([testDir])
 
-  t.match(JSON.parse(OUTPUT), [{
-    id: '@ruyadorno/redact@1.0.0',
-    name: '@ruyadorno/redact',
-    version: '1.0.0',
-    size: 2450,
-    unpackedSize: 4911,
-    shasum: '044c7574639b923076069d6e801e2d1866430f17',
-    integrity: 'sha512-JSdyskeR2qonBUaQ4vdlU/vQGSfgCxSq5O+vH+d2yVWRqzso4O3gUzd6QX/V7OWV//zU7kA5o63Zf433jUnOtQ==',
-    filename: '@ruyadorno/redact-1.0.0.tgz',
-    files: [
-      { path: 'LICENSE' },
-      { path: 'README.md' },
-      { path: 'index.js' },
-      { path: 'package.json' },
+  t.match(
+    JSON.parse(OUTPUT),
+    [
+      {
+        id: '@ruyadorno/redact@1.0.0',
+        name: '@ruyadorno/redact',
+        version: '1.0.0',
+        size: 2450,
+        unpackedSize: 4911,
+        shasum: '044c7574639b923076069d6e801e2d1866430f17',
+        /* eslint-disable-next-line max-len */
+        integrity: 'sha512-JSdyskeR2qonBUaQ4vdlU/vQGSfgCxSq5O+vH+d2yVWRqzso4O3gUzd6QX/V7OWV//zU7kA5o63Zf433jUnOtQ==',
+        filename: '@ruyadorno/redact-1.0.0.tgz',
+        files: [
+          { path: 'LICENSE' },
+          { path: 'README.md' },
+          { path: 'index.js' },
+          { path: 'package.json' },
+        ],
+        entryCount: 4,
+      },
     ],
-    entryCount: 4,
-  }], 'pack details output as valid json')
+    'pack details output as valid json'
+  )
 })
 
 t.test('invalid packument', async t => {
@@ -302,20 +326,21 @@ t.test('invalid packument', async t => {
     output,
   })
   const pack = new Pack(npm)
-  await t.rejects(
-    pack.exec([]),
-    'Invalid package, must have name and version'
-  )
+  await t.rejects(pack.exec([]), 'Invalid package, must have name and version')
   t.strictSame(OUTPUT, [])
 })
 
-t.test('workspaces', (t) => {
+t.test('workspaces', t => {
   const testDir = t.testdir({
-    'package.json': JSON.stringify({
-      name: 'workspaces-test',
-      version: '1.0.0',
-      workspaces: ['workspace-a', 'workspace-b'],
-    }, null, 2),
+    'package.json': JSON.stringify(
+      {
+        name: 'workspaces-test',
+        version: '1.0.0',
+        workspaces: ['workspace-a', 'workspace-b'],
+      },
+      null,
+      2
+    ),
     'workspace-a': {
       'package.json': JSON.stringify({
         name: 'workspace-a',
@@ -355,35 +380,25 @@ t.test('workspaces', (t) => {
   t.test('all workspaces', async t => {
     await pack.execWorkspaces([], [])
 
-    t.strictSame(OUTPUT, [
-      ['workspace-a-1.0.0.tgz'],
-      ['workspace-b-1.0.0.tgz'],
-    ])
+    t.strictSame(OUTPUT, [['workspace-a-1.0.0.tgz'], ['workspace-b-1.0.0.tgz']])
   })
 
   t.test('all workspaces, `.` first arg', async t => {
     await pack.execWorkspaces(['.'], [])
 
-    t.strictSame(OUTPUT, [
-      ['workspace-a-1.0.0.tgz'],
-      ['workspace-b-1.0.0.tgz'],
-    ])
+    t.strictSame(OUTPUT, [['workspace-a-1.0.0.tgz'], ['workspace-b-1.0.0.tgz']])
   })
 
   t.test('one workspace', async t => {
     await pack.execWorkspaces([], ['workspace-a'])
 
-    t.strictSame(OUTPUT, [
-      ['workspace-a-1.0.0.tgz'],
-    ])
+    t.strictSame(OUTPUT, [['workspace-a-1.0.0.tgz']])
   })
 
   t.test('specific package', async t => {
     await pack.execWorkspaces(['abbrev'], [])
 
-    t.strictSame(OUTPUT, [
-      ['abbrev-1.0.0-test.tgz'],
-    ])
+    t.strictSame(OUTPUT, [['abbrev-1.0.0-test.tgz']])
   })
   t.end()
 })

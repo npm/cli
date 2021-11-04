@@ -24,8 +24,9 @@ t.test('should install using Arborist', (t) => {
       }
     },
     '../../../lib/utils/reify-finish.js': (npm, arb) => {
-      if (arb !== ARB_OBJ)
+      if (arb !== ARB_OBJ) {
         throw new Error('got wrong object passed to reify-finish')
+      }
     },
   })
 
@@ -250,10 +251,11 @@ t.test('completion to folder', async t => {
     },
     fs: {
       readdir: (path) => {
-        if (path === '/')
+        if (path === '/') {
           return ['arborist']
-        else
+        } else {
           return ['package.json']
+        }
       },
     },
   })
@@ -305,10 +307,11 @@ t.test('completion to folder - match is not a package', async t => {
     },
     fs: {
       readdir: (path) => {
-        if (path === '/')
+        if (path === '/') {
           return ['arborist']
-        else
+        } else {
           throw new Error('EONT')
+        }
       },
     },
   })

@@ -10,7 +10,8 @@ if (status || signal) {
   console.error({ status, signal })
   process.exitCode = status || 1
 }
-if (stdout.trim() !== '')
+if (stdout.trim() !== '') {
   throw new Error('git dirty')
-else
+} else {
   console.log('git clean')
+}
