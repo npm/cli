@@ -20,14 +20,11 @@ const npm = {
       cooked: [],
     },
   },
-  commands: {
-    'help-search': (args, cb) => {
+  exec: async (cmd, args) => {
+    if (cmd === 'help-search')
       helpSearchArgs = args
-      return cb()
-    },
-    help: {
-      usage: 'npm help <term>',
-    },
+    else if (cmd === 'help')
+      return { usage: 'npm help <term>' }
   },
   deref: (cmd) => {},
   output: msg => {
@@ -162,6 +159,7 @@ t.test('npm help 1 install', async t => {
   await help.exec(['1', 'install'])
 
   t.match(openUrlArg, /commands(\/|\\)npm-install.html$/, 'attempts to open the correct url')
+  t.ok(openUrlArg.startsWith('file:///'), 'opens with the correct uri schema')
 })
 
 t.test('npm help 5 install', async t => {

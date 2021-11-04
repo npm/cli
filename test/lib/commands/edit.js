@@ -29,11 +29,10 @@ const npm = {
     get: () => EDITOR,
   },
   dir: resolve(__dirname, '../../../node_modules'),
-  commands: {
-    rebuild: (args, cb) => {
-      rebuildArgs = args
-      return cb(rebuildFail)
-    },
+  exec: async (cmd, args) => {
+    rebuildArgs = args
+    if (rebuildFail)
+      throw rebuildFail
   },
 }
 

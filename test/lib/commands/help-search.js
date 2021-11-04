@@ -19,10 +19,9 @@ const npm = mockNpm({
     long: false,
   },
   usage: 'npm test usage',
-  commands: {
-    help: (args, cb) => {
-      return cb(npmHelpErr)
-    },
+  exec: async () => {
+    if (npmHelpErr)
+      throw npmHelpErr
   },
   output,
 })
