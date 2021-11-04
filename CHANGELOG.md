@@ -1,3 +1,40 @@
+## v8.1.3 (2021-11-04)
+
+### BUG FIXES
+
+* [`8ffeb71df`](https://github.com/npm/cli/commit/8ffeb71dfb248b4a76744bd06cd4d6100f17c8ae)
+  [#3959](https://github.com/npm/cli/issues/3959)
+  fix: refactor commands
+  ([@wraithgar](https://github.com/wraithgar))
+* [`e5bfdaca4`](https://github.com/npm/cli/commit/e5bfdaca455e294109ba026f4d8b5cc80d3dfd20)
+  [#3978](https://github.com/npm/cli/issues/3978)
+  fix: shrinkwrap setting incorrect lockfileVersion
+  ([@lukekarrys](https://github.com/lukekarrys))
+* [`32ccd3c27`](https://github.com/npm/cli/commit/32ccd3c2767a14198a1803f04e747ef848f7c938)
+  [#3988](https://github.com/npm/cli/issues/3988)
+  fix: remove usage of unnecessary util.promisify
+  ([@lukekarrys](https://github.com/lukekarrys))
+* [`1e9c31c4e`](https://github.com/npm/cli/commit/1e9c31c4e3929483580a0a554d7515095b5418ca)
+  [#3994](https://github.com/npm/cli/issues/3994)
+  fix: npm help on windows
+  ([@wraithgar](https://github.com/wraithgar))
+* [`22230ef3d`](https://github.com/npm/cli/commit/22230ef3dd590def31c274b3412106b4cfbd212f)
+  [#3987](https://github.com/npm/cli/issues/3987)
+  fix: make prefixed usage errors more consistent
+  ([@lukekarrys](https://github.com/lukekarrys))
+
+### DEPENDENCIES
+
+* [`ac2fabb86`](https://github.com/npm/cli/commit/ac2fabb8604db0dac852913d61c8415ae7464485)
+  [#3990](https://github.com/npm/cli/issues/3990)
+  `@npmcli/arborist@4.0.4`
+  * fix: don't compare spec for local dep vs existing
+  * fix: stop pruning peerSets when entryEdge is from a workspace
+* [`a0d35ff20`](https://github.com/npm/cli/commit/a0d35ff20aed6aab8508123eb540bc9c61fb127d)
+  [#3996](https://github.com/npm/cli/issues/3996)
+  `@npmcli/config@2.3.1`:
+  * fix: dont load project configs in global mode
+
 ## v8.1.2 (2021-10-28)
 
 ### BUG FIXES
@@ -20,7 +57,7 @@
     fix: set lockfileVersion from file during reset
   * [`d310bd3`](https://github.com/npm/arborist/commit/d310bd3290c3a81e8285ceeb6eda9c9b5aa867d7)
     [#339](https://github.com/npm/arborist/pull/339)
-    fix: always set originalLockfileVersion when doing shrinkwrap reset 
+    fix: always set originalLockfileVersion when doing shrinkwrap reset
 
 ## v8.1.1 (2021-10-21)
 
