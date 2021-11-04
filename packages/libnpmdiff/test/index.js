@@ -130,7 +130,7 @@ t.test('folder in node_modules', async t => {
     t.resolveMatchSnapshot(diff([
       `file:${resolve(path, 'node_modules/a/node_modules/b')}`,
       `file:${resolve(path, 'packages/b')}`,
-    ], { where: path}), 'should output expected diff')
+    ], { where: path }), 'should output expected diff')
   })
   t.test('nested, relative path', async t => {
     const _cwd = process.cwd()

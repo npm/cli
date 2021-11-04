@@ -1,6 +1,6 @@
 /* istanbul ignore file */
-const {join, dirname, basename} = require('path')
-const {existsSync, readFileSync, writeFileSync} = require('fs')
+const { join, dirname, basename } = require('path')
+const { existsSync, readFileSync, writeFileSync } = require('fs')
 const PORT = 12345 + (+process.env.TAP_CHILD_ID || 0)
 const http = require('http')
 const https = require('https')
@@ -86,8 +86,9 @@ const startServer = () => new Promise((res, rej) => {
               https.request(opts)
                 .on('response', upstream => handleUpstream(upstream))
                 .end(Buffer.concat(body))
-            } else
+            } else {
               handleUpstream(upstream)
+            }
           }).end(Buffer.concat(body))
         } else {
           res.setHeader('content-encoding', 'gzip')
@@ -195,8 +196,9 @@ const startServer = () => new Promise((res, rej) => {
           const errorStatus =
             upstream.statusCode >= 300 || upstream.statusCode < 200
 
-          if (errorStatus)
+          if (errorStatus) {
             console.error('UPSTREAM ERROR', upstream.statusCode)
+          }
 
           const ct = upstream.headers['content-type']
           const isJson = ct.includes('application/json')
@@ -217,8 +219,9 @@ const startServer = () => new Promise((res, rej) => {
                 const minFile = file.replace(/\.json$/, '.min.json')
                 writeFileSync(minFile, JSON.stringify(mrm(obj), 0, 2) + '\n')
                 console.error('WROTE JSONS', [file, minFile])
-              } else
+              } else {
                 writeFileSync(file, out)
+              }
             }
             res.end(out)
           })
@@ -227,8 +230,9 @@ const startServer = () => new Promise((res, rej) => {
       }
 
       res.statusCode = er.code === 'ENOENT' ? 404 : 500
-      if (res.method === 'GET')
+      if (res.method === 'GET') {
         console.error(er)
+      }
       res.setHeader('content-type', 'text/plain')
       res.end(er.stack)
     }

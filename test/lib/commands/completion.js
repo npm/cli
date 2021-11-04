@@ -2,7 +2,9 @@ const t = require('tap')
 const fs = require('fs')
 const path = require('path')
 
-const completionScript = fs.readFileSync(path.resolve(__dirname, '../../../lib/utils/completion.sh'), { encoding: 'utf8' }).replace(/^#!.*?\n/, '')
+const completionScript = fs
+  .readFileSync(path.resolve(__dirname, '../../../lib/utils/completion.sh'), { encoding: 'utf8' })
+  .replace(/^#!.*?\n/, '')
 
 const output = []
 const npmConfig = {}
@@ -14,20 +16,22 @@ const npm = {
       npmConfig[key] = value
     },
     clear: () => {
-      for (const key in npmConfig)
+      for (const key in npmConfig) {
         delete npmConfig[key]
+      }
     },
   },
-  cmd: (cmd) => {
-    return ({
+  cmd: cmd => {
+    return {
       completion: {
         completion: () => [['>>', '~/.bashrc']],
       },
       adduser: {},
       access: {
         completion: () => {
-          if (accessCompletionError)
+          if (accessCompletionError) {
             throw new Error('access completion failed')
+          }
 
           return ['public', 'restricted']
         },
@@ -45,9 +49,9 @@ const npm = {
           return ' fast'
         },
       },
-    }[cmd])
+    }[cmd]
   },
-  output: (line) => {
+  output: line => {
     output.push(line)
   },
 }
@@ -56,11 +60,7 @@ const cmdList = {
   aliases: {
     login: 'adduser',
   },
-  cmdList: [
-    'access',
-    'adduser',
-    'completion',
-  ],
+  cmdList: ['access', 'adduser', 'completion'],
   plumbing: [],
 }
 
@@ -78,7 +78,7 @@ const config = {
   },
 }
 
-const deref = (cmd) => {
+const deref = cmd => {
   return cmd
 }
 
@@ -102,10 +102,14 @@ t.test('completion completion', async t => {
   })
 
   const res = await completion.completion({ w: 2 })
-  t.strictSame(res, [
-    ['>>', '~/.zshrc'],
-    ['>>', '~/.bashrc'],
-  ], 'identifies both shells')
+  t.strictSame(
+    res,
+    [
+      ['>>', '~/.zshrc'],
+      ['>>', '~/.bashrc'],
+    ],
+    'identifies both shells'
+  )
   t.end()
 })
 
@@ -137,10 +141,9 @@ t.test('completion errors in windows without bash', async t => {
 
   await t.rejects(
     compl.exec({}),
-    { code: 'ENOTSUP',
-      message: /completion supported only in MINGW/,
-
-    }, 'returns the correct error')
+    { code: 'ENOTSUP', message: /completion supported only in MINGW/ },
+    'returns the correct error'
+  )
 })
 
 t.test('dump script when completion is not being attempted', async t => {
@@ -302,13 +305,17 @@ t.test('handles async completion function', async t => {
 
   await completion.exec(['npm', 'promise', ''])
 
-  t.strictSame(npmConfig, {
-    argv: {
-      remain: ['npm', 'promise'],
-      cooked: ['npm', 'promise'],
-      original: ['npm', 'promise'],
+  t.strictSame(
+    npmConfig,
+    {
+      argv: {
+        remain: ['npm', 'promise'],
+        cooked: ['npm', 'promise'],
+        original: ['npm', 'promise'],
+      },
     },
-  }, 'applies command config appropriately')
+    'applies command config appropriately'
+  )
   t.strictSame(output, ['resolved_completion_promise'], 'resolves async completion results')
 })
 
@@ -327,14 +334,22 @@ t.test('completion triggers command completions', async t => {
 
   await completion.exec(['npm', 'access', ''])
 
-  t.strictSame(npmConfig, {
-    argv: {
-      remain: ['npm', 'access'],
-      cooked: ['npm', 'access'],
-      original: ['npm', 'access'],
+  t.strictSame(
+    npmConfig,
+    {
+      argv: {
+        remain: ['npm', 'access'],
+        cooked: ['npm', 'access'],
+        original: ['npm', 'access'],
+      },
     },
-  }, 'applies command config appropriately')
-  t.strictSame(output, [['public', 'restricted'].join('\n')], 'correctly completed a subcommand name')
+    'applies command config appropriately'
+  )
+  t.strictSame(
+    output,
+    [['public', 'restricted'].join('\n')],
+    'correctly completed a subcommand name'
+  )
 })
 
 t.test('completion triggers filtered command completions', async t => {
@@ -352,13 +367,17 @@ t.test('completion triggers filtered command completions', async t => {
 
   await completion.exec(['npm', 'access', 'p'])
 
-  t.strictSame(npmConfig, {
-    argv: {
-      remain: ['npm', 'access'],
-      cooked: ['npm', 'access'],
-      original: ['npm', 'access'],
+  t.strictSame(
+    npmConfig,
+    {
+      argv: {
+        remain: ['npm', 'access'],
+        cooked: ['npm', 'access'],
+        original: ['npm', 'access'],
+      },
     },
-  }, 'applies command config appropriately')
+    'applies command config appropriately'
+  )
   t.strictSame(output, ['public'], 'correctly completed a subcommand name')
 })
 
@@ -377,13 +396,17 @@ t.test('completions for commands that return nested arrays are joined', async t 
 
   await completion.exec(['npm', 'completion', ''])
 
-  t.strictSame(npmConfig, {
-    argv: {
-      remain: ['npm', 'completion'],
-      cooked: ['npm', 'completion'],
-      original: ['npm', 'completion'],
+  t.strictSame(
+    npmConfig,
+    {
+      argv: {
+        remain: ['npm', 'completion'],
+        cooked: ['npm', 'completion'],
+        original: ['npm', 'completion'],
+      },
     },
-  }, 'applies command config appropriately')
+    'applies command config appropriately'
+  )
   t.strictSame(output, ['>> ~/.bashrc'], 'joins nested arrays')
 })
 
@@ -402,13 +425,17 @@ t.test('completions for commands that return nothing work correctly', async t =>
 
   await completion.exec(['npm', 'donothing', ''])
 
-  t.strictSame(npmConfig, {
-    argv: {
-      remain: ['npm', 'donothing'],
-      cooked: ['npm', 'donothing'],
-      original: ['npm', 'donothing'],
+  t.strictSame(
+    npmConfig,
+    {
+      argv: {
+        remain: ['npm', 'donothing'],
+        cooked: ['npm', 'donothing'],
+        original: ['npm', 'donothing'],
+      },
     },
-  }, 'applies command config appropriately')
+    'applies command config appropriately'
+  )
   t.strictSame(output, [], 'returns nothing')
 })
 
@@ -426,14 +453,18 @@ t.test('completions for commands that return a single item work correctly', asyn
   })
 
   await completion.exec(['npm', 'driveaboat', ''])
-  t.strictSame(npmConfig, {
-    argv: {
-      remain: ['npm', 'driveaboat'],
-      cooked: ['npm', 'driveaboat'],
-      original: ['npm', 'driveaboat'],
+  t.strictSame(
+    npmConfig,
+    {
+      argv: {
+        remain: ['npm', 'driveaboat'],
+        cooked: ['npm', 'driveaboat'],
+        original: ['npm', 'driveaboat'],
+      },
     },
-  }, 'applies command config appropriately')
-  t.strictSame(output, ['\' fast\''], 'returns the correctly escaped string')
+    'applies command config appropriately'
+  )
+  t.strictSame(output, ["' fast'"], 'returns the correctly escaped string')
 })
 
 t.test('command completion for commands with no completion return no results', async t => {
@@ -450,14 +481,18 @@ t.test('command completion for commands with no completion return no results', a
   })
 
   // quotes around adduser are to ensure coverage when unescaping commands
-  await completion.exec(['npm', '\'adduser\'', ''])
-  t.strictSame(npmConfig, {
-    argv: {
-      remain: ['npm', 'adduser'],
-      cooked: ['npm', 'adduser'],
-      original: ['npm', 'adduser'],
+  await completion.exec(['npm', "'adduser'", ''])
+  t.strictSame(
+    npmConfig,
+    {
+      argv: {
+        remain: ['npm', 'adduser'],
+        cooked: ['npm', 'adduser'],
+        original: ['npm', 'adduser'],
+      },
     },
-  }, 'applies command config appropriately')
+    'applies command config appropriately'
+  )
   t.strictSame(output, [], 'correctly completed a subcommand name')
 })
 
@@ -481,13 +516,17 @@ t.test('command completion errors propagate', async t => {
     /access completion failed/,
     'catches the appropriate error'
   )
-  t.strictSame(npmConfig, {
-    argv: {
-      remain: ['npm', 'access'],
-      cooked: ['npm', 'access'],
-      original: ['npm', 'access'],
+  t.strictSame(
+    npmConfig,
+    {
+      argv: {
+        remain: ['npm', 'access'],
+        cooked: ['npm', 'access'],
+        original: ['npm', 'access'],
+      },
     },
-  }, 'applies command config appropriately')
+    'applies command config appropriately'
+  )
   t.strictSame(output, [], 'returns no results')
 })
 
@@ -507,7 +546,11 @@ t.test('completion can complete flags', async t => {
   await completion.exec(['npm', 'install', '--'])
 
   t.strictSame(npmConfig, {}, 'does not apply command config')
-  t.strictSame(output, [['--global', '--browser', '--registry', '--reg', '--no-global', '--no-browser'].join('\n')], 'correctly completes flag names')
+  t.strictSame(
+    output,
+    [['--global', '--browser', '--registry', '--reg', '--no-global', '--no-browser'].join('\n')],
+    'correctly completes flag names'
+  )
 })
 
 t.test('double dashes escape from flag completion', async t => {
@@ -526,7 +569,11 @@ t.test('double dashes escape from flag completion', async t => {
   await completion.exec(['npm', '--', 'install', '--'])
 
   t.strictSame(npmConfig, {}, 'does not apply command config')
-  t.strictSame(output, [['access', 'adduser', 'completion', 'login'].join('\n')], 'correctly completes flag names')
+  t.strictSame(
+    output,
+    [['access', 'adduser', 'completion', 'login'].join('\n')],
+    'correctly completes flag names'
+  )
 })
 
 t.test('completion cannot complete options that take a value in mid-command', async t => {

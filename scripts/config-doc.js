@@ -5,12 +5,14 @@ const configDoc = resolve(__dirname, '../docs/content/using-npm/config.md')
 
 const addBetweenTags = (doc, startTag, endTag, body) => {
   const startSplit = doc.split(startTag)
-  if (startSplit.length !== 2)
+  if (startSplit.length !== 2) {
     throw new Error('Did not find exactly one start tag')
+  }
 
   const endSplit = startSplit[1].split(endTag)
-  if (endSplit.length !== 2)
+  if (endSplit.length !== 2) {
     throw new Error('Did not find exactly one end tag')
+  }
 
   return [
     startSplit[0],
