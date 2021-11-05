@@ -1,6 +1,9 @@
 {
   "extends": ["@npmcli"],
-  "rules": {
-    "no-console": "error"
-  }
+  "overrides": [{
+    "files": ["lib/**/*.js"],
+    "rules": {
+      "no-console": "error"
+    }
+  }]
 }
