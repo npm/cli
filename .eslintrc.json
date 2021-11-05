@@ -1,3 +1,6 @@
 {
-  "extends": ["@npmcli"]
+  "extends": ["@npmcli"],
+  "rules": {
+    "no-console": "error"
+  }
 }
