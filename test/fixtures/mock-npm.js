@@ -25,6 +25,7 @@ const RealMockNpm = (t, otherMocks = {}) => {
   mock.joinedOutput = () => {
     return mock.outputs.map(o => o.join(' ')).join('\n')
   }
+  mock.filteredLogs = title => mock.logs.filter(([t]) => t === title).map(([, , msg]) => msg)
   const Npm = t.mock('../../lib/npm.js', otherMocks)
   class MockNpm extends Npm {
     constructor () {
