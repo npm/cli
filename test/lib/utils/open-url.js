@@ -73,6 +73,18 @@ t.test('returns error for file url', async t => {
   t.same(OUTPUT, [], 'printed no output')
 })
 
+t.test('file url allowed if explicitly asked for', async t => {
+  t.teardown(() => {
+    openerUrl = null
+    openerOpts = null
+    OUTPUT.length = 0
+  })
+  await openUrl(npm, 'file:///man/page/npm-install', 'npm home', true)
+  t.equal(openerUrl, 'file:///man/page/npm-install', 'opened the given url')
+  t.same(openerOpts, { command: null }, 'passed command as null (the default)')
+  t.same(OUTPUT, [], 'printed no output')
+})
+
 t.test('returns error for non-parseable url', async t => {
   t.teardown(() => {
     openerUrl = null
