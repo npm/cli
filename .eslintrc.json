@@ -1,7 +1,9 @@
 {
   "extends": ["@npmcli"],
+  "parserOptions": { "ecmaVersion": "2022" },
   "rules": {
-    "no-throw-literal": "warn"
+    "no-throw-literal": "warn",
+    "node/process-exit-as-throw": "error"
   },
   "overrides": [{
     "files": ["lib/**/*.js"],
