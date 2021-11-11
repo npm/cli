@@ -110,6 +110,7 @@ Array [
   "production",
   "progress",
   "proxy",
+  "prune",
   "read-only",
   "rebuild-bundle",
   "registry",
@@ -1267,10 +1268,6 @@ exports[`test/lib/utils/config/definitions.js TAP > config description for packa
 
 If set to false, then ignore \`package-lock.json\` files when installing. This
 will also prevent _writing_ \`package-lock.json\` if \`save\` is true.
-
-When package package-locks are disabled, automatic pruning of extraneous
-modules will also be disabled. To remove extraneous modules with
-package-locks disabled use \`npm prune\`.
 `
 
 exports[`test/lib/utils/config/definitions.js TAP > config description for package-lock-only 1`] = `
@@ -1373,6 +1370,16 @@ exports[`test/lib/utils/config/definitions.js TAP > config description for proxy
 A proxy to use for outgoing http requests. If the \`HTTP_PROXY\` or
 \`http_proxy\` environment variables are set, proxy settings will be honored
 by the underlying \`request\` library.
+`
+
+exports[`test/lib/utils/config/definitions.js TAP > config description for prune 1`] = `
+#### \`prune\`
+
+* Default: true
+* Type: Boolean
+
+When set to \`false\`, automatic pruning of extraneous modules will be
+disabled.
 `
 
 exports[`test/lib/utils/config/definitions.js TAP > config description for read-only 1`] = `
