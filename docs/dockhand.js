@@ -152,7 +152,7 @@ async function renderFile (childPath) {
 
   // Render the markdown into an HTML snippet using a GFM renderer.
   const content = cmark.renderHtmlSync(md, {
-    smart: true,
+    smart: false,
     githubPreLang: true,
     strikethroughDoubleTilde: true,
     unsafe: false,
