@@ -14,7 +14,7 @@
   "devDependencies": {
     "@mdx-js/mdx": "^1.6.22",
     "cmark-gfm": "^0.8.3",
-    "jsdom": "^16.4.0",
+    "jsdom": "^18.1.0",
     "marked-man": "^0.7.0",
     "yaml": "^1.10.0"
   }
