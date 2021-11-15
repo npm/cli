@@ -29,7 +29,8 @@ All commands:
     pkg, prefix, profile, prune, publish, rebuild, repo,
     restart, root, run-script, search, set, set-script,
     shrinkwrap, star, stars, start, stop, team, test, token,
-    uninstall, unpublish, unstar, update, version, view, whoami
+    uninstall, unpublish, unstar, update, version, view, whoami,
+    copy
 
 Specify configs in the ini-formatted file:
     {CWD}/smoke-tests/test/tap-testdir-index/.npmrc
