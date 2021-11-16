@@ -310,6 +310,7 @@ module.exports = cls => class IdealTreeBuilder extends cls {
         ? Shrinkwrap.reset({
           path: this.path,
           lockfileVersion: this.options.lockfileVersion,
+          resolveOptions: this.options,
         }).then(meta => Object.assign(root, { meta }))
         : this.loadVirtual({ root }))
 
@@ -354,6 +355,7 @@ module.exports = cls => class IdealTreeBuilder extends cls {
     const meta = new Shrinkwrap({
       path: this.path,
       lockfileVersion: this.options.lockfileVersion,
+      resolveOptions: this.options,
     })
     meta.reset()
     root.meta = meta

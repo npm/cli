@@ -231,6 +231,94 @@ t.test('throws when attempting to access data before loading', t => {
   t.end()
 })
 
+t.only('resolveOptions', async t => {
+  const url = 'https://private.registry.org/deadbeef/registry/-/registry-1.2.3.tgz'
+  const someOtherRegistry = 'https://someother.registry.org/registry/-/registry-1.2.3.tgz'
+  const getData = async (resolveOptions) => {
+    const dir = t.testdir()
+    const meta = await Shrinkwrap.load({
+      path: dir,
+      resolveOptions,
+    })
+
+    const root = new Node({
+      pkg: {
+        name: 'root',
+        dependencies: {
+          registry: '^1.0.0',
+          'some-other-registry': '^1.0.0',
+          '@scoped/some-other-registry': '^1.0.0',
+          tar: url,
+        },
+      },
+      path: dir,
+      realpath: dir,
+      meta,
+    })
+
+    const registry = new Node({
+      pkg: { name: 'registry', version: '1.2.3' },
+      resolved: url,
+      integrity: 'sha512-registry',
+      parent: root,
+    })
+
+    const otherRegistry = new Node({
+      pkg: { name: 'some-other-registry', version: '1.2.3' },
+      resolved: someOtherRegistry,
+      integrity: 'sha512-registry',
+      parent: root,
+    })
+
+    const scopedOtherRegistry = new Node({
+      pkg: { name: '@scope/some-other-registry', version: '1.2.3' },
+      resolved: someOtherRegistry,
+      integrity: 'sha512-registry',
+      parent: root,
+    })
+
+    const tar = new Node({
+      pkg: { name: 'tar', version: '1.2.3' },
+      resolved: url,
+      integrity: 'sha512-registry',
+      parent: root,
+    })
+
+    calcDepFlags(root)
+    meta.add(root)
+    return { data: meta.commit(), registry, tar, root, otherRegistry, scopedOtherRegistry }
+  }
+
+  await t.test('omitLockfileRegistryResolved', async t => {
+    const { data } = await getData({ omitLockfileRegistryResolved: true })
+    // registry dependencies in v2 packages and v1 dependencies should
+    // have resolved stripped.
+    t.strictSame(data.packages['node_modules/registry'].resolved, undefined)
+    t.strictSame(data.dependencies.registry.resolved, undefined)
+
+    // tar should have resolved because it is not a registry dep.
+    t.strictSame(data.packages['node_modules/tar'].resolved, url)
+    // v1 url dependencies never have resolved.
+    t.strictSame(data.dependencies.tar.resolved, undefined)
+  })
+
+  await t.test('omitLockfileRegistryResolved: false', async t => {
+    const { data } = await getData({ omitLockfileRegistryResolved: false })
+    t.strictSame(data.packages['node_modules/registry'].resolved, url)
+    t.strictSame(data.dependencies.registry.resolved, url)
+
+    t.strictSame(data.packages['node_modules/tar'].resolved, url)
+    // v1 url dependencies never have resolved.
+    t.strictSame(data.dependencies.tar.resolved, undefined)
+  })
+
+  t.test('metaFromNode default', async t => {
+    // test to cover options default.
+    const { registry } = await getData(undefined)
+    t.strictSame(Shrinkwrap.metaFromNode(registry, '').resolved, url)
+  })
+})
+
 t.test('construct metadata from node and package data', t => {
   const meta = new Shrinkwrap({ path: '/home/user/projects/root' })
   // fake load
