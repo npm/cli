@@ -1,0 +1,52 @@
+name: Node CI docs
+
+on:
+  pull_request:
+    paths:
+      - docs/**
+    branches:
+      - '*'
+  push:
+    paths:
+      - docs/**
+    branches:
+      - release-next
+      - latest
+  workflow_dispatch:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout the npm/cli repo
+      - uses: actions/checkout@v2
+      - name: Use Node.js 14.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14.x
+          cache: npm
+      - name: Install dependencies
+        run: |
+          node ./bin/npm-cli.js install --ignore-scripts --no-audit
+          node ./bin/npm-cli.js rebuild
+      - name: Run linting
+        run: node ./bin/npm-cli.js run lint -w docs
+        env:
+          DEPLOY_VERSION: testing
+
+  check_docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 14.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14.x
+          cache: npm
+      - name: Install dependencies
+        run: |
+          node ./bin/npm-cli.js install --ignore-scripts --no-audit
+      - name: Rebuild the docs
+        run: make freshdocs
+      - name: Git should not be dirty
+        run: node scripts/git-dirty.js

@@ -8,6 +8,8 @@ on:
     branches:
       - release-next
       - latest
+  workflow_dispatch:
+
 jobs:
   lint:
     runs-on: ubuntu-latest
@@ -106,49 +108,7 @@ jobs:
       env:
         DEPLOY_VERSION: testing
 
-  workspaces-tests:
-    strategy:
-      fail-fast: false
-      matrix:
-        node-version: [12.x, 14.x, 16.x]
-        platform:
-          - os: ubuntu-latest
-            shell: bash
-          - os: macos-latest
-            shell: bash
-          - os: windows-latest
-            shell: bash
-          - os: windows-latest
-            shell: powershell
-
-    runs-on: ${{ matrix.platform.os }}
-    defaults:
-      run:
-        shell: ${{ matrix.platform.shell }}
-
-    steps:
-      # Checkout the npm/cli repo
-    - uses: actions/checkout@v2
-
-      # Installs the specific version of Node.js
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: npm
-
-      # Run the installer script
-    - name: Install dependencies
-      run: |
-        node ./bin/npm-cli.js install --ignore-scripts --no-audit
-        node ./bin/npm-cli.js rebuild
-
-    - name: Run workspaces tests
-      run: node ./bin/npm-cli.js test -w ./packages -- --no-check-coverage -t600 -Rbase -c
-      env:
-        DEPLOY_VERSION: testing
-
-  build:
+  test:
     strategy:
       fail-fast: false
       matrix:
