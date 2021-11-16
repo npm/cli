@@ -1,0 +1,76 @@
+name: Node CI libnpmdiff
+
+on:
+  pull_request:
+    paths:
+      - workspaces/libnpmdiff/**
+    branches:
+      - '*'
+  push:
+    paths:
+      - workspaces/libnpmdiff/**
+    branches:
+      - release-next
+      - latest
+  workflow_dispatch:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout the npm/cli repo
+      - uses: actions/checkout@v2
+      - name: Use Node.js 14.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14.x
+          cache: npm
+      - name: Install dependencies
+        run: |
+          node ./bin/npm-cli.js install --ignore-scripts --no-audit
+          node ./bin/npm-cli.js rebuild
+      - name: Run linting
+        run: node ./bin/npm-cli.js run posttest -w libnpmdiff
+        env:
+          DEPLOY_VERSION: testing
+
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version: ['12.13.0', 12.x, '14.15.0', 14.x, '16.0.0', 16.x]
+        platform:
+          - os: ubuntu-latest
+            shell: bash
+          - os: macos-latest
+            shell: bash
+          - os: windows-latest
+            shell: bash
+          - os: windows-latest
+            shell: powershell
+
+    runs-on: ${{ matrix.platform.os }}
+    defaults:
+      run:
+        shell: ${{ matrix.platform.shell }}
+
+    steps:
+      # Checkout the npm/cli repo
+    - uses: actions/checkout@v2
+
+      # Installs the specific version of Node.js
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: npm
+
+      # Run the installer script
+    - name: Install dependencies
+      run: |
+        node ./bin/npm-cli.js install --ignore-scripts --no-audit
+        node ./bin/npm-cli.js rebuild
+
+      # Run the tests, but not if we're just gonna do coveralls later anyway
+    - name: Run Tap tests
+      run: node ./bin/npm-cli.js run -w libnpmdiff --ignore-scripts test -- -t600 -Rbase -c

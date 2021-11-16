@@ -3,7 +3,9 @@
   "description": "The npm cli documentation",
   "version": "1.0.0",
   "scripts": {
-    "build": "node dockhand"
+    "build": "node dockhand",
+    "eslint": "eslint",
+    "lint": "npm run eslint -- ./*.js"
   },
   "repository": {
     "type": "git",
