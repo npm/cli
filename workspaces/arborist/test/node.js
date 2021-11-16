@@ -2908,3 +2908,26 @@ t.test('overrides', (t) => {
 
   t.end()
 })
+
+t.test('node with no edges in is not a registry dep', async t => {
+  const node = new Node({ path: '/foo' })
+  t.equal(node.isRegistryDependency, false)
+})
+
+t.test('node with non registry edge in is not a registry dep', async t => {
+  const root = new Node({ path: '/some/path', pkg: { dependencies: { registry: '', tar: '' } } })
+  const node = new Node({ pkg: { name: 'node', version: '1.0.0' }, parent: root })
+
+  new Node({ pkg: { name: 'registry', dependencies: { node: '^1.0.0' } }, parent: root })
+  new Node({ pkg: { name: 'tar', dependencies: { node: 'file:node' } }, parent: root })
+
+  t.equal(node.isRegistryDependency, false)
+})
+
+t.test('node with only registry edges in a registry dep', async t => {
+  const root = new Node({ path: '/some/path', pkg: { dependencies: { registry: '', tar: '' } } })
+  const node = new Node({ pkg: { name: 'node', version: '1.0.0' }, parent: root })
+  new Node({ pkg: { name: 'registry', dependencies: { node: '^1.0.0' } }, parent: root })
+
+  t.equal(node.isRegistryDependency, true)
+})
