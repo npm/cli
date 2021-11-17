@@ -202,7 +202,7 @@
     "eslint": "^8.2.0",
     "licensee": "^8.2.0",
     "spawk": "^1.7.1",
-    "tap": "^15.0.9"
+    "tap": "^15.1.1"
   },
   "scripts": {
     "dumpconf": "env | grep npm | sort | uniq",
