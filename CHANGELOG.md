@@ -1,3 +1,56 @@
+## v8.1.4 (2021-11-18)
+
+### BUG FIXES
+
+* [`7887fb3d7`](https://github.com/npm/cli/commit/7887fb3d7ba7f05abeb49dd92b76d90422cb38ca)
+  [#4025](https://github.com/npm/cli/issues/4025)
+  fix: don't try to open file:/// urls
+  ([@wraithgar](https://github.com/wraithgar))
+* [`cd6d3a90d`](https://github.com/npm/cli/commit/cd6d3a90d4bbf3793834830b4c77fc8eb0846596)
+  [#4026](https://github.com/npm/cli/issues/4026)
+  fix: explicitly allow `npm help` to open file:/// man pages
+  ([@wraithgar](https://github.com/wraithgar))
+* [`72ca4a4e3`](https://github.com/npm/cli/commit/72ca4a4e39a1d4de03d6423480aa2ee82b021060)
+  [#4020](https://github.com/npm/cli/issues/4020)
+  [#4032](https://github.com/npm/cli/issues/4032)
+  fix: command completion
+  ([@wraithgar](https://github.com/wraithgar))
+* [`b78949134`](https://github.com/npm/cli/commit/b789491345aa6fbe345aa3c96fe9f415296ec418)
+  [#4023](https://github.com/npm/cli/issues/4023)
+  fix(install): command completion with single match
+  ([@wraithgar](https://github.com/wraithgar))
+* [`44bfa3787`](https://github.com/npm/cli/commit/44bfa378723554195fccf8cf4ca2d895ddbd8f8c)
+  [#4065](https://github.com/npm/cli/issues/4065)
+  @npmcli/arborist 4.0.5
+  * fix: accurate filtering of workspaces `--no-workspaces`
+  ([@fritzy](https://github.com/fritzy))
+
+### DEPENDENCIES
+
+* [`225645420`](https://github.com/npm/cli/commit/225645420cf3d13bc0b0d591f7f7bf21a9c24e47)
+  [#3995](https://github.com/npm/cli/issues/3995)
+  update to latest eslint and linting rules
+  ([@wraithgar](https://github.com/wraithgar))
+* [`203fedf5b`](https://github.com/npm/cli/commit/203fedf5b1eba78b76ebacbda88f215caabea6ca)
+  [#4016](https://github.com/npm/cli/issues/4016)
+  `eslint@8.0.0`: `@npmcli/eslint-config@2.0.0`
+  * Update to eslint@8 and and `@npmcli/eslint-config@2.0.0`
+  * Remove eslint-plugin-node.
+  Also remove an unused script that was failing linting.  We don't use the
+  update-dist-tags script anymore as part of our release process.
+  ([@wraithgar](https://github.com/wraithgar))
+* [`7b4aa59b6`](https://github.com/npm/cli/commit/7b4aa59b6630831f25d19c0c15a65acaf3a83327)
+  `signal-exit@3.0.6`:, `tap@15.1.2`
+  ([@isaacs](https://github.com/isaacs))
+* [`08015859c`](https://github.com/npm/cli/commit/08015859ca0abe47845d2970212cd344cdfc56e6)
+  [#4049](https://github.com/npm/cli/issues/4049)
+  `npmlog@6.0.0`
+* [`088c11694`](https://github.com/npm/cli/commit/088c11694a9f575e5c0fe10ab9efb55d14019be7)
+  [#4045](https://github.com/npm/cli/issues/4045)
+  `node-gyp@8.4.0`:
+  * feat: support vs2022
+  * feat: build with config.gypi from node headers
+
 ## v8.1.3 (2021-11-04)
 
 ### BUG FIXES
