@@ -488,15 +488,15 @@ t.test('maxSockets', t => {
   t.end()
 })
 
-t.test('projectScope', t => {
+t.test('scope', t => {
   const obj = { scope: 'asdf' }
   const flat = {}
   definitions.scope.flatten('scope', obj, flat)
-  t.strictSame(flat, { projectScope: '@asdf' }, 'prepend @ if needed')
+  t.strictSame(flat, { scope: '@asdf', projectScope: '@asdf' }, 'prepend @ if needed')
 
   obj.scope = '@asdf'
   definitions.scope.flatten('scope', obj, flat)
-  t.strictSame(flat, { projectScope: '@asdf' }, 'leave untouched if has @')
+  t.strictSame(flat, { scope: '@asdf', projectScope: '@asdf' }, 'leave untouched if has @')
 
   t.end()
 })
