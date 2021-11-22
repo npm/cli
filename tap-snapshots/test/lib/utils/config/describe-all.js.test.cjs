@@ -1261,7 +1261,7 @@ Save installed packages to a package.json file as \`optionalDependencies\`.
 * Default: false
 * Type: Boolean
 
-Save installed packages. to a package.json file as \`peerDependencies\`
+Save installed packages to a package.json file as \`peerDependencies\`
 
 <!-- automatically generated, do not edit manually -->
 <!-- see lib/utils/config/definitions.js -->

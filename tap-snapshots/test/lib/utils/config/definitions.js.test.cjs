@@ -1462,7 +1462,7 @@ exports[`test/lib/utils/config/definitions.js TAP > config description for save-
 * Default: false
 * Type: Boolean
 
-Save installed packages. to a package.json file as \`peerDependencies\`
+Save installed packages to a package.json file as \`peerDependencies\`
 `
 
 exports[`test/lib/utils/config/definitions.js TAP > config description for save-prefix 1`] = `
