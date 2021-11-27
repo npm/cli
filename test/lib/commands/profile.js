@@ -22,6 +22,8 @@ const mocks = {
   ansistyles: { bright: a => a },
   npmlog: {
     gauge: { show () {} },
+  },
+  'proc-log': {
     info () {},
     notice () {},
     warn () {},
@@ -489,23 +491,23 @@ t.test('profile set <key> <value>', t => {
       },
     }
 
-    const npmlog = {
-      gauge: {
-        show () {},
-      },
-      warn (title, msg) {
-        t.equal(title, 'profile', 'should use expected profile')
-        t.equal(
-          msg,
-          'Passwords do not match, please try again.',
-          'should log password mismatch message'
-        )
-      },
-    }
-
     const Profile = t.mock('../../../lib/commands/profile.js', {
       ...mocks,
-      npmlog,
+      npmlog: {
+        gauge: {
+          show () {},
+        },
+      },
+      'proc-log': {
+        warn (title, msg) {
+          t.equal(title, 'profile', 'should use expected profile')
+          t.equal(
+            msg,
+            'Passwords do not match, please try again.',
+            'should log password mismatch message'
+          )
+        },
+      },
       'npm-profile': npmProfile,
       '../../../lib/utils/read-user-info.js': readUserInfo,
     })

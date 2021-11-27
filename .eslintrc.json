@@ -1,3 +1,15 @@
 {
-  "extends": ["@npmcli"]
+  "extends": ["@npmcli"],
+  "overrides": [{
+    "files": "test/**",
+    "rules": {
+      "no-extend-native": "off",
+      "no-global-assign": "off"
+    }
+  }, {
+    "files": ["lib/**"],
+    "rules": {
+      "no-console": "warn"
+    }
+  }]
 }
