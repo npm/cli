@@ -1,3 +1,59 @@
+## v8.2.0 (2021-12-02)
+
+### Features
+
+* [`6734ba36d`](https://github.com/npm/cli/commit/6734ba36dd6e07a859ab4d6eb4f264d2c0022276)
+  [#4062](https://github.com/npm/cli/issues/4062)
+  feat: streaming debug logfile
+  ([@lukekarrys](https://github.com/lukekarrys))
+
+### Bug Fixes
+
+* [`5f4040aa0`](https://github.com/npm/cli/commit/5f4040aa0e30a3b74caab64958770c682e4d0031)
+  chore: remove get-project-scope utils
+  ([@Yucel Okcu](https://github.com/Yucel Okcu))
+* [`c5c6d1603`](https://github.com/npm/cli/commit/c5c6d1603b06df4c10b503047aeed34d6e0c36c2)
+  [#4060](https://github.com/npm/cli/issues/4060)
+  fix: add missing scope on flat options
+  ([@yuqu](https://github.com/yuqu))
+* [`47828b766`](https://github.com/npm/cli/commit/47828b766a4a7b50c1245c8f01b99ffbeffd014f)
+  chore: update one-time password prompt
+  ([@Darcy Clarke](https://github.com/Darcy Clarke))
+
+### Documentation
+
+* [`fc46a7926`](https://github.com/npm/cli/commit/fc46a792621c89354eddc0e1ee2d4f5c26efe5a5)
+  [#4072](https://github.com/npm/cli/issues/4072)
+  docs: fix typo in `save-peer` description
+  ([@chalkygames123](https://github.com/chalkygames123))
+* [`2fbf1576f`](https://github.com/npm/cli/commit/2fbf1576f5427babab2bdf314b1760adc5f9a575)
+  [#4081](https://github.com/npm/cli/issues/4081)
+  docs: Fix typo
+  ([@idleberg](https://github.com/idleberg))
+* [`a8bc95f11`](https://github.com/npm/cli/commit/a8bc95f11c9d21319581d7b09baf9f864bea21ac)
+  [#4089](https://github.com/npm/cli/issues/4089)
+  docs(workspaces): Fix typo
+  ([@yotamselementor](https://github.com/yotamselementor))
+* [`31b098ee2`](https://github.com/npm/cli/commit/31b098ee26ed17facb132278bb3205e80e2a760d)
+  [#4113](https://github.com/npm/cli/issues/4113)
+  docs: add logging docs
+  ([@darcyclarke](https://github.com/darcyclarke))
+* [`cbae0fb71`](https://github.com/npm/cli/commit/cbae0fb71cea55004f7066c0dfc870137b53ee8b)
+  [#4114](https://github.com/npm/cli/issues/4114)
+  docs: update description about where/when debug log is written
+  ([@lukekarrys](https://github.com/lukekarrys))
+
+
+### Dependencies
+
+* [`037f2cc8c`](https://github.com/npm/cli/commit/037f2cc8c8ed9d9a092475a5a07f2a3a88915633)
+  [#4078](https://github.com/npm/cli/issues/4078)
+  `node-gyp@8.4.1`
+* [`0e63df612`](https://github.com/npm/cli/commit/0e63df61283a2f7ace991f72e4577c6f23ffc5df)
+  [#4102](https://github.com/npm/cli/issues/4102)
+  `@npmcli/config@2.3.2`:
+  * fix: always load localPrefix
+
 ## v8.1.4 (2021-11-18)
 
 ### BUG FIXES
