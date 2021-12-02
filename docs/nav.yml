@@ -235,6 +235,9 @@
   - title: Config
     url: /using-npm/config
     description: About npm configuration
+  - title: Logging
+    url: /using-npm/logging
+    description: Why, What & How we Log
   - title: Scope
     url: /using-npm/scope
     description: Scoped packages
