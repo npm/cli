@@ -62,7 +62,7 @@ jobs:
         run: |
           node ./bin/npm-cli.js install --ignore-scripts --no-audit
           node ./bin/npm-cli.js rebuild
-      - name: Run linting
+      - name: Validate licenses
         run: node ./bin/npm-cli.js run licenses
 
   smoke-tests:
