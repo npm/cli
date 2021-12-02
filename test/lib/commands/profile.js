@@ -689,7 +689,7 @@ t.test('enable-2fa', t => {
       async otp (label) {
         t.equal(
           label,
-          'Enter one-time password from your authenticator app: ',
+          'Enter one-time password: ',
           'should ask for otp confirmation'
         )
         return '123456'
@@ -1044,7 +1044,7 @@ t.test('disable-2fa', t => {
       async otp (label) {
         t.equal(
           label,
-          'Enter one-time password from your authenticator app: ',
+          'Enter one-time password: ',
           'should ask for otp confirmation'
         )
         return '1234'
