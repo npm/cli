@@ -8,6 +8,9 @@ const originals = {
   stderrWrite: process.stderr.write,
   shell: process.env.SHELL,
   home: process.env.HOME,
+  PATH: process.env.PATH,
+  Path: process.env.Path,
+  path: process.env.path,
   argv: process.argv,
   env: process.env,
   setInterval,
@@ -194,6 +197,35 @@ t.test('falsy values', async t => {
   })
 
   t.equal(process.platform, originals.platform)
+})
+
+t.test('path case insensitivity', async t => {
+  const setPath = (t, p, v) => mockGlobals(t, { [`process.env.${p}`]: v })
+
+  await t.test('uppercase', async t => {
+    setPath(t, 'PATH', '1')
+    t.equal(process.env.PATH, '1')
+    t.equal(process.env.Path, '1')
+    t.equal(process.env.path, '1')
+  })
+
+  await t.test('mixed case', async t => {
+    setPath(t, 'Path', '2')
+    t.equal(process.env.PATH, '2')
+    t.equal(process.env.Path, '2')
+    t.equal(process.env.path, '2')
+  })
+
+  await t.test('lowercase', async t => {
+    setPath(t, 'path', '3')
+    t.equal(process.env.PATH, '3')
+    t.equal(process.env.Path, '3')
+    t.equal(process.env.path, '3')
+  })
+
+  t.equal(process.env.PATH, originals.PATH)
+  t.equal(process.env.Path, originals.Path)
+  t.equal(process.env.path, originals.path)
 })
 
 t.test('date', async t => {

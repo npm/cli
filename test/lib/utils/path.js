@@ -1,12 +1,27 @@
 const t = require('tap')
-const mod = '../../../lib/utils/path.js'
-const delim = require('../../../lib/utils/is-windows.js') ? ';' : ':'
-Object.defineProperty(process, 'env', {
-  value: {},
+const { delimiter } = require('path')
+const mockGlobals = require('../../fixtures/mock-globals')
+
+const mockPath = (t, key, parts) => {
+  if (key) {
+    // Dont use mockGlobals here since that normalizes this behavior across platforms
+    process.env[key] = parts.join(delimiter)
+    t.teardown(() => delete process.env[key])
+  }
+  t.match([key].filter(Boolean), Object.keys(process.env))
+  t.match(t.mock('../../../lib/utils/path.js'), {
+    PATH: parts,
+    key: key,
+    value: parts.join(delimiter),
+  }, key)
+}
+
+t.before(() => {
+  mockGlobals(t, { 'process.env': {} }, { replace: true })
+  t.strictSame(process.env, {})
 })
-process.env.path = ['foo', 'bar', 'baz'].join(delim)
-t.strictSame(t.mock(mod), ['foo', 'bar', 'baz'])
-process.env.Path = ['a', 'b', 'c'].join(delim)
-t.strictSame(t.mock(mod), ['a', 'b', 'c'])
-process.env.PATH = ['x', 'y', 'z'].join(delim)
-t.strictSame(t.mock(mod), ['x', 'y', 'z'])
+
+t.test('PATH', async (t) => mockPath(t, 'PATH', ['foo', 'bar', 'baz']))
+t.test('Path', async (t) => mockPath(t, 'Path', ['a', 'b', 'c']))
+t.test('path', async (t) => mockPath(t, 'path', ['x', 'y', 'z']))
+t.test('undefined', async (t) => mockPath(t, undefined, []))

@@ -3,6 +3,8 @@
 // This file is only used in tests but it is still tested itself.
 // Hopefully it can be removed for a feature in tap in the future
 
+const PATH = require('../../lib/utils/path')
+
 const sep = '.'
 const has = (o, k) => Object.prototype.hasOwnProperty.call(o, k)
 const opd = (o, k) => Object.getOwnPropertyDescriptor(o, k)
@@ -54,41 +56,36 @@ const protoDescriptor = (obj, key) => {
   return descriptor
 }
 
-// Path can be different cases across platform so get the original case
-// of the path before anything is changed
+// Path can be different cases across platform so get the original case of
+// the key so we can reset it on teardown
 // XXX: other special cases to handle?
-const specialCaseKeys = (() => {
-  const originalKeys = {
-    PATH: process.env.PATH ? 'PATH' : process.env.Path ? 'Path' : 'path',
-  }
-  return (key) => {
-    switch (key.toLowerCase()) {
-      case 'process.env.path':
-        return originalKeys.PATH
-    }
-  }
-})()
+const getCaseSensitiveKeys = (k) => ({
+  'process.env.path': PATH.keys,
+})[k.toLowerCase()]
 
 const _setGlobal = Symbol('setGlobal')
 const _nextDescriptor = Symbol('nextDescriptor')
 
 class DescriptorStack {
-  #stack = []
+  #stack = [[]]
   #global = null
-  #valueKey = null
-  #defaultDescriptor = { configurable: true, writable: true, enumerable: true }
+  #keys = null
+  #descriptor = { configurable: true, writable: true, enumerable: true }
   #delete = () => ({ DELETE: true })
   #isDelete = (o) => o && o.DELETE === true
 
   constructor (key) {
     const keys = splitLast(key)
     this.#global = keys.length === 1 ? global : get(global, keys[0])
-    this.#valueKey = specialCaseKeys(key) || last(keys)
-    // If the global object doesnt return a descriptor for the key
-    // then we mark it for deletion on teardown
-    this.#stack = [
-      protoDescriptor(this.#global, this.#valueKey) || this.#delete(),
-    ]
+    this.#keys = getCaseSensitiveKeys(key) || [last(keys)]
+
+    for (const key of this.#keys) {
+      const descriptor = protoDescriptor(this.#global, key)
+      if (descriptor) {
+        this.#descriptor = descriptor
+      }
+      this.#stack[0].push({ key, descriptor: descriptor || this.#delete() })
+    }
   }
 
   add (value) {
@@ -111,7 +108,7 @@ class DescriptorStack {
     }
   }
 
-  reset () {
+  teardown () {
     // Everything could be reset manually so only
     // teardown if we have an initial descriptor left
     // and then delete the rest of the stack
@@ -121,26 +118,27 @@ class DescriptorStack {
     }
   }
 
-  [_setGlobal] (d) {
-    if (this.#isDelete(d)) {
-      delete this.#global[this.#valueKey]
-    } else {
-      Object.defineProperty(this.#global, this.#valueKey, d)
-    }
-    return d
+  [_setGlobal] (descriptors) {
+    descriptors.forEach(({ key, descriptor }) => {
+      if (this.#isDelete(descriptor)) {
+        delete this.#global[key]
+      } else {
+        Object.defineProperty(this.#global, key, descriptor)
+      }
+    })
+    return descriptors
   }
 
   [_nextDescriptor] (value) {
-    if (value === undefined) {
-      return this.#delete()
-    }
-    const d = last(this.#stack)
-    return {
-      // If the previous descriptor was one to delete the property
-      // then use the default descriptor as the base
-      ...(this.#isDelete(d) ? this.#defaultDescriptor : d),
-      ...(d && d.get ? { get: () => value } : { value }),
-    }
+    return this.#keys.map((key) => ({
+      key,
+      descriptor: value === undefined ? this.#delete() : {
+        // If the previous descriptor was one to delete the property
+        // then use the default descriptor as the base
+        ...this.#descriptor,
+        ...(this.#descriptor.get ? { get: () => value } : { value }),
+      },
+    }))
   }
 }
 
@@ -179,10 +177,10 @@ class MockGlobals {
 
   teardown (key) {
     if (!key) {
-      Object.values(this.#descriptors).forEach((d) => d.reset())
+      Object.values(this.#descriptors).forEach((d) => d.teardown())
       return
     }
-    this.#descriptors[key].reset()
+    this.#descriptors[key].teardown()
   }
 }
 

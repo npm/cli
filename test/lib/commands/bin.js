@@ -33,7 +33,7 @@ t.test('bin -g', async t => {
   const dir = '/bin/dir'
 
   const Bin = t.mock('../../../lib/commands/bin.js', {
-    '../../../lib/utils/path.js': [dir],
+    '../../../lib/utils/path.js': { PATH: [dir] },
   })
 
   const npm = mockNpm({
@@ -61,7 +61,7 @@ t.test('bin -g (not in path)', async t => {
   const dir = '/bin/dir'
 
   const Bin = t.mock('../../../lib/commands/bin.js', {
-    '../../../lib/utils/path.js': ['/not/my/dir'],
+    '../../../lib/utils/path.js': { PATH: ['/not/my/dir'] },
   })
   const npm = mockNpm({
     bin: dir,

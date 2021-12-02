@@ -72,7 +72,7 @@ const read = (options, cb) => {
   process.nextTick(() => cb(READ_ERROR, READ_RESULT))
 }
 
-const PATH = require('../../../lib/utils/path.js')
+const { PATH } = require('../../../lib/utils/path.js')
 
 let CI_NAME = 'travis-ci'
 
