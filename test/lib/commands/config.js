@@ -333,7 +333,13 @@ t.test('config get private key', async t => {
 
   await t.rejects(
     sandbox.run('config', ['get', '_authToken']),
-    '_authToken is protected',
+    /_authToken option is protected/,
+    'rejects with protected string'
+  )
+
+  await t.rejects(
+    sandbox.run('config', ['get', '//localhost:8080/:_password']),
+    /_password option is protected/,
     'rejects with protected string'
   )
 })
