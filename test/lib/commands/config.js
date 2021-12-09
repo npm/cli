@@ -107,6 +107,26 @@ t.test('config list --json', async t => {
   t.matchSnapshot(sandbox.output, 'output matches snapshot')
 })
 
+t.test('config list with publishConfig', async t => {
+  const temp = t.testdir({
+    project: {
+      'package.json': JSON.stringify({
+        publishConfig: {
+          registry: 'https://some.registry',
+          _authToken: 'mytoken',
+        },
+      }),
+    },
+  })
+  const project = join(temp, 'project')
+
+  const sandbox = new Sandbox(t, { project })
+  await sandbox.run('config', ['list', ''])
+  await sandbox.run('config', ['list', '--global'])
+
+  t.matchSnapshot(sandbox.output, 'output matches snapshot')
+})
+
 t.test('config delete no args', async t => {
   const sandbox = new Sandbox(t)
 
