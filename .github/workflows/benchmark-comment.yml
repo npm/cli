@@ -17,15 +17,12 @@ jobs:
           DISPATCH_REPO: "benchmarks"
           DISPATCH_OWNER: "npm"
           EVENT_NAME: ${{ github.event_name }}
-          EVENT_ACTION: ${{ github.event.action }}
           OWNER: ${{ github.event.repository.owner.login }}
           REPO: ${{ github.event.repository.name }}
           ISSUE_NUMBER: ${{ github.event.issue.number }}
-          COMMENT_BODY: ${{ github.event.comment.body }}
-          COMMENT_ID: ${{ github.event.comment.id }}
           COMMENT_NODE_ID: ${{ github.event.comment.node_id }}
           COMMENT_ACTIONABLE: ${{ startsWith(github.event.comment.body, 'test this please ✅') }}
-          AUTH_TOKEN: ${{ secrets.NPM_DEPLOY_USER_PAT }}
+          AUTH_TOKEN: ${{ secrets.NPM_BENCHMARKS_TOKEN }}
         run: |
           # Comment Handler
 
@@ -46,24 +43,22 @@ jobs:
               PR_DATA=$(curl -s "${IS_PR}")
               PR_OWNER=$(echo "${PR_DATA}" | jq '.head.repo.owner.login')
               PR_REPO=$(echo "${PR_DATA}" | jq '.head.repo.name')
-              PR_COMMIT_SHA=$(curl -s "${IS_PR}/commits" | jq -r '.[0].sha')
 
               # dispatch request for benchmarks
               echo "Dispatching request..."
               curl \
                 -s \
                 -X POST https://api.github.com/repos/${DISPATCH_OWNER}/${DISPATCH_REPO}/dispatches \
-                -H "Accept: application/vnd.github.everest-preview+json" \
+                -H "Accept: application/vnd.github.v3+json" \
                 -H "Authorization: token ${AUTH_TOKEN}" \
                 -d \
                 '
                 {
-                  "event_type": "'"${EVENT_NAME}"'",
+                  "event_type": "'"${EVENT_NAME} ${PR_OWNER}/${PR_REPO}#${ISSUE_NUMBER}"'",
                   "client_payload": {
                     "pr_id": "'"${ISSUE_NUMBER}"'",
                     "repo": "'"${PR_REPO}"'",
-                    "owner": "'"${PR_OWNER}"'",
-                    "commit_sha": "'"${PR_COMMIT_SHA}"'"
+                    "owner": "'"${PR_OWNER}"'"
                   }
                 }'
 
