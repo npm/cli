@@ -15,7 +15,7 @@ t.test('access public', t => {
     '/-/package/%40foo%2Fbar/access', { access: 'public' }
   ).reply(200)
   return access.public('@foo/bar', OPTS).then(ret => {
-    t.deepEqual(ret, true, 'request succeeded')
+    t.same(ret, true, 'request succeeded')
   })
 })
 
@@ -25,7 +25,7 @@ t.test('access public - failure', t => {
   ).reply(418)
   return access.public('@foo/bar', OPTS)
     .catch(err => {
-      t.equals(err.statusCode, 418, 'fails with code from registry')
+      t.equal(err.statusCode, 418, 'fails with code from registry')
     })
 })
 
@@ -34,7 +34,7 @@ t.test('access restricted', t => {
     '/-/package/%40foo%2Fbar/access', { access: 'restricted' }
   ).reply(200)
   return access.restricted('@foo/bar', OPTS).then(ret => {
-    t.deepEqual(ret, true, 'request succeeded')
+    t.same(ret, true, 'request succeeded')
   })
 })
 
@@ -44,7 +44,7 @@ t.test('access restricted - failure', t => {
   ).reply(418)
   return access.restricted('@foo/bar', OPTS)
     .catch(err => {
-      t.equals(err.statusCode, 418, 'fails with code from registry')
+      t.equal(err.statusCode, 418, 'fails with code from registry')
     })
 })
 
@@ -53,7 +53,7 @@ t.test('access 2fa-required', t => {
     publish_requires_tfa: true
   }).reply(200, { ok: true })
   return access.tfaRequired('@foo/bar', OPTS).then(ret => {
-    t.deepEqual(ret, true, 'request succeeded')
+    t.same(ret, true, 'request succeeded')
   })
 })
 
@@ -62,7 +62,7 @@ t.test('access 2fa-not-required', t => {
     publish_requires_tfa: false
   }).reply(200, { ok: true })
   return access.tfaNotRequired('@foo/bar', OPTS).then(ret => {
-    t.deepEqual(ret, true, 'request succeeded')
+    t.same(ret, true, 'request succeeded')
   })
 })
 
@@ -74,7 +74,7 @@ t.test('access grant basic read-write', t => {
   return access.grant(
     '@foo/bar', 'myorg:myteam', 'read-write', OPTS
   ).then(ret => {
-    t.deepEqual(ret, true, 'request succeeded')
+    t.same(ret, true, 'request succeeded')
   })
 })
 
@@ -86,7 +86,7 @@ t.test('access grant basic read-only', t => {
   return access.grant(
     '@foo/bar', 'myorg:myteam', 'read-only', OPTS
   ).then(ret => {
-    t.deepEqual(ret, true, 'request succeeded')
+    t.same(ret, true, 'request succeeded')
   })
 })
 
@@ -126,7 +126,7 @@ t.test('access grant basic unscoped', t => {
   return access.grant(
     'bar', 'myorg:myteam', 'read-write', OPTS
   ).then(ret => {
-    t.deepEqual(ret, true, 'request succeeded')
+    t.same(ret, true, 'request succeeded')
   })
 })
 
@@ -141,7 +141,7 @@ t.test('access grant no opts passed', t => {
     .reply(201)
   return access.grant('bar', 'myorg:myteam', 'read-write')
     .then(ret => {
-      t.equals(ret, true, 'request succeeded')
+      t.equal(ret, true, 'request succeeded')
     })
 })
 
@@ -150,7 +150,7 @@ t.test('access revoke basic', t => {
     package: '@foo/bar'
   }).reply(200)
   return access.revoke('@foo/bar', 'myorg:myteam', OPTS).then(ret => {
-    t.deepEqual(ret, true, 'request succeeded')
+    t.same(ret, true, 'request succeeded')
   })
 })
 
@@ -159,7 +159,7 @@ t.test('access revoke basic unscoped', t => {
     package: 'bar'
   }).reply(200, { accessChanged: true })
   return access.revoke('bar', 'myorg:myteam', OPTS).then(ret => {
-    t.deepEqual(ret, true, 'request succeeded')
+    t.same(ret, true, 'request succeeded')
   })
 })
 
@@ -173,7 +173,7 @@ t.test('access revoke no opts passed', t => {
     .reply(201)
   return access.revoke('bar', 'myorg:myteam')
     .then(ret => {
-      t.equals(ret, true, 'request succeeded')
+      t.equal(ret, true, 'request succeeded')
     })
 })
 
@@ -192,7 +192,7 @@ t.test('ls-packages on team', t => {
     '/-/team/myorg/myteam/package?format=cli'
   ).reply(200, serverPackages)
   return access.lsPackages('myorg:myteam', OPTS).then(data => {
-    t.deepEqual(data, clientPackages, 'got client package info')
+    t.same(data, clientPackages, 'got client package info')
   })
 })
 
@@ -211,7 +211,7 @@ t.test('ls-packages on org', t => {
     '/-/org/myorg/package?format=cli'
   ).reply(200, serverPackages)
   return access.lsPackages('myorg', OPTS).then(data => {
-    t.deepEqual(data, clientPackages, 'got client package info')
+    t.same(data, clientPackages, 'got client package info')
   })
 })
 
@@ -230,7 +230,7 @@ t.test('ls-packages on user', t => {
   srv.get('/-/org/myuser/package?format=cli').reply(404, { error: 'not found' })
   srv.get('/-/user/myuser/package?format=cli').reply(200, serverPackages)
   return access.lsPackages('myuser', OPTS).then(data => {
-    t.deepEqual(data, clientPackages, 'got client package info')
+    t.same(data, clientPackages, 'got client package info')
   })
 })
 
@@ -257,7 +257,7 @@ t.test('ls-packages bad response', t => {
     '/-/team/myorg/myteam/package?format=cli'
   ).reply(200, JSON.stringify(null))
   return access.lsPackages('myorg:myteam', OPTS).then(data => {
-    t.deepEqual(data, null, 'succeeds with null')
+    t.same(data, null, 'succeeds with null')
   })
 })
 
@@ -278,7 +278,7 @@ t.test('ls-packages stream', t => {
   return access.lsPackages.stream('myorg:myteam', OPTS)
     .collect()
     .then(data => {
-      t.deepEqual(data, clientPackages, 'got streamed client package info')
+      t.same(data, clientPackages, 'got streamed client package info')
     })
 })
 
@@ -301,7 +301,7 @@ t.test('ls-packages stream no opts', t => {
   return access.lsPackages.stream('myorg:myteam')
     .collect()
     .then(data => {
-      t.deepEqual(data, clientPackages, 'got streamed client package info')
+      t.same(data, clientPackages, 'got streamed client package info')
     })
 })
 
@@ -320,7 +320,7 @@ t.test('ls-collaborators', t => {
     '/-/package/%40foo%2Fbar/collaborators?format=cli'
   ).reply(200, serverCollaborators)
   return access.lsCollaborators('@foo/bar', OPTS).then(data => {
-    t.deepEqual(data, clientCollaborators, 'got collaborators')
+    t.same(data, clientCollaborators, 'got collaborators')
   })
 })
 
@@ -341,7 +341,7 @@ t.test('ls-collaborators stream', t => {
   return access.lsCollaborators.stream('@foo/bar', OPTS)
     .collect()
     .then(data => {
-      t.deepEqual(data, clientCollaborators, 'got collaborators')
+      t.same(data, clientCollaborators, 'got collaborators')
     })
 })
 
@@ -360,7 +360,7 @@ t.test('ls-collaborators w/scope', t => {
     '/-/package/%40foo%2Fbar/collaborators?format=cli&user=zkat'
   ).reply(200, serverCollaborators)
   return access.lsCollaborators('@foo/bar', 'zkat', OPTS).then(data => {
-    t.deepEqual(data, clientCollaborators, 'got collaborators')
+    t.same(data, clientCollaborators, 'got collaborators')
   })
 })
 
@@ -379,7 +379,7 @@ t.test('ls-collaborators w/o scope', t => {
     '/-/package/bar/collaborators?format=cli&user=zkat'
   ).reply(200, serverCollaborators)
   return access.lsCollaborators('bar', 'zkat', OPTS).then(data => {
-    t.deepEqual(data, clientCollaborators, 'got collaborators')
+    t.same(data, clientCollaborators, 'got collaborators')
   })
 })
 
@@ -388,7 +388,7 @@ t.test('ls-collaborators bad response', t => {
     '/-/package/%40foo%2Fbar/collaborators?format=cli'
   ).reply(200, JSON.stringify(null))
   return access.lsCollaborators('@foo/bar', null, OPTS).then(data => {
-    t.deepEqual(data, null, 'succeeds with null')
+    t.same(data, null, 'succeeds with null')
   })
 })
 
@@ -413,5 +413,5 @@ t.test('edit', t => {
   t.throws(() => {
     access.edit()
   }, /Not implemented/, 'directly throws NIY message')
-  t.done()
+  t.end()
 })

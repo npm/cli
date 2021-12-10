@@ -5,7 +5,8 @@
   "scripts": {
     "build": "node dockhand",
     "eslint": "eslint",
-    "lint": "npm run eslint -- ./*.js"
+    "lint": "npm run eslint -- ./*.js",
+    "test": "echo Oh hi"
   },
   "repository": {
     "type": "git",

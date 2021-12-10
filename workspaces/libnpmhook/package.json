@@ -34,7 +34,7 @@
     "nock": "^9.6.1",
     "standard": "^11.0.1",
     "standard-version": "^4.4.0",
-    "tap": "^14.10.6"
+    "tap": "^15.1.0"
   },
   "engines": {
     "node": ">=10"

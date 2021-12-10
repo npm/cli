@@ -9,12 +9,12 @@
     "postversion": "npm publish",
     "postpublish": "git push origin --follow-tags",
     "lint": "standard",
-    "test": "tap"
+    "test": "tap test/*.js"
   },
   "devDependencies": {
     "nock": "^12.0.1",
     "standard": "^14.3.0",
-    "tap": "^14.11.0"
+    "tap": "^15.1.0"
   },
   "repository": {
     "type": "git",

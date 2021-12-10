@@ -29,7 +29,7 @@
   "license": "ISC",
   "scripts": {
     "lint": "eslint lib/*.js",
-    "pretest": "npm run lint",
+    "posttest": "npm run lint",
     "test": "tap test/*.js",
     "snap": "tap test/*.js",
     "preversion": "npm test",
