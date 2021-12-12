@@ -25,7 +25,7 @@
   "devDependencies": {
     "nock": "^13.0.7",
     "standard": "^16.0.3",
-    "tap": "^14.11.0"
+    "tap": "^15.0.0"
   },
   "repository": {
     "type": "git",
