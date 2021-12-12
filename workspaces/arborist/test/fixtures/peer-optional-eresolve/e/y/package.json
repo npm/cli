@@ -1,0 +1,7 @@
+{
+  "name": "@isaacs/testing-peer-optional-conflict-e-y",
+  "version": "1.0.0",
+  "peerDependencies": {
+    "@isaacs/testing-peer-optional-conflict-e-z": "2"
+  }
+}

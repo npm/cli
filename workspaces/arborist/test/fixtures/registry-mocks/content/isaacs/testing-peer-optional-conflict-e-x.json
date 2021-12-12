@@ -1,0 +1,62 @@
+{
+  "_id": "@isaacs/testing-peer-optional-conflict-e-x",
+  "name": "@isaacs/testing-peer-optional-conflict-e-x",
+  "dist-tags": {
+    "latest": "1.0.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "@isaacs/testing-peer-optional-conflict-e-x",
+      "version": "1.0.0",
+      "peerDependencies": {
+        "@isaacs/testing-peer-optional-conflict-e-y": "1",
+        "@isaacs/testing-peer-optional-conflict-e-z": "1"
+      },
+      "peerDependenciesMeta": {
+        "@isaacs/testing-peer-optional-conflict-e-y": {
+          "optional": true
+        }
+      },
+      "_id": "@isaacs/testing-peer-optional-conflict-e-x@1.0.0",
+      "_nodeVersion": "15.3.0",
+      "_npmVersion": "7.5.4",
+      "dist": {
+        "integrity": "sha512-6RLUPctc0FHaWNdJVPeoOnGsOrpH3IjBgd8wcuaqGPhEh3nI90LK3r7q9vEdSsmXLHprGwn5UpqMKunVW8yvjA==",
+        "shasum": "99288f3e7ac85b65178c2e9302cd96cbfe29b0ae",
+        "tarball": "https://registry.npmjs.org/@isaacs/testing-peer-optional-conflict-e-x/-/testing-peer-optional-conflict-e-x-1.0.0.tgz",
+        "fileCount": 1,
+        "unpackedSize": 333,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJgLY9eCRA9TVsSAnZWagAAi54P/AxH1OPhBGukgcWUBJwh\nI5E8aWb27CwY0/lxTY1A+Mw920JPc7e0kcIrPb/446TWk7Mt6oxry971n6R+\ns1vAm/S2UOyI08iBiGqVlo5+NGCiSDW87wJnwhEqg8Blw8cJmIej0y4I6Ov3\nmIx3VcdB/DoUjKOZ8xz6ynqm4yOWFEGSKZb2jnr2QHHob8psWWrUOkADAehd\nzi4Bm97nN1FyMk3ys+UQMp9VGWvlTHzE8OQ5YPUEb5F1AW4v7YkBkTPkD0YC\nSfv2Hzw4jvfC7NkVzTTiYRpxB+e9u0o0SipL6F0nAssZqlVK7ZRXbX2FMels\ncgmQKHtedKXpXnACqXI+g0XF+SOER6AdRMFkXDovOIztuH7vKNcMOYFuAoyu\nAgu/IR7UNuZiREMceCA61TNXNn0ARbvFQUtc1yT089OGoEIEsS2TgYfKuRIp\nft1k53dSTOfiv1fsIE6tZUGMCM1uyUS7ZfOwnkpV2K6JZ2zgWgo+ThbIPB+9\nG3Z4NE4XPhmfLB9ooqHbIcmWpK7PFAK0AbJl19wYZ6zc6TdgVHujE3P3JHmv\nykx/hQmiH1VC1L9IGuieFAPl0QleyuF075y/fNb1gmzTlN2dhF3M2Pi1eham\n9BQWnPYKBZ6/B+MRh8bH0Dw0zK5iLJ8f56BCZGKZm9M3E6pbWNGFfFlsvBQv\n+oo3\r\n=WMBf\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/testing-peer-optional-conflict-e-x_1.0.0_1613598558120_0.7096423493816826"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2021-02-17T21:49:18.079Z",
+    "1.0.0": "2021-02-17T21:49:18.225Z",
+    "modified": "2021-02-17T21:49:22.116Z"
+  },
+  "maintainers": [
+    {
+      "name": "isaacs",
+      "email": "i@izs.me"
+    }
+  ],
+  "readme": "ERROR: No README data found!",
+  "readmeFilename": ""
+}

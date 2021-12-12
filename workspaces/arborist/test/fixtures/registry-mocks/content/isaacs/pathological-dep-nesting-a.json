@@ -1,0 +1,95 @@
+{
+  "_id": "@isaacs/pathological-dep-nesting-a",
+  "_rev": "1-e8c4dcd67e4a057a4238eacab844b200",
+  "name": "@isaacs/pathological-dep-nesting-a",
+  "dist-tags": {
+    "latest": "2.0.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "@isaacs/pathological-dep-nesting-a",
+      "version": "1.0.0",
+      "dependencies": {
+        "@isaacs/pathological-dep-nesting-b": "1"
+      },
+      "description": "``` a@1 -> b@1 a@2 -> b@2 b@1 -> a@2 b@2 -> a@1 ```",
+      "_id": "@isaacs/pathological-dep-nesting-a@1.0.0",
+      "_nodeVersion": "14.2.0",
+      "_npmVersion": "6.14.4",
+      "dist": {
+        "integrity": "sha512-6P5/xtng256kOJWRJ+eUBR2t35MBu7tK5SW5qfCY2gNFsRk5I1NLcAes+QvPTgL1BKlv1SDmMHvIqeMScUDTBw==",
+        "shasum": "a2a68624e9155ccd5bb6929020eb1ce09bcad56c",
+        "tarball": "https://registry.npmjs.org/@isaacs/pathological-dep-nesting-a/-/pathological-dep-nesting-a-1.0.0.tgz",
+        "fileCount": 2,
+        "unpackedSize": 294,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJe0YzNCRA9TVsSAnZWagAAuOMQAJBouLgV1NFVcrDtupKM\nnBjIVn+Hu609VVbyRbSGBLiTMhlwLkzNTKZ7De9A+x0PyrgRzSuBa68AWhTl\ng4lQwMVcNUHV01jev54Me3MGTLdJ9ArCB9RY4crzW0KaSx6cGyPeWn+Y6hVN\n36gqaQtptoGNqgN+39Y0FZZjr4f6I9K+6U/6l0VQPX+OwtDqEZmaX9SZZmwr\naydrACmDD8yi5cVXW0zOvaqs8Q9GWvMYhs67fOAFFVtzdZv0e/3MTSbF5mMN\nOyp6Mm6Db0mUX3T+qoQMHtqqyoqpjbK0WTuoCcvbJGAIxN+P2ySmWLLL4Hev\njvJiugz/xvSwEts1mFhOjtU+C+hmdKTeEnhZtNBMM7gIKG0SSkGNJgTea5a+\nt473cyd9AuASPmyHjDlAzlBbSwG3vSKbf7LhtgjpzKQKe3UhD1waYJKHN3KU\njuOYBhRE2TifEJi7AB1tIBlLVcPSWuNw16gmMde+GwtNAlVak8a5y9k+Obc3\ntxupubfmc4kCixlzf2Amgh6iHpoG7yI3YJT50gamiqofJrpmzJPJS+JGR7e5\ni+y3tjZRFO0iM9NTOS/4XnCfmCttqqamJR3yL/z3qwM5sKqsblbuDBLv43Mv\nsjlMrCgVVowXctOGfERx2/hHR6WUhWClPhZGdHynu0SMslnI7lFsjzg0zToX\nwS44\r\n=KsQ3\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/pathological-dep-nesting-a_1.0.0_1590791372864_0.15400758805824033"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.0": {
+      "name": "@isaacs/pathological-dep-nesting-a",
+      "version": "2.0.0",
+      "dependencies": {
+        "@isaacs/pathological-dep-nesting-b": "2"
+      },
+      "description": "``` a@1 -> b@1 a@2 -> b@2 b@1 -> a@2 b@2 -> a@1 ```",
+      "_id": "@isaacs/pathological-dep-nesting-a@2.0.0",
+      "_nodeVersion": "14.2.0",
+      "_npmVersion": "6.14.4",
+      "dist": {
+        "integrity": "sha512-8P0eProppMw7BhAoyHHjupycQgM9fjCupArB9PytlrlUB0QTkp3a7d0WUF3+kdAXlOScpwtkoJUfcpE2RBqxtQ==",
+        "shasum": "038026d3848dbcbaaf14e68aa71a781596398a93",
+        "tarball": "https://registry.npmjs.org/@isaacs/pathological-dep-nesting-a/-/pathological-dep-nesting-a-2.0.0.tgz",
+        "fileCount": 2,
+        "unpackedSize": 294,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJe0YzVCRA9TVsSAnZWagAAWKQP/jrdczpeQPhArbLMGBMo\n7S+xW/vfJc+t3vt38l9A58iFvY4ZPlbWvCsDUMmhIaUVqldWo1hEp1WrA1uf\n3wlzpL/Gwxleb/zw/MWmoFQ0GhQa96GcsDORqiTOTxn1ar5TjgY6Mc8rm6Gc\no54ftYQJ+cKPIxDdTjgUIKaiKzy98yTnrAjRcm9XIno4PKxQdEOjk4Gri20Z\ntvgzkTHLX58NJioK9eywBC+yTD/8l5iFEaeFEeU3MdN+evgbGa6RFm9bWuBx\nyENT/PUtnsUErQS8QR5m3qyptLhgFSwB8fbOwirtA/lu5nN4SihQeRbeyaZy\np1VJoP7nX9IGtMQRUNj+Ouj7g8vSEJSduHUnIjC6MhAhqj9W9B63BgFRXUk+\nKo0uIypIJ9Q6TPK5LrKQmdMzhQtIY4wCW/9MLCeUi54CTapqwtLOxsCYvibS\nAXniHWY3Dkzqg6Krljf9o8JapxmRQhVZiN+eUmrX3ubb7FAFnXTs3MJcg5jC\nYAZsCtnMn/qKPX88DOpXXGgIZSuof24yiiixN0rFVHDX08osIpaf6lxd6tWq\n3M6XFmwqcfsm2iLSvJiKD+EpvK5vp8ZdnGTJgf/+RB0Ue8WHjWvJogyLnEQL\n76V8t08ueUjlekTNaxFYLE3vzmjXlpyArj7h3zkgQ4bN6/vKubxwcS0cPVVo\nm/zf\r\n=bxcz\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/pathological-dep-nesting-a_2.0.0_1590791380828_0.605456341929195"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2020-05-29T22:29:32.812Z",
+    "1.0.0": "2020-05-29T22:29:32.973Z",
+    "modified": "2020-05-29T22:29:43.212Z",
+    "2.0.0": "2020-05-29T22:29:40.960Z"
+  },
+  "maintainers": [
+    {
+      "name": "isaacs",
+      "email": "i@izs.me"
+    }
+  ],
+  "description": "``` a@1 -> b@1 a@2 -> b@2 b@1 -> a@2 b@2 -> a@1 ```",
+  "readme": "```\na@1 -> b@1\na@2 -> b@2\nb@1 -> a@2\nb@2 -> a@1\n```\n\nResulting nesting goes:\n\n```\na@1\n+-- b@1\n    +-- a@2\n        +-- b@2\n            +-- a@1 ...\n```\n",
+  "readmeFilename": "README.md"
+}

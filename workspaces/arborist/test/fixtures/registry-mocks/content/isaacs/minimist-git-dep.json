@@ -1,0 +1,134 @@
+{
+  "_id": "@isaacs/minimist-git-dep",
+  "_rev": "2-0cdde59180d031653b7948efd3ff2648",
+  "name": "@isaacs/minimist-git-dep",
+  "dist-tags": {
+    "latest": "1.0.2"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "@isaacs/minimist-git-dep",
+      "description": "depends on a vulnerable version of minimist, via a git reference",
+      "version": "1.0.0",
+      "dependencies": {
+        "minimist": "github:substack/minimist#3754568bfd43a841d2d72d7fb54598635aea8fa4"
+      },
+      "_id": "@isaacs/minimist-git-dep@1.0.0",
+      "_nodeVersion": "13.10.1",
+      "_npmVersion": "6.14.4",
+      "dist": {
+        "integrity": "sha512-9jZFcJZJEGshpT6T5Y+wVnro7/5bPj/Kz5SJQz8h2gdDP3jZmmn5ojy1+ZI6Z+F3cEiSc8f5FVmsNZ0ODk9Fpw==",
+        "shasum": "185c81399262a275aa0828f786f1da23ac33a310",
+        "tarball": "https://registry.npmjs.org/@isaacs/minimist-git-dep/-/minimist-git-dep-1.0.0.tgz",
+        "fileCount": 1,
+        "unpackedSize": 257,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJen5txCRA9TVsSAnZWagAAcnYP/1N8E19z65RW6msThJ6T\nk883j+o3uzrIJJ55O0kgB96c9axJBMX6JZ+HWwqPNyxg6wgq0m+HV/uR3MjE\nEP/y1Jq9B7iIlFILOcoTzeonal7UuIRaXCBfx1hNRWtnVtlgG8nK0x/OYcig\nHhY4H3E0wLEmlIce7x0lexn0OEhlwGiSAumcNW2f2GVuIbRR3lIXVpS3fE63\nf0xDlmbQRdl8pHi17tcW2UW9EyDSVdCsvtKqLCkQCVuJajCR69j8n/tSlDT9\nLaIQBkUMBKDwI3MOO/r6lJnskCyi7oVBLPxUHABWl8gDSu+sMckXtLslPtRJ\nF1l9fv9oV6EJTBdmMdXsd4LkeU9RI1TkujY112NXNwsgpCXZVoKoqTAGkviM\nEQicfjKD2mkODZnZ65wtkvKIKo4LCfLJNct7cRy4LnR2WgyT2oJQivpxPzFm\nQD5N+9SSNsJIGiwRH24QUKJHNZ4skCsspe+CoPXQJ0wGeGDy3nMx4r02dow4\nvsMQ107XXkO1LYdDwKTRMQq/8aiYU9XFE4Fn/Xc+gtzxAZVnFi9nZ8sqHEsG\nv+71HYBJnFRadZvnB1JvVgttriRsBWwGrz0GVtP6FgdnKQR1TEDXpq0AEI+i\nuCO7zkpkNVvjYHwd/HviIDqbhqeHRaOjLO0qCsSX7tvKgovOWoQtcKNBll36\nSYD9\r\n=dpVk\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/minimist-git-dep_1.0.0_1587518320468_0.8300398942806175"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.0.1": {
+      "name": "@isaacs/minimist-git-dep",
+      "description": "depends on a vulnerable version of minimist, via a git reference",
+      "version": "1.0.1",
+      "optionalDependencies": {
+        "minimist": "github:substack/minimist#3754568bfd43a841d2d72d7fb54598635aea8fa4"
+      },
+      "dependencies": {
+        "minimist": "github:substack/minimist#3754568bfd43a841d2d72d7fb54598635aea8fa4"
+      },
+      "_id": "@isaacs/minimist-git-dep@1.0.1",
+      "_nodeVersion": "13.10.1",
+      "_npmVersion": "6.14.4",
+      "dist": {
+        "integrity": "sha512-Iyl12Q10HmQ8cAzBq62TNRO8tHK2NrtiFZ99Ib7AXrIFnN18ylvwR3sr+ufsrdN205MWv8N3mAxlwxnScaVTkg==",
+        "shasum": "dbdbd6672ad57581e3e6c1cb3c0c5ae5cb1792fa",
+        "tarball": "https://registry.npmjs.org/@isaacs/minimist-git-dep/-/minimist-git-dep-1.0.1.tgz",
+        "fileCount": 1,
+        "unpackedSize": 265,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJen9PyCRA9TVsSAnZWagAArcgP/0JTvBRvZ1ZFyrMV4xAf\nw7CzjPQwDj8Yk2qasFr9s9OybEenS4b6cBfRLLVqAWNWaVMAKMT1HQdaqXN5\nV+eJqsKTVv8gA4wQTHO363dldlfko130nz3NXmAuvU8ru5nVd9CevmCz5bTI\nVw/sRKr9KO/fdJOElAnt/bWXTK5hm2FhYeQw/OiwSXhXkdtQhZqlaDstJF0Q\nECnXh7Z6Lug7Gtx1MHoQNKoRw/EszxFdjXEMjGQCRl1EjWvTpkfuRsiXyjXd\nlgV/AS9BUHKsnpTRUfshl3I11yh/z6Ewe7u9KjU+I0T0tBtG4/iUCuCYo0YV\nkQ3KZdkWOFJCg4ZTaOsqMEuEZAGmr/OLSlznQpfAA+obhixb/2Z1ybecLCNr\nex4pjZMmFywznNymjvUfjRNtu/XxHO1JXMCscVRlU/MwKd4aocvUwlB+j0A2\nTwJG1W89yMPQzCKNve6yO/d5rq62T8z1Kbmns1PLFYVII+UO/6gl4lHX6pNu\nbRfE9fE8GbTkFyu4NS7x+G+P8wh1GRF1nYi9I86kqGHx7NXXIDdE20eMqLUo\nQJc3b7OE1C9Wc8Y1qSGjo5ZUZ7O9mB9EkN+/rJ2gXb1muFFmzKypph97kuBU\nBpwNj1FACGjLXUQEVn+W/lXWqLZtBfNdWqtrsLtmvrsz5OLvQsU1ot1UOf77\nyerW\r\n=RvT5\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/minimist-git-dep_1.0.1_1587532785622_0.004561883628434682"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.0.2": {
+      "name": "@isaacs/minimist-git-dep",
+      "description": "depends on a vulnerable version of minimist, via a git reference",
+      "version": "1.0.2",
+      "peerDependencies": {
+        "minimist": "github:substack/minimist#3754568bfd43a841d2d72d7fb54598635aea8fa4"
+      },
+      "_id": "@isaacs/minimist-git-dep@1.0.2",
+      "_nodeVersion": "13.10.1",
+      "_npmVersion": "6.14.4",
+      "dist": {
+        "integrity": "sha512-6p3gxRpm4mvaUGNHYQRpexKk6zNWHCTbyqt/PDs9vjL2kSmm6npepPC+inZkIvpHVQfODcUMqQdfY5E5iInQCw==",
+        "shasum": "1a8d9c4c0fa644becbff89e988dfa3e5677e86b2",
+        "tarball": "https://registry.npmjs.org/@isaacs/minimist-git-dep/-/minimist-git-dep-1.0.2.tgz",
+        "fileCount": 1,
+        "unpackedSize": 261,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJen9RPCRA9TVsSAnZWagAAxbwQAKS8Bl9nuHMJTqiXTDJS\nocT4BV21mWYZSrA25VycDYxQo6WfmmsZ7eWeVT0csVoHPWUMuBzKQoZZX5PU\nAaUQeRDsjfXQ8ctBBWhzPWGthsk5nhjC5K8YHQ3Oywhwt68MhDhTQlaaCqEJ\n43amUgEhadIUyG6PyrorrwcnxhmM6mtYFbFbyAYALDlwYAGl67a+4cZtKHtp\nrjmFsGVciJXCOyDZ55rbAcoLpUAOzfTP1oQAGwyGKqj3+rfs/iY9q5izXNi7\nY9q0O8XK6eJMIubPcrq+XUp+n3IKsLtLt2/wT1VD7rmrsxwZC3f8/p4vqUC4\nCR/nOA5R/8DEYJ3+LJQf7416rsj8s6Ot5U8Z1FroRMwDHOgBZfUexL8Tf0t5\nXPZEh5OvYeYVWv1A2yIwpODfunBF88MOn0eM4Uu/mGHt0IeT5sG9ckrgWHmO\nwor5xg3MfvPD+WE+/eNSfcV8VB7ig4vHVsA7ln06Wb3KdhUrCPP0zE6nhU17\nEwmluxJfrAylFSzaDh92SEXJdjnSwSly1KTWkMUkV3n4qN7ZINdLPuXexcDa\ncdHfsACJwK7nT+Xqlzn9moaxpq9EWmuVuK/AxsHULsCmE3LXNP5Wu+Ww1gJd\nrdtf/LmEmbvLrZfRH7by2KqFAZuJdje7qC+G2LQxLRk0zZHEPDX+SCdnesV/\npF52\r\n=pd63\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/minimist-git-dep_1.0.2_1587532878705_0.5207294908922511"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2020-04-22T01:18:40.434Z",
+    "1.0.0": "2020-04-22T01:18:40.590Z",
+    "modified": "2020-04-22T05:21:21.173Z",
+    "1.0.1": "2020-04-22T05:19:46.083Z",
+    "1.0.2": "2020-04-22T05:21:18.847Z"
+  },
+  "maintainers": [
+    {
+      "name": "isaacs",
+      "email": "i@izs.me"
+    }
+  ],
+  "description": "depends on a vulnerable version of minimist, via a git reference",
+  "readme": "ERROR: No README data found!",
+  "readmeFilename": ""
+}

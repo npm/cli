@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@isaacs/testing-file-transitive-a": "file:testing-file-transitive-a/isaacs-testing-file-transitive-a-1.0.0.tgz"
+  }
+}

@@ -1,0 +1,5137 @@
+{
+  "_id": "crypto-browserify",
+  "_rev": "175-d9af4dc02f084c740ffe3574ce25a352",
+  "name": "crypto-browserify",
+  "description": "implementation of crypto for the browser",
+  "dist-tags": {
+    "latest": "3.12.0"
+  },
+  "versions": {
+    "0.0.0": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "partial implementation of crypto for the browser",
+      "version": "0.0.0",
+      "homepage": "https://github.com/dominictarr/crypto-browserify",
+      "repository": {
+        "url": ""
+      },
+      "scripts": {
+        "test": "node test/simple.js"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {},
+      "devDependencies": {},
+      "optionalDependencies": {},
+      "_npmUser": {
+        "name": "dominictarr",
+        "email": "dominic.tarr@gmail.com"
+      },
+      "_id": "crypto-browserify@0.0.0",
+      "_engineSupported": true,
+      "_npmVersion": "1.1.0-3",
+      "_nodeVersion": "v0.6.10",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "eb70a764fc7dc0f4e77c6ec34ce14b0f5242c967",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-0.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.1": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "partial implementation of crypto for the browser",
+      "version": "0.0.1",
+      "homepage": "https://github.com/dominictarr/crypto-browserify",
+      "repository": {
+        "url": ""
+      },
+      "scripts": {
+        "test": "node test/simple.js"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {},
+      "devDependencies": {},
+      "optionalDependencies": {},
+      "_npmUser": {
+        "name": "dominictarr",
+        "email": "dominic.tarr@gmail.com"
+      },
+      "_id": "crypto-browserify@0.0.1",
+      "_engineSupported": true,
+      "_npmVersion": "1.1.0-3",
+      "_nodeVersion": "v0.6.10",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "e87209b392fd759eeb5a84494be47095fbcccc7f",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-0.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.0": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "partial implementation of crypto for the browser",
+      "version": "0.1.0",
+      "homepage": "https://github.com/dominictarr/crypto-browserify",
+      "repository": {
+        "url": ""
+      },
+      "scripts": {
+        "test": "node test/simple.js"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {},
+      "devDependencies": {},
+      "optionalDependencies": {},
+      "_npmUser": {
+        "name": "dominictarr",
+        "email": "dominic.tarr@gmail.com"
+      },
+      "_id": "crypto-browserify@0.1.0",
+      "_engineSupported": true,
+      "_npmVersion": "1.1.23",
+      "_nodeVersion": "v0.6.18",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "f36094c2c4208c9c86bc730b166d86184faac8ff",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-0.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.1": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "partial implementation of crypto for the browser",
+      "version": "0.1.1",
+      "homepage": "https://github.com/dominictarr/crypto-browserify",
+      "repository": {
+        "url": ""
+      },
+      "scripts": {
+        "test": "node test/simple.js"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {},
+      "devDependencies": {},
+      "optionalDependencies": {},
+      "_id": "crypto-browserify@0.1.1",
+      "dist": {
+        "shasum": "34343b512041a9c32ae7ec6a7f8ab4d06b418a0b",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-0.1.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.2": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "partial implementation of crypto for the browser",
+      "version": "0.1.2",
+      "homepage": "https://github.com/dominictarr/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/dominictarr/crypto-browserify.git"
+      },
+      "scripts": {
+        "test": "node test/simple.js"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {},
+      "devDependencies": {},
+      "optionalDependencies": {},
+      "_id": "crypto-browserify@0.1.2",
+      "dist": {
+        "shasum": "7c6ce24c0ac1640dcd9701f47645ef1950d01765",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-0.1.2.tgz"
+      },
+      "_npmVersion": "1.1.65",
+      "_npmUser": {
+        "name": "dominictarr",
+        "email": "dominic.tarr@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.2.0": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "partial implementation of crypto for the browser",
+      "version": "0.2.0",
+      "homepage": "https://github.com/dominictarr/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/dominictarr/crypto-browserify.git"
+      },
+      "scripts": {
+        "test": "node test/simple.js"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "tape": "~0.1.5"
+      },
+      "optionalDependencies": {},
+      "_id": "crypto-browserify@0.2.0",
+      "dist": {
+        "shasum": "e4f80da2cac3735b7544a69749f264e00b78a217",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-0.2.0.tgz"
+      },
+      "_npmVersion": "1.1.69",
+      "_npmUser": {
+        "name": "dominictarr",
+        "email": "dominic.tarr@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.2.1": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "partial implementation of crypto for the browser",
+      "version": "0.2.1",
+      "homepage": "https://github.com/dominictarr/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/dominictarr/crypto-browserify.git"
+      },
+      "scripts": {
+        "test": "node test/simple.js"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "tape": "~0.1.5"
+      },
+      "optionalDependencies": {},
+      "_id": "crypto-browserify@0.2.1",
+      "dist": {
+        "shasum": "303ed9046f8604a3d7c35ec4a6d46d2268712078",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-0.2.1.tgz"
+      },
+      "_npmVersion": "1.1.69",
+      "_npmUser": {
+        "name": "dominictarr",
+        "email": "dominic.tarr@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.2.2": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "partial implementation of crypto for the browser",
+      "version": "0.2.2",
+      "homepage": "https://github.com/dominictarr/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/dominictarr/crypto-browserify.git"
+      },
+      "scripts": {
+        "test": "node test/simple.js"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "tape": "~0.1.5"
+      },
+      "testling": {
+        "files": "test/*.js",
+        "browsers": {
+          "ie": [
+            8,
+            9
+          ],
+          "firefox": [
+            13
+          ],
+          "chrome": [
+            20
+          ],
+          "safari": [
+            5.1
+          ],
+          "opera": [
+            12
+          ]
+        }
+      },
+      "optionalDependencies": {},
+      "_id": "crypto-browserify@0.2.2",
+      "dist": {
+        "shasum": "0f1c8499ba0edaa5b087176924e3b2f088582c2d",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-0.2.2.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.2.18",
+      "_npmUser": {
+        "name": "dominictarr",
+        "email": "dominic.tarr@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.2.3": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "partial implementation of crypto for the browser",
+      "version": "0.2.3",
+      "homepage": "https://github.com/dominictarr/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/dominictarr/crypto-browserify.git"
+      },
+      "scripts": {
+        "test": "node test/simple.js"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "tape": "~0.1.5"
+      },
+      "testling": {
+        "files": "test/*.js",
+        "browsers": {
+          "ie": [
+            8,
+            9
+          ],
+          "firefox": [
+            13
+          ],
+          "chrome": [
+            20
+          ],
+          "safari": [
+            5.1
+          ],
+          "opera": [
+            12
+          ]
+        }
+      },
+      "optionalDependencies": {},
+      "_id": "crypto-browserify@0.2.3",
+      "dist": {
+        "shasum": "c98141505d90e31a1e456cb97343dc3b0f4a1a2a",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-0.2.3.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.2.18",
+      "_npmUser": {
+        "name": "dominictarr",
+        "email": "dominic.tarr@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.3.0": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "partial implementation of crypto for the browser",
+      "version": "0.3.0",
+      "homepage": "https://github.com/dominictarr/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/dominictarr/crypto-browserify.git"
+      },
+      "scripts": {
+        "test": "node test/simple.js"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "tape": "~0.1.5"
+      },
+      "testling": {
+        "files": "test/*.js",
+        "browsers": {
+          "ie": [
+            8,
+            9
+          ],
+          "firefox": [
+            13
+          ],
+          "chrome": [
+            20
+          ],
+          "safari": [
+            5.1
+          ],
+          "opera": [
+            12
+          ]
+        }
+      },
+      "optionalDependencies": {},
+      "bugs": {
+        "url": "https://github.com/dominictarr/crypto-browserify/issues"
+      },
+      "_id": "crypto-browserify@0.3.0",
+      "dist": {
+        "shasum": "0c0991f19be6da34415e12bc58a56bf71a950587",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-0.3.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.6",
+      "_npmUser": {
+        "name": "dominictarr",
+        "email": "dominic.tarr@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.4.0": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "partial implementation of crypto for the browser",
+      "version": "0.4.0",
+      "homepage": "https://github.com/dominictarr/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/dominictarr/crypto-browserify.git"
+      },
+      "scripts": {
+        "test": "node test/simple.js"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "tape": "~0.1.5"
+      },
+      "testling": {
+        "files": "test/*.js",
+        "browsers": {
+          "ie": [
+            8,
+            9
+          ],
+          "firefox": [
+            13
+          ],
+          "chrome": [
+            20
+          ],
+          "safari": [
+            5.1
+          ],
+          "opera": [
+            12
+          ]
+        }
+      },
+      "optionalDependencies": {},
+      "bugs": {
+        "url": "https://github.com/dominictarr/crypto-browserify/issues"
+      },
+      "_id": "crypto-browserify@0.4.0",
+      "dist": {
+        "shasum": "246f6a337b884c99ffe8bfb085a184aee60c33f3",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-0.4.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.6",
+      "_npmUser": {
+        "name": "dominictarr",
+        "email": "dominic.tarr@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.0": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "partial implementation of crypto for the browser",
+      "version": "1.0.0",
+      "homepage": "https://github.com/dominictarr/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/dominictarr/crypto-browserify.git"
+      },
+      "scripts": {
+        "test": "node test/simple.js"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "tape": "~1.0.4"
+      },
+      "testling": {
+        "files": "test/*.js",
+        "browsers": [
+          "ie/8..latest",
+          "chrome/20..latest",
+          "firefox/10..latest",
+          "safari/latest",
+          "opera/11.0..latest",
+          "iphone/6",
+          "ipad/6"
+        ]
+      },
+      "optionalDependencies": {},
+      "bugs": {
+        "url": "https://github.com/dominictarr/crypto-browserify/issues"
+      },
+      "_id": "crypto-browserify@1.0.0",
+      "dist": {
+        "shasum": "d5d8bd9fe60c53e8f8b7aa39ab6561dcf7fea64f",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-1.0.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.6",
+      "_npmUser": {
+        "name": "dominictarr",
+        "email": "dominic.tarr@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.1": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "partial implementation of crypto for the browser",
+      "version": "1.0.1",
+      "homepage": "https://github.com/dominictarr/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/dominictarr/crypto-browserify.git"
+      },
+      "scripts": {
+        "test": "node test/node.js"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "tape": "~1.0.4"
+      },
+      "testling": {
+        "files": "test/browser.js",
+        "browsers": [
+          "ie/8..latest",
+          "chrome/20..latest",
+          "firefox/10..latest",
+          "safari/latest",
+          "opera/11.0..latest",
+          "iphone/6",
+          "ipad/6"
+        ]
+      },
+      "optionalDependencies": {},
+      "bugs": {
+        "url": "https://github.com/dominictarr/crypto-browserify/issues"
+      },
+      "_id": "crypto-browserify@1.0.1",
+      "dist": {
+        "shasum": "09db81b972418eaa0caff05d85d0d8af3b31aed1",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-1.0.1.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.6",
+      "_npmUser": {
+        "name": "dominictarr",
+        "email": "dominic.tarr@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.2": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "partial implementation of crypto for the browser",
+      "version": "1.0.2",
+      "homepage": "https://github.com/dominictarr/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/dominictarr/crypto-browserify.git"
+      },
+      "scripts": {
+        "test": "node test/node.js"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "tape": "~1.0.4"
+      },
+      "testling": {
+        "files": "test/browser.js",
+        "browsers": [
+          "ie/8..latest",
+          "chrome/20..latest",
+          "firefox/10..latest",
+          "safari/latest",
+          "opera/11.0..latest",
+          "iphone/6",
+          "ipad/6"
+        ]
+      },
+      "optionalDependencies": {},
+      "bugs": {
+        "url": "https://github.com/dominictarr/crypto-browserify/issues"
+      },
+      "_id": "crypto-browserify@1.0.2",
+      "dist": {
+        "shasum": "55b9d57a98b6ec0e94c3e477cecfe7871a98d38e",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-1.0.2.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.6",
+      "_npmUser": {
+        "name": "dominictarr",
+        "email": "dominic.tarr@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.3": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "partial implementation of crypto for the browser",
+      "version": "1.0.3",
+      "homepage": "https://github.com/dominictarr/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/dominictarr/crypto-browserify.git"
+      },
+      "scripts": {
+        "test": "node test/node.js"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "tape": "~1.0.4"
+      },
+      "testling": {
+        "files": "test/browser.js",
+        "browsers": [
+          "ie/8..latest",
+          "chrome/20..latest",
+          "firefox/10..latest",
+          "safari/latest",
+          "opera/11.0..latest",
+          "iphone/6",
+          "ipad/6"
+        ]
+      },
+      "optionalDependencies": {},
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/dominictarr/crypto-browserify/issues"
+      },
+      "_id": "crypto-browserify@1.0.3",
+      "dist": {
+        "shasum": "834063a48147eefd5d96580826c385a10535c7f5",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-1.0.3.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.6",
+      "_npmUser": {
+        "name": "dominictarr",
+        "email": "dominic.tarr@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.4": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "partial implementation of crypto for the browser",
+      "version": "1.0.4",
+      "homepage": "https://github.com/dominictarr/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/dominictarr/crypto-browserify.git"
+      },
+      "scripts": {
+        "test": "node test/node.js"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "tape": "~1.0.4"
+      },
+      "testling": {
+        "files": "test/browser.js",
+        "browsers": [
+          "ie/8..latest",
+          "chrome/20..latest",
+          "firefox/10..latest",
+          "safari/latest",
+          "opera/11.0..latest",
+          "iphone/6",
+          "ipad/6"
+        ]
+      },
+      "optionalDependencies": {},
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/dominictarr/crypto-browserify/issues"
+      },
+      "_id": "crypto-browserify@1.0.4",
+      "dist": {
+        "shasum": "f1f23dfde1730fee5884585cc4f2ae019a394a78",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-1.0.4.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.6",
+      "_npmUser": {
+        "name": "dominictarr",
+        "email": "dominic.tarr@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.5": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "partial implementation of crypto for the browser",
+      "version": "1.0.5",
+      "homepage": "https://github.com/dominictarr/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/dominictarr/crypto-browserify.git"
+      },
+      "scripts": {
+        "test": "node test/node.js"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "tape": "~1.0.4"
+      },
+      "testling": {
+        "files": "test/browser.js",
+        "browsers": [
+          "ie/8..latest",
+          "chrome/20..latest",
+          "firefox/10..latest",
+          "safari/latest",
+          "opera/11.0..latest",
+          "iphone/6",
+          "ipad/6"
+        ]
+      },
+      "optionalDependencies": {},
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/dominictarr/crypto-browserify/issues"
+      },
+      "_id": "crypto-browserify@1.0.5",
+      "dist": {
+        "shasum": "40273430e62f30adf412aeb761675672b81ace63",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-1.0.5.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.6",
+      "_npmUser": {
+        "name": "dominictarr",
+        "email": "dominic.tarr@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.6": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "partial implementation of crypto for the browser",
+      "version": "1.0.6",
+      "homepage": "https://github.com/dominictarr/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/dominictarr/crypto-browserify.git"
+      },
+      "scripts": {
+        "test": "node test/node.js"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "tape": "~1.0.4"
+      },
+      "testling": {
+        "files": "test/browser.js",
+        "browsers": [
+          "ie/8..latest",
+          "chrome/20..latest",
+          "firefox/10..latest",
+          "safari/latest",
+          "opera/11.0..latest",
+          "iphone/6",
+          "ipad/6"
+        ]
+      },
+      "optionalDependencies": {},
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/dominictarr/crypto-browserify/issues"
+      },
+      "_id": "crypto-browserify@1.0.6",
+      "dist": {
+        "shasum": "55470f73639581dc59e6529a890f64c0b04d08d4",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-1.0.6.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.11",
+      "_npmUser": {
+        "name": "dominictarr",
+        "email": "dominic.tarr@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.7": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "partial implementation of crypto for the browser",
+      "version": "1.0.7",
+      "homepage": "https://github.com/dominictarr/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/dominictarr/crypto-browserify.git"
+      },
+      "scripts": {
+        "test": "node test/node.js"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "tape": "~1.0.4"
+      },
+      "testling": {
+        "files": "test/browser.js",
+        "browsers": [
+          "ie/8..latest",
+          "chrome/20..latest",
+          "firefox/10..latest",
+          "safari/latest",
+          "opera/11.0..latest",
+          "iphone/6",
+          "ipad/6"
+        ]
+      },
+      "browserify": {
+        "transform": [
+          "brfs"
+        ]
+      },
+      "optionalDependencies": {},
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/dominictarr/crypto-browserify/issues"
+      },
+      "_id": "crypto-browserify@1.0.7",
+      "dist": {
+        "shasum": "12dbfc84c39ff6e7222765b42ea5913e719423c5",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-1.0.7.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.11",
+      "_npmUser": {
+        "name": "dominictarr",
+        "email": "dominic.tarr@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.8": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "partial implementation of crypto for the browser",
+      "version": "1.0.8",
+      "homepage": "https://github.com/dominictarr/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/dominictarr/crypto-browserify.git"
+      },
+      "scripts": {
+        "test": "node test/node.js"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "brfs": "~0.0.8",
+        "tape": "~1.0.4"
+      },
+      "testling": {
+        "files": "test/browser.js",
+        "browsers": [
+          "ie/8..latest",
+          "chrome/20..latest",
+          "firefox/10..latest",
+          "safari/latest",
+          "opera/11.0..latest",
+          "iphone/6",
+          "ipad/6"
+        ]
+      },
+      "optionalDependencies": {},
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/dominictarr/crypto-browserify/issues"
+      },
+      "_id": "crypto-browserify@1.0.8",
+      "dist": {
+        "shasum": "07f9d01e3c79bd248512fdfb1e5f75110dbbcf6d",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-1.0.8.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.11",
+      "_npmUser": {
+        "name": "dominictarr",
+        "email": "dominic.tarr@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.9": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "partial implementation of crypto for the browser",
+      "version": "1.0.9",
+      "homepage": "https://github.com/dominictarr/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/dominictarr/crypto-browserify.git"
+      },
+      "scripts": {
+        "test": "node test/node.js"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "brfs": "~0.0.8",
+        "tape": "~1.0.4"
+      },
+      "testling": {
+        "files": "test/browser.js",
+        "browsers": [
+          "ie/8..latest",
+          "chrome/20..latest",
+          "firefox/10..latest",
+          "safari/latest",
+          "opera/11.0..latest",
+          "iphone/6",
+          "ipad/6"
+        ]
+      },
+      "optionalDependencies": {},
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/dominictarr/crypto-browserify/issues"
+      },
+      "_id": "crypto-browserify@1.0.9",
+      "dist": {
+        "shasum": "cc5449685dfb85eb11c9828acc7cb87ab5bbfcc0",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-1.0.9.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.11",
+      "_npmUser": {
+        "name": "dominictarr",
+        "email": "dominic.tarr@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "2.0.0": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "partial implementation of crypto for the browser",
+      "version": "2.0.0",
+      "homepage": "https://github.com/dominictarr/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/dominictarr/crypto-browserify.git"
+      },
+      "scripts": {
+        "test": "set -e; for t in test/*.js; do node $t; done"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {
+        "sha.js": "1.3.0"
+      },
+      "devDependencies": {
+        "tape": "~2.3.2"
+      },
+      "testling": {
+        "files": "test/browser.js",
+        "browsers": [
+          "ie/8..latest",
+          "chrome/20..latest",
+          "firefox/10..latest",
+          "safari/latest",
+          "opera/11.0..latest",
+          "iphone/6",
+          "ipad/6"
+        ]
+      },
+      "optionalDependencies": {},
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/dominictarr/crypto-browserify/issues"
+      },
+      "_id": "crypto-browserify@2.0.0",
+      "dist": {
+        "shasum": "4aa6e3bac6686fe94ddc1f41850550039897b9c7",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-2.0.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.21",
+      "_npmUser": {
+        "name": "dominictarr",
+        "email": "dominic.tarr@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "2.1.0": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "partial implementation of crypto for the browser",
+      "version": "2.1.0",
+      "homepage": "https://github.com/dominictarr/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/dominictarr/crypto-browserify.git"
+      },
+      "scripts": {
+        "test": "set -e; for t in test/*.js; do node $t; done"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {
+        "sha.js": "1.3.0"
+      },
+      "devDependencies": {
+        "tape": "~2.3.2"
+      },
+      "testling": {
+        "files": "test/browser.js",
+        "browsers": [
+          "ie/8..latest",
+          "chrome/20..latest",
+          "firefox/10..latest",
+          "safari/latest",
+          "opera/11.0..latest",
+          "iphone/6",
+          "ipad/6"
+        ]
+      },
+      "optionalDependencies": {},
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/dominictarr/crypto-browserify/issues"
+      },
+      "_id": "crypto-browserify@2.1.0",
+      "dist": {
+        "shasum": "5c5880bb3b6d350f8580d8eb666ed8fa0902cce0",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-2.1.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.21",
+      "_npmUser": {
+        "name": "dominictarr",
+        "email": "dominic.tarr@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "2.1.1": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "partial implementation of crypto for the browser",
+      "version": "2.1.1",
+      "homepage": "https://github.com/dominictarr/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/dominictarr/crypto-browserify.git"
+      },
+      "scripts": {
+        "test": "set -e; for t in test/*.js; do node $t; done"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {
+        "sha.js": "2.1.0"
+      },
+      "devDependencies": {
+        "tape": "~2.3.2"
+      },
+      "testling": {
+        "files": "test/{create-hash,create-hmac,simple}.js",
+        "browsers": [
+          "ie/8..latest",
+          "chrome/20..latest",
+          "firefox/10..latest",
+          "safari/latest",
+          "opera/11.0..latest",
+          "iphone/6",
+          "ipad/6"
+        ]
+      },
+      "optionalDependencies": {},
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/dominictarr/crypto-browserify/issues"
+      },
+      "_id": "crypto-browserify@2.1.1",
+      "dist": {
+        "shasum": "7dc55b1b40c2c07ec997aad3b089b18f5969b11f",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-2.1.1.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.24",
+      "_npmUser": {
+        "name": "dominictarr",
+        "email": "dominic.tarr@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "2.1.2": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "partial implementation of crypto for the browser",
+      "version": "2.1.2",
+      "homepage": "https://github.com/dominictarr/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/dominictarr/crypto-browserify.git"
+      },
+      "scripts": {
+        "test": "set -e; for t in test/*.js; do node $t; done"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {
+        "sha.js": "2.1.1"
+      },
+      "devDependencies": {
+        "tape": "~2.3.2"
+      },
+      "testling": {
+        "files": "test/{create-hash,create-hmac,simple}.js",
+        "browsers": [
+          "ie/8..latest",
+          "chrome/20..latest",
+          "firefox/10..latest",
+          "safari/latest",
+          "opera/11.0..latest",
+          "iphone/6",
+          "ipad/6"
+        ]
+      },
+      "optionalDependencies": {},
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/dominictarr/crypto-browserify/issues"
+      },
+      "_id": "crypto-browserify@2.1.2",
+      "dist": {
+        "shasum": "fb5fe9ad367e936f17e44bebd7e0373d38a97a37",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-2.1.2.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.24",
+      "_npmUser": {
+        "name": "dominictarr",
+        "email": "dominic.tarr@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "2.1.3": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "partial implementation of crypto for the browser",
+      "version": "2.1.3",
+      "homepage": "https://github.com/dominictarr/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/dominictarr/crypto-browserify.git"
+      },
+      "scripts": {
+        "test": "set -e; for t in test/*.js; do node $t; done"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {
+        "sha.js": "2.1.1"
+      },
+      "devDependencies": {
+        "tape": "~2.3.2"
+      },
+      "testling": {
+        "files": "test/{create-hash,create-hmac,simple}.js",
+        "browsers": [
+          "ie/8..latest",
+          "chrome/20..latest",
+          "firefox/10..latest",
+          "safari/latest",
+          "opera/11.0..latest",
+          "iphone/6",
+          "ipad/6"
+        ]
+      },
+      "optionalDependencies": {},
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/dominictarr/crypto-browserify/issues"
+      },
+      "_id": "crypto-browserify@2.1.3",
+      "dist": {
+        "shasum": "4542421c55abd3831db3ebbd79f73942d44221bb",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-2.1.3.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.4.6",
+      "_npmUser": {
+        "name": "dominictarr",
+        "email": "dominic.tarr@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "2.1.4": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "partial implementation of crypto for the browser",
+      "version": "2.1.4",
+      "homepage": "https://github.com/dominictarr/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/dominictarr/crypto-browserify.git"
+      },
+      "scripts": {
+        "test": "set -e; for t in test/*.js; do node $t; done"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {
+        "sha.js": "2.1.1"
+      },
+      "devDependencies": {
+        "tape": "~2.3.2"
+      },
+      "testling": {
+        "files": "test/{create-hash,create-hmac,simple}.js",
+        "browsers": [
+          "ie/8..latest",
+          "chrome/20..latest",
+          "firefox/10..latest",
+          "safari/latest",
+          "opera/11.0..latest",
+          "iphone/6",
+          "ipad/6"
+        ]
+      },
+      "optionalDependencies": {},
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/dominictarr/crypto-browserify/issues"
+      },
+      "_id": "crypto-browserify@2.1.4",
+      "dist": {
+        "shasum": "74c7a75d07d0edd1d553efcfe33ffba5f872584b",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-2.1.4.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.4.6",
+      "_npmUser": {
+        "name": "dominictarr",
+        "email": "dominic.tarr@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "2.1.5": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "partial implementation of crypto for the browser",
+      "version": "2.1.5",
+      "homepage": "https://github.com/dominictarr/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/dominictarr/crypto-browserify.git"
+      },
+      "scripts": {
+        "test": "set -e; for t in test/*.js; do node $t; done"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {
+        "sha.js": "2.1.1"
+      },
+      "devDependencies": {
+        "tape": "~2.3.2"
+      },
+      "testling": {
+        "files": "test/{create-hash,create-hmac,simple}.js",
+        "browsers": [
+          "ie/8..latest",
+          "chrome/20..latest",
+          "firefox/10..latest",
+          "safari/latest",
+          "opera/11.0..latest",
+          "iphone/6",
+          "ipad/6"
+        ]
+      },
+      "optionalDependencies": {},
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/dominictarr/crypto-browserify/issues"
+      },
+      "_id": "crypto-browserify@2.1.5",
+      "dist": {
+        "shasum": "8a1ed33d0f0168a11e803d10f90d559ae62993ed",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-2.1.5.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.4.6",
+      "_npmUser": {
+        "name": "dominictarr",
+        "email": "dominic.tarr@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "2.1.6": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "partial implementation of crypto for the browser",
+      "version": "2.1.6",
+      "homepage": "https://github.com/dominictarr/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/dominictarr/crypto-browserify.git"
+      },
+      "scripts": {
+        "test": "set -e; for t in test/*.js; do node $t; done"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {
+        "sha.js": "2.1.3"
+      },
+      "devDependencies": {
+        "tape": "~2.3.2"
+      },
+      "testling": {
+        "files": "test/{create-hash,create-hmac,simple}.js",
+        "browsers": [
+          "ie/8..latest",
+          "chrome/20..latest",
+          "firefox/10..latest",
+          "safari/latest",
+          "opera/11.0..latest",
+          "iphone/6",
+          "ipad/6"
+        ]
+      },
+      "optionalDependencies": {},
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/dominictarr/crypto-browserify/issues"
+      },
+      "_id": "crypto-browserify@2.1.6",
+      "dist": {
+        "shasum": "40495449c5ab3c5786b3ac8ad8ee41e1ba96a421",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-2.1.6.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.4.6",
+      "_npmUser": {
+        "name": "dominictarr",
+        "email": "dominic.tarr@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "2.1.7": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "partial implementation of crypto for the browser",
+      "version": "2.1.7",
+      "homepage": "https://github.com/dominictarr/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/dominictarr/crypto-browserify.git"
+      },
+      "scripts": {
+        "test": "set -e; for t in test/*.js; do node $t; done"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {
+        "ripemd160": "0.2.0",
+        "sha.js": "2.1.3"
+      },
+      "devDependencies": {
+        "tape": "~2.3.2",
+        "hash-test-vectors": "~1.3.0"
+      },
+      "testling": {
+        "files": "test/*.js-",
+        "browsers": [
+          "ie/8..latest",
+          "chrome/20..latest",
+          "firefox/10..latest",
+          "safari/latest",
+          "opera/11.0..latest",
+          "iphone/6",
+          "ipad/6"
+        ]
+      },
+      "optionalDependencies": {},
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/dominictarr/crypto-browserify/issues"
+      },
+      "_id": "crypto-browserify@2.1.7",
+      "_shasum": "8543d09a74437afd7fcdb6b87139ae56708f35d5",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "dominictarr",
+        "email": "dominic.tarr@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "8543d09a74437afd7fcdb6b87139ae56708f35d5",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-2.1.7.tgz"
+      },
+      "directories": {}
+    },
+    "2.1.8": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "partial implementation of crypto for the browser",
+      "version": "2.1.8",
+      "homepage": "https://github.com/dominictarr/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/dominictarr/crypto-browserify.git"
+      },
+      "scripts": {
+        "test": "set -e; for t in test/*.js; do node $t; done"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {
+        "ripemd160": "0.2.0",
+        "sha.js": "2.1.3"
+      },
+      "devDependencies": {
+        "tape": "~2.3.2",
+        "hash-test-vectors": "~1.3.0"
+      },
+      "testling": {
+        "files": "test/*.js-",
+        "browsers": [
+          "ie/8..latest",
+          "chrome/20..latest",
+          "firefox/10..latest",
+          "safari/latest",
+          "opera/11.0..latest",
+          "iphone/6",
+          "ipad/6"
+        ]
+      },
+      "optionalDependencies": {},
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/dominictarr/crypto-browserify/issues"
+      },
+      "_id": "crypto-browserify@2.1.8",
+      "_shasum": "3ef8ccd7da5a4debdd379e7d64a2ae128b9d977a",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "dominictarr",
+        "email": "dominic.tarr@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "3ef8ccd7da5a4debdd379e7d64a2ae128b9d977a",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-2.1.8.tgz"
+      },
+      "directories": {}
+    },
+    "2.1.10": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "partial implementation of crypto for the browser",
+      "version": "2.1.10",
+      "homepage": "https://github.com/dominictarr/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/dominictarr/crypto-browserify.git"
+      },
+      "scripts": {
+        "test": "set -e; for t in test/*.js; do node $t; done"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {
+        "ripemd160": "0.2.0",
+        "sha.js": "2.1.6"
+      },
+      "devDependencies": {
+        "tape": "~2.3.2",
+        "hash-test-vectors": "~1.3.0"
+      },
+      "testling": {
+        "files": "test/*.js-",
+        "browsers": [
+          "ie/latest",
+          "chrome/latest",
+          "firefox/latest",
+          "safari/latest",
+          "opera/latest"
+        ]
+      },
+      "optionalDependencies": {},
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/dominictarr/crypto-browserify/issues"
+      },
+      "_id": "crypto-browserify@2.1.10",
+      "_shasum": "4f2ca6311843cf087cdf008e43a4f3686ef6e6bb",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "dominictarr",
+        "email": "dominic.tarr@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "4f2ca6311843cf087cdf008e43a4f3686ef6e6bb",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-2.1.10.tgz"
+      },
+      "directories": {}
+    },
+    "3.0.0": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "partial implementation of crypto for the browser",
+      "version": "3.0.0",
+      "homepage": "https://github.com/dominictarr/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/dominictarr/crypto-browserify.git"
+      },
+      "scripts": {
+        "test": "set -e; for t in test/*.js; do node $t; done"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {
+        "ripemd160": "0.2.0",
+        "sha.js": "2.1.6"
+      },
+      "devDependencies": {
+        "tape": "~2.3.2",
+        "hash-test-vectors": "~1.3.0"
+      },
+      "testling": {
+        "files": "test/*.js-",
+        "browsers": [
+          "ie/latest",
+          "chrome/latest",
+          "firefox/latest",
+          "safari/latest",
+          "opera/latest"
+        ]
+      },
+      "optionalDependencies": {},
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/dominictarr/crypto-browserify/issues"
+      },
+      "_id": "crypto-browserify@3.0.0",
+      "_shasum": "5d42e013137c658bcc74de792d2d96268aeaa883",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "dominictarr",
+        "email": "dominic.tarr@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "5d42e013137c658bcc74de792d2d96268aeaa883",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-3.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "3.0.1": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "partial implementation of crypto for the browser",
+      "version": "3.0.1",
+      "homepage": "https://github.com/dominictarr/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/dominictarr/crypto-browserify.git"
+      },
+      "scripts": {
+        "test": "set -e; for t in test/*.js; do node $t; done"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {
+        "ripemd160": "0.2.0",
+        "sha.js": "2.1.7"
+      },
+      "devDependencies": {
+        "tape": "~2.3.2",
+        "hash-test-vectors": "~1.3.0"
+      },
+      "testling": {
+        "files": "test/*.js-",
+        "browsers": [
+          "ie/latest",
+          "chrome/latest",
+          "firefox/latest",
+          "safari/latest",
+          "opera/latest"
+        ]
+      },
+      "optionalDependencies": {},
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/dominictarr/crypto-browserify/issues"
+      },
+      "_id": "crypto-browserify@3.0.1",
+      "_shasum": "770fd68e8422f9b1e53d6812f1c2ce2ea7ab917c",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "dominictarr",
+        "email": "dominic.tarr@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "770fd68e8422f9b1e53d6812f1c2ce2ea7ab917c",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-3.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "3.0.2": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "partial implementation of crypto for the browser",
+      "version": "3.0.2",
+      "homepage": "https://github.com/dominictarr/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/dominictarr/crypto-browserify.git"
+      },
+      "scripts": {
+        "test": "set -e; for t in test/*.js; do node $t; done"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {
+        "ripemd160": "0.2.0",
+        "sha.js": "2.1.8"
+      },
+      "devDependencies": {
+        "tape": "~2.3.2",
+        "hash-test-vectors": "~1.3.0"
+      },
+      "testling": {
+        "files": "test/*.js-",
+        "browsers": [
+          "ie/latest",
+          "chrome/latest",
+          "firefox/latest",
+          "safari/latest",
+          "opera/latest"
+        ]
+      },
+      "optionalDependencies": {},
+      "license": "MIT",
+      "gitHead": "a460a9c96697b1eb6a7a9db425029fd32b05019b",
+      "bugs": {
+        "url": "https://github.com/dominictarr/crypto-browserify/issues"
+      },
+      "_id": "crypto-browserify@3.0.2",
+      "_shasum": "43218365d9d086e8c1b88f968fb7134f13505c84",
+      "_from": ".",
+      "_npmVersion": "1.4.26",
+      "_npmUser": {
+        "name": "dominictarr",
+        "email": "dominic.tarr@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "43218365d9d086e8c1b88f968fb7134f13505c84",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-3.0.2.tgz"
+      },
+      "directories": {}
+    },
+    "3.1.0": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "partial implementation of crypto for the browser",
+      "version": "3.1.0",
+      "homepage": "https://github.com/dominictarr/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/dominictarr/crypto-browserify.git"
+      },
+      "scripts": {
+        "test": "set -e; for t in test/*.js; do node $t; done"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {
+        "ripemd160": "0.2.0",
+        "sha.js": "2.2.6"
+      },
+      "devDependencies": {
+        "tape": "~2.3.2",
+        "hash-test-vectors": "~1.3.0"
+      },
+      "testling": {
+        "files": "test/*.js-",
+        "browsers": [
+          "ie/latest",
+          "chrome/latest",
+          "firefox/latest",
+          "safari/latest",
+          "opera/latest"
+        ]
+      },
+      "optionalDependencies": {},
+      "license": "MIT",
+      "gitHead": "d58beeb646224807f5c0c2a585c4b5139f6b640a",
+      "bugs": {
+        "url": "https://github.com/dominictarr/crypto-browserify/issues"
+      },
+      "_id": "crypto-browserify@3.1.0",
+      "_shasum": "25e9591408054fae17326003c4bf1e15bf27a1a4",
+      "_from": ".",
+      "_npmVersion": "1.4.26",
+      "_npmUser": {
+        "name": "dominictarr",
+        "email": "dominic.tarr@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "25e9591408054fae17326003c4bf1e15bf27a1a4",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-3.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "3.2.0": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "partial implementation of crypto for the browser",
+      "version": "3.2.0",
+      "homepage": "https://github.com/dominictarr/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/dominictarr/crypto-browserify.git"
+      },
+      "scripts": {
+        "test": "set -e; for t in test/*.js; do node $t; done"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {
+        "ripemd160": "0.2.0",
+        "sha.js": "2.2.6"
+      },
+      "devDependencies": {
+        "tape": "~2.3.2",
+        "hash-test-vectors": "~1.3.0"
+      },
+      "testling": {
+        "files": "test/*.js-",
+        "browsers": [
+          "ie/latest",
+          "chrome/latest",
+          "firefox/latest",
+          "safari/latest",
+          "opera/latest"
+        ]
+      },
+      "optionalDependencies": {},
+      "license": "MIT",
+      "gitHead": "a5cf35baecd8e661333c78b614ed13379ec70043",
+      "bugs": {
+        "url": "https://github.com/dominictarr/crypto-browserify/issues"
+      },
+      "_id": "crypto-browserify@3.2.0",
+      "_shasum": "424b5f9ab3d1afa4ba20faff5c90992eeb9cd705",
+      "_from": ".",
+      "_npmVersion": "1.4.26",
+      "_npmUser": {
+        "name": "dominictarr",
+        "email": "dominic.tarr@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "424b5f9ab3d1afa4ba20faff5c90992eeb9cd705",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-3.2.0.tgz"
+      },
+      "directories": {}
+    },
+    "3.2.1": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "partial implementation of crypto for the browser",
+      "version": "3.2.1",
+      "homepage": "https://github.com/dominictarr/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/dominictarr/crypto-browserify.git"
+      },
+      "scripts": {
+        "test": "set -e; for t in test/*.js; do node $t; done"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {
+        "pbkdf2-compat": "2.0.0",
+        "ripemd160": "0.2.0",
+        "sha.js": "2.2.6"
+      },
+      "devDependencies": {
+        "tape": "~2.3.2",
+        "hash-test-vectors": "~1.3.0"
+      },
+      "testling": {
+        "files": "test/*.js-",
+        "browsers": [
+          "ie/latest",
+          "chrome/latest",
+          "firefox/latest",
+          "safari/latest",
+          "opera/latest"
+        ]
+      },
+      "optionalDependencies": {},
+      "license": "MIT",
+      "gitHead": "080b93070b9060e0a91671077cf4706f5658815c",
+      "bugs": {
+        "url": "https://github.com/dominictarr/crypto-browserify/issues"
+      },
+      "_id": "crypto-browserify@3.2.1",
+      "_shasum": "be21a5b291b4b896facb145505252c6d8820b9d2",
+      "_from": ".",
+      "_npmVersion": "1.4.26",
+      "_npmUser": {
+        "name": "dominictarr",
+        "email": "dominic.tarr@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "be21a5b291b4b896facb145505252c6d8820b9d2",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-3.2.1.tgz"
+      },
+      "directories": {}
+    },
+    "3.2.2": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "partial implementation of crypto for the browser",
+      "version": "3.2.2",
+      "homepage": "https://github.com/dominictarr/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/dominictarr/crypto-browserify.git"
+      },
+      "scripts": {
+        "test": "set -e; for t in test/*.js; do node $t; done"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {
+        "pbkdf2-compat": "2.0.0",
+        "ripemd160": "0.2.0",
+        "sha.js": "2.2.6"
+      },
+      "devDependencies": {
+        "tape": "~2.3.2",
+        "hash-test-vectors": "~1.3.0"
+      },
+      "testling": {
+        "files": "test/*.js-",
+        "browsers": [
+          "ie/latest",
+          "chrome/latest",
+          "firefox/latest",
+          "safari/latest",
+          "opera/latest"
+        ]
+      },
+      "optionalDependencies": {},
+      "license": "MIT",
+      "gitHead": "ce9bf42a00c323fd3f84e33c1ca60e0271dde1e9",
+      "bugs": {
+        "url": "https://github.com/dominictarr/crypto-browserify/issues"
+      },
+      "_id": "crypto-browserify@3.2.2",
+      "_shasum": "e5ec42700ff964f1e5ca472d943c5c27db75e36a",
+      "_from": ".",
+      "_npmVersion": "1.4.26",
+      "_npmUser": {
+        "name": "dominictarr",
+        "email": "dominic.tarr@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "e5ec42700ff964f1e5ca472d943c5c27db75e36a",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-3.2.2.tgz"
+      },
+      "directories": {}
+    },
+    "3.2.4": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "partial implementation of crypto for the browser",
+      "version": "3.2.4",
+      "homepage": "https://github.com/dominictarr/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/dominictarr/crypto-browserify.git"
+      },
+      "scripts": {
+        "test": "set -e; for t in test/*.js; do node $t; done"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {
+        "pbkdf2-compat": "2.0.1",
+        "ripemd160": "0.2.0",
+        "sha.js": "2.2.6"
+      },
+      "devDependencies": {
+        "tape": "~2.3.2",
+        "hash-test-vectors": "~1.3.0"
+      },
+      "testling": {
+        "files": "test/*.js-",
+        "browsers": [
+          "ie/latest",
+          "chrome/latest",
+          "firefox/latest",
+          "safari/latest",
+          "opera/latest"
+        ]
+      },
+      "optionalDependencies": {},
+      "license": "MIT",
+      "gitHead": "c31b9d711d3e2603c6587cb00d1f64c9a559d4d4",
+      "bugs": {
+        "url": "https://github.com/dominictarr/crypto-browserify/issues"
+      },
+      "_id": "crypto-browserify@3.2.4",
+      "_shasum": "0d704f787b38e952c65211bcf28e4c3fca9167d0",
+      "_from": ".",
+      "_npmVersion": "1.4.26",
+      "_npmUser": {
+        "name": "dominictarr",
+        "email": "dominic.tarr@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "0d704f787b38e952c65211bcf28e4c3fca9167d0",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-3.2.4.tgz"
+      },
+      "directories": {}
+    },
+    "3.2.5": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "partial implementation of crypto for the browser",
+      "version": "3.2.5",
+      "homepage": "https://github.com/dominictarr/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/dominictarr/crypto-browserify.git"
+      },
+      "scripts": {
+        "test": "set -e; for t in test/*.js; do node $t; done"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {
+        "pbkdf2-compat": "2.0.1",
+        "ripemd160": "0.2.0",
+        "sha.js": "2.2.6"
+      },
+      "devDependencies": {
+        "tape": "~2.3.2",
+        "hash-test-vectors": "~1.3.0"
+      },
+      "testling": {
+        "files": "test/*.js",
+        "browsers": [
+          "ie/latest",
+          "chrome/latest",
+          "firefox/latest",
+          "safari/latest",
+          "opera/latest"
+        ]
+      },
+      "optionalDependencies": {},
+      "license": "MIT",
+      "gitHead": "57407fc5d42864e4b112e5d1686a2a618691250c",
+      "bugs": {
+        "url": "https://github.com/dominictarr/crypto-browserify/issues"
+      },
+      "_id": "crypto-browserify@3.2.5",
+      "_shasum": "26c92bba20c8bfa7c50aa71ca95972b353ebbec2",
+      "_from": ".",
+      "_npmVersion": "1.4.26",
+      "_npmUser": {
+        "name": "dominictarr",
+        "email": "dominic.tarr@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "26c92bba20c8bfa7c50aa71ca95972b353ebbec2",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-3.2.5.tgz"
+      },
+      "directories": {}
+    },
+    "3.2.6": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "partial implementation of crypto for the browser",
+      "version": "3.2.6",
+      "homepage": "https://github.com/dominictarr/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/dominictarr/crypto-browserify.git"
+      },
+      "scripts": {
+        "test": "set -e; for t in test/*.js; do node $t; done"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {
+        "pbkdf2-compat": "2.0.1",
+        "ripemd160": "0.2.0",
+        "sha.js": "2.2.6"
+      },
+      "devDependencies": {
+        "tape": "~2.3.2",
+        "hash-test-vectors": "~1.3.0"
+      },
+      "testling": {
+        "files": "test/*.js",
+        "browsers": [
+          "ie/latest",
+          "chrome/latest",
+          "firefox/latest",
+          "safari/latest",
+          "opera/latest"
+        ]
+      },
+      "optionalDependencies": {},
+      "license": "MIT",
+      "gitHead": "4997928aec9cb52b0dd49688b96fbdb96399e172",
+      "bugs": {
+        "url": "https://github.com/dominictarr/crypto-browserify/issues"
+      },
+      "_id": "crypto-browserify@3.2.6",
+      "_shasum": "e65a44893ad85138dbf0eaf515675adfd917cdb4",
+      "_from": ".",
+      "_npmVersion": "1.4.26",
+      "_npmUser": {
+        "name": "dominictarr",
+        "email": "dominic.tarr@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "e65a44893ad85138dbf0eaf515675adfd917cdb4",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-3.2.6.tgz"
+      },
+      "directories": {}
+    },
+    "3.2.7": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "partial implementation of crypto for the browser",
+      "version": "3.2.7",
+      "homepage": "https://github.com/dominictarr/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/dominictarr/crypto-browserify.git"
+      },
+      "scripts": {
+        "test": "set -e; for t in test/*.js; do node $t; done"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {
+        "pbkdf2-compat": "2.0.1",
+        "ripemd160": "0.2.0",
+        "sha.js": "2.2.6"
+      },
+      "devDependencies": {
+        "tape": "~2.3.2",
+        "hash-test-vectors": "~1.3.0"
+      },
+      "testling": {
+        "files": "test/*.js",
+        "browsers": [
+          "ie/latest",
+          "chrome/latest",
+          "firefox/latest",
+          "safari/latest",
+          "opera/latest"
+        ]
+      },
+      "optionalDependencies": {},
+      "browser": {
+        "crypto": false
+      },
+      "license": "MIT",
+      "gitHead": "ceed76c0a9270469fbea4916327f3e2750537225",
+      "bugs": {
+        "url": "https://github.com/dominictarr/crypto-browserify/issues"
+      },
+      "_id": "crypto-browserify@3.2.7",
+      "_shasum": "b2aea649d58136caa02710f9fe1af4ab762d14d5",
+      "_from": ".",
+      "_npmVersion": "1.4.26",
+      "_npmUser": {
+        "name": "dominictarr",
+        "email": "dominic.tarr@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "b2aea649d58136caa02710f9fe1af4ab762d14d5",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-3.2.7.tgz"
+      },
+      "directories": {}
+    },
+    "3.2.8": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "partial implementation of crypto for the browser",
+      "version": "3.2.8",
+      "homepage": "https://github.com/dominictarr/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/dominictarr/crypto-browserify.git"
+      },
+      "scripts": {
+        "test": "set -e; for t in test/*.js; do node $t; done"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {
+        "pbkdf2-compat": "2.0.1",
+        "ripemd160": "0.2.0",
+        "sha.js": "2.2.6"
+      },
+      "devDependencies": {
+        "tape": "~2.3.2",
+        "hash-test-vectors": "~1.3.0"
+      },
+      "testling": {
+        "files": "test/*.js",
+        "browsers": [
+          "ie/latest",
+          "chrome/latest",
+          "firefox/latest",
+          "safari/latest",
+          "opera/latest"
+        ]
+      },
+      "optionalDependencies": {},
+      "browser": {
+        "crypto": false
+      },
+      "license": "MIT",
+      "gitHead": "bbf4bce8d6f9ec644f8b158111793be72aa123af",
+      "bugs": {
+        "url": "https://github.com/dominictarr/crypto-browserify/issues"
+      },
+      "_id": "crypto-browserify@3.2.8",
+      "_shasum": "b9b11dbe6d9651dd882a01e6cc467df718ecf189",
+      "_from": ".",
+      "_npmVersion": "1.4.26",
+      "_npmUser": {
+        "name": "dominictarr",
+        "email": "dominic.tarr@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "b9b11dbe6d9651dd882a01e6cc467df718ecf189",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-3.2.8.tgz"
+      },
+      "directories": {}
+    },
+    "3.3.0": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "partial implementation of crypto for the browser",
+      "version": "3.3.0",
+      "homepage": "https://github.com/dominictarr/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/dominictarr/crypto-browserify.git"
+      },
+      "scripts": {
+        "test": "set -e; for t in test/*.js; do node $t; done"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {
+        "pbkdf2-compat": "2.0.1",
+        "ripemd160": "0.2.0",
+        "sha.js": "2.2.6",
+        "browserify-aes": "0.4.0"
+      },
+      "devDependencies": {
+        "tape": "~2.3.2",
+        "hash-test-vectors": "~1.3.0"
+      },
+      "testling": {
+        "files": "test/*.js",
+        "browsers": [
+          "ie/latest",
+          "chrome/latest",
+          "firefox/latest",
+          "safari/latest",
+          "opera/latest"
+        ]
+      },
+      "optionalDependencies": {},
+      "browser": {
+        "crypto": false
+      },
+      "license": "MIT",
+      "gitHead": "0f1821f6233548f632de2b5658c895fa7a8e3d3d",
+      "bugs": {
+        "url": "https://github.com/dominictarr/crypto-browserify/issues"
+      },
+      "_id": "crypto-browserify@3.3.0",
+      "_shasum": "b9fc75bb4a0ed61dcf1cd5dae96eb30c9c3e506c",
+      "_from": ".",
+      "_npmVersion": "1.4.26",
+      "_npmUser": {
+        "name": "dominictarr",
+        "email": "dominic.tarr@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "b9fc75bb4a0ed61dcf1cd5dae96eb30c9c3e506c",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-3.3.0.tgz"
+      },
+      "directories": {}
+    },
+    "3.4.0": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "partial implementation of crypto for the browser",
+      "version": "3.4.0",
+      "homepage": "https://github.com/dominictarr/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/dominictarr/crypto-browserify.git"
+      },
+      "scripts": {
+        "test": "set -e; for t in test/node/*.js test/*.js; do node $t; done"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {
+        "browserify-aes": "0.4.0",
+        "browserify-sign": "2.4.0",
+        "pbkdf2-compat": "2.0.1",
+        "ripemd160": "0.2.0",
+        "diffie-hellman": "2.2.0"
+      },
+      "devDependencies": {
+        "tape": "~2.3.2",
+        "hash-test-vectors": "~1.3.0"
+      },
+      "testling": {
+        "files": "test/*.js",
+        "browsers": [
+          "ie/latest",
+          "chrome/latest",
+          "firefox/latest",
+          "safari/latest",
+          "opera/latest"
+        ]
+      },
+      "optionalDependencies": {},
+      "browser": {
+        "crypto": false
+      },
+      "license": "MIT",
+      "gitHead": "a4ed53349155cdd9ffaa683756d4ef6790102eee",
+      "bugs": {
+        "url": "https://github.com/dominictarr/crypto-browserify/issues"
+      },
+      "_id": "crypto-browserify@3.4.0",
+      "_shasum": "0081fea45550de8689f032ef08a2a78ea73b3295",
+      "_from": ".",
+      "_npmVersion": "1.4.26",
+      "_npmUser": {
+        "name": "dominictarr",
+        "email": "dominic.tarr@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "0081fea45550de8689f032ef08a2a78ea73b3295",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-3.4.0.tgz"
+      },
+      "directories": {}
+    },
+    "3.4.1": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "partial implementation of crypto for the browser",
+      "version": "3.4.1",
+      "homepage": "https://github.com/dominictarr/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/dominictarr/crypto-browserify.git"
+      },
+      "scripts": {
+        "test": "set -e; for t in test/node/*.js test/*.js; do node $t; done"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {
+        "browserify-aes": "0.4.0",
+        "browserify-sign": "2.4.0",
+        "pbkdf2-compat": "2.0.1",
+        "ripemd160": "0.2.0",
+        "diffie-hellman": "2.2.0",
+        "sha.js": "~2.2.7"
+      },
+      "devDependencies": {
+        "tape": "~2.3.2",
+        "hash-test-vectors": "~1.3.0"
+      },
+      "testling": {
+        "files": "test/*.js",
+        "browsers": [
+          "ie/latest",
+          "chrome/latest",
+          "firefox/latest",
+          "safari/latest",
+          "opera/latest"
+        ]
+      },
+      "optionalDependencies": {},
+      "browser": {
+        "crypto": false
+      },
+      "license": "MIT",
+      "gitHead": "78ccc68d28bcb4ef505e3159bbe9de395e1cccc1",
+      "bugs": {
+        "url": "https://github.com/dominictarr/crypto-browserify/issues"
+      },
+      "_id": "crypto-browserify@3.4.1",
+      "_shasum": "b058aa8b935861e38f19b80220fe447145e2b5cb",
+      "_from": ".",
+      "_npmVersion": "1.4.26",
+      "_npmUser": {
+        "name": "dominictarr",
+        "email": "dominic.tarr@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "b058aa8b935861e38f19b80220fe447145e2b5cb",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-3.4.1.tgz"
+      },
+      "directories": {}
+    },
+    "3.4.3": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "partial implementation of crypto for the browser",
+      "version": "3.4.3",
+      "homepage": "https://github.com/dominictarr/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/dominictarr/crypto-browserify.git"
+      },
+      "scripts": {
+        "test": "set -e; for t in test/node/*.js test/*.js; do node $t; done",
+        "prepublish": "npm ls && npm test"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {
+        "browserify-aes": "0.4.0",
+        "browserify-sign": "2.4.0",
+        "pbkdf2-compat": "2.0.1",
+        "ripemd160": "0.2.0",
+        "diffie-hellman": "2.2.0",
+        "sha.js": "~2.2.7"
+      },
+      "devDependencies": {
+        "tape": "~2.3.2",
+        "hash-test-vectors": "~1.3.0"
+      },
+      "testling": {
+        "files": "test/*.js",
+        "browsers": [
+          "ie/latest",
+          "chrome/latest",
+          "firefox/latest",
+          "safari/latest",
+          "opera/latest"
+        ]
+      },
+      "optionalDependencies": {},
+      "browser": {
+        "crypto": false
+      },
+      "license": "MIT",
+      "gitHead": "347471d85c797ebe239b3604e57e05e01de0e7a0",
+      "bugs": {
+        "url": "https://github.com/dominictarr/crypto-browserify/issues"
+      },
+      "_id": "crypto-browserify@3.4.3",
+      "_shasum": "7bff7ea481ed679a159fd8bf0f4e56a1d8b50e00",
+      "_from": ".",
+      "_npmVersion": "1.4.26",
+      "_npmUser": {
+        "name": "dominictarr",
+        "email": "dominic.tarr@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "7bff7ea481ed679a159fd8bf0f4e56a1d8b50e00",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-3.4.3.tgz"
+      },
+      "directories": {}
+    },
+    "3.5.0": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "partial implementation of crypto for the browser",
+      "version": "3.5.0",
+      "homepage": "https://github.com/dominictarr/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/dominictarr/crypto-browserify.git"
+      },
+      "scripts": {
+        "test": "set -e; for t in test/node/*.js test/*.js; do node $t; done",
+        "prepublish": "npm ls && npm test"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {
+        "browserify-aes": "0.4.0",
+        "browserify-sign": "2.4.0",
+        "pbkdf2-compat": "2.0.1",
+        "ripemd160": "0.2.0",
+        "diffie-hellman": "2.2.0",
+        "sha.js": "2.3.0"
+      },
+      "devDependencies": {
+        "tape": "~2.3.2",
+        "hash-test-vectors": "~1.3.0"
+      },
+      "testling": {
+        "files": "test/*.js",
+        "browsers": [
+          "ie/latest",
+          "chrome/latest",
+          "firefox/latest",
+          "safari/latest",
+          "opera/latest"
+        ]
+      },
+      "optionalDependencies": {},
+      "browser": {
+        "crypto": false
+      },
+      "license": "MIT",
+      "gitHead": "230b3ca29b4cdf3819ae378586430ebb772988a1",
+      "bugs": {
+        "url": "https://github.com/dominictarr/crypto-browserify/issues"
+      },
+      "_id": "crypto-browserify@3.5.0",
+      "_shasum": "e0f6039b83c375431b8989637d9b3883fd226177",
+      "_from": ".",
+      "_npmVersion": "1.4.26",
+      "_npmUser": {
+        "name": "dominictarr",
+        "email": "dominic.tarr@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "e0f6039b83c375431b8989637d9b3883fd226177",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-3.5.0.tgz"
+      },
+      "directories": {}
+    },
+    "3.5.1": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "partial implementation of crypto for the browser",
+      "version": "3.5.1",
+      "homepage": "https://github.com/dominictarr/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/dominictarr/crypto-browserify.git"
+      },
+      "scripts": {
+        "test": "set -e; for t in test/node/*.js test/*.js; do node $t; done",
+        "prepublish": "npm ls && npm test"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {
+        "browserify-aes": "0.6.0",
+        "browserify-sign": "2.4.0",
+        "pbkdf2-compat": "2.0.1",
+        "ripemd160": "0.2.0",
+        "diffie-hellman": "2.2.0",
+        "sha.js": "2.3.0"
+      },
+      "devDependencies": {
+        "tape": "~2.3.2",
+        "hash-test-vectors": "~1.3.0"
+      },
+      "testling": {
+        "files": "test/*.js",
+        "browsers": [
+          "ie/latest",
+          "chrome/latest",
+          "firefox/latest",
+          "safari/latest",
+          "opera/latest"
+        ]
+      },
+      "optionalDependencies": {},
+      "browser": {
+        "crypto": false
+      },
+      "license": "MIT",
+      "gitHead": "fb1d36ba4efbc6a75d6ab04e6695f2137f515456",
+      "bugs": {
+        "url": "https://github.com/dominictarr/crypto-browserify/issues"
+      },
+      "_id": "crypto-browserify@3.5.1",
+      "_shasum": "eab25427de15f80d15f296466fbfb3a8a86ee500",
+      "_from": ".",
+      "_npmVersion": "1.4.26",
+      "_npmUser": {
+        "name": "dominictarr",
+        "email": "dominic.tarr@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "eab25427de15f80d15f296466fbfb3a8a86ee500",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-3.5.1.tgz"
+      },
+      "directories": {}
+    },
+    "3.6.0": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "partial implementation of crypto for the browser",
+      "version": "3.6.0",
+      "homepage": "https://github.com/dominictarr/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/dominictarr/crypto-browserify.git"
+      },
+      "scripts": {
+        "test": "set -e; for t in test/node/*.js test/*.js; do node $t; done",
+        "prepublish": "npm ls && npm test"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {
+        "browserify-aes": "0.6.0",
+        "browserify-sign": "2.4.0",
+        "create-ecdh": "1.0.0",
+        "diffie-hellman": "2.2.0",
+        "pbkdf2-compat": "2.0.1",
+        "ripemd160": "0.2.0",
+        "sha.js": "2.3.0"
+      },
+      "devDependencies": {
+        "tape": "~2.3.2",
+        "hash-test-vectors": "~1.3.0"
+      },
+      "testling": {
+        "files": "test/*.js",
+        "browsers": [
+          "ie/latest",
+          "chrome/latest",
+          "firefox/latest",
+          "safari/latest",
+          "opera/latest"
+        ]
+      },
+      "optionalDependencies": {},
+      "browser": {
+        "crypto": false
+      },
+      "license": "MIT",
+      "gitHead": "6602891ba0e28b6e0979443e85a73dba8c010bb8",
+      "bugs": {
+        "url": "https://github.com/dominictarr/crypto-browserify/issues"
+      },
+      "_id": "crypto-browserify@3.6.0",
+      "_shasum": "6f74a6d30cf0bd11ef5168410bbdc7a65f6d01cb",
+      "_from": ".",
+      "_npmVersion": "1.4.26",
+      "_npmUser": {
+        "name": "dominictarr",
+        "email": "dominic.tarr@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "6f74a6d30cf0bd11ef5168410bbdc7a65f6d01cb",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-3.6.0.tgz"
+      },
+      "directories": {}
+    },
+    "3.7.0": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "partial implementation of crypto for the browser",
+      "version": "3.7.0",
+      "homepage": "https://github.com/dominictarr/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/dominictarr/crypto-browserify.git"
+      },
+      "scripts": {
+        "test": "set -e; for t in test/node/*.js test/*.js; do node $t; done",
+        "prepublish": "npm ls && npm test"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {
+        "browserify-aes": "0.6.1",
+        "create-ecdh": "1.0.0",
+        "diffie-hellman": "2.2.0",
+        "browserify-sign": "2.6.0",
+        "pbkdf2-compat": "2.0.1",
+        "public-encrypt": "1.0.1",
+        "ripemd160": "0.2.0",
+        "sha.js": "2.3.0"
+      },
+      "devDependencies": {
+        "tape": "~2.3.2",
+        "hash-test-vectors": "~1.3.0"
+      },
+      "testling": {
+        "files": "test/*.js",
+        "browsers": [
+          "ie/latest",
+          "chrome/latest",
+          "firefox/latest",
+          "safari/latest",
+          "opera/latest"
+        ]
+      },
+      "optionalDependencies": {},
+      "browser": {
+        "crypto": false
+      },
+      "license": "MIT",
+      "gitHead": "7e2fe95bcb063b581ad457096e8f1b00d278e11a",
+      "bugs": {
+        "url": "https://github.com/dominictarr/crypto-browserify/issues"
+      },
+      "_id": "crypto-browserify@3.7.0",
+      "_shasum": "5b9de9b65b04f22a087cb0339db5232f536323cc",
+      "_from": ".",
+      "_npmVersion": "2.1.11",
+      "_nodeVersion": "0.10.31",
+      "_npmUser": {
+        "name": "dominictarr",
+        "email": "dominic.tarr@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "5b9de9b65b04f22a087cb0339db5232f536323cc",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-3.7.0.tgz"
+      },
+      "directories": {}
+    },
+    "3.7.1": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "partial implementation of crypto for the browser",
+      "version": "3.7.1",
+      "homepage": "https://github.com/dominictarr/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/dominictarr/crypto-browserify.git"
+      },
+      "scripts": {
+        "test": "set -e; for t in test/node/*.js test/*.js; do node $t; done",
+        "prepublish": "npm ls && npm test"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {
+        "browserify-aes": "0.6.1",
+        "create-ecdh": "1.0.0",
+        "diffie-hellman": "2.2.0",
+        "browserify-sign": "2.6.1",
+        "pbkdf2-compat": "2.0.1",
+        "public-encrypt": "1.0.1",
+        "ripemd160": "0.2.0",
+        "sha.js": "2.3.0"
+      },
+      "devDependencies": {
+        "tape": "~2.3.2",
+        "hash-test-vectors": "~1.3.0"
+      },
+      "testling": {
+        "files": "test/*.js",
+        "browsers": [
+          "ie/latest",
+          "chrome/latest",
+          "firefox/latest",
+          "safari/latest",
+          "opera/latest"
+        ]
+      },
+      "optionalDependencies": {},
+      "browser": {
+        "crypto": false
+      },
+      "license": "MIT",
+      "gitHead": "9f6c244e4baed7dba68f5aca2de2e375ab5e508d",
+      "bugs": {
+        "url": "https://github.com/dominictarr/crypto-browserify/issues"
+      },
+      "_id": "crypto-browserify@3.7.1",
+      "_shasum": "ed9788686ece390183217aeb56e908bdd33d83f3",
+      "_from": ".",
+      "_npmVersion": "2.1.11",
+      "_nodeVersion": "0.10.31",
+      "_npmUser": {
+        "name": "dominictarr",
+        "email": "dominic.tarr@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "ed9788686ece390183217aeb56e908bdd33d83f3",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-3.7.1.tgz"
+      },
+      "directories": {}
+    },
+    "3.7.2": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "partial implementation of crypto for the browser",
+      "version": "3.7.2",
+      "homepage": "https://github.com/dominictarr/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/dominictarr/crypto-browserify.git"
+      },
+      "scripts": {
+        "test": "set -e; for t in test/node/*.js test/*.js; do node $t; done",
+        "prepublish": "npm ls && npm test"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {
+        "browserify-aes": "0.6.1",
+        "create-ecdh": "1.0.0",
+        "diffie-hellman": "2.2.0",
+        "browserify-sign": "2.7.0",
+        "pbkdf2-compat": "2.0.1",
+        "public-encrypt": "1.1.0",
+        "ripemd160": "0.2.0",
+        "sha.js": "2.3.0"
+      },
+      "devDependencies": {
+        "tape": "~2.3.2",
+        "hash-test-vectors": "~1.3.0"
+      },
+      "testling": {
+        "files": "test/*.js",
+        "browsers": [
+          "ie/latest",
+          "chrome/latest",
+          "firefox/latest",
+          "safari/latest",
+          "opera/latest"
+        ]
+      },
+      "optionalDependencies": {},
+      "browser": {
+        "crypto": false
+      },
+      "license": "MIT",
+      "gitHead": "4c4bb09da9f93d87fd4c7e1cefdd60d7a33c5135",
+      "bugs": {
+        "url": "https://github.com/dominictarr/crypto-browserify/issues"
+      },
+      "_id": "crypto-browserify@3.7.2",
+      "_shasum": "17456add9fce4648a39645d2aa2d0096fdd90b80",
+      "_from": ".",
+      "_npmVersion": "2.1.11",
+      "_nodeVersion": "0.10.31",
+      "_npmUser": {
+        "name": "dominictarr",
+        "email": "dominic.tarr@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "17456add9fce4648a39645d2aa2d0096fdd90b80",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-3.7.2.tgz"
+      },
+      "directories": {}
+    },
+    "3.8.0": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "partial implementation of crypto for the browser",
+      "version": "3.8.0",
+      "homepage": "https://github.com/dominictarr/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/dominictarr/crypto-browserify.git"
+      },
+      "scripts": {
+        "test": "set -e; for t in test/node/*.js test/*.js; do node $t; done",
+        "prepublish": "npm ls && npm test"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {
+        "browserify-aes": "0.7.2",
+        "create-ecdh": "1.0.0",
+        "diffie-hellman": "2.2.0",
+        "browserify-sign": "2.7.0",
+        "pbkdf2-compat": "2.0.1",
+        "public-encrypt": "1.1.0",
+        "ripemd160": "0.2.0",
+        "sha.js": "2.3.0"
+      },
+      "devDependencies": {
+        "tape": "~2.3.2",
+        "hash-test-vectors": "~1.3.0"
+      },
+      "testling": {
+        "files": "test/*.js",
+        "browsers": [
+          "ie/latest",
+          "chrome/latest",
+          "firefox/latest",
+          "safari/latest",
+          "opera/latest"
+        ]
+      },
+      "optionalDependencies": {},
+      "browser": {
+        "crypto": false
+      },
+      "license": "MIT",
+      "gitHead": "44ad3caff87f1db1bf2f4e267ef217d4e9c8edd9",
+      "bugs": {
+        "url": "https://github.com/dominictarr/crypto-browserify/issues"
+      },
+      "_id": "crypto-browserify@3.8.0",
+      "_shasum": "fd564ae7cc34f266f024003e189f1bf476c7eb19",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "fd564ae7cc34f266f024003e189f1bf476c7eb19",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-3.8.0.tgz"
+      },
+      "directories": {}
+    },
+    "3.8.1": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "partial implementation of crypto for the browser",
+      "version": "3.8.1",
+      "homepage": "https://github.com/dominictarr/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/dominictarr/crypto-browserify.git"
+      },
+      "scripts": {
+        "test": "set -e; for t in test/node/*.js test/*.js; do node $t; done",
+        "prepublish": "npm ls && npm test"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {
+        "browserify-aes": "0.7.2",
+        "create-ecdh": "1.0.1",
+        "diffie-hellman": "2.2.2",
+        "browserify-sign": "2.7.1",
+        "pbkdf2-compat": "2.0.1",
+        "public-encrypt": "1.1.0",
+        "ripemd160": "0.2.0",
+        "sha.js": "2.3.0"
+      },
+      "devDependencies": {
+        "tape": "~2.3.2",
+        "hash-test-vectors": "~1.3.0"
+      },
+      "testling": {
+        "files": "test/*.js",
+        "browsers": [
+          "ie/latest",
+          "chrome/latest",
+          "firefox/latest",
+          "safari/latest",
+          "opera/latest"
+        ]
+      },
+      "optionalDependencies": {},
+      "browser": {
+        "crypto": false
+      },
+      "license": "MIT",
+      "gitHead": "be7c55239558c65db5d1bcf01bfb75882b3ed070",
+      "bugs": {
+        "url": "https://github.com/dominictarr/crypto-browserify/issues"
+      },
+      "_id": "crypto-browserify@3.8.1",
+      "_shasum": "dcae2d68c57994d53eb349cffc77893408a87635",
+      "_from": ".",
+      "_npmVersion": "2.0.0",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "dcae2d68c57994d53eb349cffc77893408a87635",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-3.8.1.tgz"
+      },
+      "directories": {}
+    },
+    "3.8.3": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "partial implementation of crypto for the browser",
+      "version": "3.8.3",
+      "homepage": "https://github.com/dominictarr/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/dominictarr/crypto-browserify.git"
+      },
+      "scripts": {
+        "test": "set -e; for t in test/node/*.js test/*.js; do node $t; done",
+        "prepublish": "npm ls && npm test"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {
+        "browserify-aes": "0.8.0",
+        "create-ecdh": "1.0.1",
+        "diffie-hellman": "2.2.2",
+        "browserify-sign": "2.7.1",
+        "pbkdf2-compat": "2.0.1",
+        "public-encrypt": "1.1.0",
+        "ripemd160": "0.2.0",
+        "sha.js": "2.3.0"
+      },
+      "devDependencies": {
+        "tape": "~2.3.2",
+        "hash-test-vectors": "~1.3.0"
+      },
+      "testling": {
+        "files": "test/*.js",
+        "browsers": [
+          "ie/latest",
+          "chrome/latest",
+          "firefox/latest",
+          "safari/latest",
+          "opera/latest"
+        ]
+      },
+      "optionalDependencies": {},
+      "browser": {
+        "crypto": false
+      },
+      "license": "MIT",
+      "gitHead": "75bd305d4e917684c456e54b329af08da5f3e56b",
+      "bugs": {
+        "url": "https://github.com/dominictarr/crypto-browserify/issues"
+      },
+      "_id": "crypto-browserify@3.8.3",
+      "_shasum": "a7f91d3204c92bc6593d134b6af70be0dc1aad32",
+      "_from": ".",
+      "_npmVersion": "2.0.0",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "a7f91d3204c92bc6593d134b6af70be0dc1aad32",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-3.8.3.tgz"
+      },
+      "directories": {}
+    },
+    "3.9.0": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "implementation of crypto for the browser",
+      "version": "3.9.0",
+      "homepage": "https://github.com/dominictarr/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/dominictarr/crypto-browserify.git"
+      },
+      "scripts": {
+        "test": "set -e; for t in test/node/*.js test/*.js; do node $t; done",
+        "prepublish": "npm ls && npm test"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {
+        "browserify-aes": "0.8.1",
+        "create-ecdh": "1.0.1",
+        "diffie-hellman": "2.2.2",
+        "browserify-sign": "2.7.2",
+        "pbkdf2-compat": "2.0.1",
+        "public-encrypt": "1.1.0",
+        "ripemd160": "0.2.0",
+        "sha.js": "2.3.0"
+      },
+      "devDependencies": {
+        "tape": "~2.3.2",
+        "hash-test-vectors": "~1.3.0"
+      },
+      "optionalDependencies": {},
+      "browser": {
+        "crypto": false
+      },
+      "license": "MIT",
+      "gitHead": "df0180c7dc6213e8158ef84a84b5c1208dda0b8a",
+      "bugs": {
+        "url": "https://github.com/dominictarr/crypto-browserify/issues"
+      },
+      "_id": "crypto-browserify@3.9.0",
+      "_shasum": "04faa9abee7d972a44b474f7e91b196baf2a2d0b",
+      "_from": ".",
+      "_npmVersion": "2.0.0",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "04faa9abee7d972a44b474f7e91b196baf2a2d0b",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-3.9.0.tgz"
+      },
+      "directories": {}
+    },
+    "3.9.1": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "implementation of crypto for the browser",
+      "version": "3.9.1",
+      "homepage": "https://github.com/dominictarr/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/dominictarr/crypto-browserify.git"
+      },
+      "scripts": {
+        "test": "set -e; for t in test/node/*.js test/*.js; do node $t; done",
+        "prepublish": "npm ls && npm test"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {
+        "browserify-aes": "0.8.1",
+        "create-ecdh": "1.0.3",
+        "diffie-hellman": "2.2.3",
+        "browserify-sign": "2.7.5",
+        "pbkdf2-compat": "2.0.1",
+        "public-encrypt": "1.1.2",
+        "ripemd160": "0.2.0",
+        "sha.js": "2.3.0"
+      },
+      "devDependencies": {
+        "tape": "~2.3.2",
+        "hash-test-vectors": "~1.3.0"
+      },
+      "optionalDependencies": {},
+      "browser": {
+        "crypto": false
+      },
+      "license": "MIT",
+      "gitHead": "c38b4927bf491a08c3176ac979da5c0dc1c9d5e6",
+      "bugs": {
+        "url": "https://github.com/dominictarr/crypto-browserify/issues"
+      },
+      "_id": "crypto-browserify@3.9.1",
+      "_shasum": "020319381171e3895c5d30480b281f417d583359",
+      "_from": ".",
+      "_npmVersion": "2.0.0",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "020319381171e3895c5d30480b281f417d583359",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-3.9.1.tgz"
+      },
+      "directories": {}
+    },
+    "3.9.2": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "implementation of crypto for the browser",
+      "version": "3.9.2",
+      "homepage": "https://github.com/dominictarr/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/dominictarr/crypto-browserify.git"
+      },
+      "scripts": {
+        "test": "set -e; for t in test/node/*.js test/*.js; do node $t; done",
+        "prepublish": "npm ls && npm test"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {
+        "browserify-aes": "0.8.1",
+        "create-ecdh": "1.0.3",
+        "diffie-hellman": "2.2.3",
+        "browserify-sign": "2.7.5",
+        "pbkdf2-compat": "2.0.1",
+        "public-encrypt": "1.1.2",
+        "ripemd160": "0.2.0",
+        "sha.js": "2.3.1"
+      },
+      "devDependencies": {
+        "tape": "~2.3.2",
+        "hash-test-vectors": "~1.3.0"
+      },
+      "optionalDependencies": {},
+      "browser": {
+        "crypto": false
+      },
+      "license": "MIT",
+      "gitHead": "17a43770bb7b34c4bb76b8c1746c51c6a9675826",
+      "bugs": {
+        "url": "https://github.com/dominictarr/crypto-browserify/issues"
+      },
+      "_id": "crypto-browserify@3.9.2",
+      "_shasum": "4e295140c8eef2b720184323087c30f4cbb82fa9",
+      "_from": ".",
+      "_npmVersion": "2.0.0",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "4e295140c8eef2b720184323087c30f4cbb82fa9",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-3.9.2.tgz"
+      },
+      "directories": {}
+    },
+    "3.9.3": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "implementation of crypto for the browser",
+      "version": "3.9.3",
+      "homepage": "https://github.com/dominictarr/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/dominictarr/crypto-browserify.git"
+      },
+      "scripts": {
+        "test": "set -e; for t in test/node/*.js test/*.js; do node $t; done",
+        "prepublish": "npm ls && npm test"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {
+        "browserify-aes": "0.8.1",
+        "create-ecdh": "1.0.3",
+        "diffie-hellman": "2.2.3",
+        "browserify-sign": "2.7.5",
+        "pbkdf2-compat": "2.0.1",
+        "public-encrypt": "1.1.2",
+        "ripemd160": "0.2.0",
+        "sha.js": "2.3.4"
+      },
+      "devDependencies": {
+        "tape": "~2.3.2",
+        "hash-test-vectors": "~1.3.0"
+      },
+      "optionalDependencies": {},
+      "browser": {
+        "crypto": false
+      },
+      "license": "MIT",
+      "gitHead": "d95c99bd948180b750bd0dd980736372332bedd0",
+      "bugs": {
+        "url": "https://github.com/dominictarr/crypto-browserify/issues"
+      },
+      "_id": "crypto-browserify@3.9.3",
+      "_shasum": "fced960abd47e55c130a802663c70081cddf9245",
+      "_from": ".",
+      "_npmVersion": "2.1.10",
+      "_nodeVersion": "0.10.35",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "fced960abd47e55c130a802663c70081cddf9245",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-3.9.3.tgz"
+      },
+      "directories": {}
+    },
+    "3.9.4": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "implementation of crypto for the browser",
+      "version": "3.9.4",
+      "homepage": "https://github.com/dominictarr/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/dominictarr/crypto-browserify.git"
+      },
+      "scripts": {
+        "test": "set -e; for t in test/node/*.js test/*.js; do node $t; done",
+        "prepublish": "npm ls && npm test"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {
+        "browserify-aes": "0.8.1",
+        "create-ecdh": "1.0.3",
+        "diffie-hellman": "2.2.3",
+        "browserify-sign": "2.8.0",
+        "pbkdf2-compat": "2.0.1",
+        "public-encrypt": "1.1.2",
+        "ripemd160": "0.2.0",
+        "sha.js": "2.3.4"
+      },
+      "devDependencies": {
+        "tape": "~2.3.2",
+        "hash-test-vectors": "~1.3.0"
+      },
+      "optionalDependencies": {},
+      "browser": {
+        "crypto": false
+      },
+      "license": "MIT",
+      "gitHead": "db1ac5ed9a4f445652ada8943c8dbb429d586fbc",
+      "bugs": {
+        "url": "https://github.com/dominictarr/crypto-browserify/issues"
+      },
+      "_id": "crypto-browserify@3.9.4",
+      "_shasum": "1bda647421800616e4332be0196ac4045a5c51a3",
+      "_from": ".",
+      "_npmVersion": "2.0.0",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "1bda647421800616e4332be0196ac4045a5c51a3",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-3.9.4.tgz"
+      },
+      "directories": {}
+    },
+    "3.9.6": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "implementation of crypto for the browser",
+      "version": "3.9.6",
+      "homepage": "https://github.com/crypto-browserify/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/crypto-browserify/crypto-browserify.git"
+      },
+      "scripts": {
+        "test": "set -e; for t in test/node/*.js test/*.js; do node $t; done",
+        "prepublish": "npm ls && npm test"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {
+        "browserify-aes": "0.8.1",
+        "create-ecdh": "1.0.3",
+        "diffie-hellman": "2.2.3",
+        "browserify-sign": "2.8.0",
+        "inherits": "^2.0.1",
+        "pbkdf2-compat": "2.0.1",
+        "public-encrypt": "1.1.2",
+        "ripemd160": "0.2.0",
+        "sha.js": "2.3.6"
+      },
+      "devDependencies": {
+        "tape": "~2.3.2",
+        "hash-test-vectors": "~1.3.2"
+      },
+      "optionalDependencies": {},
+      "browser": {
+        "crypto": false
+      },
+      "license": "MIT",
+      "gitHead": "a060b2b41b840a8ae50ec6041302fe58f9b580e8",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/crypto-browserify/issues"
+      },
+      "_id": "crypto-browserify@3.9.6",
+      "_shasum": "5e0f9494e9720dd99ef2f23dce7ec6d5be098615",
+      "_from": ".",
+      "_npmVersion": "2.1.18",
+      "_nodeVersion": "0.10.35",
+      "_npmUser": {
+        "name": "dominictarr",
+        "email": "dominic.tarr@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "5e0f9494e9720dd99ef2f23dce7ec6d5be098615",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-3.9.6.tgz"
+      },
+      "directories": {}
+    },
+    "3.9.7": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "implementation of crypto for the browser",
+      "version": "3.9.7",
+      "homepage": "https://github.com/crypto-browserify/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/crypto-browserify/crypto-browserify.git"
+      },
+      "scripts": {
+        "test": "set -e; for t in test/node/*.js test/*.js; do node $t; done",
+        "prepublish": "npm ls && npm test"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {
+        "browserify-aes": "0.8.1",
+        "browserify-sign": "2.8.0",
+        "create-ecdh": "1.0.3",
+        "create-hash": "^1.1.0",
+        "create-hmac": "^1.1.0",
+        "diffie-hellman": "2.2.3",
+        "inherits": "^2.0.1",
+        "pbkdf2-compat": "2.0.1",
+        "public-encrypt": "1.1.2"
+      },
+      "devDependencies": {
+        "tape": "~2.3.2",
+        "hash-test-vectors": "~1.3.2"
+      },
+      "optionalDependencies": {},
+      "browser": {
+        "crypto": false
+      },
+      "license": "MIT",
+      "gitHead": "c08a8ea93a6175da0889a50d20f9e32c61664ff8",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/crypto-browserify/issues"
+      },
+      "_id": "crypto-browserify@3.9.7",
+      "_shasum": "f737a62c13fa11b1e0cdd64b6ed86897e5d5e0e8",
+      "_from": ".",
+      "_npmVersion": "2.1.10",
+      "_nodeVersion": "0.10.35",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "jp",
+          "email": "jprichardson@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "f737a62c13fa11b1e0cdd64b6ed86897e5d5e0e8",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-3.9.7.tgz"
+      },
+      "directories": {}
+    },
+    "3.9.8": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "implementation of crypto for the browser",
+      "version": "3.9.8",
+      "homepage": "https://github.com/crypto-browserify/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/crypto-browserify/crypto-browserify.git"
+      },
+      "scripts": {
+        "test": "set -e; for t in test/node/*.js test/*.js; do node $t; done",
+        "prepublish": "npm ls && npm test"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {
+        "browserify-aes": "0.8.1",
+        "browserify-sign": "2.8.0",
+        "create-ecdh": "1.0.3",
+        "create-hash": "^1.1.0",
+        "create-hmac": "^1.1.0",
+        "diffie-hellman": "2.2.3",
+        "inherits": "^2.0.1",
+        "pbkdf2-compat": "2.0.1",
+        "public-encrypt": "1.1.2",
+        "randombytes": "^2.0.0"
+      },
+      "devDependencies": {
+        "tape": "~2.3.2",
+        "hash-test-vectors": "~1.3.2"
+      },
+      "optionalDependencies": {},
+      "browser": {
+        "crypto": false
+      },
+      "license": "MIT",
+      "gitHead": "8796866647b48b1f3c40c1ff507f3cc75d3ba64f",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/crypto-browserify/issues"
+      },
+      "_id": "crypto-browserify@3.9.8",
+      "_shasum": "b107059e9b5bf9a4e7d094bf28fb63ab49639697",
+      "_from": ".",
+      "_npmVersion": "2.1.10",
+      "_nodeVersion": "0.11.14",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "jp",
+          "email": "jprichardson@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "b107059e9b5bf9a4e7d094bf28fb63ab49639697",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-3.9.8.tgz"
+      },
+      "directories": {}
+    },
+    "3.9.9": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "implementation of crypto for the browser",
+      "version": "3.9.9",
+      "homepage": "https://github.com/crypto-browserify/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/crypto-browserify/crypto-browserify.git"
+      },
+      "scripts": {
+        "test": "set -e; for t in test/node/*.js test/*.js; do node $t; done",
+        "prepublish": "npm ls && npm test"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {
+        "browserify-aes": "^1.0.0",
+        "browserify-sign": "2.8.0",
+        "create-ecdh": "1.0.3",
+        "create-hash": "^1.1.0",
+        "create-hmac": "^1.1.0",
+        "diffie-hellman": "2.2.3",
+        "inherits": "^2.0.1",
+        "pbkdf2-compat": "2.0.1",
+        "public-encrypt": "1.1.2",
+        "randombytes": "^2.0.0"
+      },
+      "devDependencies": {
+        "tape": "~2.3.2",
+        "hash-test-vectors": "~1.3.2"
+      },
+      "optionalDependencies": {},
+      "browser": {
+        "crypto": false
+      },
+      "license": "MIT",
+      "gitHead": "b2a8bb9e55ef724b5196c9e26f772ba96a0ea9e0",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/crypto-browserify/issues"
+      },
+      "_id": "crypto-browserify@3.9.9",
+      "_shasum": "1296ad1fb0168fb621b44af68dcc7939df0d4af6",
+      "_from": ".",
+      "_npmVersion": "2.0.0",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "jp",
+          "email": "jprichardson@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "1296ad1fb0168fb621b44af68dcc7939df0d4af6",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-3.9.9.tgz"
+      },
+      "directories": {}
+    },
+    "3.9.10": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "implementation of crypto for the browser",
+      "version": "3.9.10",
+      "homepage": "https://github.com/crypto-browserify/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/crypto-browserify/crypto-browserify.git"
+      },
+      "scripts": {
+        "test": "set -e; for t in test/node/*.js test/*.js; do node $t; done",
+        "prepublish": "npm ls && npm test"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {
+        "browserify-aes": "^1.0.0",
+        "browserify-sign": "2.8.0",
+        "create-ecdh": "1.0.3",
+        "create-hash": "^1.1.0",
+        "create-hmac": "^1.1.0",
+        "diffie-hellman": "2.2.3",
+        "inherits": "^2.0.1",
+        "pbkdf2-compat": "2.0.1",
+        "public-encrypt": "1.1.2",
+        "randombytes": "^2.0.0"
+      },
+      "devDependencies": {
+        "tape": "~2.3.2",
+        "hash-test-vectors": "~1.3.2"
+      },
+      "optionalDependencies": {},
+      "browser": {
+        "crypto": false
+      },
+      "license": "MIT",
+      "gitHead": "a96c30c3ec14aafdb70887f068a1d55a3c28c182",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/crypto-browserify/issues"
+      },
+      "_id": "crypto-browserify@3.9.10",
+      "_shasum": "3b8bfa3876dd9a466d6720abf1f74dbbea934a75",
+      "_from": ".",
+      "_npmVersion": "2.1.10",
+      "_nodeVersion": "0.11.15",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "3b8bfa3876dd9a466d6720abf1f74dbbea934a75",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-3.9.10.tgz"
+      },
+      "directories": {}
+    },
+    "3.9.11": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "implementation of crypto for the browser",
+      "version": "3.9.11",
+      "homepage": "https://github.com/crypto-browserify/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/crypto-browserify/crypto-browserify.git"
+      },
+      "scripts": {
+        "test": "set -e; for t in test/node/*.js test/*.js; do node $t; done",
+        "prepublish": "npm ls && npm test"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {
+        "browserify-aes": "^1.0.0",
+        "browserify-sign": "2.8.0",
+        "create-ecdh": "1.0.3",
+        "create-hash": "^1.1.0",
+        "create-hmac": "^1.1.0",
+        "diffie-hellman": "^3.0.1",
+        "inherits": "^2.0.1",
+        "pbkdf2-compat": "2.0.1",
+        "public-encrypt": "1.1.2",
+        "randombytes": "^2.0.0"
+      },
+      "devDependencies": {
+        "tape": "~2.3.2",
+        "hash-test-vectors": "~1.3.2"
+      },
+      "optionalDependencies": {},
+      "browser": {
+        "crypto": false
+      },
+      "license": "MIT",
+      "gitHead": "dbd16c6148f8313e43e46fe8071e20827a74efc0",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/crypto-browserify/issues"
+      },
+      "_id": "crypto-browserify@3.9.11",
+      "_shasum": "2cd8539bd4577f4c2dd7616905112fd982ddd277",
+      "_from": ".",
+      "_npmVersion": "2.1.10",
+      "_nodeVersion": "0.10.36",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "2cd8539bd4577f4c2dd7616905112fd982ddd277",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-3.9.11.tgz"
+      },
+      "directories": {}
+    },
+    "3.9.12": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "implementation of crypto for the browser",
+      "version": "3.9.12",
+      "homepage": "https://github.com/crypto-browserify/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/crypto-browserify/crypto-browserify.git"
+      },
+      "scripts": {
+        "test": "set -e; for t in test/node/*.js test/*.js; do node $t; done",
+        "prepublish": "npm ls && npm test"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {
+        "browserify-aes": "^1.0.0",
+        "browserify-sign": "2.8.0",
+        "create-ecdh": "1.0.3",
+        "create-hash": "^1.1.0",
+        "create-hmac": "^1.1.0",
+        "diffie-hellman": "^3.0.1",
+        "inherits": "^2.0.1",
+        "pbkdf2-compat": "^3.0.1",
+        "public-encrypt": "1.1.2",
+        "randombytes": "^2.0.0"
+      },
+      "devDependencies": {
+        "tape": "~2.3.2",
+        "hash-test-vectors": "~1.3.2"
+      },
+      "optionalDependencies": {},
+      "browser": {
+        "crypto": false
+      },
+      "license": "MIT",
+      "gitHead": "e896146a4e99b8efffe1119fe6b28f5d34f48341",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/crypto-browserify/issues"
+      },
+      "_id": "crypto-browserify@3.9.12",
+      "_shasum": "3ddbfa01bb3e4c6501b3871787916744b3c97175",
+      "_from": ".",
+      "_npmVersion": "2.3.0",
+      "_nodeVersion": "1.0.4",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "3ddbfa01bb3e4c6501b3871787916744b3c97175",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-3.9.12.tgz"
+      },
+      "directories": {}
+    },
+    "3.9.13": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "implementation of crypto for the browser",
+      "version": "3.9.13",
+      "homepage": "https://github.com/crypto-browserify/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/crypto-browserify/crypto-browserify.git"
+      },
+      "scripts": {
+        "test": "set -e; for t in test/node/*.js test/*.js; do node $t; done",
+        "prepublish": "npm ls && npm test"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {
+        "browserify-aes": "^1.0.0",
+        "browserify-sign": "2.8.0",
+        "create-ecdh": "^2.0.0",
+        "create-hash": "^1.1.0",
+        "create-hmac": "^1.1.0",
+        "diffie-hellman": "^3.0.1",
+        "inherits": "^2.0.1",
+        "pbkdf2-compat": "^3.0.1",
+        "public-encrypt": "^2.0.0",
+        "randombytes": "^2.0.0"
+      },
+      "devDependencies": {
+        "tape": "~2.3.2",
+        "hash-test-vectors": "~1.3.2"
+      },
+      "optionalDependencies": {},
+      "browser": {
+        "crypto": false
+      },
+      "license": "MIT",
+      "gitHead": "b3e9dcaa517b58b942e40335896421ffa658b68b",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/crypto-browserify/issues"
+      },
+      "_id": "crypto-browserify@3.9.13",
+      "_shasum": "07b829716685101dcd73f0bbcc95d16aa73fedf1",
+      "_from": ".",
+      "_npmVersion": "2.1.10",
+      "_nodeVersion": "0.10.36",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "07b829716685101dcd73f0bbcc95d16aa73fedf1",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-3.9.13.tgz"
+      },
+      "directories": {}
+    },
+    "3.9.14": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "implementation of crypto for the browser",
+      "version": "3.9.14",
+      "homepage": "https://github.com/crypto-browserify/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/crypto-browserify/crypto-browserify.git"
+      },
+      "scripts": {
+        "test": "set -e; for t in test/node/*.js test/*.js; do node $t; done",
+        "prepublish": "npm ls && npm test"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {
+        "browserify-aes": "^1.0.0",
+        "browserify-sign": "^3.0.1",
+        "create-ecdh": "^2.0.0",
+        "create-hash": "^1.1.0",
+        "create-hmac": "^1.1.0",
+        "diffie-hellman": "^3.0.1",
+        "inherits": "^2.0.1",
+        "pbkdf2": "^3.0.3",
+        "public-encrypt": "^2.0.0",
+        "randombytes": "^2.0.0"
+      },
+      "devDependencies": {
+        "tape": "~2.3.2",
+        "hash-test-vectors": "~1.3.2"
+      },
+      "optionalDependencies": {},
+      "browser": {
+        "crypto": false
+      },
+      "license": "MIT",
+      "gitHead": "7ac9b42974526f0b7fe1714c1dac970eb7c0ef3c",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/crypto-browserify/issues"
+      },
+      "_id": "crypto-browserify@3.9.14",
+      "_shasum": "d69925252c845392714aed1460c54b56605314ab",
+      "_from": ".",
+      "_npmVersion": "2.7.0",
+      "_nodeVersion": "1.6.2",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "d69925252c845392714aed1460c54b56605314ab",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-3.9.14.tgz"
+      },
+      "directories": {}
+    },
+    "3.10.0": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "implementation of crypto for the browser",
+      "version": "3.10.0",
+      "homepage": "https://github.com/crypto-browserify/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/crypto-browserify/crypto-browserify.git"
+      },
+      "scripts": {
+        "prepublish": "npm ls && npm test",
+        "standard": "standard",
+        "test": "npm run standard && npm run unit",
+        "unit": "set -e; for t in test/node/*.js test/*.js; do node $t; done"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {
+        "browserify-cipher": "^1.0.0",
+        "browserify-sign": "^3.0.1",
+        "create-ecdh": "^2.0.0",
+        "create-hash": "^1.1.0",
+        "create-hmac": "^1.1.0",
+        "diffie-hellman": "^3.0.1",
+        "inherits": "^2.0.1",
+        "pbkdf2": "^3.0.3",
+        "public-encrypt": "^2.0.0",
+        "randombytes": "^2.0.0"
+      },
+      "devDependencies": {
+        "hash-test-vectors": "~1.3.2",
+        "standard": "^5.0.2",
+        "tape": "~2.3.2"
+      },
+      "optionalDependencies": {},
+      "browser": {
+        "crypto": false
+      },
+      "license": "MIT",
+      "gitHead": "0d36370d453d663552f5d4a522aec3c27cc0557f",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/crypto-browserify/issues"
+      },
+      "_id": "crypto-browserify@3.10.0",
+      "_shasum": "bfe70d7987b4abb8e551ea964307767c3b5d56bf",
+      "_from": ".",
+      "_npmVersion": "2.14.4",
+      "_nodeVersion": "4.1.1",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "dist": {
+        "shasum": "bfe70d7987b4abb8e551ea964307767c3b5d56bf",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-3.10.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "directories": {}
+    },
+    "3.11.0": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "implementation of crypto for the browser",
+      "version": "3.11.0",
+      "homepage": "https://github.com/crypto-browserify/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/crypto-browserify/crypto-browserify.git"
+      },
+      "scripts": {
+        "standard": "standard",
+        "test": "npm run standard && npm run unit",
+        "unit": "node test/",
+        "browser": "zuul --browser-version $BROWSER_VERSION --browser-name $BROWSER_NAME -- test/index.js"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {
+        "browserify-cipher": "^1.0.0",
+        "browserify-sign": "^4.0.0",
+        "create-ecdh": "^4.0.0",
+        "create-hash": "^1.1.0",
+        "create-hmac": "^1.1.0",
+        "diffie-hellman": "^5.0.0",
+        "inherits": "^2.0.1",
+        "pbkdf2": "^3.0.3",
+        "public-encrypt": "^4.0.0",
+        "randombytes": "^2.0.0"
+      },
+      "devDependencies": {
+        "hash-test-vectors": "~1.3.2",
+        "pseudorandombytes": "^2.0.0",
+        "standard": "^5.0.2",
+        "tape": "~2.3.2",
+        "zuul": "^3.6.0"
+      },
+      "optionalDependencies": {},
+      "browser": {
+        "crypto": false
+      },
+      "license": "MIT",
+      "gitHead": "9fabcbd78209a99c7c624d1509d389b00e8d733f",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/crypto-browserify/issues"
+      },
+      "_id": "crypto-browserify@3.11.0",
+      "_shasum": "3652a0906ab9b2a7e0c3ce66a408e957a2485522",
+      "_from": ".",
+      "_npmVersion": "3.3.10",
+      "_nodeVersion": "4.2.1",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "dist": {
+        "shasum": "3652a0906ab9b2a7e0c3ce66a408e957a2485522",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-3.11.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "directories": {}
+    },
+    "3.11.1": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "implementation of crypto for the browser",
+      "version": "3.11.1",
+      "homepage": "https://github.com/crypto-browserify/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/crypto-browserify/crypto-browserify.git"
+      },
+      "scripts": {
+        "standard": "standard",
+        "test": "npm run standard && npm run unit",
+        "unit": "node test/",
+        "browser": "zuul --browser-version $BROWSER_VERSION --browser-name $BROWSER_NAME -- test/index.js"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {
+        "browserify-cipher": "^1.0.0",
+        "browserify-sign": "^4.0.0",
+        "create-ecdh": "^4.0.0",
+        "create-hash": "^1.1.0",
+        "create-hmac": "^1.1.0",
+        "diffie-hellman": "^5.0.0",
+        "inherits": "^2.0.1",
+        "pbkdf2": "^3.0.3",
+        "public-encrypt": "^4.0.0",
+        "randombytes": "^2.0.0"
+      },
+      "devDependencies": {
+        "hash-test-vectors": "~1.3.2",
+        "pseudorandombytes": "^2.0.0",
+        "standard": "^5.0.2",
+        "tape": "~2.3.2",
+        "zuul": "^3.6.0"
+      },
+      "optionalDependencies": {},
+      "browser": {
+        "crypto": false
+      },
+      "license": "MIT",
+      "gitHead": "acd878919d8be5b6d3f7678f1708a7afafa2319d",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/crypto-browserify/issues"
+      },
+      "_id": "crypto-browserify@3.11.1",
+      "_npmVersion": "5.1.0",
+      "_nodeVersion": "8.1.1",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-Na7ZlwCOqoaW5RwUK1WpXws2kv8mNhWdTlzob0UXulk6G9BDbyiJaGTYBIX61Ozn9l1EPPJpICZb4DaOpT9NlQ==",
+        "shasum": "948945efc6757a400d6e5e5af47194d10064279f",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-3.11.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/crypto-browserify-3.11.1.tgz_1499783159169_0.4202242400497198"
+      },
+      "directories": {}
+    },
+    "3.12.0": {
+      "author": {
+        "name": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "url": "dominictarr.com"
+      },
+      "name": "crypto-browserify",
+      "description": "implementation of crypto for the browser",
+      "version": "3.12.0",
+      "homepage": "https://github.com/crypto-browserify/crypto-browserify",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/crypto-browserify/crypto-browserify.git"
+      },
+      "scripts": {
+        "standard": "standard",
+        "test": "npm run standard && npm run unit",
+        "unit": "node test/",
+        "browser": "zuul --browser-version $BROWSER_VERSION --browser-name $BROWSER_NAME -- test/index.js"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "dependencies": {
+        "browserify-cipher": "^1.0.0",
+        "browserify-sign": "^4.0.0",
+        "create-ecdh": "^4.0.0",
+        "create-hash": "^1.1.0",
+        "create-hmac": "^1.1.0",
+        "diffie-hellman": "^5.0.0",
+        "inherits": "^2.0.1",
+        "pbkdf2": "^3.0.3",
+        "public-encrypt": "^4.0.0",
+        "randombytes": "^2.0.0",
+        "randomfill": "^1.0.3"
+      },
+      "devDependencies": {
+        "hash-test-vectors": "~1.3.2",
+        "pseudorandombytes": "^2.0.0",
+        "safe-buffer": "^5.1.1",
+        "standard": "^5.0.2",
+        "tape": "~2.3.2",
+        "zuul": "^3.6.0"
+      },
+      "optionalDependencies": {},
+      "browser": {
+        "crypto": false
+      },
+      "license": "MIT",
+      "gitHead": "5ffcb3c1c8c0715cb0d75ce012103e70cc625e8c",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/crypto-browserify/issues"
+      },
+      "_id": "crypto-browserify@3.12.0",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.6.0",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-fz4spIh+znjO2VjL+IdhEpRJ3YN6sMzITSBijk6FK2UvTqruSQW+/cCZTSNsMiZNvUeq0CqurF+dAbyiGOY6Wg==",
+        "shasum": "396cf9f3137f03e4b8e532c58f698254e00f80ec",
+        "tarball": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-3.12.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/crypto-browserify-3.12.0.tgz_1509711759261_0.0643247205298394"
+      },
+      "directories": {}
+    }
+  },
+  "readme": "# crypto-browserify\n\nA port of node's `crypto` module to the browser.\n\n[![Build Status](https://travis-ci.org/crypto-browserify/crypto-browserify.svg?branch=master)](https://travis-ci.org/crypto-browserify/crypto-browserify)\n[![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)\n[![Sauce Test Status](https://saucelabs.com/browser-matrix/crypto-browserify.svg)](https://saucelabs.com/u/crypto-browserify)\n\nThe goal of this module is to reimplement node's crypto module,\nin pure javascript so that it can run in the browser.\n\nHere is the subset that is currently implemented:\n\n* createHash (sha1, sha224, sha256, sha384, sha512, md5, rmd160)\n* createHmac (sha1, sha224, sha256, sha384, sha512, md5, rmd160)\n* pbkdf2\n* pbkdf2Sync\n* randomBytes\n* pseudoRandomBytes\n* createCipher (aes)\n* createDecipher (aes)\n* createDiffieHellman\n* createSign (rsa, ecdsa)\n* createVerify (rsa, ecdsa)\n* createECDH (secp256k1)\n* publicEncrypt/privateDecrypt (rsa)\n* privateEncrypt/publicDecrypt (rsa)\n\n## todo\n\nthese features from node's `crypto` are still unimplemented.\n\n* createCredentials\n\n## contributions\n\nIf you are interested in writing a feature, please implement as a new module,\nwhich will be incorporated into crypto-browserify as a dependency.\n\nAll deps must be compatible with node's crypto\n(generate example inputs and outputs with node,\nand save base64 strings inside JSON, so that tests can run in the browser.\nsee [sha.js](https://github.com/dominictarr/sha.js)\n\nCrypto is _extra serious_ so please do not hesitate to review the code,\nand post comments if you do.\n\n## License\n\nMIT\n",
+  "maintainers": [
+    {
+      "email": "calvin.metcalf@gmail.com",
+      "name": "cwmma"
+    },
+    {
+      "email": "fedor@indutny.com",
+      "name": "indutny"
+    },
+    {
+      "email": "jprichardson@gmail.com",
+      "name": "jprichardson"
+    }
+  ],
+  "time": {
+    "modified": "2019-03-20T09:22:42.666Z",
+    "created": "2012-04-23T05:52:35.813Z",
+    "0.0.0": "2012-04-23T05:52:40.032Z",
+    "0.0.1": "2012-04-23T06:35:32.555Z",
+    "0.1.0": "2012-06-20T07:26:29.527Z",
+    "0.1.1": "2012-07-20T06:09:09.391Z",
+    "0.1.2": "2012-12-19T23:15:21.364Z",
+    "0.2.0": "2012-12-22T18:48:35.490Z",
+    "0.2.1": "2012-12-22T20:41:44.264Z",
+    "0.2.2": "2013-05-04T12:45:13.724Z",
+    "0.2.3": "2013-05-12T17:57:36.103Z",
+    "0.3.0": "2013-07-30T10:02:08.223Z",
+    "0.4.0": "2013-07-31T14:24:07.777Z",
+    "1.0.0": "2013-08-05T22:06:16.297Z",
+    "1.0.1": "2013-08-06T04:33:14.376Z",
+    "1.0.2": "2013-08-07T08:53:41.670Z",
+    "1.0.3": "2013-09-20T22:10:27.013Z",
+    "1.0.4": "2013-10-12T10:36:20.916Z",
+    "1.0.5": "2013-10-12T11:19:33.359Z",
+    "1.0.6": "2013-11-04T06:13:23.018Z",
+    "1.0.7": "2013-11-19T16:53:09.308Z",
+    "1.0.8": "2013-11-27T04:03:55.699Z",
+    "1.0.9": "2013-11-27T05:16:02.386Z",
+    "2.0.0": "2014-01-06T10:17:10.517Z",
+    "2.1.0": "2014-01-16T18:48:48.934Z",
+    "2.1.1": "2014-04-04T00:00:50.011Z",
+    "2.1.2": "2014-04-04T06:45:43.581Z",
+    "2.1.3": "2014-04-23T04:32:15.794Z",
+    "2.1.4": "2014-04-23T05:02:26.885Z",
+    "2.1.5": "2014-04-23T05:41:55.893Z",
+    "2.1.6": "2014-04-27T17:24:54.140Z",
+    "2.1.7": "2014-05-11T14:23:22.595Z",
+    "2.1.8": "2014-05-11T14:27:12.900Z",
+    "2.1.10": "2014-07-19T18:16:38.660Z",
+    "3.0.0": "2014-07-22T21:42:29.480Z",
+    "3.0.1": "2014-07-28T07:01:41.532Z",
+    "3.0.2": "2014-08-31T16:57:09.388Z",
+    "3.1.0": "2014-09-18T09:40:07.853Z",
+    "3.2.0": "2014-09-22T08:09:31.291Z",
+    "3.2.1": "2014-09-24T09:25:12.143Z",
+    "3.2.2": "2014-09-24T10:42:59.551Z",
+    "3.2.3": "2014-09-24T19:20:48.876Z",
+    "3.2.4": "2014-09-25T00:29:24.731Z",
+    "3.2.5": "2014-09-25T21:27:03.876Z",
+    "3.2.6": "2014-10-03T15:11:24.330Z",
+    "3.2.7": "2014-10-09T12:20:26.611Z",
+    "3.2.8": "2014-10-20T12:20:42.148Z",
+    "3.3.0": "2014-11-01T15:55:38.347Z",
+    "3.4.0": "2014-11-17T16:15:10.869Z",
+    "3.4.1": "2014-11-17T20:38:06.900Z",
+    "3.4.3": "2014-11-17T20:56:58.728Z",
+    "3.5.0": "2014-11-26T10:35:51.505Z",
+    "3.5.1": "2014-11-26T10:46:45.263Z",
+    "3.6.0": "2014-11-26T10:53:18.009Z",
+    "3.7.0": "2014-12-19T00:25:46.994Z",
+    "3.7.1": "2014-12-22T20:57:00.031Z",
+    "3.7.2": "2014-12-23T03:45:35.715Z",
+    "3.8.0": "2015-01-03T13:44:04.753Z",
+    "3.8.1": "2015-01-04T13:17:18.118Z",
+    "3.8.3": "2015-01-05T01:22:10.406Z",
+    "3.9.0": "2015-01-06T00:05:08.495Z",
+    "3.9.1": "2015-01-10T00:48:04.953Z",
+    "3.9.2": "2015-01-11T16:35:27.299Z",
+    "3.9.3": "2015-01-12T20:56:18.521Z",
+    "3.9.4": "2015-01-12T23:38:41.950Z",
+    "3.9.6": "2015-01-14T08:57:55.771Z",
+    "3.9.7": "2015-01-19T13:25:26.736Z",
+    "3.9.8": "2015-01-20T12:58:05.034Z",
+    "3.9.9": "2015-01-21T11:08:20.003Z",
+    "3.9.10": "2015-01-26T14:34:42.344Z",
+    "3.9.11": "2015-01-29T14:03:40.978Z",
+    "3.9.12": "2015-02-02T13:16:02.436Z",
+    "3.9.13": "2015-02-23T21:18:37.771Z",
+    "3.9.14": "2015-04-16T12:53:34.184Z",
+    "3.10.0": "2015-09-27T23:57:08.152Z",
+    "3.11.0": "2015-11-03T18:00:42.791Z",
+    "3.11.1": "2017-07-11T14:26:00.207Z",
+    "3.12.0": "2017-11-03T12:22:40.198Z"
+  },
+  "author": {
+    "name": "Dominic Tarr",
+    "email": "dominic.tarr@gmail.com",
+    "url": "dominictarr.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/crypto-browserify/crypto-browserify.git"
+  },
+  "users": {
+    "wenbing": true,
+    "stanzhai": true,
+    "ryanj": true,
+    "tangiblej": true,
+    "arnold-almeida": true,
+    "simplyianm": true,
+    "pcooney10": true,
+    "ersineser": true,
+    "alexbuczynsky": true,
+    "zwwggg": true,
+    "quafoo": true,
+    "yuxy": true
+  },
+  "homepage": "https://github.com/crypto-browserify/crypto-browserify",
+  "bugs": {
+    "url": "https://github.com/crypto-browserify/crypto-browserify/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md"
+}

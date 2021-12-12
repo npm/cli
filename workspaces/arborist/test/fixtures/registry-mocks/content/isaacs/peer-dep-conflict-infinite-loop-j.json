@@ -1,0 +1,118 @@
+{
+  "_id": "@isaacs/peer-dep-conflict-infinite-loop-j",
+  "_rev": "2-3d0eb4f4f6253db62b39384280c860ec",
+  "name": "@isaacs/peer-dep-conflict-infinite-loop-j",
+  "dist-tags": {
+    "latest": "3.0.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "@isaacs/peer-dep-conflict-infinite-loop-j",
+      "version": "1.0.0",
+      "gitHead": "ddeb2d9792ec2715bb77ac434b9e17255c4df2a0",
+      "_id": "@isaacs/peer-dep-conflict-infinite-loop-j@1.0.0",
+      "_nodeVersion": "16.5.0",
+      "_npmVersion": "7.24.0",
+      "dist": {
+        "integrity": "sha512-HBIUO+yxBeGEI1Y7yvPUKUHaRh2Js6blxpGsoUgGPGMBfn9aKuW5YbLVKopYi36sg8TuqO/nFVwrfw133MT0ig==",
+        "shasum": "4630753bac05f15c1d334466072c04061ac948b1",
+        "tarball": "https://registry.npmjs.org/@isaacs/peer-dep-conflict-infinite-loop-j/-/peer-dep-conflict-infinite-loop-j-1.0.0.tgz",
+        "fileCount": 1,
+        "unpackedSize": 80
+      },
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/peer-dep-conflict-infinite-loop-j_1.0.0_1632440803488_0.35977530130258506"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.0": {
+      "name": "@isaacs/peer-dep-conflict-infinite-loop-j",
+      "version": "2.0.0",
+      "gitHead": "ddeb2d9792ec2715bb77ac434b9e17255c4df2a0",
+      "_id": "@isaacs/peer-dep-conflict-infinite-loop-j@2.0.0",
+      "_nodeVersion": "16.5.0",
+      "_npmVersion": "7.24.0",
+      "dist": {
+        "integrity": "sha512-hjDyThziyxiTT9APh+EypHDbka3p6e0Tev7KP02LzIIyeKaxAx/bJIBDbg0f+fsAaagZe2wfaZYjjgxi/VZsog==",
+        "shasum": "b5b3df2323b636eb5ce600a1d2e078a60ea6e589",
+        "tarball": "https://registry.npmjs.org/@isaacs/peer-dep-conflict-infinite-loop-j/-/peer-dep-conflict-infinite-loop-j-2.0.0.tgz",
+        "fileCount": 1,
+        "unpackedSize": 80
+      },
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/peer-dep-conflict-infinite-loop-j_2.0.0_1632440804595_0.37897102771244184"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.0": {
+      "name": "@isaacs/peer-dep-conflict-infinite-loop-j",
+      "version": "3.0.0",
+      "gitHead": "137958c5358b73ba1c42fecf0ccab3f719fa2ec7",
+      "_id": "@isaacs/peer-dep-conflict-infinite-loop-j@3.0.0",
+      "_nodeVersion": "16.5.0",
+      "_npmVersion": "7.24.0",
+      "dist": {
+        "integrity": "sha512-Av9nGMCmuX5x7+qLAIDXzEYMhi0tGrVIUCRXStMJwApilynTXiSsIWPoTkQpscwDZlVE3Vt3zGmOOww6zLZY7g==",
+        "shasum": "b0644aa64c8022076fb869ef02884ae0683e480a",
+        "tarball": "https://registry.npmjs.org/@isaacs/peer-dep-conflict-infinite-loop-j/-/peer-dep-conflict-infinite-loop-j-3.0.0.tgz",
+        "fileCount": 1,
+        "unpackedSize": 80
+      },
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/peer-dep-conflict-infinite-loop-j_3.0.0_1632503163318_0.3314136535186496"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2021-09-23T23:46:43.448Z",
+    "1.0.0": "2021-09-23T23:46:43.606Z",
+    "modified": "2021-09-24T17:06:03.462Z",
+    "2.0.0": "2021-09-23T23:46:44.745Z",
+    "3.0.0": "2021-09-24T17:06:03.431Z"
+  },
+  "maintainers": [
+    {
+      "name": "isaacs",
+      "email": "i@izs.me"
+    }
+  ],
+  "readme": "ERROR: No README data found!",
+  "readmeFilename": ""
+}

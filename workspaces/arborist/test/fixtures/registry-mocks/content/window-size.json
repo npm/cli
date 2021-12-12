@@ -1,0 +1,1038 @@
+{
+  "_id": "window-size",
+  "_rev": "22-3494e109a877b755fb5f55ac629b04b4",
+  "name": "window-size",
+  "description": "Reliable way to get the height and width of terminal/console, since it's not calculated or updated the same way on all platforms, environments and node.js versions.",
+  "dist-tags": {
+    "latest": "1.1.1"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "window-size",
+      "description": "Reliable way to to get the height and width of the terminal/console in a node.js environment.",
+      "version": "0.1.0",
+      "homepage": "https://github.com/jonschlinkert/window-size",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jonschlinkert/window-size.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/window-size/issues"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://github.com/jonschlinkert/window-size/blob/master/LICENSE-MIT"
+        }
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">= 0.8.0"
+      },
+      "keywords": [
+        "window",
+        "console",
+        "terminal",
+        "tty"
+      ],
+      "_id": "window-size@0.1.0",
+      "dist": {
+        "shasum": "5438cd2ea93b202efa3a19fe8887aee7c94f9c9d",
+        "tarball": "https://registry.npmjs.org/window-size/-/window-size-0.1.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.24",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.1": {
+      "name": "window-size",
+      "description": "Reliable way to to get the height and width of the terminal/console in a node.js environment.",
+      "version": "0.1.1",
+      "homepage": "https://github.com/jonschlinkert/window-size",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/window-size.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/window-size/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">= 0.10.0"
+      },
+      "keywords": [
+        "console",
+        "height",
+        "resize",
+        "size",
+        "terminal",
+        "tty",
+        "width",
+        "window"
+      ],
+      "gitHead": "2bac24abaa4e4744df5c4b41f6f42b16f2b47302",
+      "_id": "window-size@0.1.1",
+      "scripts": {},
+      "_shasum": "976f3471f56c21d7cb6ebfd4b7616865a1629258",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "0.12.4",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "976f3471f56c21d7cb6ebfd4b7616865a1629258",
+        "tarball": "https://registry.npmjs.org/window-size/-/window-size-0.1.1.tgz"
+      },
+      "directories": {}
+    },
+    "0.1.2": {
+      "name": "window-size",
+      "description": "Reliable way to to get the height and width of the terminal/console in a node.js environment.",
+      "version": "0.1.2",
+      "homepage": "https://github.com/jonschlinkert/window-size",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/window-size.git"
+      },
+      "bin": {
+        "window-size": "cli.js"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/window-size/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "cli.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">= 0.10.0"
+      },
+      "keywords": [
+        "console",
+        "height",
+        "resize",
+        "size",
+        "terminal",
+        "tty",
+        "width",
+        "window"
+      ],
+      "gitHead": "e294ae2532db4bf88b375c13099b0af27ecfb1ec",
+      "_id": "window-size@0.1.2",
+      "scripts": {},
+      "_shasum": "10d53f0f8ee867e3a851f0be0e3100872329db3a",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "0.12.4",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "10d53f0f8ee867e3a851f0be0e3100872329db3a",
+        "tarball": "https://registry.npmjs.org/window-size/-/window-size-0.1.2.tgz"
+      },
+      "directories": {}
+    },
+    "0.1.3": {
+      "name": "window-size",
+      "description": "Reliable way to to get the height and width of the terminal/console in a node.js environment.",
+      "version": "0.1.3",
+      "homepage": "https://github.com/jonschlinkert/window-size",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "scripts": {
+        "pretest": "semistandard",
+        "test": "tap --coverage test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/window-size.git"
+      },
+      "bin": {
+        "window-size": "cli.js"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/window-size/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "cli.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">= 0.10.0"
+      },
+      "keywords": [
+        "console",
+        "height",
+        "resize",
+        "size",
+        "terminal",
+        "tty",
+        "width",
+        "window"
+      ],
+      "devDependencies": {
+        "semistandard": "^7.0.2",
+        "tap": "^2.2.1"
+      },
+      "gitHead": "b5fb901f06df8982af9e0c6bdf7680985c455bea",
+      "_id": "window-size@0.1.3",
+      "_shasum": "62189604c76db51757950eab93d200622ea5c64c",
+      "_from": ".",
+      "_npmVersion": "3.3.6",
+      "_nodeVersion": "5.0.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "62189604c76db51757950eab93d200622ea5c64c",
+        "tarball": "https://registry.npmjs.org/window-size/-/window-size-0.1.3.tgz"
+      },
+      "directories": {}
+    },
+    "0.1.4": {
+      "name": "window-size",
+      "description": "Reliable way to to get the height and width of the terminal/console in a node.js environment.",
+      "version": "0.1.4",
+      "homepage": "https://github.com/jonschlinkert/window-size",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/window-size.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/window-size/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "cli.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">= 0.10.0"
+      },
+      "scripts": {
+        "pretest": "semistandard",
+        "test": "tap --coverage test.js"
+      },
+      "bin": {
+        "window-size": "cli.js"
+      },
+      "devDependencies": {
+        "semistandard": "^7.0.2",
+        "tap": "^2.2.1"
+      },
+      "keywords": [
+        "console",
+        "height",
+        "resize",
+        "size",
+        "terminal",
+        "tty",
+        "width",
+        "window"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "yargs",
+            "lint-deps",
+            "base-cli"
+          ]
+        }
+      },
+      "gitHead": "619d0da99254adc5c6059c84e3ec2b24564add46",
+      "_id": "window-size@0.1.4",
+      "_shasum": "f8e1aa1ee5a53ec5bf151ffa09742a6ad7697876",
+      "_from": ".",
+      "_npmVersion": "3.3.6",
+      "_nodeVersion": "5.0.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "f8e1aa1ee5a53ec5bf151ffa09742a6ad7697876",
+        "tarball": "https://registry.npmjs.org/window-size/-/window-size-0.1.4.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.0": {
+      "name": "window-size",
+      "description": "Reliable way to to get the height and width of the terminal/console in a node.js environment.",
+      "version": "0.2.0",
+      "homepage": "https://github.com/jonschlinkert/window-size",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/window-size.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/window-size/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "cli.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">= 0.10.0"
+      },
+      "scripts": {
+        "pretest": "semistandard",
+        "test": "tap --coverage test.js"
+      },
+      "bin": {
+        "window-size": "cli.js"
+      },
+      "devDependencies": {
+        "semistandard": "^7.0.2",
+        "tap": "^2.2.1"
+      },
+      "keywords": [
+        "console",
+        "height",
+        "resize",
+        "size",
+        "terminal",
+        "tty",
+        "width",
+        "window"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "yargs",
+            "lint-deps",
+            "base-cli"
+          ]
+        }
+      },
+      "gitHead": "538b4406a6f30c9a2c8f84ba38bb34a39775bd2b",
+      "_id": "window-size@0.2.0",
+      "_shasum": "b4315bb4214a3d7058ebeee892e13fa24d98b075",
+      "_from": ".",
+      "_npmVersion": "3.3.12",
+      "_nodeVersion": "5.3.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "b4315bb4214a3d7058ebeee892e13fa24d98b075",
+        "tarball": "https://registry.npmjs.org/window-size/-/window-size-0.2.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.3.0": {
+      "name": "window-size",
+      "description": "Reliable way to to get the height and width of the terminal/console in a node.js environment.",
+      "version": "0.3.0",
+      "homepage": "https://github.com/jonschlinkert/window-size",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Benjamin E. Coe",
+          "email": "ben@npmjs.com",
+          "url": "https://twitter.com/benjamincoe"
+        },
+        {
+          "name": "Carlos Hernández Gómez",
+          "url": "https://github.com/karliky"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "email": "jon.schlinkert@sellside.com",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "name": "Siddharth Kannan",
+          "email": "kannan.siddharth12@gmail.com",
+          "url": "http://www.icyflame.me"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/window-size.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/window-size/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "cli.js",
+        "index.js"
+      ],
+      "main": "index.js",
+      "bin": {
+        "window-size": "cli.js"
+      },
+      "engines": {
+        "node": ">= 0.10.0"
+      },
+      "scripts": {
+        "test": "tap --coverage test.js"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^0.1.11",
+        "semistandard": "^9.2.1",
+        "tap": "^8.0.1"
+      },
+      "keywords": [
+        "console",
+        "height",
+        "resize",
+        "size",
+        "terminal",
+        "tty",
+        "width",
+        "window"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "base-cli",
+            "lint-deps",
+            "yargs"
+          ]
+        },
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "lint": {
+          "reflinks": true
+        },
+        "reflinks": [
+          "verb",
+          "verb-generate-readme"
+        ]
+      },
+      "gitHead": "4e43a7002ec4d0a1540ea2716fd404b105080938",
+      "_id": "window-size@0.3.0",
+      "_shasum": "b8f0b66e325d22160751e496337e44b45b727546",
+      "_from": ".",
+      "_npmVersion": "3.10.9",
+      "_nodeVersion": "6.9.2",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "b8f0b66e325d22160751e496337e44b45b727546",
+        "tarball": "https://registry.npmjs.org/window-size/-/window-size-0.3.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/window-size-0.3.0.tgz_1481394068971_0.060673162806779146"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "window-size",
+      "description": "Reliable way to get the height and width of terminal/console, since it's not calculated or updated the same way on all platforms, environments and node.js versions.",
+      "version": "1.0.0",
+      "homepage": "https://github.com/jonschlinkert/window-size",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Benjamin E. Coe",
+          "url": "https://twitter.com/benjamincoe"
+        },
+        {
+          "name": "Carlos Hernández Gómez",
+          "url": "http://www.twitter.com/k4rliky"
+        },
+        {
+          "name": "Jannis Redmann",
+          "url": "http://jannisr.de"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "name": "Siddharth Kannan",
+          "url": "http://icyflame.github.io"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/window-size.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/window-size/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "cli.js",
+        "index.js"
+      ],
+      "main": "index.js",
+      "bin": {
+        "window-size": "cli.js"
+      },
+      "engines": {
+        "node": ">= 0.10.0"
+      },
+      "dependencies": {
+        "define-property": "^1.0.0",
+        "is-number": "^3.0.0"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^0.1.12",
+        "justified": "^0.2.1",
+        "mocha": "^3.3.0"
+      },
+      "keywords": [
+        "columns",
+        "console",
+        "darwin",
+        "height",
+        "lines",
+        "redirected",
+        "resize",
+        "rows",
+        "size",
+        "term",
+        "term-size",
+        "terminal",
+        "tty",
+        "unix",
+        "width",
+        "win",
+        "window",
+        "windows"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "base-cli",
+            "lint-deps",
+            "yargs"
+          ]
+        },
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "bb586fe68011f3859be7ed964e0922f13965fa29",
+      "_id": "window-size@1.0.0",
+      "scripts": {},
+      "_shasum": "cd56f763f0b6f3a9ddc9fd9d6e4737d372e91062",
+      "_from": ".",
+      "_npmVersion": "4.2.0",
+      "_nodeVersion": "7.7.3",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "cd56f763f0b6f3a9ddc9fd9d6e4737d372e91062",
+        "tarball": "https://registry.npmjs.org/window-size/-/window-size-1.0.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/window-size-1.0.0.tgz_1494144925590_0.0547757048625499"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "window-size",
+      "description": "Reliable way to get the height and width of terminal/console, since it's not calculated or updated the same way on all platforms, environments and node.js versions.",
+      "version": "1.1.0",
+      "homepage": "https://github.com/jonschlinkert/window-size",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Benjamin E. Coe",
+          "url": "https://twitter.com/benjamincoe"
+        },
+        {
+          "name": "Brian Woodward",
+          "url": "https://twitter.com/doowb"
+        },
+        {
+          "name": "Carlos Hernández Gómez",
+          "url": "http://www.twitter.com/k4rliky"
+        },
+        {
+          "name": "Jannis Redmann",
+          "url": "http://jannisr.de"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "name": "Siddharth Kannan",
+          "url": "http://icyflame.github.io"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/window-size.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/window-size/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "cli.js",
+        "index.js",
+        "utils.js"
+      ],
+      "main": "index.js",
+      "bin": {
+        "window-size": "cli.js"
+      },
+      "engines": {
+        "node": ">= 0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "define-property": "^1.0.0",
+        "is-number": "^3.0.0"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^0.1.12",
+        "justified": "^0.2.1",
+        "mocha": "^3.3.0"
+      },
+      "keywords": [
+        "columns",
+        "console",
+        "darwin",
+        "height",
+        "lines",
+        "redirected",
+        "resize",
+        "rows",
+        "size",
+        "term",
+        "term-size",
+        "terminal",
+        "tty",
+        "unix",
+        "width",
+        "win",
+        "window",
+        "windows"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "base-cli",
+            "lint-deps",
+            "yargs"
+          ]
+        },
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "fe2d2c1f8603d187f7fee1cfdb0cd5cc72f1dd52",
+      "_id": "window-size@1.1.0",
+      "_shasum": "3b402d3244f35561db2c9761ad9d1e5286b07a2d",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "6.10.1",
+      "_npmUser": {
+        "name": "doowb",
+        "email": "brian.woodward@gmail.com"
+      },
+      "dist": {
+        "shasum": "3b402d3244f35561db2c9761ad9d1e5286b07a2d",
+        "tarball": "https://registry.npmjs.org/window-size/-/window-size-1.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/window-size-1.1.0.tgz_1498230871960_0.6713659495580941"
+      },
+      "directories": {}
+    },
+    "1.1.1": {
+      "name": "window-size",
+      "description": "Reliable way to get the height and width of terminal/console, since it's not calculated or updated the same way on all platforms, environments and node.js versions.",
+      "version": "1.1.1",
+      "homepage": "https://github.com/jonschlinkert/window-size",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Benjamin E. Coe",
+          "url": "https://twitter.com/benjamincoe"
+        },
+        {
+          "name": "Brian Woodward",
+          "url": "https://twitter.com/doowb"
+        },
+        {
+          "name": "Carlos Hernández Gómez",
+          "url": "http://www.twitter.com/k4rliky"
+        },
+        {
+          "name": "Jannis Redmann",
+          "url": "http://jannisr.de"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "name": "Siddharth Kannan",
+          "url": "http://icyflame.github.io"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/window-size.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/window-size/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "cli.js",
+        "index.js",
+        "utils.js"
+      ],
+      "main": "index.js",
+      "bin": {
+        "window-size": "cli.js"
+      },
+      "engines": {
+        "node": ">= 0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "define-property": "^1.0.0",
+        "is-number": "^3.0.0"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^0.1.12",
+        "justified": "^0.2.1",
+        "mocha": "^3.3.0"
+      },
+      "keywords": [
+        "columns",
+        "console",
+        "darwin",
+        "height",
+        "lines",
+        "redirected",
+        "resize",
+        "rows",
+        "size",
+        "term",
+        "term-size",
+        "terminal",
+        "tty",
+        "unix",
+        "width",
+        "win",
+        "window",
+        "windows"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "base-cli",
+            "lint-deps",
+            "yargs"
+          ]
+        },
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "28f3e0ffba18846d5db4919a65804aa076e4ffc5",
+      "_id": "window-size@1.1.1",
+      "_npmVersion": "6.1.0",
+      "_nodeVersion": "10.3.0",
+      "_npmUser": {
+        "name": "doowb",
+        "email": "brian.woodward@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-5D/9vujkmVQ7pSmc0SCBmHXbkv6eaHwXEx65MywhmUMsI8sGqJ972APq1lotfcwMKPFLuCFfL8xGHLIp7jaBmA==",
+        "shasum": "9858586580ada78ab26ecd6978a6e03115c1af20",
+        "tarball": "https://registry.npmjs.org/window-size/-/window-size-1.1.1.tgz",
+        "fileCount": 6,
+        "unpackedSize": 12638,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbW362CRA9TVsSAnZWagAAyiMQAKRjQV07wf4HYVmWOgth\ncWuJHa/JKnEVGwDwQ50P+hyr88ItzQWvIleW2psXfWlbfvvIPyL1W2eKdqb0\nLMgpCLOwjHZACE2pWkBhvx2U1aZMPiKy4epFhGqZhgAdI0JtakmPbNq80VFP\n7RDpBVtaCvdiGMYwiBHnwRKP61mcGgSH/AvG0lGrfOty0cEOIPpK5Y9UE2kx\n4/PyVmc5etmCCYtnJQNWxNi7RtEEDdxaORGn09rVM/xBok++OrZ/fzbaWPi8\n6lV8oYwgDrpjU8J29iC3uEF5uTkfpUEBtz7HTB5hd/pnm1SQ71EOXU5NlXQ+\nfN36G0A0GUvr1o2QQLrY+J6mYRrGG0zVZToSNMDz8RCGuExXWEEZuEakBb96\nqAT8NOMUQ7BHDpGTNa+JssBMCL3KeKd3QFK5wbkZuQbUXv6WN7EVanJTyebE\nZiV8N4KUkAQpHKCjSyGohd/63ROqUXIN5iSOe+yfhX/cRbn1kB3y0QQu5poQ\nHrFINMKuh9AZ7Zups2zkbtwZetuSXmdPNy4aZvMH1bPqxm+/qSVxzl88JdNG\nQI5Yf/74fjmKuKsdKrdHb9Yxz6k0A9vtr2e0+UYfyrjfIwjUmtUzdRiBEz5h\nAGs9njtPBCAyGDCaFQTD89if/OJmE3p+UqAO1jKcjFlrqu2Arww5qSQKCRU7\n4Xsb\r\n=KcA1\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "brian.woodward@gmail.com",
+          "name": "doowb"
+        },
+        {
+          "email": "github@sellside.com",
+          "name": "jonschlinkert"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/window-size_1.1.1_1532722870764_0.8558392465584159"
+      }
+    }
+  },
+  "readme": "# window-size [![NPM version](https://img.shields.io/npm/v/window-size.svg?style=flat)](https://www.npmjs.com/package/window-size) [![NPM monthly downloads](https://img.shields.io/npm/dm/window-size.svg?style=flat)](https://npmjs.org/package/window-size)  [![NPM total downloads](https://img.shields.io/npm/dt/window-size.svg?style=flat)](https://npmjs.org/package/window-size) [![Linux Build Status](https://img.shields.io/travis/jonschlinkert/window-size.svg?style=flat&label=Travis)](https://travis-ci.org/jonschlinkert/window-size) [![Windows Build Status](https://img.shields.io/appveyor/ci/jonschlinkert/window-size.svg?style=flat&label=AppVeyor)](https://ci.appveyor.com/project/jonschlinkert/window-size)\n\n> Reliable way to get the height and width of terminal/console, since it's not calculated or updated the same way on all platforms, environments and node.js versions.\n\n## Install\n\nInstall with [npm](https://www.npmjs.com/):\n\n```sh\n$ npm install --save window-size\n```\n\n## Usage\n\n```js\nvar size = require('window-size');\n```\n\n## CLI\n\n```sh\n$ window-size\n# height: 40\n# width : 145\n```\n\n## API\n\n### windowSize\n\nThe main export is either an object with `width` and `height` properties, or `undefined` if unable to get width and height.\n\n```js\nvar size = require('window-size');\nconsole.log(size); \n//=> {width: 80, height: 25}\n```\n\n### .get\n\nCalls the main function to get the up-to-date window size.\n\n```js\nconsole.log(size.get());\n//=> {width: 80, height: 25}\n```\n\n**Example**\n\nSee [example.js](example.js) for the code used in the below gif.\n\n```js\nprocess.stdout.on('resize', function() {\n  console.log(size.get());\n});\n```\n\n![resize event example](https://github.com/jonschlinkert/window-size/blob/master/resize.gif)\n\n**HEADS UP!**\n\nNote that some platforms only provide the initial terminal size, not the actual size after it has been resized by the user.\n\n### .env\n\nGet `process.env.COLUMNS` and `process.env.ROWS`, if defined. Called by the main function if for some reason size was not available from `process.stdout` and `process.stderr`.\n\n```js\nconsole.log(size.env());\n```\n\n### .tty\n\nAttempts to get the size from `tty`. Called by the main function if for some reason size was not available from `process.stdout`, `process.stderr` or `process.env`.\n\n```js\nconsole.log(size.tty());\n```\n\n### .win\n\nGet the terminal size in Windows 10+.\n\n```js\nconsole.log(size.win());\n```\n\nNote that this method calls [execSync](https://nodejs.org/api/child_process.html#child_process_child_process_execsync_command_options) to get the size, and must be called directly, as it **is not** called by the main function.\n\n### .tput\n\nGet the terminal size by calling the unix `$ tput` command.\n\n```js\nconsole.log(size.tput());\n```\n\nNote that this method calls [execSync](https://nodejs.org/api/child_process.html#child_process_child_process_execsync_command_options) to get the size, and must be called directly, as it **is not** called by the main function.\n\n### utils\n\nIn some environments the main export may not be able to find a window size using the default methods. In this case, `size` will be `undefined` and the functions will not be exported.\n\nBecause of this, the functions have been exported in a separate file and can be required directly.\n\n```js\nvar utils = require('window-size/utils');\nconsole.log(utils.win());\n```\n\n## About\n\n### Related projects\n\n* [base-cli](https://www.npmjs.com/package/base-cli): Plugin for base-methods that maps built-in methods to CLI args (also supports methods from a… [more](https://github.com/node-base/base-cli) | [homepage](https://github.com/node-base/base-cli \"Plugin for base-methods that maps built-in methods to CLI args (also supports methods from a few plugins, like 'base-store', 'base-options' and 'base-data'.\")\n* [lint-deps](https://www.npmjs.com/package/lint-deps): CLI tool that tells you when dependencies are missing from package.json and offers you a… [more](https://github.com/jonschlinkert/lint-deps) | [homepage](https://github.com/jonschlinkert/lint-deps \"CLI tool that tells you when dependencies are missing from package.json and offers you a choice to install them. Also tells you when dependencies are listed in package.json but are not being used anywhere in your project. Node.js command line tool and API\")\n* [yargs](https://www.npmjs.com/package/yargs): yargs the modern, pirate-themed, successor to optimist. | [homepage](http://yargs.js.org/ \"yargs the modern, pirate-themed, successor to optimist.\")\n\n### Contributing\n\nPull requests and stars are always welcome. For bugs and feature requests, [please create an issue](../../issues/new).\n\n### Contributors\n\n| **Commits** | **Contributor** |  \n| --- | --- |  \n| 23 | [jonschlinkert](https://github.com/jonschlinkert) |  \n| 11 | [doowb](https://github.com/doowb) |  \n| 4  | [bcoe](https://github.com/bcoe) |  \n| 3  | [icyflame](https://github.com/icyflame) |  \n| 2  | [derhuerst](https://github.com/derhuerst) |  \n| 1  | [karliky](https://github.com/karliky) |  \n\n### Building docs\n\n_(This project's readme.md is generated by [verb](https://github.com/verbose/verb-generate-readme), please don't edit the readme directly. Any changes to the readme must be made in the [.verb.md](.verb.md) readme template.)_\n\nTo generate the readme, run the following command:\n\n```sh\n$ npm install -g verbose/verb#dev verb-generate-readme && verb\n```\n\n### Running tests\n\nRunning and reviewing unit tests is a great way to get familiarized with a library and its API. You can install dependencies and run tests with the following command:\n\n```sh\n$ npm install && npm test\n```\n\n### Author\n\n**Jon Schlinkert**\n\n* [github/jonschlinkert](https://github.com/jonschlinkert)\n* [twitter/jonschlinkert](https://twitter.com/jonschlinkert)\n\n### License\n\nCopyright © 2018, [Jon Schlinkert](https://github.com/jonschlinkert).\nReleased under the [MIT License](LICENSE).\n\n***\n\n_This file was generated by [verb-generate-readme](https://github.com/verbose/verb-generate-readme), v0.7.0, on July 27, 2018._",
+  "maintainers": [
+    {
+      "email": "brian.woodward@gmail.com",
+      "name": "doowb"
+    },
+    {
+      "email": "github@sellside.com",
+      "name": "jonschlinkert"
+    }
+  ],
+  "time": {
+    "modified": "2018-07-27T20:21:16.236Z",
+    "created": "2014-02-15T03:41:48.322Z",
+    "0.1.0": "2014-02-15T03:41:48.322Z",
+    "0.1.1": "2015-06-07T14:26:37.269Z",
+    "0.1.2": "2015-07-03T08:31:59.347Z",
+    "0.1.3": "2015-11-15T19:28:15.280Z",
+    "0.1.4": "2015-11-15T19:34:44.955Z",
+    "0.2.0": "2016-01-26T23:02:04.787Z",
+    "0.3.0": "2016-12-10T18:21:09.615Z",
+    "1.0.0": "2017-05-07T08:15:26.933Z",
+    "1.1.0": "2017-06-23T15:14:32.058Z",
+    "1.1.1": "2018-07-27T20:21:10.829Z"
+  },
+  "readmeFilename": "README.md",
+  "homepage": "https://github.com/jonschlinkert/window-size",
+  "keywords": [
+    "columns",
+    "console",
+    "darwin",
+    "height",
+    "lines",
+    "redirected",
+    "resize",
+    "rows",
+    "size",
+    "term",
+    "term-size",
+    "terminal",
+    "tty",
+    "unix",
+    "width",
+    "win",
+    "window",
+    "windows"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonschlinkert/window-size.git"
+  },
+  "author": {
+    "name": "Jon Schlinkert",
+    "url": "https://github.com/jonschlinkert"
+  },
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/window-size/issues"
+  },
+  "license": "MIT",
+  "users": {
+    "icyflame": true,
+    "jonschlinkert": true,
+    "mojaray2k": true,
+    "artjacob": true,
+    "blog": true,
+    "wayn": true,
+    "keenwon": true,
+    "pagoru": true,
+    "bobjohnson23": true
+  },
+  "contributors": [
+    {
+      "name": "Benjamin E. Coe",
+      "url": "https://twitter.com/benjamincoe"
+    },
+    {
+      "name": "Brian Woodward",
+      "url": "https://twitter.com/doowb"
+    },
+    {
+      "name": "Carlos Hernández Gómez",
+      "url": "http://www.twitter.com/k4rliky"
+    },
+    {
+      "name": "Jannis Redmann",
+      "url": "http://jannisr.de"
+    },
+    {
+      "name": "Jon Schlinkert",
+      "url": "http://twitter.com/jonschlinkert"
+    },
+    {
+      "name": "Siddharth Kannan",
+      "url": "http://icyflame.github.io"
+    }
+  ],
+  "_attachments": {}
+}

@@ -1,0 +1,102 @@
+{
+  "_id": "to-arraybuffer",
+  "_rev": "1-f7aba78f216e07c4b06dfdb364e2c136",
+  "name": "to-arraybuffer",
+  "description": "Get an ArrayBuffer from a Buffer as fast as possible",
+  "dist-tags": {
+    "latest": "1.0.1"
+  },
+  "versions": {
+    "1.0.1": {
+      "name": "to-arraybuffer",
+      "version": "1.0.1",
+      "description": "Get an ArrayBuffer from a Buffer as fast as possible",
+      "main": "index.js",
+      "scripts": {
+        "test": "npm run test-node && ([ -n \"${TRAVIS_PULL_REQUEST}\" -a \"${TRAVIS_PULL_REQUEST}\" != 'false' ] || npm run test-browser)",
+        "test-node": "tape test.js",
+        "test-browser": "zuul --no-coverage -- test.js",
+        "test-browser-local": "zuul --local 8080 --no-coverage -- test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jhiesey/to-arraybuffer.git"
+      },
+      "keywords": [
+        "buffer",
+        "to",
+        "arraybuffer",
+        "fast",
+        "read",
+        "only"
+      ],
+      "author": {
+        "name": "John Hiesey"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/jhiesey/to-arraybuffer/issues"
+      },
+      "homepage": "https://github.com/jhiesey/to-arraybuffer#readme",
+      "devDependencies": {
+        "tape": "^4.4.0",
+        "zuul": "^3.9.0"
+      },
+      "gitHead": "6502d9850e70ba7935a7df4ad86b358fc216f9f0",
+      "_id": "to-arraybuffer@1.0.1",
+      "_shasum": "7d229b1fcc637e466ca081180836a7aabff83f43",
+      "_from": ".",
+      "_npmVersion": "3.3.12",
+      "_nodeVersion": "5.3.0",
+      "_npmUser": {
+        "name": "jhiesey",
+        "email": "john@hiesey.com"
+      },
+      "dist": {
+        "shasum": "7d229b1fcc637e466ca081180836a7aabff83f43",
+        "tarball": "https://registry.npmjs.org/to-arraybuffer/-/to-arraybuffer-1.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "jhiesey",
+          "email": "john@hiesey.com"
+        }
+      ],
+      "directories": {}
+    }
+  },
+  "readme": "# to-arraybuffer [![Build Status](https://travis-ci.org/jhiesey/to-arraybuffer.svg?branch=master)](https://travis-ci.org/jhiesey/to-arraybuffer)\n\n[![Sauce Test Status](https://saucelabs.com/browser-matrix/to-arraybuffer.svg)](https://saucelabs.com/u/to-arraybuffer)\n\nConvert from a Buffer to an ArrayBuffer as fast as possible.\n\nNote that in some cases the returned ArrayBuffer is backed by the same memory as the original\nBuffer (but in other cases it is a copy), so **modifying the ArrayBuffer is not recommended**.\n\nThis module is designed to work both in node.js and in all browsers with ArrayBuffer support\nwhen using [the Buffer implementation provided by Browserify](https://www.npmjs.com/package/buffer).\n\n## Usage\n\n``` js\nvar toArrayBuffer = require('to-arraybuffer')\n\nvar buffer = new Buffer(100)\n// Fill the buffer with some data\n\nvar ab = toArrayBuffer(buffer)\n// `ab` now contains the same data as `buffer`\n```\n\n## License\n\nMIT",
+  "maintainers": [
+    {
+      "name": "jhiesey",
+      "email": "john@hiesey.com"
+    }
+  ],
+  "time": {
+    "modified": "2016-01-13T04:35:30.645Z",
+    "created": "2016-01-13T04:35:30.645Z",
+    "1.0.1": "2016-01-13T04:35:30.645Z"
+  },
+  "homepage": "https://github.com/jhiesey/to-arraybuffer#readme",
+  "keywords": [
+    "buffer",
+    "to",
+    "arraybuffer",
+    "fast",
+    "read",
+    "only"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jhiesey/to-arraybuffer.git"
+  },
+  "author": {
+    "name": "John Hiesey"
+  },
+  "bugs": {
+    "url": "https://github.com/jhiesey/to-arraybuffer/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "_attachments": {}
+}

@@ -1,0 +1,617 @@
+{
+  "_id": "brorand",
+  "_rev": "16-24e78d45ca110323f7e2c6aa26d22c9c",
+  "name": "brorand",
+  "description": "Random number generator for browsers and node.js",
+  "dist-tags": {
+    "latest": "1.1.0"
+  },
+  "versions": {
+    "1.0.1": {
+      "name": "brorand",
+      "version": "1.0.1",
+      "description": "Random number generator for browsers and node.js",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/**/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/brorand"
+      },
+      "keywords": [
+        "Random",
+        "RNG",
+        "browser",
+        "crypto"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/brorand/issues"
+      },
+      "homepage": "https://github.com/indutny/brorand",
+      "devDependencies": {
+        "mocha": "^2.0.1"
+      },
+      "gitHead": "dd4ab8f59410d655963920c8a767cc01e5cab361",
+      "_id": "brorand@1.0.1",
+      "_shasum": "c77a5521dcd2e955f40c00f7d00fbe6a0c6fb313",
+      "_from": ".",
+      "_npmVersion": "2.1.6",
+      "_nodeVersion": "0.10.33",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "c77a5521dcd2e955f40c00f7d00fbe6a0c6fb313",
+        "tarball": "https://registry.npmjs.org/brorand/-/brorand-1.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "brorand",
+      "version": "1.0.2",
+      "description": "Random number generator for browsers and node.js",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/**/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/brorand"
+      },
+      "keywords": [
+        "Random",
+        "RNG",
+        "browser",
+        "crypto"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/brorand/issues"
+      },
+      "homepage": "https://github.com/indutny/brorand",
+      "devDependencies": {
+        "mocha": "^2.0.1"
+      },
+      "optionalDependencies": {
+        "randy.js": "^1.5.1"
+      },
+      "gitHead": "2e4bd3c926d446fd3298a3e6ae5e145069955d7f",
+      "dependencies": {
+        "randy.js": "^1.5.1"
+      },
+      "_id": "brorand@1.0.2",
+      "_shasum": "d94c39f5dd37fa1d984462544e00b0d4b63705a4",
+      "_from": ".",
+      "_npmVersion": "2.1.6",
+      "_nodeVersion": "0.10.33",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "d94c39f5dd37fa1d984462544e00b0d4b63705a4",
+        "tarball": "https://registry.npmjs.org/brorand/-/brorand-1.0.2.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.3": {
+      "name": "brorand",
+      "version": "1.0.3",
+      "description": "Random number generator for browsers and node.js",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/**/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/brorand"
+      },
+      "keywords": [
+        "Random",
+        "RNG",
+        "browser",
+        "crypto"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/brorand/issues"
+      },
+      "homepage": "https://github.com/indutny/brorand",
+      "devDependencies": {
+        "mocha": "^2.0.1"
+      },
+      "gitHead": "3cf9b2978b2c18a8feeadc62049a1a2861a530bd",
+      "_id": "brorand@1.0.3",
+      "_shasum": "03d280ae9a93695f2c6b13aed710cf17a7ae6962",
+      "_from": ".",
+      "_npmVersion": "2.1.6",
+      "_nodeVersion": "0.10.33",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "03d280ae9a93695f2c6b13aed710cf17a7ae6962",
+        "tarball": "https://registry.npmjs.org/brorand/-/brorand-1.0.3.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.4": {
+      "name": "brorand",
+      "version": "1.0.4",
+      "description": "Random number generator for browsers and node.js",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/**/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/brorand"
+      },
+      "keywords": [
+        "Random",
+        "RNG",
+        "browser",
+        "crypto"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/brorand/issues"
+      },
+      "homepage": "https://github.com/indutny/brorand",
+      "devDependencies": {
+        "mocha": "^2.0.1"
+      },
+      "gitHead": "ced954466d786a8d6c2d49114a3b9b65388e547c",
+      "_id": "brorand@1.0.4",
+      "_shasum": "ffee2db32e22b60f38ee8828cffc41b60ea35cb4",
+      "_from": ".",
+      "_npmVersion": "2.1.6",
+      "_nodeVersion": "0.10.33",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "ffee2db32e22b60f38ee8828cffc41b60ea35cb4",
+        "tarball": "https://registry.npmjs.org/brorand/-/brorand-1.0.4.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.5": {
+      "name": "brorand",
+      "version": "1.0.5",
+      "description": "Random number generator for browsers and node.js",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/**/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/brorand"
+      },
+      "keywords": [
+        "Random",
+        "RNG",
+        "browser",
+        "crypto"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/brorand/issues"
+      },
+      "homepage": "https://github.com/indutny/brorand",
+      "devDependencies": {
+        "mocha": "^2.0.1"
+      },
+      "gitHead": "571027e0ffa1119c720bcdb8aa9c987f63beb5a6",
+      "_id": "brorand@1.0.5",
+      "_shasum": "07b54ca30286abd1718a0e2a830803efdc9bfa04",
+      "_from": ".",
+      "_npmVersion": "2.1.6",
+      "_nodeVersion": "0.10.33",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "07b54ca30286abd1718a0e2a830803efdc9bfa04",
+        "tarball": "https://registry.npmjs.org/brorand/-/brorand-1.0.5.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.6": {
+      "name": "brorand",
+      "version": "1.0.6",
+      "description": "Random number generator for browsers and node.js",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/**/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/brorand.git"
+      },
+      "keywords": [
+        "Random",
+        "RNG",
+        "browser",
+        "crypto"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/brorand/issues"
+      },
+      "homepage": "https://github.com/indutny/brorand",
+      "devDependencies": {
+        "mocha": "^2.0.1"
+      },
+      "browser": {
+        "crypto": false
+      },
+      "gitHead": "f077f0a95c627f2707d7b7699ccddca308a58d15",
+      "_id": "brorand@1.0.6",
+      "_shasum": "4028706b915f91f7b349a2e0bf3c376039d216e5",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.3.0",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "dist": {
+        "shasum": "4028706b915f91f7b349a2e0bf3c376039d216e5",
+        "tarball": "https://registry.npmjs.org/brorand/-/brorand-1.0.6.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/brorand-1.0.6.tgz_1473323651066_0.41867022518999875"
+      },
+      "directories": {}
+    },
+    "1.0.7": {
+      "name": "brorand",
+      "version": "1.0.7",
+      "description": "Random number generator for browsers and node.js",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/**/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/brorand.git"
+      },
+      "keywords": [
+        "Random",
+        "RNG",
+        "browser",
+        "crypto"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/brorand/issues"
+      },
+      "homepage": "https://github.com/indutny/brorand",
+      "devDependencies": {
+        "mocha": "^2.0.1"
+      },
+      "browser": {
+        "crypto": false
+      },
+      "gitHead": "8d5de11ca922e2382e3876221cb07a3e8567f498",
+      "_id": "brorand@1.0.7",
+      "_shasum": "6677fa5e4901bdbf9c9ec2a748e28dca407a9bfc",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "7.0.0",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "dist": {
+        "shasum": "6677fa5e4901bdbf9c9ec2a748e28dca407a9bfc",
+        "tarball": "https://registry.npmjs.org/brorand/-/brorand-1.0.7.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/brorand-1.0.7.tgz_1486421795037_0.6743347148876637"
+      },
+      "directories": {}
+    },
+    "1.0.8": {
+      "name": "brorand",
+      "version": "1.0.8",
+      "description": "Random number generator for browsers and node.js",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/**/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/brorand.git"
+      },
+      "keywords": [
+        "Random",
+        "RNG",
+        "browser",
+        "crypto"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/brorand/issues"
+      },
+      "homepage": "https://github.com/indutny/brorand",
+      "devDependencies": {
+        "mocha": "^2.0.1"
+      },
+      "browser": {
+        "crypto": false
+      },
+      "gitHead": "4bd181f44bdb7c2006cf6016c2ad8c5cd0117fe2",
+      "_id": "brorand@1.0.8",
+      "_shasum": "2c2fe4082fbfed85fc3507b997482065400e0747",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "7.0.0",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "dist": {
+        "shasum": "2c2fe4082fbfed85fc3507b997482065400e0747",
+        "tarball": "https://registry.npmjs.org/brorand/-/brorand-1.0.8.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/brorand-1.0.8.tgz_1487799210726_0.276269624941051"
+      },
+      "directories": {}
+    },
+    "1.0.9": {
+      "name": "brorand",
+      "version": "1.0.9",
+      "description": "Random number generator for browsers and node.js",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/**/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/brorand.git"
+      },
+      "keywords": [
+        "Random",
+        "RNG",
+        "browser",
+        "crypto"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/brorand/issues"
+      },
+      "homepage": "https://github.com/indutny/brorand",
+      "devDependencies": {
+        "mocha": "^2.0.1"
+      },
+      "browser": {
+        "crypto": false
+      },
+      "gitHead": "c3f39069ca3108c6a893c8471f35c165e951735f",
+      "_id": "brorand@1.0.9",
+      "_shasum": "90afcee4020641b87136cb92b6efb60b6316ada1",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "7.0.0",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "dist": {
+        "shasum": "90afcee4020641b87136cb92b6efb60b6316ada1",
+        "tarball": "https://registry.npmjs.org/brorand/-/brorand-1.0.9.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/brorand-1.0.9.tgz_1487799387572_0.12808308168314397"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "brorand",
+      "version": "1.1.0",
+      "description": "Random number generator for browsers and node.js",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/**/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/brorand.git"
+      },
+      "keywords": [
+        "Random",
+        "RNG",
+        "browser",
+        "crypto"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/brorand/issues"
+      },
+      "homepage": "https://github.com/indutny/brorand",
+      "devDependencies": {
+        "mocha": "^2.0.1"
+      },
+      "browser": {
+        "crypto": false
+      },
+      "gitHead": "ddc4f9344287769d7e2c2ea987d26bbeec5456b4",
+      "_id": "brorand@1.1.0",
+      "_shasum": "12c25efe40a45e3c323eb8675a0a0ce57b22371f",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "7.0.0",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "dist": {
+        "shasum": "12c25efe40a45e3c323eb8675a0a0ce57b22371f",
+        "tarball": "https://registry.npmjs.org/brorand/-/brorand-1.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/brorand-1.1.0.tgz_1487799559972_0.5302366453688592"
+      },
+      "directories": {}
+    }
+  },
+  "readme": "# Brorand\n\n#### LICENSE\n\nThis software is licensed under the MIT License.\n\nCopyright Fedor Indutny, 2014.\n\nPermission is hereby granted, free of charge, to any person obtaining a\ncopy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to permit\npersons to whom the Software is furnished to do so, subject to the\nfollowing conditions:\n\nThe above copyright notice and this permission notice shall be included\nin all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS\nOR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN\nNO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,\nDAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR\nOTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE\nUSE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+  "maintainers": [
+    {
+      "name": "indutny",
+      "email": "fedor@indutny.com"
+    }
+  ],
+  "time": {
+    "modified": "2017-02-22T21:39:22.072Z",
+    "created": "2014-11-05T17:05:00.269Z",
+    "1.0.1": "2014-11-05T17:05:00.269Z",
+    "1.0.2": "2014-11-07T14:52:57.839Z",
+    "1.0.3": "2014-11-07T15:03:19.052Z",
+    "1.0.4": "2014-11-07T15:08:12.128Z",
+    "1.0.5": "2014-11-19T17:54:12.742Z",
+    "1.0.6": "2016-09-08T08:34:12.644Z",
+    "1.0.7": "2017-02-06T22:56:35.699Z",
+    "1.0.8": "2017-02-22T21:33:32.764Z",
+    "1.0.9": "2017-02-22T21:36:28.258Z",
+    "1.1.0": "2017-02-22T21:39:22.072Z"
+  },
+  "homepage": "https://github.com/indutny/brorand",
+  "keywords": [
+    "Random",
+    "RNG",
+    "browser",
+    "crypto"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/indutny/brorand.git"
+  },
+  "author": {
+    "name": "Fedor Indutny",
+    "email": "fedor@indutny.com"
+  },
+  "bugs": {
+    "url": "https://github.com/indutny/brorand/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "users": {
+    "detj": true
+  },
+  "_attachments": {}
+}

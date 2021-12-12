@@ -1,0 +1,796 @@
+{
+  "_id": "@types/ua-parser-js",
+  "_rev": "376-99c5815e715c9b695dc0fde9cc32e280",
+  "name": "@types/ua-parser-js",
+  "description": "TypeScript definitions for ua-parser-js",
+  "dist-tags": {
+    "latest": "0.7.33",
+    "ts2.0": "0.7.33",
+    "ts2.1": "0.7.33",
+    "ts2.2": "0.7.33",
+    "ts2.3": "0.7.33",
+    "ts2.4": "0.7.33",
+    "ts2.5": "0.7.33",
+    "ts2.6": "0.7.33",
+    "ts2.7": "0.7.33",
+    "ts2.8": "0.7.33",
+    "ts2.9": "0.7.33",
+    "ts3.0": "0.7.33",
+    "ts3.1": "0.7.33",
+    "ts3.2": "0.7.33",
+    "ts3.3": "0.7.33",
+    "ts3.4": "0.7.33",
+    "ts3.5": "0.7.33",
+    "ts3.6": "0.7.33",
+    "ts3.7": "0.7.33",
+    "ts3.8": "0.7.33",
+    "ts3.9": "0.7.33",
+    "ts4.0": "0.7.33",
+    "ts4.1": "0.7.33"
+  },
+  "versions": {
+    "0.7.13-alpha": {
+      "name": "@types/ua-parser-js",
+      "version": "0.7.13-alpha",
+      "description": "Type definitions for ua-parser-js v0.7.10 from https://www.github.com/DefinitelyTyped/DefinitelyTyped",
+      "main": "",
+      "scripts": {},
+      "author": {
+        "name": "Viktor Miroshnikov",
+        "email": "https://github.com/superduper"
+      },
+      "license": "MIT",
+      "typings": "index.d.ts",
+      "dependencies": {},
+      "_id": "@types/ua-parser-js@0.7.13-alpha",
+      "_shasum": "1d39db6f5cc579961c3118dddfe3e9afb22ac190",
+      "_from": "output\\ua-parser-js",
+      "_resolved": "file:output\\ua-parser-js",
+      "_npmVersion": "3.8.2",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "types",
+        "email": "ryan.cavanaugh@microsoft.com"
+      },
+      "dist": {
+        "shasum": "1d39db6f5cc579961c3118dddfe3e9afb22ac190",
+        "tarball": "https://registry.npmjs.org/@types/ua-parser-js/-/ua-parser-js-0.7.13-alpha.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/ua-parser-js-0.7.13-alpha.tgz_1463512115052_0.7333666081540287"
+      },
+      "directories": {}
+    },
+    "0.7.14-alpha": {
+      "name": "@types/ua-parser-js",
+      "version": "0.7.14-alpha",
+      "description": "Type definitions for ua-parser-js v0.7.10 from https://www.github.com/DefinitelyTyped/DefinitelyTyped",
+      "main": "",
+      "scripts": {},
+      "author": {
+        "name": "Viktor Miroshnikov",
+        "email": "https://github.com/superduper"
+      },
+      "license": "MIT",
+      "typings": "index.d.ts",
+      "dependencies": {},
+      "_id": "@types/ua-parser-js@0.7.14-alpha",
+      "_shasum": "52d8d36181e3b51726817e28ba64f282d0f04f43",
+      "_from": "output\\ua-parser-js",
+      "_resolved": "file:output\\ua-parser-js",
+      "_npmVersion": "3.8.2",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "types",
+        "email": "ryan.cavanaugh@microsoft.com"
+      },
+      "dist": {
+        "shasum": "52d8d36181e3b51726817e28ba64f282d0f04f43",
+        "tarball": "https://registry.npmjs.org/@types/ua-parser-js/-/ua-parser-js-0.7.14-alpha.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/ua-parser-js-0.7.14-alpha.tgz_1463697414645_0.1853759726509452"
+      },
+      "directories": {}
+    },
+    "0.7.19-alpha": {
+      "name": "@types/ua-parser-js",
+      "version": "0.7.19-alpha",
+      "description": "TypeScript definitions for ua-parser-js v0.7.10",
+      "main": "",
+      "scripts": {},
+      "author": {
+        "name": "Viktor Miroshnikov",
+        "email": "https://github.com/superduper"
+      },
+      "license": "MIT",
+      "typings": "index.d.ts",
+      "dependencies": {},
+      "_id": "@types/ua-parser-js@0.7.19-alpha",
+      "_shasum": "3ae00f34f67aa1c244eaa4f62ce35cfb43c968e0",
+      "_from": "output\\ua-parser-js",
+      "_resolved": "file:output\\ua-parser-js",
+      "_npmVersion": "3.8.2",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "types",
+        "email": "ryan.cavanaugh@microsoft.com"
+      },
+      "dist": {
+        "shasum": "3ae00f34f67aa1c244eaa4f62ce35cfb43c968e0",
+        "tarball": "https://registry.npmjs.org/@types/ua-parser-js/-/ua-parser-js-0.7.19-alpha.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/ua-parser-js-0.7.19-alpha.tgz_1463777447850_0.6702554088551551"
+      },
+      "directories": {}
+    },
+    "0.7.20-alpha": {
+      "name": "@types/ua-parser-js",
+      "version": "0.7.20-alpha",
+      "description": "TypeScript definitions for ua-parser-js v0.7.10",
+      "main": "",
+      "scripts": {},
+      "author": {
+        "name": "Viktor Miroshnikov",
+        "email": "https://github.com/superduper"
+      },
+      "license": "MIT",
+      "typings": "index.d.ts",
+      "dependencies": {},
+      "_id": "@types/ua-parser-js@0.7.20-alpha",
+      "_shasum": "6fbf3a6abf884d4db442b7eb7f9f1545676a09c7",
+      "_from": "output\\ua-parser-js",
+      "_resolved": "file:output\\ua-parser-js",
+      "_npmVersion": "3.8.2",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "types",
+        "email": "ryan.cavanaugh@microsoft.com"
+      },
+      "dist": {
+        "shasum": "6fbf3a6abf884d4db442b7eb7f9f1545676a09c7",
+        "tarball": "https://registry.npmjs.org/@types/ua-parser-js/-/ua-parser-js-0.7.20-alpha.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/ua-parser-js-0.7.20-alpha.tgz_1464156357034_0.6813624983187765"
+      },
+      "directories": {}
+    },
+    "0.7.21-alpha": {
+      "name": "@types/ua-parser-js",
+      "version": "0.7.21-alpha",
+      "description": "TypeScript definitions for ua-parser-js v0.7.10",
+      "main": "",
+      "scripts": {},
+      "author": {
+        "name": "Viktor Miroshnikov",
+        "email": "https://github.com/superduper"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "license": "MIT",
+      "typings": "index.d.ts",
+      "dependencies": {},
+      "_id": "@types/ua-parser-js@0.7.21-alpha",
+      "_shasum": "3a37756ca0240b3e51b8b2c20ca39ecbc0a7d548",
+      "_from": "output\\ua-parser-js",
+      "_resolved": "file:output\\ua-parser-js",
+      "_npmVersion": "3.9.5",
+      "_nodeVersion": "6.2.2",
+      "_npmUser": {
+        "name": "types",
+        "email": "ryan.cavanaugh@microsoft.com"
+      },
+      "dist": {
+        "shasum": "3a37756ca0240b3e51b8b2c20ca39ecbc0a7d548",
+        "tarball": "https://registry.npmjs.org/@types/ua-parser-js/-/ua-parser-js-0.7.21-alpha.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/ua-parser-js-0.7.21-alpha.tgz_1467406232553_0.7710538222454488"
+      },
+      "directories": {}
+    },
+    "0.7.22-alpha": {
+      "name": "@types/ua-parser-js",
+      "version": "0.7.22-alpha",
+      "description": "TypeScript definitions for ua-parser-js v0.7.10",
+      "main": "",
+      "scripts": {},
+      "author": {
+        "name": "Viktor Miroshnikov",
+        "email": "https://github.com/superduper"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "license": "MIT",
+      "typings": "index.d.ts",
+      "dependencies": {},
+      "_id": "@types/ua-parser-js@0.7.22-alpha",
+      "_shasum": "669a115904437d1a6e4ee87997834fe08f42076f",
+      "_from": "output\\ua-parser-js",
+      "_resolved": "file:output\\ua-parser-js",
+      "_npmVersion": "3.7.2",
+      "_nodeVersion": "6.2.1",
+      "_npmUser": {
+        "name": "types",
+        "email": "ryan.cavanaugh@microsoft.com"
+      },
+      "dist": {
+        "shasum": "669a115904437d1a6e4ee87997834fe08f42076f",
+        "tarball": "https://registry.npmjs.org/@types/ua-parser-js/-/ua-parser-js-0.7.22-alpha.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/ua-parser-js-0.7.22-alpha.tgz_1467418404727_0.18879380822181702"
+      },
+      "directories": {}
+    },
+    "0.7.23-alpha": {
+      "name": "@types/ua-parser-js",
+      "version": "0.7.23-alpha",
+      "description": "TypeScript definitions for ua-parser-js v0.7.10",
+      "main": "",
+      "scripts": {},
+      "author": {
+        "name": "Viktor Miroshnikov",
+        "email": "https://github.com/superduper"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "license": "MIT",
+      "typings": "index.d.ts",
+      "dependencies": {},
+      "_id": "@types/ua-parser-js@0.7.23-alpha",
+      "_shasum": "ab2ece6474cea0171733cf6a4f53f9216dc557c7",
+      "_from": "output\\ua-parser-js",
+      "_resolved": "file:output\\ua-parser-js",
+      "_npmVersion": "3.7.2",
+      "_nodeVersion": "6.2.1",
+      "_npmUser": {
+        "name": "types",
+        "email": "ryan.cavanaugh@microsoft.com"
+      },
+      "dist": {
+        "shasum": "ab2ece6474cea0171733cf6a4f53f9216dc557c7",
+        "tarball": "https://registry.npmjs.org/@types/ua-parser-js/-/ua-parser-js-0.7.23-alpha.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/ua-parser-js-0.7.23-alpha.tgz_1467430671927_0.773529238300398"
+      },
+      "directories": {}
+    },
+    "0.7.24-alpha": {
+      "name": "@types/ua-parser-js",
+      "version": "0.7.24-alpha",
+      "description": "TypeScript definitions for ua-parser-js v0.7.10",
+      "main": "",
+      "scripts": {},
+      "author": {
+        "name": "Viktor Miroshnikov",
+        "email": "https://github.com/superduper"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "license": "MIT",
+      "typings": "index.d.ts",
+      "dependencies": {},
+      "_id": "@types/ua-parser-js@0.7.24-alpha",
+      "_shasum": "3538103fb92db1a8d01fe18f41b7f4e8bf2c3a90",
+      "_from": "output\\ua-parser-js",
+      "_resolved": "file:output\\ua-parser-js",
+      "_npmVersion": "3.7.2",
+      "_nodeVersion": "6.2.1",
+      "_npmUser": {
+        "name": "types",
+        "email": "ryan.cavanaugh@microsoft.com"
+      },
+      "dist": {
+        "shasum": "3538103fb92db1a8d01fe18f41b7f4e8bf2c3a90",
+        "tarball": "https://registry.npmjs.org/@types/ua-parser-js/-/ua-parser-js-0.7.24-alpha.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/ua-parser-js-0.7.24-alpha.tgz_1467595857494_0.6998689353931695"
+      },
+      "directories": {}
+    },
+    "0.7.25-alpha": {
+      "name": "@types/ua-parser-js",
+      "version": "0.7.25-alpha",
+      "description": "TypeScript definitions for ua-parser-js v0.7.10",
+      "main": "",
+      "scripts": {},
+      "author": {
+        "name": "Viktor Miroshnikov",
+        "email": "https://github.com/superduper"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "license": "MIT",
+      "typings": "index.d.ts",
+      "dependencies": {},
+      "_id": "@types/ua-parser-js@0.7.25-alpha",
+      "_shasum": "369978a81807e682c01e9f06586c4d74b71ea9c0",
+      "_from": "output\\ua-parser-js",
+      "_resolved": "file:output\\ua-parser-js",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.3.0",
+      "_npmUser": {
+        "name": "types",
+        "email": "ryan.cavanaugh@microsoft.com"
+      },
+      "dist": {
+        "shasum": "369978a81807e682c01e9f06586c4d74b71ea9c0",
+        "tarball": "https://registry.npmjs.org/@types/ua-parser-js/-/ua-parser-js-0.7.25-alpha.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/ua-parser-js-0.7.25-alpha.tgz_1468013930310_0.47690582601353526"
+      },
+      "directories": {}
+    },
+    "0.7.26": {
+      "name": "@types/ua-parser-js",
+      "version": "0.7.26",
+      "description": "TypeScript definitions for ua-parser-js v0.7.10",
+      "main": "",
+      "scripts": {},
+      "author": {
+        "name": "Viktor Miroshnikov",
+        "email": "https://github.com/superduper"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "license": "MIT",
+      "typings": "index.d.ts",
+      "dependencies": {},
+      "_id": "@types/ua-parser-js@0.7.26",
+      "_shasum": "3ca948c5d8cb8151b0fd61dc1721e02a63b5adc4",
+      "_from": "output\\ua-parser-js",
+      "_resolved": "file:output\\ua-parser-js",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.3.0",
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "dist": {
+        "shasum": "3ca948c5d8cb8151b0fd61dc1721e02a63b5adc4",
+        "tarball": "https://registry.npmjs.org/@types/ua-parser-js/-/ua-parser-js-0.7.26.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/ua-parser-js-0.7.26.tgz_1468513003275_0.42831393517553806"
+      },
+      "directories": {}
+    },
+    "0.7.27": {
+      "name": "@types/ua-parser-js",
+      "version": "0.7.27",
+      "description": "TypeScript definitions for ua-parser-js v0.7.10",
+      "license": "MIT",
+      "author": "Viktor Miroshnikov <https://github.com/superduper>, Lucas Woo <https://github.com/legendecas>",
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typings": "index.d.ts",
+      "_id": "@types/ua-parser-js@0.7.27",
+      "dist": {
+        "shasum": "b45f517c6b9a81908534c29fe13664238630fab5",
+        "tarball": "https://registry.npmjs.org/@types/ua-parser-js/-/ua-parser-js-0.7.27.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/ua-parser-js-0.7.27.tgz_1470154425446_0.41263639740645885"
+      },
+      "directories": {}
+    },
+    "0.7.28": {
+      "name": "@types/ua-parser-js",
+      "version": "0.7.28",
+      "description": "TypeScript definitions for ua-parser-js v0.7.10",
+      "license": "MIT",
+      "author": "Viktor Miroshnikov <https://github.com/superduper>, Lucas Woo <https://github.com/legendecas>",
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typings": "index.d.ts",
+      "_id": "@types/ua-parser-js@0.7.28",
+      "dist": {
+        "shasum": "3f0aefe25eeed14a76e6fb03e224d9d8e3af5194",
+        "tarball": "https://registry.npmjs.org/@types/ua-parser-js/-/ua-parser-js-0.7.28.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/ua-parser-js-0.7.28.tgz_1471621494083_0.41250662435777485"
+      },
+      "directories": {}
+    },
+    "0.7.29": {
+      "name": "@types/ua-parser-js",
+      "version": "0.7.29",
+      "description": "TypeScript definitions for ua-parser-js v0.7.10",
+      "license": "MIT",
+      "author": "Viktor Miroshnikov <https://github.com/superduper>, Lucas Woo <https://github.com/legendecas>",
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typings": "index.d.ts",
+      "_id": "@types/ua-parser-js@0.7.29",
+      "dist": {
+        "shasum": "c247dabdc4e1724bf783235856c989fd1c28429c",
+        "tarball": "https://registry.npmjs.org/@types/ua-parser-js/-/ua-parser-js-0.7.29.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/ua-parser-js-0.7.29.tgz_1472151800402_0.23882477870211005"
+      },
+      "directories": {}
+    },
+    "0.7.30": {
+      "name": "@types/ua-parser-js",
+      "version": "0.7.30",
+      "description": "TypeScript definitions for ua-parser-js v0.7.10",
+      "license": "MIT",
+      "author": "Viktor Miroshnikov <https://github.com/superduper>, Lucas Woo <https://github.com/legendecas>",
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typings": "index.d.ts",
+      "typesPublisherContentHash": "a45d0557258b042074421d98e762af7336fbf25e6fa44f64241b528399c0ba29",
+      "_id": "@types/ua-parser-js@0.7.30",
+      "dist": {
+        "shasum": "9096e5552ff02f8d018a17efac69b4dc75083f8b",
+        "tarball": "https://registry.npmjs.org/@types/ua-parser-js/-/ua-parser-js-0.7.30.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/ua-parser-js-0.7.30.tgz_1474309059754_0.9867521517444402"
+      },
+      "directories": {}
+    },
+    "0.7.31": {
+      "name": "@types/ua-parser-js",
+      "version": "0.7.31",
+      "description": "TypeScript definitions for ua-parser-js",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Viktor Miroshnikov",
+          "url": "https://github.com/superduper"
+        },
+        {
+          "name": "Lucas Woo",
+          "url": "https://github.com/legendecas"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "peerDependencies": {},
+      "typesPublisherContentHash": "1b2f3e818d3f038d51819efea1f151ea2bdd205f0be98e3914821676d87d8df6",
+      "typeScriptVersion": "2.0",
+      "_id": "@types/ua-parser-js@0.7.31",
+      "dist": {
+        "integrity": "sha512-TPIseVAeeQWgtiRx8z2/JFz+xVI9iRC2xXwmxddCk8s8ggNk5n6EiSWTBNDIGVdle7eAgEfEIPUXIPRULzAAjQ==",
+        "shasum": "d9968f144126a1909e8fe637f235d7a54066597e",
+        "tarball": "https://registry.npmjs.org/@types/ua-parser-js/-/ua-parser-js-0.7.31.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ua-parser-js-0.7.31.tgz_1499460832889_0.17535430588759482"
+      },
+      "directories": {}
+    },
+    "0.7.32": {
+      "name": "@types/ua-parser-js",
+      "version": "0.7.32",
+      "description": "TypeScript definitions for ua-parser-js",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Viktor Miroshnikov",
+          "url": "https://github.com/superduper"
+        },
+        {
+          "name": "Lucas Woo",
+          "url": "https://github.com/legendecas"
+        },
+        {
+          "name": "Pablo Rodríguez",
+          "url": "https://github.com/MeLlamoPablo"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "7d45fd0f08c5c80c57d2c7c24c4b4d15ccc8e6bdf0f7deda9f9c47484cbd6b7c",
+      "typeScriptVersion": "2.0",
+      "_id": "@types/ua-parser-js@0.7.32",
+      "dist": {
+        "integrity": "sha512-+z7Q72Mlnq6SFkQYHzLg2Z70pIsgRVzgx1b5PV8eUv5uaZ/zoqIs45XnhtToW4gTeX4FbjIP49nhIjyvPF4rPg==",
+        "shasum": "8827d451d6702307248073b5d98aa9293d02b5e5",
+        "tarball": "https://registry.npmjs.org/@types/ua-parser-js/-/ua-parser-js-0.7.32.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "ts-npm-types@microsoft.com",
+          "name": "types"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ua-parser-js-0.7.32.tgz_1503353135048_0.9848786327056587"
+      },
+      "directories": {}
+    },
+    "0.7.33": {
+      "name": "@types/ua-parser-js",
+      "version": "0.7.33",
+      "description": "TypeScript definitions for ua-parser-js",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Viktor Miroshnikov",
+          "url": "https://github.com/superduper",
+          "githubUsername": "superduper"
+        },
+        {
+          "name": "Lucas Woo",
+          "url": "https://github.com/legendecas",
+          "githubUsername": "legendecas"
+        },
+        {
+          "name": "Pablo Rodríguez",
+          "url": "https://github.com/MeLlamoPablo",
+          "githubUsername": "MeLlamoPablo"
+        }
+      ],
+      "main": "",
+      "types": "index",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/ua-parser-js"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "333b9b58e546c3e65932083842c7a58511241d3168e39df73a721436a20b90e9",
+      "typeScriptVersion": "2.0",
+      "_id": "@types/ua-parser-js@0.7.33",
+      "dist": {
+        "integrity": "sha512-ngUKcHnytUodUCL7C6EZ+lVXUjTMQb+9p/e1JjV5tN9TVzS98lHozWEFRPY1QcCdwFeMsmVWfZ3DPPT/udCyIw==",
+        "shasum": "4a92089511574e12928a7cb6b99a01831acd1dd7",
+        "tarball": "https://registry.npmjs.org/@types/ua-parser-js/-/ua-parser-js-0.7.33.tgz",
+        "fileCount": 4,
+        "unpackedSize": 8378,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcr2wHCRA9TVsSAnZWagAA+pkP/2VBQoLDAGMkJ1//Vb1M\nSD2EHikMYTz/2tu9KKAUYWVJNxvRn+xsw+xKkkNPaaATBOKACcvILzcTZ2fu\nzeSYV8F3tkasvNVQ+92027AAUkANbJJ5NHYKJQg0X+PVnFfjJQ1Y/dmRL4uT\nqQcD50pisCu1qDyxkD1Hzo2vT6oJGg76vttu0VXrBFTDSyERCmL9+KUj6/FE\n7vqfiN6SKq7SMb+KTO/IZdZTckhwvcnoyBb/3aTOKOrHdXeD7Y9OVvbc+eqe\nX0gxghVbGw9205245Y8iBiE+ZRwLfjwsgvxNj6BLEu0VBPTnQiSkkZBETvww\n5GN+RrNn2L4Fbgi+jNkvAz5aGGo0g/MqK1XFCJlS96uKkgHvczVZG5GYyW8w\nyR7nl9zazwVc8gMZDC92Z0tpiKvr6GqNgNw2LyM9eUoyOhttNWqgwXF6ulc1\nv21jVJWAzb/lCchq/SSq5X0kcNJKKDXYEqQ8f/FBKQCEQn6dszph6achRGxJ\n1F13i6U2hKOtV916s/zqdjzqsPZ995n4Hgk1LMaD7jXwT/od40kr9g+rQ9Nz\ntvkx58NncxGxX9NJRHEhT5PA8BkeXH3LwX3hQ7AA/N7QuzbFNmJ+MPMOyeNB\nqL7BTXLT2JPF+euNIPBMFecKQkKFfJMC5mDNRvUoRV7lLK0WMpw1xzbDCT3C\nsvOU\r\n=eZFd\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "ts-npm-types@microsoft.com",
+          "name": "types"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ua-parser-js_0.7.33_1555000327131_0.08536053125495258"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# Installation\r\n> `npm install --save @types/ua-parser-js`\r\n\r\n# Summary\r\nThis package contains type definitions for ua-parser-js ( https://github.com/faisalman/ua-parser-js ).\r\n\r\n# Details\r\nFiles were exported from https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/ua-parser-js\r\n\r\nAdditional Details\r\n * Last updated: Thu, 11 Apr 2019 16:32:01 GMT\r\n * Dependencies: none\r\n * Global values: none\r\n\r\n# Credits\r\nThese definitions were written by Viktor Miroshnikov <https://github.com/superduper>, Lucas Woo <https://github.com/legendecas>, Pablo Rodríguez <https://github.com/MeLlamoPablo>.\r\n",
+  "maintainers": [
+    {
+      "email": "ts-npm-types@microsoft.com",
+      "name": "types"
+    }
+  ],
+  "time": {
+    "modified": "2020-08-25T22:55:01.534Z",
+    "created": "2016-05-17T19:08:39.458Z",
+    "0.7.13-alpha": "2016-05-17T19:08:39.458Z",
+    "0.7.14-alpha": "2016-05-19T22:36:55.298Z",
+    "0.7.19-alpha": "2016-05-20T20:50:48.283Z",
+    "0.7.20-alpha": "2016-05-25T06:05:57.480Z",
+    "0.7.21-alpha": "2016-07-01T20:50:34.661Z",
+    "0.7.22-alpha": "2016-07-02T00:13:26.845Z",
+    "0.7.23-alpha": "2016-07-02T03:37:55.371Z",
+    "0.7.24-alpha": "2016-07-04T01:30:58.116Z",
+    "0.7.25-alpha": "2016-07-08T21:38:52.893Z",
+    "0.7.26": "2016-07-14T16:16:45.995Z",
+    "0.7.27": "2016-08-02T16:13:47.502Z",
+    "0.7.28": "2016-08-19T15:44:55.617Z",
+    "0.7.29": "2016-08-25T19:03:20.628Z",
+    "0.7.30": "2016-09-19T18:17:39.981Z",
+    "0.7.31": "2017-07-07T20:53:52.986Z",
+    "0.7.32": "2017-08-21T22:05:35.132Z",
+    "0.7.33": "2019-04-11T16:32:07.325Z"
+  },
+  "license": "MIT",
+  "readmeFilename": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+    "directory": "types/ua-parser-js"
+  },
+  "contributors": [
+    {
+      "name": "Viktor Miroshnikov",
+      "url": "https://github.com/superduper",
+      "githubUsername": "superduper"
+    },
+    {
+      "name": "Lucas Woo",
+      "url": "https://github.com/legendecas",
+      "githubUsername": "legendecas"
+    },
+    {
+      "name": "Pablo Rodríguez",
+      "url": "https://github.com/MeLlamoPablo",
+      "githubUsername": "MeLlamoPablo"
+    }
+  ]
+}

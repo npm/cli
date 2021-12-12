@@ -1,0 +1,2562 @@
+{
+  "_id": "cpr",
+  "_rev": "55-824951c2de84cc9320349cc373a8543b",
+  "name": "cpr",
+  "description": "cp -R",
+  "dist-tags": {
+    "latest": "3.0.1"
+  },
+  "versions": {
+    "0.0.1": {
+      "name": "cpr",
+      "description": "cp -R",
+      "author": {
+        "name": "Dav Glass",
+        "email": "davglass@gmail.com"
+      },
+      "version": "0.0.1",
+      "dependencies": {
+        "graceful-fs": "~1.1.14",
+        "rimraf": "~2.0.2",
+        "mkdirp": "~0.3.4"
+      },
+      "main": "./lib/index.js",
+      "devDependencies": {
+        "yui-lint": "~0.1.0",
+        "vows": "*"
+      },
+      "keywords": [
+        "copy",
+        "recursive"
+      ],
+      "scripts": {
+        "pretest": "jshint --config ./node_modules/yui-lint/jshint.json ./lib/*.js",
+        "test": "vows --spec ./tests/*.js"
+      },
+      "bugs": {
+        "url": "http://github.com/davglass/cpr/issues"
+      },
+      "licenses": [
+        {
+          "type": "BSD",
+          "url": "https://github.com/davglass/cpr/blob/master/LICENSE"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "http://github.com/davglass/cpr.git"
+      },
+      "_id": "cpr@0.0.1",
+      "dist": {
+        "shasum": "91e2d8bafa55a504ccda771a4a2fbce44453b1f7",
+        "tarball": "https://registry.npmjs.org/cpr/-/cpr-0.0.1.tgz"
+      },
+      "_npmVersion": "1.1.62",
+      "_npmUser": {
+        "name": "davglass",
+        "email": "davglass@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "davglass",
+          "email": "davglass@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.2": {
+      "name": "cpr",
+      "description": "cp -R",
+      "author": {
+        "name": "Dav Glass",
+        "email": "davglass@gmail.com"
+      },
+      "version": "0.0.2",
+      "dependencies": {
+        "graceful-fs": "~1.1.14",
+        "rimraf": "~2.0.2",
+        "mkdirp": "~0.3.4"
+      },
+      "main": "./lib/index.js",
+      "devDependencies": {
+        "jshint": "~0.9.1",
+        "yui-lint": "~0.1.0",
+        "vows": "*"
+      },
+      "keywords": [
+        "copy",
+        "recursive"
+      ],
+      "scripts": {
+        "pretest": "jshint --config ./node_modules/yui-lint/jshint.json ./lib/*.js",
+        "test": "vows --spec ./tests/*.js"
+      },
+      "bugs": {
+        "url": "http://github.com/davglass/cpr/issues"
+      },
+      "licenses": [
+        {
+          "type": "BSD",
+          "url": "https://github.com/davglass/cpr/blob/master/LICENSE"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "http://github.com/davglass/cpr.git"
+      },
+      "_id": "cpr@0.0.2",
+      "dist": {
+        "shasum": "8c1924ee1dcf72bf007e8f84eb3f5bb171af292b",
+        "tarball": "https://registry.npmjs.org/cpr/-/cpr-0.0.2.tgz"
+      },
+      "_npmVersion": "1.1.62",
+      "_npmUser": {
+        "name": "davglass",
+        "email": "davglass@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "davglass",
+          "email": "davglass@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.3": {
+      "name": "cpr",
+      "description": "cp -R",
+      "author": {
+        "name": "Dav Glass",
+        "email": "davglass@gmail.com"
+      },
+      "version": "0.0.3",
+      "dependencies": {
+        "graceful-fs": "~1.1.14",
+        "rimraf": "~2.0.2",
+        "mkdirp": "~0.3.4"
+      },
+      "main": "./lib/index.js",
+      "devDependencies": {
+        "jshint": "~0.9.1",
+        "yui-lint": "~0.1.0",
+        "vows": "*"
+      },
+      "keywords": [
+        "copy",
+        "recursive"
+      ],
+      "scripts": {
+        "pretest": "jshint --config ./node_modules/yui-lint/jshint.json ./lib/*.js",
+        "test": "vows --spec ./tests/*.js"
+      },
+      "bugs": {
+        "url": "http://github.com/davglass/cpr/issues"
+      },
+      "licenses": [
+        {
+          "type": "BSD",
+          "url": "https://github.com/davglass/cpr/blob/master/LICENSE"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "http://github.com/davglass/cpr.git"
+      },
+      "_id": "cpr@0.0.3",
+      "dist": {
+        "shasum": "e3d20f8d7a7ce220b8a56ee79325daf4a050b692",
+        "tarball": "https://registry.npmjs.org/cpr/-/cpr-0.0.3.tgz"
+      },
+      "_npmVersion": "1.1.62",
+      "_npmUser": {
+        "name": "davglass",
+        "email": "davglass@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "davglass",
+          "email": "davglass@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.4": {
+      "name": "cpr",
+      "description": "cp -R",
+      "author": {
+        "name": "Dav Glass",
+        "email": "davglass@gmail.com"
+      },
+      "version": "0.0.4",
+      "dependencies": {
+        "graceful-fs": "~1.1.14",
+        "rimraf": "~2.0.2",
+        "mkdirp": "~0.3.4"
+      },
+      "main": "./lib/index.js",
+      "devDependencies": {
+        "jshint": "~0.9.1",
+        "yui-lint": "~0.1.0",
+        "istanbul": "https://github.com/gotwarlost/istanbul/tarball/textreport",
+        "vows": "*"
+      },
+      "keywords": [
+        "copy",
+        "recursive"
+      ],
+      "scripts": {
+        "pretest": "jshint --config ./node_modules/yui-lint/jshint.json ./lib/*.js",
+        "test": "istanbul cover --console both -- vows --spec ./tests/*.js"
+      },
+      "bugs": {
+        "url": "http://github.com/davglass/cpr/issues"
+      },
+      "licenses": [
+        {
+          "type": "BSD",
+          "url": "https://github.com/davglass/cpr/blob/master/LICENSE"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "http://github.com/davglass/cpr.git"
+      },
+      "_id": "cpr@0.0.4",
+      "dist": {
+        "shasum": "d207a843ca0fd555c0e8926e14e2f6613a98bc7e",
+        "tarball": "https://registry.npmjs.org/cpr/-/cpr-0.0.4.tgz"
+      },
+      "_npmVersion": "1.1.62",
+      "_npmUser": {
+        "name": "davglass",
+        "email": "davglass@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "davglass",
+          "email": "davglass@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.5": {
+      "name": "cpr",
+      "description": "cp -R",
+      "author": {
+        "name": "Dav Glass",
+        "email": "davglass@gmail.com"
+      },
+      "version": "0.0.5",
+      "dependencies": {
+        "graceful-fs": "~1.1.14",
+        "rimraf": "~2.0.2",
+        "mkdirp": "~0.3.4"
+      },
+      "main": "./lib/index.js",
+      "devDependencies": {
+        "jshint": "~0.9.1",
+        "yui-lint": "~0.1.0",
+        "istanbul": "~0.1.8",
+        "vows": "*"
+      },
+      "keywords": [
+        "copy",
+        "recursive"
+      ],
+      "scripts": {
+        "pretest": "jshint --config ./node_modules/yui-lint/jshint.json ./lib/*.js",
+        "test": "istanbul cover --print both -- vows --spec ./tests/*.js"
+      },
+      "bugs": {
+        "url": "http://github.com/davglass/cpr/issues"
+      },
+      "licenses": [
+        {
+          "type": "BSD",
+          "url": "https://github.com/davglass/cpr/blob/master/LICENSE"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "http://github.com/davglass/cpr.git"
+      },
+      "_id": "cpr@0.0.5",
+      "dist": {
+        "shasum": "64325903d6739b06a0ecec3282f363e7c414f8be",
+        "tarball": "https://registry.npmjs.org/cpr/-/cpr-0.0.5.tgz"
+      },
+      "_npmVersion": "1.1.63",
+      "_npmUser": {
+        "name": "davglass",
+        "email": "davglass@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "davglass",
+          "email": "davglass@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.6": {
+      "name": "cpr",
+      "description": "cp -R",
+      "author": {
+        "name": "Dav Glass",
+        "email": "davglass@gmail.com"
+      },
+      "version": "0.0.6",
+      "dependencies": {
+        "graceful-fs": "~1.1.14",
+        "rimraf": "~2.0.2",
+        "mkdirp": "~0.3.4"
+      },
+      "main": "./lib/index.js",
+      "devDependencies": {
+        "jshint": "~0.9.1",
+        "yui-lint": "~0.1.0",
+        "istanbul": "~0.1.8",
+        "vows": "*"
+      },
+      "keywords": [
+        "copy",
+        "recursive"
+      ],
+      "scripts": {
+        "pretest": "jshint --config ./node_modules/yui-lint/jshint.json ./lib/",
+        "windows-test": "vows --spec ./tests/full.js",
+        "test": "istanbul cover --print both -- vows --spec ./tests/full.js"
+      },
+      "bugs": {
+        "url": "http://github.com/davglass/cpr/issues"
+      },
+      "licenses": [
+        {
+          "type": "BSD",
+          "url": "https://github.com/davglass/cpr/blob/master/LICENSE"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "http://github.com/davglass/cpr.git"
+      },
+      "_id": "cpr@0.0.6",
+      "dist": {
+        "shasum": "538dd2627a25ae50eda0dc0f83229fb960d086b3",
+        "tarball": "https://registry.npmjs.org/cpr/-/cpr-0.0.6.tgz"
+      },
+      "_npmVersion": "1.1.63",
+      "_npmUser": {
+        "name": "davglass",
+        "email": "davglass@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "davglass",
+          "email": "davglass@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.0": {
+      "name": "cpr",
+      "description": "cp -R",
+      "author": {
+        "name": "Dav Glass",
+        "email": "davglass@gmail.com"
+      },
+      "version": "0.1.0",
+      "dependencies": {
+        "graceful-fs": "~1.2.0",
+        "rimraf": "~2.0.2",
+        "mkdirp": "~0.3.4"
+      },
+      "main": "./lib/index.js",
+      "devDependencies": {
+        "jshint": "~0.9.1",
+        "yui-lint": "~0.1.0",
+        "istanbul": "~0.1.8",
+        "vows": "*"
+      },
+      "keywords": [
+        "copy",
+        "recursive"
+      ],
+      "scripts": {
+        "pretest": "jshint --config ./node_modules/yui-lint/jshint.json ./lib/",
+        "windows-test": "vows --spec ./tests/full.js",
+        "test": "istanbul cover --print both -- vows --spec ./tests/full.js"
+      },
+      "bugs": {
+        "url": "http://github.com/davglass/cpr/issues"
+      },
+      "licenses": [
+        {
+          "type": "BSD",
+          "url": "https://github.com/davglass/cpr/blob/master/LICENSE"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "http://github.com/davglass/cpr.git"
+      },
+      "_id": "cpr@0.1.0",
+      "dist": {
+        "shasum": "2e6c35fbf3a437ffd158e735d4de462f7d030ab4",
+        "tarball": "https://registry.npmjs.org/cpr/-/cpr-0.1.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.2.11",
+      "_npmUser": {
+        "name": "davglass",
+        "email": "davglass@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "davglass",
+          "email": "davglass@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.1": {
+      "name": "cpr",
+      "description": "cp -R",
+      "author": {
+        "name": "Dav Glass",
+        "email": "davglass@gmail.com"
+      },
+      "version": "0.1.1",
+      "dependencies": {
+        "graceful-fs": "~1.2.0",
+        "rimraf": "~2.0.2",
+        "mkdirp": "~0.3.4"
+      },
+      "main": "./lib/index.js",
+      "devDependencies": {
+        "jshint": "~0.9.1",
+        "yui-lint": "~0.1.0",
+        "istanbul": "~0.1.8",
+        "vows": "*"
+      },
+      "contributors": [
+        {
+          "name": "Elijah Insua",
+          "email": "tmpvar@gmail.com"
+        }
+      ],
+      "keywords": [
+        "copy",
+        "recursive",
+        "cp -r",
+        "cp"
+      ],
+      "scripts": {
+        "pretest": "jshint --config ./node_modules/yui-lint/jshint.json ./lib/",
+        "windows-test": "vows --spec ./tests/full.js",
+        "test": "istanbul cover --print both -- vows --spec ./tests/full.js"
+      },
+      "bugs": {
+        "url": "http://github.com/davglass/cpr/issues"
+      },
+      "licenses": [
+        {
+          "type": "BSD",
+          "url": "https://github.com/davglass/cpr/blob/master/LICENSE"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "http://github.com/davglass/cpr.git"
+      },
+      "_id": "cpr@0.1.1",
+      "dist": {
+        "shasum": "9360619e66e76751c9ae78f780cb9ac5126d0170",
+        "tarball": "https://registry.npmjs.org/cpr/-/cpr-0.1.1.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.2",
+      "_npmUser": {
+        "name": "davglass",
+        "email": "davglass@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "davglass",
+          "email": "davglass@gmail.com"
+        },
+        {
+          "name": "ericf",
+          "email": "eferraiuolo@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.2.0": {
+      "name": "cpr",
+      "description": "cp -R",
+      "author": {
+        "name": "Dav Glass",
+        "email": "davglass@gmail.com"
+      },
+      "version": "0.2.0",
+      "dependencies": {
+        "graceful-fs": "~1.2.0",
+        "rimraf": "~2.0.2",
+        "mkdirp": "~0.3.4"
+      },
+      "main": "./lib/index.js",
+      "devDependencies": {
+        "istanbul": "^0.2.9",
+        "jshint": "~0.9.1",
+        "vows": "*",
+        "yui-lint": "~0.1.0"
+      },
+      "contributors": [
+        {
+          "name": "Elijah Insua",
+          "email": "tmpvar@gmail.com"
+        }
+      ],
+      "keywords": [
+        "copy",
+        "recursive",
+        "cp -r",
+        "cp"
+      ],
+      "scripts": {
+        "pretest": "jshint --config ./node_modules/yui-lint/jshint.json ./lib/",
+        "windows-test": "vows --spec ./tests/full.js",
+        "test": "istanbul cover --print both -- vows --spec ./tests/full.js"
+      },
+      "bugs": {
+        "url": "http://github.com/davglass/cpr/issues"
+      },
+      "licenses": [
+        {
+          "type": "BSD",
+          "url": "https://github.com/davglass/cpr/blob/master/LICENSE"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "http://github.com/davglass/cpr.git"
+      },
+      "homepage": "https://github.com/davglass/cpr",
+      "_id": "cpr@0.2.0",
+      "_shasum": "3c3c039b1b24b48b74a86f7dfed70a57a4d14582",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "davglass",
+        "email": "davglass@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "davglass",
+          "email": "davglass@gmail.com"
+        },
+        {
+          "name": "ericf",
+          "email": "eferraiuolo@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "3c3c039b1b24b48b74a86f7dfed70a57a4d14582",
+        "tarball": "https://registry.npmjs.org/cpr/-/cpr-0.2.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.3.0": {
+      "name": "cpr",
+      "description": "cp -R",
+      "author": {
+        "name": "Dav Glass",
+        "email": "davglass@gmail.com"
+      },
+      "version": "0.3.0",
+      "dependencies": {
+        "graceful-fs": "~1.2.0",
+        "rimraf": "~2.0.2",
+        "mkdirp": "~0.3.4"
+      },
+      "main": "./lib/index.js",
+      "devDependencies": {
+        "istanbul": "^0.2.9",
+        "jshint": "~0.9.1",
+        "vows": "*",
+        "yui-lint": "~0.1.0"
+      },
+      "contributors": [
+        {
+          "name": "Elijah Insua",
+          "email": "tmpvar@gmail.com"
+        }
+      ],
+      "keywords": [
+        "copy",
+        "recursive",
+        "cp -r",
+        "cp"
+      ],
+      "scripts": {
+        "pretest": "jshint --config ./node_modules/yui-lint/jshint.json ./lib/",
+        "windows-test": "vows --spec ./tests/full.js",
+        "test": "istanbul cover --print both -- vows --spec ./tests/full.js"
+      },
+      "bugs": {
+        "url": "http://github.com/davglass/cpr/issues"
+      },
+      "licenses": [
+        {
+          "type": "BSD",
+          "url": "https://github.com/davglass/cpr/blob/master/LICENSE"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "http://github.com/davglass/cpr.git"
+      },
+      "gitHead": "888ccb448445c8113c8c27c1d32908014fa95505",
+      "homepage": "https://github.com/davglass/cpr",
+      "_id": "cpr@0.3.0",
+      "_shasum": "ffa4a93fc9f2acd6a3a3a53045f4576b9b648cb0",
+      "_from": ".",
+      "_npmVersion": "1.4.16",
+      "_npmUser": {
+        "name": "davglass",
+        "email": "davglass@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "davglass",
+          "email": "davglass@gmail.com"
+        },
+        {
+          "name": "ericf",
+          "email": "eferraiuolo@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "ffa4a93fc9f2acd6a3a3a53045f4576b9b648cb0",
+        "tarball": "https://registry.npmjs.org/cpr/-/cpr-0.3.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.3.1": {
+      "name": "cpr",
+      "description": "cp -R",
+      "author": {
+        "name": "Dav Glass",
+        "email": "davglass@gmail.com"
+      },
+      "version": "0.3.1",
+      "dependencies": {
+        "graceful-fs": "~1.2.0",
+        "rimraf": "~2.0.2",
+        "mkdirp": "~0.3.4"
+      },
+      "main": "./lib/index.js",
+      "devDependencies": {
+        "istanbul": "^0.2.9",
+        "jshint": "~0.9.1",
+        "vows": "*",
+        "yui-lint": "~0.1.0"
+      },
+      "contributors": [
+        {
+          "name": "Elijah Insua",
+          "email": "tmpvar@gmail.com"
+        }
+      ],
+      "keywords": [
+        "copy",
+        "recursive",
+        "cp -r",
+        "cp"
+      ],
+      "scripts": {
+        "pretest": "jshint --config ./node_modules/yui-lint/jshint.json ./lib/",
+        "windows-test": "vows --spec ./tests/full.js",
+        "test": "istanbul cover --print both -- vows --spec ./tests/full.js"
+      },
+      "bugs": {
+        "url": "http://github.com/davglass/cpr/issues"
+      },
+      "licenses": [
+        {
+          "type": "BSD",
+          "url": "https://github.com/davglass/cpr/blob/master/LICENSE"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "http://github.com/davglass/cpr.git"
+      },
+      "gitHead": "1daff3c92a14bc394d444bf0f601fa5b6aa290cf",
+      "homepage": "https://github.com/davglass/cpr",
+      "_id": "cpr@0.3.1",
+      "_shasum": "abbc3083e919f08b2c7282f0607452e3518e2cde",
+      "_from": ".",
+      "_npmVersion": "1.4.18",
+      "_npmUser": {
+        "name": "davglass",
+        "email": "davglass@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "davglass",
+          "email": "davglass@gmail.com"
+        },
+        {
+          "name": "ericf",
+          "email": "eferraiuolo@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "abbc3083e919f08b2c7282f0607452e3518e2cde",
+        "tarball": "https://registry.npmjs.org/cpr/-/cpr-0.3.1.tgz"
+      },
+      "directories": {}
+    },
+    "0.3.2": {
+      "name": "cpr",
+      "description": "cp -R",
+      "author": {
+        "name": "Dav Glass",
+        "email": "davglass@gmail.com"
+      },
+      "version": "0.3.2",
+      "dependencies": {
+        "graceful-fs": "~1.2.0",
+        "rimraf": "~2.0.2",
+        "mkdirp": "~0.3.4"
+      },
+      "main": "./lib/index.js",
+      "devDependencies": {
+        "istanbul": "^0.2.9",
+        "jshint": "~0.9.1",
+        "vows": "*",
+        "yui-lint": "~0.1.0"
+      },
+      "contributors": [
+        {
+          "name": "Elijah Insua",
+          "email": "tmpvar@gmail.com"
+        }
+      ],
+      "keywords": [
+        "copy",
+        "recursive",
+        "cp -r",
+        "cp"
+      ],
+      "scripts": {
+        "pretest": "jshint --config ./node_modules/yui-lint/jshint.json ./lib/",
+        "windows-test": "vows --spec ./tests/full.js",
+        "test": "istanbul cover --print both -- vows --spec ./tests/full.js"
+      },
+      "bugs": {
+        "url": "http://github.com/davglass/cpr/issues"
+      },
+      "licenses": [
+        {
+          "type": "BSD",
+          "url": "https://github.com/davglass/cpr/blob/master/LICENSE"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "http://github.com/davglass/cpr.git"
+      },
+      "gitHead": "c805cc83cedf0d451d16b7bf4129297c0c77753d",
+      "homepage": "https://github.com/davglass/cpr",
+      "_id": "cpr@0.3.2",
+      "_shasum": "0ffcede215386f24b577a2a8542f852df25e22f1",
+      "_from": ".",
+      "_npmVersion": "1.4.18",
+      "_npmUser": {
+        "name": "davglass",
+        "email": "davglass@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "davglass",
+          "email": "davglass@gmail.com"
+        },
+        {
+          "name": "ericf",
+          "email": "eferraiuolo@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "0ffcede215386f24b577a2a8542f852df25e22f1",
+        "tarball": "https://registry.npmjs.org/cpr/-/cpr-0.3.2.tgz"
+      },
+      "directories": {}
+    },
+    "0.3.3": {
+      "name": "cpr",
+      "description": "cp -R",
+      "author": {
+        "name": "Dav Glass",
+        "email": "davglass@gmail.com"
+      },
+      "version": "0.3.3",
+      "dependencies": {
+        "graceful-fs": "~3.0.5",
+        "mkdirp": "~0.5.0",
+        "rimraf": "~2.2.8"
+      },
+      "main": "./lib/index.js",
+      "devDependencies": {
+        "istanbul": "~0.3.5",
+        "jshint": "~0.9.1",
+        "vows": "~0.8.1",
+        "yui-lint": "~0.1.0"
+      },
+      "contributors": [
+        {
+          "name": "Elijah Insua",
+          "email": "tmpvar@gmail.com"
+        }
+      ],
+      "keywords": [
+        "copy",
+        "recursive",
+        "cp -r",
+        "cp"
+      ],
+      "scripts": {
+        "pretest": "jshint --config ./node_modules/yui-lint/jshint.json ./lib/",
+        "windows-test": "vows --spec ./tests/full.js",
+        "test": "istanbul cover --print both -- vows --spec ./tests/full.js"
+      },
+      "bugs": {
+        "url": "http://github.com/davglass/cpr/issues"
+      },
+      "licenses": [
+        {
+          "type": "BSD",
+          "url": "https://github.com/davglass/cpr/blob/master/LICENSE"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "http://github.com/davglass/cpr.git"
+      },
+      "gitHead": "76b0f840419e19bf829fb55ca91a0103a26175a8",
+      "homepage": "https://github.com/davglass/cpr",
+      "_id": "cpr@0.3.3",
+      "_shasum": "4cf6437c81616bd1fa73722851c0a7b9de464bd9",
+      "_from": ".",
+      "_npmVersion": "2.5.1",
+      "_nodeVersion": "0.12.0",
+      "_npmUser": {
+        "name": "davglass",
+        "email": "davglass@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "davglass",
+          "email": "davglass@gmail.com"
+        },
+        {
+          "name": "ericf",
+          "email": "eferraiuolo@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "4cf6437c81616bd1fa73722851c0a7b9de464bd9",
+        "tarball": "https://registry.npmjs.org/cpr/-/cpr-0.3.3.tgz"
+      },
+      "directories": {}
+    },
+    "0.4.0": {
+      "name": "cpr",
+      "description": "cp -R",
+      "author": {
+        "name": "Dav Glass",
+        "email": "davglass@gmail.com"
+      },
+      "version": "0.4.0",
+      "dependencies": {
+        "graceful-fs": "~3.0.5",
+        "mkdirp": "~0.5.0",
+        "rimraf": "~2.2.8"
+      },
+      "main": "./lib/index.js",
+      "devDependencies": {
+        "istanbul": "~0.3.5",
+        "jshint": "~0.9.1",
+        "vows": "~0.8.1",
+        "yui-lint": "~0.1.0"
+      },
+      "contributors": [
+        {
+          "name": "Elijah Insua",
+          "email": "tmpvar@gmail.com"
+        }
+      ],
+      "keywords": [
+        "copy",
+        "recursive",
+        "cp -r",
+        "cp"
+      ],
+      "scripts": {
+        "pretest": "jshint --config ./node_modules/yui-lint/jshint.json ./lib/",
+        "windows-test": "vows --spec ./tests/full.js",
+        "test": "istanbul cover --print both -- vows --spec ./tests/full.js"
+      },
+      "bugs": {
+        "url": "http://github.com/davglass/cpr/issues"
+      },
+      "licenses": [
+        {
+          "type": "BSD",
+          "url": "https://github.com/davglass/cpr/blob/master/LICENSE"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "http://github.com/davglass/cpr.git"
+      },
+      "gitHead": "98acf2409cb49aaefefc71378f195d596b18bc89",
+      "homepage": "https://github.com/davglass/cpr",
+      "_id": "cpr@0.4.0",
+      "_shasum": "4b5b64c8c27cdba76f679cd4cef34bfa23fba01b",
+      "_from": ".",
+      "_npmVersion": "2.5.1",
+      "_nodeVersion": "0.12.0",
+      "_npmUser": {
+        "name": "davglass",
+        "email": "davglass@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "davglass",
+          "email": "davglass@gmail.com"
+        },
+        {
+          "name": "ericf",
+          "email": "eferraiuolo@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "4b5b64c8c27cdba76f679cd4cef34bfa23fba01b",
+        "tarball": "https://registry.npmjs.org/cpr/-/cpr-0.4.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.4.1": {
+      "name": "cpr",
+      "description": "cp -R",
+      "author": {
+        "name": "Dav Glass",
+        "email": "davglass@gmail.com"
+      },
+      "version": "0.4.1",
+      "dependencies": {
+        "graceful-fs": "~3.0.5",
+        "mkdirp": "~0.5.0",
+        "rimraf": "~2.2.8"
+      },
+      "main": "./lib/index.js",
+      "devDependencies": {
+        "istanbul": "~0.3.5",
+        "jshint": "~0.9.1",
+        "vows": "~0.8.1",
+        "yui-lint": "~0.1.0"
+      },
+      "contributors": [
+        {
+          "name": "Elijah Insua",
+          "email": "tmpvar@gmail.com"
+        }
+      ],
+      "keywords": [
+        "copy",
+        "recursive",
+        "cp -r",
+        "cp"
+      ],
+      "scripts": {
+        "pretest": "jshint --config ./node_modules/yui-lint/jshint.json ./lib/",
+        "windows-test": "vows --spec ./tests/full.js",
+        "test": "istanbul cover --print both -- vows --spec ./tests/full.js"
+      },
+      "bugs": {
+        "url": "http://github.com/davglass/cpr/issues"
+      },
+      "license": "BSD-3-Clause",
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/davglass/cpr.git"
+      },
+      "gitHead": "28ffe618ddd8e55a9bcae05613eb232f02286962",
+      "homepage": "https://github.com/davglass/cpr#readme",
+      "_id": "cpr@0.4.1",
+      "_shasum": "252215d4ffa71a613e16461b288287873bff1479",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "2.0.2",
+      "_npmUser": {
+        "name": "davglass",
+        "email": "davglass@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "davglass",
+          "email": "davglass@gmail.com"
+        },
+        {
+          "name": "ericf",
+          "email": "eferraiuolo@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "252215d4ffa71a613e16461b288287873bff1479",
+        "tarball": "https://registry.npmjs.org/cpr/-/cpr-0.4.1.tgz"
+      },
+      "directories": {}
+    },
+    "0.4.2": {
+      "name": "cpr",
+      "description": "cp -R",
+      "author": {
+        "name": "Dav Glass",
+        "email": "davglass@gmail.com"
+      },
+      "version": "0.4.2",
+      "dependencies": {
+        "graceful-fs": "~4.1.2",
+        "mkdirp": "~0.5.0",
+        "rimraf": "~2.4.3"
+      },
+      "main": "./lib/index.js",
+      "devDependencies": {
+        "istanbul": "~0.3.5",
+        "jshint": "~0.9.1",
+        "vows": "~0.8.1",
+        "yui-lint": "~0.1.0"
+      },
+      "contributors": [
+        {
+          "name": "Elijah Insua",
+          "email": "tmpvar@gmail.com"
+        }
+      ],
+      "keywords": [
+        "copy",
+        "recursive",
+        "cp -r",
+        "cp"
+      ],
+      "scripts": {
+        "pretest": "jshint --config ./node_modules/yui-lint/jshint.json ./lib/",
+        "windows-test": "vows --spec ./tests/full.js",
+        "test": "istanbul cover --print both -- vows --spec ./tests/full.js"
+      },
+      "bugs": {
+        "url": "http://github.com/davglass/cpr/issues"
+      },
+      "license": "BSD-3-Clause",
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/davglass/cpr.git"
+      },
+      "gitHead": "8ccb044a8c439af86d3065d6ca1cc1086d95fac2",
+      "homepage": "https://github.com/davglass/cpr#readme",
+      "_id": "cpr@0.4.2",
+      "_shasum": "cc5083e6d2fa31f52bbfeefae508a445fe6180f2",
+      "_from": ".",
+      "_npmVersion": "2.13.5",
+      "_nodeVersion": "0.10.39",
+      "_npmUser": {
+        "name": "davglass",
+        "email": "davglass@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "davglass",
+          "email": "davglass@gmail.com"
+        },
+        {
+          "name": "ericf",
+          "email": "eferraiuolo@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "cc5083e6d2fa31f52bbfeefae508a445fe6180f2",
+        "tarball": "https://registry.npmjs.org/cpr/-/cpr-0.4.2.tgz"
+      },
+      "directories": {}
+    },
+    "0.4.3": {
+      "name": "cpr",
+      "description": "cp -R",
+      "author": {
+        "name": "Dav Glass",
+        "email": "davglass@gmail.com"
+      },
+      "version": "0.4.3",
+      "dependencies": {
+        "graceful-fs": "~4.1.2",
+        "mkdirp": "~0.5.0",
+        "rimraf": "~2.4.3"
+      },
+      "main": "./lib/index.js",
+      "devDependencies": {
+        "istanbul": "~0.3.5",
+        "jshint": "~0.9.1",
+        "vows": "~0.8.1",
+        "yui-lint": "~0.1.0"
+      },
+      "contributors": [
+        {
+          "name": "soyuka",
+          "email": "soyuka@gmail.com"
+        },
+        {
+          "name": "fresheneesz",
+          "email": "bitetrudpublic@gmail.com"
+        },
+        {
+          "name": "silverwind",
+          "email": "me@silverwind.io"
+        },
+        {
+          "name": "Peter deHaan",
+          "email": "peter@deseloper.com"
+        },
+        {
+          "name": "André Cruz",
+          "email": "andremiguelcruz@msn.com"
+        },
+        {
+          "name": "Brian J Brennan",
+          "email": "brianloveswords@gmail.com"
+        },
+        {
+          "name": "Elijah Insua",
+          "email": "tmpvar@gmail.com"
+        }
+      ],
+      "keywords": [
+        "copy",
+        "recursive",
+        "cp -r",
+        "cp"
+      ],
+      "scripts": {
+        "pretest": "jshint --config ./node_modules/yui-lint/jshint.json ./lib/",
+        "windows-test": "vows --spec ./tests/full.js",
+        "test": "istanbul cover --print both -- vows --spec ./tests/full.js"
+      },
+      "bugs": {
+        "url": "http://github.com/davglass/cpr/issues"
+      },
+      "license": "BSD-3-Clause",
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/davglass/cpr.git"
+      },
+      "gitHead": "845fb91422335679379878ebdb8a228bf5abda9f",
+      "homepage": "https://github.com/davglass/cpr#readme",
+      "_id": "cpr@0.4.3",
+      "_shasum": "0a23e4b6ec23f3b8cc7a405ecb5cfdc778f7de25",
+      "_from": ".",
+      "_npmVersion": "2.13.5",
+      "_nodeVersion": "0.10.39",
+      "_npmUser": {
+        "name": "davglass",
+        "email": "davglass@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "davglass",
+          "email": "davglass@gmail.com"
+        },
+        {
+          "name": "ericf",
+          "email": "eferraiuolo@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "0a23e4b6ec23f3b8cc7a405ecb5cfdc778f7de25",
+        "tarball": "https://registry.npmjs.org/cpr/-/cpr-0.4.3.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "cpr",
+      "description": "cp -R",
+      "author": {
+        "name": "Dav Glass",
+        "email": "davglass@gmail.com"
+      },
+      "version": "1.0.0",
+      "dependencies": {
+        "graceful-fs": "~4.1.2",
+        "mkdirp": "~0.5.0",
+        "rimraf": "~2.4.3"
+      },
+      "main": "./lib/index.js",
+      "devDependencies": {
+        "istanbul": "~0.4.0",
+        "jshint": "~2.8.0",
+        "vows": "~0.8.1",
+        "yui-lint": "~0.2.0"
+      },
+      "contributors": [
+        {
+          "name": "soyuka",
+          "email": "soyuka@gmail.com"
+        },
+        {
+          "name": "fresheneesz",
+          "email": "bitetrudpublic@gmail.com"
+        },
+        {
+          "name": "silverwind",
+          "email": "me@silverwind.io"
+        },
+        {
+          "name": "Peter deHaan",
+          "email": "peter@deseloper.com"
+        },
+        {
+          "name": "André Cruz",
+          "email": "andremiguelcruz@msn.com"
+        },
+        {
+          "name": "Brian J Brennan",
+          "email": "brianloveswords@gmail.com"
+        },
+        {
+          "name": "Elijah Insua",
+          "email": "tmpvar@gmail.com"
+        }
+      ],
+      "keywords": [
+        "copy",
+        "recursive",
+        "cp -r",
+        "cp"
+      ],
+      "scripts": {
+        "pretest": "jshint --config ./node_modules/yui-lint/jshint.json ./lib/",
+        "windows-test": "vows --spec ./tests/full.js",
+        "test": "istanbul cover --print both -- vows --spec ./tests/full.js",
+        "posttest": "istanbul check-coverage --statement 98 --branch 95 --function 95 --line 98"
+      },
+      "bugs": {
+        "url": "http://github.com/davglass/cpr/issues"
+      },
+      "license": "BSD-3-Clause",
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/davglass/cpr.git"
+      },
+      "gitHead": "2d0413543ffe38001526feacf07eea9ffdea20fd",
+      "homepage": "https://github.com/davglass/cpr#readme",
+      "_id": "cpr@1.0.0",
+      "_shasum": "09f84456e8db618f9cbc42f6fe404428cdae7a98",
+      "_from": ".",
+      "_npmVersion": "2.14.8",
+      "_nodeVersion": "0.10.39",
+      "_npmUser": {
+        "name": "davglass",
+        "email": "davglass@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "davglass",
+          "email": "davglass@gmail.com"
+        },
+        {
+          "name": "ericf",
+          "email": "eferraiuolo@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "09f84456e8db618f9cbc42f6fe404428cdae7a98",
+        "tarball": "https://registry.npmjs.org/cpr/-/cpr-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "cpr",
+      "description": "cp -R",
+      "author": {
+        "name": "Dav Glass",
+        "email": "davglass@gmail.com"
+      },
+      "version": "1.1.0",
+      "dependencies": {
+        "graceful-fs": "~4.1.2",
+        "mkdirp": "~0.5.0",
+        "rimraf": "~2.4.3"
+      },
+      "main": "./lib/index.js",
+      "bin": {
+        "cpr": "./bin/cpr"
+      },
+      "devDependencies": {
+        "istanbul": "~0.4.0",
+        "jshint": "~2.8.0",
+        "vows": "~0.8.1",
+        "yui-lint": "~0.2.0"
+      },
+      "contributors": [
+        {
+          "name": "soyuka",
+          "email": "soyuka@gmail.com"
+        },
+        {
+          "name": "fresheneesz",
+          "email": "bitetrudpublic@gmail.com"
+        },
+        {
+          "name": "silverwind",
+          "email": "me@silverwind.io"
+        },
+        {
+          "name": "Peter deHaan",
+          "email": "peter@deseloper.com"
+        },
+        {
+          "name": "André Cruz",
+          "email": "andremiguelcruz@msn.com"
+        },
+        {
+          "name": "Brian J Brennan",
+          "email": "brianloveswords@gmail.com"
+        },
+        {
+          "name": "Elijah Insua",
+          "email": "tmpvar@gmail.com"
+        },
+        {
+          "name": "Jonny Reeves",
+          "email": "github@jonnyreeves.co.uk"
+        }
+      ],
+      "keywords": [
+        "copy",
+        "recursive",
+        "cp -r",
+        "cp"
+      ],
+      "scripts": {
+        "pretest": "jshint --config ./node_modules/yui-lint/jshint.json ./lib/",
+        "windows-test": "vows --spec ./tests/full.js",
+        "test": "istanbul cover --print both -- vows --spec ./tests/full.js",
+        "posttest": "istanbul check-coverage --statement 98 --branch 95 --function 95 --line 98"
+      },
+      "bugs": {
+        "url": "http://github.com/davglass/cpr/issues"
+      },
+      "license": "BSD-3-Clause",
+      "repository": {
+        "type": "git",
+        "url": "http://github.com/davglass/cpr.git"
+      },
+      "gitHead": "5435bd23be4c4d793de6c1d8077af9215b3f8edd",
+      "homepage": "https://github.com/davglass/cpr",
+      "_id": "cpr@1.1.0",
+      "_shasum": "e6d13c107fbe8496a779d2801737a704e95f7435",
+      "_from": ".",
+      "_npmVersion": "3.8.3",
+      "_nodeVersion": "5.10.0",
+      "_npmUser": {
+        "name": "davglass",
+        "email": "davglass@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "davglass",
+          "email": "davglass@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "e6d13c107fbe8496a779d2801737a704e95f7435",
+        "tarball": "https://registry.npmjs.org/cpr/-/cpr-1.1.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/cpr-1.1.0.tgz_1459863332238_0.5341414657887071"
+      },
+      "directories": {}
+    },
+    "1.1.1": {
+      "name": "cpr",
+      "description": "cp -R",
+      "author": {
+        "name": "Dav Glass",
+        "email": "davglass@gmail.com"
+      },
+      "version": "1.1.1",
+      "dependencies": {
+        "graceful-fs": "~4.1.2",
+        "mkdirp": "~0.5.0",
+        "rimraf": "~2.4.3"
+      },
+      "main": "./lib/index.js",
+      "bin": {
+        "cpr": "./bin/cpr"
+      },
+      "devDependencies": {
+        "istanbul": "~0.4.0",
+        "jenkins-mocha": "^2.6.0",
+        "jshint": "~2.8.0",
+        "yui-lint": "~0.2.0"
+      },
+      "contributors": [
+        {
+          "name": "soyuka",
+          "email": "soyuka@gmail.com"
+        },
+        {
+          "name": "fresheneesz",
+          "email": "bitetrudpublic@gmail.com"
+        },
+        {
+          "name": "silverwind",
+          "email": "me@silverwind.io"
+        },
+        {
+          "name": "Peter deHaan",
+          "email": "peter@deseloper.com"
+        },
+        {
+          "name": "André Cruz",
+          "email": "andremiguelcruz@msn.com"
+        },
+        {
+          "name": "Brian J Brennan",
+          "email": "brianloveswords@gmail.com"
+        },
+        {
+          "name": "Elijah Insua",
+          "email": "tmpvar@gmail.com"
+        },
+        {
+          "name": "Jonny Reeves",
+          "email": "github@jonnyreeves.co.uk"
+        }
+      ],
+      "keywords": [
+        "copy",
+        "recursive",
+        "cp -r",
+        "cp"
+      ],
+      "scripts": {
+        "pretest": "jshint --config ./node_modules/yui-lint/jshint.json ./lib/",
+        "windows-test": "jenkins-mocha ./tests/full.js",
+        "test": "jenkins-mocha ./tests/full.js",
+        "posttest": "istanbul check-coverage"
+      },
+      "bugs": {
+        "url": "http://github.com/davglass/cpr/issues"
+      },
+      "license": "BSD-3-Clause",
+      "repository": {
+        "type": "git",
+        "url": "http://github.com/davglass/cpr.git"
+      },
+      "gitHead": "e691cb365ca7db3113a5ef3487ad12df1a4088ea",
+      "homepage": "https://github.com/davglass/cpr",
+      "_id": "cpr@1.1.1",
+      "_shasum": "039dc5cc9aae9c20996bb18110d602a792dca70b",
+      "_from": ".",
+      "_npmVersion": "3.8.3",
+      "_nodeVersion": "5.10.0",
+      "_npmUser": {
+        "name": "davglass",
+        "email": "davglass@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "davglass",
+          "email": "davglass@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "039dc5cc9aae9c20996bb18110d602a792dca70b",
+        "tarball": "https://registry.npmjs.org/cpr/-/cpr-1.1.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/cpr-1.1.1.tgz_1459950702182_0.5143191772513092"
+      },
+      "directories": {}
+    },
+    "1.1.2": {
+      "name": "cpr",
+      "description": "cp -R",
+      "author": {
+        "name": "Dav Glass",
+        "email": "davglass@gmail.com"
+      },
+      "version": "1.1.2",
+      "dependencies": {
+        "graceful-fs": "~4.1.2",
+        "mkdirp": "~0.5.0",
+        "rimraf": "~2.4.3"
+      },
+      "main": "./lib/index.js",
+      "bin": {
+        "cpr": "./bin/cpr"
+      },
+      "devDependencies": {
+        "istanbul": "~0.4.0",
+        "jenkins-mocha": "^2.6.0",
+        "jshint": "~2.8.0",
+        "yui-lint": "~0.2.0"
+      },
+      "contributors": [
+        {
+          "name": "soyuka",
+          "email": "soyuka@gmail.com"
+        },
+        {
+          "name": "fresheneesz",
+          "email": "bitetrudpublic@gmail.com"
+        },
+        {
+          "name": "silverwind",
+          "email": "me@silverwind.io"
+        },
+        {
+          "name": "Peter deHaan",
+          "email": "peter@deseloper.com"
+        },
+        {
+          "name": "André Cruz",
+          "email": "andremiguelcruz@msn.com"
+        },
+        {
+          "name": "Brian J Brennan",
+          "email": "brianloveswords@gmail.com"
+        },
+        {
+          "name": "Elijah Insua",
+          "email": "tmpvar@gmail.com"
+        },
+        {
+          "name": "Jonny Reeves",
+          "email": "github@jonnyreeves.co.uk"
+        }
+      ],
+      "keywords": [
+        "copy",
+        "recursive",
+        "cp -r",
+        "cp"
+      ],
+      "scripts": {
+        "pretest": "jshint --config ./node_modules/yui-lint/jshint.json ./lib/",
+        "windows-test": "jenkins-mocha ./tests/full.js",
+        "test": "jenkins-mocha ./tests/full.js",
+        "posttest": "istanbul check-coverage"
+      },
+      "bugs": {
+        "url": "http://github.com/davglass/cpr/issues"
+      },
+      "license": "BSD-3-Clause",
+      "repository": {
+        "type": "git",
+        "url": "http://github.com/davglass/cpr.git"
+      },
+      "gitHead": "0584e7cf7135d13b79a1fbb8ccd9c68ef4614262",
+      "homepage": "https://github.com/davglass/cpr",
+      "_id": "cpr@1.1.2",
+      "_shasum": "39e7f963c5ff4dd52e21d00bfd38374015792d68",
+      "_from": ".",
+      "_npmVersion": "2.15.5",
+      "_nodeVersion": "4.4.5",
+      "_npmUser": {
+        "name": "davglass",
+        "email": "davglass@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "davglass",
+          "email": "davglass@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "39e7f963c5ff4dd52e21d00bfd38374015792d68",
+        "tarball": "https://registry.npmjs.org/cpr/-/cpr-1.1.2.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/cpr-1.1.2.tgz_1465482407972_0.39753746055066586"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "cpr",
+      "description": "cp -R",
+      "author": {
+        "name": "Dav Glass",
+        "email": "davglass@gmail.com"
+      },
+      "version": "2.0.0",
+      "dependencies": {
+        "graceful-fs": "^4.1.5",
+        "minimist": "^1.2.0",
+        "mkdirp": "~0.5.1",
+        "rimraf": "^2.5.4"
+      },
+      "main": "./lib/index.js",
+      "bin": {
+        "cpr": "./bin/cpr"
+      },
+      "devDependencies": {
+        "istanbul": "~0.4.4",
+        "jenkins-mocha": "^3.0.0",
+        "jshint": "^2.9.2",
+        "yui-lint": "~0.2.0"
+      },
+      "contributors": [
+        {
+          "name": "soyuka",
+          "email": "soyuka@gmail.com"
+        },
+        {
+          "name": "fresheneesz",
+          "email": "bitetrudpublic@gmail.com"
+        },
+        {
+          "name": "silverwind",
+          "email": "me@silverwind.io"
+        },
+        {
+          "name": "Peter deHaan",
+          "email": "peter@deseloper.com"
+        },
+        {
+          "name": "André Cruz",
+          "email": "andremiguelcruz@msn.com"
+        },
+        {
+          "name": "Brian J Brennan",
+          "email": "brianloveswords@gmail.com"
+        },
+        {
+          "name": "Elijah Insua",
+          "email": "tmpvar@gmail.com"
+        },
+        {
+          "name": "Jonny Reeves",
+          "email": "github@jonnyreeves.co.uk"
+        },
+        {
+          "name": "Lydie Danet",
+          "email": "lydie@happinov.fr"
+        }
+      ],
+      "keywords": [
+        "copy",
+        "recursive",
+        "cp -r",
+        "cp"
+      ],
+      "scripts": {
+        "pretest": "jshint --config ./node_modules/yui-lint/jshint.json ./lib/",
+        "windows-test": "jenkins-mocha ./tests/full.js",
+        "test": "jenkins-mocha ./tests/full.js",
+        "posttest": "istanbul check-coverage"
+      },
+      "bugs": {
+        "url": "http://github.com/davglass/cpr/issues"
+      },
+      "license": "BSD-3-Clause",
+      "repository": {
+        "type": "git",
+        "url": "http://github.com/davglass/cpr.git"
+      },
+      "gitHead": "1a1d85b52c6b08c7aa8cabc84c4f0a6a054f68d7",
+      "homepage": "https://github.com/davglass/cpr",
+      "_id": "cpr@2.0.0",
+      "_shasum": "c2a447c9516c37ebb647caa2616beefa2ee67011",
+      "_from": ".",
+      "_npmVersion": "2.15.8",
+      "_nodeVersion": "4.4.7",
+      "_npmUser": {
+        "name": "davglass",
+        "email": "davglass@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "davglass",
+          "email": "davglass@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "c2a447c9516c37ebb647caa2616beefa2ee67011",
+        "tarball": "https://registry.npmjs.org/cpr/-/cpr-2.0.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/cpr-2.0.0.tgz_1471288153855_0.38447440741583705"
+      },
+      "directories": {}
+    },
+    "2.0.1": {
+      "name": "cpr",
+      "description": "cp -R",
+      "author": {
+        "name": "Dav Glass",
+        "email": "davglass@gmail.com"
+      },
+      "version": "2.0.1",
+      "dependencies": {
+        "graceful-fs": "^4.1.5",
+        "minimist": "^1.2.0",
+        "mkdirp": "~0.5.1",
+        "rimraf": "^2.5.4"
+      },
+      "main": "./lib/index.js",
+      "bin": {
+        "cpr": "./bin/cpr"
+      },
+      "devDependencies": {
+        "github-changes": "^1.0.4",
+        "istanbul": "~0.4.4",
+        "jenkins-mocha": "^3.0.0",
+        "jshint": "^2.9.2",
+        "yui-lint": "~0.2.0"
+      },
+      "contributors": [
+        {
+          "name": "soyuka",
+          "email": "soyuka@gmail.com"
+        },
+        {
+          "name": "fresheneesz",
+          "email": "bitetrudpublic@gmail.com"
+        },
+        {
+          "name": "silverwind",
+          "email": "me@silverwind.io"
+        },
+        {
+          "name": "Peter deHaan",
+          "email": "peter@deseloper.com"
+        },
+        {
+          "name": "André Cruz",
+          "email": "andremiguelcruz@msn.com"
+        },
+        {
+          "name": "Brian J Brennan",
+          "email": "brianloveswords@gmail.com"
+        },
+        {
+          "name": "Elijah Insua",
+          "email": "tmpvar@gmail.com"
+        },
+        {
+          "name": "Jonny Reeves",
+          "email": "github@jonnyreeves.co.uk"
+        },
+        {
+          "name": "Lydie Danet",
+          "email": "lydie@happinov.fr"
+        },
+        {
+          "name": "Ben Elliott",
+          "email": "ben.elliott@gsacapital.com"
+        }
+      ],
+      "keywords": [
+        "copy",
+        "recursive",
+        "cp -r",
+        "cp"
+      ],
+      "scripts": {
+        "pretest": "jshint --config ./node_modules/yui-lint/jshint.json ./lib/",
+        "windows-test": "jenkins-mocha ./tests/full.js",
+        "test": "jenkins-mocha ./tests/full.js",
+        "posttest": "istanbul check-coverage",
+        "changes": "github-changes -o davglass -r cpr"
+      },
+      "bugs": {
+        "url": "http://github.com/davglass/cpr/issues"
+      },
+      "license": "BSD-3-Clause",
+      "repository": {
+        "type": "git",
+        "url": "http://github.com/davglass/cpr.git"
+      },
+      "gitHead": "14233bf74563aa90f7c1b5fe8094717aededaf72",
+      "homepage": "https://github.com/davglass/cpr",
+      "_id": "cpr@2.0.1",
+      "_shasum": "cff1bf6da2397af4409389d1acdd6adb73424fe4",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "6.9.1",
+      "_npmUser": {
+        "name": "davglass",
+        "email": "davglass@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "davglass",
+          "email": "davglass@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "cff1bf6da2397af4409389d1acdd6adb73424fe4",
+        "tarball": "https://registry.npmjs.org/cpr/-/cpr-2.0.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/cpr-2.0.1.tgz_1482162545346_0.6958657519426197"
+      },
+      "directories": {}
+    },
+    "2.0.2": {
+      "name": "cpr",
+      "description": "cp -R",
+      "author": {
+        "name": "Dav Glass",
+        "email": "davglass@gmail.com"
+      },
+      "version": "2.0.2",
+      "dependencies": {
+        "graceful-fs": "^4.1.5",
+        "minimist": "^1.2.0",
+        "mkdirp": "~0.5.1",
+        "rimraf": "^2.5.4"
+      },
+      "main": "./lib/index.js",
+      "bin": {
+        "cpr": "./bin/cpr"
+      },
+      "devDependencies": {
+        "github-changes": "^1.0.4",
+        "istanbul": "~0.4.4",
+        "jenkins-mocha": "^3.0.0",
+        "jshint": "^2.9.2",
+        "yui-lint": "~0.2.0"
+      },
+      "contributors": [
+        {
+          "name": "soyuka",
+          "email": "soyuka@gmail.com"
+        },
+        {
+          "name": "fresheneesz",
+          "email": "bitetrudpublic@gmail.com"
+        },
+        {
+          "name": "silverwind",
+          "email": "me@silverwind.io"
+        },
+        {
+          "name": "Peter deHaan",
+          "email": "peter@deseloper.com"
+        },
+        {
+          "name": "André Cruz",
+          "email": "andremiguelcruz@msn.com"
+        },
+        {
+          "name": "Brian J Brennan",
+          "email": "brianloveswords@gmail.com"
+        },
+        {
+          "name": "Elijah Insua",
+          "email": "tmpvar@gmail.com"
+        },
+        {
+          "name": "Jonny Reeves",
+          "email": "github@jonnyreeves.co.uk"
+        },
+        {
+          "name": "Lydie Danet",
+          "email": "lydie@happinov.fr"
+        },
+        {
+          "name": "Ben Elliott",
+          "email": "ben.elliott@gsacapital.com"
+        }
+      ],
+      "keywords": [
+        "copy",
+        "recursive",
+        "cp -r",
+        "cp"
+      ],
+      "scripts": {
+        "pretest": "jshint --config ./node_modules/yui-lint/jshint.json ./lib/",
+        "windows-test": "jenkins-mocha ./tests/full.js",
+        "test": "jenkins-mocha ./tests/full.js",
+        "posttest": "istanbul check-coverage",
+        "changes": "github-changes -o davglass -r cpr"
+      },
+      "bugs": {
+        "url": "http://github.com/davglass/cpr/issues"
+      },
+      "license": "BSD-3-Clause",
+      "repository": {
+        "type": "git",
+        "url": "http://github.com/davglass/cpr.git"
+      },
+      "gitHead": "0f2c8b51a33610d53f7f9604e55bea8fe6360966",
+      "homepage": "https://github.com/davglass/cpr",
+      "_id": "cpr@2.0.2",
+      "_shasum": "9e44be91101f644a3e1f8c908712b70cdd547056",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "6.9.1",
+      "_npmUser": {
+        "name": "davglass",
+        "email": "davglass@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "davglass",
+          "email": "davglass@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "9e44be91101f644a3e1f8c908712b70cdd547056",
+        "tarball": "https://registry.npmjs.org/cpr/-/cpr-2.0.2.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/cpr-2.0.2.tgz_1482344091400_0.17896629287861288"
+      },
+      "directories": {}
+    },
+    "2.1.0": {
+      "name": "cpr",
+      "description": "cp -R",
+      "author": {
+        "name": "Dav Glass",
+        "email": "davglass@gmail.com"
+      },
+      "version": "2.1.0",
+      "dependencies": {
+        "graceful-fs": "^4.1.5",
+        "minimist": "^1.2.0",
+        "mkdirp": "~0.5.1",
+        "rimraf": "^2.5.4"
+      },
+      "main": "./lib/index.js",
+      "typings": "./cpr.d.ts",
+      "bin": {
+        "cpr": "./bin/cpr"
+      },
+      "devDependencies": {
+        "github-changes": "^1.0.4",
+        "jenkins-mocha": "^4.0.0",
+        "jshint": "^2.9.2",
+        "nyc": "^10.0.0",
+        "yui-lint": "~0.2.0"
+      },
+      "contributors": [
+        {
+          "name": "soyuka",
+          "email": "soyuka@gmail.com"
+        },
+        {
+          "name": "fresheneesz",
+          "email": "bitetrudpublic@gmail.com"
+        },
+        {
+          "name": "silverwind",
+          "email": "me@silverwind.io"
+        },
+        {
+          "name": "Peter deHaan",
+          "email": "peter@deseloper.com"
+        },
+        {
+          "name": "André Cruz",
+          "email": "andremiguelcruz@msn.com"
+        },
+        {
+          "name": "Brian J Brennan",
+          "email": "brianloveswords@gmail.com"
+        },
+        {
+          "name": "Elijah Insua",
+          "email": "tmpvar@gmail.com"
+        },
+        {
+          "name": "Jonny Reeves",
+          "email": "github@jonnyreeves.co.uk"
+        },
+        {
+          "name": "Lydie Danet",
+          "email": "lydie@happinov.fr"
+        },
+        {
+          "name": "Ben Elliott",
+          "email": "ben.elliott@gsacapital.com"
+        }
+      ],
+      "keywords": [
+        "copy",
+        "recursive",
+        "cp -r",
+        "cp"
+      ],
+      "scripts": {
+        "pretest": "jshint --config ./node_modules/yui-lint/jshint.json ./lib/",
+        "windows-test": "jenkins-mocha ./tests/full.js",
+        "test": "jenkins-mocha ./tests/full.js",
+        "posttest": "nyc report",
+        "changes": "github-changes -o davglass -r cpr"
+      },
+      "nyc": {
+        "lines": 100,
+        "statements": 100,
+        "functions": 100,
+        "branches": 90,
+        "check-coverage": true,
+        "reporter": [
+          "text",
+          "text-summary"
+        ]
+      },
+      "bugs": {
+        "url": "http://github.com/davglass/cpr/issues"
+      },
+      "license": "BSD-3-Clause",
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/davglass/cpr.git"
+      },
+      "gitHead": "724900c9ae5307cba2ba250fba5d1dfb74cb9af3",
+      "homepage": "https://github.com/davglass/cpr#readme",
+      "_id": "cpr@2.1.0",
+      "_shasum": "a1b7baaa111cfbe55260772100a0296ec9d4a29d",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "6.10.3",
+      "_npmUser": {
+        "name": "davglass",
+        "email": "davglass@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "davglass",
+          "email": "davglass@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "a1b7baaa111cfbe55260772100a0296ec9d4a29d",
+        "tarball": "https://registry.npmjs.org/cpr/-/cpr-2.1.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/cpr-2.1.0.tgz_1496062711067_0.844556147698313"
+      },
+      "directories": {}
+    },
+    "2.2.0": {
+      "name": "cpr",
+      "description": "cp -R",
+      "author": {
+        "name": "Dav Glass",
+        "email": "davglass@gmail.com"
+      },
+      "version": "2.2.0",
+      "dependencies": {
+        "graceful-fs": "^4.1.5",
+        "minimist": "^1.2.0",
+        "mkdirp": "~0.5.1",
+        "rimraf": "^2.5.4"
+      },
+      "main": "./lib/index.js",
+      "typings": "./cpr.d.ts",
+      "bin": {
+        "cpr": "./bin/cpr"
+      },
+      "devDependencies": {
+        "github-changes": "^1.0.4",
+        "jenkins-mocha": "^4.0.0",
+        "jshint": "^2.9.2",
+        "nyc": "^11.0.2",
+        "yui-lint": "~0.2.0"
+      },
+      "contributors": [
+        {
+          "name": "soyuka",
+          "email": "soyuka@gmail.com"
+        },
+        {
+          "name": "fresheneesz",
+          "email": "bitetrudpublic@gmail.com"
+        },
+        {
+          "name": "silverwind",
+          "email": "me@silverwind.io"
+        },
+        {
+          "name": "Peter deHaan",
+          "email": "peter@deseloper.com"
+        },
+        {
+          "name": "André Cruz",
+          "email": "andremiguelcruz@msn.com"
+        },
+        {
+          "name": "Brian J Brennan",
+          "email": "brianloveswords@gmail.com"
+        },
+        {
+          "name": "Elijah Insua",
+          "email": "tmpvar@gmail.com"
+        },
+        {
+          "name": "Jonny Reeves",
+          "email": "github@jonnyreeves.co.uk"
+        },
+        {
+          "name": "Lydie Danet",
+          "email": "lydie@happinov.fr"
+        },
+        {
+          "name": "Ben Elliott",
+          "email": "ben.elliott@gsacapital.com"
+        }
+      ],
+      "keywords": [
+        "copy",
+        "recursive",
+        "cp -r",
+        "cp"
+      ],
+      "scripts": {
+        "pretest": "jshint --config ./node_modules/yui-lint/jshint.json ./lib/",
+        "windows-test": "jenkins-mocha ./tests/full.js",
+        "test": "jenkins-mocha ./tests/full.js",
+        "posttest": "nyc report",
+        "changes": "github-changes -o davglass -r cpr"
+      },
+      "nyc": {
+        "lines": 100,
+        "statements": 100,
+        "functions": 100,
+        "branches": 90,
+        "check-coverage": true,
+        "reporter": [
+          "text",
+          "text-summary"
+        ]
+      },
+      "bugs": {
+        "url": "http://github.com/davglass/cpr/issues"
+      },
+      "license": "BSD-3-Clause",
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/davglass/cpr.git"
+      },
+      "gitHead": "4520872c30bbed3bac9930ad633f4dd4e5545225",
+      "homepage": "https://github.com/davglass/cpr#readme",
+      "_id": "cpr@2.2.0",
+      "_npmVersion": "5.0.3",
+      "_nodeVersion": "6.10.3",
+      "_npmUser": {
+        "name": "davglass",
+        "email": "davglass@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-q8UoWzIT9rslJKb3Y5CcByzR2zX7GBkVcoU6jJx02d/BgbE7zJ8Aix74i7bw3iYk58TrgXhmB2XB0aGaBd7oZA==",
+        "shasum": "2dc6c87dfb78012489cdd994227628c320e9a17b",
+        "tarball": "https://registry.npmjs.org/cpr/-/cpr-2.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "davglass",
+          "email": "davglass@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/cpr-2.2.0.tgz_1498479346045_0.3287411245983094"
+      },
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "cpr",
+      "description": "cp -R",
+      "author": {
+        "name": "Dav Glass",
+        "email": "davglass@gmail.com"
+      },
+      "version": "3.0.0",
+      "dependencies": {
+        "graceful-fs": "^4.1.5",
+        "minimist": "^1.2.0",
+        "mkdirp": "~0.5.1",
+        "rimraf": "^2.5.4"
+      },
+      "main": "./lib/index.js",
+      "typings": "./cpr.d.ts",
+      "bin": {
+        "cpr": "./bin/cpr"
+      },
+      "devDependencies": {
+        "github-changes": "^1.0.4",
+        "jenkins-mocha": "^4.0.0",
+        "jshint": "^2.9.2",
+        "nyc": "^11.0.2",
+        "yui-lint": "~0.2.0"
+      },
+      "contributors": [
+        {
+          "name": "soyuka",
+          "email": "soyuka@gmail.com"
+        },
+        {
+          "name": "fresheneesz",
+          "email": "bitetrudpublic@gmail.com"
+        },
+        {
+          "name": "silverwind",
+          "email": "me@silverwind.io"
+        },
+        {
+          "name": "Peter deHaan",
+          "email": "peter@deseloper.com"
+        },
+        {
+          "name": "André Cruz",
+          "email": "andremiguelcruz@msn.com"
+        },
+        {
+          "name": "Brian J Brennan",
+          "email": "brianloveswords@gmail.com"
+        },
+        {
+          "name": "Elijah Insua",
+          "email": "tmpvar@gmail.com"
+        },
+        {
+          "name": "Jonny Reeves",
+          "email": "github@jonnyreeves.co.uk"
+        },
+        {
+          "name": "Lydie Danet",
+          "email": "lydie@happinov.fr"
+        },
+        {
+          "name": "Ben Elliott",
+          "email": "ben.elliott@gsacapital.com"
+        }
+      ],
+      "keywords": [
+        "copy",
+        "recursive",
+        "cp -r",
+        "cp"
+      ],
+      "scripts": {
+        "pretest": "jshint --config ./node_modules/yui-lint/jshint.json ./lib/",
+        "windows-test": "jenkins-mocha ./tests/full.js",
+        "test": "jenkins-mocha ./tests/full.js",
+        "posttest": "nyc report",
+        "changes": "github-changes -o davglass -r cpr"
+      },
+      "nyc": {
+        "lines": 100,
+        "statements": 100,
+        "functions": 100,
+        "branches": 90,
+        "check-coverage": true,
+        "reporter": [
+          "text",
+          "text-summary"
+        ]
+      },
+      "bugs": {
+        "url": "http://github.com/davglass/cpr/issues"
+      },
+      "license": "BSD-3-Clause",
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/davglass/cpr.git"
+      },
+      "gitHead": "66108f72b1729e046a2ac06c4898c5ee9ae2f967",
+      "homepage": "https://github.com/davglass/cpr#readme",
+      "_id": "cpr@3.0.0",
+      "_shasum": "64bca2efce1576f49e78f5533162ae993f3f9817",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.10.3",
+      "_npmUser": {
+        "name": "davglass",
+        "email": "davglass@gmail.com"
+      },
+      "dist": {
+        "shasum": "64bca2efce1576f49e78f5533162ae993f3f9817",
+        "tarball": "https://registry.npmjs.org/cpr/-/cpr-3.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "davglass",
+          "email": "davglass@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/cpr-3.0.0.tgz_1509455378627_0.8678828114643693"
+      },
+      "directories": {}
+    },
+    "3.0.1": {
+      "name": "cpr",
+      "description": "cp -R",
+      "author": {
+        "name": "Dav Glass",
+        "email": "davglass@gmail.com"
+      },
+      "version": "3.0.1",
+      "dependencies": {
+        "graceful-fs": "^4.1.5",
+        "minimist": "^1.2.0",
+        "mkdirp": "~0.5.1",
+        "rimraf": "^2.5.4"
+      },
+      "main": "./lib/index.js",
+      "typings": "./cpr.d.ts",
+      "bin": {
+        "cpr": "./bin/cpr"
+      },
+      "devDependencies": {
+        "github-changes": "^1.0.4",
+        "jenkins-mocha": "^4.0.0",
+        "jshint": "^2.9.2",
+        "nyc": "^11.0.2",
+        "yui-lint": "~0.2.0"
+      },
+      "contributors": [
+        {
+          "name": "soyuka",
+          "email": "soyuka@gmail.com"
+        },
+        {
+          "name": "fresheneesz",
+          "email": "bitetrudpublic@gmail.com"
+        },
+        {
+          "name": "silverwind",
+          "email": "me@silverwind.io"
+        },
+        {
+          "name": "Peter deHaan",
+          "email": "peter@deseloper.com"
+        },
+        {
+          "name": "André Cruz",
+          "email": "andremiguelcruz@msn.com"
+        },
+        {
+          "name": "Brian J Brennan",
+          "email": "brianloveswords@gmail.com"
+        },
+        {
+          "name": "Elijah Insua",
+          "email": "tmpvar@gmail.com"
+        },
+        {
+          "name": "Jonny Reeves",
+          "email": "github@jonnyreeves.co.uk"
+        },
+        {
+          "name": "Lydie Danet",
+          "email": "lydie@happinov.fr"
+        },
+        {
+          "name": "Ben Elliott",
+          "email": "ben.elliott@gsacapital.com"
+        }
+      ],
+      "keywords": [
+        "copy",
+        "recursive",
+        "cp -r",
+        "cp"
+      ],
+      "scripts": {
+        "pretest": "jshint --config ./node_modules/yui-lint/jshint.json ./lib/",
+        "windows-test": "jenkins-mocha ./tests/full.js",
+        "test": "jenkins-mocha ./tests/full.js",
+        "posttest": "nyc report",
+        "changes": "github-changes -o davglass -r cpr"
+      },
+      "nyc": {
+        "lines": 100,
+        "statements": 100,
+        "functions": 100,
+        "branches": 90,
+        "check-coverage": true,
+        "reporter": [
+          "text",
+          "text-summary"
+        ]
+      },
+      "bugs": {
+        "url": "http://github.com/davglass/cpr/issues"
+      },
+      "license": "BSD-3-Clause",
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/davglass/cpr.git"
+      },
+      "gitHead": "38361371cabd884d992549a6835bf33ab7095204",
+      "homepage": "https://github.com/davglass/cpr#readme",
+      "_id": "cpr@3.0.1",
+      "_shasum": "b9a55038b7cd81a35c17b9761895bd8496aef1e5",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.10.3",
+      "_npmUser": {
+        "name": "davglass",
+        "email": "davglass@gmail.com"
+      },
+      "dist": {
+        "shasum": "b9a55038b7cd81a35c17b9761895bd8496aef1e5",
+        "tarball": "https://registry.npmjs.org/cpr/-/cpr-3.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "davglass",
+          "email": "davglass@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/cpr-3.0.1.tgz_1509462785925_0.6503313630819321"
+      },
+      "directories": {}
+    }
+  },
+  "readme": "CPR (cp -R)\n===========\n\nThere are other modules out there that attempt this, but none did it the way I needed it to be done or they had issues and the author failed to fix them in a timely manner.\n\nInstall\n-------\n\n    npm install cpr\n\n\nBuild Status\n------------\n\n[![Build Status](https://secure.travis-ci.org/davglass/cpr.png)](http://travis-ci.org/davglass/cpr)\n\nUsage\n-----\n\n```js\nvar cpr = require('cpr');\n//or\nvar cpr = require('cpr').cpr; //Back compat\n\ncpr('/path/from', '/path/to', {\n    deleteFirst: true, //Delete \"to\" before\n    overwrite: true, //If the file exists, overwrite it\n    confirm: true //After the copy, stat all the copied files to make sure they are there\n}, function(err, files) {\n    //err - The error if any (err.list might be available with an array of errors for more detailed information)\n    //files - List of files that we copied\n});\n\ncpr('/path/from', '/path/to', function(err, files) {\n    //err - The error if any (err.list might be available with an array of errors for more detailed information)\n    //      In the case of an error, cpr continues to copy files but returns this error object with all of the files that it failed to copy.\n    //files - List of files that we copied\n});\n```\n\nOptions\n-------\n\nAll options default to `false`.\n\n   * `deleteFirst`: Delete the to directory with `rimraf`\n   * `overwrite`: If the destination exists, overwrite it\n   * `confirm`: After the copy operation, stat all the files and report errors if any are missing\n   * `filter`: `RegExp` or `function` to test each file against before copying\n\n\nFiltering\n---------\n\nIf you give it a `RegExp`, it will use that to `test` the full absolute pathnames of the files and directories as they are being gathered. If any of them passes, it will not be copied.\nIf you give it a `function`, it will use that with `Array.filter` on the list of full absolute pathnames of files and directories.\n\n\nCLI\n---\n\n`cpr` can also be used from the command line which is useful for cross platform support.\n\nUsage:\n\n```\ncpr <source> <destination> [options]\n```\nCopies files from `source` to `destination`.\n\nOptions:\n\n* `-d`, `--delete-first`:             Delete the destination directory before copying.\n* `-f <regex>`, `--filter <regex>`:   Filter out any items that match `<regex>`, a case-insensitive regex pattern.\n* `-h`, `--help`:                     Display this usage info.\n* `-o`, `--overwrite`:                Overwrite the destination exists if it exists.\n* `-v`, `--version`:                  Display the cpr version.\n\nNote that the CLI's `filter` option is simpler than the original NodeJS API, only accepting case-insensitive regular expression patterns and not functions.\n\n![cpr](../master/cpr.jpg?raw=true)\n",
+  "maintainers": [
+    {
+      "name": "davglass",
+      "email": "davglass@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2017-10-31T15:13:06.933Z",
+    "created": "2012-10-04T19:43:02.524Z",
+    "0.0.1": "2012-10-04T19:43:03.947Z",
+    "0.0.2": "2012-10-05T15:00:53.738Z",
+    "0.0.3": "2012-10-05T21:26:31.137Z",
+    "0.0.4": "2012-10-15T17:20:22.711Z",
+    "0.0.5": "2012-10-19T13:38:23.483Z",
+    "0.0.6": "2012-10-19T16:00:52.205Z",
+    "0.1.0": "2013-02-26T17:51:12.599Z",
+    "0.1.1": "2013-07-10T19:06:25.348Z",
+    "0.2.0": "2014-05-13T13:33:20.693Z",
+    "0.3.0": "2014-06-30T14:11:47.845Z",
+    "0.3.1": "2014-07-02T01:10:12.462Z",
+    "0.3.2": "2014-07-02T20:53:35.885Z",
+    "0.3.3": "2015-02-10T15:02:39.001Z",
+    "0.4.0": "2015-02-15T14:19:01.113Z",
+    "0.4.1": "2015-05-26T15:48:21.470Z",
+    "0.4.2": "2015-09-12T14:43:28.274Z",
+    "0.4.3": "2015-10-11T21:02:05.527Z",
+    "1.0.0": "2015-11-13T00:44:52.445Z",
+    "1.1.0": "2016-04-05T13:35:34.705Z",
+    "1.1.1": "2016-04-06T13:51:44.759Z",
+    "1.1.2": "2016-06-09T14:26:50.057Z",
+    "2.0.0": "2016-08-15T19:09:15.456Z",
+    "2.0.1": "2016-12-19T15:49:07.354Z",
+    "2.0.2": "2016-12-21T18:14:53.467Z",
+    "2.1.0": "2017-05-29T12:58:32.105Z",
+    "2.2.0": "2017-06-26T12:15:47.146Z",
+    "3.0.0": "2017-10-31T13:09:39.786Z",
+    "3.0.1": "2017-10-31T15:13:06.933Z"
+  },
+  "author": {
+    "name": "Dav Glass",
+    "email": "davglass@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/davglass/cpr.git"
+  },
+  "users": {
+    "chrisdickinson": true,
+    "davglass": true,
+    "hughsk": true,
+    "zhangyaochun": true,
+    "silverwind": true,
+    "tunderdomb": true,
+    "mk": true,
+    "knownasilya": true,
+    "c_ogoo": true,
+    "usex": true
+  },
+  "homepage": "https://github.com/davglass/cpr#readme",
+  "keywords": [
+    "copy",
+    "recursive",
+    "cp -r",
+    "cp"
+  ],
+  "contributors": [
+    {
+      "name": "soyuka",
+      "email": "soyuka@gmail.com"
+    },
+    {
+      "name": "fresheneesz",
+      "email": "bitetrudpublic@gmail.com"
+    },
+    {
+      "name": "silverwind",
+      "email": "me@silverwind.io"
+    },
+    {
+      "name": "Peter deHaan",
+      "email": "peter@deseloper.com"
+    },
+    {
+      "name": "André Cruz",
+      "email": "andremiguelcruz@msn.com"
+    },
+    {
+      "name": "Brian J Brennan",
+      "email": "brianloveswords@gmail.com"
+    },
+    {
+      "name": "Elijah Insua",
+      "email": "tmpvar@gmail.com"
+    },
+    {
+      "name": "Jonny Reeves",
+      "email": "github@jonnyreeves.co.uk"
+    },
+    {
+      "name": "Lydie Danet",
+      "email": "lydie@happinov.fr"
+    },
+    {
+      "name": "Ben Elliott",
+      "email": "ben.elliott@gsacapital.com"
+    }
+  ],
+  "bugs": {
+    "url": "http://github.com/davglass/cpr/issues"
+  },
+  "readmeFilename": "README.md",
+  "license": "BSD-3-Clause",
+  "_attachments": {}
+}

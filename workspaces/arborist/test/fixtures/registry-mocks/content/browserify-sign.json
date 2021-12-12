@@ -1,0 +1,1931 @@
+{
+  "_id": "browserify-sign",
+  "_rev": "59-cfdc3e7f3b6265aeace0c3c47fe29a18",
+  "name": "browserify-sign",
+  "description": "adds node crypto signing for browsers",
+  "dist-tags": {
+    "latest": "4.2.1"
+  },
+  "versions": {
+    "2.0.0": {
+      "name": "browserify-sign",
+      "version": "2.0.0",
+      "description": "browserify-sign [![Build Status](https://travis-ci.org/calvinmetcalf/browserify-sign.svg)](https://travis-ci.org/calvinmetcalf/browserify-sign) ===",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test/index.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/calvinmetcalf/browserify-sign.git"
+      },
+      "author": "",
+      "license": "ISC",
+      "dependencies": {
+        "pemstrip": "0.0.1",
+        "asn1.js-rfc3280": "^0.5.1",
+        "inherits": "^2.0.1",
+        "bn.js": "^0.15.2",
+        "asn1.js": "^0.6.4",
+        "readable-stream": "^1.0.33"
+      },
+      "devDependencies": {
+        "tap-spec": "^1.0.1",
+        "tape": "^3.0.3"
+      },
+      "gitHead": "7e9b91446c335d41e9e53466f8b4e07b697570ac",
+      "bugs": {
+        "url": "https://github.com/calvinmetcalf/browserify-sign/issues"
+      },
+      "homepage": "https://github.com/calvinmetcalf/browserify-sign",
+      "_id": "browserify-sign@2.0.0",
+      "_shasum": "47ce26f16c3a8db376e712494b5b636c6c6a2b5c",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "47ce26f16c3a8db376e712494b5b636c6c6a2b5c",
+        "tarball": "https://registry.npmjs.org/browserify-sign/-/browserify-sign-2.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "2.1.0": {
+      "name": "browserify-sign",
+      "version": "2.1.0",
+      "description": "browserify-sign [![Build Status](https://travis-ci.org/calvinmetcalf/browserify-sign.svg)](https://travis-ci.org/calvinmetcalf/browserify-sign) ===",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test/index.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/calvinmetcalf/browserify-sign.git"
+      },
+      "author": "",
+      "license": "ISC",
+      "dependencies": {
+        "pemstrip": "0.0.1",
+        "asn1.js-rfc3280": "^0.5.1",
+        "inherits": "^2.0.1",
+        "bn.js": "^0.15.2",
+        "asn1.js": "^0.6.4",
+        "readable-stream": "^1.0.33"
+      },
+      "devDependencies": {
+        "tap-spec": "^1.0.1",
+        "tape": "^3.0.3"
+      },
+      "gitHead": "89e0d6a002c5cdd8b00e1dcd02426d8e9da6dbe8",
+      "bugs": {
+        "url": "https://github.com/calvinmetcalf/browserify-sign/issues"
+      },
+      "homepage": "https://github.com/calvinmetcalf/browserify-sign",
+      "_id": "browserify-sign@2.1.0",
+      "_shasum": "fec84a266e6fbd0f65c4fef03654f7919f23b21f",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "fec84a266e6fbd0f65c4fef03654f7919f23b21f",
+        "tarball": "https://registry.npmjs.org/browserify-sign/-/browserify-sign-2.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "2.2.0": {
+      "name": "browserify-sign",
+      "version": "2.2.0",
+      "description": "browserify-sign [![Build Status](https://travis-ci.org/calvinmetcalf/browserify-sign.svg)](https://travis-ci.org/calvinmetcalf/browserify-sign) ===",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test/index.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/calvinmetcalf/browserify-sign.git"
+      },
+      "author": "",
+      "license": "ISC",
+      "dependencies": {
+        "pemstrip": "0.0.1",
+        "asn1.js-rfc3280": "^0.5.1",
+        "inherits": "^2.0.1",
+        "bn.js": "^0.15.2",
+        "asn1.js": "^0.6.4",
+        "readable-stream": "^1.0.33"
+      },
+      "devDependencies": {
+        "tap-spec": "^1.0.1",
+        "tape": "^3.0.3"
+      },
+      "gitHead": "7f687cfa64c5af7b30cfeb931b6e3b6a1c59c552",
+      "bugs": {
+        "url": "https://github.com/calvinmetcalf/browserify-sign/issues"
+      },
+      "homepage": "https://github.com/calvinmetcalf/browserify-sign",
+      "_id": "browserify-sign@2.2.0",
+      "_shasum": "713cc6cfe19db071b51e67ce954a32189a04bbd6",
+      "_from": ".",
+      "_npmVersion": "2.0.0",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "713cc6cfe19db071b51e67ce954a32189a04bbd6",
+        "tarball": "https://registry.npmjs.org/browserify-sign/-/browserify-sign-2.2.0.tgz"
+      },
+      "directories": {}
+    },
+    "2.3.0": {
+      "name": "browserify-sign",
+      "version": "2.3.0",
+      "description": "browserify-sign [![Build Status](https://travis-ci.org/calvinmetcalf/browserify-sign.svg)](https://travis-ci.org/calvinmetcalf/browserify-sign) ===",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test/index.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/calvinmetcalf/browserify-sign.git"
+      },
+      "author": "",
+      "license": "ISC",
+      "dependencies": {
+        "pemstrip": "0.0.1",
+        "asn1.js-rfc3280": "^0.5.1",
+        "inherits": "^2.0.1",
+        "bn.js": "^0.15.2",
+        "asn1.js": "^0.6.4",
+        "readable-stream": "^1.0.33"
+      },
+      "devDependencies": {
+        "tap-spec": "^1.0.1",
+        "tape": "^3.0.3"
+      },
+      "gitHead": "db1be5c08096e0f5a32f99ad61dff59af62bc7bd",
+      "bugs": {
+        "url": "https://github.com/calvinmetcalf/browserify-sign/issues"
+      },
+      "homepage": "https://github.com/calvinmetcalf/browserify-sign",
+      "_id": "browserify-sign@2.3.0",
+      "_shasum": "a716d57ed7014be8d7321e556c9dbba096956917",
+      "_from": ".",
+      "_npmVersion": "2.0.0",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "a716d57ed7014be8d7321e556c9dbba096956917",
+        "tarball": "https://registry.npmjs.org/browserify-sign/-/browserify-sign-2.3.0.tgz"
+      },
+      "directories": {}
+    },
+    "2.4.0": {
+      "name": "browserify-sign",
+      "version": "2.4.0",
+      "description": "browserify-sign [![Build Status](https://travis-ci.org/calvinmetcalf/browserify-sign.svg)](https://travis-ci.org/calvinmetcalf/browserify-sign) ===",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test/index.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/calvinmetcalf/browserify-sign.git"
+      },
+      "author": "",
+      "license": "ISC",
+      "dependencies": {
+        "asn1.js": "^0.6.4",
+        "asn1.js-rfc3280": "^0.5.1",
+        "bn.js": "^0.15.2",
+        "elliptic": "^0.15.14",
+        "inherits": "^2.0.1",
+        "pemstrip": "0.0.1",
+        "readable-stream": "^1.0.33"
+      },
+      "devDependencies": {
+        "tap-spec": "^1.0.1",
+        "tape": "^3.0.3"
+      },
+      "gitHead": "59b99ba6aa5c0d4e9650fcfa6222e04830b46108",
+      "bugs": {
+        "url": "https://github.com/calvinmetcalf/browserify-sign/issues"
+      },
+      "homepage": "https://github.com/calvinmetcalf/browserify-sign",
+      "_id": "browserify-sign@2.4.0",
+      "_shasum": "55bef52192091216336db4fb0bcc88c1d8f049fd",
+      "_from": ".",
+      "_npmVersion": "2.0.0",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "55bef52192091216336db4fb0bcc88c1d8f049fd",
+        "tarball": "https://registry.npmjs.org/browserify-sign/-/browserify-sign-2.4.0.tgz"
+      },
+      "directories": {}
+    },
+    "2.5.0": {
+      "name": "browserify-sign",
+      "version": "2.5.0",
+      "description": "browserify-sign [![Build Status](https://travis-ci.org/calvinmetcalf/browserify-sign.svg)](https://travis-ci.org/calvinmetcalf/browserify-sign) ===",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test/index.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/calvinmetcalf/browserify-sign.git"
+      },
+      "author": "",
+      "license": "ISC",
+      "dependencies": {
+        "asn1.js": "^0.6.4",
+        "asn1.js-rfc3280": "^0.5.1",
+        "bn.js": "^0.15.2",
+        "elliptic": "^0.15.14",
+        "inherits": "^2.0.1",
+        "pemstrip": "0.0.1",
+        "readable-stream": "^1.0.33"
+      },
+      "devDependencies": {
+        "tap-spec": "^1.0.1",
+        "tape": "^3.0.3"
+      },
+      "gitHead": "1af0e3881ee9130994a594c09f4344e0e235dac9",
+      "bugs": {
+        "url": "https://github.com/calvinmetcalf/browserify-sign/issues"
+      },
+      "homepage": "https://github.com/calvinmetcalf/browserify-sign",
+      "_id": "browserify-sign@2.5.0",
+      "_shasum": "5d3481bf05bca06fbf13c6a36f29d0a51b0025f5",
+      "_from": ".",
+      "_npmVersion": "2.1.10",
+      "_nodeVersion": "0.10.33",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "5d3481bf05bca06fbf13c6a36f29d0a51b0025f5",
+        "tarball": "https://registry.npmjs.org/browserify-sign/-/browserify-sign-2.5.0.tgz"
+      },
+      "directories": {}
+    },
+    "2.5.1": {
+      "name": "browserify-sign",
+      "version": "2.5.1",
+      "description": "browserify-sign [![Build Status](https://travis-ci.org/calvinmetcalf/browserify-sign.svg)](https://travis-ci.org/calvinmetcalf/browserify-sign) ===",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test/index.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/calvinmetcalf/browserify-sign.git"
+      },
+      "author": "",
+      "license": "ISC",
+      "dependencies": {
+        "asn1.js": "^0.6.4",
+        "asn1.js-rfc3280": "^0.5.1",
+        "bn.js": "^0.15.2",
+        "elliptic": "^0.15.14",
+        "inherits": "^2.0.1",
+        "pemstrip": "0.0.1",
+        "readable-stream": "^1.0.33"
+      },
+      "devDependencies": {
+        "tap-spec": "^1.0.1",
+        "tape": "^3.0.3"
+      },
+      "gitHead": "9163dd196fed00bee66f10c23de2e72de6ff3406",
+      "bugs": {
+        "url": "https://github.com/calvinmetcalf/browserify-sign/issues"
+      },
+      "homepage": "https://github.com/calvinmetcalf/browserify-sign",
+      "_id": "browserify-sign@2.5.1",
+      "_shasum": "f0c659f322384937c242a245f37eedd900480894",
+      "_from": ".",
+      "_npmVersion": "2.1.10",
+      "_nodeVersion": "0.10.33",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "f0c659f322384937c242a245f37eedd900480894",
+        "tarball": "https://registry.npmjs.org/browserify-sign/-/browserify-sign-2.5.1.tgz"
+      },
+      "directories": {}
+    },
+    "2.5.2": {
+      "name": "browserify-sign",
+      "version": "2.5.2",
+      "description": "browserify-sign [![Build Status](https://travis-ci.org/calvinmetcalf/browserify-sign.svg)](https://travis-ci.org/calvinmetcalf/browserify-sign) ===",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test/index.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/calvinmetcalf/browserify-sign.git"
+      },
+      "author": "",
+      "license": "ISC",
+      "dependencies": {
+        "bn.js": "^0.15.2",
+        "elliptic": "^0.15.14",
+        "inherits": "^2.0.1",
+        "parse-asn1": "^1.0.0",
+        "readable-stream": "^1.0.33"
+      },
+      "devDependencies": {
+        "tap-spec": "^1.0.1",
+        "tape": "^3.0.3"
+      },
+      "gitHead": "21525ed562af9736ab362372c60a28bafbde4404",
+      "bugs": {
+        "url": "https://github.com/calvinmetcalf/browserify-sign/issues"
+      },
+      "homepage": "https://github.com/calvinmetcalf/browserify-sign",
+      "_id": "browserify-sign@2.5.2",
+      "_shasum": "77fba78b7464e7b9746fc845d77fc59fbcd8bf23",
+      "_from": ".",
+      "_npmVersion": "2.1.10",
+      "_nodeVersion": "0.11.14",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "77fba78b7464e7b9746fc845d77fc59fbcd8bf23",
+        "tarball": "https://registry.npmjs.org/browserify-sign/-/browserify-sign-2.5.2.tgz"
+      },
+      "directories": {}
+    },
+    "2.6.0": {
+      "name": "browserify-sign",
+      "version": "2.6.0",
+      "description": "browserify-sign [![Build Status](https://travis-ci.org/calvinmetcalf/browserify-sign.svg)](https://travis-ci.org/calvinmetcalf/browserify-sign) ===",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test/index.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/calvinmetcalf/browserify-sign.git"
+      },
+      "author": "",
+      "license": "ISC",
+      "dependencies": {
+        "bn.js": "^0.15.2",
+        "elliptic": "^0.15.14",
+        "inherits": "^2.0.1",
+        "parse-asn1": "^1.2.0",
+        "readable-stream": "^1.0.33"
+      },
+      "devDependencies": {
+        "tap-spec": "^1.0.1",
+        "tape": "^3.0.3"
+      },
+      "gitHead": "36e5387dd0a99ea52f40c9fc142c9e00274aac3a",
+      "bugs": {
+        "url": "https://github.com/calvinmetcalf/browserify-sign/issues"
+      },
+      "homepage": "https://github.com/calvinmetcalf/browserify-sign",
+      "_id": "browserify-sign@2.6.0",
+      "_shasum": "35def87585f0d8f4b116783a55e1a3711a2c48e3",
+      "_from": ".",
+      "_npmVersion": "2.1.10",
+      "_nodeVersion": "0.11.14",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "35def87585f0d8f4b116783a55e1a3711a2c48e3",
+        "tarball": "https://registry.npmjs.org/browserify-sign/-/browserify-sign-2.6.0.tgz"
+      },
+      "directories": {}
+    },
+    "2.6.1": {
+      "name": "browserify-sign",
+      "version": "2.6.1",
+      "description": "browserify-sign [![Build Status](https://travis-ci.org/calvinmetcalf/browserify-sign.svg)](https://travis-ci.org/calvinmetcalf/browserify-sign) ===",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test/index.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/calvinmetcalf/browserify-sign.git"
+      },
+      "author": "",
+      "license": "ISC",
+      "dependencies": {
+        "bn.js": "^0.15.2",
+        "elliptic": "^0.15.14",
+        "inherits": "^2.0.1",
+        "parse-asn1": "^1.2.0"
+      },
+      "devDependencies": {
+        "tap-spec": "^1.0.1",
+        "tape": "^3.0.3"
+      },
+      "gitHead": "8a965442c625e4edb220efef18a0d77e25646802",
+      "bugs": {
+        "url": "https://github.com/calvinmetcalf/browserify-sign/issues"
+      },
+      "homepage": "https://github.com/calvinmetcalf/browserify-sign",
+      "_id": "browserify-sign@2.6.1",
+      "_shasum": "2b6e2dc4d6f87015406ba968064888b76d8e6cb7",
+      "_from": ".",
+      "_npmVersion": "2.1.10",
+      "_nodeVersion": "0.10.34",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "2b6e2dc4d6f87015406ba968064888b76d8e6cb7",
+        "tarball": "https://registry.npmjs.org/browserify-sign/-/browserify-sign-2.6.1.tgz"
+      },
+      "directories": {}
+    },
+    "2.7.0": {
+      "name": "browserify-sign",
+      "version": "2.7.0",
+      "description": "browserify-sign [![Build Status](https://travis-ci.org/calvinmetcalf/browserify-sign.svg)](https://travis-ci.org/calvinmetcalf/browserify-sign) ===",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test/index.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/calvinmetcalf/browserify-sign.git"
+      },
+      "author": "",
+      "license": "ISC",
+      "dependencies": {
+        "bn.js": "^0.15.2",
+        "browserify-rsa": "^1.1.0",
+        "elliptic": "^0.15.14",
+        "inherits": "^2.0.1",
+        "parse-asn1": "^1.2.0"
+      },
+      "devDependencies": {
+        "tap-spec": "^1.0.1",
+        "tape": "^3.0.3"
+      },
+      "gitHead": "0b04a7d66105651e7538b2b5ff4676bb8959850b",
+      "bugs": {
+        "url": "https://github.com/calvinmetcalf/browserify-sign/issues"
+      },
+      "homepage": "https://github.com/calvinmetcalf/browserify-sign",
+      "_id": "browserify-sign@2.7.0",
+      "_shasum": "3beafdff58ddcbfee7b522db7c47ae57588607e9",
+      "_from": ".",
+      "_npmVersion": "2.1.10",
+      "_nodeVersion": "0.11.14",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "3beafdff58ddcbfee7b522db7c47ae57588607e9",
+        "tarball": "https://registry.npmjs.org/browserify-sign/-/browserify-sign-2.7.0.tgz"
+      },
+      "directories": {}
+    },
+    "2.7.1": {
+      "name": "browserify-sign",
+      "version": "2.7.1",
+      "description": "browserify-sign [![Build Status](https://travis-ci.org/calvinmetcalf/browserify-sign.svg)](https://travis-ci.org/calvinmetcalf/browserify-sign) ===",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test/index.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/calvinmetcalf/browserify-sign.git"
+      },
+      "author": "",
+      "license": "ISC",
+      "dependencies": {
+        "bn.js": "^0.16.0",
+        "browserify-rsa": "^1.1.0",
+        "elliptic": "^0.15.14",
+        "inherits": "^2.0.1",
+        "parse-asn1": "^1.2.0"
+      },
+      "devDependencies": {
+        "tap-spec": "^1.0.1",
+        "tape": "^3.0.3"
+      },
+      "gitHead": "428976af41a630bae8c9c973ddfc79ef160d78c5",
+      "bugs": {
+        "url": "https://github.com/calvinmetcalf/browserify-sign/issues"
+      },
+      "homepage": "https://github.com/calvinmetcalf/browserify-sign",
+      "_id": "browserify-sign@2.7.1",
+      "_shasum": "d07e11ccc13e7461034d96b8807c97a0209a2a31",
+      "_from": ".",
+      "_npmVersion": "2.0.0",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "d07e11ccc13e7461034d96b8807c97a0209a2a31",
+        "tarball": "https://registry.npmjs.org/browserify-sign/-/browserify-sign-2.7.1.tgz"
+      },
+      "directories": {}
+    },
+    "2.7.2": {
+      "name": "browserify-sign",
+      "version": "2.7.2",
+      "description": "browserify-sign [![Build Status](https://travis-ci.org/calvinmetcalf/browserify-sign.svg)](https://travis-ci.org/calvinmetcalf/browserify-sign) ===",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test/index.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/calvinmetcalf/browserify-sign.git"
+      },
+      "author": "",
+      "license": "ISC",
+      "dependencies": {
+        "bn.js": "^0.16.0",
+        "browserify-rsa": "^1.1.0",
+        "elliptic": "^0.15.14",
+        "inherits": "^2.0.1",
+        "parse-asn1": "^1.2.0"
+      },
+      "devDependencies": {
+        "tap-spec": "^1.0.1",
+        "tape": "^3.0.3"
+      },
+      "gitHead": "899ab2cfc45ffb0a2b0f32d292eb5e32eba77ee5",
+      "bugs": {
+        "url": "https://github.com/calvinmetcalf/browserify-sign/issues"
+      },
+      "homepage": "https://github.com/calvinmetcalf/browserify-sign",
+      "_id": "browserify-sign@2.7.2",
+      "_shasum": "e6aa1903c3023cd83e794304e57134b94df6ec36",
+      "_from": ".",
+      "_npmVersion": "2.1.10",
+      "_nodeVersion": "0.11.14",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "e6aa1903c3023cd83e794304e57134b94df6ec36",
+        "tarball": "https://registry.npmjs.org/browserify-sign/-/browserify-sign-2.7.2.tgz"
+      },
+      "directories": {}
+    },
+    "2.7.3": {
+      "name": "browserify-sign",
+      "version": "2.7.3",
+      "description": "browserify-sign [![Build Status](https://travis-ci.org/calvinmetcalf/browserify-sign.svg)](https://travis-ci.org/calvinmetcalf/browserify-sign) ===",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test/index.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/calvinmetcalf/browserify-sign.git"
+      },
+      "author": "",
+      "license": "ISC",
+      "dependencies": {
+        "bn.js": "^1.0.0",
+        "browserify-rsa": "^1.1.0",
+        "elliptic": "^0.15.14",
+        "inherits": "^2.0.1",
+        "parse-asn1": "^1.2.0"
+      },
+      "devDependencies": {
+        "tap-spec": "^1.0.1",
+        "tape": "^3.0.3"
+      },
+      "gitHead": "caa2c3a7861e85756a9db3cfadc6ae28d4a4a61c",
+      "bugs": {
+        "url": "https://github.com/calvinmetcalf/browserify-sign/issues"
+      },
+      "homepage": "https://github.com/calvinmetcalf/browserify-sign",
+      "_id": "browserify-sign@2.7.3",
+      "_shasum": "9d62187583658d8c88620faab22334846b47d97b",
+      "_from": ".",
+      "_npmVersion": "2.1.10",
+      "_nodeVersion": "0.11.14",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "9d62187583658d8c88620faab22334846b47d97b",
+        "tarball": "https://registry.npmjs.org/browserify-sign/-/browserify-sign-2.7.3.tgz"
+      },
+      "directories": {}
+    },
+    "2.7.4": {
+      "name": "browserify-sign",
+      "version": "2.7.4",
+      "description": "browserify-sign [![Build Status](https://travis-ci.org/calvinmetcalf/browserify-sign.svg)](https://travis-ci.org/calvinmetcalf/browserify-sign) ===",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test/index.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/calvinmetcalf/browserify-sign.git"
+      },
+      "author": "",
+      "license": "ISC",
+      "dependencies": {
+        "bn.js": "^1.0.0",
+        "browserify-rsa": "^1.1.0",
+        "elliptic": "^0.15.14",
+        "inherits": "^2.0.1",
+        "parse-asn1": "^2.0.0"
+      },
+      "devDependencies": {
+        "tap-spec": "^1.0.1",
+        "tape": "^3.0.3"
+      },
+      "gitHead": "7a8987c6667af21591d79bb8e4df0e14e2afb566",
+      "bugs": {
+        "url": "https://github.com/calvinmetcalf/browserify-sign/issues"
+      },
+      "homepage": "https://github.com/calvinmetcalf/browserify-sign",
+      "_id": "browserify-sign@2.7.4",
+      "_shasum": "843a1f09dddd883111439faa71c35b8afd20c3f6",
+      "_from": ".",
+      "_npmVersion": "2.1.10",
+      "_nodeVersion": "0.11.14",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "843a1f09dddd883111439faa71c35b8afd20c3f6",
+        "tarball": "https://registry.npmjs.org/browserify-sign/-/browserify-sign-2.7.4.tgz"
+      },
+      "directories": {}
+    },
+    "2.7.5": {
+      "name": "browserify-sign",
+      "version": "2.7.5",
+      "description": "browserify-sign [![Build Status](https://travis-ci.org/calvinmetcalf/browserify-sign.svg)](https://travis-ci.org/calvinmetcalf/browserify-sign) ===",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test/index.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/calvinmetcalf/browserify-sign.git"
+      },
+      "author": "",
+      "license": "ISC",
+      "dependencies": {
+        "bn.js": "^1.0.0",
+        "browserify-rsa": "^1.1.0",
+        "elliptic": "^1.0.0",
+        "inherits": "^2.0.1",
+        "parse-asn1": "^2.0.0"
+      },
+      "devDependencies": {
+        "tap-spec": "^1.0.1",
+        "tape": "^3.0.3"
+      },
+      "gitHead": "ef5d2b807f07b2162581127eee9762a3fc144aaa",
+      "bugs": {
+        "url": "https://github.com/calvinmetcalf/browserify-sign/issues"
+      },
+      "homepage": "https://github.com/calvinmetcalf/browserify-sign",
+      "_id": "browserify-sign@2.7.5",
+      "_shasum": "92fce12b47775547f2887d7c5282856c163715b2",
+      "_from": ".",
+      "_npmVersion": "2.1.10",
+      "_nodeVersion": "0.11.14",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "92fce12b47775547f2887d7c5282856c163715b2",
+        "tarball": "https://registry.npmjs.org/browserify-sign/-/browserify-sign-2.7.5.tgz"
+      },
+      "directories": {}
+    },
+    "2.8.0": {
+      "name": "browserify-sign",
+      "version": "2.8.0",
+      "description": "browserify-sign [![Build Status](https://travis-ci.org/calvinmetcalf/browserify-sign.svg)](https://travis-ci.org/calvinmetcalf/browserify-sign) ===",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test/index.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/calvinmetcalf/browserify-sign.git"
+      },
+      "author": "",
+      "license": "ISC",
+      "dependencies": {
+        "bn.js": "^1.0.0",
+        "browserify-rsa": "^1.1.0",
+        "elliptic": "^1.0.0",
+        "inherits": "^2.0.1",
+        "parse-asn1": "^2.0.0"
+      },
+      "devDependencies": {
+        "tap-spec": "^1.0.1",
+        "tape": "^3.0.3"
+      },
+      "gitHead": "76b146a2bc02fbdc37be54d408e2e540b0211fe5",
+      "bugs": {
+        "url": "https://github.com/calvinmetcalf/browserify-sign/issues"
+      },
+      "homepage": "https://github.com/calvinmetcalf/browserify-sign",
+      "_id": "browserify-sign@2.8.0",
+      "_shasum": "655975c12006d02b59181da9ab73f856c63c9aa4",
+      "_from": ".",
+      "_npmVersion": "2.1.10",
+      "_nodeVersion": "0.11.14",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "655975c12006d02b59181da9ab73f856c63c9aa4",
+        "tarball": "https://registry.npmjs.org/browserify-sign/-/browserify-sign-2.8.0.tgz"
+      },
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "browserify-sign",
+      "version": "3.0.0",
+      "description": "browserify-sign [![Build Status](https://travis-ci.org/crypto-browserify/browserify-sign.svg)](https://travis-ci.org/crypto-browserify/browserify-sign) ===",
+      "main": "index.js",
+      "browser": "browser.js",
+      "scripts": {
+        "test": "node test/index.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/crypto-browserify/browserify-sign.git"
+      },
+      "author": "",
+      "license": "ISC",
+      "dependencies": {
+        "bn.js": "^1.0.0",
+        "browserify-rsa": "^2.0.0",
+        "create-hash": "^1.1.0",
+        "create-hmac": "^1.1.2",
+        "elliptic": "^1.0.0",
+        "inherits": "^2.0.1",
+        "parse-asn1": "^3.0.0"
+      },
+      "devDependencies": {
+        "tap-spec": "^1.0.1",
+        "tape": "^3.0.3"
+      },
+      "gitHead": "6c04eec2c6eebee21c577cbdbec153c91cfe9473",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/browserify-sign/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/browserify-sign",
+      "_id": "browserify-sign@3.0.0",
+      "_shasum": "dfd89e22c75ba4b0dc37cfda1d39b96f79123c55",
+      "_from": ".",
+      "_npmVersion": "2.7.0",
+      "_nodeVersion": "0.10.36",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "dfd89e22c75ba4b0dc37cfda1d39b96f79123c55",
+        "tarball": "https://registry.npmjs.org/browserify-sign/-/browserify-sign-3.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "3.0.1": {
+      "name": "browserify-sign",
+      "version": "3.0.1",
+      "description": "browserify-sign [![Build Status](https://travis-ci.org/crypto-browserify/browserify-sign.svg)](https://travis-ci.org/crypto-browserify/browserify-sign) ===",
+      "main": "index.js",
+      "browser": "browser.js",
+      "scripts": {
+        "test": "node test/index.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/crypto-browserify/browserify-sign.git"
+      },
+      "author": "",
+      "license": "ISC",
+      "dependencies": {
+        "bn.js": "^1.0.0",
+        "browserify-rsa": "^2.0.0",
+        "create-hash": "^1.1.0",
+        "create-hmac": "^1.1.2",
+        "elliptic": "^1.0.0",
+        "inherits": "^2.0.1",
+        "parse-asn1": "^3.0.0"
+      },
+      "devDependencies": {
+        "tap-spec": "^1.0.1",
+        "tape": "^3.0.3"
+      },
+      "gitHead": "7846def389d0de3ed38b3e0debe80533728cf751",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/browserify-sign/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/browserify-sign",
+      "_id": "browserify-sign@3.0.1",
+      "_shasum": "e1bdf7ca50d575d22e57705c60b3033846dc96bf",
+      "_from": ".",
+      "_npmVersion": "2.7.0",
+      "_nodeVersion": "0.10.36",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "e1bdf7ca50d575d22e57705c60b3033846dc96bf",
+        "tarball": "https://registry.npmjs.org/browserify-sign/-/browserify-sign-3.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "3.0.2": {
+      "name": "browserify-sign",
+      "version": "3.0.2",
+      "description": "browserify-sign [![Build Status](https://travis-ci.org/crypto-browserify/browserify-sign.svg)](https://travis-ci.org/crypto-browserify/browserify-sign) ===",
+      "main": "index.js",
+      "browser": "browser.js",
+      "scripts": {
+        "test": "node test/index.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/crypto-browserify/browserify-sign.git"
+      },
+      "author": "",
+      "license": "ISC",
+      "dependencies": {
+        "bn.js": "^2.0.0",
+        "browserify-rsa": "^2.0.0",
+        "create-hash": "^1.1.0",
+        "create-hmac": "^1.1.2",
+        "elliptic": "^3.0.0",
+        "inherits": "^2.0.1",
+        "parse-asn1": "^3.0.0"
+      },
+      "devDependencies": {
+        "tap-spec": "^1.0.1",
+        "tape": "^3.0.3"
+      },
+      "gitHead": "b346c239b6e25045664340d08ab04b2522213bf5",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/browserify-sign/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/browserify-sign",
+      "_id": "browserify-sign@3.0.2",
+      "_shasum": "751ced7ac76e7b719efa6fc3f04ecfa6ea7de88d",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "751ced7ac76e7b719efa6fc3f04ecfa6ea7de88d",
+        "tarball": "https://registry.npmjs.org/browserify-sign/-/browserify-sign-3.0.2.tgz"
+      },
+      "directories": {}
+    },
+    "3.0.3": {
+      "name": "browserify-sign",
+      "version": "3.0.3",
+      "description": "browserify-sign [![Build Status](https://travis-ci.org/crypto-browserify/browserify-sign.svg)](https://travis-ci.org/crypto-browserify/browserify-sign) ===",
+      "main": "index.js",
+      "browser": "browser.js",
+      "scripts": {
+        "test": "node test/index.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/crypto-browserify/browserify-sign.git"
+      },
+      "author": "",
+      "license": "ISC",
+      "dependencies": {
+        "bn.js": "^2.0.0",
+        "browserify-rsa": "^2.0.0",
+        "create-hash": "^1.1.0",
+        "create-hmac": "^1.1.2",
+        "elliptic": "^3.0.0",
+        "inherits": "^2.0.1",
+        "parse-asn1": "^3.0.0"
+      },
+      "devDependencies": {
+        "tap-spec": "^1.0.1",
+        "tape": "^3.0.3"
+      },
+      "gitHead": "a68231af6b263f2b0746a586190585fc7a45e7dc",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/browserify-sign/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/browserify-sign#readme",
+      "_id": "browserify-sign@3.0.3",
+      "_shasum": "dbd912bed24295ab92f8ef6f918e71912ad91f41",
+      "_from": ".",
+      "_npmVersion": "2.9.0",
+      "_nodeVersion": "3.0.0",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "dbd912bed24295ab92f8ef6f918e71912ad91f41",
+        "tarball": "https://registry.npmjs.org/browserify-sign/-/browserify-sign-3.0.3.tgz"
+      },
+      "directories": {}
+    },
+    "3.0.8": {
+      "name": "browserify-sign",
+      "version": "3.0.8",
+      "description": "browserify-sign [![Build Status](https://travis-ci.org/crypto-browserify/browserify-sign.svg)](https://travis-ci.org/crypto-browserify/browserify-sign) ===",
+      "main": "index.js",
+      "browser": "browser.js",
+      "scripts": {
+        "unit": "node test/index.js | tspec",
+        "standard": "standard",
+        "test": "npm run standard && npm run unit"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/crypto-browserify/browserify-sign.git"
+      },
+      "author": "",
+      "license": "ISC",
+      "dependencies": {
+        "bn.js": "^2.0.0",
+        "browserify-rsa": "^2.0.0",
+        "create-hash": "^1.1.0",
+        "create-hmac": "^1.1.2",
+        "elliptic": "^3.0.0",
+        "inherits": "^2.0.1",
+        "parse-asn1": "^3.0.0"
+      },
+      "devDependencies": {
+        "tap-spec": "^1.0.1",
+        "tape": "^3.0.3",
+        "standard": "^5.0.0"
+      },
+      "gitHead": "243fac9e1ba49440a0a9edfd912a2bfea324149a",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/browserify-sign/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/browserify-sign#readme",
+      "_id": "browserify-sign@3.0.8",
+      "_shasum": "a5cc9a2f84005ddc37775b7c56bdabd987e69025",
+      "_from": ".",
+      "_npmVersion": "2.13.3",
+      "_nodeVersion": "3.2.0",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "dist": {
+        "shasum": "a5cc9a2f84005ddc37775b7c56bdabd987e69025",
+        "tarball": "https://registry.npmjs.org/browserify-sign/-/browserify-sign-3.0.8.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "directories": {}
+    },
+    "4.0.0": {
+      "name": "browserify-sign",
+      "version": "4.0.0",
+      "description": "adds node crypto signing for browsers",
+      "main": "index.js",
+      "browser": "browser.js",
+      "scripts": {
+        "unit": "node test/index.js | tspec",
+        "standard": "standard",
+        "test": "npm run standard && npm run unit"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/crypto-browserify/browserify-sign.git"
+      },
+      "author": "",
+      "license": "ISC",
+      "dependencies": {
+        "bn.js": "^4.1.1",
+        "browserify-rsa": "^4.0.0",
+        "create-hash": "^1.1.0",
+        "create-hmac": "^1.1.2",
+        "elliptic": "^6.0.0",
+        "inherits": "^2.0.1",
+        "parse-asn1": "^5.0.0"
+      },
+      "devDependencies": {
+        "tap-spec": "^1.0.1",
+        "tape": "^3.0.3",
+        "standard": "^5.0.0"
+      },
+      "gitHead": "7e4d3cf65624fbf58c027835a5e2c70de19cd640",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/browserify-sign/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/browserify-sign#readme",
+      "_id": "browserify-sign@4.0.0",
+      "_shasum": "10773910c3c206d5420a46aad8694f820b85968f",
+      "_from": ".",
+      "_npmVersion": "2.9.0",
+      "_nodeVersion": "4.2.1",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "dist": {
+        "shasum": "10773910c3c206d5420a46aad8694f820b85968f",
+        "tarball": "https://registry.npmjs.org/browserify-sign/-/browserify-sign-4.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "directories": {}
+    },
+    "4.0.1": {
+      "name": "browserify-sign",
+      "version": "4.0.1",
+      "description": "adds node crypto signing for browsers",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/browserify-sign/issues"
+      },
+      "license": "ISC",
+      "files": [
+        "browser",
+        "index.js"
+      ],
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crypto-browserify/browserify-sign.git"
+      },
+      "scripts": {
+        "coverage": "nyc npm run unit",
+        "lint": "standard",
+        "test": "npm run lint && npm run unit",
+        "unit": "tape test/*.js"
+      },
+      "dependencies": {
+        "bn.js": "^4.1.1",
+        "browserify-rsa": "^4.0.0",
+        "create-hash": "^1.1.0",
+        "create-hmac": "^1.1.2",
+        "elliptic": "^6.0.0",
+        "inherits": "^2.0.1",
+        "parse-asn1": "^5.0.0"
+      },
+      "devDependencies": {
+        "nyc": "^6.1.1",
+        "standard": "^6.0.8",
+        "tape": "^4.5.1"
+      },
+      "browser": "browser/index.js",
+      "gitHead": "4e502308f6f2e1cb0b6e1e0b9b3c50c149f644dd",
+      "homepage": "https://github.com/crypto-browserify/browserify-sign#readme",
+      "_id": "browserify-sign@4.0.1",
+      "_shasum": "824070f3b53fbbd07ccf2e398abe423483e0601e",
+      "_from": ".",
+      "_npmVersion": "4.0.5",
+      "_nodeVersion": "6.10.0",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "dist": {
+        "shasum": "824070f3b53fbbd07ccf2e398abe423483e0601e",
+        "tarball": "https://registry.npmjs.org/browserify-sign/-/browserify-sign-4.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/browserify-sign-4.0.1.tgz_1490638012415_0.6559046404436231"
+      },
+      "directories": {}
+    },
+    "4.0.2": {
+      "name": "browserify-sign",
+      "version": "4.0.2",
+      "description": "adds node crypto signing for browsers",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/browserify-sign/issues"
+      },
+      "license": "ISC",
+      "files": [
+        "browser",
+        "index.js"
+      ],
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crypto-browserify/browserify-sign.git"
+      },
+      "scripts": {
+        "coverage": "nyc npm run unit",
+        "lint": "standard",
+        "test": "npm run lint && npm run unit",
+        "unit": "tape test/*.js"
+      },
+      "dependencies": {
+        "bn.js": "^4.1.1",
+        "browserify-rsa": "^4.0.0",
+        "create-hash": "^1.1.0",
+        "create-hmac": "^1.1.2",
+        "elliptic": "^6.0.0",
+        "inherits": "^2.0.1",
+        "parse-asn1": "^5.0.0"
+      },
+      "devDependencies": {
+        "nyc": "^6.1.1",
+        "standard": "^6.0.8",
+        "tape": "^4.5.1"
+      },
+      "browser": "browser/index.js",
+      "gitHead": "0f9b74f4d96b5f4279f427beeffdcc5525ff196d",
+      "homepage": "https://github.com/crypto-browserify/browserify-sign#readme",
+      "_id": "browserify-sign@4.0.2",
+      "_shasum": "b3a9507b270b90d110fe3b7bede5fc10249f7518",
+      "_from": ".",
+      "_npmVersion": "4.0.5",
+      "_nodeVersion": "6.10.0",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "dist": {
+        "shasum": "b3a9507b270b90d110fe3b7bede5fc10249f7518",
+        "tarball": "https://registry.npmjs.org/browserify-sign/-/browserify-sign-4.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/browserify-sign-4.0.2.tgz_1490641364499_0.5541884624399245"
+      },
+      "directories": {}
+    },
+    "4.0.3": {
+      "name": "browserify-sign",
+      "version": "4.0.3",
+      "description": "adds node crypto signing for browsers",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/browserify-sign/issues"
+      },
+      "license": "ISC",
+      "files": [
+        "browser",
+        "index.js",
+        "algos.js"
+      ],
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crypto-browserify/browserify-sign.git"
+      },
+      "scripts": {
+        "coverage": "nyc npm run unit",
+        "lint": "standard",
+        "test": "npm run lint && npm run unit",
+        "unit": "tape test/*.js"
+      },
+      "dependencies": {
+        "bn.js": "^4.1.1",
+        "browserify-rsa": "^4.0.0",
+        "create-hash": "^1.1.0",
+        "create-hmac": "^1.1.2",
+        "elliptic": "^6.0.0",
+        "inherits": "^2.0.1",
+        "parse-asn1": "^5.0.0"
+      },
+      "devDependencies": {
+        "nyc": "^6.1.1",
+        "standard": "^6.0.8",
+        "tape": "^4.5.1"
+      },
+      "browser": "browser/index.js",
+      "gitHead": "de9d6b2bb9a9e3c04b9ada8b86492e7944d0b468",
+      "homepage": "https://github.com/crypto-browserify/browserify-sign#readme",
+      "_id": "browserify-sign@4.0.3",
+      "_shasum": "b41d5330ba52d5c67855773e273dd3cf14a7e497",
+      "_from": ".",
+      "_npmVersion": "4.0.5",
+      "_nodeVersion": "6.10.0",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "dist": {
+        "shasum": "b41d5330ba52d5c67855773e273dd3cf14a7e497",
+        "tarball": "https://registry.npmjs.org/browserify-sign/-/browserify-sign-4.0.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/browserify-sign-4.0.3.tgz_1490641680509_0.6111230396199971"
+      },
+      "directories": {}
+    },
+    "4.0.4": {
+      "name": "browserify-sign",
+      "version": "4.0.4",
+      "description": "adds node crypto signing for browsers",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/browserify-sign/issues"
+      },
+      "license": "ISC",
+      "files": [
+        "browser",
+        "index.js",
+        "algos.js"
+      ],
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crypto-browserify/browserify-sign.git"
+      },
+      "scripts": {
+        "coverage": "nyc npm run unit",
+        "lint": "standard",
+        "test": "npm run lint && npm run unit",
+        "unit": "tape test/*.js"
+      },
+      "dependencies": {
+        "bn.js": "^4.1.1",
+        "browserify-rsa": "^4.0.0",
+        "create-hash": "^1.1.0",
+        "create-hmac": "^1.1.2",
+        "elliptic": "^6.0.0",
+        "inherits": "^2.0.1",
+        "parse-asn1": "^5.0.0"
+      },
+      "devDependencies": {
+        "nyc": "^6.1.1",
+        "standard": "^6.0.8",
+        "tape": "^4.5.1"
+      },
+      "browser": "browser/index.js",
+      "gitHead": "44a10f6edf5df9dade14cf5600392417da6f966b",
+      "homepage": "https://github.com/crypto-browserify/browserify-sign#readme",
+      "_id": "browserify-sign@4.0.4",
+      "_shasum": "aa4eb68e5d7b658baa6bf6a57e630cbd7a93d298",
+      "_from": ".",
+      "_npmVersion": "4.0.5",
+      "_nodeVersion": "6.10.0",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "dist": {
+        "shasum": "aa4eb68e5d7b658baa6bf6a57e630cbd7a93d298",
+        "tarball": "https://registry.npmjs.org/browserify-sign/-/browserify-sign-4.0.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/browserify-sign-4.0.4.tgz_1490702810443_0.7301043279003352"
+      },
+      "directories": {}
+    },
+    "4.1.0": {
+      "name": "browserify-sign",
+      "version": "4.1.0",
+      "description": "adds node crypto signing for browsers",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/browserify-sign/issues"
+      },
+      "license": "ISC",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crypto-browserify/browserify-sign.git"
+      },
+      "scripts": {
+        "coverage": "nyc npm run unit",
+        "lint": "standard",
+        "test": "npm run lint && npm run unit",
+        "unit": "tape test/*.js"
+      },
+      "dependencies": {
+        "bn.js": "^5.1.1",
+        "browserify-rsa": "^4.0.1",
+        "create-hash": "^1.2.0",
+        "create-hmac": "^1.1.7",
+        "elliptic": "^6.5.2",
+        "inherits": "^2.0.4",
+        "parse-asn1": "^5.1.5",
+        "readable-stream": "^3.6.0"
+      },
+      "devDependencies": {
+        "nyc": "^15.0.1",
+        "standard": "^14.3.3",
+        "tape": "^5.0.0"
+      },
+      "browser": "browser/index.js",
+      "gitHead": "aa6a963e173b004637386134a7ef143c138f0ce8",
+      "homepage": "https://github.com/crypto-browserify/browserify-sign#readme",
+      "_id": "browserify-sign@4.1.0",
+      "_nodeVersion": "12.16.0",
+      "_npmVersion": "6.14.4",
+      "dist": {
+        "integrity": "sha512-VYxo7cDCeYUoBZ0ZCy4UyEUCP3smyBd4DRQM5nrFS1jJjPJjX7rP3oLRpPoWfkhQfyJ0I9ZbHbKafrFD/SGlrg==",
+        "shasum": "4fe971b379a5aeb4925e06779f9fa1f41d249d70",
+        "tarball": "https://registry.npmjs.org/browserify-sign/-/browserify-sign-4.1.0.tgz",
+        "fileCount": 10,
+        "unpackedSize": 14408,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJesWH6CRA9TVsSAnZWagAA/nUP/iqMyRg/Fd34+JmXAgNA\nEUR5WlW02OK/qrySzA5DVkOxnNU7qTb6m8R+OHCIRh2KGUBuNLe3BoH6rAPM\nIEQquOkWDP8h0twwDSn8DFNvkHNDO7aO7DbH7tID8pqUXAFw5IihkDgKzmhY\na1G0Z4f+7krjc0RNM9CubuUVqmVNWba7XE+veqSGLtRQyzvoKxN/7w2+0z1+\nOpE/+nzj43rEgkeCtk1jR/K2RNeJ6u2UrLV9BIz2ZV9e4Gx/grbOitXDobUB\n3TMghunUTsYBOnJDuQVEHqbHdbu2U15nVd0huSzn91nSteOy4dYM3rEbaw8+\nVphU3E5yaOQns/tTIpngGHGobzHiVzGR3Gn5AWwueDX8iFO1TKNc5KYLcTAv\nV0ee4v5Dskz20KpvVZQB0Ju2DzTAxWZi/gXjXSCnD/3qsyt+lMnXhazEIsoU\ne4QsU8PEhyF/IQhXNKFusB5NAPy5guneUYTa0Q9FUkPDsV935QXpg+BhY0CJ\nLBFk+VGRQCEgdr6LSzKJvG43GwrelLwiu9nYrumpGI5J5N2X1V/UMHy85sOo\nb8hZoQEl90Gc3CBXCCnIYh9t4Q2IGF7Mpbgm9kED/odmatnkvrrl07iz2k4f\nZSZ9kTscfzN0x9u25Ggu4lvlLDnfHVdnvuEjSscm6hz2wS/m5f5bqXPW+2kA\n4Ac8\r\n=19mf\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "calvin.metcalf@gmail.com",
+          "name": "cwmma"
+        },
+        {
+          "email": "npm@dcousens.com",
+          "name": "dcousens"
+        },
+        {
+          "email": "fedor@indutny.com",
+          "name": "indutny"
+        },
+        {
+          "email": "jprichardson@gmail.com",
+          "name": "jprichardson"
+        }
+      ],
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/browserify-sign_4.1.0_1588683257542_0.6200496226034777"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.2.0": {
+      "name": "browserify-sign",
+      "version": "4.2.0",
+      "description": "adds node crypto signing for browsers",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/browserify-sign/issues"
+      },
+      "license": "ISC",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crypto-browserify/browserify-sign.git"
+      },
+      "scripts": {
+        "coverage": "nyc npm run unit",
+        "lint": "standard",
+        "test": "npm run lint && npm run unit",
+        "unit": "tape test/*.js"
+      },
+      "dependencies": {
+        "bn.js": "^5.1.1",
+        "browserify-rsa": "^4.0.1",
+        "create-hash": "^1.2.0",
+        "create-hmac": "^1.1.7",
+        "elliptic": "^6.5.2",
+        "inherits": "^2.0.4",
+        "parse-asn1": "^5.1.5",
+        "readable-stream": "^3.6.0",
+        "safe-buffer": "^5.2.0"
+      },
+      "devDependencies": {
+        "nyc": "^15.0.1",
+        "standard": "^14.3.3",
+        "tape": "^5.0.0"
+      },
+      "browser": "browser/index.js",
+      "gitHead": "eeb0c1ee7e4c326d17ba31d5e683cb4e75d763b2",
+      "homepage": "https://github.com/crypto-browserify/browserify-sign#readme",
+      "_id": "browserify-sign@4.2.0",
+      "_nodeVersion": "12.16.0",
+      "_npmVersion": "6.14.5",
+      "dist": {
+        "integrity": "sha512-hEZC1KEeYuoHRqhGhTy6gWrpJA3ZDjFWv0DE61643ZnOXAKJb3u7yWcrU0mMc9SwAqK1n7myPGndkp0dFG7NFA==",
+        "shasum": "545d0b1b07e6b2c99211082bf1b12cce7a0b0e11",
+        "tarball": "https://registry.npmjs.org/browserify-sign/-/browserify-sign-4.2.0.tgz",
+        "fileCount": 10,
+        "unpackedSize": 14452,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJewqeuCRA9TVsSAnZWagAA/8sQAJrT8H/PvRZ264BCMxcs\nBexT77GbQMKYZisyvbt0a6KgrLquJVYUB7UBflUFNWx1iEgAM7TuzDoKJU+6\ndKt0iyNCBu2KHInYrFpa09vo8gC8ST/1SFAOJA2lc7IHWEt/8q+ajFm2xS0+\nkY6TfMqce0KrUMarNLhwnW67c0zuOv11mBZ7Jydb1UU26O+ocP4ThQzFY+N6\ndxjLEeOTyw5a1WMsjiWKwxn0omJTMStIViGpB+c9gGW/jstEZ/JZllYA9rjE\nMi8ZN6Duz/zAFacePpU9iTnZsCFkWX+bzEBrIWuRBw7aQMUO8tjPYMkHvgtQ\nur3ST5M9LQHrSBdP/BBabRdKxj/7g8zuy5vuvq5Zu3W3+jtsmCAEmHm7H4a0\nBD2cMPSLtLlZUMJNxHb8zbLja0Do7ZKk6cDggEOFJ40aHtA0EvPmBA8XrjO2\nJ+P8ElxQsUfFbz3wFGbJwR5gw93wlo/APnWMY9MMmmlbSp3AIdHwgH+4hXy+\nuQRHPYnTxahgi+S+aoJDTvFlua3IkNQDyotnNCnAE/Xe7fpM4UgL8yeCpE29\nNcjsuICB5t+VOSHsPm2ZH3orpYI+HAOw7tvqnJJG5eUVXN7WrNLfwyWrtZ1s\nVLoGZxtQ3kOWPGp11m2eB0Ic7ZsP7a9emqRyeI6rQRbJz+dP8udpqVCOEsTM\n0pq5\r\n=/VWv\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "calvin.metcalf@gmail.com",
+          "name": "cwmma"
+        },
+        {
+          "email": "npm@dcousens.com",
+          "name": "dcousens"
+        },
+        {
+          "email": "fedor@indutny.com",
+          "name": "indutny"
+        },
+        {
+          "email": "jprichardson@gmail.com",
+          "name": "jprichardson"
+        }
+      ],
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/browserify-sign_4.2.0_1589815213333_0.8678416046326589"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.2.1": {
+      "name": "browserify-sign",
+      "version": "4.2.1",
+      "description": "adds node crypto signing for browsers",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/browserify-sign/issues"
+      },
+      "license": "ISC",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crypto-browserify/browserify-sign.git"
+      },
+      "scripts": {
+        "coverage": "nyc npm run unit",
+        "lint": "standard",
+        "test": "npm run lint && npm run unit",
+        "unit": "tape test/*.js"
+      },
+      "dependencies": {
+        "bn.js": "^5.1.1",
+        "browserify-rsa": "^4.0.1",
+        "create-hash": "^1.2.0",
+        "create-hmac": "^1.1.7",
+        "elliptic": "^6.5.3",
+        "inherits": "^2.0.4",
+        "parse-asn1": "^5.1.5",
+        "readable-stream": "^3.6.0",
+        "safe-buffer": "^5.2.0"
+      },
+      "devDependencies": {
+        "nyc": "^15.0.1",
+        "standard": "^14.3.3",
+        "tape": "^5.0.0"
+      },
+      "browser": "browser/index.js",
+      "gitHead": "266b780b8ab112bd12e4ef330d9b4a65b76350e7",
+      "homepage": "https://github.com/crypto-browserify/browserify-sign#readme",
+      "_id": "browserify-sign@4.2.1",
+      "_nodeVersion": "12.16.0",
+      "_npmVersion": "6.14.5",
+      "dist": {
+        "integrity": "sha512-/vrA5fguVAKKAVTNJjgSm1tRQDHUU6DbwO9IROu/0WAzC8PKhucDSh18J0RMvVeHAn5puMd+QHC2erPRNf8lmg==",
+        "shasum": "eaf4add46dd54be3bb3b36c0cf15abbeba7956c3",
+        "tarball": "https://registry.npmjs.org/browserify-sign/-/browserify-sign-4.2.1.tgz",
+        "fileCount": 10,
+        "unpackedSize": 14452,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfKYmPCRA9TVsSAnZWagAARLMQAJoHZ0CR5l4iSvW4s04y\nJDZ4vMMlgY2ybA+Ga1McoBVPUUX0vu4ASoHbi3dB8/mU78FK/QaGWaMebTMe\nNOqQfn7BymmJPZK9NlRQZqM2wXKz3kmK7+lfqr9ughhK5o8nrZBGCUqT6ZeH\napHxpPOhnkJnXwSWQcEGRYU3Vjc6QaI764z2bO1hR/MBE+fMwofTm4Z3Sd6y\nC9ziVmLzNZnAGyp3sauyjHcnMXk2uZq7ygThQRVGR2mujaV6wVPnMeJuzetP\n2t93dAHcBeTJdTalgrtp+BiOgn4ddhglqLdSXt3CxsQOeWMyvKK8OMD8I4Ep\ncJrAxGTzNFPR8abkICinYClL1LkbKwmCrhxxWcz9Z912lvL602edftjf4Y40\nqw0US3NFXK2YDt25DTRTr4+ediNaraziUslF0xlF3i35cXGu5kWATdNizQWK\nXB8TLPlqtpPwyRYK72XW/aYhn0NQimmiQuNA9R6O94yt0eeGG3dLJ8XujSSa\nYlKmj/skYA/kBKJHrQ48la8+LcOVn87ON0ysatjn8llAQ1pTJy4eMpUJr5+2\n72+C7VFMkG8YzSXMnWBzH2NN+yHcly8SdnNs/S5c57odeaEA+jDzaupY2Hon\nB7mMwmlCmzZs7n/dhKLNmx3I8ZLlLncM7DWbswJMssLwTjQcDrZTYUpLuq1F\nJkpn\r\n=+x2T\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "calvin.metcalf@gmail.com",
+          "name": "cwmma"
+        },
+        {
+          "email": "npm@dcousens.com",
+          "name": "dcousens"
+        },
+        {
+          "email": "fedor@indutny.com",
+          "name": "indutny"
+        },
+        {
+          "email": "jprichardson@gmail.com",
+          "name": "jprichardson"
+        }
+      ],
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/browserify-sign_4.2.1_1596557711307_0.5090745071049647"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# browserify-sign\n\n[![NPM Package](https://img.shields.io/npm/v/browserify-sign.svg?style=flat-square)](https://www.npmjs.org/package/browserify-sign)\n[![Build Status](https://img.shields.io/travis/crypto-browserify/browserify-sign.svg?branch=master&style=flat-square)](https://travis-ci.org/crypto-browserify/browserify-sign)\n[![Dependency status](https://img.shields.io/david/crypto-browserify/browserify-sign.svg?style=flat-square)](https://david-dm.org/crypto-browserify/browserify-sign#info=dependencies)\n\n[![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)\n\nA package to duplicate the functionality of node's crypto public key functions, much of this is based on [Fedor Indutny's](https://github.com/indutny) work on [indutny/tls.js](https://github.com/indutny/tls.js).\n\n## LICENSE\n\nISC\n",
+  "maintainers": [
+    {
+      "email": "calvin.metcalf@gmail.com",
+      "name": "cwmma"
+    },
+    {
+      "email": "npm@dcousens.com",
+      "name": "dcousens"
+    },
+    {
+      "email": "fedor@indutny.com",
+      "name": "indutny"
+    },
+    {
+      "email": "jprichardson@gmail.com",
+      "name": "jprichardson"
+    }
+  ],
+  "time": {
+    "modified": "2020-08-04T16:15:13.667Z",
+    "created": "2014-11-15T18:34:16.875Z",
+    "2.0.0": "2014-11-15T18:34:16.875Z",
+    "2.1.0": "2014-11-15T20:09:54.203Z",
+    "2.2.0": "2014-11-15T21:54:56.788Z",
+    "2.3.0": "2014-11-15T23:39:54.784Z",
+    "2.4.0": "2014-11-16T16:28:59.318Z",
+    "2.5.0": "2014-11-25T19:56:42.483Z",
+    "2.5.1": "2014-12-09T21:29:39.931Z",
+    "2.5.2": "2014-12-17T12:32:11.905Z",
+    "2.6.0": "2014-12-18T21:59:02.799Z",
+    "2.6.1": "2014-12-19T16:39:56.238Z",
+    "2.7.0": "2014-12-22T19:43:52.147Z",
+    "2.7.1": "2015-01-03T13:53:38.951Z",
+    "2.7.2": "2015-01-05T16:07:22.300Z",
+    "2.7.3": "2015-01-06T12:45:33.731Z",
+    "2.7.4": "2015-01-06T12:53:52.136Z",
+    "2.7.5": "2015-01-06T13:04:33.294Z",
+    "2.8.0": "2015-01-12T13:57:09.285Z",
+    "3.0.0": "2015-03-10T12:00:05.459Z",
+    "3.0.1": "2015-03-11T12:49:07.390Z",
+    "3.0.2": "2015-05-21T02:57:05.421Z",
+    "3.0.3": "2015-08-07T19:12:02.206Z",
+    "3.0.8": "2015-09-05T14:55:23.049Z",
+    "4.0.0": "2015-11-02T14:20:48.429Z",
+    "4.0.1": "2017-03-27T18:06:54.308Z",
+    "4.0.2": "2017-03-27T19:02:46.583Z",
+    "4.0.3": "2017-03-27T19:08:01.158Z",
+    "4.0.4": "2017-03-28T12:06:52.609Z",
+    "4.1.0": "2020-05-05T12:54:17.742Z",
+    "4.2.0": "2020-05-18T15:20:13.797Z",
+    "4.2.1": "2020-08-04T16:15:11.470Z"
+  },
+  "homepage": "https://github.com/crypto-browserify/browserify-sign#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crypto-browserify/browserify-sign.git"
+  },
+  "bugs": {
+    "url": "https://github.com/crypto-browserify/browserify-sign/issues"
+  },
+  "license": "ISC",
+  "readmeFilename": "README.md",
+  "users": {
+    "kapluni": true
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "foo": "file:packages/foo",
+    "bar": "file:packages/bar"
+  }
+}

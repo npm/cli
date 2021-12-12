@@ -1,0 +1,60 @@
+{
+  "_id": "@isaacs/testing-bundledeps",
+  "name": "@isaacs/testing-bundledeps",
+  "dist-tags": {
+    "latest": "1.0.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "@isaacs/testing-bundledeps",
+      "version": "1.0.0",
+      "dependencies": {
+        "@isaacs/testing-bundledeps-a": "*",
+        "@isaacs/testing-bundledeps-c": "*"
+      },
+      "bundleDependencies": [
+        "@isaacs/testing-bundledeps-a"
+      ],
+      "_id": "@isaacs/testing-bundledeps@1.0.0",
+      "_nodeVersion": "12.12.0",
+      "_npmVersion": "6.13.2",
+      "dist": {
+        "integrity": "sha512-P8AF2FoTfHOPGY6W53FHVg9mza6ipzkppAwnbnNNkPaLQIEFTpx3U95ir1AKqmub7nTi115Qi6zHiqJzGe5Cqg==",
+        "shasum": "d4e8ce7c55d4319ad2fc27df484afb4f5b014022",
+        "tarball": "https://registry.npmjs.org/@isaacs/testing-bundledeps/-/testing-bundledeps-1.0.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 2979,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd5wd9CRA9TVsSAnZWagAA4UYP/2UUvKlvXAjtaxh1+sBu\nW4QxOPliPa25Rhug8e8dtnclhVwgXl5JJc8//L7SyWP/lAjnaL6rw/KSjbhk\n93+NnWMhhvh5jf4eXM0y6eWkmO2o4VEOIJ1Hn98wz33A9EJmfE6Mu13CMSi8\nGpr5GR59pg6exk11DfUi26ZfV0kwL8kMblyRnuYvyehs30YqRU0rSR3voGkg\nI5RW59tupTM1GKbZoTMTQnZc7169UtGKhHbwpw65KSSOyHiM3Z/pTl57BorE\nNJxdTIUHBulWecfVJq43x8+HaHR115aAMOgNPr5AS0HffkEPgd+ikZBsl0HP\nBuRcv9Reon28cs+9TqmDrHbfVdcVQWzWHFJcTThmUYL4FEIGjfEMAAfAzuGN\nSG7TaLjg/ZN5010VPux6Xl3tzmrfVOfYUsT4/maNU+EM5KRafuAdPXE2mwgJ\nGqyH0F7IrqFyIb69aCBzeuJ68+YM/MyKu/osDvj5QUZ+Cx8GuuVYjSkIFAJ8\nZ0doV/R1QWMlpwq8Ln5HwJFWvYoiaBrbXrOm8MgiunKbuze4W7VwgHJC8xhN\nAzcJHBAJafnD67YqtjuC0H4cgKhvK2Xl6Jc1fDARlNeJO7v9j/eHR+E3jyHo\nQQBljzO2fzlkI6eNEARHmmufHvI1Wce8/IG74d82hpEBvOwvfH0VF8ss6vIJ\nIYfw\r\n=CbFM\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/testing-bundledeps_1.0.0_1575421821203_0.012834239235933742"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2019-12-04T01:10:21.178Z",
+    "1.0.0": "2019-12-04T01:10:21.331Z",
+    "modified": "2019-12-04T01:10:23.698Z"
+  },
+  "maintainers": [
+    {
+      "name": "isaacs",
+      "email": "i@izs.me"
+    }
+  ],
+  "readme": "ERROR: No README data found!",
+  "readmeFilename": ""
+}

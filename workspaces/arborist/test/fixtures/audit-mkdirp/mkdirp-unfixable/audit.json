@@ -1,0 +1,60 @@
+{
+  "actions": [],
+  "advisories": {
+    "42069": {
+      "findings": [
+        {
+          "version": "0.5.1",
+          "paths": [
+            "mkdirp"
+          ]
+        }
+      ],
+      "id": 42069,
+      "created": "2020-04-20T16:20:00.069Z",
+      "updated": "2020-04-20T23:20:00.069Z",
+      "deleted": null,
+      "title": "File System Pollution",
+      "found_by": {
+        "link": "https://www.antidirectory.com/",
+        "name": "Anti-Directory Research Team",
+        "email": "nodir@antidirectory.com"
+      },
+      "reported_by": {
+        "link": "https://www.antidirectory.com/",
+        "name": "Anti-Directory Research Team",
+        "email": "nodir@antidirectory.com"
+      },
+      "module_name": "mkdirp",
+      "cves": [],
+      "vulnerable_versions": "*",
+      "patched_versions": "<0.0.0",
+      "overview": "Affected versions of `mkdirp` are vulnerable to file system pollution. Arguments are used to create directories, allowing an attacker to modify the file system, causing the addition or modification of directories which will persist after the process has exited.  \nPassing the argument `/foo/bar/baz` adds a `baz` directory within the `/foo/bar` directory path. The presence of this directory raises uncaught errors and crashe applications that expect a directory to not be at that path.  \nThis is exploitable if attackers pass arguments to `mkdirp`.\n",
+      "recommendation": "Do not create directories",
+      "references": "- [GitHub commit where problem was added](https://github.com/substack/node-mkdirp/commit/284bc24eaafca75786c7e86f1da66ad61adacdb7)",
+      "access": "public",
+      "severity": "high",
+      "cwe": "CWE-42069",
+      "metadata": {
+        "module_type": "",
+        "exploitability": 1,
+        "affected_components": ""
+      },
+      "url": "https://npmjs.com/advisories/42069"
+    }
+  },
+  "muted": [],
+  "metadata": {
+    "vulnerabilities": {
+      "info": 0,
+      "low": 107,
+      "moderate": 1,
+      "high": 52,
+      "critical": 1
+    },
+    "dependencies": 2183,
+    "devDependencies": 0,
+    "optionalDependencies": 22,
+    "totalDependencies": 2205
+  }
+}

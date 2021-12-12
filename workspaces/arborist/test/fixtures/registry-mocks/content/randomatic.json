@@ -1,0 +1,1794 @@
+{
+  "_id": "randomatic",
+  "_rev": "48-8beb15ebcb1b9e95a04ef84b75923d3f",
+  "name": "randomatic",
+  "description": "Generate randomized strings of a specified length using simple character sequences. The original generate-password.",
+  "dist-tags": {
+    "latest": "3.1.1"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "randomatic",
+      "description": "Generate randomized strings of a specified length from patterns of numeric, alpha-numeric, alphabetical, special or custom characters.",
+      "version": "0.1.0",
+      "homepage": "https://github.com/jonschlinkert/randomatic",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jonschlinkert/randomatic.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/randomatic/issues"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://github.com/jonschlinkert/randomatic/blob/master/LICENSE-MIT"
+        }
+      ],
+      "main": "index.js",
+      "keywords": [
+        "alpha",
+        "alpha-numeric",
+        "alphanumeric",
+        "chars",
+        "characters",
+        "numeric",
+        "random",
+        "rand",
+        "randomize",
+        "randomized"
+      ],
+      "devDependencies": {
+        "frep": "~0.1.2",
+        "lodash": "~2.4.1",
+        "chalk": "~0.4.0",
+        "grunt-sync-pkg": "~0.1.2",
+        "grunt": "~0.4.2",
+        "grunt-contrib-jshint": "~0.8.0",
+        "grunt-readme": "~0.4.5"
+      },
+      "dependencies": {
+        "lodash": "~2.4.1"
+      },
+      "_id": "randomatic@0.1.0",
+      "dist": {
+        "shasum": "d3a52b5324f900afe00a071916e5b8d19080a8e8",
+        "tarball": "https://registry.npmjs.org/randomatic/-/randomatic-0.1.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.14",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.1": {
+      "name": "randomatic",
+      "description": "Generate randomized strings of a specified length from patterns of numeric, alpha-numeric, alphabetical, special or custom characters.",
+      "version": "0.1.1",
+      "homepage": "https://github.com/jonschlinkert/randomatic",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jonschlinkert/randomatic.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/randomatic/issues"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://github.com/jonschlinkert/randomatic/blob/master/LICENSE-MIT"
+        }
+      ],
+      "main": "index.js",
+      "keywords": [
+        "alpha",
+        "alpha-numeric",
+        "alphanumeric",
+        "characters",
+        "chars",
+        "numeric",
+        "rand",
+        "random",
+        "randomize",
+        "randomized"
+      ],
+      "devDependencies": {
+        "chai": "~1.9.1",
+        "mocha": "~1.18.2",
+        "verb": "~0.2.5"
+      },
+      "_id": "randomatic@0.1.1",
+      "dist": {
+        "shasum": "bc8305c4f30d3b9b9f40df389bd7b48a96268924",
+        "tarball": "https://registry.npmjs.org/randomatic/-/randomatic-0.1.1.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.24",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.2": {
+      "name": "randomatic",
+      "description": "Generate randomized strings of a specified length from patterns of numeric, alpha-numeric, alphabetical, special or custom characters.",
+      "version": "0.1.2",
+      "homepage": "https://github.com/jonschlinkert/randomatic",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jonschlinkert/randomatic.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/randomatic/issues"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://github.com/jonschlinkert/randomatic/blob/master/LICENSE-MIT"
+        }
+      ],
+      "main": "index.js",
+      "keywords": [
+        "alpha",
+        "alpha-numeric",
+        "alphanumeric",
+        "characters",
+        "chars",
+        "numeric",
+        "rand",
+        "random",
+        "randomize",
+        "randomized"
+      ],
+      "devDependencies": {
+        "chai": "~1.9.1",
+        "mocha": "~1.18.2",
+        "verb": "~0.2.5"
+      },
+      "_id": "randomatic@0.1.2",
+      "dist": {
+        "shasum": "ad339807a72884d4192e46d8f050bcdea403f050",
+        "tarball": "https://registry.npmjs.org/randomatic/-/randomatic-0.1.2.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.24",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.3": {
+      "name": "randomatic",
+      "description": "Generate randomized strings of a specified length from patterns of numeric, alpha-numeric, alphabetical, special or custom characters.",
+      "version": "0.1.3",
+      "homepage": "https://github.com/jonschlinkert/randomatic",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jonschlinkert/randomatic.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/randomatic/issues"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://github.com/jonschlinkert/randomatic/blob/master/LICENSE-MIT"
+        }
+      ],
+      "main": "index.js",
+      "keywords": [
+        "alpha",
+        "alpha-numeric",
+        "alphanumeric",
+        "characters",
+        "chars",
+        "numeric",
+        "rand",
+        "random",
+        "randomize",
+        "randomized"
+      ],
+      "devDependencies": {
+        "chai": "~1.9.1",
+        "mocha": "~1.18.2",
+        "verb": "~0.2.5"
+      },
+      "_id": "randomatic@0.1.3",
+      "dist": {
+        "shasum": "6649dd4ac1e86f157d22d8fc1e64bd8ab5e82c75",
+        "tarball": "https://registry.npmjs.org/randomatic/-/randomatic-0.1.3.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.24",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.4": {
+      "name": "randomatic",
+      "description": "Generate randomized strings of a specified length from patterns of numeric, alpha-numeric, alphabetical, special or custom characters.",
+      "version": "0.1.4",
+      "homepage": "https://github.com/jonschlinkert/randomatic",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jonschlinkert/randomatic.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/randomatic/issues"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://github.com/jonschlinkert/randomatic/blob/master/LICENSE-MIT"
+        }
+      ],
+      "main": "index.js",
+      "keywords": [
+        "alpha",
+        "alpha-numeric",
+        "alphanumeric",
+        "characters",
+        "chars",
+        "numeric",
+        "rand",
+        "random",
+        "randomize",
+        "randomized"
+      ],
+      "devDependencies": {
+        "chai": "~1.9.1",
+        "mocha": "~1.18.2",
+        "verb": "~0.2.5"
+      },
+      "_id": "randomatic@0.1.4",
+      "_shasum": "f98c22fbbe1bfe1ee0fa79a0738763e8d660d7d2",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "f98c22fbbe1bfe1ee0fa79a0738763e8d660d7d2",
+        "tarball": "https://registry.npmjs.org/randomatic/-/randomatic-0.1.4.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "randomatic",
+      "description": "Generate randomized strings of a specified length, fast. Only the length is necessary, but you can optionally generate patterns using any combination of numeric, alpha-numeric, alphabetical, special or custom characters.",
+      "version": "1.0.0",
+      "homepage": "https://github.com/jonschlinkert/randomatic",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jonschlinkert/randomatic.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/randomatic/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/randomatic/blob/master/LICENSE-MIT"
+      },
+      "main": "index.js",
+      "devDependencies": {
+        "mocha": "^2.0.1",
+        "should": "^4.4.1"
+      },
+      "keywords": [
+        "alpha",
+        "alpha-numeric",
+        "alphanumeric",
+        "characters",
+        "chars",
+        "numeric",
+        "rand",
+        "random",
+        "randomize",
+        "randomized"
+      ],
+      "dependencies": {
+        "is-number": "^0.1.1"
+      },
+      "gitHead": "47e8fcee024995ecfe822fee2326e51c47b5e26f",
+      "_id": "randomatic@1.0.0",
+      "scripts": {},
+      "_shasum": "a5a86c5bf4f621b4b24e1442347988f52336db9f",
+      "_from": ".",
+      "_npmVersion": "1.4.23",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "a5a86c5bf4f621b4b24e1442347988f52336db9f",
+        "tarball": "https://registry.npmjs.org/randomatic/-/randomatic-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "randomatic",
+      "description": "Generate randomized strings of a specified length, fast. Only the length is necessary, but you can optionally generate patterns using any combination of numeric, alpha-numeric, alphabetical, special or custom characters.",
+      "version": "1.0.1",
+      "homepage": "https://github.com/jonschlinkert/randomatic",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jonschlinkert/randomatic.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/randomatic/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/randomatic/blob/master/LICENSE-MIT"
+      },
+      "scripts": {
+        "test": "mocha -R spec",
+        "docs": "update && license && npmignore && deps && verb",
+        "all": "npm run test && npm run docs"
+      },
+      "main": "index.js",
+      "devDependencies": {
+        "mocha": "^2.0.1",
+        "should": "^4.4.1"
+      },
+      "keywords": [
+        "alpha",
+        "alpha-numeric",
+        "alphanumeric",
+        "characters",
+        "chars",
+        "numeric",
+        "rand",
+        "random",
+        "randomize",
+        "randomized"
+      ],
+      "dependencies": {
+        "is-number": "^0.1.1"
+      },
+      "gitHead": "8268893bc707463b170685bbf0837fd4a1995787",
+      "_id": "randomatic@1.0.1",
+      "_shasum": "2e75c26294da75d267f70ba87251ee6604948baf",
+      "_from": ".",
+      "_npmVersion": "1.4.23",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "2e75c26294da75d267f70ba87251ee6604948baf",
+        "tarball": "https://registry.npmjs.org/randomatic/-/randomatic-1.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "randomatic",
+      "description": "Generate randomized strings of a specified length, fast. Only the length is necessary, but you can optionally generate patterns using any combination of numeric, alpha-numeric, alphabetical, special or custom characters.",
+      "version": "1.1.0",
+      "homepage": "https://github.com/jonschlinkert/randomatic",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jonschlinkert/randomatic.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/randomatic/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/randomatic/blob/master/LICENSE-MIT"
+      },
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "main": "index.js",
+      "files": [
+        "index.js"
+      ],
+      "dependencies": {
+        "is-number": "^1.1.0",
+        "kind-of": "^1.0.0"
+      },
+      "devDependencies": {
+        "benchmarked": "^0.1.3",
+        "chalk": "^0.5.1",
+        "glob": "^4.3.5",
+        "should": "^4.4.1"
+      },
+      "keywords": [
+        "alpha",
+        "alpha-numeric",
+        "alphanumeric",
+        "characters",
+        "chars",
+        "numeric",
+        "rand",
+        "random",
+        "randomize",
+        "randomized"
+      ],
+      "gitHead": "ca326363bee58a3eb2556a5805822ffbf328397e",
+      "_id": "randomatic@1.1.0",
+      "_shasum": "2ca36b9f93747aac985eb242749af88b45d5d42d",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "2ca36b9f93747aac985eb242749af88b45d5d42d",
+        "tarball": "https://registry.npmjs.org/randomatic/-/randomatic-1.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.1": {
+      "name": "randomatic",
+      "description": "Generate randomized strings of a specified length, fast. Only the length is necessary, but you can optionally generate patterns using any combination of numeric, alpha-numeric, alphabetical, special or custom characters.",
+      "version": "1.1.1",
+      "homepage": "https://github.com/jonschlinkert/randomatic",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/randomatic.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/randomatic/issues"
+      },
+      "license": "MIT",
+      "scripts": {
+        "test": "mocha"
+      },
+      "main": "index.js",
+      "files": [
+        "index.js"
+      ],
+      "dependencies": {
+        "is-number": "^2.0.2",
+        "kind-of": "^2.0.1"
+      },
+      "devDependencies": {
+        "ansi-bold": "^0.1.1",
+        "benchmarked": "^0.1.4",
+        "chalk": "^1.1.1",
+        "glob": "^5.0.15",
+        "should": "*"
+      },
+      "keywords": [
+        "alpha",
+        "alpha-numeric",
+        "alphanumeric",
+        "characters",
+        "chars",
+        "numeric",
+        "rand",
+        "random",
+        "randomize",
+        "randomized"
+      ],
+      "gitHead": "4b5fbd4e844b61e29d0417bc3edfcab820b0593b",
+      "_id": "randomatic@1.1.1",
+      "_shasum": "ab0f555bbe58acd707be9dc446089f04ee930f1c",
+      "_from": ".",
+      "_npmVersion": "3.3.6",
+      "_nodeVersion": "5.0.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "ab0f555bbe58acd707be9dc446089f04ee930f1c",
+        "tarball": "https://registry.npmjs.org/randomatic/-/randomatic-1.1.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.2": {
+      "name": "randomatic",
+      "description": "Generate randomized strings of a specified length, fast. Only the length is necessary, but you can optionally generate patterns using any combination of numeric, alpha-numeric, alphabetical, special or custom characters.",
+      "version": "1.1.2",
+      "homepage": "https://github.com/jonschlinkert/randomatic",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/randomatic.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/randomatic/issues"
+      },
+      "license": "MIT",
+      "scripts": {
+        "test": "mocha"
+      },
+      "main": "index.js",
+      "files": [
+        "index.js"
+      ],
+      "dependencies": {
+        "is-number": "^2.0.2",
+        "kind-of": "^2.0.1"
+      },
+      "devDependencies": {
+        "ansi-bold": "^0.1.1",
+        "benchmarked": "^0.1.4",
+        "glob": "^5.0.15",
+        "mocha": "^2.3.3",
+        "should": "*"
+      },
+      "keywords": [
+        "alpha",
+        "alpha-numeric",
+        "alphanumeric",
+        "characters",
+        "chars",
+        "numeric",
+        "rand",
+        "random",
+        "randomize",
+        "randomized"
+      ],
+      "gitHead": "054e4f66cd0bf99a7f8f133ab04b949b2d557db8",
+      "_id": "randomatic@1.1.2",
+      "_shasum": "8661cd39964c4f06707bc1002cf3e8b633e8883c",
+      "_from": ".",
+      "_npmVersion": "3.3.6",
+      "_nodeVersion": "5.0.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "8661cd39964c4f06707bc1002cf3e8b633e8883c",
+        "tarball": "https://registry.npmjs.org/randomatic/-/randomatic-1.1.2.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.3": {
+      "name": "randomatic",
+      "description": "Generate randomized strings of a specified length, fast. Only the length is necessary, but you can optionally generate patterns using any combination of numeric, alpha-numeric, alphabetical, special or custom characters.",
+      "version": "1.1.3",
+      "homepage": "https://github.com/jonschlinkert/randomatic",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/randomatic.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/randomatic/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "is-number": "^2.0.2",
+        "kind-of": "^2.0.1"
+      },
+      "devDependencies": {
+        "ansi-bold": "^0.1.1",
+        "benchmarked": "^0.1.4",
+        "glob": "^5.0.15",
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "alpha",
+        "alpha-numeric",
+        "alphanumeric",
+        "characters",
+        "chars",
+        "numeric",
+        "rand",
+        "random",
+        "randomize",
+        "randomized"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "repeat-string",
+            "pad-left",
+            "pad-right"
+          ]
+        }
+      },
+      "gitHead": "dd4373147b04f709835dc65aad7b6efccfca7ad5",
+      "_id": "randomatic@1.1.3",
+      "_shasum": "cfbd4fe82545202b0de0ce13d61c41f2d467d5cf",
+      "_from": ".",
+      "_npmVersion": "3.3.6",
+      "_nodeVersion": "5.0.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "cfbd4fe82545202b0de0ce13d61c41f2d467d5cf",
+        "tarball": "https://registry.npmjs.org/randomatic/-/randomatic-1.1.3.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.4": {
+      "name": "randomatic",
+      "description": "Generate randomized strings of a specified length, fast. Only the length is necessary, but you can optionally generate patterns using any combination of numeric, alpha-numeric, alphabetical, special or custom characters.",
+      "version": "1.1.4",
+      "homepage": "https://github.com/jonschlinkert/randomatic",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/randomatic.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/randomatic/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "is-number": "^2.0.2",
+        "kind-of": "^2.0.1"
+      },
+      "devDependencies": {
+        "ansi-bold": "^0.1.1",
+        "benchmarked": "^0.1.4",
+        "glob": "^5.0.15",
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "alpha",
+        "alpha-numeric",
+        "alphanumeric",
+        "characters",
+        "chars",
+        "numeric",
+        "rand",
+        "random",
+        "randomize",
+        "randomized"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "repeat-string",
+            "pad-left",
+            "pad-right"
+          ]
+        },
+        "plugins": [
+          "gulp-format-md"
+        ]
+      },
+      "gitHead": "f1e729ff2b4bc1ccf09aa5d0748a918cf48a38de",
+      "_id": "randomatic@1.1.4",
+      "_shasum": "a1591ed73708c3a8c88db7bc090a4c82085ad7ba",
+      "_from": ".",
+      "_npmVersion": "3.3.6",
+      "_nodeVersion": "5.0.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "a1591ed73708c3a8c88db7bc090a4c82085ad7ba",
+        "tarball": "https://registry.npmjs.org/randomatic/-/randomatic-1.1.4.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.5": {
+      "name": "randomatic",
+      "description": "Generate randomized strings of a specified length, fast. Only the length is necessary, but you can optionally generate patterns using any combination of numeric, alpha-numeric, alphabetical, special or custom characters.",
+      "version": "1.1.5",
+      "homepage": "https://github.com/jonschlinkert/randomatic",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/randomatic.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/randomatic/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "is-number": "^2.0.2",
+        "kind-of": "^3.0.2"
+      },
+      "devDependencies": {
+        "ansi-bold": "^0.1.1",
+        "benchmarked": "^0.1.4",
+        "glob": "^5.0.15",
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "alpha",
+        "alpha-numeric",
+        "alphanumeric",
+        "characters",
+        "chars",
+        "numeric",
+        "rand",
+        "random",
+        "randomize",
+        "randomized"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "repeat-string",
+            "pad-left",
+            "pad-right"
+          ]
+        },
+        "plugins": [
+          "gulp-format-md"
+        ]
+      },
+      "gitHead": "8d74759d683a580412484e95ec5f1b87d93fd50c",
+      "_id": "randomatic@1.1.5",
+      "_shasum": "5e9ef5f2d573c67bd2b8124ae90b5156e457840b",
+      "_from": ".",
+      "_npmVersion": "3.3.6",
+      "_nodeVersion": "5.0.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "5e9ef5f2d573c67bd2b8124ae90b5156e457840b",
+        "tarball": "https://registry.npmjs.org/randomatic/-/randomatic-1.1.5.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.6": {
+      "name": "randomatic",
+      "description": "Generate randomized strings of a specified length, fast. Only the length is necessary, but you can optionally generate patterns using any combination of numeric, alpha-numeric, alphabetical, special or custom characters.",
+      "version": "1.1.6",
+      "homepage": "https://github.com/jonschlinkert/randomatic",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/randomatic.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/randomatic/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">= 0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "is-number": "^2.0.2",
+        "kind-of": "^3.0.2"
+      },
+      "devDependencies": {
+        "ansi-bold": "^0.1.1",
+        "benchmarked": "^0.1.4",
+        "glob": "^5.0.15",
+        "gulp-format-md": "^0.1.11",
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "alpha",
+        "alpha-numeric",
+        "alphanumeric",
+        "characters",
+        "chars",
+        "numeric",
+        "rand",
+        "random",
+        "randomatic",
+        "randomize",
+        "randomized"
+      ],
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "pad-left",
+            "pad-right",
+            "repeat-string"
+          ]
+        },
+        "lint": {
+          "reflinks": true
+        },
+        "reflinks": [
+          "verb",
+          "verb-generate-readme"
+        ]
+      },
+      "gitHead": "80065df04deaa8f7a405d2689aaaef57117c6a94",
+      "_id": "randomatic@1.1.6",
+      "_shasum": "110dcabff397e9dcff7c0789ccc0a49adf1ec5bb",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.7.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "110dcabff397e9dcff7c0789ccc0a49adf1ec5bb",
+        "tarball": "https://registry.npmjs.org/randomatic/-/randomatic-1.1.6.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/randomatic-1.1.6.tgz_1480022662943_0.08446102566085756"
+      },
+      "directories": {}
+    },
+    "1.1.7": {
+      "name": "randomatic",
+      "description": "Generate randomized strings of a specified length, fast. Only the length is necessary, but you can optionally generate patterns using any combination of numeric, alpha-numeric, alphabetical, special or custom characters.",
+      "version": "1.1.7",
+      "homepage": "https://github.com/jonschlinkert/randomatic",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Bogdan Chadkin",
+          "url": "https://github.com/TrySound"
+        },
+        {
+          "name": "Dragos Fotescu",
+          "url": "http://dragosfotescu.com"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "name": "Paul Miller",
+          "url": "paulmillr.com"
+        },
+        {
+          "name": "Sun Knudsen",
+          "url": "http://sunknudsen.com"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/randomatic.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/randomatic/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">= 0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "is-number": "^3.0.0",
+        "kind-of": "^4.0.0"
+      },
+      "devDependencies": {
+        "ansi-bold": "^0.1.1",
+        "benchmarked": "^1.1.1",
+        "glob": "^7.1.2",
+        "gulp-format-md": "^0.1.12",
+        "mocha": "^3.4.2",
+        "should": "^11.2.1"
+      },
+      "keywords": [
+        "alpha",
+        "alpha-numeric",
+        "alphanumeric",
+        "characters",
+        "chars",
+        "numeric",
+        "rand",
+        "random",
+        "randomatic",
+        "randomize",
+        "randomized"
+      ],
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "pad-left",
+            "pad-right",
+            "repeat-string"
+          ]
+        },
+        "lint": {
+          "reflinks": true
+        },
+        "reflinks": [
+          "verb",
+          "verb-generate-readme"
+        ]
+      },
+      "gitHead": "d91c5f90e785db08a9b9e518926b444671092f26",
+      "_id": "randomatic@1.1.7",
+      "_npmVersion": "5.0.3",
+      "_nodeVersion": "7.7.3",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "integrity": "sha512-D5JUjPyJbaJDkuAazpVnSfVkLlpeO3wDlPROTMLGKG1zMFNFRgrciKo1ltz/AzNTkqE0HzDx655QOL51N06how==",
+        "shasum": "c7abe9cc8b87c0baa876b19fde83fd464797e38c",
+        "tarball": "https://registry.npmjs.org/randomatic/-/randomatic-1.1.7.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/randomatic-1.1.7.tgz_1497052370312_0.7579707570839673"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "randomatic",
+      "description": "Generate randomized strings of a specified length using simple character sequences. The original generate-password.",
+      "version": "2.0.0",
+      "homepage": "https://github.com/jonschlinkert/randomatic",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Bogdan Chadkin",
+          "url": "https://github.com/TrySound"
+        },
+        {
+          "name": "Dragos Fotescu",
+          "url": "http://dragosfotescu.com"
+        },
+        {
+          "name": "Faiz ul haque",
+          "url": "http://www.10pearls.com"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "name": "Paul Miller",
+          "url": "paulmillr.com"
+        },
+        {
+          "name": "Rouven Weßling",
+          "url": "www.rouvenwessling.de"
+        },
+        {
+          "name": "Sun Knudsen",
+          "url": "https://sunknudsen.com"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/randomatic.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/randomatic/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">= 0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "is-number": "^4.0.0",
+        "kind-of": "^6.0.0"
+      },
+      "devDependencies": {
+        "ansi-bold": "^0.1.1",
+        "benchmarked": "^1.1.1",
+        "glob": "^7.1.2",
+        "gulp-format-md": "^0.1.12",
+        "mocha": "^3.4.2"
+      },
+      "keywords": [
+        "alpha",
+        "alpha-numeric",
+        "alphanumeric",
+        "characters",
+        "chars",
+        "numeric",
+        "password",
+        "generate",
+        "generate-password",
+        "rand",
+        "random",
+        "randomatic",
+        "randomize",
+        "randomized"
+      ],
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "pad-left",
+            "pad-right",
+            "repeat-string"
+          ]
+        },
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "833f31a5aac0b8c2ddd3ae23ab41a0145c2974d0",
+      "_id": "randomatic@2.0.0",
+      "_npmVersion": "5.4.2",
+      "_nodeVersion": "8.7.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "integrity": "sha512-IRvNtlVqDeoh6O86Z6MpuKwHwVy3vxBel3zKvhMzIVOS7cviLyLBQRzsuBij9PIqmdGYL/WWZReJpSLHH7Jcog==",
+        "shasum": "14f1c3774a905620b0e748043c36b754dbcc37d2",
+        "tarball": "https://registry.npmjs.org/randomatic/-/randomatic-2.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/randomatic-2.0.0.tgz_1508414873571_0.1864740715827793"
+      },
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "randomatic",
+      "description": "Generate randomized strings of a specified length using simple character sequences. The original generate-password.",
+      "version": "3.0.0",
+      "homepage": "https://github.com/jonschlinkert/randomatic",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Bogdan Chadkin",
+          "url": "https://github.com/TrySound"
+        },
+        {
+          "name": "Dragos Fotescu",
+          "url": "http://dragosfotescu.com"
+        },
+        {
+          "name": "Faiz ul haque",
+          "url": "http://www.10pearls.com"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "name": "Michael Rhodes",
+          "url": "http://michaelrhod.es"
+        },
+        {
+          "name": "Paul Miller",
+          "url": "https://paulmillr.com"
+        },
+        {
+          "name": "Rouven Weßling",
+          "url": "www.rouvenwessling.de"
+        },
+        {
+          "name": "Sun Knudsen",
+          "url": "https://sunknudsen.com"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/randomatic.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/randomatic/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">= 0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "is-number": "^4.0.0",
+        "kind-of": "^6.0.0",
+        "math-random": "^1.0.1"
+      },
+      "devDependencies": {
+        "ansi-bold": "^0.1.1",
+        "benchmarked": "^1.1.1",
+        "glob": "^7.1.2",
+        "gulp-format-md": "^0.1.12",
+        "mocha": "^3.4.2"
+      },
+      "keywords": [
+        "alpha",
+        "alpha-numeric",
+        "alphanumeric",
+        "characters",
+        "chars",
+        "generate",
+        "generate-password",
+        "numeric",
+        "password",
+        "rand",
+        "random",
+        "randomatic",
+        "randomize",
+        "randomized"
+      ],
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "pad-left",
+            "pad-right",
+            "repeat-string"
+          ]
+        },
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "68240f9566badf952697450a8b91eb131d572d9f",
+      "_id": "randomatic@3.0.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.1.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "integrity": "sha512-VdxFOIEY3mNO5PtSRkkle/hPJDHvQhK21oa73K4yAc9qmp6N429gAyF1gZMOTMeS0/AYzaV/2Trcef+NaIonSA==",
+        "shasum": "d35490030eb4f7578de292ce6dfb04a91a128923",
+        "tarball": "https://registry.npmjs.org/randomatic/-/randomatic-3.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/randomatic-3.0.0.tgz_1514501908399_0.49032310070469975"
+      },
+      "directories": {}
+    },
+    "3.1.0": {
+      "name": "randomatic",
+      "description": "Generate randomized strings of a specified length using simple character sequences. The original generate-password.",
+      "version": "3.1.0",
+      "homepage": "https://github.com/jonschlinkert/randomatic",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Bogdan Chadkin",
+          "url": "https://github.com/TrySound"
+        },
+        {
+          "name": "Dragos Fotescu",
+          "url": "http://dragosfotescu.com"
+        },
+        {
+          "name": "Faiz ul haque",
+          "url": "http://www.10pearls.com"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "name": "Michael Rhodes",
+          "url": "http://michaelrhod.es"
+        },
+        {
+          "name": "Paul Miller",
+          "url": "https://paulmillr.com"
+        },
+        {
+          "name": "Rouven Weßling",
+          "url": "www.rouvenwessling.de"
+        },
+        {
+          "name": "Sun Knudsen",
+          "url": "https://sunknudsen.com"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/randomatic.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/randomatic/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">= 0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "is-number": "^4.0.0",
+        "kind-of": "^6.0.0",
+        "math-random": "^1.0.1"
+      },
+      "devDependencies": {
+        "ansi-bold": "^0.1.1",
+        "benchmarked": "^1.1.1",
+        "glob": "^7.1.2",
+        "gulp-format-md": "^0.1.12",
+        "mocha": "^3.4.2"
+      },
+      "keywords": [
+        "alpha",
+        "alpha-numeric",
+        "alphanumeric",
+        "characters",
+        "chars",
+        "generate",
+        "generate-password",
+        "numeric",
+        "password",
+        "rand",
+        "random",
+        "randomatic",
+        "randomize",
+        "randomized"
+      ],
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "pad-left",
+            "pad-right",
+            "repeat-string"
+          ]
+        },
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "4d76cd1ec91d0ac0ff33fa112efb806ab96295b9",
+      "_id": "randomatic@3.1.0",
+      "_npmVersion": "6.1.0",
+      "_nodeVersion": "10.3.0",
+      "_npmUser": {
+        "name": "doowb",
+        "email": "brian.woodward@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-KnGPVE0lo2WoXxIZ7cPR8YBpiol4gsSuOwDSg410oHh80ZMp5EiypNqL2K4Z77vJn6lB5rap7IkAmcUlalcnBQ==",
+        "shasum": "36f2ca708e9e567f5ed2ec01949026d50aa10116",
+        "tarball": "https://registry.npmjs.org/randomatic/-/randomatic-3.1.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 12421,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJba1MKCRA9TVsSAnZWagAAYYsQAKAsbfsYPVlzalCQIzCf\nk71tleOZRGBSfuzJW+Wa9AZLFczC9nNex3nsdBKMr3wdCRSCti2448xzW5v8\nYgkKPzWzBLCMdLiTmfpE12GjUDld5KZ1KGN1RwFHU/AMNB8Du9NZn/y0/bQ8\nl9EKidQJrViSpCRFu/8KIRzZL5IQZ4GBE4hRTu0hlCJP0GdL29nBrTCvzdKX\nTaSZzbQCOXdpTObUuh9CeeiljjDU0Kp06uVboBy370nUJ/sRcUv1KzvV5HQl\nKZ7r54+jBVhvQHd+19SWkE9SV96O/ZUjMCgdJ4sHHkmVso6FEWHp0FxUldl1\n4+0H87R1Jfzi82CXzwQ90sC/X2tztBNUGhVgMn6G1nwkCU4/VBBGrpf0ULHB\nc/YSKRf41BgGFpKJ4NhCLrwdpx1GvDsRJAzG79mtpJT1s+mfJdspGjL9tE2+\nXJxVWHeEQtOtzYM21pIeX3W3pxbIkIjaQzwcrdgOuIYptduvGRqKlxcGl/wz\np5g/1veEQGGlGPPI3x1RPmGEGOr6hCDI/uyfoqfx5dtp5vWm0QkvVAPTUezw\nl209i9j0+G21jONJQo7Ue+TskYmLg4Ca3T/8MB2/lhsabrocpgymwzVCvj5f\nF8Vwq0vvaOYsZNiZ2Ki6tJcIIZtaGu/vR8zxsf/jx9hsBBP7bsZm6ySgVrmb\ngw0z\r\n=pcsN\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/randomatic_3.1.0_1533760266184_0.346632692147973"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.1.1": {
+      "name": "randomatic",
+      "description": "Generate randomized strings of a specified length using simple character sequences. The original generate-password.",
+      "version": "3.1.1",
+      "homepage": "https://github.com/jonschlinkert/randomatic",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Bogdan Chadkin",
+          "url": "https://github.com/TrySound"
+        },
+        {
+          "name": "Dragos Fotescu",
+          "url": "http://dragosfotescu.com"
+        },
+        {
+          "name": "Faiz ul haque",
+          "url": "http://www.10pearls.com"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "name": "Michael Rhodes",
+          "url": "http://michaelrhod.es"
+        },
+        {
+          "name": "Paul Miller",
+          "url": "https://paulmillr.com"
+        },
+        {
+          "name": "Rouven Weßling",
+          "url": "www.rouvenwessling.de"
+        },
+        {
+          "name": "Sun Knudsen",
+          "url": "https://sunknudsen.com"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/randomatic.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/randomatic/issues"
+      },
+      "license": "MIT",
+      "main": "index.js",
+      "engines": {
+        "node": ">= 0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "is-number": "^4.0.0",
+        "kind-of": "^6.0.0",
+        "math-random": "^1.0.1"
+      },
+      "devDependencies": {
+        "ansi-bold": "^0.1.1",
+        "benchmarked": "^1.1.1",
+        "glob": "^7.1.2",
+        "gulp-format-md": "^0.1.12",
+        "mocha": "^3.4.2"
+      },
+      "keywords": [
+        "alpha",
+        "alpha-numeric",
+        "alphanumeric",
+        "characters",
+        "chars",
+        "generate",
+        "generate-password",
+        "numeric",
+        "password",
+        "rand",
+        "random",
+        "randomatic",
+        "randomize",
+        "randomized"
+      ],
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "pad-left",
+            "pad-right",
+            "repeat-string"
+          ]
+        },
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "b7451f4dac44a9920790f76a4d8a1dd081c37a5a",
+      "_id": "randomatic@3.1.1",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.3.0",
+      "_npmUser": {
+        "name": "doowb",
+        "email": "brian.woodward@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-TuDE5KxZ0J461RVjrJZCJc+J+zCkTb1MbH9AQUq68sMhOMcy9jLcb3BrZKgp9q9Ncltdg4QVqWrH02W2EFFVYw==",
+        "shasum": "b776efc59375984e36c537b2f51a1f0aff0da1ed",
+        "tarball": "https://registry.npmjs.org/randomatic/-/randomatic-3.1.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 13057,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbz3B/CRA9TVsSAnZWagAAvggQAJTiI9ninKCBmv84ZR73\n5Y1ugIJlR7MCLLwqKA+StIZHYcFQJb4ObhxrLV3D2DaBl8nCsZ9NP1oxFZNH\no78EFKXVSHsc6UCED9KQ85YDNxGjs6Ap/6PjvICRmkNjUz2dZBj/ISPZh5w+\nUkMeSLXpRabGMBKlBSdIedN/L9Y0/HSDHzfqz7kiT3xOwqv/Fpi0/PC3aCa5\n57farZSggb7oxguhu4em+ZNELODKrfqkdGKaZTgPRx+6AVUfKN4vflcLutmJ\n904Qg7Z812cqSuzjIIFX1TfSdwj9kceQ4GxvnzpBHYWZHO335IqRIPfQMmve\nrXLHoQOA4gH/vhxoxS8UeV/gtHltCnsXFgjTkxvuz/qaDnsda4I1Af3F4NfM\nREpPW7D2JRVuvCb3WphyFyMejDBxIc8TcbSd0naFCialAp8X3uiqWmvGzJlz\nEZgRqtbYm4gpJCxQxJd9ST1WfHYAhHTwkOnFwyPKPkdvkdEaWiQ4S2M/S3CB\n1qLvZEniWcxxasl+REx2/aMIoV7/hsK0RC1Iy23dC5yXPWeOaEFOdj9BYEa3\nvaT4A9q4ZKHz+RLfLopDKO4Y9GXEBClZNEEuq4/OmkzScdp8R6X7mg384nep\nVpOKUafvCf/KOV2ULfy8eIHB/Sf7ElCRatG3ysglBikvB3PN9SzExJ0UJfPB\nzG3d\r\n=Iavu\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/randomatic_3.1.1_1540321406330_0.96898463113241"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# randomatic [![NPM version](https://img.shields.io/npm/v/randomatic.svg?style=flat)](https://www.npmjs.com/package/randomatic) [![NPM monthly downloads](https://img.shields.io/npm/dm/randomatic.svg?style=flat)](https://npmjs.org/package/randomatic) [![NPM total downloads](https://img.shields.io/npm/dt/randomatic.svg?style=flat)](https://npmjs.org/package/randomatic) [![Linux Build Status](https://img.shields.io/travis/jonschlinkert/randomatic.svg?style=flat&label=Travis)](https://travis-ci.org/jonschlinkert/randomatic)\n\n> Generate randomized strings of a specified length using simple character sequences. The original generate-password.\n\nPlease consider following this project's author, [Jon Schlinkert](https://github.com/jonschlinkert), and consider starring the project to show your :heart: and support.\n\n## Install\n\nInstall with [npm](https://www.npmjs.com/):\n\n```sh\n$ npm install --save randomatic\n```\n\n## Usage\n\n```js\nvar randomize = require('randomatic');\n```\n\n## API\n\n```js\nrandomize(pattern, length, options);\nrandomize.isCrypto;\n```\n\n* `pattern` **{String}**: (required) The pattern to use for randomizing\n* `length` **{Number}**: (optional) The length of the string to generate\n* `options` **{Object}**: (optional) See available [options](#options)\n* `randomize.isCrypto` will be `true` when a cryptographically secure function is being used to generate random numbers. The value will be `false` when the function in use is `Math.random`.\n\n### pattern\n\n> The pattern to use for randomizing\n\nPatterns can contain any combination of the below characters, specified in any order.\n\n**Example:**\n\nTo generate a 10-character randomized string using all available characters:\n\n```js\nrandomize('*', 10);\n//=> 'x2_^-5_T[$'\n\nrandomize('Aa0!', 10);\n//=> 'LV3u~BSGhw'\n```\n\n* `a`: Lowercase alpha characters (`abcdefghijklmnopqrstuvwxyz'`)\n* `A`: Uppercase alpha characters (`ABCDEFGHIJKLMNOPQRSTUVWXYZ'`)\n* `0`: Numeric characters (`0123456789'`)\n* `!`: Special characters (`~!@#$%^&()_+-={}[];\\',.`)\n* `*`: All characters (all of the above combined)\n* `?`: Custom characters (pass a string of custom characters to the options)\n\n### length\n\n> The length of the string to generate\n\n**Examples:**\n\n* `randomize('A', 5)` will generate a 5-character, uppercase, alphabetical, randomized string, e.g. `KDJWJ`.\n* `randomize('0', 2)` will generate a 2-digit random number\n* `randomize('0', 3)` will generate a 3-digit random number\n* `randomize('0', 12)` will generate a 12-digit random number\n* `randomize('A0', 16)` will generate a 16-character, alpha-numeric randomized string\n\nIf `length` is left undefined, the length of the pattern in the first parameter will be used. For example:\n\n* `randomize('00')` will generate a 2-digit random number\n* `randomize('000')` will generate a 3-digit random number\n* `randomize('0000')` will generate a 4-digit random number...\n* `randomize('AAAAA')` will generate a 5-character, uppercase alphabetical random string...\n\nThese are just examples, [see the tests](./test.js) for more use cases and examples.\n\n## options\n\n> These are options that can be passed as the third argument.\n\n#### chars\n\nType: `String`\n\nDefault: `undefined`\n\nDefine a custom string to be randomized.\n\n**Example:**\n\n* `randomize('?', 20, {chars: 'jonschlinkert'})` will generate a 20-character randomized string from the letters contained in `jonschlinkert`.\n* `randomize('?', {chars: 'jonschlinkert'})` will generate a 13-character randomized string from the letters contained in `jonschlinkert`.\n\n#### exclude\n\nType: `String|Array`\n\nDefault: `undefined`\n\nSpecify a string or array of characters can are excluded from the possible characters used to generate the randomized string.\n\n**Example:**\n\n* `randomize('*', 20, { exclude: '0oOiIlL1' })` will generate a 20-character randomized string using all of possible characters except for `0oOiIlL1`.\n\n## Usage Examples\n\n* `randomize('A', 4)` (_whitespace insenstive_) would result in randomized 4-digit uppercase letters, like, `ZAKH`, `UJSL`... etc.\n* `randomize('AAAA')` is equivelant to `randomize('A', 4)`\n* `randomize('AAA0')` and `randomize('AA00')` and `randomize('A0A0')` are equivelant to `randomize('A0', 4)`\n* `randomize('aa')`: results in double-digit, randomized, lower-case letters (`abcdefghijklmnopqrstuvwxyz`)\n* `randomize('AAA')`: results in triple-digit, randomized, upper-case letters (`ABCDEFGHIJKLMNOPQRSTUVWXYZ`)\n* `randomize('0', 6)`: results in six-digit, randomized numbers (`0123456789`)\n* `randomize('!', 5)`: results in single-digit randomized, _valid_ non-letter characters (`~!@#$%^&()_+-={}[]\n* `randomize('A!a0', 9)`: results in nine-digit, randomized characters (any of the above)\n\n_The order in which the characters are defined is insignificant._\n\n## About\n\n<details>\n<summary><strong>Contributing</strong></summary>\n\nPull requests and stars are always welcome. For bugs and feature requests, [please create an issue](../../issues/new).\n\n</details>\n\n<details>\n<summary><strong>Running Tests</strong></summary>\n\nRunning and reviewing unit tests is a great way to get familiarized with a library and its API. You can install dependencies and run tests with the following command:\n\n```sh\n$ npm install && npm test\n```\n\n</details>\n\n<details>\n<summary><strong>Building docs</strong></summary>\n\n_(This project's readme.md is generated by [verb](https://github.com/verbose/verb-generate-readme), please don't edit the readme directly. Any changes to the readme must be made in the [.verb.md](.verb.md) readme template.)_\n\nTo generate the readme, run the following command:\n\n```sh\n$ npm install -g verbose/verb#dev verb-generate-readme && verb\n```\n\n</details>\n\n### Related projects\n\nYou might also be interested in these projects:\n\n* [pad-left](https://www.npmjs.com/package/pad-left): Left pad a string with zeros or a specified string. Fastest implementation. | [homepage](https://github.com/jonschlinkert/pad-left \"Left pad a string with zeros or a specified string. Fastest implementation.\")\n* [pad-right](https://www.npmjs.com/package/pad-right): Right pad a string with zeros or a specified string. Fastest implementation. | [homepage](https://github.com/jonschlinkert/pad-right \"Right pad a string with zeros or a specified string. Fastest implementation.\")\n* [repeat-string](https://www.npmjs.com/package/repeat-string): Repeat the given string n times. Fastest implementation for repeating a string. | [homepage](https://github.com/jonschlinkert/repeat-string \"Repeat the given string n times. Fastest implementation for repeating a string.\")\n\n### Contributors\n\n| **Commits** | **Contributor** |  \n| --- | --- |  \n| 56 | [jonschlinkert](https://github.com/jonschlinkert) |  \n| 6  | [doowb](https://github.com/doowb) |  \n| 4  | [kivlor](https://github.com/kivlor) |  \n| 2  | [realityking](https://github.com/realityking) |  \n| 2  | [ywpark1](https://github.com/ywpark1) |  \n| 1  | [TrySound](https://github.com/TrySound) |  \n| 1  | [drag0s](https://github.com/drag0s) |  \n| 1  | [paulmillr](https://github.com/paulmillr) |  \n| 1  | [sunknudsen](https://github.com/sunknudsen) |  \n| 1  | [faizulhaque-tp](https://github.com/faizulhaque-tp) |  \n| 1  | [michaelrhodes](https://github.com/michaelrhodes) |  \n\n### Author\n\n**Jon Schlinkert**\n\n* [GitHub Profile](https://github.com/jonschlinkert)\n* [Twitter Profile](https://twitter.com/jonschlinkert)\n* [LinkedIn Profile](https://linkedin.com/in/jonschlinkert)\n\n### License\n\nCopyright © 2018, [Jon Schlinkert](https://github.com/jonschlinkert).\nReleased under the [MIT License](LICENSE).\n\n***\n\n_This file was generated by [verb-generate-readme](https://github.com/verbose/verb-generate-readme), v0.8.0, on October 23, 2018._",
+  "maintainers": [
+    {
+      "name": "doowb",
+      "email": "brian.woodward@gmail.com"
+    },
+    {
+      "name": "jonschlinkert",
+      "email": "github@sellside.com"
+    }
+  ],
+  "time": {
+    "modified": "2019-01-05T06:02:42.227Z",
+    "created": "2014-01-04T11:21:05.020Z",
+    "0.1.0": "2014-01-04T11:21:14.854Z",
+    "0.1.1": "2014-05-01T22:18:59.740Z",
+    "0.1.2": "2014-05-03T06:49:59.795Z",
+    "0.1.3": "2014-05-03T06:55:09.056Z",
+    "0.1.4": "2014-05-19T05:56:50.065Z",
+    "1.0.0": "2015-01-02T16:25:35.471Z",
+    "1.0.1": "2015-01-02T16:29:11.219Z",
+    "1.1.0": "2015-01-26T07:11:45.553Z",
+    "1.1.1": "2015-11-10T12:07:49.220Z",
+    "1.1.2": "2015-11-12T06:45:27.266Z",
+    "1.1.3": "2015-11-12T06:49:38.428Z",
+    "1.1.4": "2015-12-10T17:35:02.532Z",
+    "1.1.5": "2015-12-10T19:13:41.356Z",
+    "1.1.6": "2016-11-24T21:24:23.626Z",
+    "1.1.7": "2017-06-09T23:52:51.347Z",
+    "2.0.0": "2017-10-19T12:07:55.924Z",
+    "3.0.0": "2017-12-28T22:58:29.373Z",
+    "3.1.0": "2018-08-08T20:31:06.258Z",
+    "3.1.1": "2018-10-23T19:03:26.457Z"
+  },
+  "author": {
+    "name": "Jon Schlinkert",
+    "url": "https://github.com/jonschlinkert"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonschlinkert/randomatic.git"
+  },
+  "homepage": "https://github.com/jonschlinkert/randomatic",
+  "keywords": [
+    "alpha",
+    "alpha-numeric",
+    "alphanumeric",
+    "characters",
+    "chars",
+    "generate",
+    "generate-password",
+    "numeric",
+    "password",
+    "rand",
+    "random",
+    "randomatic",
+    "randomize",
+    "randomized"
+  ],
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/randomatic/issues"
+  },
+  "readmeFilename": "README.md",
+  "license": "MIT",
+  "users": {
+    "program247365": true,
+    "s4g6": true,
+    "scottfreecode": true,
+    "illuminator": true,
+    "crashtheuniverse": true,
+    "humingchun": true,
+    "seangenabe": true,
+    "isaacvitor": true,
+    "rocket0191": true,
+    "goyalshubham13": true,
+    "andreaspizsa": true,
+    "zhenguo.zhao": true,
+    "bsara": true,
+    "raycharles": true,
+    "xfloops": true,
+    "faraoman": true,
+    "mrxf": true,
+    "diegorbaquero": true,
+    "zuojiang": true
+  },
+  "contributors": [
+    {
+      "name": "Bogdan Chadkin",
+      "url": "https://github.com/TrySound"
+    },
+    {
+      "name": "Dragos Fotescu",
+      "url": "http://dragosfotescu.com"
+    },
+    {
+      "name": "Faiz ul haque",
+      "url": "http://www.10pearls.com"
+    },
+    {
+      "name": "Jon Schlinkert",
+      "url": "http://twitter.com/jonschlinkert"
+    },
+    {
+      "name": "Michael Rhodes",
+      "url": "http://michaelrhod.es"
+    },
+    {
+      "name": "Paul Miller",
+      "url": "https://paulmillr.com"
+    },
+    {
+      "name": "Rouven Weßling",
+      "url": "www.rouvenwessling.de"
+    },
+    {
+      "name": "Sun Knudsen",
+      "url": "https://sunknudsen.com"
+    }
+  ]
+}

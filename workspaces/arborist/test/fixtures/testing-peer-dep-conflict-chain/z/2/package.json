@@ -1,0 +1,1 @@
+{"name":"@isaacs/testing-peer-dep-conflict-chain-z", "version": "2.0.0", "peerDependencies":{"@isaacs/testing-peer-dep-conflict-chain-e": "2"}}

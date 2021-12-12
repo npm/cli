@@ -1,0 +1,592 @@
+{
+  "_id": "hpack.js",
+  "_rev": "11-7f1e76f7169877fc24a27da7799a18a4",
+  "name": "hpack.js",
+  "description": "HPACK implementation",
+  "dist-tags": {
+    "latest": "2.1.6"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "hpack.js",
+      "version": "1.0.0",
+      "description": "HPACK implementation",
+      "main": "lib/hpack.js",
+      "scripts": {
+        "test": "mocha test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/hpack.js.git"
+      },
+      "keywords": [
+        "HPACK",
+        "HTTP2",
+        "compress",
+        "decompress",
+        "headers"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/hpack.js/issues"
+      },
+      "homepage": "https://github.com/indutny/hpack.js#readme",
+      "devDependencies": {
+        "mocha": "^2.2.5"
+      },
+      "dependencies": {
+        "inherits": "^2.0.1",
+        "obuf": "^1.0.0",
+        "readable-stream": "^2.0.0",
+        "wbuf": "^1.1.0"
+      },
+      "gitHead": "e1cd7302451566af074d815b1008c7d9cdcec3da",
+      "_id": "hpack.js@1.0.0",
+      "_shasum": "999c64d067c9970188d5aba7c3106ecbbb737729",
+      "_from": ".",
+      "_npmVersion": "2.11.0",
+      "_nodeVersion": "2.2.1",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "999c64d067c9970188d5aba7c3106ecbbb737729",
+        "tarball": "https://registry.npmjs.org/hpack.js/-/hpack.js-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "hpack.js",
+      "version": "1.1.0",
+      "description": "HPACK implementation",
+      "main": "lib/hpack.js",
+      "scripts": {
+        "test": "mocha test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/hpack.js.git"
+      },
+      "keywords": [
+        "HPACK",
+        "HTTP2",
+        "compress",
+        "decompress",
+        "headers"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/hpack.js/issues"
+      },
+      "homepage": "https://github.com/indutny/hpack.js#readme",
+      "devDependencies": {
+        "mocha": "^2.2.5"
+      },
+      "dependencies": {
+        "inherits": "^2.0.1",
+        "obuf": "^1.0.0",
+        "readable-stream": "^2.0.0",
+        "wbuf": "^1.1.0"
+      },
+      "gitHead": "ba8da8de1207fa70a97ab5d187214769f83ddc01",
+      "_id": "hpack.js@1.1.0",
+      "_shasum": "e6da660a4b220984a2b5b102623a498d36d07eb9",
+      "_from": ".",
+      "_npmVersion": "2.11.0",
+      "_nodeVersion": "2.2.1",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "e6da660a4b220984a2b5b102623a498d36d07eb9",
+        "tarball": "https://registry.npmjs.org/hpack.js/-/hpack.js-1.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "hpack.js",
+      "version": "2.0.0",
+      "description": "HPACK implementation",
+      "main": "lib/hpack.js",
+      "scripts": {
+        "test": "mocha test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/hpack.js.git"
+      },
+      "keywords": [
+        "HPACK",
+        "HTTP2",
+        "compress",
+        "decompress",
+        "headers"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/hpack.js/issues"
+      },
+      "homepage": "https://github.com/indutny/hpack.js#readme",
+      "devDependencies": {
+        "mocha": "^2.2.5"
+      },
+      "dependencies": {
+        "inherits": "^2.0.1",
+        "obuf": "^1.0.0",
+        "readable-stream": "^2.0.0",
+        "wbuf": "^1.1.0"
+      },
+      "gitHead": "c2aa342839da4e7d6887cdde1ed232122e1cb888",
+      "_id": "hpack.js@2.0.0",
+      "_shasum": "59afdcd2e8d952170a39264208422e9a46882a07",
+      "_from": ".",
+      "_npmVersion": "2.11.0",
+      "_nodeVersion": "2.2.1",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "59afdcd2e8d952170a39264208422e9a46882a07",
+        "tarball": "https://registry.npmjs.org/hpack.js/-/hpack.js-2.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "2.1.0": {
+      "name": "hpack.js",
+      "version": "2.1.0",
+      "description": "HPACK implementation",
+      "main": "lib/hpack.js",
+      "scripts": {
+        "test": "mocha test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/hpack.js.git"
+      },
+      "keywords": [
+        "HPACK",
+        "HTTP2",
+        "compress",
+        "decompress",
+        "headers"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/hpack.js/issues"
+      },
+      "homepage": "https://github.com/indutny/hpack.js#readme",
+      "devDependencies": {
+        "mocha": "^2.2.5"
+      },
+      "dependencies": {
+        "inherits": "^2.0.1",
+        "obuf": "^1.0.0",
+        "readable-stream": "^2.0.0",
+        "wbuf": "^1.1.0"
+      },
+      "gitHead": "e2c5e443997d382185e6162a3235ebe57e1d1ace",
+      "_id": "hpack.js@2.1.0",
+      "_shasum": "9c340390806c06b6d9087655c30c932f73c4cbfd",
+      "_from": ".",
+      "_npmVersion": "2.11.0",
+      "_nodeVersion": "2.2.1",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "9c340390806c06b6d9087655c30c932f73c4cbfd",
+        "tarball": "https://registry.npmjs.org/hpack.js/-/hpack.js-2.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "2.1.2": {
+      "name": "hpack.js",
+      "version": "2.1.2",
+      "description": "HPACK implementation",
+      "main": "lib/hpack.js",
+      "scripts": {
+        "test": "mocha test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/hpack.js.git"
+      },
+      "keywords": [
+        "HPACK",
+        "HTTP2",
+        "compress",
+        "decompress",
+        "headers"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/hpack.js/issues"
+      },
+      "homepage": "https://github.com/indutny/hpack.js#readme",
+      "devDependencies": {
+        "mocha": "^2.2.5"
+      },
+      "dependencies": {
+        "inherits": "^2.0.1",
+        "obuf": "^1.0.0",
+        "wbuf": "^1.1.0"
+      },
+      "gitHead": "6d457ea08a7e8805685abc3543e5e752ca57a9a1",
+      "_id": "hpack.js@2.1.2",
+      "_shasum": "ffceab8cb343062e4e6bbc40c67254731023240d",
+      "_from": ".",
+      "_npmVersion": "2.11.0",
+      "_nodeVersion": "2.2.1",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "ffceab8cb343062e4e6bbc40c67254731023240d",
+        "tarball": "https://registry.npmjs.org/hpack.js/-/hpack.js-2.1.2.tgz"
+      },
+      "directories": {}
+    },
+    "2.1.3": {
+      "name": "hpack.js",
+      "version": "2.1.3",
+      "description": "HPACK implementation",
+      "main": "lib/hpack.js",
+      "scripts": {
+        "test": "mocha test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/hpack.js.git"
+      },
+      "keywords": [
+        "HPACK",
+        "HTTP2",
+        "compress",
+        "decompress",
+        "headers"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/hpack.js/issues"
+      },
+      "homepage": "https://github.com/indutny/hpack.js#readme",
+      "devDependencies": {
+        "mocha": "^2.2.5"
+      },
+      "dependencies": {
+        "inherits": "^2.0.1",
+        "obuf": "^1.0.0",
+        "readable-stream": "^2.0.1",
+        "wbuf": "^1.1.0"
+      },
+      "gitHead": "a4f78d07e4ce45266df2ba14ab7d48ae45aa85f6",
+      "_id": "hpack.js@2.1.3",
+      "_shasum": "fdafb3514690353bf00bfa393469f53aaee227ef",
+      "_from": ".",
+      "_npmVersion": "2.11.0",
+      "_nodeVersion": "2.2.1",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "fdafb3514690353bf00bfa393469f53aaee227ef",
+        "tarball": "https://registry.npmjs.org/hpack.js/-/hpack.js-2.1.3.tgz"
+      },
+      "directories": {}
+    },
+    "2.1.4": {
+      "name": "hpack.js",
+      "version": "2.1.4",
+      "description": "HPACK implementation",
+      "main": "lib/hpack.js",
+      "scripts": {
+        "test": "mocha test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/hpack.js.git"
+      },
+      "keywords": [
+        "HPACK",
+        "HTTP2",
+        "compress",
+        "decompress",
+        "headers"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/hpack.js/issues"
+      },
+      "homepage": "https://github.com/indutny/hpack.js#readme",
+      "devDependencies": {
+        "mocha": "^2.2.5"
+      },
+      "dependencies": {
+        "inherits": "^2.0.1",
+        "obuf": "^1.0.0",
+        "readable-stream": "^2.0.1",
+        "wbuf": "^1.1.0"
+      },
+      "gitHead": "7338b7ec5c2fc3c234bbf56d1e570925c15d32a1",
+      "_id": "hpack.js@2.1.4",
+      "_shasum": "87a2d494b0d5df235f34ab5593337f9f97d706d0",
+      "_from": ".",
+      "_npmVersion": "2.13.3",
+      "_nodeVersion": "3.0.0",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "87a2d494b0d5df235f34ab5593337f9f97d706d0",
+        "tarball": "https://registry.npmjs.org/hpack.js/-/hpack.js-2.1.4.tgz"
+      },
+      "directories": {}
+    },
+    "2.1.5": {
+      "name": "hpack.js",
+      "version": "2.1.5",
+      "description": "HPACK implementation",
+      "main": "lib/hpack.js",
+      "scripts": {
+        "test": "mocha test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/hpack.js.git"
+      },
+      "keywords": [
+        "HPACK",
+        "HTTP2",
+        "compress",
+        "decompress",
+        "headers"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/hpack.js/issues"
+      },
+      "homepage": "https://github.com/indutny/hpack.js#readme",
+      "devDependencies": {
+        "mocha": "^2.2.5"
+      },
+      "dependencies": {
+        "inherits": "^2.0.1",
+        "obuf": "^1.0.0",
+        "readable-stream": "^2.0.1",
+        "wbuf": "^1.1.0"
+      },
+      "gitHead": "e127ff3221add58fe24f68df2f720610cb902cea",
+      "_id": "hpack.js@2.1.5",
+      "_shasum": "209e9bd3e2c83cbed6f162205fee6e767d8f9d17",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.3.0",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "dist": {
+        "shasum": "209e9bd3e2c83cbed6f162205fee6e767d8f9d17",
+        "tarball": "https://registry.npmjs.org/hpack.js/-/hpack.js-2.1.5.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/hpack.js-2.1.5.tgz_1474221222672_0.06208904832601547"
+      },
+      "directories": {}
+    },
+    "2.1.6": {
+      "name": "hpack.js",
+      "version": "2.1.6",
+      "description": "HPACK implementation",
+      "main": "lib/hpack.js",
+      "scripts": {
+        "test": "mocha test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/hpack.js.git"
+      },
+      "keywords": [
+        "HPACK",
+        "HTTP2",
+        "compress",
+        "decompress",
+        "headers"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/hpack.js/issues"
+      },
+      "homepage": "https://github.com/indutny/hpack.js#readme",
+      "devDependencies": {
+        "mocha": "^2.2.5"
+      },
+      "dependencies": {
+        "inherits": "^2.0.1",
+        "obuf": "^1.0.0",
+        "readable-stream": "^2.0.1",
+        "wbuf": "^1.1.0"
+      },
+      "gitHead": "c23a03a4ef7fed112e57998911d7ae8df8925616",
+      "_id": "hpack.js@2.1.6",
+      "_shasum": "87774c0949e513f42e84575b3c45681fade2a0b2",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.3.0",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "dist": {
+        "shasum": "87774c0949e513f42e84575b3c45681fade2a0b2",
+        "tarball": "https://registry.npmjs.org/hpack.js/-/hpack.js-2.1.6.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/hpack.js-2.1.6.tgz_1474221634241_0.9987347291316837"
+      },
+      "directories": {}
+    }
+  },
+  "readme": "# HPACK.js\n\n[![Build Status](https://secure.travis-ci.org/indutny/hpack.js.png)](http://travis-ci.org/indutny/hpack.js)\n[![NPM version](https://badge.fury.io/js/hpack.js.svg)](http://badge.fury.io/js/hpack.js)\n\nPlain-JS implementation of [HPACK][0].\n\n## Usage\n\n```javascript\nvar hpack = require('hpack.js');\n\nvar comp = hpack.compressor.create({ table: { size: 256 } });\nvar decomp = hpack.decompressor.create({ table: { size: 256 } });\n\ncomp.write([ { name: 'host', value: 'localhost' } ]);\nvar raw = comp.read();\nconsole.log(raw);\n// <Buffer 66 86 a0 e4 1d 13 9d 09>\n\ndecomp.write(raw);\ndecomp.execute();\nconsole.log(decomp.read());\n// { name: 'host', value: 'localhost', neverIndex: false }\n```\n\n#### LICENSE\n\nThis software is licensed under the MIT License.\n\nCopyright Fedor Indutny, 2015.\n\nPermission is hereby granted, free of charge, to any person obtaining a\ncopy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to permit\npersons to whom the Software is furnished to do so, subject to the\nfollowing conditions:\n\nThe above copyright notice and this permission notice shall be included\nin all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS\nOR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN\nNO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,\nDAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR\nOTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE\nUSE OR OTHER DEALINGS IN THE SOFTWARE.\n\n[0]: https://tools.ietf.org/html/rfc7541\n",
+  "maintainers": [
+    {
+      "name": "indutny",
+      "email": "fedor@indutny.com"
+    }
+  ],
+  "time": {
+    "modified": "2016-09-18T18:00:36.108Z",
+    "created": "2015-06-13T17:28:16.079Z",
+    "1.0.0": "2015-06-13T17:28:16.079Z",
+    "1.1.0": "2015-06-15T22:09:15.721Z",
+    "2.0.0": "2015-06-16T18:29:31.603Z",
+    "2.1.0": "2015-06-16T20:57:15.216Z",
+    "2.1.1": "2015-06-16T21:31:14.619Z",
+    "2.1.2": "2015-06-16T21:33:46.460Z",
+    "2.1.3": "2015-07-13T22:32:20.307Z",
+    "2.1.4": "2015-08-11T07:59:49.528Z",
+    "2.1.5": "2016-09-18T17:53:44.624Z",
+    "2.1.6": "2016-09-18T18:00:36.108Z"
+  },
+  "homepage": "https://github.com/indutny/hpack.js#readme",
+  "keywords": [
+    "HPACK",
+    "HTTP2",
+    "compress",
+    "decompress",
+    "headers"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/indutny/hpack.js.git"
+  },
+  "author": {
+    "name": "Fedor Indutny",
+    "email": "fedor@indutny.com"
+  },
+  "bugs": {
+    "url": "https://github.com/indutny/hpack.js/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "_attachments": {}
+}

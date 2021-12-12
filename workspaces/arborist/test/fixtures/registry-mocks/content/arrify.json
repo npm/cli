@@ -1,0 +1,312 @@
+{
+  "_id": "arrify",
+  "_rev": "13-711998fd33aa8ba0a4f141c42380efc8",
+  "name": "arrify",
+  "description": "Convert a value to an array",
+  "dist-tags": {
+    "latest": "2.0.1"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "arrify",
+      "version": "1.0.0",
+      "description": "Convert a value to an array",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/arrify"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "array",
+        "arr",
+        "arrify",
+        "arrayify",
+        "convert",
+        "value"
+      ],
+      "devDependencies": {
+        "ava": "0.0.4"
+      },
+      "gitHead": "4576e944677c722c356480b17a6d709d34d0733c",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/arrify/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/arrify",
+      "_id": "arrify@1.0.0",
+      "_shasum": "d6c361518250802fa2147ea7fb67597128cb8c81",
+      "_from": ".",
+      "_npmVersion": "2.5.0",
+      "_nodeVersion": "0.12.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "d6c361518250802fa2147ea7fb67597128cb8c81",
+        "tarball": "https://registry.npmjs.org/arrify/-/arrify-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "arrify",
+      "version": "1.0.1",
+      "description": "Convert a value to an array",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/arrify.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "array",
+        "arr",
+        "arrify",
+        "arrayify",
+        "convert",
+        "value"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "087edee1a58d5adaac6cae5a107886121ef43783",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/arrify/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/arrify#readme",
+      "_id": "arrify@1.0.1",
+      "_shasum": "898508da2226f380df904728456849c1501a4b0d",
+      "_from": ".",
+      "_npmVersion": "3.5.2",
+      "_nodeVersion": "4.2.1",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "898508da2226f380df904728456849c1501a4b0d",
+        "tarball": "https://registry.npmjs.org/arrify/-/arrify-1.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "arrify",
+      "version": "2.0.0",
+      "description": "Convert a value to an array",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/arrify.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "array",
+        "arrify",
+        "arrayify",
+        "convert",
+        "value",
+        "ensure"
+      ],
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "d437961b3aec160007deea9eea30f5513035f4a1",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/arrify/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/arrify#readme",
+      "_id": "arrify@2.0.0",
+      "_nodeVersion": "8.15.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-C+FpZX94te3l4TQu40KxfwOKlXQr6b+AcpFp/0bb2JbUX8P6FwL0srF/shrVgklis9AAdeUVwzVmyOiFzm0/ww==",
+        "shasum": "9c353b6b3b7c934f1f5091983ef7cdce1d9e9477",
+        "tarball": "https://registry.npmjs.org/arrify/-/arrify-2.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 3183,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcpyg5CRA9TVsSAnZWagAA60gP/idUQd+gF3hB0uFdg0fX\ngnVSjnTjDYhFuwOinsKjDgRj7P6wgpB7QyTE4qOx/10AAceutR6pBqhnBlml\nEjT2SiObc+MFaLDaeG3iPpgy6VtBfEwWLEZS0Mkk2GiZTTH+00i47ej7znX4\niWunRidQYjVgcNnNnhsboDfctMQFgo2Il5Jlo7G5yfKDNN1iqfyU0G6KOBt7\nPgaFsHurckGt55judgIfE8LKvrjTcj7MJAyaFZPqbz5JPOD56vf/m9bVw/DY\nBBl2IXKUNczFUMyBdWhCZtbsTgh4NHaiMYqFrBGSk78wtGDsdaSQ3CBsdm1B\ncHVCRJ69F6mA6FBiuP5Zzll6MlnrbX+reSZOoiSLkjauV9YnE6D3DEV2J2Lc\n+ma9zOs7yZhBVW9IswdG4yaw/4rRqCKfj0W7bzPJL6tRyJj8NhON7wphRNsN\nJNH9C7QrvdEMvh5GU6w3Jqz4Ls0p3uia9O5e/ZBoNmZAjwyc/EfdvYaaOSyw\nWbt+huwhM42A5FbocRtk/jlkSXZXmiFVhsCWFYQTuH9n/UkWjpAuXwaLDjoz\nXGhyZ9JryA3qfctIT2yrvF+gAzZSYUGmgWcapEwefgg3+fF1ZVixovcszdPF\nb9N9d7hOnlGe4PFKvXjg9oQUYzt+Q8LdcOFph5HNvMfBjwYgdJH4jm7TEknv\nOTqj\r\n=wSw8\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/arrify_2.0.0_1554458681232_0.8396884385972574"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.1": {
+      "name": "arrify",
+      "version": "2.0.1",
+      "description": "Convert a value to an array",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/arrify.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "array",
+        "arrify",
+        "arrayify",
+        "convert",
+        "value",
+        "ensure"
+      ],
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "11bd8ff9275002c6d147d37ab83044d5ea4fdd06",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/arrify/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/arrify#readme",
+      "_id": "arrify@2.0.1",
+      "_nodeVersion": "8.15.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-3duEwti880xqi4eAMN8AyR4a0ByT90zoYdLlevfrvU43vb0YZwZVfxOgxWrLXXXpyugL0hNZc9G6BiB5B3nUug==",
+        "shasum": "c9655e9331e0abcd588d2a7cad7e9956f66701fa",
+        "tarball": "https://registry.npmjs.org/arrify/-/arrify-2.0.1.tgz",
+        "fileCount": 5,
+        "unpackedSize": 3185,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcrE5+CRA9TVsSAnZWagAA7ncP/Ai28o1zj9rC6/25Cirg\nOXyyP/DZJRVKJjPKGl4RYwvWG0conMOqbpE2LuFcNMLsjWvwML3QCYQ1YY5S\n0D8nRprDg8xAiPPEsbj3Z0AgB8ZOZGyyD9y5c6rq+iMmlpfiO5DUyUovDab4\nff5kVan0Wut9n7Zky71U+nSalOG+axE+TiL1lJK8m81ThKfLxtGsWucgVnFX\nVs/e6uAdofd8zLwL48Xql8zrqdSiP0x/cvRc2+p30ePUFFMqj0/l/bmZWM7/\nXmh1QadZdefWWa9XXKKwk7ns+cp8PPpy3KIVWbcuq9pa634ucm2IOadvUoSu\ntz/VYYe3i5LXUyMMdyymrkaPZvBWYX0J1JLeJL3g7VuT3Ay5MvX2JV8FseMS\nvSaL2B3O93/Pabf3y3G43UzNT/g7aib1sKRFeFLYII1tC0tH0TaZ/LcR7mAO\nbsD0Wt6iJZwSaoY9KH0yrfyvU+0S+bVC5HurvQVeEBw6RLURgkSFNytqKTw9\nm/oJU/uSTSU/k+YbmnKC3c/Ux6AOKd5m5YNqDg6WyPm6BFKzcEsEneRN7BSb\n55lzFIRSWIR173rNYO9aUhMrDnF+ZJ8gvxjKW+HABPAxlVxo1liOzch8/IWi\nFrOOq3MIF0XfaK3wlm1wG7B+2q6J1nthERe92aJgo3uPlH/ePUh6Ab3Cl4lx\njOTw\r\n=gBlA\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/arrify_2.0.1_1554796157439_0.7180258720462498"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# arrify [![Build Status](https://travis-ci.org/sindresorhus/arrify.svg?branch=master)](https://travis-ci.org/sindresorhus/arrify)\n\n> Convert a value to an array\n\n\n## Install\n\n```\n$ npm install arrify\n```\n\n\n## Usage\n\n```js\nconst arrify = require('arrify');\n\narrify('🦄');\n//=> ['🦄']\n\narrify(['🦄']);\n//=> ['🦄']\n\narrify(new Set(['🦄']));\n//=> ['🦄']\n\narrify(null);\n//=> []\n\narrify(undefined);\n//=> []\n```\n\n*Supplying `null` or `undefined` results in an empty array.*\n\n\n## License\n\nMIT © [Sindre Sorhus](https://sindresorhus.com)\n",
+  "maintainers": [
+    {
+      "name": "sindresorhus",
+      "email": "sindresorhus@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2019-04-09T07:49:20.316Z",
+    "created": "2015-02-16T14:59:57.330Z",
+    "1.0.0": "2015-02-16T14:59:57.330Z",
+    "1.0.1": "2015-12-09T17:48:38.769Z",
+    "2.0.0": "2019-04-05T10:04:41.377Z",
+    "2.0.1": "2019-04-09T07:49:17.644Z"
+  },
+  "homepage": "https://github.com/sindresorhus/arrify#readme",
+  "keywords": [
+    "array",
+    "arrify",
+    "arrayify",
+    "convert",
+    "value",
+    "ensure"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/arrify.git"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "bugs": {
+    "url": "https://github.com/sindresorhus/arrify/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md",
+  "users": {
+    "vlazar": true,
+    "wenbing": true,
+    "youstrive": true,
+    "nichoth": true,
+    "tur-nr": true,
+    "rocket0191": true,
+    "nuwaio": true,
+    "soenkekluth": true
+  }
+}

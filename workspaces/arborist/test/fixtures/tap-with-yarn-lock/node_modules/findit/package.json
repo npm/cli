@@ -1,0 +1,31 @@
+{
+  "name": "findit",
+  "version": "2.0.0",
+  "description": "walk a directory tree recursively with events",
+  "main": "index.js",
+  "devDependencies": {
+    "tap": "~0.4.4",
+    "mkdirp": "~0.3.5"
+  },
+  "scripts": {
+    "test": "tap test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/substack/node-findit.git"
+  },
+  "keywords": [
+    "find",
+    "walk",
+    "directory",
+    "recursive",
+    "tree",
+    "traversal"
+  ],
+  "author": {
+    "name": "James Halliday",
+    "email": "mail@substack.net",
+    "url": "http://substack.net"
+  },
+  "license": "MIT"
+}

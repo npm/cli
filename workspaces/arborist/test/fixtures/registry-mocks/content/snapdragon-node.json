@@ -1,0 +1,1381 @@
+{
+  "_id": "snapdragon-node",
+  "_rev": "13-1d2f377502526d1bd4fd50463f6ee140",
+  "name": "snapdragon-node",
+  "description": "Class for creating AST nodes.",
+  "dist-tags": {
+    "latest": "3.0.0"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "snapdragon-node",
+      "description": "Snapdragon utility for creating a new AST node in custom code, such as plugins.",
+      "version": "0.1.0",
+      "homepage": "https://github.com/jonschlinkert/snapdragon-node",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/snapdragon-node.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/snapdragon-node/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "define-property": "^0.2.5",
+        "isobject": "^3.0.0"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^0.1.11",
+        "mocha": "^3.2.0",
+        "snapdragon": "^0.8.1"
+      },
+      "keywords": [
+        "generategenerator",
+        "node",
+        "snapdragon"
+      ],
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "snapdragon",
+            "snapdragon-util",
+            "snapdragon-capture"
+          ]
+        },
+        "reflinks": [
+          "verb",
+          "verb-generate-readme"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "05bbed33d061d58c40f4ce15a5d35a61bd403e56",
+      "_id": "snapdragon-node@0.1.0",
+      "_shasum": "2d4e7237df851b93c361a8aab559a918ac4820b2",
+      "_from": ".",
+      "_npmVersion": "3.10.9",
+      "_nodeVersion": "6.9.2",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "2d4e7237df851b93c361a8aab559a918ac4820b2",
+        "tarball": "https://registry.npmjs.org/snapdragon-node/-/snapdragon-node-0.1.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/snapdragon-node-0.1.0.tgz_1484911551650_0.4797430185135454"
+      },
+      "directories": {}
+    },
+    "0.2.0": {
+      "name": "snapdragon-node",
+      "description": "Snapdragon utility for creating a new AST node in custom code, such as plugins.",
+      "version": "0.2.0",
+      "homepage": "https://github.com/jonschlinkert/snapdragon-node",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/snapdragon-node.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/snapdragon-node/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "define-property": "^0.2.5",
+        "isobject": "^3.0.0"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^0.1.11",
+        "mocha": "^3.2.0",
+        "snapdragon": "^0.8.1"
+      },
+      "keywords": [
+        "generategenerator",
+        "node",
+        "snapdragon"
+      ],
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "snapdragon",
+            "snapdragon-util",
+            "snapdragon-capture"
+          ]
+        },
+        "reflinks": [
+          "verb",
+          "verb-generate-readme"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "8d482a7d939f3467351356eb447eb3e82d5d5dad",
+      "_id": "snapdragon-node@0.2.0",
+      "_shasum": "4d2ee33d72bb1caeb65aa32fdb7c9b9e7fc348e4",
+      "_from": ".",
+      "_npmVersion": "3.10.9",
+      "_nodeVersion": "6.9.2",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "4d2ee33d72bb1caeb65aa32fdb7c9b9e7fc348e4",
+        "tarball": "https://registry.npmjs.org/snapdragon-node/-/snapdragon-node-0.2.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/snapdragon-node-0.2.0.tgz_1484966199776_0.9185646020341665"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "snapdragon-node",
+      "description": "Snapdragon utility for creating a new AST node in custom code, such as plugins.",
+      "version": "1.0.0",
+      "homepage": "https://github.com/jonschlinkert/snapdragon-node",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/snapdragon-node.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/snapdragon-node/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "define-property": "^0.2.5",
+        "isobject": "^3.0.0",
+        "snapdragon-util": "^1.0.0"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^0.1.11",
+        "mocha": "^3.2.0",
+        "snapdragon": "^0.8.1"
+      },
+      "keywords": [
+        "generategenerator",
+        "node",
+        "snapdragon"
+      ],
+      "verb": {
+        "toc": "collapsible",
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "snapdragon",
+            "snapdragon-util",
+            "snapdragon-capture"
+          ]
+        },
+        "reflinks": [
+          "verb",
+          "verb-generate-readme"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "dbc6c32a1ab6d7372b74f74c1160204ba5eac8fd",
+      "_id": "snapdragon-node@1.0.0",
+      "_shasum": "70f06a3e6954bcbb30001c7fabf81a5393eef324",
+      "_from": ".",
+      "_npmVersion": "3.10.9",
+      "_nodeVersion": "6.9.2",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "70f06a3e6954bcbb30001c7fabf81a5393eef324",
+        "tarball": "https://registry.npmjs.org/snapdragon-node/-/snapdragon-node-1.0.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/snapdragon-node-1.0.0.tgz_1484992379835_0.12347350222989917"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "snapdragon-node",
+      "description": "Snapdragon utility for creating a new AST node in custom code, such as plugins.",
+      "version": "1.0.1",
+      "homepage": "https://github.com/jonschlinkert/snapdragon-node",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/snapdragon-node.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/snapdragon-node/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "define-property": "^0.2.5",
+        "isobject": "^3.0.0",
+        "snapdragon-util": "^1.0.2"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^0.1.11",
+        "mocha": "^3.2.0",
+        "snapdragon": "^0.9.0",
+        "snapdragon-capture-set": "^1.0.1"
+      },
+      "keywords": [
+        "ast",
+        "compile",
+        "compiler",
+        "node",
+        "parse",
+        "parser",
+        "plugin",
+        "snapdragon",
+        "snapdragonplugin",
+        "token"
+      ],
+      "verb": {
+        "toc": "collapsible",
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "snapdragon",
+            "snapdragon-capture",
+            "snapdragon-util"
+          ]
+        },
+        "reflinks": [
+          "verb",
+          "verb-generate-readme"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "e07e4695c05e55b90d983a60a2a0a2b3972cbc2e",
+      "_id": "snapdragon-node@1.0.1",
+      "_shasum": "15e5b89fc84f9d9604657b079606fcbb06cdd0f1",
+      "_from": ".",
+      "_npmVersion": "3.10.9",
+      "_nodeVersion": "6.9.2",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "15e5b89fc84f9d9604657b079606fcbb06cdd0f1",
+        "tarball": "https://registry.npmjs.org/snapdragon-node/-/snapdragon-node-1.0.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/snapdragon-node-1.0.1.tgz_1484995630258_0.797238051192835"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "snapdragon-node",
+      "description": "Snapdragon utility for creating a new AST node in custom code, such as plugins.",
+      "version": "1.0.2",
+      "homepage": "https://github.com/jonschlinkert/snapdragon-node",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/snapdragon-node.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/snapdragon-node/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "define-property": "^0.2.5",
+        "isobject": "^3.0.0",
+        "lazy-cache": "^2.0.2",
+        "snapdragon-util": "^1.0.2"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^0.1.11",
+        "mocha": "^3.2.0",
+        "snapdragon": "^0.9.0",
+        "snapdragon-capture-set": "^1.0.1"
+      },
+      "keywords": [
+        "ast",
+        "compile",
+        "compiler",
+        "node",
+        "parse",
+        "parser",
+        "plugin",
+        "snapdragon",
+        "snapdragonplugin",
+        "token"
+      ],
+      "verb": {
+        "toc": "collapsible",
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "snapdragon",
+            "snapdragon-capture",
+            "snapdragon-util"
+          ]
+        },
+        "reflinks": [
+          "verb",
+          "verb-generate-readme"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "8328f532a2cc7a4ed9ab62caab0602ab34a30863",
+      "_id": "snapdragon-node@1.0.2",
+      "_shasum": "1f29e33d675d5e2d74a052ca798f8fac2c452f04",
+      "_from": ".",
+      "_npmVersion": "3.10.9",
+      "_nodeVersion": "6.9.2",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "1f29e33d675d5e2d74a052ca798f8fac2c452f04",
+        "tarball": "https://registry.npmjs.org/snapdragon-node/-/snapdragon-node-1.0.2.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/snapdragon-node-1.0.2.tgz_1484998633025_0.20634198607876897"
+      },
+      "directories": {}
+    },
+    "1.0.3": {
+      "name": "snapdragon-node",
+      "description": "Snapdragon utility for creating a new AST node in custom code, such as plugins.",
+      "version": "1.0.3",
+      "homepage": "https://github.com/jonschlinkert/snapdragon-node",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/snapdragon-node.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/snapdragon-node/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "utils.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "define-property": "^0.2.5",
+        "isobject": "^3.0.0",
+        "lazy-cache": "^2.0.2",
+        "snapdragon-util": "^1.0.2"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^0.1.11",
+        "mocha": "^3.2.0",
+        "snapdragon": "^0.9.0",
+        "snapdragon-capture-set": "^1.0.1"
+      },
+      "keywords": [
+        "ast",
+        "compile",
+        "compiler",
+        "node",
+        "parse",
+        "parser",
+        "plugin",
+        "snapdragon",
+        "snapdragonplugin",
+        "token"
+      ],
+      "verb": {
+        "toc": "collapsible",
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "snapdragon",
+            "snapdragon-capture",
+            "snapdragon-util"
+          ]
+        },
+        "reflinks": [
+          "verb",
+          "verb-generate-readme"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "be17d1ef3743fa87e945f68d49a40bd09cfc9bc7",
+      "_id": "snapdragon-node@1.0.3",
+      "_shasum": "54ca3efd8aadedfb015c6af64844d85fe2362b15",
+      "_from": ".",
+      "_npmVersion": "3.10.9",
+      "_nodeVersion": "6.9.2",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "54ca3efd8aadedfb015c6af64844d85fe2362b15",
+        "tarball": "https://registry.npmjs.org/snapdragon-node/-/snapdragon-node-1.0.3.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/snapdragon-node-1.0.3.tgz_1484998869720_0.5219865818507969"
+      },
+      "directories": {}
+    },
+    "1.0.5": {
+      "name": "snapdragon-node",
+      "description": "Snapdragon utility for creating a new AST node in custom code, such as plugins.",
+      "version": "1.0.5",
+      "homepage": "https://github.com/jonschlinkert/snapdragon-node",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/snapdragon-node.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/snapdragon-node/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "utils.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "keywords": [
+        "ast",
+        "compile",
+        "compiler",
+        "node",
+        "parse",
+        "parser",
+        "plugin",
+        "snapdragon",
+        "snapdragonplugin",
+        "token"
+      ],
+      "verb": {
+        "toc": "collapsible",
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "snapdragon",
+            "snapdragon-capture",
+            "snapdragon-util"
+          ]
+        },
+        "reflinks": [
+          "verb",
+          "verb-generate-readme"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "dependencies": {
+        "define-property": "^0.2.5",
+        "isobject": "^3.0.0",
+        "lazy-cache": "^2.0.2",
+        "snapdragon-util": "^1.0.3"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^0.1.11",
+        "mocha": "^3.2.0",
+        "snapdragon": "^0.9.1",
+        "snapdragon-capture-set": "^1.0.1"
+      },
+      "gitHead": "bea9505d40be74b3c452039e72e857c9ae3c4b5e",
+      "_id": "snapdragon-node@1.0.5",
+      "_shasum": "65f0e1609354f03ab788d462dfad1cdcfc778d42",
+      "_from": ".",
+      "_npmVersion": "3.10.9",
+      "_nodeVersion": "6.9.2",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "65f0e1609354f03ab788d462dfad1cdcfc778d42",
+        "tarball": "https://registry.npmjs.org/snapdragon-node/-/snapdragon-node-1.0.5.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/snapdragon-node-1.0.5.tgz_1486278117060_0.4909474002197385"
+      },
+      "directories": {}
+    },
+    "1.0.6": {
+      "name": "snapdragon-node",
+      "description": "Snapdragon utility for creating a new AST node in custom code, such as plugins.",
+      "version": "1.0.6",
+      "homepage": "https://github.com/jonschlinkert/snapdragon-node",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/snapdragon-node.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/snapdragon-node/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "utils.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=4.7"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "define-property": "^0.2.5",
+        "isobject": "^3.0.0",
+        "lazy-cache": "^2.0.2",
+        "snapdragon-util": "^1.0.3"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^0.1.11",
+        "mocha": "^3.2.0",
+        "snapdragon": "^0.9.1",
+        "snapdragon-capture-set": "^1.0.1"
+      },
+      "keywords": [
+        "ast",
+        "compile",
+        "compiler",
+        "convert",
+        "node",
+        "parse",
+        "parser",
+        "plugin",
+        "render",
+        "snapdragon",
+        "snapdragonplugin",
+        "token",
+        "transform"
+      ],
+      "verb": {
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "snapdragon",
+            "snapdragon-capture",
+            "snapdragon-util",
+            "snapdragon-cheerio",
+            "breakdance"
+          ]
+        },
+        "reflinks": [
+          "verb",
+          "verb-generate-readme"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "bea9505d40be74b3c452039e72e857c9ae3c4b5e",
+      "_id": "snapdragon-node@1.0.6",
+      "_shasum": "2448d5ef6fea7f5e8fd5326a0a114854da271356",
+      "_from": ".",
+      "_npmVersion": "4.1.2",
+      "_nodeVersion": "7.5.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "2448d5ef6fea7f5e8fd5326a0a114854da271356",
+        "tarball": "https://registry.npmjs.org/snapdragon-node/-/snapdragon-node-1.0.6.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/snapdragon-node-1.0.6.tgz_1487184989101_0.8563321211840957"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "snapdragon-node",
+      "description": "Snapdragon utility for creating a new AST node in custom code, such as plugins.",
+      "version": "2.0.0",
+      "homepage": "https://github.com/jonschlinkert/snapdragon-node",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/snapdragon-node.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/snapdragon-node/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": "0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "define-property": "^1.0.0",
+        "isobject": "^3.0.0",
+        "snapdragon-util": "^3.0.0"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^3.0.1",
+        "gulp-format-md": "^0.1.12",
+        "gulp-istanbul": "^1.1.1",
+        "gulp-mocha": "^3.0.0",
+        "mocha": "^3.3.0",
+        "snapdragon": "^0.11.0"
+      },
+      "keywords": [
+        "ast",
+        "compile",
+        "compiler",
+        "convert",
+        "node",
+        "parse",
+        "parser",
+        "plugin",
+        "render",
+        "snapdragon",
+        "snapdragonplugin",
+        "token",
+        "transform"
+      ],
+      "verb": {
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "breakdance",
+            "snapdragon",
+            "snapdragon-capture",
+            "snapdragon-cheerio",
+            "snapdragon-util"
+          ]
+        },
+        "reflinks": [
+          "verb",
+          "verb-generate-readme"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "3e97da325deaa8a751e0ee20e82495a824229d78",
+      "_id": "snapdragon-node@2.0.0",
+      "_shasum": "2c1fcf7a494da1fea737139f62116bdc7e5ea3ef",
+      "_from": ".",
+      "_npmVersion": "4.2.0",
+      "_nodeVersion": "7.7.3",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "2c1fcf7a494da1fea737139f62116bdc7e5ea3ef",
+        "tarball": "https://registry.npmjs.org/snapdragon-node/-/snapdragon-node-2.0.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/snapdragon-node-2.0.0.tgz_1493640545135_0.04281848669052124"
+      },
+      "directories": {}
+    },
+    "2.0.1": {
+      "name": "snapdragon-node",
+      "description": "Snapdragon utility for creating a new AST node in custom code, such as plugins.",
+      "version": "2.0.1",
+      "homepage": "https://github.com/jonschlinkert/snapdragon-node",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/snapdragon-node.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/snapdragon-node/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "define-property": "^1.0.0",
+        "isobject": "^3.0.0",
+        "snapdragon-util": "^3.0.0"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^3.0.1",
+        "gulp-format-md": "^0.1.12",
+        "gulp-istanbul": "^1.1.1",
+        "gulp-mocha": "^3.0.0",
+        "mocha": "^3.3.0",
+        "snapdragon": "^0.11.0"
+      },
+      "keywords": [
+        "ast",
+        "compile",
+        "compiler",
+        "convert",
+        "node",
+        "parse",
+        "parser",
+        "plugin",
+        "render",
+        "snapdragon",
+        "snapdragonplugin",
+        "token",
+        "transform"
+      ],
+      "verb": {
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "breakdance",
+            "snapdragon",
+            "snapdragon-capture",
+            "snapdragon-cheerio",
+            "snapdragon-util"
+          ]
+        },
+        "reflinks": [
+          "verb",
+          "verb-generate-readme"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "b84e00bde10f9ce5ec40c1a883e323f4fd752506",
+      "_id": "snapdragon-node@2.0.1",
+      "_shasum": "3b485cef2a6d55dfaeb52641a8388c6ea81cbea2",
+      "_from": ".",
+      "_npmVersion": "4.2.0",
+      "_nodeVersion": "7.7.3",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "3b485cef2a6d55dfaeb52641a8388c6ea81cbea2",
+        "tarball": "https://registry.npmjs.org/snapdragon-node/-/snapdragon-node-2.0.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/snapdragon-node-2.0.1.tgz_1493641595792_0.8030496526043862"
+      },
+      "directories": {}
+    },
+    "2.1.0": {
+      "name": "snapdragon-node",
+      "description": "Snapdragon utility for creating a new AST node in custom code, such as plugins.",
+      "version": "2.1.0",
+      "homepage": "https://github.com/jonschlinkert/snapdragon-node",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/snapdragon-node.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/snapdragon-node/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "define-property": "^1.0.0",
+        "isobject": "^3.0.0",
+        "object-copy": "^1.0.0",
+        "snapdragon-util": "^3.0.1"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^4.0.0",
+        "gulp-format-md": "^0.1.12",
+        "gulp-istanbul": "^1.1.2",
+        "gulp-mocha": "^3.0.1",
+        "mocha": "^3.4.2",
+        "snapdragon": "^0.11.0"
+      },
+      "keywords": [
+        "ast",
+        "compile",
+        "compiler",
+        "convert",
+        "node",
+        "parse",
+        "parser",
+        "plugin",
+        "render",
+        "snapdragon",
+        "snapdragonplugin",
+        "token",
+        "transform"
+      ],
+      "verb": {
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "breakdance",
+            "snapdragon",
+            "snapdragon-capture",
+            "snapdragon-cheerio",
+            "snapdragon-util"
+          ]
+        },
+        "reflinks": [
+          "verb",
+          "verb-generate-readme"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "89723cd26cf2ca5987c127726c94471144a186f6",
+      "_id": "snapdragon-node@2.1.0",
+      "_npmVersion": "5.0.3",
+      "_nodeVersion": "7.7.3",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "integrity": "sha512-ebmlZ8o6BhMUv/mlAnJcFWXcFaa78G8b5vbUqAH7q7aM/++cEb9gdLyG39b+FetOVrXweDjMjm5iqMIZ8BLupA==",
+        "shasum": "09b4ad8c81a6d03216dc85e818b00bc7ff9e504e",
+        "tarball": "https://registry.npmjs.org/snapdragon-node/-/snapdragon-node-2.1.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/snapdragon-node-2.1.0.tgz_1498391683006_0.48273008898831904"
+      },
+      "directories": {}
+    },
+    "2.1.1": {
+      "name": "snapdragon-node",
+      "description": "Snapdragon utility for creating a new AST node in custom code, such as plugins.",
+      "version": "2.1.1",
+      "homepage": "https://github.com/jonschlinkert/snapdragon-node",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/snapdragon-node.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/snapdragon-node/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "define-property": "^1.0.0",
+        "isobject": "^3.0.0",
+        "snapdragon-util": "^3.0.1"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^4.0.0",
+        "gulp-format-md": "^0.1.12",
+        "gulp-istanbul": "^1.1.2",
+        "gulp-mocha": "^3.0.1",
+        "mocha": "^3.4.2",
+        "snapdragon": "^0.11.0"
+      },
+      "keywords": [
+        "ast",
+        "compile",
+        "compiler",
+        "convert",
+        "node",
+        "parse",
+        "parser",
+        "plugin",
+        "render",
+        "snapdragon",
+        "snapdragonplugin",
+        "token",
+        "transform"
+      ],
+      "verb": {
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "breakdance",
+            "snapdragon",
+            "snapdragon-capture",
+            "snapdragon-cheerio",
+            "snapdragon-util"
+          ]
+        },
+        "reflinks": [
+          "verb",
+          "verb-generate-readme"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "d2bc7304fc1b8103d6bb892d9ef099957468ff14",
+      "_id": "snapdragon-node@2.1.1",
+      "_npmVersion": "5.0.3",
+      "_nodeVersion": "7.7.3",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "integrity": "sha512-O27l4xaMYt/RSQ5TR3vpWCAB5Kb/czIcqUFOM/C4fYcLnbZUc1PkjTAMjof2pBWaSTwOUd6qUHcFGVGj7aIwnw==",
+        "shasum": "6c175f86ff14bdb0724563e8f3c1b021a286853b",
+        "tarball": "https://registry.npmjs.org/snapdragon-node/-/snapdragon-node-2.1.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/snapdragon-node-2.1.1.tgz_1498392256120_0.4632513278629631"
+      },
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "snapdragon-node",
+      "description": "Class for creating AST nodes.",
+      "version": "3.0.0",
+      "homepage": "https://github.com/here-be/snapdragon-node",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/here-be/snapdragon-node.git"
+      },
+      "bugs": {
+        "url": "https://github.com/here-be/snapdragon-node/issues"
+      },
+      "license": "MIT",
+      "main": "index.js",
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "mocha",
+        "cover": "nyc --reporter=text --reporter=html mocha"
+      },
+      "devDependencies": {
+        "define-property": "^2.0.2",
+        "gulp-format-md": "^2.0.0",
+        "mocha": "^5.2.0",
+        "nyc": "^13.1.0",
+        "snapdragon": "^0.12.0"
+      },
+      "keywords": [
+        "ast",
+        "compile",
+        "compiler",
+        "convert",
+        "node",
+        "parse",
+        "parser",
+        "plugin",
+        "render",
+        "snapdragon",
+        "snapdragonplugin",
+        "token",
+        "transform"
+      ],
+      "verb": {
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "breakdance",
+            "snapdragon",
+            "snapdragon-capture",
+            "snapdragon-cheerio",
+            "snapdragon-util"
+          ]
+        },
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "7f226faa8c855fb91a4465f50bf16af58ee5826a",
+      "_id": "snapdragon-node@3.0.0",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "11.1.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "integrity": "sha512-8fmjo9AOZXFBWxHS9kOdqA4Mq9x1ldbnPLXjz1voBCmDuQcVBySjlekv4+QnKj0LdNc3hEF19xUrTBQJ2zPyCw==",
+        "shasum": "92f5bc808a7f31be4b50acf489e5c9fc62cf4552",
+        "tarball": "https://registry.npmjs.org/snapdragon-node/-/snapdragon-node-3.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 35767,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJb+RdZCRA9TVsSAnZWagAAXskP/A/+74GxpjNc4nrspuH/\nLk5xauXYoFyDJQcPsn6azQvNxc5qeotX6VlMp1HD131IU6967uy6es1QH5lZ\na/fjlXOUWhH/pISA+uuVzyU+OUIPSuknDeBG0OAg5JWvxcbriFoIQvSNB1Xx\ntBdAeq005OEwq/FSrYpiGxtJ6BGu9XnrbV0kcGze/r2lM2Z24Pfg1sffOFpT\njEAbrm2UMcjeDrWJGs38AqtQvUKO4FL1bvSaBPWDwuLe7eu9fnOomks7O0YU\nbrn/zaBWngMSAX6c8ehaw7aIEwFcgo0+nfo+RmQ41cALkJLF/ZY2AynrumwB\nMkohX/H6hHnx7ye1Qtf5GRbAptY7YOIrRpWv17ZTjApBhI5Y0sL7puEaf0VM\nmP4rC83nZANhH0ArVooZqbIySEzM6QUoPEmw8MnGgUNwPb9uK/VhbT2kajz2\nP+Pp6HqMh72Z19cZmO3sx8QdIINjhqFqT3uDNSiJA4xsaT1Y+KMNrQ2b8PFF\n149Ef6PuLf/Y6Ffiq+mY5YTHaGepPOd/griE7iEIrQjlhuUfkPLsSEO5YRom\nZbFrPfKl+6sTxHTSh1yLdb8Eyt5p3Kl3AcZGb8D3QDB94jZBs7E01dCPCuev\nxzFG1zIdwzOfgxTRrn+REG2VUmdCWblho3jFMeRSEAZ0orDhN4knbiG9N1We\nG42W\r\n=PEEL\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "github@sellside.com",
+          "name": "jonschlinkert"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/snapdragon-node_3.0.0_1543051096446_0.39484929895287335"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# snapdragon-node [![NPM version](https://img.shields.io/npm/v/snapdragon-node.svg?style=flat)](https://www.npmjs.com/package/snapdragon-node) [![NPM monthly downloads](https://img.shields.io/npm/dm/snapdragon-node.svg?style=flat)](https://npmjs.org/package/snapdragon-node) [![NPM total downloads](https://img.shields.io/npm/dt/snapdragon-node.svg?style=flat)](https://npmjs.org/package/snapdragon-node) [![Linux Build Status](https://img.shields.io/travis/here-be/snapdragon-node.svg?style=flat&label=Travis)](https://travis-ci.org/here-be/snapdragon-node)\n\n> Class for creating AST nodes.\n\nPlease consider following this project's author, [Jon Schlinkert](https://github.com/jonschlinkert), and consider starring the project to show your :heart: and support.\n\n## Install\n\nInstall with [npm](https://www.npmjs.com/):\n\n```sh\n$ npm install --save snapdragon-node\n```\n\n## Usage\n\n```js\nconst Node = require('snapdragon-node');\n// either pass on object with \"type\" and (optional) \"val\"\nconst node1 = new Node({type: 'star', val: '*'});\n// or pass \"val\" (first) and \"type\" (second) as string\nconst node2 = new Node('*', 'star');\n// both result in => Node { type: 'star', val: '*' }\n```\n\n## Snapdragon usage\n\nWith [snapdragon](https://github.com/here-be/snapdragon) v0.9.0 and higher, it's recommended that you use `this.node()` to create a new `Node` inside parser handlers (instead of doing `new Node()`).\n\n### Snapdragon ^1.0.0\n\nExample usage inside a [snapdragon](https://github.com/here-be/snapdragon) parser handler function.\n\n```js\nconst Node = require('snapdragon-node');\nconst Token = require('snapdragon-token');\n\n// create a new AST node\nconst node = new Node({ type: 'star', value: '*' });\n\n// convert a Lexer Token into an AST Node\nconst token = new Token({ type: 'star', value: '*' });\nconst node = new Node(token);\n```\n\n## Node objects\n\nAST Nodes are represented as `Node` objects that implement the following interface:\n\n```js\ninterface Node {\n  type: string;\n  value: string | undefined\n  nodes: array | undefined\n}\n```\n\n* `type` **{string}** - A string representing the node variant type. This property is often used for classifying the purpose or nature of the node, so that parsers or compilers can determine what to do with it.\n* `value` **{string|undefined}** (optional) - In general, value should only be a string when `node.nodes` is undefined. This is not reinforced, but is considered good practice. Use a different property name to store arbitrary strings on the node when `node.nodes` is an array.\n* `nodes` **{array|undefined}** (optional) - array of child nodes\n\nA number of useful methods and non-enumerable properties are also exposed for adding, finding and removing child nodes, etc.\n\nContinue reading the API documentation for more details.\n\n## Node API\n\n### [Node](index.js#L20)\n\nCreate a new AST `Node` with the given `type` and `value`, or an object to initialize with.\n\n**Params**\n\n* `type` **{object|string}**: Either an object to initialize with, or a string to be used as the `node.type`.\n* `value` **{string|boolean}**: If the first argument is a string, the second argument may be a string value to set on `node.value`.\n* `clone` **{boolean}**: When an object is passed as the first argument, pass true as the last argument to deep clone values before assigning them to the new node.\n* `returns` **{Object}**: node instance\n\n**Example**\n\n```js\nconsole.log(new Node({ type: 'star', value: '*' }));\nconsole.log(new Node('star', '*'));\n// both result in => Node { type: 'star', value: '*' }\n```\n\n### [.clone](index.js#L50)\n\nReturn a clone of the node. Values that are arrays or plain objects are deeply cloned.\n\n* `returns` **{Object}**: returns a clone of the node\n\n**Example**\n\n```js\nconst node = new Node({type: 'star', value: '*'});\nconsle.log(node.clone() !== node);\n//=> true\n```\n\n### [.stringify](index.js#L68)\n\nReturn a string created from `node.value` and/or recursively visiting over `node.nodes`.\n\n* `returns` **{String}**\n\n**Example**\n\n```js\nconst node = new Node({type: 'star', value: '*'});\nconsle.log(node.stringify());\n//=> '*'\n```\n\n### [.push](index.js#L88)\n\nPush a child node onto the `node.nodes` array.\n\n**Params**\n\n* `node` **{Object}**\n* `returns` **{Number}**: Returns the length of `node.nodes`, like `Array.push`\n\n**Example**\n\n```js\nconst foo = new Node({type: 'foo'});\nconst bar = new Node({type: 'bar'});\nfoo.push(bar);\n```\n\n### [.unshift](index.js#L117)\n\nUnshift a child node onto `node.nodes`, and set `node` as the parent on `child.parent`.\n\n**Params**\n\n* `node` **{Object}**\n* `returns` **{Number}**: Returns the length of `node.nodes`\n\n**Example**\n\n```js\nconst foo = new Node({type: 'foo'});\nconst bar = new Node({type: 'bar'});\nfoo.unshift(bar);\n```\n\n### [.pop](index.js#L151)\n\nPop a node from `node.nodes`.\n\n* `returns` **{Number}**: Returns the popped `node`\n\n**Example**\n\n```js\nconst node = new Node({type: 'foo'});\nnode.push(new Node({type: 'a'}));\nnode.push(new Node({type: 'b'}));\nnode.push(new Node({type: 'c'}));\nnode.push(new Node({type: 'd'}));\nconsole.log(node.nodes.length);\n//=> 4\nnode.pop();\nconsole.log(node.nodes.length);\n//=> 3\n```\n\n### [.shift](index.js#L178)\n\nShift a node from `node.nodes`.\n\n* `returns` **{Object}**: Returns the shifted `node`\n\n**Example**\n\n```js\nconst node = new Node({type: 'foo'});\nnode.push(new Node({type: 'a'}));\nnode.push(new Node({type: 'b'}));\nnode.push(new Node({type: 'c'}));\nnode.push(new Node({type: 'd'}));\nconsole.log(node.nodes.length);\n//=> 4\nnode.shift();\nconsole.log(node.nodes.length);\n//=> 3\n```\n\n### [.remove](index.js#L197)\n\nRemove `node` from `node.nodes`.\n\n**Params**\n\n* `node` **{Object}**\n* `returns` **{Object}**: Returns the removed node.\n\n**Example**\n\n```js\nnode.remove(childNode);\n```\n\n### [.find](index.js#L228)\n\nGet the first child node from `node.nodes` that matches the given `type`. If `type` is a number, the child node at that index is returned.\n\n**Params**\n\n* `type` **{String}**\n* `returns` **{Object}**: Returns a child node or undefined.\n\n**Example**\n\n```js\nconst child = node.find(1); //<= index of the node to get\nconst child = node.find('foo'); //<= node.type of a child node\nconst child = node.find(/^(foo|bar)$/); //<= regex to match node.type\nconst child = node.find(['foo', 'bar']); //<= array of node.type(s)\n```\n\n### [.has](index.js#L259)\n\nReturns true if `node.nodes` array contains the given `node`.\n\n**Params**\n\n* `type` **{String}**\n* `returns` **{Boolean}**\n\n**Example**\n\n```js\nconst foo = new Node({type: 'foo'});\nconst bar = new Node({type: 'bar'});\ncosole.log(foo.has(bar)); // false\nfoo.push(bar);\ncosole.log(foo.has(bar)); // true\n```\n\n### [.hasType](index.js#L284)\n\nReturn true if the `node.nodes` has the given `type`.\n\n**Params**\n\n* `type` **{String}**\n* `returns` **{Boolean}**\n\n**Example**\n\n```js\nconst foo = new Node({type: 'foo'});\nconst bar = new Node({type: 'bar'});\nfoo.push(bar);\n\ncosole.log(foo.hasType('qux'));          // false\ncosole.log(foo.hasType(/^(qux|bar)$/));  // true\ncosole.log(foo.hasType(['qux', 'bar'])); // true\n```\n\n### [.isType](index.js#L303)\n\nReturn true if the node is the given `type`.\n\n**Params**\n\n* `type` **{String}**\n* `returns` **{Boolean}**\n\n**Example**\n\n```js\nconst node = new Node({type: 'bar'});\ncosole.log(node.isType('foo'));          // false\ncosole.log(node.isType(/^(foo|bar)$/));  // true\ncosole.log(node.isType(['foo', 'bar'])); // true\n```\n\n### [.isEmpty](index.js#L323)\n\nReturns true if `node.value` is an empty string, or `node.nodes` does not contain any non-empty text nodes.\n\n**Params**\n\n* `fn` **{Function}**: (optional) Filter function that is called on `node` and/or child nodes. `isEmpty` will return false immediately when the filter function returns false on any nodes.\n* `returns` **{Boolean}**\n\n**Example**\n\n```js\nconst node = new Node({type: 'text'});\nnode.isEmpty(); //=> true\nnode.value = 'foo';\nnode.isEmpty(); //=> false\n```\n\n### [.isInside](index.js#L342)\n\nReturns true if the node has an ancestor node of the given `type`\n\n**Params**\n\n* `type` **{String}**\n* `returns` **{Boolean}**\n\n**Example**\n\n```js\nconst box = new Node({type: 'box'});\nconst marble = new Node({type: 'marble'});\nbox.push(marble);\nmarble.isInside('box'); //=> true\n```\n\n### [.siblings](index.js#L365)\n\nGet the siblings array, or `null` if it doesn't exist.\n\n* `returns` **{Array}**\n\n**Example**\n\n```js\nconst foo = new Node({type: 'foo'});\nconst bar = new Node({type: 'bar'});\nconst baz = new Node({type: 'baz'});\nfoo.push(bar);\nfoo.push(baz);\n\nconsole.log(bar.siblings.length) // 2\nconsole.log(baz.siblings.length) // 2\n```\n\n### [.index](index.js#L393)\n\nCalculate the node's current index on `node.parent.nodes`, or `-1` if the node does not have a parent, or is not on `node.parent.nodes`.\n\n* `returns` **{Number}**\n\n**Example**\n\n```js\nconst foo = new Node({type: 'foo'});\nconst bar = new Node({type: 'bar'});\nconst baz = new Node({type: 'baz'});\nconst qux = new Node({type: 'qux'});\nfoo.push(bar);\nfoo.push(baz);\nfoo.unshift(qux);\n\nconsole.log(bar.index) // 1\nconsole.log(baz.index) // 2\nconsole.log(qux.index) // 0\n```\n\n### [.prev](index.js#L424)\n\nGet the previous node from the [siblings](#siblings) array or `null`.\n\n* `returns` **{Object}**\n\n**Example**\n\n```js\nconst foo = new Node({type: 'foo'});\nconst bar = new Node({type: 'bar'});\nconst baz = new Node({type: 'baz'});\nfoo.push(bar);\nfoo.push(baz);\n\nconsole.log(baz.prev.type) // 'bar'\n```\n\n### [.next](index.js#L453)\n\nGet the next element from the [siblings](#siblings) array, or `null` if a next node does not exist.\n\n* `returns` **{Object}**\n\n**Example**\n\n```js\nconst parent = new Node({type: 'root'});\nconst foo = new Node({type: 'foo'});\nconst bar = new Node({type: 'bar'});\nconst baz = new Node({type: 'baz'});\nparent.push(foo);\nparent.push(bar);\nparent.push(baz);\n\nconsole.log(foo.next.type) // 'bar'\nconsole.log(bar.next.type) // 'baz'\n```\n\n### [.first](index.js#L480)\n\nGet the first child node from `node.nodes`.\n\n* `returns` **{Object}**: The first node, or undefiend\n\n**Example**\n\n```js\nconst foo = new Node({type: 'foo'});\nconst bar = new Node({type: 'bar'});\nconst baz = new Node({type: 'baz'});\nconst qux = new Node({type: 'qux'});\nfoo.push(bar);\nfoo.push(baz);\nfoo.push(qux);\n\nconsole.log(foo.first.type) // 'bar'\n```\n\n### [.last](index.js#L504)\n\nGet the last child node from `node.nodes`.\n\n* `returns` **{Object}**: The last node, or undefiend\n\n**Example**\n\n```js\nconst foo = new Node({type: 'foo'});\nconst bar = new Node({type: 'bar'});\nconst baz = new Node({type: 'baz'});\nconst qux = new Node({type: 'qux'});\nfoo.push(bar);\nfoo.push(baz);\nfoo.push(qux);\n\nconsole.log(foo.last.type) // 'qux'\n```\n\n### [.depth](index.js#L525)\n\nGet the `node.depth`. The root node has a depth of 0. Add 1 to child nodes for each level of nesting.\n\n* `returns` **{Object}**: The last node, or undefiend\n\n**Example**\n\n```js\nconst foo = new Node({type: 'foo'});\nfoo.push(bar);\n\nconsole.log(foo.depth) // 1\nconsole.log(bar.depth) // 2\n```\n\n### [Node#isNode](index.js#L545)\n\nStatic method that returns true if the given value is a node.\n\n**Params**\n\n* `node` **{Object}**\n* `returns` **{Boolean}**\n\n**Example**\n\n```js\nconst Node = require('snapdragon-node');\nconst node = new Node({type: 'foo'});\nconsole.log(Node.isNode(node)); //=> true\nconsole.log(Node.isNode({})); //=> false\n```\n\n### Non-enumerable properties\n\n* `node.isNode` **{boolean}** - this value is set to `true` when a node is created. This can be useful in situationas as a fast alternative to using `instanceof Node` if you [need to determine](#nodeisnode) if a value is a `node` object.\n* `node.size` **{number}** - the number of child nodes that have been pushed or unshifted onto `node.nodes` using the node's API. This is useful for determining if nodes were added to `node.nodes` without using `node.push()` or `node.unshift()` (for example: `if (node.nodes && node.size !== node.nodes.length)`)\n* `node.parent` **{object}** (instance of Node)\n\n## Release history\n\nSee [the changelog](changelog.md).\n\n## About\n\n<details>\n<summary><strong>Contributing</strong></summary>\n\nPull requests and stars are always welcome. For bugs and feature requests, [please create an issue](../../issues/new).\n\nPlease read the [contributing guide](.github/contributing.md) for advice on opening issues, pull requests, and coding standards.\n\n</details>\n\n<details>\n<summary><strong>Running Tests</strong></summary>\n\nRunning and reviewing unit tests is a great way to get familiarized with a library and its API. You can install dependencies and run tests with the following command:\n\n```sh\n$ npm install && npm test\n```\n\n</details>\n\n<details>\n<summary><strong>Building docs</strong></summary>\n\n_(This project's readme.md is generated by [verb](https://github.com/verbose/verb-generate-readme), please don't edit the readme directly. Any changes to the readme must be made in the [.verb.md](.verb.md) readme template.)_\n\nTo generate the readme, run the following command:\n\n```sh\n$ npm install -g verbose/verb#dev verb-generate-readme && verb\n```\n\n</details>\n\n### Related projects\n\nYou might also be interested in these projects:\n\n* [breakdance](https://www.npmjs.com/package/breakdance): Breakdance is a node.js library for converting HTML to markdown. Highly pluggable, flexible and easy… [more](http://breakdance.io) | [homepage](http://breakdance.io \"Breakdance is a node.js library for converting HTML to markdown. Highly pluggable, flexible and easy to use. It's time for your markup to get down.\")\n* [snapdragon-capture](https://www.npmjs.com/package/snapdragon-capture): Snapdragon plugin that adds a capture method to the parser instance. | [homepage](https://github.com/jonschlinkert/snapdragon-capture \"Snapdragon plugin that adds a capture method to the parser instance.\")\n* [snapdragon-cheerio](https://www.npmjs.com/package/snapdragon-cheerio): Snapdragon plugin for converting a cheerio AST to a snapdragon AST. | [homepage](https://github.com/jonschlinkert/snapdragon-cheerio \"Snapdragon plugin for converting a cheerio AST to a snapdragon AST.\")\n* [snapdragon-util](https://www.npmjs.com/package/snapdragon-util): Utilities for the snapdragon parser/compiler. | [homepage](https://github.com/here-be/snapdragon-util \"Utilities for the snapdragon parser/compiler.\")\n* [snapdragon](https://www.npmjs.com/package/snapdragon): Easy-to-use plugin system for creating powerful, fast and versatile parsers and compilers, with built-in source-map… [more](https://github.com/here-be/snapdragon) | [homepage](https://github.com/here-be/snapdragon \"Easy-to-use plugin system for creating powerful, fast and versatile parsers and compilers, with built-in source-map support.\")\n\n### Author\n\n**Jon Schlinkert**\n\n* [GitHub Profile](https://github.com/jonschlinkert)\n* [Twitter Profile](https://twitter.com/jonschlinkert)\n* [LinkedIn Profile](https://linkedin.com/in/jonschlinkert)\n\n### License\n\nCopyright © 2018, [Jon Schlinkert](https://github.com/jonschlinkert).\nReleased under the [MIT License](LICENSE).\n\n***\n\n_This file was generated by [verb-generate-readme](https://github.com/verbose/verb-generate-readme), v0.8.0, on November 24, 2018._",
+  "maintainers": [
+    {
+      "email": "daniel@tschinder.de",
+      "name": "danez"
+    },
+    {
+      "email": "github@sellside.com",
+      "name": "jonschlinkert"
+    }
+  ],
+  "time": {
+    "modified": "2018-11-24T09:18:19.222Z",
+    "created": "2017-01-20T11:25:52.299Z",
+    "0.1.0": "2017-01-20T11:25:52.299Z",
+    "0.2.0": "2017-01-21T02:36:41.677Z",
+    "1.0.0": "2017-01-21T09:53:00.497Z",
+    "1.0.1": "2017-01-21T10:47:12.141Z",
+    "1.0.2": "2017-01-21T11:37:13.705Z",
+    "1.0.3": "2017-01-21T11:41:10.411Z",
+    "1.0.5": "2017-02-05T07:01:57.810Z",
+    "1.0.6": "2017-02-15T18:56:31.127Z",
+    "2.0.0": "2017-05-01T12:09:05.870Z",
+    "2.0.1": "2017-05-01T12:26:36.594Z",
+    "2.1.0": "2017-06-25T11:54:44.027Z",
+    "2.1.1": "2017-06-25T12:04:17.139Z",
+    "3.0.0": "2018-11-24T09:18:16.600Z"
+  },
+  "homepage": "https://github.com/here-be/snapdragon-node",
+  "keywords": [
+    "ast",
+    "compile",
+    "compiler",
+    "convert",
+    "node",
+    "parse",
+    "parser",
+    "plugin",
+    "render",
+    "snapdragon",
+    "snapdragonplugin",
+    "token",
+    "transform"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/here-be/snapdragon-node.git"
+  },
+  "author": {
+    "name": "Jon Schlinkert",
+    "url": "https://github.com/jonschlinkert"
+  },
+  "bugs": {
+    "url": "https://github.com/here-be/snapdragon-node/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md"
+}

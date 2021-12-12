@@ -1,0 +1,316 @@
+{
+  "_id": "fragment-cache",
+  "_rev": "3-5dc42d53a72f036b5f9ed23e7278cdef",
+  "name": "fragment-cache",
+  "description": "A cache for managing namespaced sub-caches",
+  "dist-tags": {
+    "latest": "0.2.1"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "fragment-cache",
+      "description": "A cache for managing namespaced sub-caches",
+      "version": "0.1.0",
+      "homepage": "https://github.com/jonschlinkert/fragment-cache",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/fragment-cache.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/fragment-cache/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=4.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "map-cache": "^0.2.1"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^2.0.0",
+        "gulp-format-md": "^0.1.9",
+        "gulp-istanbul": "^0.10.4",
+        "gulp-mocha": "^2.2.0",
+        "mocha": "^2.4.5"
+      },
+      "keywords": [
+        "cache",
+        "fragment"
+      ],
+      "verb": {
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "reflinks": [
+          "verb",
+          "map-cache"
+        ],
+        "related": {
+          "list": [
+            "base",
+            "map-cache"
+          ]
+        },
+        "layout": "default",
+        "toc": false,
+        "tasks": [
+          "readme"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "_id": "fragment-cache@0.1.0",
+      "_shasum": "8f8d04a94eec9510a22b3d1c6a2b46b1144988c9",
+      "_from": ".",
+      "_npmVersion": "3.6.0",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "8f8d04a94eec9510a22b3d1c6a2b46b1144988c9",
+        "tarball": "https://registry.npmjs.org/fragment-cache/-/fragment-cache-0.1.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/fragment-cache-0.1.0.tgz_1462276976394_0.7934316475875676"
+      },
+      "directories": {}
+    },
+    "0.2.0": {
+      "name": "fragment-cache",
+      "description": "A cache for managing namespaced sub-caches",
+      "version": "0.2.0",
+      "homepage": "https://github.com/jonschlinkert/fragment-cache",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/fragment-cache.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/fragment-cache/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=4.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "map-cache": "^0.2.2"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^3.0.1",
+        "gulp-format-md": "^0.1.11",
+        "gulp-istanbul": "^1.1.1",
+        "gulp-mocha": "^3.0.1",
+        "mocha": "^3.1.2"
+      },
+      "keywords": [
+        "cache",
+        "fragment"
+      ],
+      "verb": {
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "reflinks": [
+          "map-cache",
+          "verb"
+        ],
+        "related": {
+          "list": [
+            "base",
+            "map-cache"
+          ]
+        },
+        "layout": "default",
+        "toc": false,
+        "tasks": [
+          "readme"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "b2e876bc60f09bff7017f7c08211d098de27622c",
+      "_id": "fragment-cache@0.2.0",
+      "_shasum": "783dd290444ac80f87d9022d2eccc67f6e4f7fe4",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.7.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "783dd290444ac80f87d9022d2eccc67f6e4f7fe4",
+        "tarball": "https://registry.npmjs.org/fragment-cache/-/fragment-cache-0.2.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/fragment-cache-0.2.0.tgz_1476743803652_0.9261136949062347"
+      },
+      "directories": {}
+    },
+    "0.2.1": {
+      "name": "fragment-cache",
+      "description": "A cache for managing namespaced sub-caches",
+      "version": "0.2.1",
+      "homepage": "https://github.com/jonschlinkert/fragment-cache",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/fragment-cache.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/fragment-cache/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "map-cache": "^0.2.2"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^3.0.1",
+        "gulp-format-md": "^0.1.11",
+        "gulp-istanbul": "^1.1.1",
+        "gulp-mocha": "^3.0.1",
+        "mocha": "^3.2.0"
+      },
+      "keywords": [
+        "cache",
+        "fragment"
+      ],
+      "verb": {
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "reflinks": [
+          "map-cache",
+          "verb"
+        ],
+        "related": {
+          "list": [
+            "base",
+            "map-cache"
+          ]
+        },
+        "layout": "default",
+        "toc": false,
+        "tasks": [
+          "readme"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "33583b03f505c67479ddbc66f825b0e653704207",
+      "_id": "fragment-cache@0.2.1",
+      "_shasum": "4290fad27f13e89be7f33799c6bc5a0abfff0d19",
+      "_from": ".",
+      "_npmVersion": "4.1.2",
+      "_nodeVersion": "7.6.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "4290fad27f13e89be7f33799c6bc5a0abfff0d19",
+        "tarball": "https://registry.npmjs.org/fragment-cache/-/fragment-cache-0.2.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/fragment-cache-0.2.1.tgz_1489523817961_0.01654543890617788"
+      },
+      "directories": {}
+    }
+  },
+  "readme": "# fragment-cache [![NPM version](https://img.shields.io/npm/v/fragment-cache.svg?style=flat)](https://www.npmjs.com/package/fragment-cache) [![NPM downloads](https://img.shields.io/npm/dm/fragment-cache.svg?style=flat)](https://npmjs.org/package/fragment-cache) [![Linux Build Status](https://img.shields.io/travis/jonschlinkert/fragment-cache.svg?style=flat&label=Travis)](https://travis-ci.org/jonschlinkert/fragment-cache)\n\n> A cache for managing namespaced sub-caches\n\n## Install\n\nInstall with [npm](https://www.npmjs.com/):\n\n```sh\n$ npm install --save fragment-cache\n```\n\n## Usage\n\n```js\nvar Fragment = require('fragment-cache');\nvar fragment = new Fragment();\n```\n\n## API\n\n### [FragmentCache](index.js#L24)\n\nCreate a new `FragmentCache` with an optional object to use for `caches`.\n\n**Example**\n\n```js\nvar fragment = new FragmentCache();\n```\n\n**Params**\n\n* `cacheName` **{String}**\n* `returns` **{Object}**: Returns the [map-cache](https://github.com/jonschlinkert/map-cache) instance.\n\n### [.cache](index.js#L49)\n\nGet cache `name` from the `fragment.caches` object. Creates a new `MapCache` if it doesn't already exist.\n\n**Example**\n\n```js\nvar cache = fragment.cache('files');\nconsole.log(fragment.caches.hasOwnProperty('files'));\n//=> true\n```\n\n**Params**\n\n* `cacheName` **{String}**\n* `returns` **{Object}**: Returns the [map-cache](https://github.com/jonschlinkert/map-cache) instance.\n\n### [.set](index.js#L67)\n\nSet a value for property `key` on cache `name`\n\n**Example**\n\n```js\nfragment.set('files', 'somefile.js', new File({path: 'somefile.js'}));\n```\n\n**Params**\n\n* `name` **{String}**\n* `key` **{String}**: Property name to set\n* `val` **{any}**: The value of `key`\n* `returns` **{Object}**: The cache instance for chaining\n\n### [.has](index.js#L93)\n\nReturns true if a non-undefined value is set for `key` on fragment cache `name`.\n\n**Example**\n\n```js\nvar cache = fragment.cache('files');\ncache.set('somefile.js');\n\nconsole.log(cache.has('somefile.js'));\n//=> true\n\nconsole.log(cache.has('some-other-file.js'));\n//=> false\n```\n\n**Params**\n\n* `name` **{String}**: Cache name\n* `key` **{String}**: Optionally specify a property to check for on cache `name`\n* `returns` **{Boolean}**\n\n### [.get](index.js#L115)\n\nGet `name`, or if specified, the value of `key`. Invokes the [cache](#cache) method, so that cache `name` will be created it doesn't already exist. If `key` is not passed, the entire cache (`name`) is returned.\n\n**Example**\n\n```js\nvar Vinyl = require('vinyl');\nvar cache = fragment.cache('files');\ncache.set('somefile.js', new Vinyl({path: 'somefile.js'}));\nconsole.log(cache.get('somefile.js'));\n//=> <File \"somefile.js\">\n```\n\n**Params**\n\n* `name` **{String}**\n* `returns` **{Object}**: Returns cache `name`, or the value of `key` if specified\n\n## About\n\n### Related projects\n\n* [base](https://www.npmjs.com/package/base): base is the foundation for creating modular, unit testable and highly pluggable node.js applications, starting… [more](https://github.com/node-base/base) | [homepage](https://github.com/node-base/base \"base is the foundation for creating modular, unit testable and highly pluggable node.js applications, starting with a handful of common methods, like `set`, `get`, `del` and `use`.\")\n* [map-cache](https://www.npmjs.com/package/map-cache): Basic cache object for storing key-value pairs. | [homepage](https://github.com/jonschlinkert/map-cache \"Basic cache object for storing key-value pairs.\")\n\n### Contributing\n\nPull requests and stars are always welcome. For bugs and feature requests, [please create an issue](../../issues/new).\n\n### Building docs\n\n_(This document was generated by [verb-generate-readme](https://github.com/verbose/verb-generate-readme) (a [verb](https://github.com/verbose/verb) generator), please don't edit the readme directly. Any changes to the readme must be made in [.verb.md](.verb.md).)_\n\nTo generate the readme and API documentation with [verb](https://github.com/verbose/verb):\n\n```sh\n$ npm install -g verb verb-generate-readme && verb\n```\n\n### Running tests\n\nInstall dev dependencies:\n\n```sh\n$ npm install -d && npm test\n```\n\n### Author\n\n**Jon Schlinkert**\n\n* [github/jonschlinkert](https://github.com/jonschlinkert)\n* [twitter/jonschlinkert](http://twitter.com/jonschlinkert)\n\n### License\n\nCopyright © 2016, [Jon Schlinkert](https://github.com/jonschlinkert).\nReleased under the [MIT license](https://github.com/jonschlinkert/fragment-cache/blob/master/LICENSE).\n\n***\n\n_This file was generated by [verb-generate-readme](https://github.com/verbose/verb-generate-readme), v0.2.0, on October 17, 2016._",
+  "maintainers": [
+    {
+      "name": "jonschlinkert",
+      "email": "github@sellside.com"
+    }
+  ],
+  "time": {
+    "modified": "2017-03-14T20:36:58.556Z",
+    "created": "2016-05-03T12:02:57.546Z",
+    "0.1.0": "2016-05-03T12:02:57.546Z",
+    "0.2.0": "2016-10-17T22:36:45.438Z",
+    "0.2.1": "2017-03-14T20:36:58.556Z"
+  },
+  "homepage": "https://github.com/jonschlinkert/fragment-cache",
+  "keywords": [
+    "cache",
+    "fragment"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonschlinkert/fragment-cache.git"
+  },
+  "author": {
+    "name": "Jon Schlinkert",
+    "url": "https://github.com/jonschlinkert"
+  },
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/fragment-cache/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "_attachments": {}
+}

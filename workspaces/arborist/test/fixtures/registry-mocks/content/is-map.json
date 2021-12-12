@@ -1,0 +1,339 @@
+{
+  "_id": "is-map",
+  "_rev": "8-0d9f7a576ce43282d4fd143d8266bead",
+  "name": "is-map",
+  "description": "Is this value a JS Map? This module works cross-realm/iframe, and despite ES6 @@toStringTag.",
+  "dist-tags": {
+    "latest": "2.0.1"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "is-map",
+      "version": "1.0.0",
+      "description": "Easily check if a givin object is an ES6 Map",
+      "keywords": [
+        "map",
+        "es6",
+        "esnext",
+        "harmony",
+        "typeof",
+        "type",
+        "object"
+      ],
+      "license": "MIT",
+      "author": {
+        "name": "Arthur Verschaeve",
+        "email": "contact@arthurverschaeve.be"
+      },
+      "files": [
+        "index.js"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/arthurvr/is-map"
+      },
+      "scripts": {
+        "test": "node test/test.js"
+      },
+      "devDependencies": {
+        "ava": "^0.0.4"
+      },
+      "engines": {
+        "node": ">=0.12.0"
+      },
+      "gitHead": "1cbaac2decc0ffbc919a78c6e6a915ec0ee08fe9",
+      "bugs": {
+        "url": "https://github.com/arthurvr/is-map/issues"
+      },
+      "homepage": "https://github.com/arthurvr/is-map",
+      "_id": "is-map@1.0.0",
+      "_shasum": "0b3f1df015e72dd7279b18b2f1d5597fd7328bd8",
+      "_from": ".",
+      "_npmVersion": "2.5.1",
+      "_nodeVersion": "1.2.0",
+      "_npmUser": {
+        "name": "arthurvr",
+        "email": "contact@arthurverschaeve.be"
+      },
+      "maintainers": [
+        {
+          "name": "arthurvr",
+          "email": "contact@arthurverschaeve.be"
+        }
+      ],
+      "dist": {
+        "shasum": "0b3f1df015e72dd7279b18b2f1d5597fd7328bd8",
+        "tarball": "https://registry.npmjs.org/is-map/-/is-map-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "is-map",
+      "version": "1.0.1",
+      "description": "Easily check if a givin object is an ES6 Map",
+      "keywords": [
+        "map",
+        "es6",
+        "esnext",
+        "harmony",
+        "typeof",
+        "type",
+        "object"
+      ],
+      "license": "MIT",
+      "author": {
+        "name": "Arthur Verschaeve",
+        "email": "contact@arthurverschaeve.be"
+      },
+      "files": [
+        "index.js"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/arthurvr/is-map.git"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "devDependencies": {
+        "ava": "^0.0.4"
+      },
+      "engines": {
+        "node": ">=0.12.0"
+      },
+      "gitHead": "8cb38f4fbf7c642ad400b26958a9e60fb79fd8b2",
+      "bugs": {
+        "url": "https://github.com/arthurvr/is-map/issues"
+      },
+      "homepage": "https://github.com/arthurvr/is-map#readme",
+      "_id": "is-map@1.0.1",
+      "_shasum": "74cd3a0bdceae00ae4a316c2aaee6b624a2575a5",
+      "_from": ".",
+      "_npmVersion": "2.11.3",
+      "_nodeVersion": "2.3.1",
+      "_npmUser": {
+        "name": "arthurvr",
+        "email": "contact@arthurverschaeve.be"
+      },
+      "dist": {
+        "shasum": "74cd3a0bdceae00ae4a316c2aaee6b624a2575a5",
+        "tarball": "https://registry.npmjs.org/is-map/-/is-map-1.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "arthurvr",
+          "email": "contact@arthurverschaeve.be"
+        }
+      ],
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "is-map",
+      "version": "2.0.0",
+      "description": "Is this value a JS Map? This module works cross-realm/iframe, and despite ES6 @@toStringTag.",
+      "main": "index.js",
+      "scripts": {
+        "version": "auto-changelog && git add CHANGELOG.md",
+        "postversion": "auto-changelog && git add CHANGELOG.md && git commit --no-edit --amend && git tag -f \"v$(node -e \"console.log(require('./package.json').version)\")\"",
+        "prepublish": "safe-publish-latest",
+        "pretest": "npm run lint",
+        "lint": "eslint .",
+        "tests-only": "node test",
+        "posttests-only": "node -e \"require('es5-shim'); require('es6-shim'); require('./test');\"",
+        "test": "npm run tests-only",
+        "posttest": "npx aud"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/inspect-js/is-map.git"
+      },
+      "keywords": [
+        "map",
+        "set",
+        "collection",
+        "is",
+        "robust"
+      ],
+      "author": {
+        "name": "Jordan Harband",
+        "email": "ljharb@gmail.com"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/ljharb"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/inspect-js/is-map/issues"
+      },
+      "homepage": "https://github.com/inspect-js/is-map#readme",
+      "devDependencies": {
+        "@ljharb/eslint-config": "^15.0.1",
+        "auto-changelog": "^1.16.2",
+        "es5-shim": "^4.5.13",
+        "es6-shim": "^0.35.5",
+        "eslint": "^6.6.0",
+        "for-each": "^0.3.3",
+        "object-inspect": "^1.7.0",
+        "safe-publish-latest": "^1.1.4",
+        "tape": "^4.11.0"
+      },
+      "auto-changelog": {
+        "output": "CHANGELOG.md",
+        "template": "keepachangelog",
+        "unreleased": false,
+        "commitLimit": false,
+        "backfillLimit": false
+      },
+      "gitHead": "424e38e9b9ab975561042b78e3b0019031142ab0",
+      "_id": "is-map@2.0.0",
+      "_nodeVersion": "13.1.0",
+      "_npmVersion": "6.12.1",
+      "dist": {
+        "integrity": "sha512-ptj+FffEGJN9hLuakga2S3mYQt5PVN+w7+fL3SAgxKhlCePSt24Q3fiSozhvphbwCQ0+QPA1rJnLSoS2LnbCVw==",
+        "shasum": "1d223ada48a1f5fdb7b3c5c21a45b6a4d48aec3c",
+        "tarball": "https://registry.npmjs.org/is-map/-/is-map-2.0.0.tgz",
+        "fileCount": 9,
+        "unpackedSize": 8756,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdyxS8CRA9TVsSAnZWagAAaEcP+wcrRfT48a1gMEJ8rTO/\n7eKUKCKX15jcK+r2A2Z8r28Qd6SVSC5WVePbBNs/VSqBV1orCLjtFr+SDGaM\nMvXeXbjT+x1rr0Cwkk7eFKu1trqZGv3Yy2V/CbJ8oarUtqQgZdSP2FOoHRp+\nGWz1m0tekYCnY9bRORIwrDytKlbqiz8as7jzXWbiG6KFoUsCPD/YUsiCAsSE\neo1ifRjj65WmzUPpP0srAqx6wTiioQ3qrvySYF2ZmBdBl7cUmN260G2cGNpS\nnzQ+yyoQ0BiIgKPsk6lvBWkcNN6LmyQBYA474ov8lEKWfpRdL93BVeXBKgsG\n1Wj2FoZJdADL8MuMX8znZRE/8khQwkyQY0LNy2Wc6LhYyQfU5Y/zG60IEevk\nq74dFSvGe7+so6JImxfO5TWGbO8Zx/n9LzuuR9+Q7dBkDr54nEbP4W6Kqqiz\nNdAty+N5414eHZxfUtWkY9k0ftslsDX580vdgYg91v9c8c3l0n6CEONwIFWs\nxNPuHEHBXuf9jEvpH8vOsVpL4j6fV/BrCA0Mrfx3NaKDBFuBEPwCQp7QOVr4\nvSAQUQbVAzpYAtKJEExIydZ0Dct384TwpohHwVchVVUU7F3pRRlwAnBXOjdD\nAE16QFNYjYR/2d2nV5dKZKEdYeFbFWgiCN2rcaN7ZslSf14ZhKeiRGCeMb3Z\nGMyR\r\n=htd6\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "ljharb@gmail.com",
+          "name": "ljharb"
+        }
+      ],
+      "_npmUser": {
+        "name": "ljharb",
+        "email": "ljharb@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is-map_2.0.0_1573590204580_0.024253520599434975"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.1": {
+      "name": "is-map",
+      "version": "2.0.1",
+      "description": "Is this value a JS Map? This module works cross-realm/iframe, and despite ES6 @@toStringTag.",
+      "main": "index.js",
+      "scripts": {
+        "version": "auto-changelog && git add CHANGELOG.md",
+        "postversion": "auto-changelog && git add CHANGELOG.md && git commit --no-edit --amend && git tag -f \"v$(node -e \"console.log(require('./package.json').version)\")\"",
+        "prepublish": "safe-publish-latest",
+        "pretest": "npm run lint",
+        "lint": "eslint .",
+        "tests-only": "node test",
+        "posttests-only": "node -e \"require('es5-shim'); require('es6-shim'); require('./test');\"",
+        "test": "npm run tests-only",
+        "posttest": "npx aud"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/inspect-js/is-map.git"
+      },
+      "keywords": [
+        "map",
+        "set",
+        "collection",
+        "is",
+        "robust"
+      ],
+      "author": {
+        "name": "Jordan Harband",
+        "email": "ljharb@gmail.com"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/ljharb"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/inspect-js/is-map/issues"
+      },
+      "homepage": "https://github.com/inspect-js/is-map#readme",
+      "devDependencies": {
+        "@ljharb/eslint-config": "^15.0.2",
+        "auto-changelog": "^1.16.2",
+        "es5-shim": "^4.5.13",
+        "es6-shim": "^0.35.5",
+        "eslint": "^6.7.2",
+        "for-each": "^0.3.3",
+        "object-inspect": "^1.7.0",
+        "safe-publish-latest": "^1.1.4",
+        "tape": "^4.12.0"
+      },
+      "auto-changelog": {
+        "output": "CHANGELOG.md",
+        "template": "keepachangelog",
+        "unreleased": false,
+        "commitLimit": false,
+        "backfillLimit": false
+      },
+      "gitHead": "6935a0720bc1e63779c571ca3389483b329d46d3",
+      "_id": "is-map@2.0.1",
+      "_nodeVersion": "13.3.0",
+      "_npmVersion": "6.13.1",
+      "dist": {
+        "integrity": "sha512-T/S49scO8plUiAOA2DBTBG3JHpn1yiw0kRp6dgiZ0v2/6twi5eiB0rHtHFH9ZIrvlWc6+4O+m4zg5+Z833aXgw==",
+        "shasum": "520dafc4307bb8ebc33b813de5ce7c9400d644a1",
+        "tarball": "https://registry.npmjs.org/is-map/-/is-map-2.0.1.tgz",
+        "fileCount": 10,
+        "unpackedSize": 9866,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd+UDKCRA9TVsSAnZWagAAnL4P/jHCeqzcYgi5Ya9x1cip\nd+ZdHs4kTDkbiQDxor3WP0fmNhjgy5XkpCzBMLdA+vWoHlvL9yE+8akA6QHj\ntg1a/bco40HZPrk2DJoot9q5A20o6ywmrobfmZZyOQUnPSagEguBScvuvKZS\ntX0B0MmWaFn8LOxcY1sSUzerRzdvj1T/4I7APsaVZVdVq/Ya8+rQyosGOhlj\n79PPlUYcnpCZ0McsoK9K/nJEucK9TYnlvc5xRCgOVm68kx9xCCmUtHBduC0s\n/+2KFhFLwvl4GxKKE0nDlguK+CQu2RAGPP7MiKPihpgsBYpO9t3OI5E8wJqN\nqGdcQmc9B5tR0KdIrSQrB65u/FmAWyNVULziQ11D3AefohvGFivvkppf2tJy\nMg2UKy8vFN1GVN5lVHfwUE7XC39PLgJkidhZQFX75Clqfq32JCAw/Cenk1nt\ngYdIGwlVLykaaZ3YGqpM1usdLtbOUY692T9tGjimi2I8wSmsA8Y20tz9YwSU\nbAS95x4lztvIK/iStVDMmQTfypf1F4JLSbx3eqm6xttiVeo+gGnG6W/5yDDa\ntGZFa6bOaAkdqlTAHNptdQYi8dVC1lC5GHZvJYhaDFFlml4M1z1Ejvp8Fqy4\nZ71YEEOIfB00NJiemGv8dMKw5JRBvLzfksBaH4oVhUrpXkOyfNBuQkeRDLH4\nTHNq\r\n=DdeK\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "ljharb@gmail.com",
+          "name": "ljharb"
+        }
+      ],
+      "_npmUser": {
+        "name": "ljharb",
+        "email": "ljharb@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is-map_2.0.1_1576616137689_0.32348509441535067"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# is-map <sup>[![Version Badge][2]][1]</sup>\n\n[![Build Status][3]][4]\n[![dependency status][5]][6]\n[![dev dependency status][7]][8]\n[![License][license-image]][license-url]\n[![Downloads][downloads-image]][downloads-url]\n\n[![npm badge][11]][1]\n\nIs this value a JS Map? This module works cross-realm/iframe, and despite ES6 @@toStringTag.\n\n## Example\n\n```js\nvar isMap = require('is-map');\nassert(!isMap(function () {}));\nassert(!isMap(null));\nassert(!isMap(function* () { yield 42; return Infinity; });\nassert(!isMap(Symbol('foo')));\nassert(!isMap(1n));\nassert(!isMap(Object(1n)));\n\nassert(!isMap(new Set()));\nassert(!isMap(new WeakSet()));\nassert(!isMap(new WeakMap()));\n\nassert(isMap(new Map()));\n\nclass MyMap extends Map {}\nassert(isMap(new MyMap()));\n```\n\n## Tests\nSimply clone the repo, `npm install`, and run `npm test`\n\n[1]: https://npmjs.org/package/is-map\n[2]: http://versionbadg.es/inspect-js/is-map.svg\n[3]: https://travis-ci.org/inspect-js/is-map.svg\n[4]: https://travis-ci.org/inspect-js/is-map\n[5]: https://david-dm.org/inspect-js/is-map.svg\n[6]: https://david-dm.org/inspect-js/is-map\n[7]: https://david-dm.org/inspect-js/is-map/dev-status.svg\n[8]: https://david-dm.org/inspect-js/is-map#info=devDependencies\n[11]: https://nodei.co/npm/is-map.png?downloads=true&stars=true\n[license-image]: http://img.shields.io/npm/l/is-map.svg\n[license-url]: LICENSE\n[downloads-image]: http://img.shields.io/npm/dm/is-map.svg\n[downloads-url]: http://npm-stat.com/charts.html?package=is-map\n",
+  "maintainers": [
+    {
+      "email": "ljharb@gmail.com",
+      "name": "ljharb"
+    }
+  ],
+  "time": {
+    "modified": "2019-12-17T20:55:43.821Z",
+    "created": "2015-02-18T12:24:11.571Z",
+    "1.0.0": "2015-02-18T12:24:11.571Z",
+    "1.0.1": "2015-07-02T21:59:12.567Z",
+    "2.0.0": "2019-11-12T20:23:24.692Z",
+    "2.0.1": "2019-12-17T20:55:37.780Z"
+  },
+  "homepage": "https://github.com/inspect-js/is-map#readme",
+  "keywords": [
+    "map",
+    "set",
+    "collection",
+    "is",
+    "robust"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/inspect-js/is-map.git"
+  },
+  "author": {
+    "name": "Jordan Harband",
+    "email": "ljharb@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/inspect-js/is-map/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md"
+}

@@ -1,0 +1,910 @@
+{
+  "_id": "find-up",
+  "_rev": "28-ba3e91fd89181732380e4a0332f94a4a",
+  "name": "find-up",
+  "description": "Find a file or directory by walking up parent directories",
+  "dist-tags": {
+    "latest": "5.0.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "find-up",
+      "version": "1.0.0",
+      "description": "Find a file by walking up parent directories",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/find-up"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "find",
+        "up",
+        "find-up",
+        "findup",
+        "look-up",
+        "look",
+        "file",
+        "search",
+        "match",
+        "package",
+        "resolve",
+        "parent",
+        "parents",
+        "folder",
+        "directory",
+        "dir",
+        "walk",
+        "walking",
+        "path"
+      ],
+      "dependencies": {
+        "path-exists": "^2.0.0",
+        "pinkie-promise": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "9bf0f46fd04d04902cc4934f418ca49cdf199d83",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/find-up/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/find-up",
+      "_id": "find-up@1.0.0",
+      "_shasum": "df0a54abeebdf9984168fa556bd18a8f24b4d15c",
+      "_from": ".",
+      "_npmVersion": "2.11.3",
+      "_nodeVersion": "0.12.7",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "df0a54abeebdf9984168fa556bd18a8f24b4d15c",
+        "tarball": "https://registry.npmjs.org/find-up/-/find-up-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "find-up",
+      "version": "1.1.0",
+      "description": "Find a file by walking up parent directories",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/find-up"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "find",
+        "up",
+        "find-up",
+        "findup",
+        "look-up",
+        "look",
+        "file",
+        "search",
+        "match",
+        "package",
+        "resolve",
+        "parent",
+        "parents",
+        "folder",
+        "directory",
+        "dir",
+        "walk",
+        "walking",
+        "path"
+      ],
+      "dependencies": {
+        "path-exists": "^2.0.0",
+        "pinkie-promise": "^2.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "06e9dae73659ddf2421440ca4695161c38d7d2fb",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/find-up/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/find-up",
+      "_id": "find-up@1.1.0",
+      "_shasum": "a63b0eec4625a2902534898a5f9eec8aaed046e9",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.1",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "a63b0eec4625a2902534898a5f9eec8aaed046e9",
+        "tarball": "https://registry.npmjs.org/find-up/-/find-up-1.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.1.1": {
+      "name": "find-up",
+      "version": "1.1.1",
+      "description": "Find a file by walking up parent directories",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/find-up"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "find",
+        "up",
+        "find-up",
+        "findup",
+        "look-up",
+        "look",
+        "file",
+        "search",
+        "match",
+        "package",
+        "resolve",
+        "parent",
+        "parents",
+        "folder",
+        "directory",
+        "dir",
+        "walk",
+        "walking",
+        "path"
+      ],
+      "dependencies": {
+        "path-exists": "^2.0.0",
+        "pinkie-promise": "^2.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "bc536485bfddd2d960f472964e65afef9895f475",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/find-up/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/find-up",
+      "_id": "find-up@1.1.1",
+      "_shasum": "53bdfb982c41e97ba7f64173d239b406cfd79f85",
+      "_from": ".",
+      "_npmVersion": "2.14.12",
+      "_nodeVersion": "4.3.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "53bdfb982c41e97ba7f64173d239b406cfd79f85",
+        "tarball": "https://registry.npmjs.org/find-up/-/find-up-1.1.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-13-west.internal.npmjs.com",
+        "tmp": "tmp/find-up-1.1.1.tgz_1456910658734_0.6790364829357713"
+      },
+      "directories": {}
+    },
+    "1.1.2": {
+      "name": "find-up",
+      "version": "1.1.2",
+      "description": "Find a file by walking up parent directories",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/find-up"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "find",
+        "up",
+        "find-up",
+        "findup",
+        "look-up",
+        "look",
+        "file",
+        "search",
+        "match",
+        "package",
+        "resolve",
+        "parent",
+        "parents",
+        "folder",
+        "directory",
+        "dir",
+        "walk",
+        "walking",
+        "path"
+      ],
+      "dependencies": {
+        "path-exists": "^2.0.0",
+        "pinkie-promise": "^2.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "tempfile": "^1.1.1",
+        "xo": "*"
+      },
+      "gitHead": "f2d7c1ff74fbac82b2cff038e311ef4b075d9184",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/find-up/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/find-up",
+      "_id": "find-up@1.1.2",
+      "_shasum": "6b2e9822b1a2ce0a60ab64d610eccad53cb24d0f",
+      "_from": ".",
+      "_npmVersion": "2.14.12",
+      "_nodeVersion": "4.3.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "6b2e9822b1a2ce0a60ab64d610eccad53cb24d0f",
+        "tarball": "https://registry.npmjs.org/find-up/-/find-up-1.1.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/find-up-1.1.2.tgz_1457199955637_0.3445317060686648"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "find-up",
+      "version": "2.0.0",
+      "description": "Find a file by walking up parent directories",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/find-up.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "find",
+        "up",
+        "find-up",
+        "findup",
+        "look-up",
+        "look",
+        "file",
+        "search",
+        "match",
+        "package",
+        "resolve",
+        "parent",
+        "parents",
+        "folder",
+        "directory",
+        "dir",
+        "walk",
+        "walking",
+        "path"
+      ],
+      "dependencies": {
+        "path-exists": "^2.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "tempfile": "^1.1.1",
+        "xo": "*"
+      },
+      "xo": {
+        "esnext": true
+      },
+      "gitHead": "80342293c547b6982091f6ff141a76fd70317f57",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/find-up/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/find-up#readme",
+      "_id": "find-up@2.0.0",
+      "_shasum": "71e6dc2dad9222143cfc0fa5de7ab739e7320c05",
+      "_from": ".",
+      "_npmVersion": "2.15.9",
+      "_nodeVersion": "4.5.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "71e6dc2dad9222143cfc0fa5de7ab739e7320c05",
+        "tarball": "https://registry.npmjs.org/find-up/-/find-up-2.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/find-up-2.0.0.tgz_1474388027708_0.42646232759580016"
+      },
+      "directories": {}
+    },
+    "2.1.0": {
+      "name": "find-up",
+      "version": "2.1.0",
+      "description": "Find a file by walking up parent directories",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/find-up.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "find",
+        "up",
+        "find-up",
+        "findup",
+        "look-up",
+        "look",
+        "file",
+        "search",
+        "match",
+        "package",
+        "resolve",
+        "parent",
+        "parents",
+        "folder",
+        "directory",
+        "dir",
+        "walk",
+        "walking",
+        "path"
+      ],
+      "dependencies": {
+        "locate-path": "^2.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "tempfile": "^1.1.1",
+        "xo": "*"
+      },
+      "xo": {
+        "esnext": true
+      },
+      "gitHead": "10202fb1621f0c277d5d5eeaf01c1c32b008fbef",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/find-up/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/find-up#readme",
+      "_id": "find-up@2.1.0",
+      "_shasum": "45d1b7e506c717ddd482775a2b77920a3c0c57a7",
+      "_from": ".",
+      "_npmVersion": "4.0.2",
+      "_nodeVersion": "6.9.1",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "45d1b7e506c717ddd482775a2b77920a3c0c57a7",
+        "tarball": "https://registry.npmjs.org/find-up/-/find-up-2.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/find-up-2.1.0.tgz_1480684911017_0.33125952794216573"
+      },
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "find-up",
+      "version": "3.0.0",
+      "description": "Find a file or directory by walking up parent directories",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/find-up.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "find",
+        "up",
+        "find-up",
+        "findup",
+        "look-up",
+        "look",
+        "file",
+        "search",
+        "match",
+        "package",
+        "resolve",
+        "parent",
+        "parents",
+        "folder",
+        "directory",
+        "dir",
+        "walk",
+        "walking",
+        "path"
+      ],
+      "dependencies": {
+        "locate-path": "^3.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "tempy": "^0.2.1",
+        "xo": "*"
+      },
+      "gitHead": "2319b79a9e728fc13fc1a1a15e84bf5df100719e",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/find-up/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/find-up#readme",
+      "_id": "find-up@3.0.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.11.2",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-1yD6RmLI1XBfxugvORwlck6f75tYL+iR0jqwsOrOxMZyGYqUuDhJ0l4AXdO1iX/FTs9cBAMEk1gWSEx1kSbylg==",
+        "shasum": "49169f1d7993430646da61ecc5ae355c21c97b73",
+        "tarball": "https://registry.npmjs.org/find-up/-/find-up-3.0.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 4845,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbJ3kZCRA9TVsSAnZWagAAfx0P/i+gkVWTJv3VhXz8EbEf\n3LQ9D2YyTKUseUs5GYfYEmZuJ1QpwqCADP5981jiLwl8MBL1QFq4GqIPD74/\n3XWNSff5pqGg2+/z8fIOKQVi/VcRZYKfZ3BVWMRf0kldgonCxLsQVuOoEXOQ\n90aFj9OsilQRKjwfltiFysvyPFo4rEQRiC4fh0YHant7vtUVIucCQTmWmoB+\n9y9M3nplqA7IiiCZhLX5OKqXW27FzA/em006Fi16LiA6/dOdXAgcWwn49Ha3\n1K0zfxh47sGKA/noxaxVS63h+og9XgYdhewrO7rU2zvtbwyuAgJoAPK/8448\nqk+YEpxG+YuNp4t2eU+XtS5yEKuEEC/R6f3qN7BoNkuS9EKnM56LuWj1yinQ\nyyvbtuuwFbwmtMGLCZVANiDR0+UAGpzJKW0KZs9kg9USpEfkp07oNwuLQQuw\neSdz1vblDju3Txa0N0hFHckn4B8+zyL/VQwVE1aA2bXrfLMby8k1rHQq4r3R\nwAMgU1If5UVS9obuuoYKW9B4EGBabI4o0rvKfsMMNY1+TYi3AUeFArRuYF1D\nJODWneatuNZHU06fMM7+kV5r+5aZfFfqJcbyx0Qdly12X8glIgGciAExeXtb\nB8UImgyhT0Nz2/hpSNgW/6P8+vfFze1uIodDvSezJk3b6Vc7LAH1SNy3kYKh\n9rVa\r\n=sd/n\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/find-up_3.0.0_1529313561272_0.9299595096856903"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.0.0": {
+      "name": "find-up",
+      "version": "4.0.0",
+      "description": "Find a file or directory by walking up parent directories",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/find-up.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "find",
+        "up",
+        "find-up",
+        "findup",
+        "look-up",
+        "look",
+        "file",
+        "search",
+        "match",
+        "package",
+        "resolve",
+        "parent",
+        "parents",
+        "folder",
+        "directory",
+        "walk",
+        "walking",
+        "path"
+      ],
+      "dependencies": {
+        "locate-path": "^5.0.0"
+      },
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "is-path-inside": "^2.1.0",
+        "tempy": "^0.3.0",
+        "tsd": "^0.7.3",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "a2841237562d1f9996084d16c1bc6b471143892a",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/find-up/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/find-up#readme",
+      "_id": "find-up@4.0.0",
+      "_nodeVersion": "8.16.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-zoH7ZWPkRdgwYCDVoQTzqjG8JSPANhtvLhh4KVUHyKnaUJJrNeFmWIkTcNuJmR3GLMEmGYEf2S2bjgx26JTF+Q==",
+        "shasum": "c367f8024de92efb75f2d4906536d24682065c3a",
+        "tarball": "https://registry.npmjs.org/find-up/-/find-up-4.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 10221,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJc2DutCRA9TVsSAnZWagAAH8kP/jsZxV5KNq5u/5HSXNUA\n3zyTzFjRSRSxgzDv7MyjqkZDZVGaJxoQjXpwC/RS5pHM2R442RQR52xq/CHD\nGvCzTnUe51+XgNJ46pEcwA/t+PRQF2gGHxv7Sp/GbUwVLlXkTjPZpKr7Mzix\nSrB0wWZ97vB+xvr24FAp3T9c8gU0Lr6VpvA1hiLo3ecAWq984aPG2iOnFco1\nQVh2yp5ovblESCyElPNl5ZMPLHeH9ovroOBOs9B3J4yKm4EF/b8YTFlgIuGI\nDD5fDH076ql7pUEqEJKQvijt7W3uIHs8vh3ZLy3ModwN28ix2lzEQt70T+k1\nvjvDm+ZJXSYK88Owhe4qqVmaYkB5sTnChJTunid3wHN4Me3pusuhayIrLddd\nObiq7BHAvmFiqcFfrjtGxWLXnzhybkPAof0ENceSd288+NEY5N201OSsLAiB\naLj2/saDpJm4+FRQkQwj3su9a/dfhBLt2gucpiFkq8Ca4yWagSu2FU1r6fV2\n1hHp8bAALOJNmb+uDcxsdGSaYjXX9ESsLH1hRI+ROqrhOonY6qmgtO0pUUkv\n1VlqgdW7JSKYbafpVPqH4yrC4wPAq4S1XAn3k0GEnS2TrO6sURWZllF+xdPp\nbRi0E77GE3kYr02cOSowEfz6DvonQBkD1Y0A1bKnj3sMc4iaa0twtIXnJmGv\nTAmJ\r\n=wBb5\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/find-up_4.0.0_1557674925044_0.058754120668220944"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.1.0": {
+      "name": "find-up",
+      "version": "4.1.0",
+      "description": "Find a file or directory by walking up parent directories",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/find-up.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "find",
+        "up",
+        "find-up",
+        "findup",
+        "look-up",
+        "look",
+        "file",
+        "search",
+        "match",
+        "package",
+        "resolve",
+        "parent",
+        "parents",
+        "folder",
+        "directory",
+        "walk",
+        "walking",
+        "path"
+      ],
+      "dependencies": {
+        "locate-path": "^5.0.0",
+        "path-exists": "^4.0.0"
+      },
+      "devDependencies": {
+        "ava": "^2.1.0",
+        "is-path-inside": "^2.1.0",
+        "tempy": "^0.3.0",
+        "tsd": "^0.7.3",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "6c32f0caed1684ef778053b6f79b13a772e22ba4",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/find-up/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/find-up#readme",
+      "_id": "find-up@4.1.0",
+      "_nodeVersion": "8.16.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-PpOwAdQ/YlXQ2vj8a3h8IipDuYRi3wceVQQGYWxNINccq40Anw7BlsEXCMbt1Zt+OLA6Fq9suIpIWD0OsnISlw==",
+        "shasum": "97afe7d6cdc0bc5928584b7c8d7b16e8a9aa5d19",
+        "tarball": "https://registry.npmjs.org/find-up/-/find-up-4.1.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 11611,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdBzEzCRA9TVsSAnZWagAA7ZwQAJUrXCf9gkIYlisJcBE6\n2Wzq80Qhyy1k36PLbZPOIgwJsRyN81OGxhQQ5dlzvSIdyvXmJveNSm85+9pC\naN+th01evbkcCVLo6hoPwZyjv/CxWPjdKKqbF0dTBJwY8zCW+g0zDm/TUdlW\nZvlIncpN/AUSOjBpnmd8jYSC+wbedQ3JBCJi0ETSBYIVOuNwKUr14F0wl25+\nCZIAZB2D9VUMP+ZgT+F5z64OiUz1/+Q+U4VtXU0ivJ7OQfX3obNRqRx33KS7\nvBDHgVpeCh5ryMXNEGMZFblzR1qUOewik9/YdQ9e848SbhNu9oSfh4FaEg5X\n6ybitbPf7oOBQudM+LdJofhFkqJgUM8E+/eKtUxWZx6S2FmxbHltrjchAliW\n8JARBCQ2g0OqqyPPFOyWtQlImWr9BYcm2nyZqjA5Tj6jbGTsxkMaPK0YS89g\nAwXxJA5bXn3Xp8KTxFmxJUNJ0zDf5eRhWaZEIX/Tm2qpdEB2+kYbE9QfdOtV\nTo+Y7ZIg5mE44sDi5oN6LLmic+eHlTqtUaqaRS36Lecx65NbCBQY8fkxPNQp\ndJE/qYMRNOWMiNpA8yXqxpaXTtBUopFCpZ1ahTBUpQVP5pKVxX3uoPAbTT2Q\nzUvs1S2b0zo1sFAt3LpCgs24gyTu0WJTyMTFEKrTsk5nALPCpU93o5rUnJ0L\nSUUW\r\n=2E9L\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/find-up_4.1.0_1560752434049_0.7412163695841496"
+      },
+      "_hasShrinkwrap": false
+    },
+    "5.0.0": {
+      "name": "find-up",
+      "version": "5.0.0",
+      "description": "Find a file or directory by walking up parent directories",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/find-up.git"
+      },
+      "funding": "https://github.com/sponsors/sindresorhus",
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "https://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=10"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "find",
+        "up",
+        "find-up",
+        "findup",
+        "look-up",
+        "look",
+        "file",
+        "search",
+        "match",
+        "package",
+        "resolve",
+        "parent",
+        "parents",
+        "folder",
+        "directory",
+        "walk",
+        "walking",
+        "path"
+      ],
+      "dependencies": {
+        "locate-path": "^6.0.0",
+        "path-exists": "^4.0.0"
+      },
+      "devDependencies": {
+        "ava": "^2.1.0",
+        "is-path-inside": "^2.1.0",
+        "tempy": "^0.6.0",
+        "tsd": "^0.13.1",
+        "xo": "^0.33.0"
+      },
+      "gitHead": "e852e9cfd020844fac0ea2ff073c378cc302db4d",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/find-up/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/find-up#readme",
+      "_id": "find-up@5.0.0",
+      "_nodeVersion": "14.5.0",
+      "_npmVersion": "6.14.7",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-78/PXT1wlLLDgTzDs7sjq9hzz0vXD+zn+7wypEe4fXQxCmdmqfGsEPQxmiCSQI3ajFV91bVSsvNtrJRiW6nGng==",
+        "shasum": "4c92819ecb7083561e4f4a240a86be5198f536fc",
+        "tarball": "https://registry.npmjs.org/find-up/-/find-up-5.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 11761,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfMucJCRA9TVsSAnZWagAA6NcP/34vvIblDCnYQDSTYCrf\nZQmTpKT9t3/IdMqjEVUtoSq39MmWx1UpXL82rLIP8EkahMfwhCv+RWjGBtpw\n0wMYyyTeQ42dC1xV6FbZaTwEPle0co3soTeMSfxdHrFQxriGagsGDPEuNfXG\nlh9XXh2g6MIJ1Skyepcyz9JDVe8C1zJhQPQnGq/39hWVpaYXufra9E4HhRki\nyv204MQlkqEjuh6HK5e52u3x3bmeo/fXQEIk8jzlJB/0hQAtNULzkerZdF++\nq8uw1DHp4bgEwFVEjbepg+UR5Wqp8lCAk3lNrjzKz20DB77qCHL38CJhkg/q\nDgkU4odE7cnH8MvEqlVJSz5B91yUAplDasXVrsThBgQm6oA8olzS4D4QTjbY\nDsO/bzUKAE3PBUO9SZbfvwn6hH1ofIEcv0RFzYge99yybET1aCPB8VJ9fNZ9\n8djNIvaIoIBayfaL7hS+1ixKnA88Cav3Lk6hOkDYgcY1RI9vCRV9nLnKX7CC\ne/u0Hyr5KIRghh572akpGY3G15b6M/caSaiDrJvA2eb3PRE+SV8lx4T7CjZz\niyFQ3S1ZBUDX6XWuYGwfCn8iz3NwF4c1aVQG0AH64UlAS147rAsoiS3RE1nr\nvhsNq4pZBf3gd8jqaG5q15pahcWt4vDiXBpGmh+xl2MWpJ1v9xCPbeyNcaNv\nMh14\r\n=sIO9\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/find-up_5.0.0_1597171464642_0.13015534581818233"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# find-up [![Build Status](https://travis-ci.com/sindresorhus/find-up.svg?branch=master)](https://travis-ci.com/github/sindresorhus/find-up)\n\n> Find a file or directory by walking up parent directories\n\n## Install\n\n```\n$ npm install find-up\n```\n\n## Usage\n\n```\n/\n└── Users\n    └── sindresorhus\n        ├── unicorn.png\n        └── foo\n            └── bar\n                ├── baz\n                └── example.js\n```\n\n`example.js`\n\n```js\nconst path = require('path');\nconst findUp = require('find-up');\n\n(async () => {\n\tconsole.log(await findUp('unicorn.png'));\n\t//=> '/Users/sindresorhus/unicorn.png'\n\n\tconsole.log(await findUp(['rainbow.png', 'unicorn.png']));\n\t//=> '/Users/sindresorhus/unicorn.png'\n\n\tconsole.log(await findUp(async directory => {\n\t\tconst hasUnicorns = await findUp.exists(path.join(directory, 'unicorn.png'));\n\t\treturn hasUnicorns && directory;\n\t}, {type: 'directory'}));\n\t//=> '/Users/sindresorhus'\n})();\n```\n\n## API\n\n### findUp(name, options?)\n### findUp(matcher, options?)\n\nReturns a `Promise` for either the path or `undefined` if it couldn't be found.\n\n### findUp([...name], options?)\n\nReturns a `Promise` for either the first path found (by respecting the order of the array) or `undefined` if none could be found.\n\n### findUp.sync(name, options?)\n### findUp.sync(matcher, options?)\n\nReturns a path or `undefined` if it couldn't be found.\n\n### findUp.sync([...name], options?)\n\nReturns the first path found (by respecting the order of the array) or `undefined` if none could be found.\n\n#### name\n\nType: `string`\n\nName of the file or directory to find.\n\n#### matcher\n\nType: `Function`\n\nA function that will be called with each directory until it returns a `string` with the path, which stops the search, or the root directory has been reached and nothing was found. Useful if you want to match files with certain patterns, set of permissions, or other advanced use-cases.\n\nWhen using async mode, the `matcher` may optionally be an async or promise-returning function that returns the path.\n\n#### options\n\nType: `object`\n\n##### cwd\n\nType: `string`\\\nDefault: `process.cwd()`\n\nDirectory to start from.\n\n##### type\n\nType: `string`\\\nDefault: `'file'`\\\nValues: `'file'` `'directory'`\n\nThe type of paths that can match.\n\n##### allowSymlinks\n\nType: `boolean`\\\nDefault: `true`\n\nAllow symbolic links to match if they point to the chosen path type.\n\n### findUp.exists(path)\n\nReturns a `Promise<boolean>` of whether the path exists.\n\n### findUp.sync.exists(path)\n\nReturns a `boolean` of whether the path exists.\n\n#### path\n\nType: `string`\n\nPath to a file or directory.\n\n### findUp.stop\n\nA [`Symbol`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol) that can be returned by a `matcher` function to stop the search and cause `findUp` to immediately return `undefined`. Useful as a performance optimization in case the current working directory is deeply nested in the filesystem.\n\n```js\nconst path = require('path');\nconst findUp = require('find-up');\n\n(async () => {\n\tawait findUp(directory => {\n\t\treturn path.basename(directory) === 'work' ? findUp.stop : 'logo.png';\n\t});\n})();\n```\n\n## Related\n\n- [find-up-cli](https://github.com/sindresorhus/find-up-cli) - CLI for this module\n- [pkg-up](https://github.com/sindresorhus/pkg-up) - Find the closest package.json file\n- [pkg-dir](https://github.com/sindresorhus/pkg-dir) - Find the root directory of an npm package\n- [resolve-from](https://github.com/sindresorhus/resolve-from) - Resolve the path of a module like `require.resolve()` but from a given path\n\n---\n\n<div align=\"center\">\n\t<b>\n\t\t<a href=\"https://tidelift.com/subscription/pkg/npm-find-up?utm_source=npm-find-up&utm_medium=referral&utm_campaign=readme\">Get professional support for 'find-up' with a Tidelift subscription</a>\n\t</b>\n\t<br>\n\t<sub>\n\t\tTidelift helps make open source sustainable for maintainers while giving companies<br>assurances about security, maintenance, and licensing for their dependencies.\n\t</sub>\n</div>\n",
+  "maintainers": [
+    {
+      "name": "sindresorhus",
+      "email": "sindresorhus@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-08-11T18:44:28.382Z",
+    "created": "2015-09-01T07:15:16.509Z",
+    "1.0.0": "2015-09-01T07:15:16.509Z",
+    "1.1.0": "2015-11-14T19:05:49.453Z",
+    "1.1.1": "2016-03-02T09:24:19.277Z",
+    "1.1.2": "2016-03-05T17:45:57.070Z",
+    "2.0.0": "2016-09-20T16:13:51.109Z",
+    "2.1.0": "2016-12-02T13:21:51.615Z",
+    "3.0.0": "2018-06-18T09:19:21.364Z",
+    "4.0.0": "2019-05-12T15:28:45.148Z",
+    "4.1.0": "2019-06-17T06:20:34.221Z",
+    "5.0.0": "2020-08-11T18:44:24.748Z"
+  },
+  "homepage": "https://github.com/sindresorhus/find-up#readme",
+  "keywords": [
+    "find",
+    "up",
+    "find-up",
+    "findup",
+    "look-up",
+    "look",
+    "file",
+    "search",
+    "match",
+    "package",
+    "resolve",
+    "parent",
+    "parents",
+    "folder",
+    "directory",
+    "walk",
+    "walking",
+    "path"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/find-up.git"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "https://sindresorhus.com"
+  },
+  "bugs": {
+    "url": "https://github.com/sindresorhus/find-up/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md",
+  "users": {
+    "ierceg": true,
+    "mrzmmr": true,
+    "bryan.ygf": true,
+    "pmbenjamin": true,
+    "garthk": true,
+    "xrush": true,
+    "alexreg": true,
+    "soenkekluth": true,
+    "jalcine": true,
+    "monkbroc": true,
+    "losymear": true,
+    "djblue": true,
+    "danday74": true
+  }
+}

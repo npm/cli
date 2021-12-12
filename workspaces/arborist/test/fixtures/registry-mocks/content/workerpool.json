@@ -1,0 +1,2386 @@
+{
+  "_id": "workerpool",
+  "_rev": "45-ecca02c4bf574fb631182e1164244c86",
+  "name": "workerpool",
+  "description": "Offload tasks to a pool of workers on node.js and in the browser",
+  "dist-tags": {
+    "latest": "6.0.2"
+  },
+  "versions": {
+    "0.0.1": {
+      "name": "workerpool",
+      "version": "0.0.1",
+      "description": "Offload tasks to a pool of workers on node.js and in the browser",
+      "author": {
+        "name": "Jos de Jong",
+        "email": "wjosdejong@gmail.com",
+        "url": "https://github.com/josdejong"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/josdejong/workerpool.git"
+      },
+      "keywords": [
+        "worker",
+        "web worker",
+        "cluster",
+        "pool"
+      ],
+      "bugs": {
+        "url": "https://github.com/josdejong/workerpool/issues"
+      },
+      "homepage": "https://github.com/josdejong/workerpool",
+      "_id": "workerpool@0.0.1",
+      "dist": {
+        "shasum": "32da407229fec01614bb07010441a3107bdaac57",
+        "tarball": "https://registry.npmjs.org/workerpool/-/workerpool-0.0.1.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.4.3",
+      "_npmUser": {
+        "name": "josdejong",
+        "email": "wjosdejong@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "josdejong",
+          "email": "wjosdejong@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.0": {
+      "name": "workerpool",
+      "version": "0.1.0",
+      "description": "Offload tasks to a pool of workers on node.js and in the browser",
+      "homepage": "https://github.com/josdejong/workerpool",
+      "author": {
+        "name": "Jos de Jong",
+        "email": "wjosdejong@gmail.com",
+        "url": "https://github.com/josdejong"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/josdejong/workerpool.git"
+      },
+      "keywords": [
+        "worker",
+        "web worker",
+        "cluster",
+        "pool"
+      ],
+      "main": "./index.js",
+      "scripts": {
+        "build": "gulp",
+        "watch": "gulp watch",
+        "test": "mocha test",
+        "coverage": "istanbul cover _mocha -- test; echo \"\nCoverage report is available at ./coverage/lcov-report/index.html\""
+      },
+      "dependencies": {
+        "bluebird": "^1.2.4",
+        "promiscuous": "^0.6.0"
+      },
+      "devDependencies": {
+        "gulp": "^3.6.2",
+        "gulp-util": "^2.2.14",
+        "istanbul": "^0.2.8",
+        "mocha": "^1.18.2",
+        "uglify-js": "^2.4.13",
+        "webpack": "^1.1.8"
+      },
+      "bugs": {
+        "url": "https://github.com/josdejong/workerpool/issues"
+      },
+      "_id": "workerpool@0.1.0",
+      "_shasum": "b40fb16d6261e9e16cbb058a71c78118f2b5356b",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "josdejong",
+        "email": "wjosdejong@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "josdejong",
+          "email": "wjosdejong@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "b40fb16d6261e9e16cbb058a71c78118f2b5356b",
+        "tarball": "https://registry.npmjs.org/workerpool/-/workerpool-0.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.0": {
+      "name": "workerpool",
+      "version": "0.2.0",
+      "description": "Offload tasks to a pool of workers on node.js and in the browser",
+      "homepage": "https://github.com/josdejong/workerpool",
+      "author": {
+        "name": "Jos de Jong",
+        "email": "wjosdejong@gmail.com",
+        "url": "https://github.com/josdejong"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/josdejong/workerpool.git"
+      },
+      "keywords": [
+        "worker",
+        "web worker",
+        "cluster",
+        "pool"
+      ],
+      "main": "./index.js",
+      "scripts": {
+        "build": "gulp",
+        "watch": "gulp watch",
+        "test": "mocha test",
+        "coverage": "istanbul cover _mocha -- test; echo \"\nCoverage report is available at ./coverage/lcov-report/index.html\""
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "gulp": "^3.6.2",
+        "gulp-util": "^2.2.14",
+        "istanbul": "^0.2.8",
+        "mocha": "^1.18.2",
+        "uglify-js": "^2.4.13",
+        "webpack": "^1.1.8"
+      },
+      "bugs": {
+        "url": "https://github.com/josdejong/workerpool/issues"
+      },
+      "_id": "workerpool@0.2.0",
+      "_shasum": "23fe60ce7285b601a952a0fbc5672a7d3aa1a898",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "josdejong",
+        "email": "wjosdejong@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "josdejong",
+          "email": "wjosdejong@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "23fe60ce7285b601a952a0fbc5672a7d3aa1a898",
+        "tarball": "https://registry.npmjs.org/workerpool/-/workerpool-0.2.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "workerpool",
+      "version": "1.0.0",
+      "description": "Offload tasks to a pool of workers on node.js and in the browser",
+      "homepage": "https://github.com/josdejong/workerpool",
+      "author": {
+        "name": "Jos de Jong",
+        "email": "wjosdejong@gmail.com",
+        "url": "https://github.com/josdejong"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/josdejong/workerpool.git"
+      },
+      "keywords": [
+        "worker",
+        "web worker",
+        "cluster",
+        "pool"
+      ],
+      "main": "./index.js",
+      "scripts": {
+        "build": "gulp",
+        "watch": "gulp watch",
+        "test": "mocha test",
+        "coverage": "istanbul cover _mocha -- test; echo \"\nCoverage report is available at ./coverage/lcov-report/index.html\""
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "gulp": "^3.6.2",
+        "gulp-util": "^2.2.14",
+        "istanbul": "^0.2.8",
+        "mocha": "^1.18.2",
+        "uglify-js": "^2.4.13",
+        "webpack": "^1.1.8"
+      },
+      "bugs": {
+        "url": "https://github.com/josdejong/workerpool/issues"
+      },
+      "_id": "workerpool@1.0.0",
+      "_shasum": "3b7f0bf95695ea01c55b645f832155520d67870f",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "josdejong",
+        "email": "wjosdejong@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "josdejong",
+          "email": "wjosdejong@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "3b7f0bf95695ea01c55b645f832155520d67870f",
+        "tarball": "https://registry.npmjs.org/workerpool/-/workerpool-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "workerpool",
+      "version": "1.1.0",
+      "description": "Offload tasks to a pool of workers on node.js and in the browser",
+      "homepage": "https://github.com/josdejong/workerpool",
+      "author": {
+        "name": "Jos de Jong",
+        "email": "wjosdejong@gmail.com",
+        "url": "https://github.com/josdejong"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/josdejong/workerpool.git"
+      },
+      "keywords": [
+        "worker",
+        "web worker",
+        "cluster",
+        "pool",
+        "isomorphic"
+      ],
+      "main": "./index.js",
+      "scripts": {
+        "build": "gulp",
+        "watch": "gulp watch",
+        "test": "mocha test",
+        "coverage": "istanbul cover _mocha -- test; echo \"\nCoverage report is available at ./coverage/lcov-report/index.html\""
+      },
+      "dependencies": {
+        "promise": "^5.0.0"
+      },
+      "devDependencies": {
+        "gulp": "^3.6.2",
+        "gulp-util": "^2.2.14",
+        "istanbul": "^0.2.8",
+        "mocha": "^1.18.2",
+        "uglify-js": "^2.4.13",
+        "webpack": "^1.1.8"
+      },
+      "gitHead": "28b57673cf59474b530054f3e2c924f15ec1d0e0",
+      "bugs": {
+        "url": "https://github.com/josdejong/workerpool/issues"
+      },
+      "_id": "workerpool@1.1.0",
+      "_shasum": "c428e60a7e8ba398cf0cf03ba5f51ac02f8e6bc5",
+      "_from": ".",
+      "_npmVersion": "3.3.12",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "josdejong",
+        "email": "wjosdejong@gmail.com"
+      },
+      "dist": {
+        "shasum": "c428e60a7e8ba398cf0cf03ba5f51ac02f8e6bc5",
+        "tarball": "https://registry.npmjs.org/workerpool/-/workerpool-1.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "josdejong",
+          "email": "wjosdejong@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.2.0": {
+      "name": "workerpool",
+      "version": "1.2.0",
+      "description": "Offload tasks to a pool of workers on node.js and in the browser",
+      "homepage": "https://github.com/josdejong/workerpool",
+      "author": {
+        "name": "Jos de Jong",
+        "email": "wjosdejong@gmail.com",
+        "url": "https://github.com/josdejong"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/josdejong/workerpool.git"
+      },
+      "keywords": [
+        "worker",
+        "web worker",
+        "cluster",
+        "pool",
+        "isomorphic"
+      ],
+      "main": "./index.js",
+      "scripts": {
+        "build": "gulp",
+        "watch": "gulp watch",
+        "test": "mocha test",
+        "coverage": "istanbul cover _mocha -- test; echo \"\nCoverage report is available at ./coverage/lcov-report/index.html\""
+      },
+      "dependencies": {
+        "promise": "^5.0.0",
+        "serializerr": "^1.0.2"
+      },
+      "devDependencies": {
+        "gulp": "^3.6.2",
+        "gulp-util": "^2.2.14",
+        "istanbul": "^0.2.8",
+        "mocha": "^1.18.2",
+        "uglify-js": "^2.4.13",
+        "webpack": "^1.1.8"
+      },
+      "gitHead": "27cac208814e2acca8279a0867b0fb8e185c6d53",
+      "bugs": {
+        "url": "https://github.com/josdejong/workerpool/issues"
+      },
+      "_id": "workerpool@1.2.0",
+      "_shasum": "326c2c28c659195595672bb955d6ff767cc3afb8",
+      "_from": ".",
+      "_npmVersion": "3.8.6",
+      "_nodeVersion": "5.11.1",
+      "_npmUser": {
+        "name": "josdejong",
+        "email": "wjosdejong@gmail.com"
+      },
+      "dist": {
+        "shasum": "326c2c28c659195595672bb955d6ff767cc3afb8",
+        "tarball": "https://registry.npmjs.org/workerpool/-/workerpool-1.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "josdejong",
+          "email": "wjosdejong@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/workerpool-1.2.0.tgz_1463923888201_0.05162476049736142"
+      },
+      "directories": {}
+    },
+    "1.2.1": {
+      "name": "workerpool",
+      "version": "1.2.1",
+      "description": "Offload tasks to a pool of workers on node.js and in the browser",
+      "homepage": "https://github.com/josdejong/workerpool",
+      "author": {
+        "name": "Jos de Jong",
+        "email": "wjosdejong@gmail.com",
+        "url": "https://github.com/josdejong"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/josdejong/workerpool.git"
+      },
+      "keywords": [
+        "worker",
+        "web worker",
+        "cluster",
+        "pool",
+        "isomorphic"
+      ],
+      "main": "./index.js",
+      "scripts": {
+        "build": "gulp",
+        "watch": "gulp watch",
+        "test": "mocha test",
+        "coverage": "istanbul cover _mocha -- test; echo \"\nCoverage report is available at ./coverage/lcov-report/index.html\""
+      },
+      "dependencies": {
+        "serializerr": "^1.0.2"
+      },
+      "devDependencies": {
+        "gulp": "^3.6.2",
+        "gulp-util": "^2.2.14",
+        "istanbul": "^0.2.8",
+        "mocha": "^1.18.2",
+        "uglify-js": "^2.4.13",
+        "webpack": "^1.1.8"
+      },
+      "gitHead": "a40fb3755bc52783c37faa574f1359fb27b7b100",
+      "bugs": {
+        "url": "https://github.com/josdejong/workerpool/issues"
+      },
+      "_id": "workerpool@1.2.1",
+      "_shasum": "edf4e394a5377fc618011f449fec1aacb5923759",
+      "_from": ".",
+      "_npmVersion": "3.9.3",
+      "_nodeVersion": "6.2.1",
+      "_npmUser": {
+        "name": "josdejong",
+        "email": "wjosdejong@gmail.com"
+      },
+      "dist": {
+        "shasum": "edf4e394a5377fc618011f449fec1aacb5923759",
+        "tarball": "https://registry.npmjs.org/workerpool/-/workerpool-1.2.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "josdejong",
+          "email": "wjosdejong@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/workerpool-1.2.1.tgz_1466844096257_0.7427593681495637"
+      },
+      "directories": {}
+    },
+    "1.3.0": {
+      "name": "workerpool",
+      "version": "1.3.0",
+      "description": "Offload tasks to a pool of workers on node.js and in the browser",
+      "homepage": "https://github.com/josdejong/workerpool",
+      "author": {
+        "name": "Jos de Jong",
+        "email": "wjosdejong@gmail.com",
+        "url": "https://github.com/josdejong"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/josdejong/workerpool.git"
+      },
+      "keywords": [
+        "worker",
+        "web worker",
+        "cluster",
+        "pool",
+        "isomorphic"
+      ],
+      "main": "./index.js",
+      "scripts": {
+        "build": "gulp",
+        "watch": "gulp watch",
+        "test": "mocha test",
+        "coverage": "istanbul cover _mocha -- test; echo \"\nCoverage report is available at ./coverage/lcov-report/index.html\""
+      },
+      "dependencies": {
+        "serializerr": "^1.0.2"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-util": "^3.0.7",
+        "istanbul": "^0.4.4",
+        "mocha": "^2.5.3",
+        "uglify-js": "^2.6.4",
+        "webpack": "^1.13.1"
+      },
+      "gitHead": "4ff28fd476d3a57f585f475ad8d18f891e50f4d4",
+      "bugs": {
+        "url": "https://github.com/josdejong/workerpool/issues"
+      },
+      "_id": "workerpool@1.3.0",
+      "_shasum": "76566ad81da6149a96bbb20af2f013c0e731ed0b",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.3.1",
+      "_npmUser": {
+        "name": "josdejong",
+        "email": "wjosdejong@gmail.com"
+      },
+      "dist": {
+        "shasum": "76566ad81da6149a96bbb20af2f013c0e731ed0b",
+        "tarball": "https://registry.npmjs.org/workerpool/-/workerpool-1.3.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "josdejong",
+          "email": "wjosdejong@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/workerpool-1.3.0.tgz_1471787750799_0.8451985127758235"
+      },
+      "directories": {}
+    },
+    "1.3.1": {
+      "name": "workerpool",
+      "version": "1.3.1",
+      "description": "Offload tasks to a pool of workers on node.js and in the browser",
+      "homepage": "https://github.com/josdejong/workerpool",
+      "author": {
+        "name": "Jos de Jong",
+        "email": "wjosdejong@gmail.com",
+        "url": "https://github.com/josdejong"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/josdejong/workerpool.git"
+      },
+      "keywords": [
+        "worker",
+        "web worker",
+        "cluster",
+        "pool",
+        "isomorphic"
+      ],
+      "main": "./index.js",
+      "scripts": {
+        "build": "gulp",
+        "watch": "gulp watch",
+        "test": "mocha test",
+        "coverage": "istanbul cover _mocha -- test; echo \"\nCoverage report is available at ./coverage/lcov-report/index.html\""
+      },
+      "dependencies": {
+        "serializerr": "^1.0.2"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-util": "^3.0.7",
+        "istanbul": "^0.4.4",
+        "mocha": "^2.5.3",
+        "uglify-js": "^2.6.4",
+        "webpack": "^1.13.1"
+      },
+      "gitHead": "4ef2acdca668cdccbd887a7a99eb8f973482cdaf",
+      "bugs": {
+        "url": "https://github.com/josdejong/workerpool/issues"
+      },
+      "_id": "workerpool@1.3.1",
+      "_shasum": "54f5c26b9b0643549029c8058f2e39954d417f60",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.5.0",
+      "_npmUser": {
+        "name": "josdejong",
+        "email": "wjosdejong@gmail.com"
+      },
+      "dist": {
+        "shasum": "54f5c26b9b0643549029c8058f2e39954d417f60",
+        "tarball": "https://registry.npmjs.org/workerpool/-/workerpool-1.3.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "josdejong",
+          "email": "wjosdejong@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/workerpool-1.3.1.tgz_1473705961873_0.0815167804248631"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "workerpool",
+      "version": "2.0.0",
+      "description": "Offload tasks to a pool of workers on node.js and in the browser",
+      "homepage": "https://github.com/josdejong/workerpool",
+      "author": {
+        "name": "Jos de Jong",
+        "email": "wjosdejong@gmail.com",
+        "url": "https://github.com/josdejong"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/josdejong/workerpool.git"
+      },
+      "keywords": [
+        "worker",
+        "web worker",
+        "cluster",
+        "pool",
+        "isomorphic"
+      ],
+      "main": "./index.js",
+      "scripts": {
+        "build": "gulp",
+        "watch": "gulp watch",
+        "test": "mocha test",
+        "coverage": "istanbul cover _mocha -- test; echo \"\nCoverage report is available at ./coverage/lcov-report/index.html\""
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-util": "^3.0.7",
+        "istanbul": "^0.4.4",
+        "mocha": "^2.5.3",
+        "uglify-js": "^2.6.4",
+        "webpack": "^1.13.1"
+      },
+      "gitHead": "e92042c57a42e8fedcdf4d731aa30d892f2c5997",
+      "bugs": {
+        "url": "https://github.com/josdejong/workerpool/issues"
+      },
+      "_id": "workerpool@2.0.0",
+      "_shasum": "2ef48c8af915f8e31512b006cd199b87150fe996",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.5.0",
+      "_npmUser": {
+        "name": "josdejong",
+        "email": "wjosdejong@gmail.com"
+      },
+      "dist": {
+        "shasum": "2ef48c8af915f8e31512b006cd199b87150fe996",
+        "tarball": "https://registry.npmjs.org/workerpool/-/workerpool-2.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "josdejong",
+          "email": "wjosdejong@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/workerpool-2.0.0.tgz_1474225879023_0.772074282169342"
+      },
+      "directories": {}
+    },
+    "2.1.0": {
+      "name": "workerpool",
+      "version": "2.1.0",
+      "description": "Offload tasks to a pool of workers on node.js and in the browser",
+      "homepage": "https://github.com/josdejong/workerpool",
+      "author": {
+        "name": "Jos de Jong",
+        "email": "wjosdejong@gmail.com",
+        "url": "https://github.com/josdejong"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/josdejong/workerpool.git"
+      },
+      "keywords": [
+        "worker",
+        "web worker",
+        "cluster",
+        "pool",
+        "isomorphic"
+      ],
+      "main": "./index.js",
+      "scripts": {
+        "build": "gulp",
+        "watch": "gulp watch",
+        "test": "mocha test",
+        "coverage": "istanbul cover _mocha -- test; echo \"\nCoverage report is available at ./coverage/lcov-report/index.html\""
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-util": "^3.0.7",
+        "istanbul": "^0.4.4",
+        "mocha": "^2.5.3",
+        "uglify-js": "^2.6.4",
+        "webpack": "^1.13.1"
+      },
+      "gitHead": "b9bb24ff25bc91f684bf72b6abb0adc725f07bcc",
+      "bugs": {
+        "url": "https://github.com/josdejong/workerpool/issues"
+      },
+      "_id": "workerpool@2.1.0",
+      "_shasum": "667b126e483fc0eac67fb1209c2d9e8496211d5d",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.7.0",
+      "_npmUser": {
+        "name": "josdejong",
+        "email": "wjosdejong@gmail.com"
+      },
+      "dist": {
+        "shasum": "667b126e483fc0eac67fb1209c2d9e8496211d5d",
+        "tarball": "https://registry.npmjs.org/workerpool/-/workerpool-2.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "josdejong",
+          "email": "wjosdejong@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/workerpool-2.1.0.tgz_1476209678372_0.9808666398748755"
+      },
+      "directories": {}
+    },
+    "2.2.0": {
+      "name": "workerpool",
+      "version": "2.2.0",
+      "description": "Offload tasks to a pool of workers on node.js and in the browser",
+      "homepage": "https://github.com/josdejong/workerpool",
+      "author": {
+        "name": "Jos de Jong",
+        "email": "wjosdejong@gmail.com",
+        "url": "https://github.com/josdejong"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/josdejong/workerpool.git"
+      },
+      "keywords": [
+        "worker",
+        "web worker",
+        "cluster",
+        "pool",
+        "isomorphic"
+      ],
+      "main": "./index.js",
+      "scripts": {
+        "build": "gulp",
+        "watch": "gulp watch",
+        "test": "mocha test",
+        "coverage": "istanbul cover _mocha -- test; echo \"\nCoverage report is available at ./coverage/lcov-report/index.html\""
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-util": "^3.0.7",
+        "istanbul": "^0.4.4",
+        "mocha": "^2.5.3",
+        "uglify-js": "^2.6.4",
+        "webpack": "^1.13.1"
+      },
+      "gitHead": "d869d20eaaa9304d56fe7e85b580c0610825aba8",
+      "bugs": {
+        "url": "https://github.com/josdejong/workerpool/issues"
+      },
+      "_id": "workerpool@2.2.0",
+      "_shasum": "67e45736f6c19cd41fd15f810c545770cf456f98",
+      "_from": ".",
+      "_npmVersion": "3.10.9",
+      "_nodeVersion": "7.1.0",
+      "_npmUser": {
+        "name": "josdejong",
+        "email": "wjosdejong@gmail.com"
+      },
+      "dist": {
+        "shasum": "67e45736f6c19cd41fd15f810c545770cf456f98",
+        "tarball": "https://registry.npmjs.org/workerpool/-/workerpool-2.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "josdejong",
+          "email": "wjosdejong@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/workerpool-2.2.0.tgz_1480152647157_0.35244237375445664"
+      },
+      "directories": {}
+    },
+    "2.2.1": {
+      "name": "workerpool",
+      "version": "2.2.1",
+      "description": "Offload tasks to a pool of workers on node.js and in the browser",
+      "homepage": "https://github.com/josdejong/workerpool",
+      "author": {
+        "name": "Jos de Jong",
+        "email": "wjosdejong@gmail.com",
+        "url": "https://github.com/josdejong"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/josdejong/workerpool.git"
+      },
+      "keywords": [
+        "worker",
+        "web worker",
+        "cluster",
+        "pool",
+        "isomorphic"
+      ],
+      "main": "./index.js",
+      "scripts": {
+        "build": "gulp",
+        "watch": "gulp watch",
+        "test": "mocha test",
+        "coverage": "istanbul cover _mocha -- test; echo \"\nCoverage report is available at ./coverage/lcov-report/index.html\""
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-util": "^3.0.7",
+        "istanbul": "^0.4.4",
+        "mocha": "^2.5.3",
+        "uglify-js": "^2.6.4",
+        "webpack": "^1.13.1"
+      },
+      "dependencies": {
+        "object-assign": "^4.1.1"
+      },
+      "gitHead": "dcc8fbc721fccdd6975d4eb75e6d5801158534f3",
+      "bugs": {
+        "url": "https://github.com/josdejong/workerpool/issues"
+      },
+      "_id": "workerpool@2.2.1",
+      "_shasum": "41ebff11d5859da948fdb2c850b57da69240988a",
+      "_from": ".",
+      "_npmVersion": "4.2.0",
+      "_nodeVersion": "7.10.0",
+      "_npmUser": {
+        "name": "josdejong",
+        "email": "wjosdejong@gmail.com"
+      },
+      "dist": {
+        "shasum": "41ebff11d5859da948fdb2c850b57da69240988a",
+        "tarball": "https://registry.npmjs.org/workerpool/-/workerpool-2.2.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "josdejong",
+          "email": "wjosdejong@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/workerpool-2.2.1.tgz_1494161213889_0.23010822292417288"
+      },
+      "directories": {}
+    },
+    "2.2.2": {
+      "name": "workerpool",
+      "version": "2.2.2",
+      "description": "Offload tasks to a pool of workers on node.js and in the browser",
+      "homepage": "https://github.com/josdejong/workerpool",
+      "author": {
+        "name": "Jos de Jong",
+        "email": "wjosdejong@gmail.com",
+        "url": "https://github.com/josdejong"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/josdejong/workerpool.git"
+      },
+      "keywords": [
+        "worker",
+        "web worker",
+        "cluster",
+        "pool",
+        "isomorphic"
+      ],
+      "main": "./index.js",
+      "scripts": {
+        "build": "gulp",
+        "watch": "gulp watch",
+        "test": "mocha test",
+        "coverage": "istanbul cover _mocha -- test; echo \"\nCoverage report is available at ./coverage/lcov-report/index.html\""
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-util": "^3.0.7",
+        "istanbul": "^0.4.4",
+        "mocha": "^2.5.3",
+        "uglify-js": "^2.6.4",
+        "webpack": "^1.13.1"
+      },
+      "dependencies": {
+        "object-assign": "4.1.1"
+      },
+      "gitHead": "153db0874fcf389634f5ba468f622be54d11ec5d",
+      "bugs": {
+        "url": "https://github.com/josdejong/workerpool/issues"
+      },
+      "_id": "workerpool@2.2.2",
+      "_shasum": "1cf53bacafd98ca5d808ff54cc72f3fecb5e1d56",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "8.1.3",
+      "_npmUser": {
+        "name": "josdejong",
+        "email": "wjosdejong@gmail.com"
+      },
+      "dist": {
+        "shasum": "1cf53bacafd98ca5d808ff54cc72f3fecb5e1d56",
+        "tarball": "https://registry.npmjs.org/workerpool/-/workerpool-2.2.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "josdejong",
+          "email": "wjosdejong@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/workerpool-2.2.2.tgz_1499506247550_0.1704844601918012"
+      },
+      "directories": {}
+    },
+    "2.2.3": {
+      "name": "workerpool",
+      "version": "2.2.3",
+      "description": "Offload tasks to a pool of workers on node.js and in the browser",
+      "homepage": "https://github.com/josdejong/workerpool",
+      "author": {
+        "name": "Jos de Jong",
+        "email": "wjosdejong@gmail.com",
+        "url": "https://github.com/josdejong"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/josdejong/workerpool.git"
+      },
+      "keywords": [
+        "worker",
+        "web worker",
+        "cluster",
+        "pool",
+        "isomorphic"
+      ],
+      "main": "./index.js",
+      "scripts": {
+        "build": "gulp",
+        "watch": "gulp watch",
+        "test": "mocha test",
+        "coverage": "istanbul cover _mocha -- test; echo \"\nCoverage report is available at ./coverage/lcov-report/index.html\""
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-util": "^3.0.7",
+        "istanbul": "^0.4.4",
+        "mocha": "^2.5.3",
+        "uglify-js": "^2.6.4",
+        "webpack": "^1.13.1"
+      },
+      "dependencies": {
+        "object-assign": "4.1.1"
+      },
+      "gitHead": "0e678522fa991648e6c15a2092afa687c0e02e5d",
+      "bugs": {
+        "url": "https://github.com/josdejong/workerpool/issues"
+      },
+      "_id": "workerpool@2.2.3",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "8.4.0",
+      "_npmUser": {
+        "name": "josdejong",
+        "email": "wjosdejong@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-GTG/lWUL4J6BaWQSnu7sOQ1lR75pKJjvoXHPv4ed9tmyx85gA+OsP38qqpEsmMGBjdXGfkeePwviAa6E1Dq9cQ==",
+        "shasum": "8454bce5a07a5a6f9003c272b34a14952c6a682e",
+        "tarball": "https://registry.npmjs.org/workerpool/-/workerpool-2.2.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "josdejong",
+          "email": "wjosdejong@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/workerpool-2.2.3.tgz_1503136160035_0.4500576891005039"
+      },
+      "directories": {}
+    },
+    "2.2.4": {
+      "name": "workerpool",
+      "version": "2.2.4",
+      "description": "Offload tasks to a pool of workers on node.js and in the browser",
+      "homepage": "https://github.com/josdejong/workerpool",
+      "author": {
+        "name": "Jos de Jong",
+        "email": "wjosdejong@gmail.com",
+        "url": "https://github.com/josdejong"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/josdejong/workerpool.git"
+      },
+      "keywords": [
+        "worker",
+        "web worker",
+        "cluster",
+        "pool",
+        "isomorphic"
+      ],
+      "main": "./index.js",
+      "scripts": {
+        "build": "gulp",
+        "watch": "gulp watch",
+        "test": "mocha test --timeout 10000",
+        "coverage": "istanbul cover _mocha -- test; echo \"\nCoverage report is available at ./coverage/lcov-report/index.html\""
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-util": "^3.0.7",
+        "istanbul": "^0.4.4",
+        "mocha": "^2.5.3",
+        "uglify-js": "2.8.29",
+        "webpack": "^1.13.1"
+      },
+      "dependencies": {
+        "object-assign": "4.1.1"
+      },
+      "gitHead": "705f64160fe76249b2ccd6c6b707264263c2d913",
+      "bugs": {
+        "url": "https://github.com/josdejong/workerpool/issues"
+      },
+      "_id": "workerpool@2.2.4",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "8.4.0",
+      "_npmUser": {
+        "name": "josdejong",
+        "email": "wjosdejong@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-gE7StiPAOM6318V3EzlR0sFgedAF11PjDZ1xt3SpbuF/vTTDFX2XEnkbFUNqhIHBEKzBDFLPgJSIXyJKP4wZBQ==",
+        "shasum": "c9dbe01e103e92df0e8f55356fc860135fbd43b0",
+        "tarball": "https://registry.npmjs.org/workerpool/-/workerpool-2.2.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "josdejong",
+          "email": "wjosdejong@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/workerpool-2.2.4.tgz_1503224261921_0.15397113538347185"
+      },
+      "directories": {}
+    },
+    "2.3.0": {
+      "name": "workerpool",
+      "version": "2.3.0",
+      "description": "Offload tasks to a pool of workers on node.js and in the browser",
+      "homepage": "https://github.com/josdejong/workerpool",
+      "author": {
+        "name": "Jos de Jong",
+        "email": "wjosdejong@gmail.com",
+        "url": "https://github.com/josdejong"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/josdejong/workerpool.git"
+      },
+      "keywords": [
+        "worker",
+        "web worker",
+        "cluster",
+        "pool",
+        "isomorphic"
+      ],
+      "main": "./index.js",
+      "scripts": {
+        "build": "gulp",
+        "watch": "gulp watch",
+        "test": "mocha test --timeout 10000",
+        "coverage": "istanbul cover _mocha -- test; echo \"\nCoverage report is available at ./coverage/lcov-report/index.html\""
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-util": "^3.0.7",
+        "istanbul": "^0.4.4",
+        "mocha": "^2.5.3",
+        "uglify-js": "2.8.29",
+        "webpack": "^1.13.1"
+      },
+      "dependencies": {
+        "object-assign": "4.1.1"
+      },
+      "gitHead": "b53796c14498ff5ed2ab3c630ae13264432ebebe",
+      "bugs": {
+        "url": "https://github.com/josdejong/workerpool/issues"
+      },
+      "_id": "workerpool@2.3.0",
+      "_npmVersion": "5.4.2",
+      "_nodeVersion": "8.6.0",
+      "_npmUser": {
+        "name": "josdejong",
+        "email": "wjosdejong@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-JP5DpviEV84zDmz13QnD4FfRjZBjnTOYY2O4pGgxtlqLh47WOzQFHm8o17TE5OSfcDoKC6vHSrN4yPju93DW0Q==",
+        "shasum": "86c5cbe946b55e7dc9d12b1936c8801a6e2d744d",
+        "tarball": "https://registry.npmjs.org/workerpool/-/workerpool-2.3.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "josdejong",
+          "email": "wjosdejong@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/workerpool-2.3.0.tgz_1506785316329_0.8559376900084317"
+      },
+      "directories": {}
+    },
+    "2.3.1": {
+      "name": "workerpool",
+      "version": "2.3.1",
+      "description": "Offload tasks to a pool of workers on node.js and in the browser",
+      "homepage": "https://github.com/josdejong/workerpool",
+      "author": {
+        "name": "Jos de Jong",
+        "email": "wjosdejong@gmail.com",
+        "url": "https://github.com/josdejong"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/josdejong/workerpool.git"
+      },
+      "keywords": [
+        "worker",
+        "web worker",
+        "cluster",
+        "pool",
+        "isomorphic"
+      ],
+      "main": "./index.js",
+      "scripts": {
+        "build": "gulp",
+        "watch": "gulp watch",
+        "test": "mocha test --timeout 10000",
+        "coverage": "istanbul cover _mocha -- test; echo \"\nCoverage report is available at ./coverage/lcov-report/index.html\""
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-util": "^3.0.7",
+        "istanbul": "^0.4.4",
+        "mocha": "^2.5.3",
+        "uglify-js": "2.8.29",
+        "webpack": "^1.13.1"
+      },
+      "dependencies": {
+        "object-assign": "4.1.1"
+      },
+      "gitHead": "d64becd2837e53230ab29b4ee50b3131fc59f2cf",
+      "bugs": {
+        "url": "https://github.com/josdejong/workerpool/issues"
+      },
+      "_id": "workerpool@2.3.1",
+      "_npmVersion": "6.1.0",
+      "_nodeVersion": "10.7.0",
+      "_npmUser": {
+        "name": "josdejong",
+        "email": "wjosdejong@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-KdF/veTxbGCtJvQv/6ncHEvbFpUqGzkxDMeACnuQrErafJoigxjgv0x4IMq4/SmSPX+AoRf1OdtkjHsmAzhJPQ==",
+        "shasum": "6872d3a749dd820d42b8390abaac20fb14ce4c81",
+        "tarball": "https://registry.npmjs.org/workerpool/-/workerpool-2.3.1.tgz",
+        "fileCount": 35,
+        "unpackedSize": 197007,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbV4ivCRA9TVsSAnZWagAA19EP/2vpOI9XhcwrEmu3stQq\nvQOpyL/4+EfcoH2IrGUdCdlrHtY1ipTkRMLWJeRgc2cg6JpRv9IxwlKg5YjD\na7JKBcuYConlTFD3EvX3t8MY5cSUExokWEhYxpI1l5e3kLwlL0+MjG0J6qJS\nzacvlNLQsWMwry1NvYIcs1E/+V2ho32rdZgOJPutviJSbbWF1JRYnAzJvFkZ\n2qJXytEp7hIt+hp7DyqNhjmNxEDuvozm7OoroGWLNgv8dXaeIcD/FDR1iba7\nLoH/1zcrddku2NwwAbDTo8B8v0pxq4L5PJJtlYQVF4HIdbncEGzf9k0f/K73\nAFQyVS7HUOZiDrC6g5JJmrqwTeMybpeu1yVQNLIBFPFcja5Mwbk1gknZ6qK+\nOrOmvvlbWXalPkBkUmY8+dEfiFIxHbhxI3VwKhZYEq3WjeOo+5OyeSc357tb\nPVT0Od+FIPUukXEAOGJJQGETrpqx8o6kWbsZlOEi31zGgqkkZIpjaL7Qqz+9\nzm1SXJfZZXCdatDCiYOkkKhb7ygtOfyLMHxnsHOblPrv/A+cmB2RlLxm7F61\n8W2KT6pTF5KhAN7ZbrucugvHZGcvOqVW3ouu1H5u+RnZoQARp+UzaN0YA9U5\nSSeGYmdaFE4xfILKaJr/dSpnNrhPvlk0hstRgR7qjZOE2PAUSbUEV0ffHNje\nSIvb\r\n=rc9h\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "josdejong",
+          "email": "wjosdejong@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/workerpool_2.3.1_1532463279011_0.39918211228428935"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.3.2": {
+      "name": "workerpool",
+      "license": " Apache-2.0",
+      "version": "2.3.2",
+      "description": "Offload tasks to a pool of workers on node.js and in the browser",
+      "homepage": "https://github.com/josdejong/workerpool",
+      "author": {
+        "name": "Jos de Jong",
+        "email": "wjosdejong@gmail.com",
+        "url": "https://github.com/josdejong"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/josdejong/workerpool.git"
+      },
+      "keywords": [
+        "worker",
+        "web worker",
+        "cluster",
+        "pool",
+        "isomorphic"
+      ],
+      "main": "./index.js",
+      "scripts": {
+        "build": "gulp",
+        "watch": "gulp watch",
+        "test": "mocha test --timeout 10000",
+        "coverage": "istanbul cover _mocha -- test; echo \"\nCoverage report is available at ./coverage/lcov-report/index.html\""
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-util": "^3.0.7",
+        "istanbul": "^0.4.4",
+        "mocha": "^2.5.3",
+        "uglify-js": "2.8.29",
+        "webpack": "^1.13.1"
+      },
+      "dependencies": {
+        "object-assign": "4.1.1"
+      },
+      "gitHead": "7463be0f0046080b89a6dedea3ff5cfd2e9f2701",
+      "bugs": {
+        "url": "https://github.com/josdejong/workerpool/issues"
+      },
+      "_id": "workerpool@2.3.2",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.10.0",
+      "_npmUser": {
+        "name": "josdejong",
+        "email": "wjosdejong@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-M9cj/NYZNwHJHuxRf8QKdWtPceFWpwcnO9jj75M6lKGBQjUoBQgOzCphsTENUNC5heEHZgs/m3Sx4iemLeTXAg==",
+        "shasum": "6bb17f31293e6b1e5e8dcdd5c2ad9122f471aaf3",
+        "tarball": "https://registry.npmjs.org/workerpool/-/workerpool-2.3.2.tgz",
+        "fileCount": 35,
+        "unpackedSize": 197121,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbk8I4CRA9TVsSAnZWagAA8hQQAIfYa70BUUmDAJ7+T82Q\nJIWdGAkrEBk48jfqM6dz4R9xKuUgMtggkWoxwaMWT9OdV2hP6QP9sQjGN6ie\nKaxZVb78IC0ruKgA7Un6fiAvWGvEQRLAHQPGjw/F16YL8F8sUAJrsI/rbI7V\nnz/JOFXvzwXLnrEIM2gea+WoVUaHn2RCOINWXdLN3zBb0PE1x2/E0+zW+pM0\nNlyCjpC+zeHCL6YYVFL7qHFJrYUTZdYKVtEAfKecFS2iNfCP15HNZ2eXTdqU\nZTixoh8QAI9kF9fdu8p7Uf7MoRHOho7Oq+XhXHi470PN7WjK2oJJgDg1FGk7\nfek/NHHeqb4jnbv7OU9MXgkiLgNgMME8P3+4JgniF7M2GrH8eYDM+v8avbX7\n+4fjnal1UD9tbXFzIGGvzTu1eBYDbuswMCXEoMakTg9dLmvvT8CQ+xy061Qe\nidODMyTbAvb4NcWeDdway0kyEA7bqIdSAk6XmsFIn2Z+SsHZelnrCb96dLXd\n/00wRLb+7ozGVwO0mUP0TmuTWgGEbIb6WmaUKxClEMK4VJ2otmy2LLJWFajG\nh6IYwneJN6gazynmA+VxFvXhfDfGh3Sr21nuMKDDLBshR4cZMWcAiH7QZyUq\nlmk5ZMcnHh9o80mY5fr676vyVUeHdYGg0c+MPQuAdy9Vg2WMnsiyzr9MT1PG\natxx\r\n=A/mJ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "josdejong",
+          "email": "wjosdejong@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/workerpool_2.3.2_1536410167520_0.5120577254721685"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.3.3": {
+      "name": "workerpool",
+      "license": "Apache-2.0",
+      "version": "2.3.3",
+      "description": "Offload tasks to a pool of workers on node.js and in the browser",
+      "homepage": "https://github.com/josdejong/workerpool",
+      "author": {
+        "name": "Jos de Jong",
+        "email": "wjosdejong@gmail.com",
+        "url": "https://github.com/josdejong"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/josdejong/workerpool.git"
+      },
+      "keywords": [
+        "worker",
+        "web worker",
+        "cluster",
+        "pool",
+        "isomorphic"
+      ],
+      "main": "./index.js",
+      "scripts": {
+        "build": "gulp",
+        "watch": "gulp watch",
+        "test": "mocha test --timeout 10000",
+        "coverage": "istanbul cover _mocha -- test; echo \"\nCoverage report is available at ./coverage/lcov-report/index.html\""
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-util": "^3.0.7",
+        "istanbul": "^0.4.4",
+        "mocha": "^2.5.3",
+        "uglify-js": "2.8.29",
+        "webpack": "^1.13.1"
+      },
+      "dependencies": {
+        "object-assign": "4.1.1"
+      },
+      "gitHead": "cfa5680426163e4119110d4bb9d35c99f822e708",
+      "bugs": {
+        "url": "https://github.com/josdejong/workerpool/issues"
+      },
+      "_id": "workerpool@2.3.3",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.10.0",
+      "_npmUser": {
+        "name": "josdejong",
+        "email": "wjosdejong@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-L1ovlYHp6UObYqElXXpbd214GgbEKDED0d3sj7pRdFXjNkb2+un/AUcCkceHizO0IVI6SOGGncrcjozruCkRgA==",
+        "shasum": "49a70089bd55e890d68cc836a19419451d7c81d7",
+        "tarball": "https://registry.npmjs.org/workerpool/-/workerpool-2.3.3.tgz",
+        "fileCount": 35,
+        "unpackedSize": 197220,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbmWSPCRA9TVsSAnZWagAA5EYP/2BwmEXMn1NV+GLD/t95\nVyDEsLlodBPvELkxczU9H49w9l7fXbFoGHOaOAo2Ui0CUoMUjfl+As00NYV/\nVsDhn/fWpKXRmYcBOaZ77GEVsS+eiGkphC1Lj0eWUVLJNGWRiopT1fZVB8bx\nqVG3EbVdq2daNvHoICZo185MzCKIp8BksKZkk7GMrDZpknCD62RnITPPnbgX\nz2poYdpqnKR2GPS2tzucpj47IrQPfFeWihYFDKSBuzwboWufBDR9gUo9DtCt\nAdpV5M2ILzuSQHM1tXEhVC7kBO/wwVZnp9lbKMiPuHXviW69ekqPN5WFkccQ\n7+me0weHqdfHzfKLqhgkMZcfFuefUwHCWsquGKhalS5akXY+dSpB+owTbtcr\nd6H+zGLB84qB5Avq6rT0J1OdOapPNG9v1MK2dtu1WzCIqY8V0K1Z5elo3jg0\n84JHA6nJad5xI+t0juYzLnSx/KTF5dLXCPYJ6Ht8VARrTUOi7s1Qsph/R3DO\nje6ja08T1yqa35ItjXOlsgHcLYVPRrdU0ZX8HgK5BSxQpjZ82NvErJXi/KQJ\nmxOqCwh3IuENMZsFfmy5IO+P5hkhqlYCR3TBwF9bvfvfcKtjHJYzI/R05FHM\nfDfBjFnw23MNb+kyGhJGs0KQTDxgzYZlrGbhq73mhUZM9VG05eWDZa2GhE25\naoul\r\n=5kUi\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "josdejong",
+          "email": "wjosdejong@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/workerpool_2.3.3_1536779406162_0.3037491929052252"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.0": {
+      "name": "workerpool",
+      "license": "Apache-2.0",
+      "version": "3.0.0",
+      "description": "Offload tasks to a pool of workers on node.js and in the browser",
+      "homepage": "https://github.com/josdejong/workerpool",
+      "author": {
+        "name": "Jos de Jong",
+        "email": "wjosdejong@gmail.com",
+        "url": "https://github.com/josdejong"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/josdejong/workerpool.git"
+      },
+      "keywords": [
+        "worker",
+        "web worker",
+        "cluster",
+        "pool",
+        "isomorphic"
+      ],
+      "main": "./index.js",
+      "scripts": {
+        "build": "gulp",
+        "watch": "gulp watch",
+        "test": "mocha test --timeout 10000",
+        "coverage": "istanbul cover _mocha -- test; echo \"\nCoverage report is available at ./coverage/lcov-report/index.html\""
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-util": "^3.0.7",
+        "istanbul": "^0.4.4",
+        "mocha": "^2.5.3",
+        "uglify-js": "2.8.29",
+        "webpack": "^1.13.1"
+      },
+      "dependencies": {
+        "object-assign": "4.1.1"
+      },
+      "gitHead": "2d7dfdbae155902c3efa4e77b542e3a2ea4e49cc",
+      "bugs": {
+        "url": "https://github.com/josdejong/workerpool/issues"
+      },
+      "_id": "workerpool@3.0.0",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.14.1",
+      "_npmUser": {
+        "name": "josdejong",
+        "email": "wjosdejong@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-R5FA5COAfCpF47lf1eismGOHR1gie5H4CFvyvJf6ALu6643Z5sZK1F/tS+c4eTBCm8hg65W+DWxkwSJBsWsfCw==",
+        "shasum": "970d960f6db7505650af925f3873ac0bcb3438d1",
+        "tarball": "https://registry.npmjs.org/workerpool/-/workerpool-3.0.0.tgz",
+        "fileCount": 33,
+        "unpackedSize": 193901,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcEAyrCRA9TVsSAnZWagAAF0sP/RCgD3adlNB1KBJleW5x\nspKAig0i7qQTpgdPTfQq13IWS0vDpMvfaDjE7sr1i6uPf9sfYDwF2TNX4uju\n3G3wDjGC8UvyVsSRZU+yZqYchh4id1AdFdHPrM3NSWkaYvTJxVD8579QuzhQ\nsHMaP8jOIh5EHNrtSsgI3Qh5yB6D/cIAeQqKTYjDq23rUbhq03k+Y1vURWyz\nH8jpvQZ4ygidxmaK0xwwRMkrzvt+mlfMq0DjW8EJrBA9bWjWurcrSbAelrOW\naZbLraMME+Ymen44J1BtphoT1yTY/cv729Mbp+4gt5LEH/cjSEOZ5GhnYM2g\n9hrsE7qQNkhYFdFe58nyUP9AySHbUbsZNNlpnTJyDgCVzagVZ/v/FspMH6FQ\nI4W7btdcw2Tu4scfhwKmkHugMOOC+BD2XegSCcKlhmPPEmSy0txjC2bf0+kZ\nDl2OXrbWLX2dqeaLKm0oX/GzJffTUib1y1mals138dtm3EmkBg2QoDTTazE6\ntpe7hI3hIJ+7EljXvnagXeYdeS4BCKyYxXMD/969gSU6+H2M7B+QQ/9nq4ZJ\nyY7pHg/YBNQdz2pdWPrtEji1YPv7YOCa7vmsGtKHUMYIMr6BuBqYm+oSbd5l\nMaf4I0AaDFQ50yYn1xe+Jz9XglJFZNIByEN/D8yDTSz7oSGVXsmGxAUR6joS\nWmnM\r\n=ZCy0\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "josdejong",
+          "email": "wjosdejong@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/workerpool_3.0.0_1544555690259_0.3201748323240994"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.1.0": {
+      "name": "workerpool",
+      "license": "Apache-2.0",
+      "version": "3.1.0",
+      "description": "Offload tasks to a pool of workers on node.js and in the browser",
+      "homepage": "https://github.com/josdejong/workerpool",
+      "author": {
+        "name": "Jos de Jong",
+        "email": "wjosdejong@gmail.com",
+        "url": "https://github.com/josdejong"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/josdejong/workerpool.git"
+      },
+      "keywords": [
+        "worker",
+        "web worker",
+        "cluster",
+        "pool",
+        "isomorphic"
+      ],
+      "main": "./index.js",
+      "scripts": {
+        "build": "gulp",
+        "watch": "gulp watch",
+        "test": "mocha test --timeout 10000",
+        "coverage": "istanbul cover _mocha -- test; echo \"\nCoverage report is available at ./coverage/lcov-report/index.html\"",
+        "prepublishOnly": "npm run build && npm run test"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-util": "^3.0.7",
+        "istanbul": "^0.4.4",
+        "mocha": "^2.5.3",
+        "uglify-js": "2.8.29",
+        "webpack": "^1.13.1"
+      },
+      "dependencies": {
+        "object-assign": "4.1.1"
+      },
+      "gitHead": "1f96361b2f94c9e2737ea2e495c7f54f46e4ce79",
+      "bugs": {
+        "url": "https://github.com/josdejong/workerpool/issues"
+      },
+      "_id": "workerpool@3.1.0",
+      "_nodeVersion": "11.10.0",
+      "_npmVersion": "6.8.0",
+      "dist": {
+        "integrity": "sha512-oMe8DTO0x3X8DqSJlzNDru0QGqAg4VfALMaBumBK7HBqkUGONvPq+JvpHvSUFAJ5gLWzXxClMSYXM5CAV0d2+Q==",
+        "shasum": "59023001aea1f10660e26fad83e219b93473c9d8",
+        "tarball": "https://registry.npmjs.org/workerpool/-/workerpool-3.1.0.tgz",
+        "fileCount": 33,
+        "unpackedSize": 213713,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcaY7VCRA9TVsSAnZWagAAPdgP/iiYRIvBQCr/+inNAFiS\na4ipCRf8a/u+rrQqb9GgsPahIXYzSoO3nZ9GheucKZbAMz1WT+7aF1H9tvzD\nPjPQ8WnjxA+xv7vo59Pk1dfjlhuXlAIioAc+IjstA3d0NvD6ogj4IMhsM9W4\njl/4ongdsAz3aTywiz3FG8bE0nEOmAOj747PYasujZDM5joQSWgqdQgKKHW+\neZyqOVqwlyvWg5BaU/h4OqwcPPUyE6TRuavHTz7bULFnlVSCYCRdsgEeqZxb\nweaQzcbxXlGkAiCJyZf6LD8pRGQ5kb14mVUgZh0Wgu6r85VEMxiCXMmJdYKo\nGpw3YmwNmBh8i+kb/NaGZ8J6lEK8+OnrNE90QgaeVK84i5JXqqul4xr9eOma\nhv3Mm1rqGcrHgCXMm2I45VVKydSo+dULd+Xastxb8W1+LYenkjDaZlSdRta3\nKo/21yPrhrTJo7hzQZqka3f5u3S24LWdNP6XeaQoQGbI8VNro+kSudQD0sy2\n0nesnQPPlFfJJRZ4P/b1kbxFcxu29Z6/eiFO81rO7AE1LZjlJya3gO1owNh3\nA783bMloJsyhc5HIfcAUDn/YqjYWQkrN+sRfpHNNniKPW2EphdI3328FHQe2\njRIKJkLQZvxNFLnozKNvCxLO6uI450hfeQYzEBDhf3b/LbAt+0+TG2i1kk6w\niPle\r\n=Bdb8\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "josdejong",
+          "email": "wjosdejong@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "josdejong",
+        "email": "wjosdejong@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/workerpool_3.1.0_1550421716486_0.7368819097008017"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.1.1": {
+      "name": "workerpool",
+      "license": "Apache-2.0",
+      "version": "3.1.1",
+      "description": "Offload tasks to a pool of workers on node.js and in the browser",
+      "homepage": "https://github.com/josdejong/workerpool",
+      "author": {
+        "name": "Jos de Jong",
+        "email": "wjosdejong@gmail.com",
+        "url": "https://github.com/josdejong"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/josdejong/workerpool.git"
+      },
+      "keywords": [
+        "worker",
+        "web worker",
+        "cluster",
+        "pool",
+        "isomorphic"
+      ],
+      "main": "./index.js",
+      "scripts": {
+        "build": "gulp",
+        "watch": "gulp watch",
+        "test": "mocha test --timeout 10000",
+        "test:debug": "mocha debug test --timeout 10000",
+        "coverage": "istanbul cover _mocha -- test; echo \"\nCoverage report is available at ./coverage/lcov-report/index.html\"",
+        "prepublishOnly": "npm run build && npm run test"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-util": "^3.0.7",
+        "istanbul": "^0.4.4",
+        "mocha": "^2.5.3",
+        "uglify-js": "2.8.29",
+        "webpack": "^1.13.1"
+      },
+      "dependencies": {
+        "object-assign": "4.1.1"
+      },
+      "gitHead": "da0c60292f5ac3db833c7aa961fd6133e7c0b5f4",
+      "bugs": {
+        "url": "https://github.com/josdejong/workerpool/issues"
+      },
+      "_id": "workerpool@3.1.1",
+      "_nodeVersion": "11.10.0",
+      "_npmVersion": "6.8.0",
+      "dist": {
+        "integrity": "sha512-VzYD/kM3Gk9L7GR0LtrcyiZA8+h8Fse503aq4WkYwRBXreHTixVEcqKLjiFS6gM0fyaEt0pjSLf1ANGQXM27cg==",
+        "shasum": "9decea76b73c2f91de1b5bec1019f8a474b3a620",
+        "tarball": "https://registry.npmjs.org/workerpool/-/workerpool-3.1.1.tgz",
+        "fileCount": 33,
+        "unpackedSize": 215072,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcdEhTCRA9TVsSAnZWagAAe5wP/1EpfK09yIuXjJiOFeKI\ngpzjke3M2ib2gry54hKaw+o8jAxkL2wpQ9NdJcp5AliRyBD5d+3OrE+M3f8L\n3WwamgqI5cZsfyDtSM4NyWe8qOnG1pwr0E0dJs1jVsrDAk1JhaL9Uyesl9SH\nPpWdjJr0MNgXLpXma1yYSA7lzZVrUwWkNzpYGupW5Skls/V0DgViDoZpV1Rx\n9CX23QXWdwkkpYj+0zyq96LXkMDGVQcX2NRe+qH/QirtOJLA7QN+rMeIgu9f\neuMhIIBh6SIKkhqY4R68zJmsQkhmjGdoikTEC1EpcyJkMZblVMBJUqjXwEfC\nTBKdLseWkGWb1Sw+/2OR1Gj6UnAGfZavmNFpqBPoPfoOPwdBMbwGknfDiRNq\nhf7pkfRkq4mbK/8xBM1Qj7QDS8WynbJzBshTci7vFWhz72/1PBp2lHs+YZ5A\nzn20/MrieteeDuCUIhhx/BaZcHMkcvjrAtW641/8sK7xn2Dsx8JKdGdNV/HB\nZR1QjHcSgtDXyjtPCwtwaF+T6Xpc/HGqDRvRWE01cttTUyPIdLXw5vVH54Qg\nxyNERXDgSmo885XiZE0dtZfpKw2/FasWd5jnFMUiwTF163+g5d3w1ta18iBS\nJLNB7OZp5DLW7WawXs/pksBpqkFXcIiSJM4e4IDUF2AODRSviV/F/cE+DQ/g\nTPdr\r\n=1zZY\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "josdejong",
+          "email": "wjosdejong@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "josdejong",
+        "email": "wjosdejong@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/workerpool_3.1.1_1551124562865_0.6998994453950906"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.1.2": {
+      "name": "workerpool",
+      "license": "Apache-2.0",
+      "version": "3.1.2",
+      "description": "Offload tasks to a pool of workers on node.js and in the browser",
+      "homepage": "https://github.com/josdejong/workerpool",
+      "author": {
+        "name": "Jos de Jong",
+        "email": "wjosdejong@gmail.com",
+        "url": "https://github.com/josdejong"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/josdejong/workerpool.git"
+      },
+      "keywords": [
+        "worker",
+        "web worker",
+        "cluster",
+        "pool",
+        "isomorphic"
+      ],
+      "main": "./index.js",
+      "scripts": {
+        "build": "gulp",
+        "watch": "gulp watch",
+        "test": "mocha test --timeout 10000",
+        "test:debug": "mocha debug test --timeout 10000",
+        "coverage": "istanbul cover _mocha -- test; echo \"\nCoverage report is available at ./coverage/lcov-report/index.html\"",
+        "prepublishOnly": "npm run build && npm run test"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-util": "^3.0.7",
+        "istanbul": "^0.4.4",
+        "mocha": "^2.5.3",
+        "uglify-js": "2.8.29",
+        "webpack": "^1.13.1"
+      },
+      "dependencies": {
+        "@babel/core": "^7.3.4",
+        "object-assign": "4.1.1",
+        "rsvp": "^4.8.4"
+      },
+      "gitHead": "52a67c7f9218a9351a90f9fec263337c57df3095",
+      "bugs": {
+        "url": "https://github.com/josdejong/workerpool/issues"
+      },
+      "_id": "workerpool@3.1.2",
+      "_nodeVersion": "11.11.0",
+      "_npmVersion": "6.7.0",
+      "dist": {
+        "integrity": "sha512-WJFA0dGqIK7qj7xPTqciWBH5DlJQzoPjsANvc3Y4hNB0SScT+Emjvt0jPPkDBUjBNngX1q9hHgt1Gfwytu6pug==",
+        "shasum": "b34e79243647decb174b7481ab5b351dc565c426",
+        "tarball": "https://registry.npmjs.org/workerpool/-/workerpool-3.1.2.tgz",
+        "fileCount": 35,
+        "unpackedSize": 223190,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJciq4QCRA9TVsSAnZWagAAnXwP/2OUst7VSeP6EVxwAIid\nEba+ZE8JvozgnwgCqn8je8V38fTp2Jys7e4Kx3wyQTCXf4XWOPFPyMwHrpkh\nCpC1APw3K4ghYudaIbJV4PhIF1f1troAO8/cEw7zQ8S51Uhh+c7oB50UagDk\nRftbHWGn/jsyyZWYwj9dxq6dtZ9X6bPP+BK+3lZt86tYthhTPIOv6M6IPj81\nfteqZLb8ko8AkNoLl5oXl9ADimFzLLzGdgLsjY6w7e3VZmJRfPmL/IdWFsA+\nkI+zAtEGfGsNvLNqwDrHJEvfel/Trv9SHeBtr4doBwxsK8swIW06Gvai5aAN\nH1nWnVJLXL0wj77VzOIkZsVNtzK1jDw42C4cZw2hY04HYkdSWipBPWtizlnH\nBnCpURbUw+7kA2JV4J5QcZATjQYSDQxv6NFfY6RxZpVRHF52TkkSvSXltABd\n+Xm15CDFUmdqeF+AMDWnfIVKTdH4BGPm3b0eXGzf50Y6e5LmBrhppX2ApKkJ\nHONkK8RDaDO4LJt+N87yRSM0KeWo7YJor+AF6nLkQnf4opS7lgBeQfp+gXCd\n88wCUhci2EkdM6TnF/BaOEzGySwntdJroCUxSI7lxxkGeLrLmWgzjHBeyqvo\nqtoYoxY/5OPQks88TLWZL5XtiwFFrtZTNhXy66qQK7t+kJ8D/7AxRiH+Xkhi\nr4o+\r\n=yIvQ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "josdejong",
+          "email": "wjosdejong@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "josdejong",
+        "email": "wjosdejong@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/workerpool_3.1.2_1552592399698_0.5988757290773279"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.0.0": {
+      "name": "workerpool",
+      "license": "Apache-2.0",
+      "version": "4.0.0",
+      "description": "Offload tasks to a pool of workers on node.js and in the browser",
+      "homepage": "https://github.com/josdejong/workerpool",
+      "author": {
+        "name": "Jos de Jong",
+        "email": "wjosdejong@gmail.com",
+        "url": "https://github.com/josdejong"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/josdejong/workerpool.git"
+      },
+      "keywords": [
+        "worker",
+        "web worker",
+        "cluster",
+        "pool",
+        "isomorphic"
+      ],
+      "main": "dist/workerpool.min.js",
+      "scripts": {
+        "build": "gulp",
+        "watch": "gulp watch",
+        "test": "npm run build && mocha test --timeout 10000",
+        "test:debug": "npm run build && mocha debug test --timeout 10000",
+        "coverage": "npm run build && istanbul cover _mocha -- test; echo \"\nCoverage report is available at ./coverage/lcov-report/index.html\"",
+        "prepublishOnly": "npm run test"
+      },
+      "devDependencies": {
+        "date-format": "2.1.0",
+        "del": "5.0.0",
+        "fancy-log": "1.3.3",
+        "find-process": "1.4.2",
+        "gulp": "4.0.2",
+        "istanbul": "0.4.5",
+        "mocha": "6.2.0",
+        "uglify-js": "3.6.0",
+        "webpack": "4.39.2"
+      },
+      "dependencies": {
+        "object-assign": "4.1.1"
+      },
+      "gitHead": "3f38c52bf52d5696202570eb3ea3093f2b228c98",
+      "bugs": {
+        "url": "https://github.com/josdejong/workerpool/issues"
+      },
+      "_id": "workerpool@4.0.0",
+      "_nodeVersion": "12.8.1",
+      "_npmVersion": "6.10.3",
+      "dist": {
+        "integrity": "sha512-t2UG1QHyqNTnQulPAIaqT5uqyLhipWePThc/4NPKzUQRbtRRNiiVlYAqOqOhgQQLcBSsOE4zEwtMXSaR7zjffQ==",
+        "shasum": "1831739445e993201274a00a4cff4aecd449683c",
+        "tarball": "https://registry.npmjs.org/workerpool/-/workerpool-4.0.0.tgz",
+        "fileCount": 30,
+        "unpackedSize": 177691,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdXVffCRA9TVsSAnZWagAArIQQAJEP/+mrCMYCzo6s9Zj5\nM441SLeJ5dcvvvnANtRDIuMhUQZxTCT2uOMJUclGx96ih05oscBEqM0YnF+k\nH9ulnqIHFF7F5UigcUx0dH9VsI79J6cUTTikYJlNxJ+RhPyeHP+LslONOB3r\nTYbvnw11QBZZvie5Nm6FmOdGrdmPDB8qxNR6tJjBwGPYP5o7od25nFsEfkoF\nTDKdi3nS462WXiEtPoiAJXph78PU0tnjesQKfvYVL2z6cJi9qjZPVbr0HHCc\n1aS6PMgmAYrs62DlQCET9FPptWKFjkWHsJ7P7Lgk4fiIFSVseiXquT07sQm6\nvNDw63yemEdwg9P4QVc1jYEmr1Uy1Tm5i/rMRayG7mp4LkQz0agKPRbiz6GJ\nJJS6wC+553Il/Ncih2Ee19ZP2w06bZCPKv72cVRSjzNRGN6WpWYlgXFZAi9r\ngWKz1iXzz7VQtjQ4wlfZ2ukMMxsz4aVjR6jRKS6aZDXxC/qYVMb24umqqCBB\niFpa7/7KXFOKRkBXf52Kus0tDsYcFCMZ2TS6AwameFn7Z9OEpcSje6rdJMSl\nMXw4GKLmQNlxAylQIOv6/JR6uQbnrQ/etFTvci4VUwpkcNDD7BXlIM1kw7+A\nO1qADRFoFQFjfoLsBLCosBCOQaLLJM7fv6/27ijrakPPh0oJgBOoXnikBayP\nNYNt\r\n=hISY\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "josdejong",
+          "email": "wjosdejong@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "josdejong",
+        "email": "wjosdejong@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/workerpool_4.0.0_1566398430408_0.6703391037838156"
+      },
+      "_hasShrinkwrap": false
+    },
+    "5.0.0": {
+      "name": "workerpool",
+      "license": "Apache-2.0",
+      "version": "5.0.0",
+      "description": "Offload tasks to a pool of workers on node.js and in the browser",
+      "homepage": "https://github.com/josdejong/workerpool",
+      "author": {
+        "name": "Jos de Jong",
+        "email": "wjosdejong@gmail.com",
+        "url": "https://github.com/josdejong"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/josdejong/workerpool.git"
+      },
+      "keywords": [
+        "worker",
+        "web worker",
+        "cluster",
+        "pool",
+        "isomorphic"
+      ],
+      "main": "dist/workerpool.min.js",
+      "scripts": {
+        "build": "gulp",
+        "watch": "gulp watch",
+        "test": "npm run build && mocha test --timeout 2000",
+        "test:debug": "npm run build && mocha debug test --timeout 10000",
+        "coverage": "npm run build && istanbul cover _mocha -- test; echo \"\nCoverage report is available at ./coverage/lcov-report/index.html\"",
+        "prepublishOnly": "npm run test"
+      },
+      "devDependencies": {
+        "date-format": "2.1.0",
+        "del": "5.1.0",
+        "fancy-log": "1.3.3",
+        "find-process": "1.4.2",
+        "gulp": "4.0.2",
+        "istanbul": "0.4.5",
+        "mocha": "6.2.0",
+        "uglify-js": "3.6.0",
+        "webpack": "4.39.2"
+      },
+      "dependencies": {},
+      "gitHead": "4360a1600cbe0fe4e9515a6db273106f59d93342",
+      "bugs": {
+        "url": "https://github.com/josdejong/workerpool/issues"
+      },
+      "_id": "workerpool@5.0.0",
+      "_nodeVersion": "12.9.0",
+      "_npmVersion": "6.10.2",
+      "dist": {
+        "integrity": "sha512-QGsdq7Bv7JBvJW5ngNB9dR8hu8T2Jd38blVKINdehHlipR1WUajiLNFBtSBC2R3zlCnTpNM1Q0o3ssnfcQt48w==",
+        "shasum": "5f6e882999172c4ed0acd09c3e25cc8f4516f30c",
+        "tarball": "https://registry.npmjs.org/workerpool/-/workerpool-5.0.0.tgz",
+        "fileCount": 39,
+        "unpackedSize": 314495,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdYqSGCRA9TVsSAnZWagAAqwAP/jAjuDaA3bSwtHsHR7uy\n4no600JUb1o2RtrP5hT3k6LlVc4+eyKFvmN9JRtwxT8AG+XNAl9uVRYlzvOb\nvis6el8ua1qK247yoBJj5UOkR6Lx6TJyHnwt+E3VIVSCYvBW2cor6i0UMTN6\nRH3bYzaAO24aGU4Dj66GiB1lVFWxPwJhY88DZXZsZLeam11m7n/9T84Gl+ZQ\nKk1zwdOQuv06CcWe2fn1S7TxYvCCVdi4Em0pvxqxscFWlTfDmss6Jd3fPFLC\nEc/dnqbfbAMQhTngNPKkeJsT2wGtfL38mZJvgD23jtkTA2lHC/7rXKZugztF\nNqT0RqdWp1CR1pQZzyXEaCFeBFQmbn8r1aMLCM/kOy0RQpNJ1i5WklyD0GUQ\nLP344gzCrXswRJzFvAyutAOAUiorzkHnqpN/m87m51vO/FlTgDX6MQHevgY2\n+/7XQ89blHyHvuz2NfRQN0exv5G2sjuSaQsuehQcaeHa0xtir23WEo4RLTpA\naphSlQvyc4kkSQI897bsNCRU/zWXwPsIa+2KPymwzLq+m7v9ktaO5uiomm+q\nZb0bSocuom3ZQRwtz/1O4nww07IdiBmxsLE6S6yNPzotydCq6avkZ/3o8p1X\nRxZNN1qpB+Py3hx0ECirF9C0K8N+8obmYm3U/wAv+Up91vrgtXrHsdpvS9eV\nCeyX\r\n=5cU1\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "josdejong",
+          "email": "wjosdejong@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "josdejong",
+        "email": "wjosdejong@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/workerpool_5.0.0_1566745733393_0.32046931055260997"
+      },
+      "_hasShrinkwrap": false
+    },
+    "5.0.1": {
+      "name": "workerpool",
+      "license": "Apache-2.0",
+      "version": "5.0.1",
+      "description": "Offload tasks to a pool of workers on node.js and in the browser",
+      "homepage": "https://github.com/josdejong/workerpool",
+      "author": {
+        "name": "Jos de Jong",
+        "email": "wjosdejong@gmail.com",
+        "url": "https://github.com/josdejong"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/josdejong/workerpool.git"
+      },
+      "keywords": [
+        "worker",
+        "web worker",
+        "cluster",
+        "pool",
+        "isomorphic"
+      ],
+      "main": "dist/workerpool.min.js",
+      "scripts": {
+        "build": "gulp",
+        "watch": "gulp watch",
+        "test": "npm run build && mocha test --timeout 2000",
+        "test:debug": "npm run build && mocha debug test --timeout 10000",
+        "coverage": "npm run build && istanbul cover _mocha -- test; echo \"\nCoverage report is available at ./coverage/lcov-report/index.html\"",
+        "prepublishOnly": "npm run test"
+      },
+      "devDependencies": {
+        "date-format": "2.1.0",
+        "del": "5.1.0",
+        "fancy-log": "1.3.3",
+        "find-process": "1.4.2",
+        "gulp": "4.0.2",
+        "istanbul": "0.4.5",
+        "mocha": "6.2.1",
+        "uglify-js": "3.6.1",
+        "webpack": "4.41.1"
+      },
+      "dependencies": {},
+      "gitHead": "01f652b46f2bea22a4db627fd21f1774cbd87dec",
+      "bugs": {
+        "url": "https://github.com/josdejong/workerpool/issues"
+      },
+      "_id": "workerpool@5.0.1",
+      "_nodeVersion": "12.11.1",
+      "_npmVersion": "6.11.3",
+      "dist": {
+        "integrity": "sha512-Q9CGaz2zLdFIyr+VKct6bYQAMzeGy7XWSw9pDGLfPuU56Cg+iWflqjFGUqMqv3iMuS8EaXQTgH0qxaPi6AuhAA==",
+        "shasum": "bbafa774066c0f43dfce947ec20403d7fb87b519",
+        "tarball": "https://registry.npmjs.org/workerpool/-/workerpool-5.0.1.tgz",
+        "fileCount": 39,
+        "unpackedSize": 315093,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdo0vqCRA9TVsSAnZWagAAPvIQAICIcNjFACz3d7X9pGT4\nyM8JV6b5A4eNeYQVmGOag2kJs63wCRwgYqstBYaWiK4268VyufbrofjFmS2L\n/xPxn2cdB+0kDn651z8azPa0aEIG61/XVax/TOhLJSr/DSN8TVr7RI7A0s0z\nJ25Wkn48OGzbwEPgalVMEjjJz7QCIb1bRB+10MEBwt4mQ8XbnyOF/pX7/7ZS\nwRDG/BoizUVUTd6bj/U6zSK6Pavx9IwwQBLpmCJ3EZHEj3ymgVavNoBfQeqS\nXTn7UtwdKmNZsmq6sPOVk1ltAR1oBbzA0/mqkCLf5jnePCA8oQ2RgW+MbmWb\nvDPgvdrNL7pEIWbI1luEUWN7rEhjBSbCP+terF2uhrXKddRyk3tNme8v3hgf\nI53cPS8Vn4fVVwxuaAwA/0n+079FWuEqSwmA/R3U/sn8vjBC7DDkxbY9zDIc\nArlotgmKn2U3EwbMGekr0r88/Z4rqbQ5f1RRoh5UdyDPVMilQxoJGKh9G/t1\nchbKayS1wvs3rwAvKHdya/g53Xgj8vkdIObqQ+9dChmWAXeDnoGv6nPrFuW/\nxZU+wqpAUandhVaTPnnXpeK0NwBbqqttJ2K2BupGlnVyWAQ0Hbp2DxqJS3oL\nPTFQntFzE/varXR9VE65tw2dfsS+5wwmNxGvWsTZdKVk4yueT+lQkLe7vkGr\nYl0A\r\n=WOLp\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "josdejong",
+          "email": "wjosdejong@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "josdejong",
+        "email": "wjosdejong@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/workerpool_5.0.1_1570982889427_0.24894809719393307"
+      },
+      "_hasShrinkwrap": false
+    },
+    "5.0.2": {
+      "name": "workerpool",
+      "license": "Apache-2.0",
+      "version": "5.0.2",
+      "description": "Offload tasks to a pool of workers on node.js and in the browser",
+      "homepage": "https://github.com/josdejong/workerpool",
+      "author": {
+        "name": "Jos de Jong",
+        "email": "wjosdejong@gmail.com",
+        "url": "https://github.com/josdejong"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/josdejong/workerpool.git"
+      },
+      "keywords": [
+        "worker",
+        "web worker",
+        "cluster",
+        "pool",
+        "isomorphic"
+      ],
+      "main": "dist/workerpool.min.js",
+      "scripts": {
+        "build": "gulp",
+        "watch": "gulp watch",
+        "test": "npm run build && mocha test --timeout 2000",
+        "test:debug": "npm run build && mocha debug test --timeout 10000",
+        "coverage": "npm run build && istanbul cover _mocha -- test; echo \"\nCoverage report is available at ./coverage/lcov-report/index.html\"",
+        "prepublishOnly": "npm run test"
+      },
+      "devDependencies": {
+        "date-format": "3.0.0",
+        "del": "5.1.0",
+        "fancy-log": "1.3.3",
+        "find-process": "1.4.2",
+        "gulp": "4.0.2",
+        "istanbul": "0.4.5",
+        "mocha": "6.2.2",
+        "uglify-js": "3.6.8",
+        "webpack": "4.41.2",
+        "handlebars": "4.5.1"
+      },
+      "dependencies": {},
+      "gitHead": "99044295241d2949ced685ca49dd0fcbdae01d45",
+      "bugs": {
+        "url": "https://github.com/josdejong/workerpool/issues"
+      },
+      "_id": "workerpool@5.0.2",
+      "_nodeVersion": "12.13.0",
+      "_npmVersion": "6.12.0",
+      "dist": {
+        "integrity": "sha512-RsXfHGFzbqrfrExTN1TyZobWXCN6+vbn9B1CsZ5zQ2ASA2kQaYONCGOAT88Ew+kNSaRq/XmApRC/HRSv9Z98Ng==",
+        "shasum": "8fd8f6c7250710b9c3143d5f7494db3b6633ce6e",
+        "tarball": "https://registry.npmjs.org/workerpool/-/workerpool-5.0.2.tgz",
+        "fileCount": 39,
+        "unpackedSize": 315438,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdwqeuCRA9TVsSAnZWagAAWaAP/jvTityddeKaTSV7S/Z7\nzjL+doC92M16Reqvp8VgMYTI3AATnD8oLWPAebcnWe1w1zu+WqYo6zm+6/9v\np93z2EtW9xKix1neQpjMF93N2bd3kWnVRdpa25NbJpcaWsm1IoyyaL1c2HNG\nUmXE3bgmzXULK9yXeKBY/XNfC/NZuPhhyXGUlJome+108KzRLzk6KUt261ZE\nssPmxwj42KbfLip5KXSMCAa17MeR9MDVbdkrbV+LKxpC3mdWk+1RFgA6Yz3L\np6OJGZNm9uFKLzxg1mq40GAsv5Gwy4EAXrdxuFCRhNCoPLNdxQcSonyr1Y2c\nzMQYSyXGx7lYsWVH6BSCmvOVyYOY+/6an8MWZxRZXwpFj0MHpoR5FbJrELTB\noGG66KAljfIzguY5Q+tZFmmnrmEQraF9RnrxojSSgmmOIFZ4Hdy9LjyTs5r7\noz2lSlL3RxUMBz5Zs0lQEC4s0Cg4CsVGk7YCbwOH3eYtjjEA03w9nTZjQO8l\nyowggcrDFkeZ572lpnfq6UkW+bpunc71I72EaGMWP1kY9agKOM0yb1YE+sQX\nzOOzz70sszCSiN/s+MCTPVC1NpAPdHs+UIWfqt5l66uFcAbr1TaKgbS/K4RB\nvvJSBWjClZ2PKSEoJjT3aXg540mxRNO3Hc/AvXRxqCs2+xk+8wJ+a+rWpEAK\n9hcv\r\n=MZ+X\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "josdejong",
+          "email": "wjosdejong@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "josdejong",
+        "email": "wjosdejong@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/workerpool_5.0.2_1573037997572_0.6798354443686156"
+      },
+      "_hasShrinkwrap": false
+    },
+    "5.0.3": {
+      "name": "workerpool",
+      "license": "Apache-2.0",
+      "version": "5.0.3",
+      "description": "Offload tasks to a pool of workers on node.js and in the browser",
+      "homepage": "https://github.com/josdejong/workerpool",
+      "author": {
+        "name": "Jos de Jong",
+        "email": "wjosdejong@gmail.com",
+        "url": "https://github.com/josdejong"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/josdejong/workerpool.git"
+      },
+      "keywords": [
+        "worker",
+        "web worker",
+        "cluster",
+        "pool",
+        "isomorphic"
+      ],
+      "main": "dist/workerpool.min.js",
+      "scripts": {
+        "build": "gulp",
+        "watch": "gulp watch",
+        "test": "npm run build && mocha test --timeout 2000",
+        "test:debug": "npm run build && mocha debug test --timeout 10000",
+        "coverage": "npm run build && istanbul cover _mocha -- test; echo \"\nCoverage report is available at ./coverage/lcov-report/index.html\"",
+        "prepublishOnly": "npm run test"
+      },
+      "devDependencies": {
+        "date-format": "3.0.0",
+        "del": "5.1.0",
+        "fancy-log": "1.3.3",
+        "find-process": "1.4.3",
+        "gulp": "4.0.2",
+        "istanbul": "0.4.5",
+        "mocha": "6.2.2",
+        "uglify-js": "3.7.2",
+        "webpack": "4.41.4",
+        "handlebars": "4.5.3"
+      },
+      "dependencies": {},
+      "gitHead": "f8d488ef75b1319da3621c6c8e14a2fa304794e8",
+      "bugs": {
+        "url": "https://github.com/josdejong/workerpool/issues"
+      },
+      "_id": "workerpool@5.0.3",
+      "_nodeVersion": "12.13.1",
+      "_npmVersion": "6.12.1",
+      "dist": {
+        "integrity": "sha512-MjpH/ftD/Wk61cgpV9+j86qOlVRwfVPOg/C0+XtdfhBMdKmCnSPCGZAaYg2iGNMXbpp5weJjbFJtm5KP884dsQ==",
+        "shasum": "3f301eb1933de46a2096e049755ef85929541191",
+        "tarball": "https://registry.npmjs.org/workerpool/-/workerpool-5.0.3.tgz",
+        "fileCount": 39,
+        "unpackedSize": 315799,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeALSsCRA9TVsSAnZWagAAKmUQAJovSyv4Rqa5Uyb93fYC\nJZyQCsdSiUX4+Y34vdTSmNV8bIB33HikIT6UOr+DvKK5LVxZlDo4Cp9sifzx\nJ2jMTl+lfLxoDW2QC7bb6IdS7exoujyvV6eREiki3vL99fTk2jUD4WikHwNh\naitwGxHV5ofB+WXe6W5CzgXBpjLZbBYiXxdj6lMHoGyb+NpwN86smNld2l/R\nKK4Bu3cYy+BOfdzU80zIUNQclqgETjRdyRbh2x4ouEdsu0jjJ7kbYuW+i5qg\n1xIg43G16mPZn8v0rkQwIFuf8xLVCjJcp4Vv+qU2RGxomQBtOs577k82neyg\nRp2URcsE5ZdGRQVt1ZnnYs/dp/M13PRHilJpHN7IUliamgFXWDxTldapXveN\ncrVFgsWxvdrb0PTTpW3IfID2VOv67Tu+15eAYV6CURPBIJf01MEroNmnUvIW\nG2uqrmxCZC7160vzfUjm7bonhrkj6QvRozLcpziAfrGRycfbIAYc0G3zcewT\nmrUfKiOyzc/3UUaAaPfnUY9bk6E8/KXWqZgktJatcil31OlxX8EgVsnn7210\nmRjq7iimtWLupmClNUVoaWqMjwWpvpD0dy8D6Ix9taR21ynaTCuDYwQa4DbC\nySJh7Z3Sh5yVmAu15c7kB+AGvKzKXXQDOQgph0z9JjoZPDiHk20cwwU0LZ0F\nMEK7\r\n=5VcL\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "josdejong",
+          "email": "wjosdejong@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "josdejong",
+        "email": "wjosdejong@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/workerpool_5.0.3_1577104555874_0.8334728345925664"
+      },
+      "_hasShrinkwrap": false
+    },
+    "5.0.4": {
+      "name": "workerpool",
+      "license": "Apache-2.0",
+      "version": "5.0.4",
+      "description": "Offload tasks to a pool of workers on node.js and in the browser",
+      "homepage": "https://github.com/josdejong/workerpool",
+      "author": {
+        "name": "Jos de Jong",
+        "email": "wjosdejong@gmail.com",
+        "url": "https://github.com/josdejong"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/josdejong/workerpool.git"
+      },
+      "keywords": [
+        "worker",
+        "web worker",
+        "cluster",
+        "pool",
+        "isomorphic"
+      ],
+      "main": "dist/workerpool.min.js",
+      "scripts": {
+        "build": "gulp",
+        "watch": "gulp watch",
+        "test": "npm run build && mocha test --timeout 2000",
+        "test:debug": "npm run build && mocha debug test --timeout 10000",
+        "coverage": "npm run build && istanbul cover _mocha -- test; echo \"\nCoverage report is available at ./coverage/lcov-report/index.html\"",
+        "prepublishOnly": "npm run test"
+      },
+      "devDependencies": {
+        "date-format": "3.0.0",
+        "del": "5.1.0",
+        "fancy-log": "1.3.3",
+        "find-process": "1.4.3",
+        "gulp": "4.0.2",
+        "istanbul": "0.4.5",
+        "mocha": "6.2.2",
+        "uglify-js": "3.7.3",
+        "webpack": "4.41.5",
+        "handlebars": "4.5.3"
+      },
+      "dependencies": {},
+      "gitHead": "644223820c10530dacd908e67963e82b67a59531",
+      "bugs": {
+        "url": "https://github.com/josdejong/workerpool/issues"
+      },
+      "_id": "workerpool@5.0.4",
+      "_nodeVersion": "13.5.0",
+      "_npmVersion": "6.13.4",
+      "dist": {
+        "integrity": "sha512-Sywova24Ow2NQ24JPB68bI89EdqMDjUXo4OpofK/QMD7C2ZVMloYBgQ5J3PChcBJHj2vspsmGx1/3nBKXtUkXQ==",
+        "shasum": "4f67cb70ff7550a27ab94de25b0b843cd92059a2",
+        "tarball": "https://registry.npmjs.org/workerpool/-/workerpool-5.0.4.tgz",
+        "fileCount": 39,
+        "unpackedSize": 316801,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeCx7ZCRA9TVsSAnZWagAAzYwP/A563Pn3PeGUZjw8yV2E\n6Z9dZx3oI2xW8GjQqVfDGEEqW29DQbqv+bfOHsFh5x4CtJNDKhy2qB5tRyz6\n9LbmNq2ixwNHAEl911+LGS3JUKZhAoTLMv7I/kwBkDmAihKaD6/9zNaj7aT0\nv1VTZ3eiry5RiXR1VgC+Ng/mNIaP1DlKUzIINRCfJMw1EWYnV6UtmpTLhN2k\nV4oqaDJNF7j27KJpvxmIMY3F/VwjNF1gdZdi1U2B5IBCdoTPQPy7NsS2XPaS\nlYDSH8ZsOCeKZev0RNHG7wC4iUytcco43hy6dFIWHn0a8ZjvWNMxbLY+dFL6\n8xUBpxWs9dYuXsxw5IHjkStSBkUnEy9HDs3i4LXhki261ltdJAPyOcIEcgzR\nzFfSYidRK1qJgZc90DPa26h9LpPxpK+tee0EWZV169QKcZwnysoN78dTdy/v\nVCUpb0Oyn2LW53udOmXbEPpbmXQ5n0KxF2SMSgEYAbrjD7butNh53uPwRHc9\nnJPq3Ng5E9/ySlD2Jr8lCgr6sgdUqVCGYHwo/WYml0480orgURulcWG7HtN5\n09yX/dStbc/AvRkDFpdwAzz5YoBiPtJ5Wh435g/unolYk5PIF1LodDvTHEix\n5jgVh6dwYuYMBWOouloMONkAOF3m4tXKbphr4heU91uVzDjFi7WQ2cDjU1YT\nwSKn\r\n=/hWg\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "josdejong",
+          "email": "wjosdejong@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "josdejong",
+        "email": "wjosdejong@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/workerpool_5.0.4_1577787097076_0.16626308804204593"
+      },
+      "_hasShrinkwrap": false
+    },
+    "6.0.0": {
+      "name": "workerpool",
+      "license": "Apache-2.0",
+      "version": "6.0.0",
+      "description": "Offload tasks to a pool of workers on node.js and in the browser",
+      "homepage": "https://github.com/josdejong/workerpool",
+      "author": {
+        "name": "Jos de Jong",
+        "email": "wjosdejong@gmail.com",
+        "url": "https://github.com/josdejong"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/josdejong/workerpool.git"
+      },
+      "keywords": [
+        "worker",
+        "web worker",
+        "cluster",
+        "pool",
+        "isomorphic"
+      ],
+      "main": "src/index.js",
+      "browser": "dist/workerpool.js",
+      "scripts": {
+        "build": "gulp",
+        "watch": "gulp watch",
+        "test": "npm run build && mocha test --timeout 2000",
+        "test:debug": "npm run build && mocha debug test --timeout 10000",
+        "coverage": "npm run build && istanbul cover _mocha -- test; echo \"\nCoverage report is available at ./coverage/lcov-report/index.html\"",
+        "_prepublishOnly": "npm run test"
+      },
+      "devDependencies": {
+        "date-format": "3.0.0",
+        "del": "5.1.0",
+        "fancy-log": "1.3.3",
+        "find-process": "1.4.3",
+        "gulp": "4.0.2",
+        "handlebars": "4.7.6",
+        "istanbul": "0.4.5",
+        "mocha": "7.1.2",
+        "uglify-js": "3.9.2",
+        "webpack": "4.43.0"
+      },
+      "dependencies": {},
+      "gitHead": "7caa50b74003adfdaac326a0645e592776fef285",
+      "bugs": {
+        "url": "https://github.com/josdejong/workerpool/issues"
+      },
+      "_id": "workerpool@6.0.0",
+      "_nodeVersion": "14.1.0",
+      "_npmVersion": "6.14.4",
+      "dist": {
+        "integrity": "sha512-fU2OcNA/GVAJLLyKUoHkAgIhKb0JoCpSjLC/G2vYKxUjVmQwGbRVeoPJ1a8U4pnVofz4AQV5Y/NEw8oKqxEBtA==",
+        "shasum": "85aad67fa1a2c8ef9386a1b43539900f61d03d58",
+        "tarball": "https://registry.npmjs.org/workerpool/-/workerpool-6.0.0.tgz",
+        "fileCount": 41,
+        "unpackedSize": 428461,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeu8ktCRA9TVsSAnZWagAASY4P+QBRzOE0Kcl2q74+MleU\nv722FMda6IDNjg1XWhRppP33enG1TM945VaAGOW9QgPa0kX5rGu5jfvj7srF\nDZBqvang2F+X3zaRVK+Lg82hFxehIpcbC3gAYx3KrL/A3KMYh9+JQQv/pWQw\nun25Yq5fUQQqrLImf5vm5y5c90AE7OToTBC5BnsLnX5/gKvdn95B05tqxzPG\nEOxiFg8pJ/YG/cR5Dluw/DNTNcHGI08UXAr3b1Lf9tdUu8MIi8jxHtqwgHKN\nDibGemcHrITRNIMlsLEuqN1Ehh5Da6p8vjm3TPX9U6ku2oAqcg6bDFZ47TpG\nP6xQObC1tdMBCLnMoFW9xp9pGeRJqXRhLKw1CWt1TC5SDC5m/ZSRJwhCgojK\nXrChrGWeiEmPzxpSuUcXCGPbmQpNEmJP4pOZPDQWdX4A+xYeXfGFpR1TGpg+\n+UvA+dZv3YItrEkmDw5Z5NAJS/A0Wen8SBCHxQ7PzyIs+lrbNMejIWtP4BzD\nA9VS8TYfcsOoDw8ljK0ko6QfIK2puLhS50oZ+h2hJLvqb/owR+o8iuVOJGsU\nmRmW1hfijGwnBDpCrl3UUDJsu9QTgLo6rTbHBjhtCOdJ8BqBdmBo5yrJFhH5\nQKc9O1NSU5Si2j2jthcHsNs3GdsiPpRiwEsbHlqzLVG+5Gsek1yMriUwAVHF\nrhR2\r\n=LldN\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "josdejong",
+          "email": "wjosdejong@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "josdejong",
+        "email": "wjosdejong@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/workerpool_6.0.0_1589365037377_0.8295295438984958"
+      },
+      "_hasShrinkwrap": false
+    },
+    "6.0.1": {
+      "name": "workerpool",
+      "license": "Apache-2.0",
+      "version": "6.0.1",
+      "description": "Offload tasks to a pool of workers on node.js and in the browser",
+      "homepage": "https://github.com/josdejong/workerpool",
+      "author": {
+        "name": "Jos de Jong",
+        "email": "wjosdejong@gmail.com",
+        "url": "https://github.com/josdejong"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/josdejong/workerpool.git"
+      },
+      "keywords": [
+        "worker",
+        "web worker",
+        "cluster",
+        "pool",
+        "isomorphic"
+      ],
+      "main": "src/index.js",
+      "browser": "dist/workerpool.js",
+      "scripts": {
+        "build": "gulp",
+        "watch": "gulp watch",
+        "test": "npm run build && mocha test --timeout 2000",
+        "test:debug": "npm run build && mocha debug test --timeout 10000",
+        "coverage": "npm run build && istanbul cover _mocha -- test; echo \"\nCoverage report is available at ./coverage/lcov-report/index.html\"",
+        "prepublishOnly": "npm run test"
+      },
+      "devDependencies": {
+        "date-format": "3.0.0",
+        "del": "5.1.0",
+        "fancy-log": "1.3.3",
+        "find-process": "1.4.3",
+        "gulp": "4.0.2",
+        "handlebars": "4.7.6",
+        "istanbul": "0.4.5",
+        "mocha": "8.1.3",
+        "uglify-js": "3.10.4",
+        "webpack": "4.44.2"
+      },
+      "dependencies": {},
+      "gitHead": "97a2e60ba7e3e60520317165e17c0a442481a2e4",
+      "bugs": {
+        "url": "https://github.com/josdejong/workerpool/issues"
+      },
+      "_id": "workerpool@6.0.1",
+      "_nodeVersion": "14.10.0",
+      "_npmVersion": "6.14.8",
+      "dist": {
+        "integrity": "sha512-4I1YJngJuIAsJHOOJNPHQUjoA/Kr1QNtdRoPX8w92BtNy2pIo7zr6hQHDqm3d0CWnxmfcWsqxcFWN1Ni3w4C+g==",
+        "shasum": "9e661102e074138125cb12197a7867547f2558d4",
+        "tarball": "https://registry.npmjs.org/workerpool/-/workerpool-6.0.1.tgz",
+        "fileCount": 21,
+        "unpackedSize": 282358,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfaz8lCRA9TVsSAnZWagAAR/4P/0JFHHynH9q6j+a51kVT\n2zgQj8FKt3iH5sQcwplbbn64A3wn2gd0iZmjsRkQZDdt+vdspF3QhCoG9YkC\n1bdN7A7LEmA7WQiXcdstPJkVdD7CLwgsS0YgZ+ebq4UQhSYndD2EJJEn34zd\ndLTnV/0AkT4HyeoKZo/3CtAz3IJMAdp8n26lTaudJsGpucgPr3SNAjpb2E99\nWZl1+fuRo7J99L8UoSRB6grNANQOOruNLqAumC3TxPOjvoPY/yS2yVLEAGLE\nb1mPQVaUtzx/YNB5wxWmiCmd0/sPJVwum1WPWB390WGJyuBnDIh3uJZJ9VR0\nzXLjBUQg8b/Og6BKVZKqec6780W3twtRep3ZYgRNuVvZUK/uTNqu42h5EqeR\nvdk0Iw6FtyOtJ1DQ5SSHFXonKRBRYVqxdgpol9U/BvrlCObULpzWqt/Q/Hk9\n+6KOPCGdI/bKEfkxRoIVv1uucA7qWQzaf2GaN/G8fyKu5wt8Nwr2MW6A3GAx\nfFjJE3HSryygM7LdP+qdukLC1Vl4fO3jwWBSDKljUr7WHMomtsDf6C+Qx5uQ\nIUkW/0mUPheSPRpMmPxcAGR2Q7PwrBpn6oLDQ1Kn3UXqWfhe9vUjO89lSOiE\nzb05l2ILY2FimwhiW9tMR4NtOzQjpR0n3YImHVq5CmQ7C/zhK7XB3WNJepjh\n5gfH\r\n=EqQR\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "josdejong",
+          "email": "wjosdejong@gmail.com"
+        },
+        {
+          "name": "stefanpenner",
+          "email": "stefan.penner@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "josdejong",
+        "email": "wjosdejong@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/workerpool_6.0.1_1600864036406_0.2853166772057636"
+      },
+      "_hasShrinkwrap": false
+    },
+    "6.0.2": {
+      "name": "workerpool",
+      "license": "Apache-2.0",
+      "version": "6.0.2",
+      "description": "Offload tasks to a pool of workers on node.js and in the browser",
+      "homepage": "https://github.com/josdejong/workerpool",
+      "author": {
+        "name": "Jos de Jong",
+        "email": "wjosdejong@gmail.com",
+        "url": "https://github.com/josdejong"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/josdejong/workerpool.git"
+      },
+      "keywords": [
+        "worker",
+        "web worker",
+        "cluster",
+        "pool",
+        "isomorphic"
+      ],
+      "main": "src/index.js",
+      "browser": "dist/workerpool.js",
+      "scripts": {
+        "build": "gulp",
+        "watch": "gulp watch",
+        "test": "npm run build && mocha test --timeout 2000",
+        "test:debug": "npm run build && mocha debug test --timeout 10000",
+        "coverage": "npm run build && istanbul cover _mocha -- test; echo \"\nCoverage report is available at ./coverage/lcov-report/index.html\"",
+        "prepublishOnly": "npm run test"
+      },
+      "devDependencies": {
+        "date-format": "3.0.0",
+        "del": "6.0.0",
+        "fancy-log": "1.3.3",
+        "find-process": "1.4.3",
+        "gulp": "4.0.2",
+        "handlebars": "4.7.6",
+        "istanbul": "0.4.5",
+        "mocha": "8.1.3",
+        "uglify-js": "3.11.0",
+        "webpack": "4.44.2"
+      },
+      "dependencies": {},
+      "gitHead": "cb94aad3f50ab8bf871f5b619bb09c7628ecc4fa",
+      "bugs": {
+        "url": "https://github.com/josdejong/workerpool/issues"
+      },
+      "_id": "workerpool@6.0.2",
+      "_nodeVersion": "14.13.0",
+      "_npmVersion": "6.14.8",
+      "dist": {
+        "integrity": "sha512-DSNyvOpFKrNusaaUwk+ej6cBj1bmhLcBfj80elGk+ZIo5JSkq+unB1dLKEOcNfJDZgjGICfhQ0Q5TbP0PvF4+Q==",
+        "shasum": "e241b43d8d033f1beb52c7851069456039d1d438",
+        "tarball": "https://registry.npmjs.org/workerpool/-/workerpool-6.0.2.tgz",
+        "fileCount": 21,
+        "unpackedSize": 286782,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfeFdcCRA9TVsSAnZWagAAz2MP+gJaBXuAdeYGC7zDW41B\nR1hr8IAF8fj+RxI++LE6YMwkS3x92uZANi09ShHX4dk7rr3Ae9HQY0OJK1qP\nyJpP14lqOolMs3Ll5omKWpZWBxAkphUJDufdJaLF9dA0EL3tw/8faOCJZGPl\n8SSs5O8loy38zhx4newXiODYy7gqSPR/a0VCGEnbqq4s9kYr1iXsZ7IqajSK\ny+5EuTYOh9sMLkOLUM1S6ZM3TfFgdNQTtDLx1qK7bbZi2ZewVyR6USxLxsu5\nqDFYXxWgZXjmIxIQqhVe3dHY7vW9lj2Omvh5T4DSDqmstdLwMRmV40Svw2h/\nHpSR9pKOCdiRmfc5hiBLEysIzJay2onu+k6PJXhdSbqwIWZGTRbgtrIhMf94\n3qIhX4oxGQxjwwVaZUYOnYVGUY/VV21LFfhVwQMsKVZoAu+JlaPwG5RO/nXK\nkYd9A081vz7CfM/yLMJTwof2VIGYkExUntZ900FzYaDYU44XZqb3h/3vkr1/\n1KG96R2vVXVEHh8aOEQGb8Jaxl4VZxhOHo19h5KiWdVp260penFSEVJWmLRY\nrRXU1UVpBdsYxXbSOlV5iZEcPOiDaES+jQfF4z+LAQGoV0oS8NZU9PLMs/Gg\ncc8PX7Q0+C3xuteFbmr9+nC1ocGNMAO0Za0i1ntBjf9Tc4L35Y5AqVbrZqDd\n7n6r\r\n=oOBx\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "josdejong",
+          "email": "wjosdejong@gmail.com"
+        },
+        {
+          "name": "stefanpenner",
+          "email": "stefan.penner@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "josdejong",
+        "email": "wjosdejong@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/workerpool_6.0.2_1601722204271_0.18401677957315066"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# workerpool\n\n\n\n**workerpool** offers an easy way to create a pool of workers for both dynamically offloading computations as well as managing a pool of dedicated workers. **workerpool** basically implements a [thread pool pattern](http://en.wikipedia.org/wiki/Thread_pool_pattern). There is a pool of workers to execute tasks. New tasks are put in a queue. A worker executes one task at a time, and once finished, picks a new task from the queue. Workers can be accessed via a natural, promise based proxy, as if they are available straight in the main application.\n\n**workerpool** runs on node.js, Chrome, Firefox, Opera, Safari, and IE10+.\n\n\n## Features\n\n- Easy to use\n- Runs in the browser and on node.js\n- Dynamically offload functions to a worker\n- Access workers via a proxy\n- Cancel running tasks\n- Set a timeout on tasks\n- Handles crashed workers\n- Small: 5 kB minified and gzipped\n\n\n## Why\n\nJavaScript is based upon a single event loop which handles one event at a time. Jeremy Epstein [explains this clearly](http://greenash.net.au/thoughts/2012/11/nodejs-itself-is-blocking-only-its-io-is-non-blocking/):\n\n> In Node.js everything runs in parallel, except your code.\n> What this means is that all I/O code that you write in Node.js is non-blocking,\n> while (conversely) all non-I/O code that you write in Node.js is blocking.\n\nThis means that CPU heavy tasks will block other tasks from being executed. In case of a browser environment, the browser will not react to user events like a mouse click while executing a CPU intensive task (the browser \"hangs\"). In case of a node.js server, the server will not respond to any new request while executing a single, heavy request.\n\nFor front-end processes, this is not a desired situation.\nTherefore, CPU intensive tasks should be offloaded from the main event loop onto dedicated *workers*. In a browser environment, [Web Workers](http://www.html5rocks.com/en/tutorials/workers/basics/) can be used. In node.js, [child processes](https://nodejs.org/api/child_process.html) and [worker_threads](https://nodejs.org/api/worker_threads.html) are available. An application should be split in separate, decoupled parts, which can run independent of each other in a parallelized way. Effectively, this results in an architecture which achieves concurrency by means of isolated processes and message passing.\n\n\n## Install\n\nInstall via npm:\n\n    npm install workerpool\n\n\n## Load\n\nTo load workerpool in a node.js application (both main application as well as workers):\n\n```js\nconst workerpool = require('workerpool');\n```\n\nTo load workerpool in the browser:\n\n```html\n<script src=\"workerpool.js\"></script>\n```\n\nTo load workerpool in a web worker in the browser:\n\n```js\nimportScripts('workerpool.js');\n```\n\n\n## Use\n\n### Offload functions dynamically\n\nIn the following example there is a function `add`, which is offloaded dynamically to a worker to be executed for a given set of arguments.\n\n**myApp.js**\n```js\nconst workerpool = require('workerpool');\nconst pool = workerpool.pool();\n\nfunction add(a, b) {\n  return a + b;\n}\n\npool.exec(add, [3, 4])\n    .then(function (result) {\n      console.log('result', result); // outputs 7\n    })\n    .catch(function (err) {\n      console.error(err);\n    })\n    .then(function () {\n      pool.terminate(); // terminate all workers when done\n    });\n```\n\nNote that both function and arguments must be static and stringifiable, as they need to be sent to the worker in a serialized form. In case of large functions or function arguments, the overhead of sending the data to the worker can be significant.\n\n\n### Dedicated workers\n\nA dedicated worker can be created in a separate script, and then used via a worker pool.\n\n**myWorker.js**\n```js\nconst workerpool = require('workerpool');\n\n// a deliberately inefficient implementation of the fibonacci sequence\nfunction fibonacci(n) {\n  if (n < 2) return n;\n  return fibonacci(n - 2) + fibonacci(n - 1);\n}\n\n// create a worker and register public functions\nworkerpool.worker({\n  fibonacci: fibonacci\n});\n```\n\nThis worker can be used by a worker pool:\n\n**myApp.js**\n```js\nconst workerpool = require('workerpool');\n\n// create a worker pool using an external worker script\nconst pool = workerpool.pool(__dirname + '/myWorker.js');\n\n// run registered functions on the worker via exec\npool.exec('fibonacci', [10])\n    .then(function (result) {\n      console.log('Result: ' + result); // outputs 55\n    })\n    .catch(function (err) {\n      console.error(err);\n    })\n    .then(function () {\n      pool.terminate(); // terminate all workers when done\n    });\n\n// or run registered functions on the worker via a proxy:\npool.proxy()\n    .then(function (worker) {\n      return worker.fibonacci(10);\n    })\n    .then(function (result) {\n      console.log('Result: ' + result); // outputs 55\n    })\n    .catch(function (err) {\n      console.error(err);\n    })\n    .then(function () {\n      pool.terminate(); // terminate all workers when done\n    });\n```\n\nWorker can also initialize asynchronously:\n\n**myAsyncWorker.js**\n```js\ndefine(['workerpool/dist/workerpool'], function(workerpool) {\n\n  // a deliberately inefficient implementation of the fibonacci sequence\n  function fibonacci(n) {\n    if (n < 2) return n;\n    return fibonacci(n - 2) + fibonacci(n - 1);\n  }\n\n  // create a worker and register public functions\n  workerpool.worker({\n    fibonacci: fibonacci\n  });\n\n});\n```\n\n## Examples\n\nExamples are available in the examples directory:\n\n[https://github.com/josdejong/workerpool/tree/master/examples](https://github.com/josdejong/workerpool/tree/master/examples)\n\n\n## API\n\nThe API of workerpool consists of two parts: a function `workerpool.pool` to create a worker pool, and a function `workerpool.worker` to create a worker.\n\n### pool\n\nA workerpool can be created using the function `workerpool.pool`:\n\n`workerpool.pool([script: string] [, options: Object]) : Pool`\n\nWhen a `script` argument is provided, the provided script will be started as a dedicated worker. When no `script` argument is provided, a default worker is started which can be used to offload functions dynamically via `Pool.exec`. Note that on node.js, `script` must be an absolute file path like `__dirname + '/myWorker.js'`. In a browser environment, `script` can also be a data URL like `'data:application/javascript;base64,...'`. This allows embedding the bundled code of a worker in your main application. See `examples/embeddedWorker` for a demo.\n\nThe following options are available:\n\n- `minWorkers: number | 'max'`. The minimum number of workers that must be initialized and kept available. Setting this to `'max'` will create `maxWorkers` default workers (see below).\n- `maxWorkers: number`. The default number of maxWorkers is the number of CPU's minus one. When the number of CPU's could not be determined (for example in older browsers), `maxWorkers` is set to 3.\n- `maxQueueSize: number`. The maximum number of tasks allowed to be queued. Can be used to prevent running out of memory. If the maximum is exceeded, adding a new task will throw an error. The default value is `Infinity`.\n- `workerType: 'auto' | 'web' | 'process' | 'thread'`.\n  - In case of `'auto'` (default), workerpool will automatically pick a suitable type of worker: when in a browser environment, `'web'` will be used. When in a node.js environment, `worker_threads` will be used if available (Node.js >= 11.7.0), else `child_process` will be used.\n  - In case of `'web'`, a Web Worker will be used. Only available in a browser environment.\n  - In case of `'process'`, `child_process` will be used. Only available in a node.js environment.\n  - In case of `'thread'`, `worker_threads` will be used. If `worker_threads` are not available, an error is thrown. Only available in a node.js environment.\n\n> Important note on `'workerType'`: when sending and receiving primitive data types (plain JSON) from and to a worker, the different worker types (`'web'`, `'process'`, `'thread'`) can be used interchangeably. However, when using more advanced data types like buffers, the API and returned results can vary. In these cases, it is best not to use the `'auto'` setting but have a fixed `'workerType'` and good unit testing in place.\n\nA worker pool contains the following functions:\n\n- `Pool.exec(method: Function | string, params: Array | null) : Promise.<*, Error>`<br>\n  Execute a function on a worker with given arguments.\n  - When `method` is a string, a method with this name must exist at the worker and must be registered to make it accessible via the pool. The function will be executed on the worker with given parameters.\n  - When `method` is a function, the provided function `fn` will be stringified, send to the worker, and executed there with the provided parameters. The provided function must be static, it must not depend on variables in a surrounding scope.\n\n- `Pool.proxy() : Promise.<Object, Error>`<br>\n  Create a proxy for the worker pool. The proxy contains a proxy for all methods available on the worker. All methods return promises resolving the methods result.\n\n- `Pool.stats() : Object`<br>\n   Retrieve statistics on workers, and active and pending tasks.\n\n   Returns an object containing the following properties:\n\n   ```\n   {\n     totalWorkers: 0,\n     busyWorkers: 0,\n     idleWorkers: 0,\n     pendingTasks: 0,\n     activeTasks: 0\n   }\n   ```\n\n- `Pool.terminate([force: boolean [, timeout: number]])`\n\n  If parameter `force` is false (default), workers will finish the tasks they are working on before terminating themselves. Any pending tasks will be rejected with an error 'Pool terminated'. When `force` is true, all workers are terminated immediately without finishing running tasks. If `timeout` is provided, worker will be forced to terminate when the timeout expires and the worker has not finished.\n\nThe function `Pool.exec` and the proxy functions all return a `Promise`. The promise has the following functions available:\n\n- `Promise.then(fn: Function.<result: *>)`<br>\n  Get the result of the promise once resolve.\n- `Promise.catch(fn: Function.<error: Error>)`<br>\n  Get the error of the promise when rejected.\n- `Promise.cancel()`<br>\n  A running task can be cancelled. The worker executing the task is enforced to terminate immediately.\n  The promise will be rejected with a `Promise.CancellationError`.\n- `Promise.timeout(delay: number)`<br>\n  Cancel a running task when it is not resolved or rejected within given delay in milliseconds. The timer will start when the task is actually started, not when the task is created and queued.\n  The worker executing the task is enforced to terminate immediately.\n  The promise will be rejected with a `Promise.TimeoutError`.\n\nExample usage:\n\n```js\nconst workerpool = require('workerpool');\n\nfunction add(a, b) {\n  return a + b;\n}\n\nconst pool1 = workerpool.pool();\n\n// offload a function to a worker\npool1.exec(add, [2, 4])\n    .then(function (result) {\n      console.log(result); // will output 6\n    })\n    .catch(function (err) {\n      console.error(err);\n    });\n\n// create a dedicated worker\nconst pool2 = workerpool.pool(__dirname + '/myWorker.js');\n\n// supposed myWorker.js contains a function 'fibonacci'\npool2.exec('fibonacci', [10])\n    .then(function (result) {\n      console.log(result); // will output 55\n    })\n    .catch(function (err) {\n      console.error(err);\n    });\n\n// create a proxy to myWorker.js\npool2.proxy()\n    .then(function (myWorker) {\n      return myWorker.fibonacci(10)\n    })\n    .then(function (result) {\n      console.log(result); // will output 55\n    })\n    .catch(function (err) {\n      console.error(err);\n    });\n\n// create a pool with a specified maximum number of workers\nconst pool3 = workerpool.pool({maxWorkers: 7});\n```\n\n\n### worker\n\nA worker is constructed as:\n\n`workerpool.worker([methods: Object.<String, Function>])`\n\nArgument `methods` is optional can can be an object with functions available in the worker. Registered functions will be available via the worker pool.\n\nExample usage:\n\n```js\n// file myWorker.js\nconst workerpool = require('workerpool');\n\nfunction add(a, b) {\n  return a + b;\n}\n\nfunction multiply(a, b) {\n  return a * b;\n}\n\n// create a worker and register functions\nworkerpool.worker({\n  add: add,\n  multiply: multiply\n});\n```\n\nAsynchronous results can be handled by returning a Promise from a function in the worker:\n\n```js\n// file myWorker.js\nconst workerpool = require('workerpool');\n\nfunction timeout(delay) {\n  return new Promise(function (resolve, reject) {\n    setTimeout(resolve, delay)\n  });\n}\n\n// create a worker and register functions\nworkerpool.worker({\n  timeout: timeout\n});\n```\n\n### Utilities\n\nFollowing properties are available for convenience:\n\n- **platform**: The Javascript platform. Either *node* or *browser*\n- **isMainThread**: Whether the code is running in main thread or not (Workers)\n- **cpus**: The number of CPUs/cores available\n\n\n## Roadmap\n\n- Implement functions for parallel processing: `map`, `reduce`, `forEach`,\n  `filter`, `some`, `every`, ...\n- Implement graceful degradation on old browsers not supporting webworkers:\n  fallback to processing tasks in the main application.\n- Implement session support: be able to handle a series of related tasks by a\n  single worker, which can keep a state for the session.\n\n\n## Related libraries\n\n- https://github.com/learnboost/cluster\n- https://github.com/adambom/parallel.js\n- https://github.com/padolsey/operative\n- https://github.com/calvinmetcalf/catiline\n- https://github.com/Unitech/pm2\n- https://github.com/godaddy/node-cluster-service\n- https://github.com/ramesaliyev/EasyWebWorker\n- https://github.com/rvagg/node-worker-farm\n\n\n## Build\n\nFirst clone the project from github:\n\n    git clone git://github.com/josdejong/workerpool.git\n    cd workerpool\n\nInstall the project dependencies:\n\n    npm install\n\nThen, the project can be build by executing the build script via npm:\n\n    npm run build\n\nThis will build the library workerpool.js and workerpool.min.js from the source\nfiles and put them in the folder dist.\n\n\n## Test\n\nTo execute tests for the library, install the project dependencies once:\n\n    npm install\n\nThen, the tests can be executed:\n\n    npm test\n\nTo test code coverage of the tests:\n\n    npm run coverage\n\nTo see the coverage results, open the generated report in your browser:\n\n    ./coverage/lcov-report/index.html\n\n\n## Publish\n\n- Describe changes in HISTORY.md\n- Update version in package.json, run `npm install` to update it in `package-lock.json` too.\n- Push to github\n- Deploy to npm via `npm publish`\n- Add a git tag with the version number like:\n  ```\n  git tag v1.2.3\n  git push --tags\n  ```\n\n\n## License\n\nCopyright (C) 2014-2020 Jos de Jong <wjosdejong@gmail.com>\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n   http://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n",
+  "maintainers": [
+    {
+      "name": "josdejong",
+      "email": "wjosdejong@gmail.com"
+    },
+    {
+      "name": "stefanpenner",
+      "email": "stefan.penner@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-10-03T10:50:06.672Z",
+    "created": "2014-05-02T18:38:48.074Z",
+    "0.0.1": "2014-05-02T18:38:48.074Z",
+    "0.1.0": "2014-05-07T20:04:48.471Z",
+    "0.2.0": "2014-05-14T19:15:51.441Z",
+    "1.0.0": "2014-05-29T11:45:40.886Z",
+    "1.1.0": "2016-01-25T19:06:47.191Z",
+    "1.2.0": "2016-05-22T13:31:30.708Z",
+    "1.2.1": "2016-06-25T08:41:38.624Z",
+    "1.3.0": "2016-08-21T13:55:52.320Z",
+    "1.3.1": "2016-09-12T18:46:03.726Z",
+    "2.0.0": "2016-09-18T19:11:20.988Z",
+    "2.1.0": "2016-10-11T18:14:39.061Z",
+    "2.2.0": "2016-11-26T09:30:47.813Z",
+    "2.2.1": "2017-05-07T12:46:55.153Z",
+    "2.2.2": "2017-07-08T09:30:48.745Z",
+    "2.2.3": "2017-08-19T09:49:21.310Z",
+    "2.2.4": "2017-08-20T10:17:43.070Z",
+    "2.3.0": "2017-09-30T15:28:37.610Z",
+    "2.3.1": "2018-07-24T20:14:39.100Z",
+    "2.3.2": "2018-09-08T12:36:07.678Z",
+    "2.3.3": "2018-09-12T19:10:06.334Z",
+    "3.0.0": "2018-12-11T19:14:50.597Z",
+    "3.1.0": "2019-02-17T16:41:56.633Z",
+    "3.1.1": "2019-02-25T19:56:03.007Z",
+    "3.1.2": "2019-03-14T19:39:59.865Z",
+    "4.0.0": "2019-08-21T14:40:30.545Z",
+    "5.0.0": "2019-08-25T15:08:53.533Z",
+    "5.0.1": "2019-10-13T16:08:09.558Z",
+    "5.0.2": "2019-11-06T10:59:57.716Z",
+    "5.0.3": "2019-12-23T12:35:56.043Z",
+    "5.0.4": "2019-12-31T10:11:37.224Z",
+    "6.0.0": "2020-05-13T10:17:17.501Z",
+    "6.0.1": "2020-09-23T12:27:16.563Z",
+    "6.0.2": "2020-10-03T10:50:04.431Z"
+  },
+  "homepage": "https://github.com/josdejong/workerpool",
+  "keywords": [
+    "worker",
+    "web worker",
+    "cluster",
+    "pool",
+    "isomorphic"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/josdejong/workerpool.git"
+  },
+  "author": {
+    "name": "Jos de Jong",
+    "email": "wjosdejong@gmail.com",
+    "url": "https://github.com/josdejong"
+  },
+  "bugs": {
+    "url": "https://github.com/josdejong/workerpool/issues"
+  },
+  "readmeFilename": "README.md",
+  "users": {
+    "itobuztech": true,
+    "parkerproject": true,
+    "stevenvachon": true,
+    "eywalker": true,
+    "shanewholloway": true,
+    "hkgsherlock": true,
+    "darikspark": true,
+    "sharmine2": true
+  },
+  "license": "Apache-2.0"
+}

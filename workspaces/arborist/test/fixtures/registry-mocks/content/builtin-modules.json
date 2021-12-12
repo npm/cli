@@ -1,0 +1,546 @@
+{
+  "_id": "builtin-modules",
+  "_rev": "8-d88e63a4545cee9720eaa005e8ec3ca6",
+  "name": "builtin-modules",
+  "description": "List of the Node.js builtin modules",
+  "dist-tags": {
+    "latest": "3.1.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "builtin-modules",
+      "version": "1.0.0",
+      "description": "List of the Node.js builtin modules",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/builtin-modules"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "node test.js",
+        "make": "node make.js"
+      },
+      "files": [
+        "index.js",
+        "static.js",
+        "builtin-modules.json"
+      ],
+      "keywords": [
+        "builtin",
+        "built-in",
+        "builtins",
+        "node",
+        "modules",
+        "core",
+        "bundled",
+        "list",
+        "array",
+        "names"
+      ],
+      "devDependencies": {
+        "ava": "0.0.4"
+      },
+      "gitHead": "3b030f1142f65a92925de0bdcfee5906d3d3b56d",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/builtin-modules/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/builtin-modules",
+      "_id": "builtin-modules@1.0.0",
+      "_shasum": "c33347216affb51674380b67f9836f0861353ab3",
+      "_from": ".",
+      "_npmVersion": "2.7.4",
+      "_nodeVersion": "0.12.2",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "c33347216affb51674380b67f9836f0861353ab3",
+        "tarball": "https://registry.npmjs.org/builtin-modules/-/builtin-modules-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "builtin-modules",
+      "version": "1.0.1",
+      "description": "List of the Node.js builtin modules",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/builtin-modules.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "node test.js",
+        "make": "node make.js"
+      },
+      "files": [
+        "index.js",
+        "static.js",
+        "builtin-modules.json"
+      ],
+      "keywords": [
+        "builtin",
+        "built-in",
+        "builtins",
+        "node",
+        "modules",
+        "core",
+        "bundled",
+        "list",
+        "array",
+        "names"
+      ],
+      "devDependencies": {
+        "ava": "0.0.4"
+      },
+      "gitHead": "510475203d6fc6907e0e439d5e750f160bbd07c2",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/builtin-modules/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/builtin-modules#readme",
+      "_id": "builtin-modules@1.0.1",
+      "_shasum": "b402d09289a9161316b6fe7ee0a97917892f73ac",
+      "_from": ".",
+      "_npmVersion": "2.9.0",
+      "_nodeVersion": "0.10.38",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "b402d09289a9161316b6fe7ee0a97917892f73ac",
+        "tarball": "https://registry.npmjs.org/builtin-modules/-/builtin-modules-1.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "builtin-modules",
+      "version": "1.1.0",
+      "description": "List of the Node.js builtin modules",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/builtin-modules.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava",
+        "make": "node make.js"
+      },
+      "files": [
+        "index.js",
+        "static.js",
+        "builtin-modules.json"
+      ],
+      "keywords": [
+        "builtin",
+        "built-in",
+        "builtins",
+        "node",
+        "modules",
+        "core",
+        "bundled",
+        "list",
+        "array",
+        "names"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "d317be16fab701f2ac73bc9aa771f60ec052ed66",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/builtin-modules/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/builtin-modules#readme",
+      "_id": "builtin-modules@1.1.0",
+      "_shasum": "1053955fd994a5746e525e4ac717b81caf07491c",
+      "_from": ".",
+      "_npmVersion": "2.13.3",
+      "_nodeVersion": "3.0.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "1053955fd994a5746e525e4ac717b81caf07491c",
+        "tarball": "https://registry.npmjs.org/builtin-modules/-/builtin-modules-1.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.1.1": {
+      "name": "builtin-modules",
+      "version": "1.1.1",
+      "description": "List of the Node.js builtin modules",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/builtin-modules.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava",
+        "make": "node make.js"
+      },
+      "files": [
+        "index.js",
+        "static.js",
+        "builtin-modules.json"
+      ],
+      "keywords": [
+        "builtin",
+        "built-in",
+        "builtins",
+        "node",
+        "modules",
+        "core",
+        "bundled",
+        "list",
+        "array",
+        "names"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "0ea253452b1d8cb3a70d16464f909dbc0bc370fe",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/builtin-modules/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/builtin-modules#readme",
+      "_id": "builtin-modules@1.1.1",
+      "_shasum": "270f076c5a72c02f5b65a47df94c5fe3a278892f",
+      "_from": ".",
+      "_npmVersion": "3.3.12",
+      "_nodeVersion": "5.3.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "270f076c5a72c02f5b65a47df94c5fe3a278892f",
+        "tarball": "https://registry.npmjs.org/builtin-modules/-/builtin-modules-1.1.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "builtin-modules",
+      "version": "2.0.0",
+      "description": "List of the Node.js builtin modules",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/builtin-modules.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava",
+        "make": "node make.js"
+      },
+      "files": [
+        "index.js",
+        "static.js",
+        "builtin-modules.json"
+      ],
+      "keywords": [
+        "builtin",
+        "built-in",
+        "builtins",
+        "node",
+        "modules",
+        "core",
+        "bundled",
+        "list",
+        "array",
+        "names"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "eff50c8247873fc601e5d0931c4cdbc0c2b119dd",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/builtin-modules/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/builtin-modules#readme",
+      "_id": "builtin-modules@2.0.0",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "9.2.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-3U5kUA5VPsRUA3nofm/BXX7GVHKfxz0hOBAPxXrIvHzlDRkQVqEn6yi8QJegxl4LzOHLdvb7XF5dVawa/VVYBg==",
+        "shasum": "60b7ef5ae6546bd7deefa74b08b62a43a232648e",
+        "tarball": "https://registry.npmjs.org/builtin-modules/-/builtin-modules-2.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/builtin-modules-2.0.0.tgz_1510714669323_0.34969417774118483"
+      },
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "builtin-modules",
+      "version": "3.0.0",
+      "description": "List of the Node.js builtin modules",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/builtin-modules.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && ava",
+        "make": "node make.js"
+      },
+      "files": [
+        "index.js",
+        "static.js",
+        "builtin-modules.json"
+      ],
+      "keywords": [
+        "builtin",
+        "built-in",
+        "builtins",
+        "node",
+        "modules",
+        "core",
+        "bundled",
+        "list",
+        "array",
+        "names"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "7ba6bb51f7af3852f68128ace2645c23d1012eee",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/builtin-modules/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/builtin-modules#readme",
+      "_id": "builtin-modules@3.0.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.11.2",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-hMIeU4K2ilbXV6Uv93ZZ0Avg/M91RaKXucQ+4me2Do1txxBDyDZWCBa5bJSLqoNTRpXTLwEzIk1KmloenDDjhg==",
+        "shasum": "1e587d44b006620d90286cc7a9238bbc6129cab1",
+        "tarball": "https://registry.npmjs.org/builtin-modules/-/builtin-modules-3.0.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 3455,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbClyKCRA9TVsSAnZWagAAQDcP/jMmByrB2Q9Od3/I3zp+\nJhXEn3I5RZDyn+LXYZBC+63kcL8+mjzq7wtzxTkbmdf7CZE9VAPdHwxQa2eO\nBJncnWjkjLnX+3Mgh12fQyFDARxYfzNzVCowqRjopptxcrQ1YLZ8Irm6kFEV\nFlWINePOSlbx0djOsWndVE/3Vu6lrJEnmxCfi36i8nhlpX/1MnvRKzNGZ3Dx\n3/lTTKxT9T0aHAwMNkcp+fUmopz97GYBvGlS9w9OreZk40pRrikDXiqRSf/Y\nr+ErflTQEAwD5wuQWeMrD0d3nXyhc0Y5bPvvt/TaJMziouil+K/GHBXcB6qF\npjxf8q7gZzugS0JiGdAPLEqiQksuKT7BFojjhUBW11SOYk+U4ajoZ8NVev+Z\nbRihZs8zUR9UUvdcJddj9Wo4DeBjJ8EYh/X6gg1dgB3UUtNqSzN/MniHMmG2\nW++3EV6BFg5DBYNl2/AmHWlRMKiQFAnNjPXIQ3XpTqhkewEFKxsXs1bHwgoO\nGJFgIKojlcdFRKSV2eoc37fQtCT/SgNIEhPJaujfkz77UrGeL6HFmkp6HUju\nCh0TpPTOobX79HHA5KHzULSflNMvD263iDPPEpgIv7OJ5Hajr2/M+3EuYA29\nSSmzTAkVujXTc8VAtIJ0X/a7ohvwwyFTPdDTyMHTlVUqUNUQrTjFCPts4NWU\n0Wos\r\n=sBHF\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/builtin-modules_3.0.0_1527405705977_0.9872917278308491"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.1.0": {
+      "name": "builtin-modules",
+      "version": "3.1.0",
+      "description": "List of the Node.js builtin modules",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/builtin-modules.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd",
+        "make": "node make.js"
+      },
+      "keywords": [
+        "builtin",
+        "built-in",
+        "builtins",
+        "node",
+        "modules",
+        "core",
+        "bundled",
+        "list",
+        "array",
+        "names"
+      ],
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "779727ee6fad58da2b5e0e8c77e9de37b3596bf5",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/builtin-modules/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/builtin-modules#readme",
+      "_id": "builtin-modules@3.1.0",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.15.1",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-k0KL0aWZuBt2lrxrcASWDfwOLMnodeQjodT/1SxEQAXsHANgo6ZC/VEaSEHCXt7aSTZ4/4H5LKa+tBXmW7Vtvw==",
+        "shasum": "aad97c15131eb76b65b50ef208e7584cd76a7484",
+        "tarball": "https://registry.npmjs.org/builtin-modules/-/builtin-modules-3.1.0.tgz",
+        "fileCount": 8,
+        "unpackedSize": 4114,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcqdqGCRA9TVsSAnZWagAAnw4P/0JV6j4Y3onEaS8YRTuf\nG1abaAXoUjfiHzZBguAPETWiq3T5PRjR5ttf4WZLfoYUUjthzgofGlhao274\nB225kzUfqsNQDiF2rikQUqn4/ByNDKG3g+0ZQPVA3loBgnOCwUxdrElVvaic\n34iZYqMvkvVt1lIb/CxQlluiwOY8/Ni5N2AZNMoMbVgIa3Gne2fOuoQDAzxc\n/ObhxQZE5nM8G1ReztZ4cVlITH4h9i5gjp5RERcU7lUsVMR1WrKuJMdXsfYh\n95rY+OoXowBho+BDCzTIsjXQfbnKPNpi0GaE1CeUroOA2xqE0URkxSx7g77Y\nj+IwBhVZdC/Rr5aGFbGjMNlz/eBV4TIUoZLbMRU1oRU0hcxNXy7zsUfl2N8U\nyrNCnaML2VjZrmpK33uL4zB+1Sn8VhHyulwSyThNMV3sMi2Td6M1qA2Wao+U\nEMrt9MSD78ODyHJZn3yr5kmMchaePH0R3jqOdHJbHR1lM/3ZJ5OYRCGCh9Z+\n8xYoMspwztQHPlXVloDuq8qb6nPReqYkjf1QJ/urOLWrGrKAzrnfkLBp8L20\niGSP3zcydLdOx1OZ3uW18j3OxZzrQgW2AhQF7Bn6201YBTNzTzw4JaDYxH9C\n3yp9iWiDMacxt4OTvQi0VOG45Qv4CFv0PuauH4GEsLseesdVuaZ15qUG1t7S\nfVkC\r\n=vWG+\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/builtin-modules_3.1.0_1554635397411_0.7371155756981622"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# builtin-modules [![Build Status](https://travis-ci.org/sindresorhus/builtin-modules.svg?branch=master)](https://travis-ci.org/sindresorhus/builtin-modules)\n\n> List of the Node.js builtin modules\n\nThe list is just a [JSON file](builtin-modules.json) and can be used wherever.\n\n\n## Install\n\n```\n$ npm install builtin-modules\n```\n\n\n## Usage\n\n```js\nconst builtinModules = require('builtin-modules');\n\nconsole.log(builtinModules);\n//=> ['assert', 'buffer', ...]\n```\n\n\n## API\n\nReturns an array of builtin modules fetched from the running Node.js version.\n\n### Static list\n\nThis module also comes bundled with a static array of builtin modules generated from the latest Node.js version. You can get it with `require('builtin-modules/static');`\n\n\n## Related\n\n- [is-builtin-module](https://github.com/sindresorhus/is-builtin-module) - Check if a string matches the name of a Node.js builtin module\n\n\n## License\n\nMIT © [Sindre Sorhus](https://sindresorhus.com)\n",
+  "maintainers": [
+    {
+      "name": "sindresorhus",
+      "email": "sindresorhus@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2019-04-07T11:10:00.187Z",
+    "created": "2015-05-04T15:35:06.265Z",
+    "1.0.0": "2015-05-04T15:35:06.265Z",
+    "1.0.1": "2015-05-04T22:18:06.480Z",
+    "1.1.0": "2015-09-01T17:29:19.942Z",
+    "1.1.1": "2016-01-01T13:44:33.094Z",
+    "2.0.0": "2017-11-15T02:57:49.442Z",
+    "3.0.0": "2018-05-27T07:21:46.053Z",
+    "3.1.0": "2019-04-07T11:09:57.602Z"
+  },
+  "homepage": "https://github.com/sindresorhus/builtin-modules#readme",
+  "keywords": [
+    "builtin",
+    "built-in",
+    "builtins",
+    "node",
+    "modules",
+    "core",
+    "bundled",
+    "list",
+    "array",
+    "names"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/builtin-modules.git"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "bugs": {
+    "url": "https://github.com/sindresorhus/builtin-modules/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md",
+  "users": {
+    "tangchr": true
+  }
+}

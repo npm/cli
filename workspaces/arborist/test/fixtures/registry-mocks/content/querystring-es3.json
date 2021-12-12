@@ -1,0 +1,418 @@
+{
+  "_id": "querystring-es3",
+  "_rev": "8-ebc2dcbf0b2f8329092c102a87a4b2c5",
+  "name": "querystring-es3",
+  "description": "Node's querystring module for all engines. (ES3 compat fork)",
+  "dist-tags": {
+    "latest": "0.2.1",
+    "next": "1.0.0-0"
+  },
+  "versions": {
+    "0.2.0": {
+      "name": "querystring-es3",
+      "id": "querystring-es3",
+      "version": "0.2.0",
+      "description": "Node's querystring module for all engines.",
+      "keywords": [
+        "commonjs",
+        "query",
+        "querystring"
+      ],
+      "author": {
+        "name": "Irakli Gozalishvili",
+        "email": "rfobic@gmail.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/Gozala/querystring.git",
+        "web": "https://github.com/Gozala/querystring"
+      },
+      "bugs": {
+        "url": "http://github.com/Gozala/querystring/issues/"
+      },
+      "devDependencies": {
+        "test": "~0.x.0",
+        "phantomify": "~0.x.0",
+        "retape": "~0.x.0",
+        "tape": "~0.1.5"
+      },
+      "engines": {
+        "node": ">=0.4.x"
+      },
+      "scripts": {
+        "test": "npm run test-node && npm run test-browser && npm run test-tap",
+        "test-browser": "node ./node_modules/phantomify/bin/cmd.js ./test/common-index.js",
+        "test-node": "node ./test/common-index.js",
+        "test-tap": "node ./test/tap-index.js"
+      },
+      "testling": {
+        "files": "test/tap-index.js",
+        "browsers": {
+          "iexplore": [
+            8,
+            9,
+            10
+          ],
+          "chrome": [
+            16,
+            20,
+            25,
+            "canary"
+          ],
+          "firefox": [
+            10,
+            15,
+            16,
+            17,
+            18,
+            "nightly"
+          ],
+          "safari": [
+            5,
+            6
+          ],
+          "opera": [
+            12
+          ]
+        }
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://github.com/Gozala/enchain/License.md"
+        }
+      ],
+      "homepage": "https://github.com/Gozala/querystring",
+      "_id": "querystring-es3@0.2.0",
+      "dist": {
+        "shasum": "c365a08a69c443accfeb3a9deab35e3f0abaa476",
+        "tarball": "https://registry.npmjs.org/querystring-es3/-/querystring-es3-0.2.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.4.3",
+      "_npmUser": {
+        "name": "spaintrain",
+        "email": "mc.s.pain.how.er+npm@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "spaintrain",
+          "email": "mc.s.pain.how.er+npm@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.2.1-0": {
+      "name": "querystring-es3",
+      "id": "querystring-es3",
+      "version": "0.2.1-0",
+      "description": "Node's querystring module for all engines. (ES3 compat fork)",
+      "keywords": [
+        "commonjs",
+        "query",
+        "querystring"
+      ],
+      "author": {
+        "name": "Irakli Gozalishvili",
+        "email": "rfobic@gmail.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/mike-spainhower/querystring.git",
+        "web": "https://github.com/mike-spainhower/querystring"
+      },
+      "bugs": {
+        "url": "http://github.com/mike-spainhower/querystring/issues/"
+      },
+      "devDependencies": {
+        "test": "~0.x.0",
+        "phantomify": "~0.x.0",
+        "retape": "~0.x.0",
+        "tape": "~0.1.5"
+      },
+      "engines": {
+        "node": ">=0.4.x"
+      },
+      "scripts": {
+        "test": "npm run test-node && npm run test-browser && npm run test-tap",
+        "test-browser": "node ./node_modules/phantomify/bin/cmd.js ./test/common-index.js",
+        "test-node": "node ./test/common-index.js",
+        "test-tap": "node ./test/tap-index.js"
+      },
+      "testling": {
+        "files": "test/tap-index.js",
+        "browsers": {
+          "iexplore": [
+            9,
+            10
+          ],
+          "chrome": [
+            16,
+            20,
+            25,
+            "canary"
+          ],
+          "firefox": [
+            10,
+            15,
+            16,
+            17,
+            18,
+            "nightly"
+          ],
+          "safari": [
+            5,
+            6
+          ],
+          "opera": [
+            12
+          ]
+        }
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://github.com/Gozala/enchain/License.md"
+        }
+      ],
+      "homepage": "https://github.com/mike-spainhower/querystring",
+      "_id": "querystring-es3@0.2.1-0",
+      "_shasum": "bd38cbd701040e7ef66c94a93db4a5b45be39565",
+      "_from": ".",
+      "_npmVersion": "1.4.10",
+      "_npmUser": {
+        "name": "spaintrain",
+        "email": "mc.s.pain.how.er+npm@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "spaintrain",
+          "email": "mc.s.pain.how.er+npm@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "bd38cbd701040e7ef66c94a93db4a5b45be39565",
+        "tarball": "https://registry.npmjs.org/querystring-es3/-/querystring-es3-0.2.1-0.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.1": {
+      "name": "querystring-es3",
+      "id": "querystring-es3",
+      "version": "0.2.1",
+      "description": "Node's querystring module for all engines. (ES3 compat fork)",
+      "keywords": [
+        "commonjs",
+        "query",
+        "querystring"
+      ],
+      "author": {
+        "name": "Irakli Gozalishvili",
+        "email": "rfobic@gmail.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/mike-spainhower/querystring.git",
+        "web": "https://github.com/mike-spainhower/querystring"
+      },
+      "bugs": {
+        "url": "http://github.com/mike-spainhower/querystring/issues/"
+      },
+      "devDependencies": {
+        "test": "~0.x.0",
+        "phantomify": "~0.x.0",
+        "retape": "~0.x.0",
+        "tape": "~0.1.5"
+      },
+      "engines": {
+        "node": ">=0.4.x"
+      },
+      "scripts": {
+        "test": "npm run test-node && npm run test-browser && npm run test-tap",
+        "test-browser": "node ./node_modules/phantomify/bin/cmd.js ./test/common-index.js",
+        "test-node": "node ./test/common-index.js",
+        "test-tap": "node ./test/tap-index.js"
+      },
+      "testling": {
+        "files": "test/tap-index.js",
+        "browsers": {
+          "iexplore": [
+            9,
+            10
+          ],
+          "chrome": [
+            16,
+            20,
+            25,
+            "canary"
+          ],
+          "firefox": [
+            10,
+            15,
+            16,
+            17,
+            18,
+            "nightly"
+          ],
+          "safari": [
+            5,
+            6
+          ],
+          "opera": [
+            12
+          ]
+        }
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://github.com/Gozala/enchain/License.md"
+        }
+      ],
+      "gitHead": "c58e18a37d9970e13a84dcc421ab682c7836fad2",
+      "homepage": "https://github.com/mike-spainhower/querystring",
+      "_id": "querystring-es3@0.2.1",
+      "_shasum": "9ec61f79049875707d69414596fd907a4d711e73",
+      "_from": ".",
+      "_npmVersion": "2.0.2",
+      "_nodeVersion": "0.10.26",
+      "_npmUser": {
+        "name": "spaintrain",
+        "email": "mc.s.pain.how.er+npm@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "spaintrain",
+          "email": "mc.s.pain.how.er+npm@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "9ec61f79049875707d69414596fd907a4d711e73",
+        "tarball": "https://registry.npmjs.org/querystring-es3/-/querystring-es3-0.2.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.0-0": {
+      "name": "querystring-es3",
+      "id": "querystring-es3",
+      "version": "1.0.0-0",
+      "main": "dist/index.js",
+      "description": "Node API compliant querystring module for all browsers. (ES3 compatible)",
+      "scripts": {
+        "build": "babel src -d dist",
+        "prepare": "npm run build",
+        "prepublish": "npm run build",
+        "test": "npm-run-all build test:*",
+        "test:mocha": "mocha --require babel-register ./test/index.js",
+        "test:zuul": "zuul --no-coverage -- test"
+      },
+      "keywords": [
+        "commonjs",
+        "query",
+        "querystring",
+        "es3"
+      ],
+      "author": {
+        "name": "SpainTrain",
+        "email": "mcspainhower+npm@gmail.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/SpainTrain/querystring-es3.git",
+        "web": "https://github.com/SpainTrain/querystring-es3"
+      },
+      "bugs": {
+        "url": "http://github.com/SpainTrain/querystring-es3/issues/"
+      },
+      "devDependencies": {
+        "assert": "~1.4.1",
+        "babel-cli": "~6.24.0",
+        "babel-preset-es2015": "~6.24.0",
+        "babel-preset-es2016": "~6.22.0",
+        "babel-preset-es2017": "~6.22.0",
+        "babel-preset-es3": "~1.0.1",
+        "babel-register": "~6.24.0",
+        "babelify": "~7.3.0",
+        "browserify": "~14.1.0",
+        "eslint": "~3.13.0",
+        "json3": "~3.3.2",
+        "mocha": "~3.2.0",
+        "npm-run-all": "~4.0.2",
+        "object-inspect": "~1.2.2",
+        "zuul": "~3.11.1",
+        "zuul-ngrok": "~4.0.0"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "buffer": "5.0.5"
+      },
+      "gitHead": "76baa10afbbc7a46461c06748e8c1b183802d105",
+      "homepage": "https://github.com/SpainTrain/querystring-es3#readme",
+      "_id": "querystring-es3@1.0.0-0",
+      "_shasum": "ff5ba4d36155be9cf11178ba2ebb1c08ad69d4bb",
+      "_from": ".",
+      "_npmVersion": "4.2.0",
+      "_nodeVersion": "6.10.2",
+      "_npmUser": {
+        "name": "spaintrain",
+        "email": "mc.s.pain.how.er+npm@gmail.com"
+      },
+      "dist": {
+        "shasum": "ff5ba4d36155be9cf11178ba2ebb1c08ad69d4bb",
+        "tarball": "https://registry.npmjs.org/querystring-es3/-/querystring-es3-1.0.0-0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "spaintrain",
+          "email": "mc.s.pain.how.er+npm@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/querystring-es3-1.0.0-0.tgz_1491509385443_0.8288666685111821"
+      },
+      "directories": {}
+    }
+  },
+  "readme": "# querystring\n\n[![Build Status](https://secure.travis-ci.org/mike-spainhower/querystring.png)](http://travis-ci.org/mike-spainhower/querystring)\n\n\n[![Browser support](http://ci.testling.com/mike-spainhower/querystring.png)](http://ci.testling.com/mike-spainhower/querystring)\n\n\n\nNode's querystring module for all engines.\n\n## Install ##\n\n    npm install querystring\n\n",
+  "maintainers": [
+    {
+      "name": "spaintrain",
+      "email": "mc.s.pain.how.er+npm@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2017-04-06T20:09:46.240Z",
+    "created": "2014-02-28T19:12:22.567Z",
+    "0.2.0": "2014-02-28T19:12:22.567Z",
+    "0.2.1-0": "2014-05-15T17:48:35.350Z",
+    "0.2.1": "2014-10-13T19:06:08.473Z",
+    "1.0.0-0": "2017-04-06T20:09:46.240Z"
+  },
+  "homepage": "https://github.com/mike-spainhower/querystring",
+  "keywords": [
+    "commonjs",
+    "query",
+    "querystring"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mike-spainhower/querystring.git",
+    "web": "https://github.com/mike-spainhower/querystring"
+  },
+  "author": {
+    "name": "Irakli Gozalishvili",
+    "email": "rfobic@gmail.com"
+  },
+  "bugs": {
+    "url": "http://github.com/mike-spainhower/querystring/issues/"
+  },
+  "readmeFilename": "Readme.md",
+  "users": {
+    "simplyianm": true
+  },
+  "_attachments": {}
+}

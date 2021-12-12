@@ -1,0 +1,199 @@
+{
+  "_id": "move-concurrently",
+  "_rev": "21-a3fe36beaf919387ab6677e5571f4786",
+  "name": "move-concurrently",
+  "description": "Promises of moves of files or directories with rename, falling back to recursive rename/copy on EXDEV errors, with configurable concurrency and win32 junction support.",
+  "dist-tags": {
+    "latest": "1.0.1"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "move-concurrently",
+      "version": "1.0.0",
+      "description": "Promises of moves of files or directories with rename, falling back to recursive rename/copy on EXDEV errors, with configurable concurrency and win32 junction support.",
+      "main": "move.js",
+      "scripts": {
+        "test": "standard && tap --coverage test"
+      },
+      "keywords": [
+        "move"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org/"
+      },
+      "license": "ISC",
+      "dependencies": {
+        "copy-concurrently": "^1.0.0",
+        "aproba": "^1.1.1",
+        "fs-write-stream-atomic": "^1.0.8",
+        "mkdirp": "^0.5.1",
+        "rimraf": "^2.5.4",
+        "run-queue": "^1.0.3"
+      },
+      "devDependencies": {
+        "standard": "^8.6.0",
+        "tacks": "^1.2.6",
+        "tap": "^10.1.1"
+      },
+      "files": [
+        "move.js",
+        "is-windows.js"
+      ],
+      "directories": {
+        "test": "test"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/npm/move-concurrently.git"
+      },
+      "bugs": {
+        "url": "https://github.com/npm/move-concurrently/issues"
+      },
+      "homepage": "https://www.npmjs.com/package/move-concurrently",
+      "gitHead": "eed1d3d3301de07bc21de6209356fd4b4c7c16ec",
+      "_id": "move-concurrently@1.0.0",
+      "_shasum": "7b34a6808475a19b1ea15df9e27e270f0cf013f9",
+      "_from": ".",
+      "_npmVersion": "4.4.3",
+      "_nodeVersion": "4.6.1",
+      "_npmUser": {
+        "name": "iarna",
+        "email": "me@re-becca.org"
+      },
+      "dist": {
+        "shasum": "7b34a6808475a19b1ea15df9e27e270f0cf013f9",
+        "tarball": "https://registry.npmjs.org/move-concurrently/-/move-concurrently-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/move-concurrently-1.0.0.tgz_1489705061152_0.28208360192365944"
+      }
+    },
+    "1.0.1": {
+      "name": "move-concurrently",
+      "version": "1.0.1",
+      "description": "Promises of moves of files or directories with rename, falling back to recursive rename/copy on EXDEV errors, with configurable concurrency and win32 junction support.",
+      "main": "move.js",
+      "scripts": {
+        "test": "standard && tap --coverage test"
+      },
+      "keywords": [
+        "move"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org/"
+      },
+      "license": "ISC",
+      "dependencies": {
+        "copy-concurrently": "^1.0.0",
+        "aproba": "^1.1.1",
+        "fs-write-stream-atomic": "^1.0.8",
+        "mkdirp": "^0.5.1",
+        "rimraf": "^2.5.4",
+        "run-queue": "^1.0.3"
+      },
+      "devDependencies": {
+        "standard": "^8.6.0",
+        "tacks": "^1.2.6",
+        "tap": "^10.1.1"
+      },
+      "files": [
+        "move.js",
+        "is-windows.js"
+      ],
+      "directories": {
+        "test": "test"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/npm/move-concurrently.git"
+      },
+      "bugs": {
+        "url": "https://github.com/npm/move-concurrently/issues"
+      },
+      "homepage": "https://www.npmjs.com/package/move-concurrently",
+      "gitHead": "8558616a681db87a77b2d9077ce5f855ceb46b87",
+      "_id": "move-concurrently@1.0.1",
+      "_shasum": "be2c005fda32e0b29af1f05d7c4b33214c701f92",
+      "_from": ".",
+      "_npmVersion": "4.4.3",
+      "_nodeVersion": "4.6.1",
+      "_npmUser": {
+        "name": "iarna",
+        "email": "me@re-becca.org"
+      },
+      "dist": {
+        "shasum": "be2c005fda32e0b29af1f05d7c4b33214c701f92",
+        "tarball": "https://registry.npmjs.org/move-concurrently/-/move-concurrently-1.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/move-concurrently-1.0.1.tgz_1489706667405_0.5766653206665069"
+      }
+    }
+  },
+  "readme": "# move-concurrently\n\nMove files and directories.\n\n```\nconst move = require('move-concurrently')\nmove('/path/to/thing', '/new/path/thing').then(() => {\n  // thing is now moved!\n}).catch(err => {\n  // oh no!\n})\n```\n\nUses `rename` to move things as fast as possible.\n\nIf you `move` across devices or on filesystems that don't support renaming\nlarge directories.  That is, situations that result in `rename` returning\nthe `EXDEV` error, then `move` will fallback to copy + delete.\n\nWhen recursively copying directories it will first try to rename the\ncontents before falling back to copying.  While this will be slightly slower\nin true cross-device scenarios, it is MUCH faster in cases where the\nfilesystem can't handle directory renames.\n\nWhen copying ownership is maintained when running as root.  Permissions are\nalways maintained.  On Windows, if symlinks are unavailable then junctions\nwill be used.\n\n## INTERFACE\n\n### move(from, to, options) → Promise\n\nRecursively moves `from` to `to` and resolves its promise when finished.\nIf `to` already exists then the promise will be rejected with an `EEXIST`\nerror.\n\nStarts by trying to rename `from` to `to`.\n\nOptions are:\n\n* maxConcurrency – (Default: `1`) The maximum number of concurrent copies to do at once.\n* isWindows - (Default: `process.platform === 'win32'`) If true enables Windows symlink semantics. This requires\n  an extra `stat` to determine if the destination of a symlink is a file or directory. If symlinking a directory\n  fails then we'll try making a junction instead.\n\nOptions can also include dependency injection:\n\n* Promise - (Default: `global.Promise`) The promise implementation to use, defaults to Node's.\n* fs - (Default: `require('fs')`) The filesystem module to use.  Can be used\n  to use `graceful-fs` or to inject a mock.\n* writeStreamAtomic - (Default: `require('fs-write-stream-atomic')`) The\n  implementation of `writeStreamAtomic` to use.  Used to inject a mock.\n* getuid - (Default: `process.getuid`) A function that returns the current UID. Used to inject a mock.\n",
+  "maintainers": [
+    {
+      "email": "quitlahok@gmail.com",
+      "name": "nlf"
+    },
+    {
+      "email": "ruyadorno@hotmail.com",
+      "name": "ruyadorno"
+    },
+    {
+      "email": "darcy@darcyclarke.me",
+      "name": "darcyclarke"
+    },
+    {
+      "email": "i@izs.me",
+      "name": "isaacs"
+    }
+  ],
+  "time": {
+    "modified": "2020-10-19T13:50:23.046Z",
+    "created": "2017-03-16T22:57:41.409Z",
+    "1.0.0": "2017-03-16T22:57:41.409Z",
+    "1.0.1": "2017-03-16T23:24:29.189Z"
+  },
+  "homepage": "https://www.npmjs.com/package/move-concurrently",
+  "keywords": [
+    "move"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/npm/move-concurrently.git"
+  },
+  "author": {
+    "name": "Rebecca Turner",
+    "email": "me@re-becca.org",
+    "url": "http://re-becca.org/"
+  },
+  "bugs": {
+    "url": "https://github.com/npm/move-concurrently/issues"
+  },
+  "license": "ISC",
+  "readmeFilename": "README.md",
+  "users": {
+    "alshamiri1": true,
+    "gavatron": true,
+    "iarna": true
+  }
+}

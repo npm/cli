@@ -1,0 +1,7 @@
+{
+  "name": "@isaacs/peer-dep-conflict-infinite-loop-x",
+  "version": "1.0.0",
+  "peerDependencies": {
+    "@isaacs/peer-dep-conflict-infinite-loop-j": "1"
+  }
+}

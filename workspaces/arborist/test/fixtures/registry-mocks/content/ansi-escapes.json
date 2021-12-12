@@ -1,0 +1,1494 @@
+{
+  "_id": "ansi-escapes",
+  "_rev": "24-a2dd0a1f9b1c7a0126087ee4f55390da",
+  "name": "ansi-escapes",
+  "description": "ANSI escape codes for manipulating the terminal",
+  "dist-tags": {
+    "latest": "4.3.1"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "ansi-escapes",
+      "version": "1.0.0",
+      "description": "ANSI escape codes for manipulating the terminal",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/ansi-escapes"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && node test.js"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "ansi",
+        "terminal",
+        "console",
+        "cli",
+        "string",
+        "tty",
+        "escape",
+        "escapes",
+        "formatting",
+        "shell",
+        "xterm",
+        "log",
+        "logging",
+        "command-line",
+        "text",
+        "vt100",
+        "sequence",
+        "control",
+        "code",
+        "codes",
+        "cursor"
+      ],
+      "devDependencies": {
+        "ava": "0.0.4",
+        "xo": "*"
+      },
+      "gitHead": "59244470a66fa25569347bcf3e9c9968a2229c34",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/ansi-escapes/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/ansi-escapes",
+      "_id": "ansi-escapes@1.0.0",
+      "_shasum": "cbc220a180a794525ccf0a85058e314403fe89a5",
+      "_from": ".",
+      "_npmVersion": "2.11.2",
+      "_nodeVersion": "0.12.5",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "cbc220a180a794525ccf0a85058e314403fe89a5",
+        "tarball": "https://registry.npmjs.org/ansi-escapes/-/ansi-escapes-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "ansi-escapes",
+      "version": "1.1.0",
+      "description": "ANSI escape codes for manipulating the terminal",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/ansi-escapes"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && node test.js"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "ansi",
+        "terminal",
+        "console",
+        "cli",
+        "string",
+        "tty",
+        "escape",
+        "escapes",
+        "formatting",
+        "shell",
+        "xterm",
+        "log",
+        "logging",
+        "command-line",
+        "text",
+        "vt100",
+        "sequence",
+        "control",
+        "code",
+        "codes",
+        "cursor"
+      ],
+      "devDependencies": {
+        "ava": "0.0.4",
+        "xo": "*"
+      },
+      "gitHead": "2775b221ad6b5ce33a8a7ca1d9b59ba7d923b5c8",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/ansi-escapes/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/ansi-escapes",
+      "_id": "ansi-escapes@1.1.0",
+      "_shasum": "21608edd3a4fc5a568c3b8d83ed4acc289d5ec77",
+      "_from": ".",
+      "_npmVersion": "2.11.2",
+      "_nodeVersion": "0.12.5",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "21608edd3a4fc5a568c3b8d83ed4acc289d5ec77",
+        "tarball": "https://registry.npmjs.org/ansi-escapes/-/ansi-escapes-1.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.1.1": {
+      "name": "ansi-escapes",
+      "version": "1.1.1",
+      "description": "ANSI escape codes for manipulating the terminal",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/ansi-escapes"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "ansi",
+        "terminal",
+        "console",
+        "cli",
+        "string",
+        "tty",
+        "escape",
+        "escapes",
+        "formatting",
+        "shell",
+        "xterm",
+        "log",
+        "logging",
+        "command-line",
+        "text",
+        "vt100",
+        "sequence",
+        "control",
+        "code",
+        "codes",
+        "cursor"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "3dff027c48a59a377ed44b6d942b1b4f007c326f",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/ansi-escapes/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/ansi-escapes",
+      "_id": "ansi-escapes@1.1.1",
+      "_shasum": "cc9c0b193ac4c2b99a19f9b9fbc18ff5edd1d0a8",
+      "_from": ".",
+      "_npmVersion": "2.14.12",
+      "_nodeVersion": "4.2.4",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "cc9c0b193ac4c2b99a19f9b9fbc18ff5edd1d0a8",
+        "tarball": "https://registry.npmjs.org/ansi-escapes/-/ansi-escapes-1.1.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.2.0": {
+      "name": "ansi-escapes",
+      "version": "1.2.0",
+      "description": "ANSI escape codes for manipulating the terminal",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/ansi-escapes"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "ansi",
+        "terminal",
+        "console",
+        "cli",
+        "string",
+        "tty",
+        "escape",
+        "escapes",
+        "formatting",
+        "shell",
+        "xterm",
+        "log",
+        "logging",
+        "command-line",
+        "text",
+        "vt100",
+        "sequence",
+        "control",
+        "code",
+        "codes",
+        "cursor"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "38584c66489a9144f83fd29462b3f0018ab2d4b9",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/ansi-escapes/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/ansi-escapes",
+      "_id": "ansi-escapes@1.2.0",
+      "_shasum": "9fe306ae90777d4bd58a13c39a1387c14667b46e",
+      "_from": ".",
+      "_npmVersion": "2.14.12",
+      "_nodeVersion": "4.3.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "9fe306ae90777d4bd58a13c39a1387c14667b46e",
+        "tarball": "https://registry.npmjs.org/ansi-escapes/-/ansi-escapes-1.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/ansi-escapes-1.2.0.tgz_1457170160083_0.6607096220832318"
+      },
+      "directories": {}
+    },
+    "1.3.0": {
+      "name": "ansi-escapes",
+      "version": "1.3.0",
+      "description": "ANSI escape codes for manipulating the terminal",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/ansi-escapes"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "ansi",
+        "terminal",
+        "console",
+        "cli",
+        "string",
+        "tty",
+        "escape",
+        "escapes",
+        "formatting",
+        "shell",
+        "xterm",
+        "log",
+        "logging",
+        "command-line",
+        "text",
+        "vt100",
+        "sequence",
+        "control",
+        "code",
+        "codes",
+        "cursor"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "9ecd532e37e888c5ea08cf0cf87e1c4f6e4bd858",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/ansi-escapes/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/ansi-escapes",
+      "_id": "ansi-escapes@1.3.0",
+      "_shasum": "070883c337d5e4ce9e124fce2639267f2a14d554",
+      "_from": ".",
+      "_npmVersion": "2.14.12",
+      "_nodeVersion": "4.3.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "070883c337d5e4ce9e124fce2639267f2a14d554",
+        "tarball": "https://registry.npmjs.org/ansi-escapes/-/ansi-escapes-1.3.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/ansi-escapes-1.3.0.tgz_1457516031370_0.8470738974865526"
+      },
+      "directories": {}
+    },
+    "1.4.0": {
+      "name": "ansi-escapes",
+      "version": "1.4.0",
+      "description": "ANSI escape codes for manipulating the terminal",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/ansi-escapes.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "ansi",
+        "terminal",
+        "console",
+        "cli",
+        "string",
+        "tty",
+        "escape",
+        "escapes",
+        "formatting",
+        "shell",
+        "xterm",
+        "log",
+        "logging",
+        "command-line",
+        "text",
+        "vt100",
+        "sequence",
+        "control",
+        "code",
+        "codes",
+        "cursor",
+        "iterm",
+        "iterm2"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "763a11847148479dd315c2b9f81b001c94740415",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/ansi-escapes/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/ansi-escapes#readme",
+      "_id": "ansi-escapes@1.4.0",
+      "_shasum": "d3a8a83b319aa67793662b13e761c7911422306e",
+      "_from": ".",
+      "_npmVersion": "2.15.0",
+      "_nodeVersion": "4.4.2",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "d3a8a83b319aa67793662b13e761c7911422306e",
+        "tarball": "https://registry.npmjs.org/ansi-escapes/-/ansi-escapes-1.4.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/ansi-escapes-1.4.0.tgz_1460925437568_0.228597579523921"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "ansi-escapes",
+      "version": "2.0.0",
+      "description": "ANSI escape codes for manipulating the terminal",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/ansi-escapes.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "ansi",
+        "terminal",
+        "console",
+        "cli",
+        "string",
+        "tty",
+        "escape",
+        "escapes",
+        "formatting",
+        "shell",
+        "xterm",
+        "log",
+        "logging",
+        "command-line",
+        "text",
+        "vt100",
+        "sequence",
+        "control",
+        "code",
+        "codes",
+        "cursor",
+        "iterm",
+        "iterm2"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "5dcd620fd52165650d440152ce49fb3d3c679381",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/ansi-escapes/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/ansi-escapes#readme",
+      "_id": "ansi-escapes@2.0.0",
+      "_shasum": "5bae52be424878dd9783e8910e3fc2922e83c81b",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "4.7.3",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "5bae52be424878dd9783e8910e3fc2922e83c81b",
+        "tarball": "https://registry.npmjs.org/ansi-escapes/-/ansi-escapes-2.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/ansi-escapes-2.0.0.tgz_1492961578751_0.06489237071946263"
+      },
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "ansi-escapes",
+      "version": "3.0.0",
+      "description": "ANSI escape codes for manipulating the terminal",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/ansi-escapes.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "ansi",
+        "terminal",
+        "console",
+        "cli",
+        "string",
+        "tty",
+        "escape",
+        "escapes",
+        "formatting",
+        "shell",
+        "xterm",
+        "log",
+        "logging",
+        "command-line",
+        "text",
+        "vt100",
+        "sequence",
+        "control",
+        "code",
+        "codes",
+        "cursor",
+        "iterm",
+        "iterm2"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "caedc6d277c5e7c4d3ecaa31ebe0b8b1c13086fa",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/ansi-escapes/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/ansi-escapes#readme",
+      "_id": "ansi-escapes@3.0.0",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "8.4.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-O/klc27mWNUigtv0F8NJWbLF00OcegQalkqKURWdosW08YZKi4m6CnSUSvIZG1otNJbTWhN01Hhz389DW7mvDQ==",
+        "shasum": "ec3e8b4e9f8064fc02c3ac9b65f1c275bda8ef92",
+        "tarball": "https://registry.npmjs.org/ansi-escapes/-/ansi-escapes-3.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ansi-escapes-3.0.0.tgz_1504607767081_0.4022042681463063"
+      },
+      "directories": {}
+    },
+    "3.1.0": {
+      "name": "ansi-escapes",
+      "version": "3.1.0",
+      "description": "ANSI escape codes for manipulating the terminal",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/ansi-escapes.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "ansi",
+        "terminal",
+        "console",
+        "cli",
+        "string",
+        "tty",
+        "escape",
+        "escapes",
+        "formatting",
+        "shell",
+        "xterm",
+        "log",
+        "logging",
+        "command-line",
+        "text",
+        "vt100",
+        "sequence",
+        "control",
+        "code",
+        "codes",
+        "cursor",
+        "iterm",
+        "iterm2"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "e8a567fa11ede53430ad464d4ec555efdd23f2a1",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/ansi-escapes/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/ansi-escapes#readme",
+      "_id": "ansi-escapes@3.1.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-UgAb8H9D41AQnu/PbWlCofQVcnV4Gs2bBJi9eZPxfU/hgglFh3SMDMENRIqdr7H6XFnXdoknctFByVsCOotTVw==",
+        "shasum": "f73207bb81207d75fd6c83f125af26eea378ca30",
+        "tarball": "https://registry.npmjs.org/ansi-escapes/-/ansi-escapes-3.1.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 7813
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ansi-escapes_3.1.0_1521965687676_0.4702464505871864"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.2.0": {
+      "name": "ansi-escapes",
+      "version": "3.2.0",
+      "description": "ANSI escape codes for manipulating the terminal",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/ansi-escapes.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "keywords": [
+        "ansi",
+        "terminal",
+        "console",
+        "cli",
+        "string",
+        "tty",
+        "escape",
+        "escapes",
+        "formatting",
+        "shell",
+        "xterm",
+        "log",
+        "logging",
+        "command-line",
+        "text",
+        "vt100",
+        "sequence",
+        "control",
+        "code",
+        "codes",
+        "cursor",
+        "iterm",
+        "iterm2"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "e6a876da131e0b62fd6b2f32605ff5bfbaa32078",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/ansi-escapes/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/ansi-escapes#readme",
+      "_id": "ansi-escapes@3.2.0",
+      "_nodeVersion": "10.15.0",
+      "_npmVersion": "6.7.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-cBhpre4ma+U0T1oM5fXg7Dy1Jw7zzwv7lt/GoCpr+hDQJoYnKVPLL4dCvSEFMmQurOQvSrwT7SL/DAlhBI97RQ==",
+        "shasum": "8780b98ff9dbf5638152d1f1fe5c1d7b4442976b",
+        "tarball": "https://registry.npmjs.org/ansi-escapes/-/ansi-escapes-3.2.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 8289,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcTnjbCRA9TVsSAnZWagAAS+AP+gI5AtI6qKqDqFK2Q7F1\ntu37a0wWqJ0ZAPzkMClVh8e7yB/7sdWN3dCcNI303ADGNaIs0AGpgu6M1r7a\nJEq6sozt/EF2aJ890iUrelp4uICxyf2uBje/9s2s2kyp4hwztGpp3ZTtgxh2\nLI00vHR6ntsoih+S8SFBW/rZrRZFmutE3/5wmstjJ0Y0c9Iw1fcQz3p/rhoZ\n1M7mltuvebCnNkxrG0P5c04I9uj7Cdye7rp6LAeIGozlUPjO8OFLSiUoVeZa\n5CZjux4lZ2iuXy7MZFgFOrypB2r5L0Uc9nTJ7BYHON8C19hvBVh4eQv0fydO\n/c9cQ56mstByCCwKZOws5WWBHSc3uy6k+mvfXg42x6Fzr1ppZxYMoJAp4em8\nkn8SUNI2NON7JzNB127wiWovz+KsTywyTT3tANQcZlkPvSlaoo6MFIPz1lu2\nSrxn3bWWQaPzPBDsYcSjsrpGVsxFP8vDyqx6aVxe37AzvdUzYkp6WqFHwHZt\ntScnEyymUlapX+NtF/ieXVY6qbo8ld5Ix+tUt6wJc4X81La0ml609nOQbxi1\na7SKooRsQW4erVltb8jR+ZeDRti8Yr+1pEsCYNeab1rC2NJNCybNu0WMEGmU\naPu1v5QPepuiDNPGJKhpYeHNwuu77AnKA5BE3rPLN3u2Nc4rUU0GmP0WDbvy\n/RmR\r\n=snKF\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ansi-escapes_3.2.0_1548646618951_0.14853970908921688"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.0.0": {
+      "name": "ansi-escapes",
+      "version": "4.0.0",
+      "description": "ANSI escape codes for manipulating the terminal",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/ansi-escapes.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd-check"
+      },
+      "keywords": [
+        "ansi",
+        "terminal",
+        "console",
+        "cli",
+        "string",
+        "tty",
+        "escape",
+        "escapes",
+        "formatting",
+        "shell",
+        "xterm",
+        "log",
+        "logging",
+        "command-line",
+        "text",
+        "vt100",
+        "sequence",
+        "control",
+        "code",
+        "codes",
+        "cursor",
+        "iterm",
+        "iterm2"
+      ],
+      "devDependencies": {
+        "@types/node": "^11.11.3",
+        "ava": "^1.3.1",
+        "tsd-check": "^0.5.0",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "6d2425d0556594c0c4ac94b6f1537b027dbd2054",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/ansi-escapes/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/ansi-escapes#readme",
+      "_id": "ansi-escapes@4.0.0",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.15.1",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-yTxlpJLHlj5UGassoMNfTxuGdhDOP44JFmuwzNKgWrDWOujtyNcgeyRa6rDQcd0RnsY7hdESi7rl7cm5F8Y5AA==",
+        "shasum": "1a0f6f3642794833d430c97d75f7d1445a087cc0",
+        "tarball": "https://registry.npmjs.org/ansi-escapes/-/ansi-escapes-4.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 12813,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJckPgfCRA9TVsSAnZWagAAxWAP/1ml6GN8Q9uPE/GSzDgE\nJoYfVcamatE5H+thFf55lcYskTuq4IiEQRKzTGFZQLT9W5gen2RBsA+s4/j5\nFM51vXrD3m/iodRtRlyeJLAG95ciGPA5zVLrVx4Ekxa+67PREFjtmQKmKRZE\n4TPYZqC2a8rCLrL73fQTEhE6ez72A+6RXzTAK3jY6yWXzkzrrlBCz4/axH/y\nAFvu8ZxzYHwmDvQGVyEDBKCb3rzGS1nOP8xT2j4NSXSUEeEze/XLoFS7z9FS\ndiTE/GlkGapIk7LANg+Ta86Bj5qLONSCJnofBnnhxKcRhZDyhH460Kj2CrvK\nRpNDrD+HpjAagxGzAhiv0NZFZelU61Snp6U5RlmpF+RbHnokXNre3A+gTZl/\nIpGQhv+EPOzqZhOV5SyJ55F8WVAYU7rljYYLljgKEZjTXcFDlDiHREVu8Y7S\nMwKDR3l5J0uDQZi9J/330IlErShFqN6evjr8GMqttCbRbAIOks/5CO+MSSA3\nOyO9xPAw/r7gnomh/ftU5B9KDRR2sSVzOxr1fPhtg1s6ud83xvobQVQCk6C4\nTvb1nPmZ0A53cIYSiTOeywmv5/amGY8mO9GmfQTSW6JP5cxVVllaojVKOCZx\n9Ip1UgHLLeqdwO+8Y44sYKH8ZH9TxrGYD7DiP8HWYkPYfLqArqGrCnokTiP1\nR95b\r\n=xv2h\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ansi-escapes_4.0.0_1553004574265_0.0382736518557496"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.0.1": {
+      "name": "ansi-escapes",
+      "version": "4.0.1",
+      "description": "ANSI escape codes for manipulating the terminal",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/ansi-escapes.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd-check"
+      },
+      "keywords": [
+        "ansi",
+        "terminal",
+        "console",
+        "cli",
+        "string",
+        "tty",
+        "escape",
+        "escapes",
+        "formatting",
+        "shell",
+        "xterm",
+        "log",
+        "logging",
+        "command-line",
+        "text",
+        "vt100",
+        "sequence",
+        "control",
+        "code",
+        "codes",
+        "cursor",
+        "iterm",
+        "iterm2"
+      ],
+      "dependencies": {
+        "type-fest": "^0.3.0"
+      },
+      "devDependencies": {
+        "@types/node": "^11.11.3",
+        "ava": "^1.3.1",
+        "tsd-check": "^0.5.0",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "d32406f15c7075d90bf629c562dcf9a4586189fc",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/ansi-escapes/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/ansi-escapes#readme",
+      "_id": "ansi-escapes@4.0.1",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.15.1",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-5lJW5pWCsu4epCsw15XA3yMy/QBZMvesTqgZCxhwENAjN4Ip5cG54xDSWWPX+Y03mmJtSPwiktB0n/R7t/0mlw==",
+        "shasum": "b1744fe3d11de9171df1af64dcf8a2acb926609b",
+        "tarball": "https://registry.npmjs.org/ansi-escapes/-/ansi-escapes-4.0.1.tgz",
+        "fileCount": 5,
+        "unpackedSize": 12962,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJckd1yCRA9TVsSAnZWagAAniIP/itlEaJ47W12KrDoOfGn\nV4UbQ4VAHgbS4hlceVdmOxoeNTy10TdMw96w9FYPxzFWqmAEWVZOv4zHkLI5\n8SC9tAXRjrXiYDgaHhoNybYki4v4OjL1kuB64onpv+SnAAitrmdu2kYd4ceA\nwPsIphH2S1KxygDcMFhq3gulF5/D2jENAuMdtGaQYA39FQk2RSJMNJZXbRc2\ncVXkeVLNv4oDEiaPONOQdgc3DkKBSple1eS+sFE63r4eYUEuZeMau6J22N2r\nJR0zADfkmULr+QIYJIdN5wTLrDzpg4g7B1apWQUYp8n35d5T3NCj8pZCQlud\nbl/kBMOJJU/NoInNhYEjBxbmdaRJhz/tIXUKZh14iyANkMwn0Wyw4LblarG0\ngp5B5PBudrFUAcgcgxGqPYztG9UaG20JUtskClxzE1VfheWXZFRM/OP3R659\nIWICovVaBPzu92boctHiNGapET7DYltyP+7P+rvF6hE6TCHwkBYnurSX4mMU\nBds9fOdUCUO54UFRP1VwDtnjGohtf0AQPn9pUdcRe48WyUlBwh1LJhlcuhsw\nLMbf/f+As3HNKZzh1S+vhNvKwh3ceJknstdeerURz0cA37gPCstCyCy8dSMD\ngWX5XBgYlqP+6bTMLuEaEv2qpq9e+D2n0/1/e7ARA3/+xmwqGWR4zmIGxlQM\nGGH6\r\n=6NuM\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ansi-escapes_4.0.1_1553063281598_0.9054858435430257"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.1.0": {
+      "name": "ansi-escapes",
+      "version": "4.1.0",
+      "description": "ANSI escape codes for manipulating the terminal",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/ansi-escapes.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "ansi",
+        "terminal",
+        "console",
+        "cli",
+        "string",
+        "tty",
+        "escape",
+        "escapes",
+        "formatting",
+        "shell",
+        "xterm",
+        "log",
+        "logging",
+        "command-line",
+        "text",
+        "vt100",
+        "sequence",
+        "control",
+        "code",
+        "codes",
+        "cursor",
+        "iterm",
+        "iterm2"
+      ],
+      "dependencies": {
+        "type-fest": "^0.3.0"
+      },
+      "devDependencies": {
+        "@types/node": "^11.12.2",
+        "ava": "^1.4.1",
+        "tsd": "^0.7.1",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "aa6240f064ddc1c719c917e841e1351e5c2dc7d0",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/ansi-escapes/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/ansi-escapes#readme",
+      "_id": "ansi-escapes@4.1.0",
+      "_nodeVersion": "8.15.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-2VY/iCUZTDLD/qxptS3Zn3c6k2MeIbYqjRXqM8T5oC7N2mMjh3xIU3oYru6cHGbldFa9h5i8N0fP65UaUqrMWA==",
+        "shasum": "62a9e5fa78e99c5bb588b1796855f5d729231b53",
+        "tarball": "https://registry.npmjs.org/ansi-escapes/-/ansi-escapes-4.1.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 13128,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcoLVbCRA9TVsSAnZWagAAAwYP/0hw+ntphEwjGnvjmPf/\nGjSQOz0EyMBHzL2KRUFdhhUJyf/Dc0hLSbfuP6SQPYIibSbWREa89KWOYUXY\nEKmDnpFAqHH0ZEGcF0N1Q3VOKoaiP2Vfe2cgENLacbtlxXT2AYRf6nvMP12P\n/n4CKKO8OMQu3hdHyi2FguEc8VfKibsa4QuY0i1QWtuCF7PXPzREy7R37EHv\ntxg8IUhnVpROES2i3b71xkUX6azY4IcbzA9J6YCPdKXK6edqBoJqNHKqiXfN\nk43F1CI9bvhCvM3GV+Mi+9bwDmAsmxYW2xuMqBCpBKL21Lj8IA0a4mOFnYqj\nXoesYa4Gd/6Zl+1ZQm06U87C+cLwMpQg4Snn4INexDZ71X64RagWLgfDmyeb\njp4303Qrbd2JoEs5gqf6mW9ql5PMK8vjtsZPyf/f9Jh+Zk3JlIuAHutyBYYE\nG7ZzTal8BkB7pn6npnctq1lGV9BANA/Oq3CZxAFHZj7ZpUpCtfdJCerHYmci\nNKMoRyDwgpQWVQiYarRF1Q43pRh+sYE/1Xdh1icTY7v+CQQ7o+oFqQyq1rDn\nXKZsiaqcXVDMyTeaknsl4JTfnw6FXlYYQYD2/t5kS/Rf5vI7kYzUPnLRzWUn\nzAXDcvySCidi/Mkf6vgMqBeQ2MTECkgBPGgchiOKaIy3ABKMQ6kZgjfWrMul\nvx0X\r\n=nsqP\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ansi-escapes_4.1.0_1554036058668_0.8029870950801763"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.2.0": {
+      "name": "ansi-escapes",
+      "version": "4.2.0",
+      "description": "ANSI escape codes for manipulating the terminal",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/ansi-escapes.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "ansi",
+        "terminal",
+        "console",
+        "cli",
+        "string",
+        "tty",
+        "escape",
+        "escapes",
+        "formatting",
+        "shell",
+        "xterm",
+        "log",
+        "logging",
+        "command-line",
+        "text",
+        "vt100",
+        "sequence",
+        "control",
+        "code",
+        "codes",
+        "cursor",
+        "iterm",
+        "iterm2"
+      ],
+      "dependencies": {
+        "type-fest": "^0.5.2"
+      },
+      "devDependencies": {
+        "@types/node": "^12.0.7",
+        "ava": "^2.1.0",
+        "tsd": "^0.7.1",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "88d0fcfbcb08b40562a5d7fab902603e8fb88af7",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/ansi-escapes/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/ansi-escapes#readme",
+      "_id": "ansi-escapes@4.2.0",
+      "_nodeVersion": "8.16.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-0+VX4uhi8m3aNbzoqKmkAVOEj6uQzcUHXoFPkKjhZPTpGRUBqVh930KbB6PS4zIyDZccphlLIYlu8nsjFzkXwg==",
+        "shasum": "c38600259cefba178ee3f7166c5ea3a5dd2e88fc",
+        "tarball": "https://registry.npmjs.org/ansi-escapes/-/ansi-escapes-4.2.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 13522,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJc/9eTCRA9TVsSAnZWagAAPEcP/i06zFp7Me8antNXz4qb\nrVl8Qr8rSgJScFuVGanuwyBMyoSu3RKeBTwEO76i5Ear+ydL3v4bTpm1z9ci\nKF7sF5+iP5McZRlZjC01SCGuZbW5Qe4H62VPEIez+D3LaQSi4jv6m9oXl51y\n7Ibk1WNbSxSCF2SdsJ930tffuJHccg2nCOQjOMJ+C4Nh9qt6kScldJ+lOHZU\nw0K5LpVB23SZNrjcj2o5f3JXXqa0VRnNkcZeD+/HX0dlxDFnbBNW/ljjThRd\nvV7Sp2cukqMyfPDHcmB1QAiJO7LdbRLEfchbBRRDXqQE6uZZENUC2xo0q5WT\nd0ciPHQa3o4RXsNLGvBcJ8Qc2mb5UkXeROHMC2dA40ADq2QNSbxBksIy5EjL\n3OJaozdWrqZHm/x4hLmH9+32nq0EX10nnPomJIJHuI7R4QMaaTaUgv8YF7c6\n6VNbDgV7EtnnleHABWQuZovu28SU3YjbIW4iM0v4umT+jpXuS5fW5/oLu94K\nAEm/02Xd6aoDlIiM8Coc0JEhBY+5yO1nWfgRvaaGRGZ+jNGqEK3P1sz63a1x\nktDPuSdpulG5bYhYBzceuWsmb3ypaFJt3HhNbS8ronONf9uWR0VpMUGzA+cO\nW9Ax0JTaE+IyrmWCWl3a4O0RKdB+KhFjGXykqymMjmeIytnPwDVQcTTpNPyU\nz9mK\r\n=tRgt\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ansi-escapes_4.2.0_1560270739046_0.4091127140783226"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.2.1": {
+      "name": "ansi-escapes",
+      "version": "4.2.1",
+      "description": "ANSI escape codes for manipulating the terminal",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/ansi-escapes.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "ansi",
+        "terminal",
+        "console",
+        "cli",
+        "string",
+        "tty",
+        "escape",
+        "escapes",
+        "formatting",
+        "shell",
+        "xterm",
+        "log",
+        "logging",
+        "command-line",
+        "text",
+        "vt100",
+        "sequence",
+        "control",
+        "code",
+        "codes",
+        "cursor",
+        "iterm",
+        "iterm2"
+      ],
+      "dependencies": {
+        "type-fest": "^0.5.2"
+      },
+      "devDependencies": {
+        "@types/node": "^12.0.7",
+        "ava": "^2.1.0",
+        "tsd": "^0.7.1",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "1c3ba8504fb06889717918aece5c1ab70be26c0d",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/ansi-escapes/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/ansi-escapes#readme",
+      "_id": "ansi-escapes@4.2.1",
+      "_nodeVersion": "10.16.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-Cg3ymMAdN10wOk/VYfLV7KCQyv7EDirJ64500sU7n9UlmioEtDuU5Gd+hj73hXSU/ex7tHJSssmyftDdkMLO8Q==",
+        "shasum": "4dccdb846c3eee10f6d64dea66273eab90c37228",
+        "tarball": "https://registry.npmjs.org/ansi-escapes/-/ansi-escapes-4.2.1.tgz",
+        "fileCount": 5,
+        "unpackedSize": 13536,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdQgBsCRA9TVsSAnZWagAAu+wP/2nJKH3hfsMzFis0otp0\n9b7tv68E+LHt9vsbBWE3sMzTnEhXxhZsDzTlWHD/iG4rWlZ7SWaJ+0cLkiGv\nETMBfNqKpvhNQ5pLmPDhzxfvGer8Pq1BZRjN3l2dARRhtY1NkVP+S/V/mE0d\nHOqm/hJNPHNg13tgUFU0K9hia8zpHaMBqd4i2VIi96fzaW68WjhaNke2Pmpd\nrumwbsL8BeX5K0flYPZ94xdyWw13zEcqPb5pi2gpYhRgouCauDBXR5VJTClJ\nEAOtDVqdmARx73zTU23W938ODAzYcclNhavzNKi+3Ka60pnv9b6eWXLCHZqw\ntvXoZcqwfVDslVOexuT8ClEtkslw2VOjzQT7454Mj4+JZmSf2Ol7/shtawAx\nrM9V52dVcV0d+M/w4sS5Qmxb1JhjIhzeOiLww/rpyAyR8pJ7YYSB7d6vzVQq\nVUWzaQWawX9g4Viyv06aNvVu0AZZWOBqkkz2mVJEci+7501xhVSmAJ44E445\n3ip9o9wvClL9Um0Bv22ApxeU0OQjmGpe+R05t7+kWFy6BhQFt7ruFCABwDpb\nWd60wWP6rc5L1yxAUutblnhZNjHsy3GuGf9UzgMSJv2cPhvGQ5JvBLkGiw1O\nSLE7437ipzsjRYmuoA6DQ+6nLfXTMQJedfFu589MRYhEyIdj/6l6xTDbdOp7\n1bwl\r\n=PvjN\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ansi-escapes_4.2.1_1564606572143_0.5698847544817396"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.3.0": {
+      "name": "ansi-escapes",
+      "version": "4.3.0",
+      "description": "ANSI escape codes for manipulating the terminal",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/ansi-escapes.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "ansi",
+        "terminal",
+        "console",
+        "cli",
+        "string",
+        "tty",
+        "escape",
+        "escapes",
+        "formatting",
+        "shell",
+        "xterm",
+        "log",
+        "logging",
+        "command-line",
+        "text",
+        "vt100",
+        "sequence",
+        "control",
+        "code",
+        "codes",
+        "cursor",
+        "iterm",
+        "iterm2"
+      ],
+      "dependencies": {
+        "type-fest": "^0.8.1"
+      },
+      "devDependencies": {
+        "@types/node": "^12.0.7",
+        "ava": "^2.1.0",
+        "tsd": "^0.11.0",
+        "xo": "^0.25.3"
+      },
+      "gitHead": "01aa744d6568d1daf20d48d071a08c171445db42",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/ansi-escapes/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/ansi-escapes#readme",
+      "_id": "ansi-escapes@4.3.0",
+      "_nodeVersion": "10.17.0",
+      "_npmVersion": "6.11.3",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-EiYhwo0v255HUL6eDyuLrXEkTi7WwVCLAw+SeOQ7M7qdun1z1pum4DEm/nuqIVbPvi9RPPc9k9LbyBv6H0DwVg==",
+        "shasum": "a4ce2b33d6b214b7950d8595c212f12ac9cc569d",
+        "tarball": "https://registry.npmjs.org/ansi-escapes/-/ansi-escapes-4.3.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 16441,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd0CnCCRA9TVsSAnZWagAA9VoP/3R2+kvuyS8v5ta9At8t\nkMdPerLPjURYtfGkCO1/4p5/Qo6KvbGvFmO8bYuybN33bpJjaeuI1m2zxS/V\n//b/g8b+kmzvwdeZtkSojfiROeu7m/YNVKj0wZ5Kd0FnAhRe1tYL0D01D5Xs\nYr0xdgyFGzitNfiBTtIjxFthj36TvmRy5zlOwFqT+xcAMLE2rqFQJviicsNF\n/hawimEGuJoc6SafneARRkdA0bUDZ7h2Hx1i6vtx0SI1ASenmuVMt1x12V9S\nwUt0dalsArv82oOVWZxitLKKwuCZ5YGqO9qtlAXDtDW+TnQep7DsG48twlg8\nl4MdDioSr9YvQTt+s9ISG90w+SrvA+SNBXbD+xJNxiarq83GP8U/UuFRlrHu\nZTwJX5r2xJiqP2a1wYcpB4LCxeCjgcc0AZPCIVdVWEbTKzPC6Q5zfvU4bY7+\nu+j2GLryBsg3L2iosDNLTneOtjEMEC202DG75U1F7D8+4xuexYnzZxP/SID9\nvDbVC7T9s2CwZqNBmLjY/yuUA8x5w76cOabG+zEW9qhaE4tc4WROcKXKuHM+\n/2fuQ2Rj3Sxtu+FsSg02J7b/MFHRfBk0Jo+DZK/KXGkSkZX2QsAY9W2JcZfa\nNewUJe2H86DaAg3vMvgjNwA8CN5rp1qKyU4MvFfC7fdHFfXCzagcrJ/MduLv\neRBC\r\n=WD1/\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ansi-escapes_4.3.0_1573923265964_0.6422523404205711"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.3.1": {
+      "name": "ansi-escapes",
+      "version": "4.3.1",
+      "description": "ANSI escape codes for manipulating the terminal",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/ansi-escapes.git"
+      },
+      "funding": "https://github.com/sponsors/sindresorhus",
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "https://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "ansi",
+        "terminal",
+        "console",
+        "cli",
+        "string",
+        "tty",
+        "escape",
+        "escapes",
+        "formatting",
+        "shell",
+        "xterm",
+        "log",
+        "logging",
+        "command-line",
+        "text",
+        "vt100",
+        "sequence",
+        "control",
+        "code",
+        "codes",
+        "cursor",
+        "iterm",
+        "iterm2"
+      ],
+      "dependencies": {
+        "type-fest": "^0.11.0"
+      },
+      "devDependencies": {
+        "@types/node": "^13.7.7",
+        "ava": "^2.1.0",
+        "tsd": "^0.11.0",
+        "xo": "^0.25.3"
+      },
+      "gitHead": "2e6a4359b10e4b0320e6dad9857ea04f0decbda4",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/ansi-escapes/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/ansi-escapes#readme",
+      "_id": "ansi-escapes@4.3.1",
+      "_nodeVersion": "10.18.1",
+      "_npmVersion": "6.14.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-JWF7ocqNrp8u9oqpgV+wH5ftbt+cfvv+PTjOvKLT3AdYly/LmORARfEVT1iyjwN+4MqE5UmVKoAdIBqeoCHgLA==",
+        "shasum": "a5c47cc43181f1f38ffd7076837700d395522a61",
+        "tarball": "https://registry.npmjs.org/ansi-escapes/-/ansi-escapes-4.3.1.tgz",
+        "fileCount": 5,
+        "unpackedSize": 16514,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeW76iCRA9TVsSAnZWagAAkE4P/102TolOQdfllXs3INMq\nP56Sk9ogCptk0fofbhVjimGWXA8N1oCJrt/YXpQlb/MlyQx++Sn0FbozPpgv\nruyUhvWNfn7Ay0mXd65jvZ+LhnjQksI+s1gJCxiWPRCxmlPIHbu7yGTIlYFG\nE6sVpt/Gn6ZsUZ7J/eqCqNf8YP0L6IBKwrJSu2BhXLFzCtxeSmECcWFsreOB\n8JYpCaKUrFwdkOl9SCIiZEcrHYV+7oOcOeABMN20DI/3eyQlhTbYOWMQrKFm\n/0bCFjLSLtJ/lBdGg3gSq12gMPQGWoCMi4WL8TDvp/7DxAgPT9eklGSvhd3c\n4B+9EW/ukLknvJeJ3n1LooCm9M7y/ML3dtwDYeM5PKyfG4MI7cP09aWoT6dD\nVhzQlY1n4kQVjw8rd9spCOITe4vSOA5ad25nGN7EIpX+9W2txRJPd7zCz8tG\nYCT8E+1sdUHZ4Jke+GvHapX/Wr2sBlrTXtzjOjoSlLrVaN9ijv5OaWXEXRLu\nTJpshsubiK4aDO3Q8g3kx17xzr+WwjhumlsZintkZ7eAuEqoWIs3hFIPRWjr\nH+I+YzsJqe37fVMOXLjHJu2c3csed1Jbg8nzI2vn+j5LlcdNdWEA2lhSSSRq\nMumzYpsBr6+bpNjL8uCIV4t7h9XWhwBJ0EQus/gma+zWfIl5YSmMuIFDzEdL\nR+qU\r\n=81LK\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ansi-escapes_4.3.1_1583070881759_0.1811155598951324"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# ansi-escapes [![Build Status](https://travis-ci.org/sindresorhus/ansi-escapes.svg?branch=master)](https://travis-ci.org/sindresorhus/ansi-escapes)\n\n> [ANSI escape codes](http://www.termsys.demon.co.uk/vtansi.htm) for manipulating the terminal\n\n## Install\n\n```\n$ npm install ansi-escapes\n```\n\n## Usage\n\n```js\nconst ansiEscapes = require('ansi-escapes');\n\n// Moves the cursor two rows up and to the left\nprocess.stdout.write(ansiEscapes.cursorUp(2) + ansiEscapes.cursorLeft);\n//=> '\\u001B[2A\\u001B[1000D'\n```\n\n## API\n\n### cursorTo(x, y?)\n\nSet the absolute position of the cursor. `x0` `y0` is the top left of the screen.\n\n### cursorMove(x, y?)\n\nSet the position of the cursor relative to its current position.\n\n### cursorUp(count)\n\nMove cursor up a specific amount of rows. Default is `1`.\n\n### cursorDown(count)\n\nMove cursor down a specific amount of rows. Default is `1`.\n\n### cursorForward(count)\n\nMove cursor forward a specific amount of columns. Default is `1`.\n\n### cursorBackward(count)\n\nMove cursor backward a specific amount of columns. Default is `1`.\n\n### cursorLeft\n\nMove cursor to the left side.\n\n### cursorSavePosition\n\nSave cursor position.\n\n### cursorRestorePosition\n\nRestore saved cursor position.\n\n### cursorGetPosition\n\nGet cursor position.\n\n### cursorNextLine\n\nMove cursor to the next line.\n\n### cursorPrevLine\n\nMove cursor to the previous line.\n\n### cursorHide\n\nHide cursor.\n\n### cursorShow\n\nShow cursor.\n\n### eraseLines(count)\n\nErase from the current cursor position up the specified amount of rows.\n\n### eraseEndLine\n\nErase from the current cursor position to the end of the current line.\n\n### eraseStartLine\n\nErase from the current cursor position to the start of the current line.\n\n### eraseLine\n\nErase the entire current line.\n\n### eraseDown\n\nErase the screen from the current line down to the bottom of the screen.\n\n### eraseUp\n\nErase the screen from the current line up to the top of the screen.\n\n### eraseScreen\n\nErase the screen and move the cursor the top left position.\n\n### scrollUp\n\nScroll display up one line.\n\n### scrollDown\n\nScroll display down one line.\n\n### clearScreen\n\nClear the terminal screen. (Viewport)\n\n### clearTerminal\n\nClear the whole terminal, including scrollback buffer. (Not just the visible part of it)\n\n### beep\n\nOutput a beeping sound.\n\n### link(text, url)\n\nCreate a clickable link.\n\n[Supported terminals.](https://gist.github.com/egmontkob/eb114294efbcd5adb1944c9f3cb5feda) Use [`supports-hyperlinks`](https://github.com/jamestalmage/supports-hyperlinks) to detect link support.\n\n### image(filePath, options?)\n\nDisplay an image.\n\n*Currently only supported on iTerm2 >=3*\n\nSee [term-img](https://github.com/sindresorhus/term-img) for a higher-level module.\n\n#### input\n\nType: `Buffer`\n\nBuffer of an image. Usually read in with `fs.readFile()`.\n\n#### options\n\nType: `object`\n\n##### width\n##### height\n\nType: `string | number`\n\nThe width and height are given as a number followed by a unit, or the word \"auto\".\n\n- `N`: N character cells.\n- `Npx`: N pixels.\n- `N%`: N percent of the session's width or height.\n- `auto`: The image's inherent size will be used to determine an appropriate dimension.\n\n##### preserveAspectRatio\n\nType: `boolean`\\\nDefault: `true`\n\n### iTerm.setCwd(path?)\n\nType: `string`\\\nDefault: `process.cwd()`\n\n[Inform iTerm2](https://www.iterm2.com/documentation-escape-codes.html) of the current directory to help semantic history and enable [Cmd-clicking relative paths](https://coderwall.com/p/b7e82q/quickly-open-files-in-iterm-with-cmd-click).\n\n### iTerm.annotation(message, options?)\n\nCreates an escape code to display an \"annotation\" in iTerm2.\n\nAn annotation looks like this when shown:\n\n<img src=\"https://user-images.githubusercontent.com/924465/64382136-b60ac700-cfe9-11e9-8a35-9682e8dc4b72.png\" width=\"500\">\n\nSee the [iTerm Proprietary Escape Codes documentation](https://iterm2.com/documentation-escape-codes.html) for more information.\n\n#### message\n\nType: `string`\n\nThe message to display within the annotation.\n\nThe `|` character is disallowed and will be stripped.\n\n#### options\n\nType: `object`\n\n##### length\n\nType: `number`\\\nDefault: The remainder of the line\n\nNonzero number of columns to annotate.\n\n##### x\n\nType: `number`\\\nDefault: Cursor position\n\nStarting X coordinate.\n\nMust be used with `y` and `length`.\n\n##### y\n\nType: `number`\\\nDefault: Cursor position\n\nStarting Y coordinate.\n\nMust be used with `x` and `length`.\n\n##### isHidden\n\nType: `boolean`\\\nDefault: `false`\n\nCreate a \"hidden\" annotation.\n\nAnnotations created this way can be shown using the \"Show Annotations\" iTerm command.\n\n## Related\n\n- [ansi-styles](https://github.com/chalk/ansi-styles) - ANSI escape codes for styling strings in the terminal\n\n---\n\n<div align=\"center\">\n\t<b>\n\t\t<a href=\"https://tidelift.com/subscription/pkg/npm-ansi-escapes?utm_source=npm-ansi-escapes&utm_medium=referral&utm_campaign=readme\">Get professional support for this package with a Tidelift subscription</a>\n\t</b>\n\t<br>\n\t<sub>\n\t\tTidelift helps make open source sustainable for maintainers while giving companies<br>assurances about security, maintenance, and licensing for their dependencies.\n\t</sub>\n</div>\n",
+  "maintainers": [
+    {
+      "name": "sindresorhus",
+      "email": "sindresorhus@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-03-01T13:54:44.541Z",
+    "created": "2015-08-14T15:26:46.205Z",
+    "1.0.0": "2015-08-14T15:26:46.205Z",
+    "1.1.0": "2015-08-17T08:54:15.403Z",
+    "1.1.1": "2016-01-10T01:16:26.151Z",
+    "1.2.0": "2016-03-05T09:29:21.486Z",
+    "1.3.0": "2016-03-09T09:33:54.015Z",
+    "1.4.0": "2016-04-17T20:37:19.676Z",
+    "2.0.0": "2017-04-23T15:32:59.037Z",
+    "3.0.0": "2017-09-05T10:36:07.996Z",
+    "3.1.0": "2018-03-25T08:14:47.767Z",
+    "3.2.0": "2019-01-28T03:36:59.139Z",
+    "4.0.0": "2019-03-19T14:09:34.405Z",
+    "4.0.1": "2019-03-20T06:28:01.768Z",
+    "4.1.0": "2019-03-31T12:40:58.906Z",
+    "4.2.0": "2019-06-11T16:32:19.203Z",
+    "4.2.1": "2019-07-31T20:56:12.284Z",
+    "4.3.0": "2019-11-16T16:54:26.152Z",
+    "4.3.1": "2020-03-01T13:54:42.051Z"
+  },
+  "homepage": "https://github.com/sindresorhus/ansi-escapes#readme",
+  "keywords": [
+    "ansi",
+    "terminal",
+    "console",
+    "cli",
+    "string",
+    "tty",
+    "escape",
+    "escapes",
+    "formatting",
+    "shell",
+    "xterm",
+    "log",
+    "logging",
+    "command-line",
+    "text",
+    "vt100",
+    "sequence",
+    "control",
+    "code",
+    "codes",
+    "cursor",
+    "iterm",
+    "iterm2"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/ansi-escapes.git"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "https://sindresorhus.com"
+  },
+  "bugs": {
+    "url": "https://github.com/sindresorhus/ansi-escapes/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md",
+  "users": {
+    "retorillo": true,
+    "leizongmin": true,
+    "yuch4n": true,
+    "unixzii": true,
+    "xieranmaya": true,
+    "russteee": true,
+    "justjavac": true
+  }
+}

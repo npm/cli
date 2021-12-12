@@ -1,0 +1,807 @@
+{
+  "_id": "querystringify",
+  "_rev": "29-09cb45477ad13e19b2988c851ddcc4a8",
+  "name": "querystringify",
+  "description": "Querystringify - Small, simple but powerful query string parser.",
+  "dist-tags": {
+    "latest": "2.2.0"
+  },
+  "versions": {
+    "0.0.0": {
+      "name": "querystringify",
+      "version": "0.0.0",
+      "description": "Querystringify - Small, simple but powerful query string parser.",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha --reporter spec --ui bdd test.js",
+        "watch": "mocha --watch --reporter spec --ui bdd test.js",
+        "coverage": "istanbul cover ./node_modules/.bin/_mocha -- --reporter spec --ui bdd test.js",
+        "test-travis": "istanbul cover node_modules/.bin/_mocha --report lcovonly -- --reporter spec --ui bdd test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/unshift/querystringify"
+      },
+      "keywords": [
+        "query",
+        "string",
+        "query-string",
+        "querystring",
+        "qs",
+        "stringify",
+        "parse",
+        "decode",
+        "encode"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/unshift/querystringify/issues"
+      },
+      "homepage": "https://github.com/unshift/querystringify",
+      "devDependencies": {
+        "assume": "0.0.x",
+        "istanbul": "0.3.x",
+        "mocha": "2.0.x",
+        "pre-commit": "0.0.x"
+      },
+      "gitHead": "bbb15d7e86737f459aa81965d485b368508922b2",
+      "_id": "querystringify@0.0.0",
+      "_shasum": "1da77087d6e3fff4fbb4dcc432fe634d9121ec37",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "V1",
+        "email": "info@3rd-Eden.com"
+      },
+      "maintainers": [
+        {
+          "name": "V1",
+          "email": "info@3rd-Eden.com"
+        }
+      ],
+      "dist": {
+        "shasum": "1da77087d6e3fff4fbb4dcc432fe634d9121ec37",
+        "tarball": "https://registry.npmjs.org/querystringify/-/querystringify-0.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.0.1": {
+      "name": "querystringify",
+      "version": "0.0.1",
+      "description": "Querystringify - Small, simple but powerful query string parser.",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha --reporter spec --ui bdd test.js",
+        "watch": "mocha --watch --reporter spec --ui bdd test.js",
+        "coverage": "istanbul cover ./node_modules/.bin/_mocha -- --reporter spec --ui bdd test.js",
+        "test-travis": "istanbul cover node_modules/.bin/_mocha --report lcovonly -- --reporter spec --ui bdd test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/unshiftio/querystringify"
+      },
+      "keywords": [
+        "query",
+        "string",
+        "query-string",
+        "querystring",
+        "qs",
+        "stringify",
+        "parse",
+        "decode",
+        "encode"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/unshiftio/querystringify/issues"
+      },
+      "homepage": "https://github.com/unshiftio/querystringify",
+      "devDependencies": {
+        "assume": "0.0.x",
+        "istanbul": "0.3.x",
+        "mocha": "2.0.x",
+        "pre-commit": "0.0.x"
+      },
+      "gitHead": "1720a11fe66fba85f113b750a1b5cf7512dd9f4c",
+      "_id": "querystringify@0.0.1",
+      "_shasum": "893009e744e9f7b51d1c142454512db2c2faccc5",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "V1",
+        "email": "info@3rd-Eden.com"
+      },
+      "maintainers": [
+        {
+          "name": "V1",
+          "email": "info@3rd-Eden.com"
+        }
+      ],
+      "dist": {
+        "shasum": "893009e744e9f7b51d1c142454512db2c2faccc5",
+        "tarball": "https://registry.npmjs.org/querystringify/-/querystringify-0.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "0.0.2": {
+      "name": "querystringify",
+      "version": "0.0.2",
+      "description": "Querystringify - Small, simple but powerful query string parser.",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha --reporter spec --ui bdd test.js",
+        "watch": "mocha --watch --reporter spec --ui bdd test.js",
+        "coverage": "istanbul cover ./node_modules/.bin/_mocha -- --reporter spec --ui bdd test.js",
+        "test-travis": "istanbul cover node_modules/.bin/_mocha --report lcovonly -- --reporter spec --ui bdd test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/unshiftio/querystringify"
+      },
+      "keywords": [
+        "query",
+        "string",
+        "query-string",
+        "querystring",
+        "qs",
+        "stringify",
+        "parse",
+        "decode",
+        "encode"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/unshiftio/querystringify/issues"
+      },
+      "homepage": "https://github.com/unshiftio/querystringify",
+      "devDependencies": {
+        "assume": "0.0.x",
+        "istanbul": "0.3.x",
+        "mocha": "2.0.x",
+        "pre-commit": "0.0.x"
+      },
+      "gitHead": "12e7a0e6824369276f89fb147b6b7883a390cb22",
+      "_id": "querystringify@0.0.2",
+      "_shasum": "827069d290b3e044c85136985458e6d1bf183aa5",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "V1",
+        "email": "info@3rd-Eden.com"
+      },
+      "maintainers": [
+        {
+          "name": "V1",
+          "email": "info@3rd-Eden.com"
+        },
+        {
+          "name": "unshift",
+          "email": "npm@unshift.io"
+        }
+      ],
+      "dist": {
+        "shasum": "827069d290b3e044c85136985458e6d1bf183aa5",
+        "tarball": "https://registry.npmjs.org/querystringify/-/querystringify-0.0.2.tgz"
+      },
+      "directories": {}
+    },
+    "0.0.3": {
+      "name": "querystringify",
+      "version": "0.0.3",
+      "description": "Querystringify - Small, simple but powerful query string parser.",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha --reporter spec --ui bdd test.js",
+        "watch": "mocha --watch --reporter spec --ui bdd test.js",
+        "coverage": "istanbul cover ./node_modules/.bin/_mocha -- --reporter spec --ui bdd test.js",
+        "test-travis": "istanbul cover node_modules/.bin/_mocha --report lcovonly -- --reporter spec --ui bdd test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/unshiftio/querystringify"
+      },
+      "keywords": [
+        "query",
+        "string",
+        "query-string",
+        "querystring",
+        "qs",
+        "stringify",
+        "parse",
+        "decode",
+        "encode"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/unshiftio/querystringify/issues"
+      },
+      "homepage": "https://github.com/unshiftio/querystringify",
+      "devDependencies": {
+        "assume": "1.2.x",
+        "istanbul": "0.3.x",
+        "mocha": "2.2.x",
+        "pre-commit": "1.0.x"
+      },
+      "gitHead": "0e53b2049f1d3390b577283ab913d4825ce67987",
+      "_id": "querystringify@0.0.3",
+      "_shasum": "0c9d36fbf8c7a4f71eb370857763577a63335be7",
+      "_from": ".",
+      "_npmVersion": "2.7.5",
+      "_nodeVersion": "0.10.35",
+      "_npmUser": {
+        "name": "3rdeden",
+        "email": "npm@3rd-Eden.com"
+      },
+      "maintainers": [
+        {
+          "name": "unshift",
+          "email": "npm@unshift.io"
+        },
+        {
+          "name": "v1",
+          "email": "info@3rd-Eden.com"
+        },
+        {
+          "name": "3rdeden",
+          "email": "npm@3rd-Eden.com"
+        }
+      ],
+      "dist": {
+        "shasum": "0c9d36fbf8c7a4f71eb370857763577a63335be7",
+        "tarball": "https://registry.npmjs.org/querystringify/-/querystringify-0.0.3.tgz"
+      },
+      "directories": {}
+    },
+    "0.0.4": {
+      "name": "querystringify",
+      "version": "0.0.4",
+      "description": "Querystringify - Small, simple but powerful query string parser.",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha test.js",
+        "watch": "mocha --watch test.js",
+        "coverage": "istanbul cover _mocha -- test.js",
+        "test-travis": "istanbul cover _mocha --report lcovonly -- test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/unshiftio/querystringify.git"
+      },
+      "keywords": [
+        "query",
+        "string",
+        "query-string",
+        "querystring",
+        "qs",
+        "stringify",
+        "parse",
+        "decode",
+        "encode"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/unshiftio/querystringify/issues"
+      },
+      "homepage": "https://github.com/unshiftio/querystringify",
+      "devDependencies": {
+        "assume": "1.4.x",
+        "istanbul": "0.4.x",
+        "mocha": "2.4.x",
+        "pre-commit": "1.1.x"
+      },
+      "gitHead": "b206ebd5928c1f39df68bb89bbd8875675dbcef0",
+      "_id": "querystringify@0.0.4",
+      "_shasum": "0cf7f84f9463ff0ae51c4c4b142d95be37724d9c",
+      "_from": ".",
+      "_npmVersion": "3.9.3",
+      "_nodeVersion": "6.2.1",
+      "_npmUser": {
+        "name": "3rdeden",
+        "email": "npm@3rd-Eden.com"
+      },
+      "maintainers": [
+        {
+          "name": "unshift",
+          "email": "npm@unshift.io"
+        },
+        {
+          "name": "v1",
+          "email": "info@3rd-Eden.com"
+        },
+        {
+          "name": "3rdeden",
+          "email": "npm@3rd-Eden.com"
+        }
+      ],
+      "dist": {
+        "shasum": "0cf7f84f9463ff0ae51c4c4b142d95be37724d9c",
+        "tarball": "https://registry.npmjs.org/querystringify/-/querystringify-0.0.4.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/querystringify-0.0.4.tgz_1471247528293_0.9502724173944443"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "querystringify",
+      "version": "1.0.0",
+      "description": "Querystringify - Small, simple but powerful query string parser.",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha test.js",
+        "watch": "mocha --watch test.js",
+        "coverage": "istanbul cover _mocha -- test.js",
+        "test-travis": "istanbul cover _mocha --report lcovonly -- test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/unshiftio/querystringify.git"
+      },
+      "keywords": [
+        "query",
+        "string",
+        "query-string",
+        "querystring",
+        "qs",
+        "stringify",
+        "parse",
+        "decode",
+        "encode"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/unshiftio/querystringify/issues"
+      },
+      "homepage": "https://github.com/unshiftio/querystringify",
+      "devDependencies": {
+        "assume": "1.4.x",
+        "istanbul": "0.4.x",
+        "mocha": "~3.2.0",
+        "pre-commit": "~1.2.0"
+      },
+      "gitHead": "027cfb18f94053604412ef834333374bd3e52d85",
+      "_id": "querystringify@1.0.0",
+      "_shasum": "6286242112c5b712fa654e526652bf6a13ff05cb",
+      "_from": ".",
+      "_npmVersion": "4.1.2",
+      "_nodeVersion": "7.5.0",
+      "_npmUser": {
+        "name": "3rdeden",
+        "email": "npm@3rd-Eden.com"
+      },
+      "maintainers": [
+        {
+          "name": "3rdeden",
+          "email": "npm@3rd-Eden.com"
+        },
+        {
+          "name": "lpinca",
+          "email": "luigipinca@gmail.com"
+        },
+        {
+          "name": "unshift",
+          "email": "npm@unshift.io"
+        },
+        {
+          "name": "v1",
+          "email": "npm@3rd-Eden.com"
+        }
+      ],
+      "dist": {
+        "shasum": "6286242112c5b712fa654e526652bf6a13ff05cb",
+        "tarball": "https://registry.npmjs.org/querystringify/-/querystringify-1.0.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/querystringify-1.0.0.tgz_1490037189929_0.4786026736255735"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "querystringify",
+      "version": "2.0.0",
+      "description": "Querystringify - Small, simple but powerful query string parser.",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha test.js",
+        "watch": "mocha --watch test.js",
+        "coverage": "istanbul cover _mocha -- test.js",
+        "test-travis": "istanbul cover _mocha --report lcovonly -- test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/unshiftio/querystringify.git"
+      },
+      "keywords": [
+        "query",
+        "string",
+        "query-string",
+        "querystring",
+        "qs",
+        "stringify",
+        "parse",
+        "decode",
+        "encode"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/unshiftio/querystringify/issues"
+      },
+      "homepage": "https://github.com/unshiftio/querystringify",
+      "devDependencies": {
+        "assume": "^2.0.1",
+        "istanbul": "^0.4.5",
+        "mocha": "^5.1.1",
+        "pre-commit": "^1.2.2"
+      },
+      "gitHead": "020c30fe7691bed7889e6fc7a75b1879c2c58c21",
+      "_id": "querystringify@2.0.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "3rdeden",
+        "email": "npm@3rd-Eden.com"
+      },
+      "dist": {
+        "integrity": "sha512-eTPo5t/4bgaMNZxyjWx6N2a6AuE0mq51KWvpc7nU/MAqixcI6v6KrGUKES0HaomdnolQBBXU/++X6/QQ9KL4tw==",
+        "shasum": "fa3ed6e68eb15159457c89b37bc6472833195755",
+        "tarball": "https://registry.npmjs.org/querystringify/-/querystringify-2.0.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 6242,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa2JsvCRA9TVsSAnZWagAAbWUP/2FulN+mJeZmHU05T3Ft\nZ+SbWrdlEeyG/Clo6PNbOFiMU/hPt6m1AlST5hhVxHr2FPzoyWSWGyKj5WE6\nXNdA5vkKnT1W2ColgNmfcoSPwoLwklhHnTF1qLid2QoYwGTKiE90xUz3pGws\nJs77blGaDy4NjI55JmPTxpMczNaBnKNHFHYZKoHoPEk6N1eo8RKhvLMQftyo\nrfnqy0ytwNthYkoaap5AT1nxuOv/z3aU8lWIpTliMv4+HmoRUYqBzhdJs0pF\ntabvKqmJ9zUDG2gh5ikOwcKpjML0iIZHQd1duCn+Yeo/0clYnYnzkVFRFWEj\n8k7g2r9BE383PpuBMjJTkxyljQUCbLaUox3GgJMYuQ/KeJJWayWCyAPK5hri\naqGnUVoUiUY+36abKCQ0Mtk29C1egOqvno0Mda82lm9KvZY3A0HojvAuM5Fa\n2Vh+BsmkHeEwaAXwiPYfsVeCWaew1IgvDCswpFcQcMXGTgOBf5bMb++zIfqF\n2VvbiU7YcNz8o/4ryHjVwTnU2lOI+LVkwTxd8FVgSLELqYrAxBKCwIcClfW8\nK4tOZ+yxGZLJ6F3eZ93TKjersLXudzQ91/NMslKEVePuqWwdklT+io/2OZb3\n7X8zCFX1D83lN767OYYIbQVb8GZiV/6Bkrscg8EuP7ETDi3yLM590L6i4Uw5\nLlsh\r\n=gKJD\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "npm@3rd-Eden.com",
+          "name": "3rdeden"
+        },
+        {
+          "email": "luigipinca@gmail.com",
+          "name": "lpinca"
+        },
+        {
+          "email": "npm@unshift.io",
+          "name": "unshift"
+        },
+        {
+          "email": "npm@3rd-Eden.com",
+          "name": "v1"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/querystringify_2.0.0_1524144942625_0.30547538180576495"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.1.0": {
+      "name": "querystringify",
+      "version": "2.1.0",
+      "description": "Querystringify - Small, simple but powerful query string parser.",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha test.js",
+        "watch": "mocha --watch test.js",
+        "coverage": "istanbul cover _mocha -- test.js",
+        "test-travis": "istanbul cover _mocha --report lcovonly -- test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/unshiftio/querystringify.git"
+      },
+      "keywords": [
+        "query",
+        "string",
+        "query-string",
+        "querystring",
+        "qs",
+        "stringify",
+        "parse",
+        "decode",
+        "encode"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/unshiftio/querystringify/issues"
+      },
+      "homepage": "https://github.com/unshiftio/querystringify",
+      "devDependencies": {
+        "assume": "^2.1.0",
+        "istanbul": "^0.4.5",
+        "mocha": "^5.2.0",
+        "pre-commit": "^1.2.2"
+      },
+      "gitHead": "e619535472a7e77312a244402df6dd1f60e365e4",
+      "_id": "querystringify@2.1.0",
+      "_npmVersion": "6.4.0",
+      "_nodeVersion": "8.11.4",
+      "_npmUser": {
+        "name": "3rdeden",
+        "email": "npm@3rd-Eden.com"
+      },
+      "dist": {
+        "integrity": "sha512-sluvZZ1YiTLD5jsqZcDmFyV2EwToyXZBfpoVOmktMmW+VEnhgakFHnasVph65fOjGPTWN0Nw3+XQaSeMayr0kg==",
+        "shasum": "7ded8dfbf7879dcc60d0a644ac6754b283ad17ef",
+        "tarball": "https://registry.npmjs.org/querystringify/-/querystringify-2.1.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 6539,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbvfOPCRA9TVsSAnZWagAAK2kP/1Ac90PsW2EsC3ArTJdb\nr0SOVp9dvthN3xuDWGfd4omGcpVoDP1nyw1PDLvnWNuIE+oiBFRGuC4ZBAk8\n0dPYyn2KnBlvjTHW/9nsTJaPUzuKN2uujlrzachbf5M0wI6rksMhN4NiQRUJ\nnJSruPZcbvvcWdoo2A5rH49g28mhrgPYksX7pqHCNF6UhPu07BJiagNZLn5z\nYhZrvmqRKM4z5cGaSP7ILh9yS4q1NES9ah6Zz0J0jOWCB53/9tMlT+B9Pt7B\nW58F0Hz2hcy6V3tCujV8M2QhiDxoATJrzuU9eOe2xvIESO24rfBrQ8VKNZ3m\nFlE83DyfdqdiYpllY229aW8n08S0KjJsllnpfT1wJWQu1Q8tKHiqsAdHagjU\n+Gn7g6gvENEZpjz3WMFhK4sjrzX1fUDcgkUX9jdL5G6S5lyppwzHNIAtIMT7\n7Ml/LZ0K8V9A/xX+DS6UqiTfsBU4s58ksn7M/BWcV4HTH2hOG5nVbnJuu+Ds\nNXCaXI+XUg2cTcmPBd+2BQ3DwsLkXC5Oo2/O7Qj0e+mVogOgMxAPzUXA8h+J\nCzMB9+f9t/QlobaS40VdCVMSnC8GVr+x/eu4tfdQUlilkl4rFV2Z+UFtkv6a\ncZClZ1/60VwfpwK3Dcfh4JUGldL6UNyPdGpIZKJhhuogfUehv/gVJfIgduY9\ntfpC\r\n=ftMQ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "npm@3rd-Eden.com",
+          "name": "3rdeden"
+        },
+        {
+          "email": "luigipinca@gmail.com",
+          "name": "lpinca"
+        },
+        {
+          "email": "npm@unshift.io",
+          "name": "unshift"
+        },
+        {
+          "email": "npm@3rd-Eden.com",
+          "name": "v1"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/querystringify_2.1.0_1539175311144_0.07847184583126476"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.1.1": {
+      "name": "querystringify",
+      "version": "2.1.1",
+      "description": "Querystringify - Small, simple but powerful query string parser.",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha test.js",
+        "watch": "mocha --watch test.js",
+        "coverage": "istanbul cover _mocha -- test.js",
+        "test-travis": "istanbul cover _mocha --report lcovonly -- test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/unshiftio/querystringify.git"
+      },
+      "keywords": [
+        "query",
+        "string",
+        "query-string",
+        "querystring",
+        "qs",
+        "stringify",
+        "parse",
+        "decode",
+        "encode"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/unshiftio/querystringify/issues"
+      },
+      "homepage": "https://github.com/unshiftio/querystringify",
+      "devDependencies": {
+        "assume": "^2.1.0",
+        "istanbul": "^0.4.5",
+        "mocha": "^5.2.0",
+        "pre-commit": "^1.2.2"
+      },
+      "gitHead": "88d23367882db2a3a13bc9fdd823f5018914a1bd",
+      "_id": "querystringify@2.1.1",
+      "_npmVersion": "6.4.0",
+      "_nodeVersion": "8.11.4",
+      "_npmUser": {
+        "name": "3rdeden",
+        "email": "npm@3rd-Eden.com"
+      },
+      "dist": {
+        "integrity": "sha512-w7fLxIRCRT7U8Qu53jQnJyPkYZIaR4n5151KMfcJlO/A9397Wxb1amJvROTK6TOnp7PfoAmg/qXiNHI+08jRfA==",
+        "shasum": "60e5a5fd64a7f8bfa4d2ab2ed6fdf4c85bad154e",
+        "tarball": "https://registry.npmjs.org/querystringify/-/querystringify-2.1.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 7250,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJckm2aCRA9TVsSAnZWagAA0ooP/1yxW9I7mbvatWOJg9qP\nzLFT+R09VgJsVh4EqM0EtiLuLMOTE01BwhygKaPVmIEHVuSltTE7lgO4h+Sp\nyxE879yZ77XkyQq7MToOgd5mVF9fPW1744Ya8OKGKJmLRAGBJnV+9+7pTJIi\nuq6Vku1TjpENxsT7QnZEUybRkv0/fOn/jncEAtlpyxp9ENE+Qid/wAQOH+yr\nSqPjTobJfXwUCLa8rDHxNrz4Pp1cgmQ2VL/yIuPB0tKrg0JjrqVgsvnop+zb\nU+dgrJxaaFzhccfWqerwm/fpf1CRIK46RBoTi7MFtL9b/10N1xVWq88Lcqd8\nE+ql8uBRr1lsI6mVJoSPTUfBA+A8PPMNMy7wrjcOpbHBJ7DAoR481w9A5KNS\nKUIUceNrYRI904CpdlsBtlvu4JRMB6gUzERXLyP+rq1aLbe1Z0yo9n0KnKgN\nnuCVeVszLPrHyIN9WgCsaCcoaA28Ch8pwVOJ9Bh0rQxZ2tt+jYptNSGZq4pW\nvd1ok664ZqUlhFXR3JfunhoRXVQR+ZN6TbiN3zHq8krlqj5MxNJlpRaAM52t\ndCRtzQojWH4/+zzKJbci5zoBKaiCOxhUu60ki/r0dxjAQ/GjtlkG/fLHleCd\ntBLfVnh1uBVKIV8VmwYSl0lFOP7n4Y2EEjNX6rdcIxVruUgKAfBLz/AILRJl\nU3iw\r\n=isZa\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "npm@3rd-Eden.com",
+          "name": "3rdeden"
+        },
+        {
+          "email": "luigipinca@gmail.com",
+          "name": "lpinca"
+        },
+        {
+          "email": "npm@unshift.io",
+          "name": "unshift"
+        },
+        {
+          "email": "npm@3rd-Eden.com",
+          "name": "v1"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/querystringify_2.1.1_1553100184933_0.3438038163884982"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.2.0": {
+      "name": "querystringify",
+      "version": "2.2.0",
+      "description": "Querystringify - Small, simple but powerful query string parser.",
+      "main": "index.js",
+      "scripts": {
+        "test": "nyc --reporter=html --reporter=text mocha test.js",
+        "watch": "mocha --watch test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/unshiftio/querystringify.git"
+      },
+      "keywords": [
+        "query",
+        "string",
+        "query-string",
+        "querystring",
+        "qs",
+        "stringify",
+        "parse",
+        "decode",
+        "encode"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/unshiftio/querystringify/issues"
+      },
+      "homepage": "https://github.com/unshiftio/querystringify",
+      "devDependencies": {
+        "assume": "^2.1.0",
+        "coveralls": "^3.1.0",
+        "mocha": "^8.1.1",
+        "nyc": "^15.1.0",
+        "pre-commit": "^1.2.2"
+      },
+      "gitHead": "73db95a504f988dce3f790e174e298ceb2b46a8e",
+      "_id": "querystringify@2.2.0",
+      "_nodeVersion": "14.8.0",
+      "_npmVersion": "6.14.7",
+      "dist": {
+        "integrity": "sha512-FIqgj2EUvTa7R50u0rGsyTftzjYmv/a3hO345bZNrqabNqjtgiDMgmo4mkUjd+nzU5oF3dClKqFIPUKybUyqoQ==",
+        "shasum": "3345941b4153cb9d082d8eee4cda2016a9aef7f6",
+        "tarball": "https://registry.npmjs.org/querystringify/-/querystringify-2.2.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 6959,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfOsoHCRA9TVsSAnZWagAAtxIP/At/yftx2h/UrExRxWj4\npOdwJWa20HOfFynkdFpyVOItXJWp3/Bvg108IjILi1x8eAqCwWpjfe7xXQBh\nFEvyXXrufgW8MNkwvEOMzs9D/d6lE4Ux3v8P7tZeSZX/q0GmAzr4p0C0kqXE\nI+CtkG49K54zOFSAp8Vy//9fxEzSK5VxMSXs5djKQAY+Jhh5NE+wvgEQuSIS\npwRq+g8tNVh15W9DflvD7/SO/McHhz7RYlufOhVtnoK5IkSi1WxALN80G3mx\nI2QCyo/NF54yh9zv5lqhkbGQrgM6JL39iBnEXla2ItkcHMDGIyhd1yJ57sVQ\nLdO4l6sEp6SkWpLztCkW2bDYHvj+0GgvJsNV/mkY34x3J6ncVmo1AQEqIItn\nVcuYmKB3DqOmqO8u4A1V1/eZC73SsTF+nt+U9JV6urWR2xcIyCulw07+QCG9\nY7MOfqbtr9MxssYiw90FZwzMBBPZE32U51m5RN4j9eBia9FaU6z2rxAutWiH\ncnlqVSC1qUJD/6/6hgWSnoqgH687J1ON4AeNjh2ZIK+IIgW7kPu9SkkWCGSR\ngx2mJG2+F+/0KmEg+y0opSSfstfLbNvh/Vy/MM398fNMCM/XLyq7P7FQIt8T\n4TCR9tKUqVCN9OmCMoP5u37LydnOHasjWhzLe9JZ6/Z8/hsR5wopQcWoKHw1\njUVR\r\n=Xtj6\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "npm@3rd-Eden.com",
+          "name": "3rdeden"
+        },
+        {
+          "email": "luigipinca@gmail.com",
+          "name": "lpinca"
+        },
+        {
+          "email": "npm@unshift.io",
+          "name": "unshift"
+        },
+        {
+          "email": "npm@3rd-Eden.com",
+          "name": "v1"
+        }
+      ],
+      "_npmUser": {
+        "name": "lpinca",
+        "email": "luigipinca@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/querystringify_2.2.0_1597688326791_0.55082279140105"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# querystringify\n\n[![Version npm](http://img.shields.io/npm/v/querystringify.svg?style=flat-square)](https://www.npmjs.com/package/querystringify)[![Build Status](http://img.shields.io/travis/unshiftio/querystringify/master.svg?style=flat-square)](https://travis-ci.org/unshiftio/querystringify)[![Dependencies](https://img.shields.io/david/unshiftio/querystringify.svg?style=flat-square)](https://david-dm.org/unshiftio/querystringify)[![Coverage Status](http://img.shields.io/coveralls/unshiftio/querystringify/master.svg?style=flat-square)](https://coveralls.io/r/unshiftio/querystringify?branch=master)\n\nA somewhat JSON compatible interface for query string parsing. This query string\nparser is dumb, don't expect to much from it as it only wants to parse simple\nquery strings. If you want to parse complex, multi level and deeply nested\nquery strings then you should ask your self. WTF am I doing?\n\n## Installation\n\nThis module is released in npm as `querystringify`. It's also compatible with\n`browserify` so it can be used on the server as well as on the client. To\ninstall it simply run the following command from your CLI:\n\n```\nnpm install --save querystringify\n```\n\n## Usage\n\nIn the following examples we assume that you've already required the library as:\n\n```js\n'use strict';\n\nvar qs = require('querystringify');\n```\n\n### qs.parse()\n\nThe parse method transforms a given query string in to an object. Parameters\nwithout values are set to empty strings. It does not care if your query string\nis prefixed with a `?`, a `#`, or not prefixed. It just extracts the parts\nbetween the `=` and `&`:\n\n```js\nqs.parse('?foo=bar');         // { foo: 'bar' }\nqs.parse('#foo=bar');         // { foo: 'bar' }\nqs.parse('foo=bar');          // { foo: 'bar' }\nqs.parse('foo=bar&bar=foo');  // { foo: 'bar', bar: 'foo' }\nqs.parse('foo&bar=foo');      // { foo: '', bar: 'foo' }\n```\n\n### qs.stringify()\n\nThis transforms a given object in to a query string. By default we return the\nquery string without a `?` prefix. If you want to prefix it by default simply\nsupply `true` as second argument. If it should be prefixed by something else\nsimply supply a string with the prefix value as second argument:\n\n```js\nqs.stringify({ foo: bar });       // foo=bar\nqs.stringify({ foo: bar }, true); // ?foo=bar\nqs.stringify({ foo: bar }, '#');  // #foo=bar\nqs.stringify({ foo: '' }, '&');   // &foo=\n```\n\n## License\n\nMIT\n",
+  "maintainers": [
+    {
+      "email": "npm@3rd-Eden.com",
+      "name": "3rdeden"
+    },
+    {
+      "email": "luigipinca@gmail.com",
+      "name": "lpinca"
+    },
+    {
+      "email": "npm@unshift.io",
+      "name": "unshift"
+    },
+    {
+      "email": "npm@3rd-Eden.com",
+      "name": "v1"
+    }
+  ],
+  "time": {
+    "modified": "2020-08-17T18:18:49.181Z",
+    "created": "2014-11-03T09:41:59.779Z",
+    "0.0.0": "2014-11-03T09:41:59.779Z",
+    "0.0.1": "2014-11-03T10:08:37.191Z",
+    "0.0.2": "2014-12-16T12:39:56.903Z",
+    "0.0.3": "2015-04-29T14:54:18.503Z",
+    "0.0.4": "2016-08-15T07:52:09.992Z",
+    "1.0.0": "2017-03-20T19:13:10.580Z",
+    "2.0.0": "2018-04-19T13:35:42.728Z",
+    "2.1.0": "2018-10-10T12:41:51.256Z",
+    "2.1.1": "2019-03-20T16:43:05.099Z",
+    "2.2.0": "2020-08-17T18:18:46.969Z"
+  },
+  "homepage": "https://github.com/unshiftio/querystringify",
+  "keywords": [
+    "query",
+    "string",
+    "query-string",
+    "querystring",
+    "qs",
+    "stringify",
+    "parse",
+    "decode",
+    "encode"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unshiftio/querystringify.git"
+  },
+  "author": {
+    "name": "Arnout Kazemier"
+  },
+  "bugs": {
+    "url": "https://github.com/unshiftio/querystringify/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "users": {
+    "pandao": true,
+    "staydan": true,
+    "shuoshubao": true,
+    "jerrywu12": true,
+    "hugojosefson": true
+  }
+}

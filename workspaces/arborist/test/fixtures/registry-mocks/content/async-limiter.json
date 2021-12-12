@@ -1,0 +1,253 @@
+{
+  "_id": "async-limiter",
+  "_rev": "3-7c7b194f129a478adab4e7afcf01fd6c",
+  "name": "async-limiter",
+  "description": "asynchronous function queue with adjustable concurrency",
+  "dist-tags": {
+    "latest": "2.0.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "async-limiter",
+      "version": "1.0.0",
+      "description": "asynchronous function queue with adjustable concurrency",
+      "keywords": [
+        "throttle",
+        "async",
+        "limiter",
+        "asynchronous",
+        "job",
+        "task",
+        "concurrency",
+        "concurrent"
+      ],
+      "dependencies": {},
+      "devDependencies": {
+        "coveralls": "^2.11.2",
+        "eslint": "^4.6.1",
+        "eslint-plugin-mocha": "^4.11.0",
+        "intelli-espower-loader": "^1.0.1",
+        "istanbul": "^0.3.2",
+        "mocha": "^3.5.2",
+        "power-assert": "^1.4.4"
+      },
+      "scripts": {
+        "test": "mocha --R intelli-espower-loader test/",
+        "travis": "npm run lint && npm run coverage",
+        "coverage": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | coveralls",
+        "example": "node example",
+        "lint": "eslint ."
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/strml/async-limiter.git"
+      },
+      "author": {
+        "name": "Samuel Reed"
+      },
+      "license": "MIT",
+      "gitHead": "02c8b498279dc7cc1ecc1c4f6fc9ca320c0ce39b",
+      "bugs": {
+        "url": "https://github.com/strml/async-limiter/issues"
+      },
+      "homepage": "https://github.com/strml/async-limiter#readme",
+      "_id": "async-limiter@1.0.0",
+      "_npmVersion": "5.4.1",
+      "_nodeVersion": "8.4.0",
+      "_npmUser": {
+        "name": "strml",
+        "email": "samuel.trace.reed@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-jp/uFnooOiO+L211eZOoSyzpOITMXx1rBITauYykG3BRYPu8h0UcxsPNB04RR5vo4Tyz3+ay17tR6JVf9qzYWg==",
+        "shasum": "78faed8c3d074ab81f22b4e985d79e8738f720f8",
+        "tarball": "https://registry.npmjs.org/async-limiter/-/async-limiter-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "strml",
+          "email": "samuel.trace.reed@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/async-limiter-1.0.0.tgz_1505149068503_0.15003100014291704"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "async-limiter",
+      "version": "1.0.1",
+      "description": "asynchronous function queue with adjustable concurrency",
+      "keywords": [
+        "throttle",
+        "async",
+        "limiter",
+        "asynchronous",
+        "job",
+        "task",
+        "concurrency",
+        "concurrent"
+      ],
+      "dependencies": {},
+      "devDependencies": {
+        "coveralls": "^3.0.3",
+        "eslint": "^5.16.0",
+        "eslint-plugin-mocha": "^5.3.0",
+        "intelli-espower-loader": "^1.0.1",
+        "mocha": "^6.1.4",
+        "nyc": "^14.1.1",
+        "power-assert": "^1.6.1"
+      },
+      "scripts": {
+        "test": "mocha --require intelli-espower-loader test/",
+        "travis": "npm run lint && npm run test",
+        "coverage": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
+        "example": "node example",
+        "lint": "eslint ."
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/strml/async-limiter.git"
+      },
+      "author": {
+        "name": "Samuel Reed"
+      },
+      "license": "MIT",
+      "gitHead": "f3bb66f26e69a5747a6483e32c775a02632020ee",
+      "bugs": {
+        "url": "https://github.com/strml/async-limiter/issues"
+      },
+      "homepage": "https://github.com/strml/async-limiter#readme",
+      "_id": "async-limiter@1.0.1",
+      "_nodeVersion": "10.16.0",
+      "_npmVersion": "6.9.0",
+      "dist": {
+        "integrity": "sha512-csOlWGAcRFJaI6m+F2WKdnMKr4HhdhFVBk0H/QbJFMCr+uO2kwohwXQPxw/9OCxp05r5ghVBFSyioixx3gfkNQ==",
+        "shasum": "dd379e94f0db8310b08291f9d64c3209766617fd",
+        "tarball": "https://registry.npmjs.org/async-limiter/-/async-limiter-1.0.1.tgz",
+        "fileCount": 7,
+        "unpackedSize": 6900,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdRFo5CRA9TVsSAnZWagAAE8EP/AoamQTvsA8uUcSUKc4L\nL7rKbbH4m5Cv1Z7qeBXLV3KJHI+dhn/mKU2hOpnXHgks5Az4ELlOX9O1vo9j\nLYtN8ZMGEkMIx+k7OcVexaXLcK9ALliEMNoNy4cIVc+exBS4eKFPmaEx5DmD\nNf+eCG6jkA9WY/kYSmFnus7C0B7d2PMdmtBZKdzWya9PAB5BYEoz3/GYhJZG\nEFYHmWKtMDB6LMSZ0FSXwABV6QXWn5kk3fXaPX1NtMHLw+QCT/sWt+0cOnIE\nak2s8WOry7Fsx5wXQmKbd8854LC+yVT1f7RR7eBhKAlTk74nwfNDr84UBJIr\n+0G0RdgISOzLghtRFu3SqYKynXTjdlycZG9vvcHW9oPGI2ZiC2cHuiqc4+K7\ndYX1HGQICjflTmb+RR0vGNXiy3v6YBWgpItdeziPO2K+0uN6SJr1BidQ8oKI\nd49psu/xNvMhdwOo19+/Bt7n7nT4uzej8K7uQO81BJC0ITeNfaC/z9M/4VOg\nFuixwvvzfs+/RABxzXKZqOMVlAnAb4U/PBcliklyUBeZ62PDkqnBxdrOekf5\nacstUU3K5bAaBV8taKHEa1+tqYUjVEcaolDDKgmO0dxD9FlKAMlhck9ildO7\nnjODiNgcSMUlMmHGUZCEvjSt1YptntzC0DHwxWUjszaR4p0Iz0c0AyOYGH7T\nRewy\r\n=MPQY\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "strml",
+          "email": "samuel.trace.reed@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "strml",
+        "email": "samuel.trace.reed@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/async-limiter_1.0.1_1564760633070_0.6974331182093105"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.0": {
+      "name": "async-limiter",
+      "version": "2.0.0",
+      "description": "asynchronous function queue with adjustable concurrency",
+      "keywords": [
+        "throttle",
+        "async",
+        "limiter",
+        "asynchronous",
+        "job",
+        "task",
+        "concurrency",
+        "concurrent"
+      ],
+      "dependencies": {},
+      "devDependencies": {
+        "coveralls": "^3.0.7",
+        "eslint": "^6.6.0",
+        "eslint-plugin-mocha": "^6.2.1",
+        "intelli-espower-loader": "^1.0.1",
+        "mocha": "^6.2.2",
+        "nyc": "^14.1.1",
+        "power-assert": "^1.6.1"
+      },
+      "scripts": {
+        "test": "mocha --require intelli-espower-loader test/",
+        "travis": "npm run lint && npm run test",
+        "coverage": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
+        "example": "node example",
+        "lint": "eslint ."
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/strml/async-limiter.git"
+      },
+      "author": {
+        "name": "Samuel Reed"
+      },
+      "license": "MIT",
+      "licenseText": "The MIT License (MIT)\nCopyright (c) 2017 Samuel Reed <samuel.trace.reed@gmail.com>\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "async-limiter@2.0.0",
+      "dist": {
+        "shasum": "ae693f11cac67f4ac5eb6e0c1512fb9b2c2e9ea8",
+        "integrity": "sha512-nyHFzvVaR+4mfHc90/VqOUQjlnk9+ioDxQfqDuqKnm3m9sIT7joVKW8dkxeaKpamMJ3MYD73t6M8PMKEWlQESQ==",
+        "tarball": "https://registry.npmjs.org/async-limiter/-/async-limiter-2.0.0.tgz",
+        "fileCount": 9,
+        "unpackedSize": 8589,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd1Xo5CRA9TVsSAnZWagAAyXQP/ibSfb7MvOeB9agWY9Mc\n3clrzvn3s4kiQp+exCa8zygVvxB1E7DL+DE7aw/G5WNgAL4yaX3h+0EBJu1k\n1cnni6UJ45n2rqJO7RoH8+KXiJpevP6450YpTgTz/LH/1EajytdMLwSyPdLh\n051wKmbtN0rvM0LqVAlhmdV+jzCPHHwQdFVBsLyXIJipqDnFBC6QpOXeCAUX\nO23dHH/0wB7jx8AeATXZ+mmFf5YHkWiR2BvGukSi/x3OHHzlZSI7aLLONbQs\nyLDBvYC8UfqoWuofcBwqCbD0RRCvNWBCcQAuIovbS+b61bQTT70eXi8WCih7\nUZoCyPy1jaZ111gKIX7zu0HJJv4lC+7xD7flvhJy1/67bncrVDfevltq7yK1\nxbksYT4fcybA38T4ZyXchZh8CPLQcC/yRwsi4B9+roDtz98ww+i5x6SA4HbL\n6PSVm36pSpxZu5tFpAfN/13MXMtn8ajTUU8/FvKOanOn7yBZYZ489lPPwbS/\nokUZNoh17tLyv6bIQ+M0dza5Y27IOaEmXEPSGj233hlQS32AIpS6DPD4JSEF\n069dc18X+hKUnFo7hyaHkHlWa92XwwTIA5N0hLoc5NbZCIengq8iqz93H9SD\nWkuWif9o0K+nebdI9Z/2JjGTei0NisnCsjBOYqK2FaKT5fXqDFUIRrupXoIO\nwCah\r\n=OJ/M\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "strml",
+          "email": "samuel.trace.reed@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "strml",
+        "email": "samuel.trace.reed@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/async-limiter_2.0.0_1574271544660_0.545457320987442"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# Async-Limiter\n\nA module for limiting concurrent asynchronous actions in flight. Forked from [queue](https://github.com/jessetane/queue).\n\n[![npm](http://img.shields.io/npm/v/async-limiter.svg?style=flat-square)](http://www.npmjs.org/async-limiter)\n[![tests](https://img.shields.io/travis/STRML/async-limiter.svg?style=flat-square&branch=master)](https://travis-ci.org/STRML/async-limiter)\n[![coverage](https://img.shields.io/coveralls/STRML/async-limiter.svg?style=flat-square&branch=master)](https://coveralls.io/r/STRML/async-limiter)\n\nThis module exports a class `Limiter` that implements some of the `Array` API.\nPass async functions (ones that accept a callback or return a promise) to an instance's additive array methods.\n\n## Motivation\n\nCertain functions, like `zlib`, have [undesirable behavior](https://github.com/nodejs/node/issues/8871#issuecomment-250915913) when\nrun at infinite concurrency.\n\nIn this case, it is actually faster, and takes far less memory, to limit concurrency.\n\nThis module should do the absolute minimum work necessary to queue up functions. PRs are welcome that would\nmake this module faster or lighter, but new functionality is not desired.\n\nStyle should confirm to nodejs/node style.\n\n## Example\n\n``` javascript\nvar Limiter = require('async-limiter');\n\nvar t = new Limiter({ concurrency: 2 });\nvar results = [];\n\n// add jobs using the familiar Array API\nt.push(function(cb) {\n  results.push('two');\n  cb();\n});\n\nt.push(\n  function(cb) {\n    results.push('four');\n    cb();\n  },\n  function(cb) {\n    results.push('five');\n    cb();\n  }\n);\n\nt.unshift(function(cb) {\n  results.push('one');\n  cb();\n});\n\nt.splice(2, 0, function(cb) {\n  results.push('three');\n  cb();\n});\n\n// Jobs run automatically on the next tick.\n// If you want a callback when all are done, call 'onDone()'.\nt.onDone(function() {\n  console.log('all done:', results);\n});\n```\n\n## Zlib Example\n\n```js\nconst zlib = require('zlib');\nconst Limiter = require('async-limiter');\n\nconst message = { some: 'data' };\nconst payload = new Buffer(JSON.stringify(message));\n\n// Try with different concurrency values to see how this actually\n// slows significantly with higher concurrency!\n//\n// 5:        1398.607ms\n// 10:       1375.668ms\n// Infinity: 4423.300ms\n//\nconst t = new Limiter({ concurrency: 5 });\nfunction deflate(payload, cb) {\n  t.push(function(done) {\n    zlib.deflate(payload, function(err, buffer) {\n      done();\n      cb(err, buffer);\n    });\n  });\n}\n\nconsole.time('deflate');\nfor (let i = 0; i < 30000; ++i) {\n  deflate(payload, function(err, buffer) {});\n}\nt.onDone(function() {\n  console.timeEnd('deflate');\n});\n```\n\n## Install\n\n`npm install async-limiter`\n\n## Test\n\n`npm test`\n\n## API\n\n### `var t = new Limiter([opts])`\nConstructor. `opts` may contain inital values for:\n* `t.concurrency`\n\n## Instance methods\n\n### `t.onDone(fn)`\n`fn` will be called once and only once, when the queue is empty.\nIf the queue is empty on the next tick, `onDone()` will be called.\n\n## Instance methods mixed in from `Array`\nMozilla has docs on how these methods work [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array).\n### `t.push(element1, ..., elementN)`\n### `t.unshift(element1, ..., elementN)`\n### `t.splice(index , howMany[, element1[, ...[, elementN]]])`\n\nOn the next tick, job processing will start.\n\n## Properties\n### `t.concurrency`\nMax number of jobs the queue should process concurrently, defaults to `Infinity`.\n\n### `t.length`\nJobs pending + jobs to process (readonly).\n\n",
+  "maintainers": [
+    {
+      "name": "strml",
+      "email": "samuel.trace.reed@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2019-11-20T17:39:09.289Z",
+    "created": "2017-09-11T16:57:49.546Z",
+    "1.0.0": "2017-09-11T16:57:49.546Z",
+    "1.0.1": "2019-08-02T15:43:53.217Z",
+    "2.0.0": "2019-11-20T17:39:05.353Z"
+  },
+  "keywords": [
+    "throttle",
+    "async",
+    "limiter",
+    "asynchronous",
+    "job",
+    "task",
+    "concurrency",
+    "concurrent"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/strml/async-limiter.git"
+  },
+  "author": {
+    "name": "Samuel Reed"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md",
+  "users": {
+    "tzq1011": true
+  }
+}

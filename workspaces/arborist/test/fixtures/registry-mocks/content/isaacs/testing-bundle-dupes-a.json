@@ -1,0 +1,95 @@
+{
+  "_id": "@isaacs/testing-bundle-dupes-a",
+  "_rev": "1-b57a0c74978014ad83d692ffec9b803a",
+  "name": "@isaacs/testing-bundle-dupes-a",
+  "dist-tags": {
+    "latest": "2.0.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "@isaacs/testing-bundle-dupes-a",
+      "version": "1.0.0",
+      "dependencies": {
+        "@isaacs/testing-bundle-dupes-b": "1"
+      },
+      "description": "``` a@1 -> b@1 a@2 -> b@2 ```",
+      "_id": "@isaacs/testing-bundle-dupes-a@1.0.0",
+      "_nodeVersion": "16.0.0",
+      "_npmVersion": "7.10.0",
+      "dist": {
+        "integrity": "sha512-q+ZUjdhA5vqvlWFXW92VqTDFVgySt4Cdok3OdeXo30EtFtZYDbWIfNZiQB8YeKS9JmG5DQUDWKd/ygRUxjGhVw==",
+        "shasum": "c15b878ac41284d61c385bf98667a1374c6c2b8b",
+        "tarball": "https://registry.npmjs.org/@isaacs/testing-bundle-dupes-a/-/testing-bundle-dupes-a-1.0.0.tgz",
+        "fileCount": 2,
+        "unpackedSize": 451,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJggvSTCRA9TVsSAnZWagAA+IUP/3zwluKM0FRYXu0HXj22\nz0hCDYrWfaTofZvbIvikXeX1mXEIXFsCfSwHYcbxJATe8oO3nE1r1EUMqOJZ\ngYShkS23baGY3GO+g4hDiilIkSBZOHAtDmtsWN/5BnPuHbgsUlX/kSXj8JJ+\n2W0CQbN1BwtE0bSzlboz7nJi4F9rBruKiZ9Barx9BGJkdl5Q0EsKN1VQFz8K\n+4Jspm+zObK22+qT/d9BCEwWNgXlaC0SqCLyJeJp1nFQq/0EPmWxuEeXjbQO\nqaRaCzRK74dzjkGnTklCAIfa5KsKe9In0L7uS6m464dgIQALQbCIrrF9Z5a1\niQ2OtzzQaqPVqb0BZirUcyP10WoZH3QdjFtiyDs9vm7iC2BbWgNUxvwDkGWj\nNeruY0CINw7ic8QXhC51ewoLRnCNmpD1oiwoN/IVdKQfOAkKbLRuKmpgRvnV\n2EQlNtphRF+TasTWQw/VkHFCM8iNf9xVPmhJVkQc+ARXYplvXcM1EPfExdgC\nR8qy6TCxWVUTEVZJPvycqi7aG7evw+08Qz6qNsokjTYWxJ+kVDUcr1uUNx56\nInT9sFT46pix/fSJQOCk1Wrt+/UgOwokjj6493JbJTLch4tJo8zqfeOX+n+f\n+urUjt0HFZe1Gio7F12lqLZPGZt18iJu9q/Xnw1lC2XbTHqutkZ5YsxVpyRt\n9Nif\r\n=VLk3\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/testing-bundle-dupes-a_1.0.0_1619195026806_0.7276246416411416"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.0": {
+      "name": "@isaacs/testing-bundle-dupes-a",
+      "version": "2.0.0",
+      "dependencies": {
+        "@isaacs/testing-bundle-dupes-b": "2"
+      },
+      "description": "``` a@1 -> b@1 a@2 -> b@2 ```",
+      "_id": "@isaacs/testing-bundle-dupes-a@2.0.0",
+      "_nodeVersion": "16.0.0",
+      "_npmVersion": "7.10.0",
+      "dist": {
+        "integrity": "sha512-L2LsNX6QYfIvsEVwlFOmyp04Z5gLc4oRD41T5Ih7sCqxhTUcWgCzGKsEeA0qCtDdtqhEsqznznsoDKwjFnn+KQ==",
+        "shasum": "d7ccd1f2b9f6eb84b3e4b7347931f977f1ae2be4",
+        "tarball": "https://registry.npmjs.org/@isaacs/testing-bundle-dupes-a/-/testing-bundle-dupes-a-2.0.0.tgz",
+        "fileCount": 2,
+        "unpackedSize": 451,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJggvSWCRA9TVsSAnZWagAAA4AP/3akbV6ThjlZeAWC3VMt\nIGbjJROGmxLBa/gPTWwh3bAKp7Oic5Hgl058NjsXTO7VgQ1/83i30dSN8xAv\nURWvdOMd/wWfSvZb+2W6QQhswd/lb4tMWjcR1Jki7IwsQGQWHjmEYnNHnnTV\nIEu5z0Bw5aAKfPnrToliwDXl5LhfnQgOiOkmA88M8ZFN0+fd35GnKM8EBb9v\nOdS0wqgfDVCWX8D3B9cy/ZGmXMbkHdgWm2SOjjA3QS3BDGJSTLQhThqO67cV\n+Dyvb36s4Z2vL80qyA9KUCryyyBZw15z4pXmKG5szE+hUUBYp+gXFqRit/W9\n8jSOW3fhYNTXLPs42R2JJVT1SvYiEzSAazzbUKwM9e/WvYkK1KZr6m3AvklW\nkU1ODR4HghD3FnHof9ngvQkP0H2Ks5Rj2bPOv68MFCO7DkH7o8E/32KKUsEa\n9hPBQYKdIrIDit/n2ZpMJvpxOUSTFQU+HCB3+rK9bZ8LBW3SGzKCdtwNRiVW\nla7b7QScnGiyCTp5fH4Cw01D+S8/SOk9rP7qnCEShktCPA+0g+JlgTwUqPw4\nCIjI0YPGH/d5olLTZQ8SOSyTINgZ/VPa5bWFUl8wm7tdqqEI/aG/Q41H7jP/\nSadgBjWZKcGissWXHzik7c/+Rya7kW0BmddTL2TPHFxyEdg3HyMSCOyIX26E\ntjP/\r\n=A/s/\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/testing-bundle-dupes-a_2.0.0_1619195030155_0.5752048793816165"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2021-04-23T16:23:46.759Z",
+    "1.0.0": "2021-04-23T16:23:46.910Z",
+    "modified": "2021-04-23T16:23:53.972Z",
+    "2.0.0": "2021-04-23T16:23:50.292Z"
+  },
+  "maintainers": [
+    {
+      "name": "isaacs",
+      "email": "i@izs.me"
+    }
+  ],
+  "description": "``` a@1 -> b@1 a@2 -> b@2 ```",
+  "readme": "# testing-bundle-dupes\n\n```\na@1 -> b@1\na@2 -> b@2\n```\n\nStart:\n\n```\nroot -> BUNDLE(a@1, b@1)\n\nroot\n+-- b@1\n+-- a@1\n```\n\nAdd `a@2.0.0` to root (before b@2.1.0 publish time)\n\n```\nroot\n+-- b@1\n+-- a@2.0.0\n    +-- b@2.0.0\n```\n\n`b@2.1.0` is published\n\nAdd `b@2.1.0` to root\n\nExpect:\n\n```\nroot\n+-- b@2.1.0\n+-- a@2.0.0\n```\n",
+  "readmeFilename": "README.md"
+}

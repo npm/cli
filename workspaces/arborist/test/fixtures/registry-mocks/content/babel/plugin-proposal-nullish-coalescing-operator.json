@@ -1,0 +1,3061 @@
+{
+  "_id": "@babel/plugin-proposal-nullish-coalescing-operator",
+  "_rev": "71-01b7e17baba1a4ab547ebc8c29d3de0c",
+  "name": "@babel/plugin-proposal-nullish-coalescing-operator",
+  "description": "Remove nullish coalescing operator",
+  "dist-tags": {
+    "latest": "7.12.1"
+  },
+  "versions": {
+    "7.0.0-beta.4": {
+      "name": "@babel/plugin-proposal-nullish-coalescing-operator",
+      "version": "7.0.0-beta.4",
+      "description": "Remove nullish coalescing operator",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-nullish-coalescing-opearator"
+      },
+      "license": "MIT",
+      "main": "lib",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/plugin-syntax-nullish-coalescing-operator": "7.0.0-beta.4"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.3"
+      },
+      "devDependencies": {
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.4"
+      },
+      "_id": "@babel/plugin-proposal-nullish-coalescing-operator@7.0.0-beta.4",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.1.4",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-2ONzf8YHQaf401l/3xkix/0PL2NfxKjc1lSR9PqGVpH1pCan+Ve1w2ulTrSy4qHMnaB9rVkdK4PMkrKteAxyDQ==",
+        "shasum": "295c7b6825481cb3f0a09d5898e82b6722646e06",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-nullish-coalescing-operator/-/plugin-proposal-nullish-coalescing-operator-7.0.0-beta.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-nullish-coalescing-operator-7.0.0-beta.4.tgz_1509388511163_0.2603685997892171"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.5": {
+      "name": "@babel/plugin-proposal-nullish-coalescing-operator",
+      "version": "7.0.0-beta.5",
+      "description": "Remove nullish coalescing operator",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-nullish-coalescing-opearator"
+      },
+      "license": "MIT",
+      "main": "lib",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/plugin-syntax-nullish-coalescing-operator": "7.0.0-beta.5"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.4 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.5"
+      },
+      "_id": "@babel/plugin-proposal-nullish-coalescing-operator@7.0.0-beta.5",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.1.4",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-ZIyqflzXlQ/x1rJSVoddBYpbjxAciZ4EK4gy2WkEOO1JHF+8QYUT4FurgT0Bam8hgRxDjIqjIXHiaa4zOrPr0Q==",
+        "shasum": "c7f98f98769d1862a9d3346aaa12116121c9ed6d",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-nullish-coalescing-operator/-/plugin-proposal-nullish-coalescing-operator-7.0.0-beta.5.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-nullish-coalescing-operator-7.0.0-beta.5.tgz_1509397009748_0.6376724804285914"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.31": {
+      "name": "@babel/plugin-proposal-nullish-coalescing-operator",
+      "version": "7.0.0-beta.31",
+      "description": "Remove nullish coalescing operator",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-nullish-coalescing-opearator"
+      },
+      "license": "MIT",
+      "main": "lib",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/plugin-syntax-nullish-coalescing-operator": "7.0.0-beta.31"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.31"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.31",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.31"
+      },
+      "_id": "@babel/plugin-proposal-nullish-coalescing-operator@7.0.0-beta.31",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.1.4",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-JPgNBCVbRqlqLw+m6YdlymGpQBUgw+C5zsn8kNPGM5GidLz1bV7Tpyql9w9jjHTUJKdLHr3VI/Cs3a+qLFvgTw==",
+        "shasum": "6d8004ae8f4dbdd3f537b92e88590ec82ebe9888",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-nullish-coalescing-operator/-/plugin-proposal-nullish-coalescing-operator-7.0.0-beta.31.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-nullish-coalescing-operator-7.0.0-beta.31.tgz_1509739427994_0.5774761773645878"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.32": {
+      "name": "@babel/plugin-proposal-nullish-coalescing-operator",
+      "version": "7.0.0-beta.32",
+      "description": "Remove nullish coalescing operator",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-nullish-coalescing-opearator"
+      },
+      "license": "MIT",
+      "main": "lib",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/plugin-syntax-nullish-coalescing-operator": "7.0.0-beta.32"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.32"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.32",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.32"
+      },
+      "_id": "@babel/plugin-proposal-nullish-coalescing-operator@7.0.0-beta.32",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-JAJN31swgIViPsiF0YvtJDZZSjrw6Dm237Jrgu5xKhLCldFhB6btjxaHQzTYGefqZDsIuoqmOqZNMv0qpg4o4w==",
+        "shasum": "fa4c96a3c22cfe4911e292a195dff58911ece35c",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-nullish-coalescing-operator/-/plugin-proposal-nullish-coalescing-operator-7.0.0-beta.32.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-nullish-coalescing-operator-7.0.0-beta.32.tgz_1510493616961_0.23876963392831385"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.33": {
+      "name": "@babel/plugin-proposal-nullish-coalescing-operator",
+      "version": "7.0.0-beta.33",
+      "description": "Remove nullish coalescing operator",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-nullish-coalescing-opearator"
+      },
+      "license": "MIT",
+      "main": "lib",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/plugin-syntax-nullish-coalescing-operator": "7.0.0-beta.33"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.33"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.33",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.33"
+      },
+      "_id": "@babel/plugin-proposal-nullish-coalescing-operator@7.0.0-beta.33",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-b6fvASlGu55A2+eldk2x1l7VLYyvPLVK4DAKIRDME7bs9SCAmQOPyq9VOMaxy7CsExALOdm1jjLKSsjq/2emKg==",
+        "shasum": "ad363a789b34debabcb1ebf32b3c372b78d40b5a",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-nullish-coalescing-operator/-/plugin-proposal-nullish-coalescing-operator-7.0.0-beta.33.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-nullish-coalescing-operator-7.0.0-beta.33.tgz_1512138525567_0.26867803442291915"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.34": {
+      "name": "@babel/plugin-proposal-nullish-coalescing-operator",
+      "version": "7.0.0-beta.34",
+      "description": "Remove nullish coalescing operator",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-nullish-coalescing-opearator"
+      },
+      "license": "MIT",
+      "main": "lib",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/plugin-syntax-nullish-coalescing-operator": "7.0.0-beta.34"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.34"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.34",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.34"
+      },
+      "_id": "@babel/plugin-proposal-nullish-coalescing-operator@7.0.0-beta.34",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-I9Syk+InKnYmzL6asev1d/15uAE1bCjidF8+ELpHh1belNj+cYyNiESBDT/PvVALYoEIZIYA5wjPTUPXEABRbg==",
+        "shasum": "841fccb4c7d2fdda657ac88daa86888dae0fa366",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-nullish-coalescing-operator/-/plugin-proposal-nullish-coalescing-operator-7.0.0-beta.34.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-nullish-coalescing-operator-7.0.0-beta.34.tgz_1512225584765_0.20517794298939407"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.35": {
+      "name": "@babel/plugin-proposal-nullish-coalescing-operator",
+      "version": "7.0.0-beta.35",
+      "description": "Remove nullish coalescing operator",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-nullish-coalescing-opearator"
+      },
+      "license": "MIT",
+      "main": "lib",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/plugin-syntax-nullish-coalescing-operator": "7.0.0-beta.35"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.35"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.35",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.35"
+      },
+      "_id": "@babel/plugin-proposal-nullish-coalescing-operator@7.0.0-beta.35",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-BNcjNOUXihj6U80F9xvVKHH4OUqDIl2+UFTiShV2iQGsaj9Y27pOt8a9H6Cmb30IiaGWM+qRB+K6oiToAz587g==",
+        "shasum": "fce50ff5a9095c9603647e84f028d593a7a64f4a",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-nullish-coalescing-operator/-/plugin-proposal-nullish-coalescing-operator-7.0.0-beta.35.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-nullish-coalescing-operator-7.0.0-beta.35.tgz_1513288085863_0.7137481279205531"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.36": {
+      "name": "@babel/plugin-proposal-nullish-coalescing-operator",
+      "version": "7.0.0-beta.36",
+      "description": "Remove nullish coalescing operator",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-nullish-coalescing-opearator"
+      },
+      "license": "MIT",
+      "main": "lib",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/plugin-syntax-nullish-coalescing-operator": "7.0.0-beta.36"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.36"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.36",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.36"
+      },
+      "_id": "@babel/plugin-proposal-nullish-coalescing-operator@7.0.0-beta.36",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-/pGZ2/lz/ar5PvdwbzBdft9Xr9cx1lLxB8Xn1w4FefyaY7p7Bjp7gobw3/HrB9a8rizOEje9m8fT+amYrOVCag==",
+        "shasum": "f41cbb823971d1e75ad4c6200774fe2c480a463f",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-nullish-coalescing-operator/-/plugin-proposal-nullish-coalescing-operator-7.0.0-beta.36.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "james@henry.sc",
+          "name": "jameshenry"
+        },
+        {
+          "email": "kent@doddsfamily.us",
+          "name": "kentcdodds"
+        },
+        {
+          "email": "kaicataldo@gmail.com",
+          "name": "kaicataldo"
+        },
+        {
+          "email": "teddy.katz@gmail.com",
+          "name": "not-an-aardvark"
+        },
+        {
+          "email": "star.ctor@gmail.com",
+          "name": "mysticatea"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-nullish-coalescing-operator-7.0.0-beta.36.tgz_1514228706093_0.9571572472341359"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.37": {
+      "name": "@babel/plugin-proposal-nullish-coalescing-operator",
+      "version": "7.0.0-beta.37",
+      "description": "Remove nullish coalescing operator",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-nullish-coalescing-opearator"
+      },
+      "license": "MIT",
+      "main": "lib",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/plugin-syntax-nullish-coalescing-operator": "7.0.0-beta.37"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.37"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.37",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.37"
+      },
+      "_id": "@babel/plugin-proposal-nullish-coalescing-operator@7.0.0-beta.37",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-gxtWvUQUwSFxoaJNcLX39a0bORoD8pMBLJ/OJ2VDDaZ7rwVGbFUfaCsi2zSYNC0HwkGV3N1Y40DBNz6roo5EAw==",
+        "shasum": "a32b463cb927c9743ed513854b0ffbef1430986c",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-nullish-coalescing-operator/-/plugin-proposal-nullish-coalescing-operator-7.0.0-beta.37.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-nullish-coalescing-operator-7.0.0-beta.37.tgz_1515427366601_0.5608668683562428"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.38": {
+      "name": "@babel/plugin-proposal-nullish-coalescing-operator",
+      "version": "7.0.0-beta.38",
+      "description": "Remove nullish coalescing operator",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-nullish-coalescing-opearator"
+      },
+      "license": "MIT",
+      "main": "lib",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/plugin-syntax-nullish-coalescing-operator": "7.0.0-beta.38"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.38"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.38",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.38"
+      },
+      "_id": "@babel/plugin-proposal-nullish-coalescing-operator@7.0.0-beta.38",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-ByniK3odS+94T5Teawm2GFv7WFGzL2sx7OU72WTPGiKSfMHaDSxBRKClyMR8QvnYEsscU2tQyJZgPy1tc6n1mw==",
+        "shasum": "3b5e7ba0d25537e095d052971e968655186d68b7",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-nullish-coalescing-operator/-/plugin-proposal-nullish-coalescing-operator-7.0.0-beta.38.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-nullish-coalescing-operator-7.0.0-beta.38.tgz_1516206735901_0.14044814347289503"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.39": {
+      "name": "@babel/plugin-proposal-nullish-coalescing-operator",
+      "version": "7.0.0-beta.39",
+      "description": "Remove nullish coalescing operator",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-nullish-coalescing-opearator"
+      },
+      "license": "MIT",
+      "main": "lib",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/plugin-syntax-nullish-coalescing-operator": "7.0.0-beta.39"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.39"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.39",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.39"
+      },
+      "_id": "@babel/plugin-proposal-nullish-coalescing-operator@7.0.0-beta.39",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-6oYw95Vgd9fo/4BckDEIAJk4xlsun7ZsvAk31Ljd+JOzBfzw3TcV6gszYi7GTEpoqmVNKHt46R0fHTWPfxNaFQ==",
+        "shasum": "fa966be1d8ecf19b54c82bde4858ba3e8e330a51",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-nullish-coalescing-operator/-/plugin-proposal-nullish-coalescing-operator-7.0.0-beta.39.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-nullish-coalescing-operator-7.0.0-beta.39.tgz_1517344067675_0.45813261857256293"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.40": {
+      "name": "@babel/plugin-proposal-nullish-coalescing-operator",
+      "version": "7.0.0-beta.40",
+      "description": "Remove nullish coalescing operator",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-nullish-coalescing-opearator"
+      },
+      "license": "MIT",
+      "main": "lib",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/plugin-syntax-nullish-coalescing-operator": "7.0.0-beta.40"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.40"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.40",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.40"
+      },
+      "_id": "@babel/plugin-proposal-nullish-coalescing-operator@7.0.0-beta.40",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-1J70lDVf5WAwEDcove+nGlJOdqzMjQEfeq6F804K1Wx5uGN9pvZXTfLadRzyMu/f5eBly23Oat2o5CD97G/CEQ==",
+        "shasum": "51c239dc0ec8831d4e2319eec7538d21ac162336",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-nullish-coalescing-operator/-/plugin-proposal-nullish-coalescing-operator-7.0.0-beta.40.tgz",
+        "fileCount": 3,
+        "unpackedSize": 3488
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-nullish-coalescing-operator_7.0.0-beta.40_1518453722885_0.28267435964456955"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.41": {
+      "name": "@babel/plugin-proposal-nullish-coalescing-operator",
+      "version": "7.0.0-beta.41",
+      "description": "Remove nullish coalescing operator",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-nullish-coalescing-opearator"
+      },
+      "license": "MIT",
+      "main": "lib",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.41",
+        "@babel/plugin-syntax-nullish-coalescing-operator": "7.0.0-beta.41"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.41"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.41",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.41"
+      },
+      "_id": "@babel/plugin-proposal-nullish-coalescing-operator@7.0.0-beta.41",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-2dt/MxlAETQfx9FnOMpOG5s0cqzHfz/UgCjYS0+Usx0h9YRYRdZgqPatu6l0xAomhbuR8Voi5fIWZPLJ5aD5JA==",
+        "shasum": "a0ccb74ac86b15df4cf418ec11d9131065dfd19e",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-nullish-coalescing-operator/-/plugin-proposal-nullish-coalescing-operator-7.0.0-beta.41.tgz",
+        "fileCount": 3,
+        "unpackedSize": 3696
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-nullish-coalescing-operator_7.0.0-beta.41_1521044785275_0.6514722534086204"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.42": {
+      "name": "@babel/plugin-proposal-nullish-coalescing-operator",
+      "version": "7.0.0-beta.42",
+      "description": "Remove nullish coalescing operator",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-nullish-coalescing-opearator"
+      },
+      "license": "MIT",
+      "main": "lib",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.42",
+        "@babel/plugin-syntax-nullish-coalescing-operator": "7.0.0-beta.42"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.42"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.42",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.42"
+      },
+      "_id": "@babel/plugin-proposal-nullish-coalescing-operator@7.0.0-beta.42",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-8xVKYFV4Sd3DFpd+yFbKmWcFSVroZIcP+l3QeZoq2v5SSHuJOlqD17VKdYpypfejEfBJUeb0ShuKdcWPI3BP0Q==",
+        "shasum": "f95bc4be7a93d7386c715e48b4a21d83211f9406",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-nullish-coalescing-operator/-/plugin-proposal-nullish-coalescing-operator-7.0.0-beta.42.tgz",
+        "fileCount": 3,
+        "unpackedSize": 3696
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-nullish-coalescing-operator_7.0.0-beta.42_1521147098090_0.5634666266471235"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.43": {
+      "name": "@babel/plugin-proposal-nullish-coalescing-operator",
+      "version": "7.0.0-beta.43",
+      "description": "Remove nullish coalescing operator",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-nullish-coalescing-opearator"
+      },
+      "license": "MIT",
+      "main": "lib",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.43",
+        "@babel/plugin-syntax-nullish-coalescing-operator": "7.0.0-beta.43"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.43"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.43",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.43"
+      },
+      "_id": "@babel/plugin-proposal-nullish-coalescing-operator@7.0.0-beta.43",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-x6b6A/y+V6Ej+E+9Su1FMSkO/s7VWT0SqUSWH/s++eY/j+P03Agba8msnDP48+WZSRFQyuYGcQUh8XEE8zlQ6g==",
+        "shasum": "b9dd6279d902f4cb16d75344570dbb8db24eafcc",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-nullish-coalescing-operator/-/plugin-proposal-nullish-coalescing-operator-7.0.0-beta.43.tgz",
+        "fileCount": 3,
+        "unpackedSize": 3968
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-nullish-coalescing-operator_7.0.0-beta.43_1522687715418_0.5496775656752992"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.44": {
+      "name": "@babel/plugin-proposal-nullish-coalescing-operator",
+      "version": "7.0.0-beta.44",
+      "description": "Remove nullish coalescing operator",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-nullish-coalescing-opearator"
+      },
+      "license": "MIT",
+      "main": "lib",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.44",
+        "@babel/plugin-syntax-nullish-coalescing-operator": "7.0.0-beta.44"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.44"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.44",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.44"
+      },
+      "_id": "@babel/plugin-proposal-nullish-coalescing-operator@7.0.0-beta.44",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-i9lIbUSawWDzvlE+02bHR8m0LHLOe3Qz8QqXO5qYsLSDh2iv8MVQHZ42Liz56Rw6j7BEN4XPbgtFo0kUm8q4NQ==",
+        "shasum": "595d86c78c978dd7121482d864a6586e7302dce1",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-nullish-coalescing-operator/-/plugin-proposal-nullish-coalescing-operator-7.0.0-beta.44.tgz",
+        "fileCount": 3,
+        "unpackedSize": 4122
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-nullish-coalescing-operator_7.0.0-beta.44_1522707616934_0.11960346636826102"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.45": {
+      "name": "@babel/plugin-proposal-nullish-coalescing-operator",
+      "version": "7.0.0-beta.45",
+      "description": "Remove nullish coalescing operator",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-nullish-coalescing-opearator"
+      },
+      "license": "MIT",
+      "main": "lib",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.45",
+        "@babel/plugin-syntax-nullish-coalescing-operator": "7.0.0-beta.45"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.45"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.45",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.45"
+      },
+      "_id": "@babel/plugin-proposal-nullish-coalescing-operator@7.0.0-beta.45",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-F1jlG2vZARLFCtbnNaj2gu2bxH4WBaHVAG9YfdT/RoWkkFslgPtZQiOn2o7eqx7e5VBvwl30bWCXTitEWgewrw==",
+        "shasum": "00364d3b90a02e853a4572ad7bfa237da1183142",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-nullish-coalescing-operator/-/plugin-proposal-nullish-coalescing-operator-7.0.0-beta.45.tgz",
+        "fileCount": 3,
+        "unpackedSize": 4122,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa3T2GCRA9TVsSAnZWagAAXJYP/0LrMfbVzrjq+TSoB1OQ\nAWg2RHCfWt5M0rOaZa/1J9SXb9X0pQXWwO7L21wAF6ZQIwYjwOAMHeYfOyWk\nOUwZyvkDQzmLunshZTfyHD+gTknqQSY9MYw3jZvABMR3N+YFqXbParRhL0mT\nO06jWh2r+PScbcEdUI3rRb3A2HDieUzi+eAQtR8kWTA8nSrW2Ai+YhXciD86\nRTRCLnZTO3Lw8gEyilYnxqaKaMIkQHXpl98PoCw/dBKRQDFhjdbMNy/cxQZc\nG2oEfwUbirH1IteSq4B+FmznkhsqX4dOCtv2VJDLA8lNwSQXlHh2d3mTkdU8\n5R56q+2xakdek73VdM26aXhHh+BsNgGUMHJmrSYUxhTX6Gqbj+m6RkV+SN4H\nNTO9BZGa9gJIhaIzzqvENKwurk8H9L2RyFRuZFsQjVYhAqNv/SvWWA1Cynuy\nMxU6NNO05+n9+AIFgQqqMOFV0S+FfwKpVuyY8pCVgEjH72y06QUHA6RWI8hF\nD0o8HNL82xHYb9/UtgcTTdn41jlvMzSX+RTvBmbUGrrcuD75UoSG++VnQqvC\nJCVu9BTESiu9g5J5A75iUNk1f6DHtQ2aXgZ8cmlyMzi975Gava0vazYeRWra\nQA8EdmcYXsCja3G13AVrBtGaP6GEfx7oQoHljtsOvKllo7fNe04DNV+aEZbt\nC1PO\r\n=gmnh\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-nullish-coalescing-operator_7.0.0-beta.45_1524448644972_0.29748228201228377"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.46": {
+      "name": "@babel/plugin-proposal-nullish-coalescing-operator",
+      "version": "7.0.0-beta.46",
+      "description": "Remove nullish coalescing operator",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-nullish-coalescing-opearator"
+      },
+      "license": "MIT",
+      "main": "lib",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.46",
+        "@babel/plugin-syntax-nullish-coalescing-operator": "7.0.0-beta.46"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.46"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.46",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.46"
+      },
+      "_id": "@babel/plugin-proposal-nullish-coalescing-operator@7.0.0-beta.46",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.4.0",
+      "_npmUser": {
+        "name": "loganfsmyth",
+        "email": "loganfsmyth@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-498/hkAgXooBoYEqnm1Skienn0sV1dW0FApVaSOHv8Ll40RVPEgqTCELkI4QC1TNdX8r1KTQiJF91twCvp/jvg==",
+        "shasum": "e2cd1860c6bbd13b8469fba2bc7f72e4feeec299",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-nullish-coalescing-operator/-/plugin-proposal-nullish-coalescing-operator-7.0.0-beta.46.tgz",
+        "fileCount": 3,
+        "unpackedSize": 4122,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa3WGzCRA9TVsSAnZWagAAq1oQAJX6lBHcMlfZTFyZ4pJ7\nHxh5xor42N9J0ek5NWrODhwRfyeg3PK8jO2hHgw6hD1AB/QFOWMWMoP8szcj\nFGtXQz5Lc6PiKzb4V2HTAQN4PhkhhRAfuKaqgqFkVY+JtVyjL3gl46xu+H7d\nzDjNZ/MU1Ay5EGg3yo9jYVEDdgvj2G3HrsUvCM352lnrSco5SYIFZOl+GquE\nU70AUW3rEDaDQ80W/dcog4XVNO1kRRznpvp1vMdxQnDRUcvR85x8nlQ4wNdL\n4U2nWh03mAXQrS//1H5TvBYphACBDGLtjaaW0UK5h5VBa2hWXk0AefO3TikE\nDixQlAE+SNDOuuuBTUKkmVSoBsIU1bn2mOjGTp1eYnD45i6tZgBYvtMqm1p/\nWWYpqL4FiOFbppE57qndZtwyVn5zwK/kuz/C8a6vYspVMt+iKN0iRHyKNlFt\n+co5TPkZHNqT+NjNob+T3UWAFj2+u/CKxnVLRCC3TXwe6acWeZX0dZ+ro258\njoUn63thKJvlTTMxq+JKlNpBatP7D9iD+/x6Nxo8jgb44+cNAzjy0uCZv2tN\nE0E8rAZsmJ2HcANmIDQ4e699kFRgZVUtZVeGyuiIsapnuPZaYn62MV61Ppof\ndgrpV7Dtke9xNb5jvCTZ8KbPU64EJlh8OZxgqEvnaRFZm+kS0Dkv9HU6IN7B\naSWv\r\n=IFmG\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-nullish-coalescing-operator_7.0.0-beta.46_1524457907339_0.10769144647275075"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.47": {
+      "name": "@babel/plugin-proposal-nullish-coalescing-operator",
+      "version": "7.0.0-beta.47",
+      "description": "Remove nullish coalescing operator",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-nullish-coalescing-opearator"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.47",
+        "@babel/plugin-syntax-nullish-coalescing-operator": "7.0.0-beta.47"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.47"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.47",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.47"
+      },
+      "_id": "@babel/plugin-proposal-nullish-coalescing-operator@7.0.0-beta.47",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-7OhbKhytA5YRTUvhZbHGBy0jgU5EJiXRSiifCiMt1lusbSb4RQKsPM4NJ8+kMrx5oDlcyGPu2n3EhEMGEaBUJw==",
+        "shasum": "2bdad1cbee604808fab637200db7c1cd9bb9fd64",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-nullish-coalescing-operator/-/plugin-proposal-nullish-coalescing-operator-7.0.0-beta.47.tgz",
+        "fileCount": 3,
+        "unpackedSize": 4038,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa+iVGCRA9TVsSAnZWagAALKUP/2GNtJ8Vjbp0zZgyaME+\nnVJt2chZ/UdlItYv6NsGTHMNGze7zrlCjSSgxCiMyRgMC6W7gJygkoQFN6Gf\npGSkfgzKavKhjLgGSMWPYxJgXdjodvbeg9+otQKAAedWKHk+gkFRFX8AU5Iu\nZ4uXVRbiDybYiQNkZwEBkapIa8c3T8fYPxDE//8suXBd5RD+zhDIOXxo6dEH\nik+2knruOargjBOwjk1HkzQfFwW+H4Hyk0tNS+6Uu9Ptf01YF7LdpI8JKVSL\nU2r0RdHJIxAUB76Es80B3yLiFRf2/bJEoBgUSbH3I0l8PxX+Uix/oN5SkBKT\nnaPsYmzS1hiUv6axOhBD+ywlFwdySPAR6G702lsNKuyraeF9crTlKJapY4Ca\ne77z1U8jpeijuD0OZdSgEcjtbd0vfMXpb7+uouYzfLxu82p7HE/fwUKxNZSh\n/x52jbJB+HIwhQOauJ2bUoXcLnF+MioBbSJ+iZ2FtAUfaEqmK3dnh5NqCl/1\nsUdNUwUutGnVvMTLYaZ+/HN0innmkjggNTAKb2PKSFj3s3YHvfBajLBHzMcp\nJk77NS4fdUn382IxTTCdyIF8mubwqgbmTSIBkQxpR2hFuaMebHr883IECAm/\nsBkZofniKdLGGa8Bu3/4WgvAX9qFvh+I61VkzylE6mqUmwRkOhEnKA+CPVnr\nQmpN\r\n=ieRK\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-nullish-coalescing-operator_7.0.0-beta.47_1526342981048_0.7411456989420735"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.48": {
+      "name": "@babel/plugin-proposal-nullish-coalescing-operator",
+      "version": "7.0.0-beta.48",
+      "description": "Remove nullish coalescing operator",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-nullish-coalescing-opearator"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.48",
+        "@babel/plugin-syntax-nullish-coalescing-operator": "7.0.0-beta.48"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.48"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.48",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.48"
+      },
+      "_id": "@babel/plugin-proposal-nullish-coalescing-operator@7.0.0-beta.48",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-vzTSOZ21z12Kt8LoY6M1izhhJPUNGoKLez9yeGPagV9p4urTUwnahWdaD5/Q9MJVyIUWuJVm3Tne0Lvcdu9Usg==",
+        "shasum": "5776dd4920312d7e506dde0c62b2003aee9b209e",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-nullish-coalescing-operator/-/plugin-proposal-nullish-coalescing-operator-7.0.0-beta.48.tgz",
+        "fileCount": 3,
+        "unpackedSize": 3977,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbBxE2CRA9TVsSAnZWagAAjFkP/0p60XzahI24jqc8XYm5\nWUvkSQgJuJREIqYz7QYWyWK9Hp5kQAsUohqjAjp0H7VlQXXonqkRc2NsnaTe\n8GnR+Kw9xKb3drTVGmsZ07zS3wTA3kpibAo7nvYCk/DZF9cKS+Ef55c+9o7y\nwfaybpbHcTHUXGsyrnzBmElBBG8zPsc0U8AD9wtpiIcX1XLLNSFRkdf60QoD\n0TTJ1KyH5OH9X9s8EzGowT7zPH7/m63IlU3hqZCOBnmn5gKFqvGJijyjRmRi\nz9X7LJC/ZhJSUe/5kmegBzzpAJQTpOO9uLSuHH+DzacRDNSKja3zP2Z/Aedl\nn/mcT4mZ3lSKfO3ObzDZ59X8D3100iPJIwtRMiwWcxIsNl/HpZF4MFKwtp/o\nXV24Zine2zByqrld76JzXF66b+dWNhvaS7OQN/aJxh4CvsIMNmKYiBfHsEyK\nPEsCWo5l1St6QiFaLJBc9u5rHqGVuTZP2/q+/ft+73rfueMnrEV6AMVcKDhP\n95Uyp3h588HUoXAggexgjxHZole4IZmWLEzkFiykK680sgIqclvEDx78N3p6\nA8spOoYbP6tCd7ufK2q6qOCmrg3W1RnrwVT4mkGoqskpOnUEeJRJvihGVvb+\nzWNUmDjaDZGAl3bxkAcnIHKDAlqfkz+iCfUwMbkUq2bX6/X+NixXz7YkX+ra\nrpS+\r\n=L+NE\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-nullish-coalescing-operator_7.0.0-beta.48_1527189812786_0.3653998323526213"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.49": {
+      "name": "@babel/plugin-proposal-nullish-coalescing-operator",
+      "version": "7.0.0-beta.49",
+      "description": "Remove nullish coalescing operator",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-nullish-coalescing-opearator"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.49",
+        "@babel/plugin-syntax-nullish-coalescing-operator": "7.0.0-beta.49"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.49"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.49",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.49"
+      },
+      "_id": "@babel/plugin-proposal-nullish-coalescing-operator@7.0.0-beta.49",
+      "scripts": {},
+      "_shasum": "63576d0e5d113c43279e3552d9e846c023b8a813",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.12.3",
+      "_npmUser": {
+        "name": "loganfsmyth",
+        "email": "loganfsmyth@gmail.com"
+      },
+      "dist": {
+        "shasum": "63576d0e5d113c43279e3552d9e846c023b8a813",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-nullish-coalescing-operator/-/plugin-proposal-nullish-coalescing-operator-7.0.0-beta.49.tgz",
+        "fileCount": 4,
+        "unpackedSize": 3992,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbCDOzCRA9TVsSAnZWagAA264P/iWevz3mY6HZts0xiiMf\ndkWqu3Qjn1eBZ/bsquKiw4m0FqGGtHIy9br1mmZyuJRfJ0LXDMihmoNrr3Qk\nkFzr/cp+Kl5UHWwmtDx+nCrhxofeuVa/bFOLoULJHiB3P0dtuE2w2F/JYu5G\n5qiye/v69Bo5su7KnzXBCSAhzmzQ53a7iBiKDRKlA3vNY4iVgjnkB1mbkUYk\nwLDS4OFIKx1b7rhMldUrOPF2LPHxHIRA9hMtGU15xgD9RSMK2fGZN7skklEx\nnNdOo1yfBYz3fEbUX+SoXcY65Vf9Cthx2sUdAtdsZ9pcCsjA6VsMSXnP67sQ\n1bY0sbwkzZ3xFNilGCheDH1uUPTqafdy9TTlYI6u7Tq690GLKA/ZLWnLSS7V\n82V55RlfO/NYuzOtfWAcW7nGPYmxdJ0vE8ssXWXfM7Hl1h3Qgl6tWAmLzlku\nrrP4HuJZgOXaqjp2NuTHPAOgsExNXM/OEDvf7Kb5/qw+JXsoc5/wQs7hd9Ic\nTWlgCu6vP/QdAS4mYxhL/Ms834c5nlYA8ZpJ+5WD7luHzSebFsH9AVaXeuls\nSuE52Qqopm2cCw2993xXxasy+PlOo1ITOxlz7865GqY8OyqhlExP1JsznoV0\n3E8ChmeBOrUWIO7Mkxi9xkJiYGYhUl4FZqtloxzDUCtCLFzkdZZc4tQ9d6rZ\nZw4G\r\n=/3V8\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-nullish-coalescing-operator_7.0.0-beta.49_1527264178997_0.28131927424048886"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.50": {
+      "name": "@babel/plugin-proposal-nullish-coalescing-operator",
+      "version": "7.0.0-beta.50",
+      "description": "Remove nullish coalescing operator",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-nullish-coalescing-opearator"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.50",
+        "@babel/plugin-syntax-nullish-coalescing-operator": "7.0.0-beta.50"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.49"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.50",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.50"
+      },
+      "_id": "@babel/plugin-proposal-nullish-coalescing-operator@7.0.0-beta.50",
+      "dist": {
+        "shasum": "adb69f6db864991a4ac59bcfbe6848c17cd731ee",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-nullish-coalescing-operator/-/plugin-proposal-nullish-coalescing-operator-7.0.0-beta.50.tgz",
+        "fileCount": 5,
+        "unpackedSize": 2966
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-nullish-coalescing-operator_7.0.0-beta.50_1528832854725_0.14892171010582445"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.51": {
+      "name": "@babel/plugin-proposal-nullish-coalescing-operator",
+      "version": "7.0.0-beta.51",
+      "description": "Remove nullish coalescing operator",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-nullish-coalescing-opearator"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.51",
+        "@babel/plugin-syntax-nullish-coalescing-operator": "7.0.0-beta.51"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.51",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.51"
+      },
+      "_id": "@babel/plugin-proposal-nullish-coalescing-operator@7.0.0-beta.51",
+      "dist": {
+        "shasum": "7221a7def086cae9c9dfaaa388ed4dc925fbe336",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-nullish-coalescing-operator/-/plugin-proposal-nullish-coalescing-operator-7.0.0-beta.51.tgz",
+        "fileCount": 5,
+        "unpackedSize": 2980
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-nullish-coalescing-operator_7.0.0-beta.51_1528838409113_0.056177817111685124"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.52": {
+      "name": "@babel/plugin-proposal-nullish-coalescing-operator",
+      "version": "7.0.0-beta.52",
+      "description": "Remove nullish coalescing operator",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-nullish-coalescing-opearator"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.52",
+        "@babel/plugin-syntax-nullish-coalescing-operator": "7.0.0-beta.52"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.52",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.52"
+      },
+      "_id": "@babel/plugin-proposal-nullish-coalescing-operator@7.0.0-beta.52",
+      "dist": {
+        "shasum": "4436ea10499855a849e671d650c14939e6678d21",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-nullish-coalescing-operator/-/plugin-proposal-nullish-coalescing-operator-7.0.0-beta.52.tgz",
+        "fileCount": 5,
+        "unpackedSize": 2979
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-nullish-coalescing-operator_7.0.0-beta.52_1530838772600_0.7026505117907993"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.53": {
+      "name": "@babel/plugin-proposal-nullish-coalescing-operator",
+      "version": "7.0.0-beta.53",
+      "description": "Remove nullish coalescing operator",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-nullish-coalescing-opearator"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.53",
+        "@babel/plugin-syntax-nullish-coalescing-operator": "7.0.0-beta.53"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.53",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.53"
+      },
+      "_id": "@babel/plugin-proposal-nullish-coalescing-operator@7.0.0-beta.53",
+      "dist": {
+        "shasum": "fdd502b1493bcfcd10b02587ceaf7366295020d2",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-nullish-coalescing-operator/-/plugin-proposal-nullish-coalescing-operator-7.0.0-beta.53.tgz",
+        "fileCount": 5,
+        "unpackedSize": 2979
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-nullish-coalescing-operator_7.0.0-beta.53_1531316431577_0.22529215690671478"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.54": {
+      "name": "@babel/plugin-proposal-nullish-coalescing-operator",
+      "version": "7.0.0-beta.54",
+      "description": "Remove nullish coalescing operator",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-nullish-coalescing-opearator"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.54",
+        "@babel/plugin-syntax-nullish-coalescing-operator": "7.0.0-beta.54"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.54",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.54"
+      },
+      "_id": "@babel/plugin-proposal-nullish-coalescing-operator@7.0.0-beta.54",
+      "dist": {
+        "shasum": "5b5176f3619dd17bcedfe99b58add67981efc46f",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-nullish-coalescing-operator/-/plugin-proposal-nullish-coalescing-operator-7.0.0-beta.54.tgz",
+        "fileCount": 5,
+        "unpackedSize": 2979
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-nullish-coalescing-operator_7.0.0-beta.54_1531764014156_0.14095505066956115"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.55": {
+      "name": "@babel/plugin-proposal-nullish-coalescing-operator",
+      "version": "7.0.0-beta.55",
+      "description": "Remove nullish coalescing operator",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-nullish-coalescing-opearator"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.55",
+        "@babel/plugin-syntax-nullish-coalescing-operator": "7.0.0-beta.55"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.55",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.55"
+      },
+      "_id": "@babel/plugin-proposal-nullish-coalescing-operator@7.0.0-beta.55",
+      "dist": {
+        "shasum": "c7167e03e2685b8026d2eb5d8601383988ceaab5",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-nullish-coalescing-operator/-/plugin-proposal-nullish-coalescing-operator-7.0.0-beta.55.tgz",
+        "fileCount": 5,
+        "unpackedSize": 2979
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-nullish-coalescing-operator_7.0.0-beta.55_1532815657486_0.9654126061687125"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.56": {
+      "name": "@babel/plugin-proposal-nullish-coalescing-operator",
+      "version": "7.0.0-beta.56",
+      "description": "Remove nullish coalescing operator",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-nullish-coalescing-opearator"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.56",
+        "@babel/plugin-syntax-nullish-coalescing-operator": "7.0.0-beta.56"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.56",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.56"
+      },
+      "_id": "@babel/plugin-proposal-nullish-coalescing-operator@7.0.0-beta.56",
+      "dist": {
+        "shasum": "e350051798665ceec8b9f40f5f7957f4fc0b7847",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-nullish-coalescing-operator/-/plugin-proposal-nullish-coalescing-operator-7.0.0-beta.56.tgz",
+        "integrity": "sha512-W/d4jsDtZjQ02MZzMGscxXTe9hcebOrSvxYMjldXHDiDMKTNvZ669P58RMbKqemHESpKVBa4ArajNALEa3+Bzw==",
+        "fileCount": 5,
+        "unpackedSize": 2979,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbZPwnCRA9TVsSAnZWagAA6zMP/0q+KwxDdvWHTHLgN2Y9\nsYDS5lrVmCZZFD5VIGaOy1/p21RCL1o1EP6qMa0x8a9fbse1MNrbdXGvGWun\nbvqtN7b4Bsh8FHQX25B7typCaUk0fsvANTFDZs+JKnM9nuSKglUiD0gsB34R\nU9mnQfPtKfiTxgzeLw47L8OuBQYjCmsaS+sGdvmaAKIvR/FLNXtacQhXooMg\nx2RPekEYm3z9Ug2WDVzW0kguzl8fHgoIU82GtSgeDYHvkAwOIs7vJu0Napza\nEUPv24rhQwIp1TIr4UHqlapPkIXkrZsi69JUIf5+33SjFQlMMt04ZDNTi0bp\nj14V9wuV9un/qSBtnSq4CtE4peqGLpPtglUKAqdNQf+ySry+EoiSN7tQT81I\n4rIW4SgHD2plnWKKRDkAJ5qKSsg4ubpyuT+eEWT8xXdeCbvzP5H9m5CZuqy3\nBdwjCXkyB4FIW8PArykbU8DaFMxzdnIUkvb9wGEL8VPAWNvjSyxNSTUq6ZfN\nvOY9mEhOX/2PtjD21oS4LgB8X/eEFC5o8T3BuFeU+yg9UDlEpOrk63dZmnOr\n8t7i1uv1n2239MOc1eehbKnGAHzb55mWpaoopdVQwM3fcyDfYfOUHDMae4PA\nN8Dz37vh/2YT82U9Vi7Da3ZBib/KhEQ3KXYh85QpmnpGSMcWE19z8PDcGW9Z\npc6s\r\n=QtEX\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-nullish-coalescing-operator_7.0.0-beta.56_1533344807253_0.47188848794287397"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-rc.0": {
+      "name": "@babel/plugin-proposal-nullish-coalescing-operator",
+      "version": "7.0.0-rc.0",
+      "description": "Remove nullish coalescing operator",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-nullish-coalescing-opearator"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-rc.0",
+        "@babel/plugin-syntax-nullish-coalescing-operator": "7.0.0-rc.0"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-rc.0",
+        "@babel/helper-plugin-test-runner": "7.0.0-rc.0"
+      },
+      "_id": "@babel/plugin-proposal-nullish-coalescing-operator@7.0.0-rc.0",
+      "dist": {
+        "shasum": "537aef1e565ff53089dc468ae833c7d8ef3b622c",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-nullish-coalescing-operator/-/plugin-proposal-nullish-coalescing-operator-7.0.0-rc.0.tgz",
+        "integrity": "sha512-qHj7cRAB49qKQsf555MANRomaZPpwes6GtBhUCJU/E27QNq1bzJareQJDEyXB0sw3kdquUQGZDlWICkiII7QLA==",
+        "fileCount": 5,
+        "unpackedSize": 2964,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbbGTACRA9TVsSAnZWagAAO7UP/i/rGLFllNX4tOwMtUHF\nSGCVcReWAVxhZ4O1zud1vbenf7AXZyYNABqrurgPKsc7HwBofDOaTfpNxw/1\nekcqZPhSAcEli02aukcH4QcRs0fQbFRNsINtdzLWF0ZODLdfueaudCWZpfi3\nG/miq2l6gHjIBdulG8NxzTCREq61Wx2Oc5ELU6Fl2WHpvg7a+rBjmxgHGx3L\nuHN9DWXjoiIIl0LKWVYLKOG9IwKRb1AkwBXG3QRgQifUhGAoZ1M1gewXDBSk\nJfgW8REcdwvcnTjMmWyMl5SgC1rui6NSqiWq3m3wpTd9q6k12YeHcmi4NkTk\nPRqP4353nz/8yzmsvXo72/P1u3jCFAvgW7LBRV3Es72KyLXmboKzSrhRQiIv\n63/4dg5tRvPJPlhbFbmhOpaVO6foMuZix+MmQBtBGi7omoo1q93erY/jEq6C\nKKrDThIPRvfsS47ez1VHU9bsPa/zIywcqbqSimEZjx1eFLCBQDzyDOW1iIEe\nN+AzPI0NWiy/v9VDbwmiQ6vv5dpexrP3LnNK+rv162+wh1RYZF6z7sPaPtS4\nYMRtIYl0kf3As0OMrl1YtSgsZ77WYl7yu7oXCZ8kRz6HdZwf2teOzLrVI8uk\nyb0DG/1evzXS5f986D3zAQJohYQweNmn3ZG1tIgQV+wpomL6QvLsonkWUTCI\nXiA2\r\n=6iwT\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-nullish-coalescing-operator_7.0.0-rc.0_1533830336137_0.36305589980275865"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-rc.1": {
+      "name": "@babel/plugin-proposal-nullish-coalescing-operator",
+      "version": "7.0.0-rc.1",
+      "description": "Remove nullish coalescing operator",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-nullish-coalescing-opearator"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-rc.1",
+        "@babel/plugin-syntax-nullish-coalescing-operator": "7.0.0-rc.1"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-rc.1",
+        "@babel/helper-plugin-test-runner": "7.0.0-rc.1"
+      },
+      "_id": "@babel/plugin-proposal-nullish-coalescing-operator@7.0.0-rc.1",
+      "dist": {
+        "shasum": "1258206853796a77d502f811df39d5d3d7192621",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-nullish-coalescing-operator/-/plugin-proposal-nullish-coalescing-operator-7.0.0-rc.1.tgz",
+        "integrity": "sha512-+Cxqn9Dw+I3OAFn45agYQ+9L19j91ul3KFb8z/JB8flfHr1UjS8RtjjPP02OY6DkqeFd1EAIb2VIyA6qWreX7Q==",
+        "fileCount": 5,
+        "unpackedSize": 2945,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbbJ9GCRA9TVsSAnZWagAAzjIQAIeGxxdFiolaRgHbPMZh\nHNR6CBGMgS1Y82O74Z44tEZiAw408f/NnNFD2FdtO0eVsSzul+TwvxpHmIAh\n2tKFezYx1gJElqMMArPZBoaIczj/jypvT5/GistYfxQpop+6JCjB0JFg1mAq\n5YzxUdoYARm7gSSpacWvoM9YLMmmv3N4dr25w8R1IUviTcPrlr9caoSLd9kQ\nRcmU/j4D+8iZv03Cg8lPPPxRk/OSJI6yJA9IyzjPdghV45d4Q3+/DA6Ty4J5\nLvhpxMv39hTkwQ+K4x/mccwse7LP/eEh4Uip5wakC0hMAx60DTDYg1cZAAAk\nV2Rw3A+BC5jETcFPncTy87NZPatNGa4uEthnyBDIQxTSZYTUNcz9iliGocB/\nSBer3BabP0B01bVQfhALnUG0Fb5o6oWnuUg8LinyCXq6M4NeGYD2N9Pz6kTz\nxnwABF/kPb7faeP9Beub6ZAiS7yBmynhr2OfrquUXCUMbtJR5ZbuOM/9Lz9N\nErbg2l0TvDYJarqbdbkvXmuhP7LLwLx3A6q5AP7y3cfBD340UZ+tWf6aNJzH\ncEsMqjThHUwEHbUZ8Dy28c4sKkNDivY1gVvA/e7BaNpQeG1j4KNJE2EzHy8a\nB96HDI127OqwYOB3e5IMLWEeCl95s1Ef4WKCc0qNAYSy4k5Q+l+UBCqUiehG\n9Lph\r\n=HdSf\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-nullish-coalescing-operator_7.0.0-rc.1_1533845317804_0.420445891141378"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-rc.2": {
+      "name": "@babel/plugin-proposal-nullish-coalescing-operator",
+      "version": "7.0.0-rc.2",
+      "description": "Remove nullish coalescing operator",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-nullish-coalescing-opearator"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-rc.2",
+        "@babel/plugin-syntax-nullish-coalescing-operator": "7.0.0-rc.2"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-rc.2",
+        "@babel/helper-plugin-test-runner": "7.0.0-rc.2"
+      },
+      "_id": "@babel/plugin-proposal-nullish-coalescing-operator@7.0.0-rc.2",
+      "dist": {
+        "shasum": "87e75efc7ba44c8ef3b80f5b12d50e2ba37a287f",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-nullish-coalescing-operator/-/plugin-proposal-nullish-coalescing-operator-7.0.0-rc.2.tgz",
+        "integrity": "sha512-Be3VJ1HYRjoIogqQZ/xK7mEPoyte33E56Bajkj4WXv4cR3uRbOCTKhi2cAFCpu8Pkt4G2Ol2xfdWi2imQqjaVQ==",
+        "fileCount": 5,
+        "unpackedSize": 2945,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbfGb7CRA9TVsSAnZWagAAOtUQAIsGQLMQbDzX/eATldyG\ns4mV47lTr+i9Nqw0oOdwiNCmqS0kBidZQSnT5Yr9dZROnAmgrLouoC8nxhAz\nZHjH8AI+KLQARdc9XAM8+D71A5SaDNNGZ2qbNl3VYiwAl2jGoh170XA/I+e0\nwKCxow5AoxTKCx1UnIlhV2Y/FGy6+o1D5WJ3M9jhqQNWVTT6moCekD6CGVkY\nhfWQYS2SL9MiROeGXoMhPFWtNGvsqw2EOAqo3yAVJ7aGNYKJQ1w/2TpWb+0p\nrBxCVgMypwUqihm6gYgFSxVf6MojhOWjnO88AJN7DnunuLuopGyZTCAjOVY/\n3bQjffuDOzPcBwAFzLqzupKiblhznFo5IVwIXi3jB+q91POIUBcN1vf+zI0r\n44a3d2DQ0UQx1Jf8QI48KhDprz1NkNu5hq1v9BmxK5fjx3sARcFerxI8q7wn\nfwpzTqXdSrcS6b5BQam09DFk4wG6jX0Y8z8KRIRTATN1vhK2tu5jdcxHRUu2\nzdQ6cwrPV78+FR9JtIJkYLS0fxKaOuWI2wlOFBgGSE7Aa6xquk84//u9zf0i\njOq2lUyqKx1v7Mvnkf1W89GaQG1T/X3Derdqv/BcWHxWGU7J8yVa8qftT+aw\nPmbTV4buvKPIPaKvueDzn16PIqXAVUV479fDRQZJptWaIQvF3mcy41/huZkn\n9K8N\r\n=GRKj\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-nullish-coalescing-operator_7.0.0-rc.2_1534879483050_0.5407577732366073"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-rc.3": {
+      "name": "@babel/plugin-proposal-nullish-coalescing-operator",
+      "version": "7.0.0-rc.3",
+      "description": "Remove nullish coalescing operator",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-nullish-coalescing-opearator"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-rc.3",
+        "@babel/plugin-syntax-nullish-coalescing-operator": "7.0.0-rc.3"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-rc.3",
+        "@babel/helper-plugin-test-runner": "7.0.0-rc.3"
+      },
+      "licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie <sebmck@gmail.com>\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/plugin-proposal-nullish-coalescing-operator@7.0.0-rc.3",
+      "dist": {
+        "shasum": "5c4bb1c804341a14821a61d755024e3a45159346",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-nullish-coalescing-operator/-/plugin-proposal-nullish-coalescing-operator-7.0.0-rc.3.tgz",
+        "integrity": "sha512-mCWVZFlIxcdni+EACiJy0mhr8cmBoHYC/GGEdauC0Yuz4bjmTsuJmm7lRYvLmFzcocn34la+ho5H+zf9fh3n1g==",
+        "fileCount": 6,
+        "unpackedSize": 4044,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbgEmiCRA9TVsSAnZWagAAgdEP/RSJ0lEdkDETZ558lPAO\ngmJ8oKQULpceHg2r0wSnZw5NB+iUZLgSUmCUpdiSh8ND3aDe3lSOe8CF8BwT\nZ9M01uOoj5RZfPkLKhDMfzkT/OdWfCbZ6QziCrjioGM4UZ7LngoH5N+pTeYj\nRlj8kR70VyepukD3HjP2Hvz/3llG8OV3XafSsz3dCGTPtOBASONHTj5lMoKI\nL0izUS7+aCtBIuIDI1ZhGLf8amDZmvMQi39KnvnXR3jaXyK6aZLyrdviWlw7\nKJLBszeyjt3i0kawTLKdV1u49GAVL88SDuZmJz7pky+87BU8IGxBe29XTyju\nz1cuuXXsVcg5InwDnhQkupE7IYmJuvvWzkKPOCFPX8OwTGrM8Npcm8HaPEEM\n5sR3T7Frwy7J7RZeBF+b7kQxYJfcD89UPNuchN/dfydULMIbgfVOdB9NqBaK\nhTtqvfxJ5fYBdZq4SscfVl7WALRpGA1P1AU34QhxkPQXq7fDO3z+yNBQJKXC\n28VpwGE6IIdtocSez7aztobdBBTk38Dh5APDhiqZCOlYuR74GKKYpjqpZh3m\nu1eeNivRt/43Xd4Q/Sywyipj7iYu29zu7P6OoyRgQlXuLVd+6y3Fzd9hBnCB\nCwJVEJnFDQoBtX+rEXrO/SMOjWoBsk877+iDGlWvGgcCBgA18crUFSJO9tjJ\n7r57\r\n=8KEX\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-nullish-coalescing-operator_7.0.0-rc.3_1535134113556_0.48977989711905545"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-rc.4": {
+      "name": "@babel/plugin-proposal-nullish-coalescing-operator",
+      "version": "7.0.0-rc.4",
+      "description": "Remove nullish coalescing operator",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-nullish-coalescing-opearator"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.0.0-rc.4",
+        "@babel/plugin-syntax-nullish-coalescing-operator": "^7.0.0-rc.4"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.0.0-rc.4",
+        "@babel/helper-plugin-test-runner": "^7.0.0-rc.4"
+      },
+      "licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie <sebmck@gmail.com>\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/plugin-proposal-nullish-coalescing-operator@7.0.0-rc.4",
+      "dist": {
+        "shasum": "27df517251fee8ab1f815a8199c3040501f9d7d5",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-nullish-coalescing-operator/-/plugin-proposal-nullish-coalescing-operator-7.0.0-rc.4.tgz",
+        "integrity": "sha512-kXTOxkQ2Og7B0gzz7YiAUeRW5b8JdGX/u1GIPeh/+NgiCEpa0ts3ixsZCYXQXdNcGZWEQ3mu3PGqtZRMh48+HQ==",
+        "fileCount": 6,
+        "unpackedSize": 4048,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbhCqCCRA9TVsSAnZWagAAcqsP/jYfatwsNwjkUrkAos+J\n11VaLU5EyWB4bTPbjy8u2aCJhhyta0AsQggFjbXrhpIDiuicwLqIEUT2r/iW\nKr4k/K7uVCVH73HkFlRBHi2iX+mlV87HQ3fqdBK56vNOf/GN20piiu6QSupc\njir1Ojvq2n23x0tdb6nrtat1rcyhlDzdi0Ug/fhkvsIqaM8aaR9yOEtsqX1r\nM3n4XhZyyYHV9gGbB6iz2bOKP1h+dtGfVZlbWkKN4G5HOnTQf8FOnZhdQwuT\nlQsXRtVJ7IQm/TDthofteZCU7ziQXp+vrrgQv1VS17MrPR3TQFrPSB3tnOwI\nOgQiFg5VLZDHm5/Pp8ZfJEFegDiYRLTjdMVpyUtJdSGeW8oyXWLpn/BAV5Bv\nhz5rszR1oiJ3Bsr9jg2pZpwLNCH9rrhUejKQdYV1ATmfsO42Z5xBEuJX3fLP\nJzlX5kNCOWpFfDwjgcIZB08z90lflWj/cjxbBK6g+3TRjV1acDXM4xpj4Dvo\nHnYDbiD6teaFClRHFjGvRMcXOLOmxdk0s7g3rvXK0D+nSeQSvqfFwLwqrMcm\nXXSxahZ6ATdqx093BJhPTFen04B/8RFaK1pnJcHtPoHs8FjsKYr/KyCoqfi2\niKasJSoWxfm8PxrX4OkL8+2ot6WKaJ6JbKKHUQWOYkzB/NyyG3lDPXk/R8F6\nxKzs\r\n=HP+4\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-nullish-coalescing-operator_7.0.0-rc.4_1535388289473_0.8549220324173679"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0": {
+      "name": "@babel/plugin-proposal-nullish-coalescing-operator",
+      "version": "7.0.0",
+      "description": "Remove nullish coalescing operator",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-nullish-coalescing-opearator"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.0.0",
+        "@babel/plugin-syntax-nullish-coalescing-operator": "^7.0.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.0.0",
+        "@babel/helper-plugin-test-runner": "^7.0.0"
+      },
+      "readmeFilename": "README.md",
+      "readme": "# @babel/plugin-proposal-nullish-coalescing-operator\n\n> Remove nullish coalescing operator\n\nSee our website [@babel/plugin-proposal-nullish-coalescing-operator](https://babeljs.io/docs/en/next/babel-plugin-proposal-nullish-coalescing-operator.html) for more information.\n\n## Install\n\nUsing npm:\n\n```sh\nnpm install --save-dev @babel/plugin-proposal-nullish-coalescing-operator\n```\n\nor using yarn:\n\n```sh\nyarn add @babel/plugin-proposal-nullish-coalescing-operator --dev\n```\n",
+      "licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie <sebmck@gmail.com>\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/plugin-proposal-nullish-coalescing-operator@7.0.0",
+      "dist": {
+        "shasum": "b72ec31adf612d062dc0348316246127a451e45f",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-nullish-coalescing-operator/-/plugin-proposal-nullish-coalescing-operator-7.0.0.tgz",
+        "integrity": "sha512-QIN3UFo1ul4ruAsjIqK43PeXedo1qY74zeGrODJl1KfCGeMc6qJC4rb5Ylml/smzxibqsDeVZGH+TmWHCldRQQ==",
+        "fileCount": 6,
+        "unpackedSize": 4023,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbhHCUCRA9TVsSAnZWagAAzvcP/14guYw6Vnkp6z1jONXr\nKoM7x2xBea2dsvNG1HgBHD218/Nxg//RFCuLafCi8ilsTY4yPrdYM5iSjWoF\n7bhnBd6YYL+6gX5RpCcd8RRWQrT73CkWmYK3PjHNQWHXN5xnz0RiYaLGq8LB\n3uwe8prD2qhqwAx7aBgInhKgzeuH2uK4vANrnm2BMGmOb7cz+DT/JvAljvWa\njO8k0NdyjMc+NvMqmT1+QrqoSqInvu4UoiKkWw5iPWLe4hBOIVhbZmoUEa9n\nhv4+QRb6tTGjKMtVak/529lfkWtmXJFrNMiFqrdmpz54ZrKK96JB47fj9Y0i\nPkYmX4lCUOM1rZ4f8kHkrwA0tOrsR4vfiXz/6ReHCALcxE13/ybeyIXzGUCs\nJoefTiUyC8HrKJL4P9zQ6OvqCdxmxt2PHmQF6L5TT6fpMEzVnHlRFmwe9opy\n3SO92tF0dkSYqek9UQkHHdP4T4PWbmHoUrN0ebtf9LVTMX72y4uUOjrJbchG\nPnQE4CJDnkUFPu0fCFjqhH14Nr3w5eVhsGtCIGwzcJtZkdcPkYjTdJu1El7+\naU/5mkhkbWq8lnEmIIKo2N2n5bdW06Q3gi5SeZSSlXTUlu665zS67cYpeiH9\nO/G1MX+JFn556ougjlTEjp+zZMkmuPE7E7gkk20tMTVIT5KC4ynn7pW8LBvh\nAc9R\r\n=Ri9g\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-nullish-coalescing-operator_7.0.0_1535406228371_0.5061747831557648"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.2.0": {
+      "name": "@babel/plugin-proposal-nullish-coalescing-operator",
+      "version": "7.2.0",
+      "description": "Remove nullish coalescing operator",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-nullish-coalescing-opearator"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.0.0",
+        "@babel/plugin-syntax-nullish-coalescing-operator": "^7.2.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.2.0",
+        "@babel/helper-plugin-test-runner": "^7.0.0"
+      },
+      "licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie and other contributors\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/plugin-proposal-nullish-coalescing-operator@7.2.0",
+      "dist": {
+        "shasum": "c3fda766187b2f2162657354407247a758ee9cf9",
+        "integrity": "sha512-QXj/YjFuFJd68oDvoc1e8aqLr2wz7Kofzvp6Ekd/o7MWZl+nZ0/cpStxND+hlZ7DpRWAp7OmuyT2areZ2V3YUA==",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-nullish-coalescing-operator/-/plugin-proposal-nullish-coalescing-operator-7.2.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 4126,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcBX3HCRA9TVsSAnZWagAA7JgP/RMiCDzTaN0bRU9AD0bA\nn0LbWKEoeA1NS733pYbfqA5vce0gKTIIrZf44N3jM+SngEsWpa0fJpivoOLJ\nHPZrwDo+eabe+W4PEASIM22Cx3tjqte/UdWN9NM9uUGgZJbLvlszwZKUvtWa\nu7wiDNkh3ibxt+52iTrAoI7lwjB0J6HOtndbL0o2LcGIs/cvjNqns4WR5jCR\n506AO2vD5SLInG3zVW0UaWmVrqHHuG3sr9OqSUfnfHtfpeR/fAREwEfWfONo\nOPA7BqnbDmlBsHEDDKCsW013/Q+v2DSUR5R/JrWRR1VxuPVG5bCRzm48y7Mu\n/SfgkZgJzvpWdT0Mupqm/v1nL+iH2rut65ZbyrgHcPnkZNsh9SdW5Zp5JgmZ\nf/grQT+4ThsvMAXHKpXZzIaKbZM7+wXtkPA9oIYDS6ZRtznIFHAubQ30VLfj\n/Qel2iOI09CUJKPIytbO7I9PU33TELNV31xQZ56jdg8JS3eltalI1e0sZl8u\ntFi/O6W4jKAed1haviwjk9XNxrc1NQF1mEgzTv4opu5cOH+mf/PkE+lROP2F\nqGLBVc1XvArhJFCIlv93sjmrbS0juxIlmCzr0xPDkR0u6GrbmyPv0u4ezPIG\n6UofergTmVVGxS2gozEcNn8rn85WA+blTu3cyD1SCBjYwxKrkETHgrfX0kzg\nbpgx\r\n=oTXo\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-nullish-coalescing-operator_7.2.0_1543863750912_0.24718980022988868"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.4.3": {
+      "name": "@babel/plugin-proposal-nullish-coalescing-operator",
+      "version": "7.4.3",
+      "description": "Remove nullish coalescing operator",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-nullish-coalescing-operator"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.0.0",
+        "@babel/plugin-syntax-nullish-coalescing-operator": "^7.2.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.4.3",
+        "@babel/helper-plugin-test-runner": "^7.0.0"
+      },
+      "gitHead": "508fde4009f31883f318b9e6546459ac1b086a91",
+      "licenseText": "MIT License\n\nCopyright (c) 2014-present Sebastian McKenzie and other contributors\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/plugin-proposal-nullish-coalescing-operator@7.4.3",
+      "dist": {
+        "shasum": "df9ff90a9e3b94eb426e56be6100a85ac61a2b9f",
+        "integrity": "sha512-eYtYniPfQOPY8rpsR8YK5pioJHrFLXjXOeYRf0vr5sWSPJU13or3CxLFn+uIb6fhukbYNch+L2VDAlvME2DSAw==",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-nullish-coalescing-operator/-/plugin-proposal-nullish-coalescing-operator-7.4.3.tgz",
+        "fileCount": 4,
+        "unpackedSize": 4184,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJco748CRA9TVsSAnZWagAATLMP/29wn23VHyhUIO3Gq+hZ\nUiTc0u5Dq5Sp2/8yH2WVwPIdiHfc2b1OnYVqcbwnvk5uEr3ySsb9QY0DqkO4\noQfUZsavmLR2B7yKH3xJbfLYJ2gUKIF9WXkXStvS3VpN3bfxSgrKuPWAzCkF\n+u1tdu7A2tun9LwsU0rus7xeZO28nu8VucPbGtQzCpGn8I8yY0Zi5+ql3C+b\nDlwK1vq4nvHuYe1zCok8jlUJEMQgok67qaIzCTQGdSAvHs7eNB5ERGCe2h63\nRhUOuIgnbls5VexX+cZxfniLP7D9tiw3jmdHtCGUvaDUa3xC9u8V1FEZS94H\nqlwjDb/TxALgXZTi3K+5C0uLS2Lzcq6AXxhjWa1FYh5fCNK8y37wgS1I5wg1\nomg4/WFGQg+wvdYJ642+nrz0YvcfPROR+uzPDPiD8ofrskLRQHKbYVIECvF5\nLItwHInLQfcKxQc8Mp2+llhinH4My9V5cupxrXPhuZD60O9LJGgWNBIYozOp\n25IluutBCcGXGINk67vvCqsWAS7Zoa4tA6Mm3Hjl6izvkVwT/rlhAsGiAiBO\nJq9f/X9eDhp/SsOTFCoDYM6E3fqWl2hoQBLJjr7ynop/iOtkbAU6UXM9prgd\nR84kV7gz82gagP7dspwHQMuQOX1Io8kO8GmQ3HamL0gMtW3lUr5mMJK9STqL\n8hDt\r\n=W+gs\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-nullish-coalescing-operator_7.4.3_1554234940068_0.9360045373122903"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.4.4": {
+      "name": "@babel/plugin-proposal-nullish-coalescing-operator",
+      "version": "7.4.4",
+      "description": "Remove nullish coalescing operator",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-nullish-coalescing-operator"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.0.0",
+        "@babel/plugin-syntax-nullish-coalescing-operator": "^7.2.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.4.4",
+        "@babel/helper-plugin-test-runner": "^7.0.0"
+      },
+      "gitHead": "2c88694388831b1e5b88e4bbed6781eb2be1edba",
+      "licenseText": "MIT License\n\nCopyright (c) 2014-present Sebastian McKenzie and other contributors\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/plugin-proposal-nullish-coalescing-operator@7.4.4",
+      "dist": {
+        "shasum": "41c360d59481d88e0ce3a3f837df10121a769b39",
+        "integrity": "sha512-Amph7Epui1Dh/xxUxS2+K22/MUi6+6JVTvy3P58tja3B6yKTSjwwx0/d83rF7551D6PVSSoplQb8GCwqec7HRw==",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-nullish-coalescing-operator/-/plugin-proposal-nullish-coalescing-operator-7.4.4.tgz",
+        "fileCount": 4,
+        "unpackedSize": 4184,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcw3IxCRA9TVsSAnZWagAAYj0P/1s2TKImdru59By3an9i\nyQ2rjqgSvRAhiWIEmOWs40E/W8PMK8f6o8ZW15S/HgY0+hMkWu7wPwc2dE2f\nOXFbETcOfT0DLeQqG5KImBW+vzlZ81dYYlHr3NqH//Ut+5zK/kLfB0ubiSZn\ne6VTowr/yWs25HOyy9DkjMqc1FeMWhDYYpkRPmka1unv31RrcFLafSaBcg6/\nRhzUV4XToQlUu2dq1S4SJcsqPPk46cibbxDiNg5y/SF8jsfZ3V0t4geT9Hwo\n63Xzw8D2nDi4P29yE1BWl5aup+3Bit6bbqZvach6Ook1pqrzIy+7jP72dH2z\nIDsz2/Tynv0BNf1/QdXDZs2Rv/gsx5EvzTetFkgFwRMNVG32PEQM4Ct+1G9d\nHc7QUqoXO0HW1Tg65EU63f4+jfat+pWDlXVR1EA6yRsi1diba9zYDTFBDDpg\noQ9a5Cc8lLHxpOmET99+ooTj9ygVPzpAMVm2Op355Jc8/LMh8NbxTt89OjMn\nU0+DBL9PNFtB2724u2GSWglbVTf1OuWbpy+quthE/HAi3WiEu/Bcn1G73JlO\naLiSKOujigkRdzccjsi4gAuSgMnG9QEbtovok+iQ2EcXRHAJnlIqaIE/kwu/\n0zkIz3/uqwP5hND9ijWoBNAjQFgYn5vXGHpHiK4f9Tk7yhjEKfgW0L4HApAc\npE/Y\r\n=dYXf\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-nullish-coalescing-operator_7.4.4_1556312625129_0.9586660209630831"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.7.4": {
+      "name": "@babel/plugin-proposal-nullish-coalescing-operator",
+      "version": "7.7.4",
+      "description": "Remove nullish coalescing operator",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-nullish-coalescing-operator"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.0.0",
+        "@babel/plugin-syntax-nullish-coalescing-operator": "^7.7.4"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.7.4",
+        "@babel/helper-plugin-test-runner": "^7.7.4"
+      },
+      "gitHead": "75767d87cb147709b9bd9b99bf44daa6688874a9",
+      "_id": "@babel/plugin-proposal-nullish-coalescing-operator@7.7.4",
+      "_nodeVersion": "13.1.0",
+      "_npmVersion": "lerna/3.19.0/node@v13.1.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-TbYHmr1Gl1UC7Vo2HVuj/Naci5BEGNZ0AJhzqD2Vpr6QPFWpUmBRLrIDjedzx7/CShq0bRDS2gI4FIs77VHLVQ==",
+        "shasum": "7db302c83bc30caa89e38fee935635ef6bd11c28",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-nullish-coalescing-operator/-/plugin-proposal-nullish-coalescing-operator-7.7.4.tgz",
+        "fileCount": 4,
+        "unpackedSize": 3923,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd2HA0CRA9TVsSAnZWagAAKfUP/ifKACY/UsSan+kR7KtD\n3UejXR+P4yTb3M9A2H0a/7fn7NNrgcyb8IWH/g0TmSO7OKyi8Mpj12VfdGau\nZc/mXrRVLa9BHYFXMt3c283CFuw+X+2g625lQQmIpWDfdz5EMJ0TSkpGm8OS\nY0SQbs5vHzXdNGI8UDEHP6QscnyLKONJNxcJKKS90KSsW/jwpLqLRKKWitRz\nC/Fn6Lkruth1iPKen8POXW42/6skuDNfl4WCJC9EcJyR4WkWTByucucRJopJ\nQ7w6veBVVkRUgfE5jDMFITZwprMtd/7N6NRSdsEzXMu+/hUz3nhQAu0yFNI0\nLLnKCPzw+IwHmnNxYOw9iLJM+QgCdD0AjA/pFp2/8hZU/zQVBfTX7k0YB37e\n7PqhXzUgA4UmI2DGtlunrNocBJhzKR6hMIB575gtzx26yzGt3py2dMDy5Nkz\neLM6RZ6LIvj36WI1CCtkzVRBXQZTjQyULP3hJUjfA9CnguNM/OoiM91M5muK\nWjvI522zsMoWyWR3wf/M7Dx6YF7FPOBAnm8nod3x2nlEZgAc3kvFEeOFJxsB\nUe2YswWV7tk3MtQ+4vdBNLvKlDHoCZ8fwGovFWVH2KD10+WC+L1skTXBIwZi\n0c30V54GGSp5w6hP16H2tliVn6v7Vr3V+owtzBZzWGgNmcUDVz/ZI9Kn+fyo\n7gKN\r\n=f1Fs\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "jason@developit.ca",
+          "name": "developit"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-nullish-coalescing-operator_7.7.4_1574465588369_0.6537263917644398"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.8.0": {
+      "name": "@babel/plugin-proposal-nullish-coalescing-operator",
+      "version": "7.8.0",
+      "description": "Remove nullish coalescing operator",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-nullish-coalescing-operator"
+      },
+      "license": "MIT",
+      "type": "commonjs",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.8.0",
+        "@babel/plugin-syntax-nullish-coalescing-operator": "^7.8.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.8.0",
+        "@babel/helper-plugin-test-runner": "^7.8.0"
+      },
+      "gitHead": "2486615a74580283c49475d66067bd7fcab3330e",
+      "_id": "@babel/plugin-proposal-nullish-coalescing-operator@7.8.0",
+      "_nodeVersion": "13.6.0",
+      "_npmVersion": "lerna/3.19.0/node@v13.6.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-cQMI+RQdcK2IyMm13NKKFCYfOSBUtFxEeRBOdFCi2Pubv/CpkrCubc/ikdeKMT6Lu+uQ+lNSDEJvDCOQZkUy0g==",
+        "shasum": "1ef61239ed2241746bc4936fc643a5c6f1cb24fa",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-nullish-coalescing-operator/-/plugin-proposal-nullish-coalescing-operator-7.8.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 3945,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeGmWBCRA9TVsSAnZWagAATSUQAKKX8h11aD8EhLl8Xc/y\n2aD2GizrINSgKFp8Tg6P71tcA0GMCWuxac8KCj4A2yB6sVmHS67ee3k/YT5U\nT//cUsHP2sTvBzUwA+ZF71i1EjtCZef1ANasmXVroq7/94SjOJSNakcIy51U\njrrdCNVMtYF48pFNouVNyypY5Bin7a7Fpnj8iTjCPRW18xVINVssBdSaYzM1\nVp3Xn7jrrl4/he0rTImTtwFnhrwBCt+2OXCz//q45jXA/xONCJSCb9jPwKYu\nX8AyEjq9utXy7/GeiJVMfrtmDrqmU21a0TDf5vKME75Hhxoqumwo/4mrJ6ez\n6MqBVXM05Vn3Q0qUOauyq39qlnXOm772tj80sTAWQLBPph1BssVhmbON7Ku0\nrDVliJy8zt3J24bPbcmwjII7LJrtZPXIvAxgy+4Wt7EE+am/pTUwJd19d3Cm\nSRHq7scL3gGFMS+uFjk9ktwMtBTcFVwI8DHCrKHB6b/cgi1vHDCVoXtVMH1+\ndThbRrf1szWZ3gatVR2ENU9WCVYHp2vzhJzpKmH2KLBFwnjq7niZE+HGnYWh\n1pJyvaevT3aZ7W8HZ/g6epMX/PNBVYRfabmCrTetCiKYZMRNnPuRVNPB3DiX\nhhcFNYqgvsdJRvbQJGtZfN6Evd2eZkulhrmw3zOE2PDq4XDb0o9E0c7z2W4P\nJRJG\r\n=ZIqa\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "jason@developit.ca",
+          "name": "developit"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-nullish-coalescing-operator_7.8.0_1578788225255_0.22628488792035562"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.8.3": {
+      "name": "@babel/plugin-proposal-nullish-coalescing-operator",
+      "version": "7.8.3",
+      "description": "Remove nullish coalescing operator",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-nullish-coalescing-operator"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.8.3",
+        "@babel/plugin-syntax-nullish-coalescing-operator": "^7.8.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.8.3",
+        "@babel/helper-plugin-test-runner": "^7.8.3"
+      },
+      "gitHead": "a7620bd266ae1345975767bbc7abf09034437017",
+      "_id": "@babel/plugin-proposal-nullish-coalescing-operator@7.8.3",
+      "_nodeVersion": "13.6.0",
+      "_npmVersion": "lerna/3.19.0/node@v13.6.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-TS9MlfzXpXKt6YYomudb/KU7nQI6/xnapG6in1uZxoxDghuSMZsPb6D2fyUwNYSAp4l1iR7QtFOjkqcRYcUsfw==",
+        "shasum": "e4572253fdeed65cddeecfdab3f928afeb2fd5d2",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-nullish-coalescing-operator/-/plugin-proposal-nullish-coalescing-operator-7.8.3.tgz",
+        "fileCount": 4,
+        "unpackedSize": 3923,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeHOP5CRA9TVsSAnZWagAAeb4P/RHjknCK3JBhlw1ukRdr\nLPaSj7GL3jJTJgChAiSUNRV5LwDz6iQKwE+6sd+u57bp4TX2TDIqQJ3lJwFD\nCTkazJWm1QVFASNHORg2QbMyKCYPANW6A+GE3pD7mzwmN8DnKwXnrxTEe/58\nVN/sZSBNEGLRQqpCD6llRinHUiULS2KXH1F0jdvVoGiEZHipmhZuBk+8Wibx\nTDAtwUtLEWZbVjk4JNVCUKRS7Ni3N2fJ75Hke3dmXBwnSrjklaEBd5egn503\nLyzP9NBmQFJkj6K3gqmHtnd02snImyxhaJFSJNt8KSVMtb5EECf/lGGOveaq\n0mZYgrcX5HboYTC5gmFx5BXvjIiaiQbd6Uki3Aecnn3ISmfdWrmTPEUwywaa\nkK4dTc3djFAUVyfbyxDaFhxfRb6cmpO8kjvf4HOf+2ZzWsHAOB3E4OxKudgN\nvNPzVL8q/9XvktTpCi7dPmfADWBy6dLyQPVs7HAT/38ncApTBQuc3e/XVD5y\nY58TzxSMr9VCBMdlPWAqzoJG4BYACTgsxKO98Ls17dHDd6QUFS2Lc0jNeKkS\n5kYMHOWuSvnLu4nM7pwxMfOPkswJsmFPp+CFuQkwUsjkby8hqffKpWyQojwB\n73kMFMmR9TvJOuzcwu/dlJBxrlMX9dkB63u9RtdiMaOjQhiMswFlgpdZA/2p\nIBm/\r\n=HYfX\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "jason@developit.ca",
+          "name": "developit"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-nullish-coalescing-operator_7.8.3_1578951672341_0.334497127838951"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.10.1": {
+      "name": "@babel/plugin-proposal-nullish-coalescing-operator",
+      "version": "7.10.1",
+      "description": "Remove nullish coalescing operator",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/babel/babel.git",
+        "directory": "packages/babel-plugin-proposal-nullish-coalescing-operator"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.10.1",
+        "@babel/plugin-syntax-nullish-coalescing-operator": "^7.8.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.10.1",
+        "@babel/helper-plugin-test-runner": "^7.10.1"
+      },
+      "gitHead": "88f57a7ea659d25232bf62de1efceb5d6299b8cf",
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "homepage": "https://github.com/babel/babel#readme",
+      "_id": "@babel/plugin-proposal-nullish-coalescing-operator@7.10.1",
+      "_nodeVersion": "12.16.3",
+      "_npmVersion": "lerna/3.19.0/node@v12.16.3+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-56cI/uHYgL2C8HVuHOuvVowihhX0sxb3nnfVRzUeVHTWmRHTZrKuAh/OBIMggGU/S1g/1D2CRCXqP+3u7vX7iA==",
+        "shasum": "02dca21673842ff2fe763ac253777f235e9bbf78",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-nullish-coalescing-operator/-/plugin-proposal-nullish-coalescing-operator-7.10.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 3975,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJezuSFCRA9TVsSAnZWagAA9hwP/1u6q7q0GR9u3mPqjJz5\n+RAiUVQcjiVfXCQAlx1A32u82PjOHbh6+oBTML07Ue+BgNn4fRy++vFpRwv2\nSQ8JW0Kp+ELUj+fpQFBYzei/OZmiaXI8bFdqz+pSnl2EOmKlQDOIlU1iX+S9\ndXR+okKWPbRI+jTpYGXSKhNafhrfVKpPbIrKagCnhI8jT5YH4xq9iBlBwWAf\nuOBZ/ZAIsp6uGa//YIMgGuiLI7IRUMsi7N367Zto36DvwUEqUgM9HBmKAFC8\nyUiszsr2/D0zoU0aAgIft0ci5+BUp4qsm2t9R6i+3vnR+42NiNIk227LsHL2\n8RZydJHmU9EHJ1gExvZ7NpQP9RDUVWLOLDTtiFXtqMzfl6tRRrYkwaJx2cAl\nfmjcqJX0dBoKQVfKofuSe18PQjBz9CXnkicNnAEuRtyhs8fLer/5sIPGaVSm\nC5RZalXkIEFgT3UxgKigRkva7UiHnLolkkYOCOi8wbCuW36q+h8c/x09b7mC\npp/Latbd+OIjp5rQMjS5L+w9czsCLXNXlB89SYJEDGrhZgmgw2+YtcIOxugy\nL0z5zAFKc7uBEx0WXB4+K4gm6SCb2bB9hp9BPgobtqh9wFlSic7q+M2BWZQ7\nYoTAISJw7Xa5e/fHexeClXtCmDu92yR0PPDAYu16nkiNHh/pgosY+Zzx8yjZ\nRT99\r\n=7Dr9\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-nullish-coalescing-operator_7.10.1_1590617220702_0.70965223732282"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.10.4": {
+      "name": "@babel/plugin-proposal-nullish-coalescing-operator",
+      "version": "7.10.4",
+      "description": "Remove nullish coalescing operator",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/babel/babel.git",
+        "directory": "packages/babel-plugin-proposal-nullish-coalescing-operator"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.10.4",
+        "@babel/plugin-syntax-nullish-coalescing-operator": "^7.8.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.10.4",
+        "@babel/helper-plugin-test-runner": "^7.10.4"
+      },
+      "gitHead": "7fd40d86a0d03ff0e9c3ea16b29689945433d4df",
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "homepage": "https://github.com/babel/babel#readme",
+      "_id": "@babel/plugin-proposal-nullish-coalescing-operator@7.10.4",
+      "_nodeVersion": "14.4.0",
+      "_npmVersion": "lerna/3.19.0/node@v14.4.0+x64 (darwin)",
+      "dist": {
+        "integrity": "sha512-wq5n1M3ZUlHl9sqT2ok1T2/MTt6AXE0e1Lz4WzWBr95LsAZ5qDXe4KnFuauYyEyLiohvXFMdbsOTMyLZs91Zlw==",
+        "shasum": "02a7e961fc32e6d5b2db0649e01bf80ddee7e04a",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-nullish-coalescing-operator/-/plugin-proposal-nullish-coalescing-operator-7.10.4.tgz",
+        "fileCount": 4,
+        "unpackedSize": 3975,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJe+zoKCRA9TVsSAnZWagAA88QP+wb25BjTMaH+43wwve2r\nflOCZL5u1Mfx1xxXWkTAjMjoH24Vzxt+TsqidwfmOK+OuFAF8Qy9McL2edmm\nJ1ucnpmt8jpuvUszf5F/3RPb7DgqhD0CI7UDWXqS9PYObSyBHsNPM77u4OnB\n9vu8DaIO5nqT6rb2XqhdDDUZQo8jMDMX4TBdrOM05NfZ1Xwm3ofYXNX31akh\na9IE5hhzJGWhhnIMsUJwnaqIo+rCx4PJFBdsqfi5e5yln5VYvyBHv8Ubf7oW\n2UmDVhSZS8jiDg5HS2VXKEs7FpeVhaxnryJBQvq0Fmyop0/1z2orNvdX1yCW\nibdQl0KgjpAxUJp1SjcXzffXLGg5TMlNyWLOfY6d1rekwW4S6PaAMdc+bzPC\nkIHJIoZI71VX4HmNbqf4vDYC+xM3lLOFmo7YYTeaKiNP6ApVTnwEHM0Mm06i\n72sSNso2tD3EGommJKQiOlF6DIoJWZspwH+zHc8EDYG1cdwFnJ097hdHBfRA\nj8o6Dsd0udegxyuJCDOHc3b/gro2VuvfjIoQWuu+XjyJ28pVm83BsTU+nLcg\nlG3ekgYlOXHehJ8wgdqfbAbv/bP0IxKM9FHRcyHWn5lq3J4WcjbVSYpzRaJd\ngk1byzO7W1lsYv+gIi9+x8oHjR+Z99zxk9fl7pVGD70GbvAvqoMo/q103qvz\nE7ma\r\n=Y765\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "i@jhuang.me",
+          "name": "jlhwung"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "jlhwung",
+        "email": "i@jhuang.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-nullish-coalescing-operator_7.10.4_1593522697991_0.13422176310405964"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.12.0": {
+      "name": "@babel/plugin-proposal-nullish-coalescing-operator",
+      "version": "7.12.0",
+      "description": "Remove nullish coalescing operator",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel.git",
+        "directory": "packages/babel-plugin-proposal-nullish-coalescing-operator"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.10.4",
+        "@babel/plugin-syntax-nullish-coalescing-operator": "^7.8.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.12.0",
+        "@babel/helper-plugin-test-runner": "^7.10.4"
+      },
+      "_id": "@babel/plugin-proposal-nullish-coalescing-operator@7.12.0",
+      "dist": {
+        "shasum": "d82174a531305df4d7079ce3782269b35b810b82",
+        "integrity": "sha512-JpNWix2VP2ue31r72fKytTE13nPX1fxl1mudfTaTwcDhl3iExz5NZjQBq012b/BQ6URWoc/onI73pZdYlAfihg==",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-nullish-coalescing-operator/-/plugin-proposal-nullish-coalescing-operator-7.12.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 4171,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfh1lhCRA9TVsSAnZWagAAdYUP/RshNVwJTGJD17brjjmV\n+bijDTALzyhxFutd5TGul0gOHpjkZVqU/3b4Wi84mYJWVpzJ6VH/dO2NxugT\nvMFKCsVsXECoXcMuELlMNsW48ay1doT8wNTOEbEq3AS4FRy7BR7mzZ9bpG+s\nBllzoiVvH4upWqjtWzwKHiwpAV18lA0lt9Y5hRuKCorTWE8gkI/mVgOkbd07\n9FPhipBZ8ETUxrx3oUyxkUbgzE867NnAdRD3ykNw4FszUtgTGMjHEoZSD1JI\naQExa0YSjP/Dr4ghuAzHd2rjFt5xfSNIinvMptYlc1wtWiHc80E9WiYOf0A4\nb3Idq30CeTnwlFAOLP1w+Detk86KvOHdNajkp5CbNARotfGpUppyrRVbJh9M\nNmdMeMavdropRltkzPeA5hguBXGroh4qn1y1IBK7Ulc0TxBg4wTaragRlZpX\n0vhEutzdwb73KNGQsRw1bAvdf79pDKkcRr9UCB/w4Sk3lMsMQCzT5M3a0WO8\nJT73DIiHhaZ42C3p5X9OyrS1lTekl3zU8EB/4lWjIisBBE/kxFrGUGsS/Fkr\neNlf5Oowet1XMu3bgUvUERM6vaeMpeAkC1s+CtIBDpGW8wv/slYRnJJgPS94\nCItd0AYACButX1KjII1wrHSA1Lq2O5l69IovcBqqcvauJYtOaCwN5P2/+Qx2\n52O1\r\n=4os3\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "jlhwung",
+          "email": "i@jhuang.me"
+        },
+        {
+          "name": "nicolo-ribaudo",
+          "email": "nicolo.ribaudo@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "danez",
+          "email": "daniel@tschinder.de"
+        },
+        {
+          "name": "existentialism",
+          "email": "bng412@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-nullish-coalescing-operator_7.12.0_1602705760936_0.1824213936506549"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.12.1": {
+      "name": "@babel/plugin-proposal-nullish-coalescing-operator",
+      "version": "7.12.1",
+      "description": "Remove nullish coalescing operator",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel.git",
+        "directory": "packages/babel-plugin-proposal-nullish-coalescing-operator"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.10.4",
+        "@babel/plugin-syntax-nullish-coalescing-operator": "^7.8.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.12.1",
+        "@babel/helper-plugin-test-runner": "7.10.4"
+      },
+      "_id": "@babel/plugin-proposal-nullish-coalescing-operator@7.12.1",
+      "dist": {
+        "shasum": "3ed4fff31c015e7f3f1467f190dbe545cd7b046c",
+        "integrity": "sha512-nZY0ESiaQDI1y96+jk6VxMOaL4LPo/QDHBqL+SF3/vl6dHkTwHlOI8L4ZwuRBHgakRBw5zsVylel7QPbbGuYgg==",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-nullish-coalescing-operator/-/plugin-proposal-nullish-coalescing-operator-7.12.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 4170,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfiM+gCRA9TVsSAnZWagAA0m4P/3O0AZ4pbqltVeJDY5fp\nsShmNiJPGVHvAVoor4Mi/e9mc/S4D35oTjoT7dQAOA72NaGlnww8iuLrqaxD\n7+NR+6uURTdR4TOWxRvosmsCHWd7qpx+M5MkPZysTToeox03XtiuWtdpoE9O\nsjW7U/T27pJx/7LtTjK7gGRFEQvamGZpZ9FGkiH5KxJ7Y8iy0tMzBNKRQ+Sa\nf/xXsJbe8SSQm6kbkhmRsg9j4VzJTs/EBzpqEF/L7yOOUzkCOTd/wGNVBSF6\nQ36kmi6swLC7mUpttYEe0FdZ6pwpiFVimljAHnP9qQVWsPOq6efF2aciN8QS\n2ytTmuCuapRYOQ4KnB3NExGv0RR593OYSgnCO7fj/QBYPrBdAmO7VsBrWf4/\n35SP+pbX/zD70EgmP/Cf9HkNTxkqscQrVoxkmJ6+RD1PffrX/lqbYiegY4Uw\nkcoTRk4PBd4O0Gd+BYukxDvAfeLmeTtifsjy3ULXv3Ev4a6o+d8JR+BKXj8M\nte0FiWrc6nW5N4iXSXOIbe9p6CObG+UlO6NpMuqzbGm7kEHFtNh8dqmIHLjZ\nxcCRhql9BBuRqKrLzPfZ9P4kOSJYvps/ZJDBoYXmmX6USg8N4exTGUnHSrqx\nwO75iJ7JLZmEgrDcutcACkTlONNqdxRVvKz16Zwzm/8UMOsOVitl0KToRHiL\nHO1c\r\n=2nnL\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "jlhwung",
+          "email": "i@jhuang.me"
+        },
+        {
+          "name": "nicolo-ribaudo",
+          "email": "nicolo.ribaudo@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "danez",
+          "email": "daniel@tschinder.de"
+        },
+        {
+          "name": "existentialism",
+          "email": "bng412@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-nullish-coalescing-operator_7.12.1_1602801568090_0.41107917977599095"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "",
+  "maintainers": [
+    {
+      "name": "jlhwung",
+      "email": "i@jhuang.me"
+    },
+    {
+      "name": "nicolo-ribaudo",
+      "email": "nicolo.ribaudo@gmail.com"
+    },
+    {
+      "name": "hzoo",
+      "email": "hi@henryzoo.com"
+    },
+    {
+      "name": "loganfsmyth",
+      "email": "loganfsmyth@gmail.com"
+    },
+    {
+      "name": "danez",
+      "email": "daniel@tschinder.de"
+    },
+    {
+      "name": "existentialism",
+      "email": "bng412@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-10-15T22:39:31.028Z",
+    "created": "2017-10-30T18:35:11.225Z",
+    "7.0.0-beta.4": "2017-10-30T18:35:11.225Z",
+    "7.0.0-beta.5": "2017-10-30T20:56:49.807Z",
+    "7.0.0-beta.31": "2017-11-03T20:03:48.078Z",
+    "7.0.0-beta.32": "2017-11-12T13:33:37.034Z",
+    "7.0.0-beta.33": "2017-12-01T14:28:46.544Z",
+    "7.0.0-beta.34": "2017-12-02T14:39:46.402Z",
+    "7.0.0-beta.35": "2017-12-14T21:48:05.928Z",
+    "7.0.0-beta.36": "2017-12-25T19:05:07.030Z",
+    "7.0.0-beta.37": "2018-01-08T16:02:46.676Z",
+    "7.0.0-beta.38": "2018-01-17T16:32:16.031Z",
+    "7.0.0-beta.39": "2018-01-30T20:27:47.739Z",
+    "7.0.0-beta.40": "2018-02-12T16:42:02.932Z",
+    "7.0.0-beta.41": "2018-03-14T16:26:25.346Z",
+    "7.0.0-beta.42": "2018-03-15T20:51:38.317Z",
+    "7.0.0-beta.43": "2018-04-02T16:48:35.479Z",
+    "7.0.0-beta.44": "2018-04-02T22:20:17.040Z",
+    "7.0.0-beta.45": "2018-04-23T01:57:25.042Z",
+    "7.0.0-beta.46": "2018-04-23T04:31:47.387Z",
+    "7.0.0-beta.47": "2018-05-15T00:09:41.120Z",
+    "7.0.0-beta.48": "2018-05-24T19:23:32.871Z",
+    "7.0.0-beta.49": "2018-05-25T16:02:59.052Z",
+    "7.0.0-beta.50": "2018-06-12T19:47:34.768Z",
+    "7.0.0-beta.51": "2018-06-12T21:20:09.166Z",
+    "7.0.0-beta.52": "2018-07-06T00:59:32.658Z",
+    "7.0.0-beta.53": "2018-07-11T13:40:31.659Z",
+    "7.0.0-beta.54": "2018-07-16T18:00:14.221Z",
+    "7.0.0-beta.55": "2018-07-28T22:07:37.547Z",
+    "7.0.0-beta.56": "2018-08-04T01:06:47.322Z",
+    "7.0.0-rc.0": "2018-08-09T15:58:56.227Z",
+    "7.0.0-rc.1": "2018-08-09T20:08:37.891Z",
+    "7.0.0-rc.2": "2018-08-21T19:24:43.139Z",
+    "7.0.0-rc.3": "2018-08-24T18:08:33.619Z",
+    "7.0.0-rc.4": "2018-08-27T16:44:49.580Z",
+    "7.0.0": "2018-08-27T21:43:48.430Z",
+    "7.2.0": "2018-12-03T19:02:31.058Z",
+    "7.4.3": "2019-04-02T19:55:40.179Z",
+    "7.4.4": "2019-04-26T21:03:45.314Z",
+    "7.7.4": "2019-11-22T23:33:08.456Z",
+    "7.8.0": "2020-01-12T00:17:05.477Z",
+    "7.8.3": "2020-01-13T21:41:12.906Z",
+    "7.10.1": "2020-05-27T22:07:00.811Z",
+    "7.10.4": "2020-06-30T13:11:38.129Z",
+    "7.12.0": "2020-10-14T20:02:41.112Z",
+    "7.12.1": "2020-10-15T22:39:28.229Z"
+  },
+  "keywords": [
+    "babel-plugin"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/babel/babel.git",
+    "directory": "packages/babel-plugin-proposal-nullish-coalescing-operator"
+  },
+  "license": "MIT",
+  "readmeFilename": ""
+}

@@ -1,0 +1,268 @@
+{
+  "_id": "decamelize-keys",
+  "_rev": "4-f40a49e0f5a0302a0bee068225f767ca",
+  "name": "decamelize-keys",
+  "description": "Convert object keys from camelCase to lowercase with a custom separator",
+  "dist-tags": {
+    "latest": "1.1.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "decamelize-keys",
+      "version": "1.0.0",
+      "description": "Convert object keys from camelCase to lowercase with a custom separator",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/dsblv/decamelize-keys.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "contributors": [
+        {
+          "name": "Dmirty Sobolev",
+          "email": "disobolev@icloud.com",
+          "url": "https://github.com/dsblv"
+        }
+      ],
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "map",
+        "obj",
+        "object",
+        "key",
+        "keys",
+        "value",
+        "values",
+        "val",
+        "iterate",
+        "decamelize",
+        "decamelcase",
+        "lowercase",
+        "camelcase",
+        "camel-case",
+        "camel",
+        "case",
+        "dash",
+        "hyphen",
+        "dot",
+        "underscore",
+        "separator",
+        "string",
+        "text",
+        "convert"
+      ],
+      "devDependencies": {
+        "ava": "^0.3.0",
+        "xo": "^0.10.0"
+      },
+      "dependencies": {
+        "decamelize": "^1.1.0",
+        "map-obj": "^1.0.0"
+      },
+      "gitHead": "e63a6b0a1c0e6c6bf7e4d0b40fca0d324c7f029b",
+      "bugs": {
+        "url": "https://github.com/dsblv/decamelize-keys/issues"
+      },
+      "homepage": "https://github.com/dsblv/decamelize-keys#readme",
+      "_id": "decamelize-keys@1.0.0",
+      "_shasum": "4483de342a4139c2072ed8967b0c06aba89cf6e6",
+      "_from": ".",
+      "_npmVersion": "3.3.4",
+      "_nodeVersion": "4.2.1",
+      "_npmUser": {
+        "name": "dsblv",
+        "email": "disobolev@icloud.com"
+      },
+      "dist": {
+        "shasum": "4483de342a4139c2072ed8967b0c06aba89cf6e6",
+        "tarball": "https://registry.npmjs.org/decamelize-keys/-/decamelize-keys-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "dsblv",
+          "email": "disobolev@icloud.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "decamelize-keys",
+      "version": "1.1.0",
+      "description": "Convert object keys from camelCase to lowercase with a custom separator",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/dsblv/decamelize-keys.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "contributors": [
+        {
+          "name": "Dmirty Sobolev",
+          "email": "disobolev@icloud.com",
+          "url": "https://github.com/dsblv"
+        }
+      ],
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "map",
+        "obj",
+        "object",
+        "key",
+        "keys",
+        "value",
+        "values",
+        "val",
+        "iterate",
+        "decamelize",
+        "decamelcase",
+        "lowercase",
+        "camelcase",
+        "camel-case",
+        "camel",
+        "case",
+        "dash",
+        "hyphen",
+        "dot",
+        "underscore",
+        "separator",
+        "string",
+        "text",
+        "convert"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "dependencies": {
+        "decamelize": "^1.1.0",
+        "map-obj": "^1.0.0"
+      },
+      "gitHead": "755c3c32dcd726382b1fc837180f79f39506521a",
+      "bugs": {
+        "url": "https://github.com/dsblv/decamelize-keys/issues"
+      },
+      "homepage": "https://github.com/dsblv/decamelize-keys#readme",
+      "_id": "decamelize-keys@1.1.0",
+      "_shasum": "d171a87933252807eb3cb61dc1c1445d078df2d9",
+      "_from": ".",
+      "_npmVersion": "3.7.3",
+      "_nodeVersion": "5.8.0",
+      "_npmUser": {
+        "name": "dsblv",
+        "email": "disobolev@icloud.com"
+      },
+      "dist": {
+        "shasum": "d171a87933252807eb3cb61dc1c1445d078df2d9",
+        "tarball": "https://registry.npmjs.org/decamelize-keys/-/decamelize-keys-1.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "dsblv",
+          "email": "disobolev@icloud.com"
+        },
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-13-west.internal.npmjs.com",
+        "tmp": "tmp/decamelize-keys-1.1.0.tgz_1458124394099_0.15391261666081846"
+      },
+      "directories": {}
+    }
+  },
+  "readme": "# decamelize-keys [![Build Status](https://travis-ci.org/dsblv/decamelize-keys.svg?branch=master)](https://travis-ci.org/dsblv/decamelize-keys)\n\n> Convert object keys from camelCase to lowercase with a custom separator using [`decamelize`](https://github.com/sindresorhus/decamelize)\n\n*This project was forked from [`camelcase-keys`](https://github.com/sindresorhus/camelcase-keys) and converted to do the opposite*\n\n\n## Install\n\n```sh\n$ npm install --save decamelize-keys\n```\n\n\n## Usage\n\n```js\nconst decamelizeKeys = require('decamelize-keys');\n\ndecamelizeKeys({fooBar: true}, '-');\n//=> {'foo-bar': true}\n```\n\n\n## API\n\n### decamelizeKeys(input, [separator], [options])\n\n### input\n\nType: `object`  \n*Required*\n\nObject to decamelize.\n\n### separator\n\nType: `string`  \nDefault: `_`\n\nA string to insert between words.\n\n### options\n\nType: `object`\n\n#### separator\n\nType: `string`  \nDefault: `_`\n\nAlternative way to specify [separator](#separator).\n\n#### exclude\n\nType: `array`  \nDefault: `[]`\n\nExclude keys from being decamelized.\n\n\n## Related\n\nSee [`camelcase-keys`](https://github.com/sindresorhus/camelcase-keys) for the inverse.\n\n\n## License\n\nMIT © [Sindre Sorhus](http://sindresorhus.com), [Dmirty Sobolev](https://github.com/dsblv)\n",
+  "maintainers": [
+    {
+      "name": "dsblv",
+      "email": "disobolev@icloud.com"
+    },
+    {
+      "name": "sindresorhus",
+      "email": "sindresorhus@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2017-02-03T18:05:17.853Z",
+    "created": "2015-10-27T14:34:02.622Z",
+    "1.0.0": "2015-10-27T14:34:02.622Z",
+    "1.1.0": "2016-03-16T10:33:16.526Z"
+  },
+  "homepage": "https://github.com/dsblv/decamelize-keys#readme",
+  "keywords": [
+    "map",
+    "obj",
+    "object",
+    "key",
+    "keys",
+    "value",
+    "values",
+    "val",
+    "iterate",
+    "decamelize",
+    "decamelcase",
+    "lowercase",
+    "camelcase",
+    "camel-case",
+    "camel",
+    "case",
+    "dash",
+    "hyphen",
+    "dot",
+    "underscore",
+    "separator",
+    "string",
+    "text",
+    "convert"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dsblv/decamelize-keys.git"
+  },
+  "contributors": [
+    {
+      "name": "Dmirty Sobolev",
+      "email": "disobolev@icloud.com",
+      "url": "https://github.com/dsblv"
+    }
+  ],
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "http://sindresorhus.com"
+  },
+  "bugs": {
+    "url": "https://github.com/dsblv/decamelize-keys/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md",
+  "users": {
+    "mrzmmr": true
+  },
+  "_attachments": {}
+}

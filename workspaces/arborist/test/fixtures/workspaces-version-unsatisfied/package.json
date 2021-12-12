@@ -1,0 +1,8 @@
+{
+  "name": "workspaces-version-unsatisfied",
+  "version": "1.0.0",
+  "workspaces": [
+    "packages/*"
+  ]
+}
+

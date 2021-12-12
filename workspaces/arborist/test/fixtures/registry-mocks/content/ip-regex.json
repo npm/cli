@@ -1,0 +1,791 @@
+{
+  "_id": "ip-regex",
+  "_rev": "21-bf117fb76c42a28cb1d777a42c855374",
+  "name": "ip-regex",
+  "description": "Regular expression for matching IP addresses (IPv4 & IPv6)",
+  "dist-tags": {
+    "latest": "4.2.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "ip-regex",
+      "version": "1.0.0",
+      "description": "Regular expression for matching IP addresses",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/sindresorhus/ip-regex"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "text",
+        "regex",
+        "regexp",
+        "re",
+        "match",
+        "test",
+        "find",
+        "pattern",
+        "ip",
+        "internet",
+        "protocol",
+        "address",
+        "validate"
+      ],
+      "devDependencies": {
+        "ava": "0.0.4"
+      },
+      "bugs": {
+        "url": "https://github.com/sindresorhus/ip-regex/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/ip-regex",
+      "_id": "ip-regex@1.0.0",
+      "_shasum": "ea90b7e1951898d36eecd24f2ab6942347b4ab28",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "ea90b7e1951898d36eecd24f2ab6942347b4ab28",
+        "tarball": "https://registry.npmjs.org/ip-regex/-/ip-regex-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "ip-regex",
+      "version": "1.0.1",
+      "description": "Regular expression for matching IP addresses",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/ip-regex"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "text",
+        "regex",
+        "regexp",
+        "re",
+        "match",
+        "test",
+        "find",
+        "pattern",
+        "ip",
+        "internet",
+        "protocol",
+        "address",
+        "validate"
+      ],
+      "devDependencies": {
+        "ava": "0.0.4"
+      },
+      "gitHead": "1844317d3c1adaa8848e893269fc599a54b0057e",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/ip-regex/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/ip-regex",
+      "_id": "ip-regex@1.0.1",
+      "_shasum": "3f1da464e47290591023a70617e45361b41123f7",
+      "_from": ".",
+      "_npmVersion": "2.1.5",
+      "_nodeVersion": "0.10.32",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "3f1da464e47290591023a70617e45361b41123f7",
+        "tarball": "https://registry.npmjs.org/ip-regex/-/ip-regex-1.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "ip-regex",
+      "version": "1.0.2",
+      "description": "Regular expression for matching IP addresses",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/ip-regex"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "text",
+        "regex",
+        "regexp",
+        "re",
+        "match",
+        "test",
+        "find",
+        "pattern",
+        "ip",
+        "internet",
+        "protocol",
+        "address",
+        "validate"
+      ],
+      "devDependencies": {
+        "ava": "0.0.4"
+      },
+      "gitHead": "077df3268bbad242f5b7de42b97e6d8b6165bb76",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/ip-regex/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/ip-regex",
+      "_id": "ip-regex@1.0.2",
+      "_shasum": "1e7daad2c2d0c268729ecca91f8ec463ad58f56b",
+      "_from": ".",
+      "_npmVersion": "2.1.5",
+      "_nodeVersion": "0.10.32",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "1e7daad2c2d0c268729ecca91f8ec463ad58f56b",
+        "tarball": "https://registry.npmjs.org/ip-regex/-/ip-regex-1.0.2.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.3": {
+      "name": "ip-regex",
+      "version": "1.0.3",
+      "description": "Regular expression for matching IP addresses",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/ip-regex"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "text",
+        "regex",
+        "regexp",
+        "re",
+        "match",
+        "test",
+        "find",
+        "pattern",
+        "ip",
+        "internet",
+        "protocol",
+        "address",
+        "validate"
+      ],
+      "devDependencies": {
+        "ava": "0.0.4"
+      },
+      "gitHead": "4237cf39da0e1b2ea883bc65bde2b69921d78ceb",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/ip-regex/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/ip-regex",
+      "_id": "ip-regex@1.0.3",
+      "_shasum": "dc589076f659f419c222039a33316f1c7387effd",
+      "_from": ".",
+      "_npmVersion": "2.5.0",
+      "_nodeVersion": "0.12.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "dc589076f659f419c222039a33316f1c7387effd",
+        "tarball": "https://registry.npmjs.org/ip-regex/-/ip-regex-1.0.3.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "ip-regex",
+      "version": "2.0.0",
+      "description": "Regular expression for matching IP addresses (IPv4 & IPv6)",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/ip-regex.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "ip",
+        "ipv6",
+        "ipv4",
+        "regex",
+        "regexp",
+        "re",
+        "match",
+        "test",
+        "find",
+        "text",
+        "pattern",
+        "internet",
+        "protocol",
+        "address",
+        "validate"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "xo": {
+        "esnext": true
+      },
+      "gitHead": "425bb476fa3c1d73507047fda1586c719ae23641",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/ip-regex/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/ip-regex#readme",
+      "_id": "ip-regex@2.0.0",
+      "_shasum": "913a92db023723d6d1a38b874c543893165b24ff",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "4.6.2",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "913a92db023723d6d1a38b874c543893165b24ff",
+        "tarball": "https://registry.npmjs.org/ip-regex/-/ip-regex-2.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/ip-regex-2.0.0.tgz_1483952683792_0.4461984606459737"
+      },
+      "directories": {}
+    },
+    "2.1.0": {
+      "name": "ip-regex",
+      "version": "2.1.0",
+      "description": "Regular expression for matching IP addresses (IPv4 & IPv6)",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/ip-regex.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "ip",
+        "ipv6",
+        "ipv4",
+        "regex",
+        "regexp",
+        "re",
+        "match",
+        "test",
+        "find",
+        "text",
+        "pattern",
+        "internet",
+        "protocol",
+        "address",
+        "validate"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "xo": {
+        "esnext": true
+      },
+      "gitHead": "3f6478e54773d2ad79de39da4f4e1b9df34fa9a7",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/ip-regex/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/ip-regex#readme",
+      "_id": "ip-regex@2.1.0",
+      "_shasum": "fa78bf5d2e6913c911ce9f819ee5146bb6d844e9",
+      "_from": ".",
+      "_npmVersion": "4.1.2",
+      "_nodeVersion": "7.5.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "fa78bf5d2e6913c911ce9f819ee5146bb6d844e9",
+        "tarball": "https://registry.npmjs.org/ip-regex/-/ip-regex-2.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/ip-regex-2.1.0.tgz_1489226167327_0.37895454838871956"
+      },
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "ip-regex",
+      "version": "3.0.0",
+      "description": "Regular expression for matching IP addresses (IPv4 & IPv6)",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/ip-regex.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "ip",
+        "ipv6",
+        "ipv4",
+        "regex",
+        "regexp",
+        "re",
+        "match",
+        "test",
+        "find",
+        "text",
+        "pattern",
+        "internet",
+        "protocol",
+        "address",
+        "validate"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "605041b6a32ac7cca8b9c827bb9abc34e9336be0",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/ip-regex/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/ip-regex#readme",
+      "_id": "ip-regex@3.0.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-T8wDtjy+Qf2TAPDQmBp0eGKJ8GavlWlUnamr3wRn6vvdZlKVuJXXMlSncYFRYgVHOM3If5NR1H4+OvVQU9Idvg==",
+        "shasum": "0a934694b4066558c46294244a23cc33116bf732",
+        "tarball": "https://registry.npmjs.org/ip-regex/-/ip-regex-3.0.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 5145
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ip-regex_3.0.0_1522739305091_0.2901866906975463"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.0.0": {
+      "name": "ip-regex",
+      "version": "4.0.0",
+      "description": "Regular expression for matching IP addresses (IPv4 & IPv6)",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/ip-regex.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "keywords": [
+        "ip",
+        "ipv6",
+        "ipv4",
+        "regex",
+        "regexp",
+        "re",
+        "match",
+        "test",
+        "find",
+        "text",
+        "pattern",
+        "internet",
+        "protocol",
+        "address",
+        "validate"
+      ],
+      "devDependencies": {
+        "ava": "^1.1.0",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "45f4ab50a93cf129461c39494be2ed375ef9678e",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/ip-regex/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/ip-regex#readme",
+      "_id": "ip-regex@4.0.0",
+      "_npmVersion": "6.5.0",
+      "_nodeVersion": "10.13.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-3WQiamA4s/EGI9WxXhSWeR7X+fYxD7LqjJ0nIjMwXYSLOuJ2/ix13QOLvy/TGRDKEhhfLzHnCduANvdCIsn/+A==",
+        "shasum": "0120e0558a355604d511709c831a19adf8487b10",
+        "tarball": "https://registry.npmjs.org/ip-regex/-/ip-regex-4.0.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 5822,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcQXyfCRA9TVsSAnZWagAA5G4QAKMo+boehdGpHHCA5+oW\n/BSdLqeGhyMZ1X4KMIQ7YRXnI/PEc2vU+gHCwUCgy1Mxa/Npw0iuaM2Cqpft\nQwLVtdQb1t0ujQ0ji1623mJ32UmnNwXN+EH3ZENUT88SN1Ezhu0kudSL5kFC\n1bIghmlMQxAL67mrLlg4BkiVW1IHmyP/7/pqSh3k2SHjJSRwu/Vkm5ewzTSO\nQ2puFQozI4whYEHEPLZ9rDTzATmS1llMbmREabK+UH8fiAHEO8GPLMRgXHmb\nr2MwRIYqHV9iZU1oaPnj1OazaU6FY/l+Sqjdzz5ePVfMn09X8IkSweYDMbxx\nZIeepc2nzRzMTVOp7OzTM8x2riL8wH0D16PRMZmQUiR95k3yKOQiEwbE1yKd\nXDe3gRNCD/semmvECCrVPKDW09EVNpzk2Ud2gQid1qkDLqrKn1RFaQAIk66e\n9LkBkQTsEe8oTOSlXyE+boWn99YIkjAL5lEIV0A4RQU1oiv70hwgnmhbQGlh\n4x4Mzy7CQwJ0kBcU+93ev5nOQ92utpphNnT/KnrB1oeFYQxlkr+UHMwDnWOE\nNnjJCVBckVqBbYHk+2gVdPgmuuALuLvpgKG+bmWAqGG1Y91xcIqaPuOjf2KC\nC7R69AIdJlcqUcOSGFXzQ5q9xv/tX4ZXoYGG6s97TYn6Bpz5nQxhv+hWhPKV\nWb/U\r\n=Imak\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ip-regex_4.0.0_1547795615436_0.0800270746604328"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.1.0": {
+      "name": "ip-regex",
+      "version": "4.1.0",
+      "description": "Regular expression for matching IP addresses (IPv4 & IPv6)",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/ip-regex.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "ip",
+        "ipv6",
+        "ipv4",
+        "regex",
+        "regexp",
+        "re",
+        "match",
+        "test",
+        "find",
+        "text",
+        "pattern",
+        "internet",
+        "protocol",
+        "address",
+        "validate"
+      ],
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "ebdcc9c7b4136ba3c7503730e4bf92ba855f136f",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/ip-regex/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/ip-regex#readme",
+      "_id": "ip-regex@4.1.0",
+      "_nodeVersion": "8.15.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-pKnZpbgCTfH/1NLIlOduP/V+WRXzC2MOz3Qo8xmxk8C5GudJLgK5QyLVXOSWy3ParAH7Eemurl3xjv/WXYFvMA==",
+        "shasum": "5ad62f685a14edb421abebc2fff8db94df67b455",
+        "tarball": "https://registry.npmjs.org/ip-regex/-/ip-regex-4.1.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 7422,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcto29CRA9TVsSAnZWagAAzAIQAIm7avORuFoVw3Vg1jSm\ncpMu7L3IsQSBeaqPv0y0vzcCqIKkN9PPkcXuN1ch72Skb9t2KocY7wObedh4\nHmhK64dPDG1l5vkS5InOnbL9s6Ih1aBHeXHmyvtz74v2x+A87iNEGhRjnckw\nFdZ8n9OFOGH5vxdBwqnr5EjLvMZ3jLjtnm/cNO9pFMmVxfXViRvTIinfQcMc\nH4vya3ULzWrgUrmFC1sn3ZLJy6qqDRAb0SjOjk8nnIZlZUWjsmlxw2mivFJy\nx6+QnXZSQxrma3XviJTw+s7RK5INJW5S7S0kDENnlH4O5GYYGEHWyvDKfLy3\nig0atQ7AQP0l6xJXAsR0nj1g8BuGIrucZIVWYNznJ6qhdPsUqUfalOOwlUjj\ng0QQ8RO8mHVn1ricOnmkrl5Xu+s1uwrDdD0YxwnOdXZdzWIRGmrDKEcQNaZn\nZ8vbrIY5Mx9MMwAPhUc5KnLG7WMwJMyl+bLJSwVXoXWwfnUl1WfoCd+uh6k8\nIcrvMcblvvi774fx1NL81UpL47kjC8Lw1q1QZI9r+hMv+an8RdM0VzEEk/Fq\nRxinlGGMyFJ3oee8AzKw84gmLbMwlbz0f2hhbP4GXHfadsgoQ5EmVTXVxQuS\n9D/fArrtu6E4EnAwIAjT1dbbPUxMsVYj6J6eisSD2qiZKD9hHSEodPUHPOkk\neiKi\r\n=O9jy\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ip-regex_4.1.0_1555467708812_0.31749112399295076"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.2.0": {
+      "name": "ip-regex",
+      "version": "4.2.0",
+      "description": "Regular expression for matching IP addresses (IPv4 & IPv6)",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/ip-regex.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "ip",
+        "ipv6",
+        "ipv4",
+        "regex",
+        "regexp",
+        "re",
+        "match",
+        "test",
+        "find",
+        "text",
+        "pattern",
+        "internet",
+        "protocol",
+        "address",
+        "validate"
+      ],
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "eea8da6a69598e06908af3ecd9599a1734b20652",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/ip-regex/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/ip-regex#readme",
+      "_id": "ip-regex@4.2.0",
+      "_nodeVersion": "14.11.0",
+      "_npmVersion": "6.14.8",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-n5cDDeTWWRwK1EBoWwRti+8nP4NbytBBY0pldmnIkq6Z55KNFmWofh4rl9dPZpj+U/nVq7gweR3ylrvMt4YZ5A==",
+        "shasum": "a03f5eb661d9a154e3973a03de8b23dd0ad6892e",
+        "tarball": "https://registry.npmjs.org/ip-regex/-/ip-regex-4.2.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 7589,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfcmtSCRA9TVsSAnZWagAAdc0P/3litGVovGjTMKtrPODM\nvX54wHV6oosHT/1Y8Ez2g1MSbo/sQr0QOcGTOUk9A2Rq5FDwk6xGBuK0BE6x\nz1V5ozaoWd2MqZj87GQ4CPMstPO2DxgCqofIAhnQJYigFbFVB1sV6YinNly6\nj0pt9wknNjsq5jYzS8eoLJI1xE0wAZgfJh2RFMflFlOMIaOJPSHQhpnFOPNk\n5e+Cuwayxe32sxUHi+GKgZ0fYvoAQFhV6ajvUl4+w+r5pltKBVRXwdDm1NcO\naa1CHrlRQstFex7zXdP4mn4demx5NVSy9h0EtvFp+ler4z1znz+Y9V22Zx+X\nYC0yxbXuLh/Lu7VPULiGYlJLlE7kFUzykqG3xryBepajGVIXHddAhK4Rs3jU\njwKeZZDz1sJpvn8OJhXjfVwdQWmF7ZXL4rGBCZSaQmn/UWS5S3tfbR8St8L5\nxNbPSmx0473aNCp3TdapoRbVd6lT/G344gED+UXw7jv5ee8v4SdTDS8wXYU1\nISRp1tMo4wCpPAp7pccyMgvtW2H7UCeS8O1Nd/qgB8picsn/SVzBH3EDR/TU\nvN9aVsgJOzLOMVxIuJYsZpTR7/FMaiAD/eqMG7GjUkX6tLDNowwqbMqGvb6x\n+D7I5vhcr5NAYJtrua7QnBE5qk3gVPLe5LYNnMXyERIrnusE05Xlg07lJ0yl\n6qvE\r\n=md7Y\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ip-regex_4.2.0_1601334097516_0.33303842781861515"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# ip-regex [![Build Status](https://travis-ci.org/sindresorhus/ip-regex.svg?branch=master)](https://travis-ci.org/sindresorhus/ip-regex)\n\n> Regular expression for matching IP addresses\n\n\n## Install\n\n```\n$ npm install ip-regex\n```\n\nThis module targets Node.js 8 or later and the latest version of Chrome, Firefox, and Safari. If you want support for older browsers, use version 2.1.0: `npm install ip-regex@2.1.0`\n\n\n## Usage\n\n```js\nconst ipRegex = require('ip-regex');\n\n// Contains an IP address?\nipRegex().test('unicorn 192.168.0.1');\n//=> true\n\n// Is an IP address?\nipRegex({exact: true}).test('unicorn 192.168.0.1');\n//=> false\n\nipRegex.v6({exact: true}).test('1:2:3:4:5:6:7:8');\n//=> true\n\n'unicorn 192.168.0.1 cake 1:2:3:4:5:6:7:8 rainbow'.match(ipRegex());\n//=> ['192.168.0.1', '1:2:3:4:5:6:7:8']\n\n// Contains an IP address?\nipRegex({includeBoundaries: true}).test('192.168.0.2000000000');\n//=> false\n\n// Matches an IP address?\n'192.168.0.2000000000'.match(ipRegex({includeBoundaries: true}));\n//=> null\n```\n\n\n## API\n\n### ipRegex([options])\n\nReturns a regex for matching both IPv4 and IPv6.\n\n### ipRegex.v4([options])\n\nReturns a regex for matching IPv4.\n\n### ipRegex.v6([options])\n\nReturns a regex for matching IPv6.\n\n#### options\n\nType: `Object`\n\n##### exact\n\nType: `boolean`<br>\nDefault: `false` *(Matches any IP address in a string)*\n\nOnly match an exact string. Useful with `RegExp#test()` to check if a string is an IP address.\n\n##### includeBoundaries\n\nType: `boolean`<br>\nDefault: `false`\n\nInclude boundaries in the regex. When `true`, `192.168.0.2000000000` will report as an invalid IPv4 address. If this option is not set, the mentioned IPv4 address would report as valid (ignoring the trailing zeros).\n\n\n## Related\n\n- [is-ip](https://github.com/sindresorhus/is-ip) - Check if a string is an IP address\n- [is-cidr](https://github.com/silverwind/is-cidr) - Check if a string is an IP address in CIDR notation\n- [cidr-regex](https://github.com/silverwind/cidr-regex) - Regular expression for matching IP addresses in CIDR notation\n\n\n## License\n\nMIT © [Sindre Sorhus](https://sindresorhus.com)\n",
+  "maintainers": [
+    {
+      "name": "sindresorhus",
+      "email": "sindresorhus@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-09-28T23:01:40.096Z",
+    "created": "2014-09-06T11:39:45.351Z",
+    "1.0.0": "2014-09-06T11:39:45.351Z",
+    "1.0.1": "2014-11-29T16:20:14.443Z",
+    "1.0.2": "2014-12-10T14:53:56.499Z",
+    "1.0.3": "2015-02-09T07:23:47.217Z",
+    "2.0.0": "2017-01-09T09:04:44.010Z",
+    "2.1.0": "2017-03-11T09:56:09.108Z",
+    "3.0.0": "2018-04-03T07:08:25.182Z",
+    "4.0.0": "2019-01-18T07:13:35.555Z",
+    "4.1.0": "2019-04-17T02:21:48.990Z",
+    "4.2.0": "2020-09-28T23:01:37.746Z"
+  },
+  "homepage": "https://github.com/sindresorhus/ip-regex#readme",
+  "keywords": [
+    "ip",
+    "ipv6",
+    "ipv4",
+    "regex",
+    "regexp",
+    "re",
+    "match",
+    "test",
+    "find",
+    "text",
+    "pattern",
+    "internet",
+    "protocol",
+    "address",
+    "validate"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/ip-regex.git"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "bugs": {
+    "url": "https://github.com/sindresorhus/ip-regex/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md",
+  "users": {
+    "mojaray2k": true,
+    "rocket0191": true,
+    "xinwangwang": true,
+    "ganeshkbhat": true,
+    "hualei": true
+  }
+}

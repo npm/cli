@@ -1,0 +1,95 @@
+{
+  "_id": "@isaacs/bundle-metadep-duplication-a",
+  "_rev": "1-67f5c85aed458f50457ea1498e0423dd",
+  "name": "@isaacs/bundle-metadep-duplication-a",
+  "dist-tags": {
+    "latest": "1.1.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "@isaacs/bundle-metadep-duplication-a",
+      "version": "1.0.0",
+      "dependencies": {
+        "@isaacs/bundle-metadep-duplication-z": "1"
+      },
+      "description": "debugging https://github.com/npm/cli/issues/1597",
+      "_id": "@isaacs/bundle-metadep-duplication-a@1.0.0",
+      "_nodeVersion": "14.2.0",
+      "_npmVersion": "7.0.0-beta",
+      "dist": {
+        "integrity": "sha512-Nf3aJp3CJkOqPHSd4Gp8CCxhgAj2cZNDeO8jphM4m079TSBNxLqoIP1Ccl1UjhCrsN1CaC1WEyUmDwOHtf4YuA==",
+        "shasum": "0f9c6c4fa5a48d918f140ff61dd90715529994bc",
+        "tarball": "https://registry.npmjs.org/@isaacs/bundle-metadep-duplication-a/-/bundle-metadep-duplication-a-1.0.0.tgz",
+        "fileCount": 2,
+        "unpackedSize": 197,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfJfiVCRA9TVsSAnZWagAA668P/3KPhhqAk3iQdTIMzeAA\nx8MVx+0MxkmF5af7f0MDfI0VUY3tdhOsuwRKTmu5zAu0rg5lBP56pzX+HSjR\nR6tmfu9eJMk4+2HBEAcCExj3nR1gk0vLN74hJAhdzUJysoW9WUFOMXy4X3Tn\nVdre8qhwzc2Acp8+4OhsIWzhL0R8OAWOoMH+Z6dQMugtUH5FFebr/X681RRA\nXfRscmZKjCh9hDir/blloCFSKkJU6OHLGotqPCzIVx4tyq2OjopB4tM51dYX\nrcqXJC6+g3d1xwN3wg17/0UPTAI/tsVvhsu0RGRnTnSQGA0RWm92n1Fu5eTN\n9XMA53eUTcntApawqYpuHi1hYsad6VM1WJqL0SwAN+azk8/sWv6obQg4m9mg\nMpe6L+H4+jD+Exba66frGl/W1xM9E18dAyIJbAZadvtac0S64TZldg2X8mW5\nWKAaAbvDgYDZMsfjvVWoeadPT87Oiq08TTE4RzPDZV7tk+qqWdUTszC7GRIE\noY7sB5f0LkId6pBMtj7Zd+pE6jzxOhCH0zIirfNQZkPw2KItgAfuCq7x51r0\nJyx0aIsig7K3QsC7CnqpXb3Lhyk+hku8M/dwZ6jsGedhZROt5x8v5ftbWnHw\nfqSvIIySHwun/oCoeHNUIR5HvwXvT3zDaNQbtUtguhZN499C3c8PV1D7Guj7\nGRul\r\n=7km7\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/bundle-metadep-duplication-a_1.0.0_1596323989263_0.5720859937171947"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.1.0": {
+      "name": "@isaacs/bundle-metadep-duplication-a",
+      "version": "1.1.0",
+      "dependencies": {
+        "@isaacs/bundle-metadep-duplication-z": "1"
+      },
+      "description": "debugging https://github.com/npm/cli/issues/1597",
+      "_id": "@isaacs/bundle-metadep-duplication-a@1.1.0",
+      "_nodeVersion": "14.2.0",
+      "_npmVersion": "7.0.0-beta",
+      "dist": {
+        "integrity": "sha512-IFxO6MfRBAYO2w6K2rgfkAud5ySgimqo12XCiVjhF6PwK5RV+7m26/j0Q/xz73tprgzMZIIVIQuTK5zybpO3wA==",
+        "shasum": "da6838b9be4d9eb2e28c701ab6d4142daa69626a",
+        "tarball": "https://registry.npmjs.org/@isaacs/bundle-metadep-duplication-a/-/bundle-metadep-duplication-a-1.1.0.tgz",
+        "fileCount": 2,
+        "unpackedSize": 197,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfJflxCRA9TVsSAnZWagAA0+cQAJtXEA03E/C7xr+1w38c\nDvYoiIDu71d0e6MzTlvFaXh/XavvrOpfgyLBp9+S4V46i36FcUnyG9ZFCZIY\nz2Mk/9esk+kSmconI4WJraBGwFmxnqJTZnHU7+zyWXo93h/I5vYtJMSl6kdL\nssBeD2bNY7xio9Dz8GWAAx9RfSsy3X+YTQFi10aUMixsb3C8YXBKbla6msOr\nmcrCk2QPEHhyvF/QqMHH8CjDMwc7/kag9YmXYF2rypg5z4PkKx8su6cEfepf\nzD4rA6BQegEuC8WMIp9jEIo511O6ENZlS1gEfzBZmchKY6F3XsFTXFk4p7/d\neVpInRzwblnk7w2BnGj0iBtzBuQIP6Scf+dlxACBmumuIQ+Qgc9KoVoXest0\nM9NpZiBF6i855YwALHnONOVoYVmDtvVrwrLaEJMTxzOyYLSB5CGdu8dPNlOe\n0awiMiNESQDOnYrIiu/3X8Yp7RGo12H6msy6BVCQK2zjJlW3FfPWFPVhoZtL\nFIhxNijTGpxLnJWjeGJW0o/4AQXEGixnmVgaSZirxqMqEHm+Szb4WgYWvE8s\n7xBz6eA/3qdIUf4kG0CcuXcru+/IyG3YiLDZPmCS+Oof3urpudzBx74VZlkK\nX1+3LfpOzFEd3rngkGARJXafxc2TwMweTHeWwMwnXYBrsFxOwRxxDs9n1dlW\nIELK\r\n=zwKo\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/bundle-metadep-duplication-a_1.1.0_1596324209002_0.4663910963004285"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2020-08-01T23:19:49.210Z",
+    "1.0.0": "2020-08-01T23:19:49.371Z",
+    "modified": "2020-08-01T23:23:31.251Z",
+    "1.1.0": "2020-08-01T23:23:29.106Z"
+  },
+  "maintainers": [
+    {
+      "name": "isaacs",
+      "email": "i@izs.me"
+    }
+  ],
+  "description": "debugging https://github.com/npm/cli/issues/1597",
+  "readme": "debugging https://github.com/npm/cli/issues/1597\n",
+  "readmeFilename": "README.md"
+}

@@ -1,0 +1,92 @@
+{
+  "_id": "@isaacs/testing-peer-dep-conflict-chain-j",
+  "_rev": "1-81a871c1d2bb1084107381d606d093f6",
+  "name": "@isaacs/testing-peer-dep-conflict-chain-j",
+  "dist-tags": {
+    "latest": "2.0.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "@isaacs/testing-peer-dep-conflict-chain-j",
+      "version": "1.0.0",
+      "dependencies": {
+        "@isaacs/testing-peer-dep-conflict-chain-b": "1"
+      },
+      "_id": "@isaacs/testing-peer-dep-conflict-chain-j@1.0.0",
+      "_nodeVersion": "14.8.0",
+      "_npmVersion": "7.0.0-beta.7",
+      "dist": {
+        "integrity": "sha512-xs7FilrjPFJ1Vhpn/MpZpaESLmSm+PIQ225+HrTPNbNyZJFRu9Bc2HBacdT9IqIG2J3tdJaBbbd6gGUI2yGQVQ==",
+        "shasum": "bc6622cdf9c1a26aee020c058b03e7c721178ea3",
+        "tarball": "https://registry.npmjs.org/@isaacs/testing-peer-dep-conflict-chain-j/-/testing-peer-dep-conflict-chain-j-1.0.0.tgz",
+        "fileCount": 1,
+        "unpackedSize": 158,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfST3nCRA9TVsSAnZWagAAOCkP/i5ibl2L8i6IuzRS0O3o\n1E5QgAOb7rIP8Bw3/NtNNdHAwVIYrvI6REVZeEMPwnYtLPDj4xHKdWl1DnHr\nNgq255q8AO79+peBruyhwzXJiICS1rNsetIPWP0Mq7B4YWuBNlXcMnf8QWjS\nOHQbgEC5CEDDA6Q+8t0CmqqnmT+9rSETgz2ONjakTJZVpriRbDrjX4C2lD6S\njzTMByJBflgsGc0MSKmAApFdo2iX/v17UIQR0JzCGWg51xgNWtnPFkM+vHht\nYnizqXNL/GDiUVnvBf1tEOVF82ZmnloQ5cw1E2bB3AqAw4Khe6lxXtuc9X60\ntd+LXG7BCRAvKX3PhUkRmMHst9VVfCDTTSHftsRr05+SnmGG+FT7lbOAMnkP\nDIzWjX6IobfBmR00hCl0Qkjlms6Pmfej1E2sivpCZcd6/t4eaE77lhbyakOD\nl9tzc6mwPXFeodCe1tvsBj6RmmuMQDlHQe8EtR7d8Y52jpx50DEkBPhc9bP3\nKzN4TH+MlwHxD1Dii2d2HFf7Yag7H5UZt58AlsWI7/MvHXE1o/e9YdCu9axe\nmRSNRiY5tlBBnqaWp763KCHqpNwH6KJ3HJZMJqT5fOOzHhGkaaxTLj/CS0vH\nPmW2dv0rHjjnKYrZ+CHvKufIYkmIfmKUBzqIbNrltT5/WJGqt+/cV7nq6OJN\nDhI+\r\n=nShL\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/testing-peer-dep-conflict-chain-j_1.0.0_1598635494923_0.8601655015945648"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.0": {
+      "name": "@isaacs/testing-peer-dep-conflict-chain-j",
+      "version": "2.0.0",
+      "dependencies": {
+        "@isaacs/testing-peer-dep-conflict-chain-b": "2"
+      },
+      "_id": "@isaacs/testing-peer-dep-conflict-chain-j@2.0.0",
+      "_nodeVersion": "14.8.0",
+      "_npmVersion": "7.0.0-beta.7",
+      "dist": {
+        "integrity": "sha512-ZvA41wqKZQUbpABx0hsCjE80hcVesETotSm5QmIfvHStPeRfM177spC0r1WXLfwG+DkNR8OmjvcguzltjBs1Og==",
+        "shasum": "3627012b9dd0ce1eb2a17aa93495763d5413cb29",
+        "tarball": "https://registry.npmjs.org/@isaacs/testing-peer-dep-conflict-chain-j/-/testing-peer-dep-conflict-chain-j-2.0.0.tgz",
+        "fileCount": 1,
+        "unpackedSize": 158,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfST3qCRA9TVsSAnZWagAA2JMP/RJEdezq+ZSxusAi7L/b\nJBMlznLamLw34MLfxHqdPtaSIudzYP46S6fNCazosGbtuVD/VjQqdCQmoYOV\njE+yiGfg+gj41uB/mzdw2fjP5SX5fe3m8rsMRiT6IhmMMWbr32zDvdGEx3BS\nuaDPg93P9V62zMAd5pjdpls2YY13uvFom3q/5gwoSxgRYNrPysjUb42l4vXc\ntlOgNZB3zADXTmrqdaxjkhHt0lgEmAA7EzX7+fi+oyc086tlK23i5sZzN7tb\nKwc42PvMIupknr6JmU93ZWYaRc7kHcfgbnpml+QeWUf2dcpzEAsYpGiWBjZ4\nBnMrhdq+a5+JtRQnPcGdN6DuwQniX6SmUKQhqku1wRLzSKm4n8rLfKdzBAHx\n300PxHZrwwbFwD1AKKRz0ysi+E+6JrKLpSBuaNTHr5R8eytRew72zTIrCGqU\nb5u67fKtOPENK/TftJGArjHBb7OyxJMJvIHI59uN20PcF3mtH0eep6JAS2TS\n3bYnZ7TRMoBMvepIOrRyEAH7hWBF1BnRZ+lHyTL9uwCCvtx/0Vd7ZJq4hJio\nqfkRc9B6tvEhRsDnUMb90Hazf5rR4M90HpOtYgyV0lST0/yoX7d6iVFYR6ka\n0e8z2H8Ytp08YUgGVd2vlOARUxVi6fsyrVPdVduFocSJ4vPWyiam/Z8p1GvW\nC6qh\r\n=hy1d\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/testing-peer-dep-conflict-chain-j_2.0.0_1598635498108_0.24877431828595853"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2020-08-28T17:24:54.876Z",
+    "1.0.0": "2020-08-28T17:24:55.036Z",
+    "modified": "2020-08-28T17:25:00.399Z",
+    "2.0.0": "2020-08-28T17:24:58.193Z"
+  },
+  "maintainers": [
+    {
+      "name": "isaacs",
+      "email": "i@izs.me"
+    }
+  ],
+  "readme": "ERROR: No README data found!",
+  "readmeFilename": ""
+}

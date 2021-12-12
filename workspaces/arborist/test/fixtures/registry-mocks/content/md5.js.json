@@ -1,0 +1,721 @@
+{
+  "_id": "md5.js",
+  "_rev": "16-b3e497ac621cc88abe50dfad6a60b40c",
+  "name": "md5.js",
+  "description": "node style md5 on pure JavaScript",
+  "dist-tags": {
+    "latest": "1.3.5"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "md5.js",
+      "version": "1.0.0",
+      "description": "node style md5 on pure JavaScript",
+      "keywords": [
+        "crypto",
+        "md5"
+      ],
+      "homepage": "https://github.com/crypto-browserify/md5.js",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/md5.js/issues"
+      },
+      "license": "MIT",
+      "author": {
+        "name": "Kirill Fomichev",
+        "email": "fanatid@ya.ru",
+        "url": "https://github.com/fanatid"
+      },
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/%3Acrypto-browserify/md5.js.git"
+      },
+      "scripts": {
+        "coverage": "nyc node test/*.js",
+        "lint": "standard",
+        "test": "npm run lint && npm run unit",
+        "unit": "node test/*.js"
+      },
+      "dependencies": {
+        "hash-base": "^1.0.2",
+        "inherits": "^2.0.1"
+      },
+      "devDependencies": {
+        "hash-test-vectors": "^1.3.2",
+        "nyc": "^6.1.1",
+        "standard": "^6.0.8",
+        "tape": "^4.2.0"
+      },
+      "gitHead": "38283b6e9b336a9ac5decf50fbdcd76aac90f659",
+      "_id": "md5.js@1.0.0",
+      "_shasum": "448c0d876ece8b09ec9c11949bb565b66fada5df",
+      "_from": ".",
+      "_npmVersion": "3.8.3",
+      "_nodeVersion": "5.10.0",
+      "_npmUser": {
+        "name": "fanatid",
+        "email": "fanatid@ya.ru"
+      },
+      "maintainers": [
+        {
+          "name": "fanatid",
+          "email": "fanatid@ya.ru"
+        }
+      ],
+      "dist": {
+        "shasum": "448c0d876ece8b09ec9c11949bb565b66fada5df",
+        "tarball": "https://registry.npmjs.org/md5.js/-/md5.js-1.0.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/md5.js-1.0.0.tgz_1459783490482_0.9674298875033855"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "md5.js",
+      "version": "1.1.0",
+      "description": "node style md5 on pure JavaScript",
+      "keywords": [
+        "crypto",
+        "md5"
+      ],
+      "homepage": "https://github.com/crypto-browserify/md5.js",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/md5.js/issues"
+      },
+      "license": "MIT",
+      "author": {
+        "name": "Kirill Fomichev",
+        "email": "fanatid@ya.ru",
+        "url": "https://github.com/fanatid"
+      },
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/%3Acrypto-browserify/md5.js.git"
+      },
+      "scripts": {
+        "lint": "standard",
+        "test": "npm run lint && npm run unit",
+        "unit": "node test/*.js"
+      },
+      "dependencies": {
+        "hash-base": "^2.0.0",
+        "inherits": "^2.0.1"
+      },
+      "devDependencies": {
+        "hash-test-vectors": "^1.3.2",
+        "standard": "^6.0.8",
+        "tape": "^4.2.0"
+      },
+      "gitHead": "97132316264039f61357790e269e3bf43682418c",
+      "_id": "md5.js@1.1.0",
+      "_shasum": "23efd65b429ee065b8b4a6631ef04800e2c15802",
+      "_from": ".",
+      "_npmVersion": "3.8.3",
+      "_nodeVersion": "5.10.0",
+      "_npmUser": {
+        "name": "fanatid",
+        "email": "fanatid@ya.ru"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "fanatid",
+          "email": "fanatid@ya.ru"
+        }
+      ],
+      "dist": {
+        "shasum": "23efd65b429ee065b8b4a6631ef04800e2c15802",
+        "tarball": "https://registry.npmjs.org/md5.js/-/md5.js-1.1.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/md5.js-1.1.0.tgz_1460012600943_0.8472151416353881"
+      },
+      "directories": {}
+    },
+    "1.2.0": {
+      "name": "md5.js",
+      "version": "1.2.0",
+      "description": "node style md5 on pure JavaScript",
+      "keywords": [
+        "crypto",
+        "md5"
+      ],
+      "homepage": "https://github.com/crypto-browserify/md5.js",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/md5.js/issues"
+      },
+      "license": "MIT",
+      "author": {
+        "name": "Kirill Fomichev",
+        "email": "fanatid@ya.ru",
+        "url": "https://github.com/fanatid"
+      },
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/%3Acrypto-browserify/md5.js.git"
+      },
+      "scripts": {
+        "lint": "standard",
+        "test": "npm run lint && npm run unit",
+        "unit": "node test/*.js"
+      },
+      "dependencies": {
+        "hash-base": "^2.0.0",
+        "inherits": "^2.0.1"
+      },
+      "devDependencies": {
+        "hash-test-vectors": "^1.3.2",
+        "standard": "^6.0.8",
+        "tape": "^4.2.0"
+      },
+      "gitHead": "019eec1246db6e8dd720d7c65e88f8a228674771",
+      "_id": "md5.js@1.2.0",
+      "_shasum": "6c570b36e172f62c8e13c3a1b0f76c95be9c0e6c",
+      "_from": ".",
+      "_npmVersion": "3.8.3",
+      "_nodeVersion": "5.10.0",
+      "_npmUser": {
+        "name": "fanatid",
+        "email": "fanatid@ya.ru"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "fanatid",
+          "email": "fanatid@ya.ru"
+        }
+      ],
+      "dist": {
+        "shasum": "6c570b36e172f62c8e13c3a1b0f76c95be9c0e6c",
+        "tarball": "https://registry.npmjs.org/md5.js/-/md5.js-1.2.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/md5.js-1.2.0.tgz_1460196122796_0.40363837825134397"
+      },
+      "directories": {}
+    },
+    "1.3.0": {
+      "name": "md5.js",
+      "version": "1.3.0",
+      "description": "node style md5 on pure JavaScript",
+      "keywords": [
+        "crypto",
+        "md5"
+      ],
+      "homepage": "https://github.com/crypto-browserify/md5.js",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/md5.js/issues"
+      },
+      "license": "MIT",
+      "author": {
+        "name": "Kirill Fomichev",
+        "email": "fanatid@ya.ru",
+        "url": "https://github.com/fanatid"
+      },
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/%3Acrypto-browserify/md5.js.git"
+      },
+      "scripts": {
+        "lint": "standard",
+        "test": "npm run lint && npm run unit",
+        "unit": "node test/*.js"
+      },
+      "dependencies": {
+        "hash-base": "^2.0.0",
+        "inherits": "^2.0.1"
+      },
+      "devDependencies": {
+        "hash-test-vectors": "^1.3.2",
+        "standard": "^6.0.8",
+        "tape": "^4.2.0"
+      },
+      "gitHead": "2ca3bcf04a23a218e7d5c50d0cb47140b731c87e",
+      "_id": "md5.js@1.3.0",
+      "_shasum": "8b02354665ce6c7734aceddcb59d11641c42b785",
+      "_from": ".",
+      "_npmVersion": "3.8.3",
+      "_nodeVersion": "5.10.0",
+      "_npmUser": {
+        "name": "fanatid",
+        "email": "fanatid@ya.ru"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "fanatid",
+          "email": "fanatid@ya.ru"
+        }
+      ],
+      "dist": {
+        "shasum": "8b02354665ce6c7734aceddcb59d11641c42b785",
+        "tarball": "https://registry.npmjs.org/md5.js/-/md5.js-1.3.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/md5.js-1.3.0.tgz_1460270909089_0.9662568017374724"
+      },
+      "directories": {}
+    },
+    "1.3.1": {
+      "name": "md5.js",
+      "version": "1.3.1",
+      "description": "node style md5 on pure JavaScript",
+      "keywords": [
+        "crypto",
+        "md5"
+      ],
+      "homepage": "https://github.com/crypto-browserify/md5.js",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/md5.js/issues"
+      },
+      "license": "MIT",
+      "author": {
+        "name": "Kirill Fomichev",
+        "email": "fanatid@ya.ru",
+        "url": "https://github.com/fanatid"
+      },
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crypto-browserify/md5.js.git"
+      },
+      "scripts": {
+        "lint": "standard",
+        "test": "npm run lint && npm run unit",
+        "unit": "node test/*.js"
+      },
+      "dependencies": {
+        "hash-base": "^2.0.0",
+        "inherits": "^2.0.1"
+      },
+      "devDependencies": {
+        "hash-test-vectors": "^1.3.2",
+        "standard": "^6.0.8",
+        "tape": "^4.2.0"
+      },
+      "gitHead": "0d48608c822ff82e38ea9f924fdd7d9021fcc77a",
+      "_id": "md5.js@1.3.1",
+      "_shasum": "d6da45f0e687bb78bae6de19d24d1868d22ca075",
+      "_from": ".",
+      "_npmVersion": "3.8.3",
+      "_nodeVersion": "5.10.0",
+      "_npmUser": {
+        "name": "fanatid",
+        "email": "fanatid@ya.ru"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "fanatid",
+          "email": "fanatid@ya.ru"
+        }
+      ],
+      "dist": {
+        "shasum": "d6da45f0e687bb78bae6de19d24d1868d22ca075",
+        "tarball": "https://registry.npmjs.org/md5.js/-/md5.js-1.3.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/md5.js-1.3.1.tgz_1460437613615_0.4253515535965562"
+      },
+      "directories": {}
+    },
+    "1.3.2": {
+      "name": "md5.js",
+      "version": "1.3.2",
+      "description": "node style md5 on pure JavaScript",
+      "keywords": [
+        "crypto",
+        "md5"
+      ],
+      "homepage": "https://github.com/crypto-browserify/md5.js",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/md5.js/issues"
+      },
+      "license": "MIT",
+      "author": {
+        "name": "Kirill Fomichev",
+        "email": "fanatid@ya.ru",
+        "url": "https://github.com/fanatid"
+      },
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crypto-browserify/md5.js.git"
+      },
+      "scripts": {
+        "lint": "standard",
+        "test": "npm run lint && npm run unit",
+        "unit": "node test/*.js"
+      },
+      "dependencies": {
+        "hash-base": "^2.0.0",
+        "inherits": "^2.0.1"
+      },
+      "devDependencies": {
+        "hash-test-vectors": "^1.3.2",
+        "standard": "^6.0.8",
+        "tape": "^4.2.0"
+      },
+      "gitHead": "d3cf038feccff55a3dc4dca648710fa57b4501fc",
+      "_id": "md5.js@1.3.2",
+      "_shasum": "b5fc4dba946f9b7cffb291a0bc7e01a321c51339",
+      "_from": ".",
+      "_npmVersion": "3.8.3",
+      "_nodeVersion": "5.10.0",
+      "_npmUser": {
+        "name": "fanatid",
+        "email": "fanatid@ya.ru"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "fanatid",
+          "email": "fanatid@ya.ru"
+        }
+      ],
+      "dist": {
+        "shasum": "b5fc4dba946f9b7cffb291a0bc7e01a321c51339",
+        "tarball": "https://registry.npmjs.org/md5.js/-/md5.js-1.3.2.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/md5.js-1.3.2.tgz_1460617759954_0.2634202758781612"
+      },
+      "directories": {}
+    },
+    "1.3.3": {
+      "name": "md5.js",
+      "version": "1.3.3",
+      "description": "node style md5 on pure JavaScript",
+      "keywords": [
+        "crypto",
+        "md5"
+      ],
+      "homepage": "https://github.com/crypto-browserify/md5.js",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/md5.js/issues"
+      },
+      "license": "MIT",
+      "author": {
+        "name": "Kirill Fomichev",
+        "email": "fanatid@ya.ru",
+        "url": "https://github.com/fanatid"
+      },
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crypto-browserify/md5.js.git"
+      },
+      "scripts": {
+        "lint": "standard",
+        "test": "npm run lint && npm run unit",
+        "unit": "node test/*.js"
+      },
+      "dependencies": {
+        "hash-base": "^3.0.0",
+        "inherits": "^2.0.1"
+      },
+      "devDependencies": {
+        "hash-test-vectors": "^1.3.2",
+        "standard": "^7.0.0",
+        "tape": "^4.2.0"
+      },
+      "gitHead": "1d1db6288b70635bb20209a58214a9843c6e00af",
+      "_id": "md5.js@1.3.3",
+      "_shasum": "05fd01cf2a48e39fe51e64fbebfe650c46cdd58e",
+      "_from": ".",
+      "_npmVersion": "3.8.6",
+      "_nodeVersion": "6.0.0",
+      "_npmUser": {
+        "name": "fanatid",
+        "email": "fanatid@ya.ru"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "fanatid",
+          "email": "fanatid@ya.ru"
+        }
+      ],
+      "dist": {
+        "shasum": "05fd01cf2a48e39fe51e64fbebfe650c46cdd58e",
+        "tarball": "https://registry.npmjs.org/md5.js/-/md5.js-1.3.3.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/md5.js-1.3.3.tgz_1462358724214_0.19014157797209918"
+      },
+      "directories": {}
+    },
+    "1.3.4": {
+      "name": "md5.js",
+      "version": "1.3.4",
+      "description": "node style md5 on pure JavaScript",
+      "keywords": [
+        "crypto",
+        "md5"
+      ],
+      "homepage": "https://github.com/crypto-browserify/md5.js",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/md5.js/issues"
+      },
+      "license": "MIT",
+      "author": {
+        "name": "Kirill Fomichev",
+        "email": "fanatid@ya.ru",
+        "url": "https://github.com/fanatid"
+      },
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crypto-browserify/md5.js.git"
+      },
+      "scripts": {
+        "lint": "standard",
+        "test": "npm run lint && npm run unit",
+        "unit": "node test/*.js"
+      },
+      "dependencies": {
+        "hash-base": "^3.0.0",
+        "inherits": "^2.0.1"
+      },
+      "devDependencies": {
+        "hash-test-vectors": "^1.3.2",
+        "standard": "^7.0.0",
+        "tape": "^4.2.0"
+      },
+      "gitHead": "d5ba10c4dc393a8db6e2f39a2c70c9193964b4ec",
+      "_id": "md5.js@1.3.4",
+      "_shasum": "e9bdbde94a20a5ac18b04340fc5764d5b09d901d",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.4.0",
+      "_npmUser": {
+        "name": "fanatid",
+        "email": "fanatid@ya.ru"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "fanatid",
+          "email": "fanatid@ya.ru"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "e9bdbde94a20a5ac18b04340fc5764d5b09d901d",
+        "tarball": "https://registry.npmjs.org/md5.js/-/md5.js-1.3.4.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/md5.js-1.3.4.tgz_1472409359658_0.7613432689104229"
+      },
+      "directories": {}
+    },
+    "1.3.5": {
+      "name": "md5.js",
+      "version": "1.3.5",
+      "description": "node style md5 on pure JavaScript",
+      "keywords": [
+        "crypto",
+        "md5"
+      ],
+      "homepage": "https://github.com/crypto-browserify/md5.js",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/md5.js/issues"
+      },
+      "license": "MIT",
+      "author": {
+        "name": "Kirill Fomichev",
+        "email": "fanatid@ya.ru",
+        "url": "https://github.com/fanatid"
+      },
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crypto-browserify/md5.js.git"
+      },
+      "scripts": {
+        "lint": "standard",
+        "test": "npm run lint && npm run unit",
+        "unit": "node test/*.js"
+      },
+      "dependencies": {
+        "hash-base": "^3.0.0",
+        "inherits": "^2.0.1",
+        "safe-buffer": "^5.1.2"
+      },
+      "devDependencies": {
+        "hash-test-vectors": "^1.3.2",
+        "standard": "^7.0.0",
+        "tape": "^4.2.0"
+      },
+      "gitHead": "48df1d6b8c4af2cf52638092d590c528420c61ed",
+      "_id": "md5.js@1.3.5",
+      "_npmVersion": "6.4.0",
+      "_nodeVersion": "10.8.0",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-xitP+WxNPcTTOgnTJcrhM0xvdPepipPSf3I8EIpGKeFLjt3PlJLIDG3u8EX53ZIubkb+5U2+3rELYpEhHhzdkg==",
+        "shasum": "b5d07b8e3216e3e27cd728d72f70d1e6a342005f",
+        "tarball": "https://registry.npmjs.org/md5.js/-/md5.js-1.3.5.tgz",
+        "fileCount": 4,
+        "unpackedSize": 7671,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbs3Q8CRA9TVsSAnZWagAADJMP/jCAywo2iMaaIo6dYr93\nVtqgE5hCChqlPXQC6PQLoENpTQZrE/2cr+DW16YXFH0TGvxwUGdiqhJsoiqi\nzqHrRm1o267s5dxqD0f0uhDGnz5AuWz/WcDWQRuIQZzrAA53cJ6dgfP5HGcV\n7IrMIyGhWzX6nXB2CoZdp4x8V6cGt+pnC+3bUE6WeSv36cIyn6Srjx4gfbuT\njwUIP0qSeJnaBxTEd/xFAKmypEMeZk5fcGmAqVkzma34MdIwbx/hqwAs1zDE\nKbzU5IelUo+JQQWOEeY627hVwcGQdqMc6Vqcqjca1z+egXOhP1FDeKuhG5za\n1MgC9ilcKUJXicD7fgmqSHWesbxmprrnqo6N+PSZTeKAVU77DgpyVbfyfHrW\nySKp87UVzYKRDbCYzu8kieElRDvsqt718TDLF/XiENLsvOQKVTETJKV42OJE\nba1sRBl2pYeGu6m/PPMgBUpwUrHUnwfEadhBYBZppNutQU/0jfWXLHIuTfTL\nQfELqJZ7cjzmtdCdwvaWYOFWHWlGw6Hp4enIkeDwUN7jZQxecCQMXUMpR380\n8emX+oqGSKfDrxkMAmyVO9hL4rl+oQ94UMD07GM3glQafIBR3/38+mGLsODa\nXKkuUclSaLgg9E/NX+j0gBLbp19CqYHvVWikwSz/bcDdBr2e3DiLlYmxMSxB\nkZ+I\r\n=T1Ev\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "fanatid",
+          "email": "fanatid@ya.ru"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/md5.js_1.3.5_1538487356042_0.034320089519025654"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# md5.js\n\n[![NPM Package](https://img.shields.io/npm/v/md5.js.svg?style=flat-square)](https://www.npmjs.org/package/md5.js)\n[![Build Status](https://img.shields.io/travis/crypto-browserify/md5.js.svg?branch=master&style=flat-square)](https://travis-ci.org/crypto-browserify/md5.js)\n[![Dependency status](https://img.shields.io/david/crypto-browserify/md5.js.svg?style=flat-square)](https://david-dm.org/crypto-browserify/md5.js#info=dependencies)\n\n[![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)\n\nNode style `md5` on pure JavaScript.\n\nFrom [NIST SP 800-131A][1]: *md5 is no longer acceptable where collision resistance is required such as digital signatures.*\n\n## Example\n\n```js\nvar MD5 = require('md5.js')\n\nconsole.log(new MD5().update('42').digest('hex'))\n// => a1d0c6e83f027327d8461063f4ac58a6\n\nvar md5stream = new MD5()\nmd5stream.end('42')\nconsole.log(md5stream.read().toString('hex'))\n// => a1d0c6e83f027327d8461063f4ac58a6\n```\n\n## LICENSE [MIT](LICENSE)\n\n[1]: http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar1.pdf\n",
+  "maintainers": [
+    {
+      "name": "cwmma",
+      "email": "calvin.metcalf@gmail.com"
+    },
+    {
+      "name": "dcousens",
+      "email": "email@dcousens.com"
+    },
+    {
+      "name": "fanatid",
+      "email": "fanatid@ya.ru"
+    },
+    {
+      "name": "jprichardson",
+      "email": "jprichardson@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2019-01-04T18:51:11.997Z",
+    "created": "2016-04-04T15:24:53.141Z",
+    "1.0.0": "2016-04-04T15:24:53.141Z",
+    "1.1.0": "2016-04-07T07:03:23.058Z",
+    "1.2.0": "2016-04-09T10:02:05.112Z",
+    "1.3.0": "2016-04-10T06:48:30.179Z",
+    "1.3.1": "2016-04-12T05:06:56.074Z",
+    "1.3.2": "2016-04-14T07:09:21.713Z",
+    "1.3.3": "2016-05-04T10:45:26.772Z",
+    "1.3.4": "2016-08-28T18:36:01.201Z",
+    "1.3.5": "2018-10-02T13:35:56.206Z"
+  },
+  "homepage": "https://github.com/crypto-browserify/md5.js",
+  "keywords": [
+    "crypto",
+    "md5"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crypto-browserify/md5.js.git"
+  },
+  "author": {
+    "name": "Kirill Fomichev",
+    "email": "fanatid@ya.ru",
+    "url": "https://github.com/fanatid"
+  },
+  "bugs": {
+    "url": "https://github.com/crypto-browserify/md5.js/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "users": {
+    "fanatid": true,
+    "rocket0191": true,
+    "liupengbo": true,
+    "xiaobing": true
+  }
+}

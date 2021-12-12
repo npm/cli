@@ -1,0 +1,1611 @@
+{
+  "_id": "shell-quote",
+  "_rev": "47-8b3982cf2fd2fdaa8cd4d32beb30fd79",
+  "name": "shell-quote",
+  "description": "quote and parse shell commands",
+  "dist-tags": {
+    "latest": "1.7.2"
+  },
+  "versions": {
+    "0.0.0": {
+      "name": "shell-quote",
+      "version": "0.0.0",
+      "description": "quote and parse shell commands",
+      "main": "index.js",
+      "directories": {
+        "example": "example",
+        "test": "test"
+      },
+      "devDependencies": {
+        "tap": "~0.2.5"
+      },
+      "scripts": {
+        "test": "tap test"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/substack/node-shell-quote.git"
+      },
+      "keywords": [
+        "shell",
+        "command",
+        "quote",
+        "parse"
+      ],
+      "author": {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "http://substack.net"
+      },
+      "license": "MIT",
+      "engine": {
+        "node": ">=0.4"
+      },
+      "_npmUser": {
+        "name": "substack",
+        "email": "mail@substack.net"
+      },
+      "_id": "shell-quote@0.0.0",
+      "dependencies": {},
+      "optionalDependencies": {},
+      "engines": {
+        "node": "*"
+      },
+      "_engineSupported": true,
+      "_npmVersion": "1.1.19",
+      "_nodeVersion": "v0.6.11",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "bebda987f1123d9a357a99be33f6f0acae84e2e1",
+        "tarball": "https://registry.npmjs.org/shell-quote/-/shell-quote-0.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "substack",
+          "email": "mail@substack.net"
+        }
+      ]
+    },
+    "0.0.1": {
+      "name": "shell-quote",
+      "version": "0.0.1",
+      "description": "quote and parse shell commands",
+      "main": "index.js",
+      "directories": {
+        "example": "example",
+        "test": "test"
+      },
+      "devDependencies": {
+        "tap": "~0.2.5"
+      },
+      "scripts": {
+        "test": "tap test"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/substack/node-shell-quote.git"
+      },
+      "keywords": [
+        "shell",
+        "command",
+        "quote",
+        "parse"
+      ],
+      "author": {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "http://substack.net"
+      },
+      "license": "MIT",
+      "engine": {
+        "node": ">=0.4"
+      },
+      "_npmUser": {
+        "name": "substack",
+        "email": "mail@substack.net"
+      },
+      "_id": "shell-quote@0.0.1",
+      "dependencies": {},
+      "optionalDependencies": {},
+      "engines": {
+        "node": "*"
+      },
+      "_engineSupported": true,
+      "_npmVersion": "1.1.19",
+      "_nodeVersion": "v0.6.11",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "1a41196f3c0333c482323593d6886ecf153dd986",
+        "tarball": "https://registry.npmjs.org/shell-quote/-/shell-quote-0.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "substack",
+          "email": "mail@substack.net"
+        }
+      ]
+    },
+    "0.1.0": {
+      "name": "shell-quote",
+      "version": "0.1.0",
+      "description": "quote and parse shell commands",
+      "main": "index.js",
+      "directories": {
+        "example": "example",
+        "test": "test"
+      },
+      "devDependencies": {
+        "tap": "~0.4.0",
+        "tape": "~0.3.3"
+      },
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "http://github.com/substack/node-shell-quote.git"
+      },
+      "keywords": [
+        "shell",
+        "command",
+        "quote",
+        "parse"
+      ],
+      "author": {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "http://substack.net"
+      },
+      "license": "MIT",
+      "engine": {
+        "node": ">=0.4"
+      },
+      "_id": "shell-quote@0.1.0",
+      "dist": {
+        "shasum": "f751154dd7f2b2c60b66ab7cf8fee1d34d45b9e2",
+        "tarball": "https://registry.npmjs.org/shell-quote/-/shell-quote-0.1.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.2.2",
+      "_npmUser": {
+        "name": "substack",
+        "email": "mail@substack.net"
+      },
+      "maintainers": [
+        {
+          "name": "substack",
+          "email": "mail@substack.net"
+        }
+      ]
+    },
+    "0.1.1": {
+      "name": "shell-quote",
+      "version": "0.1.1",
+      "description": "quote and parse shell commands",
+      "main": "index.js",
+      "directories": {
+        "example": "example",
+        "test": "test"
+      },
+      "devDependencies": {
+        "tap": "~0.4.0",
+        "tape": "~0.3.3"
+      },
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "http://github.com/substack/node-shell-quote.git"
+      },
+      "keywords": [
+        "shell",
+        "command",
+        "quote",
+        "parse"
+      ],
+      "author": {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "http://substack.net"
+      },
+      "license": "MIT",
+      "engine": {
+        "node": ">=0.4"
+      },
+      "_id": "shell-quote@0.1.1",
+      "dist": {
+        "shasum": "b392bfa55b2ad8b99efc6565e2edc8a3be96d33a",
+        "tarball": "https://registry.npmjs.org/shell-quote/-/shell-quote-0.1.1.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.2.2",
+      "_npmUser": {
+        "name": "substack",
+        "email": "mail@substack.net"
+      },
+      "maintainers": [
+        {
+          "name": "substack",
+          "email": "mail@substack.net"
+        }
+      ]
+    },
+    "1.0.0": {
+      "name": "shell-quote",
+      "version": "1.0.0",
+      "description": "quote and parse shell commands",
+      "main": "index.js",
+      "directories": {
+        "example": "example",
+        "test": "test"
+      },
+      "devDependencies": {
+        "tap": "~0.4.0",
+        "tape": "~0.3.3"
+      },
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "http://github.com/substack/node-shell-quote.git"
+      },
+      "keywords": [
+        "shell",
+        "command",
+        "quote",
+        "parse"
+      ],
+      "author": {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "http://substack.net"
+      },
+      "license": "MIT",
+      "engine": {
+        "node": ">=0.4"
+      },
+      "_id": "shell-quote@1.0.0",
+      "dist": {
+        "shasum": "01d1fb07e34de47dab2998da567fbb0e9c1fa427",
+        "tarball": "https://registry.npmjs.org/shell-quote/-/shell-quote-1.0.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.2.2",
+      "_npmUser": {
+        "name": "substack",
+        "email": "mail@substack.net"
+      },
+      "maintainers": [
+        {
+          "name": "substack",
+          "email": "mail@substack.net"
+        }
+      ]
+    },
+    "1.1.0": {
+      "name": "shell-quote",
+      "version": "1.1.0",
+      "description": "quote and parse shell commands",
+      "main": "index.js",
+      "directories": {
+        "example": "example",
+        "test": "test"
+      },
+      "devDependencies": {
+        "tap": "~0.4.0",
+        "tape": "~0.3.3"
+      },
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "http://github.com/substack/node-shell-quote.git"
+      },
+      "keywords": [
+        "shell",
+        "command",
+        "quote",
+        "parse"
+      ],
+      "author": {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "http://substack.net"
+      },
+      "license": "MIT",
+      "engine": {
+        "node": ">=0.4"
+      },
+      "_id": "shell-quote@1.1.0",
+      "dist": {
+        "shasum": "ec4e2e2f722b1f0bae1daa8d1bbcfe0ebd0083d3",
+        "tarball": "https://registry.npmjs.org/shell-quote/-/shell-quote-1.1.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.2.2",
+      "_npmUser": {
+        "name": "substack",
+        "email": "mail@substack.net"
+      },
+      "maintainers": [
+        {
+          "name": "substack",
+          "email": "mail@substack.net"
+        }
+      ]
+    },
+    "1.2.0": {
+      "name": "shell-quote",
+      "version": "1.2.0",
+      "description": "quote and parse shell commands",
+      "main": "index.js",
+      "directories": {
+        "example": "example",
+        "test": "test"
+      },
+      "devDependencies": {
+        "tap": "~0.4.0",
+        "tape": "~0.3.3"
+      },
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "http://github.com/substack/node-shell-quote.git"
+      },
+      "keywords": [
+        "shell",
+        "command",
+        "quote",
+        "parse"
+      ],
+      "author": {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "http://substack.net"
+      },
+      "license": "MIT",
+      "engine": {
+        "node": ">=0.4"
+      },
+      "_id": "shell-quote@1.2.0",
+      "dist": {
+        "shasum": "7d74dd41377b68fe8345dc89420423537dec9240",
+        "tarball": "https://registry.npmjs.org/shell-quote/-/shell-quote-1.2.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.2.2",
+      "_npmUser": {
+        "name": "substack",
+        "email": "mail@substack.net"
+      },
+      "maintainers": [
+        {
+          "name": "substack",
+          "email": "mail@substack.net"
+        }
+      ]
+    },
+    "1.3.0": {
+      "name": "shell-quote",
+      "version": "1.3.0",
+      "description": "quote and parse shell commands",
+      "main": "index.js",
+      "directories": {
+        "example": "example",
+        "test": "test"
+      },
+      "devDependencies": {
+        "tap": "~0.4.2",
+        "tape": "~1.0.2"
+      },
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "http://github.com/substack/node-shell-quote.git"
+      },
+      "keywords": [
+        "shell",
+        "command",
+        "quote",
+        "parse"
+      ],
+      "author": {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "http://substack.net"
+      },
+      "license": "MIT",
+      "engine": {
+        "node": ">=0.4"
+      },
+      "_id": "shell-quote@1.3.0",
+      "dist": {
+        "shasum": "12f9cd3255ec2d95c82a69a81d851766a8baa32b",
+        "tarball": "https://registry.npmjs.org/shell-quote/-/shell-quote-1.3.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.2.2",
+      "_npmUser": {
+        "name": "substack",
+        "email": "mail@substack.net"
+      },
+      "maintainers": [
+        {
+          "name": "substack",
+          "email": "mail@substack.net"
+        }
+      ]
+    },
+    "1.3.1": {
+      "name": "shell-quote",
+      "version": "1.3.1",
+      "description": "quote and parse shell commands",
+      "main": "index.js",
+      "directories": {
+        "example": "example",
+        "test": "test"
+      },
+      "devDependencies": {
+        "tap": "~0.4.2",
+        "tape": "~1.0.2"
+      },
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "http://github.com/substack/node-shell-quote.git"
+      },
+      "keywords": [
+        "shell",
+        "command",
+        "quote",
+        "parse"
+      ],
+      "author": {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "http://substack.net"
+      },
+      "license": "MIT",
+      "engine": {
+        "node": ">=0.4"
+      },
+      "_id": "shell-quote@1.3.1",
+      "dist": {
+        "shasum": "4adb4f6d9e09c18203b3dbf0cf37ef693388eb28",
+        "tarball": "https://registry.npmjs.org/shell-quote/-/shell-quote-1.3.1.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.2.2",
+      "_npmUser": {
+        "name": "substack",
+        "email": "mail@substack.net"
+      },
+      "maintainers": [
+        {
+          "name": "substack",
+          "email": "mail@substack.net"
+        }
+      ]
+    },
+    "1.3.2": {
+      "name": "shell-quote",
+      "version": "1.3.2",
+      "description": "quote and parse shell commands",
+      "main": "index.js",
+      "directories": {
+        "example": "example",
+        "test": "test"
+      },
+      "devDependencies": {
+        "tap": "~0.4.2",
+        "tape": "~1.0.2"
+      },
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "http://github.com/substack/node-shell-quote.git"
+      },
+      "keywords": [
+        "shell",
+        "command",
+        "quote",
+        "parse"
+      ],
+      "author": {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "http://substack.net"
+      },
+      "license": "MIT",
+      "engine": {
+        "node": ">=0.4"
+      },
+      "bugs": {
+        "url": "https://github.com/substack/node-shell-quote/issues"
+      },
+      "_id": "shell-quote@1.3.2",
+      "dist": {
+        "shasum": "1bd13a2b46cb7982ad0d009405a62674d68d663b",
+        "tarball": "https://registry.npmjs.org/shell-quote/-/shell-quote-1.3.2.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.0",
+      "_npmUser": {
+        "name": "substack",
+        "email": "mail@substack.net"
+      },
+      "maintainers": [
+        {
+          "name": "substack",
+          "email": "mail@substack.net"
+        }
+      ]
+    },
+    "1.3.3": {
+      "name": "shell-quote",
+      "version": "1.3.3",
+      "description": "quote and parse shell commands",
+      "main": "index.js",
+      "directories": {
+        "example": "example",
+        "test": "test"
+      },
+      "devDependencies": {
+        "tap": "~0.4.2",
+        "tape": "~1.0.2"
+      },
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "http://github.com/substack/node-shell-quote.git"
+      },
+      "keywords": [
+        "shell",
+        "command",
+        "quote",
+        "parse"
+      ],
+      "author": {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "http://substack.net"
+      },
+      "license": "MIT",
+      "engine": {
+        "node": ">=0.4"
+      },
+      "bugs": {
+        "url": "https://github.com/substack/node-shell-quote/issues"
+      },
+      "_id": "shell-quote@1.3.3",
+      "dist": {
+        "shasum": "07b8826f427c052511e8b5627639e172596e8e4b",
+        "tarball": "https://registry.npmjs.org/shell-quote/-/shell-quote-1.3.3.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.0",
+      "_npmUser": {
+        "name": "substack",
+        "email": "mail@substack.net"
+      },
+      "maintainers": [
+        {
+          "name": "substack",
+          "email": "mail@substack.net"
+        }
+      ]
+    },
+    "1.4.0": {
+      "name": "shell-quote",
+      "version": "1.4.0",
+      "description": "quote and parse shell commands",
+      "main": "index.js",
+      "directories": {
+        "example": "example",
+        "test": "test"
+      },
+      "devDependencies": {
+        "tap": "~0.4.2",
+        "tape": "~1.0.2"
+      },
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "http://github.com/substack/node-shell-quote.git"
+      },
+      "keywords": [
+        "shell",
+        "command",
+        "quote",
+        "parse"
+      ],
+      "author": {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "http://substack.net"
+      },
+      "license": "MIT",
+      "engine": {
+        "node": ">=0.4"
+      },
+      "bugs": {
+        "url": "https://github.com/substack/node-shell-quote/issues"
+      },
+      "_id": "shell-quote@1.4.0",
+      "dist": {
+        "shasum": "0715683372d6a87dad8b098812ef72d24620c1b5",
+        "tarball": "https://registry.npmjs.org/shell-quote/-/shell-quote-1.4.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.7",
+      "_npmUser": {
+        "name": "substack",
+        "email": "mail@substack.net"
+      },
+      "maintainers": [
+        {
+          "name": "substack",
+          "email": "mail@substack.net"
+        }
+      ]
+    },
+    "1.4.1": {
+      "name": "shell-quote",
+      "version": "1.4.1",
+      "description": "quote and parse shell commands",
+      "main": "index.js",
+      "devDependencies": {
+        "tape": "~2.3.0"
+      },
+      "scripts": {
+        "test": "tape test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "http://github.com/substack/node-shell-quote.git"
+      },
+      "keywords": [
+        "shell",
+        "command",
+        "quote",
+        "parse"
+      ],
+      "testling": {
+        "files": "test/*.js",
+        "browsers": [
+          "ie/6..latest",
+          "firefox/3.5",
+          "firefox/15..latest",
+          "firefox/nightly",
+          "chrome/25..latest",
+          "chrome/canary",
+          "opera/10..latest",
+          "opera/next",
+          "safari/5.1..latest",
+          "ipad/6.0..latest",
+          "iphone/6.0..latest",
+          "android-browser/4.2..latest"
+        ]
+      },
+      "author": {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "http://substack.net"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "jsonify": "~0.0.0",
+        "array-filter": "~0.0.0",
+        "array-reduce": "~0.0.0",
+        "array-map": "~0.0.0"
+      },
+      "bugs": {
+        "url": "https://github.com/substack/node-shell-quote/issues"
+      },
+      "homepage": "https://github.com/substack/node-shell-quote",
+      "_id": "shell-quote@1.4.1",
+      "dist": {
+        "shasum": "ae18442b536a08c720239b079d2f228acbedee40",
+        "tarball": "https://registry.npmjs.org/shell-quote/-/shell-quote-1.4.1.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.21",
+      "_npmUser": {
+        "name": "substack",
+        "email": "mail@substack.net"
+      },
+      "maintainers": [
+        {
+          "name": "substack",
+          "email": "mail@substack.net"
+        }
+      ],
+      "directories": {}
+    },
+    "1.4.2": {
+      "name": "shell-quote",
+      "version": "1.4.2",
+      "description": "quote and parse shell commands",
+      "main": "index.js",
+      "devDependencies": {
+        "tape": "~2.3.0"
+      },
+      "scripts": {
+        "test": "tape test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "http://github.com/substack/node-shell-quote.git"
+      },
+      "keywords": [
+        "shell",
+        "command",
+        "quote",
+        "parse"
+      ],
+      "testling": {
+        "files": "test/*.js",
+        "browsers": [
+          "ie/6..latest",
+          "firefox/3.5",
+          "firefox/15..latest",
+          "firefox/nightly",
+          "chrome/25..latest",
+          "chrome/canary",
+          "opera/10..latest",
+          "opera/next",
+          "safari/5.1..latest",
+          "ipad/6.0..latest",
+          "iphone/6.0..latest",
+          "android-browser/4.2..latest"
+        ]
+      },
+      "author": {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "http://substack.net"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "jsonify": "~0.0.0",
+        "array-filter": "~0.0.0",
+        "array-reduce": "~0.0.0",
+        "array-map": "~0.0.0"
+      },
+      "gitHead": "cf747ca3969f4a4a27a7270f1f1cc7665751e8ec",
+      "bugs": {
+        "url": "https://github.com/substack/node-shell-quote/issues"
+      },
+      "homepage": "https://github.com/substack/node-shell-quote",
+      "_id": "shell-quote@1.4.2",
+      "_shasum": "f132a54f2030d69280d370d4974155f85f62f67b",
+      "_from": ".",
+      "_npmVersion": "1.4.15",
+      "_npmUser": {
+        "name": "substack",
+        "email": "mail@substack.net"
+      },
+      "maintainers": [
+        {
+          "name": "substack",
+          "email": "mail@substack.net"
+        }
+      ],
+      "dist": {
+        "shasum": "f132a54f2030d69280d370d4974155f85f62f67b",
+        "tarball": "https://registry.npmjs.org/shell-quote/-/shell-quote-1.4.2.tgz"
+      },
+      "directories": {}
+    },
+    "1.4.3": {
+      "name": "shell-quote",
+      "version": "1.4.3",
+      "description": "quote and parse shell commands",
+      "main": "index.js",
+      "devDependencies": {
+        "tape": "~2.3.0"
+      },
+      "scripts": {
+        "test": "tape test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "http://github.com/substack/node-shell-quote.git"
+      },
+      "keywords": [
+        "shell",
+        "command",
+        "quote",
+        "parse"
+      ],
+      "testling": {
+        "files": "test/*.js",
+        "browsers": [
+          "ie/6..latest",
+          "firefox/3.5",
+          "firefox/15..latest",
+          "firefox/nightly",
+          "chrome/25..latest",
+          "chrome/canary",
+          "opera/10..latest",
+          "opera/next",
+          "safari/5.1..latest",
+          "ipad/6.0..latest",
+          "iphone/6.0..latest",
+          "android-browser/4.2..latest"
+        ]
+      },
+      "author": {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "http://substack.net"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "jsonify": "~0.0.0",
+        "array-filter": "~0.0.0",
+        "array-reduce": "~0.0.0",
+        "array-map": "~0.0.0"
+      },
+      "gitHead": "88c9b82e446c32bf782461059d2cb8b147e037d8",
+      "bugs": {
+        "url": "https://github.com/substack/node-shell-quote/issues"
+      },
+      "homepage": "https://github.com/substack/node-shell-quote",
+      "_id": "shell-quote@1.4.3",
+      "_shasum": "952c44e0b1ed9013ef53958179cc643e8777466b",
+      "_from": ".",
+      "_npmVersion": "2.3.0",
+      "_nodeVersion": "0.12.0",
+      "_npmUser": {
+        "name": "substack",
+        "email": "mail@substack.net"
+      },
+      "maintainers": [
+        {
+          "name": "substack",
+          "email": "mail@substack.net"
+        }
+      ],
+      "dist": {
+        "shasum": "952c44e0b1ed9013ef53958179cc643e8777466b",
+        "tarball": "https://registry.npmjs.org/shell-quote/-/shell-quote-1.4.3.tgz"
+      },
+      "directories": {}
+    },
+    "1.5.0": {
+      "name": "shell-quote",
+      "version": "1.5.0",
+      "description": "quote and parse shell commands",
+      "main": "index.js",
+      "devDependencies": {
+        "tape": "~2.3.0"
+      },
+      "scripts": {
+        "test": "tape test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/substack/node-shell-quote.git"
+      },
+      "keywords": [
+        "shell",
+        "command",
+        "quote",
+        "parse"
+      ],
+      "testling": {
+        "files": "test/*.js",
+        "browsers": [
+          "ie/6..latest",
+          "firefox/3.5",
+          "firefox/15..latest",
+          "firefox/nightly",
+          "chrome/25..latest",
+          "chrome/canary",
+          "opera/10..latest",
+          "opera/next",
+          "safari/5.1..latest",
+          "ipad/6.0..latest",
+          "iphone/6.0..latest",
+          "android-browser/4.2..latest"
+        ]
+      },
+      "author": {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "http://substack.net"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "jsonify": "~0.0.0",
+        "array-filter": "~0.0.0",
+        "array-reduce": "~0.0.0",
+        "array-map": "~0.0.0"
+      },
+      "gitHead": "609735869389bd3fbc4bac9830f34fcea5cb6e46",
+      "bugs": {
+        "url": "https://github.com/substack/node-shell-quote/issues"
+      },
+      "homepage": "https://github.com/substack/node-shell-quote#readme",
+      "_id": "shell-quote@1.5.0",
+      "_shasum": "8c0a7e9f4713716c21e962a6ed5faf830dc77a88",
+      "_from": ".",
+      "_npmVersion": "3.7.1",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "substack",
+        "email": "substack@gmail.com"
+      },
+      "dist": {
+        "shasum": "8c0a7e9f4713716c21e962a6ed5faf830dc77a88",
+        "tarball": "https://registry.npmjs.org/shell-quote/-/shell-quote-1.5.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "substack",
+          "email": "mail@substack.net"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-13-west.internal.npmjs.com",
+        "tmp": "tmp/shell-quote-1.5.0.tgz_1458151108159_0.1286316504701972"
+      },
+      "directories": {}
+    },
+    "1.6.0": {
+      "name": "shell-quote",
+      "version": "1.6.0",
+      "description": "quote and parse shell commands",
+      "main": "index.js",
+      "devDependencies": {
+        "tape": "~2.3.0"
+      },
+      "scripts": {
+        "test": "tape test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/substack/node-shell-quote.git"
+      },
+      "keywords": [
+        "shell",
+        "command",
+        "quote",
+        "parse"
+      ],
+      "testling": {
+        "files": "test/*.js",
+        "browsers": [
+          "ie/6..latest",
+          "firefox/3.5",
+          "firefox/15..latest",
+          "firefox/nightly",
+          "chrome/25..latest",
+          "chrome/canary",
+          "opera/10..latest",
+          "opera/next",
+          "safari/5.1..latest",
+          "ipad/6.0..latest",
+          "iphone/6.0..latest",
+          "android-browser/4.2..latest"
+        ]
+      },
+      "author": {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "http://substack.net"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "jsonify": "~0.0.0",
+        "array-filter": "~0.0.0",
+        "array-reduce": "~0.0.0",
+        "array-map": "~0.0.0"
+      },
+      "gitHead": "88a5280d9c3f5d43fffa538ae9919d1ae579b56e",
+      "bugs": {
+        "url": "https://github.com/substack/node-shell-quote/issues"
+      },
+      "homepage": "https://github.com/substack/node-shell-quote#readme",
+      "_id": "shell-quote@1.6.0",
+      "_shasum": "c8906761e1730d1ef771c82df5423d595c1bb31d",
+      "_from": ".",
+      "_npmVersion": "3.7.1",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "substack",
+        "email": "substack@gmail.com"
+      },
+      "dist": {
+        "shasum": "c8906761e1730d1ef771c82df5423d595c1bb31d",
+        "tarball": "https://registry.npmjs.org/shell-quote/-/shell-quote-1.6.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "karissa",
+          "email": "krmckelv@gmail.com"
+        },
+        {
+          "name": "substack",
+          "email": "substack@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/shell-quote-1.6.0.tgz_1461477204944_0.5755356843583286"
+      },
+      "directories": {}
+    },
+    "1.6.1": {
+      "name": "shell-quote",
+      "version": "1.6.1",
+      "description": "quote and parse shell commands",
+      "main": "index.js",
+      "devDependencies": {
+        "tape": "~2.3.0"
+      },
+      "scripts": {
+        "test": "tape test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/substack/node-shell-quote.git"
+      },
+      "keywords": [
+        "shell",
+        "command",
+        "quote",
+        "parse"
+      ],
+      "testling": {
+        "files": "test/*.js",
+        "browsers": [
+          "ie/6..latest",
+          "firefox/3.5",
+          "firefox/15..latest",
+          "firefox/nightly",
+          "chrome/25..latest",
+          "chrome/canary",
+          "opera/10..latest",
+          "opera/next",
+          "safari/5.1..latest",
+          "ipad/6.0..latest",
+          "iphone/6.0..latest",
+          "android-browser/4.2..latest"
+        ]
+      },
+      "author": {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "http://substack.net"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "jsonify": "~0.0.0",
+        "array-filter": "~0.0.0",
+        "array-reduce": "~0.0.0",
+        "array-map": "~0.0.0"
+      },
+      "gitHead": "09935581cd2b300d74a65bda3b1cbeb52779dd16",
+      "bugs": {
+        "url": "https://github.com/substack/node-shell-quote/issues"
+      },
+      "homepage": "https://github.com/substack/node-shell-quote#readme",
+      "_id": "shell-quote@1.6.1",
+      "_shasum": "f4781949cce402697127430ea3b3c5476f481767",
+      "_from": ".",
+      "_npmVersion": "3.7.1",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "substack",
+        "email": "substack@gmail.com"
+      },
+      "dist": {
+        "shasum": "f4781949cce402697127430ea3b3c5476f481767",
+        "tarball": "https://registry.npmjs.org/shell-quote/-/shell-quote-1.6.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "karissa",
+          "email": "krmckelv@gmail.com"
+        },
+        {
+          "name": "substack",
+          "email": "substack@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/shell-quote-1.6.1.tgz_1466196190331_0.3792361367959529"
+      },
+      "directories": {}
+    },
+    "1.6.2": {
+      "name": "shell-quote",
+      "version": "1.6.2",
+      "description": "quote and parse shell commands",
+      "main": "index.js",
+      "devDependencies": {
+        "tape": "~2.3.0"
+      },
+      "scripts": {
+        "test": "tape test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/substack/node-shell-quote.git"
+      },
+      "keywords": [
+        "shell",
+        "command",
+        "quote",
+        "parse"
+      ],
+      "testling": {
+        "files": "test/*.js",
+        "browsers": [
+          "ie/6..latest",
+          "firefox/3.5",
+          "firefox/15..latest",
+          "firefox/nightly",
+          "chrome/25..latest",
+          "chrome/canary",
+          "opera/10..latest",
+          "opera/next",
+          "safari/5.1..latest",
+          "ipad/6.0..latest",
+          "iphone/6.0..latest",
+          "android-browser/4.2..latest"
+        ]
+      },
+      "author": {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "http://substack.net"
+      },
+      "license": "MIT",
+      "dependencies": {},
+      "gitHead": "fd9e3da9fd9b275dca0eefdb8062306e76528a97",
+      "bugs": {
+        "url": "https://github.com/substack/node-shell-quote/issues"
+      },
+      "homepage": "https://github.com/substack/node-shell-quote#readme",
+      "_id": "shell-quote@1.6.2",
+      "_nodeVersion": "12.7.0",
+      "_npmVersion": "6.10.3",
+      "dist": {
+        "integrity": "sha512-k3v2XatA74VlaEKnu/OCXOzn7omw3BahGd/zEj7rhmdOAtkYW5jDE/5xvXsDd2wgkhcqr6eytrTuzVEa61GYzQ==",
+        "shasum": "9a9d1df129ab82a16cb57c6ee4d191c7c87793c9",
+        "tarball": "https://registry.npmjs.org/shell-quote/-/shell-quote-1.6.2.tgz",
+        "fileCount": 17,
+        "unpackedSize": 19440,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdUmOoCRA9TVsSAnZWagAA7OcP/3JKEaf+S7NgKE00W14e\nA/UpLwahCWXWz9C/TzYM1ImSBQUMoQwCcr80PeU2Ozkq8zvciDwR/1A55xA2\nOVbDiervZ4AzeJVQuTNfCcE+slFovX324sosPk+EAQ7za4j1gHF8r/slyGoF\nYrIhXY0FViNK0Zav2kBAiMeEG92uFPVWoJptpXP3ErTendXeI/W5F55uWYkN\n02Ej3uJ2JWDo5QI4hZNwHg4x7/LmrKjS3q1DR7sstcM7HrS4GLDNsClTWGnr\nVeLE9kQdA8AJpM3byTDWkCnNwPKsr3U2T3QORcx+dB3hS9TInWDmLWaEfw6e\nZz3tPC10mcmmUrQfEx2iJyNy4czQDAPRuqB/ctVBxKXth9PG7WpwkdfycJaZ\nCLIFXaVgMganMtn9Oqs6ctS8uxA2TvTxPU5m/YRU/dBr041myFuqdF6YW91K\nEb5AGrEiQKsMksUmjW5qaMreHbNq8moSttSit7zViPUGVdBaZUgB6KLn503x\nHJx+REXah0QSto7Vo752mwdS4y6/lZQ2iFpPWr5SyW88DFMh1WdOfhmRWlT9\npH1F3FUU/DL4/YQXb8m/n6dbZw515/PQRWvyj4r9rwKfd3MrQhKgJvXWDDIV\n0I78b3xSwZnRSUlxFE7PkwxRVD2XcZieHol1u9o6kYI9K4ONCFjMXwpmZIcq\n4AlL\r\n=cMDg\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "renee@kooi.me",
+          "name": "goto-bus-stop"
+        },
+        {
+          "email": "jacob.im.waddell@gmail.com",
+          "name": "jiwaddell"
+        },
+        {
+          "email": "krmckelv@gmail.com",
+          "name": "karissa"
+        },
+        {
+          "email": "substack@gmail.com",
+          "name": "substack"
+        }
+      ],
+      "_npmUser": {
+        "name": "goto-bus-stop",
+        "email": "renee@kooi.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/shell-quote_1.6.2_1565680552220_0.6823407565229571"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.6.3": {
+      "name": "shell-quote",
+      "version": "1.6.3",
+      "description": "quote and parse shell commands",
+      "main": "index.js",
+      "devDependencies": {
+        "tape": "4"
+      },
+      "scripts": {
+        "test": "tape test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/substack/node-shell-quote.git"
+      },
+      "keywords": [
+        "shell",
+        "command",
+        "quote",
+        "parse"
+      ],
+      "testling": {
+        "files": "test/*.js",
+        "browsers": [
+          "ie/6..latest",
+          "firefox/3.5",
+          "firefox/15..latest",
+          "firefox/nightly",
+          "chrome/25..latest",
+          "chrome/canary",
+          "opera/10..latest",
+          "opera/next",
+          "safari/5.1..latest",
+          "ipad/6.0..latest",
+          "iphone/6.0..latest",
+          "android-browser/4.2..latest"
+        ]
+      },
+      "author": {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "http://substack.net"
+      },
+      "license": "MIT",
+      "dependencies": {},
+      "gitHead": "c90d2c69b74865f7018a18e8c847d1fac4efcd28",
+      "bugs": {
+        "url": "https://github.com/substack/node-shell-quote/issues"
+      },
+      "homepage": "https://github.com/substack/node-shell-quote#readme",
+      "_id": "shell-quote@1.6.3",
+      "_nodeVersion": "12.7.0",
+      "_npmVersion": "6.10.3",
+      "dist": {
+        "integrity": "sha512-KvITSOPOP542Mv4lS5Cx6/qgya20Hyk+JJUdfRfikzyV6iKPszdz5TrssURXRghmi6Z9y9gATRvxJ69zD7wydQ==",
+        "shasum": "54bd93b5964f6a451fe8dbb8668416d40e3501e4",
+        "tarball": "https://registry.npmjs.org/shell-quote/-/shell-quote-1.6.3.tgz",
+        "fileCount": 17,
+        "unpackedSize": 19834,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdUmm0CRA9TVsSAnZWagAA3qQP/iCTt/DptBA10Glxy9my\n3IqT3vLHDTE+mpE8SNG2OO1vUcGNHQ1Trr8509rUSZBHF70esu0bbZz+cFOF\n+Ftwsq3lW3/B16N+mHwqKbCw5Q4Si0+ULtmsTvnrih0F4xmP39XOAt7SMNf9\nvRgoIdB8NwfZ6sUO/6ZYEMMU2jZkVqAQQ7HiSaDli6/eIgviHgYcfQLbZ5vF\nTM2CuLEgHbrc/VjN9SA2BL2p/p1dRDidrrW7xVnua+fJfe/O8mnCVaaP5s3X\ntrFI5YMLfoRJHYJYEaRxEAK8wV+G55KxuSj4C762Xr6vLiprp0xrJ2uMUvRy\n2Hidp2hRRgy50r+S6rYr4EnREdE+ZVt2MiexONVEIFSsbb5T2tKY79wc3bSB\nCjoM1JwAPJHyPKozibb7svvZ/T6xr8sVlOyjkSjs8X60yxt1H+1HFVND+Wkv\nko3eQB9Cinicoh/Fzg8t2pZFP0TTZUay6vyD5EVAQdz9X6ui8yyFpx6c23aG\nN5mQEAAMJIO8rb+jc3uj/xWx3+h+sSSbIbYcluhjMZG8fGRN8WP1rJZEkhtO\nGTvhvrDDM0fj6BeHetcBu03o0uMATqvRtJ4XPBX+9ecDRZTFZh0mA6Pi8tLU\nAaH4pp1hyWXPtWWtuUZwVCVIfrXLTjV/T4ws4EnY6PRs78TYBww+1sbUWNKc\nPVWx\r\n=jo4q\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "renee@kooi.me",
+          "name": "goto-bus-stop"
+        },
+        {
+          "email": "jacob.im.waddell@gmail.com",
+          "name": "jiwaddell"
+        },
+        {
+          "email": "krmckelv@gmail.com",
+          "name": "karissa"
+        },
+        {
+          "email": "substack@gmail.com",
+          "name": "substack"
+        }
+      ],
+      "_npmUser": {
+        "name": "goto-bus-stop",
+        "email": "renee@kooi.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/shell-quote_1.6.3_1565682100274_0.23050883986074888"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.7.0": {
+      "name": "shell-quote",
+      "description": "quote and parse shell commands",
+      "version": "1.7.0",
+      "author": {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "http://substack.net"
+      },
+      "bugs": {
+        "url": "https://github.com/substack/node-shell-quote/issues"
+      },
+      "devDependencies": {
+        "tape": "4"
+      },
+      "homepage": "https://github.com/substack/node-shell-quote",
+      "keywords": [
+        "command",
+        "parse",
+        "quote",
+        "shell"
+      ],
+      "license": "MIT",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/substack/node-shell-quote.git"
+      },
+      "scripts": {
+        "test": "tape test/*.js"
+      },
+      "gitHead": "09ed4dfb9fe315b4a416e36e0c39bda87975494e",
+      "_id": "shell-quote@1.7.0",
+      "_nodeVersion": "12.7.0",
+      "_npmVersion": "6.10.3",
+      "dist": {
+        "integrity": "sha512-+zdNWhJbPD3h5jR1LtZwVH+SpSBEzUhHUCHgAZFDKLGvIMR+PnJdsIx6ox7l1WYDT7s2mtjBiahyFAIT/+1ybw==",
+        "shasum": "42d2e1d6d2438ae15b4812a626668f5708213394",
+        "tarball": "https://registry.npmjs.org/shell-quote/-/shell-quote-1.7.0.tgz",
+        "fileCount": 17,
+        "unpackedSize": 20421,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdUmwvCRA9TVsSAnZWagAAR4kP/AuOIIs9xzwRabxjiprr\noZtqepYEwxYNaGETn9Fi5mV6nKVwVOIIuFNlQJdZLIR7gM0s/d5gAZsc/41H\nmsLNRyjdnrGOfXA/2CyaWyilZb0JrjTQbtx7PlPxqCRhBqRVQAGNrpeO51Cj\nV/uUxBklfDKpVCKhM6ULFCPTNDDX/L4Se8uWqgGDXGCNKltcuEFc5JtvVMpC\ngq4Ect43szPf0QSuh5Eo2imDMZ6PiiVwThPHxJ/17mirU0d7PbCYomf3J4P3\nENC2kGJyzy4/JRkU80ikQYMydnWId33kmZG32vtm0XSmqyEUoZB+3npWYYy3\nVailw0ZSFH8LkWrO1bXIpEypYBgSLdjKU6c+wIQQHHWOpZ6w2s9NsRCEobnd\nnVWXLpz1lnkVUTcinYN/saNkCQ6/iauypuFwI4W2o+mVt3lq2XcKQ9QFgNUe\nWZKSOfZuvyrK/dd14nC37hecRcLzTerSkWSJyRTDNeyxPZ0EUjCWwS6LMSv7\n0ZJMKX/eEDH1NzR+mM5wCB+WXBKonr5SUyQ2bkLNvabptyopDyrU/XZpzB9x\nJ3oQzLJTqpKwhQu6OFnNCBYGfp0NGmb3ZXK//KPWLcXGIFDLfQgMrDE5/tOL\ns6/XRlMcRvNFR1e+v3VSUGjK3aeCEU6kKYs3YWu4G323z+hG9I3a3sLtyhso\nz1vT\r\n=rPzW\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "renee@kooi.me",
+          "name": "goto-bus-stop"
+        },
+        {
+          "email": "jacob.im.waddell@gmail.com",
+          "name": "jiwaddell"
+        },
+        {
+          "email": "krmckelv@gmail.com",
+          "name": "karissa"
+        },
+        {
+          "email": "substack@gmail.com",
+          "name": "substack"
+        }
+      ],
+      "_npmUser": {
+        "name": "goto-bus-stop",
+        "email": "renee@kooi.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/shell-quote_1.7.0_1565682734654_0.9171863951542019"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.7.1": {
+      "name": "shell-quote",
+      "description": "quote and parse shell commands",
+      "version": "1.7.1",
+      "author": {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "http://substack.net"
+      },
+      "bugs": {
+        "url": "https://github.com/substack/node-shell-quote/issues"
+      },
+      "devDependencies": {
+        "tape": "4"
+      },
+      "homepage": "https://github.com/substack/node-shell-quote",
+      "keywords": [
+        "command",
+        "parse",
+        "quote",
+        "shell"
+      ],
+      "license": "MIT",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/substack/node-shell-quote.git"
+      },
+      "scripts": {
+        "test": "tape test/*.js"
+      },
+      "gitHead": "c2950fba942da2d2e17a8fb5a4eaf8f8c72d1ab3",
+      "_id": "shell-quote@1.7.1",
+      "_nodeVersion": "12.7.0",
+      "_npmVersion": "6.10.3",
+      "dist": {
+        "integrity": "sha512-2kUqeAGnMAu6YrTPX4E3LfxacH9gKljzVjlkUeSqY0soGwK4KLl7TURXCem712tkhBCeeaFP9QK4dKn88s3Icg==",
+        "shasum": "3161d969886fb14f9140c65245a5dd19b6f0b06b",
+        "tarball": "https://registry.npmjs.org/shell-quote/-/shell-quote-1.7.1.tgz",
+        "fileCount": 17,
+        "unpackedSize": 20782,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdUryKCRA9TVsSAnZWagAAMxwP/iETNctxXkNLnj2hWnJF\nGhqLxFTXcha7gKDSMyuKGTY2Sf9du4ku2SB4Gm5Ubxw9ojb98Fgaab0PWW2t\nS21a05Zr8MWjar18LWcFSUKli/cCYzGNCwj0OJ259W1xDV3Ai2hJnuy+RFj7\nzSPFMeVtEZx1m+nKb8FR1T/VZ8pV/1eQeDMjCSvC2WU4Dv07R8xpi7RSvyVS\nVnoCZxaTcWBemcWqg3iZIWidfDzaxLtCO+6QpS5sErjTvido/EZqpjRPIy8y\nLRNL1536Q4IUdGNKCXggmyZ1JZHr1/R2c/oHOD3NzlT16dwwN5AzcUqoXhVk\nPKZuREChjP2v7OIqEY4wEMXrMPobg6pWU49x9Kzf+Tw7ggn0W7PB4zq+EzqU\ni6edBdZE/I0vpzFbjDhXcyqUM6ixUBcPXN5buS3yeTc6TeUOYdWlXhurNcwz\nLcte1HK4IdT1GpNEkU+8RIibfRdGLOUcZM/fCTJ6G3h7ZSE+RUUz0vyCZox+\nm7sDEfS5N5/xxsGpfF8eKUhbRQ5eFa1iOM6ZL1RU945yqlCsVCWDI7suKt+Z\nyAINWzAEwX1qSkl+ITObsz2a0P8Xu5DHwm114NYu4EjZFNaWNWLX0xz4CMw5\nhmifBXQ64zYcbdt13dfrx9F8FP5ZcJrWncHZ9sqrY0zL5KSY4mj/11jrSkSu\n0YWW\r\n=s6sP\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "renee@kooi.me",
+          "name": "goto-bus-stop"
+        },
+        {
+          "email": "jacob.im.waddell@gmail.com",
+          "name": "jiwaddell"
+        },
+        {
+          "email": "krmckelv@gmail.com",
+          "name": "karissa"
+        },
+        {
+          "email": "substack@gmail.com",
+          "name": "substack"
+        }
+      ],
+      "_npmUser": {
+        "name": "goto-bus-stop",
+        "email": "renee@kooi.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/shell-quote_1.7.1_1565703305203_0.4317010914374828"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.7.2": {
+      "name": "shell-quote",
+      "description": "quote and parse shell commands",
+      "version": "1.7.2",
+      "author": {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "http://substack.net"
+      },
+      "bugs": {
+        "url": "https://github.com/substack/node-shell-quote/issues"
+      },
+      "devDependencies": {
+        "tape": "4"
+      },
+      "homepage": "https://github.com/substack/node-shell-quote",
+      "keywords": [
+        "command",
+        "parse",
+        "quote",
+        "shell"
+      ],
+      "license": "MIT",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/substack/node-shell-quote.git"
+      },
+      "scripts": {
+        "test": "tape test/*.js"
+      },
+      "gitHead": "89a1993809eb7620ec985c3b6869c9079287c35a",
+      "_id": "shell-quote@1.7.2",
+      "_nodeVersion": "12.9.1",
+      "_npmVersion": "6.11.2",
+      "dist": {
+        "integrity": "sha512-mRz/m/JVscCrkMyPqHc/bczi3OQHkLTqXHEFu0zDhK/qfv3UcOA4SVmRCLmos4bhjr9ekVQubj/R7waKapmiQg==",
+        "shasum": "67a7d02c76c9da24f99d20808fcaded0e0e04be2",
+        "tarball": "https://registry.npmjs.org/shell-quote/-/shell-quote-1.7.2.tgz",
+        "fileCount": 17,
+        "unpackedSize": 21011,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJda3dhCRA9TVsSAnZWagAAd1oP/1KDx7zAYmIbX+77VOUk\nMfZE9PB6hkXNYCvmevMM+lcZeIvujvOIqdwrWZ/PgIEfw98yLPYNnHwf+gLH\nOFbMIiYvkC+hHNfHBxfqZMYc3W1733jPkHFclm0313C8+RyoWN6ZTkD24j34\nMRWU+oAHhjjVVxSNUfoOhIOy/7avNpAYyegBx21++kGeGj2GovUG2g9k6TcQ\nAaSWC48m08bbJFcrn1gk91ayrY5Cr+P0Gj1DidtpQXZmDc6yuxNRwMkUsx6Q\np/4VSo5HhPIkRXIPaD6cmjgacKSqwRwYudMIC3gVBNVj+UnHjsEkYEhnxKhO\nXb6qZZSJkd/gQooRDzv3tWBd4grC2LS731aJB91Qw1MW/v9/IamvYUZvxicT\nmj8yuJkk46Q5n0dlHk9iJfBJC3cqdD6Mwv6hnwpmpRT6gHukno0CBoBeFYCw\nUvtLz7D+xXNqrg4iLM18u01CM4jF77bqAi2zOAvdqtxXjObvKGJxo2aE0u5m\nscCweLnnKRNCfiD/SYLku7EW8Ya6kMuJSWjiIBeElbDFcSW11NfIUw0wb2XU\nQpgKw0n8AfM1JyF6Qrol3run7ObPf2javh+iLAOIoZltVOCH1qBbCesF4Aiq\nbHofviHIRm9KVyn2PDoBDC1W/agvlnzT3NH5qFf3TfR7qil6e8+gUzNEvKXg\niShx\r\n=cFGz\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "renee@kooi.me",
+          "name": "goto-bus-stop"
+        },
+        {
+          "email": "jacob.im.waddell@gmail.com",
+          "name": "jiwaddell"
+        },
+        {
+          "email": "krmckelv@gmail.com",
+          "name": "karissa"
+        },
+        {
+          "email": "substack@gmail.com",
+          "name": "substack"
+        }
+      ],
+      "_npmUser": {
+        "name": "goto-bus-stop",
+        "email": "renee@kooi.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/shell-quote_1.7.2_1567324000519_0.9972134593231239"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# shell-quote\n\nParse and quote shell commands.\n\n# example\n\n## quote\n\n``` js\nvar quote = require('shell-quote').quote;\nvar s = quote([ 'a', 'b c d', '$f', '\"g\"' ]);\nconsole.log(s);\n```\n\noutput\n\n```\na 'b c d' \\$f '\"g\"'\n```\n\n## parse\n\n``` js\nvar parse = require('shell-quote').parse;\nvar xs = parse('a \"b c\" \\\\$def \\'it\\\\\\'s great\\'');\nconsole.dir(xs);\n```\n\noutput\n\n```\n[ 'a', 'b c', '\\\\$def', 'it\\'s great' ]\n```\n\n## parse with an environment variable\n\n``` js\nvar parse = require('shell-quote').parse;\nvar xs = parse('beep --boop=\"$PWD\"', { PWD: '/home/robot' });\nconsole.dir(xs);\n```\n\noutput\n\n```\n[ 'beep', '--boop=/home/robot' ]\n```\n\n## parse with custom escape charcter\n\n``` js\nvar parse = require('shell-quote').parse;\nvar xs = parse('beep --boop=\"$PWD\"', { PWD: '/home/robot' }, { escape: '^' });\nconsole.dir(xs);\n```\n\noutput\n\n```\n[ 'beep', '--boop=/home/robot' ]\n```\n\n## parsing shell operators\n\n``` js\nvar parse = require('shell-quote').parse;\nvar xs = parse('beep || boop > /byte');\nconsole.dir(xs);\n```\n\noutput:\n\n```\n[ 'beep', { op: '||' }, 'boop', { op: '>' }, '/byte' ]\n```\n\n## parsing shell comment\n\n``` js\nvar parse = require('shell-quote').parse;\nvar xs = parse('beep > boop # > kaboom');\nconsole.dir(xs);\n```\n\noutput:\n\n```\n[ 'beep', { op: '>' }, 'boop', { comment: '> kaboom' } ]\n```\n\n# methods\n\n``` js\nvar quote = require('shell-quote').quote;\nvar parse = require('shell-quote').parse;\n```\n\n## quote(args)\n\nReturn a quoted string for the array `args` suitable for using in shell\ncommands.\n\n## parse(cmd, env={})\n\nReturn an array of arguments from the quoted string `cmd`.\n\nInterpolate embedded bash-style `$VARNAME` and `${VARNAME}` variables with\nthe `env` object which like bash will replace undefined variables with `\"\"`.\n\n`env` is usually an object but it can also be a function to perform lookups.\nWhen `env(key)` returns a string, its result will be output just like `env[key]`\nwould. When `env(key)` returns an object, it will be inserted into the result\narray like the operator objects.\n\nWhen a bash operator is encountered, the element in the array with be an object\nwith an `\"op\"` key set to the operator string. For example:\n\n```\n'beep || boop > /byte'\n```\n\nparses as:\n\n```\n[ 'beep', { op: '||' }, 'boop', { op: '>' }, '/byte' ]\n```\n\n# install\n\nWith [npm](http://npmjs.org) do:\n\n```\nnpm install shell-quote\n```\n\n# license\n\nMIT\n",
+  "maintainers": [
+    {
+      "email": "renee@kooi.me",
+      "name": "goto-bus-stop"
+    },
+    {
+      "email": "jacob.im.waddell@gmail.com",
+      "name": "jiwaddell"
+    },
+    {
+      "email": "krmckelv@gmail.com",
+      "name": "karissa"
+    },
+    {
+      "email": "substack@gmail.com",
+      "name": "substack"
+    }
+  ],
+  "time": {
+    "modified": "2019-09-01T07:46:43.146Z",
+    "created": "2012-05-18T10:42:05.440Z",
+    "0.0.0": "2012-05-18T10:42:06.889Z",
+    "0.0.1": "2012-05-18T18:25:42.901Z",
+    "0.1.0": "2013-04-15T04:36:33.462Z",
+    "0.1.1": "2013-04-17T08:06:42.055Z",
+    "1.0.0": "2013-05-13T10:27:10.851Z",
+    "1.1.0": "2013-05-13T10:35:28.131Z",
+    "1.2.0": "2013-05-13T12:10:00.722Z",
+    "1.3.0": "2013-05-13T13:42:12.633Z",
+    "1.3.1": "2013-05-13T13:48:27.591Z",
+    "1.3.2": "2013-06-24T11:50:12.621Z",
+    "1.3.3": "2013-06-24T12:01:40.000Z",
+    "1.4.0": "2013-10-18T01:40:45.325Z",
+    "1.4.1": "2013-12-25T01:00:11.788Z",
+    "1.4.2": "2014-07-20T21:27:22.803Z",
+    "1.4.3": "2015-03-08T03:47:14.368Z",
+    "1.5.0": "2016-03-16T17:58:28.755Z",
+    "1.6.0": "2016-04-24T05:53:28.112Z",
+    "1.6.1": "2016-06-17T20:43:12.824Z",
+    "1.6.2": "2019-08-13T07:15:52.345Z",
+    "1.6.3": "2019-08-13T07:41:40.441Z",
+    "1.7.0": "2019-08-13T07:52:14.822Z",
+    "1.7.1": "2019-08-13T13:35:05.409Z",
+    "1.7.2": "2019-09-01T07:46:40.669Z"
+  },
+  "author": {
+    "name": "James Halliday",
+    "email": "mail@substack.net",
+    "url": "http://substack.net"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/substack/node-shell-quote.git"
+  },
+  "users": {
+    "ralucas": true,
+    "mikedamage": true,
+    "dantman": true,
+    "simplyianm": true,
+    "chirayuk": true,
+    "magomogo": true
+  },
+  "homepage": "https://github.com/substack/node-shell-quote",
+  "keywords": [
+    "command",
+    "parse",
+    "quote",
+    "shell"
+  ],
+  "bugs": {
+    "url": "https://github.com/substack/node-shell-quote/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.markdown"
+}

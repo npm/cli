@@ -1,0 +1,3358 @@
+{
+  "_id": "psl",
+  "_rev": "56-1dc5478bf9be3040f795eb218dcb3dfe",
+  "name": "psl",
+  "description": "Domain name parser based on the Public Suffix List",
+  "dist-tags": {
+    "latest": "1.8.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "psl",
+      "version": "1.0.0",
+      "description": "Domain name parser based on the Public Suffix List",
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:wrangr/psl.git"
+      },
+      "main": "index.js",
+      "scripts": {
+        "test": "grunt test --verbose"
+      },
+      "keywords": [
+        "publicsuffix",
+        "publicsuffixlist"
+      ],
+      "author": {
+        "name": "Lupo Montero"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "JSONStream": "^0.9.0",
+        "event-stream": "^3.1.7",
+        "grunt": "^0.4.5",
+        "grunt-browserify": "^3.0.1",
+        "grunt-contrib-clean": "^0.6.0",
+        "grunt-contrib-compress": "^0.12.0",
+        "grunt-contrib-jshint": "^0.10.0",
+        "grunt-contrib-uglify": "^0.6.0",
+        "grunt-contrib-watch": "^0.6.1",
+        "grunt-shell": "^1.1.1",
+        "tape": "^3.0.0"
+      },
+      "testling": {
+        "files": "test/test-psl.js",
+        "browsers": [
+          "ie/6..latest",
+          "chrome/22..latest",
+          "firefox/16..latest",
+          "safari/latest",
+          "opera/11.0..latest",
+          "iphone/6",
+          "ipad/6",
+          "android-browser/latest"
+        ]
+      },
+      "gitHead": "faae4be6ab51dea42d70258dec84d02a6c903d0c",
+      "bugs": {
+        "url": "https://github.com/wrangr/psl/issues"
+      },
+      "homepage": "https://github.com/wrangr/psl",
+      "_id": "psl@1.0.0",
+      "_shasum": "c8aa198a2150e24424ad4410ec55e68d8409df6d",
+      "_from": ".",
+      "_npmVersion": "2.1.3",
+      "_nodeVersion": "0.10.32",
+      "_npmUser": {
+        "name": "lupomontero",
+        "email": "lupo@e-noise.com"
+      },
+      "maintainers": [
+        {
+          "name": "lupomontero",
+          "email": "lupo@e-noise.com"
+        }
+      ],
+      "dist": {
+        "shasum": "c8aa198a2150e24424ad4410ec55e68d8409df6d",
+        "tarball": "https://registry.npmjs.org/psl/-/psl-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "psl",
+      "version": "1.0.1",
+      "description": "Domain name parser based on the Public Suffix List",
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:wrangr/psl.git"
+      },
+      "main": "index.js",
+      "scripts": {
+        "test": "grunt test --verbose"
+      },
+      "keywords": [
+        "publicsuffix",
+        "publicsuffixlist"
+      ],
+      "author": {
+        "name": "Lupo Montero"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "JSONStream": "^0.9.0",
+        "coverify": "^1.0.7",
+        "derequire": "^1.2.0",
+        "event-stream": "^3.1.7",
+        "grunt": "^0.4.5",
+        "grunt-browserify": "^3.0.1",
+        "grunt-contrib-clean": "^0.6.0",
+        "grunt-contrib-compress": "^0.12.0",
+        "grunt-contrib-jshint": "^0.10.0",
+        "grunt-contrib-uglify": "^0.6.0",
+        "grunt-contrib-watch": "^0.6.1",
+        "grunt-shell": "^1.1.1",
+        "phantomjs": "^1.9.10",
+        "tape": "^3.0.0",
+        "zuul": "^1.11.2"
+      },
+      "gitHead": "4c20ebae0493902838b43d2ef400e44648b3ebfd",
+      "bugs": {
+        "url": "https://github.com/wrangr/psl/issues"
+      },
+      "homepage": "https://github.com/wrangr/psl",
+      "_id": "psl@1.0.1",
+      "_shasum": "5daf63da7c284890ac87918e3987fa1e044cff5b",
+      "_from": ".",
+      "_npmVersion": "2.1.3",
+      "_nodeVersion": "0.10.32",
+      "_npmUser": {
+        "name": "lupomontero",
+        "email": "lupo@e-noise.com"
+      },
+      "maintainers": [
+        {
+          "name": "lupomontero",
+          "email": "lupo@e-noise.com"
+        }
+      ],
+      "dist": {
+        "shasum": "5daf63da7c284890ac87918e3987fa1e044cff5b",
+        "tarball": "https://registry.npmjs.org/psl/-/psl-1.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "psl",
+      "version": "1.0.2",
+      "description": "Domain name parser based on the Public Suffix List",
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:wrangr/psl.git"
+      },
+      "main": "index.js",
+      "scripts": {
+        "test": "grunt test --verbose"
+      },
+      "keywords": [
+        "publicsuffix",
+        "publicsuffixlist"
+      ],
+      "author": {
+        "name": "Lupo Montero"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "JSONStream": "^0.9.0",
+        "coverify": "^1.0.7",
+        "derequire": "^1.2.0",
+        "event-stream": "^3.1.7",
+        "grunt": "^0.4.5",
+        "grunt-browserify": "^3.0.1",
+        "grunt-contrib-clean": "^0.6.0",
+        "grunt-contrib-compress": "^0.12.0",
+        "grunt-contrib-jshint": "^0.10.0",
+        "grunt-contrib-uglify": "^0.6.0",
+        "grunt-contrib-watch": "^0.6.1",
+        "grunt-shell": "^1.1.1",
+        "phantomjs": "^1.9.10",
+        "tape": "^3.0.0",
+        "zuul": "^1.11.2"
+      },
+      "gitHead": "5c94336a4f7993261f46a17de94e37a459e337db",
+      "bugs": {
+        "url": "https://github.com/wrangr/psl/issues"
+      },
+      "homepage": "https://github.com/wrangr/psl",
+      "_id": "psl@1.0.2",
+      "_shasum": "f6be8a1c6e04aca52198ed8edae3f7ffa4f177f9",
+      "_from": ".",
+      "_npmVersion": "2.1.3",
+      "_nodeVersion": "0.10.32",
+      "_npmUser": {
+        "name": "lupomontero",
+        "email": "lupo@e-noise.com"
+      },
+      "maintainers": [
+        {
+          "name": "lupomontero",
+          "email": "lupo@e-noise.com"
+        }
+      ],
+      "dist": {
+        "shasum": "f6be8a1c6e04aca52198ed8edae3f7ffa4f177f9",
+        "tarball": "https://registry.npmjs.org/psl/-/psl-1.0.2.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "psl",
+      "version": "1.1.0",
+      "description": "Domain name parser based on the Public Suffix List",
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:wrangr/psl.git"
+      },
+      "main": "index.js",
+      "scripts": {
+        "test": "grunt test --verbose"
+      },
+      "keywords": [
+        "publicsuffix",
+        "publicsuffixlist"
+      ],
+      "author": {
+        "name": "Lupo Montero"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "JSONStream": "^0.9.0",
+        "coverify": "^1.0.7",
+        "derequire": "^1.2.0",
+        "event-stream": "^3.1.7",
+        "grunt": "^0.4.5",
+        "grunt-browserify": "^3.0.1",
+        "grunt-contrib-clean": "^0.6.0",
+        "grunt-contrib-compress": "^0.12.0",
+        "grunt-contrib-jshint": "^0.10.0",
+        "grunt-contrib-uglify": "^0.6.0",
+        "grunt-contrib-watch": "^0.6.1",
+        "grunt-shell": "^1.1.1",
+        "phantomjs": "1.9.10",
+        "tape": "^3.0.0",
+        "zuul": "^1.11.2"
+      },
+      "gitHead": "e8ed29be40e42d1edc9dab7499df316d1a082752",
+      "bugs": {
+        "url": "https://github.com/wrangr/psl/issues"
+      },
+      "homepage": "https://github.com/wrangr/psl",
+      "_id": "psl@1.1.0",
+      "_shasum": "3fd3eff8b30360060613ebb57424c3eecff436e6",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "lupomontero",
+        "email": "lupo@e-noise.com"
+      },
+      "maintainers": [
+        {
+          "name": "lupomontero",
+          "email": "lupo@e-noise.com"
+        }
+      ],
+      "dist": {
+        "shasum": "3fd3eff8b30360060613ebb57424c3eecff436e6",
+        "tarball": "https://registry.npmjs.org/psl/-/psl-1.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.1": {
+      "name": "psl",
+      "version": "1.1.1",
+      "description": "Domain name parser based on the Public Suffix List",
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:wrangr/psl.git"
+      },
+      "main": "index.js",
+      "scripts": {
+        "test": "grunt test --verbose"
+      },
+      "keywords": [
+        "publicsuffix",
+        "publicsuffixlist"
+      ],
+      "author": {
+        "name": "Lupo Montero"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "JSONStream": "^0.10.0",
+        "coverify": "^1.0.7",
+        "derequire": "^1.2.0",
+        "event-stream": "^3.1.7",
+        "grunt": "^0.4.5",
+        "grunt-browserify": "^3.0.1",
+        "grunt-contrib-clean": "^0.6.0",
+        "grunt-contrib-compress": "^0.12.0",
+        "grunt-contrib-jshint": "^0.10.0",
+        "grunt-contrib-uglify": "^0.6.0",
+        "grunt-contrib-watch": "^0.6.1",
+        "grunt-shell": "^1.1.1",
+        "phantomjs": "^1.9.13",
+        "tape": "^3.0.0",
+        "zuul": "^1.11.2"
+      },
+      "dependencies": {
+        "request": "^2.51.0"
+      },
+      "gitHead": "383f997c17edccdddec6754ac3fc50a17f102158",
+      "bugs": {
+        "url": "https://github.com/wrangr/psl/issues"
+      },
+      "homepage": "https://github.com/wrangr/psl",
+      "_id": "psl@1.1.1",
+      "_shasum": "7dc112b29da9dff21b46b94f636ab7e3f8ff0226",
+      "_from": ".",
+      "_npmVersion": "2.1.7",
+      "_nodeVersion": "0.10.33",
+      "_npmUser": {
+        "name": "lupomontero",
+        "email": "lupo@e-noise.com"
+      },
+      "maintainers": [
+        {
+          "name": "lupomontero",
+          "email": "lupo@e-noise.com"
+        }
+      ],
+      "dist": {
+        "shasum": "7dc112b29da9dff21b46b94f636ab7e3f8ff0226",
+        "tarball": "https://registry.npmjs.org/psl/-/psl-1.1.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.2": {
+      "name": "psl",
+      "version": "1.1.2",
+      "description": "Domain name parser based on the Public Suffix List",
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:wrangr/psl.git"
+      },
+      "main": "index.js",
+      "scripts": {
+        "test": "grunt test --verbose"
+      },
+      "keywords": [
+        "publicsuffix",
+        "publicsuffixlist"
+      ],
+      "author": {
+        "name": "Lupo Montero"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "JSONStream": "^0.10.0",
+        "coverify": "^1.0.7",
+        "derequire": "^1.2.0",
+        "event-stream": "^3.1.7",
+        "grunt": "^0.4.5",
+        "grunt-browserify": "^3.0.1",
+        "grunt-contrib-clean": "^0.6.0",
+        "grunt-contrib-compress": "^0.12.0",
+        "grunt-contrib-jshint": "^0.10.0",
+        "grunt-contrib-uglify": "^0.6.0",
+        "grunt-contrib-watch": "^0.6.1",
+        "grunt-shell": "^1.1.1",
+        "phantomjs": "^1.9.13",
+        "request": "^2.51.0",
+        "tape": "^3.0.0",
+        "zuul": "^1.11.2"
+      },
+      "gitHead": "324119356b18489baf58f46855481b747b2404e5",
+      "bugs": {
+        "url": "https://github.com/wrangr/psl/issues"
+      },
+      "homepage": "https://github.com/wrangr/psl",
+      "_id": "psl@1.1.2",
+      "_shasum": "744199ac2388e38285d0c68889b6d9e791067328",
+      "_from": ".",
+      "_npmVersion": "2.1.7",
+      "_nodeVersion": "0.10.33",
+      "_npmUser": {
+        "name": "lupomontero",
+        "email": "lupo@e-noise.com"
+      },
+      "maintainers": [
+        {
+          "name": "lupomontero",
+          "email": "lupo@e-noise.com"
+        }
+      ],
+      "dist": {
+        "shasum": "744199ac2388e38285d0c68889b6d9e791067328",
+        "tarball": "https://registry.npmjs.org/psl/-/psl-1.1.2.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.3": {
+      "name": "psl",
+      "version": "1.1.3",
+      "description": "Domain name parser based on the Public Suffix List",
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:wrangr/psl.git"
+      },
+      "main": "index.js",
+      "scripts": {
+        "test": "grunt test --verbose"
+      },
+      "keywords": [
+        "publicsuffix",
+        "publicsuffixlist"
+      ],
+      "author": {
+        "name": "Lupo Montero"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "JSONStream": "^0.10.0",
+        "coverify": "^1.0.7",
+        "derequire": "^1.2.0",
+        "event-stream": "^3.1.7",
+        "grunt": "^0.4.5",
+        "grunt-browserify": "^3.0.1",
+        "grunt-contrib-clean": "^0.6.0",
+        "grunt-contrib-compress": "^0.13.0",
+        "grunt-contrib-jshint": "^0.11.0",
+        "grunt-contrib-uglify": "^0.7.0",
+        "grunt-contrib-watch": "^0.6.1",
+        "grunt-shell": "^1.1.1",
+        "phantomjs": "^1.9.13",
+        "request": "^2.51.0",
+        "tape": "^3.0.0",
+        "zuul": "^1.11.2"
+      },
+      "gitHead": "68ab0f6d889b5fa8efe1550e5d9101d9e6f8dd29",
+      "bugs": {
+        "url": "https://github.com/wrangr/psl/issues"
+      },
+      "homepage": "https://github.com/wrangr/psl",
+      "_id": "psl@1.1.3",
+      "_shasum": "2d9a63d15dc451ae32c3ce0dcb115cda3696c01b",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "lupomontero",
+        "email": "lupomontero@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "lupomontero",
+          "email": "lupo@e-noise.com"
+        }
+      ],
+      "dist": {
+        "shasum": "2d9a63d15dc451ae32c3ce0dcb115cda3696c01b",
+        "tarball": "https://registry.npmjs.org/psl/-/psl-1.1.3.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.4": {
+      "name": "psl",
+      "version": "1.1.4",
+      "description": "Domain name parser based on the Public Suffix List",
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:wrangr/psl.git"
+      },
+      "main": "index.js",
+      "scripts": {
+        "test": "grunt test --verbose"
+      },
+      "keywords": [
+        "publicsuffix",
+        "publicsuffixlist"
+      ],
+      "author": {
+        "name": "Lupo Montero"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "JSONStream": "^0.10.0",
+        "coverify": "^1.0.7",
+        "derequire": "^2.0.0",
+        "event-stream": "^3.1.7",
+        "grunt": "^0.4.5",
+        "grunt-browserify": "^3.0.1",
+        "grunt-contrib-clean": "^0.6.0",
+        "grunt-contrib-compress": "^0.13.0",
+        "grunt-contrib-jshint": "^0.11.0",
+        "grunt-contrib-uglify": "^0.9.1",
+        "grunt-contrib-watch": "^0.6.1",
+        "grunt-shell": "^1.1.1",
+        "phantomjs": "^1.9.13",
+        "request": "^2.51.0",
+        "tape": "^4.0.0",
+        "zuul": "^2.1.1"
+      },
+      "gitHead": "d6d49c1ff2de8f17143fba18dd0f3444a9ed12eb",
+      "bugs": {
+        "url": "https://github.com/wrangr/psl/issues"
+      },
+      "homepage": "https://github.com/wrangr/psl",
+      "_id": "psl@1.1.4",
+      "_shasum": "f498b1d346be589c14f6c37d71c4c999bfe65266",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "lupomontero",
+        "email": "lupo@e-noise.com"
+      },
+      "maintainers": [
+        {
+          "name": "lupomontero",
+          "email": "lupo@e-noise.com"
+        }
+      ],
+      "dist": {
+        "shasum": "f498b1d346be589c14f6c37d71c4c999bfe65266",
+        "tarball": "https://registry.npmjs.org/psl/-/psl-1.1.4.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.5": {
+      "name": "psl",
+      "version": "1.1.5",
+      "description": "Domain name parser based on the Public Suffix List",
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:wrangr/psl.git"
+      },
+      "main": "index.js",
+      "scripts": {
+        "test": "grunt test --verbose"
+      },
+      "keywords": [
+        "publicsuffix",
+        "publicsuffixlist"
+      ],
+      "author": {
+        "name": "Lupo Montero"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "JSONStream": "^1.0.3",
+        "coverify": "^1.0.7",
+        "derequire": "^2.0.0",
+        "event-stream": "^3.1.7",
+        "grunt": "^0.4.5",
+        "grunt-browserify": "^3.0.1",
+        "grunt-contrib-clean": "^0.6.0",
+        "grunt-contrib-compress": "^0.13.0",
+        "grunt-contrib-jshint": "^0.11.0",
+        "grunt-contrib-uglify": "^0.9.1",
+        "grunt-contrib-watch": "^0.6.1",
+        "grunt-shell": "^1.1.1",
+        "phantomjs": "^1.9.13",
+        "request": "^2.51.0",
+        "tape": "^4.0.0",
+        "zuul": "^3.0.0"
+      },
+      "gitHead": "ddfdd9f37bc68aed1865b7558758b91ae23fbc73",
+      "bugs": {
+        "url": "https://github.com/wrangr/psl/issues"
+      },
+      "homepage": "https://github.com/wrangr/psl",
+      "_id": "psl@1.1.5",
+      "_shasum": "9b7c23c0d9977e75874636395106ce54c82db412",
+      "_from": ".",
+      "_npmVersion": "2.9.1",
+      "_nodeVersion": "0.12.3",
+      "_npmUser": {
+        "name": "lupomontero",
+        "email": "lupomontero@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "lupomontero",
+          "email": "lupo@e-noise.com"
+        }
+      ],
+      "dist": {
+        "shasum": "9b7c23c0d9977e75874636395106ce54c82db412",
+        "tarball": "https://registry.npmjs.org/psl/-/psl-1.1.5.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.6": {
+      "name": "psl",
+      "version": "1.1.6",
+      "description": "Domain name parser based on the Public Suffix List",
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/wrangr/psl.git"
+      },
+      "main": "index.js",
+      "scripts": {
+        "test": "grunt test --verbose"
+      },
+      "keywords": [
+        "publicsuffix",
+        "publicsuffixlist"
+      ],
+      "author": {
+        "name": "Lupo Montero"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "coverify": "^1.4.0",
+        "event-stream": "^3.1.7",
+        "grunt": "^0.4.5",
+        "grunt-browserify": "^3.0.1",
+        "grunt-contrib-clean": "^0.6.0",
+        "grunt-contrib-jshint": "^0.11.0",
+        "grunt-contrib-uglify": "^0.9.1",
+        "grunt-contrib-watch": "^0.6.1",
+        "grunt-shell": "^1.1.1",
+        "JSONStream": "^1.0.4",
+        "phantomjs": "^1.9.17",
+        "request": "^2.59.0",
+        "tape": "^4.0.1",
+        "zuul": "^3.2.0"
+      },
+      "gitHead": "3263462ecffdaca8d01cc4709296c669c80f1894",
+      "bugs": {
+        "url": "https://github.com/wrangr/psl/issues"
+      },
+      "homepage": "https://github.com/wrangr/psl#readme",
+      "_id": "psl@1.1.6",
+      "_shasum": "8980f0ac1ee4447f93e1aaa516c53ee05945d19e",
+      "_from": ".",
+      "_npmVersion": "2.13.1",
+      "_nodeVersion": "0.12.7",
+      "_npmUser": {
+        "name": "lupomontero",
+        "email": "lupomontero@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "lupomontero",
+          "email": "lupo@e-noise.com"
+        }
+      ],
+      "dist": {
+        "shasum": "8980f0ac1ee4447f93e1aaa516c53ee05945d19e",
+        "tarball": "https://registry.npmjs.org/psl/-/psl-1.1.6.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.7": {
+      "name": "psl",
+      "version": "1.1.7",
+      "description": "Domain name parser based on the Public Suffix List",
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/wrangr/psl.git"
+      },
+      "main": "index.js",
+      "scripts": {
+        "test": "grunt test --verbose"
+      },
+      "keywords": [
+        "publicsuffix",
+        "publicsuffixlist"
+      ],
+      "author": {
+        "name": "Lupo Montero"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "coverify": "^1.4.0",
+        "event-stream": "^3.1.7",
+        "grunt": "^0.4.5",
+        "grunt-browserify": "^3.0.1",
+        "grunt-contrib-clean": "^0.6.0",
+        "grunt-contrib-jshint": "^0.11.0",
+        "grunt-contrib-uglify": "^0.9.1",
+        "grunt-contrib-watch": "^0.6.1",
+        "grunt-shell": "^1.1.1",
+        "JSONStream": "^1.0.4",
+        "phantomjs": "^1.9.17",
+        "request": "^2.59.0",
+        "tape": "^4.0.1",
+        "zuul": "^3.2.0"
+      },
+      "gitHead": "1cd301e0534e0337b69970f6e5839b5ea7075bf2",
+      "bugs": {
+        "url": "https://github.com/wrangr/psl/issues"
+      },
+      "homepage": "https://github.com/wrangr/psl#readme",
+      "_id": "psl@1.1.7",
+      "_shasum": "54da24f2f2ace96d50b62984f2369a3c8c735f38",
+      "_from": ".",
+      "_npmVersion": "2.13.1",
+      "_nodeVersion": "0.12.7",
+      "_npmUser": {
+        "name": "lupomontero",
+        "email": "lupomontero@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "lupomontero",
+          "email": "lupo@e-noise.com"
+        }
+      ],
+      "dist": {
+        "shasum": "54da24f2f2ace96d50b62984f2369a3c8c735f38",
+        "tarball": "https://registry.npmjs.org/psl/-/psl-1.1.7.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.8": {
+      "name": "psl",
+      "version": "1.1.8",
+      "description": "Domain name parser based on the Public Suffix List",
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/wrangr/psl.git"
+      },
+      "main": "index.js",
+      "scripts": {
+        "test": "gulp test"
+      },
+      "keywords": [
+        "publicsuffix",
+        "publicsuffixlist"
+      ],
+      "author": {
+        "name": "Lupo Montero"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "JSONStream": "^1.0.4",
+        "browserify": "^11.2.0",
+        "coverify": "^1.4.0",
+        "event-stream": "^3.1.7",
+        "gulp": "^3.9.0",
+        "gulp-jshint": "^1.11.2",
+        "gulp-mocha": "^2.1.3",
+        "gulp-rename": "^1.2.2",
+        "gulp-uglify": "^1.4.1",
+        "gulp-util": "^3.0.6",
+        "jshint-stylish": "^2.0.1",
+        "karma": "^0.13.10",
+        "karma-browserify": "^4.4.0",
+        "karma-mocha": "^0.2.0",
+        "karma-mocha-reporter": "^1.1.1",
+        "karma-phantomjs-launcher": "^0.2.1",
+        "phantomjs": "^1.9.17",
+        "request": "^2.59.0",
+        "rimraf": "^2.4.3",
+        "vinyl-buffer": "^1.0.0",
+        "vinyl-source-stream": "^1.1.0"
+      },
+      "dependencies": {},
+      "gitHead": "c7b1203518ab9126fc8e5cb5ca600850b713a6e1",
+      "bugs": {
+        "url": "https://github.com/wrangr/psl/issues"
+      },
+      "homepage": "https://github.com/wrangr/psl#readme",
+      "_id": "psl@1.1.8",
+      "_shasum": "9591bb3c74265a34a82ea23750f7f3fb7426a646",
+      "_from": ".",
+      "_npmVersion": "3.3.3",
+      "_nodeVersion": "4.1.1",
+      "_npmUser": {
+        "name": "lupomontero",
+        "email": "lupo@e-noise.com"
+      },
+      "maintainers": [
+        {
+          "name": "lupomontero",
+          "email": "lupo@e-noise.com"
+        }
+      ],
+      "dist": {
+        "shasum": "9591bb3c74265a34a82ea23750f7f3fb7426a646",
+        "tarball": "https://registry.npmjs.org/psl/-/psl-1.1.8.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.9": {
+      "name": "psl",
+      "version": "1.1.9",
+      "description": "Domain name parser based on the Public Suffix List",
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:wrangr/psl.git"
+      },
+      "main": "index.js",
+      "scripts": {
+        "pretest": "eslint .",
+        "test": "mocha test && ./node_modules/.bin/karma start ./karma.conf.js --single-run",
+        "watch": "mocha test --watch",
+        "prebuild": "node ./data/build.js",
+        "build": "browserify ./index.js --standalone=psl > ./dist/psl.js",
+        "postbuild": "cat ./dist/psl.js | ./node_modules/.bin/uglifyjs -c -m > ./dist/psl.min.js"
+      },
+      "keywords": [
+        "publicsuffix",
+        "publicsuffixlist"
+      ],
+      "author": {
+        "name": "Lupo Montero"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "JSONStream": "^1.0.4",
+        "browserify": "^12.0.1",
+        "eslint": "^1.10.3",
+        "eslint-config-hapi": "^8.0.0",
+        "eslint-plugin-hapi": "^4.0.0",
+        "event-stream": "^3.1.7",
+        "karma": "^0.13.10",
+        "karma-browserify": "^4.4.0",
+        "karma-mocha": "^0.2.0",
+        "karma-mocha-reporter": "^1.1.1",
+        "karma-phantomjs-launcher": "^0.2.1",
+        "mocha": "^2.3.4",
+        "phantomjs": "^1.9.17",
+        "request": "^2.59.0",
+        "uglifyjs": "^2.4.10"
+      },
+      "dependencies": {},
+      "gitHead": "3fcf7c9a2025686c5053eac6ba3e744812268d3d",
+      "bugs": {
+        "url": "https://github.com/wrangr/psl/issues"
+      },
+      "homepage": "https://github.com/wrangr/psl",
+      "_id": "psl@1.1.9",
+      "_shasum": "abe59b52a0c6d1ab30798e0ab0ec6ffb1d34c4cd",
+      "_from": ".",
+      "_npmVersion": "3.3.12",
+      "_nodeVersion": "5.2.0",
+      "_npmUser": {
+        "name": "lupomontero",
+        "email": "lupomontero@gmail.com"
+      },
+      "dist": {
+        "shasum": "abe59b52a0c6d1ab30798e0ab0ec6ffb1d34c4cd",
+        "tarball": "https://registry.npmjs.org/psl/-/psl-1.1.9.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lupomontero",
+          "email": "lupo@e-noise.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.1.10": {
+      "name": "psl",
+      "version": "1.1.10",
+      "description": "Domain name parser based on the Public Suffix List",
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/wrangr/psl.git"
+      },
+      "main": "index.js",
+      "scripts": {
+        "pretest": "eslint .",
+        "test": "mocha test && ./node_modules/.bin/karma start ./karma.conf.js --single-run",
+        "watch": "mocha test --watch",
+        "prebuild": "node ./data/build.js",
+        "build": "browserify ./index.js --standalone=psl > ./dist/psl.js",
+        "postbuild": "cat ./dist/psl.js | ./node_modules/.bin/uglifyjs -c -m > ./dist/psl.min.js"
+      },
+      "keywords": [
+        "publicsuffix",
+        "publicsuffixlist"
+      ],
+      "author": {
+        "name": "Lupo Montero"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "JSONStream": "^1.0.4",
+        "browserify": "^13.0.0",
+        "eslint": "^1.10.3",
+        "eslint-config-hapi": "^8.0.1",
+        "eslint-plugin-hapi": "^4.0.0",
+        "event-stream": "^3.1.7",
+        "karma": "^0.13.19",
+        "karma-browserify": "^5.0.1",
+        "karma-mocha": "^0.2.0",
+        "karma-mocha-reporter": "^1.1.5",
+        "karma-phantomjs-launcher": "^1.0.0",
+        "mocha": "^2.4.5",
+        "phantomjs-prebuilt": "^2.1.4",
+        "request": "^2.69.0",
+        "uglifyjs": "^2.4.10",
+        "watchify": "^3.7.0"
+      },
+      "dependencies": {},
+      "gitHead": "53b7331061e51f52702e80bc63c85cdcf6e71695",
+      "bugs": {
+        "url": "https://github.com/wrangr/psl/issues"
+      },
+      "homepage": "https://github.com/wrangr/psl#readme",
+      "_id": "psl@1.1.10",
+      "_shasum": "7a5c0c22d1ae2baecb3055a9287ff3bc580ec15e",
+      "_from": ".",
+      "_npmVersion": "3.6.0",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "lupomontero",
+        "email": "lupomontero@gmail.com"
+      },
+      "dist": {
+        "shasum": "7a5c0c22d1ae2baecb3055a9287ff3bc580ec15e",
+        "tarball": "https://registry.npmjs.org/psl/-/psl-1.1.10.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lupomontero",
+          "email": "lupo@e-noise.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-6-west.internal.npmjs.com",
+        "tmp": "tmp/psl-1.1.10.tgz_1454965994846_0.10480793612077832"
+      },
+      "directories": {}
+    },
+    "1.1.11": {
+      "name": "psl",
+      "version": "1.1.11",
+      "description": "Domain name parser based on the Public Suffix List",
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/wrangr/psl.git"
+      },
+      "main": "index.js",
+      "scripts": {
+        "pretest": "eslint .",
+        "test": "mocha test && ./node_modules/.bin/karma start ./karma.conf.js --single-run",
+        "watch": "mocha test --watch",
+        "prebuild": "node ./data/build.js",
+        "build": "browserify ./index.js --standalone=psl > ./dist/psl.js",
+        "postbuild": "cat ./dist/psl.js | ./node_modules/.bin/uglifyjs -c -m > ./dist/psl.min.js"
+      },
+      "keywords": [
+        "publicsuffix",
+        "publicsuffixlist"
+      ],
+      "author": {
+        "name": "Lupo Montero"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "JSONStream": "^1.1.1",
+        "browserify": "^13.0.1",
+        "eslint": "^2.11.1",
+        "eslint-config-hapi": "^9.1.0",
+        "eslint-plugin-hapi": "^4.0.0",
+        "event-stream": "^3.1.7",
+        "karma": "^0.13.22",
+        "karma-browserify": "^5.0.5",
+        "karma-mocha": "^1.0.1",
+        "karma-mocha-reporter": "^2.0.3",
+        "karma-phantomjs-launcher": "^1.0.0",
+        "mocha": "^2.5.3",
+        "phantomjs-prebuilt": "^2.1.7",
+        "request": "^2.72.0",
+        "uglifyjs": "^2.4.10",
+        "watchify": "^3.7.0"
+      },
+      "dependencies": {},
+      "gitHead": "0f1ab1b3d9940e8c90832b690aa83a8b8f902025",
+      "bugs": {
+        "url": "https://github.com/wrangr/psl/issues"
+      },
+      "homepage": "https://github.com/wrangr/psl#readme",
+      "_id": "psl@1.1.11",
+      "_shasum": "fc527f464c4427a6006f8b164794b60fd2d18281",
+      "_from": ".",
+      "_npmVersion": "3.9.3",
+      "_nodeVersion": "6.2.1",
+      "_npmUser": {
+        "name": "lupomontero",
+        "email": "lupomontero@gmail.com"
+      },
+      "dist": {
+        "shasum": "fc527f464c4427a6006f8b164794b60fd2d18281",
+        "tarball": "https://registry.npmjs.org/psl/-/psl-1.1.11.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lupomontero",
+          "email": "lupo@e-noise.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/psl-1.1.11.tgz_1464909615880_0.7294271090067923"
+      },
+      "directories": {}
+    },
+    "1.1.12": {
+      "name": "psl",
+      "version": "1.1.12",
+      "description": "Domain name parser based on the Public Suffix List",
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/wrangr/psl.git"
+      },
+      "main": "index.js",
+      "scripts": {
+        "pretest": "eslint .",
+        "test": "mocha test && ./node_modules/.bin/karma start ./karma.conf.js --single-run",
+        "watch": "mocha test --watch",
+        "prebuild": "node ./data/build.js",
+        "build": "browserify ./index.js --standalone=psl > ./dist/psl.js",
+        "postbuild": "cat ./dist/psl.js | ./node_modules/.bin/uglifyjs -c -m > ./dist/psl.min.js"
+      },
+      "keywords": [
+        "publicsuffix",
+        "publicsuffixlist"
+      ],
+      "author": {
+        "name": "Lupo Montero"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "JSONStream": "^1.1.1",
+        "browserify": "^13.0.1",
+        "eslint": "^3.1.0",
+        "eslint-config-hapi": "^9.1.0",
+        "eslint-plugin-hapi": "^4.0.0",
+        "event-stream": "^3.3.4",
+        "karma": "^1.1.1",
+        "karma-browserify": "^5.0.5",
+        "karma-mocha": "^1.0.1",
+        "karma-mocha-reporter": "^2.0.3",
+        "karma-phantomjs-launcher": "^1.0.0",
+        "mocha": "^2.5.3",
+        "phantomjs-prebuilt": "^2.1.7",
+        "request": "^2.72.0",
+        "uglifyjs": "^2.4.10",
+        "watchify": "^3.7.0"
+      },
+      "dependencies": {},
+      "gitHead": "c5c9a9b1ee17aec8b2d452ca7a28770c16dd4029",
+      "bugs": {
+        "url": "https://github.com/wrangr/psl/issues"
+      },
+      "homepage": "https://github.com/wrangr/psl#readme",
+      "_id": "psl@1.1.12",
+      "_shasum": "fa1db4a04fb08e222ecb54a36f05ee9c5c6dfb64",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.2.2",
+      "_npmUser": {
+        "name": "lupomontero",
+        "email": "lupomontero@gmail.com"
+      },
+      "dist": {
+        "shasum": "fa1db4a04fb08e222ecb54a36f05ee9c5c6dfb64",
+        "tarball": "https://registry.npmjs.org/psl/-/psl-1.1.12.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lupomontero",
+          "email": "lupo@e-noise.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/psl-1.1.12.tgz_1468849257334_0.43952144333161414"
+      },
+      "directories": {}
+    },
+    "1.1.13": {
+      "name": "psl",
+      "version": "1.1.13",
+      "description": "Domain name parser based on the Public Suffix List",
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/wrangr/psl.git"
+      },
+      "main": "index.js",
+      "scripts": {
+        "pretest": "eslint .",
+        "test": "mocha test && ./node_modules/.bin/karma start ./karma.conf.js --single-run",
+        "watch": "mocha test --watch",
+        "prebuild": "node ./data/build.js",
+        "build": "browserify ./index.js --standalone=psl > ./dist/psl.js",
+        "postbuild": "cat ./dist/psl.js | ./node_modules/.bin/uglifyjs -c -m > ./dist/psl.min.js"
+      },
+      "keywords": [
+        "publicsuffix",
+        "publicsuffixlist"
+      ],
+      "author": {
+        "name": "Lupo Montero"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "JSONStream": "^1.1.4",
+        "browserify": "^13.1.0",
+        "eslint": "^3.3.1",
+        "eslint-config-hapi": "^10.0.0",
+        "eslint-plugin-hapi": "^4.0.0",
+        "event-stream": "^3.3.4",
+        "karma": "^1.2.0",
+        "karma-browserify": "^5.0.5",
+        "karma-mocha": "^1.0.1",
+        "karma-mocha-reporter": "^2.1.0",
+        "karma-phantomjs-launcher": "^1.0.0",
+        "mocha": "^3.0.2",
+        "phantomjs-prebuilt": "^2.1.12",
+        "request": "^2.74.0",
+        "uglifyjs": "^2.4.10",
+        "watchify": "^3.7.0"
+      },
+      "dependencies": {},
+      "gitHead": "2078c97328944bdeef5d8d6439da9fc72f80d7ff",
+      "bugs": {
+        "url": "https://github.com/wrangr/psl/issues"
+      },
+      "homepage": "https://github.com/wrangr/psl#readme",
+      "_id": "psl@1.1.13",
+      "_shasum": "13b2b75e17965d9e7c5f2761d5d6ecdf2f09a90e",
+      "_from": ".",
+      "_npmVersion": "3.10.6",
+      "_nodeVersion": "6.4.0",
+      "_npmUser": {
+        "name": "lupomontero",
+        "email": "lupomontero@gmail.com"
+      },
+      "dist": {
+        "shasum": "13b2b75e17965d9e7c5f2761d5d6ecdf2f09a90e",
+        "tarball": "https://registry.npmjs.org/psl/-/psl-1.1.13.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lupomontero",
+          "email": "lupo@e-noise.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/psl-1.1.13.tgz_1472141157589_0.9572078757919371"
+      },
+      "directories": {}
+    },
+    "1.1.14": {
+      "name": "psl",
+      "version": "1.1.14",
+      "description": "Domain name parser based on the Public Suffix List",
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/wrangr/psl.git"
+      },
+      "main": "index.js",
+      "scripts": {
+        "pretest": "eslint .",
+        "test": "mocha test && ./node_modules/.bin/karma start ./karma.conf.js --single-run",
+        "watch": "mocha test --watch",
+        "prebuild": "node ./data/build.js",
+        "build": "browserify ./index.js --standalone=psl > ./dist/psl.js",
+        "postbuild": "cat ./dist/psl.js | ./node_modules/.bin/uglifyjs -c -m > ./dist/psl.min.js"
+      },
+      "keywords": [
+        "publicsuffix",
+        "publicsuffixlist"
+      ],
+      "author": {
+        "name": "Lupo Montero"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "JSONStream": "^1.1.4",
+        "browserify": "^13.1.0",
+        "eslint": "^3.5.0",
+        "eslint-config-hapi": "^10.0.0",
+        "eslint-plugin-hapi": "^4.0.0",
+        "event-stream": "^3.3.4",
+        "karma": "^1.3.0",
+        "karma-browserify": "^5.0.5",
+        "karma-mocha": "^1.0.1",
+        "karma-mocha-reporter": "^2.1.0",
+        "karma-phantomjs-launcher": "^1.0.2",
+        "mocha": "^3.0.2",
+        "phantomjs-prebuilt": "^2.1.12",
+        "request": "^2.74.0",
+        "uglifyjs": "^2.4.10",
+        "watchify": "^3.7.0"
+      },
+      "dependencies": {},
+      "gitHead": "88a0b8b0bdc91e8c16f71122fb7f592af9227630",
+      "bugs": {
+        "url": "https://github.com/wrangr/psl/issues"
+      },
+      "homepage": "https://github.com/wrangr/psl#readme",
+      "_id": "psl@1.1.14",
+      "_shasum": "d2a23a99ea429c8dede5614afec4cd29e5d6d0e1",
+      "_from": ".",
+      "_npmVersion": "3.10.6",
+      "_nodeVersion": "6.5.0",
+      "_npmUser": {
+        "name": "lupomontero",
+        "email": "lupomontero@gmail.com"
+      },
+      "dist": {
+        "shasum": "d2a23a99ea429c8dede5614afec4cd29e5d6d0e1",
+        "tarball": "https://registry.npmjs.org/psl/-/psl-1.1.14.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lupomontero",
+          "email": "lupo@e-noise.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/psl-1.1.14.tgz_1473698637878_0.1333946876693517"
+      },
+      "directories": {}
+    },
+    "1.1.15": {
+      "name": "psl",
+      "version": "1.1.15",
+      "description": "Domain name parser based on the Public Suffix List",
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/wrangr/psl.git"
+      },
+      "main": "index.js",
+      "scripts": {
+        "pretest": "eslint .",
+        "test": "mocha test && karma start ./karma.conf.js --single-run",
+        "watch": "mocha test --watch",
+        "prebuild": "node ./data/build.js",
+        "build": "browserify ./index.js --standalone=psl > ./dist/psl.js",
+        "postbuild": "cat ./dist/psl.js | uglifyjs -c -m > ./dist/psl.min.js"
+      },
+      "keywords": [
+        "publicsuffix",
+        "publicsuffixlist"
+      ],
+      "author": {
+        "name": "Lupo Montero"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "JSONStream": "^1.2.1",
+        "browserify": "^13.1.1",
+        "eslint": "^3.11.1",
+        "eslint-config-hapi": "^10.0.0",
+        "eslint-plugin-hapi": "^4.0.0",
+        "event-stream": "^3.3.4",
+        "karma": "^1.3.0",
+        "karma-browserify": "^5.0.5",
+        "karma-mocha": "^1.3.0",
+        "karma-mocha-reporter": "^2.2.1",
+        "karma-phantomjs-launcher": "^1.0.2",
+        "mocha": "^3.2.0",
+        "phantomjs-prebuilt": "^2.1.13",
+        "request": "^2.79.0",
+        "uglifyjs": "^2.4.10",
+        "watchify": "^3.7.0"
+      },
+      "dependencies": {},
+      "gitHead": "1fd7810f6ea49b8f7ab029764225c4abaccac031",
+      "bugs": {
+        "url": "https://github.com/wrangr/psl/issues"
+      },
+      "homepage": "https://github.com/wrangr/psl#readme",
+      "_id": "psl@1.1.15",
+      "_shasum": "4bcd312929a5a88657c35d23b425712fb0c74f00",
+      "_from": ".",
+      "_npmVersion": "4.0.2",
+      "_nodeVersion": "7.2.0",
+      "_npmUser": {
+        "name": "lupomontero",
+        "email": "lupomontero@gmail.com"
+      },
+      "dist": {
+        "shasum": "4bcd312929a5a88657c35d23b425712fb0c74f00",
+        "tarball": "https://registry.npmjs.org/psl/-/psl-1.1.15.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lupomontero",
+          "email": "lupo@e-noise.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/psl-1.1.15.tgz_1480976382591_0.7083974634297192"
+      },
+      "directories": {}
+    },
+    "1.1.16": {
+      "name": "psl",
+      "version": "1.1.16",
+      "description": "Domain name parser based on the Public Suffix List",
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/wrangr/psl.git"
+      },
+      "main": "index.js",
+      "scripts": {
+        "pretest": "eslint .",
+        "test": "mocha test && karma start ./karma.conf.js --single-run",
+        "watch": "mocha test --watch",
+        "prebuild": "node ./data/build.js",
+        "build": "browserify ./index.js --standalone=psl > ./dist/psl.js",
+        "postbuild": "cat ./dist/psl.js | uglifyjs -c -m > ./dist/psl.min.js"
+      },
+      "keywords": [
+        "publicsuffix",
+        "publicsuffixlist"
+      ],
+      "author": {
+        "name": "Lupo Montero"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "JSONStream": "^1.3.0",
+        "browserify": "^14.0.0",
+        "eslint": "^3.14.1",
+        "eslint-config-hapi": "^10.0.0",
+        "eslint-plugin-hapi": "^4.0.0",
+        "event-stream": "^3.3.4",
+        "karma": "^1.4.1",
+        "karma-browserify": "^5.1.1",
+        "karma-mocha": "^1.3.0",
+        "karma-mocha-reporter": "^2.2.2",
+        "karma-phantomjs-launcher": "^1.0.2",
+        "mocha": "^3.2.0",
+        "phantomjs-prebuilt": "^2.1.14",
+        "request": "^2.79.0",
+        "uglifyjs": "^2.4.10",
+        "watchify": "^3.9.0"
+      },
+      "dependencies": {},
+      "gitHead": "914bd2c376cb979822367de4c34c43d6bb363e3b",
+      "bugs": {
+        "url": "https://github.com/wrangr/psl/issues"
+      },
+      "homepage": "https://github.com/wrangr/psl#readme",
+      "_id": "psl@1.1.16",
+      "_shasum": "dc88ca320b87ba79f6feefdf665a8d3113b499c1",
+      "_from": ".",
+      "_npmVersion": "4.1.2",
+      "_nodeVersion": "7.5.0",
+      "_npmUser": {
+        "name": "lupomontero",
+        "email": "lupomontero@gmail.com"
+      },
+      "dist": {
+        "shasum": "dc88ca320b87ba79f6feefdf665a8d3113b499c1",
+        "tarball": "https://registry.npmjs.org/psl/-/psl-1.1.16.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lupomontero",
+          "email": "lupo@e-noise.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/psl-1.1.16.tgz_1485986194809_0.6854362923186272"
+      },
+      "directories": {}
+    },
+    "1.1.17": {
+      "name": "psl",
+      "version": "1.1.17",
+      "description": "Domain name parser based on the Public Suffix List",
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/wrangr/psl.git"
+      },
+      "main": "index.js",
+      "scripts": {
+        "pretest": "eslint .",
+        "test": "mocha test && karma start ./karma.conf.js --single-run",
+        "watch": "mocha test --watch",
+        "prebuild": "node ./data/build.js",
+        "build": "browserify ./index.js --standalone=psl > ./dist/psl.js",
+        "postbuild": "cat ./dist/psl.js | uglifyjs -c -m > ./dist/psl.min.js"
+      },
+      "keywords": [
+        "publicsuffix",
+        "publicsuffixlist"
+      ],
+      "author": {
+        "name": "Lupo Montero"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "JSONStream": "^1.3.1",
+        "browserify": "^14.1.0",
+        "eslint": "^3.17.1",
+        "eslint-config-hapi": "^10.0.0",
+        "eslint-plugin-hapi": "^4.0.0",
+        "event-stream": "^3.3.4",
+        "karma": "^1.5.0",
+        "karma-browserify": "^5.1.1",
+        "karma-mocha": "^1.3.0",
+        "karma-mocha-reporter": "^2.2.2",
+        "karma-phantomjs-launcher": "^1.0.4",
+        "mocha": "^3.2.0",
+        "phantomjs-prebuilt": "^2.1.14",
+        "request": "^2.81.0",
+        "uglifyjs": "^2.4.10",
+        "watchify": "^3.9.0"
+      },
+      "gitHead": "63ea44ca51ef7e0d22eb95bd5042ae8376b161cd",
+      "bugs": {
+        "url": "https://github.com/wrangr/psl/issues"
+      },
+      "homepage": "https://github.com/wrangr/psl#readme",
+      "_id": "psl@1.1.17",
+      "_shasum": "a849efbdf89c9d3d1356d771c68afe27b11f4d6f",
+      "_from": ".",
+      "_npmVersion": "4.4.1",
+      "_nodeVersion": "7.7.2",
+      "_npmUser": {
+        "name": "lupomontero",
+        "email": "lupomontero@gmail.com"
+      },
+      "dist": {
+        "shasum": "a849efbdf89c9d3d1356d771c68afe27b11f4d6f",
+        "tarball": "https://registry.npmjs.org/psl/-/psl-1.1.17.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lupomontero",
+          "email": "lupo@e-noise.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/psl-1.1.17.tgz_1489427976795_0.14085051300935447"
+      },
+      "directories": {}
+    },
+    "1.1.18": {
+      "name": "psl",
+      "version": "1.1.18",
+      "description": "Domain name parser based on the Public Suffix List",
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/wrangr/psl.git"
+      },
+      "main": "index.js",
+      "scripts": {
+        "pretest": "eslint .",
+        "test": "mocha test && karma start ./karma.conf.js --single-run",
+        "watch": "mocha test --watch",
+        "prebuild": "node ./data/build.js",
+        "build": "browserify ./index.js --standalone=psl > ./dist/psl.js",
+        "postbuild": "cat ./dist/psl.js | uglifyjs -c -m > ./dist/psl.min.js"
+      },
+      "keywords": [
+        "publicsuffix",
+        "publicsuffixlist"
+      ],
+      "author": {
+        "name": "Lupo Montero"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "JSONStream": "^1.3.1",
+        "browserify": "^14.1.0",
+        "eslint": "^3.19.0",
+        "eslint-config-hapi": "^10.0.0",
+        "eslint-plugin-hapi": "^4.0.0",
+        "event-stream": "^3.3.4",
+        "karma": "^1.5.0",
+        "karma-browserify": "^5.1.1",
+        "karma-mocha": "^1.3.0",
+        "karma-mocha-reporter": "^2.2.3",
+        "karma-phantomjs-launcher": "^1.0.4",
+        "mocha": "^3.2.0",
+        "phantomjs-prebuilt": "^2.1.14",
+        "request": "^2.81.0",
+        "uglifyjs": "^2.4.10",
+        "watchify": "^3.9.0"
+      },
+      "gitHead": "1c79e5d1a6aa33d4c95dbfa56040991ba874bdc1",
+      "bugs": {
+        "url": "https://github.com/wrangr/psl/issues"
+      },
+      "homepage": "https://github.com/wrangr/psl#readme",
+      "_id": "psl@1.1.18",
+      "_shasum": "a8f2f5465a01e8acce4ff2d72342b05c7b507d90",
+      "_from": ".",
+      "_npmVersion": "4.4.4",
+      "_nodeVersion": "7.7.4",
+      "_npmUser": {
+        "name": "lupomontero",
+        "email": "lupomontero@gmail.com"
+      },
+      "dist": {
+        "shasum": "a8f2f5465a01e8acce4ff2d72342b05c7b507d90",
+        "tarball": "https://registry.npmjs.org/psl/-/psl-1.1.18.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lupomontero",
+          "email": "lupo@e-noise.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/psl-1.1.18.tgz_1491113861950_0.7978173801675439"
+      },
+      "directories": {}
+    },
+    "1.1.19": {
+      "name": "psl",
+      "version": "1.1.19",
+      "description": "Domain name parser based on the Public Suffix List",
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/wrangr/psl.git"
+      },
+      "main": "index.js",
+      "scripts": {
+        "pretest": "eslint .",
+        "test": "mocha test && karma start ./karma.conf.js --single-run",
+        "watch": "mocha test --watch",
+        "prebuild": "node ./data/build.js",
+        "build": "browserify ./index.js --standalone=psl > ./dist/psl.js",
+        "postbuild": "cat ./dist/psl.js | uglifyjs -c -m > ./dist/psl.min.js"
+      },
+      "keywords": [
+        "publicsuffix",
+        "publicsuffixlist"
+      ],
+      "author": {
+        "name": "Lupo Montero"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "JSONStream": "^1.3.1",
+        "browserify": "^14.4.0",
+        "eslint": "^3.19.0",
+        "eslint-config-hapi": "^10.0.0",
+        "eslint-plugin-hapi": "^4.0.0",
+        "event-stream": "^3.3.4",
+        "karma": "^1.7.0",
+        "karma-browserify": "^5.1.1",
+        "karma-mocha": "^1.3.0",
+        "karma-mocha-reporter": "^2.2.3",
+        "karma-phantomjs-launcher": "^1.0.4",
+        "mocha": "^3.4.2",
+        "phantomjs-prebuilt": "^2.1.14",
+        "request": "^2.81.0",
+        "uglify-js": "^3.0.15",
+        "watchify": "^3.9.0"
+      },
+      "gitHead": "8618d629f6b7cf94f3987053c3baad722b439cd3",
+      "bugs": {
+        "url": "https://github.com/wrangr/psl/issues"
+      },
+      "homepage": "https://github.com/wrangr/psl#readme",
+      "_id": "psl@1.1.19",
+      "_shasum": "6617b415a34a82bf6580de4d0cfd6003e3d943c2",
+      "_from": ".",
+      "_npmVersion": "4.2.0",
+      "_nodeVersion": "8.0.0",
+      "_npmUser": {
+        "name": "lupomontero",
+        "email": "lupomontero@gmail.com"
+      },
+      "dist": {
+        "shasum": "6617b415a34a82bf6580de4d0cfd6003e3d943c2",
+        "tarball": "https://registry.npmjs.org/psl/-/psl-1.1.19.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lupomontero",
+          "email": "lupo@e-noise.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/psl-1.1.19.tgz_1497164956253_0.4792094228323549"
+      },
+      "directories": {}
+    },
+    "1.1.20": {
+      "name": "psl",
+      "version": "1.1.20",
+      "description": "Domain name parser based on the Public Suffix List",
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/wrangr/psl.git"
+      },
+      "main": "index.js",
+      "scripts": {
+        "pretest": "eslint .",
+        "test": "mocha test && karma start ./karma.conf.js --single-run",
+        "watch": "mocha test --watch",
+        "prebuild": "node ./data/build.js",
+        "build": "browserify ./index.js --standalone=psl > ./dist/psl.js",
+        "postbuild": "cat ./dist/psl.js | uglifyjs -c -m > ./dist/psl.min.js"
+      },
+      "keywords": [
+        "publicsuffix",
+        "publicsuffixlist"
+      ],
+      "author": {
+        "name": "Lupo Montero"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "JSONStream": "^1.3.1",
+        "browserify": "^14.4.0",
+        "eslint": "^4.1.0",
+        "eslint-config-hapi": "^10.1.0",
+        "eslint-plugin-hapi": "^4.0.0",
+        "event-stream": "^3.3.4",
+        "karma": "^1.7.0",
+        "karma-browserify": "^5.1.1",
+        "karma-mocha": "^1.3.0",
+        "karma-mocha-reporter": "^2.2.3",
+        "karma-phantomjs-launcher": "^1.0.4",
+        "mocha": "^3.5.0",
+        "phantomjs-prebuilt": "^2.1.15",
+        "request": "^2.81.0",
+        "uglify-js": "^3.0.28",
+        "watchify": "^3.9.0"
+      },
+      "gitHead": "26efa0a183fdabb2e6e93deb1aa16225f2014ef7",
+      "bugs": {
+        "url": "https://github.com/wrangr/psl/issues"
+      },
+      "homepage": "https://github.com/wrangr/psl#readme",
+      "_id": "psl@1.1.20",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "8.4.0",
+      "_npmUser": {
+        "name": "lupomontero",
+        "email": "lupomontero@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-JWUi+8DYZnEn9vfV0ppHFLBP0Lk7wxzpobILpBEMDV4nFket4YK+6Rn1Zn6DHmD9PqqsV96AM6l4R/2oirzkgw==",
+        "shasum": "363382f332388880b155e2506345957084288e9d",
+        "tarball": "https://registry.npmjs.org/psl/-/psl-1.1.20.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lupomontero",
+          "email": "lupo@e-noise.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/psl-1.1.20.tgz_1503437398879_0.8963196189142764"
+      },
+      "directories": {}
+    },
+    "1.1.21": {
+      "name": "psl",
+      "version": "1.1.21",
+      "description": "Domain name parser based on the Public Suffix List",
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/wrangr/psl.git"
+      },
+      "main": "index.js",
+      "scripts": {
+        "pretest": "eslint .",
+        "test": "mocha test && karma start ./karma.conf.js --single-run",
+        "watch": "mocha test --watch",
+        "prebuild": "node ./data/build.js",
+        "build": "browserify ./index.js --standalone=psl > ./dist/psl.js",
+        "postbuild": "cat ./dist/psl.js | uglifyjs -c -m > ./dist/psl.min.js"
+      },
+      "keywords": [
+        "publicsuffix",
+        "publicsuffixlist"
+      ],
+      "author": {
+        "name": "Lupo Montero"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "JSONStream": "^1.3.1",
+        "browserify": "^14.5.0",
+        "eslint": "^4.12.1",
+        "eslint-config-hapi": "^11.1.0",
+        "eslint-plugin-hapi": "^4.1.0",
+        "event-stream": "^3.3.4",
+        "karma": "^1.7.1",
+        "karma-browserify": "^5.1.2",
+        "karma-mocha": "^1.3.0",
+        "karma-mocha-reporter": "^2.2.5",
+        "karma-phantomjs-launcher": "^1.0.4",
+        "mocha": "^4.0.1",
+        "phantomjs-prebuilt": "^2.1.16",
+        "request": "^2.83.0",
+        "uglify-js": "^3.2.1",
+        "watchify": "^3.9.0"
+      },
+      "gitHead": "a8955128d53e3ac06916876b4ea5b4de5d12ef1c",
+      "bugs": {
+        "url": "https://github.com/wrangr/psl/issues"
+      },
+      "homepage": "https://github.com/wrangr/psl#readme",
+      "_id": "psl@1.1.21",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "lupomontero",
+        "email": "lupomontero@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-nZvs33Q3rSTp86GHPTsKbtgRogmbabAt1ft3Gpv6V9024jgLqmhx22MIjWrg4LR8bhFloV71/f9uSh1eBK0DYg==",
+        "shasum": "c8f9340ee7cee997fcd1aff2d47421cf4ab8326f",
+        "tarball": "https://registry.npmjs.org/psl/-/psl-1.1.21.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lupomontero",
+          "email": "lupo@e-noise.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/psl-1.1.21.tgz_1512426720676_0.9869822366163135"
+      },
+      "directories": {}
+    },
+    "1.1.22": {
+      "name": "psl",
+      "version": "1.1.22",
+      "description": "Domain name parser based on the Public Suffix List",
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/wrangr/psl.git"
+      },
+      "main": "index.js",
+      "scripts": {
+        "pretest": "eslint .",
+        "test": "mocha test && karma start ./karma.conf.js --single-run",
+        "watch": "mocha test --watch",
+        "prebuild": "node ./data/build.js",
+        "build": "browserify ./index.js --standalone=psl > ./dist/psl.js",
+        "postbuild": "cat ./dist/psl.js | uglifyjs -c -m > ./dist/psl.min.js"
+      },
+      "keywords": [
+        "publicsuffix",
+        "publicsuffixlist"
+      ],
+      "author": {
+        "name": "Lupo Montero"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "JSONStream": "^1.3.2",
+        "browserify": "^14.5.0",
+        "eslint": "^4.14.0",
+        "eslint-config-hapi": "^11.1.0",
+        "eslint-plugin-hapi": "^4.1.0",
+        "event-stream": "^3.3.4",
+        "karma": "^2.0.0",
+        "karma-browserify": "^5.1.2",
+        "karma-mocha": "^1.3.0",
+        "karma-mocha-reporter": "^2.2.5",
+        "karma-phantomjs-launcher": "^1.0.4",
+        "mocha": "^4.1.0",
+        "phantomjs-prebuilt": "^2.1.16",
+        "request": "^2.83.0",
+        "uglify-js": "^3.3.4",
+        "watchify": "^3.9.0"
+      },
+      "gitHead": "d8018ef183bb9086ac172490da017da386e1bd12",
+      "bugs": {
+        "url": "https://github.com/wrangr/psl/issues"
+      },
+      "homepage": "https://github.com/wrangr/psl#readme",
+      "_id": "psl@1.1.22",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.3.0",
+      "_npmUser": {
+        "name": "lupomontero",
+        "email": "lupomontero@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-McjqjckzNtRcKM7ux9SKPewxi7Q+hflHYAc0UxedyqGydM3RXd5g95kGWK1nc6g7kn0UwYhBnOpzDIt171pXeA==",
+        "shasum": "3fc5fe82c8c10146292b17dc88a75cbb11e234c9",
+        "tarball": "https://registry.npmjs.org/psl/-/psl-1.1.22.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lupomontero",
+          "email": "lupo@e-noise.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/psl-1.1.22.tgz_1514915299060_0.3280133337248117"
+      },
+      "directories": {}
+    },
+    "1.1.23": {
+      "name": "psl",
+      "version": "1.1.23",
+      "description": "Domain name parser based on the Public Suffix List",
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/wrangr/psl.git"
+      },
+      "main": "index.js",
+      "scripts": {
+        "pretest": "eslint .",
+        "test": "mocha test && karma start ./karma.conf.js --single-run",
+        "watch": "mocha test --watch",
+        "prebuild": "node ./data/build.js",
+        "build": "browserify ./index.js --standalone=psl > ./dist/psl.js",
+        "postbuild": "cat ./dist/psl.js | uglifyjs -c -m > ./dist/psl.min.js"
+      },
+      "keywords": [
+        "publicsuffix",
+        "publicsuffixlist"
+      ],
+      "author": {
+        "name": "Lupo Montero"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "JSONStream": "^1.3.2",
+        "browserify": "^15.2.0",
+        "eslint": "^4.17.0",
+        "eslint-config-hapi": "^11.1.0",
+        "eslint-plugin-hapi": "^4.1.0",
+        "event-stream": "^3.3.4",
+        "karma": "^2.0.0",
+        "karma-browserify": "^5.1.3",
+        "karma-mocha": "^1.3.0",
+        "karma-mocha-reporter": "^2.2.5",
+        "karma-phantomjs-launcher": "^1.0.4",
+        "mocha": "^5.0.0",
+        "phantomjs-prebuilt": "^2.1.16",
+        "request": "^2.83.0",
+        "uglify-js": "^3.3.9",
+        "watchify": "^3.10.0"
+      },
+      "gitHead": "43b5cdf50a0341321a16730398fc6d179c5f718d",
+      "bugs": {
+        "url": "https://github.com/wrangr/psl/issues"
+      },
+      "homepage": "https://github.com/wrangr/psl#readme",
+      "_id": "psl@1.1.23",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.5.0",
+      "_npmUser": {
+        "name": "lupomontero",
+        "email": "lupomontero@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-3ZBh95p6JYOIHcx13GIHmA0T/6O5pabFgoR+3JnX8Z3swoTFLe5S1V6CDUppkyOJi3c5kwEQMHgenA6cx72H4Q==",
+        "shasum": "8ce59c003a87dc6c44e03a49046368590390286b",
+        "tarball": "https://registry.npmjs.org/psl/-/psl-1.1.23.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lupomontero",
+          "email": "lupo@e-noise.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/psl-1.1.23.tgz_1517671573343_0.14160041068680584"
+      },
+      "directories": {}
+    },
+    "1.1.24": {
+      "name": "psl",
+      "version": "1.1.24",
+      "description": "Domain name parser based on the Public Suffix List",
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/wrangr/psl.git"
+      },
+      "main": "index.js",
+      "scripts": {
+        "pretest": "eslint .",
+        "test": "mocha test && karma start ./karma.conf.js --single-run",
+        "watch": "mocha test --watch",
+        "prebuild": "node ./data/build.js",
+        "build": "browserify ./index.js --standalone=psl > ./dist/psl.js",
+        "postbuild": "cat ./dist/psl.js | uglifyjs -c -m > ./dist/psl.min.js"
+      },
+      "keywords": [
+        "publicsuffix",
+        "publicsuffixlist"
+      ],
+      "author": {
+        "name": "Lupo Montero"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "JSONStream": "^1.3.2",
+        "browserify": "^16.1.0",
+        "eslint": "^4.18.0",
+        "eslint-config-hapi": "^11.1.0",
+        "eslint-plugin-hapi": "^4.1.0",
+        "event-stream": "^3.3.4",
+        "karma": "^2.0.0",
+        "karma-browserify": "^5.2.0",
+        "karma-mocha": "^1.3.0",
+        "karma-mocha-reporter": "^2.2.5",
+        "karma-phantomjs-launcher": "^1.0.4",
+        "mocha": "^5.0.1",
+        "phantomjs-prebuilt": "^2.1.16",
+        "request": "^2.83.0",
+        "uglify-js": "^3.3.11",
+        "watchify": "^3.10.0"
+      },
+      "gitHead": "ed433eac2e6a3e37d38130565df8750aad437c05",
+      "bugs": {
+        "url": "https://github.com/wrangr/psl/issues"
+      },
+      "homepage": "https://github.com/wrangr/psl#readme",
+      "_id": "psl@1.1.24",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.5.0",
+      "_npmUser": {
+        "name": "lupomontero",
+        "email": "lupomontero@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-9/GC+4tA28JSZSgVThFUZlYcYX0zloBP2/DLHanwwM9zOfHzsFwHxOl4EE8CTWNbegF74pNwyhx+/uqMeLbk0Q==",
+        "shasum": "06c70e9c5145b72ed888b318a21f719d1823512b",
+        "tarball": "https://registry.npmjs.org/psl/-/psl-1.1.24.tgz",
+        "fileCount": 11,
+        "unpackedSize": 524806
+      },
+      "maintainers": [
+        {
+          "name": "lupomontero",
+          "email": "lupo@e-noise.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/psl_1.1.24_1519143338705_0.3312894233993622"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.1.25": {
+      "name": "psl",
+      "version": "1.1.25",
+      "description": "Domain name parser based on the Public Suffix List",
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/wrangr/psl.git"
+      },
+      "main": "index.js",
+      "scripts": {
+        "pretest": "eslint .",
+        "test": "mocha test && karma start ./karma.conf.js --single-run",
+        "watch": "mocha test --watch",
+        "prebuild": "node ./data/build.js",
+        "build": "browserify ./index.js --standalone=psl > ./dist/psl.js",
+        "postbuild": "cat ./dist/psl.js | uglifyjs -c -m > ./dist/psl.min.js"
+      },
+      "keywords": [
+        "publicsuffix",
+        "publicsuffixlist"
+      ],
+      "author": {
+        "name": "Lupo Montero"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "JSONStream": "^1.3.2",
+        "browserify": "^16.1.1",
+        "eslint": "^4.18.2",
+        "eslint-config-hapi": "^11.1.0",
+        "eslint-plugin-hapi": "^4.1.0",
+        "event-stream": "^3.3.4",
+        "karma": "^2.0.0",
+        "karma-browserify": "^5.2.0",
+        "karma-mocha": "^1.3.0",
+        "karma-mocha-reporter": "^2.2.5",
+        "karma-phantomjs-launcher": "^1.0.4",
+        "mocha": "^5.0.4",
+        "phantomjs-prebuilt": "^2.1.16",
+        "request": "^2.85.0",
+        "uglify-js": "^3.3.14",
+        "watchify": "^3.11.0"
+      },
+      "gitHead": "842150bac35b3dcb2123d731a8004cd164e1f38f",
+      "bugs": {
+        "url": "https://github.com/wrangr/psl/issues"
+      },
+      "homepage": "https://github.com/wrangr/psl#readme",
+      "_id": "psl@1.1.25",
+      "_npmVersion": "5.7.1",
+      "_nodeVersion": "9.6.1",
+      "_npmUser": {
+        "name": "lupomontero",
+        "email": "lupomontero@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-Djug/g0La/23cfyh1GujTbrLs/dhUxEquv78at1zHs03oglR1FP54v1nr8J7nCKxLEs1tsNP0u3DGVrugGi/kA==",
+        "shasum": "135edc9c7ba48cd8e4a6903fded8c7f348a5d2ee",
+        "tarball": "https://registry.npmjs.org/psl/-/psl-1.1.25.tgz",
+        "fileCount": 11,
+        "unpackedSize": 525147
+      },
+      "maintainers": [
+        {
+          "name": "lupomontero",
+          "email": "lupo@e-noise.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/psl_1.1.25_1520889109279_0.6408396617936403"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.1.26": {
+      "name": "psl",
+      "version": "1.1.26",
+      "description": "Domain name parser based on the Public Suffix List",
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/wrangr/psl.git"
+      },
+      "main": "index.js",
+      "scripts": {
+        "pretest": "eslint .",
+        "test": "mocha test && karma start ./karma.conf.js --single-run",
+        "watch": "mocha test --watch",
+        "prebuild": "node ./data/build.js",
+        "build": "browserify ./index.js --standalone=psl > ./dist/psl.js",
+        "postbuild": "cat ./dist/psl.js | uglifyjs -c -m > ./dist/psl.min.js"
+      },
+      "keywords": [
+        "publicsuffix",
+        "publicsuffixlist"
+      ],
+      "author": {
+        "name": "Lupo Montero"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "JSONStream": "^1.3.2",
+        "browserify": "^16.2.0",
+        "eslint": "^4.19.1",
+        "eslint-config-hapi": "^11.1.0",
+        "eslint-plugin-hapi": "^4.1.0",
+        "event-stream": "^3.3.4",
+        "karma": "^2.0.2",
+        "karma-browserify": "^5.2.0",
+        "karma-mocha": "^1.3.0",
+        "karma-mocha-reporter": "^2.2.5",
+        "karma-phantomjs-launcher": "^1.0.4",
+        "mocha": "^5.1.1",
+        "phantomjs-prebuilt": "^2.1.16",
+        "request": "^2.85.0",
+        "uglify-js": "^3.3.23",
+        "watchify": "^3.11.0"
+      },
+      "gitHead": "255577254a922de46934277073176e881fad48c8",
+      "bugs": {
+        "url": "https://github.com/wrangr/psl/issues"
+      },
+      "homepage": "https://github.com/wrangr/psl#readme",
+      "_id": "psl@1.1.26",
+      "_npmVersion": "6.0.0",
+      "_nodeVersion": "10.0.0",
+      "_npmUser": {
+        "name": "lupomontero",
+        "email": "lupomontero@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-nEpCZWXUloiAVG7Prmi+3E4xwpQ948TkT/gXYqaahGIRXyawSem+oOuNeqcWczO3Fz2SvEKM1FDWKl1RrGXeBw==",
+        "shasum": "b2d3248185d7d27ff616ba1536851db0b59d9e75",
+        "tarball": "https://registry.npmjs.org/psl/-/psl-1.1.26.tgz",
+        "fileCount": 11,
+        "unpackedSize": 518470,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa7Nk2CRA9TVsSAnZWagAAmwoP+gM6WxBPuzBiInJe8mVb\ngfm6PMfP2eHaIaPaHZwzmxM/iT2UeXXMIS9fykj+tjcaLpjDg4DfbF24szNq\nxXisNfV3RcTcmO0CokxoBAhkY0satrCU3vhBsWkFhhsA+cf5gHZdNH0QN783\nAD8M4F4w6NqUw7NcE+/ev2cHYUpfHr7s4raQPZqiqsw+4S/Cb3RfDTSWVFPF\nynjWqanzzgPAyoUINUaleIZ9HG81MCtC8FkfH1qtyzDAqTjaxu5ZMcI7M0ZQ\nu6klWzW6omzShXVAfKjScBCSxEaLWSociNpvK8RAXL4uGZI6LtKWN0eejCr9\n4a4pW7M6h3JgfyTwJoTXAJEfCMJc+q5/2Nz1bltjccUU/KrGqMpo7+Pjmv1v\nbneuS+pp8PXQzXijDUrr+Hvii+Ejs3FYytx750k13lnGXP7MPfe4POM+kfAm\nXhjU8scyVIDkN95DGvhMa7C6E0ynOnU/M3Z41fGuFglpjsFSQThSyU+23MOJ\njTr9uPVLwt3LbFGNSO+5Fn4JVWjjDIRHZYK/SHrZ3yMCCGN18dITYObCXHDZ\njJ60dPaBJ8wgHe96rbgSfhgUbBbZipbHMbt1y94mnZllujsfxvl8yvaQMbqm\nQRKSqKWqH56YFbh1kf2QAkRe4LPrAz07yVBnD6yVrToqo62z1F1eokB3qbCh\nEFcJ\r\n=3fI5\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "lupomontero",
+          "email": "lupo@e-noise.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/psl_1.1.26_1525471540737_0.4067845515240396"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.1.27": {
+      "name": "psl",
+      "version": "1.1.27",
+      "description": "Domain name parser based on the Public Suffix List",
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/wrangr/psl.git"
+      },
+      "main": "index.js",
+      "scripts": {
+        "pretest": "eslint .",
+        "test": "mocha test && karma start ./karma.conf.js --single-run",
+        "watch": "mocha test --watch",
+        "prebuild": "node ./data/build.js",
+        "build": "browserify ./index.js --standalone=psl > ./dist/psl.js",
+        "postbuild": "cat ./dist/psl.js | uglifyjs -c -m > ./dist/psl.min.js"
+      },
+      "keywords": [
+        "publicsuffix",
+        "publicsuffixlist"
+      ],
+      "author": {
+        "name": "Lupo Montero"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "JSONStream": "^1.3.2",
+        "browserify": "^16.2.2",
+        "eslint": "^4.19.1",
+        "eslint-config-hapi": "^11.1.0",
+        "eslint-plugin-hapi": "^4.1.0",
+        "event-stream": "^3.3.4",
+        "karma": "^2.0.2",
+        "karma-browserify": "^5.2.0",
+        "karma-mocha": "^1.3.0",
+        "karma-mocha-reporter": "^2.2.5",
+        "karma-phantomjs-launcher": "^1.0.4",
+        "mocha": "^5.2.0",
+        "phantomjs-prebuilt": "^2.1.16",
+        "request": "^2.87.0",
+        "uglify-js": "^3.3.26",
+        "watchify": "^3.11.0"
+      },
+      "gitHead": "c3abeee13edef1ac88e61c42453fd6926bebfccd",
+      "bugs": {
+        "url": "https://github.com/wrangr/psl/issues"
+      },
+      "homepage": "https://github.com/wrangr/psl#readme",
+      "_id": "psl@1.1.27",
+      "_npmVersion": "6.0.1",
+      "_nodeVersion": "10.1.0",
+      "_npmUser": {
+        "name": "lupomontero",
+        "email": "lupomontero@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-J8tJX5tAeEp9tQTI2w2aMZ6V1INuU4JmNaNPRuHAqjjVq3ZJ+jV3+tcT3ncgTnBxvwJy740IB/WZrxFus2VdMA==",
+        "shasum": "2b2c77019db86855170d903532400bf71ee085b6",
+        "tarball": "https://registry.npmjs.org/psl/-/psl-1.1.27.tgz",
+        "fileCount": 11,
+        "unpackedSize": 526059,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbBCFXCRA9TVsSAnZWagAAgEAQAILNbkU3DMd41OaoG97W\nx+5yDpu63+11y619gZ1KoaQCw1SRbOD4FrOJfuDaca0BEEtZ2A69mbRjMstg\nrN75hs+Fdoi+xSeRJf9xnU09Fr/JDz+i46rUe91aL4r/KfRNzcOYxZhkNwyr\nMN9Vd8dkXMEv0dELJbRYhaaHcfTNXhcZ80eLBQM5RFu+tSgCLxHWzSBjc0vG\n/16DXkqvySjFmcD59CaL+hd4zX1JgP0XZ0hEPEnzdE3s27z5766FY0l6kNBr\n2PJ8FdL8E9FcATrNd4WyKyFcHnspPMe31rh9ECBQkDo1n8soJd8Ox1nz0SiY\ndIZ5zRWnHQ6vMUbDvZ+vV2hdYk8H/7w7WRKpEBue9+yB63le4yUjI4LWkXwR\nOxULIOZCiFkMRSSm5ZBYOIDR6zjuLguNdgUcmqt6nhAGuWtnXYsp+OxS9BIF\nerZCvehKUJzTrH/nxPkwbrb4BaX3X7HCxTEj6+u3+z0X9SLWd0oMT6Nv6vaH\nD/r2uJ2C427zN2ugRbp07kbomuXjS1RMmmTpJ9WgwaD3qcwibjZGl87ob8F6\nWx2asyvZd0RpSe/rmB2Jn9j8XFIjA2iWvy6VgHj6TSvm9YL2RFNtuWgp5eYC\nKctJ7k9JLH3F82OvH/OzfuWMNzaMjXFk2qvFPQCkbHxaI/Sj8gZSAVC2AsVk\njLEm\r\n=y9t2\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "lupomontero",
+          "email": "lupo@e-noise.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/psl_1.1.27_1526997334066_0.9532523364714123"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.1.28": {
+      "name": "psl",
+      "version": "1.1.28",
+      "description": "Domain name parser based on the Public Suffix List",
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/wrangr/psl.git"
+      },
+      "main": "index.js",
+      "scripts": {
+        "pretest": "eslint .",
+        "test": "mocha test && karma start ./karma.conf.js --single-run",
+        "watch": "mocha test --watch",
+        "prebuild": "node ./data/build.js",
+        "build": "browserify ./index.js --standalone=psl > ./dist/psl.js",
+        "postbuild": "cat ./dist/psl.js | uglifyjs -c -m > ./dist/psl.min.js"
+      },
+      "keywords": [
+        "publicsuffix",
+        "publicsuffixlist"
+      ],
+      "author": {
+        "name": "Lupo Montero"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "JSONStream": "^1.3.3",
+        "browserify": "^16.2.2",
+        "eslint": "^4.19.1",
+        "eslint-config-hapi": "^11.1.0",
+        "eslint-plugin-hapi": "^4.1.0",
+        "event-stream": "^3.3.4",
+        "karma": "^2.0.2",
+        "karma-browserify": "^5.3.0",
+        "karma-mocha": "^1.3.0",
+        "karma-mocha-reporter": "^2.2.5",
+        "karma-phantomjs-launcher": "^1.0.4",
+        "mocha": "^5.2.0",
+        "phantomjs-prebuilt": "^2.1.16",
+        "request": "^2.87.0",
+        "uglify-js": "^3.4.0",
+        "watchify": "^3.11.0"
+      },
+      "gitHead": "291e9a9ae0b142dcaa14ebdb3b1f7184998fb20e",
+      "bugs": {
+        "url": "https://github.com/wrangr/psl/issues"
+      },
+      "homepage": "https://github.com/wrangr/psl#readme",
+      "_id": "psl@1.1.28",
+      "_npmVersion": "6.1.0",
+      "_nodeVersion": "10.4.0",
+      "_npmUser": {
+        "name": "lupomontero",
+        "email": "lupomontero@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-+AqO1Ae+N/4r7Rvchrdm432afjT9hqJRyBN3DQv9At0tPz4hIFSGKbq64fN9dVoCow4oggIIax5/iONx0r9hZw==",
+        "shasum": "4fb6ceb08a1e2214d4fd4de0ca22dae13740bc7b",
+        "tarball": "https://registry.npmjs.org/psl/-/psl-1.1.28.tgz",
+        "fileCount": 11,
+        "unpackedSize": 526343,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbIEl2CRA9TVsSAnZWagAAu4cP/RrdoYLi0++yBeg+6xnO\nZ8N+O4SYEUc5M4UKScbUQmdCjQljd2SUZGyLms2SmjMDtSWMWI7MODjpCrUu\n7+XrU9vyioLp85oWDbGIXVeX5VxbmBE1Jo8knEb9d0lzrOdXO1zug8LjLXNk\n+SmNCRwt9/XXQVBF63HaNW7utVtFwNOq+A/VJYHVSZ2V/Aps3FWg12hfnK80\n7hJGaFRGwXL9GXTmNadEh4/XnCc0wP9HAypX/kDCO7PGMFkYkZezqQZtspCF\nhTLh7slNXuROBnk/AY7d3m/w0brk3NWBvJWqQNECd7NzrUgBRlOjUCqFJw0g\naZS5NuQTsetW8x7DufxQcEWqOHXkrwGYOECN3GCbTUdhSMbh+FjL6hJGEdO4\nAZ3RACO9k+ZMwFj5Gi9LD8FDkjkwcq4DdMKy/yKFG1VRzAGT2bMUvoIBcwWN\nTa1uF4tvE7AqAcRZct3qTeyjMwZaBGQNxARPRnGBDM+/JmyxsuHAz+UumUCk\n6UzCnoXuT7z6z/niR8ILDyoHx2ZKtDbL8uBNY2Uil4+bl/BFeWAwEN37B77y\nFprTSBp3D/eS/XEkelV4jJjj0jatxnXisLonx856MeR5qTDBAzRpgl9pGnQT\nuf9Skr0OkYi5RbPigQlfsReOGvwJ5jFJHSsC9b3Da0dqD36aJ03c0BKzoiNO\nmd6J\r\n=2LLq\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "lupomontero",
+          "email": "lupo@e-noise.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/psl_1.1.28_1528842613349_0.5705403407817633"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.1.29": {
+      "name": "psl",
+      "version": "1.1.29",
+      "description": "Domain name parser based on the Public Suffix List",
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/wrangr/psl.git"
+      },
+      "main": "index.js",
+      "scripts": {
+        "pretest": "eslint .",
+        "test": "mocha test && karma start ./karma.conf.js --single-run",
+        "watch": "mocha test --watch",
+        "prebuild": "node ./data/build.js",
+        "build": "browserify ./index.js --standalone=psl > ./dist/psl.js",
+        "postbuild": "cat ./dist/psl.js | uglifyjs -c -m > ./dist/psl.min.js"
+      },
+      "keywords": [
+        "publicsuffix",
+        "publicsuffixlist"
+      ],
+      "author": {
+        "name": "Lupo Montero"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "JSONStream": "^1.3.3",
+        "browserify": "^16.2.2",
+        "eslint": "^5.2.0",
+        "eslint-config-hapi": "^12.0.0",
+        "eslint-plugin-hapi": "^4.1.0",
+        "event-stream": "^3.3.4",
+        "karma": "^2.0.5",
+        "karma-browserify": "^5.3.0",
+        "karma-mocha": "^1.3.0",
+        "karma-mocha-reporter": "^2.2.5",
+        "karma-phantomjs-launcher": "^1.0.4",
+        "mocha": "^5.2.0",
+        "phantomjs-prebuilt": "^2.1.16",
+        "request": "^2.87.0",
+        "uglify-js": "^3.4.6",
+        "watchify": "^3.11.0"
+      },
+      "gitHead": "8622fcc3a5a87ed24eb6c85420482d8c46763005",
+      "bugs": {
+        "url": "https://github.com/wrangr/psl/issues"
+      },
+      "homepage": "https://github.com/wrangr/psl#readme",
+      "_id": "psl@1.1.29",
+      "_npmVersion": "6.1.0",
+      "_nodeVersion": "10.6.0",
+      "_npmUser": {
+        "name": "lupomontero",
+        "email": "lupomontero@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-AeUmQ0oLN02flVHXWh9sSJF7mcdFq0ppid/JkErufc3hGIV/AMa8Fo9VgDo/cT2jFdOWoFvHp90qqBH54W+gjQ==",
+        "shasum": "60f580d360170bb722a797cc704411e6da850c67",
+        "tarball": "https://registry.npmjs.org/psl/-/psl-1.1.29.tgz",
+        "fileCount": 11,
+        "unpackedSize": 550402,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbZErUCRA9TVsSAnZWagAAKnUQAJzjAsz6o8LyofA7V4sW\n05AiEbMhn0Y2i9El9TTK8eq7ZX1OdoIc6jnpbIr+VuRPT0waH5xdXKHzulsk\nQrA9GBeeTN57TLRtd/tl7bi5k6CleaiHwA+xwOvr1BaqYEIyAMqlsL0qxKB0\nD+ugemBqaxslghQNpKsFeQej8q+h8D5NuDd2rKVbcLsbltx17aTdctkvDaik\n4D3eUn4ZaS6waHn8uIJcVdoZHdlWLTovT4J7sJ1taNjCD/3nRdGj6xFbDaom\nHiiH2pjU9AHvD0Hqhm/O9ScoART/n1wYCXlfI9Pn7yCr4gLucAdIX/62cXr7\nIJU0p1lpUUbDK6jpfgDyQxW3oINSWhySyHU/X5h0bFcT2ZGhE9Rm6V1bVGBi\nE9CFh61iseAhg4vBbDvS7ifSFDSbQc45S04USRH1l5JMIf0Hn15W/UEiZeXU\nc9R8A910M4bE/kW9EjM+WlBWTDcyxtrhg0Cez19ywB1S/O5HznMriB7TO17H\ntD2f5VCU7LeVAnTLqxv8DWgYgMU8RAD9u2U9izjL+5ZSy4YMjNso2T3rJ7Y8\ndVoRhvfEopVj+Sf0o5XicSqjpbPAZaI6GS1/ZpYSNTea8vydjfKhIvM2RATR\nd/8xpgjBTuEMCptIiQU/KC6t4JfN/SvCrssmdFBxAvJuw7biDwjMpf3gIqwB\nl8et\r\n=ClWM\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "lupomontero",
+          "email": "lupo@e-noise.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/psl_1.1.29_1533299411879_0.5773351184487232"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.1.30": {
+      "name": "psl",
+      "version": "1.1.30",
+      "description": "Domain name parser based on the Public Suffix List",
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/wrangr/psl.git"
+      },
+      "main": "index.js",
+      "scripts": {
+        "pretest": "eslint .",
+        "test": "mocha test && karma start ./karma.conf.js --single-run",
+        "watch": "mocha test --watch",
+        "prebuild": "node ./data/build.js",
+        "build": "browserify ./index.js --standalone=psl > ./dist/psl.js",
+        "postbuild": "cat ./dist/psl.js | uglifyjs -c -m > ./dist/psl.min.js"
+      },
+      "keywords": [
+        "publicsuffix",
+        "publicsuffixlist"
+      ],
+      "author": {
+        "name": "Lupo Montero"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "JSONStream": "^1.3.5",
+        "browserify": "^16.2.3",
+        "eslint": "^5.10.0",
+        "eslint-config-hapi": "^12.0.0",
+        "eslint-plugin-hapi": "^4.1.0",
+        "event-stream": "^4.0.1",
+        "karma": "^3.1.3",
+        "karma-browserify": "^6.0.0",
+        "karma-mocha": "^1.3.0",
+        "karma-mocha-reporter": "^2.2.5",
+        "karma-phantomjs-launcher": "^1.0.4",
+        "mocha": "^5.2.0",
+        "phantomjs-prebuilt": "^2.1.16",
+        "request": "^2.88.0",
+        "uglify-js": "^3.4.9",
+        "watchify": "^3.11.0"
+      },
+      "gitHead": "b48e1b691235e176937a1b6562240c5342133616",
+      "bugs": {
+        "url": "https://github.com/wrangr/psl/issues"
+      },
+      "homepage": "https://github.com/wrangr/psl#readme",
+      "_id": "psl@1.1.30",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "11.0.0",
+      "_npmUser": {
+        "name": "lupomontero",
+        "email": "lupomontero@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-VYXyMq0EjBb4GHqBXMTOmHVXaS2Q2AAkiCGjejxTTqLN0viNS9ayubrnalA/Z3pCDYVT6jPY5t0YWOQjXvQbQQ==",
+        "shasum": "96437eacd59178beaf4ea02a713f718989134e17",
+        "tarball": "https://registry.npmjs.org/psl/-/psl-1.1.30.tgz",
+        "fileCount": 12,
+        "unpackedSize": 536463,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcEJfBCRA9TVsSAnZWagAAnqYP/3NGsze51HMGsLSxsusB\nXJVDEcroVbnwP/BrrBOG7C+Todhai6skGokK4LuWqsVtGgOQ8qPR4er2gfW1\ncApAlwGHzwjOCqLGTHEqZglI8/63q5Qy3dBnwWuaRn7220FIujq9QoTvPqo5\nZK04LYAYCCZTbzj3qJLk78dr+dlaTRykKTZ71gF/yCHQ1S4HO0nEqb4WmKuZ\nrFim4oq+lmr1ueOfFm6DepX7uZNeVLTFge1KGIJSW+l6ODTcIcG5623ZT5/m\nmj5D0Ti6lQpkekVO/AcRB9MS7uai6QIqt0xbif62Gqkx0CYbmOTXCseBYSpe\nPT+KWFNge6MnKTDT45w2nZnX3N9R5cN3qyfeAs0TGx8oCBnv+5qTlCgOLMok\n4CRv8VOb/ctTGY5cuytibuFT5FCe7wgULXK5NCjEEpJwICbNAR63r9dfHomw\nen8XG2wWjoewJbzqpvfvQ7Y769wTz48gi3lXct9e56flHLPSWYL72N4uV+ZO\nltSO0F6j8ugJQ+aV2LK5EM8z1iWZ1qV4n97iNwiYvu87nPX3FlXxMlYtvxmG\n/uaEUczibqMlKKyKGhpzUor3gq6QKntDvK289mfVrfU0v+qoBWKk0X5iDxQt\nj92IcpBJ4hdJ+JxsOcAuI4q7ZM7s8nLoWM4yz8wuWwCg7p5lkDLEE2VC28rx\n77Dt\r\n=UtsP\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "lupomontero",
+          "email": "lupo@e-noise.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/psl_1.1.30_1544591296312_0.157816950206213"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.1.31": {
+      "name": "psl",
+      "version": "1.1.31",
+      "description": "Domain name parser based on the Public Suffix List",
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/wrangr/psl.git"
+      },
+      "main": "index.js",
+      "scripts": {
+        "pretest": "eslint .",
+        "test": "mocha test && karma start ./karma.conf.js --single-run",
+        "watch": "mocha test --watch",
+        "prebuild": "node ./data/build.js",
+        "build": "browserify ./index.js --standalone=psl > ./dist/psl.js",
+        "postbuild": "cat ./dist/psl.js | uglifyjs -c -m > ./dist/psl.min.js"
+      },
+      "keywords": [
+        "publicsuffix",
+        "publicsuffixlist"
+      ],
+      "author": {
+        "name": "Lupo Montero"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "JSONStream": "^1.3.5",
+        "browserify": "^16.2.3",
+        "eslint": "^5.10.0",
+        "eslint-config-hapi": "^12.0.0",
+        "eslint-plugin-hapi": "^4.1.0",
+        "event-stream": "3.3.4",
+        "karma": "^3.1.3",
+        "karma-browserify": "^6.0.0",
+        "karma-mocha": "^1.3.0",
+        "karma-mocha-reporter": "^2.2.5",
+        "karma-phantomjs-launcher": "^1.0.4",
+        "mocha": "^5.2.0",
+        "phantomjs-prebuilt": "^2.1.16",
+        "request": "^2.88.0",
+        "uglify-js": "^3.4.9",
+        "watchify": "^3.11.0"
+      },
+      "gitHead": "720b89262b874045185688a726f23b2856b82a75",
+      "bugs": {
+        "url": "https://github.com/wrangr/psl/issues"
+      },
+      "homepage": "https://github.com/wrangr/psl#readme",
+      "_id": "psl@1.1.31",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "11.0.0",
+      "_npmUser": {
+        "name": "lupomontero",
+        "email": "lupomontero@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-/6pt4+C+T+wZUieKR620OpzN/LlnNKuWjy1iFLQ/UG35JqHlR/89MP1d96dUfkf6Dne3TuLQzOYEYshJ+Hx8mw==",
+        "shasum": "e9aa86d0101b5b105cbe93ac6b784cd547276184",
+        "tarball": "https://registry.npmjs.org/psl/-/psl-1.1.31.tgz",
+        "fileCount": 12,
+        "unpackedSize": 536269,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcEJoRCRA9TVsSAnZWagAA3TwP/1gopBAB3sytjh5GO/79\n8Cy5viNTwOmr87LFDdsqUF8hA/T3xmFdhMbhJSTgmS8zIvih2YuQv2Xd1gz5\nB/lbU3KcqUBz2xxQLPO83rezFIGjHAsaeK3XJhLicziR1I+Nhlfxo1l6zELt\nxfuH1hCEy1vlQqSZuxZcBVIMNGfICjM4vQ2yaTfGnDRlHr7xcgd8VOm43JBk\ny205X3QBm6MP5d/Oga4OJj7KWN7ZaSfEk/JOq3UgmcLvPbP/dwuLndVKNpan\n2Er66DvHw3tsFnclfotjNusDGdQzqWhCCt/OkoGVjv4T7YZ7P5Sp51RIjf2r\nHadCJcCcOPh/RZ2PR0UeQ+go+hiIz7ofkFm/CfrFhsSEVyEDG1aD5WtrvdHO\nkEe5dzjlb2Kp2NtWdpOEWCxeDYTnYWFFv6SgJ7wJfCnk66dyKypJRqV2O1I5\nLCKSu5a3fe/esmfB4Y+/ity5V2o6HQOssuDL6ba56Z2SY2glUN+wNPCUGEdz\nYTkbK+QaSPERVulWy/53AlwR2nqKRJOevoQCHpcDbCEuw6PZRXLJ3hIDBa2o\nbGe+1YpuOdKudTOOTncSLnN4Q7XUf5rpe7ygT13nJvEBMGTWjzHm1xesUXg5\nu3+8avpwPlh7E8sAjxPw+5KzV9e8JqKuB1UWuIS+PQHtkeotuXUqGB74lh0d\nAsps\r\n=TQa5\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "lupomontero",
+          "email": "lupo@e-noise.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/psl_1.1.31_1544591888808_0.8956570918446065"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.1.32": {
+      "name": "psl",
+      "version": "1.1.32",
+      "description": "Domain name parser based on the Public Suffix List",
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/wrangr/psl.git"
+      },
+      "main": "index.js",
+      "scripts": {
+        "pretest": "eslint .",
+        "test": "mocha test && karma start ./karma.conf.js --single-run",
+        "watch": "mocha test --watch",
+        "prebuild": "node ./data/build.js",
+        "build": "browserify ./index.js --standalone=psl > ./dist/psl.js",
+        "postbuild": "cat ./dist/psl.js | uglifyjs -c -m > ./dist/psl.min.js"
+      },
+      "keywords": [
+        "publicsuffix",
+        "publicsuffixlist"
+      ],
+      "author": {
+        "name": "Lupo Montero"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "JSONStream": "^1.3.5",
+        "browserify": "^16.2.3",
+        "eslint": "^5.10.0",
+        "eslint-config-hapi": "^12.0.0",
+        "eslint-plugin-hapi": "^4.1.0",
+        "event-stream": "3.3.4",
+        "karma": "^3.1.3",
+        "karma-browserify": "^6.0.0",
+        "karma-mocha": "^1.3.0",
+        "karma-mocha-reporter": "^2.2.5",
+        "karma-phantomjs-launcher": "^1.0.4",
+        "mocha": "^5.2.0",
+        "phantomjs-prebuilt": "^2.1.16",
+        "request": "^2.88.0",
+        "uglify-js": "^3.4.9",
+        "watchify": "^3.11.0"
+      },
+      "gitHead": "dc231b47ca7bde8d520e82102fc408ad5b5e8cf2",
+      "bugs": {
+        "url": "https://github.com/wrangr/psl/issues"
+      },
+      "homepage": "https://github.com/wrangr/psl#readme",
+      "_id": "psl@1.1.32",
+      "_nodeVersion": "10.15.3",
+      "_npmVersion": "6.9.0",
+      "dist": {
+        "integrity": "sha512-MHACAkHpihU/REGGPLj4sEfc/XKW2bheigvHO1dUqjaKigMp1C8+WLQYRGgeKFMsw5PMfegZcaN8IDXK/cD0+g==",
+        "shasum": "3f132717cf2f9c169724b2b6caf373cf694198db",
+        "tarball": "https://registry.npmjs.org/psl/-/psl-1.1.32.tgz",
+        "fileCount": 11,
+        "unpackedSize": 404927,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJc6jG/CRA9TVsSAnZWagAAK9AP/AyzKDt49mVJej27VIIk\nGVcgMojfwcPp4yoqBPqCNvDRqo+OKTG2d0d3qEEcqHxG6NtO4v/bMPxxckHj\nARlTS6EJ5c3EeBid2mwRkpjr5oLFQt+B0lrrvOa4skWckU71QgxCIJekjRS9\n5lm4nHE4epNHDQc4oeKL4XgKmVNYp5rJyIHZBvRFi2GXMdtVDeZ8XAOI9bTH\nL5fCJ8CK9A8eL9ncLEmVF7YBk5XoR/pGvfj+9WLtRCymz0jUmfonsWKo/DVI\n0ZXEvDP2cS4PEypzHEeckBbJPw8W+dn6paoTDRGlIql40TdMfrXwFwAJ7fv8\n3sZQlXBBrMRkMBdiMxpn0sgvv8REv2iJm+lHq5VxljGotnb+BElg3vQ2+vct\nVzQPdQzxyZt0UvdYJYbpFYaR6VrRMULtDvVjcYq5WnJY5of6ZYAUVOJE9elQ\nfkogNsk87x65MKcdD45znQJn1zfv+7EkjIzBeF+yD0sZG8Gi6kd2EX4KAfnL\nw5AhS5lbGdTwzU1hv/Ea8EI8BAfT7xqIQHtWelgy1Hf9Nt8EiM7cMWNgp4k9\n0dtzVrOTbICRBp8t1tRAAJG8GrDPQggkWOQUyOrl68cebaG8H62U8JWl0gxE\nnqO6In56eWmvhLnrZRq/v8o/thl47VNkCO48sauQ7/lRHSWPcw4HQVltycLt\nrf4H\r\n=zDnR\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "lupomontero",
+          "email": "lupo@e-noise.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "lupomontero",
+        "email": "lupomontero@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/psl_1.1.32_1558852030985_0.5026934239829377"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.1.33": {
+      "name": "psl",
+      "version": "1.1.33",
+      "description": "Domain name parser based on the Public Suffix List",
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/wrangr/psl.git"
+      },
+      "main": "index.js",
+      "scripts": {
+        "pretest": "eslint .",
+        "test": "mocha test && karma start ./karma.conf.js --single-run",
+        "watch": "mocha test --watch",
+        "prebuild": "node ./data/build.js",
+        "build": "browserify ./index.js --standalone=psl > ./dist/psl.js",
+        "postbuild": "cat ./dist/psl.js | uglifyjs -c -m > ./dist/psl.min.js",
+        "changelog": "git log $(git describe --tags --abbrev=0)..HEAD --oneline --format=\"%h %s (%an <%ae>)\""
+      },
+      "keywords": [
+        "publicsuffix",
+        "publicsuffixlist"
+      ],
+      "author": {
+        "name": "Lupo Montero"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "JSONStream": "^1.3.5",
+        "browserify": "^16.2.3",
+        "eslint": "^5.16.0",
+        "eslint-config-hapi": "^12.0.0",
+        "eslint-plugin-hapi": "^4.1.0",
+        "karma": "^4.1.0",
+        "karma-browserify": "^6.0.0",
+        "karma-mocha": "^1.3.0",
+        "karma-mocha-reporter": "^2.2.5",
+        "karma-phantomjs-launcher": "^1.0.4",
+        "mocha": "^6.1.4",
+        "phantomjs-prebuilt": "^2.1.16",
+        "request": "^2.88.0",
+        "uglify-js": "^3.6.0",
+        "watchify": "^3.11.1"
+      },
+      "gitHead": "0ee9c69e6d0db0abb5386d7623ec232e2f9dec45",
+      "bugs": {
+        "url": "https://github.com/wrangr/psl/issues"
+      },
+      "homepage": "https://github.com/wrangr/psl#readme",
+      "_id": "psl@1.1.33",
+      "_nodeVersion": "10.15.3",
+      "_npmVersion": "6.9.0",
+      "dist": {
+        "integrity": "sha512-LTDP2uSrsc7XCb5lO7A8BI1qYxRe/8EqlRvMeEl6rsnYAqDOl8xHR+8lSAIVfrNaSAlTPTNOCgNjWcoUL3AZsw==",
+        "shasum": "5533d9384ca7aab86425198e10e8053ebfeab661",
+        "tarball": "https://registry.npmjs.org/psl/-/psl-1.1.33.tgz",
+        "fileCount": 11,
+        "unpackedSize": 405305,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdCsfgCRA9TVsSAnZWagAAQvwP/A3gRt/pHryiz2JNERSb\n+Vav2u2lwd2vCngkg6Z0lLBAyKAUtS6fq3FHPNcaCLr9ZRdTJEQkbvjlSweh\n6Z9GjybzZIiMw4MZerg+B/JU4Do7C3oP0weV4w6GxsgPRJPrDPpvvXKKP5yH\nyFGZqfvFUv8l0MxOZxie4qgFTnFEOdDSXoWVqa+2lC/1PUmbFRPeUEAwcY78\nud7W+UN1b7MmIB6vTBqmBmnOrGmac3FHflNBOWsyiriaKJVuyw0ocmolzR79\nfj3PorojLUS+Q4hzDp9KIlr0eZPrpqaGwUi6ZY9Edo/5m9nF2qmvkePtTvY4\np7Hx/lsC7PZNqWWR6zoT/tpcpsSW+irpvYQ0M+gKS1ET6tXPS0O4PEeTKJbX\ny6MYQPOrCpdIJ/SEaR02vxLB0hc8L4RvQKmjBZJcYQN0vlBfBro1ki3hBROT\npLrv1kbdsX7J/33nX14TTWteQgkxwEZC1Xgq9fzAjhI0517GoSwAyDXoVr1d\n63/vmx3BYU+nKHkMSg7eQpGntNkFHEYc1i7b1XdGq3lHqI3g1Mx7d9Px1NoQ\nRNkdFnCBvvJkwjbsuLhcVVcn30OlGQfuFzliFo+7XaCOM0NS8Bckc6j+KgZ/\nC/EBa5xzwtpKYcFF3HbLOESVaa75HUOK4W4WivqucOPYr5O202wgMNm5VQpU\nu4f5\r\n=otGe\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "lupomontero",
+          "email": "lupo@e-noise.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "lupomontero",
+        "email": "lupomontero@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/psl_1.1.33_1560987616150_0.2477351286293379"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.2.0": {
+      "name": "psl",
+      "version": "1.2.0",
+      "description": "Domain name parser based on the Public Suffix List",
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/lupomontero/psl.git"
+      },
+      "main": "index.js",
+      "scripts": {
+        "pretest": "eslint .",
+        "test": "mocha test && karma start ./karma.conf.js --single-run",
+        "watch": "mocha test --watch",
+        "prebuild": "./scripts/update-rules.js",
+        "build": "browserify ./index.js --standalone=psl > ./dist/psl.js",
+        "postbuild": "cat ./dist/psl.js | uglifyjs -c -m > ./dist/psl.min.js",
+        "commit-and-pr": "commit-and-pr",
+        "changelog": "git log $(git describe --tags --abbrev=0)..HEAD --oneline --format=\"%h %s (%an <%ae>)\""
+      },
+      "keywords": [
+        "publicsuffix",
+        "publicsuffixlist"
+      ],
+      "author": {
+        "name": "Lupo Montero",
+        "email": "lupomontero@gmail.com",
+        "url": "https://lupomontero.com/"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "JSONStream": "^1.3.5",
+        "browserify": "^16.2.3",
+        "commit-and-pr": "^1.0.3",
+        "eslint": "^6.0.1",
+        "eslint-config-hapi": "^12.0.0",
+        "eslint-plugin-hapi": "^4.1.0",
+        "karma": "^4.1.0",
+        "karma-browserify": "^6.0.0",
+        "karma-mocha": "^1.3.0",
+        "karma-mocha-reporter": "^2.2.5",
+        "karma-phantomjs-launcher": "^1.0.4",
+        "mocha": "^6.1.4",
+        "phantomjs-prebuilt": "^2.1.16",
+        "request": "^2.88.0",
+        "uglify-js": "^3.6.0",
+        "watchify": "^3.11.1"
+      },
+      "gitHead": "a90297598c5e59756d032fe10180f9f9aa450011",
+      "bugs": {
+        "url": "https://github.com/lupomontero/psl/issues"
+      },
+      "homepage": "https://github.com/lupomontero/psl#readme",
+      "_id": "psl@1.2.0",
+      "_nodeVersion": "10.15.3",
+      "_npmVersion": "6.9.0",
+      "dist": {
+        "integrity": "sha512-GEn74ZffufCmkDDLNcl3uuyF/aSD6exEyh1v/ZSdAomB82t6G9hzJVRx0jBmLDW+VfZqks3aScmMw9DszwUalA==",
+        "shasum": "df12b5b1b3a30f51c329eacbdef98f3a6e136dc6",
+        "tarball": "https://registry.npmjs.org/psl/-/psl-1.2.0.tgz",
+        "fileCount": 13,
+        "unpackedSize": 425981,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdGoq/CRA9TVsSAnZWagAA2DoP/jr4EZfTz73aXP28CSQ6\nYc16wfOYIi77dLmjrRAizItFCWNkBqC2zU1betvAWeoaj+REk9EUK02jS2aY\nruvAZzmHzM2qFz/Cn6917aSjCrpL3Js4+mEg2awAsNnyhyFTafgy98alOyhr\ntjbeHrExUC5+SV6fEm8HWjsIlHgIreJsUZTPKHRCsKZ0oLrPHyJswF9YsOE6\nE6NUACftRhjozaJ2yytd1mmQoHrUMFUga6cGcsvh1gVNImcb6V5BQdzYSwyV\nS2WFVfQ+QlnrvTaXao2xlLYIucEE2xvdGn7Vkr/nKbVQXT09aouc5tPv09Ak\nfqJrIQ+8+GAYuOU2+RsFaZfnLc316RXLWLlWYCWO/ewrdhy6la57vc0cdFcl\ntqoOB1S1h1ZbZ+AZ4N27XIFgkTSmLa1aI6/Xag5Yjze7NaTqtuGy/h6Ou9x/\ntEurBpQb4Z0+jxGJJS6A9yxisRVq15JIsenpjdFRoe+heB6HbLQMRjk7g5LW\nJlGh/q/uAPXEuzsUWnIvcCZFOWjR+ewfzYpX2vyIhRMeCPOMhiVjzKrgh2Ud\nxCwp+tuR0lH22PLuMhtHs4My+lmNVvvhF5SYmxiG7o7262jCvQi8NSCvJM7F\nISbO8Egbez/pCMH0nux2/7ViWPHB/ZFMDcAvSL26b156kL+XRnBPj4uLe7s2\ntR7+\r\n=UQZh\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "lupomontero",
+          "email": "lupo@e-noise.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "lupomontero",
+        "email": "lupomontero@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/psl_1.2.0_1562020543007_0.7744839472865279"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.3.0": {
+      "name": "psl",
+      "version": "1.3.0",
+      "description": "Domain name parser based on the Public Suffix List",
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/lupomontero/psl.git"
+      },
+      "main": "index.js",
+      "scripts": {
+        "pretest": "eslint .",
+        "test": "mocha test && karma start ./karma.conf.js --single-run",
+        "watch": "mocha test --watch",
+        "prebuild": "./scripts/update-rules.js",
+        "build": "browserify ./index.js --standalone=psl > ./dist/psl.js",
+        "postbuild": "cat ./dist/psl.js | uglifyjs -c -m > ./dist/psl.min.js",
+        "commit-and-pr": "commit-and-pr",
+        "changelog": "git log $(git describe --tags --abbrev=0)..HEAD --oneline --format=\"%h %s (%an <%ae>)\""
+      },
+      "keywords": [
+        "publicsuffix",
+        "publicsuffixlist"
+      ],
+      "author": {
+        "name": "Lupo Montero",
+        "email": "lupomontero@gmail.com",
+        "url": "https://lupomontero.com/"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "JSONStream": "^1.3.5",
+        "browserify": "^16.3.0",
+        "commit-and-pr": "^1.0.3",
+        "eslint": "^6.1.0",
+        "eslint-config-hapi": "^12.0.0",
+        "eslint-plugin-hapi": "^4.1.0",
+        "karma": "^4.2.0",
+        "karma-browserify": "^6.1.0",
+        "karma-mocha": "^1.3.0",
+        "karma-mocha-reporter": "^2.2.5",
+        "karma-phantomjs-launcher": "^1.0.4",
+        "mocha": "^6.2.0",
+        "phantomjs-prebuilt": "^2.1.16",
+        "request": "^2.88.0",
+        "uglify-js": "^3.6.0",
+        "watchify": "^3.11.1"
+      },
+      "gitHead": "a23eb0065865cf6922008b7f87f0a2acadcf141f",
+      "bugs": {
+        "url": "https://github.com/lupomontero/psl/issues"
+      },
+      "homepage": "https://github.com/lupomontero/psl#readme",
+      "_id": "psl@1.3.0",
+      "_nodeVersion": "10.16.0",
+      "_npmVersion": "6.9.2",
+      "dist": {
+        "integrity": "sha512-avHdspHO+9rQTLbv1RO+MPYeP/SzsCoxofjVnHanETfQhTJrmB0HlDoW+EiN/R+C0BZ+gERab9NY0lPN2TxNag==",
+        "shasum": "e1ebf6a3b5564fa8376f3da2275da76d875ca1bd",
+        "tarball": "https://registry.npmjs.org/psl/-/psl-1.3.0.tgz",
+        "fileCount": 8,
+        "unpackedSize": 431109,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdQg/NCRA9TVsSAnZWagAAFq8QAIr+K9xB75zZ1ZKjjIOL\n74PUON+nrONNRSiBJh/NI5qErnVv9Q9xHYkwaWCZ5YTNpW77R8obQAI4vV83\n8MYhmE63VjzT15njeh/Q8uAF132+eCRW1M/2RHrvIa1YmGfC92ybrGRTHxdo\nfNGB0ahI5ZwwR5UIeZnDlpXUa0u/yhjNJAynImFmVym0ReypEzuMQbhrLu4v\nXOpMkhbevWkDHpEmv/2ZGwUYyZ6MG3BU++DjxWAbY143ODZOLOFEP8eNV5LE\nmCQas9psjxtePJItUa107ZqiYv3QJKhMezqfwSVCZGSynT24ERMm/b1qA3PT\nfkAyUIgVoZagHZgMC2FmYxhm9eoeq5g4QdVsG/6AAxazM4QqwXmMumv5ZTgA\nb/uiGoNq/Fws07tn4nVNsi/747NWZ4cv2bA4uty7tKsewbdrnrYExkppXjhZ\nATYDhiAb5oMW/ChsUaDbcREO82kwnhqsr9XWuMWonzkGbSsB10uWQrXpCyj4\nsFOt4QoI2mcHvMUIoOwhf9yzcMnK/g2c8dn3zQfqKWlD+2RCvyjVKjweJWKe\n3zM/IzJX1iFBHdiw2t3XlteUuj23E9t1CTgowsS6rP4ECQZr38ivWsUQsfj7\n4MCVh+h2P+/C3+XovdMoqF5xFb6n92pig70YZH12FauOqOxOwj4FtlW0EUvV\njBKM\r\n=xsnf\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "lupomontero",
+          "email": "lupo@e-noise.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "lupomontero",
+        "email": "lupomontero@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/psl_1.3.0_1564610509110_0.9419666765761785"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.3.1": {
+      "name": "psl",
+      "version": "1.3.1",
+      "description": "Domain name parser based on the Public Suffix List",
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/lupomontero/psl.git"
+      },
+      "main": "index.js",
+      "scripts": {
+        "pretest": "eslint .",
+        "test": "mocha test && karma start ./karma.conf.js --single-run",
+        "watch": "mocha test --watch",
+        "prebuild": "./scripts/update-rules.js",
+        "build": "browserify ./index.js --standalone=psl > ./dist/psl.js",
+        "postbuild": "cat ./dist/psl.js | uglifyjs -c -m > ./dist/psl.min.js",
+        "commit-and-pr": "commit-and-pr",
+        "changelog": "git log $(git describe --tags --abbrev=0)..HEAD --oneline --format=\"%h %s (%an <%ae>)\""
+      },
+      "keywords": [
+        "publicsuffix",
+        "publicsuffixlist"
+      ],
+      "author": {
+        "name": "Lupo Montero",
+        "email": "lupomontero@gmail.com",
+        "url": "https://lupomontero.com/"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "JSONStream": "^1.3.5",
+        "browserify": "^16.5.0",
+        "commit-and-pr": "^1.0.3",
+        "eslint": "^6.3.0",
+        "eslint-config-hapi": "^12.0.0",
+        "eslint-plugin-hapi": "^4.1.0",
+        "karma": "^4.3.0",
+        "karma-browserify": "^6.1.0",
+        "karma-mocha": "^1.3.0",
+        "karma-mocha-reporter": "^2.2.5",
+        "karma-phantomjs-launcher": "^1.0.4",
+        "mocha": "^6.2.0",
+        "phantomjs-prebuilt": "^2.1.16",
+        "request": "^2.88.0",
+        "uglify-js": "^3.6.0",
+        "watchify": "^3.11.1"
+      },
+      "gitHead": "e5b1d24335d0b0b11faccc5e8c4bc85f7fc0e013",
+      "bugs": {
+        "url": "https://github.com/lupomontero/psl/issues"
+      },
+      "homepage": "https://github.com/lupomontero/psl#readme",
+      "_id": "psl@1.3.1",
+      "_nodeVersion": "10.16.3",
+      "_npmVersion": "6.11.2",
+      "dist": {
+        "integrity": "sha512-2KLd5fKOdAfShtY2d/8XDWVRnmp3zp40Qt6ge2zBPFARLXOGUf2fHD5eg+TV/5oxBtQKVhjUaKFsAaE4HnwfSA==",
+        "shasum": "d5aa3873a35ec450bc7db9012ad5a7246f6fc8bd",
+        "tarball": "https://registry.npmjs.org/psl/-/psl-1.3.1.tgz",
+        "fileCount": 8,
+        "unpackedSize": 430889,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdbb84CRA9TVsSAnZWagAADa0P/j833OPDv3CBjSbXkw8F\nfbXlqtckK6EkrOhpca/ajBnGDWKAWoVfK6btqX2lnlTxfVK5OqndPkYL5CGX\nczW6FSU9ozyEMNK5X6PR1c3is4jVHEdxVbZg42Oha5IATdzkpiOo69aAUTfF\nj63ueRbxwUJZ5HcMm0c/xxGFsKfe6WP5YbBUTKYS1BHZurPTxqO/QuLf2zpI\nbM+3oAXzvPdUQ6SlZsr2LHbyn3XT3/LffCCSytCOLrqjD+4Rzcjv+h64J7jH\nOqqrK8MYrmUQJ8oNa93Akp4jzsDUejK4bJv5SFhv7rI7PMthazSsFHRoaU3r\n1oxsP+BW+PJ+DP+08daaTwWs/eILANjnKKsVCEayKjcTXJ0RlBfoNdLA+N2A\nRpwZiWRIXuLGo6LWU/i7LkF5p7aLF3js/1pONwCfSSPKJNXq0kUAl0kzH1fr\n0lTTkyyTyMaA/PwJ0CbNg9NGt54KweJM4QTLZjVwHFKxLgVYEp4C3WfncNUp\neEpReuyL6C3sKWR0yGAbpf87ul7AjlTzIqDZd9EjJudooKxcy97ud1c67xQa\nKuMI376WnK8039WS+FHGUHgrj5b/wpYmnvMJjbzUlaYZ2BCyqF2ATWfknsEy\nANy83NDLMOZg4Yi5NQBxc9TFKoD2GZfSSgPbo2eUstHKpmqDzcI7GgWSQibn\nhp60\r\n=PfUH\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "lupomontero",
+          "email": "lupo@e-noise.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "lupomontero",
+        "email": "lupomontero@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/psl_1.3.1_1567473463515_0.8524893611555355"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.4.0": {
+      "name": "psl",
+      "version": "1.4.0",
+      "description": "Domain name parser based on the Public Suffix List",
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/lupomontero/psl.git"
+      },
+      "main": "index.js",
+      "scripts": {
+        "pretest": "eslint .",
+        "test": "mocha test && karma start ./karma.conf.js --single-run",
+        "watch": "mocha test --watch",
+        "prebuild": "./scripts/update-rules.js",
+        "build": "browserify ./index.js --standalone=psl > ./dist/psl.js",
+        "postbuild": "cat ./dist/psl.js | uglifyjs -c -m > ./dist/psl.min.js",
+        "commit-and-pr": "commit-and-pr",
+        "changelog": "git log $(git describe --tags --abbrev=0)..HEAD --oneline --format=\"%h %s (%an <%ae>)\""
+      },
+      "keywords": [
+        "publicsuffix",
+        "publicsuffixlist"
+      ],
+      "author": {
+        "name": "Lupo Montero",
+        "email": "lupomontero@gmail.com",
+        "url": "https://lupomontero.com/"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "JSONStream": "^1.3.5",
+        "browserify": "^16.5.0",
+        "commit-and-pr": "^1.0.3",
+        "eslint": "^6.3.0",
+        "eslint-config-hapi": "^12.0.0",
+        "eslint-plugin-hapi": "^4.1.0",
+        "karma": "^4.3.0",
+        "karma-browserify": "^6.1.0",
+        "karma-mocha": "^1.3.0",
+        "karma-mocha-reporter": "^2.2.5",
+        "karma-phantomjs-launcher": "^1.0.4",
+        "mocha": "^6.2.0",
+        "phantomjs-prebuilt": "^2.1.16",
+        "request": "^2.88.0",
+        "uglify-js": "^3.6.0",
+        "watchify": "^3.11.1"
+      },
+      "gitHead": "bc2edb4ce9454f9be63e8a255b79aad62bea3b88",
+      "bugs": {
+        "url": "https://github.com/lupomontero/psl/issues"
+      },
+      "homepage": "https://github.com/lupomontero/psl#readme",
+      "_id": "psl@1.4.0",
+      "_nodeVersion": "10.16.3",
+      "_npmVersion": "6.11.3",
+      "dist": {
+        "integrity": "sha512-HZzqCGPecFLyoRj5HLfuDSKYTJkAfB5thKBIkRHtGjWwY7p1dAyveIbXIq4tO0KYfDF2tHqPUgY9SDnGm00uFw==",
+        "shasum": "5dd26156cdb69fa1fdb8ab1991667d3f80ced7c2",
+        "tarball": "https://registry.npmjs.org/psl/-/psl-1.4.0.tgz",
+        "fileCount": 8,
+        "unpackedSize": 430943,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJddmbqCRA9TVsSAnZWagAAco4P/365LAwqqfVvLqEPv45w\nfE8d22hKIqNwkGujdJLQOwJ6IhC12sYMzNsAtAsuCpVtMhx1eciDrNzm6v+G\n4Geix0F63eUuPDiY2cp3bLgMWrrMc+GS8dWVVgsgzNktYuDeCQ08NfwODqo/\ngBSSWEv2QL9NWZILA7gOwzIp9fv6ZgrTfpiatXh08pdAEfGV/4/tjIxRzm2m\nO/xBj1G0jJtcVPh/OyDN/vcQsCOfNRm2NhHO8Qs4lnDfqteX6NXeymzQjwjX\nrNQW1KWCLTaAVwI7pE6L7SFPGTFXn/rlTuFq/G5nN1eTLMFkFQL7rA3YWA9n\naq5vhckc8f8xoIrM5MhUGITn+2S73E5f/P1jMXzs/y1h84dWSVzoDQi+sT8x\nMJSyEGSw2WlTTmv1hIL6P9WEi8uQzJkh0Sws0HPUT1FMqblw8dXUlUd9I61F\nrgVdgRO5TDAOKapnIeqmyytYNomHF58FlZl1g+U+BcjRHUmO/PhzYlJ4OBCg\nh1bNdU2VOlyauc+ylUNqXijWq3r0cxqnWyvVqTuqwfkhA332sh5z3smwgbzs\nzRYnuvA+ElEheolXgMXlxo9TddpKZoghPqSnFXB8liSCAWVIAKwEs23q7qP9\nJMzVl+JPh7/clvxCxDKb2mSPCjLOJPfWDZQqBuOd8WAgEkZqn+RDYC96++n/\nOjaC\r\n=xULg\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "lupomontero",
+          "email": "lupo@e-noise.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "lupomontero",
+        "email": "lupomontero@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/psl_1.4.0_1568040681991_0.45373751279030294"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.5.0": {
+      "name": "psl",
+      "version": "1.5.0",
+      "description": "Domain name parser based on the Public Suffix List",
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/lupomontero/psl.git"
+      },
+      "main": "index.js",
+      "scripts": {
+        "pretest": "eslint .",
+        "test": "mocha test && karma start ./karma.conf.js --single-run",
+        "watch": "mocha test --watch",
+        "prebuild": "./scripts/update-rules.js",
+        "build": "browserify ./index.js --standalone=psl > ./dist/psl.js",
+        "postbuild": "cat ./dist/psl.js | uglifyjs -c -m > ./dist/psl.min.js",
+        "commit-and-pr": "commit-and-pr",
+        "changelog": "git log $(git describe --tags --abbrev=0)..HEAD --oneline --format=\"%h %s (%an <%ae>)\""
+      },
+      "keywords": [
+        "publicsuffix",
+        "publicsuffixlist"
+      ],
+      "author": {
+        "name": "Lupo Montero",
+        "email": "lupomontero@gmail.com",
+        "url": "https://lupomontero.com/"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "JSONStream": "^1.3.5",
+        "browserify": "^16.5.0",
+        "commit-and-pr": "^1.0.4",
+        "eslint": "^6.7.1",
+        "eslint-config-hapi": "^12.0.0",
+        "eslint-plugin-hapi": "^4.1.0",
+        "karma": "^4.4.1",
+        "karma-browserify": "^6.1.0",
+        "karma-mocha": "^1.3.0",
+        "karma-mocha-reporter": "^2.2.5",
+        "karma-phantomjs-launcher": "^1.0.4",
+        "mocha": "^6.2.2",
+        "phantomjs-prebuilt": "^2.1.16",
+        "request": "^2.88.0",
+        "uglify-js": "^3.7.0",
+        "watchify": "^3.11.1"
+      },
+      "gitHead": "2c6728c02e11c7ab7e124033c3df3a949078353d",
+      "bugs": {
+        "url": "https://github.com/lupomontero/psl/issues"
+      },
+      "homepage": "https://github.com/lupomontero/psl#readme",
+      "_id": "psl@1.5.0",
+      "_nodeVersion": "12.13.0",
+      "_npmVersion": "6.13.1",
+      "dist": {
+        "integrity": "sha512-4vqUjKi2huMu1OJiLhi3jN6jeeKvMZdI1tYgi/njW5zV52jNLgSAZSdN16m9bJFe61/cT8ulmw4qFitV9QRsEA==",
+        "shasum": "47fd1292def7fdb1e138cd78afa8814cebcf7b13",
+        "tarball": "https://registry.npmjs.org/psl/-/psl-1.5.0.tgz",
+        "fileCount": 8,
+        "unpackedSize": 430875,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd4ZhICRA9TVsSAnZWagAAj9cQAJ7I/Du56Tf2tMH5i0Ru\nSG8PSQuwwd/1MqbFkPg+D+jkNQG1lxXOnh3VFTxm4RdQO38jv0FjvvkcKFL9\nUouKPEmYjJ9ebzAXjECKxy1eNoBqY/lVDiEHfvKMoQtYTGQK8NuRcmmr6rTY\nujo+nFj2GKNRlGX7GNzZqADPtBzlm6ei18JfYOJ/OgYVmYxL3m/mCJHzt9og\nKItZ6ZIKfpdSJ05Yx8FQTg2IE41D3pEoHbPNDHSiCuoeQknLO4JYYkDF4Mq+\nPEs2yvO1EDumzs9No6slmmzWCxHZUM7c1H5kaath6299FU8R1ZpKgUkyy6C8\nibqfUghb0l/z3orYLGrIVoxCPKv+UA+OlIv0oKQsgj83YCcYTHwsRl+Tqtgh\ntuWQqlhffC9PrY8jkdDqmjgXQMVvLBwGPMNbvdm6nSHtYn8H7QBKl+TtJF/3\nAKkKJYLo318rb4tFl1Aq1dWerLj2KKZkVSrUBhy0LK8MZkd6sMaMSizIZJ86\ndWlkH43NElNirKvOShxQc9uLsONkqgTwcN7vKKnvp4k5DhI6ABUomWFO6/P7\nOBKZZulHm8lABGvvsCjMOAPGTUH16cN/vOnuj/MgTALgbs9hNHgtQJV5n73b\nloi6aereab6mMQB7P65WZ44N4GPD7FAq9M/l0KxDSMPWtWKXN/zjUKJv4hF+\nU7b+\r\n=D4Hr\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "lupomontero",
+          "email": "lupo@e-noise.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "lupomontero",
+        "email": "lupomontero@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/psl_1.5.0_1575065672099_0.33365670164639627"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.6.0": {
+      "name": "psl",
+      "version": "1.6.0",
+      "description": "Domain name parser based on the Public Suffix List",
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/lupomontero/psl.git"
+      },
+      "main": "index.js",
+      "scripts": {
+        "pretest": "eslint .",
+        "test": "mocha test && karma start ./karma.conf.js --single-run",
+        "watch": "mocha test --watch",
+        "prebuild": "./scripts/update-rules.js",
+        "build": "browserify ./index.js --standalone=psl > ./dist/psl.js",
+        "postbuild": "cat ./dist/psl.js | uglifyjs -c -m > ./dist/psl.min.js",
+        "commit-and-pr": "commit-and-pr",
+        "changelog": "git log $(git describe --tags --abbrev=0)..HEAD --oneline --format=\"%h %s (%an <%ae>)\""
+      },
+      "keywords": [
+        "publicsuffix",
+        "publicsuffixlist"
+      ],
+      "author": {
+        "name": "Lupo Montero",
+        "email": "lupomontero@gmail.com",
+        "url": "https://lupomontero.com/"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "JSONStream": "^1.3.5",
+        "browserify": "^16.5.0",
+        "commit-and-pr": "^1.0.4",
+        "eslint": "^6.7.2",
+        "eslint-config-hapi": "^12.0.0",
+        "eslint-plugin-hapi": "^4.1.0",
+        "karma": "^4.4.1",
+        "karma-browserify": "^6.1.0",
+        "karma-mocha": "^1.3.0",
+        "karma-mocha-reporter": "^2.2.5",
+        "karma-phantomjs-launcher": "^1.0.4",
+        "mocha": "^6.2.2",
+        "phantomjs-prebuilt": "^2.1.16",
+        "request": "^2.88.0",
+        "uglify-js": "^3.7.1",
+        "watchify": "^3.11.1"
+      },
+      "gitHead": "4246bc87822534e8dfb722ab7da77183baf05d1f",
+      "bugs": {
+        "url": "https://github.com/lupomontero/psl/issues"
+      },
+      "homepage": "https://github.com/lupomontero/psl#readme",
+      "_id": "psl@1.6.0",
+      "_nodeVersion": "12.13.1",
+      "_npmVersion": "6.12.1",
+      "dist": {
+        "integrity": "sha512-SYKKmVel98NCOYXpkwUqZqh0ahZeeKfmisiLIcEZdsb+WbLv02g/dI5BUmZnIyOe7RzZtLax81nnb2HbvC2tzA==",
+        "shasum": "60557582ee23b6c43719d9890fb4170ecd91e110",
+        "tarball": "https://registry.npmjs.org/psl/-/psl-1.6.0.tgz",
+        "fileCount": 8,
+        "unpackedSize": 431783,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd6aA6CRA9TVsSAnZWagAAjrEP/1lp//Y4duI82lYqQ5is\naYNAFVom/ZSphsOQE26eLJ9t5SZHuLBtmlYaK3CIWbVfvyigjguB31PxUvMy\nkuDAUtj4xM6hTOo0VMkKUDnTb9PVbOdEGFLnsEo7MfFJSaTCaWXXoPFzCDY5\nQfMdsZ+4c2xzdtCxELqNnnyo+WBFlmglu5NebtlP1qh09GwfPU8Iz8+WF+BV\nekMX0rkUpu7/xixxV5RW43dTeIYN3OToT9R/3pujzV7OjywZt4qEsJDUuGVJ\nlVq52iyulRLw+e2wtWTibz7jRYPsIflAeboKC83sMzy+/EdKA7d6rBN/2VBQ\n5jvdoCzNChzCR0CeafqL4FQrT3WIVBrcoyHRfjU9FvV0mNR9jJRUXxIIEMQx\niewIP4GMyOmWavQyfz0X0yj+kX+ye7CQ3lIpHFYotXK5tlU+ds3QJzXK1VWW\nptiZjulQHWgHUw2pYpFhLWWt+rS5TCYFditYt8IDnsgHp32pBpRCgkT3NHGT\niTITiTHms8jA0o2FEdIWX+z9O9WS2UqXWEcjmyDT6fYmxWLTsRhCjYiYCSAP\nQXE/J4XPSFW7j4S+4aAFpPvTRqP81FOlZ5su3hDSqJ76GdcfRib7D4YwtkdJ\nf2V9qppeYjRExv/MzVSVN5gtP6MLYDDXYT9MFn3PnPh+xu+T0aG9ctj91fCL\nVq5Y\r\n=bx86\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "lupomontero",
+          "email": "lupo@e-noise.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "lupomontero",
+        "email": "lupomontero@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/psl_1.6.0_1575591994406_0.9977272160265911"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.7.0": {
+      "name": "psl",
+      "version": "1.7.0",
+      "description": "Domain name parser based on the Public Suffix List",
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/lupomontero/psl.git"
+      },
+      "main": "index.js",
+      "scripts": {
+        "pretest": "eslint .",
+        "test": "mocha test && karma start ./karma.conf.js --single-run",
+        "watch": "mocha test --watch",
+        "prebuild": "./scripts/update-rules.js",
+        "build": "browserify ./index.js --standalone=psl > ./dist/psl.js",
+        "postbuild": "cat ./dist/psl.js | uglifyjs -c -m > ./dist/psl.min.js",
+        "commit-and-pr": "commit-and-pr",
+        "changelog": "git log $(git describe --tags --abbrev=0)..HEAD --oneline --format=\"%h %s (%an <%ae>)\""
+      },
+      "keywords": [
+        "publicsuffix",
+        "publicsuffixlist"
+      ],
+      "author": {
+        "name": "Lupo Montero",
+        "email": "lupomontero@gmail.com",
+        "url": "https://lupomontero.com/"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "JSONStream": "^1.3.5",
+        "browserify": "^16.5.0",
+        "commit-and-pr": "^1.0.4",
+        "eslint": "^6.8.0",
+        "eslint-config-hapi": "^12.0.0",
+        "eslint-plugin-hapi": "^4.1.0",
+        "karma": "^4.4.1",
+        "karma-browserify": "^6.1.0",
+        "karma-mocha": "^1.3.0",
+        "karma-mocha-reporter": "^2.2.5",
+        "karma-phantomjs-launcher": "^1.0.4",
+        "mocha": "^6.2.2",
+        "phantomjs-prebuilt": "^2.1.16",
+        "request": "^2.88.0",
+        "uglify-js": "^3.7.3",
+        "watchify": "^3.11.1"
+      },
+      "gitHead": "071bfc2fd6090dbe57988ec19ba7421c5c320afd",
+      "bugs": {
+        "url": "https://github.com/lupomontero/psl/issues"
+      },
+      "homepage": "https://github.com/lupomontero/psl#readme",
+      "_id": "psl@1.7.0",
+      "_nodeVersion": "12.14.0",
+      "_npmVersion": "6.13.4",
+      "dist": {
+        "integrity": "sha512-5NsSEDv8zY70ScRnOTn7bK7eanl2MvFrOrS/R6x+dBt5g1ghnj9Zv90kO8GwT8gxcu2ANyFprnFYB85IogIJOQ==",
+        "shasum": "f1c4c47a8ef97167dea5d6bbf4816d736e884a3c",
+        "tarball": "https://registry.npmjs.org/psl/-/psl-1.7.0.tgz",
+        "fileCount": 8,
+        "unpackedSize": 432117,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeB1N5CRA9TVsSAnZWagAAlFgQAI2LZnmL/HhTm9qDwXMD\n+Kv0N3C8TG75w/c/YTVec9bE7ODTjPHehp+4PKvEu3F5HRwqxpf3X+TL/Jrx\nuva890sppA9ysGXgzqgs24oTjAqmDumJD81oPzyed46azM5vramWge24r6eE\nBRlS0pbHQ2DPgG6/1QaLrM6Kzl1gxEYFL+aFoUlb/3DdFEKlARxri7uatOkd\nRsDWYqK2Tg08mnC4HbKZUclju80otDrN/1ydpedAzh/9OKWPq0qpXLACxFzQ\nZdDlx5J2H669vbx4IKwv/ms1xALALKUuJKxOsWddmhsCk8vMkE7FC73yQb7q\nZ8BZ4DcLmY8z1s6I12MMemEgXHWacyFsm8MSeNnD98EErZKYfxa5GESZcRRL\nqYLys99nT6I967rCgFedmemQGzCpUWPaOrDqqop3RzxApEoE29uKQQbu9XAt\nbW78e0XAsLaketouWiNZQdAHNrdqEm4yslWDNvemPBKFKnexWu7YdWys4gLO\n3h8LUR21fkXXqALnYv8q77rW8ZkO6ZQFRA9+1fLKRHqVSs5H7b+JlzJJOswf\nEwajBj3kDJbzBXakIUd8a1fgqsrhLS2TQi7MdiuyVUxu0GgsxVKSdqeGcS7q\nQ3VqlimA4PXcxjAQyEuV4HVCJvY+DX4gGMkfvDDHMeAKEO5yKdQcwz7+51lM\nOdZU\r\n=E3HF\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "lupomontero",
+          "email": "lupo@e-noise.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "lupomontero",
+        "email": "lupomontero@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/psl_1.7.0_1577538425008_0.9858717508244246"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.8.0": {
+      "name": "psl",
+      "version": "1.8.0",
+      "description": "Domain name parser based on the Public Suffix List",
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/lupomontero/psl.git"
+      },
+      "main": "index.js",
+      "scripts": {
+        "pretest": "eslint .",
+        "test": "mocha test && karma start ./karma.conf.js --single-run",
+        "watch": "mocha test --watch",
+        "prebuild": "./scripts/update-rules.js",
+        "build": "browserify ./index.js --standalone=psl > ./dist/psl.js",
+        "postbuild": "cat ./dist/psl.js | uglifyjs -c -m > ./dist/psl.min.js",
+        "commit-and-pr": "commit-and-pr",
+        "changelog": "git log $(git describe --tags --abbrev=0)..HEAD --oneline --format=\"%h %s (%an <%ae>)\""
+      },
+      "keywords": [
+        "publicsuffix",
+        "publicsuffixlist"
+      ],
+      "author": {
+        "name": "Lupo Montero",
+        "email": "lupomontero@gmail.com",
+        "url": "https://lupomontero.com/"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "JSONStream": "^1.3.5",
+        "browserify": "^16.5.0",
+        "commit-and-pr": "^1.0.4",
+        "eslint": "^6.8.0",
+        "eslint-config-hapi": "^12.0.0",
+        "eslint-plugin-hapi": "^4.1.0",
+        "karma": "^4.4.1",
+        "karma-browserify": "^7.0.0",
+        "karma-mocha": "^1.3.0",
+        "karma-mocha-reporter": "^2.2.5",
+        "karma-phantomjs-launcher": "^1.0.4",
+        "mocha": "^7.1.1",
+        "phantomjs-prebuilt": "^2.1.16",
+        "request": "^2.88.2",
+        "uglify-js": "^3.8.0",
+        "watchify": "^3.11.1"
+      },
+      "gitHead": "e8877e40e88e4472827dfa6e421fff2f3467f967",
+      "bugs": {
+        "url": "https://github.com/lupomontero/psl/issues"
+      },
+      "homepage": "https://github.com/lupomontero/psl#readme",
+      "_id": "psl@1.8.0",
+      "_nodeVersion": "12.16.1",
+      "_npmVersion": "6.14.2",
+      "dist": {
+        "integrity": "sha512-RIdOzyoavK+hA18OGGWDqUTsCLhtA7IcZ/6NCs4fFJaHBDab+pDDmDIByWFRQJq2Cd7r1OoQxBGKOaztq+hjIQ==",
+        "shasum": "9326f8bcfb013adcc005fdff056acce020e51c24",
+        "tarball": "https://registry.npmjs.org/psl/-/psl-1.8.0.tgz",
+        "fileCount": 8,
+        "unpackedSize": 433019,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJee1ypCRA9TVsSAnZWagAAK4sP/R2ihBum6On0JgOFMk/A\nB3sInYH5eCfSKm54/DoKbST79ugr7XO95hbs784Pd+RLvGlkHY/ltt37wNu/\nZQ9JBVCkOqwYvOpfGCk4g9epCKey6Q5D86VQDLbGwa+vQ6VNyBcQjMeRhS1Y\n8JkzGjvUlBGsr/yVs5GoWRkEzCppOzLlSJjcsk4JIgmabvXDOeq9QPR6TT4A\nF+4eWRMPkW42qH6V6OKdf7Gkj+V1WVejK+uIR0zdd6KizlCVvWo61z3Y/8zR\n5gTRvSEiz0qbL4BXKXcoNGIdp7gJq1EwdqeBawHkqz+FsBElqmgnN2YemqQr\ncPa6y2MyIDVmLWy0fUSBorYr1eg7+Zl9jirxVJMonVqCBR1mMSCD3UISUiRF\nRxoQE9xVGZjvKfyqqQitn+GqSXXY5KmT7T9V8aR8RF25JJAZA7ZWZl3J4Sv3\nQIStlLApSULgk0a92paP37CsXE9QZzrZie/iyl1DRWbzn4rfB4SVQEMxNNZX\nwidKPvD2Mi2MRWE0gC1aLddPITlOfqlCBdo6dsVSZrfJXR7MBFTVHV5RLsvt\n5ug0vRRqEFIaERTKe6ey3sO3Wd0+Svw7ijnMsijNwurYabbW9IaLuzxs4ih5\ngXqEGfLiNRFPcJrRY6salwcGYl9GYPR2/oqaQEKvT4wDm82NLdcuxVJXC2fm\n4N/7\r\n=gPnQ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "lupomontero",
+          "email": "lupo@e-noise.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "lupomontero",
+        "email": "lupomontero@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/psl_1.8.0_1585142953097_0.800414175277885"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# psl (Public Suffix List)\n\n[![NPM](https://nodei.co/npm/psl.png?downloads=true&downloadRank=true)](https://nodei.co/npm/psl/)\n\n[![Greenkeeper badge](https://badges.greenkeeper.io/lupomontero/psl.svg)](https://greenkeeper.io/)\n[![Build Status](https://travis-ci.org/lupomontero/psl.svg?branch=master)](https://travis-ci.org/lupomontero/psl)\n[![devDependency Status](https://david-dm.org/lupomontero/psl/dev-status.png)](https://david-dm.org/lupomontero/psl#info=devDependencies)\n\n`psl` is a `JavaScript` domain name parser based on the\n[Public Suffix List](https://publicsuffix.org/).\n\nThis implementation is tested against the\n[test data hosted by Mozilla](http://mxr.mozilla.org/mozilla-central/source/netwerk/test/unit/data/test_psl.txt?raw=1)\nand kindly provided by [Comodo](https://www.comodo.com/).\n\nCross browser testing provided by\n[<img alt=\"BrowserStack\" width=\"160\" src=\"./browserstack-logo.svg\" />](https://www.browserstack.com/)\n\n## What is the Public Suffix List?\n\nThe Public Suffix List is a cross-vendor initiative to provide an accurate list\nof domain name suffixes.\n\nThe Public Suffix List is an initiative of the Mozilla Project, but is\nmaintained as a community resource. It is available for use in any software,\nbut was originally created to meet the needs of browser manufacturers.\n\nA \"public suffix\" is one under which Internet users can directly register names.\nSome examples of public suffixes are \".com\", \".co.uk\" and \"pvt.k12.wy.us\". The\nPublic Suffix List is a list of all known public suffixes.\n\nSource: http://publicsuffix.org\n\n\n## Installation\n\n### Node.js\n\n```sh\nnpm install --save psl\n```\n\n### Browser\n\nDownload [psl.min.js](https://raw.githubusercontent.com/lupomontero/psl/master/dist/psl.min.js)\nand include it in a script tag.\n\n```html\n<script src=\"psl.min.js\"></script>\n```\n\nThis script is browserified and wrapped in a [umd](https://github.com/umdjs/umd)\nwrapper so you should be able to use it standalone or together with a module\nloader.\n\n## API\n\n### `psl.parse(domain)`\n\nParse domain based on Public Suffix List. Returns an `Object` with the following\nproperties:\n\n* `tld`: Top level domain (this is the _public suffix_).\n* `sld`: Second level domain (the first private part of the domain name).\n* `domain`: The domain name is the `sld` + `tld`.\n* `subdomain`: Optional parts left of the domain.\n\n#### Example:\n\n```js\nvar psl = require('psl');\n\n// Parse domain without subdomain\nvar parsed = psl.parse('google.com');\nconsole.log(parsed.tld); // 'com'\nconsole.log(parsed.sld); // 'google'\nconsole.log(parsed.domain); // 'google.com'\nconsole.log(parsed.subdomain); // null\n\n// Parse domain with subdomain\nvar parsed = psl.parse('www.google.com');\nconsole.log(parsed.tld); // 'com'\nconsole.log(parsed.sld); // 'google'\nconsole.log(parsed.domain); // 'google.com'\nconsole.log(parsed.subdomain); // 'www'\n\n// Parse domain with nested subdomains\nvar parsed = psl.parse('a.b.c.d.foo.com');\nconsole.log(parsed.tld); // 'com'\nconsole.log(parsed.sld); // 'foo'\nconsole.log(parsed.domain); // 'foo.com'\nconsole.log(parsed.subdomain); // 'a.b.c.d'\n```\n\n### `psl.get(domain)`\n\nGet domain name, `sld` + `tld`. Returns `null` if not valid.\n\n#### Example:\n\n```js\nvar psl = require('psl');\n\n// null input.\npsl.get(null); // null\n\n// Mixed case.\npsl.get('COM'); // null\npsl.get('example.COM'); // 'example.com'\npsl.get('WwW.example.COM'); // 'example.com'\n\n// Unlisted TLD.\npsl.get('example'); // null\npsl.get('example.example'); // 'example.example'\npsl.get('b.example.example'); // 'example.example'\npsl.get('a.b.example.example'); // 'example.example'\n\n// TLD with only 1 rule.\npsl.get('biz'); // null\npsl.get('domain.biz'); // 'domain.biz'\npsl.get('b.domain.biz'); // 'domain.biz'\npsl.get('a.b.domain.biz'); // 'domain.biz'\n\n// TLD with some 2-level rules.\npsl.get('uk.com'); // null);\npsl.get('example.uk.com'); // 'example.uk.com');\npsl.get('b.example.uk.com'); // 'example.uk.com');\n\n// More complex TLD.\npsl.get('c.kobe.jp'); // null\npsl.get('b.c.kobe.jp'); // 'b.c.kobe.jp'\npsl.get('a.b.c.kobe.jp'); // 'b.c.kobe.jp'\npsl.get('city.kobe.jp'); // 'city.kobe.jp'\npsl.get('www.city.kobe.jp'); // 'city.kobe.jp'\n\n// IDN labels.\npsl.get('食狮.com.cn'); // '食狮.com.cn'\npsl.get('食狮.公司.cn'); // '食狮.公司.cn'\npsl.get('www.食狮.公司.cn'); // '食狮.公司.cn'\n\n// Same as above, but punycoded.\npsl.get('xn--85x722f.com.cn'); // 'xn--85x722f.com.cn'\npsl.get('xn--85x722f.xn--55qx5d.cn'); // 'xn--85x722f.xn--55qx5d.cn'\npsl.get('www.xn--85x722f.xn--55qx5d.cn'); // 'xn--85x722f.xn--55qx5d.cn'\n```\n\n### `psl.isValid(domain)`\n\nCheck whether a domain has a valid Public Suffix. Returns a `Boolean` indicating\nwhether the domain has a valid Public Suffix.\n\n#### Example\n\n```js\nvar psl = require('psl');\n\npsl.isValid('google.com'); // true\npsl.isValid('www.google.com'); // true\npsl.isValid('x.yz'); // false\n```\n\n\n## Testing and Building\n\nTest are written using [`mocha`](https://mochajs.org/) and can be\nrun in two different environments: `node` and `phantomjs`.\n\n```sh\n# This will run `eslint`, `mocha` and `karma`.\nnpm test\n\n# Individual test environments\n# Run tests in node only.\n./node_modules/.bin/mocha test\n# Run tests in phantomjs only.\n./node_modules/.bin/karma start ./karma.conf.js --single-run\n\n# Build data (parse raw list) and create dist files\nnpm run build\n```\n\nFeel free to fork if you see possible improvements!\n\n\n## Acknowledgements\n\n* Mozilla Foundation's [Public Suffix List](https://publicsuffix.org/)\n* Thanks to Rob Stradling of [Comodo](https://www.comodo.com/) for providing\n  test data.\n* Inspired by [weppos/publicsuffix-ruby](https://github.com/weppos/publicsuffix-ruby)\n\n\n## License\n\nThe MIT License (MIT)\n\nCopyright (c) 2017 Lupo Montero <lupomontero@gmail.com>\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.\n",
+  "maintainers": [
+    {
+      "name": "lupomontero",
+      "email": "lupo@e-noise.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-03-25T13:29:15.504Z",
+    "created": "2014-10-14T05:53:39.575Z",
+    "1.0.0": "2014-10-14T05:53:39.575Z",
+    "1.0.1": "2014-10-14T18:29:57.070Z",
+    "1.0.2": "2014-10-21T03:00:09.405Z",
+    "1.1.0": "2014-11-11T02:47:00.576Z",
+    "1.1.1": "2014-12-23T00:04:40.770Z",
+    "1.1.2": "2014-12-23T00:16:12.919Z",
+    "1.1.3": "2015-02-13T01:42:38.730Z",
+    "1.1.4": "2015-05-02T17:01:07.356Z",
+    "1.1.5": "2015-05-14T22:53:29.317Z",
+    "1.1.6": "2015-07-20T15:50:44.354Z",
+    "1.1.7": "2015-07-20T15:55:44.252Z",
+    "1.1.8": "2015-10-02T18:09:16.279Z",
+    "1.1.9": "2015-12-14T05:12:17.211Z",
+    "1.1.10": "2016-02-08T21:13:17.714Z",
+    "1.1.11": "2016-06-02T23:20:17.241Z",
+    "1.1.12": "2016-07-18T13:40:58.555Z",
+    "1.1.13": "2016-08-25T16:05:57.846Z",
+    "1.1.14": "2016-09-12T16:44:01.001Z",
+    "1.1.15": "2016-12-05T22:19:43.232Z",
+    "1.1.16": "2017-02-01T21:56:35.064Z",
+    "1.1.17": "2017-03-13T17:59:38.928Z",
+    "1.1.18": "2017-04-02T06:17:44.010Z",
+    "1.1.19": "2017-06-11T07:09:17.811Z",
+    "1.1.20": "2017-08-22T21:30:00.345Z",
+    "1.1.21": "2017-12-04T22:32:00.881Z",
+    "1.1.22": "2018-01-02T17:48:19.379Z",
+    "1.1.23": "2018-02-03T15:26:13.588Z",
+    "1.1.24": "2018-02-20T16:15:38.819Z",
+    "1.1.25": "2018-03-12T21:11:49.373Z",
+    "1.1.26": "2018-05-04T22:05:40.905Z",
+    "1.1.27": "2018-05-22T13:55:34.209Z",
+    "1.1.28": "2018-06-12T22:30:13.472Z",
+    "1.1.29": "2018-08-03T12:30:11.983Z",
+    "1.1.30": "2018-12-12T05:08:16.568Z",
+    "1.1.31": "2018-12-12T05:18:08.944Z",
+    "1.1.32": "2019-05-26T06:27:11.163Z",
+    "1.1.33": "2019-06-19T23:40:16.298Z",
+    "1.2.0": "2019-07-01T22:35:43.149Z",
+    "1.3.0": "2019-07-31T22:01:49.250Z",
+    "1.3.1": "2019-09-03T01:17:43.686Z",
+    "1.4.0": "2019-09-09T14:51:22.179Z",
+    "1.5.0": "2019-11-29T22:14:32.191Z",
+    "1.6.0": "2019-12-06T00:26:34.625Z",
+    "1.7.0": "2019-12-28T13:07:05.166Z",
+    "1.8.0": "2020-03-25T13:29:13.197Z"
+  },
+  "homepage": "https://github.com/lupomontero/psl#readme",
+  "keywords": [
+    "publicsuffix",
+    "publicsuffixlist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/lupomontero/psl.git"
+  },
+  "author": {
+    "name": "Lupo Montero",
+    "email": "lupomontero@gmail.com",
+    "url": "https://lupomontero.com/"
+  },
+  "bugs": {
+    "url": "https://github.com/lupomontero/psl/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "users": {
+    "fouad.nashat": true,
+    "tjfwalker": true,
+    "moimikey": true,
+    "evert0n": true
+  }
+}

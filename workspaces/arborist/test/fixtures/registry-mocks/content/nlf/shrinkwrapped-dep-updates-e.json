@@ -1,0 +1,55 @@
+{
+  "_id": "@nlf/shrinkwrapped-dep-updates-e",
+  "name": "@nlf/shrinkwrapped-dep-updates-e",
+  "dist-tags": {
+    "latest": "1.0.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "@nlf/shrinkwrapped-dep-updates-e",
+      "version": "1.0.0",
+      "description": "a dependency that a shrinkwrapped dependency depends on",
+      "_id": "@nlf/shrinkwrapped-dep-updates-e@1.0.0",
+      "_nodeVersion": "15.11.0",
+      "_npmVersion": "7.9.0",
+      "dist": {
+        "integrity": "sha512-k41VmVMeLH/AgnD7Nx2TIQvt12xd0dKSrWmraYDNZIMxtuuwUjaq1lH8eo8todBU7U5aj94cH4xlLU0g3SgsBA==",
+        "shasum": "bad83483d08c1e134bc632cd94a146d037d266c2",
+        "tarball": "https://registry.npmjs.org/@nlf/shrinkwrapped-dep-updates-e/-/shrinkwrapped-dep-updates-e-1.0.0.tgz",
+        "fileCount": 1,
+        "unpackedSize": 147,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJgfaiLCRA9TVsSAnZWagAAvPQP/3j5LZqrto1+k2kRsUwY\n4KhcD9ejg+iRsUyobh4i9AzIXHV4aDhmUXfEQPfZapZGlhPoeNHvLlH2Yc9Z\nQkUBQGpgAgHWRl0IEnlRD7XV8tbCAbwEjJVZKMqpp6+QZGbHYEmL50JNWQvo\nUlmM2hJNZfdSWGbXFfzmeTXcZzacjylOnihhuejRxc06y9nziuLRZ/xBv+1q\n0owaXlUc1x9AOfrKRxzJ3yu8GojrhHwwoB5n3sGHgS+8aiI1AO5nsV13Zy21\n1L5ZUgwMJozf1YMJQSbxKvncAfjasmrX4CYupCrnC3ci8negnJ9sjGz6kbV/\nbdCp8/HB1GzqIH3a9LE5vJ6Hhx/P6ri6WFKJQF+n+ysbBXukc+hOwoRPetrY\nt4JuVN+2HXn3ODJM/C6xZMGg6Z8MAiyGbEo6Z4JHbJAATEwLCpxXmHwWnXJz\nxCFAWfvmY9Vvx0QkkwFOmJZCaKKSg2lT6r99OTi3VaI+eGVh/agRPgQR2MGJ\n4N2enq9BXyvZNLhtqTuE301DFe4s2wdNwHVD3IHkVlPQjo0XWK1zqy5FF7Fj\nXq43ODCDR9JHqNvT+4/kmXHe28c1yyaqCI4ENUBe5qjMcVYS8w4/4rm+H1CY\nL3vvfcjOn2mj6TtmsEb22Y3/7R4ACTprfVYBFkToj5Yvo6g7vNsiKQrx/YSe\nv4O5\r\n=QXB1\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "_npmUser": {
+        "name": "nlf",
+        "email": "quitlahok@gmail.com"
+      },
+      "directories": {},
+      "maintainers": [
+        {
+          "name": "nlf",
+          "email": "quitlahok@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/shrinkwrapped-dep-updates-e_1.0.0_1618847882817_0.9807461233557111"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2021-04-19T15:58:02.723Z",
+    "1.0.0": "2021-04-19T15:58:02.902Z",
+    "modified": "2021-04-19T15:58:06.316Z"
+  },
+  "maintainers": [
+    {
+      "name": "nlf",
+      "email": "quitlahok@gmail.com"
+    }
+  ],
+  "description": "a dependency that a shrinkwrapped dependency depends on",
+  "readme": "ERROR: No README data found!",
+  "readmeFilename": ""
+}

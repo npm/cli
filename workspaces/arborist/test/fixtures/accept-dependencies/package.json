@@ -1,0 +1,9 @@
+{
+  "name": "@isaacs/testing-accept-dependencies",
+  "version": "1.0.0",
+  "description": "a test of acceptDependencies",
+  "dependencies": {
+    "@isaacs/testing-accept-dependencies-dep" : "1",
+    "semver": "7"
+  }
+}

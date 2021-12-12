@@ -1,0 +1,1029 @@
+{
+  "_id": "prelude-ls",
+  "_rev": "31-9e88b53e228276df394234da5cae2c3e",
+  "name": "prelude-ls",
+  "description": "prelude.ls is a functionally oriented utility library. It is powerful and flexible. Almost all of its functions are curried. It is written in, and is the recommended base library for, LiveScript.",
+  "dist-tags": {
+    "latest": "1.2.1"
+  },
+  "versions": {
+    "0.2.0": {
+      "name": "prelude-ls",
+      "version": "0.2.0",
+      "description": "prelude.ls is the recommended base library for LiveScript, however it will work in any JavaScript environment. It provides a set of functions somewhat based off of Haskell's Prelude.",
+      "keywords": [
+        "library",
+        "prelude",
+        "livescript",
+        "ls",
+        "coffeescript",
+        "javascript"
+      ],
+      "author": {
+        "name": "George Zahariev",
+        "email": "z@georgezahariev.com"
+      },
+      "homepage": "https://github.com/gkz/prelude-ls",
+      "bugs": {
+        "name": "https://github.com/gkz/prelude-ls/issues"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://raw.github.com/gkz/prelude-ls/master/LICENSE"
+        }
+      ],
+      "engines": {
+        "node": ">= 0.6.14 < 0.9.0"
+      },
+      "files": [
+        "prelude.js",
+        "README.md",
+        "LICENSE"
+      ],
+      "main": "./prelude.js",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/gkz/prelude-ls.git"
+      },
+      "_npmUser": {
+        "name": "gkz",
+        "email": "z@georgezahariev.com"
+      },
+      "_id": "prelude-ls@0.2.0",
+      "dependencies": {},
+      "devDependencies": {},
+      "optionalDependencies": {},
+      "_engineSupported": true,
+      "_npmVersion": "1.1.22",
+      "_nodeVersion": "v0.6.17",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "6c2894fb561589816c2f0b3ec4afe64762fcd565",
+        "tarball": "https://registry.npmjs.org/prelude-ls/-/prelude-ls-0.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "gkz",
+          "email": "z@georgezahariev.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.3.0": {
+      "name": "prelude-ls",
+      "version": "0.3.0",
+      "description": "prelude.ls is the recommended base library for LiveScript, however it will work in any JavaScript environment. It provides a set of functions somewhat based off of Haskell's Prelude.",
+      "keywords": [
+        "library",
+        "prelude",
+        "livescript",
+        "ls",
+        "coffeescript",
+        "javascript"
+      ],
+      "author": {
+        "name": "George Zahariev",
+        "email": "z@georgezahariev.com"
+      },
+      "homepage": "https://github.com/gkz/prelude-ls",
+      "bugs": {
+        "name": "https://github.com/gkz/prelude-ls/issues"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://raw.github.com/gkz/prelude-ls/master/LICENSE"
+        }
+      ],
+      "engines": {
+        "node": ">= 0.6.14 < 0.9.0"
+      },
+      "files": [
+        "prelude.js",
+        "README.md",
+        "LICENSE"
+      ],
+      "main": "./prelude.js",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/gkz/prelude-ls.git"
+      },
+      "_npmUser": {
+        "name": "gkz",
+        "email": "z@georgezahariev.com"
+      },
+      "_id": "prelude-ls@0.3.0",
+      "dependencies": {},
+      "devDependencies": {},
+      "optionalDependencies": {},
+      "_engineSupported": true,
+      "_npmVersion": "1.1.22",
+      "_nodeVersion": "v0.6.17",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "2594b3ba72d7ae6c43c27c5f18e0100d54333e5e",
+        "tarball": "https://registry.npmjs.org/prelude-ls/-/prelude-ls-0.3.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "gkz",
+          "email": "z@georgezahariev.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.4.0": {
+      "name": "prelude-ls",
+      "version": "0.4.0",
+      "description": "prelude.ls is a JavaScript functional programming library. It is the recommended base library for, and is written in, LiveScript. It is based off of Haskell's Prelude module.",
+      "keywords": [
+        "library",
+        "prelude",
+        "livescript",
+        "ls",
+        "coffeescript",
+        "javascript"
+      ],
+      "author": {
+        "name": "George Zahariev",
+        "email": "z@georgezahariev.com"
+      },
+      "homepage": "http://gkz.github.com/prelude-ls/",
+      "bugs": {
+        "name": "https://github.com/gkz/prelude-ls/issues"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://raw.github.com/gkz/prelude-ls/master/LICENSE"
+        }
+      ],
+      "engines": {
+        "node": ">= 0.6.14 < 0.9.0"
+      },
+      "files": [
+        "prelude.js",
+        "README.md",
+        "LICENSE"
+      ],
+      "main": "./prelude.js",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/gkz/prelude-ls.git"
+      },
+      "_npmUser": {
+        "name": "gkz",
+        "email": "z@georgezahariev.com"
+      },
+      "_id": "prelude-ls@0.4.0",
+      "dependencies": {},
+      "devDependencies": {},
+      "optionalDependencies": {},
+      "_engineSupported": true,
+      "_npmVersion": "1.1.22",
+      "_nodeVersion": "v0.6.17",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "3adaaba26674ddfca1c91b61829a05443965043e",
+        "tarball": "https://registry.npmjs.org/prelude-ls/-/prelude-ls-0.4.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "gkz",
+          "email": "z@georgezahariev.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.5.0": {
+      "name": "prelude-ls",
+      "version": "0.5.0",
+      "description": "prelude.ls is a JavaScript functional programming library. It is the recommended base library for, and is written in, LiveScript. It is based off of Haskell's Prelude module.",
+      "keywords": [
+        "library",
+        "prelude",
+        "livescript",
+        "ls",
+        "coffeescript",
+        "javascript"
+      ],
+      "author": {
+        "name": "George Zahariev",
+        "email": "z@georgezahariev.com"
+      },
+      "homepage": "http://gkz.github.com/prelude-ls/",
+      "bugs": {
+        "name": "https://github.com/gkz/prelude-ls/issues"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://raw.github.com/gkz/prelude-ls/master/LICENSE"
+        }
+      ],
+      "engines": {
+        "node": ">= 0.6.14 < 0.9.0"
+      },
+      "files": [
+        "prelude.js",
+        "README.md",
+        "LICENSE"
+      ],
+      "main": "./prelude.js",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/gkz/prelude-ls.git"
+      },
+      "_npmUser": {
+        "name": "gkz",
+        "email": "z@georgezahariev.com"
+      },
+      "_id": "prelude-ls@0.5.0",
+      "dependencies": {},
+      "devDependencies": {},
+      "optionalDependencies": {},
+      "_engineSupported": true,
+      "_npmVersion": "1.1.22",
+      "_nodeVersion": "v0.6.17",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "bdfe8c5c40cf8476d31420348ded01629f9d16eb",
+        "tarball": "https://registry.npmjs.org/prelude-ls/-/prelude-ls-0.5.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "gkz",
+          "email": "z@georgezahariev.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.6.0": {
+      "name": "prelude-ls",
+      "version": "0.6.0",
+      "description": "prelude.ls is a JavaScript functional programming library. It is the recommended base library for, and is written in, LiveScript. It is based off of Haskell's Prelude module.",
+      "keywords": [
+        "library",
+        "prelude",
+        "livescript",
+        "ls",
+        "coffeescript",
+        "javascript"
+      ],
+      "author": {
+        "name": "George Zahariev",
+        "email": "z@georgezahariev.com"
+      },
+      "homepage": "http://gkz.github.com/prelude-ls/",
+      "bugs": "https://github.com/gkz/prelude-ls/issues",
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://raw.github.com/gkz/prelude-ls/master/LICENSE"
+        }
+      ],
+      "engines": {
+        "node": ">= 0.8.0"
+      },
+      "files": [
+        "prelude.js",
+        "prelude-browser.js",
+        "prelude-browser-min.js",
+        "README.md",
+        "LICENSE"
+      ],
+      "main": "./prelude.js",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/gkz/prelude-ls.git"
+      },
+      "_id": "prelude-ls@0.6.0",
+      "dist": {
+        "shasum": "cf824b4b47cc73cbd96f9e9885073b43aaeaab3b",
+        "tarball": "https://registry.npmjs.org/prelude-ls/-/prelude-ls-0.6.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "gkz",
+          "email": "z@georgezahariev.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "prelude-ls",
+      "version": "1.0.0",
+      "author": {
+        "name": "George Zahariev",
+        "email": "z@georgezahariev.com"
+      },
+      "description": "prelude.ls is a functionally oriented utility library. It is powerful and flexible. Almost all of its functions are curried. It is written in, and is the recommended base library for, LiveScript.",
+      "keywords": [
+        "prelude",
+        "livescript",
+        "utility",
+        "ls",
+        "coffeescript",
+        "javascript",
+        "library",
+        "functional",
+        "array",
+        "list",
+        "object",
+        "string"
+      ],
+      "main": "lib/",
+      "files": [
+        "lib/",
+        "README.md",
+        "LICENSE"
+      ],
+      "homepage": "http://gkz.github.io/prelude-ls/",
+      "bugs": "https://github.com/gkz/prelude-ls/issues",
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://raw.github.com/gkz/prelude-ls/master/LICENSE"
+        }
+      ],
+      "engines": {
+        "node": ">= 0.8.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/gkz/prelude-ls.git"
+      },
+      "scripts": {
+        "test": "make test"
+      },
+      "devDependencies": {
+        "LiveScript": "~1.1.1",
+        "uglify-js": "~2.2.5",
+        "mocha": "~1.8.2",
+        "browserify": "~2.13.2"
+      },
+      "_id": "prelude-ls@1.0.0",
+      "dist": {
+        "shasum": "7254486e93c17e4a2ee25990f0636105c56284d0",
+        "tarball": "https://registry.npmjs.org/prelude-ls/-/prelude-ls-1.0.0.tgz"
+      },
+      "_npmVersion": "1.1.59",
+      "_npmUser": {
+        "name": "gkz",
+        "email": "z@georgezahariev.com"
+      },
+      "maintainers": [
+        {
+          "name": "gkz",
+          "email": "z@georgezahariev.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "prelude-ls",
+      "version": "1.0.1",
+      "author": {
+        "name": "George Zahariev",
+        "email": "z@georgezahariev.com"
+      },
+      "description": "prelude.ls is a functionally oriented utility library. It is powerful and flexible. Almost all of its functions are curried. It is written in, and is the recommended base library for, LiveScript.",
+      "keywords": [
+        "prelude",
+        "livescript",
+        "utility",
+        "ls",
+        "coffeescript",
+        "javascript",
+        "library",
+        "functional",
+        "array",
+        "list",
+        "object",
+        "string"
+      ],
+      "main": "lib/",
+      "files": [
+        "lib/",
+        "README.md",
+        "LICENSE"
+      ],
+      "homepage": "http://preludels.com",
+      "bugs": "https://github.com/gkz/prelude-ls/issues",
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://raw.github.com/gkz/prelude-ls/master/LICENSE"
+        }
+      ],
+      "engines": {
+        "node": ">= 0.8.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/gkz/prelude-ls.git"
+      },
+      "scripts": {
+        "test": "make test"
+      },
+      "devDependencies": {
+        "LiveScript": "~1.1.1",
+        "uglify-js": "~2.2.5",
+        "mocha": "~1.8.2",
+        "browserify": "~2.13.2"
+      },
+      "_id": "prelude-ls@1.0.1",
+      "dist": {
+        "shasum": "5a3726d0ee4701bb14bd53fa79a581f2ba54a3c3",
+        "tarball": "https://registry.npmjs.org/prelude-ls/-/prelude-ls-1.0.1.tgz"
+      },
+      "_npmVersion": "1.1.59",
+      "_npmUser": {
+        "name": "gkz",
+        "email": "z@georgezahariev.com"
+      },
+      "maintainers": [
+        {
+          "name": "gkz",
+          "email": "z@georgezahariev.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "prelude-ls",
+      "version": "1.0.2",
+      "author": {
+        "name": "George Zahariev",
+        "email": "z@georgezahariev.com"
+      },
+      "description": "prelude.ls is a functionally oriented utility library. It is powerful and flexible. Almost all of its functions are curried. It is written in, and is the recommended base library for, LiveScript.",
+      "keywords": [
+        "prelude",
+        "livescript",
+        "utility",
+        "ls",
+        "coffeescript",
+        "javascript",
+        "library",
+        "functional",
+        "array",
+        "list",
+        "object",
+        "string"
+      ],
+      "main": "lib/",
+      "files": [
+        "lib/",
+        "README.md",
+        "LICENSE"
+      ],
+      "homepage": "http://preludels.com",
+      "bugs": "https://github.com/gkz/prelude-ls/issues",
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://raw.github.com/gkz/prelude-ls/master/LICENSE"
+        }
+      ],
+      "engines": {
+        "node": ">= 0.8.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/gkz/prelude-ls.git"
+      },
+      "scripts": {
+        "test": "make test"
+      },
+      "devDependencies": {
+        "LiveScript": "~1.1.1",
+        "uglify-js": "~2.2.5",
+        "mocha": "~1.8.2",
+        "browserify": "~2.13.2"
+      },
+      "_id": "prelude-ls@1.0.2",
+      "dist": {
+        "shasum": "94ae970021cae523f6556f27bf0398689388d616",
+        "tarball": "https://registry.npmjs.org/prelude-ls/-/prelude-ls-1.0.2.tgz"
+      },
+      "_npmVersion": "1.1.59",
+      "_npmUser": {
+        "name": "gkz",
+        "email": "z@georgezahariev.com"
+      },
+      "maintainers": [
+        {
+          "name": "gkz",
+          "email": "z@georgezahariev.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.3": {
+      "name": "prelude-ls",
+      "version": "1.0.3",
+      "author": {
+        "name": "George Zahariev",
+        "email": "z@georgezahariev.com"
+      },
+      "description": "prelude.ls is a functionally oriented utility library. It is powerful and flexible. Almost all of its functions are curried. It is written in, and is the recommended base library for, LiveScript.",
+      "keywords": [
+        "prelude",
+        "livescript",
+        "utility",
+        "ls",
+        "coffeescript",
+        "javascript",
+        "library",
+        "functional",
+        "array",
+        "list",
+        "object",
+        "string"
+      ],
+      "main": "lib/",
+      "files": [
+        "lib/",
+        "README.md",
+        "LICENSE"
+      ],
+      "homepage": "http://preludels.com",
+      "bugs": "https://github.com/gkz/prelude-ls/issues",
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://raw.github.com/gkz/prelude-ls/master/LICENSE"
+        }
+      ],
+      "engines": {
+        "node": ">= 0.8.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/gkz/prelude-ls.git"
+      },
+      "scripts": {
+        "test": "make test"
+      },
+      "devDependencies": {
+        "LiveScript": "~1.1.1",
+        "uglify-js": "~2.2.5",
+        "mocha": "~1.8.2",
+        "browserify": "~2.13.2"
+      },
+      "_id": "prelude-ls@1.0.3",
+      "dist": {
+        "shasum": "443920ce8940a8294b993fbfcee63b9a8920dce0",
+        "tarball": "https://registry.npmjs.org/prelude-ls/-/prelude-ls-1.0.3.tgz"
+      },
+      "_npmVersion": "1.1.59",
+      "_npmUser": {
+        "name": "gkz",
+        "email": "z@georgezahariev.com"
+      },
+      "maintainers": [
+        {
+          "name": "gkz",
+          "email": "z@georgezahariev.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "prelude-ls",
+      "version": "1.1.0",
+      "author": {
+        "name": "George Zahariev",
+        "email": "z@georgezahariev.com"
+      },
+      "description": "prelude.ls is a functionally oriented utility library. It is powerful and flexible. Almost all of its functions are curried. It is written in, and is the recommended base library for, LiveScript.",
+      "keywords": [
+        "prelude",
+        "livescript",
+        "utility",
+        "ls",
+        "coffeescript",
+        "javascript",
+        "library",
+        "functional",
+        "array",
+        "list",
+        "object",
+        "string"
+      ],
+      "main": "lib/",
+      "files": [
+        "lib/",
+        "README.md",
+        "LICENSE"
+      ],
+      "homepage": "http://preludels.com",
+      "bugs": {
+        "url": "https://github.com/gkz/prelude-ls/issues"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://raw.github.com/gkz/prelude-ls/master/LICENSE"
+        }
+      ],
+      "engines": {
+        "node": ">= 0.8.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/gkz/prelude-ls.git"
+      },
+      "scripts": {
+        "test": "make test"
+      },
+      "devDependencies": {
+        "LiveScript": "~1.2.0",
+        "uglify-js": "~2.4.12",
+        "mocha": "~1.17.1",
+        "istanbul": "~0.2.4",
+        "browserify": "~3.24.13"
+      },
+      "_id": "prelude-ls@1.1.0",
+      "dist": {
+        "shasum": "10e41f713af366c67fa6f2e926d015c02462eca5",
+        "tarball": "https://registry.npmjs.org/prelude-ls/-/prelude-ls-1.1.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.21",
+      "_npmUser": {
+        "name": "gkz",
+        "email": "z@georgezahariev.com"
+      },
+      "maintainers": [
+        {
+          "name": "gkz",
+          "email": "z@georgezahariev.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.1.1": {
+      "name": "prelude-ls",
+      "version": "1.1.1",
+      "author": {
+        "name": "George Zahariev",
+        "email": "z@georgezahariev.com"
+      },
+      "description": "prelude.ls is a functionally oriented utility library. It is powerful and flexible. Almost all of its functions are curried. It is written in, and is the recommended base library for, LiveScript.",
+      "keywords": [
+        "prelude",
+        "livescript",
+        "utility",
+        "ls",
+        "coffeescript",
+        "javascript",
+        "library",
+        "functional",
+        "array",
+        "list",
+        "object",
+        "string"
+      ],
+      "main": "lib/",
+      "files": [
+        "lib/",
+        "README.md",
+        "LICENSE"
+      ],
+      "homepage": "http://preludels.com",
+      "bugs": {
+        "url": "https://github.com/gkz/prelude-ls/issues"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://raw.github.com/gkz/prelude-ls/master/LICENSE"
+        }
+      ],
+      "engines": {
+        "node": ">= 0.8.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/gkz/prelude-ls.git"
+      },
+      "scripts": {
+        "test": "make test"
+      },
+      "devDependencies": {
+        "LiveScript": "~1.2.0",
+        "uglify-js": "~2.4.12",
+        "mocha": "~1.17.1",
+        "istanbul": "~0.2.4",
+        "browserify": "~3.24.13"
+      },
+      "_id": "prelude-ls@1.1.1",
+      "dist": {
+        "shasum": "c0b86c1ffd151ad3cc75e7e3fe38d7a1bf33728a",
+        "tarball": "https://registry.npmjs.org/prelude-ls/-/prelude-ls-1.1.1.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.21",
+      "_npmUser": {
+        "name": "gkz",
+        "email": "z@georgezahariev.com"
+      },
+      "maintainers": [
+        {
+          "name": "gkz",
+          "email": "z@georgezahariev.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.1.2": {
+      "name": "prelude-ls",
+      "version": "1.1.2",
+      "author": {
+        "name": "George Zahariev",
+        "email": "z@georgezahariev.com"
+      },
+      "description": "prelude.ls is a functionally oriented utility library. It is powerful and flexible. Almost all of its functions are curried. It is written in, and is the recommended base library for, LiveScript.",
+      "keywords": [
+        "prelude",
+        "livescript",
+        "utility",
+        "ls",
+        "coffeescript",
+        "javascript",
+        "library",
+        "functional",
+        "array",
+        "list",
+        "object",
+        "string"
+      ],
+      "main": "lib/",
+      "files": [
+        "lib/",
+        "README.md",
+        "LICENSE"
+      ],
+      "homepage": "http://preludels.com",
+      "bugs": {
+        "url": "https://github.com/gkz/prelude-ls/issues"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://raw.github.com/gkz/prelude-ls/master/LICENSE"
+        }
+      ],
+      "engines": {
+        "node": ">= 0.8.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/gkz/prelude-ls.git"
+      },
+      "scripts": {
+        "test": "make test"
+      },
+      "devDependencies": {
+        "livescript": "~1.4.0",
+        "uglify-js": "~2.4.12",
+        "mocha": "~2.2.4",
+        "istanbul": "~0.2.4",
+        "browserify": "~3.24.13",
+        "sinon": "~1.10.2"
+      },
+      "gitHead": "d69be8fd8a682321ba24eced17caf3a1b8ca73b8",
+      "_id": "prelude-ls@1.1.2",
+      "_shasum": "21932a549f5e52ffd9a827f570e04be62a97da54",
+      "_from": ".",
+      "_npmVersion": "2.7.6",
+      "_nodeVersion": "0.11.15",
+      "_npmUser": {
+        "name": "gkz",
+        "email": "z@georgezahariev.com"
+      },
+      "maintainers": [
+        {
+          "name": "gkz",
+          "email": "z@georgezahariev.com"
+        }
+      ],
+      "dist": {
+        "shasum": "21932a549f5e52ffd9a827f570e04be62a97da54",
+        "tarball": "https://registry.npmjs.org/prelude-ls/-/prelude-ls-1.1.2.tgz"
+      },
+      "directories": {}
+    },
+    "1.2.0": {
+      "name": "prelude-ls",
+      "version": "1.2.0",
+      "author": {
+        "name": "George Zahariev",
+        "email": "z@georgezahariev.com"
+      },
+      "description": "prelude.ls is a functionally oriented utility library. It is powerful and flexible. Almost all of its functions are curried. It is written in, and is the recommended base library for, LiveScript.",
+      "keywords": [
+        "prelude",
+        "livescript",
+        "utility",
+        "ls",
+        "coffeescript",
+        "javascript",
+        "library",
+        "functional",
+        "array",
+        "list",
+        "object",
+        "string"
+      ],
+      "main": "lib/",
+      "homepage": "http://preludels.com",
+      "bugs": {
+        "url": "https://github.com/gkz/prelude-ls/issues"
+      },
+      "license": "MIT",
+      "engines": {
+        "node": ">= 0.8.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/gkz/prelude-ls.git"
+      },
+      "scripts": {
+        "test": "make test"
+      },
+      "devDependencies": {
+        "livescript": "^1.6.0",
+        "uglify-js": "^3.8.1",
+        "mocha": "^7.1.1",
+        "browserify": "^16.5.1",
+        "sinon": "~8.0.1"
+      },
+      "gitHead": "80309d14a90485d838593d589f19d357a9694b6d",
+      "_id": "prelude-ls@1.2.0",
+      "_nodeVersion": "6.16.0",
+      "_npmVersion": "6.14.4",
+      "dist": {
+        "integrity": "sha512-8TtiGeEdN4PoPHmuwI0h+hr6l9xFbAr6fnW6uZz4EYEoHxM/HEMhU+EAqvgmVei7UAQk0FV8IHXoO+nfmixgGA==",
+        "shasum": "4f44e43f99ea036f17168993b84295ad8b507051",
+        "tarball": "https://registry.npmjs.org/prelude-ls/-/prelude-ls-1.2.0.tgz",
+        "fileCount": 10,
+        "unpackedSize": 36718,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJehmrZCRA9TVsSAnZWagAAFnsP/ReRI3gx2bh2ng+2zRmj\nIhpIgq7CMIG9r3RrdN+nWK03fe6sZbznJHojFA9a05JZlw+DBLbCZcHZSIwq\ncZ3JZ/EvlGHxePUsvrQ4aRQvbF8xMeLzZIYDHf1J6oYbZ3kL7RsxGr8e7/HU\nvX+hCXsiEZCi+5DEYayzLd7WaMyBqcb5449lxjYgUekGiqVO+Nh2wRNm3r7/\nRwG53xxj3HzoAzB1mzQYGrXsD+UJ/4sNXPC7/1FcRpRCogxNlArt2L0YdTM+\niNkLYy/BrAbcLAzmtlUYeqeMY9h5ttKu1Z1N6XMobkN9JkpieIPnALIvpPvs\nrMRjmnvFHEMnvOFInMYq0UmUppoc9stMflIgEBTi3rsEpI7DjPYfxJGS5xdo\nqEEzg8NXPGJBYMb2oLuvEd+eLkFd/EAIjwaw1oBzYPNk+C9pBmQtCxmle/Aw\nDXdoivU1AHr4m8P7J0Sdd0ECeCu+fwmftH0UCUhzllXICXfoMEiG2VbfQCJb\nnCmqSaD759O6Izpuo+AmZusKll3i5HrZqWVNWCwsB8Z2F5onh+rgyYb2jCk6\nv0gw+XfuKgHwbwyYAUqS4pUkHMU4NSFbuZrIyKdxlVFHw/xaBUluOvOdOtxn\n7PYxA4Ho1Yo6BtbrE/giELfA0fI51x12Qq5Q7psD3I2AYkKE3Dv1MJp0rlQ4\nBG6f\r\n=uzDG\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "gkz",
+          "email": "z@georgezahariev.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "gkz",
+        "email": "z@georgezahariev.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/prelude-ls_1.2.0_1585867481342_0.45937039008910374"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.2.1": {
+      "name": "prelude-ls",
+      "version": "1.2.1",
+      "author": {
+        "name": "George Zahariev",
+        "email": "z@georgezahariev.com"
+      },
+      "description": "prelude.ls is a functionally oriented utility library. It is powerful and flexible. Almost all of its functions are curried. It is written in, and is the recommended base library for, LiveScript.",
+      "keywords": [
+        "prelude",
+        "livescript",
+        "utility",
+        "ls",
+        "coffeescript",
+        "javascript",
+        "library",
+        "functional",
+        "array",
+        "list",
+        "object",
+        "string"
+      ],
+      "main": "lib/",
+      "homepage": "http://preludels.com",
+      "bugs": {
+        "url": "https://github.com/gkz/prelude-ls/issues"
+      },
+      "license": "MIT",
+      "engines": {
+        "node": ">= 0.8.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/gkz/prelude-ls.git"
+      },
+      "scripts": {
+        "test": "make test"
+      },
+      "devDependencies": {
+        "livescript": "^1.6.0",
+        "uglify-js": "^3.8.1",
+        "mocha": "^7.1.1",
+        "browserify": "^16.5.1",
+        "sinon": "~8.0.1"
+      },
+      "gitHead": "781fc3eaac2dbcdc76ae3f0a898a8113f56a3744",
+      "_id": "prelude-ls@1.2.1",
+      "_nodeVersion": "6.16.0",
+      "_npmVersion": "6.14.4",
+      "dist": {
+        "integrity": "sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==",
+        "shasum": "debc6489d7a6e6b0e7611888cec880337d316396",
+        "tarball": "https://registry.npmjs.org/prelude-ls/-/prelude-ls-1.2.1.tgz",
+        "fileCount": 10,
+        "unpackedSize": 36741,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJehmz0CRA9TVsSAnZWagAA5CYP/RMIHnqkkeIXDONvKlVK\n/inMHeBYTQLllo9PVYCVbZtcIr8GQAU5dS776naVFmz7oy0a8bz7Xt73s4X2\nx1MF5G1fftJDgSZ9M9t2+KqFaUUbNP2WC74sIsEb6bld5Ach+OzDoCkfVfO8\n4q5MTGokMghKM3N1VC4CqaIqQPuwi9U8UnUqUHYtKDfQbCPLddkC7QY1rATV\nEi849XT2eR1F3/5dIYk+3jatgTE6VtsH9bIyIGLjNdxK6M7Oh7bxAAcaLYlu\nfVJBmGHE/ufBDL43oHqN+WICmUeGcKY0f1Ynvu7vjEEoqnARlWgqwsbOiGGo\n+kAKe9cvhgn+1fpwSE4Wc9m2e6t1NFI7rC4G7qotYHsExDqeULGZY2mQ5Yfm\nDI0njlQV/nacUv4u50O0xty0JQLnMexEu0RXDLdYbHXrTmqyqSu/mcOjVyx5\n03sH+M7t4B0N1Jg4jlOqiyahbS91PopqAygyFyFO4Mg8o+oigrs9TPOVv5Av\nEoHd/ft1VD5h0ptEpY34O90ZUBQCprfZ0iAvfyJjDTapTsxW6Ypjxc3XRIHJ\nzRdcRWMT4VgtY9Ey2/zf6sfJA/JBVPuYgNYEu/hCUCiLb/dHBdlrTmEsoWsu\n+fV+LM/b3Z3hH/iWfIOy5nUDkkLwmeINakn1atSX9pG9f0V7VJh1pqRHZCGA\n2mDm\r\n=GN71\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "gkz",
+          "email": "z@georgezahariev.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "gkz",
+        "email": "z@georgezahariev.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/prelude-ls_1.2.1_1585868020560_0.9894735403386477"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# prelude.ls [![Build Status](https://travis-ci.org/gkz/prelude-ls.png?branch=master)](https://travis-ci.org/gkz/prelude-ls)\n\nis a functionally oriented utility library. It is powerful and flexible. Almost all of its functions are curried. It is written in, and is the recommended base library for, <a href=\"http://livescript.net\">LiveScript</a>.\n\nSee **[the prelude.ls site](http://preludels.com)** for examples, a reference, and more.\n\nYou can install via npm `npm install prelude-ls`\n\n### Development\n\n`make test` to test\n\n`make build` to build `lib` from `src`\n\n`make build-browser` to build browser versions\n",
+  "maintainers": [
+    {
+      "name": "gkz",
+      "email": "z@georgezahariev.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-04-02T22:53:43.013Z",
+    "created": "2012-05-29T01:19:15.161Z",
+    "0.2.0": "2012-05-29T01:19:17.563Z",
+    "0.3.0": "2012-06-13T20:45:59.428Z",
+    "0.4.0": "2012-06-18T20:06:42.638Z",
+    "0.5.0": "2012-06-25T22:11:58.400Z",
+    "0.6.0": "2012-07-30T07:27:19.757Z",
+    "1.0.0": "2013-05-12T01:12:10.823Z",
+    "1.0.1": "2013-07-12T16:01:59.706Z",
+    "1.0.2": "2013-07-26T22:39:57.801Z",
+    "1.0.3": "2013-07-26T22:54:18.498Z",
+    "1.1.0": "2014-03-28T22:41:09.888Z",
+    "1.1.1": "2014-04-09T22:31:43.679Z",
+    "1.1.2": "2015-05-15T02:42:34.500Z",
+    "1.2.0": "2020-04-02T22:44:41.468Z",
+    "1.2.1": "2020-04-02T22:53:40.710Z"
+  },
+  "author": {
+    "name": "George Zahariev",
+    "email": "z@georgezahariev.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/gkz/prelude-ls.git"
+  },
+  "users": {
+    "fgribreau": true,
+    "delapouite": true,
+    "hoitmort": true,
+    "net-burst": true,
+    "khai96_": true
+  },
+  "homepage": "http://preludels.com",
+  "keywords": [
+    "prelude",
+    "livescript",
+    "utility",
+    "ls",
+    "coffeescript",
+    "javascript",
+    "library",
+    "functional",
+    "array",
+    "list",
+    "object",
+    "string"
+  ],
+  "bugs": {
+    "url": "https://github.com/gkz/prelude-ls/issues"
+  },
+  "readmeFilename": "README.md",
+  "license": "MIT"
+}

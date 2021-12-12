@@ -1,0 +1,1931 @@
+{
+  "_id": "write-file-atomic",
+  "_rev": "67-117e896efb36db7d31fdd61e90e58457",
+  "name": "write-file-atomic",
+  "description": "Write files in an atomic fashion w/configurable ownership",
+  "dist-tags": {
+    "latest": "3.0.3"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "write-file-atomic",
+      "version": "1.0.0",
+      "description": "Write files in an atomic fashion w/configurable ownership",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:iarna/write-file-atomic.git"
+      },
+      "keywords": [
+        "writeFile",
+        "atomic"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/iarna/write-file-atomic/issues"
+      },
+      "homepage": "https://github.com/iarna/write-file-atomic",
+      "dependencies": {
+        "slide": "^1.1.5"
+      },
+      "devDependencies": {
+        "require-inject": "^1.1.0",
+        "tap": "^0.4.12"
+      },
+      "gitHead": "5ef6f374dfd1b6034f11d80a0d5616e7aa5bcaeb",
+      "_id": "write-file-atomic@1.0.0",
+      "_shasum": "20750a1710e6cd09de5911d3043fa14e4a948445",
+      "_from": ".",
+      "_npmVersion": "1.4.23",
+      "_npmUser": {
+        "name": "iarna",
+        "email": "me@re-becca.org"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        }
+      ],
+      "dist": {
+        "shasum": "20750a1710e6cd09de5911d3043fa14e4a948445",
+        "tarball": "https://registry.npmjs.org/write-file-atomic/-/write-file-atomic-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "write-file-atomic",
+      "version": "1.0.1",
+      "description": "Write files in an atomic fashion w/configurable ownership",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:iarna/write-file-atomic.git"
+      },
+      "keywords": [
+        "writeFile",
+        "atomic"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/iarna/write-file-atomic/issues"
+      },
+      "homepage": "https://github.com/iarna/write-file-atomic",
+      "dependencies": {
+        "slide": "^1.1.5"
+      },
+      "devDependencies": {
+        "require-inject": "^1.1.0",
+        "tap": "^0.4.12"
+      },
+      "gitHead": "93f18a172fa79d0fb67c6c1dc37be62a106f13a5",
+      "_id": "write-file-atomic@1.0.1",
+      "_shasum": "0592ccdc2cee973e7427525f4cd5f67d352afeb9",
+      "_from": ".",
+      "_npmVersion": "1.4.23",
+      "_npmUser": {
+        "name": "iarna",
+        "email": "me@re-becca.org"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        }
+      ],
+      "dist": {
+        "shasum": "0592ccdc2cee973e7427525f4cd5f67d352afeb9",
+        "tarball": "https://registry.npmjs.org/write-file-atomic/-/write-file-atomic-1.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "write-file-atomic",
+      "version": "1.0.2",
+      "description": "Write files in an atomic fashion w/configurable ownership",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:iarna/write-file-atomic.git"
+      },
+      "keywords": [
+        "writeFile",
+        "atomic"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/iarna/write-file-atomic/issues"
+      },
+      "homepage": "https://github.com/iarna/write-file-atomic",
+      "dependencies": {
+        "slide": "^1.1.5"
+      },
+      "devDependencies": {
+        "require-inject": "^1.1.0",
+        "tap": "^0.4.12"
+      },
+      "gitHead": "84058cea16834f9f53ae1948fbb828937f9ab697",
+      "_id": "write-file-atomic@1.0.2",
+      "_shasum": "080b0439cf29b3abdcf321a86fc47e9429b9984e",
+      "_from": ".",
+      "_npmVersion": "1.4.23",
+      "_npmUser": {
+        "name": "iarna",
+        "email": "me@re-becca.org"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        }
+      ],
+      "dist": {
+        "shasum": "080b0439cf29b3abdcf321a86fc47e9429b9984e",
+        "tarball": "https://registry.npmjs.org/write-file-atomic/-/write-file-atomic-1.0.2.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.3": {
+      "name": "write-file-atomic",
+      "version": "1.0.3",
+      "description": "Write files in an atomic fashion w/configurable ownership",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:iarna/write-file-atomic.git"
+      },
+      "keywords": [
+        "writeFile",
+        "atomic"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/iarna/write-file-atomic/issues"
+      },
+      "homepage": "https://github.com/iarna/write-file-atomic",
+      "dependencies": {
+        "slide": "^1.1.5"
+      },
+      "devDependencies": {
+        "require-inject": "^1.1.0",
+        "tap": "^0.4.12"
+      },
+      "gitHead": "5e85cfc7b38e4f0659b15b1c1d979e6a4a7bf6d5",
+      "_id": "write-file-atomic@1.0.3",
+      "_shasum": "597fcb824a0d1ad337db90b7028d2772e9e8e7af",
+      "_from": ".",
+      "_npmVersion": "2.0.0",
+      "_npmUser": {
+        "name": "iarna",
+        "email": "me@re-becca.org"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        }
+      ],
+      "dist": {
+        "shasum": "597fcb824a0d1ad337db90b7028d2772e9e8e7af",
+        "tarball": "https://registry.npmjs.org/write-file-atomic/-/write-file-atomic-1.0.3.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "write-file-atomic",
+      "version": "1.1.0",
+      "description": "Write files in an atomic fashion w/configurable ownership",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:iarna/write-file-atomic.git"
+      },
+      "keywords": [
+        "writeFile",
+        "atomic"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/iarna/write-file-atomic/issues"
+      },
+      "homepage": "https://github.com/iarna/write-file-atomic",
+      "dependencies": {
+        "graceful-fs": "^3.0.2",
+        "slide": "^1.1.5"
+      },
+      "devDependencies": {
+        "require-inject": "^1.1.0",
+        "tap": "^0.4.12"
+      },
+      "gitHead": "28e4df86547c6728eab0b51bca6f00cf44ef392c",
+      "_id": "write-file-atomic@1.1.0",
+      "_shasum": "e114cfb8f82188353f98217c5945451c9b4dc060",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "iarna",
+        "email": "me@re-becca.org"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        }
+      ],
+      "dist": {
+        "shasum": "e114cfb8f82188353f98217c5945451c9b4dc060",
+        "tarball": "https://registry.npmjs.org/write-file-atomic/-/write-file-atomic-1.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.1": {
+      "name": "write-file-atomic",
+      "version": "1.1.1",
+      "description": "Write files in an atomic fashion w/configurable ownership",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:iarna/write-file-atomic.git"
+      },
+      "keywords": [
+        "writeFile",
+        "atomic"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/iarna/write-file-atomic/issues"
+      },
+      "homepage": "https://github.com/iarna/write-file-atomic",
+      "dependencies": {
+        "graceful-fs": "^3.0.2",
+        "slide": "^1.1.5"
+      },
+      "devDependencies": {
+        "require-inject": "^1.1.0",
+        "tap": "^0.4.12"
+      },
+      "gitHead": "2e85f44a3d176e5e1ed453c016adbe4bcc25eb5c",
+      "_id": "write-file-atomic@1.1.1",
+      "_shasum": "cf085df5f415638d9bc9e56ad0f33349f18ba2e4",
+      "_from": ".",
+      "_npmVersion": "2.7.6",
+      "_nodeVersion": "1.6.2",
+      "_npmUser": {
+        "name": "iarna",
+        "email": "me@re-becca.org"
+      },
+      "dist": {
+        "shasum": "cf085df5f415638d9bc9e56ad0f33349f18ba2e4",
+        "tarball": "https://registry.npmjs.org/write-file-atomic/-/write-file-atomic-1.1.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        }
+      ],
+      "directories": {}
+    },
+    "1.1.2": {
+      "name": "write-file-atomic",
+      "version": "1.1.2",
+      "description": "Write files in an atomic fashion w/configurable ownership",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:iarna/write-file-atomic.git"
+      },
+      "keywords": [
+        "writeFile",
+        "atomic"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/iarna/write-file-atomic/issues"
+      },
+      "homepage": "https://github.com/iarna/write-file-atomic",
+      "dependencies": {
+        "graceful-fs": "^3.0.2",
+        "slide": "^1.1.5"
+      },
+      "devDependencies": {
+        "require-inject": "^1.1.0",
+        "tap": "^0.4.12"
+      },
+      "gitHead": "b721f8a71223bcf162f1ee4ff4677f31de1c061f",
+      "_id": "write-file-atomic@1.1.2",
+      "_shasum": "ff3d61f1c2f5bb71e8ebe491a7157bf7d60435a4",
+      "_from": ".",
+      "_npmVersion": "2.7.6",
+      "_nodeVersion": "1.6.2",
+      "_npmUser": {
+        "name": "iarna",
+        "email": "me@re-becca.org"
+      },
+      "dist": {
+        "shasum": "ff3d61f1c2f5bb71e8ebe491a7157bf7d60435a4",
+        "tarball": "https://registry.npmjs.org/write-file-atomic/-/write-file-atomic-1.1.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        }
+      ],
+      "directories": {}
+    },
+    "1.1.3": {
+      "name": "write-file-atomic",
+      "version": "1.1.3",
+      "description": "Write files in an atomic fashion w/configurable ownership",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/iarna/write-file-atomic.git"
+      },
+      "keywords": [
+        "writeFile",
+        "atomic"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/iarna/write-file-atomic/issues"
+      },
+      "homepage": "https://github.com/iarna/write-file-atomic",
+      "dependencies": {
+        "graceful-fs": "^4.1.2",
+        "slide": "^1.1.5"
+      },
+      "devDependencies": {
+        "require-inject": "^1.1.0",
+        "tap": "^0.4.12"
+      },
+      "gitHead": "65a1e2e156c0d0bfb7acac2e039b943d6ec9876d",
+      "_id": "write-file-atomic@1.1.3",
+      "_shasum": "60eaca258a0b559b37aca82b21d64a293b4b90d0",
+      "_from": ".",
+      "_npmVersion": "3.3.0",
+      "_nodeVersion": "3.1.0",
+      "_npmUser": {
+        "name": "iarna",
+        "email": "me@re-becca.org"
+      },
+      "dist": {
+        "shasum": "60eaca258a0b559b37aca82b21d64a293b4b90d0",
+        "tarball": "https://registry.npmjs.org/write-file-atomic/-/write-file-atomic-1.1.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        }
+      ],
+      "directories": {}
+    },
+    "1.1.4": {
+      "name": "write-file-atomic",
+      "version": "1.1.4",
+      "description": "Write files in an atomic fashion w/configurable ownership",
+      "main": "index.js",
+      "scripts": {
+        "test": "standard && tap --coverage test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/iarna/write-file-atomic.git"
+      },
+      "keywords": [
+        "writeFile",
+        "atomic"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/iarna/write-file-atomic/issues"
+      },
+      "homepage": "https://github.com/iarna/write-file-atomic",
+      "dependencies": {
+        "graceful-fs": "^4.1.2",
+        "imurmurhash": "^0.1.4",
+        "slide": "^1.1.5"
+      },
+      "devDependencies": {
+        "require-inject": "^1.1.0",
+        "standard": "^5.4.1",
+        "tap": "^2.3.1"
+      },
+      "gitHead": "42dc04a17af96ac045f4979c8c951ee5a14a8b8b",
+      "_id": "write-file-atomic@1.1.4",
+      "_shasum": "b1f52dc2e8dc0e3cb04d187a25f758a38a90ca3b",
+      "_from": ".",
+      "_npmVersion": "3.5.1",
+      "_nodeVersion": "5.1.0",
+      "_npmUser": {
+        "name": "othiym23",
+        "email": "ogd@aoaioxxysz.net"
+      },
+      "dist": {
+        "shasum": "b1f52dc2e8dc0e3cb04d187a25f758a38a90ca3b",
+        "tarball": "https://registry.npmjs.org/write-file-atomic/-/write-file-atomic-1.1.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        },
+        {
+          "name": "othiym23",
+          "email": "ogd@aoaioxxysz.net"
+        }
+      ],
+      "directories": {}
+    },
+    "1.2.0": {
+      "name": "write-file-atomic",
+      "version": "1.2.0",
+      "description": "Write files in an atomic fashion w/configurable ownership",
+      "main": "index.js",
+      "scripts": {
+        "test": "standard && tap --coverage test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/iarna/write-file-atomic.git"
+      },
+      "keywords": [
+        "writeFile",
+        "atomic"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/iarna/write-file-atomic/issues"
+      },
+      "homepage": "https://github.com/iarna/write-file-atomic",
+      "dependencies": {
+        "graceful-fs": "^4.1.2",
+        "imurmurhash": "^0.1.4",
+        "slide": "^1.1.5"
+      },
+      "devDependencies": {
+        "require-inject": "^1.1.0",
+        "standard": "^5.4.1",
+        "tap": "^2.3.1",
+        "tmp": "0.0.28"
+      },
+      "files": [
+        "index.js"
+      ],
+      "gitHead": "c29f37cb5955f597066ad7aedea7aa6f7408a5b7",
+      "_id": "write-file-atomic@1.2.0",
+      "_shasum": "14c66d4e4cb3ca0565c28cf3b7a6f3e4d5938fab",
+      "_from": ".",
+      "_npmVersion": "3.10.7",
+      "_nodeVersion": "4.5.0",
+      "_npmUser": {
+        "name": "iarna",
+        "email": "me@re-becca.org"
+      },
+      "dist": {
+        "shasum": "14c66d4e4cb3ca0565c28cf3b7a6f3e4d5938fab",
+        "tarball": "https://registry.npmjs.org/write-file-atomic/-/write-file-atomic-1.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        },
+        {
+          "name": "othiym23",
+          "email": "ogd@aoaioxxysz.net"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/write-file-atomic-1.2.0.tgz_1471552371956_0.5829780481290072"
+      },
+      "directories": {}
+    },
+    "1.3.0": {
+      "name": "write-file-atomic",
+      "version": "1.3.0",
+      "description": "Write files in an atomic fashion w/configurable ownership",
+      "main": "index.js",
+      "scripts": {
+        "test": "standard && tap --coverage test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/iarna/write-file-atomic.git"
+      },
+      "keywords": [
+        "writeFile",
+        "atomic"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/iarna/write-file-atomic/issues"
+      },
+      "homepage": "https://github.com/iarna/write-file-atomic",
+      "dependencies": {
+        "graceful-fs": "^4.1.11",
+        "imurmurhash": "^0.1.4",
+        "slide": "^1.1.5"
+      },
+      "devDependencies": {
+        "mkdirp": "^0.5.1",
+        "require-inject": "^1.4.0",
+        "rimraf": "^2.5.4",
+        "standard": "^5.4.1",
+        "tap": "^2.3.1"
+      },
+      "files": [
+        "index.js"
+      ],
+      "gitHead": "8c382bc10b903ca92b36fcaeb19e2630bb6c2c58",
+      "_id": "write-file-atomic@1.3.0",
+      "_shasum": "d13e4831d52ee4e3d9a266ee1c9a1592f7fbbf3d",
+      "_from": ".",
+      "_npmVersion": "4.1.1",
+      "_nodeVersion": "4.6.1",
+      "_npmUser": {
+        "name": "iarna",
+        "email": "me@re-becca.org"
+      },
+      "dist": {
+        "shasum": "d13e4831d52ee4e3d9a266ee1c9a1592f7fbbf3d",
+        "tarball": "https://registry.npmjs.org/write-file-atomic/-/write-file-atomic-1.3.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        },
+        {
+          "name": "othiym23",
+          "email": "ogd@aoaioxxysz.net"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/write-file-atomic-1.3.0.tgz_1483663174188_0.5587220122106373"
+      },
+      "directories": {}
+    },
+    "1.3.1": {
+      "name": "write-file-atomic",
+      "version": "1.3.1",
+      "description": "Write files in an atomic fashion w/configurable ownership",
+      "main": "index.js",
+      "scripts": {
+        "test": "standard && tap --coverage test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/iarna/write-file-atomic.git"
+      },
+      "keywords": [
+        "writeFile",
+        "atomic"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/iarna/write-file-atomic/issues"
+      },
+      "homepage": "https://github.com/iarna/write-file-atomic",
+      "dependencies": {
+        "graceful-fs": "^4.1.11",
+        "imurmurhash": "^0.1.4",
+        "slide": "^1.1.5"
+      },
+      "devDependencies": {
+        "mkdirp": "^0.5.1",
+        "require-inject": "^1.4.0",
+        "rimraf": "^2.5.4",
+        "standard": "^5.4.1",
+        "tap": "^2.3.1"
+      },
+      "files": [
+        "index.js"
+      ],
+      "gitHead": "56fef5763513905d7e43aa685adad80002445474",
+      "_id": "write-file-atomic@1.3.1",
+      "_shasum": "7d45ba32316328dd1ec7d90f60ebc0d845bb759a",
+      "_from": ".",
+      "_npmVersion": "4.1.1",
+      "_nodeVersion": "7.3.0",
+      "_npmUser": {
+        "name": "iarna",
+        "email": "me@re-becca.org"
+      },
+      "dist": {
+        "shasum": "7d45ba32316328dd1ec7d90f60ebc0d845bb759a",
+        "tarball": "https://registry.npmjs.org/write-file-atomic/-/write-file-atomic-1.3.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        },
+        {
+          "name": "othiym23",
+          "email": "ogd@aoaioxxysz.net"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/write-file-atomic-1.3.1.tgz_1483776142964_0.11427561868913472"
+      },
+      "directories": {}
+    },
+    "1.3.2": {
+      "name": "write-file-atomic",
+      "version": "1.3.2",
+      "description": "Write files in an atomic fashion w/configurable ownership",
+      "main": "index.js",
+      "scripts": {
+        "test": "standard && tap --coverage test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/iarna/write-file-atomic.git"
+      },
+      "keywords": [
+        "writeFile",
+        "atomic"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/iarna/write-file-atomic/issues"
+      },
+      "homepage": "https://github.com/iarna/write-file-atomic",
+      "dependencies": {
+        "graceful-fs": "^4.1.11",
+        "imurmurhash": "^0.1.4",
+        "slide": "^1.1.5"
+      },
+      "devDependencies": {
+        "mkdirp": "^0.5.1",
+        "require-inject": "^1.4.0",
+        "rimraf": "^2.5.4",
+        "standard": "^5.4.1",
+        "tap": "^2.3.1"
+      },
+      "files": [
+        "index.js"
+      ],
+      "gitHead": "d9c5f54df01043671f4ce6542cf7ebcf770e6d43",
+      "_id": "write-file-atomic@1.3.2",
+      "_npmVersion": "4.5.0",
+      "_nodeVersion": "7.7.4",
+      "_npmUser": {
+        "name": "iarna",
+        "email": "me@re-becca.org"
+      },
+      "dist": {
+        "shasum": "f80ac5e06d3a38996ab51b5d310db57102deb902",
+        "tarball": "https://registry.npmjs.org/write-file-atomic/-/write-file-atomic-1.3.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        },
+        {
+          "name": "othiym23",
+          "email": "ogd@aoaioxxysz.net"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/write-file-atomic-1.3.2.tgz_1492743137041_0.5345788700506091"
+      },
+      "directories": {}
+    },
+    "1.3.3": {
+      "name": "write-file-atomic",
+      "version": "1.3.3",
+      "description": "Write files in an atomic fashion w/configurable ownership",
+      "main": "index.js",
+      "scripts": {
+        "test": "standard && tap --coverage test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/iarna/write-file-atomic.git"
+      },
+      "keywords": [
+        "writeFile",
+        "atomic"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/iarna/write-file-atomic/issues"
+      },
+      "homepage": "https://github.com/iarna/write-file-atomic",
+      "dependencies": {
+        "graceful-fs": "^4.1.11",
+        "imurmurhash": "^0.1.4",
+        "slide": "^1.1.5"
+      },
+      "devDependencies": {
+        "mkdirp": "^0.5.1",
+        "require-inject": "^1.4.0",
+        "rimraf": "^2.5.4",
+        "standard": "^5.4.1",
+        "tap": "^2.3.1"
+      },
+      "files": [
+        "index.js"
+      ],
+      "gitHead": "fce59c7e3675131712b3965d52e5880e2a5df2ca",
+      "_id": "write-file-atomic@1.3.3",
+      "_shasum": "831dd22d491bdc135180bb996a0eb3f8bf587791",
+      "_from": ".",
+      "_npmVersion": "4.5.0",
+      "_nodeVersion": "4.6.1",
+      "_npmUser": {
+        "name": "iarna",
+        "email": "me@re-becca.org"
+      },
+      "dist": {
+        "shasum": "831dd22d491bdc135180bb996a0eb3f8bf587791",
+        "tarball": "https://registry.npmjs.org/write-file-atomic/-/write-file-atomic-1.3.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        },
+        {
+          "name": "othiym23",
+          "email": "ogd@aoaioxxysz.net"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/write-file-atomic-1.3.3.tgz_1492826308726_0.5064767252188176"
+      },
+      "directories": {}
+    },
+    "1.3.4": {
+      "name": "write-file-atomic",
+      "version": "1.3.4",
+      "description": "Write files in an atomic fashion w/configurable ownership",
+      "main": "index.js",
+      "scripts": {
+        "test": "standard && tap --coverage test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/iarna/write-file-atomic.git"
+      },
+      "keywords": [
+        "writeFile",
+        "atomic"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/iarna/write-file-atomic/issues"
+      },
+      "homepage": "https://github.com/iarna/write-file-atomic",
+      "dependencies": {
+        "graceful-fs": "^4.1.11",
+        "imurmurhash": "^0.1.4",
+        "slide": "^1.1.5"
+      },
+      "devDependencies": {
+        "mkdirp": "^0.5.1",
+        "require-inject": "^1.4.0",
+        "rimraf": "^2.5.4",
+        "standard": "^9.0.2",
+        "tap": "^10.3.2"
+      },
+      "files": [
+        "index.js"
+      ],
+      "gitHead": "8f7d56f6a62600a38e816a8276a128883f4e7436",
+      "_id": "write-file-atomic@1.3.4",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "7.7.4",
+      "_npmUser": {
+        "name": "iarna",
+        "email": "me@re-becca.org"
+      },
+      "dist": {
+        "shasum": "f807a4f0b1d9e913ae7a48112e6cc3af1991b45f",
+        "tarball": "https://registry.npmjs.org/write-file-atomic/-/write-file-atomic-1.3.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        },
+        {
+          "name": "othiym23",
+          "email": "ogd@aoaioxxysz.net"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/write-file-atomic-1.3.4.tgz_1493249998004_0.7851631820667535"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "write-file-atomic",
+      "version": "2.0.0",
+      "description": "Write files in an atomic fashion w/configurable ownership",
+      "main": "index.js",
+      "scripts": {
+        "test": "standard && tap --coverage test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/iarna/write-file-atomic.git"
+      },
+      "keywords": [
+        "writeFile",
+        "atomic"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/iarna/write-file-atomic/issues"
+      },
+      "homepage": "https://github.com/iarna/write-file-atomic",
+      "dependencies": {
+        "graceful-fs": "^4.1.11",
+        "imurmurhash": "^0.1.4",
+        "slide": "^1.1.5"
+      },
+      "devDependencies": {
+        "mkdirp": "^0.5.1",
+        "require-inject": "^1.4.0",
+        "rimraf": "^2.5.4",
+        "standard": "^9.0.2",
+        "tap": "^10.3.2"
+      },
+      "files": [
+        "index.js"
+      ],
+      "gitHead": "eabc44b01044a78bcc7b4e41f42ece6bf9d1ca5d",
+      "_id": "write-file-atomic@2.0.0",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "7.7.4",
+      "_npmUser": {
+        "name": "iarna",
+        "email": "me@re-becca.org"
+      },
+      "dist": {
+        "shasum": "bb99a5440d0d31dd860a68da392bffeef66251a1",
+        "tarball": "https://registry.npmjs.org/write-file-atomic/-/write-file-atomic-2.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        },
+        {
+          "name": "othiym23",
+          "email": "ogd@aoaioxxysz.net"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/write-file-atomic-2.0.0.tgz_1493250025531_0.17179739149287343"
+      },
+      "directories": {}
+    },
+    "2.1.0": {
+      "name": "write-file-atomic",
+      "version": "2.1.0",
+      "description": "Write files in an atomic fashion w/configurable ownership",
+      "main": "index.js",
+      "scripts": {
+        "test": "standard && tap --100 test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/iarna/write-file-atomic.git"
+      },
+      "keywords": [
+        "writeFile",
+        "atomic"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/iarna/write-file-atomic/issues"
+      },
+      "homepage": "https://github.com/iarna/write-file-atomic",
+      "dependencies": {
+        "graceful-fs": "^4.1.11",
+        "imurmurhash": "^0.1.4",
+        "slide": "^1.1.5"
+      },
+      "devDependencies": {
+        "mkdirp": "^0.5.1",
+        "require-inject": "^1.4.0",
+        "rimraf": "^2.5.4",
+        "standard": "^10.0.2",
+        "tap": "^10.3.2"
+      },
+      "files": [
+        "index.js"
+      ],
+      "gitHead": "4c63f8e504845ceca4a11cfff779e5b4839243f9",
+      "_id": "write-file-atomic@2.1.0",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "7.9.0",
+      "_npmUser": {
+        "name": "zkat",
+        "email": "kat@sykosomatic.org"
+      },
+      "dist": {
+        "integrity": "sha512-0TZ20a+xcIl4u0+Mj5xDH2yOWdmQiXlKf9Hm+TgDXjTMsEYb+gDrmb8e8UNAzMCitX8NBqG4Z/FUQIyzv/R1JQ==",
+        "shasum": "1769f4b551eedce419f0505deae2e26763542d37",
+        "tarball": "https://registry.npmjs.org/write-file-atomic/-/write-file-atomic-2.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "kat@sykosomatic.org",
+          "name": "zkat"
+        },
+        {
+          "email": "ogd@aoaioxxysz.net",
+          "name": "othiym23"
+        },
+        {
+          "email": "me@re-becca.org",
+          "name": "iarna"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/write-file-atomic-2.1.0.tgz_1494704753639_0.7767078222241253"
+      },
+      "directories": {}
+    },
+    "2.3.0": {
+      "name": "write-file-atomic",
+      "version": "2.3.0",
+      "description": "Write files in an atomic fashion w/configurable ownership",
+      "main": "index.js",
+      "scripts": {
+        "test": "standard && tap --100 test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/iarna/write-file-atomic.git"
+      },
+      "keywords": [
+        "writeFile",
+        "atomic"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/iarna/write-file-atomic/issues"
+      },
+      "homepage": "https://github.com/iarna/write-file-atomic",
+      "dependencies": {
+        "graceful-fs": "^4.1.11",
+        "imurmurhash": "^0.1.4",
+        "signal-exit": "^3.0.2"
+      },
+      "devDependencies": {
+        "mkdirp": "^0.5.1",
+        "require-inject": "^1.4.0",
+        "rimraf": "^2.5.4",
+        "standard": "^10.0.2",
+        "tap": "^10.3.2"
+      },
+      "files": [
+        "index.js"
+      ],
+      "gitHead": "1597785cb9e1152056d905a357b3891b3295506d",
+      "_id": "write-file-atomic@2.3.0",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "8.3.0",
+      "_npmUser": {
+        "name": "iarna",
+        "email": "me@re-becca.org"
+      },
+      "dist": {
+        "integrity": "sha512-xuPeK4OdjWqtfi59ylvVL0Yn35SF3zgcAcv7rBPFHVaEapaDr4GdGgm3j7ckTwH9wHL7fGmgfAnb0+THrHb8tA==",
+        "shasum": "1ff61575c2e2a4e8e510d6fa4e243cce183999ab",
+        "tarball": "https://registry.npmjs.org/write-file-atomic/-/write-file-atomic-2.3.0.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "kat@sykosomatic.org",
+          "name": "zkat"
+        },
+        {
+          "email": "ogd@aoaioxxysz.net",
+          "name": "othiym23"
+        },
+        {
+          "email": "me@re-becca.org",
+          "name": "iarna"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/write-file-atomic-2.3.0.tgz_1503096898166_0.22769020055420697"
+      },
+      "directories": {}
+    },
+    "2.4.0": {
+      "name": "write-file-atomic",
+      "version": "2.4.0",
+      "description": "Write files in an atomic fashion w/configurable ownership",
+      "main": "index.js",
+      "scripts": {
+        "test": "standard && tap --100 test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/iarna/write-file-atomic.git"
+      },
+      "keywords": [
+        "writeFile",
+        "atomic"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/iarna/write-file-atomic/issues"
+      },
+      "homepage": "https://github.com/iarna/write-file-atomic",
+      "dependencies": {
+        "graceful-fs": "^4.1.11",
+        "imurmurhash": "^0.1.4",
+        "signal-exit": "^3.0.2"
+      },
+      "devDependencies": {
+        "mkdirp": "^0.5.1",
+        "require-inject": "^1.4.0",
+        "rimraf": "^2.5.4",
+        "standard": "^12.0.1",
+        "tap": "^12.1.3"
+      },
+      "gitHead": "152992ae232070bb25951a7b0484a3bd31160460",
+      "_id": "write-file-atomic@2.4.0",
+      "_nodeVersion": "10.11.0",
+      "_npmVersion": "6.6.0",
+      "_npmUser": {
+        "name": "iarna",
+        "email": "me@re-becca.org"
+      },
+      "dist": {
+        "integrity": "sha512-rpYM0txDxd2GV1RJeyAEhDasBPUG51fFpSaW22JKulFA6mKrOYfht5mkq62TbTRfKdUDFj0b8TAz95+F5sc+Ow==",
+        "shasum": "cf0f9bc37c2d26c455161c3b75f407f5bd1cad64",
+        "tarball": "https://registry.npmjs.org/write-file-atomic/-/write-file-atomic-2.4.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 11293,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcR6zBCRA9TVsSAnZWagAAHPcP/jV1fYdreaeFXpo9x+5z\nF9btxkpfPeSHv8GITUoHg+thLVNPyIATPyK6Dt+TO/IYeubheL3A7IrAQgKU\nzyuiTvsHZsluOsJ6lWvT4t3QdTKy7fNF9XtAF99QTSY+yyqGJSHrOUDxICGu\nUN04is4jgamCHFS0JTjxsmCuiLbu3zGle18fhckZg0bacC3JII2Zy8Jipfn+\n/CIMdNqiwltD5TXUWON7U7hsoaGncbHK97xXtKmRZZlbAV5WlSbKDCAra+Jy\npmAGG222tIwDvQxmKKrUCzYlq/C9CNzZNB+5aFrk9fCWvx/YeYEIISZsbSY8\nolGv6bFyiCYFkNXiGf4Ji8KHSjiKalQY7FSKkcr41QM6TEzUq0SVfF0wEAtp\nBGM/lMndX3yUyE5+IB1JX6UOp7xHWxFN8j/BGQc73Ue0zyHqyWtMgxIwzw26\nxE10CPaJnAX7UanI3JN+Kmt0ljedlcfXJb9MqbjLoXbsW+h+UO/0ZEerYU4H\nhGXVIV1IqZYTh9dCr7sQsRDWtKf/IMvQf354uE6A0LQmcFDp2zLxTnA2JjvE\nupOLyTInnaNEO+wUH9A4GUZrT+qF0kHur1d2fzUe0scO4mdB/LrZuJAJL0bc\n7q/py54xOSpHtDSJFUhqcxRo8I/BeRDhvr+0DGsQmC+jaGN0Bure064a0v8o\nmLq3\r\n=TzH1\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "me@re-becca.org",
+          "name": "iarna"
+        },
+        {
+          "email": "ogd@aoaioxxysz.net",
+          "name": "othiym23"
+        },
+        {
+          "email": "kzm@sykosomatic.org",
+          "name": "zkat"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/write-file-atomic_2.4.0_1548201153104_0.7017856282373696"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.4.1": {
+      "name": "write-file-atomic",
+      "version": "2.4.1",
+      "description": "Write files in an atomic fashion w/configurable ownership",
+      "main": "index.js",
+      "scripts": {
+        "test": "standard && tap --100 test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/iarna/write-file-atomic.git"
+      },
+      "keywords": [
+        "writeFile",
+        "atomic"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/iarna/write-file-atomic/issues"
+      },
+      "homepage": "https://github.com/iarna/write-file-atomic",
+      "dependencies": {
+        "graceful-fs": "^4.1.11",
+        "imurmurhash": "^0.1.4",
+        "signal-exit": "^3.0.2"
+      },
+      "devDependencies": {
+        "mkdirp": "^0.5.1",
+        "require-inject": "^1.4.0",
+        "rimraf": "^2.5.4",
+        "standard": "^12.0.1",
+        "tap": "^12.1.3"
+      },
+      "gitHead": "8ea1b4ab6e2e9630fc495118084058fbeb09bcbc",
+      "_id": "write-file-atomic@2.4.1",
+      "_npmVersion": "6.5.0-next.0",
+      "_nodeVersion": "11.6.0",
+      "_npmUser": {
+        "name": "iarna",
+        "email": "me@re-becca.org"
+      },
+      "dist": {
+        "integrity": "sha512-TGHFeZEZMnv+gBFRfjAcxL5bPHrsGKtnb4qsFAws7/vlh+QfwAaySIw4AXP9ZskTTh5GWu3FLuJhsWVdiJPGvg==",
+        "shasum": "d0b05463c188ae804396fd5ab2a370062af87529",
+        "tarball": "https://registry.npmjs.org/write-file-atomic/-/write-file-atomic-2.4.1.tgz",
+        "fileCount": 5,
+        "unpackedSize": 11535,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcR7T2CRA9TVsSAnZWagAAYXkP/1Czylm7ZB3NG/YDhmPV\nD4sdHRlzuB7YI4hLVzzYou0ArKCXHo5Na84ZRn7yusGfX0w36T6c+lngwDuN\nvsiF+cEmdWJQLNLPqxrAh9F/6ey4kV2XOopEu3+T91sWpVf/LRq+GW62QU9i\nVytmy8u0EuYQ0lEBrady3Y4wBBs37PZ/9AOedpM3Fn857QfvB20sxduzpELJ\nOulpvzGMbEV3Cs5TGh+RNsTn55ajgteU2hl8x+XGNn3lfEleSmS9KjnvoATa\nW+NTkw5M5Xsv1SoYVoFFK6KvNZiUIFk677RNcbZmThW/CvvsISJBm3sG1Bx5\noULMPDLHFfbyMEGC1H8H5svm/ChlLBpZLp9PwRASkTxnA2F53MWsVpQbcKWW\nKBCiFSGlR6hc6fjUdBQMmMxar+qGvh/x48+9gNMB9GyEITsmm3R7urgJHC6r\nNEDt6zqhrEaYRHUw9xEL5y7WOklXP4DFXqm69g3N30j9qZLVs13/a+peqZWt\nql3Vm3eW0LmOiOtafOznZxmWGMjz3o7+E124XThHScXBuVG//i4n3MsfR3gm\nW9t//0AVtOiiwD0K8+xqP+3beVdbmhAVJD4WlEfYFjvndyte0BKnB2UwhBTE\nlcCdjMxd60V5CpjaaH8FuNlWbBU0wBjlwS71PyuSi+vcx8R/AOqUxwQycAtw\nyRh1\r\n=I1Gh\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "me@re-becca.org",
+          "name": "iarna"
+        },
+        {
+          "email": "ogd@aoaioxxysz.net",
+          "name": "othiym23"
+        },
+        {
+          "email": "kzm@sykosomatic.org",
+          "name": "zkat"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/write-file-atomic_2.4.1_1548203254097_0.2775843084072045"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.4.2": {
+      "name": "write-file-atomic",
+      "version": "2.4.2",
+      "description": "Write files in an atomic fashion w/configurable ownership",
+      "main": "index.js",
+      "scripts": {
+        "test": "standard && tap --100 test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/iarna/write-file-atomic.git"
+      },
+      "keywords": [
+        "writeFile",
+        "atomic"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/iarna/write-file-atomic/issues"
+      },
+      "homepage": "https://github.com/iarna/write-file-atomic",
+      "dependencies": {
+        "graceful-fs": "^4.1.11",
+        "imurmurhash": "^0.1.4",
+        "signal-exit": "^3.0.2"
+      },
+      "devDependencies": {
+        "mkdirp": "^0.5.1",
+        "require-inject": "^1.4.0",
+        "rimraf": "^2.5.4",
+        "standard": "^12.0.1",
+        "tap": "^12.1.3"
+      },
+      "gitHead": "2191d03e97ecf447af30057d752b25fa07c1f32a",
+      "_id": "write-file-atomic@2.4.2",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "11.3.0",
+      "_npmUser": {
+        "name": "iarna",
+        "email": "me@re-becca.org"
+      },
+      "dist": {
+        "integrity": "sha512-s0b6vB3xIVRLWywa6X9TOMA7k9zio0TMOsl9ZnDkliA/cfJlpHXAscj0gbHVJiTdIuAYpIyqS5GW91fqm6gG5g==",
+        "shasum": "a7181706dfba17855d221140a9c06e15fcdd87b9",
+        "tarball": "https://registry.npmjs.org/write-file-atomic/-/write-file-atomic-2.4.2.tgz",
+        "fileCount": 5,
+        "unpackedSize": 11900,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcR8IdCRA9TVsSAnZWagAA2sMP/Ak3zz3ypibJ7iszwuES\nuDJZrda3zlNFGqWehFDMc6TD/9YxPd6Rgh0Up2LD0+Y6DbddxmHiaPo7H4n7\n12NT3s886JrL3fJ6Nwfd0u0P2JXyA49f8pTfwL8kAUbV/MR5ietvf9wxCAcs\nadjmiow1pwuiJ6KHHoIoDMRd6EmNXe8sEAD/Jj57fAeoTa/UD5K94M7uz1w0\nw7iuXZ/zFT/cL+l0KdMEnBCgj8gDgqVI0rlTh1spUf9PYtppU0ju6OVGlKrS\nfTo+kGOIHAydyzzD7hlELAWtcrI9ZGpn0MtrjCpvlXGonVHnLxz9PKjZlEhN\n3mVTnyELCN7osex52J6hpIL3PA26ta4uV/HsUR+fx1hWoNhdPGOdX05ochiu\n0rQ4EcHSg/hDp0n3jmKNj9LtteDNebGlugNiZLlmR8Cdzgjy4muKmZP+Io8e\nLuQq0IzToxj/C8Kq2mAEIa+zHDo8GZaKOwNow3pbcarZ+gP5gXLgSXvX0lpV\nSNP5+PeoXQo+z0S3iS2wYpwrO45Ugh4ZwAZ/ZeeN9IcSWlKdyxjKZKVULJ66\nJgXjl7W5Hhh9pBwm2WQz66a8oUYwk+r+/+msfu59jX6687EhFIq1EA23b9jN\nwpnXh/tocqtNbnvDZ2pJThV8HJAakSzV8SLAK057oh1Mli1t84t4QrVMvHV+\nsa4w\r\n=MkZv\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "me@re-becca.org",
+          "name": "iarna"
+        },
+        {
+          "email": "ogd@aoaioxxysz.net",
+          "name": "othiym23"
+        },
+        {
+          "email": "kzm@sykosomatic.org",
+          "name": "zkat"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/write-file-atomic_2.4.2_1548206621021_0.3144530936854546"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.4.3": {
+      "name": "write-file-atomic",
+      "version": "2.4.3",
+      "description": "Write files in an atomic fashion w/configurable ownership",
+      "main": "index.js",
+      "scripts": {
+        "test": "standard && tap --100 test/*.js",
+        "preversion": "npm test",
+        "postversion": "npm publish",
+        "postpublish": "git push origin --follow-tags"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/iarna/write-file-atomic.git"
+      },
+      "keywords": [
+        "writeFile",
+        "atomic"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/iarna/write-file-atomic/issues"
+      },
+      "homepage": "https://github.com/iarna/write-file-atomic",
+      "dependencies": {
+        "graceful-fs": "^4.1.11",
+        "imurmurhash": "^0.1.4",
+        "signal-exit": "^3.0.2"
+      },
+      "devDependencies": {
+        "mkdirp": "^0.5.1",
+        "require-inject": "^1.4.0",
+        "rimraf": "^2.5.4",
+        "standard": "^12.0.1",
+        "tap": "^12.1.3"
+      },
+      "gitHead": "f3b025d7ec066b3579c0737a400e668dbed42262",
+      "_id": "write-file-atomic@2.4.3",
+      "_nodeVersion": "12.2.0",
+      "_npmVersion": "6.9.0",
+      "dist": {
+        "integrity": "sha512-GaETH5wwsX+GcnzhPgKcKjJ6M2Cq3/iZp1WyY/X1CSqrW+jVNM9Y7D8EC2sM4ZG/V8wZlSniJnCKWPmBYAucRQ==",
+        "shasum": "1fd2e9ae1df3e75b8d8c367443c692d4ca81f481",
+        "tarball": "https://registry.npmjs.org/write-file-atomic/-/write-file-atomic-2.4.3.tgz",
+        "fileCount": 5,
+        "unpackedSize": 12243,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJc6CB1CRA9TVsSAnZWagAAKv8P/0XmSzv2zNvqfeBtBqqm\nFfvpCZHVOGb4jYPW87fIF1BsFCqGILhDEhUhW2tSkckNW4a7SB+ZmmAVzh4w\ngS8JL0FAkgftjvS1lkVQ5fMJvhw0HoKMVGGKGgOv2LN2G3genJPn7iU8oOOP\nCQVrEjBUyL9no1ebU6hDNdp2v8FcltyFbshwYJtVtCHLek80AREhtkpe0uHg\nc7zYwszOPT5g/AJf47QiY1m7jr0KH6BLSDx2loqx+uaS3qazVcflUG8N7ezy\nRSyTybXScz+qc0Puickqzg8ZTEloc5CQAGU4cgIYDyCYjB36HFxJoCjQShVa\nBAWuv7UrnIxqCvVCJmZYbEehoEkLh0C8tKTn+DJBM8BIrxWKklMeV4hNUNJ8\n1zQamBc19YcDKqOqBH2g3ggZNDYZ0s8Cr726v4wzaDMipWFor196A3HSBy9i\nLKiE/f0/4O9FyKKvodMGTvmmJIkdiHnt6nAX8XiBJExzQKY8r+ZXsE6NrZwH\n8NgA77VuxHdppfc5pURyVEFRFa1xWDVo1M445CvFo+ijqehtJ41uWOftBbrE\nuJ//zGzq88uK2gv9RbUvJTTPCEB61IKeUBsqIswmbiS8i0xP/KmKR0Vtg7uN\nOMye9XJOJNV0OpCJrokCB7A8WpFq55o0KBDA5yMYXGEskLTbL6jYicIhC45U\nk3qn\r\n=Ai3b\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "me@re-becca.org",
+          "name": "iarna"
+        },
+        {
+          "email": "i@izs.me",
+          "name": "isaacs"
+        },
+        {
+          "email": "ogd@aoaioxxysz.net",
+          "name": "othiym23"
+        },
+        {
+          "email": "npm@zkat.tech",
+          "name": "zkat"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/write-file-atomic_2.4.3_1558716532556_0.2880615077337976"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.0": {
+      "name": "write-file-atomic",
+      "version": "3.0.0",
+      "description": "Write files in an atomic fashion w/configurable ownership",
+      "main": "index.js",
+      "scripts": {
+        "pretest": "standard",
+        "test": "tap",
+        "posttest": "rimraf chowncopy good nochmod nochown nofsync nofsyncopt noopen norename \"norename nounlink\" nowrite",
+        "preversion": "npm test",
+        "postversion": "npm publish",
+        "postpublish": "git push origin --follow-tags"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/npm/write-file-atomic.git"
+      },
+      "keywords": [
+        "writeFile",
+        "atomic"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/npm/write-file-atomic/issues"
+      },
+      "homepage": "https://github.com/npm/write-file-atomic",
+      "dependencies": {
+        "imurmurhash": "^0.1.4",
+        "is-typedarray": "^1.0.0",
+        "signal-exit": "^3.0.2",
+        "typedarray-to-buffer": "^3.1.5"
+      },
+      "devDependencies": {
+        "mkdirp": "^0.5.1",
+        "require-inject": "^1.4.4",
+        "rimraf": "^2.6.3",
+        "standard": "^12.0.1",
+        "tap": "^14.1.1"
+      },
+      "tap": {
+        "100": true
+      },
+      "gitHead": "73c3b6f94ce7d57f63d30d4b7b33f17d4004bf1e",
+      "_id": "write-file-atomic@3.0.0",
+      "_nodeVersion": "12.2.0",
+      "_npmVersion": "6.9.0",
+      "dist": {
+        "integrity": "sha512-EIgkf60l2oWsffja2Sf2AL384dx328c0B+cIYPTQq5q2rOYuDV00/iPFBOUiDKKwKMOhkymH8AidPaRvzfxY+Q==",
+        "shasum": "1b64dbbf77cb58fd09056963d63e62667ab4fb21",
+        "tarball": "https://registry.npmjs.org/write-file-atomic/-/write-file-atomic-3.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 11723,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJc6EP1CRA9TVsSAnZWagAAXGkP/1h6tmcgs0V3sCPl+3ky\nPdYUhRTOih9EMnJQhs3H4ySEsxD3fnIApnqC+HWoCoQCXqfDl/u9vKsxVla7\nPfEk3ACvFc4yzLOAbPzQheCK8wenvV+QmbPfJh1HzrG27CkUVbrApreg1vjs\nSoQjHp3K9tfYwLn21QaRdb7qSI2fw+RD/PlZedjII7tb1K4ovRM0gr62ZZGC\nCbKn7zrbrdL1/Yu+OYuLE7anmOG6LI+ATXLlGDCJYjFMFQDHGUtBTq80BfDF\n19UxhR1tkwbYo5FE/vfkSO+yAyDS6CcAr1yDtrOfbK9dPW8iDSapEF0jSQJD\n/j9Mr2aouhqtOQxYhK2GvOF7yZ1HaWuJy9fVgSYDdIMbpsrei0XQ6AkhleXh\nq4Mn9bMBZyj5yjXqxCAIZwKAEq1drOg4c6t6eMiEUWy0bPvRwuCBPDE8tvQ2\n4e5A7cmaRMo+N+OU9WA95DIXe8lQXv40xz/iPrY2QpiMzsj2v0y6zqSVt+aV\n1kwgMFIKqMyaOiBnmvb1hUeAuWVDBuNw+fJb7LF47h1m5eNd+QWkF/3Q9ID+\nIoMj9DNQoQmungI8ldX05rissICsmD5TgtJpKA9nRCjaQv8MJB+syyNsJfXf\npo06XR0oxwlJfDEhtvisLPjod3miI2hrw3WGtw/fYdg7MZW6GQJv+s5c+Mxt\nEuPJ\r\n=7kpW\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "me@re-becca.org",
+          "name": "iarna"
+        },
+        {
+          "email": "i@izs.me",
+          "name": "isaacs"
+        },
+        {
+          "email": "npm@zkat.tech",
+          "name": "zkat"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/write-file-atomic_3.0.0_1558725620595_0.8040002107095305"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.1": {
+      "name": "write-file-atomic",
+      "version": "3.0.1",
+      "description": "Write files in an atomic fashion w/configurable ownership",
+      "main": "index.js",
+      "scripts": {
+        "pretest": "standard",
+        "test": "tap",
+        "posttest": "rimraf chowncopy good nochmod nochown nofsync nofsyncopt noopen norename \"norename nounlink\" nowrite",
+        "preversion": "npm test",
+        "postversion": "npm publish",
+        "postpublish": "git push origin --follow-tags"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/npm/write-file-atomic.git"
+      },
+      "keywords": [
+        "writeFile",
+        "atomic"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/npm/write-file-atomic/issues"
+      },
+      "homepage": "https://github.com/npm/write-file-atomic",
+      "dependencies": {
+        "imurmurhash": "^0.1.4",
+        "is-typedarray": "^1.0.0",
+        "signal-exit": "^3.0.2",
+        "typedarray-to-buffer": "^3.1.5"
+      },
+      "devDependencies": {
+        "mkdirp": "^0.5.1",
+        "require-inject": "^1.4.4",
+        "rimraf": "^2.6.3",
+        "standard": "^12.0.1",
+        "tap": "^14.1.1"
+      },
+      "tap": {
+        "100": true
+      },
+      "gitHead": "4eeacc621736d9d1f4ad58f4ac6084a630b7ddc8",
+      "_id": "write-file-atomic@3.0.1",
+      "_nodeVersion": "12.12.0",
+      "_npmVersion": "6.12.0",
+      "dist": {
+        "integrity": "sha512-JPStrIyyVJ6oCSz/691fAjFtefZ6q+fP6tm+OS4Qw6o+TGQxNp1ziY2PgS+X/m0V8OWhZiO/m4xSj+Pr4RrZvw==",
+        "shasum": "558328352e673b5bb192cf86500d60b230667d4b",
+        "tarball": "https://registry.npmjs.org/write-file-atomic/-/write-file-atomic-3.0.1.tgz",
+        "fileCount": 5,
+        "unpackedSize": 11977,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdppsqCRA9TVsSAnZWagAAYm0P/27IQscOGat9p23GecLP\nTAtgm331gpeaHznpk8CAWLmSXZ7Cz51p2DqH1YnsLxLJDsTBCnUrj2SuJq3f\nAAGzvBjxp87SrFtd7PvNt1r5eu7CINrVlSPx+i4AIeNgPoZW0YYacLrJkJla\nDTM9M8Z+sSTA9MbtW23Gdh40WDeMxCOu7O7BKHGTNj6ydgLF2Tx08Y+LTbw7\n8qbRmPCrUo5KCoBX6P0RCZoXss59T/UZhpO/TxHkCHvrDYeiRDlca3kwfUiX\nZQHwPe7qIDVjPAGnfGitme3qOzYWPQmi9lbI00uCQEITu2Qg6alU9JNKK4dc\nAFmWVOAzJ19mGMdrJxQpCt5GVSrbGzuVtBZR8k9hU2Q/w5gIL2fuvJodc4Sp\n5lVWW35lkl4Pu0+7S1I9nMs4fq3/wdIR/mtKBLVPMnh86ryHSfltuBDFtAAn\n3B8rnJ1dckSsggsfCdeixCLazoE8D9CYH5vTSFfapRN4y/l6AySaQhBCsOny\n7WOAA84eoNzgAOf9Xi4szMtvZSredbSMSbb/eQ7xd3Y48rUSbjVn0BLoW6qI\nh79kFc0jv5tGH5cxoHrxPwhEAn6JN7hyakWwZMqmDh9IS0kgLL423uLZNRg7\nWhMRPHsNCOhGHq8FRehZiHX01TVqQSZM5d13lK2GFKnECrJ4Pd44ZPqD4C7b\n4dJ1\r\n=500D\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "evilpacket@gmail.com",
+          "name": "adam_baldwin"
+        },
+        {
+          "email": "ahmad@ahmadnassri.com",
+          "name": "ahmadnassri"
+        },
+        {
+          "email": "anne@npmjs.com",
+          "name": "annekimsey"
+        },
+        {
+          "email": "billatnpm@gmail.com",
+          "name": "billatnpm"
+        },
+        {
+          "email": "cghr1990@gmail.com",
+          "name": "claudiahdz"
+        },
+        {
+          "email": "darcy@darcyclarke.me",
+          "name": "darcyclarke"
+        },
+        {
+          "email": "i@izs.me",
+          "name": "isaacs"
+        },
+        {
+          "email": "mike@mikecorp.ca",
+          "name": "mikemimik"
+        },
+        {
+          "email": "ruyadorno@hotmail.com",
+          "name": "ruyadorno"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/write-file-atomic_3.0.1_1571199785525_0.9882528754344773"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.2": {
+      "name": "write-file-atomic",
+      "version": "3.0.2",
+      "description": "Write files in an atomic fashion w/configurable ownership",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap",
+        "posttest": "npm run lint",
+        "lint": "standard",
+        "postlint": "rimraf chowncopy good nochmod nochown nofsync nofsyncopt noopen norename \"norename nounlink\" nowrite",
+        "preversion": "npm test",
+        "postversion": "npm publish",
+        "prepublishOnly": "git push origin --follow-tags"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/npm/write-file-atomic.git"
+      },
+      "keywords": [
+        "writeFile",
+        "atomic"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/npm/write-file-atomic/issues"
+      },
+      "homepage": "https://github.com/npm/write-file-atomic",
+      "dependencies": {
+        "imurmurhash": "^0.1.4",
+        "is-typedarray": "^1.0.0",
+        "signal-exit": "^3.0.2",
+        "typedarray-to-buffer": "^3.1.5"
+      },
+      "devDependencies": {
+        "mkdirp": "^0.5.1",
+        "require-inject": "^1.4.4",
+        "rimraf": "^2.6.3",
+        "standard": "^14.3.1",
+        "tap": "^14.10.6"
+      },
+      "tap": {
+        "100": true
+      },
+      "gitHead": "e322288d985d54992142b144ed2e6366f8865a45",
+      "_id": "write-file-atomic@3.0.2",
+      "_nodeVersion": "13.7.0",
+      "_npmVersion": "6.13.6",
+      "dist": {
+        "integrity": "sha512-w+Lx4LO0eSgy3FypOovx1+vXrW+MilikDICu4sTe0YSmBT2D4MQmQ6X3wQ/gaP6TwAcsQgu03zhIfYdjYioVZQ==",
+        "shasum": "0c55003305e31dee5e62b3693dcb553410ac11e3",
+        "tarball": "https://registry.npmjs.org/write-file-atomic/-/write-file-atomic-3.0.2.tgz",
+        "fileCount": 5,
+        "unpackedSize": 12019,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeVDYOCRA9TVsSAnZWagAAjOMP/RKjMDeh7vBeQ31XNb/V\njlHMoOkfDl6QSF2/81HxLsD3/f4qtNrTsrUV5yrN0BJpHJiAYrwIirCEDRWq\nggNuqBphT4JJu7UIRTHKZ1fHTLzG5Tu6+nkXfbzpNmwqLuRSuZaCT2cN+SGd\n6mpc+a12okIadFAT3bMKEScdvbKc2M6z2HpBe57UMt7ChhNUPjsvb+emrH8X\n/FDxiH+nwTiQGWQEvHKJONHoH+J3OSm5YKt6QrZ1Ry8HI0VCcZmo2fFXW325\ntG0lTtcx5wQGENjwjJxl9nj2WkBskswe0GGGpoZV6AwFafRkUbBaiwT/qD0w\nYtobkSyF4LY499CSBPlEaTCs5VDmbyRczlvFBFAwKg/OA8Dwk1SeBsyxOStk\ndEiy6xZ0J0KVcUNrfdcKWpdJBbBTdrmEeSvYt+C0SUh3qTd14/lskg/AbHxI\nlO7SIHk/y6NR1fIZY6HhgAhWpAw1eRxFwhPtdhGoxUylL3r00MFFBXUM3jQ2\nV9ouw3VzDCMX3krwcw0p6FO4rAMFv0bOBu9Le2uooF1oXB/t63i5Y8uUYr/K\n866EOJAjqCAEFCZTOnZhrCEcqSquWPMXYJe/fXtO20m4NFCu5Lzn7rKivmVo\n2Mewl91RzQjkupc4BHaA7ecmlgFH7Eh2DeF8clPz8o01/jhKncQQRJyhV4r6\naQWP\r\n=b93n\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "evilpacket@gmail.com",
+          "name": "adam_baldwin"
+        },
+        {
+          "email": "ahmad@ahmadnassri.com",
+          "name": "ahmadnassri"
+        },
+        {
+          "email": "cghr1990@gmail.com",
+          "name": "claudiahdz"
+        },
+        {
+          "email": "darcy@darcyclarke.me",
+          "name": "darcyclarke"
+        },
+        {
+          "email": "i@izs.me",
+          "name": "isaacs"
+        },
+        {
+          "email": "mike@mikecorp.ca",
+          "name": "mikemimik"
+        },
+        {
+          "email": "ruyadorno@hotmail.com",
+          "name": "ruyadorno"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/write-file-atomic_3.0.2_1582577166119_0.8984137433054395"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.3": {
+      "name": "write-file-atomic",
+      "version": "3.0.3",
+      "description": "Write files in an atomic fashion w/configurable ownership",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap",
+        "posttest": "npm run lint",
+        "lint": "standard",
+        "postlint": "rimraf chowncopy good nochmod nochown nofsync nofsyncopt noopen norename \"norename nounlink\" nowrite",
+        "preversion": "npm test",
+        "postversion": "npm publish",
+        "prepublishOnly": "git push origin --follow-tags"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/npm/write-file-atomic.git"
+      },
+      "keywords": [
+        "writeFile",
+        "atomic"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/npm/write-file-atomic/issues"
+      },
+      "homepage": "https://github.com/npm/write-file-atomic",
+      "dependencies": {
+        "imurmurhash": "^0.1.4",
+        "is-typedarray": "^1.0.0",
+        "signal-exit": "^3.0.2",
+        "typedarray-to-buffer": "^3.1.5"
+      },
+      "devDependencies": {
+        "mkdirp": "^0.5.1",
+        "require-inject": "^1.4.4",
+        "rimraf": "^2.6.3",
+        "standard": "^14.3.1",
+        "tap": "^14.10.6"
+      },
+      "tap": {
+        "100": true
+      },
+      "gitHead": "eb8dff15f83f16be1e0b89be54fa80200356614a",
+      "_id": "write-file-atomic@3.0.3",
+      "_nodeVersion": "13.7.0",
+      "_npmVersion": "6.13.6",
+      "dist": {
+        "integrity": "sha512-AvHcyZ5JnSfq3ioSyjrBkH9yW4m7Ayk8/9My/DD9onKeu/94fwrMocemO2QAJFAlnnDN+ZDS+ZjAR5ua1/PV/Q==",
+        "shasum": "56bd5c5a5c70481cd19c571bd39ab965a5de56e8",
+        "tarball": "https://registry.npmjs.org/write-file-atomic/-/write-file-atomic-3.0.3.tgz",
+        "fileCount": 5,
+        "unpackedSize": 12787,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeVE24CRA9TVsSAnZWagAAZ1oP/izZvazxVzxm9iG6jaq6\nFuYMxO/dmoTAml/sAnFtEhP/XxCn8bqzR96FCde+yeFFLHY96kRsd4fbMD6E\nJtGTVyvGxIv9T4gcjwesw/XRs28bTL8ustWDG/rFxiwR2DsPpjmmgA76LnWK\n9u0FSzz3j+XbclQxbwnjBmS+0fwZpe4JBK6ig9fp8RLc6gI8QKgvVgMgzEl4\ncPwEzDs5YrPgMnM+obzbQEegnG3JRpdcPiAY4dZEchKXfgorbxUpaGV5wZ/5\nLNqAxpIHy7mlIQAAmmbroezfOR4jq417+Ue6sjU0mz6jcGHCmM2R2tRSRaCf\nGPHKjdHA0jctoayAWZIs7wIUtQhOiOsyVqdD9JtNE431oIbzgvX//GCVJE/U\noMWKI/51WpT/X2VzU6DO7WaHwOInEykeR+EEW2TXKrWcJUu/gDoe3VL/fvTJ\njR+EUINXWWn9BC19ZNx0mOLx4HH0r6EYgGnPPeuwzaVXumc5zFYgLCOoigMi\nO19OWetKThqA0+evO7MpoZs2ea05AvIzBQYwq4cnDLsRIaeSJsYhwWB4wetY\n6yPytApnjAw6DW9Wcqu2KTeHIJ1nbCuU7p8M1wcnDq5oMoW65UrBcP2LMhSp\nNDWcmssNk0ayubl4QEZ2oKyMty9EXLj6hiXBYUk1k5NnCsYAL9LFzIiukixH\n80WP\r\n=wDSu\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "evilpacket@gmail.com",
+          "name": "adam_baldwin"
+        },
+        {
+          "email": "ahmad@ahmadnassri.com",
+          "name": "ahmadnassri"
+        },
+        {
+          "email": "cghr1990@gmail.com",
+          "name": "claudiahdz"
+        },
+        {
+          "email": "darcy@darcyclarke.me",
+          "name": "darcyclarke"
+        },
+        {
+          "email": "i@izs.me",
+          "name": "isaacs"
+        },
+        {
+          "email": "mike@mikecorp.ca",
+          "name": "mikemimik"
+        },
+        {
+          "email": "ruyadorno@hotmail.com",
+          "name": "ruyadorno"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/write-file-atomic_3.0.3_1582583223897_0.8414533271003164"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "write-file-atomic\n-----------------\n\nThis is an extension for node's `fs.writeFile` that makes its operation\natomic and allows you set ownership (uid/gid of the file).\n\n### var writeFileAtomic = require('write-file-atomic')<br>writeFileAtomic(filename, data, [options], [callback])\n\n* filename **String**\n* data **String** | **Buffer**\n* options **Object** | **String**\n  * chown **Object** default, uid & gid of existing file, if any\n    * uid **Number**\n    * gid **Number**\n  * encoding **String** | **Null** default = 'utf8'\n  * fsync **Boolean** default = true\n  * mode **Number** default, from existing file, if any\n  * tmpfileCreated **Function** called when the tmpfile is created\n* callback **Function**\n\nAtomically and asynchronously writes data to a file, replacing the file if it already\nexists.  data can be a string or a buffer.\n\nThe file is initially named `filename + \".\" + murmurhex(__filename, process.pid, ++invocations)`.\nNote that `require('worker_threads').threadId` is used in addition to `process.pid` if running inside of a worker thread.\nIf writeFile completes successfully then, if passed the **chown** option it will change\nthe ownership of the file. Finally it renames the file back to the filename you specified. If\nit encounters errors at any of these steps it will attempt to unlink the temporary file and then\npass the error back to the caller.\nIf multiple writes are concurrently issued to the same file, the write operations are put into a queue and serialized in the order they were called, using Promises. Writes to different files are still executed in parallel.\n\nIf provided, the **chown** option requires both **uid** and **gid** properties or else\nyou'll get an error.  If **chown** is not specified it will default to using\nthe owner of the previous file.  To prevent chown from being ran you can\nalso pass `false`, in which case the file will be created with the current user's credentials.\n\nIf **mode** is not specified, it will default to using the permissions from\nan existing file, if any.  Expicitly setting this to `false` remove this default, resulting\nin a file created with the system default permissions.\n\nIf options is a String, it's assumed to be the **encoding** option. The **encoding** option is ignored if **data** is a buffer. It defaults to 'utf8'.\n\nIf the **fsync** option is **false**, writeFile will skip the final fsync call.\n\nIf the **tmpfileCreated** option is specified it will be called with the name of the tmpfile when created.\n\nExample:\n\n```javascript\nwriteFileAtomic('message.txt', 'Hello Node', {chown:{uid:100,gid:50}}, function (err) {\n  if (err) throw err;\n  console.log('It\\'s saved!');\n});\n```\n\nThis function also supports async/await:\n\n```javascript\n(async () => {\n  try {\n    await writeFileAtomic('message.txt', 'Hello Node', {chown:{uid:100,gid:50}});\n    console.log('It\\'s saved!');\n  } catch (err) {\n    console.error(err);\n    process.exit(1);\n  }\n})();\n```\n\n### var writeFileAtomicSync = require('write-file-atomic').sync<br>writeFileAtomicSync(filename, data, [options])\n\nThe synchronous version of **writeFileAtomic**.\n",
+  "maintainers": [
+    {
+      "email": "quitlahok@gmail.com",
+      "name": "nlf"
+    },
+    {
+      "email": "ruyadorno@hotmail.com",
+      "name": "ruyadorno"
+    },
+    {
+      "email": "darcy@darcyclarke.me",
+      "name": "darcyclarke"
+    },
+    {
+      "email": "evilpacket@gmail.com",
+      "name": "adam_baldwin"
+    },
+    {
+      "email": "i@izs.me",
+      "name": "isaacs"
+    }
+  ],
+  "time": {
+    "modified": "2020-10-13T05:05:51.066Z",
+    "created": "2014-09-10T23:26:27.142Z",
+    "1.0.0": "2014-09-10T23:26:27.142Z",
+    "1.0.1": "2014-09-10T23:27:54.551Z",
+    "1.0.2": "2014-09-11T23:53:33.815Z",
+    "1.0.3": "2014-09-15T23:33:40.116Z",
+    "1.1.0": "2014-09-19T23:32:52.849Z",
+    "1.1.1": "2015-05-22T01:40:50.343Z",
+    "1.1.2": "2015-05-22T01:53:50.418Z",
+    "1.1.3": "2015-09-08T21:17:40.905Z",
+    "1.1.4": "2015-12-03T22:04:24.581Z",
+    "1.2.0": "2016-08-18T20:32:52.191Z",
+    "1.3.0": "2017-01-06T00:39:35.969Z",
+    "1.3.1": "2017-01-07T08:02:24.984Z",
+    "1.3.2": "2017-04-21T02:52:18.885Z",
+    "1.3.3": "2017-04-22T01:58:28.962Z",
+    "1.3.4": "2017-04-26T23:39:58.237Z",
+    "2.0.0": "2017-04-26T23:40:28.497Z",
+    "2.1.0": "2017-05-13T19:45:53.878Z",
+    "2.3.0": "2017-08-18T22:54:58.294Z",
+    "2.4.0": "2019-01-22T23:52:33.211Z",
+    "2.4.1": "2019-01-23T00:27:34.206Z",
+    "2.4.2": "2019-01-23T01:23:41.137Z",
+    "2.4.3": "2019-05-24T16:48:52.689Z",
+    "3.0.0": "2019-05-24T19:20:20.733Z",
+    "3.0.1": "2019-10-16T04:23:05.682Z",
+    "3.0.2": "2020-02-24T20:46:06.260Z",
+    "3.0.3": "2020-02-24T22:27:04.013Z"
+  },
+  "homepage": "https://github.com/npm/write-file-atomic",
+  "keywords": [
+    "writeFile",
+    "atomic"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/npm/write-file-atomic.git"
+  },
+  "author": {
+    "name": "Rebecca Turner",
+    "email": "me@re-becca.org",
+    "url": "http://re-becca.org"
+  },
+  "bugs": {
+    "url": "https://github.com/npm/write-file-atomic/issues"
+  },
+  "license": "ISC",
+  "readmeFilename": "README.md",
+  "users": {
+    "jden": true,
+    "bluejeansandrain": true,
+    "monsterkodi": true,
+    "iarna": true,
+    "jsdnxx": true,
+    "ierceg": true
+  }
+}

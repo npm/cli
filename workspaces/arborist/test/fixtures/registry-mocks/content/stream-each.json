@@ -1,0 +1,639 @@
+{
+  "_id": "stream-each",
+  "_rev": "16-065d8db5e2ce3417b646051f412d87a0",
+  "name": "stream-each",
+  "description": "Iterate all the data in a stream",
+  "dist-tags": {
+    "latest": "1.2.3"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "stream-each",
+      "version": "1.0.0",
+      "description": "Iterate all the data in a stream",
+      "main": "index.js",
+      "dependencies": {},
+      "devDependencies": {
+        "tape": "^4.2.1",
+        "through2": "^2.0.0"
+      },
+      "scripts": {
+        "test": "tape test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mafintosh/stream-each.git"
+      },
+      "author": {
+        "name": "Mathias Buus",
+        "url": "@mafintosh"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/stream-each/issues"
+      },
+      "homepage": "https://github.com/mafintosh/stream-each",
+      "gitHead": "04c1ed8cc3f6bbfcf1f0833bbe7381042f333cc5",
+      "_id": "stream-each@1.0.0",
+      "_shasum": "d229d2290a636c2a959fcb2ef526a3cd41145e9a",
+      "_from": ".",
+      "_npmVersion": "2.14.4",
+      "_nodeVersion": "4.1.1",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "shasum": "d229d2290a636c2a959fcb2ef526a3cd41145e9a",
+        "tarball": "https://registry.npmjs.org/stream-each/-/stream-each-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "stream-each",
+      "version": "1.0.1",
+      "description": "Iterate all the data in a stream",
+      "main": "index.js",
+      "dependencies": {},
+      "devDependencies": {
+        "standard": "^5.3.1",
+        "tape": "^4.2.1",
+        "through2": "^2.0.0"
+      },
+      "scripts": {
+        "test": "standard && tape test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mafintosh/stream-each.git"
+      },
+      "author": {
+        "name": "Mathias Buus",
+        "url": "@mafintosh"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/stream-each/issues"
+      },
+      "homepage": "https://github.com/mafintosh/stream-each",
+      "gitHead": "72cb2f7e21d3667a37fade7a54d0160a99dad0f6",
+      "_id": "stream-each@1.0.1",
+      "_shasum": "c94d4c222159b44090335232cd9efc93d6af8ed1",
+      "_from": ".",
+      "_npmVersion": "2.14.4",
+      "_nodeVersion": "4.1.1",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "shasum": "c94d4c222159b44090335232cd9efc93d6af8ed1",
+        "tarball": "https://registry.npmjs.org/stream-each/-/stream-each-1.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "stream-each",
+      "version": "1.0.2",
+      "description": "Iterate all the data in a stream",
+      "main": "index.js",
+      "dependencies": {},
+      "devDependencies": {
+        "standard": "^5.3.1",
+        "tape": "^4.2.1",
+        "through2": "^2.0.0"
+      },
+      "scripts": {
+        "test": "standard && tape test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mafintosh/stream-each.git"
+      },
+      "author": {
+        "name": "Mathias Buus",
+        "url": "@mafintosh"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/stream-each/issues"
+      },
+      "homepage": "https://github.com/mafintosh/stream-each",
+      "gitHead": "60f494b053d05447c3d8e114f640df06d8c71da6",
+      "_id": "stream-each@1.0.2",
+      "_shasum": "c0bf4b73cc42ef6ae859b1e9c9f8bc6a2c3ad813",
+      "_from": ".",
+      "_npmVersion": "2.14.4",
+      "_nodeVersion": "4.1.1",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "shasum": "c0bf4b73cc42ef6ae859b1e9c9f8bc6a2c3ad813",
+        "tarball": "https://registry.npmjs.org/stream-each/-/stream-each-1.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "stream-each",
+      "version": "1.1.0",
+      "description": "Iterate all the data in a stream",
+      "main": "index.js",
+      "dependencies": {
+        "end-of-stream": "^1.1.0"
+      },
+      "devDependencies": {
+        "standard": "^5.3.1",
+        "tape": "^4.2.1",
+        "through2": "^2.0.0"
+      },
+      "scripts": {
+        "test": "standard && tape test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mafintosh/stream-each.git"
+      },
+      "author": {
+        "name": "Mathias Buus",
+        "url": "@mafintosh"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/stream-each/issues"
+      },
+      "homepage": "https://github.com/mafintosh/stream-each",
+      "gitHead": "f24f5d7211e9d1f84ce84f02352e7190ccf2fa45",
+      "_id": "stream-each@1.1.0",
+      "_shasum": "362b5901fb29ea58caafe7d37b2e7e087f5efa45",
+      "_from": ".",
+      "_npmVersion": "2.14.4",
+      "_nodeVersion": "4.1.1",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "shasum": "362b5901fb29ea58caafe7d37b2e7e087f5efa45",
+        "tarball": "https://registry.npmjs.org/stream-each/-/stream-each-1.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        },
+        {
+          "name": "maxogden",
+          "email": "max@maxogden.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.1.1": {
+      "name": "stream-each",
+      "version": "1.1.1",
+      "description": "Iterate all the data in a stream",
+      "main": "index.js",
+      "dependencies": {
+        "end-of-stream": "^1.1.0"
+      },
+      "devDependencies": {
+        "standard": "^5.3.1",
+        "tape": "^4.2.1",
+        "through2": "^2.0.0"
+      },
+      "scripts": {
+        "test": "standard && tape test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mafintosh/stream-each.git"
+      },
+      "author": {
+        "name": "Mathias Buus",
+        "url": "@mafintosh"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/stream-each/issues"
+      },
+      "homepage": "https://github.com/mafintosh/stream-each",
+      "gitHead": "39ca9db549e6d7d3c7dfe06c58712f9a574a20c9",
+      "_id": "stream-each@1.1.1",
+      "_shasum": "10d758d732ed133130f1950ec067154b4cd7c455",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.3",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "shasum": "10d758d732ed133130f1950ec067154b4cd7c455",
+        "tarball": "https://registry.npmjs.org/stream-each/-/stream-each-1.1.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "karissa",
+          "email": "krmckelv@gmail.com"
+        },
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        },
+        {
+          "name": "maxogden",
+          "email": "max@maxogden.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.1.2": {
+      "name": "stream-each",
+      "version": "1.1.2",
+      "description": "Iterate all the data in a stream",
+      "main": "index.js",
+      "dependencies": {
+        "end-of-stream": "^1.1.0"
+      },
+      "devDependencies": {
+        "standard": "^5.3.1",
+        "tape": "^4.2.1",
+        "through2": "^2.0.0"
+      },
+      "scripts": {
+        "test": "standard && tape test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mafintosh/stream-each.git"
+      },
+      "author": {
+        "name": "Mathias Buus",
+        "url": "@mafintosh"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/stream-each/issues"
+      },
+      "homepage": "https://github.com/mafintosh/stream-each",
+      "gitHead": "f0ef91ddbe95688e376598b9959cab463c733b57",
+      "_id": "stream-each@1.1.2",
+      "_shasum": "7d4f887f24c721ab0155b12a34263d8732ad8d39",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.3",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "shasum": "7d4f887f24c721ab0155b12a34263d8732ad8d39",
+        "tarball": "https://registry.npmjs.org/stream-each/-/stream-each-1.1.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "karissa",
+          "email": "krmckelv@gmail.com"
+        },
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        },
+        {
+          "name": "maxogden",
+          "email": "max@maxogden.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-5-east.internal.npmjs.com",
+        "tmp": "tmp/stream-each-1.1.2.tgz_1454600601831_0.7560806761030108"
+      },
+      "directories": {}
+    },
+    "1.2.0": {
+      "name": "stream-each",
+      "version": "1.2.0",
+      "description": "Iterate all the data in a stream",
+      "main": "index.js",
+      "dependencies": {
+        "end-of-stream": "^1.1.0",
+        "stream-shift": "^1.0.0"
+      },
+      "devDependencies": {
+        "standard": "^5.3.1",
+        "tape": "^4.2.1",
+        "through2": "^2.0.0"
+      },
+      "scripts": {
+        "test": "standard && tape test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mafintosh/stream-each.git"
+      },
+      "author": {
+        "name": "Mathias Buus",
+        "url": "@mafintosh"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/stream-each/issues"
+      },
+      "homepage": "https://github.com/mafintosh/stream-each",
+      "gitHead": "2968bf4f195641f5eda594c781a0b590776bc702",
+      "_id": "stream-each@1.2.0",
+      "_shasum": "1e95d47573f580d814dc0ff8cd0f66f1ce53c991",
+      "_from": ".",
+      "_npmVersion": "2.15.9",
+      "_nodeVersion": "4.6.1",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "shasum": "1e95d47573f580d814dc0ff8cd0f66f1ce53c991",
+        "tarball": "https://registry.npmjs.org/stream-each/-/stream-each-1.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "karissa",
+          "email": "krmckelv@gmail.com"
+        },
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        },
+        {
+          "name": "maxogden",
+          "email": "max@maxogden.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/stream-each-1.2.0.tgz_1478427484733_0.5437065886799246"
+      },
+      "directories": {}
+    },
+    "1.2.1": {
+      "name": "stream-each",
+      "version": "1.2.1",
+      "description": "Iterate all the data in a stream",
+      "main": "index.js",
+      "dependencies": {
+        "end-of-stream": "^1.1.0",
+        "stream-shift": "^1.0.0"
+      },
+      "devDependencies": {
+        "standard": "^5.3.1",
+        "tape": "^4.2.1",
+        "through2": "^2.0.0"
+      },
+      "scripts": {
+        "test": "standard && tape test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mafintosh/stream-each.git"
+      },
+      "author": {
+        "name": "Mathias Buus",
+        "url": "@mafintosh"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/stream-each/issues"
+      },
+      "homepage": "https://github.com/mafintosh/stream-each",
+      "gitHead": "3722076dad239f119edd86cc467695fca0edf77c",
+      "_id": "stream-each@1.2.1",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "8.6.0",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-fpzgLVZwOHz42oMMvpHwrd8q5xEILMU6FKY38CVgHH4y9PPD/YRKIJ341xLIrzHXhdh7kPPoJ+S/EGHNRIdA1g==",
+        "shasum": "79a894888f35b580ef0462232bfd25fa06274e3e",
+        "tarball": "https://registry.npmjs.org/stream-each/-/stream-each-1.2.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "karissa",
+          "email": "krmckelv@gmail.com"
+        },
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        },
+        {
+          "name": "maxogden",
+          "email": "max@maxogden.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/stream-each-1.2.1.tgz_1507660752392_0.9997272100299597"
+      },
+      "directories": {}
+    },
+    "1.2.2": {
+      "name": "stream-each",
+      "version": "1.2.2",
+      "description": "Iterate all the data in a stream",
+      "main": "index.js",
+      "dependencies": {
+        "end-of-stream": "^1.1.0",
+        "stream-shift": "^1.0.0"
+      },
+      "devDependencies": {
+        "standard": "^5.3.1",
+        "tape": "^4.2.1",
+        "through2": "^2.0.0"
+      },
+      "scripts": {
+        "test": "standard && tape test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mafintosh/stream-each.git"
+      },
+      "author": {
+        "name": "Mathias Buus",
+        "url": "@mafintosh"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/stream-each/issues"
+      },
+      "homepage": "https://github.com/mafintosh/stream-each",
+      "gitHead": "f2fdc9b58913253325f449b25201489e98003066",
+      "_id": "stream-each@1.2.2",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "8.6.0",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-mc1dbFhGBxvTM3bIWmAAINbqiuAk9TATcfIQC8P+/+HJefgaiTlMn2dHvkX8qlI12KeYKSQ1Ua9RrIqrn1VPoA==",
+        "shasum": "8e8c463f91da8991778765873fe4d960d8f616bd",
+        "tarball": "https://registry.npmjs.org/stream-each/-/stream-each-1.2.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "karissa",
+          "email": "krmckelv@gmail.com"
+        },
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        },
+        {
+          "name": "maxogden",
+          "email": "max@maxogden.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/stream-each-1.2.2.tgz_1507662242567_0.13970780046656728"
+      },
+      "directories": {}
+    },
+    "1.2.3": {
+      "name": "stream-each",
+      "version": "1.2.3",
+      "description": "Iterate all the data in a stream",
+      "main": "index.js",
+      "dependencies": {
+        "end-of-stream": "^1.1.0",
+        "stream-shift": "^1.0.0"
+      },
+      "devDependencies": {
+        "ndjson": "^1.5.0",
+        "standard": "^5.3.1",
+        "tape": "^4.2.1",
+        "through2": "^2.0.0"
+      },
+      "scripts": {
+        "test": "standard && tape test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mafintosh/stream-each.git"
+      },
+      "author": {
+        "name": "Mathias Buus",
+        "url": "@mafintosh"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/stream-each/issues"
+      },
+      "homepage": "https://github.com/mafintosh/stream-each",
+      "gitHead": "ccc17f5e2c444cb9f0befee545f326eb2ad69b5a",
+      "_id": "stream-each@1.2.3",
+      "_npmVersion": "6.1.0",
+      "_nodeVersion": "10.7.0",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-vlMC2f8I2u/bZGqkdfLQW/13Zihpej/7PmSiMQsbYddxuTsJp8vRe2x2FvVExZg7FaOds43ROAuFJwPR4MTZLw==",
+        "shasum": "ebe27a0c389b04fbcc233642952e10731afa9bae",
+        "tarball": "https://registry.npmjs.org/stream-each/-/stream-each-1.2.3.tgz",
+        "fileCount": 7,
+        "unpackedSize": 6744,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbX1HoCRA9TVsSAnZWagAATYYP/iS0a/FmTrGwQ7/RkbGQ\nadDMVU7EsiLkaI7uQjshLfCHLTttcoTL0E2OTjNMHyPAcMN8w5UTr4zMXw9V\nkNXnFepcIU0kMtf2HAEecyzQREGEVBEtsfpxLI3Ct2OToXkyOpH6/iu10NyT\nEuF/0kMchPHZLPjSogSExDcSErXS14mi2pnkmh+cADDe+Mw9Ck8+Kr7AMIwR\nga3nTHfrcRJ1TkSQ6bBmXGFHulRa5YOnt6YpicunCXLFbjIuj2kaqYWtYPSH\nlGWKyq3ouE/S+6101yDi5vrZL1xudAiXa1z1sMKTPX+Cfu/C8kk8noKBMScH\niTbruY8KtsKzcTROE5hZSN19OiobQChk5tH9z5VitZKugrGFZDsJ1eL+6l+6\n2pq0+vNgeVxFmHf0CyzmyDxvMzq+GZsF0Y8rPp1WH4nJ5nlu/B+DCBO2yOzJ\nJWZXWfmIzTTfVdPemc5ksvm/MXBg3KOHrlizGnjUC3I1yj1oiOsabgXSqf0B\nqlaVdCc6a/dOLTWWtns/DBaWCsmykRnfWoSHExg4U9bpkdJrvf+i0k5quRAo\nsEEbwqOn6jjfIlnMhNIsTg0EkPW/5MUAJ3xcfjxjKW/tlW4n4+NifFmxdtno\nPGxAB3EmVeRPq6KcSoJfMMfkbg7hcPawFVjSJFn7WVDAXPwIYnHVn/Mdq6xw\n1Kbh\r\n=OLss\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "karissa",
+          "email": "krmckelv@gmail.com"
+        },
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        },
+        {
+          "name": "maxogden",
+          "email": "max@maxogden.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/stream-each_1.2.3_1532973544684_0.4037271324645715"
+      }
+    }
+  },
+  "readme": "# stream-each\n\nIterate all the data in a stream\n\n```\nnpm install stream-each\n```\n\n[![build status](http://img.shields.io/travis/mafintosh/stream-each.svg?style=flat)](http://travis-ci.org/mafintosh/stream-each)\n\n## Usage\n\n``` js\nvar each = require('stream-each')\n\neach(stream, function (data, next) {\n  console.log('data from stream', data)\n  // when ready to consume next chunk\n  next()\n}, function (err) {\n  console.log('no more data')\n})\n```\n\n## API\n\n#### `each(stream, iterator, cb)`\n\nIterate the data in the stream by calling the iterator function with `(data, next)`\nwhere data is a data chunk and next is a callback. Call next when you are ready to\nconsume the next chunk. Optionally you can call next with an error to destroy the stream\n\nWhen the stream ends/errors the callback is called if provided\n\n## License\n\nMIT\n\n## Related\n\n`stream-each` is part of the [mississippi stream utility collection](https://github.com/maxogden/mississippi) which includes more useful stream modules similar to this one.\n",
+  "maintainers": [
+    {
+      "name": "karissa",
+      "email": "krmckelv@gmail.com"
+    },
+    {
+      "name": "mafintosh",
+      "email": "mathiasbuus@gmail.com"
+    },
+    {
+      "name": "maxogden",
+      "email": "max@maxogden.com"
+    }
+  ],
+  "time": {
+    "modified": "2018-07-30T17:59:07.233Z",
+    "created": "2015-10-18T20:41:57.778Z",
+    "1.0.0": "2015-10-18T20:41:57.778Z",
+    "1.0.1": "2015-10-18T20:45:34.438Z",
+    "1.0.2": "2015-10-18T20:48:08.056Z",
+    "1.1.0": "2015-10-18T21:15:26.755Z",
+    "1.1.1": "2016-01-26T00:58:43.986Z",
+    "1.1.2": "2016-02-04T15:43:23.065Z",
+    "1.2.0": "2016-11-06T10:18:04.958Z",
+    "1.2.1": "2017-10-10T18:39:13.414Z",
+    "1.2.2": "2017-10-10T19:04:03.593Z",
+    "1.2.3": "2018-07-30T17:59:04.760Z"
+  },
+  "homepage": "https://github.com/mafintosh/stream-each",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mafintosh/stream-each.git"
+  },
+  "author": {
+    "name": "Mathias Buus",
+    "url": "@mafintosh"
+  },
+  "bugs": {
+    "url": "https://github.com/mafintosh/stream-each/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "users": {
+    "coalesce": true,
+    "morewry": true
+  },
+  "_attachments": {}
+}

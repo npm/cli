@@ -1,0 +1,1080 @@
+{
+  "_id": "define-property",
+  "_rev": "13-4d76a46d1585cdf915fe4eaae819e4bb",
+  "name": "define-property",
+  "description": "Define a non-enumerable property on an object. Uses Reflect.defineProperty when available, otherwise Object.defineProperty.",
+  "dist-tags": {
+    "latest": "2.0.2"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "define-property",
+      "description": "Convenience for defining a non-enumberable property on an object.",
+      "version": "0.1.0",
+      "homepage": "https://github.com/jonschlinkert/define-property",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/define-property.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/define-property/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "define",
+        "define-property",
+        "enumerable",
+        "key",
+        "non",
+        "non-enumerable",
+        "object",
+        "prop",
+        "property",
+        "value"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "mixin-deep",
+            "mixin-object",
+            "delegate-object",
+            "forward-object"
+          ]
+        }
+      },
+      "_id": "define-property@0.1.0",
+      "_shasum": "8031b2af5e2a3e5a2d502e1a474066f3948de46a",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "0.12.4",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "8031b2af5e2a3e5a2d502e1a474066f3948de46a",
+        "tarball": "https://registry.npmjs.org/define-property/-/define-property-0.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.1.2": {
+      "name": "define-property",
+      "description": "Define a non-enumerable property on an object.",
+      "version": "0.1.2",
+      "homepage": "https://github.com/jonschlinkert/define-property",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/define-property.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/define-property/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "browser.js",
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha",
+        "prepublish": "browserify -o browser.js -e index.js -s index --bare"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "define",
+        "define-property",
+        "enumerable",
+        "key",
+        "non",
+        "non-enumerable",
+        "object",
+        "prop",
+        "property",
+        "value"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "mixin-deep",
+            "mixin-object",
+            "delegate-object",
+            "forward-object"
+          ]
+        }
+      },
+      "gitHead": "c5277006040196c1813b64cd1a55d41effd3cc5e",
+      "_id": "define-property@0.1.2",
+      "_shasum": "8e1235d85012d2d7f791ecb1d3bdd0e53560c4d5",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "0.12.4",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "8e1235d85012d2d7f791ecb1d3bdd0e53560c4d5",
+        "tarball": "https://registry.npmjs.org/define-property/-/define-property-0.1.2.tgz"
+      },
+      "directories": {}
+    },
+    "0.1.3": {
+      "name": "define-property",
+      "description": "Define a non-enumerable property on an object.",
+      "version": "0.1.3",
+      "homepage": "https://github.com/jonschlinkert/define-property",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/define-property.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/define-property/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "browser.js",
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha",
+        "prepublish": "browserify -o browser.js -e index.js -s index --bare"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "define",
+        "define-property",
+        "enumerable",
+        "key",
+        "non",
+        "non-enumerable",
+        "object",
+        "prop",
+        "property",
+        "value"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "mixin-deep",
+            "mixin-object",
+            "delegate-object",
+            "forward-object"
+          ]
+        }
+      },
+      "gitHead": "4482dd35229c08ff1a525d6cb1732c807f4decf1",
+      "_id": "define-property@0.1.3",
+      "_shasum": "15a437708bfb88e4af4508e46d8ef1273735a07b",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "0.12.4",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "15a437708bfb88e4af4508e46d8ef1273735a07b",
+        "tarball": "https://registry.npmjs.org/define-property/-/define-property-0.1.3.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.0": {
+      "name": "define-property",
+      "description": "Define a non-enumerable property on an object.",
+      "version": "0.2.0",
+      "homepage": "https://github.com/jonschlinkert/define-property",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/define-property.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/define-property/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "mocha": "*",
+        "should": "^7.0.4"
+      },
+      "keywords": [
+        "define",
+        "define-property",
+        "enumerable",
+        "key",
+        "non",
+        "non-enumerable",
+        "object",
+        "prop",
+        "property",
+        "value"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "mixin-deep",
+            "mixin-object",
+            "delegate-object",
+            "forward-object"
+          ]
+        }
+      },
+      "gitHead": "b4fc4209a43b939b5e12b3586bb2d188c238d5d9",
+      "_id": "define-property@0.2.0",
+      "_shasum": "7c527ab0d8b97355c3d1a98b5a5d31f41a840d3c",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "0.12.4",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "7c527ab0d8b97355c3d1a98b5a5d31f41a840d3c",
+        "tarball": "https://registry.npmjs.org/define-property/-/define-property-0.2.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.1": {
+      "name": "define-property",
+      "description": "Define a non-enumerable property on an object.",
+      "version": "0.2.1",
+      "homepage": "https://github.com/jonschlinkert/define-property",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/define-property.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/define-property/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "mocha": "*",
+        "should": "^7.0.4"
+      },
+      "keywords": [
+        "define",
+        "define-property",
+        "enumerable",
+        "key",
+        "non",
+        "non-enumerable",
+        "object",
+        "prop",
+        "property",
+        "value"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "mixin-deep",
+            "mixin-object",
+            "delegate-object",
+            "forward-object"
+          ]
+        }
+      },
+      "gitHead": "4cd59415d61c76c72ad474fadab657610263140e",
+      "_id": "define-property@0.2.1",
+      "_shasum": "8d3052c4f7382a65be2aeda030c4e15b9f69446f",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "0.12.4",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "8d3052c4f7382a65be2aeda030c4e15b9f69446f",
+        "tarball": "https://registry.npmjs.org/define-property/-/define-property-0.2.1.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.2": {
+      "name": "define-property",
+      "description": "Define a non-enumerable property on an object.",
+      "version": "0.2.2",
+      "homepage": "https://github.com/jonschlinkert/define-property",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/define-property.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/define-property/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "mocha": "*",
+        "should": "^7.0.4"
+      },
+      "keywords": [
+        "define",
+        "define-property",
+        "enumerable",
+        "key",
+        "non",
+        "non-enumerable",
+        "object",
+        "prop",
+        "property",
+        "value"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "mixin-deep",
+            "mixin-object",
+            "delegate-object",
+            "forward-object"
+          ]
+        }
+      },
+      "gitHead": "f628e98ed4c6f63200750b389eefd0eb97487418",
+      "_id": "define-property@0.2.2",
+      "_shasum": "2db4ec1533a574a4ee93d49dcc41e4746a460778",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "0.12.4",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "2db4ec1533a574a4ee93d49dcc41e4746a460778",
+        "tarball": "https://registry.npmjs.org/define-property/-/define-property-0.2.2.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.3": {
+      "name": "define-property",
+      "description": "Define a non-enumerable property on an object.",
+      "version": "0.2.3",
+      "homepage": "https://github.com/jonschlinkert/define-property",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/define-property.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/define-property/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "mocha": "*",
+        "should": "^7.0.4"
+      },
+      "keywords": [
+        "define",
+        "define-property",
+        "enumerable",
+        "key",
+        "non",
+        "non-enumerable",
+        "object",
+        "prop",
+        "property",
+        "value"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "mixin-deep",
+            "mixin-object",
+            "delegate-object",
+            "forward-object"
+          ]
+        }
+      },
+      "gitHead": "acc054ed23c429580e077a6fc34d6fd3be27b9fe",
+      "_id": "define-property@0.2.3",
+      "_shasum": "66400b88f651b0ae5999af4f9d6f77c62d7f9fd4",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "0.12.4",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "66400b88f651b0ae5999af4f9d6f77c62d7f9fd4",
+        "tarball": "https://registry.npmjs.org/define-property/-/define-property-0.2.3.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.5": {
+      "name": "define-property",
+      "description": "Define a non-enumerable property on an object.",
+      "version": "0.2.5",
+      "homepage": "https://github.com/jonschlinkert/define-property",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/define-property.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/define-property/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "mocha": "*",
+        "should": "^7.0.4"
+      },
+      "keywords": [
+        "define",
+        "define-property",
+        "enumerable",
+        "key",
+        "non",
+        "non-enumerable",
+        "object",
+        "prop",
+        "property",
+        "value"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "mixin-deep",
+            "mixin-object",
+            "delegate-object",
+            "forward-object"
+          ]
+        }
+      },
+      "dependencies": {
+        "is-descriptor": "^0.1.0"
+      },
+      "gitHead": "5bf4e5e9d8d1fdf8fba07fff4bdf13a5d6df8ae4",
+      "_id": "define-property@0.2.5",
+      "_shasum": "c35b1ef918ec3c990f9a5bc57be04aacec5c8116",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "0.12.4",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "c35b1ef918ec3c990f9a5bc57be04aacec5c8116",
+        "tarball": "https://registry.npmjs.org/define-property/-/define-property-0.2.5.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "define-property",
+      "description": "Define a non-enumerable property on an object.",
+      "version": "1.0.0",
+      "homepage": "https://github.com/jonschlinkert/define-property",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/define-property.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/define-property/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "is-descriptor": "^1.0.0"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^0.1.12",
+        "mocha": "^3.2.0"
+      },
+      "keywords": [
+        "define",
+        "define-property",
+        "enumerable",
+        "key",
+        "non",
+        "non-enumerable",
+        "object",
+        "prop",
+        "property",
+        "value"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "extend-shallow",
+            "merge-deep",
+            "assign-deep",
+            "mixin-deep"
+          ]
+        },
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "4811e7c7999e82ab086265eefeb5d9cbffe10912",
+      "_id": "define-property@1.0.0",
+      "_shasum": "769ebaaf3f4a63aad3af9e8d304c9bbe79bfb0e6",
+      "_from": ".",
+      "_npmVersion": "4.2.0",
+      "_nodeVersion": "7.7.3",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "769ebaaf3f4a63aad3af9e8d304c9bbe79bfb0e6",
+        "tarball": "https://registry.npmjs.org/define-property/-/define-property-1.0.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/define-property-1.0.0.tgz_1492669183321_0.5127195529639721"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "define-property",
+      "description": "Define a non-enumerable property on an object. Uses Reflect.defineProperty when available, otherwise Object.defineProperty.",
+      "version": "2.0.0",
+      "homepage": "https://github.com/jonschlinkert/define-property",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/define-property.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/define-property/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "is-descriptor": "^1.0.1",
+        "kind-of": "^6.0.1"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^1.0.0",
+        "mocha": "3.5.3"
+      },
+      "keywords": [
+        "define",
+        "define-property",
+        "enumerable",
+        "key",
+        "non",
+        "non-enumerable",
+        "object",
+        "prop",
+        "property",
+        "value"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "assign-deep",
+            "extend-shallow",
+            "merge-deep",
+            "mixin-deep"
+          ]
+        },
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "e5547ddcd8dc433c1d0bcd429ecbadc0365bfbb4",
+      "_id": "define-property@2.0.0",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "9.1.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "integrity": "sha512-4/SF011K23kgjxLFt6W7xQqJ4H7An3kfCQQ+iFWk12+xyMoqkdovL+b4l+1PK1dQVO+sPNtjARF249YhYDCzwg==",
+        "shasum": "db0cd7e880bf3d2a8bc60f03ffae43a4b7015140",
+        "tarball": "https://registry.npmjs.org/define-property/-/define-property-2.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/define-property-2.0.0.tgz_1511717561543_0.39900357043370605"
+      },
+      "directories": {}
+    },
+    "2.0.1": {
+      "name": "define-property",
+      "description": "Define a non-enumerable property on an object. Uses Reflect.defineProperty when available, otherwise Object.defineProperty.",
+      "version": "2.0.1",
+      "homepage": "https://github.com/jonschlinkert/define-property",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Brian Woodward",
+          "url": "https://twitter.com/doowb"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/define-property.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/define-property/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "is-descriptor": "^1.0.2",
+        "kind-of": "^6.0.2"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^1.0.0",
+        "mocha": "^3.5.3"
+      },
+      "keywords": [
+        "define",
+        "define-property",
+        "enumerable",
+        "key",
+        "non",
+        "non-enumerable",
+        "object",
+        "prop",
+        "property",
+        "value"
+      ],
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "assign-deep",
+            "extend-shallow",
+            "merge-deep",
+            "mixin-deep"
+          ]
+        },
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "63b0d9d5096ed103ca891fdadfeb9db991766728",
+      "_id": "define-property@2.0.1",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.1.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "integrity": "sha512-0Bay2p3QW3TvvrmR/U6npq/ymIGVrq5Glg2uLaidbx9DmM52Y0pD9ku3aGu3p1Htaby4JQvirAxFYHf33Xs6cQ==",
+        "shasum": "b7dd7bd907a615ec119feef82af425e68f00726a",
+        "tarball": "https://registry.npmjs.org/define-property/-/define-property-2.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/define-property-2.0.1.tgz_1516916222764_0.29555602883920074"
+      },
+      "directories": {}
+    },
+    "2.0.2": {
+      "name": "define-property",
+      "description": "Define a non-enumerable property on an object. Uses Reflect.defineProperty when available, otherwise Object.defineProperty.",
+      "version": "2.0.2",
+      "homepage": "https://github.com/jonschlinkert/define-property",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Brian Woodward",
+          "url": "https://twitter.com/doowb"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/define-property.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/define-property/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "is-descriptor": "^1.0.2",
+        "isobject": "^3.0.1"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^1.0.0",
+        "mocha": "^3.5.3"
+      },
+      "keywords": [
+        "define",
+        "define-property",
+        "enumerable",
+        "key",
+        "non",
+        "non-enumerable",
+        "object",
+        "prop",
+        "property",
+        "value"
+      ],
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "assign-deep",
+            "extend-shallow",
+            "merge-deep",
+            "mixin-deep"
+          ]
+        },
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "04717307be822f2ca2544778b92e5d2cbe300c55",
+      "_id": "define-property@2.0.2",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "8.4.0",
+      "_npmUser": {
+        "name": "doowb",
+        "email": "brian.woodward@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-jwK2UV4cnPpbcG7+VRARKTZPUWowwXA8bzH5NP6ud0oeAxyYPuGZUAC7hMugpCdz4BeSZl2Dl9k66CHJ/46ZYQ==",
+        "shasum": "d459689e8d654ba77e02a817f8710d702cb16e9d",
+        "tarball": "https://registry.npmjs.org/define-property/-/define-property-2.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "brian.woodward@gmail.com",
+          "name": "doowb"
+        },
+        {
+          "email": "github@sellside.com",
+          "name": "jonschlinkert"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/define-property-2.0.2.tgz_1516998261413_0.9784700081218034"
+      },
+      "directories": {}
+    }
+  },
+  "readme": "# define-property [![NPM version](https://img.shields.io/npm/v/define-property.svg?style=flat)](https://www.npmjs.com/package/define-property) [![NPM monthly downloads](https://img.shields.io/npm/dm/define-property.svg?style=flat)](https://npmjs.org/package/define-property) [![NPM total downloads](https://img.shields.io/npm/dt/define-property.svg?style=flat)](https://npmjs.org/package/define-property) [![Linux Build Status](https://img.shields.io/travis/jonschlinkert/define-property.svg?style=flat&label=Travis)](https://travis-ci.org/jonschlinkert/define-property)\n\n> Define a non-enumerable property on an object. Uses Reflect.defineProperty when available, otherwise Object.defineProperty.\n\nPlease consider following this project's author, [Jon Schlinkert](https://github.com/jonschlinkert), and consider starring the project to show your :heart: and support.\n\n## Install\n\nInstall with [npm](https://www.npmjs.com/):\n\n```sh\n$ npm install --save define-property\n```\n\n## Release history\n\nSee [the CHANGELOG](changelog.md) for updates.\n\n## Usage\n\n**Params**\n\n* `object`: The object on which to define the property.\n* `key`: The name of the property to be defined or modified.\n* `value`: The value or descriptor of the property being defined or modified.\n\n```js\nvar define = require('define-property');\nvar obj = {};\ndefine(obj, 'foo', function(val) {\n  return val.toUpperCase();\n});\n\n// by default, defined properties are non-enumberable\nconsole.log(obj);\n//=> {}\n\nconsole.log(obj.foo('bar'));\n//=> 'BAR'\n```\n\n**defining setters/getters**\n\nPass the same properties you would if using [Object.defineProperty](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty) or [Reflect.defineProperty](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/defineProperty).\n\n```js\ndefine(obj, 'foo', {\n  set: function() {},\n  get: function() {}\n});\n```\n\n## About\n\n<details>\n<summary><strong>Contributing</strong></summary>\n\nPull requests and stars are always welcome. For bugs and feature requests, [please create an issue](../../issues/new).\n\n</details>\n\n<details>\n<summary><strong>Running Tests</strong></summary>\n\nRunning and reviewing unit tests is a great way to get familiarized with a library and its API. You can install dependencies and run tests with the following command:\n\n```sh\n$ npm install && npm test\n```\n\n</details>\n\n<details>\n<summary><strong>Building docs</strong></summary>\n\n_(This project's readme.md is generated by [verb](https://github.com/verbose/verb-generate-readme), please don't edit the readme directly. Any changes to the readme must be made in the [.verb.md](.verb.md) readme template.)_\n\nTo generate the readme, run the following command:\n\n```sh\n$ npm install -g verbose/verb#dev verb-generate-readme && verb\n```\n\n</details>\n\n### Related projects\n\nYou might also be interested in these projects:\n\n* [assign-deep](https://www.npmjs.com/package/assign-deep): Deeply assign the enumerable properties and/or es6 Symbol properies of source objects to the target… [more](https://github.com/jonschlinkert/assign-deep) | [homepage](https://github.com/jonschlinkert/assign-deep \"Deeply assign the enumerable properties and/or es6 Symbol properies of source objects to the target (first) object.\")\n* [extend-shallow](https://www.npmjs.com/package/extend-shallow): Extend an object with the properties of additional objects. node.js/javascript util. | [homepage](https://github.com/jonschlinkert/extend-shallow \"Extend an object with the properties of additional objects. node.js/javascript util.\")\n* [merge-deep](https://www.npmjs.com/package/merge-deep): Recursively merge values in a javascript object. | [homepage](https://github.com/jonschlinkert/merge-deep \"Recursively merge values in a javascript object.\")\n* [mixin-deep](https://www.npmjs.com/package/mixin-deep): Deeply mix the properties of objects into the first object. Like merge-deep, but doesn't clone. | [homepage](https://github.com/jonschlinkert/mixin-deep \"Deeply mix the properties of objects into the first object. Like merge-deep, but doesn't clone.\")\n\n### Contributors\n\n| **Commits** | **Contributor** | \n| --- | --- |\n| 28 | [jonschlinkert](https://github.com/jonschlinkert) |\n| 1 | [doowb](https://github.com/doowb) |\n\n### Author\n\n**Jon Schlinkert**\n\n* Connect with me on [linkedin/in/jonschlinkert](https://linkedin.com/in/jonschlinkert)\n* Follow me on [github/jonschlinkert](https://github.com/jonschlinkert)\n* Follow me on [twitter/jonschlinkert](https://twitter.com/jonschlinkert)\n\n### License\n\nCopyright © 2018, [Jon Schlinkert](https://github.com/jonschlinkert).\nReleased under the [MIT License](LICENSE).\n\n***\n\n_This file was generated by [verb-generate-readme](https://github.com/verbose/verb-generate-readme), v0.6.0, on January 25, 2018._",
+  "maintainers": [
+    {
+      "email": "brian.woodward@gmail.com",
+      "name": "doowb"
+    },
+    {
+      "email": "github@sellside.com",
+      "name": "jonschlinkert"
+    }
+  ],
+  "time": {
+    "modified": "2018-01-26T20:24:22.283Z",
+    "created": "2015-08-13T01:46:20.557Z",
+    "0.1.0": "2015-08-13T01:46:20.557Z",
+    "0.1.2": "2015-08-13T01:56:48.653Z",
+    "0.1.3": "2015-08-13T02:02:26.205Z",
+    "0.2.0": "2015-08-27T10:16:07.004Z",
+    "0.2.1": "2015-08-27T10:43:39.413Z",
+    "0.2.2": "2015-08-28T01:52:49.347Z",
+    "0.2.3": "2015-08-29T13:15:01.908Z",
+    "0.2.5": "2015-08-31T06:31:10.166Z",
+    "1.0.0": "2017-04-20T06:19:43.879Z",
+    "2.0.0": "2017-11-26T17:32:42.453Z",
+    "2.0.1": "2018-01-25T21:37:02.821Z",
+    "2.0.2": "2018-01-26T20:24:22.283Z"
+  },
+  "homepage": "https://github.com/jonschlinkert/define-property",
+  "keywords": [
+    "define",
+    "define-property",
+    "enumerable",
+    "key",
+    "non",
+    "non-enumerable",
+    "object",
+    "prop",
+    "property",
+    "value"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonschlinkert/define-property.git"
+  },
+  "author": {
+    "name": "Jon Schlinkert",
+    "url": "https://github.com/jonschlinkert"
+  },
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/define-property/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "contributors": [
+    {
+      "name": "Brian Woodward",
+      "url": "https://twitter.com/doowb"
+    },
+    {
+      "name": "Jon Schlinkert",
+      "url": "http://twitter.com/jonschlinkert"
+    }
+  ],
+  "_attachments": {}
+}

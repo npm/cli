@@ -1,0 +1,4801 @@
+{
+  "_id": "babel-types",
+  "_rev": "199-4d606e3ec8f5afe384e8e45f25f18b12",
+  "name": "babel-types",
+  "dist-tags": {
+    "latest": "6.26.0",
+    "next": "7.0.0-beta.3"
+  },
+  "versions": {
+    "6.0.2": {
+      "name": "babel-types",
+      "version": "6.0.2",
+      "description": "",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/babel/babel.git"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-runtime": "^6.0.2",
+        "babel-traverse": "^6.0.2",
+        "esutils": "^2.0.2",
+        "lodash": "^3.10.1",
+        "to-fast-properties": "^1.0.1"
+      },
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "_id": "babel-types@6.0.2",
+      "scripts": {},
+      "_shasum": "5a815206f5bad50a878aad4b8fb0fb75a78e9ada",
+      "_from": ".",
+      "_npmVersion": "2.14.3",
+      "_nodeVersion": "4.1.0",
+      "_npmUser": {
+        "name": "sebmck",
+        "email": "sebmck@gmail.com"
+      },
+      "dist": {
+        "shasum": "5a815206f5bad50a878aad4b8fb0fb75a78e9ada",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-6.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "6.0.12": {
+      "name": "babel-types",
+      "version": "6.0.12",
+      "description": "",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/babel/babel.git"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-runtime": "^6.0.12",
+        "babel-traverse": "^6.0.2",
+        "esutils": "^2.0.2",
+        "lodash": "^3.10.1",
+        "to-fast-properties": "^1.0.1"
+      },
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "_id": "babel-types@6.0.12",
+      "scripts": {},
+      "_shasum": "40d568f7311e5a8f9b2e6981e8f927c70cb7e4ce",
+      "_from": ".",
+      "_npmVersion": "2.14.9",
+      "_nodeVersion": "4.1.0",
+      "_npmUser": {
+        "name": "sebmck",
+        "email": "sebmck@gmail.com"
+      },
+      "dist": {
+        "shasum": "40d568f7311e5a8f9b2e6981e8f927c70cb7e4ce",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-6.0.12.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "6.0.13": {
+      "name": "babel-types",
+      "version": "6.0.13",
+      "description": "",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/babel/babel.git"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-runtime": "^6.0.12",
+        "babel-traverse": "^6.0.2",
+        "esutils": "^2.0.2",
+        "lodash": "^3.10.1",
+        "to-fast-properties": "^1.0.1"
+      },
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "_id": "babel-types@6.0.13",
+      "scripts": {},
+      "_shasum": "4130099dfb50d08736568bd1bd3357b7fc9d1c96",
+      "_from": ".",
+      "_npmVersion": "2.14.9",
+      "_nodeVersion": "4.1.0",
+      "_npmUser": {
+        "name": "sebmck",
+        "email": "sebmck@gmail.com"
+      },
+      "dist": {
+        "shasum": "4130099dfb50d08736568bd1bd3357b7fc9d1c96",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-6.0.13.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "6.0.14": {
+      "name": "babel-types",
+      "version": "6.0.14",
+      "description": "",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-runtime": "^5.0.0",
+        "babel-traverse": "^6.0.14",
+        "esutils": "^2.0.2",
+        "lodash": "^3.10.1",
+        "to-fast-properties": "^1.0.1"
+      },
+      "_id": "babel-types@6.0.14",
+      "scripts": {},
+      "_shasum": "a24dedcdd5fcb831d2903fc22991d479baac45d0",
+      "_from": ".",
+      "_npmVersion": "2.14.9",
+      "_nodeVersion": "4.1.0",
+      "_npmUser": {
+        "name": "sebmck",
+        "email": "sebmck@gmail.com"
+      },
+      "dist": {
+        "shasum": "a24dedcdd5fcb831d2903fc22991d479baac45d0",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-6.0.14.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "6.0.15": {
+      "name": "babel-types",
+      "version": "6.0.15",
+      "description": "",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-runtime": "^5.0.0",
+        "babel-traverse": "^6.0.14",
+        "esutils": "^2.0.2",
+        "lodash": "^3.10.1",
+        "to-fast-properties": "^1.0.1"
+      },
+      "_id": "babel-types@6.0.15",
+      "scripts": {},
+      "_shasum": "eb5b2957a019994e7b19a3174e1878c2282e5c9a",
+      "_from": ".",
+      "_npmVersion": "2.14.9",
+      "_nodeVersion": "4.1.0",
+      "_npmUser": {
+        "name": "sebmck",
+        "email": "sebmck@gmail.com"
+      },
+      "dist": {
+        "shasum": "eb5b2957a019994e7b19a3174e1878c2282e5c9a",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-6.0.15.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "6.0.17": {
+      "name": "babel-types",
+      "version": "6.0.17",
+      "description": "",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-runtime": "^5.0.0",
+        "babel-traverse": "^6.0.17",
+        "esutils": "^2.0.2",
+        "lodash": "^3.10.1",
+        "to-fast-properties": "^1.0.1"
+      },
+      "_id": "babel-types@6.0.17",
+      "scripts": {},
+      "_shasum": "6a4f4b047fc01721a9d32bf3afa9f6c203030a72",
+      "_from": ".",
+      "_npmVersion": "2.14.9",
+      "_nodeVersion": "4.1.0",
+      "_npmUser": {
+        "name": "sebmck",
+        "email": "sebmck@gmail.com"
+      },
+      "dist": {
+        "shasum": "6a4f4b047fc01721a9d32bf3afa9f6c203030a72",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-6.0.17.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "6.0.18": {
+      "name": "babel-types",
+      "version": "6.0.18",
+      "description": "",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-runtime": "^5.0.0",
+        "babel-traverse": "^6.0.18",
+        "esutils": "^2.0.2",
+        "lodash": "^3.10.1",
+        "to-fast-properties": "^1.0.1"
+      },
+      "_id": "babel-types@6.0.18",
+      "scripts": {},
+      "_shasum": "26320fcf1e6ba6ce6541a9ed6f81cf4123bdeab8",
+      "_from": ".",
+      "_npmVersion": "2.14.9",
+      "_nodeVersion": "4.1.0",
+      "_npmUser": {
+        "name": "sebmck",
+        "email": "sebmck@gmail.com"
+      },
+      "dist": {
+        "shasum": "26320fcf1e6ba6ce6541a9ed6f81cf4123bdeab8",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-6.0.18.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "6.0.19": {
+      "name": "babel-types",
+      "version": "6.0.19",
+      "description": "",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-runtime": "^5.0.0",
+        "babel-traverse": "^6.0.19",
+        "esutils": "^2.0.2",
+        "lodash": "^3.10.1",
+        "to-fast-properties": "^1.0.1"
+      },
+      "_id": "babel-types@6.0.19",
+      "scripts": {},
+      "_shasum": "9e16a45ffbda87aa2d64613c30eba6866be22e07",
+      "_from": ".",
+      "_npmVersion": "2.14.9",
+      "_nodeVersion": "4.1.0",
+      "_npmUser": {
+        "name": "sebmck",
+        "email": "sebmck@gmail.com"
+      },
+      "dist": {
+        "shasum": "9e16a45ffbda87aa2d64613c30eba6866be22e07",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-6.0.19.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "6.1.2": {
+      "name": "babel-types",
+      "version": "6.1.2",
+      "description": "",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-runtime": "^5.0.0",
+        "babel-traverse": "^6.1.2",
+        "esutils": "^2.0.2",
+        "lodash": "^3.10.1",
+        "to-fast-properties": "^1.0.1"
+      },
+      "_id": "babel-types@6.1.2",
+      "scripts": {},
+      "_shasum": "56e6dc5c99f2fab72977ca6aeb9fdb070b9a51a8",
+      "_from": ".",
+      "_npmVersion": "2.14.9",
+      "_nodeVersion": "4.1.0",
+      "_npmUser": {
+        "name": "sebmck",
+        "email": "sebmck@gmail.com"
+      },
+      "dist": {
+        "shasum": "56e6dc5c99f2fab72977ca6aeb9fdb070b9a51a8",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-6.1.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "6.1.4": {
+      "name": "babel-types",
+      "version": "6.1.4",
+      "description": "",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-runtime": "^5.0.0",
+        "babel-traverse": "^6.1.4",
+        "esutils": "^2.0.2",
+        "lodash": "^3.10.1",
+        "to-fast-properties": "^1.0.1"
+      },
+      "_id": "babel-types@6.1.4",
+      "scripts": {},
+      "_shasum": "7f8d25eb12d82569f51920d09416f447f6bbd45f",
+      "_from": ".",
+      "_npmVersion": "3.3.10",
+      "_nodeVersion": "4.1.0",
+      "_npmUser": {
+        "name": "sebmck",
+        "email": "sebmck@gmail.com"
+      },
+      "dist": {
+        "shasum": "7f8d25eb12d82569f51920d09416f447f6bbd45f",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-6.1.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "6.1.17": {
+      "name": "babel-types",
+      "version": "6.1.17",
+      "description": "",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-runtime": "^5.0.0",
+        "babel-traverse": "^6.1.17",
+        "esutils": "^2.0.2",
+        "lodash": "^3.10.1",
+        "to-fast-properties": "^1.0.1"
+      },
+      "_id": "babel-types@6.1.17",
+      "scripts": {},
+      "_shasum": "d590c8b8a08c21a9e61f714284a9d5a6d5849c92",
+      "_from": ".",
+      "_npmVersion": "3.3.10",
+      "_nodeVersion": "4.1.0",
+      "_npmUser": {
+        "name": "sebmck",
+        "email": "sebmck@gmail.com"
+      },
+      "dist": {
+        "shasum": "d590c8b8a08c21a9e61f714284a9d5a6d5849c92",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-6.1.17.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "directories": {}
+    },
+    "6.1.18": {
+      "name": "babel-types",
+      "version": "6.1.18",
+      "description": "",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-runtime": "^5.0.0",
+        "babel-traverse": "^6.1.18",
+        "esutils": "^2.0.2",
+        "lodash": "^3.10.1",
+        "to-fast-properties": "^1.0.1"
+      },
+      "_id": "babel-types@6.1.18",
+      "scripts": {},
+      "_shasum": "e7854ab9c772148224b22b5c63a3bbbdc612702d",
+      "_from": ".",
+      "_npmVersion": "3.3.10",
+      "_nodeVersion": "4.1.0",
+      "_npmUser": {
+        "name": "sebmck",
+        "email": "sebmck@gmail.com"
+      },
+      "dist": {
+        "shasum": "e7854ab9c772148224b22b5c63a3bbbdc612702d",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-6.1.18.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "directories": {}
+    },
+    "6.2.0": {
+      "name": "babel-types",
+      "version": "6.2.0",
+      "description": "",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-runtime": "^5.0.0",
+        "babel-traverse": "^6.2.0",
+        "esutils": "^2.0.2",
+        "lodash": "^3.10.1",
+        "to-fast-properties": "^1.0.1"
+      },
+      "_id": "babel-types@6.2.0",
+      "scripts": {},
+      "_shasum": "a3210feb0e87f3b93bcb2ef7b946f7185ff8f32c",
+      "_from": ".",
+      "_npmVersion": "3.3.10",
+      "_nodeVersion": "4.1.0",
+      "_npmUser": {
+        "name": "sebmck",
+        "email": "sebmck@gmail.com"
+      },
+      "dist": {
+        "shasum": "a3210feb0e87f3b93bcb2ef7b946f7185ff8f32c",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-6.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "directories": {}
+    },
+    "6.2.3": {
+      "name": "babel-types",
+      "version": "6.2.3",
+      "description": "",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-runtime": "^5.0.0",
+        "babel-traverse": "^6.2.0",
+        "esutils": "^2.0.2",
+        "lodash": "^3.10.1",
+        "to-fast-properties": "^1.0.1"
+      },
+      "_id": "babel-types@6.2.3",
+      "scripts": {},
+      "_shasum": "268c4878d5dcf9c5d1f29651d4772a31ef47a3b4",
+      "_from": ".",
+      "_npmVersion": "3.3.10",
+      "_nodeVersion": "4.1.0",
+      "_npmUser": {
+        "name": "sebmck",
+        "email": "sebmck@gmail.com"
+      },
+      "dist": {
+        "shasum": "268c4878d5dcf9c5d1f29651d4772a31ef47a3b4",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-6.2.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "directories": {}
+    },
+    "6.2.4": {
+      "name": "babel-types",
+      "version": "6.2.4",
+      "description": "",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-runtime": "^5.0.0",
+        "babel-traverse": "^6.2.4",
+        "esutils": "^2.0.2",
+        "lodash": "^3.10.1",
+        "to-fast-properties": "^1.0.1"
+      },
+      "_id": "babel-types@6.2.4",
+      "scripts": {},
+      "_shasum": "7332d5f573f1d7668e8fda6536078e9767ed9f4e",
+      "_from": ".",
+      "_npmVersion": "3.3.10",
+      "_nodeVersion": "4.1.0",
+      "_npmUser": {
+        "name": "sebmck",
+        "email": "sebmck@gmail.com"
+      },
+      "dist": {
+        "shasum": "7332d5f573f1d7668e8fda6536078e9767ed9f4e",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-6.2.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "directories": {}
+    },
+    "6.3.0": {
+      "name": "babel-types",
+      "version": "6.3.0",
+      "description": "",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-runtime": "^5.0.0",
+        "babel-traverse": "^6.2.0",
+        "esutils": "^2.0.2",
+        "lodash": "^3.10.1",
+        "to-fast-properties": "^1.0.1"
+      },
+      "_id": "babel-types@6.3.0",
+      "scripts": {},
+      "_shasum": "57e5288a77e59aff172630acde2bbba76cfccae1",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.2",
+      "_npmUser": {
+        "name": "amasad",
+        "email": "amjad.masad@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "dist": {
+        "shasum": "57e5288a77e59aff172630acde2bbba76cfccae1",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-6.3.0.tgz"
+      },
+      "directories": {}
+    },
+    "6.3.13": {
+      "name": "babel-types",
+      "version": "6.3.13",
+      "description": "",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-runtime": "^5.0.0",
+        "babel-traverse": "^6.3.13",
+        "esutils": "^2.0.2",
+        "lodash": "^3.10.1",
+        "to-fast-properties": "^1.0.1"
+      },
+      "_id": "babel-types@6.3.13",
+      "scripts": {},
+      "_shasum": "1cea443a50d821347c76011f28ace73e789ed9ae",
+      "_from": ".",
+      "_npmVersion": "3.3.10",
+      "_nodeVersion": "4.1.0",
+      "_npmUser": {
+        "name": "sebmck",
+        "email": "sebmck@gmail.com"
+      },
+      "dist": {
+        "shasum": "1cea443a50d821347c76011f28ace73e789ed9ae",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-6.3.13.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "directories": {}
+    },
+    "6.3.14": {
+      "name": "babel-types",
+      "version": "6.3.14",
+      "description": "",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-runtime": "^5.0.0",
+        "babel-traverse": "^6.3.14",
+        "esutils": "^2.0.2",
+        "lodash": "^3.10.1",
+        "to-fast-properties": "^1.0.1"
+      },
+      "_id": "babel-types@6.3.14",
+      "scripts": {},
+      "_shasum": "419e967a24a399e2133d43c03656c3b36d582a97",
+      "_from": ".",
+      "_npmVersion": "3.3.12",
+      "_nodeVersion": "5.1.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "419e967a24a399e2133d43c03656c3b36d582a97",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-6.3.14.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "directories": {}
+    },
+    "6.3.17": {
+      "name": "babel-types",
+      "version": "6.3.17",
+      "description": "",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-runtime": "^5.0.0",
+        "babel-traverse": "^6.3.17",
+        "esutils": "^2.0.2",
+        "lodash": "^3.10.1",
+        "to-fast-properties": "^1.0.1"
+      },
+      "_id": "babel-types@6.3.17",
+      "scripts": {},
+      "_shasum": "087fb827dbbbfa8fb1ad4ec7d2bcbe7279ec8751",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.2",
+      "_npmUser": {
+        "name": "amasad",
+        "email": "amjad.masad@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "dist": {
+        "shasum": "087fb827dbbbfa8fb1ad4ec7d2bcbe7279ec8751",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-6.3.17.tgz"
+      },
+      "directories": {}
+    },
+    "6.3.18": {
+      "name": "babel-types",
+      "version": "6.3.18",
+      "description": "This module contains methods for building ASTs manually and for checking the types of AST nodes.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-runtime": "^5.0.0",
+        "babel-traverse": "^6.3.17",
+        "esutils": "^2.0.2",
+        "lodash": "^3.10.1",
+        "to-fast-properties": "^1.0.1"
+      },
+      "_id": "babel-types@6.3.18",
+      "scripts": {},
+      "_shasum": "a2988b1b8fbe1746ffb41f29a718a521501a5fb7",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.2",
+      "_npmUser": {
+        "name": "amasad",
+        "email": "amjad.masad@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "dist": {
+        "shasum": "a2988b1b8fbe1746ffb41f29a718a521501a5fb7",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-6.3.18.tgz"
+      },
+      "directories": {}
+    },
+    "6.3.20": {
+      "name": "babel-types",
+      "version": "6.3.20",
+      "description": "This module contains methods for building ASTs manually and for checking the types of AST nodes.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-runtime": "^5.0.0",
+        "babel-traverse": "^6.3.17",
+        "esutils": "^2.0.2",
+        "lodash": "^3.10.1",
+        "to-fast-properties": "^1.0.1"
+      },
+      "_id": "babel-types@6.3.20",
+      "scripts": {},
+      "_shasum": "683d342ecdf2920ff4b6bfb72f5161c2a8313826",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.2",
+      "_npmUser": {
+        "name": "amasad",
+        "email": "amjad.masad@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "dist": {
+        "shasum": "683d342ecdf2920ff4b6bfb72f5161c2a8313826",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-6.3.20.tgz"
+      },
+      "directories": {}
+    },
+    "6.3.21": {
+      "name": "babel-types",
+      "version": "6.3.21",
+      "description": "This module contains methods for building ASTs manually and for checking the types of AST nodes.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-runtime": "^5.0.0",
+        "babel-traverse": "^6.3.21",
+        "esutils": "^2.0.2",
+        "lodash": "^3.10.1",
+        "to-fast-properties": "^1.0.1"
+      },
+      "_id": "babel-types@6.3.21",
+      "scripts": {},
+      "_shasum": "c94e63c51102cfabd250583bec87e8d358758880",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.2",
+      "_npmUser": {
+        "name": "amasad",
+        "email": "amjad.masad@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "dist": {
+        "shasum": "c94e63c51102cfabd250583bec87e8d358758880",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-6.3.21.tgz"
+      },
+      "directories": {}
+    },
+    "6.3.24": {
+      "name": "babel-types",
+      "version": "6.3.24",
+      "description": "This module contains methods for building ASTs manually and for checking the types of AST nodes.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-runtime": "^5.0.0",
+        "babel-traverse": "^6.3.24",
+        "esutils": "^2.0.2",
+        "lodash": "^3.10.1",
+        "to-fast-properties": "^1.0.1"
+      },
+      "_id": "babel-types@6.3.24",
+      "scripts": {},
+      "_shasum": "91b12ffcc6b6e241255beb065c9ef88535fe4609",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.2",
+      "_npmUser": {
+        "name": "amasad",
+        "email": "amjad.masad@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "dist": {
+        "shasum": "91b12ffcc6b6e241255beb065c9ef88535fe4609",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-6.3.24.tgz"
+      },
+      "directories": {}
+    },
+    "6.4.0": {
+      "name": "babel-types",
+      "version": "6.4.0",
+      "description": "This module contains methods for building ASTs manually and for checking the types of AST nodes.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-runtime": "^5.0.0",
+        "babel-traverse": "^6.3.24",
+        "esutils": "^2.0.2",
+        "lodash": "^3.10.1",
+        "to-fast-properties": "^1.0.1"
+      },
+      "_id": "babel-types@6.4.0",
+      "scripts": {},
+      "_shasum": "bbb01df9d81c3a83d8abe005d4e065b46533b02b",
+      "_from": ".",
+      "_npmVersion": "3.5.2",
+      "_nodeVersion": "5.1.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "bbb01df9d81c3a83d8abe005d4e065b46533b02b",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-6.4.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "directories": {}
+    },
+    "6.4.1": {
+      "name": "babel-types",
+      "version": "6.4.1",
+      "description": "This module contains methods for building ASTs manually and for checking the types of AST nodes.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-runtime": "^5.0.0",
+        "babel-traverse": "^6.3.24",
+        "esutils": "^2.0.2",
+        "lodash": "^3.10.1",
+        "to-fast-properties": "^1.0.1"
+      },
+      "_id": "babel-types@6.4.1",
+      "scripts": {},
+      "_shasum": "7880a30ae92c8cb672d1ff1ef5d83f580681fcca",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.2",
+      "_npmUser": {
+        "name": "amasad",
+        "email": "amjad.masad@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "dist": {
+        "shasum": "7880a30ae92c8cb672d1ff1ef5d83f580681fcca",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-6.4.1.tgz"
+      },
+      "directories": {}
+    },
+    "6.4.3": {
+      "name": "babel-types",
+      "version": "6.4.3",
+      "description": "This module contains methods for building ASTs manually and for checking the types of AST nodes.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-runtime": "^5.0.0",
+        "babel-traverse": "^6.3.24",
+        "esutils": "^2.0.2",
+        "lodash": "^3.10.1",
+        "to-fast-properties": "^1.0.1"
+      },
+      "_id": "babel-types@6.4.3",
+      "scripts": {},
+      "_shasum": "0980d9a24c1a19e4da4bcd256331d5e69635febf",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.2",
+      "_npmUser": {
+        "name": "amasad",
+        "email": "amjad.masad@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "dist": {
+        "shasum": "0980d9a24c1a19e4da4bcd256331d5e69635febf",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-6.4.3.tgz"
+      },
+      "directories": {}
+    },
+    "6.4.5": {
+      "name": "babel-types",
+      "version": "6.4.5",
+      "description": "This module contains methods for building ASTs manually and for checking the types of AST nodes.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-runtime": "^5.0.0",
+        "babel-traverse": "^6.4.5",
+        "esutils": "^2.0.2",
+        "lodash": "^3.10.1",
+        "to-fast-properties": "^1.0.1"
+      },
+      "_id": "babel-types@6.4.5",
+      "scripts": {},
+      "_shasum": "589b9c843882d46fd23454364cb11d91fedd3a34",
+      "_from": ".",
+      "_npmVersion": "3.5.2",
+      "_nodeVersion": "5.1.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "589b9c843882d46fd23454364cb11d91fedd3a34",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-6.4.5.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "directories": {}
+    },
+    "6.5.0": {
+      "name": "babel-types",
+      "version": "6.5.0",
+      "description": "This module contains methods for building ASTs manually and for checking the types of AST nodes.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-runtime": "^5.0.0",
+        "babel-traverse": "^6.4.5",
+        "esutils": "^2.0.2",
+        "lodash": "^3.10.1",
+        "to-fast-properties": "^1.0.1"
+      },
+      "_id": "babel-types@6.5.0",
+      "scripts": {},
+      "_shasum": "53313670887769a27b325d72bb9fffd2684f7e39",
+      "_from": ".",
+      "_npmVersion": "3.6.0",
+      "_nodeVersion": "5.1.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "53313670887769a27b325d72bb9fffd2684f7e39",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-6.5.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-5-east.internal.npmjs.com",
+        "tmp": "tmp/babel-types-6.5.0.tgz_1454803709836_0.0882776954676956"
+      },
+      "directories": {}
+    },
+    "6.5.0-1": {
+      "name": "babel-types",
+      "version": "6.5.0-1",
+      "description": "This module contains methods for building ASTs manually and for checking the types of AST nodes.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-runtime": "^5.0.0",
+        "babel-traverse": "^6.5.0-1",
+        "esutils": "^2.0.2",
+        "lodash": "^3.10.1",
+        "to-fast-properties": "^1.0.1"
+      },
+      "_id": "babel-types@6.5.0-1",
+      "scripts": {},
+      "_shasum": "157883bb8c94f0d2b6c9ef78725915e65e59d3bb",
+      "_from": ".",
+      "_npmVersion": "3.6.0",
+      "_nodeVersion": "5.1.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "157883bb8c94f0d2b6c9ef78725915e65e59d3bb",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-6.5.0-1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-5-east.internal.npmjs.com",
+        "tmp": "tmp/babel-types-6.5.0-1.tgz_1454812912171_0.15067586093209684"
+      },
+      "directories": {}
+    },
+    "6.5.1": {
+      "name": "babel-types",
+      "version": "6.5.1",
+      "description": "This module contains methods for building ASTs manually and for checking the types of AST nodes.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-runtime": "^5.0.0",
+        "babel-traverse": "^6.4.5",
+        "esutils": "^2.0.2",
+        "lodash": "^3.10.1",
+        "to-fast-properties": "^1.0.1"
+      },
+      "_id": "babel-types@6.5.1",
+      "scripts": {},
+      "_shasum": "ae99005a4530d57ed3817bcbff9906565b6b247d",
+      "_from": ".",
+      "_npmVersion": "3.3.12",
+      "_nodeVersion": "5.4.0",
+      "_npmUser": {
+        "name": "sebmck",
+        "email": "sebmck@gmail.com"
+      },
+      "dist": {
+        "shasum": "ae99005a4530d57ed3817bcbff9906565b6b247d",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-6.5.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-9-west.internal.npmjs.com",
+        "tmp": "tmp/babel-types-6.5.1.tgz_1454897897243_0.37141253519803286"
+      },
+      "directories": {}
+    },
+    "6.5.2": {
+      "name": "babel-types",
+      "version": "6.5.2",
+      "description": "This module contains methods for building ASTs manually and for checking the types of AST nodes.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-runtime": "^5.0.0",
+        "babel-traverse": "^6.4.5",
+        "esutils": "^2.0.2",
+        "lodash": "^3.10.1",
+        "to-fast-properties": "^1.0.1"
+      },
+      "_id": "babel-types@6.5.2",
+      "scripts": {},
+      "_shasum": "67beabcc537d3694cf3fe5d3cf053c19ffc78195",
+      "_from": ".",
+      "_npmVersion": "3.6.0",
+      "_nodeVersion": "5.1.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "67beabcc537d3694cf3fe5d3cf053c19ffc78195",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-6.5.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-6-west.internal.npmjs.com",
+        "tmp": "tmp/babel-types-6.5.2.tgz_1455294621531_0.11506113293580711"
+      },
+      "directories": {}
+    },
+    "6.6.0": {
+      "name": "babel-types",
+      "version": "6.6.0",
+      "description": "This module contains methods for building ASTs manually and for checking the types of AST nodes.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-runtime": "^5.0.0",
+        "babel-traverse": "^6.6.0",
+        "esutils": "^2.0.2",
+        "lodash": "^3.10.1",
+        "to-fast-properties": "^1.0.1"
+      },
+      "_id": "babel-types@6.6.0",
+      "scripts": {},
+      "_shasum": "f246bfd2d607d3e35291d5bdfc89408907b3d2c1",
+      "_from": ".",
+      "_npmVersion": "3.6.0",
+      "_nodeVersion": "5.1.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "f246bfd2d607d3e35291d5bdfc89408907b3d2c1",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-6.6.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-9-west.internal.npmjs.com",
+        "tmp": "tmp/babel-types-6.6.0.tgz_1456780391033_0.06944778584875166"
+      },
+      "directories": {}
+    },
+    "6.6.4": {
+      "name": "babel-types",
+      "version": "6.6.4",
+      "description": "This module contains methods for building ASTs manually and for checking the types of AST nodes.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-runtime": "^5.0.0",
+        "babel-traverse": "^6.6.4",
+        "esutils": "^2.0.2",
+        "lodash": "^3.10.1",
+        "to-fast-properties": "^1.0.1"
+      },
+      "_id": "babel-types@6.6.4",
+      "scripts": {},
+      "_shasum": "7bc147fe4de7a32b678f775fc164fdbc55da0007",
+      "_from": ".",
+      "_npmVersion": "3.6.0",
+      "_nodeVersion": "5.1.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "7bc147fe4de7a32b678f775fc164fdbc55da0007",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-6.6.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/babel-types-6.6.4.tgz_1456954200178_0.17499903799034655"
+      },
+      "directories": {}
+    },
+    "6.6.5": {
+      "name": "babel-types",
+      "version": "6.6.5",
+      "description": "This module contains methods for building ASTs manually and for checking the types of AST nodes.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-runtime": "^5.0.0",
+        "babel-traverse": "^6.6.5",
+        "esutils": "^2.0.2",
+        "lodash": "^3.10.1",
+        "to-fast-properties": "^1.0.1"
+      },
+      "_id": "babel-types@6.6.5",
+      "scripts": {},
+      "_shasum": "a7f0a1c4b109c1507104815791beda76a62fad9c",
+      "_from": ".",
+      "_npmVersion": "3.6.0",
+      "_nodeVersion": "5.1.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "a7f0a1c4b109c1507104815791beda76a62fad9c",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-6.6.5.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/babel-types-6.6.5.tgz_1457133434432_0.3317904465366155"
+      },
+      "directories": {}
+    },
+    "6.7.0": {
+      "name": "babel-types",
+      "version": "6.7.0",
+      "description": "This module contains methods for building ASTs manually and for checking the types of AST nodes.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-runtime": "^5.0.0",
+        "babel-traverse": "^6.7.0",
+        "esutils": "^2.0.2",
+        "lodash": "^3.10.1",
+        "to-fast-properties": "^1.0.1"
+      },
+      "_id": "babel-types@6.7.0",
+      "scripts": {},
+      "_shasum": "f0fd1e00f46343b3bf738c66702b3c92bddbe230",
+      "_from": ".",
+      "_npmVersion": "3.3.12",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "amasad",
+        "email": "amjad.masad@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "dist": {
+        "shasum": "f0fd1e00f46343b3bf738c66702b3c92bddbe230",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-6.7.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-13-west.internal.npmjs.com",
+        "tmp": "tmp/babel-types-6.7.0.tgz_1457484786923_0.6082624471746385"
+      },
+      "directories": {}
+    },
+    "6.7.2": {
+      "name": "babel-types",
+      "version": "6.7.2",
+      "description": "This module contains methods for building ASTs manually and for checking the types of AST nodes.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-runtime": "^5.0.0",
+        "babel-traverse": "^6.7.2",
+        "esutils": "^2.0.2",
+        "lodash": "^3.10.1",
+        "to-fast-properties": "^1.0.1"
+      },
+      "_id": "babel-types@6.7.2",
+      "scripts": {},
+      "_shasum": "7f8a1bac2d2b11bbe2691685e17153e84355bd02",
+      "_from": ".",
+      "_npmVersion": "3.3.12",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "amasad",
+        "email": "amjad.masad@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "dist": {
+        "shasum": "7f8a1bac2d2b11bbe2691685e17153e84355bd02",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-6.7.2.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-13-west.internal.npmjs.com",
+        "tmp": "tmp/babel-types-6.7.2.tgz_1457649694542_0.08641894650645554"
+      },
+      "directories": {}
+    },
+    "6.7.7": {
+      "name": "babel-types",
+      "version": "6.7.7",
+      "description": "This module contains methods for building ASTs manually and for checking the types of AST nodes.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-runtime": "^5.0.0",
+        "babel-traverse": "^6.7.2",
+        "esutils": "^2.0.2",
+        "lodash": "^3.10.1",
+        "to-fast-properties": "^1.0.1"
+      },
+      "_id": "babel-types@6.7.7",
+      "scripts": {},
+      "_shasum": "88cd1f1cc0ef972d092acc28761de10553912915",
+      "_from": ".",
+      "_npmVersion": "3.7.3",
+      "_nodeVersion": "5.9.0",
+      "_npmUser": {
+        "name": "loganfsmyth",
+        "email": "loganfsmyth@gmail.com"
+      },
+      "dist": {
+        "shasum": "88cd1f1cc0ef972d092acc28761de10553912915",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-6.7.7.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/babel-types-6.7.7.tgz_1461208166431_0.6982774154748768"
+      },
+      "directories": {}
+    },
+    "6.8.0": {
+      "name": "babel-types",
+      "version": "6.8.0",
+      "description": "This module contains methods for building ASTs manually and for checking the types of AST nodes.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-runtime": "^6.0.0",
+        "babel-traverse": "^6.8.0",
+        "esutils": "^2.0.2",
+        "lodash": "^3.10.1",
+        "to-fast-properties": "^1.0.1"
+      },
+      "_id": "babel-types@6.8.0",
+      "scripts": {},
+      "_shasum": "27c2656960e3bbbf2db8ddf98907aebe25534e87",
+      "_from": ".",
+      "_npmVersion": "3.8.6",
+      "_nodeVersion": "5.1.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "dist": {
+        "shasum": "27c2656960e3bbbf2db8ddf98907aebe25534e87",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-6.8.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/babel-types-6.8.0.tgz_1462232723873_0.9518406875431538"
+      },
+      "directories": {}
+    },
+    "6.8.1": {
+      "name": "babel-types",
+      "version": "6.8.1",
+      "description": "This module contains methods for building ASTs manually and for checking the types of AST nodes.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-runtime": "^6.0.0",
+        "babel-traverse": "^6.8.0",
+        "esutils": "^2.0.2",
+        "lodash": "^3.10.1",
+        "to-fast-properties": "^1.0.1"
+      },
+      "_id": "babel-types@6.8.1",
+      "scripts": {},
+      "_shasum": "7b74d9dbfaa2695ab234dbeb5f70299488eaa38f",
+      "_from": ".",
+      "_npmVersion": "3.8.6",
+      "_nodeVersion": "5.1.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "dist": {
+        "shasum": "7b74d9dbfaa2695ab234dbeb5f70299488eaa38f",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-6.8.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/babel-types-6.8.1.tgz_1462236125532_0.694664258742705"
+      },
+      "directories": {}
+    },
+    "6.9.0": {
+      "name": "babel-types",
+      "version": "6.9.0",
+      "description": "This module contains methods for building ASTs manually and for checking the types of AST nodes.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-runtime": "^6.9.0",
+        "babel-traverse": "^6.9.0",
+        "esutils": "^2.0.2",
+        "lodash": "^4.2.0",
+        "to-fast-properties": "^1.0.1"
+      },
+      "_id": "babel-types@6.9.0",
+      "scripts": {},
+      "_shasum": "87c9aece3c2947cca1e9f9c03f30cc879224fe3c",
+      "_from": ".",
+      "_npmVersion": "3.8.6",
+      "_nodeVersion": "5.1.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "dist": {
+        "shasum": "87c9aece3c2947cca1e9f9c03f30cc879224fe3c",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-6.9.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/babel-types-6.9.0.tgz_1463510991369_0.7158603414427489"
+      },
+      "directories": {}
+    },
+    "6.9.1": {
+      "name": "babel-types",
+      "version": "6.9.1",
+      "description": "This module contains methods for building ASTs manually and for checking the types of AST nodes.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-runtime": "^6.9.1",
+        "babel-traverse": "^6.9.0",
+        "esutils": "^2.0.2",
+        "lodash": "^4.2.0",
+        "to-fast-properties": "^1.0.1"
+      },
+      "_id": "babel-types@6.9.1",
+      "scripts": {},
+      "_shasum": "de9a15abd1676ac611065eee2a3a6fbdcddddd76",
+      "_from": ".",
+      "_npmVersion": "3.8.6",
+      "_nodeVersion": "5.1.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "de9a15abd1676ac611065eee2a3a6fbdcddddd76",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-6.9.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/babel-types-6.9.1.tgz_1464551412287_0.79155990970321"
+      },
+      "directories": {}
+    },
+    "6.10.0": {
+      "name": "babel-types",
+      "version": "6.10.0",
+      "description": "This module contains methods for building ASTs manually and for checking the types of AST nodes.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-runtime": "^6.9.1",
+        "babel-traverse": "^6.9.0",
+        "esutils": "^2.0.2",
+        "lodash": "^4.2.0",
+        "to-fast-properties": "^1.0.1"
+      },
+      "_id": "babel-types@6.10.0",
+      "scripts": {},
+      "_shasum": "e647c84eb4a2c8964cb736694d46a3932781d70d",
+      "_from": ".",
+      "_npmVersion": "3.8.9",
+      "_nodeVersion": "6.2.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "e647c84eb4a2c8964cb736694d46a3932781d70d",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-6.10.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/babel-types-6.10.0.tgz_1465617923566_0.15230382420122623"
+      },
+      "directories": {}
+    },
+    "6.10.2": {
+      "name": "babel-types",
+      "version": "6.10.2",
+      "description": "This module contains methods for building ASTs manually and for checking the types of AST nodes.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-runtime": "^6.9.1",
+        "babel-traverse": "^6.9.0",
+        "esutils": "^2.0.2",
+        "lodash": "^4.2.0",
+        "to-fast-properties": "^1.0.1"
+      },
+      "_id": "babel-types@6.10.2",
+      "scripts": {},
+      "_shasum": "9f1305e07788fa0a948c3fb364f44c8d7ee81b9a",
+      "_from": ".",
+      "_npmVersion": "3.8.6",
+      "_nodeVersion": "5.1.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "9f1305e07788fa0a948c3fb364f44c8d7ee81b9a",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-6.10.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/babel-types-6.10.2.tgz_1466199918155_0.8207682529464364"
+      },
+      "directories": {}
+    },
+    "6.11.1": {
+      "name": "babel-types",
+      "version": "6.11.1",
+      "description": "This module contains methods for building ASTs manually and for checking the types of AST nodes.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-runtime": "^6.9.1",
+        "babel-traverse": "^6.9.0",
+        "esutils": "^2.0.2",
+        "lodash": "^4.2.0",
+        "to-fast-properties": "^1.0.1"
+      },
+      "_id": "babel-types@6.11.1",
+      "scripts": {},
+      "_shasum": "a3df355bab90ddcf66318640717cf2c154e6648a",
+      "_from": ".",
+      "_npmVersion": "3.8.9",
+      "_nodeVersion": "6.2.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "a3df355bab90ddcf66318640717cf2c154e6648a",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-6.11.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/babel-types-6.11.1.tgz_1467062390193_0.4343835695181042"
+      },
+      "directories": {}
+    },
+    "6.13.0": {
+      "name": "babel-types",
+      "version": "6.13.0",
+      "description": "This module contains methods for building ASTs manually and for checking the types of AST nodes.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-runtime": "^6.9.1",
+        "babel-traverse": "^6.13.0",
+        "esutils": "^2.0.2",
+        "lodash": "^4.2.0",
+        "to-fast-properties": "^1.0.1"
+      },
+      "_id": "babel-types@6.13.0",
+      "scripts": {},
+      "_shasum": "f0809fd635e33304691b437379bffad39d58792b",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "5.11.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "f0809fd635e33304691b437379bffad39d58792b",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-6.13.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/babel-types-6.13.0.tgz_1470353707931_0.4390147477388382"
+      },
+      "directories": {}
+    },
+    "6.14.0": {
+      "name": "babel-types",
+      "version": "6.14.0",
+      "description": "This module contains methods for building ASTs manually and for checking the types of AST nodes.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-runtime": "^6.9.1",
+        "babel-traverse": "^6.14.0",
+        "esutils": "^2.0.2",
+        "lodash": "^4.2.0",
+        "to-fast-properties": "^1.0.1"
+      },
+      "_id": "babel-types@6.14.0",
+      "scripts": {},
+      "_shasum": "4c9b7047fa7d316040fbf0fa21203cf240dd7227",
+      "_from": ".",
+      "_npmVersion": "3.10.6",
+      "_nodeVersion": "5.11.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "4c9b7047fa7d316040fbf0fa21203cf240dd7227",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-6.14.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/babel-types-6.14.0.tgz_1472082063275_0.4478574248496443"
+      },
+      "directories": {}
+    },
+    "6.15.0": {
+      "name": "babel-types",
+      "version": "6.15.0",
+      "description": "This module contains methods for building ASTs manually and for checking the types of AST nodes.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-runtime": "^6.9.1",
+        "esutils": "^2.0.2",
+        "lodash": "^4.2.0",
+        "to-fast-properties": "^1.0.1"
+      },
+      "_id": "babel-types@6.15.0",
+      "scripts": {},
+      "_shasum": "413d4fef4750a48570de819f18a64d39a4f3dc38",
+      "_from": ".",
+      "_npmVersion": "3.10.6",
+      "_nodeVersion": "5.11.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "413d4fef4750a48570de819f18a64d39a4f3dc38",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-6.15.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/babel-types-6.15.0.tgz_1472742190926_0.844162953319028"
+      },
+      "directories": {}
+    },
+    "6.16.0": {
+      "name": "babel-types",
+      "version": "6.16.0",
+      "description": "This module contains methods for building ASTs manually and for checking the types of AST nodes.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-runtime": "^6.9.1",
+        "esutils": "^2.0.2",
+        "lodash": "^4.2.0",
+        "to-fast-properties": "^1.0.1"
+      },
+      "_id": "babel-types@6.16.0",
+      "scripts": {},
+      "_shasum": "71cca1dbe5337766225c5c193071e8ebcbcffcfe",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "5.11.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "71cca1dbe5337766225c5c193071e8ebcbcffcfe",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-6.16.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/babel-types-6.16.0.tgz_1475091545801_0.27850994863547385"
+      },
+      "directories": {}
+    },
+    "6.18.0": {
+      "name": "babel-types",
+      "version": "6.18.0",
+      "description": "Babel Types is a Lodash-esque utility library for AST nodes",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-runtime": "^6.9.1",
+        "esutils": "^2.0.2",
+        "lodash": "^4.2.0",
+        "to-fast-properties": "^1.0.1"
+      },
+      "_id": "babel-types@6.18.0",
+      "scripts": {},
+      "_shasum": "1f7d5a73474c59eb9151b2417bbff4e4fce7c3f8",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "6.9.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "1f7d5a73474c59eb9151b2417bbff4e4fce7c3f8",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-6.18.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/babel-types-6.18.0.tgz_1477343952680_0.754666167544201"
+      },
+      "directories": {}
+    },
+    "6.19.0": {
+      "name": "babel-types",
+      "version": "6.19.0",
+      "description": "Babel Types is a Lodash-esque utility library for AST nodes",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-runtime": "^6.9.1",
+        "esutils": "^2.0.2",
+        "lodash": "^4.2.0",
+        "to-fast-properties": "^1.0.1"
+      },
+      "devDependencies": {
+        "babylon": "^6.8.2"
+      },
+      "_id": "babel-types@6.19.0",
+      "scripts": {},
+      "_shasum": "8db2972dbed01f1192a8b602ba1e1e4c516240b9",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "6.9.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "8db2972dbed01f1192a8b602ba1e1e4c516240b9",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-6.19.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/babel-types-6.19.0.tgz_1479312929564_0.3655073696281761"
+      },
+      "directories": {}
+    },
+    "6.20.0": {
+      "name": "babel-types",
+      "version": "6.20.0",
+      "description": "Babel Types is a Lodash-esque utility library for AST nodes",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-runtime": "^6.20.0",
+        "esutils": "^2.0.2",
+        "lodash": "^4.2.0",
+        "to-fast-properties": "^1.0.1"
+      },
+      "devDependencies": {
+        "babylon": "^6.8.2"
+      },
+      "_id": "babel-types@6.20.0",
+      "scripts": {},
+      "_shasum": "3869ecb98459533b37df809886b3f7f3b08d2baa",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "6.9.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "3869ecb98459533b37df809886b3f7f3b08d2baa",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-6.20.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/babel-types-6.20.0.tgz_1481239549542_0.7192348819226027"
+      },
+      "directories": {}
+    },
+    "6.21.0": {
+      "name": "babel-types",
+      "version": "6.21.0",
+      "description": "Babel Types is a Lodash-esque utility library for AST nodes",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-runtime": "^6.20.0",
+        "esutils": "^2.0.2",
+        "lodash": "^4.2.0",
+        "to-fast-properties": "^1.0.1"
+      },
+      "devDependencies": {
+        "babylon": "^6.8.2"
+      },
+      "_id": "babel-types@6.21.0",
+      "scripts": {},
+      "_shasum": "314b92168891ef6d3806b7f7a917fdf87c11a4b2",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "6.9.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "314b92168891ef6d3806b7f7a917fdf87c11a4b2",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-6.21.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/babel-types-6.21.0.tgz_1481925360825_0.9180078322533518"
+      },
+      "directories": {}
+    },
+    "6.22.0": {
+      "name": "babel-types",
+      "version": "6.22.0",
+      "description": "Babel Types is a Lodash-esque utility library for AST nodes",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-runtime": "^6.22.0",
+        "esutils": "^2.0.2",
+        "lodash": "^4.2.0",
+        "to-fast-properties": "^1.0.1"
+      },
+      "devDependencies": {
+        "babylon": "^6.8.2"
+      },
+      "_id": "babel-types@6.22.0",
+      "scripts": {},
+      "_shasum": "2a447e8d0ea25d2512409e4175479fd78cc8b1db",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.9.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "2a447e8d0ea25d2512409e4175479fd78cc8b1db",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-6.22.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/babel-types-6.22.0.tgz_1484872469348_0.9042536793276668"
+      },
+      "directories": {}
+    },
+    "6.23.0": {
+      "name": "babel-types",
+      "version": "6.23.0",
+      "description": "Babel Types is a Lodash-esque utility library for AST nodes",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-runtime": "^6.22.0",
+        "esutils": "^2.0.2",
+        "lodash": "^4.2.0",
+        "to-fast-properties": "^1.0.1"
+      },
+      "devDependencies": {
+        "babylon": "^6.8.2"
+      },
+      "_id": "babel-types@6.23.0",
+      "scripts": {},
+      "_shasum": "bb17179d7538bad38cd0c9e115d340f77e7e9acf",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "6.9.1",
+      "_npmUser": {
+        "name": "loganfsmyth",
+        "email": "loganfsmyth@gmail.com"
+      },
+      "dist": {
+        "shasum": "bb17179d7538bad38cd0c9e115d340f77e7e9acf",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-6.23.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/babel-types-6.23.0.tgz_1487027068911_0.4901642226614058"
+      },
+      "directories": {}
+    },
+    "7.0.0-alpha.1": {
+      "name": "babel-types",
+      "version": "7.0.0-alpha.1",
+      "description": "Babel Types is a Lodash-esque utility library for AST nodes",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "esutils": "^2.0.2",
+        "lodash": "^4.2.0",
+        "to-fast-properties": "^1.0.1"
+      },
+      "devDependencies": {
+        "babylon": "7.0.0-beta.4"
+      },
+      "_id": "babel-types@7.0.0-alpha.1",
+      "scripts": {},
+      "_shasum": "50ef08b95eaacb54b51c5bd3eff994ccfa895eb2",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.9.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "50ef08b95eaacb54b51c5bd3eff994ccfa895eb2",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-7.0.0-alpha.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/babel-types-7.0.0-alpha.1.tgz_1488488716806_0.40301727619953454"
+      },
+      "directories": {}
+    },
+    "7.0.0-alpha.3": {
+      "name": "babel-types",
+      "version": "7.0.0-alpha.3",
+      "description": "Babel Types is a Lodash-esque utility library for AST nodes",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "esutils": "^2.0.2",
+        "lodash": "^4.2.0",
+        "to-fast-properties": "^1.0.1"
+      },
+      "devDependencies": {
+        "babylon": "7.0.0-beta.7"
+      },
+      "_id": "babel-types@7.0.0-alpha.3",
+      "scripts": {},
+      "_shasum": "36c20f7a4e4d3f32fc00ab38893004a6f52b22a8",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.9.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "36c20f7a4e4d3f32fc00ab38893004a6f52b22a8",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-7.0.0-alpha.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/babel-types-7.0.0-alpha.3.tgz_1490298562808_0.16899672779254615"
+      },
+      "directories": {}
+    },
+    "7.0.0-alpha.7": {
+      "name": "babel-types",
+      "version": "7.0.0-alpha.7",
+      "description": "Babel Types is a Lodash-esque utility library for AST nodes",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "esutils": "^2.0.2",
+        "lodash": "^4.2.0",
+        "to-fast-properties": "^1.0.1"
+      },
+      "devDependencies": {
+        "babylon": "^7.0.0-beta.8"
+      },
+      "_id": "babel-types@7.0.0-alpha.7",
+      "scripts": {},
+      "_shasum": "4bdb77386d1f6e2001f42fa9ac21b6c3d6ad0d82",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.9.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "4bdb77386d1f6e2001f42fa9ac21b6c3d6ad0d82",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-7.0.0-alpha.7.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/babel-types-7.0.0-alpha.7.tgz_1491426836322_0.9471304507460445"
+      },
+      "directories": {}
+    },
+    "6.24.1": {
+      "name": "babel-types",
+      "version": "6.24.1",
+      "description": "Babel Types is a Lodash-esque utility library for AST nodes",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-runtime": "^6.22.0",
+        "esutils": "^2.0.2",
+        "lodash": "^4.2.0",
+        "to-fast-properties": "^1.0.1"
+      },
+      "devDependencies": {
+        "babylon": "^6.8.2"
+      },
+      "_id": "babel-types@6.24.1",
+      "scripts": {},
+      "_shasum": "a136879dc15b3606bda0d90c1fc74304c2ff0975",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.9.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "a136879dc15b3606bda0d90c1fc74304c2ff0975",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-6.24.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/babel-types-6.24.1.tgz_1491578343925_0.5827958500012755"
+      },
+      "directories": {}
+    },
+    "7.0.0-alpha.9": {
+      "name": "babel-types",
+      "version": "7.0.0-alpha.9",
+      "description": "Babel Types is a Lodash-esque utility library for AST nodes",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "esutils": "^2.0.2",
+        "lodash": "^4.2.0",
+        "to-fast-properties": "^1.0.1"
+      },
+      "devDependencies": {
+        "babylon": "^7.0.0-beta.8"
+      },
+      "_id": "babel-types@7.0.0-alpha.9",
+      "scripts": {},
+      "_shasum": "45e48b93cecdd9d306ab6953d7819622a7c1462b",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.9.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "45e48b93cecdd9d306ab6953d7819622a7c1462b",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-7.0.0-alpha.9.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/babel-types-7.0.0-alpha.9.tgz_1492526516070_0.7988889759872109"
+      },
+      "directories": {}
+    },
+    "7.0.0-alpha.10": {
+      "name": "babel-types",
+      "version": "7.0.0-alpha.10",
+      "description": "Babel Types is a Lodash-esque utility library for AST nodes",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "esutils": "^2.0.2",
+        "lodash": "^4.2.0",
+        "to-fast-properties": "^1.0.1"
+      },
+      "devDependencies": {
+        "babel-generator": "7.0.0-alpha.10",
+        "babylon": "^7.0.0-beta.8"
+      },
+      "_id": "babel-types@7.0.0-alpha.10",
+      "scripts": {},
+      "_shasum": "0c54b77239e1b547323f7d49f886b5689450e9dd",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.9.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "0c54b77239e1b547323f7d49f886b5689450e9dd",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-7.0.0-alpha.10.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/babel-types-7.0.0-alpha.10.tgz_1495739848140_0.7589922286570072"
+      },
+      "directories": {}
+    },
+    "7.0.0-alpha.11": {
+      "name": "babel-types",
+      "version": "7.0.0-alpha.11",
+      "description": "Babel Types is a Lodash-esque utility library for AST nodes",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "esutils": "^2.0.2",
+        "lodash": "^4.2.0",
+        "to-fast-properties": "^1.0.1"
+      },
+      "devDependencies": {
+        "babel-generator": "7.0.0-alpha.11",
+        "babylon": "^7.0.0-beta.12"
+      },
+      "_id": "babel-types@7.0.0-alpha.11",
+      "_npmVersion": "5.0.0",
+      "_nodeVersion": "6.9.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-JN0CiHgNCz3B1E/lYYT7rzbhl5vqzOTh3yNOKemv38TlVDDgPwPM3lwoPRt+zfRPo+XGiUeYSye1TwgXBjwtrQ==",
+        "shasum": "a5b139bef6c52a7577d83db4a9bc8bee95a430de",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-7.0.0-alpha.11.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "sebmck@gmail.com",
+          "name": "sebmck"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/babel-types-7.0.0-alpha.11.tgz_1496263423280_0.340684897499159"
+      },
+      "directories": {}
+    },
+    "7.0.0-alpha.12": {
+      "name": "babel-types",
+      "version": "7.0.0-alpha.12",
+      "description": "Babel Types is a Lodash-esque utility library for AST nodes",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "esutils": "^2.0.2",
+        "lodash": "^4.2.0",
+        "to-fast-properties": "^1.0.1"
+      },
+      "devDependencies": {
+        "babel-generator": "7.0.0-alpha.12",
+        "babylon": "^7.0.0-beta.12"
+      },
+      "_id": "babel-types@7.0.0-alpha.12",
+      "_npmVersion": "5.0.0",
+      "_nodeVersion": "6.9.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-Y34hJX8nNVje4+ImRc9Vj1Db87ddWnisxAwZgARBzq2a1vIdJu3p/SidoOxo+uLjzFpcKWWNjPLyJxV6A2SiAw==",
+        "shasum": "d7b2c6d0c49c518fd36de5ac14f4f50bed6de7e5",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-7.0.0-alpha.12.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "sebmck@gmail.com",
+          "name": "sebmck"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/babel-types-7.0.0-alpha.12.tgz_1496265115558_0.3233617169316858"
+      },
+      "directories": {}
+    },
+    "6.25.0": {
+      "name": "babel-types",
+      "version": "6.25.0",
+      "description": "Babel Types is a Lodash-esque utility library for AST nodes",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-runtime": "^6.22.0",
+        "esutils": "^2.0.2",
+        "lodash": "^4.2.0",
+        "to-fast-properties": "^1.0.1"
+      },
+      "devDependencies": {
+        "babylon": "^6.17.2"
+      },
+      "_id": "babel-types@6.25.0",
+      "scripts": {},
+      "_shasum": "70afb248d5660e5d18f811d91c8303b54134a18e",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "6.9.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "70afb248d5660e5d18f811d91c8303b54134a18e",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-6.25.0.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "sebmck@gmail.com",
+          "name": "sebmck"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/babel-types-6.25.0.tgz_1496957345673_0.8575069205835462"
+      },
+      "directories": {}
+    },
+    "7.0.0-alpha.14": {
+      "name": "babel-types",
+      "version": "7.0.0-alpha.14",
+      "description": "Babel Types is a Lodash-esque utility library for AST nodes",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "esutils": "^2.0.2",
+        "lodash": "^4.2.0",
+        "to-fast-properties": "^1.0.1"
+      },
+      "devDependencies": {
+        "babel-generator": "7.0.0-alpha.14",
+        "babylon": "^7.0.0-beta.15"
+      },
+      "_id": "babel-types@7.0.0-alpha.14",
+      "scripts": {},
+      "_shasum": "e27fae10b41c5122cd1a4e166d3343bdb5b629d3",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "6.9.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "e27fae10b41c5122cd1a4e166d3343bdb5b629d3",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-7.0.0-alpha.14.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "sebmck@gmail.com",
+          "name": "sebmck"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/babel-types-7.0.0-alpha.14.tgz_1499828017980_0.11557173798792064"
+      },
+      "directories": {}
+    },
+    "7.0.0-alpha.15": {
+      "name": "babel-types",
+      "version": "7.0.0-alpha.15",
+      "description": "Babel Types is a Lodash-esque utility library for AST nodes",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "esutils": "^2.0.2",
+        "lodash": "^4.2.0",
+        "to-fast-properties": "^1.0.1"
+      },
+      "devDependencies": {
+        "babel-generator": "7.0.0-alpha.15",
+        "babylon": "^7.0.0-beta.15"
+      },
+      "_id": "babel-types@7.0.0-alpha.15",
+      "scripts": {},
+      "_shasum": "e4021e6a432e906678dfc6cc89805ba3234f9f48",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "6.9.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "e4021e6a432e906678dfc6cc89805ba3234f9f48",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-7.0.0-alpha.15.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "sebmck@gmail.com",
+          "name": "sebmck"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/babel-types-7.0.0-alpha.15.tgz_1499830552292_0.6021776164416224"
+      },
+      "directories": {}
+    },
+    "7.0.0-alpha.16": {
+      "name": "babel-types",
+      "version": "7.0.0-alpha.16",
+      "description": "Babel Types is a Lodash-esque utility library for AST nodes",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "esutils": "^2.0.2",
+        "lodash": "^4.2.0",
+        "to-fast-properties": "^2.0.0"
+      },
+      "devDependencies": {
+        "babel-generator": "7.0.0-alpha.16",
+        "babylon": "^7.0.0-beta.17"
+      },
+      "_id": "babel-types@7.0.0-alpha.16",
+      "scripts": {},
+      "_shasum": "3529f22c3e2f7b7c292f6b61f660008e771ae39b",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "6.9.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "3529f22c3e2f7b7c292f6b61f660008e771ae39b",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-7.0.0-alpha.16.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "sebmck@gmail.com",
+          "name": "sebmck"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/babel-types-7.0.0-alpha.16.tgz_1501017466283_0.019301841966807842"
+      },
+      "directories": {}
+    },
+    "7.0.0-alpha.17": {
+      "name": "babel-types",
+      "version": "7.0.0-alpha.17",
+      "description": "Babel Types is a Lodash-esque utility library for AST nodes",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "esutils": "^2.0.2",
+        "lodash": "^4.2.0",
+        "to-fast-properties": "^2.0.0"
+      },
+      "devDependencies": {
+        "babel-generator": "7.0.0-alpha.17",
+        "babylon": "^7.0.0-beta.18"
+      },
+      "_id": "babel-types@7.0.0-alpha.17",
+      "scripts": {},
+      "_shasum": "bc74e19423b015a5ce88727440fc6ae863463dc0",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "6.9.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "bc74e19423b015a5ce88727440fc6ae863463dc0",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-7.0.0-alpha.17.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "sebmck@gmail.com",
+          "name": "sebmck"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/babel-types-7.0.0-alpha.17.tgz_1501072755052_0.7964791140984744"
+      },
+      "directories": {}
+    },
+    "7.0.0-alpha.18": {
+      "name": "babel-types",
+      "version": "7.0.0-alpha.18",
+      "description": "Babel Types is a Lodash-esque utility library for AST nodes",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "esutils": "^2.0.2",
+        "lodash": "^4.2.0",
+        "to-fast-properties": "^2.0.0"
+      },
+      "devDependencies": {
+        "babel-generator": "7.0.0-alpha.18",
+        "babylon": "^7.0.0-beta.18"
+      },
+      "_id": "babel-types@7.0.0-alpha.18",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "8.1.4",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-NXDYOVVIxnce2cm5AFYAMKkas/sC+04uH0bctZT+gi+2eG1S6OUDywfQsCQpCjGCjY1uFvRIaFe0umiXu/fGng==",
+        "shasum": "c60bf2b7d21a65272a24774176e7bbee1cef0f60",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-7.0.0-alpha.18.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "me@thejameskyle.com",
+          "name": "thejameskyle"
+        },
+        {
+          "email": "sebmck@gmail.com",
+          "name": "sebmck"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/babel-types-7.0.0-alpha.18.tgz_1501798860208_0.9926398175302893"
+      },
+      "directories": {}
+    },
+    "7.0.0-alpha.19": {
+      "name": "babel-types",
+      "version": "7.0.0-alpha.19",
+      "description": "Babel Types is a Lodash-esque utility library for AST nodes",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "esutils": "^2.0.2",
+        "lodash": "^4.2.0",
+        "to-fast-properties": "^2.0.0"
+      },
+      "devDependencies": {
+        "babel-generator": "7.0.0-alpha.19",
+        "babylon": "^7.0.0-beta.19"
+      },
+      "_id": "babel-types@7.0.0-alpha.19",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "8.1.4",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-EY9Qn4xGxpUBhLs87s9K8k5bYI5bfIrRXobd5kHP0yBGWvu1bzM8oJ9w/xXTX+mdaRFs2w5V8bBP9in6GTHhGg==",
+        "shasum": "8222ae72f349c51758a9451486783a7b9bffc605",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-7.0.0-alpha.19.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "me@thejameskyle.com",
+          "name": "thejameskyle"
+        },
+        {
+          "email": "sebmck@gmail.com",
+          "name": "sebmck"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/babel-types-7.0.0-alpha.19.tgz_1502144499559_0.16586392489261925"
+      },
+      "directories": {}
+    },
+    "6.26.0": {
+      "name": "babel-types",
+      "version": "6.26.0",
+      "description": "Babel Types is a Lodash-esque utility library for AST nodes",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-runtime": "^6.26.0",
+        "esutils": "^2.0.2",
+        "lodash": "^4.17.4",
+        "to-fast-properties": "^1.0.3"
+      },
+      "devDependencies": {
+        "babel-generator": "^6.26.0",
+        "babylon": "^6.18.0"
+      },
+      "_id": "babel-types@6.26.0",
+      "scripts": {},
+      "_shasum": "a3b073f94ab49eb6fa55cd65227a334380632497",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "6.9.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "a3b073f94ab49eb6fa55cd65227a334380632497",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-6.26.0.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "me@thejameskyle.com",
+          "name": "thejameskyle"
+        },
+        {
+          "email": "sebmck@gmail.com",
+          "name": "sebmck"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/babel-types-6.26.0.tgz_1502898852975_0.1106437393464148"
+      },
+      "directories": {}
+    },
+    "7.0.0-alpha.20": {
+      "name": "babel-types",
+      "version": "7.0.0-alpha.20",
+      "description": "Babel Types is a Lodash-esque utility library for AST nodes",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "esutils": "^2.0.2",
+        "lodash": "^4.2.0",
+        "to-fast-properties": "^2.0.0"
+      },
+      "devDependencies": {
+        "babel-generator": "7.0.0-alpha.20",
+        "babylon": "^7.0.0-beta.22"
+      },
+      "_id": "babel-types@7.0.0-alpha.20",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "8.1.4",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-jgDtZ7XdN+lhwWnSSuJKkIUeKncvXaVpAbXkuPr47G3bJX7+A9UHb5eqrEBXlKrlv1e91C2gdfcldlQpFreVmA==",
+        "shasum": "1c1ae1068b61360fbacd1a52a63bccc96d80da8f",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-7.0.0-alpha.20.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "me@thejameskyle.com",
+          "name": "thejameskyle"
+        },
+        {
+          "email": "sebmck@gmail.com",
+          "name": "sebmck"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/babel-types-7.0.0-alpha.20.tgz_1504119133953_0.5832876632921398"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.0": {
+      "name": "babel-types",
+      "version": "7.0.0-beta.0",
+      "description": "Babel Types is a Lodash-esque utility library for AST nodes",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "esutils": "^2.0.2",
+        "lodash": "^4.2.0",
+        "to-fast-properties": "^2.0.0"
+      },
+      "devDependencies": {
+        "babel-generator": "7.0.0-beta.0",
+        "babylon": "^7.0.0-beta.22"
+      },
+      "_id": "babel-types@7.0.0-beta.0",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "8.1.4",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-rJc2kV9iPJGLlqIY71AM3nPcdkoeLRCDuR07GFgfd3lFl4TsBQq76TxYQQIZ2MONg1HpsqmuoCXr9aZ1Oa4wYw==",
+        "shasum": "eb8b6e556470e6dcc4aef982d79ad229469b5169",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-7.0.0-beta.0.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "me@thejameskyle.com",
+          "name": "thejameskyle"
+        },
+        {
+          "email": "sebmck@gmail.com",
+          "name": "sebmck"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/babel-types-7.0.0-beta.0.tgz_1505185335786_0.24351979116909206"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.1": {
+      "name": "babel-types",
+      "version": "7.0.0-beta.1",
+      "description": "Babel Types is a Lodash-esque utility library for AST nodes",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "esutils": "^2.0.2",
+        "lodash": "^4.2.0",
+        "to-fast-properties": "^2.0.0"
+      },
+      "devDependencies": {
+        "babel-generator": "7.0.0-beta.1",
+        "babylon": "^7.0.0-beta.22"
+      },
+      "_id": "babel-types@7.0.0-beta.1",
+      "_npmVersion": "5.4.1",
+      "_nodeVersion": "8.1.4",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-rYJc67YxyMX9rTa0zBsDEJqWLC2zxcNHfKt4dHjcPl5YHN439UjyjmWUld9dSjqYwqw+vUBhbMUhhymeE/n5eQ==",
+        "shasum": "9f67087a7396d7ad2e98bb83416645cabf32ac2c",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-7.0.0-beta.1.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "me@thejameskyle.com",
+          "name": "thejameskyle"
+        },
+        {
+          "email": "sebmck@gmail.com",
+          "name": "sebmck"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/babel-types-7.0.0-beta.1.tgz_1505851763389_0.35551477037370205"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.2": {
+      "name": "babel-types",
+      "version": "7.0.0-beta.2",
+      "description": "Babel Types is a Lodash-esque utility library for AST nodes",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "esutils": "^2.0.2",
+        "lodash": "^4.2.0",
+        "to-fast-properties": "^2.0.0"
+      },
+      "devDependencies": {
+        "babel-generator": "7.0.0-beta.2",
+        "babylon": "^7.0.0-beta.25"
+      },
+      "_id": "babel-types@7.0.0-beta.2",
+      "_npmVersion": "5.4.1",
+      "_nodeVersion": "8.1.4",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-qtKTvjA7aL2AeET7eLDL+XfttPsAgcm00sCB5fKeWfB8n+fXX03Vsv76sRFHIkwDEeVXuKPIsooD/DpDs7YZzw==",
+        "shasum": "ea2352b5a439cdcf892966abccadc585a0244c65",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-7.0.0-beta.2.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "me@thejameskyle.com",
+          "name": "thejameskyle"
+        },
+        {
+          "email": "sebmck@gmail.com",
+          "name": "sebmck"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/babel-types-7.0.0-beta.2.tgz_1506438914742_0.6571880867704749"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.3": {
+      "name": "babel-types",
+      "version": "7.0.0-beta.3",
+      "description": "Babel Types is a Lodash-esque utility library for AST nodes",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "esutils": "^2.0.2",
+        "lodash": "^4.2.0",
+        "to-fast-properties": "^2.0.0"
+      },
+      "devDependencies": {
+        "babel-generator": "7.0.0-beta.3",
+        "babylon": "^7.0.0-beta.27"
+      },
+      "_id": "babel-types@7.0.0-beta.3",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.1.4",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-36k8J+byAe181OmCMawGhw+DtKO7AwexPVtsPXoMfAkjtZgoCX3bEuHWfdE5sYxRM8dojvtG/+O08M0Z/YDC6w==",
+        "shasum": "cd927ca70e0ae8ab05f4aab83778cfb3e6eb20b4",
+        "tarball": "https://registry.npmjs.org/babel-types/-/babel-types-7.0.0-beta.3.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "me@thejameskyle.com",
+          "name": "thejameskyle"
+        },
+        {
+          "email": "sebmck@gmail.com",
+          "name": "sebmck"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/babel-types-7.0.0-beta.3.tgz_1508073099392_0.6673698048107326"
+      },
+      "directories": {}
+    }
+  },
+  "readme": "# babel-types\n\n> This module contains methods for building ASTs manually and for checking the types of AST nodes.\n\n## Install\n\n```sh\nnpm install --save-dev babel-types\n```\n\n## API\n\n<!-- begin generated section -->\n\n### anyTypeAnnotation\n```javascript\nt.anyTypeAnnotation()\n```\n\nSee also `t.isAnyTypeAnnotation(node, opts)` and `t.assertAnyTypeAnnotation(node, opts)`.\n\nAliases: `Flow`, `FlowBaseAnnotation`\n\n\n---\n\n### arrayExpression\n```javascript\nt.arrayExpression(elements)\n```\n\nSee also `t.isArrayExpression(node, opts)` and `t.assertArrayExpression(node, opts)`.\n\nAliases: `Expression`\n\n - `elements`: `Array<null | Expression | SpreadElement>` (default: `[]`)\n\n---\n\n### arrayPattern\n```javascript\nt.arrayPattern(elements, typeAnnotation)\n```\n\nSee also `t.isArrayPattern(node, opts)` and `t.assertArrayPattern(node, opts)`.\n\nAliases: `Pattern`, `LVal`\n\n - `elements`: `Array<Identifier | Pattern | RestElement>` (required)\n - `typeAnnotation` (required)\n - `decorators`: `Array<Decorator>` (default: `null`)\n\n---\n\n### arrayTypeAnnotation\n```javascript\nt.arrayTypeAnnotation(elementType)\n```\n\nSee also `t.isArrayTypeAnnotation(node, opts)` and `t.assertArrayTypeAnnotation(node, opts)`.\n\nAliases: `Flow`\n\n - `elementType` (required)\n\n---\n\n### arrowFunctionExpression\n```javascript\nt.arrowFunctionExpression(params, body, async)\n```\n\nSee also `t.isArrowFunctionExpression(node, opts)` and `t.assertArrowFunctionExpression(node, opts)`.\n\nAliases: `Scopable`, `Function`, `BlockParent`, `FunctionParent`, `Expression`, `Pureish`\n\n - `params`: `Array<LVal>` (required)\n - `body`: `BlockStatement | Expression` (required)\n - `async`: `boolean` (default: `false`)\n - `returnType` (default: `null`)\n - `typeParameters` (default: `null`)\n\n---\n\n### assignmentExpression\n```javascript\nt.assignmentExpression(operator, left, right)\n```\n\nSee also `t.isAssignmentExpression(node, opts)` and `t.assertAssignmentExpression(node, opts)`.\n\nAliases: `Expression`\n\n - `operator`: `string` (required)\n - `left`: `LVal` (required)\n - `right`: `Expression` (required)\n\n---\n\n### assignmentPattern\n```javascript\nt.assignmentPattern(left, right)\n```\n\nSee also `t.isAssignmentPattern(node, opts)` and `t.assertAssignmentPattern(node, opts)`.\n\nAliases: `Pattern`, `LVal`\n\n - `left`: `Identifier` (required)\n - `right`: `Expression` (required)\n - `decorators`: `Array<Decorator>` (default: `null`)\n\n---\n\n### awaitExpression\n```javascript\nt.awaitExpression(argument)\n```\n\nSee also `t.isAwaitExpression(node, opts)` and `t.assertAwaitExpression(node, opts)`.\n\nAliases: `Expression`, `Terminatorless`\n\n - `argument`: `Expression` (required)\n\n---\n\n### binaryExpression\n```javascript\nt.binaryExpression(operator, left, right)\n```\n\nSee also `t.isBinaryExpression(node, opts)` and `t.assertBinaryExpression(node, opts)`.\n\nAliases: `Binary`, `Expression`\n\n - `operator`: `'+' | '-' | '/' | '%' | '*' | '**' | '&' | '|' | '>>' | '>>>' | '<<' | '^' | '==' | '===' | '!=' | '!==' | 'in' | 'instanceof' | '>' | '<' | '>=' | '<='` (required)\n - `left`: `Expression` (required)\n - `right`: `Expression` (required)\n\n---\n\n### bindExpression\n```javascript\nt.bindExpression(object, callee)\n```\n\nSee also `t.isBindExpression(node, opts)` and `t.assertBindExpression(node, opts)`.\n\nAliases: `Expression`\n\n - `object` (required)\n - `callee` (required)\n\n---\n\n### blockStatement\n```javascript\nt.blockStatement(body, directives)\n```\n\nSee also `t.isBlockStatement(node, opts)` and `t.assertBlockStatement(node, opts)`.\n\nAliases: `Scopable`, `BlockParent`, `Block`, `Statement`\n\n - `body`: `Array<Statement>` (required)\n - `directives`: `Array<Directive>` (default: `[]`)\n\n---\n\n### booleanLiteral\n```javascript\nt.booleanLiteral(value)\n```\n\nSee also `t.isBooleanLiteral(node, opts)` and `t.assertBooleanLiteral(node, opts)`.\n\nAliases: `Expression`, `Pureish`, `Literal`, `Immutable`\n\n - `value`: `boolean` (required)\n\n---\n\n### booleanLiteralTypeAnnotation\n```javascript\nt.booleanLiteralTypeAnnotation()\n```\n\nSee also `t.isBooleanLiteralTypeAnnotation(node, opts)` and `t.assertBooleanLiteralTypeAnnotation(node, opts)`.\n\nAliases: `Flow`\n\n\n---\n\n### booleanTypeAnnotation\n```javascript\nt.booleanTypeAnnotation()\n```\n\nSee also `t.isBooleanTypeAnnotation(node, opts)` and `t.assertBooleanTypeAnnotation(node, opts)`.\n\nAliases: `Flow`, `FlowBaseAnnotation`\n\n\n---\n\n### breakStatement\n```javascript\nt.breakStatement(label)\n```\n\nSee also `t.isBreakStatement(node, opts)` and `t.assertBreakStatement(node, opts)`.\n\nAliases: `Statement`, `Terminatorless`, `CompletionStatement`\n\n - `label`: `Identifier` (default: `null`)\n\n---\n\n### callExpression\n```javascript\nt.callExpression(callee, arguments)\n```\n\nSee also `t.isCallExpression(node, opts)` and `t.assertCallExpression(node, opts)`.\n\nAliases: `Expression`\n\n - `callee`: `Expression` (required)\n - `arguments`: `Array<Expression | SpreadElement>` (required)\n\n---\n\n### catchClause\n```javascript\nt.catchClause(param, body)\n```\n\nSee also `t.isCatchClause(node, opts)` and `t.assertCatchClause(node, opts)`.\n\nAliases: `Scopable`\n\n - `param`: `Identifier` (required)\n - `body`: `BlockStatement` (required)\n\n---\n\n### classBody\n```javascript\nt.classBody(body)\n```\n\nSee also `t.isClassBody(node, opts)` and `t.assertClassBody(node, opts)`.\n\n - `body`: `Array<ClassMethod | ClassProperty>` (required)\n\n---\n\n### classDeclaration\n```javascript\nt.classDeclaration(id, superClass, body, decorators)\n```\n\nSee also `t.isClassDeclaration(node, opts)` and `t.assertClassDeclaration(node, opts)`.\n\nAliases: `Scopable`, `Class`, `Statement`, `Declaration`, `Pureish`\n\n - `id`: `Identifier` (required)\n - `superClass`: `Expression` (default: `null`)\n - `body`: `ClassBody` (required)\n - `decorators`: `Array<Decorator>` (required)\n - `implements` (default: `null`)\n - `mixins` (default: `null`)\n - `superTypeParameters` (default: `null`)\n - `typeParameters` (default: `null`)\n\n---\n\n### classExpression\n```javascript\nt.classExpression(id, superClass, body, decorators)\n```\n\nSee also `t.isClassExpression(node, opts)` and `t.assertClassExpression(node, opts)`.\n\nAliases: `Scopable`, `Class`, `Expression`, `Pureish`\n\n - `id`: `Identifier` (default: `null`)\n - `superClass`: `Expression` (default: `null`)\n - `body`: `ClassBody` (required)\n - `decorators`: `Array<Decorator>` (required)\n - `implements` (default: `null`)\n - `mixins` (default: `null`)\n - `superTypeParameters` (default: `null`)\n - `typeParameters` (default: `null`)\n\n---\n\n### classImplements\n```javascript\nt.classImplements(id, typeParameters)\n```\n\nSee also `t.isClassImplements(node, opts)` and `t.assertClassImplements(node, opts)`.\n\nAliases: `Flow`\n\n - `id` (required)\n - `typeParameters` (required)\n\n---\n\n### classMethod\n```javascript\nt.classMethod(kind, key, params, body, computed, static)\n```\n\nSee also `t.isClassMethod(node, opts)` and `t.assertClassMethod(node, opts)`.\n\nAliases: `Function`, `Scopable`, `BlockParent`, `FunctionParent`, `Method`\n\n - `kind`: `\"get\" | \"set\" | \"method\" | \"constructor\"` (default: `'method'`)\n - `key`if computed then `Expression` else `Identifier | Literal` (required)\n - `params`: `Array<LVal>` (required)\n - `body`: `BlockStatement` (required)\n - `computed`: `boolean` (default: `false`)\n - `static`: `boolean` (default: `false`)\n - `async`: `boolean` (default: `false`)\n - `decorators` (default: `null`)\n - `generator`: `boolean` (default: `false`)\n - `returnType` (default: `null`)\n - `typeParameters` (default: `null`)\n\n---\n\n### classProperty\n```javascript\nt.classProperty(key, value, typeAnnotation, decorators, computed)\n```\n\nSee also `t.isClassProperty(node, opts)` and `t.assertClassProperty(node, opts)`.\n\nAliases: `Property`\n\n - `key` (required)\n - `value` (required)\n - `typeAnnotation` (required)\n - `decorators` (required)\n - `computed`: `boolean` (default: `false`)\n\n---\n\n### conditionalExpression\n```javascript\nt.conditionalExpression(test, consequent, alternate)\n```\n\nSee also `t.isConditionalExpression(node, opts)` and `t.assertConditionalExpression(node, opts)`.\n\nAliases: `Expression`, `Conditional`\n\n - `test`: `Expression` (required)\n - `consequent`: `Expression` (required)\n - `alternate`: `Expression` (required)\n\n---\n\n### continueStatement\n```javascript\nt.continueStatement(label)\n```\n\nSee also `t.isContinueStatement(node, opts)` and `t.assertContinueStatement(node, opts)`.\n\nAliases: `Statement`, `Terminatorless`, `CompletionStatement`\n\n - `label`: `Identifier` (default: `null`)\n\n---\n\n### debuggerStatement\n```javascript\nt.debuggerStatement()\n```\n\nSee also `t.isDebuggerStatement(node, opts)` and `t.assertDebuggerStatement(node, opts)`.\n\nAliases: `Statement`\n\n\n---\n\n### declareClass\n```javascript\nt.declareClass(id, typeParameters, extends, body)\n```\n\nSee also `t.isDeclareClass(node, opts)` and `t.assertDeclareClass(node, opts)`.\n\nAliases: `Flow`, `FlowDeclaration`, `Statement`, `Declaration`\n\n - `id` (required)\n - `typeParameters` (required)\n - `extends` (required)\n - `body` (required)\n\n---\n\n### declareExportDeclaration\n```javascript\nt.declareExportDeclaration(declaration, specifiers, source)\n```\n\nSee also `t.isDeclareExportDeclaration(node, opts)` and `t.assertDeclareExportDeclaration(node, opts)`.\n\nAliases: `Flow`, `FlowDeclaration`, `Statement`, `Declaration`\n\n - `declaration` (required)\n - `specifiers` (required)\n - `source` (required)\n\n---\n\n### declareFunction\n```javascript\nt.declareFunction(id)\n```\n\nSee also `t.isDeclareFunction(node, opts)` and `t.assertDeclareFunction(node, opts)`.\n\nAliases: `Flow`, `FlowDeclaration`, `Statement`, `Declaration`\n\n - `id` (required)\n\n---\n\n### declareInterface\n```javascript\nt.declareInterface(id, typeParameters, extends, body)\n```\n\nSee also `t.isDeclareInterface(node, opts)` and `t.assertDeclareInterface(node, opts)`.\n\nAliases: `Flow`, `FlowDeclaration`, `Statement`, `Declaration`\n\n - `id` (required)\n - `typeParameters` (required)\n - `extends` (required)\n - `body` (required)\n\n---\n\n### declareModule\n```javascript\nt.declareModule(id, body)\n```\n\nSee also `t.isDeclareModule(node, opts)` and `t.assertDeclareModule(node, opts)`.\n\nAliases: `Flow`, `FlowDeclaration`, `Statement`, `Declaration`\n\n - `id` (required)\n - `body` (required)\n\n---\n\n### declareModuleExports\n```javascript\nt.declareModuleExports(typeAnnotation)\n```\n\nSee also `t.isDeclareModuleExports(node, opts)` and `t.assertDeclareModuleExports(node, opts)`.\n\nAliases: `Flow`, `FlowDeclaration`, `Statement`, `Declaration`\n\n - `typeAnnotation` (required)\n\n---\n\n### declareOpaqueType\n```javascript\nt.declareOpaqueType(id, typeParameters, supertype)\n```\n\nSee also `t.isDeclareOpaqueType(node, opts)` and `t.assertDeclareOpaqueType(node, opts)`.\n\nAliases: `Flow`, `FlowDeclaration`, `Statement`, `Declaration`\n\n - `id` (required)\n - `typeParameters` (required)\n - `supertype` (required)\n\n---\n\n### declareTypeAlias\n```javascript\nt.declareTypeAlias(id, typeParameters, right)\n```\n\nSee also `t.isDeclareTypeAlias(node, opts)` and `t.assertDeclareTypeAlias(node, opts)`.\n\nAliases: `Flow`, `FlowDeclaration`, `Statement`, `Declaration`\n\n - `id` (required)\n - `typeParameters` (required)\n - `right` (required)\n\n---\n\n### declareVariable\n```javascript\nt.declareVariable(id)\n```\n\nSee also `t.isDeclareVariable(node, opts)` and `t.assertDeclareVariable(node, opts)`.\n\nAliases: `Flow`, `FlowDeclaration`, `Statement`, `Declaration`\n\n - `id` (required)\n\n---\n\n### decorator\n```javascript\nt.decorator(expression)\n```\n\nSee also `t.isDecorator(node, opts)` and `t.assertDecorator(node, opts)`.\n\n - `expression`: `Expression` (required)\n\n---\n\n### directive\n```javascript\nt.directive(value)\n```\n\nSee also `t.isDirective(node, opts)` and `t.assertDirective(node, opts)`.\n\n - `value`: `DirectiveLiteral` (required)\n\n---\n\n### directiveLiteral\n```javascript\nt.directiveLiteral(value)\n```\n\nSee also `t.isDirectiveLiteral(node, opts)` and `t.assertDirectiveLiteral(node, opts)`.\n\n - `value`: `string` (required)\n\n---\n\n### doExpression\n```javascript\nt.doExpression(body)\n```\n\nSee also `t.isDoExpression(node, opts)` and `t.assertDoExpression(node, opts)`.\n\nAliases: `Expression`\n\n - `body`: `BlockStatement` (required)\n\n---\n\n### doWhileStatement\n```javascript\nt.doWhileStatement(test, body)\n```\n\nSee also `t.isDoWhileStatement(node, opts)` and `t.assertDoWhileStatement(node, opts)`.\n\nAliases: `Statement`, `BlockParent`, `Loop`, `While`, `Scopable`\n\n - `test`: `Expression` (required)\n - `body`: `Statement` (required)\n\n---\n\n### emptyStatement\n```javascript\nt.emptyStatement()\n```\n\nSee also `t.isEmptyStatement(node, opts)` and `t.assertEmptyStatement(node, opts)`.\n\nAliases: `Statement`\n\n\n---\n\n### emptyTypeAnnotation\n```javascript\nt.emptyTypeAnnotation()\n```\n\nSee also `t.isEmptyTypeAnnotation(node, opts)` and `t.assertEmptyTypeAnnotation(node, opts)`.\n\nAliases: `Flow`, `FlowBaseAnnotation`\n\n\n---\n\n### existentialTypeParam\n```javascript\nt.existentialTypeParam()\n```\n\nSee also `t.isExistentialTypeParam(node, opts)` and `t.assertExistentialTypeParam(node, opts)`.\n\nAliases: `Flow`\n\n\n---\n\n### exportAllDeclaration\n```javascript\nt.exportAllDeclaration(source)\n```\n\nSee also `t.isExportAllDeclaration(node, opts)` and `t.assertExportAllDeclaration(node, opts)`.\n\nAliases: `Statement`, `Declaration`, `ModuleDeclaration`, `ExportDeclaration`\n\n - `source`: `StringLiteral` (required)\n\n---\n\n### exportDefaultDeclaration\n```javascript\nt.exportDefaultDeclaration(declaration)\n```\n\nSee also `t.isExportDefaultDeclaration(node, opts)` and `t.assertExportDefaultDeclaration(node, opts)`.\n\nAliases: `Statement`, `Declaration`, `ModuleDeclaration`, `ExportDeclaration`\n\n - `declaration`: `FunctionDeclaration | ClassDeclaration | Expression` (required)\n\n---\n\n### exportDefaultSpecifier\n```javascript\nt.exportDefaultSpecifier(exported)\n```\n\nSee also `t.isExportDefaultSpecifier(node, opts)` and `t.assertExportDefaultSpecifier(node, opts)`.\n\nAliases: `ModuleSpecifier`\n\n - `exported`: `Identifier` (required)\n\n---\n\n### exportNamedDeclaration\n```javascript\nt.exportNamedDeclaration(declaration, specifiers, source)\n```\n\nSee also `t.isExportNamedDeclaration(node, opts)` and `t.assertExportNamedDeclaration(node, opts)`.\n\nAliases: `Statement`, `Declaration`, `ModuleDeclaration`, `ExportDeclaration`\n\n - `declaration`: `Declaration` (default: `null`)\n - `specifiers`: `Array<ExportSpecifier>` (required)\n - `source`: `StringLiteral` (default: `null`)\n\n---\n\n### exportNamespaceSpecifier\n```javascript\nt.exportNamespaceSpecifier(exported)\n```\n\nSee also `t.isExportNamespaceSpecifier(node, opts)` and `t.assertExportNamespaceSpecifier(node, opts)`.\n\nAliases: `ModuleSpecifier`\n\n - `exported`: `Identifier` (required)\n\n---\n\n### exportSpecifier\n```javascript\nt.exportSpecifier(local, exported)\n```\n\nSee also `t.isExportSpecifier(node, opts)` and `t.assertExportSpecifier(node, opts)`.\n\nAliases: `ModuleSpecifier`\n\n - `local`: `Identifier` (required)\n - `exported`: `Identifier` (required)\n\n---\n\n### expressionStatement\n```javascript\nt.expressionStatement(expression)\n```\n\nSee also `t.isExpressionStatement(node, opts)` and `t.assertExpressionStatement(node, opts)`.\n\nAliases: `Statement`, `ExpressionWrapper`\n\n - `expression`: `Expression` (required)\n\n---\n\n### file\n```javascript\nt.file(program, comments, tokens)\n```\n\nSee also `t.isFile(node, opts)` and `t.assertFile(node, opts)`.\n\n - `program`: `Program` (required)\n - `comments` (required)\n - `tokens` (required)\n\n---\n\n### forAwaitStatement\n```javascript\nt.forAwaitStatement(left, right, body)\n```\n\nSee also `t.isForAwaitStatement(node, opts)` and `t.assertForAwaitStatement(node, opts)`.\n\nAliases: `Scopable`, `Statement`, `For`, `BlockParent`, `Loop`, `ForXStatement`\n\n - `left`: `VariableDeclaration | LVal` (required)\n - `right`: `Expression` (required)\n - `body`: `Statement` (required)\n\n---\n\n### forInStatement\n```javascript\nt.forInStatement(left, right, body)\n```\n\nSee also `t.isForInStatement(node, opts)` and `t.assertForInStatement(node, opts)`.\n\nAliases: `Scopable`, `Statement`, `For`, `BlockParent`, `Loop`, `ForXStatement`\n\n - `left`: `VariableDeclaration | LVal` (required)\n - `right`: `Expression` (required)\n - `body`: `Statement` (required)\n\n---\n\n### forOfStatement\n```javascript\nt.forOfStatement(left, right, body)\n```\n\nSee also `t.isForOfStatement(node, opts)` and `t.assertForOfStatement(node, opts)`.\n\nAliases: `Scopable`, `Statement`, `For`, `BlockParent`, `Loop`, `ForXStatement`\n\n - `left`: `VariableDeclaration | LVal` (required)\n - `right`: `Expression` (required)\n - `body`: `Statement` (required)\n\n---\n\n### forStatement\n```javascript\nt.forStatement(init, test, update, body)\n```\n\nSee also `t.isForStatement(node, opts)` and `t.assertForStatement(node, opts)`.\n\nAliases: `Scopable`, `Statement`, `For`, `BlockParent`, `Loop`\n\n - `init`: `VariableDeclaration | Expression` (default: `null`)\n - `test`: `Expression` (default: `null`)\n - `update`: `Expression` (default: `null`)\n - `body`: `Statement` (required)\n\n---\n\n### functionDeclaration\n```javascript\nt.functionDeclaration(id, params, body, generator, async)\n```\n\nSee also `t.isFunctionDeclaration(node, opts)` and `t.assertFunctionDeclaration(node, opts)`.\n\nAliases: `Scopable`, `Function`, `BlockParent`, `FunctionParent`, `Statement`, `Pureish`, `Declaration`\n\n - `id`: `Identifier` (required)\n - `params`: `Array<LVal>` (required)\n - `body`: `BlockStatement` (required)\n - `generator`: `boolean` (default: `false`)\n - `async`: `boolean` (default: `false`)\n - `returnType` (default: `null`)\n - `typeParameters` (default: `null`)\n\n---\n\n### functionExpression\n```javascript\nt.functionExpression(id, params, body, generator, async)\n```\n\nSee also `t.isFunctionExpression(node, opts)` and `t.assertFunctionExpression(node, opts)`.\n\nAliases: `Scopable`, `Function`, `BlockParent`, `FunctionParent`, `Expression`, `Pureish`\n\n - `id`: `Identifier` (default: `null`)\n - `params`: `Array<LVal>` (required)\n - `body`: `BlockStatement` (required)\n - `generator`: `boolean` (default: `false`)\n - `async`: `boolean` (default: `false`)\n - `returnType` (default: `null`)\n - `typeParameters` (default: `null`)\n\n---\n\n### functionTypeAnnotation\n```javascript\nt.functionTypeAnnotation(typeParameters, params, rest, returnType)\n```\n\nSee also `t.isFunctionTypeAnnotation(node, opts)` and `t.assertFunctionTypeAnnotation(node, opts)`.\n\nAliases: `Flow`\n\n - `typeParameters` (required)\n - `params` (required)\n - `rest` (required)\n - `returnType` (required)\n\n---\n\n### functionTypeParam\n```javascript\nt.functionTypeParam(name, typeAnnotation)\n```\n\nSee also `t.isFunctionTypeParam(node, opts)` and `t.assertFunctionTypeParam(node, opts)`.\n\nAliases: `Flow`\n\n - `name` (required)\n - `typeAnnotation` (required)\n\n---\n\n### genericTypeAnnotation\n```javascript\nt.genericTypeAnnotation(id, typeParameters)\n```\n\nSee also `t.isGenericTypeAnnotation(node, opts)` and `t.assertGenericTypeAnnotation(node, opts)`.\n\nAliases: `Flow`\n\n - `id` (required)\n - `typeParameters` (required)\n\n---\n\n### identifier\n```javascript\nt.identifier(name)\n```\n\nSee also `t.isIdentifier(node, opts)` and `t.assertIdentifier(node, opts)`.\n\nAliases: `Expression`, `LVal`\n\n - `name``string` (required)\n - `decorators`: `Array<Decorator>` (default: `null`)\n - `typeAnnotation` (default: `null`)\n\n---\n\n### ifStatement\n```javascript\nt.ifStatement(test, consequent, alternate)\n```\n\nSee also `t.isIfStatement(node, opts)` and `t.assertIfStatement(node, opts)`.\n\nAliases: `Statement`, `Conditional`\n\n - `test`: `Expression` (required)\n - `consequent`: `Statement` (required)\n - `alternate`: `Statement` (default: `null`)\n\n---\n\n### import\n```javascript\nt.import()\n```\n\nSee also `t.isImport(node, opts)` and `t.assertImport(node, opts)`.\n\nAliases: `Expression`\n\n\n---\n\n### importDeclaration\n```javascript\nt.importDeclaration(specifiers, source)\n```\n\nSee also `t.isImportDeclaration(node, opts)` and `t.assertImportDeclaration(node, opts)`.\n\nAliases: `Statement`, `Declaration`, `ModuleDeclaration`\n\n - `specifiers`: `Array<ImportSpecifier | ImportDefaultSpecifier | ImportNamespaceSpecifier>` (required)\n - `source`: `StringLiteral` (required)\n\n---\n\n### importDefaultSpecifier\n```javascript\nt.importDefaultSpecifier(local)\n```\n\nSee also `t.isImportDefaultSpecifier(node, opts)` and `t.assertImportDefaultSpecifier(node, opts)`.\n\nAliases: `ModuleSpecifier`\n\n - `local`: `Identifier` (required)\n\n---\n\n### importNamespaceSpecifier\n```javascript\nt.importNamespaceSpecifier(local)\n```\n\nSee also `t.isImportNamespaceSpecifier(node, opts)` and `t.assertImportNamespaceSpecifier(node, opts)`.\n\nAliases: `ModuleSpecifier`\n\n - `local`: `Identifier` (required)\n\n---\n\n### importSpecifier\n```javascript\nt.importSpecifier(local, imported)\n```\n\nSee also `t.isImportSpecifier(node, opts)` and `t.assertImportSpecifier(node, opts)`.\n\nAliases: `ModuleSpecifier`\n\n - `local`: `Identifier` (required)\n - `imported`: `Identifier` (required)\n - `importKind`: `null | 'type' | 'typeof'` (default: `null`)\n\n---\n\n### interfaceDeclaration\n```javascript\nt.interfaceDeclaration(id, typeParameters, extends, body)\n```\n\nSee also `t.isInterfaceDeclaration(node, opts)` and `t.assertInterfaceDeclaration(node, opts)`.\n\nAliases: `Flow`, `FlowDeclaration`, `Statement`, `Declaration`\n\n - `id` (required)\n - `typeParameters` (required)\n - `extends` (required)\n - `body` (required)\n\n---\n\n### interfaceExtends\n```javascript\nt.interfaceExtends(id, typeParameters)\n```\n\nSee also `t.isInterfaceExtends(node, opts)` and `t.assertInterfaceExtends(node, opts)`.\n\nAliases: `Flow`\n\n - `id` (required)\n - `typeParameters` (required)\n\n---\n\n### intersectionTypeAnnotation\n```javascript\nt.intersectionTypeAnnotation(types)\n```\n\nSee also `t.isIntersectionTypeAnnotation(node, opts)` and `t.assertIntersectionTypeAnnotation(node, opts)`.\n\nAliases: `Flow`\n\n - `types` (required)\n\n---\n\n### jSXAttribute\n```javascript\nt.jSXAttribute(name, value)\n```\n\nSee also `t.isJSXAttribute(node, opts)` and `t.assertJSXAttribute(node, opts)`.\n\nAliases: `JSX`, `Immutable`\n\n - `name`: `JSXIdentifier | JSXNamespacedName` (required)\n - `value`: `JSXElement | StringLiteral | JSXExpressionContainer` (default: `null`)\n\n---\n\n### jSXClosingElement\n```javascript\nt.jSXClosingElement(name)\n```\n\nSee also `t.isJSXClosingElement(node, opts)` and `t.assertJSXClosingElement(node, opts)`.\n\nAliases: `JSX`, `Immutable`\n\n - `name`: `JSXIdentifier | JSXMemberExpression` (required)\n\n---\n\n### jSXElement\n```javascript\nt.jSXElement(openingElement, closingElement, children, selfClosing)\n```\n\nSee also `t.isJSXElement(node, opts)` and `t.assertJSXElement(node, opts)`.\n\nAliases: `JSX`, `Immutable`, `Expression`\n\n - `openingElement`: `JSXOpeningElement` (required)\n - `closingElement`: `JSXClosingElement` (default: `null`)\n - `children`: `Array<JSXText | JSXExpressionContainer | JSXSpreadChild | JSXElement>` (required)\n - `selfClosing` (required)\n\n---\n\n### jSXEmptyExpression\n```javascript\nt.jSXEmptyExpression()\n```\n\nSee also `t.isJSXEmptyExpression(node, opts)` and `t.assertJSXEmptyExpression(node, opts)`.\n\nAliases: `JSX`, `Expression`\n\n\n---\n\n### jSXExpressionContainer\n```javascript\nt.jSXExpressionContainer(expression)\n```\n\nSee also `t.isJSXExpressionContainer(node, opts)` and `t.assertJSXExpressionContainer(node, opts)`.\n\nAliases: `JSX`, `Immutable`\n\n - `expression`: `Expression` (required)\n\n---\n\n### jSXIdentifier\n```javascript\nt.jSXIdentifier(name)\n```\n\nSee also `t.isJSXIdentifier(node, opts)` and `t.assertJSXIdentifier(node, opts)`.\n\nAliases: `JSX`, `Expression`\n\n - `name`: `string` (required)\n\n---\n\n### jSXMemberExpression\n```javascript\nt.jSXMemberExpression(object, property)\n```\n\nSee also `t.isJSXMemberExpression(node, opts)` and `t.assertJSXMemberExpression(node, opts)`.\n\nAliases: `JSX`, `Expression`\n\n - `object`: `JSXMemberExpression | JSXIdentifier` (required)\n - `property`: `JSXIdentifier` (required)\n\n---\n\n### jSXNamespacedName\n```javascript\nt.jSXNamespacedName(namespace, name)\n```\n\nSee also `t.isJSXNamespacedName(node, opts)` and `t.assertJSXNamespacedName(node, opts)`.\n\nAliases: `JSX`\n\n - `namespace`: `JSXIdentifier` (required)\n - `name`: `JSXIdentifier` (required)\n\n---\n\n### jSXOpeningElement\n```javascript\nt.jSXOpeningElement(name, attributes, selfClosing)\n```\n\nSee also `t.isJSXOpeningElement(node, opts)` and `t.assertJSXOpeningElement(node, opts)`.\n\nAliases: `JSX`, `Immutable`\n\n - `name`: `JSXIdentifier | JSXMemberExpression` (required)\n - `attributes`: `Array<JSXAttribute | JSXSpreadAttribute>` (required)\n - `selfClosing`: `boolean` (default: `false`)\n\n---\n\n### jSXSpreadAttribute\n```javascript\nt.jSXSpreadAttribute(argument)\n```\n\nSee also `t.isJSXSpreadAttribute(node, opts)` and `t.assertJSXSpreadAttribute(node, opts)`.\n\nAliases: `JSX`\n\n - `argument`: `Expression` (required)\n\n---\n\n### jSXSpreadChild\n```javascript\nt.jSXSpreadChild(expression)\n```\n\nSee also `t.isJSXSpreadChild(node, opts)` and `t.assertJSXSpreadChild(node, opts)`.\n\nAliases: `JSX`, `Immutable`\n\n - `expression`: `Expression` (required)\n\n---\n\n### jSXText\n```javascript\nt.jSXText(value)\n```\n\nSee also `t.isJSXText(node, opts)` and `t.assertJSXText(node, opts)`.\n\nAliases: `JSX`, `Immutable`\n\n - `value`: `string` (required)\n\n---\n\n### labeledStatement\n```javascript\nt.labeledStatement(label, body)\n```\n\nSee also `t.isLabeledStatement(node, opts)` and `t.assertLabeledStatement(node, opts)`.\n\nAliases: `Statement`\n\n - `label`: `Identifier` (required)\n - `body`: `Statement` (required)\n\n---\n\n### logicalExpression\n```javascript\nt.logicalExpression(operator, left, right)\n```\n\nSee also `t.isLogicalExpression(node, opts)` and `t.assertLogicalExpression(node, opts)`.\n\nAliases: `Binary`, `Expression`\n\n - `operator`: `'||' | '&&'` (required)\n - `left`: `Expression` (required)\n - `right`: `Expression` (required)\n\n---\n\n### memberExpression\n```javascript\nt.memberExpression(object, property, computed)\n```\n\nSee also `t.isMemberExpression(node, opts)` and `t.assertMemberExpression(node, opts)`.\n\nAliases: `Expression`, `LVal`\n\n - `object`: `Expression` (required)\n - `property`if computed then `Expression` else `Identifier` (required)\n - `computed`: `boolean` (default: `false`)\n\n---\n\n### metaProperty\n```javascript\nt.metaProperty(meta, property)\n```\n\nSee also `t.isMetaProperty(node, opts)` and `t.assertMetaProperty(node, opts)`.\n\nAliases: `Expression`\n\n - `meta`: `string` (required)\n - `property`: `string` (required)\n\n---\n\n### mixedTypeAnnotation\n```javascript\nt.mixedTypeAnnotation()\n```\n\nSee also `t.isMixedTypeAnnotation(node, opts)` and `t.assertMixedTypeAnnotation(node, opts)`.\n\nAliases: `Flow`, `FlowBaseAnnotation`\n\n\n---\n\n### newExpression\n```javascript\nt.newExpression(callee, arguments)\n```\n\nSee also `t.isNewExpression(node, opts)` and `t.assertNewExpression(node, opts)`.\n\nAliases: `Expression`\n\n - `callee`: `Expression` (required)\n - `arguments`: `Array<Expression | SpreadElement>` (required)\n\n---\n\n### noop\n```javascript\nt.noop()\n```\n\nSee also `t.isNoop(node, opts)` and `t.assertNoop(node, opts)`.\n\n\n---\n\n### nullLiteral\n```javascript\nt.nullLiteral()\n```\n\nSee also `t.isNullLiteral(node, opts)` and `t.assertNullLiteral(node, opts)`.\n\nAliases: `Expression`, `Pureish`, `Literal`, `Immutable`\n\n\n---\n\n### nullLiteralTypeAnnotation\n```javascript\nt.nullLiteralTypeAnnotation()\n```\n\nSee also `t.isNullLiteralTypeAnnotation(node, opts)` and `t.assertNullLiteralTypeAnnotation(node, opts)`.\n\nAliases: `Flow`, `FlowBaseAnnotation`\n\n\n---\n\n### nullableTypeAnnotation\n```javascript\nt.nullableTypeAnnotation(typeAnnotation)\n```\n\nSee also `t.isNullableTypeAnnotation(node, opts)` and `t.assertNullableTypeAnnotation(node, opts)`.\n\nAliases: `Flow`\n\n - `typeAnnotation` (required)\n\n---\n\n### numberTypeAnnotation\n```javascript\nt.numberTypeAnnotation()\n```\n\nSee also `t.isNumberTypeAnnotation(node, opts)` and `t.assertNumberTypeAnnotation(node, opts)`.\n\nAliases: `Flow`, `FlowBaseAnnotation`\n\n\n---\n\n### numericLiteral\n```javascript\nt.numericLiteral(value)\n```\n\nSee also `t.isNumericLiteral(node, opts)` and `t.assertNumericLiteral(node, opts)`.\n\nAliases: `Expression`, `Pureish`, `Literal`, `Immutable`\n\n - `value`: `number` (required)\n\n---\n\n### numericLiteralTypeAnnotation\n```javascript\nt.numericLiteralTypeAnnotation()\n```\n\nSee also `t.isNumericLiteralTypeAnnotation(node, opts)` and `t.assertNumericLiteralTypeAnnotation(node, opts)`.\n\nAliases: `Flow`\n\n\n---\n\n### objectExpression\n```javascript\nt.objectExpression(properties)\n```\n\nSee also `t.isObjectExpression(node, opts)` and `t.assertObjectExpression(node, opts)`.\n\nAliases: `Expression`\n\n - `properties`: `Array<ObjectMethod | ObjectProperty | SpreadProperty>` (required)\n\n---\n\n### objectMethod\n```javascript\nt.objectMethod(kind, key, params, body, computed)\n```\n\nSee also `t.isObjectMethod(node, opts)` and `t.assertObjectMethod(node, opts)`.\n\nAliases: `UserWhitespacable`, `Function`, `Scopable`, `BlockParent`, `FunctionParent`, `Method`, `ObjectMember`\n\n - `kind`: `\"method\" | \"get\" | \"set\"` (default: `'method'`)\n - `key`if computed then `Expression` else `Identifier | Literal` (required)\n - `params` (required)\n - `body`: `BlockStatement` (required)\n - `computed`: `boolean` (default: `false`)\n - `async`: `boolean` (default: `false`)\n - `decorators`: `Array<Decorator>` (default: `null`)\n - `generator`: `boolean` (default: `false`)\n - `returnType` (default: `null`)\n - `typeParameters` (default: `null`)\n\n---\n\n### objectPattern\n```javascript\nt.objectPattern(properties, typeAnnotation)\n```\n\nSee also `t.isObjectPattern(node, opts)` and `t.assertObjectPattern(node, opts)`.\n\nAliases: `Pattern`, `LVal`\n\n - `properties`: `Array<RestProperty | Property>` (required)\n - `typeAnnotation` (required)\n - `decorators`: `Array<Decorator>` (default: `null`)\n\n---\n\n### objectProperty\n```javascript\nt.objectProperty(key, value, computed, shorthand, decorators)\n```\n\nSee also `t.isObjectProperty(node, opts)` and `t.assertObjectProperty(node, opts)`.\n\nAliases: `UserWhitespacable`, `Property`, `ObjectMember`\n\n - `key`if computed then `Expression` else `Identifier | Literal` (required)\n - `value`: `Expression | Pattern | RestElement` (required)\n - `computed`: `boolean` (default: `false`)\n - `shorthand`: `boolean` (default: `false`)\n - `decorators`: `Array<Decorator>` (default: `null`)\n\n---\n\n### objectTypeAnnotation\n```javascript\nt.objectTypeAnnotation(properties, indexers, callProperties)\n```\n\nSee also `t.isObjectTypeAnnotation(node, opts)` and `t.assertObjectTypeAnnotation(node, opts)`.\n\nAliases: `Flow`\n\n - `properties` (required)\n - `indexers` (required)\n - `callProperties` (required)\n\n---\n\n### objectTypeCallProperty\n```javascript\nt.objectTypeCallProperty(value)\n```\n\nSee also `t.isObjectTypeCallProperty(node, opts)` and `t.assertObjectTypeCallProperty(node, opts)`.\n\nAliases: `Flow`, `UserWhitespacable`\n\n - `value` (required)\n\n---\n\n### objectTypeIndexer\n```javascript\nt.objectTypeIndexer(id, key, value)\n```\n\nSee also `t.isObjectTypeIndexer(node, opts)` and `t.assertObjectTypeIndexer(node, opts)`.\n\nAliases: `Flow`, `UserWhitespacable`\n\n - `id` (required)\n - `key` (required)\n - `value` (required)\n\n---\n\n### objectTypeProperty\n```javascript\nt.objectTypeProperty(key, value)\n```\n\nSee also `t.isObjectTypeProperty(node, opts)` and `t.assertObjectTypeProperty(node, opts)`.\n\nAliases: `Flow`, `UserWhitespacable`\n\n - `key` (required)\n - `value` (required)\n\n---\n\n### objectTypeSpreadProperty\n```javascript\nt.objectTypeSpreadProperty(argument)\n```\n\nSee also `t.isObjectTypeSpreadProperty(node, opts)` and `t.assertObjectTypeSpreadProperty(node, opts)`.\n\nAliases: `Flow`, `UserWhitespacable`\n\n - `argument` (required)\n\n---\n\n### opaqueType\n```javascript\nt.opaqueType(id, typeParameters, impltype, supertype)\n```\n\nSee also `t.isOpaqueType(node, opts)` and `t.assertOpaqueType(node, opts)`.\n\nAliases: `Flow`, `FlowDeclaration`, `Statement`, `Declaration`\n\n - `id` (required)\n - `typeParameters` (required)\n - `impltype` (required)\n - `supertype` (required)\n\n---\n\n### parenthesizedExpression\n```javascript\nt.parenthesizedExpression(expression)\n```\n\nSee also `t.isParenthesizedExpression(node, opts)` and `t.assertParenthesizedExpression(node, opts)`.\n\nAliases: `Expression`, `ExpressionWrapper`\n\n - `expression`: `Expression` (required)\n\n---\n\n### program\n```javascript\nt.program(body, directives)\n```\n\nSee also `t.isProgram(node, opts)` and `t.assertProgram(node, opts)`.\n\nAliases: `Scopable`, `BlockParent`, `Block`, `FunctionParent`\n\n - `body`: `Array<Statement>` (required)\n - `directives`: `Array<Directive>` (default: `[]`)\n\n---\n\n### qualifiedTypeIdentifier\n```javascript\nt.qualifiedTypeIdentifier(id, qualification)\n```\n\nSee also `t.isQualifiedTypeIdentifier(node, opts)` and `t.assertQualifiedTypeIdentifier(node, opts)`.\n\nAliases: `Flow`\n\n - `id` (required)\n - `qualification` (required)\n\n---\n\n### regExpLiteral\n```javascript\nt.regExpLiteral(pattern, flags)\n```\n\nSee also `t.isRegExpLiteral(node, opts)` and `t.assertRegExpLiteral(node, opts)`.\n\nAliases: `Expression`, `Literal`\n\n - `pattern`: `string` (required)\n - `flags`: `string` (default: `''`)\n\n---\n\n### restElement\n```javascript\nt.restElement(argument, typeAnnotation)\n```\n\nSee also `t.isRestElement(node, opts)` and `t.assertRestElement(node, opts)`.\n\nAliases: `LVal`\n\n - `argument`: `LVal` (required)\n - `typeAnnotation` (required)\n - `decorators`: `Array<Decorator>` (default: `null`)\n\n---\n\n### restProperty\n```javascript\nt.restProperty(argument)\n```\n\nSee also `t.isRestProperty(node, opts)` and `t.assertRestProperty(node, opts)`.\n\nAliases: `UnaryLike`\n\n - `argument`: `LVal` (required)\n\n---\n\n### returnStatement\n```javascript\nt.returnStatement(argument)\n```\n\nSee also `t.isReturnStatement(node, opts)` and `t.assertReturnStatement(node, opts)`.\n\nAliases: `Statement`, `Terminatorless`, `CompletionStatement`\n\n - `argument`: `Expression` (default: `null`)\n\n---\n\n### sequenceExpression\n```javascript\nt.sequenceExpression(expressions)\n```\n\nSee also `t.isSequenceExpression(node, opts)` and `t.assertSequenceExpression(node, opts)`.\n\nAliases: `Expression`\n\n - `expressions`: `Array<Expression>` (required)\n\n---\n\n### spreadElement\n```javascript\nt.spreadElement(argument)\n```\n\nSee also `t.isSpreadElement(node, opts)` and `t.assertSpreadElement(node, opts)`.\n\nAliases: `UnaryLike`\n\n - `argument`: `Expression` (required)\n\n---\n\n### spreadProperty\n```javascript\nt.spreadProperty(argument)\n```\n\nSee also `t.isSpreadProperty(node, opts)` and `t.assertSpreadProperty(node, opts)`.\n\nAliases: `UnaryLike`\n\n - `argument`: `Expression` (required)\n\n---\n\n### stringLiteral\n```javascript\nt.stringLiteral(value)\n```\n\nSee also `t.isStringLiteral(node, opts)` and `t.assertStringLiteral(node, opts)`.\n\nAliases: `Expression`, `Pureish`, `Literal`, `Immutable`\n\n - `value`: `string` (required)\n\n---\n\n### stringLiteralTypeAnnotation\n```javascript\nt.stringLiteralTypeAnnotation()\n```\n\nSee also `t.isStringLiteralTypeAnnotation(node, opts)` and `t.assertStringLiteralTypeAnnotation(node, opts)`.\n\nAliases: `Flow`\n\n\n---\n\n### stringTypeAnnotation\n```javascript\nt.stringTypeAnnotation()\n```\n\nSee also `t.isStringTypeAnnotation(node, opts)` and `t.assertStringTypeAnnotation(node, opts)`.\n\nAliases: `Flow`, `FlowBaseAnnotation`\n\n\n---\n\n### super\n```javascript\nt.super()\n```\n\nSee also `t.isSuper(node, opts)` and `t.assertSuper(node, opts)`.\n\nAliases: `Expression`\n\n\n---\n\n### switchCase\n```javascript\nt.switchCase(test, consequent)\n```\n\nSee also `t.isSwitchCase(node, opts)` and `t.assertSwitchCase(node, opts)`.\n\n - `test`: `Expression` (default: `null`)\n - `consequent`: `Array<Statement>` (required)\n\n---\n\n### switchStatement\n```javascript\nt.switchStatement(discriminant, cases)\n```\n\nSee also `t.isSwitchStatement(node, opts)` and `t.assertSwitchStatement(node, opts)`.\n\nAliases: `Statement`, `BlockParent`, `Scopable`\n\n - `discriminant`: `Expression` (required)\n - `cases`: `Array<SwitchCase>` (required)\n\n---\n\n### taggedTemplateExpression\n```javascript\nt.taggedTemplateExpression(tag, quasi)\n```\n\nSee also `t.isTaggedTemplateExpression(node, opts)` and `t.assertTaggedTemplateExpression(node, opts)`.\n\nAliases: `Expression`\n\n - `tag`: `Expression` (required)\n - `quasi`: `TemplateLiteral` (required)\n\n---\n\n### templateElement\n```javascript\nt.templateElement(value, tail)\n```\n\nSee also `t.isTemplateElement(node, opts)` and `t.assertTemplateElement(node, opts)`.\n\n - `value` (required)\n - `tail`: `boolean` (default: `false`)\n\n---\n\n### templateLiteral\n```javascript\nt.templateLiteral(quasis, expressions)\n```\n\nSee also `t.isTemplateLiteral(node, opts)` and `t.assertTemplateLiteral(node, opts)`.\n\nAliases: `Expression`, `Literal`\n\n - `quasis`: `Array<TemplateElement>` (required)\n - `expressions`: `Array<Expression>` (required)\n\n---\n\n### thisExpression\n```javascript\nt.thisExpression()\n```\n\nSee also `t.isThisExpression(node, opts)` and `t.assertThisExpression(node, opts)`.\n\nAliases: `Expression`\n\n\n---\n\n### thisTypeAnnotation\n```javascript\nt.thisTypeAnnotation()\n```\n\nSee also `t.isThisTypeAnnotation(node, opts)` and `t.assertThisTypeAnnotation(node, opts)`.\n\nAliases: `Flow`, `FlowBaseAnnotation`\n\n\n---\n\n### throwStatement\n```javascript\nt.throwStatement(argument)\n```\n\nSee also `t.isThrowStatement(node, opts)` and `t.assertThrowStatement(node, opts)`.\n\nAliases: `Statement`, `Terminatorless`, `CompletionStatement`\n\n - `argument`: `Expression` (required)\n\n---\n\n### tryStatement\n```javascript\nt.tryStatement(block, handler, finalizer)\n```\n\nSee also `t.isTryStatement(node, opts)` and `t.assertTryStatement(node, opts)`.\n\nAliases: `Statement`\n\n - `block` (required)\n - `handler` (default: `null`)\n - `finalizer`: `BlockStatement` (default: `null`)\n - `body`: `BlockStatement` (default: `null`)\n\n---\n\n### tupleTypeAnnotation\n```javascript\nt.tupleTypeAnnotation(types)\n```\n\nSee also `t.isTupleTypeAnnotation(node, opts)` and `t.assertTupleTypeAnnotation(node, opts)`.\n\nAliases: `Flow`\n\n - `types` (required)\n\n---\n\n### typeAlias\n```javascript\nt.typeAlias(id, typeParameters, right)\n```\n\nSee also `t.isTypeAlias(node, opts)` and `t.assertTypeAlias(node, opts)`.\n\nAliases: `Flow`, `FlowDeclaration`, `Statement`, `Declaration`\n\n - `id` (required)\n - `typeParameters` (required)\n - `right` (required)\n\n---\n\n### typeAnnotation\n```javascript\nt.typeAnnotation(typeAnnotation)\n```\n\nSee also `t.isTypeAnnotation(node, opts)` and `t.assertTypeAnnotation(node, opts)`.\n\nAliases: `Flow`\n\n - `typeAnnotation` (required)\n\n---\n\n### typeCastExpression\n```javascript\nt.typeCastExpression(expression, typeAnnotation)\n```\n\nSee also `t.isTypeCastExpression(node, opts)` and `t.assertTypeCastExpression(node, opts)`.\n\nAliases: `Flow`, `ExpressionWrapper`, `Expression`\n\n - `expression` (required)\n - `typeAnnotation` (required)\n\n---\n\n### typeParameter\n```javascript\nt.typeParameter(bound)\n```\n\nSee also `t.isTypeParameter(node, opts)` and `t.assertTypeParameter(node, opts)`.\n\nAliases: `Flow`\n\n - `bound` (required)\n\n---\n\n### typeParameterDeclaration\n```javascript\nt.typeParameterDeclaration(params)\n```\n\nSee also `t.isTypeParameterDeclaration(node, opts)` and `t.assertTypeParameterDeclaration(node, opts)`.\n\nAliases: `Flow`\n\n - `params` (required)\n\n---\n\n### typeParameterInstantiation\n```javascript\nt.typeParameterInstantiation(params)\n```\n\nSee also `t.isTypeParameterInstantiation(node, opts)` and `t.assertTypeParameterInstantiation(node, opts)`.\n\nAliases: `Flow`\n\n - `params` (required)\n\n---\n\n### typeofTypeAnnotation\n```javascript\nt.typeofTypeAnnotation(argument)\n```\n\nSee also `t.isTypeofTypeAnnotation(node, opts)` and `t.assertTypeofTypeAnnotation(node, opts)`.\n\nAliases: `Flow`\n\n - `argument` (required)\n\n---\n\n### unaryExpression\n```javascript\nt.unaryExpression(operator, argument, prefix)\n```\n\nSee also `t.isUnaryExpression(node, opts)` and `t.assertUnaryExpression(node, opts)`.\n\nAliases: `UnaryLike`, `Expression`\n\n - `operator`: `'void' | 'delete' | '!' | '+' | '-' | '++' | '--' | '~' | 'typeof'` (required)\n - `argument`: `Expression` (required)\n - `prefix`: `boolean` (default: `true`)\n\n---\n\n### unionTypeAnnotation\n```javascript\nt.unionTypeAnnotation(types)\n```\n\nSee also `t.isUnionTypeAnnotation(node, opts)` and `t.assertUnionTypeAnnotation(node, opts)`.\n\nAliases: `Flow`\n\n - `types` (required)\n\n---\n\n### updateExpression\n```javascript\nt.updateExpression(operator, argument, prefix)\n```\n\nSee also `t.isUpdateExpression(node, opts)` and `t.assertUpdateExpression(node, opts)`.\n\nAliases: `Expression`\n\n - `operator`: `'++' | '--'` (required)\n - `argument`: `Expression` (required)\n - `prefix`: `boolean` (default: `false`)\n\n---\n\n### variableDeclaration\n```javascript\nt.variableDeclaration(kind, declarations)\n```\n\nSee also `t.isVariableDeclaration(node, opts)` and `t.assertVariableDeclaration(node, opts)`.\n\nAliases: `Statement`, `Declaration`\n\n - `kind`: `\"var\" | \"let\" | \"const\"` (required)\n - `declarations`: `Array<VariableDeclarator>` (required)\n\n---\n\n### variableDeclarator\n```javascript\nt.variableDeclarator(id, init)\n```\n\nSee also `t.isVariableDeclarator(node, opts)` and `t.assertVariableDeclarator(node, opts)`.\n\n - `id`: `LVal` (required)\n - `init`: `Expression` (default: `null`)\n\n---\n\n### voidTypeAnnotation\n```javascript\nt.voidTypeAnnotation()\n```\n\nSee also `t.isVoidTypeAnnotation(node, opts)` and `t.assertVoidTypeAnnotation(node, opts)`.\n\nAliases: `Flow`, `FlowBaseAnnotation`\n\n\n---\n\n### whileStatement\n```javascript\nt.whileStatement(test, body)\n```\n\nSee also `t.isWhileStatement(node, opts)` and `t.assertWhileStatement(node, opts)`.\n\nAliases: `Statement`, `BlockParent`, `Loop`, `While`, `Scopable`\n\n - `test`: `Expression` (required)\n - `body`: `BlockStatement | Statement` (required)\n\n---\n\n### withStatement\n```javascript\nt.withStatement(object, body)\n```\n\nSee also `t.isWithStatement(node, opts)` and `t.assertWithStatement(node, opts)`.\n\nAliases: `Statement`\n\n - `object` (required)\n - `body`: `BlockStatement | Statement` (required)\n\n---\n\n### yieldExpression\n```javascript\nt.yieldExpression(argument, delegate)\n```\n\nSee also `t.isYieldExpression(node, opts)` and `t.assertYieldExpression(node, opts)`.\n\nAliases: `Expression`, `Terminatorless`\n\n - `argument`: `Expression` (default: `null`)\n - `delegate`: `boolean` (default: `false`)\n\n---\n\n\n<!-- end generated section -->\n\n",
+  "maintainers": [
+    {
+      "email": "hi@henryzoo.com",
+      "name": "hzoo"
+    },
+    {
+      "email": "loganfsmyth@gmail.com",
+      "name": "loganfsmyth"
+    },
+    {
+      "email": "daniel@tschinder.de",
+      "name": "danez"
+    },
+    {
+      "email": "bng412@gmail.com",
+      "name": "existentialism"
+    }
+  ],
+  "time": {
+    "modified": "2019-01-01T07:47:21.734Z",
+    "created": "2015-10-29T18:22:41.278Z",
+    "6.0.2": "2015-10-29T18:22:41.278Z",
+    "6.0.12": "2015-10-30T04:56:19.771Z",
+    "6.0.13": "2015-10-30T05:08:16.805Z",
+    "6.0.14": "2015-10-30T23:44:32.324Z",
+    "6.0.15": "2015-11-01T22:11:16.122Z",
+    "6.0.17": "2015-11-02T19:54:53.656Z",
+    "6.0.18": "2015-11-03T01:25:39.161Z",
+    "6.0.19": "2015-11-03T03:15:29.470Z",
+    "6.1.2": "2015-11-05T11:12:32.105Z",
+    "6.1.4": "2015-11-11T10:48:19.570Z",
+    "6.1.17": "2015-11-12T21:44:07.313Z",
+    "6.1.18": "2015-11-12T21:53:17.761Z",
+    "6.2.0": "2015-11-19T04:34:47.038Z",
+    "6.2.3": "2015-11-25T03:04:51.070Z",
+    "6.2.4": "2015-11-25T03:16:08.929Z",
+    "6.3.0": "2015-11-30T22:59:03.113Z",
+    "6.3.13": "2015-12-04T12:01:35.754Z",
+    "6.3.14": "2015-12-04T18:52:48.509Z",
+    "6.3.17": "2015-12-11T01:20:44.930Z",
+    "6.3.18": "2015-12-14T07:01:59.505Z",
+    "6.3.20": "2015-12-16T20:24:52.569Z",
+    "6.3.21": "2015-12-18T08:23:15.233Z",
+    "6.3.24": "2015-12-18T23:53:55.843Z",
+    "6.4.0": "2016-01-06T20:35:14.110Z",
+    "6.4.1": "2016-01-07T00:27:53.536Z",
+    "6.4.3": "2016-01-14T05:56:44.031Z",
+    "6.4.5": "2016-01-19T23:03:00.799Z",
+    "6.5.0": "2016-02-07T00:08:31.138Z",
+    "6.5.0-1": "2016-02-07T02:41:53.374Z",
+    "6.5.1": "2016-02-08T02:18:19.932Z",
+    "6.5.2": "2016-02-12T16:30:25.163Z",
+    "6.6.0": "2016-02-29T21:13:16.856Z",
+    "6.6.4": "2016-03-02T21:30:03.056Z",
+    "6.6.5": "2016-03-04T23:17:17.912Z",
+    "6.7.0": "2016-03-09T00:53:11.587Z",
+    "6.7.2": "2016-03-10T22:41:35.028Z",
+    "6.7.7": "2016-04-21T03:09:29.365Z",
+    "6.8.0": "2016-05-02T23:45:26.395Z",
+    "6.8.1": "2016-05-03T00:42:07.926Z",
+    "6.9.0": "2016-05-17T18:49:54.089Z",
+    "6.9.1": "2016-05-29T19:50:14.948Z",
+    "6.10.0": "2016-06-11T04:05:26.642Z",
+    "6.10.2": "2016-06-17T21:45:20.731Z",
+    "6.11.1": "2016-06-27T21:19:51.273Z",
+    "6.13.0": "2016-08-04T23:35:09.678Z",
+    "6.14.0": "2016-08-24T23:41:05.367Z",
+    "6.15.0": "2016-09-01T15:03:13.290Z",
+    "6.16.0": "2016-09-28T19:39:07.889Z",
+    "6.18.0": "2016-10-24T21:19:14.385Z",
+    "6.19.0": "2016-11-16T16:15:30.335Z",
+    "6.20.0": "2016-12-08T23:25:51.861Z",
+    "6.21.0": "2016-12-16T21:56:02.754Z",
+    "6.22.0": "2017-01-20T00:34:30.144Z",
+    "6.23.0": "2017-02-13T23:04:30.936Z",
+    "7.0.0-alpha.1": "2017-03-02T21:05:17.675Z",
+    "7.0.0-alpha.3": "2017-03-23T19:49:23.041Z",
+    "7.0.0-alpha.7": "2017-04-05T21:13:57.251Z",
+    "6.24.1": "2017-04-07T15:19:04.198Z",
+    "7.0.0-alpha.9": "2017-04-18T14:41:56.322Z",
+    "7.0.0-alpha.10": "2017-05-25T19:17:29.120Z",
+    "7.0.0-alpha.11": "2017-05-31T20:43:43.606Z",
+    "7.0.0-alpha.12": "2017-05-31T21:11:55.722Z",
+    "6.25.0": "2017-06-08T21:29:05.776Z",
+    "7.0.0-alpha.14": "2017-07-12T02:53:39.353Z",
+    "7.0.0-alpha.15": "2017-07-12T03:35:54.165Z",
+    "7.0.0-alpha.16": "2017-07-25T21:17:47.480Z",
+    "7.0.0-alpha.17": "2017-07-26T12:39:16.730Z",
+    "7.0.0-alpha.18": "2017-08-03T22:21:00.414Z",
+    "7.0.0-alpha.19": "2017-08-07T22:21:39.838Z",
+    "6.26.0": "2017-08-16T15:54:13.059Z",
+    "7.0.0-alpha.20": "2017-08-30T18:52:14.054Z",
+    "7.0.0-beta.0": "2017-09-12T03:02:17.030Z",
+    "7.0.0-beta.1": "2017-09-19T20:09:23.476Z",
+    "7.0.0-beta.2": "2017-09-26T15:15:16.095Z",
+    "7.0.0-beta.3": "2017-10-15T13:11:40.651Z"
+  },
+  "homepage": "https://babeljs.io/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/babel/babel/tree/master/packages/babel-types"
+  },
+  "author": {
+    "name": "Sebastian McKenzie",
+    "email": "sebmck@gmail.com"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "description": "Babel Types is a Lodash-esque utility library for AST nodes",
+  "users": {
+    "langri-sha": true,
+    "shuoshubao": true,
+    "estill01": true,
+    "mrzmmr": true,
+    "dwqs": true
+  }
+}

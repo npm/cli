@@ -1,0 +1,1463 @@
+{
+  "_id": "console-browserify",
+  "_rev": "34-e46f950bca8f9b15b2309e43fcc47d4a",
+  "name": "console-browserify",
+  "description": "Emulate console for all the browsers",
+  "dist-tags": {
+    "latest": "1.2.0"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "console-browserify",
+      "version": "0.1.0",
+      "description": "Emulate console for all the browsers",
+      "keywords": [],
+      "author": {
+        "name": "Raynos",
+        "email": "raynos2@gmail.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/Raynos/console-browserify.git"
+      },
+      "main": "index",
+      "homepage": "https://github.com/Raynos/console-browserify",
+      "contributors": [
+        {
+          "name": "Raynos"
+        }
+      ],
+      "bugs": {
+        "url": "https://github.com/Raynos/console-browserify/issues",
+        "email": "raynos2@gmail.com"
+      },
+      "dependencies": {
+        "date-now": "~0.1.0"
+      },
+      "devDependencies": {
+        "tape": "~0.2.2",
+        "browserify": "https://github.com/raynos/node-browserify/tarball/master",
+        "testem": "~0.2.55"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://github.com/Raynos/console-browserify/raw/master/LICENSE"
+        }
+      ],
+      "scripts": {
+        "test": "node ./test",
+        "build": "browserify test/index.js -o test/static/bundle.js",
+        "testem": "testem",
+        "postinstall": "npm dedup"
+      },
+      "testling": {
+        "files": "test/index.js",
+        "browsers": {
+          "ie": [
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"
+          ],
+          "firefox": [
+            "16",
+            "17",
+            "nightly"
+          ],
+          "chrome": [
+            "22",
+            "23",
+            "canary"
+          ],
+          "opera": [
+            "12",
+            "next"
+          ],
+          "safari": [
+            "5.1"
+          ]
+        }
+      },
+      "_id": "console-browserify@0.1.0",
+      "dist": {
+        "shasum": "8b268ddd05d6d6162f6bbd9f7a7316042fc63c42",
+        "tarball": "https://registry.npmjs.org/console-browserify/-/console-browserify-0.1.0.tgz"
+      },
+      "_npmVersion": "1.1.71",
+      "_npmUser": {
+        "name": "raynos",
+        "email": "raynos2@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "raynos",
+          "email": "raynos2@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.1": {
+      "name": "console-browserify",
+      "version": "0.1.1",
+      "description": "Emulate console for all the browsers",
+      "keywords": [],
+      "author": {
+        "name": "Raynos",
+        "email": "raynos2@gmail.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/Raynos/console-browserify.git"
+      },
+      "main": "index",
+      "homepage": "https://github.com/Raynos/console-browserify",
+      "contributors": [
+        {
+          "name": "Raynos"
+        }
+      ],
+      "bugs": {
+        "url": "https://github.com/Raynos/console-browserify/issues",
+        "email": "raynos2@gmail.com"
+      },
+      "dependencies": {
+        "date-now": "~0.1.0"
+      },
+      "devDependencies": {
+        "tape": "~0.2.2",
+        "browserify": "https://github.com/raynos/node-browserify/tarball/master",
+        "testem": "~0.2.55"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://github.com/Raynos/console-browserify/raw/master/LICENSE"
+        }
+      ],
+      "scripts": {
+        "test": "node ./test",
+        "build": "browserify test/index.js -o test/static/bundle.js",
+        "testem": "testem",
+        "postinstall": "npm dedup"
+      },
+      "testling": {
+        "files": "test/index.js",
+        "browsers": {
+          "ie": [
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"
+          ],
+          "firefox": [
+            "16",
+            "17",
+            "nightly"
+          ],
+          "chrome": [
+            "22",
+            "23",
+            "canary"
+          ],
+          "opera": [
+            "12",
+            "next"
+          ],
+          "safari": [
+            "5.1"
+          ]
+        }
+      },
+      "_id": "console-browserify@0.1.1",
+      "dist": {
+        "shasum": "1f7b530e8a94e28e8d7579bc21a18c076ed38874",
+        "tarball": "https://registry.npmjs.org/console-browserify/-/console-browserify-0.1.1.tgz"
+      },
+      "_npmVersion": "1.1.71",
+      "_npmUser": {
+        "name": "raynos",
+        "email": "raynos2@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "raynos",
+          "email": "raynos2@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.2": {
+      "name": "console-browserify",
+      "version": "0.1.2",
+      "description": "Emulate console for all the browsers",
+      "keywords": [],
+      "author": {
+        "name": "Raynos",
+        "email": "raynos2@gmail.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/Raynos/console-browserify.git"
+      },
+      "main": "index",
+      "homepage": "https://github.com/Raynos/console-browserify",
+      "contributors": [
+        {
+          "name": "Raynos"
+        }
+      ],
+      "bugs": {
+        "url": "https://github.com/Raynos/console-browserify/issues",
+        "email": "raynos2@gmail.com"
+      },
+      "dependencies": {
+        "date-now": "~0.1.0"
+      },
+      "devDependencies": {
+        "tape": "~0.2.2",
+        "browserify": "https://github.com/raynos/node-browserify/tarball/master",
+        "testem": "~0.2.55"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://github.com/Raynos/console-browserify/raw/master/LICENSE"
+        }
+      ],
+      "scripts": {
+        "test": "node ./test",
+        "build": "browserify test/index.js -o test/static/bundle.js",
+        "testem": "testem",
+        "postinstall": "npm dedup"
+      },
+      "testling": {
+        "files": "test/index.js",
+        "browsers": {
+          "ie": [
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"
+          ],
+          "firefox": [
+            "16",
+            "17",
+            "nightly"
+          ],
+          "chrome": [
+            "22",
+            "23",
+            "canary"
+          ],
+          "opera": [
+            "12",
+            "next"
+          ],
+          "safari": [
+            "5.1"
+          ]
+        }
+      },
+      "_id": "console-browserify@0.1.2",
+      "dist": {
+        "shasum": "9e8d6a7cdada01b60d178f57b1aa7c7b2dba1551",
+        "tarball": "https://registry.npmjs.org/console-browserify/-/console-browserify-0.1.2.tgz"
+      },
+      "_npmVersion": "1.1.71",
+      "_npmUser": {
+        "name": "raynos",
+        "email": "raynos2@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "raynos",
+          "email": "raynos2@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.3": {
+      "name": "console-browserify",
+      "version": "0.1.3",
+      "description": "Emulate console for all the browsers",
+      "keywords": [],
+      "author": {
+        "name": "Raynos",
+        "email": "raynos2@gmail.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/Raynos/console-browserify.git"
+      },
+      "main": "index",
+      "homepage": "https://github.com/Raynos/console-browserify",
+      "contributors": [
+        {
+          "name": "Raynos"
+        }
+      ],
+      "bugs": {
+        "url": "https://github.com/Raynos/console-browserify/issues",
+        "email": "raynos2@gmail.com"
+      },
+      "dependencies": {
+        "date-now": "~0.1.1"
+      },
+      "devDependencies": {
+        "tape": "~0.2.2",
+        "browserify": "https://github.com/raynos/node-browserify/tarball/master",
+        "testem": "~0.2.55"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://github.com/Raynos/console-browserify/raw/master/LICENSE"
+        }
+      ],
+      "scripts": {
+        "test": "node ./test",
+        "build": "browserify test/index.js -o test/static/bundle.js",
+        "testem": "testem",
+        "postinstall": "npm dedup"
+      },
+      "testling": {
+        "files": "test/index.js",
+        "browsers": {
+          "ie": [
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"
+          ],
+          "firefox": [
+            "16",
+            "17",
+            "nightly"
+          ],
+          "chrome": [
+            "22",
+            "23",
+            "canary"
+          ],
+          "opera": [
+            "12",
+            "next"
+          ],
+          "safari": [
+            "5.1"
+          ]
+        }
+      },
+      "_id": "console-browserify@0.1.3",
+      "dist": {
+        "shasum": "0d5b48bddb6ab922f968fd55e29e018996a462d9",
+        "tarball": "https://registry.npmjs.org/console-browserify/-/console-browserify-0.1.3.tgz"
+      },
+      "_npmVersion": "1.1.71",
+      "_npmUser": {
+        "name": "raynos",
+        "email": "raynos2@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "raynos",
+          "email": "raynos2@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.4": {
+      "name": "console-browserify",
+      "version": "0.1.4",
+      "description": "Emulate console for all the browsers",
+      "keywords": [],
+      "author": {
+        "name": "Raynos",
+        "email": "raynos2@gmail.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/Raynos/console-browserify.git"
+      },
+      "main": "index",
+      "homepage": "https://github.com/Raynos/console-browserify",
+      "contributors": [
+        {
+          "name": "Raynos"
+        }
+      ],
+      "bugs": {
+        "url": "https://github.com/Raynos/console-browserify/issues",
+        "email": "raynos2@gmail.com"
+      },
+      "dependencies": {
+        "date-now": "~0.1.1"
+      },
+      "devDependencies": {
+        "tape": "~0.2.2",
+        "browserify": "https://github.com/raynos/node-browserify/tarball/master",
+        "testem": "~0.2.55",
+        "jsonify": "0.0.0"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://github.com/Raynos/console-browserify/raw/master/LICENSE"
+        }
+      ],
+      "scripts": {
+        "test": "node ./test",
+        "build": "browserify test/index.js -o test/static/bundle.js",
+        "testem": "testem"
+      },
+      "testling": {
+        "files": "test/index.js",
+        "browsers": {
+          "ie": [
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"
+          ],
+          "firefox": [
+            "16",
+            "17",
+            "nightly"
+          ],
+          "chrome": [
+            "22",
+            "23",
+            "canary"
+          ],
+          "opera": [
+            "12",
+            "next"
+          ],
+          "safari": [
+            "5.1"
+          ]
+        }
+      },
+      "_id": "console-browserify@0.1.4",
+      "dist": {
+        "shasum": "42efecda651fe1896311221e964ada4ad1b45f81",
+        "tarball": "https://registry.npmjs.org/console-browserify/-/console-browserify-0.1.4.tgz"
+      },
+      "_npmVersion": "1.1.71",
+      "_npmUser": {
+        "name": "raynos",
+        "email": "raynos2@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "raynos",
+          "email": "raynos2@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.5": {
+      "name": "console-browserify",
+      "version": "0.1.5",
+      "description": "Emulate console for all the browsers",
+      "keywords": [],
+      "author": {
+        "name": "Raynos",
+        "email": "raynos2@gmail.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/Raynos/console-browserify.git"
+      },
+      "main": "index",
+      "homepage": "https://github.com/Raynos/console-browserify",
+      "contributors": [
+        {
+          "name": "Raynos"
+        }
+      ],
+      "bugs": {
+        "url": "https://github.com/Raynos/console-browserify/issues",
+        "email": "raynos2@gmail.com"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "tape": "~0.2.2",
+        "browserify": "https://github.com/raynos/node-browserify/tarball/master",
+        "testem": "~0.2.55",
+        "jsonify": "0.0.0"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://github.com/Raynos/console-browserify/raw/master/LICENSE"
+        }
+      ],
+      "scripts": {
+        "test": "node ./test",
+        "build": "browserify test/index.js -o test/static/bundle.js",
+        "testem": "testem"
+      },
+      "testling": {
+        "files": "test/index.js",
+        "browsers": {
+          "ie": [
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"
+          ],
+          "firefox": [
+            "16",
+            "17",
+            "nightly"
+          ],
+          "chrome": [
+            "22",
+            "23",
+            "canary"
+          ],
+          "opera": [
+            "12",
+            "next"
+          ],
+          "safari": [
+            "5.1"
+          ]
+        }
+      },
+      "_id": "console-browserify@0.1.5",
+      "dist": {
+        "shasum": "3e4c5360d4b7214d9dccbd581b9f7e1ff0b2a8db",
+        "tarball": "https://registry.npmjs.org/console-browserify/-/console-browserify-0.1.5.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.2.3",
+      "_npmUser": {
+        "name": "raynos",
+        "email": "raynos2@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "raynos",
+          "email": "raynos2@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.6": {
+      "name": "console-browserify",
+      "version": "0.1.6",
+      "description": "Emulate console for all the browsers",
+      "keywords": [],
+      "author": {
+        "name": "Raynos",
+        "email": "raynos2@gmail.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/Raynos/console-browserify.git"
+      },
+      "main": "index",
+      "homepage": "https://github.com/Raynos/console-browserify",
+      "contributors": [
+        {
+          "name": "Raynos"
+        }
+      ],
+      "bugs": {
+        "url": "https://github.com/Raynos/console-browserify/issues",
+        "email": "raynos2@gmail.com"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "tape": "~0.2.2",
+        "browserify": "https://github.com/raynos/node-browserify/tarball/master",
+        "testem": "~0.2.55",
+        "jsonify": "0.0.0"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://github.com/Raynos/console-browserify/raw/master/LICENSE"
+        }
+      ],
+      "scripts": {
+        "test": "node ./test",
+        "build": "browserify test/index.js -o test/static/bundle.js",
+        "testem": "testem"
+      },
+      "testling": {
+        "files": "test/index.js",
+        "browsers": {
+          "ie": [
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"
+          ],
+          "firefox": [
+            "16",
+            "17",
+            "nightly"
+          ],
+          "chrome": [
+            "22",
+            "23",
+            "canary"
+          ],
+          "opera": [
+            "12",
+            "next"
+          ],
+          "safari": [
+            "5.1"
+          ]
+        }
+      },
+      "_id": "console-browserify@0.1.6",
+      "dist": {
+        "shasum": "d128a3c0bb88350eb5626c6e7c71a6f0fd48983c",
+        "tarball": "https://registry.npmjs.org/console-browserify/-/console-browserify-0.1.6.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.2.3",
+      "_npmUser": {
+        "name": "raynos",
+        "email": "raynos2@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "raynos",
+          "email": "raynos2@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "console-browserify",
+      "version": "1.0.1",
+      "description": "Emulate console for all the browsers",
+      "keywords": [],
+      "author": {
+        "name": "Raynos",
+        "email": "raynos2@gmail.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/Raynos/console-browserify.git"
+      },
+      "main": "index",
+      "homepage": "https://github.com/Raynos/console-browserify",
+      "contributors": [
+        {
+          "name": "Raynos"
+        }
+      ],
+      "bugs": {
+        "url": "https://github.com/Raynos/console-browserify/issues",
+        "email": "raynos2@gmail.com"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "tape": "~0.2.2",
+        "browserify": "https://github.com/raynos/node-browserify/tarball/master",
+        "testem": "~0.2.55",
+        "jsonify": "0.0.0"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://github.com/Raynos/console-browserify/raw/master/LICENSE"
+        }
+      ],
+      "scripts": {
+        "test": "node ./test",
+        "build": "browserify test/index.js -o test/static/bundle.js",
+        "testem": "testem"
+      },
+      "testling": {
+        "files": "test/index.js",
+        "browsers": {
+          "ie": [
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"
+          ],
+          "firefox": [
+            "16",
+            "17",
+            "nightly"
+          ],
+          "chrome": [
+            "22",
+            "23",
+            "canary"
+          ],
+          "opera": [
+            "12",
+            "next"
+          ],
+          "safari": [
+            "5.1"
+          ]
+        }
+      },
+      "_id": "console-browserify@1.0.1",
+      "dist": {
+        "shasum": "86d35db62438704ebfa4285232f307b85d5376df",
+        "tarball": "https://registry.npmjs.org/console-browserify/-/console-browserify-1.0.1.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.5",
+      "_npmUser": {
+        "name": "raynos",
+        "email": "raynos2@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "raynos",
+          "email": "raynos2@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "console-browserify",
+      "version": "1.0.2",
+      "description": "Emulate console for all the browsers",
+      "keywords": [],
+      "author": {
+        "name": "Raynos",
+        "email": "raynos2@gmail.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/Raynos/console-browserify.git"
+      },
+      "main": "index",
+      "homepage": "https://github.com/Raynos/console-browserify",
+      "contributors": [
+        {
+          "name": "Raynos"
+        }
+      ],
+      "bugs": {
+        "url": "https://github.com/Raynos/console-browserify/issues",
+        "email": "raynos2@gmail.com"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "tape": "~0.2.2",
+        "browserify": "https://github.com/raynos/node-browserify/tarball/master",
+        "testem": "~0.2.55",
+        "jsonify": "0.0.0"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://github.com/Raynos/console-browserify/raw/master/LICENSE"
+        }
+      ],
+      "scripts": {
+        "test": "node ./test",
+        "build": "browserify test/index.js -o test/static/bundle.js",
+        "testem": "testem"
+      },
+      "testling": {
+        "files": "test/index.js",
+        "browsers": {
+          "ie": [
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"
+          ],
+          "firefox": [
+            "16",
+            "17",
+            "nightly"
+          ],
+          "chrome": [
+            "22",
+            "23",
+            "canary"
+          ],
+          "opera": [
+            "12",
+            "next"
+          ],
+          "safari": [
+            "5.1"
+          ]
+        }
+      },
+      "_id": "console-browserify@1.0.2",
+      "dist": {
+        "shasum": "def1cea1e03f5436332323a2bed8112337f94475",
+        "tarball": "https://registry.npmjs.org/console-browserify/-/console-browserify-1.0.2.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.17",
+      "_npmUser": {
+        "name": "raynos",
+        "email": "raynos2@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "raynos",
+          "email": "raynos2@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.3": {
+      "name": "console-browserify",
+      "version": "1.0.3",
+      "description": "Emulate console for all the browsers",
+      "keywords": [],
+      "author": {
+        "name": "Raynos",
+        "email": "raynos2@gmail.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/Raynos/console-browserify.git"
+      },
+      "main": "index",
+      "homepage": "https://github.com/Raynos/console-browserify",
+      "contributors": [
+        {
+          "name": "Raynos"
+        }
+      ],
+      "bugs": {
+        "url": "https://github.com/Raynos/console-browserify/issues",
+        "email": "raynos2@gmail.com"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "tape": "~2.3.0",
+        "browserify": "https://github.com/raynos/node-browserify/tarball/master",
+        "testem": "~0.2.55",
+        "jsonify": "0.0.0"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://github.com/Raynos/console-browserify/raw/master/LICENSE"
+        }
+      ],
+      "scripts": {
+        "test": "node ./test",
+        "build": "browserify test/index.js -o test/static/bundle.js",
+        "testem": "testem"
+      },
+      "testling": {
+        "files": "test/index.js",
+        "browsers": {
+          "ie": [
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"
+          ],
+          "firefox": [
+            "16",
+            "17",
+            "nightly"
+          ],
+          "chrome": [
+            "22",
+            "23",
+            "canary"
+          ],
+          "opera": [
+            "12",
+            "next"
+          ],
+          "safari": [
+            "5.1"
+          ]
+        }
+      },
+      "_id": "console-browserify@1.0.3",
+      "dist": {
+        "shasum": "d3898d2c3a93102f364197f8874b4f92b5286a8e",
+        "tarball": "https://registry.npmjs.org/console-browserify/-/console-browserify-1.0.3.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.17",
+      "_npmUser": {
+        "name": "raynos",
+        "email": "raynos2@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "raynos",
+          "email": "raynos2@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "console-browserify",
+      "version": "1.1.0",
+      "description": "Emulate console for all the browsers",
+      "keywords": [],
+      "author": {
+        "name": "Raynos",
+        "email": "raynos2@gmail.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/Raynos/console-browserify.git"
+      },
+      "main": "index",
+      "homepage": "https://github.com/Raynos/console-browserify",
+      "contributors": [
+        {
+          "name": "Raynos"
+        }
+      ],
+      "bugs": {
+        "url": "https://github.com/Raynos/console-browserify/issues",
+        "email": "raynos2@gmail.com"
+      },
+      "dependencies": {
+        "date-now": "^0.1.4"
+      },
+      "devDependencies": {
+        "tape": "^2.12.3",
+        "jsonify": "0.0.0",
+        "tap-spec": "^0.1.8",
+        "run-browser": "^1.3.0",
+        "tap-dot": "^0.2.1"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://github.com/Raynos/console-browserify/raw/master/LICENSE"
+        }
+      ],
+      "scripts": {
+        "test": "node ./test/index.js | tap-spec",
+        "dot": "node ./test/index.js | tap-dot",
+        "start": "node ./index.js",
+        "cover": "istanbul cover --report none --print detail ./test/index.js",
+        "view-cover": "istanbul report html && google-chrome ./coverage/index.html",
+        "browser": "run-browser test/index.js",
+        "phantom": "run-browser test/index.js -b | tap-spec",
+        "build": "browserify test/index.js -o test/static/bundle.js",
+        "testem": "testem"
+      },
+      "testling": {
+        "files": "test/index.js",
+        "browsers": [
+          "ie/8..latest",
+          "firefox/16..latest",
+          "firefox/nightly",
+          "chrome/22..latest",
+          "chrome/canary",
+          "opera/12..latest",
+          "opera/next",
+          "safari/5.1..latest",
+          "ipad/6.0..latest",
+          "iphone/6.0..latest",
+          "android-browser/4.2..latest"
+        ]
+      },
+      "_id": "console-browserify@1.1.0",
+      "dist": {
+        "shasum": "f0241c45730a9fc6323b206dbf38edc741d0bb10",
+        "tarball": "https://registry.npmjs.org/console-browserify/-/console-browserify-1.1.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.4.6",
+      "_npmUser": {
+        "name": "raynos",
+        "email": "raynos2@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "raynos",
+          "email": "raynos2@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.2.0": {
+      "name": "console-browserify",
+      "version": "1.2.0",
+      "description": "Emulate console for all the browsers",
+      "keywords": [],
+      "author": {
+        "name": "Raynos",
+        "email": "raynos2@gmail.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/browserify/console-browserify.git"
+      },
+      "main": "index",
+      "homepage": "https://github.com/browserify/console-browserify",
+      "contributors": [
+        {
+          "name": "Raynos"
+        }
+      ],
+      "bugs": {
+        "url": "https://github.com/browserify/console-browserify/issues",
+        "email": "raynos2@gmail.com"
+      },
+      "devDependencies": {
+        "tape": "^2.12.3",
+        "jsonify": "0.0.0",
+        "tap-spec": "^0.1.8",
+        "run-browser": "^1.3.0",
+        "tap-dot": "^0.2.1"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://github.com/browserify/console-browserify/raw/master/LICENSE"
+        }
+      ],
+      "scripts": {
+        "test": "node ./test/index.js | tap-spec",
+        "dot": "node ./test/index.js | tap-dot",
+        "start": "node ./index.js",
+        "cover": "istanbul cover --report none --print detail ./test/index.js",
+        "view-cover": "istanbul report html && google-chrome ./coverage/index.html",
+        "browser": "run-browser test/index.js",
+        "phantom": "run-browser test/index.js -b | tap-spec",
+        "build": "browserify test/index.js -o test/static/bundle.js",
+        "testem": "testem"
+      },
+      "testling": {
+        "files": "test/index.js",
+        "browsers": [
+          "ie/8..latest",
+          "firefox/16..latest",
+          "firefox/nightly",
+          "chrome/22..latest",
+          "chrome/canary",
+          "opera/12..latest",
+          "opera/next",
+          "safari/5.1..latest",
+          "ipad/6.0..latest",
+          "iphone/6.0..latest",
+          "android-browser/4.2..latest"
+        ]
+      },
+      "gitHead": "ee8033921697e97f52e3a4ecc641faf649a03ac3",
+      "_id": "console-browserify@1.2.0",
+      "_nodeVersion": "12.13.0",
+      "_npmVersion": "6.12.0",
+      "dist": {
+        "integrity": "sha512-ZMkYO/LkF17QvCPqM0gxw8yUzigAOZOSWSHg91FH6orS7vcEj5dVZTidN2fQ14yBSdg97RqhSNwLUXInd52OTA==",
+        "shasum": "67063cef57ceb6cf4993a2ab3a55840ae8c49336",
+        "tarball": "https://registry.npmjs.org/console-browserify/-/console-browserify-1.2.0.tgz",
+        "fileCount": 10,
+        "unpackedSize": 10275,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdtqplCRA9TVsSAnZWagAAF6cP/1Kx1sQ8vaSWWu2ozb8k\nXs1npZM3BjXVFPI60LBFrHzOSRvKaleYb0LuXAFs4WdS4z8xTphfZWTxmeYU\nXF7EWJ0JmF5fgUxIp1tnfMuOLJeWe5xzO7mAvQtBxgKjP0aivmUeQrW2I7Dg\nsr9RBz16A7xmL2bBBKovvrnEYmK/CP1FGxM+GQPEZyUN/5qOoc0r3o2y+/08\nH6XjJBHYlMCwZYKmRI4CEmgd7FT1Z0EPBOpXdoeWOPZTcFZzP6Guij/AfKwP\nHBQxDFcYPOX+E4tI/9k8eq7bw7a02SfE67N1Q57IDslykwKY2uNoMdLqTBfz\nbeJaOsha+SpScjzlfuYgvEyaUbfrXfeo8cga/Ebq7OlgEQginGio2cYponat\nLNryKWGGXGnLPnjY8zS2qLqbHzS1wEu38Atuq7uvZamGgvX8KIvFBO82n373\nSotFzdAjb3s6gEoSIBu6bmCIXGG1LoFAGXOMs2UapF02eV0BClTE1IMitQpk\nRx+sRmkbFbaWzkB+BmODAT59oogC6yjGEx7wpGE9ca3HGXjV7O76PnvOj8NX\nvSpFqaDbehb/B5o9b+MR1WWG2anj8n1TFuEJOUfDaZEu6Tgubk7lYFUblhLV\n0JQCQFXuL5Gj8ybPi57CTkEcLmrI9n9CWJI2/5BWWCOiOMVRHiBnLooha/0h\nMn45\r\n=Ksg7\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "michael.williams@enspiral.com",
+          "name": "ahdinosaur"
+        },
+        {
+          "email": "vestibule@anandthakker.net",
+          "name": "anandthakker"
+        },
+        {
+          "email": "darawk@gmail.com",
+          "name": "ashaffer88"
+        },
+        {
+          "email": "b@lupton.cc",
+          "name": "balupton"
+        },
+        {
+          "email": "post.ben.here@gmail.com",
+          "name": "bpostlethwaite"
+        },
+        {
+          "email": "bcomnes@gmail.com",
+          "name": "bret"
+        },
+        {
+          "email": "calvin.metcalf@gmail.com",
+          "name": "cwmma"
+        },
+        {
+          "email": "shtylman@gmail.com",
+          "name": "defunctzombie"
+        },
+        {
+          "email": "dominic.tarr@gmail.com",
+          "name": "dominictarr"
+        },
+        {
+          "email": "contact@elnounch.net",
+          "name": "elnounch"
+        },
+        {
+          "email": "github@tixz.dk",
+          "name": "emilbayes"
+        },
+        {
+          "email": "feross@feross.org",
+          "name": "feross"
+        },
+        {
+          "email": "forbes@lindesay.co.uk",
+          "name": "forbeslindesay"
+        },
+        {
+          "email": "pereira.filype@gmail.com",
+          "name": "fpereira1"
+        },
+        {
+          "email": "garann@gmail.com",
+          "name": "garann"
+        },
+        {
+          "email": "me@gkatsev.com",
+          "name": "gkatsev"
+        },
+        {
+          "email": "renee@kooi.me",
+          "name": "goto-bus-stop"
+        },
+        {
+          "email": "hughskennedy@gmail.com",
+          "name": "hughsk"
+        },
+        {
+          "email": "fedor@indutny.com",
+          "name": "indutny"
+        },
+        {
+          "email": "npm-public@jessemccarthy.net",
+          "name": "jmm"
+        },
+        {
+          "email": "jprichardson@gmail.com",
+          "name": "jprichardson"
+        },
+        {
+          "email": "jryans@gmail.com",
+          "name": "jryans"
+        },
+        {
+          "email": "martin.heidegger@gmail.com",
+          "name": "leichtgewicht"
+        },
+        {
+          "email": "lukechilds123@gmail.com",
+          "name": "lukechilds"
+        },
+        {
+          "email": "mathiasbuus@gmail.com",
+          "name": "mafintosh"
+        },
+        {
+          "email": "dave.des@gmail.com",
+          "name": "mattdesl"
+        },
+        {
+          "email": "max@maxogden.com",
+          "name": "maxogden"
+        },
+        {
+          "email": "palmermebane@gmail.com",
+          "name": "mellowmelon"
+        },
+        {
+          "email": "parshap+npm@gmail.com",
+          "name": "parshap"
+        },
+        {
+          "email": "peteris.krumins@gmail.com",
+          "name": "pkrumins"
+        },
+        {
+          "email": "raynos2@gmail.com",
+          "name": "raynos"
+        },
+        {
+          "email": "sethvincent@gmail.com",
+          "name": "sethvincent"
+        },
+        {
+          "email": "maochenyan@gmail.com",
+          "name": "stevemao"
+        },
+        {
+          "email": "substack@gmail.com",
+          "name": "substack"
+        },
+        {
+          "email": "me@JoshDuff.com",
+          "name": "tehshrike"
+        },
+        {
+          "email": "terinjokes@gmail.com",
+          "name": "terinjokes"
+        },
+        {
+          "email": "thlorenz@gmx.de",
+          "name": "thlorenz"
+        },
+        {
+          "email": "ungoldman@gmail.com",
+          "name": "ungoldman"
+        },
+        {
+          "email": "yerko.palma@usach.cl",
+          "name": "yerkopalma"
+        },
+        {
+          "email": "yoshuawuyts@gmail.com",
+          "name": "yoshuawuyts"
+        },
+        {
+          "email": "zertosh@gmail.com",
+          "name": "zertosh"
+        }
+      ],
+      "_npmUser": {
+        "name": "goto-bus-stop",
+        "email": "renee@kooi.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/console-browserify_1.2.0_1572252260673_0.6432941903463654"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# console-browserify [![Build Status](https://travis-ci.org/browserify/console-browserify.png?branch=master)](https://travis-ci.org/browserify/console-browserify)\n\nEmulate console for all the browsers\n\n## Install\n\nYou usually do not have to install `console-browserify` yourself! If your code runs in Node.js, `console` is built in. If your code runs in the browser, bundlers like [browserify](https://github.com/browserify/browserify) or [webpack](https://github.com/webpack/webpack) also include the `console-browserify` module when you do `require('console')`.\n\nBut if none of those apply, with npm do:\n\n```\nnpm install console-browserify\n```\n\n## Usage\n\n```js\nvar console = require(\"console\")\n// Or when manually using console-browserify directly:\n// var console = require(\"console-browserify\")\n\nconsole.log(\"hello world!\")\n```\n\n## API\n\nSee the [Node.js Console docs](https://nodejs.org/api/console.html). `console-browserify` does not support creating new `Console` instances and does not support the Inspector-only methods.\n\n## Contributing\n\nPRs are very welcome! The main way to contribute to `console-browserify` is by porting features, bugfixes and tests from Node.js. Ideally, code contributions to this module are copy-pasted from Node.js and transpiled to ES5, rather than reimplemented from scratch. Matching the Node.js code as closely as possible makes maintenance simpler when new changes land in Node.js.\nThis module intends to provide exactly the same API as Node.js, so features that are not available in the core `console` module will not be accepted. Feature requests should instead be directed at [nodejs/node](https://github.com/nodejs/node) and will be added to this module once they are implemented in Node.js.\n\nIf there is a difference in behaviour between Node.js's `console` module and this module, please open an issue!\n\n## Contributors\n\n - Raynos\n\n## License\n\n[MIT](./LICENSE)\n",
+  "maintainers": [
+    {
+      "email": "lukechilds123@gmail.com",
+      "name": "lukechilds"
+    },
+    {
+      "email": "shtylman@gmail.com",
+      "name": "defunctzombie"
+    },
+    {
+      "email": "substack@gmail.com",
+      "name": "substack"
+    },
+    {
+      "email": "feross@feross.org",
+      "name": "feross"
+    },
+    {
+      "email": "me@gkatsev.com",
+      "name": "gkatsev"
+    },
+    {
+      "email": "zertosh@gmail.com",
+      "name": "zertosh"
+    },
+    {
+      "email": "mathiasbuus@gmail.com",
+      "name": "mafintosh"
+    },
+    {
+      "email": "max@maxogden.com",
+      "name": "maxogden"
+    },
+    {
+      "email": "dominic.tarr@gmail.com",
+      "name": "dominictarr"
+    },
+    {
+      "email": "thlorenz@gmx.de",
+      "name": "thlorenz"
+    },
+    {
+      "email": "terinjokes@gmail.com",
+      "name": "terinjokes"
+    },
+    {
+      "email": "npm-public@jessemccarthy.net",
+      "name": "jmm"
+    },
+    {
+      "email": "palmermebane@gmail.com",
+      "name": "mellowmelon"
+    },
+    {
+      "email": "darawk@gmail.com",
+      "name": "ashaffer88"
+    },
+    {
+      "email": "b@lupton.cc",
+      "name": "balupton"
+    },
+    {
+      "email": "calvin.metcalf@gmail.com",
+      "name": "cwmma"
+    },
+    {
+      "email": "jprichardson@gmail.com",
+      "name": "jprichardson"
+    },
+    {
+      "email": "fedor@indutny.com",
+      "name": "indutny"
+    },
+    {
+      "email": "jryans@gmail.com",
+      "name": "jryans"
+    },
+    {
+      "email": "sethvincent@gmail.com",
+      "name": "sethvincent"
+    },
+    {
+      "email": "yoshuawuyts@gmail.com",
+      "name": "yoshuawuyts"
+    },
+    {
+      "email": "ungoldman@gmail.com",
+      "name": "ungoldman"
+    },
+    {
+      "email": "michael.williams@enspiral.com",
+      "name": "ahdinosaur"
+    },
+    {
+      "email": "contact@elnounch.net",
+      "name": "elnounch"
+    },
+    {
+      "email": "parshap+npm@gmail.com",
+      "name": "parshap"
+    },
+    {
+      "email": "yerko.palma@usach.cl",
+      "name": "yerkopalma"
+    },
+    {
+      "email": "forbes@lindesay.co.uk",
+      "name": "forbeslindesay"
+    },
+    {
+      "email": "martin.heidegger@gmail.com",
+      "name": "leichtgewicht"
+    },
+    {
+      "email": "garann@gmail.com",
+      "name": "garann"
+    },
+    {
+      "email": "bcomnes@gmail.com",
+      "name": "bret"
+    },
+    {
+      "email": "vestibule@anandthakker.net",
+      "name": "anandthakker"
+    },
+    {
+      "email": "dave.des@gmail.com",
+      "name": "mattdesl"
+    },
+    {
+      "email": "hughskennedy@gmail.com",
+      "name": "hughsk"
+    },
+    {
+      "email": "pereira.filype@gmail.com",
+      "name": "fpereira1"
+    },
+    {
+      "email": "renee@kooi.me",
+      "name": "goto-bus-stop"
+    },
+    {
+      "email": "post.ben.here@gmail.com",
+      "name": "bpostlethwaite"
+    },
+    {
+      "email": "github@tixz.dk",
+      "name": "emilbayes"
+    },
+    {
+      "email": "maochenyan@gmail.com",
+      "name": "stevemao"
+    },
+    {
+      "email": "peteris.krumins@gmail.com",
+      "name": "pkrumins"
+    },
+    {
+      "email": "me@JoshDuff.com",
+      "name": "tehshrike"
+    },
+    {
+      "email": "raynos2@gmail.com",
+      "name": "raynos"
+    }
+  ],
+  "time": {
+    "modified": "2020-02-01T21:46:24.953Z",
+    "created": "2013-01-27T05:05:36.936Z",
+    "0.1.0": "2013-01-27T05:05:37.892Z",
+    "0.1.1": "2013-01-27T05:15:25.967Z",
+    "0.1.2": "2013-01-27T05:20:25.376Z",
+    "0.1.3": "2013-01-27T05:42:25.110Z",
+    "0.1.4": "2013-01-29T22:33:05.762Z",
+    "0.1.5": "2013-01-30T02:59:39.845Z",
+    "0.1.6": "2013-02-05T04:59:35.082Z",
+    "1.0.1": "2013-09-23T18:45:29.638Z",
+    "1.0.2": "2013-12-13T18:33:49.234Z",
+    "1.0.3": "2013-12-13T18:39:56.650Z",
+    "1.1.0": "2014-04-08T20:30:24.778Z",
+    "1.2.0": "2019-10-28T08:44:20.862Z"
+  },
+  "author": {
+    "name": "Raynos",
+    "email": "raynos2@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/browserify/console-browserify.git"
+  },
+  "homepage": "https://github.com/browserify/console-browserify",
+  "keywords": [],
+  "contributors": [
+    {
+      "name": "Raynos"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/browserify/console-browserify/issues",
+    "email": "raynos2@gmail.com"
+  },
+  "readmeFilename": "README.md",
+  "users": {
+    "binnng": true,
+    "simplyianm": true,
+    "erikvold": true
+  }
+}

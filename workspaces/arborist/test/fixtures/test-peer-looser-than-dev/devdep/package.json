@@ -1,0 +1,7 @@
+{
+  "name": "@isaacs/test-peer-looser-than-dev-devdep",
+  "version": "1.0.1",
+  "peerDependencies": {
+    "@isaacs/test-peer-looser-than-dev-a-peer-dep": "1"
+  }
+}

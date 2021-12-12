@@ -1,0 +1,202 @@
+{
+  "_id": "object-copy",
+  "_rev": "2-855916efe3abb123539dd32015338ded",
+  "name": "object-copy",
+  "description": "Copy static properties, prototype properties, and descriptors from one object to another.",
+  "dist-tags": {
+    "latest": "1.0.0"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "object-copy",
+      "description": "Copy static properties, prototype properties, and descriptors from one object to another.",
+      "version": "0.1.0",
+      "homepage": "https://github.com/jonschlinkert/object-copy",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/object-copy.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/object-copy/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "copy-descriptor": "^0.1.0",
+        "define-property": "^0.2.5",
+        "kind-of": "^3.0.3"
+      },
+      "devDependencies": {
+        "gulp-format-md": "*",
+        "mocha": "*"
+      },
+      "keywords": [
+        "copy",
+        "object"
+      ],
+      "verb": {
+        "layout": "default",
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": []
+        },
+        "reflinks": [
+          "verb"
+        ]
+      },
+      "gitHead": "15b972a4a7137f6bf47886c68e73a2fffa8eacf2",
+      "_id": "object-copy@0.1.0",
+      "_shasum": "7e7d858b781bd7c991a41ba975ed3812754e998c",
+      "_from": ".",
+      "_npmVersion": "3.8.9",
+      "_nodeVersion": "6.2.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "7e7d858b781bd7c991a41ba975ed3812754e998c",
+        "tarball": "https://registry.npmjs.org/object-copy/-/object-copy-0.1.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/object-copy-0.1.0.tgz_1465495667685_0.612287495052442"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "object-copy",
+      "description": "Copy static properties, prototype properties, and descriptors from one object to another.",
+      "version": "1.0.0",
+      "homepage": "https://github.com/jonschlinkert/object-copy",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/object-copy.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/object-copy/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "copy-descriptor": "^0.1.1",
+        "define-property": "^1.0.0",
+        "kind-of": "^5.0.0"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^0.1.12",
+        "mocha": "^3.4.2"
+      },
+      "keywords": [
+        "copy",
+        "object"
+      ],
+      "verb": {
+        "layout": "default",
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "copy-descriptor",
+            "define-property",
+            "kind-of"
+          ]
+        },
+        "reflinks": [
+          "verb"
+        ]
+      },
+      "gitHead": "de31ea69653f62d98e3dad3496af541fc279aa05",
+      "_id": "object-copy@1.0.0",
+      "_npmVersion": "5.0.3",
+      "_nodeVersion": "7.7.3",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "integrity": "sha512-aOrmvYlQQ7sB/vVo65iqSvGBbqXPLkz90viy6/Tg9sLvwalib9wguMIuGViFEC5S5KJkEAdSKOTobbtxnLCUQg==",
+        "shasum": "b87092f787590dedca2d134493f46c1d3351956c",
+        "tarball": "https://registry.npmjs.org/object-copy/-/object-copy-1.0.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/object-copy-1.0.0.tgz_1498391294174_0.4766365101095289"
+      },
+      "directories": {}
+    }
+  },
+  "readme": "# object-copy [![NPM version](https://img.shields.io/npm/v/object-copy.svg?style=flat)](https://www.npmjs.com/package/object-copy) [![NPM monthly downloads](https://img.shields.io/npm/dm/object-copy.svg?style=flat)](https://npmjs.org/package/object-copy) [![NPM total downloads](https://img.shields.io/npm/dt/object-copy.svg?style=flat)](https://npmjs.org/package/object-copy) [![Linux Build Status](https://img.shields.io/travis/jonschlinkert/object-copy.svg?style=flat&label=Travis)](https://travis-ci.org/jonschlinkert/object-copy)\n\n> Copy static properties, prototype properties, and descriptors from one object to another.\n\n## Install\n\nInstall with [npm](https://www.npmjs.com/):\n\n```sh\n$ npm install --save object-copy\n```\n\n## Usage\n\n```js\nvar copy = require('object-copy');\n```\n\n## API\n\n### [copy](index.js#L32)\n\nCopy static properties, prototype properties, and descriptors from one object to another.\n\n**Params**\n\n* `receiver` **{Object}**\n* `provider` **{Object}**\n* `omit` **{String|Array}**: (optional) One or more properties to omit\n* `filter` **{Function}**: (optional) Called on each key before copying the property. If the function returns false, the property will not be copied.\n* `returns` **{Object}**\n\n**Example**\n\n```js\nfunction App() {}\nvar proto = App.prototype;\nApp.prototype.set = function() {};\nApp.prototype.get = function() {};\n\nvar obj = {};\ncopy(obj, proto);\n\n// filter out keys\ncopy(obj, proto, function(key) {\n  return key !== 'index';\n});\n```\n\n## About\n\n### Related projects\n\n* [copy-descriptor](https://www.npmjs.com/package/copy-descriptor): Copy a descriptor from object A to object B | [homepage](https://github.com/jonschlinkert/copy-descriptor \"Copy a descriptor from object A to object B\")\n* [define-property](https://www.npmjs.com/package/define-property): Define a non-enumerable property on an object. | [homepage](https://github.com/jonschlinkert/define-property \"Define a non-enumerable property on an object.\")\n* [kind-of](https://www.npmjs.com/package/kind-of): Get the native type of a value. | [homepage](https://github.com/jonschlinkert/kind-of \"Get the native type of a value.\")\n\n### Contributing\n\nPull requests and stars are always welcome. For bugs and feature requests, [please create an issue](../../issues/new).\n\n### Building docs\n\n_(This project's readme.md is generated by [verb](https://github.com/verbose/verb-generate-readme), please don't edit the readme directly. Any changes to the readme must be made in the [.verb.md](.verb.md) readme template.)_\n\nTo generate the readme, run the following command:\n\n```sh\n$ npm install -g verbose/verb#dev verb-generate-readme && verb\n```\n\n### Running tests\n\nRunning and reviewing unit tests is a great way to get familiarized with a library and its API. You can install dependencies and run tests with the following command:\n\n```sh\n$ npm install && npm test\n```\n\n### Author\n\n**Jon Schlinkert**\n\n* [github/jonschlinkert](https://github.com/jonschlinkert)\n* [twitter/jonschlinkert](https://twitter.com/jonschlinkert)\n\n### License\n\nCopyright © 2017, [Jon Schlinkert](https://github.com/jonschlinkert).\nReleased under the [MIT License](LICENSE).\n\n***\n\n_This file was generated by [verb-generate-readme](https://github.com/verbose/verb-generate-readme), v0.6.0, on June 25, 2017._",
+  "maintainers": [
+    {
+      "name": "jonschlinkert",
+      "email": "github@sellside.com"
+    }
+  ],
+  "time": {
+    "modified": "2017-06-25T11:48:15.080Z",
+    "created": "2016-06-09T18:07:50.184Z",
+    "0.1.0": "2016-06-09T18:07:50.184Z",
+    "1.0.0": "2017-06-25T11:48:15.080Z"
+  },
+  "homepage": "https://github.com/jonschlinkert/object-copy",
+  "keywords": [
+    "copy",
+    "object"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonschlinkert/object-copy.git"
+  },
+  "author": {
+    "name": "Jon Schlinkert",
+    "url": "https://github.com/jonschlinkert"
+  },
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/object-copy/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "_attachments": {}
+}

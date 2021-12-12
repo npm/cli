@@ -1,0 +1,376 @@
+{
+  "_id": "is-path-cwd",
+  "_rev": "9-5a080456c6b6d54e977e59d0b0f28a5b",
+  "name": "is-path-cwd",
+  "description": "Check if a path is the current working directory",
+  "dist-tags": {
+    "latest": "2.2.0"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "is-path-cwd",
+      "version": "0.1.0",
+      "description": "Check if a path is CWD",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/sindresorhus/is-path-cwd"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "path",
+        "cwd",
+        "pwd",
+        "check",
+        "filepath",
+        "file",
+        "folder"
+      ],
+      "devDependencies": {
+        "mocha": "*"
+      },
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is-path-cwd/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is-path-cwd",
+      "_id": "is-path-cwd@0.1.0",
+      "_shasum": "df3c09a7cab10bd40b9d1cdfae485bd882d4b1ab",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "df3c09a7cab10bd40b9d1cdfae485bd882d4b1ab",
+        "tarball": "https://registry.npmjs.org/is-path-cwd/-/is-path-cwd-0.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "is-path-cwd",
+      "version": "1.0.0",
+      "description": "Check if a path is CWD",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/is-path-cwd"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "path",
+        "cwd",
+        "pwd",
+        "check",
+        "filepath",
+        "file",
+        "folder"
+      ],
+      "devDependencies": {
+        "mocha": "*"
+      },
+      "gitHead": "f71d4ecaa43bfe23c9cb35af6bf31e6b5b3f04eb",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is-path-cwd/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is-path-cwd",
+      "_id": "is-path-cwd@1.0.0",
+      "_shasum": "d225ec23132e89edd38fda767472e62e65f1106d",
+      "_from": ".",
+      "_npmVersion": "1.4.21",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "d225ec23132e89edd38fda767472e62e65f1106d",
+        "tarball": "https://registry.npmjs.org/is-path-cwd/-/is-path-cwd-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "is-path-cwd",
+      "version": "2.0.0",
+      "description": "Check if a path is CWD",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/is-path-cwd.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "path",
+        "cwd",
+        "pwd",
+        "check",
+        "filepath",
+        "file",
+        "folder"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "0ffd9c312b517b0067597e369d3e370361263578",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is-path-cwd/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is-path-cwd#readme",
+      "_id": "is-path-cwd@2.0.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.9.4",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-m5dHHzpOXEiv18JEORttBO64UgTEypx99vCxQLjbBvGhOJxnTNglYoFXxwo6AbsQb79sqqycQEHv2hWkHZAijA==",
+        "shasum": "d4777a8e227a00096a31f030db3770f84b116c02",
+        "tarball": "https://registry.npmjs.org/is-path-cwd/-/is-path-cwd-2.0.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 2197
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is-path-cwd_2.0.0_1521732970847_0.6802231486154835"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.1.0": {
+      "name": "is-path-cwd",
+      "version": "2.1.0",
+      "description": "Check if a path is the current working directory",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/is-path-cwd.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "path",
+        "cwd",
+        "pwd",
+        "check",
+        "filepath",
+        "file",
+        "folder"
+      ],
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "975502785291dac455eb9f0cd2da196564240dbb",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is-path-cwd/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is-path-cwd#readme",
+      "_id": "is-path-cwd@2.1.0",
+      "_nodeVersion": "8.16.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-Sc5j3/YnM8tDeyCsVeKlm/0p95075DyLmDEIkSgQ7mXkrOX+uTCtmQFm0CYzVyJwcCCmO3k8qfJt17SxQwB5Zw==",
+        "shasum": "2e0c7e463ff5b7a0eb60852d851a6809347a124c",
+        "tarball": "https://registry.npmjs.org/is-path-cwd/-/is-path-cwd-2.1.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 2614,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcutFaCRA9TVsSAnZWagAACs0P+gJX8xmMKo3v13ZNIYW8\nmX6RGyaFpaed4jtWc0MHeVJ3YFH5HAr+1oQ8Su7rM2gj8rYYKnqi1p6DbTD/\n3ChA19RHHgCi9kDAycijl3G9b25JfIu0JIqp2541lXGqIpLZX4E4ynnxSCGX\nJb24BqYV9WYDU82VyJHWVlcI8mdcymtBVXbOzR3PumAz0DeBLaHO7ja2DV7V\nXWAuNiDX7Tv1MqIsygU/J1LGA3TbyAAIOs4+bJ4O5NJjoC2tzi2A7LWWt72M\nEcBkpLr3zR1yH4hoLTJtYYqxZtlCnDbAjgDAeLbBW+ReSaQfQqPdDjoO1eyL\n9AU/BqzcjbZQLUh5KZFI0dAhEueXbAZRMDTOCZKaWUjHwZEppP0aRfQAOG2P\nPUbDUssY5TJl1mMckyd1ohG9/khymUQ7Yrn/w+iXTZD+1zzklvo8cVH9Sgwq\nXYxSxsPRsh86QT0sgNx9Tx+9vuUK+4HwuJZ1SbzYGt4FgWk7lHV7euALwZO7\nLWdEZuWsKG6ehpYCqKO6RHVwZwRYsFUZNGVikI4llZxP1PFc6b1jVuue6LH1\nTINtsajTB1IckXXOYNzBZ7/l1O6dfIkn0M+PHpDmZDiyDficF+z5sEaYc9q3\n9OapBInfUxD0wxIeTucxe93t5fsvZIE+c4SH8waR75WSmJnUx6mHijh7lIEm\n3Myt\r\n=TMWE\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is-path-cwd_2.1.0_1555747161479_0.6607062934508494"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.2.0": {
+      "name": "is-path-cwd",
+      "version": "2.2.0",
+      "description": "Check if a path is the current working directory",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/is-path-cwd.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "path",
+        "cwd",
+        "pwd",
+        "check",
+        "filepath",
+        "file",
+        "folder"
+      ],
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "d4d1b6174ab30017d476b0210a5b01e69b3c076a",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is-path-cwd/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is-path-cwd#readme",
+      "_id": "is-path-cwd@2.2.0",
+      "_nodeVersion": "12.3.1",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-w942bTcih8fdJPJmQHFzkS76NEP8Kzzvmw92cXsazb8intwLqPibPPdXf4ANdKV3rYMuuQYGIWtvz9JilB3NFQ==",
+        "shasum": "67d43b82664a7b5191fd9119127eb300048a9fdb",
+        "tarball": "https://registry.npmjs.org/is-path-cwd/-/is-path-cwd-2.2.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 2760,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdH4cCCRA9TVsSAnZWagAAqbQQAI7vsh7pIgWFXZBzHWNi\nBjqRnZIx9EovmSWHAZPw1ia1n68+5brHBFqcBHBtMLnVgwzXJcWR7153YKsH\nveb0LGYvYXZwWhbsL33bhJh1RDI6kMJEAI2sryuyLDFJJt+SF1RiU+rgjjaT\n6iCEJrJlEuZElh+zqUfBonF2IbvbSChV0rPngcR/i4ySL4G8GH8spvRN7D9r\nNiUI5K5qmltuunDAoh8tqrPfdv55d6hPGAWGsAANEpY1yyI4eRA83V4+FQvl\nSFPJ2XEgpSG2p9kvqwcfO+5DoR2MatYo2Rg9ddKLGsVj3ZWY8YDtE39gy8+k\nSegacBhzpXvD8SuifA3a8fl6PUiLMEPd37Lgd7E4LfKQ+cHpUH5YbC/3Qpvc\npOemcYA88LyaOuiGBxzXRxXCvLqQThkdP0jyySSjpxpWtcyNV2DHGU0EmOoS\nWztnDOhziFap9L9V+fQOm4CAQ6Yr/bnhDrvhzmdP3yMx7JTu91ISwqw36Jxl\nF9poCCxPhWGT7GkqQXh+UP7RM9abGNoo2ue38BiXiUjIqsy9u70gIRr+FP4/\n0Q7tjmdUXFHjC/teRZEai7WOhaEtdA+i8ywUYFvjPUgqReuffzNW24MIXhYD\nHdsTJdiunhx2o/SfN8eBZo6NI7Qe5TixJP+bZTVlDsuB6UbgjEkqim0XWkJ/\noR7d\r\n=NvyB\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is-path-cwd_2.2.0_1562347266074_0.8247780777418467"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# is-path-cwd [![Build Status](https://travis-ci.org/sindresorhus/is-path-cwd.svg?branch=master)](https://travis-ci.org/sindresorhus/is-path-cwd)\n\n> Check if a path is the [current working directory](https://en.wikipedia.org/wiki/Working_directory)\n\n\n## Install\n\n```\n$ npm install is-path-cwd\n```\n\n\n## Usage\n\n```js\nconst isPathCwd = require('is-path-cwd');\n\nisPathCwd(process.cwd());\n//=> true\n\nisPathCwd('unicorn');\n//=> false\n```\n\n\n## License\n\nMIT © [Sindre Sorhus](https://sindresorhus.com)\n",
+  "maintainers": [
+    {
+      "name": "sindresorhus",
+      "email": "sindresorhus@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2019-07-05T17:21:08.717Z",
+    "created": "2014-06-19T09:53:17.658Z",
+    "0.1.0": "2014-06-19T09:53:17.658Z",
+    "1.0.0": "2014-08-14T09:47:37.874Z",
+    "2.0.0": "2018-03-22T15:36:10.886Z",
+    "2.1.0": "2019-04-20T07:59:21.705Z",
+    "2.2.0": "2019-07-05T17:21:06.182Z"
+  },
+  "homepage": "https://github.com/sindresorhus/is-path-cwd#readme",
+  "keywords": [
+    "path",
+    "cwd",
+    "pwd",
+    "check",
+    "filepath",
+    "file",
+    "folder"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/is-path-cwd.git"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "bugs": {
+    "url": "https://github.com/sindresorhus/is-path-cwd/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md",
+  "users": {
+    "itonyyo": true,
+    "rocket0191": true
+  }
+}

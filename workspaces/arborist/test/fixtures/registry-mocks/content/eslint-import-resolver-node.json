@@ -1,0 +1,801 @@
+{
+  "_id": "eslint-import-resolver-node",
+  "_rev": "21-1b2f1c13b07aecc70e2d00f01f872ce0",
+  "name": "eslint-import-resolver-node",
+  "description": "Node default behavior import resolution plugin for eslint-plugin-import.",
+  "dist-tags": {
+    "latest": "0.3.4",
+    "next": "0.2.0"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "eslint-import-resolver-node",
+      "version": "0.1.0",
+      "description": "Node default behavior import resolution plugin for eslint-plugin-import.",
+      "main": "index.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/benmosher/eslint-plugin-import.git"
+      },
+      "keywords": [
+        "eslint",
+        "eslintplugin",
+        "esnext",
+        "modules",
+        "eslint-plugin-import"
+      ],
+      "author": {
+        "name": "Ben Mosher",
+        "url": "me@benmosher.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/benmosher/eslint-plugin-import/issues"
+      },
+      "homepage": "https://github.com/benmosher/eslint-plugin-import",
+      "dependencies": {
+        "object-assign": "^4.0.1",
+        "resolve": "^1.1.6"
+      },
+      "_id": "eslint-import-resolver-node@0.1.0",
+      "_shasum": "dabc60b38b5a28f6782c640574c1de2879bb4793",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.2",
+      "_npmUser": {
+        "name": "benmosher",
+        "email": "me@benmosher.com"
+      },
+      "maintainers": [
+        {
+          "name": "benmosher",
+          "email": "me@benmosher.com"
+        }
+      ],
+      "dist": {
+        "shasum": "dabc60b38b5a28f6782c640574c1de2879bb4793",
+        "tarball": "https://registry.npmjs.org/eslint-import-resolver-node/-/eslint-import-resolver-node-0.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.1.1": {
+      "name": "eslint-import-resolver-node",
+      "version": "0.1.1",
+      "description": "Node default behavior import resolution plugin for eslint-plugin-import.",
+      "main": "index.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/benmosher/eslint-plugin-import.git"
+      },
+      "keywords": [
+        "eslint",
+        "eslintplugin",
+        "esnext",
+        "modules",
+        "eslint-plugin-import"
+      ],
+      "author": {
+        "name": "Ben Mosher",
+        "url": "me@benmosher.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/benmosher/eslint-plugin-import/issues"
+      },
+      "homepage": "https://github.com/benmosher/eslint-plugin-import",
+      "dependencies": {
+        "object-assign": "^4.0.1",
+        "resolve": "^1.1.6"
+      },
+      "_id": "eslint-import-resolver-node@0.1.1",
+      "_shasum": "fc8b286e36cfe209404160719443601abc2496e1",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.2",
+      "_npmUser": {
+        "name": "benmosher",
+        "email": "me@benmosher.com"
+      },
+      "maintainers": [
+        {
+          "name": "benmosher",
+          "email": "me@benmosher.com"
+        }
+      ],
+      "dist": {
+        "shasum": "fc8b286e36cfe209404160719443601abc2496e1",
+        "tarball": "https://registry.npmjs.org/eslint-import-resolver-node/-/eslint-import-resolver-node-0.1.1.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.0": {
+      "name": "eslint-import-resolver-node",
+      "version": "0.2.0",
+      "description": "Node default behavior import resolution plugin for eslint-plugin-import.",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/benmosher/eslint-plugin-import.git"
+      },
+      "keywords": [
+        "eslint",
+        "eslintplugin",
+        "esnext",
+        "modules",
+        "eslint-plugin-import"
+      ],
+      "author": {
+        "name": "Ben Mosher",
+        "url": "me@benmosher.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/benmosher/eslint-plugin-import/issues"
+      },
+      "homepage": "https://github.com/benmosher/eslint-plugin-import",
+      "dependencies": {
+        "object-assign": "^4.0.1",
+        "resolve": "^1.1.6"
+      },
+      "peerDependencies": {
+        "eslint-plugin-import": ">=1.4.0"
+      },
+      "devDependencies": {
+        "chai": "^3.4.1",
+        "mocha": "^2.3.4"
+      },
+      "_id": "eslint-import-resolver-node@0.2.0",
+      "_shasum": "e12d5346244cf1efd7676ac577317da8c78f6990",
+      "_from": ".",
+      "_npmVersion": "3.7.2",
+      "_nodeVersion": "4.2.5",
+      "_npmUser": {
+        "name": "benmosher",
+        "email": "me@benmosher.com"
+      },
+      "maintainers": [
+        {
+          "name": "benmosher",
+          "email": "me@benmosher.com"
+        }
+      ],
+      "dist": {
+        "shasum": "e12d5346244cf1efd7676ac577317da8c78f6990",
+        "tarball": "https://registry.npmjs.org/eslint-import-resolver-node/-/eslint-import-resolver-node-0.2.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-13-west.internal.npmjs.com",
+        "tmp": "tmp/eslint-import-resolver-node-0.2.0.tgz_1458903224105_0.39970053313300014"
+      },
+      "directories": {}
+    },
+    "0.2.1": {
+      "name": "eslint-import-resolver-node",
+      "version": "0.2.1",
+      "description": "Node default behavior import resolution plugin for eslint-plugin-import.",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/benmosher/eslint-plugin-import.git"
+      },
+      "keywords": [
+        "eslint",
+        "eslintplugin",
+        "esnext",
+        "modules",
+        "eslint-plugin-import"
+      ],
+      "author": {
+        "name": "Ben Mosher",
+        "url": "me@benmosher.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/benmosher/eslint-plugin-import/issues"
+      },
+      "homepage": "https://github.com/benmosher/eslint-plugin-import",
+      "dependencies": {
+        "object-assign": "^4.0.1",
+        "resolve": "^1.1.6"
+      },
+      "peerDependencies": {
+        "eslint-plugin-import": ">=1.4.0"
+      },
+      "devDependencies": {
+        "chai": "^3.4.1",
+        "mocha": "^2.3.4"
+      },
+      "_id": "eslint-import-resolver-node@0.2.1",
+      "_shasum": "476613446039949c6c28c3036db7a2566d8b7b80",
+      "_from": ".",
+      "_npmVersion": "3.7.2",
+      "_nodeVersion": "4.2.5",
+      "_npmUser": {
+        "name": "benmosher",
+        "email": "me@benmosher.com"
+      },
+      "dist": {
+        "shasum": "476613446039949c6c28c3036db7a2566d8b7b80",
+        "tarball": "https://registry.npmjs.org/eslint-import-resolver-node/-/eslint-import-resolver-node-0.2.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "benmosher",
+          "email": "me@benmosher.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/eslint-import-resolver-node-0.2.1.tgz_1466511809409_0.15001852856948972"
+      },
+      "directories": {}
+    },
+    "0.2.2": {
+      "name": "eslint-import-resolver-node",
+      "version": "0.2.2",
+      "description": "Node default behavior import resolution plugin for eslint-plugin-import.",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/benmosher/eslint-plugin-import.git"
+      },
+      "keywords": [
+        "eslint",
+        "eslintplugin",
+        "esnext",
+        "modules",
+        "eslint-plugin-import"
+      ],
+      "author": {
+        "name": "Ben Mosher",
+        "url": "me@benmosher.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/benmosher/eslint-plugin-import/issues"
+      },
+      "homepage": "https://github.com/benmosher/eslint-plugin-import",
+      "dependencies": {
+        "object-assign": "^4.0.1",
+        "resolve": "^1.1.6"
+      },
+      "devDependencies": {
+        "chai": "^3.4.1",
+        "mocha": "^2.3.4"
+      },
+      "_id": "eslint-import-resolver-node@0.2.2",
+      "_shasum": "4f5dd01eae1ac8eed0a8dd4653a98623a4cb173c",
+      "_from": ".",
+      "_npmVersion": "3.7.2",
+      "_nodeVersion": "4.2.5",
+      "_npmUser": {
+        "name": "benmosher",
+        "email": "me@benmosher.com"
+      },
+      "dist": {
+        "shasum": "4f5dd01eae1ac8eed0a8dd4653a98623a4cb173c",
+        "tarball": "https://registry.npmjs.org/eslint-import-resolver-node/-/eslint-import-resolver-node-0.2.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "benmosher",
+          "email": "me@benmosher.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/eslint-import-resolver-node-0.2.2.tgz_1468492460683_0.9982401435263455"
+      },
+      "directories": {}
+    },
+    "0.2.3": {
+      "name": "eslint-import-resolver-node",
+      "version": "0.2.3",
+      "description": "Node default behavior import resolution plugin for eslint-plugin-import.",
+      "main": "index.js",
+      "scripts": {
+        "test": "nyc mocha"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/benmosher/eslint-plugin-import.git"
+      },
+      "keywords": [
+        "eslint",
+        "eslintplugin",
+        "esnext",
+        "modules",
+        "eslint-plugin-import"
+      ],
+      "author": {
+        "name": "Ben Mosher",
+        "url": "me@benmosher.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/benmosher/eslint-plugin-import/issues"
+      },
+      "homepage": "https://github.com/benmosher/eslint-plugin-import",
+      "dependencies": {
+        "debug": "^2.2.0",
+        "object-assign": "^4.0.1",
+        "resolve": "^1.1.6"
+      },
+      "devDependencies": {
+        "chai": "^3.4.1",
+        "mocha": "^2.3.4",
+        "nyc": "^7.0.0"
+      },
+      "_id": "eslint-import-resolver-node@0.2.3",
+      "_shasum": "5add8106e8c928db2cba232bcd9efa846e3da16c",
+      "_from": ".",
+      "_npmVersion": "3.7.2",
+      "_nodeVersion": "4.2.5",
+      "_npmUser": {
+        "name": "benmosher",
+        "email": "me@benmosher.com"
+      },
+      "dist": {
+        "shasum": "5add8106e8c928db2cba232bcd9efa846e3da16c",
+        "tarball": "https://registry.npmjs.org/eslint-import-resolver-node/-/eslint-import-resolver-node-0.2.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "benmosher",
+          "email": "me@benmosher.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/eslint-import-resolver-node-0.2.3.tgz_1471718223843_0.09879478346556425"
+      },
+      "directories": {}
+    },
+    "0.3.0": {
+      "name": "eslint-import-resolver-node",
+      "version": "0.3.0",
+      "description": "Node default behavior import resolution plugin for eslint-plugin-import.",
+      "main": "index.js",
+      "files": [
+        "index.js"
+      ],
+      "scripts": {
+        "test": "nyc mocha"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/benmosher/eslint-plugin-import.git"
+      },
+      "keywords": [
+        "eslint",
+        "eslintplugin",
+        "esnext",
+        "modules",
+        "eslint-plugin-import"
+      ],
+      "author": {
+        "name": "Ben Mosher",
+        "url": "me@benmosher.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/benmosher/eslint-plugin-import/issues"
+      },
+      "homepage": "https://github.com/benmosher/eslint-plugin-import",
+      "dependencies": {
+        "debug": "^2.2.0",
+        "resolve": "^1.2.0"
+      },
+      "devDependencies": {
+        "chai": "^3.4.1",
+        "mocha": "^2.3.4",
+        "nyc": "^7.0.0"
+      },
+      "_id": "eslint-import-resolver-node@0.3.0",
+      "_shasum": "4c8c78bd64fb7f7d491261937a64fe5d7eabc41a",
+      "_from": ".",
+      "_npmVersion": "3.10.9",
+      "_nodeVersion": "4.6.2",
+      "_npmUser": {
+        "name": "benmosher",
+        "email": "me@benmosher.com"
+      },
+      "dist": {
+        "shasum": "4c8c78bd64fb7f7d491261937a64fe5d7eabc41a",
+        "tarball": "https://registry.npmjs.org/eslint-import-resolver-node/-/eslint-import-resolver-node-0.3.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "benmosher",
+          "email": "me@benmosher.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/eslint-import-resolver-node-0.3.0.tgz_1481801841867_0.026016395539045334"
+      },
+      "directories": {}
+    },
+    "0.3.1": {
+      "name": "eslint-import-resolver-node",
+      "version": "0.3.1",
+      "description": "Node default behavior import resolution plugin for eslint-plugin-import.",
+      "main": "index.js",
+      "files": [
+        "index.js"
+      ],
+      "scripts": {
+        "test": "nyc mocha"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/benmosher/eslint-plugin-import.git"
+      },
+      "keywords": [
+        "eslint",
+        "eslintplugin",
+        "esnext",
+        "modules",
+        "eslint-plugin-import"
+      ],
+      "author": {
+        "name": "Ben Mosher",
+        "url": "me@benmosher.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/benmosher/eslint-plugin-import/issues"
+      },
+      "homepage": "https://github.com/benmosher/eslint-plugin-import",
+      "dependencies": {
+        "debug": "^2.6.8",
+        "resolve": "^1.2.0"
+      },
+      "devDependencies": {
+        "chai": "^3.4.1",
+        "mocha": "^2.3.4",
+        "nyc": "^7.0.0"
+      },
+      "_id": "eslint-import-resolver-node@0.3.1",
+      "_npmVersion": "5.0.3",
+      "_nodeVersion": "6.10.0",
+      "_npmUser": {
+        "name": "benmosher",
+        "email": "me@benmosher.com"
+      },
+      "dist": {
+        "integrity": "sha512-yUtXS15gIcij68NmXmP9Ni77AQuCN0itXbCc/jWd8C6/yKZaSNXicpC8cgvjnxVdmfsosIXrjpzFq7GcDryb6A==",
+        "shasum": "4422574cde66a9a7b099938ee4d508a199e0e3cc",
+        "tarball": "https://registry.npmjs.org/eslint-import-resolver-node/-/eslint-import-resolver-node-0.3.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "benmosher",
+          "email": "me@benmosher.com"
+        },
+        {
+          "name": "jfmengels",
+          "email": "jfm.engels@gmail.com"
+        },
+        {
+          "name": "ljharb",
+          "email": "ljharb@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eslint-import-resolver-node-0.3.1.tgz_1498212911636_0.3729797813575715"
+      },
+      "directories": {}
+    },
+    "0.3.2": {
+      "name": "eslint-import-resolver-node",
+      "version": "0.3.2",
+      "description": "Node default behavior import resolution plugin for eslint-plugin-import.",
+      "main": "index.js",
+      "files": [
+        "index.js"
+      ],
+      "scripts": {
+        "test": "nyc mocha"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/benmosher/eslint-plugin-import.git"
+      },
+      "keywords": [
+        "eslint",
+        "eslintplugin",
+        "esnext",
+        "modules",
+        "eslint-plugin-import"
+      ],
+      "author": {
+        "name": "Ben Mosher",
+        "url": "me@benmosher.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/benmosher/eslint-plugin-import/issues"
+      },
+      "homepage": "https://github.com/benmosher/eslint-plugin-import",
+      "dependencies": {
+        "debug": "^2.6.9",
+        "resolve": "^1.5.0"
+      },
+      "devDependencies": {
+        "chai": "^3.5.0",
+        "mocha": "^3.5.3",
+        "nyc": "^10.3.2"
+      },
+      "_id": "eslint-import-resolver-node@0.3.2",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "9.3.0",
+      "_npmUser": {
+        "name": "ljharb",
+        "email": "ljharb@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-sfmTqJfPSizWu4aymbPr4Iidp5yKm8yDkHp+Ir3YiTHiiDfxh69mOUsmiqW6RZ9zRXFaF64GtYmN7e+8GHBv6Q==",
+        "shasum": "58f15fb839b8d0576ca980413476aab2472db66a",
+        "tarball": "https://registry.npmjs.org/eslint-import-resolver-node/-/eslint-import-resolver-node-0.3.2.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "ljharb@gmail.com",
+          "name": "ljharb"
+        },
+        {
+          "email": "jfm.engels@gmail.com",
+          "name": "jfmengels"
+        },
+        {
+          "email": "me@benmosher.com",
+          "name": "benmosher"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eslint-import-resolver-node-0.3.2.tgz_1515143198194_0.444927487289533"
+      },
+      "directories": {}
+    },
+    "0.3.3": {
+      "name": "eslint-import-resolver-node",
+      "version": "0.3.3",
+      "description": "Node default behavior import resolution plugin for eslint-plugin-import.",
+      "main": "index.js",
+      "scripts": {
+        "prepublishOnly": "cp ../../{LICENSE,.npmrc} ./",
+        "test": "nyc mocha",
+        "coveralls": "nyc report --reporter lcovonly && cd ../.. && coveralls < ./resolvers/node/coverage/lcov.info"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/benmosher/eslint-plugin-import.git"
+      },
+      "keywords": [
+        "eslint",
+        "eslintplugin",
+        "esnext",
+        "modules",
+        "eslint-plugin-import"
+      ],
+      "author": {
+        "name": "Ben Mosher",
+        "url": "me@benmosher.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/benmosher/eslint-plugin-import/issues"
+      },
+      "homepage": "https://github.com/benmosher/eslint-plugin-import",
+      "dependencies": {
+        "debug": "^2.6.9",
+        "resolve": "^1.13.1"
+      },
+      "devDependencies": {
+        "chai": "^3.5.0",
+        "coveralls": "^3.0.0",
+        "mocha": "^3.5.3",
+        "nyc": "^11.7.1"
+      },
+      "nyc": {
+        "exclude": [
+          "test/"
+        ]
+      },
+      "_id": "eslint-import-resolver-node@0.3.3",
+      "_nodeVersion": "13.5.0",
+      "_npmVersion": "6.13.4",
+      "dist": {
+        "integrity": "sha512-b8crLDo0M5RSe5YG8Pu2DYBj71tSB6OvXkfzwbJU2w7y8P4/yo0MyF8jU26IEuEuHF2K5/gcAJE3LhQGqBBbVg==",
+        "shasum": "dbaa52b6b2816b50bc6711af75422de808e98404",
+        "tarball": "https://registry.npmjs.org/eslint-import-resolver-node/-/eslint-import-resolver-node-0.3.3.tgz",
+        "fileCount": 5,
+        "unpackedSize": 6375,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeGXMKCRA9TVsSAnZWagAAHjwP/3ZFMODmjcXy0iGlAwSi\nqgtmPieCtgOG/Id7HBP0Mx+lFOZb+tK1XiFZ8icrhIgkr5zYwCjuQBZmhxRR\nvqdjmg0lELOOt0tAjJ0L5WQAPl/77NbvbQwPy38KNpeI+Tt8dbbmNtWuOT07\nkN1VYWGLkOSHBTjN7cGRYhCIL1Ev1BoAyEvpfE/cly0ZasAxnMKZS4vlZ6Su\nTONZwySV0WtwUt51a0yaziIwyFGAwhXfnkKI1P0nUQ9cpf0xXF6Ocw/qo6SP\nabcSPiaenXI4BRg5AgP2sJ220EPaWYTgF0E/+1jNAhaVdaemn2/57KO9JrFz\nKd/P0A4heaBb1j1koHO3sudgp9Sq79AmA8KT0HAkeDxQsFe/yDoDKuP0xvWK\n13HnOTRHcyk03EogaJ+Ju3lb6kzncMZgq06afneNdUh3YDWOMamglZVARnuC\nCwB5xGmGfMN8kR/lrB/WP1loZXeNyVuGF7FBWd31uoQ18yHe+2AdtatYOP/X\nRNN0MkC+kRVsLbKWu+RQ2U56jBwHrPOAEQZk60D0cerQtqhJV9vRjxXQE7Xx\njk9gg9nDsrAfM+N3VaVcfETfmMcG0iREUBBbo52lwfag62TgW+UUQ2GmSgHB\n0QETx5GbCnERIkuUwDHlRmNq7ouFnNKPiJLgvwcSnSlmyUqMREclhsj07iPb\n3S8v\r\n=AcY0\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "me@benmosher.com",
+          "name": "benmosher"
+        },
+        {
+          "email": "jfm.engels@gmail.com",
+          "name": "jfmengels"
+        },
+        {
+          "email": "ljharb@gmail.com",
+          "name": "ljharb"
+        }
+      ],
+      "_npmUser": {
+        "name": "ljharb",
+        "email": "ljharb@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eslint-import-resolver-node_0.3.3_1578726154019_0.34675444748661266"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.3.4": {
+      "name": "eslint-import-resolver-node",
+      "version": "0.3.4",
+      "description": "Node default behavior import resolution plugin for eslint-plugin-import.",
+      "main": "index.js",
+      "scripts": {
+        "prepublishOnly": "cp ../../{LICENSE,.npmrc} ./",
+        "tests-only": "nyc mocha",
+        "test": "npm run tests-only",
+        "coveralls": "nyc report --reporter lcovonly && cd ../.. && coveralls < ./resolvers/node/coverage/lcov.info"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/benmosher/eslint-plugin-import.git"
+      },
+      "keywords": [
+        "eslint",
+        "eslintplugin",
+        "esnext",
+        "modules",
+        "eslint-plugin-import"
+      ],
+      "author": {
+        "name": "Ben Mosher",
+        "url": "me@benmosher.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/benmosher/eslint-plugin-import/issues"
+      },
+      "homepage": "https://github.com/benmosher/eslint-plugin-import",
+      "dependencies": {
+        "debug": "^2.6.9",
+        "resolve": "^1.13.1"
+      },
+      "devDependencies": {
+        "chai": "^3.5.0",
+        "coveralls": "^3.0.0",
+        "mocha": "^3.5.3",
+        "nyc": "^11.7.1"
+      },
+      "nyc": {
+        "exclude": [
+          "test/"
+        ]
+      },
+      "_id": "eslint-import-resolver-node@0.3.4",
+      "_nodeVersion": "14.4.0",
+      "_npmVersion": "6.14.5",
+      "dist": {
+        "integrity": "sha512-ogtf+5AB/O+nM6DIeBUNr2fuT7ot9Qg/1harBfBtaP13ekEWFQEEMP94BCB7zaNW3gyY+8SHYF00rnqYwXKWOA==",
+        "shasum": "85ffa81942c25012d8231096ddf679c03042c717",
+        "tarball": "https://registry.npmjs.org/eslint-import-resolver-node/-/eslint-import-resolver-node-0.3.4.tgz",
+        "fileCount": 5,
+        "unpackedSize": 6802,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJe6QGwCRA9TVsSAnZWagAAL1cP/jCRfSimkkhHAKKAFHxy\nwkCQ3ofBsuiMWbfpBrbCQocfkusy5KCwqoadR8GpnpM0fkgcWp9Xy4bUab3/\nGuK2b+IuW3jfLd0OdX6t2hKJxZEgZygq1v70wdKVmVxi847qk3ccKPvAIkZw\nYIWFNXucH2M8KyKOjG9Gedw3n2d1N5u/BPrBFbVu7j53dDeTGh2QMpEtuQ2D\nmEcmBJd/TysHB8YEJDvaicwuZF1FXzIU/BRBEwq1Ig2Is7rdElmCPNuPEymT\nb8w7EqkEtaPuXJCpCmBVC2f1i364iRlZthMtXzdo8favB8MfZxaPh/yx257O\nP2t8Sqp6n7b6GRxHjzArp9uxZFW8VW/vHmVnvnE8Nkgde2l31/BZIwsOZluZ\n0d3G2upBpzsZLL4ctO39G9pTH2P0J1P5e6wECbBfb/oLjM7+V/CX5Vr7LBo4\n/1V12k10HKhESJmciEBxYYNOTji7d0Eh3bacF4r2fXbvegaa4zfpfCD8lyiD\ncFbzB0VIEPMJ9KQIukV9I50gNbT6umiKnxAXAPC1MNW/s4nCOGqMavav8WRm\nF9hvYwdJ6PL/35JHJQSKE6jVbPqce6l2ubsxUBbv2c3MuU06mRJHRKGwXBQ3\n6mq4ePEZfxGeKxrvBGqvec9nMbsaJdTT2lo10rDwGOtXXAD0DA5CQJiVJp3F\neSsZ\r\n=Z3N6\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "me@benmosher.com",
+          "name": "benmosher"
+        },
+        {
+          "email": "jfm.engels@gmail.com",
+          "name": "jfmengels"
+        },
+        {
+          "email": "ljharb@gmail.com",
+          "name": "ljharb"
+        }
+      ],
+      "_npmUser": {
+        "name": "ljharb",
+        "email": "ljharb@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eslint-import-resolver-node_0.3.4_1592328623134_0.1457653585073515"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# eslint-import-resolver-node\n\n[![npm](https://img.shields.io/npm/v/eslint-import-resolver-node.svg)](https://www.npmjs.com/package/eslint-import-resolver-node)\n\nDefault Node-style module resolution plugin for [`eslint-plugin-import`](https://www.npmjs.com/package/eslint-plugin-import).\n\nPublished separately to allow pegging to a specific version in case of breaking\nchanges.\n\nConfig is passed directly through to [`resolve`](https://www.npmjs.com/package/resolve#resolve-sync-id-opts) as options:\n\n```yaml\nsettings:\n  import/resolver:\n    node:\n      extensions:\n        # if unset, default is just '.js', but it must be re-added explicitly if set\n        - .js\n        - .jsx\n        - .es6\n        - .coffee\n\n      paths:\n        # an array of absolute paths which will also be searched\n        # think NODE_PATH\n        - /usr/local/share/global_modules\n\n      # this is technically for identifying `node_modules` alternate names\n      moduleDirectory:\n\n        - node_modules # defaults to 'node_modules', but...\n        - bower_components\n\n        - project/src  # can add a path segment here that will act like\n                       # a source root, for in-project aliasing (i.e.\n                       # `import MyStore from 'stores/my-store'`)\n```\n\nor to use the default options:\n\n```yaml\nsettings:\n  import/resolver: node\n```\n",
+  "maintainers": [
+    {
+      "email": "me@benmosher.com",
+      "name": "benmosher"
+    },
+    {
+      "email": "jfm.engels@gmail.com",
+      "name": "jfmengels"
+    },
+    {
+      "email": "ljharb@gmail.com",
+      "name": "ljharb"
+    }
+  ],
+  "time": {
+    "modified": "2020-06-16T17:30:26.270Z",
+    "created": "2015-11-28T01:14:38.588Z",
+    "0.1.0": "2015-11-28T01:14:38.588Z",
+    "0.1.1": "2015-11-30T12:22:42.429Z",
+    "0.2.0": "2016-03-25T10:53:46.571Z",
+    "0.2.1": "2016-06-21T12:23:31.881Z",
+    "0.2.2": "2016-07-14T10:34:22.716Z",
+    "0.2.3": "2016-08-20T18:37:05.584Z",
+    "0.3.0": "2016-12-15T11:37:22.622Z",
+    "0.3.1": "2017-06-23T10:15:14.387Z",
+    "0.3.2": "2018-01-05T09:06:39.104Z",
+    "0.3.3": "2020-01-11T07:02:34.186Z",
+    "0.3.4": "2020-06-16T17:30:23.299Z"
+  },
+  "homepage": "https://github.com/benmosher/eslint-plugin-import",
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "esnext",
+    "modules",
+    "eslint-plugin-import"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/benmosher/eslint-plugin-import.git"
+  },
+  "author": {
+    "name": "Ben Mosher",
+    "url": "me@benmosher.com"
+  },
+  "bugs": {
+    "url": "https://github.com/benmosher/eslint-plugin-import/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "users": {
+    "preco21": true,
+    "vannizer": true,
+    "guzgarcia": true,
+    "alexxnica": true,
+    "bsara": true,
+    "jasonxia23": true
+  }
+}

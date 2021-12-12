@@ -1,0 +1,323 @@
+{
+  "_id": "@types/istanbul-lib-coverage",
+  "_rev": "363-66a515ab1c02fae819e5f75b9e216825",
+  "name": "@types/istanbul-lib-coverage",
+  "description": "TypeScript definitions for istanbul-lib-coverage",
+  "dist-tags": {
+    "latest": "2.0.3",
+    "ts2.4": "2.0.1",
+    "ts2.5": "2.0.1",
+    "ts2.6": "2.0.1",
+    "ts2.7": "2.0.1",
+    "ts2.8": "2.0.1",
+    "ts2.9": "2.0.1",
+    "ts3.0": "2.0.3",
+    "ts3.1": "2.0.3",
+    "ts3.2": "2.0.3",
+    "ts3.3": "2.0.3",
+    "ts3.4": "2.0.3",
+    "ts3.5": "2.0.3",
+    "ts3.6": "2.0.3",
+    "ts3.7": "2.0.3",
+    "ts3.8": "2.0.3",
+    "ts3.9": "2.0.3",
+    "ts4.0": "2.0.3",
+    "ts4.1": "2.0.3"
+  },
+  "versions": {
+    "1.1.0": {
+      "name": "@types/istanbul-lib-coverage",
+      "version": "1.1.0",
+      "description": "TypeScript definitions for istanbul-lib-coverage",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Jason Cheatham",
+          "url": "https://github.com/jason0x43",
+          "githubUsername": "jason0x43"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "18e17ffdef5603196bad38f89279245fb5eb05516e3fc2d00e79b3b0863e2a0f",
+      "typeScriptVersion": "2.4",
+      "_id": "@types/istanbul-lib-coverage@1.1.0",
+      "dist": {
+        "integrity": "sha512-ohkhb9LehJy+PA40rDtGAji61NCgdtKLAlFoYp4cnuuQEswwdK3vz9SOIkkyc3wrk8dzjphQApNs56yyXLStaQ==",
+        "shasum": "2cc2ca41051498382b43157c8227fea60363f94a",
+        "tarball": "https://registry.npmjs.org/@types/istanbul-lib-coverage/-/istanbul-lib-coverage-1.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/istanbul-lib-coverage-1.1.0.tgz_1504188367728_0.7808519673999399"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "@types/istanbul-lib-coverage",
+      "version": "2.0.0",
+      "description": "TypeScript definitions for istanbul-lib-coverage",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Jason Cheatham",
+          "url": "https://github.com/jason0x43",
+          "githubUsername": "jason0x43"
+        },
+        {
+          "name": "Lorenzo Rapetti",
+          "url": "https://github.com/loryman",
+          "githubUsername": "loryman"
+        }
+      ],
+      "main": "",
+      "types": "index",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/istanbul-lib-coverage"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "08a570d6de8b28ae4979fc831b2d4f0e3754a8514f7e261b7f7071ca3677c2db",
+      "typeScriptVersion": "2.4",
+      "_id": "@types/istanbul-lib-coverage@2.0.0",
+      "dist": {
+        "integrity": "sha512-eAtOAFZefEnfJiRFQBGw1eYqa5GTLCZ1y86N0XSI/D6EB+E8z6VPV/UL7Gi5UEclFqoQk+6NRqEDsfmDLXn8sg==",
+        "shasum": "1eb8c033e98cf4e1a4cedcaf8bcafe8cb7591e85",
+        "tarball": "https://registry.npmjs.org/@types/istanbul-lib-coverage/-/istanbul-lib-coverage-2.0.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 5738,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJchsLYCRA9TVsSAnZWagAArfIQAJQlQyZAcM1mwaVHrnIJ\ngPv7luS1p5qy0QsTs7v/I9cd31jfpgOxIVOjrQzo4ykE/FvsqXl4uXcfHB5m\nLeIA4EriUjlS1q+tkUGSH23pCheJ2y2yMEdCLaswYKG9NDZrdA2lcKx1HzHc\nuNeb5J8lIUO36ITy8KPQt5yy3Gk08RV13qjxu8LUbp04YeJ4CUoWQzFJfGV5\n5Bli01g0XyQiJTrDuXoQB+WU1MYA9wHFKJF9Tf8oCP7ZXW9z2aRIaEWuSFhh\neLYjgpUEUN9J6pA8zH/5wAAAleHZHHz/KlZzTT5X0ezimaJT/S42vNrF/lFJ\nj9gLGyzh/oznG3f0/QbljGTdwa9Tr4ULGXLlDy1SZeRVbl2erHT2NJWhXnjw\nLfVdFoaYvYIoHe+a0ZSkG/J8DYEhsgaXYMgbhk9hPddLmlYKlpOHODygB2Os\noA9eYR5x3fK0qaNmMzWnNnMpKiHbz/z/SNACBDN93DDVl/0O1QWwUA8mzLnH\nBaAjG2CDr8NRiw5zz+l3r3IhKY76ifAteiL6GVFuZvjh+ZQ/HqnDhfFLs7HD\ndb5YGLtuYJKJsTv24U6DrlkmxPt3nUGLRzSR8BUhY4CXxyJNlBYO3ZxX1+/A\ngbvRbZD/xd30ZOgTz6B5jm3dA0SM32XOqs+qx1izS9OzrNLE8tyu7MigTJ0p\npU3y\r\n=vIpO\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/istanbul-lib-coverage_2.0.0_1552335575366_0.69184007543582"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.1": {
+      "name": "@types/istanbul-lib-coverage",
+      "version": "2.0.1",
+      "description": "TypeScript definitions for istanbul-lib-coverage",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Jason Cheatham",
+          "url": "https://github.com/jason0x43",
+          "githubUsername": "jason0x43"
+        },
+        {
+          "name": "Lorenzo Rapetti",
+          "url": "https://github.com/loryman",
+          "githubUsername": "loryman"
+        }
+      ],
+      "main": "",
+      "types": "index",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/istanbul-lib-coverage"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "fb2cf9603945473dc60dede8472e884daa070938a01b09aa816ca0cc979213ba",
+      "typeScriptVersion": "2.4",
+      "_id": "@types/istanbul-lib-coverage@2.0.1",
+      "dist": {
+        "integrity": "sha512-hRJD2ahnnpLgsj6KWMYSrmXkM3rm2Dl1qkx6IOFD5FnuNPXJIG5L0dhgKXCYTRMGzU4n0wImQ/xfmRc4POUFlg==",
+        "shasum": "42995b446db9a48a11a07ec083499a860e9138ff",
+        "tarball": "https://registry.npmjs.org/@types/istanbul-lib-coverage/-/istanbul-lib-coverage-2.0.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 5746,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcwj3bCRA9TVsSAnZWagAAzWAP/1dDPb6st0zskt5CpZ/E\n56muV3YHhM30/1IOdJk86omPBA39D3YrbCHMRTFM++yQjZr5LojZ7nsiZDvD\nrTz5lVvTTVdcHX5FvCN/QJIDyJt1SFyXmtMwFK9wFN8dKXerslBGn1z7hD8T\nuXVQ0l7knZKGQ6xFjHbAnHGuUQ3t3ARQEdblm21NQOpestUK56/69JBW1zYl\net9B6ds+2IkKoT8ySqrNevWTyx4xHaWShJsO5k+fCe49Bw4I/IFhzHBXKmd9\nb7yWI/WWcAT14pt7dmhchz++w6EgDdZQBRVKbE51C0RSz+76nmYHQbfEbb5i\nBM+jgRwrOnldQO5MluEJ70C4qDCg6zTfhjtpB/n6XqZd+mheAEq+eGV8zZji\nJHd2O7EjAwcpVLyg+//VQW3lh+qt6H03hodtd0YiTl4Dy9ZtilJ+7O0wDtrB\nQD/kFiEdo2cWjxB+bE8SDEB4JTHlHsUJst1kIG0u1zHhBjqoDAjXfu8DAsl8\nDW33HnqpJBaDk2i3WmC5hI3mHorQ0I50ssFRkJd/Fd7Sz/pjSxJPKbWYMElf\ngTIEboxSPtUPWeUhYlQzpp/nXkjPSwwaBWY9qzqIVSjsIdZgPxup/XUKLyEX\nuzjOWfC2u608h8aR0RBphAq2qErzH621ErrLbrfj8WHaA9BPZ8/b86tbDPAi\n1Ird\r\n=acMQ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/istanbul-lib-coverage_2.0.1_1556233690261_0.41770746267224257"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.2": {
+      "name": "@types/istanbul-lib-coverage",
+      "version": "2.0.2",
+      "description": "TypeScript definitions for istanbul-lib-coverage",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Jason Cheatham",
+          "url": "https://github.com/jason0x43",
+          "githubUsername": "jason0x43"
+        },
+        {
+          "name": "Lorenzo Rapetti",
+          "url": "https://github.com/loryman",
+          "githubUsername": "loryman"
+        }
+      ],
+      "main": "",
+      "types": "index.d.ts",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/istanbul-lib-coverage"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "82429516abfcf471c75c0718848290621361fc0339eb7644032bb753a9322eee",
+      "typeScriptVersion": "3.0",
+      "_id": "@types/istanbul-lib-coverage@2.0.2",
+      "dist": {
+        "integrity": "sha512-rsZg7eL+Xcxsxk2XlBt9KcG8nOp9iYdKCOikY9x2RFJCyOdNj4MKPQty0e8oZr29vVAzKXr1BmR+kZauti3o1w==",
+        "shasum": "79d7a78bad4219f4c03d6557a1c72d9ca6ba62d5",
+        "tarball": "https://registry.npmjs.org/@types/istanbul-lib-coverage/-/istanbul-lib-coverage-2.0.2.tgz",
+        "fileCount": 4,
+        "unpackedSize": 5892,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeviu/CRA9TVsSAnZWagAAJgAQAJkMlY83kFYjlco82FTA\nJK387oCRsU3eLxETbiCkHU5zB7rX5f/f5ZFcn4ODRp6e4laRHagJZUNpoV7K\nmslnkO62z5xqkGWMfC0/nnlQRhJjxc/4P8+EAwfW/R5U89OJcwK3plVE4YtD\niz69kBSVofm2j428vBNf7oj82/j502RYvLgcDbj4k8Nr86auc1HCxD9er39j\nxfvXoXFRA7uFa10iphKJCsEghp8wbJ6Gjb5v+DimF5mAzNnY+BBRUr+y+SCu\n47xGFgU1pxUf+RGJMPf+MEnfTNJB20xWyLA5rjb2kfxamDqwOPNOIibkilE3\nbXPRYR0aOjnHyNbWrHpUh0dX2MqiLJLg2G3avGCyNzIOqZRJasj03yDgn59H\nR7TBU6xCJLFfnq1bftPzgtRJ7wEYCp7WpsX2i5V3M7e9GifqJraMVqpAMc9p\nSxBLXsGJDY+h8aKd/qBgjA5dgW8+WfosO5R2VlZapt5GE5lGBbX5gSD4xInJ\nAU5ecteGKw+XvUe3xNsQaAdrEpZ1jw7jhcyGQ+2g1I64N4M3Ijw/P4qk2+xz\nx2ipjYLbmzgkF/7TVGuKpAPMg1AODR6dihOVXmHiR4BFXwT05jBoXlRURLqS\nZGye6p6kfQTS3twZVBLjZMg2h/Wc60w8t+ttJED5RpTrm8ZX/Jvk6FpB/2Wv\nN8yK\r\n=EfWN\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/istanbul-lib-coverage_2.0.2_1589521342923_0.5041644327818589"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.3": {
+      "name": "@types/istanbul-lib-coverage",
+      "version": "2.0.3",
+      "description": "TypeScript definitions for istanbul-lib-coverage",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Jason Cheatham",
+          "url": "https://github.com/jason0x43",
+          "githubUsername": "jason0x43"
+        },
+        {
+          "name": "Lorenzo Rapetti",
+          "url": "https://github.com/loryman",
+          "githubUsername": "loryman"
+        }
+      ],
+      "main": "",
+      "types": "index.d.ts",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/istanbul-lib-coverage"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "a951ff253666ffd402e5ddf6b7d5a359e22c9a6574f6a799a39e1e793107b647",
+      "typeScriptVersion": "3.0",
+      "_id": "@types/istanbul-lib-coverage@2.0.3",
+      "dist": {
+        "integrity": "sha512-sz7iLqvVUg1gIedBOvlkxPlc8/uVzyS5OwGz1cKjXzkl3FpL3al0crU8YGU1WoHkxn0Wxbw5tyi6hvzJKNzFsw==",
+        "shasum": "4ba8ddb720221f432e443bd5f9117fd22cfd4762",
+        "tarball": "https://registry.npmjs.org/@types/istanbul-lib-coverage/-/istanbul-lib-coverage-2.0.3.tgz",
+        "fileCount": 4,
+        "unpackedSize": 5911,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJe37gWCRA9TVsSAnZWagAA/jIQAJgho0+e4/mUo2orXS6x\nX2SKsWghl55mAi94Maz9PrN6OLZZKzDattvJ68qwpHf2CY1GKuVq1nDvrd8q\nb5ifF6CHtqdalUOLYnTV5C3aIyROzZnxhBC/qMyJOvDQVxqyt+j5UP+EHrDc\np+APlGhyPwZne/yg2lOTgtaiypmmxskr6M/0xDsUTOYiV6iC9NwSnoTqqtD5\nlQ3d5gwKh+c6s4VzoDoNNKCqsEfS1j8fF+lmbLssQhLUVGGCeE4erfW2mzqk\niafOQ10gevMGtVEgw4KSGRu3FPtUeJBxL8YiCKldsZYC8jPs3SG5hpOkoja6\niacC51/sQGQLpGmKJ07EnxZJ4JzWyvmykNBJE4dm6XAmWhexD3MXQQbj7Mc7\n05q/AdlQ4/5w8L7+dHxRG+wpb/E4IAHxG07bGbcMMm3Az54YRw1HUXcDMLXD\nf5kdbPPjRxhgwMbY6gdrW5jwnuLlX7n223IY/QrpuvUk2npt3cANobQ/a+fv\nC6k2wa+ElAVE8I0oDFoC9jvNUoc9yEpTpZwjQChrGkfCw/Esuj0zXjxprjyL\n4qSRcLYUi98JyBw8ZbjEJoHT9KioetrR+Lhi1sF8wxK8Ma7006tVbFiz+olK\n3WBCPxlRNUhvq58Oc+bzunoBvD+FTYpZzJ3wiy+yudLF3JCJkICUZ/cizTMk\nKyVV\r\n=qsOk\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/istanbul-lib-coverage_2.0.3_1591719958381_0.36526670187578336"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# Installation\r\n> `npm install --save @types/istanbul-lib-coverage`\r\n\r\n# Summary\r\nThis package contains type definitions for istanbul-lib-coverage (https://istanbul.js.org).\r\n\r\n# Details\r\nFiles were exported from https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/istanbul-lib-coverage.\r\n\r\n### Additional Details\r\n * Last updated: Tue, 09 Jun 2020 16:25:43 GMT\r\n * Dependencies: none\r\n * Global values: none\r\n\r\n# Credits\r\nThese definitions were written by [Jason Cheatham](https://github.com/jason0x43), and [Lorenzo Rapetti](https://github.com/loryman).\r\n",
+  "maintainers": [
+    {
+      "name": "types",
+      "email": "ts-npm-types@microsoft.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-08-25T22:25:41.290Z",
+    "created": "2017-08-31T14:06:07.811Z",
+    "1.1.0": "2017-08-31T14:06:07.811Z",
+    "2.0.0": "2019-03-11T20:19:35.509Z",
+    "2.0.1": "2019-04-25T23:08:10.449Z",
+    "2.0.2": "2020-05-15T05:42:23.035Z",
+    "2.0.3": "2020-06-09T16:25:58.503Z"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+    "directory": "types/istanbul-lib-coverage"
+  },
+  "contributors": [
+    {
+      "name": "Jason Cheatham",
+      "url": "https://github.com/jason0x43",
+      "githubUsername": "jason0x43"
+    },
+    {
+      "name": "Lorenzo Rapetti",
+      "url": "https://github.com/loryman",
+      "githubUsername": "loryman"
+    }
+  ],
+  "license": "MIT",
+  "readmeFilename": ""
+}

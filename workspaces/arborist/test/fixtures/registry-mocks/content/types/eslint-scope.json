@@ -1,0 +1,105 @@
+{
+  "_id": "@types/eslint-scope",
+  "_rev": "345-c1d20046cd047bec86523fe3e771fda3",
+  "name": "@types/eslint-scope",
+  "dist-tags": {
+    "latest": "3.7.0",
+    "ts2.2": "3.7.0",
+    "ts2.3": "3.7.0",
+    "ts2.4": "3.7.0",
+    "ts2.5": "3.7.0",
+    "ts2.6": "3.7.0",
+    "ts2.7": "3.7.0",
+    "ts2.8": "3.7.0",
+    "ts2.9": "3.7.0",
+    "ts3.0": "3.7.0",
+    "ts3.1": "3.7.0",
+    "ts3.2": "3.7.0",
+    "ts3.3": "3.7.0",
+    "ts3.4": "3.7.0",
+    "ts3.5": "3.7.0",
+    "ts3.6": "3.7.0",
+    "ts3.7": "3.7.0",
+    "ts3.8": "3.7.0",
+    "ts3.9": "3.7.0",
+    "ts4.0": "3.7.0",
+    "ts4.1": "3.7.0"
+  },
+  "versions": {
+    "3.7.0": {
+      "name": "@types/eslint-scope",
+      "version": "3.7.0",
+      "description": "TypeScript definitions for eslint-scope",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Toru Nagashima",
+          "url": "https://github.com/mysticatea",
+          "githubUsername": "mysticatea"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {
+        "@types/eslint": "*",
+        "@types/estree": "*"
+      },
+      "typesPublisherContentHash": "0ea662a443d13a5db1cae5afc89fd2aec8155d09ddec7b1a5ba0c6ab4be4cc54",
+      "typeScriptVersion": "2.2",
+      "_id": "@types/eslint-scope@3.7.0",
+      "dist": {
+        "integrity": "sha512-O/ql2+rrCUe2W2rs7wMR+GqPRcgB6UiqN5RhrR5xruFlY7l9YLMn0ZkDzjoHLeiFkR8MCQZVudUuuvQ2BLC9Qw==",
+        "shasum": "4792816e31119ebd506902a482caec4951fabd86",
+        "tarball": "https://registry.npmjs.org/@types/eslint-scope/-/eslint-scope-3.7.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 4297
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eslint-scope_3.7.0_1518918850813_0.8793114696270767"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2018-02-18T01:54:10.733Z",
+    "3.7.0": "2018-02-18T01:54:10.920Z",
+    "modified": "2020-08-25T22:17:06.216Z"
+  },
+  "maintainers": [
+    {
+      "name": "types",
+      "email": "ts-npm-types@microsoft.com"
+    }
+  ],
+  "description": "TypeScript definitions for eslint-scope",
+  "repository": {
+    "type": "git",
+    "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+  },
+  "contributors": [
+    {
+      "name": "Toru Nagashima",
+      "url": "https://github.com/mysticatea",
+      "githubUsername": "mysticatea"
+    }
+  ],
+  "license": "MIT",
+  "readme": "# Installation\r\n> `npm install --save @types/eslint-scope`\r\n\r\n# Summary\r\nThis package contains type definitions for eslint-scope (http://github.com/eslint/eslint-scope).\r\n\r\n# Details\r\nFiles were exported from https://www.github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/eslint-scope\r\n\r\nAdditional Details\r\n * Last updated: Sun, 18 Feb 2018 01:53:11 GMT\r\n * Dependencies: eslint, estree\r\n * Global values: none\r\n\r\n# Credits\r\nThese definitions were written by Toru Nagashima <https://github.com/mysticatea>.\r\n",
+  "readmeFilename": ""
+}

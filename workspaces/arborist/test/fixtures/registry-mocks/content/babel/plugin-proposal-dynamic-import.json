@@ -1,0 +1,665 @@
+{
+  "_id": "@babel/plugin-proposal-dynamic-import",
+  "_rev": "14-6da143b60353d83da81556a6f7a0d04a",
+  "name": "@babel/plugin-proposal-dynamic-import",
+  "dist-tags": {
+    "latest": "7.12.1"
+  },
+  "versions": {
+    "7.5.0": {
+      "name": "@babel/plugin-proposal-dynamic-import",
+      "version": "7.5.0",
+      "description": "Transform import() expressions",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-dynamic-import"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.0.0",
+        "@babel/plugin-syntax-dynamic-import": "^7.2.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.5.0",
+        "@babel/helper-plugin-test-runner": "^7.0.0"
+      },
+      "gitHead": "49da9a07c81156e997e60146eb001ea77b7044c4",
+      "_id": "@babel/plugin-proposal-dynamic-import@7.5.0",
+      "_nodeVersion": "12.6.0",
+      "_npmVersion": "lerna/3.14.0/node@v12.6.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-x/iMjggsKTFHYC6g11PL7Qy58IK8H5zqfm9e6hu4z1iH2IRyAp9u9dL80zA6R76yFovETFLKz2VJIC2iIPBuFw==",
+        "shasum": "e532202db4838723691b10a67b8ce509e397c506",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-dynamic-import/-/plugin-proposal-dynamic-import-7.5.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 3948,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdHffQCRA9TVsSAnZWagAAVrQP/3lmwszmaFC+ZqR4rIuB\nhEyEKfYba3S8H+0TSJqLGO/D6HrGSLRPJW4XnChyff0iSb4tFGBFv+1vdiWY\nbUEjGA1RLkFALVupj07fiedPSXZ0D/m2Ao8a7BCU9qnr0z6PQ17f6Bb+7cj5\n42sjvprJH/WWfEQ5bWvN+MqXAtszN2+G+aFq1azcjaD2qp2EAH5BrKW2Xa+E\nfwRmV74nGDo6pFS9zB/VazgrZlG2LQVvU+fd3fmQI30+SwuhxYF4t0HKWMBv\nYgo8sFf1ksguoxDuo1hD0CKlmaGKWV6SUfS9oEPUPv2B3fWmX9dhaj6kEGdG\nho6NYWpy0JJFCW3BJ0umlh3L+5odfzYrqvoufmmkHb0cF4fx30L6vVp48kX5\nQnX3dzjpktGVN1f+cx+tlFCUJnSaJuw0dWTVK9D90FZJXxfDzvqgSOgGKsuN\nHcmeN1d8HFuRIrXk8FZE/MM1KmyPnFxoFt/fifOl1MT03YFfZ8CdyHmHf3ah\nc+bN/1DhrZOMhT8UJC6PDP+25+mhsLthvplQm9Uofm0/CgavoPFtq3Tuf0yu\nVA8zy3seopramQnky8izOdGNxysbbSOcswtzFE4vhErIm4pdKrt8pM3te1gY\nPWmy/XdubDVF7xtneDfvmPWuoyF2lRAu2BOdHx4u/j/cKAOHELIBijNLgS4v\nD2zJ\r\n=zEAP\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "nicolo-ribaudo",
+          "email": "nicolo.ribaudo@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "danez",
+          "email": "daniel@tschinder.de"
+        },
+        {
+          "name": "existentialism",
+          "email": "bng412@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-dynamic-import_7.5.0_1562245071541_0.6393027507899631"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.7.0": {
+      "name": "@babel/plugin-proposal-dynamic-import",
+      "version": "7.7.0",
+      "description": "Transform import() expressions",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-dynamic-import"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.0.0",
+        "@babel/plugin-syntax-dynamic-import": "^7.2.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.7.0",
+        "@babel/helper-plugin-test-runner": "^7.0.0"
+      },
+      "gitHead": "97faa83953cb87e332554fa559a4956d202343ea",
+      "_id": "@babel/plugin-proposal-dynamic-import@7.7.0",
+      "_nodeVersion": "13.0.1",
+      "_npmVersion": "lerna/3.16.4/node@v13.0.1+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-7poL3Xi+QFPC7sGAzEIbXUyYzGJwbc2+gSD0AkiC5k52kH2cqHdqxm5hNFfLW3cRSTcx9bN0Fl7/6zWcLLnKAQ==",
+        "shasum": "dc02a8bad8d653fb59daf085516fa416edd2aa7f",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-dynamic-import/-/plugin-proposal-dynamic-import-7.7.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 3736,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdwVSZCRA9TVsSAnZWagAAuXIP/01PhM+Db7902rOkyVEk\nc8QkDiNyXkeVeUdLZlYssB2E8rLww/mTj5Ag7fpkKS1ZHH+VTYmPZKmxvrMd\nl6YWntPTt00f/kVn7rYspMF4z54EMvmjrEOkQE/xqMrLNiU2NTqA7Wo22k6W\nhE5O2yIAT2r61geMnTdlUaqdnCc8pdllTCbDgv9j+OgYSY/3Ywi2DA9xAgSM\npEPKxq8dTM4Nkt4dgHupQy71zLYqrUL5a8gmR/o6Ma8YrB7SOlAdcFPBlZZP\nMUm+ZEN+A38k1PI/HytAbM0DXPiAxNOHDM+MVXa3TzFAXl9gP32/z3vL7a44\neVZHcsCf2EDxiOB1bCwoBaEXIDVWW5rnBiVTV3L5UwU/VwcaXP+PqXxSbhnx\njIIBT2m4PIs24Tl91jES05x/8wJMWSVfEmmCunxiHcKVIBYBrsv7pT48xqhU\nSMkTbB3zt08xxi8CD+T1Ffu4FL15NH6+TML/r8InAslQPd7syTGH39WUIzD6\nrIGYdT2eT7Qm+iVeNmNEPlXehkMBJ648/3MY5XgK07bJ0LIHBHqnHi6UmA14\nlNLE+N/QbNErvT4lEv8iO9eIb987i3NVJt+FRkdtFpMsYST7F+m8yRmpgoP6\nie8SkWupjk5xGsAkPG90uA8+0F402q2nnBWoCc2v/hiSaR7NO9zG+u8Zwjl/\n21gt\r\n=dXbC\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-dynamic-import_7.7.0_1572951192300_0.10777288421106301"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.7.4": {
+      "name": "@babel/plugin-proposal-dynamic-import",
+      "version": "7.7.4",
+      "description": "Transform import() expressions",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-dynamic-import"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.0.0",
+        "@babel/plugin-syntax-dynamic-import": "^7.7.4"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.7.4",
+        "@babel/helper-plugin-test-runner": "^7.7.4"
+      },
+      "gitHead": "75767d87cb147709b9bd9b99bf44daa6688874a9",
+      "_id": "@babel/plugin-proposal-dynamic-import@7.7.4",
+      "_nodeVersion": "13.1.0",
+      "_npmVersion": "lerna/3.19.0/node@v13.1.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-StH+nGAdO6qDB1l8sZ5UBV8AC3F2VW2I8Vfld73TMKyptMU9DY5YsJAS8U81+vEtxcH3Y/La0wG0btDrhpnhjQ==",
+        "shasum": "dde64a7f127691758cbfed6cf70de0fa5879d52d",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-dynamic-import/-/plugin-proposal-dynamic-import-7.7.4.tgz",
+        "fileCount": 4,
+        "unpackedSize": 3736,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd2HAUCRA9TVsSAnZWagAAPAoQAJoueMiwhGWJcaQwJhcD\nS06kD3gw6mbNJUzWalhf8NsRSQsgQqlmCNzfZVLJSBDVysd7h5E5KMpse4bQ\nKSeMy6iVxymcfHjf89ueKjSbzaORujZ0MhbFfuvINhacW9R7M4QXL22V2+ed\ncJcVcAIubqCUuoTe5U6nJGc44dd4Lgpt0oe/t+ikq8ZmYtARXGiYo1AiitnI\nvbnMzyRjwdPycTYv15q0nGaPnjUmy5BX7uTYhrHEVa3WIK9TnBhsM9dR0eOg\nu4/cqryokWNjqT8yGRrqJFhB8mAkQ5YQta4h25WGM5tZ/kkC9GVotcha2Q8y\nKVaZSfOs7Q2RZRxYaYU3t7Nl2oMrWRnbW5C/ixX52uiL8J0NFVXnINdF4Ar/\n8sImqeQG6rX4UftCmm9Fd2tdjdZZFk6U6Vb2v2LbAlXCQTKcTWzTQpASxP2i\n6C/v7LXP76xn5Dh4/HZaY6aBMjX6X0E7kztvXf3reSoMC9JacmHZMD5MGWsX\nBs8hQ3RAan7ZHHErK2JSklMfECT22lrKe2owjpiRZPx/Zrc72Q2JkB4Q6oRF\n7V/AoH3CszWL74dyhJqYSL2CCfLfO0ZSsxbRMJw0mFJJVg1E8M0iLZNKpSE9\nRYnptTA3BrMQS9zIkE/k6r7Qv7tztC8fEPDOY4j8HxlYbe61R5RJn5edo65U\nIRq/\r\n=c34h\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "jason@developit.ca",
+          "name": "developit"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-dynamic-import_7.7.4_1574465555904_0.09205297778640631"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.8.0": {
+      "name": "@babel/plugin-proposal-dynamic-import",
+      "version": "7.8.0",
+      "description": "Transform import() expressions",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-dynamic-import"
+      },
+      "license": "MIT",
+      "type": "commonjs",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.8.0",
+        "@babel/plugin-syntax-dynamic-import": "^7.8.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.8.0",
+        "@babel/helper-plugin-test-runner": "^7.8.0"
+      },
+      "gitHead": "2486615a74580283c49475d66067bd7fcab3330e",
+      "_id": "@babel/plugin-proposal-dynamic-import@7.8.0",
+      "_nodeVersion": "13.6.0",
+      "_npmVersion": "lerna/3.19.0/node@v13.6.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-YzMq0AqeTR4Mh2pz3GrCWqhcEV38HgUMMR/56/YR5GPc4Y2p1KJ4Le6j92vMnW8TJqVj+qJz/KDNglpMeww9Yg==",
+        "shasum": "bbd7c00f351b55f02aec0fe9b9c42ad3f659b176",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-dynamic-import/-/plugin-proposal-dynamic-import-7.8.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 3758,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeGmV4CRA9TVsSAnZWagAA7R0P/iNqoW3lMrGrFF8OiakG\n+TtczCqoF7f/EFiswaN4cQYatHGaaBWpdh/3brPuA56dWk64AG7SBmnUB2XT\nf+gZMG3fvmlcQjpXEKBdRyQd/JV+wzI1EpBg2HVdK7welXKBzop0oxN//sy6\nMluRx1koqHFklQEUDdWJ3fdAtPUymZ0RTAia/LI+5ip/58CcMF1gQvogkk6J\nT0yxA/2YSxupVsxz/bu3yQ0ThSMns0w5u4N4KCCrv89bKeL9b65XaHlzuHMY\nndztAYiaUcH1uR9JdlTEXFqmEVoO2iQZA3gpKQhcCVmJlt5qo8tbR9KsWRY0\nkcLTCHQdJaw8FUcrSARsl1WaPkJ4Vf1QMsvuMmaMYcCFkmE6T96ci9R5mOk6\ntmkhSM9Dg8hywhD3hIj8PlD7gcPBlq6wNhjk9Yzy9rz8p9laQcQaRyutRbyN\n1Nan9zJdihd2f3RnIRWklgFEpRaY3RaypDW1qen3lqWr1RXtmcNbgud6TwjB\nhViGG1ePZt7itVXh9f8X/VaBAgUGLYvHy0q6Hi3Xul+lTyaqu2BhHptuC3Uh\nlA8wGNqjUcdM+dbQgpgWfhpS3lcTLM16EVhDqDIv5HJQArbLJM6jByTN4RpR\nLHOIXmixNrqKAB5n100YrERMuvvy0tRwsV8i7APNw7FP6T0BKtWoerZZ1Tj/\nbaYo\r\n=l7Ih\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "jason@developit.ca",
+          "name": "developit"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-dynamic-import_7.8.0_1578788216174_0.09516814042036548"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.8.3": {
+      "name": "@babel/plugin-proposal-dynamic-import",
+      "version": "7.8.3",
+      "description": "Transform import() expressions",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-dynamic-import"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.8.3",
+        "@babel/plugin-syntax-dynamic-import": "^7.8.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.8.3",
+        "@babel/helper-plugin-test-runner": "^7.8.3"
+      },
+      "gitHead": "a7620bd266ae1345975767bbc7abf09034437017",
+      "_id": "@babel/plugin-proposal-dynamic-import@7.8.3",
+      "_nodeVersion": "13.6.0",
+      "_npmVersion": "lerna/3.19.0/node@v13.6.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-NyaBbyLFXFLT9FP+zk0kYlUlA8XtCUbehs67F0nnEg7KICgMc2mNkIeu9TYhKzyXMkrapZFwAhXLdnt4IYHy1w==",
+        "shasum": "38c4fe555744826e97e2ae930b0fb4cc07e66054",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-dynamic-import/-/plugin-proposal-dynamic-import-7.8.3.tgz",
+        "fileCount": 4,
+        "unpackedSize": 3736,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeHOP6CRA9TVsSAnZWagAA6G4P/imQSzxVonYjryaMZJjz\n1J387TgXIXkApma8bQ/H0MnxkPZervoxvW0xIyBCNi638NyrUySYybncKaWv\nEOulqRXIoMEh7qhMQsrt3jDalcP6QRDGV1bmpy9+ujuovuV7CXxdsoEgb+9Q\ngMUtEjlB9MbVkcZgLTPRJwUY/H844j3sN8YHsv8mBzVWHVvxORN+tY7epXD4\nyw9vJl8/LecMHkWiiYK8UGqBSf+VfZJN+gqbI4hPZkd1ZJQzmg0kGRf8odc2\nv8tgajWqwLcUIdAvPOM5v9heypsV1gQukSgThRXuyIcu4CjLqm0UX3YDYf3r\npETMg4HyDfXgnxG4a1jAC8GwUYpIoc/G0RaqU7M8Pjndksr1iK00N9lUSstT\nTxaNoVILRDS8EXLK0LJXLFmCvIBxw729NCyxgKbnEb+idceJBX7jh9KvFUdh\nRWMmSF4fuFEMCXhOpWm0XQm0l7EOBWCxcofKnW+EukcHLSv1sD/jJySYu9U6\nMTQfpWUneSYqI4eYvD7ziqC6oqFJr4gnmQjASEd755t0Cntp9EH0bpEm8BYv\no0340/Yw0A63lQHot5bY76bK5UrybYqXRIneddAzamzOHqBaj4vinamFSk26\n73m8iMwgy2bQR1bJPK1v7p8qTtdJlrF9vbin5bqIxhVZc7C7JvWbIGRUJPLt\nTzbA\r\n=sJd1\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "jason@developit.ca",
+          "name": "developit"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-dynamic-import_7.8.3_1578951674399_0.31995286093111663"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.10.1": {
+      "name": "@babel/plugin-proposal-dynamic-import",
+      "version": "7.10.1",
+      "description": "Transform import() expressions",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/babel/babel.git",
+        "directory": "packages/babel-plugin-proposal-dynamic-import"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.10.1",
+        "@babel/plugin-syntax-dynamic-import": "^7.8.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.10.1",
+        "@babel/helper-plugin-test-runner": "^7.10.1"
+      },
+      "gitHead": "88f57a7ea659d25232bf62de1efceb5d6299b8cf",
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "homepage": "https://github.com/babel/babel#readme",
+      "_id": "@babel/plugin-proposal-dynamic-import@7.10.1",
+      "_nodeVersion": "12.16.3",
+      "_npmVersion": "lerna/3.19.0/node@v12.16.3+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-Cpc2yUVHTEGPlmiQzXj026kqwjEQAD9I4ZC16uzdbgWgitg/UHKHLffKNCQZ5+y8jpIZPJcKcwsr2HwPh+w3XA==",
+        "shasum": "e36979dc1dc3b73f6d6816fc4951da2363488ef0",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-dynamic-import/-/plugin-proposal-dynamic-import-7.10.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 3788,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJezuSFCRA9TVsSAnZWagAA0tsQAJhv0Wwo1JIEpzP1DCdO\nUVrkC85COcc7odPdvPqkWoheCEt1uQFVn8q9F+F6otu6Uuin4WxVwR65NQ4R\nnllpDWUDnm15P93hLHm1pIbvOQNu9zQgDalF6RAP6gzaVLWYY3+qXzyxF7lz\nMC940P1IEtifWdy8RzXW7GSqfji2GGkmwarkRlVUhNpgjqCQICezfB1wIITn\nMnk93mtzmqrGXHwLzMCD7n2V/QcjcuIvzU+cCsVGVKXIyMcPCxBIEikJcPdY\nKGabG6raZEkp869+XmgWFehiVFgAvkRc7KqqmK8ij9LSs2s15pi5cN3KxM+o\nMmd/+OXtZVQ47y9vGufuoYzqNaV6vHqLqruuy1UoOO12siWEXr060MfRAqcN\nFHrKRihNtNyJwQ/PL6yA8QIpx8ueZFOA9p1ekEiryLQhCmjSwxMUu2VY2O2S\nNFjexQgLuty8XfrbCSP/pSHeaEOX41zT+oU9Xy674i7G1Mnm/RRmaU1zi1Ng\npU6k04I3ZX6487579gzV+kRDuPe/IhC6D5+8MS4WAjnwafhQ1Q0jaLOXveHf\n9i766nx+x+lxCvwuAwkODQT4SMfbdArPUfd1BoO7UqUu3LKrJ46x9gpmKQGD\nHuWcwN+Qbzq/NC/RtoSlr8M5GoDqwxCeeGPAiDZaWODa4pjv+g7j9VNxNSir\nMInJ\r\n=opZI\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-dynamic-import_7.10.1_1590617220648_0.2860745817065615"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.10.4": {
+      "name": "@babel/plugin-proposal-dynamic-import",
+      "version": "7.10.4",
+      "description": "Transform import() expressions",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/babel/babel.git",
+        "directory": "packages/babel-plugin-proposal-dynamic-import"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.10.4",
+        "@babel/plugin-syntax-dynamic-import": "^7.8.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.10.4",
+        "@babel/helper-plugin-test-runner": "^7.10.4"
+      },
+      "gitHead": "7fd40d86a0d03ff0e9c3ea16b29689945433d4df",
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "homepage": "https://github.com/babel/babel#readme",
+      "_id": "@babel/plugin-proposal-dynamic-import@7.10.4",
+      "_nodeVersion": "14.4.0",
+      "_npmVersion": "lerna/3.19.0/node@v14.4.0+x64 (darwin)",
+      "dist": {
+        "integrity": "sha512-up6oID1LeidOOASNXgv/CFbgBqTuKJ0cJjz6An5tWD+NVBNlp3VNSBxv2ZdU7SYl3NxJC7agAQDApZusV6uFwQ==",
+        "shasum": "ba57a26cb98b37741e9d5bca1b8b0ddf8291f17e",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-dynamic-import/-/plugin-proposal-dynamic-import-7.10.4.tgz",
+        "fileCount": 4,
+        "unpackedSize": 3788,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJe+zoGCRA9TVsSAnZWagAAR80P/j/4kCRI3vmLw1xhgksj\njYhggQwZHexuEtecdknZV+SSfVq5l/VM+CcAF25RpeE3hKIPhvosyBCoBKqh\nScD7osnh8ZvbTsU0BUdcIQf1WNeiid1t1FUk8vQcelwScVpmUR/Ih2qKTjI7\nfLU7g9p/4W4MnNJF9wsxpRMhz0WMD9CI1WTMN/tIQ9jG9EG73KgcvURhnAHr\nuMF8/F9ZXbWJuk+6U9KK2LI7jgAKVw0WBKl6exBG7kFr8AnaMjBqQfQQthw0\nUI1boSewGmtSTqDVBHZAM4m7tisGBDFR8YbfJULa6i227PQTdJasDM6yHh+J\nRP7KSz5UkLfTiA12CT4FlfNfBevNo+QUxeHObhv9EqYsbmdpI45qJAn69nG8\nxLQ7VePrMRoOu0j8P6SyMHaMe3KQQKriX0lh/fAjhHnNrwHQ+gN5ZVAfblI9\nSPRpLtHnC8dBSi54sAY2Mj2kV8B0MFmp/zc85Qjt6k21hlZ3qZ8FdeG5cMCW\nzRuXnbBHRuUF0EW94DuDUQ+Y9RrL72QN1HC0u/Hp11LBkFl5EQLmDkAgBOsY\n1Z2bGZgIJw42l8rzLbB9MR4SVYPcvEOmaYLf1dTtQ5uy2sGAaoHOIRdwJKNA\nd+mWs5fGlGqZBuD5mnph/n6A0N8TMW4fR1nWIr2VFe368VrYeumx6JMpafAI\n+8W7\r\n=fCJW\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "i@jhuang.me",
+          "name": "jlhwung"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "jlhwung",
+        "email": "i@jhuang.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-dynamic-import_7.10.4_1593522694146_0.2434713288862551"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.12.1": {
+      "name": "@babel/plugin-proposal-dynamic-import",
+      "version": "7.12.1",
+      "description": "Transform import() expressions",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel.git",
+        "directory": "packages/babel-plugin-proposal-dynamic-import"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.10.4",
+        "@babel/plugin-syntax-dynamic-import": "^7.8.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.12.1",
+        "@babel/helper-plugin-test-runner": "7.10.4"
+      },
+      "_id": "@babel/plugin-proposal-dynamic-import@7.12.1",
+      "dist": {
+        "shasum": "43eb5c2a3487ecd98c5c8ea8b5fdb69a2749b2dc",
+        "integrity": "sha512-a4rhUSZFuq5W8/OO8H7BL5zspjnc1FLd9hlOxIK/f7qG4a0qsqk8uvF/ywgBA8/OmjsapjpvaEOYItfGG1qIvQ==",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-dynamic-import/-/plugin-proposal-dynamic-import-7.12.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 3729,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfiM+bCRA9TVsSAnZWagAAuhYP/2T1AUOJRo431Db0lJP8\nIg6s5HqHkoI/D3PjaMsrJ0AoEV/vZk2p7usPG8u0JGHCXF6P0zqcltHRSsJh\n0mCKQ6JxeU7vCaHNxrv+YHpP4H3LDjiZkOQmA4tOzGB5sH6SKcjRY1KajHa9\ngprE00+AdW8QAuzHj4OUPRyI4w8uewHn1/IfdQGYIUQ0xX3eydbjv+MDaP+m\nm0awkOuzTvQ41hWk5VlBFK/oP3isWaB0ikaowAbKikvqSewzCKaWfR3Fv9N/\nVVj7rH3QVgD3DWxpddFLyJV10OyEUyWK2LDWz7fXT8qCvKdx3EcFw1nlWDNa\n6CXE7Rs1NS+QT56cvYiiUTZl0EEZ/vgNxzyWH4uEls8VubASrJwO6O+Vl34x\nVCzLqVXoPbjn8CRHKO65HamAQsu2p0UWA3nyuYYX+DXIHLY4oh8/yL6NsSsX\na/Sp+9wMHbwUsegzee8SkSCPE+Cnmhcj2h2m/HaQEKE10038VSlxFezlp30W\nORmkZU3U2h/D3avEncYVGO6oNauWDXADa3NtqPxMzvRmYnPi6I4d7siE+VsC\nqTiyPZnfGaVLORGlARl0+WamcDDJL7EgQrO8zgyAiEAl4mM75uwznAT+CU89\np70H9fXSnFmoaatr1JfJiuDpWRKyc8IIgXBDEOnXdYikWkeTKg/CL+caVwfm\n+KtN\r\n=bIH9\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "jlhwung",
+          "email": "i@jhuang.me"
+        },
+        {
+          "name": "nicolo-ribaudo",
+          "email": "nicolo.ribaudo@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "danez",
+          "email": "daniel@tschinder.de"
+        },
+        {
+          "name": "existentialism",
+          "email": "bng412@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-dynamic-import_7.12.1_1602801562845_0.7443800813316817"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2019-07-04T12:57:51.353Z",
+    "7.5.0": "2019-07-04T12:57:51.630Z",
+    "modified": "2020-10-15T22:39:27.890Z",
+    "7.7.0": "2019-11-05T10:53:12.444Z",
+    "7.7.4": "2019-11-22T23:32:36.045Z",
+    "7.8.0": "2020-01-12T00:16:56.300Z",
+    "7.8.3": "2020-01-13T21:41:14.512Z",
+    "7.10.1": "2020-05-27T22:07:00.781Z",
+    "7.10.4": "2020-06-30T13:11:34.269Z",
+    "7.12.1": "2020-10-15T22:39:22.965Z"
+  },
+  "maintainers": [
+    {
+      "name": "jlhwung",
+      "email": "i@jhuang.me"
+    },
+    {
+      "name": "nicolo-ribaudo",
+      "email": "nicolo.ribaudo@gmail.com"
+    },
+    {
+      "name": "hzoo",
+      "email": "hi@henryzoo.com"
+    },
+    {
+      "name": "loganfsmyth",
+      "email": "loganfsmyth@gmail.com"
+    },
+    {
+      "name": "danez",
+      "email": "daniel@tschinder.de"
+    },
+    {
+      "name": "existentialism",
+      "email": "bng412@gmail.com"
+    }
+  ],
+  "description": "Transform import() expressions",
+  "keywords": [
+    "babel-plugin"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/babel/babel.git",
+    "directory": "packages/babel-plugin-proposal-dynamic-import"
+  },
+  "license": "MIT",
+  "readme": "",
+  "readmeFilename": ""
+}

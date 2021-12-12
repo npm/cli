@@ -1,0 +1,1355 @@
+{
+  "_id": "ret",
+  "_rev": "40-728dee40b4455c53520ae3d2eafcf228",
+  "name": "ret",
+  "description": "Tokenizes a string that represents a regular expression.",
+  "dist-tags": {
+    "latest": "0.3.1"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "ret",
+      "description": "Tokenizes a string that represetns a regular expression.",
+      "keywords": [
+        "regex",
+        "regexp",
+        "regular expression",
+        "parser",
+        "tokenizer"
+      ],
+      "version": "0.1.0",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/fent/ret.js.git"
+      },
+      "author": {
+        "name": "Roly Fentanes",
+        "url": "https://github.com/fent"
+      },
+      "main": "./lib/index.js",
+      "scripts": {
+        "test": "vows test/*-test.js --spec"
+      },
+      "directories": {
+        "lib": "./lib"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "devDependencies": {
+        "vows": "0.5.x"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://github.com/fent/ret.js/raw/master/LICENSE"
+        }
+      ],
+      "_npmUser": {
+        "name": "neat",
+        "email": "roly426@gmail.com"
+      },
+      "_id": "ret@0.1.0",
+      "dependencies": {},
+      "_engineSupported": true,
+      "_npmVersion": "1.1.0-beta-4",
+      "_nodeVersion": "v0.6.6",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "98f230ea7de86169ad00c0e0d8880cb0a9c3c494",
+        "tarball": "https://registry.npmjs.org/ret/-/ret-0.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "neat",
+          "email": "roly426@gmail.com"
+        }
+      ]
+    },
+    "0.1.1": {
+      "name": "ret",
+      "description": "Tokenizes a string that represetns a regular expression.",
+      "keywords": [
+        "regex",
+        "regexp",
+        "regular expression",
+        "parser",
+        "tokenizer"
+      ],
+      "version": "0.1.1",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/fent/ret.js.git"
+      },
+      "author": {
+        "name": "Roly Fentanes",
+        "url": "https://github.com/fent"
+      },
+      "main": "./lib/index.js",
+      "scripts": {
+        "test": "vows test/*-test.js --spec"
+      },
+      "directories": {
+        "lib": "./lib"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "devDependencies": {
+        "vows": "0.5.x"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://github.com/fent/ret.js/raw/master/LICENSE"
+        }
+      ],
+      "_npmUser": {
+        "name": "neat",
+        "email": "roly426@gmail.com"
+      },
+      "_id": "ret@0.1.1",
+      "dependencies": {},
+      "_engineSupported": true,
+      "_npmVersion": "1.1.0-beta-4",
+      "_nodeVersion": "v0.6.6",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "f3955511aca1146dd1db776fd4a098c43336934f",
+        "tarball": "https://registry.npmjs.org/ret/-/ret-0.1.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "neat",
+          "email": "roly426@gmail.com"
+        }
+      ]
+    },
+    "0.1.2": {
+      "name": "ret",
+      "description": "Tokenizes a string that represents a regular expression.",
+      "keywords": [
+        "regex",
+        "regexp",
+        "regular expression",
+        "parser",
+        "tokenizer"
+      ],
+      "version": "0.1.2",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/fent/ret.js.git"
+      },
+      "author": {
+        "name": "Roly Fentanes",
+        "url": "https://github.com/fent"
+      },
+      "main": "./lib/index.js",
+      "scripts": {
+        "test": "vows test/*-test.js --spec"
+      },
+      "directories": {
+        "lib": "./lib"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "devDependencies": {
+        "vows": "0.5.x"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://github.com/fent/ret.js/raw/master/LICENSE"
+        }
+      ],
+      "_npmUser": {
+        "name": "neat",
+        "email": "roly426@gmail.com"
+      },
+      "_id": "ret@0.1.2",
+      "dependencies": {},
+      "_engineSupported": true,
+      "_npmVersion": "1.0.106",
+      "_nodeVersion": "v0.6.6",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "e0c1c5c5d324c9ba9ed6d2f35a32cebda3b71e92",
+        "tarball": "https://registry.npmjs.org/ret/-/ret-0.1.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "neat",
+          "email": "roly426@gmail.com"
+        }
+      ]
+    },
+    "0.1.3": {
+      "name": "ret",
+      "description": "Tokenizes a string that represents a regular expression.",
+      "keywords": [
+        "regex",
+        "regexp",
+        "regular expression",
+        "parser",
+        "tokenizer"
+      ],
+      "version": "0.1.3",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/fent/ret.js.git"
+      },
+      "author": {
+        "name": "Roly Fentanes",
+        "url": "https://github.com/fent"
+      },
+      "main": "./lib/index.js",
+      "scripts": {
+        "test": "vows test/*-test.js --spec"
+      },
+      "directories": {
+        "lib": "./lib"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "devDependencies": {
+        "vows": "0.5.x"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://github.com/fent/ret.js/raw/master/LICENSE"
+        }
+      ],
+      "_npmUser": {
+        "name": "neat",
+        "email": "roly426@gmail.com"
+      },
+      "_id": "ret@0.1.3",
+      "dependencies": {},
+      "_engineSupported": true,
+      "_npmVersion": "1.0.106",
+      "_nodeVersion": "v0.6.6",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "0b7595b10bff95dcc735fb3c9b959e3519427302",
+        "tarball": "https://registry.npmjs.org/ret/-/ret-0.1.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "neat",
+          "email": "roly426@gmail.com"
+        }
+      ]
+    },
+    "0.1.4": {
+      "name": "ret",
+      "description": "Tokenizes a string that represents a regular expression.",
+      "keywords": [
+        "regex",
+        "regexp",
+        "regular expression",
+        "parser",
+        "tokenizer"
+      ],
+      "version": "0.1.4",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/fent/ret.js.git"
+      },
+      "author": {
+        "name": "Roly Fentanes",
+        "url": "https://github.com/fent"
+      },
+      "main": "./lib/index.js",
+      "scripts": {
+        "test": "vows test/*-test.js --spec"
+      },
+      "directories": {
+        "lib": "./lib"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "devDependencies": {
+        "vows": "0.5.x"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://github.com/fent/ret.js/raw/master/LICENSE"
+        }
+      ],
+      "_npmUser": {
+        "name": "neat",
+        "email": "roly426@gmail.com"
+      },
+      "_id": "ret@0.1.4",
+      "dependencies": {},
+      "_engineSupported": true,
+      "_npmVersion": "1.0.106",
+      "_nodeVersion": "v0.6.6",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "af433670339787fc592b7ea4a0346332bf6b4263",
+        "tarball": "https://registry.npmjs.org/ret/-/ret-0.1.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "neat",
+          "email": "roly426@gmail.com"
+        }
+      ]
+    },
+    "0.1.5": {
+      "name": "ret",
+      "description": "Tokenizes a string that represents a regular expression.",
+      "keywords": [
+        "regex",
+        "regexp",
+        "regular expression",
+        "parser",
+        "tokenizer"
+      ],
+      "version": "0.1.5",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/fent/ret.js.git"
+      },
+      "author": {
+        "name": "Roly Fentanes",
+        "url": "https://github.com/fent"
+      },
+      "main": "./lib/index.js",
+      "scripts": {
+        "test": "vows test/*-test.js --spec"
+      },
+      "directories": {
+        "lib": "./lib"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "devDependencies": {
+        "vows": "0.5.x"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://github.com/fent/ret.js/raw/master/LICENSE"
+        }
+      ],
+      "_npmUser": {
+        "name": "neat",
+        "email": "roly426@gmail.com"
+      },
+      "_id": "ret@0.1.5",
+      "dependencies": {},
+      "optionalDependencies": {},
+      "_engineSupported": true,
+      "_npmVersion": "1.1.16",
+      "_nodeVersion": "v0.6.15",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "7f53d82221b9a29a2f51e5803a1c1b2b3f5d3b6f",
+        "tarball": "https://registry.npmjs.org/ret/-/ret-0.1.5.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "neat",
+          "email": "roly426@gmail.com"
+        }
+      ]
+    },
+    "0.1.6": {
+      "name": "ret",
+      "description": "Tokenizes a string that represents a regular expression.",
+      "keywords": [
+        "regex",
+        "regexp",
+        "regular expression",
+        "parser",
+        "tokenizer"
+      ],
+      "version": "0.1.6",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/fent/ret.js.git"
+      },
+      "author": {
+        "name": "Roly Fentanes",
+        "url": "https://github.com/fent"
+      },
+      "main": "./lib/index.js",
+      "scripts": {
+        "test": "vows test/*-test.js --spec"
+      },
+      "directories": {
+        "lib": "./lib"
+      },
+      "devDependencies": {
+        "vows": "0.5.x"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://github.com/fent/ret.js/raw/master/LICENSE"
+        }
+      ],
+      "_id": "ret@0.1.6",
+      "dist": {
+        "shasum": "c98f948fb8b7f795cb411e4c292bac10c82a4232",
+        "tarball": "https://registry.npmjs.org/ret/-/ret-0.1.6.tgz"
+      },
+      "_npmVersion": "1.1.49",
+      "_npmUser": {
+        "name": "neat",
+        "email": "roly426@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "neat",
+          "email": "roly426@gmail.com"
+        }
+      ]
+    },
+    "0.1.7": {
+      "name": "ret",
+      "description": "Tokenizes a string that represents a regular expression.",
+      "keywords": [
+        "regex",
+        "regexp",
+        "regular expression",
+        "parser",
+        "tokenizer"
+      ],
+      "version": "0.1.7",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/fent/ret.js.git"
+      },
+      "author": {
+        "name": "Roly Fentanes",
+        "url": "https://github.com/fent"
+      },
+      "main": "./lib/index.js",
+      "scripts": {
+        "test": "vows test/*-test.js --spec"
+      },
+      "directories": {
+        "lib": "./lib"
+      },
+      "devDependencies": {
+        "vows": "0.5.x"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://github.com/fent/ret.js/raw/master/LICENSE"
+        }
+      ],
+      "bugs": {
+        "url": "https://github.com/fent/ret.js/issues"
+      },
+      "_id": "ret@0.1.7",
+      "dist": {
+        "shasum": "2dc5b181c17c208284e154de1b5c4d17068b8e76",
+        "tarball": "https://registry.npmjs.org/ret/-/ret-0.1.7.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.8",
+      "_npmUser": {
+        "name": "fent",
+        "email": "roly426@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "fent",
+          "email": "roly426@gmail.com"
+        }
+      ]
+    },
+    "0.1.8": {
+      "name": "ret",
+      "description": "Tokenizes a string that represents a regular expression.",
+      "keywords": [
+        "regex",
+        "regexp",
+        "regular expression",
+        "parser",
+        "tokenizer"
+      ],
+      "version": "0.1.8",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/fent/ret.js.git"
+      },
+      "author": {
+        "name": "Roly Fentanes",
+        "url": "https://github.com/fent"
+      },
+      "main": "./lib/index.js",
+      "scripts": {
+        "test": "vows test/*-test.js --spec"
+      },
+      "directories": {
+        "lib": "./lib"
+      },
+      "devDependencies": {
+        "vows": "0.5.x"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://github.com/fent/ret.js/raw/master/LICENSE"
+        }
+      ],
+      "bugs": {
+        "url": "https://github.com/fent/ret.js/issues"
+      },
+      "homepage": "https://github.com/fent/ret.js",
+      "_id": "ret@0.1.8",
+      "dist": {
+        "shasum": "76da219725eeda8a7ac3b83248ab8f7119846cce",
+        "tarball": "https://registry.npmjs.org/ret/-/ret-0.1.8.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.14",
+      "_npmUser": {
+        "name": "fent",
+        "email": "roly426@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "fent",
+          "email": "roly426@gmail.com"
+        }
+      ]
+    },
+    "0.1.9": {
+      "name": "ret",
+      "description": "Tokenizes a string that represents a regular expression.",
+      "keywords": [
+        "regex",
+        "regexp",
+        "regular expression",
+        "parser",
+        "tokenizer"
+      ],
+      "version": "0.1.9",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/fent/ret.js.git"
+      },
+      "author": {
+        "name": "Roly Fentanes",
+        "url": "https://github.com/fent"
+      },
+      "main": "./lib/index.js",
+      "scripts": {
+        "test": "vows test/*-test.js --spec"
+      },
+      "directories": {
+        "lib": "./lib"
+      },
+      "devDependencies": {
+        "vows": "0.7.x"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://github.com/fent/ret.js/raw/master/LICENSE"
+        }
+      ],
+      "gitHead": "0f93cd577ddea079f2dab81fe2cb04f37bdf1eba",
+      "bugs": {
+        "url": "https://github.com/fent/ret.js/issues"
+      },
+      "homepage": "https://github.com/fent/ret.js",
+      "_id": "ret@0.1.9",
+      "_shasum": "369aae90ab4450ab1ddf3a64db9f38c0d033e624",
+      "_from": ".",
+      "_npmVersion": "1.4.23",
+      "_npmUser": {
+        "name": "fent",
+        "email": "roly426@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "fent",
+          "email": "roly426@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "369aae90ab4450ab1ddf3a64db9f38c0d033e624",
+        "tarball": "https://registry.npmjs.org/ret/-/ret-0.1.9.tgz"
+      }
+    },
+    "0.1.10": {
+      "name": "ret",
+      "description": "Tokenizes a string that represents a regular expression.",
+      "keywords": [
+        "regex",
+        "regexp",
+        "regular expression",
+        "parser",
+        "tokenizer"
+      ],
+      "version": "0.1.10",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/fent/ret.js.git"
+      },
+      "author": {
+        "name": "Roly Fentanes",
+        "url": "https://github.com/fent"
+      },
+      "main": "./lib/index.js",
+      "scripts": {
+        "test": "vows test/*-test.js --spec"
+      },
+      "directories": {
+        "lib": "./lib"
+      },
+      "devDependencies": {
+        "vows": "0.7.x"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://github.com/fent/ret.js/raw/master/LICENSE"
+        }
+      ],
+      "gitHead": "7059a6ca2b12ca170cd3eba73be70f4837611d06",
+      "bugs": {
+        "url": "https://github.com/fent/ret.js/issues"
+      },
+      "homepage": "https://github.com/fent/ret.js",
+      "_id": "ret@0.1.10",
+      "_shasum": "7bda7048cb6b0566617d3b15a3345f712060a1a4",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "fent",
+        "email": "roly426@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "fent",
+          "email": "roly426@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "7bda7048cb6b0566617d3b15a3345f712060a1a4",
+        "tarball": "https://registry.npmjs.org/ret/-/ret-0.1.10.tgz"
+      }
+    },
+    "0.1.11": {
+      "name": "ret",
+      "description": "Tokenizes a string that represents a regular expression.",
+      "keywords": [
+        "regex",
+        "regexp",
+        "regular expression",
+        "parser",
+        "tokenizer"
+      ],
+      "version": "0.1.11",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/fent/ret.js.git"
+      },
+      "author": {
+        "name": "Roly Fentanes",
+        "url": "https://github.com/fent"
+      },
+      "main": "./lib/index.js",
+      "scripts": {
+        "test": "vows test/*-test.js --spec"
+      },
+      "directories": {
+        "lib": "./lib"
+      },
+      "devDependencies": {
+        "vows": "*"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://github.com/fent/ret.js/raw/master/LICENSE"
+        }
+      ],
+      "gitHead": "d3f48960a2a701d964ec94e31c5b0e6073f74aeb",
+      "bugs": {
+        "url": "https://github.com/fent/ret.js/issues"
+      },
+      "homepage": "https://github.com/fent/ret.js#readme",
+      "_id": "ret@0.1.11",
+      "_shasum": "281bbd5bd0e2a935181a503ec5ca60e3faa9c4a9",
+      "_from": ".",
+      "_npmVersion": "3.3.12",
+      "_nodeVersion": "5.1.0",
+      "_npmUser": {
+        "name": "fent",
+        "email": "roly426@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "fent",
+          "email": "roly426@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "281bbd5bd0e2a935181a503ec5ca60e3faa9c4a9",
+        "tarball": "https://registry.npmjs.org/ret/-/ret-0.1.11.tgz"
+      }
+    },
+    "0.1.12": {
+      "name": "ret",
+      "description": "Tokenizes a string that represents a regular expression.",
+      "keywords": [
+        "regex",
+        "regexp",
+        "regular expression",
+        "parser",
+        "tokenizer"
+      ],
+      "version": "0.1.12",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/fent/ret.js.git"
+      },
+      "author": {
+        "name": "Roly Fentanes",
+        "url": "https://github.com/fent"
+      },
+      "main": "./lib/index.js",
+      "scripts": {
+        "test": "istanbul cover vows test/*-test.js --spec"
+      },
+      "directories": {
+        "lib": "./lib"
+      },
+      "devDependencies": {
+        "istanbul": "*",
+        "vows": "*"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://github.com/fent/ret.js/raw/master/LICENSE"
+        }
+      ],
+      "gitHead": "12d1f8173d6be85135eb749cd70dc68782352039",
+      "bugs": {
+        "url": "https://github.com/fent/ret.js/issues"
+      },
+      "homepage": "https://github.com/fent/ret.js#readme",
+      "_id": "ret@0.1.12",
+      "_shasum": "29348dc8b879393692dc47574494c38a26bf648f",
+      "_from": ".",
+      "_npmVersion": "3.9.5",
+      "_nodeVersion": "6.2.2",
+      "_npmUser": {
+        "name": "fent",
+        "email": "roly426@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "fent",
+          "email": "roly426@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "29348dc8b879393692dc47574494c38a26bf648f",
+        "tarball": "https://registry.npmjs.org/ret/-/ret-0.1.12.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/ret-0.1.12.tgz_1468810244810_0.24253487680107355"
+      }
+    },
+    "0.1.13": {
+      "name": "ret",
+      "description": "Tokenizes a string that represents a regular expression.",
+      "keywords": [
+        "regex",
+        "regexp",
+        "regular expression",
+        "parser",
+        "tokenizer"
+      ],
+      "version": "0.1.13",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/fent/ret.js.git"
+      },
+      "author": {
+        "name": "Roly Fentanes",
+        "url": "https://github.com/fent"
+      },
+      "main": "./lib/index.js",
+      "scripts": {
+        "test": "istanbul cover vows -- --spec test/*-test.js"
+      },
+      "directories": {
+        "lib": "./lib"
+      },
+      "devDependencies": {
+        "istanbul": "*",
+        "vows": "*"
+      },
+      "license": "MIT",
+      "gitHead": "81b521982f6574b22f174ba47e3456aab0e9741b",
+      "bugs": {
+        "url": "https://github.com/fent/ret.js/issues"
+      },
+      "homepage": "https://github.com/fent/ret.js#readme",
+      "_id": "ret@0.1.13",
+      "_shasum": "38c2702ece654978941edd8b7dfac6aeeef4067d",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "6.9.1",
+      "_npmUser": {
+        "name": "fent",
+        "email": "roly426@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "fent",
+          "email": "roly426@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "38c2702ece654978941edd8b7dfac6aeeef4067d",
+        "tarball": "https://registry.npmjs.org/ret/-/ret-0.1.13.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/ret-0.1.13.tgz_1480905347916_0.20543619222007692"
+      }
+    },
+    "0.1.14": {
+      "name": "ret",
+      "description": "Tokenizes a string that represents a regular expression.",
+      "keywords": [
+        "regex",
+        "regexp",
+        "regular expression",
+        "parser",
+        "tokenizer"
+      ],
+      "version": "0.1.14",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/fent/ret.js.git"
+      },
+      "author": {
+        "name": "Roly Fentanes",
+        "url": "https://github.com/fent"
+      },
+      "main": "./lib/index.js",
+      "scripts": {
+        "test": "istanbul cover vows -- --spec test/*-test.js"
+      },
+      "directories": {
+        "lib": "./lib"
+      },
+      "devDependencies": {
+        "istanbul": "*",
+        "vows": "*"
+      },
+      "engines": {
+        "node": ">=0.12"
+      },
+      "license": "MIT",
+      "gitHead": "3883f40c3eb4a379e67b374358efcb68fb2e677e",
+      "bugs": {
+        "url": "https://github.com/fent/ret.js/issues"
+      },
+      "homepage": "https://github.com/fent/ret.js#readme",
+      "_id": "ret@0.1.14",
+      "_shasum": "58c636837b12e161f8a380cf081c6a230fd1664e",
+      "_from": ".",
+      "_npmVersion": "4.1.2",
+      "_nodeVersion": "7.7.1",
+      "_npmUser": {
+        "name": "fent",
+        "email": "roly426@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "fent",
+          "email": "roly426@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "58c636837b12e161f8a380cf081c6a230fd1664e",
+        "tarball": "https://registry.npmjs.org/ret/-/ret-0.1.14.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/ret-0.1.14.tgz_1488515797286_0.22940291627310216"
+      }
+    },
+    "0.1.15": {
+      "name": "ret",
+      "description": "Tokenizes a string that represents a regular expression.",
+      "keywords": [
+        "regex",
+        "regexp",
+        "regular expression",
+        "parser",
+        "tokenizer"
+      ],
+      "version": "0.1.15",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/fent/ret.js.git"
+      },
+      "author": {
+        "name": "Roly Fentanes",
+        "url": "https://github.com/fent"
+      },
+      "main": "./lib/index.js",
+      "files": [
+        "lib"
+      ],
+      "scripts": {
+        "test": "istanbul cover vows -- --spec test/*-test.js"
+      },
+      "directories": {
+        "lib": "./lib"
+      },
+      "devDependencies": {
+        "istanbul": "*",
+        "vows": "*"
+      },
+      "engines": {
+        "node": ">=0.12"
+      },
+      "license": "MIT",
+      "gitHead": "7f7c436e2a85fbc068e6d94e2611ce78b3e9ad10",
+      "bugs": {
+        "url": "https://github.com/fent/ret.js/issues"
+      },
+      "homepage": "https://github.com/fent/ret.js#readme",
+      "_id": "ret@0.1.15",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "8.3.0",
+      "_npmUser": {
+        "name": "fent",
+        "email": "roly426@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-TTlYpa+OL+vMMNG24xSlQGEJ3B/RzEfUlLct7b5G/ytav+wPrplCpVMFuwzXbkecJrb6IYo1iFb0S9v37754mg==",
+        "shasum": "b8a4825d5bdb1fc3f6f53c2bc33f81388681c7bc",
+        "tarball": "https://registry.npmjs.org/ret/-/ret-0.1.15.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "fent",
+          "email": "roly426@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ret-0.1.15.tgz_1502337231422_0.8702190876938403"
+      }
+    },
+    "0.2.0": {
+      "name": "ret",
+      "description": "Tokenizes a string that represents a regular expression.",
+      "keywords": [
+        "regex",
+        "regexp",
+        "regular expression",
+        "parser",
+        "tokenizer"
+      ],
+      "version": "0.2.0",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/fent/ret.js.git"
+      },
+      "author": {
+        "name": "Roly Fentanes",
+        "url": "https://github.com/fent"
+      },
+      "main": "./lib/index.js",
+      "files": [
+        "lib"
+      ],
+      "scripts": {
+        "test": "istanbul cover vows -- --spec test/*-test.js"
+      },
+      "directories": {
+        "lib": "./lib"
+      },
+      "devDependencies": {
+        "istanbul": "^0.4.5",
+        "vows": "^0.8.1"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "license": "MIT",
+      "gitHead": "5fbe198d6820a06c1e42505e292ea72ef5ac1f2e",
+      "bugs": {
+        "url": "https://github.com/fent/ret.js/issues"
+      },
+      "homepage": "https://github.com/fent/ret.js#readme",
+      "_id": "ret@0.2.0",
+      "_npmVersion": "5.4.2",
+      "_nodeVersion": "8.8.1",
+      "_npmUser": {
+        "name": "fent",
+        "email": "roly426@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-EeoE0lijTMBvPaBPSXhZzW6ODKvT/XcIy+Xn4W7TO7bNKixuyPNU1xo/XOKTRVZ4aT3A/XlzY+8VNkHZGq4swA==",
+        "shasum": "2df0d34a638d13812ddf8a2c3e22cc6c04994fc9",
+        "tarball": "https://registry.npmjs.org/ret/-/ret-0.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "fent",
+          "email": "roly426@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ret-0.2.0.tgz_1509313037033_0.6622188813053071"
+      }
+    },
+    "0.2.1": {
+      "name": "ret",
+      "description": "Tokenizes a string that represents a regular expression.",
+      "keywords": [
+        "regex",
+        "regexp",
+        "regular expression",
+        "parser",
+        "tokenizer"
+      ],
+      "version": "0.2.1",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/fent/ret.js.git"
+      },
+      "author": {
+        "name": "Roly Fentanes",
+        "url": "https://github.com/fent"
+      },
+      "main": "./lib/index.js",
+      "files": [
+        "lib"
+      ],
+      "scripts": {
+        "test": "istanbul cover vows -- --spec test/*-test.js"
+      },
+      "directories": {
+        "lib": "./lib"
+      },
+      "devDependencies": {
+        "istanbul": "^0.4.5",
+        "vows": "^0.8.1"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "license": "MIT",
+      "gitHead": "ff351f56171d48c67a85c2f7f4c23c68076f37f4",
+      "bugs": {
+        "url": "https://github.com/fent/ret.js/issues"
+      },
+      "homepage": "https://github.com/fent/ret.js#readme",
+      "_id": "ret@0.2.1",
+      "_shasum": "900dda400b6220d8d429f4ef8557710e544825ce",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "4.8.4",
+      "_npmUser": {
+        "name": "fent",
+        "email": "roly426@gmail.com"
+      },
+      "dist": {
+        "shasum": "900dda400b6220d8d429f4ef8557710e544825ce",
+        "tarball": "https://registry.npmjs.org/ret/-/ret-0.2.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "fent",
+          "email": "roly426@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ret-0.2.1.tgz_1509502975682_0.30610496643930674"
+      }
+    },
+    "0.2.2": {
+      "name": "ret",
+      "description": "Tokenizes a string that represents a regular expression.",
+      "keywords": [
+        "regex",
+        "regexp",
+        "regular expression",
+        "parser",
+        "tokenizer"
+      ],
+      "version": "0.2.2",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/fent/ret.js.git"
+      },
+      "author": {
+        "name": "fent",
+        "url": "https://github.com/fent"
+      },
+      "main": "./lib/index.js",
+      "files": [
+        "lib"
+      ],
+      "scripts": {
+        "test": "istanbul cover vows -- --spec test/*-test.js"
+      },
+      "directories": {
+        "lib": "./lib"
+      },
+      "devDependencies": {
+        "istanbul": "^0.4.5",
+        "vows": "^0.8.1"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "license": "MIT",
+      "gitHead": "c856e909be0ea5b4518c722b3481c4c52ce839fe",
+      "bugs": {
+        "url": "https://github.com/fent/ret.js/issues"
+      },
+      "homepage": "https://github.com/fent/ret.js#readme",
+      "_id": "ret@0.2.2",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.5.0",
+      "_npmUser": {
+        "name": "fent",
+        "email": "fentbox@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-M0b3YWQs7R3Z917WRQy1HHA7Ba7D8hvZg6UE5mLykJxQVE2ju0IXbGlaHPPlkY+WN7wFP+wUMXmBFA0aV6vYGQ==",
+        "shasum": "b6861782a1f4762dce43402a71eb7a283f44573c",
+        "tarball": "https://registry.npmjs.org/ret/-/ret-0.2.2.tgz",
+        "fileCount": 8,
+        "unpackedSize": 17038
+      },
+      "maintainers": [
+        {
+          "name": "fent",
+          "email": "roly426@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ret_0.2.2_1519359185580_0.9368461462852189"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.3.0": {
+      "name": "ret",
+      "description": "Tokenizes a string that represents a regular expression.",
+      "keywords": [
+        "regex",
+        "regexp",
+        "regular expression",
+        "parser",
+        "tokenizer"
+      ],
+      "version": "0.3.0",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/fent/ret.js.git"
+      },
+      "author": {
+        "name": "fent",
+        "url": "https://github.com/fent"
+      },
+      "main": "./lib/index.js",
+      "types": "./typings/index.d.ts",
+      "scripts": {
+        "test": "istanbul cover vows -- --spec test/*-test.js"
+      },
+      "directories": {
+        "lib": "./lib"
+      },
+      "devDependencies": {
+        "istanbul": "^0.4.5",
+        "vows": "^0.8.2"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "license": "MIT",
+      "gitHead": "90f393d4644f1e83445fe0ecbb31517e5047e104",
+      "bugs": {
+        "url": "https://github.com/fent/ret.js/issues"
+      },
+      "homepage": "https://github.com/fent/ret.js#readme",
+      "_id": "ret@0.3.0",
+      "_nodeVersion": "11.10.1",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "fent",
+        "email": "fentbox@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-Bsce3XWwlM8YUKQMFidavX9Lt2QGJK4NdvOBNw6ubXltWB/I8lrRVBpnnOtsQkX7ICnnEQw5sAxzr3Es+BGz1g==",
+        "shasum": "bb23d7a8a1ec44ecc2bdcf843e3ded137cf4cf71",
+        "tarball": "https://registry.npmjs.org/ret/-/ret-0.3.0.tgz",
+        "fileCount": 8,
+        "unpackedSize": 22249,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcqn6TCRA9TVsSAnZWagAAdWQQAIvhoDbehDO56zzbxcnY\njHnQZdEK0LrTDBwIaafJu++HqqQzmgGMsBIkf8NC4lqcvxngKLN4OzUOKRyM\nWXSTVl3S7KLsMw+hRw1NExIPf/9TecEVyAsYzXRMbHZWxtagDMFDx9IYM6uI\nXMD86Zq3BQ4a2DIxdnI93d0AZ8NVdrvNvIQ2eg2eridTpSoEQ1LaiVLlFMIu\npXQfZ1wFRTxEenKQnRhk46ANxUdju0/QEgxJtHbQ0g2pD2v53P/s/vfN3hDt\nsVI/etGEvYCzreqo0uqHcNiKW0LD4SxgEaFpKNBWUQOxLcHfI0JazPrDsXP0\nWSpOcg8/FIPNJrm99DaNt7h2j78UZ+OcQta7CweJzfg8b8FO2ZJrUPnsUsBh\nBgRtkyRLHbg5GpT4U9322UeW9chTZxDB1vKknRz1bLC2gE2pbzuYAEQbS8OH\nZmjq+v5UiO1/p5tbtAARdILjdqV0mLQJeywO/ZHmLumNEW26CAO6ykqy/hDp\nbY9onLkOeu5vWjq8q+XBvfDUdf1Qxr9JPrge8YlwI0isuKSeHhuz3GJsXalp\n22jvR8xRzFJR9U64eOKLaokiQF+9GDXuaxuagRpA9SweRNYYSzTgPvqyf/54\nKbWlcziyMgQTQ2AmAUOFhbfm+Neva1GJVj8O7VRNK4OXi9Xz3HhBnt9zrpoN\naUnm\r\n=mWdc\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "fent",
+          "email": "roly426@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ret_0.3.0_1554677394285_0.3187567201337915"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.3.1": {
+      "name": "ret",
+      "description": "Tokenizes a string that represents a regular expression.",
+      "keywords": [
+        "regex",
+        "regexp",
+        "regular expression",
+        "parser",
+        "tokenizer"
+      ],
+      "version": "0.3.1",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/fent/ret.js.git"
+      },
+      "author": {
+        "name": "fent",
+        "url": "https://github.com/fent"
+      },
+      "main": "./lib/index.js",
+      "types": "./typings/index.d.ts",
+      "scripts": {
+        "test": "istanbul cover vows -- --spec test/*-test.js"
+      },
+      "directories": {
+        "lib": "./lib"
+      },
+      "devDependencies": {
+        "istanbul": "^0.4.5",
+        "vows": "^0.8.2"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "license": "MIT",
+      "gitHead": "bc25727c578e48cb3e36c357bcbe3558b10ebda5",
+      "bugs": {
+        "url": "https://github.com/fent/ret.js/issues"
+      },
+      "homepage": "https://github.com/fent/ret.js#readme",
+      "_id": "ret@0.3.1",
+      "_nodeVersion": "11.10.1",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "fent",
+        "email": "fentbox@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-I/Evl5NrbgURNN0zts1dtI0ItI9pBg53jicdv9JqGumyOX+K7FELFcr2k3ED0hT7t9GsHctZj2in+tXDJfXypw==",
+        "shasum": "74655c3d876a4b6c2576c592431c7b0a84d2b82d",
+        "tarball": "https://registry.npmjs.org/ret/-/ret-0.3.1.tgz",
+        "fileCount": 9,
+        "unpackedSize": 23399,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcq1NiCRA9TVsSAnZWagAA6TIQAIVk2wMJHCQy6JKak2eh\nyQlbzUih6P8c7E52Naqv3q6cb+ASENnSQbdDThffd3eGI0FzOjZ3os8HLGIm\n5PC/CkmpSi7wIN/MjCPD6D2gxsnlCc8Fn6gp/ahBg8fAWXYxUOOr6vINU5zW\nzaSChBOstz71lP09hiwhblpVgdpRRHener/6ws9vwydOQiJPLGPJNlLd0gO9\npwpFwJE9gT1PMgeUG5O/WmPp3ldBSgKKdrBGAMGtT+PjErxWDc++wIVeAaTT\n/msC1Be4zjCFPqa3Bw3rPIAdTdDCpVy3DuBUN7UI9H8ZJVpc/6r+054NrQAA\nlIZURN0Xjk7DdDMNMCOi5UK3S+io8oHWOd4t06yaV7VSeaCIwE2M/qB/wOXl\nBFbR7PuBAE1H22AGqAPPlNhV08t/uhMCdZfRGdJnTQlzypM5eW3FEbm9KnoX\n95ikFwgm1cTnc1N8SEQ+p/wXNbVODNZJ05ubf+oS0MQh+xlXoOl7HlpEYbyB\nJ0P8fO4n6SPkROINyJ7vzKNnWOPDmn03x5ppdjnrTWNHaJe9n/Of9L+9g/PH\ngjI/CnUh9F0L583C/OvDEbsS7oQhg3YuT3eyoHc9P4Yv9fSlwLr9+eNMTre1\nicEQxHdKsHVpPvZA5fjM2PInGXJ3AYHmgkDob1vM3H5RE/5Hk9SPXyyMHq6U\nN1DJ\r\n=ix/b\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "fent",
+          "email": "roly426@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ret_0.3.1_1554731873990_0.9768631938719019"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# Regular Expression Tokenizer\n\nTokenizes strings that represent a regular expressions.\n\n[![Build Status](https://secure.travis-ci.org/fent/ret.js.svg)](http://travis-ci.org/fent/ret.js)\n[![Dependency Status](https://david-dm.org/fent/ret.js.svg)](https://david-dm.org/fent/ret.js)\n[![codecov](https://codecov.io/gh/fent/ret.js/branch/master/graph/badge.svg)](https://codecov.io/gh/fent/ret.js)\n\n# Usage\n\n```js\nconst ret = require('ret');\n\nvar tokens = ret(/foo|bar/.source);\n```\n\n`tokens` will contain the following object\n\n```js\n{\n  \"type\": ret.types.ROOT\n  \"options\": [\n    [ { \"type\": ret.types.CHAR, \"value\", 102 },\n      { \"type\": ret.types.CHAR, \"value\", 111 },\n      { \"type\": ret.types.CHAR, \"value\", 111 } ],\n    [ { \"type\": ret.types.CHAR, \"value\",  98 },\n      { \"type\": ret.types.CHAR, \"value\",  97 },\n      { \"type\": ret.types.CHAR, \"value\", 114 } ]\n  ]\n}\n```\n\n# Token Types\n\n`ret.types` is a collection of the various token types exported by ret.\n\n### ROOT\n\nOnly used in the root of the regexp. This is needed due to the posibility of the root containing a pipe `|` character. In that case, the token will have an `options` key that will be an array of arrays of tokens. If not, it will contain a `stack` key that is an array of tokens.\n\n```js\n{\n  \"type\": ret.types.ROOT,\n  \"stack\": [token1, token2...],\n}\n```\n\n```js\n{\n  \"type\": ret.types.ROOT,\n  \"options\" [\n    [token1, token2...],\n    [othertoken1, othertoken2...]\n    ...\n  ],\n}\n```\n\n### GROUP\n\nGroups contain tokens that are inside of a parenthesis. If the group begins with `?` followed by another character, it's a special type of group. A ':' tells the group not to be remembered when `exec` is used. '=' means the previous token matches only if followed by this group, and '!' means the previous token matches only if NOT followed.\n\nLike root, it can contain an `options` key instead of `stack` if there is a pipe.\n\n```js\n{\n  \"type\": ret.types.GROUP,\n  \"remember\" true,\n  \"followedBy\": false,\n  \"notFollowedBy\": false,\n  \"stack\": [token1, token2...],\n}\n```\n\n```js\n{\n  \"type\": ret.types.GROUP,\n  \"remember\" true,\n  \"followedBy\": false,\n  \"notFollowedBy\": false,\n  \"options\" [\n    [token1, token2...],\n    [othertoken1, othertoken2...]\n    ...\n  ],\n}\n```\n\n### POSITION\n\n`\\b`, `\\B`, `^`, and `$` specify positions in the regexp.\n\n```js\n{\n  \"type\": ret.types.POSITION,\n  \"value\": \"^\",\n}\n```\n\n### SET\n\nContains a key `set` specifying what tokens are allowed and a key `not` specifying if the set should be negated. A set can contain other sets, ranges, and characters.\n\n```js\n{\n  \"type\": ret.types.SET,\n  \"set\": [token1, token2...],\n  \"not\": false,\n}\n```\n\n### RANGE\n\nUsed in set tokens to specify a character range. `from` and `to` are character codes.\n\n```js\n{\n  \"type\": ret.types.RANGE,\n  \"from\": 97,\n  \"to\": 122,\n}\n```\n\n### REPETITION\n\n```js\n{\n  \"type\": ret.types.REPETITION,\n  \"min\": 0,\n  \"max\": Infinity,\n  \"value\": token,\n}\n```\n\n### REFERENCE\n\nReferences a group token. `value` is 1-9.\n\n```js\n{\n  \"type\": ret.types.REFERENCE,\n  \"value\": 1,\n}\n```\n\n### CHAR\n\nRepresents a single character token. `value` is the character code. This might seem a bit cluttering instead of concatenating characters together. But since repetition tokens only repeat the last token and not the last clause like the pipe, it's simpler to do it this way.\n\n```js\n{\n  \"type\": ret.types.CHAR,\n  \"value\": 123,\n}\n```\n\n## Errors\n\nret.js will throw errors if given a string with an invalid regular expression. All possible errors are\n\n* Invalid group. When a group with an immediate `?` character is followed by an invalid character. It can only be followed by `!`, `=`, or `:`. Example: `/(?_abc)/`\n* Nothing to repeat. Thrown when a repetitional token is used as the first token in the current clause, as in right in the beginning of the regexp or group, or right after a pipe. Example: `/foo|?bar/`, `/{1,3}foo|bar/`, `/foo(+bar)/`\n* Unmatched ). A group was not opened, but was closed. Example: `/hello)2u/`\n* Unterminated group. A group was not closed. Example: `/(1(23)4/`\n* Unterminated character class. A custom character set was not closed. Example: `/[abc/`\n\n# Regular Expression Syntax\n\nRegular expressions follow the [JavaScript syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp).\n\nThe following latest JavaScript additions are not supported yet:\n* `\\p` and `\\P`: [Unicode property escapes](https://github.com/tc39/proposal-regexp-unicode-property-escapes)\n* `(?<group>)` and `\\k<group>`: [Named groups](https://github.com/tc39/proposal-regexp-named-groups)\n* `(?<=)` and `(?<!)`: [Negative lookbehind assertions](https://github.com/tc39/proposal-regexp-lookbehind)\n\n# Examples\n\n`/abc/`\n\n```js\n{\n  \"type\": ret.types.ROOT,\n  \"stack\": [\n    { \"type\": ret.types.CHAR, \"value\": 97 },\n    { \"type\": ret.types.CHAR, \"value\": 98 },\n    { \"type\": ret.types.CHAR, \"value\": 99 }\n  ]\n}\n```\n\n`/[abc]/`\n\n```js\n{\n  \"type\": ret.types.ROOT,\n  \"stack\": [{\n    \"type\": ret.types.SET,\n    \"set\": [\n      { \"type\": ret.types.CHAR, \"value\": 97 },\n      { \"type\": ret.types.CHAR, \"value\": 98 },\n      { \"type\": ret.types.CHAR, \"value\": 99 }\n    ],\n    \"not\": false\n  }]\n}\n```\n\n`/[^abc]/`\n\n```js\n{\n  \"type\": ret.types.ROOT,\n  \"stack\": [{\n    \"type\": ret.types.SET,\n    \"set\": [\n      { \"type\": ret.types.CHAR, \"value\": 97 },\n      { \"type\": ret.types.CHAR, \"value\": 98 },\n      { \"type\": ret.types.CHAR, \"value\": 99 }\n    ],\n    \"not\": true\n  }]\n}\n```\n\n`/[a-z]/`\n\n```js\n{\n  \"type\": ret.types.ROOT,\n  \"stack\": [{\n    \"type\": ret.types.SET,\n    \"set\": [\n      { \"type\": ret.types.RANGE, \"from\": 97, \"to\": 122 }\n    ],\n    \"not\": false\n  }]\n}\n```\n\n`/\\w/`\n\n```js\n// Similar logic for `\\W`, `\\d`, `\\D`, `\\s` and `\\S`    \n{\n  \"type\": ret.types.ROOT,\n  \"stack\": [{\n    \"type\": ret.types.SET,\n    \"set\": [{\n      { \"type\": ret.types.CHAR, \"value\": 95 },\n      { \"type\": ret.types.RANGE, \"from\": 97, \"to\": 122 },\n      { \"type\": ret.types.RANGE, \"from\": 65, \"to\": 90 },\n      { \"type\": ret.types.RANGE, \"from\": 48, \"to\": 57 }\n    }],\n    \"not\": false\n  }]\n}\n```\n\n`/./`\n\n```js\n// any character but CR, LF, U+2028 or U+2029\n{\n  \"type\": ret.types.ROOT,\n  \"stack\": [{\n    \"type\": ret.types.SET,\n    \"set\": [ \n      { \"type\": ret.types.CHAR, \"value\": 10 },\n      { \"type\": ret.types.CHAR, \"value\": 13 },\n      { \"type\": ret.types.CHAR, \"value\": 8232 },\n      { \"type\": ret.types.CHAR, \"value\": 8233 }\n    ],\n    \"not\": true\n  }]\n}\n```\n\n`/a*/`\n\n```js\n{\n  \"type\": ret.types.ROOT,\n  \"stack\": [{ \n    \"type\": ret.types.REPETITION, \n    \"min\": 0,\n    \"max\": Infinity,\n    \"value\": { \"type\": ret.types.CHAR, \"value\": 97 }\n  }]\n}\n```\n\n`/a+/`\n\n```js\n{\n  \"type\": ret.types.ROOT,\n  \"stack\": [{ \n    \"type\": ret.types.REPETITION, \n    \"min\": 1,\n    \"max\": Infinity,\n    \"value\": { \"type\": ret.types.CHAR, \"value\": 97 },\n  }]\n}\n```\n\n`/a?/`\n\n```js\n{\n  \"type\": ret.types.ROOT,\n  \"stack\": [{ \n    \"type\": ret.types.REPETITION, \n    \"min\": 0,\n    \"max\": 1,\n    \"value\": { \"type\": ret.types.CHAR, \"value\": 97 }\n  }]\n}\n```\n\n`/a{3}/`\n\n```js\n{\n  \"type\": ret.types.ROOT,\n  \"stack\": [{ \n    \"type\": ret.types.REPETITION, \n    \"min\": 3,\n    \"max\": 3,\n    \"value\": { \"type\": ret.types.CHAR, \"value\": 97 }\n  }]\n}\n```\n\n`/a{3,5}/`\n\n```js\n{\n  \"type\": ret.types.ROOT,\n  \"stack\": [{ \n    \"type\": ret.types.REPETITION, \n    \"min\": 3,\n    \"max\": 5,\n    \"value\": { \"type\": ret.types.CHAR, \"value\": 97 }\n  }]\n}\n```\n\n`/a{3,}/`\n\n```js\n{\n  \"type\": ret.types.ROOT,\n  \"stack\": [{ \n    \"type\": ret.types.REPETITION, \n    \"min\": 3,\n    \"max\": Infinity,\n    \"value\": { \"type\": ret.types.CHAR, \"value\": 97 }\n  }]\n}\n```\n\n`/(a)/`\n\n```js\n{\n  \"type\": ret.types.ROOT,\n  \"stack\": [{ \n    \"type\": ret.types.GROUP, \n    \"stack\": { \"type\": ret.types.CHAR, \"value\": 97 },\n    \"remember\": true\n  }]\n}\n```\n\n`/(?:a)/`\n\n```js\n{\n  \"type\": ret.types.ROOT,\n  \"stack\": [{ \n    \"type\": ret.types.GROUP, \n    \"stack\": { \"type\": ret.types.CHAR, \"value\": 97 },\n    \"remember\": false\n  }]\n}\n```\n\n`/(?=a)/`\n\n```js\n{\n  \"type\": ret.types.ROOT,\n  \"stack\": [{ \n    \"type\": ret.types.GROUP, \n    \"stack\": { \"type\": ret.types.CHAR, \"value\": 97 },\n    \"remember\": false,\n    \"followedBy\": true\n  }]\n}\n```\n\n`/(?!a)/`\n\n```js\n{\n  \"type\": ret.types.ROOT,\n  \"stack\": [{ \n    \"type\": ret.types.GROUP, \n    \"stack\": { \"type\": ret.types.CHAR, \"value\": 97 },\n    \"remember\": false,\n    \"notFollowedBy\": true\n  }]\n}\n```\n\n`/a|b/`\n\n```js\n{\n  \"type\": ret.types.ROOT,\n  \"options\": [\n    [{ \"type\": ret.types.CHAR, \"value\": 97 }], \n    [{ \"type\": ret.types.CHAR, \"value\": 98 }] \n  ]\n}\n```\n\n`/(a|b)/`\n\n```js\n{\n  \"type\": ret.types.ROOT,\n  \"stack\": [\n    \"type\": ret.types.GROUP,\n    \"remember\": true,\n    \"options\": [\n      [{ \"type\": ret.types.CHAR, \"value\": 97 }], \n      [{ \"type\": ret.types.CHAR, \"value\": 98 }] \n    ]\n  ]\n}\n```\n\n`/^/`\n\n```js\n{\n  \"type\": ret.types.ROOT,\n  \"stack\": [{\n    \"type\": ret.types.POSITION,\n    \"value\": \"^\"\n  }]\n}\n```\n\n`/$/`\n\n```js\n{\n  \"type\": ret.types.ROOT,\n  \"stack\": [{\n    \"type\": ret.types.POSITION,\n    \"value\": \"$\"\n  }]\n}\n```\n\n`/\\b/`\n\n```js\n{\n  \"type\": ret.types.ROOT,\n  \"stack\": [{\n    \"type\": ret.types.POSITION,\n    \"value\": \"b\"\n  }]\n}\n```\n\n`/\\B/`\n\n```js\n{\n  \"type\": ret.types.ROOT,\n  \"stack\": [{\n    \"type\": ret.types.POSITION,\n    \"value\": \"B\"\n  }]\n}\n```\n\n`/\\1/`\n\n```js\n{\n  \"type\": ret.types.ROOT,\n  \"stack\": [{\n    \"type\": ret.types.REFERENCE,\n    \"value\": 1\n  }]\n}\n```\n\n# Install\n\n    npm install ret\n\n\n# Tests\n\nTests are written with [vows](http://vowsjs.org/)\n\n```bash\nnpm test\n```\n",
+  "maintainers": [
+    {
+      "name": "fent",
+      "email": "roly426@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2019-04-08T13:57:56.795Z",
+    "created": "2011-12-21T07:45:21.262Z",
+    "0.1.0": "2011-12-21T07:45:24.249Z",
+    "0.1.1": "2011-12-21T10:01:48.540Z",
+    "0.1.2": "2011-12-28T12:49:33.268Z",
+    "0.1.3": "2011-12-31T09:04:54.162Z",
+    "0.1.4": "2012-01-02T11:52:21.652Z",
+    "0.1.5": "2012-04-12T07:52:50.583Z",
+    "0.1.6": "2012-08-19T06:39:46.300Z",
+    "0.1.7": "2013-09-29T06:00:25.742Z",
+    "0.1.8": "2013-12-12T15:36:27.849Z",
+    "0.1.9": "2014-09-16T23:58:37.805Z",
+    "0.1.10": "2014-09-17T23:11:32.171Z",
+    "0.1.11": "2015-11-20T05:36:28.241Z",
+    "0.1.12": "2016-07-18T02:50:45.904Z",
+    "0.1.13": "2016-12-05T02:35:49.924Z",
+    "0.1.14": "2017-03-03T04:36:39.240Z",
+    "0.1.15": "2017-08-10T03:53:52.328Z",
+    "0.2.0": "2017-10-29T21:37:17.943Z",
+    "0.2.1": "2017-11-01T02:22:56.660Z",
+    "0.2.2": "2018-02-23T04:13:05.650Z",
+    "0.3.0": "2019-04-07T22:49:54.476Z",
+    "0.3.1": "2019-04-08T13:57:54.174Z"
+  },
+  "author": {
+    "name": "fent",
+    "url": "https://github.com/fent"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/fent/ret.js.git"
+  },
+  "users": {
+    "substack": true,
+    "scottfreecode": true,
+    "hibrahimsafak": true,
+    "meeh": true,
+    "bluelovers": true
+  },
+  "homepage": "https://github.com/fent/ret.js#readme",
+  "keywords": [
+    "regex",
+    "regexp",
+    "regular expression",
+    "parser",
+    "tokenizer"
+  ],
+  "bugs": {
+    "url": "https://github.com/fent/ret.js/issues"
+  },
+  "readmeFilename": "README.md",
+  "license": "MIT"
+}

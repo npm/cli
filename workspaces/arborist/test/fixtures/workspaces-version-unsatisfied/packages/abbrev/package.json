@@ -1,0 +1,6 @@
+{
+  "name": "abbrev",
+  "version": "2.0.0",
+  "description": "Like ruby's abbrev module, but in js",
+  "author": "Isaac Z. Schlueter <i@izs.me>"
+}

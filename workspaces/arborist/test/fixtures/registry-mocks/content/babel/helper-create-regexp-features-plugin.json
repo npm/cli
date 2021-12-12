@@ -1,0 +1,982 @@
+{
+  "_id": "@babel/helper-create-regexp-features-plugin",
+  "_rev": "15-822d10c8de523295f2cd02ef7305790a",
+  "name": "@babel/helper-create-regexp-features-plugin",
+  "dist-tags": {
+    "latest": "7.12.1"
+  },
+  "versions": {
+    "7.7.0": {
+      "name": "@babel/helper-create-regexp-features-plugin",
+      "version": "7.7.0",
+      "author": {
+        "name": "The Babel Team",
+        "url": "https://babeljs.io/team"
+      },
+      "license": "MIT",
+      "description": "Compile ESNext Regular Expressions to ES5",
+      "repository": {
+        "type": "git",
+        "repository": "https://github.com/babel/babel",
+        "directory": "packages/babel-helper-create-regexp-features-plugin"
+      },
+      "main": "lib/index.js",
+      "publishConfig": {
+        "access": "public"
+      },
+      "keywords": [
+        "babel",
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-regex": "^7.4.4",
+        "regexpu-core": "^4.6.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.7.0",
+        "@babel/helper-plugin-test-runner": "^7.0.0"
+      },
+      "gitHead": "97faa83953cb87e332554fa559a4956d202343ea",
+      "_id": "@babel/helper-create-regexp-features-plugin@7.7.0",
+      "_nodeVersion": "13.0.1",
+      "_npmVersion": "lerna/3.16.4/node@v13.0.1+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-ZhagAAVGD3L6MPM9/zZi7RRteonfBFLVUz3kjsnYsMAtr9hOJCKI9BAKIMpqn3NyWicPieoX779UL+7/3BEAOA==",
+        "shasum": "2e8badfe201cfafb5d930f46cf1e0b6f1cdcab23",
+        "tarball": "https://registry.npmjs.org/@babel/helper-create-regexp-features-plugin/-/helper-create-regexp-features-plugin-7.7.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 7665,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdwVSXCRA9TVsSAnZWagAAEp8QAIdoqRF+7UTUdVlpf57b\nBKKajpL7ru64ikteSWxTqYzPrhZpiPwWc5XPI+y+5j3Up4rIE6pj4MGJj2Wi\n4xK2TIaWCZNEM7MIJP+EEYzUYMwVUnKkzNL7plelgcGuZ5mgUkQhvLkxAAbc\n9k6AwECGglikkJSEPQtz+cOgV/2FHGkUy7/tc9WEb5cycGGtnHqNcEYOO76f\n9xBc3AUi/9JZ5NF7lM6UMJ5+jKtLcwAQfidS/p2ULh/AGRy7UQDuRpzh5bOx\nW3XZabDgE37p2E73NOGAnwpT95zyxZ4rptCCuhcC+6DBrWwZoqGHmDe2Hzik\n5Vtywc8Tpqwz1tyfOh7PkBP8y0LA11cxIQgRumD+w+4wGdguYKnKF7hznIkv\n6G+SJfxooTV2ElLRbIsqhKA150ABfNB6wmXcPibBNtIRhHpmuqSjK/jOFjrJ\nQbFwp/4m2fj98kSUBZvFX+J3moGKpBVG0U6qxYuG6bN9w/WbIwkjWWXUW4Te\nUtKxloyRtXEWciC/UEqKNXTQ0c9uUW0DMvIAgknogtixyA3yCkF6/xP5fcc/\nZnAKPDcvN3tr2m1CaYIhSrlb/toFTS7KBzZ3rQNfPD7IIuX0ZCWYZ6slQ1zU\niLQek+TfB1Cow5QHRPKLMrLt0P1Ag+/RmL4wSMgX2NtWg4MYg31j5SMYsoD1\nsoC5\r\n=N41f\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "nicolo-ribaudo",
+          "email": "nicolo.ribaudo@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "danez",
+          "email": "daniel@tschinder.de"
+        },
+        {
+          "name": "existentialism",
+          "email": "bng412@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-create-regexp-features-plugin_7.7.0_1572951191437_0.007743693955059916"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.7.2": {
+      "name": "@babel/helper-create-regexp-features-plugin",
+      "version": "7.7.2",
+      "author": {
+        "name": "The Babel Team",
+        "url": "https://babeljs.io/team"
+      },
+      "license": "MIT",
+      "description": "Compile ESNext Regular Expressions to ES5",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/babel/babel.git",
+        "directory": "packages/babel-helper-create-regexp-features-plugin"
+      },
+      "main": "lib/index.js",
+      "publishConfig": {
+        "access": "public"
+      },
+      "keywords": [
+        "babel",
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-regex": "^7.4.4",
+        "regexpu-core": "^4.6.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.7.2",
+        "@babel/helper-plugin-test-runner": "^7.0.0"
+      },
+      "gitHead": "35f4d1276310bac6fede4a6f86a5c76f951e179e",
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "homepage": "https://github.com/babel/babel#readme",
+      "_id": "@babel/helper-create-regexp-features-plugin@7.7.2",
+      "_nodeVersion": "13.0.1",
+      "_npmVersion": "lerna/3.16.4/node@v13.0.1+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-pAil/ZixjTlrzNpjx+l/C/wJk002Wo7XbbZ8oujH/AoJ3Juv0iN/UTcPUHXKMFLqsfS0Hy6Aow8M31brUYBlQQ==",
+        "shasum": "6f20443778c8fce2af2ff4206284afc0ced65db6",
+        "tarball": "https://registry.npmjs.org/@babel/helper-create-regexp-features-plugin/-/helper-create-regexp-features-plugin-7.7.2.tgz",
+        "fileCount": 6,
+        "unpackedSize": 7658,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdw1baCRA9TVsSAnZWagAAdVQP/ArUjm9NHh/Yk7ILaAls\nrznhSxZyv6I1n4xg3kRLqml5+wHJLhfdsy96Qkvz5w6nBRWiHvSbxOh7R/XV\n27WA5IpEml6nlgpQUb4TR7P3v78yYkG+F29cnyWmHoCCETdRptjC5b42n6Oe\niYaRR8bm2Rh1D2n67ffztFNwVNChjGBnkVMuJzHzGGmFzRm3zXgVOvDsWmtd\nzN4xw3BrhuLaSX8NOiNyBqo+IZYac7DerFycqKvnmEYobk+VOe0RcPxRPcuj\n80NqESdpzJ6/D4Mb1eKNu0k3w9/S6VWJWenYnMZAHcv8v+LzBpYG8C3wVedH\nO1ZA0bl1PXZV91CjsfruVtNc0cfUCxVEajasjhDDcBkP4vchKKtI+rE2kO2F\nTnQlWjm4Eu2mAaBiK8GNkVFzvm+3gxrVt/pLFHC5fl4c9B19F83fobK/4+k3\n44o9vfFby1mHT8l0G6ADRcOfncmqXgXKZuenJ6Pi51Rj4v8H4qFtSjB8Hy7m\nD+VpNPGkVp4iOEyCN8GeIojbb+mtBn7A1MFoG+vxIgyPaCVdgvNRMs+H3kJZ\n1gQXklVdjpPaCSAVB1qOaKmvfZ/l0JjIQNBBFvkDSRKBU9sRebbzknTQrURQ\na1Few4stvvSD2dWPDD0Cn48cYb8mQEkKOrcz/AZ6zhgNIpXITxk3Ug6smslW\n02zO\r\n=ViPr\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "danez",
+          "email": "daniel@tschinder.de"
+        },
+        {
+          "name": "existentialism",
+          "email": "bng412@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "nicolo-ribaudo",
+          "email": "nicolo.ribaudo@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-create-regexp-features-plugin_7.7.2_1573082841882_0.8807329349903439"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.7.4": {
+      "name": "@babel/helper-create-regexp-features-plugin",
+      "version": "7.7.4",
+      "author": {
+        "name": "The Babel Team",
+        "url": "https://babeljs.io/team"
+      },
+      "license": "MIT",
+      "description": "Compile ESNext Regular Expressions to ES5",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/babel/babel.git",
+        "directory": "packages/babel-helper-create-regexp-features-plugin"
+      },
+      "main": "lib/index.js",
+      "publishConfig": {
+        "access": "public"
+      },
+      "keywords": [
+        "babel",
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-regex": "^7.4.4",
+        "regexpu-core": "^4.6.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.7.4",
+        "@babel/helper-plugin-test-runner": "^7.7.4"
+      },
+      "gitHead": "75767d87cb147709b9bd9b99bf44daa6688874a9",
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "homepage": "https://github.com/babel/babel#readme",
+      "_id": "@babel/helper-create-regexp-features-plugin@7.7.4",
+      "_nodeVersion": "13.1.0",
+      "_npmVersion": "lerna/3.19.0/node@v13.1.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-Mt+jBKaxL0zfOIWrfQpnfYCN7/rS6GKx6CCCfuoqVVd+17R8zNDlzVYmIi9qyb2wOk002NsmSTDymkIygDUH7A==",
+        "shasum": "6d5762359fd34f4da1500e4cff9955b5299aaf59",
+        "tarball": "https://registry.npmjs.org/@babel/helper-create-regexp-features-plugin/-/helper-create-regexp-features-plugin-7.7.4.tgz",
+        "fileCount": 6,
+        "unpackedSize": 7607,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd2G/jCRA9TVsSAnZWagAA1mIP/1UpY1deBVqzfJMd5IM5\nFVIqL025G6M9pTtMR2zCoR7gs1P3DTVv5l1hcCePJ3s/cfjuobgENPmGMZof\nVwIW+JI8TXBs5loggscWZRzqROqk8eusKXGIsQslwuRR+nzAnj8/P/AI+aHi\nl2xXx9RUJBx3fERKVzqmRS+MvaGfWTRkeZQDFA4WRbdI//dKjR1MQzZokmxW\nBFS7AVkA76Lqw4z8EodhvulhvqRcs9JdN22SVKecy3ksDABgaDm56/LAXOlA\nOAIkch0ZlNNn6Iinu6zAbeV46W0Vh8r4lqZovYHnadZbXJVUZR1ety03o/u5\nURSQXYYXXhCiY0XQ8QCAg8clZhkAfyybjCNMS4jp+cdQdIIOJuvePtD2I08t\n7YfbfOO2dSKhfUPVOir2xsWiznryMjMT3oMJ2S1gSorDTIODH8AywT6fw8MI\ng7/hgEBYQ7PLhVemue6xfWLdqLPfWmjaK0tU1MbUyRxy+fpJ9wL1xN5LIGHq\n6ZMssnBe1WdybsdfmNblKmzwGZY7pQMdvLBR23o2wsIiuHIzmJbwE+Z5zgPw\n9rwRL07t9Hp6Yup5f1FIcBUOhZKvbA/JshtS5Qdrq5VK3VQqR0LN2eSZfrqr\nImhc0A2s5donDcsP3LWO88kHMXbhb8WE+UKabmnAdaGn4WLKI/t43AO48ytV\n1WbD\r\n=0+Tf\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "jason@developit.ca",
+          "name": "developit"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-create-regexp-features-plugin_7.7.4_1574465506872_0.6293221360041532"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.8.0": {
+      "name": "@babel/helper-create-regexp-features-plugin",
+      "version": "7.8.0",
+      "author": {
+        "name": "The Babel Team",
+        "url": "https://babeljs.io/team"
+      },
+      "license": "MIT",
+      "type": "commonjs",
+      "description": "Compile ESNext Regular Expressions to ES5",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/babel/babel.git",
+        "directory": "packages/babel-helper-create-regexp-features-plugin"
+      },
+      "main": "lib/index.js",
+      "publishConfig": {
+        "access": "public"
+      },
+      "keywords": [
+        "babel",
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-regex": "^7.8.0",
+        "regexpu-core": "^4.6.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.8.0",
+        "@babel/helper-plugin-test-runner": "^7.8.0"
+      },
+      "gitHead": "2486615a74580283c49475d66067bd7fcab3330e",
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "homepage": "https://github.com/babel/babel#readme",
+      "_id": "@babel/helper-create-regexp-features-plugin@7.8.0",
+      "_nodeVersion": "13.6.0",
+      "_npmVersion": "lerna/3.19.0/node@v13.6.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-vJj2hPbxxLUWJEV86iZiac5curAnC3ZVc+rFmFeWZigUOcuCPpbF+KxoEmxrkmuCGylHFF9t4lkpcDUcxnhQ5g==",
+        "shasum": "ae551572b840189a7b94e39eddc1a68d355974eb",
+        "tarball": "https://registry.npmjs.org/@babel/helper-create-regexp-features-plugin/-/helper-create-regexp-features-plugin-7.8.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 7629,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeGmVJCRA9TVsSAnZWagAAwvQQAJUhfBEWVKg7Vhh1E3UP\nNj/ISoAxT68d3679qBdzkpZzqc+8Dd336So0p5fFIZJG/f1NWSa98t0Llg07\ndVjHfEJ45wqcljhyfVcH9gvqn7NSTnF0jM0VKUOvN8+Dmgl6kLetV+BuISHt\noK0Wiq8wb+9UXgID77tgl/nN/RLoJmahozZB/cPMdcs2sog28n//SFVHb2L7\nfUME2WGKFk+YFnSMGItmUUZ3VmdgpnJDOExk7iIz4/p3Oql/Vkq7dV2NuCEY\noPgCx47msw6U+jGxcHaGLqIBR0btYwf83d9nEbJNP1M7Olcld3OUxnRs60DF\n9/kpUtSCL6ZK6HUyROpogK5fEz8apF+v82BL/4v5s1hzBqYwNWeJX0yGHeoI\nxxmzaTCJcsqAG96NBjKdwz9H8LvR2H/qhxaazG44LBAOk3Ud7EMltiwwZAcf\n+BOGk0rxeO9GZXe+YY1IEd1dwEkGv/pSrYTm456L36Zlrrju0JCSoh6DrwmQ\n2a5s/EBuiOG/es6trTZHIIzkYrologhmOPNGq3cgA8BennA73uCg2h/Uv5tV\niH+L8VlfERA0kT8IpLHYscbn/rp3P2ycuDbIKbBcgv4euEy1I3EwVQ14GRCE\nyFiLIyEZ6YvrF0fxGmnuxPYgjNdAJbl+rInlFuZyPlMHN6iYwjOy6ko3bbBM\nBBY1\r\n=XXAA\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "jason@developit.ca",
+          "name": "developit"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-create-regexp-features-plugin_7.8.0_1578788169511_0.10524995289870409"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.8.3": {
+      "name": "@babel/helper-create-regexp-features-plugin",
+      "version": "7.8.3",
+      "author": {
+        "name": "The Babel Team",
+        "url": "https://babeljs.io/team"
+      },
+      "license": "MIT",
+      "description": "Compile ESNext Regular Expressions to ES5",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/babel/babel.git",
+        "directory": "packages/babel-helper-create-regexp-features-plugin"
+      },
+      "main": "lib/index.js",
+      "publishConfig": {
+        "access": "public"
+      },
+      "keywords": [
+        "babel",
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-regex": "^7.8.3",
+        "regexpu-core": "^4.6.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.8.3",
+        "@babel/helper-plugin-test-runner": "^7.8.3"
+      },
+      "gitHead": "a7620bd266ae1345975767bbc7abf09034437017",
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "homepage": "https://github.com/babel/babel#readme",
+      "_id": "@babel/helper-create-regexp-features-plugin@7.8.3",
+      "_nodeVersion": "13.6.0",
+      "_npmVersion": "lerna/3.19.0/node@v13.6.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-Gcsm1OHCUr9o9TcJln57xhWHtdXbA2pgQ58S0Lxlks0WMGNXuki4+GLfX0p+L2ZkINUGZvfkz8rzoqJQSthI+Q==",
+        "shasum": "c774268c95ec07ee92476a3862b75cc2839beb79",
+        "tarball": "https://registry.npmjs.org/@babel/helper-create-regexp-features-plugin/-/helper-create-regexp-features-plugin-7.8.3.tgz",
+        "fileCount": 6,
+        "unpackedSize": 7607,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeHOQiCRA9TVsSAnZWagAAiZoP/jddGEfISYvUlWkeqvZw\nxLo53AvNGG9s2YzgV4ZmrchwyZ7p25bas5o0m0Fp87ETT73YIIdgfyo1SbUo\nBmC082T9iNj679sveEpe/Im9Axfeqx3gJSq2nAt0aqW7VfTZGerzNm/0OF67\nRKVJdezSzOHnD44wh0m6nkAF2BvrxFb4AwKOApDLwOuKbpYHmMbuLyoB0ssz\nuvvTIksVOacxV92dxHu5rgBYH86i7dFM/1jJosExbgGk0ao2uzlOkiz0TPAx\nKZ9jfXabXkkzQjRZNJ9rFoP/QVw+A/MD/RGcbp6nEEMPiVNDvht/smVc8E0r\nGldaXIZxKkO6i49N1cUUK46f/ooP/7rC8UhEmu3+n6RL4q164rCTILfUDaIR\naIm5NSeN8glbs1WEdmRtzP+CeTzJLXUfHSH/vF/M/xLekv/cbKnkamn5Qzl2\nmsHiY9TCffaNYUH3yDY0N3w7IuvtuvF7TQ3Vn8xQV4WYseUUTEZ+bNVOVb2s\nidcCwAhrg+xnGEDSYFvTGzVG2FeeKe7QUDdqt74x5xSMJqHWfqh0eUSszwxL\nlO47Z8cgiy5ZIW33v8mvulJ4xEjBBiKm/x6JzZSqhmsMjE9WbbmWgmim91yx\nvQxbsrork+t90hVbSmc/gx+YkwpSJ6cPfTGpIkjTLETtuxarkmclAnLpufFo\nSneb\r\n=4u0S\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "jason@developit.ca",
+          "name": "developit"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-create-regexp-features-plugin_7.8.3_1578951714232_0.8749487045107711"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.8.6": {
+      "name": "@babel/helper-create-regexp-features-plugin",
+      "version": "7.8.6",
+      "author": {
+        "name": "The Babel Team",
+        "url": "https://babeljs.io/team"
+      },
+      "license": "MIT",
+      "description": "Compile ESNext Regular Expressions to ES5",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/babel/babel.git",
+        "directory": "packages/babel-helper-create-regexp-features-plugin"
+      },
+      "main": "lib/index.js",
+      "publishConfig": {
+        "access": "public"
+      },
+      "keywords": [
+        "babel",
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-annotate-as-pure": "^7.8.3",
+        "@babel/helper-regex": "^7.8.3",
+        "regexpu-core": "^4.6.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.8.6",
+        "@babel/helper-plugin-test-runner": "^7.8.3"
+      },
+      "gitHead": "750d3dde3bd2d390819820fd22c05441da78751b",
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "homepage": "https://github.com/babel/babel#readme",
+      "_id": "@babel/helper-create-regexp-features-plugin@7.8.6",
+      "_nodeVersion": "13.7.0",
+      "_npmVersion": "lerna/3.19.0/node@v13.7.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-bPyujWfsHhV/ztUkwGHz/RPV1T1TDEsSZDsN42JPehndA+p1KKTh3npvTadux0ZhCrytx9tvjpWNowKby3tM6A==",
+        "shasum": "7fa040c97fb8aebe1247a5c645330c32d083066b",
+        "tarball": "https://registry.npmjs.org/@babel/helper-create-regexp-features-plugin/-/helper-create-regexp-features-plugin-7.8.6.tgz",
+        "fileCount": 6,
+        "unpackedSize": 7833,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeV7RBCRA9TVsSAnZWagAAdAUP/1JfDmvqaybeUdQP1m1B\nkQ+dhinWPSNQj0rYJSySQMlqicoI8Ri8mcq8jxjYA0BykB0MGsMypAajPFFy\ndjgfV5mbw+KbNLqMIXof825G9v/F8KDtqwiF0tOmfIuOOVio68u4HK5Jsh8s\nwmz6UBGMXZhWmip9hVm/1qApGe5aErwwM9OxdmjXIP+XF76N9aV9VlpY3BuP\nLlX3vj5uhopj7Xpbgnj6DdqnHJYvkGSxu3J4Xc/PQRnHEz4Ubzi7o9/mg6Yo\nEoZJA5Cuana9InlPUTh1SdYD0riHtspxE2MiXnDs0fwo2fvSUKw1+rbycas8\n8z2iYY8l/OZlvfmoE1zW9LMfeIxFD0UU0V6Kk+FUAGSHC+qxrqeLxdxBxDe2\njwSrQpwmarGgtjy3GSVqL9GBznS/t+vo84TnMLwHxWSnwTHkmb/tmJk2CUiA\nWyuWCdmmcFXdW/La8VhjEes1bXC7nWtT2Ip1Z89E3fhzM2H5Q0Hd7vqGs2/S\nI4KGFZ9xFr9MqWE2KyqjE3XdsMHVRS4NMpP0SpB56Zvm5PQcFwXiRPor/AgK\nNs1uLGRl0LZcMcIGm3pUfeZ8WgquclWxyCDs96KrTzwy7YdLcwD5xZHFEpG4\ni9k9wi2ji+XtVJMrHFpl9Syr4oh8PzDaYvlUSH8i59ShRPxkoAMuhTRIpEa4\ne6Id\r\n=kjyN\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "jason@developit.ca",
+          "name": "developit"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-create-regexp-features-plugin_7.8.6_1582806081430_0.00458802840801642"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.8.8": {
+      "name": "@babel/helper-create-regexp-features-plugin",
+      "version": "7.8.8",
+      "author": {
+        "name": "The Babel Team",
+        "url": "https://babeljs.io/team"
+      },
+      "license": "MIT",
+      "description": "Compile ESNext Regular Expressions to ES5",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/babel/babel.git",
+        "directory": "packages/babel-helper-create-regexp-features-plugin"
+      },
+      "main": "lib/index.js",
+      "publishConfig": {
+        "access": "public"
+      },
+      "keywords": [
+        "babel",
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-annotate-as-pure": "^7.8.3",
+        "@babel/helper-regex": "^7.8.3",
+        "regexpu-core": "^4.7.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.8.6",
+        "@babel/helper-plugin-test-runner": "^7.8.3"
+      },
+      "gitHead": "c831a2450dbf252c75750a455c63e1016c2f2244",
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "homepage": "https://github.com/babel/babel#readme",
+      "_id": "@babel/helper-create-regexp-features-plugin@7.8.8",
+      "_nodeVersion": "13.9.0",
+      "_npmVersion": "lerna/3.19.0/node@v13.9.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-LYVPdwkrQEiX9+1R29Ld/wTrmQu1SSKYnuOk3g0CkcZMA1p0gsNxJFj/3gBdaJ7Cg0Fnek5z0DsMULePP7Lrqg==",
+        "shasum": "5d84180b588f560b7864efaeea89243e58312087",
+        "tarball": "https://registry.npmjs.org/@babel/helper-create-regexp-features-plugin/-/helper-create-regexp-features-plugin-7.8.8.tgz",
+        "fileCount": 6,
+        "unpackedSize": 7833,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeaoQaCRA9TVsSAnZWagAATEEP/3U7uRmOwVUzDoDrkEK/\nr094pF2jrz/H+Cr0CBHEv2tU8HbF27MFvCdQ8LEvKq+2ZHFSNPE+7FVl/p5M\nHoe5W7caE4OxIJ1I121CoLOSkh2ykGklWOn0AyxQ4rLUFRlqacKVWYJu33x5\nbq2DMOfjZm5cul7ziZOgnUOa5+kTiY/1rjBWb3vxp59HeP2qHe9YxzLMK84M\noHxiuQ3Fs52NQ/0Lf9kEECwaMD7DQ/k29IdSmr10p4m5tkhBGYR1pD/9X7IA\nMiMLhejYVc5DXq0JyGRAoO2u3qcImXPrsq8tB/8hebcvM31BCPkC6t+wMdCO\njUPuaeYPkQoiH9xNM/vEfVvEjeXdUKsTLyhxaDbJeMvlYcXSh6kMb1URjb2R\nThOgWeAnlE0/swj2HYLRJACmAg8n5kL9wo1Q1xiloDtl4snMbUCnCbBgNPhs\nY0XJgNvcQWUXpGqqcifE77xaPLL+QS0F2D3hgEDMBBcChnObAMYwFaF2CSU+\nNgecL8wNsLcOE282M87g20hghfMAogUKbr/dmuZcWMEm//ZS/Q/C59aEtZS+\nIWVL8PiJLhTF4PlBqPOvVSbQBlUrZ6uG9w7MQSE5TQ/gM3/RZ/nu13xdFNHh\neB0g1PLs2WsvdLfnJvs7oRNh6CfEzDZnNYqZRiAyvy7xnlqDXIFjgd5kyh07\ng5NV\r\n=wRWt\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "jason@developit.ca",
+          "name": "developit"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-create-regexp-features-plugin_7.8.8_1584038937950_0.20501556144478839"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.10.1": {
+      "name": "@babel/helper-create-regexp-features-plugin",
+      "version": "7.10.1",
+      "author": {
+        "name": "The Babel Team",
+        "url": "https://babeljs.io/team"
+      },
+      "license": "MIT",
+      "description": "Compile ESNext Regular Expressions to ES5",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/babel/babel.git",
+        "directory": "packages/babel-helper-create-regexp-features-plugin"
+      },
+      "main": "lib/index.js",
+      "publishConfig": {
+        "access": "public"
+      },
+      "keywords": [
+        "babel",
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-annotate-as-pure": "^7.10.1",
+        "@babel/helper-regex": "^7.10.1",
+        "regexpu-core": "^4.7.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.10.1",
+        "@babel/helper-plugin-test-runner": "^7.10.1"
+      },
+      "gitHead": "88f57a7ea659d25232bf62de1efceb5d6299b8cf",
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "homepage": "https://github.com/babel/babel#readme",
+      "_id": "@babel/helper-create-regexp-features-plugin@7.10.1",
+      "_nodeVersion": "12.16.3",
+      "_npmVersion": "lerna/3.19.0/node@v12.16.3+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-Rx4rHS0pVuJn5pJOqaqcZR4XSgeF9G/pO/79t+4r7380tXFJdzImFnxMU19f83wjSrmKHq6myrM10pFHTGzkUA==",
+        "shasum": "1b8feeab1594cbcfbf3ab5a3bbcabac0468efdbd",
+        "tarball": "https://registry.npmjs.org/@babel/helper-create-regexp-features-plugin/-/helper-create-regexp-features-plugin-7.10.1.tgz",
+        "fileCount": 6,
+        "unpackedSize": 7842,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJezuS/CRA9TVsSAnZWagAApoAP/2lFUEDSLP9bmWEQWvgj\ndPcJ+SwqLIOL2a/A9n4pjZiFexrVuD2odXGbQJEuCCQnYQ4VdCl4F16Z2eVK\nRy2J3/ry3kv2xV0LPx4qPoz9EcmQ/PYcfML4yEc9ZTuRpiZHBFjXIcpXQZYQ\nYBe8fMGPall6Grti8/Idb0AcS9foKvw4ygjyRMPKLpX1voqEQ+2DiHnOJ3Ba\nHp3iYPH9klhiqiA0iPkp6P2UKeisc35KjSFyjaeRLQhuTPaL02oblxcrnly8\nOSKUmsJKXHUm64AapAvLn2A1RF4T7Hun9cMsiVnF06FqtR9WbRuk4+a1AE0f\n/cQf49bi1cKFcFmJQOUjceA8WpU/LAqog2VBL08f9+x367/ZFPf+tCJhko82\noS1B7yaOHPaI62C18PQStjCTjvpePXAVC4kIK+3Wph5sAcddZHaDVuhb/+So\nv9GGnV9HC5qV7a2cnzxCWOueGvb/9ayJ8G3Zvo1xMaFtWvv++Yprg7rEtlQK\nhmwJhcEPw5IXoewHXi87fZRl+15sjM9DwPmXD9ijR+8oHOLiYncuMEOlEs6l\nZPjngxvRv7PskeeWhbAKhhC0rvXiGhwAvcf73j4PsA62xQoxItYnfwRH03Ec\nDoJbAjVv09hSGFXEURkfg5zhXK0e7dIx8zdsGFzIODwlIuiXbXWsQKJ5Sf41\nWQ3W\r\n=2FIs\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-create-regexp-features-plugin_7.10.1_1590617279257_0.015166672021674543"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.10.4": {
+      "name": "@babel/helper-create-regexp-features-plugin",
+      "version": "7.10.4",
+      "author": {
+        "name": "The Babel Team",
+        "url": "https://babeljs.io/team"
+      },
+      "license": "MIT",
+      "description": "Compile ESNext Regular Expressions to ES5",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/babel/babel.git",
+        "directory": "packages/babel-helper-create-regexp-features-plugin"
+      },
+      "main": "lib/index.js",
+      "publishConfig": {
+        "access": "public"
+      },
+      "keywords": [
+        "babel",
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-annotate-as-pure": "^7.10.4",
+        "@babel/helper-regex": "^7.10.4",
+        "regexpu-core": "^4.7.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.10.4",
+        "@babel/helper-plugin-test-runner": "^7.10.4"
+      },
+      "gitHead": "7fd40d86a0d03ff0e9c3ea16b29689945433d4df",
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "homepage": "https://github.com/babel/babel#readme",
+      "_id": "@babel/helper-create-regexp-features-plugin@7.10.4",
+      "_nodeVersion": "14.4.0",
+      "_npmVersion": "lerna/3.19.0/node@v14.4.0+x64 (darwin)",
+      "dist": {
+        "integrity": "sha512-2/hu58IEPKeoLF45DBwx3XFqsbCXmkdAay4spVr2x0jYgRxrSNp+ePwvSsy9g6YSaNDcKIQVPXk1Ov8S2edk2g==",
+        "shasum": "fdd60d88524659a0b6959c0579925e425714f3b8",
+        "tarball": "https://registry.npmjs.org/@babel/helper-create-regexp-features-plugin/-/helper-create-regexp-features-plugin-7.10.4.tgz",
+        "fileCount": 6,
+        "unpackedSize": 7842,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJe+zpGCRA9TVsSAnZWagAAGjAP+wdP2R84fWP2whGp0Tzp\n3lAeXz4dChix7xvzzzRFlBb+27+NsB2h6ieDaYX/5ulWNrYvOOQBYKOcidLH\nAaOOSdOQ1h8M4cAHxIeD8GHDfFCHvopWNcUITCLvib2/AmUcozFX++nWzXYa\nXHhbXOAJxiVyYdwAsgfL1+18SWSxKpBbaG0MjFQEILoV/GsnfleOGlqy/bNF\neBn1gbKVGiIC5Esx1j/iqdz+tHMj5/s17YRxsCnthwR9+Tn4AzUoQGkFFYfe\naD3AUC6WoCS4I1/n7ATvhT2HNdfEyG1+ChIDZOq5/9/Yx6cEcSTZUyRk/E1I\nEq0x9JdYRSqhuvrPJEAgW93Avs78OSXWVueF9FOiP5YHXIKCy/U3YxLqf7gs\nJ3s+ndrjCpUtpoImR7N8fC3lJzSnV6ye/rYEPiDHWQqMMWphywIN5tlCGx+P\nQCLIuGDkZOyRvHnStQh6i5wwFRl96xP2zErpIatUCznRbo+paJ2dvWlNHjXV\nu6ohr4Z+NzAYM9q4eIkefqR2MaxUD0QSDi+fVgLO81/ppAvbKAFBIMSpuTTd\nXTeiqaPEsZsONBGl+T9Ulk2B1vm+gg6x57Vh0JuhVwPbGMQ2CFpTWPlnERyH\nXgP4o8xTdcKSLQmo8upq0UnTJnE74HUSroOesUCN0/pUsm5Fhi1j/ZX788tK\ncoeW\r\n=FTzh\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "i@jhuang.me",
+          "name": "jlhwung"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "jlhwung",
+        "email": "i@jhuang.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-create-regexp-features-plugin_7.10.4_1593522758140_0.040901824891864225"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.12.0": {
+      "name": "@babel/helper-create-regexp-features-plugin",
+      "version": "7.12.0",
+      "author": "The Babel Team (https://babeljs.io/team)",
+      "license": "MIT",
+      "description": "Compile ESNext Regular Expressions to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel.git",
+        "directory": "packages/babel-helper-create-regexp-features-plugin"
+      },
+      "main": "lib/index.js",
+      "publishConfig": {
+        "access": "public"
+      },
+      "keywords": [
+        "babel",
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-annotate-as-pure": "^7.10.4",
+        "@babel/helper-regex": "^7.10.4",
+        "regexpu-core": "^4.7.1"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.12.0",
+        "@babel/helper-plugin-test-runner": "^7.10.4"
+      },
+      "_id": "@babel/helper-create-regexp-features-plugin@7.12.0",
+      "dist": {
+        "shasum": "858cef57039f3b3a9012273597288a71e1dff8ca",
+        "integrity": "sha512-YBqH+3wLcom+tko8/JLgRcG8DMqORgmjqNRNI751gTioJSZHWFybO1mRoLtJtWIlYSHY+zT9LqqnbbK1c3KIVQ==",
+        "tarball": "https://registry.npmjs.org/@babel/helper-create-regexp-features-plugin/-/helper-create-regexp-features-plugin-7.12.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 7784,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfh1lbCRA9TVsSAnZWagAAFSkP/jJOEZj0iZ0QU2ySlgdy\nbC91QuYs7ORdtqxlW3pm9u2q96+qBIMGQkDhQhi3kDlUQHqkhpRgn0aGKUw8\n5tfHLIU2HniGp/tmBHuWfHLqhVqj9oK9moRTWnTNZ/t1AfSlnPkDdp8u6Sfn\narE0cSz2M7gWuE2awjdMcsVGslFfYDFHVMfCR2jkPX8+3KKLo6m4tO7ASZO1\nwWJ/TdZkxInM1AS+cEI54V8fx7AIUaz7yN0v/1SF6xn3Wv+EjEzO4mMkXqBF\nge11hhF2BrLjAFUDIMbOQ+1srautdPS/W3PG7sFXGfiafW6dfDIx2csunh1I\nFEhkJcZRalfi+CbRUyl7+aOw+8flogm2r5EvIpAzHHB77QyQ08yYJAjWe3uX\n8Edtbu/8+SjYyVNTQugqgWr8m1cghgFjMXEZ3i3T3bxCSj5N/R/O40LAy0qL\nXc6NwAhPLYZeINnkyECw7Y88cXTya/zqzWacbPXZ/TIEmSqzdKbMnpL9x7Ef\nXfBydp1kOfqpTB5TUNjwEzFvAqB7bRx+t1aIQxJiwuwkrkOl4gxBzRfibqEv\nZSOILovLd7CqdyaDRDLEoKFOYSCK3vx1fZXajhQTbhC88v2IEnb1LzjbEIgO\n1KdIglelrLfLnFAanFb5aY6SaL9bwP4dji3Pah8M+BBvn8Xo/G5Arh+OkMp8\ni2fC\r\n=ynTD\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "jlhwung",
+          "email": "i@jhuang.me"
+        },
+        {
+          "name": "nicolo-ribaudo",
+          "email": "nicolo.ribaudo@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "danez",
+          "email": "daniel@tschinder.de"
+        },
+        {
+          "name": "existentialism",
+          "email": "bng412@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-create-regexp-features-plugin_7.12.0_1602705754758_0.7830036783227137"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.12.1": {
+      "name": "@babel/helper-create-regexp-features-plugin",
+      "version": "7.12.1",
+      "author": "The Babel Team (https://babeljs.io/team)",
+      "license": "MIT",
+      "description": "Compile ESNext Regular Expressions to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel.git",
+        "directory": "packages/babel-helper-create-regexp-features-plugin"
+      },
+      "main": "lib/index.js",
+      "publishConfig": {
+        "access": "public"
+      },
+      "keywords": [
+        "babel",
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-annotate-as-pure": "^7.10.4",
+        "@babel/helper-regex": "^7.10.4",
+        "regexpu-core": "^4.7.1"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.12.1",
+        "@babel/helper-plugin-test-runner": "7.10.4"
+      },
+      "_id": "@babel/helper-create-regexp-features-plugin@7.12.1",
+      "dist": {
+        "shasum": "18b1302d4677f9dc4740fe8c9ed96680e29d37e8",
+        "integrity": "sha512-rsZ4LGvFTZnzdNZR5HZdmJVuXK8834R5QkF3WvcnBhrlVtF0HSIUC6zbreL9MgjTywhKokn8RIYRiq99+DLAxA==",
+        "tarball": "https://registry.npmjs.org/@babel/helper-create-regexp-features-plugin/-/helper-create-regexp-features-plugin-7.12.1.tgz",
+        "fileCount": 6,
+        "unpackedSize": 7783,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfiM+XCRA9TVsSAnZWagAA5jIP/R7FsyALDkYN1sfAy2xN\nimLqDKGCUpMFpGYBWT4srzCuHatYh0hCnL6l3diWguxzIFzZFUnTZLGsD7qv\nu0sR9TUK3toP7ptwZSLf1Q17I1vC6hHw6d0US9oN7AKTXln0OU0bRgds8PfO\n5lZCLRJicc2aNp6BbPfcssxdD/ks6lxw9U69FqSCr9689LyDnBQIVl9xFBkC\nHE2nNybQikLkaNVK2OAA57JSm3G3hYawB1rsBHog2LA363UiLINKOq8oyU/M\nu9O0v8TK9SxsuZLvlr9pFytzifctQF/e9i+VXJk6MeHqs/uuRniS9GHTJLS9\nmiYVWPQQbP/uXQ8fLJT/xkrkD2hWG2Ae3tyW1DB/y5VAd5tg0CtFAViPr+z/\nL7wOa1YgG9lkzAKG8B/tpMf5HfCVvketFNnCClyhXMDd+aD4e2psj92UZ3QJ\nGxumvfPf35I0KJZal0HW7zo4OYgZ5nwGlXmLz4kg/QCYVkLwE2+QdJ/5oura\nIj2RN1rZEqGnZLBLl911dPr+AJLAftXPGMO7E1im/57ATg3dIC7YF0tPUvqU\nDAwN2X5uwzjtgMDQMrCBWyOZsZTlIfMp4mDGzMr0yxDj1lYF2oikmRgs4MqJ\nforgRKmthPHysNQ7oZZnZdiqKW4It91lRkEdxtk+qz76qTxCromcrhu1m8oW\npQGw\r\n=vJpu\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "jlhwung",
+          "email": "i@jhuang.me"
+        },
+        {
+          "name": "nicolo-ribaudo",
+          "email": "nicolo.ribaudo@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "danez",
+          "email": "daniel@tschinder.de"
+        },
+        {
+          "name": "existentialism",
+          "email": "bng412@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-create-regexp-features-plugin_7.12.1_1602801559329_0.0742135246115665"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2019-11-05T10:53:11.116Z",
+    "7.7.0": "2019-11-05T10:53:11.609Z",
+    "modified": "2020-10-15T22:39:22.844Z",
+    "7.7.2": "2019-11-06T23:27:22.022Z",
+    "7.7.4": "2019-11-22T23:31:46.989Z",
+    "7.8.0": "2020-01-12T00:16:09.711Z",
+    "7.8.3": "2020-01-13T21:41:54.406Z",
+    "7.8.6": "2020-02-27T12:21:21.519Z",
+    "7.8.8": "2020-03-12T18:48:58.118Z",
+    "7.10.1": "2020-05-27T22:07:59.415Z",
+    "7.10.4": "2020-06-30T13:12:38.234Z",
+    "7.12.0": "2020-10-14T20:02:34.970Z",
+    "7.12.1": "2020-10-15T22:39:19.433Z"
+  },
+  "maintainers": [
+    {
+      "name": "jlhwung",
+      "email": "i@jhuang.me"
+    },
+    {
+      "name": "nicolo-ribaudo",
+      "email": "nicolo.ribaudo@gmail.com"
+    },
+    {
+      "name": "hzoo",
+      "email": "hi@henryzoo.com"
+    },
+    {
+      "name": "loganfsmyth",
+      "email": "loganfsmyth@gmail.com"
+    },
+    {
+      "name": "danez",
+      "email": "daniel@tschinder.de"
+    },
+    {
+      "name": "existentialism",
+      "email": "bng412@gmail.com"
+    }
+  ],
+  "description": "Compile ESNext Regular Expressions to ES5",
+  "keywords": [
+    "babel",
+    "babel-plugin"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/babel/babel.git",
+    "directory": "packages/babel-helper-create-regexp-features-plugin"
+  },
+  "author": "The Babel Team (https://babeljs.io/team)",
+  "license": "MIT",
+  "readme": "",
+  "readmeFilename": ""
+}

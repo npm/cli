@@ -1,0 +1,97 @@
+{
+  "_id": "es-array-method-boxes-properly",
+  "name": "es-array-method-boxes-properly",
+  "dist-tags": {
+    "latest": "1.0.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "es-array-method-boxes-properly",
+      "version": "1.0.0",
+      "description": "Utility package to determine if an `Array.prototype` method properly boxes the callback's receiver and third argument.",
+      "main": "index.js",
+      "scripts": {
+        "prepublish": "safe-publish-latest",
+        "lint": "eslint .",
+        "pretest": "npm run lint",
+        "tests-only": "node test",
+        "test": "npm run tests-only",
+        "posttest": "npx aud"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ljharb/es-array-method-boxes-properly.git"
+      },
+      "author": {
+        "name": "Jordan Harband",
+        "email": "ljharb@gmail.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/ljharb/es-array-method-boxes-properly/issues"
+      },
+      "homepage": "https://github.com/ljharb/es-array-method-boxes-properly#readme",
+      "devDependencies": {
+        "@ljharb/eslint-config": "^14.1.0",
+        "eslint": "^6.4.0",
+        "safe-publish-latest": "^1.1.3",
+        "tape": "^4.11.0"
+      },
+      "gitHead": "3eaba7ec973da0af31aaae4ac40c720d486d24f9",
+      "_id": "es-array-method-boxes-properly@1.0.0",
+      "_nodeVersion": "12.10.0",
+      "_npmVersion": "6.10.3",
+      "dist": {
+        "integrity": "sha512-wd6JXUmyHmt8T5a2xreUwKcGPq6f1f+WwIJkijUqiGcJz1qqnZgP6XIK+QyIWU5lT7imeNxUll48bziG+TSYcA==",
+        "shasum": "873f3e84418de4ee19c5be752990b2e44718d09e",
+        "tarball": "https://registry.npmjs.org/es-array-method-boxes-properly/-/es-array-method-boxes-properly-1.0.0.tgz",
+        "fileCount": 7,
+        "unpackedSize": 3861,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdjweWCRA9TVsSAnZWagAAGwwP/0+uLBme2bHySrZqT3bv\nOA+lSWBbZM5bhvsdHT8IufLCtdmni6pPkY++s/BFXpDBYrb6os79b5E4yuTp\nRAPJd75oEmsylWbfEPNw5AbDUek//FHVDZQZSyUmfqtEkC2QpCXXRDRyMJqf\nn8/aEEpF6WZ8Rv1m1chl3UMoOzEC2tb4Kukx7EJd7uapF/cM82TdKMVKevdb\nAjsGAlRVs2+ISPLxfh0Y6DmSAv/QtPeVUdkRLexz32w1iGsiilx735qQ8m6X\nEjaKUjDns+uztTr3HK4Lx50BmBc4rT6+/ZpPCsBqVnRHmhkdvsKgD8oDOljD\ndoucCeTSfLVSGQSwVxENH+pcE4IR/jsUcuDVUYK6PUzkVRAVQa9G7gyUaSs/\nx/kFFvs2eR9TGXltovuNDM4H869TUOjWPn88emlaQOMKhUiIvNEQ2vIzrT7t\nB6VlY7Vxsl10Q5RqqcsWLkmio/XNoTJs+QLLIJzo85erjd/g35bcXy/HH+ez\nUg0IddRSma+dBAIUHl28abJqxPHSv14ecu0VSMEMjrDnIgDay8g70tMafS7p\nzZTWQ+qgY2GB4gl2TApeJWTixkSP86QNWK+F1rXhe+v0deYjaorjkKeA8kb2\nzOs31UVbOmsTs2R52VnyZ2rH4SuGfNi0lk3sCOifmQiEfQIGierRj9r1ncyW\ncAt7\r\n=2UOR\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "ljharb",
+          "email": "ljharb@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "ljharb",
+        "email": "ljharb@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/es-array-method-boxes-properly_1.0.0_1569654677497_0.9500927638741266"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2019-09-28T07:11:17.497Z",
+    "1.0.0": "2019-09-28T07:11:17.813Z",
+    "modified": "2019-09-28T07:11:20.522Z"
+  },
+  "maintainers": [
+    {
+      "name": "ljharb",
+      "email": "ljharb@gmail.com"
+    }
+  ],
+  "description": "Utility package to determine if an `Array.prototype` method properly boxes the callback's receiver and third argument.",
+  "homepage": "https://github.com/ljharb/es-array-method-boxes-properly#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ljharb/es-array-method-boxes-properly.git"
+  },
+  "author": {
+    "name": "Jordan Harband",
+    "email": "ljharb@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/ljharb/es-array-method-boxes-properly/issues"
+  },
+  "license": "MIT",
+  "readme": "# es-array-method-boxes-properly\n\nUtility package to determine if an `Array.prototype` method properly boxes the callback's receiver and third argument.\n",
+  "readmeFilename": "README.md"
+}

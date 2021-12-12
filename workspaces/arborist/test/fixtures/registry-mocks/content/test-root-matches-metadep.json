@@ -1,0 +1,97 @@
+{
+  "_id": "test-root-matches-metadep",
+  "_rev": "1-74ab99229e75f058544a82e2f98186e0",
+  "name": "test-root-matches-metadep",
+  "dist-tags": {
+    "latest": "1.0.1"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "test-root-matches-metadep",
+      "version": "1.0.0",
+      "dependencies": {
+        "test-root-matches-metadep-x": "1.0.0",
+        "test-root-matches-metadep-y": "1.0.0"
+      },
+      "description": "When a root node matches a metadep being added to the tree, the loop-detection link deduplication made in a lot of problems as a result of the link going to the root node from the /virtual-tree temp tree, ultimately resulting in the root node being reifie",
+      "_id": "test-root-matches-metadep@1.0.0",
+      "_nodeVersion": "14.2.0",
+      "_npmVersion": "7.0.0-beta.2",
+      "dist": {
+        "integrity": "sha512-CCmZ2V2Un12PGmJ3MDreCjA+ql67qoZ8CyJuFiUnTokmRI0CUWy0dB8mXnPMQiWy1oAlf3gAFzGD0TCqSxGXlw==",
+        "shasum": "740ca20bc211a31605b9a1256ccdc33244959519",
+        "tarball": "https://registry.npmjs.org/test-root-matches-metadep/-/test-root-matches-metadep-1.0.0.tgz",
+        "fileCount": 17,
+        "unpackedSize": 10494,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfMJi1CRA9TVsSAnZWagAAI28P/2JtnIcoQB6WVi3C0d7o\n+az3sNPMN+uDl/gVBFjD3thoEpB4jzLv6HEu5je0QfnkhDGokqlGJ2bOwjU6\naR2XXTqO+Ppl/3lBeclHwmdWcWDxqX48SFW0633qM42jyGszzmke2VEUgcu8\nIRDsZ0tSaRdgjSv9y6BaFQylEvlblDamgekfBm/6/PwJ1+FqTZ/8CbPQCqXc\nzhLZtVPDhAhABJzBZBOQQGHoxlntEbUzKvTQr+nF6pKdJIb0rdV8wj9SjIoS\nQuX7a24Ed5ctRG6IAF04CfjZnqIcYFPb7SC1/uI48MH+NVw+wxOKodZsIPsU\nqCzI2Gps/WdZ1bg5l5ess9y6aBg8QGK6o5J4nsRq1SaZ5hXRuy38fb2WEb9W\n2elxcj5aawRh/ZQjXt6u6OqPlbuqgeweTyfCW7Kz4yLIBqIdYiwtgwSWkV9V\nFlDkaE7M/u2hblyNCUkCZ5GfZm0ImeiWVxbJsxW9oGAouzUL1U1+7WDjStWa\nXvMa4meWzbrx0kyE+rd4XiyQGmUkZ2o1TxQy3pxzFSuAxfZ4eiYXXWXymUdZ\nmyAy5vLvywYAt5UShtot2AmGOdY030yZq7Qy2/8PlvnVR0ueYySZl9yckLPx\neJhOFuGcUXqFE4YjOXrztsiAUAIpu5mcVCOLtwMqxQ5NBggLpvq6CSisffuf\n5aFI\r\n=mBZO\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/test-root-matches-metadep_1.0.0_1597020340677_0.04867411014192946"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.0.1": {
+      "name": "test-root-matches-metadep",
+      "version": "1.0.1",
+      "dependencies": {
+        "test-root-matches-metadep-x": "1.0.0",
+        "test-root-matches-metadep-y": "1.0.0"
+      },
+      "description": "When a root node matches a metadep being added to the tree, the loop-detection link deduplication made in a lot of problems as a result of the link going to the root node from the /virtual-tree temp tree, ultimately resulting in the root node being reifie",
+      "_id": "test-root-matches-metadep@1.0.1",
+      "_nodeVersion": "14.2.0",
+      "_npmVersion": "7.0.0-beta.2",
+      "dist": {
+        "integrity": "sha512-xx6kinMlAsTjHS/aRHcJUoU4dpy3jEZJ5nKguK8rTWe01rT1mkFrKajVp8PDfVcXxTIArX9blbAYyKRPc3AUrA==",
+        "shasum": "ad0161567ecf9a38fe7a38807b29e559648d6240",
+        "tarball": "https://registry.npmjs.org/test-root-matches-metadep/-/test-root-matches-metadep-1.0.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 762,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfMJjJCRA9TVsSAnZWagAAFfYP/RysamLjOfrfUvp9H9S6\njm6LHMCbS/YwAxaXhubZsQJxbacRlR3M5cqkwFMdsnIyMD3/YgPmx8edKCyz\nBsVp0qQ6NDxL9ITafWhfVcTAC+PA/gl1WFj3t1cwBQiusUEQakotjbPLX5zl\n2jR7tDmQy4ZlW6J8rTveFWYoOFqf3EIbsgFUwrZSDfWhanLymYGNmaQzCN7y\nAm8cUJn996Z3kACUSK4SunTJlASWBVIM2PF/zk8efgNB7d+kqcku5AHGfedf\nkfkHIQeK55z4Jq2qGyngWBrLbuw/0JufkzVhh9V1/DVYfNVwoBCf813I9a+w\n5Ak0lkG3RillqKi7P5vONOiRwI8q7DURGYiCJ2c3knFlhIhpwl13c1MR5aHq\nfauBCpHgqGa/gedTo6Mgi/zlyrPcOxXUcJq2LS/vPIYxdQKwg10wRdb/Uu1m\nTOI/Kdn44yppm6ddCnBUCscs2cUvvM/PgSlR3ni3DgPr3qX1anZm75OKr/ct\neS65isbiNlTSLzXftImeTo7QIeYRCNByNRA1jyLmw+qzEiq3KpRhjjNFpzeh\nzh+5Hb6JN8Uc8MfdZL9PaET9us+V7U6Qv5t1GkGy/NL5PTny1XNWp4B1ZfxX\nD5pcxWJHIYnVMVz2DyoKLTzk5/mjVzAq2RYu9NTDJEyabVLG4FUJtexKufU3\nWKYY\r\n=jNO8\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/test-root-matches-metadep_1.0.1_1597020360938_0.6037561099775639"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2020-08-10T00:45:40.642Z",
+    "1.0.0": "2020-08-10T00:45:40.839Z",
+    "modified": "2020-08-10T00:46:05.138Z",
+    "1.0.1": "2020-08-10T00:46:01.075Z"
+  },
+  "maintainers": [
+    {
+      "name": "isaacs",
+      "email": "i@izs.me"
+    }
+  ],
+  "description": "When a root node matches a metadep being added to the tree, the loop-detection link deduplication made in a lot of problems as a result of the link going to the root node from the /virtual-tree temp tree, ultimately resulting in the root node being reifie",
+  "readme": "When a root node matches a metadep being added to the tree, the\nloop-detection link deduplication made in a lot of problems as a result of\nthe link going to the root node from the /virtual-tree temp tree,\nultimately resulting in the root node being reified in place and deleting\nits existing contents (which is very bad!)\n",
+  "readmeFilename": "README.md"
+}

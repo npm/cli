@@ -1,0 +1,717 @@
+{
+  "_id": "@types/minimatch",
+  "_rev": "473-d8aff0591b2fff93d5d497864bd5c15e",
+  "name": "@types/minimatch",
+  "description": "TypeScript definitions for Minimatch",
+  "dist-tags": {
+    "latest": "3.0.3",
+    "ts2.0": "3.0.3",
+    "ts2.1": "3.0.3",
+    "ts2.2": "3.0.3",
+    "ts2.3": "3.0.3",
+    "ts2.4": "3.0.3",
+    "ts2.5": "3.0.3",
+    "ts2.6": "3.0.3",
+    "ts2.7": "3.0.3",
+    "ts2.8": "3.0.3",
+    "ts2.9": "3.0.3",
+    "ts3.0": "3.0.3",
+    "ts3.1": "3.0.3",
+    "ts3.2": "3.0.3",
+    "ts3.3": "3.0.3",
+    "ts3.4": "3.0.3",
+    "ts3.5": "3.0.3",
+    "ts3.6": "3.0.3",
+    "ts3.7": "3.0.3",
+    "ts3.8": "3.0.3",
+    "ts3.9": "3.0.3",
+    "ts4.0": "3.0.3",
+    "ts4.1": "3.0.3",
+    "ts4.2": "3.0.3"
+  },
+  "versions": {
+    "2.0.15-alpha": {
+      "name": "@types/minimatch",
+      "version": "2.0.15-alpha",
+      "description": "Type definitions for Minimatch 2.0.8 from https://www.github.com/DefinitelyTyped/DefinitelyTyped",
+      "main": "",
+      "scripts": {},
+      "author": {
+        "name": "vvakame",
+        "email": "https://github.com/vvakame/"
+      },
+      "license": "MIT",
+      "typings": "index.d.ts",
+      "dependencies": {},
+      "_id": "@types/minimatch@2.0.15-alpha",
+      "_shasum": "4b82bee6424e2ae36794532c97200c431b0cdb7e",
+      "_from": "output\\minimatch",
+      "_resolved": "file:output\\minimatch",
+      "_npmVersion": "3.8.2",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "types",
+        "email": "ryan.cavanaugh@microsoft.com"
+      },
+      "dist": {
+        "shasum": "4b82bee6424e2ae36794532c97200c431b0cdb7e",
+        "tarball": "https://registry.npmjs.org/@types/minimatch/-/minimatch-2.0.15-alpha.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/minimatch-2.0.15-alpha.tgz_1463509260437_0.06881573633290827"
+      },
+      "directories": {}
+    },
+    "2.0.16-alpha": {
+      "name": "@types/minimatch",
+      "version": "2.0.16-alpha",
+      "description": "Type definitions for Minimatch 2.0.8 from https://www.github.com/DefinitelyTyped/DefinitelyTyped",
+      "main": "",
+      "scripts": {},
+      "author": {
+        "name": "vvakame",
+        "email": "https://github.com/vvakame/"
+      },
+      "license": "MIT",
+      "typings": "index.d.ts",
+      "dependencies": {},
+      "_id": "@types/minimatch@2.0.16-alpha",
+      "_shasum": "24a4ee49643195ee525f3c1fffe027d724eac0c0",
+      "_from": "output\\minimatch",
+      "_resolved": "file:output\\minimatch",
+      "_npmVersion": "3.8.2",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "types",
+        "email": "ryan.cavanaugh@microsoft.com"
+      },
+      "dist": {
+        "shasum": "24a4ee49643195ee525f3c1fffe027d724eac0c0",
+        "tarball": "https://registry.npmjs.org/@types/minimatch/-/minimatch-2.0.16-alpha.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/minimatch-2.0.16-alpha.tgz_1463694205189_0.48880110937170684"
+      },
+      "directories": {}
+    },
+    "2.0.21-alpha": {
+      "name": "@types/minimatch",
+      "version": "2.0.21-alpha",
+      "description": "TypeScript definitions for Minimatch 2.0.8",
+      "main": "",
+      "scripts": {},
+      "author": {
+        "name": "vvakame",
+        "email": "https://github.com/vvakame/"
+      },
+      "license": "MIT",
+      "typings": "index.d.ts",
+      "dependencies": {},
+      "_id": "@types/minimatch@2.0.21-alpha",
+      "_shasum": "4958036cdb07bb3d4dfe494c147b975c6e2acbab",
+      "_from": "output\\minimatch",
+      "_resolved": "file:output\\minimatch",
+      "_npmVersion": "3.8.2",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "types",
+        "email": "ryan.cavanaugh@microsoft.com"
+      },
+      "dist": {
+        "shasum": "4958036cdb07bb3d4dfe494c147b975c6e2acbab",
+        "tarball": "https://registry.npmjs.org/@types/minimatch/-/minimatch-2.0.21-alpha.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/minimatch-2.0.21-alpha.tgz_1463775071545_0.22542174719274044"
+      },
+      "directories": {}
+    },
+    "2.0.22-alpha": {
+      "name": "@types/minimatch",
+      "version": "2.0.22-alpha",
+      "description": "TypeScript definitions for Minimatch 2.0.8",
+      "main": "",
+      "scripts": {},
+      "author": {
+        "name": "vvakame",
+        "email": "https://github.com/vvakame/"
+      },
+      "license": "MIT",
+      "typings": "index.d.ts",
+      "dependencies": {},
+      "_id": "@types/minimatch@2.0.22-alpha",
+      "_shasum": "0d07c7dc320d82b3bc05983f160dfa9832f806bd",
+      "_from": "output\\minimatch",
+      "_resolved": "file:output\\minimatch",
+      "_npmVersion": "3.8.2",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "types",
+        "email": "ryan.cavanaugh@microsoft.com"
+      },
+      "dist": {
+        "shasum": "0d07c7dc320d82b3bc05983f160dfa9832f806bd",
+        "tarball": "https://registry.npmjs.org/@types/minimatch/-/minimatch-2.0.22-alpha.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/minimatch-2.0.22-alpha.tgz_1464154121994_0.246622504433617"
+      },
+      "directories": {}
+    },
+    "2.0.23-alpha": {
+      "name": "@types/minimatch",
+      "version": "2.0.23-alpha",
+      "description": "TypeScript definitions for Minimatch 2.0.8",
+      "main": "",
+      "scripts": {},
+      "author": {
+        "name": "vvakame",
+        "email": "https://github.com/vvakame/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "license": "MIT",
+      "typings": "index.d.ts",
+      "dependencies": {},
+      "_id": "@types/minimatch@2.0.23-alpha",
+      "_shasum": "61ebef68202309855917d7d6861e827fb95dcfaf",
+      "_from": "output\\minimatch",
+      "_resolved": "file:output\\minimatch",
+      "_npmVersion": "3.9.5",
+      "_nodeVersion": "6.2.2",
+      "_npmUser": {
+        "name": "types",
+        "email": "ryan.cavanaugh@microsoft.com"
+      },
+      "dist": {
+        "shasum": "61ebef68202309855917d7d6861e827fb95dcfaf",
+        "tarball": "https://registry.npmjs.org/@types/minimatch/-/minimatch-2.0.23-alpha.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/minimatch-2.0.23-alpha.tgz_1467403424361_0.3357722582295537"
+      },
+      "directories": {}
+    },
+    "2.0.24-alpha": {
+      "name": "@types/minimatch",
+      "version": "2.0.24-alpha",
+      "description": "TypeScript definitions for Minimatch 2.0.8",
+      "main": "",
+      "scripts": {},
+      "author": {
+        "name": "vvakame",
+        "email": "https://github.com/vvakame/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "license": "MIT",
+      "typings": "index.d.ts",
+      "dependencies": {},
+      "_id": "@types/minimatch@2.0.24-alpha",
+      "_shasum": "7959c62c651cd4855073b584f2a72d1271f1a575",
+      "_from": "output\\minimatch",
+      "_resolved": "file:output\\minimatch",
+      "_npmVersion": "3.7.2",
+      "_nodeVersion": "6.2.1",
+      "_npmUser": {
+        "name": "types",
+        "email": "ryan.cavanaugh@microsoft.com"
+      },
+      "dist": {
+        "shasum": "7959c62c651cd4855073b584f2a72d1271f1a575",
+        "tarball": "https://registry.npmjs.org/@types/minimatch/-/minimatch-2.0.24-alpha.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/minimatch-2.0.24-alpha.tgz_1467415515603_0.12237580446526408"
+      },
+      "directories": {}
+    },
+    "2.0.25-alpha": {
+      "name": "@types/minimatch",
+      "version": "2.0.25-alpha",
+      "description": "TypeScript definitions for Minimatch 2.0.8",
+      "main": "",
+      "scripts": {},
+      "author": {
+        "name": "vvakame",
+        "email": "https://github.com/vvakame/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "license": "MIT",
+      "typings": "index.d.ts",
+      "dependencies": {},
+      "_id": "@types/minimatch@2.0.25-alpha",
+      "_shasum": "1164590196d8ca7cd13e4a234888d73ae638c2a6",
+      "_from": "output\\minimatch",
+      "_resolved": "file:output\\minimatch",
+      "_npmVersion": "3.7.2",
+      "_nodeVersion": "6.2.1",
+      "_npmUser": {
+        "name": "types",
+        "email": "ryan.cavanaugh@microsoft.com"
+      },
+      "dist": {
+        "shasum": "1164590196d8ca7cd13e4a234888d73ae638c2a6",
+        "tarball": "https://registry.npmjs.org/@types/minimatch/-/minimatch-2.0.25-alpha.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/minimatch-2.0.25-alpha.tgz_1467428294835_0.4672903090249747"
+      },
+      "directories": {}
+    },
+    "2.0.26-alpha": {
+      "name": "@types/minimatch",
+      "version": "2.0.26-alpha",
+      "description": "TypeScript definitions for Minimatch 2.0.8",
+      "main": "",
+      "scripts": {},
+      "author": {
+        "name": "vvakame",
+        "email": "https://github.com/vvakame/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "license": "MIT",
+      "typings": "index.d.ts",
+      "dependencies": {},
+      "_id": "@types/minimatch@2.0.26-alpha",
+      "_shasum": "e3f3072c6f6102b3bcfbe477f9cbbe0e9675ea8e",
+      "_from": "output\\minimatch",
+      "_resolved": "file:output\\minimatch",
+      "_npmVersion": "3.7.2",
+      "_nodeVersion": "6.2.1",
+      "_npmUser": {
+        "name": "types",
+        "email": "ryan.cavanaugh@microsoft.com"
+      },
+      "dist": {
+        "shasum": "e3f3072c6f6102b3bcfbe477f9cbbe0e9675ea8e",
+        "tarball": "https://registry.npmjs.org/@types/minimatch/-/minimatch-2.0.26-alpha.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/minimatch-2.0.26-alpha.tgz_1467593618491_0.3523154004942626"
+      },
+      "directories": {}
+    },
+    "2.0.27-alpha": {
+      "name": "@types/minimatch",
+      "version": "2.0.27-alpha",
+      "description": "TypeScript definitions for Minimatch 2.0.8",
+      "main": "",
+      "scripts": {},
+      "author": {
+        "name": "vvakame",
+        "email": "https://github.com/vvakame/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "license": "MIT",
+      "typings": "index.d.ts",
+      "dependencies": {},
+      "_id": "@types/minimatch@2.0.27-alpha",
+      "_shasum": "53880efc2cc4994cd78ff20367ac426c538732ae",
+      "_from": "output\\minimatch",
+      "_resolved": "file:output\\minimatch",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.3.0",
+      "_npmUser": {
+        "name": "types",
+        "email": "ryan.cavanaugh@microsoft.com"
+      },
+      "dist": {
+        "shasum": "53880efc2cc4994cd78ff20367ac426c538732ae",
+        "tarball": "https://registry.npmjs.org/@types/minimatch/-/minimatch-2.0.27-alpha.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/minimatch-2.0.27-alpha.tgz_1468011318069_0.23097137291915715"
+      },
+      "directories": {}
+    },
+    "2.0.28": {
+      "name": "@types/minimatch",
+      "version": "2.0.28",
+      "description": "TypeScript definitions for Minimatch 2.0.8",
+      "main": "",
+      "scripts": {},
+      "author": {
+        "name": "vvakame",
+        "email": "https://github.com/vvakame/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "license": "MIT",
+      "typings": "index.d.ts",
+      "dependencies": {},
+      "_id": "@types/minimatch@2.0.28",
+      "_shasum": "639343a6db0f4b3ab29f9ef5d4be64e58a6901e3",
+      "_from": "output\\minimatch",
+      "_resolved": "file:output\\minimatch",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.3.0",
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "dist": {
+        "shasum": "639343a6db0f4b3ab29f9ef5d4be64e58a6901e3",
+        "tarball": "https://registry.npmjs.org/@types/minimatch/-/minimatch-2.0.28.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/minimatch-2.0.28.tgz_1468509857946_0.13842021790333092"
+      },
+      "directories": {}
+    },
+    "2.0.29": {
+      "name": "@types/minimatch",
+      "version": "2.0.29",
+      "description": "TypeScript definitions for Minimatch 2.0.8",
+      "license": "MIT",
+      "author": "vvakame <https://github.com/vvakame/>",
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typings": "index.d.ts",
+      "typesPublisherContentHash": "ecb8ae21708ffcd19d5ee21679b417d267e93ef05c1538f93b002dbd59fa5678",
+      "_id": "@types/minimatch@2.0.29",
+      "dist": {
+        "shasum": "5002e14f75e2d71e564281df0431c8c1b4a2a36a",
+        "tarball": "https://registry.npmjs.org/@types/minimatch/-/minimatch-2.0.29.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/minimatch-2.0.29.tgz_1474307523681_0.08793415850959718"
+      },
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "@types/minimatch",
+      "version": "3.0.0",
+      "description": "TypeScript definitions for Minimatch",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "vvakame",
+          "url": "https://github.com/vvakame/"
+        },
+        {
+          "name": "Shant Marouti",
+          "url": "https://github.com/shantmarouti"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "peerDependencies": {},
+      "typesPublisherContentHash": "26473cc9b7b22e020ed0ce41df1f1bb8bbbb9e92243d38ce4052817ca7c02f21",
+      "typeScriptVersion": "2.0",
+      "_id": "@types/minimatch@3.0.0",
+      "dist": {
+        "integrity": "sha512-BnRgLPs1oy9gV8b4dAW8jilIa7Kpe3uNucAvv4RkY7Yt6rj9E6Kk4Qa/18LOSinA+XDBPdzx3MqYPEP5mw8rDA==",
+        "shasum": "a8b68c324817169b6004b432a598478a5d8f025a",
+        "tarball": "https://registry.npmjs.org/@types/minimatch/-/minimatch-3.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/minimatch-3.0.0.tgz_1502740052461_0.4426619743462652"
+      },
+      "directories": {}
+    },
+    "3.0.1": {
+      "name": "@types/minimatch",
+      "version": "3.0.1",
+      "description": "TypeScript definitions for Minimatch",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "vvakame",
+          "url": "https://github.com/vvakame"
+        },
+        {
+          "name": "Shant Marouti",
+          "url": "https://github.com/shantmarouti"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "ff0924df2b181138d3a12e599083774880ccc0b9d31457017534e79a04bfba47",
+      "typeScriptVersion": "2.0",
+      "_id": "@types/minimatch@3.0.1",
+      "dist": {
+        "integrity": "sha512-rUO/jz10KRSyA9SHoCWQ8WX9BICyj5jZYu1/ucKEJKb4KzLZCKMURdYbadP157Q6Zl1x0vHsrU+Z/O0XlhYQDw==",
+        "shasum": "b683eb60be358304ef146f5775db4c0e3696a550",
+        "tarball": "https://registry.npmjs.org/@types/minimatch/-/minimatch-3.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "ts-npm-types@microsoft.com",
+          "name": "types"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/minimatch-3.0.1.tgz_1503352705164_0.3187303929589689"
+      },
+      "directories": {}
+    },
+    "3.0.2": {
+      "name": "@types/minimatch",
+      "version": "3.0.2",
+      "description": "TypeScript definitions for Minimatch",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "vvakame",
+          "url": "https://github.com/vvakame",
+          "githubUsername": "vvakame"
+        },
+        {
+          "name": "Shant Marouti",
+          "url": "https://github.com/shantmarouti",
+          "githubUsername": "shantmarouti"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "a7d303b43c8df61588af3a4a0fbf4ea61a484ef0fbad093c052ed30cbdce909e",
+      "typeScriptVersion": "2.0",
+      "_id": "@types/minimatch@3.0.2",
+      "dist": {
+        "integrity": "sha512-tctoxbfuMCxeI2CAsnwoZQfaBA+T7gPzDzDuiiFnyCSSyGYEB92cmRTh6E3tdR1hWsprbJ9IdbvX3PzLmJU/GA==",
+        "shasum": "09c06877e478a5d5f32ce5017c2eb2b33006f6f5",
+        "tarball": "https://registry.npmjs.org/@types/minimatch/-/minimatch-3.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "ts-npm-types@microsoft.com",
+          "name": "types"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/minimatch-3.0.2.tgz_1513192431324_0.6330664707347751"
+      },
+      "directories": {}
+    },
+    "3.0.3": {
+      "name": "@types/minimatch",
+      "version": "3.0.3",
+      "description": "TypeScript definitions for Minimatch",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "vvakame",
+          "url": "https://github.com/vvakame",
+          "githubUsername": "vvakame"
+        },
+        {
+          "name": "Shant Marouti",
+          "url": "https://github.com/shantmarouti",
+          "githubUsername": "shantmarouti"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "e768e36348874adcc93ac67e9c3c7b5fcbd39079c0610ec16e410b8f851308d1",
+      "typeScriptVersion": "2.0",
+      "_id": "@types/minimatch@3.0.3",
+      "dist": {
+        "integrity": "sha512-tHq6qdbT9U1IRSGf14CL0pUlULksvY9OZ+5eEgl1N7t+OA3tGvNpxJCzuKQlsNgCVwbAs670L1vcVQi8j9HjnA==",
+        "shasum": "3dca0e3f33b200fc7d1139c0cd96c1268cadfd9d",
+        "tarball": "https://registry.npmjs.org/@types/minimatch/-/minimatch-3.0.3.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "ts-npm-types@microsoft.com",
+          "name": "types"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/minimatch-3.0.3.tgz_1515108411163_0.2248273955192417"
+      },
+      "directories": {}
+    }
+  },
+  "readme": "# Installation\r\n> `npm install --save @types/minimatch`\r\n\r\n# Summary\r\nThis package contains type definitions for Minimatch (https://github.com/isaacs/minimatch).\r\n\r\n# Details\r\nFiles were exported from https://www.github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/minimatch\r\n\r\nAdditional Details\r\n * Last updated: Thu, 04 Jan 2018 23:26:01 GMT\r\n * Dependencies: none\r\n * Global values: none\r\n\r\n# Credits\r\nThese definitions were written by vvakame <https://github.com/vvakame>, Shant Marouti <https://github.com/shantmarouti>.\r\n",
+  "maintainers": [
+    {
+      "email": "ts-npm-types@microsoft.com",
+      "name": "types"
+    }
+  ],
+  "time": {
+    "modified": "2020-11-11T17:46:51.187Z",
+    "created": "2016-05-17T18:21:01.002Z",
+    "2.0.15-alpha": "2016-05-17T18:21:01.002Z",
+    "2.0.16-alpha": "2016-05-19T21:43:25.854Z",
+    "2.0.21-alpha": "2016-05-20T20:11:11.950Z",
+    "2.0.22-alpha": "2016-05-25T05:28:42.439Z",
+    "2.0.23-alpha": "2016-07-01T20:03:44.971Z",
+    "2.0.24-alpha": "2016-07-01T23:25:19.050Z",
+    "2.0.25-alpha": "2016-07-02T02:58:18.035Z",
+    "2.0.26-alpha": "2016-07-04T00:53:38.943Z",
+    "2.0.27-alpha": "2016-07-08T20:55:20.385Z",
+    "2.0.28": "2016-07-14T15:24:20.476Z",
+    "2.0.29": "2016-09-19T17:52:06.732Z",
+    "3.0.0": "2017-08-14T19:47:32.577Z",
+    "3.0.1": "2017-08-21T21:58:25.276Z",
+    "3.0.2": "2017-12-13T19:13:51.386Z",
+    "3.0.3": "2018-01-04T23:26:51.283Z"
+  },
+  "license": "MIT",
+  "readmeFilename": "",
+  "repository": {
+    "type": "git",
+    "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+  },
+  "contributors": [
+    {
+      "name": "vvakame",
+      "url": "https://github.com/vvakame",
+      "githubUsername": "vvakame"
+    },
+    {
+      "name": "Shant Marouti",
+      "url": "https://github.com/shantmarouti",
+      "githubUsername": "shantmarouti"
+    }
+  ]
+}

@@ -1,0 +1,884 @@
+{
+  "_id": "miller-rabin",
+  "_rev": "27-5e4af894ce3bc793fe08554b2a2ef730",
+  "name": "miller-rabin",
+  "description": "Miller Rabin algorithm for primality test",
+  "dist-tags": {
+    "latest": "4.0.1"
+  },
+  "versions": {
+    "1.0.1": {
+      "name": "miller-rabin",
+      "version": "1.0.1",
+      "description": "Miller Rabin algorithm for primality test",
+      "main": "lib/mr.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/**/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/miller-rabin"
+      },
+      "keywords": [
+        "prime",
+        "miller-rabin",
+        "bignumber"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/miller-rabin/issues"
+      },
+      "homepage": "https://github.com/indutny/miller-rabin",
+      "devDependencies": {
+        "bn.js": "^0.15.0",
+        "mocha": "^2.0.1"
+      },
+      "peerDependencies": {
+        "bn.js": "^0.15.0"
+      },
+      "dependencies": {
+        "brorand": "^1.0.1"
+      },
+      "gitHead": "fe668a3fd8cd4298f4b787ba190ead79eefb3116",
+      "_id": "miller-rabin@1.0.1",
+      "_shasum": "48574c577dc24b6ea81cdeb9608840654914962d",
+      "_from": ".",
+      "_npmVersion": "2.1.6",
+      "_nodeVersion": "0.10.33",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "48574c577dc24b6ea81cdeb9608840654914962d",
+        "tarball": "https://registry.npmjs.org/miller-rabin/-/miller-rabin-1.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "miller-rabin",
+      "version": "1.0.2",
+      "description": "Miller Rabin algorithm for primality test",
+      "main": "lib/mr.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/**/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/miller-rabin"
+      },
+      "keywords": [
+        "prime",
+        "miller-rabin",
+        "bignumber"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/miller-rabin/issues"
+      },
+      "homepage": "https://github.com/indutny/miller-rabin",
+      "devDependencies": {
+        "bn.js": "^0.15.0",
+        "mocha": "^2.0.1"
+      },
+      "peerDependencies": {
+        "bn.js": "^0.15.0"
+      },
+      "dependencies": {
+        "brorand": "^1.0.1"
+      },
+      "gitHead": "4a4b1ad8bfa22d262483a67eede00d8d8e9ddbd8",
+      "_id": "miller-rabin@1.0.2",
+      "_shasum": "34602db18c558ba2bb24e30cf5f557e249e34a69",
+      "_from": ".",
+      "_npmVersion": "2.1.6",
+      "_nodeVersion": "0.10.33",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "34602db18c558ba2bb24e30cf5f557e249e34a69",
+        "tarball": "https://registry.npmjs.org/miller-rabin/-/miller-rabin-1.0.2.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.3": {
+      "name": "miller-rabin",
+      "version": "1.0.3",
+      "description": "Miller Rabin algorithm for primality test",
+      "main": "lib/mr.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/**/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/miller-rabin"
+      },
+      "keywords": [
+        "prime",
+        "miller-rabin",
+        "bignumber"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/miller-rabin/issues"
+      },
+      "homepage": "https://github.com/indutny/miller-rabin",
+      "devDependencies": {
+        "bn.js": "^0.15.0",
+        "mocha": "^2.0.1"
+      },
+      "peerDependencies": {
+        "bn.js": "^0.15.0"
+      },
+      "dependencies": {
+        "brorand": "^1.0.1"
+      },
+      "gitHead": "be0185a44f6afa1991426190ac57386bfc91b799",
+      "_id": "miller-rabin@1.0.3",
+      "_shasum": "7f6c150162cd5e0fd51b9546efddcebaed32ee22",
+      "_from": ".",
+      "_npmVersion": "2.1.6",
+      "_nodeVersion": "0.10.33",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "7f6c150162cd5e0fd51b9546efddcebaed32ee22",
+        "tarball": "https://registry.npmjs.org/miller-rabin/-/miller-rabin-1.0.3.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "miller-rabin",
+      "version": "1.1.0",
+      "description": "Miller Rabin algorithm for primality test",
+      "main": "lib/mr.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/**/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/miller-rabin"
+      },
+      "keywords": [
+        "prime",
+        "miller-rabin",
+        "bignumber"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/miller-rabin/issues"
+      },
+      "homepage": "https://github.com/indutny/miller-rabin",
+      "devDependencies": {
+        "bn.js": "^0.15.0",
+        "mocha": "^2.0.1"
+      },
+      "peerDependencies": {
+        "bn.js": "^0.15.0"
+      },
+      "dependencies": {
+        "brorand": "^1.0.1"
+      },
+      "gitHead": "d7777bf50806bc02356b59e0f5ce138cdc06bbce",
+      "_id": "miller-rabin@1.1.0",
+      "_shasum": "dfae54be0eb03c2d24ba5bc9612aced3d0a2c5fa",
+      "_from": ".",
+      "_npmVersion": "2.1.6",
+      "_nodeVersion": "0.10.33",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "dfae54be0eb03c2d24ba5bc9612aced3d0a2c5fa",
+        "tarball": "https://registry.npmjs.org/miller-rabin/-/miller-rabin-1.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.1": {
+      "name": "miller-rabin",
+      "version": "1.1.1",
+      "description": "Miller Rabin algorithm for primality test",
+      "main": "lib/mr.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/**/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/miller-rabin"
+      },
+      "keywords": [
+        "prime",
+        "miller-rabin",
+        "bignumber"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/miller-rabin/issues"
+      },
+      "homepage": "https://github.com/indutny/miller-rabin",
+      "devDependencies": {
+        "bn.js": "^0.15.0",
+        "mocha": "^2.0.1"
+      },
+      "peerDependencies": {
+        "bn.js": "^0.15.0"
+      },
+      "dependencies": {
+        "brorand": "^1.0.1"
+      },
+      "gitHead": "59a943d51ac42931afc3cfc202c443bb39468c62",
+      "_id": "miller-rabin@1.1.1",
+      "_shasum": "00e5be11698e846d7a5a185c5eced425f4379cd5",
+      "_from": ".",
+      "_npmVersion": "2.1.6",
+      "_nodeVersion": "0.10.33",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "00e5be11698e846d7a5a185c5eced425f4379cd5",
+        "tarball": "https://registry.npmjs.org/miller-rabin/-/miller-rabin-1.1.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.2": {
+      "name": "miller-rabin",
+      "version": "1.1.2",
+      "description": "Miller Rabin algorithm for primality test",
+      "main": "lib/mr.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/**/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/miller-rabin"
+      },
+      "keywords": [
+        "prime",
+        "miller-rabin",
+        "bignumber"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/miller-rabin/issues"
+      },
+      "homepage": "https://github.com/indutny/miller-rabin",
+      "devDependencies": {
+        "bn.js": "^0.16.0",
+        "mocha": "^2.0.1"
+      },
+      "peerDependencies": {
+        "bn.js": "^0.16.0"
+      },
+      "dependencies": {
+        "brorand": "^1.0.1"
+      },
+      "gitHead": "cf572e9ae6004c5600155247eacbb4ed05784d45",
+      "_id": "miller-rabin@1.1.2",
+      "_shasum": "74b9437667b881257b86bf1354cb9ed4231d65c0",
+      "_from": ".",
+      "_npmVersion": "2.1.10",
+      "_nodeVersion": "0.10.33",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "74b9437667b881257b86bf1354cb9ed4231d65c0",
+        "tarball": "https://registry.npmjs.org/miller-rabin/-/miller-rabin-1.1.2.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.3": {
+      "name": "miller-rabin",
+      "version": "1.1.3",
+      "description": "Miller Rabin algorithm for primality test",
+      "main": "lib/mr.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/**/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/miller-rabin"
+      },
+      "keywords": [
+        "prime",
+        "miller-rabin",
+        "bignumber"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/miller-rabin/issues"
+      },
+      "homepage": "https://github.com/indutny/miller-rabin",
+      "devDependencies": {
+        "bn.js": "^0.15.0",
+        "mocha": "^2.0.1"
+      },
+      "peerDependencies": {
+        "bn.js": "^0.15.0"
+      },
+      "dependencies": {
+        "brorand": "^1.0.1"
+      },
+      "gitHead": "9a7cf7a7d9615a9acbe0fae5384bbd2bdcb96373",
+      "_id": "miller-rabin@1.1.3",
+      "_shasum": "8344ae79438781e215adb97589ef1a6ca7432065",
+      "_from": ".",
+      "_npmVersion": "2.1.10",
+      "_nodeVersion": "0.10.33",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "8344ae79438781e215adb97589ef1a6ca7432065",
+        "tarball": "https://registry.npmjs.org/miller-rabin/-/miller-rabin-1.1.3.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.4": {
+      "name": "miller-rabin",
+      "version": "1.1.4",
+      "description": "Miller Rabin algorithm for primality test",
+      "main": "lib/mr.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/**/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/miller-rabin"
+      },
+      "keywords": [
+        "prime",
+        "miller-rabin",
+        "bignumber"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/miller-rabin/issues"
+      },
+      "homepage": "https://github.com/indutny/miller-rabin",
+      "devDependencies": {
+        "mocha": "^2.0.1"
+      },
+      "dependencies": {
+        "bn.js": "^0.16.0",
+        "brorand": "^1.0.1"
+      },
+      "gitHead": "bacc26fed177a32ceef0b92501de96531fd3538e",
+      "_id": "miller-rabin@1.1.4",
+      "_shasum": "6d8268400e454a347566154c092e6f5627693f37",
+      "_from": ".",
+      "_npmVersion": "2.1.10",
+      "_nodeVersion": "0.10.33",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "6d8268400e454a347566154c092e6f5627693f37",
+        "tarball": "https://registry.npmjs.org/miller-rabin/-/miller-rabin-1.1.4.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.5": {
+      "name": "miller-rabin",
+      "version": "1.1.5",
+      "description": "Miller Rabin algorithm for primality test",
+      "main": "lib/mr.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/**/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/miller-rabin"
+      },
+      "keywords": [
+        "prime",
+        "miller-rabin",
+        "bignumber"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/miller-rabin/issues"
+      },
+      "homepage": "https://github.com/indutny/miller-rabin",
+      "devDependencies": {
+        "mocha": "^2.0.1"
+      },
+      "dependencies": {
+        "bn.js": "^1.0.0",
+        "brorand": "^1.0.1"
+      },
+      "gitHead": "9230dc7d45ba47a7a0a639a56f990ec741fcdd79",
+      "_id": "miller-rabin@1.1.5",
+      "_shasum": "41f506bed994b97e7c184a658ae107dad980526e",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "41f506bed994b97e7c184a658ae107dad980526e",
+        "tarball": "https://registry.npmjs.org/miller-rabin/-/miller-rabin-1.1.5.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "miller-rabin",
+      "version": "2.0.0",
+      "description": "Miller Rabin algorithm for primality test",
+      "main": "lib/mr.js",
+      "bin": {
+        "miller-rabin": "bin/miller-rabin"
+      },
+      "scripts": {
+        "test": "mocha --reporter=spec test/**/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/miller-rabin.git"
+      },
+      "keywords": [
+        "prime",
+        "miller-rabin",
+        "bignumber"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/miller-rabin/issues"
+      },
+      "homepage": "https://github.com/indutny/miller-rabin",
+      "devDependencies": {
+        "mocha": "^2.0.1"
+      },
+      "dependencies": {
+        "bn.js": "^2.0.0",
+        "brorand": "^1.0.1"
+      },
+      "gitHead": "399935419a163ea0107f9a7328ffff3577627e07",
+      "_id": "miller-rabin@2.0.0",
+      "_shasum": "b6fa65e66064affde1b20b06514964b03f7e3c93",
+      "_from": ".",
+      "_npmVersion": "2.8.3",
+      "_nodeVersion": "1.8.2",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "b6fa65e66064affde1b20b06514964b03f7e3c93",
+        "tarball": "https://registry.npmjs.org/miller-rabin/-/miller-rabin-2.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.1": {
+      "name": "miller-rabin",
+      "version": "2.0.1",
+      "description": "Miller Rabin algorithm for primality test",
+      "main": "lib/mr.js",
+      "bin": {
+        "miller-rabin": "bin/miller-rabin"
+      },
+      "scripts": {
+        "test": "mocha --reporter=spec test/**/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/miller-rabin.git"
+      },
+      "keywords": [
+        "prime",
+        "miller-rabin",
+        "bignumber"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/miller-rabin/issues"
+      },
+      "homepage": "https://github.com/indutny/miller-rabin",
+      "devDependencies": {
+        "mocha": "^2.0.1"
+      },
+      "dependencies": {
+        "bn.js": "^2.0.0",
+        "brorand": "^1.0.1"
+      },
+      "gitHead": "ec5836de2a565211217d0531639d70cb4bca6ec3",
+      "_id": "miller-rabin@2.0.1",
+      "_shasum": "8c0e07fef1bc24900a78895434d39ce4024d4648",
+      "_from": ".",
+      "_npmVersion": "2.8.3",
+      "_nodeVersion": "1.8.2",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "8c0e07fef1bc24900a78895434d39ce4024d4648",
+        "tarball": "https://registry.npmjs.org/miller-rabin/-/miller-rabin-2.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "miller-rabin",
+      "version": "3.0.0",
+      "description": "Miller Rabin algorithm for primality test",
+      "main": "lib/mr.js",
+      "bin": {
+        "miller-rabin": "bin/miller-rabin"
+      },
+      "scripts": {
+        "test": "mocha --reporter=spec test/**/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/miller-rabin.git"
+      },
+      "keywords": [
+        "prime",
+        "miller-rabin",
+        "bignumber"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/miller-rabin/issues"
+      },
+      "homepage": "https://github.com/indutny/miller-rabin",
+      "devDependencies": {
+        "mocha": "^2.0.1"
+      },
+      "dependencies": {
+        "bn.js": "^3.1.1",
+        "brorand": "^1.0.1"
+      },
+      "gitHead": "ce1b20a2c03e778317f041e7c827af19e574aece",
+      "_id": "miller-rabin@3.0.0",
+      "_shasum": "a95d38440e4e4f792f24afdb51e7a2e765051f3d",
+      "_from": ".",
+      "_npmVersion": "2.9.0",
+      "_nodeVersion": "2.5.0",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        },
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "a95d38440e4e4f792f24afdb51e7a2e765051f3d",
+        "tarball": "https://registry.npmjs.org/miller-rabin/-/miller-rabin-3.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "4.0.0": {
+      "name": "miller-rabin",
+      "version": "4.0.0",
+      "description": "Miller Rabin algorithm for primality test",
+      "main": "lib/mr.js",
+      "bin": {
+        "miller-rabin": "bin/miller-rabin"
+      },
+      "scripts": {
+        "test": "mocha --reporter=spec test/**/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/miller-rabin.git"
+      },
+      "keywords": [
+        "prime",
+        "miller-rabin",
+        "bignumber"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/miller-rabin/issues"
+      },
+      "homepage": "https://github.com/indutny/miller-rabin",
+      "devDependencies": {
+        "mocha": "^2.0.1"
+      },
+      "dependencies": {
+        "bn.js": "^4.0.0",
+        "brorand": "^1.0.1"
+      },
+      "gitHead": "94b56df9948a1ae592b331afc9559115f3f98fb2",
+      "_id": "miller-rabin@4.0.0",
+      "_shasum": "4a62fb1d42933c05583982f4c716f6fb9e6c6d3d",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.1",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "dist": {
+        "shasum": "4a62fb1d42933c05583982f4c716f6fb9e6c6d3d",
+        "tarball": "https://registry.npmjs.org/miller-rabin/-/miller-rabin-4.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        },
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "4.0.1": {
+      "name": "miller-rabin",
+      "version": "4.0.1",
+      "description": "Miller Rabin algorithm for primality test",
+      "main": "lib/mr.js",
+      "bin": {
+        "miller-rabin": "bin/miller-rabin"
+      },
+      "scripts": {
+        "test": "mocha --reporter=spec test/**/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/miller-rabin.git"
+      },
+      "keywords": [
+        "prime",
+        "miller-rabin",
+        "bignumber"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/miller-rabin/issues"
+      },
+      "homepage": "https://github.com/indutny/miller-rabin",
+      "devDependencies": {
+        "mocha": "^2.0.1"
+      },
+      "dependencies": {
+        "bn.js": "^4.0.0",
+        "brorand": "^1.0.1"
+      },
+      "gitHead": "bda17a34d3b33a84a0dbb120ff7f662adea05c01",
+      "_id": "miller-rabin@4.0.1",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "8.0.0",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "dist": {
+        "integrity": "sha512-115fLhvZVqWwHPbClyntxEVfVDfl9DLLTuJvq3g2O/Oxi8AiNouAHvDSzHS0viUJc+V5vm3eq91Xwqn9dp4jRA==",
+        "shasum": "f080351c865b0dc562a8462966daa53543c78a4d",
+        "tarball": "https://registry.npmjs.org/miller-rabin/-/miller-rabin-4.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        },
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/miller-rabin-4.0.1.tgz_1506550159594_0.8133998683188111"
+      },
+      "directories": {}
+    }
+  },
+  "readme": "# Miller-Rabin\n\n#### LICENSE\n\nThis software is licensed under the MIT License.\n\nCopyright Fedor Indutny, 2014.\n\nPermission is hereby granted, free of charge, to any person obtaining a\ncopy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to permit\npersons to whom the Software is furnished to do so, subject to the\nfollowing conditions:\n\nThe above copyright notice and this permission notice shall be included\nin all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS\nOR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN\nNO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,\nDAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR\nOTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE\nUSE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+  "maintainers": [
+    {
+      "name": "indutny",
+      "email": "fedor@indutny.com"
+    },
+    {
+      "name": "cwmma",
+      "email": "calvin.metcalf@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2017-09-27T22:09:20.513Z",
+    "created": "2014-11-05T17:33:19.500Z",
+    "1.0.1": "2014-11-05T17:33:19.500Z",
+    "1.0.2": "2014-11-07T09:49:50.557Z",
+    "1.0.3": "2014-11-07T13:22:05.787Z",
+    "1.1.0": "2014-11-07T14:55:08.026Z",
+    "1.1.1": "2014-11-07T15:10:54.670Z",
+    "1.1.2": "2015-01-02T11:39:58.012Z",
+    "1.1.3": "2015-01-02T16:51:29.402Z",
+    "1.1.4": "2015-01-02T16:53:34.041Z",
+    "1.1.5": "2015-01-05T21:04:57.138Z",
+    "2.0.0": "2015-04-27T09:23:20.946Z",
+    "2.0.1": "2015-04-27T09:28:12.172Z",
+    "2.1.0": "2015-07-28T02:24:52.033Z",
+    "3.0.0": "2015-08-13T11:42:39.666Z",
+    "4.0.0": "2015-10-28T21:08:41.282Z",
+    "4.0.1": "2017-09-27T22:09:20.513Z"
+  },
+  "homepage": "https://github.com/indutny/miller-rabin",
+  "keywords": [
+    "prime",
+    "miller-rabin",
+    "bignumber"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/indutny/miller-rabin.git"
+  },
+  "author": {
+    "name": "Fedor Indutny",
+    "email": "fedor@indutny.com"
+  },
+  "bugs": {
+    "url": "https://github.com/indutny/miller-rabin/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "users": {
+    "detj": true
+  },
+  "_attachments": {}
+}

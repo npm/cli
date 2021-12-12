@@ -1,0 +1,871 @@
+{
+  "_id": "object-visit",
+  "_rev": "12-57dcdb9eec6d537ae639a0cef5eb9f6e",
+  "name": "object-visit",
+  "description": "Call a specified method on each value in the given object.",
+  "dist-tags": {
+    "latest": "1.0.1"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "object-visit",
+      "description": "Call the given method on each value in the given object.",
+      "version": "0.1.0",
+      "homepage": "https://github.com/jonschlinkert/object-visit",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/object-visit.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/object-visit/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "isobject": "^1.0.0"
+      },
+      "devDependencies": {
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "context",
+        "function",
+        "helper",
+        "key",
+        "method",
+        "object",
+        "value",
+        "visit",
+        "visitor"
+      ],
+      "gitHead": "c4bc5a072871a8f0b5f49dfeeae2402dd4a1ba91",
+      "_id": "object-visit@0.1.0",
+      "_shasum": "b1bb6749f228ee76e0c42f3851d28a14d233ce26",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "0.12.4",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "b1bb6749f228ee76e0c42f3851d28a14d233ce26",
+        "tarball": "https://registry.npmjs.org/object-visit/-/object-visit-0.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.0": {
+      "name": "object-visit",
+      "description": "Call the given method on each value in the given object.",
+      "version": "0.2.0",
+      "homepage": "https://github.com/jonschlinkert/object-visit",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/object-visit.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/object-visit/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "isobject": "^1.0.0"
+      },
+      "devDependencies": {
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "context",
+        "function",
+        "helper",
+        "key",
+        "method",
+        "object",
+        "value",
+        "visit",
+        "visitor"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "collection-visit",
+            "map-visit"
+          ]
+        }
+      },
+      "gitHead": "b4bd9cedc4fa269c38ae0b78b98fcf207a52b71f",
+      "_id": "object-visit@0.2.0",
+      "_shasum": "5e803d935fd3a950e02305a64ef1842f1a8fcf7c",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "0.12.4",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "5e803d935fd3a950e02305a64ef1842f1a8fcf7c",
+        "tarball": "https://registry.npmjs.org/object-visit/-/object-visit-0.2.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.1": {
+      "name": "object-visit",
+      "description": "Call the given method on each value in the given object.",
+      "version": "0.2.1",
+      "homepage": "https://github.com/jonschlinkert/object-visit",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/object-visit.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/object-visit/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "isobject": "^1.0.0"
+      },
+      "devDependencies": {
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "context",
+        "function",
+        "helper",
+        "key",
+        "method",
+        "object",
+        "value",
+        "visit",
+        "visitor"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "collection-visit",
+            "map-visit"
+          ]
+        }
+      },
+      "gitHead": "3e97cb456f8713aa5abf347734186e00677bc32c",
+      "_id": "object-visit@0.2.1",
+      "_shasum": "23c9002c355707862d00a0a188a05132de9fad5a",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "0.12.4",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "23c9002c355707862d00a0a188a05132de9fad5a",
+        "tarball": "https://registry.npmjs.org/object-visit/-/object-visit-0.2.1.tgz"
+      },
+      "directories": {}
+    },
+    "0.3.0": {
+      "name": "object-visit",
+      "description": "Call the given method on each value in the given object.",
+      "version": "0.3.0",
+      "homepage": "https://github.com/jonschlinkert/object-visit",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/object-visit.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/object-visit/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "expected": "^0.1.0",
+        "isobject": "^1.0.0"
+      },
+      "devDependencies": {
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "context",
+        "function",
+        "helper",
+        "key",
+        "method",
+        "object",
+        "value",
+        "visit",
+        "visitor"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "base-methods",
+            "collection-visit",
+            "map-visit"
+          ]
+        }
+      },
+      "gitHead": "3e97cb456f8713aa5abf347734186e00677bc32c",
+      "_id": "object-visit@0.3.0",
+      "_shasum": "97e850c2f93aaa74d262e9ea18163ca85b7114c7",
+      "_from": ".",
+      "_npmVersion": "2.14.4",
+      "_nodeVersion": "4.1.1",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "97e850c2f93aaa74d262e9ea18163ca85b7114c7",
+        "tarball": "https://registry.npmjs.org/object-visit/-/object-visit-0.3.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.3.1": {
+      "name": "object-visit",
+      "description": "Call the given method on each value in the given object.",
+      "version": "0.3.1",
+      "homepage": "https://github.com/jonschlinkert/object-visit",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/object-visit.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/object-visit/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "expected": "^0.1.0",
+        "isobject": "^1.0.0"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.0",
+        "gulp-istanbul": "^0.10.1",
+        "gulp-jshint": "^1.11.2",
+        "gulp-mocha": "^2.1.3",
+        "jshint-stylish": "^2.0.1",
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "context",
+        "function",
+        "helper",
+        "key",
+        "method",
+        "object",
+        "value",
+        "visit",
+        "visitor"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "base-methods",
+            "collection-visit",
+            "map-visit"
+          ]
+        }
+      },
+      "gitHead": "bc4cae5b50afac7c249d6b6f093f02aaa1f23232",
+      "_id": "object-visit@0.3.1",
+      "_shasum": "af58f53489f9e76d43a505f9a9eff329da957690",
+      "_from": ".",
+      "_npmVersion": "2.14.4",
+      "_nodeVersion": "4.1.1",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "af58f53489f9e76d43a505f9a9eff329da957690",
+        "tarball": "https://registry.npmjs.org/object-visit/-/object-visit-0.3.1.tgz"
+      },
+      "directories": {}
+    },
+    "0.3.2": {
+      "name": "object-visit",
+      "description": "Call a specified method on each value in the given object.",
+      "version": "0.3.2",
+      "homepage": "https://github.com/jonschlinkert/object-visit",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/object-visit.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/object-visit/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "expected": "^0.1.0",
+        "isobject": "^2.0.0"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.0",
+        "gulp-eslint": "^1.0.0",
+        "gulp-istanbul": "^0.10.1",
+        "gulp-mocha": "^2.1.3",
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "context",
+        "function",
+        "helper",
+        "key",
+        "method",
+        "object",
+        "value",
+        "visit",
+        "visitor"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "collection-visit",
+            "map-visit",
+            "define-property",
+            "base-methods"
+          ]
+        }
+      },
+      "gitHead": "88635e3412829826c2ef4b510d17cad134010ccf",
+      "_id": "object-visit@0.3.2",
+      "_shasum": "d1fdd3e550e4d78df6d16e84aa0e837b49b9042c",
+      "_from": ".",
+      "_npmVersion": "3.3.6",
+      "_nodeVersion": "5.0.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "d1fdd3e550e4d78df6d16e84aa0e837b49b9042c",
+        "tarball": "https://registry.npmjs.org/object-visit/-/object-visit-0.3.2.tgz"
+      },
+      "directories": {}
+    },
+    "0.3.3": {
+      "name": "object-visit",
+      "description": "Call a specified method on each value in the given object.",
+      "version": "0.3.3",
+      "homepage": "https://github.com/jonschlinkert/object-visit",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/object-visit.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/object-visit/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "isobject": "^2.0.0"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.0",
+        "gulp-eslint": "^1.0.0",
+        "gulp-istanbul": "^0.10.1",
+        "gulp-mocha": "^2.1.3",
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "context",
+        "function",
+        "helper",
+        "key",
+        "method",
+        "object",
+        "value",
+        "visit",
+        "visitor"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "collection-visit",
+            "map-visit",
+            "define-property",
+            "base-methods"
+          ]
+        }
+      },
+      "gitHead": "88635e3412829826c2ef4b510d17cad134010ccf",
+      "_id": "object-visit@0.3.3",
+      "_shasum": "acef7115e63b8449238f44d4c78cb594b3d1a95d",
+      "_from": ".",
+      "_npmVersion": "3.3.6",
+      "_nodeVersion": "5.0.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "acef7115e63b8449238f44d4c78cb594b3d1a95d",
+        "tarball": "https://registry.npmjs.org/object-visit/-/object-visit-0.3.3.tgz"
+      },
+      "directories": {}
+    },
+    "0.3.4": {
+      "name": "object-visit",
+      "description": "Call a specified method on each value in the given object.",
+      "version": "0.3.4",
+      "homepage": "https://github.com/jonschlinkert/object-visit",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/object-visit.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/object-visit/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "isobject": "^2.0.0"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.0",
+        "gulp-eslint": "^1.0.0",
+        "gulp-istanbul": "^0.10.1",
+        "gulp-mocha": "^2.1.3",
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "context",
+        "function",
+        "helper",
+        "key",
+        "method",
+        "object",
+        "value",
+        "visit",
+        "visitor"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "collection-visit",
+            "map-visit",
+            "define-property",
+            "base-methods"
+          ]
+        }
+      },
+      "gitHead": "7d5e941d09644b30f92a341632e17d47e1001c8b",
+      "_id": "object-visit@0.3.4",
+      "_shasum": "ae15cf86f0b2fdd551771636448452c54c3da829",
+      "_from": ".",
+      "_npmVersion": "3.3.6",
+      "_nodeVersion": "5.0.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "ae15cf86f0b2fdd551771636448452c54c3da829",
+        "tarball": "https://registry.npmjs.org/object-visit/-/object-visit-0.3.4.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "object-visit",
+      "description": "Call a specified method on each value in the given object.",
+      "version": "1.0.0",
+      "homepage": "https://github.com/jonschlinkert/object-visit",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/object-visit.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/object-visit/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "isobject": "^3.0.0"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^3.0.1",
+        "gulp-format-md": "^0.1.12",
+        "gulp-istanbul": "^1.1.1",
+        "gulp-mocha": "^3.0.0",
+        "mocha": "^3.2.0"
+      },
+      "keywords": [
+        "context",
+        "function",
+        "helper",
+        "key",
+        "method",
+        "object",
+        "value",
+        "visit",
+        "visitor"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "base-methods",
+            "collection-visit",
+            "define-property",
+            "map-visit"
+          ]
+        },
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "daffde04ce16ca0ef46fe29f65e7576f123dfe60",
+      "_id": "object-visit@1.0.0",
+      "_shasum": "632f78e50663d161e4780cf4d4ac5e806ef5d541",
+      "_from": ".",
+      "_npmVersion": "4.1.2",
+      "_nodeVersion": "7.7.3",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "632f78e50663d161e4780cf4d4ac5e806ef5d541",
+        "tarball": "https://registry.npmjs.org/object-visit/-/object-visit-1.0.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/object-visit-1.0.0.tgz_1491772180437_0.023425929713994265"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "object-visit",
+      "description": "Call a specified method on each value in the given object.",
+      "version": "1.0.1",
+      "homepage": "https://github.com/jonschlinkert/object-visit",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/object-visit.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/object-visit/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "isobject": "^3.0.0"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^3.0.1",
+        "gulp-format-md": "^0.1.12",
+        "gulp-istanbul": "^1.1.1",
+        "gulp-mocha": "^3.0.0",
+        "mocha": "^3.2.0"
+      },
+      "keywords": [
+        "context",
+        "function",
+        "helper",
+        "key",
+        "method",
+        "object",
+        "value",
+        "visit",
+        "visitor"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "base-methods",
+            "collection-visit",
+            "define-property",
+            "map-visit"
+          ]
+        },
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "2220cd6ea35008481c9e252488bcbde9ebca0983",
+      "_id": "object-visit@1.0.1",
+      "_shasum": "f79c4493af0c5377b59fe39d395e41042dd045bb",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "7.7.3",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "f79c4493af0c5377b59fe39d395e41042dd045bb",
+        "tarball": "https://registry.npmjs.org/object-visit/-/object-visit-1.0.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/object-visit-1.0.1.tgz_1496118320846_0.49384314101189375"
+      },
+      "directories": {}
+    }
+  },
+  "readme": "# object-visit [![NPM version](https://img.shields.io/npm/v/object-visit.svg?style=flat)](https://www.npmjs.com/package/object-visit) [![NPM monthly downloads](https://img.shields.io/npm/dm/object-visit.svg?style=flat)](https://npmjs.org/package/object-visit) [![NPM total downloads](https://img.shields.io/npm/dt/object-visit.svg?style=flat)](https://npmjs.org/package/object-visit) [![Linux Build Status](https://img.shields.io/travis/jonschlinkert/object-visit.svg?style=flat&label=Travis)](https://travis-ci.org/jonschlinkert/object-visit)\n\n> Call a specified method on each value in the given object.\n\n## Install\n\nInstall with [npm](https://www.npmjs.com/):\n\n```sh\n$ npm install --save object-visit\n```\n\n## Usage\n\n```js\nvar visit = require('object-visit');\n\nvar ctx = {\n  data: {},\n  set: function (key, value) {\n    if (typeof key === 'object') {\n      visit(ctx, 'set', key);\n    } else {\n      ctx.data[key] = value;\n    }\n  }\n};\n\nctx.set('a', 'a');\nctx.set('b', 'b');\nctx.set('c', 'c');\nctx.set({d: {e: 'f'}});\n\nconsole.log(ctx.data);\n//=> {a: 'a', b: 'b', c: 'c', d: { e: 'f' }};\n```\n\n## About\n\n### Related projects\n\n* [base-methods](https://www.npmjs.com/package/base-methods): base-methods is the foundation for creating modular, unit testable and highly pluggable node.js applications, starting… [more](https://github.com/jonschlinkert/base-methods) | [homepage](https://github.com/jonschlinkert/base-methods \"base-methods is the foundation for creating modular, unit testable and highly pluggable node.js applications, starting with a handful of common methods, like `set`, `get`, `del` and `use`.\")\n* [collection-visit](https://www.npmjs.com/package/collection-visit): Visit a method over the items in an object, or map visit over the objects… [more](https://github.com/jonschlinkert/collection-visit) | [homepage](https://github.com/jonschlinkert/collection-visit \"Visit a method over the items in an object, or map visit over the objects in an array.\")\n* [define-property](https://www.npmjs.com/package/define-property): Define a non-enumerable property on an object. | [homepage](https://github.com/jonschlinkert/define-property \"Define a non-enumerable property on an object.\")\n* [map-visit](https://www.npmjs.com/package/map-visit): Map `visit` over an array of objects. | [homepage](https://github.com/jonschlinkert/map-visit \"Map `visit` over an array of objects.\")\n\n### Contributing\n\nPull requests and stars are always welcome. For bugs and feature requests, [please create an issue](../../issues/new).\n\n### Building docs\n\n_(This project's readme.md is generated by [verb](https://github.com/verbose/verb-generate-readme), please don't edit the readme directly. Any changes to the readme must be made in the [.verb.md](.verb.md) readme template.)_\n\nTo generate the readme, run the following command:\n\n```sh\n$ npm install -g verbose/verb#dev verb-generate-readme && verb\n```\n\n### Running tests\n\nRunning and reviewing unit tests is a great way to get familiarized with a library and its API. You can install dependencies and run tests with the following command:\n\n```sh\n$ npm install && npm test\n```\n\n### Author\n\n**Jon Schlinkert**\n\n* [github/jonschlinkert](https://github.com/jonschlinkert)\n* [twitter/jonschlinkert](https://twitter.com/jonschlinkert)\n\n### License\n\nCopyright © 2017, [Jon Schlinkert](https://github.com/jonschlinkert).\nReleased under the [MIT License](LICENSE).\n\n***\n\n_This file was generated by [verb-generate-readme](https://github.com/verbose/verb-generate-readme), v0.6.0, on May 30, 2017._",
+  "maintainers": [
+    {
+      "name": "jonschlinkert",
+      "email": "github@sellside.com"
+    }
+  ],
+  "time": {
+    "modified": "2017-05-30T04:25:21.809Z",
+    "created": "2015-07-04T19:57:29.483Z",
+    "0.1.0": "2015-07-04T19:57:29.483Z",
+    "0.2.0": "2015-08-29T23:36:08.120Z",
+    "0.2.1": "2015-08-30T02:45:56.001Z",
+    "0.2.2": "2015-10-06T13:48:19.559Z",
+    "0.3.0": "2015-10-06T13:49:10.813Z",
+    "0.3.1": "2015-10-10T10:59:18.322Z",
+    "0.3.2": "2015-11-08T19:10:32.876Z",
+    "0.3.3": "2015-11-09T22:33:36.207Z",
+    "0.3.4": "2015-11-09T22:38:19.120Z",
+    "1.0.0": "2017-04-09T21:09:41.085Z",
+    "1.0.1": "2017-05-30T04:25:21.809Z"
+  },
+  "homepage": "https://github.com/jonschlinkert/object-visit",
+  "keywords": [
+    "context",
+    "function",
+    "helper",
+    "key",
+    "method",
+    "object",
+    "value",
+    "visit",
+    "visitor"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonschlinkert/object-visit.git"
+  },
+  "author": {
+    "name": "Jon Schlinkert",
+    "url": "https://github.com/jonschlinkert"
+  },
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/object-visit/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "_attachments": {}
+}

@@ -1,0 +1,9 @@
+{
+  "name": "@isaacs/testing-peer-dep-conflict-chain-override",
+  "version": "1.0.0",
+  "description": "a peer dep that is overridden by the root dependency",
+  "dependencies": {
+    "@isaacs/testing-peer-dep-conflict-chain-a": "2",
+    "@isaacs/testing-peer-dep-conflict-chain-v": "1"
+  }
+}

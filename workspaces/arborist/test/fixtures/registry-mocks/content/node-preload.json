@@ -1,0 +1,499 @@
+{
+  "_id": "node-preload",
+  "_rev": "6-331e1b37edd3d2934a216604d5311519",
+  "name": "node-preload",
+  "dist-tags": {
+    "latest": "0.2.1"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "node-preload",
+      "version": "0.1.0",
+      "description": "Request that Node.js child processes preload modules",
+      "scripts": {
+        "release": "standard-version --sign",
+        "pretest": "xo",
+        "test": "tap"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "author": {
+        "name": "Corey Farrell"
+      },
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/cfware/node-preload.git"
+      },
+      "bugs": {
+        "url": "https://github.com/cfware/node-preload/issues"
+      },
+      "homepage": "https://github.com/cfware/node-preload#readme",
+      "devDependencies": {
+        "standard-version": "^7.0.0",
+        "tap": "^14.6.1",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "20d4bfe7168854ce511be7e171391993f1af32c6",
+      "_id": "node-preload@0.1.0",
+      "_nodeVersion": "12.10.0",
+      "_npmVersion": "6.10.3",
+      "dist": {
+        "integrity": "sha512-XDme3uhqD35EEOzNzEu62w85eVLIENLb6LaIY5ox0Wbq2ujTNTQL2A99tEkHyiI471WaY2kd1JBER6nxFwKNww==",
+        "shasum": "1f4469d6e50d679692648d9bc8fef91f351cc7c6",
+        "tarball": "https://registry.npmjs.org/node-preload/-/node-preload-0.1.0.tgz",
+        "fileCount": 8,
+        "unpackedSize": 9397,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdiMd0CRA9TVsSAnZWagAA9LkP/0IhtFTFGmFbdfsoAN6T\nA4S+TZQYXGFkkvdeJjJAEuu9cH/230jg+ix/K4hi4jwCkMHfrncgb5Ur6x1K\nUsX5RVivZjSCk4TrY2ZDDOdpL1uMAXnpXUaRVr/jnAKKRTLM+NprwNBzC47v\nu1fm0Qi8EN5Yk5vsqLln9azk8dKRMzbpxJ3J0FICo0QWj0AHQFBoU6iQyh7a\nxR3MrSuDGYhS2Wb37AEOJhgL0LbzaMYsQCVs5awPv2CAMupHbjeF34+IqGPK\nIWBRK6J6o2L7VW6YwMoZcOvLe4Z0TJpO5zswbUc+i7h7FYtVfb4SyF83mwdY\nY5DyK94TvAJ4cMiKpI3anVgibxQjP46Ss+AmaxUkqpu/Fyx0heWVZhrAR1mc\ni8XrlRM2Fp5ZTym/IFpRx9MjAKk3fdeaYhtP1RfmxbYNBdX88FefooRVAdMy\ngzeijqeLlQspuBcX806YxQM6bcGD+RECYob8OhsKcJuJW80sFs/tFjaMX+rZ\nzeB0WpegfaiO8IZ8RsJ6L4tTwo506Y/rz5GZSqo4Ufr/NNYtsSbGTR0bVuN/\nKQBa6crt+9k3hVcoGLQuNNAKGeZ5UiVe9aFBrOhOHZlvMl03mnxXxgDwQG99\n28ffubo/gG2W5pDcbUwRy8GLq03sJIzdVIw+jdHnpmWt2UVnPcqUscM//W7p\n4lJ0\r\n=yyoY\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "coreyfarrell",
+          "email": "git@cfware.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "coreyfarrell",
+        "email": "git@cfware.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/node-preload_0.1.0_1569245044124_0.4914965607845827"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.1.1": {
+      "name": "node-preload",
+      "version": "0.1.1",
+      "description": "Request that Node.js child processes preload modules",
+      "scripts": {
+        "release": "standard-version --sign",
+        "pretest": "xo",
+        "test": "tap"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "main": "node-preload.js",
+      "author": {
+        "name": "Corey Farrell"
+      },
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/cfware/node-preload.git"
+      },
+      "bugs": {
+        "url": "https://github.com/cfware/node-preload/issues"
+      },
+      "homepage": "https://github.com/cfware/node-preload#readme",
+      "devDependencies": {
+        "standard-version": "^7.0.0",
+        "tap": "^14.6.1",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "7265b77f531990c45b263e8a9890fb93900844d6",
+      "_id": "node-preload@0.1.1",
+      "_nodeVersion": "12.10.0",
+      "_npmVersion": "6.10.3",
+      "dist": {
+        "integrity": "sha512-s01hlQ0IUnHOykxGC3OabkTuY0WUPspnGzn9M/7n6jBFbyLLb90cvMri6YvbyVEen9gg4aZTYoMcj+dDKMQqWg==",
+        "shasum": "dd9bf21a069a2078c1d6f7d1d453fc86451facde",
+        "tarball": "https://registry.npmjs.org/node-preload/-/node-preload-0.1.1.tgz",
+        "fileCount": 8,
+        "unpackedSize": 10030,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdiNsmCRA9TVsSAnZWagAAHOkP/07b9lxJbPDaPE6/cvuR\nfKvBavUHdlCtFfw2EV+9wqAGjVJoLnZ86a74caa/nu/HkJVI4OL8JNiN16t8\nevYw3QkXusTt1xcc52dV3nSfPoxdEqBBiV6RuhIrppKiN0Lk+mvhbKUGR735\nCb5JHnpb9N7leLy1O47Ft9y0C1rV3/uIIWujLQ4ppATTTirb6uAXF9qMJpGA\nryoOxppahvv56/eA4oY4XeaGCNkM2Zp4v34+YJhAWH1OKB0lzZjkggk/3s3s\n1Gylno4Aej7oY9ZfsdlZM3hurez/OfDwtBlZVGltj9mnRPo9ti4IMHpAJwuT\nkEtNvpHSWQ99KSAVpqLIpc8DrN6wvTt3DxzdqJQ/s42tUUoBOWHVXLv2Na/T\nfcwLKOVs1hUJnCr3PC0IC7jOSKlLSEzhSwa/WXYXgczdYrRxGaonV6MAbAJ0\nIg7cbv+VnJRpiRIJ0opo1moWD6BoRqal9krDVrjfg1AGFL8vOpWDSSfdzsQq\nINvX4UfNnkJ6JegGxywJnF81DsObFaDKxXMdkS3wS3wzKccyXMmgyvKNHwaq\n6nlT5ZdTUsR7AYBQpTifAc8nzunXQ6GCq4glAT2Mil/Sxsob/+kKRom6YPXD\nA5GSz4mDIxk3PUJSyQUJw/qaB3riM8Ko+Dlr6kEFwbnOc31b1Uwen+kcM4v5\nbtyW\r\n=10XO\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "coreyfarrell",
+          "email": "git@cfware.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "coreyfarrell",
+        "email": "git@cfware.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/node-preload_0.1.1_1569250085490_0.18418954021611023"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.1.2": {
+      "name": "node-preload",
+      "version": "0.1.2",
+      "description": "Request that Node.js child processes preload modules",
+      "scripts": {
+        "release": "standard-version --sign",
+        "pretest": "xo",
+        "test": "tap"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "main": "node-preload.js",
+      "author": {
+        "name": "Corey Farrell"
+      },
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/cfware/node-preload.git"
+      },
+      "bugs": {
+        "url": "https://github.com/cfware/node-preload/issues"
+      },
+      "homepage": "https://github.com/cfware/node-preload#readme",
+      "devDependencies": {
+        "esm": "^3.2.25",
+        "standard-version": "^7.0.0",
+        "tap": "^14.6.1",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "42ad4f2621f208bf2faf11b544e563ea538b9d76",
+      "_id": "node-preload@0.1.2",
+      "_nodeVersion": "12.10.0",
+      "_npmVersion": "6.10.3",
+      "dist": {
+        "integrity": "sha512-OIVpCWTqvPClyXxt9HtKbHDKqQQzqzQIcv6FJgXGcgrQQiYPXNL38vDp1RbRwsF7HVDGWc7yQa5DNu2Zbs9MVw==",
+        "shasum": "52397defc923ae7a2a34d9ed9589076d19ad8113",
+        "tarball": "https://registry.npmjs.org/node-preload/-/node-preload-0.1.2.tgz",
+        "fileCount": 8,
+        "unpackedSize": 10848,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdiWBaCRA9TVsSAnZWagAA6J8P/3okp/9whea1bzrxx35R\naXG8BLtKqxEaN1xtjPWQt7/HXPsgQ6wVt3WmKpI0gvUMDVQZwkaUwBIkcsp3\n+6LH4hMTdh9aFc5KVJv5NZKOJexm3iKw61UesGI6Mw81icn1/YbW50wRhLq2\nZ6I4eSeKnw8/SLUscOkmoW3DNLYCavoL1tGZNB21Cr+HCeD5ZJeKMY9lygPx\nsJmutisn2c1pq3FrSLp8b5IW3e28WjhBXYSArl80MRR5+zKofsHuV19OTHsX\nZVto6S2C+DkvFq1d6lALcfzRTMb8jW1VY7IJMsREnwREFFmS0/lML1wFmUgF\nzh+7R/yvpe+zlHkccxQzCoQHDJhXFANGfMONmLXqh5h5HejMkS/Cx1LAURCG\nreY3FQg+YuO/a+2pCVwc4R4AXezFCac3g4Mlbo07P/0GnP07TMtu+kDIp8Ap\nodNfWJNKPMUCshb+bk5L1PushZAnfuTb0Xx0KwSohe6jU9AIAR0QxdIKqHNq\n780nri56BLv0NOuB1v3AMQYQZUBG2CJv2270Ml4vHZrtC1I/ldXkIpRajG/T\nu8fZRzRL4zlHgjprqOI0VqiNVKU38tudLySBh1VwPcvyOE0IMqSzdiT4usI8\nLXqSVX0g551yBDScz+a/e5Tn7lhBe9v1NdkBWWOPgkKBKY+hY+JHkFv3c7td\nzWJc\r\n=v/Ap\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "coreyfarrell",
+          "email": "git@cfware.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "coreyfarrell",
+        "email": "git@cfware.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/node-preload_0.1.2_1569284185601_0.8910738620770953"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.1.3": {
+      "name": "node-preload",
+      "version": "0.1.3",
+      "description": "Request that Node.js child processes preload modules",
+      "scripts": {
+        "release": "standard-version --sign",
+        "pretest": "xo",
+        "test": "tap"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "main": "node-preload.js",
+      "author": {
+        "name": "Corey Farrell"
+      },
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/cfware/node-preload.git"
+      },
+      "bugs": {
+        "url": "https://github.com/cfware/node-preload/issues"
+      },
+      "homepage": "https://github.com/cfware/node-preload#readme",
+      "devDependencies": {
+        "esm": "^3.2.25",
+        "standard-version": "^7.0.0",
+        "tap": "^14.6.5",
+        "xo": "^0.25.3"
+      },
+      "gitHead": "69682efed57906a99057717c775e47d28cf4a586",
+      "_id": "node-preload@0.1.3",
+      "_nodeVersion": "12.11.0",
+      "_npmVersion": "6.11.3",
+      "dist": {
+        "integrity": "sha512-qQs73Og6bHOCY3Bk/tq/j61dOsBgIPK30n+EF907qBJIeTf8igW/N9XcIjYu869QhtsVOCDWLEG+xliCyJyeig==",
+        "shasum": "2bca19d1b843dcf657400629692d01ccb96046e9",
+        "tarball": "https://registry.npmjs.org/node-preload/-/node-preload-0.1.3.tgz",
+        "fileCount": 8,
+        "unpackedSize": 11150,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdm8QjCRA9TVsSAnZWagAATAoP/jyGTQi7e101JUc05drJ\nFjpvdzxhijZwKc6PLdbV8BnNQNMk4BT3eFL2mQkStDwltg4jaXMdN5GtXVGb\n7Zr07P7CKXUYbBD60fd4BpmDvv3OASdOH+awIS2mGTAMZcx4lqN31MOdaLiF\n+npRePZAwLQM3wXXSOp/D3wyTJJHc01ehh3Nxo3jwNPO+ruj1JkraAJfKMhs\n72iOnq7WH1gfNrkwiD+L3Nu3hXyjwwWPuPpHQZXQ+vaMDHvD/LYdCUNU/Wy2\n6W4tAb9KyWedHlIrkbSwi+eQcvvlMpaXSwUU3BjK3TIOPktDJGwCSGB3PVT1\nXSEhQ7ePlFLgHtQQMrhjOAhbMN+TD44kHLgIKWK73t91uER5Mqa6ys3S26P2\nPTbMRSUIvkqSW+Ewr4PZZh64wlARqK02urCskq7zHgxmOXH7wI1M8/a915yl\n8B+qsB/ZSRK+tJLPTZliFDrsFJCANRPQ/ioKZvnOa3ctVdVEK3yoCaX2BXLe\nMG40giBpAMNON0UiWwhbBjnkrbFPqxH2g84z9CtlQn6T/Fl3zcfI2k7LCuK5\nVU8SRU14z0HF67zVD259NDvsrZiXqBdfKGRyES7La0CGmI/rBeUqAMhXZZIM\nCEGZDvuapAbwt3SNH6f7gK9CRmM7JEUlJ5HWbPYbeP5wTJzRDLxWT/BqmQ6v\nnFxj\r\n=Zf7V\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "coreyfarrell",
+          "email": "git@cfware.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "coreyfarrell",
+        "email": "git@cfware.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/node-preload_0.1.3_1570489378945_0.540450546269817"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.1.4": {
+      "name": "node-preload",
+      "version": "0.1.4",
+      "description": "Request that Node.js child processes preload modules",
+      "scripts": {
+        "release": "standard-version --sign",
+        "pretest": "xo",
+        "test": "tap"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "main": "node-preload.js",
+      "author": {
+        "name": "Corey Farrell"
+      },
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/cfware/node-preload.git"
+      },
+      "bugs": {
+        "url": "https://github.com/cfware/node-preload/issues"
+      },
+      "homepage": "https://github.com/cfware/node-preload#readme",
+      "devDependencies": {
+        "esm": "^3.2.25",
+        "standard-version": "^7.0.0",
+        "tap": "^14.6.5",
+        "xo": "^0.25.3"
+      },
+      "gitHead": "ed81a4613e13805ac8672d2cf38d0673cd074479",
+      "_id": "node-preload@0.1.4",
+      "_nodeVersion": "12.11.0",
+      "_npmVersion": "6.11.3",
+      "dist": {
+        "integrity": "sha512-WD9y/KDu1evYjIFDfk90OOdy0xrYp4S283aZPgoKYaiHVNwknCIGbKqG+4HMzzCy9KmllQbrefKC7meqgrw6CA==",
+        "shasum": "12247cbf38382d27ca9084fd68b4390afbfa62f9",
+        "tarball": "https://registry.npmjs.org/node-preload/-/node-preload-0.1.4.tgz",
+        "fileCount": 8,
+        "unpackedSize": 12307,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdvJHiCRA9TVsSAnZWagAAfmQP/iCftlexh4H/kbVnz0cg\nQihGGCZn8UCV4M66O1ReuTysVfMP6FlwR9eE/rCnWjRw3iOHw4ySLoOlxR5O\n/miQ/QTAJ/ifSsdXLN1+wKDaSeERD5iuu1i/56JxykBHFPyEVI4g/GTHEOSo\nwgiwjclcP5Mti6Mvg5dT0KWr1uVA1QagCWOgp7jBoPjvD4sEKM6LDZVRVtWh\nRZfOzSBLhyMJcvSVCQKbdj3OxTGHWKaCypOWN6FV9v1yBWh9Fvbwa7IcwNKN\ntNBvHH7Q1oeA8YEVPjlqMkyykeALc6d7gbC2fTONG6k3vTz3+pt+HztvR0pI\nFoUNwXwpwbtHDlv9a3GXTitBKmjOrib9xYokKu59xsrjCmVL7xbHVscuF7vY\nQdRlvA4tOwdY0THomR0FGyc7VooUrqem9iaC45hFxD1xNlY30ORjzAVXhYPp\n/VDUVe0eu1GZHNJgnbdtMKEBFbUSxZNIiZOF/Oarl5Gc062fSyHB+aze+1B6\nqF7QSSXxW3J15TxDaZjqoAbIN0zpTzq81Soj9DBtmrPN0aQ198TmoRx67UVn\n25SrT4niHZQLahaKEhFvkUOZ7jLZ6cLxRjmoO7goJk9R4YDN125/A+e1BVwa\nVmGUoRg9jyT6dq0Gl/AlLCG3ammfw09hc/LK9wkf5SVhfqzV8n7ZGc64APAa\nBweb\r\n=kB8l\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "coreyfarrell",
+          "email": "git@cfware.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "coreyfarrell",
+        "email": "git@cfware.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/node-preload_0.1.4_1572639202262_0.3498895784115481"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.2.0": {
+      "name": "node-preload",
+      "version": "0.2.0",
+      "description": "Request that Node.js child processes preload modules",
+      "scripts": {
+        "release": "standard-version --sign",
+        "pretest": "xo",
+        "test": "nyc tape test/*.js"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "main": "index.js",
+      "author": {
+        "name": "Corey Farrell"
+      },
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/cfware/node-preload.git"
+      },
+      "bugs": {
+        "url": "https://github.com/cfware/node-preload/issues"
+      },
+      "homepage": "https://github.com/cfware/node-preload#readme",
+      "dependencies": {
+        "process-on-spawn": "^1.0.0"
+      },
+      "devDependencies": {
+        "esm": "^3.2.25",
+        "glob": "^7.1.6",
+        "nyc": "^15.0.0-beta.3",
+        "standard-version": "^7.0.0",
+        "tape": "^4.11.0",
+        "xo": "^0.25.3"
+      },
+      "xo": {
+        "rules": {
+          "import/no-unassigned-import": [
+            2,
+            {
+              "allow": [
+                "hook-spawn.js"
+              ]
+            }
+          ]
+        },
+        "ignores": [
+          "fixtures/esm.js"
+        ]
+      },
+      "gitHead": "62de5ed134dd965bea7bc4c2469a02e204da6e17",
+      "_id": "node-preload@0.2.0",
+      "_nodeVersion": "13.3.0",
+      "_npmVersion": "6.13.2",
+      "dist": {
+        "integrity": "sha512-aiMX5GZLbaMZWF+Eh34RrUyJdg8QecZgxHUmpHVb/6RUna7q4WYAoeH16dJmEIeF7YhAMtwtbUpYCxUYpsMetg==",
+        "shasum": "4c4ba542f1f44fb709bf15f513b3e4346af76e66",
+        "tarball": "https://registry.npmjs.org/node-preload/-/node-preload-0.2.0.tgz",
+        "fileCount": 14,
+        "unpackedSize": 9311,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd9144CRA9TVsSAnZWagAAi4YP/jdxLVbszOLnirPBaWRr\nayLWnaeU3w4c4AFDKWywE4NyfbjXqvUpiDzxQIe0FgzYByeB4dRk/ft8bces\n1a3Ln4P/piY2qkejOiGgSWM+2j80ezuS1VYf9L6jkUzC65G9/emnhJZgD7fo\nIB7mKyAOqS0aoB1aBL2e0SUcKmLgpj8ZSMbPfRjSSxYU1HnwdDPX7k1a4kby\nhftACA5qDSwoULadUvYV7NMPP7avP3BEhJbUk+1egDepPQ2GXa1ciHxKGNng\n82fUd51c5eu1oAq+oS2eBEQBaN0gPjLLJg05xpojmqbB2sKUlEUJgCGQ3UoN\nTftEq167mFwFn5/gTxfDmUy2v2x2Mg+fglcS0vUsTT1NPrgTCmRaEBoXiw7A\nj3cwW35xqqhjxWdun3xI/ptiP6VzwS4zX84/kLqOwZnrnQs9bNGCYcSLTFhM\nJ55dDYLo2oQBxNYWcubWwjHOxWeyZKKQWZJ8vu8ZUMqYRzeOsHMTysjsh2ay\nqSIYVDU1FOwlg383Q4kh9NqGlHWYwL19vnU2j4e5Ya8917F6sVq9jQV8TEV+\nFPDGtXU413HgYEu7GU75HbWJo3IpgemIoupBYJar2fABFp2c8hD5mG6PAVZs\ngO+VTTZIAHaXOVOlQcl70nx2d+1+4kPz5CeyzL8HlnyvtklzYDfLVpd9A3wU\nAwDH\r\n=pONN\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "coreyfarrell",
+          "email": "git@cfware.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "coreyfarrell",
+        "email": "git@cfware.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/node-preload_0.2.0_1576492599555_0.38383114005309626"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.2.1": {
+      "name": "node-preload",
+      "version": "0.2.1",
+      "description": "Request that Node.js child processes preload modules",
+      "scripts": {
+        "release": "standard-version --sign",
+        "pretest": "xo",
+        "test": "nyc tape test/*.js"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "main": "index.js",
+      "author": {
+        "name": "Corey Farrell"
+      },
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/cfware/node-preload.git"
+      },
+      "bugs": {
+        "url": "https://github.com/cfware/node-preload/issues"
+      },
+      "homepage": "https://github.com/cfware/node-preload#readme",
+      "dependencies": {
+        "process-on-spawn": "^1.0.0"
+      },
+      "devDependencies": {
+        "esm": "^3.2.25",
+        "glob": "^7.1.6",
+        "nyc": "^15.0.0-beta.3",
+        "standard-version": "^7.0.0",
+        "tape": "^4.11.0",
+        "xo": "^0.25.3"
+      },
+      "xo": {
+        "rules": {
+          "import/no-unassigned-import": [
+            2,
+            {
+              "allow": [
+                "hook-spawn.js"
+              ]
+            }
+          ]
+        },
+        "ignores": [
+          "fixtures/esm.js"
+        ]
+      },
+      "gitHead": "f59d60cb94bafc4f4259d598ec26b543d293586d",
+      "_id": "node-preload@0.2.1",
+      "_nodeVersion": "13.4.0",
+      "_npmVersion": "6.13.4",
+      "dist": {
+        "integrity": "sha512-RM5oyBy45cLEoHqCeh+MNuFAxO0vTFBLskvQbOKnEE7YTTSN4tbN8QWDIPQ6L+WvKsB/qLEGpYe2ZZ9d4W9OIQ==",
+        "shasum": "c03043bb327f417a18fee7ab7ee57b408a144301",
+        "tarball": "https://registry.npmjs.org/node-preload/-/node-preload-0.2.1.tgz",
+        "fileCount": 12,
+        "unpackedSize": 9223,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd/9otCRA9TVsSAnZWagAAVwkP/RSRzYtgu9W9gP6TSNSd\nXzQsNraVkJ4nt7aEeC+WlbMrDG5wh/MHnOLk8LblxqHdJSyMv6Ac9sjJsJKk\ndbMvoeMcHIVPfMNyRGwnKTyQ/e4VjPca2t0WDNx4s8NDf0Ip+AYlVcj0oVv3\njujsW6A1YAprwULZditiv7bnV37DjgagApNascCjFAeeslYarP0OH90EjjUY\nCTFu3vdWCMlW0DGXOpyCNiq04AxJHB/PqzjSw1JrCo6phFHWt1xGhNzuY0AP\n7/d3HJc4jOROlaN/1hcVy5TyoqIB/ceJDSq9+g9mwNqefFEJoprDZSKZIgou\ne+/45jUgYIFAFsQ5WWAXHbclCWkK1tBPU3CbqFnGo51KNySF3WioyigeRgNc\nnRv1gzA3k0ggS0l5vkCvcjXYVeMxUZJKVUyXu8v3I43zwFH/W3OViEyjHSCw\ngm8PbcsK6rtab28TGosVfLFOoaXLKY5kxJBw1J/JElOa8i8LvQHAbe6gROpG\nKtSwPzuV/S1klzg69IrzQbYHw4Wvti27FkOLO9VPiAf9iY3SLhw/mMiLb6nD\nFyOwFoOjzSDy/UcPm7by20uCKMNYZHLrLbqcSqZNo73HmTVC0HZ0YiEG+KJc\nyEi+L+5gDjJsUgFAtVMdxp61217VofYMq3jLnoJ+rWJ3Qn8OdR3vVKgTNNqN\n5RnP\r\n=1pq3\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "coreyfarrell",
+          "email": "git@cfware.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "coreyfarrell",
+        "email": "git@cfware.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/node-preload_0.2.1_1577048620095_0.5237257443083825"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2019-09-23T13:24:04.124Z",
+    "0.1.0": "2019-09-23T13:24:04.282Z",
+    "modified": "2019-12-22T21:03:44.993Z",
+    "0.1.1": "2019-09-23T14:48:05.700Z",
+    "0.1.2": "2019-09-24T00:16:25.693Z",
+    "0.1.3": "2019-10-07T23:02:59.041Z",
+    "0.1.4": "2019-11-01T20:13:22.389Z",
+    "0.2.0": "2019-12-16T10:36:39.685Z",
+    "0.2.1": "2019-12-22T21:03:40.298Z"
+  },
+  "maintainers": [
+    {
+      "name": "coreyfarrell",
+      "email": "git@cfware.com"
+    }
+  ],
+  "description": "Request that Node.js child processes preload modules",
+  "homepage": "https://github.com/cfware/node-preload#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cfware/node-preload.git"
+  },
+  "author": {
+    "name": "Corey Farrell"
+  },
+  "bugs": {
+    "url": "https://github.com/cfware/node-preload/issues"
+  },
+  "license": "MIT",
+  "readme": "# node-preload\n\n[![Travis CI][travis-image]][travis-url]\n[![Greenkeeper badge][gk-image]](https://greenkeeper.io/)\n[![NPM Version][npm-image]][npm-url]\n[![NPM Downloads][downloads-image]][downloads-url]\n[![MIT][license-image]](LICENSE)\n\nRequest that Node.js child processes preload modules\n\n### Install node-preload\n\nThis module requires node.js 8 or above.\n\n```sh\nnpm i node-preload\n```\n\n## Usage\n\n```js\n'use strict';\n\nconst preloadList = require('node-preload');\n\n// Request that all Node.js child processes preload @babel/register\npreloadList.push(require.resolve('@babel/register'));\n```\n\n## Limitations\n\nWorker threads are not directly supported by this module, results may vary.\n\n## `node-preload` for enterprise\n\nAvailable as part of the Tidelift Subscription.\n\nThe maintainers of `node-preload` and thousands of other packages are working with Tidelift to deliver commercial support and maintenance for the open source dependencies you use to build your applications. Save time, reduce risk, and improve code health, while paying the maintainers of the exact dependencies you use. [Learn more.](https://tidelift.com/subscription/pkg/npm-node-preload?utm_source=npm-node-preload&utm_medium=referral&utm_campaign=enterprise&utm_term=repo)\n\n[npm-image]: https://img.shields.io/npm/v/node-preload.svg\n[npm-url]: https://npmjs.org/package/node-preload\n[travis-image]: https://travis-ci.org/cfware/node-preload.svg?branch=master\n[travis-url]: https://travis-ci.org/cfware/node-preload\n[gk-image]: https://badges.greenkeeper.io/cfware/node-preload.svg\n[downloads-image]: https://img.shields.io/npm/dm/node-preload.svg\n[downloads-url]: https://npmjs.org/package/node-preload\n[license-image]: https://img.shields.io/npm/l/node-preload.svg\n",
+  "readmeFilename": "README.md"
+}

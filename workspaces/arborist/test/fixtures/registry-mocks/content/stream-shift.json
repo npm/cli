@@ -1,0 +1,147 @@
+{
+  "_id": "stream-shift",
+  "_rev": "2-886011da101a53e40ab9c460543e475e",
+  "name": "stream-shift",
+  "description": "Returns the next buffer/object in a stream's readable queue",
+  "dist-tags": {
+    "latest": "1.0.1"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "stream-shift",
+      "version": "1.0.0",
+      "description": "Returns the next buffer/object in a stream's readable queue",
+      "main": "index.js",
+      "dependencies": {},
+      "devDependencies": {
+        "standard": "^7.1.2",
+        "tape": "^4.6.0",
+        "through2": "^2.0.1"
+      },
+      "scripts": {
+        "test": "standard && tape test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mafintosh/stream-shift.git"
+      },
+      "author": {
+        "name": "Mathias Buus",
+        "url": "@mafintosh"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/stream-shift/issues"
+      },
+      "homepage": "https://github.com/mafintosh/stream-shift",
+      "gitHead": "2ea5f7dcd8ac6babb08324e6e603a3269252a2c4",
+      "_id": "stream-shift@1.0.0",
+      "_shasum": "d5c752825e5367e786f78e18e445ea223a155952",
+      "_from": ".",
+      "_npmVersion": "2.15.9",
+      "_nodeVersion": "4.4.3",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "shasum": "d5c752825e5367e786f78e18e445ea223a155952",
+        "tarball": "https://registry.npmjs.org/stream-shift/-/stream-shift-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/stream-shift-1.0.0.tgz_1468011662152_0.6510484367609024"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "stream-shift",
+      "version": "1.0.1",
+      "description": "Returns the next buffer/object in a stream's readable queue",
+      "main": "index.js",
+      "dependencies": {},
+      "devDependencies": {
+        "standard": "^7.1.2",
+        "tape": "^4.6.0",
+        "through2": "^2.0.1"
+      },
+      "scripts": {
+        "test": "standard && tape test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mafintosh/stream-shift.git"
+      },
+      "author": {
+        "name": "Mathias Buus",
+        "url": "@mafintosh"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/stream-shift/issues"
+      },
+      "homepage": "https://github.com/mafintosh/stream-shift",
+      "gitHead": "c189b6185a25517593bce28a9c74c8b87b83a11a",
+      "_id": "stream-shift@1.0.1",
+      "_nodeVersion": "12.13.0",
+      "_npmVersion": "6.12.1",
+      "dist": {
+        "integrity": "sha512-AiisoFqQ0vbGcZgQPY1cdP2I76glaVA/RauYR4G4thNFgkTqr90yXTo4LYX60Jl+sIlPNHHdGSwo01AvbKUSVQ==",
+        "shasum": "d7088281559ab2778424279b0877da3c392d5a3d",
+        "tarball": "https://registry.npmjs.org/stream-shift/-/stream-shift-1.0.1.tgz",
+        "fileCount": 6,
+        "unpackedSize": 3903,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd8haYCRA9TVsSAnZWagAAnpkP/1JP3jQu4Ea+Z8z5xXTr\nNQGV4BWe2VmGX4keAH8TDve8hELddJHGUykQEmiebMw164u6jH4rjM8En9pU\niQf7wXBre4n8rz+mTR4Z5/3wRDEjB/ckf7T7cq+t6kmhvsAtX0S28LdNithK\nbBxyKOF6+fTYHrXdSnb4F0dU7wPvv+lOE9QhrB59wOhLpOvM7CkHWnKDt4va\nQzKb9BNgcwDWOAdYFIMbGONzCWgc3oV8X0CzXPWWPiz5OVNpuMdLYlHkFLBB\npnAB6fTDuulIJsbwr+dO9tPHsq1Y1vUMNIeI8GjDjcir4lmneJU0SA8gCC1L\nVvH9OR1TMu58Rc81HYmwZ2n6uG4fmdnVoAncz3gjkJNu1QHZFdDIXzv5Fl9o\nNFsH2tDn2bQXmjy58Z2+iJ/bIve8aEjnn6HUvvkbZl/rNrQDb5CiA7HKj2Fi\nT/G2SXDCAsfcpFdPmtzrvpg48omAh/CYRmCxkqtqocE2iLzcl0ILYuR1pF9J\nRT2yQuFsba6b4c7tiuQZsLy5amPV6KovOF4fnNQ9h+h1eEB0JG8WUX7YuKvd\nKed/ELh8+bCAUdgjZQDKuUjgHICb5dxhIUeazeoBtZ8YgmPobKw/pblkAljm\nXIt7Ze89xL7EoTY13bSrNHrdv3jCugz7DGHJ8XDrI87r1A4+QdKQcDZamyMm\nebCR\r\n=5RuT\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/stream-shift_1.0.1_1576146584161_0.9963042958088779"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# stream-shift\n\nReturns the next buffer/object in a stream's readable queue\n\n```\nnpm install stream-shift\n```\n\n[![build status](http://img.shields.io/travis/mafintosh/stream-shift.svg?style=flat)](http://travis-ci.org/mafintosh/stream-shift)\n\n## Usage\n\n``` js\nvar shift = require('stream-shift')\n\nconsole.log(shift(someStream)) // first item in its buffer\n```\n\n## Credit\n\nThanks [@dignifiedquire](https://github.com/dignifiedquire) for making this work on node 6\n\n## License\n\nMIT\n",
+  "maintainers": [
+    {
+      "name": "mafintosh",
+      "email": "mathiasbuus@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2019-12-12T10:29:46.489Z",
+    "created": "2016-07-08T21:01:04.886Z",
+    "1.0.0": "2016-07-08T21:01:04.886Z",
+    "1.0.1": "2019-12-12T10:29:44.264Z"
+  },
+  "homepage": "https://github.com/mafintosh/stream-shift",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mafintosh/stream-shift.git"
+  },
+  "author": {
+    "name": "Mathias Buus",
+    "url": "@mafintosh"
+  },
+  "bugs": {
+    "url": "https://github.com/mafintosh/stream-shift/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md"
+}

@@ -1,0 +1,7 @@
+{
+  "name": "root",
+  "version": "1.2.3",
+  "dependencies": {
+    "bork": "file:.."
+  }
+}

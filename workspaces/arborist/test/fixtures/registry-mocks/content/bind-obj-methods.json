@@ -1,0 +1,145 @@
+{
+  "_id": "bind-obj-methods",
+  "_rev": "2-b2a7340e1aef446fd8c778a1a3e6dec8",
+  "name": "bind-obj-methods",
+  "description": "Bind methods to an object from that object or some other source. Optionally specify a set of methods to skip over.",
+  "dist-tags": {
+    "latest": "2.0.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "bind-obj-methods",
+      "version": "1.0.0",
+      "description": "Bind methods to an object from that object or some other source. Optionally specify a set of methods to skip over.",
+      "main": "bind-obj-methods.js",
+      "scripts": {
+        "test": "node test.js"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "keywords": [],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/bind-obj-methods.git"
+      },
+      "bugs": {
+        "url": "https://github.com/isaacs/bind-obj-methods/issues"
+      },
+      "homepage": "https://github.com/isaacs/bind-obj-methods#readme",
+      "gitHead": "1472ee46d512e7b1f37affe0895b89eff52f6f45",
+      "_id": "bind-obj-methods@1.0.0",
+      "_shasum": "4f5979cac15793adf70e488161e463e209ca509c",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.9.4",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "dist": {
+        "shasum": "4f5979cac15793adf70e488161e463e209ca509c",
+        "tarball": "https://registry.npmjs.org/bind-obj-methods/-/bind-obj-methods-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/bind-obj-methods-1.0.0.tgz_1484785646117_0.6411420318763703"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "bind-obj-methods",
+      "version": "2.0.0",
+      "description": "Bind methods to an object from that object or some other source. Optionally specify a set of methods to skip over.",
+      "main": "bind-obj-methods.js",
+      "scripts": {
+        "test": "tap test.js --100",
+        "preversion": "npm test",
+        "postversion": "npm publish",
+        "postpublish": "git push origin --all; git push origin --tags"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "keywords": [],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/bind-obj-methods.git"
+      },
+      "bugs": {
+        "url": "https://github.com/isaacs/bind-obj-methods/issues"
+      },
+      "homepage": "https://github.com/isaacs/bind-obj-methods#readme",
+      "devDependencies": {
+        "tap": "^10.7.0"
+      },
+      "files": [],
+      "gitHead": "3929680324058aaef0968e8586da4b94a0d1a78b",
+      "_id": "bind-obj-methods@2.0.0",
+      "_npmVersion": "5.1.0",
+      "_nodeVersion": "8.0.0",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "dist": {
+        "integrity": "sha512-3/qRXczDi2Cdbz6jE+W3IflJOutRVica8frpBn14de1mBOkzDo+6tY33kNhvkw54Kn3PzRRD2VnGbGPcTAk4sw==",
+        "shasum": "0178140dbe7b7bb67dc74892ace59bc0247f06f0",
+        "tarball": "https://registry.npmjs.org/bind-obj-methods/-/bind-obj-methods-2.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/bind-obj-methods-2.0.0.tgz_1499493525608_0.5441465254407376"
+      },
+      "directories": {}
+    }
+  },
+  "readme": "# bind-obj-methods\n\nBind methods to an object from that object or some other source.\nOptionally specify a set of methods to skip over.\n\nAlso binds non-enumerable methods, retaining their\nnon-enumerable-ness.\n\n## API\n\n`bindObjMethods(obj, [source], [omit])`\n\nBind all the methods from source onto obj, skipping over anything in\nthe `omit` list.  `omit` can be either an array or an object of\nboolean values.  `source` defaults to `obj` if not specified.\n\n## USAGE\n\n```js\nvar bindObjMethods = require('bind-obj-methods')\n\nvar obj = {\n  method: () => this.foo,\n  foo: 'bar'\n}\n\nvar m = obj.method\nm() // undefined\n\nbindObjMethods(obj)\nm = obj.method\nm() // 'bar'\n```\n",
+  "maintainers": [
+    {
+      "name": "isaacs",
+      "email": "i@izs.me"
+    }
+  ],
+  "time": {
+    "modified": "2017-07-08T05:58:45.793Z",
+    "created": "2017-01-19T00:27:26.358Z",
+    "1.0.0": "2017-01-19T00:27:26.358Z",
+    "2.0.0": "2017-07-08T05:58:45.793Z"
+  },
+  "homepage": "https://github.com/isaacs/bind-obj-methods#readme",
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isaacs/bind-obj-methods.git"
+  },
+  "author": {
+    "name": "Isaac Z. Schlueter",
+    "email": "i@izs.me",
+    "url": "http://blog.izs.me/"
+  },
+  "bugs": {
+    "url": "https://github.com/isaacs/bind-obj-methods/issues"
+  },
+  "license": "ISC",
+  "readmeFilename": "README.md",
+  "_attachments": {}
+}

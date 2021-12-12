@@ -1,0 +1,1271 @@
+{
+  "_id": "os-locale",
+  "_rev": "27-9c7fbc6ed4103285199bf39781bbe3ae",
+  "name": "os-locale",
+  "description": "Get the system locale",
+  "dist-tags": {
+    "latest": "5.0.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "os-locale",
+      "version": "1.0.0",
+      "description": "Get the system locale",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/os-locale"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "locale",
+        "lang",
+        "language",
+        "system",
+        "os",
+        "string",
+        "str",
+        "user",
+        "country",
+        "id",
+        "identifier",
+        "region"
+      ],
+      "dependencies": {
+        "lcid": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "0.0.4"
+      },
+      "gitHead": "34c02ef169549743a7813421b5681161eeb0aaad",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/os-locale/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/os-locale",
+      "_id": "os-locale@1.0.0",
+      "_shasum": "a0c1cec602ca44285a1a6679abe73c5e23188153",
+      "_from": ".",
+      "_npmVersion": "2.5.1",
+      "_nodeVersion": "0.12.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "a0c1cec602ca44285a1a6679abe73c5e23188153",
+        "tarball": "https://registry.npmjs.org/os-locale/-/os-locale-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "os-locale",
+      "version": "1.0.1",
+      "description": "Get the system locale",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/os-locale.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "locale",
+        "lang",
+        "language",
+        "system",
+        "os",
+        "string",
+        "str",
+        "user",
+        "country",
+        "id",
+        "identifier",
+        "region"
+      ],
+      "dependencies": {
+        "lcid": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "0.0.4"
+      },
+      "gitHead": "cd941911d0a7df4ea60716a9bd5c8a0721b61378",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/os-locale/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/os-locale#readme",
+      "_id": "os-locale@1.0.1",
+      "_shasum": "ccf7b5a10e31ee408099da65088b405e08912b2e",
+      "_from": ".",
+      "_npmVersion": "2.9.0",
+      "_nodeVersion": "0.10.38",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "ccf7b5a10e31ee408099da65088b405e08912b2e",
+        "tarball": "https://registry.npmjs.org/os-locale/-/os-locale-1.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "os-locale",
+      "version": "1.1.0",
+      "description": "Get the system locale",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/os-locale"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "locale",
+        "lang",
+        "language",
+        "system",
+        "os",
+        "string",
+        "str",
+        "user",
+        "country",
+        "id",
+        "identifier",
+        "region"
+      ],
+      "dependencies": {
+        "lcid": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "0.0.4"
+      },
+      "gitHead": "17355e53267a4bb9f27f580a1b5fdf043b175a0f",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/os-locale/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/os-locale",
+      "_id": "os-locale@1.1.0",
+      "_shasum": "ac410f7ea12777c56625b67bde1039724df5660a",
+      "_from": ".",
+      "_npmVersion": "2.11.2",
+      "_nodeVersion": "0.12.5",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "ac410f7ea12777c56625b67bde1039724df5660a",
+        "tarball": "https://registry.npmjs.org/os-locale/-/os-locale-1.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.2.0": {
+      "name": "os-locale",
+      "version": "1.2.0",
+      "description": "Get the system locale",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/os-locale"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && node test.js"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "locale",
+        "lang",
+        "language",
+        "system",
+        "os",
+        "string",
+        "str",
+        "user",
+        "country",
+        "id",
+        "identifier",
+        "region"
+      ],
+      "dependencies": {
+        "exec-file-sync": "^2.0.0",
+        "lcid": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "0.0.4",
+        "xo": "*"
+      },
+      "gitHead": "153dbddc7b4cafe2fda758dfdffb2c6fdeb31503",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/os-locale/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/os-locale",
+      "_id": "os-locale@1.2.0",
+      "_shasum": "746dec5adb612c18a2543903323c172ba1a900a6",
+      "_from": ".",
+      "_npmVersion": "2.11.2",
+      "_nodeVersion": "0.12.5",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "746dec5adb612c18a2543903323c172ba1a900a6",
+        "tarball": "https://registry.npmjs.org/os-locale/-/os-locale-1.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.2.1": {
+      "name": "os-locale",
+      "version": "1.2.1",
+      "description": "Get the system locale",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/os-locale.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && node test.js"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "locale",
+        "lang",
+        "language",
+        "system",
+        "os",
+        "string",
+        "str",
+        "user",
+        "country",
+        "id",
+        "identifier",
+        "region"
+      ],
+      "dependencies": {
+        "exec-file-sync": "^2.0.0",
+        "lcid": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "0.0.4",
+        "xo": "*"
+      },
+      "gitHead": "9e6fe2926ce79d2c6906cb4a40d033c95535742e",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/os-locale/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/os-locale#readme",
+      "_id": "os-locale@1.2.1",
+      "_shasum": "d4f573c4792a063c0535ea5d2993439ccbd26e32",
+      "_from": ".",
+      "_npmVersion": "2.11.3",
+      "_nodeVersion": "0.12.7",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "d4f573c4792a063c0535ea5d2993439ccbd26e32",
+        "tarball": "https://registry.npmjs.org/os-locale/-/os-locale-1.2.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.3.0": {
+      "name": "os-locale",
+      "version": "1.3.0",
+      "description": "Get the system locale",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/os-locale"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "locale",
+        "lang",
+        "language",
+        "system",
+        "os",
+        "string",
+        "str",
+        "user",
+        "country",
+        "id",
+        "identifier",
+        "region"
+      ],
+      "dependencies": {
+        "lcid": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "require-uncached": "^1.0.2",
+        "xo": "*"
+      },
+      "gitHead": "3d6405a69a67c0fa61f314e0f6cdeef3bda8abf7",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/os-locale/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/os-locale",
+      "_id": "os-locale@1.3.0",
+      "_shasum": "897fb0db5cea507a2666547f582dd9b9d900c4c7",
+      "_from": ".",
+      "_npmVersion": "2.11.3",
+      "_nodeVersion": "0.12.7",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "897fb0db5cea507a2666547f582dd9b9d900c4c7",
+        "tarball": "https://registry.npmjs.org/os-locale/-/os-locale-1.3.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "abg",
+          "email": "andrewbgoode@gmail.com"
+        },
+        {
+          "name": "bcoe",
+          "email": "ben@npmjs.com"
+        },
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.3.1": {
+      "name": "os-locale",
+      "version": "1.3.1",
+      "description": "Get the system locale",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/os-locale"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "locale",
+        "lang",
+        "language",
+        "system",
+        "os",
+        "string",
+        "str",
+        "user",
+        "country",
+        "id",
+        "identifier",
+        "region"
+      ],
+      "dependencies": {
+        "lcid": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "require-uncached": "^1.0.2",
+        "xo": "*"
+      },
+      "gitHead": "13d3057cdf98bab2dba3e17f4fe941e422c1a942",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/os-locale/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/os-locale",
+      "_id": "os-locale@1.3.1",
+      "_shasum": "c9a3a1c99b25a232c220a18d317acc94019e0ef1",
+      "_from": ".",
+      "_npmVersion": "2.11.3",
+      "_nodeVersion": "0.12.7",
+      "_npmUser": {
+        "name": "abg",
+        "email": "andrewbgoode@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "abg",
+          "email": "andrewbgoode@gmail.com"
+        },
+        {
+          "name": "bcoe",
+          "email": "ben@npmjs.com"
+        },
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "c9a3a1c99b25a232c220a18d317acc94019e0ef1",
+        "tarball": "https://registry.npmjs.org/os-locale/-/os-locale-1.3.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.4.0": {
+      "name": "os-locale",
+      "version": "1.4.0",
+      "description": "Get the system locale",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/os-locale"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "locale",
+        "lang",
+        "language",
+        "system",
+        "os",
+        "string",
+        "str",
+        "user",
+        "country",
+        "id",
+        "identifier",
+        "region"
+      ],
+      "dependencies": {
+        "lcid": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "require-uncached": "^1.0.2",
+        "xo": "*"
+      },
+      "gitHead": "b5c88233910b2e959fe84d841addb7a15e1cc813",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/os-locale/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/os-locale",
+      "_id": "os-locale@1.4.0",
+      "_shasum": "20f9f17ae29ed345e8bde583b13d2009803c14d9",
+      "_from": ".",
+      "_npmVersion": "2.13.3",
+      "_nodeVersion": "3.0.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "20f9f17ae29ed345e8bde583b13d2009803c14d9",
+        "tarball": "https://registry.npmjs.org/os-locale/-/os-locale-1.4.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "abg",
+          "email": "andrewbgoode@gmail.com"
+        },
+        {
+          "name": "bcoe",
+          "email": "ben@npmjs.com"
+        },
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "os-locale",
+      "version": "2.0.0",
+      "description": "Get the system locale",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/os-locale.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "locale",
+        "lang",
+        "language",
+        "system",
+        "os",
+        "string",
+        "str",
+        "user",
+        "country",
+        "id",
+        "identifier",
+        "region"
+      ],
+      "dependencies": {
+        "execa": "^0.5.0",
+        "lcid": "^1.0.0",
+        "mem": "^1.1.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "require-uncached": "^1.0.2",
+        "xo": "*"
+      },
+      "xo": {
+        "esnext": true
+      },
+      "gitHead": "b978314bf27271cd600c4dd550aa61563cf7a52e",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/os-locale/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/os-locale#readme",
+      "_id": "os-locale@2.0.0",
+      "_shasum": "15918ded510522b81ee7ae5a309d54f639fc39a4",
+      "_from": ".",
+      "_npmVersion": "3.10.9",
+      "_nodeVersion": "7.1.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "15918ded510522b81ee7ae5a309d54f639fc39a4",
+        "tarball": "https://registry.npmjs.org/os-locale/-/os-locale-2.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "bcoe",
+          "email": "ben@npmjs.com"
+        },
+        {
+          "name": "nexdrew",
+          "email": "andrew@npmjs.com"
+        },
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/os-locale-2.0.0.tgz_1479304194299_0.17578575410880148"
+      },
+      "directories": {}
+    },
+    "2.1.0": {
+      "name": "os-locale",
+      "version": "2.1.0",
+      "description": "Get the system locale",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/os-locale.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "locale",
+        "lang",
+        "language",
+        "system",
+        "os",
+        "string",
+        "str",
+        "user",
+        "country",
+        "id",
+        "identifier",
+        "region"
+      ],
+      "dependencies": {
+        "execa": "^0.7.0",
+        "lcid": "^1.0.0",
+        "mem": "^1.1.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "import-fresh": "^2.0.0",
+        "xo": "*"
+      },
+      "gitHead": "7322d9e8db79bbf153906e6b2870832893f5e1e5",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/os-locale/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/os-locale#readme",
+      "_id": "os-locale@2.1.0",
+      "_npmVersion": "5.0.0",
+      "_nodeVersion": "8.0.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-3sslG3zJbEYcaC4YVAvDorjGxc7tv6KVATnLPZONiljsUncvihe9BQoVCEs0RZ1kmf4Hk9OBqlZfJZWI4GanKA==",
+        "shasum": "42bc2900a6b5b8bd17376c8e882b65afccf24bf2",
+        "tarball": "https://registry.npmjs.org/os-locale/-/os-locale-2.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "bcoe",
+          "email": "ben@npmjs.com"
+        },
+        {
+          "name": "nexdrew",
+          "email": "andrew@npmjs.com"
+        },
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/os-locale-2.1.0.tgz_1500667149329_0.6210105223581195"
+      },
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "os-locale",
+      "version": "3.0.0",
+      "description": "Get the system locale",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/os-locale.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "locale",
+        "lang",
+        "language",
+        "system",
+        "os",
+        "string",
+        "str",
+        "user",
+        "country",
+        "id",
+        "identifier",
+        "region"
+      ],
+      "dependencies": {
+        "execa": "^0.10.0",
+        "lcid": "^2.0.0",
+        "mem": "^3.0.1"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "import-fresh": "^2.0.0",
+        "xo": "*"
+      },
+      "gitHead": "65c1749c26b69033f15902593d1940a1131096f1",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/os-locale/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/os-locale#readme",
+      "_id": "os-locale@3.0.0",
+      "_npmVersion": "6.3.0",
+      "_nodeVersion": "8.11.3",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-4mi6ZXIp4OtcV/Bwzl9p9Cvae7KJv/czGIm/HK0iaXCuRh7BMpy4l4o4CLjN+atsRQpCW9Rs4FdhfnK0zaR1Jg==",
+        "shasum": "b868acc459f0f81c8ddde3a11cb0b030f8dd7bf0",
+        "tarball": "https://registry.npmjs.org/os-locale/-/os-locale-3.0.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 5229,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbaItSCRA9TVsSAnZWagAARlAP/2t/BCuPlw9BCtSJRwi2\nhZbA21tJHJQqTkpZiTrR34CZhwNK0sEZe6TOutW5FiVYNNtPwvTo4IhADwKg\nBK6J/vDZ1xELupsnmQjcxj3E7qbMOk6t9ux0fj+s9RH9TgTNw3UHRLa4qfiz\nFQCahOLE/bwhM6niYojPKB5yUxeJvpO30LWIKyuREjLhOb8i1BW6vE7buhQV\nHyecxI6it+DtiuTaK7vkIagl13OtiA2HhbyM8Fjydjv/J4vvXgjQ8RU1UPKx\nuOhD+7DJnM6plk+Yuwm/d9vd36bIwBKPJpfsXJ3K4Sw5aiS3Y6vSTg0lvM7E\nKS9pNpeWsUBNA4EMtSQTxfvXBOTEV00LWQqCLmw4VlIIwcjYfeB89/FeSjIX\nBGYmbWgzY6x+FHqtlhSAVXcfgP76zvJZAy0xA8DzBxyy6NQEmdN8mcxRP+9V\nKwrLJjPg7xI9Uz6AEjdiPhgoQP0t/mCfApFVhYPa164JKkkPQovQN6P8ypo+\naxzpgQsGoVqLaO0jqInW6xhQdqfm0f1FSfIVzAlGM71YcDXeX+DOsXRNOyWA\nFtgpI+zhYmMINkxTOpWKoSoiuuD6CO6DlrVumSk1W9QRRUKREJrqUfE0nGSD\nvg24d3nWbRarHN2+uOeLAZSd6ZD52pfbDX20Co51afv6tnIYCl1uc/LK57Hn\noKxM\r\n=n3cV\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "ben@npmjs.com",
+          "name": "bcoe"
+        },
+        {
+          "email": "andrewbgoode@gmail.com",
+          "name": "nexdrew"
+        },
+        {
+          "email": "sindresorhus@gmail.com",
+          "name": "sindresorhus"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/os-locale_3.0.0_1533578065929_0.2442485976309905"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.1": {
+      "name": "os-locale",
+      "version": "3.0.1",
+      "description": "Get the system locale",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/os-locale.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "keywords": [
+        "locale",
+        "lang",
+        "language",
+        "system",
+        "os",
+        "string",
+        "str",
+        "user",
+        "country",
+        "id",
+        "identifier",
+        "region"
+      ],
+      "dependencies": {
+        "execa": "^0.10.0",
+        "lcid": "^2.0.0",
+        "mem": "^4.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "import-fresh": "^2.0.0",
+        "xo": "*"
+      },
+      "gitHead": "c52eef38093e592965268cea9946d39baa3e2bfb",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/os-locale/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/os-locale#readme",
+      "_id": "os-locale@3.0.1",
+      "_npmVersion": "6.4.0",
+      "_nodeVersion": "6.14.4",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-7g5e7dmXPtzcP4bgsZ8ixDVqA7oWYuEz4lOSujeWyliPai4gfVDiFIcwBg3aGCPnmSGfzOKTK3ccPn0CKv3DBw==",
+        "shasum": "3b014fbf01d87f60a1e5348d80fe870dc82c4620",
+        "tarball": "https://registry.npmjs.org/os-locale/-/os-locale-3.0.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 5229,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbiY6HCRA9TVsSAnZWagAAWdkQAIQAHht6aFWXVYVLoLru\ntetJDaQbucJI7zQInCrlLe0AjitNTChc7RB30MADCvg08kBq2J1CTDSwsbUG\nw+fUalgt0kAIEbSqdDsdvYEehEOngR6jVOr9fACQAB+aZ115Q20E/a637JYB\njJCpLoxCWiPyk4XGZWx2ZwAh3DLiE9WLPI5ovUX27He2cbKwj6ep/Cl2h9U0\n3EMqLWQO/5ZncxYFARklma/NSwVAEUmVSz+i02KoEmnv1wAWzhi6AdgRHE76\nyWMyHLV78wk5Qk86pqBym9v1jjoctmaq/EH6dJKMQ3sVsI3GdxUY2sxXnkUw\nLlE637iii3gbGdwnHk/mXQ7YESwAhgKRxciRT8kYBycEAQF3XgWUxMMyxeGH\nLn9yU9TZGnPZ2F4nLUsDa9KIVs9L1XiCjVw/CUi9KFtzWJcTMRVHlvLKlvan\nTQ+Pd+GW8ZGF8CNWbQkLbxxgYOs+aaMBIAzDir3gX5/NmUXHOGBVKl11znEQ\ndcqfLP4UB0FEXjtoM0ghEmVWnKYRHjr+uAwtX0rnRU7MwCYIMoMC74QUD1NF\n0AY0cKifhcqRPklPyhsfdlIZvlaJakk9vd7dFXsh+QD6NIfgfAwb1XPXhCW6\n2SY/C7lTanv/ttzaFCA2LklIxBhykVRPVJMn0leM5BUnoCLkSb6DHmqB2My2\n8H/m\r\n=qPJz\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "ben@npmjs.com",
+          "name": "bcoe"
+        },
+        {
+          "email": "andrewbgoode@gmail.com",
+          "name": "nexdrew"
+        },
+        {
+          "email": "sindresorhus@gmail.com",
+          "name": "sindresorhus"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/os-locale_3.0.1_1535741575029_0.29853690645571596"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.1.0": {
+      "name": "os-locale",
+      "version": "3.1.0",
+      "description": "Get the system locale",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/os-locale.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "keywords": [
+        "locale",
+        "lang",
+        "language",
+        "system",
+        "os",
+        "string",
+        "str",
+        "user",
+        "country",
+        "id",
+        "identifier",
+        "region"
+      ],
+      "dependencies": {
+        "execa": "^1.0.0",
+        "lcid": "^2.0.0",
+        "mem": "^4.0.0"
+      },
+      "devDependencies": {
+        "ava": "^1.0.1",
+        "import-fresh": "^3.0.0",
+        "xo": "^0.23.0"
+      },
+      "gitHead": "7d4d2b5c47a1176e6b73879ec64128e8a6ece938",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/os-locale/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/os-locale#readme",
+      "_id": "os-locale@3.1.0",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "8.12.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-Z8l3R4wYWM40/52Z+S265okfFj8Kt2cC2MKY+xNi3kFs+XGI7WXu/I309QQQYbRW4ijiZ+yxs9pqEhJh0DqW3Q==",
+        "shasum": "a802a6ee17f24c10483ab9935719cef4ed16bf1a",
+        "tarball": "https://registry.npmjs.org/os-locale/-/os-locale-3.1.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 6183,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcI9zdCRA9TVsSAnZWagAAdfcP/jH3KU/YxFmj/U3WAf0s\n5/BcSktePvb61zluirtXhfzpLqcu7He1lgact3tQX+e1bs59F1HD8iMTI+/A\nHo+4e2YyUk8WRup3a4RyO0w9z/fy+S8TxO17AXpJFQpXQLrUXzC4XOvQNLdT\niJlccoQdG3/zEmOwU1F0QYImnkoD8DFXaaxyaIiMpwTWR3zjiRldwsx1tk11\nXfDvpb03ViMXbe2jzqJyDHG1H22OR0A5JnFSVtQBuF4vqcFwyMeAda01fP0n\n2MYovWHS8L85RYBR8iciYT/Bte3jZVNbNWXQsDWfBwW9CB7Ofx/vMFDWUnnB\nKED4s8WlyfR6rfrUhMYl9TBMead5TY0mr9ueT2tXVAbPayYe+FdrduQdrr3q\nV/kimt14ZuHu936mVh6ox5aggKaHu8oUh+8tjy5mO+kbUcLdsZbSZKDd7mCb\n9RHe6whojm6DqsLj9l/vKcbc4adHSZlWiWgjiPnPSc281I0//s37XKSXnTlM\nQeBxgCWat4wprFvcBhSdv6dlSqhGDicK6cImAhJVXOoYYvtN1WTEE64TmLUh\nzxsBF0wudMDScJX+6nXi5boEc6T2FhnwT/J2b4pFkKdI9D+LpaENmJUUrbPa\npVmJWZyWiHj1quqz3Rt21UUx3sesSPGl7p6Jbxp2DwyUqAjjSsR9SYc/G0qu\ny541\r\n=HOiP\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "ben@npmjs.com",
+          "name": "bcoe"
+        },
+        {
+          "email": "andrewbgoode@gmail.com",
+          "name": "nexdrew"
+        },
+        {
+          "email": "sindresorhus@gmail.com",
+          "name": "sindresorhus"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/os-locale_3.1.0_1545854172320_0.11432408476987388"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.0.0": {
+      "name": "os-locale",
+      "version": "4.0.0",
+      "description": "Get the system locale",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/os-locale.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "locale",
+        "lang",
+        "language",
+        "system",
+        "os",
+        "string",
+        "str",
+        "user",
+        "country",
+        "id",
+        "identifier",
+        "region"
+      ],
+      "dependencies": {
+        "execa": "^1.0.0",
+        "lcid": "^3.0.0",
+        "mem": "^5.0.0"
+      },
+      "devDependencies": {
+        "ava": "^2.1.0",
+        "import-fresh": "^3.0.0",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "966ff9d03ea8c7911fd71e57fb60f042ceaea73e",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/os-locale/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/os-locale#readme",
+      "_id": "os-locale@4.0.0",
+      "_nodeVersion": "8.16.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-HsSR1+2l6as4Wp2SGZxqLnuFHxVvh1Ir9pvZxyujsC13egZVe7P0YeBLN0ijQzM/twrO5To3ia3jzBXAvpMTEA==",
+        "shasum": "06e4fb102f38f33e9e904f41af3c34a5aa3b2b7b",
+        "tarball": "https://registry.npmjs.org/os-locale/-/os-locale-4.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 6844,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJc/+VgCRA9TVsSAnZWagAAk7UP+wWEk3AMkUytTbiX3hpX\nR2tCNhYtBssphnrvZA91UKL9LyzOxEuHSm7PTSe1ryhyxVwMm3EIshk7jDcx\nJHi1elMsjw6ZoWeocCpdfodOdRiDld9pqzjeeoFDtxTmVovY7QL2QAqzgWSQ\n8C7NKR4crjKpE6YB49Ot3fU3aSDPL/ZKm6JG7EWh7G0ivossKdsBoWhEuI2u\nNp3sbE422Qx2u5xhSQfaOUZDoEM3+TpF47xW7O8pdwJSNBaXteF9qgx6ukYs\nZ8zzgKKnAAOrvJ5VFHs8Q510uTR7ZLfZJfjVALrp7X0hAm+YsGNfGGwEIBp2\nokeDIXzUiMmj0fSsXGfq+N7O/m5DtgzKL+ShgukyjsP/mw5KTyQoGKfyEdDy\nYX2XLtxWrkaIbFQrk+PP1Lbv3VnoEQzlovr1OMId132Yb+W2jHMmGcuEj/jt\na4eE94xDkj7laTRu0OFfkQwu6ENBShSVB99Mk/hZq5KQlv+WMTA1ucTupjlq\nQic37rGk9LyZamPdf9UShRZWGc5yN0abuqo0VjWT1KF1CRfy7SdW9U7CQk+z\nwAlPt8JFppBS8822bjx3AqgMehoAvAOT+PNKjBXH8AWAF6avoavHUitsXnKg\nMLZIL/n6fXMZT/VAO5lCbv2CjobQN22seNmZR+YYbrmftSpwqBxOls8WXtwn\nkEqJ\r\n=ugG9\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "ben@npmjs.com",
+          "name": "bcoe"
+        },
+        {
+          "email": "andrewbgoode@gmail.com",
+          "name": "nexdrew"
+        },
+        {
+          "email": "sindresorhus@gmail.com",
+          "name": "sindresorhus"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/os-locale_4.0.0_1560274271429_0.6168255625003283"
+      },
+      "_hasShrinkwrap": false
+    },
+    "5.0.0": {
+      "name": "os-locale",
+      "version": "5.0.0",
+      "description": "Get the system locale",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/os-locale.git"
+      },
+      "funding": "https://github.com/sponsors/sindresorhus",
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "https://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=10"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "locale",
+        "lang",
+        "language",
+        "system",
+        "os",
+        "string",
+        "str",
+        "user",
+        "country",
+        "id",
+        "identifier",
+        "region"
+      ],
+      "dependencies": {
+        "execa": "^4.0.0",
+        "lcid": "^3.0.0",
+        "mem": "^5.0.0"
+      },
+      "devDependencies": {
+        "ava": "^2.1.0",
+        "proxyquire": "^2.1.3",
+        "tsd": "^0.11.0",
+        "xo": "^0.28.0"
+      },
+      "gitHead": "d03b013bf66e1100027ea66c88046ce0d0a43fb3",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/os-locale/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/os-locale#readme",
+      "_id": "os-locale@5.0.0",
+      "_nodeVersion": "10.18.1",
+      "_npmVersion": "6.14.2",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-tqZcNEDAIZKBEPnHPlVDvKrp7NzgLi7jRmhKiUoa2NUmhl13FtkAGLUVR+ZsYvApBQdBfYm43A4tXXQ4IrYLBA==",
+        "shasum": "6d26c1d95b6597c5d5317bf5fba37eccec3672e0",
+        "tarball": "https://registry.npmjs.org/os-locale/-/os-locale-5.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 7238,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJedyAVCRA9TVsSAnZWagAAyWIP/36sMcMgkwSo82o7j7ZP\nJ1qu0JhbwhNGQLBYmG3DgLco+fgt4wLhJwa9LJawKk0niYW706mNQyEptCeJ\nZE/HAIzD1lwMLvTfteundAd3YRSTmqq2V9oT2gGdi6lfxVM8HgG62fK5rKP2\nsqcAH7jqrcNIaj/jWMcbYzD0eeHeZGiJKSwRYZmHFS5L3L5j0XSOn79GFoAC\nD/PAgm+zZq7A/MU4cJ3wpU9TaEI1SlYVoIkN4C4jFDLvBDUTYGcOWFAw3o69\nO/GnGII+HKHUX8T5cie1jhelPFC8znOttMp/sLp1qoSOVtzrmBW6IYLj4SUp\nUitD4FGm+ckwDC4gnbwLSvmcekv+kXDnHAYtLMtRTljHEOUdpZ0izTNxuUcO\nssZ5k7T+URiJsEgLP/Q4UJ6VpURyLbbZsgwxvKxwfQPBUnVYGouw2KUcmPZ1\npBFD6bbV0wwb5leqinK80jG8fswgR0alDG2b+6KR+dSILvZ9Ob7pDHYlBh76\nO4SH7b1d04mkSNBgQx8qXZGAzlpdD12Bnqaunq8zlt7DhSsnWTRhUm/psGoR\n/rGjQJrxa9MUNOPbiYUu7fDhWDuwF/tMW4UO5vfCS92WMqItI1nL6nt4mOgk\nKLkLhWdMUqUHWW79vw62Q4nDJzHAmTg/hFjheHLSGdqZih6dDIfV9H5bYdeU\nGUZk\r\n=puY8\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "ben@npmjs.com",
+          "name": "bcoe"
+        },
+        {
+          "email": "andrewbgoode@gmail.com",
+          "name": "nexdrew"
+        },
+        {
+          "email": "sindresorhus@gmail.com",
+          "name": "sindresorhus"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/os-locale_5.0.0_1584865300793_0.2863401997702537"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# os-locale [![Build Status](https://travis-ci.org/sindresorhus/os-locale.svg?branch=master)](https://travis-ci.org/sindresorhus/os-locale)\n\n> Get the system [locale](https://en.wikipedia.org/wiki/Locale_(computer_software))\n\nUseful for localizing your module or app.\n\nPOSIX systems: The returned locale refers to the [`LC_MESSAGE`](http://www.gnu.org/software/libc/manual/html_node/Locale-Categories.html#Locale-Categories) category, suitable for selecting the language used in the user interface for message translation.\n\n## Install\n\n```\n$ npm install os-locale\n```\n\n## Usage\n\n```js\nconst osLocale = require('os-locale');\n\n(async () => {\n\tconsole.log(await osLocale());\n\t//=> 'en-US'\n})();\n```\n## API\n\n### osLocale(options?)\n\nReturns a `Promise` for the locale.\n\n### osLocale.sync(options?)\n\nReturns the locale.\n\n#### options\n\nType: `object`\n\n##### spawn\n\nType: `boolean`\\\nDefault: `true`\n\nSet to `false` to avoid spawning subprocesses and instead only resolve the locale from environment variables.\n\n## os-locale for enterprise\n\nAvailable as part of the Tidelift Subscription.\n\nThe maintainers of os-locale and thousands of other packages are working with Tidelift to deliver commercial support and maintenance for the open source dependencies you use to build your applications. Save time, reduce risk, and improve code health, while paying the maintainers of the exact dependencies you use. [Learn more.](https://tidelift.com/subscription/pkg/npm-os-locale?utm_source=npm-os-locale&utm_medium=referral&utm_campaign=enterprise&utm_term=repo)\n",
+  "maintainers": [
+    {
+      "email": "ben@npmjs.com",
+      "name": "bcoe"
+    },
+    {
+      "email": "andrewbgoode@gmail.com",
+      "name": "nexdrew"
+    },
+    {
+      "email": "sindresorhus@gmail.com",
+      "name": "sindresorhus"
+    }
+  ],
+  "time": {
+    "modified": "2020-03-22T08:21:43.475Z",
+    "created": "2015-03-16T07:18:34.088Z",
+    "1.0.0": "2015-03-16T07:18:34.088Z",
+    "1.0.1": "2015-05-06T10:26:46.592Z",
+    "1.1.0": "2015-07-29T12:05:02.669Z",
+    "1.2.0": "2015-08-14T08:00:04.998Z",
+    "1.2.1": "2015-08-28T20:47:52.999Z",
+    "1.3.0": "2015-09-03T10:31:39.501Z",
+    "1.3.1": "2015-09-03T11:15:32.093Z",
+    "1.4.0": "2015-09-08T06:10:00.666Z",
+    "2.0.0": "2016-11-16T13:49:54.522Z",
+    "2.1.0": "2017-07-21T19:59:10.218Z",
+    "3.0.0": "2018-08-06T17:54:26.017Z",
+    "3.0.1": "2018-08-31T18:52:55.186Z",
+    "3.1.0": "2018-12-26T19:56:12.453Z",
+    "4.0.0": "2019-06-11T17:31:11.643Z",
+    "5.0.0": "2020-03-22T08:21:41.150Z"
+  },
+  "homepage": "https://github.com/sindresorhus/os-locale#readme",
+  "keywords": [
+    "locale",
+    "lang",
+    "language",
+    "system",
+    "os",
+    "string",
+    "str",
+    "user",
+    "country",
+    "id",
+    "identifier",
+    "region"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/os-locale.git"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "https://sindresorhus.com"
+  },
+  "bugs": {
+    "url": "https://github.com/sindresorhus/os-locale/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md",
+  "users": {
+    "mysticatea": true,
+    "bojand": true,
+    "axelrindle": true,
+    "wisecolt": true,
+    "cedx": true,
+    "vandeurenglenn": true
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "name": "jackspeak",
+  "version": "1.4.0",
+  "description": "A very strict and proper argument parser.",
+  "main": "index.js",
+  "scripts": {
+    "build-examples": "for i in examples/*.js ; do node $i -h > ${i/.js/.txt}; done",
+    "snap": "TAP_SNAPSHOT=1 tap test/*.js -J && npm run build-examples",
+    "test": "tap test/*.js --100 -J",
+    "preversion": "npm test",
+    "postversion": "npm publish",
+    "postpublish": "git push origin --all; git push origin --tags"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "tap": "^14.0.0"
+  },
+  "files": [
+    "index.js"
+  ],
+  "dependencies": {
+    "cliui": "^4.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isaacs/jackspeak.git"
+  },
+  "keywords": [
+    "argument",
+    "parser",
+    "args",
+    "option",
+    "flag",
+    "cli",
+    "command",
+    "line",
+    "parse",
+    "parsing"
+  ],
+  "author": "Isaac Z. Schlueter <i@izs.me>",
+  "engines": {
+    "node": ">=8"
+  }
+}

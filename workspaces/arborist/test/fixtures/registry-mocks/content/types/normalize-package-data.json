@@ -1,0 +1,101 @@
+{
+  "_id": "@types/normalize-package-data",
+  "_rev": "374-0a9043f92be72871ea7aaf9cc8af0429",
+  "name": "@types/normalize-package-data",
+  "description": "TypeScript definitions for normalize-package-data",
+  "dist-tags": {
+    "latest": "2.4.0",
+    "ts2.0": "2.4.0",
+    "ts2.1": "2.4.0",
+    "ts2.2": "2.4.0",
+    "ts2.3": "2.4.0",
+    "ts2.4": "2.4.0",
+    "ts2.5": "2.4.0",
+    "ts2.6": "2.4.0",
+    "ts2.7": "2.4.0",
+    "ts2.8": "2.4.0",
+    "ts2.9": "2.4.0",
+    "ts3.0": "2.4.0",
+    "ts3.1": "2.4.0",
+    "ts3.2": "2.4.0",
+    "ts3.3": "2.4.0",
+    "ts3.4": "2.4.0",
+    "ts3.5": "2.4.0",
+    "ts3.6": "2.4.0",
+    "ts3.7": "2.4.0",
+    "ts3.8": "2.4.0",
+    "ts3.9": "2.4.0",
+    "ts4.0": "2.4.0",
+    "ts4.1": "2.4.0"
+  },
+  "versions": {
+    "2.4.0": {
+      "name": "@types/normalize-package-data",
+      "version": "2.4.0",
+      "description": "TypeScript definitions for normalize-package-data",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Jeff Dickey",
+          "url": "https://github.com/jdxcode",
+          "githubUsername": "jdxcode"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "5d2101e9e55c73e1d649a6c311e0d40bdfaa25bb06bb75ea6f3bb0d149c1303b",
+      "typeScriptVersion": "2.0",
+      "_id": "@types/normalize-package-data@2.4.0",
+      "dist": {
+        "integrity": "sha512-f5j5b/Gf71L+dbqxIpQ4Z2WlmI/mPJ0fOkGGmFgtb6sAu97EPczzbS3/tJKxmcYDj55OX6ssqwDAWOHIYDRDGA==",
+        "shasum": "e486d0d97396d79beedd0a6e33f4534ff6b4973e",
+        "tarball": "https://registry.npmjs.org/@types/normalize-package-data/-/normalize-package-data-2.4.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/normalize-package-data-2.4.0.tgz_1515310531876_0.8681222880259156"
+      },
+      "directories": {}
+    }
+  },
+  "readme": "# Installation\r\n> `npm install --save @types/normalize-package-data`\r\n\r\n# Summary\r\nThis package contains type definitions for normalize-package-data (https://github.com/npm/normalize-package-data#readme).\r\n\r\n# Details\r\nFiles were exported from https://www.github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/normalize-package-data\r\n\r\nAdditional Details\r\n * Last updated: Sun, 07 Jan 2018 07:34:38 GMT\r\n * Dependencies: none\r\n * Global values: none\r\n\r\n# Credits\r\nThese definitions were written by Jeff Dickey <https://github.com/jdxcode>.\r\n",
+  "maintainers": [
+    {
+      "name": "types",
+      "email": "ts-npm-types@microsoft.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-08-25T22:37:39.061Z",
+    "created": "2018-01-07T07:35:32.045Z",
+    "2.4.0": "2018-01-07T07:35:32.045Z"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+  },
+  "contributors": [
+    {
+      "name": "Jeff Dickey",
+      "url": "https://github.com/jdxcode",
+      "githubUsername": "jdxcode"
+    }
+  ],
+  "license": "MIT",
+  "readmeFilename": ""
+}

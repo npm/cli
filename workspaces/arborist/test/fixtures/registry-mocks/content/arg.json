@@ -1,0 +1,2119 @@
+{
+  "_id": "arg",
+  "_rev": "118-9f74598d173996fa297ea6774bdb32ab",
+  "name": "arg",
+  "description": "Another simple argument parser",
+  "dist-tags": {
+    "latest": "4.1.3"
+  },
+  "versions": {
+    "0.0.1": {
+      "name": "arg",
+      "main": "arg.js",
+      "description": "Simple arguments parser in 100 bytes",
+      "author": {
+        "name": "Mikhail Davydov, http://bit.ly/JXLHCO"
+      },
+      "version": "0.0.1",
+      "keywords": [
+        "arg",
+        "args",
+        "arguments",
+        "arguments parser"
+      ],
+      "engines": {
+        "node": ">=0.4.12"
+      },
+      "licenses": [
+        {
+          "type": "PUBLIC LICENSE",
+          "url": "http://bit.ly/JXKHyp"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/tnhu/arg.git"
+      },
+      "_npmUser": {
+        "name": "tnhu",
+        "email": "tnhu@me.com"
+      },
+      "_id": "arg@0.0.1",
+      "dependencies": {},
+      "devDependencies": {},
+      "optionalDependencies": {},
+      "_engineSupported": true,
+      "_npmVersion": "1.1.21",
+      "_nodeVersion": "v0.6.17",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "0601ff2031f8a76ae232a9337cdf761d1f1d5739",
+        "tarball": "https://registry.npmjs.org/arg/-/arg-0.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "tnhu",
+          "email": "tnhu@me.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "arg",
+      "version": "1.0.0",
+      "description": "Another simple argument parser",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zeit/arg.git"
+      },
+      "author": {
+        "name": "Josh Junon",
+        "email": "junon@zeit.co"
+      },
+      "license": "MIT",
+      "scripts": {
+        "pretest": "xo",
+        "test": "WARN_EXIT=1 jest --coverage -w 2"
+      },
+      "xo": {
+        "rules": {
+          "complexity": 0
+        }
+      },
+      "devDependencies": {
+        "chai": "^4.1.1",
+        "jest": "^20.0.4",
+        "xo": "^0.18.2"
+      },
+      "gitHead": "7e6c663df46f695ca621e70370fbc8ddcf84b32d",
+      "bugs": {
+        "url": "https://github.com/zeit/arg/issues"
+      },
+      "homepage": "https://github.com/zeit/arg#readme",
+      "_id": "arg@1.0.0",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "8.2.1",
+      "_npmUser": {
+        "name": "qix",
+        "email": "i.am.qix@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-Wk7TEzl1KqvTGs/uyhmHO/3XLd3t1UeU4IstvPXVzGPM522cTjqjNZ99esCkcL52sjqjo8e8CTBcWhkxvGzoAw==",
+        "shasum": "444d885a4e25b121640b55155ef7cd03975d6050",
+        "tarball": "https://registry.npmjs.org/arg/-/arg-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "rauchg@gmail.com",
+          "name": "rauchg"
+        },
+        {
+          "email": "nathan@tootallnate.net",
+          "name": "tootallnate"
+        },
+        {
+          "email": "sergiodxa@gmail.com",
+          "name": "sergiodxa"
+        },
+        {
+          "email": "i.am.qix@gmail.com",
+          "name": "qix"
+        },
+        {
+          "email": "olli@zeit.co",
+          "name": "olliv"
+        },
+        {
+          "email": "naoyuki.kanezawa@gmail.com",
+          "name": "nkzawa"
+        },
+        {
+          "email": "leo@zeit.co",
+          "name": "leo"
+        },
+        {
+          "email": "jamo@isotalo.fi",
+          "name": "jamo"
+        },
+        {
+          "email": "igor@klopov.com",
+          "name": "igorklopov"
+        },
+        {
+          "email": "arunoda.susiripala@gmail.com",
+          "name": "arunoda"
+        },
+        {
+          "email": "me@matheus.top",
+          "name": "matheuss"
+        },
+        {
+          "email": "team@zeit.co",
+          "name": "zeit-admin"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/arg-1.0.0.tgz_1508829168232_0.9177050201687962"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "arg",
+      "version": "1.0.1",
+      "description": "Another simple argument parser",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zeit/arg.git"
+      },
+      "author": {
+        "name": "Josh Junon",
+        "email": "junon@zeit.co"
+      },
+      "license": "MIT",
+      "scripts": {
+        "pretest": "xo",
+        "test": "WARN_EXIT=1 jest --coverage -w 2"
+      },
+      "xo": {
+        "rules": {
+          "complexity": 0
+        }
+      },
+      "devDependencies": {
+        "chai": "^4.1.1",
+        "jest": "^20.0.4",
+        "xo": "^0.18.2"
+      },
+      "gitHead": "f584f4fc4d518fd322a2719af3e09b64e02d820d",
+      "bugs": {
+        "url": "https://github.com/zeit/arg/issues"
+      },
+      "homepage": "https://github.com/zeit/arg#readme",
+      "_id": "arg@1.0.1",
+      "_npmVersion": "5.7.1",
+      "_nodeVersion": "9.8.0",
+      "_npmUser": {
+        "name": "leo",
+        "email": "leo@zeit.co"
+      },
+      "dist": {
+        "integrity": "sha512-yZ7k3hP42f9XI+8s4Sg6nPlHXpqfu5G9ijGZ+7XDF1+9CchByI6Bqs8gB+6bFw0MoSN6WwnfYTLyD3Bv/4W8eA==",
+        "shasum": "892a26d841bd5a64880bbc8f73dd64a705910ca3",
+        "tarball": "https://registry.npmjs.org/arg/-/arg-1.0.1.tgz",
+        "fileCount": 7,
+        "unpackedSize": 128406
+      },
+      "maintainers": [
+        {
+          "email": "arunoda.susiripala@gmail.com",
+          "name": "arunoda"
+        },
+        {
+          "email": "hello@evilrabb.it",
+          "name": "iamevilrabbit"
+        },
+        {
+          "email": "igor@klopov.com",
+          "name": "igorklopov"
+        },
+        {
+          "email": "jamo@isotalo.fi",
+          "name": "jamo"
+        },
+        {
+          "email": "javier.velasco86@gmail.com",
+          "name": "javivelasco"
+        },
+        {
+          "email": "leo@zeit.co",
+          "name": "leo"
+        },
+        {
+          "email": "gelipp@gmail.com",
+          "name": "lipp"
+        },
+        {
+          "email": "me@matheus.top",
+          "name": "matheuss"
+        },
+        {
+          "email": "naoyuki.kanezawa@gmail.com",
+          "name": "nkzawa"
+        },
+        {
+          "email": "olli@zeit.co",
+          "name": "olliv"
+        },
+        {
+          "email": "pranay.gp@gmail.com",
+          "name": "pranaygp"
+        },
+        {
+          "email": "i.am.qix@gmail.com",
+          "name": "qix"
+        },
+        {
+          "email": "rauchg@gmail.com",
+          "name": "rauchg"
+        },
+        {
+          "email": "sergiodxa@gmail.com",
+          "name": "sergiodxa"
+        },
+        {
+          "email": "tim@timneutkens.nl",
+          "name": "timneutkens"
+        },
+        {
+          "email": "nathan@tootallnate.net",
+          "name": "tootallnate"
+        },
+        {
+          "email": "team@zeit.co",
+          "name": "zeit-admin"
+        },
+        {
+          "email": "npm-bot@zeit.co",
+          "name": "zeit-bot"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/arg_1.0.1_1520561581294_0.5192438570063114"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.0": {
+      "name": "arg",
+      "version": "2.0.0",
+      "description": "Another simple argument parser",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zeit/arg.git"
+      },
+      "author": {
+        "name": "Josh Junon",
+        "email": "junon@zeit.co"
+      },
+      "license": "MIT",
+      "scripts": {
+        "pretest": "xo",
+        "test": "WARN_EXIT=1 jest --coverage -w 2"
+      },
+      "xo": {
+        "rules": {
+          "complexity": 0
+        }
+      },
+      "devDependencies": {
+        "chai": "^4.1.1",
+        "jest": "^20.0.4",
+        "xo": "^0.18.2"
+      },
+      "gitHead": "507d9826349559ebbf425aa679207d18c5e51256",
+      "bugs": {
+        "url": "https://github.com/zeit/arg/issues"
+      },
+      "homepage": "https://github.com/zeit/arg#readme",
+      "_id": "arg@2.0.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.6.1",
+      "_npmUser": {
+        "name": "qix",
+        "email": "i.am.qix@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-XxNTUzKnz1ctK3ZIcI2XUPlD96wbHP2nGqkPKpvk/HNRlPveYrXIVSTk9m3LcqOgDPg3B1nMvdV/K8wZd7PG4w==",
+        "shasum": "c06e7ff69ab05b3a4a03ebe0407fac4cba657545",
+        "tarball": "https://registry.npmjs.org/arg/-/arg-2.0.0.tgz",
+        "fileCount": 7,
+        "unpackedSize": 130609
+      },
+      "maintainers": [
+        {
+          "email": "arunoda.susiripala@gmail.com",
+          "name": "arunoda"
+        },
+        {
+          "email": "hello@evilrabb.it",
+          "name": "iamevilrabbit"
+        },
+        {
+          "email": "igor@klopov.com",
+          "name": "igorklopov"
+        },
+        {
+          "email": "jamo@isotalo.fi",
+          "name": "jamo"
+        },
+        {
+          "email": "javier.velasco86@gmail.com",
+          "name": "javivelasco"
+        },
+        {
+          "email": "leo@zeit.co",
+          "name": "leo"
+        },
+        {
+          "email": "gelipp@gmail.com",
+          "name": "lipp"
+        },
+        {
+          "email": "me@matheus.top",
+          "name": "matheuss"
+        },
+        {
+          "email": "naoyuki.kanezawa@gmail.com",
+          "name": "nkzawa"
+        },
+        {
+          "email": "olli@zeit.co",
+          "name": "olliv"
+        },
+        {
+          "email": "pranay.gp@gmail.com",
+          "name": "pranaygp"
+        },
+        {
+          "email": "i.am.qix@gmail.com",
+          "name": "qix"
+        },
+        {
+          "email": "rauchg@gmail.com",
+          "name": "rauchg"
+        },
+        {
+          "email": "sergiodxa@gmail.com",
+          "name": "sergiodxa"
+        },
+        {
+          "email": "tim@timneutkens.nl",
+          "name": "timneutkens"
+        },
+        {
+          "email": "nathan@tootallnate.net",
+          "name": "tootallnate"
+        },
+        {
+          "email": "team@zeit.co",
+          "name": "zeit-admin"
+        },
+        {
+          "email": "npm-bot@zeit.co",
+          "name": "zeit-bot"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/arg_2.0.0_1522571220160_0.8013429191548453"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.1": {
+      "name": "arg",
+      "version": "2.0.1",
+      "description": "Another simple argument parser",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zeit/arg.git"
+      },
+      "author": {
+        "name": "Josh Junon",
+        "email": "junon@zeit.co"
+      },
+      "license": "MIT",
+      "scripts": {
+        "pretest": "xo",
+        "test": "WARN_EXIT=1 jest --coverage -w 2"
+      },
+      "xo": {
+        "rules": {
+          "complexity": 0
+        }
+      },
+      "devDependencies": {
+        "chai": "^4.1.1",
+        "jest": "^20.0.4",
+        "xo": "^0.18.2"
+      },
+      "gitHead": "b2c0da56c435b0ad0f11a746e582ea84f88fb1a0",
+      "bugs": {
+        "url": "https://github.com/zeit/arg/issues"
+      },
+      "homepage": "https://github.com/zeit/arg#readme",
+      "_id": "arg@2.0.1",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.7.0",
+      "_npmUser": {
+        "name": "timneutkens",
+        "email": "tim@timneutkens.nl"
+      },
+      "dist": {
+        "integrity": "sha512-cvmPpB9OWbIP0pG3ov/11PMd/z+nBG+nY4eynzHxX/+pxJg7f5r02rFeJr8NwosJpxHIujA2jJpB+c3xR21vig==",
+        "shasum": "ded3abf645efd3b5f7e446035b75aad6fd68aa71",
+        "tarball": "https://registry.npmjs.org/arg/-/arg-2.0.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 7820,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJb7BCxCRA9TVsSAnZWagAAN/sP/izehzqP4nAis7EWF5Jf\nvkr0QkBKqMrBPHM3LBq0ZiCQADRGZtnRwRBTR1HH4iBId8PaTcQltYdBkAts\ncRhRVrhxnCrXZJ5bsiUdvbvALAaiGO+el7Y/2PxDvC7keXJqTgQRRmHtJuao\n9ls2D6v1HkDe4q3pMijxchlM7x/a2qzGlGhgb7BDq6n3gomndY2UU/X8WXCc\n05zIIQEoMmCiUln0ei2wkZ3DYEv5hhvXTDX48agNH7/JQ4TJQ2Uhydkko7Q9\n9CMz5d1R+ndO/cib32t1iKFhSj+bI+vgUIuj1X1HCRvmgAUQxCeUgTDQfN3A\nvz9tIAFL/zsCC/CfewY+RTwiqpCRIAdblNEYW1/shE6vL+An+RqvALdW6bZ1\nckzFKFGwRoxsxMqwfSkz26y7vozNqkfBLOup3xyK039jJbuv1hwJQ4HOw9Te\na/UgYYrK+DiTzMnMf878oi7WCxn+n9XqKzVMjQcGmoxNaOJw0T22hogrOkXE\ni0q+RN+ZWjVrz3zlhumhI/pjFK0YejNShJC53mOhxCaGz3CRYZ55O92kvBDC\nqrMU2q3rFTtr99Lj1g0L5SfS0qMTKwmETznJ+8samQ4nRAX2SW1wGu+SiYSV\ni1Vm1Sp7Iv+EY7+2AIlxHh2fGjnD4DccF+XxLy1iha/7Y2c3NDa9zsVUaTnm\nAErg\r\n=6dpK\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "arunoda.susiripala@gmail.com",
+          "name": "arunoda"
+        },
+        {
+          "email": "thecodetheory@gmail.com",
+          "name": "codetheory"
+        },
+        {
+          "email": "fivepointseven@icloud.com",
+          "name": "fivepointseven"
+        },
+        {
+          "email": "guybedford@gmail.com",
+          "name": "guybedford"
+        },
+        {
+          "email": "hharnisc@gmail.com",
+          "name": "hharnisc"
+        },
+        {
+          "email": "hello@evilrabb.it",
+          "name": "iamevilrabbit"
+        },
+        {
+          "email": "igor@klopov.com",
+          "name": "igorklopov"
+        },
+        {
+          "email": "jamo@isotalo.fi",
+          "name": "jamo"
+        },
+        {
+          "email": "javier.velasco86@gmail.com",
+          "name": "javivelasco"
+        },
+        {
+          "email": "joecohenr@gmail.com",
+          "name": "joecohens"
+        },
+        {
+          "email": "leo@zeit.co",
+          "name": "leo"
+        },
+        {
+          "email": "me@matheus.top",
+          "name": "matheuss"
+        },
+        {
+          "email": "naoyuki.kanezawa@gmail.com",
+          "name": "nkzawa"
+        },
+        {
+          "email": "olli@zeit.co",
+          "name": "olliv"
+        },
+        {
+          "email": "pranay.gp@gmail.com",
+          "name": "pranaygp"
+        },
+        {
+          "email": "ds303077135@gmail.com",
+          "name": "quietshu"
+        },
+        {
+          "email": "rauchg@gmail.com",
+          "name": "rauchg"
+        },
+        {
+          "email": "tim@timneutkens.nl",
+          "name": "timneutkens"
+        },
+        {
+          "email": "nathan@tootallnate.net",
+          "name": "tootallnate"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/arg_2.0.1_1542197425269_0.1936038245972549"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.0": {
+      "name": "arg",
+      "version": "3.0.0",
+      "description": "Another simple argument parser",
+      "main": "index.js",
+      "types": "index.d.ts",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zeit/arg.git"
+      },
+      "author": {
+        "name": "Josh Junon",
+        "email": "junon@zeit.co"
+      },
+      "license": "MIT",
+      "scripts": {
+        "pretest": "xo",
+        "test": "WARN_EXIT=1 jest --coverage -w 2"
+      },
+      "xo": {
+        "rules": {
+          "complexity": 0
+        }
+      },
+      "devDependencies": {
+        "chai": "^4.1.1",
+        "jest": "^20.0.4",
+        "xo": "^0.18.2"
+      },
+      "gitHead": "30826caf576c9398991d491d3148a72cdf0d0aa5",
+      "bugs": {
+        "url": "https://github.com/zeit/arg/issues"
+      },
+      "homepage": "https://github.com/zeit/arg#readme",
+      "_id": "arg@3.0.0",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.7.0",
+      "_npmUser": {
+        "name": "timneutkens",
+        "email": "tim@timneutkens.nl"
+      },
+      "dist": {
+        "integrity": "sha512-C5Scb477yHhNck9AFzW5RwAzS2Eqn0HR+Fv0pmcZBXBT8g/g7OOuZTr0upVSSUGWZQH+XWdAKIw2OfC86EuggQ==",
+        "shasum": "386c20035dfbeb13e280ca8a1e6868aa17942def",
+        "tarball": "https://registry.npmjs.org/arg/-/arg-3.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 8928,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcE6fXCRA9TVsSAnZWagAAdKAP/jLT+N50we6ebLj4vKUP\nNqqZOj9AdfD6XBOB/GpQPr3c8lHhhe2+pz7bV0w7FB2GDsI9PcoK43GJuD3y\nm7QepZqhA53i/MXmtOkt0JCEdqwDcL5MuvyuXm/pEMzmqr28qEXsPVdW1HqH\nUhcTj+6+EhVbDssROqJtPAoPD1ROa6tjpXGK5HckT4IQaTct+Ac5/6K62tRH\n57/eszHHCGwx00ovHoOlPQyCiOyVFJto9Q49RmFeLUx79eh0anDVIBZNQTQf\ndwPsMG0O3bQyZb+zZ3NJ7lPeztfWM+098ZY7RoQ9gpsPXJNleGGuMe1gPyOE\nsG4a0NpeqA+EpDiWXti05aIEQysi3d7RobOjL+Sd02joXZZuSZuwrqYF98wn\n7wVzxkO7GOpfkKCSCnmAMwAhR+qiTXmn56TnyQpGkVWwnTDKlWv0rM+vGmgH\nZUARPZVW2rmzj9l9fN8p7lgfKHYTKE2qUtKzQ/zJqf88cIV/vHvwkpuAETfY\njMHCBjdW1NFtpvEgo633M7Lqs/ukCjtntXoHkDH2t1y5v5jjUi2BQQhFo8ld\n8TbVvKMG8X27iIz9PRUhd0kAhqRtgqIm0VupiYYJFEHH1aTV3exqDNr8KByC\nQnffATvmAE3Jlp7DCvllyuYMvQGwl5zfy105uUp9f0S9vGxFa49HAu8tEOOI\nzw5S\r\n=2s7z\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "arunoda.susiripala@gmail.com",
+          "name": "arunoda"
+        },
+        {
+          "email": "thecodetheory@gmail.com",
+          "name": "codetheory"
+        },
+        {
+          "email": "dale@divmain.com",
+          "name": "divmain"
+        },
+        {
+          "email": "fivepointseven@icloud.com",
+          "name": "fivepointseven"
+        },
+        {
+          "email": "hharnisc@gmail.com",
+          "name": "hharnisc"
+        },
+        {
+          "email": "hello@evilrabb.it",
+          "name": "iamevilrabbit"
+        },
+        {
+          "email": "igor@klopov.com",
+          "name": "igorklopov"
+        },
+        {
+          "email": "jamo@isotalo.fi",
+          "name": "jamo"
+        },
+        {
+          "email": "javier.velasco86@gmail.com",
+          "name": "javivelasco"
+        },
+        {
+          "email": "joecohenr@gmail.com",
+          "name": "joecohens"
+        },
+        {
+          "email": "johnotander@gmail.com",
+          "name": "johno"
+        },
+        {
+          "email": "leo@zeit.co",
+          "name": "leo"
+        },
+        {
+          "email": "gelipp@gmail.com",
+          "name": "lipp"
+        },
+        {
+          "email": "me@matheus.top",
+          "name": "matheuss"
+        },
+        {
+          "email": "naoyuki.kanezawa@gmail.com",
+          "name": "nkzawa"
+        },
+        {
+          "email": "olli@zeit.co",
+          "name": "olliv"
+        },
+        {
+          "email": "ds303077135@gmail.com",
+          "name": "quietshu"
+        },
+        {
+          "email": "rauchg@gmail.com",
+          "name": "rauchg"
+        },
+        {
+          "email": "tejas@tejas.qa",
+          "name": "tejaskumar"
+        },
+        {
+          "email": "tim@timneutkens.nl",
+          "name": "timneutkens"
+        },
+        {
+          "email": "nathan@tootallnate.net",
+          "name": "tootallnate"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/arg_3.0.0_1544792022944_0.5736200505986897"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.0.1": {
+      "name": "arg",
+      "version": "4.0.1",
+      "description": "Another simple argument parser",
+      "main": "index.js",
+      "types": "index.d.ts",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zeit/arg.git"
+      },
+      "author": {
+        "name": "Josh Junon",
+        "email": "junon@zeit.co"
+      },
+      "license": "MIT",
+      "scripts": {
+        "pretest": "xo",
+        "test": "WARN_EXIT=1 jest --coverage -w 2"
+      },
+      "xo": {
+        "rules": {
+          "complexity": 0,
+          "max-depth": 0
+        }
+      },
+      "devDependencies": {
+        "chai": "^4.1.1",
+        "jest": "^20.0.4",
+        "xo": "^0.18.2"
+      },
+      "gitHead": "f17ffd2ce4fe2aff9deabf3f008195fdba7a6f5d",
+      "bugs": {
+        "url": "https://github.com/zeit/arg/issues"
+      },
+      "homepage": "https://github.com/zeit/arg#readme",
+      "_id": "arg@4.0.1",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.14.2",
+      "_npmUser": {
+        "name": "qix",
+        "email": "i.am.qix@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-beu38yBAP+6n5KPnEOx1xw6TUv0aCZSPwaYhnjG7Vf4vq0N/ry2ZcGJwPEud/0fNFi9Z4zpt97sboMQhS5kTsQ==",
+        "shasum": "dffcf2b647587e65754f95105a89c5c47419653d",
+        "tarball": "https://registry.npmjs.org/arg/-/arg-4.0.1.tgz",
+        "fileCount": 5,
+        "unpackedSize": 12100,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcJpAECRA9TVsSAnZWagAAbi8P/A/OSVrCVCSAKcUfG0b8\nT/laweP+MIwLI/wpHTBaowO1gBNKdYhH2Isktf5Aoa8HowaSeqdMG7d9L1zM\nsjCm/SSMZpga/tFz+AU/17TZnZOeug27snv5qmziDkWkyrIouzt8Hw+6mJ01\ntGqkFOecgnjjXC9EvF+ytmaNOIhMCjPC+6ibopBwtcRD85X/wqh/ybx2yRDk\npVx477+ByQ9SI4Trm6DFNyzXEnT3G50wO3PO6AHmGGit490+4GzzfI7+laUz\nJ2Rh9egEiOQAzXyxXGHCgm12H0zX0xLfD79hAc5EVInaRjnXucsW5coRcKC8\nzjAr6eIh5e6XuavFxg2uyjVylhXu0tGesNFy/hTohoXHzrhavHr2/8Kfc5TE\n3Vz00FH96PDajpdUxwTSSBS5JDcIMGT41XAxHO4Hl9RyOlCeGNlQypQXkVdA\ngG+EcTmGelZNL15NToxyapS0C5dMuEoLtFShB1bgGzcm7cr8y+/JiyHoDpYQ\n95bwNfglYpuCz/iOCZcscOCNCpcITsJQR0HbOLVGKq+Hk8u5o0Zxt0atdSwF\ndCPuknx1B34VVUAzcV+LtyKDRczw/bcgw8HSWWDdGfc+km5ttQdg8+JY4km2\njhMSIe8X4/EMDXSFw1nIgbau91MKNEZ/0gFJdA0403Duciuc7mF6sWThxTVC\nI8O9\r\n=Lm1f\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "arunoda.susiripala@gmail.com",
+          "name": "arunoda"
+        },
+        {
+          "email": "thecodetheory@gmail.com",
+          "name": "codetheory"
+        },
+        {
+          "email": "mail@connordav.is",
+          "name": "dav-is"
+        },
+        {
+          "email": "dale@divmain.com",
+          "name": "divmain"
+        },
+        {
+          "email": "fivepointseven@icloud.com",
+          "name": "fivepointseven"
+        },
+        {
+          "email": "hharnisc@gmail.com",
+          "name": "hharnisc"
+        },
+        {
+          "email": "hello@evilrabb.it",
+          "name": "iamevilrabbit"
+        },
+        {
+          "email": "igor@klopov.com",
+          "name": "igorklopov"
+        },
+        {
+          "email": "jamo@isotalo.fi",
+          "name": "jamo"
+        },
+        {
+          "email": "javier.velasco86@gmail.com",
+          "name": "javivelasco"
+        },
+        {
+          "email": "joecohenr@gmail.com",
+          "name": "joecohens"
+        },
+        {
+          "email": "juancampa@gmail.com",
+          "name": "juancampa"
+        },
+        {
+          "email": "leo@zeit.co",
+          "name": "leo"
+        },
+        {
+          "email": "gelipp@gmail.com",
+          "name": "lipp"
+        },
+        {
+          "email": "me@matheus.top",
+          "name": "matheuss"
+        },
+        {
+          "email": "naoyuki.kanezawa@gmail.com",
+          "name": "nkzawa"
+        },
+        {
+          "email": "olli@zeit.co",
+          "name": "olliv"
+        },
+        {
+          "email": "i.am.qix@gmail.com",
+          "name": "qix"
+        },
+        {
+          "email": "ds303077135@gmail.com",
+          "name": "quietshu"
+        },
+        {
+          "email": "rauchg@gmail.com",
+          "name": "rauchg"
+        },
+        {
+          "email": "steven@ceriously.com",
+          "name": "styfle"
+        },
+        {
+          "email": "tejas@tejas.qa",
+          "name": "tejaskumar"
+        },
+        {
+          "email": "tim@timneutkens.nl",
+          "name": "timneutkens"
+        },
+        {
+          "email": "nathan@tootallnate.net",
+          "name": "tootallnate"
+        },
+        {
+          "email": "team@zeit.co",
+          "name": "zeit-bot"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/arg_4.0.1_1546031107922_0.3296507786623166"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.1.0": {
+      "name": "arg",
+      "version": "4.1.0",
+      "description": "Another simple argument parser",
+      "main": "index.js",
+      "types": "index.d.ts",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zeit/arg.git"
+      },
+      "author": {
+        "name": "Josh Junon",
+        "email": "junon@zeit.co"
+      },
+      "license": "MIT",
+      "scripts": {
+        "pretest": "xo",
+        "test": "WARN_EXIT=1 jest --coverage -w 2"
+      },
+      "xo": {
+        "rules": {
+          "complexity": 0,
+          "max-depth": 0
+        }
+      },
+      "devDependencies": {
+        "chai": "^4.1.1",
+        "jest": "^20.0.4",
+        "xo": "^0.18.2"
+      },
+      "gitHead": "5e5b9bd4671ccf8952aee4e96e47288dd9fab0a1",
+      "bugs": {
+        "url": "https://github.com/zeit/arg/issues"
+      },
+      "homepage": "https://github.com/zeit/arg#readme",
+      "_id": "arg@4.1.0",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.14.2",
+      "_npmUser": {
+        "name": "qix",
+        "email": "i.am.qix@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-ZWc51jO3qegGkVh8Hwpv636EkbesNV5ZNQPCtRa+0qytRYPEs9IYT9qITY9buezqUH5uqyzlWLcufrzU2rffdg==",
+        "shasum": "583c518199419e0037abb74062c37f8519e575f0",
+        "tarball": "https://registry.npmjs.org/arg/-/arg-4.1.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 12592,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcLIogCRA9TVsSAnZWagAAA2wP/3NNxMt2KdSZp02gUtRc\nJZ0MTR2RqoEXjweRJ+bIkmaDT3o7IGYeEpJjVGLYZpl8AVSFr7vmXL29iiNH\nd9QnYrjUvhHoLcJndg55IGSu8MdublPwRfd2R9aAKjoX8AN1hn8gGlN8y/VB\nxwMtA1Zqm+MmOK1LXELJfkfdLnAlx5VBMSC583mHK46YcA+fgjII7MZsPafV\n+Q7HStFH9/SF6WMZNnrc3cKygxC1cCD1WNB0VPlDZqq+epS5/Yqvwubctbbp\nQ+33yFmIhcsTgLvoBhOlYwyNF2pn2uGCK37xWCvEFzDjBRsCcUdKeuJGxf4q\nEljyLiMy/IqWjL0db3sF/8wg+esFqrFVtOPr4TKRvu3Cb3wuMbllaE23gwH7\n78PTakHW+EeZCgJIo3MDSIW9KWC/yLddqCzmZapoUYKtSF9nclRzkrns5zLl\ndnScAXB3mzdJuEYQ4r/Vq/hunKLJ3Zdy8/9EUUYUCbwIQJ6caSQJNnYnU4Us\niANKPqBgVHiY27a1kDhQ6j9aCcTo9EGsLKqvD1zj7aNX1TrIh4oMrt8tryDL\nysh4Z/vDWCkTBU7oDCevCAeRyKOiTWgaZn4GTE05p7ApyXG+jQ72g/VU286M\nzM9/g31WjWbzo4YfJZMPpYx3o/qPiQZb1Q3PgJTl18oQabCWrnEyi1DuO/Pb\nroaB\r\n=4KPQ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "arunoda.susiripala@gmail.com",
+          "name": "arunoda"
+        },
+        {
+          "email": "thecodetheory@gmail.com",
+          "name": "codetheory"
+        },
+        {
+          "email": "mail@connordav.is",
+          "name": "dav-is"
+        },
+        {
+          "email": "dale@divmain.com",
+          "name": "divmain"
+        },
+        {
+          "email": "fivepointseven@icloud.com",
+          "name": "fivepointseven"
+        },
+        {
+          "email": "hharnisc@gmail.com",
+          "name": "hharnisc"
+        },
+        {
+          "email": "hello@evilrabb.it",
+          "name": "iamevilrabbit"
+        },
+        {
+          "email": "igor@klopov.com",
+          "name": "igorklopov"
+        },
+        {
+          "email": "jamo@isotalo.fi",
+          "name": "jamo"
+        },
+        {
+          "email": "javier.velasco86@gmail.com",
+          "name": "javivelasco"
+        },
+        {
+          "email": "joecohenr@gmail.com",
+          "name": "joecohens"
+        },
+        {
+          "email": "juancampa@gmail.com",
+          "name": "juancampa"
+        },
+        {
+          "email": "leo@zeit.co",
+          "name": "leo"
+        },
+        {
+          "email": "gelipp@gmail.com",
+          "name": "lipp"
+        },
+        {
+          "email": "me@matheus.top",
+          "name": "matheuss"
+        },
+        {
+          "email": "naoyuki.kanezawa@gmail.com",
+          "name": "nkzawa"
+        },
+        {
+          "email": "olli@zeit.co",
+          "name": "olliv"
+        },
+        {
+          "email": "i.am.qix@gmail.com",
+          "name": "qix"
+        },
+        {
+          "email": "ds303077135@gmail.com",
+          "name": "quietshu"
+        },
+        {
+          "email": "rauchg@gmail.com",
+          "name": "rauchg"
+        },
+        {
+          "email": "steven@ceriously.com",
+          "name": "styfle"
+        },
+        {
+          "email": "tejas@tejas.qa",
+          "name": "tejaskumar"
+        },
+        {
+          "email": "tim@timneutkens.nl",
+          "name": "timneutkens"
+        },
+        {
+          "email": "nathan@tootallnate.net",
+          "name": "tootallnate"
+        },
+        {
+          "email": "team@zeit.co",
+          "name": "zeit-bot"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/arg_4.1.0_1546422815737_0.8567037382412817"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.1.1": {
+      "name": "arg",
+      "version": "4.1.1",
+      "description": "Another simple argument parser",
+      "main": "index.js",
+      "types": "index.d.ts",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zeit/arg.git"
+      },
+      "author": {
+        "name": "Josh Junon",
+        "email": "junon@zeit.co"
+      },
+      "license": "MIT",
+      "scripts": {
+        "pretest": "xo",
+        "test": "WARN_EXIT=1 jest --coverage -w 2"
+      },
+      "xo": {
+        "rules": {
+          "complexity": 0,
+          "max-depth": 0,
+          "no-div-regex": 0
+        }
+      },
+      "devDependencies": {
+        "chai": "^4.1.1",
+        "jest": "^20.0.4",
+        "xo": "^0.18.2"
+      },
+      "gitHead": "e62c2ab8a0056504b9a20f0f1a037a436861c546",
+      "bugs": {
+        "url": "https://github.com/zeit/arg/issues"
+      },
+      "homepage": "https://github.com/zeit/arg#readme",
+      "_id": "arg@4.1.1",
+      "_nodeVersion": "12.4.0",
+      "_npmVersion": "6.9.0",
+      "dist": {
+        "integrity": "sha512-SlmP3fEA88MBv0PypnXZ8ZfJhwmDeIE3SP71j37AiXQBXYosPV0x6uISAaHYSlSVhmHOVkomen0tbGk6Anlebw==",
+        "shasum": "485f8e7c390ce4c5f78257dbea80d4be11feda4c",
+        "tarball": "https://registry.npmjs.org/arg/-/arg-4.1.1.tgz",
+        "fileCount": 5,
+        "unpackedSize": 12598,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdKGUVCRA9TVsSAnZWagAAjVcP/35h/Wk9M2KGu3wjwzRy\nIoQlJYwpgSNY31tKVT1GLB5mjZ8dG9Jxq7cCSmMiQe31LL8o3226siDB0fxL\nIzTlU4eETRiFEgxC9u/ljvRb5s7lavrhhuuMglfgKmPiFf2UifTUYy5IM9+2\n0+05788cmxtTgohqNG373ONL6gFaIdeqBiVwTkBXy82DieseEkDsc8v2DuF5\nSBzu00s9ksnEOM56I3k9J87NReS9Si2i03RApwHXgrTHPhV3mCUpt9s9TN3k\n4I9ck8d3jfJKmBMJ5u+727s5qC+47PuS4VRrxRE/auZahfXOGhJTbXV+LP6u\nB2YL5ob48gxzmGVn4/SolY+mxVVYx/+XqugEfJm456ZQNsNu87SYYWXrQApl\nActlodBHJt+Yl+8Wip5jRZ3TQOLuxKaOh6IjrVggJn+FOzDNaBKCwo2vfN0e\n75eBjJsXhdMWczZBQ85XLduNLpMcHCJ1FYdl4qb0n83F17jb9y16wv9shif2\nUU/zliRz/G76imWIEtqnmHyYQbqiPnspCQbU+Pwt+eD5It2IgIwMtGnfwzm+\nlydKQkH14j+8f1a90MWRUZ3OQ+dJmGixNuyvDWtEpVkeYcaBaJQXoVkO3DVg\noE27a6XRZciMRSjvHNkp9FjvQuqDBYoypgexvLe0p7uMBQTeZXgWRZlH9MCo\n07ez\r\n=qVME\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "alexandro@phi.nz",
+          "name": "alexaltea"
+        },
+        {
+          "email": "ana.trajkovska2015@gmail.com",
+          "name": "anatrajkovska"
+        },
+        {
+          "email": "artzbitz@gmail.com",
+          "name": "andybitz"
+        },
+        {
+          "email": "arunoda.susiripala@gmail.com",
+          "name": "arunoda"
+        },
+        {
+          "email": "franco@basement.studio",
+          "name": "arzafran"
+        },
+        {
+          "email": "atcastle@gmail.com",
+          "name": "atcastle"
+        },
+        {
+          "email": "caarlos0@gmail.com",
+          "name": "caarlos0"
+        },
+        {
+          "email": "thecodetheory@gmail.com",
+          "name": "codetheory"
+        },
+        {
+          "email": "allenhai03@gmail.com",
+          "name": "coetry"
+        },
+        {
+          "email": "mail@connordav.is",
+          "name": "dav-is"
+        },
+        {
+          "email": "jason@developit.ca",
+          "name": "developit"
+        },
+        {
+          "email": "fivepointseven@icloud.com",
+          "name": "fivepointseven"
+        },
+        {
+          "email": "guybedford@gmail.com",
+          "name": "guybedford"
+        },
+        {
+          "email": "hharnisc@gmail.com",
+          "name": "hharnisc"
+        },
+        {
+          "email": "houssein.djirdeh@gmail.com",
+          "name": "housseindjirdeh"
+        },
+        {
+          "email": "lukas@huvar.cz",
+          "name": "huvik"
+        },
+        {
+          "email": "hello@evilrabb.it",
+          "name": "iamevilrabbit"
+        },
+        {
+          "email": "igor@klopov.com",
+          "name": "igorklopov"
+        },
+        {
+          "email": "jj@jjsweb.site",
+          "name": "ijjk"
+        },
+        {
+          "email": "janicklasralph036@gmail.com",
+          "name": "janicklas-ralph"
+        },
+        {
+          "email": "javier.velasco86@gmail.com",
+          "name": "javivelasco"
+        },
+        {
+          "email": "joecohenr@gmail.com",
+          "name": "joecohens"
+        },
+        {
+          "email": "juancampa@gmail.com",
+          "name": "juancampa"
+        },
+        {
+          "email": "npm@keanulee.com",
+          "name": "keanulee"
+        },
+        {
+          "email": "leo@zeit.co",
+          "name": "leo"
+        },
+        {
+          "email": "luisito453@gmail.com",
+          "name": "lfades"
+        },
+        {
+          "email": "luc.leray@gmail.com",
+          "name": "lucleray"
+        },
+        {
+          "email": "manovotny@gmail.com",
+          "name": "manovotny"
+        },
+        {
+          "email": "marcosnils@gmail.com",
+          "name": "marcosnils"
+        },
+        {
+          "email": "me@matheus.top",
+          "name": "matheuss"
+        },
+        {
+          "email": "mrfix84@gmail.com",
+          "name": "mfix22"
+        },
+        {
+          "email": "mark.glagola@gmail.com",
+          "name": "mglagola"
+        },
+        {
+          "email": "mail@msweeneydev.com",
+          "name": "msweeneydev"
+        },
+        {
+          "email": "naoyuki.kanezawa@gmail.com",
+          "name": "nkzawa"
+        },
+        {
+          "email": "olli@zeit.co",
+          "name": "olliv"
+        },
+        {
+          "email": "pvco.coursey@gmail.com",
+          "name": "paco"
+        },
+        {
+          "email": "paulogdemitri@gmail.com",
+          "name": "paulogdm"
+        },
+        {
+          "email": "i.am.qix@gmail.com",
+          "name": "qix"
+        },
+        {
+          "email": "ds303077135@gmail.com",
+          "name": "quietshu"
+        },
+        {
+          "email": "rabautse@gmail.com",
+          "name": "rabaut"
+        },
+        {
+          "email": "ragojosefrancisco@gmail.com",
+          "name": "ragojose"
+        },
+        {
+          "email": "rauchg@gmail.com",
+          "name": "rauchg"
+        },
+        {
+          "email": "sbanskota08@gmail.com",
+          "name": "sarupbanskota"
+        },
+        {
+          "email": "skllcrn@zeit.co",
+          "name": "skllcrn"
+        },
+        {
+          "email": "t.sophearak@gmail.com",
+          "name": "sophearak"
+        },
+        {
+          "email": "shubhie@gmail.com",
+          "name": "spanicker"
+        },
+        {
+          "email": "steven@ceriously.com",
+          "name": "styfle"
+        },
+        {
+          "email": "timer150@gmail.com",
+          "name": "timer"
+        },
+        {
+          "email": "tim@timneutkens.nl",
+          "name": "timneutkens"
+        },
+        {
+          "email": "nathan@tootallnate.net",
+          "name": "tootallnate"
+        },
+        {
+          "email": "iyatomi@gmail.com",
+          "name": "umegaya"
+        },
+        {
+          "email": "williamli@bbi.io",
+          "name": "williamli"
+        },
+        {
+          "email": "team@zeit.co",
+          "name": "zeit-bot"
+        }
+      ],
+      "_npmUser": {
+        "name": "qix",
+        "email": "i.am.qix@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/arg_4.1.1_1562928405087_0.555279075456431"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.1.2": {
+      "name": "arg",
+      "version": "4.1.2",
+      "description": "Another simple argument parser",
+      "main": "index.js",
+      "types": "index.d.ts",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zeit/arg.git"
+      },
+      "author": {
+        "name": "Josh Junon",
+        "email": "junon@zeit.co"
+      },
+      "license": "MIT",
+      "scripts": {
+        "pretest": "xo",
+        "test": "WARN_EXIT=1 jest --coverage -w 2"
+      },
+      "xo": {
+        "rules": {
+          "complexity": 0,
+          "max-depth": 0,
+          "no-div-regex": 0
+        }
+      },
+      "devDependencies": {
+        "chai": "^4.1.1",
+        "jest": "^20.0.4",
+        "xo": "^0.18.2"
+      },
+      "gitHead": "f01c810d0d5b4284c9d999326ddedb23e55372ad",
+      "bugs": {
+        "url": "https://github.com/zeit/arg/issues"
+      },
+      "homepage": "https://github.com/zeit/arg#readme",
+      "_id": "arg@4.1.2",
+      "_nodeVersion": "10.16.0",
+      "_npmVersion": "6.9.0",
+      "dist": {
+        "integrity": "sha512-+ytCkGcBtHZ3V2r2Z06AncYO8jz46UEamcspGoU8lHcEbpn6J77QK0vdWvChsclg/tM5XIJC5tnjmPp7Eq6Obg==",
+        "shasum": "e70c90579e02c63d80e3ad4e31d8bfdb8bd50064",
+        "tarball": "https://registry.npmjs.org/arg/-/arg-4.1.2.tgz",
+        "fileCount": 5,
+        "unpackedSize": 12623,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd3AfaCRA9TVsSAnZWagAA5d8P/2iBeRMjoL4AsVmUisxg\nh+sGZToijvubvV3NWhb010i1k3n21vDVu7sQaTQHRgEfio7OpuiKy6bjYB7R\nw2CHS5N94w+EUybxL8cH6cIEsJNiiPRduFOlV3qtE5J9zcM0x7X9v0s6ftkd\nD09rEPixPx4VwG5M2+6Tgs2Q7YdulB7lE1XQxr6S/OEEKNzwcruy6z5o+eu3\nJlt+gZPx1XQJqZ+yc0DjVZF7ImbhCF/MzXdQsRYq6RzImE+SEbzmU1r8f/wd\nIcSCNZl64hxV/xJPEjsImSb8U6pnMoC4yk7C9yyRCTo2F5KVf9gWD056RJPZ\nZayz4QDHnfpKqMHKp8ATyBfB6zyKK03LCRV1PFhIk73z0C7cVwwe3d1CEdYa\n+rKpISX7BZFpT9unTldbmZ7ChkfhtxZlODFoTpCYyShV4vb+IzDYeaZpp0hK\nL+zkGpCaqZH4CvnKjMqO7OIPL/oylOYqouk2G5bBuSnuMBzes698n47c7VA0\nEh94l33In7lwLzKoDClypmkj/qTna6rrVQFVIbtI2aUovZ01lsmoyOVClWIO\nQ69ZRgLVQhJknU9GeOn6Q51LgSxoY+qTiwh8bzmyReUOmu1Zn0ejApUUc8Tu\n7zKZxuNjh3MPeV3AsRyDb3DhouvIhWSmiGCjgIKYMf7Mif+XtteTRtRyYood\nv/Dz\r\n=y4sy\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "alexandro@phi.nz",
+          "name": "alexaltea"
+        },
+        {
+          "email": "ana.trajkovska2015@gmail.com",
+          "name": "anatrajkovska"
+        },
+        {
+          "email": "artzbitz@gmail.com",
+          "name": "andybitz"
+        },
+        {
+          "email": "arunoda.susiripala@gmail.com",
+          "name": "arunoda"
+        },
+        {
+          "email": "franco@basement.studio",
+          "name": "arzafran"
+        },
+        {
+          "email": "atcastle@gmail.com",
+          "name": "atcastle"
+        },
+        {
+          "email": "caarlos0@gmail.com",
+          "name": "caarlos0"
+        },
+        {
+          "email": "chris@leishman.org",
+          "name": "cleishm"
+        },
+        {
+          "email": "thecodetheory@gmail.com",
+          "name": "codetheory"
+        },
+        {
+          "email": "allenhai03@gmail.com",
+          "name": "coetry"
+        },
+        {
+          "email": "mail@connordav.is",
+          "name": "dav-is"
+        },
+        {
+          "email": "jason@developit.ca",
+          "name": "developit"
+        },
+        {
+          "email": "fivepointseven@icloud.com",
+          "name": "fivepointseven"
+        },
+        {
+          "email": "gbmonaco@google.com",
+          "name": "gmonaco"
+        },
+        {
+          "email": "guybedford@gmail.com",
+          "name": "guybedford"
+        },
+        {
+          "email": "houssein.djirdeh@gmail.com",
+          "name": "housseindjirdeh"
+        },
+        {
+          "email": "hello@evilrabb.it",
+          "name": "iamevilrabbit"
+        },
+        {
+          "email": "igor@klopov.com",
+          "name": "igorklopov"
+        },
+        {
+          "email": "jj@jjsweb.site",
+          "name": "ijjk"
+        },
+        {
+          "email": "janicklasralph036@gmail.com",
+          "name": "janicklas-ralph"
+        },
+        {
+          "email": "javier.velasco86@gmail.com",
+          "name": "javivelasco"
+        },
+        {
+          "email": "jan.krems@gmail.com",
+          "name": "jkrems"
+        },
+        {
+          "email": "joecohenr@gmail.com",
+          "name": "joecohens"
+        },
+        {
+          "email": "juancampa@gmail.com",
+          "name": "juancampa"
+        },
+        {
+          "email": "npm@keanulee.com",
+          "name": "keanulee"
+        },
+        {
+          "email": "josefrancisco.verdu@gmail.com",
+          "name": "kikobeats"
+        },
+        {
+          "email": "mindrun@icloud.com",
+          "name": "leo"
+        },
+        {
+          "email": "luisito453@gmail.com",
+          "name": "lfades"
+        },
+        {
+          "email": "luc.leray@gmail.com",
+          "name": "lucleray"
+        },
+        {
+          "email": "manovotny@gmail.com",
+          "name": "manovotny"
+        },
+        {
+          "email": "marcosnils@gmail.com",
+          "name": "marcosnils"
+        },
+        {
+          "email": "me@matheus.top",
+          "name": "matheuss"
+        },
+        {
+          "email": "mrfix84@gmail.com",
+          "name": "mfix22"
+        },
+        {
+          "email": "mark.glagola@gmail.com",
+          "name": "mglagola"
+        },
+        {
+          "email": "mail@msweeneydev.com",
+          "name": "msweeneydev"
+        },
+        {
+          "email": "naoyuki.kanezawa@gmail.com",
+          "name": "nkzawa"
+        },
+        {
+          "email": "pvco.coursey@gmail.com",
+          "name": "paco"
+        },
+        {
+          "email": "paulogdemitri@gmail.com",
+          "name": "paulogdm"
+        },
+        {
+          "email": "prateek89born@gmail.com",
+          "name": "prateekbh"
+        },
+        {
+          "email": "i.am.qix@gmail.com",
+          "name": "qix"
+        },
+        {
+          "email": "ds303077135@gmail.com",
+          "name": "quietshu"
+        },
+        {
+          "email": "rabautse@gmail.com",
+          "name": "rabaut"
+        },
+        {
+          "email": "ragojosefrancisco@gmail.com",
+          "name": "ragojose"
+        },
+        {
+          "email": "rauchg@gmail.com",
+          "name": "rauchg"
+        },
+        {
+          "email": "sbanskota08@gmail.com",
+          "name": "sarupbanskota"
+        },
+        {
+          "email": "skllcrn@zeit.co",
+          "name": "skllcrn"
+        },
+        {
+          "email": "t.sophearak@gmail.com",
+          "name": "sophearak"
+        },
+        {
+          "email": "shubhie@gmail.com",
+          "name": "spanicker"
+        },
+        {
+          "email": "steven@ceriously.com",
+          "name": "styfle"
+        },
+        {
+          "email": "timer150@gmail.com",
+          "name": "timer"
+        },
+        {
+          "email": "tim@timneutkens.nl",
+          "name": "timneutkens"
+        },
+        {
+          "email": "nathan@tootallnate.net",
+          "name": "tootallnate"
+        },
+        {
+          "email": "iyatomi@gmail.com",
+          "name": "umegaya"
+        },
+        {
+          "email": "williamli@bbi.io",
+          "name": "williamli"
+        },
+        {
+          "email": "team@zeit.co",
+          "name": "zeit-bot"
+        }
+      ],
+      "_npmUser": {
+        "name": "qix",
+        "email": "i.am.qix@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/arg_4.1.2_1574701017653_0.8580659126986387"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.1.3": {
+      "name": "arg",
+      "version": "4.1.3",
+      "description": "Another simple argument parser",
+      "main": "index.js",
+      "types": "index.d.ts",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zeit/arg.git"
+      },
+      "author": {
+        "name": "Josh Junon",
+        "email": "junon@zeit.co"
+      },
+      "license": "MIT",
+      "scripts": {
+        "pretest": "xo",
+        "test": "WARN_EXIT=1 jest --coverage -w 2"
+      },
+      "xo": {
+        "rules": {
+          "complexity": 0,
+          "max-depth": 0,
+          "no-div-regex": 0
+        }
+      },
+      "devDependencies": {
+        "chai": "^4.1.1",
+        "jest": "^20.0.4",
+        "xo": "^0.18.2"
+      },
+      "gitHead": "3ce0a32c783e47cca1c549ded84b48347bc5d4be",
+      "bugs": {
+        "url": "https://github.com/zeit/arg/issues"
+      },
+      "homepage": "https://github.com/zeit/arg#readme",
+      "_id": "arg@4.1.3",
+      "_nodeVersion": "10.16.0",
+      "_npmVersion": "6.9.0",
+      "dist": {
+        "integrity": "sha512-58S9QDqG0Xx27YwPSt9fJxivjYl432YCwfDMfZ+71RAqUrZef7LrKQZ3LHLOwCS4FLNBplP533Zx895SeOCHvA==",
+        "shasum": "269fc7ad5b8e42cb63c896d5666017261c144089",
+        "tarball": "https://registry.npmjs.org/arg/-/arg-4.1.3.tgz",
+        "fileCount": 5,
+        "unpackedSize": 12901,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeNwyLCRA9TVsSAnZWagAACRwQAKPjS4mhwNPdU2Ayqtm8\nD9id8za+eqWYJEFbo+cz9MpWCDeCf5/2dyD43mei4XYqDCUeKfhxVffG2PXn\n+vj3SrrZybw/blI3Ut6dmCu8/FZmAgSNTotTytiAe/qxf1A2mLqVTHZ+sTZN\nZkpwnYJUDaFStIWRBWwKkrg5RHK2hQOpqz7b7mRfUgYCI+Fmf3n9sDlu8lpv\nuxuvgzO8sM+BGhKjD7kmcalN/oGf+CkaznY7kpaljWohqq5TdgUyK3MN8p8J\nLrU82+pZYL+jRDy0SHclXm6eisIxygAqojkM+mttrhKvzEfcoDyX6jIQ+Yxn\nmOGMhtHCMh9M7HHpfRdaxx6HKaulS0TlhukovtseW1+8Xulb1ou80zr5lSGf\nngo+aHDmMtPEnsL5JIaXWlre4lK1aG+p+ph6D3QIRUM0szSbVGW4XMnSSfvb\nS0LCrF+P6uMYJRlRmZO4IzWX5W4uh2ec7CsIyQ8A0xWH6iGfiXTfpT5Q7fu7\nic08I52ZSah7/HyXWUeV1uBBOSY5rBLcg8/3bEA4/XZKZZ3CxOfQHYincDSh\nZXclF4tfx8dctSDpzy5WonzfD5ijtr50sNJmuH2WNaPYNnrd5M2O6uDjsJps\nUtjPeswz7UEokLsneYI65EWedeL5D55V70J6BYPu1wst9SokL+fatsfonjwc\nm7eU\r\n=+xEG\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "alexandro@phi.nz",
+          "name": "alexaltea"
+        },
+        {
+          "email": "ana.trajkovska2015@gmail.com",
+          "name": "anatrajkovska"
+        },
+        {
+          "email": "artzbitz@gmail.com",
+          "name": "andybitz"
+        },
+        {
+          "email": "arunoda.susiripala@gmail.com",
+          "name": "arunoda"
+        },
+        {
+          "email": "franco@basement.studio",
+          "name": "arzafran"
+        },
+        {
+          "email": "atcastle@gmail.com",
+          "name": "atcastle"
+        },
+        {
+          "email": "caarlos0@gmail.com",
+          "name": "caarlos0"
+        },
+        {
+          "email": "shu@chibicode.com",
+          "name": "chibicode"
+        },
+        {
+          "email": "chris@leishman.org",
+          "name": "cleishm"
+        },
+        {
+          "email": "thecodetheory@gmail.com",
+          "name": "codetheory"
+        },
+        {
+          "email": "allenhai03@gmail.com",
+          "name": "coetry"
+        },
+        {
+          "email": "mail@connordav.is",
+          "name": "dav-is"
+        },
+        {
+          "email": "jason@developit.ca",
+          "name": "developit"
+        },
+        {
+          "email": "fivepointseven@icloud.com",
+          "name": "fivepointseven"
+        },
+        {
+          "email": "g.cobben@gmail.com",
+          "name": "gielcobben"
+        },
+        {
+          "email": "gbmonaco@google.com",
+          "name": "gmonaco"
+        },
+        {
+          "email": "guybedford@gmail.com",
+          "name": "guybedford"
+        },
+        {
+          "email": "houssein.djirdeh@gmail.com",
+          "name": "housseindjirdeh"
+        },
+        {
+          "email": "hello@evilrabb.it",
+          "name": "iamevilrabbit"
+        },
+        {
+          "email": "igor@klopov.com",
+          "name": "igorklopov"
+        },
+        {
+          "email": "jj@jjsweb.site",
+          "name": "ijjk"
+        },
+        {
+          "email": "janicklasralph036@gmail.com",
+          "name": "janicklas-ralph"
+        },
+        {
+          "email": "jared@palmer.net",
+          "name": "jaredpalmer"
+        },
+        {
+          "email": "javier.velasco86@gmail.com",
+          "name": "javivelasco"
+        },
+        {
+          "email": "jan.krems@gmail.com",
+          "name": "jkrems"
+        },
+        {
+          "email": "joecohenr@gmail.com",
+          "name": "joecohens"
+        },
+        {
+          "email": "juancampa@gmail.com",
+          "name": "juancampa"
+        },
+        {
+          "email": "npm@keanulee.com",
+          "name": "keanulee"
+        },
+        {
+          "email": "josefrancisco.verdu@gmail.com",
+          "name": "kikobeats"
+        },
+        {
+          "email": "mindrun@icloud.com",
+          "name": "leo"
+        },
+        {
+          "email": "luisito453@gmail.com",
+          "name": "lfades"
+        },
+        {
+          "email": "luc.leray@gmail.com",
+          "name": "lucleray"
+        },
+        {
+          "email": "manovotny@gmail.com",
+          "name": "manovotny"
+        },
+        {
+          "email": "marcosnils@gmail.com",
+          "name": "marcosnils"
+        },
+        {
+          "email": "me@matheus.top",
+          "name": "matheuss"
+        },
+        {
+          "email": "mrfix84@gmail.com",
+          "name": "mfix22"
+        },
+        {
+          "email": "mark.glagola@gmail.com",
+          "name": "mglagola"
+        },
+        {
+          "email": "mail@msweeneydev.com",
+          "name": "msweeneydev"
+        },
+        {
+          "email": "naoyuki.kanezawa@gmail.com",
+          "name": "nkzawa"
+        },
+        {
+          "email": "pvco.coursey@gmail.com",
+          "name": "paco"
+        },
+        {
+          "email": "paulogdemitri@gmail.com",
+          "name": "paulogdm"
+        },
+        {
+          "email": "prateek89born@gmail.com",
+          "name": "prateekbh"
+        },
+        {
+          "email": "i.am.qix@gmail.com",
+          "name": "qix"
+        },
+        {
+          "email": "ds303077135@gmail.com",
+          "name": "quietshu"
+        },
+        {
+          "email": "rabautse@gmail.com",
+          "name": "rabaut"
+        },
+        {
+          "email": "ragojosefrancisco@gmail.com",
+          "name": "ragojose"
+        },
+        {
+          "email": "rauchg@gmail.com",
+          "name": "rauchg"
+        },
+        {
+          "email": "sbanskota08@gmail.com",
+          "name": "sarupbanskota"
+        },
+        {
+          "email": "skllcrn@zeit.co",
+          "name": "skllcrn"
+        },
+        {
+          "email": "shubhie@gmail.com",
+          "name": "spanicker"
+        },
+        {
+          "email": "steven@ceriously.com",
+          "name": "styfle"
+        },
+        {
+          "email": "timer150@gmail.com",
+          "name": "timer"
+        },
+        {
+          "email": "tim@timneutkens.nl",
+          "name": "timneutkens"
+        },
+        {
+          "email": "nathan@tootallnate.net",
+          "name": "tootallnate"
+        },
+        {
+          "email": "iyatomi@gmail.com",
+          "name": "umegaya"
+        },
+        {
+          "email": "williamli@bbi.io",
+          "name": "williamli"
+        },
+        {
+          "email": "team@zeit.co",
+          "name": "zeit-bot"
+        }
+      ],
+      "_npmUser": {
+        "name": "qix",
+        "email": "i.am.qix@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/arg_4.1.3_1580665994480_0.37399324996184813"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# Arg [![CircleCI](https://circleci.com/gh/zeit/arg.svg?style=svg)](https://circleci.com/gh/zeit/arg)\n\n`arg` is yet another command line option parser.\n\n## Installation\n\nUse Yarn or NPM to install.\n\n```console\n$ yarn add arg\n```\n\nor\n\n```console\n$ npm install arg\n```\n\n## Usage\n\n`arg()` takes either 1 or 2 arguments:\n\n1. Command line specification object (see below)\n2. Parse options (_Optional_, defaults to `{permissive: false, argv: process.argv.slice(2), stopAtPositional: false}`)\n\nIt returns an object with any values present on the command-line (missing options are thus\nmissing from the resulting object). Arg performs no validation/requirement checking - we\nleave that up to the application.\n\nAll parameters that aren't consumed by options (commonly referred to as \"extra\" parameters)\nare added to `result._`, which is _always_ an array (even if no extra parameters are passed,\nin which case an empty array is returned).\n\n```javascript\nconst arg = require('arg');\n\n// `options` is an optional parameter\nconst args = arg(spec, options = {permissive: false, argv: process.argv.slice(2)});\n```\n\nFor example:\n\n```console\n$ node ./hello.js --verbose -vvv --port=1234 -n 'My name' foo bar --tag qux --tag=qix -- --foobar\n```\n\n```javascript\n// hello.js\nconst arg = require('arg');\n\nconst args = arg({\n\t// Types\n\t'--help':    Boolean,\n\t'--version': Boolean,\n\t'--verbose': arg.COUNT,   // Counts the number of times --verbose is passed\n\t'--port':    Number,      // --port <number> or --port=<number>\n\t'--name':    String,      // --name <string> or --name=<string>\n\t'--tag':     [String],    // --tag <string> or --tag=<string>\n\n\t// Aliases\n\t'-v':        '--verbose',\n\t'-n':        '--name',    // -n <string>; result is stored in --name\n\t'--label':   '--name'     // --label <string> or --label=<string>;\n\t                          //     result is stored in --name\n});\n\nconsole.log(args);\n/*\n{\n\t_: [\"foo\", \"bar\", \"--foobar\"],\n\t'--port': 1234,\n\t'--verbose': 4,\n\t'--name': \"My name\",\n\t'--tag': [\"qux\", \"qix\"]\n}\n*/\n```\n\nThe values for each key=&gt;value pair is either a type (function or [function]) or a string (indicating an alias).\n\n- In the case of a function, the string value of the argument's value is passed to it,\n  and the return value is used as the ultimate value.\n\n- In the case of an array, the only element _must_ be a type function. Array types indicate\n  that the argument may be passed multiple times, and as such the resulting value in the returned\n  object is an array with all of the values that were passed using the specified flag.\n\n- In the case of a string, an alias is established. If a flag is passed that matches the _key_,\n  then the _value_ is substituted in its place.\n\nType functions are passed three arguments:\n\n1. The parameter value (always a string)\n2. The parameter name (e.g. `--label`)\n3. The previous value for the destination (useful for reduce-like operations or for supporting `-v` multiple times, etc.)\n\nThis means the built-in `String`, `Number`, and `Boolean` type constructors \"just work\" as type functions.\n\nNote that `Boolean` and `[Boolean]` have special treatment - an option argument is _not_ consumed or passed, but instead `true` is\nreturned. These options are called \"flags\".\n\nFor custom handlers that wish to behave as flags, you may pass the function through `arg.flag()`:\n\n```javascript\nconst arg = require('arg');\n\nconst argv = ['--foo', 'bar', '-ff', 'baz', '--foo', '--foo', 'qux', '-fff', 'qix'];\n\nfunction myHandler(value, argName, previousValue) {\n\t/* `value` is always `true` */\n\treturn 'na ' + (previousValue || 'batman!');\n}\n\nconst args = arg({\n\t'--foo': arg.flag(myHandler),\n\t'-f': '--foo'\n}, {\n\targv\n});\n\nconsole.log(args);\n/*\n{\n\t_: ['bar', 'baz', 'qux', 'qix'],\n\t'--foo': 'na na na na na na na na batman!'\n}\n*/\n```\n\nAs well, `arg` supplies a helper argument handler called `arg.COUNT`, which equivalent to a `[Boolean]` argument's `.length`\nproperty - effectively counting the number of times the boolean flag, denoted by the key, is passed on the command line..\nFor example, this is how you could implement `ssh`'s multiple levels of verbosity (`-vvvv` being the most verbose).\n\n```javascript\nconst arg = require('arg');\n\nconst argv = ['-AAAA', '-BBBB'];\n\nconst args = arg({\n\t'-A': arg.COUNT,\n\t'-B': [Boolean]\n}, {\n\targv\n});\n\nconsole.log(args);\n/*\n{\n\t_: [],\n\t'-A': 4,\n\t'-B': [true, true, true, true]\n}\n*/\n```\n\n### Options\n\nIf a second parameter is specified and is an object, it specifies parsing options to modify the behavior of `arg()`.\n\n#### `argv`\n\nIf you have already sliced or generated a number of raw arguments to be parsed (as opposed to letting `arg`\nslice them from `process.argv`) you may specify them in the `argv` option.\n\nFor example:\n\n```javascript\nconst args = arg(\n\t{\n\t\t'--foo': String\n\t}, {\n\t\targv: ['hello', '--foo', 'world']\n\t}\n);\n```\n\nresults in:\n\n```javascript\nconst args = {\n\t_: ['hello'],\n\t'--foo': 'world'\n};\n```\n\n#### `permissive`\n\nWhen `permissive` set to `true`, `arg` will push any unknown arguments\nonto the \"extra\" argument array (`result._`) instead of throwing an error about\nan unknown flag.\n\nFor example:\n\n```javascript\nconst arg = require('arg');\n\nconst argv = ['--foo', 'hello', '--qux', 'qix', '--bar', '12345', 'hello again'];\n\nconst args = arg(\n\t{\n\t\t'--foo': String,\n\t\t'--bar': Number\n\t}, {\n\t\targv,\n\t\tpermissive: true\n\t}\n);\n```\n\nresults in:\n\n```javascript\nconst args = {\n\t_:          ['--qux', 'qix', 'hello again'],\n\t'--foo':    'hello',\n\t'--bar':    12345\n}\n```\n\n#### `stopAtPositional`\n\nWhen `stopAtPositional` is set to `true`, `arg` will halt parsing at the first\npositional argument.\n\nFor example:\n\n```javascript\nconst arg = require('arg');\n\nconst argv = ['--foo', 'hello', '--bar'];\n\nconst args = arg(\n\t{\n\t\t'--foo': Boolean,\n\t\t'--bar': Boolean\n\t}, {\n\t\targv,\n\t\tstopAtPositional: true\n\t}\n);\n```\n\nresults in:\n\n```javascript\nconst args = {\n\t_: ['hello', '--bar'],\n\t'--foo': true\n};\n```\n\n### Errors\n\nSome errors that `arg` throws provide a `.code` property in order to aid in recovering from user error, or to\ndifferentiate between user error and developer error (bug).\n\n##### ARG_UNKNOWN_OPTION\n\nIf an unknown option (not defined in the spec object) is passed, an error with code `ARG_UNKNOWN_OPTION` will be thrown:\n```js\n// cli.js\ntry {\n  require('arg')({ '--hi': String });\n} catch (err) {\n  if (err.code === 'ARG_UNKNOWN_OPTION') {\n    console.log(err.message);\n  } else {\n    throw err;\n  }\n}\n```\n\n```shell\nnode cli.js --extraneous true\nUnknown or unexpected option: --extraneous\n```\n\n# License\n\nCopyright &copy; 2017-2019 by ZEIT, Inc. Released under the [MIT License](LICENSE.md).\n",
+  "maintainers": [
+    {
+      "email": "lrobinson2011@gmail.com",
+      "name": "leerobinson"
+    },
+    {
+      "email": "hank@vercel.com",
+      "name": "hankvercel"
+    },
+    {
+      "email": "belen@vercel.com",
+      "name": "okbel"
+    },
+    {
+      "email": "samko9522@gmail.com",
+      "name": "samsisle"
+    },
+    {
+      "email": "chris@leishman.org",
+      "name": "cleishm"
+    },
+    {
+      "email": "nazareno@basement.studio",
+      "name": "nazarenooviedo"
+    },
+    {
+      "email": "maxwell.leiter@gmail.com",
+      "name": "maxleiter"
+    },
+    {
+      "email": "shu@chibicode.com",
+      "name": "chibicode"
+    },
+    {
+      "email": "g.cobben@gmail.com",
+      "name": "gielcobben"
+    },
+    {
+      "email": "jared@palmer.net",
+      "name": "jaredpalmer"
+    },
+    {
+      "email": "jan.krems@gmail.com",
+      "name": "jkrems"
+    },
+    {
+      "email": "prateek89born@gmail.com",
+      "name": "prateekbh"
+    },
+    {
+      "email": "josefrancisco.verdu@gmail.com",
+      "name": "kikobeats"
+    },
+    {
+      "email": "gbmonaco@google.com",
+      "name": "gmonaco"
+    },
+    {
+      "email": "houssein.djirdeh@gmail.com",
+      "name": "housseindjirdeh"
+    },
+    {
+      "email": "jason@developit.ca",
+      "name": "developit"
+    },
+    {
+      "email": "shubhie@gmail.com",
+      "name": "spanicker"
+    },
+    {
+      "email": "npm@keanulee.com",
+      "name": "keanulee"
+    },
+    {
+      "email": "atcastle@gmail.com",
+      "name": "atcastle"
+    },
+    {
+      "email": "janicklasralph036@gmail.com",
+      "name": "janicklas-ralph"
+    },
+    {
+      "email": "skllcrn@zeit.co",
+      "name": "skllcrn"
+    },
+    {
+      "email": "pvco.coursey@gmail.com",
+      "name": "paco"
+    },
+    {
+      "email": "guybedford@gmail.com",
+      "name": "guybedford"
+    },
+    {
+      "email": "ragojosefrancisco@gmail.com",
+      "name": "ragojose"
+    },
+    {
+      "email": "williamli@bbi.io",
+      "name": "williamli"
+    },
+    {
+      "email": "mail@msweeneydev.com",
+      "name": "msweeneydev"
+    },
+    {
+      "email": "allenhai03@gmail.com",
+      "name": "coetry"
+    },
+    {
+      "email": "rabautse@gmail.com",
+      "name": "rabaut"
+    },
+    {
+      "email": "luisito453@gmail.com",
+      "name": "lfades"
+    },
+    {
+      "email": "mrfix84@gmail.com",
+      "name": "mfix22"
+    },
+    {
+      "email": "jj@jjsweb.site",
+      "name": "ijjk"
+    },
+    {
+      "email": "franco@basement.studio",
+      "name": "arzafran"
+    },
+    {
+      "email": "iyatomi@gmail.com",
+      "name": "umegaya"
+    },
+    {
+      "email": "sbanskota08@gmail.com",
+      "name": "sarupbanskota"
+    },
+    {
+      "email": "timer150@gmail.com",
+      "name": "timer"
+    },
+    {
+      "email": "ana.trajkovska2015@gmail.com",
+      "name": "anatrajkovska"
+    },
+    {
+      "email": "paulogdemitri@gmail.com",
+      "name": "paulogdm"
+    },
+    {
+      "email": "artzbitz@gmail.com",
+      "name": "andybitz"
+    },
+    {
+      "email": "mark.glagola@gmail.com",
+      "name": "mglagola"
+    },
+    {
+      "email": "luc.leray@gmail.com",
+      "name": "lucleray"
+    },
+    {
+      "email": "team@zeit.co",
+      "name": "zeit-bot"
+    },
+    {
+      "email": "steven@ceriously.com",
+      "name": "styfle"
+    },
+    {
+      "email": "juancampa@gmail.com",
+      "name": "juancampa"
+    },
+    {
+      "email": "mail@connordav.is",
+      "name": "dav-is"
+    },
+    {
+      "email": "ds303077135@gmail.com",
+      "name": "quietshu"
+    },
+    {
+      "email": "fivepointseven@icloud.com",
+      "name": "fivepointseven"
+    },
+    {
+      "email": "joecohenr@gmail.com",
+      "name": "joecohens"
+    },
+    {
+      "email": "thecodetheory@gmail.com",
+      "name": "codetheory"
+    },
+    {
+      "email": "matheus.frndes@gmail.com",
+      "name": "matheuss"
+    },
+    {
+      "email": "igor@klopov.com",
+      "name": "igorklopov"
+    },
+    {
+      "email": "mindrun@icloud.com",
+      "name": "leo"
+    },
+    {
+      "email": "naoyuki.kanezawa@gmail.com",
+      "name": "nkzawa"
+    },
+    {
+      "email": "nathan@tootallnate.net",
+      "name": "tootallnate"
+    },
+    {
+      "email": "rauchg@gmail.com",
+      "name": "rauchg"
+    },
+    {
+      "email": "tim@timneutkens.nl",
+      "name": "timneutkens"
+    },
+    {
+      "email": "javier.velasco86@gmail.com",
+      "name": "javivelasco"
+    },
+    {
+      "email": "hello@evilrabb.it",
+      "name": "iamevilrabbit"
+    },
+    {
+      "email": "i.am.qix@gmail.com",
+      "name": "qix"
+    }
+  ],
+  "time": {
+    "modified": "2020-09-22T18:59:51.725Z",
+    "created": "2012-06-01T15:39:02.676Z",
+    "0.0.1": "2012-06-01T15:39:03.936Z",
+    "1.0.0": "2017-10-24T07:12:48.302Z",
+    "1.0.1": "2018-03-09T02:13:03.219Z",
+    "2.0.0": "2018-04-01T08:27:00.291Z",
+    "2.0.1": "2018-11-14T12:10:25.430Z",
+    "3.0.0": "2018-12-14T12:53:43.156Z",
+    "4.0.1": "2018-12-28T21:05:08.072Z",
+    "4.1.0": "2019-01-02T09:53:35.942Z",
+    "4.1.1": "2019-07-12T10:46:45.233Z",
+    "4.1.2": "2019-11-25T16:56:57.731Z",
+    "4.1.3": "2020-02-02T17:53:14.581Z"
+  },
+  "author": {
+    "name": "Josh Junon",
+    "email": "junon@zeit.co"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zeit/arg.git"
+  },
+  "readmeFilename": "README.md",
+  "homepage": "https://github.com/zeit/arg#readme",
+  "bugs": {
+    "url": "https://github.com/zeit/arg/issues"
+  },
+  "license": "MIT",
+  "users": {
+    "xiechao06": true
+  }
+}

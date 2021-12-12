@@ -1,0 +1,349 @@
+{
+  "_id": "randomfill",
+  "_rev": "5-308e8f02d5b61f55097b04a57a8be5cb",
+  "name": "randomfill",
+  "description": "random fill from browserify stand alone",
+  "dist-tags": {
+    "latest": "1.0.4"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "randomfill",
+      "version": "1.0.0",
+      "description": "random fill from browserify stand alone",
+      "main": "index.js",
+      "scripts": {
+        "test": "standard && node test.js | tspec",
+        "phantom": "zuul --phantom -- test.js",
+        "local": "zuul --local --no-coverage -- test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/crypto-browserify/randombytes.git"
+      },
+      "keywords": [
+        "crypto",
+        "random"
+      ],
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/randombytes/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/randombytes",
+      "browser": "browser.js",
+      "devDependencies": {
+        "phantomjs": "^1.9.9",
+        "standard": "^10.0.2",
+        "tap-spec": "^2.1.2",
+        "tape": "^4.6.3",
+        "zuul": "^3.7.2"
+      },
+      "dependencies": {
+        "randombytes": "^2.0.5",
+        "safe-buffer": "^5.1.0"
+      },
+      "gitHead": "599aa62dede66ada6ca578513652d177290c4d1b",
+      "_id": "randomfill@1.0.0",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.6.0",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-sbiyFeoqJGvLlMIo2NTsXs9xlFyscSE2lk53bM0Nd093TcnQcy83KPGdluArR0lhs5GZLcKkHjZ9MAq7tuWsTA==",
+        "shasum": "bb12982cc577a23e957f1573084b57c1182b94e4",
+        "tarball": "https://registry.npmjs.org/randomfill/-/randomfill-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/randomfill-1.0.0.tgz_1508337666616_0.2894369529094547"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "randomfill",
+      "version": "1.0.1",
+      "description": "random fill from browserify stand alone",
+      "main": "index.js",
+      "scripts": {
+        "test": "standard && node test.js | tspec",
+        "phantom": "zuul --phantom -- test.js",
+        "local": "zuul --local --no-coverage -- test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/crypto-browserify/randombytes.git"
+      },
+      "keywords": [
+        "crypto",
+        "random"
+      ],
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/randombytes/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/randombytes",
+      "browser": "browser.js",
+      "devDependencies": {
+        "phantomjs": "^1.9.9",
+        "standard": "^10.0.2",
+        "tap-spec": "^2.1.2",
+        "tape": "^4.6.3",
+        "zuul": "^3.7.2"
+      },
+      "dependencies": {
+        "randombytes": "^2.0.5",
+        "safe-buffer": "^5.1.0"
+      },
+      "gitHead": "a747b6a4283a45b3e0985f3d6e9e584e44284de7",
+      "_id": "randomfill@1.0.1",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.6.0",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-k80JBNyUqE9d3+ML+rsGtcQx0MS8OHQaPHIQupVQo8OSrwwei/p55UigT0drIu6Mr2LaQjh0c6Q/eIifOyhH/A==",
+        "shasum": "db03bd8e8810088218e1df2845e8dea64f9bc8ee",
+        "tarball": "https://registry.npmjs.org/randomfill/-/randomfill-1.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/randomfill-1.0.1.tgz_1508339723599_0.12161199818365276"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "randomfill",
+      "version": "1.0.2",
+      "description": "random fill from browserify stand alone",
+      "main": "index.js",
+      "scripts": {
+        "test": "standard && node test.js | tspec",
+        "phantom": "zuul --phantom -- test.js",
+        "local": "zuul --local --no-coverage -- test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/crypto-browserify/randombytes.git"
+      },
+      "keywords": [
+        "crypto",
+        "random"
+      ],
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/randombytes/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/randombytes",
+      "browser": "browser.js",
+      "devDependencies": {
+        "phantomjs": "^1.9.9",
+        "standard": "^10.0.2",
+        "tap-spec": "^2.1.2",
+        "tape": "^4.6.3",
+        "zuul": "^3.7.2"
+      },
+      "dependencies": {
+        "randombytes": "^2.0.5",
+        "safe-buffer": "^5.1.0"
+      },
+      "gitHead": "75ae4b2d20244c64fff9644cedc8eb8960ad1371",
+      "_id": "randomfill@1.0.2",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.6.0",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-Ufa+fvlA4sMPF2P+dyxsHMZQYKzgNPasWSkK6hIjp0AkzmbbpevGfroRBBuZLmVDDA0UmSax8aV2NlljOJhnuA==",
+        "shasum": "61b1e10311f294e2a4a0b0ced120b33355445458",
+        "tarball": "https://registry.npmjs.org/randomfill/-/randomfill-1.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/randomfill-1.0.2.tgz_1508341434410_0.16996331932023168"
+      },
+      "directories": {}
+    },
+    "1.0.3": {
+      "name": "randomfill",
+      "version": "1.0.3",
+      "description": "random fill from browserify stand alone",
+      "main": "index.js",
+      "scripts": {
+        "test": "standard && node test.js | tspec",
+        "phantom": "zuul --phantom -- test.js",
+        "local": "zuul --local --no-coverage -- test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/crypto-browserify/randombytes.git"
+      },
+      "keywords": [
+        "crypto",
+        "random"
+      ],
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/randombytes/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/randombytes",
+      "browser": "browser.js",
+      "devDependencies": {
+        "phantomjs": "^1.9.9",
+        "standard": "^10.0.2",
+        "tap-spec": "^2.1.2",
+        "tape": "^4.6.3",
+        "zuul": "^3.7.2"
+      },
+      "dependencies": {
+        "randombytes": "^2.0.5",
+        "safe-buffer": "^5.1.0"
+      },
+      "gitHead": "3e471b7aea4d6e2380c633e7452685d56786570c",
+      "_id": "randomfill@1.0.3",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.6.0",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-YL6GrhrWoic0Eq8rXVbMptH7dAxCs0J+mh5Y0euNekPPYaxEmdVGim6GdoxoRzKW2yJoU8tueifS7mYxvcFDEQ==",
+        "shasum": "b96b7df587f01dd91726c418f30553b1418e3d62",
+        "tarball": "https://registry.npmjs.org/randomfill/-/randomfill-1.0.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/randomfill-1.0.3.tgz_1508342198510_0.7042635742109269"
+      },
+      "directories": {}
+    },
+    "1.0.4": {
+      "name": "randomfill",
+      "version": "1.0.4",
+      "description": "random fill from browserify stand alone",
+      "main": "index.js",
+      "scripts": {
+        "test": "standard && node test.js | tspec",
+        "phantom": "zuul --phantom -- test.js",
+        "local": "zuul --local --no-coverage -- test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crypto-browserify/randomfill.git"
+      },
+      "keywords": [
+        "crypto",
+        "random"
+      ],
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/randomfill/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/randomfill",
+      "browser": "browser.js",
+      "devDependencies": {
+        "phantomjs": "^1.9.9",
+        "standard": "^10.0.2",
+        "tap-spec": "^2.1.2",
+        "tape": "^4.6.3",
+        "zuul": "^3.7.2"
+      },
+      "dependencies": {
+        "randombytes": "^2.0.5",
+        "safe-buffer": "^5.1.0"
+      },
+      "gitHead": "f0c99be53fbb798afc0879cf8dcb13db3a7266f2",
+      "_id": "randomfill@1.0.4",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.6.0",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-87lcbR8+MhcWcUiQ+9e+Rwx8MyR2P7qnt15ynUlbm3TU/fjbgz4GsvfSUDTemtCCtVCqb4ZcEFlyPNTh9bBTLw==",
+        "shasum": "c92196fc86ab42be983f1bf31778224931d61458",
+        "tarball": "https://registry.npmjs.org/randomfill/-/randomfill-1.0.4.tgz",
+        "fileCount": 8,
+        "unpackedSize": 6844
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/randomfill_1.0.4_1518786236724_0.926847415068788"
+      }
+    }
+  },
+  "readme": "randomfill\n===\n\n[![Version](http://img.shields.io/npm/v/randomfill.svg)](https://www.npmjs.org/package/randomfill)\n\nrandomfill from node that works in the browser.  In node you just get crypto.randomBytes, but in the browser it uses .crypto/msCrypto.getRandomValues\n\n```js\nvar randomFill = require('randomfill');\nvar buf\nrandomFill.randomFillSync(16);//get 16 random bytes\nrandomFill.randomFill(16, function (err, resp) {\n  // resp is 16 random bytes\n});\n```\n",
+  "maintainers": [
+    {
+      "name": "cwmma",
+      "email": "calvin.metcalf@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2018-02-16T13:03:58.444Z",
+    "created": "2017-10-18T14:41:07.520Z",
+    "1.0.0": "2017-10-18T14:41:07.520Z",
+    "1.0.1": "2017-10-18T15:15:24.473Z",
+    "1.0.2": "2017-10-18T15:43:55.284Z",
+    "1.0.3": "2017-10-18T15:56:39.444Z",
+    "1.0.4": "2018-02-16T13:03:56.771Z"
+  },
+  "homepage": "https://github.com/crypto-browserify/randomfill",
+  "keywords": [
+    "crypto",
+    "random"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crypto-browserify/randomfill.git"
+  },
+  "bugs": {
+    "url": "https://github.com/crypto-browserify/randomfill/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "_attachments": {}
+}

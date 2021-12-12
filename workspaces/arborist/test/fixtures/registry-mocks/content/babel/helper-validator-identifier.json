@@ -1,0 +1,404 @@
+{
+  "_id": "@babel/helper-validator-identifier",
+  "_rev": "6-725023e94a4f425d507112b818fbdfb0",
+  "name": "@babel/helper-validator-identifier",
+  "dist-tags": {
+    "latest": "7.10.4"
+  },
+  "versions": {
+    "7.9.0": {
+      "name": "@babel/helper-validator-identifier",
+      "version": "7.9.0",
+      "description": "Validate identifier/keywords name",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-helper-validator-identifier"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "./lib/index.js",
+      "exports": "./lib/index.js",
+      "devDependencies": {
+        "charcodes": "^0.2.0",
+        "unicode-13.0.0": "^0.8.0"
+      },
+      "gitHead": "8d5e422be27251cfaadf8dd2536b31b4a5024b02",
+      "_id": "@babel/helper-validator-identifier@7.9.0",
+      "_nodeVersion": "13.11.0",
+      "_npmVersion": "lerna/3.19.0/node@v13.11.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-6G8bQKjOh+of4PV/ThDm/rRqlU7+IGoJuofpagU5GlEl29Vv0RGqqt86ZGRV8ZuSOY3o+8yXl5y782SMcG7SHw==",
+        "shasum": "ad53562a7fc29b3b9a91bbf7d10397fd146346ed",
+        "tarball": "https://registry.npmjs.org/@babel/helper-validator-identifier/-/helper-validator-identifier-7.9.0.tgz",
+        "fileCount": 7,
+        "unpackedSize": 18528,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJedOOiCRA9TVsSAnZWagAARO0P/iy9Jnxchk7TV4YymJ9n\n8U0ItbMsgI9KCMDyRH4Z7Ig1KsXK9iGQZeveJIEqvk1hxU/SpF00hokoxXZ2\nEs5pgJ4A8xYHHIEYtDIe17oeWQw1pjrUMZcEHBMJufbSOaamLor/yik0yvjv\nX98oQy5/Mk8+BHH0GbVR579T0eiV1s0FI0S4yYybKmlgnwcp8yrs7wJ18Yya\nfxs1jsEuD0+SFe83RxgYCPO/Dog8l879inb5+9l/FfJ15lVqIczOJo0VBQMt\nyROfjNj1Q0xpHVM5J2ABXtHzjnNS86uE8YjmeeOHlH18hU9cGIH3L66NIjQ1\n1sdg+8lRVNyVzlUNp1G5YfYmThR0QqU2yPhTRWm2022JiV6HoDRGF6O+BAkW\nmx+qL+jQ4TloXECyq/o9SPH8oJk59+3kyd5YFP2FaC28Io0XuULyqy9OEDYj\nmgvvrTE+kgPXJvkpnGql/VUInXgCEPf7Ymo68xx6VI/yxN6akzX4FSTIkZGb\nStRUnzTkjGD1KRAumoNyomABXP1VweO1rAjHD7/grDUr+HKMH8JS/UQbHlvb\nK7KkOtVTiTFhv+iJQ/7d+LfTY4xBNlr8PMKKRlf7u//y+VcPOefJIXy5k8z8\n/Uvd5GHW4Q10n8nxfN+CbDuuQAXMGCDczUCFZT4glNIwE2miXQzYJTw9I1mF\n0HDQ\r\n=Yo2u\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "nicolo-ribaudo",
+          "email": "nicolo.ribaudo@gmail.com"
+        },
+        {
+          "name": "developit",
+          "email": "jason@developit.ca"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "danez",
+          "email": "daniel@tschinder.de"
+        },
+        {
+          "name": "existentialism",
+          "email": "bng412@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-validator-identifier_7.9.0_1584718753919_0.9651042569180548"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.9.5": {
+      "name": "@babel/helper-validator-identifier",
+      "version": "7.9.5",
+      "description": "Validate identifier/keywords name",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-helper-validator-identifier"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "./lib/index.js",
+      "exports": "./lib/index.js",
+      "devDependencies": {
+        "charcodes": "^0.2.0",
+        "unicode-13.0.0": "^0.8.0"
+      },
+      "gitHead": "5b97e77e030cf3853a147fdff81844ea4026219d",
+      "_id": "@babel/helper-validator-identifier@7.9.5",
+      "_nodeVersion": "10.19.0",
+      "_npmVersion": "lerna/3.19.0/node@v10.19.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-/8arLKUFq882w4tWGj9JYzRpAlZgiWUJ+dtteNTDqrRBz9Iguck9Rn3ykuBDoUwh2TO4tSAJlrxDUOXWklJe4g==",
+        "shasum": "90977a8e6fbf6b431a7dc31752eee233bf052d80",
+        "tarball": "https://registry.npmjs.org/@babel/helper-validator-identifier/-/helper-validator-identifier-7.9.5.tgz",
+        "fileCount": 7,
+        "unpackedSize": 18532,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJejNOaCRA9TVsSAnZWagAAaDAP/AwShg3rLvhxN9eKI7xH\nwjLP7kJMK2rxihQDOQ5BOrqW2/J99fcSHhKpQ4bmuPyBzO15tz00MOG+r0g4\nxC6wJPrQmDsN9RB3TLheedociuiumN6Vyg1/Z8rWJgVI4pEwgd4LUPIWDB4c\nLrdm5gXr+cLiob8KIMSH4FYlRmr/ExOnYtxxu+D9tQNxavCdzagQrx3Xx+xE\nojMI6q4fBxMdoe1Im4750MbYfVuF42ulYkj++xJYLIztnqMnIuIrcWXqpn/G\nbqPuJTlIL7FI+zeElJSdClFR5C1EmAMs9zotvb/E4U3T2khW0rD9WoFmdYg2\ngnl1VucUbFLPjwUNHLIMwbDV38Pu7IUOkGNgTN0AF/C/LcdVzoyCVSnCBGIM\nsb+Zw/pMLqItWXsNTYidXi041Y0ayaiM1vBk+GFsYOaAdFMwTOE38AJWxcLR\nrM88Y5GMkbxuNLfvgACok5DmzacSvsM95rBTBqpnjzqRnKatXfv3njpfFeMq\nXwatQTsbF/ApSAbZc+OEfUXNlCYMQbCcIWfqrYhd9263ZhdQulihhaQhI8O4\nxCJr/0utB9AY4Bsiv8pgpQqOGv/ZFmQVbHreU9569oZu5yu8q+dv3RsZzZYV\nKQYvwvuykLZN7szZR9kIkdilcMo4mHNzrk922ipG8BlKIXeBqsjl73kQOcKO\nHJFB\r\n=Gfmo\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "danez",
+          "email": "daniel@tschinder.de"
+        },
+        {
+          "name": "developit",
+          "email": "jason@developit.ca"
+        },
+        {
+          "name": "existentialism",
+          "email": "bng412@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "nicolo-ribaudo",
+          "email": "nicolo.ribaudo@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-validator-identifier_7.9.5_1586287513888_0.9235828215531656"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.10.1": {
+      "name": "@babel/helper-validator-identifier",
+      "version": "7.10.1",
+      "description": "Validate identifier/keywords name",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/babel/babel.git",
+        "directory": "packages/babel-helper-validator-identifier"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "./lib/index.js",
+      "exports": "./lib/index.js",
+      "devDependencies": {
+        "charcodes": "^0.2.0",
+        "unicode-13.0.0": "^0.8.0"
+      },
+      "gitHead": "88f57a7ea659d25232bf62de1efceb5d6299b8cf",
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "homepage": "https://github.com/babel/babel#readme",
+      "_id": "@babel/helper-validator-identifier@7.10.1",
+      "_nodeVersion": "12.16.3",
+      "_npmVersion": "lerna/3.19.0/node@v12.16.3+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-5vW/JXLALhczRCWP0PnFDMCJAchlBvM7f4uk/jXritBnIa6E1KmqmtrS3yn1LAnxFBypQ3eneLuXjsnfQsgILw==",
+        "shasum": "5770b0c1a826c4f53f5ede5e153163e0318e94b5",
+        "tarball": "https://registry.npmjs.org/@babel/helper-validator-identifier/-/helper-validator-identifier-7.10.1.tgz",
+        "fileCount": 7,
+        "unpackedSize": 18581,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJezuR7CRA9TVsSAnZWagAAR3wP/0cXSytYAF7k1lPixKbE\niL7U40G00RQOLqeoiPyz9ZpkrwS6V75R1aCVlRXInjbGl8XtT4w6UvTU0QSL\nNZ9/3MoIgAEH9QciCHnNm0e9HvwpcvBdmj2V9/yat7w9kuqetqQjj+0aGPSa\nFP4MvzRxS1Xi6ungCaHrSi4Nc5vUfNybhs81YNXS8OAtv4TvZdZb8YHl5cLr\n6BW+zzoTdBbyLbyRJFVRq/bHP5FQvkoCZkng/UdBmXMIeQGTLTMDprUKoA5I\nwoi9SpWCyzxQWUnuPhXK2A1I86eiPrpznX1Kj4KpGbkWlKq+PDgGSg5PfvNX\n8NTYzTMEZSmQKfIlOTP+BXrcRQL1Lj/r13r562AVqc+AYeAsW/Qu4yFrHJhe\nuPWp7s0I10vYiMTDIz2U3BEzZSEtGy0Eyk91mS0j/nLmICNuazw9i9irB140\nxfnxcIhE2hYcMXCeqj6WQOQpj1b4Q599sc40BlRPT+TJgXKWHmpKSKaxicJU\nI135PL81dXNyDG5fMLVoyO0dSJQ2TxPqFeZDwN+xpNzKcpyQLoXPCGkeMD6o\nWj0eIjfCpuMaU6x2pfGCsNyROcSqA/v6KZcVo1kqsLNvzX8K+A17zr0ZL4mL\nS0duVyNAw5xIMQWXZ+9ow4qkbmnHKkbdmQMjG8J84MVGtdEIyVC6zzwBMuhV\nYcWI\r\n=Ic+r\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-validator-identifier_7.10.1_1590617211141_0.10617264348204825"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.10.3": {
+      "name": "@babel/helper-validator-identifier",
+      "version": "7.10.3",
+      "description": "Validate identifier/keywords name",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/babel/babel.git",
+        "directory": "packages/babel-helper-validator-identifier"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "./lib/index.js",
+      "exports": "./lib/index.js",
+      "devDependencies": {
+        "charcodes": "^0.2.0",
+        "unicode-13.0.0": "^0.8.0"
+      },
+      "gitHead": "2787ee2f967b6d8e1121fca00a8d578d75449a53",
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "homepage": "https://github.com/babel/babel#readme",
+      "_id": "@babel/helper-validator-identifier@7.10.3",
+      "_nodeVersion": "14.4.0",
+      "_npmVersion": "lerna/3.19.0/node@v14.4.0+x64 (darwin)",
+      "dist": {
+        "integrity": "sha512-bU8JvtlYpJSBPuj1VUmKpFGaDZuLxASky3LhaKj3bmpSTY6VWooSM8msk+Z0CZoErFye2tlABF6yDkT3FOPAXw==",
+        "shasum": "60d9847f98c4cea1b279e005fdb7c28be5412d15",
+        "tarball": "https://registry.npmjs.org/@babel/helper-validator-identifier/-/helper-validator-identifier-7.10.3.tgz",
+        "fileCount": 7,
+        "unpackedSize": 18583,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJe7SXwCRA9TVsSAnZWagAAXyMP/jZ+pr3GuYxya9M0G7rK\n2eWdIci4T0Jo1y1zwx5ZqsL1Gl2j0X7t7bZG7MYzLukhQajEAVjc63YpE8sm\n3PlvnZ63yk18giGt30uMKjZUMfXKnuB7QTqawS1ndQ+er7ZXRmUUItHstT+g\ngfu12Esidl4VzcQOr/bwdDpYYO8QFwXqV8xodiuS8ljJ9GGgknA0bdhY4JZe\nm7NC5QyogD8ly83kpioWj4RlqP7XH9Z2rhzo3ULdB9JBhfKdA7wC9jF9CQBp\nUOGmY/L/srKBNxhBZzRZROlA2BaMKc/32mivTbluKa1mUJd3gMocSFKLKK8w\nRUJMARxnXSSTbsEQN4frTueH0RSMEl9cMOTac6xNhZUI3XX+SfyOTnCxclho\nuE+OZt4U22TUVSJZSAULbTqad2GCfCboSxtTAbuhTh3amldC1TknNvTbycbj\nkJzAPEv8fh/fbYOA+3o9qyHz6kh7FZvUtFijf6x/ci0gC5tZnpfvO8UoZea7\nX/7ALgK7ykKe3VFrWBAKL+7Z+AGhiVj8WK/ELCukGAFF7pXN4MHPKfbMhw4+\nNMVcoG4M1EBaseD4MBawXPFMkQkUQO14tocA60ufbapZz78C7LW3SPy3Hx7o\nCL0QwBvKcyFpxnbNPUSela3zxC0ayXYULOkK4tXCYOfRYA/rcJm05/rZhbHx\nTa6C\r\n=GsCe\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "i@jhuang.me",
+          "name": "jlhwung"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "jlhwung",
+        "email": "i@jhuang.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-validator-identifier_7.10.3_1592600047692_0.340037691683142"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.10.4": {
+      "name": "@babel/helper-validator-identifier",
+      "version": "7.10.4",
+      "description": "Validate identifier/keywords name",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/babel/babel.git",
+        "directory": "packages/babel-helper-validator-identifier"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "./lib/index.js",
+      "exports": "./lib/index.js",
+      "devDependencies": {
+        "charcodes": "^0.2.0",
+        "unicode-13.0.0": "^0.8.0"
+      },
+      "gitHead": "7fd40d86a0d03ff0e9c3ea16b29689945433d4df",
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "homepage": "https://github.com/babel/babel#readme",
+      "_id": "@babel/helper-validator-identifier@7.10.4",
+      "_nodeVersion": "14.4.0",
+      "_npmVersion": "lerna/3.19.0/node@v14.4.0+x64 (darwin)",
+      "dist": {
+        "integrity": "sha512-3U9y+43hz7ZM+rzG24Qe2mufW5KhvFg/NhnNph+i9mgCtdTCtMJuI1TMkrIUiK7Ix4PYlRF9I5dhqaLYA/ADXw==",
+        "shasum": "a78c7a7251e01f616512d31b10adcf52ada5e0d2",
+        "tarball": "https://registry.npmjs.org/@babel/helper-validator-identifier/-/helper-validator-identifier-7.10.4.tgz",
+        "fileCount": 7,
+        "unpackedSize": 18583,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJe+zn3CRA9TVsSAnZWagAAyUUP/i9TjYTcNJnhd0ZwRAno\nXTZpCx26ZulGddnralt24xiBtWpHGzHLDJvgdILlnGm4p6WbsRq+FSEqcQCl\ncLL089TCZiFZzGYbQpMteC8KswcgYhl5s6kHIHComGuHJPtC3j7lubw3DHWu\nlhXqfVeLxQOVLUZ79gA4DLuz3O7F7dQIe4EiFmWOzwBSXb8pukV6nFGxPFPW\ntLqxenWPvciRbVnHsJUdwAw5MlIybSscxQSNKHj5od5aATTyGC59MlFjMrFc\ndfZwwHayY/s5WbAHkZVdhSDidnoi1wdFHrVyih4jD4XRxH7d9n0I9i79Ggog\nQPhSfVA6sjMsVXzkrRZHDb1JDu40VP7DiyVOdGmcqwrqMvNZBNXp5EEuD6et\nKhjYjN/ZSN4D7SjKO9M4d4uzOi0rsOP/BMCJFF8TjppEnjrRG5W23qU/uUzn\nXfpYafBWuy7s2VKsAsnbUx3ZQuzmT9GHGr97OvbNppK0LvnrERjTp1Mwa9Ui\nL7CnLCssWEP2kW28rX3fkVpL/mWr8767RpACUSU+ijhZ8sI4isPRnGkEWa9c\ngDZAT8zamX9+GZOQW3g5zgYGBgW3iP1GSEqUAHpMa1tgMpoXWR4ZGM8hcC+Q\nETw+6OA0Uz5NyadFmdlPXJN1jOJ50GOFBSJ85fkqug8ve5Xv4iphDjlDz0XQ\nT2Ip\r\n=RtA8\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "i@jhuang.me",
+          "name": "jlhwung"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "jlhwung",
+        "email": "i@jhuang.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-validator-identifier_7.10.4_1593522678752_0.5058194301908499"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2020-03-20T15:39:13.517Z",
+    "7.9.0": "2020-03-20T15:39:14.099Z",
+    "modified": "2020-06-30T13:11:26.408Z",
+    "7.9.5": "2020-04-07T19:25:14.155Z",
+    "7.10.1": "2020-05-27T22:06:51.324Z",
+    "7.10.3": "2020-06-19T20:54:07.806Z",
+    "7.10.4": "2020-06-30T13:11:18.900Z"
+  },
+  "maintainers": [
+    {
+      "email": "daniel@tschinder.de",
+      "name": "danez"
+    },
+    {
+      "email": "bng412@gmail.com",
+      "name": "existentialism"
+    },
+    {
+      "email": "hi@henryzoo.com",
+      "name": "hzoo"
+    },
+    {
+      "email": "i@jhuang.me",
+      "name": "jlhwung"
+    },
+    {
+      "email": "loganfsmyth@gmail.com",
+      "name": "loganfsmyth"
+    },
+    {
+      "email": "nicolo.ribaudo@gmail.com",
+      "name": "nicolo-ribaudo"
+    }
+  ],
+  "description": "Validate identifier/keywords name",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/babel/babel.git",
+    "directory": "packages/babel-helper-validator-identifier"
+  },
+  "license": "MIT",
+  "readme": "# @babel/helper-validator-identifier\n\n> Validate identifier/keywords name\n\nSee our website [@babel/helper-validator-identifier](https://babeljs.io/docs/en/next/babel-helper-validator-identifier.html) for more information.\n\n## Install\n\nUsing npm:\n\n```sh\nnpm install --save-dev @babel/helper-validator-identifier\n```\n\nor using yarn:\n\n```sh\nyarn add @babel/helper-validator-identifier --dev\n```\n",
+  "readmeFilename": "README.md",
+  "homepage": "https://github.com/babel/babel#readme",
+  "bugs": {
+    "url": "https://github.com/babel/babel/issues"
+  }
+}

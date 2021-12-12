@@ -1,0 +1,2606 @@
+{
+  "_id": "ssri",
+  "_rev": "50-51e2799b08816d9275a9fa0b2263a364",
+  "name": "ssri",
+  "description": "Standard Subresource Integrity library -- parses, serializes, generates, and verifies integrity metadata according to the SRI spec.",
+  "dist-tags": {
+    "latest": "8.0.0"
+  },
+  "versions": {
+    "0.0.0": {
+      "name": "ssri",
+      "version": "0.0.0",
+      "description": "Simple Subresource Integrity library -- generates, parses, and unparses integrity strings.",
+      "main": "index.js",
+      "files": [
+        "*.js",
+        "lib"
+      ],
+      "scripts": {
+        "prerelease": "npm t",
+        "postrelease": "npm publish && git push --follow-tags",
+        "pretest": "standard lib test *.js",
+        "release": "standard-version -s",
+        "test": "nyc --all -- tap -J test/*.js",
+        "update-coc": "weallbehave -o . && git add CODE_OF_CONDUCT.md && git commit -m 'docs(coc): updated CODE_OF_CONDUCT.md'",
+        "update-contrib": "weallcontribute -o . && git add CONTRIBUTING.md && git commit -m 'docs(contributing): updated CONTRIBUTING.md'"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zkat/ssri.git"
+      },
+      "keywords": [
+        "w3c",
+        "integrity",
+        "checksum",
+        "hashing",
+        "subresource integrity",
+        "html"
+      ],
+      "author": {
+        "name": "Kat Marchán",
+        "email": "kzm@sykosomatic.org"
+      },
+      "license": "CC0-1.0",
+      "dependencies": {
+        "bluebird": "^3.4.7",
+        "checksum-stream": "^1.0.2"
+      },
+      "devDependencies": {
+        "nyc": "^10.0.0",
+        "standard": "^9.0.1",
+        "standard-version": "^4.0.0",
+        "tap": "^10.3.0",
+        "weallbehave": "^1.0.0",
+        "weallcontribute": "^1.0.8"
+      },
+      "config": {
+        "nyc": {
+          "exclude": [
+            "node_modules/**",
+            "test/**"
+          ]
+        }
+      },
+      "gitHead": "cdb6d7d19ded4d8126c2753b9c15491f8c3f83bb",
+      "bugs": {
+        "url": "https://github.com/zkat/ssri/issues"
+      },
+      "homepage": "https://github.com/zkat/ssri#readme",
+      "_id": "ssri@0.0.0",
+      "_shasum": "e67ebd98828741c1055caafb8a3a66cdcea4eb1e",
+      "_from": ".",
+      "_npmVersion": "4.4.4",
+      "_nodeVersion": "4.8.1",
+      "_npmUser": {
+        "name": "zkat",
+        "email": "kat@sykosomatic.org"
+      },
+      "dist": {
+        "shasum": "e67ebd98828741c1055caafb8a3a66cdcea4eb1e",
+        "tarball": "https://registry.npmjs.org/ssri/-/ssri-0.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "zkat",
+          "email": "kat@sykosomatic.org"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/ssri-0.0.0.tgz_1490244963191_0.1570116642396897"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "ssri",
+      "version": "1.0.0",
+      "description": "Simple Subresource Integrity library -- generates, parses, and unparses integrity strings.",
+      "main": "index.js",
+      "files": [
+        "*.js",
+        "lib"
+      ],
+      "scripts": {
+        "prerelease": "npm t",
+        "postrelease": "npm publish && git push --follow-tags",
+        "pretest": "standard lib test *.js",
+        "release": "standard-version -s",
+        "test": "nyc --all -- tap -J test/*.js",
+        "update-coc": "weallbehave -o . && git add CODE_OF_CONDUCT.md && git commit -m 'docs(coc): updated CODE_OF_CONDUCT.md'",
+        "update-contrib": "weallcontribute -o . && git add CONTRIBUTING.md && git commit -m 'docs(contributing): updated CONTRIBUTING.md'"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zkat/ssri.git"
+      },
+      "keywords": [
+        "w3c",
+        "integrity",
+        "checksum",
+        "hashing",
+        "subresource integrity",
+        "html"
+      ],
+      "author": {
+        "name": "Kat Marchán",
+        "email": "kzm@sykosomatic.org"
+      },
+      "license": "CC0-1.0",
+      "dependencies": {},
+      "devDependencies": {
+        "nyc": "^10.0.0",
+        "standard": "^9.0.1",
+        "standard-version": "^4.0.0",
+        "tap": "^10.3.0",
+        "weallbehave": "^1.0.0",
+        "weallcontribute": "^1.0.8"
+      },
+      "config": {
+        "nyc": {
+          "exclude": [
+            "node_modules/**",
+            "test/**"
+          ]
+        }
+      },
+      "gitHead": "2e0a8a6f8035dc785e451ec766849a35cf93aff6",
+      "bugs": {
+        "url": "https://github.com/zkat/ssri/issues"
+      },
+      "homepage": "https://github.com/zkat/ssri#readme",
+      "_id": "ssri@1.0.0",
+      "_shasum": "225790b751d5595eabcbdcf8d0d619122640186a",
+      "_from": ".",
+      "_npmVersion": "4.4.4",
+      "_nodeVersion": "4.8.1",
+      "_npmUser": {
+        "name": "zkat",
+        "email": "kat@sykosomatic.org"
+      },
+      "dist": {
+        "shasum": "225790b751d5595eabcbdcf8d0d619122640186a",
+        "tarball": "https://registry.npmjs.org/ssri/-/ssri-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "zkat",
+          "email": "kat@sykosomatic.org"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/ssri-1.0.0.tgz_1490253746428_0.44512239820323884"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "ssri",
+      "version": "2.0.0",
+      "description": "Standard Subresource Integrity library --  parses, serializes, generates, and verifies integrity metadata according to the SRI spec.",
+      "main": "index.js",
+      "files": [
+        "*.js"
+      ],
+      "scripts": {
+        "prerelease": "npm t",
+        "postrelease": "npm publish && git push --follow-tags",
+        "pretest": "standard",
+        "release": "standard-version -s",
+        "test": "tap -J --coverage test/*.js",
+        "update-coc": "weallbehave -o . && git add CODE_OF_CONDUCT.md && git commit -m 'docs(coc): updated CODE_OF_CONDUCT.md'",
+        "update-contrib": "weallcontribute -o . && git add CONTRIBUTING.md && git commit -m 'docs(contributing): updated CONTRIBUTING.md'"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zkat/ssri.git"
+      },
+      "keywords": [
+        "w3c",
+        "web",
+        "security",
+        "integrity",
+        "checksum",
+        "hashing",
+        "subresource integrity",
+        "html"
+      ],
+      "author": {
+        "name": "Kat Marchán",
+        "email": "kzm@sykosomatic.org"
+      },
+      "license": "CC0-1.0",
+      "dependencies": {},
+      "devDependencies": {
+        "nyc": "^10.0.0",
+        "standard": "^9.0.1",
+        "standard-version": "^4.0.0",
+        "tap": "^10.3.0",
+        "weallbehave": "^1.0.0",
+        "weallcontribute": "^1.0.8"
+      },
+      "config": {
+        "nyc": {
+          "exclude": [
+            "node_modules/**",
+            "test/**"
+          ]
+        }
+      },
+      "gitHead": "a06455fdafa64bcd4ccc03c32e53fe052171f6f4",
+      "bugs": {
+        "url": "https://github.com/zkat/ssri/issues"
+      },
+      "homepage": "https://github.com/zkat/ssri#readme",
+      "_id": "ssri@2.0.0",
+      "_shasum": "d5f3de7dfb71fd420a0522c32f3cf30a0ca878bc",
+      "_from": ".",
+      "_npmVersion": "4.4.4",
+      "_nodeVersion": "4.8.1",
+      "_npmUser": {
+        "name": "zkat",
+        "email": "kat@sykosomatic.org"
+      },
+      "dist": {
+        "shasum": "d5f3de7dfb71fd420a0522c32f3cf30a0ca878bc",
+        "tarball": "https://registry.npmjs.org/ssri/-/ssri-2.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "zkat",
+          "email": "kat@sykosomatic.org"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/ssri-2.0.0.tgz_1490341841666_0.4269394064322114"
+      },
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "ssri",
+      "version": "3.0.0",
+      "description": "Standard Subresource Integrity library --  parses, serializes, generates, and verifies integrity metadata according to the SRI spec.",
+      "main": "index.js",
+      "files": [
+        "*.js"
+      ],
+      "scripts": {
+        "prerelease": "npm t",
+        "postrelease": "npm publish && git push --follow-tags",
+        "pretest": "standard",
+        "release": "standard-version -s",
+        "test": "tap -J --coverage test/*.js",
+        "update-coc": "weallbehave -o . && git add CODE_OF_CONDUCT.md && git commit -m 'docs(coc): updated CODE_OF_CONDUCT.md'",
+        "update-contrib": "weallcontribute -o . && git add CONTRIBUTING.md && git commit -m 'docs(contributing): updated CONTRIBUTING.md'"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zkat/ssri.git"
+      },
+      "keywords": [
+        "w3c",
+        "web",
+        "security",
+        "integrity",
+        "checksum",
+        "hashing",
+        "subresource integrity",
+        "html"
+      ],
+      "author": {
+        "name": "Kat Marchán",
+        "email": "kzm@sykosomatic.org"
+      },
+      "license": "CC0-1.0",
+      "dependencies": {},
+      "devDependencies": {
+        "nyc": "^10.0.0",
+        "standard": "^9.0.1",
+        "standard-version": "^4.0.0",
+        "tap": "^10.3.0",
+        "weallbehave": "^1.0.0",
+        "weallcontribute": "^1.0.8"
+      },
+      "config": {
+        "nyc": {
+          "exclude": [
+            "node_modules/**",
+            "test/**"
+          ]
+        }
+      },
+      "gitHead": "91777d050e9be60e94ce7f5d37eb9e8f349ce10f",
+      "bugs": {
+        "url": "https://github.com/zkat/ssri/issues"
+      },
+      "homepage": "https://github.com/zkat/ssri#readme",
+      "_id": "ssri@3.0.0",
+      "_shasum": "1d463fee4ab1362a809f1f2fac0e5bcf8bb239ac",
+      "_from": ".",
+      "_npmVersion": "4.2.0",
+      "_nodeVersion": "7.8.0",
+      "_npmUser": {
+        "name": "zkat",
+        "email": "kat@sykosomatic.org"
+      },
+      "dist": {
+        "shasum": "1d463fee4ab1362a809f1f2fac0e5bcf8bb239ac",
+        "tarball": "https://registry.npmjs.org/ssri/-/ssri-3.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "zkat",
+          "email": "kat@sykosomatic.org"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/ssri-3.0.0.tgz_1491194740473_0.8040323832537979"
+      },
+      "directories": {}
+    },
+    "3.0.1": {
+      "name": "ssri",
+      "version": "3.0.1",
+      "description": "Standard Subresource Integrity library --  parses, serializes, generates, and verifies integrity metadata according to the SRI spec.",
+      "main": "index.js",
+      "files": [
+        "*.js"
+      ],
+      "scripts": {
+        "prerelease": "npm t",
+        "postrelease": "npm publish && git push --follow-tags",
+        "pretest": "standard",
+        "release": "standard-version -s",
+        "test": "tap -J --coverage test/*.js",
+        "update-coc": "weallbehave -o . && git add CODE_OF_CONDUCT.md && git commit -m 'docs(coc): updated CODE_OF_CONDUCT.md'",
+        "update-contrib": "weallcontribute -o . && git add CONTRIBUTING.md && git commit -m 'docs(contributing): updated CONTRIBUTING.md'"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zkat/ssri.git"
+      },
+      "keywords": [
+        "w3c",
+        "web",
+        "security",
+        "integrity",
+        "checksum",
+        "hashing",
+        "subresource integrity",
+        "sri",
+        "sri string",
+        "sri generator",
+        "html"
+      ],
+      "author": {
+        "name": "Kat Marchán",
+        "email": "kzm@sykosomatic.org"
+      },
+      "license": "CC0-1.0",
+      "dependencies": {},
+      "devDependencies": {
+        "nyc": "^10.0.0",
+        "standard": "^9.0.1",
+        "standard-version": "^4.0.0",
+        "tap": "^10.3.0",
+        "weallbehave": "^1.0.0",
+        "weallcontribute": "^1.0.8"
+      },
+      "config": {
+        "nyc": {
+          "exclude": [
+            "node_modules/**",
+            "test/**"
+          ]
+        }
+      },
+      "gitHead": "30b2596b769a26630f22230c07f015d77129a1da",
+      "bugs": {
+        "url": "https://github.com/zkat/ssri/issues"
+      },
+      "homepage": "https://github.com/zkat/ssri#readme",
+      "_id": "ssri@3.0.1",
+      "_shasum": "6e10bdedae232928769c3d94f79e28693d5f389b",
+      "_from": ".",
+      "_npmVersion": "4.2.0",
+      "_nodeVersion": "7.8.0",
+      "_npmUser": {
+        "name": "zkat",
+        "email": "kat@sykosomatic.org"
+      },
+      "dist": {
+        "shasum": "6e10bdedae232928769c3d94f79e28693d5f389b",
+        "tarball": "https://registry.npmjs.org/ssri/-/ssri-3.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "zkat",
+          "email": "kat@sykosomatic.org"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/ssri-3.0.1.tgz_1491196618324_0.7827507932670414"
+      },
+      "directories": {}
+    },
+    "3.0.2": {
+      "name": "ssri",
+      "version": "3.0.2",
+      "description": "Standard Subresource Integrity library --  parses, serializes, generates, and verifies integrity metadata according to the SRI spec.",
+      "main": "index.js",
+      "files": [
+        "*.js"
+      ],
+      "scripts": {
+        "prerelease": "npm t",
+        "postrelease": "npm publish && git push --follow-tags",
+        "pretest": "standard",
+        "release": "standard-version -s",
+        "test": "tap -J --coverage test/*.js",
+        "update-coc": "weallbehave -o . && git add CODE_OF_CONDUCT.md && git commit -m 'docs(coc): updated CODE_OF_CONDUCT.md'",
+        "update-contrib": "weallcontribute -o . && git add CONTRIBUTING.md && git commit -m 'docs(contributing): updated CONTRIBUTING.md'"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zkat/ssri.git"
+      },
+      "keywords": [
+        "w3c",
+        "web",
+        "security",
+        "integrity",
+        "checksum",
+        "hashing",
+        "subresource integrity",
+        "sri",
+        "sri hash",
+        "sri string",
+        "sri generator",
+        "html"
+      ],
+      "author": {
+        "name": "Kat Marchán",
+        "email": "kzm@sykosomatic.org"
+      },
+      "license": "CC0-1.0",
+      "dependencies": {},
+      "devDependencies": {
+        "nyc": "^10.0.0",
+        "standard": "^9.0.1",
+        "standard-version": "^4.0.0",
+        "tap": "^10.3.0",
+        "weallbehave": "^1.0.0",
+        "weallcontribute": "^1.0.8"
+      },
+      "config": {
+        "nyc": {
+          "exclude": [
+            "node_modules/**",
+            "test/**"
+          ]
+        }
+      },
+      "gitHead": "74fd52ce7173373dd2617db6763929a447c6553d",
+      "bugs": {
+        "url": "https://github.com/zkat/ssri/issues"
+      },
+      "homepage": "https://github.com/zkat/ssri#readme",
+      "_id": "ssri@3.0.2",
+      "_shasum": "116d4afad587889f54ba594b0fafd4c9e28d711f",
+      "_from": ".",
+      "_npmVersion": "4.2.0",
+      "_nodeVersion": "7.8.0",
+      "_npmUser": {
+        "name": "zkat",
+        "email": "kat@sykosomatic.org"
+      },
+      "dist": {
+        "shasum": "116d4afad587889f54ba594b0fafd4c9e28d711f",
+        "tarball": "https://registry.npmjs.org/ssri/-/ssri-3.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "zkat",
+          "email": "kat@sykosomatic.org"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/ssri-3.0.2.tgz_1491196683801_0.7550789609085768"
+      },
+      "directories": {}
+    },
+    "4.0.0": {
+      "name": "ssri",
+      "version": "4.0.0",
+      "description": "Standard Subresource Integrity library --  parses, serializes, generates, and verifies integrity metadata according to the SRI spec.",
+      "main": "index.js",
+      "files": [
+        "*.js"
+      ],
+      "scripts": {
+        "prerelease": "npm t",
+        "postrelease": "npm publish && git push --follow-tags",
+        "pretest": "standard",
+        "release": "standard-version -s",
+        "test": "tap -J --coverage test/*.js",
+        "update-coc": "weallbehave -o . && git add CODE_OF_CONDUCT.md && git commit -m 'docs(coc): updated CODE_OF_CONDUCT.md'",
+        "update-contrib": "weallcontribute -o . && git add CONTRIBUTING.md && git commit -m 'docs(contributing): updated CONTRIBUTING.md'"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zkat/ssri.git"
+      },
+      "keywords": [
+        "w3c",
+        "web",
+        "security",
+        "integrity",
+        "checksum",
+        "hashing",
+        "subresource integrity",
+        "sri",
+        "sri hash",
+        "sri string",
+        "sri generator",
+        "html"
+      ],
+      "author": {
+        "name": "Kat Marchán",
+        "email": "kzm@sykosomatic.org"
+      },
+      "license": "CC0-1.0",
+      "dependencies": {},
+      "devDependencies": {
+        "nyc": "^10.0.0",
+        "standard": "^9.0.1",
+        "standard-version": "^4.0.0",
+        "tap": "^10.3.0",
+        "weallbehave": "^1.0.0",
+        "weallcontribute": "^1.0.8"
+      },
+      "config": {
+        "nyc": {
+          "exclude": [
+            "node_modules/**",
+            "test/**"
+          ]
+        }
+      },
+      "gitHead": "cc54b31994f079b00ccb036a259f74cbcb191d6a",
+      "bugs": {
+        "url": "https://github.com/zkat/ssri/issues"
+      },
+      "homepage": "https://github.com/zkat/ssri#readme",
+      "_id": "ssri@4.0.0",
+      "_shasum": "c2df3a5bb877b39bcc426c82888d4198315c4cf6",
+      "_from": ".",
+      "_npmVersion": "4.2.0",
+      "_nodeVersion": "7.8.0",
+      "_npmUser": {
+        "name": "zkat",
+        "email": "kat@sykosomatic.org"
+      },
+      "dist": {
+        "shasum": "c2df3a5bb877b39bcc426c82888d4198315c4cf6",
+        "tarball": "https://registry.npmjs.org/ssri/-/ssri-4.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "zkat",
+          "email": "kat@sykosomatic.org"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/ssri-4.0.0.tgz_1491215832165_0.6491898228414357"
+      },
+      "directories": {}
+    },
+    "4.1.0": {
+      "name": "ssri",
+      "version": "4.1.0",
+      "description": "Standard Subresource Integrity library --  parses, serializes, generates, and verifies integrity metadata according to the SRI spec.",
+      "main": "index.js",
+      "files": [
+        "*.js"
+      ],
+      "scripts": {
+        "prerelease": "npm t",
+        "postrelease": "npm publish && git push --follow-tags",
+        "pretest": "standard",
+        "release": "standard-version -s",
+        "test": "tap -J --coverage test/*.js",
+        "update-coc": "weallbehave -o . && git add CODE_OF_CONDUCT.md && git commit -m 'docs(coc): updated CODE_OF_CONDUCT.md'",
+        "update-contrib": "weallcontribute -o . && git add CONTRIBUTING.md && git commit -m 'docs(contributing): updated CONTRIBUTING.md'"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zkat/ssri.git"
+      },
+      "keywords": [
+        "w3c",
+        "web",
+        "security",
+        "integrity",
+        "checksum",
+        "hashing",
+        "subresource integrity",
+        "sri",
+        "sri hash",
+        "sri string",
+        "sri generator",
+        "html"
+      ],
+      "author": {
+        "name": "Kat Marchán",
+        "email": "kzm@sykosomatic.org"
+      },
+      "license": "CC0-1.0",
+      "dependencies": {},
+      "devDependencies": {
+        "nyc": "^10.0.0",
+        "standard": "^9.0.1",
+        "standard-version": "^4.0.0",
+        "tap": "^10.3.0",
+        "weallbehave": "^1.0.0",
+        "weallcontribute": "^1.0.8"
+      },
+      "config": {
+        "nyc": {
+          "exclude": [
+            "node_modules/**",
+            "test/**"
+          ]
+        }
+      },
+      "gitHead": "9c4a4a978b70515e2a71f3e69a116414d23109f5",
+      "bugs": {
+        "url": "https://github.com/zkat/ssri/issues"
+      },
+      "homepage": "https://github.com/zkat/ssri#readme",
+      "_id": "ssri@4.1.0",
+      "_shasum": "d88781b15f0eb04d6d1cd0951a2d41b58daeceb4",
+      "_from": ".",
+      "_npmVersion": "4.5.0",
+      "_nodeVersion": "7.8.0",
+      "_npmUser": {
+        "name": "zkat",
+        "email": "kat@sykosomatic.org"
+      },
+      "dist": {
+        "shasum": "d88781b15f0eb04d6d1cd0951a2d41b58daeceb4",
+        "tarball": "https://registry.npmjs.org/ssri/-/ssri-4.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "zkat",
+          "email": "kat@sykosomatic.org"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/ssri-4.1.0.tgz_1491579758434_0.14692295622080564"
+      },
+      "directories": {}
+    },
+    "4.1.1": {
+      "name": "ssri",
+      "version": "4.1.1",
+      "description": "Standard Subresource Integrity library --  parses, serializes, generates, and verifies integrity metadata according to the SRI spec.",
+      "main": "index.js",
+      "files": [
+        "*.js"
+      ],
+      "scripts": {
+        "prerelease": "npm t",
+        "postrelease": "npm publish && git push --follow-tags",
+        "pretest": "standard",
+        "release": "standard-version -s",
+        "test": "tap -J --coverage test/*.js",
+        "update-coc": "weallbehave -o . && git add CODE_OF_CONDUCT.md && git commit -m 'docs(coc): updated CODE_OF_CONDUCT.md'",
+        "update-contrib": "weallcontribute -o . && git add CONTRIBUTING.md && git commit -m 'docs(contributing): updated CONTRIBUTING.md'"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zkat/ssri.git"
+      },
+      "keywords": [
+        "w3c",
+        "web",
+        "security",
+        "integrity",
+        "checksum",
+        "hashing",
+        "subresource integrity",
+        "sri",
+        "sri hash",
+        "sri string",
+        "sri generator",
+        "html"
+      ],
+      "author": {
+        "name": "Kat Marchán",
+        "email": "kzm@sykosomatic.org"
+      },
+      "license": "CC0-1.0",
+      "dependencies": {},
+      "devDependencies": {
+        "nyc": "^10.2.0",
+        "standard": "^9.0.2",
+        "standard-version": "^4.0.0",
+        "tap": "^10.3.2",
+        "weallbehave": "^1.0.0",
+        "weallcontribute": "^1.0.8"
+      },
+      "config": {
+        "nyc": {
+          "exclude": [
+            "node_modules/**",
+            "test/**"
+          ]
+        }
+      },
+      "gitHead": "b4d40d7ac04630b4bf5f79b674b6052d8ba0bc72",
+      "bugs": {
+        "url": "https://github.com/zkat/ssri/issues"
+      },
+      "homepage": "https://github.com/zkat/ssri#readme",
+      "_id": "ssri@4.1.1",
+      "_shasum": "11ccc8dbe39d37ecc6a05b539b073fdda35cf8c1",
+      "_from": ".",
+      "_npmVersion": "4.5.0",
+      "_nodeVersion": "7.8.0",
+      "_npmUser": {
+        "name": "zkat",
+        "email": "kat@sykosomatic.org"
+      },
+      "dist": {
+        "shasum": "11ccc8dbe39d37ecc6a05b539b073fdda35cf8c1",
+        "tarball": "https://registry.npmjs.org/ssri/-/ssri-4.1.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "zkat",
+          "email": "kat@sykosomatic.org"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/ssri-4.1.1.tgz_1491970633037_0.44561820197850466"
+      },
+      "directories": {}
+    },
+    "4.1.2": {
+      "name": "ssri",
+      "version": "4.1.2",
+      "description": "Standard Subresource Integrity library --  parses, serializes, generates, and verifies integrity metadata according to the SRI spec.",
+      "main": "index.js",
+      "files": [
+        "*.js"
+      ],
+      "scripts": {
+        "prerelease": "npm t",
+        "postrelease": "npm publish && git push --follow-tags",
+        "pretest": "standard",
+        "release": "standard-version -s",
+        "test": "tap -J --coverage test/*.js",
+        "update-coc": "weallbehave -o . && git add CODE_OF_CONDUCT.md && git commit -m 'docs(coc): updated CODE_OF_CONDUCT.md'",
+        "update-contrib": "weallcontribute -o . && git add CONTRIBUTING.md && git commit -m 'docs(contributing): updated CONTRIBUTING.md'"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zkat/ssri.git"
+      },
+      "keywords": [
+        "w3c",
+        "web",
+        "security",
+        "integrity",
+        "checksum",
+        "hashing",
+        "subresource integrity",
+        "sri",
+        "sri hash",
+        "sri string",
+        "sri generator",
+        "html"
+      ],
+      "author": {
+        "name": "Kat Marchán",
+        "email": "kzm@sykosomatic.org"
+      },
+      "license": "CC0-1.0",
+      "dependencies": {},
+      "devDependencies": {
+        "nyc": "^10.2.0",
+        "standard": "^9.0.2",
+        "standard-version": "^4.0.0",
+        "tap": "^10.3.2",
+        "weallbehave": "^1.0.0",
+        "weallcontribute": "^1.0.8"
+      },
+      "config": {
+        "nyc": {
+          "exclude": [
+            "node_modules/**",
+            "test/**"
+          ]
+        }
+      },
+      "gitHead": "e0f1a5dccd1583773f98c3cdef088f3c948afab0",
+      "bugs": {
+        "url": "https://github.com/zkat/ssri/issues"
+      },
+      "homepage": "https://github.com/zkat/ssri#readme",
+      "_id": "ssri@4.1.2",
+      "_npmVersion": "5.0.0-beta.1",
+      "_nodeVersion": "7.9.0",
+      "_npmUser": {
+        "name": "zkat",
+        "email": "kat@sykosomatic.org"
+      },
+      "dist": {
+        "shasum": "3d3c69b490d0b107772a9bf81881f38ae071f24b",
+        "tarball": "https://registry.npmjs.org/ssri/-/ssri-4.1.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "zkat",
+          "email": "kat@sykosomatic.org"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/ssri-4.1.2.tgz_1492509214466_0.5280678283888847"
+      },
+      "directories": {}
+    },
+    "4.1.3": {
+      "name": "ssri",
+      "version": "4.1.3",
+      "description": "Standard Subresource Integrity library --  parses, serializes, generates, and verifies integrity metadata according to the SRI spec.",
+      "main": "index.js",
+      "files": [
+        "*.js"
+      ],
+      "scripts": {
+        "prerelease": "npm t",
+        "postrelease": "npm publish && git push --follow-tags",
+        "pretest": "standard",
+        "release": "standard-version -s",
+        "test": "tap -J --coverage test/*.js",
+        "update-coc": "weallbehave -o . && git add CODE_OF_CONDUCT.md && git commit -m 'docs(coc): updated CODE_OF_CONDUCT.md'",
+        "update-contrib": "weallcontribute -o . && git add CONTRIBUTING.md && git commit -m 'docs(contributing): updated CONTRIBUTING.md'"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zkat/ssri.git"
+      },
+      "keywords": [
+        "w3c",
+        "web",
+        "security",
+        "integrity",
+        "checksum",
+        "hashing",
+        "subresource integrity",
+        "sri",
+        "sri hash",
+        "sri string",
+        "sri generator",
+        "html"
+      ],
+      "author": {
+        "name": "Kat Marchán",
+        "email": "kzm@sykosomatic.org"
+      },
+      "license": "CC0-1.0",
+      "dependencies": {},
+      "devDependencies": {
+        "nyc": "^10.3.2",
+        "standard": "^9.0.2",
+        "standard-version": "^4.0.0",
+        "tap": "^10.3.2",
+        "weallbehave": "^1.2.0",
+        "weallcontribute": "^1.0.8"
+      },
+      "config": {
+        "nyc": {
+          "exclude": [
+            "node_modules/**",
+            "test/**"
+          ]
+        }
+      },
+      "gitHead": "76f4a69a573e34a92b16edf540312e8e694b7365",
+      "bugs": {
+        "url": "https://github.com/zkat/ssri/issues"
+      },
+      "homepage": "https://github.com/zkat/ssri#readme",
+      "_id": "ssri@4.1.3",
+      "_npmVersion": "5.0.0-beta.61",
+      "_nodeVersion": "7.9.0",
+      "_npmUser": {
+        "name": "zkat",
+        "email": "kat@sykosomatic.org"
+      },
+      "dist": {
+        "integrity": "sha512-vDXK4C5lxEMlMXyUvsaNAqyYkoMaScW8r6jUTg3uwUOMnvbMmNRSw3Cal0iiWHtMsQxga7NG4GShS0CKt3Pt1w==",
+        "shasum": "ec8b5585cbfc726a5f9aad829efce238de831935",
+        "tarball": "https://registry.npmjs.org/ssri/-/ssri-4.1.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "zkat",
+          "email": "kat@sykosomatic.org"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ssri-4.1.3.tgz_1495669259707_0.24795893067494035"
+      },
+      "directories": {}
+    },
+    "4.1.4": {
+      "name": "ssri",
+      "version": "4.1.4",
+      "description": "Standard Subresource Integrity library --  parses, serializes, generates, and verifies integrity metadata according to the SRI spec.",
+      "main": "index.js",
+      "files": [
+        "*.js"
+      ],
+      "scripts": {
+        "prerelease": "npm t",
+        "postrelease": "npm publish && git push --follow-tags",
+        "pretest": "standard",
+        "release": "standard-version -s",
+        "test": "tap -J --coverage test/*.js",
+        "update-coc": "weallbehave -o . && git add CODE_OF_CONDUCT.md && git commit -m 'docs(coc): updated CODE_OF_CONDUCT.md'",
+        "update-contrib": "weallcontribute -o . && git add CONTRIBUTING.md && git commit -m 'docs(contributing): updated CONTRIBUTING.md'"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zkat/ssri.git"
+      },
+      "keywords": [
+        "w3c",
+        "web",
+        "security",
+        "integrity",
+        "checksum",
+        "hashing",
+        "subresource integrity",
+        "sri",
+        "sri hash",
+        "sri string",
+        "sri generator",
+        "html"
+      ],
+      "author": {
+        "name": "Kat Marchán",
+        "email": "kzm@sykosomatic.org"
+      },
+      "license": "CC0-1.0",
+      "dependencies": {
+        "safe-buffer": "^5.0.1"
+      },
+      "devDependencies": {
+        "nyc": "^10.3.2",
+        "standard": "^9.0.2",
+        "standard-version": "^4.0.0",
+        "tap": "^10.3.2",
+        "weallbehave": "^1.2.0",
+        "weallcontribute": "^1.0.8"
+      },
+      "config": {
+        "nyc": {
+          "exclude": [
+            "node_modules/**",
+            "test/**"
+          ]
+        }
+      },
+      "gitHead": "4789c3a70969df4ea3711931f41b5982ab3f1f18",
+      "bugs": {
+        "url": "https://github.com/zkat/ssri/issues"
+      },
+      "homepage": "https://github.com/zkat/ssri#readme",
+      "_id": "ssri@4.1.4",
+      "_npmVersion": "5.0.0",
+      "_nodeVersion": "7.9.0",
+      "_npmUser": {
+        "name": "zkat",
+        "email": "kat@sykosomatic.org"
+      },
+      "dist": {
+        "integrity": "sha512-CfN7rEZZi9/eLoED+vfKpgEPXdev5D5FV2fCih8j1e+rOSrKwoXzq3HVGy5ybu5mj94lrQ1X2oP+xBjLNtPUQQ==",
+        "shasum": "22be0659c075a612b622158872b585d5fe6b03af",
+        "tarball": "https://registry.npmjs.org/ssri/-/ssri-4.1.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "zkat",
+          "email": "kat@sykosomatic.org"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ssri-4.1.4.tgz_1496204542507_0.8902380040381104"
+      },
+      "directories": {}
+    },
+    "4.1.5": {
+      "name": "ssri",
+      "version": "4.1.5",
+      "description": "Standard Subresource Integrity library --  parses, serializes, generates, and verifies integrity metadata according to the SRI spec.",
+      "main": "index.js",
+      "files": [
+        "*.js"
+      ],
+      "scripts": {
+        "prerelease": "npm t",
+        "postrelease": "npm publish && git push --follow-tags",
+        "pretest": "standard",
+        "release": "standard-version -s",
+        "test": "tap -J --coverage test/*.js",
+        "update-coc": "weallbehave -o . && git add CODE_OF_CONDUCT.md && git commit -m 'docs(coc): updated CODE_OF_CONDUCT.md'",
+        "update-contrib": "weallcontribute -o . && git add CONTRIBUTING.md && git commit -m 'docs(contributing): updated CONTRIBUTING.md'"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zkat/ssri.git"
+      },
+      "keywords": [
+        "w3c",
+        "web",
+        "security",
+        "integrity",
+        "checksum",
+        "hashing",
+        "subresource integrity",
+        "sri",
+        "sri hash",
+        "sri string",
+        "sri generator",
+        "html"
+      ],
+      "author": {
+        "name": "Kat Marchán",
+        "email": "kzm@sykosomatic.org"
+      },
+      "license": "CC0-1.0",
+      "dependencies": {
+        "safe-buffer": "^5.0.1"
+      },
+      "devDependencies": {
+        "nyc": "^10.3.2",
+        "standard": "^9.0.2",
+        "standard-version": "^4.0.0",
+        "tap": "^10.3.2",
+        "weallbehave": "^1.2.0",
+        "weallcontribute": "^1.0.8"
+      },
+      "config": {
+        "nyc": {
+          "exclude": [
+            "node_modules/**",
+            "test/**"
+          ]
+        }
+      },
+      "gitHead": "75be125a348e241edbc1ea5f0e1d40406f002b0b",
+      "bugs": {
+        "url": "https://github.com/zkat/ssri/issues"
+      },
+      "homepage": "https://github.com/zkat/ssri#readme",
+      "_id": "ssri@4.1.5",
+      "_npmVersion": "5.0.2-canary.9",
+      "_nodeVersion": "7.9.0",
+      "_npmUser": {
+        "name": "zkat",
+        "email": "kat@sykosomatic.org"
+      },
+      "dist": {
+        "integrity": "sha512-TaLitc/pZH1UF8LCgZWdbssPiOUcPjBmIJsYJa+YltP77mY2qQ0Y2b+VS4C9RbZRH1GPMt4zckqqBd7GE/61ew==",
+        "shasum": "e3844770b5379ced69b512e70a28d86d86abd43a",
+        "tarball": "https://registry.npmjs.org/ssri/-/ssri-4.1.5.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "zkat",
+          "email": "kat@sykosomatic.org"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ssri-4.1.5.tgz_1496697273189_0.7271448955871165"
+      },
+      "directories": {}
+    },
+    "4.1.6": {
+      "name": "ssri",
+      "version": "4.1.6",
+      "description": "Standard Subresource Integrity library --  parses, serializes, generates, and verifies integrity metadata according to the SRI spec.",
+      "main": "index.js",
+      "files": [
+        "*.js"
+      ],
+      "scripts": {
+        "prerelease": "npm t",
+        "postrelease": "npm publish && git push --follow-tags",
+        "pretest": "standard",
+        "release": "standard-version -s",
+        "test": "tap -J --coverage test/*.js",
+        "update-coc": "weallbehave -o . && git add CODE_OF_CONDUCT.md && git commit -m 'docs(coc): updated CODE_OF_CONDUCT.md'",
+        "update-contrib": "weallcontribute -o . && git add CONTRIBUTING.md && git commit -m 'docs(contributing): updated CONTRIBUTING.md'"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zkat/ssri.git"
+      },
+      "keywords": [
+        "w3c",
+        "web",
+        "security",
+        "integrity",
+        "checksum",
+        "hashing",
+        "subresource integrity",
+        "sri",
+        "sri hash",
+        "sri string",
+        "sri generator",
+        "html"
+      ],
+      "author": {
+        "name": "Kat Marchán",
+        "email": "kzm@sykosomatic.org"
+      },
+      "license": "CC0-1.0",
+      "dependencies": {
+        "safe-buffer": "^5.1.0"
+      },
+      "devDependencies": {
+        "nyc": "^10.3.2",
+        "standard": "^9.0.2",
+        "standard-version": "^4.1.0",
+        "tap": "^10.3.3",
+        "weallbehave": "^1.2.0",
+        "weallcontribute": "^1.0.8"
+      },
+      "config": {
+        "nyc": {
+          "exclude": [
+            "node_modules/**",
+            "test/**"
+          ]
+        }
+      },
+      "gitHead": "1bef97d1ba06384b703d438cfb88f1f02d9a8e67",
+      "bugs": {
+        "url": "https://github.com/zkat/ssri/issues"
+      },
+      "homepage": "https://github.com/zkat/ssri#readme",
+      "_id": "ssri@4.1.6",
+      "_npmVersion": "5.0.3",
+      "_nodeVersion": "7.9.0",
+      "_npmUser": {
+        "name": "zkat",
+        "email": "kat@sykosomatic.org"
+      },
+      "dist": {
+        "integrity": "sha512-WUbCdgSAMQjTFZRWvSPpauryvREEA+Krn19rx67UlJEJx/M192ZHxMmJXjZ4tkdFm+Sb0SXGlENeQVlA5wY7kA==",
+        "shasum": "0cb49b6ac84457e7bdd466cb730c3cb623e9a25b",
+        "tarball": "https://registry.npmjs.org/ssri/-/ssri-4.1.6.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "zkat",
+          "email": "kat@sykosomatic.org"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ssri-4.1.6.tgz_1496874096398_0.711648159660399"
+      },
+      "directories": {}
+    },
+    "5.0.0": {
+      "name": "ssri",
+      "version": "5.0.0",
+      "description": "Standard Subresource Integrity library --  parses, serializes, generates, and verifies integrity metadata according to the SRI spec.",
+      "main": "index.js",
+      "files": [
+        "*.js"
+      ],
+      "scripts": {
+        "prerelease": "npm t",
+        "postrelease": "npm publish && git push --follow-tags",
+        "pretest": "standard",
+        "release": "standard-version -s",
+        "test": "tap -J --coverage test/*.js",
+        "update-coc": "weallbehave -o . && git add CODE_OF_CONDUCT.md && git commit -m 'docs(coc): updated CODE_OF_CONDUCT.md'",
+        "update-contrib": "weallcontribute -o . && git add CONTRIBUTING.md && git commit -m 'docs(contributing): updated CONTRIBUTING.md'"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zkat/ssri.git"
+      },
+      "keywords": [
+        "w3c",
+        "web",
+        "security",
+        "integrity",
+        "checksum",
+        "hashing",
+        "subresource integrity",
+        "sri",
+        "sri hash",
+        "sri string",
+        "sri generator",
+        "html"
+      ],
+      "author": {
+        "name": "Kat Marchán",
+        "email": "kzm@sykosomatic.org"
+      },
+      "license": "ISC",
+      "dependencies": {
+        "safe-buffer": "^5.1.0"
+      },
+      "devDependencies": {
+        "nyc": "^10.3.2",
+        "standard": "^9.0.2",
+        "standard-version": "^4.1.0",
+        "tap": "^10.3.3",
+        "weallbehave": "^1.2.0",
+        "weallcontribute": "^1.0.8"
+      },
+      "config": {
+        "nyc": {
+          "exclude": [
+            "node_modules/**",
+            "test/**"
+          ]
+        }
+      },
+      "gitHead": "d0343e0bb5d8f8769462fcb8250f4c8ad4ff6d5c",
+      "bugs": {
+        "url": "https://github.com/zkat/ssri/issues"
+      },
+      "homepage": "https://github.com/zkat/ssri#readme",
+      "_id": "ssri@5.0.0",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.5.0",
+      "_npmUser": {
+        "name": "zkat",
+        "email": "kzm@sykosomatic.org"
+      },
+      "dist": {
+        "integrity": "sha512-728D4yoQcQm1ooZvSbywLkV1RjfITZXh0oWrhM/lnsx3nAHx7LsRGJWB/YyvoceAYRq98xqbstiN4JBv1/wNHg==",
+        "shasum": "13c19390b606c821f2a10d02b351c1729b94d8cf",
+        "tarball": "https://registry.npmjs.org/ssri/-/ssri-5.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        },
+        {
+          "name": "zkat",
+          "email": "kat@sykosomatic.org"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ssri-5.0.0.tgz_1508783055152_0.24902067962102592"
+      },
+      "directories": {}
+    },
+    "5.1.0": {
+      "name": "ssri",
+      "version": "5.1.0",
+      "description": "Standard Subresource Integrity library --  parses, serializes, generates, and verifies integrity metadata according to the SRI spec.",
+      "main": "index.js",
+      "files": [
+        "*.js"
+      ],
+      "scripts": {
+        "prerelease": "npm t",
+        "postrelease": "npm publish && git push --follow-tags",
+        "pretest": "standard",
+        "release": "standard-version -s",
+        "test": "tap -J --coverage test/*.js",
+        "update-coc": "weallbehave -o . && git add CODE_OF_CONDUCT.md && git commit -m 'docs(coc): updated CODE_OF_CONDUCT.md'",
+        "update-contrib": "weallcontribute -o . && git add CONTRIBUTING.md && git commit -m 'docs(contributing): updated CONTRIBUTING.md'"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zkat/ssri.git"
+      },
+      "keywords": [
+        "w3c",
+        "web",
+        "security",
+        "integrity",
+        "checksum",
+        "hashing",
+        "subresource integrity",
+        "sri",
+        "sri hash",
+        "sri string",
+        "sri generator",
+        "html"
+      ],
+      "author": {
+        "name": "Kat Marchán",
+        "email": "kzm@sykosomatic.org"
+      },
+      "license": "ISC",
+      "dependencies": {
+        "safe-buffer": "^5.1.0"
+      },
+      "devDependencies": {
+        "nyc": "^10.3.2",
+        "standard": "^9.0.2",
+        "standard-version": "^4.1.0",
+        "tap": "^10.3.3",
+        "weallbehave": "^1.2.0",
+        "weallcontribute": "^1.0.8"
+      },
+      "config": {
+        "nyc": {
+          "exclude": [
+            "node_modules/**",
+            "test/**"
+          ]
+        }
+      },
+      "gitHead": "381c619042dcc4ff49172fcd89e0b84d67077f65",
+      "bugs": {
+        "url": "https://github.com/zkat/ssri/issues"
+      },
+      "homepage": "https://github.com/zkat/ssri#readme",
+      "_id": "ssri@5.1.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.3.0",
+      "_npmUser": {
+        "name": "zkat",
+        "email": "kzm@sykosomatic.org"
+      },
+      "dist": {
+        "integrity": "sha512-TevC8fgxQKTfQ1nWtM9GNzr3q5rrHNntG9CDMH1k3QhSZI6Kb+NbjLRs8oPFZa2Hgo7zoekL+UTvoEk7tsbjQg==",
+        "shasum": "2cbf1df36b74d0fc91fcf89640a4b3e1d10b1899",
+        "tarball": "https://registry.npmjs.org/ssri/-/ssri-5.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        },
+        {
+          "name": "zkat",
+          "email": "kat@sykosomatic.org"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ssri-5.1.0.tgz_1516319806538_0.5181513263378292"
+      },
+      "directories": {}
+    },
+    "5.2.1": {
+      "name": "ssri",
+      "version": "5.2.1",
+      "description": "Standard Subresource Integrity library --  parses, serializes, generates, and verifies integrity metadata according to the SRI spec.",
+      "main": "index.js",
+      "files": [
+        "*.js"
+      ],
+      "scripts": {
+        "prerelease": "npm t",
+        "postrelease": "npm publish && git push --follow-tags",
+        "pretest": "standard",
+        "release": "standard-version -s",
+        "test": "tap -J --coverage test/*.js",
+        "update-coc": "weallbehave -o . && git add CODE_OF_CONDUCT.md && git commit -m 'docs(coc): updated CODE_OF_CONDUCT.md'",
+        "update-contrib": "weallcontribute -o . && git add CONTRIBUTING.md && git commit -m 'docs(contributing): updated CONTRIBUTING.md'"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zkat/ssri.git"
+      },
+      "keywords": [
+        "w3c",
+        "web",
+        "security",
+        "integrity",
+        "checksum",
+        "hashing",
+        "subresource integrity",
+        "sri",
+        "sri hash",
+        "sri string",
+        "sri generator",
+        "html"
+      ],
+      "author": {
+        "name": "Kat Marchán",
+        "email": "kzm@sykosomatic.org"
+      },
+      "license": "ISC",
+      "dependencies": {
+        "safe-buffer": "^5.1.1"
+      },
+      "devDependencies": {
+        "nyc": "^11.4.1",
+        "standard": "^10.0.3",
+        "standard-version": "^4.3.0",
+        "tap": "^11.1.0",
+        "weallbehave": "^1.2.0",
+        "weallcontribute": "^1.0.8"
+      },
+      "config": {
+        "nyc": {
+          "exclude": [
+            "node_modules/**",
+            "test/**"
+          ]
+        }
+      },
+      "gitHead": "050324c2341b0b60d42df47f51116dedbab47942",
+      "bugs": {
+        "url": "https://github.com/zkat/ssri/issues"
+      },
+      "homepage": "https://github.com/zkat/ssri#readme",
+      "_id": "ssri@5.2.1",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.3.0",
+      "_npmUser": {
+        "name": "zkat",
+        "email": "kzm@sykosomatic.org"
+      },
+      "dist": {
+        "integrity": "sha512-y4PjOWlAuxt+yAcXitQYOnOzZpKaH3+f/qGV3OWxbyC2noC9FA9GNC9uILnVdV7jruA1aDKr4OKz3ZDBcVZwFQ==",
+        "shasum": "8b6eb873688759bd3c75a88dee74593d179bb73c",
+        "tarball": "https://registry.npmjs.org/ssri/-/ssri-5.2.1.tgz",
+        "fileCount": 5,
+        "unpackedSize": 38327
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        },
+        {
+          "name": "zkat",
+          "email": "kat@sykosomatic.org"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ssri_5.2.1_1517962077706_0.09262833893093503"
+      },
+      "_hasShrinkwrap": false
+    },
+    "5.2.2": {
+      "name": "ssri",
+      "version": "5.2.2",
+      "description": "Standard Subresource Integrity library --  parses, serializes, generates, and verifies integrity metadata according to the SRI spec.",
+      "main": "index.js",
+      "files": [
+        "*.js"
+      ],
+      "scripts": {
+        "prerelease": "npm t",
+        "postrelease": "npm publish && git push --follow-tags",
+        "pretest": "standard",
+        "release": "standard-version -s",
+        "test": "tap -J --coverage test/*.js",
+        "update-coc": "weallbehave -o . && git add CODE_OF_CONDUCT.md && git commit -m 'docs(coc): updated CODE_OF_CONDUCT.md'",
+        "update-contrib": "weallcontribute -o . && git add CONTRIBUTING.md && git commit -m 'docs(contributing): updated CONTRIBUTING.md'"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zkat/ssri.git"
+      },
+      "keywords": [
+        "w3c",
+        "web",
+        "security",
+        "integrity",
+        "checksum",
+        "hashing",
+        "subresource integrity",
+        "sri",
+        "sri hash",
+        "sri string",
+        "sri generator",
+        "html"
+      ],
+      "author": {
+        "name": "Kat Marchán",
+        "email": "kzm@sykosomatic.org"
+      },
+      "license": "ISC",
+      "dependencies": {
+        "safe-buffer": "^5.1.1"
+      },
+      "devDependencies": {
+        "nyc": "^11.4.1",
+        "standard": "^10.0.3",
+        "standard-version": "^4.3.0",
+        "tap": "^11.1.0",
+        "weallbehave": "^1.2.0",
+        "weallcontribute": "^1.0.8"
+      },
+      "config": {
+        "nyc": {
+          "exclude": [
+            "node_modules/**",
+            "test/**"
+          ]
+        }
+      },
+      "gitHead": "0fb45e7e0eba615bf0080bf350c95e19412ff9a9",
+      "bugs": {
+        "url": "https://github.com/zkat/ssri/issues"
+      },
+      "homepage": "https://github.com/zkat/ssri#readme",
+      "_id": "ssri@5.2.2",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.9.4",
+      "_npmUser": {
+        "name": "zkat",
+        "email": "kzm@sykosomatic.org"
+      },
+      "dist": {
+        "integrity": "sha512-hm46mN8YSzjGuJtVocXPjwo0yTRXobXqYuK/tV6gr557/tRck4yWXKPRW8OxyJgRvcL3QgX+5ng/kMHBMco7KA==",
+        "shasum": "797be390aefe03996e4d961657a946121e2feacf",
+        "tarball": "https://registry.npmjs.org/ssri/-/ssri-5.2.2.tgz",
+        "fileCount": 5,
+        "unpackedSize": 38591
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        },
+        {
+          "name": "zkat",
+          "email": "kat@sykosomatic.org"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ssri_5.2.2_1518640685016_0.7166281342929599"
+      },
+      "_hasShrinkwrap": false
+    },
+    "5.2.3": {
+      "name": "ssri",
+      "version": "5.2.3",
+      "description": "Standard Subresource Integrity library --  parses, serializes, generates, and verifies integrity metadata according to the SRI spec.",
+      "main": "index.js",
+      "files": [
+        "*.js"
+      ],
+      "scripts": {
+        "prerelease": "npm t",
+        "postrelease": "npm publish && git push --follow-tags",
+        "pretest": "standard",
+        "release": "standard-version -s",
+        "test": "tap -J --coverage test/*.js",
+        "update-coc": "weallbehave -o . && git add CODE_OF_CONDUCT.md && git commit -m 'docs(coc): updated CODE_OF_CONDUCT.md'",
+        "update-contrib": "weallcontribute -o . && git add CONTRIBUTING.md && git commit -m 'docs(contributing): updated CONTRIBUTING.md'"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zkat/ssri.git"
+      },
+      "keywords": [
+        "w3c",
+        "web",
+        "security",
+        "integrity",
+        "checksum",
+        "hashing",
+        "subresource integrity",
+        "sri",
+        "sri hash",
+        "sri string",
+        "sri generator",
+        "html"
+      ],
+      "author": {
+        "name": "Kat Marchán",
+        "email": "kzm@sykosomatic.org"
+      },
+      "license": "ISC",
+      "dependencies": {
+        "safe-buffer": "^5.1.1"
+      },
+      "devDependencies": {
+        "nyc": "^11.4.1",
+        "standard": "^10.0.3",
+        "standard-version": "^4.3.0",
+        "tap": "^11.1.0",
+        "weallbehave": "^1.2.0",
+        "weallcontribute": "^1.0.8"
+      },
+      "config": {
+        "nyc": {
+          "exclude": [
+            "node_modules/**",
+            "test/**"
+          ]
+        }
+      },
+      "gitHead": "5e6fcee066a60e2a7dc505dc1912c0502844e39d",
+      "bugs": {
+        "url": "https://github.com/zkat/ssri/issues"
+      },
+      "homepage": "https://github.com/zkat/ssri#readme",
+      "_id": "ssri@5.2.3",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.9.4",
+      "_npmUser": {
+        "name": "zkat",
+        "email": "kzm@sykosomatic.org"
+      },
+      "dist": {
+        "integrity": "sha512-28QiVvVENYcfxZmohuG6ZHFJ3jYxPExjVL53GAYk0dgx76NHE7MhBn2NPR2N3vThQyECN8ZHkD0FPcEks3rwLQ==",
+        "shasum": "71e142c51c7cc411b525b4ee9b872233334f8a4f",
+        "tarball": "https://registry.npmjs.org/ssri/-/ssri-5.2.3.tgz",
+        "fileCount": 5,
+        "unpackedSize": 39070
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        },
+        {
+          "name": "zkat",
+          "email": "kat@sykosomatic.org"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ssri_5.2.3_1518820760191_0.22073895365245244"
+      },
+      "_hasShrinkwrap": false
+    },
+    "5.2.4": {
+      "name": "ssri",
+      "version": "5.2.4",
+      "description": "Standard Subresource Integrity library --  parses, serializes, generates, and verifies integrity metadata according to the SRI spec.",
+      "main": "index.js",
+      "files": [
+        "*.js"
+      ],
+      "scripts": {
+        "prerelease": "npm t",
+        "postrelease": "npm publish && git push --follow-tags",
+        "pretest": "standard",
+        "release": "standard-version -s",
+        "test": "tap -J --coverage test/*.js",
+        "update-coc": "weallbehave -o . && git add CODE_OF_CONDUCT.md && git commit -m 'docs(coc): updated CODE_OF_CONDUCT.md'",
+        "update-contrib": "weallcontribute -o . && git add CONTRIBUTING.md && git commit -m 'docs(contributing): updated CONTRIBUTING.md'"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zkat/ssri.git"
+      },
+      "keywords": [
+        "w3c",
+        "web",
+        "security",
+        "integrity",
+        "checksum",
+        "hashing",
+        "subresource integrity",
+        "sri",
+        "sri hash",
+        "sri string",
+        "sri generator",
+        "html"
+      ],
+      "author": {
+        "name": "Kat Marchán",
+        "email": "kzm@sykosomatic.org"
+      },
+      "license": "ISC",
+      "dependencies": {
+        "safe-buffer": "^5.1.1"
+      },
+      "devDependencies": {
+        "nyc": "^11.4.1",
+        "standard": "^10.0.3",
+        "standard-version": "^4.3.0",
+        "tap": "^11.1.0",
+        "weallbehave": "^1.2.0",
+        "weallcontribute": "^1.0.8"
+      },
+      "config": {
+        "nyc": {
+          "exclude": [
+            "node_modules/**",
+            "test/**"
+          ]
+        }
+      },
+      "gitHead": "d0f7429cb8d5c38a3aab1dde24a725c61fe2d69d",
+      "bugs": {
+        "url": "https://github.com/zkat/ssri/issues"
+      },
+      "homepage": "https://github.com/zkat/ssri#readme",
+      "_id": "ssri@5.2.4",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.9.4",
+      "_npmUser": {
+        "name": "zkat",
+        "email": "kzm@sykosomatic.org"
+      },
+      "dist": {
+        "integrity": "sha512-UnEAgMZa15973iH7cUi0AHjJn1ACDIkaMyZILoqwN6yzt+4P81I8tBc5Hl+qwi5auMplZtPQsHrPBR5vJLcQtQ==",
+        "shasum": "9985e14041e65fc397af96542be35724ac11da52",
+        "tarball": "https://registry.npmjs.org/ssri/-/ssri-5.2.4.tgz",
+        "fileCount": 5,
+        "unpackedSize": 39173
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        },
+        {
+          "name": "zkat",
+          "email": "kat@sykosomatic.org"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ssri_5.2.4_1518821193016_0.9095896129879257"
+      },
+      "_hasShrinkwrap": false
+    },
+    "5.3.0": {
+      "name": "ssri",
+      "version": "5.3.0",
+      "description": "Standard Subresource Integrity library --  parses, serializes, generates, and verifies integrity metadata according to the SRI spec.",
+      "main": "index.js",
+      "files": [
+        "*.js"
+      ],
+      "scripts": {
+        "prerelease": "npm t",
+        "postrelease": "npm publish && git push --follow-tags",
+        "pretest": "standard",
+        "release": "standard-version -s",
+        "test": "tap -J --coverage test/*.js",
+        "update-coc": "weallbehave -o . && git add CODE_OF_CONDUCT.md && git commit -m 'docs(coc): updated CODE_OF_CONDUCT.md'",
+        "update-contrib": "weallcontribute -o . && git add CONTRIBUTING.md && git commit -m 'docs(contributing): updated CONTRIBUTING.md'"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zkat/ssri.git"
+      },
+      "keywords": [
+        "w3c",
+        "web",
+        "security",
+        "integrity",
+        "checksum",
+        "hashing",
+        "subresource integrity",
+        "sri",
+        "sri hash",
+        "sri string",
+        "sri generator",
+        "html"
+      ],
+      "author": {
+        "name": "Kat Marchán",
+        "email": "kzm@sykosomatic.org"
+      },
+      "license": "ISC",
+      "dependencies": {
+        "safe-buffer": "^5.1.1"
+      },
+      "devDependencies": {
+        "nyc": "^11.4.1",
+        "standard": "^10.0.3",
+        "standard-version": "^4.3.0",
+        "tap": "^11.1.0",
+        "weallbehave": "^1.2.0",
+        "weallcontribute": "^1.0.8"
+      },
+      "config": {
+        "nyc": {
+          "exclude": [
+            "node_modules/**",
+            "test/**"
+          ]
+        }
+      },
+      "gitHead": "0ae0c237690d0b33613524a318ec617b8a61f8b0",
+      "bugs": {
+        "url": "https://github.com/zkat/ssri/issues"
+      },
+      "homepage": "https://github.com/zkat/ssri#readme",
+      "_id": "ssri@5.3.0",
+      "_npmVersion": "5.7.1",
+      "_nodeVersion": "8.9.4",
+      "_npmUser": {
+        "name": "zkat",
+        "email": "kzm@sykosomatic.org"
+      },
+      "dist": {
+        "integrity": "sha512-XRSIPqLij52MtgoQavH/x/dU1qVKtWUAAZeOHsR9c2Ddi4XerFy3mc1alf+dLJKl9EUIm/Ht+EowFkTUOA6GAQ==",
+        "shasum": "ba3872c9c6d33a0704a7d71ff045e5ec48999d06",
+        "tarball": "https://registry.npmjs.org/ssri/-/ssri-5.3.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 40500
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        },
+        {
+          "name": "zkat",
+          "email": "kat@sykosomatic.org"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ssri_5.3.0_1520907920511_0.21070726641763593"
+      },
+      "_hasShrinkwrap": false
+    },
+    "6.0.0": {
+      "name": "ssri",
+      "version": "6.0.0",
+      "description": "Standard Subresource Integrity library --  parses, serializes, generates, and verifies integrity metadata according to the SRI spec.",
+      "main": "index.js",
+      "files": [
+        "*.js"
+      ],
+      "scripts": {
+        "prerelease": "npm t",
+        "postrelease": "npm publish && git push --follow-tags",
+        "pretest": "standard",
+        "release": "standard-version -s",
+        "test": "tap -J --coverage test/*.js",
+        "update-coc": "weallbehave -o . && git add CODE_OF_CONDUCT.md && git commit -m 'docs(coc): updated CODE_OF_CONDUCT.md'",
+        "update-contrib": "weallcontribute -o . && git add CONTRIBUTING.md && git commit -m 'docs(contributing): updated CONTRIBUTING.md'"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zkat/ssri.git"
+      },
+      "keywords": [
+        "w3c",
+        "web",
+        "security",
+        "integrity",
+        "checksum",
+        "hashing",
+        "subresource integrity",
+        "sri",
+        "sri hash",
+        "sri string",
+        "sri generator",
+        "html"
+      ],
+      "author": {
+        "name": "Kat Marchán",
+        "email": "kzm@sykosomatic.org"
+      },
+      "license": "ISC",
+      "dependencies": {},
+      "devDependencies": {
+        "nyc": "^11.4.1",
+        "standard": "^10.0.3",
+        "standard-version": "^4.3.0",
+        "tap": "^11.1.0",
+        "weallbehave": "^1.2.0",
+        "weallcontribute": "^1.0.8"
+      },
+      "config": {
+        "nyc": {
+          "exclude": [
+            "node_modules/**",
+            "test/**"
+          ]
+        }
+      },
+      "gitHead": "d1aa2f789a8cbfe8592d63a87cee4127864fdcad",
+      "bugs": {
+        "url": "https://github.com/zkat/ssri/issues"
+      },
+      "homepage": "https://github.com/zkat/ssri#readme",
+      "_id": "ssri@6.0.0",
+      "_npmVersion": "6.0.0-next.0",
+      "_nodeVersion": "9.8.0",
+      "_npmUser": {
+        "name": "zkat",
+        "email": "npm@zkat.tech"
+      },
+      "dist": {
+        "integrity": "sha512-zYOGfVHPhxyzwi8MdtdNyxv3IynWCIM4jYReR48lqu0VngxgH1c+C6CmipRdJ55eVByTJV/gboFEEI7TEQI8DA==",
+        "shasum": "fc21bfc90e03275ac3e23d5a42e38b8a1cbc130d",
+        "tarball": "https://registry.npmjs.org/ssri/-/ssri-6.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 40772
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        },
+        {
+          "name": "zkat",
+          "email": "kat@sykosomatic.org"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ssri_6.0.0_1523297982126_0.21106611482724236"
+      },
+      "_hasShrinkwrap": false
+    },
+    "6.0.1": {
+      "name": "ssri",
+      "version": "6.0.1",
+      "description": "Standard Subresource Integrity library --  parses, serializes, generates, and verifies integrity metadata according to the SRI spec.",
+      "main": "index.js",
+      "files": [
+        "*.js"
+      ],
+      "scripts": {
+        "prerelease": "npm t",
+        "postrelease": "npm publish && git push --follow-tags",
+        "pretest": "standard",
+        "release": "standard-version -s",
+        "test": "tap -J --coverage test/*.js",
+        "update-coc": "weallbehave -o . && git add CODE_OF_CONDUCT.md && git commit -m 'docs(coc): updated CODE_OF_CONDUCT.md'",
+        "update-contrib": "weallcontribute -o . && git add CONTRIBUTING.md && git commit -m 'docs(contributing): updated CONTRIBUTING.md'"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zkat/ssri.git"
+      },
+      "keywords": [
+        "w3c",
+        "web",
+        "security",
+        "integrity",
+        "checksum",
+        "hashing",
+        "subresource integrity",
+        "sri",
+        "sri hash",
+        "sri string",
+        "sri generator",
+        "html"
+      ],
+      "author": {
+        "name": "Kat Marchán",
+        "email": "kzm@sykosomatic.org"
+      },
+      "license": "ISC",
+      "dependencies": {
+        "figgy-pudding": "^3.5.1"
+      },
+      "devDependencies": {
+        "nyc": "^11.4.1",
+        "standard": "^10.0.3",
+        "standard-version": "^4.3.0",
+        "tap": "^11.1.0",
+        "weallbehave": "^1.2.0",
+        "weallcontribute": "^1.0.8"
+      },
+      "config": {
+        "nyc": {
+          "exclude": [
+            "node_modules/**",
+            "test/**"
+          ]
+        }
+      },
+      "gitHead": "a4337cd672f341deee2b52699b6720d82e4d0ddf",
+      "bugs": {
+        "url": "https://github.com/zkat/ssri/issues"
+      },
+      "homepage": "https://github.com/zkat/ssri#readme",
+      "_id": "ssri@6.0.1",
+      "_npmVersion": "6.4.1-next.0",
+      "_nodeVersion": "10.6.0",
+      "_npmUser": {
+        "name": "zkat",
+        "email": "npm@zkat.tech"
+      },
+      "dist": {
+        "integrity": "sha512-3Wge10hNcT1Kur4PDFwEieXSCMCJs/7WvSACcrMYrNp+b8kDL1/0wJch5Ni2WrtwEa2IO8OsVfeKIciKCDx/QA==",
+        "shasum": "2a3c41b28dd45b62b63676ecb74001265ae9edd8",
+        "tarball": "https://registry.npmjs.org/ssri/-/ssri-6.0.1.tgz",
+        "fileCount": 5,
+        "unpackedSize": 41465,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbhFapCRA9TVsSAnZWagAA0zsQAIa6FjZWfFf5yjI5p3aQ\nl/WNuIIw1AkISDYmwyytl2VWkFAU1nU2d4AcMwwR1sUCWt9OLFv7gkoV9aHq\nranYy0FaqdOS/Q8c9JVBDy/lrvbztbJXC7g+Dr6LmbZ8fSi9Qrp4I7FZbck4\nq2tCqf6H2h80rhc1aZCcVucjIAzoSEoc/8iZfbuQRth174slJzb6QK8DaQhC\nEBre8Ne57iRARPEqZHsqLC3G93V8gcWi02Vatzv4LtVbLzI4Kmqft0Kd5Mn0\ndMI2XqhWbL1e/5TvcszeN4YNK7WcF5Kvl1I44scDX0NGENfYF8EX+E7HyIjt\n3M8KmH6tjUrgr995Utw6Abqe2coHnnSqEpDWYhxF1wIxCt17IQbkOl49aDKz\n3FSGLDfepMxLbCYDpIe411pgHj8qLrTh6lsTHwqU9L+jRG/aC1ivRdyG+Mib\nRn6+tOOfLcDjlh4z3YXTHzCvSJ4QJjptmMeifjwWgyE0SByERiGIPpdSK1/5\n63O9ZUW8rfnuW9n1pbveq8GcrAyKzYgGEywqpiQuiBx5b6tEIuH3GfYasORI\naPiQfFkzzXiWrtS+TK2Tz8AAW41quykZ3x2F/S34TwvzTUXSZoxgwORpKXOn\nO7/M0VfpfF7ksB6TsN8TKlZI7CLCJmJVfPUELi7xBqXQWlb5hYEovD274qjv\nhUGF\r\n=M3jW\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        },
+        {
+          "name": "zkat",
+          "email": "kat@sykosomatic.org"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ssri_6.0.1_1535399592913_0.13364523738291578"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0": {
+      "name": "ssri",
+      "version": "7.0.0",
+      "description": "Standard Subresource Integrity library -- parses, serializes, generates, and verifies integrity metadata according to the SRI spec.",
+      "main": "index.js",
+      "scripts": {
+        "prerelease": "npm t",
+        "postrelease": "npm publish && git push --follow-tags",
+        "pretest": "standard",
+        "release": "standard-version -s",
+        "test": "tap -J --coverage test/*.js",
+        "update-coc": "weallbehave -o . && git add CODE_OF_CONDUCT.md && git commit -m 'docs(coc): updated CODE_OF_CONDUCT.md'",
+        "update-contrib": "weallcontribute -o . && git add CONTRIBUTING.md && git commit -m 'docs(contributing): updated CONTRIBUTING.md'"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/npm/ssri.git"
+      },
+      "keywords": [
+        "w3c",
+        "web",
+        "security",
+        "integrity",
+        "checksum",
+        "hashing",
+        "subresource integrity",
+        "sri",
+        "sri hash",
+        "sri string",
+        "sri generator",
+        "html"
+      ],
+      "author": {
+        "name": "Kat Marchán",
+        "email": "kzm@sykosomatic.org"
+      },
+      "license": "ISC",
+      "dependencies": {
+        "figgy-pudding": "^3.5.1",
+        "minipass": "^2.5.1"
+      },
+      "devDependencies": {
+        "standard": "^14.3.0",
+        "standard-version": "^7.0.0",
+        "tap": "^14.6.4",
+        "weallbehave": "^1.2.0",
+        "weallcontribute": "^1.0.8"
+      },
+      "tap": {
+        "check-coverage": true
+      },
+      "gitHead": "9c76e0cf1079a314880078ddfa1dd2b241ba4133",
+      "bugs": {
+        "url": "https://github.com/npm/ssri/issues"
+      },
+      "homepage": "https://github.com/npm/ssri#readme",
+      "_id": "ssri@7.0.0",
+      "_nodeVersion": "12.8.1",
+      "_npmVersion": "6.11.3",
+      "dist": {
+        "integrity": "sha512-cvBRrMQrBppFp7QQqh2zME8/Fek9akLhpAq6C78Q5npH8vonxkInB/nLIslb3NRCOKoM/PgUvKHd/zojlFCHlQ==",
+        "shasum": "5c2229910a91b6c161312a8d2608d3e83e82c431",
+        "tarball": "https://registry.npmjs.org/ssri/-/ssri-7.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 42951,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdgnjcCRA9TVsSAnZWagAAfDQP/3KdtQJG08/tj+MiOFz9\nSSBQBUQ1QajvRW45h9o2WoL8cLwedGRS959QBd3NH8T1FP793GJLMmOv4uBM\n3ItAOKudtcWeFlZMpEoFWrzGhasxFfvujFfllszAzR8rj7t+Ccxe4a2WQ1x6\nzj8Vbr0L5sUQsFuUmROhlnWc6Ay5HyzYz0TCnnlrrioSQiOonnd1oFthz6Zn\n0cBdmb0TfhqsQT3uh/rmzxkGSYZx+mXzaSzqusSck33q9Xo5F2ZPvZQsPgC+\n83MJBZEThIR+hMkNTSjt4he5JnDFku9wLuM8cpwjVj6pEYTmmqawgs6jKHwf\nLGYDz5fPUJhwTExu3axLqJauUEqmSwSB6x8EGgf9qOHyYwc0rF795SJKV44l\nIG9dRSpl4+gK87o8ffa8mT53R+0E+jDbTGfUE+9Nc46944lKM1RX68pQlOcm\nAHCsSdYj4+O+1Ig/lym7zTDXU8TkuhawFplVeeYNXUrE7AcSG4Bj8u/m/TDu\nytblL1Jj1tS/QXMD6sBL7Y26suiejg+zo1bpw9oVVjUM8Ciu/wLVSlkDLRTO\nfEXrBjeDbH0Fr/z/cKZRku0ZJjTiyqHORiIF5QHEZShqpBHg6HdtmDaSZ+tG\n3cGAJTxmpVAJbleJR04aqtWbanUbix8U98pJSsfsdAhjICCHYDPOFT2tsoBr\nJ/gF\r\n=xoUi\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "evilpacket@gmail.com",
+          "name": "adam_baldwin"
+        },
+        {
+          "email": "ahmad@ahmadnassri.com",
+          "name": "ahmadnassri"
+        },
+        {
+          "email": "anne@npmjs.com",
+          "name": "annekimsey"
+        },
+        {
+          "email": "billatnpm@gmail.com",
+          "name": "billatnpm"
+        },
+        {
+          "email": "cghr1990@gmail.com",
+          "name": "claudiahdz"
+        },
+        {
+          "email": "darcy@darcyclarke.me",
+          "name": "darcyclarke"
+        },
+        {
+          "email": "i@izs.me",
+          "name": "isaacs"
+        },
+        {
+          "email": "mike@mikecorp.ca",
+          "name": "mikemimik"
+        },
+        {
+          "email": "ruyadorno@hotmail.com",
+          "name": "ruyadorno"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ssri_7.0.0_1568831707859_0.3783619915532417"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.1": {
+      "name": "ssri",
+      "version": "7.0.1",
+      "description": "Standard Subresource Integrity library -- parses, serializes, generates, and verifies integrity metadata according to the SRI spec.",
+      "main": "index.js",
+      "scripts": {
+        "prerelease": "npm t",
+        "postrelease": "npm publish && git push --follow-tags",
+        "pretest": "standard",
+        "release": "standard-version -s",
+        "test": "tap -J --coverage test/*.js",
+        "update-coc": "weallbehave -o . && git add CODE_OF_CONDUCT.md && git commit -m 'docs(coc): updated CODE_OF_CONDUCT.md'",
+        "update-contrib": "weallcontribute -o . && git add CONTRIBUTING.md && git commit -m 'docs(contributing): updated CONTRIBUTING.md'"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/npm/ssri.git"
+      },
+      "keywords": [
+        "w3c",
+        "web",
+        "security",
+        "integrity",
+        "checksum",
+        "hashing",
+        "subresource integrity",
+        "sri",
+        "sri hash",
+        "sri string",
+        "sri generator",
+        "html"
+      ],
+      "author": {
+        "name": "Kat Marchán",
+        "email": "kzm@sykosomatic.org"
+      },
+      "license": "ISC",
+      "dependencies": {
+        "figgy-pudding": "^3.5.1",
+        "minipass": "^3.0.0"
+      },
+      "devDependencies": {
+        "standard": "^14.3.0",
+        "standard-version": "^7.0.0",
+        "tap": "^14.6.9",
+        "weallbehave": "^1.2.0",
+        "weallcontribute": "^1.0.8"
+      },
+      "tap": {
+        "check-coverage": true
+      },
+      "engines": {
+        "node": ">= 8"
+      },
+      "gitHead": "cea474f30a1b52e1bc199c64033ca34a717e40f5",
+      "bugs": {
+        "url": "https://github.com/npm/ssri/issues"
+      },
+      "homepage": "https://github.com/npm/ssri#readme",
+      "_id": "ssri@7.0.1",
+      "_nodeVersion": "12.8.1",
+      "_npmVersion": "6.12.0-next.0",
+      "dist": {
+        "integrity": "sha512-FfndBvkXL9AHyGLNzU3r9AvYIBBZ7gm+m+kd0p8cT3/v4OliMAyipZAhLVEv1Zi/k4QFq9CstRGVd9pW/zcHFQ==",
+        "shasum": "b0cab7bbb11ac9ea07f003453e2011f8cbed9f34",
+        "tarball": "https://registry.npmjs.org/ssri/-/ssri-7.0.1.tgz",
+        "fileCount": 5,
+        "unpackedSize": 43069,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdkm3jCRA9TVsSAnZWagAAHnQP/1Q/EhJN3fDnNf7vX/Jb\nQUNUDD0i1ukzFbXKJ1bpvbgkN2i9OJqWEESJt4U7wLsOem+zmGPKiLRKks1L\nkmb/0WgoU53Q/UW4E/dCXCpp39JkobTxVOo2oCmQx+vxF6r/4U6mQ6Oh7QQw\nuBfKfKsFmlCqirXu1MGYX4ivyv2HRrKijvctImo47bijp+QgkS2X7dsQskyy\nvDOMR+C/mKd62iM41ZIM8KTqSrMggT2ANi58ULurRXfXAWg8AiV9ZZKWuN+O\n/lvJJUTfP0P6b1MODkag4dSrk4g8kmPDKLofYS8fshLwFv96l9P8gcx+QbT5\nmq87HeLx+FDtqkwengxGE0yTNjb2RRuVhp1RHUBTYgZ2njX/LH5t3yukTE2r\nix5Zi4TqUReZbm+xgvzvB9CQmqxaaNLzMEwOZZyCSdl4yMuwVvkd/3K3NR7W\nJ3kJMurtI3MRQGCnTeBI6iaRr9zpC6IXayC9/p4lo4PMDUaS2F++GE1I+cA1\nxGAQ8WGQUhJaTe7xSIySxmbG61MUI2zhnxEmHANrnnGfJm8918aQviXILPHF\n6kA3ybNW7Kt8QnJc/oiOOwmKRh68LHKx9RKtoRzvAl2VEuUi5oTPWdAlpb/r\nVbliZ4GhLj620Sh33DqcVHOVL05nNBz1nGWTzsSdu39ps/DHlzoRO6NHKWfH\npTBn\r\n=EK+K\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "evilpacket@gmail.com",
+          "name": "adam_baldwin"
+        },
+        {
+          "email": "ahmad@ahmadnassri.com",
+          "name": "ahmadnassri"
+        },
+        {
+          "email": "anne@npmjs.com",
+          "name": "annekimsey"
+        },
+        {
+          "email": "billatnpm@gmail.com",
+          "name": "billatnpm"
+        },
+        {
+          "email": "cghr1990@gmail.com",
+          "name": "claudiahdz"
+        },
+        {
+          "email": "darcy@darcyclarke.me",
+          "name": "darcyclarke"
+        },
+        {
+          "email": "i@izs.me",
+          "name": "isaacs"
+        },
+        {
+          "email": "mike@mikecorp.ca",
+          "name": "mikemimik"
+        },
+        {
+          "email": "ruyadorno@hotmail.com",
+          "name": "ruyadorno"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ssri_7.0.1_1569877474656_0.3829581462204419"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.1.0": {
+      "name": "ssri",
+      "version": "7.1.0",
+      "description": "Standard Subresource Integrity library -- parses, serializes, generates, and verifies integrity metadata according to the SRI spec.",
+      "main": "index.js",
+      "scripts": {
+        "prerelease": "npm t",
+        "postrelease": "npm publish && git push --follow-tags",
+        "pretest": "standard",
+        "release": "standard-version -s",
+        "test": "tap -J --coverage test/*.js",
+        "update-coc": "weallbehave -o . && git add CODE_OF_CONDUCT.md && git commit -m 'docs(coc): updated CODE_OF_CONDUCT.md'",
+        "update-contrib": "weallcontribute -o . && git add CONTRIBUTING.md && git commit -m 'docs(contributing): updated CONTRIBUTING.md'"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/npm/ssri.git"
+      },
+      "keywords": [
+        "w3c",
+        "web",
+        "security",
+        "integrity",
+        "checksum",
+        "hashing",
+        "subresource integrity",
+        "sri",
+        "sri hash",
+        "sri string",
+        "sri generator",
+        "html"
+      ],
+      "author": {
+        "name": "Kat Marchán",
+        "email": "kzm@sykosomatic.org"
+      },
+      "license": "ISC",
+      "dependencies": {
+        "figgy-pudding": "^3.5.1",
+        "minipass": "^3.1.1"
+      },
+      "devDependencies": {
+        "standard": "^14.3.0",
+        "standard-version": "^7.0.0",
+        "tap": "^14.8.2",
+        "weallbehave": "^1.2.0",
+        "weallcontribute": "^1.0.8"
+      },
+      "tap": {
+        "check-coverage": true
+      },
+      "engines": {
+        "node": ">= 8"
+      },
+      "gitHead": "79ba4ec4b2af9f82538c6917494d5cc1c24bc724",
+      "bugs": {
+        "url": "https://github.com/npm/ssri/issues"
+      },
+      "homepage": "https://github.com/npm/ssri#readme",
+      "_id": "ssri@7.1.0",
+      "_nodeVersion": "12.12.0",
+      "_npmVersion": "6.12.0",
+      "dist": {
+        "integrity": "sha512-77/WrDZUWocK0mvA5NTRQyveUf+wsrIc6vyrxpS8tVvYBcX215QbafrJR3KtkpskIzoFLqqNuuYQvxaMjXJ/0g==",
+        "shasum": "92c241bf6de82365b5c7fb4bd76e975522e1294d",
+        "tarball": "https://registry.npmjs.org/ssri/-/ssri-7.1.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 45632,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdsjqCCRA9TVsSAnZWagAAcjQP/RE6YZbgP3tsEzHe5Gkb\nFK3Hs53FKSmvH8ziKY7mjSEiwNE0WXFFVXG28wBtpWX6lyNSrQtNMOropOME\n7eFuvF/SXj7/9rib4qy3CIygTf1Y9TwY5OVwk9yJrSD+wSO1AJEW4FWTgR/W\nNcK2V2kvQRL874D0Tn/JzRumROMhdiizJowSRgzhzJeytDVRlo1p6ZyjMnIu\nknFtLk/d8ZJoq2IwCYfi5N+4RZt+UGuSdEyN+wb3TGfvMSmq75UjXyqEphiO\nLw8XENxjJE+/idVSpmxlB89XcaankqzrkChSgqXOK0JekIFY0g0DKG0MlMyz\nlcgHzWxrbR5P7Ds1DQ1tVeyfRWwjwKXxrYE5nAEBln0uX+0YuycwZumPCtf8\ndwzZ9i9uhokFbd5/FW8YjggpeWNZnyqeKuLMveTP/vKHZLIGRFw+DQ7kExa9\nME4AITC+bdezbyXDzOShVeoxiqBK+0vKl/zrwubsrev/4e2NQ7GACVrpIW9r\ngHFGt/kjAKuIIMOaW/VWH232i8wk/npkUMFFMZkD0OiKFYdN9oF12/4Q6Ls/\nA5bCQXcgM86v0N0rAsoULwUIwpx5oo5G+9rOA0db62oDWfY9IIfDFiXw+Dep\n6N3CcTRC7Hg514vlMXuKuaElj9QYWM6MqJy6Hb1Knce6HNamFnxLbjCK7OC0\ntMZ5\r\n=3xoh\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "evilpacket@gmail.com",
+          "name": "adam_baldwin"
+        },
+        {
+          "email": "ahmad@ahmadnassri.com",
+          "name": "ahmadnassri"
+        },
+        {
+          "email": "anne@npmjs.com",
+          "name": "annekimsey"
+        },
+        {
+          "email": "billatnpm@gmail.com",
+          "name": "billatnpm"
+        },
+        {
+          "email": "cghr1990@gmail.com",
+          "name": "claudiahdz"
+        },
+        {
+          "email": "darcy@darcyclarke.me",
+          "name": "darcyclarke"
+        },
+        {
+          "email": "i@izs.me",
+          "name": "isaacs"
+        },
+        {
+          "email": "mike@mikecorp.ca",
+          "name": "mikemimik"
+        },
+        {
+          "email": "ruyadorno@hotmail.com",
+          "name": "ruyadorno"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ssri_7.1.0_1571961474062_0.9411436124365424"
+      },
+      "_hasShrinkwrap": false
+    },
+    "8.0.0": {
+      "name": "ssri",
+      "version": "8.0.0",
+      "description": "Standard Subresource Integrity library -- parses, serializes, generates, and verifies integrity metadata according to the SRI spec.",
+      "main": "index.js",
+      "scripts": {
+        "prerelease": "npm t",
+        "postrelease": "npm publish",
+        "prepublishOnly": "git push --follow-tags",
+        "posttest": "npm run lint",
+        "release": "standard-version -s",
+        "test": "tap",
+        "coverage": "tap",
+        "lint": "standard"
+      },
+      "tap": {
+        "check-coverage": true
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/npm/ssri.git"
+      },
+      "keywords": [
+        "w3c",
+        "web",
+        "security",
+        "integrity",
+        "checksum",
+        "hashing",
+        "subresource integrity",
+        "sri",
+        "sri hash",
+        "sri string",
+        "sri generator",
+        "html"
+      ],
+      "author": {
+        "name": "Kat Marchán",
+        "email": "kzm@sykosomatic.org"
+      },
+      "license": "ISC",
+      "dependencies": {
+        "minipass": "^3.1.1"
+      },
+      "devDependencies": {
+        "standard": "^14.3.1",
+        "standard-version": "^7.1.0",
+        "tap": "^14.10.6"
+      },
+      "engines": {
+        "node": ">= 8"
+      },
+      "gitHead": "41b764f91eda13867745f8d97c624c316e9c162e",
+      "bugs": {
+        "url": "https://github.com/npm/ssri/issues"
+      },
+      "homepage": "https://github.com/npm/ssri#readme",
+      "_id": "ssri@8.0.0",
+      "_nodeVersion": "13.7.0",
+      "_npmVersion": "6.13.6",
+      "dist": {
+        "integrity": "sha512-aq/pz989nxVYwn16Tsbj1TqFpD5LLrQxHf5zaHuieFV+R0Bbr4y8qUsOA45hXT/N4/9UNXTarBjnjVmjSOVaAA==",
+        "shasum": "79ca74e21f8ceaeddfcb4b90143c458b8d988808",
+        "tarball": "https://registry.npmjs.org/ssri/-/ssri-8.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 46677,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeSz1MCRA9TVsSAnZWagAADNYP/iXjxTytPkB/Mh+Io7y5\n4NcRLmd4Jo5AyMrYPlsHnGa6LonW8Ix2iQwXhqbOJjP1AX3dfE4E5LTsUhxY\ncyBsRcSmOqQClCxRhdd8zjnW4BXhSbPU3HbgiG3WfGkfOpxG/KAEgkgPZnVo\nctNvVue+1axYRGNzFlnMYzg1+L49inSHD+ApPY1raynAeJ/5+KWceNgC5kfk\nqJfyLPOozkwu4/6DeZBDYhP/QSDu8FrnqsItDW8LEI6yyNYsxVWZ+ThK7iFm\nCQfIbDGY6cbf6ycs1u/bD/SqKSgQynQPObwKWYB9iKEuwDqxF036DbBqM0rb\nSk8Mc7nH0TqGk9lAN27E1AmZLGteRJSrOPu6AP9qRmFpLSnZ0Um1nUoTts2n\nRUEKtZ7x8Mq5d5r1wTRIFVDI69q/eIYO+YzjkMBSr/Q+HWQt2EAEMOhFjQXs\n2Kf7zP4dUmxNIP4puRPmm4S+btfreIdrONg5CpNPVViG8xfyy8sn42gBvzU8\nsqcOYOgqVFOMKIO4UHaK5afMPnJX1WGW48vXhVgV14yJLAcqWWeJoOpR3l7r\nXA1EPZ3UOJbf7OeeDPURsPbSr4rIR8lskNr96bDBnMfG5s4eEq2GipdIeJd/\nuYlxG+k1g5W7xSfDAk6DHhfy/rCVRnLZHK+HuC36mbwAVa42Rn9huxbgV4m3\nAdJ9\r\n=2jxg\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "evilpacket@gmail.com",
+          "name": "adam_baldwin"
+        },
+        {
+          "email": "ahmad@ahmadnassri.com",
+          "name": "ahmadnassri"
+        },
+        {
+          "email": "cghr1990@gmail.com",
+          "name": "claudiahdz"
+        },
+        {
+          "email": "darcy@darcyclarke.me",
+          "name": "darcyclarke"
+        },
+        {
+          "email": "i@izs.me",
+          "name": "isaacs"
+        },
+        {
+          "email": "mike@mikecorp.ca",
+          "name": "mikemimik"
+        },
+        {
+          "email": "ruyadorno@hotmail.com",
+          "name": "ruyadorno"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ssri_8.0.0_1581989196356_0.45702091932187017"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# ssri [![npm version](https://img.shields.io/npm/v/ssri.svg)](https://npm.im/ssri) [![license](https://img.shields.io/npm/l/ssri.svg)](https://npm.im/ssri) [![Travis](https://img.shields.io/travis/npm/ssri.svg)](https://travis-ci.org/npm/ssri) [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/npm/ssri?svg=true)](https://ci.appveyor.com/project/npm/ssri) [![Coverage Status](https://coveralls.io/repos/github/npm/ssri/badge.svg?branch=latest)](https://coveralls.io/github/npm/ssri?branch=latest)\n\n[`ssri`](https://github.com/npm/ssri), short for Standard Subresource\nIntegrity, is a Node.js utility for parsing, manipulating, serializing,\ngenerating, and verifying [Subresource\nIntegrity](https://w3c.github.io/webappsec/specs/subresourceintegrity/) hashes.\n\n## Install\n\n`$ npm install --save ssri`\n\n## Table of Contents\n\n* [Example](#example)\n* [Features](#features)\n* [Contributing](#contributing)\n* [API](#api)\n  * Parsing & Serializing\n    * [`parse`](#parse)\n    * [`stringify`](#stringify)\n    * [`Integrity#concat`](#integrity-concat)\n    * [`Integrity#merge`](#integrity-merge)\n    * [`Integrity#toString`](#integrity-to-string)\n    * [`Integrity#toJSON`](#integrity-to-json)\n    * [`Integrity#match`](#integrity-match)\n    * [`Integrity#pickAlgorithm`](#integrity-pick-algorithm)\n    * [`Integrity#hexDigest`](#integrity-hex-digest)\n  * Integrity Generation\n    * [`fromHex`](#from-hex)\n    * [`fromData`](#from-data)\n    * [`fromStream`](#from-stream)\n    * [`create`](#create)\n  * Integrity Verification\n    * [`checkData`](#check-data)\n    * [`checkStream`](#check-stream)\n    * [`integrityStream`](#integrity-stream)\n\n### Example\n\n```javascript\nconst ssri = require('ssri')\n\nconst integrity = 'sha512-9KhgCRIx/AmzC8xqYJTZRrnO8OW2Pxyl2DIMZSBOr0oDvtEFyht3xpp71j/r/pAe1DM+JI/A+line3jUBgzQ7A==?foo'\n\n// Parsing and serializing\nconst parsed = ssri.parse(integrity)\nssri.stringify(parsed) // === integrity (works on non-Integrity objects)\nparsed.toString() // === integrity\n\n// Async stream functions\nssri.checkStream(fs.createReadStream('./my-file'), integrity).then(...)\nssri.fromStream(fs.createReadStream('./my-file')).then(sri => {\n  sri.toString() === integrity\n})\nfs.createReadStream('./my-file').pipe(ssri.createCheckerStream(sri))\n\n// Sync data functions\nssri.fromData(fs.readFileSync('./my-file')) // === parsed\nssri.checkData(fs.readFileSync('./my-file'), integrity) // => 'sha512'\n```\n\n### Features\n\n* Parses and stringifies SRI strings.\n* Generates SRI strings from raw data or Streams.\n* Strict standard compliance.\n* `?foo` metadata option support.\n* Multiple entries for the same algorithm.\n* Object-based integrity hash manipulation.\n* Small footprint: no dependencies, concise implementation.\n* Full test coverage.\n* Customizable algorithm picker.\n\n### Contributing\n\nThe ssri team enthusiastically welcomes contributions and project participation!\nThere's a bunch of things you can do if you want to contribute! The [Contributor\nGuide](CONTRIBUTING.md) has all the information you need for everything from\nreporting bugs to contributing entire new features. Please don't hesitate to\njump in if you'd like to, or even ask us questions if something isn't clear.\n\n### API\n\n#### <a name=\"parse\"></a> `> ssri.parse(sri, [opts]) -> Integrity`\n\nParses `sri` into an `Integrity` data structure. `sri` can be an integrity\nstring, an `Hash`-like with `digest` and `algorithm` fields and an optional\n`options` field, or an `Integrity`-like object. The resulting object will be an\n`Integrity` instance that has this shape:\n\n```javascript\n{\n  'sha1': [{algorithm: 'sha1', digest: 'deadbeef', options: []}],\n  'sha512': [\n    {algorithm: 'sha512', digest: 'c0ffee', options: []},\n    {algorithm: 'sha512', digest: 'bad1dea', options: ['foo']}\n  ],\n}\n```\n\nIf `opts.single` is truthy, a single `Hash` object will be returned. That is, a\nsingle object that looks like `{algorithm, digest, options}`, as opposed to a\nlarger object with multiple of these.\n\nIf `opts.strict` is truthy, the resulting object will be filtered such that\nit strictly follows the Subresource Integrity spec, throwing away any entries\nwith any invalid components. This also means a restricted set of algorithms\nwill be used -- the spec limits them to `sha256`, `sha384`, and `sha512`.\n\nStrict mode is recommended if the integrity strings are intended for use in\nbrowsers, or in other situations where strict adherence to the spec is needed.\n\n##### Example\n\n```javascript\nssri.parse('sha512-9KhgCRIx/AmzC8xqYJTZRrnO8OW2Pxyl2DIMZSBOr0oDvtEFyht3xpp71j/r/pAe1DM+JI/A+line3jUBgzQ7A==?foo') // -> Integrity object\n```\n\n#### <a name=\"stringify\"></a> `> ssri.stringify(sri, [opts]) -> String`\n\nThis function is identical to [`Integrity#toString()`](#integrity-to-string),\nexcept it can be used on _any_ object that [`parse`](#parse) can handle -- that\nis, a string, an `Hash`-like, or an `Integrity`-like.\n\nThe `opts.sep` option defines the string to use when joining multiple entries\ntogether. To be spec-compliant, this _must_ be whitespace. The default is a\nsingle space (`' '`).\n\nIf `opts.strict` is true, the integrity string will be created using strict\nparsing rules. See [`ssri.parse`](#parse).\n\n##### Example\n\n```javascript\n// Useful for cleaning up input SRI strings:\nssri.stringify('\\n\\rsha512-foo\\n\\t\\tsha384-bar')\n// -> 'sha512-foo sha384-bar'\n\n// Hash-like: only a single entry.\nssri.stringify({\n  algorithm: 'sha512',\n  digest:'9KhgCRIx/AmzC8xqYJTZRrnO8OW2Pxyl2DIMZSBOr0oDvtEFyht3xpp71j/r/pAe1DM+JI/A+line3jUBgzQ7A==',\n  options: ['foo']\n})\n// ->\n// 'sha512-9KhgCRIx/AmzC8xqYJTZRrnO8OW2Pxyl2DIMZSBOr0oDvtEFyht3xpp71j/r/pAe1DM+JI/A+line3jUBgzQ7A==?foo'\n\n// Integrity-like: full multi-entry syntax. Similar to output of `ssri.parse`\nssri.stringify({\n  'sha512': [\n    {\n      algorithm: 'sha512',\n      digest:'9KhgCRIx/AmzC8xqYJTZRrnO8OW2Pxyl2DIMZSBOr0oDvtEFyht3xpp71j/r/pAe1DM+JI/A+line3jUBgzQ7A==',\n      options: ['foo']\n    }\n  ]\n})\n// ->\n// 'sha512-9KhgCRIx/AmzC8xqYJTZRrnO8OW2Pxyl2DIMZSBOr0oDvtEFyht3xpp71j/r/pAe1DM+JI/A+line3jUBgzQ7A==?foo'\n```\n\n#### <a name=\"integrity-concat\"></a> `> Integrity#concat(otherIntegrity, [opts]) -> Integrity`\n\nConcatenates an `Integrity` object with another IntegrityLike, or an integrity\nstring.\n\nThis is functionally equivalent to concatenating the string format of both\nintegrity arguments, and calling [`ssri.parse`](#ssri-parse) on the new string.\n\nIf `opts.strict` is true, the new `Integrity` will be created using strict\nparsing rules. See [`ssri.parse`](#parse).\n\n##### Example\n\n```javascript\n// This will combine the integrity checks for two different versions of\n// your index.js file so you can use a single integrity string and serve\n// either of these to clients, from a single `<script>` tag.\nconst desktopIntegrity = ssri.fromData(fs.readFileSync('./index.desktop.js'))\nconst mobileIntegrity = ssri.fromData(fs.readFileSync('./index.mobile.js'))\n\n// Note that browsers (and ssri) will succeed as long as ONE of the entries\n// for the *prioritized* algorithm succeeds. That is, in order for this fallback\n// to work, both desktop and mobile *must* use the same `algorithm` values.\ndesktopIntegrity.concat(mobileIntegrity)\n```\n\n#### <a name=\"integrity-merge\"></a> `> Integrity#merge(otherIntegrity, [opts])`\n\nSafely merges another IntegrityLike or integrity string into an `Integrity`\nobject.\n\nIf the other integrity value has any algorithms in common with the current\nobject, then the hash digests must match, or an error is thrown.\n\nAny new hashes will be added to the current object's set.\n\nThis is useful when an integrity value may be upgraded with a stronger\nalgorithm, you wish to prevent accidentally supressing integrity errors by\noverwriting the expected integrity value.\n\n##### Example\n\n```javascript\nconst data = fs.readFileSync('data.txt')\n\n// integrity.txt contains 'sha1-X1UT+IIv2+UUWvM7ZNjZcNz5XG4='\n// because we were young, and didn't realize sha1 would not last\nconst expectedIntegrity = ssri.parse(fs.readFileSync('integrity.txt', 'utf8'))\nconst match = ssri.checkData(data, expectedIntegrity, {\n  algorithms: ['sha512', 'sha1']\n})\nif (!match) {\n  throw new Error('data corrupted or something!')\n}\n\n// get a stronger algo!\nif (match && match.algorithm !== 'sha512') {\n  const updatedIntegrity = ssri.fromData(data, { algorithms: ['sha512'] })\n  expectedIntegrity.merge(updatedIntegrity)\n  fs.writeFileSync('integrity.txt', expectedIntegrity.toString())\n  // file now contains\n  // 'sha1-X1UT+IIv2+UUWvM7ZNjZcNz5XG4= sha512-yzd8ELD1piyANiWnmdnpCL5F52f10UfUdEkHywVZeqTt0ymgrxR63Qz0GB7TKPoeeZQmWCaz7T1+9vBnypkYWg=='\n}\n```\n\n#### <a name=\"integrity-to-string\"></a> `> Integrity#toString([opts]) -> String`\n\nReturns the string representation of an `Integrity` object. All hash entries\nwill be concatenated in the string by `opts.sep`, which defaults to `' '`.\n\nIf you want to serialize an object that didn't come from an `ssri` function,\nuse [`ssri.stringify()`](#stringify).\n\nIf `opts.strict` is true, the integrity string will be created using strict\nparsing rules. See [`ssri.parse`](#parse).\n\n##### Example\n\n```javascript\nconst integrity = 'sha512-9KhgCRIx/AmzC8xqYJTZRrnO8OW2Pxyl2DIMZSBOr0oDvtEFyht3xpp71j/r/pAe1DM+JI/A+line3jUBgzQ7A==?foo'\n\nssri.parse(integrity).toString() === integrity\n```\n\n#### <a name=\"integrity-to-json\"></a> `> Integrity#toJSON() -> String`\n\nReturns the string representation of an `Integrity` object. All hash entries\nwill be concatenated in the string by `' '`.\n\nThis is a convenience method so you can pass an `Integrity` object directly to `JSON.stringify`.\nFor more info check out [toJSON() behavior on mdn](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify#toJSON%28%29_behavior).\n\n##### Example\n\n```javascript\nconst integrity = '\"sha512-9KhgCRIx/AmzC8xqYJTZRrnO8OW2Pxyl2DIMZSBOr0oDvtEFyht3xpp71j/r/pAe1DM+JI/A+line3jUBgzQ7A==?foo\"'\n\nJSON.stringify(ssri.parse(integrity)) === integrity\n```\n\n#### <a name=\"integrity-match\"></a> `> Integrity#match(sri, [opts]) -> Hash | false`\n\nReturns the matching (truthy) hash if `Integrity` matches the argument passed as\n`sri`, which can be anything that [`parse`](#parse) will accept. `opts` will be\npassed through to `parse` and [`pickAlgorithm()`](#integrity-pick-algorithm).\n\n##### Example\n\n```javascript\nconst integrity = 'sha512-9KhgCRIx/AmzC8xqYJTZRrnO8OW2Pxyl2DIMZSBOr0oDvtEFyht3xpp71j/r/pAe1DM+JI/A+line3jUBgzQ7A=='\n\nssri.parse(integrity).match(integrity)\n// Hash {\n//   digest: '9KhgCRIx/AmzC8xqYJTZRrnO8OW2Pxyl2DIMZSBOr0oDvtEFyht3xpp71j/r/pAe1DM+JI/A+line3jUBgzQ7A=='\n//   algorithm: 'sha512'\n// }\n\nssri.parse(integrity).match('sha1-deadbeef')\n// false\n```\n\n#### <a name=\"integrity-pick-algorithm\"></a> `> Integrity#pickAlgorithm([opts]) -> String`\n\nReturns the \"best\" algorithm from those available in the integrity object.\n\nIf `opts.pickAlgorithm` is provided, it will be passed two algorithms as\narguments. ssri will prioritize whichever of the two algorithms is returned by\nthis function. Note that the function may be called multiple times, and it\n**must** return one of the two algorithms provided. By default, ssri will make\na best-effort to pick the strongest/most reliable of the given algorithms. It\nmay intentionally deprioritize algorithms with known vulnerabilities.\n\n##### Example\n\n```javascript\nssri.parse('sha1-WEakDigEST sha512-yzd8ELD1piyANiWnmdnpCL5F52f10UfUdEkHywVZeqTt0ymgrxR63Qz0GB7TKPoeeZQmWCaz7T1').pickAlgorithm() // sha512\n```\n\n#### <a name=\"integrity-hex-digest\"></a> `> Integrity#hexDigest() -> String`\n\n`Integrity` is assumed to be either a single-hash `Integrity` instance, or a\n`Hash` instance. Returns its `digest`, converted to a hex representation of the\nbase64 data.\n\n##### Example\n\n```javascript\nssri.parse('sha1-deadbeef').hexDigest() // '75e69d6de79f'\n```\n\n#### <a name=\"from-hex\"></a> `> ssri.fromHex(hexDigest, algorithm, [opts]) -> Integrity`\n\nCreates an `Integrity` object with a single entry, based on a hex-formatted\nhash. This is a utility function to help convert existing shasums to the\nIntegrity format, and is roughly equivalent to something like:\n\n```javascript\nalgorithm + '-' + Buffer.from(hexDigest, 'hex').toString('base64')\n```\n\n`opts.options` may optionally be passed in: it must be an array of option\nstrings that will be added to all generated integrity hashes generated by\n`fromData`. This is a loosely-specified feature of SRIs, and currently has no\nspecified semantics besides being `?`-separated. Use at your own risk, and\nprobably avoid if your integrity strings are meant to be used with browsers.\n\nIf `opts.strict` is true, the integrity object will be created using strict\nparsing rules. See [`ssri.parse`](#parse).\n\nIf `opts.single` is true, a single `Hash` object will be returned.\n\n##### Example\n\n```javascript\nssri.fromHex('75e69d6de79f', 'sha1').toString() // 'sha1-deadbeef'\n```\n\n#### <a name=\"from-data\"></a> `> ssri.fromData(data, [opts]) -> Integrity`\n\nCreates an `Integrity` object from either string or `Buffer` data, calculating\nall the requested hashes and adding any specified options to the object.\n\n`opts.algorithms` determines which algorithms to generate hashes for. All\nresults will be included in a single `Integrity` object. The default value for\n`opts.algorithms` is `['sha512']`. All algorithm strings must be hashes listed\nin `crypto.getHashes()` for the host Node.js platform.\n\n`opts.options` may optionally be passed in: it must be an array of option\nstrings that will be added to all generated integrity hashes generated by\n`fromData`. This is a loosely-specified feature of SRIs, and currently has no\nspecified semantics besides being `?`-separated. Use at your own risk, and\nprobably avoid if your integrity strings are meant to be used with browsers.\n\nIf `opts.strict` is true, the integrity object will be created using strict\nparsing rules. See [`ssri.parse`](#parse).\n\n##### Example\n\n```javascript\nconst integrityObj = ssri.fromData('foobarbaz', {\n  algorithms: ['sha256', 'sha384', 'sha512']\n})\nintegrity.toString('\\n')\n// ->\n// sha256-l981iLWj8kurw4UbNy8Lpxqdzd7UOxS50Glhv8FwfZ0=\n// sha384-irnCxQ0CfQhYGlVAUdwTPC9bF3+YWLxlaDGM4xbYminxpbXEq+D+2GCEBTxcjES9\n// sha512-yzd8ELD1piyANiWnmdnpCL5F52f10UfUdEkHywVZeqTt0ymgrxR63Qz0GB7TKPoeeZQmWCaz7T1+9vBnypkYWg==\n```\n\n#### <a name=\"from-stream\"></a> `> ssri.fromStream(stream, [opts]) -> Promise<Integrity>`\n\nReturns a Promise of an Integrity object calculated by reading data from\na given `stream`.\n\nIt accepts both `opts.algorithms` and `opts.options`, which are documented as\npart of [`ssri.fromData`](#from-data).\n\nAdditionally, `opts.Promise` may be passed in to inject a Promise library of\nchoice. By default, ssri will use Node's built-in Promises.\n\nIf `opts.strict` is true, the integrity object will be created using strict\nparsing rules. See [`ssri.parse`](#parse).\n\n##### Example\n\n```javascript\nssri.fromStream(fs.createReadStream('index.js'), {\n  algorithms: ['sha1', 'sha512']\n}).then(integrity => {\n  return ssri.checkStream(fs.createReadStream('index.js'), integrity)\n}) // succeeds\n```\n\n#### <a name=\"create\"></a> `> ssri.create([opts]) -> <Hash>`\n\nReturns a Hash object with `update(<Buffer or string>[,enc])` and `digest()` methods.\n\n\nThe Hash object provides the same methods as [crypto class Hash](https://nodejs.org/dist/latest-v6.x/docs/api/crypto.html#crypto_class_hash).\n`digest()` accepts no arguments and returns an Integrity object calculated by reading data from\ncalls to update.\n\nIt accepts both `opts.algorithms` and `opts.options`, which are documented as\npart of [`ssri.fromData`](#from-data).\n\nIf `opts.strict` is true, the integrity object will be created using strict\nparsing rules. See [`ssri.parse`](#parse).\n\n##### Example\n\n```javascript\nconst integrity = ssri.create().update('foobarbaz').digest()\nintegrity.toString()\n// ->\n// sha512-yzd8ELD1piyANiWnmdnpCL5F52f10UfUdEkHywVZeqTt0ymgrxR63Qz0GB7TKPoeeZQmWCaz7T1+9vBnypkYWg==\n```\n\n#### <a name=\"check-data\"></a> `> ssri.checkData(data, sri, [opts]) -> Hash|false`\n\nVerifies `data` integrity against an `sri` argument. `data` may be either a\n`String` or a `Buffer`, and `sri` can be any subresource integrity\nrepresentation that [`ssri.parse`](#parse) can handle.\n\nIf verification succeeds, `checkData` will return the name of the algorithm that\nwas used for verification (a truthy value). Otherwise, it will return `false`.\n\nIf `opts.pickAlgorithm` is provided, it will be used by\n[`Integrity#pickAlgorithm`](#integrity-pick-algorithm) when deciding which of\nthe available digests to match against.\n\nIf `opts.error` is true, and verification fails, `checkData` will throw either\nan `EBADSIZE` or an `EINTEGRITY` error, instead of just returning false.\n\n##### Example\n\n```javascript\nconst data = fs.readFileSync('index.js')\nssri.checkData(data, ssri.fromData(data)) // -> 'sha512'\nssri.checkData(data, 'sha256-l981iLWj8kurw4UbNy8Lpxqdzd7UOxS50Glhv8FwfZ0')\nssri.checkData(data, 'sha1-BaDDigEST') // -> false\nssri.checkData(data, 'sha1-BaDDigEST', {error: true}) // -> Error! EINTEGRITY\n```\n\n#### <a name=\"check-stream\"></a> `> ssri.checkStream(stream, sri, [opts]) -> Promise<Hash>`\n\nVerifies the contents of `stream` against an `sri` argument. `stream` will be\nconsumed in its entirety by this process. `sri` can be any subresource integrity\nrepresentation that [`ssri.parse`](#parse) can handle.\n\n`checkStream` will return a Promise that either resolves to the\n`Hash` that succeeded verification, or, if the verification fails\nor an error happens with `stream`, the Promise will be rejected.\n\nIf the Promise is rejected because verification failed, the returned error will\nhave `err.code` as `EINTEGRITY`.\n\nIf `opts.size` is given, it will be matched against the stream size. An error\nwith `err.code` `EBADSIZE` will be returned by a rejection if the expected size\nand actual size fail to match.\n\nIf `opts.pickAlgorithm` is provided, it will be used by\n[`Integrity#pickAlgorithm`](#integrity-pick-algorithm) when deciding which of\nthe available digests to match against.\n\n##### Example\n\n```javascript\nconst integrity = ssri.fromData(fs.readFileSync('index.js'))\n\nssri.checkStream(\n  fs.createReadStream('index.js'),\n  integrity\n)\n// ->\n// Promise<{\n//   algorithm: 'sha512',\n//   digest: 'sha512-yzd8ELD1piyANiWnmdnpCL5F52f10UfUdEkHywVZeqTt0ymgrxR63Qz0GB7TKPoeeZQmWCaz7T1'\n// }>\n\nssri.checkStream(\n  fs.createReadStream('index.js'),\n  'sha256-l981iLWj8kurw4UbNy8Lpxqdzd7UOxS50Glhv8FwfZ0'\n) // -> Promise<Hash>\n\nssri.checkStream(\n  fs.createReadStream('index.js'),\n  'sha1-BaDDigEST'\n) // -> Promise<Error<{code: 'EINTEGRITY'}>>\n```\n\n#### <a name=\"integrity-stream\"></a> `> integrityStream([opts]) -> IntegrityStream`\n\nReturns a `Transform` stream that data can be piped through in order to generate\nand optionally check data integrity for piped data. When the stream completes\nsuccessfully, it emits `size` and `integrity` events, containing the total\nnumber of bytes processed and a calculated `Integrity` instance based on stream\ndata, respectively.\n\nIf `opts.algorithms` is passed in, the listed algorithms will be calculated when\ngenerating the final `Integrity` instance. The default is `['sha512']`.\n\nIf `opts.single` is passed in, a single `Hash` instance will be returned.\n\nIf `opts.integrity` is passed in, it should be an `integrity` value understood\nby [`parse`](#parse) that the stream will check the data against. If\nverification succeeds, the integrity stream will emit a `verified` event whose\nvalue is a single `Hash` object that is the one that succeeded verification. If\nverification fails, the stream will error with an `EINTEGRITY` error code.\n\nIf `opts.size` is given, it will be matched against the stream size. An error\nwith `err.code` `EBADSIZE` will be emitted by the stream if the expected size\nand actual size fail to match.\n\nIf `opts.pickAlgorithm` is provided, it will be passed two algorithms as\narguments. ssri will prioritize whichever of the two algorithms is returned by\nthis function. Note that the function may be called multiple times, and it\n**must** return one of the two algorithms provided. By default, ssri will make\na best-effort to pick the strongest/most reliable of the given algorithms. It\nmay intentionally deprioritize algorithms with known vulnerabilities.\n\n##### Example\n\n```javascript\nconst integrity = ssri.fromData(fs.readFileSync('index.js'))\nfs.createReadStream('index.js')\n.pipe(ssri.integrityStream({integrity}))\n```\n",
+  "maintainers": [
+    {
+      "email": "quitlahok@gmail.com",
+      "name": "nlf"
+    },
+    {
+      "email": "ruyadorno@hotmail.com",
+      "name": "ruyadorno"
+    },
+    {
+      "email": "darcy@darcyclarke.me",
+      "name": "darcyclarke"
+    },
+    {
+      "email": "i@izs.me",
+      "name": "isaacs"
+    }
+  ],
+  "time": {
+    "modified": "2020-10-19T13:51:06.347Z",
+    "created": "2017-03-23T04:56:05.227Z",
+    "0.0.0": "2017-03-23T04:56:05.227Z",
+    "1.0.0": "2017-03-23T07:22:26.655Z",
+    "2.0.0": "2017-03-24T07:50:43.283Z",
+    "3.0.0": "2017-04-03T04:45:42.387Z",
+    "3.0.1": "2017-04-03T05:17:00.322Z",
+    "3.0.2": "2017-04-03T05:18:04.043Z",
+    "4.0.0": "2017-04-03T10:37:12.533Z",
+    "4.1.0": "2017-04-07T15:42:38.682Z",
+    "4.1.1": "2017-04-12T04:17:14.799Z",
+    "4.1.2": "2017-04-18T09:53:34.701Z",
+    "4.1.3": "2017-05-24T23:40:59.795Z",
+    "4.1.4": "2017-05-31T04:22:22.616Z",
+    "4.1.5": "2017-06-05T21:14:33.392Z",
+    "4.1.6": "2017-06-07T22:21:36.482Z",
+    "5.0.0": "2017-10-23T18:24:16.172Z",
+    "5.1.0": "2018-01-18T23:56:46.704Z",
+    "5.2.1": "2018-02-07T00:07:57.813Z",
+    "5.2.2": "2018-02-14T20:38:05.178Z",
+    "5.2.3": "2018-02-16T22:39:20.241Z",
+    "5.2.4": "2018-02-16T22:46:33.141Z",
+    "5.3.0": "2018-03-13T02:25:20.598Z",
+    "6.0.0": "2018-04-09T18:19:42.225Z",
+    "6.0.1": "2018-08-27T19:53:12.980Z",
+    "7.0.0": "2019-09-18T18:35:08.044Z",
+    "7.0.1": "2019-09-30T21:04:34.791Z",
+    "7.1.0": "2019-10-24T23:57:54.273Z",
+    "8.0.0": "2020-02-18T01:26:36.565Z"
+  },
+  "homepage": "https://github.com/npm/ssri#readme",
+  "keywords": [
+    "w3c",
+    "web",
+    "security",
+    "integrity",
+    "checksum",
+    "hashing",
+    "subresource integrity",
+    "sri",
+    "sri hash",
+    "sri string",
+    "sri generator",
+    "html"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/npm/ssri.git"
+  },
+  "author": {
+    "name": "Kat Marchán",
+    "email": "kzm@sykosomatic.org"
+  },
+  "bugs": {
+    "url": "https://github.com/npm/ssri/issues"
+  },
+  "license": "ISC",
+  "readmeFilename": "README.md",
+  "users": {
+    "losymear": true,
+    "yowainwright": true
+  }
+}

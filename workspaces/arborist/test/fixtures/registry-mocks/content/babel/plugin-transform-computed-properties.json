@@ -1,0 +1,2867 @@
+{
+  "_id": "@babel/plugin-transform-computed-properties",
+  "_rev": "69-be978417ef4cbe6d5a8cf7b5f2f9c60f",
+  "name": "@babel/plugin-transform-computed-properties",
+  "description": "Compile ES2015 computed properties to ES5",
+  "dist-tags": {
+    "latest": "7.12.1"
+  },
+  "versions": {
+    "7.0.0-beta.4": {
+      "name": "@babel/plugin-transform-computed-properties",
+      "version": "7.0.0-beta.4",
+      "description": "Compile ES2015 computed properties to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-computed-properties"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/template": "7.0.0-beta.4"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.3"
+      },
+      "devDependencies": {
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.4"
+      },
+      "_id": "@babel/plugin-transform-computed-properties@7.0.0-beta.4",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.1.4",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-VdkQCK2lvXJtiG7e5svrTmPvYjvv+8A7oJqUDBmHY3jsWae1txURhvNvAAeLSVnsr3Mx1Z7vYXhuUBDidfbrkw==",
+        "shasum": "070be426dfad6aaa3572bd2b3508e414e9630dc0",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-computed-properties/-/plugin-transform-computed-properties-7.0.0-beta.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-computed-properties-7.0.0-beta.4.tgz_1509388538859_0.7472896762192249"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.5": {
+      "name": "@babel/plugin-transform-computed-properties",
+      "version": "7.0.0-beta.5",
+      "description": "Compile ES2015 computed properties to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-computed-properties"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/template": "7.0.0-beta.5"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.4 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.5"
+      },
+      "_id": "@babel/plugin-transform-computed-properties@7.0.0-beta.5",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.1.4",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-c9KkiJl/G5iKwKEKLRVkgcHiagQPmAhCCFavr73MdbcQOJDxPAKMiVxpZGE2iPwFxjCTnVXtvDoQGM6kvKQxBw==",
+        "shasum": "aabebf454184a426cf3063a88aaa6c8af816f128",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-computed-properties/-/plugin-transform-computed-properties-7.0.0-beta.5.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-computed-properties-7.0.0-beta.5.tgz_1509397037406_0.5907889120280743"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.31": {
+      "name": "@babel/plugin-transform-computed-properties",
+      "version": "7.0.0-beta.31",
+      "description": "Compile ES2015 computed properties to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-computed-properties"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/template": "7.0.0-beta.31"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.31"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.31",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.31"
+      },
+      "_id": "@babel/plugin-transform-computed-properties@7.0.0-beta.31",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.1.4",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-NMcsGWocYrubahdyhL9k5SuoaxI4MQPHTLGCowmG/D3ngG7gp3BqPTT8iFKb7hQOx0+cuDoyBKVI/pzGHOA6qQ==",
+        "shasum": "28621ac39b85b7f16d0dbd17d1646aabe826647f",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-computed-properties/-/plugin-transform-computed-properties-7.0.0-beta.31.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-computed-properties-7.0.0-beta.31.tgz_1509739443729_0.22590140928514302"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.32": {
+      "name": "@babel/plugin-transform-computed-properties",
+      "version": "7.0.0-beta.32",
+      "description": "Compile ES2015 computed properties to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-computed-properties"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.32"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.32",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.32"
+      },
+      "_id": "@babel/plugin-transform-computed-properties@7.0.0-beta.32",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-xt/hR2r+LEfTvISzCmozUT0DVAh0PfhA+Z++qAnkKg9l/evG4eTkzeVe1mdJdLjCpYlqj2qloxos3L79eYh3rQ==",
+        "shasum": "cb7f6f5d3feadd8105a885a0887d4bca9beeaddd",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-computed-properties/-/plugin-transform-computed-properties-7.0.0-beta.32.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-computed-properties-7.0.0-beta.32.tgz_1510493590917_0.24122800398617983"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.33": {
+      "name": "@babel/plugin-transform-computed-properties",
+      "version": "7.0.0-beta.33",
+      "description": "Compile ES2015 computed properties to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-computed-properties"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.33"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.33",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.33"
+      },
+      "_id": "@babel/plugin-transform-computed-properties@7.0.0-beta.33",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-57Fhu3jVZZiUQM1GSztars7IragbzLMLI7KcWJmkuxu8XuWiccyI9hOg1580ijLVmVpDxYmKf9rVb9v61CJfMg==",
+        "shasum": "caadab5b1afdce0aa0e6df620b014a6ff982eaea",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-computed-properties/-/plugin-transform-computed-properties-7.0.0-beta.33.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-computed-properties-7.0.0-beta.33.tgz_1512138493788_0.028235905803740025"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.34": {
+      "name": "@babel/plugin-transform-computed-properties",
+      "version": "7.0.0-beta.34",
+      "description": "Compile ES2015 computed properties to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-computed-properties"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.34"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.34",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.34"
+      },
+      "_id": "@babel/plugin-transform-computed-properties@7.0.0-beta.34",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-aAD9Fweud+e7wE4uWRfPfWUhx+l63Ywez5ZZ5da/gLMV5dUV3wVg6Rjnduf4VWyUUvdr/meAgT32rMqDVxAb2A==",
+        "shasum": "19ac5150120b69bca4c1c6f60f63377b7237de9b",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-computed-properties/-/plugin-transform-computed-properties-7.0.0-beta.34.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-computed-properties-7.0.0-beta.34.tgz_1512225553658_0.3390948425512761"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.35": {
+      "name": "@babel/plugin-transform-computed-properties",
+      "version": "7.0.0-beta.35",
+      "description": "Compile ES2015 computed properties to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-computed-properties"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.35"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.35",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.35"
+      },
+      "_id": "@babel/plugin-transform-computed-properties@7.0.0-beta.35",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-m94sLp/9ktRWRRoMkFkCho2nfURK17JLnJEAIvdn1zPfSGmguq3vk4tfFNQKVZ9lE8W1LlqDdE/2bXVdh7UbzQ==",
+        "shasum": "2e42ac7d57935c725471e19a1a6127072f3bc2da",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-computed-properties/-/plugin-transform-computed-properties-7.0.0-beta.35.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-computed-properties-7.0.0-beta.35.tgz_1513288060946_0.8710761624388397"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.36": {
+      "name": "@babel/plugin-transform-computed-properties",
+      "version": "7.0.0-beta.36",
+      "description": "Compile ES2015 computed properties to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-computed-properties"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.36"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.36",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.36"
+      },
+      "_id": "@babel/plugin-transform-computed-properties@7.0.0-beta.36",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-i/e4mQCFspfldzsqli4YozI9ghQdu7zivWnbaBXWdvIq6mttwMP9n0F8kzDjmNvCbQU8DTzlHySr6vhUPDyvOg==",
+        "shasum": "cf7c755e181feb73ff88e3df45209821aac438e8",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-computed-properties/-/plugin-transform-computed-properties-7.0.0-beta.36.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "james@henry.sc",
+          "name": "jameshenry"
+        },
+        {
+          "email": "kent@doddsfamily.us",
+          "name": "kentcdodds"
+        },
+        {
+          "email": "kaicataldo@gmail.com",
+          "name": "kaicataldo"
+        },
+        {
+          "email": "teddy.katz@gmail.com",
+          "name": "not-an-aardvark"
+        },
+        {
+          "email": "star.ctor@gmail.com",
+          "name": "mysticatea"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-computed-properties-7.0.0-beta.36.tgz_1514228672330_0.626208622707054"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.37": {
+      "name": "@babel/plugin-transform-computed-properties",
+      "version": "7.0.0-beta.37",
+      "description": "Compile ES2015 computed properties to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-computed-properties"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.37"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.37",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.37"
+      },
+      "_id": "@babel/plugin-transform-computed-properties@7.0.0-beta.37",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-bk4kcF3/6VRgEcZcvOw8EMuKHekX7qQKKW3TZ4y5O5zhVGcSIEDKmnV8Sh71WGqJ3847G1FQaSuf2H1xGEaQlw==",
+        "shasum": "f0b008f72f5a57320d9743abeb29e84a45e6c8c1",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-computed-properties/-/plugin-transform-computed-properties-7.0.0-beta.37.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-computed-properties-7.0.0-beta.37.tgz_1515427347779_0.36802728846669197"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.38": {
+      "name": "@babel/plugin-transform-computed-properties",
+      "version": "7.0.0-beta.38",
+      "description": "Compile ES2015 computed properties to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-computed-properties"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.38"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.38",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.38"
+      },
+      "_id": "@babel/plugin-transform-computed-properties@7.0.0-beta.38",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-n2ZUN8FOdmddAe1+bgPARU274hKGP4dVfnHDzytmxh/vuH1cbWfJ/lbzZJO5O3+zchv3syCdSQpnxHueJ4+cCw==",
+        "shasum": "6284a0d8650ac7d543a763230c614ba7bfa58c26",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-computed-properties/-/plugin-transform-computed-properties-7.0.0-beta.38.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-computed-properties-7.0.0-beta.38.tgz_1516206709392_0.6686678298283368"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.39": {
+      "name": "@babel/plugin-transform-computed-properties",
+      "version": "7.0.0-beta.39",
+      "description": "Compile ES2015 computed properties to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-computed-properties"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.39"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.39",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.39"
+      },
+      "_id": "@babel/plugin-transform-computed-properties@7.0.0-beta.39",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-CiGfhoHbLtYujXu/H/qSy3iMpsPIcPQXiw+WbdbJBLrzE/H3vCPmB/JVF/PJj0ff1HzVvXQCXm09Zs7M5d7+WQ==",
+        "shasum": "7cc5bf14050380adfe7d119be099e6fe56c0a044",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-computed-properties/-/plugin-transform-computed-properties-7.0.0-beta.39.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-computed-properties-7.0.0-beta.39.tgz_1517344050782_0.010076249483972788"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.40": {
+      "name": "@babel/plugin-transform-computed-properties",
+      "version": "7.0.0-beta.40",
+      "description": "Compile ES2015 computed properties to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-computed-properties"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.40"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.40",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.40"
+      },
+      "_id": "@babel/plugin-transform-computed-properties@7.0.0-beta.40",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-1VBpE+6YN4bj72MtbQoIwXZxoI5VfPLutQ5uhOx/tIrjf1KbLKsFR0epPPGx4nZ13u++lUR8CjUFUHGJ6RJirA==",
+        "shasum": "e4bd53455d9f96882cc8e9923895d71690f6969e",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-computed-properties/-/plugin-transform-computed-properties-7.0.0-beta.40.tgz",
+        "fileCount": 3,
+        "unpackedSize": 8898
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-computed-properties_7.0.0-beta.40_1518453691810_0.6125620487811834"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.41": {
+      "name": "@babel/plugin-transform-computed-properties",
+      "version": "7.0.0-beta.41",
+      "description": "Compile ES2015 computed properties to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-computed-properties"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.41"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.41"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.41",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.41"
+      },
+      "_id": "@babel/plugin-transform-computed-properties@7.0.0-beta.41",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-H2GEjtOWFBTl0LzoCb/RxoLzPgCWD1Q2nGp3/vqrUiuwPVOGFOBpy275YSpf/j6fkx5WS18dtl6nuNYreo7ZKw==",
+        "shasum": "16ec1978eba075aba847a9a5d9f469cba6dcc40a",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-computed-properties/-/plugin-transform-computed-properties-7.0.0-beta.41.tgz",
+        "fileCount": 3,
+        "unpackedSize": 9130
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-computed-properties_7.0.0-beta.41_1521044763366_0.33492691244015926"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.42": {
+      "name": "@babel/plugin-transform-computed-properties",
+      "version": "7.0.0-beta.42",
+      "description": "Compile ES2015 computed properties to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-computed-properties"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.42"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.42"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.42",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.42"
+      },
+      "_id": "@babel/plugin-transform-computed-properties@7.0.0-beta.42",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-WYGXfe2uo2FdACubMhwV6Oq1Zx3SNSeBUHRe2X53WKbIKLMZlxRR5GfoLv4V2CeDGHL3mb97wYhmXSb56bIXeg==",
+        "shasum": "153662309475099c6948827fc86edbd7fb26f09d",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-computed-properties/-/plugin-transform-computed-properties-7.0.0-beta.42.tgz",
+        "fileCount": 3,
+        "unpackedSize": 9130
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-computed-properties_7.0.0-beta.42_1521147039437_0.016155066747811864"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.43": {
+      "name": "@babel/plugin-transform-computed-properties",
+      "version": "7.0.0-beta.43",
+      "description": "Compile ES2015 computed properties to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-computed-properties"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.43"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.43"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.43",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.43"
+      },
+      "_id": "@babel/plugin-transform-computed-properties@7.0.0-beta.43",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-+6lRtO4V3kzywhSfuxVh0WbYVIQfTmBHwWWkAPPUR6+NCQ+PkIv4JSObJXHMMyNzSoW+ppu1NbnYYYOk5rtsLw==",
+        "shasum": "32a623641f9de6c43bc60bb775f7115b5d9325fc",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-computed-properties/-/plugin-transform-computed-properties-7.0.0-beta.43.tgz",
+        "fileCount": 3,
+        "unpackedSize": 7933
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-computed-properties_7.0.0-beta.43_1522687702066_0.950849987418722"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.44": {
+      "name": "@babel/plugin-transform-computed-properties",
+      "version": "7.0.0-beta.44",
+      "description": "Compile ES2015 computed properties to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-computed-properties"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.44"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.44"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.44",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.44"
+      },
+      "_id": "@babel/plugin-transform-computed-properties@7.0.0-beta.44",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-gLzREw6hb6qDoJMx/uMcXfkom5mboBi7yWg0S/uyof4laIl7cPCrrCleYZfi4sF9CgRPP48TMIoi2rVtKvrJ1g==",
+        "shasum": "1421b4e1a18dc3bd276d8648a12a4f8ea088c6a1",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-computed-properties/-/plugin-transform-computed-properties-7.0.0-beta.44.tgz",
+        "fileCount": 3,
+        "unpackedSize": 9421
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-computed-properties_7.0.0-beta.44_1522707604544_0.7329119627379517"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.45": {
+      "name": "@babel/plugin-transform-computed-properties",
+      "version": "7.0.0-beta.45",
+      "description": "Compile ES2015 computed properties to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-computed-properties"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.45"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.45"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.45",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.45"
+      },
+      "_id": "@babel/plugin-transform-computed-properties@7.0.0-beta.45",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-Rq7ILN1jVaWdIVlPbB9dfiOo7TV++VfuW+y/c2pr//syh2LQnLuupqvwwnX+3QDWjInf3Uq+mTwbbSghXHmNSA==",
+        "shasum": "3049b7d4902011738c6a69e6e53ab6e0b28eb701",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-computed-properties/-/plugin-transform-computed-properties-7.0.0-beta.45.tgz",
+        "fileCount": 3,
+        "unpackedSize": 9421,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa3T1ZCRA9TVsSAnZWagAAaMgP/3pNZs8hJKVv3/ERXdkx\nEqy5vcZI/i0xPpOPHJUpzNkB2R4gsNgtg8NwJZ8nIPItJgUt39GYU2Jluk1V\naIqywuzz+1f0zjIniPE7h3G0VSwXw8P8gAFoM5d9UA7JVqN68sNh2YtHdfRf\njPUQl1Wc2NMqFxCcJsxY7Xyhqqm07uNLgG+atf2PZgVPR1xBB3v21hXsrZkl\n2qU6lbiHfjWMX5tSYRn39DWYloDydgr4OIRrvAMkmk/fO86mpM3KNH2lFMsC\nadUxeOOYtUnx8FvambnqtAZNkR4Vj/9sKyLGwjBTtZqTwPcFgFgyTXQbQe49\ncMwEXc7l4JTzW7bkyA8paxbXZ7u64EfgIHgaNKymOXmZ2mefAtlJLPqfvqWj\n0CZ+3DDH0Hh7KA/0UWp6btyDB9RFhSooifUVZQ7a1l6W1NcqfY82eS1AC5iY\nwMOPBiP9qAKoY4MNOVQRMarR4mIcJkgc7jgxg2MP029neHfMwqQDsDwf50Pw\nHgCl0L/0gCoWzhgw5xEX8UBu0zThSaUoOkDAiwWwAnBk5HwVFWIaSK7kZQ3W\nXDdoc1n7msbsfQRr6QZSelZbbzwLEpKEHDrlRa/MBslCJOsIZqcihpLE8khw\ni4KMaQTFBcPmBzJrQSuAKQo0USVSKNfM5IZ9dRMfyxAvlgp4UuZhy7Ow55IU\nAiEs\r\n=40CS\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-computed-properties_7.0.0-beta.45_1524448601394_0.6809237128022285"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.46": {
+      "name": "@babel/plugin-transform-computed-properties",
+      "version": "7.0.0-beta.46",
+      "description": "Compile ES2015 computed properties to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-computed-properties"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.46"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.46"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.46",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.46"
+      },
+      "_id": "@babel/plugin-transform-computed-properties@7.0.0-beta.46",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.4.0",
+      "_npmUser": {
+        "name": "loganfsmyth",
+        "email": "loganfsmyth@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-0ne9TL53fXH+cBI591R1JSpPhu0d2Wd9dbD8jLCJFV4tlMfqQ+Rcm65RhWWqjEBZfGv2+FuOnwB4HJRHakdW+Q==",
+        "shasum": "ca1ece27615f7324345713fb6a93dd288788e891",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-computed-properties/-/plugin-transform-computed-properties-7.0.0-beta.46.tgz",
+        "fileCount": 3,
+        "unpackedSize": 9421,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa3WGHCRA9TVsSAnZWagAAjH4P/1DtOupHHYT7H0UzubJL\nI0OpSK4yTzy7vVsgg452aKTP4THQ4kbGXGRnfBGp+IGBqwhiLz3Lpj4uzHoQ\nT3iejlQ6p8xtUyGJ1d/T1rV1KRBlVOIeXz361Ltt23HxnJOiKJVYu9z3lYBS\nKPvbA4TNnn/MhUofIuCac8OqKiqxCIITR9jZ2cVeZ85dPYP7gi/7nox58MWv\ng7HY/BkivTU2pew86b4EgfrUxhkLzECi0oR7Ht60lrs0gpX1h4/gcbhMkbIT\nSBtGoA9Pw6yLJqcnkzVy8m+hkeW1jCUL1n3AaMae7BnxG1DYk2VpfQf4qfzv\nxwqrv4KLyo5EesEVZsQllxBKyFa3IB0WpfuzfvSr+X2DHy1o7fxZBqBU4T/G\nqHgGFFCXLUn5IXomf+r5tykdZRBA6G0hhu/xf4f/4QYQUHUVwxedKh/3oAEe\nG3TnwaMD2Qt9UlPLWp9/2K2jYpP4d+ixbnavVFy+Lc0b+AkKa77AIYD6+rac\nPn0wvOv9fRAL9kRj5eU/W1OFUiQVOd3/zHzEVd4QhKflgcqQG7wIpGcn8dDf\n/glDhsTITvwCHZjRxrF3JQXeIz1Q63W/3aID/zncp0Bpbs+8wU84qGhXpzmb\n/vLlomh164WmUiyUJwZ/VwA6Mollh1mzBRISwgRNTMoNNSQEgue/rAkZJrTP\nOx2G\r\n=S1wi\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-computed-properties_7.0.0-beta.46_1524457863209_0.667802315514493"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.47": {
+      "name": "@babel/plugin-transform-computed-properties",
+      "version": "7.0.0-beta.47",
+      "description": "Compile ES2015 computed properties to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-computed-properties"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.47"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.47"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.47",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.47"
+      },
+      "_id": "@babel/plugin-transform-computed-properties@7.0.0-beta.47",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-V78qyzmjj4aq/tjpkMFbV5gPtrx7xdclW1Rn6vV9hIwMSMbtstYEXF4msy614MofvYj6gYbPbNfyhXFIUvz/xw==",
+        "shasum": "56ef2a021769a2b65e90a3e12fd10b791da9f3e0",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-computed-properties/-/plugin-transform-computed-properties-7.0.0-beta.47.tgz",
+        "fileCount": 3,
+        "unpackedSize": 9298,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa+iUMCRA9TVsSAnZWagAANsQP/1uvLROn8sM2O6lEVCUE\nuI4/Eisv/BwXBsHI9oAbtX7Q+uoGP7G0akQjroNMz9RaercJlYWnM5FgRKCf\nzHtFJ43smFsNfoRa9GdbGYKfTYJIeREc7UrdqQrr7ZESo2j1GMz0AeY10dBO\nUbNNBrmsPiX3YgUN09bwSuD/dl9q626N1LMUc4WS0IXXcPGlAp22I/FmGrs0\nuZ/ZvlWJBuav0vtp7jBAKMfjBPKNTBUUTP4vprVovBT4Jt2uihfTku9LtGDe\nng2MP7lFwBn3o6M5g8YiYAoY4tnYvjtJeaUIld2+AFFZAWMw49Vkg0Ov0zYj\n97J0N78YPSLOdNB4lYBhmKuVk3z5eEDgzQvnJrTxowDoavNup4d9/NbsmVv6\nC2HiME0mcXx8R5B0cXOxLcZam78l0yomoO/kkBrYUYQeeEvhPy/aQDeD0F/z\nbrY6Q+KcXKLIg4kUBOPpG14r+NwLBOmv/IchD7PJcXGW3ErJ6KV3lMZ7sfwM\n7YGm9ucn8rYoiBClY8qp0u0bb5y/0jJ3tM5hv0sx5VDLNw+pC8LuufsAiGzI\nGeApVnnbgCY1Vv4E1aqRneFRYWaP36xggV3wkhrATG3tWA7Xq1JB64O8Pv+c\nNpJFax3Vr/90RLaTU74kYo3Y4jHEbyYslmYWjJQcVEroGyl79m75CHBpV/1d\n8BwD\r\n=dbpE\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-computed-properties_7.0.0-beta.47_1526342924076_0.08343750413057749"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.48": {
+      "name": "@babel/plugin-transform-computed-properties",
+      "version": "7.0.0-beta.48",
+      "description": "Compile ES2015 computed properties to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-computed-properties"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.48"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.48"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.48",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.48"
+      },
+      "_id": "@babel/plugin-transform-computed-properties@7.0.0-beta.48",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-eRH545kOx+rFVLt//w9NvAUUUoDuniO235RH6/lb3kgdtQUGfxaP2vHpB2zwJSAhMnnb3diShwor6ONaNxmLCA==",
+        "shasum": "5f9e6eff46301cc5bf3d4f5fdaded63fbe94bb0c",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-computed-properties/-/plugin-transform-computed-properties-7.0.0-beta.48.tgz",
+        "fileCount": 3,
+        "unpackedSize": 7933,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbBxDnCRA9TVsSAnZWagAA8RwQAILMoErld2C1iw2YLFN7\n7Xqzi+T7IlN4OV1LpYtXagYF4xQgfUt/k6t4R3+jqS/xf4f/J6UXiZzrdUIu\n9XslILrwIuFpwYT2zbJvFQFu8SMHuNPEsfB30RyD1HUtFKPTfwVOpUWXK/d9\nmrV57exOqNJ64z8tj1HiuuUkdapYXtIhmyLCBKYzuUPpWoUo9QdFoxxtt9xo\nIXxcR8hf2DsRpq4MtwkOQSLOMuTv6JRtgGK3hcIoRmrAFzhol7Q2yIflr09F\ngfKHPlK0wFgwRMxzrUYtRH8y6QAMX1xsMTtSdj+3nsvTViHznw7SynaMMQI3\n7BpXGz8O+4LIQrizYvfXzLfm/7ZLYuG2b7btd9nzV3KWxMS5lmqN8+2W2JDs\nG6vTxa3RWAub8KGRKarbT85Cb0mfwBfGJ1bcz9Rcn3XUqqJ/FiSSSXl7CpIv\nr4SFglCTepIpoBsvvxeZmRJZso37M6mNdOb0dz/uqtUvO/uFadPQi3CM8vDs\nYvvY4u+VNm/U1Y15JW7gis9U6GiM5FduAZ7Iny+PP7islmN7zxjrHUdcrd+T\nml5OQNIsXUirdk1TRVovKK+xgFqE2krS9JIl/xrGgJYJLk0RL3hipol3T3yL\nguOUxRfzCIIsZe5pfoZGRFjL2Y7eNtNkp1uTlPMpN8iLOGUOXyZMp6Lhp8ZZ\n3pdP\r\n=a/Xp\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-computed-properties_7.0.0-beta.48_1527189734493_0.056462628718339625"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.49": {
+      "name": "@babel/plugin-transform-computed-properties",
+      "version": "7.0.0-beta.49",
+      "description": "Compile ES2015 computed properties to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-computed-properties"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.49"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.49"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.49",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.49"
+      },
+      "_id": "@babel/plugin-transform-computed-properties@7.0.0-beta.49",
+      "scripts": {},
+      "_shasum": "b8259d174bf07ab4b56566562b46ee6520c3dfd2",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.12.3",
+      "_npmUser": {
+        "name": "loganfsmyth",
+        "email": "loganfsmyth@gmail.com"
+      },
+      "dist": {
+        "shasum": "b8259d174bf07ab4b56566562b46ee6520c3dfd2",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-computed-properties/-/plugin-transform-computed-properties-7.0.0-beta.49.tgz",
+        "fileCount": 4,
+        "unpackedSize": 7948,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbCDNyCRA9TVsSAnZWagAANJMP/jF5bXPDipsov9mmvnel\n5wHY5sRnZsKyVE0eUzDqIH1LNSmbE//rX3G1cHGoY6Mw8ztjCmBXrfzAQS6U\nkFaxiSMdygS+Di79veZakqASHyS9ETTS5JG7oX+A1gevfHQBuV7K8eleyB01\nJ2DnBXiclpEZ0i5Y6AQ50ACQF0Xwdl1e70DvJZ9y1x7VP4ndNWAypMTKGdtL\nOpKe85elPPlvtNO47TTUwEFSUCNs1lIqwwzQqLJxc6bFNX5nq/j0deKJ8Vwc\nwXLsT67brjCMHCK2gijqR5TVvt1SU+KMwWaMcTH7Dzq1Uj0V5FfSL4zQFesf\nrQ0grCCy6780iy8Yc+PkW7NF69jbwBSiRMCvgZC6VJsowDkDN9Z8pcW2GPVG\nUJda3ZCPp79/05ti/T1/aYbMVGHBegmN9FV5Nw0KlzQOTjZNZxE02jawmzFR\noT5OfTeq5u7yq5sJrHonVEAPj9DyW/2riI4UsRuja3Wzy7iMv9/ZXXvboxMz\nyxkdRQ4zJDTXWVnviFWooMsspWqSSv7pZ3MXYFqpwr6RbY37lJw98GicKl57\njLwJrX8Yy+lH+AzD81iobHI4FCgcBADqaihZPnNBOVH7G+JBpwote0SyeB+D\nWxNZrD+1/glzV3BJQe4MhwrvRqQSjhiCRCXjwbGPEnVHi6DjappinRCcQjkO\n64yR\r\n=rQ3y\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-computed-properties_7.0.0-beta.49_1527264113476_0.19021097323952407"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.50": {
+      "name": "@babel/plugin-transform-computed-properties",
+      "version": "7.0.0-beta.50",
+      "description": "Compile ES2015 computed properties to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-computed-properties"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.50"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.49"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.50",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.50"
+      },
+      "_id": "@babel/plugin-transform-computed-properties@7.0.0-beta.50",
+      "dist": {
+        "shasum": "f7f9e46a488ee69dcbc936ce420f898a67cbd96f",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-computed-properties/-/plugin-transform-computed-properties-7.0.0-beta.50.tgz",
+        "fileCount": 5,
+        "unpackedSize": 6546
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-computed-properties_7.0.0-beta.50_1528832833278_0.4244199295400566"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.51": {
+      "name": "@babel/plugin-transform-computed-properties",
+      "version": "7.0.0-beta.51",
+      "description": "Compile ES2015 computed properties to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-computed-properties"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.51"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.51",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.51"
+      },
+      "_id": "@babel/plugin-transform-computed-properties@7.0.0-beta.51",
+      "dist": {
+        "shasum": "8c72a1ab3e0767034ff9e6732d2581c23c032efe",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-computed-properties/-/plugin-transform-computed-properties-7.0.0-beta.51.tgz",
+        "fileCount": 5,
+        "unpackedSize": 6560
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-computed-properties_7.0.0-beta.51_1528838384006_0.05280568642820582"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.52": {
+      "name": "@babel/plugin-transform-computed-properties",
+      "version": "7.0.0-beta.52",
+      "description": "Compile ES2015 computed properties to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-computed-properties"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.52"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.52",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.52"
+      },
+      "_id": "@babel/plugin-transform-computed-properties@7.0.0-beta.52",
+      "dist": {
+        "shasum": "d7d6ff57e96b6df1893f5cec4a61a2556a9f1f43",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-computed-properties/-/plugin-transform-computed-properties-7.0.0-beta.52.tgz",
+        "fileCount": 5,
+        "unpackedSize": 6559
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-computed-properties_7.0.0-beta.52_1530838763353_0.14421998443122308"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.53": {
+      "name": "@babel/plugin-transform-computed-properties",
+      "version": "7.0.0-beta.53",
+      "description": "Compile ES2015 computed properties to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-computed-properties"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.53"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.53",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.53"
+      },
+      "_id": "@babel/plugin-transform-computed-properties@7.0.0-beta.53",
+      "dist": {
+        "shasum": "9747e26082ae94eda530f98d2c2059e8d2dbc005",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-computed-properties/-/plugin-transform-computed-properties-7.0.0-beta.53.tgz",
+        "fileCount": 5,
+        "unpackedSize": 6559
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-computed-properties_7.0.0-beta.53_1531316413719_0.9701763592523158"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.54": {
+      "name": "@babel/plugin-transform-computed-properties",
+      "version": "7.0.0-beta.54",
+      "description": "Compile ES2015 computed properties to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-computed-properties"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.54"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.54",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.54"
+      },
+      "_id": "@babel/plugin-transform-computed-properties@7.0.0-beta.54",
+      "dist": {
+        "shasum": "b28494942b94fb86d01994763d2b5c43bdd986af",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-computed-properties/-/plugin-transform-computed-properties-7.0.0-beta.54.tgz",
+        "fileCount": 5,
+        "unpackedSize": 6559
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-computed-properties_7.0.0-beta.54_1531764004420_0.648722120870213"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.55": {
+      "name": "@babel/plugin-transform-computed-properties",
+      "version": "7.0.0-beta.55",
+      "description": "Compile ES2015 computed properties to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-computed-properties"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.55"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.55",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.55"
+      },
+      "_id": "@babel/plugin-transform-computed-properties@7.0.0-beta.55",
+      "dist": {
+        "shasum": "a04f101f305695031ffda61501728c00180237b9",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-computed-properties/-/plugin-transform-computed-properties-7.0.0-beta.55.tgz",
+        "fileCount": 5,
+        "unpackedSize": 6559
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-computed-properties_7.0.0-beta.55_1532815632815_0.07960880369850543"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.56": {
+      "name": "@babel/plugin-transform-computed-properties",
+      "version": "7.0.0-beta.56",
+      "description": "Compile ES2015 computed properties to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-computed-properties"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.56"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.56",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.56"
+      },
+      "_id": "@babel/plugin-transform-computed-properties@7.0.0-beta.56",
+      "dist": {
+        "shasum": "774e705279d5ca3bdb132d93b6a7fc046a660608",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-computed-properties/-/plugin-transform-computed-properties-7.0.0-beta.56.tgz",
+        "integrity": "sha512-U0iHc3aEhgJsW5toS4ZjwWp9bV1l+gsJAt4PI/fXA4XK0DVZEZS82Xq3ozHLp5ccWiqJCCEWYAFys2c/ZPKmjA==",
+        "fileCount": 5,
+        "unpackedSize": 6559,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbZPvNCRA9TVsSAnZWagAAxm0P/iN6/pePyqs3OvXsPn8R\nXCjOGALjNrV+WTpwbNG3ryXc6ed10KU9MBCzLi++IcCTqdiTzDOTaIIQmirc\nW1l3P8FzrxukNnF9Wxi4NxvqxRWQkqZh2FdRXAMjQG0vSJxd1ENpo++P4CG7\nPBBV+qkfzMzvLjtmt2w7cRPXXJI9oZqFMt+giuiHMPzaHkD2/qj2YITQ+s1O\n39Ti20KN7rZiHODJ8r9l3tMiqjCx6bnngNuL0h8yZQmONEF1/sG9X04nKTJU\ngGQ1EaBXSERXzmM3FtuGdHhJc+wQH9xjA3n8k45fnAji8s5CwXZdbm/hLWA5\nHRBuBNiBDNRq61BHZzCMWkaCGJ5fMY4Rk8fx0N1Ggs7HUYw+fPV4AN85I0KC\nM4t2Be5kPhjyY1xSlv3Xx6B2CcL8xjhJdWbT6ZS8hXASBWKZSZAERFcRs5N2\nXv7SnDGKGDcycFxBCFAVjtT3YUUbaHR0dKVKgiGGYycNGTny0r273EDFyz3L\ngXuXLXcP45ednN7vTFXsbI8WMOap8YPKGOV973AkG6P27MlKBFEWmVvl+REc\nXjNbBpSeIhJiwTg+X32liPeNfQ90L7F4ULNcUZawSrbebJHJ7kOaBjnDZDIX\nwGLmR8p7Pem+5fsAlYGb4gAGWlVki+TC9wUHdA8D7REMT2zlCLSpWzpEOEC3\nNkAa\r\n=zOZB\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-computed-properties_7.0.0-beta.56_1533344716609_0.7014365762883545"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-rc.0": {
+      "name": "@babel/plugin-transform-computed-properties",
+      "version": "7.0.0-rc.0",
+      "description": "Compile ES2015 computed properties to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-computed-properties"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-rc.0"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-rc.0",
+        "@babel/helper-plugin-test-runner": "7.0.0-rc.0"
+      },
+      "_id": "@babel/plugin-transform-computed-properties@7.0.0-rc.0",
+      "dist": {
+        "shasum": "4ca0913e5042d111674f725b40fec8627cfc8dfe",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-computed-properties/-/plugin-transform-computed-properties-7.0.0-rc.0.tgz",
+        "integrity": "sha512-J0EBlr3A9sspnxFXdx3HqmAG84QkyxoIuFDZgHUl1qrH7pwTM+mrep2s8ZCaKt9Ulspfode5/wc5UjlxJ8Anvw==",
+        "fileCount": 5,
+        "unpackedSize": 6547,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbbGSMCRA9TVsSAnZWagAArIEQAJ1cN7/+/8avxXSkSrb9\npy0bwvjoyLxIXGyyt5kLTFjh6SmFJvkAwvg7uur72sNQ4Ue8HR0iSeSYN6j/\nfXua44f64ug7i4VajUliChhcV2dQ1llP9o2HARC61EBm+RmpePybtNgdwK2h\nYI0Cu4Xp9tcwsN+v4kPfiIL8Oshi+evWBn8FXuVGJ41OK8AHSz9ZP1p6qVw8\niyDDvU76Y4czCS9Tug940qHJiYrhs5M+CTq4GwU96m3Pumpt4CjrmW8IUP98\nOCrrBxGhFOYTaQ3JO53DHdIdBPSAzDJuXNesotAMTw328v/jjYyAR0kHHCL4\nZ38scYReQ4TUU+fqJJco6bz2AMUmA4w0abUlc7rTl9xkn/f7+M+P+E8tyio+\nRGkpiM+L3lddyn9OB528KBSp6sGwoiuacnN1KILuYh+QOFjVCG2zoKK1+YBh\njFstFsx10UGlHaP8d4yMxJz7FNdnCFwws+KVGBA39otTFKTM/3UgXfOTZb7H\nc4biBcJp4mF2Cz3vFdThx+TJrWpC9DgkZzywh3FuhZw/XWdr2fIhzskT2CBP\nbA3Z4+8dK3MSIFjaPRb4MsU6U30Ar7uF5nD1lZIKOicPjiNbKrHsZUp5tUIe\nsTS8pcla5uorvyOB7KuDH3U/Le9QpB1vORo9Ca8ktVQXzJYZ6QY5FzbihjQM\n/GDC\r\n=gjWI\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-computed-properties_7.0.0-rc.0_1533830284362_0.08441251222534163"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-rc.1": {
+      "name": "@babel/plugin-transform-computed-properties",
+      "version": "7.0.0-rc.1",
+      "description": "Compile ES2015 computed properties to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-computed-properties"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-rc.1"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-rc.1",
+        "@babel/helper-plugin-test-runner": "7.0.0-rc.1"
+      },
+      "_id": "@babel/plugin-transform-computed-properties@7.0.0-rc.1",
+      "dist": {
+        "shasum": "767c6e54e6928de6f1f4de341cee1ec58edce1cf",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-computed-properties/-/plugin-transform-computed-properties-7.0.0-rc.1.tgz",
+        "integrity": "sha512-dfJNqbyF6S8nvFzGc6NthqCqopn1PoY3q2E1KcgrFSgxwYAMOLuhu5eA5iFeXwggp6tIo6OVVXC55/Twsolmow==",
+        "fileCount": 5,
+        "unpackedSize": 6528,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbbJ8UCRA9TVsSAnZWagAAf/4QAIAkqKODWVvLaOwDGiso\n94Z2AF/R/Jl5O9QHBOgQqb6EnZ0LhSLfHEKZ50w5zLRKq7pzkj7UtTX6htys\nlkl0rePBRnc3+XDOhZNdGwM3X9bp/8sqqinBnTaRWraBlBBqDrfQvoqMviWz\nWBYEESwEmdniJdPc5XJeeZO0Ae6myXiZvAj4RBtcBBreHr6sUvw7X3hlxV2h\nHOUUbXbG5S2E4ihi5pA5GwfT7lAMvuwbWlyiAnzc5P7nNqYHodb8WHQO6wjW\nxoYvhzBr+mJDZI+fSpHnt1Ncnjqds0c9B6gxKRpI9A/2GQBbQw3Zn0JexaVU\nAH1gixLLVHRThI5Rz0F/YumL24Cm+cArCu4JgpFn0mgDfE5ymE8vjWevSn9O\nhIg5PjPrM0Fiiwk4hq/baDhE8+kRzZoJMvS3257IG22l/6zLVoTM4gWjmDr6\nbHfywPTogIr/xg/oD25kyhuQR0k2BKARlSddj2m0MjPVshz2IFygXEXQmvS8\nAMYZUw8wyXqmnOBr/+CqZBnOrf2Kk9ltatuJsLbYXOjNKmZpNdPw9g1J8e7F\n2Obt+NHPXhmkIByV/lyUsRGA0xqk70yixIgY583B6MBDEBYVgfzfWIM/T81m\nmI+U1Jw43UBk9cQskl+/wutgli/RPc9KliT9k8JA2XdNgZ59VDAwLr0/JOnw\n8ErJ\r\n=OP3x\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-computed-properties_7.0.0-rc.1_1533845268186_0.45465233327865984"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-rc.2": {
+      "name": "@babel/plugin-transform-computed-properties",
+      "version": "7.0.0-rc.2",
+      "description": "Compile ES2015 computed properties to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-computed-properties"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-rc.2"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-rc.2",
+        "@babel/helper-plugin-test-runner": "7.0.0-rc.2"
+      },
+      "_id": "@babel/plugin-transform-computed-properties@7.0.0-rc.2",
+      "dist": {
+        "shasum": "06e61765c350368c61eadbe0cd37c6835c21e665",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-computed-properties/-/plugin-transform-computed-properties-7.0.0-rc.2.tgz",
+        "integrity": "sha512-XZMHsEAM0KRcvEWHIO/5r8kUrPTFlb4oSKf771dlfA7Hfg60YFY8S4UDGmL6Fw5qBn1j0E9pbDoJ5V/MVeU7hA==",
+        "fileCount": 5,
+        "unpackedSize": 6528,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbfGbCCRA9TVsSAnZWagAABjcP+welohFwEBzL/xE6BZLM\n2oMNSdANz97NcC3pD7WRNTMpxKJcLmSn+Pilblfjt3iaCN3SO+3sWz2wsXRl\nILXZt++5WBxWIqwFTQAjXvCN564bYhu0VYb000/MgCbbxThImBJXMaULCARG\nJO2JXuCCIga5gMGirz/fxhjx6DhOhx7FPjYQUc4OZZu/Br+p931nKbVVxjFx\nM7Ak9Qpjwuwy/BiTTCvOQqONd7CAwLHyp3dARulfQa1vYr7kZgi9Lk3NVlG+\n0EMFE1QYlPylXO+vNQH8hsN4LoGy2uO/uH0bnnKhAhxCYwq8FSjYX7x2uKh+\nQAzODBJ2gRBLcVnDIn68DS09HC+kWcfFML1cEdzwNSNmNxjK3dtG6Zw2/slX\nusPQYigR5vm2PhcfWfs7a3+hEztyMwoO8JlvpvcnBn5mkiQglpPKo9M8tIwo\nvjo+/GHR1xwEAu6NCoPa25aEuFjUeVuM0iw6VbspvzrC0QuTKWDLjbZMj+NT\n6b5LfF3r3oXHv9996igKAR+VHnUSLpPaX9tiSXWY6TXdeQBEcJSzAlR86yOB\nDorjT60rQO3ZUJbsyiCUSCkuzur1ERfNDstfGiYfknBte5IcGxyd6eyB9QNU\nKskcBIOWyp/WgCkqKTa2/t3aI5Md9JZgaG2NJY6SEPCGPwLMtRqkOow25Cde\nYpc2\r\n=KNux\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-computed-properties_7.0.0-rc.2_1534879425629_0.7993224440890532"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-rc.3": {
+      "name": "@babel/plugin-transform-computed-properties",
+      "version": "7.0.0-rc.3",
+      "description": "Compile ES2015 computed properties to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-computed-properties"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-rc.3"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-rc.3",
+        "@babel/helper-plugin-test-runner": "7.0.0-rc.3"
+      },
+      "licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie <sebmck@gmail.com>\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/plugin-transform-computed-properties@7.0.0-rc.3",
+      "dist": {
+        "shasum": "f8349aeca43c1062b2d4527a2aab0c892bc94deb",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-computed-properties/-/plugin-transform-computed-properties-7.0.0-rc.3.tgz",
+        "integrity": "sha512-UtUd+3SM6T7TQmVVs0OJTGwzgc44x4bKfWcjqWdn5DebfUSOEdIu8I8bAgJF1z/QY8/4WcgOOSOj++7T5Lu98A==",
+        "fileCount": 6,
+        "unpackedSize": 7627,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbgEl0CRA9TVsSAnZWagAABoEP/jdEEY5y+TQK3CEAvWR9\nYlmC2AK36chMMX+eisRBTx9h3XFNANaam2Ot2/V9jwnvbYGdOEoeSlsjOjeb\n3qRM4Wuk95s10oZR+6PX7wdRhxTkTA/KOnoywJatvywVkJ3IgUrErmsDT4uT\nXO0NZggWXz2SQDI9NRFBOxNpvV7LDSmwlvYVgOOQFRsr6JZNRgsSINiq/0QD\n4p/UTNJdHucMlIvFr9hq/5t0qXjhYa91V3wnRi2iw4d9gBNAy1JNfQeBbjiS\nl6lNGjIwrUPoawVBMpHEsZkMbWyMaHj6b2+NEaysd2AQmXgfuThCth6oHF/B\n8N2ROG7N555z+kezp7YwPaD5ERYVyk4H70UrujZBt7euVsNe8SqXiwj63/mQ\nHa1c775c6oUSUOYPNPhAgCGwndRZztm4F+QUmpcUzdgQJVYJ1I/Xa1/xJRWA\nIGcZdAi0ORgb1rneBXYdT/LF23IEosPM4GzPVq4esXsT4hb2jEBARYnQ8cEU\n8AgmfBroa4whwzMtVUT6C/9iLURpedRYJANUchcafu28X0l816oKG+GV/VrV\ncW2moEjHWOUxYvlO5/e1yPHhb/KF1kX9OPRbtY5b4AjlfikDw9ZDkTFelzsO\n5esVnNt+qHQ4e0pZhGTwfycqFr1YAC3iyuJK+fCz82lDlI6m4Xiqsf08KaXp\nLl/1\r\n=7Mdv\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-computed-properties_7.0.0-rc.3_1535134068039_0.4203176160918798"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-rc.4": {
+      "name": "@babel/plugin-transform-computed-properties",
+      "version": "7.0.0-rc.4",
+      "description": "Compile ES2015 computed properties to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-computed-properties"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.0.0-rc.4"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.0.0-rc.4",
+        "@babel/helper-plugin-test-runner": "^7.0.0-rc.4"
+      },
+      "licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie <sebmck@gmail.com>\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/plugin-transform-computed-properties@7.0.0-rc.4",
+      "dist": {
+        "shasum": "2d004a420af78647da0fde6c514a0c8353729b35",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-computed-properties/-/plugin-transform-computed-properties-7.0.0-rc.4.tgz",
+        "integrity": "sha512-ibwApQrQDEpRgFpHaEBD0b5xBsy1VR54J/wGWJ6PKqDpw1/eZwKKigUqiy/9plRmNHNNvOwQwpZhvi5kBqsoBQ==",
+        "fileCount": 6,
+        "unpackedSize": 7630,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbhCpTCRA9TVsSAnZWagAAANcP+wRMi12/IWFIBN51W3td\ny/7Gq4yKUsY7YBkxCOiTzlppPdR/+gYrCbGGZWLsZFaYIpkY3OcGNquyb9D0\nshn3ojn0njxqM1PB0vvqy8etYrIWGveb9VUTfrQPpgdagP4AgELHZPF3B1Am\ndsHmG8Eo409H2dpTIcI2M9Y+7ORS8+Dx+RN/+LU+O//9fnKsZOdukTCrbseX\nQQDO+a6ldRCZSc8vzPZUWnzH9ngfmFiSWy4L2q+btPxvxmPq3pzRuAhhwc0w\nUlYB3nKjkfvPDVp08EQ9mZ6PhzbjUZYmLCibm1xqiz+6+EuAFdtbv8HGl838\nZkMD4+yplJ4WJH7GddY6/R9cYAvurWjsKlHEbYouSZOpmB181YA3lR9ryGen\ncseCUWjSQlawhsPBKUI/XkwT8KjLMr6Ptr+Speg3We9BerEWGmQj6/gszLFv\n/PlSBz49M34L8zewP/11B7cWG7XisZhO8RkM1Sei/0uF/t5yG5uRI93UOI4K\nZPgOsOdQ5kAX/mnVLRCx96ixgii3OEC4cvJcOGYgJp/qUggrMLYG0DM/px2B\nYMKDle+GTOqIa3DGLh0OenBu58OUKo5128V3z758UqCC+KjkINvqAWKvhEf/\nQaWlmjaEXwbDw4wsIgkxpZs+2rAUVpwr5ady9bEWPiLGF7FeGFpAhUeV7dmu\n/HZ8\r\n=P/nk\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-computed-properties_7.0.0-rc.4_1535388242747_0.26148700681795534"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0": {
+      "name": "@babel/plugin-transform-computed-properties",
+      "version": "7.0.0",
+      "description": "Compile ES2015 computed properties to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-computed-properties"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.0.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.0.0",
+        "@babel/helper-plugin-test-runner": "^7.0.0"
+      },
+      "readmeFilename": "README.md",
+      "readme": "# @babel/plugin-transform-computed-properties\n\n> Compile ES2015 computed properties to ES5\n\nSee our website [@babel/plugin-transform-computed-properties](https://babeljs.io/docs/en/next/babel-plugin-transform-computed-properties.html) for more information.\n\n## Install\n\nUsing npm:\n\n```sh\nnpm install --save-dev @babel/plugin-transform-computed-properties\n```\n\nor using yarn:\n\n```sh\nyarn add @babel/plugin-transform-computed-properties --dev\n```\n",
+      "licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie <sebmck@gmail.com>\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/plugin-transform-computed-properties@7.0.0",
+      "dist": {
+        "shasum": "2fbb8900cd3e8258f2a2ede909b90e7556185e31",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-computed-properties/-/plugin-transform-computed-properties-7.0.0.tgz",
+        "integrity": "sha512-ubouZdChNAv4AAWAgU7QKbB93NU5sHwInEWfp+/OzJKA02E6Woh9RVoX4sZrbRwtybky/d7baTUqwFx+HgbvMA==",
+        "fileCount": 6,
+        "unpackedSize": 7610,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbhHBkCRA9TVsSAnZWagAAvwgQAJTBnxRU1XwaIkygCc49\nsg008lU1RVCVPsIbgnbEzUWCq0HdwAx2UGGbOg4qfAYYLiZbBt+CZbVsKIzc\nKkAX6SDdgZW9ldnXD4+z2zVVn4SfCnqP/bo8bLZXvvhEmrOFfk+kqAgBoUEJ\nBNQHsbLDi2PGj6GxTwqg2wHypmbFk6odzDjuCv3f63/pVDp2mncUZqb7zQu7\nQzrX4mvseWsZOc1Kie2YgnqN4ra9q4d26aLCXAN869UTdhK/mVggg/YyB1Cw\nJCRdfrBBUGhEdIxVSgL8ifTD8FKhLVWSpJve4YW4jlC8LWtUq8brNzAazyKM\n/jFKmGmMz+3ZBAxrwHmd7RDf21zE0xT37D6q3PRneHk2DFJ0Bx3dKQqt1rCg\nwP8boSANSomKCgKVfdetZ757idhnyTzb6Y2vdBmKqIGB4R3246T4ckvusML/\nLu0XTa6C6bd9p5bl1r7hz3IJQrYgQbp2qRBJn9rAOGDkONFyHRITu01266N9\nYCHI5yF2e8CY0h8SqTDrtDe1tNzbnPnNekbnfxYXWnp6vVW+5Vydq5zsZ0Ql\ngWHWDFZn1G7NpPXOAWAOHJDNK5l2Jdn9H+WpIBsGp/S/Q5kNxhsM2ZMYgUfi\n/V2+ZQJRLhu5iFf156rRpIqCoFt21fDKARbwWvSey2U/txmdEWTV4FeLu/V7\nnJJP\r\n=Exk2\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-computed-properties_7.0.0_1535406179568_0.5051358837304205"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.2.0": {
+      "name": "@babel/plugin-transform-computed-properties",
+      "version": "7.2.0",
+      "description": "Compile ES2015 computed properties to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-computed-properties"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.0.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.2.0",
+        "@babel/helper-plugin-test-runner": "^7.0.0"
+      },
+      "licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie and other contributors\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/plugin-transform-computed-properties@7.2.0",
+      "dist": {
+        "shasum": "83a7df6a658865b1c8f641d510c6f3af220216da",
+        "integrity": "sha512-kP/drqTxY6Xt3NNpKiMomfgkNn4o7+vKxK2DDKcBG9sHj51vHqMBGy8wbDS/J4lMxnqs153/T3+DmCEAkC5cpA==",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-computed-properties/-/plugin-transform-computed-properties-7.2.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 7706,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcBX16CRA9TVsSAnZWagAAbfMP/ifr6Q95c4C62bieSnKv\ns21VGu1k3/6lx3BNESQAXMYk5krNIHk0/enprOkc8KJ66wf32dgMVcJcP3iZ\nKJJeZdQqCiSQlA9QSzbwyUH+MIwq87AnPtyW2l5aKD2E2Q8fZ+qLWj5Wcs5I\nB6eqjMyuwSEU7YzpIl2n0TcIR9qd6uV2/SovgfjpoaGdWFI/9OrdQC85lVlY\nnOiY66MPY0nXsj69wRdsfmFnQ0NHxeZCILKUS2bOTi4SXj7pHQVhuv5PLzny\n4BUoto2w5r4BDC2HxiVzxvBnl86ny9K41RogwBDDn94SuJjyCRIpwqet14Hi\n1WWZMouJVW0Vvdjcq7IQJPejTgGROdEbaqWEz4481DfkW3ArxUxBS+PhAPb8\nI8dxoX2/4pPMI2tqPO0zWjCtiOno3TO93mmLBImFRK4a2VG1EcHVdPZ+kDox\nng/KasyOQNkazMy/GimI6Is+ZR7+BpDtrTAkyQNS5Wtilqvg6NNR3t6q2lxK\nQelBoAFSGA08ctufhoH/g5fIWS9GAQfwqSbfyPvUO8ujkyXF11Ok6NVst1KW\n+5lHkiD44shv6ZHdy3DBYZsBF0pvlcdthX6S1yWm7IygC3N7EtcJJjI2Kbxc\n7BYFD4yXDZdp4D+vAu2oO8OIf/DLaUwQ5e0dCHRhRUauCor4DucUK+fVyEgn\nwnxG\r\n=X7de\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-computed-properties_7.2.0_1543863673377_0.18109809521286535"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.7.4": {
+      "name": "@babel/plugin-transform-computed-properties",
+      "version": "7.7.4",
+      "description": "Compile ES2015 computed properties to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-computed-properties"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.0.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.7.4",
+        "@babel/helper-plugin-test-runner": "^7.7.4"
+      },
+      "gitHead": "75767d87cb147709b9bd9b99bf44daa6688874a9",
+      "_id": "@babel/plugin-transform-computed-properties@7.7.4",
+      "_nodeVersion": "13.1.0",
+      "_npmVersion": "lerna/3.19.0/node@v13.1.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-bSNsOsZnlpLLyQew35rl4Fma3yKWqK3ImWMSC/Nc+6nGjC9s5NFWAer1YQ899/6s9HxO2zQC1WoFNfkOqRkqRQ==",
+        "shasum": "e856c1628d3238ffe12d668eb42559f79a81910d",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-computed-properties/-/plugin-transform-computed-properties-7.7.4.tgz",
+        "fileCount": 4,
+        "unpackedSize": 7507,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd2G/3CRA9TVsSAnZWagAAPIkP/1u9pk0eoBmejO+VaxWQ\nFWTR3/kTAMnA+tunu5GpveMuzBPBkmOoUysb/IaTyc4Y7oJIzwV74WecDJBx\nwNtrgrYFtebh+u+ckYVWGMCDLTvaI1M1XXaKFmuU/PtecwjnL/QZf8chu7mV\nDX61dQwZKSJbcbF+5E+cgr4P0klBmC5BTjoWvvnQXg4zxkOzMLW9qBofE5G8\n+ezGRAeJ55CorPMDvs+VodYYMSyEcAzeaduo1BJeFdMbNEGjUkn3zpPXb2rn\nV1ZItFNspKUEiMxeu7nt7FeC5qZEgmB+qA8UWzIheFS+HoJMelxnaAX6JpNO\no89gX7JC7GO0NRVrPSwWy65RPNNYi662Sw4cNXO9GEN37C9vNyxFoCv2du2r\n8oXYipyfVZ3bs7751u9Jwof6SSYxRyFdPW4sBsE/LjYX5rmYqRKFZh+ZEkcC\nqT/uKGOFcmvFHe5bSod717hmn7Mm/eu6LtQ4rBS1mt8qKkkm0938OZ4jQdmd\nLErx3T3esSbO9pDOr59mblKZEMVFW1bSEI818oUFMPM/DmKY8grdjZP6h4qa\nCsOa6WQomtPUPayNAdFQqOngSyD7dXhuenoT5MBLHVoOdWBw5IuVXFtUIZti\nIGdxgXHp3g/sYqmBsMCd6SFoBYCwJ9gha9a6sgwGL8h0an0Pnj01MKdGe37L\njWby\r\n=zhI1\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "jason@developit.ca",
+          "name": "developit"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-computed-properties_7.7.4_1574465527417_0.5956520262150702"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.8.0": {
+      "name": "@babel/plugin-transform-computed-properties",
+      "version": "7.8.0",
+      "description": "Compile ES2015 computed properties to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-computed-properties"
+      },
+      "license": "MIT",
+      "type": "commonjs",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.8.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.8.0",
+        "@babel/helper-plugin-test-runner": "^7.8.0"
+      },
+      "gitHead": "2486615a74580283c49475d66067bd7fcab3330e",
+      "_id": "@babel/plugin-transform-computed-properties@7.8.0",
+      "_nodeVersion": "13.6.0",
+      "_npmVersion": "lerna/3.19.0/node@v13.6.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-FaODHuQRdnWFVwxLPlTN85Lk/aitfvQBHTXahf58FnatCynfhkeNUO8ID+AqAxY4IJsZjeH6OnKDzcGfgKJcVw==",
+        "shasum": "c86c200ea42cbecda754fdf636a04dfbf6371cc7",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-computed-properties/-/plugin-transform-computed-properties-7.8.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 7529,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeGmVfCRA9TVsSAnZWagAAr/sQAI6fo2NCPtBg7UJYhcql\npCuqXBtA45eXfEVI0d7rk9yLdXA43uqGEBk6dI+fdRcjlapeR5wo5k/17cGw\n4tsFiHZn3gjokBJe6HeJc2oAkkEHJvWkz5BQ0CqXupDKViNj0Pw7/9zfDU8b\nhMALLdQCfwONwcWtulA4oOSCMahCcn2wGsM+SsppzX1dkeN+GO0xXJrg/ZMV\npVxiOcq3OTxt+pvMK9eHMfJjPdH9etz13nTVRLvxL8S/1Y4RGhdJ5MMgxxiT\nQRttskgApVdAa2SDIMMYJFT4qPcL0u0SN0Ao0NEMUgGfQ7QWpc7H7a9F6cCY\nJK8aHy8mvjznIoD81HHxDOW7FYli0h2TmrkSrAt0OyRpBfqllhw8nr9QZW/e\nGXA4iOrgPgPe5L9BTiYErdLOXN+eoVdJKEBU/NUsKaATvqseM8qY+YpqMgXX\ncUUrBdlx0rT5XpOkH33BfR6s0GGq3Wy1DGCzzG7VeNBcTS4z5HEPz/LTWLfg\nQ5qUz/aMW1mHrBeksTfyuIXY7nhVk06SnQVWhZ1ZCSqs9CuujjrAAT8TRtI1\nDRrkOQdThoBapRXomneuwt71uA8R0PyyXVq/0/kEoLnLAEbxyAxcAu8UAHBw\nZmCcV3OYokZk1HeVNOgO+z7H2TnWYgJVpa4+frYpQyKOIzOeTP9r8JYHFmB3\nPi38\r\n=mj78\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "jason@developit.ca",
+          "name": "developit"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-computed-properties_7.8.0_1578788191339_0.23580587199492475"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.8.3": {
+      "name": "@babel/plugin-transform-computed-properties",
+      "version": "7.8.3",
+      "description": "Compile ES2015 computed properties to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-computed-properties"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.8.3"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.8.3",
+        "@babel/helper-plugin-test-runner": "^7.8.3"
+      },
+      "gitHead": "a7620bd266ae1345975767bbc7abf09034437017",
+      "_id": "@babel/plugin-transform-computed-properties@7.8.3",
+      "_nodeVersion": "13.6.0",
+      "_npmVersion": "lerna/3.19.0/node@v13.6.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-O5hiIpSyOGdrQZRQ2ccwtTVkgUDBBiCuK//4RJ6UfePllUTCENOzKxfh6ulckXKc0DixTFLCfb2HVkNA7aDpzA==",
+        "shasum": "96d0d28b7f7ce4eb5b120bb2e0e943343c86f81b",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-computed-properties/-/plugin-transform-computed-properties-7.8.3.tgz",
+        "fileCount": 4,
+        "unpackedSize": 7507,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeHOQICRA9TVsSAnZWagAA/WQP/R5+sPusP3fhHFoCh21H\nT7wJ6qHgeU6kFQLjLYbJ3FeOpcGbE0WFPTGWtZS7IeInDf/NCF2IbRZnTjcW\nUXDvej+xTJSd5HILFk68fiPBZrw4rfLRcvBTBhysFI+7aFLylrjO50hhLXBU\nqDMHBPH1hcBK6Eeg6X1b6dUtDUJ25IxpSvOB+dEfNeQmHWVF3IZSSNeOxf0b\neiv6uRe9Mmecv84X90UWGfqBGTC1xbZmHJOjTcqJ0G3Dxaj02I2WeC2eXcUU\nYo1YAPAa485mc4A/T3c5FMF713mbWazTwzBF5fb/e+OLi6C529gCA8+HlxTF\nVIFunHNg8eYvoaiaXqEfKG0oaZNAFODOJbm03hUZ/5r6Pqda4e7IZy2TRKWG\nSw8vmnzwUcsNC+KCQzrWQN8kULOKwqeHLnmqvoPV7xGRKtEwzRbTpzf9d8FH\ndg0Nhc/RVIIhAho/dmKL6ldQ5F15pDhpe2ziJDw5EV0Fsn5ov0br2I1dtGxD\neNy4bKJTrJT1nFI1XIi+rfezFRt6z7kdfVLPRD0Spp8ntmF3e92Zx8EkcOXF\nNoeGTLuz/6S3oYuR84MmRjNAmPgJCs86Ruc9mK3ZABvEgWSuA4y8c6qyW5ei\nclQ9+bAXQ1cG/IALc3MyIHcxFZ0+Ugyv5N7Z2GTzBUwRlnBWmEyVYGwI2+5Y\nUIit\r\n=Xed7\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "jason@developit.ca",
+          "name": "developit"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-computed-properties_7.8.3_1578951687853_0.8872002062559741"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.10.1": {
+      "name": "@babel/plugin-transform-computed-properties",
+      "version": "7.10.1",
+      "description": "Compile ES2015 computed properties to ES5",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/babel/babel.git",
+        "directory": "packages/babel-plugin-transform-computed-properties"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.10.1"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.10.1",
+        "@babel/helper-plugin-test-runner": "^7.10.1"
+      },
+      "gitHead": "88f57a7ea659d25232bf62de1efceb5d6299b8cf",
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "homepage": "https://github.com/babel/babel#readme",
+      "_id": "@babel/plugin-transform-computed-properties@7.10.1",
+      "_nodeVersion": "12.16.3",
+      "_npmVersion": "lerna/3.19.0/node@v12.16.3+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-mqSrGjp3IefMsXIenBfGcPXxJxweQe2hEIwMQvjtiDQ9b1IBvDUjkAtV/HMXX47/vXf14qDNedXsIiNd1FmkaQ==",
+        "shasum": "59aa399064429d64dce5cf76ef9b90b7245ebd07",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-computed-properties/-/plugin-transform-computed-properties-7.10.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 7559,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJezuSbCRA9TVsSAnZWagAAe+sP/if+KHjjlNLCl0Hcna/G\nkjcCbQFIhbmLD6cn1ejxmeU/IHTEcQLQMYz0blpatAOPVJltR11dioTyi3Eh\nVL/oT3F/VYy9a/INAV0hDyl8vcynTPsR860jvB49WEzmmiqxH4rKZsHqW6UH\nAdu5W2ATn1t632jOh+aI8Q/Uu58dp+alWmbTzmjvRmTvk1fn5Wbhk+WxXb/r\n+s8w9wZVvEzEqai5BH1KFasWH85GvZ9OJf10eB+t5Rg1OsC2FitIck0IE0fL\nkrf2Hc/fq+DLSpHg1YcNDz+S5uHgaCF2y/N4TOQCGLiGoJG/ju0wf5ajPzYQ\n7Oj54qeOY/72VC3wIxtIiCfuond/wphYl7fn5I/zGpCSbgZLEUZhsjYxMraU\n6BPalByXv1jvzf1jqWw0gZf8hSD+1WYvW4+Tj/Wh/aQCJI4KijZf8ovx9uco\nBHEmZyFZ3KVcPPDwnuSB1RTUxUDuu9c2hwr5AvJOwFSNYpwGNWII22lyzgQc\n72HW2fiWr757vczWo+nV3HmMSoAoF7pkSFH+nCLqu693POY7vdQtpGNKUPms\nw09miFS9ZCxW6TvXiA/zmk0Or7ygO/eOjYCWIFAPZzKzT0U0Tz291uNEjk5D\n6rrYPQYoitpoND2YSJx8MUUqUmTXMZSVkK9XNl9tymdYb0BslBp9ooo1Gb5O\nHOVn\r\n=alfc\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-computed-properties_7.10.1_1590617235982_0.9961479267614248"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.10.3": {
+      "name": "@babel/plugin-transform-computed-properties",
+      "version": "7.10.3",
+      "description": "Compile ES2015 computed properties to ES5",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/babel/babel.git",
+        "directory": "packages/babel-plugin-transform-computed-properties"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.10.3"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.10.3",
+        "@babel/helper-plugin-test-runner": "^7.10.3"
+      },
+      "gitHead": "2787ee2f967b6d8e1121fca00a8d578d75449a53",
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "homepage": "https://github.com/babel/babel#readme",
+      "_id": "@babel/plugin-transform-computed-properties@7.10.3",
+      "_nodeVersion": "14.4.0",
+      "_npmVersion": "lerna/3.19.0/node@v14.4.0+x64 (darwin)",
+      "dist": {
+        "integrity": "sha512-GWzhaBOsdbjVFav96drOz7FzrcEW6AP5nax0gLIpstiFaI3LOb2tAg06TimaWU6YKOfUACK3FVrxPJ4GSc5TgA==",
+        "shasum": "d3aa6eef67cb967150f76faff20f0abbf553757b",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-computed-properties/-/plugin-transform-computed-properties-7.10.3.tgz",
+        "fileCount": 4,
+        "unpackedSize": 7559,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJe7SYBCRA9TVsSAnZWagAAOPIP/1Wd8U6k7Ab0KZRJSnpG\nQljV1GjlLkZKykd74SBoIN/Cz4wdJ0kYfDu6dQ+35H9wDLpQ8gCE0wuL9ISN\nd8HqgkQZ9X2YlEIAAK3qNDmqsEGsA27nxwSMEd0m30Q2AJs1wX8+Q6IOINCD\ndjO9UUnhFmUhckoNydFFweVCF3pGOZ44A6o0OFtVQOUubwLBkBMTS6eVTwes\nigQUV9usDl5mbY7WY/VlYHeJfVee22AmY4fBaCMGKnJ1J/LcC8khOCUKWD0j\nixgMYfP9Cwe+kIX//VDlg6z6FuQmPn6DviZtas96hPPCpTxsMDXUqQdSIt1Y\nBRoaPUVh7G8TNnfybYBSffsvH/hkJKg6TCkQowgYxxrNzXrrlBwcaOG8mYty\n4bYMkxrWcEvCWpDfbeGrB1pIsgnd2yJ1hCh3zGls8wMgGguXZ+Y4So5w9qCr\nuHBh+De/LFFBjb4bgNlVvaOLS5hgnZqZpiB+ujZazfMI6d/CtZidiaPoN4ZJ\nE9hiOWFPl0wiZAw3hCLCydcC042SMjQ/mP89wvzlflGI7od4iTOWDeCRKIgy\n34xN5FK2XGg5rfERb6CEWA9UQ9sixoW3AybOWOD5HkcU6GsJqnreB1LXIkPv\nbB/9yYibRyn24YaqRm3utciJQVEQd7R3BicaeBRIi/riJ/IKQTaUxMzMipWV\ngRGk\r\n=03is\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "i@jhuang.me",
+          "name": "jlhwung"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "jlhwung",
+        "email": "i@jhuang.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-computed-properties_7.10.3_1592600064736_0.24177167220036977"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.10.4": {
+      "name": "@babel/plugin-transform-computed-properties",
+      "version": "7.10.4",
+      "description": "Compile ES2015 computed properties to ES5",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/babel/babel.git",
+        "directory": "packages/babel-plugin-transform-computed-properties"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.10.4"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.10.4",
+        "@babel/helper-plugin-test-runner": "^7.10.4"
+      },
+      "gitHead": "7fd40d86a0d03ff0e9c3ea16b29689945433d4df",
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "homepage": "https://github.com/babel/babel#readme",
+      "_id": "@babel/plugin-transform-computed-properties@7.10.4",
+      "_nodeVersion": "14.4.0",
+      "_npmVersion": "lerna/3.19.0/node@v14.4.0+x64 (darwin)",
+      "dist": {
+        "integrity": "sha512-JFwVDXcP/hM/TbyzGq3l/XWGut7p46Z3QvqFMXTfk6/09m7xZHJUN9xHfsv7vqqD4YnfI5ueYdSJtXqqBLyjBw==",
+        "shasum": "9ded83a816e82ded28d52d4b4ecbdd810cdfc0eb",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-computed-properties/-/plugin-transform-computed-properties-7.10.4.tgz",
+        "fileCount": 4,
+        "unpackedSize": 7559,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJe+zocCRA9TVsSAnZWagAA8BMP/3PymsRgRmGLf4SiVnnq\niM6ZRhU4B+65moVwlY0vftSB5vpXmKGkWhEvplpYGDluUKk1GyPg/1wGm+9k\n0Vl8DVwFU+55ejRarRJijNRt94F+2appqN84DZXQUQjZ0gKMaTbdfYedsikx\ncTBofHWE1BzXIjYLEpPiqzgKmbFirVSo93THdnS0/i+lNWRymjd6vNnAP7pb\nvcaXk2vSbjpxwsPnh2DNhOPXw9dgZ8v0u4MJaB/WN9oaOFTTISiRWRdAKRyG\nlm6JKZUApZhleyhfux7EKB2tpdEYrsl3SMBdIkts5DFz/j1BHIxMZ4yq+OEQ\nFist0xk9rBriP6peEUGtvgfybZJ0eFEYi++7QSOw+bCnqd+fps8hpwQMf7RU\nuL+73goYnJhiBLSfapwSDzLKmw0whkcGcbizBb1urCf72Z5OLF91SS5CdCm7\nRpc5q6mGo7DuY9dJ3RAtjYZ8wigwC9NUBnLcTmv6KQk+a4EwUiavYfyp7kWV\n8HAKYaStnHO778zO4ic1/NUWJjTcAMX+9YWbr9TZ2SOMHfqyytnBbIgUSCja\nDL+nRlC9z5tt5v3GJiSZYEF9dhiLJ2R/xGGffR9rh4RF+bOkKgup7dsLRPgD\n06pMgYpZ4lSHQQ3vW4nZuAnJuzmrwyLkddXtW2z52d2X0vlHTg/3kmqldmVz\nzTNE\r\n=B2YU\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "i@jhuang.me",
+          "name": "jlhwung"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "jlhwung",
+        "email": "i@jhuang.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-computed-properties_7.10.4_1593522715649_0.1518464147353782"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.12.1": {
+      "name": "@babel/plugin-transform-computed-properties",
+      "version": "7.12.1",
+      "description": "Compile ES2015 computed properties to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel.git",
+        "directory": "packages/babel-plugin-transform-computed-properties"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.10.4"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.12.1",
+        "@babel/helper-plugin-test-runner": "7.10.4"
+      },
+      "_id": "@babel/plugin-transform-computed-properties@7.12.1",
+      "dist": {
+        "shasum": "d68cf6c9b7f838a8a4144badbe97541ea0904852",
+        "integrity": "sha512-vVUOYpPWB7BkgUWPo4C44mUQHpTZXakEqFjbv8rQMg7TC6S6ZhGZ3otQcRH6u7+adSlE5i0sp63eMC/XGffrzg==",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-computed-properties/-/plugin-transform-computed-properties-7.12.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 7500,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfiM++CRA9TVsSAnZWagAA1dIP/2HGENQIQiisGLpDCggA\nk1mj/NxMrmumfQ5cCVPNwvkt6QBCQMX8PZflW69b82qSkSK3MhEXFxTh5+2s\n7hL3LtI38GyYODFLp6tmZKg9Er8Fi5bSl93qQi6g4aEL7oAwPrUpPbVSlLvK\n7vLR/ysYIk7rDgVYDj6H+U+IBX7WGfN9XUJQTWImD97FjMRQMWgGHpfL1uFZ\nqju1Y42wXCSnFH3ss4lOxOfiFycOn3xqIdmmg7qcvRMcdTd5UzA+kdiLeaf1\nDqof/JUAv88c4GID8T+dFgmA0bhZRlXkLxJSrkJBw/RkMuMOy6Ho8pSoFf/s\n2LV94Awq19USnnllE1kv75AJiStKBD0vDUSa/nzNGff1se8NSvzz7oi7Lep5\ns4xjNj40cASI21BSxmnFfoFuiohce6C0aN+5A6rSRpdB3A9ouGsY1epTGhiV\nSmkJRTymhtwaC/+J73D98rSYFpX5F2OojjbXj10RQfmiXu7tlvRiCd/QSIYp\nLLrTzLb1wNUEMxVDICvLEXhw34+hJGf9VGTCLV+DppFzte/vnLtTeQ+cWHE6\nGlgUZU7Gw61CDMrEX4N2RBEI+TlcSYm3d21LEQv5TVE684CRRO/2RR+pEBvn\nJtPii4NoTYV91A17WVug77YDfdh2eWBa5D3LnzmQBKxa4UorSSo0fnLC2n4I\nxj1+\r\n=hHOA\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "jlhwung",
+          "email": "i@jhuang.me"
+        },
+        {
+          "name": "nicolo-ribaudo",
+          "email": "nicolo.ribaudo@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "danez",
+          "email": "daniel@tschinder.de"
+        },
+        {
+          "name": "existentialism",
+          "email": "bng412@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-computed-properties_7.12.1_1602801598569_0.24427532853697675"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "",
+  "maintainers": [
+    {
+      "name": "jlhwung",
+      "email": "i@jhuang.me"
+    },
+    {
+      "name": "nicolo-ribaudo",
+      "email": "nicolo.ribaudo@gmail.com"
+    },
+    {
+      "name": "hzoo",
+      "email": "hi@henryzoo.com"
+    },
+    {
+      "name": "loganfsmyth",
+      "email": "loganfsmyth@gmail.com"
+    },
+    {
+      "name": "danez",
+      "email": "daniel@tschinder.de"
+    },
+    {
+      "name": "existentialism",
+      "email": "bng412@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-10-15T22:40:02.941Z",
+    "created": "2017-10-30T18:35:38.945Z",
+    "7.0.0-beta.4": "2017-10-30T18:35:38.945Z",
+    "7.0.0-beta.5": "2017-10-30T20:57:17.464Z",
+    "7.0.0-beta.31": "2017-11-03T20:04:03.783Z",
+    "7.0.0-beta.32": "2017-11-12T13:33:12.012Z",
+    "7.0.0-beta.33": "2017-12-01T14:28:14.716Z",
+    "7.0.0-beta.34": "2017-12-02T14:39:14.502Z",
+    "7.0.0-beta.35": "2017-12-14T21:47:41.001Z",
+    "7.0.0-beta.36": "2017-12-25T19:04:33.208Z",
+    "7.0.0-beta.37": "2018-01-08T16:02:27.885Z",
+    "7.0.0-beta.38": "2018-01-17T16:31:49.624Z",
+    "7.0.0-beta.39": "2018-01-30T20:27:30.844Z",
+    "7.0.0-beta.40": "2018-02-12T16:41:32.030Z",
+    "7.0.0-beta.41": "2018-03-14T16:26:03.726Z",
+    "7.0.0-beta.42": "2018-03-15T20:50:39.525Z",
+    "7.0.0-beta.43": "2018-04-02T16:48:22.123Z",
+    "7.0.0-beta.44": "2018-04-02T22:20:04.635Z",
+    "7.0.0-beta.45": "2018-04-23T01:56:41.448Z",
+    "7.0.0-beta.46": "2018-04-23T04:31:03.294Z",
+    "7.0.0-beta.47": "2018-05-15T00:08:44.129Z",
+    "7.0.0-beta.48": "2018-05-24T19:22:14.757Z",
+    "7.0.0-beta.49": "2018-05-25T16:01:53.632Z",
+    "7.0.0-beta.50": "2018-06-12T19:47:13.323Z",
+    "7.0.0-beta.51": "2018-06-12T21:19:44.102Z",
+    "7.0.0-beta.52": "2018-07-06T00:59:23.408Z",
+    "7.0.0-beta.53": "2018-07-11T13:40:13.758Z",
+    "7.0.0-beta.54": "2018-07-16T18:00:04.461Z",
+    "7.0.0-beta.55": "2018-07-28T22:07:12.874Z",
+    "7.0.0-beta.56": "2018-08-04T01:05:16.691Z",
+    "7.0.0-rc.0": "2018-08-09T15:58:04.431Z",
+    "7.0.0-rc.1": "2018-08-09T20:07:48.273Z",
+    "7.0.0-rc.2": "2018-08-21T19:23:45.764Z",
+    "7.0.0-rc.3": "2018-08-24T18:07:48.147Z",
+    "7.0.0-rc.4": "2018-08-27T16:44:02.978Z",
+    "7.0.0": "2018-08-27T21:42:59.659Z",
+    "7.2.0": "2018-12-03T19:01:13.649Z",
+    "7.7.4": "2019-11-22T23:32:07.564Z",
+    "7.8.0": "2020-01-12T00:16:31.472Z",
+    "7.8.3": "2020-01-13T21:41:27.973Z",
+    "7.10.1": "2020-05-27T22:07:16.123Z",
+    "7.10.3": "2020-06-19T20:54:25.054Z",
+    "7.10.4": "2020-06-30T13:11:55.781Z",
+    "7.12.1": "2020-10-15T22:39:58.724Z"
+  },
+  "keywords": [
+    "babel-plugin"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/babel/babel.git",
+    "directory": "packages/babel-plugin-transform-computed-properties"
+  },
+  "license": "MIT",
+  "readmeFilename": ""
+}

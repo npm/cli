@@ -1,0 +1,514 @@
+{
+  "_id": "is-arrayish",
+  "_rev": "9-f015220eb75bb1189c1c3ca31dad5222",
+  "name": "is-arrayish",
+  "description": "Determines if an object can be used as an array",
+  "dist-tags": {
+    "latest": "0.3.2"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "is-arrayish",
+      "description": "Determines if an object can be used as an array",
+      "version": "0.1.0",
+      "author": {
+        "name": "Qix",
+        "url": "http://github.com/qix-"
+      },
+      "keywords": [
+        "is",
+        "array",
+        "duck",
+        "type",
+        "arrayish",
+        "similar",
+        "proto",
+        "prototype",
+        "type"
+      ],
+      "license": "MIT",
+      "scripts": {
+        "pretest": "xo",
+        "test": "mocha --compilers coffee:coffee-script/register"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/qix-/node-is-arrayish.git"
+      },
+      "devDependencies": {
+        "coffee-script": "^1.9.3",
+        "coveralls": "^2.11.2",
+        "istanbul": "^0.3.17",
+        "mocha": "^2.2.5",
+        "should": "^7.0.1",
+        "xo": "^0.6.1"
+      },
+      "gitHead": "0a6d011135dd6242ef91eb06e3e2260d50ed3112",
+      "bugs": {
+        "url": "https://github.com/qix-/node-is-arrayish/issues"
+      },
+      "homepage": "https://github.com/qix-/node-is-arrayish#readme",
+      "_id": "is-arrayish@0.1.0",
+      "_shasum": "c49592c8ad839e697a8f1cb1c9c54d3ec14a8a68",
+      "_from": ".",
+      "_npmVersion": "3.2.0",
+      "_nodeVersion": "0.12.0",
+      "_npmUser": {
+        "name": "qix",
+        "email": "i.am.qix@gmail.com"
+      },
+      "dist": {
+        "shasum": "c49592c8ad839e697a8f1cb1c9c54d3ec14a8a68",
+        "tarball": "https://registry.npmjs.org/is-arrayish/-/is-arrayish-0.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "qix",
+          "email": "i.am.qix@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.1": {
+      "name": "is-arrayish",
+      "description": "Determines if an object can be used as an array",
+      "version": "0.1.1",
+      "author": {
+        "name": "Qix",
+        "url": "http://github.com/qix-"
+      },
+      "keywords": [
+        "is",
+        "array",
+        "duck",
+        "type",
+        "arrayish",
+        "similar",
+        "proto",
+        "prototype",
+        "type"
+      ],
+      "license": "MIT",
+      "scripts": {
+        "pretest": "xo",
+        "test": "mocha --compilers coffee:coffee-script/register"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/qix-/node-is-arrayish.git"
+      },
+      "devDependencies": {
+        "coffee-script": "^1.9.3",
+        "coveralls": "^2.11.2",
+        "istanbul": "^0.3.17",
+        "mocha": "^2.2.5",
+        "should": "^7.0.1",
+        "xo": "^0.6.1"
+      },
+      "gitHead": "0ca0100bf72ace8660600d3107a3a9d10a48cb19",
+      "bugs": {
+        "url": "https://github.com/qix-/node-is-arrayish/issues"
+      },
+      "homepage": "https://github.com/qix-/node-is-arrayish#readme",
+      "_id": "is-arrayish@0.1.1",
+      "_shasum": "09534c70ed8149f3c55cf96d6cc37d0055140aa9",
+      "_from": ".",
+      "_npmVersion": "2.13.3",
+      "_nodeVersion": "3.1.0",
+      "_npmUser": {
+        "name": "qix",
+        "email": "i.am.qix@gmail.com"
+      },
+      "dist": {
+        "shasum": "09534c70ed8149f3c55cf96d6cc37d0055140aa9",
+        "tarball": "https://registry.npmjs.org/is-arrayish/-/is-arrayish-0.1.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "qix",
+          "email": "i.am.qix@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.2.0": {
+      "name": "is-arrayish",
+      "description": "Determines if an object can be used as an array",
+      "version": "0.2.0",
+      "author": {
+        "name": "Qix",
+        "url": "http://github.com/qix-"
+      },
+      "keywords": [
+        "is",
+        "array",
+        "duck",
+        "type",
+        "arrayish",
+        "similar",
+        "proto",
+        "prototype",
+        "type"
+      ],
+      "license": "MIT",
+      "scripts": {
+        "pretest": "xo",
+        "test": "mocha --compilers coffee:coffee-script/register"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/qix-/node-is-arrayish.git"
+      },
+      "devDependencies": {
+        "coffee-script": "^1.9.3",
+        "coveralls": "^2.11.2",
+        "istanbul": "^0.3.17",
+        "mocha": "^2.2.5",
+        "should": "^7.0.1",
+        "xo": "^0.6.1"
+      },
+      "gitHead": "7b0be35df6c842532938000d2352ca506b0797e1",
+      "bugs": {
+        "url": "https://github.com/qix-/node-is-arrayish/issues"
+      },
+      "homepage": "https://github.com/qix-/node-is-arrayish#readme",
+      "_id": "is-arrayish@0.2.0",
+      "_shasum": "12b44c2efd298c5ef2eea7f63f6de34a87efd5fd",
+      "_from": ".",
+      "_npmVersion": "3.2.0",
+      "_nodeVersion": "0.12.0",
+      "_npmUser": {
+        "name": "qix",
+        "email": "i.am.qix@gmail.com"
+      },
+      "dist": {
+        "shasum": "12b44c2efd298c5ef2eea7f63f6de34a87efd5fd",
+        "tarball": "https://registry.npmjs.org/is-arrayish/-/is-arrayish-0.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "qix",
+          "email": "i.am.qix@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.2.1": {
+      "name": "is-arrayish",
+      "description": "Determines if an object can be used as an array",
+      "version": "0.2.1",
+      "author": {
+        "name": "Qix",
+        "url": "http://github.com/qix-"
+      },
+      "keywords": [
+        "is",
+        "array",
+        "duck",
+        "type",
+        "arrayish",
+        "similar",
+        "proto",
+        "prototype",
+        "type"
+      ],
+      "license": "MIT",
+      "scripts": {
+        "pretest": "xo",
+        "test": "mocha --compilers coffee:coffee-script/register"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/qix-/node-is-arrayish.git"
+      },
+      "devDependencies": {
+        "coffee-script": "^1.9.3",
+        "coveralls": "^2.11.2",
+        "istanbul": "^0.3.17",
+        "mocha": "^2.2.5",
+        "should": "^7.0.1",
+        "xo": "^0.6.1"
+      },
+      "gitHead": "53f22aa6ce557d7d31a3d1152a590a2df220df9d",
+      "bugs": {
+        "url": "https://github.com/qix-/node-is-arrayish/issues"
+      },
+      "homepage": "https://github.com/qix-/node-is-arrayish#readme",
+      "_id": "is-arrayish@0.2.1",
+      "_shasum": "77c99840527aa8ecb1a8ba697b80645a7a926a9d",
+      "_from": ".",
+      "_npmVersion": "3.2.2",
+      "_nodeVersion": "0.12.7",
+      "_npmUser": {
+        "name": "qix",
+        "email": "i.am.qix@gmail.com"
+      },
+      "dist": {
+        "shasum": "77c99840527aa8ecb1a8ba697b80645a7a926a9d",
+        "tarball": "https://registry.npmjs.org/is-arrayish/-/is-arrayish-0.2.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "qix",
+          "email": "i.am.qix@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.3.0": {
+      "name": "is-arrayish",
+      "description": "Determines if an object can be used as an array",
+      "version": "0.3.0",
+      "author": {
+        "name": "Qix",
+        "url": "http://github.com/qix-"
+      },
+      "keywords": [
+        "is",
+        "array",
+        "duck",
+        "type",
+        "arrayish",
+        "similar",
+        "proto",
+        "prototype",
+        "type"
+      ],
+      "license": "MIT",
+      "scripts": {
+        "pretest": "xo",
+        "test": "mocha --compilers coffee:coffee-script/register"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/qix-/node-is-arrayish.git"
+      },
+      "devDependencies": {
+        "coffee-script": "^1.9.3",
+        "coveralls": "^2.11.2",
+        "istanbul": "^0.3.17",
+        "mocha": "^2.2.5",
+        "should": "^7.0.1",
+        "xo": "^0.6.1"
+      },
+      "gitHead": "1e1d1710b5d8b2ee6ea9ecccbbae0657a59382b5",
+      "bugs": {
+        "url": "https://github.com/qix-/node-is-arrayish/issues"
+      },
+      "homepage": "https://github.com/qix-/node-is-arrayish#readme",
+      "_id": "is-arrayish@0.3.0",
+      "_shasum": "b687ade89150cc57d090db3c29fca1c7d1c770be",
+      "_from": ".",
+      "_npmVersion": "3.3.6",
+      "_nodeVersion": "4.1.1",
+      "_npmUser": {
+        "name": "qix",
+        "email": "i.am.qix@gmail.com"
+      },
+      "dist": {
+        "shasum": "b687ade89150cc57d090db3c29fca1c7d1c770be",
+        "tarball": "https://registry.npmjs.org/is-arrayish/-/is-arrayish-0.3.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "qix",
+          "email": "i.am.qix@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.3.1": {
+      "name": "is-arrayish",
+      "description": "Determines if an object can be used as an array",
+      "version": "0.3.1",
+      "author": {
+        "name": "Qix",
+        "url": "http://github.com/qix-"
+      },
+      "keywords": [
+        "is",
+        "array",
+        "duck",
+        "type",
+        "arrayish",
+        "similar",
+        "proto",
+        "prototype",
+        "type"
+      ],
+      "license": "MIT",
+      "scripts": {
+        "pretest": "xo",
+        "test": "mocha --compilers coffee:coffee-script/register"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/qix-/node-is-arrayish.git"
+      },
+      "devDependencies": {
+        "coffee-script": "^1.9.3",
+        "coveralls": "^2.11.2",
+        "istanbul": "^0.3.17",
+        "mocha": "^2.2.5",
+        "should": "^7.0.1",
+        "xo": "^0.6.1"
+      },
+      "gitHead": "524a7d9ccd6ddab8495d5eb4bf56d587dec22ffe",
+      "bugs": {
+        "url": "https://github.com/qix-/node-is-arrayish/issues"
+      },
+      "homepage": "https://github.com/qix-/node-is-arrayish#readme",
+      "_id": "is-arrayish@0.3.1",
+      "_shasum": "c2dfc386abaa0c3e33c48db3fe87059e69065efd",
+      "_from": ".",
+      "_npmVersion": "2.14.2",
+      "_nodeVersion": "0.10.32",
+      "_npmUser": {
+        "name": "qix",
+        "email": "i.am.qix@gmail.com"
+      },
+      "dist": {
+        "shasum": "c2dfc386abaa0c3e33c48db3fe87059e69065efd",
+        "tarball": "https://registry.npmjs.org/is-arrayish/-/is-arrayish-0.3.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "qix",
+          "email": "i.am.qix@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/is-arrayish-0.3.1.tgz_1479263233954_0.44612112431786954"
+      },
+      "directories": {}
+    },
+    "0.3.2": {
+      "name": "is-arrayish",
+      "description": "Determines if an object can be used as an array",
+      "version": "0.3.2",
+      "author": {
+        "name": "Qix",
+        "url": "http://github.com/qix-"
+      },
+      "keywords": [
+        "is",
+        "array",
+        "duck",
+        "type",
+        "arrayish",
+        "similar",
+        "proto",
+        "prototype",
+        "type"
+      ],
+      "license": "MIT",
+      "scripts": {
+        "test": "mocha --require coffeescript/register ./test/**/*.coffee",
+        "lint": "zeit-eslint --ext .jsx,.js .",
+        "lint-staged": "git diff --diff-filter=ACMRT --cached --name-only '*.js' '*.jsx' | xargs zeit-eslint"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/qix-/node-is-arrayish.git"
+      },
+      "devDependencies": {
+        "@zeit/eslint-config-node": "^0.3.0",
+        "@zeit/git-hooks": "^0.1.4",
+        "coffeescript": "^2.3.1",
+        "coveralls": "^3.0.1",
+        "eslint": "^4.19.1",
+        "istanbul": "^0.4.5",
+        "mocha": "^5.2.0",
+        "should": "^13.2.1"
+      },
+      "eslintConfig": {
+        "extends": [
+          "@zeit/eslint-config-node"
+        ]
+      },
+      "git": {
+        "pre-commit": "lint-staged"
+      },
+      "gitHead": "8ef97ff99d606e911aeaf003b86318b882b4fba1",
+      "bugs": {
+        "url": "https://github.com/qix-/node-is-arrayish/issues"
+      },
+      "homepage": "https://github.com/qix-/node-is-arrayish#readme",
+      "_id": "is-arrayish@0.3.2",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.6.1",
+      "_npmUser": {
+        "name": "qix",
+        "email": "i.am.qix@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-eVRqCvVlZbuw3GrM63ovNSNAeA1K16kaR/LRY/92w0zxQ5/1YzwblUX652i4Xs9RwAGjW9d9y6X88t8OaAJfWQ==",
+        "shasum": "4574a2ae56f7ab206896fb431eaeed066fdf8f03",
+        "tarball": "https://registry.npmjs.org/is-arrayish/-/is-arrayish-0.3.2.tgz",
+        "fileCount": 5,
+        "unpackedSize": 54720,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbKLpKCRA9TVsSAnZWagAAFl4P/jzlgKRLsa41wcCqGj2h\nEaTcoT3zXf7HpaFzG+uCvgna+AKknEHNBgmQeLafM0seWWvAbV4OGq4J0nls\nbBDirWPBY1ohg8fDwle82PZe57b0OvGdkk+Q52oj26YI/b04gMV+0kpL1uTb\n26XlzPDR0wm9rIUKS3GqwrzU/7n5lSVXFUSHDPDFIn4QyzxG0IaYqB3FlY57\niOTT/XmyqZW70xORcQxTAXXYgp+KMsXA6hoS0ZGjIhYq+CbVjCVdEULIyrfz\nnuU/CmhtiuW24icBaqGjeEvFbM5fVnvNFkeMeWmDfJOVK83KyWLrtjHBbfVC\nU0wmdTDN8W/YtL4ZNXkVJwzph63BC0yAhRd1Db0yPL3Ymiz5a1STi439YxCp\nrPnKmNotFpit+UL6rQtMwOD6QG+FqY8HNzyRAZTwUo4UhMv+8N6pPygB+FZg\n+9xZdsWW8+GnFLmpyr0gEjgPu0CcPwczSEDTpka2sjks8MggmsF2nEZdBFgR\nszl4s8la/GxKgxuAkDr7kYQYea7PwWK412OyLeQG6wBdHDFN53/zjB/chLVw\nGdNvEt4+2g/igJSMzZpDb4e7L/DPF0Y3K3RRS8COMSBQL786D0FtjUNoh689\nGf54TxYlJEAjDaRNeVX6GYwjqIfeLsI9GXuI1iIDOo/Z1YoZQw9r/4acZDP5\n/uIe\r\n=cnL7\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "qix",
+          "email": "i.am.qix@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is-arrayish_0.3.2_1529395785916_0.7508357148358016"
+      }
+    }
+  },
+  "readme": "# node-is-arrayish [![Travis-CI.org Build Status](https://img.shields.io/travis/Qix-/node-is-arrayish.svg?style=flat-square)](https://travis-ci.org/Qix-/node-is-arrayish) [![Coveralls.io Coverage Rating](https://img.shields.io/coveralls/Qix-/node-is-arrayish.svg?style=flat-square)](https://coveralls.io/r/Qix-/node-is-arrayish)\n> Determines if an object can be used like an Array\n\n## Example\n```javascript\nvar isArrayish = require('is-arrayish');\n\nisArrayish([]); // true\nisArrayish({__proto__: []}); // true\nisArrayish({}); // false\nisArrayish({length:10}); // false\n```\n\n## License\nLicensed under the [MIT License](http://opensource.org/licenses/MIT).\nYou can find a copy of it in [LICENSE](LICENSE).\n",
+  "maintainers": [
+    {
+      "name": "qix",
+      "email": "i.am.qix@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2018-06-19T08:09:49.307Z",
+    "created": "2015-08-25T17:08:51.805Z",
+    "0.1.0": "2015-08-25T17:08:51.805Z",
+    "0.1.1": "2015-08-25T17:10:26.823Z",
+    "0.2.0": "2015-08-25T23:58:40.489Z",
+    "0.2.1": "2015-08-31T23:02:50.373Z",
+    "0.3.0": "2016-01-23T17:57:37.857Z",
+    "0.3.1": "2016-11-16T02:27:15.570Z",
+    "0.3.2": "2018-06-19T08:09:45.997Z"
+  },
+  "homepage": "https://github.com/qix-/node-is-arrayish#readme",
+  "keywords": [
+    "is",
+    "array",
+    "duck",
+    "type",
+    "arrayish",
+    "similar",
+    "proto",
+    "prototype",
+    "type"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qix-/node-is-arrayish.git"
+  },
+  "author": {
+    "name": "Qix",
+    "url": "http://github.com/qix-"
+  },
+  "bugs": {
+    "url": "https://github.com/qix-/node-is-arrayish/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "users": {
+    "bret": true,
+    "rocket0191": true
+  },
+  "_attachments": {}
+}

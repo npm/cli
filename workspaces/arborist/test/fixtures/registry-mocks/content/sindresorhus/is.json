@@ -1,0 +1,3349 @@
+{
+  "_id": "@sindresorhus/is",
+  "_rev": "33-c0f307f4464025b71aa29fa8567fdc84",
+  "name": "@sindresorhus/is",
+  "description": "Type check values",
+  "dist-tags": {
+    "latest": "4.0.0"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "@sindresorhus/is",
+      "version": "0.1.0",
+      "description": "Type check values: `is.string('🦄') //=> true`",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/is.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "publishConfig": {
+        "access": "public"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "type",
+        "types",
+        "is",
+        "check",
+        "checking",
+        "validate",
+        "validation",
+        "utility",
+        "util",
+        "typeof",
+        "instanceof",
+        "object",
+        "assert",
+        "assertion",
+        "test",
+        "kind",
+        "primitive",
+        "verify",
+        "compare"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "103c5afe6f20e68f64f448bbe4047862e3d565e5",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is#readme",
+      "_id": "@sindresorhus/is@0.1.0",
+      "_shasum": "d0ff822b2b92e6476b7f52ca0f0289992f47061b",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "4.8.3",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "d0ff822b2b92e6476b7f52ca0f0289992f47061b",
+        "tarball": "https://registry.npmjs.org/@sindresorhus/is/-/is-0.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is-0.1.0.tgz_1506016469568_0.5930651263333857"
+      },
+      "directories": {}
+    },
+    "0.2.0": {
+      "name": "@sindresorhus/is",
+      "version": "0.2.0",
+      "description": "Type check values: `is.string('🦄') //=> true`",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/is.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "publishConfig": {
+        "access": "public"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "type",
+        "types",
+        "is",
+        "check",
+        "checking",
+        "validate",
+        "validation",
+        "utility",
+        "util",
+        "typeof",
+        "instanceof",
+        "object",
+        "assert",
+        "assertion",
+        "test",
+        "kind",
+        "primitive",
+        "verify",
+        "compare"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "27d15f40bda9e390d1dcac5722e37a2675425483",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is#readme",
+      "_id": "@sindresorhus/is@0.2.0",
+      "_shasum": "c7f5e01c8d3372c682e888f73fd72992514c13c9",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.11.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "c7f5e01c8d3372c682e888f73fd72992514c13c9",
+        "tarball": "https://registry.npmjs.org/@sindresorhus/is/-/is-0.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is-0.2.0.tgz_1506655378448_0.7947612015996128"
+      },
+      "directories": {}
+    },
+    "0.2.1": {
+      "name": "@sindresorhus/is",
+      "version": "0.2.1",
+      "description": "Type check values: `is.string('🦄') //=> true`",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/is.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "publishConfig": {
+        "access": "public"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "type",
+        "types",
+        "is",
+        "check",
+        "checking",
+        "validate",
+        "validation",
+        "utility",
+        "util",
+        "typeof",
+        "instanceof",
+        "object",
+        "assert",
+        "assertion",
+        "test",
+        "kind",
+        "primitive",
+        "verify",
+        "compare"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "11b98171c82991416c3ff82f076d963b0c775184",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is#readme",
+      "_id": "@sindresorhus/is@0.2.1",
+      "_shasum": "537fe5655c9e6b22313776494abc712f0b327e79",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "4.8.3",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "537fe5655c9e6b22313776494abc712f0b327e79",
+        "tarball": "https://registry.npmjs.org/@sindresorhus/is/-/is-0.2.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is-0.2.1.tgz_1507177308076_0.29263611719943583"
+      },
+      "directories": {}
+    },
+    "0.3.0": {
+      "name": "@sindresorhus/is",
+      "version": "0.3.0",
+      "description": "Type check values: `is.string('🦄') //=> true`",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/is.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "publishConfig": {
+        "access": "public"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "type",
+        "types",
+        "is",
+        "check",
+        "checking",
+        "validate",
+        "validation",
+        "utility",
+        "util",
+        "typeof",
+        "instanceof",
+        "object",
+        "assert",
+        "assertion",
+        "test",
+        "kind",
+        "primitive",
+        "verify",
+        "compare"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "jsdom": "^9.12.0",
+        "xo": "*"
+      },
+      "gitHead": "04cb80dfb170d9c2e004f9ba0825fd0bab9411fe",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is#readme",
+      "_id": "@sindresorhus/is@0.3.0",
+      "_shasum": "ae248b274cb9eec2d8c7acdf6a70689126ff7237",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "4.8.3",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "ae248b274cb9eec2d8c7acdf6a70689126ff7237",
+        "tarball": "https://registry.npmjs.org/@sindresorhus/is/-/is-0.3.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is-0.3.0.tgz_1507715474871_0.08435121271759272"
+      },
+      "directories": {}
+    },
+    "0.4.0": {
+      "name": "@sindresorhus/is",
+      "version": "0.4.0",
+      "description": "Type check values: `is.string('🦄') //=> true`",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/is.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "publishConfig": {
+        "access": "public"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "type",
+        "types",
+        "is",
+        "check",
+        "checking",
+        "validate",
+        "validation",
+        "utility",
+        "util",
+        "typeof",
+        "instanceof",
+        "object",
+        "assert",
+        "assertion",
+        "test",
+        "kind",
+        "primitive",
+        "verify",
+        "compare"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "jsdom": "^9.12.0",
+        "xo": "*"
+      },
+      "gitHead": "a4eebe4b4a95eeb7c6a476d89e92d2af0daf2f2b",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is#readme",
+      "_id": "@sindresorhus/is@0.4.0",
+      "_npmVersion": "5.4.2",
+      "_nodeVersion": "8.7.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-5WG0MPK5JOCf16GDyP26gmTYI2pMU5eBbiN0bUTb5GzEgBYT7Dj7S7Jjl6dn/pgAXegmACqjD009v5tVFX200g==",
+        "shasum": "45bfece11eb55cac415e65b8de352eb75de1b968",
+        "tarball": "https://registry.npmjs.org/@sindresorhus/is/-/is-0.4.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is-0.4.0.tgz_1508614109577_0.9955992680042982"
+      },
+      "directories": {}
+    },
+    "0.5.0": {
+      "name": "@sindresorhus/is",
+      "version": "0.5.0",
+      "description": "Type check values: `is.string('🦄') //=> true`",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/is.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "dist/index.js",
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "lint": "tslint --format stylish --project .",
+        "build": "tsc",
+        "test": "npm run lint && npm run build && ava dist/tests",
+        "prepublish": "npm run build && del dist/tests"
+      },
+      "files": [
+        "dist"
+      ],
+      "keywords": [
+        "type",
+        "types",
+        "is",
+        "check",
+        "checking",
+        "validate",
+        "validation",
+        "utility",
+        "util",
+        "typeof",
+        "instanceof",
+        "object",
+        "assert",
+        "assertion",
+        "test",
+        "kind",
+        "primitive",
+        "verify",
+        "compare"
+      ],
+      "devDependencies": {
+        "@types/jsdom": "^2.0.31",
+        "@types/node": "^8.0.47",
+        "ava": "*",
+        "del-cli": "^1.1.0",
+        "jsdom": "^9.12.0",
+        "tslint": "^5.8.0",
+        "tslint-xo": "^0.3.0",
+        "typescript": "^2.6.1"
+      },
+      "types": "dist/index.d.ts",
+      "gitHead": "e8ac7dc4aaf8d1f9a9b07ae0b0e50e45fb24fbba",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is#readme",
+      "_id": "@sindresorhus/is@0.5.0",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-6cNJTqnikB7E8BV8kYgoYCAwMBh3QSCUte3fq56ldWASPxrGteIDJR5kJ+BJ+AaTRTzI073VUFMHlWrhACn+Jg==",
+        "shasum": "5398b9c4f0963c170d0c8d5873709999f82f508c",
+        "tarball": "https://registry.npmjs.org/@sindresorhus/is/-/is-0.5.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is-0.5.0.tgz_1510025031986_0.32947274576872587"
+      },
+      "directories": {}
+    },
+    "0.6.0": {
+      "name": "@sindresorhus/is",
+      "version": "0.6.0",
+      "description": "Type check values: `is.string('🦄') //=> true`",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/is.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "dist/index.js",
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "lint": "tslint --format stylish --project .",
+        "build": "tsc",
+        "test": "npm run lint && npm run build && ava dist/tests",
+        "prepublish": "npm run build && del dist/tests"
+      },
+      "files": [
+        "dist"
+      ],
+      "keywords": [
+        "type",
+        "types",
+        "is",
+        "check",
+        "checking",
+        "validate",
+        "validation",
+        "utility",
+        "util",
+        "typeof",
+        "instanceof",
+        "object",
+        "assert",
+        "assertion",
+        "test",
+        "kind",
+        "primitive",
+        "verify",
+        "compare"
+      ],
+      "devDependencies": {
+        "@types/jsdom": "^2.0.31",
+        "@types/node": "^8.0.47",
+        "@types/tempy": "^0.1.0",
+        "ava": "*",
+        "del-cli": "^1.1.0",
+        "jsdom": "^9.12.0",
+        "tempy": "^0.2.1",
+        "tslint": "^5.8.0",
+        "tslint-xo": "^0.3.0",
+        "typescript": "^2.6.1"
+      },
+      "types": "dist/index.d.ts",
+      "gitHead": "50e3fe88c722133953118053bb31c6a6f7a39c9a",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is#readme",
+      "_id": "@sindresorhus/is@0.6.0",
+      "_shasum": "383f456b26bc96c7889f0332079f4358b16c58dc",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "4.8.4",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "383f456b26bc96c7889f0332079f4358b16c58dc",
+        "tarball": "https://registry.npmjs.org/@sindresorhus/is/-/is-0.6.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is-0.6.0.tgz_1511122697769_0.09692995506338775"
+      },
+      "directories": {}
+    },
+    "0.7.0": {
+      "name": "@sindresorhus/is",
+      "version": "0.7.0",
+      "description": "Type check values: `is.string('🦄') //=> true`",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/is.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "dist/index.js",
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "lint": "tslint --format stylish --project .",
+        "build": "tsc",
+        "test": "npm run lint && npm run build && ava dist/tests",
+        "prepublish": "npm run build && del dist/tests"
+      },
+      "files": [
+        "dist"
+      ],
+      "keywords": [
+        "type",
+        "types",
+        "is",
+        "check",
+        "checking",
+        "validate",
+        "validation",
+        "utility",
+        "util",
+        "typeof",
+        "instanceof",
+        "object",
+        "assert",
+        "assertion",
+        "test",
+        "kind",
+        "primitive",
+        "verify",
+        "compare"
+      ],
+      "devDependencies": {
+        "@types/jsdom": "^2.0.31",
+        "@types/node": "^8.0.47",
+        "@types/tempy": "^0.1.0",
+        "ava": "*",
+        "del-cli": "^1.1.0",
+        "jsdom": "^9.12.0",
+        "tempy": "^0.2.1",
+        "tslint": "^5.8.0",
+        "tslint-xo": "^0.3.0",
+        "typescript": "^2.6.1"
+      },
+      "types": "dist/index.d.ts",
+      "gitHead": "828a5b3088804f32fec824a2fbff0396d4cd13b3",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is#readme",
+      "_id": "@sindresorhus/is@0.7.0",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-ONhaKPIufzzrlNbqtWFFd+jlnemX6lJAgq9ZeiZtS7I1PIf/la7CW4m83rTXRnVnsMbW2k56pGYu7AUFJD9Pow==",
+        "shasum": "9a06f4f137ee84d7df0460c1fdb1135ffa6c50fd",
+        "tarball": "https://registry.npmjs.org/@sindresorhus/is/-/is-0.7.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is-0.7.0.tgz_1513024821800_0.9983615970704705"
+      },
+      "directories": {}
+    },
+    "0.8.0": {
+      "name": "@sindresorhus/is",
+      "version": "0.8.0",
+      "description": "Type check values: `is.string('🦄') //=> true`",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/is.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "main": "dist/index.js",
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "lint": "tslint --format stylish --project .",
+        "build": "tsc",
+        "test": "npm run lint && npm run build && ava dist/tests",
+        "prepublish": "npm run build && del dist/tests"
+      },
+      "files": [
+        "dist"
+      ],
+      "keywords": [
+        "type",
+        "types",
+        "is",
+        "check",
+        "checking",
+        "validate",
+        "validation",
+        "utility",
+        "util",
+        "typeof",
+        "instanceof",
+        "object",
+        "assert",
+        "assertion",
+        "test",
+        "kind",
+        "primitive",
+        "verify",
+        "compare"
+      ],
+      "devDependencies": {
+        "@types/jsdom": "^11.0.4",
+        "@types/node": "^9.6.0",
+        "@types/tempy": "^0.1.0",
+        "ava": "*",
+        "del-cli": "^1.1.0",
+        "jsdom": "^11.6.2",
+        "tempy": "^0.2.1",
+        "tslint": "^5.9.1",
+        "tslint-xo": "^0.7.0",
+        "typescript": "^2.8.1"
+      },
+      "types": "dist/index.d.ts",
+      "gitHead": "7ae4b44ca281da26703793c52be20c4982a352f9",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is#readme",
+      "_id": "@sindresorhus/is@0.8.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-cerdLImrIp8hbt+i2v2rCLCo9fqoRrciP/BzLY3fnmhbwGNDgf7b3Niiqu085+LjPHYxgu0f+3/ciPDPJFgGkA==",
+        "shasum": "073aee40b0aab2d4ace33c0a2a2672a37da6fa12",
+        "tarball": "https://registry.npmjs.org/@sindresorhus/is/-/is-0.8.0.tgz",
+        "fileCount": 16,
+        "unpackedSize": 97819
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is_0.8.0_1522775413420_0.5357373780876304"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.9.0": {
+      "name": "@sindresorhus/is",
+      "version": "0.9.0",
+      "description": "Type check values: `is.string('🦄') //=> true`",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/is.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "main": "dist/index.js",
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "lint": "tslint --format stylish --project .",
+        "build": "tsc",
+        "test": "npm run lint && npm run build && ava dist/tests",
+        "prepublish": "npm run build && del dist/tests"
+      },
+      "files": [
+        "dist"
+      ],
+      "keywords": [
+        "type",
+        "types",
+        "is",
+        "check",
+        "checking",
+        "validate",
+        "validation",
+        "utility",
+        "util",
+        "typeof",
+        "instanceof",
+        "object",
+        "assert",
+        "assertion",
+        "test",
+        "kind",
+        "primitive",
+        "verify",
+        "compare"
+      ],
+      "dependencies": {
+        "symbol-observable": "^1.2.0"
+      },
+      "devDependencies": {
+        "@types/jsdom": "^11.0.4",
+        "@types/node": "^9.6.0",
+        "@types/tempy": "^0.1.0",
+        "@types/zen-observable": "^0.5.3",
+        "ava": "*",
+        "del-cli": "^1.1.0",
+        "jsdom": "^11.6.2",
+        "rxjs": "^6.0.0",
+        "tempy": "^0.2.1",
+        "tslint": "^5.9.1",
+        "tslint-xo": "^0.7.0",
+        "typescript": "^2.8.1",
+        "zen-observable": "^0.8.8"
+      },
+      "types": "dist/index.d.ts",
+      "gitHead": "37f6cc3fe3df89e3b77aa9bb2cb87957fa9759ce",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is#readme",
+      "_id": "@sindresorhus/is@0.9.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.11.1",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-gKDK3XG96qMB3ZEZu9/Qvv6T2x2ZFGn4dcftsItHRF74kA6AqC9DIcOfnzgZSIWsSIHA47soiSNgAEHFxBQ7Fw==",
+        "shasum": "1a65a8fab2d4efa5a32a5f5f40cf9b0806aabd69",
+        "tarball": "https://registry.npmjs.org/@sindresorhus/is/-/is-0.9.0.tgz",
+        "fileCount": 16,
+        "unpackedSize": 98874,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa6/AlCRA9TVsSAnZWagAArvwQAIvjuvOCI6vkggp1oHgf\nw7qYU1h8hrRAbb4Zv4h/yPzDxIAkUxu9+ZampEW/UcURUHSi455wolXFaAIj\nHiX1Bs/ke+RyuOZkF73xV5oxBnyZUot1vVhSRpeWp6wkmDH601ZClqwkg6+N\npfDvGI2a0djIhHNESUvdUIuaO8zN/1dV/2wiT8wfObb7XQ2TgTIU2lfSfp/A\nrecVaQGhK7QuXCNdOiFpTyg/E2zhrrVD4hHSJjAlghvM6Sbdtb0NxiEY47Up\nDQo1/QK1YwyugviYsmNvehC2NNth5y3HQCicz8zI8OrMlQYZtL+4r4XHGbiC\nixlOWYD89DCPqZyAZxCbHnogfHySh0ieizSFqxSf9yPTiASAQrDZasdE85U6\nYsAJ5XUYUVyASkq963wFZ02uOeRSjGoBHRVZT5CzLFEwfE5Ar3ymWoL1xbYV\n5oDPpBIJQIhpndo2g6QDJOAxux4On78plen3s3bD0EkFNv3afSGANjNB1B37\nz4/aRIpq27OLR9aTPVJBJRgo/+tZOzdQbyo9np1Vfu9ylYCw18yCAFSsr4fK\nwiWrgmMgi9xIfR908fl+Wi6MVjyAEyJ3+bnyxOdipsiFttgsbEnWBakhfkiS\nvoBHG0O83YMd+laozxQq9b874srrzuCTI2/npNbGn9aACa8R6viZliJXuY48\n51bS\r\n=zuUV\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is_0.9.0_1525411875538_0.19847575916850846"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.10.0": {
+      "name": "@sindresorhus/is",
+      "version": "0.10.0",
+      "description": "Type check values: `is.string('🦄') //=> true`",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/is.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "main": "dist/index.js",
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "lint": "tslint --format stylish --project .",
+        "build": "del dist && tsc",
+        "test": "npm run lint && npm run build && ava dist/tests",
+        "prepublish": "npm run build"
+      },
+      "files": [
+        "dist"
+      ],
+      "keywords": [
+        "type",
+        "types",
+        "is",
+        "check",
+        "checking",
+        "validate",
+        "validation",
+        "utility",
+        "util",
+        "typeof",
+        "instanceof",
+        "object",
+        "assert",
+        "assertion",
+        "test",
+        "kind",
+        "primitive",
+        "verify",
+        "compare"
+      ],
+      "dependencies": {
+        "symbol-observable": "^1.2.0"
+      },
+      "devDependencies": {
+        "@types/jsdom": "^11.0.4",
+        "@types/node": "^10.1.2",
+        "@types/tempy": "^0.1.0",
+        "@types/zen-observable": "^0.5.3",
+        "ava": "*",
+        "del-cli": "^1.1.0",
+        "jsdom": "^11.6.2",
+        "rxjs": "^6.0.0",
+        "tempy": "^0.2.1",
+        "tslint": "^5.9.1",
+        "tslint-xo": "^0.8.0",
+        "typescript": "^2.9.0",
+        "zen-observable": "^0.8.8"
+      },
+      "types": "dist/index.d.ts",
+      "gitHead": "d11b7eaaa1ca6a8565196a8bf07284b6435f4e50",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is#readme",
+      "_id": "@sindresorhus/is@0.10.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.11.2",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-bmfpY7xAyYhgE531LyMH40uVWgBymnUbL6scPM3pogT/v9CDDnS8N5LRlwLiBGrvjYhBSylIz9P5mIqAMcoKIg==",
+        "shasum": "f42dd6a9d12cd79fa6f53b27cf5bea3a30d2cafa",
+        "tarball": "https://registry.npmjs.org/@sindresorhus/is/-/is-0.10.0.tgz",
+        "fileCount": 9,
+        "unpackedSize": 76978,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbPkhkCRA9TVsSAnZWagAAPiAP/RnaNJXDw+ADVwEBTgaq\nutON1yYcR9AyvJU7x2pDRIQsbRsGu5jjmj+0Fw4++UJLRgV5CX386w4OW3uM\n9H5Dsk7dULAR/dge3fK3HsWWdYT1vI71/MlUteCvEfrxeTAIheDRt0lhbeD3\nSJrSCjT/DzBArG8Zvyfr3lyX0XOx4REjHf0wwpuOq8yNVawSj2qaz1uSV2nV\noDGXxUBxsI5cu3BU0KJFoDJvOP7JvTOrOfZcBK1PXGXVFacyVPx99jhZYhSP\nQ80eQYhLJxpyg28NhtUfmBaz9WsNTJVgsaEtNQiYPkMXt6kk93dR7sqLtt3i\nYVcNy/C3uhzi/aMZn1ql7w6AbI8h0fGfjy77ixvXe1fvgDVnmLiMYQlB0d0m\nqvBlQk2X8bVns+ZNR7Fryh8iUDhrp1NpNa9b1vdIEshKz2FVbT/DYelxP+O+\ngeoS1Uma6P4tPMLWxIgYWdINupLezAUhbQw42vhdEYfT8AF/ukNOZAUS3H8n\nNed5aMgVunSWVo8cC1rEIjNtoPiSTaTNmLfn/iGLRshWHILsR1Nl5/oNvKlQ\ncOSeylVZ3yeNZgj743nMCKp+7n5r4nUgGF+BFxs/tZkghMDCQPWrd2zsX+//\n3YSAe1WQA3XECk/NcbHz0hZtOlOJRunZ2DWjL7cbaPipvRN2DLZ8dN3qOnRg\n7J6X\r\n=x1u6\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is_0.10.0_1530808420839_0.8008182477174501"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.11.0": {
+      "name": "@sindresorhus/is",
+      "version": "0.11.0",
+      "description": "Type check values: `is.string('🦄') //=> true`",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/is.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "main": "dist/index.js",
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "lint": "tslint --format stylish --project .",
+        "build": "del dist && tsc",
+        "test": "npm run lint && npm run build && ava dist/tests",
+        "prepublish": "npm run build && del dist/tests"
+      },
+      "files": [
+        "dist"
+      ],
+      "keywords": [
+        "type",
+        "types",
+        "is",
+        "check",
+        "checking",
+        "validate",
+        "validation",
+        "utility",
+        "util",
+        "typeof",
+        "instanceof",
+        "object",
+        "assert",
+        "assertion",
+        "test",
+        "kind",
+        "primitive",
+        "verify",
+        "compare"
+      ],
+      "dependencies": {
+        "symbol-observable": "^1.2.0"
+      },
+      "devDependencies": {
+        "@types/jsdom": "^11.0.4",
+        "@types/node": "^10.1.2",
+        "@types/tempy": "^0.1.0",
+        "@types/zen-observable": "^0.5.3",
+        "ava": "*",
+        "del-cli": "^1.1.0",
+        "jsdom": "^11.6.2",
+        "rxjs": "^6.0.0",
+        "tempy": "^0.2.1",
+        "tslint": "^5.9.1",
+        "tslint-xo": "^0.8.0",
+        "typescript": "^2.9.0",
+        "zen-observable": "^0.8.8"
+      },
+      "types": "dist/index.d.ts",
+      "gitHead": "b2bb3e7d3717de9734a3881156b1f8ab00236fe9",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is#readme",
+      "_id": "@sindresorhus/is@0.11.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.11.3",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-i5Zh5+3QARyXtzq3Bd2Lg3aBRFLcgYbNoap3Hyu1uRN8X+D+0JMqqc4uk4XjhNxfVdCnL8WHUA2wxa33QCC50w==",
+        "shasum": "a65970040a5b55c4713452666703b92a6c331fdb",
+        "tarball": "https://registry.npmjs.org/@sindresorhus/is/-/is-0.11.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 34554,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbRILiCRA9TVsSAnZWagAAy7AP/0otmENeW91LkN7PVGSH\nWigfCccjedy71SunvmQGdoCgrdCcGPwRAsNWhPZmq8LP8A+VYsaRG3f7GiP7\nDGt+4boxanEfvFdVrfpHf0YvH7Efp6FG94zYM8CGoBnXKK5aH+IDJMUtblpH\nzd2qFpgQERF3aVaoNBFAORmQCjjOhBMwiNtex3JDdPCjwWsYl94hmjq25L3O\nFlqQaDnKhjK0OXyVxk8BMzePXa2GrNZJ1ahFgaCD5dfBCykisuWfU4rYlzOp\nTMcBSfb0pyOOjSxhO/InbU9oGNBMv6RtkCmXPJEUurtsfh97nyuHIrJbkc+F\niOzjN0u3GJ1Oa39dKqkvoFsSyyH8fUqTNiwptLogBGJcvzQI5quwg/fxhLHy\nXSiODlm2myXuHgOnVdik6lxEJjh571/s5xX0CAsSXPyIV11s0AhWvdTpVZww\nsKRWqUA850AD2fQepbeRpB5cSXT/sIty/QB9I2RmGbieRU72MjTTk4eewdzJ\nIQbwIchO6cdWN4nvyV347o9hvE38x+/zRcOdSwDe4iROHlmpLlPj1XPF5U/C\nU33Z/95ofY1b1c9rJUud7EQhLq8swWosOtmlvmt2v40RNBn2Nms4bUpfftBP\ni9mBVelKx5twcY+RAiC7YeeHhw8FMXXxbftaypOx+FHSWh1NO7bMF6aaobAa\nEhq4\r\n=CbhG\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is_0.11.0_1531216610235_0.32137062124715365"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.12.0": {
+      "name": "@sindresorhus/is",
+      "version": "0.12.0",
+      "description": "Type check values: `is.string('🦄') //=> true`",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/is.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "main": "dist/index.js",
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "lint": "tslint --format stylish --project .",
+        "build": "del dist && tsc",
+        "test": "npm run lint && npm run build && ava dist/tests",
+        "prepublish": "npm run build && del dist/tests"
+      },
+      "keywords": [
+        "type",
+        "types",
+        "is",
+        "check",
+        "checking",
+        "validate",
+        "validation",
+        "utility",
+        "util",
+        "typeof",
+        "instanceof",
+        "object",
+        "assert",
+        "assertion",
+        "test",
+        "kind",
+        "primitive",
+        "verify",
+        "compare"
+      ],
+      "dependencies": {
+        "symbol-observable": "^1.2.0"
+      },
+      "devDependencies": {
+        "@types/jsdom": "^11.12.0",
+        "@types/node": "^10.11.2",
+        "@types/tempy": "^0.1.0",
+        "@types/zen-observable": "^0.8.0",
+        "ava": "*",
+        "del-cli": "^1.1.0",
+        "jsdom": "^11.6.2",
+        "rxjs": "^6.3.3",
+        "tempy": "^0.2.1",
+        "tslint": "^5.9.1",
+        "tslint-xo": "^0.9.0",
+        "typescript": "^3.1.1",
+        "zen-observable": "^0.8.8"
+      },
+      "types": "dist/index.d.ts",
+      "gitHead": "c983ffa4cd83c114b18d021c180e6ba9265070cd",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is#readme",
+      "_id": "@sindresorhus/is@0.12.0",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "8.12.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-9ve22cGrAKlSRvi8Vb2JIjzcaaQg79531yQHnF+hi/kOpsSj3Om8AyR1wcHrgl0u7U3vYQ7gmF5erZzOp4+51Q==",
+        "shasum": "55c37409c809e802efea25911a579731adfc6e07",
+        "tarball": "https://registry.npmjs.org/@sindresorhus/is/-/is-0.12.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 37812,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbrcvfCRA9TVsSAnZWagAAXaIP/jYq6WPORGAA18RDopAy\nORFWepA0b6V2844VSeOysjp+Htd03yf0vePQEtYaaCQH77DEwM5/LaLmV2IG\n8Hse8iUC6JwdrGxih8SzhQXRCkpOiPOvY5iG8dPZIJxWW2fnKHcrpoGs7emP\n8kwTnOM/8S1jTApC+87m12jFGGUjrAEhQ6el+SnUa1X9HLMVPQ/E9JtNczLY\negr/mNJF8uuA0dPE1+VmyfL2ilOriEPRGeNoGm8BR1ZcoDLHz+TTkF/Q/3SP\nUSf/itI0BdZOQcKXMqrrSWLVlX6uUaon3hBIt6E+pFKlWqAHu7yauAwM0Qjz\nB2/M8RmViUddxZGkQp9myVeLdG0rTgMirSH/48n2XUOJ79pJF7qseefGe/64\nFdBnQRuFTj1LVy6ldz4rGGzLsYyLQXl76wmOsMu3QhVqKjo3rCju4dJ4K2vv\n6xBIklZy03Bl19CrlxTJJSJZZ6Lgmfhq+1wMKbecWZ5aF21T6lBWQyqIomtd\nDApZo8kNRwVQG5Ncvdr/TuDUM5aTKZWwg3QbqJfCM/oPPAB42H1mUOsulP+h\nkJ3GWMIp9kM1UuMWXp/8+EEoFnCYZx6LiqSddygOSMDTs87aACj8AzjISOIO\nQaqddA+KzkEHdw1E3TDm8kvoeKfwdGmCJFakbvx3WtCR/66Enci+m47DVsZ2\nVkfc\r\n=/50i\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is_0.12.0_1538116574508_0.9398347559081299"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.13.0": {
+      "name": "@sindresorhus/is",
+      "version": "0.13.0",
+      "description": "Type check values: `is.string('🦄') //=> true`",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/is.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "main": "dist/index.js",
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "lint": "tslint --format stylish --project .",
+        "build": "del dist && tsc",
+        "test": "npm run lint && npm run build && ava dist/tests",
+        "prepublish": "npm run build && del dist/tests"
+      },
+      "keywords": [
+        "type",
+        "types",
+        "is",
+        "check",
+        "checking",
+        "validate",
+        "validation",
+        "utility",
+        "util",
+        "typeof",
+        "instanceof",
+        "object",
+        "assert",
+        "assertion",
+        "test",
+        "kind",
+        "primitive",
+        "verify",
+        "compare"
+      ],
+      "dependencies": {
+        "symbol-observable": "^1.2.0"
+      },
+      "devDependencies": {
+        "@types/jsdom": "^11.12.0",
+        "@types/node": "^10.11.2",
+        "@types/tempy": "^0.1.0",
+        "@types/zen-observable": "^0.8.0",
+        "ava": "*",
+        "del-cli": "^1.1.0",
+        "jsdom": "^11.6.2",
+        "rxjs": "^6.3.3",
+        "tempy": "^0.2.1",
+        "tslint": "^5.9.1",
+        "tslint-xo": "^0.9.0",
+        "typescript": "^3.1.4",
+        "zen-observable": "^0.8.8"
+      },
+      "types": "dist/index.d.ts",
+      "gitHead": "2232eeea79b3d2a26fb5b0af60e042ff2171cdc3",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is#readme",
+      "_id": "@sindresorhus/is@0.13.0",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.13.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-xTPFzGRnYKVMQlcrVRhO7XIXX5t5hmBC+KpEnlhvjbN1cg5k4qDEVPwzkqhC7jGzmhAY0F9vouWHCt4S/kyeNg==",
+        "shasum": "a85d06c13658d0cc9584537df4a99423461f114b",
+        "tarball": "https://registry.npmjs.org/@sindresorhus/is/-/is-0.13.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 38801,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJb3D7BCRA9TVsSAnZWagAAIKwP/1G5pOMuVjiVxlcgxLHU\n1us9rqSAOjnJnn1Mb6psRNGo+KiUGh2Tv1y0V5n8MkiOxwqrb4SNVT1QEx2Z\nt1ZoHqk4wL/xX0t26DyVzJnGVP8oKQeGTHiWIhMVpCaGe1FX4oLeYUehCO2K\nsI5vrG1eNGmSOb1KhA+vjYnnM4B+GDvEtMlRvM6xRO3xXRRB5bychqlmjMvI\nrRVwq6O/wZ0PtOkVPm5dbxEeDNVOxVOJc2bKbFbn/dp3B0dCgggmuRTmvyO8\nzWL9J8RLIGbbjs/mXbf9l2N9RW41e41fWvWVdygF9QfThY7Q4XdOKjP5/ByX\nfwmIbGNDLPLm+Y4jZLMAJBji6/miGJCCuf6fczmbRFSlUraWN+929nTDXY55\nx+Ne+vv0iuB0pjxlwh9hTe0oGDR0ZUu9rounA0PgeIHI+TTrCH3ApA6BSc/2\nwd6vnzf6Qgl2n0BbgBsWM0t5DajPUfoDFOI7Pk8unLhmKSTN5CqLe8k9og7g\ntFvBqWzHJPUpdD5Qvpsdlmyapx6B1FjJ/l03pSCYAN82wGnvIde5ZJ4tQaGm\nLmHRsfmo5XO1eo4Yb5q4DwGSI0cIXTbg6n+Bf217psfkCq/ScCN1N6Bdb3v+\n+BIbkQgyM8KmJQb+n83uIHJcqp5XeXyNvL1ItJbXBHY++8pNGezA85LCFREk\ny1kZ\r\n=P4u4\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is_0.13.0_1541160640760_0.8677253184249949"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.14.0": {
+      "name": "@sindresorhus/is",
+      "version": "0.14.0",
+      "description": "Type check values: `is.string('🦄') //=> true`",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/is.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "main": "dist/index.js",
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "lint": "tslint --format stylish --project .",
+        "build": "del dist && tsc",
+        "test": "npm run lint && npm run build && ava dist/tests",
+        "prepublish": "npm run build && del dist/tests"
+      },
+      "keywords": [
+        "type",
+        "types",
+        "is",
+        "check",
+        "checking",
+        "validate",
+        "validation",
+        "utility",
+        "util",
+        "typeof",
+        "instanceof",
+        "object",
+        "assert",
+        "assertion",
+        "test",
+        "kind",
+        "primitive",
+        "verify",
+        "compare"
+      ],
+      "devDependencies": {
+        "@sindresorhus/tsconfig": "^0.1.0",
+        "@types/jsdom": "^11.12.0",
+        "@types/node": "^10.12.10",
+        "@types/tempy": "^0.2.0",
+        "@types/zen-observable": "^0.8.0",
+        "ava": "^0.25.0",
+        "del-cli": "^1.1.0",
+        "jsdom": "^11.6.2",
+        "rxjs": "^6.3.3",
+        "tempy": "^0.2.1",
+        "tslint": "^5.9.1",
+        "tslint-xo": "^0.10.0",
+        "typescript": "^3.2.1",
+        "zen-observable": "^0.8.8"
+      },
+      "types": "dist/index.d.ts",
+      "gitHead": "6cb1d1e91073ada3d0e298e2fef361f0d418b668",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is#readme",
+      "_id": "@sindresorhus/is@0.14.0",
+      "_npmVersion": "6.5.0",
+      "_nodeVersion": "10.13.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-9NET910DNaIPngYnLLPeg+Ogzqsi9uM4mSboU5y6p8S5DzMTVEsJZrawi+BoDNUVBa2DhJqQYUFvMDfgU062LQ==",
+        "shasum": "9fb3a3cf3132328151f353de4632e01e52102bea",
+        "tarball": "https://registry.npmjs.org/@sindresorhus/is/-/is-0.14.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 40158,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcEoIJCRA9TVsSAnZWagAAU08QAKRmmjyTcJv4iAVu+wry\n2CzzAwXJWrHc93Jw/6+u0TBj54yGGGblVjDyL9zh8oDte+ea3h7q9boPKgFb\nq5e2uTUcqreN3ACUae3RPfTMysurTujN6Bd+iet8CRcAmC8n8Isdano2UB5Q\nEvgP1BJgRIgIrHKCr+OwLNLCfN7K5XQPuZeymMaU1BhzIoz8e0vRRnyrQSsC\nIb5NnhpVi3GsLqwlr7yGbTvNZ28mTm3wzDSivpNbZ/ceEecNUdFc/ioRhzTn\nusAzAD2aIjp/WSVuokPgCQYz5fzFj19clZfuvoURD/uS+EOQQaWPQ0xESHx2\nN5qENeQo1u1m1Snq5l5AVxpz5GDiE8DQKxIV1iR6Nh+rg18hVEu8Y8Q9DPgS\n91D+4ue1cTql2mKFtRS6SilDmvmmKhAoCROJw3wvv1Pef4Q9Ke9aqkW53ay7\nE0xfbWXtdu491hdOfYglED4F79BQi5ExUWQRKrVWM4cXs6QE87cwsBd9+p5c\nV99QHu4ZgOJoV5EOJyB2sOf/U0emh4rTV1So0Dz8HLhRQ4JbBNwZmVD4CSAX\nqQo1WG3DntAYTnk44nHkiwmVM4tlL3U6kyN7hxMeWrpA5qSIhokc2uYZNOxE\n7c+gmo7WteSsKKYekDdoFYVTL+c9dsszU9OWGdr6f7vsdTKkbVp913BN7v0S\ncjHv\r\n=KAWq\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is_0.14.0_1544716808201_0.7722326585650734"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.15.0": {
+      "name": "@sindresorhus/is",
+      "version": "0.15.0",
+      "description": "Type check values: `is.string('🦄') //=> true`",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/is.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "main": "dist",
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "lint": "tslint --format stylish --project .",
+        "build": "del dist && tsc",
+        "test": "npm run lint && ava",
+        "prepublishOnly": "npm run build"
+      },
+      "keywords": [
+        "type",
+        "types",
+        "is",
+        "check",
+        "checking",
+        "validate",
+        "validation",
+        "utility",
+        "util",
+        "typeof",
+        "instanceof",
+        "object",
+        "assert",
+        "assertion",
+        "test",
+        "kind",
+        "primitive",
+        "verify",
+        "compare"
+      ],
+      "devDependencies": {
+        "@sindresorhus/tsconfig": "^0.1.0",
+        "@types/jsdom": "^11.12.0",
+        "@types/node": "^10.12.21",
+        "@types/tempy": "^0.2.0",
+        "@types/zen-observable": "^0.8.0",
+        "ava": "^1.2.0",
+        "del-cli": "^1.1.0",
+        "jsdom": "^11.6.2",
+        "rxjs": "^6.4.0",
+        "tempy": "^0.2.1",
+        "ts-node": "^8.0.2",
+        "tslint": "^5.9.1",
+        "tslint-xo": "^0.10.0",
+        "typescript": "^3.3.1",
+        "zen-observable": "^0.8.8"
+      },
+      "types": "dist",
+      "ava": {
+        "babel": false,
+        "compileEnhancements": false,
+        "extensions": [
+          "ts"
+        ],
+        "require": [
+          "ts-node/register"
+        ]
+      },
+      "gitHead": "3ec41686f710fe1e5291b5ca172b5518f488168c",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is#readme",
+      "_id": "@sindresorhus/is@0.15.0",
+      "_npmVersion": "6.5.0",
+      "_nodeVersion": "10.15.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-lu8BpxjAtRCAo5ifytTpCPCj99LF7o/2Myn+NXyNCBqvPYn7Pjd76AMmUB5l7XF1U6t0hcWrlEM5ESufW7wAeA==",
+        "shasum": "96915baa05e6a6a1d137badf4984d3fc05820bb6",
+        "tarball": "https://registry.npmjs.org/@sindresorhus/is/-/is-0.15.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 41372,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcV0dHCRA9TVsSAnZWagAA+pkP/3xauLO+o5kszilNubYp\nn6DDX+xALtVOGCQQDraOal4dHJc5nDDreN0Xm7JlYeFMlLNgH7fo6blNbPDR\nsGum0Z6170PCAm96+XaOt062iFG4MWYqYW+wJ1sd3gKWi5zPDvRaNRY5txFK\nNTeExmlzedROxo2fiqD67ly+hffjRGEAGTTxQgBZ1PBzR8Xi6a5siIvZ/uXR\nlnYLMbASotzDODzNPS9mNBozHUM4o5/IpJzHLVtYoqdwLnf77/w8Ysj+EZK5\n74g+8D/qVH1uC2wp6UUcb8L8Gf4fct++gmkWsQyTyggXZ9oURvl98ZRKWhQ3\nIF6Np2MpiToqYYwiK8MIpJy5aL6w6b29iCdz8kX8j5arYnA3rBnNKTM2o47+\nBp0zc6vrQDLtA0uBFfU/mGEPYn+3scn+68FLgD4uygjzB4FhT+yI5BY0tc5t\nnxHs2lZ6mEo16xk/4wfR3DKIA6p0PFS4GNVsvB0536emGKTDLFzKb0n4kLDW\nM6qqZCwEcDXCQV4A9K1J6BMy75qpiY1DVLp473brQXqGw2O45xiK30OpGzPR\nNh/j/Dsms1x9MNKwReaMtAnDypQ/QGS932DOjc51eyBkAkzonbNZ4aINK5+0\noctOTX6VjwijgFWrtqK2nqAe0CxEoN+XOgEnodTILOiQTx7E+TbCg2FPIvil\ns4AT\r\n=ThGX\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is_0.15.0_1549223751257_0.5657524336620294"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.16.0": {
+      "name": "@sindresorhus/is",
+      "version": "0.16.0",
+      "description": "Type check values",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/is.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "main": "dist",
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "build": "del dist && tsc",
+        "test": "xo && ava",
+        "prepublishOnly": "npm run build"
+      },
+      "keywords": [
+        "type",
+        "types",
+        "is",
+        "check",
+        "checking",
+        "validate",
+        "validation",
+        "utility",
+        "util",
+        "typeof",
+        "instanceof",
+        "object",
+        "assert",
+        "assertion",
+        "test",
+        "kind",
+        "primitive",
+        "verify",
+        "compare",
+        "typescript",
+        "typeguards",
+        "types"
+      ],
+      "devDependencies": {
+        "@sindresorhus/tsconfig": "^0.3.0",
+        "@types/jsdom": "^12.2.3",
+        "@types/node": "^12.0.0",
+        "@types/zen-observable": "^0.8.0",
+        "@typescript-eslint/eslint-plugin": "^1.5.0",
+        "ava": "^1.4.1",
+        "del-cli": "^1.1.0",
+        "eslint-config-xo-typescript": "^0.10.1",
+        "jsdom": "^15.0.0",
+        "rxjs": "^6.4.0",
+        "tempy": "^0.3.0",
+        "ts-node": "^8.0.3",
+        "typescript": "^3.4.1",
+        "xo": "^0.24.0",
+        "zen-observable": "^0.8.8"
+      },
+      "types": "dist",
+      "sideEffects": false,
+      "ava": {
+        "babel": false,
+        "compileEnhancements": false,
+        "extensions": [
+          "ts"
+        ],
+        "require": [
+          "ts-node/register"
+        ]
+      },
+      "xo": {
+        "extends": "xo-typescript",
+        "extensions": [
+          "ts"
+        ],
+        "globals": [
+          "BigInt",
+          "BigInt64Array",
+          "BigUint64Array"
+        ],
+        "rules": {
+          "@typescript-eslint/explicit-function-return-type": "off"
+        }
+      },
+      "gitHead": "9bc8307770453ef3d71dfcdf3ff2d2d28cc03b73",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is#readme",
+      "_id": "@sindresorhus/is@0.16.0",
+      "_nodeVersion": "8.16.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-QjJQRRsPoIBbvI0IFiY1NehCRgyw7BNobGVO9FSuMoX7OocwUMbsjXYFneoYT8XJbiXAEJvPvrj9eEb4ZMa84A==",
+        "shasum": "355a7801472ad3810365c1e8aecabcaf45227c54",
+        "tarball": "https://registry.npmjs.org/@sindresorhus/is/-/is-0.16.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 42626,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJczVgYCRA9TVsSAnZWagAAz3cP/izXCY4XZya75nw4ALCc\niYvyTVl8y8uKmS2ZtHcd3AwiiWyUXyZUoOYP9h8Ijg6hs5hGhHeDEsRyR3KD\niRO1sF29dBBM1oPF3yOwNvud8QTtdZm2+GvjjP5/AQj7xoyQbMmnvnD/1zek\n6RzKJ++Sh6TZ40UZHwZ+CwAFJcZUYfIt2HUGZIyx36uwQ2kz/9YFm47EIXaL\nmX707MmWjuWnkuWIGcHqgnONeggAzPjS1T+AuHZfzSesz6YB361BZAZ5KYxb\nuP/knc1iOnxxXDjHODrdw3DzZyOpI2zBevR1i6qmEW1VTqF7AcmE0rPiIiHX\ns85lmJJd4DqCWF4ItN9ro+SRctJR3ElxIOJUrZlkdtwT5TmY/vOsaH5rsHSG\nMhfCU0OGAn/iLUo252QpbobuWP6XDmM2g9FbbSccQRsL79/bb5Zb2he1GyE7\n6yscPtIqbjIiC4MNu5yQIu1ib82BCrtfSsFP6SwXjk0yIm/4O2kzRZwxWxLZ\nCSy9PjveKD3KaZS89AvQ/1brKZS6z7uUIHjZ790jZmCX6M2uZWoJIZ0w/SCK\n4BSqBp5ooTCEkvsb5nSiwdlJk4vp5TF8FqrQtjXKmd/8g8T+/BuHeBqrc5kC\nNw/XyG2HNWAaVScWQe5zTz34UkE2M7mTxRNi0SsFrKsY1Fz9tLkJZjIJtuld\nGvO8\r\n=56dh\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is_0.16.0_1556961303599_0.10001875159508633"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.17.0": {
+      "name": "@sindresorhus/is",
+      "version": "0.17.0",
+      "description": "Type check values",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/is.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "main": "dist",
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "build": "del dist && tsc",
+        "test": "xo && ava",
+        "prepublishOnly": "npm run build"
+      },
+      "keywords": [
+        "type",
+        "types",
+        "is",
+        "check",
+        "checking",
+        "validate",
+        "validation",
+        "utility",
+        "util",
+        "typeof",
+        "instanceof",
+        "object",
+        "assert",
+        "assertion",
+        "test",
+        "kind",
+        "primitive",
+        "verify",
+        "compare",
+        "typescript",
+        "typeguards",
+        "types"
+      ],
+      "devDependencies": {
+        "@sindresorhus/tsconfig": "^0.3.0",
+        "@types/jsdom": "^12.2.3",
+        "@types/node": "^12.0.0",
+        "@types/zen-observable": "^0.8.0",
+        "@typescript-eslint/eslint-plugin": "^1.5.0",
+        "ava": "^1.4.1",
+        "del-cli": "^1.1.0",
+        "eslint-config-xo-typescript": "^0.10.1",
+        "jsdom": "^15.0.0",
+        "rxjs": "^6.4.0",
+        "tempy": "^0.3.0",
+        "ts-node": "^8.0.3",
+        "typescript": "^3.4.1",
+        "xo": "^0.24.0",
+        "zen-observable": "^0.8.8"
+      },
+      "types": "dist",
+      "sideEffects": false,
+      "ava": {
+        "babel": false,
+        "compileEnhancements": false,
+        "extensions": [
+          "ts"
+        ],
+        "require": [
+          "ts-node/register"
+        ]
+      },
+      "xo": {
+        "extends": "xo-typescript",
+        "extensions": [
+          "ts"
+        ],
+        "globals": [
+          "BigInt",
+          "BigInt64Array",
+          "BigUint64Array"
+        ],
+        "rules": {
+          "@typescript-eslint/explicit-function-return-type": "off"
+        }
+      },
+      "gitHead": "b064473589b3586eafa04e49267c806e848b58d9",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is#readme",
+      "_id": "@sindresorhus/is@0.17.0",
+      "_nodeVersion": "8.16.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-hGqdhem3E9L+BBPpkRZQ9RtSg+MpbGfoDXNxuPFgJtM7/CiZHU+Jit0DywctJOsWV0jAPp9RpO8QB7GSaVZq8A==",
+        "shasum": "37d16c3df3a8b4dcc930210ff68ff3ace35f5ab4",
+        "tarball": "https://registry.npmjs.org/@sindresorhus/is/-/is-0.17.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 42704,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJc2O3QCRA9TVsSAnZWagAA9HwP/20xvQxkqOUlW/1eCTfJ\nm1w04ETjPzPgQmklFx2ndaAuSvHSkxwVwci0cjiK8zRrQSmKrzFLrhUOfp5v\nDLb17ded//kQ+ZeujdFh9uBHH54bAUkVx/NWiCZWr7cnSZMG9Z1/VPtkTtmM\n6JLimdULX3sFmNVyMN/BRXJXp9zZi/NGxxRzPluvME/fhHci5dcPaX5Pb3dM\npUsrKdnUfGyGJxbqsVqrtY2/BoTZdQoNeODqj16N4P1JLEBrnd5spjfWZ8qy\n/9WAbCMXCy5UfKvNplQA5Po9K2TTwffpDSo6y6UnSi/UESZEiT9qD5LZXFQZ\nTJRHhjpkskl9d+9MfmVprPxNu/H+A3l1bH1OYpM5/do7nPQKJ61KUeBM2Kei\nykyosP/V7nG9Suvbn73ByZBFC2IUum7blb5HXglqc1ukOkPKASffi6JIJ4q3\n5/xols+fCvDFiPe+/1ARJNVdQM59+K12wmfsiLZlWvivXAoTCYzxfpN+uYGY\n+IwZFMB5YJfFdZSL/fY9B0hrvZhKViSaHc4O3odII5Qt4liGfqa7O7BpuY3A\nXUW1yZshEk5967Hb41nfuuC4pbU7LWHpwszf9cuM2e90evXsY72LObrcGv8x\nMqXk79XdQDSWCR8Y2nmi1OJRUXQs5lRnOUq4GCs14tcbPQM/03qjTL1oNY/q\nlyOM\r\n=O2O3\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is_0.17.0_1557720527867_0.6771706230708885"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.17.1": {
+      "name": "@sindresorhus/is",
+      "version": "0.17.1",
+      "description": "Type check values",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/is.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "main": "dist",
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "build": "del dist && tsc",
+        "test": "xo && ava",
+        "prepublishOnly": "npm run build"
+      },
+      "keywords": [
+        "type",
+        "types",
+        "is",
+        "check",
+        "checking",
+        "validate",
+        "validation",
+        "utility",
+        "util",
+        "typeof",
+        "instanceof",
+        "object",
+        "assert",
+        "assertion",
+        "test",
+        "kind",
+        "primitive",
+        "verify",
+        "compare",
+        "typescript",
+        "typeguards",
+        "types"
+      ],
+      "devDependencies": {
+        "@sindresorhus/tsconfig": "^0.3.0",
+        "@types/jsdom": "^12.2.3",
+        "@types/node": "^12.0.0",
+        "@types/zen-observable": "^0.8.0",
+        "@typescript-eslint/eslint-plugin": "^1.5.0",
+        "ava": "^1.4.1",
+        "del-cli": "^1.1.0",
+        "eslint-config-xo-typescript": "^0.10.1",
+        "jsdom": "^15.0.0",
+        "rxjs": "^6.4.0",
+        "tempy": "^0.3.0",
+        "ts-node": "^8.0.3",
+        "typescript": "^3.4.1",
+        "xo": "^0.24.0",
+        "zen-observable": "^0.8.8"
+      },
+      "types": "dist",
+      "sideEffects": false,
+      "ava": {
+        "babel": false,
+        "compileEnhancements": false,
+        "extensions": [
+          "ts"
+        ],
+        "require": [
+          "ts-node/register"
+        ]
+      },
+      "xo": {
+        "extends": "xo-typescript",
+        "extensions": [
+          "ts"
+        ],
+        "globals": [
+          "BigInt",
+          "BigInt64Array",
+          "BigUint64Array"
+        ],
+        "rules": {
+          "@typescript-eslint/explicit-function-return-type": "off"
+        }
+      },
+      "gitHead": "878d111ae734660d4c0238ef7ec6b779e1b52083",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is#readme",
+      "_id": "@sindresorhus/is@0.17.1",
+      "_nodeVersion": "8.16.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-kg/maAZD2Z2AHDFp7cY/ACokjUL0e7MaupTtGXkSW2SV4DJQEHdslFUioP0SMccotjwqTdI0b4XH/qZh6CN+kQ==",
+        "shasum": "453b27750f358689c4aa3c9f32d9ace1f0929a79",
+        "tarball": "https://registry.npmjs.org/@sindresorhus/is/-/is-0.17.1.tgz",
+        "fileCount": 6,
+        "unpackedSize": 42780,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJc48mYCRA9TVsSAnZWagAABuQQAJp+fC8CJ8EaSQBI6WED\nKTyL3MYjprJG9CKpQmcRR4GTtL5yR/dp5/DKFj7dOjQCLY+8rhuL5FVKvcMi\nWw3Yk79QAKov51Hbzxmamb2Ldg6z7y0/axaeOhrnjc8o3UvOUmpP13ayeA7t\nUQV1Z3tej4AEExor55i8psO8pHsKXU2EZY3sVIM9Rjik6J1DywZWvVv7flvy\nbNExRgxgWwlxrkUr+iB7YgNg7QAHnXqKUwJOzVwLzXYkSL7MAN+Lsi0+/d4m\naNWknFt5lKf/XfQTtntEc4gNMV+O5RfPg2cbQK0nLjjtgU+ViJv9P6OolG13\nw2cz3Jr/M7vpZt9NC1HJ+tjcmntSXrR3r/iwoYlT5jjcTt6NJLqJIpxSalL2\npBFWyjZo70kdSSqU2UuCbGCnQI6EzFOnt8ylMmZOkuGuULVNL1YLi+ZkmSW+\nFH3x1m535aMAmLLYvgbjEmDPLh6iLnqvOaJErJEgAL0CYnO5PPNpJgs2PF3O\n85l4lmIl95gIVbBGie/P3Rw/xVMNvBIVUTK1FzohOiWbdiy9KXVgfymyuYcC\n8ygX5RMs3uiXQlyDYOJe5UffpEkzT6kVpYY63BB/X0YzmlWA2hDBxPpBMFKt\nWVleL3kM8t1jflGBUvcnwnruiu9LiT2mh3FJBTueRpNimIftoJ0yVwg8EMMM\nnreJ\r\n=GpQW\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is_0.17.1_1558432151812_0.2419872417397264"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.0.0": {
+      "name": "@sindresorhus/is",
+      "version": "1.0.0",
+      "description": "Type check values",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/is.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "main": "dist",
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "build": "del dist && tsc",
+        "test": "xo && ava",
+        "prepublishOnly": "npm run build"
+      },
+      "keywords": [
+        "type",
+        "types",
+        "is",
+        "check",
+        "checking",
+        "validate",
+        "validation",
+        "utility",
+        "util",
+        "typeof",
+        "instanceof",
+        "object",
+        "assert",
+        "assertion",
+        "test",
+        "kind",
+        "primitive",
+        "verify",
+        "compare",
+        "typescript",
+        "typeguards",
+        "types"
+      ],
+      "devDependencies": {
+        "@sindresorhus/tsconfig": "^0.4.0",
+        "@types/jsdom": "^12.2.4",
+        "@types/node": "^12.0.10",
+        "@types/zen-observable": "^0.8.0",
+        "@typescript-eslint/eslint-plugin": "^1.11.0",
+        "@typescript-eslint/parser": "^1.11.0",
+        "ava": "^2.1.0",
+        "del-cli": "^2.0.0",
+        "eslint-config-xo-typescript": "^0.15.0",
+        "jsdom": "^15.0.0",
+        "rxjs": "^6.4.0",
+        "tempy": "^0.3.0",
+        "ts-node": "^8.3.0",
+        "typescript": "^3.4.1",
+        "xo": "^0.24.0",
+        "zen-observable": "^0.8.8"
+      },
+      "types": "dist",
+      "sideEffects": false,
+      "ava": {
+        "babel": false,
+        "compileEnhancements": false,
+        "extensions": [
+          "ts"
+        ],
+        "require": [
+          "ts-node/register"
+        ]
+      },
+      "xo": {
+        "extends": "xo-typescript",
+        "extensions": [
+          "ts"
+        ],
+        "globals": [
+          "BigInt",
+          "BigInt64Array",
+          "BigUint64Array"
+        ],
+        "rules": {
+          "import/first": "off",
+          "import/newline-after-import": "off",
+          "@typescript-eslint/promise-function-async": "off",
+          "@typescript-eslint/no-empty-function": "off",
+          "@typescript-eslint/explicit-function-return-type": "off"
+        }
+      },
+      "gitHead": "e358e44dd5212b8083082727ce0cada959fb2248",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is#readme",
+      "_id": "@sindresorhus/is@1.0.0",
+      "_nodeVersion": "10.16.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-3rlOB53XCVO7LfjXFx4bCGrZPPjkgYD7pP0E/yo4d57H32aYqD/QNmeXcVnx7CM5SxGScwl2P0b1kCDYZgNWqw==",
+        "shasum": "4f475ff3f32b0a309b7faffd33328e93d7953330",
+        "tarball": "https://registry.npmjs.org/@sindresorhus/is/-/is-1.0.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 43168,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdGHIQCRA9TVsSAnZWagAAfLMP/jGp6AIw0FfIgG2L8wNi\nze8Q//ZSIRPdGF5VTfeoNRP5fvUL+Y8mA5zAZyRNu1RZwuXWODeyz2+YAB6b\nRJeA6bsrSTf/XNVnA5vGMaTNGFjgiS8okeIUupqw3057fSc8A2zqVG+SN9/O\nDpwa54HDPqcsPasPUANTjqKMkNPtjVIHfYO3qPGvKiK78R8ZXytdeasGHTug\nmRX8lepnc1rPHyiQzRSPXKgctaSfkhXCNADI0nVIMoUylIczHH6I4vudackZ\nD6wLJH1fwNOPnw07hoeN/+W3xpWtTsfryvPkWxMt4/dnAvqUGBs6GysgirOm\n2kS2rBKJefYYrRx471LOJc6e7BNRruWOS+vcX1ROLdfwrIrxw9aQKwAE98wX\nDmjM4z7Kv18HfQYtX6OamCAXLMQQ3zxnZdVrySiCjSbXvusWZpAXZMvnMbCo\niloQfAKSbwADj9XrFTQlGUVdmEuYHgEnux+M+flUt3cVdPHDy5D0TD8JU+PK\n4Ils7LcWAOMQJCUoQ3TkcamnwGYIhi7QaZu9R+T1WbJolfJ8Q1Sd+RJxtzkA\nHP89M7TBjlnBq9PiL6QRr5u0VaLnTrAJLu/+RvlXcyLb4DU24zlGtTQjqHtn\nnOWKB/BmgqMf4T5acT+UdcQ/Wo82gbv0/0eIjlbsxPfKllxMk+I6u1c13wCT\nJ4qb\r\n=acVK\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is_1.0.0_1561883151799_0.5558018601739321"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.1.0": {
+      "name": "@sindresorhus/is",
+      "version": "1.1.0",
+      "description": "Type check values",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/is.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "main": "dist",
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "build": "del dist && tsc",
+        "test": "xo && ava",
+        "prepublishOnly": "npm run build"
+      },
+      "keywords": [
+        "type",
+        "types",
+        "is",
+        "check",
+        "checking",
+        "validate",
+        "validation",
+        "utility",
+        "util",
+        "typeof",
+        "instanceof",
+        "object",
+        "assert",
+        "assertion",
+        "test",
+        "kind",
+        "primitive",
+        "verify",
+        "compare",
+        "typescript",
+        "typeguards",
+        "types"
+      ],
+      "devDependencies": {
+        "@sindresorhus/tsconfig": "^0.4.0",
+        "@types/jsdom": "^12.2.4",
+        "@types/node": "^12.0.10",
+        "@types/zen-observable": "^0.8.0",
+        "@typescript-eslint/eslint-plugin": "^1.11.0",
+        "@typescript-eslint/parser": "^1.11.0",
+        "ava": "^2.1.0",
+        "del-cli": "^2.0.0",
+        "eslint-config-xo-typescript": "^0.15.0",
+        "jsdom": "^15.0.0",
+        "rxjs": "^6.4.0",
+        "tempy": "^0.3.0",
+        "ts-node": "^8.3.0",
+        "typescript": "^3.4.1",
+        "xo": "^0.24.0",
+        "zen-observable": "^0.8.8"
+      },
+      "types": "dist",
+      "sideEffects": false,
+      "ava": {
+        "babel": false,
+        "compileEnhancements": false,
+        "extensions": [
+          "ts"
+        ],
+        "require": [
+          "ts-node/register"
+        ]
+      },
+      "xo": {
+        "extends": "xo-typescript",
+        "extensions": [
+          "ts"
+        ],
+        "globals": [
+          "BigInt",
+          "BigInt64Array",
+          "BigUint64Array"
+        ],
+        "rules": {
+          "import/first": "off",
+          "import/newline-after-import": "off",
+          "@typescript-eslint/promise-function-async": "off",
+          "@typescript-eslint/no-empty-function": "off",
+          "@typescript-eslint/explicit-function-return-type": "off"
+        }
+      },
+      "gitHead": "4a63743feb9557cd36ce07c181b22624be8e5560",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is#readme",
+      "_id": "@sindresorhus/is@1.1.0",
+      "_nodeVersion": "10.16.3",
+      "_npmVersion": "6.11.3",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-6tdrcyVaCv+wo1S2/grH6IBG18ry2lImjU+HUQKAU+GLX3LL959l7OaLUycIPSuQQWTQ9trA0GwrFK7E3PlYeQ==",
+        "shasum": "2b4e94c79fa9864d0411a0b9a94e4b8d66b22e28",
+        "tarball": "https://registry.npmjs.org/@sindresorhus/is/-/is-1.1.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 44394,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdlasHCRA9TVsSAnZWagAAg+0P/2wlG5lG9TEplznHGHEu\n2avcm9s8vhTSMhFeaqu3PC52s5w1vlvwhjeWwV6cPCSApl+9OniqW+s6aNFI\nATGvgmzup8mbEF1sWX0mVl3ntgO3G9Ne/iIgTDyCGF3HKeV5d6J4DSGfS+/h\n+kAMzdIBwd93aO8hYoaNHEAv0R5pbOCC/ZL1C+5oevEv/riqhaAfZhLEQenK\n+zhnfLR0ybt8qqd4RwYDXck5Nx0fNE0ulL3sb1jSDKN7AHgu6CCr9s3lyUfj\niE0/u3ah0CVa3dUc8uVUhTcF9DQM3Ab9eiCOmED0EkTgBVeC6Mdo7pqGyonP\nYHgMBydpORrCJyvW9xZ6EmgJG6GHyc6u/52dFI9obOl6SRv01TI1g/4u//mT\nwZgsKl21oVUJi3Efgz4vOf9bLgidPpLyw6yJ6kwecYoU6e7ELdf4Ep6LfoZd\nG6w/ffhwg5M2UYkTcG3mzzPv57+shkdkaId7am7j2mo5E60zPhqJvA/0eioR\nITeQhB5cgmJuRVm2bMzPrURjKzp1DViEVJSpjLEtqjgKPPC5QRDXGTS+OUFq\nZmJ8Rw3kGC9+O6L8I5tDOQtvwHGO1uwQ3fKPDBU8qcpkEFOKLNZR+BOCiZXl\nRUpqWPV0C6/n9YGF03GSH2wiQLhYLUrHxrI/COBlHbNbZ7sqdAdOFhoG4P37\nZgwp\r\n=0N9r\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is_1.1.0_1570089734459_0.16524878961394052"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.2.0": {
+      "name": "@sindresorhus/is",
+      "version": "1.2.0",
+      "description": "Type check values",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/is.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "main": "dist",
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "build": "del dist && tsc",
+        "test": "xo && ava",
+        "prepublishOnly": "npm run build"
+      },
+      "keywords": [
+        "type",
+        "types",
+        "is",
+        "check",
+        "checking",
+        "validate",
+        "validation",
+        "utility",
+        "util",
+        "typeof",
+        "instanceof",
+        "object",
+        "assert",
+        "assertion",
+        "test",
+        "kind",
+        "primitive",
+        "verify",
+        "compare",
+        "typescript",
+        "typeguards",
+        "types"
+      ],
+      "devDependencies": {
+        "@sindresorhus/tsconfig": "^0.4.0",
+        "@types/jsdom": "^12.2.4",
+        "@types/node": "^12.0.10",
+        "@types/zen-observable": "^0.8.0",
+        "@typescript-eslint/eslint-plugin": "^1.11.0",
+        "@typescript-eslint/parser": "^1.11.0",
+        "ava": "^2.1.0",
+        "del-cli": "^2.0.0",
+        "eslint-config-xo-typescript": "^0.15.0",
+        "jsdom": "^15.0.0",
+        "rxjs": "^6.4.0",
+        "tempy": "^0.3.0",
+        "ts-node": "^8.3.0",
+        "typescript": "^3.4.1",
+        "xo": "^0.24.0",
+        "zen-observable": "^0.8.8"
+      },
+      "types": "dist",
+      "sideEffects": false,
+      "ava": {
+        "babel": false,
+        "compileEnhancements": false,
+        "extensions": [
+          "ts"
+        ],
+        "require": [
+          "ts-node/register"
+        ]
+      },
+      "xo": {
+        "extends": "xo-typescript",
+        "extensions": [
+          "ts"
+        ],
+        "globals": [
+          "BigInt",
+          "BigInt64Array",
+          "BigUint64Array"
+        ],
+        "rules": {
+          "import/first": "off",
+          "import/newline-after-import": "off",
+          "@typescript-eslint/promise-function-async": "off",
+          "@typescript-eslint/no-empty-function": "off",
+          "@typescript-eslint/explicit-function-return-type": "off"
+        }
+      },
+      "gitHead": "e7277de849b27469cb243d1eaaadbeb47e97a886",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is#readme",
+      "_id": "@sindresorhus/is@1.2.0",
+      "_nodeVersion": "10.16.3",
+      "_npmVersion": "6.11.3",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-mwhXGkRV5dlvQc4EgPDxDxO6WuMBVymGFd1CA+2Y+z5dG9MNspoQ+AWjl/Ld1MnpCL8AKbosZlDVohqcIwuWsw==",
+        "shasum": "63ce3638cb85231f3704164c90a18ef816da3fb7",
+        "tarball": "https://registry.npmjs.org/@sindresorhus/is/-/is-1.2.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 43402,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdls04CRA9TVsSAnZWagAAaCcP/2r46+VScIfkViw0PTAh\nTD8JXEtRfBRZY3J7aZ88vpljcHo6BdvKSl0REi9t5lG3BiAyVBcEarBtJTXB\niwLhgWIVmqIziB4BvErlaehjt1l9unVIFbb+DJrvpIPlWMdBfJds0rFGnabo\nejuP/eI9Y52gJH81epUdOfo6FyUhl9ZD690VTaEuby2KenSyKG6VpunIwbBe\ngeCPn+ojWssm6PDuDbAaPN5epgfI1aR2nX/WvFWjTMgIYy91kYS+AfNsq69P\n3qBlaSbzx1TtNwEU6haq/ayRCOFb4tRkdGQrJZjlOh+tl937FdwQxmDgA31Z\nZmXHezROHg4KwenRXp3Ue6hgMdOjxcZjkNHvawTvtBtOLx2NmytkZCgKHWEF\n4ZdfUohhHR1vPfOm4YfSw+j8j4o71nCQye9+MYsdwfyMuM0EdAhpML2YR5Ez\nM2wwQ9Ao1AumxN6qR4L8T8HiaDFwVnOirNqjm9GPnGxb5C+9/MJ6Rt2/L/W0\ndTxmLPcxQ/VhA4UvDITUnXhq+ydbwTRXum/XreUdA7ObEcGzN19drRbl8owo\nPemzYgCEwjA8mpS0Xr5mZbt9313IRWVwnB5UDhlffgotAHW6+xdgtWbJYxhb\nNfkCmbawbTisJLIABZkF710EJWrA0ko8A7BJMzOmH+wH44x73SFFBLmF4zTk\narM5\r\n=Ptl+\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is_1.2.0_1570164023327_0.16613662715474087"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.0": {
+      "name": "@sindresorhus/is",
+      "version": "2.0.0",
+      "description": "Type check values",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/is.git"
+      },
+      "funding": "https://github.com/sindresorhus/is?sponsor=1",
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "main": "dist",
+      "engines": {
+        "node": ">=10"
+      },
+      "scripts": {
+        "build": "del dist && tsc",
+        "test": "xo && ava",
+        "prepublishOnly": "npm run build"
+      },
+      "keywords": [
+        "type",
+        "types",
+        "is",
+        "check",
+        "checking",
+        "validate",
+        "validation",
+        "utility",
+        "util",
+        "typeof",
+        "instanceof",
+        "object",
+        "assert",
+        "assertion",
+        "test",
+        "kind",
+        "primitive",
+        "verify",
+        "compare",
+        "typescript",
+        "typeguards",
+        "types"
+      ],
+      "devDependencies": {
+        "@sindresorhus/tsconfig": "^0.7.0",
+        "@types/jsdom": "^12.2.4",
+        "@types/node": "^12.12.6",
+        "@types/zen-observable": "^0.8.0",
+        "@typescript-eslint/eslint-plugin": "^2.18.0",
+        "@typescript-eslint/parser": "^2.18.0",
+        "ava": "^2.1.0",
+        "del-cli": "^2.0.0",
+        "eslint-config-xo-typescript": "^0.24.1",
+        "jsdom": "^16.0.1",
+        "rxjs": "^6.4.0",
+        "tempy": "^0.3.0",
+        "ts-node": "^8.3.0",
+        "typescript": "^3.7.5",
+        "xo": "^0.25.3",
+        "zen-observable": "^0.8.8"
+      },
+      "types": "dist",
+      "sideEffects": false,
+      "ava": {
+        "babel": false,
+        "compileEnhancements": false,
+        "extensions": [
+          "ts"
+        ],
+        "require": [
+          "ts-node/register"
+        ]
+      },
+      "xo": {
+        "extends": "xo-typescript",
+        "extensions": [
+          "ts"
+        ],
+        "parserOptions": {
+          "project": "./tsconfig.xo.json"
+        },
+        "globals": [
+          "BigInt",
+          "BigInt64Array",
+          "BigUint64Array"
+        ],
+        "rules": {
+          "@typescript-eslint/promise-function-async": "off",
+          "@typescript-eslint/no-empty-function": "off",
+          "@typescript-eslint/explicit-function-return-type": "off"
+        }
+      },
+      "gitHead": "863e26ad6af358900a00c65d04ecae8021cc8bce",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is#readme",
+      "_id": "@sindresorhus/is@2.0.0",
+      "_nodeVersion": "13.1.0",
+      "_npmVersion": "6.12.1",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-bX03FiS5dr3cc01hhymlqDAjO5c5WcRPwY4BrghFFhUWI/3vsVlaq8GiSFsrcA3O07mPedlS6Mnr/whaJ44ubA==",
+        "shasum": "1a7d0e05905877a61440d4f15520a5f5b4fedfbf",
+        "tarball": "https://registry.npmjs.org/@sindresorhus/is/-/is-2.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 51609,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeMcUvCRA9TVsSAnZWagAAPy8P/1h9uh/z6Zjiwby5XiGW\n6ismkmfGs6vMKR65H+1+CZv5SPzPu65hAFEVAvlItJqynf1MfbixALwC1IfN\nRebUEJq+3tMm+jinGCrORtL13Y3KNmEkidQm69/mRMAUFrNyaQLXi5yJkbiF\n/lXMEdLgKWyarVD9eCrTi+6BFVUv7H0qab4EsmAbNY+aF70FI///10D0B7ru\nH6GOnjlzDGyu9PifUipRfx+uXEAd9+59CB/vKSJqLUC532cWv8fBe3Runu81\n3J2zR5RjrAdx/MK0XKR3+4SIKBCP+npZ5sQ93RY56nenyXae8PVmLoIrwTsF\nSKEWU+MGaO6ZLZ3p4JMALpGqAfxHAp0GSIuXvmz5jQLIbu0JhhVH011rDSvS\nw24lutvQBbx0GGXYZgb7fDi3KVUBwrFXSQ1iSnUooDgeYSZh3fYgi7ZAl0u8\nzPR8wdN4B3v1qMaiKQzXXKHWab7Hcef2GSlefeD85E7Hw79EogFDoVwTjaP9\niTrWUgCxoatTkuDYOOJKWkhlsx3nL0f2jtlOWsJu4MbDfTYYoYI+yJ1gqgl3\nFokhviB7YWabIp6dpd9D+uEuBC2IFE70rjDcWYDXv9/3nL9iuqSpJB9GltBa\nUAdKI7VWkNn1zvLc6+oEKvOOqzzBItu2AwTTJrmSjuroadIM2+XoiLS1S3y1\nvqfs\r\n=W2PO\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is_2.0.0_1580320047098_0.9174335221114982"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.1.0": {
+      "name": "@sindresorhus/is",
+      "version": "2.1.0",
+      "description": "Type check values",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/is.git"
+      },
+      "funding": "https://github.com/sindresorhus/is?sponsor=1",
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "main": "dist",
+      "engines": {
+        "node": ">=10"
+      },
+      "scripts": {
+        "build": "del dist && tsc",
+        "test": "xo && ava",
+        "prepublishOnly": "npm run build"
+      },
+      "keywords": [
+        "type",
+        "types",
+        "is",
+        "check",
+        "checking",
+        "validate",
+        "validation",
+        "utility",
+        "util",
+        "typeof",
+        "instanceof",
+        "object",
+        "assert",
+        "assertion",
+        "test",
+        "kind",
+        "primitive",
+        "verify",
+        "compare",
+        "typescript",
+        "typeguards",
+        "types"
+      ],
+      "devDependencies": {
+        "@sindresorhus/tsconfig": "^0.7.0",
+        "@types/jsdom": "^12.2.4",
+        "@types/node": "^12.12.6",
+        "@types/zen-observable": "^0.8.0",
+        "@typescript-eslint/eslint-plugin": "^2.18.0",
+        "@typescript-eslint/parser": "^2.18.0",
+        "ava": "^2.1.0",
+        "del-cli": "^2.0.0",
+        "eslint-config-xo-typescript": "^0.24.1",
+        "jsdom": "^16.0.1",
+        "rxjs": "^6.4.0",
+        "tempy": "^0.3.0",
+        "ts-node": "^8.3.0",
+        "typescript": "^3.7.5",
+        "xo": "^0.25.3",
+        "zen-observable": "^0.8.8"
+      },
+      "types": "dist",
+      "sideEffects": false,
+      "ava": {
+        "babel": false,
+        "compileEnhancements": false,
+        "extensions": [
+          "ts"
+        ],
+        "require": [
+          "ts-node/register"
+        ]
+      },
+      "xo": {
+        "extends": "xo-typescript",
+        "extensions": [
+          "ts"
+        ],
+        "parserOptions": {
+          "project": "./tsconfig.xo.json"
+        },
+        "globals": [
+          "BigInt",
+          "BigInt64Array",
+          "BigUint64Array"
+        ],
+        "rules": {
+          "@typescript-eslint/promise-function-async": "off",
+          "@typescript-eslint/no-empty-function": "off",
+          "@typescript-eslint/explicit-function-return-type": "off"
+        }
+      },
+      "gitHead": "1ff389cabb53a2b921ad9da00759823b57b6d0a3",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is#readme",
+      "_id": "@sindresorhus/is@2.1.0",
+      "_nodeVersion": "10.18.1",
+      "_npmVersion": "6.13.4",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-lXKXfypKo644k4Da4yXkPCrwcvn6SlUW2X2zFbuflKHNjf0w9htru01bo26uMhleMXsDmnZ12eJLdrAZa9MANg==",
+        "shasum": "6ad4ca610f696098e92954ab431ff83bea0ce13f",
+        "tarball": "https://registry.npmjs.org/@sindresorhus/is/-/is-2.1.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 52063,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeSj9fCRA9TVsSAnZWagAA/6sP/jCDZR0nT3vpeOTEksDH\nnR3OFoTXEMRR2D/BEpWNvUD9zDDek53v3BzQuER+uVObF3LLKWgegKsJRWrV\nOE/HhTitn1y2FazQh7lYW0XAxPRyiqkC2Dz/GNiMTPwyfCSluI9Fc3z2Upd6\n0oKwhA/gAnN8NUIcsZ2i/48f3XSrFlf5XMgr6zCF1tHpGKqV8zBqGkF9tQls\nKiCR7ckAuQD9cuCjbcWYK6xM1E4fcgJOAiH/+8Z8PxChZAHnLnW4mIPtsvvt\nJaQKLIAJNERJLz1dZTYYi9aUVrHqmTWyK+ABz2JtvXwcBysR/HIzdY13BJKc\nM1SHwsuYnDu6Q0pg/ahUm5hKUvZHfmVts5lQlLg5DeHyFVS3rYf6aB/IMAGl\nIKQJ/EiAJwRCtw58JCSkQQKtIEGrCdkcwM9HIfz/CmvUKXN2pDBT1dIuqC+b\nWUDde+lYoM8V7aAv3AUoMf2lFe26OtuAnAV/us83WFvjhvmt0YF54q4Z5ifl\nmczvNnnV7NrjS9fxN+ZyZv1Uxn6ENNstYSeNz66xF/Cg0T8f1um9zEnL8z/T\n8Q1PFqW6IUXwjvTUbrxFRY2zMCxVQzKu1mgmaIVp1G7ycmx4PnlcI2D6Hc/w\np1uht+1s+owkBIMAvALOQ25kaN9mqnFbeKgRIljai8C+8+KsymxYiNmUJSU+\n1n5w\r\n=Gk4c\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is_2.1.0_1581924190696_0.35503752115929754"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.1.1": {
+      "name": "@sindresorhus/is",
+      "version": "2.1.1",
+      "description": "Type check values",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/is.git"
+      },
+      "funding": "https://github.com/sindresorhus/is?sponsor=1",
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "https://sindresorhus.com"
+      },
+      "main": "dist",
+      "engines": {
+        "node": ">=10"
+      },
+      "scripts": {
+        "build": "del dist && tsc",
+        "test": "xo && ava",
+        "prepublishOnly": "npm run build"
+      },
+      "keywords": [
+        "type",
+        "types",
+        "is",
+        "check",
+        "checking",
+        "validate",
+        "validation",
+        "utility",
+        "util",
+        "typeof",
+        "instanceof",
+        "object",
+        "assert",
+        "assertion",
+        "test",
+        "kind",
+        "primitive",
+        "verify",
+        "compare",
+        "typescript",
+        "typeguards",
+        "types"
+      ],
+      "devDependencies": {
+        "@sindresorhus/tsconfig": "^0.7.0",
+        "@types/jsdom": "^16.1.0",
+        "@types/node": "^13.7.4",
+        "@types/zen-observable": "^0.8.0",
+        "@typescript-eslint/eslint-plugin": "^2.20.0",
+        "@typescript-eslint/parser": "^2.20.0",
+        "ava": "^3.3.0",
+        "del-cli": "^2.0.0",
+        "eslint-config-xo-typescript": "^0.26.0",
+        "jsdom": "^16.0.1",
+        "rxjs": "^6.4.0",
+        "tempy": "^0.4.0",
+        "ts-node": "^8.3.0",
+        "typescript": "~3.8.2",
+        "xo": "^0.26.1",
+        "zen-observable": "^0.8.8"
+      },
+      "types": "dist",
+      "sideEffects": false,
+      "ava": {
+        "extensions": [
+          "ts"
+        ],
+        "require": [
+          "ts-node/register"
+        ]
+      },
+      "xo": {
+        "extends": "xo-typescript",
+        "extensions": [
+          "ts"
+        ],
+        "parserOptions": {
+          "project": "./tsconfig.xo.json"
+        },
+        "globals": [
+          "BigInt",
+          "BigInt64Array",
+          "BigUint64Array"
+        ],
+        "rules": {
+          "@typescript-eslint/promise-function-async": "off",
+          "@typescript-eslint/no-empty-function": "off",
+          "@typescript-eslint/explicit-function-return-type": "off"
+        }
+      },
+      "gitHead": "fae0096eba33ebae4134ac9d3e23a2e337475cf5",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is#readme",
+      "_id": "@sindresorhus/is@2.1.1",
+      "_nodeVersion": "10.19.0",
+      "_npmVersion": "6.13.4",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-/aPsuoj/1Dw/kzhkgz+ES6TxG0zfTMGLwuK2ZG00k/iJzYHTLCE8mVU8EPqEOp/lmxPoq1C1C9RYToRKb2KEfg==",
+        "shasum": "ceff6a28a5b4867c2dd4a1ba513de278ccbe8bb1",
+        "tarball": "https://registry.npmjs.org/@sindresorhus/is/-/is-2.1.1.tgz",
+        "fileCount": 5,
+        "unpackedSize": 52365,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJenCY0CRA9TVsSAnZWagAAmW0P/3VxiFVAUIb/mWGfyf1E\nZ20WItqnrlMDs/1zTRchPWMnW4ah1s7YMMpy6xA154Nq8RPj0XNNTuI1lfw7\n2smlznOiTzw06AoLqhEUdWC2FtxTo7efJOAXzom0Md4Y2GpKgtf2dUh1X/ky\nqdUmMl9ng8FThbBdUQS0F+bFazSXYaMB1lAGMfBvbyrxR9GA3ASeTPQWRxGz\nDOArxWFpmjMZZ9y1K71PgNv45vXBzC++/exBzE45XaNJRMYa+U+w5lNUb05H\ndKrzY3dvbHGhS2pvJXj1PuUvcNm2bTwqxGrF4FH7PTtoZR5IEHBU3slTeKZl\n36Do2IBFChnFh+TYCC8dELSIxfZ/ZZ/QR0jyE5bnE2Mqc982rpnVfnMrR1IG\nqsWpSCCu3aq2jCBB16+oA9VYBmdDJI1cRf346Vs5X/GY2FQDfX0/5ylxkeo/\n+T4/fLAl3XAydXbFa/k5EzvsjnKof7RTC4VzBYHAxWgkUT/Ze2OGYcmBt4GG\njNvTeCITY0bT5Mo9DmIGdHl2femPCto0XRQQvnh2dxQa03IUk3v0jjOKkUTA\n2bh3AoeQ3/houy0s+culgOGowH+Fo0LTKcGtRFU+kg+ZEcHhKZFSnzxLFBUz\nh5L8f4Q4ALmQiSNP1eyjqRybqHvez3lOfuZwy3VLXxSCuNNQ4BK5nSNshdc9\n6tp0\r\n=VZ5P\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is_2.1.1_1587291699974_0.7821388181103495"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.0": {
+      "name": "@sindresorhus/is",
+      "version": "3.0.0",
+      "description": "Type check values",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/is.git"
+      },
+      "funding": "https://github.com/sindresorhus/is?sponsor=1",
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "https://sindresorhus.com"
+      },
+      "main": "dist",
+      "engines": {
+        "node": ">=10"
+      },
+      "scripts": {
+        "build": "del dist && tsc",
+        "test": "xo && ava",
+        "prepublishOnly": "npm run build"
+      },
+      "keywords": [
+        "type",
+        "types",
+        "is",
+        "check",
+        "checking",
+        "validate",
+        "validation",
+        "utility",
+        "util",
+        "typeof",
+        "instanceof",
+        "object",
+        "assert",
+        "assertion",
+        "test",
+        "kind",
+        "primitive",
+        "verify",
+        "compare",
+        "typescript",
+        "typeguards",
+        "types"
+      ],
+      "devDependencies": {
+        "@sindresorhus/tsconfig": "^0.7.0",
+        "@types/jsdom": "^16.1.0",
+        "@types/node": "^14.0.13",
+        "@types/zen-observable": "^0.8.0",
+        "@typescript-eslint/eslint-plugin": "^2.20.0",
+        "@typescript-eslint/parser": "^2.20.0",
+        "ava": "^3.3.0",
+        "del-cli": "^2.0.0",
+        "eslint-config-xo-typescript": "^0.26.0",
+        "jsdom": "^16.0.1",
+        "rxjs": "^6.4.0",
+        "tempy": "^0.4.0",
+        "ts-node": "^8.3.0",
+        "typescript": "~3.8.2",
+        "xo": "^0.26.1",
+        "zen-observable": "^0.8.8"
+      },
+      "types": "dist",
+      "sideEffects": false,
+      "ava": {
+        "extensions": [
+          "ts"
+        ],
+        "require": [
+          "ts-node/register"
+        ]
+      },
+      "xo": {
+        "extends": "xo-typescript",
+        "extensions": [
+          "ts"
+        ],
+        "parserOptions": {
+          "project": "./tsconfig.xo.json"
+        },
+        "globals": [
+          "BigInt",
+          "BigInt64Array",
+          "BigUint64Array"
+        ],
+        "rules": {
+          "@typescript-eslint/promise-function-async": "off",
+          "@typescript-eslint/no-empty-function": "off",
+          "@typescript-eslint/explicit-function-return-type": "off"
+        }
+      },
+      "gitHead": "4b35ad5becbd464cb185ee34a4f5371381d70657",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is#readme",
+      "_id": "@sindresorhus/is@3.0.0",
+      "_nodeVersion": "14.4.0",
+      "_npmVersion": "6.14.5",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-kqA5I6Yun7PBHk8WN9BBP1c7FfN2SrD05GuVSEYPqDb4nerv7HqYfgBfMIKmT/EuejURkJKLZuLyGKGs6WEG9w==",
+        "shasum": "78fabc5e295adb6e1ef57eaafe4cc5d7aa35b183",
+        "tarball": "https://registry.npmjs.org/@sindresorhus/is/-/is-3.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 51351,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJe97JTCRA9TVsSAnZWagAAKkAP/jX0egXTkadAiSkYPlXg\nYm3ilVJiLBKFhgGl4KZDsGb7sTX7EqSdqMgRStVApmoqwms7+w/NfuAkE8qk\n4az3JhLIIeLR20E0Zxo/6PZRFVctjRYUGor2xTryJx0iVagoaH9DuKHNIv8l\nXIUAjJRmv7vp1D8lQ/Xav6G4vhVGf2ffHGMNKG8edRYbVZaviIGqvmoXzV0B\nU1yziDtlSsDHn1mnzpHmLmlu3WTnsWdRGVcL1QZ/dWcjrZc3DEzvjYqQC1+K\nP/vZcQEAErfYOHLFMKXyiFcAwblzF8b9ZpfXuYMDr5i91REaeeFQCTwLGXt7\nESuXODUnaB5CepPD+0shLPHklrK2BznqFksNbtxaFBgR4cBcRudvxbrbPUDf\nBhWBeozsetSZqL/HZXr1oj59RPEZ7q9iwMmin2t/dmn4EquX1h6uuyp+xyYS\nv+oMthDoffr6hgFJJbCCPTaBIyJuKuZyxI6xSmE7+VmIFbTwDqUJfUMWy2NX\nuXZDOo4x3ejt79mCTO4SBN6uscaKKb4MT2rmgw+iUN1mYqiyr8FHbM3dRYMl\nDfOUXqs8xgFW293t+997O5eInLW7D7yg4jWGh0mlcyqC83nbAPFqJ+C6Hz2m\n+SkGo3+4P3iT8Z48rJGB2pKE1ihfjsyyalSZWT3bsRZNqqhXkUFlU3asgGv3\nPOtZ\r\n=pA7D\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is_3.0.0_1593291346769_0.6130996663030968"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.1.0": {
+      "name": "@sindresorhus/is",
+      "version": "3.1.0",
+      "description": "Type check values",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/is.git"
+      },
+      "funding": "https://github.com/sindresorhus/is?sponsor=1",
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "https://sindresorhus.com"
+      },
+      "main": "dist",
+      "engines": {
+        "node": ">=10"
+      },
+      "scripts": {
+        "build": "del dist && tsc",
+        "test": "xo && ava",
+        "prepublishOnly": "npm run build"
+      },
+      "keywords": [
+        "type",
+        "types",
+        "is",
+        "check",
+        "checking",
+        "validate",
+        "validation",
+        "utility",
+        "util",
+        "typeof",
+        "instanceof",
+        "object",
+        "assert",
+        "assertion",
+        "test",
+        "kind",
+        "primitive",
+        "verify",
+        "compare",
+        "typescript",
+        "typeguards",
+        "types"
+      ],
+      "devDependencies": {
+        "@sindresorhus/tsconfig": "^0.7.0",
+        "@types/jsdom": "^16.1.0",
+        "@types/node": "^14.0.13",
+        "@types/zen-observable": "^0.8.0",
+        "@typescript-eslint/eslint-plugin": "^2.20.0",
+        "@typescript-eslint/parser": "^2.20.0",
+        "ava": "^3.3.0",
+        "del-cli": "^2.0.0",
+        "eslint-config-xo-typescript": "^0.26.0",
+        "jsdom": "^16.0.1",
+        "rxjs": "^6.4.0",
+        "tempy": "^0.4.0",
+        "ts-node": "^8.3.0",
+        "typescript": "~3.8.2",
+        "xo": "^0.26.1",
+        "zen-observable": "^0.8.8"
+      },
+      "types": "dist",
+      "sideEffects": false,
+      "ava": {
+        "extensions": [
+          "ts"
+        ],
+        "require": [
+          "ts-node/register"
+        ]
+      },
+      "xo": {
+        "extends": "xo-typescript",
+        "extensions": [
+          "ts"
+        ],
+        "parserOptions": {
+          "project": "./tsconfig.xo.json"
+        },
+        "globals": [
+          "BigInt",
+          "BigInt64Array",
+          "BigUint64Array"
+        ],
+        "rules": {
+          "@typescript-eslint/promise-function-async": "off",
+          "@typescript-eslint/no-empty-function": "off",
+          "@typescript-eslint/explicit-function-return-type": "off"
+        }
+      },
+      "gitHead": "09d31733d3ee82788eb02a6f4ebedf8063bc120f",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is#readme",
+      "_id": "@sindresorhus/is@3.1.0",
+      "_nodeVersion": "14.5.0",
+      "_npmVersion": "6.14.5",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-n4J+zu52VdY43kdi/XdI9DzuMr1Mur8zFL5ZRG2opCans9aiFwkPxHYFEb5Xgy7n1Z4K6WfI4FpqUqsh3E8BPQ==",
+        "shasum": "d8735532635bea69ad39119df5f0f10099bd09dc",
+        "tarball": "https://registry.npmjs.org/@sindresorhus/is/-/is-3.1.0.tgz",
+        "fileCount": 7,
+        "unpackedSize": 52980,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfG9wECRA9TVsSAnZWagAAfn4P/0H3/fYz33IEHp0COEkZ\nEewYuic5ATB8O1j8TFZv8Vi5jFdXLpQFYU6YX87QrD4x68CYZPuHJk9ZhDlS\nqOpLZYYDiSgJIP86YY916uMtaxc0arjf54ULO8FAU0TLUp2RlmIwWU+IvC0v\n7nioaFLP0OdpXN47KJF/2/OrR3HJor8PwTU/UeOX/9KnCpWcmq2LLggoG52x\n+/7p7unpwMuTy8avyUpf+5soK+sSzYduw4YDqy2tNYxTtsy3eEmCw3jLqBtj\n6TC7iIbiwIXh5IwzHXSyEWvkc8ydKbLXEjlpQZ7cl4qo2TT6PZgbVHvwIdOa\n83rmLmZTBuGp1koeG/UkdQBf/29w1uKv5IN1q5TWieD93RSff4lEPqcSdYl8\nJT0sAyx+AZ7UBSKenSGsu85VHgJXjycFCW1SPYe6oiPdtWjGzQgfoNdwrl9+\niP+zPEo9gAfgDGD/XauHvkjHhVtWEOe6GEbhe9ppAeEuQMAh5PLVDgwvZibv\nZuf6HOHvOfkYElcVNLVOGLkGex6P/i949qZtXKKhXD7y0Tx5ttlhriWt1J1v\npWofFyBNJZvA1MpzGcjJZ6VGXieN9ROeuwOWWVHgl63WVpFkIvqbD8r3cYBe\nJhv5BeGA2ch36xGaujaNyM1SQBvZhDHnrWHi3P+G/KOR0DqaBg5OfojCfDNd\nf9Q2\r\n=tdp5\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is_3.1.0_1595661316269_0.046659961713244824"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.1.1": {
+      "name": "@sindresorhus/is",
+      "version": "3.1.1",
+      "description": "Type check values",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/is.git"
+      },
+      "funding": "https://github.com/sindresorhus/is?sponsor=1",
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "https://sindresorhus.com"
+      },
+      "main": "dist/index.js",
+      "engines": {
+        "node": ">=10"
+      },
+      "scripts": {
+        "build": "del dist && tsc",
+        "test": "xo && ava",
+        "prepublishOnly": "npm run build"
+      },
+      "keywords": [
+        "type",
+        "types",
+        "is",
+        "check",
+        "checking",
+        "validate",
+        "validation",
+        "utility",
+        "util",
+        "typeof",
+        "instanceof",
+        "object",
+        "assert",
+        "assertion",
+        "test",
+        "kind",
+        "primitive",
+        "verify",
+        "compare",
+        "typescript",
+        "typeguards",
+        "types"
+      ],
+      "devDependencies": {
+        "@sindresorhus/tsconfig": "^0.7.0",
+        "@types/jsdom": "^16.1.0",
+        "@types/node": "^14.0.13",
+        "@types/zen-observable": "^0.8.0",
+        "@typescript-eslint/eslint-plugin": "^2.20.0",
+        "@typescript-eslint/parser": "^2.20.0",
+        "ava": "^3.3.0",
+        "del-cli": "^2.0.0",
+        "eslint-config-xo-typescript": "^0.26.0",
+        "jsdom": "^16.0.1",
+        "rxjs": "^6.4.0",
+        "tempy": "^0.4.0",
+        "ts-node": "^8.3.0",
+        "typescript": "~3.8.2",
+        "xo": "^0.26.1",
+        "zen-observable": "^0.8.8"
+      },
+      "types": "dist/index.d.ts",
+      "sideEffects": false,
+      "ava": {
+        "extensions": [
+          "ts"
+        ],
+        "require": [
+          "ts-node/register"
+        ]
+      },
+      "xo": {
+        "extends": "xo-typescript",
+        "extensions": [
+          "ts"
+        ],
+        "parserOptions": {
+          "project": "./tsconfig.xo.json"
+        },
+        "globals": [
+          "BigInt",
+          "BigInt64Array",
+          "BigUint64Array"
+        ],
+        "rules": {
+          "@typescript-eslint/promise-function-async": "off",
+          "@typescript-eslint/no-empty-function": "off",
+          "@typescript-eslint/explicit-function-return-type": "off"
+        }
+      },
+      "gitHead": "5feadcb0b8ea7f0fa108c82f6a4c50695ff2664b",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is#readme",
+      "_id": "@sindresorhus/is@3.1.1",
+      "_nodeVersion": "14.5.0",
+      "_npmVersion": "6.14.7",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-tLnujxFtfH7F+i5ghUfgGlJsvyCKvUnSMFMlWybFdX9/DdX8svb4Zwx1gV0gkkVCHXtmPSetoAR3QlKfOld6Tw==",
+        "shasum": "6e39e4222add8b362da35720c9dd5d53345d5851",
+        "tarball": "https://registry.npmjs.org/@sindresorhus/is/-/is-3.1.1.tgz",
+        "fileCount": 7,
+        "unpackedSize": 53000,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfOQsICRA9TVsSAnZWagAAX1kP/2PVBFczLX4HylRCzNwb\nBtsyh7Nlrkbf5ZqXENSmUlXvEJ+ZZ9ZQWp3pcQoVbrDW4JgvyfKtB1o5hRVl\nacyBzmUSHQXGhLlxKxflksTPRWJ+FsA9XomOh1XZQQ3qIPJBwAHfxDMEoYzs\nfDhceaw3jWMVCHRqytTtEDFqRCoBeXYNx09TecAVzBp7PWVmHEQCR4RBI3XR\nKe3WL6Ls0NA9jbLyB4AHq4MsbiJ0WlqcqwitkgFKPrSiNWR5drEMtoa+ZuXR\nPb41cFWwhhHWtBXT0ikCfGuGvpyx68SMY6q8t0K7R11evR+E/pIo3DRHIJ1X\nOu89bCEkb/31+ZBQLGNpnoUfemkuChUoX1Kx3KN9kMB8AeQ7OcXTx/tjP/gq\nz2z/O5r6obabIND/knwf6EK3VLBUHDL874SeF6X7B0PcDe7NL1XY/hbzUQZX\n6zyhYIgahwvaj3WJf7E2wTYiDXQElzK5NStxnQm2e8aqqdfMoB9Iinh1LyKT\nWBctit9Wb0f8Xjr+76Izkb2LqqupRUJS8P02VzUh3hvo2QL2m9GShMcaVIHU\nrQSYWFutiYLzjAJNo3ksdeaUgm3t6pRGh2jVgTvZmnfOgj4ZroSp6u4E5yB7\nsdDAtsvMjtL8ei+E+++PfFub6eFd7YPfcaCZ3GvO2zje2o9ZUEgOPwDoXZC/\na8eE\r\n=3SKq\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is_3.1.1_1597573896142_0.6993902993873762"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.1.2": {
+      "name": "@sindresorhus/is",
+      "version": "3.1.2",
+      "description": "Type check values",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/is.git"
+      },
+      "funding": "https://github.com/sindresorhus/is?sponsor=1",
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "https://sindresorhus.com"
+      },
+      "main": "dist/index.js",
+      "engines": {
+        "node": ">=10"
+      },
+      "scripts": {
+        "build": "del dist && tsc",
+        "test": "xo && ava",
+        "prepublishOnly": "npm run build"
+      },
+      "keywords": [
+        "type",
+        "types",
+        "is",
+        "check",
+        "checking",
+        "validate",
+        "validation",
+        "utility",
+        "util",
+        "typeof",
+        "instanceof",
+        "object",
+        "assert",
+        "assertion",
+        "test",
+        "kind",
+        "primitive",
+        "verify",
+        "compare",
+        "typescript",
+        "typeguards",
+        "types"
+      ],
+      "devDependencies": {
+        "@sindresorhus/tsconfig": "^0.7.0",
+        "@types/jsdom": "^16.1.0",
+        "@types/node": "^14.0.13",
+        "@types/zen-observable": "^0.8.0",
+        "@typescript-eslint/eslint-plugin": "^2.20.0",
+        "@typescript-eslint/parser": "^2.20.0",
+        "ava": "^3.3.0",
+        "del-cli": "^2.0.0",
+        "eslint-config-xo-typescript": "^0.26.0",
+        "jsdom": "^16.0.1",
+        "rxjs": "^6.4.0",
+        "tempy": "^0.4.0",
+        "ts-node": "^8.3.0",
+        "typescript": "~3.8.2",
+        "xo": "^0.26.1",
+        "zen-observable": "^0.8.8"
+      },
+      "types": "dist/index.d.ts",
+      "sideEffects": false,
+      "ava": {
+        "extensions": [
+          "ts"
+        ],
+        "require": [
+          "ts-node/register"
+        ]
+      },
+      "xo": {
+        "extends": "xo-typescript",
+        "extensions": [
+          "ts"
+        ],
+        "parserOptions": {
+          "project": "./tsconfig.xo.json"
+        },
+        "globals": [
+          "BigInt",
+          "BigInt64Array",
+          "BigUint64Array"
+        ],
+        "rules": {
+          "@typescript-eslint/promise-function-async": "off",
+          "@typescript-eslint/no-empty-function": "off",
+          "@typescript-eslint/explicit-function-return-type": "off"
+        }
+      },
+      "gitHead": "bf6bba7af8f3f16e1b0ab4eb390196a5ffa9ef7e",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is#readme",
+      "_id": "@sindresorhus/is@3.1.2",
+      "_nodeVersion": "12.18.2",
+      "_npmVersion": "6.14.7",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-JiX9vxoKMmu8Y3Zr2RVathBL1Cdu4Nt4MuNWemt1Nc06A0RAin9c5FArkhGsyMBWfCu4zj+9b+GxtjAnE4qqLQ==",
+        "shasum": "548650de521b344e3781fbdb0ece4aa6f729afb8",
+        "tarball": "https://registry.npmjs.org/@sindresorhus/is/-/is-3.1.2.tgz",
+        "fileCount": 7,
+        "unpackedSize": 53014,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfQEnECRA9TVsSAnZWagAA374QAIQjnOYGlUIQITxroMSK\nOtb4IOniOEzTDC1G4C+sPN/2bJEjj3HMYygPHZGksyj6DCBNhAjCcJHTnfKL\nXWy11nS2g8G6Y4B5S1baNQPWbFVpJ+1Ll//zk+aO882awGukqPGXZTBnv19w\nTrf4BZG8XtYBSsX3QMfAQVE5SGh2KgYZRheHPecvGj5vLuvkZcAg0Oqnrvmu\nZ7xUQRN8eJpcZiZshT/DuLEWSTyXHh/HR6HZavnO9HbZb9NkrBuzAG3/9NQe\nkhX5CJNg6yANComdlDzEhnhA6wV7ZOy5vaqLuZXEU/riQvSdw2oGMWK/Tr9X\noMhjcaNI6Sb5iKe7lZgx5/4tw/5+Xo3ztQQbL/pqVcUixaqQssrdpVam/AmO\nNhN7Dc/peGRU1ZyiO/AX1LYuwqJ+yjp37KjarErJC3PDpbY31RBrf8AYBah/\nk5ANIcx5mqmfg6XiLnFHEYjBxkpNiXwo7GwwprfBTMKOeenu1kWEPtD7bZZt\nIm6+nFS1IYh8X11L0xd1OQrGdoBl3rN7G7mZJASQ4ZG+FyMeZs1cyZ3e7ZKQ\ncmh6IQ4svnR1e9j02focM3+THaDNbWB6x34iMEeGltxYFUcIupGU6IsiapN3\niR+vty1Agu5ELbqrLK9QMq5fBenvna9Vblw92dl3EarJ7BoKZwm1DXZMDzjP\nWvaO\r\n=Ghfb\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is_3.1.2_1598048707448_0.8399747033299334"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.0.0": {
+      "name": "@sindresorhus/is",
+      "version": "4.0.0",
+      "description": "Type check values",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/is.git"
+      },
+      "funding": "https://github.com/sindresorhus/is?sponsor=1",
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "https://sindresorhus.com"
+      },
+      "main": "dist/index.js",
+      "engines": {
+        "node": ">=10"
+      },
+      "scripts": {
+        "build": "del dist && tsc",
+        "test": "xo && ava",
+        "prepublishOnly": "npm run build"
+      },
+      "keywords": [
+        "type",
+        "types",
+        "is",
+        "check",
+        "checking",
+        "validate",
+        "validation",
+        "utility",
+        "util",
+        "typeof",
+        "instanceof",
+        "object",
+        "assert",
+        "assertion",
+        "test",
+        "kind",
+        "primitive",
+        "verify",
+        "compare",
+        "typescript",
+        "typeguards",
+        "types"
+      ],
+      "devDependencies": {
+        "@sindresorhus/tsconfig": "^0.7.0",
+        "@types/jsdom": "^16.1.0",
+        "@types/node": "^14.0.13",
+        "@types/zen-observable": "^0.8.0",
+        "@typescript-eslint/eslint-plugin": "^2.20.0",
+        "@typescript-eslint/parser": "^2.20.0",
+        "ava": "^3.3.0",
+        "del-cli": "^2.0.0",
+        "eslint-config-xo-typescript": "^0.26.0",
+        "jsdom": "^16.0.1",
+        "rxjs": "^6.4.0",
+        "tempy": "^0.4.0",
+        "ts-node": "^8.3.0",
+        "typescript": "~3.8.2",
+        "xo": "^0.26.1",
+        "zen-observable": "^0.8.8"
+      },
+      "types": "dist/index.d.ts",
+      "sideEffects": false,
+      "ava": {
+        "extensions": [
+          "ts"
+        ],
+        "require": [
+          "ts-node/register"
+        ]
+      },
+      "xo": {
+        "extends": "xo-typescript",
+        "extensions": [
+          "ts"
+        ],
+        "parserOptions": {
+          "project": "./tsconfig.xo.json"
+        },
+        "globals": [
+          "BigInt",
+          "BigInt64Array",
+          "BigUint64Array"
+        ],
+        "rules": {
+          "@typescript-eslint/promise-function-async": "off",
+          "@typescript-eslint/no-empty-function": "off",
+          "@typescript-eslint/explicit-function-return-type": "off"
+        }
+      },
+      "gitHead": "d528545e02de3396ea900cd93af478292f0697ee",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is#readme",
+      "_id": "@sindresorhus/is@4.0.0",
+      "_nodeVersion": "14.11.0",
+      "_npmVersion": "6.14.8",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-FyD2meJpDPjyNQejSjvnhpgI/azsQkA4lGbuu5BQZfjvJ9cbRZXzeWL2HceCekW4lixO9JPesIIQkSoLjeJHNQ==",
+        "shasum": "2ff674e9611b45b528896d820d3d7a812de2f0e4",
+        "tarball": "https://registry.npmjs.org/@sindresorhus/is/-/is-4.0.0.tgz",
+        "fileCount": 7,
+        "unpackedSize": 53086,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfhNQECRA9TVsSAnZWagAAWz8QAKUgZfIe82zzy8yCqKXC\nN1MQqcEDLzNt4tJLcUOQVt/F8o8GQJ/roN6Xn1c7GVSnlcpO/zanlD5DPgvt\ndZoN7aEvdPs5Q/mJDS3D/jNDJ399HvVFNkuAKcNOk8kmlaq08OIXOejRHVB1\nRJUKakepp8jH82hlNqBU8TXu07EKJNfrjc1bPA7NobRzE2o5mAqPfIICDzoo\nArKFg99siE/7l1MlCNExytcNJtW0W/hn3kvOe9pb2/lOv9BFCT8HWKKpSAZ0\nuFKa4fVkHdzbJkcB1tLI+8yI3k4ReyORP0Dhi3lvferLg6IPOCMe8iuUISW5\nhU+pFJyG2yOxG8bEh1LEQNNzL7vkidK3/qq2cDzZwJji83mDBLBY4GQKtNnE\n81JQQJrLgECZhtJaV8r3RSErRU2zQE0/RBuWABnoiLnifVJSfNYSMFuLrWdn\nz7MLOMN0BvR32mVwQlBoG3dbrSnBVwIMOKngDqUwAuHe+FVm868/lFVGN/kP\njDDVjyfi+HrGyPc33ilvOyP5rx4ffeMLokgrDz65FudSc89PTHqykYp+i3wm\nxq7Y98nFTB1+/Ugh0pYn0XTGmiM0BMYWcX5y0HRIRcikaa7cBjTrWxG6DsNm\nekvK2SEKw3bgU94fac8+TZ3lld+WzNZa8NxG6jSjaElIMr9zaI0AQJeHpIaT\ntJh5\r\n=i9Fv\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is_4.0.0_1602540547346_0.5308319005875917"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# is [![Build Status](https://travis-ci.org/sindresorhus/is.svg?branch=master)](https://travis-ci.org/sindresorhus/is)\n\n> Type check values\n\nFor example, `is.string('🦄') //=> true`\n\n<img src=\"header.gif\" width=\"182\" align=\"right\">\n\n## Highlights\n\n- Written in TypeScript\n- [Extensive use of type guards](#type-guards)\n- [Supports type assertions](#type-assertions)\n- [Aware of generic type parameters](#generic-type-parameters) (use with caution)\n- Actively maintained\n- ![Millions of downloads per week](https://img.shields.io/npm/dw/@sindresorhus/is)\n\n## Install\n\n```\n$ npm install @sindresorhus/is\n```\n\n## Usage\n\n```js\nconst is = require('@sindresorhus/is');\n\nis('🦄');\n//=> 'string'\n\nis(new Map());\n//=> 'Map'\n\nis.number(6);\n//=> true\n```\n\n[Assertions](#type-assertions) perform the same type checks, but throw an error if the type does not match.\n\n```js\nconst {assert} = require('@sindresorhus/is');\n\nassert.string(2);\n//=> Error: Expected value which is `string`, received value of type `number`.\n```\n\nAnd with TypeScript:\n\n```ts\nimport {assert} from '@sindresorhus/is';\n\nassert.string(foo);\n// `foo` is now typed as a `string`.\n```\n\n## API\n\n### is(value)\n\nReturns the type of `value`.\n\nPrimitives are lowercase and object types are camelcase.\n\nExample:\n\n- `'undefined'`\n- `'null'`\n- `'string'`\n- `'symbol'`\n- `'Array'`\n- `'Function'`\n- `'Object'`\n\nNote: It will throw an error if you try to feed it object-wrapped primitives, as that's a bad practice. For example `new String('foo')`.\n\n### is.{method}\n\nAll the below methods accept a value and returns a boolean for whether the value is of the desired type.\n\n#### Primitives\n\n##### .undefined(value)\n##### .null(value)\n##### .string(value)\n##### .number(value)\n\nNote: `is.number(NaN)` returns `false`. This intentionally deviates from `typeof` behavior to increase user-friendliness of `is` type checks.\n\n##### .boolean(value)\n##### .symbol(value)\n##### .bigint(value)\n\n#### Built-in types\n\n##### .array(value, assertion?)\n\nReturns true if `value` is an array and all of its items match the assertion (if provided).\n\n```js\nis.array(value); // Validate `value` is an array.\nis.array(value, is.number); // Validate `value` is an array and all of its items are numbers.\n```\n\n##### .function(value)\n##### .buffer(value)\n##### .object(value)\n\nKeep in mind that [functions are objects too](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions).\n\n##### .numericString(value)\n\nReturns `true` for a string that represents a number satisfying `is.number`, for example, `'42'` and `'-8.3'`.\n\nNote: `'NaN'` returns `false`, but `'Infinity'` and `'-Infinity'` return `true`.\n\n##### .regExp(value)\n##### .date(value)\n##### .error(value)\n##### .nativePromise(value)\n##### .promise(value)\n\nReturns `true` for any object with a `.then()` and `.catch()` method. Prefer this one over `.nativePromise()` as you usually want to allow userland promise implementations too.\n\n##### .generator(value)\n\nReturns `true` for any object that implements its own `.next()` and `.throw()` methods and has a function definition for `Symbol.iterator`.\n\n##### .generatorFunction(value)\n\n##### .asyncFunction(value)\n\nReturns `true` for any `async` function that can be called with the `await` operator.\n\n```js\nis.asyncFunction(async () => {});\n//=> true\n\nis.asyncFunction(() => {});\n//=> false\n```\n\n##### .asyncGenerator(value)\n\n```js\nis.asyncGenerator(\n\t(async function * () {\n\t\tyield 4;\n\t})()\n);\n//=> true\n\nis.asyncGenerator(\n\t(function * () {\n\t\tyield 4;\n\t})()\n);\n//=> false\n```\n\n##### .asyncGeneratorFunction(value)\n\n```js\nis.asyncGeneratorFunction(async function * () {\n\tyield 4;\n});\n//=> true\n\nis.asyncGeneratorFunction(function * () {\n\tyield 4;\n});\n//=> false\n```\n\n##### .boundFunction(value)\n\nReturns `true` for any `bound` function.\n\n```js\nis.boundFunction(() => {});\n//=> true\n\nis.boundFunction(function () {}.bind(null));\n//=> true\n\nis.boundFunction(function () {});\n//=> false\n```\n\n##### .map(value)\n##### .set(value)\n##### .weakMap(value)\n##### .weakSet(value)\n\n#### Typed arrays\n\n##### .int8Array(value)\n##### .uint8Array(value)\n##### .uint8ClampedArray(value)\n##### .int16Array(value)\n##### .uint16Array(value)\n##### .int32Array(value)\n##### .uint32Array(value)\n##### .float32Array(value)\n##### .float64Array(value)\n##### .bigInt64Array(value)\n##### .bigUint64Array(value)\n\n#### Structured data\n\n##### .arrayBuffer(value)\n##### .sharedArrayBuffer(value)\n##### .dataView(value)\n\n#### Emptiness\n\n##### .emptyString(value)\n\nReturns `true` if the value is a `string` and the `.length` is 0.\n\n##### .nonEmptyString(value)\n\nReturns `true` if the value is a `string` and the `.length` is more than 0.\n\n##### .emptyStringOrWhitespace(value)\n\nReturns `true` if `is.emptyString(value)` or if it's a `string` that is all whitespace.\n\n##### .emptyArray(value)\n\nReturns `true` if the value is an `Array` and the `.length` is 0.\n\n##### .nonEmptyArray(value)\n\nReturns `true` if the value is an `Array` and the `.length` is more than 0.\n\n##### .emptyObject(value)\n\nReturns `true` if the value is an `Object` and `Object.keys(value).length` is 0.\n\nPlease note that `Object.keys` returns only own enumerable properties. Hence something like this can happen:\n\n```js\nconst object1 = {};\n\nObject.defineProperty(object1, 'property1', {\n\tvalue: 42,\n\twritable: true,\n\tenumerable: false,\n\tconfigurable: true\n});\n\nis.emptyObject(object1);\n//=> true\n```\n\n##### .nonEmptyObject(value)\n\nReturns `true` if the value is an `Object` and `Object.keys(value).length` is more than 0.\n\n##### .emptySet(value)\n\nReturns `true` if the value is a `Set` and the `.size` is 0.\n\n##### .nonEmptySet(Value)\n\nReturns `true` if the value is a `Set` and the `.size` is more than 0.\n\n##### .emptyMap(value)\n\nReturns `true` if the value is a `Map` and the `.size` is 0.\n\n##### .nonEmptyMap(value)\n\nReturns `true` if the value is a `Map` and the `.size` is more than 0.\n\n#### Miscellaneous\n\n##### .directInstanceOf(value, class)\n\nReturns `true` if `value` is a direct instance of `class`.\n\n```js\nis.directInstanceOf(new Error(), Error);\n//=> true\n\nclass UnicornError extends Error {}\n\nis.directInstanceOf(new UnicornError(), Error);\n//=> false\n```\n\n##### .urlInstance(value)\n\nReturns `true` if `value` is an instance of the [`URL` class](https://developer.mozilla.org/en-US/docs/Web/API/URL).\n\n```js\nconst url = new URL('https://example.com');\n\nis.urlInstance(url);\n//=> true\n```\n\n##### .urlString(value)\n\nReturns `true` if `value` is a URL string.\n\nNote: this only does basic checking using the [`URL` class](https://developer.mozilla.org/en-US/docs/Web/API/URL) constructor.\n\n```js\nconst url = 'https://example.com';\n\nis.urlString(url);\n//=> true\n\nis.urlString(new URL(url));\n//=> false\n```\n\n##### .truthy(value)\n\nReturns `true` for all values that evaluate to true in a boolean context:\n\n```js\nis.truthy('🦄');\n//=> true\n\nis.truthy(undefined);\n//=> false\n```\n\n##### .falsy(value)\n\nReturns `true` if `value` is one of: `false`, `0`, `''`, `null`, `undefined`, `NaN`.\n\n##### .nan(value)\n##### .nullOrUndefined(value)\n##### .primitive(value)\n\nJavaScript primitives are as follows: `null`, `undefined`, `string`, `number`, `boolean`, `symbol`.\n\n##### .integer(value)\n\n##### .safeInteger(value)\n\nReturns `true` if `value` is a [safe integer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isSafeInteger).\n\n##### .plainObject(value)\n\nAn object is plain if it's created by either `{}`, `new Object()`, or `Object.create(null)`.\n\n##### .iterable(value)\n##### .asyncIterable(value)\n##### .class(value)\n\nReturns `true` for instances created by a class.\n\n##### .typedArray(value)\n\n##### .arrayLike(value)\n\nA `value` is array-like if it is not a function and has a `value.length` that is a safe integer greater than or equal to 0.\n\n```js\nis.arrayLike(document.forms);\n//=> true\n\nfunction foo() {\n\tis.arrayLike(arguments);\n\t//=> true\n}\nfoo();\n```\n\n##### .inRange(value, range)\n\nCheck if `value` (number) is in the given `range`. The range is an array of two values, lower bound and upper bound, in no specific order.\n\n```js\nis.inRange(3, [0, 5]);\nis.inRange(3, [5, 0]);\nis.inRange(0, [-2, 2]);\n```\n\n##### .inRange(value, upperBound)\n\nCheck if `value` (number) is in the range of `0` to `upperBound`.\n\n```js\nis.inRange(3, 10);\n```\n\n##### .domElement(value)\n\nReturns `true` if `value` is a DOM Element.\n\n##### .nodeStream(value)\n\nReturns `true` if `value` is a Node.js [stream](https://nodejs.org/api/stream.html).\n\n```js\nconst fs = require('fs');\n\nis.nodeStream(fs.createReadStream('unicorn.png'));\n//=> true\n```\n\n##### .observable(value)\n\nReturns `true` if `value` is an `Observable`.\n\n```js\nconst {Observable} = require('rxjs');\n\nis.observable(new Observable());\n//=> true\n```\n\n##### .infinite(value)\n\nCheck if `value` is `Infinity` or `-Infinity`.\n\n##### .evenInteger(value)\n\nReturns `true` if `value` is an even integer.\n\n##### .oddInteger(value)\n\nReturns `true` if `value` is an odd integer.\n\n##### .any(predicate | predicate[], ...values)\n\nUsing a single `predicate` argument, returns `true` if **any** of the input `values` returns true in the `predicate`:\n\n```js\nis.any(is.string, {}, true, '🦄');\n//=> true\n\nis.any(is.boolean, 'unicorns', [], new Map());\n//=> false\n```\n\nUsing an array of `predicate[]`, returns `true` if **any** of the input `values` returns true for **any** of the `predicates` provided in an array:\n\n```js\nis.any([is.string, is.number], {}, true, '🦄');\n//=> true\n\nis.any([is.boolean, is.number], 'unicorns', [], new Map());\n//=> false\n```\n\n##### .all(predicate, ...values)\n\nReturns `true` if **all** of the input `values` returns true in the `predicate`:\n\n```js\nis.all(is.object, {}, new Map(), new Set());\n//=> true\n\nis.all(is.string, '🦄', [], 'unicorns');\n//=> false\n```\n\n## Type guards\n\nWhen using `is` together with TypeScript, [type guards](http://www.typescriptlang.org/docs/handbook/advanced-types.html#type-guards-and-differentiating-types) are being used extensively to infer the correct type inside if-else statements.\n\n```ts\nimport is from '@sindresorhus/is';\n\nconst padLeft = (value: string, padding: string | number) => {\n\tif (is.number(padding)) {\n\t\t// `padding` is typed as `number`\n\t\treturn Array(padding + 1).join(' ') + value;\n\t}\n\n\tif (is.string(padding)) {\n\t\t// `padding` is typed as `string`\n\t\treturn padding + value;\n\t}\n\n\tthrow new TypeError(`Expected 'padding' to be of type 'string' or 'number', got '${is(padding)}'.`);\n}\n\npadLeft('🦄', 3);\n//=> '   🦄'\n\npadLeft('🦄', '🌈');\n//=> '🌈🦄'\n```\n\n## Type assertions\n\nThe type guards are also available as [type assertions](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-7.html#assertion-functions), which throw an error for unexpected types. It is a convenient one-line version of the often repetitive \"if-not-expected-type-throw\" pattern.\n\n```ts\nimport {assert} from '@sindresorhus/is';\n\nconst handleMovieRatingApiResponse = (response: unknown) => {\n\tassert.plainObject(response);\n\t// `response` is now typed as a plain `object` with `unknown` properties.\n\n\tassert.number(response.rating);\n\t// `response.rating` is now typed as a `number`.\n\n\tassert.string(response.title);\n\t// `response.title` is now typed as a `string`.\n\n\treturn `${response.title} (${response.rating * 10})`;\n};\n\nhandleMovieRatingApiResponse({rating: 0.87, title: 'The Matrix'});\n//=> 'The Matrix (8.7)'\n\n// This throws an error.\nhandleMovieRatingApiResponse({rating: '🦄'});\n```\n\n## Generic type parameters\n\nThe type guards and type assertions are aware of [generic type parameters](https://www.typescriptlang.org/docs/handbook/generics.html), such as `Promise<T>` and `Map<Key, Value>`. The default is `unknown` for most cases, since `is` cannot check them at runtime. If the generic type is known at compile-time, either implicitly (inferred) or explicitly (provided), `is` propagates the type so it can be used later.\n\nUse generic type parameters with caution. They are only checked by the TypeScript compiler, and not checked by `is` at runtime. This can lead to unexpected behavior, where the generic type is _assumed_ at compile-time, but actually is something completely different at runtime. It is best to use `unknown` (default) and type-check the value of the generic type parameter at runtime with `is` or `assert`.\n\n```ts\nimport {assert} from '@sindresorhus/is';\n\nasync function badNumberAssumption(input: unknown) {\n\t// Bad assumption about the generic type parameter fools the compile-time type system.\n\tassert.promise<number>(input);\n\t// `input` is a `Promise` but only assumed to be `Promise<number>`.\n\n\tconst resolved = await input;\n\t// `resolved` is typed as `number` but was not actually checked at runtime.\n\n\t// Multiplication will return NaN if the input promise did not actually contain a number.\n\treturn 2 * resolved;\n}\n\nasync function goodNumberAssertion(input: unknown) {\n\tassert.promise(input);\n\t// `input` is typed as `Promise<unknown>`\n\n\tconst resolved = await input;\n\t// `resolved` is typed as `unknown`\n\n\tassert.number(resolved);\n\t// `resolved` is typed as `number`\n\n\t// Uses runtime checks so only numbers will reach the multiplication.\n\treturn 2 * resolved;\n}\n\nbadNumberAssumption(Promise.resolve('An unexpected string'));\n//=> NaN\n\n// This correctly throws an error because of the unexpected string value.\ngoodNumberAssertion(Promise.resolve('An unexpected string'));\n```\n\n## FAQ\n\n### Why yet another type checking module?\n\nThere are hundreds of type checking modules on npm, unfortunately, I couldn't find any that fit my needs:\n\n- Includes both type methods and ability to get the type\n- Types of primitives returned as lowercase and object types as camelcase\n- Covers all built-ins\n- Unsurprising behavior\n- Well-maintained\n- Comprehensive test suite\n\nFor the ones I found, pick 3 of these.\n\nThe most common mistakes I noticed in these modules was using `instanceof` for type checking, forgetting that functions are objects, and omitting `symbol` as a primitive.\n\n## For enterprise\n\nAvailable as part of the Tidelift Subscription.\n\nThe maintainers of @sindresorhus/is and thousands of other packages are working with Tidelift to deliver commercial support and maintenance for the open source dependencies you use to build your applications. Save time, reduce risk, and improve code health, while paying the maintainers of the exact dependencies you use. [Learn more.](https://tidelift.com/subscription/pkg/npm-sindresorhus-is?utm_source=npm-sindresorhus-is&utm_medium=referral&utm_campaign=enterprise&utm_term=repo)\n\n## Related\n\n- [ow](https://github.com/sindresorhus/ow) - Function argument validation for humans\n- [is-stream](https://github.com/sindresorhus/is-stream) - Check if something is a Node.js stream\n- [is-observable](https://github.com/sindresorhus/is-observable) - Check if a value is an Observable\n- [file-type](https://github.com/sindresorhus/file-type) - Detect the file type of a Buffer/Uint8Array\n- [is-ip](https://github.com/sindresorhus/is-ip) - Check if a string is an IP address\n- [is-array-sorted](https://github.com/sindresorhus/is-array-sorted) - Check if an Array is sorted\n- [is-error-constructor](https://github.com/sindresorhus/is-error-constructor) - Check if a value is an error constructor\n- [is-empty-iterable](https://github.com/sindresorhus/is-empty-iterable) - Check if an Iterable is empty\n- [is-blob](https://github.com/sindresorhus/is-blob) - Check if a value is a Blob - File-like object of immutable, raw data\n- [has-emoji](https://github.com/sindresorhus/has-emoji) - Check whether a string has any emoji\n\n## Maintainers\n\n- [Sindre Sorhus](https://github.com/sindresorhus)\n- [Giora Guttsait](https://github.com/gioragutt)\n- [Brandon Smith](https://github.com/brandon93s)\n",
+  "maintainers": [
+    {
+      "name": "sindresorhus",
+      "email": "sindresorhus@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-10-12T22:09:09.965Z",
+    "created": "2017-09-21T17:54:29.643Z",
+    "0.1.0": "2017-09-21T17:54:29.643Z",
+    "0.2.0": "2017-09-29T03:22:58.510Z",
+    "0.2.1": "2017-10-05T04:21:48.204Z",
+    "0.3.0": "2017-10-11T09:51:14.974Z",
+    "0.4.0": "2017-10-21T19:28:29.768Z",
+    "0.5.0": "2017-11-07T03:23:52.189Z",
+    "0.6.0": "2017-11-19T20:18:18.050Z",
+    "0.7.0": "2017-12-11T20:40:22.859Z",
+    "0.8.0": "2018-04-03T17:10:13.482Z",
+    "0.9.0": "2018-05-04T05:31:15.672Z",
+    "0.10.0": "2018-07-05T16:33:40.901Z",
+    "0.11.0": "2018-07-10T09:56:50.311Z",
+    "0.12.0": "2018-09-28T06:36:14.674Z",
+    "0.13.0": "2018-11-02T12:10:40.889Z",
+    "0.14.0": "2018-12-13T16:00:08.390Z",
+    "0.15.0": "2019-02-03T19:55:51.371Z",
+    "0.16.0": "2019-05-04T09:15:03.794Z",
+    "0.17.0": "2019-05-13T04:08:48.018Z",
+    "0.17.1": "2019-05-21T09:49:11.963Z",
+    "1.0.0": "2019-06-30T08:25:52.005Z",
+    "1.1.0": "2019-10-03T08:02:14.587Z",
+    "1.2.0": "2019-10-04T04:40:23.445Z",
+    "2.0.0": "2020-01-29T17:47:27.268Z",
+    "2.1.0": "2020-02-17T07:23:10.797Z",
+    "2.1.1": "2020-04-19T10:21:40.095Z",
+    "3.0.0": "2020-06-27T20:55:46.906Z",
+    "3.1.0": "2020-07-25T07:15:16.478Z",
+    "3.1.1": "2020-08-16T10:31:36.319Z",
+    "3.1.2": "2020-08-21T22:25:07.578Z",
+    "4.0.0": "2020-10-12T22:09:07.590Z"
+  },
+  "homepage": "https://github.com/sindresorhus/is#readme",
+  "keywords": [
+    "type",
+    "types",
+    "is",
+    "check",
+    "checking",
+    "validate",
+    "validation",
+    "utility",
+    "util",
+    "typeof",
+    "instanceof",
+    "object",
+    "assert",
+    "assertion",
+    "test",
+    "kind",
+    "primitive",
+    "verify",
+    "compare",
+    "typescript",
+    "typeguards",
+    "types"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/is.git"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "https://sindresorhus.com"
+  },
+  "bugs": {
+    "url": "https://github.com/sindresorhus/is/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md",
+  "users": {
+    "joelwallis": true,
+    "styfle": true,
+    "pl0x": true
+  }
+}

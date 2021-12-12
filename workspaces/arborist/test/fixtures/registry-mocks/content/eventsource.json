@@ -1,0 +1,2508 @@
+{
+  "_id": "eventsource",
+  "_rev": "65-936adaff608aab938e13e9f29e517297",
+  "name": "eventsource",
+  "description": "W3C compliant EventSource client for Node.js and browser (polyfill)",
+  "dist-tags": {
+    "latest": "1.0.7"
+  },
+  "versions": {
+    "0.0.1": {
+      "name": "eventsource",
+      "version": "0.0.1",
+      "description": "EventSource client for Node.js",
+      "keywords": [
+        "eventsource",
+        "http",
+        "streaming",
+        "sse"
+      ],
+      "homepage": "http://github.com/aslakhellesoy/eventsource-node",
+      "author": {
+        "name": "Aslak Hellesøy",
+        "email": "aslak.hellesoy@gmail.com"
+      },
+      "contributors": [
+        {
+          "name": "Aslak Hellesøy",
+          "email": "aslak.hellesoy@gmail.com"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/aslakhellesoy/eventsource-node.git"
+      },
+      "bugs": {
+        "url": "http://github.com/aslakhellesoy/eventsource-node/issues"
+      },
+      "directories": {
+        "lib": "./lib"
+      },
+      "main": "./lib/eventsource",
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://github.com/aslakhellesoy/eventsource-node/raw/master/LICENSE"
+        }
+      ],
+      "devDependencies": {
+        "nodeunit": "0.6.4"
+      },
+      "_npmUser": {
+        "name": "aslakhellesoy",
+        "email": "aslak.hellesoy@gmail.com"
+      },
+      "_id": "eventsource@0.0.1",
+      "dependencies": {},
+      "optionalDependencies": {},
+      "engines": {
+        "node": "*"
+      },
+      "_engineSupported": true,
+      "_npmVersion": "1.1.0-2",
+      "_nodeVersion": "v0.6.8",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "c93d59063dfc91b10c2708f4bd0aa2233e243324",
+        "tarball": "https://registry.npmjs.org/eventsource/-/eventsource-0.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "aslakhellesoy",
+          "email": "aslak.hellesoy@gmail.com"
+        }
+      ]
+    },
+    "0.0.2": {
+      "name": "eventsource",
+      "version": "0.0.2",
+      "description": "EventSource client for Node.js",
+      "keywords": [
+        "eventsource",
+        "http",
+        "streaming",
+        "sse"
+      ],
+      "homepage": "http://github.com/aslakhellesoy/eventsource-node",
+      "author": {
+        "name": "Aslak Hellesøy",
+        "email": "aslak.hellesoy@gmail.com"
+      },
+      "contributors": [
+        {
+          "name": "Aslak Hellesøy",
+          "email": "aslak.hellesoy@gmail.com"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/aslakhellesoy/eventsource-node.git"
+      },
+      "bugs": {
+        "url": "http://github.com/aslakhellesoy/eventsource-node/issues"
+      },
+      "directories": {
+        "lib": "./lib"
+      },
+      "main": "./lib/eventsource",
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://github.com/aslakhellesoy/eventsource-node/raw/master/LICENSE"
+        }
+      ],
+      "devDependencies": {
+        "nodeunit": "0.6.4"
+      },
+      "_npmUser": {
+        "name": "aslakhellesoy",
+        "email": "aslak.hellesoy@gmail.com"
+      },
+      "_id": "eventsource@0.0.2",
+      "dependencies": {},
+      "optionalDependencies": {},
+      "engines": {
+        "node": "*"
+      },
+      "_engineSupported": true,
+      "_npmVersion": "1.1.0-2",
+      "_nodeVersion": "v0.6.8",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "753ec5f169050130052130b07441102564b16cf1",
+        "tarball": "https://registry.npmjs.org/eventsource/-/eventsource-0.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "aslakhellesoy",
+          "email": "aslak.hellesoy@gmail.com"
+        }
+      ]
+    },
+    "0.0.3": {
+      "name": "eventsource",
+      "version": "0.0.3",
+      "description": "EventSource client for Node.js",
+      "keywords": [
+        "eventsource",
+        "http",
+        "streaming",
+        "sse"
+      ],
+      "homepage": "http://github.com/aslakhellesoy/eventsource-node",
+      "author": {
+        "name": "Aslak Hellesøy",
+        "email": "aslak.hellesoy@gmail.com"
+      },
+      "contributors": [
+        {
+          "name": "Aslak Hellesøy",
+          "email": "aslak.hellesoy@gmail.com"
+        },
+        {
+          "name": "Einar Otto Stangvik",
+          "email": "einaros+gh@gmail.com"
+        },
+        {
+          "name": "Dan North",
+          "email": "tastapod@gmail.com"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/aslakhellesoy/eventsource-node.git"
+      },
+      "bugs": {
+        "url": "http://github.com/aslakhellesoy/eventsource-node/issues"
+      },
+      "directories": {
+        "lib": "./lib"
+      },
+      "main": "./lib/eventsource",
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://github.com/aslakhellesoy/eventsource-node/raw/master/LICENSE"
+        }
+      ],
+      "devDependencies": {
+        "nodeunit": "0.6.x",
+        "dox": "0.1.x",
+        "jison": "0.3.x"
+      },
+      "_npmUser": {
+        "name": "aslakhellesoy",
+        "email": "aslak.hellesoy@gmail.com"
+      },
+      "_id": "eventsource@0.0.3",
+      "dependencies": {},
+      "optionalDependencies": {},
+      "engines": {
+        "node": "*"
+      },
+      "_engineSupported": true,
+      "_npmVersion": "1.1.0-3",
+      "_nodeVersion": "v0.6.10",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "8ea901b5877dc2c02373f283ea2fea72878d1fa4",
+        "tarball": "https://registry.npmjs.org/eventsource/-/eventsource-0.0.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "aslakhellesoy",
+          "email": "aslak.hellesoy@gmail.com"
+        }
+      ]
+    },
+    "0.0.4": {
+      "name": "eventsource",
+      "version": "0.0.4",
+      "description": "EventSource client for Node.js",
+      "keywords": [
+        "eventsource",
+        "http",
+        "streaming",
+        "sse"
+      ],
+      "homepage": "http://github.com/aslakhellesoy/eventsource-node",
+      "author": {
+        "name": "Aslak Hellesøy",
+        "email": "aslak.hellesoy@gmail.com"
+      },
+      "contributors": [
+        {
+          "name": "Aslak Hellesøy",
+          "email": "aslak.hellesoy@gmail.com"
+        },
+        {
+          "name": "Einar Otto Stangvik",
+          "email": "einaros+gh@gmail.com"
+        },
+        {
+          "name": "Dan North",
+          "email": "tastapod@gmail.com"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/aslakhellesoy/eventsource-node.git"
+      },
+      "bugs": {
+        "url": "http://github.com/aslakhellesoy/eventsource-node/issues"
+      },
+      "directories": {
+        "lib": "./lib"
+      },
+      "main": "./lib/eventsource",
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://github.com/aslakhellesoy/eventsource-node/raw/master/LICENSE"
+        }
+      ],
+      "devDependencies": {
+        "nodeunit": "0.6.x",
+        "dox": "0.1.x",
+        "jison": "0.3.x"
+      },
+      "_npmUser": {
+        "name": "aslakhellesoy",
+        "email": "aslak.hellesoy@gmail.com"
+      },
+      "_id": "eventsource@0.0.4",
+      "dependencies": {},
+      "engines": {
+        "node": "*"
+      },
+      "_engineSupported": true,
+      "_npmVersion": "1.0.105",
+      "_nodeVersion": "v0.6.1",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "c17ef87e477ffba2adb20832ebe0d410d0998f24",
+        "tarball": "https://registry.npmjs.org/eventsource/-/eventsource-0.0.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "aslakhellesoy",
+          "email": "aslak.hellesoy@gmail.com"
+        }
+      ]
+    },
+    "0.0.5": {
+      "name": "eventsource",
+      "version": "0.0.5",
+      "description": "EventSource client for Node.js",
+      "keywords": [
+        "eventsource",
+        "http",
+        "streaming",
+        "sse"
+      ],
+      "homepage": "http://github.com/aslakhellesoy/eventsource-node",
+      "author": {
+        "name": "Aslak Hellesøy",
+        "email": "aslak.hellesoy@gmail.com"
+      },
+      "contributors": [
+        {
+          "name": "Aslak Hellesøy",
+          "email": "aslak.hellesoy@gmail.com"
+        },
+        {
+          "name": "Einar Otto Stangvik",
+          "email": "einaros+gh@gmail.com"
+        },
+        {
+          "name": "Dan North",
+          "email": "tastapod@gmail.com"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/aslakhellesoy/eventsource-node.git"
+      },
+      "bugs": {
+        "url": "http://github.com/aslakhellesoy/eventsource-node/issues"
+      },
+      "directories": {
+        "lib": "./lib"
+      },
+      "main": "./lib/eventsource",
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://github.com/aslakhellesoy/eventsource-node/raw/master/LICENSE"
+        }
+      ],
+      "devDependencies": {
+        "nodeunit": "0.6.x",
+        "dox": "0.1.x",
+        "jison": "0.3.x"
+      },
+      "scripts": {
+        "test": "make run-tests"
+      },
+      "engines": {
+        "node": ">=0.6.0"
+      },
+      "_npmUser": {
+        "name": "aslakhellesoy",
+        "email": "aslak.hellesoy@gmail.com"
+      },
+      "_id": "eventsource@0.0.5",
+      "dependencies": {},
+      "_engineSupported": true,
+      "_npmVersion": "1.0.105",
+      "_nodeVersion": "v0.6.1",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "015db0a5aa32d9654e0c173b129897db5e6d39e1",
+        "tarball": "https://registry.npmjs.org/eventsource/-/eventsource-0.0.5.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "aslakhellesoy",
+          "email": "aslak.hellesoy@gmail.com"
+        }
+      ]
+    },
+    "0.0.6": {
+      "name": "eventsource",
+      "version": "0.0.6",
+      "description": "EventSource client for Node.js",
+      "keywords": [
+        "eventsource",
+        "http",
+        "streaming",
+        "sse"
+      ],
+      "homepage": "http://github.com/aslakhellesoy/eventsource-node",
+      "author": {
+        "name": "Aslak Hellesøy",
+        "email": "aslak.hellesoy@gmail.com"
+      },
+      "contributors": [
+        {
+          "name": "Aslak Hellesøy",
+          "email": "aslak.hellesoy@gmail.com"
+        },
+        {
+          "name": "Einar Otto Stangvik",
+          "email": "einaros+gh@gmail.com"
+        },
+        {
+          "name": "Dan North",
+          "email": "tastapod@gmail.com"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/aslakhellesoy/eventsource-node.git"
+      },
+      "bugs": {
+        "url": "http://github.com/aslakhellesoy/eventsource-node/issues"
+      },
+      "directories": {
+        "lib": "./lib"
+      },
+      "main": "./lib/eventsource",
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://github.com/aslakhellesoy/eventsource-node/raw/master/LICENSE"
+        }
+      ],
+      "devDependencies": {
+        "nodeunit": "0.6.x",
+        "dox": "0.1.x",
+        "jison": "0.3.x"
+      },
+      "scripts": {
+        "test": "make run-tests"
+      },
+      "engines": {
+        "node": ">=0.6.0"
+      },
+      "_id": "eventsource@0.0.6",
+      "dist": {
+        "shasum": "9e8f6c056bf71e886d9ab08a9c5fba1e834f6210",
+        "tarball": "https://registry.npmjs.org/eventsource/-/eventsource-0.0.6.tgz"
+      },
+      "_npmVersion": "1.1.62",
+      "_npmUser": {
+        "name": "aslakhellesoy",
+        "email": "aslak.hellesoy@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "aslakhellesoy",
+          "email": "aslak.hellesoy@gmail.com"
+        }
+      ]
+    },
+    "0.0.7": {
+      "name": "eventsource",
+      "version": "0.0.7",
+      "description": "W3C compliant EventSource client for Node.js",
+      "keywords": [
+        "eventsource",
+        "http",
+        "streaming",
+        "sse"
+      ],
+      "homepage": "http://github.com/aslakhellesoy/eventsource-node",
+      "author": {
+        "name": "Aslak Hellesøy",
+        "email": "aslak.hellesoy@gmail.com"
+      },
+      "contributors": [
+        {
+          "name": "Aslak Hellesøy",
+          "email": "aslak.hellesoy@gmail.com"
+        },
+        {
+          "name": "Einar Otto Stangvik",
+          "email": "einaros+gh@gmail.com"
+        },
+        {
+          "name": "Dan North",
+          "email": "tastapod@gmail.com"
+        },
+        {
+          "name": "Scott Moak",
+          "email": "scott.moak@mybrainoncode.com"
+        },
+        {
+          "name": "William Wicks"
+        },
+        {
+          "name": "Devon Adkisson"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/aslakhellesoy/eventsource-node.git"
+      },
+      "bugs": {
+        "url": "http://github.com/aslakhellesoy/eventsource-node/issues"
+      },
+      "directories": {
+        "lib": "./lib"
+      },
+      "main": "./lib/eventsource",
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://github.com/aslakhellesoy/eventsource-node/raw/master/LICENSE"
+        }
+      ],
+      "devDependencies": {
+        "mocha": "~1.9.0",
+        "jison": "~0.4.4"
+      },
+      "scripts": {
+        "test": "make run-tests"
+      },
+      "engines": {
+        "node": ">=0.6.0"
+      },
+      "_id": "eventsource@0.0.7",
+      "dist": {
+        "shasum": "d052a2ade1e588e9a9d2eb6a7743ddb3379d882b",
+        "tarball": "https://registry.npmjs.org/eventsource/-/eventsource-0.0.7.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.2.2",
+      "_npmUser": {
+        "name": "aslakhellesoy",
+        "email": "aslak.hellesoy@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "aslakhellesoy",
+          "email": "aslak.hellesoy@gmail.com"
+        }
+      ]
+    },
+    "0.0.8": {
+      "name": "eventsource",
+      "version": "0.0.8",
+      "description": "W3C compliant EventSource client for Node.js",
+      "keywords": [
+        "eventsource",
+        "http",
+        "streaming",
+        "sse"
+      ],
+      "homepage": "http://github.com/aslakhellesoy/eventsource-node",
+      "author": {
+        "name": "Aslak Hellesøy",
+        "email": "aslak.hellesoy@gmail.com"
+      },
+      "contributors": [
+        {
+          "name": "Aslak Hellesøy",
+          "email": "aslak.hellesoy@gmail.com"
+        },
+        {
+          "name": "Einar Otto Stangvik",
+          "email": "einaros+gh@gmail.com"
+        },
+        {
+          "name": "Dan North",
+          "email": "tastapod@gmail.com"
+        },
+        {
+          "name": "Scott Moak",
+          "email": "scott.moak@mybrainoncode.com"
+        },
+        {
+          "name": "William Wicks"
+        },
+        {
+          "name": "Devon Adkisson"
+        },
+        {
+          "name": "FrozenCow",
+          "email": "frozencow@gmail.com"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/aslakhellesoy/eventsource-node.git"
+      },
+      "bugs": {
+        "url": "http://github.com/aslakhellesoy/eventsource-node/issues"
+      },
+      "directories": {
+        "lib": "./lib"
+      },
+      "main": "./lib/eventsource",
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://github.com/aslakhellesoy/eventsource-node/raw/master/LICENSE"
+        }
+      ],
+      "devDependencies": {
+        "mocha": "~1.9.0",
+        "jison": "~0.4.4"
+      },
+      "scripts": {
+        "test": "make run-tests"
+      },
+      "engines": {
+        "node": ">=0.6.0"
+      },
+      "_id": "eventsource@0.0.8",
+      "dist": {
+        "shasum": "3431160f8cfcf22821a01853c210c4d359ee1151",
+        "tarball": "https://registry.npmjs.org/eventsource/-/eventsource-0.0.8.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.8",
+      "_npmUser": {
+        "name": "aslakhellesoy",
+        "email": "aslak.hellesoy@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "aslakhellesoy",
+          "email": "aslak.hellesoy@gmail.com"
+        }
+      ]
+    },
+    "0.0.9": {
+      "name": "eventsource",
+      "version": "0.0.9",
+      "description": "W3C compliant EventSource client for Node.js",
+      "keywords": [
+        "eventsource",
+        "http",
+        "streaming",
+        "sse"
+      ],
+      "homepage": "http://github.com/aslakhellesoy/eventsource-node",
+      "author": {
+        "name": "Aslak Hellesøy",
+        "email": "aslak.hellesoy@gmail.com"
+      },
+      "contributors": [
+        {
+          "name": "Aslak Hellesøy",
+          "email": "aslak.hellesoy@gmail.com"
+        },
+        {
+          "name": "Einar Otto Stangvik",
+          "email": "einaros+gh@gmail.com"
+        },
+        {
+          "name": "Dan North",
+          "email": "tastapod@gmail.com"
+        },
+        {
+          "name": "Scott Moak",
+          "email": "scott.moak@mybrainoncode.com"
+        },
+        {
+          "name": "William Wicks"
+        },
+        {
+          "name": "Devon Adkisson"
+        },
+        {
+          "name": "FrozenCow",
+          "email": "frozencow@gmail.com"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/aslakhellesoy/eventsource-node.git"
+      },
+      "bugs": {
+        "url": "http://github.com/aslakhellesoy/eventsource-node/issues"
+      },
+      "directories": {
+        "lib": "./lib"
+      },
+      "main": "./lib/eventsource",
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://github.com/aslakhellesoy/eventsource-node/raw/master/LICENSE"
+        }
+      ],
+      "devDependencies": {
+        "mocha": "~1.9.0",
+        "jison": "~0.4.4"
+      },
+      "scripts": {
+        "test": "make run-tests"
+      },
+      "engines": {
+        "node": ">=0.6.0"
+      },
+      "_id": "eventsource@0.0.9",
+      "dist": {
+        "shasum": "ff59a6245e0fe2dfc6f921a5c9ace3b341002716",
+        "tarball": "https://registry.npmjs.org/eventsource/-/eventsource-0.0.9.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.11",
+      "_npmUser": {
+        "name": "aslakhellesoy",
+        "email": "aslak.hellesoy@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "aslakhellesoy",
+          "email": "aslak.hellesoy@gmail.com"
+        }
+      ]
+    },
+    "0.0.10": {
+      "name": "eventsource",
+      "version": "0.0.10",
+      "description": "W3C compliant EventSource client for Node.js",
+      "keywords": [
+        "eventsource",
+        "http",
+        "streaming",
+        "sse"
+      ],
+      "homepage": "http://github.com/aslakhellesoy/eventsource-node",
+      "author": {
+        "name": "Aslak Hellesøy",
+        "email": "aslak.hellesoy@gmail.com"
+      },
+      "contributors": [
+        {
+          "name": "Aslak Hellesøy",
+          "email": "aslak.hellesoy@gmail.com"
+        },
+        {
+          "name": "Einar Otto Stangvik",
+          "email": "einaros+gh@gmail.com"
+        },
+        {
+          "name": "Dan North",
+          "email": "tastapod@gmail.com"
+        },
+        {
+          "name": "Scott Moak",
+          "email": "scott.moak@mybrainoncode.com"
+        },
+        {
+          "name": "William Wicks"
+        },
+        {
+          "name": "Devon Adkisson"
+        },
+        {
+          "name": "FrozenCow",
+          "email": "frozencow@gmail.com"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/aslakhellesoy/eventsource-node.git"
+      },
+      "bugs": {
+        "url": "http://github.com/aslakhellesoy/eventsource-node/issues"
+      },
+      "directories": {
+        "lib": "./lib"
+      },
+      "main": "./lib/eventsource",
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://github.com/aslakhellesoy/eventsource-node/raw/master/LICENSE"
+        }
+      ],
+      "devDependencies": {
+        "mocha": "~1.9.0",
+        "jison": "~0.4.4"
+      },
+      "scripts": {
+        "test": "make run-tests"
+      },
+      "engines": {
+        "node": ">=0.6.0"
+      },
+      "_id": "eventsource@0.0.10",
+      "dist": {
+        "shasum": "4d3a0f9b2c70083444fee3c39a7b2bfcf2221cbb",
+        "tarball": "https://registry.npmjs.org/eventsource/-/eventsource-0.0.10.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.11",
+      "_npmUser": {
+        "name": "aslakhellesoy",
+        "email": "aslak.hellesoy@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "aslakhellesoy",
+          "email": "aslak.hellesoy@gmail.com"
+        }
+      ]
+    },
+    "0.1.0": {
+      "name": "eventsource",
+      "version": "0.1.0",
+      "description": "W3C compliant EventSource client for Node.js",
+      "keywords": [
+        "eventsource",
+        "http",
+        "streaming",
+        "sse"
+      ],
+      "homepage": "http://github.com/aslakhellesoy/eventsource-node",
+      "author": {
+        "name": "Aslak Hellesøy",
+        "email": "aslak.hellesoy@gmail.com"
+      },
+      "contributors": [
+        {
+          "name": "Aslak Hellesøy",
+          "email": "aslak.hellesoy@gmail.com"
+        },
+        {
+          "name": "Einar Otto Stangvik",
+          "email": "einaros+gh@gmail.com"
+        },
+        {
+          "name": "Dan North",
+          "email": "tastapod@gmail.com"
+        },
+        {
+          "name": "Scott Moak",
+          "email": "scott.moak@mybrainoncode.com"
+        },
+        {
+          "name": "William Wicks"
+        },
+        {
+          "name": "Devon Adkisson"
+        },
+        {
+          "name": "FrozenCow",
+          "email": "frozencow@gmail.com"
+        },
+        {
+          "name": "mbieser",
+          "email": "29erpilot@gmail.com"
+        },
+        {
+          "name": "qqueue",
+          "email": "queue@hakase.org"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/aslakhellesoy/eventsource-node.git"
+      },
+      "bugs": {
+        "url": "http://github.com/aslakhellesoy/eventsource-node/issues"
+      },
+      "directories": {
+        "lib": "./lib"
+      },
+      "main": "./lib/eventsource",
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://github.com/aslakhellesoy/eventsource-node/raw/master/LICENSE"
+        }
+      ],
+      "devDependencies": {
+        "mocha": "~1.17.1"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec"
+      },
+      "engines": {
+        "node": ">=0.6.0"
+      },
+      "_id": "eventsource@0.1.0",
+      "dist": {
+        "shasum": "b9f5bd8f173402e6758438d9cfba46643cd25a0a",
+        "tarball": "https://registry.npmjs.org/eventsource/-/eventsource-0.1.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.4.3",
+      "_npmUser": {
+        "name": "aslakhellesoy",
+        "email": "aslak.hellesoy@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "aslakhellesoy",
+          "email": "aslak.hellesoy@gmail.com"
+        }
+      ]
+    },
+    "0.1.1": {
+      "name": "eventsource",
+      "version": "0.1.1",
+      "description": "W3C compliant EventSource client for Node.js",
+      "keywords": [
+        "eventsource",
+        "http",
+        "streaming",
+        "sse"
+      ],
+      "homepage": "http://github.com/aslakhellesoy/eventsource-node",
+      "author": {
+        "name": "Aslak Hellesøy",
+        "email": "aslak.hellesoy@gmail.com"
+      },
+      "contributors": [
+        {
+          "name": "Aslak Hellesøy",
+          "email": "aslak.hellesoy@gmail.com"
+        },
+        {
+          "name": "Einar Otto Stangvik",
+          "email": "einaros+gh@gmail.com"
+        },
+        {
+          "name": "Dan North",
+          "email": "tastapod@gmail.com"
+        },
+        {
+          "name": "Scott Moak",
+          "email": "scott.moak@mybrainoncode.com"
+        },
+        {
+          "name": "William Wicks"
+        },
+        {
+          "name": "Devon Adkisson"
+        },
+        {
+          "name": "FrozenCow",
+          "email": "frozencow@gmail.com"
+        },
+        {
+          "name": "mbieser",
+          "email": "29erpilot@gmail.com"
+        },
+        {
+          "name": "qqueue",
+          "email": "queue@hakase.org"
+        },
+        {
+          "name": "Romain Gauthier"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/aslakhellesoy/eventsource-node.git"
+      },
+      "bugs": {
+        "url": "http://github.com/aslakhellesoy/eventsource-node/issues"
+      },
+      "directories": {
+        "lib": "./lib"
+      },
+      "main": "./lib/eventsource",
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://github.com/aslakhellesoy/eventsource-node/raw/master/LICENSE"
+        }
+      ],
+      "devDependencies": {
+        "mocha": "~1.19.0"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec"
+      },
+      "engines": {
+        "node": ">=0.6.0"
+      },
+      "_id": "eventsource@0.1.1",
+      "_shasum": "28e2eb6e15a7d89c6ffc92238aad1930eacb5da1",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "aslakhellesoy",
+        "email": "aslak.hellesoy@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "aslakhellesoy",
+          "email": "aslak.hellesoy@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "28e2eb6e15a7d89c6ffc92238aad1930eacb5da1",
+        "tarball": "https://registry.npmjs.org/eventsource/-/eventsource-0.1.1.tgz"
+      }
+    },
+    "0.1.2": {
+      "name": "eventsource",
+      "version": "0.1.2",
+      "description": "W3C compliant EventSource client for Node.js",
+      "keywords": [
+        "eventsource",
+        "http",
+        "streaming",
+        "sse"
+      ],
+      "homepage": "http://github.com/aslakhellesoy/eventsource-node",
+      "author": {
+        "name": "Aslak Hellesøy",
+        "email": "aslak.hellesoy@gmail.com"
+      },
+      "contributors": [
+        {
+          "name": "Aslak Hellesøy",
+          "email": "aslak.hellesoy@gmail.com"
+        },
+        {
+          "name": "Einar Otto Stangvik",
+          "email": "einaros+gh@gmail.com"
+        },
+        {
+          "name": "Dan North",
+          "email": "tastapod@gmail.com"
+        },
+        {
+          "name": "Scott Moak",
+          "email": "scott.moak@mybrainoncode.com"
+        },
+        {
+          "name": "William Wicks"
+        },
+        {
+          "name": "Devon Adkisson"
+        },
+        {
+          "name": "FrozenCow",
+          "email": "frozencow@gmail.com"
+        },
+        {
+          "name": "mbieser",
+          "email": "29erpilot@gmail.com"
+        },
+        {
+          "name": "qqueue",
+          "email": "queue@hakase.org"
+        },
+        {
+          "name": "Romain Gauthier"
+        },
+        {
+          "name": "Lesterpig",
+          "email": "loick.bt@gmail.com"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/aslakhellesoy/eventsource-node.git"
+      },
+      "bugs": {
+        "url": "http://github.com/aslakhellesoy/eventsource-node/issues"
+      },
+      "directories": {
+        "lib": "./lib"
+      },
+      "main": "./lib/eventsource",
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://github.com/aslakhellesoy/eventsource-node/raw/master/LICENSE"
+        }
+      ],
+      "devDependencies": {
+        "mocha": ">=1.21.4"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec"
+      },
+      "engines": {
+        "node": ">=0.6.0"
+      },
+      "_id": "eventsource@0.1.2",
+      "_shasum": "0d1c4777b017c66ec74f3920ca6fec32a3bfcbe3",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "aslakhellesoy",
+        "email": "aslak.hellesoy@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "aslakhellesoy",
+          "email": "aslak.hellesoy@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "0d1c4777b017c66ec74f3920ca6fec32a3bfcbe3",
+        "tarball": "https://registry.npmjs.org/eventsource/-/eventsource-0.1.2.tgz"
+      }
+    },
+    "0.1.3": {
+      "name": "eventsource",
+      "version": "0.1.3",
+      "description": "W3C compliant EventSource client for Node.js",
+      "keywords": [
+        "eventsource",
+        "http",
+        "streaming",
+        "sse"
+      ],
+      "homepage": "http://github.com/aslakhellesoy/eventsource-node",
+      "author": {
+        "name": "Aslak Hellesøy",
+        "email": "aslak.hellesoy@gmail.com"
+      },
+      "contributors": [
+        {
+          "name": "Aslak Hellesøy",
+          "email": "aslak.hellesoy@gmail.com"
+        },
+        {
+          "name": "Einar Otto Stangvik",
+          "email": "einaros+gh@gmail.com"
+        },
+        {
+          "name": "Dan North",
+          "email": "tastapod@gmail.com"
+        },
+        {
+          "name": "Scott Moak",
+          "email": "scott.moak@mybrainoncode.com"
+        },
+        {
+          "name": "William Wicks"
+        },
+        {
+          "name": "Devon Adkisson"
+        },
+        {
+          "name": "FrozenCow",
+          "email": "frozencow@gmail.com"
+        },
+        {
+          "name": "mbieser",
+          "email": "29erpilot@gmail.com"
+        },
+        {
+          "name": "qqueue",
+          "email": "queue@hakase.org"
+        },
+        {
+          "name": "Romain Gauthier"
+        },
+        {
+          "name": "Lesterpig",
+          "email": "loick.bt@gmail.com"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/aslakhellesoy/eventsource-node.git"
+      },
+      "bugs": {
+        "url": "http://github.com/aslakhellesoy/eventsource-node/issues"
+      },
+      "directories": {
+        "lib": "./lib"
+      },
+      "main": "./lib/eventsource",
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://github.com/aslakhellesoy/eventsource-node/raw/master/LICENSE"
+        }
+      ],
+      "devDependencies": {
+        "mocha": ">=1.21.4"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec"
+      },
+      "engines": {
+        "node": ">=0.6.0"
+      },
+      "gitHead": "256e577becc8c62510383b78d25e60897eb0d262",
+      "_id": "eventsource@0.1.3",
+      "_shasum": "6e802fc06a5ff964869bc95fb75ce2e99f1fedce",
+      "_from": ".",
+      "_npmVersion": "1.4.23",
+      "_npmUser": {
+        "name": "aslakhellesoy",
+        "email": "aslak.hellesoy@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "aslakhellesoy",
+          "email": "aslak.hellesoy@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "6e802fc06a5ff964869bc95fb75ce2e99f1fedce",
+        "tarball": "https://registry.npmjs.org/eventsource/-/eventsource-0.1.3.tgz"
+      }
+    },
+    "0.1.4": {
+      "name": "eventsource",
+      "version": "0.1.4",
+      "description": "W3C compliant EventSource client for Node.js",
+      "keywords": [
+        "eventsource",
+        "http",
+        "streaming",
+        "sse"
+      ],
+      "homepage": "http://github.com/aslakhellesoy/eventsource-node",
+      "author": {
+        "name": "Aslak Hellesøy",
+        "email": "aslak.hellesoy@gmail.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/aslakhellesoy/eventsource-node.git"
+      },
+      "bugs": {
+        "url": "http://github.com/aslakhellesoy/eventsource-node/issues"
+      },
+      "directories": {
+        "lib": "./lib"
+      },
+      "main": "./lib/eventsource",
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://github.com/aslakhellesoy/eventsource-node/raw/master/LICENSE"
+        }
+      ],
+      "devDependencies": {
+        "mocha": ">=1.21.4"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec",
+        "postpublish": "git push && git push --tags"
+      },
+      "engines": {
+        "node": ">=0.6.0"
+      },
+      "dependencies": {
+        "original": "^0.0.5"
+      },
+      "gitHead": "739bcc847806616e5c14d32e128d93faacac2c98",
+      "_id": "eventsource@0.1.4",
+      "_shasum": "b667d5d99948f9cbd8b249f154ac2a01b4f5ce22",
+      "_from": ".",
+      "_npmVersion": "1.4.23",
+      "_npmUser": {
+        "name": "aslakhellesoy",
+        "email": "aslak.hellesoy@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "aslakhellesoy",
+          "email": "aslak.hellesoy@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "b667d5d99948f9cbd8b249f154ac2a01b4f5ce22",
+        "tarball": "https://registry.npmjs.org/eventsource/-/eventsource-0.1.4.tgz"
+      }
+    },
+    "0.1.5": {
+      "name": "eventsource",
+      "version": "0.1.5",
+      "description": "W3C compliant EventSource client for Node.js",
+      "keywords": [
+        "eventsource",
+        "http",
+        "streaming",
+        "sse"
+      ],
+      "homepage": "http://github.com/aslakhellesoy/eventsource-node",
+      "author": {
+        "name": "Aslak Hellesøy",
+        "email": "aslak.hellesoy@gmail.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/aslakhellesoy/eventsource-node.git"
+      },
+      "bugs": {
+        "url": "http://github.com/aslakhellesoy/eventsource-node/issues"
+      },
+      "directories": {
+        "lib": "./lib"
+      },
+      "main": "./lib/eventsource",
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://github.com/aslakhellesoy/eventsource-node/raw/master/LICENSE"
+        }
+      ],
+      "devDependencies": {
+        "mocha": ">=1.21.4"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec",
+        "postpublish": "git push && git push --tags"
+      },
+      "engines": {
+        "node": ">=0.8.0"
+      },
+      "dependencies": {
+        "original": ">=0.0.5"
+      },
+      "gitHead": "de40fd04dce861216324bd6a6fe3d3e87e3fedd7",
+      "_id": "eventsource@0.1.5",
+      "_shasum": "e5bd748a2f4063d39199ed5061dedb1558848e5f",
+      "_from": ".",
+      "_npmVersion": "2.4.1",
+      "_nodeVersion": "1.1.0",
+      "_npmUser": {
+        "name": "aslakhellesoy",
+        "email": "aslak.hellesoy@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "aslakhellesoy",
+          "email": "aslak.hellesoy@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "e5bd748a2f4063d39199ed5061dedb1558848e5f",
+        "tarball": "https://registry.npmjs.org/eventsource/-/eventsource-0.1.5.tgz"
+      }
+    },
+    "0.1.6": {
+      "name": "eventsource",
+      "version": "0.1.6",
+      "description": "W3C compliant EventSource client for Node.js",
+      "keywords": [
+        "eventsource",
+        "http",
+        "streaming",
+        "sse"
+      ],
+      "homepage": "http://github.com/aslakhellesoy/eventsource-node",
+      "author": {
+        "name": "Aslak Hellesøy",
+        "email": "aslak.hellesoy@gmail.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/aslakhellesoy/eventsource-node.git"
+      },
+      "bugs": {
+        "url": "http://github.com/aslakhellesoy/eventsource-node/issues"
+      },
+      "directories": {
+        "lib": "./lib"
+      },
+      "main": "./lib/eventsource",
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://github.com/aslakhellesoy/eventsource-node/raw/master/LICENSE"
+        }
+      ],
+      "devDependencies": {
+        "mocha": ">=1.21.4"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec",
+        "postpublish": "git push && git push --tags"
+      },
+      "engines": {
+        "node": ">=0.8.0"
+      },
+      "dependencies": {
+        "original": ">=0.0.5"
+      },
+      "gitHead": "c93edb547891f7cbd8d576751427445029bb782b",
+      "_id": "eventsource@0.1.6",
+      "_shasum": "0acede849ed7dd1ccc32c811bb11b944d4f29232",
+      "_from": ".",
+      "_npmVersion": "2.5.1",
+      "_nodeVersion": "0.12.0",
+      "_npmUser": {
+        "name": "aslakhellesoy",
+        "email": "aslak.hellesoy@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "aslakhellesoy",
+          "email": "aslak.hellesoy@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "0acede849ed7dd1ccc32c811bb11b944d4f29232",
+        "tarball": "https://registry.npmjs.org/eventsource/-/eventsource-0.1.6.tgz"
+      }
+    },
+    "0.2.0": {
+      "name": "eventsource",
+      "version": "0.2.0",
+      "description": "W3C compliant EventSource client for Node.js",
+      "keywords": [
+        "eventsource",
+        "http",
+        "streaming",
+        "sse"
+      ],
+      "homepage": "http://github.com/aslakhellesoy/eventsource-node",
+      "author": {
+        "name": "Aslak Hellesøy",
+        "email": "aslak.hellesoy@gmail.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/aslakhellesoy/eventsource-node.git"
+      },
+      "bugs": {
+        "url": "http://github.com/aslakhellesoy/eventsource-node/issues"
+      },
+      "directories": {
+        "lib": "./lib"
+      },
+      "main": "./lib/eventsource",
+      "license": "MIT",
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://github.com/aslakhellesoy/eventsource-node/raw/master/LICENSE"
+        }
+      ],
+      "devDependencies": {
+        "express": "^4.13.4",
+        "mocha": "^2.4.5",
+        "serve-static": "^1.10.2",
+        "sse": "^0.0.6",
+        "webpack": "^1.12.13"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec",
+        "polyfill": "webpack lib/eventsource-polyfill.js example/eventsource-polyfill.js",
+        "postpublish": "git push && git push --tags"
+      },
+      "engines": {
+        "node": ">=0.8.0"
+      },
+      "dependencies": {
+        "original": "^1.0.0"
+      },
+      "gitHead": "bd819d5a58c2d9f6bcd18eb5cbcd8523907a6a45",
+      "_id": "eventsource@0.2.0",
+      "_shasum": "f017d4689c5dd0a2836b1ba616b30a9734fc8eeb",
+      "_from": ".",
+      "_npmVersion": "3.3.12",
+      "_nodeVersion": "5.4.1",
+      "_npmUser": {
+        "name": "aslakhellesoy",
+        "email": "aslak.hellesoy@gmail.com"
+      },
+      "dist": {
+        "shasum": "f017d4689c5dd0a2836b1ba616b30a9734fc8eeb",
+        "tarball": "https://registry.npmjs.org/eventsource/-/eventsource-0.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "aslakhellesoy",
+          "email": "aslak.hellesoy@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-5-east.internal.npmjs.com",
+        "tmp": "tmp/eventsource-0.2.0.tgz_1455204080022_0.468941783066839"
+      }
+    },
+    "0.2.1": {
+      "name": "eventsource",
+      "version": "0.2.1",
+      "description": "W3C compliant EventSource client for Node.js and browser (polyfill)",
+      "keywords": [
+        "eventsource",
+        "http",
+        "streaming",
+        "sse",
+        "polyfill"
+      ],
+      "homepage": "http://github.com/aslakhellesoy/eventsource",
+      "author": {
+        "name": "Aslak Hellesøy",
+        "email": "aslak.hellesoy@gmail.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/aslakhellesoy/eventsource.git"
+      },
+      "bugs": {
+        "url": "http://github.com/aslakhellesoy/eventsource/issues"
+      },
+      "directories": {
+        "lib": "./lib"
+      },
+      "main": "./lib/eventsource",
+      "license": "MIT",
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://github.com/aslakhellesoy/eventsource/raw/master/LICENSE"
+        }
+      ],
+      "devDependencies": {
+        "express": "^4.13.4",
+        "mocha": "^2.4.5",
+        "serve-static": "^1.10.2",
+        "sse": "^0.0.6",
+        "webpack": "^1.12.14"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec",
+        "polyfill": "webpack lib/eventsource-polyfill.js example/eventsource-polyfill.js",
+        "postpublish": "git push && git push --tags"
+      },
+      "engines": {
+        "node": ">=0.8.0"
+      },
+      "dependencies": {
+        "original": "^1.0.0"
+      },
+      "gitHead": "d7b9f6838797736769ab416f9db97239513a949f",
+      "_id": "eventsource@0.2.1",
+      "_shasum": "662bf85f376e73b5c34c2ee17db566b8419a6232",
+      "_from": ".",
+      "_npmVersion": "3.6.0",
+      "_nodeVersion": "5.7.0",
+      "_npmUser": {
+        "name": "aslakhellesoy",
+        "email": "aslak.hellesoy@gmail.com"
+      },
+      "dist": {
+        "shasum": "662bf85f376e73b5c34c2ee17db566b8419a6232",
+        "tarball": "https://registry.npmjs.org/eventsource/-/eventsource-0.2.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "aslakhellesoy",
+          "email": "aslak.hellesoy@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-5-east.internal.npmjs.com",
+        "tmp": "tmp/eventsource-0.2.1.tgz_1456693499748_0.8380360226146877"
+      }
+    },
+    "0.2.2": {
+      "name": "eventsource",
+      "version": "0.2.2",
+      "description": "W3C compliant EventSource client for Node.js and browser (polyfill)",
+      "keywords": [
+        "eventsource",
+        "http",
+        "streaming",
+        "sse",
+        "polyfill"
+      ],
+      "homepage": "http://github.com/aslakhellesoy/eventsource",
+      "author": {
+        "name": "Aslak Hellesøy",
+        "email": "aslak.hellesoy@gmail.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/aslakhellesoy/eventsource.git"
+      },
+      "bugs": {
+        "url": "http://github.com/aslakhellesoy/eventsource/issues"
+      },
+      "directories": {
+        "lib": "./lib"
+      },
+      "main": "./lib/eventsource",
+      "license": "MIT",
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://github.com/aslakhellesoy/eventsource/raw/master/LICENSE"
+        }
+      ],
+      "devDependencies": {
+        "express": "^4.13.4",
+        "mocha": "^2.4.5",
+        "serve-static": "^1.10.2",
+        "sse": "^0.0.6",
+        "webpack": "^1.12.14"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec",
+        "polyfill": "webpack lib/eventsource-polyfill.js example/eventsource-polyfill.js",
+        "postpublish": "git push && git push --tags"
+      },
+      "engines": {
+        "node": ">=0.8.0"
+      },
+      "dependencies": {
+        "original": "^1.0.0"
+      },
+      "gitHead": "b59da74de5916c45489f6362724f5225bae89e9a",
+      "_id": "eventsource@0.2.2",
+      "_shasum": "8ac0576cbd16ee83478b3faaf27bdc7b7c8fcca9",
+      "_from": ".",
+      "_npmVersion": "4.1.2",
+      "_nodeVersion": "7.6.0",
+      "_npmUser": {
+        "name": "rexxars",
+        "email": "rexxars@gmail.com"
+      },
+      "dist": {
+        "shasum": "8ac0576cbd16ee83478b3faaf27bdc7b7c8fcca9",
+        "tarball": "https://registry.npmjs.org/eventsource/-/eventsource-0.2.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "aslakhellesoy",
+          "email": "aslak.hellesoy@gmail.com"
+        },
+        {
+          "name": "rexxars",
+          "email": "rexxars@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/eventsource-0.2.2.tgz_1488300037355_0.723630438093096"
+      }
+    },
+    "0.2.3": {
+      "name": "eventsource",
+      "version": "0.2.3",
+      "description": "W3C compliant EventSource client for Node.js and browser (polyfill)",
+      "keywords": [
+        "eventsource",
+        "http",
+        "streaming",
+        "sse",
+        "polyfill"
+      ],
+      "homepage": "http://github.com/EventSource/eventsource",
+      "author": {
+        "name": "Aslak Hellesøy",
+        "email": "aslak.hellesoy@gmail.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/EventSource/eventsource.git"
+      },
+      "bugs": {
+        "url": "http://github.com/EventSource/eventsource/issues"
+      },
+      "directories": {
+        "lib": "./lib"
+      },
+      "main": "./lib/eventsource",
+      "license": "MIT",
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://github.com/EventSource/eventsource/raw/master/LICENSE"
+        }
+      ],
+      "devDependencies": {
+        "express": "^4.13.4",
+        "mocha": "^3.2.0",
+        "serve-static": "^1.10.2",
+        "sse": "^0.0.6",
+        "webpack": "^2.4.1"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec",
+        "polyfill": "webpack lib/eventsource-polyfill.js example/eventsource-polyfill.js",
+        "postpublish": "git push && git push --tags"
+      },
+      "engines": {
+        "node": ">=0.8.0"
+      },
+      "dependencies": {
+        "original": "^1.0.0"
+      },
+      "gitHead": "d763f3a2421f62f4e125d64e62f7a87eac155bca",
+      "_id": "eventsource@0.2.3",
+      "_shasum": "30b8f21b40d86968eaeebd199a95072ee54b0df3",
+      "_from": ".",
+      "_npmVersion": "4.1.2",
+      "_nodeVersion": "7.6.0",
+      "_npmUser": {
+        "name": "rexxars",
+        "email": "rexxars@gmail.com"
+      },
+      "dist": {
+        "shasum": "30b8f21b40d86968eaeebd199a95072ee54b0df3",
+        "tarball": "https://registry.npmjs.org/eventsource/-/eventsource-0.2.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "aslakhellesoy",
+          "email": "aslak.hellesoy@gmail.com"
+        },
+        {
+          "name": "rexxars",
+          "email": "rexxars@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/eventsource-0.2.3.tgz_1492430130836_0.005509671987965703"
+      }
+    },
+    "1.0.0": {
+      "name": "eventsource",
+      "version": "1.0.0",
+      "description": "W3C compliant EventSource client for Node.js and browser (polyfill)",
+      "keywords": [
+        "eventsource",
+        "http",
+        "streaming",
+        "sse",
+        "polyfill"
+      ],
+      "homepage": "http://github.com/EventSource/eventsource",
+      "author": {
+        "name": "Aslak Hellesøy",
+        "email": "aslak.hellesoy@gmail.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/EventSource/eventsource.git"
+      },
+      "bugs": {
+        "url": "http://github.com/EventSource/eventsource/issues"
+      },
+      "directories": {
+        "lib": "./lib"
+      },
+      "main": "./lib/eventsource",
+      "license": "MIT",
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://github.com/EventSource/eventsource/raw/master/LICENSE"
+        }
+      ],
+      "devDependencies": {
+        "express": "^4.13.4",
+        "mocha": "^3.2.0",
+        "nyc": "^10.2.0",
+        "serve-static": "^1.10.2",
+        "sse": "^0.0.6",
+        "standard": "^10.0.2",
+        "webpack": "^2.4.1"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec && standard",
+        "polyfill": "webpack lib/eventsource-polyfill.js example/eventsource-polyfill.js",
+        "postpublish": "git push && git push --tags",
+        "coverage": "nyc --reporter=html --reporter=text _mocha --reporter spec"
+      },
+      "engines": {
+        "node": ">=0.12.0"
+      },
+      "dependencies": {
+        "original": "^1.0.0"
+      },
+      "standard": {
+        "ignore": [
+          "example/eventsource-polyfill.js"
+        ]
+      },
+      "gitHead": "3a4445f431560ef67c9cdbe74c238c94a5aecf3b",
+      "_id": "eventsource@1.0.0",
+      "_shasum": "27f11c7a3ea5e129870de1b3ad05d09da60e2a20",
+      "_from": ".",
+      "_npmVersion": "4.1.2",
+      "_nodeVersion": "7.6.0",
+      "_npmUser": {
+        "name": "rexxars",
+        "email": "rexxars@gmail.com"
+      },
+      "dist": {
+        "shasum": "27f11c7a3ea5e129870de1b3ad05d09da60e2a20",
+        "tarball": "https://registry.npmjs.org/eventsource/-/eventsource-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "aslakhellesoy",
+          "email": "aslak.hellesoy@gmail.com"
+        },
+        {
+          "name": "rexxars",
+          "email": "rexxars@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/eventsource-1.0.0.tgz_1492450536869_0.8871331766713411"
+      }
+    },
+    "1.0.1": {
+      "name": "eventsource",
+      "version": "1.0.1",
+      "description": "W3C compliant EventSource client for Node.js and browser (polyfill)",
+      "keywords": [
+        "eventsource",
+        "http",
+        "streaming",
+        "sse",
+        "polyfill"
+      ],
+      "homepage": "http://github.com/EventSource/eventsource",
+      "author": {
+        "name": "Aslak Hellesøy",
+        "email": "aslak.hellesoy@gmail.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/EventSource/eventsource.git"
+      },
+      "bugs": {
+        "url": "http://github.com/EventSource/eventsource/issues"
+      },
+      "directories": {
+        "lib": "./lib"
+      },
+      "main": "./lib/eventsource",
+      "license": "MIT",
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://github.com/EventSource/eventsource/raw/master/LICENSE"
+        }
+      ],
+      "devDependencies": {
+        "express": "^4.13.4",
+        "mocha": "^3.2.0",
+        "nyc": "^10.2.0",
+        "serve-static": "^1.10.2",
+        "sse": "^0.0.6",
+        "standard": "^10.0.2",
+        "webpack": "^2.4.1"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec && standard",
+        "polyfill": "webpack lib/eventsource-polyfill.js example/eventsource-polyfill.js",
+        "postpublish": "git push && git push --tags",
+        "coverage": "nyc --reporter=html --reporter=text _mocha --reporter spec"
+      },
+      "engines": {
+        "node": ">=0.12.0"
+      },
+      "dependencies": {
+        "original": "^1.0.0"
+      },
+      "standard": {
+        "ignore": [
+          "example/eventsource-polyfill.js"
+        ]
+      },
+      "gitHead": "9ae13c008b09fbd525bfd3ddce7139b3c8bfd3d0",
+      "_id": "eventsource@1.0.1",
+      "_shasum": "a41b029d19a83d098701ed415c9578b7025b2cdb",
+      "_from": ".",
+      "_npmVersion": "4.1.2",
+      "_nodeVersion": "7.6.0",
+      "_npmUser": {
+        "name": "rexxars",
+        "email": "rexxars@gmail.com"
+      },
+      "dist": {
+        "shasum": "a41b029d19a83d098701ed415c9578b7025b2cdb",
+        "tarball": "https://registry.npmjs.org/eventsource/-/eventsource-1.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "aslakhellesoy",
+          "email": "aslak.hellesoy@gmail.com"
+        },
+        {
+          "name": "rexxars",
+          "email": "rexxars@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/eventsource-1.0.1.tgz_1494404201251_0.5732321164105088"
+      }
+    },
+    "1.0.2": {
+      "name": "eventsource",
+      "version": "1.0.2",
+      "description": "W3C compliant EventSource client for Node.js and browser (polyfill)",
+      "keywords": [
+        "eventsource",
+        "http",
+        "streaming",
+        "sse",
+        "polyfill"
+      ],
+      "homepage": "http://github.com/EventSource/eventsource",
+      "author": {
+        "name": "Aslak Hellesøy",
+        "email": "aslak.hellesoy@gmail.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/EventSource/eventsource.git"
+      },
+      "bugs": {
+        "url": "http://github.com/EventSource/eventsource/issues"
+      },
+      "directories": {
+        "lib": "./lib"
+      },
+      "main": "./lib/eventsource",
+      "license": "MIT",
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://github.com/EventSource/eventsource/raw/master/LICENSE"
+        }
+      ],
+      "devDependencies": {
+        "express": "^4.15.3",
+        "mocha": "^3.4.2",
+        "nyc": "^10.3.2",
+        "serve-static": "^1.12.3",
+        "sse": "^0.0.6",
+        "standard": "^10.0.2",
+        "webpack": "^2.6.1"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec && standard",
+        "polyfill": "webpack lib/eventsource-polyfill.js example/eventsource-polyfill.js",
+        "postpublish": "git push && git push --tags",
+        "coverage": "nyc --reporter=html --reporter=text _mocha --reporter spec"
+      },
+      "engines": {
+        "node": ">=0.12.0"
+      },
+      "dependencies": {
+        "original": "^1.0.0"
+      },
+      "standard": {
+        "ignore": [
+          "example/eventsource-polyfill.js"
+        ]
+      },
+      "gitHead": "c2b00782096c3cc57c921b716f98584a03ef952b",
+      "_id": "eventsource@1.0.2",
+      "_shasum": "2f35ad0f52e40527b787251aab25956eba6e49c8",
+      "_from": ".",
+      "_npmVersion": "4.1.2",
+      "_nodeVersion": "7.6.0",
+      "_npmUser": {
+        "name": "rexxars",
+        "email": "rexxars@gmail.com"
+      },
+      "dist": {
+        "shasum": "2f35ad0f52e40527b787251aab25956eba6e49c8",
+        "tarball": "https://registry.npmjs.org/eventsource/-/eventsource-1.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "aslakhellesoy",
+          "email": "aslak.hellesoy@gmail.com"
+        },
+        {
+          "name": "rexxars",
+          "email": "rexxars@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eventsource-1.0.2.tgz_1495977669376_0.15441277250647545"
+      }
+    },
+    "1.0.3": {
+      "name": "eventsource",
+      "version": "1.0.3",
+      "description": "W3C compliant EventSource client for Node.js and browser (polyfill)",
+      "keywords": [
+        "eventsource",
+        "http",
+        "streaming",
+        "sse",
+        "polyfill"
+      ],
+      "homepage": "http://github.com/EventSource/eventsource",
+      "author": {
+        "name": "Aslak Hellesøy",
+        "email": "aslak.hellesoy@gmail.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/EventSource/eventsource.git"
+      },
+      "bugs": {
+        "url": "http://github.com/EventSource/eventsource/issues"
+      },
+      "directories": {
+        "lib": "./lib"
+      },
+      "main": "./lib/eventsource",
+      "license": "MIT",
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://github.com/EventSource/eventsource/raw/master/LICENSE"
+        }
+      ],
+      "devDependencies": {
+        "express": "^4.15.3",
+        "mocha": "^3.4.2",
+        "nyc": "^11.0.2",
+        "serve-static": "^1.12.3",
+        "sse": "^0.0.6",
+        "standard": "^10.0.2",
+        "webpack": "^3.0.0"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec && standard",
+        "polyfill": "webpack lib/eventsource-polyfill.js example/eventsource-polyfill.js",
+        "postpublish": "git push && git push --tags",
+        "coverage": "nyc --reporter=html --reporter=text _mocha --reporter spec"
+      },
+      "engines": {
+        "node": ">=0.12.0"
+      },
+      "dependencies": {
+        "original": "^1.0.0"
+      },
+      "standard": {
+        "ignore": [
+          "example/eventsource-polyfill.js"
+        ]
+      },
+      "gitHead": "7771296da494810092921f338a109f4f50301c55",
+      "_id": "eventsource@1.0.3",
+      "_shasum": "b8d4af2a63ef7f940ef9b22007f7317dc413ae30",
+      "_from": ".",
+      "_npmVersion": "4.1.2",
+      "_nodeVersion": "7.6.0",
+      "_npmUser": {
+        "name": "rexxars",
+        "email": "rexxars@gmail.com"
+      },
+      "dist": {
+        "shasum": "b8d4af2a63ef7f940ef9b22007f7317dc413ae30",
+        "tarball": "https://registry.npmjs.org/eventsource/-/eventsource-1.0.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "aslakhellesoy",
+          "email": "aslak.hellesoy@gmail.com"
+        },
+        {
+          "name": "rexxars",
+          "email": "rexxars@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eventsource-1.0.3.tgz_1497899130781_0.23276749649085104"
+      }
+    },
+    "1.0.4": {
+      "name": "eventsource",
+      "version": "1.0.4",
+      "description": "W3C compliant EventSource client for Node.js and browser (polyfill)",
+      "keywords": [
+        "eventsource",
+        "http",
+        "streaming",
+        "sse",
+        "polyfill"
+      ],
+      "homepage": "http://github.com/EventSource/eventsource",
+      "author": {
+        "name": "Aslak Hellesøy",
+        "email": "aslak.hellesoy@gmail.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/EventSource/eventsource.git"
+      },
+      "bugs": {
+        "url": "http://github.com/EventSource/eventsource/issues"
+      },
+      "directories": {
+        "lib": "./lib"
+      },
+      "main": "./lib/eventsource",
+      "license": "MIT",
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://github.com/EventSource/eventsource/raw/master/LICENSE"
+        }
+      ],
+      "devDependencies": {
+        "express": "^4.15.3",
+        "mocha": "^3.4.2",
+        "nyc": "^11.0.2",
+        "serve-static": "^1.12.3",
+        "sse": "^0.0.6",
+        "standard": "^10.0.2",
+        "webpack": "^3.0.0"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec && standard",
+        "polyfill": "webpack lib/eventsource-polyfill.js example/eventsource-polyfill.js",
+        "postpublish": "git push && git push --tags",
+        "coverage": "nyc --reporter=html --reporter=text _mocha --reporter spec"
+      },
+      "engines": {
+        "node": ">=0.12.0"
+      },
+      "dependencies": {
+        "original": "^1.0.0"
+      },
+      "standard": {
+        "ignore": [
+          "example/eventsource-polyfill.js"
+        ]
+      },
+      "gitHead": "9c80e0aef9f438fbd7cf4fc61b4b4ab793773617",
+      "_id": "eventsource@1.0.4",
+      "_shasum": "029450d04ebd34e4cf061788c595faa5f4c10843",
+      "_from": ".",
+      "_npmVersion": "4.1.2",
+      "_nodeVersion": "7.6.0",
+      "_npmUser": {
+        "name": "rexxars",
+        "email": "rexxars@gmail.com"
+      },
+      "dist": {
+        "shasum": "029450d04ebd34e4cf061788c595faa5f4c10843",
+        "tarball": "https://registry.npmjs.org/eventsource/-/eventsource-1.0.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "aslakhellesoy",
+          "email": "aslak.hellesoy@gmail.com"
+        },
+        {
+          "name": "rexxars",
+          "email": "rexxars@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eventsource-1.0.4.tgz_1497899471781_0.1646825314965099"
+      }
+    },
+    "1.0.5": {
+      "name": "eventsource",
+      "version": "1.0.5",
+      "description": "W3C compliant EventSource client for Node.js and browser (polyfill)",
+      "keywords": [
+        "eventsource",
+        "http",
+        "streaming",
+        "sse",
+        "polyfill"
+      ],
+      "homepage": "http://github.com/EventSource/eventsource",
+      "author": {
+        "name": "Aslak Hellesøy",
+        "email": "aslak.hellesoy@gmail.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/EventSource/eventsource.git"
+      },
+      "bugs": {
+        "url": "http://github.com/EventSource/eventsource/issues"
+      },
+      "directories": {
+        "lib": "./lib"
+      },
+      "main": "./lib/eventsource",
+      "license": "MIT",
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://github.com/EventSource/eventsource/raw/master/LICENSE"
+        }
+      ],
+      "devDependencies": {
+        "express": "^4.15.3",
+        "mocha": "^3.4.2",
+        "nyc": "^11.0.2",
+        "serve-static": "^1.12.3",
+        "sse": "^0.0.6",
+        "standard": "^10.0.2",
+        "webpack": "^3.0.0"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec && standard",
+        "polyfill": "webpack lib/eventsource-polyfill.js example/eventsource-polyfill.js",
+        "postpublish": "git push && git push --tags",
+        "coverage": "nyc --reporter=html --reporter=text _mocha --reporter spec"
+      },
+      "engines": {
+        "node": ">=0.12.0"
+      },
+      "dependencies": {
+        "original": "^1.0.0"
+      },
+      "standard": {
+        "ignore": [
+          "example/eventsource-polyfill.js"
+        ]
+      },
+      "gitHead": "db39df4ec31ce0a1d624c8b1bd1bcb17ae8b3cff",
+      "_id": "eventsource@1.0.5",
+      "_npmVersion": "5.0.3",
+      "_nodeVersion": "8.1.4",
+      "_npmUser": {
+        "name": "rexxars",
+        "email": "rexxars@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-IzjLaND9GBK3+fBPhmvG/Yq3FhSDGHnucJCDWhNsneLlN+HX5jeaSpl3Folr2PipGmyUsd/T2Vrua+s6I2aTgQ==",
+        "shasum": "1f012c9df0bd8832fd6b1744fea00ccdd479f046",
+        "tarball": "https://registry.npmjs.org/eventsource/-/eventsource-1.0.5.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "aslakhellesoy",
+          "email": "aslak.hellesoy@gmail.com"
+        },
+        {
+          "name": "rexxars",
+          "email": "rexxars@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eventsource-1.0.5.tgz_1500393708327_0.3151747293304652"
+      }
+    },
+    "1.0.6": {
+      "name": "eventsource",
+      "version": "1.0.6",
+      "description": "W3C compliant EventSource client for Node.js and browser (polyfill)",
+      "keywords": [
+        "eventsource",
+        "http",
+        "streaming",
+        "sse",
+        "polyfill"
+      ],
+      "homepage": "http://github.com/EventSource/eventsource",
+      "author": {
+        "name": "Aslak Hellesøy",
+        "email": "aslak.hellesoy@gmail.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/EventSource/eventsource.git"
+      },
+      "bugs": {
+        "url": "http://github.com/EventSource/eventsource/issues"
+      },
+      "directories": {
+        "lib": "./lib"
+      },
+      "main": "./lib/eventsource",
+      "license": "MIT",
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://github.com/EventSource/eventsource/raw/master/LICENSE"
+        }
+      ],
+      "devDependencies": {
+        "buffer-from": "^1.1.1",
+        "express": "^4.15.3",
+        "mocha": "^3.5.3",
+        "nyc": "^11.2.1",
+        "serve-static": "^1.12.3",
+        "ssestream": "^1.0.0",
+        "standard": "^10.0.2",
+        "webpack": "^3.5.6"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec && standard",
+        "polyfill": "webpack lib/eventsource-polyfill.js example/eventsource-polyfill.js",
+        "postpublish": "git push && git push --tags",
+        "coverage": "nyc --reporter=html --reporter=text _mocha --reporter spec"
+      },
+      "engines": {
+        "node": ">=0.12.0"
+      },
+      "dependencies": {
+        "original": "^1.0.0"
+      },
+      "standard": {
+        "ignore": [
+          "example/eventsource-polyfill.js"
+        ]
+      },
+      "gitHead": "6503549b8a1bb94be902956b2ddf1d959535b5de",
+      "_id": "eventsource@1.0.6",
+      "_npmVersion": "6.2.0",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "rexxars",
+        "email": "espen@hovlandsdal.com"
+      },
+      "dist": {
+        "integrity": "sha512-4PLkvCFuPlFqjEnW2bvHQGwEOMuwK2Whz39WLdY6b5wDXz1/OXSui5jdqQzVh8K8AXKEoeLL24XdYIn/9u23lQ==",
+        "shasum": "5cacde6c686f55135cfbb85c4e90a3b66c46124a",
+        "tarball": "https://registry.npmjs.org/eventsource/-/eventsource-1.0.6.tgz",
+        "fileCount": 14,
+        "unpackedSize": 443626,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbfmajCRA9TVsSAnZWagAArzIP/0If9O6M34qhTxfmDfiK\nXST/33HPa+pzDBzWtK0QsRPYoABt2kWEG1mSaibTtDzQJBUETJVI/gVzcyBk\nceWYMXrLqGQoYyQOMlwHA2IcUpUuk5/pmEpLMRX/piJ3ziJF+nWx2SIPTkpI\nQ7fK1062DN9Hz3INUBmKeo8flwUfOHVWXssS10AVmWB53AkrMBseHtssXhoU\nP/WEBfgmz/GC+BotYXx1zObJYDqlIN3nwyj6oEA+x+Lg7jDaS1ONBkn0DJ6q\nrqTNGbXce4QtrGOTid0Y6vxqO1Y9tl17SqmfpS4lK0qSlJmXGqBeEBW6zn9x\nckcvRjcfe6WntIglLNrRfkNHfXmhKiMkHFeqXS24NtsM4IBS9FcIX6HQwo+Q\nK2XrT7dGfOaCfp9a1c4ffn9EnNxc8KCmPyMDeu+SbuCNG1CDur0jSkbXypsr\ntGys60uHwf5X4IpxpQMIksVC8R/3RzgZuSCcleNtv5i6TI1niN7yoMxz+nPX\nFCr5kPj3aI1SNlNi+qfApEfpiNrohPSQYaAghCoHLb/S8b+3rp/7Pd4pT7ky\nYnusk9jGxnSVJeDgHbJ2gsGquImv81navSYLKZKBJEqwKWU3ABaSff2dOdez\n8aPEGAuOKi6ExQiCniHx78iEmpj8gxrkBgtgyKkZeoipCpp16bnhXmEzHQ74\nZuJH\r\n=l6dz\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "aslakhellesoy",
+          "email": "aslak.hellesoy@gmail.com"
+        },
+        {
+          "name": "rexxars",
+          "email": "rexxars@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eventsource_1.0.6_1535010466354_0.02630811406203093"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.0.7": {
+      "name": "eventsource",
+      "version": "1.0.7",
+      "description": "W3C compliant EventSource client for Node.js and browser (polyfill)",
+      "keywords": [
+        "eventsource",
+        "http",
+        "streaming",
+        "sse",
+        "polyfill"
+      ],
+      "homepage": "http://github.com/EventSource/eventsource",
+      "author": {
+        "name": "Aslak Hellesøy",
+        "email": "aslak.hellesoy@gmail.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/EventSource/eventsource.git"
+      },
+      "bugs": {
+        "url": "http://github.com/EventSource/eventsource/issues"
+      },
+      "directories": {
+        "lib": "./lib"
+      },
+      "main": "./lib/eventsource",
+      "license": "MIT",
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://github.com/EventSource/eventsource/raw/master/LICENSE"
+        }
+      ],
+      "devDependencies": {
+        "buffer-from": "^1.1.1",
+        "express": "^4.15.3",
+        "mocha": "^3.5.3",
+        "nyc": "^11.2.1",
+        "serve-static": "^1.12.3",
+        "ssestream": "^1.0.0",
+        "standard": "^10.0.2",
+        "webpack": "^3.5.6"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec && standard",
+        "polyfill": "webpack lib/eventsource-polyfill.js example/eventsource-polyfill.js",
+        "postpublish": "git push && git push --tags",
+        "coverage": "nyc --reporter=html --reporter=text _mocha --reporter spec"
+      },
+      "engines": {
+        "node": ">=0.12.0"
+      },
+      "dependencies": {
+        "original": "^1.0.0"
+      },
+      "standard": {
+        "ignore": [
+          "example/eventsource-polyfill.js"
+        ]
+      },
+      "gitHead": "5209cc181df083bee9d2bbab12a88f7a262fd7b7",
+      "_id": "eventsource@1.0.7",
+      "_npmVersion": "6.2.0",
+      "_nodeVersion": "10.8.0",
+      "_npmUser": {
+        "name": "rexxars",
+        "email": "espen@hovlandsdal.com"
+      },
+      "dist": {
+        "integrity": "sha512-4Ln17+vVT0k8aWq+t/bF5arcS3EpT9gYtW66EPacdj/mAFevznsnyoHLPy2BA8gbIQeIHoPsvwmfBftfcG//BQ==",
+        "shasum": "8fbc72c93fcd34088090bc0a4e64f4b5cee6d8d0",
+        "tarball": "https://registry.npmjs.org/eventsource/-/eventsource-1.0.7.tgz",
+        "fileCount": 14,
+        "unpackedSize": 444756,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbhGFrCRA9TVsSAnZWagAADW8P/RR8yx2oX70lJevugxGU\nFmfZVq/Xbi7qBOztwpEgl4yxLWJ3W3Sb6XdYcgK2eu0TmAvWxj/BZS/jbYEn\nOWHbK5rVVCcTkDh6FwpkevsqEOXChZeEd9q+jW3R9QT5gNBKTlun0PIY5Oo5\nj1n0GazE7E08CA0/zGtLl4CRfQ00ZlXw6R4AE46wQluy+RBHrcqX29bhXdHf\n8exq/cQfF9kD8Trb+q+kY6dOaJaQZGHELeOp5+QUAKbsZe5dFoTxms33QIyj\nSvbkT7Q/mVFJ/2WtVg7aSZUAyDNLROGGiM+/fblUlXHK8bcG7qNUwHBd5PJ/\nEbG+J56+n/kScFRErkm65bVIfvjHDobOyO/80tPLI7iVPPppjuXUNrYz4eSX\nRRV9WkyIe9f4fIu236xXnNrY6Dry1hS/eH3A/tsXmdQ1COLu2oDWVKY/z5WF\nZZs1h/13izc1UERhiXTWABCtlmuTuvSYyQ8bjJiOxpGpR4xu5DzYqHx6i7Fc\nS2by36Ze14Dy2n1jdCw8E00mbevzGXRcIRRYRCepR4tN4fgwSAuBu6lUVFli\n90QafbR9TqWQ/UvhjutTiqTiZyTJtRkRT3Xo5Xz/KX2tA3051L/JI52OpvuN\nUXdo2uRsree9RSbStHFe1lr8GCDGRmck7cxsbbfsDDId3hFkaPUzLpmhMwDI\nLYQB\r\n=mi34\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "aslakhellesoy",
+          "email": "aslak.hellesoy@gmail.com"
+        },
+        {
+          "name": "rexxars",
+          "email": "rexxars@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eventsource_1.0.7_1535402346703_0.3313250326612529"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# EventSource [![npm version](http://img.shields.io/npm/v/eventsource.svg?style=flat-square)](http://browsenpm.org/package/eventsource)[![Build Status](http://img.shields.io/travis/EventSource/eventsource/master.svg?style=flat-square)](https://travis-ci.org/EventSource/eventsource)[![NPM Downloads](https://img.shields.io/npm/dm/eventsource.svg?style=flat-square)](http://npm-stat.com/charts.html?package=eventsource&from=2015-09-01)[![Dependencies](https://img.shields.io/david/EventSource/eventsource.svg?style=flat-square)](https://david-dm.org/EventSource/eventsource)\n\nThis library is a pure JavaScript implementation of the [EventSource](https://html.spec.whatwg.org/multipage/server-sent-events.html#server-sent-events) client. The API aims to be W3C compatible.\n\nYou can use it with Node.js or as a browser polyfill for\n[browsers that don't have native `EventSource` support](http://caniuse.com/#feat=eventsource).\n\n## Install\n\n    npm install eventsource\n\n## Example\n\n    npm install\n    node ./example/sse-server.js\n    node ./example/sse-client.js    # Node.js client\n    open http://localhost:8080      # Browser client - both native and polyfill\n    curl http://localhost:8080/sse  # Enjoy the simplicity of SSE\n\n## Browser Polyfill\n\nJust add `example/eventsource-polyfill.js` file to your web page:\n\n```html\n<script src=/eventsource-polyfill.js></script>\n```\n\nNow you will have two global constructors:\n\n```javascript\nwindow.EventSourcePolyfill\nwindow.EventSource // Unchanged if browser has defined it. Otherwise, same as window.EventSourcePolyfill\n```\n\nIf you're using [webpack](https://webpack.github.io/) or [browserify](http://browserify.org/)\nyou can of course build your own. (The `example/eventsource-polyfill.js` is built with webpack).\n\n## Extensions to the W3C API\n\n### Setting HTTP request headers\n\nYou can define custom HTTP headers for the initial HTTP request. This can be useful for e.g. sending cookies\nor to specify an initial `Last-Event-ID` value.\n\nHTTP headers are defined by assigning a `headers` attribute to the optional `eventSourceInitDict` argument:\n\n```javascript\nvar eventSourceInitDict = {headers: {'Cookie': 'test=test'}};\nvar es = new EventSource(url, eventSourceInitDict);\n```\n\n### Allow unauthorized HTTPS requests\n\nBy default, https requests that cannot be authorized will cause the connection to fail and an exception\nto be emitted. You can override this behaviour, along with other https options:\n\n```javascript\nvar eventSourceInitDict = {https: {rejectUnauthorized: false}};\nvar es = new EventSource(url, eventSourceInitDict);\n```\n\nNote that for Node.js < v0.10.x this option has no effect - unauthorized HTTPS requests are *always* allowed.\n\n### HTTP status code on error events\n\nUnauthorized and redirect error status codes (for example 401, 403, 301, 307) are available in the `status` property in the error event.\n\n```javascript\nes.onerror = function (err) {\n  if (err) {\n    if (err.status === 401 || err.status === 403) {\n      console.log('not authorized');\n    }\n  }\n};\n```\n\n### HTTP/HTTPS proxy\n\nYou can define a `proxy` option for the HTTP request to be used. This is typically useful if you are behind a corporate firewall.\n\n```javascript\nvar es = new EventSource(url, {proxy: 'http://your.proxy.com'});\n```\n\n\n## License\n\nMIT-licensed. See LICENSE\n",
+  "maintainers": [
+    {
+      "name": "aslakhellesoy",
+      "email": "aslak.hellesoy@gmail.com"
+    },
+    {
+      "name": "rexxars",
+      "email": "rexxars@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2019-01-08T11:00:41.702Z",
+    "created": "2012-02-08T12:17:52.893Z",
+    "0.0.1": "2012-02-08T12:17:54.543Z",
+    "0.0.2": "2012-02-08T13:42:20.639Z",
+    "0.0.3": "2012-02-10T16:07:31.200Z",
+    "0.0.4": "2012-02-10T23:21:12.025Z",
+    "0.0.5": "2012-02-12T13:28:45.587Z",
+    "0.0.6": "2013-01-24T22:56:35.113Z",
+    "0.0.7": "2013-04-19T19:20:21.373Z",
+    "0.0.8": "2013-09-12T17:37:20.531Z",
+    "0.0.9": "2013-10-24T17:28:14.769Z",
+    "0.0.10": "2013-11-21T16:52:12.244Z",
+    "0.1.0": "2014-03-07T22:30:47.332Z",
+    "0.1.1": "2014-05-18T19:09:16.803Z",
+    "0.1.2": "2014-08-07T13:10:09.591Z",
+    "0.1.3": "2014-09-17T15:47:53.533Z",
+    "0.1.4": "2014-10-31T09:54:47.380Z",
+    "0.1.5": "2015-02-08T23:48:21.148Z",
+    "0.1.6": "2015-02-09T08:26:42.461Z",
+    "0.2.0": "2016-02-11T15:21:21.828Z",
+    "0.2.1": "2016-02-28T21:05:01.132Z",
+    "0.2.2": "2017-02-28T16:40:39.409Z",
+    "0.2.3": "2017-04-17T11:55:31.406Z",
+    "1.0.0": "2017-04-17T17:35:37.399Z",
+    "1.0.1": "2017-05-10T08:16:43.416Z",
+    "1.0.2": "2017-05-28T13:21:10.664Z",
+    "1.0.3": "2017-06-19T19:05:32.083Z",
+    "1.0.4": "2017-06-19T19:11:13.052Z",
+    "1.0.5": "2017-07-18T16:01:49.605Z",
+    "1.0.6": "2018-08-23T07:47:46.497Z",
+    "1.0.7": "2018-08-27T20:39:06.840Z"
+  },
+  "author": {
+    "name": "Aslak Hellesøy",
+    "email": "aslak.hellesoy@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/EventSource/eventsource.git"
+  },
+  "homepage": "http://github.com/EventSource/eventsource",
+  "keywords": [
+    "eventsource",
+    "http",
+    "streaming",
+    "sse",
+    "polyfill"
+  ],
+  "bugs": {
+    "url": "http://github.com/EventSource/eventsource/issues"
+  },
+  "readmeFilename": "README.md",
+  "users": {
+    "jessaustin": true,
+    "qubyte": true,
+    "gigerlin": true,
+    "jruif": true,
+    "nichoth": true,
+    "floby": true,
+    "rbecheras": true,
+    "staydan": true,
+    "stone_breaker": true,
+    "xgheaven": true,
+    "kael": true,
+    "shanewholloway": true,
+    "jzaefferer": true,
+    "rmanalan": true,
+    "hualei": true
+  },
+  "license": "MIT"
+}

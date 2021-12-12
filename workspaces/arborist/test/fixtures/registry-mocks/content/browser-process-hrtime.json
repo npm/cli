@@ -1,0 +1,377 @@
+{
+  "_id": "browser-process-hrtime",
+  "_rev": "23-df410a39609e322139215b4a61fcec74",
+  "name": "browser-process-hrtime",
+  "description": "Shim for process.hrtime in the browser",
+  "dist-tags": {
+    "latest": "1.0.0"
+  },
+  "versions": {
+    "0.0.1": {
+      "name": "browser-process-hrtime",
+      "version": "0.0.1",
+      "description": "Shim for process.hrtime in the browser",
+      "main": "index.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/kumavis/browser-process-hrtime.git"
+      },
+      "author": {
+        "name": "kumavis"
+      },
+      "license": "BSD-2-Clause",
+      "bugs": {
+        "url": "https://github.com/kumavis/browser-process-hrtime/issues"
+      },
+      "_id": "browser-process-hrtime@0.0.1",
+      "dist": {
+        "shasum": "686d7c27383b9cf06bb072341c321b626854c76e",
+        "tarball": "https://registry.npmjs.org/browser-process-hrtime/-/browser-process-hrtime-0.0.1.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.7",
+      "_npmUser": {
+        "name": "kumavis",
+        "email": "aaron@kumavis.me"
+      },
+      "maintainers": [
+        {
+          "name": "kumavis",
+          "email": "aaron@kumavis.me"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.2": {
+      "name": "browser-process-hrtime",
+      "version": "0.0.2",
+      "description": "Shim for process.hrtime in the browser",
+      "main": "index.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/kumavis/browser-process-hrtime.git"
+      },
+      "author": {
+        "name": "kumavis"
+      },
+      "license": "BSD-2-Clause",
+      "bugs": {
+        "url": "https://github.com/kumavis/browser-process-hrtime/issues"
+      },
+      "_id": "browser-process-hrtime@0.0.2",
+      "dist": {
+        "shasum": "d85827130b48fbdbcfa72071860fdae5e4ff9526",
+        "tarball": "https://registry.npmjs.org/browser-process-hrtime/-/browser-process-hrtime-0.0.2.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.7",
+      "_npmUser": {
+        "name": "kumavis",
+        "email": "aaron@kumavis.me"
+      },
+      "maintainers": [
+        {
+          "name": "kumavis",
+          "email": "aaron@kumavis.me"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.3": {
+      "name": "browser-process-hrtime",
+      "version": "0.0.3",
+      "description": "Shim for process.hrtime in the browser",
+      "main": "index.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/kumavis/browser-process-hrtime.git"
+      },
+      "author": {
+        "name": "kumavis"
+      },
+      "license": "BSD-2-Clause",
+      "bugs": {
+        "url": "https://github.com/kumavis/browser-process-hrtime/issues"
+      },
+      "_id": "browser-process-hrtime@0.0.3",
+      "dist": {
+        "shasum": "3daade9497c2580a51f1144d5426fa63d4f55b31",
+        "tarball": "https://registry.npmjs.org/browser-process-hrtime/-/browser-process-hrtime-0.0.3.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.7",
+      "_npmUser": {
+        "name": "kumavis",
+        "email": "aaron@kumavis.me"
+      },
+      "maintainers": [
+        {
+          "name": "kumavis",
+          "email": "aaron@kumavis.me"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.0": {
+      "name": "browser-process-hrtime",
+      "version": "0.1.0",
+      "description": "Shim for process.hrtime in the browser",
+      "main": "index.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/kumavis/browser-process-hrtime.git"
+      },
+      "author": {
+        "name": "kumavis"
+      },
+      "license": "BSD-2-Clause",
+      "bugs": {
+        "url": "https://github.com/kumavis/browser-process-hrtime/issues"
+      },
+      "_id": "browser-process-hrtime@0.1.0",
+      "dist": {
+        "shasum": "2d2e1f9bd93b76bb87167acf6212ea3706a79b13",
+        "tarball": "https://registry.npmjs.org/browser-process-hrtime/-/browser-process-hrtime-0.1.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.7",
+      "_npmUser": {
+        "name": "kumavis",
+        "email": "aaron@kumavis.me"
+      },
+      "maintainers": [
+        {
+          "name": "kumavis",
+          "email": "aaron@kumavis.me"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.1": {
+      "name": "browser-process-hrtime",
+      "version": "0.1.1",
+      "description": "Shim for process.hrtime in the browser",
+      "main": "index.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/kumavis/browser-process-hrtime.git"
+      },
+      "author": {
+        "name": "kumavis"
+      },
+      "license": "BSD-2-Clause",
+      "bugs": {
+        "url": "https://github.com/kumavis/browser-process-hrtime/issues"
+      },
+      "_id": "browser-process-hrtime@0.1.1",
+      "dist": {
+        "shasum": "427aece3e0c9456b695814183916377d66050163",
+        "tarball": "https://registry.npmjs.org/browser-process-hrtime/-/browser-process-hrtime-0.1.1.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.7",
+      "_npmUser": {
+        "name": "kumavis",
+        "email": "aaron@kumavis.me"
+      },
+      "maintainers": [
+        {
+          "name": "kumavis",
+          "email": "aaron@kumavis.me"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.2": {
+      "name": "browser-process-hrtime",
+      "version": "0.1.2",
+      "description": "Shim for process.hrtime in the browser",
+      "main": "index.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/kumavis/browser-process-hrtime.git"
+      },
+      "author": {
+        "name": "kumavis"
+      },
+      "license": "BSD-2-Clause",
+      "gitHead": "4ad64b52ed94f857735548b68e3535df134ff587",
+      "bugs": {
+        "url": "https://github.com/kumavis/browser-process-hrtime/issues"
+      },
+      "homepage": "https://github.com/kumavis/browser-process-hrtime#readme",
+      "_id": "browser-process-hrtime@0.1.2",
+      "_shasum": "425d68a58d3447f02a04aa894187fce8af8b7b8e",
+      "_from": ".",
+      "_npmVersion": "2.11.3",
+      "_nodeVersion": "0.12.7",
+      "_npmUser": {
+        "name": "kumavis",
+        "email": "aaron@kumavis.me"
+      },
+      "dist": {
+        "shasum": "425d68a58d3447f02a04aa894187fce8af8b7b8e",
+        "tarball": "https://registry.npmjs.org/browser-process-hrtime/-/browser-process-hrtime-0.1.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "kumavis",
+          "email": "aaron@kumavis.me"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.3": {
+      "name": "browser-process-hrtime",
+      "version": "0.1.3",
+      "description": "Shim for process.hrtime in the browser",
+      "main": "index.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/kumavis/browser-process-hrtime.git"
+      },
+      "author": {
+        "name": "kumavis"
+      },
+      "license": "BSD-2-Clause",
+      "gitHead": "63c800b1cc3749d10d697e91456d74d0b34fcf9e",
+      "bugs": {
+        "url": "https://github.com/kumavis/browser-process-hrtime/issues"
+      },
+      "homepage": "https://github.com/kumavis/browser-process-hrtime#readme",
+      "_id": "browser-process-hrtime@0.1.3",
+      "_npmVersion": "6.3.0",
+      "_nodeVersion": "8.11.3",
+      "_npmUser": {
+        "name": "kumavis",
+        "email": "aaron@kumavis.me"
+      },
+      "dist": {
+        "integrity": "sha512-bRFnI4NnjO6cnyLmOV/7PVoDEMJChlcfN0z4s1YMBY989/SvlfMI1lgCnkFUs53e9gQF+w7qu7XdllSTiSl8Aw==",
+        "shasum": "616f00faef1df7ec1b5bf9cfe2bdc3170f26c7b4",
+        "tarball": "https://registry.npmjs.org/browser-process-hrtime/-/browser-process-hrtime-0.1.3.tgz",
+        "fileCount": 4,
+        "unpackedSize": 3262,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbpzf9CRA9TVsSAnZWagAAOmQQAINRJz+lFuAlA3Ug2prS\nj7O6jYb8TBjcLDcOTVJtdYvLoyA3z2cHuRghSsTpoIc7ydFrEtLwOSN7vXFg\nhDm6eKILNWKyh//wpTnF4aIWwvSjVKGBqMo26x8mWV27wGIRJZwigXT535DE\nxoD2fj9m7gs6yF3f9r+45h+YsPaazshM8FjxLOWNl2ZaAj4Uhs3v7kO+WYhn\nTrY0jzS/JWNkv7079OU6FdBC13Dsf7c4Ke4ivgzFvSFfpFTeCgV+wvtFEAOa\nAFah8FmKxBYkuc1/1fXktu8I161n/4OOInBUG0FCCUTl6RlXcQl5syRF69CS\nid+uQuJfoMLAxofTV8s4vuNEqrnCBp0EZbQwSgLTEruuzLU0xeq0EB5X2Uiy\nQpp8lEFgqTPrqwMqlaln+UH6SkMEBee3tmRji2EXGI6n/XXr5Xmed7xQPJwK\n5S+s/yZmzxWUjrZlwu60HZv4sAISWCxeLoV0j0foXwjtUGfIPXTPYj+IeC66\n3HRBfDpZAkaX1/ipi2urn+yzCYFS1ri0I0ty2n9EpNROQuLsaDcx/p/li7KE\nE3Upzfa3s5q/rr50KCRXvXFC7QmOXbHgALqW2Vz5Oot9V7tEXI0x2oW64CRZ\nh6d34Ksq4+oVFPOu1G2sOC2Qsbgecezw1I2SzSE0qhHVIciJoHpvPyY45s2n\nhc1n\r\n=MRLc\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "kumavis",
+          "email": "aaron@kumavis.me"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/browser-process-hrtime_0.1.3_1537685500765_0.6758808049304958"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.0.0": {
+      "name": "browser-process-hrtime",
+      "version": "1.0.0",
+      "description": "Shim for process.hrtime in the browser",
+      "main": "index.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/kumavis/browser-process-hrtime.git"
+      },
+      "author": {
+        "name": "kumavis"
+      },
+      "license": "BSD-2-Clause",
+      "gitHead": "38920d3d06ddecf0ad1b51f0f6872db946e3c035",
+      "bugs": {
+        "url": "https://github.com/kumavis/browser-process-hrtime/issues"
+      },
+      "homepage": "https://github.com/kumavis/browser-process-hrtime#readme",
+      "_id": "browser-process-hrtime@1.0.0",
+      "_npmVersion": "6.3.0",
+      "_nodeVersion": "8.11.3",
+      "_npmUser": {
+        "name": "kumavis",
+        "email": "aaron@kumavis.me"
+      },
+      "dist": {
+        "integrity": "sha512-9o5UecI3GhkpM6DrXr69PblIuWxPKk9Y0jHBRhdocZ2y7YECBFCsHm79Pr3OyR2AvjhDkabFJaDJMYRazHgsow==",
+        "shasum": "3c9b4b7d782c8121e56f10106d84c0d0ffc94626",
+        "tarball": "https://registry.npmjs.org/browser-process-hrtime/-/browser-process-hrtime-1.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 3525,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbpz6RCRA9TVsSAnZWagAA8yMP/26O4Y2IvGltZyngxxMN\nRm5QkP0L9AVBzRtmXEg6DYvjvryLjdleuViz1PLBxB87hXTwXIJ1+BP/EniI\nfIcuLQSVolzMJHUkNMvI5UKuYo82vTgaZOcHWdWYardEywcFwPyj6K2WGF9u\no1XMsvsnr06LotwCdCkq2Zs0lr9GJVdVMek/h2K50HahYOunPWzjO6j7bbRM\n6kQ1AM5K+PjD+S1FIZsTDVZJq/jdhMCgkDveZq/aw9OFgbtbl6y1Ze0v1XUk\n1OL1asi4++f23N+T3Kha996ThdzYVeeue0AGup8TRznYjMSCT2GSOsKomQxt\nsevT7FbhB3Oui6tFjsoyX5Q12KgH4Y7Akf4bSFi0W4mbbsOpesCde+ai5jyq\ns9a30SfcU3ZsGv7H+K6h4jJRjEKXIhvfyRz6J9LtxlOXKxF7QHdBoeUDJ5+A\nfNfnl2qlrqnG5LgtXERPqD/VAuGQ0yPogiuvypbXkBgP7fz2viqgU/bcJVo7\ngwlsESzVqoOoOhqVx9mg0Y+qxLDj2QA7sfOFasPd2Z4iYIl83iUz0j1iMhtE\nJaFqSkQxBCHnGNOVZGjWArvU3ph02XIbDn2VbmKsJh0dB2NzRrsB84W7knmp\n9oOBydFvu5L+TCmjInuN2Qz9ZzXvJYKlR1CV6ocf0WNID+TaXn6RzpY/X6A6\nRmcH\r\n=GXQ0\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "kumavis",
+          "email": "aaron@kumavis.me"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/browser-process-hrtime_1.0.0_1537687184332_0.36244783445173345"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# browser-process-hrtime\n\nBrowser shim for Node.js `process.hrtime()`.\nSee [documentation at nodejs.org](http://nodejs.org/api/process.html#process_process_hrtime)\n\nThis module does not provide the same level of time precision as node.js, but provides a matching API and response format.\n\n### usage\nUse hrtime independent of environment (node or browser).\nIt will use `process.hrtime` first and fallback if not present.\n```js\nconst hrtime = require('browser-process-hrtime')\nconst start = hrtime()\n// ...\nconst delta = hrtime(start)\n```\n\n### monkey-patching\nYou can monkey-patch `process.hrtime` for your dependency graph like this:\n```js\nprocess.hrtime = require('browser-process-hrtime')\nconst coolTool = require('module-that-uses-hrtime-somewhere-in-its-depths')\n```\n\n### note\nThis was originally pull-requested against [node-process](https://github.com/defunctzombie/node-process),\nbut they are trying to stay lean.\n",
+  "maintainers": [
+    {
+      "name": "kumavis",
+      "email": "aaron@kumavis.me"
+    }
+  ],
+  "time": {
+    "modified": "2019-01-01T10:49:16.024Z",
+    "created": "2014-01-11T18:52:46.398Z",
+    "0.0.1": "2014-01-11T18:52:47.261Z",
+    "0.0.2": "2014-01-12T17:45:19.626Z",
+    "0.0.3": "2014-09-27T00:42:02.029Z",
+    "0.1.0": "2015-02-13T04:05:35.290Z",
+    "0.1.1": "2015-02-13T16:45:31.026Z",
+    "0.1.2": "2015-08-05T00:24:15.953Z",
+    "0.1.3": "2018-09-23T06:51:40.907Z",
+    "1.0.0": "2018-09-23T07:19:44.502Z"
+  },
+  "author": {
+    "name": "kumavis"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kumavis/browser-process-hrtime.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kumavis/browser-process-hrtime/issues"
+  },
+  "license": "BSD-2-Clause",
+  "readmeFilename": "README.md",
+  "users": {
+    "joris-van-der-wel": true,
+    "pragmadash": true
+  },
+  "homepage": "https://github.com/kumavis/browser-process-hrtime#readme"
+}

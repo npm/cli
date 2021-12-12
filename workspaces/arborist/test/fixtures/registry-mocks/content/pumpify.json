@@ -1,0 +1,1399 @@
+{
+  "_id": "pumpify",
+  "_rev": "45-f80539374858420f6d14265681338815",
+  "name": "pumpify",
+  "description": "Combine an array of streams into a single duplex stream using pump and duplexify",
+  "dist-tags": {
+    "latest": "2.0.1"
+  },
+  "versions": {
+    "0.0.0": {
+      "name": "pumpify",
+      "version": "0.0.0",
+      "description": "Combine an array of streams into a single duplex stream using pump and duplexify",
+      "main": "index.js",
+      "dependencies": {
+        "duplexify": "^1.1.0",
+        "pump": "^0.3.2"
+      },
+      "devDependencies": {
+        "tape": "^2.13.3"
+      },
+      "scripts": {
+        "test": "tape test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/mafintosh/pumpify"
+      },
+      "keywords": [
+        "pump",
+        "duplexify",
+        "duplex",
+        "streams",
+        "stream",
+        "pipeline",
+        "combine"
+      ],
+      "author": {
+        "name": "Mathias Buus"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/pumpify/issues"
+      },
+      "homepage": "https://github.com/mafintosh/pumpify",
+      "_id": "pumpify@0.0.0",
+      "_shasum": "a95a918be74e1465f625c220216ddbc326ffbb79",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "a95a918be74e1465f625c220216ddbc326ffbb79",
+        "tarball": "https://registry.npmjs.org/pumpify/-/pumpify-0.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "pumpify",
+      "version": "1.0.0",
+      "description": "Combine an array of streams into a single duplex stream using pump and duplexify",
+      "main": "index.js",
+      "dependencies": {
+        "duplexify": "^1.1.0",
+        "pump": "^0.3.2"
+      },
+      "devDependencies": {
+        "tape": "^2.13.3",
+        "through2": "^0.5.1"
+      },
+      "scripts": {
+        "test": "tape test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/mafintosh/pumpify"
+      },
+      "keywords": [
+        "pump",
+        "duplexify",
+        "duplex",
+        "streams",
+        "stream",
+        "pipeline",
+        "combine"
+      ],
+      "author": {
+        "name": "Mathias Buus"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/pumpify/issues"
+      },
+      "homepage": "https://github.com/mafintosh/pumpify",
+      "_id": "pumpify@1.0.0",
+      "_shasum": "929602629ac362f3b91da6055a803e6d58867602",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "929602629ac362f3b91da6055a803e6d58867602",
+        "tarball": "https://registry.npmjs.org/pumpify/-/pumpify-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "pumpify",
+      "version": "1.0.1",
+      "description": "Combine an array of streams into a single duplex stream using pump and duplexify",
+      "main": "index.js",
+      "dependencies": {
+        "duplexify": "^1.1.0",
+        "pump": "^0.3.2"
+      },
+      "devDependencies": {
+        "tape": "^2.13.3",
+        "through2": "^0.5.1"
+      },
+      "scripts": {
+        "test": "tape test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/mafintosh/pumpify"
+      },
+      "keywords": [
+        "pump",
+        "duplexify",
+        "duplex",
+        "streams",
+        "stream",
+        "pipeline",
+        "combine"
+      ],
+      "author": {
+        "name": "Mathias Buus"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/pumpify/issues"
+      },
+      "homepage": "https://github.com/mafintosh/pumpify",
+      "_id": "pumpify@1.0.1",
+      "_shasum": "b75a06c219882d310ff1effb6ecf8161a6326151",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "b75a06c219882d310ff1effb6ecf8161a6326151",
+        "tarball": "https://registry.npmjs.org/pumpify/-/pumpify-1.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "pumpify",
+      "version": "1.0.2",
+      "description": "Combine an array of streams into a single duplex stream using pump and duplexify",
+      "main": "index.js",
+      "dependencies": {
+        "duplexify": "^1.2.1",
+        "pump": "^0.3.3"
+      },
+      "devDependencies": {
+        "tape": "^2.13.3",
+        "through2": "^0.5.1"
+      },
+      "scripts": {
+        "test": "tape test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/mafintosh/pumpify"
+      },
+      "keywords": [
+        "pump",
+        "duplexify",
+        "duplex",
+        "streams",
+        "stream",
+        "pipeline",
+        "combine"
+      ],
+      "author": {
+        "name": "Mathias Buus"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/pumpify/issues"
+      },
+      "homepage": "https://github.com/mafintosh/pumpify",
+      "_id": "pumpify@1.0.2",
+      "_shasum": "b4b1d7368b73f391b242ba6c16f6657ea1da232e",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "b4b1d7368b73f391b242ba6c16f6657ea1da232e",
+        "tarball": "https://registry.npmjs.org/pumpify/-/pumpify-1.0.2.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "pumpify",
+      "version": "1.1.0",
+      "description": "Combine an array of streams into a single duplex stream using pump and duplexify",
+      "main": "index.js",
+      "dependencies": {
+        "duplexify": "^1.3.0",
+        "pump": "^0.3.3"
+      },
+      "devDependencies": {
+        "tape": "^2.13.3",
+        "through2": "^0.5.1"
+      },
+      "scripts": {
+        "test": "tape test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/mafintosh/pumpify"
+      },
+      "keywords": [
+        "pump",
+        "duplexify",
+        "duplex",
+        "streams",
+        "stream",
+        "pipeline",
+        "combine"
+      ],
+      "author": {
+        "name": "Mathias Buus"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/pumpify/issues"
+      },
+      "homepage": "https://github.com/mafintosh/pumpify",
+      "_id": "pumpify@1.1.0",
+      "_shasum": "b6e91e6c7d64259cd0fcc7d891662834fd1f8e89",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "b6e91e6c7d64259cd0fcc7d891662834fd1f8e89",
+        "tarball": "https://registry.npmjs.org/pumpify/-/pumpify-1.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.1": {
+      "name": "pumpify",
+      "version": "1.1.1",
+      "description": "Combine an array of streams into a single duplex stream using pump and duplexify",
+      "main": "index.js",
+      "dependencies": {
+        "duplexify": "^1.3.0",
+        "pump": "^0.3.3"
+      },
+      "devDependencies": {
+        "tape": "^2.13.3",
+        "through2": "^0.5.1"
+      },
+      "scripts": {
+        "test": "tape test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/mafintosh/pumpify"
+      },
+      "keywords": [
+        "pump",
+        "duplexify",
+        "duplex",
+        "streams",
+        "stream",
+        "pipeline",
+        "combine"
+      ],
+      "author": {
+        "name": "Mathias Buus"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/pumpify/issues"
+      },
+      "homepage": "https://github.com/mafintosh/pumpify",
+      "_id": "pumpify@1.1.1",
+      "_shasum": "d0546c6c80779e7619cc2a64351b2a683bfc01f2",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "d0546c6c80779e7619cc2a64351b2a683bfc01f2",
+        "tarball": "https://registry.npmjs.org/pumpify/-/pumpify-1.1.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.2": {
+      "name": "pumpify",
+      "version": "1.1.2",
+      "description": "Combine an array of streams into a single duplex stream using pump and duplexify",
+      "main": "index.js",
+      "dependencies": {
+        "duplexify": "^1.5.2",
+        "pump": "^0.3.3"
+      },
+      "devDependencies": {
+        "tape": "^2.13.3",
+        "through2": "^0.5.1"
+      },
+      "scripts": {
+        "test": "tape test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/mafintosh/pumpify"
+      },
+      "keywords": [
+        "pump",
+        "duplexify",
+        "duplex",
+        "streams",
+        "stream",
+        "pipeline",
+        "combine"
+      ],
+      "author": {
+        "name": "Mathias Buus"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/pumpify/issues"
+      },
+      "homepage": "https://github.com/mafintosh/pumpify",
+      "_id": "pumpify@1.1.2",
+      "_shasum": "fd2219cff731c5427f18b4795356f474853b46e5",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "fd2219cff731c5427f18b4795356f474853b46e5",
+        "tarball": "https://registry.npmjs.org/pumpify/-/pumpify-1.1.2.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.3": {
+      "name": "pumpify",
+      "version": "1.1.3",
+      "description": "Combine an array of streams into a single duplex stream using pump and duplexify",
+      "main": "index.js",
+      "dependencies": {
+        "duplexify": "^2.0.0",
+        "pump": "^0.3.3"
+      },
+      "devDependencies": {
+        "tape": "^2.13.3",
+        "through2": "^0.5.1"
+      },
+      "scripts": {
+        "test": "tape test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/mafintosh/pumpify"
+      },
+      "keywords": [
+        "pump",
+        "duplexify",
+        "duplex",
+        "streams",
+        "stream",
+        "pipeline",
+        "combine"
+      ],
+      "author": {
+        "name": "Mathias Buus"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/pumpify/issues"
+      },
+      "homepage": "https://github.com/mafintosh/pumpify",
+      "_id": "pumpify@1.1.3",
+      "_shasum": "9679987eb0ce5fe800cc4f889544e32002a8aa5e",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "9679987eb0ce5fe800cc4f889544e32002a8aa5e",
+        "tarball": "https://registry.npmjs.org/pumpify/-/pumpify-1.1.3.tgz"
+      },
+      "directories": {}
+    },
+    "1.2.0": {
+      "name": "pumpify",
+      "version": "1.2.0",
+      "description": "Combine an array of streams into a single duplex stream using pump and duplexify",
+      "main": "index.js",
+      "dependencies": {
+        "duplexify": "^3.0.0",
+        "pump": "^0.3.3"
+      },
+      "devDependencies": {
+        "tape": "^2.13.3",
+        "through2": "^0.5.1"
+      },
+      "scripts": {
+        "test": "tape test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/mafintosh/pumpify"
+      },
+      "keywords": [
+        "pump",
+        "duplexify",
+        "duplex",
+        "streams",
+        "stream",
+        "pipeline",
+        "combine"
+      ],
+      "author": {
+        "name": "Mathias Buus"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/pumpify/issues"
+      },
+      "homepage": "https://github.com/mafintosh/pumpify",
+      "_id": "pumpify@1.2.0",
+      "_shasum": "679a986661869d4ba55ee08465f24a1e18ab8a4b",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "679a986661869d4ba55ee08465f24a1e18ab8a4b",
+        "tarball": "https://registry.npmjs.org/pumpify/-/pumpify-1.2.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.2.1": {
+      "name": "pumpify",
+      "version": "1.2.1",
+      "description": "Combine an array of streams into a single duplex stream using pump and duplexify",
+      "main": "index.js",
+      "dependencies": {
+        "duplexify": "^3.0.1",
+        "pump": "^0.3.3"
+      },
+      "devDependencies": {
+        "tape": "^2.13.3",
+        "through2": "^0.5.1"
+      },
+      "scripts": {
+        "test": "tape test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/mafintosh/pumpify"
+      },
+      "keywords": [
+        "pump",
+        "duplexify",
+        "duplex",
+        "streams",
+        "stream",
+        "pipeline",
+        "combine"
+      ],
+      "author": {
+        "name": "Mathias Buus"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/pumpify/issues"
+      },
+      "homepage": "https://github.com/mafintosh/pumpify",
+      "gitHead": "18edbb96418f115a8339270b1949e66622e1ebff",
+      "_id": "pumpify@1.2.1",
+      "_shasum": "e1b31923176b8eea983a23ead7788dad72a63d98",
+      "_from": ".",
+      "_npmVersion": "1.4.21",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "e1b31923176b8eea983a23ead7788dad72a63d98",
+        "tarball": "https://registry.npmjs.org/pumpify/-/pumpify-1.2.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.3.0": {
+      "name": "pumpify",
+      "version": "1.3.0",
+      "description": "Combine an array of streams into a single duplex stream using pump and duplexify",
+      "main": "index.js",
+      "dependencies": {
+        "duplexify": "^3.1.0",
+        "pump": "^0.3.3"
+      },
+      "devDependencies": {
+        "tape": "^2.13.3",
+        "through2": "^0.5.1"
+      },
+      "scripts": {
+        "test": "tape test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/mafintosh/pumpify"
+      },
+      "keywords": [
+        "pump",
+        "duplexify",
+        "duplex",
+        "streams",
+        "stream",
+        "pipeline",
+        "combine"
+      ],
+      "author": {
+        "name": "Mathias Buus"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/pumpify/issues"
+      },
+      "homepage": "https://github.com/mafintosh/pumpify",
+      "gitHead": "43bed1c9fcc593b750e73a3f28fa95a504e6a677",
+      "_id": "pumpify@1.3.0",
+      "_shasum": "fbc5b917d35cc8b3dfb094dc7ba66f2b6559a992",
+      "_from": ".",
+      "_npmVersion": "1.4.23",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "fbc5b917d35cc8b3dfb094dc7ba66f2b6559a992",
+        "tarball": "https://registry.npmjs.org/pumpify/-/pumpify-1.3.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.3.1": {
+      "name": "pumpify",
+      "version": "1.3.1",
+      "description": "Combine an array of streams into a single duplex stream using pump and duplexify",
+      "main": "index.js",
+      "dependencies": {
+        "duplexify": "^3.1.1",
+        "pump": "^0.3.3"
+      },
+      "devDependencies": {
+        "tape": "^2.13.3",
+        "through2": "^0.5.1"
+      },
+      "scripts": {
+        "test": "tape test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/mafintosh/pumpify"
+      },
+      "keywords": [
+        "pump",
+        "duplexify",
+        "duplex",
+        "streams",
+        "stream",
+        "pipeline",
+        "combine"
+      ],
+      "author": {
+        "name": "Mathias Buus"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/pumpify/issues"
+      },
+      "homepage": "https://github.com/mafintosh/pumpify",
+      "gitHead": "6a248dedac5c5124707d02f0cb98bcc691767113",
+      "_id": "pumpify@1.3.1",
+      "_shasum": "e0c99377ee2297283adc15a6944ab7942cd74306",
+      "_from": ".",
+      "_npmVersion": "1.4.23",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "e0c99377ee2297283adc15a6944ab7942cd74306",
+        "tarball": "https://registry.npmjs.org/pumpify/-/pumpify-1.3.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.3.2": {
+      "name": "pumpify",
+      "version": "1.3.2",
+      "description": "Combine an array of streams into a single duplex stream using pump and duplexify",
+      "main": "index.js",
+      "dependencies": {
+        "duplexify": "^3.1.2",
+        "pump": "^0.3.3"
+      },
+      "devDependencies": {
+        "tape": "^2.13.3",
+        "through2": "^0.5.1"
+      },
+      "scripts": {
+        "test": "tape test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/mafintosh/pumpify"
+      },
+      "keywords": [
+        "pump",
+        "duplexify",
+        "duplex",
+        "streams",
+        "stream",
+        "pipeline",
+        "combine"
+      ],
+      "author": {
+        "name": "Mathias Buus"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/pumpify/issues"
+      },
+      "homepage": "https://github.com/mafintosh/pumpify",
+      "gitHead": "296209d25c56dbb48eb0be7c7827e15be1e52196",
+      "_id": "pumpify@1.3.2",
+      "_shasum": "255ca58bf7a816cac879473cf5d069171e55d2bc",
+      "_from": ".",
+      "_npmVersion": "1.4.23",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "255ca58bf7a816cac879473cf5d069171e55d2bc",
+        "tarball": "https://registry.npmjs.org/pumpify/-/pumpify-1.3.2.tgz"
+      },
+      "directories": {}
+    },
+    "1.3.3": {
+      "name": "pumpify",
+      "version": "1.3.3",
+      "description": "Combine an array of streams into a single duplex stream using pump and duplexify",
+      "main": "index.js",
+      "dependencies": {
+        "duplexify": "^3.1.2",
+        "pump": "^1.0.0"
+      },
+      "devDependencies": {
+        "tape": "^2.13.3",
+        "through2": "^0.5.1"
+      },
+      "scripts": {
+        "test": "tape test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/mafintosh/pumpify"
+      },
+      "keywords": [
+        "pump",
+        "duplexify",
+        "duplex",
+        "streams",
+        "stream",
+        "pipeline",
+        "combine"
+      ],
+      "author": {
+        "name": "Mathias Buus"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/pumpify/issues"
+      },
+      "homepage": "https://github.com/mafintosh/pumpify",
+      "gitHead": "d78c814aa8625755c1e7823b7b46a40bcaab7c20",
+      "_id": "pumpify@1.3.3",
+      "_shasum": "f6d27bb71d32871ff6d0868859dbacfeb2ebdbfe",
+      "_from": ".",
+      "_npmVersion": "2.0.0",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "f6d27bb71d32871ff6d0868859dbacfeb2ebdbfe",
+        "tarball": "https://registry.npmjs.org/pumpify/-/pumpify-1.3.3.tgz"
+      },
+      "directories": {}
+    },
+    "1.3.4": {
+      "name": "pumpify",
+      "version": "1.3.4",
+      "description": "Combine an array of streams into a single duplex stream using pump and duplexify",
+      "main": "index.js",
+      "dependencies": {
+        "duplexify": "^3.1.2",
+        "inherits": "^2.0.1",
+        "pump": "^1.0.0"
+      },
+      "devDependencies": {
+        "tape": "^2.13.3",
+        "through2": "^0.5.1"
+      },
+      "scripts": {
+        "test": "tape test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/mafintosh/pumpify"
+      },
+      "keywords": [
+        "pump",
+        "duplexify",
+        "duplex",
+        "streams",
+        "stream",
+        "pipeline",
+        "combine"
+      ],
+      "author": {
+        "name": "Mathias Buus"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/pumpify/issues"
+      },
+      "homepage": "https://github.com/mafintosh/pumpify",
+      "gitHead": "12dbcbe973cd62a4be39c5880d21624a6dfc892f",
+      "_id": "pumpify@1.3.4",
+      "_shasum": "33418bdaf200b8fd55276c39eefb1bb842e4a606",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.3",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "shasum": "33418bdaf200b8fd55276c39eefb1bb842e4a606",
+        "tarball": "https://registry.npmjs.org/pumpify/-/pumpify-1.3.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-9-west.internal.npmjs.com",
+        "tmp": "tmp/pumpify-1.3.4.tgz_1456243488194_0.6747447045054287"
+      },
+      "directories": {}
+    },
+    "1.3.5": {
+      "name": "pumpify",
+      "version": "1.3.5",
+      "description": "Combine an array of streams into a single duplex stream using pump and duplexify",
+      "main": "index.js",
+      "dependencies": {
+        "duplexify": "^3.1.2",
+        "inherits": "^2.0.1",
+        "pump": "^1.0.0"
+      },
+      "devDependencies": {
+        "tape": "^2.13.3",
+        "through2": "^0.5.1"
+      },
+      "scripts": {
+        "test": "tape test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/mafintosh/pumpify"
+      },
+      "keywords": [
+        "pump",
+        "duplexify",
+        "duplex",
+        "streams",
+        "stream",
+        "pipeline",
+        "combine"
+      ],
+      "author": {
+        "name": "Mathias Buus"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/pumpify/issues"
+      },
+      "homepage": "https://github.com/mafintosh/pumpify",
+      "gitHead": "b3eb78d20b310409beca86de87a4fba68bc9656e",
+      "_id": "pumpify@1.3.5",
+      "_shasum": "1b671c619940abcaeac0ad0e3a3c164be760993b",
+      "_from": ".",
+      "_npmVersion": "2.15.1",
+      "_nodeVersion": "4.4.3",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "shasum": "1b671c619940abcaeac0ad0e3a3c164be760993b",
+        "tarball": "https://registry.npmjs.org/pumpify/-/pumpify-1.3.5.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/pumpify-1.3.5.tgz_1465886760120_0.06353981443680823"
+      },
+      "directories": {}
+    },
+    "1.3.6": {
+      "name": "pumpify",
+      "version": "1.3.6",
+      "description": "Combine an array of streams into a single duplex stream using pump and duplexify",
+      "main": "index.js",
+      "dependencies": {
+        "duplexify": "^3.5.3",
+        "inherits": "^2.0.3",
+        "pump": "^2.0.0"
+      },
+      "devDependencies": {
+        "tape": "^4.8.0",
+        "through2": "^2.0.3"
+      },
+      "scripts": {
+        "test": "tape test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/mafintosh/pumpify.git"
+      },
+      "keywords": [
+        "pump",
+        "duplexify",
+        "duplex",
+        "streams",
+        "stream",
+        "pipeline",
+        "combine"
+      ],
+      "author": {
+        "name": "Mathias Buus"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/pumpify/issues"
+      },
+      "homepage": "https://github.com/mafintosh/pumpify",
+      "gitHead": "9e0a9d37705f48a3ee30c4905ae3df8d2cd04d60",
+      "_id": "pumpify@1.3.6",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.3",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-BurGAcvezsINL5US9T9wGHHcLNrG6MCp//ECtxron3vcR+Rfx5Anqq7HbZXNJvFQli8FGVsWCAvywEJFV5Hx/Q==",
+        "shasum": "00d40e5ded0a3bf1e0788b1c0cf426a42882ab64",
+        "tarball": "https://registry.npmjs.org/pumpify/-/pumpify-1.3.6.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/pumpify-1.3.6.tgz_1515600989535_0.029653461882844567"
+      },
+      "directories": {}
+    },
+    "1.4.0": {
+      "name": "pumpify",
+      "version": "1.4.0",
+      "description": "Combine an array of streams into a single duplex stream using pump and duplexify",
+      "main": "index.js",
+      "dependencies": {
+        "duplexify": "^3.5.3",
+        "inherits": "^2.0.3",
+        "pump": "^2.0.0"
+      },
+      "devDependencies": {
+        "tape": "^4.8.0",
+        "through2": "^2.0.3"
+      },
+      "scripts": {
+        "test": "tape test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/mafintosh/pumpify.git"
+      },
+      "keywords": [
+        "pump",
+        "duplexify",
+        "duplex",
+        "streams",
+        "stream",
+        "pipeline",
+        "combine"
+      ],
+      "author": {
+        "name": "Mathias Buus"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/pumpify/issues"
+      },
+      "homepage": "https://github.com/mafintosh/pumpify",
+      "gitHead": "627c67a0e9934cf039b1dd5a6a7add597f04e08a",
+      "_id": "pumpify@1.4.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.9.4",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-2kmNR9ry+Pf45opRVirpNuIFotsxUGLaYqxIwuR77AYrYRMuFCz9eryHBS52L360O+NcR383CL4QYlMKPq4zYA==",
+        "shasum": "80b7c5df7e24153d03f0e7ac8a05a5d068bd07fb",
+        "tarball": "https://registry.npmjs.org/pumpify/-/pumpify-1.4.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/pumpify-1.4.0.tgz_1516184777649_0.24492035922594368"
+      },
+      "directories": {}
+    },
+    "1.5.0": {
+      "name": "pumpify",
+      "version": "1.5.0",
+      "description": "Combine an array of streams into a single duplex stream using pump and duplexify",
+      "main": "index.js",
+      "dependencies": {
+        "duplexify": "^3.6.0",
+        "inherits": "^2.0.3",
+        "pump": "^2.0.0"
+      },
+      "devDependencies": {
+        "tape": "^4.8.0",
+        "through2": "^2.0.3"
+      },
+      "scripts": {
+        "test": "tape test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/mafintosh/pumpify.git"
+      },
+      "keywords": [
+        "pump",
+        "duplexify",
+        "duplex",
+        "streams",
+        "stream",
+        "pipeline",
+        "combine"
+      ],
+      "author": {
+        "name": "Mathias Buus"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/pumpify/issues"
+      },
+      "homepage": "https://github.com/mafintosh/pumpify",
+      "gitHead": "cc2ffee09e39fa52f77c2dbf1a901a62b7b56e12",
+      "_id": "pumpify@1.5.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.11.1",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-UWi0klDoq8xtVzlMRgENV9F7iCTZExaJQSQL187UXsxpk9NnrKGqTqqUNYAKGOzucSOxs2+jUnRNI+rLviPhJg==",
+        "shasum": "30c905a26c88fa0074927af07256672b474b1c15",
+        "tarball": "https://registry.npmjs.org/pumpify/-/pumpify-1.5.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 9417,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa7DsPCRA9TVsSAnZWagAAbXAQAKMxpOeT7Zs5trKADFEx\n/NCNA5wWc2xsRLafbTXxFiEGz1C7hI03n0Tp2vIsOwlSSNqAuNkAAQ3MvB8X\ngNrdim20/w2O0N2lzdr9bdQSVeXCnZ4ooZzbEuX1/57I6XJ/CB1QQwb4ylpl\n7SDliIvjR4PiO1GPzpLd9cTk1ytO8/ijb5UcGxYSjnhmIC0OcaYbNJNUe3Kq\n21vd4c5yBa/aveSLRyBedMyMQ9FSrjh1avk80vRub1ibhENoumchsC9mKFCF\ng3myRjE1UeY1jPJzfyXpmqGm7xiMBiUpJAA6eHFyrxuDb+kykfLv/Dd8JzNf\nxZc5tsp+Q0Si6LHtS2Z0ea58MllnMEVKJIpQEvNfey16SfWDFRjoQifcNdxD\nMXON4477AKqbuQEOtnO5uOtGJPRFrUc7KtYbEwZrlh+FfwyXz1gvJfklmjsD\nO7kZZ9qYdywUwr54H7lEz0xKvT6EjrcqC0wq8QdzxFrN2zbDOYgogX31zzXQ\n8TpyoEqqFioRfM0mT8fYMrfpFu1j9kHAcV/+P16juQMvwGFzorNE8hp8TiC/\nYmqhj6NOgByyeziblZEK1zfp3xpJCV7hFqqlazYsIFmOqTELEO+U6SLdt01/\nQg0+zLv1yMuVhNbiBgXCwkqOG34DaEwFIZIyHBLKpLrWj8TdsHp8xJurxH1e\nl+w2\r\n=VAVF\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/pumpify_1.5.0_1525431054074_0.523666047767994"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.5.1": {
+      "name": "pumpify",
+      "version": "1.5.1",
+      "description": "Combine an array of streams into a single duplex stream using pump and duplexify",
+      "main": "index.js",
+      "dependencies": {
+        "duplexify": "^3.6.0",
+        "inherits": "^2.0.3",
+        "pump": "^2.0.0"
+      },
+      "devDependencies": {
+        "tape": "^4.8.0",
+        "through2": "^2.0.3"
+      },
+      "scripts": {
+        "test": "tape test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/mafintosh/pumpify.git"
+      },
+      "keywords": [
+        "pump",
+        "duplexify",
+        "duplex",
+        "streams",
+        "stream",
+        "pipeline",
+        "combine"
+      ],
+      "author": {
+        "name": "Mathias Buus"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/pumpify/issues"
+      },
+      "homepage": "https://github.com/mafintosh/pumpify",
+      "gitHead": "10f2659c137e291648c7179f69cfe50c3a726a2b",
+      "_id": "pumpify@1.5.1",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.11.1",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-oClZI37HvuUJJxSKKrC17bZ9Cu0ZYhEAGPsPUy9KlMUmv9dKX2o77RUmq7f3XjIxbwyGwYzbzQ1L2Ks8sIradQ==",
+        "shasum": "36513be246ab27570b1a374a5ce278bfd74370ce",
+        "tarball": "https://registry.npmjs.org/pumpify/-/pumpify-1.5.1.tgz",
+        "fileCount": 6,
+        "unpackedSize": 10155,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa/D4yCRA9TVsSAnZWagAArkwP/0pfiaVudH+qySK2mz4y\nrFW1vPmRWeB/8xiAXufvhpQdsDVqEXp9395ha5G1ug9lQu+Xa90rBNWHY0nS\nyaXFplSJ+6wEFdfOj34Rz4FK001Xr0BPuzXxSOKLmzDElA79X7zzK4xaxdF9\npgt0gl3vJhbPCK/PlPvKZz6ltmt/u/od47P5dwdZFWzF4kCeeNJJ2FfpyDh2\nHLT5bhEXdAQML3u4D7aAVOyIda0ZKWO3oSGRNbRzVfamf6a03IwwRYHTnajH\nrM5wwKohclQTi4AxxgKpf4ZZrkMhhJCftmfSxqlLtpXYsep+7WoH0ZFBLL3+\nkb1SMt0PYZFwOs60ubWw8TjugWAzeUQQcMWe//nvpYYm7ZJsgCNDpQx+0iWO\n28/13IQiqjgsCjhKVYDsFOWYP2kCiFMHOfhnxqEpDb+q7DRAwt8tL573n7CQ\negun0TZrak9rr6N02uHK0VJZTs4Msrovaqf687AYDWYLhQRARVRjA3XotNgl\nip+rh9dUytyYGZRyu42t1yv3vNq1VekZbKs/P7comMgxJcoxgqFFHTALJ97Z\nqWY11S2bdiK8qDZcJfiHIZzsXiM4j9kisIPJdyrKnhtyvYD3dcCQaGGt85g0\nQEvLglx9ygdhmAWEzTDLwAw4TbdrGryXGwa9YQMR+a+DjUGyUgE1oSlqsXl5\ns5ZM\r\n=dN62\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/pumpify_1.5.1_1526480433622_0.7662524993524624"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.0": {
+      "name": "pumpify",
+      "version": "2.0.0",
+      "description": "Combine an array of streams into a single duplex stream using pump and duplexify",
+      "main": "index.js",
+      "dependencies": {
+        "duplexify": "^4.1.1",
+        "inherits": "^2.0.3",
+        "pump": "^3.0.0"
+      },
+      "devDependencies": {
+        "tape": "^4.10.2",
+        "through2": "^3.0.1"
+      },
+      "scripts": {
+        "test": "tape test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/mafintosh/pumpify.git"
+      },
+      "keywords": [
+        "pump",
+        "duplexify",
+        "duplex",
+        "streams",
+        "stream",
+        "pipeline",
+        "combine"
+      ],
+      "author": {
+        "name": "Mathias Buus"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/pumpify/issues"
+      },
+      "homepage": "https://github.com/mafintosh/pumpify",
+      "gitHead": "c5c4d8d4bb7c50829ac388ce27d66b799dc7e2fe",
+      "_id": "pumpify@2.0.0",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.15.1",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-ieN9HmpFPt4J4U4qnjN4BxrnqpPPXJyp3qFErxfwBtFOec6ewpIHdS2eu3TkmGW6S+RzFGEOGpm5ih/X/onRPQ==",
+        "shasum": "975519e5a9890ae0fb4724274e3fec97e43a30b6",
+        "tarball": "https://registry.npmjs.org/pumpify/-/pumpify-2.0.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 10156,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdAV28CRA9TVsSAnZWagAAYL8P/jlOXfgcDE3PPBKHZGHN\nnW+Qx+CP8aZu6s27VjRXTiriBqguLGoWeeBHcYDbBzHxi/apHQJBNRzs3TFK\nA+4YTFIndYaKuQr77s5ZGkUcj//2Xjh+oRjTtn6wyrPFcyd9iJd3QJLxy1kZ\nd4SrftLTkj/VXYhvZpFDGsA3SMR46uBKqao/rElpW8jl1RyDtWC0J3a0KXTJ\nNeCNSTEdXo0b1uaCbERGX74pBZhMsGjQjExxJ9c5XUBn/1a+ZtZgBrQQXmBg\njuptpUAuhVUGaptffLxFGp1l3eSKxnojfwCd1ra1Tubf0nlDo3Q634ORbNbA\nM9ryfzNJPeL0O/FDUFJUNVZFWdmESY24cQaX9wT5+Q6HWkOKoS/JQldm3AsO\n1Q5lg0eSY5mC9oQ6S/yO0fThq7/dNmIHCDyoWyhXeTEH/k/UHuiO83CdkQ9t\nAxr4xOUsf0mHXO58zjlQ6tappSQBJqGSNyAtKTiotWg3q3YF8OIKaF7rFjaT\nkJe++S12qPgRrjcsKIpLm05UPo19G3fyykZJd0yfW+AFIode4vVZ4pHLojdC\nfEliUuoomGQobrO6HwlyvtjorDNVLsrX3mGEFM+BZAnGAgu8KVexVGqoLnDy\nQ1yrekpBeae7HukugbKNgYvIwhecP1GjRC0jBrAANVNel4IhVgJ+PGBebFSM\ncnPd\r\n=FA/v\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/pumpify_2.0.0_1560370620134_0.5095998575487775"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.1": {
+      "name": "pumpify",
+      "version": "2.0.1",
+      "description": "Combine an array of streams into a single duplex stream using pump and duplexify",
+      "main": "index.js",
+      "dependencies": {
+        "duplexify": "^4.1.1",
+        "inherits": "^2.0.3",
+        "pump": "^3.0.0"
+      },
+      "devDependencies": {
+        "tape": "^4.10.2",
+        "through2": "^3.0.1"
+      },
+      "scripts": {
+        "test": "tape test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/mafintosh/pumpify.git"
+      },
+      "keywords": [
+        "pump",
+        "duplexify",
+        "duplex",
+        "streams",
+        "stream",
+        "pipeline",
+        "combine"
+      ],
+      "author": {
+        "name": "Mathias Buus"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/pumpify/issues"
+      },
+      "homepage": "https://github.com/mafintosh/pumpify",
+      "gitHead": "106097fbb7a09edf7c5f6f387ea2533fde4d0d47",
+      "_id": "pumpify@2.0.1",
+      "_nodeVersion": "10.16.3",
+      "_npmVersion": "6.9.0",
+      "dist": {
+        "integrity": "sha512-m7KOje7jZxrmutanlkS1daj1dS6z6BgslzOXmcSEpIlCxM3VJH7lG5QLeck/6hgF6F4crFf01UtQmNsJfweTAw==",
+        "shasum": "abfc7b5a621307c728b551decbbefb51f0e4aa1e",
+        "tarball": "https://registry.npmjs.org/pumpify/-/pumpify-2.0.1.tgz",
+        "fileCount": 6,
+        "unpackedSize": 10208,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdk1pgCRA9TVsSAnZWagAA+J4P/jcN/RwROcN1mJ3+WIrz\nEjyhJHlYc4Z7YFLZkRZr/vql+HH5+29mozjWkGo2Ombz5yZ/ut64j4CbOLxd\nAa4sgfWrJyZAuNbtyIAPusXV8NSXkA9E1OkQG0kwPoYXMtehGt9Lt//NJUzq\nInin4XhlNhugQtUn12HRuWwB3rPnc8G6c9ZXLEAGt839aaohUadCIXjHurAa\nmln96dNA4KmUHSLrsoLrMJld7fH8psdETW8Qf5pAVWvoqcr+ytg12Y1hFt/K\nmBnZH0yZmVgZCOWL27XDeZrwYDCBW3mWIsgvH/OxALGHt7zgMgqRkVsE+rGO\nhbCeFDtArBS1sZQ+F3Upv8jonEi2sXw0i7QADk5Irc1a0TUfoYloqXp46noX\nH23utviojPaBna8qHf35QdGcXMFeQJYC/NWFBJxA8FbCge18pTccTUuoSCbw\n+JMbvn/gHG2MN6624ceZdVUYe0pmF6VZoBAU0rFNG7Okb8qgjmuQP4mXf3M1\nw8/MXgOELO8QS9YoA+S2dPQstWcSjUPzOnd7Ea4IP8e9lfPpL8eG30vGsaJ6\n2VGdFEauftI3raHFbOocrCa3pOhsbVVgECzc9eJpt0BG3e8nFah7cjRJnzOf\nCtELQsPLkp43MC1xHt8HP6+OCIE3sWM6fqTq1riaCnGHzHlF7xEW0G2bNvkb\nS/Y/\r\n=7iau\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/pumpify_2.0.1_1569938015896_0.2381461797676594"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# pumpify\n\nCombine an array of streams into a single duplex stream using [pump](https://github.com/mafintosh/pump) and [duplexify](https://github.com/mafintosh/duplexify).\nIf one of the streams closes/errors all streams in the pipeline will be destroyed.\n\n```\nnpm install pumpify\n```\n\n[![build status](http://img.shields.io/travis/mafintosh/pumpify.svg?style=flat)](http://travis-ci.org/mafintosh/pumpify)\n\n## Usage\n\nPass the streams you want to pipe together to pumpify `pipeline = pumpify(s1, s2, s3, ...)`.\n`pipeline` is a duplex stream that writes to the first streams and reads from the last one.\nStreams are piped together using [pump](https://github.com/mafintosh/pump) so if one of them closes\nall streams will be destroyed.\n\n``` js\nvar pumpify = require('pumpify')\nvar tar = require('tar-fs')\nvar zlib = require('zlib')\nvar fs = require('fs')\n\nvar untar = pumpify(zlib.createGunzip(), tar.extract('output-folder'))\n// you can also pass an array instead\n// var untar = pumpify([zlib.createGunzip(), tar.extract('output-folder')])\n\nfs.createReadStream('some-gzipped-tarball.tgz').pipe(untar)\n```\n\nIf you are pumping object streams together use `pipeline = pumpify.obj(s1, s2, ...)`.\nCall `pipeline.destroy()` to destroy the pipeline (including the streams passed to pumpify).\n\n### Using `setPipeline(s1, s2, ...)`\n\nSimilar to [duplexify](https://github.com/mafintosh/duplexify) you can also define the pipeline asynchronously using `setPipeline(s1, s2, ...)`\n\n``` js\nvar untar = pumpify()\n\nsetTimeout(function() {\n  // will start draining the input now\n  untar.setPipeline(zlib.createGunzip(), tar.extract('output-folder'))\n}, 1000)\n\nfs.createReadStream('some-gzipped-tarball.tgz').pipe(untar)\n```\n\n## License\n\nMIT\n\n## Related\n\n`pumpify` is part of the [mississippi stream utility collection](https://github.com/maxogden/mississippi) which includes more useful stream modules similar to this one.\n",
+  "maintainers": [
+    {
+      "name": "mafintosh",
+      "email": "mathiasbuus@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2019-10-01T13:53:38.672Z",
+    "created": "2014-07-11T16:24:33.760Z",
+    "0.0.0": "2014-07-11T16:24:33.760Z",
+    "1.0.0": "2014-07-11T18:47:43.826Z",
+    "1.0.1": "2014-07-12T15:55:49.813Z",
+    "1.0.2": "2014-07-12T21:49:06.092Z",
+    "1.1.0": "2014-07-13T12:49:47.982Z",
+    "1.1.1": "2014-07-13T15:06:42.187Z",
+    "1.1.2": "2014-07-22T18:34:36.582Z",
+    "1.1.3": "2014-07-23T00:05:49.033Z",
+    "1.2.0": "2014-07-23T13:11:20.356Z",
+    "1.2.1": "2014-07-25T19:10:54.926Z",
+    "1.3.0": "2014-08-07T20:21:07.249Z",
+    "1.3.1": "2014-08-15T23:10:24.605Z",
+    "1.3.2": "2014-08-15T23:25:06.744Z",
+    "1.3.3": "2014-09-24T04:19:01.263Z",
+    "1.3.4": "2016-02-23T16:04:52.055Z",
+    "1.3.5": "2016-06-14T06:46:02.261Z",
+    "1.3.6": "2018-01-10T16:16:30.486Z",
+    "1.4.0": "2018-01-17T10:26:18.524Z",
+    "1.5.0": "2018-05-04T10:50:54.453Z",
+    "1.5.1": "2018-05-16T14:20:33.728Z",
+    "2.0.0": "2019-06-12T20:17:00.232Z",
+    "2.0.1": "2019-10-01T13:53:36.066Z"
+  },
+  "homepage": "https://github.com/mafintosh/pumpify",
+  "keywords": [
+    "pump",
+    "duplexify",
+    "duplex",
+    "streams",
+    "stream",
+    "pipeline",
+    "combine"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mafintosh/pumpify.git"
+  },
+  "author": {
+    "name": "Mathias Buus"
+  },
+  "bugs": {
+    "url": "https://github.com/mafintosh/pumpify/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "users": {
+    "timhudson": true,
+    "tclay": true,
+    "timdp": true,
+    "mreinstein": true,
+    "jrop": true,
+    "monjer": true,
+    "ganeshkbhat": true
+  }
+}

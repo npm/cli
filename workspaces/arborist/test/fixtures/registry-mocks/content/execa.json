@@ -1,0 +1,3688 @@
+{
+  "_id": "execa",
+  "_rev": "80-6996ff4831e4a70d66c5aa7e0d241663",
+  "name": "execa",
+  "description": "Process execution for humans",
+  "dist-tags": {
+    "latest": "4.0.3",
+    "next": "2.0.0-alpha.0"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "execa",
+      "version": "0.1.0",
+      "description": "A better child_process.{execFile,exec}",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/execa"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.12"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "exec",
+        "execute",
+        "fork",
+        "child",
+        "process",
+        "execfile",
+        "file",
+        "bin",
+        "binary"
+      ],
+      "dependencies": {
+        "cross-spawn-async": "2.0.1",
+        "object-assign": "^4.0.1",
+        "strip-eof": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "xo": {
+        "ignores": [
+          "test.js"
+        ]
+      },
+      "gitHead": "a9d06c8d1e2e7c2b8a2a368bb07a9dbabfc16bd9",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/execa/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/execa",
+      "_id": "execa@0.1.0",
+      "_shasum": "4aa2ee98eaeb921a394aeca1e0966e50765b8053",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.1",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "4aa2ee98eaeb921a394aeca1e0966e50765b8053",
+        "tarball": "https://registry.npmjs.org/execa/-/execa-0.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.1": {
+      "name": "execa",
+      "version": "0.1.1",
+      "description": "A better child_process.{execFile,exec}",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/execa"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.12"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "exec",
+        "execute",
+        "fork",
+        "child",
+        "process",
+        "execfile",
+        "file",
+        "bin",
+        "binary"
+      ],
+      "dependencies": {
+        "cross-spawn-async": "^2.1.1",
+        "object-assign": "^4.0.1",
+        "strip-eof": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "xo": {
+        "ignores": [
+          "test.js"
+        ]
+      },
+      "gitHead": "10df60c077ec53b10f083c89f5267c3d19af8248",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/execa/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/execa",
+      "_id": "execa@0.1.1",
+      "_shasum": "b09c2a9309bc0ef0501479472db3180f8d4c3edd",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.1",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "b09c2a9309bc0ef0501479472db3180f8d4c3edd",
+        "tarball": "https://registry.npmjs.org/execa/-/execa-0.1.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.2.0": {
+      "name": "execa",
+      "version": "0.2.0",
+      "description": "A better `child_process`",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/execa"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.12"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "exec",
+        "execute",
+        "fork",
+        "child",
+        "process",
+        "execfile",
+        "spawn",
+        "file",
+        "shell",
+        "bin",
+        "binary",
+        "binaries",
+        "npm",
+        "path",
+        "local"
+      ],
+      "dependencies": {
+        "cross-spawn-async": "^2.1.1",
+        "npm-run-path": "^1.0.0",
+        "object-assign": "^4.0.1",
+        "path-key": "^1.0.0",
+        "strip-eof": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "cat-names": "^1.0.2",
+        "xo": "*"
+      },
+      "gitHead": "c210feb770aad510b6f1689b589d2a0b4bbba435",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/execa/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/execa",
+      "_id": "execa@0.2.0",
+      "_shasum": "3178cf42a19d63726f2731e30239007c19f5bf4d",
+      "_from": ".",
+      "_npmVersion": "2.14.12",
+      "_nodeVersion": "4.2.4",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "3178cf42a19d63726f2731e30239007c19f5bf4d",
+        "tarball": "https://registry.npmjs.org/execa/-/execa-0.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.2.1": {
+      "name": "execa",
+      "version": "0.2.1",
+      "description": "A better `child_process`",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/execa"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.12"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "exec",
+        "execute",
+        "fork",
+        "child",
+        "process",
+        "execfile",
+        "spawn",
+        "file",
+        "shell",
+        "bin",
+        "binary",
+        "binaries",
+        "npm",
+        "path",
+        "local"
+      ],
+      "dependencies": {
+        "cross-spawn-async": "^2.1.1",
+        "npm-run-path": "^1.0.0",
+        "object-assign": "^4.0.1",
+        "path-key": "^1.0.0",
+        "strip-eof": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "cat-names": "^1.0.2",
+        "xo": "*"
+      },
+      "gitHead": "6e1d0c74408a6028115b16adfb12e3ae3322e3a4",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/execa/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/execa",
+      "_id": "execa@0.2.1",
+      "_shasum": "14d4f6eb9c9264220da410be73b9bdba69c90d19",
+      "_from": ".",
+      "_npmVersion": "2.14.12",
+      "_nodeVersion": "4.2.4",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "14d4f6eb9c9264220da410be73b9bdba69c90d19",
+        "tarball": "https://registry.npmjs.org/execa/-/execa-0.2.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.2.2": {
+      "name": "execa",
+      "version": "0.2.2",
+      "description": "A better `child_process`",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/execa"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.12"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "exec",
+        "execute",
+        "fork",
+        "child",
+        "process",
+        "execfile",
+        "spawn",
+        "file",
+        "shell",
+        "bin",
+        "binary",
+        "binaries",
+        "npm",
+        "path",
+        "local"
+      ],
+      "dependencies": {
+        "cross-spawn-async": "^2.1.1",
+        "npm-run-path": "^1.0.0",
+        "object-assign": "^4.0.1",
+        "path-key": "^1.0.0",
+        "strip-eof": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "cat-names": "^1.0.2",
+        "xo": "*"
+      },
+      "gitHead": "f63fefa5dad103be2ae8ac74a2d1412cf68d4a7e",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/execa/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/execa",
+      "_id": "execa@0.2.2",
+      "_shasum": "e2ead472c2c31aad6f73f1ac956eef45e12320cb",
+      "_from": ".",
+      "_npmVersion": "2.14.12",
+      "_nodeVersion": "4.2.4",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "e2ead472c2c31aad6f73f1ac956eef45e12320cb",
+        "tarball": "https://registry.npmjs.org/execa/-/execa-0.2.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.3.0": {
+      "name": "execa",
+      "version": "0.3.0",
+      "description": "A better `child_process`",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/execa.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.12"
+      },
+      "scripts": {
+        "test": "xo && nyc ava",
+        "coveralls": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "exec",
+        "child",
+        "process",
+        "execute",
+        "fork",
+        "execfile",
+        "spawn",
+        "file",
+        "shell",
+        "bin",
+        "binary",
+        "binaries",
+        "npm",
+        "path",
+        "local"
+      ],
+      "dependencies": {
+        "cross-spawn-async": "^2.1.1",
+        "npm-run-path": "^1.0.0",
+        "object-assign": "^4.0.1",
+        "path-key": "^1.0.0",
+        "strip-eof": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "cat-names": "^1.0.2",
+        "coveralls": "^2.11.9",
+        "get-stream": "^2.0.0",
+        "nyc": "^6.4.0",
+        "xo": "*"
+      },
+      "gitHead": "f7863497e034c1bbbf3fbef6e7522c0643c7e309",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/execa/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/execa#readme",
+      "_id": "execa@0.3.0",
+      "_shasum": "a144cf33f2c1b69d4c0e29fa4c5afc956346e24c",
+      "_from": ".",
+      "_npmVersion": "3.8.7",
+      "_nodeVersion": "4.4.2",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "a144cf33f2c1b69d4c0e29fa4c5afc956346e24c",
+        "tarball": "https://registry.npmjs.org/execa/-/execa-0.3.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/execa-0.3.0.tgz_1461359594289_0.6561324871145189"
+      },
+      "directories": {}
+    },
+    "0.4.0": {
+      "name": "execa",
+      "version": "0.4.0",
+      "description": "A better `child_process`",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/execa.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "engines": {
+        "node": ">=0.12"
+      },
+      "scripts": {
+        "test": "xo && nyc ava",
+        "coveralls": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "exec",
+        "child",
+        "process",
+        "execute",
+        "fork",
+        "execfile",
+        "spawn",
+        "file",
+        "shell",
+        "bin",
+        "binary",
+        "binaries",
+        "npm",
+        "path",
+        "local"
+      ],
+      "dependencies": {
+        "cross-spawn-async": "^2.1.1",
+        "is-stream": "^1.1.0",
+        "npm-run-path": "^1.0.0",
+        "object-assign": "^4.0.1",
+        "path-key": "^1.0.0",
+        "strip-eof": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "cat-names": "^1.0.2",
+        "coveralls": "^2.11.9",
+        "get-stream": "^2.0.0",
+        "nyc": "^6.4.0",
+        "xo": "*"
+      },
+      "gitHead": "c72609605b1ce2fcf42b913cd91e74503cd8d629",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/execa/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/execa#readme",
+      "_id": "execa@0.4.0",
+      "_shasum": "4eb6467a36a095fabb2970ff9d5e3fb7bce6ebc3",
+      "_from": ".",
+      "_npmVersion": "3.8.8",
+      "_nodeVersion": "4.4.2",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "4eb6467a36a095fabb2970ff9d5e3fb7bce6ebc3",
+        "tarball": "https://registry.npmjs.org/execa/-/execa-0.4.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/execa-0.4.0.tgz_1461691655825_0.48842903040349483"
+      },
+      "directories": {}
+    },
+    "0.5.0": {
+      "name": "execa",
+      "version": "0.5.0",
+      "description": "A better `child_process`",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/execa.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && nyc ava"
+      },
+      "files": [
+        "index.js",
+        "lib"
+      ],
+      "keywords": [
+        "exec",
+        "child",
+        "process",
+        "execute",
+        "fork",
+        "execfile",
+        "spawn",
+        "file",
+        "shell",
+        "bin",
+        "binary",
+        "binaries",
+        "npm",
+        "path",
+        "local"
+      ],
+      "dependencies": {
+        "cross-spawn": "^4.0.0",
+        "get-stream": "^2.2.0",
+        "is-stream": "^1.1.0",
+        "npm-run-path": "^2.0.0",
+        "signal-exit": "^3.0.0",
+        "strip-eof": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "cat-names": "^1.0.2",
+        "coveralls": "^2.11.9",
+        "delay": "^1.3.1",
+        "is-running": "^2.0.0",
+        "nyc": "^8.3.0",
+        "xo": "*"
+      },
+      "nyc": {
+        "reporter": [
+          "text",
+          "lcov"
+        ],
+        "exclude": [
+          "node_modules",
+          "**/fixtures/**",
+          "**/test.js",
+          "**/test/**"
+        ]
+      },
+      "xo": {
+        "esnext": true
+      },
+      "gitHead": "842be7c11a33c71177ea03ff12412047f3d8bd07",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/execa/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/execa#readme",
+      "_id": "execa@0.5.0",
+      "_shasum": "a57456764b990e3e52f6eff7f17a9cc2ff2e7ccc",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.6.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "a57456764b990e3e52f6eff7f17a9cc2ff2e7ccc",
+        "tarball": "https://registry.npmjs.org/execa/-/execa-0.5.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/execa-0.5.0.tgz_1475656096594_0.8247949031647295"
+      },
+      "directories": {}
+    },
+    "0.5.1": {
+      "name": "execa",
+      "version": "0.5.1",
+      "description": "A better `child_process`",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/execa.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && nyc ava"
+      },
+      "files": [
+        "index.js",
+        "lib"
+      ],
+      "keywords": [
+        "exec",
+        "child",
+        "process",
+        "execute",
+        "fork",
+        "execfile",
+        "spawn",
+        "file",
+        "shell",
+        "bin",
+        "binary",
+        "binaries",
+        "npm",
+        "path",
+        "local"
+      ],
+      "dependencies": {
+        "cross-spawn": "^4.0.0",
+        "get-stream": "^2.2.0",
+        "is-stream": "^1.1.0",
+        "npm-run-path": "^2.0.0",
+        "p-finally": "^1.0.0",
+        "signal-exit": "^3.0.0",
+        "strip-eof": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "cat-names": "^1.0.2",
+        "coveralls": "^2.11.9",
+        "delay": "^1.3.1",
+        "is-running": "^2.0.0",
+        "nyc": "^8.3.0",
+        "xo": "*"
+      },
+      "nyc": {
+        "reporter": [
+          "text",
+          "lcov"
+        ],
+        "exclude": [
+          "node_modules",
+          "**/fixtures/**",
+          "**/test.js",
+          "**/test/**"
+        ]
+      },
+      "xo": {
+        "esnext": true
+      },
+      "gitHead": "e5598cf42a5433ff1f7954f9cd31a57b429d4875",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/execa/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/execa#readme",
+      "_id": "execa@0.5.1",
+      "_shasum": "de3fb85cb8d6e91c85bcbceb164581785cb57b36",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "4.6.2",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "de3fb85cb8d6e91c85bcbceb164581785cb57b36",
+        "tarball": "https://registry.npmjs.org/execa/-/execa-0.5.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/execa-0.5.1.tgz_1483889519424_0.4603614055085927"
+      },
+      "directories": {}
+    },
+    "0.6.0": {
+      "name": "execa",
+      "version": "0.6.0",
+      "description": "A better `child_process`",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/execa.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && nyc ava"
+      },
+      "files": [
+        "index.js",
+        "lib"
+      ],
+      "keywords": [
+        "exec",
+        "child",
+        "process",
+        "execute",
+        "fork",
+        "execfile",
+        "spawn",
+        "file",
+        "shell",
+        "bin",
+        "binary",
+        "binaries",
+        "npm",
+        "path",
+        "local"
+      ],
+      "dependencies": {
+        "cross-spawn": "^5.0.1",
+        "get-stream": "^3.0.0",
+        "is-stream": "^1.1.0",
+        "npm-run-path": "^2.0.0",
+        "p-finally": "^1.0.0",
+        "signal-exit": "^3.0.0",
+        "strip-eof": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "cat-names": "^1.0.2",
+        "coveralls": "^2.11.9",
+        "delay": "^1.3.1",
+        "is-running": "^2.0.0",
+        "nyc": "^10.0.0",
+        "xo": "*"
+      },
+      "nyc": {
+        "reporter": [
+          "text",
+          "lcov"
+        ],
+        "exclude": [
+          "**/fixtures/**",
+          "**/test.js",
+          "**/test/**"
+        ]
+      },
+      "xo": {
+        "esnext": true
+      },
+      "gitHead": "af6667af5efcfc1470606ce5eb433017c3b3ae0a",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/execa/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/execa#readme",
+      "_id": "execa@0.6.0",
+      "_shasum": "934fc9f04a9febb4d4b449d976e92cfd95ef4f6e",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "4.6.2",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "934fc9f04a9febb4d4b449d976e92cfd95ef4f6e",
+        "tarball": "https://registry.npmjs.org/execa/-/execa-0.6.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/execa-0.6.0.tgz_1483954675252_0.4171230620704591"
+      },
+      "directories": {}
+    },
+    "0.6.1": {
+      "name": "execa",
+      "version": "0.6.1",
+      "description": "A better `child_process`",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/execa.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && nyc ava"
+      },
+      "files": [
+        "index.js",
+        "lib"
+      ],
+      "keywords": [
+        "exec",
+        "child",
+        "process",
+        "execute",
+        "fork",
+        "execfile",
+        "spawn",
+        "file",
+        "shell",
+        "bin",
+        "binary",
+        "binaries",
+        "npm",
+        "path",
+        "local"
+      ],
+      "dependencies": {
+        "cross-spawn": "^5.0.1",
+        "get-stream": "^3.0.0",
+        "is-stream": "^1.1.0",
+        "npm-run-path": "^2.0.0",
+        "p-finally": "^1.0.0",
+        "signal-exit": "^3.0.0",
+        "strip-eof": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "cat-names": "^1.0.2",
+        "coveralls": "^2.11.9",
+        "delay": "^1.3.1",
+        "is-running": "^2.0.0",
+        "nyc": "^10.0.0",
+        "xo": "*"
+      },
+      "nyc": {
+        "reporter": [
+          "text",
+          "lcov"
+        ],
+        "exclude": [
+          "**/fixtures/**",
+          "**/test.js",
+          "**/test/**"
+        ]
+      },
+      "xo": {
+        "esnext": true
+      },
+      "gitHead": "f2d80c68df34804a039af441fdfeffb84624d100",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/execa/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/execa#readme",
+      "_id": "execa@0.6.1",
+      "_shasum": "79eda42ade78c387718b0aad48e0f573b5525cde",
+      "_from": ".",
+      "_npmVersion": "4.1.2",
+      "_nodeVersion": "7.7.2",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "79eda42ade78c387718b0aad48e0f573b5525cde",
+        "tarball": "https://registry.npmjs.org/execa/-/execa-0.6.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/execa-0.6.1.tgz_1489386883556_0.7629855342675"
+      },
+      "directories": {}
+    },
+    "0.6.2": {
+      "name": "execa",
+      "version": "0.6.2",
+      "description": "A better `child_process`",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/execa.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && nyc ava"
+      },
+      "files": [
+        "index.js",
+        "lib"
+      ],
+      "keywords": [
+        "exec",
+        "child",
+        "process",
+        "execute",
+        "fork",
+        "execfile",
+        "spawn",
+        "file",
+        "shell",
+        "bin",
+        "binary",
+        "binaries",
+        "npm",
+        "path",
+        "local"
+      ],
+      "dependencies": {
+        "cross-spawn": "^5.0.1",
+        "get-stream": "^3.0.0",
+        "is-stream": "^1.1.0",
+        "npm-run-path": "^2.0.0",
+        "p-finally": "^1.0.0",
+        "signal-exit": "^3.0.0",
+        "strip-eof": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "cat-names": "^1.0.2",
+        "coveralls": "^2.11.9",
+        "delay": "^1.3.1",
+        "is-running": "^2.0.0",
+        "nyc": "^10.0.0",
+        "xo": "*"
+      },
+      "nyc": {
+        "reporter": [
+          "text",
+          "lcov"
+        ],
+        "exclude": [
+          "**/fixtures/**",
+          "**/test.js",
+          "**/test/**"
+        ]
+      },
+      "xo": {
+        "esnext": true
+      },
+      "gitHead": "f28c01d854f1427674be2c9c2f9b220fce4dd970",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/execa/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/execa#readme",
+      "_id": "execa@0.6.2",
+      "_shasum": "04e9e38dec6b8e770cf0fb6cf7ef945260c67bbb",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "4.7.3",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "04e9e38dec6b8e770cf0fb6cf7ef945260c67bbb",
+        "tarball": "https://registry.npmjs.org/execa/-/execa-0.6.2.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/execa-0.6.2.tgz_1489989437493_0.39953839825466275"
+      },
+      "directories": {}
+    },
+    "0.6.3": {
+      "name": "execa",
+      "version": "0.6.3",
+      "description": "A better `child_process`",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/execa.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && nyc ava"
+      },
+      "files": [
+        "index.js",
+        "lib"
+      ],
+      "keywords": [
+        "exec",
+        "child",
+        "process",
+        "execute",
+        "fork",
+        "execfile",
+        "spawn",
+        "file",
+        "shell",
+        "bin",
+        "binary",
+        "binaries",
+        "npm",
+        "path",
+        "local"
+      ],
+      "dependencies": {
+        "cross-spawn": "^5.0.1",
+        "get-stream": "^3.0.0",
+        "is-stream": "^1.1.0",
+        "npm-run-path": "^2.0.0",
+        "p-finally": "^1.0.0",
+        "signal-exit": "^3.0.0",
+        "strip-eof": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "cat-names": "^1.0.2",
+        "coveralls": "^2.11.9",
+        "delay": "^1.3.1",
+        "is-running": "^2.0.0",
+        "nyc": "^10.0.0",
+        "xo": "*"
+      },
+      "nyc": {
+        "reporter": [
+          "text",
+          "lcov"
+        ],
+        "exclude": [
+          "**/fixtures/**",
+          "**/test.js",
+          "**/test/**"
+        ]
+      },
+      "xo": {
+        "esnext": true
+      },
+      "gitHead": "2892941f582608f2e1f79b584761392906553feb",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/execa/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/execa#readme",
+      "_id": "execa@0.6.3",
+      "_shasum": "57b69a594f081759c69e5370f0d17b9cb11658fe",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "4.7.3",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "57b69a594f081759c69e5370f0d17b9cb11658fe",
+        "tarball": "https://registry.npmjs.org/execa/-/execa-0.6.3.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/execa-0.6.3.tgz_1490099460925_0.15050783357582986"
+      },
+      "directories": {}
+    },
+    "0.7.0": {
+      "name": "execa",
+      "version": "0.7.0",
+      "description": "A better `child_process`",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/execa.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && nyc ava"
+      },
+      "files": [
+        "index.js",
+        "lib"
+      ],
+      "keywords": [
+        "exec",
+        "child",
+        "process",
+        "execute",
+        "fork",
+        "execfile",
+        "spawn",
+        "file",
+        "shell",
+        "bin",
+        "binary",
+        "binaries",
+        "npm",
+        "path",
+        "local"
+      ],
+      "dependencies": {
+        "cross-spawn": "^5.0.1",
+        "get-stream": "^3.0.0",
+        "is-stream": "^1.1.0",
+        "npm-run-path": "^2.0.0",
+        "p-finally": "^1.0.0",
+        "signal-exit": "^3.0.0",
+        "strip-eof": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "cat-names": "^1.0.2",
+        "coveralls": "^2.11.9",
+        "delay": "^2.0.0",
+        "is-running": "^2.0.0",
+        "nyc": "^11.0.2",
+        "tempfile": "^2.0.0",
+        "xo": "*"
+      },
+      "nyc": {
+        "reporter": [
+          "text",
+          "lcov"
+        ],
+        "exclude": [
+          "**/fixtures/**",
+          "**/test.js",
+          "**/test/**"
+        ]
+      },
+      "gitHead": "b4d1c8613fd068e3c36f11e7bff672d008ac88f9",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/execa/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/execa#readme",
+      "_id": "execa@0.7.0",
+      "_shasum": "944becd34cc41ee32a63a9faf27ad5a65fc59777",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "4.8.3",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "944becd34cc41ee32a63a9faf27ad5a65fc59777",
+        "tarball": "https://registry.npmjs.org/execa/-/execa-0.7.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/execa-0.7.0.tgz_1497045041009_0.3423430174589157"
+      },
+      "directories": {}
+    },
+    "0.8.0": {
+      "name": "execa",
+      "version": "0.8.0",
+      "description": "A better `child_process`",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/execa.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && nyc ava"
+      },
+      "files": [
+        "index.js",
+        "lib"
+      ],
+      "keywords": [
+        "exec",
+        "child",
+        "process",
+        "execute",
+        "fork",
+        "execfile",
+        "spawn",
+        "file",
+        "shell",
+        "bin",
+        "binary",
+        "binaries",
+        "npm",
+        "path",
+        "local"
+      ],
+      "dependencies": {
+        "cross-spawn": "^5.0.1",
+        "get-stream": "^3.0.0",
+        "is-stream": "^1.1.0",
+        "npm-run-path": "^2.0.0",
+        "p-finally": "^1.0.0",
+        "signal-exit": "^3.0.0",
+        "strip-eof": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "cat-names": "^1.0.2",
+        "coveralls": "^2.11.9",
+        "delay": "^2.0.0",
+        "is-running": "^2.0.0",
+        "nyc": "^11.0.2",
+        "tempfile": "^2.0.0",
+        "xo": "*"
+      },
+      "nyc": {
+        "reporter": [
+          "text",
+          "lcov"
+        ],
+        "exclude": [
+          "**/fixtures/**",
+          "**/test.js",
+          "**/test/**"
+        ]
+      },
+      "gitHead": "dc7e21b0754985b75a5e89917c9035beac1f1f2e",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/execa/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/execa#readme",
+      "_id": "execa@0.8.0",
+      "_shasum": "d8d76bbc1b55217ed190fd6dd49d3c774ecfc8da",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "4.8.3",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "d8d76bbc1b55217ed190fd6dd49d3c774ecfc8da",
+        "tarball": "https://registry.npmjs.org/execa/-/execa-0.8.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/execa-0.8.0.tgz_1501965886445_0.050055725732818246"
+      },
+      "directories": {}
+    },
+    "0.9.0": {
+      "name": "execa",
+      "version": "0.9.0",
+      "description": "A better `child_process`",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/execa.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && nyc ava"
+      },
+      "files": [
+        "index.js",
+        "lib"
+      ],
+      "keywords": [
+        "exec",
+        "child",
+        "process",
+        "execute",
+        "fork",
+        "execfile",
+        "spawn",
+        "file",
+        "shell",
+        "bin",
+        "binary",
+        "binaries",
+        "npm",
+        "path",
+        "local"
+      ],
+      "dependencies": {
+        "cross-spawn": "^5.0.1",
+        "get-stream": "^3.0.0",
+        "is-stream": "^1.1.0",
+        "npm-run-path": "^2.0.0",
+        "p-finally": "^1.0.0",
+        "signal-exit": "^3.0.0",
+        "strip-eof": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "cat-names": "^1.0.2",
+        "coveralls": "^2.11.9",
+        "delay": "^2.0.0",
+        "is-running": "^2.0.0",
+        "nyc": "^11.0.2",
+        "tempfile": "^2.0.0",
+        "xo": "*"
+      },
+      "nyc": {
+        "reporter": [
+          "text",
+          "lcov"
+        ],
+        "exclude": [
+          "**/fixtures/**",
+          "**/test.js",
+          "**/test/**"
+        ]
+      },
+      "gitHead": "b01989521f514f3578c48c8302e648008ed4fd0d",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/execa/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/execa#readme",
+      "_id": "execa@0.9.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.9.4",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-BbUMBiX4hqiHZUA5+JujIjNb6TyAlp2D5KLheMjMluwOuzcnylDL4AxZYLLn1n2AGB49eSWwyKvvEQoRpnAtmA==",
+        "shasum": "adb7ce62cf985071f60580deb4a88b9e34712d01",
+        "tarball": "https://registry.npmjs.org/execa/-/execa-0.9.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/execa-0.9.0.tgz_1515713388594_0.54020432732068"
+      },
+      "directories": {}
+    },
+    "0.10.0": {
+      "name": "execa",
+      "version": "0.10.0",
+      "description": "A better `child_process`",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/execa.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && nyc ava"
+      },
+      "files": [
+        "index.js",
+        "lib"
+      ],
+      "keywords": [
+        "exec",
+        "child",
+        "process",
+        "execute",
+        "fork",
+        "execfile",
+        "spawn",
+        "file",
+        "shell",
+        "bin",
+        "binary",
+        "binaries",
+        "npm",
+        "path",
+        "local"
+      ],
+      "dependencies": {
+        "cross-spawn": "^6.0.0",
+        "get-stream": "^3.0.0",
+        "is-stream": "^1.1.0",
+        "npm-run-path": "^2.0.0",
+        "p-finally": "^1.0.0",
+        "signal-exit": "^3.0.0",
+        "strip-eof": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "cat-names": "^1.0.2",
+        "coveralls": "^2.11.9",
+        "delay": "^2.0.0",
+        "is-running": "^2.0.0",
+        "nyc": "^11.0.2",
+        "tempfile": "^2.0.0",
+        "xo": "*"
+      },
+      "nyc": {
+        "reporter": [
+          "text",
+          "lcov"
+        ],
+        "exclude": [
+          "**/fixtures/**",
+          "**/test.js",
+          "**/test/**"
+        ]
+      },
+      "gitHead": "658f2201116ae3014b26a25e8a9ae63ba2ac41ca",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/execa/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/execa#readme",
+      "_id": "execa@0.10.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.9.4",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-7XOMnz8Ynx1gGo/3hyV9loYNPWM94jG3+3T3Y8tsfSstFmETmENCMU/A/zj8Lyaj1lkgEepKepvd6240tBRvlw==",
+        "shasum": "ff456a8f53f90f8eccc71a96d11bdfc7f082cb50",
+        "tarball": "https://registry.npmjs.org/execa/-/execa-0.10.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 19657
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/execa_0.10.0_1521089995380_0.5877823423115993"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.11.0": {
+      "name": "execa",
+      "version": "0.11.0",
+      "description": "A better `child_process`",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/execa.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && nyc ava"
+      },
+      "files": [
+        "index.js",
+        "lib"
+      ],
+      "keywords": [
+        "exec",
+        "child",
+        "process",
+        "execute",
+        "fork",
+        "execfile",
+        "spawn",
+        "file",
+        "shell",
+        "bin",
+        "binary",
+        "binaries",
+        "npm",
+        "path",
+        "local"
+      ],
+      "dependencies": {
+        "cross-spawn": "^6.0.0",
+        "get-stream": "^4.0.0",
+        "is-stream": "^1.1.0",
+        "npm-run-path": "^2.0.0",
+        "p-finally": "^1.0.0",
+        "signal-exit": "^3.0.0",
+        "strip-eof": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "cat-names": "^1.0.2",
+        "coveralls": "^3.0.1",
+        "delay": "^3.0.0",
+        "is-running": "^2.0.0",
+        "nyc": "^13.0.1",
+        "tempfile": "^2.0.0",
+        "xo": "*"
+      },
+      "nyc": {
+        "reporter": [
+          "text",
+          "lcov"
+        ],
+        "exclude": [
+          "**/fixtures/**",
+          "**/test.js",
+          "**/test/**"
+        ]
+      },
+      "gitHead": "20ab0a1c10b815fb4eac1e11638803d6d09b3f1d",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/execa/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/execa#readme",
+      "_id": "execa@0.11.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.11.3",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-k5AR22vCt1DcfeiRixW46U5tMLtBg44ssdJM9PiXw3D8Bn5qyxFCSnKY/eR22y+ctFDGPqafpaXg2G4Emyua4A==",
+        "shasum": "0b3c71daf9b9159c252a863cd981af1b4410d97a",
+        "tarball": "https://registry.npmjs.org/execa/-/execa-0.11.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 19886,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbenSGCRA9TVsSAnZWagAAjWkP/0L0L1ZM7PSdEOxI/s3H\nyh1oubc/ek2l3amjnFU37EzbhsDPRxEdFxmjl8m327L2SKxZbSETaf0Z/tnc\nvsoZ0Cveb32RvJCZYmQTEYmYQSk/sXfoeNlIaI/lvzndINHwakq37W8INHIz\n36SbmwSPQFNR9vGuHExGx6jB93+vkPHDHgFhYLDlGZfH05SpGf4M3JDBAXBw\ny+gdLLDmqCgSJlhH5bBlcEvHnXusX+vleyxp5Y0/hDpL+Yd1Lln4u32fBPqP\nbXFj14F+0xzXS8baBKjB/OfOF+5GsFuw3WWhmC1/EecFloYpNlMhg1qxkYhL\n/Ves1LDYxwEm/NV7mfJ3lK7dV1KpTqhmpcDwo+1ME3eiEpkHDOVkaxIAVjmJ\nckcYEQPi2XBKWdQ3qO6+1k30ZUQmV8zHPFmk/0ZvZZ4QwE//rhLh5FsekOUo\nsZcASLcvYvPHFhQcsCNk61oZGMIWoohB3FfapAylFZdn24SQhQIufNAxlC19\n8gGN29tlcfhq5BD22RJJBXOmHbrz2zrI/kx+nNqAVaeg5p5WD197KO4is0zN\nqyM5t1QIc3oHg7XsszYaLm5Er4ZCKzAq4NovEpg3lWs0r47cA3DmSFBdViae\nLWTnLT02DLv3hSmJIHkJHErnnYpQZWo9/hbDfEgOz0ci2Uvl9vLK0XM5HRU8\nqpGB\r\n=D7f/\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/execa_0.11.0_1534751877736_0.15763076989916147"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.0.0": {
+      "name": "execa",
+      "version": "1.0.0",
+      "description": "A better `child_process`",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/execa.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && nyc ava"
+      },
+      "files": [
+        "index.js",
+        "lib"
+      ],
+      "keywords": [
+        "exec",
+        "child",
+        "process",
+        "execute",
+        "fork",
+        "execfile",
+        "spawn",
+        "file",
+        "shell",
+        "bin",
+        "binary",
+        "binaries",
+        "npm",
+        "path",
+        "local"
+      ],
+      "dependencies": {
+        "cross-spawn": "^6.0.0",
+        "get-stream": "^4.0.0",
+        "is-stream": "^1.1.0",
+        "npm-run-path": "^2.0.0",
+        "p-finally": "^1.0.0",
+        "signal-exit": "^3.0.0",
+        "strip-eof": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "cat-names": "^1.0.2",
+        "coveralls": "^3.0.1",
+        "delay": "^3.0.0",
+        "is-running": "^2.0.0",
+        "nyc": "^13.0.1",
+        "tempfile": "^2.0.0",
+        "xo": "*"
+      },
+      "nyc": {
+        "reporter": [
+          "text",
+          "lcov"
+        ],
+        "exclude": [
+          "**/fixtures/**",
+          "**/test.js",
+          "**/test/**"
+        ]
+      },
+      "gitHead": "c8dccf7de66c65f4b9b821ec00871fea386fb35f",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/execa/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/execa#readme",
+      "_id": "execa@1.0.0",
+      "_npmVersion": "6.4.0",
+      "_nodeVersion": "8.11.3",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-adbxcyWV46qiHyvSp50TKt05tB4tK3HcmF7/nxfAdhnox83seTDbwnaqKO4sXRy7roHAIFqJP/Rw/AuEbX61LA==",
+        "shasum": "c6236a5bb4df6d6f15e88e7f017798216749ddd8",
+        "tarball": "https://registry.npmjs.org/execa/-/execa-1.0.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 19885,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbgubQCRA9TVsSAnZWagAAIsEQAIs35D02H15nByFfN/Ht\nMtyJPq3y8M4HKouIKuHWiO1auu6fmt/uhFpzNJJfnwhJoZBUPs/OZBi2w8jr\n4zglnRGX5w323oLVFEZHWIUny6YSNnDsxjKnDkrKw6j/3Z/dAo6o/QPO4/4n\nVgyLhQQuhvNnB6z6iH9tgpxTwyVcVetWqJOBT3T4idkbgAmZAsE/m/1RoUUN\nuq/72dV8H4jomYCvKvoeVsj+RpeTuCGoQFwoN/xjkuHh0EqWp3D13wJyc8Pc\n2tS2+mf/0FZaMFEELoMV6W6dBI320xSBgD1mc0zJ8fy//oDmjctiIKVKEQRJ\nCPiQIuKKZ2HlC7cHUnGK9KNHk3DLiHVi6gJxepzdoSUArrF4J23v7JyQxzpm\nR12+DwMIL+TF3e/+XljqfpmNlbShh1Bvmx56ih2to9JafN0BobOHRMrQcqSz\nmcnFQCpQIGx4Cck0/TaumL3mZDsZ9DS6jPKrYEeJ5MkgU0Y2/p1MIB6dbhae\nvGJRmYlDuXm7DNTDdpuUo+vTYtRWvXA+O7K1V7lwavUbJ/eA+dlwxfcAKJFD\n6QKrVKtnCJmQqfP9rwJSXCYtWQ90+gGfoNDijcpoQj9H3pqcCnM0bAKaJbOm\n0s+k2TpbCFu9sqlGAYLZl3uwV3FqdyjrAWW/zjvn/S7O6cxjiYFk/Qhn+OS4\ns9FU\r\n=B9g6\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/execa_1.0.0_1535305424092_0.2806930373405232"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.0-alpha.0": {
+      "name": "execa",
+      "version": "2.0.0-alpha.0",
+      "description": "Process execution for humans",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/execa.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && nyc ava && tsd"
+      },
+      "keywords": [
+        "exec",
+        "child",
+        "process",
+        "execute",
+        "fork",
+        "execfile",
+        "spawn",
+        "file",
+        "shell",
+        "bin",
+        "binary",
+        "binaries",
+        "npm",
+        "path",
+        "local"
+      ],
+      "dependencies": {
+        "cross-spawn": "^6.0.5",
+        "get-stream": "^5.0.0",
+        "is-stream": "^2.0.0",
+        "merge-stream": "^2.0.0",
+        "npm-run-path": "^3.0.0",
+        "p-finally": "^2.0.0",
+        "signal-exit": "^3.0.2",
+        "strip-final-newline": "^2.0.0"
+      },
+      "devDependencies": {
+        "@types/node": "^12.0.7",
+        "ava": "^2.1.0",
+        "coveralls": "^3.0.4",
+        "is-running": "^2.1.0",
+        "nyc": "^14.1.1",
+        "p-event": "^4.1.0",
+        "tempfile": "^3.0.0",
+        "tsd": "^0.7.3",
+        "xo": "^0.24.0"
+      },
+      "nyc": {
+        "exclude": [
+          "**/fixtures/**",
+          "**/test.js",
+          "**/test/**"
+        ]
+      },
+      "readme": "<img src=\"media/logo.svg\" width=\"400\">\n<br>\n\n[![Build Status](https://travis-ci.org/sindresorhus/execa.svg?branch=master)](https://travis-ci.org/sindresorhus/execa) [![Coverage Status](https://coveralls.io/repos/github/sindresorhus/execa/badge.svg?branch=master)](https://coveralls.io/github/sindresorhus/execa?branch=master)\n\n> Process execution for humans\n\n\n---\n\nOne of the maintainers [@ehmicky](https://github.com/ehmicky) is looking for a remote full-time position as a Node.js back-end lead. Feel free to [contact him](https://www.mickael-hebert.com)!\n\n---\n\n\n## Why\n\nThis package improves [`child_process`](https://nodejs.org/api/child_process.html) methods with:\n\n- Promise interface.\n- [Strips the final newline](#stripfinalnewline) from the output so you don't have to do `stdout.trim()`.\n- Supports [shebang](https://en.wikipedia.org/wiki/Shebang_(Unix)) binaries cross-platform.\n- [Improved Windows support.](https://github.com/IndigoUnited/node-cross-spawn#why)\n- Higher max buffer. 100 MB instead of 200 KB.\n- [Executes locally installed binaries by name.](#preferlocal)\n- [Cleans up spawned processes when the parent process dies.](#cleanup)\n- [Get interleaved output](#all) from `stdout` and `stderr` similar to what is printed on the terminal. [*(Async only)*](#execasyncfile-arguments-options)\n- [Can specify file and arguments as a single string without a shell](#execacommandcommand-options)\n- More descriptive errors.\n\n\n## Install\n\n```\n$ npm install execa\n```\n\n\n## Usage\n\n```js\nconst execa = require('execa');\n\n(async () => {\n\tconst {stdout} = await execa('echo', ['unicorns']);\n\tconsole.log(stdout);\n\t//=> 'unicorns'\n})();\n```\n\nAdditional examples:\n\n```js\nconst execa = require('execa');\n\n(async () => {\n\t// Pipe the child process stdout to the current stdout\n\texeca('echo', ['unicorns']).stdout.pipe(process.stdout);\n\n\n\t// Catching an error\n\ttry {\n\t\tawait execa('wrong', ['command']);\n\t} catch (error) {\n\t\tconsole.log(error);\n\t\t/*\n\t\t{\n\t\t\tmessage: 'Command failed with exit code 2 (ENOENT): wrong command spawn wrong ENOENT',\n\t\t\terrno: 'ENOENT',\n\t\t\tsyscall: 'spawn wrong',\n\t\t\tpath: 'wrong',\n\t\t\tspawnargs: ['command'],\n\t\t\tcommand: 'wrong command',\n\t\t\texitCode: 2,\n\t\t\texitCodeName: 'ENOENT',\n\t\t\tstdout: '',\n\t\t\tstderr: '',\n\t\t\tall: '',\n\t\t\tfailed: true,\n\t\t\ttimedOut: false,\n\t\t\tisCanceled: false,\n\t\t\tkilled: false\n\t\t}\n\t\t*/\n\t}\n\n\t// Cancelling a spawned process\n\tconst subprocess = execa('node');\n\tsetTimeout(() => {\n\t\tsubprocess.cancel();\n\t}, 1000);\n\ttry {\n\t\tawait subprocess;\n\t} catch (error) {\n\t\tconsole.log(subprocess.killed); // true\n\t\tconsole.log(error.isCanceled); // true\n\t}\n})();\n\n// Catching an error with a sync method\ntry {\n\texeca.sync('wrong', ['command']);\n} catch (error) {\n\tconsole.log(error);\n\t/*\n\t{\n\t\tmessage: 'Command failed with exit code 2 (ENOENT): wrong command spawnSync wrong ENOENT',\n\t\terrno: 'ENOENT',\n\t\tsyscall: 'spawnSync wrong',\n\t\tpath: 'wrong',\n\t\tspawnargs: ['command'],\n\t\tcommand: 'wrong command',\n\t\texitCode: 2,\n\t\texitCodeName: 'ENOENT',\n\t\tstdout: '',\n\t\tstderr: '',\n\t\tfailed: true,\n\t\ttimedOut: false,\n\t\tisCanceled: false,\n\t\tkilled: false\n\t}\n\t*/\n}\n\n// Kill a process with SIGTERM, and after 2 seconds, kill it with SIGKILL\nconst subprocess = execa('node');\nsetTimeout(() => {\n\tsubprocess.kill('SIGTERM', {\n\t\tforceKillAfterTimeout: 2000\n\t});\n}, 1000);\n```\n\n## API\n\n### execa(file, arguments, [options])\n\nExecute a file. Think of this as a mix of [`child_process.execFile()`](https://nodejs.org/api/child_process.html#child_process_child_process_execfile_file_args_options_callback) and [`child_process.spawn()`](https://nodejs.org/api/child_process.html#child_process_child_process_spawn_command_args_options).\n\nNo escaping/quoting is needed.\n\nUnless the [`shell`](#shell) option is used, no shell interpreter (Bash, `cmd.exe`, etc.) is used, so shell features such as variables substitution (`echo $PATH`) are not allowed.\n\nReturns a [`child_process` instance](https://nodejs.org/api/child_process.html#child_process_class_childprocess) which:\n  - is also a `Promise` resolving or rejecting with a [`childProcessResult`](#childProcessResult).\n  - exposes the following additional methods and properties.\n\n#### kill([signal], [options])\n\nSame as the original [`child_process#kill()`](https://nodejs.org/api/child_process.html#child_process_subprocess_kill_signal) except: if `signal` is `SIGTERM` (the default value) and the child process is not terminated after 5 seconds, force it by sending `SIGKILL`.\n\n##### options.forceKillAfterTimeout\n\nType: `number | false`<br>\nDefault: `5000`\n\nMilliseconds to wait for the child process to terminate before sending `SIGKILL`.\n\nCan be disabled with `false`.\n\n#### cancel()\n\nSimilar to [`childProcess.kill()`](https://nodejs.org/api/child_process.html#child_process_subprocess_kill_signal). This is preferred when cancelling the child process execution as the error is more descriptive and [`childProcessResult.isCanceled`](#iscanceled) is set to `true`.\n\n#### all\n\nStream combining/interleaving [`stdout`](https://nodejs.org/api/child_process.html#child_process_subprocess_stdout) and [`stderr`](https://nodejs.org/api/child_process.html#child_process_subprocess_stderr).\n\n### execa.sync(file, [arguments], [options])\n\nExecute a file synchronously.\n\nReturns or throws a [`childProcessResult`](#childProcessResult).\n\n### execa.command(command, [options])\n\nSame as [`execa()`](#execafile-arguments-options) except both file and arguments are specified in a single `command` string. For example, `execa('echo', ['unicorns'])` is the same as `execa.command('echo unicorns')`.\n\nIf the file or an argument contains spaces, they must be escaped with backslashes. This matters especially if `command` is not a constant but a variable, for example with `__dirname` or `process.cwd()`. Except for spaces, no escaping/quoting is needed.\n\n### execa.commandSync(command, [options])\n\nSame as [`execa.command()`](#execacommand-command-options) but synchronous.\n\nReturns or throws a [`childProcessResult`](#childProcessResult).\n\n### execa.node(scriptPath, [arguments], [options])\n\nExecute a Node.js script as a child process.\n\nSame as `execa('node', [file, ...arguments], options)` except (like [`child_process#fork()`](https://nodejs.org/api/child_process.html#child_process_child_process_fork_modulepath_args_options)):\n  - the [`nodePath`](#nodepath-for-node-only) and [`nodeArguments`](#nodearguments-for-node-only) options can be used\n  - the [`shell`](#shell) option cannot be used \n  - an extra channel [`ipc`](https://nodejs.org/api/child_process.html#child_process_options_stdio) is passed to [`stdio`](#stdio)\n\n### childProcessResult\n\nType: `object`\n\nResult of a child process execution. On success this is a plain object. On failure this is also an `Error` instance.\n\n#### command\n\nType: `string`\n\nThe file and arguments that were run.\n\n#### exitCode\n\nType: `number`\n\nThe numeric exit code of the process that was run.\n\n#### exitCodeName\n\nType: `string`\n\nThe textual exit code of the process that was run.\n\n#### stdout\n\nType: `string | Buffer`\n\nThe output of the process on stdout.\n\n#### stderr\n\nType: `string | Buffer`\n\nThe output of the process on stderr.\n\n#### all\n\nType: `string | Buffer`\n\nThe output of the process on both stdout and stderr. `undefined` if `execa.sync()` was used.\n\n#### failed\n\nType: `boolean`\n\nWhether the process failed to run.\n\n#### timedOut\n\nType: `boolean`\n\nWhether the process timed out.\n\n#### isCanceled\n\nType: `boolean`\n\nWhether the process was canceled.\n\n#### killed\n\nType: `boolean`\n\nWhether the process was killed.\n\n#### signal\n\nType: `string | undefined`\n\nThe signal that was used to terminate the process.\n\n### options\n\nType: `object`\n\n#### cleanup\n\nType: `boolean`<br>\nDefault: `true`\n\nKill the spawned process when the parent process exits unless either:\n\t- the spawned process is [`detached`](https://nodejs.org/api/child_process.html#child_process_options_detached)\n\t- the parent process is terminated abruptly, for example, with `SIGKILL` as opposed to `SIGTERM` or a normal exit\n\n#### preferLocal\n\nType: `boolean`<br>\nDefault: `true`\n\nPrefer locally installed binaries when looking for a binary to execute.<br>\nIf you `$ npm install foo`, you can then `execa('foo')`.\n\n#### localDir\n\nType: `string`<br>\nDefault: `process.cwd()`\n\nPreferred path to find locally installed binaries in (use with `preferLocal`).\n\n#### buffer\n\nType: `boolean`<br>\nDefault: `true`\n\nBuffer the output from the spawned process. When buffering is disabled you must consume the output of the `stdout` and `stderr` streams because the promise will not be resolved/rejected until they have completed.\n\nIf the spawned process fails, [`error.stdout`](#stdout), [`error.stderr`](#stderr), and [`error.all`](#all) will contain the buffered data.\n\n#### input\n\nType: `string | Buffer | stream.Readable`\n\nWrite some input to the `stdin` of your binary.<br>\nStreams are not allowed when using the synchronous methods.\n\n#### stdin\n\nType: `string | number | Stream | undefined`<br>\nDefault: `pipe`\n\nSame options as [`stdio`](https://nodejs.org/dist/latest-v6.x/docs/api/child_process.html#child_process_options_stdio).\n\n#### stdout\n\nType: `string | number | Stream | undefined`<br>\nDefault: `pipe`\n\nSame options as [`stdio`](https://nodejs.org/dist/latest-v6.x/docs/api/child_process.html#child_process_options_stdio).\n\n#### stderr\n\nType: `string | number | Stream | undefined`<br>\nDefault: `pipe`\n\nSame options as [`stdio`](https://nodejs.org/dist/latest-v6.x/docs/api/child_process.html#child_process_options_stdio).\n\n#### reject\n\nType: `boolean`<br>\nDefault: `true`\n\nSetting this to `false` resolves the promise with the error instead of rejecting it.\n\n#### stripFinalNewline\n\nType: `boolean`<br>\nDefault: `true`\n\nStrip the final [newline character](https://en.wikipedia.org/wiki/Newline) from the output.\n\n#### extendEnv\n\nType: `boolean`<br>\nDefault: `true`\n\nSet to `false` if you don't want to extend the environment variables when providing the `env` property.\n\n---\n\nExeca also accepts the below options which are the same as the options for [`child_process#spawn()`](https://nodejs.org/api/child_process.html#child_process_child_process_spawn_command_args_options)/[`child_process#exec()`](https://nodejs.org/api/child_process.html#child_process_child_process_exec_command_options_callback)\n\n#### cwd\n\nType: `string`<br>\nDefault: `process.cwd()`\n\nCurrent working directory of the child process.\n\n#### env\n\nType: `object`<br>\nDefault: `process.env`\n\nEnvironment key-value pairs. Extends automatically from `process.env`. Set [`extendEnv`](#extendenv) to `false` if you don't want this.\n\n#### argv0\n\nType: `string`\n\nExplicitly set the value of `argv[0]` sent to the child process. This will be set to `file` if not specified.\n\n#### stdio\n\nType: `string | string[]`<br>\nDefault: `pipe`\n\nChild's [stdio](https://nodejs.org/api/child_process.html#child_process_options_stdio) configuration.\n\n#### detached\n\nType: `boolean`\n\nPrepare child to run independently of its parent process. Specific behavior [depends on the platform](https://nodejs.org/api/child_process.html#child_process_options_detached).\n\n#### uid\n\nType: `number`\n\nSets the user identity of the process.\n\n#### gid\n\nType: `number`\n\nSets the group identity of the process.\n\n#### shell\n\nType: `boolean | string`<br>\nDefault: `false`\n\nIf `true`, runs `file` inside of a shell. Uses `/bin/sh` on UNIX and `cmd.exe` on Windows. A different shell can be specified as a string. The shell should understand the `-c` switch on UNIX or `/d /s /c` on Windows.\n\nWe recommend against using this option since it is:\n- not cross-platform, encouraging shell-specific syntax.\n- slower, because of the additional shell interpretation.\n- unsafe, potentially allowing command injection.\n\n#### encoding\n\nType: `string | null`<br>\nDefault: `utf8`\n\nSpecify the character encoding used to decode the `stdout` and `stderr` output. If set to `null`, then `stdout` and `stderr` will be a `Buffer` instead of a string.\n\n#### timeout\n\nType: `number`<br>\nDefault: `0`\n\nIf timeout is greater than `0`, the parent will send the signal identified by the `killSignal` property (the default is `SIGTERM`) if the child runs longer than timeout milliseconds.\n\n#### maxBuffer\n\nType: `number`<br>\nDefault: `100_000_000` (100 MB)\n\nLargest amount of data in bytes allowed on `stdout` or `stderr`.\n\n#### killSignal\n\nType: `string | number`<br>\nDefault: `SIGTERM`\n\nSignal value to be used when the spawned process will be killed.\n\n#### windowsVerbatimArguments\n\nType: `boolean`<br>\nDefault: `false`\n\nIf `true`, no quoting or escaping of arguments is done on Windows. Ignored on other platforms. This is set to `true` automatically when the `shell` option is `true`.\n\n#### nodePath *(for `.node()` only)*\n\nType: `string`<br>\nDefault: [`process.execPath`](https://nodejs.org/api/process.html#process_process_execpath)\n\nNode.js executable used to create the child process.\n\n#### nodeArguments *(for `.node()` only)*\n\nType: `string[]`<br>\nDefault: [`process.execArgv`](https://nodejs.org/api/process.html#process_process_execargv)\n\nList of string arguments passed to the Node.js executable.\n\n## Tips\n\n### Save and pipe output from a child process\n\nLet's say you want to show the output of a child process in real-time while also saving it to a variable.\n\n```js\nconst execa = require('execa');\n\nconst subprocess = execa('echo', ['foo']);\nsubprocess.stdout.pipe(process.stdout);\n\n(async () => {\n\tconst {stdout} = await subprocess;\n\tconsole.log('child output:', stdout);\n})();\n```\n\n### Redirect output to a file\n\n```js\nconst execa = require('execa');\n\nconst subprocess = execa('echo', ['foo'])\nsubprocess.stdout.pipe(fs.createWriteStream('stdout.txt'))\n```\n\n### Redirect input from a file\n\n```js\nconst execa = require('execa');\n\nconst subprocess = execa('cat')\nfs.createReadStream('stdin.txt').pipe(subprocess.stdin)\n```\n\n\n## Related\n\n- [gulp-execa](https://github.com/ehmicky/gulp-execa) - Gulp plugin for `execa`\n\n\n## Maintainers\n\n- [Sindre Sorhus](https://github.com/sindresorhus)\n- [@ehmicky](https://github.com/ehmicky)\n\n\n---\n\n<div align=\"center\">\n\t<b>\n\t\t<a href=\"https://tidelift.com/subscription/pkg/npm-execa?utm_source=npm-execa&utm_medium=referral&utm_campaign=readme\">Get professional support for this package with a Tidelift subscription</a>\n\t</b>\n\t<br>\n\t<sub>\n\t\tTidelift helps make open source sustainable for maintainers while giving companies<br>assurances about security, maintenance, and licensing for their dependencies.\n\t</sub>\n</div>\n",
+      "readmeFilename": "readme.md",
+      "gitHead": "1880029f1090e9419010d6a43e85e9d20b305069",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/execa/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/execa#readme",
+      "_id": "execa@2.0.0-alpha.0",
+      "_nodeVersion": "8.16.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-hYFS8zsUOomvssfNT8E7U5FJ3JLQgOxSE4s1ZVpxgWzL8eZX0g+GOg/FDrIXnLMlcEIyYHtpsvskn3eHaEUBpg==",
+        "shasum": "e9525fa152c1d1da165448f77505db3a7aa57c0d",
+        "tarball": "https://registry.npmjs.org/execa/-/execa-2.0.0-alpha.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 43829,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdCSObCRA9TVsSAnZWagAARiwP/3ars0mbLZWXz99tPO+N\nieaaHQa/ixJAxs2QY7pGwzL7nFG+YSeHExvwkbL7+lUhuGU+8oy57m2Y68c4\np6fX15GrMF0PpekBamHbH0ntveAwit97M3RnYm2FdZV4oTVeopur8Vik0Dis\nYdsrIscRqxdsM2L7bYr0VciggJEgynjStvCxYs8CCJTyH8VsRt03A8YRC1aU\nBaSZeqKxBZejQEm2yxkNtFO9PQXYSt0gwU2q1FUxe4+4s499Q7V8pLtqF6p9\nNFyWfeqbbHJLa+dcZBqjNi7OvBzatna3LqycY/sJKetnZeR7CYqBoYE0q/La\nF2D8utEdJFfQW9BVAcJecu1qqtQNCCdiiNQUrIdCP6yfJLsLobetu155jfQS\nI9XvyTZg7Cf8pIz7jLzLp3+HNNYBoN29LSmDbuwudTzvtqPvBBkD6vGZAVp8\nGGlYcfnOezyRILmlEa6LhNdPpOv9OK94XuZDo6IwnqYEV9cSpbPuUrozFNQq\n0v1oPeD08QexlGEsnBnS9YW8vTNWEJpneDtUNV0WTHAZjYKqClebuEjIjA9Q\niLBfS1tK3nwq2ccs+hqjAHKKKdh030eoI1HdgEb7Y5dc0dvcr5QG2GiNMGGE\nYdkHjZ+zSPeR4h68pNvbZCPc4sTu02NfClu8RiFfq8Xnei/VJ0gZINEtxiPQ\nKPSD\r\n=wTql\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "ehmicky@gmail.com",
+          "name": "ehmicky"
+        },
+        {
+          "email": "sindresorhus@gmail.com",
+          "name": "sindresorhus"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/execa_2.0.0-alpha.0_1560880026342_0.693813967595307"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.0": {
+      "name": "execa",
+      "version": "2.0.0",
+      "description": "Process execution for humans",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/execa.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && nyc ava && tsd"
+      },
+      "keywords": [
+        "exec",
+        "child",
+        "process",
+        "execute",
+        "fork",
+        "execfile",
+        "spawn",
+        "file",
+        "shell",
+        "bin",
+        "binary",
+        "binaries",
+        "npm",
+        "path",
+        "local"
+      ],
+      "dependencies": {
+        "cross-spawn": "^6.0.5",
+        "get-stream": "^5.0.0",
+        "is-stream": "^2.0.0",
+        "merge-stream": "^2.0.0",
+        "npm-run-path": "^3.0.0",
+        "p-finally": "^2.0.0",
+        "signal-exit": "^3.0.2",
+        "strip-final-newline": "^2.0.0"
+      },
+      "devDependencies": {
+        "@types/node": "^12.0.7",
+        "ava": "^2.1.0",
+        "coveralls": "^3.0.4",
+        "is-running": "^2.1.0",
+        "nyc": "^14.1.1",
+        "p-event": "^4.1.0",
+        "tempfile": "^3.0.0",
+        "tsd": "^0.7.3",
+        "xo": "^0.24.0"
+      },
+      "nyc": {
+        "exclude": [
+          "**/fixtures/**",
+          "**/test.js",
+          "**/test/**"
+        ]
+      },
+      "gitHead": "ec10a4c7b5732edb76e7a20e29ffa3996bcde80a",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/execa/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/execa#readme",
+      "_id": "execa@2.0.0",
+      "_nodeVersion": "12.4.0",
+      "_npmVersion": "6.9.0",
+      "dist": {
+        "integrity": "sha512-+ym7S09yUVPHEhYBsdLm53ZjCmCSeAQVtM/iN9dDj9tbvcBnCeBXTXHPWR9HXzht+vslGROteM8bSUdr4YszUg==",
+        "shasum": "5524c9739710e603e97c6dfc3f6ff6bff2819885",
+        "tarball": "https://registry.npmjs.org/execa/-/execa-2.0.0.tgz",
+        "fileCount": 8,
+        "unpackedSize": 45890,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdEgTzCRA9TVsSAnZWagAAlpwP/0bQY0rGMMR2Nc3aN+gI\nflCPqr4gPHOLYm+BAbN9mRX7FdligHlfD2NxIxZRt6tzm+lutU6176GGJAic\naljEbzuh7ISrTNMtQqh9ZbZygBxrr44CLp6EkzZZHO3Wcq3T6/lTSP5E1daE\nzYSA/40n/g9++k4WOean+x1A5j8oci2UHsyCi8YhBEFr9OLhZ59KU6hst/8O\n3O5saM67YIquIj7fbQtumgleeCTUDon8+73iiriHloO8vvcEQF0kvAXEoC6l\nS86R9wfbAg1/J4J9X10k2OApICs9TnBBdXYULHEjiV4Fc5J9NVEPp9Q3uKHn\nkVfrAkz9PKOr2a5Ornt8FFw57qFNj3sl1JD0a7VGHlW3c5gx+Bg05EHpAL7A\nEFmoRlsoLQpVLwhNbIEQgaR0LuKAdc3ONYJdPhxeQiK8lP7mhRFrMjWITTl2\nIIkzOVAeM/VWSgzb6GuKElGiUc0sBrqZKy7VJQ5Hp7eEPu+KgXwffhnYKt+3\nXE7dglGwswDttDvHqVBsZswxUh5uRrV/aDqZsRYURguSW0WmThV7NMps02h9\nkElOTjrWieeBQBpcRMm9G9ehRCNNDu7v3VIxCzPZfyrlBwd1ldIjHmKPTWfe\nEF/aenUFuPLh2Leq7Z4iCKD2Ldjeh9ACkNGYf5lp0gVeuA5Ou+B2d64Te9nY\n3n4Y\r\n=LuG8\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "ehmicky@gmail.com",
+          "name": "ehmicky"
+        },
+        {
+          "email": "sindresorhus@gmail.com",
+          "name": "sindresorhus"
+        }
+      ],
+      "_npmUser": {
+        "name": "ehmicky",
+        "email": "ehmicky@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/execa_2.0.0_1561462002347_0.23088144698910895"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.1": {
+      "name": "execa",
+      "version": "2.0.1",
+      "description": "Process execution for humans",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/execa.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": "^8.12.0 || >=9.7.0"
+      },
+      "scripts": {
+        "test": "xo && nyc ava && tsd"
+      },
+      "keywords": [
+        "exec",
+        "child",
+        "process",
+        "execute",
+        "fork",
+        "execfile",
+        "spawn",
+        "file",
+        "shell",
+        "bin",
+        "binary",
+        "binaries",
+        "npm",
+        "path",
+        "local"
+      ],
+      "dependencies": {
+        "cross-spawn": "^6.0.5",
+        "get-stream": "^5.0.0",
+        "is-stream": "^2.0.0",
+        "merge-stream": "^2.0.0",
+        "npm-run-path": "^3.0.0",
+        "p-finally": "^2.0.0",
+        "signal-exit": "^3.0.2",
+        "strip-final-newline": "^2.0.0"
+      },
+      "devDependencies": {
+        "@types/node": "^12.0.7",
+        "ava": "^2.1.0",
+        "coveralls": "^3.0.4",
+        "is-running": "^2.1.0",
+        "nyc": "^14.1.1",
+        "p-event": "^4.1.0",
+        "tempfile": "^3.0.0",
+        "tsd": "^0.7.3",
+        "xo": "^0.24.0"
+      },
+      "nyc": {
+        "exclude": [
+          "**/fixtures/**",
+          "**/test.js",
+          "**/test/**"
+        ]
+      },
+      "gitHead": "97ef87d5d30542041d69cb4942bc10f98fc7579c",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/execa/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/execa#readme",
+      "_id": "execa@2.0.1",
+      "_nodeVersion": "12.4.0",
+      "_npmVersion": "6.9.0",
+      "dist": {
+        "integrity": "sha512-pHGXlV7S7ilDda3eaCTcr6zmFTMA3wJo7j+RtNg0uH9sbAasJfVug5RkYOTBLj5g4MOqlsaPUn3HKa/UfTDw8w==",
+        "shasum": "546a5be56388953409cbf24972d2fd1bb36dbfcd",
+        "tarball": "https://registry.npmjs.org/execa/-/execa-2.0.1.tgz",
+        "fileCount": 9,
+        "unpackedSize": 46571,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdE0VKCRA9TVsSAnZWagAABdMP/i1JInnH6kQ0ol50grPQ\nmPbQTWMgKMmVinDV7QXK/sh8LDXh4BYpjIUvmeNvdCJsZ7a4yjxCts6UZmgq\npl0I0ykbZo189vg6J7JCU4gB+lRra1WoD/hItQ1Oceo1rvgqckGnsbWEAJyn\n5OClVzAkyT4divp1E+2agKPuYk33iSfPMeQqoWboqTbEIbIISV2mjlZansAH\nbPmG+zjk5sppny4uD3omoNpS/fb1WWbUhHD1xQ0xS5bWFOikO3xdIYXouci+\nVEPX4puXWliy6FkJ+7Jr5Vlzuqeh4vyxwP26yzvvybZmZbj3dUtywE3jpXqp\nI3dS+MnSBKRU0FZit/y5F4bUEizBvNVIM/0HqbDCgIt93j/pmbPZRL9/kJnH\nLvAHHI/njPfim+0X0Se4KRAy1h0baJ4WPqWN90KThv14fotw2prAQA2szhyI\nRzPHoHo8IXyhzKR0Q3nuoGFqXpK/41t+Wczjnvbiih+LgA9Orua+qdtKlnfT\n/DqXDe7PDwslk8IIceb0hCMShIkxTU3B2YsRzglyHgqtKbiwSU5qsI0tKpN7\nahOSerjkXJv8ff+KHGa3VKBo230AzQN1ErBdRwhXWAilhg+uiLG2pY1dXQE+\nf0XQFgZSjrMa4SSMVvhn24d2YJha/BnYI+Bhh2GBuraV1AYPzzj+XisgH7ft\nvjTJ\r\n=D4qD\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "ehmicky@gmail.com",
+          "name": "ehmicky"
+        },
+        {
+          "email": "sindresorhus@gmail.com",
+          "name": "sindresorhus"
+        }
+      ],
+      "_npmUser": {
+        "name": "ehmicky",
+        "email": "ehmicky@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/execa_2.0.1_1561544009863_0.7631312059436064"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.2": {
+      "name": "execa",
+      "version": "2.0.2",
+      "description": "Process execution for humans",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/execa.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": "^8.12.0 || >=9.7.0"
+      },
+      "scripts": {
+        "test": "xo && nyc ava && tsd"
+      },
+      "keywords": [
+        "exec",
+        "child",
+        "process",
+        "execute",
+        "fork",
+        "execfile",
+        "spawn",
+        "file",
+        "shell",
+        "bin",
+        "binary",
+        "binaries",
+        "npm",
+        "path",
+        "local"
+      ],
+      "dependencies": {
+        "cross-spawn": "^6.0.5",
+        "get-stream": "^5.0.0",
+        "is-stream": "^2.0.0",
+        "merge-stream": "^2.0.0",
+        "npm-run-path": "^3.0.0",
+        "onetime": "^5.1.0",
+        "p-finally": "^2.0.0",
+        "signal-exit": "^3.0.2",
+        "strip-final-newline": "^2.0.0"
+      },
+      "devDependencies": {
+        "@types/node": "^12.0.7",
+        "ava": "^2.1.0",
+        "coveralls": "^3.0.4",
+        "is-running": "^2.1.0",
+        "nyc": "^14.1.1",
+        "p-event": "^4.1.0",
+        "tempfile": "^3.0.0",
+        "tsd": "^0.7.3",
+        "xo": "^0.24.0"
+      },
+      "nyc": {
+        "exclude": [
+          "**/fixtures/**",
+          "**/test.js",
+          "**/test/**"
+        ]
+      },
+      "gitHead": "8977752a1036a50223b6a572ae5d1a103853c158",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/execa/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/execa#readme",
+      "_id": "execa@2.0.2",
+      "_nodeVersion": "12.5.0",
+      "_npmVersion": "6.9.2",
+      "dist": {
+        "integrity": "sha512-CkFnhVuWj5stQUvRSeI+zAw0ME+Iprkew4HKSc491vOXLM+hKrDVn+QQoL2CIYy0CpvT0mY+MXlzPreNbuj/8A==",
+        "shasum": "3af2650be2b719549dc011a53118ecff5e28d0a2",
+        "tarball": "https://registry.npmjs.org/execa/-/execa-2.0.2.tgz",
+        "fileCount": 12,
+        "unpackedSize": 48201,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdGd/eCRA9TVsSAnZWagAAXAUQAKP7eiP/GC9qFWPmWNBb\nbTCDkt+g/8m+NL84TMqpxe9iEK/qZmGw6WZ/YPrH6Q77VAmpTQfbJ449O52Y\nG2TbhdtRsP8CHIhwtpL7CdljgrmxoUWqLvMPthVSDmY48U/lgL7pmLKXSlgx\npq1zws7f8hOX78EGYmCms1VlHYWv2WNUuYplJiHdC6x7nPxPmBdvayE++seE\nW9NQ1fkJJwvfcrhZSEMbE9V0Q5avW4eAeXkp0trdUKPWfuNZr0w0qqGfn618\nn+zSIjkF+n6Cb8uQrmy33m9KkN6VrCuR9HJ8pxjLbZexSsderHHMeVifPpAi\nlAlcKVlSPgEpZ18kOS43B8HsdmfiSLU0j+BZpnud0rj8lQatwZzbz8Hv43PF\npdppKqAKBQhKDFXgYq3wy/6Hbl3Oy3Zq86pPwMmz6Co/mz8YvObR+AvZOKZP\nma0YxBBbINRgzGwVmcNZy5ZFiGbwt5Py7HBsBDFzhmj/Tkr2eN8TzF8hV6kP\na7gJH5OsFtLgssWHCZprNybOupKnOxYV3Tx0udIO0IsnK1BVTRnk0pWRUkuq\nNCMpVTWLjVSwJjfv0G8jR3WwPPIWTtPGixtV1X+a9GmpuYmaSGpLTo2vHtyT\nfHK2Jf+wt/YFghYvoBo4BqbvQLuO83azrS3NUizJ9VyfnkpZKKomU5E+cU3Y\nFJTM\r\n=E3BZ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "ehmicky@gmail.com",
+          "name": "ehmicky"
+        },
+        {
+          "email": "sindresorhus@gmail.com",
+          "name": "sindresorhus"
+        }
+      ],
+      "_npmUser": {
+        "name": "ehmicky",
+        "email": "ehmicky@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/execa_2.0.2_1561976798094_0.39987737236232634"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.3": {
+      "name": "execa",
+      "version": "2.0.3",
+      "description": "Process execution for humans",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/execa.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": "^8.12.0 || >=9.7.0"
+      },
+      "scripts": {
+        "test": "xo && nyc ava && tsd"
+      },
+      "keywords": [
+        "exec",
+        "child",
+        "process",
+        "execute",
+        "fork",
+        "execfile",
+        "spawn",
+        "file",
+        "shell",
+        "bin",
+        "binary",
+        "binaries",
+        "npm",
+        "path",
+        "local"
+      ],
+      "dependencies": {
+        "cross-spawn": "^6.0.5",
+        "get-stream": "^5.0.0",
+        "is-stream": "^2.0.0",
+        "merge-stream": "^2.0.0",
+        "npm-run-path": "^3.0.0",
+        "onetime": "^5.1.0",
+        "p-finally": "^2.0.0",
+        "signal-exit": "^3.0.2",
+        "strip-final-newline": "^2.0.0"
+      },
+      "devDependencies": {
+        "@types/node": "^12.0.7",
+        "ava": "^2.1.0",
+        "coveralls": "^3.0.4",
+        "is-running": "^2.1.0",
+        "nyc": "^14.1.1",
+        "p-event": "^4.1.0",
+        "tempfile": "^3.0.0",
+        "tsd": "^0.7.3",
+        "xo": "^0.24.0"
+      },
+      "nyc": {
+        "exclude": [
+          "**/fixtures/**",
+          "**/test.js",
+          "**/test/**"
+        ]
+      },
+      "gitHead": "0cdc62cbdc9ad7879316363dce9b17ce1e6239c9",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/execa/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/execa#readme",
+      "_id": "execa@2.0.3",
+      "_nodeVersion": "12.6.0",
+      "_npmVersion": "6.10.0",
+      "dist": {
+        "integrity": "sha512-iM124nlyGSrXmuyZF1EMe83ESY2chIYVyDRZKgmcDynid2Q2v/+GuE7gNMl6Sy9Niwf4MC0DDxagOxeMPjuLsw==",
+        "shasum": "4b84301b33042cfb622771e886ed0b10e5634642",
+        "tarball": "https://registry.npmjs.org/execa/-/execa-2.0.3.tgz",
+        "fileCount": 12,
+        "unpackedSize": 49420,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdHwvpCRA9TVsSAnZWagAAmiEQAJa8bkwYfcJcMAS1JFbT\n7nXhQjoKnQpx9+z4NY10dVpyEAcR1DujgE+60w8yt9Vf+ionFO6QA08iyMXE\nTaeOAzcgT0lgN58sw8apxG2DniM3F0iRhe4lf5LUnATn7oBAAv6G7cNAKtvz\nv9ttFBPWXllJk6R6NR6uPsIikKzfppWxepkFZsYIsGbK1/tHVBv4oe9tH3JD\nQl4HqRQtK5Sd+5I9DxulpVm/CLgOvhUhhDWscz6znrhRx7f6cYrTzZNGsBqD\nIfVqLqxWg/cbCmloI5ufaqd7keujhMwEc9R64BOvu03HLofoIahPpaZTh90b\n3Kx9I5JuMcEsMeGQBtIOxUs4jRc+mpKojYWS1k4CHTOlaKgVWSi7WQ42iF/5\n/9h6sB+mNjnuNZNnzlmouYiJwzykJaqONRzjOu0dy+SpphtFywiSfuLJBfiw\n6IWLuLGZ2kbGlan3roC9UbpLQ2es+kTSVX/OdbcrgncGV6TThalW8wNe3mua\njI3IDYy3B6yu1x0Juo5wtZLlSYxb3jyxw5YY0dL5hOAgrzXD1YfBZ+/oyqs2\noo+ft4fTQMgtqFLqK6F0BgE1CkgmWgbJRKab/FT2YeggHGrtc5lAPFxhGzWA\n6QlWJp39HMUQhEOu0Zs/AuUU4ndQXJ2UltKyHFEpgQDAnHX5T3in8W66PTwF\nVzjU\r\n=xW4d\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "ehmicky@gmail.com",
+          "name": "ehmicky"
+        },
+        {
+          "email": "sindresorhus@gmail.com",
+          "name": "sindresorhus"
+        }
+      ],
+      "_npmUser": {
+        "name": "ehmicky",
+        "email": "ehmicky@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/execa_2.0.3_1562315752728_0.1958378699659593"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.4": {
+      "name": "execa",
+      "version": "2.0.4",
+      "description": "Process execution for humans",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/execa.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": "^8.12.0 || >=9.7.0"
+      },
+      "scripts": {
+        "test": "xo && nyc ava && tsd"
+      },
+      "keywords": [
+        "exec",
+        "child",
+        "process",
+        "execute",
+        "fork",
+        "execfile",
+        "spawn",
+        "file",
+        "shell",
+        "bin",
+        "binary",
+        "binaries",
+        "npm",
+        "path",
+        "local"
+      ],
+      "dependencies": {
+        "cross-spawn": "^6.0.5",
+        "get-stream": "^5.0.0",
+        "is-stream": "^2.0.0",
+        "merge-stream": "^2.0.0",
+        "npm-run-path": "^3.0.0",
+        "onetime": "^5.1.0",
+        "p-finally": "^2.0.0",
+        "signal-exit": "^3.0.2",
+        "strip-final-newline": "^2.0.0"
+      },
+      "devDependencies": {
+        "@types/node": "^12.0.7",
+        "ava": "^2.1.0",
+        "coveralls": "^3.0.4",
+        "is-running": "^2.1.0",
+        "nyc": "^14.1.1",
+        "p-event": "^4.1.0",
+        "tempfile": "^3.0.0",
+        "tsd": "^0.7.3",
+        "xo": "^0.24.0"
+      },
+      "nyc": {
+        "exclude": [
+          "**/fixtures/**",
+          "**/test.js",
+          "**/test/**"
+        ]
+      },
+      "gitHead": "ac2bc15e1598317e4698eba5ba171927e4159655",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/execa/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/execa#readme",
+      "_id": "execa@2.0.4",
+      "_nodeVersion": "10.16.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-VcQfhuGD51vQUQtKIq2fjGDLDbL6N1DTQVpYzxZ7LPIXw3HqTuIz6uxRmpV1qf8i31LHf2kjiaGI+GdHwRgbnQ==",
+        "shasum": "2f5cc589c81db316628627004ea4e37b93391d8e",
+        "tarball": "https://registry.npmjs.org/execa/-/execa-2.0.4.tgz",
+        "fileCount": 11,
+        "unpackedSize": 48211,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdVTTdCRA9TVsSAnZWagAA/6MP/1r1dCYF5tJKR4KOWS98\nVhLZa9tSQpqfzNbSMXNkxeezDBC33T0CFbaRN3blg/ZSMqMJyxvht7tDT8pO\nIBvC84WYenDWdh0f7HshyKtYVwjhcbHWVJTsgouJHcDUfmn97G4bgQM9WRzX\ny2I90r5M72/ismLareNH9Cm/ew3Z2C4oiZZz8yF4FJ31QOwGADZn1D5CrxMn\nkO7P02rWz5uzuN6LIovy77aqUfBDf9Lc0Skv/PhXVexfFeUIPzVye7XJeatv\nzBaddVyW0+2MfY7U9SOJqKtZYVECFjwqFBrdDYo3gbMRPAUcYZOuZ64opPRS\n+wAJw6U2uRVC3V4auSh5Z2YWTWZ10apn3ctB342UOoXzk7dYqFBo0JPdq5g1\n7ooAOSDoYnm8C/Jr0PCwWXDVWOtTfL7+lGMroG/ivoSZTbtGuXWwZ4AuvI+D\n7o0dHW+czNFuQub6t8uP3cjNuX2DeWzsms3d8iwT0cJa6KEEN43qclCXkvT1\n01SCJmyrvLgIff5OKG1gslJS92t/jobiTLktJAzQCpMk/7Xp7rBrcQyCNFit\nNUSaTmaBt9WlCJ4AW8M4CxtaVam9x5gxsUfUUm38aWq3G9cDPMn/caPkSrEc\nDQoE9aT18qKIGhb7gjPD+ylgRdtHgc20Kl3/UsZq766zqr2oj2K1ygRh52N2\nFJPt\r\n=xww6\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "ehmicky@gmail.com",
+          "name": "ehmicky"
+        },
+        {
+          "email": "sindresorhus@gmail.com",
+          "name": "sindresorhus"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/execa_2.0.4_1565865180934_0.5626446401512586"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.5": {
+      "name": "execa",
+      "version": "2.0.5",
+      "description": "Process execution for humans",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/execa.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": "^8.12.0 || >=9.7.0"
+      },
+      "scripts": {
+        "test": "xo && nyc ava && tsd"
+      },
+      "keywords": [
+        "exec",
+        "child",
+        "process",
+        "execute",
+        "fork",
+        "execfile",
+        "spawn",
+        "file",
+        "shell",
+        "bin",
+        "binary",
+        "binaries",
+        "npm",
+        "path",
+        "local"
+      ],
+      "dependencies": {
+        "cross-spawn": "^6.0.5",
+        "get-stream": "^5.0.0",
+        "is-stream": "^2.0.0",
+        "merge-stream": "^2.0.0",
+        "npm-run-path": "^3.0.0",
+        "onetime": "^5.1.0",
+        "p-finally": "^2.0.0",
+        "signal-exit": "^3.0.2",
+        "strip-final-newline": "^2.0.0"
+      },
+      "devDependencies": {
+        "@types/node": "^12.0.7",
+        "ava": "^2.1.0",
+        "coveralls": "^3.0.4",
+        "is-running": "^2.1.0",
+        "nyc": "^14.1.1",
+        "p-event": "^4.1.0",
+        "tempfile": "^3.0.0",
+        "tsd": "^0.7.3",
+        "xo": "^0.24.0"
+      },
+      "nyc": {
+        "exclude": [
+          "**/fixtures/**",
+          "**/test.js",
+          "**/test/**"
+        ]
+      },
+      "gitHead": "603537aa05e933d0585645fbe4f94da3e20746d6",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/execa/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/execa#readme",
+      "_id": "execa@2.0.5",
+      "_nodeVersion": "12.11.1",
+      "_npmVersion": "6.11.3",
+      "dist": {
+        "integrity": "sha512-SwmwZZyJjflcqLSgllk4EQlMLst2p9muyzwNugKGFlpAz6rZ7M+s2nBR97GAq4Vzjwx2y9rcMcmqzojwN+xwNA==",
+        "shasum": "5be3e2ea7e61bd038da5a0e11dc6ab2097357f2f",
+        "tarball": "https://registry.npmjs.org/execa/-/execa-2.0.5.tgz",
+        "fileCount": 11,
+        "unpackedSize": 48198,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdlv1kCRA9TVsSAnZWagAA6WoP/Ruhb5Zm2Xt9DAUQC8mM\n2aOMw5rY1InHESuvwnASMOGlzqf6BQOQfQ2FqL/Yj7UVQvRbDrt5c7gZxLts\nfuqVVxHJfizwqkD8QR4NByj9Btvrhr7Gqxzhe/6bjsK4/c0xttv3bge2La+2\nVGOCbi7/5RNluvieHVW0+ivkaSVzIw6QLr8VazcLwOSx/DosnoXVuluHEBtY\nz/hxamrFsmSdxqyZKwjVMmHyme3xoI5U7l6eL6g0gpsTD4qo4ewupbeIVkcI\ngvzf7UOg8N6XIFWDa4frzf8efN44kVZvtJV+zgDcrWBr7sAbAFRJmMp/LrUK\n3d5jCGEjKEB1+MxACmA8iUnk8TYhKujWFaMhf2v7ii7I9ZFTamnQtMxsFryn\nhmcwfgM+xh8ZbmccSyXMzWJlDevBJy0sZUm8y+OGTLjf1hX/Rvz5ke4aNOSV\nqmawCmGcFwGnRYhUxwBiQy1fO80fa/tmu3y/jHWWty0sRNtuPERAiGywXEmC\nsgJGo2f2lEXCi7JlDFQTIyb/9Iihxhf8XmP2dc91cPJKk5fy8uh//tH/4XVA\nHQes4NOo0O9tFGkm8tUo++t3vpiieInl6BNFaCiX6UDLV8lVBGvvCgXpouG6\nisOyXsFYw7fDaTlUZ6LtxxHLze4/KfwQzMRIBiqG4x5sbNVuGFo5RtdZQHrd\nGtT0\r\n=TZDC\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "ehmicky@gmail.com",
+          "name": "ehmicky"
+        },
+        {
+          "email": "sindresorhus@gmail.com",
+          "name": "sindresorhus"
+        }
+      ],
+      "_npmUser": {
+        "name": "ehmicky",
+        "email": "ehmicky@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/execa_2.0.5_1570176355504_0.6711622418588583"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.1.0": {
+      "name": "execa",
+      "version": "2.1.0",
+      "description": "Process execution for humans",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/execa.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": "^8.12.0 || >=9.7.0"
+      },
+      "scripts": {
+        "test": "xo && nyc ava && tsd"
+      },
+      "keywords": [
+        "exec",
+        "child",
+        "process",
+        "execute",
+        "fork",
+        "execfile",
+        "spawn",
+        "file",
+        "shell",
+        "bin",
+        "binary",
+        "binaries",
+        "npm",
+        "path",
+        "local"
+      ],
+      "dependencies": {
+        "cross-spawn": "^7.0.0",
+        "get-stream": "^5.0.0",
+        "is-stream": "^2.0.0",
+        "merge-stream": "^2.0.0",
+        "npm-run-path": "^3.0.0",
+        "onetime": "^5.1.0",
+        "p-finally": "^2.0.0",
+        "signal-exit": "^3.0.2",
+        "strip-final-newline": "^2.0.0"
+      },
+      "devDependencies": {
+        "@types/node": "^12.0.7",
+        "ava": "^2.1.0",
+        "coveralls": "^3.0.4",
+        "is-running": "^2.1.0",
+        "nyc": "^14.1.1",
+        "p-event": "^4.1.0",
+        "tempfile": "^3.0.0",
+        "tsd": "^0.7.3",
+        "xo": "^0.24.0"
+      },
+      "nyc": {
+        "exclude": [
+          "**/fixtures/**",
+          "**/test.js",
+          "**/test/**"
+        ]
+      },
+      "gitHead": "e98561a71df16695f56700d7be406ec8fe41f0a3",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/execa/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/execa#readme",
+      "_id": "execa@2.1.0",
+      "_nodeVersion": "12.11.1",
+      "_npmVersion": "6.12.0",
+      "dist": {
+        "integrity": "sha512-Y/URAVapfbYy2Xp/gb6A0E7iR8xeqOCXsuuaoMn7A5PzrXUK84E1gyiEfq0wQd/GHA6GsoHWwhNq8anb0mleIw==",
+        "shasum": "e5d3ecd837d2a60ec50f3da78fd39767747bbe99",
+        "tarball": "https://registry.npmjs.org/execa/-/execa-2.1.0.tgz",
+        "fileCount": 11,
+        "unpackedSize": 49164,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdnaQSCRA9TVsSAnZWagAASL0P/02jQZx5VhDm7oPvuJyG\nOFhgQC0whEsBhWIcAUTEBvzsXEka649Xi86B6SdnbHmIQjMoCGJ9ArpBSVG2\n46PaLLtmUCO+gZLYmS/Lb3AA1VEa8XbdYdtCdPuOAAu27lAtxcmd2H9dK2Ro\ntPSFcq/6hrWGkzips9riXKpHD4YBbUCkgVz8NHx7CQMHv9YWxI9rfQllAhIe\ngxdsbTJ7sV39ZaWvz8B3wcNRgHsZt97xgAbcg4kij1pu+1ywLJl/VX86RIj9\nT0S3b+/uZZBjJDQhWrmrGNZdvKjtAScv15QYTKXDoHuMMu45HLB3GRHgLn86\ngsDEXDLa/1jWZXgoOQrppugdBI44IUTswwdcDfdC9i11v3BTbjzoeL/HQ7aN\nj+/CwRxJ9okDidN9OsJiMlOpO9X/YL7xLq6BfVUekcXmmrWOUZgFu1UIZ9LS\nnCSF7gpysKci2ZTSDWO/rdkWG19EUqKsL6iwuoT/s6AeLNSyi46aq7icyeDK\n84/X3gTU6c2tI9WCkXtJEC538Aa0qR1H89rQaTuA2mTP8Ho9fmWvWn2HPVJc\np23BYEobG1T1XO7LHRjecJQ7jZ4l1H/8aLRNmmFe+IBKdMFEADOcD3+pk32y\nhj64Q/OK8T0MuVnXZWazUwDuko48Xl5VCikNEBqthJ7GF4E9sPhW8ZnHpx4a\nP3jJ\r\n=nKfP\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "ehmicky@gmail.com",
+          "name": "ehmicky"
+        },
+        {
+          "email": "sindresorhus@gmail.com",
+          "name": "sindresorhus"
+        }
+      ],
+      "_npmUser": {
+        "name": "ehmicky",
+        "email": "ehmicky@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/execa_2.1.0_1570612241889_0.2434126485284398"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.0": {
+      "name": "execa",
+      "version": "3.0.0",
+      "description": "Process execution for humans",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/execa.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": "^8.12.0 || >=9.7.0"
+      },
+      "scripts": {
+        "test": "xo && nyc ava && tsd"
+      },
+      "keywords": [
+        "exec",
+        "child",
+        "process",
+        "execute",
+        "fork",
+        "execfile",
+        "spawn",
+        "file",
+        "shell",
+        "bin",
+        "binary",
+        "binaries",
+        "npm",
+        "path",
+        "local"
+      ],
+      "dependencies": {
+        "cross-spawn": "^7.0.0",
+        "get-stream": "^5.0.0",
+        "is-stream": "^2.0.0",
+        "merge-stream": "^2.0.0",
+        "npm-run-path": "^4.0.0",
+        "onetime": "^5.1.0",
+        "p-finally": "^2.0.0",
+        "signal-exit": "^3.0.2",
+        "strip-final-newline": "^2.0.0"
+      },
+      "devDependencies": {
+        "@types/node": "^12.0.7",
+        "ava": "^2.1.0",
+        "coveralls": "^3.0.4",
+        "is-running": "^2.1.0",
+        "nyc": "^14.1.1",
+        "p-event": "^4.1.0",
+        "tempfile": "^3.0.0",
+        "tsd": "^0.7.3",
+        "xo": "^0.24.0"
+      },
+      "nyc": {
+        "exclude": [
+          "**/fixtures/**",
+          "**/test.js",
+          "**/test/**"
+        ]
+      },
+      "gitHead": "88dbeeeb5fca2c92b59ffebcb30f09db924f39df",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/execa/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/execa#readme",
+      "_id": "execa@3.0.0",
+      "_nodeVersion": "12.12.0",
+      "_npmVersion": "6.12.0",
+      "dist": {
+        "integrity": "sha512-U3sotWWSGb19r7wVY3OcUgS/S/7VXbh3DQkYfPHaEKveYhgb+GqNN0YTkpnaeI7Ho2oIQ0Na6Mt98M93/wtqGw==",
+        "shasum": "f38e3c24932c2ee0f472383b0dcbd40aa42f61f5",
+        "tarball": "https://registry.npmjs.org/execa/-/execa-3.0.0.tgz",
+        "fileCount": 11,
+        "unpackedSize": 49637,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdpIFRCRA9TVsSAnZWagAA8FcP/jd5RZ5TmbSC++FXpAw1\nLhkB29EG/swloWgkuJppTdYzEapz0TEYRescuThVojHY92sU4PEcyrA1TuYw\nNhxgHZu3fR/lb/5TFLLHWQKTAuHfTo3PZnHg+p97gPFK9l8xYMTthLHz/+3v\ngertpuCbY2jlZHLnesEvft2leUV9PYBzrdN27ZcUWnxBffLM4yYrGMp8La0j\n7seYeDzm6VYsOeAgM9EK7L4tr8A2hfwWidDy6bAUON2N7DPMl1i1Ltt0LlE1\nM+fxhULjgYJDrYzAnvE3Ak2YCAYyc/u20Oi5kzmjo1XiZLe5W0iJBp/o8wLQ\nfu1NTtKKSDQvtc4IMrWXKaMxuDaor0Bfa7b7+0Duyo0rFbz36LoB12po6M0p\nl+oPepubdnaeQFRG4C8ViACGIN1LXAwoBuK/Feu5KZmQ1KnE6u0TW43fG3xt\nSj2MhcQXSaEWsViCYQ1HFQ430AoyaR3DjD3z/0vj8oBmRAuerAGtcOHQn9Xm\nufcUoie+QeaI2MwdjmpkL/JZPgAh6QbDzHkILtRGEqYxeqm51NCw/CHrl3M7\n+X29TC+RTxsob8ERFKUqPrIEmov3bz1DJycKomP7Vy6pN1erPpWwJX2APcmt\njYP28U7MFL99+Piy9fPG1naX2VgfqzOSsTKU1ZWBUIV4koUlosshvQghlT31\nncSf\r\n=BWpf\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "ehmicky@gmail.com",
+          "name": "ehmicky"
+        },
+        {
+          "email": "sindresorhus@gmail.com",
+          "name": "sindresorhus"
+        }
+      ],
+      "_npmUser": {
+        "name": "ehmicky",
+        "email": "ehmicky@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/execa_3.0.0_1571062096154_0.8706696268911771"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.1.0": {
+      "name": "execa",
+      "version": "3.1.0",
+      "description": "Process execution for humans",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/execa.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": "^8.12.0 || >=9.7.0"
+      },
+      "scripts": {
+        "test": "xo && nyc ava && tsd"
+      },
+      "keywords": [
+        "exec",
+        "child",
+        "process",
+        "execute",
+        "fork",
+        "execfile",
+        "spawn",
+        "file",
+        "shell",
+        "bin",
+        "binary",
+        "binaries",
+        "npm",
+        "path",
+        "local"
+      ],
+      "dependencies": {
+        "cross-spawn": "^7.0.0",
+        "get-stream": "^5.0.0",
+        "is-stream": "^2.0.0",
+        "merge-stream": "^2.0.0",
+        "npm-run-path": "^4.0.0",
+        "onetime": "^5.1.0",
+        "p-finally": "^2.0.0",
+        "signal-exit": "^3.0.2",
+        "strip-final-newline": "^2.0.0"
+      },
+      "devDependencies": {
+        "@types/node": "^12.0.7",
+        "ava": "^2.1.0",
+        "coveralls": "^3.0.4",
+        "get-node": "^5.0.0",
+        "is-running": "^2.1.0",
+        "nyc": "^14.1.1",
+        "p-event": "^4.1.0",
+        "tempfile": "^3.0.0",
+        "tsd": "^0.7.3",
+        "xo": "^0.24.0"
+      },
+      "nyc": {
+        "exclude": [
+          "**/fixtures/**",
+          "**/test.js",
+          "**/test/**"
+        ]
+      },
+      "gitHead": "cf32d160bc5838193b7814313098bf74615acc3e",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/execa/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/execa#readme",
+      "_id": "execa@3.1.0",
+      "_nodeVersion": "12.12.0",
+      "_npmVersion": "6.12.0",
+      "dist": {
+        "integrity": "sha512-KcBxdjv1JlRiHMIRSDtvaGlUb6SQ4TLqxG9blJNTo6bzYYZZBHBZPKqMmK5Eftok7wl1iwDIRofxdu8tBlidQA==",
+        "shasum": "d7a4a54b1ef3784c3d528c2bb7107f5720356929",
+        "tarball": "https://registry.npmjs.org/execa/-/execa-3.1.0.tgz",
+        "fileCount": 11,
+        "unpackedSize": 50553,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdphFQCRA9TVsSAnZWagAA9wIP/1W8RLdSU53HISnp9sqa\nXF6lUqHokkHESRBomDTaN9bAa9ys1yx5Ukq4AOuwu5G/3wvmKe4EjFumIAHz\n55fC/n/v35RcxhDHnWK4aOTMVmaJw7NUuSl7UaO2+2RyAY1Fma1TSMLTKpqH\nw5xO7kpGQp3/VUctCNKYnzehJn/9mY1G1uLsygaRBuEVYXkJYmX8BvIvAZdy\nJjsgL3fn3ArdG9dUpyKiyI7ydJax5qcBhKyV3JNraNHLIW4PG9wkrxpO2d+Y\nOJJ8BWVUCmX/BF4QapgzI/yG9uxOzYwHh/PioMIwIkY7DKGrnVnRrVNVzIbb\nzIXJXkQud/lNC5dhZa9etUI52Ohhauths3vMF6t6G3Rpp/yfgQ7fOrtiK+ql\nr9lMGzok+wUji3q6DHhtt3hbdRWHpwwYoCtzLOXR/yQP4KfxP4IRMeFzF6gm\n0aJJs9KZB6aKhrfxINakaOsSCh44Ci2xxC0irOQzbRSdaaH+iyTMJsFu/SM7\nRMuAYYVG1+2vT8UuOCTim5KB05ck6SXPfeWGgpRDz/QGPOq/8pVKbRjzKzgc\nlPhqDNnPcMoXpMlW8zGzTCkL58MVQyNxs61DH9Ub5zBhjHgjShQYx3TmjB9s\nwWwNLaLEddF7jiN5vozHQMaRCTnvkCz8Z3leUH1IexS2VUIJ0KyLp2/MKlsI\nD+DA\r\n=3056\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "ehmicky@gmail.com",
+          "name": "ehmicky"
+        },
+        {
+          "email": "sindresorhus@gmail.com",
+          "name": "sindresorhus"
+        }
+      ],
+      "_npmUser": {
+        "name": "ehmicky",
+        "email": "ehmicky@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/execa_3.1.0_1571164495156_0.8650414182624948"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.2.0": {
+      "name": "execa",
+      "version": "3.2.0",
+      "description": "Process execution for humans",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/execa.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": "^8.12.0 || >=9.7.0"
+      },
+      "scripts": {
+        "test": "xo && nyc ava && tsd"
+      },
+      "keywords": [
+        "exec",
+        "child",
+        "process",
+        "execute",
+        "fork",
+        "execfile",
+        "spawn",
+        "file",
+        "shell",
+        "bin",
+        "binary",
+        "binaries",
+        "npm",
+        "path",
+        "local"
+      ],
+      "dependencies": {
+        "cross-spawn": "^7.0.0",
+        "get-stream": "^5.0.0",
+        "human-signals": "^1.1.1",
+        "is-stream": "^2.0.0",
+        "merge-stream": "^2.0.0",
+        "npm-run-path": "^4.0.0",
+        "onetime": "^5.1.0",
+        "p-finally": "^2.0.0",
+        "signal-exit": "^3.0.2",
+        "strip-final-newline": "^2.0.0"
+      },
+      "devDependencies": {
+        "@types/node": "^12.0.7",
+        "ava": "^2.1.0",
+        "coveralls": "^3.0.4",
+        "get-node": "^5.0.0",
+        "is-running": "^2.1.0",
+        "nyc": "^14.1.1",
+        "p-event": "^4.1.0",
+        "tempfile": "^3.0.0",
+        "tsd": "^0.7.3",
+        "xo": "^0.24.0"
+      },
+      "nyc": {
+        "exclude": [
+          "**/fixtures/**",
+          "**/test.js",
+          "**/test/**"
+        ]
+      },
+      "gitHead": "e003f9cde906d6095e176042147c31ececc02881",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/execa/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/execa#readme",
+      "_id": "execa@3.2.0",
+      "_nodeVersion": "12.12.0",
+      "_npmVersion": "6.12.0",
+      "dist": {
+        "integrity": "sha512-kJJfVbI/lZE1PZYDI5VPxp8zXPO9rtxOkhpZ0jMKha56AI9y2gGVC6bkukStQf0ka5Rh15BA5m7cCCH4jmHqkw==",
+        "shasum": "18326b79c7ab7fbd6610fd900c1b9e95fa48f90a",
+        "tarball": "https://registry.npmjs.org/execa/-/execa-3.2.0.tgz",
+        "fileCount": 11,
+        "unpackedSize": 51946,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdqIS4CRA9TVsSAnZWagAAbN8QAKKrF1lkitIWmzp/qLOZ\nctI5Y6obSZkUuGSgO8BntnD7vhtwxdi8FI0dkJnhFqDst2qp+JXQDL9T03qC\noIWMxEqoxH4TSth1nCFRPT7zGa7z/csuWbhS82M5q9zs4Z2MYSa+jZ5TXUgI\n+9ssIlvmmLyk2GGiJnGoxmxURO+5ASstXQ75WAaDl+dJr0lFsfs9WfVCV4yS\nWW9w2JEXalcPk4geB0Sm3eTxU08hAd9GXEhXES9QhRqJRLp7kWFmazRB3yUn\nGgtBmYMsgNWRC7Nqdwk9kgiha98MtYMpmKaVbwJgiB4B9xHWN4qs+p96ZaHn\n8bI2+q+/uS2AXwq7LMiDSHisWj7DxJKonqGFdaH0S04ST3cMaNwvNsHqmWTx\n2rvWNvP5Ds/HVIlg30E16LXfKL+CrO5XWRbsSF2SP0Jj4FQrttMCiVoiXH7X\nFSENxApwome+9YTTsymyKhWrGPYzObeRymD4L5oFHl3ar/xRcjrOdOu4/ttO\nryCLGhzcCFDWpsy4JIb9GBg2tE2gEbWYXlDEZAC2tQmnehSx3AU96h1bTyQo\nMF8qejuphMKIuhfS7nsfCRP/MSgm7jGYniOZRnDRXe0pe44XfLaXVZE00YNK\n+UzRRKcEev3HNAL3s67mE9GTtfuLHNXF60VmC+fJt0Hx9yPZBP1B/GoBAFte\n3jBN\r\n=NMHO\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "ehmicky@gmail.com",
+          "name": "ehmicky"
+        },
+        {
+          "email": "sindresorhus@gmail.com",
+          "name": "sindresorhus"
+        }
+      ],
+      "_npmUser": {
+        "name": "ehmicky",
+        "email": "ehmicky@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/execa_3.2.0_1571325111773_0.23596713465151553"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.3.0": {
+      "name": "execa",
+      "version": "3.3.0",
+      "description": "Process execution for humans",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/execa.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": "^8.12.0 || >=9.7.0"
+      },
+      "scripts": {
+        "test": "xo && nyc ava && tsd"
+      },
+      "keywords": [
+        "exec",
+        "child",
+        "process",
+        "execute",
+        "fork",
+        "execfile",
+        "spawn",
+        "file",
+        "shell",
+        "bin",
+        "binary",
+        "binaries",
+        "npm",
+        "path",
+        "local"
+      ],
+      "dependencies": {
+        "cross-spawn": "^7.0.0",
+        "get-stream": "^5.0.0",
+        "human-signals": "^1.1.1",
+        "is-stream": "^2.0.0",
+        "merge-stream": "^2.0.0",
+        "npm-run-path": "^4.0.0",
+        "onetime": "^5.1.0",
+        "p-finally": "^2.0.0",
+        "signal-exit": "^3.0.2",
+        "strip-final-newline": "^2.0.0"
+      },
+      "devDependencies": {
+        "@types/node": "^12.0.7",
+        "ava": "^2.1.0",
+        "coveralls": "^3.0.4",
+        "get-node": "^5.0.0",
+        "is-running": "^2.1.0",
+        "nyc": "^14.1.1",
+        "p-event": "^4.1.0",
+        "tempfile": "^3.0.0",
+        "tsd": "^0.7.3",
+        "xo": "^0.24.0"
+      },
+      "nyc": {
+        "exclude": [
+          "**/fixtures/**",
+          "**/test.js",
+          "**/test/**"
+        ]
+      },
+      "gitHead": "f1eda9c86b93d38978c939083983424149005bdf",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/execa/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/execa#readme",
+      "_id": "execa@3.3.0",
+      "_nodeVersion": "13.1.0",
+      "_npmVersion": "6.13.0",
+      "dist": {
+        "integrity": "sha512-j5Vit5WZR/cbHlqU97+qcnw9WHRCIL4V1SVe75VcHcD1JRBdt8fv0zw89b7CQHQdUHTt2VjuhcF5ibAgVOxqpg==",
+        "shasum": "7e348eef129a1937f21ecbbd53390942653522c1",
+        "tarball": "https://registry.npmjs.org/execa/-/execa-3.3.0.tgz",
+        "fileCount": 11,
+        "unpackedSize": 52934,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdyoR2CRA9TVsSAnZWagAA8aQP/2xhVZOuxFLZpNM2PqFy\nDyxLqVh7MLfg55vN2a02iVQvalaC2O/XG9jRgsZYHLBnB9F7fIWV0xu3uh7w\nXJjK/X/LA6khMCGfuIBWXVE02EoMZgVrnh/NiqHCOz0CZWznvP0PhwYE6ntP\n9/KAaiLLa0b0MqwNztXHS5FPQFtmqC4yO+i3HLPKRT609PNMOthpPkBGcl0F\n4sJQTB9/fP90QX//vZ0H49Ql8+MHqmeMK8csb+G2m64LvzK/klXR3QsCXIMB\n+Q57lWke4OPRym0Zz8BT32psSSKWZ+l5fsfhELKLhzI+sgHaX/RmjmgQkp2x\n+gLNUF0W1QO7DiZB+dacLKarHGYzKQ4eA/xHStgM0qqIdAlXjylqIG0bgjuf\nv15zM2dDfUfAJNlbi/sJgf33oj6wlgJcUE4qtOC10W3sPiQgsYYQyO66rhW+\nM4aAPyvPxVA1PiV+a9U4SqsXU0sxmJi44Lflw5QWbFFFCxuViVLSsMlhfUpc\nmJdFaLxXfVpjnShLwEpn7syKToUvhovVRKPjA9bQXbFP3T7afXQbQbx4mBfi\nBePoVzG/9ue2xK1HVpOgLAk0TzFsFJ179mT1ULsxDpD/ltMCLeUK/EhWc2fx\nhAwdmp6LqhqV6uFrjHYd/zqMH+76oU3Wg+/xLeuRTogtBJVo5y6cpKraTnAQ\nvtUJ\r\n=Vcl9\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "ehmicky@gmail.com",
+          "name": "ehmicky"
+        },
+        {
+          "email": "sindresorhus@gmail.com",
+          "name": "sindresorhus"
+        }
+      ],
+      "_npmUser": {
+        "name": "ehmicky",
+        "email": "ehmicky@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/execa_3.3.0_1573553270019_0.6605028401759876"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.4.0": {
+      "name": "execa",
+      "version": "3.4.0",
+      "description": "Process execution for humans",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/execa.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": "^8.12.0 || >=9.7.0"
+      },
+      "scripts": {
+        "test": "xo && nyc ava && tsd"
+      },
+      "keywords": [
+        "exec",
+        "child",
+        "process",
+        "execute",
+        "fork",
+        "execfile",
+        "spawn",
+        "file",
+        "shell",
+        "bin",
+        "binary",
+        "binaries",
+        "npm",
+        "path",
+        "local"
+      ],
+      "dependencies": {
+        "cross-spawn": "^7.0.0",
+        "get-stream": "^5.0.0",
+        "human-signals": "^1.1.1",
+        "is-stream": "^2.0.0",
+        "merge-stream": "^2.0.0",
+        "npm-run-path": "^4.0.0",
+        "onetime": "^5.1.0",
+        "p-finally": "^2.0.0",
+        "signal-exit": "^3.0.2",
+        "strip-final-newline": "^2.0.0"
+      },
+      "devDependencies": {
+        "@types/node": "^12.0.7",
+        "ava": "^2.1.0",
+        "coveralls": "^3.0.4",
+        "get-node": "^5.0.0",
+        "is-running": "^2.1.0",
+        "nyc": "^14.1.1",
+        "p-event": "^4.1.0",
+        "tempfile": "^3.0.0",
+        "tsd": "^0.7.3",
+        "xo": "^0.24.0"
+      },
+      "nyc": {
+        "exclude": [
+          "**/fixtures/**",
+          "**/test.js",
+          "**/test/**"
+        ]
+      },
+      "gitHead": "d50146bd4260a09e1dc4a54f02b05714678fc4a2",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/execa/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/execa#readme",
+      "_id": "execa@3.4.0",
+      "_nodeVersion": "13.2.0",
+      "_npmVersion": "6.13.1",
+      "dist": {
+        "integrity": "sha512-r9vdGQk4bmCuK1yKQu1KTwcT2zwfWdbdaXfCtAh+5nU/4fSX+JAb7vZGvI5naJrQlvONrEB20jeruESI69530g==",
+        "shasum": "c08ed4550ef65d858fac269ffc8572446f37eb89",
+        "tarball": "https://registry.npmjs.org/execa/-/execa-3.4.0.tgz",
+        "fileCount": 11,
+        "unpackedSize": 53960,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd26qrCRA9TVsSAnZWagAA9rUP/iesTqJ/YZ8RATHdbV8J\neugZ8+uVvcdEdC0Ch0R9YK/dNDhQjgCnd2gVXl/6eQ6yqrmDs6gHZq0yh0Az\n/ULbMpSVX846NMIDLzbiNB0hkTg0k0owmDwg/6VNpNehOqDOFoixYITT9Y5q\nB6lMhXKpbO0snAgw1lwUrPH+tZShGxdvuzlY5//XVBTVHUrWOiaC95avJ3xq\nQiVQ6OenGTwGbb+AUC8w/itFfILUZ1QiWLc5+ychKoBjvAlj0fngGwHUa5Lt\nTIwxOzkPn+5ifLKuMjTtwXODAODkIMVsCBi0A61BUdPulzTHQcHGqOyptkBV\nyld7kgGX8cYlOJSnW2HdlMHsdhyUYDgQayUTAL+QJys74rr1iq5OIcymXB2O\nOMvHh6+lzs1PCJzRJHbDT0eDuAPp5PflQ1df2fhxgNEBmCkc0ro5HFQ/aEa+\nMR6xV47ICFs/9MTbyLUBTarwEpOCILfQHFnKcEf7LMNIEqFUekDZko33DTI+\nX7WU5/+J4eLkebl0jefdOIxJEn2hluw/MWb6No5/TZcGZakxmHyQMa1OLaGg\nZzGEeyPeYzQfHa+fXeM2BOn3k5ww0irsF3gL64jwoq3C2mKZgYwBu9LzvPQB\nMmTbPb+nWm2mlzXunK/wtbghIr0Uj3vc9JcJmSm1hj0SxkGC88NzogaWHRLf\nlhud\r\n=1Rj9\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "ehmicky@gmail.com",
+          "name": "ehmicky"
+        },
+        {
+          "email": "sindresorhus@gmail.com",
+          "name": "sindresorhus"
+        }
+      ],
+      "_npmUser": {
+        "name": "ehmicky",
+        "email": "ehmicky@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/execa_3.4.0_1574677163393_0.009077939891026343"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.0.0": {
+      "name": "execa",
+      "version": "4.0.0",
+      "description": "Process execution for humans",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/execa.git"
+      },
+      "funding": "https://github.com/sindresorhus/execa?sponsor=1",
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=10"
+      },
+      "scripts": {
+        "test": "xo && nyc ava && tsd"
+      },
+      "keywords": [
+        "exec",
+        "child",
+        "process",
+        "execute",
+        "fork",
+        "execfile",
+        "spawn",
+        "file",
+        "shell",
+        "bin",
+        "binary",
+        "binaries",
+        "npm",
+        "path",
+        "local"
+      ],
+      "dependencies": {
+        "cross-spawn": "^7.0.0",
+        "get-stream": "^5.0.0",
+        "human-signals": "^1.1.1",
+        "is-stream": "^2.0.0",
+        "merge-stream": "^2.0.0",
+        "npm-run-path": "^4.0.0",
+        "onetime": "^5.1.0",
+        "signal-exit": "^3.0.2",
+        "strip-final-newline": "^2.0.0"
+      },
+      "devDependencies": {
+        "@types/node": "^12.12.18",
+        "ava": "^2.1.0",
+        "coveralls": "^3.0.9",
+        "get-node": "^6.6.0",
+        "is-running": "^2.1.0",
+        "nyc": "^14.1.1",
+        "p-event": "^4.1.0",
+        "tempfile": "^3.0.0",
+        "tsd": "^0.11.0",
+        "xo": "^0.25.3"
+      },
+      "nyc": {
+        "exclude": [
+          "**/fixtures/**",
+          "**/test.js",
+          "**/test/**"
+        ]
+      },
+      "gitHead": "3a276a8334299947388e6a4968d4c3dcf398c197",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/execa/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/execa#readme",
+      "_id": "execa@4.0.0",
+      "_nodeVersion": "13.3.0",
+      "_npmVersion": "6.13.4",
+      "dist": {
+        "integrity": "sha512-JbDUxwV3BoT5ZVXQrSVbAiaXhXUkIwvbhPIwZ0N13kX+5yCzOhUNdocxB/UQRuYOHRYYwAxKYwJYc0T4D12pDA==",
+        "shasum": "7f37d6ec17f09e6b8fc53288611695b6d12b9daf",
+        "tarball": "https://registry.npmjs.org/execa/-/execa-4.0.0.tgz",
+        "fileCount": 11,
+        "unpackedSize": 55369,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd+0e6CRA9TVsSAnZWagAAIz4P/0UOdh7Dhh5LNU/9xpxy\nIAmsSqqLKHVrMgCXbIQECc5UoZbEM0kOnqK2+sHJC/tTlCOC/cs6POq/85Rf\nZJXySK5Rro5w+EZIklaMQQjfNcc2GbsdRpDbTC1XWj0sNKk3fSHdX4UL4W2+\nrQXlL5MpnOaaXKsQ94e16a0VTq4CfhGC9TH9dUv4jlO12sciA+1sqjInewQ7\nZve6BsGlo3jnY0/dzst4oCOya3qKQdY0dAwhzJ/C+vQa8Aa5ibNCNBExQCCq\nu1V2cDU6OeR/Wmrd/84dBo3JuYxzbo/2gNTnXCpvKEM75J997DxK2iaEe59m\nv0mmkQnE8gc64gn+77rVhm+rikvNBcqG0EeEGhDLFuW0Wmd9S+ImILT6biu7\nXzOfu0rJ45/YmWP9R/WMjt3LvJO5XtgRO/iwK40O/0ITAQkoQIlQhLKtB6F+\nDjNIHP5lfwJG9krAkbPrteFcS6X/FpORDQdV+2JMb/WutstRLwvaTmZ7JBpp\nOq9bcXwLxbbcImQunnzlBInN48bY9R1ZlnD8orrdkaxB2Dd9WaAUXKUMHtmS\ndnV8Z36ahQzbW/R5O0D1qkHcmdEx85ul7Wf6n6aET/ZuqE2Rh7iiMX22xz61\nkf+7QLTki7xa6piV0iFNddRJ+9RB28CY+jt9IUPHYNBagNyUL0gvUymC8uPc\n7p6r\r\n=5H5j\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "ehmicky@gmail.com",
+          "name": "ehmicky"
+        },
+        {
+          "email": "sindresorhus@gmail.com",
+          "name": "sindresorhus"
+        }
+      ],
+      "_npmUser": {
+        "name": "ehmicky",
+        "email": "ehmicky@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/execa_4.0.0_1576748985916_0.9683761819540304"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.0.1": {
+      "name": "execa",
+      "version": "4.0.1",
+      "description": "Process execution for humans",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/execa.git"
+      },
+      "funding": "https://github.com/sindresorhus/execa?sponsor=1",
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=10"
+      },
+      "scripts": {
+        "test": "xo && nyc ava && tsd"
+      },
+      "keywords": [
+        "exec",
+        "child",
+        "process",
+        "execute",
+        "fork",
+        "execfile",
+        "spawn",
+        "file",
+        "shell",
+        "bin",
+        "binary",
+        "binaries",
+        "npm",
+        "path",
+        "local"
+      ],
+      "dependencies": {
+        "cross-spawn": "^7.0.0",
+        "get-stream": "^5.0.0",
+        "human-signals": "^1.1.1",
+        "is-stream": "^2.0.0",
+        "merge-stream": "^2.0.0",
+        "npm-run-path": "^4.0.0",
+        "onetime": "^5.1.0",
+        "signal-exit": "^3.0.2",
+        "strip-final-newline": "^2.0.0"
+      },
+      "devDependencies": {
+        "@types/node": "^12.12.18",
+        "ava": "^2.1.0",
+        "coveralls": "^3.0.9",
+        "get-node": "^6.6.0",
+        "is-running": "^2.1.0",
+        "nyc": "^14.1.1",
+        "p-event": "^4.1.0",
+        "tempfile": "^3.0.0",
+        "tsd": "^0.11.0",
+        "xo": "^0.25.3"
+      },
+      "nyc": {
+        "exclude": [
+          "**/fixtures/**",
+          "**/test.js",
+          "**/test/**"
+        ]
+      },
+      "gitHead": "e22252608647c72ced33190f1edee29375c30e57",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/execa/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/execa#readme",
+      "_id": "execa@4.0.1",
+      "_nodeVersion": "14.0.0",
+      "_npmVersion": "6.14.4",
+      "dist": {
+        "integrity": "sha512-SCjM/zlBdOK8Q5TIjOn6iEHZaPHFsMoTxXQ2nvUvtPnuohz3H2dIozSg+etNR98dGoYUp2ENSKLL/XaMmbxVgw==",
+        "shasum": "988488781f1f0238cd156f7aaede11c3e853b4c1",
+        "tarball": "https://registry.npmjs.org/execa/-/execa-4.0.1.tgz",
+        "fileCount": 11,
+        "unpackedSize": 55476,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJetWp/CRA9TVsSAnZWagAAm3AP/RXcr+oiTzm3HM5KvDhF\nJ3UeoIga0KLZQmyXPk2o6+/qLDkGin56fVfSIVjS9GZwr4ciksxyJ2ODsyOo\nsEkO6pP2DgyzAILiQ6bFL/c11mL9i7IMkP8U+0hQAZUuCWTNK3pcBVAKUVLe\nvViKyhbGZ0cr9NYCxPpxSlgJuFt0JvVZXadaDlyHSvZihQ7aTcoDF69x3Kde\nk5+spvLavSMYX1BHlJ9uRaJXbc2xl4fOw26ec+UVZF/kP0n6YKcQTUwudnHl\nN5x96N/R/JdIwkFCklILJ5YlfDN8kW+G9Ro7RBcXVK8qdaPazTzusFBySi6L\ng7D50NPVZXh+swqAMB4jAKwiC/Fc2cOTQQK2jJD1xTOoUVwaEpaFHW7+ZM1m\nlmCtNkQ9+5pVdDx7hWSXPvSXjHi/N7Ml2TnceS0R2yZ/aPdwI40su2pEoeom\nVT9lWOrPzdYgOU/RE2tCtXWtnHstfh1jvJtiSg9ZVmDxmF2yqldwBkwiCKbi\nqYbE1zavR53Bp2CCwKaNV/BNxEN3WbICn9lMPUkmn73NWehZZvcN3q9ndzoi\nqa3Xv5wXZEJh8Gy4BGOqm+s/IF+Hzd/XUchD4kFhSikzwkFggeFQkLUqsiMd\nbZLN2r6U9473aa5Lwf4KDY6I3Oi09LMvkCvni1TyerVMvBKH/S+fxMxqX4oi\n8f5w\r\n=sY1I\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "ehmicky@gmail.com",
+          "name": "ehmicky"
+        },
+        {
+          "email": "sindresorhus@gmail.com",
+          "name": "sindresorhus"
+        }
+      ],
+      "_npmUser": {
+        "name": "ehmicky",
+        "email": "ehmicky@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/execa_4.0.1_1588947582702_0.4788909774300627"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.0.2": {
+      "name": "execa",
+      "version": "4.0.2",
+      "description": "Process execution for humans",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/execa.git"
+      },
+      "funding": "https://github.com/sindresorhus/execa?sponsor=1",
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=10"
+      },
+      "scripts": {
+        "test": "xo && nyc ava && tsd"
+      },
+      "keywords": [
+        "exec",
+        "child",
+        "process",
+        "execute",
+        "fork",
+        "execfile",
+        "spawn",
+        "file",
+        "shell",
+        "bin",
+        "binary",
+        "binaries",
+        "npm",
+        "path",
+        "local"
+      ],
+      "dependencies": {
+        "cross-spawn": "^7.0.0",
+        "get-stream": "^5.0.0",
+        "human-signals": "^1.1.1",
+        "is-stream": "^2.0.0",
+        "merge-stream": "^2.0.0",
+        "npm-run-path": "^4.0.0",
+        "onetime": "^5.1.0",
+        "signal-exit": "^3.0.2",
+        "strip-final-newline": "^2.0.0"
+      },
+      "devDependencies": {
+        "@types/node": "^12.12.18",
+        "ava": "^2.1.0",
+        "coveralls": "^3.0.9",
+        "get-node": "^6.6.0",
+        "is-running": "^2.1.0",
+        "nyc": "^14.1.1",
+        "p-event": "^4.1.0",
+        "tempfile": "^3.0.0",
+        "tsd": "^0.11.0",
+        "xo": "^0.25.3"
+      },
+      "nyc": {
+        "exclude": [
+          "**/fixtures/**",
+          "**/test.js",
+          "**/test/**"
+        ]
+      },
+      "gitHead": "a827d82203a1440e585276bef5d399a5953801f1",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/execa/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/execa#readme",
+      "_id": "execa@4.0.2",
+      "_nodeVersion": "14.2.0",
+      "_npmVersion": "6.14.5",
+      "dist": {
+        "integrity": "sha512-QI2zLa6CjGWdiQsmSkZoGtDx2N+cQIGb3yNolGTdjSQzydzLgYYf8LRuagp7S7fPimjcrzUDSUFd/MgzELMi4Q==",
+        "shasum": "ad87fb7b2d9d564f70d2b62d511bee41d5cbb240",
+        "tarball": "https://registry.npmjs.org/execa/-/execa-4.0.2.tgz",
+        "fileCount": 11,
+        "unpackedSize": 55554,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJex9zlCRA9TVsSAnZWagAAV7gP/2k0BefUStZ1hRfyHXnY\n7UhjUGPqDWy+jSPDr2F+6pQmPRzmDOJd/6lMgMQQY1Ah3T3sXkrCZSwyYBkb\niH3D9ezvQlQndha1/wRMW5MYiVvwL8pvtpT9ZjDVsfhJt3xwkCxQ3ehZWnSZ\nEY9LQ7AN8BwokEQQtUc3q7vzFkIVKQGY8fB3D1UGvRG4EkzOiWYeHWti6Jnz\nh+sAni2+/tmCLpGGSIyPlFfBJdihFII5qzYfMBJe/ahsyJojDgL34M1GtTIw\np6wAyjLGRzGsjwZOJUG994+enb07fouxH0kPFBIU/+0DLo3NDPMDb+9Ei6XT\nxIgei8AlwLuPRZNhyLkR6Y8UuSuVaPXNVXUVZUI1bj34lbCJZaQlEGsE6pni\nCAIPTNfPVMloQFXcL8y2lWz36ioAwvHqLEyKRNP1YnFqiPNZGgPfIJDXaHPi\nIucoDnRkEvlziIpxnWcAcc7s0GYrhEYuSj+04PMNwlBIwgQh40ClpzlpZ/Br\nV53O7llwi8u1hgCTxzsnTFbYlLrbMR0z9gsjosfkfD+AEYKcG8S8JXaHdvBc\n1JVP9ZNK2yUBO0ZaO12HOziJpJ5Rmk7Ps9D706KIVqSGhbK5+DByD/DKusBJ\nNA3F8KH8E0wRlaYzulmhPAorC4GRr5ubsMKc5nvZjYJVkwVjFpOoUBA0NLuk\nxDYh\r\n=iTTF\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "ehmicky@gmail.com",
+          "name": "ehmicky"
+        },
+        {
+          "email": "sindresorhus@gmail.com",
+          "name": "sindresorhus"
+        }
+      ],
+      "_npmUser": {
+        "name": "ehmicky",
+        "email": "ehmicky@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/execa_4.0.2_1590156516666_0.23777898193810376"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.0.3": {
+      "name": "execa",
+      "version": "4.0.3",
+      "description": "Process execution for humans",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/execa.git"
+      },
+      "funding": "https://github.com/sindresorhus/execa?sponsor=1",
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "https://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=10"
+      },
+      "scripts": {
+        "test": "xo && nyc ava && tsd"
+      },
+      "keywords": [
+        "exec",
+        "child",
+        "process",
+        "execute",
+        "fork",
+        "execfile",
+        "spawn",
+        "file",
+        "shell",
+        "bin",
+        "binary",
+        "binaries",
+        "npm",
+        "path",
+        "local"
+      ],
+      "dependencies": {
+        "cross-spawn": "^7.0.0",
+        "get-stream": "^5.0.0",
+        "human-signals": "^1.1.1",
+        "is-stream": "^2.0.0",
+        "merge-stream": "^2.0.0",
+        "npm-run-path": "^4.0.0",
+        "onetime": "^5.1.0",
+        "signal-exit": "^3.0.2",
+        "strip-final-newline": "^2.0.0"
+      },
+      "devDependencies": {
+        "@types/node": "^12.12.18",
+        "ava": "^2.1.0",
+        "coveralls": "^3.0.9",
+        "get-node": "^6.6.0",
+        "is-running": "^2.1.0",
+        "nyc": "^14.1.1",
+        "p-event": "^4.1.0",
+        "tempfile": "^3.0.0",
+        "tsd": "^0.11.0",
+        "xo": "^0.25.3"
+      },
+      "nyc": {
+        "exclude": [
+          "**/fixtures/**",
+          "**/test.js",
+          "**/test/**"
+        ]
+      },
+      "gitHead": "26d6b0d59588794173882f78609844ea71944463",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/execa/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/execa#readme",
+      "_id": "execa@4.0.3",
+      "_nodeVersion": "14.5.0",
+      "_npmVersion": "6.14.5",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-WFDXGHckXPWZX19t1kCsXzOpqX9LWYNqn4C+HqZlk/V0imTkzJZqf87ZBhvpHaftERYknpk0fjSylnXVlVgI0A==",
+        "shasum": "0a34dabbad6d66100bd6f2c576c8669403f317f2",
+        "tarball": "https://registry.npmjs.org/execa/-/execa-4.0.3.tgz",
+        "fileCount": 11,
+        "unpackedSize": 55590,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfBL+3CRA9TVsSAnZWagAAgCwP/R5Y6XRBOF143ZOJMkLE\nqLwjdm/hKqLlPNNLQ/ITuxk38b7m8BnugBNaetymk5lwWNDv4JJvQjSlptym\nWZT19WIherYlK7ZrZ/0qTvWkcrYpNLDioKXhJbYX/Lv/R6aGX7cl6ngWZWXF\n9mHJy8JDUKVhfHd8+1u3eTYr4gjKHAzacGU5IVMyy+yYA41vCVy/OhAcK7wH\n+LElkgTwyhGooTt3uMNlzefZ+K6M6icJVDtYPaNc+pP9yimChFMbPI6jtYSV\nKKDep6YWLtNS7Is9/cytMLMWVOl8473kaQBYQNXAcw6eSiFX3zfyxaxRhPpR\nFkhYWqnRpPhAEPi4yahlgQZuRLq8qNMe6t50MeERJTniKhF+M/WHenhNHpL4\nj5ukuv3jSDfMYCsOwcZaIRz5d3uqYLnCtciWSXZidEsWjqNwhH3uCAXuGKFZ\n4xA3t0vhT3cEmkS1i6n1B+lEZ+w5XAEFE7zfCfUKtHHAtDUUtGRxatMVfTvt\nTRoTbw2Pku+Po+GUqwF/vF86ClxHlgJE0OphYJpHJEIAmYA2WRKOsabXCRne\n7g24ZJxAAiOVEVHpUzXsHEWGjzdlhLo4iNJsctvlMuL0bJZfMv5bMpyU/8cy\nfQbi/EoYqKfKidTQPJysePOSZ+IeTU3PpmjP1XOC0R5/ozkS80aIff53NPJo\n/FPa\r\n=IppU\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "ehmicky@gmail.com",
+          "name": "ehmicky"
+        },
+        {
+          "email": "sindresorhus@gmail.com",
+          "name": "sindresorhus"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/execa_4.0.3_1594146742981_0.3031261940122554"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "<img src=\"media/logo.svg\" width=\"400\">\n<br>\n\n[![Build Status](https://travis-ci.com/sindresorhus/execa.svg?branch=master)](https://travis-ci.com/github/sindresorhus/execa) [![Coverage Status](https://coveralls.io/repos/github/sindresorhus/execa/badge.svg?branch=master)](https://coveralls.io/github/sindresorhus/execa?branch=master)\n\n> Process execution for humans\n\n## Why\n\nThis package improves [`child_process`](https://nodejs.org/api/child_process.html) methods with:\n\n- Promise interface.\n- [Strips the final newline](#stripfinalnewline) from the output so you don't have to do `stdout.trim()`.\n- Supports [shebang](https://en.wikipedia.org/wiki/Shebang_(Unix)) binaries cross-platform.\n- [Improved Windows support.](https://github.com/IndigoUnited/node-cross-spawn#why)\n- Higher max buffer. 100 MB instead of 200 KB.\n- [Executes locally installed binaries by name.](#preferlocal)\n- [Cleans up spawned processes when the parent process dies.](#cleanup)\n- [Get interleaved output](#all) from `stdout` and `stderr` similar to what is printed on the terminal. [*(Async only)*](#execasyncfile-arguments-options)\n- [Can specify file and arguments as a single string without a shell](#execacommandcommand-options)\n- More descriptive errors.\n\n## Install\n\n```\n$ npm install execa\n```\n\n## Usage\n\n```js\nconst execa = require('execa');\n\n(async () => {\n\tconst {stdout} = await execa('echo', ['unicorns']);\n\tconsole.log(stdout);\n\t//=> 'unicorns'\n})();\n```\n\n### Pipe the child process stdout to the parent\n\n```js\nconst execa = require('execa');\n\nexeca('echo', ['unicorns']).stdout.pipe(process.stdout);\n```\n\n### Handling Errors\n\n```js\nconst execa = require('execa');\n\n(async () => {\n\t// Catching an error\n\ttry {\n\t\tawait execa('unknown', ['command']);\n\t} catch (error) {\n\t\tconsole.log(error);\n\t\t/*\n\t\t{\n\t\t\tmessage: 'Command failed with ENOENT: unknown command spawn unknown ENOENT',\n\t\t\terrno: -2,\n\t\t\tcode: 'ENOENT',\n\t\t\tsyscall: 'spawn unknown',\n\t\t\tpath: 'unknown',\n\t\t\tspawnargs: ['command'],\n\t\t\toriginalMessage: 'spawn unknown ENOENT',\n\t\t\tshortMessage: 'Command failed with ENOENT: unknown command spawn unknown ENOENT',\n\t\t\tcommand: 'unknown command',\n\t\t\tstdout: '',\n\t\t\tstderr: '',\n\t\t\tall: '',\n\t\t\tfailed: true,\n\t\t\ttimedOut: false,\n\t\t\tisCanceled: false,\n\t\t\tkilled: false\n\t\t}\n\t\t*/\n\t}\n\n})();\n```\n\n### Cancelling a spawned process\n\n```js\nconst execa = require('execa');\n\n(async () => {\n\tconst subprocess = execa('node');\n\n\tsetTimeout(() => {\n\t\tsubprocess.cancel();\n\t}, 1000);\n\n\ttry {\n\t\tawait subprocess;\n\t} catch (error) {\n\t\tconsole.log(subprocess.killed); // true\n\t\tconsole.log(error.isCanceled); // true\n\t}\n})()\n```\n\n### Catching an error with the sync method\n\n```js\ntry {\n\texeca.sync('unknown', ['command']);\n} catch (error) {\n\tconsole.log(error);\n\t/*\n\t{\n\t\tmessage: 'Command failed with ENOENT: unknown command spawnSync unknown ENOENT',\n\t\terrno: -2,\n\t\tcode: 'ENOENT',\n\t\tsyscall: 'spawnSync unknown',\n\t\tpath: 'unknown',\n\t\tspawnargs: ['command'],\n\t\toriginalMessage: 'spawnSync unknown ENOENT',\n\t\tshortMessage: 'Command failed with ENOENT: unknown command spawnSync unknown ENOENT',\n\t\tcommand: 'unknown command',\n\t\tstdout: '',\n\t\tstderr: '',\n\t\tall: '',\n\t\tfailed: true,\n\t\ttimedOut: false,\n\t\tisCanceled: false,\n\t\tkilled: false\n\t}\n\t*/\n}\n```\n\n### Kill a process\n\nUsing SIGTERM, and after 2 seconds, kill it with SIGKILL.\n\n```js\nconst subprocess = execa('node');\n\nsetTimeout(() => {\n\tsubprocess.kill('SIGTERM', {\n\t\tforceKillAfterTimeout: 2000\n\t});\n}, 1000);\n```\n\n## API\n\n### execa(file, arguments, options?)\n\nExecute a file. Think of this as a mix of [`child_process.execFile()`](https://nodejs.org/api/child_process.html#child_process_child_process_execfile_file_args_options_callback) and [`child_process.spawn()`](https://nodejs.org/api/child_process.html#child_process_child_process_spawn_command_args_options).\n\nNo escaping/quoting is needed.\n\nUnless the [`shell`](#shell) option is used, no shell interpreter (Bash, `cmd.exe`, etc.) is used, so shell features such as variables substitution (`echo $PATH`) are not allowed.\n\nReturns a [`child_process` instance](https://nodejs.org/api/child_process.html#child_process_class_childprocess) which:\n  - is also a `Promise` resolving or rejecting with a [`childProcessResult`](#childProcessResult).\n  - exposes the following additional methods and properties.\n\n#### kill(signal?, options?)\n\nSame as the original [`child_process#kill()`](https://nodejs.org/api/child_process.html#child_process_subprocess_kill_signal) except: if `signal` is `SIGTERM` (the default value) and the child process is not terminated after 5 seconds, force it by sending `SIGKILL`.\n\n##### options.forceKillAfterTimeout\n\nType: `number | false`\\\nDefault: `5000`\n\nMilliseconds to wait for the child process to terminate before sending `SIGKILL`.\n\nCan be disabled with `false`.\n\n#### cancel()\n\nSimilar to [`childProcess.kill()`](https://nodejs.org/api/child_process.html#child_process_subprocess_kill_signal). This is preferred when cancelling the child process execution as the error is more descriptive and [`childProcessResult.isCanceled`](#iscanceled) is set to `true`.\n\n#### all\n\nType: `ReadableStream | undefined`\n\nStream combining/interleaving [`stdout`](https://nodejs.org/api/child_process.html#child_process_subprocess_stdout) and [`stderr`](https://nodejs.org/api/child_process.html#child_process_subprocess_stderr).\n\nThis is `undefined` if either:\n  - the [`all` option](#all-2) is `false` (the default value)\n  - both [`stdout`](#stdout-1) and [`stderr`](#stderr-1) options are set to [`'inherit'`, `'ipc'`, `Stream` or `integer`](https://nodejs.org/dist/latest-v6.x/docs/api/child_process.html#child_process_options_stdio)\n\n### execa.sync(file, arguments?, options?)\n\nExecute a file synchronously.\n\nReturns or throws a [`childProcessResult`](#childProcessResult).\n\n### execa.command(command, options?)\n\nSame as [`execa()`](#execafile-arguments-options) except both file and arguments are specified in a single `command` string. For example, `execa('echo', ['unicorns'])` is the same as `execa.command('echo unicorns')`.\n\nIf the file or an argument contains spaces, they must be escaped with backslashes. This matters especially if `command` is not a constant but a variable, for example with `__dirname` or `process.cwd()`. Except for spaces, no escaping/quoting is needed.\n\nThe [`shell` option](#shell) must be used if the `command` uses shell-specific features, as opposed to being a simple `file` followed by its `arguments`.\n\n### execa.commandSync(command, options?)\n\nSame as [`execa.command()`](#execacommand-command-options) but synchronous.\n\nReturns or throws a [`childProcessResult`](#childProcessResult).\n\n### execa.node(scriptPath, arguments?, options?)\n\nExecute a Node.js script as a child process.\n\nSame as `execa('node', [scriptPath, ...arguments], options)` except (like [`child_process#fork()`](https://nodejs.org/api/child_process.html#child_process_child_process_fork_modulepath_args_options)):\n  - the current Node version and options are used. This can be overridden using the [`nodePath`](#nodepath-for-node-only) and [`nodeOptions`](#nodeoptions-for-node-only) options.\n  - the [`shell`](#shell) option cannot be used\n  - an extra channel [`ipc`](https://nodejs.org/api/child_process.html#child_process_options_stdio) is passed to [`stdio`](#stdio)\n\n### childProcessResult\n\nType: `object`\n\nResult of a child process execution. On success this is a plain object. On failure this is also an `Error` instance.\n\nThe child process [fails](#failed) when:\n- its [exit code](#exitcode) is not `0`\n- it was [killed](#killed) with a [signal](#signal)\n- [timing out](#timedout)\n- [being canceled](#iscanceled)\n- there's not enough memory or there are already too many child processes\n\n#### command\n\nType: `string`\n\nThe file and arguments that were run.\n\n#### exitCode\n\nType: `number`\n\nThe numeric exit code of the process that was run.\n\n#### stdout\n\nType: `string | Buffer`\n\nThe output of the process on stdout.\n\n#### stderr\n\nType: `string | Buffer`\n\nThe output of the process on stderr.\n\n#### all\n\nType: `string | Buffer | undefined`\n\nThe output of the process with `stdout` and `stderr` interleaved.\n\nThis is `undefined` if either:\n  - the [`all` option](#all-2) is `false` (the default value)\n  - `execa.sync()` was used\n\n#### failed\n\nType: `boolean`\n\nWhether the process failed to run.\n\n#### timedOut\n\nType: `boolean`\n\nWhether the process timed out.\n\n#### isCanceled\n\nType: `boolean`\n\nWhether the process was canceled.\n\n#### killed\n\nType: `boolean`\n\nWhether the process was killed.\n\n#### signal\n\nType: `string | undefined`\n\nThe name of the signal that was used to terminate the process. For example, `SIGFPE`.\n\nIf a signal terminated the process, this property is defined and included in the error message. Otherwise it is `undefined`.\n\n#### signalDescription\n\nType: `string | undefined`\n\nA human-friendly description of the signal that was used to terminate the process. For example, `Floating point arithmetic error`.\n\nIf a signal terminated the process, this property is defined and included in the error message. Otherwise it is `undefined`. It is also `undefined` when the signal is very uncommon which should seldomly happen.\n\n#### message\n\nType: `string`\n\nError message when the child process failed to run. In addition to the [underlying error message](#originalMessage), it also contains some information related to why the child process errored.\n\nThe child process [stderr](#stderr) then [stdout](#stdout) are appended to the end, separated with newlines and not interleaved.\n\n#### shortMessage\n\nType: `string`\n\nThis is the same as the [`message` property](#message) except it does not include the child process stdout/stderr.\n\n#### originalMessage\n\nType: `string | undefined`\n\nOriginal error message. This is the same as the `message` property except it includes neither the child process stdout/stderr nor some additional information added by Execa.\n\nThis is `undefined` unless the child process exited due to an `error` event or a timeout.\n\n### options\n\nType: `object`\n\n#### cleanup\n\nType: `boolean`\\\nDefault: `true`\n\nKill the spawned process when the parent process exits unless either:\n\t- the spawned process is [`detached`](https://nodejs.org/api/child_process.html#child_process_options_detached)\n\t- the parent process is terminated abruptly, for example, with `SIGKILL` as opposed to `SIGTERM` or a normal exit\n\n#### preferLocal\n\nType: `boolean`\\\nDefault: `false`\n\nPrefer locally installed binaries when looking for a binary to execute.\\\nIf you `$ npm install foo`, you can then `execa('foo')`.\n\n#### localDir\n\nType: `string`\\\nDefault: `process.cwd()`\n\nPreferred path to find locally installed binaries in (use with `preferLocal`).\n\n#### execPath\n\nType: `string`\\\nDefault: `process.execPath` (Current Node.js executable)\n\nPath to the Node.js executable to use in child processes.\n\nThis can be either an absolute path or a path relative to the [`cwd` option](#cwd).\n\nRequires [`preferLocal`](#preferlocal) to be `true`.\n\nFor example, this can be used together with [`get-node`](https://github.com/ehmicky/get-node) to run a specific Node.js version in a child process.\n\n#### buffer\n\nType: `boolean`\\\nDefault: `true`\n\nBuffer the output from the spawned process. When set to `false`, you must read the output of [`stdout`](#stdout-1) and [`stderr`](#stderr-1) (or [`all`](#all) if the [`all`](#all-2) option is `true`). Otherwise the returned promise will not be resolved/rejected.\n\nIf the spawned process fails, [`error.stdout`](#stdout), [`error.stderr`](#stderr), and [`error.all`](#all) will contain the buffered data.\n\n#### input\n\nType: `string | Buffer | stream.Readable`\n\nWrite some input to the `stdin` of your binary.\\\nStreams are not allowed when using the synchronous methods.\n\n#### stdin\n\nType: `string | number | Stream | undefined`\\\nDefault: `pipe`\n\nSame options as [`stdio`](https://nodejs.org/dist/latest-v6.x/docs/api/child_process.html#child_process_options_stdio).\n\n#### stdout\n\nType: `string | number | Stream | undefined`\\\nDefault: `pipe`\n\nSame options as [`stdio`](https://nodejs.org/dist/latest-v6.x/docs/api/child_process.html#child_process_options_stdio).\n\n#### stderr\n\nType: `string | number | Stream | undefined`\\\nDefault: `pipe`\n\nSame options as [`stdio`](https://nodejs.org/dist/latest-v6.x/docs/api/child_process.html#child_process_options_stdio).\n\n#### all\n\nType: `boolean`\\\nDefault: `false`\n\nAdd an `.all` property on the [promise](#all) and the [resolved value](#all-1). The property contains the output of the process with `stdout` and `stderr` interleaved.\n\n#### reject\n\nType: `boolean`\\\nDefault: `true`\n\nSetting this to `false` resolves the promise with the error instead of rejecting it.\n\n#### stripFinalNewline\n\nType: `boolean`\\\nDefault: `true`\n\nStrip the final [newline character](https://en.wikipedia.org/wiki/Newline) from the output.\n\n#### extendEnv\n\nType: `boolean`\\\nDefault: `true`\n\nSet to `false` if you don't want to extend the environment variables when providing the `env` property.\n\n---\n\nExeca also accepts the below options which are the same as the options for [`child_process#spawn()`](https://nodejs.org/api/child_process.html#child_process_child_process_spawn_command_args_options)/[`child_process#exec()`](https://nodejs.org/api/child_process.html#child_process_child_process_exec_command_options_callback)\n\n#### cwd\n\nType: `string`\\\nDefault: `process.cwd()`\n\nCurrent working directory of the child process.\n\n#### env\n\nType: `object`\\\nDefault: `process.env`\n\nEnvironment key-value pairs. Extends automatically from `process.env`. Set [`extendEnv`](#extendenv) to `false` if you don't want this.\n\n#### argv0\n\nType: `string`\n\nExplicitly set the value of `argv[0]` sent to the child process. This will be set to `file` if not specified.\n\n#### stdio\n\nType: `string | string[]`\\\nDefault: `pipe`\n\nChild's [stdio](https://nodejs.org/api/child_process.html#child_process_options_stdio) configuration.\n\n#### serialization\n\nType: `string`\\\nDefault: `'json'`\n\nSpecify the kind of serialization used for sending messages between processes when using the [`stdio: 'ipc'`](#stdio) option or [`execa.node()`](#execanodescriptpath-arguments-options):\n\t- `json`: Uses `JSON.stringify()` and `JSON.parse()`.\n\t- `advanced`: Uses [`v8.serialize()`](https://nodejs.org/api/v8.html#v8_v8_serialize_value)\n\nRequires Node.js `13.2.0` or later.\n\n[More info.](https://nodejs.org/api/child_process.html#child_process_advanced_serialization)\n\n#### detached\n\nType: `boolean`\n\nPrepare child to run independently of its parent process. Specific behavior [depends on the platform](https://nodejs.org/api/child_process.html#child_process_options_detached).\n\n#### uid\n\nType: `number`\n\nSets the user identity of the process.\n\n#### gid\n\nType: `number`\n\nSets the group identity of the process.\n\n#### shell\n\nType: `boolean | string`\\\nDefault: `false`\n\nIf `true`, runs `file` inside of a shell. Uses `/bin/sh` on UNIX and `cmd.exe` on Windows. A different shell can be specified as a string. The shell should understand the `-c` switch on UNIX or `/d /s /c` on Windows.\n\nWe recommend against using this option since it is:\n- not cross-platform, encouraging shell-specific syntax.\n- slower, because of the additional shell interpretation.\n- unsafe, potentially allowing command injection.\n\n#### encoding\n\nType: `string | null`\\\nDefault: `utf8`\n\nSpecify the character encoding used to decode the `stdout` and `stderr` output. If set to `null`, then `stdout` and `stderr` will be a `Buffer` instead of a string.\n\n#### timeout\n\nType: `number`\\\nDefault: `0`\n\nIf timeout is greater than `0`, the parent will send the signal identified by the `killSignal` property (the default is `SIGTERM`) if the child runs longer than timeout milliseconds.\n\n#### maxBuffer\n\nType: `number`\\\nDefault: `100_000_000` (100 MB)\n\nLargest amount of data in bytes allowed on `stdout` or `stderr`.\n\n#### killSignal\n\nType: `string | number`\\\nDefault: `SIGTERM`\n\nSignal value to be used when the spawned process will be killed.\n\n#### windowsVerbatimArguments\n\nType: `boolean`\\\nDefault: `false`\n\nIf `true`, no quoting or escaping of arguments is done on Windows. Ignored on other platforms. This is set to `true` automatically when the `shell` option is `true`.\n\n#### windowsHide\n\nType: `boolean`\\\nDefault: `true`\n\nOn Windows, do not create a new console window. Please note this also prevents `CTRL-C` [from working](https://github.com/nodejs/node/issues/29837) on Windows.\n\n#### nodePath *(For `.node()` only)*\n\nType: `string`\\\nDefault: [`process.execPath`](https://nodejs.org/api/process.html#process_process_execpath)\n\nNode.js executable used to create the child process.\n\n#### nodeOptions *(For `.node()` only)*\n\nType: `string[]`\\\nDefault: [`process.execArgv`](https://nodejs.org/api/process.html#process_process_execargv)\n\nList of [CLI options](https://nodejs.org/api/cli.html#cli_options) passed to the Node.js executable.\n\n## Tips\n\n### Retry on error\n\nGracefully handle failures by using automatic retries and exponential backoff with the [`p-retry`](https://github.com/sindresorhus/p-retry) package:\n\n```js\nconst pRetry = require('p-retry');\n\nconst run = async () => {\n\tconst results = await execa('curl', ['-sSL', 'https://sindresorhus.com/unicorn']);\n\treturn results;\n};\n\n(async () => {\n\tconsole.log(await pRetry(run, {retries: 5}));\n})();\n```\n\n### Save and pipe output from a child process\n\nLet's say you want to show the output of a child process in real-time while also saving it to a variable.\n\n```js\nconst execa = require('execa');\n\nconst subprocess = execa('echo', ['foo']);\nsubprocess.stdout.pipe(process.stdout);\n\n(async () => {\n\tconst {stdout} = await subprocess;\n\tconsole.log('child output:', stdout);\n})();\n```\n\n### Redirect output to a file\n\n```js\nconst execa = require('execa');\n\nconst subprocess = execa('echo', ['foo'])\nsubprocess.stdout.pipe(fs.createWriteStream('stdout.txt'))\n```\n\n### Redirect input from a file\n\n```js\nconst execa = require('execa');\n\nconst subprocess = execa('cat')\nfs.createReadStream('stdin.txt').pipe(subprocess.stdin)\n```\n\n### Execute the current package's binary\n\n```js\nconst {getBinPathSync} = require('get-bin-path');\n\nconst binPath = getBinPathSync();\nconst subprocess = execa(binPath);\n```\n\n`execa` can be combined with [`get-bin-path`](https://github.com/ehmicky/get-bin-path) to test the current package's binary. As opposed to hard-coding the path to the binary, this validates that the `package.json` `bin` field is correctly set up.\n\n## Related\n\n- [gulp-execa](https://github.com/ehmicky/gulp-execa) - Gulp plugin for `execa`\n- [nvexeca](https://github.com/ehmicky/nvexeca) - Run `execa` using any Node.js version\n- [sudo-prompt](https://github.com/jorangreef/sudo-prompt) - Run commands with elevated privileges.\n\n## Maintainers\n\n- [Sindre Sorhus](https://github.com/sindresorhus)\n- [@ehmicky](https://github.com/ehmicky)\n\n---\n\n<div align=\"center\">\n\t<b>\n\t\t<a href=\"https://tidelift.com/subscription/pkg/npm-execa?utm_source=npm-execa&utm_medium=referral&utm_campaign=readme\">Get professional support for this package with a Tidelift subscription</a>\n\t</b>\n\t<br>\n\t<sub>\n\t\tTidelift helps make open source sustainable for maintainers while giving companies<br>assurances about security, maintenance, and licensing for their dependencies.\n\t</sub>\n</div>\n",
+  "maintainers": [
+    {
+      "email": "ehmicky@gmail.com",
+      "name": "ehmicky"
+    },
+    {
+      "email": "sindresorhus@gmail.com",
+      "name": "sindresorhus"
+    }
+  ],
+  "time": {
+    "modified": "2020-09-08T11:43:49.031Z",
+    "created": "2015-12-05T23:03:32.752Z",
+    "0.1.0": "2015-12-05T23:03:32.752Z",
+    "0.1.1": "2015-12-07T10:22:42.263Z",
+    "0.2.0": "2016-01-09T13:45:54.248Z",
+    "0.2.1": "2016-01-09T13:59:27.544Z",
+    "0.2.2": "2016-01-11T12:24:35.580Z",
+    "0.3.0": "2016-04-22T21:13:14.859Z",
+    "0.4.0": "2016-04-26T17:27:36.260Z",
+    "0.5.0": "2016-10-05T08:28:19.328Z",
+    "0.5.1": "2017-01-08T15:31:59.664Z",
+    "0.6.0": "2017-01-09T09:37:57.298Z",
+    "0.6.1": "2017-03-13T06:34:43.860Z",
+    "0.6.2": "2017-03-20T05:57:19.501Z",
+    "0.6.3": "2017-03-21T12:31:01.154Z",
+    "0.7.0": "2017-06-09T21:50:42.038Z",
+    "0.8.0": "2017-08-05T20:44:47.515Z",
+    "0.9.0": "2018-01-11T23:29:49.655Z",
+    "0.10.0": "2018-03-15T04:59:55.439Z",
+    "0.11.0": "2018-08-20T07:57:57.953Z",
+    "1.0.0": "2018-08-26T17:43:44.171Z",
+    "2.0.0-alpha.0": "2019-06-18T17:47:06.429Z",
+    "2.0.0": "2019-06-25T11:26:42.705Z",
+    "2.0.1": "2019-06-26T10:13:29.987Z",
+    "2.0.2": "2019-07-01T10:26:38.202Z",
+    "2.0.3": "2019-07-05T08:35:52.894Z",
+    "2.0.4": "2019-08-15T10:33:01.051Z",
+    "2.0.5": "2019-10-04T08:05:55.676Z",
+    "2.1.0": "2019-10-09T09:10:42.025Z",
+    "3.0.0": "2019-10-14T14:08:16.289Z",
+    "3.1.0": "2019-10-15T18:34:55.311Z",
+    "3.2.0": "2019-10-17T15:11:51.894Z",
+    "3.3.0": "2019-11-12T10:07:50.203Z",
+    "3.4.0": "2019-11-25T10:19:23.519Z",
+    "4.0.0": "2019-12-19T09:49:46.049Z",
+    "4.0.1": "2020-05-08T14:19:42.795Z",
+    "4.0.2": "2020-05-22T14:08:36.806Z",
+    "4.0.3": "2020-07-07T18:32:23.136Z"
+  },
+  "homepage": "https://github.com/sindresorhus/execa#readme",
+  "keywords": [
+    "exec",
+    "child",
+    "process",
+    "execute",
+    "fork",
+    "execfile",
+    "spawn",
+    "file",
+    "shell",
+    "bin",
+    "binary",
+    "binaries",
+    "npm",
+    "path",
+    "local"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/execa.git"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "https://sindresorhus.com"
+  },
+  "bugs": {
+    "url": "https://github.com/sindresorhus/execa/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md",
+  "users": {
+    "timdp": true,
+    "king.v": true,
+    "abhisekp": true,
+    "arttse": true,
+    "antixrist": true,
+    "chocolateboy": true,
+    "bobxuyang": true,
+    "huhgawz": true,
+    "jamescostian": true,
+    "santi8ago8": true,
+    "daizch": true,
+    "fengmiaosen": true,
+    "shuoshubao": true,
+    "serge-nikitin": true,
+    "ricardogobbosouza": true,
+    "l3au": true,
+    "shadowwzw": true,
+    "pillar0514": true,
+    "eliverlara": true,
+    "d-band": true,
+    "garthk": true,
+    "houzhanfeng": true,
+    "aidenzou": true,
+    "tjfwalker": true,
+    "andrewjensen": true,
+    "adius": true,
+    "brainpoint": true,
+    "chaoliu": true,
+    "zuojiang": true,
+    "tommytroylin": true,
+    "shervinafshar": true,
+    "reyronald": true,
+    "uxabdullah": true,
+    "piecioshka": true,
+    "xudaolong": true,
+    "pftom": true,
+    "kodekracker": true,
+    "xiechao06": true,
+    "liunian": true
+  }
+}

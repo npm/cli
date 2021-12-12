@@ -1,0 +1,843 @@
+{
+  "_id": "ajv-errors",
+  "_rev": "11-0f37f5dfbd6af59ec5117afb4dfd125c",
+  "name": "ajv-errors",
+  "description": "Custom error messages in JSON-Schema for Ajv validator",
+  "dist-tags": {
+    "latest": "1.0.1"
+  },
+  "versions": {
+    "0.0.1": {
+      "name": "ajv-errors",
+      "version": "0.0.1",
+      "description": "Custom error messages in JSON-Schema for Ajv validator",
+      "main": "index.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/epoberezkin/ajv-errors.git"
+      },
+      "keywords": [
+        "ajv",
+        "json-schema",
+        "validator",
+        "error",
+        "messages"
+      ],
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/epoberezkin/ajv-errors/issues"
+      },
+      "homepage": "https://github.com/epoberezkin/ajv-errors#readme",
+      "gitHead": "c30cfd8987e0cf23cc39ff8dd6dc1feede17ad9e",
+      "_id": "ajv-errors@0.0.1",
+      "_shasum": "9d25c7a77ec8e9ec88017059d32cd699251f2e5b",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "6.9.1",
+      "_npmUser": {
+        "name": "esp",
+        "email": "e.poberezkin@me.com"
+      },
+      "maintainers": [
+        {
+          "name": "esp",
+          "email": "e.poberezkin@me.com"
+        }
+      ],
+      "dist": {
+        "shasum": "9d25c7a77ec8e9ec88017059d32cd699251f2e5b",
+        "tarball": "https://registry.npmjs.org/ajv-errors/-/ajv-errors-0.0.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/ajv-errors-0.0.1.tgz_1488714041336_0.44593694899231195"
+      },
+      "directories": {}
+    },
+    "0.1.0": {
+      "name": "ajv-errors",
+      "version": "0.1.0",
+      "description": "Custom error messages in JSON-Schema for Ajv validator",
+      "main": "index.js",
+      "scripts": {
+        "build": "node node_modules/ajv/scripts/compile-dots.js node_modules/ajv/lib lib",
+        "eslint": "eslint *.js spec",
+        "test-spec": "mocha spec/*.spec.js -R spec",
+        "test-cov": "nyc npm run test-spec",
+        "test": "npm run eslint && npm run build && npm run test-cov"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/epoberezkin/ajv-errors.git"
+      },
+      "keywords": [
+        "ajv",
+        "json-schema",
+        "validator",
+        "error",
+        "messages"
+      ],
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/epoberezkin/ajv-errors/issues"
+      },
+      "homepage": "https://github.com/epoberezkin/ajv-errors#readme",
+      "peerDependencies": {
+        "ajv": ">=5.0.0"
+      },
+      "devDependencies": {
+        "ajv": "^5.0.0",
+        "coveralls": "^2.11.16",
+        "dot": "^1.1.1",
+        "eslint": "^3.17.0",
+        "glob": "^7.1.1",
+        "js-beautify": "^1.6.12",
+        "mocha": "^3.2.0",
+        "nyc": "^10.1.2",
+        "pre-commit": "^1.2.2"
+      },
+      "nyc": {
+        "exclude": [
+          "**/spec/**",
+          "node_modules"
+        ],
+        "reporter": [
+          "lcov",
+          "text-summary"
+        ]
+      },
+      "gitHead": "24eb684608f778a592905e8ecc7b1e124683e98d",
+      "_id": "ajv-errors@0.1.0",
+      "_shasum": "575fe73af89ca815664c97534f6cb21e0fd3143f",
+      "_from": ".",
+      "_npmVersion": "2.15.9",
+      "_nodeVersion": "4.6.1",
+      "_npmUser": {
+        "name": "esp",
+        "email": "e.poberezkin@me.com"
+      },
+      "maintainers": [
+        {
+          "name": "esp",
+          "email": "e.poberezkin@me.com"
+        }
+      ],
+      "dist": {
+        "shasum": "575fe73af89ca815664c97534f6cb21e0fd3143f",
+        "tarball": "https://registry.npmjs.org/ajv-errors/-/ajv-errors-0.1.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/ajv-errors-0.1.0.tgz_1493578076194_0.40459733200259507"
+      },
+      "directories": {}
+    },
+    "0.1.1": {
+      "name": "ajv-errors",
+      "version": "0.1.1",
+      "description": "Custom error messages in JSON-Schema for Ajv validator",
+      "main": "index.js",
+      "scripts": {
+        "build": "node node_modules/ajv/scripts/compile-dots.js node_modules/ajv/lib lib",
+        "eslint": "eslint *.js spec",
+        "test-spec": "mocha spec/*.spec.js -R spec",
+        "test-cov": "nyc npm run test-spec",
+        "test": "npm run eslint && npm run build && npm run test-cov"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/epoberezkin/ajv-errors.git"
+      },
+      "keywords": [
+        "ajv",
+        "json-schema",
+        "validator",
+        "error",
+        "messages"
+      ],
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/epoberezkin/ajv-errors/issues"
+      },
+      "homepage": "https://github.com/epoberezkin/ajv-errors#readme",
+      "peerDependencies": {
+        "ajv": ">=5.0.0"
+      },
+      "devDependencies": {
+        "ajv": "^5.0.0",
+        "coveralls": "^2.11.16",
+        "dot": "^1.1.1",
+        "eslint": "^3.17.0",
+        "glob": "^7.1.1",
+        "js-beautify": "^1.6.12",
+        "mocha": "^3.2.0",
+        "nyc": "^10.1.2",
+        "pre-commit": "^1.2.2"
+      },
+      "nyc": {
+        "exclude": [
+          "**/spec/**",
+          "node_modules"
+        ],
+        "reporter": [
+          "lcov",
+          "text-summary"
+        ]
+      },
+      "gitHead": "5f5941837a99e14593d254dee53476cd64ea4959",
+      "_id": "ajv-errors@0.1.1",
+      "_shasum": "0e3efa3f1c043b8ba9cbd7c792a1c4d159b7541c",
+      "_from": ".",
+      "_npmVersion": "2.15.9",
+      "_nodeVersion": "4.6.1",
+      "_npmUser": {
+        "name": "esp",
+        "email": "e.poberezkin@me.com"
+      },
+      "maintainers": [
+        {
+          "name": "esp",
+          "email": "e.poberezkin@me.com"
+        }
+      ],
+      "dist": {
+        "shasum": "0e3efa3f1c043b8ba9cbd7c792a1c4d159b7541c",
+        "tarball": "https://registry.npmjs.org/ajv-errors/-/ajv-errors-0.1.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/ajv-errors-0.1.1.tgz_1493581004672_0.3394001806154847"
+      },
+      "directories": {}
+    },
+    "0.1.2": {
+      "name": "ajv-errors",
+      "version": "0.1.2",
+      "description": "Custom error messages in JSON-Schema for Ajv validator",
+      "main": "index.js",
+      "files": [
+        "lib"
+      ],
+      "scripts": {
+        "build": "node node_modules/ajv/scripts/compile-dots.js node_modules/ajv/lib lib",
+        "eslint": "eslint *.js spec",
+        "test-spec": "mocha spec/*.spec.js -R spec",
+        "test-cov": "nyc npm run test-spec",
+        "test": "npm run eslint && npm run build && npm run test-cov",
+        "prepublish": "npm run build"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/epoberezkin/ajv-errors.git"
+      },
+      "keywords": [
+        "ajv",
+        "json-schema",
+        "validator",
+        "error",
+        "messages"
+      ],
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/epoberezkin/ajv-errors/issues"
+      },
+      "homepage": "https://github.com/epoberezkin/ajv-errors#readme",
+      "peerDependencies": {
+        "ajv": ">=5.0.0"
+      },
+      "devDependencies": {
+        "ajv": "^5.0.0",
+        "coveralls": "^2.11.16",
+        "dot": "^1.1.1",
+        "eslint": "^3.17.0",
+        "glob": "^7.1.1",
+        "js-beautify": "^1.6.12",
+        "mocha": "^3.2.0",
+        "nyc": "^10.1.2",
+        "pre-commit": "^1.2.2"
+      },
+      "nyc": {
+        "exclude": [
+          "**/spec/**",
+          "node_modules"
+        ],
+        "reporter": [
+          "lcov",
+          "text-summary"
+        ]
+      },
+      "gitHead": "ef36fa1ad34937b6baab7f5fccc9b1cbed88b7b7",
+      "_id": "ajv-errors@0.1.2",
+      "_shasum": "561877abb7f15c44032687e37fd9b7638ada7909",
+      "_from": ".",
+      "_npmVersion": "2.15.9",
+      "_nodeVersion": "4.6.1",
+      "_npmUser": {
+        "name": "esp",
+        "email": "e.poberezkin@me.com"
+      },
+      "maintainers": [
+        {
+          "name": "esp",
+          "email": "e.poberezkin@me.com"
+        }
+      ],
+      "dist": {
+        "shasum": "561877abb7f15c44032687e37fd9b7638ada7909",
+        "tarball": "https://registry.npmjs.org/ajv-errors/-/ajv-errors-0.1.2.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/ajv-errors-0.1.2.tgz_1493583855068_0.06978772417642176"
+      },
+      "directories": {}
+    },
+    "0.2.0": {
+      "name": "ajv-errors",
+      "version": "0.2.0",
+      "description": "Custom error messages in JSON-Schema for Ajv validator",
+      "main": "index.js",
+      "files": [
+        "lib"
+      ],
+      "scripts": {
+        "build": "node node_modules/ajv/scripts/compile-dots.js node_modules/ajv/lib lib",
+        "eslint": "eslint *.js spec",
+        "test-spec": "mocha spec/*.spec.js -R spec",
+        "test-cov": "nyc npm run test-spec",
+        "test": "npm run eslint && npm run build && npm run test-cov",
+        "prepublish": "npm run build"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/epoberezkin/ajv-errors.git"
+      },
+      "keywords": [
+        "ajv",
+        "json-schema",
+        "validator",
+        "error",
+        "messages"
+      ],
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/epoberezkin/ajv-errors/issues"
+      },
+      "homepage": "https://github.com/epoberezkin/ajv-errors#readme",
+      "peerDependencies": {
+        "ajv": ">=5.0.0"
+      },
+      "devDependencies": {
+        "ajv": "^5.0.0",
+        "coveralls": "^2.11.16",
+        "dot": "^1.1.1",
+        "eslint": "^3.17.0",
+        "glob": "^7.1.1",
+        "js-beautify": "^1.6.12",
+        "mocha": "^3.2.0",
+        "nyc": "^10.1.2",
+        "pre-commit": "^1.2.2"
+      },
+      "nyc": {
+        "exclude": [
+          "**/spec/**",
+          "node_modules"
+        ],
+        "reporter": [
+          "lcov",
+          "text-summary"
+        ]
+      },
+      "gitHead": "cd9af6681bfdcf3d6f4bb1c143790b1470762999",
+      "_id": "ajv-errors@0.2.0",
+      "_shasum": "008204c64a57c9be5ced529a80b05c094f7cd3c0",
+      "_from": ".",
+      "_npmVersion": "2.15.9",
+      "_nodeVersion": "4.6.1",
+      "_npmUser": {
+        "name": "esp",
+        "email": "e.poberezkin@me.com"
+      },
+      "maintainers": [
+        {
+          "name": "esp",
+          "email": "e.poberezkin@me.com"
+        }
+      ],
+      "dist": {
+        "shasum": "008204c64a57c9be5ced529a80b05c094f7cd3c0",
+        "tarball": "https://registry.npmjs.org/ajv-errors/-/ajv-errors-0.2.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/ajv-errors-0.2.0.tgz_1493656328770_0.18939133686944842"
+      },
+      "directories": {}
+    },
+    "0.3.0": {
+      "name": "ajv-errors",
+      "version": "0.3.0",
+      "description": "Custom error messages in JSON-Schema for Ajv validator",
+      "main": "index.js",
+      "files": [
+        "lib"
+      ],
+      "scripts": {
+        "build": "node node_modules/ajv/scripts/compile-dots.js node_modules/ajv/lib lib",
+        "eslint": "eslint *.js spec",
+        "test-spec": "mocha spec/*.spec.js -R spec",
+        "test-cov": "nyc npm run test-spec",
+        "test": "npm run eslint && npm run build && npm run test-cov",
+        "prepublish": "npm run build"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/epoberezkin/ajv-errors.git"
+      },
+      "keywords": [
+        "ajv",
+        "json-schema",
+        "validator",
+        "error",
+        "messages"
+      ],
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/epoberezkin/ajv-errors/issues"
+      },
+      "homepage": "https://github.com/epoberezkin/ajv-errors#readme",
+      "peerDependencies": {
+        "ajv": ">=5.0.0"
+      },
+      "devDependencies": {
+        "ajv": "^5.0.0",
+        "coveralls": "^2.11.16",
+        "dot": "^1.1.1",
+        "eslint": "^3.17.0",
+        "glob": "^7.1.1",
+        "js-beautify": "^1.6.12",
+        "mocha": "^3.2.0",
+        "nyc": "^10.1.2",
+        "pre-commit": "^1.2.2"
+      },
+      "nyc": {
+        "exclude": [
+          "**/spec/**",
+          "node_modules"
+        ],
+        "reporter": [
+          "lcov",
+          "text-summary"
+        ]
+      },
+      "gitHead": "2198d2e98180658c3f11aa27a5b1be6105dd64c3",
+      "_id": "ajv-errors@0.3.0",
+      "_shasum": "539c41568e1bfd9cf0f50a33a3bf02c11a38f917",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "6.9.1",
+      "_npmUser": {
+        "name": "esp",
+        "email": "e.poberezkin@me.com"
+      },
+      "maintainers": [
+        {
+          "name": "esp",
+          "email": "e.poberezkin@me.com"
+        }
+      ],
+      "dist": {
+        "shasum": "539c41568e1bfd9cf0f50a33a3bf02c11a38f917",
+        "tarball": "https://registry.npmjs.org/ajv-errors/-/ajv-errors-0.3.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/ajv-errors-0.3.0.tgz_1494357272151_0.45966680673882365"
+      },
+      "directories": {}
+    },
+    "0.4.0": {
+      "name": "ajv-errors",
+      "version": "0.4.0",
+      "description": "Custom error messages in JSON-Schema for Ajv validator",
+      "main": "index.js",
+      "files": [
+        "lib"
+      ],
+      "scripts": {
+        "build": "node node_modules/ajv/scripts/compile-dots.js node_modules/ajv/lib lib",
+        "eslint": "eslint *.js spec",
+        "test-spec": "mocha spec/*.spec.js -R spec",
+        "test-cov": "nyc npm run test-spec",
+        "test": "npm run eslint && npm run build && npm run test-cov",
+        "prepublish": "npm run build"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/epoberezkin/ajv-errors.git"
+      },
+      "keywords": [
+        "ajv",
+        "json-schema",
+        "validator",
+        "error",
+        "messages"
+      ],
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/epoberezkin/ajv-errors/issues"
+      },
+      "homepage": "https://github.com/epoberezkin/ajv-errors#readme",
+      "peerDependencies": {
+        "ajv": ">=5.0.0"
+      },
+      "devDependencies": {
+        "ajv": "^5.0.0",
+        "coveralls": "^2.11.16",
+        "dot": "^1.1.1",
+        "eslint": "^3.17.0",
+        "glob": "^7.1.1",
+        "js-beautify": "^1.6.12",
+        "mocha": "^3.2.0",
+        "nyc": "^10.1.2",
+        "pre-commit": "^1.2.2"
+      },
+      "nyc": {
+        "exclude": [
+          "**/spec/**",
+          "node_modules"
+        ],
+        "reporter": [
+          "lcov",
+          "text-summary"
+        ]
+      },
+      "gitHead": "463b2a6dd8b806b0b22bf1a19b55b7bd5141fb48",
+      "_id": "ajv-errors@0.4.0",
+      "_shasum": "22f351b6faafdb65c99a04e48d9c0ef608649138",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "6.9.1",
+      "_npmUser": {
+        "name": "esp",
+        "email": "e.poberezkin@me.com"
+      },
+      "maintainers": [
+        {
+          "name": "esp",
+          "email": "e.poberezkin@me.com"
+        }
+      ],
+      "dist": {
+        "shasum": "22f351b6faafdb65c99a04e48d9c0ef608649138",
+        "tarball": "https://registry.npmjs.org/ajv-errors/-/ajv-errors-0.4.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/ajv-errors-0.4.0.tgz_1494366397805_0.6618154644966125"
+      },
+      "directories": {}
+    },
+    "0.5.0": {
+      "name": "ajv-errors",
+      "version": "0.5.0",
+      "description": "Custom error messages in JSON-Schema for Ajv validator",
+      "main": "index.js",
+      "files": [
+        "lib"
+      ],
+      "scripts": {
+        "build": "node node_modules/ajv/scripts/compile-dots.js node_modules/ajv/lib lib",
+        "eslint": "eslint *.js spec",
+        "test-spec": "mocha spec/*.spec.js -R spec",
+        "test-cov": "nyc npm run test-spec",
+        "test": "npm run eslint && npm run build && npm run test-cov",
+        "prepublish": "npm run build"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/epoberezkin/ajv-errors.git"
+      },
+      "keywords": [
+        "ajv",
+        "json-schema",
+        "validator",
+        "error",
+        "messages"
+      ],
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/epoberezkin/ajv-errors/issues"
+      },
+      "homepage": "https://github.com/epoberezkin/ajv-errors#readme",
+      "peerDependencies": {
+        "ajv": ">=5.0.0"
+      },
+      "devDependencies": {
+        "ajv": "^5.0.0",
+        "coveralls": "^2.11.16",
+        "dot": "^1.1.1",
+        "eslint": "^3.17.0",
+        "glob": "^7.1.1",
+        "js-beautify": "^1.6.12",
+        "mocha": "^3.2.0",
+        "nyc": "^10.1.2",
+        "pre-commit": "^1.2.2"
+      },
+      "nyc": {
+        "exclude": [
+          "**/spec/**",
+          "node_modules"
+        ],
+        "reporter": [
+          "lcov",
+          "text-summary"
+        ]
+      },
+      "gitHead": "6896050438a254710a674e52802087de0a7d0eb6",
+      "_id": "ajv-errors@0.5.0",
+      "_shasum": "e0df4940776e36fa7084c7944c636ac5ea9b747a",
+      "_from": ".",
+      "_npmVersion": "2.15.9",
+      "_nodeVersion": "4.6.1",
+      "_npmUser": {
+        "name": "esp",
+        "email": "e.poberezkin@me.com"
+      },
+      "maintainers": [
+        {
+          "name": "esp",
+          "email": "e.poberezkin@me.com"
+        }
+      ],
+      "dist": {
+        "shasum": "e0df4940776e36fa7084c7944c636ac5ea9b747a",
+        "tarball": "https://registry.npmjs.org/ajv-errors/-/ajv-errors-0.5.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ajv-errors-0.5.0.tgz_1495899292681_0.15062517416663468"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "ajv-errors",
+      "version": "1.0.0",
+      "description": "Custom error messages in JSON-Schema for Ajv validator",
+      "main": "index.js",
+      "files": [
+        "lib"
+      ],
+      "scripts": {
+        "build": "node node_modules/ajv/scripts/compile-dots.js node_modules/ajv/lib lib",
+        "eslint": "eslint *.js spec",
+        "test-spec": "mocha spec/*.spec.js -R spec",
+        "test-cov": "nyc npm run test-spec",
+        "test": "npm run eslint && npm run build && npm run test-cov",
+        "prepublish": "npm run build"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/epoberezkin/ajv-errors.git"
+      },
+      "keywords": [
+        "ajv",
+        "json-schema",
+        "validator",
+        "error",
+        "messages"
+      ],
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/epoberezkin/ajv-errors/issues"
+      },
+      "homepage": "https://github.com/epoberezkin/ajv-errors#readme",
+      "peerDependencies": {
+        "ajv": ">=5.0.0"
+      },
+      "devDependencies": {
+        "ajv": "^5.0.0",
+        "coveralls": "^2.11.16",
+        "dot": "^1.1.1",
+        "eslint": "^3.17.0",
+        "glob": "^7.1.1",
+        "js-beautify": "^1.6.12",
+        "mocha": "^3.2.0",
+        "nyc": "^10.1.2",
+        "pre-commit": "^1.2.2"
+      },
+      "nyc": {
+        "exclude": [
+          "**/spec/**",
+          "node_modules"
+        ],
+        "reporter": [
+          "lcov",
+          "text-summary"
+        ]
+      },
+      "gitHead": "99e3352b1b3544efc8ec9c7d40e8e0e4fb76545d",
+      "_id": "ajv-errors@1.0.0",
+      "_shasum": "ecf021fa108fd17dfb5e6b383f2dd233e31ffc59",
+      "_from": ".",
+      "_npmVersion": "2.15.9",
+      "_nodeVersion": "4.6.1",
+      "_npmUser": {
+        "name": "esp",
+        "email": "e.poberezkin@me.com"
+      },
+      "maintainers": [
+        {
+          "name": "esp",
+          "email": "e.poberezkin@me.com"
+        }
+      ],
+      "dist": {
+        "shasum": "ecf021fa108fd17dfb5e6b383f2dd233e31ffc59",
+        "tarball": "https://registry.npmjs.org/ajv-errors/-/ajv-errors-1.0.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ajv-errors-1.0.0.tgz_1495907979993_0.6698060610797256"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "ajv-errors",
+      "version": "1.0.1",
+      "description": "Custom error messages in JSON-Schema for Ajv validator",
+      "main": "index.js",
+      "scripts": {
+        "build": "node node_modules/ajv/scripts/compile-dots.js node_modules/ajv/lib lib",
+        "eslint": "eslint *.js spec",
+        "test-spec": "mocha spec/*.spec.js -R spec",
+        "test-cov": "nyc npm run test-spec",
+        "test": "npm run eslint && npm run build && npm run test-cov",
+        "prepublish": "npm run build"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/epoberezkin/ajv-errors.git"
+      },
+      "keywords": [
+        "ajv",
+        "json-schema",
+        "validator",
+        "error",
+        "messages"
+      ],
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/epoberezkin/ajv-errors/issues"
+      },
+      "homepage": "https://github.com/epoberezkin/ajv-errors#readme",
+      "peerDependencies": {
+        "ajv": ">=5.0.0"
+      },
+      "devDependencies": {
+        "ajv": "^5.0.0",
+        "coveralls": "^2.11.16",
+        "dot": "^1.1.1",
+        "eslint": "^3.17.0",
+        "glob": "^7.1.1",
+        "js-beautify": "^1.6.12",
+        "mocha": "^3.2.0",
+        "nyc": "^10.1.2",
+        "pre-commit": "^1.2.2"
+      },
+      "nyc": {
+        "exclude": [
+          "**/spec/**",
+          "node_modules"
+        ],
+        "reporter": [
+          "lcov",
+          "text-summary"
+        ]
+      },
+      "gitHead": "5d134394acb6429840438cc262c36c76d91e356c",
+      "_id": "ajv-errors@1.0.1",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "10.0.0",
+      "_npmUser": {
+        "name": "esp",
+        "email": "e.poberezkin@me.com"
+      },
+      "dist": {
+        "integrity": "sha512-DCRfO/4nQ+89p/RK43i8Ezd41EqdGIU4ld7nGF8OQ14oc/we5rEntLCUa7+jrn3nn83BosfwZA0wb4pon2o8iQ==",
+        "shasum": "f35986aceb91afadec4102fbd85014950cefa64d",
+        "tarball": "https://registry.npmjs.org/ajv-errors/-/ajv-errors-1.0.1.tgz",
+        "fileCount": 7,
+        "unpackedSize": 41660,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcDX6nCRA9TVsSAnZWagAAu1sP/R1PmaZCddDScGEKSaDw\npqT+zr5jNjcjyX24Pi8uDye/QwvTdAnqO8kqzg6ZHWJk78kmOw3WsqBGk8S9\nzMDXPJweSTWAZvrNYRiGfchCt9lLuuTdGjvgYxGrTEFiUdEXl9U6SScTxs7X\npy9Vd8hfdTa8TKPxWt8Aj7ELTM13Er71B8V82J63k42YomtsMssxER5d2mqx\nOt92KJvlu+w/cvVzjAS1QquBybVzUwlWWTGzxP/SdN6Z0EzPAT9XoKyr0aeg\n2q+6C0+j88ObOP2tMBS5VOl0E5HTB/1lb0VPVZkMEEDedmnT/bj5r+kSnVKU\nTYQRsLb1VsbYqtHWyCIS996DxtfiAh8hUchHJYSdCSz4eiOkteYRvGYKQlYa\n4t/T9EmDpe6HH7GYKujMIFKSSTZRSAIWwenAlARWSEscZlXyD5ql2CiSLdRh\n2UOWf/DK8QzjbaBX4Iki9W+8ResOA/2nA15o2YT9RSfeX10qymAckwkgU/U4\nRB1QSKFpkdpYvrhcdxSnPIGXB5nhmRik/NP+VbdRz8Fqm4Rjz4LmUg4wqkq4\nbs9JsnrqSsknsNrMxB83nBR0L/iHHWfyJZAIow/KWYHF3cIU5CvmBQQIRDc+\nJ6zgHs6x80YIb0qWey/Wz98rJb2L1uYSI3j8TgBzePf/B+g2ozqKS9+pou0K\n6Z7v\r\n=0kuF\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "esp",
+          "email": "e.poberezkin@me.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ajv-errors_1.0.1_1544388262825_0.438145911563087"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# ajv-errors\nCustom error messages in JSON-Schema for Ajv validator\n\n[![Build Status](https://travis-ci.org/epoberezkin/ajv-errors.svg?branch=master)](https://travis-ci.org/epoberezkin/ajv-errors)\n[![npm version](https://badge.fury.io/js/ajv-errors.svg)](http://badge.fury.io/js/ajv-errors)\n[![Coverage Status](https://coveralls.io/repos/github/epoberezkin/ajv-errors/badge.svg?branch=master)](https://coveralls.io/github/epoberezkin/ajv-errors?branch=master)\n[![Gitter](https://img.shields.io/gitter/room/ajv-validator/ajv.svg)](https://gitter.im/ajv-validator/ajv)\n\n\n## Contents\n\n- [Install](#install)\n- [Usage](#usage)\n  - [Single message](#single-message)\n  - [Messages for keywords](#messages-for-keywords)\n  - [Messages for properties and items](#messages-for-properties-and-items)\n  - [Default message](#default-message)\n- [Templates](#templates)\n- [Options](#options)\n- [License](#license)\n\n\n## Install\n\n```\nnpm install ajv-errors\n```\n\n\n## Usage\n\nAdd the keyword `errorMessages` to Ajv instance:\n\n```javascript\nvar Ajv = require('ajv');\nvar ajv = new Ajv({allErrors: true, jsonPointers: true});\n// Ajv options allErrors and jsonPointers are required\nrequire('ajv-errors')(ajv /*, {singleError: true} */);\n```\n\nSee [Options](#options) below.\n\n\n### Single message\n\nReplace all errors in the current schema and subschemas with a single message:\n\n```javascript\nvar schema = {\n  type: 'object',\n  required: ['foo'],\n  properties: {\n    foo: { type: 'integer' }\n  },\n  additionalProperties: false,\n  errorMessage: 'should be an object with an integer property foo only'\n};\n\nvar validate = ajv.compile(schema);\nconsole.log(validate({foo: 'a', bar: 2})); // false\nconsole.log(validate.errors); // processed errors\n```\n\nProcessed errors:\n\n```javascript\n[\n  {\n    keyword: 'errorMessage',\n    message: 'should be an object with an integer property foo only',\n    // ...\n    params: {\n      errors: [\n        { keyword: 'additionalProperties', dataPath: '' /* , ... */ },\n        { keyword: 'type', dataPath: '.foo' /* , ... */ }\n      ]\n    }\n  }\n]\n```\n\n\n### Messages for keywords\n\nReplace errors for certain keywords in the current schema only:\n\n```javascript\nvar schema = {\n  type: 'object',\n  required: ['foo'],\n  properties: {\n    foo: { type: 'integer' }\n  },\n  additionalProperties: false,\n  errorMessage: {\n    type: 'should be an object', // will not replace internal \"type\" error for the property \"foo\"\n    required: 'should have property foo',\n    additionalProperties: 'should not have properties other than foo'\n  }\n};\n\nvar validate = ajv.compile(schema);\nconsole.log(validate({foo: 'a', bar: 2})); // false\nconsole.log(validate.errors); // processed errors\n```\n\nProcessed errors:\n\n```javascript\n[\n  {\n    // original error\n    keyword: type,\n    dataPath: '/foo',\n    // ...\n    message: 'should be integer'\n  },\n  {\n    // generated error\n    keyword: 'errorMessage',\n    message: 'should not have properties other than foo',\n    // ...\n    params: {\n      errors: [\n        { keyword: 'additionalProperties' /* , ... */ }\n      ]\n    },\n  }\n]\n```\n\nFor keywords \"required\" and \"dependencies\" it is possible to specify different messages for different properties:\n\n```javascript\nvar schema = {\n  type: 'object',\n  required: ['foo', 'bar'],\n  properties: {\n    foo: { type: 'integer' },\n    bar: { type: 'string' }\n  },\n  errorMessage: {\n    type: 'should be an object', // will not replace internal \"type\" error for the property \"foo\"\n    required: {\n      foo: 'should have an integer property \"foo\"',\n      bar: 'should have a string property \"bar\"'\n    }\n  }\n};\n```\n\n\n### Messages for properties and items\n\nReplace errors for properties / items (and deeper), regardless where in schema they were created:\n\n```javascript\nvar schema = {\n  type: 'object',\n  required: ['foo', 'bar'],\n  allOf: [{\n    properties: {\n      foo: { type: 'integer', minimum: 2 },\n      bar: { type: 'string', minLength: 2 }\n    },\n    additionalProperties: false\n  }],\n  errorMessage: {\n    properties: {\n      foo: 'data.foo should be integer >= 2',\n      bar: 'data.bar should be string with length >= 2'\n    }\n  }\n};\n\nvar validate = ajv.compile(schema);\nconsole.log(validate({foo: 1, bar: 'a'})); // false\nconsole.log(validate.errors); // processed errors\n```\n\nProcessed errors:\n\n```javascript\n[\n  {\n    keyword: 'errorMessage',\n    message: 'data.foo should be integer >= 2',\n    dataPath: '/foo',\n    // ...\n    params: {\n      errors: [\n        { keyword: 'minimum' /* , ... */ }\n      ]\n    },\n  },\n  {\n    keyword: 'errorMessage',\n    message: 'data.bar should be string with length >= 2',\n    dataPath: '/bar',\n    // ...\n    params: {\n      errors: [\n        { keyword: 'minLength' /* , ... */ }\n      ]\n    },\n  }\n]\n```\n\n\n### Default message\n\nWhen the value of keyword `errorMessage` is an object you can specify a message that will be used if any error appears that is not specified by keywords/properties/items:\n\n```javascript\nvar schema = {\n  type: 'object',\n  required: ['foo', 'bar'],\n  allOf: [{\n    properties: {\n      foo: { type: 'integer', minimum: 2 },\n      bar: { type: 'string', minLength: 2 }\n    },\n    additionalProperties: false\n  }],\n  errorMessage: {\n    type: 'data should be an object',\n    properties: {\n      foo: 'data.foo should be integer >= 2',\n      bar: 'data.bar should be string with length >= 2'\n    },\n    _: 'data should have properties \"foo\" and \"bar\" only'\n  }\n};\n\nvar validate = ajv.compile(schema);\nconsole.log(validate({})); // false\nconsole.log(validate.errors); // processed errors\n```\n\nProcessed errors:\n\n```javascript\n[\n  {\n    keyword: 'errorMessage',\n    message: 'data should be an object with properties \"foo\" and \"bar\" only',\n    dataPath: '',\n    // ...\n    params: {\n      errors: [\n        { keyword: 'required' /* , ... */ },\n        { keyword: 'required' /* , ... */ }\n      ]\n    },\n  }\n]\n```\n\nThe message in property `_` of `errorMessage` replaces the same errors that would have been replaced if `errorMessage` were a string.\n\n\n## Templates\n\nCustom error messages used in `errorMessage` keyword can be templates using [JSON-pointers](https://tools.ietf.org/html/rfc6901) or [relative JSON-pointers](http://tools.ietf.org/html/draft-luff-relative-json-pointer-00) to data being validated, in which case the value will be interpolated. Also see [examples](https://gist.github.com/geraintluff/5911303) of relative JSON-pointers.\n\nThe syntax to interpolate a value is `${<pointer>}`.\n\nThe values used in messages will be JSON-stringified:\n- to differentiate between `false` and `\"false\"`, etc.\n- to support structured values.\n\nExample:\n\n```json\n{\n  \"type\": \"object\",\n  \"properties\": {\n    \"size\": {\n      \"type\": \"number\",\n      \"minimum\": 4\n    }\n  },\n  \"errorMessage\": {\n    \"properties\": {\n      \"size\": \"size should be a number bigger or equal to 4, current value is ${/size}\"\n    }\n  }\n}\n```\n\n\n## Options\n\nDefaults:\n\n```javascript\n{\n  keepErrors: false,\n  singleError: false\n}\n```\n\n- _keepErrors_: keep original errors. Default is to remove matched errors (they will still be available in `params.errors` property of generated error). If an error was matched and included in the error generated by `errorMessage` keyword it will have property `emUsed: true`.\n- _singleError_: create one error for all keywords used in `errorMessage` keyword (error messages defined for properties and items are not merged because they have different dataPaths). Multiple error messages are concatenated. Option values:\n  - `false` (default): create multiple errors, one for each message\n  - `true`: create single error, messages are concatenated using `\"; \"`\n  - non-empty string: this string is used as a separator to concatenate messages\n\n\n## Supporters\n\n[<img src=\"https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAwEAAAAJDg1YzBlYzFjLTA3YWYtNGEzOS1iMTdjLTQ0MTU1NWZjOGM0ZQ.jpg\" width=\"48\" height=\"48\">](https://www.linkedin.com/in/rogerkepler/) [Roger Kepler](https://www.linkedin.com/in/rogerkepler/)\n\n\n## License\n\n[MIT](https://github.com/epoberezkin/ajv-errors/blob/master/LICENSE)\n",
+  "maintainers": [
+    {
+      "name": "esp",
+      "email": "e.poberezkin@me.com"
+    }
+  ],
+  "time": {
+    "modified": "2018-12-09T20:44:25.855Z",
+    "created": "2017-03-05T11:40:42.016Z",
+    "0.0.1": "2017-03-05T11:40:42.016Z",
+    "0.1.0": "2017-04-30T18:47:58.032Z",
+    "0.1.1": "2017-04-30T19:36:45.272Z",
+    "0.1.2": "2017-04-30T20:24:16.937Z",
+    "0.2.0": "2017-05-01T16:32:10.431Z",
+    "0.3.0": "2017-05-09T19:14:33.951Z",
+    "0.4.0": "2017-05-09T21:46:40.263Z",
+    "0.5.0": "2017-05-27T15:34:53.768Z",
+    "1.0.0": "2017-05-27T17:59:41.038Z",
+    "1.0.1": "2018-12-09T20:44:23.016Z"
+  },
+  "homepage": "https://github.com/epoberezkin/ajv-errors#readme",
+  "keywords": [
+    "ajv",
+    "json-schema",
+    "validator",
+    "error",
+    "messages"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/epoberezkin/ajv-errors.git"
+  },
+  "bugs": {
+    "url": "https://github.com/epoberezkin/ajv-errors/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "users": {
+    "esilva2902": true,
+    "sopov": true
+  }
+}

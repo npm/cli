@@ -1,0 +1,807 @@
+{
+  "_id": "stack-utils",
+  "_rev": "15-c94731879b8e4a8dc01afe3315f25520",
+  "name": "stack-utils",
+  "description": "Captures and cleans stack traces",
+  "dist-tags": {
+    "latest": "2.0.2"
+  },
+  "versions": {
+    "0.0.1": {
+      "name": "stack-utils",
+      "version": "0.0.1",
+      "description": "Captures and cleans stack traces",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jamestalmage/stack-utils.git"
+      },
+      "author": {
+        "name": "James Talmage",
+        "email": "james@talmage.io",
+        "url": "github.com/jamestalmage"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && nyc --reporter lcov --reporter text --cache ava --verbose"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [],
+      "config": {
+        "nyc": {
+          "exclude": [
+            "fixtures/*"
+          ]
+        }
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "ava": "^0.8.0",
+        "coveralls": "^2.11.6",
+        "flatten": "0.0.1",
+        "nyc": "^5.2.0",
+        "xo": "^0.12.1"
+      },
+      "gitHead": "f0d147cc28c5aacaf6712ea4cdbf8cccfe3ba79c",
+      "bugs": {
+        "url": "https://github.com/jamestalmage/stack-utils/issues"
+      },
+      "homepage": "https://github.com/jamestalmage/stack-utils#readme",
+      "_id": "stack-utils@0.0.1",
+      "_shasum": "5c7f358e79d45dedff43e8affb9fd905b33bd65c",
+      "_from": ".",
+      "_npmVersion": "3.3.12",
+      "_nodeVersion": "5.3.0",
+      "_npmUser": {
+        "name": "jamestalmage",
+        "email": "james@talmage.io"
+      },
+      "dist": {
+        "shasum": "5c7f358e79d45dedff43e8affb9fd905b33bd65c",
+        "tarball": "https://registry.npmjs.org/stack-utils/-/stack-utils-0.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "jamestalmage",
+          "email": "james@talmage.io"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.0": {
+      "name": "stack-utils",
+      "version": "0.1.0",
+      "description": "Captures and cleans stack traces",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jamestalmage/stack-utils.git"
+      },
+      "author": {
+        "name": "James Talmage",
+        "email": "james@talmage.io",
+        "url": "github.com/jamestalmage"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && nyc --reporter lcov --reporter text --cache ava --verbose",
+        "test-win": "ava --verbose"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [],
+      "config": {
+        "nyc": {
+          "exclude": [
+            "fixtures/*"
+          ]
+        }
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "ava": "^0.8.0",
+        "coveralls": "^2.11.6",
+        "flatten": "0.0.1",
+        "nyc": "^5.2.0",
+        "xo": "^0.12.1"
+      },
+      "gitHead": "772ffe6894b42d450e7aef2fd9a379b822993572",
+      "bugs": {
+        "url": "https://github.com/jamestalmage/stack-utils/issues"
+      },
+      "homepage": "https://github.com/jamestalmage/stack-utils#readme",
+      "_id": "stack-utils@0.1.0",
+      "_shasum": "9b2de559f5d1940c3eb40b480ff8c6d9ff6a1b1b",
+      "_from": ".",
+      "_npmVersion": "3.5.2",
+      "_nodeVersion": "0.12.7",
+      "_npmUser": {
+        "name": "jamestalmage",
+        "email": "james@talmage.io"
+      },
+      "dist": {
+        "shasum": "9b2de559f5d1940c3eb40b480ff8c6d9ff6a1b1b",
+        "tarball": "https://registry.npmjs.org/stack-utils/-/stack-utils-0.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "jamestalmage",
+          "email": "james@talmage.io"
+        }
+      ],
+      "directories": {}
+    },
+    "0.2.0": {
+      "name": "stack-utils",
+      "version": "0.2.0",
+      "description": "Captures and cleans stack traces",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jamestalmage/stack-utils.git"
+      },
+      "author": {
+        "name": "James Talmage",
+        "email": "james@talmage.io",
+        "url": "github.com/jamestalmage"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && nyc --reporter lcov --reporter text --cache ava --verbose",
+        "test-win": "ava --verbose"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [],
+      "config": {
+        "nyc": {
+          "exclude": [
+            "fixtures/*"
+          ]
+        }
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "ava": "^0.8.0",
+        "coveralls": "^2.11.6",
+        "flatten": "0.0.1",
+        "nyc": "^5.2.0",
+        "xo": "^0.12.1"
+      },
+      "gitHead": "64fa2c1f51caaeec57fec4843e8a65a4ed41fd8e",
+      "bugs": {
+        "url": "https://github.com/jamestalmage/stack-utils/issues"
+      },
+      "homepage": "https://github.com/jamestalmage/stack-utils#readme",
+      "_id": "stack-utils@0.2.0",
+      "_shasum": "2e7a45dc67131a0e7bcf472caef3ff1f394b091d",
+      "_from": ".",
+      "_npmVersion": "3.5.2",
+      "_nodeVersion": "0.12.7",
+      "_npmUser": {
+        "name": "jamestalmage",
+        "email": "james@talmage.io"
+      },
+      "dist": {
+        "shasum": "2e7a45dc67131a0e7bcf472caef3ff1f394b091d",
+        "tarball": "https://registry.npmjs.org/stack-utils/-/stack-utils-0.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "jamestalmage",
+          "email": "james@talmage.io"
+        }
+      ],
+      "directories": {}
+    },
+    "0.3.0": {
+      "name": "stack-utils",
+      "version": "0.3.0",
+      "description": "Captures and cleans stack traces",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/tapjs/stack-utils.git"
+      },
+      "author": {
+        "name": "James Talmage",
+        "email": "james@talmage.io",
+        "url": "github.com/jamestalmage"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && nyc --reporter lcov --reporter text --cache ava --verbose",
+        "test-win": "ava --verbose"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [],
+      "dependencies": {},
+      "devDependencies": {
+        "ava": "^0.8.0",
+        "bluebird": "^3.1.1",
+        "coveralls": "^2.11.6",
+        "flatten": "0.0.1",
+        "nested-error-stacks": "^1.0.2",
+        "nyc": "^5.2.0",
+        "pify": "^2.3.0",
+        "q": "^1.4.1",
+        "xo": "^0.12.1"
+      },
+      "gitHead": "cc2fe4c667ddd9e9f11c633e6ef6397d689016be",
+      "bugs": {
+        "url": "https://github.com/tapjs/stack-utils/issues"
+      },
+      "homepage": "https://github.com/tapjs/stack-utils#readme",
+      "_id": "stack-utils@0.3.0",
+      "_shasum": "cddc6cec2ed9a5ce65f1ac05c90243b7a0ce325d",
+      "_from": ".",
+      "_npmVersion": "3.5.3",
+      "_nodeVersion": "5.3.0",
+      "_npmUser": {
+        "name": "jamestalmage",
+        "email": "james@talmage.io"
+      },
+      "dist": {
+        "shasum": "cddc6cec2ed9a5ce65f1ac05c90243b7a0ce325d",
+        "tarball": "https://registry.npmjs.org/stack-utils/-/stack-utils-0.3.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "jamestalmage",
+          "email": "james@talmage.io"
+        }
+      ],
+      "directories": {}
+    },
+    "0.4.0": {
+      "name": "stack-utils",
+      "version": "0.4.0",
+      "description": "Captures and cleans stack traces",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/tapjs/stack-utils.git"
+      },
+      "author": {
+        "name": "James Talmage",
+        "email": "james@talmage.io",
+        "url": "github.com/jamestalmage"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && nyc --reporter lcov --reporter text --cache ava --verbose",
+        "test-win": "ava --verbose"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [],
+      "dependencies": {},
+      "devDependencies": {
+        "ava": "^0.8.0",
+        "bluebird": "^3.1.1",
+        "coveralls": "^2.11.6",
+        "flatten": "0.0.1",
+        "nested-error-stacks": "^1.0.2",
+        "nyc": "^5.2.0",
+        "pify": "^2.3.0",
+        "q": "^1.4.1",
+        "xo": "^0.12.1"
+      },
+      "gitHead": "8701171af041a235bae83a6da4ea516a815bb66a",
+      "bugs": {
+        "url": "https://github.com/tapjs/stack-utils/issues"
+      },
+      "homepage": "https://github.com/tapjs/stack-utils#readme",
+      "_id": "stack-utils@0.4.0",
+      "_shasum": "940cb82fccfa84e8ff2f3fdf293fe78016beccd1",
+      "_from": ".",
+      "_npmVersion": "3.5.3",
+      "_nodeVersion": "5.4.1",
+      "_npmUser": {
+        "name": "jamestalmage",
+        "email": "james@talmage.io"
+      },
+      "dist": {
+        "shasum": "940cb82fccfa84e8ff2f3fdf293fe78016beccd1",
+        "tarball": "https://registry.npmjs.org/stack-utils/-/stack-utils-0.4.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "jamestalmage",
+          "email": "james@talmage.io"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-6-west.internal.npmjs.com",
+        "tmp": "tmp/stack-utils-0.4.0.tgz_1454711753671_0.9951272297184914"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "stack-utils",
+      "version": "1.0.0",
+      "description": "Captures and cleans stack traces",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/tapjs/stack-utils.git"
+      },
+      "author": {
+        "name": "James Talmage",
+        "email": "james@talmage.io",
+        "url": "github.com/jamestalmage"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "tap test/*.js --cov"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [],
+      "dependencies": {},
+      "devDependencies": {
+        "bluebird": "^3.1.1",
+        "coveralls": "^2.11.6",
+        "flatten": "0.0.1",
+        "nested-error-stacks": "^2.0.0",
+        "pify": "^2.3.0",
+        "q": "^1.4.1",
+        "tap": "^10.0.0"
+      },
+      "gitHead": "faa81f19c8fd23cb5c9b13dfd7b26df6be7d7b1e",
+      "bugs": {
+        "url": "https://github.com/tapjs/stack-utils/issues"
+      },
+      "homepage": "https://github.com/tapjs/stack-utils#readme",
+      "_id": "stack-utils@1.0.0",
+      "_shasum": "2392cd8ddbd222492ed6c047960f7414b46c0f83",
+      "_from": ".",
+      "_npmVersion": "3.10.9",
+      "_nodeVersion": "8.0.0-pre",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "dist": {
+        "shasum": "2392cd8ddbd222492ed6c047960f7414b46c0f83",
+        "tarball": "https://registry.npmjs.org/stack-utils/-/stack-utils-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        },
+        {
+          "name": "jamestalmage",
+          "email": "james@talmage.io"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/stack-utils-1.0.0.tgz_1486016285424_0.8635052388999611"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "stack-utils",
+      "version": "1.0.1",
+      "description": "Captures and cleans stack traces",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/tapjs/stack-utils.git"
+      },
+      "author": {
+        "name": "James Talmage",
+        "email": "james@talmage.io",
+        "url": "github.com/jamestalmage"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "tap test/*.js --100 -J",
+        "preversion": "npm test",
+        "postversion": "npm publish",
+        "postpublish": "git push origin --all; git push origin --tags"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [],
+      "dependencies": {},
+      "devDependencies": {
+        "bluebird": "^3.1.1",
+        "coveralls": "^2.11.6",
+        "flatten": "0.0.1",
+        "nested-error-stacks": "^2.0.0",
+        "pify": "^2.3.0",
+        "q": "^1.4.1",
+        "tap": "^10.3.2"
+      },
+      "gitHead": "f080bcb2ee9be20520cfb312837d6056011e9094",
+      "bugs": {
+        "url": "https://github.com/tapjs/stack-utils/issues"
+      },
+      "homepage": "https://github.com/tapjs/stack-utils#readme",
+      "_id": "stack-utils@1.0.1",
+      "_shasum": "d4f33ab54e8e38778b0ca5cfd3b3afb12db68620",
+      "_from": ".",
+      "_npmVersion": "4.5.0",
+      "_nodeVersion": "8.0.0-pre",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "dist": {
+        "shasum": "d4f33ab54e8e38778b0ca5cfd3b3afb12db68620",
+        "tarball": "https://registry.npmjs.org/stack-utils/-/stack-utils-1.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        },
+        {
+          "name": "jamestalmage",
+          "email": "james@talmage.io"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/stack-utils-1.0.1.tgz_1492979544062_0.2575548014137894"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "stack-utils",
+      "version": "1.0.2",
+      "description": "Captures and cleans stack traces",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/tapjs/stack-utils.git"
+      },
+      "author": {
+        "name": "James Talmage",
+        "email": "james@talmage.io",
+        "url": "github.com/jamestalmage"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "tap test/*.js --100 -J",
+        "preversion": "npm test",
+        "postversion": "npm publish",
+        "postpublish": "git push origin --all; git push origin --tags"
+      },
+      "keywords": [],
+      "dependencies": {},
+      "devDependencies": {
+        "bluebird": "^3.1.1",
+        "coveralls": "^2.11.6",
+        "flatten": "0.0.1",
+        "nested-error-stacks": "^2.0.0",
+        "pify": "^2.3.0",
+        "q": "^1.4.1",
+        "tap": "^10.3.2"
+      },
+      "gitHead": "2d238dfac8c39ab85997b90a1e48ca51c096adc0",
+      "bugs": {
+        "url": "https://github.com/tapjs/stack-utils/issues"
+      },
+      "homepage": "https://github.com/tapjs/stack-utils#readme",
+      "_id": "stack-utils@1.0.2",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.12.0",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "dist": {
+        "integrity": "sha512-MTX+MeG5U994cazkjd/9KNAapsHnibjMLnfXodlkXw76JEea0UiNzrqidzo1emMwk7w5Qhc9jd4Bn9TBb1MFwA==",
+        "shasum": "33eba3897788558bebfc2db059dc158ec36cebb8",
+        "tarball": "https://registry.npmjs.org/stack-utils/-/stack-utils-1.0.2.tgz",
+        "fileCount": 4,
+        "unpackedSize": 13721,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJb7HAVCRA9TVsSAnZWagAA3ZkQAJ9+8f44fXIaG8+XPTW/\neyaJyPZ98COh665eiFo+9rzambeKm8CLZWlKuQDBEp5Y8bCGoF+ZEVuPzo5C\nz2G+4sVLaT9HzAedIYiXDzxN7LvICsDZhqj9lYdBk/PABZCfYNSQmQ4fzHXy\nkVmCaRmyg3E8nqnoiDf4IciuejRs70A3zN8OFk85ecAZ3p+8Q+aXAdV0UJKP\n0nzb5OgrdlZvL54de0NzxuGmiYPJRxej+J9x/9jLbkgRdG5K7x1BNA9qWbGW\nOybR9iBhrsv6qSr0WQqceVVHZn2naHjwAlYHftXp+uJ+gKoIY9iQW3s5cbIL\nkpG70/VJC/qkxATKygJaM2A5QUmB+3nLJ5JIE3b/QfaB6gvYfK329xcSLUG/\nR9UZBgrkm7n94NPq09bILMj9502zpsZyyMH4rIdGGaabqyyBHkQ7oR97Gqs/\nBh9/ilX/72KvAxnygZMcNorq30pEJ7n1qwvF9M9nEswhRx/he2CJgWL+7oRl\nzSUCBSKx1Uob/gHFyY7tjYuQ8J+nIKzHj1tcJHBzlbdQb9qcWGOKXlTDTULD\nkUjnlZCarjbjRducFB0WKbfnQn4W+8ifradXXec7R7u1zl8kTOyz7XhRKAFZ\ngfLYsP0ZJfFuM67V+d4qCq/39YYWqXyDNWtt839koivo8kg4TTY6PhJyiZ9z\nkGhB\r\n=3a8G\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        },
+        {
+          "name": "jamestalmage",
+          "email": "james@talmage.io"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/stack-utils_1.0.2_1542221844258_0.8869018687314081"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.0": {
+      "name": "stack-utils",
+      "version": "2.0.0",
+      "description": "Captures and cleans stack traces",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/tapjs/stack-utils.git"
+      },
+      "author": {
+        "name": "James Talmage",
+        "email": "james@talmage.io",
+        "url": "github.com/jamestalmage"
+      },
+      "engines": {
+        "node": ">=10"
+      },
+      "scripts": {
+        "test": "tap --no-esm --100",
+        "preversion": "npm test",
+        "postversion": "npm publish",
+        "prepublish": "git push origin --follow-tags"
+      },
+      "dependencies": {
+        "escape-string-regexp": "^2.0.0"
+      },
+      "devDependencies": {
+        "bluebird": "^3.7.2",
+        "coveralls": "^3.0.9",
+        "nested-error-stacks": "^2.1.0",
+        "pify": "^4.0.1",
+        "q": "^1.5.1",
+        "tap": "=14.10.2-unbundled"
+      },
+      "gitHead": "27d78e9b237f959e51452459d97ab0b23c5dfc08",
+      "bugs": {
+        "url": "https://github.com/tapjs/stack-utils/issues"
+      },
+      "homepage": "https://github.com/tapjs/stack-utils#readme",
+      "_id": "stack-utils@2.0.0",
+      "_nodeVersion": "13.3.0",
+      "_npmVersion": "6.13.4",
+      "dist": {
+        "integrity": "sha512-4v/rS/yaVwqoELB+izpdHL94S8SC7S+u1+MaiJqsavAxoXP601sTuP7AJh/9qX4IeeXFnLQOuZ4zFhhfPL6C+g==",
+        "shasum": "eeaf8bf4d0e343b98cf64781121b189570203ba0",
+        "tarball": "https://registry.npmjs.org/stack-utils/-/stack-utils-2.0.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 14356,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd8zRlCRA9TVsSAnZWagAAe/YP/jUiIQ5tfPMn7P0Ox5+p\npNiWmgXS7r79Nc6wRlwhZiYuNs1+y9Au2ZR71du9OtBK7zIZA6NSMNT78vl/\nG64gM7UGnqCY29jTDY+0bhyXr2dYHjB4Ur1HbC10Zqo0bb3CQpBI8oc3tjpi\n56CCReebzEfOO4HaXij8GLObTgL29vQ/kVeypCo6YrKiP1XyjfiHoi24DV0z\n3ovi2DdtvysH/oWlaW/WkpwDE3kW3nV31+c5Q1UusfzSJ4UaRwqbLUdS8keH\n0PglY3v7/G1jEUspZbWOlOMRkStPNaw2dBD0FucUy8Vht3OMi7YSuA8RDCXi\nOib8g7dbeDwucedPdtS+7yFqfZ0GIlLErZFhNIbXDSb6v7j9XR9M4r18ToGY\n+laB3VNhJ3EXGQN6tBsXVwDBiSHfJEq0A/NldFMTEbicWfVW9QmS2exhA8QN\nMeU1DXGi6MwbA83DLygZwT8Qi5MwC00nPv1OMhEpyJlQwk7Q5bC2ee+BQ2M1\nJz/ySC7/3PiULLy5LHrzQ3mSMHQOP4wsk+/WjV8u3kdNT/4auNJ5VUHZCaT9\npGCK6NlYC9j5Ic+I1zEVHwLK4n1tkpEhs6T1mH5S7HxnzoYjk7FxmmqRWgXE\ny2FV7vY1nFiT2IpPszphx0Wbiv1i/Rgys8npfArsU1FmSkd7yb5hYuC/IPC3\ny965\r\n=V+ye\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        },
+        {
+          "name": "jamestalmage",
+          "email": "james@talmage.io"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/stack-utils_2.0.0_1576219748802_0.6404410148032522"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.1": {
+      "name": "stack-utils",
+      "version": "2.0.1",
+      "description": "Captures and cleans stack traces",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/tapjs/stack-utils.git"
+      },
+      "author": {
+        "name": "James Talmage",
+        "email": "james@talmage.io",
+        "url": "github.com/jamestalmage"
+      },
+      "engines": {
+        "node": ">=10"
+      },
+      "scripts": {
+        "test": "tap --no-esm --100",
+        "preversion": "npm test",
+        "postversion": "npm publish",
+        "prepublishOnly": "git push origin --follow-tags"
+      },
+      "dependencies": {
+        "escape-string-regexp": "^2.0.0"
+      },
+      "devDependencies": {
+        "bluebird": "^3.7.2",
+        "coveralls": "^3.0.9",
+        "nested-error-stacks": "^2.1.0",
+        "pify": "^4.0.1",
+        "q": "^1.5.1",
+        "tap": "=14.10.2-unbundled"
+      },
+      "gitHead": "d3c7ee2a7d46744c271a36ce3acfd69465f36df5",
+      "bugs": {
+        "url": "https://github.com/tapjs/stack-utils/issues"
+      },
+      "homepage": "https://github.com/tapjs/stack-utils#readme",
+      "_id": "stack-utils@2.0.1",
+      "_nodeVersion": "13.3.0",
+      "_npmVersion": "6.13.4",
+      "dist": {
+        "integrity": "sha512-BvBTnHGm8boe+HiJFqP19ywEsGlfQAKqW78pbfvUuzCbUuxPPUyLrH5dYFY+Xn9IpLY3b5ZmMcl8jAqXB4wddg==",
+        "shasum": "3df48345a3b92adc06038f0e95782df61beff742",
+        "tarball": "https://registry.npmjs.org/stack-utils/-/stack-utils-2.0.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 14360,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd8zS4CRA9TVsSAnZWagAAonIP/ikwm8hbgEJNwE9eqjwu\nRVOa5R0l+ioj7mL8AIl9hoJvh1T6jzjTEUa+NSVp9COCI8nWpiQdiEefnywV\ndyHRdCOLuAnXzvKqwLiaWpcYiNYU5goanNtbfMaX2CreB22iiAu7wDQ4wDCT\nQTr71DQWz95BspZ/eabL+oxKErLZNVIGsxDCbAFo/SHxhOXcfAi3SuIkEygR\n7KQbLFxTl+npD3raWR3zakONYUBKFt/6tYTX1bteN1qARxqk0KGY3EJ8jhxg\n4BsJu5lrVVYaoEKSCfsZ+ttBkS/d4fsobVxzYXYnDpD5RFB7b6HJAZ653j5E\nWQiRgLEYDVp3sLxFWAstCuRQ2bYfHILCODwpWVmPOtA5EjBZWP/cbB8zDTHG\neP2RQcz4sEJGDZCRWE8RSdKGrd8ZJWADNGiZA5Aoaswe8k5shS3To1xwLq2y\nDvsP96f+GVjJFFyHtlPb17abAOrOqInU4zpjxWRHWNfQ0k2plUoBMQGFQna5\n116M0jbs1GeHiJ+4ADcuEqnORQK4Y/IMeX389EbKjyKWJW3Ig1el5C134XwM\nFOqsFwieOsoqRLvl9QWy6o73gi0dS1iprdxtICchAlLTbIZv7inEAdbSiFee\nsSDImu9/UvJDBCe/EmQKNUQ6GdlASWjnXy+9wvZpA7dRNH/c7fF7M9tMsvnX\nwB41\r\n=P8Se\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        },
+        {
+          "name": "jamestalmage",
+          "email": "james@talmage.io"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/stack-utils_2.0.1_1576219832040_0.7200474147237628"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.2": {
+      "name": "stack-utils",
+      "version": "2.0.2",
+      "description": "Captures and cleans stack traces",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/tapjs/stack-utils.git"
+      },
+      "author": {
+        "name": "James Talmage",
+        "email": "james@talmage.io",
+        "url": "github.com/jamestalmage"
+      },
+      "engines": {
+        "node": ">=10"
+      },
+      "scripts": {
+        "test": "tap --no-esm --100",
+        "preversion": "npm test",
+        "postversion": "npm publish",
+        "prepublishOnly": "git push origin --follow-tags"
+      },
+      "dependencies": {
+        "escape-string-regexp": "^2.0.0"
+      },
+      "devDependencies": {
+        "bluebird": "^3.7.2",
+        "coveralls": "^3.0.9",
+        "nested-error-stacks": "^2.1.0",
+        "pify": "^4.0.1",
+        "q": "^1.5.1",
+        "tap": "=14.10.2-unbundled"
+      },
+      "gitHead": "b3c146e3f157aceebe830e858eb41f1df9387f79",
+      "bugs": {
+        "url": "https://github.com/tapjs/stack-utils/issues"
+      },
+      "homepage": "https://github.com/tapjs/stack-utils#readme",
+      "_id": "stack-utils@2.0.2",
+      "_nodeVersion": "13.10.1",
+      "_npmVersion": "6.14.4",
+      "dist": {
+        "integrity": "sha512-0H7QK2ECz3fyZMzQ8rH0j2ykpfbnd20BFtfg/SqVC2+sCTtcw0aDTGB7dk+de4U4uUeuz6nOtJcrkFFLG1B0Rg==",
+        "shasum": "5cf48b4557becb4638d0bc4f21d23f5d19586593",
+        "tarball": "https://registry.npmjs.org/stack-utils/-/stack-utils-2.0.2.tgz",
+        "fileCount": 4,
+        "unpackedSize": 14223,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeqEjBCRA9TVsSAnZWagAAousQAKKZPqlbu5SgG2TUAiM9\nk04+U5X7w/30OBcL8WdhEEH4LqsRAljlbVRacdBtTyk+SmsjZtb9aJgBR3tO\nL6EIrhd4zmAVTE67BT4pBBxdi3iJBPAlBqAFQzBYcRmLCxOT9Uj8U92L4WC/\np3Yb2He+HDw7NC1Jk9vU5A9xqBnB2kKsoxyBLUwg4FUdGGd2GTUU2XX05eC1\nXcSkcmFsPIJSn/4oENtaDcI/1bxhik2y0sSCgZQhQTrY8DZzkg41KK+u45qv\nN/f0Twzc/GFQLe1kJPHXEZ0LaSz4L5hH1UTXW0kPA1oiLl1W0hWgDE4ZvAnK\nokAY/iGbxK+oKk5rRF8p19CKjONeb4zQZuSuJw/uUQcPaMyEKxNWuB6Z/u6F\n1ZtMm1vXHahCLccQEJRsarRBBSMCN1R4ooNvcTySRJ3CeWu+A8sN6rbqRM0e\n9EeFmIN5aDu/LflvwQVCe9uYdz9GAFloVetPtiAWwNODQruHTX7h8zhGTDhM\niIm8yr/E3Gy5rC5iwWs1yxZUxzm1niTrO08VZiXT4Z9vcJ6O1o24WUAgxZrP\nxBwYa/oxBFqzOTgHTTQg+WQmJnK/6IJimzYUk0EMD1mgztSHKFmKUONwJuEC\nCBbZ/A/lCSS+P7bM0IzjRyksu/52cihXl+/qCLYMMUQQq9XImuUDQdXQIOtT\noC0e\r\n=FjL8\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        },
+        {
+          "name": "jamestalmage",
+          "email": "james@talmage.io"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/stack-utils_2.0.2_1588086977285_0.5869045456973836"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# stack-utils \n\n> Captures and cleans stack traces.\n\n[![Linux Build](https://travis-ci.org/tapjs/stack-utils.svg?branch=master)](https://travis-ci.org/tapjs/stack-utils) [![Build status](https://ci.appveyor.com/api/projects/status/fb9i157knoixe3iq/branch/master?svg=true)](https://ci.appveyor.com/project/jamestalmage/stack-utils-oiw96/branch/master)  [![Coverage](https://coveralls.io/repos/tapjs/stack-utils/badge.svg?branch=master&service=github)](https://coveralls.io/github/tapjs/stack-utils?branch=master)\n\n\nExtracted from `lib/stack.js` in the [`node-tap` project](https://github.com/tapjs/node-tap)\n\n## Install\n\n```\n$ npm install --save stack-utils\n```\n\n\n## Usage\n\n```js\nconst StackUtils = require('stack-utils');\nconst stack = new StackUtils({cwd: process.cwd(), internals: StackUtils.nodeInternals()});\n\nconsole.log(stack.clean(new Error().stack));\n// outputs a beautified stack trace\n```\n\n\n## API\n\n\n### new StackUtils([options])\n\nCreates a new `stackUtils` instance.\n\n#### options\n\n##### internals\n\nType: `array` of `RegularExpression`s  \n\nA set of regular expressions that match internal stack stack trace lines which should be culled from the stack trace.\nThe default is `StackUtils.nodeInternals()`, this can be disabled by setting `[]` or appended using\n`StackUtils.nodeInternals().concat(additionalRegExp)`.  See also `ignoredPackages`.\n\n##### ignoredPackages\n\nType: `array` of `string`s\n\nAn array of npm modules to be culled from the stack trace.  This list will mapped to regular\nexpressions and merged with the `internals`.\n\nDefault `''`.\n\n##### cwd\n\nType: `string`\n\nThe path to the current working directory. File names in the stack trace will be shown relative to this directory.\n\n##### wrapCallSite\n\nType: `function(CallSite)`\n\nA mapping function for manipulating CallSites before processing. The first argument is a CallSite instance, and the function should return a modified CallSite. This is useful for providing source map support.\n\n\n### StackUtils.nodeInternals()\n\nReturns an array of regular expressions that be used to cull lines from the stack trace that reference common Node.js internal files.\n\n\n### stackUtils.clean(stack, indent = 0)\n\nCleans up a stack trace by deleting any lines that match the `internals` passed to the constructor, and shortening file names relative to `cwd`.\n\nReturns a `string` with the cleaned up stack (always terminated with a `\\n` newline character).\nSpaces at the start of each line are trimmed, indentation can be added by setting `indent` to the desired number of spaces.\n\n#### stack\n\n*Required*  \nType: `string` or an `array` of `string`s\n\n\n### stackUtils.capture([limit], [startStackFunction])\n\nCaptures the current stack trace, returning an array of `CallSite`s. There are good overviews of the available CallSite methods [here](https://github.com/v8/v8/wiki/Stack%20Trace%20API#customizing-stack-traces), and [here](https://github.com/sindresorhus/callsites#api).\n\n#### limit\n\nType: `number`\nDefault: `Infinity`\n\nLimits the number of lines returned by dropping all lines in excess of the limit. This removes lines from the stack trace.\n\n#### startStackFunction\n\nType: `function`\n\nThe function where the stack trace should start. The first line of the stack trace will be the function that called `startStackFunction`. This removes lines from the end of the stack trace.\n\n\n### stackUtils.captureString([limit], [startStackFunction])\n\nCaptures the current stack trace, cleans it using `stackUtils.clean(stack)`, and returns a string with the cleaned stack trace. It takes the same arguments as `stackUtils.capture`.\n\n\n### stackUtils.at([startStackFunction])\n\nCaptures the first line of the stack trace (or the first line after `startStackFunction` if supplied), and returns a `CallSite` like object that is serialization friendly (properties are actual values instead of getter functions). \n\nThe available properties are:\n\n - `line`: `number` \n - `column`: `number`\n - `file`: `string`\n - `constructor`: `boolean`\n - `evalOrigin`: `string`\n - `native`: `boolean`\n - `type`: `string`\n - `function`: `string`\n - `method`: `string`\n\n### stackUtils.parseLine(line)\n\nParses a `string` (which should be a single line from a stack trace), and generates an object with the following properties:\n\n - `line`: `number` \n - `column`: `number`\n - `file`: `string`\n - `constructor`: `boolean`\n - `evalOrigin`: `string`\n - `evalLine`: `number`\n - `evalColumn`: `number`\n - `evalFile`: `string`\n - `native`: `boolean`\n - `function`: `string`\n - `method`: `string`\n\n\n## License\n\nMIT © [Isaac Z. Schlueter](http://github.com/isaacs), [James Talmage](http://github.com/jamestalmage)\n",
+  "maintainers": [
+    {
+      "name": "isaacs",
+      "email": "i@izs.me"
+    },
+    {
+      "name": "jamestalmage",
+      "email": "james@talmage.io"
+    }
+  ],
+  "time": {
+    "modified": "2020-04-28T15:16:21.081Z",
+    "created": "2016-01-04T05:15:37.432Z",
+    "0.0.1": "2016-01-04T05:15:37.432Z",
+    "0.1.0": "2016-01-07T20:24:53.362Z",
+    "0.2.0": "2016-01-07T21:19:49.097Z",
+    "0.3.0": "2016-01-14T03:54:58.328Z",
+    "0.4.0": "2016-02-05T22:35:56.320Z",
+    "1.0.0": "2017-02-02T06:18:07.294Z",
+    "1.0.1": "2017-04-23T20:32:26.102Z",
+    "1.0.2": "2018-11-14T18:57:24.505Z",
+    "2.0.0": "2019-12-13T06:49:08.966Z",
+    "2.0.1": "2019-12-13T06:50:32.156Z",
+    "2.0.2": "2020-04-28T15:16:17.414Z"
+  },
+  "homepage": "https://github.com/tapjs/stack-utils#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tapjs/stack-utils.git"
+  },
+  "author": {
+    "name": "James Talmage",
+    "email": "james@talmage.io",
+    "url": "github.com/jamestalmage"
+  },
+  "bugs": {
+    "url": "https://github.com/tapjs/stack-utils/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md",
+  "users": {
+    "timdp": true,
+    "monsterkodi": true,
+    "lukvonstrom": true
+  }
+}

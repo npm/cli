@@ -1,0 +1,2777 @@
+{
+  "_id": "@babel/plugin-transform-literals",
+  "_rev": "68-316efb3d7d67cff698e41187981fbe60",
+  "name": "@babel/plugin-transform-literals",
+  "description": "Compile ES2015 unicode string and number literals to ES5",
+  "dist-tags": {
+    "latest": "7.12.1"
+  },
+  "versions": {
+    "7.0.0-beta.4": {
+      "name": "@babel/plugin-transform-literals",
+      "version": "7.0.0-beta.4",
+      "description": "Compile ES2015 unicode string and number literals to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-literals"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.3"
+      },
+      "devDependencies": {
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.4"
+      },
+      "_id": "@babel/plugin-transform-literals@7.0.0-beta.4",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.1.4",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-9Rzu6tRF6uxRdzqo0XRRqXyFvZ8NDO1i+jviQ0uCRjmMyjs24YhUk7is6Mf1nozVHmpIesFDjMpeLgFAqOjc4g==",
+        "shasum": "7d206461e912eb8b7e17eb006061353fce6d7513",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-literals/-/plugin-transform-literals-7.0.0-beta.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-literals-7.0.0-beta.4.tgz_1509388479440_0.18133961246348917"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.5": {
+      "name": "@babel/plugin-transform-literals",
+      "version": "7.0.0-beta.5",
+      "description": "Compile ES2015 unicode string and number literals to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-literals"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.4 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.5"
+      },
+      "_id": "@babel/plugin-transform-literals@7.0.0-beta.5",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.1.4",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-VUAAepR9zEOYtOZ1nYoo1PrHxYpMu9rs6XzQw2r5iGIPF4d7FPvODvo7SdIqwk8/iLSyPOiPNfCO3T3ACewjPA==",
+        "shasum": "bf600fd91e4841bbfb1bc61281e2c41b1b1d4ed3",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-literals/-/plugin-transform-literals-7.0.0-beta.5.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-literals-7.0.0-beta.5.tgz_1509396978759_0.2534939267206937"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.31": {
+      "name": "@babel/plugin-transform-literals",
+      "version": "7.0.0-beta.31",
+      "description": "Compile ES2015 unicode string and number literals to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-literals"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.31"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.31",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.31"
+      },
+      "_id": "@babel/plugin-transform-literals@7.0.0-beta.31",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.1.4",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-6WtzFJyFLtswx2Uu57iaVymxXUF7qDCNhNMEBL49sphSr5hL2R2cjfBogI5/uhT2+5mCeBeeLCYBEhC5f6BiCg==",
+        "shasum": "3ca38c724cca742b61831678e95e9f75a6f81892",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-literals/-/plugin-transform-literals-7.0.0-beta.31.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-literals-7.0.0-beta.31.tgz_1509739405228_0.5107488450594246"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.32": {
+      "name": "@babel/plugin-transform-literals",
+      "version": "7.0.0-beta.32",
+      "description": "Compile ES2015 unicode string and number literals to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-literals"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.32"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.32",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.32"
+      },
+      "_id": "@babel/plugin-transform-literals@7.0.0-beta.32",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-uBXC+JcYALYHkXRZZD49mwD0n1ufWu8lbuHEIjpPvEncp63zklVgV5q1XkhXR7Dm1PWDCuEy8Aj6I0La/PBSmQ==",
+        "shasum": "844178f9a21d4ba5e591a990f68ac51e540e8ff1",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-literals/-/plugin-transform-literals-7.0.0-beta.32.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-literals-7.0.0-beta.32.tgz_1510493595788_0.23157140659168363"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.33": {
+      "name": "@babel/plugin-transform-literals",
+      "version": "7.0.0-beta.33",
+      "description": "Compile ES2015 unicode string and number literals to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-literals"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.33"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.33",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.33"
+      },
+      "_id": "@babel/plugin-transform-literals@7.0.0-beta.33",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-3+SgSmblzaYa4bMyYEKUHsklhYkRPPYL9M/Cu69opV7YbNof8Iz+zbL6CuEOwVoD4p6gzTck02PwpvrY8bYF3Q==",
+        "shasum": "eee8b8011c8ae0f3de9ad95dc98f6120928e242f",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-literals/-/plugin-transform-literals-7.0.0-beta.33.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-literals-7.0.0-beta.33.tgz_1512138497839_0.06934757810086012"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.34": {
+      "name": "@babel/plugin-transform-literals",
+      "version": "7.0.0-beta.34",
+      "description": "Compile ES2015 unicode string and number literals to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-literals"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.34"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.34",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.34"
+      },
+      "_id": "@babel/plugin-transform-literals@7.0.0-beta.34",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-rqyb71ffA6Lqlt29G0QotDTt8z/vGghGJyftrG88+9/M6LC+azaR1yzoaoV2UQl+YsErEtm+OHfD+1F7aCVCNg==",
+        "shasum": "ed84b3e52721ec241fee60935f5e7763ea5744a1",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-literals/-/plugin-transform-literals-7.0.0-beta.34.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-literals-7.0.0-beta.34.tgz_1512225559130_0.25821343436837196"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.35": {
+      "name": "@babel/plugin-transform-literals",
+      "version": "7.0.0-beta.35",
+      "description": "Compile ES2015 unicode string and number literals to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-literals"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.35"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.35",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.35"
+      },
+      "_id": "@babel/plugin-transform-literals@7.0.0-beta.35",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-f98iHJ3fhO5OPP2kijlQ7+kNibbUsSkEVQ28CAA81JtT4fifZUfPgA0S3Piao0fNmxIY6JwSpUH/i+8mRWhfpQ==",
+        "shasum": "c0634fc137702afd7ae77829a41be45c4fa530ca",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-literals/-/plugin-transform-literals-7.0.0-beta.35.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-literals-7.0.0-beta.35.tgz_1513288065816_0.26296937256120145"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.36": {
+      "name": "@babel/plugin-transform-literals",
+      "version": "7.0.0-beta.36",
+      "description": "Compile ES2015 unicode string and number literals to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-literals"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.36"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.36",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.36"
+      },
+      "_id": "@babel/plugin-transform-literals@7.0.0-beta.36",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-7Ao2jQa5B4+ofN2wmZSM/vK5zQKyg5f4BUReQOcy/ypXrdvU+Z/YeIsD4lN4Tr32BTGVkVRwAx35KNy4Xa5LAA==",
+        "shasum": "60d1df041aa70b8c81c812010315c5a78450b31c",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-literals/-/plugin-transform-literals-7.0.0-beta.36.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "james@henry.sc",
+          "name": "jameshenry"
+        },
+        {
+          "email": "kent@doddsfamily.us",
+          "name": "kentcdodds"
+        },
+        {
+          "email": "kaicataldo@gmail.com",
+          "name": "kaicataldo"
+        },
+        {
+          "email": "teddy.katz@gmail.com",
+          "name": "not-an-aardvark"
+        },
+        {
+          "email": "star.ctor@gmail.com",
+          "name": "mysticatea"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-literals-7.0.0-beta.36.tgz_1514228676181_0.6485294848680496"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.37": {
+      "name": "@babel/plugin-transform-literals",
+      "version": "7.0.0-beta.37",
+      "description": "Compile ES2015 unicode string and number literals to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-literals"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.37"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.37",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.37"
+      },
+      "_id": "@babel/plugin-transform-literals@7.0.0-beta.37",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-yOUav+BEjDL4zefJUydYU8eIZ6ZhB3GrXpVei8spZOpJxy0THj7UczMQnGJ1xUFG0f+6r2M+2dFejhgT1HRB0Q==",
+        "shasum": "a416145570366aefa7eb847134f3e1866272abad",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-literals/-/plugin-transform-literals-7.0.0-beta.37.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-literals-7.0.0-beta.37.tgz_1515427350693_0.8496027139481157"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.38": {
+      "name": "@babel/plugin-transform-literals",
+      "version": "7.0.0-beta.38",
+      "description": "Compile ES2015 unicode string and number literals to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-literals"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.38"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.38",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.38"
+      },
+      "_id": "@babel/plugin-transform-literals@7.0.0-beta.38",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-pNx7CUnGOR74fkpvzIho5GECAgaf0m0px7GZ2uzNYGMm5nvUT3h2bA6ASjI0YQ7FLHQScRdrHa0rBvD7lSIZFQ==",
+        "shasum": "5ec8f714bcea508073476ae7d13e108ac9bd4f11",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-literals/-/plugin-transform-literals-7.0.0-beta.38.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-literals-7.0.0-beta.38.tgz_1516206713258_0.17641270370222628"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.39": {
+      "name": "@babel/plugin-transform-literals",
+      "version": "7.0.0-beta.39",
+      "description": "Compile ES2015 unicode string and number literals to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-literals"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.39"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.39",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.39"
+      },
+      "_id": "@babel/plugin-transform-literals@7.0.0-beta.39",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-NSrPpvHPDOkLd82mLlNNbxtt7umILbyWK88ArgR0W9yHqKHEHCdZ5zpD9xWOvHWk8Rie+IIq+CFWgicpPwzTxA==",
+        "shasum": "5c6a097539a5d20cc285e97d785d418d6aad305d",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-literals/-/plugin-transform-literals-7.0.0-beta.39.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-literals-7.0.0-beta.39.tgz_1517344053467_0.025173750007525086"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.40": {
+      "name": "@babel/plugin-transform-literals",
+      "version": "7.0.0-beta.40",
+      "description": "Compile ES2015 unicode string and number literals to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-literals"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.40"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.40",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.40"
+      },
+      "_id": "@babel/plugin-transform-literals@7.0.0-beta.40",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-p7VlTod2r7srx0uKVrKqMJR1f6iyvDAnlLdTEDGrLHpP9pXXvIc/bP8xZTxVPn+IziSFh6FvOzHXXLMtnRKnow==",
+        "shasum": "a6bf8808f97accf42a171b27a133802aa0650d3e",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-literals/-/plugin-transform-literals-7.0.0-beta.40.tgz",
+        "fileCount": 3,
+        "unpackedSize": 1924
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-literals_7.0.0-beta.40_1518453695951_0.7839444992045188"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.41": {
+      "name": "@babel/plugin-transform-literals",
+      "version": "7.0.0-beta.41",
+      "description": "Compile ES2015 unicode string and number literals to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-literals"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.41"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.41"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.41",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.41"
+      },
+      "_id": "@babel/plugin-transform-literals@7.0.0-beta.41",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-OljGPbV41N1WJHOwm4yoVtVAhFhDOmOktONzA3BWIV1EDZ5sVEZsUveBq7vLClrZ3F71NZTQerfcILruPiW3FQ==",
+        "shasum": "64cd9505667e48acd17f89ccb04118e2e8f74315",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-literals/-/plugin-transform-literals-7.0.0-beta.41.tgz",
+        "fileCount": 3,
+        "unpackedSize": 2159
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-literals_7.0.0-beta.41_1521044769185_0.14962701168813597"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.42": {
+      "name": "@babel/plugin-transform-literals",
+      "version": "7.0.0-beta.42",
+      "description": "Compile ES2015 unicode string and number literals to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-literals"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.42"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.42"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.42",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.42"
+      },
+      "_id": "@babel/plugin-transform-literals@7.0.0-beta.42",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-mWEayRwUCY3/u8LZpcdR96TiWqofP60jjfVZUJ6agK6ifwEBgamv1Db8syIwUCjaZww5bjyZqX61AmP4fx3dvQ==",
+        "shasum": "61a34a82d757be4ddf937eda4b2d6c36b63b9c4e",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-literals/-/plugin-transform-literals-7.0.0-beta.42.tgz",
+        "fileCount": 3,
+        "unpackedSize": 2159
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-literals_7.0.0-beta.42_1521147043925_0.16700487718873802"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.43": {
+      "name": "@babel/plugin-transform-literals",
+      "version": "7.0.0-beta.43",
+      "description": "Compile ES2015 unicode string and number literals to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-literals"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.43"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.43"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.43",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.43"
+      },
+      "_id": "@babel/plugin-transform-literals@7.0.0-beta.43",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-rx+p0S/oHXfuEXi40gXCFJNcDgNI850fxjGBKQyOlLx6ueQdhZmJcSWu+x/8SFGx8ZoDD3JEFb3K1a9pYuFR0A==",
+        "shasum": "45c33a38d71b4eb8400fafbe16cafa0c5da508b5",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-literals/-/plugin-transform-literals-7.0.0-beta.43.tgz",
+        "fileCount": 3,
+        "unpackedSize": 2216
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-literals_7.0.0-beta.43_1522687705880_0.5305332850315279"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.44": {
+      "name": "@babel/plugin-transform-literals",
+      "version": "7.0.0-beta.44",
+      "description": "Compile ES2015 unicode string and number literals to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-literals"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.44"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.44"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.44",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.44"
+      },
+      "_id": "@babel/plugin-transform-literals@7.0.0-beta.44",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-h6KxHCj14tYj1dahXlfs/JP1fMzMHdmVCapM4UjberhkcAj4ZkZpmdQbN2odaQRT1DX2hA8eQWsmeKJw2Ifq8w==",
+        "shasum": "8c85631ea6fd8a6eecefdb81177ed6ae3d34b195",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-literals/-/plugin-transform-literals-7.0.0-beta.44.tgz",
+        "fileCount": 3,
+        "unpackedSize": 2315
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-literals_7.0.0-beta.44_1522707607080_0.24922804264611642"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.45": {
+      "name": "@babel/plugin-transform-literals",
+      "version": "7.0.0-beta.45",
+      "description": "Compile ES2015 unicode string and number literals to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-literals"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.45"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.45"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.45",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.45"
+      },
+      "_id": "@babel/plugin-transform-literals@7.0.0-beta.45",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-Kfm+Jqz5lEc5cR0AEVULG93Zmkla8mfoOoOk8zjdjHoiszGr8Z8MrNFBukAXngXG+N4vlgMaonmdI+Yoa8SdFA==",
+        "shasum": "7ab54998b2c1809c014191f18f12dc400c9a39f9",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-literals/-/plugin-transform-literals-7.0.0-beta.45.tgz",
+        "fileCount": 3,
+        "unpackedSize": 2315,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa3T1kCRA9TVsSAnZWagAAT3UP/2ABZVJ/peZt1Fu2Qir3\nZc4b25yUbu0y2gHRYj4u6SJ/YWuXgumWkEfpV68iYeJVqq9gjvznHMy2yXDL\neYuEeez8FAMYdjsbSitgU13C+FBIOLUrN6ofBaTdihwdQywXedhen0JF3aB+\n0bFEJTSVeW4T3ma5V+lz6o9ONnssMr320sc6DZ2ZpuSGw7NHEsGLgjfjUNrk\n+N49kmrc0knE+WxkI8Qx+HxCJ39WyZhTKbt7ziCwZ83fNj6OrEM2U2Nr9X9P\nwjQ4MQHVsPdxOwV1LegHj5JPksy1bmwDIUvR6STIUG9WanV4NSqPMFC+zY04\npoZAQRn6QwSD3TH4Mp0OUu6aQrJVyCfY/RaNbwGQ53TfLFSsR8ptFfqyXAkF\nQXFALw433X7IyEKr4/2DZlRVt4tOuiE375WekwGEGBjzPJEkEP1vZ7PjpEuZ\n8jLt9BgaMZsdyHiwPa5Qo46zzYElhTHbnt0UJeZkxqJPL8o5ILgtZSzV6sUi\n0v4CJE2KJQq1U3EM/5DAel9HYL4syk47yxnY0gUYy9MKCpeEMOVID10HiZJ3\nksmBcKhw3/kNTDrXtKCNq5VW4L/mZH1oESUQKUMaplX4USzTEpn/YPuTCGKC\nSMyTHoqvIadCfBeMlxOIaMLpGkpT8lha0CPc+bY3HVBYvzazFd83qtY8rf6J\n9vgm\r\n=4gDq\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-literals_7.0.0-beta.45_1524448611595_0.24170790769791006"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.46": {
+      "name": "@babel/plugin-transform-literals",
+      "version": "7.0.0-beta.46",
+      "description": "Compile ES2015 unicode string and number literals to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-literals"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.46"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.46"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.46",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.46"
+      },
+      "_id": "@babel/plugin-transform-literals@7.0.0-beta.46",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.4.0",
+      "_npmUser": {
+        "name": "loganfsmyth",
+        "email": "loganfsmyth@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-Uuo7pRsBkrLrDg6XpOAMfwhKw56SB5qVBniUVM04uf8wf92S2Z5tSPNNfn1iTgphuckAO9vg86l2XJ0Y/QD4YQ==",
+        "shasum": "84f5bcfe914b9fd4385c0ddf469f9ed403ee68bd",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-literals/-/plugin-transform-literals-7.0.0-beta.46.tgz",
+        "fileCount": 3,
+        "unpackedSize": 2315,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa3WGTCRA9TVsSAnZWagAAcnEP/i1M5zGFspYRTDRAUD5g\nc3Esnm05nEo1y+7FeCD+TtkIizKK63xxXwktlU7boVmJH8o7m/hCydTucJYA\nWaPb5pwkZng324hQYz0DLeSGLXlqJ6MfIRJDB6p4je5juidH65Dj6ZQbRLwG\nDZdDoUh4aMm/axycBhkLs2/cKPVVnDMOkAhhflIS5OMsM3/8OgkvU2rBzOoV\nqvj3Ua9DA2s0NRXozUvbrqh/7wL4AeLdfqmzH1/1ScDkYTlkSGcItbtyWyBp\ntBnZ1kJ+2Yrgcjnl8jrUxx+j7ODCfggJFPNeZNgmvxkPIMfybfwPJa8LA8YW\nWelfy/05fIbtajh5U1d+6ZQVgSaVDMyFX9FuAiar7o5oV+rKbEiCUeD1Xyl0\nufkzdLb5eVpGvVPLXKJYcrbQWiRbeeEvWv15KtwE6XrXeyEF0uS9WHKmXu+O\nn3bBfjyYslbUcr3r8cynjegunMuLb+HPUpwJ7HMGR/VLFbktlqlQcpwx4VzR\nP+AOIETq3gkQgZVa31rAHcGqfk4n8PilKYGQVf7+Vct/J7Py7XeuzdmJuioy\nzEOJQfDWq49cPw/s8PCAWdbyDQngMNlbDzliR6D75DyVGrJGU1d24cSxhKPX\nYHwzy8QqWu9QrwYq5ugSxcD2xj1SKv6L4+AJqOU4veD+ATgI69tOsm5RkXvE\nCo/e\r\n=oL3R\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-literals_7.0.0-beta.46_1524457875607_0.3277987178578263"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.47": {
+      "name": "@babel/plugin-transform-literals",
+      "version": "7.0.0-beta.47",
+      "description": "Compile ES2015 unicode string and number literals to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-literals"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.47"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.47"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.47",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.47"
+      },
+      "_id": "@babel/plugin-transform-literals@7.0.0-beta.47",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-PxBw+52qWypwR76YfS2FlW4wZfp61SjIyt3OSPZeWnf0zVQWNVrlRRunJ7lBYudDYvyMwStAE/VynZ0fHtPgng==",
+        "shasum": "448fad196f062163684a38f10f14e83315892e9c",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-literals/-/plugin-transform-literals-7.0.0-beta.47.tgz",
+        "fileCount": 3,
+        "unpackedSize": 2234,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa+iUbCRA9TVsSAnZWagAAdRkQAJ7GJQpfkhdjRd8T0G/P\nDlLaLXdzdCAcAWqkYiQCKX5k5lz1BPv/G6nTOVCn2WyEc5h+dQvZap50MwpX\neb10Nv9FenIAfSdcebp8d1fX9zbw4/L9L9avVtb5A9dKlDdoRdSQW2BMWz0b\n4HFzj9ka89WroAS9znMPMNxKLwGzxNEEud73ciAYMU0VvVASFgf5mNQU7RrZ\nx7ofkOHk1oyq9I1KAxQ2idO73FkOn2LrMqbykGXttA9mjYRBz40n8w4s2m5o\n9FONuJNzBUjDQDqO1nZiM4dIjBEuLTSmFtk9xeEB2RlgP8ykX3jfulo3+Kma\niTod5/Rsl+IHchurz1/ofhiwEUX6VRWT1UUEjNNcwAecedrO4wCZkctVx5Kq\nr4k8HGa8WminOFXVYxQ9RXX0tAK+hCrnHmSfOMH/pBxrxZ7B1VGtcfPfDGXZ\n1kwVMm+l77Cd9dwEWVUpcJ//0JiiCLrUUgY5gD5u83+BRF5uA5MI6XpiOD2o\niplvRzzKh7hfgKsxKOynOXqWR38S7ejQRsO2H5719ScJIl419D0BWfjg4VtD\nkCCVzl1kzvD5MtcqykpZ/pW+J8eqzJSAdv/ANe1K3l5mpFB8EZD3SMv6FyQo\nNhV7wwQFoURhfAeBrIHW+m3hoy582oBnLTbypNGUUezEtToQTV82D6x+2XW7\noxgr\r\n=Kg1/\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-literals_7.0.0-beta.47_1526342938962_0.7033621977302797"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.48": {
+      "name": "@babel/plugin-transform-literals",
+      "version": "7.0.0-beta.48",
+      "description": "Compile ES2015 unicode string and number literals to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-literals"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.48"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.48"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.48",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.48"
+      },
+      "_id": "@babel/plugin-transform-literals@7.0.0-beta.48",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-5SOXkuWm2DmLSFxygIkEqZlbnRF5CxWecS0izPhVShi3Nac8/1iQHZg6tk5oY4ZULOW4RmqPabkaaGg3zHjYFg==",
+        "shasum": "3d582d501f612782a6e70839264bd3af4454200f",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-literals/-/plugin-transform-literals-7.0.0-beta.48.tgz",
+        "fileCount": 3,
+        "unpackedSize": 2216,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbBxD0CRA9TVsSAnZWagAAA/gP/30T3UVrKbIjaVRRZKwF\nHzKF35fn0/kx6R9e4CZbAMVd5NOs67u6V87mVPZIj3wyW+S8udmAIjMDwps7\nxYRkPQ9fj3LLdzfh0GY2fW/kREHVlPMXq3YQ2LxoN/Ih7z49qu8AJFdSsJu2\ncIWAZug8S6w6Lzp679889IfMWXXIERzbxOacOoXEqb0mNVsk5ZkgbwIDrNC/\ndErZ6eeU2d5zAOHSDMDyc/fYaxfd4r4qwyhmAiDwEldlIZ+B3p2+GV+JIZ+3\ng3P9gT4T4cZlFiD4s30jK8SQ8L68wCamkr5o5v1PnaAP9mnEUesFmPfGw+lv\n5LyJpDqowFILJVvFMevlkASCTJnY4FDg4yGf8YytoFy1JA4umfLZmxEt7PgO\n94J5fYbufUnL3qYY8chgLSqNOX1CCB51jldRfkwI+vPNFF5w/qNGIsD9ctQ7\nwnixqlKWSllyz2f9O/M2DXjSsvzeYJfK/CZ66mFfjV6j5Qhha5ENH+Yu5sfD\nN0ASqGHQK+syOIwVCt+j8+68OqSFsJW8ot+ogaJQxv8kd/+EAybbMvslbh+e\n7ysuP8zRYTOMizdZ2i9n2wLNZofgB9jkQTAnpJHP1v1HW//HN7/AO6g+OCeK\nNDXdNid0iNX2ofHPPGChYk/1psyru81nWfBofBEtCd9WuTOKwh1vWwSnhNz/\n2goR\r\n=4UgN\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-literals_7.0.0-beta.48_1527189747566_0.08343752503812807"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.49": {
+      "name": "@babel/plugin-transform-literals",
+      "version": "7.0.0-beta.49",
+      "description": "Compile ES2015 unicode string and number literals to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-literals"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.49"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.49"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.49",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.49"
+      },
+      "_id": "@babel/plugin-transform-literals@7.0.0-beta.49",
+      "scripts": {},
+      "_shasum": "07c838254d65e6867e86513eb0f22d5f26b0a56a",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.12.3",
+      "_npmUser": {
+        "name": "loganfsmyth",
+        "email": "loganfsmyth@gmail.com"
+      },
+      "dist": {
+        "shasum": "07c838254d65e6867e86513eb0f22d5f26b0a56a",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-literals/-/plugin-transform-literals-7.0.0-beta.49.tgz",
+        "fileCount": 4,
+        "unpackedSize": 2231,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbCDODCRA9TVsSAnZWagAA34QP/3Z1C5KaewcEh1bqFAny\nwgbqXioTXTNh8Bqmfa3J6lgc+cetEfmRjPM6Dwn+wT7vp8SEhUlpBlbE/4S9\n+TW5AIhy8NP6BLj4ZjKY1hDvVseBEU0W8OkhQZL1MeSOzs2QWECX7gi075/Z\ntzom1k/NSHBuXQNNcQwrHxQwJoafbXibZSaGZ6hnLqBGViOTpCiaWJhXHqf6\n9rz3+atV3ZSg5/hvzSkyZod88UrddqIZ0rXLo3AVXfvkjIyzSgrkn6siCHPc\nqk/SOIyrP/uCm2uByOWm69Lf6KIWybSHBkU+A4ZC+hkISznDQg4MmRyCUVxw\nRtKypiuMN6pBRe1eIlwVNa1gWAXLImnNmaYwLis6KA9AvscC2LyQPPLDxuOk\nDWQMyMFf9PUViodyeXdqAfUirWWOmbJqnvoU6P8Bx9ZlfO4B95rDUREhCcsp\ne4m8tKZDKpGTvWI8/CRsTwPugZv1H1bd+koNr1ArAQhj7MGQg3sEm701Pnq9\nKhcsRDBI1XCPhVGoSMgfMI2k8++3reld5OOzC0RV/5Nhy8rvTp7IHRjrQW62\nuGgtbN7nW5oT0oYiYV1FYXU354bSGYeIrd3Sn5vPn+9oBOoEShJND/VfIbhC\nreR86yOYmRono0VFaxs/HGU1h0029bY0uSh9D60KUCjT6zmlOZVAuHrXbh08\nDm1L\r\n=vjpT\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-literals_7.0.0-beta.49_1527264130775_0.9025863775267979"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.50": {
+      "name": "@babel/plugin-transform-literals",
+      "version": "7.0.0-beta.50",
+      "description": "Compile ES2015 unicode string and number literals to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-literals"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.50"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.49"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.50",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.50"
+      },
+      "_id": "@babel/plugin-transform-literals@7.0.0-beta.50",
+      "dist": {
+        "shasum": "f059bb756252edd0c2d44de59010b2ed88b40083",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-literals/-/plugin-transform-literals-7.0.0-beta.50.tgz",
+        "fileCount": 5,
+        "unpackedSize": 1753
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-literals_7.0.0-beta.50_1528832837372_0.25095076840004893"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.51": {
+      "name": "@babel/plugin-transform-literals",
+      "version": "7.0.0-beta.51",
+      "description": "Compile ES2015 unicode string and number literals to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-literals"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.51"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.51",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.51"
+      },
+      "_id": "@babel/plugin-transform-literals@7.0.0-beta.51",
+      "dist": {
+        "shasum": "45b07a94223cfa226701a79460b42b32df1dec05",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-literals/-/plugin-transform-literals-7.0.0-beta.51.tgz",
+        "fileCount": 5,
+        "unpackedSize": 1767
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-literals_7.0.0-beta.51_1528838390084_0.666687156716165"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.52": {
+      "name": "@babel/plugin-transform-literals",
+      "version": "7.0.0-beta.52",
+      "description": "Compile ES2015 unicode string and number literals to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-literals"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.52"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.52",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.52"
+      },
+      "_id": "@babel/plugin-transform-literals@7.0.0-beta.52",
+      "dist": {
+        "shasum": "6e9861a8698700dbe27b2eb9762c98cf51e8e76f",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-literals/-/plugin-transform-literals-7.0.0-beta.52.tgz",
+        "fileCount": 5,
+        "unpackedSize": 1766
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-literals_7.0.0-beta.52_1530838765615_0.36303312270344534"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.53": {
+      "name": "@babel/plugin-transform-literals",
+      "version": "7.0.0-beta.53",
+      "description": "Compile ES2015 unicode string and number literals to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-literals"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.53"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.53",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.53"
+      },
+      "_id": "@babel/plugin-transform-literals@7.0.0-beta.53",
+      "dist": {
+        "shasum": "bec4f144e9a96ef5121d1430c7ebe5fd088657c9",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-literals/-/plugin-transform-literals-7.0.0-beta.53.tgz",
+        "fileCount": 5,
+        "unpackedSize": 1766
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-literals_7.0.0-beta.53_1531316415660_0.5193319021858833"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.54": {
+      "name": "@babel/plugin-transform-literals",
+      "version": "7.0.0-beta.54",
+      "description": "Compile ES2015 unicode string and number literals to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-literals"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.54"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.54",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.54"
+      },
+      "_id": "@babel/plugin-transform-literals@7.0.0-beta.54",
+      "dist": {
+        "shasum": "70f07ecc2f3b7bc9f542a578e82eec18a5504098",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-literals/-/plugin-transform-literals-7.0.0-beta.54.tgz",
+        "fileCount": 5,
+        "unpackedSize": 1766
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-literals_7.0.0-beta.54_1531764006696_0.06726994740423264"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.55": {
+      "name": "@babel/plugin-transform-literals",
+      "version": "7.0.0-beta.55",
+      "description": "Compile ES2015 unicode string and number literals to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-literals"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.55"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.55",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.55"
+      },
+      "_id": "@babel/plugin-transform-literals@7.0.0-beta.55",
+      "dist": {
+        "shasum": "8bc92cd24e6419301ef3867e4667b77aa6374e11",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-literals/-/plugin-transform-literals-7.0.0-beta.55.tgz",
+        "fileCount": 5,
+        "unpackedSize": 1766
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-literals_7.0.0-beta.55_1532815637342_0.032123170193682826"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.56": {
+      "name": "@babel/plugin-transform-literals",
+      "version": "7.0.0-beta.56",
+      "description": "Compile ES2015 unicode string and number literals to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-literals"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.56"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.56",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.56"
+      },
+      "_id": "@babel/plugin-transform-literals@7.0.0-beta.56",
+      "dist": {
+        "shasum": "5f6d3d0dad64c52df64fe8654a8e6d6fd884d60f",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-literals/-/plugin-transform-literals-7.0.0-beta.56.tgz",
+        "integrity": "sha512-uz7Hcui2qmf1fA8pl5CsLz8KjM3HuUbEws/59G9kaMOrSIMrGSfeN1zsthfFSJDpFQLwq5NZ0+lPIvuOwE61bA==",
+        "fileCount": 5,
+        "unpackedSize": 1766,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbZPvnCRA9TVsSAnZWagAAmG8P/33pXHZ1XCzwiafu3Aoa\ni+UsKlQNI8+x2EO9q4DOzErEt3KlO3Fcc4WaumP6f4QHKGUuZrToLDYtG+vu\niyDe2Y7vA5HLf0bEy06eyeFqybusS469fm91y4ZvQ2QZwsWwfySsMMkaq2a1\n5wYNerr/CmRXhvEF+bWFizJ6foiv2lRZ5zNaWHyLTOyvgLcMBLu8+AO1FcQ1\nW9J/LxCa/fPkfOLaEgMfmwYRDSy3MrSAe/MmqSt2vSPm1U0AEyUvZRd4xamq\nQtkur/u9qnO/mOliCUQWCGxnFeHRnwT8/OJiGkwqP0EHP5NSyMXF6BQ/SroZ\nSWzs9GZ7OyrFsWXH5oNVe0HWHv2EJShFHtTrflfoTnXyurEOoWjNIWgMei4Z\nzn2WHFXrjLAzj6w7wkSeZjDbGz0ha8yueYOf8NvBgV3w4s9RPPIIlCVf9FA5\n+UCoLawVMT7R0rEJC+wUiRF1sarClZnUCCSerUEJwCUZWe2jsyAG6GDRQ/nG\nfBXMtZmP6axntqENKMvCNKyiUMhMEtJi19VX/madno4us+0eKydQWa4nWaLn\nfZDOPI0sCVmqUFhBP4Q1fOXyPdTvIVBxG8nT1uk3iVmGl0KQWrFCWZo5OJz7\nnzNvT1h8SrW7dxSV4HH7hxSWd+kyohqo3u9eOzLc32ZXTmpVRM1kjSN1ywXN\na0qH\r\n=I+Km\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-literals_7.0.0-beta.56_1533344742991_0.9886615609317828"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-rc.0": {
+      "name": "@babel/plugin-transform-literals",
+      "version": "7.0.0-rc.0",
+      "description": "Compile ES2015 unicode string and number literals to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-literals"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-rc.0"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-rc.0",
+        "@babel/helper-plugin-test-runner": "7.0.0-rc.0"
+      },
+      "_id": "@babel/plugin-transform-literals@7.0.0-rc.0",
+      "dist": {
+        "shasum": "3703728e0d1e4943132f9b866d172246e2e592f1",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-literals/-/plugin-transform-literals-7.0.0-rc.0.tgz",
+        "integrity": "sha512-LjxBczuTlXMkRHmGPp+lof+qnNmnalI+TknBFZ9AYQKgvRKnM9K8Sl9K17bzXgVv2pP4ptkCzIwq2ZSsjfDQwA==",
+        "fileCount": 5,
+        "unpackedSize": 1754,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbbGScCRA9TVsSAnZWagAAD28P/jjbQDsPzaLf1VaMyhyJ\ni0y4Y82uHcCLWirmbkwYz8uDtZ67DWftwIMCFV690ca0eRtlJKGgC5BLtbMJ\nLpLv42GEVXUquO6Jg6OUedCGmHN2TCvv6oeSfHXKRZxkqSp4PkP+UCu4IpFw\neO8LxkfO7FS+e3Ic1t2KMHVI5JJBo8H8esno/Z0fWT9nyNdxNyNUjUOAyg/v\ntSaT3ZO5SlP/EdVomcqn+QLNf1pdV6OGzviPRRGLAHsgMubPYBFmPr0NvQCo\nyANnB8yGIk/F50hNEJnYEoLFgAwG3h1nhi1pj3cacgRmW74EKNkNQhxYJHzz\nvim43SYfhfD+KigKrZ5pB3JW/VDzz6wr1Z4K0oGuY5gL1HnJFeJaqCM5RjAi\nAwTXToA0FD+wIdxM9OhDeswXYNtSPNX/3qI5YpXXYHW8Fr8P6PYdajh/nuSx\nOihNomfGEOTp1X+9uLZfPm/zNa8aBNWPq2in8qD9xsdzcaHprxdF385+7Dyc\nFXFHDb5yms/PMlWiabwDbOO3CfmH7PyjfE25QeQ35dixhNa9YdDW+xn0fFUh\nn5s3e7anh+DlVfM3YP8pF5z8pB7Z1YNw0GcdwUtZsdxniQo+R0aY8ypxuLTC\nS1bBAfmOE+hOScLkgdiDI479sEwvzhiNLGFk1ySiXJ3TZGM2ObG25FL5Tzp4\n3edq\r\n=DaK0\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-literals_7.0.0-rc.0_1533830299633_0.8357062616541395"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-rc.1": {
+      "name": "@babel/plugin-transform-literals",
+      "version": "7.0.0-rc.1",
+      "description": "Compile ES2015 unicode string and number literals to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-literals"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-rc.1"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-rc.1",
+        "@babel/helper-plugin-test-runner": "7.0.0-rc.1"
+      },
+      "_id": "@babel/plugin-transform-literals@7.0.0-rc.1",
+      "dist": {
+        "shasum": "314e118e99574ab5292aea92136c26e3dc8c4abb",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-literals/-/plugin-transform-literals-7.0.0-rc.1.tgz",
+        "integrity": "sha512-iI468X7shsmB/oIPi8+UfMcOpcQPEsMAz5hDc0H8dKBGUWbPcAlyQpC8CaNDZ7y1/7lK65wtvXs5OGTQd3OsJg==",
+        "fileCount": 5,
+        "unpackedSize": 1735,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbbJ8fCRA9TVsSAnZWagAAzkcP/2b8bqxnSK9XWD/bhHNp\nwcMdZSmDw7Ytumk3TDfh0KY+jZOA75uM3nJIKofc/9pieflB0NtDEJ/yC9Uv\nXVwkikXo4X8JyVQ+osP4CUIqt2bEOIX/tb4HDbTvVY8BdDoYqPEhmrutVkr7\na4Q9ss+ndlxlc0m5GasT+Z1Ieqq4mIm6WZlBl6zy8JdDip+blA5RXS5IBu9j\nhbeQ/00kZxK1xMVrkxlxMbMiS6n2BIcvx0rkhmPmomimezHT5N6HRfarjzsP\nUdcvqiZUMOLbonv9ru997xR7Ao8svCBgNWdqIELO893Sg7F7nlzg5mqQvkDz\nw3a0LWP2OnfRgGemh51AGUA9mP2q4EvXMfHEmDrtLQqsY0p9SsO+rGkTGMvN\nEjD9Dx6msrCwPfzUtseJ/TEQyNIczxjDuH+IA0KXIHeScXDMcKFGuIKg/ENV\nl8OKYPJ7DikO32nCeFl6By3vgVfoJ46CwHetLpxQnwemvKVvcY0t3au9cGKe\nxjc+/C7KefknVqwfUMaa9ihOxkX6ng962mCap0nhoJfwwsNljFK+1EdSt+cG\ncowwhjd7yqQMBs6zUwJMWdzk2P/oZ/3nQGaLZvMve+CUXrxUv7T7wmdgJlm0\nMknIRWtyR7XRntfJiRe/Nt4lanBWxEz1g9v4QemsMuEGJhh791LLyx1Gxd7J\nzv6w\r\n=k2to\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-literals_7.0.0-rc.1_1533845278751_0.32944008357687626"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-rc.2": {
+      "name": "@babel/plugin-transform-literals",
+      "version": "7.0.0-rc.2",
+      "description": "Compile ES2015 unicode string and number literals to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-literals"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-rc.2"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-rc.2",
+        "@babel/helper-plugin-test-runner": "7.0.0-rc.2"
+      },
+      "_id": "@babel/plugin-transform-literals@7.0.0-rc.2",
+      "dist": {
+        "shasum": "a4475d70d91c7dbed6c4ee280b3b1bfcd8221324",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-literals/-/plugin-transform-literals-7.0.0-rc.2.tgz",
+        "integrity": "sha512-lW0hoPqS4WhYgSQ0ifNk1tHn+e4OateqWXaM7BW7wZEU0dtP+RQ0x4z5Xghc7u82ZA4IwPN7mS1i201I7eT+dw==",
+        "fileCount": 5,
+        "unpackedSize": 1735,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbfGbKCRA9TVsSAnZWagAAdRAP/2mMw4KOGzcrmHWDIJKJ\nLRuISkwMxkcI06VuESRgY0eWGTIPVysWjJAgOdCY4Zxd9QWkDmkYczcCNN8t\nh5snF6ID8V6vtboC6JKylHqtV7me9/WzLGbZJCMQ+3/5ow80FJJ8aDwlq0Wu\nXf8QK+co9RyQCOEUrUC0IIJFHVBXb+v/62qvdju5Zav0tCGoqVyNHxBSuoL5\nQaKBXVHjYezksYE09xKcqLyK3qPzJ0GjEMPAQiWC/0RWoJIkrnOe/Ez7XByW\nFajH5uY1WWd6cpd6V1VIfK7PJUpG09qFqBqALqMAZURzfuHfPKmmZ50iNbE6\nAi/Lr1QWGJ7YfzIeHtFLo7ywH3MpcKd8xAZWCSPSRJf1cBvPkbGEM8zZFmy7\nIEdCOtdMrLlFVOPskHru5d9RbM8bjK15LNjBShJGFXe6wyn2b9UMbo85kqvE\nC8E3MksCpK1kBM336hJ+RnkLRvlByvqcSpU/rTRk7uyZxDJqGde+pDyP9rBI\n9FfhrbX0YQ0gWk9XCqcKpo/i8pIvzewRo98lcvzdjL3bZcUhM1h1BCH6h2Y6\n+HkTS11cIDzDL9B+AKyLZM6TrAbQyuOJ6nvQD9Xyaq/18J2Aos7JIS88Invf\nS6HTg+2DIQ5D6Q3dsMhOaQHwGdFipKSRgd/GxPz8aYDMe6fC7S3J6V0bNFOH\ndbyt\r\n=396+\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-literals_7.0.0-rc.2_1534879433606_0.5092060062758519"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-rc.3": {
+      "name": "@babel/plugin-transform-literals",
+      "version": "7.0.0-rc.3",
+      "description": "Compile ES2015 unicode string and number literals to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-literals"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-rc.3"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-rc.3",
+        "@babel/helper-plugin-test-runner": "7.0.0-rc.3"
+      },
+      "licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie <sebmck@gmail.com>\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/plugin-transform-literals@7.0.0-rc.3",
+      "dist": {
+        "shasum": "ec4df668a5065935aa80327ffc8265570361f8de",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-literals/-/plugin-transform-literals-7.0.0-rc.3.tgz",
+        "integrity": "sha512-H5neMOdnLN0Ho7pz4jg5gpDApDma/w5aY8HDvQcljdFqxlCwEAcxb7Fh5fFJtViKbT6V09hdD6g8FeU45osyVg==",
+        "fileCount": 6,
+        "unpackedSize": 2834,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbgEmACRA9TVsSAnZWagAAttAP/AnoBEKKOwe7vAdugDl6\n3y5MpsMa1oNvNo6wSb+xlXe4nmcZTeHd8zi2LoLbGQloIvhhr6h33ezfVTJR\n7nWtDd5QdEc9YWgJ2chLxIr0xrhxlZCJUXifPdKCZ0GO4W4ida+eTGQxSEWm\nwfkjGkbMeTaVe2dW3TC3SyB5OubGlKBGmZ1yWj6JuFAT4ONNvnwQotJU0h+P\ncWwHKqIyGzq9tNJ5uYZhulKAxSHwlPhzCrtbR0H111S+FHnCx0jkD6RYQ4ZD\ndhPyZ6rqtFAypnrrLiFMnyLZBnITrEowx7IU2Hhy1+oEwrlQoGFS6S5wxzsP\nUZvx/eo+Hw9XbMuGR1DTUVzqrgxemfUO1nrNZqFqZ0ULZTYyfg9TEHO1qyxX\nTfCCbGfKRUO1Uw+/2eJ5dRvv9kYbVyfLSTU624UXiZntXfUaPaBW3ph21+Q+\nxShCCkVFXzsvFm+Y9DWues9uwZ7ssOIGGKJfsk20fG/IhWWh3QnG9s833fGU\nD4l6rGRvlaADQi/b/nOQIfKMprXrf4p+0oRF/ycsdQKKo/1TWc+ClZbmM92o\n63db1lxFt7D7OXM/R9kxVm2k7tAN8uh5hWdw8DAGjzMeGF35AelS31wufePa\nNZdW8a4vXCTVqM/kqDrm2jQDMI+v8oHYUcj4B8gSjc6xY6UPogadaN+Q4oRe\nIoWA\r\n=7ebX\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-literals_7.0.0-rc.3_1535134079827_0.012249409050186122"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-rc.4": {
+      "name": "@babel/plugin-transform-literals",
+      "version": "7.0.0-rc.4",
+      "description": "Compile ES2015 unicode string and number literals to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-literals"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.0.0-rc.4"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.0.0-rc.4",
+        "@babel/helper-plugin-test-runner": "^7.0.0-rc.4"
+      },
+      "licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie <sebmck@gmail.com>\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/plugin-transform-literals@7.0.0-rc.4",
+      "dist": {
+        "shasum": "d75e69901a0ddfbd8b5cc4fac6f2b025c8f517d7",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-literals/-/plugin-transform-literals-7.0.0-rc.4.tgz",
+        "integrity": "sha512-umyI+/phV28VAiIICKsVSoY+HR1QwOxBlnJ9BRhNkF53OSPWDcBFv+yS9PhRWdjOyn8S3YcPAVKvhEdhR2pavA==",
+        "fileCount": 6,
+        "unpackedSize": 2837,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbhCpfCRA9TVsSAnZWagAABqkQAKPugAznkKu8i8g/Nehg\ne5AfTbL8+zE3yMSgcb/9VNPyLq15HTFc3MQBbuuTXAhPRKyOGsLQ+ikZOUwY\nZr1RLpUzrXpkI0Ljt+hmjXDwagpGnj0TFowRw8O6kmE3fRDmko/B5zBfqYa+\nvThKzr7sjah5vgZH7wjs1REDYWB3mAdUoEJp/HvzVn/5S+molK2IdvxIS1is\nBfbpqCJUPXeJjyKLqFh25y7YXN1yes/1TV0Q3UviKUQHfV+kw3pAkfEummbN\nYxBxAH0Sk0zuzUnjp857ta+xVvFbdzihAjJHt9md/k6CIZCcPiqJuI2Y8MBC\nFszkRacxy/eEo2fAG6HMq0+Os1ArbknRejW5h6HQ1wxKOnYX93EZ/JYviffO\n6IeKodivlRdW1mIW55NldFKYnA3vpYmtij3QpHSfBrfCLnnhUyZzDtNRcsqk\nYjD29KntkWNxCkEJjo5pQod1lzuYkRmPtQzT19cdd8pbNxcW4BmEkPCCSnbI\n9LKEquB5YkJnLFK8fOhOllMXjwAgKdBEVpzxwzH998/cKyfAJEYQaFJ7J2sR\nUtumvaEFmuYZDm7uD+rm5CBymLS9x9QdGF8Kchp6XlX9S4hXqORPS6kZg5UZ\nEgRBtcAiGZJhUYvtiuuOvTX6bNIjzWe//a4okyEM1ipH3Fn666hwPClzxdt1\nG8tY\r\n=Eb/Q\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-literals_7.0.0-rc.4_1535388255036_0.8485480919773392"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0": {
+      "name": "@babel/plugin-transform-literals",
+      "version": "7.0.0",
+      "description": "Compile ES2015 unicode string and number literals to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-literals"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.0.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.0.0",
+        "@babel/helper-plugin-test-runner": "^7.0.0"
+      },
+      "readmeFilename": "README.md",
+      "readme": "# @babel/plugin-transform-literals\n\n> Compile ES2015 unicode string and number literals to ES5\n\nSee our website [@babel/plugin-transform-literals](https://babeljs.io/docs/en/next/babel-plugin-transform-literals.html) for more information.\n\n## Install\n\nUsing npm:\n\n```sh\nnpm install --save-dev @babel/plugin-transform-literals\n```\n\nor using yarn:\n\n```sh\nyarn add @babel/plugin-transform-literals --dev\n```\n",
+      "licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie <sebmck@gmail.com>\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/plugin-transform-literals@7.0.0",
+      "dist": {
+        "shasum": "2aec1d29cdd24c407359c930cdd89e914ee8ff86",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-literals/-/plugin-transform-literals-7.0.0.tgz",
+        "integrity": "sha512-1NTDBWkeNXgpUcyoVFxbr9hS57EpZYXpje92zv0SUzjdu3enaRwF/l3cmyRnXLtIdyJASyiS6PtybK+CgKf7jA==",
+        "fileCount": 6,
+        "unpackedSize": 2817,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbhHBuCRA9TVsSAnZWagAA17QP/RgGt/UIGWm5UEq+nV9w\n8GxDKA67c53yVk8CNsiAeKmmerEXmuVCz8WAXl5ZoTG2w4qjLdMbvOfqzYD3\nB6v+luwRhL2G9STbYJcUo1J+E5moqrkurMmxYExDm4RotTK7O3GwnUseWXKq\nBZ5itXNERIX+43dv1LJ+zEMx3RY4EfHnxFV59iSUbHnNH5227k6cXCpuhJJw\nNKaDA4Bhlrn6usG8lVurQiW7hJMor265FShXNZt5YD7YryC0kNLB5Gi6YhCh\n77ZqBD5ruXyS3wXEsDksprArwcslA+8AkMuYf4d0xZGBLsdoEH7JK4UPOm/m\nL5McmYqzLvnO4ftu/e6IPcXlxTHePBiDqTmvHpH9Vr+bjVK1fsHIWTk0DLvt\njdy+juEiYgenBfxcwpaHk+rlthyG3KWfK7gEju5Txi1PQxe9V6BK4gWnRUbJ\nD95IwVcv8L0b3ihQF6d5xFI/cBFNZCUByAzFBD0XBxRkyw0UeWiCDq+cl16W\n06VL0for9co81NIawIsvZMWeyM7sV3DhtgiKuDUNrDat/kRV+bEGLI/BDgMD\nhkf0Q1RskOPJ3HMWctHm7RU8mx058/DgW3QEydBrx+uV9VgS03aPUpms32Vm\n4guyt/oOPiH27OXPaKYauiPerAZlZHpiAa5oAOxxzp8aVQGv3SuRMkNOkTR9\nHca6\r\n=eAZx\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-literals_7.0.0_1535406190315_0.9816401427865937"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.2.0": {
+      "name": "@babel/plugin-transform-literals",
+      "version": "7.2.0",
+      "description": "Compile ES2015 unicode string and number literals to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-literals"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.0.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.2.0",
+        "@babel/helper-plugin-test-runner": "^7.0.0"
+      },
+      "licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie and other contributors\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/plugin-transform-literals@7.2.0",
+      "dist": {
+        "shasum": "690353e81f9267dad4fd8cfd77eafa86aba53ea1",
+        "integrity": "sha512-2ThDhm4lI4oV7fVQ6pNNK+sx+c/GM5/SaML0w/r4ZB7sAneD/piDJtwdKlNckXeyGK7wlwg2E2w33C/Hh+VFCg==",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-literals/-/plugin-transform-literals-7.2.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 2902,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcBX2GCRA9TVsSAnZWagAAK9MP/iNBj8YFXZzhB8Kq2nd3\nDfGr6Khw3HscL3HM7frx+6liCfimJqgKNxxm4mMUegQT5TLAg/N7lpjbBI6t\nWZA2SCrO4c0jUYvYeG5oEvwCG35H1Folq+ak4xAYFZ/GjpO6k8Jd776rKqbk\nSnisVe9esScvG8/KARZnIW/4oaKzVHeKt3xYIoetk3OmEWZGGTdVyiuVkmMx\n9nik1bY1WV6S4m/mGjYZ/Qex87ot7rmu913Uybegzf2SS/CUwhRpCjhQxJPJ\nlktu3hS0UBoGj27+3kKa6OuouBmPHToDKjSF0VZLJ+aniC7XfFkFdBh2/Lea\nGXkoPP780E05+4c0tanuSPDX841ObtjT2WQGZ3vovJVAf18MBbup1dT108cf\nv533+X2DtB6SGc75H7v8Ljw3UXtfQciEaWe2A0VXWD47XQBqXWh/4ShqEbF8\n3MwcoSA4qz3t+aIzyr45Etd72XT03NHp9zKEVYwvMSC6R71BP73ckFleQ0z4\nYyryhH7z/x6d7pwRASNX4eSl58q6aT9+Lb2IaGKgxztm5awhYntWdb/7rCtp\nNAfPuvBJAHwXpvpOgLmiFHdB0joK8FWAiXVOZGMAU5AJhdY15Xia61Q47gBR\nkoBnDj6qDRDfH48IfKeqiwldrDJvof5LBtv4JaYN5Nj0eLx0eTsUVF1V4FR6\nL6lr\r\n=UP/J\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-literals_7.2.0_1543863685509_0.4281042504358339"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.7.4": {
+      "name": "@babel/plugin-transform-literals",
+      "version": "7.7.4",
+      "description": "Compile ES2015 unicode string and number literals to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-literals"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.0.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.7.4",
+        "@babel/helper-plugin-test-runner": "^7.7.4"
+      },
+      "gitHead": "75767d87cb147709b9bd9b99bf44daa6688874a9",
+      "_id": "@babel/plugin-transform-literals@7.7.4",
+      "_nodeVersion": "13.1.0",
+      "_npmVersion": "lerna/3.19.0/node@v13.1.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-X2MSV7LfJFm4aZfxd0yLVFrEXAgPqYoDG53Br/tCKiKYfX0MjVjQeWPIhPHHsCqzwQANq+FLN786fF5rgLS+gw==",
+        "shasum": "27fe87d2b5017a2a5a34d1c41a6b9f6a6262643e",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-literals/-/plugin-transform-literals-7.7.4.tgz",
+        "fileCount": 4,
+        "unpackedSize": 2860,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd2G/8CRA9TVsSAnZWagAAA90P/igG/Jc+sIhimt0BlxqU\ngtVo4OfmUUfzE2ZU73OgYvIWKF5gaayvy2Oa2MAUFULMi2DL3JgEeMwc77YU\nX8OV7SmHVvdisAGj7H62PhmV2TU+TBLsQhXATIGUYqi3m6HF4YNVcQ3v4Mwy\nAXqvsWD6xjA56nRwIJxepLjh9CCcyFDfTgCev4G53BavFWyn2O2XqyHVyYhe\n7MrcUuY4sipu+mK0dB0wjieqcc/Uq0uggWJltXrSvFt1yz76mh1k3P4rhWUx\nOzx4syCb+bOFy6F4yBVN2NCF/P/0BI3d956SPj2S3oeb3+w2KBlrGimSemJE\nSsyqe1b/PImsc9gGUAmyXnUox240yjggc2T1ar3YrhgeQ7sfjVHBkS/kB1IO\npbmlEvKIFS8vBri4LNnkpi6J0VNh7XYIZcNpkEZqdm++5GHgkpLnZxPHzLZV\nD/Skdmfo8FDcZP+tC7LMhT7i9I8XYsas0RQSzQJ5itCN/qfRkE5kt6+xRKZ6\nL2EXORJLWFtrsAvgFTvxNw4X6FYuJfxoXWXmGCdkocw2yWgeB455tnGEHsCs\nuo0NLfd92eKGHokgcGshu6rjLhqcAptF8jlM3EXPwu3qSRWMbO63teGHMv+Z\nYXf8geIMVDm3juCCr9OL4FHL1MAA1bJ5kcV57wTmDsL8/VQXtlUJiy35gEeX\nnfyG\r\n=bgWo\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "jason@developit.ca",
+          "name": "developit"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-literals_7.7.4_1574465531980_0.19436262823100803"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.8.0": {
+      "name": "@babel/plugin-transform-literals",
+      "version": "7.8.0",
+      "description": "Compile ES2015 unicode string and number literals to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-literals"
+      },
+      "license": "MIT",
+      "type": "commonjs",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.8.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.8.0",
+        "@babel/helper-plugin-test-runner": "^7.8.0"
+      },
+      "gitHead": "2486615a74580283c49475d66067bd7fcab3330e",
+      "_id": "@babel/plugin-transform-literals@7.8.0",
+      "_nodeVersion": "13.6.0",
+      "_npmVersion": "lerna/3.19.0/node@v13.6.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-7UDPKG+uVltsZt98Hw+rMbLg772r8fQC6YJ2fNDckcpAXgIWqQbMCmCpfYo0hBNhdhqocM73auk4P/zziQshQw==",
+        "shasum": "bda7a4773293ee9b687174eb4e1f91fe37ed576f",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-literals/-/plugin-transform-literals-7.8.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 2882,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeGmVgCRA9TVsSAnZWagAAXRAP/1nahSTcCwEJl7nhFnk4\n37f3mz0//Fr+A24jG3WaIjK55g9ojC403+bsgXiQSQVYWLCLz8Mr4iiarolU\noCw57NC+hyzzWCcQ0pL6KDedc4YANNorSSdQaJs0RNZGAGSeLR1v7YgPibp5\n/hFkFqQcwZM2SNKM4FJ+shRUXE8LIZRDE9y64UgaPrbxWMNJr4R2nwRq9hIN\np3oOOV8QtYkNjg0SoOziXsJpzvGwL4rdlGGz9LA316RvDlCGiW2XkqUeF3EU\ntJKrf7Bg3IPlScVpUqH46RFzFA6I6cPL7bxy0J6/xWWdxy6eWLuBVAY5hqdl\nqt/IGCtt0XDfzgNGdNg9eurBOruvU1WsLlWg7+GzmhC5gmDy20JsXo6upmV6\n9E9u5m13ObT4XfbVWCH/aCnYdm0IUEOt1NLvYJ8hy/sjUlmZDKRAugxc7Sip\ndA9m0zB6WmQ+pZ2TVMAyXr0EopK3PWcU5e19D9x1sytdHAZxmrEUYduR5PUz\nQDoqh2czhaUN8q6AqAArDtR28/wIardjv1t0Ujt83+3sknGil4vWZSFQbAyh\n9Cb66vAG5c6BzdcUOSgShPloQFFKMHgoEQV6+lLr0xsgyEec+TWav6i2L7ME\nkZeaY+LfBEkVlWUqifxO2anxEd85MosbgjKKW5ngcDOPbDx249lBsvqj2L6X\nPJnA\r\n=tAH+\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "jason@developit.ca",
+          "name": "developit"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-literals_7.8.0_1578788192253_0.03125669555237165"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.8.3": {
+      "name": "@babel/plugin-transform-literals",
+      "version": "7.8.3",
+      "description": "Compile ES2015 unicode string and number literals to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-literals"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.8.3"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.8.3",
+        "@babel/helper-plugin-test-runner": "^7.8.3"
+      },
+      "gitHead": "a7620bd266ae1345975767bbc7abf09034437017",
+      "_id": "@babel/plugin-transform-literals@7.8.3",
+      "_nodeVersion": "13.6.0",
+      "_npmVersion": "lerna/3.19.0/node@v13.6.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-3Tqf8JJ/qB7TeldGl+TT55+uQei9JfYaregDcEAyBZ7akutriFrt6C/wLYIer6OYhleVQvH/ntEhjE/xMmy10A==",
+        "shasum": "aef239823d91994ec7b68e55193525d76dbd5dc1",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-literals/-/plugin-transform-literals-7.8.3.tgz",
+        "fileCount": 4,
+        "unpackedSize": 2860,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeHOQOCRA9TVsSAnZWagAA8gsP/ihvvppDDVHWi3YKYAmg\nuyOfZVLcGAszFAHQiUPRL/yEDzxmyxzR9hsLE8RQ/J5dcOEzsa00SQQbasEd\n4jiBYwA5gZahtT3L3DtF87meWUOtkMPsJ47+NVzl5GtQlHg5711cL3c22eG+\nL8ZMl4x6y2a/QzrxlCeELpv9ZoPCo5G3GGoxR6lyXPDTgxuHNzEoVrNiMn0m\ntBwO4dOncHa95iTdEQI8Oex5HIAvUwUIZgT1tg4ThxC0nQY2GMeeLYLJ4r/W\nhqsbPEFK0iLRDY1VZN3P2C3MUQltqrbP5Og2Ye5Jd01Po7lXoMt6Ssr1W6LN\nkeNFmO0QwymQAyv1K6A3AnhDtifwaXx1uV/1CmPuShoABkjJA0A3eUQr6ars\n/i5mG+rp6d9iC5F/H6mPTHHdmhjf3TFSExvCZ7XvCzhvkA42giWU2m5/H3LJ\nwFJ7JIKoz2Y8O9njZKOlzIA55h3Vqy7tzle8ZGPPtaxbg3ppmXbv5hn2bswg\nTQnD3aa/iPvEepB35f122McF2LdYgd2ODFakkRezy3yjR56VxLDN3uC8h/fg\nI//Hk0zx2vumO7sOcqG9ELLBV0WyBrUdcTZVWLsy643v3MOrddHLeyq5hkAG\niqqH/YeZChw7H7CsHEWF2WfVPkd58meaqlu192BKUGnN0IEqfkB1uh9jxeLC\ng6AD\r\n=ZYVN\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "jason@developit.ca",
+          "name": "developit"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-literals_7.8.3_1578951693857_0.8855426810867251"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.10.1": {
+      "name": "@babel/plugin-transform-literals",
+      "version": "7.10.1",
+      "description": "Compile ES2015 unicode string and number literals to ES5",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/babel/babel.git",
+        "directory": "packages/babel-plugin-transform-literals"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.10.1"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.10.1",
+        "@babel/helper-plugin-test-runner": "^7.10.1"
+      },
+      "gitHead": "88f57a7ea659d25232bf62de1efceb5d6299b8cf",
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "homepage": "https://github.com/babel/babel#readme",
+      "_id": "@babel/plugin-transform-literals@7.10.1",
+      "_nodeVersion": "12.16.3",
+      "_npmVersion": "lerna/3.19.0/node@v12.16.3+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-qi0+5qgevz1NHLZroObRm5A+8JJtibb7vdcPQF1KQE12+Y/xxl8coJ+TpPW9iRq+Mhw/NKLjm+5SHtAHCC7lAw==",
+        "shasum": "5794f8da82846b22e4e6631ea1658bce708eb46a",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-literals/-/plugin-transform-literals-7.10.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 2912,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJezuSYCRA9TVsSAnZWagAAxFoP/RXpRX/NWMtqsShnCkJB\nTVVz1SwLJznBNJoUlcFNUMwmlnqMUX4BUcmBMLXqYSFA0GpNa/8DHrei0E1m\n9dLKwZceQljRAKMWzwqyonfq4rJ3XfXsTINPbIlNXERcIDSvKvusNFkA11R6\nVxNVt7jx166Hj6LUVYkBty75pTDDlODo+fnEcTAlbS9jh7A++EWoFhqRJfIU\nWjXuBlt4OPrwmqxfFDIE06oYX6LrPFFj5fvL5acpeN7RpuEJw52yDZ/fyMNp\nYamEA9M1KVdxoSYl/41sNAaeKRAx8YDO0cbVPsZ9CErI1frcyfGh7W+MhjEw\n09sswqcPFG9dh713J7T1Cyl3n8BmO9RiiUU5loldpnO/xNvJC3giL0lSWvo0\nV1+kdKM4/XGXWy1ijO9y++JkMOuDsNdpIYSCnLaUXvLxYxVtrZZoGvTSxX9T\ni1KBe5KwMfINt4as0nA8gtoifOJHiBp+eQrVYRGnYYe+BKklRhvoN6qJnK6M\nQhrVyHzI6zZXVnu0AwByF6Kau90ldL7HX4pF+rVFVW84iRuqAFYaVfzcG+LQ\niZuIf9pg7OR59To/w0qAiW+KS8rvRDPJ+RxbLkbOiSSWp5CXHC0elL4Q0zrG\nx/7vvoPJMgoOIADBZPrKiPmiMQJQqUv1vpw2pn6lqojU9SiH0jmkaSKVG8kb\nvkUS\r\n=ZdIE\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-literals_7.10.1_1590617240528_0.7713044412924539"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.10.4": {
+      "name": "@babel/plugin-transform-literals",
+      "version": "7.10.4",
+      "description": "Compile ES2015 unicode string and number literals to ES5",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/babel/babel.git",
+        "directory": "packages/babel-plugin-transform-literals"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.10.4"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.10.4",
+        "@babel/helper-plugin-test-runner": "^7.10.4"
+      },
+      "gitHead": "7fd40d86a0d03ff0e9c3ea16b29689945433d4df",
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "homepage": "https://github.com/babel/babel#readme",
+      "_id": "@babel/plugin-transform-literals@7.10.4",
+      "_nodeVersion": "14.4.0",
+      "_npmVersion": "lerna/3.19.0/node@v14.4.0+x64 (darwin)",
+      "dist": {
+        "integrity": "sha512-Xd/dFSTEVuUWnyZiMu76/InZxLTYilOSr1UlHV+p115Z/Le2Fi1KXkJUYz0b42DfndostYlPub3m8ZTQlMaiqQ==",
+        "shasum": "9f42ba0841100a135f22712d0e391c462f571f3c",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-literals/-/plugin-transform-literals-7.10.4.tgz",
+        "fileCount": 4,
+        "unpackedSize": 2912,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJe+zoiCRA9TVsSAnZWagAAP3kQAI0vwZj47V69iNyYc56v\nwPRxhpuQNpx9guE8jtCQpXLZ44iiEmcNiMoXh0mVo8h2JDcl/yEDqEo6PPUq\nlLO0+MQ1/r3H81HrMImPxxpZYc6TE/QB0iYSDtt8Z7/OoLWQAMQhnrYZ7npX\n941cw1bknUwG/Nn8IZoW5T4Qq8LDxbo8BJeBf612Ui3nwuTuhfu1gZyTMmEU\noqmUdKibrf+LHsUBonHUWLcFRKNl2JysQ3MzPcFwDFLOqabrdNmI3vHOfrtc\neHkr53cdBnDkqUilr+AJv6nPXzHJOaXTHPegmAqD1Kr2K4H8f2mvO8TfoMsy\nz68nuO3M3boA6GODc5VUhKhFR8/1RRjUW5rvDxUt8Gsl5fpWZWqA3K5Ol7KM\nt7xKcAjUIzUKOdxthKrgA16gKfs4kETrPfPHviz1wy0q5vjz3BB8nda/39Yw\n90lQ2aGAnMX684mbmaPoxPbeFXibkIXTzI6WhusPgN6l49MUojKTidSX7mKS\nOg4EkoWT86XYiZLlo81rHnJWK4TPkO6rvpvnoIMToDzDgRUsu/RQqBiyOXPJ\nMWEszBO4VshrlgVco1ps09UkFguItyHp9C/H0k8KOjmmR8OV9GyHASAkfaUb\nXb1J0I1KFlPI2khcJLzgiKmJFY0tyJDm2OXZOBVK5BkkE4/H2TVMjufavFQI\nzExL\r\n=lhc8\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "i@jhuang.me",
+          "name": "jlhwung"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "jlhwung",
+        "email": "i@jhuang.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-literals_7.10.4_1593522722489_0.958420083113007"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.12.1": {
+      "name": "@babel/plugin-transform-literals",
+      "version": "7.12.1",
+      "description": "Compile ES2015 unicode string and number literals to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel.git",
+        "directory": "packages/babel-plugin-transform-literals"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.10.4"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.12.1",
+        "@babel/helper-plugin-test-runner": "7.10.4"
+      },
+      "_id": "@babel/plugin-transform-literals@7.12.1",
+      "dist": {
+        "shasum": "d73b803a26b37017ddf9d3bb8f4dc58bfb806f57",
+        "integrity": "sha512-+PxVGA+2Ag6uGgL0A5f+9rklOnnMccwEBzwYFL3EUaKuiyVnUipyXncFcfjSkbimLrODoqki1U9XxZzTvfN7IQ==",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-literals/-/plugin-transform-literals-7.12.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 2853,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfiM/LCRA9TVsSAnZWagAAag0P/j6Fim5//R+CLlNaGQKt\nyLXnuVHFGMieizOluqhO8XplORvOGWNbOCZB4Ppegeu4/DZrdiClZpp0RGI2\nVpHzuony9wtj3bPddEiPh54hUjhqXqK7M3DFKeflxcxSs31V2BrVDVP85TFV\ndFqR4odpHn3fGUU4CxMUT0enL5ZXkWQ/ulHLNWCXsBXMe7j/+OHS7na2mNKQ\n7Q272dmiDT8vhxZMCMyi39jcDh1k7VX0xvbd6XMS5MzUh1YIl1Kz8RWD/NQJ\nmyrDoEuwrvj7U/YoZSAUwvYSxxqL0n32ptEkbImc60EEeXOVNcSOCdFdeJk8\nk/q8a2RdQMa2yO1rvEYF1KUX2dvRnxrIzvVCNQ0hHgO5WPxlyANs2A9qfisd\nR55d5Fq3qSyjvEn4KgvbdMjb9+oLAfLDeWSxT4LxfGP3I2lEU4mfdcE0I1Qq\nMG6BGSvhNUmYRS5iUZ1+ayJCdxBCx0x4LnvSoZI7o9AKclvhhf478p6/zdJO\ndEaQagg387NtPWMfyK+FA0lI/EVmwbMHdQuP45hp2zhRkuJ4fV21/BmXAIb2\nFrnaP+w7UD+VTG4fUNq46Cdvkkj1zuvLrwzsoFkqDhpboSNm41RT11xboRR6\nm7sXcBy/Q6RWntHQyDcGElE+msyfNhc6p0UpfCSiXJ+ciMcvMvjgnDv3jtb5\nZBUa\r\n=1ghW\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "jlhwung",
+          "email": "i@jhuang.me"
+        },
+        {
+          "name": "nicolo-ribaudo",
+          "email": "nicolo.ribaudo@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "danez",
+          "email": "daniel@tschinder.de"
+        },
+        {
+          "name": "existentialism",
+          "email": "bng412@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-literals_7.12.1_1602801610823_0.9749524364774893"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "",
+  "maintainers": [
+    {
+      "name": "jlhwung",
+      "email": "i@jhuang.me"
+    },
+    {
+      "name": "nicolo-ribaudo",
+      "email": "nicolo.ribaudo@gmail.com"
+    },
+    {
+      "name": "hzoo",
+      "email": "hi@henryzoo.com"
+    },
+    {
+      "name": "loganfsmyth",
+      "email": "loganfsmyth@gmail.com"
+    },
+    {
+      "name": "danez",
+      "email": "daniel@tschinder.de"
+    },
+    {
+      "name": "existentialism",
+      "email": "bng412@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-10-15T22:40:14.800Z",
+    "created": "2017-10-30T18:34:39.511Z",
+    "7.0.0-beta.4": "2017-10-30T18:34:39.511Z",
+    "7.0.0-beta.5": "2017-10-30T20:56:18.824Z",
+    "7.0.0-beta.31": "2017-11-03T20:03:25.301Z",
+    "7.0.0-beta.32": "2017-11-12T13:33:16.696Z",
+    "7.0.0-beta.33": "2017-12-01T14:28:18.814Z",
+    "7.0.0-beta.34": "2017-12-02T14:39:20.013Z",
+    "7.0.0-beta.35": "2017-12-14T21:47:46.485Z",
+    "7.0.0-beta.36": "2017-12-25T19:04:37.238Z",
+    "7.0.0-beta.37": "2018-01-08T16:02:30.886Z",
+    "7.0.0-beta.38": "2018-01-17T16:31:53.323Z",
+    "7.0.0-beta.39": "2018-01-30T20:27:33.596Z",
+    "7.0.0-beta.40": "2018-02-12T16:41:36.175Z",
+    "7.0.0-beta.41": "2018-03-14T16:26:09.250Z",
+    "7.0.0-beta.42": "2018-03-15T20:50:44.016Z",
+    "7.0.0-beta.43": "2018-04-02T16:48:25.964Z",
+    "7.0.0-beta.44": "2018-04-02T22:20:07.379Z",
+    "7.0.0-beta.45": "2018-04-23T01:56:51.880Z",
+    "7.0.0-beta.46": "2018-04-23T04:31:15.685Z",
+    "7.0.0-beta.47": "2018-05-15T00:08:59.049Z",
+    "7.0.0-beta.48": "2018-05-24T19:22:28.162Z",
+    "7.0.0-beta.49": "2018-05-25T16:02:10.883Z",
+    "7.0.0-beta.50": "2018-06-12T19:47:17.424Z",
+    "7.0.0-beta.51": "2018-06-12T21:19:50.136Z",
+    "7.0.0-beta.52": "2018-07-06T00:59:25.652Z",
+    "7.0.0-beta.53": "2018-07-11T13:40:15.721Z",
+    "7.0.0-beta.54": "2018-07-16T18:00:06.735Z",
+    "7.0.0-beta.55": "2018-07-28T22:07:17.391Z",
+    "7.0.0-beta.56": "2018-08-04T01:05:43.112Z",
+    "7.0.0-rc.0": "2018-08-09T15:58:19.707Z",
+    "7.0.0-rc.1": "2018-08-09T20:07:58.847Z",
+    "7.0.0-rc.2": "2018-08-21T19:23:53.707Z",
+    "7.0.0-rc.3": "2018-08-24T18:07:59.970Z",
+    "7.0.0-rc.4": "2018-08-27T16:44:15.152Z",
+    "7.0.0": "2018-08-27T21:43:10.411Z",
+    "7.2.0": "2018-12-03T19:01:25.632Z",
+    "7.7.4": "2019-11-22T23:32:12.082Z",
+    "7.8.0": "2020-01-12T00:16:32.421Z",
+    "7.8.3": "2020-01-13T21:41:33.951Z",
+    "7.10.1": "2020-05-27T22:07:20.638Z",
+    "7.10.4": "2020-06-30T13:12:02.621Z",
+    "7.12.1": "2020-10-15T22:40:11.000Z"
+  },
+  "keywords": [
+    "babel-plugin"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/babel/babel.git",
+    "directory": "packages/babel-plugin-transform-literals"
+  },
+  "license": "MIT",
+  "readmeFilename": ""
+}

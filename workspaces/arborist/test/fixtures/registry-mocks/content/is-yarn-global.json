@@ -1,0 +1,189 @@
+{
+  "_id": "is-yarn-global",
+  "_rev": "3-edca055808732271cef18aedeff74dfd",
+  "name": "is-yarn-global",
+  "description": "Check if installed by yarn globally without any `fs` calls",
+  "dist-tags": {
+    "latest": "0.3.0"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "is-yarn-global",
+      "version": "0.1.0",
+      "description": "Check if installed by yarn globally without `fs` calls",
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/LitoMore/is-yarn-global.git"
+      },
+      "author": {
+        "name": "LitoMore",
+        "url": "litomore@gmail.com"
+      },
+      "license": "MIT",
+      "scripts": {
+        "test": "xo"
+      },
+      "devDependencies": {
+        "ava": "^0.24.0",
+        "xo": "^0.18.2"
+      },
+      "gitHead": "8aaef2fa94287b26445021453a9a53dc701e8048",
+      "bugs": {
+        "url": "https://github.com/LitoMore/is-yarn-global/issues"
+      },
+      "homepage": "https://github.com/LitoMore/is-yarn-global#readme",
+      "_id": "is-yarn-global@0.1.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.4.0",
+      "_npmUser": {
+        "name": "litomore",
+        "email": "litomore@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-BHPiOiHE2Stg+jSGn/caMIwj2g6hyrqqDH2rLLC7s6ePTxOQMMHjFpM0ULBjy33EjCJIj0Hv4B/tqMm90qMUiA==",
+        "shasum": "40568e264ac6b3f8d7a3cc34d64bdb55024ae8ac",
+        "tarball": "https://registry.npmjs.org/is-yarn-global/-/is-yarn-global-0.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "litomore",
+          "email": "litomore@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is-yarn-global-0.1.0.tgz_1515740892468_0.0031138169579207897"
+      },
+      "directories": {}
+    },
+    "0.2.0": {
+      "name": "is-yarn-global",
+      "version": "0.2.0",
+      "description": "Check if installed by yarn globally without any `fs` calls",
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/LitoMore/is-yarn-global.git"
+      },
+      "author": {
+        "name": "LitoMore",
+        "url": "litomore@gmail.com"
+      },
+      "license": "MIT",
+      "scripts": {
+        "test": "xo"
+      },
+      "devDependencies": {
+        "ava": "^0.24.0",
+        "xo": "^0.18.2"
+      },
+      "gitHead": "316891858ae28619eba3bbdfc84ca5177c08c7c2",
+      "bugs": {
+        "url": "https://github.com/LitoMore/is-yarn-global/issues"
+      },
+      "homepage": "https://github.com/LitoMore/is-yarn-global#readme",
+      "_id": "is-yarn-global@0.2.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.4.0",
+      "_npmUser": {
+        "name": "litomore",
+        "email": "litomore@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-q7WjzuxHAUmjR0AdYpNvtpAJQKwbXHltsJpQEt6SJopap+TTDkptV4tkP5rlGQ/RiAdHbAgEFjrElAnvCvGxWw==",
+        "shasum": "f0d0910d0c0b527e6b5934ac15e5310dc60d53e8",
+        "tarball": "https://registry.npmjs.org/is-yarn-global/-/is-yarn-global-0.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "litomore",
+          "email": "litomore@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is-yarn-global-0.2.0.tgz_1516683238635_0.3134198437910527"
+      },
+      "directories": {}
+    },
+    "0.3.0": {
+      "name": "is-yarn-global",
+      "version": "0.3.0",
+      "description": "Check if installed by yarn globally without any `fs` calls",
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/LitoMore/is-yarn-global.git"
+      },
+      "author": {
+        "name": "LitoMore",
+        "url": "litomore@gmail.com"
+      },
+      "license": "MIT",
+      "scripts": {
+        "test": "xo"
+      },
+      "devDependencies": {
+        "ava": "^0.24.0",
+        "xo": "^0.18.2"
+      },
+      "gitHead": "8f327b0ed2c3a22d213cf372074ae9fdda0687e6",
+      "bugs": {
+        "url": "https://github.com/LitoMore/is-yarn-global/issues"
+      },
+      "homepage": "https://github.com/LitoMore/is-yarn-global#readme",
+      "_id": "is-yarn-global@0.3.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.4.0",
+      "_npmUser": {
+        "name": "litomore",
+        "email": "litomore@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-VjSeb/lHmkoyd8ryPVIKvOCn4D1koMqY+vqyjjUfc3xyKtP4dYOxM44sZrnqQSzSds3xyOrUTLTC9LVCVgLngw==",
+        "shasum": "d502d3382590ea3004893746754c89139973e232",
+        "tarball": "https://registry.npmjs.org/is-yarn-global/-/is-yarn-global-0.3.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 2552
+      },
+      "maintainers": [
+        {
+          "name": "litomore",
+          "email": "litomore@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is-yarn-global_0.3.0_1518685360730_0.27453532928202296"
+      }
+    }
+  },
+  "readme": "# is-yarn-global\n\n[![](https://img.shields.io/travis/LitoMore/is-yarn-global/master.svg)](https://travis-ci.org/LitoMore/is-yarn-global)\n[![](https://img.shields.io/npm/v/is-yarn-global.svg)](https://www.npmjs.com/package/is-yarn-global)\n[![](https://img.shields.io/npm/l/is-yarn-global.svg)](https://github.com/LitoMore/is-yarn-global/blob/master/LICENSE)\n[![](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)\n\nCheck if installed by yarn globally without any `fs` calls\n\n## Install\n\n```bash\n$ npm install is-yarn-global\n```\n\n## Usage\n\nJust require it in your package.\n\n```javascript\nconst isYarnGlobal = require('is-yarn-global');\n\nconsole.log(isYarnGlobal());\n```\n\n## License\n\nMIT © [LitoMore](https://github.com/LitoMore)\n",
+  "maintainers": [
+    {
+      "name": "litomore",
+      "email": "litomore@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2018-02-15T09:02:42.689Z",
+    "created": "2018-01-12T07:08:12.612Z",
+    "0.1.0": "2018-01-12T07:08:12.612Z",
+    "0.2.0": "2018-01-23T04:53:58.725Z",
+    "0.3.0": "2018-02-15T09:02:41.624Z"
+  },
+  "homepage": "https://github.com/LitoMore/is-yarn-global#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/LitoMore/is-yarn-global.git"
+  },
+  "author": {
+    "name": "LitoMore",
+    "url": "litomore@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/LitoMore/is-yarn-global/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "_attachments": {}
+}

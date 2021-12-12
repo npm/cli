@@ -1,0 +1,173 @@
+{
+  "_id": "@babel/helper-validator-option",
+  "_rev": "1-9bfebc82a5a92c2e8d038d5e219e2adb",
+  "name": "@babel/helper-validator-option",
+  "dist-tags": {
+    "latest": "7.12.1"
+  },
+  "versions": {
+    "7.12.0": {
+      "name": "@babel/helper-validator-option",
+      "version": "7.12.0",
+      "description": "Validate plugin/preset options",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel.git",
+        "directory": "packages/babel-helper-validator-option"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "./lib/index.js",
+      "exports": "./lib/index.js",
+      "_id": "@babel/helper-validator-option@7.12.0",
+      "dist": {
+        "shasum": "1d1fc48a9b69763da61b892774b0df89aee1c969",
+        "integrity": "sha512-NRfKaAQw/JCMsTFUdJI6cp4MoJGGVBRQTRSiW1nwlGldNqzjB9jqWI0SZqQksC724dJoKqwG+QqfS9ib7SoVsw==",
+        "tarball": "https://registry.npmjs.org/@babel/helper-validator-option/-/helper-validator-option-7.12.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 4446,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfh1lbCRA9TVsSAnZWagAA06kP/22/azOIbd0m4z3r7Ky1\nbyUz6BvnRc/TnnQvwk5xopeyel+PI6vcuBCOsjdS9ll3TSmuiHBt0lwLULbJ\nEHl6kNEJFLSta6GW2TOidZA4CYxUzsgKpCABJ43AXsSop8WE5YaJrEtzXNoI\nan56eli25kfFBreki9vYIm7vHbDF9FqS/Gf91G5T3dk+eX1T/RLv6kTbQp7b\nv6jyaxnaXj2WPSmjE/0hLySxeHY+7dGcVQzT3/L2rQTdG31gend41HXWtLPb\nJvBg9mmeCg3n7eA52FBkOncymyqB5SRNZQi8sj8FJMUnA+hnqYlEhKnhtCBE\n1XcGzj+bgPzWMCTCxCUvz/Z8iHsf4ulMEeZUFl2hMXUuC6ALfuEZcEyqkwFk\nQryF4keNz08GUBP3+OwgT1Ow5KdN6gV9j4AcY8M2720PWMwz1hSfW+F/HTgc\nbpywUrNxcaqdf3UKE++foKr75tsintEBo2DRwVLdD7WyPZ1TqHz+VKAKpuqI\nhB5IpyaxnlJvkwhkLBstcs+qg2mePZ7948oiB6ULmhDK/Q7xgLO2c2TSWnNq\nTl6n562H3EesgDNxfC5a4IolyVEcQFUB/dNufTdvXaEMBeSepKw6pSH9KX29\nu81DlTUFzz0f91laCunnzOHccoxD4IepdQJ2PKYwEVnPoOIiJfYK59HPVp+M\n7T3P\r\n=UcKU\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "jlhwung",
+          "email": "i@jhuang.me"
+        },
+        {
+          "name": "nicolo-ribaudo",
+          "email": "nicolo.ribaudo@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "danez",
+          "email": "daniel@tschinder.de"
+        },
+        {
+          "name": "existentialism",
+          "email": "bng412@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-validator-option_7.12.0_1602705754883_0.3419333339795487"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.12.1": {
+      "name": "@babel/helper-validator-option",
+      "version": "7.12.1",
+      "description": "Validate plugin/preset options",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel.git",
+        "directory": "packages/babel-helper-validator-option"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "./lib/index.js",
+      "exports": "./lib/index.js",
+      "_id": "@babel/helper-validator-option@7.12.1",
+      "dist": {
+        "shasum": "175567380c3e77d60ff98a54bb015fe78f2178d9",
+        "integrity": "sha512-YpJabsXlJVWP0USHjnC/AQDTLlZERbON577YUVO/wLpqyj6HAtVYnWaQaN0iUN+1/tWn3c+uKKXjRut5115Y2A==",
+        "tarball": "https://registry.npmjs.org/@babel/helper-validator-option/-/helper-validator-option-7.12.1.tgz",
+        "fileCount": 6,
+        "unpackedSize": 4446,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfiM+XCRA9TVsSAnZWagAARMIP/1oElgEAzk6y9So/GDQ1\n6UITFoSIfzzQaEJ7yTI3voGGIPUv2QsUL8IeIM0Wm3QPAyGZ2a9PmDW7GgIx\nwyA0Qn44mxwsdCJ3BkNP/yHO3/YkIWT8n14+w8Dv+SIS/uhqagL8fj5HHGBo\n0esfhYOQL00rmjDebXx+Ya13JI4w12l8PkXyrisIViregPdk5dfPKrtd7hZq\nLv1mdjc+JxyBRDv3QvLDnZ6ASZVaOSNhYTzv4PftnziIQ9X7KHaS9ExqGCnK\ne5w545l80vPH8B4GLyhnF48edW5n8moA3qeg6JkYmgpBZAQrSQeSR5tDqaof\ns7KQUe6l3hmsiNVuHPz2503EShCG8uZhiWtefMLqtEYCTh9g5wB9phNyO00L\nWWpxR2+chBRvKKJGyhXasQSnr5qLXU0hms2M2iGxV2VLnczavt55rhTjGczA\n1QBamGBsCYcsn+VgW/wPv8LDBl08yaR75/+SfbYb8wlhfYk892h16p8Mj8df\nYUocY6iEkFB+crj6USjGpqIomyczaMvfsXojtUR+z64ZUn/chkCM2E7ArCaY\n85mIUTyFccjtyFxKqC8xzf0VbiqAHrCCPw/UJ+vw1LrN2SMAe0Ay4Bh1hfax\nDhOl96HlDsMftaojzGSwSBzGZ8Dx/UpLnaAfGACi2Yd2uGVOPQ6pJhQKBMLv\nq2f6\r\n=BUf+\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "jlhwung",
+          "email": "i@jhuang.me"
+        },
+        {
+          "name": "nicolo-ribaudo",
+          "email": "nicolo.ribaudo@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "danez",
+          "email": "daniel@tschinder.de"
+        },
+        {
+          "name": "existentialism",
+          "email": "bng412@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-validator-option_7.12.1_1602801559451_0.8035683032542031"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2020-10-14T20:02:34.621Z",
+    "7.12.0": "2020-10-14T20:02:35.036Z",
+    "modified": "2020-10-15T22:39:21.996Z",
+    "7.12.1": "2020-10-15T22:39:19.635Z"
+  },
+  "maintainers": [
+    {
+      "name": "jlhwung",
+      "email": "i@jhuang.me"
+    },
+    {
+      "name": "nicolo-ribaudo",
+      "email": "nicolo.ribaudo@gmail.com"
+    },
+    {
+      "name": "hzoo",
+      "email": "hi@henryzoo.com"
+    },
+    {
+      "name": "loganfsmyth",
+      "email": "loganfsmyth@gmail.com"
+    },
+    {
+      "name": "danez",
+      "email": "daniel@tschinder.de"
+    },
+    {
+      "name": "existentialism",
+      "email": "bng412@gmail.com"
+    }
+  ],
+  "description": "Validate plugin/preset options",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/babel/babel.git",
+    "directory": "packages/babel-helper-validator-option"
+  },
+  "license": "MIT",
+  "readme": "",
+  "readmeFilename": ""
+}

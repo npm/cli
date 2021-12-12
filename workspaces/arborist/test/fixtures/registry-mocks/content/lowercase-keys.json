@@ -1,0 +1,256 @@
+{
+  "_id": "lowercase-keys",
+  "_rev": "8-1028c2619c20873a124e429cfc72ce97",
+  "name": "lowercase-keys",
+  "description": "Lowercase the keys of an object",
+  "dist-tags": {
+    "latest": "2.0.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "lowercase-keys",
+      "version": "1.0.0",
+      "description": "Lowercase the keys of an object",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/lowercase-keys"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "object",
+        "assign",
+        "extend",
+        "properties",
+        "lowercase",
+        "lower-case",
+        "case",
+        "keys",
+        "key"
+      ],
+      "devDependencies": {
+        "ava": "0.0.4"
+      },
+      "gitHead": "4b1423164b551faa7a51a5b8f903c51e00c0ea94",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/lowercase-keys/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/lowercase-keys",
+      "_id": "lowercase-keys@1.0.0",
+      "_shasum": "4e3366b39e7f5457e35f1324bdf6f88d0bfc7306",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "4e3366b39e7f5457e35f1324bdf6f88d0bfc7306",
+        "tarball": "https://registry.npmjs.org/lowercase-keys/-/lowercase-keys-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "lowercase-keys",
+      "version": "1.0.1",
+      "description": "Lowercase the keys of an object",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/lowercase-keys.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "object",
+        "assign",
+        "extend",
+        "properties",
+        "lowercase",
+        "lower-case",
+        "case",
+        "keys",
+        "key"
+      ],
+      "devDependencies": {
+        "ava": "*"
+      },
+      "gitHead": "f1ec3a8fb1ddb2c39f434e0e7a6817dee31b5286",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/lowercase-keys/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/lowercase-keys#readme",
+      "_id": "lowercase-keys@1.0.1",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-G2Lj61tXDnVFFOi8VZds+SoQjtQC3dgokKdDG2mTm1tx4m50NUHBOZSBwQQHyy0V12A0JTG4icfZQH+xPyh8VA==",
+        "shasum": "6f9e30b47084d971a7c820ff15a6c5167b74c26f",
+        "tarball": "https://registry.npmjs.org/lowercase-keys/-/lowercase-keys-1.0.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 2456
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/lowercase-keys_1.0.1_1521791527950_0.21725272730080625"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.0": {
+      "name": "lowercase-keys",
+      "version": "2.0.0",
+      "description": "Lowercase the keys of an object",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/lowercase-keys.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "object",
+        "assign",
+        "extend",
+        "properties",
+        "lowercase",
+        "lower-case",
+        "case",
+        "keys",
+        "key"
+      ],
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "628be98fd3b9a1e19baca3ea6f2f8a1266342399",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/lowercase-keys/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/lowercase-keys#readme",
+      "_id": "lowercase-keys@2.0.0",
+      "_nodeVersion": "10.15.3",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-tqNXrS78oMOE73NMxK4EMLQsQowWf8jKooH9g7xPavRT706R6bkQJ6DY2Te7QukaZsulxa30wQ7bk0pm4XiHmA==",
+        "shasum": "2603e78b7b4b0006cbca2fbcc8a3202558ac9479",
+        "tarball": "https://registry.npmjs.org/lowercase-keys/-/lowercase-keys-2.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 2781,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcx8hECRA9TVsSAnZWagAAVnIQAJleVmbF2AwX6TU7txWi\nYpcCt/MXe1gyQ6YNCNDACqv4mtZdVJKgX0JFvYOgCU2IeFHvF+Gqj9xUzZs1\nGjyPmhWwUnf8un5iHpCnurDAy5+rcYZy2Iaiui2vEV+HbEpPHb6y/LPKZ1Ld\n4Q9awc45Jjb5ShVypWOBzMybu+Kk2/f3h6CKENBN5udYeCMfBh4H/ur0uWkc\n8wcdoSSRZ2KZbe+SCu9j7JP5LQcXPBUvY6mgCTiORUWfV5dAL4zr0JyouJ2G\nWU9Sg7X58eW6VBEsxw/7zGQOWPSKJVcHXyf3znA3YbFKElzIDTI8Oyt0GqRl\nV92hWXjs2j/M3B6qxeYGyfnP49zs99tPTFWMEkMLwnFv9yVvLhouM5qF3BWV\n9azY8WQLOgr65YDpYPh+WNosyhIdk3wxRCA+J6I5ao4PzrXjLzX4/wlGkcYF\nt0Et6bd/r+h3zYjif0UBtQgg6afxf1Rl9gmxWc/dx65Gx2sW/TJfD00Z+g2b\nhaj/EqjBj9Lh+0Q4K0Jd3OWggQhsuj0fvtm0UzDAOAKaJKU41Fq47DNsUg/C\neLNa1+gOFzzdtRqMzqLv3j0uET5qddISh7MvZSrfPBwP0ho/2PuHqsaQComI\nN73Vpwfcxf/W4knN5Uv9EWyoylN0BPzpFWfdmFYPbefIvsXelqNHaagZBOE5\nYm8j\r\n=wlhI\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/lowercase-keys_2.0.0_1556596803605_0.696179238892561"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# lowercase-keys [![Build Status](https://travis-ci.org/sindresorhus/lowercase-keys.svg?branch=master)](https://travis-ci.org/sindresorhus/lowercase-keys)\n\n> Lowercase the keys of an object\n\n\n## Install\n\n```\n$ npm install lowercase-keys\n```\n\n\n## Usage\n\n```js\nconst lowercaseKeys = require('lowercase-keys');\n\nlowercaseKeys({FOO: true, bAr: false});\n//=> {foo: true, bar: false}\n```\n\n\n## API\n\n### lowercaseKeys(object)\n\nReturns a new object with the keys lowercased.\n\n\n## License\n\nMIT © [Sindre Sorhus](https://sindresorhus.com)\n",
+  "maintainers": [
+    {
+      "name": "sindresorhus",
+      "email": "sindresorhus@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2019-04-30T04:00:06.315Z",
+    "created": "2015-01-24T07:59:47.603Z",
+    "1.0.0": "2015-01-24T07:59:47.603Z",
+    "1.0.1": "2018-03-23T07:52:08.060Z",
+    "2.0.0": "2019-04-30T04:00:03.746Z"
+  },
+  "homepage": "https://github.com/sindresorhus/lowercase-keys#readme",
+  "keywords": [
+    "object",
+    "assign",
+    "extend",
+    "properties",
+    "lowercase",
+    "lower-case",
+    "case",
+    "keys",
+    "key"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/lowercase-keys.git"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "bugs": {
+    "url": "https://github.com/sindresorhus/lowercase-keys/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md",
+  "users": {
+    "tobiasnickel": true,
+    "nickeltobias": true,
+    "rocket0191": true
+  }
+}

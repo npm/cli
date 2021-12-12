@@ -1,0 +1,2381 @@
+{
+  "_id": "set-value",
+  "_rev": "29-7551be204bad9a4cf1f467572cc073f6",
+  "name": "set-value",
+  "description": "Create nested values and any intermediaries using dot notation (`'a.b.c'`) paths.",
+  "dist-tags": {
+    "latest": "3.0.2",
+    "patch": "2.0.1"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "set-value",
+      "description": "Create nested values and any intermediaries dot notation (`'a.b.c'`) paths.",
+      "version": "0.1.0",
+      "homepage": "https://github.com/jonschlinkert/set-value",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/set-value.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/set-value/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/set-value/blob/master/LICENSE"
+      },
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "get-value": "^1.1.1",
+        "isobject": "^1.0.0"
+      },
+      "devDependencies": {
+        "mocha": "*",
+        "should": "^5.2.0"
+      },
+      "keywords": [
+        "get",
+        "has",
+        "hasown",
+        "key",
+        "keys",
+        "nested",
+        "notation",
+        "object",
+        "prop",
+        "properties",
+        "property",
+        "props",
+        "set",
+        "value",
+        "values"
+      ],
+      "gitHead": "43c3b1d84e316748991f72020bfeee4c337fc30b",
+      "_id": "set-value@0.1.0",
+      "_shasum": "f3291786834241b4b6a0407b0e81630e13b45496",
+      "_from": ".",
+      "_npmVersion": "2.7.1",
+      "_nodeVersion": "1.6.2",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "f3291786834241b4b6a0407b0e81630e13b45496",
+        "tarball": "https://registry.npmjs.org/set-value/-/set-value-0.1.0.tgz"
+      },
+      "directories": {},
+      "deprecated": "Critical bug fixed in v3.0.1, please upgrade to the latest version."
+    },
+    "0.1.1": {
+      "name": "set-value",
+      "description": "Create nested values and any intermediaries dot notation (`'a.b.c'`) paths.",
+      "version": "0.1.1",
+      "homepage": "https://github.com/jonschlinkert/set-value",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/set-value.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/set-value/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/set-value/blob/master/LICENSE"
+      },
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "get-value": "^1.1.1",
+        "isobject": "^1.0.0",
+        "noncharacters": "^1.1.0"
+      },
+      "devDependencies": {
+        "mocha": "*",
+        "should": "^5.2.0"
+      },
+      "keywords": [
+        "get",
+        "has",
+        "hasown",
+        "key",
+        "keys",
+        "nested",
+        "notation",
+        "object",
+        "prop",
+        "properties",
+        "property",
+        "props",
+        "set",
+        "value",
+        "values"
+      ],
+      "gitHead": "43c3b1d84e316748991f72020bfeee4c337fc30b",
+      "_id": "set-value@0.1.1",
+      "_shasum": "03ae22c42199dc35d507b9005aaac52fecddca56",
+      "_from": ".",
+      "_npmVersion": "2.7.1",
+      "_nodeVersion": "1.6.2",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "03ae22c42199dc35d507b9005aaac52fecddca56",
+        "tarball": "https://registry.npmjs.org/set-value/-/set-value-0.1.1.tgz"
+      },
+      "directories": {},
+      "deprecated": "Critical bug fixed in v3.0.1, please upgrade to the latest version."
+    },
+    "0.1.2": {
+      "name": "set-value",
+      "description": "Create nested values and any intermediaries dot notation (`'a.b.c'`) paths.",
+      "version": "0.1.2",
+      "homepage": "https://github.com/jonschlinkert/set-value",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/set-value.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/set-value/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/set-value/blob/master/LICENSE"
+      },
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "get-value": "^1.1.1",
+        "isobject": "^1.0.0",
+        "noncharacters": "^1.1.0"
+      },
+      "devDependencies": {
+        "mocha": "*",
+        "should": "^5.2.0"
+      },
+      "keywords": [
+        "get",
+        "has",
+        "hasown",
+        "key",
+        "keys",
+        "nested",
+        "notation",
+        "object",
+        "prop",
+        "properties",
+        "property",
+        "props",
+        "set",
+        "value",
+        "values"
+      ],
+      "gitHead": "ab95b8711b85d629d7b998d77f090769649e2f8c",
+      "_id": "set-value@0.1.2",
+      "_shasum": "5210e1dd91ffe7b50eedbebed236de044b220abc",
+      "_from": ".",
+      "_npmVersion": "2.7.1",
+      "_nodeVersion": "1.6.2",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "5210e1dd91ffe7b50eedbebed236de044b220abc",
+        "tarball": "https://registry.npmjs.org/set-value/-/set-value-0.1.2.tgz"
+      },
+      "directories": {},
+      "deprecated": "Critical bug fixed in v3.0.1, please upgrade to the latest version."
+    },
+    "0.1.3": {
+      "name": "set-value",
+      "description": "Create nested values and any intermediaries dot notation (`'a.b.c'`) paths.",
+      "version": "0.1.3",
+      "homepage": "https://github.com/jonschlinkert/set-value",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/set-value.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/set-value/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/set-value/blob/master/LICENSE"
+      },
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "get-value": "^1.1.1",
+        "isobject": "^1.0.0",
+        "noncharacters": "^1.1.0"
+      },
+      "devDependencies": {
+        "mocha": "*",
+        "should": "^5.2.0"
+      },
+      "keywords": [
+        "get",
+        "has",
+        "hasown",
+        "key",
+        "keys",
+        "nested",
+        "notation",
+        "object",
+        "prop",
+        "properties",
+        "property",
+        "props",
+        "set",
+        "value",
+        "values"
+      ],
+      "gitHead": "b79a46c1c769849f6eb5999870623e4e4e9d70bd",
+      "_id": "set-value@0.1.3",
+      "_shasum": "bd9c1a91a379f73b562f8c20e14546195357639e",
+      "_from": ".",
+      "_npmVersion": "2.7.1",
+      "_nodeVersion": "1.6.2",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "bd9c1a91a379f73b562f8c20e14546195357639e",
+        "tarball": "https://registry.npmjs.org/set-value/-/set-value-0.1.3.tgz"
+      },
+      "directories": {},
+      "deprecated": "Critical bug fixed in v3.0.1, please upgrade to the latest version."
+    },
+    "0.1.4": {
+      "name": "set-value",
+      "description": "Create nested values and any intermediaries using dot notation (`'a.b.c'`) paths.",
+      "version": "0.1.4",
+      "homepage": "https://github.com/jonschlinkert/set-value",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/set-value.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/set-value/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/set-value/blob/master/LICENSE"
+      },
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "get-value": "^1.1.3",
+        "isobject": "^1.0.0",
+        "noncharacters": "^1.1.0"
+      },
+      "devDependencies": {
+        "mocha": "*",
+        "should": "^5.2.0"
+      },
+      "keywords": [
+        "get",
+        "has",
+        "hasown",
+        "key",
+        "keys",
+        "nested",
+        "notation",
+        "object",
+        "prop",
+        "properties",
+        "property",
+        "props",
+        "set",
+        "value",
+        "values"
+      ],
+      "gitHead": "1889c97e396abc9f9961fc390a061f766ab5b600",
+      "_id": "set-value@0.1.4",
+      "_shasum": "95ff04064ae88b49828d12f0bba54cced3e1d20e",
+      "_from": ".",
+      "_npmVersion": "2.5.1",
+      "_nodeVersion": "0.12.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "95ff04064ae88b49828d12f0bba54cced3e1d20e",
+        "tarball": "https://registry.npmjs.org/set-value/-/set-value-0.1.4.tgz"
+      },
+      "directories": {},
+      "deprecated": "Critical bug fixed in v3.0.1, please upgrade to the latest version."
+    },
+    "0.1.6": {
+      "name": "set-value",
+      "description": "Create nested values and any intermediaries using dot notation (`'a.b.c'`) paths.",
+      "version": "0.1.6",
+      "homepage": "https://github.com/jonschlinkert/set-value",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/set-value.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/set-value/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/set-value/blob/master/LICENSE"
+      },
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "isobject": "^1.0.0",
+        "noncharacters": "^1.1.0"
+      },
+      "devDependencies": {
+        "mocha": "*",
+        "should": "^5.2.0"
+      },
+      "keywords": [
+        "get",
+        "has",
+        "hasown",
+        "key",
+        "keys",
+        "nested",
+        "notation",
+        "object",
+        "prop",
+        "properties",
+        "property",
+        "props",
+        "set",
+        "value",
+        "values"
+      ],
+      "gitHead": "e8e76e032a04af55d6e1abb3d9cf0150c9fb8967",
+      "_id": "set-value@0.1.6",
+      "_shasum": "df418ad48a797b4facead9f78b68fe1d0fde55a1",
+      "_from": ".",
+      "_npmVersion": "2.5.1",
+      "_nodeVersion": "0.12.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "df418ad48a797b4facead9f78b68fe1d0fde55a1",
+        "tarball": "https://registry.npmjs.org/set-value/-/set-value-0.1.6.tgz"
+      },
+      "directories": {},
+      "deprecated": "Critical bug fixed in v3.0.1, please upgrade to the latest version."
+    },
+    "0.2.0": {
+      "name": "set-value",
+      "description": "Create nested values and any intermediaries using dot notation (`'a.b.c'`) paths.",
+      "version": "0.2.0",
+      "homepage": "https://github.com/jonschlinkert/set-value",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/set-value.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/set-value/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/set-value/blob/master/LICENSE"
+      },
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "isobject": "^1.0.0",
+        "noncharacters": "^1.1.0"
+      },
+      "devDependencies": {
+        "mocha": "*",
+        "should": "^5.2.0"
+      },
+      "keywords": [
+        "get",
+        "has",
+        "hasown",
+        "key",
+        "keys",
+        "nested",
+        "notation",
+        "object",
+        "prop",
+        "properties",
+        "property",
+        "props",
+        "set",
+        "value",
+        "values"
+      ],
+      "gitHead": "d1017f8eb94096f9b9bb62da20fe3919ad662f56",
+      "_id": "set-value@0.2.0",
+      "_shasum": "73b0a6825c158c6a16a82bbdc95775bf2a825fab",
+      "_from": ".",
+      "_npmVersion": "2.5.1",
+      "_nodeVersion": "0.12.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "73b0a6825c158c6a16a82bbdc95775bf2a825fab",
+        "tarball": "https://registry.npmjs.org/set-value/-/set-value-0.2.0.tgz"
+      },
+      "directories": {},
+      "deprecated": "Critical bug fixed in v3.0.1, please upgrade to the latest version."
+    },
+    "0.3.0": {
+      "name": "set-value",
+      "description": "Create nested values and any intermediaries using dot notation (`'a.b.c'`) paths.",
+      "version": "0.3.0",
+      "homepage": "https://github.com/jonschlinkert/set-value",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/set-value.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/set-value/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "utils.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "extend-shallow": "^2.0.1",
+        "isobject": "^1.0.0",
+        "lazy-cache": "^0.2.4",
+        "to-object-path": "^0.2.0"
+      },
+      "devDependencies": {
+        "mocha": "^2.3.3",
+        "should": "^5.2.0"
+      },
+      "keywords": [
+        "get",
+        "has",
+        "hasown",
+        "key",
+        "keys",
+        "nested",
+        "notation",
+        "object",
+        "prop",
+        "properties",
+        "property",
+        "props",
+        "set",
+        "value",
+        "values"
+      ],
+      "verb": {
+        "related": {
+          "description": "",
+          "list": [
+            "assign-value",
+            "get-value",
+            "set-value",
+            "has-value",
+            "merge-value",
+            "omit-value",
+            "unset-value",
+            "union-value"
+          ]
+        }
+      },
+      "gitHead": "7df62d902410fd5e60c07c70b75094db09f75dc1",
+      "_id": "set-value@0.3.0",
+      "_shasum": "ff2124610ad0bb799a595a1f1f0ae0576a92e18c",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.1",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "ff2124610ad0bb799a595a1f1f0ae0576a92e18c",
+        "tarball": "https://registry.npmjs.org/set-value/-/set-value-0.3.0.tgz"
+      },
+      "directories": {},
+      "deprecated": "Critical bug fixed in v3.0.1, please upgrade to the latest version."
+    },
+    "0.3.1": {
+      "name": "set-value",
+      "description": "Create nested values and any intermediaries using dot notation (`'a.b.c'`) paths.",
+      "version": "0.3.1",
+      "homepage": "https://github.com/jonschlinkert/set-value",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/set-value.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/set-value/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "utils.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "extend-shallow": "^2.0.1",
+        "isobject": "^2.0.0",
+        "lazy-cache": "^0.2.4",
+        "to-object-path": "^0.2.0"
+      },
+      "devDependencies": {
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "get",
+        "has",
+        "hasown",
+        "key",
+        "keys",
+        "nested",
+        "notation",
+        "object",
+        "prop",
+        "properties",
+        "property",
+        "props",
+        "set",
+        "value",
+        "values"
+      ],
+      "gitHead": "1edfb793dc72e79c4741ce2a7c4c7029425040c6",
+      "_id": "set-value@0.3.1",
+      "_shasum": "00237610979dd64ddeaa0ad07b0bec0bfecfcc51",
+      "_from": ".",
+      "_npmVersion": "3.3.6",
+      "_nodeVersion": "5.0.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "00237610979dd64ddeaa0ad07b0bec0bfecfcc51",
+        "tarball": "https://registry.npmjs.org/set-value/-/set-value-0.3.1.tgz"
+      },
+      "directories": {},
+      "deprecated": "Critical bug fixed in v3.0.1, please upgrade to the latest version."
+    },
+    "0.3.2": {
+      "name": "set-value",
+      "description": "Create nested values and any intermediaries using dot notation (`'a.b.c'`) paths.",
+      "version": "0.3.2",
+      "homepage": "https://github.com/jonschlinkert/set-value",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/set-value.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/set-value/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "utils.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "extend-shallow": "^2.0.1",
+        "isobject": "^2.0.0",
+        "lazy-cache": "^0.2.4",
+        "to-object-path": "^0.2.0"
+      },
+      "devDependencies": {
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "get",
+        "has",
+        "hasown",
+        "key",
+        "keys",
+        "nested",
+        "notation",
+        "object",
+        "prop",
+        "properties",
+        "property",
+        "props",
+        "set",
+        "value",
+        "values"
+      ],
+      "verb": {
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "description": "",
+          "list": [
+            "assign-value",
+            "get-value",
+            "set-value",
+            "has-value",
+            "merge-value",
+            "omit-value",
+            "unset-value",
+            "union-value"
+          ]
+        }
+      },
+      "gitHead": "93091bbb45727747ceeba5424fecd76ccf93ec4d",
+      "_id": "set-value@0.3.2",
+      "_shasum": "b7f433358147a4c30b66b89ad653ba8ce8034254",
+      "_from": ".",
+      "_npmVersion": "3.3.6",
+      "_nodeVersion": "5.0.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "b7f433358147a4c30b66b89ad653ba8ce8034254",
+        "tarball": "https://registry.npmjs.org/set-value/-/set-value-0.3.2.tgz"
+      },
+      "directories": {},
+      "deprecated": "Critical bug fixed in v3.0.1, please upgrade to the latest version."
+    },
+    "0.3.3": {
+      "name": "set-value",
+      "description": "Create nested values and any intermediaries using dot notation (`'a.b.c'`) paths.",
+      "version": "0.3.3",
+      "homepage": "https://github.com/jonschlinkert/set-value",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/set-value.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/set-value/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "extend-shallow": "^2.0.1",
+        "isobject": "^2.0.0",
+        "to-object-path": "^0.2.0"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^0.1.5",
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "get",
+        "has",
+        "hasown",
+        "key",
+        "keys",
+        "nested",
+        "notation",
+        "object",
+        "prop",
+        "properties",
+        "property",
+        "props",
+        "set",
+        "value",
+        "values"
+      ],
+      "verb": {
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "description": "",
+          "list": [
+            "assign-value",
+            "get-value",
+            "set-value",
+            "has-value",
+            "merge-value",
+            "omit-value",
+            "unset-value",
+            "union-value"
+          ]
+        }
+      },
+      "gitHead": "cace33a10c9222de80a5cb2839d4166239c34b1e",
+      "_id": "set-value@0.3.3",
+      "_shasum": "b81223681638a1088fd88a435b8a9d32dae8d9ba",
+      "_from": ".",
+      "_npmVersion": "3.3.12",
+      "_nodeVersion": "5.3.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "b81223681638a1088fd88a435b8a9d32dae8d9ba",
+        "tarball": "https://registry.npmjs.org/set-value/-/set-value-0.3.3.tgz"
+      },
+      "directories": {},
+      "deprecated": "Critical bug fixed in v3.0.1, please upgrade to the latest version."
+    },
+    "0.4.0": {
+      "name": "set-value",
+      "description": "Create nested values and any intermediaries using dot notation (`'a.b.c'`) paths.",
+      "version": "0.4.0",
+      "homepage": "https://github.com/jonschlinkert/set-value",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Jon Schlinkert",
+          "email": "jon.schlinkert@sellside.com",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "name": "Vadim Demedes",
+          "email": "vdemedes@gmail.com",
+          "url": "https://ava.li"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/set-value.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/set-value/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "extend-shallow": "^2.0.1",
+        "is-plain-object": "^2.0.1",
+        "to-object-path": "^0.2.0"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^0.1.10",
+        "mocha": "^3.0.2"
+      },
+      "keywords": [
+        "get",
+        "has",
+        "hasown",
+        "key",
+        "keys",
+        "nested",
+        "notation",
+        "object",
+        "prop",
+        "properties",
+        "property",
+        "props",
+        "set",
+        "value",
+        "values"
+      ],
+      "verb": {
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "description": "",
+          "list": [
+            "assign-value",
+            "get-value",
+            "has-value",
+            "merge-value",
+            "omit-value",
+            "set-value",
+            "union-value",
+            "unset-value"
+          ]
+        }
+      },
+      "gitHead": "bd40aff1fedecbb60d9bf0edcc950ecb937e5dbd",
+      "_id": "set-value@0.4.0",
+      "_shasum": "71f202606a9fcb799010c2cd78ae42fe501e9aee",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.3.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "71f202606a9fcb799010c2cd78ae42fe501e9aee",
+        "tarball": "https://registry.npmjs.org/set-value/-/set-value-0.4.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/set-value-0.4.0.tgz_1473086353963_0.9771498497575521"
+      },
+      "directories": {},
+      "deprecated": "Critical bug fixed in v3.0.1, please upgrade to the latest version."
+    },
+    "0.4.1": {
+      "name": "set-value",
+      "description": "Create nested values and any intermediaries using dot notation (`'a.b.c'`) paths.",
+      "version": "0.4.1",
+      "homepage": "https://github.com/jonschlinkert/set-value",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Jon Schlinkert",
+          "email": "jon.schlinkert@sellside.com",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "name": "Vadim Demedes",
+          "email": "vdemedes@gmail.com",
+          "url": "https://ava.li"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/set-value.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/set-value/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "extend-shallow": "^2.0.1",
+        "is-plain-object": "^2.0.1",
+        "to-object-path": "^0.3.0"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^0.1.10",
+        "mocha": "^3.0.2"
+      },
+      "keywords": [
+        "get",
+        "has",
+        "hasown",
+        "key",
+        "keys",
+        "nested",
+        "notation",
+        "object",
+        "prop",
+        "properties",
+        "property",
+        "props",
+        "set",
+        "value",
+        "values"
+      ],
+      "verb": {
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "description": "",
+          "list": [
+            "assign-value",
+            "get-value",
+            "has-value",
+            "merge-value",
+            "omit-value",
+            "set-value",
+            "union-value",
+            "unset-value"
+          ]
+        }
+      },
+      "gitHead": "4134d6caa68520c1d19cb81d7d6ab298b06131af",
+      "_id": "set-value@0.4.1",
+      "_shasum": "63ae0eda618cbfbde809c63ad993f0026cff1ad8",
+      "_from": ".",
+      "_npmVersion": "4.1.2",
+      "_nodeVersion": "7.5.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "63ae0eda618cbfbde809c63ad993f0026cff1ad8",
+        "tarball": "https://registry.npmjs.org/set-value/-/set-value-0.4.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/set-value-0.4.1.tgz_1486963467649_0.23421111796051264"
+      },
+      "directories": {},
+      "deprecated": "Critical bug fixed in v3.0.1, please upgrade to the latest version."
+    },
+    "0.4.2": {
+      "name": "set-value",
+      "description": "Create nested values and any intermediaries using dot notation (`'a.b.c'`) paths.",
+      "version": "0.4.2",
+      "homepage": "https://github.com/jonschlinkert/set-value",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "email": "wtgtybhertgeghgtwtg@gmail.com",
+          "url": "https://github.com/wtgtybhertgeghgtwtg"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "email": "jon.schlinkert@sellside.com",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "name": "Vadim Demedes",
+          "email": "vdemedes@gmail.com",
+          "url": "https://vadimdemedes.com"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/set-value.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/set-value/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "extend-shallow": "^2.0.1",
+        "is-plain-object": "^2.0.1",
+        "to-object-path": "^0.3.0"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^0.1.10",
+        "mocha": "^3.0.2"
+      },
+      "keywords": [
+        "get",
+        "has",
+        "hasown",
+        "key",
+        "keys",
+        "nested",
+        "notation",
+        "object",
+        "prop",
+        "properties",
+        "property",
+        "props",
+        "set",
+        "value",
+        "values"
+      ],
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "assign-value",
+            "get-value",
+            "has-value",
+            "merge-value",
+            "omit-value",
+            "set-value",
+            "union-value",
+            "unset-value"
+          ]
+        },
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "cfe2e1d93c148757e0debdfe0e6b4367298f73b1",
+      "_id": "set-value@0.4.2",
+      "_shasum": "4f03c30f2ef2c16bb84a3b208041fd2cead3b467",
+      "_from": ".",
+      "_npmVersion": "4.1.2",
+      "_nodeVersion": "7.5.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "4f03c30f2ef2c16bb84a3b208041fd2cead3b467",
+        "tarball": "https://registry.npmjs.org/set-value/-/set-value-0.4.2.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/set-value-0.4.2.tgz_1486963697222_0.5899759584572166"
+      },
+      "directories": {},
+      "deprecated": "Critical bug fixed in v3.0.1, please upgrade to the latest version."
+    },
+    "0.4.3": {
+      "name": "set-value",
+      "description": "Create nested values and any intermediaries using dot notation (`'a.b.c'`) paths.",
+      "version": "0.4.3",
+      "homepage": "https://github.com/jonschlinkert/set-value",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "email": "wtgtybhertgeghgtwtg@gmail.com",
+          "url": "https://github.com/wtgtybhertgeghgtwtg"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "email": "jon.schlinkert@sellside.com",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "name": "Vadim Demedes",
+          "email": "vdemedes@gmail.com",
+          "url": "https://vadimdemedes.com"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/set-value.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/set-value/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "extend-shallow": "^2.0.1",
+        "is-extendable": "^0.1.1",
+        "is-plain-object": "^2.0.1",
+        "to-object-path": "^0.3.0"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^0.1.10",
+        "mocha": "^3.0.2"
+      },
+      "keywords": [
+        "get",
+        "has",
+        "hasown",
+        "key",
+        "keys",
+        "nested",
+        "notation",
+        "object",
+        "prop",
+        "properties",
+        "property",
+        "props",
+        "set",
+        "value",
+        "values"
+      ],
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "assign-value",
+            "get-value",
+            "has-value",
+            "merge-value",
+            "omit-value",
+            "set-value",
+            "union-value",
+            "unset-value"
+          ]
+        },
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "2a16afca69bce51978cd5396a68d4435de0c6cc5",
+      "_id": "set-value@0.4.3",
+      "_shasum": "7db08f9d3d22dc7f78e53af3c3bf4666ecdfccf1",
+      "_from": ".",
+      "_npmVersion": "4.1.2",
+      "_nodeVersion": "7.5.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "7db08f9d3d22dc7f78e53af3c3bf4666ecdfccf1",
+        "tarball": "https://registry.npmjs.org/set-value/-/set-value-0.4.3.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/set-value-0.4.3.tgz_1487799887096_0.9961463622748852"
+      },
+      "directories": {},
+      "deprecated": "Critical bug fixed in v3.0.1, please upgrade to the latest version."
+    },
+    "1.0.0": {
+      "name": "set-value",
+      "description": "Create nested values and any intermediaries using dot notation (`'a.b.c'`) paths.",
+      "version": "1.0.0",
+      "homepage": "https://github.com/jonschlinkert/set-value",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "url": "https://github.com/wtgtybhertgeghgtwtg"
+        },
+        {
+          "name": "Vadim Demedes",
+          "url": "https://vadimdemedes.com"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/set-value.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/set-value/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "extend-shallow": "^2.0.1",
+        "is-extendable": "^0.1.1",
+        "is-plain-object": "^2.0.1",
+        "to-object-path": "^0.3.0"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^0.1.12",
+        "mocha": "^3.4.1"
+      },
+      "keywords": [
+        "get",
+        "has",
+        "hasown",
+        "key",
+        "keys",
+        "nested",
+        "notation",
+        "object",
+        "prop",
+        "properties",
+        "property",
+        "props",
+        "set",
+        "value",
+        "values"
+      ],
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "assign-value",
+            "get-value",
+            "has-value",
+            "merge-value",
+            "omit-value",
+            "set-value",
+            "union-value",
+            "unset-value"
+          ]
+        },
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "20bc8aa0d52f44a003ecc1f27536b1525edb4ea6",
+      "_id": "set-value@1.0.0",
+      "_shasum": "bcc76f71a0f1e07a24b987d0a02afec9f665304f",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "7.7.3",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "bcc76f71a0f1e07a24b987d0a02afec9f665304f",
+        "tarball": "https://registry.npmjs.org/set-value/-/set-value-1.0.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/set-value-1.0.0.tgz_1495221431137_0.14412163197994232"
+      },
+      "directories": {},
+      "deprecated": "Critical bug fixed in v3.0.1, please upgrade to the latest version."
+    },
+    "2.0.0": {
+      "name": "set-value",
+      "description": "Create nested values and any intermediaries using dot notation (`'a.b.c'`) paths.",
+      "version": "2.0.0",
+      "homepage": "https://github.com/jonschlinkert/set-value",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "url": "https://github.com/wtgtybhertgeghgtwtg"
+        },
+        {
+          "name": "Vadim Demedes",
+          "url": "https://vadimdemedes.com"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/set-value.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/set-value/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "extend-shallow": "^2.0.1",
+        "is-extendable": "^0.1.1",
+        "is-plain-object": "^2.0.3",
+        "split-string": "^3.0.1"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^0.1.12",
+        "mocha": "^3.4.2"
+      },
+      "keywords": [
+        "get",
+        "has",
+        "hasown",
+        "key",
+        "keys",
+        "nested",
+        "notation",
+        "object",
+        "prop",
+        "properties",
+        "property",
+        "props",
+        "set",
+        "value",
+        "values"
+      ],
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "assign-value",
+            "get-value",
+            "has-value",
+            "merge-value",
+            "omit-value",
+            "set-value",
+            "union-value",
+            "unset-value"
+          ]
+        },
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "197399e6e4eddf203a3e0f85351d4d8c89e60725",
+      "_id": "set-value@2.0.0",
+      "_npmVersion": "5.0.3",
+      "_nodeVersion": "7.7.3",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "integrity": "sha512-hw0yxk9GT/Hr5yJEYnHNKYXkIA8mVJgd9ditYZCe16ZczcaELYYcfvaXesNACk2O8O0nTiPQcQhGUQj8JLzeeg==",
+        "shasum": "71ae4a88f0feefbbf52d1ea604f3fb315ebb6274",
+        "tarball": "https://registry.npmjs.org/set-value/-/set-value-2.0.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/set-value-2.0.0.tgz_1498024078478_0.9921886464580894"
+      },
+      "directories": {},
+      "deprecated": "Critical bug fixed in v3.0.1, please upgrade to the latest version."
+    },
+    "3.0.0": {
+      "name": "set-value",
+      "description": "Create nested values and any intermediaries using dot notation (`'a.b.c'`) paths.",
+      "version": "3.0.0",
+      "homepage": "https://github.com/jonschlinkert/set-value",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "url": "https://github.com/wtgtybhertgeghgtwtg"
+        },
+        {
+          "name": "Vadim Demedes",
+          "url": "https://vadimdemedes.com"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/set-value.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/set-value/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=6.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "is-plain-object": "^2.0.4"
+      },
+      "devDependencies": {
+        "benchmarked": "^2.0.0",
+        "deep-object": "^1.0.0",
+        "deep-property": "^1.1.0",
+        "deep-set": "^1.0.1",
+        "deephas": "^1.0.5",
+        "dot-prop": "^4.2.0",
+        "dot2val": "^1.2.2",
+        "es5-dot-prop": "^4.1.1",
+        "gulp-format-md": "^1.0.0",
+        "lodash.set": "^4.3.2",
+        "minimist": "^1.2.0",
+        "mocha": "^3.5.3",
+        "object-path-set": "^1.0.0",
+        "object-set": "^1.0.1",
+        "split-string": "^5.0.4",
+        "write": "^1.0.3"
+      },
+      "keywords": [
+        "bury",
+        "deep-get-set",
+        "deep-object",
+        "deep-property",
+        "deep-set",
+        "deep-set-in",
+        "deephas",
+        "dot-prop",
+        "dot2val",
+        "es5-dot-prop",
+        "get",
+        "getsetdeep",
+        "has",
+        "hasown",
+        "key",
+        "keys",
+        "lodash.set",
+        "nested",
+        "notation",
+        "object",
+        "object-path",
+        "object-path-set",
+        "object-set",
+        "prop",
+        "properties",
+        "property",
+        "props",
+        "set",
+        "set-deep",
+        "set-deep-prop",
+        "set-nested-prop",
+        "setvalue",
+        "value",
+        "values"
+      ],
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "assign-value",
+            "get-value",
+            "has-value",
+            "merge-value",
+            "omit-value",
+            "set-value",
+            "union-value",
+            "unset-value"
+          ]
+        },
+        "lint": {
+          "reflinks": true
+        },
+        "reflinks": [
+          "bury",
+          "deep-get-set",
+          "deep-object",
+          "deep-property",
+          "deep-set",
+          "deep-set-in",
+          "deephas",
+          "dot-prop",
+          "dot2val",
+          "es5-dot-prop",
+          "getsetdeep",
+          "lodash.set",
+          "object-path",
+          "object-path-set",
+          "object-set",
+          "set-deep",
+          "set-deep-prop",
+          "set-nested-prop",
+          "setvalue"
+        ]
+      },
+      "gitHead": "1ac51c3662ce0a2016cb29a492f9e0b243fc4522",
+      "_id": "set-value@3.0.0",
+      "_npmVersion": "5.7.1",
+      "_nodeVersion": "9.7.1",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "integrity": "sha512-tqkg9wJ2TOsxbzIMG5NMAmzjdbDTAD0in7XuUzmFpJE4Ipi2QFBfgC2Z1/gfxcAmWCPsuutiEJyDIMRsrjrMOQ==",
+        "shasum": "bc021514f46effed8176fd5f0f67e9988531141f",
+        "tarball": "https://registry.npmjs.org/set-value/-/set-value-3.0.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 17299
+      },
+      "maintainers": [
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/set-value_3.0.0_1520293638561_0.3231121588728314"
+      },
+      "_hasShrinkwrap": false,
+      "deprecated": "Critical bug fixed in v3.0.1, please upgrade to the latest version."
+    },
+    "3.0.1": {
+      "name": "set-value",
+      "description": "Create nested values and any intermediaries using dot notation (`'a.b.c'`) paths.",
+      "version": "3.0.1",
+      "homepage": "https://github.com/jonschlinkert/set-value",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "url": "https://github.com/wtgtybhertgeghgtwtg"
+        },
+        {
+          "name": "Vadim Demedes",
+          "url": "https://vadimdemedes.com"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/set-value.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/set-value/issues"
+      },
+      "license": "MIT",
+      "main": "index.js",
+      "engines": {
+        "node": ">=6.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "is-plain-object": "^2.0.4"
+      },
+      "devDependencies": {
+        "benchmarked": "^2.0.0",
+        "deep-object": "^1.0.0",
+        "deep-property": "^1.1.0",
+        "deep-set": "^1.0.1",
+        "deephas": "^1.0.5",
+        "dot-prop": "^4.2.0",
+        "dot2val": "^1.2.2",
+        "es5-dot-prop": "^4.1.1",
+        "gulp-format-md": "^2.0.0",
+        "lodash.set": "^4.3.2",
+        "minimist": "^1.2.0",
+        "mocha": "^3.5.3",
+        "object-path-set": "^1.0.0",
+        "object-set": "^1.0.1",
+        "split-string": "^5.0.4",
+        "write": "^1.0.3"
+      },
+      "keywords": [
+        "bury",
+        "deep-get-set",
+        "deep-object",
+        "deep-property",
+        "deep-set",
+        "deep-set-in",
+        "deephas",
+        "dot-prop",
+        "dot2val",
+        "es5-dot-prop",
+        "get",
+        "getsetdeep",
+        "has",
+        "hasown",
+        "key",
+        "keys",
+        "lodash.set",
+        "nested",
+        "notation",
+        "object",
+        "object-path",
+        "object-path-set",
+        "object-set",
+        "prop",
+        "properties",
+        "property",
+        "props",
+        "set",
+        "set-deep",
+        "set-deep-prop",
+        "set-nested-prop",
+        "setvalue",
+        "value",
+        "values"
+      ],
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "assign-value",
+            "get-value",
+            "has-value",
+            "merge-value",
+            "omit-value",
+            "set-value",
+            "union-value",
+            "unset-value"
+          ]
+        },
+        "lint": {
+          "reflinks": true
+        },
+        "reflinks": [
+          "bury",
+          "deep-get-set",
+          "deep-object",
+          "deep-property",
+          "deep-set",
+          "deep-set-in",
+          "deephas",
+          "dot-prop",
+          "dot2val",
+          "es5-dot-prop",
+          "getsetdeep",
+          "lodash.set",
+          "object-path",
+          "object-path-set",
+          "object-set",
+          "set-deep",
+          "set-deep-prop",
+          "set-nested-prop",
+          "setvalue",
+          "split-string",
+          "update"
+        ]
+      },
+      "gitHead": "75da039d70f73420e8817b413adb458f7c878932",
+      "_id": "set-value@3.0.1",
+      "_nodeVersion": "12.3.1",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "integrity": "sha512-w6n3GUPYAWQj4ZyHWzD7K2FnFXHx9OTwJYbWg+6nXjG8sCLfs9DGv+KlqglKIIJx+ks7MlFuwFW2RBPb+8V+xg==",
+        "shasum": "52c82af7653ba69eb1db92e81f5cdb32739b9e95",
+        "tarball": "https://registry.npmjs.org/set-value/-/set-value-3.0.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 17713,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdCno2CRA9TVsSAnZWagAA9k0P/3gJ21A/EEDePnIo9zwp\nF2RSv+cTUaRwoaZs1ppBJe9KzN6f//xkjjeWYC+DBDde0+85VkcuLR5q9qVi\nL8lePSVxGoYYwz/2R7p32eUE1yC81gPc7gBoFG5FNidltf+Xidd4j0PgckIQ\nPXy19s0xGxlKNey9TcxRoYN1jAwMd5a2srFEpMVSTbUYFYL9q/WU3qSGlJTq\n4c8XWNby3gFqJ+fTeV8bVgUPU/Jmi4lUW5xdueAFYxUArzmQaxmAF1q/CxBu\n0aaIkpYlWn7VrnMGVEPyNJUvRwuAnGRVVC6cXN+ksAHQLfIKDvh/OLCA0zSJ\nLo2mz/sdN+PwD1hUG61hULvWM5PBQAsUEhFeDr460lSDypkwehEG3lBzm2o5\n6R1g2q2teMznQCcWZFFZk0AAIJ4+KSDIRbIYTXkfX8KHprk9n5NRru0T047k\ndNPeUChuZ1M9ThXSEio85Cns5nEQ66nMiWXi72ckzYLyxSAg6dMvVJkE1owQ\neJzGHg93yCr6/HK4H2OKHd7rClrlVkHpdDREd23GSKL8/wnQ15DfZY97jrcD\nXc9zXgxZvROg5cYeSyUgr5aZYS9rTUwN8sANGTuZEXQMiYBXwlMr2bFkrc/9\nT9smdAb49rqwMutBb8JMpBnKTwZkOOUv/zFb+JxMDx7Qt4sGxjdHh6xu81+b\nGfjt\r\n=g4cU\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/set-value_3.0.1_1560967733977_0.03662215747467035"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.1": {
+      "name": "set-value",
+      "description": "Create nested values and any intermediaries using dot notation (`'a.b.c'`) paths.",
+      "version": "2.0.1",
+      "homepage": "https://github.com/jonschlinkert/set-value",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "url": "https://github.com/wtgtybhertgeghgtwtg"
+        },
+        {
+          "name": "Vadim Demedes",
+          "url": "https://vadimdemedes.com"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/set-value.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/set-value/issues"
+      },
+      "license": "MIT",
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "extend-shallow": "^2.0.1",
+        "is-extendable": "^0.1.1",
+        "is-plain-object": "^2.0.3",
+        "split-string": "^3.0.1"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^0.1.12",
+        "mocha": "^3.4.2"
+      },
+      "keywords": [
+        "get",
+        "has",
+        "hasown",
+        "key",
+        "keys",
+        "nested",
+        "notation",
+        "object",
+        "prop",
+        "properties",
+        "property",
+        "props",
+        "set",
+        "value",
+        "values"
+      ],
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "assign-value",
+            "get-value",
+            "has-value",
+            "merge-value",
+            "omit-value",
+            "set-value",
+            "union-value",
+            "unset-value"
+          ]
+        },
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "readme": "# set-value [![NPM version](https://img.shields.io/npm/v/set-value.svg?style=flat)](https://www.npmjs.com/package/set-value) [![NPM monthly downloads](https://img.shields.io/npm/dm/set-value.svg?style=flat)](https://npmjs.org/package/set-value) [![NPM total downloads](https://img.shields.io/npm/dt/set-value.svg?style=flat)](https://npmjs.org/package/set-value) [![Linux Build Status](https://img.shields.io/travis/jonschlinkert/set-value.svg?style=flat&label=Travis)](https://travis-ci.org/jonschlinkert/set-value)\n\n> Create nested values and any intermediaries using dot notation (`'a.b.c'`) paths.\n\n## Install\n\nInstall with [npm](https://www.npmjs.com/):\n\n```sh\n$ npm install --save set-value\n```\n\n## Usage\n\n```js\nvar set = require('set-value');\nset(object, prop, value);\n```\n\n### Params\n\n* `object` **{object}**: The object to set `value` on\n* `prop` **{string}**: The property to set. Dot-notation may be used.\n* `value` **{any}**: The value to set on `object[prop]`\n\n## Examples\n\nUpdates and returns the given object:\n\n```js\nvar obj = {};\nset(obj, 'a.b.c', 'd');\nconsole.log(obj);\n//=> { a: { b: { c: 'd' } } }\n```\n\n### Escaping\n\n**Escaping with backslashes**\n\nPrevent set-value from splitting on a dot by prefixing it with backslashes:\n\n```js\nconsole.log(set({}, 'a\\\\.b.c', 'd'));\n//=> { 'a.b': { c: 'd' } }\n\nconsole.log(set({}, 'a\\\\.b\\\\.c', 'd'));\n//=> { 'a.b.c': 'd' }\n```\n\n**Escaping with double-quotes or single-quotes**\n\nWrap double or single quotes around the string, or part of the string, that should not be split by set-value:\n\n```js\nconsole.log(set({}, '\"a.b\".c', 'd'));\n//=> { 'a.b': { c: 'd' } }\n\nconsole.log(set({}, \"'a.b'.c\", \"d\"));\n//=> { 'a.b': { c: 'd' } }\n\nconsole.log(set({}, '\"this/is/a/.file.path\"', 'd'));\n//=> { 'this/is/a/file.path': 'd' }\n```\n\n### Bracket support\n\nset-value does not split inside brackets or braces:\n\n```js\nconsole.log(set({}, '[a.b].c', 'd'));\n//=> { '[a.b]': { c: 'd' } }\n\nconsole.log(set({}, \"(a.b).c\", \"d\"));\n//=> { '(a.b)': { c: 'd' } }\n\nconsole.log(set({}, \"<a.b>.c\", \"d\"));\n//=> { '<a.b>': { c: 'd' } }\n\nconsole.log(set({}, \"{a..b}.c\", \"d\"));\n//=> { '{a..b}': { c: 'd' } }\n```\n\n## History\n\n### v2.0.0\n\n* Adds support for escaping with double or single quotes. See [escaping](#escaping) for examples.\n* Will no longer split inside brackets or braces. See [bracket support](#bracket-support) for examples.\n\nIf there are any regressions please create a [bug report](../../issues/new). Thanks!\n\n## About\n\n### Related projects\n\n* [assign-value](https://www.npmjs.com/package/assign-value): Assign a value or extend a deeply nested property of an object using object path… [more](https://github.com/jonschlinkert/assign-value) | [homepage](https://github.com/jonschlinkert/assign-value \"Assign a value or extend a deeply nested property of an object using object path notation.\")\n* [get-value](https://www.npmjs.com/package/get-value): Use property paths (`a.b.c`) to get a nested value from an object. | [homepage](https://github.com/jonschlinkert/get-value \"Use property paths (`a.b.c`) to get a nested value from an object.\")\n* [has-value](https://www.npmjs.com/package/has-value): Returns true if a value exists, false if empty. Works with deeply nested values using… [more](https://github.com/jonschlinkert/has-value) | [homepage](https://github.com/jonschlinkert/has-value \"Returns true if a value exists, false if empty. Works with deeply nested values using object paths.\")\n* [merge-value](https://www.npmjs.com/package/merge-value): Similar to assign-value but deeply merges object values or nested values using object path/dot notation. | [homepage](https://github.com/jonschlinkert/merge-value \"Similar to assign-value but deeply merges object values or nested values using object path/dot notation.\")\n* [omit-value](https://www.npmjs.com/package/omit-value): Omit properties from an object or deeply nested property of an object using object path… [more](https://github.com/jonschlinkert/omit-value) | [homepage](https://github.com/jonschlinkert/omit-value \"Omit properties from an object or deeply nested property of an object using object path notation.\")\n* [set-value](https://www.npmjs.com/package/set-value): Create nested values and any intermediaries using dot notation (`'a.b.c'`) paths. | [homepage](https://github.com/jonschlinkert/set-value \"Create nested values and any intermediaries using dot notation (`'a.b.c'`) paths.\")\n* [union-value](https://www.npmjs.com/package/union-value): Set an array of unique values as the property of an object. Supports setting deeply… [more](https://github.com/jonschlinkert/union-value) | [homepage](https://github.com/jonschlinkert/union-value \"Set an array of unique values as the property of an object. Supports setting deeply nested properties using using object-paths/dot notation.\")\n* [unset-value](https://www.npmjs.com/package/unset-value): Delete nested properties from an object using dot notation. | [homepage](https://github.com/jonschlinkert/unset-value \"Delete nested properties from an object using dot notation.\")\n\n### Contributing\n\nPull requests and stars are always welcome. For bugs and feature requests, [please create an issue](../../issues/new).\n\n### Contributors\n\n| **Commits** | **Contributor** | \n| --- | --- |\n| 59 | [jonschlinkert](https://github.com/jonschlinkert) |\n| 1 | [vadimdemedes](https://github.com/vadimdemedes) |\n| 1 | [wtgtybhertgeghgtwtg](https://github.com/wtgtybhertgeghgtwtg) |\n\n### Building docs\n\n_(This project's readme.md is generated by [verb](https://github.com/verbose/verb-generate-readme), please don't edit the readme directly. Any changes to the readme must be made in the [.verb.md](.verb.md) readme template.)_\n\nTo generate the readme, run the following command:\n\n```sh\n$ npm install -g verbose/verb#dev verb-generate-readme && verb\n```\n\n### Running tests\n\nRunning and reviewing unit tests is a great way to get familiarized with a library and its API. You can install dependencies and run tests with the following command:\n\n```sh\n$ npm install && npm test\n```\n\n### Author\n\n**Jon Schlinkert**\n\n* [github/jonschlinkert](https://github.com/jonschlinkert)\n* [twitter/jonschlinkert](https://twitter.com/jonschlinkert)\n\n### License\n\nCopyright © 2017, [Jon Schlinkert](https://github.com/jonschlinkert).\nReleased under the [MIT License](LICENSE).\n\n***\n\n_This file was generated by [verb-generate-readme](https://github.com/verbose/verb-generate-readme), v0.6.0, on June 21, 2017._",
+      "readmeFilename": "README.md",
+      "gitHead": "bb0f0382f7d7637f3de1bba52d1b4abdbbbde4d4",
+      "_id": "set-value@2.0.1",
+      "_nodeVersion": "10.15.2",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "doowb",
+        "email": "brian.woodward@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-JxHc1weCN68wRY0fhCoXpyK55m/XPHafOmK4UWD7m2CI14GMcFypt4w/0+NV5f/ZMby2F6S2wwA7fgynh9gWSw==",
+        "shasum": "a18d40530e6f07de4228c7defe4227af8cad005b",
+        "tarball": "https://registry.npmjs.org/set-value/-/set-value-2.0.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 10322,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdETtKCRA9TVsSAnZWagAAOwQP/RXKTdAMJgGay6gW0Gcq\nsIHSR1mvwoYfCkAswFLyPVyxToicUitgytwX4M88eTLOZY42B99z0L15kEWS\nqxDOuo9RpOWu9NZhk0OpD3bhjgiAq32uDi/E5XinVqdFezZJVH25DntVcSdJ\nLyuV/H5TJFpKNrlI8VzL8+mGHNXfzHIzlCSvnzEJGEEBGOoo8jbcprLxHWXB\naSgCYf8V/9T0iM0NS3EpRhXy7wUPSSL+R6PUvcMjCmJ0fvW39i/CERx0ZMRp\nUyjTlyBXV3ONDy3Dfb7f20Ty0U/VvJn3WKLDcAEUmUrZ2VEpqwH7XtwwGCQE\nEeXAEUBz2SrK2XamCS3lw46fOVrZN5Qwt5UseNJelIPyABCIk2xzNTqmob+i\nWXijOz2y7EEMZUjgWiNckTai7+5p+WlejvsVA7brr4FHmh62kvyTbSSBVwKD\nHKmERXcnb9YIuwxzDdC/nfnV/sq+RMBkoumGw53CX0IOtOJV4ENNdfGRBe5E\nbRy3E3Ut3ydu9SbtwKuZPEasYyrscnw4Go/3bGNUxoFPWJ4TpWPfoAYfqaJw\nCZn+7fibRuyGYUZ+EdOp6TsMjh3vLWBfaXZbvR4eEnIkjEl3NomAQ2J+JvwY\nlVQxQbqFSYv/u0La08+9AB3CtagJJNc5Nk5uWJxLC08ywP3sxwOE/y3Yod0x\nOBB+\r\n=JrGJ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/set-value_2.0.1_1561410377747_0.04630798063835684"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.2": {
+      "name": "set-value",
+      "description": "Create nested values and any intermediaries using dot notation (`'a.b.c'`) paths.",
+      "version": "3.0.2",
+      "homepage": "https://github.com/jonschlinkert/set-value",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "url": "https://github.com/wtgtybhertgeghgtwtg"
+        },
+        {
+          "name": "Vadim Demedes",
+          "url": "https://vadimdemedes.com"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/set-value.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/set-value/issues"
+      },
+      "license": "MIT",
+      "main": "index.js",
+      "engines": {
+        "node": ">=6.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "is-plain-object": "^2.0.4"
+      },
+      "devDependencies": {
+        "benchmarked": "^2.0.0",
+        "deep-object": "^1.0.0",
+        "deep-property": "^1.1.0",
+        "deep-set": "^1.0.1",
+        "deephas": "^1.0.5",
+        "dot-prop": "^4.2.0",
+        "dot2val": "^1.2.2",
+        "es5-dot-prop": "^4.1.1",
+        "gulp-format-md": "^2.0.0",
+        "lodash.set": "^4.3.2",
+        "minimist": "^1.2.0",
+        "mocha": "^3.5.3",
+        "object-path-set": "^1.0.0",
+        "object-set": "^1.0.1",
+        "split-string": "^5.0.4",
+        "write": "^1.0.3"
+      },
+      "keywords": [
+        "bury",
+        "deep-get-set",
+        "deep-object",
+        "deep-property",
+        "deep-set",
+        "deep-set-in",
+        "deephas",
+        "dot-prop",
+        "dot2val",
+        "es5-dot-prop",
+        "get",
+        "getsetdeep",
+        "has",
+        "hasown",
+        "key",
+        "keys",
+        "lodash.set",
+        "nested",
+        "notation",
+        "object",
+        "object-path",
+        "object-path-set",
+        "object-set",
+        "prop",
+        "properties",
+        "property",
+        "props",
+        "set",
+        "set-deep",
+        "set-deep-prop",
+        "set-nested-prop",
+        "setvalue",
+        "value",
+        "values"
+      ],
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "assign-value",
+            "get-value",
+            "has-value",
+            "merge-value",
+            "omit-value",
+            "set-value",
+            "union-value",
+            "unset-value"
+          ]
+        },
+        "lint": {
+          "reflinks": true
+        },
+        "reflinks": [
+          "bury",
+          "deep-get-set",
+          "deep-object",
+          "deep-property",
+          "deep-set",
+          "deep-set-in",
+          "deephas",
+          "dot-prop",
+          "dot2val",
+          "es5-dot-prop",
+          "getsetdeep",
+          "lodash.set",
+          "object-path",
+          "object-path-set",
+          "object-set",
+          "set-deep",
+          "set-deep-prop",
+          "set-nested-prop",
+          "setvalue",
+          "split-string",
+          "update"
+        ]
+      },
+      "gitHead": "8353e4db5b3f4cecac2562d0594d709acf3badfe",
+      "_id": "set-value@3.0.2",
+      "_nodeVersion": "12.14.0",
+      "_npmVersion": "6.13.4",
+      "_npmUser": {
+        "name": "doowb",
+        "email": "brian.woodward@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-npjkVoz+ank0zjlV9F47Fdbjfj/PfXyVhZvGALWsyIYU/qrMzpi6avjKW3/7KeSU2Df3I46BrN1xOI1+6vW0hA==",
+        "shasum": "74e8ecd023c33d0f77199d415409a40f21e61b90",
+        "tarball": "https://registry.npmjs.org/set-value/-/set-value-3.0.2.tgz",
+        "fileCount": 4,
+        "unpackedSize": 17830,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJehQAyCRA9TVsSAnZWagAAU0UP/jAdnc87nHgmvcs1Ov2d\n9SRJ8OGIZ89c5gTiy8LkVF5MgbrYjyqmPp92sWiZI6IvEpnaDrcGod+Y2yKR\nbMSiC0d37+gBwuV29VcdqA3b4urvp/HKE56MLauhtIP8Uh5tNyWVSwZIazV3\n1zdnNwmbg3fTFGGG01uDPqymePT1omyEkg8uWKx4tpEJgm6wRBFz/66Hbv0L\nMlcFlZWgl9F3sZU+kpombsL6lhjmUXQhwfrLGDYVB2cAmSvxTaVOl3Zm/CPs\nU/J8wa96eL2P18G3oBvq/encsRPhvY6jNMh9b5Jq6rOkujWfeUOGepIzif79\n+hlMJ1hmJrGObWb7GNl5vnnsYq1d7mH1O+6faP4O1JZzgySIRlRHTglS0I4C\naYp65k/Rcyoo0BhGN/caVQFl2XFEgapl4Rlv8bhTsVnDf/72srRobd4PLwio\nynb2Rsla0PmFwGFXcC94EUfRYVBcjWYEwXjFZuPGyKOmnmroWC7dOHN4ksXJ\npLWYnKC1+I1PAh/KbdKq28WLt+b6sppbgQ+WX/d7AdSe7aW4cryH8va4x5O5\nHoocehs1Q035qYFHGgMmMKQdo+/7ysuInzTF9uDU0yQMTsfTRfCIHpBSaHjT\n7zU2qS0hvgBknNU4he281+4vbyVXANcdNT538Dte3KLf83I4X2eDQan7+ZXn\nxuvE\r\n=vZLh\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/set-value_3.0.2_1585774641625_0.44365718423177936"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# set-value [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=W8YFZ425KND68) [![NPM version](https://img.shields.io/npm/v/set-value.svg?style=flat)](https://www.npmjs.com/package/set-value) [![NPM monthly downloads](https://img.shields.io/npm/dm/set-value.svg?style=flat)](https://npmjs.org/package/set-value) [![NPM total downloads](https://img.shields.io/npm/dt/set-value.svg?style=flat)](https://npmjs.org/package/set-value) [![Linux Build Status](https://img.shields.io/travis/jonschlinkert/set-value.svg?style=flat&label=Travis)](https://travis-ci.org/jonschlinkert/set-value)\n\n> Create nested values and any intermediaries using dot notation (`'a.b.c'`) paths.\n\nPlease consider following this project's author, [Jon Schlinkert](https://github.com/jonschlinkert), and consider starring the project to show your :heart: and support.\n\n## Install\n\nInstall with [npm](https://www.npmjs.com/):\n\n```sh\n$ npm install --save set-value\n```\n\n## Heads up!\n\n[Please update](https://github.com/update/update) to version 3.0.1 or later, a critical bug was fixed in that version.\n\n## Usage\n\n```js\nconst set = require('set-value');\nset(object, prop, value);\n```\n\n### Params\n\n* `object` **{object}**: The object to set `value` on\n* `prop` **{string}**: The property to set. Dot-notation may be used.\n* `value` **{any}**: The value to set on `object[prop]`\n\n## Examples\n\nUpdates and returns the given object:\n\n```js\nconst obj = {};\nset(obj, 'a.b.c', 'd');\nconsole.log(obj);\n//=> { a: { b: { c: 'd' } } }\n```\n\n### Escaping\n\n**Escaping with backslashes**\n\nPrevent set-value from splitting on a dot by prefixing it with backslashes:\n\n```js\nconsole.log(set({}, 'a\\\\.b.c', 'd'));\n//=> { 'a.b': { c: 'd' } }\n\nconsole.log(set({}, 'a\\\\.b\\\\.c', 'd'));\n//=> { 'a.b.c': 'd' }\n```\n\n## Benchmarks\n\n_(benchmarks were run on a MacBook Pro 2.5 GHz Intel Core i7, 16 GB 1600 MHz DDR3)_.\n\nset-value is more reliable and has more features than dot-prop, without sacrificing performance.\n\n```\n# deep (194 bytes)\n  deep-object x 629,744 ops/sec ±0.85% (88 runs sampled)\n  deep-property x 1,470,427 ops/sec ±0.94% (89 runs sampled)\n  deep-set x 1,401,089 ops/sec ±1.02% (91 runs sampled)\n  deephas x 590,005 ops/sec ±1.73% (86 runs sampled)\n  dot-prop x 1,261,408 ops/sec ±0.94% (90 runs sampled)\n  dot2val x 1,672,729 ops/sec ±1.12% (89 runs sampled)\n  es5-dot-prop x 1,313,018 ops/sec ±0.79% (91 runs sampled)\n  lodash-set x 1,074,464 ops/sec ±0.97% (93 runs sampled)\n  object-path-set x 961,198 ops/sec ±2.07% (74 runs sampled)\n  object-set x 258,438 ops/sec ±0.69% (90 runs sampled)\n  set-value x 1,976,843 ops/sec ±2.07% (89 runs sampled)\n\n  fastest is set-value (by 186% avg)\n\n# medium (98 bytes)\n  deep-object x 3,249,287 ops/sec ±1.04% (93 runs sampled)\n  deep-property x 3,409,307 ops/sec ±1.28% (88 runs sampled)\n  deep-set x 3,240,776 ops/sec ±1.13% (93 runs sampled)\n  deephas x 960,504 ops/sec ±1.39% (89 runs sampled)\n  dot-prop x 2,776,388 ops/sec ±0.80% (94 runs sampled)\n  dot2val x 3,889,791 ops/sec ±1.28% (91 runs sampled)\n  es5-dot-prop x 2,779,604 ops/sec ±1.32% (91 runs sampled)\n  lodash-set x 2,791,304 ops/sec ±0.75% (90 runs sampled)\n  object-path-set x 2,462,084 ops/sec ±1.51% (91 runs sampled)\n  object-set x 838,569 ops/sec ±0.87% (90 runs sampled)\n  set-value x 4,767,287 ops/sec ±1.21% (91 runs sampled)\n\n  fastest is set-value (by 181% avg)\n\n# shallow (101 bytes)\n  deep-object x 4,793,168 ops/sec ±0.75% (88 runs sampled)\n  deep-property x 4,669,218 ops/sec ±1.17% (90 runs sampled)\n  deep-set x 4,648,247 ops/sec ±0.73% (91 runs sampled)\n  deephas x 1,246,414 ops/sec ±1.67% (92 runs sampled)\n  dot-prop x 3,913,694 ops/sec ±1.23% (89 runs sampled)\n  dot2val x 5,428,829 ops/sec ±0.76% (92 runs sampled)\n  es5-dot-prop x 3,897,931 ops/sec ±1.19% (92 runs sampled)\n  lodash-set x 6,128,638 ops/sec ±0.95% (87 runs sampled)\n  object-path-set x 5,429,978 ops/sec ±3.31% (87 runs sampled)\n  object-set x 1,529,485 ops/sec ±2.37% (89 runs sampled)\n  set-value x 7,150,921 ops/sec ±1.58% (89 runs sampled)\n\n  fastest is set-value (by 172% avg)\n\n```\n\n### Running the benchmarks\n\nClone this library into a local directory:\n\n```sh\n$ git clone https://github.com/jonschlinkert/set-value.git\n```\n\nThen install devDependencies and run benchmarks:\n\n```sh\n$ npm install && node benchmark\n```\n\n## Comparisons to other libs, or _\"the list of shame\"_\n\nThese are just a few of the duplicate libraries on NPM.\n\n* [bury](https://github.com/kalmbach/bury) fails all of the tests. I even wrapped it to have it return the object instead of the value, but with all of that work it still fails the vast majority of tests.\n* [deep-get-set](https://github.com/acstll/deep-get-set) fails 22 of 26 unit tests.\n* [deep-object](https://github.com/ayushgp/deep-object) fails 25 of 26 unit tests, completely butchered given objects.\n* [deep-property](https://github.com/mikattack/node-deep-property) fails 17 of 26 unit tests.\n* [deep-set](https://github.com/klaemo/deep-set) fails 13 of 26 unit tests.\n* [deephas](https://github.com/sharpred/deepHas) fails 17 of 26 unit tests.\n* [dot-prop](https://github.com/sindresorhus/dot-prop) fails 9 of 26 unit tests.\n* [dot2val](https://github.com/yangg/dot2val) fails 17 of 26 unit tests.\n* [es5-dot-prop](https://github.com/sindresorhus/dot-prop) fails 15 of 26 unit tests.\n* [getsetdeep](https://github.com/bevry/getsetdeep) fails all unit tests due to `this` being used improperly in the methods. I was able to patch it by binding the (plain) object to the methods, but it still fails 17 of 26 unit tests.\n* [lodash.set](https://lodash.com/) fails 11 of 26 unit tests.\n* [object-path-set](https://github.com/skratchdot/object-path-set) fails 12 of 26 unit tests.\n* [object-path](https://github.com/mariocasciaro/object-path) fails 16 of 26 unit tests.\n* [object-set](https://github.com/gearcase/object-set) fails 13 of 26 unit tests.\n* [set-nested-prop](https://github.com/tiaanduplessis/set-nested-prop) fails 24 of 26 unit tests.\n* [setvalue](https://github.com/blakeembrey/setvalue) (this library is almost identical to a previous version of this library)\n* Many dozens of others\n\n**Others that do the same thing, but use a completely different API**\n\n* [deep-set-in](https://github.com/KulikovskyIgor/deep-set-in)\n* [set-deep](https://github.com/radubrehar/set-deep)\n* [set-deep-prop](https://github.com/mmckelvy/set-deep-prop)\n* [bury](https://github.com/kalmbach/bury)\n* Many dozens of others\n\n## History\n\n### v3.0.0\n\n* Added support for a custom `split` function to be passed on the options.\n* Removed support for splitting on brackets, since a [custom function](https://github.com/jonschlinkert/split-string) can be passed to do this now.\n\n### v2.0.0\n\n* Adds support for escaping with double or single quotes. See [escaping](#escaping) for examples.\n* Will no longer split inside brackets or braces. See [bracket support](#bracket-support) for examples.\n\nIf there are any regressions please create a [bug report](../../issues/new). Thanks!\n\n## About\n\n<details>\n<summary><strong>Contributing</strong></summary>\n\nPull requests and stars are always welcome. For bugs and feature requests, [please create an issue](../../issues/new).\n\n</details>\n\n<details>\n<summary><strong>Running Tests</strong></summary>\n\nRunning and reviewing unit tests is a great way to get familiarized with a library and its API. You can install dependencies and run tests with the following command:\n\n```sh\n$ npm install && npm test\n```\n\n</details>\n\n<details>\n<summary><strong>Building docs</strong></summary>\n\n_(This project's readme.md is generated by [verb](https://github.com/verbose/verb-generate-readme), please don't edit the readme directly. Any changes to the readme must be made in the [.verb.md](.verb.md) readme template.)_\n\nTo generate the readme, run the following command:\n\n```sh\n$ npm install -g verbose/verb#dev verb-generate-readme && verb\n```\n\n</details>\n\n### Related projects\n\nYou might also be interested in these projects:\n\n* [assign-value](https://www.npmjs.com/package/assign-value): Assign a value or extend a deeply nested property of an object using object path… [more](https://github.com/jonschlinkert/assign-value) | [homepage](https://github.com/jonschlinkert/assign-value \"Assign a value or extend a deeply nested property of an object using object path notation.\")\n* [get-value](https://www.npmjs.com/package/get-value): Use property paths like 'a.b.c' to get a nested value from an object. Even works… [more](https://github.com/jonschlinkert/get-value) | [homepage](https://github.com/jonschlinkert/get-value \"Use property paths like 'a.b.c' to get a nested value from an object. Even works when keys have dots in them (no other dot-prop library can do this!).\")\n* [has-value](https://www.npmjs.com/package/has-value): Returns true if a value exists, false if empty. Works with deeply nested values using… [more](https://github.com/jonschlinkert/has-value) | [homepage](https://github.com/jonschlinkert/has-value \"Returns true if a value exists, false if empty. Works with deeply nested values using object paths.\")\n* [merge-value](https://www.npmjs.com/package/merge-value): Similar to assign-value but deeply merges object values or nested values using object path/dot notation. | [homepage](https://github.com/jonschlinkert/merge-value \"Similar to assign-value but deeply merges object values or nested values using object path/dot notation.\")\n* [omit-value](https://www.npmjs.com/package/omit-value): Omit properties from an object or deeply nested property of an object using object path… [more](https://github.com/jonschlinkert/omit-value) | [homepage](https://github.com/jonschlinkert/omit-value \"Omit properties from an object or deeply nested property of an object using object path notation.\")\n* [set-value](https://www.npmjs.com/package/set-value): Create nested values and any intermediaries using dot notation (`'a.b.c'`) paths. | [homepage](https://github.com/jonschlinkert/set-value \"Create nested values and any intermediaries using dot notation (`'a.b.c'`) paths.\")\n* [union-value](https://www.npmjs.com/package/union-value): Set an array of unique values as the property of an object. Supports setting deeply… [more](https://github.com/jonschlinkert/union-value) | [homepage](https://github.com/jonschlinkert/union-value \"Set an array of unique values as the property of an object. Supports setting deeply nested properties using using object-paths/dot notation.\")\n* [unset-value](https://www.npmjs.com/package/unset-value): Delete nested properties from an object using dot notation. | [homepage](https://github.com/jonschlinkert/unset-value \"Delete nested properties from an object using dot notation.\")\n\n### Contributors\n\n| **Commits** | **Contributor** |  \n| --- | --- |  \n| 73 | [jonschlinkert](https://github.com/jonschlinkert) |  \n| 2  | [mbelsky](https://github.com/mbelsky) |  \n| 1  | [doowb](https://github.com/doowb) |  \n| 1  | [GlennKintscher](https://github.com/GlennKintscher) |  \n| 1  | [vadimdemedes](https://github.com/vadimdemedes) |  \n| 1  | [wtgtybhertgeghgtwtg](https://github.com/wtgtybhertgeghgtwtg) |  \n\n### Author\n\n**Jon Schlinkert**\n\n* [GitHub Profile](https://github.com/jonschlinkert)\n* [Twitter Profile](https://twitter.com/jonschlinkert)\n* [LinkedIn Profile](https://linkedin.com/in/jonschlinkert)\n\n### License\n\nCopyright © 2020, [Jon Schlinkert](https://github.com/jonschlinkert).\nReleased under the [MIT License](LICENSE).\n\n***\n\n_This file was generated by [verb-generate-readme](https://github.com/verbose/verb-generate-readme), v0.8.0, on April 01, 2020._",
+  "maintainers": [
+    {
+      "name": "doowb",
+      "email": "brian.woodward@gmail.com"
+    },
+    {
+      "name": "jonschlinkert",
+      "email": "github@sellside.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-04-01T20:57:24.108Z",
+    "created": "2015-03-25T01:45:11.916Z",
+    "0.1.0": "2015-03-25T01:45:11.916Z",
+    "0.1.1": "2015-03-25T09:28:17.624Z",
+    "0.1.2": "2015-03-25T19:48:51.753Z",
+    "0.1.3": "2015-03-26T00:41:28.112Z",
+    "0.1.4": "2015-04-02T09:24:51.569Z",
+    "0.1.6": "2015-04-07T00:43:03.702Z",
+    "0.2.0": "2015-05-12T08:42:31.162Z",
+    "0.3.0": "2015-10-30T19:45:02.727Z",
+    "0.3.1": "2015-11-09T23:10:03.165Z",
+    "0.3.2": "2015-12-11T00:55:22.615Z",
+    "0.3.3": "2016-01-19T10:42:10.279Z",
+    "0.4.0": "2016-09-05T14:39:14.671Z",
+    "0.4.1": "2017-02-13T05:24:28.316Z",
+    "0.4.2": "2017-02-13T05:28:19.315Z",
+    "0.4.3": "2017-02-22T21:44:47.683Z",
+    "1.0.0": "2017-05-19T19:17:13.301Z",
+    "2.0.0": "2017-06-21T05:47:59.525Z",
+    "3.0.0": "2018-03-05T23:47:18.616Z",
+    "3.0.1": "2019-06-19T18:08:54.141Z",
+    "2.0.1": "2019-06-24T21:06:17.841Z",
+    "3.0.2": "2020-04-01T20:57:21.740Z"
+  },
+  "homepage": "https://github.com/jonschlinkert/set-value",
+  "keywords": [
+    "bury",
+    "deep-get-set",
+    "deep-object",
+    "deep-property",
+    "deep-set",
+    "deep-set-in",
+    "deephas",
+    "dot-prop",
+    "dot2val",
+    "es5-dot-prop",
+    "get",
+    "getsetdeep",
+    "has",
+    "hasown",
+    "key",
+    "keys",
+    "lodash.set",
+    "nested",
+    "notation",
+    "object",
+    "object-path",
+    "object-path-set",
+    "object-set",
+    "prop",
+    "properties",
+    "property",
+    "props",
+    "set",
+    "set-deep",
+    "set-deep-prop",
+    "set-nested-prop",
+    "setvalue",
+    "value",
+    "values"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonschlinkert/set-value.git"
+  },
+  "author": {
+    "name": "Jon Schlinkert",
+    "url": "https://github.com/jonschlinkert"
+  },
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/set-value/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "users": {
+    "ninozhang": true,
+    "mkwr": true,
+    "rocket0191": true,
+    "wmhilton": true,
+    "cr8tiv": true,
+    "isayme": true
+  },
+  "contributors": [
+    {
+      "name": "Jon Schlinkert",
+      "url": "http://twitter.com/jonschlinkert"
+    },
+    {
+      "url": "https://github.com/wtgtybhertgeghgtwtg"
+    },
+    {
+      "name": "Vadim Demedes",
+      "url": "https://vadimdemedes.com"
+    }
+  ]
+}

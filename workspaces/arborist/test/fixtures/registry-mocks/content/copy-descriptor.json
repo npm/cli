@@ -1,0 +1,202 @@
+{
+  "_id": "copy-descriptor",
+  "_rev": "2-503acfee57f93a8cf946ed478a39472d",
+  "name": "copy-descriptor",
+  "description": "Copy a descriptor from object A to object B",
+  "dist-tags": {
+    "latest": "0.1.1"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "copy-descriptor",
+      "description": "Copy a descriptor from object A to object B",
+      "version": "0.1.0",
+      "homepage": "https://github.com/jonschlinkert/copy-descriptor",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/copy-descriptor.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/copy-descriptor/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^0.1.4",
+        "mocha": "*"
+      },
+      "keywords": [
+        "copy",
+        "descriptor"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "is-accessor-descriptor",
+            "is-data-descriptor",
+            "is-descriptor",
+            "is-plain-object",
+            "isobject"
+          ]
+        },
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "layout": "default"
+      },
+      "gitHead": "b229b64ef949a9b2c7bc812015891521da32659c",
+      "_id": "copy-descriptor@0.1.0",
+      "_shasum": "85b03cf2870a42c34feabb2da433874d279130bb",
+      "_from": ".",
+      "_npmVersion": "3.3.6",
+      "_nodeVersion": "5.0.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "85b03cf2870a42c34feabb2da433874d279130bb",
+        "tarball": "https://registry.npmjs.org/copy-descriptor/-/copy-descriptor-0.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.1.1": {
+      "name": "copy-descriptor",
+      "description": "Copy a descriptor from object A to object B",
+      "version": "0.1.1",
+      "homepage": "https://github.com/jonschlinkert/copy-descriptor",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/copy-descriptor.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/copy-descriptor/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^0.1.9",
+        "mocha": "^2.5.3"
+      },
+      "keywords": [
+        "copy",
+        "descriptor"
+      ],
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "is-accessor-descriptor",
+            "is-data-descriptor",
+            "is-descriptor",
+            "is-plain-object",
+            "isobject"
+          ]
+        },
+        "lint": {
+          "reflinks": true
+        },
+        "reflinks": [
+          "verb-readme-generator",
+          "verb"
+        ]
+      },
+      "gitHead": "572c31416d4538b7ba5f52e2bb0765ac237f79e2",
+      "_id": "copy-descriptor@0.1.1",
+      "_shasum": "676f6eb3c39997c2ee1ac3a924fd6124748f578d",
+      "_from": ".",
+      "_npmVersion": "3.8.9",
+      "_nodeVersion": "6.2.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "676f6eb3c39997c2ee1ac3a924fd6124748f578d",
+        "tarball": "https://registry.npmjs.org/copy-descriptor/-/copy-descriptor-0.1.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/copy-descriptor-0.1.1.tgz_1465497122701_0.666076025692746"
+      },
+      "directories": {}
+    }
+  },
+  "readme": "# copy-descriptor [![NPM version](https://img.shields.io/npm/v/copy-descriptor.svg?style=flat)](https://www.npmjs.com/package/copy-descriptor) [![NPM downloads](https://img.shields.io/npm/dm/copy-descriptor.svg?style=flat)](https://npmjs.org/package/copy-descriptor) [![Build Status](https://img.shields.io/travis/jonschlinkert/copy-descriptor.svg?style=flat)](https://travis-ci.org/jonschlinkert/copy-descriptor)\n\nCopy a descriptor from object A to object B\n\n## Install\n\nInstall with [npm](https://www.npmjs.com/):\n\n```sh\n$ npm install copy-descriptor --save\n```\n\n## Usage\n\n```js\nvar copy = require('copy-descriptor');\n```\n\n## API\n\n### [copy](index.js#L50)\n\nCopy a descriptor from one object to another.\n\n**Params**\n\n* `receiver` **{Object}**: The target object\n* `provider` **{Object}**: The provider object\n* `from` **{String}**: The key to copy on provider.\n* `to` **{String}**: Optionally specify a new key name to use.\n* `returns` **{Object}**\n\n**Example**\n\n```js\nfunction App() {\n  this.cache = {};\n}\nApp.prototype.set = function(key, val) {\n  this.cache[key] = val;\n  return this;\n};\nObject.defineProperty(App.prototype, 'count', {\n  get: function() {\n    return Object.keys(this.cache).length;\n  }\n});\n\ncopy(App.prototype, 'count', 'len');\n\n// create an instance\nvar app = new App();\n\napp.set('a', true);\napp.set('b', true);\napp.set('c', true);\n\nconsole.log(app.count);\n//=> 3\nconsole.log(app.len);\n//=> 3\n```\n\n## Related projects\n\nYou might also be interested in these projects:\n\n* [is-accessor-descriptor](https://www.npmjs.com/package/is-accessor-descriptor): Returns true if a value has the characteristics of a valid JavaScript accessor descriptor. | [homepage](https://github.com/jonschlinkert/is-accessor-descriptor \"Returns true if a value has the characteristics of a valid JavaScript accessor descriptor.\")\n* [is-data-descriptor](https://www.npmjs.com/package/is-data-descriptor): Returns true if a value has the characteristics of a valid JavaScript data descriptor. | [homepage](https://github.com/jonschlinkert/is-data-descriptor \"Returns true if a value has the characteristics of a valid JavaScript data descriptor.\")\n* [is-descriptor](https://www.npmjs.com/package/is-descriptor): Returns true if a value has the characteristics of a valid JavaScript descriptor. Works for… [more](https://github.com/jonschlinkert/is-descriptor) | [homepage](https://github.com/jonschlinkert/is-descriptor \"Returns true if a value has the characteristics of a valid JavaScript descriptor. Works for data descriptors and accessor descriptors.\")\n* [is-plain-object](https://www.npmjs.com/package/is-plain-object): Returns true if an object was created by the `Object` constructor. | [homepage](https://github.com/jonschlinkert/is-plain-object \"Returns true if an object was created by the `Object` constructor.\")\n* [isobject](https://www.npmjs.com/package/isobject): Returns true if the value is an object and not an array or null. | [homepage](https://github.com/jonschlinkert/isobject \"Returns true if the value is an object and not an array or null.\")\n\n## Contributing\n\nThis document was generated by [verb-readme-generator](https://github.com/verbose/verb-readme-generator) (a [verb](https://github.com/verbose/verb) generator), please don't edit directly. Any changes to the readme must be made in [.verb.md](.verb.md). See [Building Docs](#building-docs).\n\nPull requests and stars are always welcome. For bugs and feature requests, [please create an issue](../../issues/new). Or visit the [verb-readme-generator](https://github.com/verbose/verb-readme-generator) project to submit bug reports or pull requests for the readme layout template.\n\n## Building docs\n\nGenerate readme and API documentation with [verb](https://github.com/verbose/verb):\n\n```sh\n$ npm install -g verb verb-readme-generator && verb\n```\n\n## Running tests\n\nInstall dev dependencies:\n\n```sh\n$ npm install -d && npm test\n```\n\n## Author\n\n**Jon Schlinkert**\n\n* [github/jonschlinkert](https://github.com/jonschlinkert)\n* [twitter/jonschlinkert](http://twitter.com/jonschlinkert)\n\n## License\n\nCopyright © 2016, [Jon Schlinkert](https://github.com/jonschlinkert).\nReleased under the [MIT license](https://github.com/jonschlinkert/copy-descriptor/blob/master/LICENSE).\n\n***\n\n_This file was generated by [verb](https://github.com/verbose/verb), v0.9.0, on June 09, 2016._",
+  "maintainers": [
+    {
+      "name": "jonschlinkert",
+      "email": "github@sellside.com"
+    }
+  ],
+  "time": {
+    "modified": "2016-06-09T18:32:05.080Z",
+    "created": "2015-12-28T10:28:49.609Z",
+    "0.1.0": "2015-12-28T10:28:49.609Z",
+    "0.1.1": "2016-06-09T18:32:05.080Z"
+  },
+  "homepage": "https://github.com/jonschlinkert/copy-descriptor",
+  "keywords": [
+    "copy",
+    "descriptor"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonschlinkert/copy-descriptor.git"
+  },
+  "author": {
+    "name": "Jon Schlinkert",
+    "url": "https://github.com/jonschlinkert"
+  },
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/copy-descriptor/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "_attachments": {}
+}

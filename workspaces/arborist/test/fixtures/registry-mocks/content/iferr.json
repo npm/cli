@@ -1,0 +1,517 @@
+{
+  "_id": "iferr",
+  "_rev": "16-609a28d7785bdf1add05cf9e899c3868",
+  "name": "iferr",
+  "description": "Higher-order functions for easier error handling",
+  "dist-tags": {
+    "latest": "1.0.2"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "iferr",
+      "version": "0.1.0",
+      "description": "Higher-order functions for easier error handling",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha",
+        "prepublish": "coffee -c index.coffee"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/shesek/iferr"
+      },
+      "keywords": [
+        "error",
+        "errors"
+      ],
+      "author": {
+        "name": "Nadav Ivgi"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/shesek/iferr/issues"
+      },
+      "homepage": "https://github.com/shesek/iferr",
+      "devDependencies": {
+        "coffee-script": "^1.7.1",
+        "mocha": "^1.18.2"
+      },
+      "_id": "iferr@0.1.0",
+      "dist": {
+        "shasum": "e2a9505d117c4c93c428390ded27692909425948",
+        "tarball": "https://registry.npmjs.org/iferr/-/iferr-0.1.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.4.4",
+      "_npmUser": {
+        "name": "nadav",
+        "email": "npm@shesek.info"
+      },
+      "maintainers": [
+        {
+          "name": "nadav",
+          "email": "npm@shesek.info"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.1": {
+      "name": "iferr",
+      "version": "0.1.1",
+      "description": "Higher-order functions for easier error handling",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha",
+        "prepublish": "coffee -c index.coffee"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/shesek/iferr"
+      },
+      "keywords": [
+        "error",
+        "errors"
+      ],
+      "author": {
+        "name": "Nadav Ivgi"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/shesek/iferr/issues"
+      },
+      "homepage": "https://github.com/shesek/iferr",
+      "devDependencies": {
+        "coffee-script": "^1.7.1",
+        "mocha": "^1.18.2"
+      },
+      "_id": "iferr@0.1.1",
+      "dist": {
+        "shasum": "b6cb6bb02a01e80f0ccfbddbe914ab3312c1308a",
+        "tarball": "https://registry.npmjs.org/iferr/-/iferr-0.1.1.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.4.4",
+      "_npmUser": {
+        "name": "nadav",
+        "email": "npm@shesek.info"
+      },
+      "maintainers": [
+        {
+          "name": "nadav",
+          "email": "npm@shesek.info"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.2": {
+      "name": "iferr",
+      "version": "0.1.2",
+      "description": "Higher-order functions for easier error handling",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha",
+        "prepublish": "coffee -c index.coffee"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/shesek/iferr"
+      },
+      "keywords": [
+        "error",
+        "errors"
+      ],
+      "author": {
+        "name": "Nadav Ivgi"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/shesek/iferr/issues"
+      },
+      "homepage": "https://github.com/shesek/iferr",
+      "devDependencies": {
+        "coffee-script": "^1.7.1",
+        "mocha": "^1.18.2"
+      },
+      "_id": "iferr@0.1.2",
+      "dist": {
+        "shasum": "1ae1a5fd330bd1fc4861b7381c72b28467ae3ae6",
+        "tarball": "https://registry.npmjs.org/iferr/-/iferr-0.1.2.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.4.4",
+      "_npmUser": {
+        "name": "nadav",
+        "email": "npm@shesek.info"
+      },
+      "maintainers": [
+        {
+          "name": "nadav",
+          "email": "npm@shesek.info"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.3": {
+      "name": "iferr",
+      "version": "0.1.3",
+      "description": "Higher-order functions for easier error handling",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha",
+        "prepublish": "coffee -c index.coffee"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/shesek/iferr"
+      },
+      "keywords": [
+        "error",
+        "errors"
+      ],
+      "author": {
+        "name": "Nadav Ivgi"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/shesek/iferr/issues"
+      },
+      "homepage": "https://github.com/shesek/iferr",
+      "devDependencies": {
+        "coffee-script": "^1.7.1",
+        "mocha": "^1.18.2"
+      },
+      "_id": "iferr@0.1.3",
+      "dist": {
+        "shasum": "2eb16f7bfd5c4fa6fe23fbdc6ca815facf0ab7c0",
+        "tarball": "https://registry.npmjs.org/iferr/-/iferr-0.1.3.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.4.4",
+      "_npmUser": {
+        "name": "nadav",
+        "email": "npm@shesek.info"
+      },
+      "maintainers": [
+        {
+          "name": "nadav",
+          "email": "npm@shesek.info"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.4": {
+      "name": "iferr",
+      "version": "0.1.4",
+      "description": "Higher-order functions for easier error handling",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha",
+        "prepublish": "coffee -c index.coffee"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/shesek/iferr"
+      },
+      "keywords": [
+        "error",
+        "errors"
+      ],
+      "author": {
+        "name": "Nadav Ivgi"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/shesek/iferr/issues"
+      },
+      "homepage": "https://github.com/shesek/iferr",
+      "devDependencies": {
+        "coffee-script": "^1.7.1",
+        "mocha": "^1.18.2"
+      },
+      "_id": "iferr@0.1.4",
+      "dist": {
+        "shasum": "6ebf320517ac963807d0beb8c6a5453f145267d8",
+        "tarball": "https://registry.npmjs.org/iferr/-/iferr-0.1.4.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.4.4",
+      "_npmUser": {
+        "name": "nadav",
+        "email": "npm@shesek.info"
+      },
+      "maintainers": [
+        {
+          "name": "nadav",
+          "email": "npm@shesek.info"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.5": {
+      "name": "iferr",
+      "version": "0.1.5",
+      "description": "Higher-order functions for easier error handling",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha",
+        "prepublish": "coffee -c index.coffee"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/shesek/iferr"
+      },
+      "keywords": [
+        "error",
+        "errors"
+      ],
+      "author": {
+        "name": "Nadav Ivgi"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/shesek/iferr/issues"
+      },
+      "homepage": "https://github.com/shesek/iferr",
+      "devDependencies": {
+        "coffee-script": "^1.7.1",
+        "mocha": "^1.18.2"
+      },
+      "_id": "iferr@0.1.5",
+      "dist": {
+        "shasum": "c60eed69e6d8fdb6b3104a1fcbca1c192dc5b501",
+        "tarball": "https://registry.npmjs.org/iferr/-/iferr-0.1.5.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.4.4",
+      "_npmUser": {
+        "name": "nadav",
+        "email": "npm@shesek.info"
+      },
+      "maintainers": [
+        {
+          "name": "nadav",
+          "email": "npm@shesek.info"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "iferr",
+      "version": "1.0.0",
+      "description": "Higher-order functions for easier error handling",
+      "main": "iferr.js",
+      "scripts": {
+        "test": "mocha"
+      },
+      "engines": {
+        "node": ">=6.0.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/shesek/iferr.git"
+      },
+      "keywords": [
+        "error",
+        "errors"
+      ],
+      "author": {
+        "name": "Nadav Ivgi"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/shesek/iferr/issues"
+      },
+      "homepage": "https://github.com/shesek/iferr",
+      "devDependencies": {
+        "coffee-script": "^1.12.7",
+        "mocha": "^4.0.1"
+      },
+      "gitHead": "3d83da970e252d3f255bd95d100ec156e2f57661",
+      "_id": "iferr@1.0.0",
+      "_npmVersion": "5.4.2",
+      "_nodeVersion": "6.0.0",
+      "_npmUser": {
+        "name": "nadav",
+        "email": "npm@shesek.info"
+      },
+      "dist": {
+        "integrity": "sha512-0+ecqiP/cxgnNBIPi+TgJlaxE7sFp2N3kBFg17klQUdf24YKiaEV6b9QgEqOlD5vCVCE0U7OV9lPSN2OfS4zoQ==",
+        "shasum": "36700e6a6d5d42e3e66b6d90fb55a018970b0aab",
+        "tarball": "https://registry.npmjs.org/iferr/-/iferr-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "nadav",
+          "email": "npm@shesek.info"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/iferr-1.0.0.tgz_1511613509880_0.10885823937132955"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "iferr",
+      "version": "1.0.1",
+      "description": "Higher-order functions for easier error handling",
+      "main": "iferr.js",
+      "scripts": {
+        "test": "mocha"
+      },
+      "engines": {
+        "node": ">=6.0.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/shesek/iferr.git"
+      },
+      "keywords": [
+        "error",
+        "errors"
+      ],
+      "author": {
+        "name": "Nadav Ivgi"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/shesek/iferr/issues"
+      },
+      "homepage": "https://github.com/shesek/iferr",
+      "devDependencies": {
+        "coffeescript": "^2.3.1",
+        "mocha": "^4.0.1"
+      },
+      "gitHead": "efcb6a990ac46f2b115e147ca27471a39140a9f2",
+      "_id": "iferr@1.0.1",
+      "_npmVersion": "5.7.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "nadav",
+        "email": "npm@shesek.info"
+      },
+      "dist": {
+        "integrity": "sha512-e7YmhEfXYL+P28J84UOYsBUCG56MBLWj7ofOMCRQHwU59sSJxXdeb31/1K6wfL3wtTH78rvrdUVylesh4VSC9g==",
+        "shasum": "37b878f51d1e91a12d9f84ae7fca922a64c53a54",
+        "tarball": "https://registry.npmjs.org/iferr/-/iferr-1.0.1.tgz",
+        "fileCount": 232,
+        "unpackedSize": 2283858,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbIkYkCRA9TVsSAnZWagAAIGMP/35BkHQRD19rnE0UJ18h\n1WMgJSumhegNdrKhaxWA/MUxxf8q5dwQKhi4+XgFB9EfxsRyWDa+kOQTY7wR\nrD4yYcYpOUYSVcdzXtgkQzaEAh0wOaLj99DUICT4EJT7ozEzW4kmjp9F960D\n5O26uniW8ufBgSnuVWtOWdrmMy9IlsiRTZIc7err/FgjNqrmBNg2ZrST4RNE\noLZu3N4cdBaUrzU8Si+dS1vTPF+TWQMWiKGJoqDm6P+aHEmQ5/vHfOIA9PW/\n/hUrS/NcGhi9qgZP3ypLV+NsGJa84TwU2CypmzhoegaZ69E1cyAg00NuWJ4u\n4kqdiwVW3Sjn2E8oBvvNywOHUKyufmYu06fQpavS82rkmqGJ0iCTxcusGBbU\n06EPXVc7XXDlWnBu/9cdm2ULtO5zsl1/vt3YmogdBS0zHap4gQJVAgjHBbNa\nfMdTZNCIjtWYja229yPLGKCcDot23Kq9YLbS/AkHr9Rqpy/Oijn0czIYFlFP\nPqe4/M2kDKnce1nor7K5Mhdw7MsYTI6tfkaqoZR6e/HyJ75Saz4opMFwB7jB\nVdK0/SbspNmRqng5Zz794y+vvVpLvYANeUwXJzLA6/8IEyzh6olKW+DFp0uI\nJG49QiF+K28ehH5rUP6V+XEQTiVLz4Uz5io2Z0NbPLqkQcpZz1U+4ZmEF2wa\neZDe\r\n=1sRK\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "nadav",
+          "email": "npm@shesek.info"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/iferr_1.0.1_1528972835813_0.6093736871182065"
+      }
+    },
+    "1.0.2": {
+      "name": "iferr",
+      "version": "1.0.2",
+      "description": "Higher-order functions for easier error handling",
+      "main": "iferr.js",
+      "files": [
+        "iferr.js"
+      ],
+      "scripts": {
+        "test": "mocha"
+      },
+      "engines": {
+        "node": ">=6.0.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/shesek/iferr.git"
+      },
+      "keywords": [
+        "error",
+        "errors"
+      ],
+      "author": {
+        "name": "Nadav Ivgi"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/shesek/iferr/issues"
+      },
+      "homepage": "https://github.com/shesek/iferr",
+      "devDependencies": {
+        "coffeescript": "^2.3.1",
+        "mocha": "^4.0.1"
+      },
+      "gitHead": "036418970e60e0d400072b1fb7e830a13a07809c",
+      "_id": "iferr@1.0.2",
+      "_npmVersion": "5.7.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "nadav",
+        "email": "npm@shesek.info"
+      },
+      "dist": {
+        "integrity": "sha512-9AfeLfji44r5TKInjhz3W9DyZI1zR1JAf2hVBMGhddAKPqBsupb89jGfbCTHIGZd6fGZl9WlHdn4AObygyMKwg==",
+        "shasum": "e9fde49a9da06dc4a4194c6c9ed6d08305037a6d",
+        "tarball": "https://registry.npmjs.org/iferr/-/iferr-1.0.2.tgz",
+        "fileCount": 4,
+        "unpackedSize": 3450,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbKB/iCRA9TVsSAnZWagAAqhUQAJ+v4dCyHuoKu6TTUUjP\n6QS7GTk9tHZI0U9wLy+RcGXL8QH3+1gSwQhUpNkCUBh/ZqiWpiA6ORrTznOs\ngMJ9XBQJ8pMvLIqgkydFfr1NpCmjwkgOTIFoaQekZNNzCgotNMZum0ZexeC+\nwU6vrRk9bD2yEW6/+WHy8wPduS54xipb6g6WHcCa3ZtHSWE2H37YSkGbztkA\nD5IgMUSI9JAhvF8kYbcNH8ctYa9vlN9ud2oYs7Ax3ZVcfndOxUoD1nM4cGuU\ngLddqEgTP8Cxf5Jgp0Bs+MQiFBRs4fyFV7vkBsDbUfh9c0izV5ZXT8pozs+J\ndNCT9d3sDEAfVk9pIjxR8gNimJuo7rJMnHAO8DVRYBJVTz7KFaQkOAWgCZAO\n0p27mi+Z1Q1xMm/p+JLQ6L/+JKS+jdzKn34p6/x2ZEzwquYn+1ijfO7eQT2K\nAAv+hEAr1X+qFrL2vOtz4ojXjsSCgyqdnmvQmEuZw69Pa+eboszbn+CbY2an\nhJyyTRNM8tDsKuu6Y29TAgccaPHVN+04pum62fMHD4Icp3aEjiC7FPlUzvAq\nuUmBtY/so+JyFlPbaU9z/tnfpr6WLjsyP+g6cSkr1UY0Vb6BQ4rHEgql4Cym\n1uJykdY9P88n0AGKg1Ag0ChT6qNxIQ2AbDOmCXjvj169V5rZ8O9Lppu3BIU+\nMaw5\r\n=jOYb\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "nadav",
+          "email": "npm@shesek.info"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/iferr_1.0.2_1529356257707_0.5767475952082075"
+      }
+    }
+  },
+  "readme": "# iferr\n\nHigher-order functions for easier error handling.\n\n`if (err) return cb(err);` be gone!\n\n## Install\n```bash\nnpm install iferr\n```\n\n## Use\n\n### JavaScript/ES6 example\n```js\nvar iferr = require('iferr');\n\nfunction get_friends_count(id, cb) {\n  User.load_user(id, iferr(cb, user =>\n    user.load_friends(iferr(cb, friends =>\n      cb(null, friends.length)\n    ))\n  ))\n}\n```\n\n### JavaScript/ES5 example\n```js\nvar iferr = require('iferr');\n\nfunction get_friends_count(id, cb) {\n  User.load_user(id, iferr(cb, function(user) {\n    user.load_friends(iferr(cb, function(friends) {\n      cb(null, friends.length)\n    }))\n  }))\n}\n```\n\n### CoffeeScript example\n```coffee\niferr = require 'iferr'\n\nget_friends_count = (id, cb) ->\n  User.load_user id, iferr cb, (user) ->\n    user.load_friends iferr cb, (friends) ->\n      cb null, friends.length\n```\n\n(TODO: document tiferr, throwerr and printerr)\n\n## License\nMIT\n",
+  "maintainers": [
+    {
+      "name": "nadav",
+      "email": "npm@shesek.info"
+    }
+  ],
+  "time": {
+    "modified": "2018-06-18T21:11:03.825Z",
+    "created": "2014-04-11T16:08:32.883Z",
+    "0.1.0": "2014-04-11T16:08:32.883Z",
+    "0.1.1": "2014-04-26T13:27:23.641Z",
+    "0.1.2": "2014-04-26T13:59:44.136Z",
+    "0.1.3": "2014-12-01T09:38:37.675Z",
+    "0.1.4": "2014-12-02T13:33:28.901Z",
+    "0.1.5": "2014-12-02T13:35:53.618Z",
+    "1.0.0": "2017-11-25T12:38:30.757Z",
+    "1.0.1": "2018-06-14T10:40:35.885Z",
+    "1.0.2": "2018-06-18T21:10:57.769Z"
+  },
+  "homepage": "https://github.com/shesek/iferr",
+  "keywords": [
+    "error",
+    "errors"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shesek/iferr.git"
+  },
+  "author": {
+    "name": "Nadav Ivgi"
+  },
+  "bugs": {
+    "url": "https://github.com/shesek/iferr/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "users": {
+    "wangnan0610": true
+  },
+  "_attachments": {}
+}

@@ -1,0 +1,4097 @@
+{
+  "_id": "mime-types",
+  "_rev": "143-950e3f74addc8c0ba058838870c1a09d",
+  "name": "mime-types",
+  "description": "The ultimate javascript content-type utility.",
+  "dist-tags": {
+    "latest": "2.1.27"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "mime-types",
+      "description": "ultimate mime type utility",
+      "version": "0.1.0",
+      "author": {
+        "name": "Jonathan Ong",
+        "email": "me@jongleberry.com",
+        "url": "http://jongleberry.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/expressjs/mime-types"
+      },
+      "license": "MIT",
+      "main": "lib",
+      "devDependencies": {
+        "co": "3",
+        "cogent": "0",
+        "mocha": "1",
+        "should": "3"
+      },
+      "scripts": {
+        "test": "make test"
+      },
+      "bugs": {
+        "url": "https://github.com/expressjs/mime-types/issues"
+      },
+      "homepage": "https://github.com/expressjs/mime-types",
+      "_id": "mime-types@0.1.0",
+      "dist": {
+        "shasum": "480f66fa19ef6ff039712a5393a4bc4901b5bf40",
+        "tarball": "https://registry.npmjs.org/mime-types/-/mime-types-0.1.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.4.6",
+      "_npmUser": {
+        "name": "jongleberry",
+        "email": "jonathanrichardong@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "jongleberry",
+          "email": "jonathanrichardong@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "mime-types",
+      "description": "ultimate mime type utility",
+      "version": "1.0.0",
+      "author": {
+        "name": "Jonathan Ong",
+        "email": "me@jongleberry.com",
+        "url": "http://jongleberry.com"
+      },
+      "contributors": [
+        {
+          "name": "Jeremiah Senkpiel",
+          "email": "fishrock123@rocketmail.com",
+          "url": "https://searchbeam.jit.su"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/expressjs/mime-types"
+      },
+      "license": "MIT",
+      "main": "lib",
+      "devDependencies": {
+        "co": "3",
+        "cogent": "0",
+        "mocha": "1",
+        "should": "3"
+      },
+      "scripts": {
+        "test": "make test"
+      },
+      "bugs": {
+        "url": "https://github.com/expressjs/mime-types/issues"
+      },
+      "homepage": "https://github.com/expressjs/mime-types",
+      "_id": "mime-types@1.0.0",
+      "_shasum": "6a7b4a6af2e7d92f97afe03f047c7801e8f001d2",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "fishrock123",
+        "email": "fishrock123@rocketmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "jongleberry",
+          "email": "jonathanrichardong@gmail.com"
+        },
+        {
+          "name": "fishrock123",
+          "email": "fishrock123@rocketmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "6a7b4a6af2e7d92f97afe03f047c7801e8f001d2",
+        "tarball": "https://registry.npmjs.org/mime-types/-/mime-types-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "mime-types",
+      "description": "The ultimate javascript content-type utility.",
+      "version": "1.0.1",
+      "author": {
+        "name": "Jonathan Ong",
+        "email": "me@jongleberry.com",
+        "url": "http://jongleberry.com"
+      },
+      "contributors": [
+        {
+          "name": "Jeremiah Senkpiel",
+          "email": "fishrock123@rocketmail.com",
+          "url": "https://searchbeam.jit.su"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/expressjs/mime-types"
+      },
+      "license": "MIT",
+      "main": "lib",
+      "devDependencies": {
+        "co": "3",
+        "cogent": "0",
+        "mocha": "1",
+        "should": "3"
+      },
+      "engines": {
+        "node": ">= 0.8.0"
+      },
+      "scripts": {
+        "test": "make test"
+      },
+      "bugs": {
+        "url": "https://github.com/expressjs/mime-types/issues"
+      },
+      "homepage": "https://github.com/expressjs/mime-types",
+      "_id": "mime-types@1.0.1",
+      "_shasum": "4d9ad71bcd4cdef6be892c21b5b81645607c0b8f",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "fishrock123",
+        "email": "fishrock123@rocketmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "jongleberry",
+          "email": "jonathanrichardong@gmail.com"
+        },
+        {
+          "name": "fishrock123",
+          "email": "fishrock123@rocketmail.com"
+        },
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        }
+      ],
+      "dist": {
+        "shasum": "4d9ad71bcd4cdef6be892c21b5b81645607c0b8f",
+        "tarball": "https://registry.npmjs.org/mime-types/-/mime-types-1.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "mime-types",
+      "description": "The ultimate javascript content-type utility.",
+      "version": "1.0.2",
+      "author": {
+        "name": "Jonathan Ong",
+        "email": "me@jongleberry.com",
+        "url": "http://jongleberry.com"
+      },
+      "contributors": [
+        {
+          "name": "Jeremiah Senkpiel",
+          "email": "fishrock123@rocketmail.com",
+          "url": "https://searchbeam.jit.su"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/expressjs/mime-types"
+      },
+      "license": "MIT",
+      "main": "lib",
+      "devDependencies": {
+        "co": "3",
+        "cogent": "0",
+        "mocha": "1",
+        "should": "3"
+      },
+      "engines": {
+        "node": ">= 0.8.0"
+      },
+      "scripts": {
+        "test": "make test"
+      },
+      "gitHead": "e82b23836eb42003b8346fb31769da2fb7eb54e8",
+      "bugs": {
+        "url": "https://github.com/expressjs/mime-types/issues"
+      },
+      "homepage": "https://github.com/expressjs/mime-types",
+      "_id": "mime-types@1.0.2",
+      "_shasum": "995ae1392ab8affcbfcb2641dd054e943c0d5dce",
+      "_from": ".",
+      "_npmVersion": "1.4.21",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "maintainers": [
+        {
+          "name": "jongleberry",
+          "email": "jonathanrichardong@gmail.com"
+        },
+        {
+          "name": "fishrock123",
+          "email": "fishrock123@rocketmail.com"
+        },
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        }
+      ],
+      "dist": {
+        "shasum": "995ae1392ab8affcbfcb2641dd054e943c0d5dce",
+        "tarball": "https://registry.npmjs.org/mime-types/-/mime-types-1.0.2.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "mime-types",
+      "description": "The ultimate javascript content-type utility.",
+      "version": "2.0.0",
+      "author": {
+        "name": "Jonathan Ong",
+        "email": "me@jongleberry.com",
+        "url": "http://jongleberry.com"
+      },
+      "contributors": [
+        {
+          "name": "Jeremiah Senkpiel",
+          "email": "fishrock123@rocketmail.com",
+          "url": "https://searchbeam.jit.su"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jshttp/mime-types"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "mime-db": "~1.0.1"
+      },
+      "devDependencies": {
+        "istanbul": "0",
+        "mocha": "1",
+        "should": "3"
+      },
+      "engines": {
+        "node": ">= 0.8.0"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec --require should test/test.js",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot --require should test/test.js",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter dot --require should test/test.js"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "mime",
+        "types"
+      ],
+      "gitHead": "c5a3c150ab62deeb61da5bd0b6265115b1b35f27",
+      "bugs": {
+        "url": "https://github.com/jshttp/mime-types/issues"
+      },
+      "homepage": "https://github.com/jshttp/mime-types",
+      "_id": "mime-types@2.0.0",
+      "_shasum": "4a85688446a4d94a03909e0ae292766744a3c313",
+      "_from": ".",
+      "_npmVersion": "1.4.21",
+      "_npmUser": {
+        "name": "jongleberry",
+        "email": "jonathanrichardong@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "jongleberry",
+          "email": "jonathanrichardong@gmail.com"
+        },
+        {
+          "name": "fishrock123",
+          "email": "fishrock123@rocketmail.com"
+        },
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        }
+      ],
+      "dist": {
+        "shasum": "4a85688446a4d94a03909e0ae292766744a3c313",
+        "tarball": "https://registry.npmjs.org/mime-types/-/mime-types-2.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.1": {
+      "name": "mime-types",
+      "description": "The ultimate javascript content-type utility.",
+      "version": "2.0.1",
+      "contributors": [
+        {
+          "name": "Jeremiah Senkpiel",
+          "email": "fishrock123@rocketmail.com",
+          "url": "https://searchbeam.jit.su"
+        },
+        {
+          "name": "Jonathan Ong",
+          "email": "me@jongleberry.com",
+          "url": "http://jongleberry.com"
+        }
+      ],
+      "license": "MIT",
+      "keywords": [
+        "mime",
+        "types"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jshttp/mime-types"
+      },
+      "dependencies": {
+        "mime-db": "~1.0.1"
+      },
+      "devDependencies": {
+        "istanbul": "0",
+        "mocha": "1"
+      },
+      "files": [
+        "HISTORY.md",
+        "LICENSE",
+        "index.js"
+      ],
+      "engines": {
+        "node": ">= 0.6"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec test/test.js",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot test/test.js",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter dot test/test.js"
+      },
+      "gitHead": "c6e40fb033331aa87d9d4a5f1e5c0245e9edb2f6",
+      "bugs": {
+        "url": "https://github.com/jshttp/mime-types/issues"
+      },
+      "homepage": "https://github.com/jshttp/mime-types",
+      "_id": "mime-types@2.0.1",
+      "_shasum": "7f5b4712592e7dd46ca733fd1c5f5d71356de615",
+      "_from": ".",
+      "_npmVersion": "1.4.21",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "maintainers": [
+        {
+          "name": "jongleberry",
+          "email": "jonathanrichardong@gmail.com"
+        },
+        {
+          "name": "fishrock123",
+          "email": "fishrock123@rocketmail.com"
+        },
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        }
+      ],
+      "dist": {
+        "shasum": "7f5b4712592e7dd46ca733fd1c5f5d71356de615",
+        "tarball": "https://registry.npmjs.org/mime-types/-/mime-types-2.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.2": {
+      "name": "mime-types",
+      "description": "The ultimate javascript content-type utility.",
+      "version": "2.0.2",
+      "contributors": [
+        {
+          "name": "Jeremiah Senkpiel",
+          "email": "fishrock123@rocketmail.com",
+          "url": "https://searchbeam.jit.su"
+        },
+        {
+          "name": "Jonathan Ong",
+          "email": "me@jongleberry.com",
+          "url": "http://jongleberry.com"
+        }
+      ],
+      "license": "MIT",
+      "keywords": [
+        "mime",
+        "types"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jshttp/mime-types"
+      },
+      "dependencies": {
+        "mime-db": "~1.1.0"
+      },
+      "devDependencies": {
+        "istanbul": "0",
+        "mocha": "1"
+      },
+      "files": [
+        "HISTORY.md",
+        "LICENSE",
+        "index.js"
+      ],
+      "engines": {
+        "node": ">= 0.6"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec test/test.js",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot test/test.js",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter dot test/test.js"
+      },
+      "gitHead": "7272f212651dcaca233803c58dc251b20668ca61",
+      "bugs": {
+        "url": "https://github.com/jshttp/mime-types/issues"
+      },
+      "homepage": "https://github.com/jshttp/mime-types",
+      "_id": "mime-types@2.0.2",
+      "_shasum": "c74b779f2896c367888622bd537aaaad4c0a2c08",
+      "_from": ".",
+      "_npmVersion": "1.4.21",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "maintainers": [
+        {
+          "name": "jongleberry",
+          "email": "jonathanrichardong@gmail.com"
+        },
+        {
+          "name": "fishrock123",
+          "email": "fishrock123@rocketmail.com"
+        },
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        }
+      ],
+      "dist": {
+        "shasum": "c74b779f2896c367888622bd537aaaad4c0a2c08",
+        "tarball": "https://registry.npmjs.org/mime-types/-/mime-types-2.0.2.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.3": {
+      "name": "mime-types",
+      "description": "The ultimate javascript content-type utility.",
+      "version": "2.0.3",
+      "contributors": [
+        {
+          "name": "Jeremiah Senkpiel",
+          "email": "fishrock123@rocketmail.com",
+          "url": "https://searchbeam.jit.su"
+        },
+        {
+          "name": "Jonathan Ong",
+          "email": "me@jongleberry.com",
+          "url": "http://jongleberry.com"
+        }
+      ],
+      "license": "MIT",
+      "keywords": [
+        "mime",
+        "types"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jshttp/mime-types"
+      },
+      "dependencies": {
+        "mime-db": "~1.2.0"
+      },
+      "devDependencies": {
+        "istanbul": "0",
+        "mocha": "~1.21.5"
+      },
+      "files": [
+        "HISTORY.md",
+        "LICENSE",
+        "index.js"
+      ],
+      "engines": {
+        "node": ">= 0.6"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec test/test.js",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot test/test.js",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter dot test/test.js"
+      },
+      "gitHead": "7d38db8c0576cf7a2dd49df4818dc129090b3a2f",
+      "bugs": {
+        "url": "https://github.com/jshttp/mime-types/issues"
+      },
+      "homepage": "https://github.com/jshttp/mime-types",
+      "_id": "mime-types@2.0.3",
+      "_shasum": "70b5cb5165b55dcb4972839f16d6077b0bb506f4",
+      "_from": ".",
+      "_npmVersion": "1.4.21",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "maintainers": [
+        {
+          "name": "jongleberry",
+          "email": "jonathanrichardong@gmail.com"
+        },
+        {
+          "name": "fishrock123",
+          "email": "fishrock123@rocketmail.com"
+        },
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        }
+      ],
+      "dist": {
+        "shasum": "70b5cb5165b55dcb4972839f16d6077b0bb506f4",
+        "tarball": "https://registry.npmjs.org/mime-types/-/mime-types-2.0.3.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.4": {
+      "name": "mime-types",
+      "description": "The ultimate javascript content-type utility.",
+      "version": "2.0.4",
+      "contributors": [
+        {
+          "name": "Jeremiah Senkpiel",
+          "email": "fishrock123@rocketmail.com",
+          "url": "https://searchbeam.jit.su"
+        },
+        {
+          "name": "Jonathan Ong",
+          "email": "me@jongleberry.com",
+          "url": "http://jongleberry.com"
+        }
+      ],
+      "license": "MIT",
+      "keywords": [
+        "mime",
+        "types"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jshttp/mime-types"
+      },
+      "dependencies": {
+        "mime-db": "~1.3.0"
+      },
+      "devDependencies": {
+        "istanbul": "0",
+        "mocha": "~1.21.5"
+      },
+      "files": [
+        "HISTORY.md",
+        "LICENSE",
+        "index.js"
+      ],
+      "engines": {
+        "node": ">= 0.6"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec test/test.js",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot test/test.js",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter dot test/test.js"
+      },
+      "gitHead": "63a9b82e6e364d62428ed5459e5486504c489bf2",
+      "bugs": {
+        "url": "https://github.com/jshttp/mime-types/issues"
+      },
+      "homepage": "https://github.com/jshttp/mime-types",
+      "_id": "mime-types@2.0.4",
+      "_shasum": "855a612979141d806ba5104294a28c731c6ea790",
+      "_from": ".",
+      "_npmVersion": "1.4.21",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "maintainers": [
+        {
+          "name": "jongleberry",
+          "email": "jonathanrichardong@gmail.com"
+        },
+        {
+          "name": "fishrock123",
+          "email": "fishrock123@rocketmail.com"
+        },
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        }
+      ],
+      "dist": {
+        "shasum": "855a612979141d806ba5104294a28c731c6ea790",
+        "tarball": "https://registry.npmjs.org/mime-types/-/mime-types-2.0.4.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.5": {
+      "name": "mime-types",
+      "description": "The ultimate javascript content-type utility.",
+      "version": "2.0.5",
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "Jeremiah Senkpiel",
+          "email": "fishrock123@rocketmail.com",
+          "url": "https://searchbeam.jit.su"
+        },
+        {
+          "name": "Jonathan Ong",
+          "email": "me@jongleberry.com",
+          "url": "http://jongleberry.com"
+        }
+      ],
+      "license": "MIT",
+      "keywords": [
+        "mime",
+        "types"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jshttp/mime-types"
+      },
+      "dependencies": {
+        "mime-db": "~1.3.1"
+      },
+      "devDependencies": {
+        "istanbul": "0.3.5",
+        "mocha": "~1.21.5"
+      },
+      "files": [
+        "HISTORY.md",
+        "LICENSE",
+        "index.js"
+      ],
+      "engines": {
+        "node": ">= 0.6"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec test/test.js",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot test/test.js",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter dot test/test.js"
+      },
+      "gitHead": "5f45d92a916100f86bf0eca1d953d523fcc2dfaf",
+      "bugs": {
+        "url": "https://github.com/jshttp/mime-types/issues"
+      },
+      "homepage": "https://github.com/jshttp/mime-types",
+      "_id": "mime-types@2.0.5",
+      "_shasum": "017db3ef9aff1fc7229e9babe2ac4b032baf837d",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "maintainers": [
+        {
+          "name": "jongleberry",
+          "email": "jonathanrichardong@gmail.com"
+        },
+        {
+          "name": "fishrock123",
+          "email": "fishrock123@rocketmail.com"
+        },
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        }
+      ],
+      "dist": {
+        "shasum": "017db3ef9aff1fc7229e9babe2ac4b032baf837d",
+        "tarball": "https://registry.npmjs.org/mime-types/-/mime-types-2.0.5.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.6": {
+      "name": "mime-types",
+      "description": "The ultimate javascript content-type utility.",
+      "version": "2.0.6",
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "Jeremiah Senkpiel",
+          "email": "fishrock123@rocketmail.com",
+          "url": "https://searchbeam.jit.su"
+        },
+        {
+          "name": "Jonathan Ong",
+          "email": "me@jongleberry.com",
+          "url": "http://jongleberry.com"
+        }
+      ],
+      "license": "MIT",
+      "keywords": [
+        "mime",
+        "types"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jshttp/mime-types"
+      },
+      "dependencies": {
+        "mime-db": "~1.4.0"
+      },
+      "devDependencies": {
+        "istanbul": "0.3.5",
+        "mocha": "~1.21.5"
+      },
+      "files": [
+        "HISTORY.md",
+        "LICENSE",
+        "index.js"
+      ],
+      "engines": {
+        "node": ">= 0.6"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec test/test.js",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot test/test.js",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter dot test/test.js"
+      },
+      "gitHead": "5348665cf1f2b3611a415da91aac17d431ddd019",
+      "bugs": {
+        "url": "https://github.com/jshttp/mime-types/issues"
+      },
+      "homepage": "https://github.com/jshttp/mime-types",
+      "_id": "mime-types@2.0.6",
+      "_shasum": "9deae929dc382665ea42e3848d1d3e3c4aef16e9",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "maintainers": [
+        {
+          "name": "jongleberry",
+          "email": "jonathanrichardong@gmail.com"
+        },
+        {
+          "name": "fishrock123",
+          "email": "fishrock123@rocketmail.com"
+        },
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        }
+      ],
+      "dist": {
+        "shasum": "9deae929dc382665ea42e3848d1d3e3c4aef16e9",
+        "tarball": "https://registry.npmjs.org/mime-types/-/mime-types-2.0.6.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.7": {
+      "name": "mime-types",
+      "description": "The ultimate javascript content-type utility.",
+      "version": "2.0.7",
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "Jeremiah Senkpiel",
+          "email": "fishrock123@rocketmail.com",
+          "url": "https://searchbeam.jit.su"
+        },
+        {
+          "name": "Jonathan Ong",
+          "email": "me@jongleberry.com",
+          "url": "http://jongleberry.com"
+        }
+      ],
+      "license": "MIT",
+      "keywords": [
+        "mime",
+        "types"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jshttp/mime-types"
+      },
+      "dependencies": {
+        "mime-db": "~1.5.0"
+      },
+      "devDependencies": {
+        "istanbul": "0.3.5",
+        "mocha": "~1.21.5"
+      },
+      "files": [
+        "HISTORY.md",
+        "LICENSE",
+        "index.js"
+      ],
+      "engines": {
+        "node": ">= 0.6"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec test/test.js",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot test/test.js",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter dot test/test.js"
+      },
+      "gitHead": "4216c095dcc3390c2b8f4a96a9eae94d11420f56",
+      "bugs": {
+        "url": "https://github.com/jshttp/mime-types/issues"
+      },
+      "homepage": "https://github.com/jshttp/mime-types",
+      "_id": "mime-types@2.0.7",
+      "_shasum": "0cb58d0403aec977357db324eea67e40c32b44b2",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "maintainers": [
+        {
+          "name": "jongleberry",
+          "email": "jonathanrichardong@gmail.com"
+        },
+        {
+          "name": "fishrock123",
+          "email": "fishrock123@rocketmail.com"
+        },
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        }
+      ],
+      "dist": {
+        "shasum": "0cb58d0403aec977357db324eea67e40c32b44b2",
+        "tarball": "https://registry.npmjs.org/mime-types/-/mime-types-2.0.7.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.8": {
+      "name": "mime-types",
+      "description": "The ultimate javascript content-type utility.",
+      "version": "2.0.8",
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "Jeremiah Senkpiel",
+          "email": "fishrock123@rocketmail.com",
+          "url": "https://searchbeam.jit.su"
+        },
+        {
+          "name": "Jonathan Ong",
+          "email": "me@jongleberry.com",
+          "url": "http://jongleberry.com"
+        }
+      ],
+      "license": "MIT",
+      "keywords": [
+        "mime",
+        "types"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jshttp/mime-types"
+      },
+      "dependencies": {
+        "mime-db": "~1.6.0"
+      },
+      "devDependencies": {
+        "istanbul": "0.3.5",
+        "mocha": "~1.21.5"
+      },
+      "files": [
+        "HISTORY.md",
+        "LICENSE",
+        "index.js"
+      ],
+      "engines": {
+        "node": ">= 0.6"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec test/test.js",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot test/test.js",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter dot test/test.js"
+      },
+      "gitHead": "19e01e8bd630a1719ada4a3e3e9b7192b4ddb034",
+      "bugs": {
+        "url": "https://github.com/jshttp/mime-types/issues"
+      },
+      "homepage": "https://github.com/jshttp/mime-types",
+      "_id": "mime-types@2.0.8",
+      "_shasum": "5612bf6b9ec8a1285a81184fa4237fbfdbb89a7e",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "maintainers": [
+        {
+          "name": "jongleberry",
+          "email": "jonathanrichardong@gmail.com"
+        },
+        {
+          "name": "fishrock123",
+          "email": "fishrock123@rocketmail.com"
+        },
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        }
+      ],
+      "dist": {
+        "shasum": "5612bf6b9ec8a1285a81184fa4237fbfdbb89a7e",
+        "tarball": "https://registry.npmjs.org/mime-types/-/mime-types-2.0.8.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.9": {
+      "name": "mime-types",
+      "description": "The ultimate javascript content-type utility.",
+      "version": "2.0.9",
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "Jeremiah Senkpiel",
+          "email": "fishrock123@rocketmail.com",
+          "url": "https://searchbeam.jit.su"
+        },
+        {
+          "name": "Jonathan Ong",
+          "email": "me@jongleberry.com",
+          "url": "http://jongleberry.com"
+        }
+      ],
+      "license": "MIT",
+      "keywords": [
+        "mime",
+        "types"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jshttp/mime-types"
+      },
+      "dependencies": {
+        "mime-db": "~1.7.0"
+      },
+      "devDependencies": {
+        "istanbul": "0.3.5",
+        "mocha": "~1.21.5"
+      },
+      "files": [
+        "HISTORY.md",
+        "LICENSE",
+        "index.js"
+      ],
+      "engines": {
+        "node": ">= 0.6"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec test/test.js",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot test/test.js",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter dot test/test.js"
+      },
+      "gitHead": "1c6d55da440b6a9d2c0e9c2faac98e6b1be47fc7",
+      "bugs": {
+        "url": "https://github.com/jshttp/mime-types/issues"
+      },
+      "homepage": "https://github.com/jshttp/mime-types",
+      "_id": "mime-types@2.0.9",
+      "_shasum": "e8449aff27b1245ddc6641b524439ae80c4b78a6",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "maintainers": [
+        {
+          "name": "jongleberry",
+          "email": "jonathanrichardong@gmail.com"
+        },
+        {
+          "name": "fishrock123",
+          "email": "fishrock123@rocketmail.com"
+        },
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        }
+      ],
+      "dist": {
+        "shasum": "e8449aff27b1245ddc6641b524439ae80c4b78a6",
+        "tarball": "https://registry.npmjs.org/mime-types/-/mime-types-2.0.9.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.10": {
+      "name": "mime-types",
+      "description": "The ultimate javascript content-type utility.",
+      "version": "2.0.10",
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "Jeremiah Senkpiel",
+          "email": "fishrock123@rocketmail.com",
+          "url": "https://searchbeam.jit.su"
+        },
+        {
+          "name": "Jonathan Ong",
+          "email": "me@jongleberry.com",
+          "url": "http://jongleberry.com"
+        }
+      ],
+      "license": "MIT",
+      "keywords": [
+        "mime",
+        "types"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jshttp/mime-types"
+      },
+      "dependencies": {
+        "mime-db": "~1.8.0"
+      },
+      "devDependencies": {
+        "istanbul": "0.3.7",
+        "mocha": "~1.21.5"
+      },
+      "files": [
+        "HISTORY.md",
+        "LICENSE",
+        "index.js"
+      ],
+      "engines": {
+        "node": ">= 0.6"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec test/test.js",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot test/test.js",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter dot test/test.js"
+      },
+      "gitHead": "9d4533a2b3a68af48a7f3ded9f8f525648e7bcc1",
+      "bugs": {
+        "url": "https://github.com/jshttp/mime-types/issues"
+      },
+      "homepage": "https://github.com/jshttp/mime-types",
+      "_id": "mime-types@2.0.10",
+      "_shasum": "eacd81bb73cab2a77447549a078d4f2018c67b4d",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "maintainers": [
+        {
+          "name": "jongleberry",
+          "email": "jonathanrichardong@gmail.com"
+        },
+        {
+          "name": "fishrock123",
+          "email": "fishrock123@rocketmail.com"
+        },
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        }
+      ],
+      "dist": {
+        "shasum": "eacd81bb73cab2a77447549a078d4f2018c67b4d",
+        "tarball": "https://registry.npmjs.org/mime-types/-/mime-types-2.0.10.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.11": {
+      "name": "mime-types",
+      "description": "The ultimate javascript content-type utility.",
+      "version": "2.0.11",
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "Jeremiah Senkpiel",
+          "email": "fishrock123@rocketmail.com",
+          "url": "https://searchbeam.jit.su"
+        },
+        {
+          "name": "Jonathan Ong",
+          "email": "me@jongleberry.com",
+          "url": "http://jongleberry.com"
+        }
+      ],
+      "license": "MIT",
+      "keywords": [
+        "mime",
+        "types"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jshttp/mime-types"
+      },
+      "dependencies": {
+        "mime-db": "~1.9.1"
+      },
+      "devDependencies": {
+        "istanbul": "0.3.9",
+        "mocha": "~1.21.5"
+      },
+      "files": [
+        "HISTORY.md",
+        "LICENSE",
+        "index.js"
+      ],
+      "engines": {
+        "node": ">= 0.6"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec test/test.js",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot test/test.js",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter dot test/test.js"
+      },
+      "gitHead": "4b233cfbb6704e88eca121e9d9f6e6f23957e48a",
+      "bugs": {
+        "url": "https://github.com/jshttp/mime-types/issues"
+      },
+      "homepage": "https://github.com/jshttp/mime-types",
+      "_id": "mime-types@2.0.11",
+      "_shasum": "bf3449042799d877c815c29929d1e74760e72007",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "maintainers": [
+        {
+          "name": "jongleberry",
+          "email": "jonathanrichardong@gmail.com"
+        },
+        {
+          "name": "fishrock123",
+          "email": "fishrock123@rocketmail.com"
+        },
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        }
+      ],
+      "dist": {
+        "shasum": "bf3449042799d877c815c29929d1e74760e72007",
+        "tarball": "https://registry.npmjs.org/mime-types/-/mime-types-2.0.11.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.12": {
+      "name": "mime-types",
+      "description": "The ultimate javascript content-type utility.",
+      "version": "2.0.12",
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "Jeremiah Senkpiel",
+          "email": "fishrock123@rocketmail.com",
+          "url": "https://searchbeam.jit.su"
+        },
+        {
+          "name": "Jonathan Ong",
+          "email": "me@jongleberry.com",
+          "url": "http://jongleberry.com"
+        }
+      ],
+      "license": "MIT",
+      "keywords": [
+        "mime",
+        "types"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jshttp/mime-types"
+      },
+      "dependencies": {
+        "mime-db": "~1.10.0"
+      },
+      "devDependencies": {
+        "istanbul": "0.3.9",
+        "mocha": "~1.21.5"
+      },
+      "files": [
+        "HISTORY.md",
+        "LICENSE",
+        "index.js"
+      ],
+      "engines": {
+        "node": ">= 0.6"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec test/test.js",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot test/test.js",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter dot test/test.js"
+      },
+      "gitHead": "a1e3c4b6bbb6afb615c8a058481d58cb57a4cb95",
+      "bugs": {
+        "url": "https://github.com/jshttp/mime-types/issues"
+      },
+      "homepage": "https://github.com/jshttp/mime-types",
+      "_id": "mime-types@2.0.12",
+      "_shasum": "87ae9f124e94f8e440c93d1a72d0dccecdb71135",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "maintainers": [
+        {
+          "name": "jongleberry",
+          "email": "jonathanrichardong@gmail.com"
+        },
+        {
+          "name": "fishrock123",
+          "email": "fishrock123@rocketmail.com"
+        },
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        }
+      ],
+      "dist": {
+        "shasum": "87ae9f124e94f8e440c93d1a72d0dccecdb71135",
+        "tarball": "https://registry.npmjs.org/mime-types/-/mime-types-2.0.12.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.13": {
+      "name": "mime-types",
+      "description": "The ultimate javascript content-type utility.",
+      "version": "2.0.13",
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "Jeremiah Senkpiel",
+          "email": "fishrock123@rocketmail.com",
+          "url": "https://searchbeam.jit.su"
+        },
+        {
+          "name": "Jonathan Ong",
+          "email": "me@jongleberry.com",
+          "url": "http://jongleberry.com"
+        }
+      ],
+      "license": "MIT",
+      "keywords": [
+        "mime",
+        "types"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jshttp/mime-types"
+      },
+      "dependencies": {
+        "mime-db": "~1.11.0"
+      },
+      "devDependencies": {
+        "istanbul": "0.3.9",
+        "mocha": "~1.21.5"
+      },
+      "files": [
+        "HISTORY.md",
+        "LICENSE",
+        "index.js"
+      ],
+      "engines": {
+        "node": ">= 0.6"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec test/test.js",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot test/test.js",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter dot test/test.js"
+      },
+      "gitHead": "4e53ef0ec8b614992d5d8212e5aff1151ee97738",
+      "bugs": {
+        "url": "https://github.com/jshttp/mime-types/issues"
+      },
+      "homepage": "https://github.com/jshttp/mime-types",
+      "_id": "mime-types@2.0.13",
+      "_shasum": "333f5579ae6eb203fd8f30a568a869d31a8f1cac",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "maintainers": [
+        {
+          "name": "jongleberry",
+          "email": "jonathanrichardong@gmail.com"
+        },
+        {
+          "name": "fishrock123",
+          "email": "fishrock123@rocketmail.com"
+        },
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        }
+      ],
+      "dist": {
+        "shasum": "333f5579ae6eb203fd8f30a568a869d31a8f1cac",
+        "tarball": "https://registry.npmjs.org/mime-types/-/mime-types-2.0.13.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.14": {
+      "name": "mime-types",
+      "description": "The ultimate javascript content-type utility.",
+      "version": "2.0.14",
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "Jeremiah Senkpiel",
+          "email": "fishrock123@rocketmail.com",
+          "url": "https://searchbeam.jit.su"
+        },
+        {
+          "name": "Jonathan Ong",
+          "email": "me@jongleberry.com",
+          "url": "http://jongleberry.com"
+        }
+      ],
+      "license": "MIT",
+      "keywords": [
+        "mime",
+        "types"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jshttp/mime-types"
+      },
+      "dependencies": {
+        "mime-db": "~1.12.0"
+      },
+      "devDependencies": {
+        "istanbul": "0.3.9",
+        "mocha": "~1.21.5"
+      },
+      "files": [
+        "HISTORY.md",
+        "LICENSE",
+        "index.js"
+      ],
+      "engines": {
+        "node": ">= 0.6"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec test/test.js",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot test/test.js",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter dot test/test.js"
+      },
+      "gitHead": "7d53a3351581eb3d7ae1e846ea860037bce6fe3f",
+      "bugs": {
+        "url": "https://github.com/jshttp/mime-types/issues"
+      },
+      "homepage": "https://github.com/jshttp/mime-types",
+      "_id": "mime-types@2.0.14",
+      "_shasum": "310e159db23e077f8bb22b748dabfa4957140aa6",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "maintainers": [
+        {
+          "name": "jongleberry",
+          "email": "jonathanrichardong@gmail.com"
+        },
+        {
+          "name": "fishrock123",
+          "email": "fishrock123@rocketmail.com"
+        },
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        }
+      ],
+      "dist": {
+        "shasum": "310e159db23e077f8bb22b748dabfa4957140aa6",
+        "tarball": "https://registry.npmjs.org/mime-types/-/mime-types-2.0.14.tgz"
+      },
+      "directories": {}
+    },
+    "2.1.0": {
+      "name": "mime-types",
+      "description": "The ultimate javascript content-type utility.",
+      "version": "2.1.0",
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "Jeremiah Senkpiel",
+          "email": "fishrock123@rocketmail.com",
+          "url": "https://searchbeam.jit.su"
+        },
+        {
+          "name": "Jonathan Ong",
+          "email": "me@jongleberry.com",
+          "url": "http://jongleberry.com"
+        }
+      ],
+      "license": "MIT",
+      "keywords": [
+        "mime",
+        "types"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jshttp/mime-types"
+      },
+      "dependencies": {
+        "mime-db": "~1.13.0"
+      },
+      "devDependencies": {
+        "istanbul": "0.3.14",
+        "mocha": "~1.21.5"
+      },
+      "files": [
+        "HISTORY.md",
+        "LICENSE",
+        "index.js"
+      ],
+      "engines": {
+        "node": ">= 0.6"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec test/test.js",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot test/test.js",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter dot test/test.js"
+      },
+      "gitHead": "95130f68c743520b8b54ce7341d84c0833cbb375",
+      "bugs": {
+        "url": "https://github.com/jshttp/mime-types/issues"
+      },
+      "homepage": "https://github.com/jshttp/mime-types",
+      "_id": "mime-types@2.1.0",
+      "_shasum": "26e401fb4ccc1fa5c8b15bac4a1aefb9af05b0b1",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "maintainers": [
+        {
+          "name": "jongleberry",
+          "email": "jonathanrichardong@gmail.com"
+        },
+        {
+          "name": "fishrock123",
+          "email": "fishrock123@rocketmail.com"
+        },
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        }
+      ],
+      "dist": {
+        "shasum": "26e401fb4ccc1fa5c8b15bac4a1aefb9af05b0b1",
+        "tarball": "https://registry.npmjs.org/mime-types/-/mime-types-2.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "2.1.1": {
+      "name": "mime-types",
+      "description": "The ultimate javascript content-type utility.",
+      "version": "2.1.1",
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "Jeremiah Senkpiel",
+          "email": "fishrock123@rocketmail.com",
+          "url": "https://searchbeam.jit.su"
+        },
+        {
+          "name": "Jonathan Ong",
+          "email": "me@jongleberry.com",
+          "url": "http://jongleberry.com"
+        }
+      ],
+      "license": "MIT",
+      "keywords": [
+        "mime",
+        "types"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jshttp/mime-types"
+      },
+      "dependencies": {
+        "mime-db": "~1.13.0"
+      },
+      "devDependencies": {
+        "istanbul": "0.3.14",
+        "mocha": "~1.21.5"
+      },
+      "files": [
+        "HISTORY.md",
+        "LICENSE",
+        "index.js"
+      ],
+      "engines": {
+        "node": ">= 0.6"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec test/test.js",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot test/test.js",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter dot test/test.js"
+      },
+      "gitHead": "c067c0b0d8a2e7df82c356dc295852688be1245c",
+      "bugs": {
+        "url": "https://github.com/jshttp/mime-types/issues"
+      },
+      "homepage": "https://github.com/jshttp/mime-types",
+      "_id": "mime-types@2.1.1",
+      "_shasum": "c7b692796d5166f4826d10b4675c8a916657d04e",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "maintainers": [
+        {
+          "name": "jongleberry",
+          "email": "jonathanrichardong@gmail.com"
+        },
+        {
+          "name": "fishrock123",
+          "email": "fishrock123@rocketmail.com"
+        },
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        }
+      ],
+      "dist": {
+        "shasum": "c7b692796d5166f4826d10b4675c8a916657d04e",
+        "tarball": "https://registry.npmjs.org/mime-types/-/mime-types-2.1.1.tgz"
+      },
+      "directories": {}
+    },
+    "2.1.2": {
+      "name": "mime-types",
+      "description": "The ultimate javascript content-type utility.",
+      "version": "2.1.2",
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "Jeremiah Senkpiel",
+          "email": "fishrock123@rocketmail.com",
+          "url": "https://searchbeam.jit.su"
+        },
+        {
+          "name": "Jonathan Ong",
+          "email": "me@jongleberry.com",
+          "url": "http://jongleberry.com"
+        }
+      ],
+      "license": "MIT",
+      "keywords": [
+        "mime",
+        "types"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jshttp/mime-types"
+      },
+      "dependencies": {
+        "mime-db": "~1.14.0"
+      },
+      "devDependencies": {
+        "istanbul": "0.3.16",
+        "mocha": "~1.21.5"
+      },
+      "files": [
+        "HISTORY.md",
+        "LICENSE",
+        "index.js"
+      ],
+      "engines": {
+        "node": ">= 0.6"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec test/test.js",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot test/test.js",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter dot test/test.js"
+      },
+      "gitHead": "5704d7bb0cf90f14b442f0b954ace6c1dbc5f435",
+      "bugs": {
+        "url": "https://github.com/jshttp/mime-types/issues"
+      },
+      "homepage": "https://github.com/jshttp/mime-types",
+      "_id": "mime-types@2.1.2",
+      "_shasum": "6545ccd95afe77b9c655d81c2e6ceace36257227",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "maintainers": [
+        {
+          "name": "jongleberry",
+          "email": "jonathanrichardong@gmail.com"
+        },
+        {
+          "name": "fishrock123",
+          "email": "fishrock123@rocketmail.com"
+        },
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        }
+      ],
+      "dist": {
+        "shasum": "6545ccd95afe77b9c655d81c2e6ceace36257227",
+        "tarball": "https://registry.npmjs.org/mime-types/-/mime-types-2.1.2.tgz"
+      },
+      "directories": {}
+    },
+    "2.1.3": {
+      "name": "mime-types",
+      "description": "The ultimate javascript content-type utility.",
+      "version": "2.1.3",
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "Jeremiah Senkpiel",
+          "email": "fishrock123@rocketmail.com",
+          "url": "https://searchbeam.jit.su"
+        },
+        {
+          "name": "Jonathan Ong",
+          "email": "me@jongleberry.com",
+          "url": "http://jongleberry.com"
+        }
+      ],
+      "license": "MIT",
+      "keywords": [
+        "mime",
+        "types"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jshttp/mime-types"
+      },
+      "dependencies": {
+        "mime-db": "~1.15.0"
+      },
+      "devDependencies": {
+        "istanbul": "0.3.17",
+        "mocha": "~1.21.5"
+      },
+      "files": [
+        "HISTORY.md",
+        "LICENSE",
+        "index.js"
+      ],
+      "engines": {
+        "node": ">= 0.6"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec test/test.js",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot test/test.js",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter dot test/test.js"
+      },
+      "gitHead": "565c49ad5683d4a123a170da3444ed32ce426c3a",
+      "bugs": {
+        "url": "https://github.com/jshttp/mime-types/issues"
+      },
+      "homepage": "https://github.com/jshttp/mime-types",
+      "_id": "mime-types@2.1.3",
+      "_shasum": "f259849c7eb1f85b8f5f826187278a7f74f0c966",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "maintainers": [
+        {
+          "name": "jongleberry",
+          "email": "jonathanrichardong@gmail.com"
+        },
+        {
+          "name": "fishrock123",
+          "email": "fishrock123@rocketmail.com"
+        },
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        }
+      ],
+      "dist": {
+        "shasum": "f259849c7eb1f85b8f5f826187278a7f74f0c966",
+        "tarball": "https://registry.npmjs.org/mime-types/-/mime-types-2.1.3.tgz"
+      },
+      "directories": {}
+    },
+    "2.1.4": {
+      "name": "mime-types",
+      "description": "The ultimate javascript content-type utility.",
+      "version": "2.1.4",
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "Jeremiah Senkpiel",
+          "email": "fishrock123@rocketmail.com",
+          "url": "https://searchbeam.jit.su"
+        },
+        {
+          "name": "Jonathan Ong",
+          "email": "me@jongleberry.com",
+          "url": "http://jongleberry.com"
+        }
+      ],
+      "license": "MIT",
+      "keywords": [
+        "mime",
+        "types"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jshttp/mime-types"
+      },
+      "dependencies": {
+        "mime-db": "~1.16.0"
+      },
+      "devDependencies": {
+        "istanbul": "0.3.17",
+        "mocha": "~1.21.5"
+      },
+      "files": [
+        "HISTORY.md",
+        "LICENSE",
+        "index.js"
+      ],
+      "engines": {
+        "node": ">= 0.6"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec test/test.js",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot test/test.js",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter dot test/test.js"
+      },
+      "gitHead": "0d801665a7374c71d905d14bc3afc2b0624bb896",
+      "bugs": {
+        "url": "https://github.com/jshttp/mime-types/issues"
+      },
+      "homepage": "https://github.com/jshttp/mime-types",
+      "_id": "mime-types@2.1.4",
+      "_shasum": "6562b328e341245cb63b14473b1d12b40dec5884",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "maintainers": [
+        {
+          "name": "jongleberry",
+          "email": "jonathanrichardong@gmail.com"
+        },
+        {
+          "name": "fishrock123",
+          "email": "fishrock123@rocketmail.com"
+        },
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        }
+      ],
+      "dist": {
+        "shasum": "6562b328e341245cb63b14473b1d12b40dec5884",
+        "tarball": "https://registry.npmjs.org/mime-types/-/mime-types-2.1.4.tgz"
+      },
+      "directories": {}
+    },
+    "2.1.5": {
+      "name": "mime-types",
+      "description": "The ultimate javascript content-type utility.",
+      "version": "2.1.5",
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "Jeremiah Senkpiel",
+          "email": "fishrock123@rocketmail.com",
+          "url": "https://searchbeam.jit.su"
+        },
+        {
+          "name": "Jonathan Ong",
+          "email": "me@jongleberry.com",
+          "url": "http://jongleberry.com"
+        }
+      ],
+      "license": "MIT",
+      "keywords": [
+        "mime",
+        "types"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jshttp/mime-types"
+      },
+      "dependencies": {
+        "mime-db": "~1.17.0"
+      },
+      "devDependencies": {
+        "istanbul": "0.3.18",
+        "mocha": "~1.21.5"
+      },
+      "files": [
+        "HISTORY.md",
+        "LICENSE",
+        "index.js"
+      ],
+      "engines": {
+        "node": ">= 0.6"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec test/test.js",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot test/test.js",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter dot test/test.js"
+      },
+      "gitHead": "de48c96e731e5903433ac2cb5c0d9fd056d9d19b",
+      "bugs": {
+        "url": "https://github.com/jshttp/mime-types/issues"
+      },
+      "homepage": "https://github.com/jshttp/mime-types",
+      "_id": "mime-types@2.1.5",
+      "_shasum": "2355ac0e1e0c5a68d8df6474b431192743f0a3ea",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "maintainers": [
+        {
+          "name": "jongleberry",
+          "email": "jonathanrichardong@gmail.com"
+        },
+        {
+          "name": "fishrock123",
+          "email": "fishrock123@rocketmail.com"
+        },
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        }
+      ],
+      "dist": {
+        "shasum": "2355ac0e1e0c5a68d8df6474b431192743f0a3ea",
+        "tarball": "https://registry.npmjs.org/mime-types/-/mime-types-2.1.5.tgz"
+      },
+      "directories": {}
+    },
+    "2.1.6": {
+      "name": "mime-types",
+      "description": "The ultimate javascript content-type utility.",
+      "version": "2.1.6",
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "Jeremiah Senkpiel",
+          "email": "fishrock123@rocketmail.com",
+          "url": "https://searchbeam.jit.su"
+        },
+        {
+          "name": "Jonathan Ong",
+          "email": "me@jongleberry.com",
+          "url": "http://jongleberry.com"
+        }
+      ],
+      "license": "MIT",
+      "keywords": [
+        "mime",
+        "types"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jshttp/mime-types"
+      },
+      "dependencies": {
+        "mime-db": "~1.18.0"
+      },
+      "devDependencies": {
+        "istanbul": "0.3.19",
+        "mocha": "~1.21.5"
+      },
+      "files": [
+        "HISTORY.md",
+        "LICENSE",
+        "index.js"
+      ],
+      "engines": {
+        "node": ">= 0.6"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec test/test.js",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot test/test.js",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter dot test/test.js"
+      },
+      "gitHead": "8bfa7c2c9a4ad07f5807c7a0e547e0246155944d",
+      "bugs": {
+        "url": "https://github.com/jshttp/mime-types/issues"
+      },
+      "homepage": "https://github.com/jshttp/mime-types",
+      "_id": "mime-types@2.1.6",
+      "_shasum": "949f8788411864ddc70948a0f21c43f29d25667c",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "maintainers": [
+        {
+          "name": "jongleberry",
+          "email": "jonathanrichardong@gmail.com"
+        },
+        {
+          "name": "fishrock123",
+          "email": "fishrock123@rocketmail.com"
+        },
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        }
+      ],
+      "dist": {
+        "shasum": "949f8788411864ddc70948a0f21c43f29d25667c",
+        "tarball": "https://registry.npmjs.org/mime-types/-/mime-types-2.1.6.tgz"
+      },
+      "directories": {}
+    },
+    "2.1.7": {
+      "name": "mime-types",
+      "description": "The ultimate javascript content-type utility.",
+      "version": "2.1.7",
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "Jeremiah Senkpiel",
+          "email": "fishrock123@rocketmail.com",
+          "url": "https://searchbeam.jit.su"
+        },
+        {
+          "name": "Jonathan Ong",
+          "email": "me@jongleberry.com",
+          "url": "http://jongleberry.com"
+        }
+      ],
+      "license": "MIT",
+      "keywords": [
+        "mime",
+        "types"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jshttp/mime-types"
+      },
+      "dependencies": {
+        "mime-db": "~1.19.0"
+      },
+      "devDependencies": {
+        "istanbul": "0.3.20",
+        "mocha": "~1.21.5"
+      },
+      "files": [
+        "HISTORY.md",
+        "LICENSE",
+        "index.js"
+      ],
+      "engines": {
+        "node": ">= 0.6"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec test/test.js",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot test/test.js",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter dot test/test.js"
+      },
+      "gitHead": "43f860c7df4a70246272194d601348865d550298",
+      "bugs": {
+        "url": "https://github.com/jshttp/mime-types/issues"
+      },
+      "homepage": "https://github.com/jshttp/mime-types",
+      "_id": "mime-types@2.1.7",
+      "_shasum": "ff603970e3c731ef6f7f4df3c9a0f463a13c2755",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "maintainers": [
+        {
+          "name": "jongleberry",
+          "email": "jonathanrichardong@gmail.com"
+        },
+        {
+          "name": "fishrock123",
+          "email": "fishrock123@rocketmail.com"
+        },
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        }
+      ],
+      "dist": {
+        "shasum": "ff603970e3c731ef6f7f4df3c9a0f463a13c2755",
+        "tarball": "https://registry.npmjs.org/mime-types/-/mime-types-2.1.7.tgz"
+      },
+      "directories": {}
+    },
+    "2.1.8": {
+      "name": "mime-types",
+      "description": "The ultimate javascript content-type utility.",
+      "version": "2.1.8",
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "Jeremiah Senkpiel",
+          "email": "fishrock123@rocketmail.com",
+          "url": "https://searchbeam.jit.su"
+        },
+        {
+          "name": "Jonathan Ong",
+          "email": "me@jongleberry.com",
+          "url": "http://jongleberry.com"
+        }
+      ],
+      "license": "MIT",
+      "keywords": [
+        "mime",
+        "types"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jshttp/mime-types"
+      },
+      "dependencies": {
+        "mime-db": "~1.20.0"
+      },
+      "devDependencies": {
+        "istanbul": "0.4.1",
+        "mocha": "~1.21.5"
+      },
+      "files": [
+        "HISTORY.md",
+        "LICENSE",
+        "index.js"
+      ],
+      "engines": {
+        "node": ">= 0.6"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec test/test.js",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot test/test.js",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter dot test/test.js"
+      },
+      "gitHead": "100876a23fab896d8cf0d904fc9778dbdfc1695b",
+      "bugs": {
+        "url": "https://github.com/jshttp/mime-types/issues"
+      },
+      "homepage": "https://github.com/jshttp/mime-types",
+      "_id": "mime-types@2.1.8",
+      "_shasum": "faf57823de04bc7cbff4ee82c6b63946e812ae72",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "maintainers": [
+        {
+          "name": "jongleberry",
+          "email": "jonathanrichardong@gmail.com"
+        },
+        {
+          "name": "fishrock123",
+          "email": "fishrock123@rocketmail.com"
+        },
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        }
+      ],
+      "dist": {
+        "shasum": "faf57823de04bc7cbff4ee82c6b63946e812ae72",
+        "tarball": "https://registry.npmjs.org/mime-types/-/mime-types-2.1.8.tgz"
+      },
+      "directories": {}
+    },
+    "2.1.9": {
+      "name": "mime-types",
+      "description": "The ultimate javascript content-type utility.",
+      "version": "2.1.9",
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "Jeremiah Senkpiel",
+          "email": "fishrock123@rocketmail.com",
+          "url": "https://searchbeam.jit.su"
+        },
+        {
+          "name": "Jonathan Ong",
+          "email": "me@jongleberry.com",
+          "url": "http://jongleberry.com"
+        }
+      ],
+      "license": "MIT",
+      "keywords": [
+        "mime",
+        "types"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jshttp/mime-types"
+      },
+      "dependencies": {
+        "mime-db": "~1.21.0"
+      },
+      "devDependencies": {
+        "istanbul": "0.4.1",
+        "mocha": "~1.21.5"
+      },
+      "files": [
+        "HISTORY.md",
+        "LICENSE",
+        "index.js"
+      ],
+      "engines": {
+        "node": ">= 0.6"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec test/test.js",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot test/test.js",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter dot test/test.js"
+      },
+      "gitHead": "329f1c77e1a77c8fac59b15038e3808e9e314d96",
+      "bugs": {
+        "url": "https://github.com/jshttp/mime-types/issues"
+      },
+      "homepage": "https://github.com/jshttp/mime-types",
+      "_id": "mime-types@2.1.9",
+      "_shasum": "dfb396764b5fdf75be34b1f4104bc3687fb635f8",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "maintainers": [
+        {
+          "name": "jongleberry",
+          "email": "jonathanrichardong@gmail.com"
+        },
+        {
+          "name": "fishrock123",
+          "email": "fishrock123@rocketmail.com"
+        },
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        }
+      ],
+      "dist": {
+        "shasum": "dfb396764b5fdf75be34b1f4104bc3687fb635f8",
+        "tarball": "https://registry.npmjs.org/mime-types/-/mime-types-2.1.9.tgz"
+      },
+      "directories": {}
+    },
+    "2.1.10": {
+      "name": "mime-types",
+      "description": "The ultimate javascript content-type utility.",
+      "version": "2.1.10",
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "Jeremiah Senkpiel",
+          "email": "fishrock123@rocketmail.com",
+          "url": "https://searchbeam.jit.su"
+        },
+        {
+          "name": "Jonathan Ong",
+          "email": "me@jongleberry.com",
+          "url": "http://jongleberry.com"
+        }
+      ],
+      "license": "MIT",
+      "keywords": [
+        "mime",
+        "types"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jshttp/mime-types.git"
+      },
+      "dependencies": {
+        "mime-db": "~1.22.0"
+      },
+      "devDependencies": {
+        "istanbul": "0.4.2",
+        "mocha": "1.21.5"
+      },
+      "files": [
+        "HISTORY.md",
+        "LICENSE",
+        "index.js"
+      ],
+      "engines": {
+        "node": ">= 0.6"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec test/test.js",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot test/test.js",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter dot test/test.js"
+      },
+      "gitHead": "70785d38e9cc251137b00f73ab3d3257c4aea203",
+      "bugs": {
+        "url": "https://github.com/jshttp/mime-types/issues"
+      },
+      "homepage": "https://github.com/jshttp/mime-types#readme",
+      "_id": "mime-types@2.1.10",
+      "_shasum": "b93c7cb4362e16d41072a7e54538fb4d43070837",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.3",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "dist": {
+        "shasum": "b93c7cb4362e16d41072a7e54538fb4d43070837",
+        "tarball": "https://registry.npmjs.org/mime-types/-/mime-types-2.1.10.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "fishrock123",
+          "email": "fishrock123@rocketmail.com"
+        },
+        {
+          "name": "jongleberry",
+          "email": "jonathanrichardong@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-9-west.internal.npmjs.com",
+        "tmp": "tmp/mime-types-2.1.10.tgz_1455575237256_0.9163766100537032"
+      },
+      "directories": {}
+    },
+    "2.1.11": {
+      "name": "mime-types",
+      "description": "The ultimate javascript content-type utility.",
+      "version": "2.1.11",
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "Jeremiah Senkpiel",
+          "email": "fishrock123@rocketmail.com",
+          "url": "https://searchbeam.jit.su"
+        },
+        {
+          "name": "Jonathan Ong",
+          "email": "me@jongleberry.com",
+          "url": "http://jongleberry.com"
+        }
+      ],
+      "license": "MIT",
+      "keywords": [
+        "mime",
+        "types"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jshttp/mime-types.git"
+      },
+      "dependencies": {
+        "mime-db": "~1.23.0"
+      },
+      "devDependencies": {
+        "istanbul": "0.4.3",
+        "mocha": "1.21.5"
+      },
+      "files": [
+        "HISTORY.md",
+        "LICENSE",
+        "index.js"
+      ],
+      "engines": {
+        "node": ">= 0.6"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec test/test.js",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot test/test.js",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter dot test/test.js"
+      },
+      "gitHead": "298ffcf490a5d6e60edea7bf7a69036df04846b1",
+      "bugs": {
+        "url": "https://github.com/jshttp/mime-types/issues"
+      },
+      "homepage": "https://github.com/jshttp/mime-types#readme",
+      "_id": "mime-types@2.1.11",
+      "_shasum": "c259c471bda808a85d6cd193b430a5fae4473b3c",
+      "_from": ".",
+      "_npmVersion": "2.15.1",
+      "_nodeVersion": "4.4.3",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "dist": {
+        "shasum": "c259c471bda808a85d6cd193b430a5fae4473b3c",
+        "tarball": "https://registry.npmjs.org/mime-types/-/mime-types-2.1.11.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "fishrock123",
+          "email": "fishrock123@rocketmail.com"
+        },
+        {
+          "name": "jongleberry",
+          "email": "jonathanrichardong@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/mime-types-2.1.11.tgz_1462165365027_0.7217204745393246"
+      },
+      "directories": {}
+    },
+    "2.1.12": {
+      "name": "mime-types",
+      "description": "The ultimate javascript content-type utility.",
+      "version": "2.1.12",
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "Jeremiah Senkpiel",
+          "email": "fishrock123@rocketmail.com",
+          "url": "https://searchbeam.jit.su"
+        },
+        {
+          "name": "Jonathan Ong",
+          "email": "me@jongleberry.com",
+          "url": "http://jongleberry.com"
+        }
+      ],
+      "license": "MIT",
+      "keywords": [
+        "mime",
+        "types"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jshttp/mime-types.git"
+      },
+      "dependencies": {
+        "mime-db": "~1.24.0"
+      },
+      "devDependencies": {
+        "eslint": "3.5.0",
+        "eslint-config-standard": "6.0.1",
+        "eslint-plugin-promise": "2.0.1",
+        "eslint-plugin-standard": "2.0.0",
+        "istanbul": "0.4.5",
+        "mocha": "1.21.5"
+      },
+      "files": [
+        "HISTORY.md",
+        "LICENSE",
+        "index.js"
+      ],
+      "engines": {
+        "node": ">= 0.6"
+      },
+      "scripts": {
+        "lint": "eslint **/*.js",
+        "test": "mocha --reporter spec test/test.js",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot test/test.js",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter dot test/test.js"
+      },
+      "gitHead": "7193a9094e2efe31da93988350bb0b32ab18b1ea",
+      "bugs": {
+        "url": "https://github.com/jshttp/mime-types/issues"
+      },
+      "homepage": "https://github.com/jshttp/mime-types#readme",
+      "_id": "mime-types@2.1.12",
+      "_shasum": "152ba256777020dd4663f54c2e7bc26381e71729",
+      "_from": ".",
+      "_npmVersion": "2.15.9",
+      "_nodeVersion": "4.5.0",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "dist": {
+        "shasum": "152ba256777020dd4663f54c2e7bc26381e71729",
+        "tarball": "https://registry.npmjs.org/mime-types/-/mime-types-2.1.12.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "fishrock123",
+          "email": "fishrock123@rocketmail.com"
+        },
+        {
+          "name": "jongleberry",
+          "email": "jonathanrichardong@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/mime-types-2.1.12.tgz_1474237415119_0.03028594213537872"
+      },
+      "directories": {}
+    },
+    "2.1.13": {
+      "name": "mime-types",
+      "description": "The ultimate javascript content-type utility.",
+      "version": "2.1.13",
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "Jeremiah Senkpiel",
+          "email": "fishrock123@rocketmail.com",
+          "url": "https://searchbeam.jit.su"
+        },
+        {
+          "name": "Jonathan Ong",
+          "email": "me@jongleberry.com",
+          "url": "http://jongleberry.com"
+        }
+      ],
+      "license": "MIT",
+      "keywords": [
+        "mime",
+        "types"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jshttp/mime-types"
+      },
+      "dependencies": {
+        "mime-db": "~1.25.0"
+      },
+      "devDependencies": {
+        "eslint": "3.10.2",
+        "eslint-config-standard": "6.2.1",
+        "eslint-plugin-promise": "3.4.0",
+        "eslint-plugin-standard": "2.0.1",
+        "istanbul": "0.4.5",
+        "mocha": "1.21.5"
+      },
+      "files": [
+        "HISTORY.md",
+        "LICENSE",
+        "index.js"
+      ],
+      "engines": {
+        "node": ">= 0.6"
+      },
+      "scripts": {
+        "lint": "eslint .",
+        "test": "mocha --reporter spec test/test.js",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot test/test.js",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter dot test/test.js"
+      },
+      "gitHead": "83e91a5aea93858bc95ec95a99309592cba0ffe3",
+      "bugs": {
+        "url": "https://github.com/jshttp/mime-types/issues"
+      },
+      "homepage": "https://github.com/jshttp/mime-types",
+      "_id": "mime-types@2.1.13",
+      "_shasum": "e07aaa9c6c6b9a7ca3012c69003ad25a39e92a88",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "maintainers": [
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "fishrock123",
+          "email": "fishrock123@rocketmail.com"
+        },
+        {
+          "name": "jongleberry",
+          "email": "jonathanrichardong@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "e07aaa9c6c6b9a7ca3012c69003ad25a39e92a88",
+        "tarball": "https://registry.npmjs.org/mime-types/-/mime-types-2.1.13.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/mime-types-2.1.13.tgz_1479505166253_0.5666956284549087"
+      },
+      "directories": {}
+    },
+    "2.1.14": {
+      "name": "mime-types",
+      "description": "The ultimate javascript content-type utility.",
+      "version": "2.1.14",
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "Jeremiah Senkpiel",
+          "email": "fishrock123@rocketmail.com",
+          "url": "https://searchbeam.jit.su"
+        },
+        {
+          "name": "Jonathan Ong",
+          "email": "me@jongleberry.com",
+          "url": "http://jongleberry.com"
+        }
+      ],
+      "license": "MIT",
+      "keywords": [
+        "mime",
+        "types"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jshttp/mime-types.git"
+      },
+      "dependencies": {
+        "mime-db": "~1.26.0"
+      },
+      "devDependencies": {
+        "eslint": "3.13.1",
+        "eslint-config-standard": "6.2.1",
+        "eslint-plugin-promise": "3.4.0",
+        "eslint-plugin-standard": "2.0.1",
+        "istanbul": "0.4.5",
+        "mocha": "1.21.5"
+      },
+      "files": [
+        "HISTORY.md",
+        "LICENSE",
+        "index.js"
+      ],
+      "engines": {
+        "node": ">= 0.6"
+      },
+      "scripts": {
+        "lint": "eslint .",
+        "test": "mocha --reporter spec test/test.js",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot test/test.js",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter dot test/test.js"
+      },
+      "gitHead": "d7d15e50fe6b3a2da79d855015d25efa50e9f157",
+      "bugs": {
+        "url": "https://github.com/jshttp/mime-types/issues"
+      },
+      "homepage": "https://github.com/jshttp/mime-types#readme",
+      "_id": "mime-types@2.1.14",
+      "_shasum": "f7ef7d97583fcaf3b7d282b6f8b5679dab1e94ee",
+      "_from": ".",
+      "_npmVersion": "2.15.9",
+      "_nodeVersion": "4.6.1",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "dist": {
+        "shasum": "f7ef7d97583fcaf3b7d282b6f8b5679dab1e94ee",
+        "tarball": "https://registry.npmjs.org/mime-types/-/mime-types-2.1.14.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "fishrock123",
+          "email": "fishrock123@rocketmail.com"
+        },
+        {
+          "name": "jongleberry",
+          "email": "jonathanrichardong@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/mime-types-2.1.14.tgz_1484458141358_0.7563668976072222"
+      },
+      "directories": {}
+    },
+    "2.1.15": {
+      "name": "mime-types",
+      "description": "The ultimate javascript content-type utility.",
+      "version": "2.1.15",
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "Jeremiah Senkpiel",
+          "email": "fishrock123@rocketmail.com",
+          "url": "https://searchbeam.jit.su"
+        },
+        {
+          "name": "Jonathan Ong",
+          "email": "me@jongleberry.com",
+          "url": "http://jongleberry.com"
+        }
+      ],
+      "license": "MIT",
+      "keywords": [
+        "mime",
+        "types"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jshttp/mime-types.git"
+      },
+      "dependencies": {
+        "mime-db": "~1.27.0"
+      },
+      "devDependencies": {
+        "eslint": "3.18.0",
+        "eslint-config-standard": "7.1.0",
+        "eslint-plugin-promise": "3.5.0",
+        "eslint-plugin-standard": "2.1.1",
+        "istanbul": "0.4.5",
+        "mocha": "1.21.5"
+      },
+      "files": [
+        "HISTORY.md",
+        "LICENSE",
+        "index.js"
+      ],
+      "engines": {
+        "node": ">= 0.6"
+      },
+      "scripts": {
+        "lint": "eslint .",
+        "test": "mocha --reporter spec test/test.js",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot test/test.js",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter dot test/test.js"
+      },
+      "gitHead": "c44863eb0463ee16f3eb04576591cc4c4d6b214c",
+      "bugs": {
+        "url": "https://github.com/jshttp/mime-types/issues"
+      },
+      "homepage": "https://github.com/jshttp/mime-types#readme",
+      "_id": "mime-types@2.1.15",
+      "_shasum": "a4ebf5064094569237b8cf70046776d09fc92aed",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "4.7.3",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "dist": {
+        "shasum": "a4ebf5064094569237b8cf70046776d09fc92aed",
+        "tarball": "https://registry.npmjs.org/mime-types/-/mime-types-2.1.15.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "fishrock123",
+          "email": "fishrock123@rocketmail.com"
+        },
+        {
+          "name": "jongleberry",
+          "email": "jonathanrichardong@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/mime-types-2.1.15.tgz_1490327753615_0.3609113476704806"
+      },
+      "directories": {}
+    },
+    "2.1.16": {
+      "name": "mime-types",
+      "description": "The ultimate javascript content-type utility.",
+      "version": "2.1.16",
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "Jeremiah Senkpiel",
+          "email": "fishrock123@rocketmail.com",
+          "url": "https://searchbeam.jit.su"
+        },
+        {
+          "name": "Jonathan Ong",
+          "email": "me@jongleberry.com",
+          "url": "http://jongleberry.com"
+        }
+      ],
+      "license": "MIT",
+      "keywords": [
+        "mime",
+        "types"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jshttp/mime-types.git"
+      },
+      "dependencies": {
+        "mime-db": "~1.29.0"
+      },
+      "devDependencies": {
+        "eslint": "3.19.0",
+        "eslint-config-standard": "10.2.1",
+        "eslint-plugin-import": "2.7.0",
+        "eslint-plugin-node": "5.1.1",
+        "eslint-plugin-promise": "3.5.0",
+        "eslint-plugin-standard": "3.0.1",
+        "istanbul": "0.4.5",
+        "mocha": "1.21.5"
+      },
+      "files": [
+        "HISTORY.md",
+        "LICENSE",
+        "index.js"
+      ],
+      "engines": {
+        "node": ">= 0.6"
+      },
+      "scripts": {
+        "lint": "eslint .",
+        "test": "mocha --reporter spec test/test.js",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot test/test.js",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter dot test/test.js"
+      },
+      "gitHead": "a776f883a8bb1d50588224c46caefa6fc313f790",
+      "bugs": {
+        "url": "https://github.com/jshttp/mime-types/issues"
+      },
+      "homepage": "https://github.com/jshttp/mime-types#readme",
+      "_id": "mime-types@2.1.16",
+      "_shasum": "2b858a52e5ecd516db897ac2be87487830698e23",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.11.1",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "dist": {
+        "shasum": "2b858a52e5ecd516db897ac2be87487830698e23",
+        "tarball": "https://registry.npmjs.org/mime-types/-/mime-types-2.1.16.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "fishrock123@rocketmail.com",
+          "name": "fishrock123"
+        },
+        {
+          "email": "doug@somethingdoug.com",
+          "name": "dougwilson"
+        },
+        {
+          "email": "jonathanrichardong@gmail.com",
+          "name": "jongleberry"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/mime-types-2.1.16.tgz_1500950558329_0.4321689426433295"
+      },
+      "directories": {}
+    },
+    "2.1.17": {
+      "name": "mime-types",
+      "description": "The ultimate javascript content-type utility.",
+      "version": "2.1.17",
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "Jeremiah Senkpiel",
+          "email": "fishrock123@rocketmail.com",
+          "url": "https://searchbeam.jit.su"
+        },
+        {
+          "name": "Jonathan Ong",
+          "email": "me@jongleberry.com",
+          "url": "http://jongleberry.com"
+        }
+      ],
+      "license": "MIT",
+      "keywords": [
+        "mime",
+        "types"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jshttp/mime-types.git"
+      },
+      "dependencies": {
+        "mime-db": "~1.30.0"
+      },
+      "devDependencies": {
+        "eslint": "3.19.0",
+        "eslint-config-standard": "10.2.1",
+        "eslint-plugin-import": "2.7.0",
+        "eslint-plugin-node": "5.1.1",
+        "eslint-plugin-promise": "3.5.0",
+        "eslint-plugin-standard": "3.0.1",
+        "istanbul": "0.4.5",
+        "mocha": "1.21.5"
+      },
+      "files": [
+        "HISTORY.md",
+        "LICENSE",
+        "index.js"
+      ],
+      "engines": {
+        "node": ">= 0.6"
+      },
+      "scripts": {
+        "lint": "eslint .",
+        "test": "mocha --reporter spec test/test.js",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot test/test.js",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter dot test/test.js"
+      },
+      "gitHead": "80039fe78213821c2e9b25132d6b02cc37202e8a",
+      "bugs": {
+        "url": "https://github.com/jshttp/mime-types/issues"
+      },
+      "homepage": "https://github.com/jshttp/mime-types#readme",
+      "_id": "mime-types@2.1.17",
+      "_shasum": "09d7a393f03e995a79f8af857b70a9e0ab16557a",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.11.1",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "dist": {
+        "shasum": "09d7a393f03e995a79f8af857b70a9e0ab16557a",
+        "tarball": "https://registry.npmjs.org/mime-types/-/mime-types-2.1.17.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "fishrock123@rocketmail.com",
+          "name": "fishrock123"
+        },
+        {
+          "email": "doug@somethingdoug.com",
+          "name": "dougwilson"
+        },
+        {
+          "email": "jonathanrichardong@gmail.com",
+          "name": "jongleberry"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/mime-types-2.1.17.tgz_1504322793218_0.6663200033362955"
+      },
+      "directories": {}
+    },
+    "2.1.18": {
+      "name": "mime-types",
+      "description": "The ultimate javascript content-type utility.",
+      "version": "2.1.18",
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "Jeremiah Senkpiel",
+          "email": "fishrock123@rocketmail.com",
+          "url": "https://searchbeam.jit.su"
+        },
+        {
+          "name": "Jonathan Ong",
+          "email": "me@jongleberry.com",
+          "url": "http://jongleberry.com"
+        }
+      ],
+      "license": "MIT",
+      "keywords": [
+        "mime",
+        "types"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jshttp/mime-types.git"
+      },
+      "dependencies": {
+        "mime-db": "~1.33.0"
+      },
+      "devDependencies": {
+        "eslint": "3.19.0",
+        "eslint-config-standard": "10.2.1",
+        "eslint-plugin-import": "2.8.0",
+        "eslint-plugin-node": "5.2.1",
+        "eslint-plugin-promise": "3.6.0",
+        "eslint-plugin-standard": "3.0.1",
+        "istanbul": "0.4.5",
+        "mocha": "1.21.5"
+      },
+      "files": [
+        "HISTORY.md",
+        "LICENSE",
+        "index.js"
+      ],
+      "engines": {
+        "node": ">= 0.6"
+      },
+      "scripts": {
+        "lint": "eslint .",
+        "test": "mocha --reporter spec test/test.js",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot test/test.js",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter dot test/test.js"
+      },
+      "gitHead": "076f7902e3a730970ea96cd0b9c09bb6110f1127",
+      "bugs": {
+        "url": "https://github.com/jshttp/mime-types/issues"
+      },
+      "homepage": "https://github.com/jshttp/mime-types#readme",
+      "_id": "mime-types@2.1.18",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "6.13.0",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "dist": {
+        "integrity": "sha512-lc/aahn+t4/SWV/qcmumYjymLsWfN3ELhpmVuUFjgsORruuZPVSwAQryq+HHGvO/SI2KVX26bx+En+zhM8g8hQ==",
+        "shasum": "6f323f60a83d11146f831ff11fd66e2fe5503bb8",
+        "tarball": "https://registry.npmjs.org/mime-types/-/mime-types-2.1.18.tgz",
+        "fileCount": 5,
+        "unpackedSize": 14341
+      },
+      "maintainers": [
+        {
+          "email": "doug@somethingdoug.com",
+          "name": "dougwilson"
+        },
+        {
+          "email": "fishrock123@rocketmail.com",
+          "name": "fishrock123"
+        },
+        {
+          "email": "jonathanrichardong@gmail.com",
+          "name": "jongleberry"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/mime-types_2.1.18_1518802461370_0.7224202442179994"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.1.19": {
+      "name": "mime-types",
+      "description": "The ultimate javascript content-type utility.",
+      "version": "2.1.19",
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "Jeremiah Senkpiel",
+          "email": "fishrock123@rocketmail.com",
+          "url": "https://searchbeam.jit.su"
+        },
+        {
+          "name": "Jonathan Ong",
+          "email": "me@jongleberry.com",
+          "url": "http://jongleberry.com"
+        }
+      ],
+      "license": "MIT",
+      "keywords": [
+        "mime",
+        "types"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jshttp/mime-types.git"
+      },
+      "dependencies": {
+        "mime-db": "~1.35.0"
+      },
+      "devDependencies": {
+        "eslint": "4.19.1",
+        "eslint-config-standard": "11.0.0",
+        "eslint-plugin-import": "2.13.0",
+        "eslint-plugin-node": "6.0.1",
+        "eslint-plugin-promise": "3.8.0",
+        "eslint-plugin-standard": "3.1.0",
+        "istanbul": "0.4.5",
+        "mocha": "1.21.5"
+      },
+      "files": [
+        "HISTORY.md",
+        "LICENSE",
+        "index.js"
+      ],
+      "engines": {
+        "node": ">= 0.6"
+      },
+      "scripts": {
+        "lint": "eslint .",
+        "test": "mocha --reporter spec test/test.js",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot test/test.js",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter dot test/test.js"
+      },
+      "gitHead": "7c4ce23d7354fbf64c69d7b7be8413c4ba2add78",
+      "bugs": {
+        "url": "https://github.com/jshttp/mime-types/issues"
+      },
+      "homepage": "https://github.com/jshttp/mime-types#readme",
+      "_id": "mime-types@2.1.19",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.11.3",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "dist": {
+        "integrity": "sha512-P1tKYHVSZ6uFo26mtnve4HQFE3koh1UWVkp8YUC+ESBHe945xWSoXuHHiGarDqcEZ+whpCDnlNw5LON0kLo+sw==",
+        "shasum": "71e464537a7ef81c15f2db9d97e913fc0ff606f0",
+        "tarball": "https://registry.npmjs.org/mime-types/-/mime-types-2.1.19.tgz",
+        "fileCount": 5,
+        "unpackedSize": 14676,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbTtBXCRA9TVsSAnZWagAAjF4QAJrZ4PBxWvh7l1DeYPzG\nmVMsannUqqjnDbtNJX441rdKJi8ammCnBz8lK026+cfLCwr3lzBHvuJw3Vl4\nel2wygL1+DbCiK/r53ATrRmdbD5/F/DYGE9lYN75O3vxs8t98dlBzqSH1aZx\n2tG3pwmfTGa0/TVkzpNrCvolxXYleo7orXZ5PSf2tRLkeGV18625cgYKlnTR\nUdyLQfpHtLwmARJB5xM/279rM1jXA/oK0V1IMcjpEG/+bBL8bHGkpwsqrOb9\nSLwxQiDIWNN8uh23g4VB7KjUSKmjBvM+Aq9D7UPf7x5Iqti6Fe0mTNvnkbla\n83kMaBHgMINTpTu4Lh64C/eahlo54OBRTZWopP2qrUgUZIQdLvWH2P3fKWXt\n1IcEn4sq/8r7wtq9q3dEZcrbN2wEsStFUVOJ1Stn9jDXIntwEhvno5fTPBo0\nws03MtNrL0ka17mLjAgZX8c+3c1xCVbejiwAy7YN9gutZfQJ5cmV0hRzspa/\nJTC1LVfSMhFj5PhqliXG3MGA6zUHMSACveRsBw/2AEcd+lp5WSGbbdkelskT\n7SbwxD+Fe288EPA6SAWz4C2HZBNujHi2GUbQDZYdCg2VmptzR/S6hy70ROsx\nBlDWxCNWABHd9tnp0JL2yg6FXUtRLPc7hZTl1ecb2bO/AdfIz0TjwSJW+QU/\ncWQe\r\n=Sdv/\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "doug@somethingdoug.com",
+          "name": "dougwilson"
+        },
+        {
+          "email": "fishrock123@rocketmail.com",
+          "name": "fishrock123"
+        },
+        {
+          "email": "jonathanrichardong@gmail.com",
+          "name": "jongleberry"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/mime-types_2.1.19_1531891799651_0.29011555741327655"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.1.20": {
+      "name": "mime-types",
+      "description": "The ultimate javascript content-type utility.",
+      "version": "2.1.20",
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "Jeremiah Senkpiel",
+          "email": "fishrock123@rocketmail.com",
+          "url": "https://searchbeam.jit.su"
+        },
+        {
+          "name": "Jonathan Ong",
+          "email": "me@jongleberry.com",
+          "url": "http://jongleberry.com"
+        }
+      ],
+      "license": "MIT",
+      "keywords": [
+        "mime",
+        "types"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jshttp/mime-types.git"
+      },
+      "dependencies": {
+        "mime-db": "~1.36.0"
+      },
+      "devDependencies": {
+        "eslint": "4.19.1",
+        "eslint-config-standard": "11.0.0",
+        "eslint-plugin-import": "2.13.0",
+        "eslint-plugin-node": "6.0.1",
+        "eslint-plugin-promise": "3.8.0",
+        "eslint-plugin-standard": "3.1.0",
+        "istanbul": "0.4.5",
+        "mocha": "1.21.5"
+      },
+      "files": [
+        "HISTORY.md",
+        "LICENSE",
+        "index.js"
+      ],
+      "engines": {
+        "node": ">= 0.6"
+      },
+      "scripts": {
+        "lint": "eslint .",
+        "test": "mocha --reporter spec test/test.js",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot test/test.js",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter dot test/test.js"
+      },
+      "gitHead": "1b0f6e8b605fa83c961ef352be701e23f66cf917",
+      "bugs": {
+        "url": "https://github.com/jshttp/mime-types/issues"
+      },
+      "homepage": "https://github.com/jshttp/mime-types#readme",
+      "_id": "mime-types@2.1.20",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.11.4",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "dist": {
+        "integrity": "sha512-HrkrPaP9vGuWbLK1B1FfgAkbqNjIuy4eHlIYnFi7kamZyLLrGlo2mpcx0bBmNpKqBtYtAfGbodDddIgddSJC2A==",
+        "shasum": "930cb719d571e903738520f8470911548ca2cc19",
+        "tarball": "https://registry.npmjs.org/mime-types/-/mime-types-2.1.20.tgz",
+        "fileCount": 5,
+        "unpackedSize": 14871,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbgySOCRA9TVsSAnZWagAAmgAP/0/KvhTzYKLlVNqKYS25\nm/8NWOT2ANSUzj3Z6+WuqmmeVWS7VVvmOI/2OscrQLX7nFEMicjz9DHZtCVW\nWBeLLbBEmx7cT1WOZA37jM2t+2BOz2w689YSwkasLjh9lZPZVEVvuww7248u\nQnwbxBM34ZSZFyMoaxfyotRt9KUMjsuOCTigTJscaayw+ViObrGvEK6vp6Q6\nkdTJ5oTMCo3ahS0H9VVEPU6yb3C9/5Szvp21sUOYWoJq2Rv7QXDI2R+UZzpA\n5CJetFzTXOHzyRW2eEdXpEowAaZbykn1O7Dul9nAZJLODMvNFaKXAmQNVq9Q\nqFFI0ECf77Ijg9Am5zNaeSRuujGZ351WpVzgct8gCepUgPRn1Ro302pXFKte\n/mMSFARUYA+MkdDNH8l+73byG3ipw4YN38nQd7KKyngpxirFvDvqBUg17c3+\ntBksa4PHLP0+qVHhjeL+A19bVByQHP0P+jWkpTiJSVvIgk92pPVpIjxmnuI7\nlb76ypP946/Kgrm16+o4nKCDIhGAnRYmmC8wCN8kBM7YNW7vICTOx6NwH03V\nA9zo4NCVackZxuALNrQ9p7VcMWk6Sn+NFFHov1YV6iAlA8L/rMajb19IBwnc\nSOPH2ezEd5E9wqrotB30FgPo9IDDfPJGVh55xGL69PO86m3ANZdIdSGW0RHO\ne5M2\r\n=qmfT\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "doug@somethingdoug.com",
+          "name": "dougwilson"
+        },
+        {
+          "email": "fishrock123@rocketmail.com",
+          "name": "fishrock123"
+        },
+        {
+          "email": "jonathanrichardong@gmail.com",
+          "name": "jongleberry"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/mime-types_2.1.20_1535321229921_0.8062784689775195"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.1.21": {
+      "name": "mime-types",
+      "description": "The ultimate javascript content-type utility.",
+      "version": "2.1.21",
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "Jeremiah Senkpiel",
+          "email": "fishrock123@rocketmail.com",
+          "url": "https://searchbeam.jit.su"
+        },
+        {
+          "name": "Jonathan Ong",
+          "email": "me@jongleberry.com",
+          "url": "http://jongleberry.com"
+        }
+      ],
+      "license": "MIT",
+      "keywords": [
+        "mime",
+        "types"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jshttp/mime-types.git"
+      },
+      "dependencies": {
+        "mime-db": "~1.37.0"
+      },
+      "devDependencies": {
+        "eslint": "5.7.0",
+        "eslint-config-standard": "12.0.0",
+        "eslint-plugin-import": "2.14.0",
+        "eslint-plugin-node": "7.0.1",
+        "eslint-plugin-promise": "4.0.1",
+        "eslint-plugin-standard": "4.0.0",
+        "mocha": "5.2.0",
+        "nyc": "13.1.0"
+      },
+      "engines": {
+        "node": ">= 0.6"
+      },
+      "scripts": {
+        "lint": "eslint .",
+        "test": "mocha --reporter spec test/test.js",
+        "test-cov": "nyc --reporter=html --reporter=text npm test",
+        "test-travis": "nyc --reporter=text npm test"
+      },
+      "gitHead": "1aed04a9c43b8b920c0f77d1cb160d42079d978c",
+      "bugs": {
+        "url": "https://github.com/jshttp/mime-types/issues"
+      },
+      "homepage": "https://github.com/jshttp/mime-types#readme",
+      "_id": "mime-types@2.1.21",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "8.12.0",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "dist": {
+        "integrity": "sha512-3iL6DbwpyLzjR3xHSFNFeb9Nz/M8WDkX33t1GFQnFOllWk8pOrh/LSrB5OXlnlW5P9LH73X6loW/eogc+F5lJg==",
+        "shasum": "28995aa1ecb770742fe6ae7e58f9181c744b3f96",
+        "tarball": "https://registry.npmjs.org/mime-types/-/mime-types-2.1.21.tgz",
+        "fileCount": 5,
+        "unpackedSize": 14860,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbyqLkCRA9TVsSAnZWagAAVigP/RL9Plb3H2UFfyVhYQQx\neXr1yHPsEB46hVDaySgvX1YMFiaWibmX+gh7qLp27cjmSyM0O9dxPEt9dFc5\nMQ9aJudZ+Qy6/RFQ2KhPTwkor/rgKx83SXNLru7JT4W/3TuyglYfOdypaDeG\nYBckwRhkA28NQNlPs70nVzAnR66QDvNNcmO7ScdG4qNNCn9YziF8WoXl6xpx\n0SYHRHmiFU22rJGT/8fAm57qFKHUVnisGUrB2QNoVpZH7euxfMfHGS40k7BR\nnP2y0q14jVp+oXNH0vrCtY70/Ys95f+JzHvIJSDh49GCnlM7qN0M+cLFs1hP\ns3/9IRkehSPrb6iyPcoRTsLLYaZq307ce1wM/AJhIJe287Z4pVbmvEinppwR\nPqltP7erKXX9B+eIYPxFQKWbgjkGma9R2PMXgINjT1JW0whjANiu1N+4VcyJ\nkGmgf3Kf6C2VmtwFyyW3bUkpH1mVsTX78vC3wD1YdXjzCgdmPsOAY7JYGBfY\nAHr6/DyG/rgPKsr9lMSs6n33ONbfyHl9VzBT/+gNaj18AqF3bRnfMhWPptJI\n4wVOonYgazuC2w7zYh9m3Wu6CK/lDqlohT7cpSUyJWELbANxbJLZpyP2IJdB\nZvLOL4Cj9lkTgEonV5gN6GDFiIkJkUbtNRCxPrH7sCNrV4TpQf+3CKMcu3SV\nwQsc\r\n=EdfX\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "doug@somethingdoug.com",
+          "name": "dougwilson"
+        },
+        {
+          "email": "fishrock123@rocketmail.com",
+          "name": "fishrock123"
+        },
+        {
+          "email": "jonathanrichardong@gmail.com",
+          "name": "jongleberry"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/mime-types_2.1.21_1540006627863_0.6812190744417017"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.1.22": {
+      "name": "mime-types",
+      "description": "The ultimate javascript content-type utility.",
+      "version": "2.1.22",
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "Jeremiah Senkpiel",
+          "email": "fishrock123@rocketmail.com",
+          "url": "https://searchbeam.jit.su"
+        },
+        {
+          "name": "Jonathan Ong",
+          "email": "me@jongleberry.com",
+          "url": "http://jongleberry.com"
+        }
+      ],
+      "license": "MIT",
+      "keywords": [
+        "mime",
+        "types"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jshttp/mime-types.git"
+      },
+      "dependencies": {
+        "mime-db": "~1.38.0"
+      },
+      "devDependencies": {
+        "eslint": "5.13.0",
+        "eslint-config-standard": "12.0.0",
+        "eslint-plugin-import": "2.16.0",
+        "eslint-plugin-node": "7.0.1",
+        "eslint-plugin-promise": "4.0.1",
+        "eslint-plugin-standard": "4.0.0",
+        "mocha": "5.2.0",
+        "nyc": "13.3.0"
+      },
+      "engines": {
+        "node": ">= 0.6"
+      },
+      "scripts": {
+        "lint": "eslint .",
+        "test": "mocha --reporter spec test/test.js",
+        "test-cov": "nyc --reporter=html --reporter=text npm test",
+        "test-travis": "nyc --reporter=text npm test"
+      },
+      "gitHead": "0ac5fe1ad9008b4b141e9f32fb4d63a6478669ba",
+      "bugs": {
+        "url": "https://github.com/jshttp/mime-types/issues"
+      },
+      "homepage": "https://github.com/jshttp/mime-types#readme",
+      "_id": "mime-types@2.1.22",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "8.15.0",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "dist": {
+        "integrity": "sha512-aGl6TZGnhm/li6F7yx82bJiBZwgiEa4Hf6CNr8YO+r5UHr53tSTYZb102zyU50DOWWKeOv0uQLRL0/9EiKWCog==",
+        "shasum": "fe6b355a190926ab7698c9a0556a11199b2199bd",
+        "tarball": "https://registry.npmjs.org/mime-types/-/mime-types-2.1.22.tgz",
+        "fileCount": 5,
+        "unpackedSize": 15532,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcZfAKCRA9TVsSAnZWagAAkLQP/jW4lBe78qBJSqi0BdL3\nbvjlEBy3K8HNUwrGAPhw36ooYolZtw6mZET7Ylm0taGaWYz7IPrGwmGK3TB3\nUE+OZPGEiolp+cSybxdo3eX3/AzoCVmOk5hJ+RWVzu+wUVQ4tAn3Yrt7drit\nhnNfW4mIjVsT8R2i9XHYvYyTXaz2rtyN9x9TLIdecKgbhYj526b5ZVR3gC2d\nuZ4B4b/Cg3kdVgUt0tzOO8Isw81Kj/bYIrgwa7RqdUwZTcA11TeGBiKtVDye\nSBRYyUniD65y6aykhPxjKWsso5btbzuA0OU3TK0hT/HE+NkOq5VcupUPvPBM\nTOGjVMlQNhGqsJcmJ0UoW3CKvN6g3p1xKGtytRXhPcA4pRUKgTEGOTMxblwi\nkoEnQ4C19er4CfVBGUprXpwczPkZJ5VjhSSKOpT+YNib6vZUQCivAUHTV7eN\nNEaM1LFoKuX4wL9anYd+XtShyyVsql3vtdcHXDprh/02qQHzvELY+py04XpG\nHZcgdA3YT2Bb7jyZpDwwLr8kwmtSQZDYaS/PV+bqGHbdhuwjdbJS6AaDiks0\nq+iBL1OYv/NWK9bCHRmwQVL7tr9iyKax9LnlUIK8QWtcyFogHt3bgNWQeFYa\nJdMhgN0/FmRmPjOnTftDWHU8+TaSFfGXp796ZFPBv0h8mFJlGlVTa/otM76/\n+ijp\r\n=j8br\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "doug@somethingdoug.com",
+          "name": "dougwilson"
+        },
+        {
+          "email": "fishrock123@rocketmail.com",
+          "name": "fishrock123"
+        },
+        {
+          "email": "jonathanrichardong@gmail.com",
+          "name": "jongleberry"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/mime-types_2.1.22_1550184458136_0.07147731380368416"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.1.23": {
+      "name": "mime-types",
+      "description": "The ultimate javascript content-type utility.",
+      "version": "2.1.23",
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "Jeremiah Senkpiel",
+          "email": "fishrock123@rocketmail.com",
+          "url": "https://searchbeam.jit.su"
+        },
+        {
+          "name": "Jonathan Ong",
+          "email": "me@jongleberry.com",
+          "url": "http://jongleberry.com"
+        }
+      ],
+      "license": "MIT",
+      "keywords": [
+        "mime",
+        "types"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jshttp/mime-types.git"
+      },
+      "dependencies": {
+        "mime-db": "~1.39.0"
+      },
+      "devDependencies": {
+        "eslint": "5.16.0",
+        "eslint-config-standard": "12.0.0",
+        "eslint-plugin-import": "2.17.2",
+        "eslint-plugin-node": "8.0.1",
+        "eslint-plugin-promise": "4.1.1",
+        "eslint-plugin-standard": "4.0.0",
+        "mocha": "6.1.3",
+        "nyc": "14.0.0"
+      },
+      "engines": {
+        "node": ">= 0.6"
+      },
+      "scripts": {
+        "lint": "eslint .",
+        "test": "mocha --reporter spec test/test.js",
+        "test-cov": "nyc --reporter=html --reporter=text npm test",
+        "test-travis": "nyc --reporter=text npm test"
+      },
+      "gitHead": "28b73337cb1aa1583b72d448f30e2f49d6f5f07e",
+      "bugs": {
+        "url": "https://github.com/jshttp/mime-types/issues"
+      },
+      "homepage": "https://github.com/jshttp/mime-types#readme",
+      "_id": "mime-types@2.1.23",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "8.15.1",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "dist": {
+        "integrity": "sha512-ROk/m+gMVSrRxTkMlaQOvFmFmYDc7sZgrjjM76abqmd2Cc5fCV7jAMA5XUccEtJ3cYiYdgixUVI+fApc2LkXlw==",
+        "shasum": "d4eacd87de99348a6858fe1e479aad877388d977",
+        "tarball": "https://registry.npmjs.org/mime-types/-/mime-types-2.1.23.tgz",
+        "fileCount": 5,
+        "unpackedSize": 15698,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJct//rCRA9TVsSAnZWagAADUcP/1Sx8SZMb+Y0DvqR26zd\nsX74VQgoI4cXQmf1hh/jo2EUpvSK1xxz9H2fQKeF+HPreIhbqretsWfqh4Sd\nsbKVqusZ8xWMz1+Y1whWFzpGMeAe/Fkatka+YgHOsxA9RVcxVVkLCg4PR7ve\n1OxGIUtI5Eqhb7/UTcNY2ha+GwA/RgVnrImoTwNAucLpcaR8KCwpMCd+36nH\n/Rwz6v634o9dHZhvbId/kwpYaoKp3FACuGnmaydheqfv3bm+lqTvLpCCekD6\nTnXI5YJdQWEZp23MVqHCEL3/vYvcck2drlkD8cMLm6Z/6gBGIgvXLqcVnmvQ\nMcJ/MxzGEpaf51594zBAIXcj492IVSw0WN6W+vf0cRyLCqMPGFtRkzJfx/FU\nkp7dkjkpqP41yRWO42dBfSuqRzfPhNr1UPyLjFN6ZSc/MrzijVQKFY0cNmOS\nc81ZSp2RymrE9rJbyZ3DQv9AW4uVy0Was+39+NqtQTMJ6vh7xp+9nUKtnWFy\nQiES2KNAmIOIe4nbNavnbJiFUVzxFqP+NdsKRThXafzYSWJ8URakA3k3u2SK\nHTRbCr18uu+I1ZzZySbvPpE+L6ZzsL3ozbndpei7sDl6QUuHukIjpqH6+M/2\nYmkOnvpDjvNQPbPvqBcZ4zRdpZ3Gqgbu1eZNkwSHyo+tkTaUkZqsw+VlTGwC\nvHXB\r\n=ccqn\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "doug@somethingdoug.com",
+          "name": "dougwilson"
+        },
+        {
+          "email": "fishrock123@rocketmail.com",
+          "name": "fishrock123"
+        },
+        {
+          "email": "jonathanrichardong@gmail.com",
+          "name": "jongleberry"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/mime-types_2.1.23_1555562474870_0.5469095710208383"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.1.24": {
+      "name": "mime-types",
+      "description": "The ultimate javascript content-type utility.",
+      "version": "2.1.24",
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "Jeremiah Senkpiel",
+          "email": "fishrock123@rocketmail.com",
+          "url": "https://searchbeam.jit.su"
+        },
+        {
+          "name": "Jonathan Ong",
+          "email": "me@jongleberry.com",
+          "url": "http://jongleberry.com"
+        }
+      ],
+      "license": "MIT",
+      "keywords": [
+        "mime",
+        "types"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jshttp/mime-types.git"
+      },
+      "dependencies": {
+        "mime-db": "1.40.0"
+      },
+      "devDependencies": {
+        "eslint": "5.16.0",
+        "eslint-config-standard": "12.0.0",
+        "eslint-plugin-import": "2.17.2",
+        "eslint-plugin-node": "8.0.1",
+        "eslint-plugin-promise": "4.1.1",
+        "eslint-plugin-standard": "4.0.0",
+        "mocha": "6.1.4",
+        "nyc": "14.0.0"
+      },
+      "engines": {
+        "node": ">= 0.6"
+      },
+      "scripts": {
+        "lint": "eslint .",
+        "test": "mocha --reporter spec test/test.js",
+        "test-cov": "nyc --reporter=html --reporter=text npm test",
+        "test-travis": "nyc --reporter=text npm test"
+      },
+      "gitHead": "e5b5f41ef0d7e4e66eb9baeec7920c0cd9ec81f0",
+      "bugs": {
+        "url": "https://github.com/jshttp/mime-types/issues"
+      },
+      "homepage": "https://github.com/jshttp/mime-types#readme",
+      "_id": "mime-types@2.1.24",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "8.15.1",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "dist": {
+        "integrity": "sha512-WaFHS3MCl5fapm3oLxU4eYDw77IQM2ACcxQ9RIxfaC3ooc6PFuBMGZZsYpvoXS5D5QTWPieo1jjLdAm3TBP3cQ==",
+        "shasum": "b6f8d0b3e951efb77dedeca194cff6d16f676f81",
+        "tarball": "https://registry.npmjs.org/mime-types/-/mime-types-2.1.24.tgz",
+        "fileCount": 5,
+        "unpackedSize": 15858,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcu+enCRA9TVsSAnZWagAAZDAP/131rZIx2LnrEtxcAVE1\ntwbiuGeMaYMICmK5M+sbC810UK7KyRpukkRs+nWlvSp4CEF5it0NcnKTDgrG\nsxhl4T1TuaYVq9T3WuI+GOP6462yBna6aZXss0obI9fS1V9h8c0K77JUK3mt\n5VATHB8jtNivRIWfUue17GZ5cj0wR528iDoLQwxhnXWm8RugwysWg+IbavVF\nampKZue/RHvOTcz8cLGdj0O4PP0niH1B3oaOCSf6JHoM7N2D+ymv843YSbLE\nGbHjfHRQ+UO5Fy8FTZNVd/6uVIW/VJJTrDqZwCuIzBCPMcEB8KKd0ZjkfVsY\nivEecHoT2BUgBBXs11CcRkUjZAesmmSMr187RO/Cot9DnosRu60dX/VW2Izb\nXyHuH8V5S61SVIOkb8GHtP9pYqYLa07qR5D1vw2kGnonBuCndkOIOYV6PXgv\n4b2OXxuHAmMY9f+HhfsKbZaHdxFcSFJ3KhvpfGyB56yl6dSz1fO0OcXhu2E1\ndLlQlWvVs8i5BtVkYXb+5Js5v5Yua4UhL5Piyz6SxogH8XTtDFQktztne5xE\nhHC7NqHIivWFjCKTSp7iDf0kaqNFwVvwaPGfcMKDp7PMb6qdwUyiSwvDAOES\n1htGf6DLsG9Q7pIXpkhfwyhCk6H1RE4v7lEKWa6wK106ygBUDccVWXw7X+dN\n32yl\r\n=h9nD\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "doug@somethingdoug.com",
+          "name": "dougwilson"
+        },
+        {
+          "email": "fishrock123@rocketmail.com",
+          "name": "fishrock123"
+        },
+        {
+          "email": "jonathanrichardong@gmail.com",
+          "name": "jongleberry"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/mime-types_2.1.24_1555818406742_0.4628586923544964"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.1.25": {
+      "name": "mime-types",
+      "description": "The ultimate javascript content-type utility.",
+      "version": "2.1.25",
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "Jeremiah Senkpiel",
+          "email": "fishrock123@rocketmail.com",
+          "url": "https://searchbeam.jit.su"
+        },
+        {
+          "name": "Jonathan Ong",
+          "email": "me@jongleberry.com",
+          "url": "http://jongleberry.com"
+        }
+      ],
+      "license": "MIT",
+      "keywords": [
+        "mime",
+        "types"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jshttp/mime-types.git"
+      },
+      "dependencies": {
+        "mime-db": "1.42.0"
+      },
+      "devDependencies": {
+        "eslint": "6.6.0",
+        "eslint-config-standard": "14.1.0",
+        "eslint-plugin-import": "2.18.2",
+        "eslint-plugin-node": "10.0.0",
+        "eslint-plugin-promise": "4.2.1",
+        "eslint-plugin-standard": "4.0.1",
+        "mocha": "6.2.2",
+        "nyc": "14.1.1"
+      },
+      "engines": {
+        "node": ">= 0.6"
+      },
+      "scripts": {
+        "lint": "eslint .",
+        "test": "mocha --reporter spec test/test.js",
+        "test-cov": "nyc --reporter=html --reporter=text npm test",
+        "test-travis": "nyc --reporter=text npm test"
+      },
+      "gitHead": "7aaede09275fb002f7bbd63060ed4c3a98575b9d",
+      "bugs": {
+        "url": "https://github.com/jshttp/mime-types/issues"
+      },
+      "homepage": "https://github.com/jshttp/mime-types#readme",
+      "_id": "mime-types@2.1.25",
+      "_nodeVersion": "12.12.0",
+      "_npmVersion": "6.11.3",
+      "dist": {
+        "integrity": "sha512-5KhStqB5xpTAeGqKBAMgwaYMnQik7teQN4IAzC7npDv6kzeU6prfkR67bc87J1kWMPGkoaZSq1npmexMgkmEVg==",
+        "shasum": "39772d46621f93e2a80a856c53b86a62156a6437",
+        "tarball": "https://registry.npmjs.org/mime-types/-/mime-types-2.1.25.tgz",
+        "fileCount": 5,
+        "unpackedSize": 16062,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdyr8pCRA9TVsSAnZWagAAQFsQAIs5oj9Qzx/oRzFtRYQ6\n994TJBdmn2s3giERKNeCoI+ZPmw11cEiOt4DLGGRZ2Q5Zd7zcCMQkJIfCcsS\nmSEgcwDh4gxn2uLM74W0TuB5Hk9Vy3150JFn0XR1T323G+4gB5Oc1TTHKEQh\nJOjEQOf7QM4raSdTEkF1YxLbaAlTHoZq54ScUJCo5mAHbEfL/D1wc5/zILJK\n2fSOcpzfRh+a3Vw8T/fM4dbsBXk82I3PFIX+yl27LK41Ft9jg5CkWNtRMjVo\nTrhYeuAJVRRObzavI7q7xbz2EBmKSr7LcofvDSmAagDYVe4pUrkP9H0sZUAR\noF/oBIRDW+UwzzrMOo0Dx6Oe5d21kNQcX5bs4fCZXfgJZ5STzV0iNtp9i4D1\noybPr2K2MMGEfptRbDytfLnRyFSq2TUxCYCzPCO3KRAX63hBNoeYyfLnU6UZ\niBf5MEcUKskhv74mRbalpg8nPl1/a2igceK0vfNnqWUjSFA1AfLOgveZgsna\nXV2iVghx4AMBL0N3jP6EUsUYrnqQnDCRcyBE/mBno8d6X14lCXZPQkE7il9X\ntRt2ZVe01UmuIPzQASmn8k/u5m+xXjbLmrio0Wjq4Tsq66Jvh54qnjiK8Gm7\nQ724kz5XoULTQXqJNLAaKNOl75ubN44aQfFbfxUhou6n+tF5gQJ9xtsdasPN\n31r5\r\n=VcRg\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "doug@somethingdoug.com",
+          "name": "dougwilson"
+        },
+        {
+          "email": "fishrock123@rocketmail.com",
+          "name": "fishrock123"
+        },
+        {
+          "email": "jonathanrichardong@gmail.com",
+          "name": "jongleberry"
+        }
+      ],
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/mime-types_2.1.25_1573568296656_0.4870118202385958"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.1.26": {
+      "name": "mime-types",
+      "description": "The ultimate javascript content-type utility.",
+      "version": "2.1.26",
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "Jeremiah Senkpiel",
+          "email": "fishrock123@rocketmail.com",
+          "url": "https://searchbeam.jit.su"
+        },
+        {
+          "name": "Jonathan Ong",
+          "email": "me@jongleberry.com",
+          "url": "http://jongleberry.com"
+        }
+      ],
+      "license": "MIT",
+      "keywords": [
+        "mime",
+        "types"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jshttp/mime-types.git"
+      },
+      "dependencies": {
+        "mime-db": "1.43.0"
+      },
+      "devDependencies": {
+        "eslint": "6.8.0",
+        "eslint-config-standard": "14.1.0",
+        "eslint-plugin-import": "2.19.1",
+        "eslint-plugin-node": "11.0.0",
+        "eslint-plugin-promise": "4.2.1",
+        "eslint-plugin-standard": "4.0.1",
+        "mocha": "7.0.0",
+        "nyc": "15.0.0"
+      },
+      "engines": {
+        "node": ">= 0.6"
+      },
+      "scripts": {
+        "lint": "eslint .",
+        "test": "mocha --reporter spec test/test.js",
+        "test-cov": "nyc --reporter=html --reporter=text npm test",
+        "test-travis": "nyc --reporter=text npm test"
+      },
+      "gitHead": "73f9933bfa5247337b459240ec67ea6045cdec84",
+      "bugs": {
+        "url": "https://github.com/jshttp/mime-types/issues"
+      },
+      "homepage": "https://github.com/jshttp/mime-types#readme",
+      "_id": "mime-types@2.1.26",
+      "_nodeVersion": "12.12.0",
+      "_npmVersion": "6.11.3",
+      "dist": {
+        "integrity": "sha512-01paPWYgLrkqAyrlDorC1uDwl2p3qZT7yl806vW7DvDoxwXi46jsjFbg+WdwotBIk6/MbEhO/dh5aZ5sNj/dWQ==",
+        "shasum": "9c921fc09b7e149a65dfdc0da4d20997200b0a06",
+        "tarball": "https://registry.npmjs.org/mime-types/-/mime-types-2.1.26.tgz",
+        "fileCount": 5,
+        "unpackedSize": 16332,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeEq3rCRA9TVsSAnZWagAAA8gP+wc64WF1FCVIqdKE+1lh\nEOIJKGWOzbGMNLFAM8ksv/d1Qr9SlOiN2yOc15gt95xrLiacgeB+Gz9V93NC\nwgmzm8kUvDmM6qaLZwfY9q3A6wn3f4fOA75Cj/Xj4k1bZuzeE8wCGMv8r99R\nmgWacq5ptU4Y0kO1/cUK+VCRFK5GL0gbCNUS3phdFfSxWAQO+Gj08eSECD+V\nuLx+0pb4UI17s4C2ZLKIJJIWQSAH/8bYI5MflHF4dC5ZS5ar3oXtPAorQ9Xe\nCIEeg1oN8p/+aWFK/uu2kUmNBAYmfSqwFVPLUgqSfvY+4EACXrR5hxa9n3Mz\nj5tbxoxjURhDeFOPgdZL34QKVpil/QyZ+V4QZ4iKfKpR3el3Gl5UBEDqP5BV\nK6MrticiP8Gg5kR17msv+4HG2bJN7RmMMhYKvBxdpIqljs3UfJEtKRHduDVb\nZ3m+F8YDpThYFcJ108wRb+HerQNY8q2xzBppxZ0ndF+icVdVrxm5ZMfrPmQJ\nwF3zuarhw+YE6Ryga8JVHn32qXubycJXopNWD3TBcT73540Wc5LIb4Zr7038\nS8mwTJA6OYiUEEplYHTqXJEj4b433djytwzLtUdgtKAuUYECphahF+/dx+/c\n35a5goj9MZ5T68or3kRgXFin+dQ6hKB5ZAxfdxFpv/ovsB3WIQC9cWFFaeLH\niaRj\r\n=EtV3\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "doug@somethingdoug.com",
+          "name": "dougwilson"
+        },
+        {
+          "email": "fishrock123@rocketmail.com",
+          "name": "fishrock123"
+        },
+        {
+          "email": "jonathanrichardong@gmail.com",
+          "name": "jongleberry"
+        }
+      ],
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/mime-types_2.1.26_1578282475037_0.17516931585429973"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.1.27": {
+      "name": "mime-types",
+      "description": "The ultimate javascript content-type utility.",
+      "version": "2.1.27",
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "Jeremiah Senkpiel",
+          "email": "fishrock123@rocketmail.com",
+          "url": "https://searchbeam.jit.su"
+        },
+        {
+          "name": "Jonathan Ong",
+          "email": "me@jongleberry.com",
+          "url": "http://jongleberry.com"
+        }
+      ],
+      "license": "MIT",
+      "keywords": [
+        "mime",
+        "types"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jshttp/mime-types.git"
+      },
+      "dependencies": {
+        "mime-db": "1.44.0"
+      },
+      "devDependencies": {
+        "eslint": "6.8.0",
+        "eslint-config-standard": "14.1.1",
+        "eslint-plugin-import": "2.20.2",
+        "eslint-plugin-markdown": "1.0.2",
+        "eslint-plugin-node": "11.1.0",
+        "eslint-plugin-promise": "4.2.1",
+        "eslint-plugin-standard": "4.0.1",
+        "mocha": "7.1.1",
+        "nyc": "15.0.1"
+      },
+      "engines": {
+        "node": ">= 0.6"
+      },
+      "scripts": {
+        "lint": "eslint --plugin markdown --ext js,md .",
+        "test": "mocha --reporter spec test/test.js",
+        "test-cov": "nyc --reporter=html --reporter=text npm test",
+        "test-travis": "nyc --reporter=text npm test"
+      },
+      "gitHead": "47b62ac45e9b176a2af35532d0eea4968bb9eb6d",
+      "bugs": {
+        "url": "https://github.com/jshttp/mime-types/issues"
+      },
+      "homepage": "https://github.com/jshttp/mime-types#readme",
+      "_id": "mime-types@2.1.27",
+      "_nodeVersion": "13.12.0",
+      "_npmVersion": "6.14.4",
+      "dist": {
+        "integrity": "sha512-JIhqnCasI9yD+SsmkquHBxTSEuZdQX5BuQnS2Vc7puQQQ+8yiP5AY5uWhpdv4YL4VM5c6iliiYWPgJ/nJQLp7w==",
+        "shasum": "47949f98e279ea53119f5722e0f34e529bec009f",
+        "tarball": "https://registry.npmjs.org/mime-types/-/mime-types-2.1.27.tgz",
+        "fileCount": 5,
+        "unpackedSize": 16721,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeol6sCRA9TVsSAnZWagAAb7gP/2rhSx5SYxg68mROGmpc\nK4P6pyMxslHCfxYa4EUnJ4NmZAJKoGAeqLNxf/ty5QFlczy2kATAx6Ed/Jo9\nev4jGBiHbZ3WiTCdG9iE43fP4uKRoZ0a19suEC9t4mmx0y3VaBqGNIlEZgQM\nUZKLhbMYu8PEmA4FeFVcKOzEQVmMaNPSek9iaSNgxyD8nL6O+qEhTtH/1BHV\ng59VWglcXaKsK7sQGM4Ljn+bXqDgQhNpZqF4zoONKcxb7TrYp/NESCKk+Qdi\nlEBCaXdT++/UwnRh0p+nffllnurrE7ctt76LCJP8W9ObMqKSpmT4yQmpDp/J\n8hoRyCK+Z2Ktb8ZWkM5chHAiL9hrQVKzhKB2Cbr72itq7E+5Umv0Otis2C6b\nc7vIbbMtuui4fy7ZAo1ywoMT53jyAkqesJHjIlkBMlXoSIm3eyzKuQXDsJ1C\nRjhI6ik8j7rViDQ18TCyFeSZZw6LxB0gqTRuvLz+VbDVSLNoH6+OaY0bl62s\n4iWL4xTqm8xFsyewzt8fl7H7nIEfETjcEwcaKljjyfncjLla5iXVXOAvZ6dR\ncdLA1fMFH3YNEjVgR0g5elVHQNk6+VdN5c4lZ7vRPc3NJCTcljyTegiWCK2U\ni6/aVv6I3FiCSkegYy/E02P0UW6OcmecrMY5gnenMtAG5lqlKBHOL06aegiA\nSD9R\r\n=th56\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "doug@somethingdoug.com",
+          "name": "dougwilson"
+        },
+        {
+          "email": "jonathanrichardong@gmail.com",
+          "name": "jongleberry"
+        }
+      ],
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/mime-types_2.1.27_1587699372290_0.7009359023949084"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# mime-types\n\n[![NPM Version][npm-version-image]][npm-url]\n[![NPM Downloads][npm-downloads-image]][npm-url]\n[![Node.js Version][node-version-image]][node-version-url]\n[![Build Status][travis-image]][travis-url]\n[![Test Coverage][coveralls-image]][coveralls-url]\n\nThe ultimate javascript content-type utility.\n\nSimilar to [the `mime@1.x` module](https://www.npmjs.com/package/mime), except:\n\n- __No fallbacks.__ Instead of naively returning the first available type,\n  `mime-types` simply returns `false`, so do\n  `var type = mime.lookup('unrecognized') || 'application/octet-stream'`.\n- No `new Mime()` business, so you could do `var lookup = require('mime-types').lookup`.\n- No `.define()` functionality\n- Bug fixes for `.lookup(path)`\n\nOtherwise, the API is compatible with `mime` 1.x.\n\n## Install\n\nThis is a [Node.js](https://nodejs.org/en/) module available through the\n[npm registry](https://www.npmjs.com/). Installation is done using the\n[`npm install` command](https://docs.npmjs.com/getting-started/installing-npm-packages-locally):\n\n```sh\n$ npm install mime-types\n```\n\n## Adding Types\n\nAll mime types are based on [mime-db](https://www.npmjs.com/package/mime-db),\nso open a PR there if you'd like to add mime types.\n\n## API\n\n<!-- eslint-disable no-unused-vars -->\n\n```js\nvar mime = require('mime-types')\n```\n\nAll functions return `false` if input is invalid or not found.\n\n### mime.lookup(path)\n\nLookup the content-type associated with a file.\n\n<!-- eslint-disable no-undef -->\n\n```js\nmime.lookup('json') // 'application/json'\nmime.lookup('.md') // 'text/markdown'\nmime.lookup('file.html') // 'text/html'\nmime.lookup('folder/file.js') // 'application/javascript'\nmime.lookup('folder/.htaccess') // false\n\nmime.lookup('cats') // false\n```\n\n### mime.contentType(type)\n\nCreate a full content-type header given a content-type or extension.\nWhen given an extension, `mime.lookup` is used to get the matching\ncontent-type, otherwise the given content-type is used. Then if the\ncontent-type does not already have a `charset` parameter, `mime.charset`\nis used to get the default charset and add to the returned content-type.\n\n<!-- eslint-disable no-undef -->\n\n```js\nmime.contentType('markdown') // 'text/x-markdown; charset=utf-8'\nmime.contentType('file.json') // 'application/json; charset=utf-8'\nmime.contentType('text/html') // 'text/html; charset=utf-8'\nmime.contentType('text/html; charset=iso-8859-1') // 'text/html; charset=iso-8859-1'\n\n// from a full path\nmime.contentType(path.extname('/path/to/file.json')) // 'application/json; charset=utf-8'\n```\n\n### mime.extension(type)\n\nGet the default extension for a content-type.\n\n<!-- eslint-disable no-undef -->\n\n```js\nmime.extension('application/octet-stream') // 'bin'\n```\n\n### mime.charset(type)\n\nLookup the implied default charset of a content-type.\n\n<!-- eslint-disable no-undef -->\n\n```js\nmime.charset('text/markdown') // 'UTF-8'\n```\n\n### var type = mime.types[extension]\n\nA map of content-types by extension.\n\n### [extensions...] = mime.extensions[type]\n\nA map of extensions by content-type.\n\n## License\n\n[MIT](LICENSE)\n\n[coveralls-image]: https://badgen.net/coveralls/c/github/jshttp/mime-types/master\n[coveralls-url]: https://coveralls.io/r/jshttp/mime-types?branch=master\n[node-version-image]: https://badgen.net/npm/node/mime-types\n[node-version-url]: https://nodejs.org/en/download\n[npm-downloads-image]: https://badgen.net/npm/dm/mime-types\n[npm-url]: https://npmjs.org/package/mime-types\n[npm-version-image]: https://badgen.net/npm/v/mime-types\n[travis-image]: https://badgen.net/travis/jshttp/mime-types/master\n[travis-url]: https://travis-ci.org/jshttp/mime-types\n",
+  "maintainers": [
+    {
+      "email": "doug@somethingdoug.com",
+      "name": "dougwilson"
+    },
+    {
+      "email": "jonathanrichardong@gmail.com",
+      "name": "jongleberry"
+    }
+  ],
+  "time": {
+    "modified": "2020-04-24T03:36:14.837Z",
+    "created": "2014-05-02T15:54:00.885Z",
+    "0.1.0": "2014-05-02T15:54:00.885Z",
+    "1.0.0": "2014-05-12T20:00:39.325Z",
+    "1.0.1": "2014-06-24T20:45:58.288Z",
+    "1.0.2": "2014-08-04T03:44:33.290Z",
+    "2.0.0": "2014-09-02T08:32:26.198Z",
+    "2.0.1": "2014-09-08T05:02:04.030Z",
+    "2.0.2": "2014-09-29T01:50:31.565Z",
+    "2.0.3": "2014-11-09T18:09:36.046Z",
+    "2.0.4": "2014-12-10T17:57:57.684Z",
+    "2.0.5": "2014-12-29T19:57:28.126Z",
+    "2.0.6": "2014-12-30T17:41:58.705Z",
+    "2.0.7": "2014-12-30T20:27:02.217Z",
+    "2.0.8": "2015-01-30T04:58:29.008Z",
+    "2.0.9": "2015-02-10T05:07:45.349Z",
+    "2.0.10": "2015-03-14T00:57:09.091Z",
+    "2.0.11": "2015-05-05T16:56:57.397Z",
+    "2.0.12": "2015-05-20T03:10:38.358Z",
+    "2.0.13": "2015-06-01T04:37:42.299Z",
+    "2.0.14": "2015-06-06T22:55:10.695Z",
+    "2.1.0": "2015-06-08T03:53:55.197Z",
+    "2.1.1": "2015-06-08T14:30:21.703Z",
+    "2.1.2": "2015-06-26T02:31:38.715Z",
+    "2.1.3": "2015-07-13T22:21:31.913Z",
+    "2.1.4": "2015-07-31T01:37:15.784Z",
+    "2.1.5": "2015-08-20T18:14:08.205Z",
+    "2.1.6": "2015-09-04T00:14:46.978Z",
+    "2.1.7": "2015-09-20T18:44:04.903Z",
+    "2.1.8": "2015-12-01T05:55:42.054Z",
+    "2.1.9": "2016-01-06T17:52:14.411Z",
+    "2.1.10": "2016-02-15T22:27:21.187Z",
+    "2.1.11": "2016-05-02T05:02:47.292Z",
+    "2.1.12": "2016-09-18T22:23:37.122Z",
+    "2.1.13": "2016-11-18T21:39:28.247Z",
+    "2.1.14": "2017-01-15T05:29:02.108Z",
+    "2.1.15": "2017-03-24T03:55:55.438Z",
+    "2.1.16": "2017-07-25T02:42:39.330Z",
+    "2.1.17": "2017-09-02T03:26:34.147Z",
+    "2.1.18": "2018-02-16T17:34:21.420Z",
+    "2.1.19": "2018-07-18T05:29:59.712Z",
+    "2.1.20": "2018-08-26T22:07:10.102Z",
+    "2.1.21": "2018-10-20T03:37:07.996Z",
+    "2.1.22": "2019-02-14T22:47:38.276Z",
+    "2.1.23": "2019-04-18T04:41:15.063Z",
+    "2.1.24": "2019-04-21T03:46:47.001Z",
+    "2.1.25": "2019-11-12T14:18:16.771Z",
+    "2.1.26": "2020-01-06T03:47:55.198Z",
+    "2.1.27": "2020-04-24T03:36:12.387Z"
+  },
+  "homepage": "https://github.com/jshttp/mime-types#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jshttp/mime-types.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jshttp/mime-types/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "contributors": [
+    {
+      "name": "Douglas Christopher Wilson",
+      "email": "doug@somethingdoug.com"
+    },
+    {
+      "name": "Jeremiah Senkpiel",
+      "email": "fishrock123@rocketmail.com",
+      "url": "https://searchbeam.jit.su"
+    },
+    {
+      "name": "Jonathan Ong",
+      "email": "me@jongleberry.com",
+      "url": "http://jongleberry.com"
+    }
+  ],
+  "users": {
+    "maxogden": true,
+    "byossarian": true,
+    "goodseller": true,
+    "flyslow": true,
+    "svell": true,
+    "chrisyipw": true,
+    "xgheaven": true,
+    "jakub.knejzlik": true,
+    "h0ward": true,
+    "jessaustin": true,
+    "galenandrew": true,
+    "esundahl": true,
+    "gollojs": true,
+    "mjurincic": true,
+    "jerkovicl": true,
+    "cspotcode": true,
+    "r3nya": true,
+    "buzz-dee": true,
+    "germanattanasio": true,
+    "noderat": true,
+    "mastayoda": true,
+    "zolrath": true,
+    "danielbankhead": true,
+    "shaner": true,
+    "davidbraun": true,
+    "gld1982ltd": true,
+    "moimikey": true,
+    "marcellodesales": true,
+    "glebec": true,
+    "pablo.tavarez": true,
+    "iori20091101": true,
+    "wisecolt": true,
+    "byoigres": true,
+    "mojaray2k": true,
+    "maheshj": true,
+    "wgerven": true,
+    "finnhvman": true,
+    "anoubis": true,
+    "sitnin": true,
+    "zixinliango": true,
+    "rocket0191": true,
+    "quafoo": true,
+    "marinru": true,
+    "dankle": true,
+    "papasavva": true,
+    "xinwangwang": true,
+    "snowdream": true,
+    "qingleili": true,
+    "ivan403704409": true,
+    "laomu": true,
+    "emircanok": true,
+    "ldq-first": true,
+    "robinblomberg": true,
+    "shuoshubao": true,
+    "codeinpixel": true,
+    "eyson": true,
+    "hagb4rd": true,
+    "xtx1130": true,
+    "mdedirudianto": true,
+    "imaginegenesis": true,
+    "zhenguo.zhao": true,
+    "arniu": true,
+    "ghostcode521": true,
+    "shide": true
+  },
+  "keywords": [
+    "mime",
+    "types"
+  ]
+}

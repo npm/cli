@@ -1,0 +1,55 @@
+{
+  "_id": "@isaacs/testing-bundledeps-b",
+  "name": "@isaacs/testing-bundledeps-b",
+  "dist-tags": {
+    "latest": "1.0.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "@isaacs/testing-bundledeps-b",
+      "version": "1.0.0",
+      "description": "depended upon by a",
+      "_id": "@isaacs/testing-bundledeps-b@1.0.0",
+      "_nodeVersion": "12.12.0",
+      "_npmVersion": "6.13.2",
+      "dist": {
+        "integrity": "sha512-UDbCq7GHRDb743m4VBpnsui6hNeB3o08qe/FRnX9JFo0VHnLoXkdtvm/WurwABLxL/xw5wP/tfN2jF90EjQehQ==",
+        "shasum": "6b17c748cf89d5b909faa9347e8a8e5e47a95dbc",
+        "tarball": "https://registry.npmjs.org/@isaacs/testing-bundledeps-b/-/testing-bundledeps-b-1.0.0.tgz",
+        "fileCount": 1,
+        "unpackedSize": 106,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd5wchCRA9TVsSAnZWagAAvBMP/1hcr198JVTQj+AlXkTB\nQj1kXw8PZPZHIiQYZOD326dydmDizS9R+ymjA/snZ5pQpTKNUZp4XCL246W+\njtUIn0Eub8INnWjdEFsncfSxL/2d6q24mjUV0Erqxylq2DFVTAD9zcKZwu4D\nuyl0AXlcCe050pszWacpqewSRzk8rgXYBUWZIDh8HdKG3cMtzTxUI7L0Apez\nfDYdpn4K5hI2ROosSyJM61qqLU2x7famO5C9c1jDbX/nZ90V3U8Nhb2yppCT\ntD5Qq11U5FnFo9piCQMOwfAxfg+1CF7eOghnTGWZmhm98rH9xMWCENX+ANUX\niFF85y+NxPzzNbHh4sfjfJm4kJaS4Hb0ZWFNhYs+OywodzAIdzPaij/uYeVM\n1L9EcdMKl0s27r5oJxvQGT78+ff+DlL4jl7jza0+p5DsvODN6xQ/fA6sFX9D\npc8FINmRmL2Iwblm9hcCxzMei7L8w1NrRiKNsUQ7HcWjC5vBInH1IOLQqxSv\neBHN+rKFYfXXQNbIYtjesgay6sNd/X1BVGuRe+Ez0CKjAtsnN3ajP9g7IHnX\nLEZa7xIRH6PJ1SJAO/6S1KFtcCZ2AEv3BHLETapAF5hBYo1YJ14dzxBRurop\nMNiTiP0g7rxWuY2pBVvPuibourbwvbZTnyHvGH+dueXQwhSxbBw0w7SuqsO3\nI1T6\r\n=h58R\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/testing-bundledeps-b_1.0.0_1575421728983_0.06636174152089347"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2019-12-04T01:08:48.950Z",
+    "1.0.0": "2019-12-04T01:08:49.079Z",
+    "modified": "2019-12-04T01:08:51.488Z"
+  },
+  "maintainers": [
+    {
+      "name": "isaacs",
+      "email": "i@izs.me"
+    }
+  ],
+  "description": "depended upon by a",
+  "readme": "ERROR: No README data found!",
+  "readmeFilename": ""
+}

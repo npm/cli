@@ -1,0 +1,2059 @@
+{
+  "_id": "pbkdf2",
+  "_rev": "53-db1a7ec837a45c15e9b6fc6e76c7b76b",
+  "name": "pbkdf2",
+  "description": "This library provides the functionality of PBKDF2 with the ability to use any supported hashing algorithm returned from crypto.getHashes()",
+  "dist-tags": {
+    "latest": "3.1.1"
+  },
+  "versions": {
+    "0.0.1": {
+      "name": "pbkdf2",
+      "version": "0.0.1",
+      "description": "Hash password and compare using PBKDF2, pbkdf2-sha1, pbkdf2-sha256, pbkdf2-sha512.",
+      "keywords": [
+        "pbkdf2",
+        "pbkdf2-sha1",
+        "pbkdf2-sha256",
+        "pbkdf2-sha512",
+        "password",
+        "salt",
+        "pwd",
+        "authentication",
+        "auth"
+      ],
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/fundon/pbkdf2.git"
+      },
+      "author": {
+        "name": "fundon",
+        "email": "cfddream@gmail.com"
+      },
+      "license": "MIT",
+      "engines": {
+        "node": ">= 0.11.11"
+      },
+      "bugs": {
+        "url": "https://github.com/fundon/pbkdf2/issues"
+      },
+      "homepage": "https://github.com/fundon/pbkdf2",
+      "_id": "pbkdf2@0.0.1",
+      "dist": {
+        "shasum": "ff706d83cba1e0543de1862e5c788aba1828c002",
+        "tarball": "https://registry.npmjs.org/pbkdf2/-/pbkdf2-0.0.1.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.25",
+      "_npmUser": {
+        "name": "fundon",
+        "email": "cfddream@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "fundon",
+          "email": "cfddream@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.2": {
+      "name": "pbkdf2",
+      "version": "0.0.2",
+      "description": "Hash password and compare using PBKDF2, pbkdf2-sha1, pbkdf2-sha256, pbkdf2-sha512.",
+      "keywords": [
+        "pbkdf2",
+        "pbkdf2-sha1",
+        "pbkdf2-sha256",
+        "pbkdf2-sha512",
+        "password",
+        "salt",
+        "pwd",
+        "authentication",
+        "auth"
+      ],
+      "main": "index.js",
+      "scripts": {
+        "test": "make test"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/fundon/pbkdf2.git"
+      },
+      "author": {
+        "name": "fundon",
+        "email": "cfddream@gmail.com"
+      },
+      "license": "MIT",
+      "engines": {
+        "node": ">= 0.11.11"
+      },
+      "devDependencies": {
+        "mocha": "~1.17.1",
+        "should": "~3.1.2"
+      },
+      "bugs": {
+        "url": "https://github.com/fundon/pbkdf2/issues"
+      },
+      "homepage": "https://github.com/fundon/pbkdf2",
+      "_id": "pbkdf2@0.0.2",
+      "dist": {
+        "shasum": "8397b43c9dc057f71f6a01e01ea8a90f8d9cfb1c",
+        "tarball": "https://registry.npmjs.org/pbkdf2/-/pbkdf2-0.0.2.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.25",
+      "_npmUser": {
+        "name": "fundon",
+        "email": "cfddream@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "fundon",
+          "email": "cfddream@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.3": {
+      "name": "pbkdf2",
+      "version": "0.0.3",
+      "description": "Hash password and compare using PBKDF2, pbkdf2-sha1, pbkdf2-sha256, pbkdf2-sha512.",
+      "keywords": [
+        "pbkdf2",
+        "pbkdf2-sha1",
+        "pbkdf2-sha256",
+        "pbkdf2-sha512",
+        "password",
+        "salt",
+        "pwd",
+        "authentication",
+        "auth"
+      ],
+      "main": "index.js",
+      "scripts": {
+        "test": "make test"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/fundon/pbkdf2.git"
+      },
+      "author": {
+        "name": "fundon",
+        "email": "cfddream@gmail.com"
+      },
+      "license": "MIT",
+      "engines": {
+        "node": ">= 0.11.11"
+      },
+      "devDependencies": {
+        "mocha": "~1.17.1",
+        "should": "~3.1.2"
+      },
+      "bugs": {
+        "url": "https://github.com/fundon/pbkdf2/issues"
+      },
+      "homepage": "https://github.com/fundon/pbkdf2",
+      "_id": "pbkdf2@0.0.3",
+      "dist": {
+        "shasum": "08be85c48743961ca5e3f8a514e73a4e77f2f8d3",
+        "tarball": "https://registry.npmjs.org/pbkdf2/-/pbkdf2-0.0.3.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.25",
+      "_npmUser": {
+        "name": "fundon",
+        "email": "cfddream@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "fundon",
+          "email": "cfddream@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.4": {
+      "name": "pbkdf2",
+      "version": "0.0.4",
+      "description": "Hash password and compare using PBKDF2, pbkdf2-sha1, pbkdf2-sha256, pbkdf2-sha512.",
+      "keywords": [
+        "pbkdf2",
+        "pbkdf2-sha1",
+        "pbkdf2-sha256",
+        "pbkdf2-sha512",
+        "password",
+        "salt",
+        "pwd",
+        "authentication",
+        "auth"
+      ],
+      "main": "index.js",
+      "scripts": {
+        "test": "make test"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/fundon/pbkdf2.git"
+      },
+      "author": {
+        "name": "fundon",
+        "email": "cfddream@gmail.com"
+      },
+      "license": "MIT",
+      "engines": {
+        "node": ">= 0.11.11"
+      },
+      "devDependencies": {
+        "mocha": "~1.17.1",
+        "should": "~3.1.2"
+      },
+      "bugs": {
+        "url": "https://github.com/fundon/pbkdf2/issues"
+      },
+      "homepage": "https://github.com/fundon/pbkdf2",
+      "_id": "pbkdf2@0.0.4",
+      "dist": {
+        "shasum": "eeaa34181987c4e12c89077baeae41f9cec96b33",
+        "tarball": "https://registry.npmjs.org/pbkdf2/-/pbkdf2-0.0.4.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.4.3",
+      "_npmUser": {
+        "name": "fundon",
+        "email": "cfddream@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "fundon",
+          "email": "cfddream@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.5": {
+      "name": "pbkdf2",
+      "version": "0.0.5",
+      "description": "Hash password and compare using PBKDF2, pbkdf2-sha1, pbkdf2-sha256, pbkdf2-sha512.",
+      "keywords": [
+        "pbkdf2",
+        "pbkdf2-sha1",
+        "pbkdf2-sha256",
+        "pbkdf2-sha512",
+        "password",
+        "salt",
+        "pwd",
+        "authentication",
+        "auth"
+      ],
+      "main": "index.js",
+      "scripts": {
+        "test": "make test"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/fundon/pbkdf2.git"
+      },
+      "author": {
+        "name": "fundon",
+        "email": "cfddream@gmail.com"
+      },
+      "license": "MIT",
+      "engines": {
+        "node": ">= 0.11.11"
+      },
+      "devDependencies": {
+        "mocha": "~1.17.1",
+        "should": "~3.1.2"
+      },
+      "bugs": {
+        "url": "https://github.com/fundon/pbkdf2/issues"
+      },
+      "homepage": "https://github.com/fundon/pbkdf2",
+      "_id": "pbkdf2@0.0.5",
+      "dist": {
+        "shasum": "8e6f6e559873196fba5be1202caed7bb439fdf49",
+        "tarball": "https://registry.npmjs.org/pbkdf2/-/pbkdf2-0.0.5.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.4.3",
+      "_npmUser": {
+        "name": "fundon",
+        "email": "cfddream@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "fundon",
+          "email": "cfddream@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "3.0.3": {
+      "name": "pbkdf2",
+      "version": "3.0.3",
+      "description": "This library provides the functionality of PBKDF2 with the ability to use any supported hashing algorithm returned from crypto.getHashes()",
+      "main": "./index.js",
+      "browser": "./browser.js",
+      "keywords": [
+        "pbkdf2",
+        "kdf",
+        "salt",
+        "hash"
+      ],
+      "scripts": {
+        "coverage": "istanbul cover _mocha -- -t 20000 test/index.js",
+        "coveralls": "npm run coverage && coveralls < coverage/lcov.info",
+        "standard": "standard",
+        "test": "mocha --reporter list -t 20000 test/index.js",
+        "bundle-test": "browserify test/index.js > test/bundle.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/crypto-browserify/pbkdf2.git"
+      },
+      "author": {
+        "name": "Daniel Cousens"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/pbkdf2/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/pbkdf2",
+      "devDependencies": {
+        "browserify": "^8.1.1",
+        "coveralls": "^2.11.2",
+        "istanbul": "^0.3.5",
+        "mocha": "^2.1.0",
+        "standard": "^1.3.0"
+      },
+      "dependencies": {
+        "create-hmac": "^1.1.2"
+      },
+      "standard": {
+        "ignore": [
+          "test/**"
+        ]
+      },
+      "gitHead": "8bdd89160bcaae6ce87f827587b7036c6eabe13f",
+      "_id": "pbkdf2@3.0.3",
+      "_shasum": "a4ad0f23f81d6b71f82a03ffebf3ec82ab8ea8f7",
+      "_from": ".",
+      "_npmVersion": "2.0.0",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "fundon",
+          "email": "cfddream@gmail.com"
+        },
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "a4ad0f23f81d6b71f82a03ffebf3ec82ab8ea8f7",
+        "tarball": "https://registry.npmjs.org/pbkdf2/-/pbkdf2-3.0.3.tgz"
+      },
+      "directories": {}
+    },
+    "3.0.4": {
+      "name": "pbkdf2",
+      "version": "3.0.4",
+      "description": "This library provides the functionality of PBKDF2 with the ability to use any supported hashing algorithm returned from crypto.getHashes()",
+      "main": "./index.js",
+      "browser": "./browser.js",
+      "keywords": [
+        "pbkdf2",
+        "kdf",
+        "salt",
+        "hash"
+      ],
+      "scripts": {
+        "coverage": "istanbul cover _mocha -- -t 20000 test/index.js",
+        "coveralls": "npm run coverage && coveralls < coverage/lcov.info",
+        "standard": "standard",
+        "test": "mocha --reporter list -t 20000 test/index.js",
+        "bundle-test": "browserify test/index.js > test/bundle.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/crypto-browserify/pbkdf2.git"
+      },
+      "author": {
+        "name": "Daniel Cousens"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/pbkdf2/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/pbkdf2",
+      "devDependencies": {
+        "browserify": "^8.1.1",
+        "coveralls": "^2.11.2",
+        "istanbul": "^0.3.5",
+        "mocha": "^2.1.0",
+        "standard": "^3.0.0"
+      },
+      "dependencies": {
+        "create-hmac": "^1.1.2"
+      },
+      "standard": {
+        "ignore": [
+          "test/**"
+        ]
+      },
+      "gitHead": "c9b595c784154e433995faf6cd81813aef29c713",
+      "_id": "pbkdf2@3.0.4",
+      "_shasum": "12c8bfaf920543786a85150b03f68d5f1aa982fc",
+      "_from": ".",
+      "_npmVersion": "2.7.1",
+      "_nodeVersion": "0.12.0",
+      "_npmUser": {
+        "name": "dcousens",
+        "email": "email@dcousens.com"
+      },
+      "maintainers": [
+        {
+          "name": "fundon",
+          "email": "cfddream@gmail.com"
+        },
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "12c8bfaf920543786a85150b03f68d5f1aa982fc",
+        "tarball": "https://registry.npmjs.org/pbkdf2/-/pbkdf2-3.0.4.tgz"
+      },
+      "directories": {}
+    },
+    "3.0.5": {
+      "name": "pbkdf2",
+      "version": "3.0.5",
+      "description": "This library provides the functionality of PBKDF2 with the ability to use any supported hashing algorithm returned from crypto.getHashes()",
+      "keywords": [
+        "pbkdf2",
+        "kdf",
+        "salt",
+        "hash"
+      ],
+      "homepage": "https://github.com/crypto-browserify/pbkdf2",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/pbkdf2/issues"
+      },
+      "license": "MIT",
+      "author": {
+        "name": "Daniel Cousens"
+      },
+      "files": [
+        "browser.js",
+        "index.js",
+        "node-shim-async.js",
+        "node-shim.js",
+        "precondition.js"
+      ],
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crypto-browserify/pbkdf2.git"
+      },
+      "scripts": {
+        "prepublish": "npm run test",
+        "coverage": "nyc --check-coverage --branches 100 --functions 100 tape test/*.js",
+        "lint": "standard",
+        "test": "npm run lint && npm run unit",
+        "bundle-test": "browserify test/index.js > test/bundle.js",
+        "unit": "tape test/*.js"
+      },
+      "devDependencies": {
+        "nyc": "^6.4.0",
+        "standard": "*",
+        "tape": "^4.5.1"
+      },
+      "dependencies": {
+        "create-hmac": "^1.1.2"
+      },
+      "standard": {
+        "ignore": [
+          "test/bundle.js"
+        ]
+      },
+      "gitHead": "045ae58e4d0b4511a1b3d86770973cc007dad228",
+      "_id": "pbkdf2@3.0.5",
+      "_shasum": "10d907817f11d1191c11499bd067f04330a0aec3",
+      "_from": ".",
+      "_npmVersion": "3.10.7",
+      "_nodeVersion": "6.5.0",
+      "_npmUser": {
+        "name": "dcousens",
+        "email": "email@dcousens.com"
+      },
+      "dist": {
+        "shasum": "10d907817f11d1191c11499bd067f04330a0aec3",
+        "tarball": "https://registry.npmjs.org/pbkdf2/-/pbkdf2-3.0.5.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "fundon",
+          "email": "cfddream@gmail.com"
+        },
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/pbkdf2-3.0.5.tgz_1473652985203_0.7829968291334808"
+      },
+      "directories": {}
+    },
+    "3.0.6": {
+      "name": "pbkdf2",
+      "version": "3.0.6",
+      "description": "This library provides the functionality of PBKDF2 with the ability to use any supported hashing algorithm returned from crypto.getHashes()",
+      "keywords": [
+        "pbkdf2",
+        "kdf",
+        "salt",
+        "hash"
+      ],
+      "homepage": "https://github.com/crypto-browserify/pbkdf2",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/pbkdf2/issues"
+      },
+      "license": "MIT",
+      "author": {
+        "name": "Daniel Cousens"
+      },
+      "browser": "browser.js",
+      "files": [
+        "browser.js",
+        "index.js",
+        "node-shim-async.js",
+        "node-shim.js",
+        "precondition.js"
+      ],
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crypto-browserify/pbkdf2.git"
+      },
+      "scripts": {
+        "prepublish": "npm run test",
+        "coverage": "nyc --check-coverage --branches 100 --functions 100 tape test/*.js",
+        "lint": "standard",
+        "test": "npm run lint && npm run unit",
+        "bundle-test": "browserify test/index.js > test/bundle.js",
+        "unit": "tape test/*.js"
+      },
+      "devDependencies": {
+        "browserify": "*",
+        "nyc": "^6.4.0",
+        "standard": "*",
+        "tape": "^4.5.1"
+      },
+      "dependencies": {
+        "create-hmac": "^1.1.2"
+      },
+      "standard": {
+        "ignore": [
+          "test/bundle.js"
+        ]
+      },
+      "gitHead": "49aa0e657a144bc017a7402c7e6952055ddacb34",
+      "_id": "pbkdf2@3.0.6",
+      "_shasum": "943d289ccd92b3dec55cc77dd696d44d6087e8bd",
+      "_from": ".",
+      "_npmVersion": "3.10.7",
+      "_nodeVersion": "6.5.0",
+      "_npmUser": {
+        "name": "dcousens",
+        "email": "email@dcousens.com"
+      },
+      "dist": {
+        "shasum": "943d289ccd92b3dec55cc77dd696d44d6087e8bd",
+        "tarball": "https://registry.npmjs.org/pbkdf2/-/pbkdf2-3.0.6.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "fundon",
+          "email": "cfddream@gmail.com"
+        },
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/pbkdf2-3.0.6.tgz_1473810361377_0.6315572482999414"
+      },
+      "directories": {}
+    },
+    "3.0.7": {
+      "name": "pbkdf2",
+      "version": "3.0.7",
+      "description": "This library provides the functionality of PBKDF2 with the ability to use any supported hashing algorithm returned from crypto.getHashes()",
+      "keywords": [
+        "pbkdf2",
+        "kdf",
+        "salt",
+        "hash"
+      ],
+      "homepage": "https://github.com/crypto-browserify/pbkdf2",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/pbkdf2/issues"
+      },
+      "license": "MIT",
+      "author": {
+        "name": "Daniel Cousens"
+      },
+      "browser": "browser.js",
+      "files": [
+        "browser.js",
+        "index.js",
+        "node-shim-async.js",
+        "node-shim.js",
+        "precondition.js"
+      ],
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crypto-browserify/pbkdf2.git"
+      },
+      "scripts": {
+        "prepublish": "npm run test",
+        "coverage": "nyc --check-coverage --branches 100 --functions 100 tape test/*.js",
+        "lint": "standard",
+        "test": "npm run lint && npm run unit",
+        "bundle-test": "browserify test/index.js > test/bundle.js",
+        "unit": "tape test/*.js"
+      },
+      "devDependencies": {
+        "browserify": "*",
+        "nyc": "^6.4.0",
+        "standard": "*",
+        "tape": "^4.5.1"
+      },
+      "dependencies": {
+        "create-hmac": "^1.1.2"
+      },
+      "standard": {
+        "ignore": [
+          "test/bundle.js"
+        ]
+      },
+      "gitHead": "f08556a9084f2bb87827648f86d4ceb0113f6b6a",
+      "_id": "pbkdf2@3.0.7",
+      "_shasum": "4c12a995caa1ba34bb08d7e98e5aca3cf3767d31",
+      "_from": ".",
+      "_npmVersion": "3.10.7",
+      "_nodeVersion": "6.5.0",
+      "_npmUser": {
+        "name": "dcousens",
+        "email": "email@dcousens.com"
+      },
+      "dist": {
+        "shasum": "4c12a995caa1ba34bb08d7e98e5aca3cf3767d31",
+        "tarball": "https://registry.npmjs.org/pbkdf2/-/pbkdf2-3.0.7.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "fundon",
+          "email": "cfddream@gmail.com"
+        },
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/pbkdf2-3.0.7.tgz_1474001312557_0.6997686207760125"
+      },
+      "directories": {}
+    },
+    "3.0.8": {
+      "name": "pbkdf2",
+      "version": "3.0.8",
+      "description": "This library provides the functionality of PBKDF2 with the ability to use any supported hashing algorithm returned from crypto.getHashes()",
+      "keywords": [
+        "pbkdf2",
+        "kdf",
+        "salt",
+        "hash"
+      ],
+      "homepage": "https://github.com/crypto-browserify/pbkdf2",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/pbkdf2/issues"
+      },
+      "license": "MIT",
+      "author": {
+        "name": "Daniel Cousens"
+      },
+      "browser": "browser.js",
+      "files": [
+        "browser.js",
+        "index.js",
+        "node-shim-async.js",
+        "node-shim.js",
+        "precondition.js"
+      ],
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crypto-browserify/pbkdf2.git"
+      },
+      "scripts": {
+        "prepublish": "npm run test",
+        "coverage": "nyc --check-coverage --branches 90 --functions 100 tape test/*.js",
+        "lint": "standard",
+        "test": "npm run lint && npm run unit",
+        "bundle-test": "browserify test/index.js > test/bundle.js",
+        "unit": "tape test/*.js"
+      },
+      "devDependencies": {
+        "browserify": "*",
+        "nyc": "^6.4.0",
+        "standard": "*",
+        "tape": "^4.5.1"
+      },
+      "dependencies": {
+        "create-hmac": "^1.1.2"
+      },
+      "standard": {
+        "ignore": [
+          "test/bundle.js"
+        ]
+      },
+      "engines": {
+        "node": ">=0.12"
+      },
+      "gitHead": "b218da3867aa6a1aa941cf0a8b3520bacbb6c75f",
+      "_id": "pbkdf2@3.0.8",
+      "_shasum": "2f8abf16ebecc82277945d748aba1d78761f61e2",
+      "_from": ".",
+      "_npmVersion": "3.10.7",
+      "_nodeVersion": "6.6.0",
+      "_npmUser": {
+        "name": "dcousens",
+        "email": "email@dcousens.com"
+      },
+      "dist": {
+        "shasum": "2f8abf16ebecc82277945d748aba1d78761f61e2",
+        "tarball": "https://registry.npmjs.org/pbkdf2/-/pbkdf2-3.0.8.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "fundon",
+          "email": "cfddream@gmail.com"
+        },
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/pbkdf2-3.0.8.tgz_1474494107572_0.40838201879523695"
+      },
+      "directories": {}
+    },
+    "3.0.9": {
+      "name": "pbkdf2",
+      "version": "3.0.9",
+      "description": "This library provides the functionality of PBKDF2 with the ability to use any supported hashing algorithm returned from crypto.getHashes()",
+      "keywords": [
+        "pbkdf2",
+        "kdf",
+        "salt",
+        "hash"
+      ],
+      "homepage": "https://github.com/crypto-browserify/pbkdf2",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/pbkdf2/issues"
+      },
+      "license": "MIT",
+      "author": {
+        "name": "Daniel Cousens"
+      },
+      "browser": "browser.js",
+      "files": [
+        "browser.js",
+        "index.js",
+        "node-shim-async.js",
+        "node-shim.js",
+        "precondition.js"
+      ],
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crypto-browserify/pbkdf2.git"
+      },
+      "scripts": {
+        "prepublish": "npm run test",
+        "coverage": "nyc --check-coverage --branches 90 --functions 100 tape test/*.js",
+        "lint": "standard",
+        "test": "npm run lint && npm run unit",
+        "bundle-test": "browserify test/index.js > test/bundle.js",
+        "unit": "tape test/*.js"
+      },
+      "devDependencies": {
+        "browserify": "*",
+        "nyc": "^6.4.0",
+        "standard": "*",
+        "tape": "^4.5.1"
+      },
+      "dependencies": {
+        "create-hmac": "^1.1.2"
+      },
+      "standard": {
+        "ignore": [
+          "test/bundle.js"
+        ]
+      },
+      "engines": {
+        "node": ">=0.12"
+      },
+      "gitHead": "188f9b0aca397f2937249504f72d1d7e4b2f7bd3",
+      "_id": "pbkdf2@3.0.9",
+      "_shasum": "f2c4b25a600058b3c3773c086c37dbbee1ffe693",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "6.7.0",
+      "_npmUser": {
+        "name": "dcousens",
+        "email": "email@dcousens.com"
+      },
+      "dist": {
+        "shasum": "f2c4b25a600058b3c3773c086c37dbbee1ffe693",
+        "tarball": "https://registry.npmjs.org/pbkdf2/-/pbkdf2-3.0.9.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "fundon",
+          "email": "cfddream@gmail.com"
+        },
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/pbkdf2-3.0.9.tgz_1475671782268_0.27150986436754465"
+      },
+      "directories": {}
+    },
+    "3.0.10": {
+      "name": "pbkdf2",
+      "version": "3.0.10",
+      "description": "This library provides the functionality of PBKDF2 with the ability to use any supported hashing algorithm returned from crypto.getHashes()",
+      "keywords": [
+        "pbkdf2",
+        "kdf",
+        "salt",
+        "hash"
+      ],
+      "homepage": "https://github.com/crypto-browserify/pbkdf2",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/pbkdf2/issues"
+      },
+      "license": "MIT",
+      "author": {
+        "name": "Daniel Cousens"
+      },
+      "browser": {
+        "./lib/sync.js": "./lib/sync-browser.js"
+      },
+      "files": [
+        "browser.js",
+        "index.js",
+        "node-shim-async.js",
+        "node-shim.js",
+        "precondition.js"
+      ],
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crypto-browserify/pbkdf2.git"
+      },
+      "scripts": {
+        "prepublish": "npm run test",
+        "coverage": "nyc --check-coverage --branches 90 --functions 100 tape test/*.js",
+        "lint": "standard",
+        "test": "npm run lint && npm run unit",
+        "bundle-test": "browserify test/index.js > test/bundle.js",
+        "unit": "tape test/*.js",
+        "bench": "node bench/"
+      },
+      "devDependencies": {
+        "benchmark": "^2.1.4",
+        "browserify": "*",
+        "nyc": "^6.4.0",
+        "standard": "*",
+        "tape": "^4.5.1"
+      },
+      "dependencies": {
+        "create-hash": "^1.1.2",
+        "create-hmac": "^1.1.4",
+        "ripemd160": "^2.0.1",
+        "safe-buffer": "^5.0.1",
+        "sha.js": "^2.4.8",
+        "microtime": "^2.1.3"
+      },
+      "optionalDependencies": {
+        "microtime": "^2.1.3"
+      },
+      "standard": {
+        "ignore": [
+          "test/bundle.js"
+        ]
+      },
+      "engines": {
+        "node": ">=0.12"
+      },
+      "nyc": {
+        "exclude": [
+          "lib/async.js",
+          "test/bundle.js"
+        ]
+      },
+      "gitHead": "a0a9abc8989e53d358cad22c7a2fd20f60cd9ebe",
+      "_id": "pbkdf2@3.0.10",
+      "_shasum": "24b5b4a97c86bfa50c6921c656c4182ce6d96ba5",
+      "_from": ".",
+      "_npmVersion": "4.0.5",
+      "_nodeVersion": "7.10.0",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "dist": {
+        "shasum": "24b5b4a97c86bfa50c6921c656c4182ce6d96ba5",
+        "tarball": "https://registry.npmjs.org/pbkdf2/-/pbkdf2-3.0.10.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "fundon",
+          "email": "cfddream@gmail.com"
+        },
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/pbkdf2-3.0.10.tgz_1494508196430_0.008772527100518346"
+      },
+      "directories": {}
+    },
+    "3.0.11": {
+      "name": "pbkdf2",
+      "version": "3.0.11",
+      "description": "This library provides the functionality of PBKDF2 with the ability to use any supported hashing algorithm returned from crypto.getHashes()",
+      "keywords": [
+        "pbkdf2",
+        "kdf",
+        "salt",
+        "hash"
+      ],
+      "homepage": "https://github.com/crypto-browserify/pbkdf2",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/pbkdf2/issues"
+      },
+      "license": "MIT",
+      "author": {
+        "name": "Daniel Cousens"
+      },
+      "browser": {
+        "./lib/sync.js": "./lib/sync-browser.js"
+      },
+      "files": [
+        "browser.js",
+        "index.js",
+        "lib/async.js",
+        "lib/default-encoding.js",
+        "lib/precondition.js",
+        "lib/sync.js",
+        "lib/sync-browser.js"
+      ],
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crypto-browserify/pbkdf2.git"
+      },
+      "scripts": {
+        "prepublish": "npm run test",
+        "coverage": "nyc --check-coverage --branches 90 --functions 100 tape test/*.js",
+        "lint": "standard",
+        "test": "npm run lint && npm run unit",
+        "bundle-test": "browserify test/index.js > test/bundle.js",
+        "unit": "tape test/*.js",
+        "bench": "node bench/"
+      },
+      "devDependencies": {
+        "benchmark": "^2.1.4",
+        "browserify": "*",
+        "nyc": "^6.4.0",
+        "standard": "*",
+        "tape": "^4.5.1"
+      },
+      "dependencies": {
+        "create-hash": "^1.1.2",
+        "create-hmac": "^1.1.4",
+        "ripemd160": "^2.0.1",
+        "safe-buffer": "^5.0.1",
+        "sha.js": "^2.4.8",
+        "microtime": "^2.1.3"
+      },
+      "optionalDependencies": {
+        "microtime": "^2.1.3"
+      },
+      "standard": {
+        "ignore": [
+          "test/bundle.js"
+        ]
+      },
+      "engines": {
+        "node": ">=0.12"
+      },
+      "nyc": {
+        "exclude": [
+          "lib/async.js",
+          "test/bundle.js"
+        ]
+      },
+      "gitHead": "2c68fd5a7a0bb4f4622ae3948147a2c9b0ebed5c",
+      "_id": "pbkdf2@3.0.11",
+      "_shasum": "791b7414e50c848438976e12ea2651003037ca6b",
+      "_from": ".",
+      "_npmVersion": "4.0.5",
+      "_nodeVersion": "7.10.0",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "dist": {
+        "shasum": "791b7414e50c848438976e12ea2651003037ca6b",
+        "tarball": "https://registry.npmjs.org/pbkdf2/-/pbkdf2-3.0.11.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "fundon",
+          "email": "cfddream@gmail.com"
+        },
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/pbkdf2-3.0.11.tgz_1494514151614_0.986040003830567"
+      },
+      "directories": {}
+    },
+    "3.0.12": {
+      "name": "pbkdf2",
+      "version": "3.0.12",
+      "description": "This library provides the functionality of PBKDF2 with the ability to use any supported hashing algorithm returned from crypto.getHashes()",
+      "keywords": [
+        "pbkdf2",
+        "kdf",
+        "salt",
+        "hash"
+      ],
+      "homepage": "https://github.com/crypto-browserify/pbkdf2",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/pbkdf2/issues"
+      },
+      "license": "MIT",
+      "author": {
+        "name": "Daniel Cousens"
+      },
+      "browser": {
+        "./index.js": "./browser.js",
+        "./lib/sync.js": "./lib/sync-browser.js"
+      },
+      "files": [
+        "browser.js",
+        "index.js",
+        "lib/"
+      ],
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crypto-browserify/pbkdf2.git"
+      },
+      "scripts": {
+        "prepublish": "npm run test",
+        "coverage": "nyc --check-coverage --branches 90 --functions 100 tape test/*.js",
+        "lint": "standard",
+        "test": "npm run lint && npm run unit",
+        "bundle-test": "browserify test/index.js > test/bundle.js",
+        "unit": "tape test/*.js",
+        "bench": "node bench/"
+      },
+      "devDependencies": {
+        "benchmark": "^2.1.4",
+        "browserify": "*",
+        "nyc": "^6.4.0",
+        "standard": "*",
+        "tape": "^4.5.1",
+        "microtime": "^2.1.3"
+      },
+      "dependencies": {
+        "create-hash": "^1.1.2",
+        "create-hmac": "^1.1.4",
+        "ripemd160": "^2.0.1",
+        "safe-buffer": "^5.0.1",
+        "sha.js": "^2.4.8"
+      },
+      "standard": {
+        "ignore": [
+          "test/bundle.js"
+        ]
+      },
+      "engines": {
+        "node": ">=0.12"
+      },
+      "nyc": {
+        "exclude": [
+          "lib/async.js",
+          "test/bundle.js"
+        ]
+      },
+      "gitHead": "10fdc4da88bcb88a4afff51ad5d4efae4ce50530",
+      "_id": "pbkdf2@3.0.12",
+      "_shasum": "be36785c5067ea48d806ff923288c5f750b6b8a2",
+      "_from": ".",
+      "_npmVersion": "4.0.5",
+      "_nodeVersion": "7.10.0",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "dist": {
+        "shasum": "be36785c5067ea48d806ff923288c5f750b6b8a2",
+        "tarball": "https://registry.npmjs.org/pbkdf2/-/pbkdf2-3.0.12.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "fundon",
+          "email": "cfddream@gmail.com"
+        },
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/pbkdf2-3.0.12.tgz_1494528738349_0.19753079675137997"
+      },
+      "directories": {}
+    },
+    "3.0.13": {
+      "name": "pbkdf2",
+      "version": "3.0.13",
+      "description": "This library provides the functionality of PBKDF2 with the ability to use any supported hashing algorithm returned from crypto.getHashes()",
+      "keywords": [
+        "pbkdf2",
+        "kdf",
+        "salt",
+        "hash"
+      ],
+      "homepage": "https://github.com/crypto-browserify/pbkdf2",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/pbkdf2/issues"
+      },
+      "license": "MIT",
+      "author": {
+        "name": "Daniel Cousens"
+      },
+      "browser": {
+        "./index.js": "./browser.js",
+        "./lib/sync.js": "./lib/sync-browser.js"
+      },
+      "files": [
+        "browser.js",
+        "index.js",
+        "lib/"
+      ],
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crypto-browserify/pbkdf2.git"
+      },
+      "scripts": {
+        "prepublish": "npm run test",
+        "coverage": "nyc --check-coverage --branches 90 --functions 100 tape test/*.js",
+        "lint": "standard",
+        "test": "npm run lint && npm run unit",
+        "bundle-test": "browserify test/index.js > test/bundle.js",
+        "unit": "tape test/*.js",
+        "bench": "node bench/"
+      },
+      "devDependencies": {
+        "benchmark": "^2.1.4",
+        "browserify": "*",
+        "nyc": "^6.4.0",
+        "standard": "*",
+        "tape": "^4.5.1"
+      },
+      "dependencies": {
+        "create-hash": "^1.1.2",
+        "create-hmac": "^1.1.4",
+        "ripemd160": "^2.0.1",
+        "safe-buffer": "^5.0.1",
+        "sha.js": "^2.4.8"
+      },
+      "standard": {
+        "ignore": [
+          "test/bundle.js"
+        ]
+      },
+      "engines": {
+        "node": ">=0.12"
+      },
+      "nyc": {
+        "exclude": [
+          "lib/async.js",
+          "test/bundle.js"
+        ]
+      },
+      "gitHead": "b4500e52d3dd5eaa44b069a069dae7642100efe4",
+      "_id": "pbkdf2@3.0.13",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "6.11.2",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-+dCHxDH+djNtjgWmvVC/my3SYBAKpKNqKSjLkp+GtWWYe4XPE+e/PSD2aCanlEZZnqPk2uekTKNC/ccbwd2X2Q==",
+        "shasum": "c37d295531e786b1da3e3eadc840426accb0ae25",
+        "tarball": "https://registry.npmjs.org/pbkdf2/-/pbkdf2-3.0.13.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "fundon",
+          "email": "cfddream@gmail.com"
+        },
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/pbkdf2-3.0.13.tgz_1501678421763_0.5266327981371433"
+      },
+      "directories": {}
+    },
+    "3.0.14": {
+      "name": "pbkdf2",
+      "version": "3.0.14",
+      "description": "This library provides the functionality of PBKDF2 with the ability to use any supported hashing algorithm returned from crypto.getHashes()",
+      "keywords": [
+        "pbkdf2",
+        "kdf",
+        "salt",
+        "hash"
+      ],
+      "homepage": "https://github.com/crypto-browserify/pbkdf2",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/pbkdf2/issues"
+      },
+      "license": "MIT",
+      "author": {
+        "name": "Daniel Cousens"
+      },
+      "browser": {
+        "./index.js": "./browser.js",
+        "./lib/sync.js": "./lib/sync-browser.js"
+      },
+      "files": [
+        "browser.js",
+        "index.js",
+        "lib/"
+      ],
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crypto-browserify/pbkdf2.git"
+      },
+      "scripts": {
+        "prepublish": "npm run test",
+        "coverage": "nyc --check-coverage --branches 90 --functions 100 tape test/*.js",
+        "lint": "standard",
+        "test": "npm run lint && npm run unit",
+        "bundle-test": "browserify test/index.js > test/bundle.js",
+        "unit": "tape test/*.js",
+        "bench": "node bench/"
+      },
+      "devDependencies": {
+        "benchmark": "^2.1.4",
+        "browserify": "*",
+        "nyc": "^6.4.0",
+        "standard": "*",
+        "tape": "^4.5.1"
+      },
+      "dependencies": {
+        "create-hash": "^1.1.2",
+        "create-hmac": "^1.1.4",
+        "ripemd160": "^2.0.1",
+        "safe-buffer": "^5.0.1",
+        "sha.js": "^2.4.8"
+      },
+      "standard": {
+        "ignore": [
+          "test/bundle.js"
+        ]
+      },
+      "engines": {
+        "node": ">=0.12"
+      },
+      "nyc": {
+        "exclude": [
+          "lib/async.js",
+          "test/bundle.js"
+        ]
+      },
+      "gitHead": "bd438b002303ad3407790b8e57b922dc2f71df4b",
+      "_id": "pbkdf2@3.0.14",
+      "_npmVersion": "5.4.1",
+      "_nodeVersion": "6.11.3",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-gjsZW9O34fm0R7PaLHRJmLLVfSoesxztjPjE9o6R+qtVJij90ltg1joIovN9GKrRW3t1PzhDDG3UMEMFfZ+1wA==",
+        "shasum": "a35e13c64799b06ce15320f459c230e68e73bade",
+        "tarball": "https://registry.npmjs.org/pbkdf2/-/pbkdf2-3.0.14.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "fundon",
+          "email": "cfddream@gmail.com"
+        },
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/pbkdf2-3.0.14.tgz_1504890461178_0.35618158197030425"
+      },
+      "directories": {}
+    },
+    "3.0.16": {
+      "name": "pbkdf2",
+      "version": "3.0.16",
+      "description": "This library provides the functionality of PBKDF2 with the ability to use any supported hashing algorithm returned from crypto.getHashes()",
+      "keywords": [
+        "pbkdf2",
+        "kdf",
+        "salt",
+        "hash"
+      ],
+      "homepage": "https://github.com/crypto-browserify/pbkdf2",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/pbkdf2/issues"
+      },
+      "license": "MIT",
+      "author": {
+        "name": "Daniel Cousens"
+      },
+      "browser": {
+        "./index.js": "./browser.js",
+        "./lib/sync.js": "./lib/sync-browser.js"
+      },
+      "files": [
+        "browser.js",
+        "index.js",
+        "lib/"
+      ],
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crypto-browserify/pbkdf2.git"
+      },
+      "scripts": {
+        "prepublish": "npm run test",
+        "coverage-report": "nyc report --reporter=lcov",
+        "coverage-html": "nyc report --reporter=html",
+        "coverage": "nyc --check-coverage --branches 95 --functions 95 tape test/*.js",
+        "lint": "standard",
+        "test": "npm run lint && npm run unit",
+        "bundle-test": "browserify test/index.js > test/bundle.js",
+        "unit": "tape test/*.js",
+        "bench": "node bench/"
+      },
+      "devDependencies": {
+        "benchmark": "^2.1.4",
+        "browserify": "*",
+        "nyc": "^6.4.0",
+        "standard": "*",
+        "tape": "^4.5.1"
+      },
+      "dependencies": {
+        "create-hash": "^1.1.2",
+        "create-hmac": "^1.1.4",
+        "ripemd160": "^2.0.1",
+        "safe-buffer": "^5.0.1",
+        "sha.js": "^2.4.8"
+      },
+      "standard": {
+        "ignore": [
+          "test/bundle.js"
+        ]
+      },
+      "engines": {
+        "node": ">=0.12"
+      },
+      "nyc": {
+        "exclude": [
+          "lib/async.js",
+          "test/bundle.js"
+        ]
+      },
+      "gitHead": "6c0b9049ab83517de9cc2e17f516cc893c8054cd",
+      "_id": "pbkdf2@3.0.16",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.11.1",
+      "_npmUser": {
+        "name": "dcousens",
+        "email": "npm@dcousens.com"
+      },
+      "dist": {
+        "integrity": "sha512-y4CXP3thSxqf7c0qmOF+9UeOTrifiVTIM+u7NWlq+PRsHbr7r7dpCmvzrZxa96JJUNi0Y5w9VqG5ZNeCVMoDcA==",
+        "shasum": "7404208ec6b01b62d85bf83853a8064f8d9c2a5c",
+        "tarball": "https://registry.npmjs.org/pbkdf2/-/pbkdf2-3.0.16.tgz",
+        "fileCount": 10,
+        "unpackedSize": 12836,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa2TQWCRA9TVsSAnZWagAA0O0P/3r6y0M6VB9legSbh/iX\nSjbNsfrx7HRuulyegi9yiQ2w8dK6SxYw2xYgS+pKttltsgrCGuFXYO2uaZlf\nE3YmTRu4wiGgKBqmEa6mIeNtnhMx6TjnM5mkN1oWLo8SUURjiHwF4cWwBTmn\nslTPvR1v/eJ7ys3dKPMc8FSC0aRJ79dSMFwnQWHsB0adEXsrpTOAtnJ+xfRD\nhTpYazJl2WMSv8RPGK45QCHPIuW77hmNwKYYTcTSQdjDGrr7kwbh2JeKOqDB\nJCApIIkHZSobT2RAEb91QMMNI7wfiyjLjUBA2LjR/29n1iatADVk6dzqAMCb\nWs2tyMol0z5XMy4QRbxK9ehga3DZ+HczKVtaATY6vVCfjMZDY5ApbkWvft4h\nxVst141+7BzpaSwoLm/g7qGYJ0XLIlBMeeeavfILk50fxDJCsCLHJL/OZ0/d\nJTgLKAvXbEYfjyzv0fmXm7z8eIJpMkBR5npDoZt9vUqMv3Osp7YYQFDd0bzb\nKTikQynJiBXR+7xq9nAwiUam8HCCjveP1udR2N60jAUAR05OMF3aGgm5bjtg\nXJoL4LzCFcgJCzcOA994XXjP1S63yzphdVux8U4//hqghDQ4/GQknGsSlGvr\nh04GfchniWG6oMqP6Qx580Cpmqf495Nxwn/Lmo4dTNYe50k6Z93WkrH9QQqm\n/8Xg\r\n=95nC\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "fundon",
+          "email": "cfddream@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/pbkdf2_3.0.16_1524184085510_0.8071036494702566"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.17": {
+      "name": "pbkdf2",
+      "version": "3.0.17",
+      "description": "This library provides the functionality of PBKDF2 with the ability to use any supported hashing algorithm returned from crypto.getHashes()",
+      "keywords": [
+        "pbkdf2",
+        "kdf",
+        "salt",
+        "hash"
+      ],
+      "homepage": "https://github.com/crypto-browserify/pbkdf2",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/pbkdf2/issues"
+      },
+      "license": "MIT",
+      "author": {
+        "name": "Daniel Cousens"
+      },
+      "browser": {
+        "./index.js": "./browser.js",
+        "./lib/sync.js": "./lib/sync-browser.js"
+      },
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crypto-browserify/pbkdf2.git"
+      },
+      "scripts": {
+        "prepublish": "npm run test",
+        "coverage-report": "nyc report --reporter=lcov",
+        "coverage-html": "nyc report --reporter=html",
+        "coverage": "nyc --check-coverage --branches 95 --functions 95 tape test/*.js",
+        "lint": "standard",
+        "test": "npm run lint && npm run unit",
+        "bundle-test": "browserify test/index.js > test/bundle.js",
+        "unit": "tape test/*.js",
+        "bench": "node bench/"
+      },
+      "devDependencies": {
+        "benchmark": "^2.1.4",
+        "browserify": "*",
+        "nyc": "^6.4.0",
+        "standard": "*",
+        "tape": "^4.5.1"
+      },
+      "dependencies": {
+        "create-hash": "^1.1.2",
+        "create-hmac": "^1.1.4",
+        "ripemd160": "^2.0.1",
+        "safe-buffer": "^5.0.1",
+        "sha.js": "^2.4.8"
+      },
+      "standard": {
+        "ignore": [
+          "test/bundle.js"
+        ]
+      },
+      "engines": {
+        "node": ">=0.12"
+      },
+      "nyc": {
+        "exclude": [
+          "lib/async.js",
+          "test/bundle.js"
+        ]
+      },
+      "gitHead": "dadbcb741111f0ed165951d53028f2358e0e0a1c",
+      "_id": "pbkdf2@3.0.17",
+      "_npmVersion": "6.4.0",
+      "_nodeVersion": "10.8.0",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-U/il5MsrZp7mGg3mSQfn742na2T+1/vHDCG5/iTI3X9MKUuYUZVLQhyRsg06mCgDBTd57TxzgZt7P+fYfjRLtA==",
+        "shasum": "976c206530617b14ebb32114239f7b09336e93a6",
+        "tarball": "https://registry.npmjs.org/pbkdf2/-/pbkdf2-3.0.17.tgz",
+        "fileCount": 10,
+        "unpackedSize": 12927,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbqi9QCRA9TVsSAnZWagAATtcP/jydiGnt8YdK/hXpZijw\nxiB4zgKRxu4NsIKAv3YzjlsoP3x2GkrGyCQ5x4AOWjrkUn+vHZtePhxvsxcg\nRUKz1b5nkjmz8SdsycU8p25u881SvTfLDAMISBaIFdXMR1fOoCzwF2nSXfoh\nBhByl9jsx3Hv5A6/t82X/8phC3m3MFmE1z8ZyaptVWsJAxf16bfUYT7WsY8r\nf6cM5+EENnLvyI7MTVewlzdW4mtcZbRx4v4MyZzj+gLpPBiWKR6KrPNSzBtK\ntoClSbd+vrb8FKmktSyXIi6PCSsi2RNhjZ2JonJiyWgwJABe13drHZ5YLlr3\nnlBlsVuhyXgwF6P2tXUyKvZOgVdCAbXl9sJbPjLyS+hPEit+HjG6Rm8kv2jj\nDa6r8o1ndccXIsCB0KTOvju+toGXfUGIYrZEAPqwMoHO41pachWuVFi1DWC0\nTiXD7WYQaZSPurMc2pe//BEyF3T86cEufnoF7qxPZ0HmWLINt1yGQ1AnKHbi\n0C+4nfWfkYerkZiaBsYXHiA5D1B46dXR5G+E5vT3UujZqm0K6P/Atcsd+51+\nP9qcxM1b2S+5mwEmV4SIhXc+opzxed6RrWz611IhObGPFtlLJnkm9VP/DYJg\n5U9Jqw7yrDOrpXctVk3weplZ59JczmhcZtX/s23od5Vl8WDIvcb29gPGwp53\n6Bsw\r\n=HKsg\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "calvin.metcalf@gmail.com",
+          "name": "cwmma"
+        },
+        {
+          "email": "npm@dcousens.com",
+          "name": "dcousens"
+        },
+        {
+          "email": "cfddream@gmail.com",
+          "name": "fundon"
+        },
+        {
+          "email": "fedor@indutny.com",
+          "name": "indutny"
+        },
+        {
+          "email": "jprichardson@gmail.com",
+          "name": "jprichardson"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/pbkdf2_3.0.17_1537879887360_0.9800817100870836"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.1.0": {
+      "name": "pbkdf2",
+      "version": "3.1.0",
+      "description": "This library provides the functionality of PBKDF2 with the ability to use any supported hashing algorithm returned from crypto.getHashes()",
+      "keywords": [
+        "pbkdf2",
+        "kdf",
+        "salt",
+        "hash"
+      ],
+      "homepage": "https://github.com/crypto-browserify/pbkdf2",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/pbkdf2/issues"
+      },
+      "license": "MIT",
+      "author": {
+        "name": "Daniel Cousens"
+      },
+      "browser": {
+        "./index.js": "./browser.js",
+        "./lib/sync.js": "./lib/sync-browser.js"
+      },
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crypto-browserify/pbkdf2.git"
+      },
+      "scripts": {
+        "prepublish": "npm run test",
+        "coverage-report": "nyc report --reporter=lcov",
+        "coverage-html": "nyc report --reporter=html",
+        "coverage": "nyc --check-coverage --branches 95 --functions 95 tape test/*.js",
+        "lint": "standard",
+        "test": "npm run lint && npm run unit",
+        "bundle-test": "browserify test/index.js > test/bundle.js",
+        "unit": "tape test/*.js",
+        "bench": "node bench/"
+      },
+      "devDependencies": {
+        "benchmark": "^2.1.4",
+        "browserify": "*",
+        "nyc": "^6.4.0",
+        "standard": "*",
+        "tape": "^4.5.1"
+      },
+      "dependencies": {
+        "create-hash": "^1.1.2",
+        "create-hmac": "^1.1.4",
+        "ripemd160": "^2.0.1",
+        "safe-buffer": "^5.0.1",
+        "sha.js": "^2.4.8"
+      },
+      "standard": {
+        "ignore": [
+          "test/bundle.js"
+        ]
+      },
+      "engines": {
+        "node": ">=0.12"
+      },
+      "nyc": {
+        "exclude": [
+          "lib/async.js",
+          "test/bundle.js"
+        ]
+      },
+      "gitHead": "1c337af3ab19d2540a1edb492f54a439a7118109",
+      "_id": "pbkdf2@3.1.0",
+      "_nodeVersion": "12.16.0",
+      "_npmVersion": "6.14.5",
+      "dist": {
+        "integrity": "sha512-wHMFZ6HTLGlB9f/WsQBs5OwMQJoLXYuJUzbA+j+hRBf7+Y8KcXpatzIviIcTy1OAyhWQp08nyiPO8Dnv0z4Sww==",
+        "shasum": "8839d778223e922164803a411dc62fddb57d3b02",
+        "tarball": "https://registry.npmjs.org/pbkdf2/-/pbkdf2-3.1.0.tgz",
+        "fileCount": 11,
+        "unpackedSize": 13347,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJe1+TfCRA9TVsSAnZWagAA7CQP/jU6Weup2SFRZwYGa29E\nNav700Lxc6j4nM9cFJ9IkpHBXiWA6USgdoQ8KxREVgikYZLRBJeROcXTA1ZW\ncfCWy2qVhFT1e9P0bmHht2L0QaL2vDnt0vgIKBw8yh8rA2XNcdFmZ8sjQ0ex\nfYS/x5aX7L/I/cFwlUGz9JXloDtnWLojCc4V8TN/uyLxjD+ujrzYf8wpBmey\nGCiNmONXnyCZGGr9ZRaRcvOgjZJi5+KfbF74FUTZ6jMtclo625dhSP5LPDcZ\nvQiLJmhXloTkdesCy+MCezL+6xjMn8aLFuWBAwWFtabCtM6wz7OV9fShh98L\nNXnw5CM410d3f689ofF9bgZeiLYnvXg6N1SKeIdKzZPtDTE1Z8Ep3EooA9/1\n9GSDGGoal67OGuvAFJsDU60hryPGcUBmjiemIsr5YKG7wynq5W0NW6v5Jz/H\n0dHcVlO0GY3ncWfuddaulhT/5iw1LqGgrbvWGGZ2ZglEmQQw76eWZuf/ojqO\nAs6rCyyx3o2kzDYZq6xGlzLlvOcJZmLcRD34gH+KzxUpWQMNNyACt6IdnoOb\nfXgsK1DLyA6NxCn/JP/rox6j8y5xry6IPtmtgmLh1T2lUImwuvbqNnEunbmE\nNJIMCeWq7u4+bgnZcmoCj9KqSv9ApZl5bx01gFqUeAHw/Hx4proeUY3cc+ZS\nlNJE\r\n=LuRr\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "calvin.metcalf@gmail.com",
+          "name": "cwmma"
+        },
+        {
+          "email": "cfddream@gmail.com",
+          "name": "fundon"
+        },
+        {
+          "email": "fedor@indutny.com",
+          "name": "indutny"
+        },
+        {
+          "email": "jprichardson@gmail.com",
+          "name": "jprichardson"
+        }
+      ],
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/pbkdf2_3.1.0_1591207134662_0.37145187853610406"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.1.1": {
+      "name": "pbkdf2",
+      "version": "3.1.1",
+      "description": "This library provides the functionality of PBKDF2 with the ability to use any supported hashing algorithm returned from crypto.getHashes()",
+      "keywords": [
+        "pbkdf2",
+        "kdf",
+        "salt",
+        "hash"
+      ],
+      "homepage": "https://github.com/crypto-browserify/pbkdf2",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/pbkdf2/issues"
+      },
+      "license": "MIT",
+      "author": {
+        "name": "Daniel Cousens"
+      },
+      "browser": {
+        "./index.js": "./browser.js",
+        "./lib/sync.js": "./lib/sync-browser.js"
+      },
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crypto-browserify/pbkdf2.git"
+      },
+      "scripts": {
+        "prepublish": "npm run test",
+        "coverage-report": "nyc report --reporter=lcov",
+        "coverage-html": "nyc report --reporter=html",
+        "coverage": "nyc --check-coverage --branches 95 --functions 95 tape test/*.js",
+        "lint": "standard",
+        "test": "npm run lint && npm run unit",
+        "bundle-test": "browserify test/index.js > test/bundle.js",
+        "unit": "tape test/*.js",
+        "bench": "node bench/"
+      },
+      "devDependencies": {
+        "benchmark": "^2.1.4",
+        "browserify": "*",
+        "nyc": "^6.4.0",
+        "standard": "*",
+        "tape": "^4.5.1"
+      },
+      "dependencies": {
+        "create-hash": "^1.1.2",
+        "create-hmac": "^1.1.4",
+        "ripemd160": "^2.0.1",
+        "safe-buffer": "^5.0.1",
+        "sha.js": "^2.4.8"
+      },
+      "standard": {
+        "ignore": [
+          "test/bundle.js"
+        ]
+      },
+      "engines": {
+        "node": ">=0.12"
+      },
+      "nyc": {
+        "exclude": [
+          "lib/async.js",
+          "test/bundle.js"
+        ]
+      },
+      "gitHead": "4a0bc7bc576418f6d0e7f47339b6054f00d07718",
+      "_id": "pbkdf2@3.1.1",
+      "_nodeVersion": "12.16.0",
+      "_npmVersion": "6.14.5",
+      "dist": {
+        "integrity": "sha512-4Ejy1OPxi9f2tt1rRV7Go7zmfDQ+ZectEQz3VGUQhgq62HtIRPDyG/JtnwIxs6x3uNMwo2V7q1fMvKjb+Tnpqg==",
+        "shasum": "cb8724b0fada984596856d1a6ebafd3584654b94",
+        "tarball": "https://registry.npmjs.org/pbkdf2/-/pbkdf2-3.1.1.tgz",
+        "fileCount": 11,
+        "unpackedSize": 13353,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJe2PC4CRA9TVsSAnZWagAAxlAP/jhwcAIiS/l7qfNdzpRe\nPpMDnBR3VqkpIa9cF+TF2EYr7H/bgRVuV1g2N6XR1QmgJfGQQPHmuwcKCxxx\nCEMbSD4f8T2zVo1EIuea2qOcwjDj0QKZwUd0PGQ/eq0ARU9+gjKC3LBow5dY\n0VN5AhT38CUn+IVFnIbaR4mWvrrxdCBIru8hFBZoV9nEIOwOP0RIn9NpcvOu\nVkqlIra5BDuBF7+6uJ2+/B6mLoVSHc0kDrEmJRvIl1E1RT2lL6yjarLBDErW\nw8ADBpMkIbQ+Z8FrUaYa1E+HM2cICd7x8+sSY6ScMpbQj/ERN1yQoSRtv1nS\nW+ECI1m5bENNNr8YFQTtpu2r3hrxiKSy19G5oURjhwFddDBcbqCn21eboyXk\n8fecTCK0coA+L9Mv+gowDmYDkx+HWnGMDkG/n9DZG5lNXvI4KwEPpWuBtO1t\nyHkyUCU5JuzImtPpkpN/O/t2KpjAz7EG0kjKQFlVle0O50C5RFRAJyp76f3P\ncnYqEidntxem1v2VRs/GzaqHC14pL6FQsDDXNrrnLoeNhsPymZjSRNQWNZCn\n56cUaH3rPFYMHbqIJ/YO0FjnR2W7sUJENzhRRsDTECfxfq+EIWetOC527g37\nql4Tgj4vxazjslmwpEhSX52yq8RuX94jNz/6R4tCGLrf4g4rWYN+3uaM94RW\nadM2\r\n=I4mP\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "calvin.metcalf@gmail.com",
+          "name": "cwmma"
+        },
+        {
+          "email": "cfddream@gmail.com",
+          "name": "fundon"
+        },
+        {
+          "email": "fedor@indutny.com",
+          "name": "indutny"
+        },
+        {
+          "email": "jprichardson@gmail.com",
+          "name": "jprichardson"
+        }
+      ],
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/pbkdf2_3.1.1_1591275704304_0.21657740641701118"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# pbkdf2\n\n[![NPM Package](https://img.shields.io/npm/v/pbkdf2.svg?style=flat-square)](https://www.npmjs.org/package/pbkdf2)\n[![Build Status](https://img.shields.io/travis/crypto-browserify/pbkdf2.svg?branch=master&style=flat-square)](https://travis-ci.org/crypto-browserify/pbkdf2)\n[![Dependency status](https://img.shields.io/david/crypto-browserify/pbkdf2.svg?style=flat-square)](https://david-dm.org/crypto-browserify/pbkdf2#info=dependencies)\n\n[![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)\n\nThis library provides the functionality of PBKDF2 with the ability to use any supported hashing algorithm returned from `crypto.getHashes()`\n\n\n## Usage\n\n```js\nvar pbkdf2 = require('pbkdf2')\nvar derivedKey = pbkdf2.pbkdf2Sync('password', 'salt', 1, 32, 'sha512')\n\n...\n```\n\nFor more information on the API,  please see the relevant [Node documentation](https://nodejs.org/api/crypto.html#crypto_crypto_pbkdf2_password_salt_iterations_keylen_digest_callback).\n\nFor high performance,  use the `async` variant (`pbkdf2.pbkdf2`),  not `pbkdf2.pbkdf2Sync`,  this variant has the oppurtunity to use `window.crypto.subtle` when browserified.\n\n\n## Credits\n\nThis module is a derivative of [cryptocoinjs/pbkdf2-sha256](https://github.com/cryptocoinjs/pbkdf2-sha256/), so thanks to [JP Richardson](https://github.com/jprichardson/) for laying the ground work.\n\nThank you to [FangDun Cai](https://github.com/fundon) for donating the package name on npm, if you're looking for his previous module it is located at [fundon/pbkdf2](https://github.com/fundon/pbkdf2).\n",
+  "maintainers": [
+    {
+      "email": "calvin.metcalf@gmail.com",
+      "name": "cwmma"
+    },
+    {
+      "email": "cfddream@gmail.com",
+      "name": "fundon"
+    },
+    {
+      "email": "fedor@indutny.com",
+      "name": "indutny"
+    },
+    {
+      "email": "jprichardson@gmail.com",
+      "name": "jprichardson"
+    }
+  ],
+  "time": {
+    "modified": "2020-06-04T13:01:46.600Z",
+    "created": "2014-02-03T01:03:39.147Z",
+    "0.0.1": "2014-02-03T01:03:39.147Z",
+    "0.0.2": "2014-02-05T09:10:15.325Z",
+    "0.0.3": "2014-02-13T02:06:03.451Z",
+    "0.0.4": "2014-04-18T09:45:12.503Z",
+    "0.0.5": "2014-04-24T02:20:22.187Z",
+    "3.0.3": "2015-02-15T14:34:10.155Z",
+    "3.0.4": "2015-03-27T03:48:06.234Z",
+    "3.0.5": "2016-09-12T04:03:07.894Z",
+    "3.0.6": "2016-09-13T23:46:03.404Z",
+    "3.0.7": "2016-09-16T04:48:35.226Z",
+    "3.0.8": "2016-09-21T21:41:47.788Z",
+    "3.0.9": "2016-10-05T12:49:42.513Z",
+    "3.0.10": "2017-05-11T13:09:58.796Z",
+    "3.0.11": "2017-05-11T14:49:13.589Z",
+    "3.0.12": "2017-05-11T18:52:20.323Z",
+    "3.0.13": "2017-08-02T12:53:42.742Z",
+    "3.0.14": "2017-09-08T17:07:42.064Z",
+    "3.0.16": "2018-04-20T00:28:05.596Z",
+    "3.0.17": "2018-09-25T12:51:27.528Z",
+    "3.1.0": "2020-06-03T17:58:54.796Z",
+    "3.1.1": "2020-06-04T13:01:44.432Z"
+  },
+  "readmeFilename": "README.md",
+  "homepage": "https://github.com/crypto-browserify/pbkdf2",
+  "keywords": [
+    "pbkdf2",
+    "kdf",
+    "salt",
+    "hash"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crypto-browserify/pbkdf2.git"
+  },
+  "author": {
+    "name": "Daniel Cousens"
+  },
+  "bugs": {
+    "url": "https://github.com/crypto-browserify/pbkdf2/issues"
+  },
+  "license": "MIT",
+  "users": {
+    "reecegoddard": true,
+    "abdihaikal": true,
+    "gerst20051": true,
+    "sintaxi": true,
+    "cheapsteak": true,
+    "nickeljew": true,
+    "hugovila": true,
+    "bumsuk": true
+  }
+}

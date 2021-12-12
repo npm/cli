@@ -1,0 +1,722 @@
+{
+  "_id": "p-map",
+  "_rev": "15-c61165a04b6a9ebcce6a619fd772820f",
+  "name": "p-map",
+  "description": "Map over promises concurrently",
+  "dist-tags": {
+    "latest": "4.0.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "p-map",
+      "version": "1.0.0",
+      "description": "Map over promises concurrently",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/p-map.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "promise",
+        "map",
+        "resolved",
+        "wait",
+        "collection",
+        "iterable",
+        "iterator",
+        "race",
+        "fulfilled",
+        "async",
+        "await",
+        "promises",
+        "concurrently",
+        "concurrency",
+        "parallel",
+        "bluebird"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "delay": "^1.3.1",
+        "in-range": "^1.0.0",
+        "random-int": "^1.0.0",
+        "time-span": "^1.0.0",
+        "xo": "*"
+      },
+      "xo": {
+        "esnext": true
+      },
+      "gitHead": "fef15cfe481989afdd1728ba02b64b7ca6552462",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/p-map/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/p-map#readme",
+      "_id": "p-map@1.0.0",
+      "_shasum": "fecf578d8f46c4f4254eb3631e56d031ad30e4fd",
+      "_from": ".",
+      "_npmVersion": "2.15.9",
+      "_nodeVersion": "4.6.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "fecf578d8f46c4f4254eb3631e56d031ad30e4fd",
+        "tarball": "https://registry.npmjs.org/p-map/-/p-map-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/p-map-1.0.0.tgz_1477021449093_0.09832565626129508"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "p-map",
+      "version": "1.1.0",
+      "description": "Map over promises concurrently",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/p-map.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "promise",
+        "map",
+        "resolved",
+        "wait",
+        "collection",
+        "iterable",
+        "iterator",
+        "race",
+        "fulfilled",
+        "async",
+        "await",
+        "promises",
+        "concurrently",
+        "concurrency",
+        "parallel",
+        "bluebird"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "delay": "^1.3.1",
+        "in-range": "^1.0.0",
+        "random-int": "^1.0.0",
+        "time-span": "^1.0.0",
+        "xo": "*"
+      },
+      "xo": {
+        "esnext": true
+      },
+      "gitHead": "ce04bc09745da7fcd7f223fe893fa5a29f7a38c7",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/p-map/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/p-map#readme",
+      "_id": "p-map@1.1.0",
+      "_shasum": "8fc54b3057cca902d223a2950ddd76ffa6582e8d",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "4.6.2",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "8fc54b3057cca902d223a2950ddd76ffa6582e8d",
+        "tarball": "https://registry.npmjs.org/p-map/-/p-map-1.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/p-map-1.1.0.tgz_1479466185862_0.4718094489071518"
+      },
+      "directories": {}
+    },
+    "1.1.1": {
+      "name": "p-map",
+      "version": "1.1.1",
+      "description": "Map over promises concurrently",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/p-map.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "promise",
+        "map",
+        "resolved",
+        "wait",
+        "collection",
+        "iterable",
+        "iterator",
+        "race",
+        "fulfilled",
+        "async",
+        "await",
+        "promises",
+        "concurrently",
+        "concurrency",
+        "parallel",
+        "bluebird"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "delay": "^1.3.1",
+        "in-range": "^1.0.0",
+        "random-int": "^1.0.0",
+        "time-span": "^1.0.0",
+        "xo": "*"
+      },
+      "xo": {
+        "esnext": true
+      },
+      "gitHead": "c61810d78576c1e93e0fec6bb05b6249584dde8d",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/p-map/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/p-map#readme",
+      "_id": "p-map@1.1.1",
+      "_shasum": "05f5e4ae97a068371bc2a5cc86bfbdbc19c4ae7a",
+      "_from": ".",
+      "_npmVersion": "4.0.5",
+      "_nodeVersion": "7.4.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "05f5e4ae97a068371bc2a5cc86bfbdbc19c4ae7a",
+        "tarball": "https://registry.npmjs.org/p-map/-/p-map-1.1.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/p-map-1.1.1.tgz_1484809158096_0.3943324906285852"
+      },
+      "directories": {}
+    },
+    "1.2.0": {
+      "name": "p-map",
+      "version": "1.2.0",
+      "description": "Map over promises concurrently",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/p-map.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "promise",
+        "map",
+        "resolved",
+        "wait",
+        "collection",
+        "iterable",
+        "iterator",
+        "race",
+        "fulfilled",
+        "async",
+        "await",
+        "promises",
+        "concurrently",
+        "concurrency",
+        "parallel",
+        "bluebird"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "delay": "^2.0.0",
+        "in-range": "^1.0.0",
+        "random-int": "^1.0.0",
+        "time-span": "^2.0.0",
+        "xo": "*"
+      },
+      "gitHead": "e0a1c91c00d5509e9f04c6f0392693a452f385f0",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/p-map/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/p-map#readme",
+      "_id": "p-map@1.2.0",
+      "_npmVersion": "5.4.1",
+      "_nodeVersion": "8.4.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-r6zKACMNhjPJMTl8KcFH4li//gkrXWfbD6feV8l6doRHlzljFWGJ2AP6iKaCJXyZmAUMOPtvbW7EXkbWO/pLEA==",
+        "shasum": "e4e94f311eabbc8633a1e79908165fca26241b6b",
+        "tarball": "https://registry.npmjs.org/p-map/-/p-map-1.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/p-map-1.2.0.tgz_1505195035419_0.6017468643840402"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "p-map",
+      "version": "2.0.0",
+      "description": "Map over promises concurrently",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/p-map.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd-check"
+      },
+      "keywords": [
+        "promise",
+        "map",
+        "resolved",
+        "wait",
+        "collection",
+        "iterable",
+        "iterator",
+        "race",
+        "fulfilled",
+        "async",
+        "await",
+        "promises",
+        "concurrently",
+        "concurrency",
+        "parallel",
+        "bluebird"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "delay": "^3.0.0",
+        "in-range": "^1.0.0",
+        "random-int": "^1.0.0",
+        "time-span": "^2.0.0",
+        "tsd-check": "^0.2.1",
+        "xo": "*"
+      },
+      "gitHead": "3774d3026388f379dfebaa8601c67034adee56cd",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/p-map/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/p-map#readme",
+      "_id": "p-map@2.0.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.11.4",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-GO107XdrSUmtHxVoi60qc9tUl/KkNKm+X2CF4P9amalpGxv5YqVPJNfSb0wcA+syCopkZvYYIzW8OVTQW59x/w==",
+        "shasum": "be18c5a5adeb8e156460651421aceca56c213a50",
+        "tarball": "https://registry.npmjs.org/p-map/-/p-map-2.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 6943,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbn89XCRA9TVsSAnZWagAAcG4QAIztwgwNKp9cYlPgkKSA\nYxzyFOWnC3i9aQ8SXoLJMdKNK14JFx4g76eenuEA4uP8UyJCKNF9vGxktCHj\nSl6m1EPuYAO6vhpzWwttJf00HPCYNj6y6Fna4PYR+lPEX/3qXerzdQkZcbdN\nVl4u1XRDKlps3Gb0njNKBc/6dwG+QGbJTC9+j2ctzA7UryIjLuBOSq54QcdR\n5ZJPHUGDYDGcoSh6KvKt5Q+gv1Yb4z2br21AMtQfL6buj6D5I673wBL0VCcZ\n52Opcq5DHvVqwJbZWk1hpLQX27OcPjwwtYRnI1ZIXthprZzCgi+u5qZIHa/W\naV8K/VFN2/i3/iMJ/K8sBtkgSE/NxZBZqY0egnGlYQ8y4V5sD6Hdsj8+/9OG\nKEb8wnkEwJJP34u/mHL1V4L9Gyt6pAIFplp/m/GzBMRF/wN4xjFK5AF91DhU\nozCQYKYO12hc5/LTLRtOkwh868zNhjvMpBKEsSHPzgUz4XFtwz3DG2QYlOlA\nU0mgn+aKN1gsJ7s/EDQH6pNZFNTvkZkoi8N24cr1IgFHDACvMpoH+zwq2ZnK\n9GfA67xQ5zqXUBQXeFtqmEkhVga7Vhn9/SR4T7wSB8HKAR2RWNB+ZCpmpsDB\nExt1lb7Q/pdC4HWQnsfa9zM20RMzidCyB2wfpeUt9smfsE2MYE235pYODGd2\ngU4S\r\n=lCMQ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/p-map_2.0.0_1537199959062_0.08655110554165257"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.1.0": {
+      "name": "p-map",
+      "version": "2.1.0",
+      "description": "Map over promises concurrently",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/p-map.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "promise",
+        "map",
+        "resolved",
+        "wait",
+        "collection",
+        "iterable",
+        "iterator",
+        "race",
+        "fulfilled",
+        "async",
+        "await",
+        "promises",
+        "concurrently",
+        "concurrency",
+        "parallel",
+        "bluebird"
+      ],
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "delay": "^4.1.0",
+        "in-range": "^1.0.0",
+        "random-int": "^1.0.0",
+        "time-span": "^3.1.0",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "a44286e8c4b63bebeae3526b94dd21779e26c518",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/p-map/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/p-map#readme",
+      "_id": "p-map@2.1.0",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.15.1",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-y3b8Kpd8OAN444hxfBbFfj1FY/RjtTd8tzYwhUqNYXx0fXx2iX4maP4Qr6qhIKbQXI02wTLAda4fYUbDagTUFw==",
+        "shasum": "310928feef9c9ecc65b68b17693018a665cea175",
+        "tarball": "https://registry.npmjs.org/p-map/-/p-map-2.1.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 7492,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcqMVzCRA9TVsSAnZWagAAH7MP/1dhjbYA95u96lcrXoI7\nPANumsOKN46Kk45pH6026PJJWJYnNsuf5LFchkf2j3K9aDxjwHg9T9tQdnQX\ni4zsurQSVDF7y24MNc54kJ4sj2zWIBYVp1coF+eiVJ9pBvQUxW6Ei+7a67ID\np09x8rzbuBdUQc1UuXyfWA/o6MeGhrH7IG/jHQYuNIaQrTNFmTfKtnE724aV\nXHFHYru9IsBv90l1DmeBdkAzZE7C5pV+XRTLRzgB1k1vd2YBOaKYVsalAYFd\nsvALaPBHveu5q4yU/BbU1I2bzdU3FNa0+BuTBMnj9PFM8si81/G/isIFHd3u\n8jIqxoZ28stb/G9ESlodd+ml+0qCWTjC5owQUnGA0jbcDlMTMnbIHMA6BcIy\nwFjUoF8dD7jELaSocnUVxgPD/Ce0g7pb0q1W2YDiOx/nK88q3NS+Ne6B+X4G\nxAJk5gqGNa3k1HK5uFv7qEr8WfiDy95odJLnUZr+IBOpKy8c9eipuZwkoVfv\nZ/SaTt9xUR7YY6jV0e84FwcNwc9NekaVuQnHMK2SpWofeM1SnMda2C6sh3jl\nBqxhPqN+boUIqxI8bPUajuWAMfX4mX85pIyQyYddMxxhBCjpWTNmrgOUpAW/\nV61b/jzV/bEcadK70NhqiZZ8RyeZpPNhaq23hkviya4f/MknvyHWXO5pTzcK\nfAOk\r\n=GygQ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/p-map_2.1.0_1554564466828_0.6092914198956048"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.0": {
+      "name": "p-map",
+      "version": "3.0.0",
+      "description": "Map over promises concurrently",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/p-map.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "promise",
+        "map",
+        "resolved",
+        "wait",
+        "collection",
+        "iterable",
+        "iterator",
+        "race",
+        "fulfilled",
+        "async",
+        "await",
+        "promises",
+        "concurrently",
+        "concurrency",
+        "parallel",
+        "bluebird"
+      ],
+      "dependencies": {
+        "aggregate-error": "^3.0.0"
+      },
+      "devDependencies": {
+        "ava": "^2.2.0",
+        "delay": "^4.1.0",
+        "in-range": "^2.0.0",
+        "random-int": "^2.0.0",
+        "time-span": "^3.1.0",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "a8c06732e440214da89c410fa8d0cd74e110868e",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/p-map/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/p-map#readme",
+      "_id": "p-map@3.0.0",
+      "_nodeVersion": "12.6.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-d3qXVTF/s+W+CdJ5A29wywV2n8CQQYahlgz2bFiA+4eVNJbHJodPZ+/gXwPGh0bOqA+j8S+6+ckmvLGPk1QpxQ==",
+        "shasum": "d704d9af8a2ba684e2600d9a215983d4141a979d",
+        "tarball": "https://registry.npmjs.org/p-map/-/p-map-3.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 8391,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdKf0ZCRA9TVsSAnZWagAA0MUP/3SzMyChZOyT3+q6Jnxt\nUHffQMX0kx8GgU9atDH+JZ7kwddePS1xnZRfTbqkU1Kke21NgaB/M2DzyxBA\nbqGFPuFeTRQxIFyLX04Cfr5yyk8MfWryQV0MHbcpHulYA+6MsK2TDnLBrO8z\njoboUjZeQypnnJM6IflNEhtLiTGNgaA7Gcq0cQBUXlXCqGcwTleN5Os+PiMr\nIP2wG3yc1OYiq4WE4oB+zbVOk0aHr/YqGvmC7dd1FEM4IRrdlhEmblpaR5kO\n1s1DlwcSop/0B6JxdgCWlwi5QBPTu8gEEbv+9u76FmELNRK4dsbpwgJ992B4\ngx4YOJqL3Dr/8bSCVELBz6WiPols9FMDzJgWoECJImrLi0eyLB7qhMBiJzcc\nGlBuBByjdL6w/PEIs7y2yRcgDLysRknvOqm5EhB1GK2pjJV6HiBmmYnT3svW\nOrH9SwPJH0C20WRDCb+LMwvCzTRBUB1gaSV3pZPV4ARNcfvyyAzAqkckxzIb\nPBs5dFmXQgvwDteC4nSVqDURnSu0scCfgMGhpWJ8LJY8RuDZT4+bq5YRQFvo\ntcLyIP4I7ABh+/k4DtLc43+MKbLJfDPItYwoz4Z9fMyYxJovWqCj0FUQfOPc\n3Sdh5qDIexsDcUdXEF6vLK0x1kWjkwpSi7wzP0G/SyQd2HoHWZajK8IWmrtG\nyL0k\r\n=cZsp\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/p-map_3.0.0_1563032855528_0.7953198023305246"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.0.0": {
+      "name": "p-map",
+      "version": "4.0.0",
+      "description": "Map over promises concurrently",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/p-map.git"
+      },
+      "funding": "https://github.com/sponsors/sindresorhus",
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "https://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=10"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "promise",
+        "map",
+        "resolved",
+        "wait",
+        "collection",
+        "iterable",
+        "iterator",
+        "race",
+        "fulfilled",
+        "async",
+        "await",
+        "promises",
+        "concurrently",
+        "concurrency",
+        "parallel",
+        "bluebird"
+      ],
+      "dependencies": {
+        "aggregate-error": "^3.0.0"
+      },
+      "devDependencies": {
+        "ava": "^2.2.0",
+        "delay": "^4.1.0",
+        "in-range": "^2.0.0",
+        "random-int": "^2.0.0",
+        "time-span": "^3.1.0",
+        "tsd": "^0.7.4",
+        "xo": "^0.27.2"
+      },
+      "gitHead": "a4b4dec459544d98880bc53a580e53691aff9fa9",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/p-map/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/p-map#readme",
+      "_id": "p-map@4.0.0",
+      "_nodeVersion": "10.18.1",
+      "_npmVersion": "6.14.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-/bjOqmgETBYB5BoEeGVea8dmvHb2m9GLy1E9W43yeyfP6QQCZGFNa+XRceJEuDB6zqr+gKpIAmlLebMpykw/MQ==",
+        "shasum": "bb2f95a5eda2ec168ec9274e06a747c3e2904d2b",
+        "tarball": "https://registry.npmjs.org/p-map/-/p-map-4.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 8687,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeYLuGCRA9TVsSAnZWagAALNkP/icS/zHu6yNrCwiCNS4E\nnbsyyry8rc6iti+rBi4HJkNecN+gWM5J+OC8mmBa29jOWiefCtMlI2vjIPs5\n/UCBVEkHoZhhwriQ5X2Yz8yW5jimdE1QErzYKHhzGsNMFdc9VuPCVGtqartl\nQkrlJT+D0LOPBtOugmaLBt6XWX2Ks1NGYr/WtFwqfsE35kDGQvZ1MaAj9+Fc\naRK5LUoEn/06LPmVqPGjKjhoue3QgihCZSxoBWjMgwYblZyAkbiEM9Xe+Gjg\nB+MCAk2Eh6gZbqzyTmAythHyQgiz+lnNwXTGDXCKAD2rf8R11V7bOl6eFiml\nuMjmDHJ84VTwt9doONukyzxbGhJqCiwc6+38yT85DZCTQpmtUgcniRPygxqC\n5LQTx6DrQQ7nFUfwF+YfUd+q+GFyzGZNknW/+J9lKJazEFd2UCOaNHguRw0F\nPFcENv4j3bX2RfNkral0JZ2I+U8vu2NkpXWG3DmL1o38SgpQ7JC/wdXjSRcn\n4VlIhz5LcBms967YXTg1LAW7OQob73ksIXp2hGaGwiVfaZhPxWowZbCahfbA\nELrajj3H88QN4QDFxmp1CNrkgPkE4AyuBSgpnTiSP9wQTeBL4lZ+mfThBwtn\n4v694zqg4uF4u2vn7v5AkNBS2OlBvYNd59WjScPCOLWWZATQKqiHVVDErAGe\nFdI9\r\n=NTiQ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/p-map_4.0.0_1583397765582_0.6466932244877022"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# p-map [![Build Status](https://travis-ci.org/sindresorhus/p-map.svg?branch=master)](https://travis-ci.org/sindresorhus/p-map)\n\n> Map over promises concurrently\n\nUseful when you need to run promise-returning & async functions multiple times with different inputs concurrently.\n\n## Install\n\n```\n$ npm install p-map\n```\n\n## Usage\n\n```js\nconst pMap = require('p-map');\nconst got = require('got');\n\nconst sites = [\n\tgetWebsiteFromUsername('https://sindresorhus'), //=> Promise\n\t'https://ava.li',\n\t'https://github.com'\n];\n\n(async () => {\n\tconst mapper = async site => {\n\t\tconst {requestUrl} = await got.head(site);\n\t\treturn requestUrl;\n\t};\n\n \tconst result = await pMap(sites, mapper, {concurrency: 2});\n\n\tconsole.log(result);\n\t//=> ['https://sindresorhus.com/', 'https://ava.li/', 'https://github.com/']\n})();\n```\n\n## API\n\n### pMap(input, mapper, options?)\n\nReturns a `Promise` that is fulfilled when all promises in `input` and ones returned from `mapper` are fulfilled, or rejects if any of the promises reject. The fulfilled value is an `Array` of the fulfilled values returned from `mapper` in `input` order.\n\n#### input\n\nType: `Iterable<Promise | unknown>`\n\nIterated over concurrently in the `mapper` function.\n\n#### mapper(element, index)\n\nType: `Function`\n\nExpected to return a `Promise` or value.\n\n#### options\n\nType: `object`\n\n##### concurrency\n\nType: `number` (Integer)\\\nDefault: `Infinity`\\\nMinimum: `1`\n\nNumber of concurrently pending promises returned by `mapper`.\n\n##### stopOnError\n\nType: `boolean`\\\nDefault: `true`\n\nWhen set to `false`, instead of stopping when a promise rejects, it will wait for all the promises to settle and then reject with an [aggregated error](https://github.com/sindresorhus/aggregate-error) containing all the errors from the rejected promises.\n\n## p-map for enterprise\n\nAvailable as part of the Tidelift Subscription.\n\nThe maintainers of p-map and thousands of other packages are working with Tidelift to deliver commercial support and maintenance for the open source dependencies you use to build your applications. Save time, reduce risk, and improve code health, while paying the maintainers of the exact dependencies you use. [Learn more.](https://tidelift.com/subscription/pkg/npm-p-map?utm_source=npm-p-map&utm_medium=referral&utm_campaign=enterprise&utm_term=repo)\n\n## Related\n\n- [p-all](https://github.com/sindresorhus/p-all) - Run promise-returning & async functions concurrently with optional limited concurrency\n- [p-filter](https://github.com/sindresorhus/p-filter) - Filter promises concurrently\n- [p-times](https://github.com/sindresorhus/p-times) - Run promise-returning & async functions a specific number of times concurrently\n- [p-props](https://github.com/sindresorhus/p-props) - Like `Promise.all()` but for `Map` and `Object`\n- [p-map-series](https://github.com/sindresorhus/p-map-series) - Map over promises serially\n- [p-queue](https://github.com/sindresorhus/p-queue) - Promise queue with concurrency control\n- [More…](https://github.com/sindresorhus/promise-fun)\n",
+  "maintainers": [
+    {
+      "name": "sindresorhus",
+      "email": "sindresorhus@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-03-05T08:42:48.189Z",
+    "created": "2016-10-21T03:44:11.145Z",
+    "1.0.0": "2016-10-21T03:44:11.145Z",
+    "1.1.0": "2016-11-18T10:49:47.847Z",
+    "1.1.1": "2017-01-19T06:59:19.945Z",
+    "1.2.0": "2017-09-12T05:43:56.000Z",
+    "2.0.0": "2018-09-17T15:59:19.208Z",
+    "2.1.0": "2019-04-06T15:27:46.979Z",
+    "3.0.0": "2019-07-13T15:47:35.679Z",
+    "4.0.0": "2020-03-05T08:42:45.749Z"
+  },
+  "homepage": "https://github.com/sindresorhus/p-map#readme",
+  "keywords": [
+    "promise",
+    "map",
+    "resolved",
+    "wait",
+    "collection",
+    "iterable",
+    "iterator",
+    "race",
+    "fulfilled",
+    "async",
+    "await",
+    "promises",
+    "concurrently",
+    "concurrency",
+    "parallel",
+    "bluebird"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/p-map.git"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "https://sindresorhus.com"
+  },
+  "bugs": {
+    "url": "https://github.com/sindresorhus/p-map/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md",
+  "users": {
+    "seangenabe": true,
+    "rocket0191": true,
+    "geniusm4ster": true,
+    "ferx": true,
+    "r37r0m0d3l": true,
+    "karuppiah7890": true
+  }
+}

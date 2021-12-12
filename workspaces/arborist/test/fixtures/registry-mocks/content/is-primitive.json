@@ -1,0 +1,507 @@
+{
+  "_id": "is-primitive",
+  "_rev": "18-73f9d666ab7b147b0dff97d413f55e64",
+  "name": "is-primitive",
+  "description": "Returns `true` if the value is a primitive. ",
+  "dist-tags": {
+    "latest": "3.0.1"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "is-primitive",
+      "description": "Returns `true` if the value is a primitive. ",
+      "version": "0.1.0",
+      "homepage": "https://github.com/jonschlinkert/is-primitive",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/is-primitive.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/is-primitive/issues"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://github.com/jonschlinkert/is-primitive/blob/master/LICENSE-MIT"
+        }
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "devDependencies": {
+        "mocha": "*",
+        "should": "^4.0.4",
+        "verb": ">= 0.2.6",
+        "verb-tag-jscomments": ">= 0.2.0"
+      },
+      "keywords": [
+        "docs",
+        "documentation",
+        "generate",
+        "generator",
+        "markdown",
+        "templates",
+        "verb"
+      ],
+      "_id": "is-primitive@0.1.0",
+      "_shasum": "6059181ec090d188a426e72b26f094c2ed20beaa",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "6059181ec090d188a426e72b26f094c2ed20beaa",
+        "tarball": "https://registry.npmjs.org/is-primitive/-/is-primitive-0.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "is-primitive",
+      "description": "Returns `true` if the value is a primitive. ",
+      "version": "1.0.0",
+      "homepage": "https://github.com/jonschlinkert/is-primitive",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/is-primitive.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/is-primitive/issues"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://github.com/jonschlinkert/is-primitive/blob/master/LICENSE"
+        }
+      ],
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "mocha": "*",
+        "should": "^4.0.4"
+      },
+      "keywords": [
+        "boolean",
+        "check",
+        "number",
+        "primitive",
+        "string",
+        "symbol",
+        "type",
+        "typeof",
+        "util"
+      ],
+      "gitHead": "d15fedd28047fed01efbe6cbba743dd3516a284c",
+      "_id": "is-primitive@1.0.0",
+      "_shasum": "c3677046fe11225017222204dd602503f7e5eb74",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "c3677046fe11225017222204dd602503f7e5eb74",
+        "tarball": "https://registry.npmjs.org/is-primitive/-/is-primitive-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "is-primitive",
+      "description": "Returns `true` if the value is a primitive. ",
+      "version": "2.0.0",
+      "homepage": "https://github.com/jonschlinkert/is-primitive",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/is-primitive.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/is-primitive/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/is-primitive/blob/master/LICENSE"
+      },
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "mocha": "*",
+        "should": "^4.0.4"
+      },
+      "keywords": [
+        "boolean",
+        "check",
+        "number",
+        "primitive",
+        "string",
+        "symbol",
+        "type",
+        "typeof",
+        "util"
+      ],
+      "gitHead": "c512b7c95fb049aa9b1f039ddc0670611b66cce2",
+      "_id": "is-primitive@2.0.0",
+      "_shasum": "207bab91638499c07b2adf240a41a87210034575",
+      "_from": ".",
+      "_npmVersion": "2.5.1",
+      "_nodeVersion": "0.12.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "207bab91638499c07b2adf240a41a87210034575",
+        "tarball": "https://registry.npmjs.org/is-primitive/-/is-primitive-2.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "is-primitive",
+      "description": "Returns `true` if the value is a primitive. ",
+      "version": "3.0.0",
+      "homepage": "https://github.com/jonschlinkert/is-primitive",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "hemanth.hm",
+          "url": "http://h3manth.com"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "name": "Jordan Harband",
+          "url": "https://twitter.com/ljharb"
+        },
+        {
+          "name": "Nick Bottomley",
+          "url": "https://github.com/bttmly"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/is-primitive.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/is-primitive/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^1.0.0",
+        "mocha": "^3.5.3"
+      },
+      "keywords": [
+        "boolean",
+        "check",
+        "is",
+        "number",
+        "primitive",
+        "string",
+        "symbol",
+        "type",
+        "typeof",
+        "util"
+      ],
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "kind-of",
+            "is-number",
+            "is-plain-object"
+          ]
+        },
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "78f6c2e0a78a6b9b3eb6c90d20970a2874173364",
+      "_id": "is-primitive@3.0.0",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "9.1.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "integrity": "sha512-Qch+MMfMdu7DMY6XElM7LUJKPmkbXdTqNhqyehVflzis2a8Zd9V6U8qZybb32uUSmlO/dNmg3fsA5t0Q9TC0mA==",
+        "shasum": "ddc27a9f9ebe7bed4b4f308acc9abb1c7a025757",
+        "tarball": "https://registry.npmjs.org/is-primitive/-/is-primitive-3.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "brian.woodward@gmail.com",
+          "name": "doowb"
+        },
+        {
+          "email": "github@sellside.com",
+          "name": "jonschlinkert"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is-primitive-3.0.0.tgz_1511436765135_0.9479931348469108"
+      },
+      "directories": {}
+    },
+    "3.0.1": {
+      "name": "is-primitive",
+      "description": "Returns `true` if the value is a primitive. ",
+      "version": "3.0.1",
+      "homepage": "https://github.com/jonschlinkert/is-primitive",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "hemanth.hm",
+          "url": "http://h3manth.com"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "name": "Jordan Harband",
+          "url": "https://twitter.com/ljharb"
+        },
+        {
+          "name": "Nick Bottomley",
+          "url": "https://github.com/bttmly"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/is-primitive.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/is-primitive/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "benchmark": "^2.1.4",
+        "gulp-format-md": "^1.0.0",
+        "mocha": "^3.5.3"
+      },
+      "keywords": [
+        "boolean",
+        "check",
+        "is",
+        "number",
+        "primitive",
+        "string",
+        "symbol",
+        "type",
+        "typeof",
+        "util"
+      ],
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "is-number",
+            "is-plain-object",
+            "kind-of"
+          ]
+        },
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "b22c524da5cbac075f14145780ec4b3637afd7dc",
+      "_id": "is-primitive@3.0.1",
+      "_npmVersion": "6.0.1",
+      "_nodeVersion": "10.0.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "integrity": "sha512-GljRxhWvlCNRfZyORiH77FwdFwGcMO620o37EOYC0ORWdq+WYNVqW0w2Juzew4M+L81l6/QS3t5gkkihyRqv9w==",
+        "shasum": "98c4db1abff185485a657fc2905052b940524d05",
+        "tarball": "https://registry.npmjs.org/is-primitive/-/is-primitive-3.0.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 6795,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbHYqKCRA9TVsSAnZWagAAh1gP/i7CCVZd6xY6GnIlbZxJ\nKaPEpEqljDxCrk+kKqI2X7ZXVWr7DJQ+kbV+2szrGDYmHCWNYDAWGA3ShDk1\nmD1pwCCUZg4etA8xCtVg6YSGdfUOKa+5PC45crLdNABrMs3HT/sKUDewo+Mh\nVVgUVvji0rEQwhcWOIfB6SYiUhFqqvFuMlCoxhZvjpYHwx9Q8ZuV0xGowewm\nFW+M3JGQ9iB7unrtj0XhLMhUMOZ17xrZnMx8Qn5mHP9arHX9i1q+ANOy85P1\nSxkF+joZfIlJb/VZz1o+IcsXq6Q6b28NVnJmVdiQxUBYMla2+r/IIyoXI/ZO\nH72le1ZeFipEo8KfHBmAVWWXgR9b18J7BCtMba1zrmIjCYYKuK5dY4YeES6P\nsWKyvbk/JvkJtfPX+rNjWgTFeZLKD30LoLLOALFd9FzDznNieSYg7SbZGPu4\nrBF8YF6qqEj7idKslgCVFsgZTCwFy0P+e31d6IN2e6vDDICa3AqUiTq7d6y3\nIKncydus3S+GD+ihrfzxk3FJEaZSnojVTXaRLTWmooQu0Lymgp6wGIy0+Zo2\nvKaPxIdpq1V4/VLmwcbcjphPLUAD/unf/DaFmDLtHBAsTWi4j/7+q4NWLeUh\nlHQiWGOSnBkCeWZ7Vrb2bRF1FJEezUvrEPGVpEoqqSw0fNoJNpDaLe87c4P/\nV4Va\r\n=MdGZ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "brian.woodward@gmail.com",
+          "name": "doowb"
+        },
+        {
+          "email": "github@sellside.com",
+          "name": "jonschlinkert"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is-primitive_3.0.1_1528662665793_0.5506503739500361"
+      }
+    }
+  },
+  "readme": "# is-primitive [![NPM version](https://img.shields.io/npm/v/is-primitive.svg?style=flat)](https://www.npmjs.com/package/is-primitive) [![NPM monthly downloads](https://img.shields.io/npm/dm/is-primitive.svg?style=flat)](https://npmjs.org/package/is-primitive) [![NPM total downloads](https://img.shields.io/npm/dt/is-primitive.svg?style=flat)](https://npmjs.org/package/is-primitive) [![Linux Build Status](https://img.shields.io/travis/jonschlinkert/is-primitive.svg?style=flat&label=Travis)](https://travis-ci.org/jonschlinkert/is-primitive)\n\n> Returns `true` if the value is a primitive.\n\nPlease consider following this project's author, [Jon Schlinkert](https://github.com/jonschlinkert), and consider starring the project to show your :heart: and support.\n\n## Install\n\nInstall with [npm](https://www.npmjs.com/):\n\n```sh\n$ npm install --save is-primitive\n```\n\n## Primitive values\n\nThe [Mozilla docs for \"Primitive values\"](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Primitive_values) defines specifies six data types that are primitives:\n\n* `Boolean`\n* `Null`\n* `Undefined`\n* `Number`\n* `String`\n* `Symbol` (new in ECMAScript 6)\n\n## Usage\n\n```js\nvar isPrimitive = require('is-primitive');\n```\n\n## true\n\nAll of the following return `true`:\n\n```js\nconsole.log(isPrimitive(false));\nconsole.log(isPrimitive(true));\nconsole.log(isPrimitive(null));\nconsole.log(isPrimitive());\nconsole.log(isPrimitive(42));\nconsole.log(isPrimitive('abc'));\nconsole.log(isPrimitive(Symbol()));\n//=> true\n```\n\n## false\n\nEverything else returns `false`:\n\n```js\nconsole.log(isPrimitive({}));\nconsole.log(isPrimitive([]));\nconsole.log(isPrimitive(function(){}));\nconsole.log(isPrimitive(new Date()));\n// et cetera...\n//=> false\n```\n\n## About\n\n<details>\n<summary><strong>Contributing</strong></summary>\n\nPull requests and stars are always welcome. For bugs and feature requests, [please create an issue](../../issues/new).\n\n</details>\n\n<details>\n<summary><strong>Running Tests</strong></summary>\n\nRunning and reviewing unit tests is a great way to get familiarized with a library and its API. You can install dependencies and run tests with the following command:\n\n```sh\n$ npm install && npm test\n```\n\n</details>\n\n<details>\n<summary><strong>Building docs</strong></summary>\n\n_(This project's readme.md is generated by [verb](https://github.com/verbose/verb-generate-readme), please don't edit the readme directly. Any changes to the readme must be made in the [.verb.md](.verb.md) readme template.)_\n\nTo generate the readme, run the following command:\n\n```sh\n$ npm install -g verbose/verb#dev verb-generate-readme && verb\n```\n\n</details>\n\n### Related projects\n\nYou might also be interested in these projects:\n\n* [is-number](https://www.npmjs.com/package/is-number): Returns true if the value is a number. comprehensive tests. | [homepage](https://github.com/jonschlinkert/is-number \"Returns true if the value is a number. comprehensive tests.\")\n* [is-plain-object](https://www.npmjs.com/package/is-plain-object): Returns true if an object was created by the `Object` constructor. | [homepage](https://github.com/jonschlinkert/is-plain-object \"Returns true if an object was created by the `Object` constructor.\")\n* [kind-of](https://www.npmjs.com/package/kind-of): Get the native type of a value. | [homepage](https://github.com/jonschlinkert/kind-of \"Get the native type of a value.\")\n\n### Contributors\n\n| **Commits** | **Contributor** | \n| --- | --- |\n| 11 | [jonschlinkert](https://github.com/jonschlinkert) |\n| 1 | [ljharb](https://github.com/ljharb) |\n| 1 | [bttmly](https://github.com/bttmly) |\n| 1 | [hemanth](https://github.com/hemanth) |\n\n### Author\n\n**Jon Schlinkert**\n\n* [github/jonschlinkert](https://github.com/jonschlinkert)\n* [twitter/jonschlinkert](https://twitter.com/jonschlinkert)\n\n### License\n\nCopyright © 2017, [Jon Schlinkert](https://github.com/jonschlinkert).\nReleased under the [MIT License](LICENSE).\n\n***\n\n_This file was generated by [verb-generate-readme](https://github.com/verbose/verb-generate-readme), v0.6.0, on November 23, 2017._",
+  "maintainers": [
+    {
+      "email": "brian.woodward@gmail.com",
+      "name": "doowb"
+    },
+    {
+      "email": "github@sellside.com",
+      "name": "jonschlinkert"
+    }
+  ],
+  "time": {
+    "modified": "2018-06-10T20:31:09.092Z",
+    "created": "2014-09-26T07:38:07.567Z",
+    "0.1.0": "2014-09-26T07:38:07.567Z",
+    "1.0.0": "2015-02-13T03:18:15.943Z",
+    "2.0.0": "2015-03-17T04:00:41.319Z",
+    "3.0.0": "2017-11-23T11:32:46.004Z",
+    "3.0.1": "2018-06-10T20:31:05.843Z"
+  },
+  "homepage": "https://github.com/jonschlinkert/is-primitive",
+  "keywords": [
+    "boolean",
+    "check",
+    "is",
+    "number",
+    "primitive",
+    "string",
+    "symbol",
+    "type",
+    "typeof",
+    "util"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonschlinkert/is-primitive.git"
+  },
+  "author": {
+    "name": "Jon Schlinkert",
+    "url": "https://github.com/jonschlinkert"
+  },
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/is-primitive/issues"
+  },
+  "readmeFilename": "README.md",
+  "license": "MIT",
+  "users": {
+    "jonschlinkert": true,
+    "xotic750": true,
+    "recursion_excursion": true,
+    "rocket0191": true,
+    "456wyc": true,
+    "leix3041": true
+  },
+  "contributors": [
+    {
+      "name": "hemanth.hm",
+      "url": "http://h3manth.com"
+    },
+    {
+      "name": "Jon Schlinkert",
+      "url": "http://twitter.com/jonschlinkert"
+    },
+    {
+      "name": "Jordan Harband",
+      "url": "https://twitter.com/ljharb"
+    },
+    {
+      "name": "Nick Bottomley",
+      "url": "https://github.com/bttmly"
+    }
+  ],
+  "_attachments": {}
+}

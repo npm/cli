@@ -1,0 +1,10 @@
+{
+  "name": "@isaacs/testing-shrinkwrap-abbrev",
+  "version": "1.2.1",
+  "dependencies": {
+    "abbrev": "*"
+  },
+  "scripts": {
+    "test": "node test.js"
+  }
+}

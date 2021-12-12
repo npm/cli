@@ -1,0 +1,740 @@
+{
+  "_id": "arr-flatten",
+  "_rev": "17-3556c712f8d8a9b49fa39dc77e9587c4",
+  "name": "arr-flatten",
+  "description": "Recursively flatten an array or arrays.",
+  "dist-tags": {
+    "latest": "1.1.0"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "arr-flatten",
+      "description": "Recursively flatten an array or arrays.",
+      "version": "0.1.0",
+      "homepage": "https://github.com/jonschlinkert/arr-flatten",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/arr-flatten.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/arr-flatten/issues"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://github.com/jonschlinkert/arr-flatten/blob/master/LICENSE-MIT"
+        }
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "devDependencies": {
+        "mocha": "*",
+        "should": "^4.0.4",
+        "verb": ">= 0.2.6",
+        "verb-tag-jscomments": ">= 0.2.0"
+      },
+      "keywords": [
+        "recurse",
+        "recursive",
+        "recursively",
+        "arr",
+        "array",
+        "util",
+        "utils",
+        "utility",
+        "javascript",
+        "node.js",
+        "flat",
+        "flatten"
+      ],
+      "_id": "arr-flatten@0.1.0",
+      "_shasum": "d9e09d0ae2bc3737ceb389ab423c36d650feaf6e",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "d9e09d0ae2bc3737ceb389ab423c36d650feaf6e",
+        "tarball": "https://registry.npmjs.org/arr-flatten/-/arr-flatten-0.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.0": {
+      "name": "arr-flatten",
+      "description": "Recursively flatten an array or arrays. This is the fastest implementation of array flatten.",
+      "version": "0.2.0",
+      "homepage": "https://github.com/jonschlinkert/arr-flatten",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/arr-flatten.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/arr-flatten/issues"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://github.com/jonschlinkert/arr-flatten/blob/master/LICENSE-MIT"
+        }
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "devDependencies": {
+        "array-flatten": "^1.0.0",
+        "array-slice": "^0.2.2",
+        "benchmarked": "^0.1.3",
+        "chalk": "^0.5.1",
+        "glob": "^4.0.6",
+        "kind-of": "^0.1.2",
+        "mocha": "*",
+        "should": "^4.0.4",
+        "verb": ">= 0.2.6",
+        "verb-tag-jscomments": ">= 0.2.0"
+      },
+      "keywords": [
+        "recurse",
+        "recursive",
+        "recursively",
+        "arr",
+        "array",
+        "util",
+        "utils",
+        "utility",
+        "javascript",
+        "node.js",
+        "flat",
+        "flatten"
+      ],
+      "_id": "arr-flatten@0.2.0",
+      "_shasum": "b7375f4ac8c4e2a2fc55f3a56038f3e100cc8812",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "b7375f4ac8c4e2a2fc55f3a56038f3e100cc8812",
+        "tarball": "https://registry.npmjs.org/arr-flatten/-/arr-flatten-0.2.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.1": {
+      "name": "arr-flatten",
+      "description": "Recursively flatten an array or arrays. This is the fastest implementation of array flatten.",
+      "version": "0.2.1",
+      "homepage": "https://github.com/jonschlinkert/arr-flatten",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/arr-flatten.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/arr-flatten/issues"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://github.com/jonschlinkert/arr-flatten/blob/master/LICENSE-MIT"
+        }
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "devDependencies": {
+        "array-flatten": "^1.0.0",
+        "array-slice": "^0.2.2",
+        "benchmarked": "^0.1.3",
+        "chalk": "^0.5.1",
+        "glob": "^4.0.6",
+        "kind-of": "^0.1.2",
+        "mocha": "*",
+        "should": "^4.0.4",
+        "verb": ">= 0.2.6",
+        "verb-tag-jscomments": ">= 0.2.0"
+      },
+      "keywords": [
+        "recurse",
+        "recursive",
+        "recursively",
+        "arr",
+        "array",
+        "util",
+        "utils",
+        "utility",
+        "javascript",
+        "node.js",
+        "flat",
+        "flatten"
+      ],
+      "_id": "arr-flatten@0.2.1",
+      "_shasum": "423f2c915521ac955ce098d7401333135451ed95",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "423f2c915521ac955ce098d7401333135451ed95",
+        "tarball": "https://registry.npmjs.org/arr-flatten/-/arr-flatten-0.2.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "arr-flatten",
+      "description": "Recursively flatten an array or arrays. This is the fastest implementation of array flatten.",
+      "version": "1.0.0",
+      "homepage": "https://github.com/jonschlinkert/arr-flatten",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/arr-flatten.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/arr-flatten/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/arr-flatten/blob/master/LICENSE"
+      },
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha -R spec",
+        "benchmarks": "node benchmark"
+      },
+      "devDependencies": {
+        "array-flatten": "^1.0.2",
+        "array-slice": "^0.2.2",
+        "benchmarked": "^0.1.3",
+        "chalk": "^0.5.1",
+        "glob": "^4.3.5",
+        "kind-of": "^1.0.0"
+      },
+      "keywords": [
+        "arr",
+        "array",
+        "elements",
+        "flat",
+        "flatten",
+        "nested",
+        "recurse",
+        "recursive",
+        "recursively"
+      ],
+      "gitHead": "1597ea90072a2eaff8e523523e0105cac0bf195c",
+      "_id": "arr-flatten@1.0.0",
+      "_shasum": "12ca7d96960ceb506a2f63b9e45a1b7500359746",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "12ca7d96960ceb506a2f63b9e45a1b7500359746",
+        "tarball": "https://registry.npmjs.org/arr-flatten/-/arr-flatten-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "arr-flatten",
+      "description": "Recursively flatten an array or arrays. This is the fastest implementation of array flatten.",
+      "version": "1.0.1",
+      "homepage": "https://github.com/jonschlinkert/arr-flatten",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/arr-flatten.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/arr-flatten/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/arr-flatten/blob/master/LICENSE"
+      },
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha",
+        "benchmarks": "node benchmark"
+      },
+      "devDependencies": {
+        "array-flatten": "^1.0.2",
+        "array-slice": "^0.2.2",
+        "benchmarked": "^0.1.3",
+        "chalk": "^0.5.1",
+        "glob": "^4.3.5",
+        "kind-of": "^1.0.0"
+      },
+      "keywords": [
+        "arr",
+        "array",
+        "elements",
+        "flat",
+        "flatten",
+        "nested",
+        "recurse",
+        "recursive",
+        "recursively"
+      ],
+      "gitHead": "7b3706eaa0093d8f5ba65af8ed590b6fcb3fe7cf",
+      "_id": "arr-flatten@1.0.1",
+      "_shasum": "e5ffe54d45e19f32f216e91eb99c8ce892bb604b",
+      "_from": ".",
+      "_npmVersion": "2.5.1",
+      "_nodeVersion": "0.12.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "e5ffe54d45e19f32f216e91eb99c8ce892bb604b",
+        "tarball": "https://registry.npmjs.org/arr-flatten/-/arr-flatten-1.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "arr-flatten",
+      "description": "Recursively flatten an array or arrays.",
+      "version": "1.0.2",
+      "homepage": "https://github.com/jonschlinkert/arr-flatten",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/arr-flatten.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/arr-flatten/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "ansi-bold": "^0.1.1",
+        "array-flatten": "^2.1.1",
+        "array-slice": "^1.0.0",
+        "benchmarked": "^1.0.0",
+        "compute-flatten": "^1.0.0",
+        "flatit": "^1.1.1",
+        "flatten": "^1.0.2",
+        "flatten-array": "^1.0.0",
+        "glob": "^7.1.1",
+        "gulp-format-md": "^0.1.12",
+        "just-flatten-it": "^1.1.23",
+        "m_flattened": "^1.0.1",
+        "utils-flatten": "^1.0.0",
+        "write": "^0.3.3"
+      },
+      "keywords": [
+        "arr",
+        "array",
+        "elements",
+        "flat",
+        "flatten",
+        "nested",
+        "recurse",
+        "recursive",
+        "recursively"
+      ],
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "dependencies": {},
+      "gitHead": "9a3bc015a6989496202060dde74785d848e2d2f4",
+      "_id": "arr-flatten@1.0.2",
+      "_shasum": "1ec1e63439c54f67d6f72bb4299c3d4f73b2d996",
+      "_from": ".",
+      "_npmVersion": "4.2.0",
+      "_nodeVersion": "7.7.3",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "1ec1e63439c54f67d6f72bb4299c3d4f73b2d996",
+        "tarball": "https://registry.npmjs.org/arr-flatten/-/arr-flatten-1.0.2.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/arr-flatten-1.0.2.tgz_1492169295102_0.21915249503217638"
+      },
+      "directories": {}
+    },
+    "1.0.3": {
+      "name": "arr-flatten",
+      "description": "Recursively flatten an array or arrays.",
+      "version": "1.0.3",
+      "homepage": "https://github.com/jonschlinkert/arr-flatten",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/arr-flatten.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/arr-flatten/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "ansi-bold": "^0.1.1",
+        "array-flatten": "^2.1.1",
+        "array-slice": "^1.0.0",
+        "benchmarked": "^1.0.0",
+        "compute-flatten": "^1.0.0",
+        "flatit": "^1.1.1",
+        "flatten": "^1.0.2",
+        "flatten-array": "^1.0.0",
+        "glob": "^7.1.1",
+        "gulp-format-md": "^0.1.12",
+        "just-flatten-it": "^1.1.23",
+        "lodash.flattendeep": "^4.4.0",
+        "m_flattened": "^1.0.1",
+        "mocha": "^3.2.0",
+        "utils-flatten": "^1.0.0",
+        "write": "^0.3.3"
+      },
+      "keywords": [
+        "arr",
+        "array",
+        "elements",
+        "flat",
+        "flatten",
+        "nested",
+        "recurse",
+        "recursive",
+        "recursively"
+      ],
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "arr-union",
+            "array-unique",
+            "array-each",
+            "arr-filter"
+          ]
+        },
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "9a3bc015a6989496202060dde74785d848e2d2f4",
+      "_id": "arr-flatten@1.0.3",
+      "_shasum": "a274ed85ac08849b6bd7847c4580745dc51adfb1",
+      "_from": ".",
+      "_npmVersion": "4.2.0",
+      "_nodeVersion": "7.7.3",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "a274ed85ac08849b6bd7847c4580745dc51adfb1",
+        "tarball": "https://registry.npmjs.org/arr-flatten/-/arr-flatten-1.0.3.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/arr-flatten-1.0.3.tgz_1492401133892_0.4026696104556322"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "arr-flatten",
+      "description": "Recursively flatten an array or arrays.",
+      "version": "1.1.0",
+      "homepage": "https://github.com/jonschlinkert/arr-flatten",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "name": "Luke Edwards",
+          "url": "https://lukeed.com"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/arr-flatten.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/arr-flatten/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "ansi-bold": "^0.1.1",
+        "array-flatten": "^2.1.1",
+        "array-slice": "^1.0.0",
+        "benchmarked": "^1.0.0",
+        "compute-flatten": "^1.0.0",
+        "flatit": "^1.1.1",
+        "flatten": "^1.0.2",
+        "flatten-array": "^1.0.0",
+        "glob": "^7.1.1",
+        "gulp-format-md": "^0.1.12",
+        "just-flatten-it": "^1.1.23",
+        "lodash.flattendeep": "^4.4.0",
+        "m_flattened": "^1.0.1",
+        "mocha": "^3.2.0",
+        "utils-flatten": "^1.0.0",
+        "write": "^0.3.3"
+      },
+      "keywords": [
+        "arr",
+        "array",
+        "elements",
+        "flat",
+        "flatten",
+        "nested",
+        "recurse",
+        "recursive",
+        "recursively"
+      ],
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "arr-filter",
+            "arr-union",
+            "array-each",
+            "array-unique"
+          ]
+        },
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "76a1ae28b03fdb1cbe5d49fa521bc4807b9f94d3",
+      "_id": "arr-flatten@1.1.0",
+      "_npmVersion": "5.0.4",
+      "_nodeVersion": "7.7.3",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "integrity": "sha512-L3hKV5R/p5o81R7O02IGnwpDmkp6E982XhtbuwSe3O4qOtMMMtodicASA1Cny2U+aCXcNpml+m4dPsvsJ3jatg==",
+        "shasum": "36048bbff4e7b47e136644316c99669ea5ae91f1",
+        "tarball": "https://registry.npmjs.org/arr-flatten/-/arr-flatten-1.1.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/arr-flatten-1.1.0.tgz_1499280630530_0.4138362631201744"
+      },
+      "directories": {}
+    }
+  },
+  "readme": "# arr-flatten [![NPM version](https://img.shields.io/npm/v/arr-flatten.svg?style=flat)](https://www.npmjs.com/package/arr-flatten) [![NPM monthly downloads](https://img.shields.io/npm/dm/arr-flatten.svg?style=flat)](https://npmjs.org/package/arr-flatten) [![NPM total downloads](https://img.shields.io/npm/dt/arr-flatten.svg?style=flat)](https://npmjs.org/package/arr-flatten) [![Linux Build Status](https://img.shields.io/travis/jonschlinkert/arr-flatten.svg?style=flat&label=Travis)](https://travis-ci.org/jonschlinkert/arr-flatten) [![Windows Build Status](https://img.shields.io/appveyor/ci/jonschlinkert/arr-flatten.svg?style=flat&label=AppVeyor)](https://ci.appveyor.com/project/jonschlinkert/arr-flatten)\n\n> Recursively flatten an array or arrays.\n\n## Install\n\nInstall with [npm](https://www.npmjs.com/):\n\n```sh\n$ npm install --save arr-flatten\n```\n\n## Install\n\nInstall with [bower](https://bower.io/)\n\n```sh\n$ bower install arr-flatten --save\n```\n\n## Usage\n\n```js\nvar flatten = require('arr-flatten');\n\nflatten(['a', ['b', ['c']], 'd', ['e']]);\n//=> ['a', 'b', 'c', 'd', 'e']\n```\n\n## Why another flatten utility?\n\nI wanted the fastest implementation I could find, with implementation choices that should work for 95% of use cases, but no cruft to cover the other 5%.\n\n## About\n\n### Related projects\n\n* [arr-filter](https://www.npmjs.com/package/arr-filter): Faster alternative to javascript's native filter method. | [homepage](https://github.com/jonschlinkert/arr-filter \"Faster alternative to javascript's native filter method.\")\n* [arr-union](https://www.npmjs.com/package/arr-union): Combines a list of arrays, returning a single array with unique values, using strict equality… [more](https://github.com/jonschlinkert/arr-union) | [homepage](https://github.com/jonschlinkert/arr-union \"Combines a list of arrays, returning a single array with unique values, using strict equality for comparisons.\")\n* [array-each](https://www.npmjs.com/package/array-each): Loop over each item in an array and call the given function on every element. | [homepage](https://github.com/jonschlinkert/array-each \"Loop over each item in an array and call the given function on every element.\")\n* [array-unique](https://www.npmjs.com/package/array-unique): Remove duplicate values from an array. Fastest ES5 implementation. | [homepage](https://github.com/jonschlinkert/array-unique \"Remove duplicate values from an array. Fastest ES5 implementation.\")\n\n### Contributing\n\nPull requests and stars are always welcome. For bugs and feature requests, [please create an issue](../../issues/new).\n\n### Contributors\n\n| **Commits** | **Contributor** | \n| --- | --- |\n| 20 | [jonschlinkert](https://github.com/jonschlinkert) |\n| 1 | [lukeed](https://github.com/lukeed) |\n\n### Building docs\n\n_(This project's readme.md is generated by [verb](https://github.com/verbose/verb-generate-readme), please don't edit the readme directly. Any changes to the readme must be made in the [.verb.md](.verb.md) readme template.)_\n\nTo generate the readme, run the following command:\n\n```sh\n$ npm install -g verbose/verb#dev verb-generate-readme && verb\n```\n\n### Running tests\n\nRunning and reviewing unit tests is a great way to get familiarized with a library and its API. You can install dependencies and run tests with the following command:\n\n```sh\n$ npm install && npm test\n```\n\n### Author\n\n**Jon Schlinkert**\n\n* [github/jonschlinkert](https://github.com/jonschlinkert)\n* [twitter/jonschlinkert](https://twitter.com/jonschlinkert)\n\n### License\n\nCopyright © 2017, [Jon Schlinkert](https://github.com/jonschlinkert).\nReleased under the [MIT License](LICENSE).\n\n***\n\n_This file was generated by [verb-generate-readme](https://github.com/verbose/verb-generate-readme), v0.6.0, on July 05, 2017._",
+  "maintainers": [
+    {
+      "name": "jonschlinkert",
+      "email": "github@sellside.com"
+    }
+  ],
+  "time": {
+    "modified": "2017-09-05T08:41:18.945Z",
+    "created": "2014-09-26T01:43:20.056Z",
+    "0.1.0": "2014-09-26T01:43:20.056Z",
+    "0.2.0": "2014-10-28T18:48:59.940Z",
+    "0.2.1": "2014-11-09T10:07:21.410Z",
+    "1.0.0": "2015-01-20T03:35:54.060Z",
+    "1.0.1": "2015-03-11T04:28:29.728Z",
+    "1.0.2": "2017-04-14T11:28:16.965Z",
+    "1.0.3": "2017-04-17T03:52:15.743Z",
+    "1.1.0": "2017-07-05T18:50:31.592Z"
+  },
+  "homepage": "https://github.com/jonschlinkert/arr-flatten",
+  "keywords": [
+    "arr",
+    "array",
+    "elements",
+    "flat",
+    "flatten",
+    "nested",
+    "recurse",
+    "recursive",
+    "recursively"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonschlinkert/arr-flatten.git"
+  },
+  "author": {
+    "name": "Jon Schlinkert",
+    "url": "https://github.com/jonschlinkert"
+  },
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/arr-flatten/issues"
+  },
+  "readmeFilename": "README.md",
+  "license": "MIT",
+  "users": {
+    "hugov": true,
+    "hville": true,
+    "rocket0191": true,
+    "chrisyipw": true
+  },
+  "contributors": [
+    {
+      "name": "Jon Schlinkert",
+      "url": "http://twitter.com/jonschlinkert"
+    },
+    {
+      "name": "Luke Edwards",
+      "url": "https://lukeed.com"
+    }
+  ],
+  "_attachments": {}
+}

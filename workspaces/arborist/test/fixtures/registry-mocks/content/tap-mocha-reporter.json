@@ -1,0 +1,2782 @@
+{
+  "_id": "tap-mocha-reporter",
+  "_rev": "43-221a3dd4f1c395cf537bcf21394112e6",
+  "name": "tap-mocha-reporter",
+  "description": "Format a TAP stream using Mocha's set of reporters",
+  "dist-tags": {
+    "latest": "5.0.1",
+    "new-yaml": "4.0.0"
+  },
+  "versions": {
+    "0.0.3": {
+      "name": "tap-mocha-reporter",
+      "version": "0.0.3",
+      "description": "Format a TAP stream using Mocha's set of reporters",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/tap-mocha-reporter.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/tap-mocha-reporter/issues"
+      },
+      "homepage": "https://github.com/isaacs/tap-mocha-reporter",
+      "dependencies": {
+        "exit-code": "^1.0.1",
+        "supports-color": "^1.3.1",
+        "tap-parser": "^1.0.4"
+      },
+      "devDependencies": {
+        "tap": "^1.0.0-beta"
+      },
+      "bin": {
+        "tap-mocha-reporter": "index.js"
+      },
+      "gitHead": "b10b05b9742456f1da523831c2f1745eec88f5a2",
+      "_id": "tap-mocha-reporter@0.0.3",
+      "_shasum": "2a1a46a6c1dedf5cb8001d5cd6820632fd236e6d",
+      "_from": ".",
+      "_npmVersion": "2.8.4",
+      "_nodeVersion": "1.4.2",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "isaacs@npmjs.com"
+      },
+      "dist": {
+        "shasum": "2a1a46a6c1dedf5cb8001d5cd6820632fd236e6d",
+        "tarball": "https://registry.npmjs.org/tap-mocha-reporter/-/tap-mocha-reporter-0.0.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "isaacs@npmjs.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.4": {
+      "name": "tap-mocha-reporter",
+      "version": "0.0.4",
+      "description": "Format a TAP stream using Mocha's set of reporters",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/tap-mocha-reporter.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/tap-mocha-reporter/issues"
+      },
+      "homepage": "https://github.com/isaacs/tap-mocha-reporter",
+      "dependencies": {
+        "debug": "^2.1.3",
+        "diff": "^1.3.2",
+        "escape-string-regexp": "^1.0.3",
+        "exit-code": "^1.0.1",
+        "glob": "^5.0.5",
+        "supports-color": "^1.3.1",
+        "tap-parser": "^1.0.4"
+      },
+      "devDependencies": {
+        "tap": "^1.0.0-beta"
+      },
+      "bin": {
+        "tap-mocha-reporter": "index.js"
+      },
+      "gitHead": "2fb373e949d56490fc1296f2b4b4ac9d36d70d1b",
+      "_id": "tap-mocha-reporter@0.0.4",
+      "_shasum": "7f49d695b0678f3e03ea071594b650ec9335ba2f",
+      "_from": ".",
+      "_npmVersion": "2.8.4",
+      "_nodeVersion": "1.4.2",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "isaacs@npmjs.com"
+      },
+      "dist": {
+        "shasum": "7f49d695b0678f3e03ea071594b650ec9335ba2f",
+        "tarball": "https://registry.npmjs.org/tap-mocha-reporter/-/tap-mocha-reporter-0.0.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "isaacs@npmjs.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.5": {
+      "name": "tap-mocha-reporter",
+      "version": "0.0.5",
+      "description": "Format a TAP stream using Mocha's set of reporters",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/tap-mocha-reporter.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/tap-mocha-reporter/issues"
+      },
+      "homepage": "https://github.com/isaacs/tap-mocha-reporter",
+      "dependencies": {
+        "debug": "^2.1.3",
+        "diff": "^1.3.2",
+        "escape-string-regexp": "^1.0.3",
+        "exit-code": "^1.0.1",
+        "glob": "^5.0.5",
+        "js-yaml": "github:isaacs/js-yaml",
+        "supports-color": "^1.3.1",
+        "tap-parser": "^1.0.4"
+      },
+      "devDependencies": {
+        "tap": "^1.0.0-beta"
+      },
+      "bin": {
+        "tap-mocha-reporter": "index.js"
+      },
+      "gitHead": "c506127dd849291faca1f7d32a4001efed00efb7",
+      "_id": "tap-mocha-reporter@0.0.5",
+      "_shasum": "0db0806aef85862091e36250915201417045389b",
+      "_from": ".",
+      "_npmVersion": "2.8.4",
+      "_nodeVersion": "1.4.2",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "isaacs@npmjs.com"
+      },
+      "dist": {
+        "shasum": "0db0806aef85862091e36250915201417045389b",
+        "tarball": "https://registry.npmjs.org/tap-mocha-reporter/-/tap-mocha-reporter-0.0.5.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "isaacs@npmjs.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.6": {
+      "name": "tap-mocha-reporter",
+      "version": "0.0.6",
+      "description": "Format a TAP stream using Mocha's set of reporters",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/isaacs/tap-mocha-reporter"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/tap-mocha-reporter/issues"
+      },
+      "homepage": "https://github.com/isaacs/tap-mocha-reporter",
+      "dependencies": {
+        "debug": "^2.1.3",
+        "diff": "^1.3.2",
+        "escape-string-regexp": "^1.0.3",
+        "exit-code": "^1.0.1",
+        "glob": "^5.0.5",
+        "js-yaml": "git+https://github.com/isaacs/js-yaml",
+        "supports-color": "^1.3.1",
+        "tap-parser": "^1.0.4"
+      },
+      "devDependencies": {
+        "tap": "^1.0.0-beta"
+      },
+      "bin": {
+        "tap-mocha-reporter": "index.js"
+      },
+      "gitHead": "3c99a2eaf4dfdf5d3211d44a7b2b2cd04791eaee",
+      "_id": "tap-mocha-reporter@0.0.6",
+      "_shasum": "e771cefc7135fbddff9beca13e8a957a953bce6b",
+      "_from": ".",
+      "_npmVersion": "2.7.6",
+      "_nodeVersion": "1.7.1",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "isaacs@npmjs.com"
+      },
+      "dist": {
+        "shasum": "e771cefc7135fbddff9beca13e8a957a953bce6b",
+        "tarball": "https://registry.npmjs.org/tap-mocha-reporter/-/tap-mocha-reporter-0.0.6.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "isaacs@npmjs.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.7": {
+      "name": "tap-mocha-reporter",
+      "version": "0.0.7",
+      "description": "Format a TAP stream using Mocha's set of reporters",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/isaacs/tap-mocha-reporter"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/tap-mocha-reporter/issues"
+      },
+      "homepage": "https://github.com/isaacs/tap-mocha-reporter",
+      "dependencies": {
+        "debug": "^2.1.3",
+        "diff": "^1.3.2",
+        "escape-string-regexp": "^1.0.3",
+        "exit-code": "^1.0.1",
+        "glob": "^5.0.5",
+        "js-yaml": "git+https://github.com/isaacs/js-yaml",
+        "supports-color": "^1.3.1",
+        "tap-parser": "^1.0.4"
+      },
+      "devDependencies": {
+        "tap": "^1.0.0-beta"
+      },
+      "bin": {
+        "tap-mocha-reporter": "index.js"
+      },
+      "gitHead": "8c797812303e849a765645ec300fa49363a23ed3",
+      "_id": "tap-mocha-reporter@0.0.7",
+      "_shasum": "6c81128c753f6f2c042004965cb90b5cd01fdb22",
+      "_from": ".",
+      "_npmVersion": "2.7.6",
+      "_nodeVersion": "1.7.1",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "isaacs@npmjs.com"
+      },
+      "dist": {
+        "shasum": "6c81128c753f6f2c042004965cb90b5cd01fdb22",
+        "tarball": "https://registry.npmjs.org/tap-mocha-reporter/-/tap-mocha-reporter-0.0.7.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "isaacs@npmjs.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.8": {
+      "name": "tap-mocha-reporter",
+      "version": "0.0.8",
+      "description": "Format a TAP stream using Mocha's set of reporters",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/tap-mocha-reporter.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/tap-mocha-reporter/issues"
+      },
+      "homepage": "https://github.com/isaacs/tap-mocha-reporter",
+      "dependencies": {
+        "debug": "^2.1.3",
+        "diff": "^1.3.2",
+        "escape-string-regexp": "^1.0.3",
+        "exit-code": "^1.0.1",
+        "glob": "^5.0.5",
+        "js-yaml": "github:isaacs/js-yaml",
+        "supports-color": "^1.3.1",
+        "tap-parser": "^1.0.4"
+      },
+      "devDependencies": {
+        "tap": "^1.0.0-beta"
+      },
+      "bin": {
+        "tap-mocha-reporter": "index.js"
+      },
+      "gitHead": "09378b408e5ac850ca199572cd6143f6b0b4137a",
+      "_id": "tap-mocha-reporter@0.0.8",
+      "_shasum": "6559c89fda15d7d3383e2117929bbb8c65bc80de",
+      "_from": ".",
+      "_npmVersion": "2.9.1",
+      "_nodeVersion": "2.0.1",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "isaacs@npmjs.com"
+      },
+      "dist": {
+        "shasum": "6559c89fda15d7d3383e2117929bbb8c65bc80de",
+        "tarball": "https://registry.npmjs.org/tap-mocha-reporter/-/tap-mocha-reporter-0.0.8.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "isaacs@npmjs.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.9": {
+      "name": "tap-mocha-reporter",
+      "version": "0.0.9",
+      "description": "Format a TAP stream using Mocha's set of reporters",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/tap-mocha-reporter.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/tap-mocha-reporter/issues"
+      },
+      "homepage": "https://github.com/isaacs/tap-mocha-reporter",
+      "dependencies": {
+        "debug": "^2.1.3",
+        "diff": "^1.3.2",
+        "escape-string-regexp": "^1.0.3",
+        "exit-code": "^1.0.1",
+        "glob": "^5.0.5",
+        "js-yaml": "github:isaacs/js-yaml",
+        "supports-color": "^1.3.1",
+        "tap-parser": "^1.0.4",
+        "readable-stream": "^1.1.13"
+      },
+      "devDependencies": {
+        "tap": "^1.0.0-beta"
+      },
+      "bin": {
+        "tap-mocha-reporter": "index.js"
+      },
+      "optionalDependencies": {
+        "readable-stream": "^1.1.13"
+      },
+      "gitHead": "e8a0b95b39279ecc3afc22a688f3e29745543157",
+      "_id": "tap-mocha-reporter@0.0.9",
+      "_shasum": "b8ad91f46a0e661d6ebb4f0d13a90938aa367689",
+      "_from": ".",
+      "_npmVersion": "2.9.1",
+      "_nodeVersion": "2.0.1",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "isaacs@npmjs.com"
+      },
+      "dist": {
+        "shasum": "b8ad91f46a0e661d6ebb4f0d13a90938aa367689",
+        "tarball": "https://registry.npmjs.org/tap-mocha-reporter/-/tap-mocha-reporter-0.0.9.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "isaacs@npmjs.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.10": {
+      "name": "tap-mocha-reporter",
+      "version": "0.0.10",
+      "description": "Format a TAP stream using Mocha's set of reporters",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/tap-mocha-reporter.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/tap-mocha-reporter/issues"
+      },
+      "homepage": "https://github.com/isaacs/tap-mocha-reporter",
+      "dependencies": {
+        "debug": "^2.1.3",
+        "diff": "^1.3.2",
+        "escape-string-regexp": "^1.0.3",
+        "exit-code": "^1.0.1",
+        "glob": "^5.0.5",
+        "js-yaml": "github:isaacs/js-yaml",
+        "supports-color": "^1.3.1",
+        "tap-parser": "^1.0.4",
+        "readable-stream": "^1.1.13"
+      },
+      "devDependencies": {
+        "tap": "^1.0.0-beta"
+      },
+      "bin": {
+        "tap-mocha-reporter": "index.js"
+      },
+      "optionalDependencies": {
+        "readable-stream": "^1.1.13"
+      },
+      "gitHead": "1cb799abb52e7da408a2da8721f5babc758d81a5",
+      "_id": "tap-mocha-reporter@0.0.10",
+      "_shasum": "feec21eb8988ae0c7ef16e43b099f593b826b409",
+      "_from": ".",
+      "_npmVersion": "2.9.1",
+      "_nodeVersion": "0.8.28",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "isaacs@npmjs.com"
+      },
+      "dist": {
+        "shasum": "feec21eb8988ae0c7ef16e43b099f593b826b409",
+        "tarball": "https://registry.npmjs.org/tap-mocha-reporter/-/tap-mocha-reporter-0.0.10.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "isaacs@npmjs.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.11": {
+      "name": "tap-mocha-reporter",
+      "version": "0.0.11",
+      "description": "Format a TAP stream using Mocha's set of reporters",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/tap-mocha-reporter.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/tap-mocha-reporter/issues"
+      },
+      "homepage": "https://github.com/isaacs/tap-mocha-reporter",
+      "dependencies": {
+        "debug": "^2.1.3",
+        "diff": "^1.3.2",
+        "escape-string-regexp": "^1.0.3",
+        "exit-code": "^1.0.1",
+        "glob": "^5.0.5",
+        "js-yaml": "github:isaacs/js-yaml",
+        "supports-color": "^1.3.1",
+        "tap-parser": "^1.0.4",
+        "readable-stream": "^1.1.13"
+      },
+      "devDependencies": {
+        "tap": "^1.0.0-beta"
+      },
+      "bin": {
+        "tap-mocha-reporter": "index.js"
+      },
+      "optionalDependencies": {
+        "readable-stream": "^1.1.13"
+      },
+      "gitHead": "ce668befda2b9401c2544734b2afeb78e422f9a5",
+      "_id": "tap-mocha-reporter@0.0.11",
+      "_shasum": "06135fdfcdada025dd8d10398c30228fa8beda20",
+      "_from": ".",
+      "_npmVersion": "2.10.0",
+      "_nodeVersion": "2.0.1",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "isaacs@npmjs.com"
+      },
+      "dist": {
+        "shasum": "06135fdfcdada025dd8d10398c30228fa8beda20",
+        "tarball": "https://registry.npmjs.org/tap-mocha-reporter/-/tap-mocha-reporter-0.0.11.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "isaacs@npmjs.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.12": {
+      "name": "tap-mocha-reporter",
+      "version": "0.0.12",
+      "description": "Format a TAP stream using Mocha's set of reporters",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/tap-mocha-reporter.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/tap-mocha-reporter/issues"
+      },
+      "homepage": "https://github.com/isaacs/tap-mocha-reporter",
+      "dependencies": {
+        "debug": "^2.1.3",
+        "diff": "^1.3.2",
+        "escape-string-regexp": "^1.0.3",
+        "exit-code": "^1.0.1",
+        "glob": "^5.0.5",
+        "js-yaml": "^3.3.1",
+        "supports-color": "^1.3.1",
+        "tap-parser": "^1.0.4",
+        "readable-stream": "^1.1.13"
+      },
+      "devDependencies": {
+        "tap": "^1.0.0-beta"
+      },
+      "bin": {
+        "tap-mocha-reporter": "index.js"
+      },
+      "optionalDependencies": {
+        "readable-stream": "^1.1.13"
+      },
+      "gitHead": "9486a25339f8d299352b83d84e4a99511536d71f",
+      "_id": "tap-mocha-reporter@0.0.12",
+      "_shasum": "beb1ef5853cf70a0fe9a778cef90b7ac668a6fcb",
+      "_from": ".",
+      "_npmVersion": "2.10.0",
+      "_nodeVersion": "2.0.1",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "isaacs@npmjs.com"
+      },
+      "dist": {
+        "shasum": "beb1ef5853cf70a0fe9a778cef90b7ac668a6fcb",
+        "tarball": "https://registry.npmjs.org/tap-mocha-reporter/-/tap-mocha-reporter-0.0.12.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "isaacs@npmjs.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.13": {
+      "name": "tap-mocha-reporter",
+      "version": "0.0.13",
+      "description": "Format a TAP stream using Mocha's set of reporters",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/tap-mocha-reporter.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/tap-mocha-reporter/issues"
+      },
+      "homepage": "https://github.com/isaacs/tap-mocha-reporter",
+      "dependencies": {
+        "debug": "^2.1.3",
+        "diff": "^1.3.2",
+        "escape-string-regexp": "^1.0.3",
+        "glob": "^5.0.5",
+        "js-yaml": "^3.3.1",
+        "supports-color": "^1.3.1",
+        "tap-parser": "^1.0.4",
+        "readable-stream": "^1.1.13"
+      },
+      "devDependencies": {
+        "tap": "^1.0.0-beta"
+      },
+      "bin": {
+        "tap-mocha-reporter": "index.js"
+      },
+      "optionalDependencies": {
+        "readable-stream": "^1.1.13"
+      },
+      "gitHead": "f6e9344e5a18a26cd658a31cf5659ccd64206441",
+      "_id": "tap-mocha-reporter@0.0.13",
+      "_shasum": "e06f5afd2a401ca959efe335ca0b1526acee8681",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "2.0.1",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "isaacs@npmjs.com"
+      },
+      "dist": {
+        "shasum": "e06f5afd2a401ca959efe335ca0b1526acee8681",
+        "tarball": "https://registry.npmjs.org/tap-mocha-reporter/-/tap-mocha-reporter-0.0.13.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "isaacs@npmjs.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.14": {
+      "name": "tap-mocha-reporter",
+      "version": "0.0.14",
+      "description": "Format a TAP stream using Mocha's set of reporters",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/tap-mocha-reporter.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/tap-mocha-reporter/issues"
+      },
+      "homepage": "https://github.com/isaacs/tap-mocha-reporter",
+      "dependencies": {
+        "debug": "^2.1.3",
+        "diff": "^1.3.2",
+        "escape-string-regexp": "^1.0.3",
+        "glob": "^5.0.5",
+        "js-yaml": "^3.3.1",
+        "supports-color": "^1.3.1",
+        "tap-parser": "^1.0.4",
+        "readable-stream": "^1.1.13"
+      },
+      "devDependencies": {
+        "tap": "^1.0.0-beta"
+      },
+      "bin": {
+        "tap-mocha-reporter": "index.js"
+      },
+      "optionalDependencies": {
+        "readable-stream": "^1.1.13"
+      },
+      "gitHead": "dec5d36a3b38e1327087bd037d9b9ff278e589f7",
+      "_id": "tap-mocha-reporter@0.0.14",
+      "_shasum": "9b633e0ca9f63d30678c69e24ad93e9df4066a8c",
+      "_from": ".",
+      "_npmVersion": "2.11.0",
+      "_nodeVersion": "2.2.1",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "isaacs@npmjs.com"
+      },
+      "dist": {
+        "shasum": "9b633e0ca9f63d30678c69e24ad93e9df4066a8c",
+        "tarball": "https://registry.npmjs.org/tap-mocha-reporter/-/tap-mocha-reporter-0.0.14.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "isaacs@npmjs.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.15": {
+      "name": "tap-mocha-reporter",
+      "version": "0.0.15",
+      "description": "Format a TAP stream using Mocha's set of reporters",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/tap-mocha-reporter.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/tap-mocha-reporter/issues"
+      },
+      "homepage": "https://github.com/isaacs/tap-mocha-reporter",
+      "dependencies": {
+        "debug": "^2.1.3",
+        "diff": "^1.3.2",
+        "escape-string-regexp": "^1.0.3",
+        "glob": "^5.0.5",
+        "js-yaml": "^3.3.1",
+        "supports-color": "^1.3.1",
+        "tap-parser": "^1.0.4",
+        "readable-stream": "^1.1.13"
+      },
+      "devDependencies": {
+        "tap": "^1.0.0-beta"
+      },
+      "bin": {
+        "tap-mocha-reporter": "index.js"
+      },
+      "optionalDependencies": {
+        "readable-stream": "^1.1.13"
+      },
+      "gitHead": "dfdb3934b44bb8139f3a5ff0d3c3b4fa527e3e14",
+      "_id": "tap-mocha-reporter@0.0.15",
+      "_shasum": "9700b019a48f48a398fa3bec02ec7c7b5f475c9d",
+      "_from": ".",
+      "_npmVersion": "2.12.0",
+      "_nodeVersion": "2.2.1",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "isaacs@npmjs.com"
+      },
+      "dist": {
+        "shasum": "9700b019a48f48a398fa3bec02ec7c7b5f475c9d",
+        "tarball": "https://registry.npmjs.org/tap-mocha-reporter/-/tap-mocha-reporter-0.0.15.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "isaacs@npmjs.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.16": {
+      "name": "tap-mocha-reporter",
+      "version": "0.0.16",
+      "description": "Format a TAP stream using Mocha's set of reporters",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/tap-mocha-reporter.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/tap-mocha-reporter/issues"
+      },
+      "homepage": "https://github.com/isaacs/tap-mocha-reporter",
+      "dependencies": {
+        "debug": "^2.1.3",
+        "diff": "^1.3.2",
+        "escape-string-regexp": "^1.0.3",
+        "glob": "^5.0.5",
+        "js-yaml": "^3.3.1",
+        "supports-color": "^1.3.1",
+        "tap-parser": "^1.0.4",
+        "unicode-length": "^1.0.0",
+        "readable-stream": "^1.1.13"
+      },
+      "devDependencies": {
+        "tap": "^1.0.0-beta"
+      },
+      "bin": {
+        "tap-mocha-reporter": "index.js"
+      },
+      "optionalDependencies": {
+        "readable-stream": "^1.1.13"
+      },
+      "gitHead": "bb33baebe0f000b6383696d995d2cd4f0000433a",
+      "_id": "tap-mocha-reporter@0.0.16",
+      "_shasum": "703ec330d0f01cce9f3e88c0c183a7740774f17b",
+      "_from": ".",
+      "_npmVersion": "3.0.0",
+      "_nodeVersion": "2.2.1",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "isaacs@npmjs.com"
+      },
+      "dist": {
+        "shasum": "703ec330d0f01cce9f3e88c0c183a7740774f17b",
+        "tarball": "https://registry.npmjs.org/tap-mocha-reporter/-/tap-mocha-reporter-0.0.16.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "isaacs@npmjs.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.17": {
+      "name": "tap-mocha-reporter",
+      "version": "0.0.17",
+      "description": "Format a TAP stream using Mocha's set of reporters",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/tap-mocha-reporter.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/tap-mocha-reporter/issues"
+      },
+      "homepage": "https://github.com/isaacs/tap-mocha-reporter",
+      "dependencies": {
+        "debug": "^2.1.3",
+        "diff": "^1.3.2",
+        "escape-string-regexp": "^1.0.3",
+        "glob": "^5.0.5",
+        "js-yaml": "^3.3.1",
+        "supports-color": "^1.3.1",
+        "tap-parser": "^1.0.4",
+        "unicode-length": "^1.0.0",
+        "readable-stream": "^1.1.13"
+      },
+      "devDependencies": {
+        "tap": "^1.0.0-beta"
+      },
+      "bin": {
+        "tap-mocha-reporter": "index.js"
+      },
+      "optionalDependencies": {
+        "readable-stream": "^1.1.13"
+      },
+      "gitHead": "9f21528f4fcb97af8641339d3fafa5f045ffc845",
+      "_id": "tap-mocha-reporter@0.0.17",
+      "_shasum": "850c2830b6a5272648456aa01bf044f30e2b7ddc",
+      "_from": ".",
+      "_npmVersion": "3.2.2",
+      "_nodeVersion": "2.2.1",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "isaacs@npmjs.com"
+      },
+      "dist": {
+        "shasum": "850c2830b6a5272648456aa01bf044f30e2b7ddc",
+        "tarball": "https://registry.npmjs.org/tap-mocha-reporter/-/tap-mocha-reporter-0.0.17.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "isaacs@npmjs.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.18": {
+      "name": "tap-mocha-reporter",
+      "version": "0.0.18",
+      "description": "Format a TAP stream using Mocha's set of reporters",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/tap-mocha-reporter.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/tap-mocha-reporter/issues"
+      },
+      "homepage": "https://github.com/isaacs/tap-mocha-reporter",
+      "dependencies": {
+        "debug": "^2.1.3",
+        "diff": "^1.3.2",
+        "escape-string-regexp": "^1.0.3",
+        "glob": "^5.0.5",
+        "js-yaml": "^3.3.1",
+        "supports-color": "^1.3.1",
+        "tap-parser": "^1.0.4",
+        "unicode-length": "^1.0.0",
+        "readable-stream": "^1.1.13"
+      },
+      "devDependencies": {
+        "tap": "^1.0.0-beta"
+      },
+      "bin": {
+        "tap-mocha-reporter": "index.js"
+      },
+      "optionalDependencies": {
+        "readable-stream": "^1.1.13"
+      },
+      "gitHead": "ca79c64817cbfeb0b088fd1a718cd30577ac9f98",
+      "_id": "tap-mocha-reporter@0.0.18",
+      "_shasum": "adeb8cf8bc515bb588a7cf5f79bd338711affb46",
+      "_from": ".",
+      "_npmVersion": "3.3.1",
+      "_nodeVersion": "2.5.0",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "isaacs@npmjs.com"
+      },
+      "dist": {
+        "shasum": "adeb8cf8bc515bb588a7cf5f79bd338711affb46",
+        "tarball": "https://registry.npmjs.org/tap-mocha-reporter/-/tap-mocha-reporter-0.0.18.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "isaacs@npmjs.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.19": {
+      "name": "tap-mocha-reporter",
+      "version": "0.0.19",
+      "description": "Format a TAP stream using Mocha's set of reporters",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/tap-mocha-reporter.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/tap-mocha-reporter/issues"
+      },
+      "homepage": "https://github.com/isaacs/tap-mocha-reporter",
+      "dependencies": {
+        "debug": "^2.1.3",
+        "diff": "^1.3.2",
+        "escape-string-regexp": "^1.0.3",
+        "glob": "^5.0.5",
+        "js-yaml": "^3.3.1",
+        "supports-color": "^1.3.1",
+        "tap-parser": "^1.0.4",
+        "unicode-length": "^1.0.0",
+        "readable-stream": "^1.1.13"
+      },
+      "devDependencies": {
+        "tap": "^1.0.0-beta"
+      },
+      "bin": {
+        "tap-mocha-reporter": "index.js"
+      },
+      "optionalDependencies": {
+        "readable-stream": "^1.1.13"
+      },
+      "gitHead": "e8d1f1f81f654f449e611683fc8f78eb3e9c9e76",
+      "_id": "tap-mocha-reporter@0.0.19",
+      "_shasum": "17a1a729e6c4c48b13d8ada4f1c344c67687478e",
+      "_from": ".",
+      "_npmVersion": "3.3.1",
+      "_nodeVersion": "2.5.0",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "isaacs@npmjs.com"
+      },
+      "dist": {
+        "shasum": "17a1a729e6c4c48b13d8ada4f1c344c67687478e",
+        "tarball": "https://registry.npmjs.org/tap-mocha-reporter/-/tap-mocha-reporter-0.0.19.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "isaacs@npmjs.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.20": {
+      "name": "tap-mocha-reporter",
+      "version": "0.0.20",
+      "description": "Format a TAP stream using Mocha's set of reporters",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/tap-mocha-reporter.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/tap-mocha-reporter/issues"
+      },
+      "homepage": "https://github.com/isaacs/tap-mocha-reporter",
+      "dependencies": {
+        "debug": "^2.1.3",
+        "diff": "^1.3.2",
+        "escape-string-regexp": "^1.0.3",
+        "glob": "^5.0.5",
+        "js-yaml": "^3.3.1",
+        "supports-color": "^1.3.1",
+        "tap-parser": "^1.0.4",
+        "unicode-length": "^1.0.0",
+        "readable-stream": "^1.1.13"
+      },
+      "devDependencies": {
+        "tap": "^1.0.0-beta"
+      },
+      "bin": {
+        "tap-mocha-reporter": "index.js"
+      },
+      "optionalDependencies": {
+        "readable-stream": "^1.1.13"
+      },
+      "gitHead": "312db1c6568b170810a77d0b97391c62c44ff1c0",
+      "_id": "tap-mocha-reporter@0.0.20",
+      "_shasum": "46115b31cf9d246be63dd0bf9a55354005ed47ce",
+      "_from": ".",
+      "_npmVersion": "3.3.1",
+      "_nodeVersion": "2.5.0",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "isaacs@npmjs.com"
+      },
+      "dist": {
+        "shasum": "46115b31cf9d246be63dd0bf9a55354005ed47ce",
+        "tarball": "https://registry.npmjs.org/tap-mocha-reporter/-/tap-mocha-reporter-0.0.20.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "isaacs@npmjs.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.21": {
+      "name": "tap-mocha-reporter",
+      "version": "0.0.21",
+      "description": "Format a TAP stream using Mocha's set of reporters",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/tap-mocha-reporter.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/tap-mocha-reporter/issues"
+      },
+      "homepage": "https://github.com/isaacs/tap-mocha-reporter",
+      "dependencies": {
+        "debug": "^2.1.3",
+        "diff": "^1.3.2",
+        "escape-string-regexp": "^1.0.3",
+        "glob": "^5.0.5",
+        "js-yaml": "^3.3.1",
+        "supports-color": "^1.3.1",
+        "tap-parser": "^1.0.4",
+        "unicode-length": "^1.0.0",
+        "readable-stream": "^1.1.13"
+      },
+      "devDependencies": {
+        "tap": "^1.0.0-beta"
+      },
+      "bin": {
+        "tap-mocha-reporter": "index.js"
+      },
+      "optionalDependencies": {
+        "readable-stream": "^1.1.13"
+      },
+      "gitHead": "634a7ee64de9450afa06e78990d5e8b87179d67c",
+      "_id": "tap-mocha-reporter@0.0.21",
+      "_shasum": "6a3781addedc1356e792246ae3b18f6690a8178c",
+      "_from": ".",
+      "_npmVersion": "3.3.2",
+      "_nodeVersion": "4.0.0",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "isaacs@npmjs.com"
+      },
+      "dist": {
+        "shasum": "6a3781addedc1356e792246ae3b18f6690a8178c",
+        "tarball": "https://registry.npmjs.org/tap-mocha-reporter/-/tap-mocha-reporter-0.0.21.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "isaacs@npmjs.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.22": {
+      "name": "tap-mocha-reporter",
+      "version": "0.0.22",
+      "description": "Format a TAP stream using Mocha's set of reporters",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/tap-mocha-reporter.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/tap-mocha-reporter/issues"
+      },
+      "homepage": "https://github.com/isaacs/tap-mocha-reporter",
+      "dependencies": {
+        "debug": "^2.1.3",
+        "diff": "^1.3.2",
+        "escape-string-regexp": "^1.0.3",
+        "glob": "^6.0.1",
+        "js-yaml": "^3.3.1",
+        "supports-color": "^1.3.1",
+        "tap-parser": "^1.0.4",
+        "unicode-length": "^1.0.0",
+        "readable-stream": "^1.1.13"
+      },
+      "devDependencies": {
+        "tap": "^1.0.0-beta"
+      },
+      "bin": {
+        "tap-mocha-reporter": "index.js"
+      },
+      "optionalDependencies": {
+        "readable-stream": "^1.1.13"
+      },
+      "gitHead": "dc7bd9ecf364f50f4cd358284c5bd591388d10e5",
+      "_id": "tap-mocha-reporter@0.0.22",
+      "_shasum": "ed199735030e2ee531669d4706e6a17bae268ca1",
+      "_from": ".",
+      "_npmVersion": "3.3.2",
+      "_nodeVersion": "4.0.0",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "dist": {
+        "shasum": "ed199735030e2ee531669d4706e6a17bae268ca1",
+        "tarball": "https://registry.npmjs.org/tap-mocha-reporter/-/tap-mocha-reporter-0.0.22.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "isaacs@npmjs.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.23": {
+      "name": "tap-mocha-reporter",
+      "version": "0.0.23",
+      "description": "Format a TAP stream using Mocha's set of reporters",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/tap-mocha-reporter.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/tap-mocha-reporter/issues"
+      },
+      "homepage": "https://github.com/isaacs/tap-mocha-reporter",
+      "dependencies": {
+        "debug": "^2.1.3",
+        "diff": "^1.3.2",
+        "escape-string-regexp": "^1.0.3",
+        "glob": "^6.0.1",
+        "js-yaml": "^3.3.1",
+        "supports-color": "^1.3.1",
+        "tap-parser": "^1.0.4",
+        "unicode-length": "^1.0.0",
+        "readable-stream": "^1.1.13"
+      },
+      "devDependencies": {
+        "tap": "^1.0.0-beta"
+      },
+      "bin": {
+        "tap-mocha-reporter": "index.js"
+      },
+      "optionalDependencies": {
+        "readable-stream": "^1.1.13"
+      },
+      "gitHead": "776d392559e2cc679fa63a6842ef2e0c59462c2b",
+      "_id": "tap-mocha-reporter@0.0.23",
+      "_shasum": "d1b3c2ba6e3ec2c0f2ae80b159217bbc3df6c801",
+      "_from": ".",
+      "_npmVersion": "2.14.15",
+      "_nodeVersion": "4.0.0",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "dist": {
+        "shasum": "d1b3c2ba6e3ec2c0f2ae80b159217bbc3df6c801",
+        "tarball": "https://registry.npmjs.org/tap-mocha-reporter/-/tap-mocha-reporter-0.0.23.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "isaacs@npmjs.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.24": {
+      "name": "tap-mocha-reporter",
+      "version": "0.0.24",
+      "description": "Format a TAP stream using Mocha's set of reporters",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/tap-mocha-reporter.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/tap-mocha-reporter/issues"
+      },
+      "homepage": "https://github.com/isaacs/tap-mocha-reporter",
+      "dependencies": {
+        "debug": "^2.1.3",
+        "diff": "^1.3.2",
+        "escape-string-regexp": "^1.0.3",
+        "glob": "^6.0.1",
+        "js-yaml": "^3.3.1",
+        "supports-color": "^1.3.1",
+        "tap-parser": "^1.0.4",
+        "unicode-length": "^1.0.0",
+        "readable-stream": "^1.1.13"
+      },
+      "devDependencies": {
+        "tap": "^1.0.0-beta"
+      },
+      "bin": {
+        "tap-mocha-reporter": "index.js"
+      },
+      "optionalDependencies": {
+        "readable-stream": "^1.1.13"
+      },
+      "gitHead": "fa0d193ae3299fb1e7a495dd2e9b37e4340db9ec",
+      "_id": "tap-mocha-reporter@0.0.24",
+      "_shasum": "8c51b7c84d06d24e0307870e4167c07c06588a08",
+      "_from": ".",
+      "_npmVersion": "2.14.15",
+      "_nodeVersion": "4.0.0",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "dist": {
+        "shasum": "8c51b7c84d06d24e0307870e4167c07c06588a08",
+        "tarball": "https://registry.npmjs.org/tap-mocha-reporter/-/tap-mocha-reporter-0.0.24.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "isaacs@npmjs.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.25": {
+      "name": "tap-mocha-reporter",
+      "version": "0.0.25",
+      "description": "Format a TAP stream using Mocha's set of reporters",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/tap-mocha-reporter.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/tap-mocha-reporter/issues"
+      },
+      "homepage": "https://github.com/isaacs/tap-mocha-reporter",
+      "dependencies": {
+        "debug": "^2.1.3",
+        "diff": "^1.3.2",
+        "escape-string-regexp": "^1.0.3",
+        "glob": "^7.0.5",
+        "js-yaml": "^3.3.1",
+        "supports-color": "^1.3.1",
+        "tap-parser": "^1.0.4",
+        "unicode-length": "^1.0.0",
+        "readable-stream": "^1.1.13"
+      },
+      "devDependencies": {
+        "tap": "^1.0.0-beta"
+      },
+      "bin": {
+        "tap-mocha-reporter": "index.js"
+      },
+      "optionalDependencies": {
+        "readable-stream": "^1.1.13"
+      },
+      "gitHead": "fd230f6402f4a2de154f81a6c5eb037596aec61e",
+      "_id": "tap-mocha-reporter@0.0.25",
+      "_shasum": "9cf11e978c5e121fca8670b17bf378218da1a357",
+      "_from": ".",
+      "_npmVersion": "3.10.2",
+      "_nodeVersion": "4.4.4",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "dist": {
+        "shasum": "9cf11e978c5e121fca8670b17bf378218da1a357",
+        "tarball": "https://registry.npmjs.org/tap-mocha-reporter/-/tap-mocha-reporter-0.0.25.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "isaacs@npmjs.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/tap-mocha-reporter-0.0.25.tgz_1467328791917_0.23051367700099945"
+      },
+      "directories": {}
+    },
+    "0.0.26": {
+      "name": "tap-mocha-reporter",
+      "version": "0.0.26",
+      "description": "Format a TAP stream using Mocha's set of reporters",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/tap-mocha-reporter.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/tap-mocha-reporter/issues"
+      },
+      "homepage": "https://github.com/isaacs/tap-mocha-reporter",
+      "dependencies": {
+        "color-support": "^1.1.0",
+        "debug": "^2.1.3",
+        "diff": "^1.3.2",
+        "escape-string-regexp": "^1.0.3",
+        "glob": "^7.0.5",
+        "js-yaml": "^3.3.1",
+        "tap-parser": "^1.0.4",
+        "unicode-length": "^1.0.0",
+        "readable-stream": "^1.1.13"
+      },
+      "devDependencies": {
+        "tap": "^6.2.0"
+      },
+      "bin": {
+        "tap-mocha-reporter": "index.js"
+      },
+      "optionalDependencies": {
+        "readable-stream": "^1.1.13"
+      },
+      "gitHead": "83a6ca4c9d69c12ae7163cc77fb7a3072f9e43ba",
+      "_id": "tap-mocha-reporter@0.0.26",
+      "_shasum": "7e4ad1e39915eb9b2ff058908e81cfd1c68409fe",
+      "_from": ".",
+      "_npmVersion": "3.10.6",
+      "_nodeVersion": "4.4.4",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "dist": {
+        "shasum": "7e4ad1e39915eb9b2ff058908e81cfd1c68409fe",
+        "tarball": "https://registry.npmjs.org/tap-mocha-reporter/-/tap-mocha-reporter-0.0.26.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "isaacs@npmjs.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/tap-mocha-reporter-0.0.26.tgz_1468826384217_0.7797881893347949"
+      },
+      "directories": {}
+    },
+    "0.0.27": {
+      "name": "tap-mocha-reporter",
+      "version": "0.0.27",
+      "description": "Format a TAP stream using Mocha's set of reporters",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/tap-mocha-reporter.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/tap-mocha-reporter/issues"
+      },
+      "homepage": "https://github.com/isaacs/tap-mocha-reporter",
+      "dependencies": {
+        "color-support": "^1.1.0",
+        "debug": "^2.1.3",
+        "diff": "^1.3.2",
+        "escape-string-regexp": "^1.0.3",
+        "glob": "^7.0.5",
+        "js-yaml": "^3.3.1",
+        "tap-parser": "^1.0.4",
+        "unicode-length": "^1.0.0",
+        "readable-stream": "^1.1.13"
+      },
+      "devDependencies": {
+        "tap": "^6.2.0"
+      },
+      "bin": {
+        "tap-mocha-reporter": "index.js"
+      },
+      "optionalDependencies": {
+        "readable-stream": "^1.1.13"
+      },
+      "gitHead": "bd7d8cefd539cf71e758a0bc6b4a011b73bf674d",
+      "_id": "tap-mocha-reporter@0.0.27",
+      "_shasum": "b2f72f3e1e8ba780ee02918fcdeb3a40da8018f7",
+      "_from": ".",
+      "_npmVersion": "3.10.6",
+      "_nodeVersion": "4.4.4",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "dist": {
+        "shasum": "b2f72f3e1e8ba780ee02918fcdeb3a40da8018f7",
+        "tarball": "https://registry.npmjs.org/tap-mocha-reporter/-/tap-mocha-reporter-0.0.27.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "isaacs@npmjs.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/tap-mocha-reporter-0.0.27.tgz_1469040400395_0.868557765847072"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "tap-mocha-reporter",
+      "version": "2.0.0",
+      "description": "Format a TAP stream using Mocha's set of reporters",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/tap-mocha-reporter.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/tap-mocha-reporter/issues"
+      },
+      "homepage": "https://github.com/isaacs/tap-mocha-reporter",
+      "dependencies": {
+        "color-support": "^1.1.0",
+        "debug": "^2.1.3",
+        "diff": "^1.3.2",
+        "escape-string-regexp": "^1.0.3",
+        "glob": "^7.0.5",
+        "js-yaml": "^3.3.1",
+        "tap-parser": "^2.0.0",
+        "unicode-length": "^1.0.0",
+        "readable-stream": "^1.1.13"
+      },
+      "devDependencies": {
+        "tap": "^6.2.0"
+      },
+      "bin": {
+        "tap-mocha-reporter": "index.js"
+      },
+      "optionalDependencies": {
+        "readable-stream": "^1.1.13"
+      },
+      "gitHead": "8c92e0311eb8a5e5a5d6896f5eac470d7eaed7b9",
+      "_id": "tap-mocha-reporter@2.0.0",
+      "_shasum": "60f1f0ab82309f9a0ab548dd574045543c676ea6",
+      "_from": ".",
+      "_npmVersion": "3.10.7",
+      "_nodeVersion": "4.4.4",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "dist": {
+        "shasum": "60f1f0ab82309f9a0ab548dd574045543c676ea6",
+        "tarball": "https://registry.npmjs.org/tap-mocha-reporter/-/tap-mocha-reporter-2.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "isaacs@npmjs.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/tap-mocha-reporter-2.0.0.tgz_1471560949443_0.44150706147775054"
+      },
+      "directories": {}
+    },
+    "2.0.1": {
+      "name": "tap-mocha-reporter",
+      "version": "2.0.1",
+      "description": "Format a TAP stream using Mocha's set of reporters",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/tap-mocha-reporter.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/tap-mocha-reporter/issues"
+      },
+      "homepage": "https://github.com/isaacs/tap-mocha-reporter",
+      "dependencies": {
+        "color-support": "^1.1.0",
+        "debug": "^2.1.3",
+        "diff": "^1.3.2",
+        "escape-string-regexp": "^1.0.3",
+        "glob": "^7.0.5",
+        "js-yaml": "^3.3.1",
+        "tap-parser": "^2.0.0",
+        "unicode-length": "^1.0.0",
+        "readable-stream": "^2.1.5"
+      },
+      "devDependencies": {
+        "tap": "^6.2.0"
+      },
+      "bin": {
+        "tap-mocha-reporter": "index.js"
+      },
+      "optionalDependencies": {
+        "readable-stream": "^2.1.5"
+      },
+      "gitHead": "964b0dc593e1b20657f5310ee41c0f9697c10034",
+      "_id": "tap-mocha-reporter@2.0.1",
+      "_shasum": "c70316173d6e3a16c58e1ba92d5d6cd8de58a12e",
+      "_from": ".",
+      "_npmVersion": "3.10.7",
+      "_nodeVersion": "4.4.4",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "dist": {
+        "shasum": "c70316173d6e3a16c58e1ba92d5d6cd8de58a12e",
+        "tarball": "https://registry.npmjs.org/tap-mocha-reporter/-/tap-mocha-reporter-2.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "isaacs@npmjs.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/tap-mocha-reporter-2.0.1.tgz_1471616188799_0.3364003309980035"
+      },
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "tap-mocha-reporter",
+      "version": "3.0.0",
+      "description": "Format a TAP stream using Mocha's set of reporters",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/tap-mocha-reporter.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/tap-mocha-reporter/issues"
+      },
+      "homepage": "https://github.com/isaacs/tap-mocha-reporter",
+      "dependencies": {
+        "color-support": "^1.1.0",
+        "debug": "^2.1.3",
+        "diff": "^1.3.2",
+        "escape-string-regexp": "^1.0.3",
+        "glob": "^7.0.5",
+        "js-yaml": "^3.3.1",
+        "tap-parser": "^3.0.0",
+        "unicode-length": "^1.0.0",
+        "readable-stream": "^2.1.5"
+      },
+      "devDependencies": {
+        "tap": "^6.2.0"
+      },
+      "bin": {
+        "tap-mocha-reporter": "index.js"
+      },
+      "optionalDependencies": {
+        "readable-stream": "^2.1.5"
+      },
+      "gitHead": "f9153a2991c1c74734296d5b85c5ee8d980cf9d6",
+      "_id": "tap-mocha-reporter@3.0.0",
+      "_shasum": "54361d7e08701f439886fc25e97b43f8cd5a0923",
+      "_from": ".",
+      "_npmVersion": "3.10.7",
+      "_nodeVersion": "6.5.0",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "dist": {
+        "shasum": "54361d7e08701f439886fc25e97b43f8cd5a0923",
+        "tarball": "https://registry.npmjs.org/tap-mocha-reporter/-/tap-mocha-reporter-3.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "isaacs@npmjs.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/tap-mocha-reporter-3.0.0.tgz_1473787676064_0.6149662069510669"
+      },
+      "directories": {}
+    },
+    "3.0.1": {
+      "name": "tap-mocha-reporter",
+      "version": "3.0.1",
+      "description": "Format a TAP stream using Mocha's set of reporters",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/tap-mocha-reporter.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/tap-mocha-reporter/issues"
+      },
+      "homepage": "https://github.com/isaacs/tap-mocha-reporter",
+      "dependencies": {
+        "color-support": "^1.1.0",
+        "debug": "^2.1.3",
+        "diff": "^1.3.2",
+        "escape-string-regexp": "^1.0.3",
+        "glob": "^7.0.5",
+        "js-yaml": "^3.3.1",
+        "tap-parser": "^4.2.3",
+        "unicode-length": "^1.0.0",
+        "readable-stream": "^2.1.5"
+      },
+      "devDependencies": {
+        "tap": "^6.2.0"
+      },
+      "bin": {
+        "tap-mocha-reporter": "index.js"
+      },
+      "optionalDependencies": {
+        "readable-stream": "^2.1.5"
+      },
+      "gitHead": "bb9bbd825b369097f4bab85584459f9ec445b651",
+      "_id": "tap-mocha-reporter@3.0.1",
+      "_shasum": "59abab0103b3453ca05df8f553ffe7b8cffac868",
+      "_from": ".",
+      "_npmVersion": "3.10.9",
+      "_nodeVersion": "8.0.0-pre",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "dist": {
+        "shasum": "59abab0103b3453ca05df8f553ffe7b8cffac868",
+        "tarball": "https://registry.npmjs.org/tap-mocha-reporter/-/tap-mocha-reporter-3.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "isaacs@npmjs.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/tap-mocha-reporter-3.0.1.tgz_1483828417016_0.30440354556776583"
+      },
+      "directories": {}
+    },
+    "3.0.2": {
+      "name": "tap-mocha-reporter",
+      "version": "3.0.2",
+      "description": "Format a TAP stream using Mocha's set of reporters",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/tap-mocha-reporter.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/tap-mocha-reporter/issues"
+      },
+      "homepage": "https://github.com/isaacs/tap-mocha-reporter",
+      "dependencies": {
+        "color-support": "^1.1.0",
+        "debug": "^2.1.3",
+        "diff": "^1.3.2",
+        "escape-string-regexp": "^1.0.3",
+        "glob": "^7.0.5",
+        "js-yaml": "^3.3.1",
+        "tap-parser": "^5.1.0",
+        "unicode-length": "^1.0.0",
+        "readable-stream": "^2.1.5"
+      },
+      "devDependencies": {
+        "tap": "^6.2.0"
+      },
+      "bin": {
+        "tap-mocha-reporter": "index.js"
+      },
+      "optionalDependencies": {
+        "readable-stream": "^2.1.5"
+      },
+      "gitHead": "cb165fd868fa1e30924994b8ed2696e5a36eb150",
+      "_id": "tap-mocha-reporter@3.0.2",
+      "_shasum": "2363e6b83436d15c0cbf09bacfd1981f9d6c9f1c",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.9.4",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "dist": {
+        "shasum": "2363e6b83436d15c0cbf09bacfd1981f9d6c9f1c",
+        "tarball": "https://registry.npmjs.org/tap-mocha-reporter/-/tap-mocha-reporter-3.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "isaacs@npmjs.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/tap-mocha-reporter-3.0.2.tgz_1484807182242_0.8570300189312547"
+      },
+      "directories": {}
+    },
+    "3.0.3": {
+      "name": "tap-mocha-reporter",
+      "version": "3.0.3",
+      "description": "Format a TAP stream using Mocha's set of reporters",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/tap-mocha-reporter.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/tap-mocha-reporter/issues"
+      },
+      "homepage": "https://github.com/isaacs/tap-mocha-reporter",
+      "dependencies": {
+        "color-support": "^1.1.0",
+        "debug": "^2.1.3",
+        "diff": "^1.3.2",
+        "escape-string-regexp": "^1.0.3",
+        "glob": "^7.0.5",
+        "js-yaml": "^3.3.1",
+        "tap-parser": "^5.1.0",
+        "unicode-length": "^1.0.0",
+        "readable-stream": "^2.1.5"
+      },
+      "devDependencies": {
+        "tap": "^6.2.0"
+      },
+      "bin": {
+        "tap-mocha-reporter": "index.js"
+      },
+      "optionalDependencies": {
+        "readable-stream": "^2.1.5"
+      },
+      "gitHead": "dbf2b837ea966dd08dc2d03b84c05a6bfa33b6b3",
+      "_id": "tap-mocha-reporter@3.0.3",
+      "_shasum": "e5917fad3d9a70957f9b7c736e793beb87d7daf1",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "8.0.0-pre",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "dist": {
+        "shasum": "e5917fad3d9a70957f9b7c736e793beb87d7daf1",
+        "tarball": "https://registry.npmjs.org/tap-mocha-reporter/-/tap-mocha-reporter-3.0.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "isaacs@npmjs.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/tap-mocha-reporter-3.0.3.tgz_1485411730818_0.05306919268332422"
+      },
+      "directories": {}
+    },
+    "3.0.4": {
+      "name": "tap-mocha-reporter",
+      "version": "3.0.4",
+      "description": "Format a TAP stream using Mocha's set of reporters",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/tap-mocha-reporter.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/tap-mocha-reporter/issues"
+      },
+      "homepage": "https://github.com/isaacs/tap-mocha-reporter",
+      "dependencies": {
+        "color-support": "^1.1.0",
+        "debug": "^2.1.3",
+        "diff": "^1.3.2",
+        "escape-string-regexp": "^1.0.3",
+        "glob": "^7.0.5",
+        "js-yaml": "^3.3.1",
+        "tap-parser": "^5.1.0",
+        "unicode-length": "^1.0.0",
+        "readable-stream": "^2.1.5"
+      },
+      "devDependencies": {
+        "tap": "^6.2.0"
+      },
+      "bin": {
+        "tap-mocha-reporter": "index.js"
+      },
+      "optionalDependencies": {
+        "readable-stream": "^2.1.5"
+      },
+      "gitHead": "b465eae06d0070b49547eeeed773d14c24cef338",
+      "_id": "tap-mocha-reporter@3.0.4",
+      "_npmVersion": "5.0.3",
+      "_nodeVersion": "8.0.0",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "dist": {
+        "integrity": "sha512-e9tbJrJ/SjqusBSB3gEbzNryi0uYdjmFEX2AgQGWN2dJVqp+ksCbQHfoi+K08TU13bAF/eZcb6W64sAiLgzzrA==",
+        "shasum": "77cc96ca74f3d2e6b8872ce4a9381720a87a1e4c",
+        "tarball": "https://registry.npmjs.org/tap-mocha-reporter/-/tap-mocha-reporter-3.0.4.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "i@izs.me",
+          "name": "isaacs"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/tap-mocha-reporter-3.0.4.tgz_1497793747995_0.9136779282707721"
+      },
+      "directories": {}
+    },
+    "3.0.5": {
+      "name": "tap-mocha-reporter",
+      "version": "3.0.5",
+      "description": "Format a TAP stream using Mocha's set of reporters",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/tap-mocha-reporter.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/tap-mocha-reporter/issues"
+      },
+      "homepage": "https://github.com/isaacs/tap-mocha-reporter",
+      "dependencies": {
+        "color-support": "^1.1.0",
+        "debug": "^2.1.3",
+        "diff": "^1.3.2",
+        "escape-string-regexp": "^1.0.3",
+        "glob": "^7.0.5",
+        "js-yaml": "^3.3.1",
+        "tap-parser": "^5.1.0",
+        "unicode-length": "^1.0.0",
+        "readable-stream": "^2.1.5"
+      },
+      "devDependencies": {
+        "tap": "^6.2.0"
+      },
+      "bin": {
+        "tap-mocha-reporter": "index.js"
+      },
+      "optionalDependencies": {
+        "readable-stream": "^2.1.5"
+      },
+      "files": [
+        "index.js",
+        "lib"
+      ],
+      "gitHead": "bafe31a60bf7633b68222a3531eddedcf3ebe60f",
+      "_id": "tap-mocha-reporter@3.0.5",
+      "_npmVersion": "5.0.3",
+      "_nodeVersion": "8.0.0",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "dist": {
+        "integrity": "sha512-YIoWejBBb+6gKOdu5B4H4oIKQhmRJsYGHSE5a6Mv87jriBDy/fAVLRVuMHTAP/vufYPcI3CKAck9VvnZxtQ4mA==",
+        "shasum": "f299ab9011e11a261592783c0aa1af6d1511ab83",
+        "tarball": "https://registry.npmjs.org/tap-mocha-reporter/-/tap-mocha-reporter-3.0.5.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "i@izs.me",
+          "name": "isaacs"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/tap-mocha-reporter-3.0.5.tgz_1497793860230_0.9594376019667834"
+      },
+      "directories": {}
+    },
+    "3.0.6": {
+      "name": "tap-mocha-reporter",
+      "version": "3.0.6",
+      "description": "Format a TAP stream using Mocha's set of reporters",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/tap-mocha-reporter.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/tap-mocha-reporter/issues"
+      },
+      "homepage": "https://github.com/isaacs/tap-mocha-reporter",
+      "dependencies": {
+        "color-support": "^1.1.0",
+        "debug": "^2.1.3",
+        "diff": "^1.3.2",
+        "escape-string-regexp": "^1.0.3",
+        "glob": "^7.0.5",
+        "js-yaml": "^3.3.1",
+        "tap-parser": "^5.1.0",
+        "unicode-length": "^1.0.0",
+        "readable-stream": "^2.1.5"
+      },
+      "devDependencies": {
+        "tap": "^6.2.0"
+      },
+      "bin": {
+        "tap-mocha-reporter": "index.js"
+      },
+      "optionalDependencies": {
+        "readable-stream": "^2.1.5"
+      },
+      "files": [
+        "index.js",
+        "lib"
+      ],
+      "gitHead": "53e3b9e5adee4456fa850592cf7241797bc125e2",
+      "_id": "tap-mocha-reporter@3.0.6",
+      "_npmVersion": "5.0.3",
+      "_nodeVersion": "8.0.0",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "dist": {
+        "integrity": "sha512-UImgw3etckDQCoqZIAIKcQDt0w1JLVs3v0yxLlmwvGLZl6MGFxF7JME5PElXjAoDklVDU42P3vVu5jgr37P4Yg==",
+        "shasum": "12abe97ff409a5a6ecc3d70b6dba34d82184a770",
+        "tarball": "https://registry.npmjs.org/tap-mocha-reporter/-/tap-mocha-reporter-3.0.6.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "i@izs.me",
+          "name": "isaacs"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/tap-mocha-reporter-3.0.6.tgz_1498356967255_0.3238642222713679"
+      },
+      "directories": {}
+    },
+    "3.0.7": {
+      "name": "tap-mocha-reporter",
+      "version": "3.0.7",
+      "description": "Format a TAP stream using Mocha's set of reporters",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/tap-mocha-reporter.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/tap-mocha-reporter/issues"
+      },
+      "homepage": "https://github.com/isaacs/tap-mocha-reporter",
+      "dependencies": {
+        "color-support": "^1.1.0",
+        "debug": "^2.1.3",
+        "diff": "^1.3.2",
+        "escape-string-regexp": "^1.0.3",
+        "glob": "^7.0.5",
+        "js-yaml": "^3.3.1",
+        "tap-parser": "^5.1.0",
+        "unicode-length": "^1.0.0",
+        "readable-stream": "^2.1.5"
+      },
+      "devDependencies": {
+        "tap": "^6.2.0"
+      },
+      "bin": {
+        "tap-mocha-reporter": "index.js"
+      },
+      "optionalDependencies": {
+        "readable-stream": "^2.1.5"
+      },
+      "files": [
+        "index.js",
+        "lib"
+      ],
+      "gitHead": "3e13f6602da28f337e599c6568d952a6f9f5aabe",
+      "_id": "tap-mocha-reporter@3.0.7",
+      "_npmVersion": "5.7.0",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "dist": {
+        "integrity": "sha512-GHVXJ38C3oPRpM3YUc43JlGdpVZYiKeT1fmAd3HH2+J+ZWwsNAUFvRRdoGsXLw9+gU9o+zXpBqhS/oXyRQYwlA==",
+        "shasum": "235e57893b500861ea5d0924965dadfb2f05eaa7",
+        "tarball": "https://registry.npmjs.org/tap-mocha-reporter/-/tap-mocha-reporter-3.0.7.tgz",
+        "fileCount": 39,
+        "unpackedSize": 107721
+      },
+      "maintainers": [
+        {
+          "email": "i@izs.me",
+          "name": "isaacs"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/tap-mocha-reporter_3.0.7_1520873187022_0.8217174494984947"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.8": {
+      "name": "tap-mocha-reporter",
+      "version": "3.0.8",
+      "description": "Format a TAP stream using Mocha's set of reporters",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/tap-mocha-reporter.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/tap-mocha-reporter/issues"
+      },
+      "homepage": "https://github.com/isaacs/tap-mocha-reporter",
+      "dependencies": {
+        "color-support": "^1.1.0",
+        "debug": "^2.1.3",
+        "diff": "^1.3.2",
+        "escape-string-regexp": "^1.0.3",
+        "glob": "^7.0.5",
+        "js-yaml": "^3.3.1",
+        "tap-parser": "^5.1.0",
+        "unicode-length": "^1.0.0",
+        "readable-stream": "^2.1.5"
+      },
+      "devDependencies": {
+        "tap": "^12.5.3"
+      },
+      "bin": {
+        "tap-mocha-reporter": "index.js"
+      },
+      "optionalDependencies": {
+        "readable-stream": "^2.1.5"
+      },
+      "gitHead": "5f0fec33d7568f84b16b22fbca10769581cc2b71",
+      "_id": "tap-mocha-reporter@3.0.8",
+      "_nodeVersion": "11.8.0",
+      "_npmVersion": "6.8.0",
+      "dist": {
+        "integrity": "sha512-toZVKfP2Pcy+5E8ycdysau6SImUoWpkhsukC79VMWRU7RHa1NEo7c9fh2e7EDV91lnTXnZ7O/wL1Gp8WgGw1wA==",
+        "shasum": "37de26f2db0e1e1e2e6d4bfec5be45ec46dcc7ca",
+        "tarball": "https://registry.npmjs.org/tap-mocha-reporter/-/tap-mocha-reporter-3.0.8.tgz",
+        "fileCount": 41,
+        "unpackedSize": 160998,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcaP+1CRA9TVsSAnZWagAAIE0P/ApxovBiXi4cf/F/oPne\nYJdMPBcm+eJq234fiDX04Sx2C/3mhA2PChpW+CXmDIY7YQFx+aKdDt9te7VK\nldoBLqXrC7RmKmkUT6NItW72haNjkvImN4lnFYmenKYkoob6CFkdXrgYojYm\nSVTzeEnfCQ7fr3GNG87S14te2km83veXS35j02KLrooPyKYIMZ0c/5TbzFhy\nXh9sh41nyhe6+v3Pci/fFCIEXuCVmbLUhuaN1jm4qOkjpLAhvWU/sDtIPxYU\nFueZ9folZ9DtTrnRmihY3PfucSR+S0AlA0GKz1YxoIH4SkfqmFMTAGQGcOP+\nGdPpfY5taGXyvb3hUQoItBFBlVNwtfbBW42AnI/0g1VdIuRG3HU89KHYPKtk\nawIFxNV0uRqWh9wvV8jRjGQT11eB4okH2qiBRn3AVRU4AD/AzigftS2u6hRs\nOED0LPTIdyo18OG660zKHzfQMqiRH6iPQDrBk0dtq/svIrA0oUrxV4Kdyqgz\nvgjkqfktf7U54vSSLkwfuTs22DAMRuZ0i206OyiVjclCTmqfWTguvwF34KnM\n3sxnV8KUi8vF7PjjlDO58STok34dKddua0Q2xadq/Yhv5JqNSbqHrMVhXmVR\n1oFaovmkw/cZWdQ54OUKbotcOqoCwolrOHtKV5iktwEka1ZIWVIelUetwlua\nIx4u\r\n=Abrm\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "i@izs.me",
+          "name": "isaacs"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/tap-mocha-reporter_3.0.8_1550385076825_0.4357592470681695"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.9": {
+      "name": "tap-mocha-reporter",
+      "version": "3.0.9",
+      "description": "Format a TAP stream using Mocha's set of reporters",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/tap-mocha-reporter.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/tap-mocha-reporter/issues"
+      },
+      "homepage": "https://github.com/isaacs/tap-mocha-reporter",
+      "dependencies": {
+        "color-support": "^1.1.0",
+        "debug": "^2.1.3",
+        "diff": "^1.3.2",
+        "escape-string-regexp": "^1.0.3",
+        "glob": "^7.0.5",
+        "js-yaml": "^3.3.1",
+        "tap-parser": "^5.1.0",
+        "unicode-length": "^1.0.0",
+        "readable-stream": "^2.1.5"
+      },
+      "devDependencies": {
+        "tap": "^12.5.3"
+      },
+      "bin": {
+        "tap-mocha-reporter": "index.js"
+      },
+      "optionalDependencies": {
+        "readable-stream": "^2.1.5"
+      },
+      "gitHead": "c95ce29ffee4f5b750f9f8667548fe28c8ac54a1",
+      "_id": "tap-mocha-reporter@3.0.9",
+      "_nodeVersion": "11.8.0",
+      "_npmVersion": "6.8.0",
+      "dist": {
+        "integrity": "sha512-VO07vhC9EG27EZdOe7bWBj1ldbK+DL9TnRadOgdQmiQOVZjFpUEQuuqO7+rNSO2kfmkq5hWeluYXDWNG/ytXTQ==",
+        "shasum": "ea41e741149a94c278d106cbcccc37fec2dfeeaa",
+        "tarball": "https://registry.npmjs.org/tap-mocha-reporter/-/tap-mocha-reporter-3.0.9.tgz",
+        "fileCount": 39,
+        "unpackedSize": 107760,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcahhuCRA9TVsSAnZWagAA6wAP/ROQyYRY0+gXSyss37Zs\nPx52X3tdB+Y0eqo9UGsPChCm380jeEN9YHTOx0QEeRjIbsWA27GcZo9X8uWz\nNCa7tnyA2oMDNS8dxWJJjRbHD/MeEZ6mXMWjUUKfr4bPopys1bivroXZ4BWe\n+m0I1mji/rWKnfMTLHB70MHxxfUD98SIPpx/PXuCsEQGfkd/520qCk6Ser/e\nivBFkMYCUUYxHOdoZgn7O/496PyWVpg854fc6HH20MomwqpeCkg28MZijFnR\ngCrmeuC05om0oB6O8b7bfx9uS4W3sUbq6gwCQ8D6FXRL0vAKxMgfrEVz3pwV\nAB7fgoO+ybWD8uX1TKXSyaZhEWX4McXM0fR/LuSYg6G3HAd37if6DfnfQekl\n7tUlCxFYAQS/mhXCTYUc5bG3W7Nl+qant5Ps9xhXPn0ak2OPy6iFMqQMYbVM\nS7GzgMnApeQSzoc6JxBTUnIWQziIZU3mwnya1JKYUOTZOArhl0oPSK2w0jYb\no+BDrAJAcHLxN+NKj0LsJk3t/s9dKUGlzoIJDluIwZMpoVajz95xSGGvh6s/\nUr1beEAPnmymkU3QxLJhLUKQRCzMVTyuK5E6vFeA7ytJGHcPMT1O2n9yHEpt\nLYrtAQLACN5lrnLDP44f07Vg1imLw66rNyy8iVCGaf1ooefV3Vb7/tEa2/dr\nwwEM\r\n=cYNj\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "i@izs.me",
+          "name": "isaacs"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/tap-mocha-reporter_3.0.9_1550456941384_0.9937570639711379"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.0.0": {
+      "name": "tap-mocha-reporter",
+      "version": "4.0.0",
+      "description": "Format a TAP stream using Mocha's set of reporters",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/tap-mocha-reporter.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/tap-mocha-reporter/issues"
+      },
+      "homepage": "https://github.com/isaacs/tap-mocha-reporter",
+      "dependencies": {
+        "color-support": "^1.1.0",
+        "debug": "^2.1.3",
+        "diff": "^1.3.2",
+        "escape-string-regexp": "^1.0.3",
+        "glob": "^7.0.5",
+        "tap-parser": "^8.0.0",
+        "tap-yaml": "0.0.1",
+        "unicode-length": "^1.0.0",
+        "readable-stream": "^2.1.5"
+      },
+      "devDependencies": {
+        "tap": "^12.5.3"
+      },
+      "bin": {
+        "tap-mocha-reporter": "index.js"
+      },
+      "optionalDependencies": {
+        "readable-stream": "^2.1.5"
+      },
+      "readme": "# tap-mocha-reporter\n\nFormat a TAP stream using Mocha's set of reporters\n\n## USAGE\n\nOn the command line, pipe TAP in, and it'll do its thing.\n\n```bash\ntap test/*.js | tap-mocha-reporter\n```\n\nYou can also specify a reporter with the first argument.  The default\nis `spec`.\n\n```bash\ntap test/*.js | tap-mocha-reporter nyan\n```\n\nProgrammatically, you can use this as a transform stream.\n\n```javascript\nvar TSR = require('tap-mocha-reporter')\n\nfs.createReadStream('saved-test-output.tap')\n  .pipe(TSR('dot'))\n```\n",
+      "readmeFilename": "README.md",
+      "gitHead": "0c06e9878e16e5f197ca1c16673f771048917ecf",
+      "_id": "tap-mocha-reporter@4.0.0",
+      "_nodeVersion": "11.8.0",
+      "_npmVersion": "6.8.0",
+      "dist": {
+        "integrity": "sha512-u+VWXRjdQqJoBseKfd+qJoz5FOJTDgatHnXbEbijqQlRB7n2G8eXvsWUylEHEUkRYb0Ul+1+3U1KOxwhwRFD9g==",
+        "shasum": "53f8cd65299240b06224fe4a1df9cb7ae67c52aa",
+        "tarball": "https://registry.npmjs.org/tap-mocha-reporter/-/tap-mocha-reporter-4.0.0.tgz",
+        "fileCount": 39,
+        "unpackedSize": 107763,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJca71FCRA9TVsSAnZWagAAJQUQAJid9WVr2wseG1pLNQq9\nKXZMyUpgwrQfUQsBIQvwqdVP1ux3D3VAgVns/uMh2suUvAClfnODbeXxnPkm\ny7PfsizhMLZnSi+ac++p5LauyuciGJfQS0zgFXkVcUlncZcV6hjUeiKN1SIy\nZGqO/tgxMo93A94U3/+yEzHCkxZ8IRXK0FVHbxpndD/7LN1w22reMAHurqsX\nlP4zC9GdxuLShICUoWzaI0zURXedaaW3OW1Rr/qmT4bB1d92keZYil/MlrGH\nlKUTHFQmictPxfEFuxDXciTwyYaDpc6SRVXidV2fsr7ppSkw0cpCc5CJyOdu\nQhLMAsq9cHWHf7C0SwSsaegl+zaov2eJEoKrTHQ8B0KUX9hu0Y9HWqxw0Ca6\n81RSekJDvlLuhH3AwIgFgV/2PG9UrjB8zgvXqDc0mT4XBK5H7pPC1VuHGGnq\nNg+kuAPRD9WBvQCERRa7KrbLU0hSgj1i0gAKVn269NDC1+m6jHbw+Btq/nmq\nV8VdRCp1CrPgv4ydXV2LLSlfh9/7u3SgITDFRZ9EEqnvG2vMIq1iUoEk4ZLh\nPTSXH/NXSoIe4uW7vaB5w9Gl7E3Zf+voMq4Z8N9j5zC0gPYK9zO7DZzq1vvt\nZWAITE71/rC1hkQ9DnRFEUeJ6tBovkTXBjrHvLS4xeJRyGw76IlkkBNc/jCd\nO7Hf\r\n=hqva\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "i@izs.me",
+          "name": "isaacs"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/tap-mocha-reporter_4.0.0_1550564676143_0.9946879762965724"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.0.1": {
+      "name": "tap-mocha-reporter",
+      "version": "4.0.1",
+      "description": "Format a TAP stream using Mocha's set of reporters",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/tap-mocha-reporter.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/tap-mocha-reporter/issues"
+      },
+      "homepage": "https://github.com/isaacs/tap-mocha-reporter",
+      "dependencies": {
+        "color-support": "^1.1.0",
+        "debug": "^2.1.3",
+        "diff": "^1.3.2",
+        "escape-string-regexp": "^1.0.3",
+        "glob": "^7.0.5",
+        "tap-parser": "^8.0.0",
+        "tap-yaml": "0 || 1",
+        "unicode-length": "^1.0.0",
+        "readable-stream": "^2.1.5"
+      },
+      "devDependencies": {
+        "tap": "^12.5.3"
+      },
+      "bin": {
+        "tap-mocha-reporter": "index.js"
+      },
+      "optionalDependencies": {
+        "readable-stream": "^2.1.5"
+      },
+      "gitHead": "b36df0071592ad6266e3dd98252977fc6a171a35",
+      "_id": "tap-mocha-reporter@4.0.1",
+      "_nodeVersion": "11.8.0",
+      "_npmVersion": "6.8.0",
+      "dist": {
+        "integrity": "sha512-/KfXaaYeSPn8qBi5Be8WSIP3iKV83s2uj2vzImJAXmjNu22kzqZ+1Dv1riYWa53sPCiyo1R1w1jbJrftF8SpcQ==",
+        "shasum": "f613229c42c2e5b5f096f2f022e88724c9380b10",
+        "tarball": "https://registry.npmjs.org/tap-mocha-reporter/-/tap-mocha-reporter-4.0.1.tgz",
+        "fileCount": 39,
+        "unpackedSize": 107764,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcbKx+CRA9TVsSAnZWagAAQ8wP/329FyawoRTdkIDaJHd4\nLO8WHZIQZAlQhtXfgY8aQWVUC0/NOKRWgaLbyfAVJd7ig2zFnUBvLO7OuH9s\n5n47JG7qmctzs0PgUiSPri47/U288u85cb+8T0d1ehw8roP0GmdCT7srV7n2\nS4EjTravNcmegUGMgiqfd9A2hxUBaI/l8ST4E9KXGFXzLZ/YL0d/+CO60Wid\nMFLFenBIGKpajnN6fmnVTqe5MTiTqtqT02vKK8CcJ5wJmpt1XThqUCQBXzuu\n3XD9aZYXlVv0HnxM9QlRj01peX0vIV4bUm/2PDl6vvg3sp6vpnDCxWUDof6e\nzNhcfM635MLo0UUHFij/r0OsgUlNrhTAd7vMz0pIJEQglHh03Q9tLSscasnD\ndekhFAEc0FCcWQ3sZZ3MSl/l5JuMqI2l/MsK2Qb5VSsRjcvZcamSOHnfw5Fu\np/qSBjrm2A55i9iwTEqL1Tws0dZ7Ez6Y0hR8csNR98E1DqlWEvmHNs5/0MQ4\nLNnX/W65pGTx1Rxn6ld/BLZbi3eVcNEO5jVpuYkL8X3kx7/Dl1In+rmVV+ei\nBLQmB6txumNxIs+MdtsiO/QQHoRH3JZMJCRxfNxY/garEc1XqcoZBmC/JkXQ\n46yVLfkUcnbpQgto1PGTsIQIE144YMDs32DuqEAdEPPyodTWntgqrzeb/a8R\nqWCI\r\n=QK1h\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "i@izs.me",
+          "name": "isaacs"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/tap-mocha-reporter_4.0.1_1550625917506_0.21211279945062755"
+      },
+      "_hasShrinkwrap": false
+    },
+    "5.0.0": {
+      "name": "tap-mocha-reporter",
+      "version": "5.0.0",
+      "description": "Format a TAP stream using Mocha's set of reporters",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/tap-mocha-reporter.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/tap-mocha-reporter/issues"
+      },
+      "homepage": "https://github.com/isaacs/tap-mocha-reporter",
+      "dependencies": {
+        "color-support": "^1.1.0",
+        "debug": "^2.1.3",
+        "diff": "^1.3.2",
+        "escape-string-regexp": "^1.0.3",
+        "glob": "^7.0.5",
+        "tap-parser": "^10.0.0",
+        "tap-yaml": "^1.0.0",
+        "unicode-length": "^1.0.0",
+        "readable-stream": "^2.1.5"
+      },
+      "devDependencies": {
+        "tap": "^12.7.0"
+      },
+      "bin": {
+        "tap-mocha-reporter": "index.js"
+      },
+      "optionalDependencies": {
+        "readable-stream": "^2.1.5"
+      },
+      "engines": {
+        "node": ">= 8"
+      },
+      "gitHead": "77a65efe9921eec9f755bca65897d79361b70c60",
+      "_id": "tap-mocha-reporter@5.0.0",
+      "_nodeVersion": "12.8.1",
+      "_npmVersion": "6.12.0-next.0",
+      "dist": {
+        "integrity": "sha512-8HlAtdmYGlDZuW83QbF/dc46L7cN+AGhLZcanX3I9ILvxUAl+G2/mtucNPSXecTlG/4iP1hv6oMo0tMhkn3Tsw==",
+        "shasum": "ab40a1687bb0b941d80c43eca4c8b69038ef5d6d",
+        "tarball": "https://registry.npmjs.org/tap-mocha-reporter/-/tap-mocha-reporter-5.0.0.tgz",
+        "fileCount": 39,
+        "unpackedSize": 107804,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdkmRwCRA9TVsSAnZWagAAz10P/RC285eCX5zBiLajaq8H\ntsn3mZF1+y/F1NMImvy8XHCEuSkgrsRhwpnNf71g5clJ3Ct7QHqgk77Kpxrq\n1pJdMaxlWW8HS4V5ltoEiyrG8hvd9p06iEqEtePVrUXqeggdRvKbojfqTozC\nGLj2IbUpqDV1S5shcxWoH/gyJxvm6b/qraSwZH0S/yAaVR1CQMuBYo/p2GDN\nRbVVCHLe2McFwuxzc7VoPog0YZ8vHH/9+INtizFP1XxFqt+XVA4/3Ge3lKWE\n5cO75HsEi/YvbFXiFIuG1XWrlrHEIkcWbkIuupqkqIogmEj2kJloNDAgadLw\nyi2ALHgD0TpjMFQp9Eh1q5ccOWjjrtPU33u/o6IJ894t6KLg4v3Kq7/lVhnv\nmCO9i6dUWmxMIPjijYbXYYXoLHPMNjEW8gmNlg8yXTBTss0NFoSXyeqztJc9\n05iWqtSH0boG3uiw4Wcw2v7mw6AJNsOtdNunmbpBlQOQUZM+6WLd5EVS4v5O\nG0PIMPLqtH3pBKSDfsGr1hyD+/LJsnp/GG+iXExLMuaifNzBMDAzYJVbMQNu\nXxD3RiOM2OdsStvpE7bxeC9dKJFQqWwtHgUxngFI+KD0wTjM6trr/3SgZnNO\n311MgtosydMHpiQMbSnWp4Tj2q00VWUN/+aMBwFQ+v3OG0dVFU65uSXfSxgF\neCAM\r\n=MWxO\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "i@izs.me",
+          "name": "isaacs"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/tap-mocha-reporter_5.0.0_1569875055708_0.961163396204608"
+      },
+      "_hasShrinkwrap": false
+    },
+    "5.0.1": {
+      "name": "tap-mocha-reporter",
+      "version": "5.0.1",
+      "description": "Format a TAP stream using Mocha's set of reporters",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap test/*.js",
+        "preversion": "npm test",
+        "postversion": "npm publish",
+        "postpublish": "git push origin --follow-tags"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/tap-mocha-reporter.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/tap-mocha-reporter/issues"
+      },
+      "homepage": "https://github.com/isaacs/tap-mocha-reporter",
+      "dependencies": {
+        "color-support": "^1.1.0",
+        "debug": "^4.1.1",
+        "diff": "^4.0.1",
+        "escape-string-regexp": "^2.0.0",
+        "glob": "^7.0.5",
+        "tap-parser": "^10.0.0",
+        "tap-yaml": "^1.0.0",
+        "unicode-length": "^2.0.2"
+      },
+      "devDependencies": {
+        "tap": "^14.10.2"
+      },
+      "bin": {
+        "tap-mocha-reporter": "index.js"
+      },
+      "engines": {
+        "node": ">= 8"
+      },
+      "gitHead": "5c8846fe3655aceb7ab104e5989b469b57601c00",
+      "_id": "tap-mocha-reporter@5.0.1",
+      "_nodeVersion": "13.5.0",
+      "_npmVersion": "6.13.4",
+      "dist": {
+        "integrity": "sha512-1knFWOwd4khx/7uSEnUeaP9IPW3w+sqTgJMhrwah6t46nZ8P25atOKAjSvVDsT67lOPu0nfdOqUwoyKn+3E5pA==",
+        "shasum": "74f00be2ddd2a380adad45e085795137bc39497a",
+        "tarball": "https://registry.npmjs.org/tap-mocha-reporter/-/tap-mocha-reporter-5.0.1.tgz",
+        "fileCount": 39,
+        "unpackedSize": 107176,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeCkFKCRA9TVsSAnZWagAAgHQP/A9LlGZJ9M2XZlukvk6j\nW3xsgH5PVmcwa1tI/mXJdx1aFh+p0UODknz6r1zS2z2nPKTrS4wVoSR7AFiL\nBBheXNEu+zPcLDJpNsexdHIRDx3Cm9UroqDHyDeQE97QwpCztJWXoYE9hCnm\nDQjfLD+iaSYfRuVHyW+ZNGlW9NIPzPzuuXAr2OkhYBMPJv8APmakp5TMy9Ps\n0bs2VyGRjwzZuy+PQ169qOINBxMJxpjgvHlSEcqU+hz0Lx0jLaAmEnQIPYkn\n4O34q8uLmd8lPYhqi6PwwWKFZkm+Rz0Bf1cTZ7+Kh8nL4srjlTv9yTW8iSSF\nXvbG3Yz1eG3EfbDBpGJhy5gva/qpOoO4LPCudEX4k/vLPU3zb4YeV7UiI42K\nl3oP1T7yyRGz3vRHgO9ssO40jg2Ye5Wv3fY2rkSh4fMC0HRLxfYJVHlobbjm\nlXeZN3VklA85cMN+0kPu60cA59GtZzDx8C6o+g8fYQX7Nk3CVAFSUQ1n9ENR\nvldb++EHvgS9aq92PfMuGbl7gxaWt+A/O42wker2Su/gStykIyhBA1a3uayx\nqfFLn4W2k/yGEtKt3ynLuESkAQRraxHyTsGS6dfzpLLskcQnP9seG6kUx7ZM\nPoH7T2sjwZvYAGaNUL7xVNMkQYcxx2MedDjP4K9vMami3iAf607xx3bMFrej\nis/k\r\n=PVU3\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "i@izs.me",
+          "name": "isaacs"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/tap-mocha-reporter_5.0.1_1577730377559_0.2963372543443701"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# tap-mocha-reporter\n\nFormat a TAP stream using Mocha's set of reporters\n\n## USAGE\n\nOn the command line, pipe TAP in, and it'll do its thing.\n\n```bash\ntap test/*.js | tap-mocha-reporter\n```\n\nYou can also specify a reporter with the first argument.  The default\nis `spec`.\n\n```bash\ntap test/*.js | tap-mocha-reporter nyan\n```\n\nProgrammatically, you can use this as a transform stream.\n\n```javascript\nvar TSR = require('tap-mocha-reporter')\n\nfs.createReadStream('saved-test-output.tap')\n  .pipe(TSR('dot'))\n```\n",
+  "maintainers": [
+    {
+      "email": "i@izs.me",
+      "name": "isaacs"
+    }
+  ],
+  "time": {
+    "modified": "2019-12-30T18:26:20.173Z",
+    "created": "2015-04-25T21:12:03.640Z",
+    "0.0.3": "2015-04-25T21:12:03.640Z",
+    "0.0.4": "2015-04-25T21:25:14.470Z",
+    "0.0.5": "2015-04-27T15:42:09.738Z",
+    "0.0.6": "2015-04-29T21:56:45.083Z",
+    "0.0.7": "2015-05-02T17:04:37.000Z",
+    "0.0.8": "2015-05-06T18:37:10.816Z",
+    "0.0.9": "2015-05-06T18:49:59.298Z",
+    "0.0.10": "2015-05-06T18:54:31.874Z",
+    "0.0.11": "2015-05-14T21:04:32.824Z",
+    "0.0.12": "2015-05-18T23:05:41.399Z",
+    "0.0.13": "2015-05-26T18:25:43.240Z",
+    "0.0.14": "2015-06-10T09:14:40.717Z",
+    "0.0.15": "2015-06-23T17:22:32.384Z",
+    "0.0.16": "2015-06-27T18:53:44.055Z",
+    "0.0.17": "2015-08-27T22:39:30.598Z",
+    "0.0.18": "2015-09-02T23:07:57.883Z",
+    "0.0.19": "2015-09-02T23:25:50.590Z",
+    "0.0.20": "2015-09-03T22:13:14.338Z",
+    "0.0.21": "2015-09-24T06:49:30.431Z",
+    "0.0.22": "2015-12-22T19:21:39.043Z",
+    "0.0.23": "2016-01-31T19:59:21.311Z",
+    "0.0.24": "2016-01-31T21:31:49.804Z",
+    "0.0.25": "2016-06-30T23:19:52.431Z",
+    "0.0.26": "2016-07-18T07:19:46.054Z",
+    "0.0.27": "2016-07-20T18:46:43.641Z",
+    "2.0.0": "2016-08-18T22:55:51.556Z",
+    "2.0.1": "2016-08-19T14:16:29.064Z",
+    "3.0.0": "2016-09-13T17:27:59.529Z",
+    "3.0.1": "2017-01-07T22:33:39.090Z",
+    "3.0.2": "2017-01-19T06:26:24.072Z",
+    "3.0.3": "2017-01-26T06:22:12.566Z",
+    "3.0.4": "2017-06-18T13:49:08.104Z",
+    "3.0.5": "2017-06-18T13:51:00.392Z",
+    "3.0.6": "2017-06-25T02:16:07.373Z",
+    "3.0.7": "2018-03-12T16:46:27.193Z",
+    "3.0.8": "2019-02-17T06:31:16.967Z",
+    "3.0.9": "2019-02-18T02:29:01.557Z",
+    "4.0.0": "2019-02-19T08:24:36.321Z",
+    "4.0.1": "2019-02-20T01:25:17.864Z",
+    "5.0.0": "2019-09-30T20:24:15.818Z",
+    "5.0.1": "2019-12-30T18:26:17.803Z"
+  },
+  "homepage": "https://github.com/isaacs/tap-mocha-reporter",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isaacs/tap-mocha-reporter.git"
+  },
+  "author": {
+    "name": "Isaac Z. Schlueter",
+    "email": "i@izs.me",
+    "url": "http://blog.izs.me/"
+  },
+  "bugs": {
+    "url": "https://github.com/isaacs/tap-mocha-reporter/issues"
+  },
+  "license": "ISC",
+  "readmeFilename": "README.md"
+}

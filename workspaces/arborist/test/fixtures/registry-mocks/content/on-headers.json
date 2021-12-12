@@ -1,0 +1,308 @@
+{
+  "_id": "on-headers",
+  "_rev": "17-5e7360cec11987e1dd2598e3a2f11e09",
+  "name": "on-headers",
+  "description": "Execute a listener when a response is about to write headers",
+  "dist-tags": {
+    "latest": "1.0.2"
+  },
+  "versions": {
+    "0.0.0": {
+      "name": "on-headers",
+      "description": "Execute a listener when a response is about to write headers",
+      "version": "0.0.0",
+      "author": {
+        "name": "Douglas Christopher Wilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "license": "MIT",
+      "keywords": [
+        "event",
+        "headers",
+        "http",
+        "onheaders"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/expressjs/on-headers.git"
+      },
+      "bugs": {
+        "url": "https://github.com/expressjs/on-headers/issues"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "mocha": "~1.18.2",
+        "supertest": "~0.12.1"
+      },
+      "engines": {
+        "node": ">= 0.8.0"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec test/"
+      },
+      "homepage": "https://github.com/expressjs/on-headers",
+      "_id": "on-headers@0.0.0",
+      "dist": {
+        "shasum": "ee2817f8344325785cd9c2df2b242bbc17caf4c4",
+        "tarball": "https://registry.npmjs.org/on-headers/-/on-headers-0.0.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.4.3",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "maintainers": [
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "on-headers",
+      "description": "Execute a listener when a response is about to write headers",
+      "version": "1.0.0",
+      "author": {
+        "name": "Douglas Christopher Wilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "license": "MIT",
+      "keywords": [
+        "event",
+        "headers",
+        "http",
+        "onheaders"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jshttp/on-headers"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "istanbul": "0.3.0",
+        "mocha": "~1.21.4",
+        "supertest": "~0.13.0"
+      },
+      "engines": {
+        "node": ">= 0.8.0"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec --bail --check-leaks test/",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot --check-leaks test/",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter spec --check-leaks test/"
+      },
+      "gitHead": "434950a0748cd38bf9a04f3fd4f3ff89cf565fda",
+      "bugs": {
+        "url": "https://github.com/jshttp/on-headers/issues"
+      },
+      "homepage": "https://github.com/jshttp/on-headers",
+      "_id": "on-headers@1.0.0",
+      "_shasum": "2c75b5da4375513d0161c6052e7fcbe4953fca5d",
+      "_from": ".",
+      "_npmVersion": "1.4.21",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "maintainers": [
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        }
+      ],
+      "dist": {
+        "shasum": "2c75b5da4375513d0161c6052e7fcbe4953fca5d",
+        "tarball": "https://registry.npmjs.org/on-headers/-/on-headers-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "on-headers",
+      "description": "Execute a listener when a response is about to write headers",
+      "version": "1.0.1",
+      "author": {
+        "name": "Douglas Christopher Wilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "license": "MIT",
+      "keywords": [
+        "event",
+        "headers",
+        "http",
+        "onheaders"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jshttp/on-headers"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "istanbul": "0.3.21",
+        "mocha": "2.3.3",
+        "supertest": "1.1.0"
+      },
+      "files": [
+        "LICENSE",
+        "HISTORY.md",
+        "README.md",
+        "index.js"
+      ],
+      "engines": {
+        "node": ">= 0.8"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec --bail --check-leaks test/",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot --check-leaks test/",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter spec --check-leaks test/"
+      },
+      "gitHead": "ab0156a979d72353cfe666cccb3639e016b00280",
+      "bugs": {
+        "url": "https://github.com/jshttp/on-headers/issues"
+      },
+      "homepage": "https://github.com/jshttp/on-headers",
+      "_id": "on-headers@1.0.1",
+      "_shasum": "928f5d0f470d49342651ea6794b0857c100693f7",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "maintainers": [
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "jongleberry",
+          "email": "jonathanrichardong@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "928f5d0f470d49342651ea6794b0857c100693f7",
+        "tarball": "https://registry.npmjs.org/on-headers/-/on-headers-1.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "on-headers",
+      "description": "Execute a listener when a response is about to write headers",
+      "version": "1.0.2",
+      "author": {
+        "name": "Douglas Christopher Wilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "license": "MIT",
+      "keywords": [
+        "event",
+        "headers",
+        "http",
+        "onheaders"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jshttp/on-headers.git"
+      },
+      "devDependencies": {
+        "eslint": "5.14.1",
+        "eslint-config-standard": "12.0.0",
+        "eslint-plugin-import": "2.16.0",
+        "eslint-plugin-markdown": "1.0.0",
+        "eslint-plugin-node": "8.0.1",
+        "eslint-plugin-promise": "4.0.1",
+        "eslint-plugin-standard": "4.0.0",
+        "istanbul": "0.4.5",
+        "mocha": "6.0.1",
+        "supertest": "3.4.2"
+      },
+      "engines": {
+        "node": ">= 0.8"
+      },
+      "scripts": {
+        "lint": "eslint --plugin markdown --ext js,md .",
+        "test": "mocha --reporter spec --bail --check-leaks test/",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot --check-leaks test/",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter spec --check-leaks test/",
+        "version": "node scripts/version-history.js && git add HISTORY.md"
+      },
+      "gitHead": "c05140cde9bbce2127926752433271c6f3fe8787",
+      "bugs": {
+        "url": "https://github.com/jshttp/on-headers/issues"
+      },
+      "homepage": "https://github.com/jshttp/on-headers#readme",
+      "_id": "on-headers@1.0.2",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "8.15.0",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "dist": {
+        "integrity": "sha512-pZAE+FJLoyITytdqK0U5s+FIpjN0JP3OzFi/u8Rx+EV5/W+JTWGXG8xFzevE7AjBfDqHv/8vL8qQsIhHnqRkrA==",
+        "shasum": "772b0ae6aaa525c399e489adfad90c403eb3c28f",
+        "tarball": "https://registry.npmjs.org/on-headers/-/on-headers-1.0.2.tgz",
+        "fileCount": 5,
+        "unpackedSize": 7538,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcb3EnCRA9TVsSAnZWagAAJ74P/1Wi5XP0E+17U7xu01zR\nnaF1VUbte8DFEouoT4ZgQH9ope94hmbAOW6QrMq2S0FxuTTzZFuDSyKBeQ2g\n2JrwURxitZGU36AX+WuPlQ5+Zw5pmDXk6UjdsA8DpNTOCE6T0N7mKS1KQFFH\nantgfK6JJSRYN1Pv0PIsLFrANaWo2j+tgu+c0Eir0fBk7dEe3Q82B9oaDpP8\nKuJ6jDLC7pz/qcJIdUErE6OaNknALNF0GaqW9ikJgthgZvNsMcA5jP7V3CVg\nmnO20iDAGuDRmTjPdDOThrLPX4oYF5p+xWO6LqxHr2oO/f+NrIRrlJu9JQeP\nFHhqCbh9LEBy6gcg7U+XgIuaFHO0Ujy0hu/rs39TowjuQOuQW9QR58UphGtY\ncDe4lRvwDf86XW+vT65ps/gSABNm8hO/ShPi2A5rVlxIPv+RSWrC3Ril+8CA\n6znvDPyrbB5MuAQB5CZ1Jq9Z0AJ+Js/iNrKjxEwaht1JWmH9LN2PzCe2Upk9\n/4s1u4FsPvExwRWyCDgUnvM3bcNg/ksz9E+OMs6B63I+ywW2iFnpXDzFVKLA\np2TB/bhfRYlgf0lK6KNy8B3Z+iTaPX9ie5aRimU7wZaml0jlh0kwzPxwJyPz\nSEI4ssy0yxHXw+d9DDBl4OOTycrM+fSIrL/qKkWaS/6foiGc/cMsgt/YYMww\nBpKq\r\n=27fC\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/on-headers_1.0.2_1550807334461_0.2296705941712791"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# on-headers\n\n[![NPM Version][npm-version-image]][npm-url]\n[![NPM Downloads][npm-downloads-image]][npm-url]\n[![Node.js Version][node-version-image]][node-version-url]\n[![Build Status][travis-image]][travis-url]\n[![Test Coverage][coveralls-image]][coveralls-url]\n\nExecute a listener when a response is about to write headers.\n\n## Installation\n\nThis is a [Node.js](https://nodejs.org/en/) module available through the\n[npm registry](https://www.npmjs.com/). Installation is done using the\n[`npm install` command](https://docs.npmjs.com/getting-started/installing-npm-packages-locally):\n\n```sh\n$ npm install on-headers\n```\n\n## API\n\n<!-- eslint-disable no-unused-vars -->\n\n```js\nvar onHeaders = require('on-headers')\n```\n\n### onHeaders(res, listener)\n\nThis will add the listener `listener` to fire when headers are emitted for `res`.\nThe listener is passed the `response` object as it's context (`this`). Headers are\nconsidered to be emitted only once, right before they are sent to the client.\n\nWhen this is called multiple times on the same `res`, the `listener`s are fired\nin the reverse order they were added.\n\n## Examples\n\n```js\nvar http = require('http')\nvar onHeaders = require('on-headers')\n\nhttp\n  .createServer(onRequest)\n  .listen(3000)\n\nfunction addPoweredBy () {\n  // set if not set by end of request\n  if (!this.getHeader('X-Powered-By')) {\n    this.setHeader('X-Powered-By', 'Node.js')\n  }\n}\n\nfunction onRequest (req, res) {\n  onHeaders(res, addPoweredBy)\n\n  res.setHeader('Content-Type', 'text/plain')\n  res.end('hello!')\n}\n```\n\n## Testing\n\n```sh\n$ npm test\n```\n\n## License\n\n[MIT](LICENSE)\n\n[coveralls-image]: https://badgen.net/coveralls/c/github/jshttp/on-headers/master\n[coveralls-url]: https://coveralls.io/r/jshttp/on-headers?branch=master\n[node-version-image]: https://badgen.net/npm/node/on-headers\n[node-version-url]: https://nodejs.org/en/download\n[npm-downloads-image]: https://badgen.net/npm/dm/on-headers\n[npm-url]: https://npmjs.org/package/on-headers\n[npm-version-image]: https://badgen.net/npm/v/on-headers\n[travis-image]: https://badgen.net/travis/jshttp/on-headers/master\n[travis-url]: https://travis-ci.org/jshttp/on-headers\n",
+  "maintainers": [
+    {
+      "name": "dougwilson",
+      "email": "doug@somethingdoug.com"
+    }
+  ],
+  "time": {
+    "modified": "2019-02-22T03:48:57.059Z",
+    "created": "2014-05-14T01:43:08.147Z",
+    "0.0.0": "2014-05-14T01:43:08.147Z",
+    "1.0.0": "2014-08-10T23:14:54.117Z",
+    "1.0.1": "2015-09-30T03:47:06.558Z",
+    "1.0.2": "2019-02-22T03:48:54.600Z"
+  },
+  "homepage": "https://github.com/jshttp/on-headers#readme",
+  "keywords": [
+    "event",
+    "headers",
+    "http",
+    "onheaders"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jshttp/on-headers.git"
+  },
+  "author": {
+    "name": "Douglas Christopher Wilson",
+    "email": "doug@somethingdoug.com"
+  },
+  "bugs": {
+    "url": "https://github.com/jshttp/on-headers/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "users": {
+    "tarunbk": true,
+    "henrytseng": true,
+    "carlosvillademor": true,
+    "mojaray2k": true,
+    "jimjin": true,
+    "rocket0191": true,
+    "shanewholloway": true
+  }
+}

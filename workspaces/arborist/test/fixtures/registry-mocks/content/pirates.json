@@ -1,0 +1,1242 @@
+{
+  "_id": "pirates",
+  "_rev": "25-3687b3a4ff709ca1df60fbb92792fe42",
+  "name": "pirates",
+  "description": "Properly hijack require",
+  "dist-tags": {
+    "latest": "4.0.1"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "pirates",
+      "description": "Properly hijack require",
+      "main": "lib/index.js",
+      "scripts": {
+        "test": "npm run lint && mocha",
+        "test:cov": "npm run lint && istanbul cover _mocha",
+        "coveralls:upload": "cat ./coverage/lcov.info | coveralls",
+        "watch": "mocha -w -R min",
+        "lint": "eslint .",
+        "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ariporad/pirates.git"
+      },
+      "author": {
+        "name": "Ari Porad",
+        "email": "ari@ariporad.com",
+        "url": "http://ariporad.com"
+      },
+      "devDependencies": {
+        "babel-eslint": "4.1.5",
+        "chai": "3.4.1",
+        "chai-as-promised": "5.1.0",
+        "coveralls": "2.11.4",
+        "cz-conventional-changelog": "1.1.5",
+        "eslint": "1.10.3",
+        "eslint-config-airbnb": "2.0.0",
+        "istanbul": "1.0.0-alpha.2",
+        "mocha": "2.3.4",
+        "rewire": "2.5.1",
+        "semantic-release": "^4.3.5"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/ariporad/pirates/issues"
+      },
+      "homepage": "https://github.com/ariporad/pirates#readme",
+      "config": {
+        "commitizen": {
+          "path": "node_modules/cz-conventional-changelog/"
+        }
+      },
+      "dependencies": {
+        "npmlog": "2.0.0"
+      },
+      "version": "1.0.0",
+      "gitHead": "fe22e68976302e65fdaae21b0f7cbf687b67a301",
+      "_id": "pirates@1.0.0",
+      "_shasum": "e4baf01b78ea92cb02877946dfd7495fb06fe25b",
+      "_from": ".",
+      "_npmVersion": "3.5.1",
+      "_nodeVersion": "5.1.1",
+      "_npmUser": {
+        "name": "ariporad",
+        "email": "ari@ariporad.com"
+      },
+      "dist": {
+        "shasum": "e4baf01b78ea92cb02877946dfd7495fb06fe25b",
+        "tarball": "https://registry.npmjs.org/pirates/-/pirates-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "ariporad",
+          "email": "ari@ariporad.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "pirates",
+      "description": "Properly hijack require",
+      "main": "lib/index.js",
+      "scripts": {
+        "test": "npm run lint && mocha",
+        "test:cov": "npm run lint && istanbul cover _mocha",
+        "coveralls:upload": "cat ./coverage/lcov.info | coveralls",
+        "watch": "mocha -w -R min",
+        "lint": "eslint .",
+        "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ariporad/pirates.git"
+      },
+      "author": {
+        "name": "Ari Porad",
+        "email": "ari@ariporad.com",
+        "url": "http://ariporad.com"
+      },
+      "devDependencies": {
+        "babel-eslint": "4.1.5",
+        "chai": "3.4.1",
+        "chai-as-promised": "5.1.0",
+        "coveralls": "2.11.4",
+        "cz-conventional-changelog": "1.1.5",
+        "eslint": "1.10.3",
+        "eslint-config-airbnb": "2.0.0",
+        "istanbul": "1.0.0-alpha.2",
+        "mocha": "2.3.4",
+        "rewire": "2.5.1",
+        "semantic-release": "^4.3.5"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/ariporad/pirates/issues"
+      },
+      "homepage": "https://github.com/ariporad/pirates#readme",
+      "config": {
+        "commitizen": {
+          "path": "node_modules/cz-conventional-changelog/"
+        }
+      },
+      "dependencies": {
+        "npmlog": "2.0.0"
+      },
+      "version": "1.0.1",
+      "gitHead": "5bf5af0ba032f8839b780547715164f4332585a3",
+      "_id": "pirates@1.0.1",
+      "_shasum": "7bfbcceb8e8273ce58ca5e055e9b0f1a45757fec",
+      "_from": ".",
+      "_npmVersion": "3.5.1",
+      "_nodeVersion": "5.1.1",
+      "_npmUser": {
+        "name": "ariporad",
+        "email": "ari@ariporad.com"
+      },
+      "dist": {
+        "shasum": "7bfbcceb8e8273ce58ca5e055e9b0f1a45757fec",
+        "tarball": "https://registry.npmjs.org/pirates/-/pirates-1.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "ariporad",
+          "email": "ari@ariporad.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "pirates",
+      "description": "Properly hijack require",
+      "main": "lib/index.js",
+      "scripts": {
+        "test": "npm run lint && mocha",
+        "test:cov": "npm run lint && istanbul cover _mocha",
+        "coveralls:upload": "cat ./coverage/lcov.info | coveralls",
+        "watch": "mocha -w -R min",
+        "lint": "eslint .",
+        "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ariporad/pirates.git"
+      },
+      "author": {
+        "name": "Ari Porad",
+        "email": "ari@ariporad.com",
+        "url": "http://ariporad.com"
+      },
+      "devDependencies": {
+        "babel-eslint": "4.1.5",
+        "chai": "3.4.1",
+        "chai-as-promised": "5.1.0",
+        "coveralls": "2.11.4",
+        "cz-conventional-changelog": "1.1.5",
+        "eslint": "1.10.3",
+        "eslint-config-airbnb": "2.0.0",
+        "istanbul": "1.0.0-alpha.2",
+        "mocha": "2.3.4",
+        "rewire": "2.5.1",
+        "semantic-release": "^4.3.5"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/ariporad/pirates/issues"
+      },
+      "homepage": "https://github.com/ariporad/pirates#readme",
+      "config": {
+        "commitizen": {
+          "path": "node_modules/cz-conventional-changelog/"
+        }
+      },
+      "dependencies": {
+        "npmlog": "2.0.0"
+      },
+      "version": "1.0.2",
+      "gitHead": "ca8606edbfc6345c30980c61309d4724c8520dee",
+      "_id": "pirates@1.0.2",
+      "_shasum": "11836302052908a335e2cd12374686e6cc06fcfe",
+      "_from": ".",
+      "_npmVersion": "3.5.1",
+      "_nodeVersion": "5.1.1",
+      "_npmUser": {
+        "name": "ariporad",
+        "email": "ari@ariporad.com"
+      },
+      "dist": {
+        "shasum": "11836302052908a335e2cd12374686e6cc06fcfe",
+        "tarball": "https://registry.npmjs.org/pirates/-/pirates-1.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "ariporad",
+          "email": "ari@ariporad.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "pirates",
+      "description": "Properly hijack require",
+      "main": "lib/index.js",
+      "scripts": {
+        "test": "npm run lint && mocha",
+        "test:cov": "npm run lint && istanbul cover _mocha",
+        "coveralls:upload": "cat ./coverage/lcov.info | coveralls",
+        "watch": "mocha -w -R min",
+        "lint": "eslint .",
+        "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ariporad/pirates.git"
+      },
+      "author": {
+        "name": "Ari Porad",
+        "email": "ari@ariporad.com",
+        "url": "http://ariporad.com"
+      },
+      "devDependencies": {
+        "babel-eslint": "4.1.5",
+        "chai": "3.4.1",
+        "chai-as-promised": "5.1.0",
+        "coveralls": "2.11.4",
+        "cz-conventional-changelog": "1.1.5",
+        "eslint": "1.10.3",
+        "eslint-config-airbnb": "2.0.0",
+        "istanbul": "1.0.0-alpha.2",
+        "mocha": "2.3.4",
+        "rewire": "2.5.1",
+        "semantic-release": "^4.3.5"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/ariporad/pirates/issues"
+      },
+      "homepage": "https://github.com/ariporad/pirates#readme",
+      "config": {
+        "commitizen": {
+          "path": "node_modules/cz-conventional-changelog/"
+        }
+      },
+      "version": "1.1.0",
+      "gitHead": "ad272973ce229c73e3354d376afa9eedfb157345",
+      "_id": "pirates@1.1.0",
+      "_shasum": "5e3b44b2cb94419134afe6ccd461a69a0f12a9fe",
+      "_from": ".",
+      "_npmVersion": "3.5.1",
+      "_nodeVersion": "5.1.1",
+      "_npmUser": {
+        "name": "ariporad",
+        "email": "ari@ariporad.com"
+      },
+      "dist": {
+        "shasum": "5e3b44b2cb94419134afe6ccd461a69a0f12a9fe",
+        "tarball": "https://registry.npmjs.org/pirates/-/pirates-1.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "ariporad",
+          "email": "ari@ariporad.com"
+        }
+      ],
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "pirates",
+      "description": "Properly hijack require",
+      "main": "lib/index.js",
+      "scripts": {
+        "test": "npm run lint && mocha",
+        "test:cov": "npm run lint && istanbul cover _mocha",
+        "coveralls:upload": "cat ./coverage/lcov.info | coveralls",
+        "watch": "mocha -w -R min",
+        "lint": "eslint .",
+        "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ariporad/pirates.git"
+      },
+      "author": {
+        "name": "Ari Porad",
+        "email": "ari@ariporad.com",
+        "url": "http://ariporad.com"
+      },
+      "devDependencies": {
+        "babel-eslint": "4.1.5",
+        "chai": "3.4.1",
+        "chai-as-promised": "5.1.0",
+        "coveralls": "2.11.4",
+        "cz-conventional-changelog": "1.1.5",
+        "eslint": "1.10.3",
+        "eslint-config-airbnb": "2.0.0",
+        "istanbul": "1.0.0-alpha.2",
+        "mocha": "2.3.4",
+        "rewire": "2.5.1",
+        "semantic-release": "^4.3.5"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/ariporad/pirates/issues"
+      },
+      "homepage": "https://github.com/ariporad/pirates#readme",
+      "config": {
+        "commitizen": {
+          "path": "node_modules/cz-conventional-changelog/"
+        }
+      },
+      "version": "2.0.0",
+      "gitHead": "68904a5ec001ca6a896c5e552916a15864cef71b",
+      "_id": "pirates@2.0.0",
+      "_shasum": "5b4d106db8b5133736e2c947be2fb0301b62f2a8",
+      "_from": ".",
+      "_npmVersion": "3.5.1",
+      "_nodeVersion": "5.1.1",
+      "_npmUser": {
+        "name": "ariporad",
+        "email": "ari@ariporad.com"
+      },
+      "dist": {
+        "shasum": "5b4d106db8b5133736e2c947be2fb0301b62f2a8",
+        "tarball": "https://registry.npmjs.org/pirates/-/pirates-2.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "ariporad",
+          "email": "ari@ariporad.com"
+        }
+      ],
+      "directories": {}
+    },
+    "2.0.1": {
+      "name": "pirates",
+      "description": "Properly hijack require",
+      "main": "lib/index.js",
+      "scripts": {
+        "test": "npm run lint && mocha",
+        "test:cov": "npm run lint && istanbul cover _mocha",
+        "coveralls:upload": "cat ./coverage/lcov.info | coveralls",
+        "watch": "mocha -w -R min",
+        "lint": "eslint .",
+        "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ariporad/pirates.git"
+      },
+      "author": {
+        "name": "Ari Porad",
+        "email": "ari@ariporad.com",
+        "url": "http://ariporad.com"
+      },
+      "devDependencies": {
+        "babel-eslint": "^4.1.5",
+        "chai": "^3.4.1",
+        "chai-as-promised": "^5.1.0",
+        "coveralls": "^2.11.4",
+        "cz-conventional-changelog": "^1.1.5",
+        "eslint": "^1.10.3",
+        "eslint-config-airbnb": "^2.0.0",
+        "istanbul": "^1.0.0-alpha.2",
+        "mocha": "^2.3.4",
+        "rewire": "^2.5.1",
+        "semantic-release": "^4.3.5"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/ariporad/pirates/issues"
+      },
+      "homepage": "https://github.com/ariporad/pirates#readme",
+      "config": {
+        "commitizen": {
+          "path": "node_modules/cz-conventional-changelog/"
+        }
+      },
+      "version": "2.0.1",
+      "gitHead": "4da6eea70cd955b5edb76aff7a20e2595e7155fc",
+      "_id": "pirates@2.0.1",
+      "_shasum": "cf4126f9e546bbe6a086b2288a5982e10be9d3b7",
+      "_from": ".",
+      "_npmVersion": "3.5.1",
+      "_nodeVersion": "5.1.1",
+      "_npmUser": {
+        "name": "ariporad",
+        "email": "ari@ariporad.com"
+      },
+      "dist": {
+        "shasum": "cf4126f9e546bbe6a086b2288a5982e10be9d3b7",
+        "tarball": "https://registry.npmjs.org/pirates/-/pirates-2.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "ariporad",
+          "email": "ari@ariporad.com"
+        }
+      ],
+      "directories": {}
+    },
+    "2.1.0": {
+      "name": "pirates",
+      "description": "Properly hijack require",
+      "main": "lib/index.js",
+      "scripts": {
+        "test": "npm run lint && mocha",
+        "test:cov": "npm run lint && istanbul cover _mocha",
+        "coveralls:upload": "cat ./coverage/lcov.info | coveralls",
+        "watch": "mocha -w -R min",
+        "lint": "eslint .",
+        "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ariporad/pirates.git"
+      },
+      "author": {
+        "name": "Ari Porad",
+        "email": "ari@ariporad.com",
+        "url": "http://ariporad.com"
+      },
+      "devDependencies": {
+        "babel-eslint": "^4.1.5",
+        "chai": "^3.4.1",
+        "chai-as-promised": "^5.1.0",
+        "coveralls": "^2.11.4",
+        "cz-conventional-changelog": "^1.1.5",
+        "eslint": "^1.10.3",
+        "eslint-config-airbnb": "^2.0.0",
+        "istanbul": "^1.0.0-alpha.2",
+        "mocha": "^2.3.4",
+        "rewire": "^2.5.1",
+        "semantic-release": "^4.3.5"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/ariporad/pirates/issues"
+      },
+      "homepage": "https://github.com/ariporad/pirates#readme",
+      "config": {
+        "commitizen": {
+          "path": "node_modules/cz-conventional-changelog/"
+        }
+      },
+      "dependencies": {
+        "node-modules-regexp": "^1.0.0"
+      },
+      "version": "2.1.0",
+      "gitHead": "7b940ec84f0b61559ee70557ea5f7aa6a1af1f12",
+      "_id": "pirates@2.1.0",
+      "_shasum": "a3deffd3d72e1ed8dd6d50b6da1e46f9d0a649f1",
+      "_from": ".",
+      "_npmVersion": "3.5.1",
+      "_nodeVersion": "5.1.1",
+      "_npmUser": {
+        "name": "ariporad",
+        "email": "ari@ariporad.com"
+      },
+      "dist": {
+        "shasum": "a3deffd3d72e1ed8dd6d50b6da1e46f9d0a649f1",
+        "tarball": "https://registry.npmjs.org/pirates/-/pirates-2.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "ariporad",
+          "email": "ari@ariporad.com"
+        }
+      ],
+      "directories": {}
+    },
+    "2.1.1": {
+      "name": "pirates",
+      "description": "Properly hijack require",
+      "main": "lib/index.js",
+      "scripts": {
+        "test": "npm run lint &&  ava",
+        "test:cov": "npm run lint && echo \"Code Coverage Currently Doesn't Work, Sorry!\"",
+        "coveralls:upload": "cat ./coverage/lcov.info | coveralls",
+        "lint": "eslint .",
+        "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ariporad/pirates.git"
+      },
+      "author": {
+        "name": "Ari Porad",
+        "email": "ari@ariporad.com",
+        "url": "http://ariporad.com"
+      },
+      "devDependencies": {
+        "ava": "^0.7.0",
+        "babel-eslint": "^4.1.5",
+        "coveralls": "^2.11.4",
+        "cz-conventional-changelog": "^1.1.5",
+        "eslint": "^1.10.3",
+        "eslint-config-airbnb": "^2.0.0",
+        "istanbul": "^1.0.0-alpha.2",
+        "mock-require": "^1.2.1",
+        "rewire": "^2.5.1",
+        "semantic-release": "^4.3.5"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/ariporad/pirates/issues"
+      },
+      "homepage": "https://github.com/ariporad/pirates#readme",
+      "config": {
+        "commitizen": {
+          "path": "node_modules/cz-conventional-changelog/"
+        }
+      },
+      "dependencies": {
+        "node-modules-regexp": "^1.0.0"
+      },
+      "version": "2.1.1",
+      "gitHead": "fe357a19587209c8b1dd94c98a248413562323c4",
+      "_id": "pirates@2.1.1",
+      "_shasum": "ff362e6084efdfef9033b5d2ae11ba312bc4de34",
+      "_from": ".",
+      "_npmVersion": "3.5.3",
+      "_nodeVersion": "5.1.1",
+      "_npmUser": {
+        "name": "ariporad",
+        "email": "ari@ariporad.com"
+      },
+      "dist": {
+        "shasum": "ff362e6084efdfef9033b5d2ae11ba312bc4de34",
+        "tarball": "https://registry.npmjs.org/pirates/-/pirates-2.1.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "ariporad",
+          "email": "ari@ariporad.com"
+        }
+      ],
+      "directories": {}
+    },
+    "2.1.2": {
+      "name": "pirates",
+      "description": "Properly hijack require",
+      "main": "lib/index.js",
+      "scripts": {
+        "test": "npm run lint &&  ava",
+        "test:cov": "npm run lint && echo \"Code Coverage Currently Doesn't Work, Sorry!\"",
+        "coveralls:upload": "cat ./coverage/lcov.info | coveralls",
+        "lint": "eslint .",
+        "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ariporad/pirates.git"
+      },
+      "author": {
+        "name": "Ari Porad",
+        "email": "ari@ariporad.com",
+        "url": "http://ariporad.com"
+      },
+      "devDependencies": {
+        "ava": "^0.7.0",
+        "babel-eslint": "^4.1.5",
+        "coveralls": "^2.11.4",
+        "cz-conventional-changelog": "^1.1.5",
+        "eslint": "^1.10.3",
+        "eslint-config-airbnb": "^2.0.0",
+        "istanbul": "^1.0.0-alpha.2",
+        "mock-require": "^1.2.1",
+        "rewire": "^2.5.1",
+        "semantic-release": "^4.3.5"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/ariporad/pirates/issues"
+      },
+      "homepage": "https://github.com/ariporad/pirates#readme",
+      "config": {
+        "commitizen": {
+          "path": "node_modules/cz-conventional-changelog/"
+        }
+      },
+      "dependencies": {
+        "node-modules-regexp": "^1.0.0"
+      },
+      "version": "2.1.2",
+      "gitHead": "d4790083b6f2e5d48cb21c16f68c0c0376a0ae65",
+      "_id": "pirates@2.1.2",
+      "_shasum": "69e92d12177b5fe358e3418a11d63c69b3b4b842",
+      "_from": ".",
+      "_npmVersion": "3.10.7",
+      "_nodeVersion": "5.1.1",
+      "_npmUser": {
+        "name": "ariporad",
+        "email": "ari@ariporad.com"
+      },
+      "dist": {
+        "shasum": "69e92d12177b5fe358e3418a11d63c69b3b4b842",
+        "tarball": "https://registry.npmjs.org/pirates/-/pirates-2.1.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "ariporad",
+          "email": "ari@ariporad.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/pirates-2.1.2.tgz_1474169230810_0.658760572085157"
+      },
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "pirates",
+      "description": "Properly hijack require",
+      "main": "lib/index.js",
+      "scripts": {
+        "build": "babel src -d lib",
+        "test": "yarn run lint && yarn run build && ava",
+        "test:cov": "yarn run lint && echo \"Code Coverage Currently Doesn't Work, Sorry!\"",
+        "coveralls:upload": "cat ./coverage/lcov.info | coveralls",
+        "lint": "eslint .",
+        "prepublish": "yarn run build",
+        "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+      },
+      "files": [
+        "lib"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ariporad/pirates.git"
+      },
+      "engines": {
+        "node": ">= 4"
+      },
+      "author": {
+        "name": "Ari Porad",
+        "email": "ari@ariporad.com",
+        "url": "http://ariporad.com"
+      },
+      "dependencies": {
+        "node-modules-regexp": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "^0.19.0",
+        "babel-cli": "^6.24.0",
+        "babel-eslint": "^7.2.1",
+        "babel-preset-env": "^1.3.2",
+        "coveralls": "^2.11.4",
+        "cz-conventional-changelog": "^2.0.0",
+        "decache": "^4.1.0",
+        "eslint": "^3.19.0",
+        "eslint-config-airbnb-base": "^11.1.3",
+        "eslint-plugin-import": "^2.2.0",
+        "istanbul": "^1.0.0-alpha.2",
+        "mock-require": "^2.0.2",
+        "rewire": "^2.5.1",
+        "semantic-release": "^6.3.2"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/ariporad/pirates/issues"
+      },
+      "homepage": "https://github.com/ariporad/pirates#readme",
+      "config": {
+        "commitizen": {
+          "path": "cz-conventional-changelog"
+        }
+      },
+      "ava": {
+        "files": [
+          "test/*.js"
+        ],
+        "source": [
+          "lib/**/*.js"
+        ]
+      },
+      "version": "3.0.0",
+      "gitHead": "d171c4d7db7e804075dd8c86ce124d1f29b12c6e",
+      "_id": "pirates@3.0.0",
+      "_shasum": "30e8934fcf01694b4d212ed004501ffb26b8971f",
+      "_from": ".",
+      "_npmVersion": "4.2.0",
+      "_nodeVersion": "7.8.0",
+      "_npmUser": {
+        "name": "danez",
+        "email": "daniel@tschinder.de"
+      },
+      "dist": {
+        "shasum": "30e8934fcf01694b4d212ed004501ffb26b8971f",
+        "tarball": "https://registry.npmjs.org/pirates/-/pirates-3.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "ariporad",
+          "email": "ari@ariporad.com"
+        },
+        {
+          "name": "danez",
+          "email": "daniel@tschinder.de"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/pirates-3.0.0.tgz_1491516639963_0.507383652497083"
+      },
+      "directories": {}
+    },
+    "3.0.1": {
+      "name": "pirates",
+      "description": "Properly hijack require",
+      "main": "lib/index.js",
+      "scripts": {
+        "clean": "rimraf lib",
+        "build": "babel src -d lib",
+        "test": "yarn run lint && cross-env BABEL_ENV=test yarn run build && nyc ava",
+        "coveralls:upload": "cat ./coverage/lcov.info | coveralls",
+        "lint": "eslint .",
+        "prepublish": "yarn run clean && yarn run build",
+        "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+      },
+      "files": [
+        "lib"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ariporad/pirates.git"
+      },
+      "engines": {
+        "node": ">= 4"
+      },
+      "author": {
+        "name": "Ari Porad",
+        "email": "ari@ariporad.com",
+        "url": "http://ariporad.com"
+      },
+      "dependencies": {
+        "node-modules-regexp": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "^0.19.0",
+        "babel-cli": "^6.24.0",
+        "babel-eslint": "^7.2.1",
+        "babel-plugin-istanbul": "^4.1.1",
+        "babel-preset-env": "^1.3.2",
+        "cross-env": "^4.0.0",
+        "cz-conventional-changelog": "^2.0.0",
+        "decache": "^4.1.0",
+        "eslint": "^3.19.0",
+        "eslint-config-airbnb-base": "^11.1.3",
+        "eslint-plugin-import": "^2.2.0",
+        "mock-require": "^2.0.2",
+        "nyc": "^10.2.0",
+        "rewire": "^2.5.1",
+        "rimraf": "^2.6.1",
+        "semantic-release": "^6.3.2"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/ariporad/pirates/issues"
+      },
+      "homepage": "https://github.com/ariporad/pirates#readme",
+      "config": {
+        "commitizen": {
+          "path": "cz-conventional-changelog"
+        }
+      },
+      "ava": {
+        "files": [
+          "test/*.js"
+        ],
+        "source": [
+          "lib/**/*.js"
+        ]
+      },
+      "nyc": {
+        "include": [
+          "src/*.js"
+        ],
+        "reporter": [
+          "json",
+          "text"
+        ],
+        "sourceMap": false,
+        "instrument": false
+      },
+      "version": "3.0.1",
+      "gitHead": "55998f375817094f041a58bb8ac9daf8ab27f6b3",
+      "_id": "pirates@3.0.1",
+      "_shasum": "8a87bf9ab7f58d6c3deee6a1a1c892ffe823811f",
+      "_from": ".",
+      "_npmVersion": "4.2.0",
+      "_nodeVersion": "7.8.0",
+      "_npmUser": {
+        "name": "danez",
+        "email": "daniel@tschinder.de"
+      },
+      "dist": {
+        "shasum": "8a87bf9ab7f58d6c3deee6a1a1c892ffe823811f",
+        "tarball": "https://registry.npmjs.org/pirates/-/pirates-3.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "ariporad",
+          "email": "ari@ariporad.com"
+        },
+        {
+          "name": "danez",
+          "email": "daniel@tschinder.de"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/pirates-3.0.1.tgz_1491556545928_0.811668670270592"
+      },
+      "directories": {}
+    },
+    "3.0.2": {
+      "version": "3.0.2",
+      "name": "pirates",
+      "description": "Properly hijack require",
+      "main": "lib/index.js",
+      "scripts": {
+        "clean": "rimraf lib",
+        "build": "babel src -d lib",
+        "test": "yarn run lint && cross-env BABEL_ENV=test yarn run build && nyc ava",
+        "lint": "eslint .",
+        "prepublish": "yarn run clean && yarn run build"
+      },
+      "files": [
+        "lib"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ariporad/pirates.git"
+      },
+      "engines": {
+        "node": ">= 4"
+      },
+      "author": {
+        "name": "Ari Porad",
+        "email": "ari@ariporad.com",
+        "url": "http://ariporad.com"
+      },
+      "dependencies": {
+        "node-modules-regexp": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "^0.23.0",
+        "babel-cli": "^6.24.0",
+        "babel-eslint": "^8.0.2",
+        "babel-plugin-istanbul": "^4.1.1",
+        "babel-preset-env": "^1.3.2",
+        "cross-env": "^5.0.5",
+        "cz-conventional-changelog": "^2.0.0",
+        "decache": "^4.1.0",
+        "eslint": "^4.6.0",
+        "eslint-config-airbnb-base": "^12.0.0",
+        "eslint-plugin-import": "^2.2.0",
+        "mock-require": "^2.0.2",
+        "nyc": "^11.1.0",
+        "rewire": "^2.5.1",
+        "rimraf": "^2.6.1",
+        "semantic-release": "^9.0.0"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/ariporad/pirates/issues"
+      },
+      "homepage": "https://github.com/ariporad/pirates#readme",
+      "config": {
+        "commitizen": {
+          "path": "cz-conventional-changelog"
+        }
+      },
+      "ava": {
+        "files": [
+          "test/*.js"
+        ],
+        "source": [
+          "lib/**/*.js"
+        ]
+      },
+      "nyc": {
+        "include": [
+          "src/*.js"
+        ],
+        "reporter": [
+          "json",
+          "text"
+        ],
+        "sourceMap": false,
+        "instrument": false
+      },
+      "gitHead": "72933dae2d2ed2690a9372f04f2bc99c77e209c0",
+      "_id": "pirates@3.0.2",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "danez",
+        "email": "daniel@tschinder.de"
+      },
+      "dist": {
+        "integrity": "sha512-c5CgUJq6H2k6MJz72Ak1F5sN9n9wlSlJyEnwvpm9/y3WB4E3pHBDT2c6PEiS1vyJvq2bUxUAIu0EGf8Cx4Ic7Q==",
+        "shasum": "7e6f85413fd9161ab4e12b539b06010d85954bb9",
+        "tarball": "https://registry.npmjs.org/pirates/-/pirates-3.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "ari@ariporad.com",
+          "name": "ariporad"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/pirates-3.0.2.tgz_1510355740689_0.6311575165018439"
+      },
+      "directories": {}
+    },
+    "4.0.0": {
+      "name": "pirates",
+      "description": "Properly hijack require",
+      "main": "lib/index.js",
+      "scripts": {
+        "clean": "rimraf lib",
+        "build": "babel src -d lib",
+        "test": "yarn run lint && cross-env BABEL_ENV=test yarn run build && nyc ava",
+        "lint": "eslint .",
+        "prepublish": "yarn run clean && yarn run build"
+      },
+      "files": [
+        "lib"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ariporad/pirates.git"
+      },
+      "engines": {
+        "node": ">= 6"
+      },
+      "author": {
+        "name": "Ari Porad",
+        "email": "ari@ariporad.com",
+        "url": "http://ariporad.com"
+      },
+      "dependencies": {
+        "node-modules-regexp": "^1.0.0"
+      },
+      "devDependencies": {
+        "@babel/cli": "^7.0.0-beta.53",
+        "@babel/core": "^7.0.0-beta.53",
+        "@babel/preset-env": "^7.0.0-beta.53",
+        "ava": "^0.25.0",
+        "babel-core": "^7.0.0-0",
+        "babel-eslint": "^9.0.0-beta.2",
+        "babel-plugin-istanbul": "^4.1.1",
+        "cross-env": "^5.0.5",
+        "cz-conventional-changelog": "^2.0.0",
+        "decache": "^4.1.0",
+        "eslint": "^5.1.0",
+        "eslint-config-airbnb-base": "^13.0.0",
+        "eslint-plugin-import": "^2.2.0",
+        "mock-require": "^3.0.2",
+        "nyc": "^12.0.2",
+        "rewire": "^4.0.1",
+        "rimraf": "^2.6.1",
+        "semantic-release": "^15.7.0"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/ariporad/pirates/issues"
+      },
+      "homepage": "https://github.com/ariporad/pirates#readme",
+      "config": {
+        "commitizen": {
+          "path": "cz-conventional-changelog"
+        }
+      },
+      "ava": {
+        "files": [
+          "test/*.js"
+        ],
+        "source": [
+          "lib/**/*.js"
+        ]
+      },
+      "nyc": {
+        "include": [
+          "src/*.js"
+        ],
+        "reporter": [
+          "json",
+          "text"
+        ],
+        "sourceMap": false,
+        "instrument": false
+      },
+      "version": "4.0.0",
+      "gitHead": "7dff3f52869ef0493545eae15957dc4ed794f4cf",
+      "_id": "pirates@4.0.0",
+      "_npmVersion": "6.1.0",
+      "_nodeVersion": "10.6.0",
+      "_npmUser": {
+        "name": "danez",
+        "email": "daniel@tschinder.de"
+      },
+      "dist": {
+        "integrity": "sha512-8t5BsXy1LUIjn3WWOlOuFDuKswhQb/tkak641lvBgmPOBUQHXveORtlMCp6OdPV1dtuTaEahKA8VNz6uLfKBtA==",
+        "shasum": "850b18781b4ac6ec58a43c9ed9ec5fe6796addbd",
+        "tarball": "https://registry.npmjs.org/pirates/-/pirates-4.0.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 11506,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbRlkiCRA9TVsSAnZWagAAeoMP/igbxexeiLg3GT7zQQ6x\nv+h2fvBq+ifgabiwms/LttUJkYBIgt5TCOkbdjg5y/ngnr27Ik1kI1qOginF\nVSnKrTPmxgMwWucivZnX1OV8SJtte39lk7S2FD9YHlBeW4NvTqB6l7aS1oh2\nhxrbg2tHd/IYvWVCf6camugA+TBdwxsVhMQCwo0IAlH0wpKuw2ZJ/n61Ii5/\nkNLiztA2Dnz4pwaTzgj0uyrdIlNf66KNOBts8PEPiAZ5h4UGXeVZWyB/kaA7\nlJ2vNH/7NGYriPyFL4/tUkIMSGiJqiBquAJMBBK4Z/GLj2O62rA3dNfTumTi\nhUbDVLD8rG9WQdlYoee4j2FYvLTsX4KFWYWFk4zQ65e+c6nhEuXyOUZ6YWd9\nEHbJVZukXED1EXXfEh8wjxZiXGq4NMdtVqu7FyltA5Y92nukpCJPMnIOS9Jo\nNFhdh0Zb3Fiv2cSj+MLHzNIncdr0t1mbVrAl+4XERaQSjFEBdLgbZmF+BPOq\njGP1sy98pTDqCkAqolWrllMymy9f9HqvL2KSvLkB6M/r4zwP/Nl1jiIEEjoA\nL4R7CcRgqA2O8s1s4fgWzmlYnunhPaUwl9RsK4dw/+7tmTJxdecyzdkCOFkG\notbZ6nPBXWz0gUIgsEf8Rmq9kovVbhtyyvhnzWVgxz9tuN1Abo1fAhgx9Cx/\ncM7W\r\n=6o31\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "ari@ariporad.com",
+          "name": "ariporad"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/pirates_4.0.0_1531336994248_0.7082221737793184"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.0.1": {
+      "name": "pirates",
+      "description": "Properly hijack require",
+      "main": "lib/index.js",
+      "types": "index.d.ts",
+      "scripts": {
+        "clean": "rimraf lib",
+        "build": "babel src -d lib",
+        "test": "yarn run lint && cross-env BABEL_ENV=test yarn run build && nyc ava",
+        "lint": "eslint --report-unused-disable-directives .",
+        "prepublish": "yarn run clean && yarn run build"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ariporad/pirates.git"
+      },
+      "engines": {
+        "node": ">= 6"
+      },
+      "author": {
+        "name": "Ari Porad",
+        "email": "ari@ariporad.com",
+        "url": "http://ariporad.com"
+      },
+      "dependencies": {
+        "node-modules-regexp": "^1.0.0"
+      },
+      "devDependencies": {
+        "@babel/cli": "^7.0.0",
+        "@babel/core": "^7.0.0",
+        "@babel/preset-env": "^7.0.0",
+        "ava": "^1.2.1",
+        "babel-core": "^7.0.0-0",
+        "babel-eslint": "^10.0.1",
+        "babel-plugin-istanbul": "^5.1.0",
+        "cross-env": "^5.0.5",
+        "cz-conventional-changelog": "^2.0.0",
+        "decache": "^4.1.0",
+        "eslint": "^5.1.0",
+        "eslint-config-prettier": "^4.0.0",
+        "eslint-plugin-import": "^2.2.0",
+        "eslint-plugin-prettier": "^3.0.1",
+        "mock-require": "^3.0.2",
+        "nyc": "^13.2.0",
+        "prettier": "^1.16.4",
+        "rewire": "^4.0.1",
+        "rimraf": "^2.6.1",
+        "semantic-release": "^15.7.0"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/ariporad/pirates/issues"
+      },
+      "homepage": "https://github.com/ariporad/pirates#readme",
+      "config": {
+        "commitizen": {
+          "path": "cz-conventional-changelog"
+        }
+      },
+      "ava": {
+        "files": [
+          "test/*.js"
+        ],
+        "sources": [
+          "lib/**/*.js"
+        ]
+      },
+      "nyc": {
+        "include": [
+          "src/*.js"
+        ],
+        "reporter": [
+          "json",
+          "text"
+        ],
+        "sourceMap": false,
+        "instrument": false
+      },
+      "version": "4.0.1",
+      "gitHead": "5223d20e54f724780eb73d4d4918f70004d9d8dc",
+      "_id": "pirates@4.0.1",
+      "_npmVersion": "6.5.0",
+      "_nodeVersion": "11.10.0",
+      "_npmUser": {
+        "name": "danez",
+        "email": "daniel@tschinder.de"
+      },
+      "dist": {
+        "integrity": "sha512-WuNqLTbMI3tmfef2TKxlQmAiLHKtFhlsCZnPIpuv2Ow0RDVO8lfy1Opf4NUzlMXLjPl+Men7AuVdX6TA+s+uGA==",
+        "shasum": "643a92caf894566f91b2b986d2c66950a8e2fb87",
+        "tarball": "https://registry.npmjs.org/pirates/-/pirates-4.0.1.tgz",
+        "fileCount": 5,
+        "unpackedSize": 12617,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcaa95CRA9TVsSAnZWagAA52gQAJOpJt7ROoCLbtxmtLKc\nc74NtFq/8RjG+d758XJoHPlvYybGwdYg9BEYDLYkB2GloSllL9lIE8CoZAvT\na55oE8YOt9nyjALv8RI3aewtVCC9At702qddUfGtzlCZNtuD9LkjhfhE3SdI\n7h/VvScJo+qrJNUenLAQK+u/wFAchbOSzrhmPTCqbJu/VUw6LHq2FurCRs8/\n9arci7I4eqeyZezRtHpNpPBZHc9oXT3w96WyFQZg7LzaVqRaJuKXE4mRhLYZ\nluyBWtoyoZPqAQ7xDhpfWJCKBIVGv3A73JdTVl9fKY6br85HGl0es15jzBXy\noUknQVN5/N2+oX5qHeATRU3iRCEdCZU5uSZW+CC1yp6F6Q92IO4VxOjZUzKA\nqEfu8C0JyFSeeeiK4a1VO0H7u6hBFDUCpT0+IuwP8fF1Pv2GetX58stq7gXz\nvM0cuCA8ysPWhGEyc/mBzPofeD69H2Br8BTEfy5NV6/FtqtMrQAFHqIbJ3Un\nTpGRt1BTGf+O1seSRsUrbdRme/CdrvbiNeyUGJAoLx78GfwrY3zUhG3huCcr\nux/jfzRkLs8SrpqJaHAVj+pcznAnXD041NSyG1cAXu69a/q2bBaElLrrYPUm\n6zmZ2E417DzvbWzwjCnZfLX3xig9vLA/KkcLfES4JnvgOVVocZVOaE2Akm6t\nJPl6\r\n=T18/\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "ari@ariporad.com",
+          "name": "ariporad"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/pirates_4.0.1_1550430072038_0.8769506706333152"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# Pirates [![Version][version-badge]][npm-link] [![Build Status][build-badge]][build-link] [![Coverage][codecov-badge]][codecov-link] [![Commitizen friendly][cz-badge]][cz-link] [![semantic-release][sr-badge]][sr-link] [![MIT License][license-badge]][license-link]\n\n### Properly hijack require\n\n[version-badge]: \thttps://img.shields.io/npm/v/pirates.svg   \"npm version\"\n[downloads-badge]: https://img.shields.io/npm/dm/pirates.svg \"npm downloads\"\n[npm-link]:  http://npm.im/pirates                           \"npm\"\n\n[codecov-badge]: https://img.shields.io/codecov/c/github/ariporad/pirates/master.svg?style=flat \"codecov\"\n[codecov-link]: https://codecov.io/gh/ariporad/pirates \"codecov\"\n\n[license-badge]: https://img.shields.io/npm/l/express.svg    \"MIT License\"\n[license-link]:  http://ariporad.mit-license.org             \"MIT License\"\n\n[build-badge]: https://travis-ci.org/ariporad/pirates.svg                   \"Travis CI Build Status\"\n[build-link]:  https://travis-ci.org/ariporad/pirates                       \"Travis CI Build Status\"\n\n[cz-badge]: https://img.shields.io/badge/commitizen-friendly-brightgreen.svg \"Commitizen friendly\"\n[cz-link]: http://commitizen.github.io/cz-cli/                               \"Commitizen friendly\"\n\n[sr-badge]: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg\n[sr-link]: https://github.com/semantic-release/semantic-release\n\n## Why?\n\nTwo reasons:\n1. Babel and istanbul were breaking each other.\n2. Everyone seemed to re-invent the wheel on this, and everyone wanted a solution that was DRY, simple, easy to use,\nand made everything Just Work™, while allowing multiple require hooks, in a fashion similar to calling `super`.\n\nFor some context, see [the Babel issue thread][] which started this all, then [the nyc issue thread][], where\ndiscussion was moved (as we began to discuss just using the code nyc had developed), and finally to [#1][issue-1]\nwhere discussion was finally moved.\n\n[the Babel issue thread]: https://github.com/babel/babel/pull/3062 \"Babel Issue Thread\"\n[the nyc issue thread]: https://github.com/bcoe/nyc/issues/70 \"NYC Issue Thread\"\n[issue-1]: https://github.com/ariporad/pirates/issues/1 \"Issue #1\"\n\n## Installation\n\n    npm install --save pirates\n\n## Usage\n\nUsing pirates is really easy:\n```javascript\n// my-module/register.js\nconst addHook = require('pirates').addHook;\n// Or if you use ES modules\n// import { addHook } from 'pirates';\n\nfunction matcher(filename) {\n  // Here, you can inspect the filename to determine if it should be hooked or\n  // not. Just return a truthy/falsey. Files in node_modules are automatically ignored, \n  // unless otherwise specified in options (see below).\n\n  // TODO: Implement your logic here\n  return true;\n}\n\nconst revert = addHook(\n  (code, filename) => code.replace('@@foo', 'console.log(\\'foo\\');'), \n  { exts: ['.js'], matcher }\n);\n\n// And later, if you want to un-hook require, you can just do:\nrevert();\n```\n\n## API\n\n### pirates.addHook(hook, [opts={ [matcher: true], [exts: ['.js']], [ignoreNodeModules: true] }]);\nAdd a require hook. `hook` must be a function that takes `(code, filename)`, and returns the modified code. `opts` is\nan optional options object. Available options are: `matcher`, which is a function that accepts a filename, and\nreturns a truthy value if the file should be hooked (defaults to a function that always returns true), falsey if\notherwise; `exts`, which is an array of extensions to hook, they should begin with `.` (defaults to `['.js']`);\n`ignoreNodeModules`, if true, any file in a `node_modules` folder wont be hooked (the matcher also wont be called),\nif false, then the matcher will be called for any files in `node_modules` (defaults to true).\n\n\n## Projects that use Pirates\n\nSee the [wiki page](https://github.com/ariporad/pirates/wiki/Projects-using-Pirates). If you add Pirates to your project,\n(And you should! It works best if everyone uses it. Then we can have a happy world full of happy require hooks!), please\nadd yourself to the wiki.\n\n## License\n\n[MIT](http://ariporad.mit-license.org)\n",
+  "maintainers": [
+    {
+      "email": "ari@ariporad.com",
+      "name": "ariporad"
+    },
+    {
+      "email": "daniel@tschinder.de",
+      "name": "danez"
+    },
+    {
+      "email": "hi@henryzoo.com",
+      "name": "hzoo"
+    }
+  ],
+  "time": {
+    "modified": "2019-02-17T19:01:15.042Z",
+    "created": "2015-12-05T21:45:41.566Z",
+    "1.0.0": "2015-12-05T21:45:41.566Z",
+    "1.0.1": "2015-12-05T21:52:28.283Z",
+    "1.0.2": "2015-12-05T21:55:25.049Z",
+    "1.1.0": "2015-12-06T02:17:12.802Z",
+    "2.0.0": "2015-12-08T01:48:08.734Z",
+    "2.0.1": "2015-12-08T21:49:06.565Z",
+    "2.1.0": "2015-12-11T01:04:32.141Z",
+    "2.1.1": "2016-01-20T17:44:42.148Z",
+    "2.1.2": "2016-09-18T03:27:12.751Z",
+    "3.0.0": "2017-04-06T22:10:40.741Z",
+    "3.0.1": "2017-04-07T09:15:46.566Z",
+    "3.0.2": "2017-11-10T23:15:41.514Z",
+    "4.0.0": "2018-07-11T19:23:14.306Z",
+    "4.0.1": "2019-02-17T19:01:12.480Z"
+  },
+  "homepage": "https://github.com/ariporad/pirates#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ariporad/pirates.git"
+  },
+  "author": {
+    "name": "Ari Porad",
+    "email": "ari@ariporad.com",
+    "url": "http://ariporad.com"
+  },
+  "bugs": {
+    "url": "https://github.com/ariporad/pirates/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "users": {
+    "douglas.wade": true,
+    "rafaeleyng": true,
+    "jdalton": true,
+    "zhenguo.zhao": true,
+    "shanewholloway": true
+  }
+}

@@ -1,0 +1,179 @@
+{
+  "_id": "quickly-copy-file",
+  "_rev": "4-6c07ed25bd06142fd01c8484e5afe6a4",
+  "name": "quickly-copy-file",
+  "description": "Quickly copy file from one path to another. No bullshit, ultra-simple, async and just one dep.",
+  "dist-tags": {
+    "latest": "1.0.0"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "quickly-copy-file",
+      "version": "0.1.0",
+      "description": "Quickly copy file from one path to another. No bullshit, ultra-simple, async and just one dep.",
+      "main": "index.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:paulmillr/quickly-copy-files.git"
+      },
+      "keywords": [
+        "quick",
+        "fast",
+        "copy",
+        "files",
+        "file",
+        "fs",
+        "clone",
+        "contents",
+        "content"
+      ],
+      "author": {
+        "name": "Paul Miller",
+        "url": "http://paulmillr.com/"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/paulmillr/quickly-copy-files/issues"
+      },
+      "homepage": "https://github.com/paulmillr/quickly-copy-files",
+      "dependencies": {
+        "mkdirp": "~0.5.0"
+      },
+      "gitHead": "da2bae2ecc5c72819e88cccb3f265c1ebc5de0a3",
+      "_id": "quickly-copy-file@0.1.0",
+      "_shasum": "d14063ff659f68697e7cbfee817a07bb635237c2",
+      "_from": ".",
+      "_npmVersion": "2.5.1",
+      "_nodeVersion": "0.10.36",
+      "_npmUser": {
+        "name": "paulmillr",
+        "email": "paul@paulmillr.com"
+      },
+      "maintainers": [
+        {
+          "name": "paulmillr",
+          "email": "paul@paulmillr.com"
+        }
+      ],
+      "dist": {
+        "shasum": "d14063ff659f68697e7cbfee817a07bb635237c2",
+        "tarball": "https://registry.npmjs.org/quickly-copy-file/-/quickly-copy-file-0.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "quickly-copy-file",
+      "version": "1.0.0",
+      "description": "Quickly copy file from one path to another. No bullshit, ultra-simple, async and just one dep.",
+      "main": "index.js",
+      "scripts": {
+        "test": "eslint index && ava"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/paulmillr/quickly-copy-file.git"
+      },
+      "keywords": [
+        "quick",
+        "fast",
+        "copy",
+        "files",
+        "file",
+        "fs",
+        "clone",
+        "contents",
+        "content"
+      ],
+      "files": [
+        "index.js"
+      ],
+      "author": {
+        "name": "Paul Miller",
+        "url": "http://paulmillr.com/"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/paulmillr/quickly-copy-file/issues"
+      },
+      "homepage": "https://github.com/paulmillr/quickly-copy-file",
+      "dependencies": {
+        "mkdirp": "~0.5.0"
+      },
+      "devDependencies": {
+        "ava": "^0.12.0",
+        "eslint": "^2.2.0"
+      },
+      "gitHead": "c0c3db164617822000a9d648cc0ca14ce3c1e8d8",
+      "_id": "quickly-copy-file@1.0.0",
+      "_shasum": "9f8ff066230510ee7422b0121472b093a8690859",
+      "_from": ".",
+      "_npmVersion": "3.6.0",
+      "_nodeVersion": "5.6.0",
+      "_npmUser": {
+        "name": "paulmillr",
+        "email": "paul@paulmillr.com"
+      },
+      "maintainers": [
+        {
+          "name": "paulmillr",
+          "email": "paul@paulmillr.com"
+        }
+      ],
+      "dist": {
+        "shasum": "9f8ff066230510ee7422b0121472b093a8690859",
+        "tarball": "https://registry.npmjs.org/quickly-copy-file/-/quickly-copy-file-1.0.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-5-east.internal.npmjs.com",
+        "tmp": "tmp/quickly-copy-file-1.0.0.tgz_1456184047506_0.16279420745559037"
+      },
+      "directories": {}
+    }
+  },
+  "readme": "# quickly-copy-file\n\nQuickly copy file from one path to another. No bullshit, ultra-simple, async and just one dep.\n\n## Installation\n\n`npm install quickly-copy-file`\n\n## Usage\n\n* `copyFile(fromPath, toPath, callback);`\n    * `fromPath` - `String` Path to file that will be copied.\n    * `toPath` - `String` File system path that will be created etc.\n    * `callback(error)` optional callback, that receives error when the execution failed.\n\nNode.js:\n\n```javascript\nvar copyFile = require('quickly-copy-file');\ncopyFile('original.js', 'copy.js', function(error) {\n  if (error) return console.error(error);\n  console.log('File was copied!')\n});\n```\n\n## License\n\nThe MIT License (MIT)\n\nCopyright (c) 2015 Paul Miller (http://paulmillr.com/)\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the “Software”), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.\n",
+  "maintainers": [
+    {
+      "name": "paulmillr",
+      "email": "paul@paulmillr.com"
+    }
+  ],
+  "time": {
+    "modified": "2017-01-26T09:11:58.371Z",
+    "created": "2015-03-24T18:55:41.278Z",
+    "0.1.0": "2015-03-24T18:55:41.278Z",
+    "1.0.0": "2016-02-22T23:34:10.824Z"
+  },
+  "homepage": "https://github.com/paulmillr/quickly-copy-file",
+  "keywords": [
+    "quick",
+    "fast",
+    "copy",
+    "files",
+    "file",
+    "fs",
+    "clone",
+    "contents",
+    "content"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/paulmillr/quickly-copy-file.git"
+  },
+  "author": {
+    "name": "Paul Miller",
+    "url": "http://paulmillr.com/"
+  },
+  "bugs": {
+    "url": "https://github.com/paulmillr/quickly-copy-file/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "users": {
+    "shanewholloway": true,
+    "shakakira": true
+  },
+  "_attachments": {}
+}

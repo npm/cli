@@ -1,0 +1,477 @@
+{
+  "_id": "ansi-html",
+  "_rev": "16-f179ab89262272216698e6256b13f03c",
+  "name": "ansi-html",
+  "description": "An elegant lib that converts the chalked (ANSI) text to HTML.",
+  "dist-tags": {
+    "latest": "0.0.7"
+  },
+  "versions": {
+    "0.0.1": {
+      "name": "ansi-html",
+      "version": "0.0.1",
+      "description": "An elegant lib that converts the chalked (ANSI) text to HTML.",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha -R spec -t 5000"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/Tjatse/ansi-html.git"
+      },
+      "keywords": [
+        "ansi",
+        "ansi html",
+        "chalk html"
+      ],
+      "author": {
+        "name": "Tjatse"
+      },
+      "license": "Apache, Version 2.0",
+      "bugs": {
+        "url": "https://github.com/Tjatse/ansi-html/issues"
+      },
+      "engines": [
+        "node >= 0.8.0"
+      ],
+      "dependencies": {},
+      "devDependencies": {
+        "chalk": "~0.5.1",
+        "mocha": "^1.21.4",
+        "chai": "^1.9.1",
+        "lodash": "~2.4.1"
+      },
+      "homepage": "https://github.com/Tjatse/ansi-html",
+      "_id": "ansi-html@0.0.1",
+      "_shasum": "5c3f418bdfd84da61f9c698224dc89ce818fff40",
+      "_from": ".",
+      "_npmVersion": "1.4.10",
+      "_npmUser": {
+        "name": "tjatse",
+        "email": "thisnamemeansnothing@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "tjatse",
+          "email": "thisnamemeansnothing@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "5c3f418bdfd84da61f9c698224dc89ce818fff40",
+        "tarball": "https://registry.npmjs.org/ansi-html/-/ansi-html-0.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "0.0.2": {
+      "name": "ansi-html",
+      "version": "0.0.2",
+      "description": "An elegant lib that converts the chalked (ANSI) text to HTML.",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha -R spec -t 5000"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/Tjatse/ansi-html.git"
+      },
+      "keywords": [
+        "ansi",
+        "ansi html",
+        "chalk html"
+      ],
+      "author": {
+        "name": "Tjatse"
+      },
+      "license": "Apache, Version 2.0",
+      "bugs": {
+        "url": "https://github.com/Tjatse/ansi-html/issues"
+      },
+      "engines": [
+        "node >= 0.8.0"
+      ],
+      "dependencies": {},
+      "devDependencies": {
+        "chalk": "~0.5.1",
+        "mocha": "^1.21.4",
+        "chai": "^1.9.1",
+        "lodash": "~2.4.1"
+      },
+      "homepage": "https://github.com/Tjatse/ansi-html",
+      "_id": "ansi-html@0.0.2",
+      "_shasum": "159fed1f3eef5ab6b61003299e493f7540b64898",
+      "_from": ".",
+      "_npmVersion": "1.4.10",
+      "_npmUser": {
+        "name": "tjatse",
+        "email": "thisnamemeansnothing@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "tjatse",
+          "email": "thisnamemeansnothing@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "159fed1f3eef5ab6b61003299e493f7540b64898",
+        "tarball": "https://registry.npmjs.org/ansi-html/-/ansi-html-0.0.2.tgz"
+      },
+      "directories": {}
+    },
+    "0.0.3": {
+      "name": "ansi-html",
+      "version": "0.0.3",
+      "description": "An elegant lib that converts the chalked (ANSI) text to HTML.",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha -R spec -t 5000"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/Tjatse/ansi-html.git"
+      },
+      "keywords": [
+        "ansi",
+        "ansi html",
+        "chalk html"
+      ],
+      "author": {
+        "name": "Tjatse"
+      },
+      "license": "Apache, Version 2.0",
+      "bugs": {
+        "url": "https://github.com/Tjatse/ansi-html/issues"
+      },
+      "engines": [
+        "node >= 0.8.0"
+      ],
+      "dependencies": {},
+      "devDependencies": {
+        "chalk": "~0.5.1",
+        "mocha": "^1.21.4",
+        "chai": "^1.9.1",
+        "lodash": "~2.4.1"
+      },
+      "homepage": "https://github.com/Tjatse/ansi-html",
+      "_id": "ansi-html@0.0.3",
+      "_shasum": "555187be5a15091b7084dbff1aa9a5c3afe652cd",
+      "_from": ".",
+      "_npmVersion": "1.4.10",
+      "_npmUser": {
+        "name": "tjatse",
+        "email": "thisnamemeansnothing@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "tjatse",
+          "email": "thisnamemeansnothing@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "555187be5a15091b7084dbff1aa9a5c3afe652cd",
+        "tarball": "https://registry.npmjs.org/ansi-html/-/ansi-html-0.0.3.tgz"
+      },
+      "directories": {}
+    },
+    "0.0.4": {
+      "name": "ansi-html",
+      "version": "0.0.4",
+      "description": "An elegant lib that converts the chalked (ANSI) text to HTML.",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha -R spec -t 5000"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/Tjatse/ansi-html.git"
+      },
+      "keywords": [
+        "ansi",
+        "ansi html",
+        "chalk html"
+      ],
+      "author": {
+        "name": "Tjatse"
+      },
+      "license": "Apache, Version 2.0",
+      "bugs": {
+        "url": "https://github.com/Tjatse/ansi-html/issues"
+      },
+      "engines": [
+        "node >= 0.8.0"
+      ],
+      "dependencies": {},
+      "devDependencies": {
+        "chalk": "~0.5.1",
+        "mocha": "^1.21.4",
+        "chai": "^1.9.1",
+        "lodash": "~2.4.1"
+      },
+      "homepage": "https://github.com/Tjatse/ansi-html",
+      "_id": "ansi-html@0.0.4",
+      "_shasum": "61c1184577d304214ce873c35967acbac53793c7",
+      "_from": ".",
+      "_npmVersion": "1.4.10",
+      "_npmUser": {
+        "name": "tjatse",
+        "email": "thisnamemeansnothing@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "tjatse",
+          "email": "thisnamemeansnothing@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "61c1184577d304214ce873c35967acbac53793c7",
+        "tarball": "https://registry.npmjs.org/ansi-html/-/ansi-html-0.0.4.tgz"
+      },
+      "directories": {}
+    },
+    "0.0.5": {
+      "name": "ansi-html",
+      "version": "0.0.5",
+      "description": "An elegant lib that converts the chalked (ANSI) text to HTML.",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha -R spec -t 5000"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/Tjatse/ansi-html.git"
+      },
+      "keywords": [
+        "ansi",
+        "ansi html",
+        "chalk html"
+      ],
+      "author": {
+        "name": "Tjatse"
+      },
+      "license": "Apache, Version 2.0",
+      "bugs": {
+        "url": "https://github.com/Tjatse/ansi-html/issues"
+      },
+      "engines": [
+        "node >= 0.8.0"
+      ],
+      "dependencies": {},
+      "devDependencies": {
+        "chalk": "~1.1.1",
+        "mocha": "^1.21.4",
+        "chai": "^1.9.1",
+        "lodash": "~2.4.1"
+      },
+      "homepage": "https://github.com/Tjatse/ansi-html",
+      "_id": "ansi-html@0.0.5",
+      "_shasum": "0dcaa5a081206866bc240a3b773a184ea3b88b64",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.2",
+      "_npmUser": {
+        "name": "tjatse",
+        "email": "thisnamemeansnothing@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "tjatse",
+          "email": "thisnamemeansnothing@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "0dcaa5a081206866bc240a3b773a184ea3b88b64",
+        "tarball": "https://registry.npmjs.org/ansi-html/-/ansi-html-0.0.5.tgz"
+      },
+      "directories": {}
+    },
+    "0.0.6": {
+      "name": "ansi-html",
+      "version": "0.0.6",
+      "description": "An elegant lib that converts the chalked (ANSI) text to HTML.",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha -R spec -t 5000"
+      },
+      "bin": {
+        "ansi-html": "./bin/ansi-html"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/Tjatse/ansi-html.git"
+      },
+      "keywords": [
+        "ansi",
+        "ansi html",
+        "chalk html"
+      ],
+      "author": {
+        "name": "Tjatse"
+      },
+      "license": "Apache-2.0",
+      "bugs": {
+        "url": "https://github.com/Tjatse/ansi-html/issues"
+      },
+      "engines": [
+        "node >= 0.8.0"
+      ],
+      "dependencies": {},
+      "devDependencies": {
+        "mocha": "^1.21.4",
+        "chai": "^1.9.1",
+        "chalk": "^1.1.3",
+        "lodash": "^2.4.2"
+      },
+      "homepage": "https://github.com/Tjatse/ansi-html",
+      "standard": {
+        "ignore": [],
+        "globals": [
+          "describe",
+          "it",
+          "before",
+          "after"
+        ]
+      },
+      "gitHead": "29055aed2ccf07ecd75340b2200f6a6e24fb9e7f",
+      "_id": "ansi-html@0.0.6",
+      "_shasum": "bda8e33dd2ee1c20f54c08eb405713cbfc0ed80e",
+      "_from": ".",
+      "_npmVersion": "3.10.6",
+      "_nodeVersion": "4.5.0",
+      "_npmUser": {
+        "name": "tjatse",
+        "email": "thisnamemeansnothing@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "tjatse",
+          "email": "thisnamemeansnothing@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "bda8e33dd2ee1c20f54c08eb405713cbfc0ed80e",
+        "tarball": "https://registry.npmjs.org/ansi-html/-/ansi-html-0.0.6.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/ansi-html-0.0.6.tgz_1477457737513_0.8344127773307264"
+      },
+      "directories": {}
+    },
+    "0.0.7": {
+      "name": "ansi-html",
+      "version": "0.0.7",
+      "description": "An elegant lib that converts the chalked (ANSI) text to HTML.",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha -R spec -t 5000"
+      },
+      "bin": {
+        "ansi-html": "./bin/ansi-html"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/Tjatse/ansi-html.git"
+      },
+      "keywords": [
+        "ansi",
+        "ansi html",
+        "chalk html"
+      ],
+      "author": {
+        "name": "Tjatse"
+      },
+      "license": "Apache-2.0",
+      "bugs": {
+        "url": "https://github.com/Tjatse/ansi-html/issues"
+      },
+      "engines": [
+        "node >= 0.8.0"
+      ],
+      "dependencies": {},
+      "devDependencies": {
+        "mocha": "^1.21.4",
+        "chai": "^1.9.1",
+        "chalk": "^1.1.3",
+        "lodash": "^2.4.2"
+      },
+      "homepage": "https://github.com/Tjatse/ansi-html",
+      "standard": {
+        "ignore": [],
+        "globals": [
+          "describe",
+          "it",
+          "before",
+          "after"
+        ]
+      },
+      "gitHead": "99ec49e431c70af6275b3c4e00c7be34be51753c",
+      "_id": "ansi-html@0.0.7",
+      "_shasum": "813584021962a9e9e6fd039f940d12f56ca7859e",
+      "_from": ".",
+      "_npmVersion": "4.1.1",
+      "_nodeVersion": "6.9.2",
+      "_npmUser": {
+        "name": "tjatse",
+        "email": "thisnamemeansnothing@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "tjatse",
+          "email": "thisnamemeansnothing@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "813584021962a9e9e6fd039f940d12f56ca7859e",
+        "tarball": "https://registry.npmjs.org/ansi-html/-/ansi-html-0.0.7.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/ansi-html-0.0.7.tgz_1483330528298_0.18794766115024686"
+      },
+      "directories": {}
+    }
+  },
+  "readme": "ansi-html [![NPM version](https://badge.fury.io/js/ansi-html.svg)](http://badge.fury.io/js/ansi-html) [![Build Status](https://travis-ci.org/Tjatse/ansi-html.svg?branch=master)](https://travis-ci.org/Tjatse/ansi-html)\n=========\nAn elegant lib that converts the chalked (ANSI) text to HTML.\n\n# Coverage\n- All styles of [chalk](https://github.com/sindresorhus/chalk) (100%) and [colors](https://github.com/Marak/colors.js).\n- There are over **150** randomized test cases under `test`.\n\n# Installation\n```\n$ npm install ansi-html\n```\n\n# Usage\n```javascript\nvar ansiHTML = require('ansi-html');\nvar str = ansiHTML('[ANSI_TEXT]');\n```\n\ne.g.:\n```javascript\nvar chalk = require('chalk');\n\nvar str = chalk.bold.red('foo') + ' bar';\nconsole.log('[ANSI]', str)\nconsole.log('[HTML]', ansiHTML(str));\n```\n\nSee complete examples under `test` / `examples` directory.\n\n# Set Colors\n```javascript\nansiHTML.setColors({\n  reset: ['555', '666'], // FOREGROUND-COLOR or [FOREGROUND-COLOR] or [, BACKGROUND-COLOR] or [FOREGROUND-COLOR, BACKGROUND-COLOR]\n  black: 'aaa',\t// String\n  red: 'bbb',\n  green: 'ccc',\n  yellow: 'ddd',\n  blue: 'eee',\n  magenta: 'fff',\n  cyan: '999',\n  lightgrey: '888',\n  darkgrey: '777'\n});\n```\n\n# Reset\n```javascript\nansiHTML.reset();\n```\n\n# Exposed Tags\n```javascript\nvar openTags = ansiHTML.tags.open;\nvar closeTags = ansiHTML.tags.close;\n```\n\n# Test\n```\n$ npm install -l\n$ npm test\n```\n",
+  "maintainers": [
+    {
+      "name": "tjatse",
+      "email": "thisnamemeansnothing@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2018-02-24T22:11:06.592Z",
+    "created": "2014-12-15T07:30:55.472Z",
+    "0.0.1": "2014-12-15T07:30:55.472Z",
+    "0.0.2": "2014-12-15T07:36:56.101Z",
+    "0.0.3": "2014-12-15T08:22:29.960Z",
+    "0.0.4": "2014-12-16T06:24:34.172Z",
+    "0.0.5": "2015-11-21T10:16:13.285Z",
+    "0.0.6": "2016-10-26T04:55:40.736Z",
+    "0.0.7": "2017-01-02T04:15:30.119Z"
+  },
+  "homepage": "https://github.com/Tjatse/ansi-html",
+  "keywords": [
+    "ansi",
+    "ansi html",
+    "chalk html"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Tjatse/ansi-html.git"
+  },
+  "author": {
+    "name": "Tjatse"
+  },
+  "bugs": {
+    "url": "https://github.com/Tjatse/ansi-html/issues"
+  },
+  "license": "Apache-2.0",
+  "readmeFilename": "README.md",
+  "users": {
+    "color_cat": true,
+    "d-band": true,
+    "shangsinian": true,
+    "princetoad": true,
+    "rubiadias": true
+  },
+  "_attachments": {}
+}

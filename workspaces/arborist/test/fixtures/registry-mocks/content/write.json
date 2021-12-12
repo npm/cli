@@ -1,0 +1,1325 @@
+{
+  "_id": "write",
+  "_rev": "32-4926d23d3114b4cc3a85454b59f00c8d",
+  "name": "write",
+  "time": {
+    "modified": "2019-09-04T06:51:29.105Z",
+    "created": "2014-02-12T05:34:49.679Z",
+    "0.1.0": "2014-02-12T05:34:49.679Z",
+    "0.1.1": "2014-06-28T10:11:42.769Z",
+    "0.2.0": "2015-04-07T09:46:57.132Z",
+    "0.2.1": "2015-07-29T19:16:11.978Z",
+    "0.3.0": "2016-03-09T08:23:48.021Z",
+    "0.3.1": "2016-03-21T08:14:50.533Z",
+    "0.3.2": "2016-08-17T13:07:03.239Z",
+    "0.3.3": "2017-03-24T23:18:06.515Z",
+    "1.0.0": "2017-07-09T23:19:31.841Z",
+    "1.0.1": "2017-07-10T00:29:33.350Z",
+    "1.0.2": "2017-07-11T04:29:38.784Z",
+    "1.0.3": "2017-07-11T04:32:00.842Z",
+    "2.0.0": "2019-09-04T06:51:25.005Z"
+  },
+  "maintainers": [
+    {
+      "name": "doowb",
+      "email": "brian.woodward@gmail.com"
+    },
+    {
+      "name": "jonschlinkert",
+      "email": "github@sellside.com"
+    }
+  ],
+  "dist-tags": {
+    "latest": "2.0.0"
+  },
+  "description": "Write data to a file, replacing the file if it already exists and creating any intermediate directories if they don't already exist. Thin wrapper around node's native fs methods.",
+  "readme": "# write [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=W8YFZ425KND68) [![NPM version](https://img.shields.io/npm/v/write.svg?style=flat)](https://www.npmjs.com/package/write) [![NPM monthly downloads](https://img.shields.io/npm/dm/write.svg?style=flat)](https://npmjs.org/package/write) [![NPM total downloads](https://img.shields.io/npm/dt/write.svg?style=flat)](https://npmjs.org/package/write) [![Build Status](https://travis-ci.org/jonschlinkert/write.svg?branch=master)](https://travis-ci.org/jonschlinkert/write)\n\n> Write data to a file, replacing the file if it already exists and creating any intermediate directories if they don't already exist. Thin wrapper around node's native fs methods.\n\nPlease consider following this project's author, [Jon Schlinkert](https://github.com/jonschlinkert), and consider starring the project to show your :heart: and support.\n\n## Install\n\nInstall with [npm](https://www.npmjs.com/) (requires [Node.js](https://nodejs.org/en/) >=10):\n\n```sh\n$ npm install --save write\n```\n\n## Usage\n\n```js\nconst write = require('write');\n```\n\n## Options\n\nThe following options may be used with any method.\n\n### options.newline\n\n**Type**: `boolean`\n\n**Default**: `undefined`\n\nEnsure that contents has a trailing newline before writing it to the file system.\n\n```js\nwrite.sync('foo.txt', 'some data...', { newline: true }); \n```\n\n### options.overwrite\n\n**Type**: `boolean`\n\n**Default**: `undefined`\n\nSet to `false` to prevent existing files from being overwritten. See [increment](#optionsincrement) for a less severe alternative.\n\n```js\nwrite.sync('foo.txt', 'some data...', { overwrite: false });\n```\n\n### options.increment\n\n**Type**: `boolean`\n\n**Default**: `undefined`\n\nSet to `true` to automatically rename files by appending an increment, like `foo (2).txt`, to prevent `foo.txt` from being overwritten. This is useful when writing log files, or other information where the file name is less important than the contents being written.\n\n```js\nwrite.sync('foo.txt', 'some data...', { increment: true });\n// if \"foo.txt\" exists, the file will be renamed to \"foo (2).txt\"\n```\n\n## API\n\n### [write](index.js#L41)\n\nAsynchronously writes data to a file, replacing the file if it already exists and creating any intermediate directories if they don't already exist. Data can be a string or a buffer. Returns a promise if a callback function is not passed.\n\n**Params**\n\n* `filepath` **{String}**: file path.\n* `data` **{String|Buffer|Uint8Array}**: Data to write.\n* `options` **{Object}**: Options to pass to [fs.writeFile](https://nodejs.org/api/fs.html#fs_fs_writefile_file_data_options_callback)\n* `callback` **{Function}**: (optional) If no callback is provided, a promise is returned.\n* `returns` **{Object}**: Returns an object with the `path` and `contents` of the file that was written to the file system. This is useful for debugging when `options.increment` is used and the path might have been modified.\n\n**Example**\n\n```js\nconst write = require('write');\n\n// async/await\n(async () => {\n  await write('foo.txt', 'This is content...');\n})();\n\n// promise\nwrite('foo.txt', 'This is content...')\n  .then(() => {\n    // do stuff\n  });\n\n// callback\nwrite('foo.txt', 'This is content...', err => {\n  // do stuff with err\n});\n```\n\n### [.sync](index.js#L88)\n\nThe synchronous version of [write](#write). Returns undefined.\n\n**Params**\n\n* `filepath` **{String}**: file path.\n* `data` **{String|Buffer|Uint8Array}**: Data to write.\n* `options` **{Object}**: Options to pass to [fs.writeFileSync](https://nodejs.org/api/fs.html#fs_fs_writefilesync_file_data_options)\n* `returns` **{Object}**: Returns an object with the `path` and `contents` of the file that was written to the file system. This is useful for debugging when `options.increment` is used and the path might have been modified.\n\n**Example**\n\n```js\nconst write = require('write');\nwrite.sync('foo.txt', 'This is content...');\n```\n\n### [.stream](index.js#L127)\n\nReturns a new [WriteStream](https://nodejs.org/api/fs.html#fs_class_fs_writestream) object. Uses `fs.createWriteStream` to write data to a file, replacing the file if it already exists and creating any intermediate directories if they don't already exist. Data can be a string or a buffer.\n\n**Params**\n\n* `filepath` **{String}**: file path.\n* `options` **{Object}**: Options to pass to [fs.createWriteStream](https://nodejs.org/api/fs.html#fs_fs_createwritestream_path_options)\n* `returns` **{Stream}**: Returns a new [WriteStream](https://nodejs.org/api/fs.html#fs_class_fs_writestream) object. (See [Writable Stream](https://nodejs.org/api/stream.html#stream_class_stream_writable)).\n\n**Example**\n\n```js\nconst fs = require('fs');\nconst write = require('write');\nfs.createReadStream('README.md')\n  .pipe(write.stream('a/b/c/other-file.md'))\n  .on('close', () => {\n    // do stuff\n  });\n```\n\n## Release history\n\nSee [CHANGELOG.md].\n\n## About\n\n<details>\n<summary><strong>Contributing</strong></summary>\n\nPull requests and stars are always welcome. For bugs and feature requests, [please create an issue](../../issues/new).\n\n</details>\n\n<details>\n<summary><strong>Running Tests</strong></summary>\n\nRunning and reviewing unit tests is a great way to get familiarized with a library and its API. You can install dependencies and run tests with the following command:\n\n```sh\n$ npm install && npm test\n```\n\n</details>\n\n<details>\n<summary><strong>Building docs</strong></summary>\n\n_(This project's readme.md is generated by [verb](https://github.com/verbose/verb-generate-readme), please don't edit the readme directly. Any changes to the readme must be made in the [.verb.md](.verb.md) readme template.)_\n\nTo generate the readme, run the following command:\n\n```sh\n$ npm install -g verbose/verb#dev verb-generate-readme && verb\n```\n\n</details>\n\n### Related projects\n\nYou might also be interested in these projects:\n\n* [add-filename-increment](https://www.npmjs.com/package/add-filename-increment): When copying or moving files, it's common for operating systems to automatically add an increment… [more](https://github.com/jonschlinkert/add-filename-increment) | [homepage](https://github.com/jonschlinkert/add-filename-increment \"When copying or moving files, it's common for operating systems to automatically add an increment or 'copy' to duplicate file names. This does that for Node.js applications, with automatic platform detection and support for Linux, MacOs, and Windows conve\")\n* [delete](https://www.npmjs.com/package/delete): Delete files and folders and any intermediate directories if they exist (sync and async). | [homepage](https://github.com/jonschlinkert/delete \"Delete files and folders and any intermediate directories if they exist (sync and async).\")\n* [read-data](https://www.npmjs.com/package/read-data): Read JSON or YAML files. | [homepage](https://github.com/jonschlinkert/read-data \"Read JSON or YAML files.\")\n* [read-yaml](https://www.npmjs.com/package/read-yaml): Very thin wrapper around js-yaml for directly reading in YAML files. | [homepage](https://github.com/jonschlinkert/read-yaml \"Very thin wrapper around js-yaml for directly reading in YAML files.\")\n* [strip-filename-increment](https://www.npmjs.com/package/strip-filename-increment): Operating systems commonly add a trailing increment, or the word 'copy', or something similar to… [more](https://github.com/jonschlinkert/strip-filename-increment) | [homepage](https://github.com/jonschlinkert/strip-filename-increment \"Operating systems commonly add a trailing increment, or the word 'copy', or something similar to duplicate files. This strips those increments. Tested on Windows, MacOS, and Linux.\")\n* [write-data](https://www.npmjs.com/package/write-data): Write a YAML or JSON file to disk. Automatically detects the format to write based… [more](https://github.com/jonschlinkert/write-data) | [homepage](https://github.com/jonschlinkert/write-data \"Write a YAML or JSON file to disk. Automatically detects the format to write based on extension. Or pass `ext` on the options.\")\n* [write-json](https://www.npmjs.com/package/write-json): Write a JSON file to disk, also creates intermediate directories in the destination path if… [more](https://github.com/jonschlinkert/write-json) | [homepage](https://github.com/jonschlinkert/write-json \"Write a JSON file to disk, also creates intermediate directories in the destination path if they don't already exist.\")\n* [write-yaml](https://www.npmjs.com/package/write-yaml): Write YAML. Converts JSON to YAML writes it to the specified file. | [homepage](https://github.com/jonschlinkert/write-yaml \"Write YAML. Converts JSON to YAML writes it to the specified file.\")\n\n### Contributors\n\n| **Commits** | **Contributor** |  \n| --- | --- |  \n| 42 | [jonschlinkert](https://github.com/jonschlinkert) |  \n| 2  | [jpetitcolas](https://github.com/jpetitcolas) |  \n| 1  | [tunnckoCore](https://github.com/tunnckoCore) |  \n\n### Author\n\n**Jon Schlinkert**\n\n* [GitHub Profile](https://github.com/jonschlinkert)\n* [Twitter Profile](https://twitter.com/jonschlinkert)\n* [LinkedIn Profile](https://linkedin.com/in/jonschlinkert)\n\n### License\n\nCopyright © 2019, [Jon Schlinkert](https://github.com/jonschlinkert).\nReleased under the [MIT License](LICENSE).\n\n***\n\n_This file was generated by [verb-generate-readme](https://github.com/verbose/verb-generate-readme), v0.8.0, on September 04, 2019._",
+  "versions": {
+    "0.1.1": {
+      "name": "write",
+      "description": "Write files to disk, creating intermediate directories if they don't exist.",
+      "version": "0.1.1",
+      "homepage": "https://github.com/jonschlinkert/write",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/write.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/write/issues"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://github.com/jonschlinkert/write/blob/master/LICENSE-MIT"
+        }
+      ],
+      "keywords": [
+        "file",
+        "filepath",
+        "files",
+        "filesystem",
+        "folder",
+        "fs",
+        "fs.writeFile",
+        "fs.writeFileSync",
+        "path",
+        "write"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "devDependencies": {
+        "chai": "~1.9.1",
+        "delete": "^0.1.0",
+        "mocha": "*",
+        "verb": "~0.2.6"
+      },
+      "dependencies": {
+        "mkdirp": "^0.5.0"
+      },
+      "_id": "write@0.1.1",
+      "_shasum": "ea965cc7447c482194b8d84bbb7b9adfb80202a8",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "ea965cc7447c482194b8d84bbb7b9adfb80202a8",
+        "tarball": "https://registry.npmjs.org/write/-/write-0.1.1.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.0": {
+      "name": "write",
+      "description": "Write files to disk, creating intermediate directories if they don't exist.",
+      "version": "0.2.0",
+      "homepage": "https://github.com/jonschlinkert/write",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/write.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/write/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/write/blob/master/LICENSE"
+      },
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "mkdirp": "^0.5.0"
+      },
+      "devDependencies": {
+        "async": "^0.9.0",
+        "delete": "^0.1.5",
+        "mocha": "^2.2.1",
+        "should": "^5.2.0"
+      },
+      "keywords": [
+        "file",
+        "filepath",
+        "files",
+        "filesystem",
+        "folder",
+        "fs",
+        "fs.writeFile",
+        "fs.writeFileSync",
+        "path",
+        "write"
+      ],
+      "gitHead": "b74d70152d00dbe14b4079e213c79e50ee54e7e5",
+      "_id": "write@0.2.0",
+      "_shasum": "2744b79e38580033c09ae3473face798ab6cfe7b",
+      "_from": ".",
+      "_npmVersion": "2.5.1",
+      "_nodeVersion": "0.12.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "2744b79e38580033c09ae3473face798ab6cfe7b",
+        "tarball": "https://registry.npmjs.org/write/-/write-0.2.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.1": {
+      "name": "write",
+      "description": "Write files to disk, creating intermediate directories if they don't exist.",
+      "version": "0.2.1",
+      "homepage": "https://github.com/jonschlinkert/write",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/write.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/write/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "mkdirp": "^0.5.1"
+      },
+      "devDependencies": {
+        "async": "^1.4.0",
+        "delete": "^0.2.1",
+        "mocha": "^2.2.5",
+        "should": "^7.0.2"
+      },
+      "keywords": [
+        "file",
+        "filepath",
+        "files",
+        "filesystem",
+        "folder",
+        "fs",
+        "fs.writeFile",
+        "fs.writeFileSync",
+        "path",
+        "write"
+      ],
+      "gitHead": "4fde911228a1d244d4439292d6850175c8195730",
+      "_id": "write@0.2.1",
+      "_shasum": "5fc03828e264cea3fe91455476f7a3c566cb0757",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "0.12.4",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "5fc03828e264cea3fe91455476f7a3c566cb0757",
+        "tarball": "https://registry.npmjs.org/write/-/write-0.2.1.tgz"
+      },
+      "directories": {}
+    },
+    "0.3.0": {
+      "name": "write",
+      "description": "Write files to disk, creating intermediate directories if they don't exist.",
+      "version": "0.3.0",
+      "homepage": "https://github.com/jonschlinkert/write",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/write.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/write/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "mkdirp": "^0.5.1",
+        "try-open": "^0.1.2"
+      },
+      "devDependencies": {
+        "async": "^1.5.2",
+        "delete": "^0.3.0",
+        "gulp-format-md": "^0.1.7",
+        "mocha": "^2.4.5",
+        "should": "^8.2.2"
+      },
+      "keywords": [
+        "file",
+        "filepath",
+        "files",
+        "filesystem",
+        "folder",
+        "fs",
+        "fs.writeFile",
+        "fs.writeFileSync",
+        "path",
+        "write"
+      ],
+      "verb": {
+        "run": true,
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "delete",
+            "write-yaml",
+            "write-json",
+            "read-yaml",
+            "read-json",
+            "read-data"
+          ]
+        },
+        "reflinks": [
+          "verb"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "73deedf8139dfd7dd38c9ae81a7a86f7532fe9b7",
+      "_id": "write@0.3.0",
+      "_shasum": "26c4ef864d2be7f1e08bde85a1bd4b5e704eeaa9",
+      "_from": ".",
+      "_npmVersion": "3.6.0",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "26c4ef864d2be7f1e08bde85a1bd4b5e704eeaa9",
+        "tarball": "https://registry.npmjs.org/write/-/write-0.3.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/write-0.3.0.tgz_1457511823952_0.39074073801748455"
+      },
+      "directories": {}
+    },
+    "0.3.1": {
+      "name": "write",
+      "description": "Write files to disk, creating intermediate directories if they don't exist.",
+      "version": "0.3.1",
+      "homepage": "https://github.com/jonschlinkert/write",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/write.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/write/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "mkdirp": "^0.5.1",
+        "try-open": "^0.1.2"
+      },
+      "devDependencies": {
+        "async": "^1.5.2",
+        "delete": "^0.3.0",
+        "gulp-format-md": "^0.1.7",
+        "mocha": "^2.4.5",
+        "should": "^8.2.2"
+      },
+      "keywords": [
+        "file",
+        "filepath",
+        "files",
+        "filesystem",
+        "folder",
+        "fs",
+        "fs.writeFile",
+        "fs.writeFileSync",
+        "path",
+        "write"
+      ],
+      "verb": {
+        "run": true,
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "delete",
+            "write-yaml",
+            "write-json",
+            "read-yaml",
+            "read-json",
+            "read-data"
+          ]
+        },
+        "reflinks": [
+          "verb"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "f6d18c0a64eed5f64452efd224d81b1b5bfc9f5e",
+      "_id": "write@0.3.1",
+      "_shasum": "4f7fea673114b4aa84566ab04827c269786fc20c",
+      "_from": ".",
+      "_npmVersion": "3.6.0",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "4f7fea673114b4aa84566ab04827c269786fc20c",
+        "tarball": "https://registry.npmjs.org/write/-/write-0.3.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/write-0.3.1.tgz_1458548088104_0.0833004501182586"
+      },
+      "directories": {}
+    },
+    "0.3.2": {
+      "name": "write",
+      "description": "Write files to disk, creating intermediate directories if they don't exist.",
+      "version": "0.3.2",
+      "homepage": "https://github.com/jonschlinkert/write",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/write.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/write/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "LICENSE",
+        "README.md"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "fs-exists-sync": "^0.1.0",
+        "mkdirp": "^0.5.1"
+      },
+      "devDependencies": {
+        "async": "^1.5.2",
+        "delete": "^0.3.0",
+        "gulp-format-md": "^0.1.7",
+        "mocha": "^2.4.5",
+        "should": "^8.2.2"
+      },
+      "keywords": [
+        "file",
+        "filepath",
+        "files",
+        "filesystem",
+        "folder",
+        "fs",
+        "fs.writeFile",
+        "fs.writeFileSync",
+        "path",
+        "write"
+      ],
+      "verb": {
+        "run": true,
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "delete",
+            "read-data",
+            "read-json",
+            "read-yaml",
+            "write-json",
+            "write-yaml"
+          ]
+        },
+        "reflinks": [
+          "verb"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "e5cefcf40407dfc3fc6aebd21da33041d266d79b",
+      "_id": "write@0.3.2",
+      "_shasum": "ad1d27823df0ad2149e3ce8d91f9c3e5b073c6cf",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.3.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "ad1d27823df0ad2149e3ce8d91f9c3e5b073c6cf",
+        "tarball": "https://registry.npmjs.org/write/-/write-0.3.2.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/write-0.3.2.tgz_1471439221584_0.7865234685596079"
+      },
+      "directories": {}
+    },
+    "0.3.3": {
+      "name": "write",
+      "description": "Write files to disk, creating intermediate directories if they don't exist.",
+      "version": "0.3.3",
+      "homepage": "https://github.com/jonschlinkert/write",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Charlike Mike Reagent",
+          "url": "https://i.am.charlike.online"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "email": "jon.schlinkert@sellside.com",
+          "url": "http://twitter.com/jonschlinkert"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/write.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/write/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "fs-exists-sync": "^0.1.0",
+        "mkdirp": "^0.5.1"
+      },
+      "devDependencies": {
+        "async": "^2.1.5",
+        "delete": "^0.3.2",
+        "gulp-format-md": "^0.1.11",
+        "mocha": "^3.2.0"
+      },
+      "keywords": [
+        "file",
+        "filepath",
+        "files",
+        "filesystem",
+        "folder",
+        "fs",
+        "fs.writeFile",
+        "fs.writeFileSync",
+        "path",
+        "write"
+      ],
+      "verb": {
+        "run": true,
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "delete",
+            "read-data",
+            "read-json",
+            "read-yaml",
+            "write-json",
+            "write-yaml"
+          ]
+        },
+        "reflinks": [
+          "verb"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "d8d4b0ef32860c9e6f406d301c5266242489f3ee",
+      "_id": "write@0.3.3",
+      "_shasum": "09cdc5a2155607ee279f45e38d91ae29fb6a5178",
+      "_from": ".",
+      "_npmVersion": "4.1.2",
+      "_nodeVersion": "7.7.3",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "09cdc5a2155607ee279f45e38d91ae29fb6a5178",
+        "tarball": "https://registry.npmjs.org/write/-/write-0.3.3.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/write-0.3.3.tgz_1490397484660_0.4980801618658006"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "write",
+      "description": "Write files to disk, by first creating intermediate directories if they don't exist, then passing through to node's native fs methods.",
+      "version": "1.0.0",
+      "homepage": "https://github.com/jonschlinkert/write",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Charlike Mike Reagent",
+          "url": "https://i.am.charlike.online"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/write.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/write/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "mkdirp": "^0.5.1"
+      },
+      "devDependencies": {
+        "async-each": "^1.0.1",
+        "delete": "^1.1.0",
+        "gulp-format-md": "^1.0.0",
+        "mocha": "^3.4.2"
+      },
+      "keywords": [
+        "file",
+        "filepath",
+        "files",
+        "filesystem",
+        "folder",
+        "fs",
+        "fs.writeFile",
+        "fs.writeFileSync",
+        "path",
+        "write"
+      ],
+      "verb": {
+        "run": true,
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "delete",
+            "read-data",
+            "read-json",
+            "read-yaml",
+            "write-json",
+            "write-yaml"
+          ]
+        },
+        "reflinks": [
+          "verb"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "dbe61c6097d3a91328ee44e2064199dd4bf08e70",
+      "_id": "write@1.0.0",
+      "_npmVersion": "5.1.0",
+      "_nodeVersion": "7.7.3",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "integrity": "sha512-NbaA6YLWGYuqg2SI8Svbeim58iLH4lT7KgPBdjMejkDVMG0SZwllm5bJJl2rn/YH6Z+0wBwRO1sb1erN2FIlbA==",
+        "shasum": "e70fca2612b51a7c292eee0e0d3d3c9a23e2c106",
+        "tarball": "https://registry.npmjs.org/write/-/write-1.0.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/write-1.0.0.tgz_1499642370802_0.4821193697862327"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "write",
+      "description": "Write files to disk, by first creating intermediate directories if they don't exist, then passing through to node's native fs methods.",
+      "version": "1.0.1",
+      "homepage": "https://github.com/jonschlinkert/write",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Charlike Mike Reagent",
+          "url": "https://i.am.charlike.online"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/write.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/write/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "mkdirp": "^0.5.1"
+      },
+      "devDependencies": {
+        "async-each": "^1.0.1",
+        "delete": "^1.1.0",
+        "gulp-format-md": "^1.0.0",
+        "mocha": "^3.4.2"
+      },
+      "keywords": [
+        "file",
+        "filepath",
+        "files",
+        "filesystem",
+        "folder",
+        "fs",
+        "fs.writeFile",
+        "fs.writeFileSync",
+        "path",
+        "write"
+      ],
+      "verb": {
+        "run": true,
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "delete",
+            "read-data",
+            "read-json",
+            "read-yaml",
+            "write-json",
+            "write-yaml"
+          ]
+        },
+        "reflinks": [
+          "verb"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "61e1d41c54bf4d3af73c3f95b0e615fc06e37e0b",
+      "_id": "write@1.0.1",
+      "_npmVersion": "5.1.0",
+      "_nodeVersion": "7.7.3",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "integrity": "sha512-BmLTMbANfg7HvTW0NJj1HT6f6NWDONjVcuIomnv0aTngMdHUXyM0Xpja6Df+iqwqGLKhjg4Yi8ilTS5yKE0ULQ==",
+        "shasum": "96333dd619d91898c13f3474845de02728c8c13d",
+        "tarball": "https://registry.npmjs.org/write/-/write-1.0.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/write-1.0.1.tgz_1499646572224_0.6719520462211221"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "write",
+      "description": "Write data to a file, replacing the file if it already exists and creating any intermediate directories if they don't already exist. Thin wrapper around node's native fs methods.",
+      "version": "1.0.2",
+      "homepage": "https://github.com/jonschlinkert/write",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Charlike Mike Reagent",
+          "url": "https://i.am.charlike.online"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/write.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/write/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "mkdirp": "^0.5.1"
+      },
+      "devDependencies": {
+        "async-each": "^1.0.1",
+        "delete": "^1.1.0",
+        "gulp-format-md": "^1.0.0",
+        "mocha": "^3.4.2"
+      },
+      "keywords": [
+        "file",
+        "filepath",
+        "files",
+        "filesystem",
+        "folder",
+        "fs",
+        "fs.writeFile",
+        "fs.writeFileSync",
+        "path",
+        "write"
+      ],
+      "verb": {
+        "run": true,
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "delete",
+            "read-data",
+            "read-yaml",
+            "write-data",
+            "write-json",
+            "write-yaml"
+          ]
+        },
+        "reflinks": [
+          "verb"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "e6c6c36a94b64227b83ca3db3f51c69d6e27065d",
+      "_id": "write@1.0.2",
+      "_npmVersion": "5.2.0",
+      "_nodeVersion": "7.7.3",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "integrity": "sha512-IiZlhr4lRy0JjQo/dDizAyOWLgy56DA65iBOv7dqwZZn9kXLLIaafMJ3gr9a+2iw0gxr2yU41vlBv4DwBLM4hQ==",
+        "shasum": "aba56d0a4734340182aecf8c6102fee5ca8415a7",
+        "tarball": "https://registry.npmjs.org/write/-/write-1.0.2.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/write-1.0.2.tgz_1499747377683_0.5051541693974286"
+      },
+      "directories": {}
+    },
+    "1.0.3": {
+      "name": "write",
+      "description": "Write data to a file, replacing the file if it already exists and creating any intermediate directories if they don't already exist. Thin wrapper around node's native fs methods.",
+      "version": "1.0.3",
+      "homepage": "https://github.com/jonschlinkert/write",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Charlike Mike Reagent",
+          "url": "https://i.am.charlike.online"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/write.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/write/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "mkdirp": "^0.5.1"
+      },
+      "devDependencies": {
+        "async-each": "^1.0.1",
+        "delete": "^1.1.0",
+        "gulp-format-md": "^1.0.0",
+        "mocha": "^3.4.2"
+      },
+      "keywords": [
+        "file",
+        "filepath",
+        "files",
+        "filesystem",
+        "folder",
+        "fs",
+        "fs.writeFile",
+        "fs.writeFileSync",
+        "path",
+        "write"
+      ],
+      "verb": {
+        "run": true,
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "delete",
+            "read-data",
+            "read-yaml",
+            "write-data",
+            "write-json",
+            "write-yaml"
+          ]
+        },
+        "reflinks": [
+          "verb"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "6a48d4e363510c52653fabc25f620a484d6058bf",
+      "_id": "write@1.0.3",
+      "_npmVersion": "5.2.0",
+      "_nodeVersion": "7.7.3",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "integrity": "sha512-/lg70HAjtkUgWPVZhZcm+T4hkL8Zbtp1nFNOn3lRrxnlv50SRBv7cR7RqR+GMsd3hUXy9hWBo4CHTbFTcOYwig==",
+        "shasum": "0800e14523b923a387e415123c865616aae0f5c3",
+        "tarball": "https://registry.npmjs.org/write/-/write-1.0.3.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/write-1.0.3.tgz_1499747519769_0.5957262869924307"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "write",
+      "description": "Write data to a file, replacing the file if it already exists and creating any intermediate directories if they don't already exist. Thin wrapper around node's native fs methods.",
+      "version": "2.0.0",
+      "homepage": "https://github.com/jonschlinkert/write",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Charlike Mike Reagent",
+          "url": "https://i.am.charlike.online"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/write.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/write/issues"
+      },
+      "license": "MIT",
+      "main": "index.js",
+      "engines": {
+        "node": ">=10"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "add-filename-increment": "^1.0.0"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^2.0.0",
+        "mocha": "^6.2.0",
+        "rimraf": "^2.6.3"
+      },
+      "keywords": [
+        "async",
+        "file path",
+        "file system",
+        "file",
+        "filepath",
+        "files",
+        "filesystem",
+        "folder",
+        "fs",
+        "fs.writeFile",
+        "fs.writeFileSync",
+        "path",
+        "promise",
+        "streams",
+        "write file",
+        "write-file",
+        "writefile",
+        "write"
+      ],
+      "verb": {
+        "run": true,
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "add-filename-increment",
+            "strip-filename-increment",
+            "delete",
+            "read-data",
+            "read-yaml",
+            "write-data",
+            "write-json",
+            "write-yaml"
+          ]
+        },
+        "reflinks": [
+          "verb"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "f537eb68091d0257b5a4ea915aa00a2c46727198",
+      "_id": "write@2.0.0",
+      "_nodeVersion": "12.7.0",
+      "_npmVersion": "6.10.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "integrity": "sha512-yam9TAqN8sAZokECAejo9HpT2j2s39OgK8i8yxadrFBVo+iSWLfnipRVFulfAw1d2dz5vSuGmlMHYRKG4fysOA==",
+        "shasum": "d6320a5f764fbd6ee93022f61273d62fa23dbd04",
+        "tarball": "https://registry.npmjs.org/write/-/write-2.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 19219,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdb17tCRA9TVsSAnZWagAAFqAP/inH2Xy7wvQifhm3bPEh\n82AkTMfCk9h0VZjCMKkv7BWmNEIOS5dW6YDU/vEooR+ykcQiuTi3mvcSj+JL\nDXPMp5goRv7PaRwN+SXgboq96MOHwi0b3HC5BB61EirDmhvybeAJx4qqLjyb\n0QD5rcuENIQIExqtmZlVlfk0DWbfV9i9N4n5xHv44K6016CgShSE72h+ZKpn\nYm+NtYuXUJ0cfbz1H362U6ZjYLjCLGlsEQAOkYp6jQb4ABNALN+6qEpdZKYJ\niHLDcdJrOOitjh1A7gPi/g+KhtwzMCC0OIDj+y1RH9aik3IdLrp/YK+Apgpb\nICUQxiYk3GF2gp2oQUp9CeKX0zbPM9jjMwzSqQOeZTuBVI/kytptB55Bnhw2\nbTs2NIekz0NlIIErGycWU5egJ8phw9u4URtSphkctMKjq4P93YjEUfn6s38P\nUmSOigtuGe9slVf1LnWLdt422TDxwiRzQ4lvh0fxvSYBV9aDqJ+mWEdavFbi\nLozgXhXoseUA/101x0w0Op7eU7vJI12Iap9cN84Uyu6P8EWxALgUf8pyMrbf\nw4xS3vlEuG203mCFgX4wfGukUIV4lejNefFNkV4VkpPeoqcUznAe9JBl5NYA\nTPGuqdZ3Nbf3/HlT1jUafByFYlvnYVp3vE6bYZp4fLrWsReJPjOBwcwJEGc/\nHecw\r\n=E4RZ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/write_2.0.0_1567579884864_0.44892652019627644"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "homepage": "https://github.com/jonschlinkert/write",
+  "keywords": [
+    "async",
+    "file path",
+    "file system",
+    "file",
+    "filepath",
+    "files",
+    "filesystem",
+    "folder",
+    "fs",
+    "fs.writeFile",
+    "fs.writeFileSync",
+    "path",
+    "promise",
+    "streams",
+    "write file",
+    "write-file",
+    "writefile",
+    "write"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonschlinkert/write.git"
+  },
+  "author": {
+    "name": "Jon Schlinkert",
+    "url": "https://github.com/jonschlinkert"
+  },
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/write/issues"
+  },
+  "readmeFilename": "README.md",
+  "license": "MIT",
+  "users": {
+    "davidbwaters": true,
+    "andrew.medvedev": true,
+    "skypupil": true,
+    "rbecheras": true,
+    "axelrindle": true,
+    "rochejul": true,
+    "jmsherry": true
+  },
+  "contributors": [
+    {
+      "name": "Charlike Mike Reagent",
+      "url": "https://i.am.charlike.online"
+    },
+    {
+      "name": "Jon Schlinkert",
+      "url": "http://twitter.com/jonschlinkert"
+    }
+  ]
+}

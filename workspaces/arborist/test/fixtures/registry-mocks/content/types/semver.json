@@ -1,0 +1,1863 @@
+{
+  "_id": "@types/semver",
+  "_rev": "559-24614530f7816bead41238eb9474dbd7",
+  "name": "@types/semver",
+  "description": "TypeScript definitions for semver",
+  "dist-tags": {
+    "latest": "7.3.4",
+    "ts2.0": "6.2.0",
+    "ts2.1": "6.2.0",
+    "ts2.2": "6.2.0",
+    "ts2.3": "6.2.0",
+    "ts2.4": "6.2.0",
+    "ts2.5": "6.2.0",
+    "ts2.6": "6.2.0",
+    "ts2.7": "6.2.0",
+    "ts2.8": "7.1.0",
+    "ts2.9": "7.2.0",
+    "ts3.0": "7.3.3",
+    "ts3.1": "7.3.4",
+    "ts3.2": "7.3.4",
+    "ts3.3": "7.3.4",
+    "ts3.4": "7.3.4",
+    "ts3.5": "7.3.4",
+    "ts3.6": "7.3.4",
+    "ts3.7": "7.3.4",
+    "ts3.8": "7.3.4",
+    "ts3.9": "7.3.4",
+    "ts4.0": "7.3.4",
+    "ts4.1": "7.3.4"
+  },
+  "versions": {
+    "4.3.13-alpha": {
+      "name": "@types/semver",
+      "version": "4.3.13-alpha",
+      "description": "Type definitions for semver v4.3.4 from https://www.github.com/DefinitelyTyped/DefinitelyTyped",
+      "main": "",
+      "scripts": {},
+      "author": {
+        "name": "Bart van der Schoor",
+        "email": "https://github.com/Bartvds"
+      },
+      "license": "MIT",
+      "typings": "index.d.ts",
+      "dependencies": {},
+      "_id": "@types/semver@4.3.13-alpha",
+      "_shasum": "2a8d43081ff49f25afbb9c62828bff74d4167dd7",
+      "_from": "output\\semver",
+      "_resolved": "file:output\\semver",
+      "_npmVersion": "3.8.2",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "types",
+        "email": "ryan.cavanaugh@microsoft.com"
+      },
+      "dist": {
+        "shasum": "2a8d43081ff49f25afbb9c62828bff74d4167dd7",
+        "tarball": "https://registry.npmjs.org/@types/semver/-/semver-4.3.13-alpha.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/semver-4.3.13-alpha.tgz_1463511246774_0.6720621690619737"
+      },
+      "directories": {}
+    },
+    "4.3.14-alpha": {
+      "name": "@types/semver",
+      "version": "4.3.14-alpha",
+      "description": "Type definitions for semver v4.3.4 from https://www.github.com/DefinitelyTyped/DefinitelyTyped",
+      "main": "",
+      "scripts": {},
+      "author": {
+        "name": "Bart van der Schoor",
+        "email": "https://github.com/Bartvds"
+      },
+      "license": "MIT",
+      "typings": "index.d.ts",
+      "dependencies": {},
+      "_id": "@types/semver@4.3.14-alpha",
+      "_shasum": "3d16f5f56f43afaccd9203d8d98108b803237d0d",
+      "_from": "output\\semver",
+      "_resolved": "file:output\\semver",
+      "_npmVersion": "3.8.2",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "types",
+        "email": "ryan.cavanaugh@microsoft.com"
+      },
+      "dist": {
+        "shasum": "3d16f5f56f43afaccd9203d8d98108b803237d0d",
+        "tarball": "https://registry.npmjs.org/@types/semver/-/semver-4.3.14-alpha.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/semver-4.3.14-alpha.tgz_1463696463135_0.9308938689064234"
+      },
+      "directories": {}
+    },
+    "4.3.19-alpha": {
+      "name": "@types/semver",
+      "version": "4.3.19-alpha",
+      "description": "TypeScript definitions for semver v4.3.4",
+      "main": "",
+      "scripts": {},
+      "author": {
+        "name": "Bart van der Schoor",
+        "email": "https://github.com/Bartvds"
+      },
+      "license": "MIT",
+      "typings": "index.d.ts",
+      "dependencies": {},
+      "_id": "@types/semver@4.3.19-alpha",
+      "_shasum": "80cc7a74597573534452069042b525b7652a9ffc",
+      "_from": "output\\semver",
+      "_resolved": "file:output\\semver",
+      "_npmVersion": "3.8.2",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "types",
+        "email": "ryan.cavanaugh@microsoft.com"
+      },
+      "dist": {
+        "shasum": "80cc7a74597573534452069042b525b7652a9ffc",
+        "tarball": "https://registry.npmjs.org/@types/semver/-/semver-4.3.19-alpha.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/semver-4.3.19-alpha.tgz_1463776766605_0.41889218240976334"
+      },
+      "directories": {}
+    },
+    "4.3.20-alpha": {
+      "name": "@types/semver",
+      "version": "4.3.20-alpha",
+      "description": "TypeScript definitions for semver v4.3.4",
+      "main": "",
+      "scripts": {},
+      "author": {
+        "name": "Bart van der Schoor",
+        "email": "https://github.com/Bartvds"
+      },
+      "license": "MIT",
+      "typings": "index.d.ts",
+      "dependencies": {},
+      "_id": "@types/semver@4.3.20-alpha",
+      "_shasum": "a5826698ded0e8383b4a770824bb9b55987e9b1c",
+      "_from": "output\\semver",
+      "_resolved": "file:output\\semver",
+      "_npmVersion": "3.8.2",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "types",
+        "email": "ryan.cavanaugh@microsoft.com"
+      },
+      "dist": {
+        "shasum": "a5826698ded0e8383b4a770824bb9b55987e9b1c",
+        "tarball": "https://registry.npmjs.org/@types/semver/-/semver-4.3.20-alpha.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/semver-4.3.20-alpha.tgz_1464155705800_0.4299685556907207"
+      },
+      "directories": {}
+    },
+    "4.3.21-alpha": {
+      "name": "@types/semver",
+      "version": "4.3.21-alpha",
+      "description": "TypeScript definitions for semver v4.3.4",
+      "main": "",
+      "scripts": {},
+      "author": {
+        "name": "Bart van der Schoor",
+        "email": "https://github.com/Bartvds"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "license": "MIT",
+      "typings": "index.d.ts",
+      "dependencies": {},
+      "_id": "@types/semver@4.3.21-alpha",
+      "_shasum": "58866cfd623dddbfbf24cf3f857bebea427c3cf8",
+      "_from": "output\\semver",
+      "_resolved": "file:output\\semver",
+      "_npmVersion": "3.9.5",
+      "_nodeVersion": "6.2.2",
+      "_npmUser": {
+        "name": "types",
+        "email": "ryan.cavanaugh@microsoft.com"
+      },
+      "dist": {
+        "shasum": "58866cfd623dddbfbf24cf3f857bebea427c3cf8",
+        "tarball": "https://registry.npmjs.org/@types/semver/-/semver-4.3.21-alpha.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/semver-4.3.21-alpha.tgz_1467405441088_0.9712159673217684"
+      },
+      "directories": {}
+    },
+    "4.3.22-alpha": {
+      "name": "@types/semver",
+      "version": "4.3.22-alpha",
+      "description": "TypeScript definitions for semver v4.3.4",
+      "main": "",
+      "scripts": {},
+      "author": {
+        "name": "Bart van der Schoor",
+        "email": "https://github.com/Bartvds"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "license": "MIT",
+      "typings": "index.d.ts",
+      "dependencies": {},
+      "_id": "@types/semver@4.3.22-alpha",
+      "_shasum": "52f9009bc40ea147d668689646c69bea2855677c",
+      "_from": "output\\semver",
+      "_resolved": "file:output\\semver",
+      "_npmVersion": "3.7.2",
+      "_nodeVersion": "6.2.1",
+      "_npmUser": {
+        "name": "types",
+        "email": "ryan.cavanaugh@microsoft.com"
+      },
+      "dist": {
+        "shasum": "52f9009bc40ea147d668689646c69bea2855677c",
+        "tarball": "https://registry.npmjs.org/@types/semver/-/semver-4.3.22-alpha.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/semver-4.3.22-alpha.tgz_1467417550594_0.16094905766658485"
+      },
+      "directories": {}
+    },
+    "4.3.23-alpha": {
+      "name": "@types/semver",
+      "version": "4.3.23-alpha",
+      "description": "TypeScript definitions for semver v4.3.4",
+      "main": "",
+      "scripts": {},
+      "author": {
+        "name": "Bart van der Schoor",
+        "email": "https://github.com/Bartvds"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "license": "MIT",
+      "typings": "index.d.ts",
+      "dependencies": {},
+      "_id": "@types/semver@4.3.23-alpha",
+      "_shasum": "a93334072472df1053e36d56f234e36ebbde341f",
+      "_from": "output\\semver",
+      "_resolved": "file:output\\semver",
+      "_npmVersion": "3.7.2",
+      "_nodeVersion": "6.2.1",
+      "_npmUser": {
+        "name": "types",
+        "email": "ryan.cavanaugh@microsoft.com"
+      },
+      "dist": {
+        "shasum": "a93334072472df1053e36d56f234e36ebbde341f",
+        "tarball": "https://registry.npmjs.org/@types/semver/-/semver-4.3.23-alpha.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/semver-4.3.23-alpha.tgz_1467429963828_0.7896833831910044"
+      },
+      "directories": {}
+    },
+    "4.3.24-alpha": {
+      "name": "@types/semver",
+      "version": "4.3.24-alpha",
+      "description": "TypeScript definitions for semver v4.3.4",
+      "main": "",
+      "scripts": {},
+      "author": {
+        "name": "Bart van der Schoor",
+        "email": "https://github.com/Bartvds"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "license": "MIT",
+      "typings": "index.d.ts",
+      "dependencies": {},
+      "_id": "@types/semver@4.3.24-alpha",
+      "_shasum": "7a20f8d2692d006fdf111610b2761ae9225a5f0e",
+      "_from": "output\\semver",
+      "_resolved": "file:output\\semver",
+      "_npmVersion": "3.7.2",
+      "_nodeVersion": "6.2.1",
+      "_npmUser": {
+        "name": "types",
+        "email": "ryan.cavanaugh@microsoft.com"
+      },
+      "dist": {
+        "shasum": "7a20f8d2692d006fdf111610b2761ae9225a5f0e",
+        "tarball": "https://registry.npmjs.org/@types/semver/-/semver-4.3.24-alpha.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/semver-4.3.24-alpha.tgz_1467594906292_0.3231828997377306"
+      },
+      "directories": {}
+    },
+    "4.3.25-alpha": {
+      "name": "@types/semver",
+      "version": "4.3.25-alpha",
+      "description": "TypeScript definitions for semver v4.3.4",
+      "main": "",
+      "scripts": {},
+      "author": {
+        "name": "Bart van der Schoor",
+        "email": "https://github.com/Bartvds"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "license": "MIT",
+      "typings": "index.d.ts",
+      "dependencies": {},
+      "_id": "@types/semver@4.3.25-alpha",
+      "_shasum": "c5548a008d690dc368824a95b2fd4744e83de32b",
+      "_from": "output\\semver",
+      "_resolved": "file:output\\semver",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.3.0",
+      "_npmUser": {
+        "name": "types",
+        "email": "ryan.cavanaugh@microsoft.com"
+      },
+      "dist": {
+        "shasum": "c5548a008d690dc368824a95b2fd4744e83de32b",
+        "tarball": "https://registry.npmjs.org/@types/semver/-/semver-4.3.25-alpha.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/semver-4.3.25-alpha.tgz_1468012941695_0.1382157332263887"
+      },
+      "directories": {}
+    },
+    "4.3.26": {
+      "name": "@types/semver",
+      "version": "4.3.26",
+      "description": "TypeScript definitions for semver v4.3.4",
+      "main": "",
+      "scripts": {},
+      "author": {
+        "name": "Bart van der Schoor",
+        "email": "https://github.com/Bartvds"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "license": "MIT",
+      "typings": "index.d.ts",
+      "dependencies": {},
+      "_id": "@types/semver@4.3.26",
+      "_shasum": "b339bb8d0164a476a7f113bb80fafbbe0886f5f8",
+      "_from": "output\\semver",
+      "_resolved": "file:output\\semver",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.3.0",
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "dist": {
+        "shasum": "b339bb8d0164a476a7f113bb80fafbbe0886f5f8",
+        "tarball": "https://registry.npmjs.org/@types/semver/-/semver-4.3.26.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/semver-4.3.26.tgz_1468512068296_0.6248131240718067"
+      },
+      "directories": {}
+    },
+    "4.3.27": {
+      "name": "@types/semver",
+      "version": "4.3.27",
+      "description": "TypeScript definitions for semver v4.3.4",
+      "license": "MIT",
+      "author": "Bart van der Schoor <https://github.com/Bartvds>",
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typings": "index.d.ts",
+      "_id": "@types/semver@4.3.27",
+      "dist": {
+        "shasum": "b6843b54c04c7941b804df6c692de459ddec7f87",
+        "tarball": "https://registry.npmjs.org/@types/semver/-/semver-4.3.27.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/semver-4.3.27.tgz_1470154222359_0.9315897363703698"
+      },
+      "directories": {}
+    },
+    "5.3.28": {
+      "name": "@types/semver",
+      "version": "5.3.28",
+      "description": "TypeScript definitions for semver v5.3.0",
+      "license": "MIT",
+      "author": "Bart van der Schoor <https://github.com/Bartvds>",
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typings": "index.d.ts",
+      "_id": "@types/semver@5.3.28",
+      "dist": {
+        "shasum": "291961b3f50fde716a6e286cf95935990245484a",
+        "tarball": "https://registry.npmjs.org/@types/semver/-/semver-5.3.28.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/semver-5.3.28.tgz_1470688688172_0.8774762279354036"
+      },
+      "directories": {}
+    },
+    "5.3.29": {
+      "name": "@types/semver",
+      "version": "5.3.29",
+      "description": "TypeScript definitions for semver v5.3.0",
+      "license": "MIT",
+      "author": "Bart van der Schoor <https://github.com/Bartvds>",
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typings": "index.d.ts",
+      "_id": "@types/semver@5.3.29",
+      "dist": {
+        "shasum": "f164e1d6b72561b755ca4e47df9de703ee5579e5",
+        "tarball": "https://registry.npmjs.org/@types/semver/-/semver-5.3.29.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/semver-5.3.29.tgz_1472151549192_0.9059198235627264"
+      },
+      "directories": {}
+    },
+    "5.3.30": {
+      "name": "@types/semver",
+      "version": "5.3.30",
+      "description": "TypeScript definitions for semver v5.3.0",
+      "license": "MIT",
+      "author": "Bart van der Schoor <https://github.com/Bartvds>",
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typings": "index.d.ts",
+      "typesPublisherContentHash": "7f9d2d0c3e3ffbed7fadcb44a193cf7221a3a1deeda9714a36e10d6d1067a9b1",
+      "_id": "@types/semver@5.3.30",
+      "dist": {
+        "shasum": "b55a3bd07b6b8b35f9d4472e1fc3318b68a493b2",
+        "tarball": "https://registry.npmjs.org/@types/semver/-/semver-5.3.30.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/semver-5.3.30.tgz_1474308666990_0.9302589874714613"
+      },
+      "directories": {}
+    },
+    "5.3.31": {
+      "name": "@types/semver",
+      "version": "5.3.31",
+      "description": "TypeScript definitions for semver",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Bart van der Schoor",
+          "url": "https://github.com/Bartvds"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "peerDependencies": {},
+      "typesPublisherContentHash": "918bd55f0f25c18a3dacd10fc9f70a14b5b2d2a55faea36deab8aa91b8e7dacd",
+      "typeScriptVersion": "2.0",
+      "_id": "@types/semver@5.3.31",
+      "dist": {
+        "shasum": "b999d7d935f43f5207b01b00d3de20852f4ca75f",
+        "tarball": "https://registry.npmjs.org/@types/semver/-/semver-5.3.31.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/semver-5.3.31.tgz_1489424996236_0.8543731172103435"
+      },
+      "directories": {}
+    },
+    "5.3.32": {
+      "name": "@types/semver",
+      "version": "5.3.32",
+      "description": "TypeScript definitions for semver",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Bart van der Schoor",
+          "url": "https://github.com/Bartvds"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "peerDependencies": {},
+      "typesPublisherContentHash": "e08a17db5f6d40575b73771817ec60fa9bfcd16dfc5e84e8e6462aae55ca28b6",
+      "typeScriptVersion": "2.0",
+      "_id": "@types/semver@5.3.32",
+      "dist": {
+        "integrity": "sha512-MdbWERx4JWmN4zP+skJy9Kio+Cddvmyn1k8x0S8UAqDoMgOJeobQo7yhlE4BfiimonHirgixWfva/hKUlXBsrw==",
+        "shasum": "a7afdc4bee713c081114cd811b51be10907d7bae",
+        "tarball": "https://registry.npmjs.org/@types/semver/-/semver-5.3.32.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/semver-5.3.32.tgz_1498571786299_0.4819774250499904"
+      },
+      "directories": {}
+    },
+    "5.3.33": {
+      "name": "@types/semver",
+      "version": "5.3.33",
+      "description": "TypeScript definitions for semver",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Bart van der Schoor",
+          "url": "https://github.com/Bartvds"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "peerDependencies": {},
+      "typesPublisherContentHash": "73d351e55d25541998ce8fcf51d8b78535f0ea81df318b2d394d9094be6e74b6",
+      "typeScriptVersion": "2.0",
+      "_id": "@types/semver@5.3.33",
+      "dist": {
+        "integrity": "sha512-UwrBgjsRS8BSsckIEdrAhIAmdh0MJidtKTvD3S6tpMq6qHLY3uGaNYcRDUjPxpF4hOAOEbMNSXhhfxmNHB1QNQ==",
+        "shasum": "58ebb6c8c48e161e24f8901915e7184900d341f7",
+        "tarball": "https://registry.npmjs.org/@types/semver/-/semver-5.3.33.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "ts-npm-types@microsoft.com",
+          "name": "types"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/semver-5.3.33.tgz_1501271370393_0.9314470607787371"
+      },
+      "directories": {}
+    },
+    "5.3.34": {
+      "name": "@types/semver",
+      "version": "5.3.34",
+      "description": "TypeScript definitions for semver",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Bart van der Schoor",
+          "url": "https://github.com/Bartvds"
+        },
+        {
+          "name": "Lucian Buzzo",
+          "url": "https://github.com/LucianBuzzo"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "c181e3f337bd2f6e27173155fd4cd87ade979fe45945fcda2bf6562ae7ac229e",
+      "typeScriptVersion": "2.0",
+      "_id": "@types/semver@5.3.34",
+      "dist": {
+        "integrity": "sha512-D5n5ED81GbLKte4CxAH1/DBk3pfyknglGe96FrgrNIeAaJUyljJlAN7nXCJx2lpByz1fsWcMwzxR5kRPHzfP/w==",
+        "shasum": "6fade409ceb8ae817c1f7f1cfa5375416e97045f",
+        "tarball": "https://registry.npmjs.org/@types/semver/-/semver-5.3.34.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "ts-npm-types@microsoft.com",
+          "name": "types"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/semver-5.3.34.tgz_1502993468113_0.6288113433402032"
+      },
+      "directories": {}
+    },
+    "5.4.0": {
+      "name": "@types/semver",
+      "version": "5.4.0",
+      "description": "TypeScript definitions for semver",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Bart van der Schoor",
+          "url": "https://github.com/Bartvds"
+        },
+        {
+          "name": "BendingBender",
+          "url": "https://github.com/BendingBender"
+        },
+        {
+          "name": "Lucian Buzzo",
+          "url": "https://github.com/LucianBuzzo"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "4987eb5a67b0aad64d34115e7359875348141b5544a015bc98fb2bb28e71d826",
+      "typeScriptVersion": "2.0",
+      "_id": "@types/semver@5.4.0",
+      "dist": {
+        "integrity": "sha512-PBHCvO98hNec9A491vBbh0ZNDOVxccwKL1u2pm6fs9oDgm7SEnw0lEHqHfjsYryDxnE3zaf7LvERWEXjOp1hig==",
+        "shasum": "f3658535af7f1f502acd6da7daf405ffeb1f7ee4",
+        "tarball": "https://registry.npmjs.org/@types/semver/-/semver-5.4.0.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "ts-npm-types@microsoft.com",
+          "name": "types"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/semver-5.4.0.tgz_1503417271021_0.4422064907848835"
+      },
+      "directories": {}
+    },
+    "5.5.0": {
+      "name": "@types/semver",
+      "version": "5.5.0",
+      "description": "TypeScript definitions for semver",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Bart van der Schoor",
+          "url": "https://github.com/Bartvds",
+          "githubUsername": "Bartvds"
+        },
+        {
+          "name": "BendingBender",
+          "url": "https://github.com/BendingBender",
+          "githubUsername": "BendingBender"
+        },
+        {
+          "name": "Lucian Buzzo",
+          "url": "https://github.com/LucianBuzzo",
+          "githubUsername": "LucianBuzzo"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "6a04faf195739078b9992feda8cc82d852573b1c6f2cd0fe71b40731b35ce7a3",
+      "typeScriptVersion": "2.0",
+      "_id": "@types/semver@5.5.0",
+      "dist": {
+        "integrity": "sha512-41qEJgBH/TWgo5NFSvBCJ1qkoi3Q6ONSF2avrHq1LVEZfYpdHmj0y9SuTK+u9ZhG1sYQKBL1AWXKyLWP4RaUoQ==",
+        "shasum": "146c2a29ee7d3bae4bf2fcb274636e264c813c45",
+        "tarball": "https://registry.npmjs.org/@types/semver/-/semver-5.5.0.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "ts-npm-types@microsoft.com",
+          "name": "types"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/semver-5.5.0.tgz_1517260845181_0.41513977060094476"
+      },
+      "directories": {}
+    },
+    "6.0.0": {
+      "name": "@types/semver",
+      "version": "6.0.0",
+      "description": "TypeScript definitions for semver",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Bart van der Schoor",
+          "url": "https://github.com/Bartvds",
+          "githubUsername": "Bartvds"
+        },
+        {
+          "name": "BendingBender",
+          "url": "https://github.com/BendingBender",
+          "githubUsername": "BendingBender"
+        },
+        {
+          "name": "Lucian Buzzo",
+          "url": "https://github.com/LucianBuzzo",
+          "githubUsername": "LucianBuzzo"
+        },
+        {
+          "name": "Klaus Meinhardt",
+          "url": "https://github.com/ajafff",
+          "githubUsername": "ajafff"
+        }
+      ],
+      "main": "",
+      "types": "index",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/semver"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "75e6b72cb873d79657387aea3afd0ac4887bd5fe4cb4b15c35172f04e2ec3691",
+      "typeScriptVersion": "2.0",
+      "_id": "@types/semver@6.0.0",
+      "dist": {
+        "integrity": "sha512-OO0srjOGH99a4LUN2its3+r6CBYcplhJ466yLqs+zvAWgphCpS8hYZEZ797tRDP/QKcqTdb/YCN6ifASoAWkrQ==",
+        "shasum": "86ba89f02a414e39c68d02b351872e4ed31bd773",
+        "tarball": "https://registry.npmjs.org/@types/semver/-/semver-6.0.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 11514,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJconnZCRA9TVsSAnZWagAA4HEP/2wh5mY1WvVfedfqDtjs\nA10xWW6XEyvsFv98z1r54di1p/+Sv/vI54BN1yJoX67zPGfCba0RBLNZsbVF\nc1ivQmTt/bQkZFmggsXG9ISlgFN74UEVnvWnpht0ZDUBUfY8r4Rg8ittCfHG\nwt97y/r7kl3XkcXUTJip2/8DdN8ixff1Mdq3mltaCDMIV12qDmMV/YG59hgX\nAc5WkFqLiDOhZn6oh0+fymw3XrS+Mh0ER6k5CUEZqVRyLbuj513LJoc+tyIA\n/Pt5yevfACl3GhywoY/qikTZ4Y5OLyblRKxekA4wHdlFDUjnKlFwYq/0F9+m\nbruF5XOJaWFYYUDYZB9a6uTUkigr5RnD2oo9QlP8UH+6vRcGKX9MZAB75e0J\n1QysKa2+KfZz/VgEVIyw8x2SlOP7VvPwBkjUh+82Q8TAAB5ymmkuDW/o/iPp\nqsPI0FixXSO3j9ldfyKoZbRkaMqrQ4ciALIGjipRsCrn0FeJcwNaOjpvw5RW\nXMNScIbiNLoqJ4cPY/fZJGs/rbD+8TB/OlfKdHJm4GiEhHL15TaEbdudRz1n\nWkExYoohW655FdiCoFiqvDVcu4dNaRNmmoFesLqAI6nLyVa0BucLmKyzCYAr\nOBJ5gK/A/uAo9Q/8dgjHFAzoz/FYp1oULZzeSJUt0REld5/llzhNSGna/uFY\n+xiV\r\n=YETy\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "ts-npm-types@microsoft.com",
+          "name": "types"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/semver_6.0.0_1554151897053_0.6614866062393405"
+      },
+      "_hasShrinkwrap": false
+    },
+    "6.0.1": {
+      "name": "@types/semver",
+      "version": "6.0.1",
+      "description": "TypeScript definitions for semver",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Bart van der Schoor",
+          "url": "https://github.com/Bartvds",
+          "githubUsername": "Bartvds"
+        },
+        {
+          "name": "BendingBender",
+          "url": "https://github.com/BendingBender",
+          "githubUsername": "BendingBender"
+        },
+        {
+          "name": "Lucian Buzzo",
+          "url": "https://github.com/LucianBuzzo",
+          "githubUsername": "LucianBuzzo"
+        },
+        {
+          "name": "Klaus Meinhardt",
+          "url": "https://github.com/ajafff",
+          "githubUsername": "ajafff"
+        }
+      ],
+      "main": "",
+      "types": "index",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/semver"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "2fbf12f1845229c1b285bd981b793f64bc89a14bb6f2d36a44eccb80c34cc946",
+      "typeScriptVersion": "2.0",
+      "_id": "@types/semver@6.0.1",
+      "dist": {
+        "integrity": "sha512-ffCdcrEE5h8DqVxinQjo+2d1q+FV5z7iNtPofw3JsrltSoSVlOGaW0rY8XxtO9XukdTn8TaCGWmk2VFGhI70mg==",
+        "shasum": "a984b405c702fa5a7ec6abc56b37f2ba35ef5af6",
+        "tarball": "https://registry.npmjs.org/@types/semver/-/semver-6.0.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 11525,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdDCgaCRA9TVsSAnZWagAActYP/AgCX7VZcjbjHrj+Nj6c\ndESwY8I/lVaEDtkyyr0M0NVVdRpNO/8S2K+mjowTz0m/9wrxuY46wlgKpzph\nr/5ZqB9jMsUL3lqSBU8wQtSP5Rox1oC+9ObMLY0VOR1QZZGt1grVhybYvcp4\nUP37M+5ejz8oHxPrj04lCtvh3wB510ZlZLyLYEDJc+jgCJl9O8dpANAJhLHw\nsezVGulOZxCFwBqGaCJuhykybmYZXIPfX/RLwRttrQfUqyi1uhzE8Krp49Tc\nQHnIJs1NsL0xKxL+xT3/LWK7tdG4OOw4+a2n7yvFy+Cv7/XyBr9Im/fBrPUS\nRLMg09yq3dZR3Kn2YEIG6yfQqBKnGAgrg02FqNBq3aIumHNe45aiwZujlsxD\n+VKBGYYmtUlvBNWbY7hfA2n8njpjokuwcWPSZ7xoGb7e25yjS8H4Lg6LM1Rg\n7XQZi0XhdV3iboe1rhlc8Z6UPlcfaEy7BD64iXre6X8lMoiI3IQzqEtxRX1a\nyxg06YRNh5BUD32Yojbr8rEY+MOnnwTlhcw/QrwECbs1iZPOmoFqNkXKjk+N\nYxmEU1DyaW8DVbbuvr5ErwKxGk3pie0XVqewQta0jbHhO6FAiu0UIqgdPrCs\n6KzVxNKD7gZTpAfcjXQ8ZtTNaAIlaqL9LSOLVvx8SvLzd9jXewwizkNcFjBD\n5z4D\r\n=LCCH\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "ts-npm-types@microsoft.com",
+          "name": "types"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/semver_6.0.1_1561077785346_0.16606467887548915"
+      },
+      "_hasShrinkwrap": false
+    },
+    "6.0.2": {
+      "name": "@types/semver",
+      "version": "6.0.2",
+      "description": "TypeScript definitions for semver",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Bart van der Schoor",
+          "url": "https://github.com/Bartvds",
+          "githubUsername": "Bartvds"
+        },
+        {
+          "name": "BendingBender",
+          "url": "https://github.com/BendingBender",
+          "githubUsername": "BendingBender"
+        },
+        {
+          "name": "Lucian Buzzo",
+          "url": "https://github.com/LucianBuzzo",
+          "githubUsername": "LucianBuzzo"
+        },
+        {
+          "name": "Klaus Meinhardt",
+          "url": "https://github.com/ajafff",
+          "githubUsername": "ajafff"
+        }
+      ],
+      "main": "",
+      "types": "index",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/semver"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "0ffdfe2b476714b6b1ceaddc1afadc4f372c4b28ccecd13cc0e598c0b3d56516",
+      "typeScriptVersion": "2.0",
+      "_id": "@types/semver@6.0.2",
+      "dist": {
+        "integrity": "sha512-G1Ggy7/9Nsa1Jt2yiBR2riEuyK2DFNnqow6R7cromXPMNynackRY1vqFTLz/gwnef1LHokbXThcPhqMRjUbkpQ==",
+        "shasum": "5e8b09f0e4af53034b1d0fb9977a277847836205",
+        "tarball": "https://registry.npmjs.org/@types/semver/-/semver-6.0.2.tgz",
+        "fileCount": 4,
+        "unpackedSize": 11633,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdcVARCRA9TVsSAnZWagAAwr8QAJ1nn46Wb31avCf8kEmV\njBnW+ykVTgjRUbqCJSBNeSUJzqU/dZ8v0B9CK3UPnEr1aqnmQ9Wn93/DkEVy\nAQWYwemkYNSr25wAMFBWasDaAjI/CqdpvltO5EbqSWQ2mjZ+QiHz/9b9qEMJ\nEO5vnl1zGEm8+H/Q3NMPL5kXbEX/aM7R1JV9ECYtHSwiJ4Giw94DB+FhjdU9\nTDIBbDG6sx0y+DW8UxUrlIdrg8a9+j/KFe/47kpF4tw1ozPpBk9crxHzG8Zh\nqCTQh0SlR7o1cepXbr2NIcaZr7RGmR3/1uZgvE51H7/6/3fTNKd/y08agtoU\ntaT448DELrtf+C8ICfyIFNwY6nMpy0jflbOE9qlTLawHnZX/SyhNLAR8VXDC\npCV3GZQFvTYsNqMCXFeEjJcobXdRFSYSlAJrPHTPmxdDCy8hWN+p8KB2Nujc\nvXqjz1CrihbyntmFK9EmxFDC/BWYPLipC2F9GiBU1+ln5Qw42Nfz44ynCx56\nfjPc68kL6Ee7wuG4kZPCdqhj9HY3wJdC9GZGGIQqQnw7UJJQi3n6ScMgwKBH\nw16Km5NIWjgbuSpH5HSnNgBvtFJmSrZiILlU3ctLzy3oIFjh3qNFsnaT6R9/\nW2BHw34SqLOuREYp6iZhtmDpChx/q/iAQ576otyNPPQDobgm0iffgHhX3/fa\nOfEh\r\n=8QJm\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "ts-npm-types@microsoft.com",
+          "name": "types"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/semver_6.0.2_1567707153055_0.05236075644156424"
+      },
+      "_hasShrinkwrap": false
+    },
+    "6.2.0": {
+      "name": "@types/semver",
+      "version": "6.2.0",
+      "description": "TypeScript definitions for semver",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Bart van der Schoor",
+          "url": "https://github.com/Bartvds",
+          "githubUsername": "Bartvds"
+        },
+        {
+          "name": "BendingBender",
+          "url": "https://github.com/BendingBender",
+          "githubUsername": "BendingBender"
+        },
+        {
+          "name": "Lucian Buzzo",
+          "url": "https://github.com/LucianBuzzo",
+          "githubUsername": "LucianBuzzo"
+        },
+        {
+          "name": "Klaus Meinhardt",
+          "url": "https://github.com/ajafff",
+          "githubUsername": "ajafff"
+        },
+        {
+          "name": "ExE Boss",
+          "url": "https://github.com/ExE-Boss",
+          "githubUsername": "ExE-Boss"
+        }
+      ],
+      "main": "",
+      "types": "index",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/semver"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "f19d7b1ca506ce2f282d80a2b72e499a5dc5afed849026bc6a56307e1030e70a",
+      "typeScriptVersion": "2.0",
+      "_id": "@types/semver@6.2.0",
+      "dist": {
+        "integrity": "sha512-1OzrNb4RuAzIT7wHSsgZRlMBlNsJl+do6UblR7JMW4oB7bbR+uBEYtUh7gEc/jM84GGilh68lSOokyM/zNUlBA==",
+        "shasum": "d688d574400d96c5b0114968705366f431831e1a",
+        "tarball": "https://registry.npmjs.org/@types/semver/-/semver-6.2.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 13855,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJds1dKCRA9TVsSAnZWagAAjiAP/1TEo2s/rjixFAgF9PoE\nVr1iozZdBt6ZhuiIoiDaQU1oCwJPvd28mrK+WADDVizg8FyP/PbQV11I8X2S\nwW3dNrlMZSTmYJ6PKvxVxI+CuGex/3DvS7gMxh32fv3CBH0aDOxF63vdvzRP\npSPojV0zjDveTkPXPAEzfCZ60mU8sGHvfC0wg+D/34uiq1RzyBFb2NGlYyH9\ncAdzf4xsc+hJUOs1/968J5tVGb+eN/Gqj40uN84n3XoUrKB4rZayIOwJS1sv\nUhPKEHJYjNkbIX9cC+FTRb+U26DpcxCSpyN5AdyWyq67uW4hsi5wTS4tQqLE\nsLEJ+0vFOGHe5LIU9b25QTDpavDPAHuuXnyZ0c3xzUAIBzqLT8KyhB0D6zag\noLp3lODRFPB5uF1YuSYMhYmAaoxCD9EnQptozDzbimP139UgYt4tU6V+rI4r\nEuOKOEVhTGMuS1gDdjgNhR8Kbp8Q9Ss/U6f+Jn0WHlocNvPFiOy7Sl1Ev3fh\ndgFDdsJZuhvDIPHQIbVOtlHxhzQvoGmwx0hJFDWQccUe4F/LTIxvuNvNWvEM\nJdZmSNJ44xXsEfuMYINS2Y7ywJANF/aIcB8VURgqQWQWqxQEtQCzSgEZ2axM\nIzxgaM6HFH04Wh7GpbBKx533dwDUnXJcjJuJ7YEXv7XCJKsLtH9I7zxVeUFy\ni5vQ\r\n=XoIc\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "ts-npm-types@microsoft.com",
+          "name": "types"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/semver_6.2.0_1572034378052_0.28660744725685694"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.1.0": {
+      "name": "@types/semver",
+      "version": "7.1.0",
+      "description": "TypeScript definitions for semver",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Bart van der Schoor",
+          "url": "https://github.com/Bartvds",
+          "githubUsername": "Bartvds"
+        },
+        {
+          "name": "BendingBender",
+          "url": "https://github.com/BendingBender",
+          "githubUsername": "BendingBender"
+        },
+        {
+          "name": "Lucian Buzzo",
+          "url": "https://github.com/LucianBuzzo",
+          "githubUsername": "LucianBuzzo"
+        },
+        {
+          "name": "Klaus Meinhardt",
+          "url": "https://github.com/ajafff",
+          "githubUsername": "ajafff"
+        },
+        {
+          "name": "ExE Boss",
+          "url": "https://github.com/ExE-Boss",
+          "githubUsername": "ExE-Boss"
+        }
+      ],
+      "main": "",
+      "types": "index.d.ts",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/semver"
+      },
+      "scripts": {},
+      "dependencies": {
+        "@types/node": "*"
+      },
+      "typesPublisherContentHash": "416d3be355e7222d5f4e1aa0090d8831e4c7ea5f6a4e3cda4b1ecf3505f6fec4",
+      "typeScriptVersion": "2.8",
+      "_id": "@types/semver@7.1.0",
+      "dist": {
+        "integrity": "sha512-pOKLaubrAEMUItGNpgwl0HMFPrSAFic8oSVIvfu1UwcgGNmNyK9gyhBHKmBnUTwwVvpZfkzUC0GaMgnL6P86uA==",
+        "shasum": "c8c630d4c18cd326beff77404887596f96408408",
+        "tarball": "https://registry.npmjs.org/@types/semver/-/semver-7.1.0.tgz",
+        "fileCount": 46,
+        "unpackedSize": 21762,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeL1kTCRA9TVsSAnZWagAAsgQP/2/9yTCab8ys2iYY3Zhc\nFg3RHc3A6otclmBPGuwrkl0b6zV919TtVz6fnI5jqvZs8RNh0j61UeSnt0H9\neRMN+efEDHGxWSVWeWk4C0qVt6z4oiRwLgBTfNj+8XOmG8i9WwbgE9+bW+r3\nPZaY9ijlBzWb/nH70Hss+fv4qJoYI85NUtntCSGjEK4h+38VJIGh5+TCWE5E\nBCVJocenfeyjZX5veX8Qvt+1sacxVWJnwqi9z9+9D20IqOpZa2t/waYr7NQa\n9rHE4gXU03JkR16Hg+rqaeS4A0jqYrLmT4hHAmS5oOzRd9VXr9C3pG8lqmfe\ntov+pHkSl++clZEeBpmiptz0bQaOQgn/44IlCMSGJdZHShLOmyxds8ipEKkR\n1ablPAkYLNhp6NmyMhuWIcSyjO+GWorsAklMuKku2cjzvbsy/hw/ABlDimsT\nCZU4zkOZ6DB9UwS58Jp5U9IaLHAxL6JXtswG8ff5z+oePtHXXkyi07nblyR3\n9BkPy/MKaPFh5s4zEr7hsr8spYQH+oqH5oMWOCuU0bbFUygaCLZXKH8tqyW5\nWBvlYLogGRTnO9V4axp2qQCKHqmE5y2/Z4jAS1cM7dIx9RvEdFQR/uR4m3u7\n/VwiTDI0P00LVOPj1ILnA+S/mr69lO3DRfbzBGsgRh2xXjMg4PB4KelWlhik\n1iqR\r\n=bbub\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "ts-npm-types@microsoft.com",
+          "name": "types"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/semver_7.1.0_1580161299179_0.9525951140406503"
+      },
+      "_hasShrinkwrap": false
+    },
+    "6.2.1": {
+      "name": "@types/semver",
+      "version": "6.2.1",
+      "description": "TypeScript definitions for semver",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Bart van der Schoor",
+          "url": "https://github.com/Bartvds",
+          "githubUsername": "Bartvds"
+        },
+        {
+          "name": "BendingBender",
+          "url": "https://github.com/BendingBender",
+          "githubUsername": "BendingBender"
+        },
+        {
+          "name": "Lucian Buzzo",
+          "url": "https://github.com/LucianBuzzo",
+          "githubUsername": "LucianBuzzo"
+        },
+        {
+          "name": "Klaus Meinhardt",
+          "url": "https://github.com/ajafff",
+          "githubUsername": "ajafff"
+        },
+        {
+          "name": "ExE Boss",
+          "url": "https://github.com/ExE-Boss",
+          "githubUsername": "ExE-Boss"
+        }
+      ],
+      "main": "",
+      "types": "index.d.ts",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/semver"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "ad6b5359e4634c108de5d0c7cb11416c53f558680ef360d14dc2fafb5d794503",
+      "typeScriptVersion": "2.8",
+      "_id": "@types/semver@6.2.1",
+      "dist": {
+        "integrity": "sha512-+beqKQOh9PYxuHvijhVl+tIHvT6tuwOrE9m14zd+MT2A38KoKZhh7pYJ0SNleLtwDsiIxHDsIk9bv01oOxvSvA==",
+        "shasum": "a236185670a7860f1597cf73bea2e16d001461ba",
+        "tarball": "https://registry.npmjs.org/@types/semver/-/semver-6.2.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 13868,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeL1knCRA9TVsSAnZWagAAVwYP/RiM9T2iOS8vzSDVUJP8\nmf91ChoMR1iFzEmWQkOebKu/LNTiKOAK3KjP54dj1qbHKR0WPrkxAnWGB9vY\nZCUs//s/Vh1hiwvI8WuCZBCllEE3DjtFYM/wUZ9rL/QAsBl0zuXn17AaUsfi\nW9EGCepn4YSaRwj6xal3S5mvHGXV5qxwM6sTVnF15ZB41g+QA4aUeQQkjSzb\ni55UPeTFXoI59MaEAp4eUsuoUDU35iY36gm/4A+ovGeC3PhLDcs3IK/ct/Xl\nzOy6Yzv/Us0yGlL+GiGiQa1i/GHyxZOMcOWL+IsQ90tWpzw/UWXv2+Urb1by\n+crT9reEzZ0VTXXBohYKk+8RZqvQTZaSo/bURyR1NFBDNxPEZUWtdwUEIpRi\nV744S0BOTYXw8h3BbE8DFRMsu14alVbscunLLn+qi/IrEFk08SmD8FrMtt8P\nkQw9Z1V4but8NrPIRIIIWN5tBKsscZfYsH+GYEO7SrZfPMaVYce0YKu9qhvJ\n/qJSoomfIuSqU71SmWuRjRSq1e2BAS+Yvxd+o6mMMH45vZhDVCuFRFt3lYOB\nMjJ1Um0CDINspQqjk3p47gtwtm6ekUpbtWRIMnahRTR3tpoHtLej+EF5xf4F\n6IQ8MFh+1CTPbuOt682sjpzLwroLwIAdrNrrIoUDLSwf3V8kOdKznC2g0xCl\nJJiX\r\n=wbsN\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "ts-npm-types@microsoft.com",
+          "name": "types"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/semver_6.2.1_1580161319117_0.2719365142824184"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.2.0": {
+      "name": "@types/semver",
+      "version": "7.2.0",
+      "description": "TypeScript definitions for semver",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Bart van der Schoor",
+          "url": "https://github.com/Bartvds",
+          "githubUsername": "Bartvds"
+        },
+        {
+          "name": "BendingBender",
+          "url": "https://github.com/BendingBender",
+          "githubUsername": "BendingBender"
+        },
+        {
+          "name": "Lucian Buzzo",
+          "url": "https://github.com/LucianBuzzo",
+          "githubUsername": "LucianBuzzo"
+        },
+        {
+          "name": "Klaus Meinhardt",
+          "url": "https://github.com/ajafff",
+          "githubUsername": "ajafff"
+        },
+        {
+          "name": "ExE Boss",
+          "url": "https://github.com/ExE-Boss",
+          "githubUsername": "ExE-Boss"
+        },
+        {
+          "name": "Piotr Błażejewicz",
+          "url": "https://github.com/peterblazejewicz",
+          "githubUsername": "peterblazejewicz"
+        }
+      ],
+      "main": "",
+      "types": "index.d.ts",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/semver"
+      },
+      "scripts": {},
+      "dependencies": {
+        "@types/node": "*"
+      },
+      "typesPublisherContentHash": "a85c812786f6121af7012f9234a35445623e4933797ddf4b52584d65deaec9ef",
+      "typeScriptVersion": "2.9",
+      "_id": "@types/semver@7.2.0",
+      "dist": {
+        "integrity": "sha512-TbB0A8ACUWZt3Y6bQPstW9QNbhNeebdgLX4T/ZfkrswAfUzRiXrgd9seol+X379Wa589Pu4UEx9Uok0D4RjRCQ==",
+        "shasum": "0d72066965e910531e1db4621c15d0ca36b8d83b",
+        "tarball": "https://registry.npmjs.org/@types/semver/-/semver-7.2.0.tgz",
+        "fileCount": 47,
+        "unpackedSize": 22834,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJevB6MCRA9TVsSAnZWagAAmzMP/i2JAJnbM4vbvlj7mX+f\nL8SZBbYVbJJv1lSCa+GdDaZjmX8gl5IEnBbhKfkbDHk1zmkOuaLaiWDtn0ZD\nW0YrmbbQfohfriMVvm8lidK/glcXeacTWdCFNbuZxvXPyWo1bfB1R42fVukK\nvwSq/Fs7ckg2RqVRK1iL2pPKacEXhpg1e6ng7uw/TdQOOrf4oogyzSD6LJZA\naQGTcvWiF0yH4Qx4hUgk9xp90Lv1bUheM/xDcNTcnzoCKljE34jgLAcFI/Pv\n+0J5uvlte0uLx069itV8tieetE1O18REwW7TgHpyAxdhdbl5wy1vyl1cfdBQ\ntg3MXaULwpr89kPyybIa6SrwxNGcNwU7b2EQPXk0c+cfh7HJbbKqSYGWcOVQ\nExMaYpG7o8pVzBSnZQwkQrLhMxZQLMipUDIFGIOLZNRNnF8sj+nnP35nSgoa\nCC+jpv90ld6qcbh7kl3/PTP4XMGpvaSesH56jAuIpkugTut1G2JPMvveT8NF\nJfVustkjS4GIZrlkRV0AnmD29jhxWb2+7El6j+KLduLkToo00E2tPVsHyxSM\nEc6t4EOmc9p2NU8A0G/kQHKVEGMGXgRAVT3jLh5vmsXWcy4YB/SgLayPIA0g\nUnSfya+qnuY3oGbuaeMQ6ToNorv7/WA7Y0U0/2BDrgrivqtTIYqLe0+zqj2S\nFb3X\r\n=CP2t\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "ts-npm-types@microsoft.com",
+          "name": "types"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/semver_7.2.0_1589386891707_0.8364185183126656"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.3.0": {
+      "name": "@types/semver",
+      "version": "7.3.0",
+      "description": "TypeScript definitions for semver",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Bart van der Schoor",
+          "url": "https://github.com/Bartvds",
+          "githubUsername": "Bartvds"
+        },
+        {
+          "name": "BendingBender",
+          "url": "https://github.com/BendingBender",
+          "githubUsername": "BendingBender"
+        },
+        {
+          "name": "Lucian Buzzo",
+          "url": "https://github.com/LucianBuzzo",
+          "githubUsername": "LucianBuzzo"
+        },
+        {
+          "name": "Klaus Meinhardt",
+          "url": "https://github.com/ajafff",
+          "githubUsername": "ajafff"
+        },
+        {
+          "name": "ExE Boss",
+          "url": "https://github.com/ExE-Boss",
+          "githubUsername": "ExE-Boss"
+        },
+        {
+          "name": "Piotr Błażejewicz",
+          "url": "https://github.com/peterblazejewicz",
+          "githubUsername": "peterblazejewicz"
+        }
+      ],
+      "main": "",
+      "types": "index.d.ts",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/semver"
+      },
+      "scripts": {},
+      "dependencies": {
+        "@types/node": "*"
+      },
+      "typesPublisherContentHash": "015a641cc4d6c4c343c246e0f1fd17cf1aeee91285f23878ecf46521f86f1707",
+      "typeScriptVersion": "3.0",
+      "_id": "@types/semver@7.3.0",
+      "dist": {
+        "integrity": "sha512-tZXznf+e/B9vRK8NO5CRWhkQwi323mhMsMvIZDK+r1WpHPbK+BS7F8NYaUBv9kwTzmc0kZO7qI870It79VfS9A==",
+        "shasum": "87f2d6920729fd3e9c3f0911b39d305d0de3f873",
+        "tarball": "https://registry.npmjs.org/@types/semver/-/semver-7.3.0.tgz",
+        "fileCount": 48,
+        "unpackedSize": 23214,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJe86mlCRA9TVsSAnZWagAAb7QP/2L2z0zjtYTlQ6z/9yL8\nplj3pv4A2vVYZSfdfkkt8jl7fhAvUaac8W0d9vhBMJSOdezW+NJgsUeG5kwL\nEZahmOgBzgD+gEioUaK2szcns1rEQbCWtW+ZFOUHMKPiOMhHsKGrQjaBtnkU\nM6GzHWBaOUD/EW9l8jURMqPq0HXfo12sXzwoR3qEdPjeIntenNCSX9A6J6HC\n64LxGqXYTyIrm4hJ01d+5WHE1zF1eB1qyaEIp6zRlwlgoS9ipTZIf6ig7O4K\ns4aWuBG/h4CikCsi0Ag7T1/m944yfd2cWf+tcmX3aV/tsYbQhjWREi4rXCZU\nplr+zR9kswekqtxvuxSc/+Gk1AR4uuNwYiNSoo5rYPVv/5b5AKPxx6TKKG+0\n0lh+jTKWyNnhOoroHi393mK1voGCJEnypsohksJMuiy4soEgC8M3u5+casU6\nDr9ysEEeMwxLJbH/epP8injssoUq8AIr5WLdOtDh+NP1yjvwZqJWf3/8Gw+c\nezQEDBi5zsOilfdqpCQCByfH5dEJsKBtV5DQWNUSL/FQQ0ob0j7l//Kd4PcO\nu2Ez8ZVX9zOYHtSK9VmJO/T6aHRgiGIpZTrY2/6xgjXqS1hzIbwBrYGyX739\nuki/qyO0extVKkczZ4Twn/toillKbM2xHUqQ1n2KUajVkwRhHgnfk1pel+0K\n7hpi\r\n=T0HH\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "ts-npm-types@microsoft.com",
+          "name": "types"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/semver_7.3.0_1593026981094_0.44289352018177164"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.3.1": {
+      "name": "@types/semver",
+      "version": "7.3.1",
+      "description": "TypeScript definitions for semver",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Bart van der Schoor",
+          "url": "https://github.com/Bartvds",
+          "githubUsername": "Bartvds"
+        },
+        {
+          "name": "BendingBender",
+          "url": "https://github.com/BendingBender",
+          "githubUsername": "BendingBender"
+        },
+        {
+          "name": "Lucian Buzzo",
+          "url": "https://github.com/LucianBuzzo",
+          "githubUsername": "LucianBuzzo"
+        },
+        {
+          "name": "Klaus Meinhardt",
+          "url": "https://github.com/ajafff",
+          "githubUsername": "ajafff"
+        },
+        {
+          "name": "ExE Boss",
+          "url": "https://github.com/ExE-Boss",
+          "githubUsername": "ExE-Boss"
+        },
+        {
+          "name": "Piotr Błażejewicz",
+          "url": "https://github.com/peterblazejewicz",
+          "githubUsername": "peterblazejewicz"
+        }
+      ],
+      "main": "",
+      "types": "index.d.ts",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/semver"
+      },
+      "scripts": {},
+      "dependencies": {
+        "@types/node": "*"
+      },
+      "typesPublisherContentHash": "00034e3aac580da75765de1538695e3401ee9557bffcee8bf57edb3c3ab2c6b1",
+      "typeScriptVersion": "3.0",
+      "_id": "@types/semver@7.3.1",
+      "dist": {
+        "integrity": "sha512-ooD/FJ8EuwlDKOI6D9HWxgIgJjMg2cuziXm/42npDC8y4NjxplBUn9loewZiBNCt44450lHAU0OSb51/UqXeag==",
+        "shasum": "7a9a5d595b6d873f338c867dcef64df289468cfa",
+        "tarball": "https://registry.npmjs.org/@types/semver/-/semver-7.3.1.tgz",
+        "fileCount": 48,
+        "unpackedSize": 23209,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJe89CzCRA9TVsSAnZWagAAJVgQAIznsoSrgbgaZZeDKy1g\nCC5O9yReumy5N+j7TPqU71N7FrK7P5Vph1N/9A6RqbSp/B3xzOG22kOH6RwB\n96YygEpUFMctFU61Kdi2qqzNavQeM74ORnf6XUBtRXVUPevETlL4E2N0fYsM\nfXzwZ3MAZkRMmyq26U8MO7wEMISxAB6zr7IZxtpbj9yyElh1rsnzl8JOWe0H\nLhRa0cHGyb3eF6cMCs4KJlXtJZ9jYyTZrGfPgPk2UK7xMTkuS2w2k/wYP4dQ\ny+xaeOrOQwIkeKrbU9D2h+cCwwsEtVxinnZWsebwlzf025ObIvClXGVcAdBs\nVBgYMpmV124eMjFLD60UxFacVUowod6K00GJJNxtbJm3ucT1sL2AS/9dm/iz\nEJhWYedwvQzao/mpqXv1/TwPEhLePFYVm27FMIdaN+Z2EUj8TvM6JbRkDf9j\n3xq5eZvfx8SBBmtzKs2OmogGAK6BPzv4cZ7/k5HEEH8qDR1per/Jo/nQddHY\nMG2YVj+BirbAMCgLrmWaEISFkLptRYHvSs/ls8eOtmLriBBuAaitC0vrkOYB\neiA+a05QbCq3jiu2eV0Ed9VH7rbh+Maw6U7xg0kHJwsOrbc6tZixJ9SEsV1t\nlpBe/vtzNoz/hmdJ/0sbVj1INTPPz1aa29iQm4KIZGTG17EoiWOqUdWxkdLo\nda8Z\r\n=gTDQ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "ts-npm-types@microsoft.com",
+          "name": "types"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/semver_7.3.1_1593036978864_0.8461033037300929"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.3.2": {
+      "name": "@types/semver",
+      "version": "7.3.2",
+      "description": "TypeScript definitions for semver",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Bart van der Schoor",
+          "url": "https://github.com/Bartvds",
+          "githubUsername": "Bartvds"
+        },
+        {
+          "name": "BendingBender",
+          "url": "https://github.com/BendingBender",
+          "githubUsername": "BendingBender"
+        },
+        {
+          "name": "Lucian Buzzo",
+          "url": "https://github.com/LucianBuzzo",
+          "githubUsername": "LucianBuzzo"
+        },
+        {
+          "name": "Klaus Meinhardt",
+          "url": "https://github.com/ajafff",
+          "githubUsername": "ajafff"
+        },
+        {
+          "name": "ExE Boss",
+          "url": "https://github.com/ExE-Boss",
+          "githubUsername": "ExE-Boss"
+        },
+        {
+          "name": "Piotr Błażejewicz",
+          "url": "https://github.com/peterblazejewicz",
+          "githubUsername": "peterblazejewicz"
+        }
+      ],
+      "main": "",
+      "types": "index.d.ts",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/semver"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "42809997f6946bfa50d773c1567924510f04b9f724c316fed80cdc4b06769353",
+      "typeScriptVersion": "3.0",
+      "_id": "@types/semver@7.3.2",
+      "dist": {
+        "integrity": "sha512-WrIesso5O0K9S/T87Uct2AvmEFqul11PnprQ98BZEyWILz8QYJt6/tlmqSOVKLNUtAgYHU7D9WGsOFVDb35nPA==",
+        "shasum": "39a0ee84ac60d77ed994b82c0d43895cbdd0e584",
+        "tarball": "https://registry.npmjs.org/@types/semver/-/semver-7.3.2.tgz",
+        "fileCount": 48,
+        "unpackedSize": 23097,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfNbLVCRA9TVsSAnZWagAA24kP/joZzUNjYv3KeHE7c6Q/\n8oN73fxdSlE8R4L/n7RWjdmEVbf/6PNL5Wn0/QxaQM/CZDVezDbI+tb2ze65\nzZpaUwfRqJ/q9DvvteAFCd9Vsjf3c+1UUPMuk6A4G13m6Ce7osHv/toRPoDZ\ndw8VZo4NfF0H56INlfVgsOyB9t1G4GNaiOQJy76tOeOjYcPya/uiRZ9mL79U\n7oujuFH25wX/kg/wNgTrPAaWdkDumUYg7LV2N5/Mqfm2zLIiBnt2jTthT0ks\nJW1yDhHXUkPm0miTbXWw0TEJkth/659vB8ffipGLvRo32jw0Vt7gN9kvBNXB\nsrHrXDFlxe9f5xrjJMn7sdHdKy+1nIGY+Xl1cj20xmtOtm6ybtmaHpvxrvU3\nSYV4AuQe79NXuL8OcrtmwlV9vTU3VCZnQ7GBy4udEkNuNH4Gx3OIhIKfWJG0\nfMY1cOAZamo3XWzvkspHQwPsB4wjoyu+xUjE8Kbip3wgBLgfUBj7xpwutTq1\nsZstvhInl4Dgy1V7+8Lp/W5FCh9bsSDv1pXcxj3OqcxJQ/g0XSbFrSzS5V/r\nAEAgXpKIsfi+PobXNJr4EZEAYHYVbr+/SIdDu63NgjJARlBO51T17VLESNN6\nziblb3L2WAhj778evakt6RwXD48Q1iqW/yWcVOlig396+/dJGhdFtA88diHy\nCR+d\r\n=zSgq\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "ts-npm-types@microsoft.com",
+          "name": "types"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/semver_7.3.2_1597354709219_0.23252883232774035"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.3.3": {
+      "name": "@types/semver",
+      "version": "7.3.3",
+      "description": "TypeScript definitions for semver",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Bart van der Schoor",
+          "url": "https://github.com/Bartvds",
+          "githubUsername": "Bartvds"
+        },
+        {
+          "name": "BendingBender",
+          "url": "https://github.com/BendingBender",
+          "githubUsername": "BendingBender"
+        },
+        {
+          "name": "Lucian Buzzo",
+          "url": "https://github.com/LucianBuzzo",
+          "githubUsername": "LucianBuzzo"
+        },
+        {
+          "name": "Klaus Meinhardt",
+          "url": "https://github.com/ajafff",
+          "githubUsername": "ajafff"
+        },
+        {
+          "name": "ExE Boss",
+          "url": "https://github.com/ExE-Boss",
+          "githubUsername": "ExE-Boss"
+        },
+        {
+          "name": "Piotr Błażejewicz",
+          "url": "https://github.com/peterblazejewicz",
+          "githubUsername": "peterblazejewicz"
+        }
+      ],
+      "main": "",
+      "types": "index.d.ts",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/semver"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "41825fe59e3750aa2df819b7ac53c0b6b3b54957781b0da57a1b8339d5706da8",
+      "typeScriptVersion": "3.0",
+      "_id": "@types/semver@7.3.3",
+      "dist": {
+        "integrity": "sha512-jQxClWFzv9IXdLdhSaTf16XI3NYe6zrEbckSpb5xhKfPbWgIyAY0AFyWWWfaiDcBuj3UHmMkCIwSRqpKMTZL2Q==",
+        "shasum": "3ad6ed949e7487e7bda6f886b4a2434a2c3d7b1a",
+        "tarball": "https://registry.npmjs.org/@types/semver/-/semver-7.3.3.tgz",
+        "fileCount": 48,
+        "unpackedSize": 23277,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfOl7RCRA9TVsSAnZWagAA9hIP/1PYSDooG+3+MszfOKc9\n4DDA0V/2WYChAakeECADAbq48n34QoupBSbdDLWz0FexlDcGuH9JCvuE/E2F\nGQA44OohKtqH8eFrcrKW0PydzYFFf7m+Z4lohbZTuzjxe7VRBwZv3c3Gb6Fe\nkKkYJqLIScmbbi3jDvgHzWFz+KtS9mzxCEYfPFKM+yOJmcKFZVLMVULgs3I+\ncOr8011AppoM9oJxXw3JGEeH2y+Q8DGPUddwFA897vANI9VyP0Q3QGUojsTG\nGAJJuAcMGEPt1Do6lk6hrFwSKidhfLOImvHM+dVH4AQ+7mOmMfIehtviumWl\nDgjORrjf0hAIo0Q1UUHu9KvBcwuAsmpVSpUAjPxpthRBM9Hf3txjkNRmJw+l\n7U7jJzau63ZeZ+FL6fGT5ZkxNnBDKgWLeExduoNT+wncUnlVHu7qdmbFTQDe\nyC9H3QDNmSX7O+L/wKNxBr2WE+Rd5zsK0ZBe463vVmjsBoKRu4lcyQ6CI2ZU\n1nfPEOsjfIVrSNeuo6M6f42tLMwygfhhQDLM/VbvzhPHxDfufUyaDAxbsLLN\nroqgmPF7rl/G5v10XVAmNcDxQeksxM4Zq2a2vKLhBBRAAECnqHr3o5P3fDgW\nmLBSinFwQtNCe+GvluiqXbMp6lZX3Njm2QxxljtVFiWp/ZMxC9ybzgVLse+2\nf7NT\r\n=VGIj\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "ts-npm-types@microsoft.com",
+          "name": "types"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/semver_7.3.3_1597660881198_0.8936009858889538"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.3.4": {
+      "name": "@types/semver",
+      "version": "7.3.4",
+      "description": "TypeScript definitions for semver",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Bart van der Schoor",
+          "url": "https://github.com/Bartvds",
+          "githubUsername": "Bartvds"
+        },
+        {
+          "name": "BendingBender",
+          "url": "https://github.com/BendingBender",
+          "githubUsername": "BendingBender"
+        },
+        {
+          "name": "Lucian Buzzo",
+          "url": "https://github.com/LucianBuzzo",
+          "githubUsername": "LucianBuzzo"
+        },
+        {
+          "name": "Klaus Meinhardt",
+          "url": "https://github.com/ajafff",
+          "githubUsername": "ajafff"
+        },
+        {
+          "name": "ExE Boss",
+          "url": "https://github.com/ExE-Boss",
+          "githubUsername": "ExE-Boss"
+        },
+        {
+          "name": "Piotr Błażejewicz",
+          "url": "https://github.com/peterblazejewicz",
+          "githubUsername": "peterblazejewicz"
+        }
+      ],
+      "main": "",
+      "types": "index.d.ts",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/semver"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "a1c2692f5183ed55b16d7ffb43be1851eae8ad440f4450f11296ed5a83f5c3df",
+      "typeScriptVersion": "3.1",
+      "_id": "@types/semver@7.3.4",
+      "dist": {
+        "integrity": "sha512-+nVsLKlcUCeMzD2ufHEYuJ9a2ovstb6Dp52A5VsoKxDXgvE051XgHI/33I1EymwkRGQkwnA0LkhnUzituGs4EQ==",
+        "shasum": "43d7168fec6fa0988bb1a513a697b29296721afb",
+        "tarball": "https://registry.npmjs.org/@types/semver/-/semver-7.3.4.tgz",
+        "fileCount": 48,
+        "unpackedSize": 23258,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfX9kBCRA9TVsSAnZWagAA9MQP/iRPOmAD+83754eyceGb\n/M3gVdH9r3jd5tcPSKgwL8qvChmUKbijJIvu+zIvwD+nzqyq8Kzgnys4Sgfj\n6UUILFadDt4Uk2aAQQn3FW7a4+CyIO7SCYdHoUwp1EPI1lj503KhOUMUaRXu\nzF7YEul4cBA51XjD70vJzK4ff85YDF9e7EiKeSQAilNSH7GzfCjA2rY/dTh+\n2eeKyInI8TSH3rG7zVBTm4k6UDLPUY3btrrfklbe1s9m4E2l7nPGdlgR7hnz\nHRrdhue+aqtUPccMmAc8S58t9OK2CeSdr2skEl8BtI/HG9eiv7nRPwwKUsDn\nt3+BYQcMrtVvbM4wWk4B1yq34sI2C6rtZHDegBhCH0VF19Hp3llmLJ1Ol0Am\nlVsx3gLur30vXPxB3uIR77kBDOiCykkgfmZwA0Hfosqy3hDYJhyriSKXi8CO\nrWrN1ELpIL42aECpKspfj/70+78VjGdRGXc6fsB7SipoQ1hX0rKM62PVEn3I\ny7yPJjrHtqjug7Odt2BSVMb5N3Jajf0mhdFShwIXeGCmVfFIiOsVa1ww7jfD\nPiN+x9ytQf0HPLlcF6tD1IENVK/ViKjbxUjBm1qpxgprNLsXVZs5RK/0zceX\nOmwIHAePoRilLOiIeHGjapuzsAUp7siq1csWQozVardJMS3XHVpJnUBURKMI\nGBzD\r\n=mQve\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/semver_7.3.4_1600116992915_0.20247930588982044"
+      },
+      "_hasShrinkwrap": false
+    },
+    "6.2.2": {
+      "name": "@types/semver",
+      "version": "6.2.2",
+      "description": "TypeScript definitions for semver",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Bart van der Schoor",
+          "url": "https://github.com/Bartvds",
+          "githubUsername": "Bartvds"
+        },
+        {
+          "name": "BendingBender",
+          "url": "https://github.com/BendingBender",
+          "githubUsername": "BendingBender"
+        },
+        {
+          "name": "Lucian Buzzo",
+          "url": "https://github.com/LucianBuzzo",
+          "githubUsername": "LucianBuzzo"
+        },
+        {
+          "name": "Klaus Meinhardt",
+          "url": "https://github.com/ajafff",
+          "githubUsername": "ajafff"
+        },
+        {
+          "name": "ExE Boss",
+          "url": "https://github.com/ExE-Boss",
+          "githubUsername": "ExE-Boss"
+        }
+      ],
+      "main": "",
+      "types": "index.d.ts",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/semver"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "3f9cf25e0dc1a0a31613bc7909258c653935f944037b0e371410c54afd86dbe7",
+      "typeScriptVersion": "3.1",
+      "_id": "@types/semver@6.2.2",
+      "dist": {
+        "integrity": "sha512-RxAwYt4rGwK5GyoRwuP0jT6ZHAVTdz2EqgsHmX0PYNjGsko+OeT4WFXXTs/lM3teJUJodM+SNtAL5/pXIJ61IQ==",
+        "shasum": "5c27df09ca39e3c9beb4fae6b95f4d71426df0a9",
+        "tarball": "https://registry.npmjs.org/@types/semver/-/semver-6.2.2.tgz",
+        "fileCount": 4,
+        "unpackedSize": 13812,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfX9kWCRA9TVsSAnZWagAAsVQP/jfGNswWxFYtSPsDUCSX\nsLcAj1EFT/PgLziN1MYmqNldpA619XvAA7RrpOcfRWpgb7WhMsYSVc9qaHmT\nDYwL2qYgarMAUH+GQniQTK1HUZRBxIlgxC5K+QWx2+JkDyB/6FDVbEPWfnnN\nps4wrJKclCrU3nrtFryxWrFFsTqQh6qVSKX0JH5TvtNQT/OdtesT19Tb59P5\nLsMts6ZveTTRw4gvkXqgaMmZn6PxBtJbHditiWv8Yu9Plm89u+co3KsQaWiG\nWQ1AEeJqPKwp3pDSonOP7o3CdizbKq2Qx+YtGvPLoOuhjoLD+CjfIr3lwqv2\nZE11jz3eZwDgo+zP4azD2+Oqtx9xwvZdXfTTDiOhISHVYMxkAbLUdXPpW+Xn\n83QHcJ9s/xgpssSXXF2p9flXT1VaFKxoASuHA6FpvsrjqKEKinHpJPuSSIcW\nrCc8Z/zQyqeWoeUGsFzt28F82KpZEhmSuLmqcrHSkta35WXncpMaLvEPaxxc\nbGuB88zo8H9XgexW4IzihwNSAIHYLXvWnXJC1Kw8IdyWh4rnPQSceBHGI1De\nPshFZiGqz1yaf3jAy+YMWuc5MWRYlPlSZb8uRaILEBkAy2QIW14NGAmj8uNR\n75tvyZQo9I7hb5i0Ee8W8OZJzXYtMgCQJ8H/KVAyNHh23bbRLkNoFuLsOTFS\nDcOE\r\n=mosV\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/semver_6.2.2_1600117014130_0.10990569938136452"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# Installation\r\n> `npm install --save @types/semver`\r\n\r\n# Summary\r\nThis package contains type definitions for semver (https://github.com/npm/node-semver).\r\n\r\n# Details\r\nFiles were exported from https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/semver/v6.\r\n\r\n### Additional Details\r\n * Last updated: Mon, 14 Sep 2020 20:52:58 GMT\r\n * Dependencies: none\r\n * Global values: none\r\n\r\n# Credits\r\nThese definitions were written by [Bart van der Schoor](https://github.com/Bartvds), [BendingBender](https://github.com/BendingBender), [Lucian Buzzo](https://github.com/LucianBuzzo), [Klaus Meinhardt](https://github.com/ajafff), and [ExE Boss](https://github.com/ExE-Boss).\r\n",
+  "maintainers": [
+    {
+      "name": "types",
+      "email": "ts-npm-types@microsoft.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-09-14T20:56:57.174Z",
+    "created": "2016-05-17T18:54:10.714Z",
+    "4.3.13-alpha": "2016-05-17T18:54:10.714Z",
+    "4.3.14-alpha": "2016-05-19T22:21:07.622Z",
+    "4.3.19-alpha": "2016-05-20T20:39:27.702Z",
+    "4.3.20-alpha": "2016-05-25T05:55:08.202Z",
+    "4.3.21-alpha": "2016-07-01T20:37:23.130Z",
+    "4.3.22-alpha": "2016-07-01T23:59:12.746Z",
+    "4.3.23-alpha": "2016-07-02T03:26:07.184Z",
+    "4.3.24-alpha": "2016-07-04T01:15:09.871Z",
+    "4.3.25-alpha": "2016-07-08T21:22:24.392Z",
+    "4.3.26": "2016-07-14T16:01:08.843Z",
+    "4.3.27": "2016-08-02T16:10:23.356Z",
+    "5.3.28": "2016-08-08T20:38:11.900Z",
+    "5.3.29": "2016-08-25T18:59:09.421Z",
+    "5.3.30": "2016-09-19T18:11:07.223Z",
+    "5.3.31": "2017-03-13T17:09:58.231Z",
+    "5.3.32": "2017-06-27T13:56:26.381Z",
+    "5.3.33": "2017-07-28T19:49:30.463Z",
+    "5.3.34": "2017-08-17T18:11:08.257Z",
+    "5.4.0": "2017-08-22T15:54:31.131Z",
+    "5.5.0": "2018-01-29T21:20:45.247Z",
+    "6.0.0": "2019-04-01T20:51:37.171Z",
+    "6.0.1": "2019-06-21T00:43:05.506Z",
+    "6.0.2": "2019-09-05T18:12:33.238Z",
+    "6.2.0": "2019-10-25T20:12:58.152Z",
+    "7.1.0": "2020-01-27T21:41:39.350Z",
+    "6.2.1": "2020-01-27T21:41:59.219Z",
+    "7.2.0": "2020-05-13T16:21:31.881Z",
+    "7.3.0": "2020-06-24T19:29:41.355Z",
+    "7.3.1": "2020-06-24T22:16:19.072Z",
+    "7.3.2": "2020-08-13T21:38:29.373Z",
+    "7.3.3": "2020-08-17T10:41:21.315Z",
+    "7.3.4": "2020-09-14T20:56:33.015Z",
+    "6.2.2": "2020-09-14T20:56:54.359Z"
+  },
+  "license": "MIT",
+  "readmeFilename": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+    "directory": "types/semver"
+  },
+  "contributors": [
+    {
+      "name": "Bart van der Schoor",
+      "url": "https://github.com/Bartvds",
+      "githubUsername": "Bartvds"
+    },
+    {
+      "name": "BendingBender",
+      "url": "https://github.com/BendingBender",
+      "githubUsername": "BendingBender"
+    },
+    {
+      "name": "Lucian Buzzo",
+      "url": "https://github.com/LucianBuzzo",
+      "githubUsername": "LucianBuzzo"
+    },
+    {
+      "name": "Klaus Meinhardt",
+      "url": "https://github.com/ajafff",
+      "githubUsername": "ajafff"
+    },
+    {
+      "name": "ExE Boss",
+      "url": "https://github.com/ExE-Boss",
+      "githubUsername": "ExE-Boss"
+    }
+  ]
+}

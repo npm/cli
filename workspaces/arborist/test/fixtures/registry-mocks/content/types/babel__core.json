@@ -1,0 +1,1237 @@
+{
+  "_id": "@types/babel__core",
+  "_rev": "325-ac26aa41e92b55f85be865a5136dd569",
+  "name": "@types/babel__core",
+  "dist-tags": {
+    "latest": "7.1.10",
+    "ts2.8": "7.0.1",
+    "ts2.9": "7.1.4",
+    "ts3.0": "7.1.4",
+    "ts3.1": "7.1.4",
+    "ts3.2": "7.1.4",
+    "ts3.3": "7.1.4",
+    "ts3.4": "7.1.10",
+    "ts3.5": "7.1.10",
+    "ts3.6": "7.1.10",
+    "ts3.7": "7.1.10",
+    "ts3.8": "7.1.10",
+    "ts3.9": "7.1.10",
+    "ts4.0": "7.1.10",
+    "ts4.1": "7.1.10"
+  },
+  "versions": {
+    "7.0.0": {
+      "name": "@types/babel__core",
+      "version": "7.0.0",
+      "description": "TypeScript definitions for @babel/core",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Troy Gerwien",
+          "url": "https://github.com/yortus",
+          "githubUsername": "yortus"
+        },
+        {
+          "name": "Marvin Hagemeister",
+          "url": "https://github.com/marvinhagemeister",
+          "githubUsername": "marvinhagemeister"
+        },
+        {
+          "name": "Melvin Groenhoff",
+          "url": "https://github.com/mgroenhoff",
+          "githubUsername": "mgroenhoff"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {
+        "@babel/types": "^7.0.0-beta.54",
+        "@types/babylon": "*"
+      },
+      "typesPublisherContentHash": "a434b31778749e74283557b4c940d00d452f0464c57f949f8bfcb7fbd2c7aad8",
+      "typeScriptVersion": "2.8",
+      "_id": "@types/babel__core@7.0.0",
+      "dist": {
+        "integrity": "sha512-UcWHm8tL1/vUFDgjhmb5I/vihNNt5HqB+O+s9lMc4p6TpMtahic7uyjSPEzz3bULpL+DnGf/vagcl1KxnCVTDQ==",
+        "shasum": "d5a2efb36b07a29d457492938ab8c4570d359ea0",
+        "tarball": "https://registry.npmjs.org/@types/babel__core/-/babel__core-7.0.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 20675,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbWPnrCRA9TVsSAnZWagAAcdEP/3mlx7YjnSg1TWpgTMfD\nQG9cPAJMqi6AxbAqqOs8S3kv+tbxMOZloRwv/RHFFkaLHU9OZaFiRoTs7IeZ\nyHVTNdQL+4dlFW+eJyjX15xxGytCvCaqtGXAkJL7krOOzolsb3I6rZeLfSVK\ne6LFbD6zGucTQ2Qm1NkYXNr+skNzVN3gVcTYVQ944nRDMzqz6Oau9Sw+7OWu\nivogT6qscBwPmjpt2EQxIp+C3WnooDg1HNHCeCjVc+QiP6YKcX7FkLh3XAch\n5TWAVaVOOeos918rjOR/QpeZcUkaSM95R/LcVLtggPXU3lTZxgPEMP29PvJc\n5//9fmYD71bxi165peacRDcpcoKNDoZHCvXkrDjvGHoKch6mr4dNXaUH1N5V\nIfOadhD68rMSJ8U9QxTVKcTFzWR/6CgOPbrw5QiGl/V+yO/MUo01fCkYsh5q\n9U87zhGnQpS1WWOZpssVoc66Eyv9sg8TKSdWCzuRb2La1Tydex09q6gsbUQx\nMMNHlmsZtM0SFppw8xDEma1qxSIybTe3hPaMBfK7Y1FWGvh3UT8OLQwMkwdo\nlEEC0NzhjRW49n+b+62qMbk+Ef/PtgVzt85MDqbsVtt8WSJGO2R5ojFKXBUF\nOBIfa8xLAiN+1ebuwXcqgWbUamEF8ks4Tbp9LajEKpXoXSkPEbkdIEw01JtL\nqaoA\r\n=vp3s\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/babel__core_7.0.0_1532557803654_0.7001159003596242"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.1": {
+      "name": "@types/babel__core",
+      "version": "7.0.1",
+      "description": "TypeScript definitions for @babel/core",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Troy Gerwien",
+          "url": "https://github.com/yortus",
+          "githubUsername": "yortus"
+        },
+        {
+          "name": "Marvin Hagemeister",
+          "url": "https://github.com/marvinhagemeister",
+          "githubUsername": "marvinhagemeister"
+        },
+        {
+          "name": "Melvin Groenhoff",
+          "url": "https://github.com/mgroenhoff",
+          "githubUsername": "mgroenhoff"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {
+        "@babel/types": "^7.0.0-beta.54"
+      },
+      "typesPublisherContentHash": "886e1ff3cac391b07be98c6efd4416e7400264339b5ff0b217fb59ff14a2facb",
+      "typeScriptVersion": "2.8",
+      "_id": "@types/babel__core@7.0.1",
+      "dist": {
+        "integrity": "sha512-98MQqzXIqRCg/RHd6WHE4iURltTjEwa7b6f+IhI5Gwd9b9QIojTugvXYw9piZgmhi08zHAWwu8BAXO0E5omElg==",
+        "shasum": "8b608a1c55cb4c752352cc6c78f7beb61a3fd51f",
+        "tarball": "https://registry.npmjs.org/@types/babel__core/-/babel__core-7.0.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 20650,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbX5x2CRA9TVsSAnZWagAAXZkP/19rUwMw78w8dgoAvBic\nrFWWk1JpTARnMbGRQjS07xpxg2lL+KFMr+MpG2tH2C55DTN6Xsay9fOk3oWz\niYTBb5QjZUzWlXR3Bcvb7XeW4aZEOD2T1l3mILWxrMpKIByC3U1gGPekOX9m\nPyCWyXeQsH7a0EABvXBaYPzseYvjDQiukgGXMJhhPlPv42UfehFfEJA1l+1v\nguADT59PvW4Ew8qaSQa84vKvpvaARB78u8JVgayml4HkTraucFJhxUg3IC2K\nlNzFWDlNGqgYulQMA2Ek3y7yVIEzYzL38a3ULplKulnWjNT3I4q2TDenRoGR\nWuLQiawejCdhYKZ5RJ/2QMHwvLZ6Id7fEniMg/3q14Qx/3akeL+ej7xCawdI\n4InpACvAepsjlbbQ5L6mbhg6Qabz0gQN8E59n99ipo6G4rFWkm8FXRyyjZts\nquOqy1RFd/C06bTYC8kHky8knsvJ52M6hoGM7hoTBMZPVO2DZj6TpiuwLr/l\npOylcU97PgORwXSXgtASa3PvKE21u1O0quT1Piww5MHvocZQgDEweOOtv83S\n13zetG7iLOCqeqTrinkImEFWGvsmrSh8AmFelojnCnE3t2ZG/qiM8R6frgnb\nsrcoVKqi7eKNMrraQo1JpqPJ/3O+UX6Tome2P3jQAN5Wbtw696p0f9X19RzB\nvasU\r\n=Xk2x\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/babel__core_7.0.1_1532992630115_0.25213917440343425"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.2": {
+      "name": "@types/babel__core",
+      "version": "7.0.2",
+      "description": "TypeScript definitions for @babel/core",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Troy Gerwien",
+          "url": "https://github.com/yortus",
+          "githubUsername": "yortus"
+        },
+        {
+          "name": "Marvin Hagemeister",
+          "url": "https://github.com/marvinhagemeister",
+          "githubUsername": "marvinhagemeister"
+        },
+        {
+          "name": "Melvin Groenhoff",
+          "url": "https://github.com/mgroenhoff",
+          "githubUsername": "mgroenhoff"
+        }
+      ],
+      "main": "",
+      "types": "index",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {
+        "@babel/parser": "^7.1.0",
+        "@babel/types": "^7.0.0"
+      },
+      "typesPublisherContentHash": "7637d5e1d474b6b0fb1d3d24984841a3375c06cd75d0a9faaca8c75f3f2f5c16",
+      "typeScriptVersion": "2.9",
+      "_id": "@types/babel__core@7.0.2",
+      "dist": {
+        "integrity": "sha512-+m30DjG2n2c1+B9UV0MkaGWZcChiGEtVa42+7B6Pv0oXmgneQwu6IVRbltxF6B2xuh7xg9l1aqT07l9CnLlPhA==",
+        "shasum": "393c8853ce3c8445ae8d9536964177b4b1a115bf",
+        "tarball": "https://registry.npmjs.org/@types/babel__core/-/babel__core-7.0.2.tgz",
+        "fileCount": 4,
+        "unpackedSize": 20723,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJb7fouCRA9TVsSAnZWagAAbu0P/R7YYBtir9TyjV0m1pw9\naiyTAVOebb6tCnTBxnrsibjqzXPlQfhK1dQgP1K0KNJBStP5d3rSj03s5pmp\n7DrRw4W2Dc5cGcdyXinWXGUk21AmOpaJrV6/Afe52acaltvSHUvnxctwe02A\nXtsmKH98EMGCn63p1t+7fLa6xjFQOPZjiYF0Ue1PqlbImf1wffyR4BnTKEHS\ngRflDERV1c9tzhcwTWb4Zy9pZ+UubGsK9DD1gTgAkMpODhnW3KpKUdsobVbd\nc6nibnKQG4ChyVU140zKZ0fXUPUj3GcI+Q96u0sQJ9N6uiLadddbieTUmxMm\nWpkdylRSol5fE5sCxLxXxQyeqYa8DBMc7yKdRqOyWaVDjLw/Dzc8iSoIEtdR\nQGuDbowzCEk1yc6OPOBamlPle910KIblCq/a4jbG4QttkqkUhFDX257fSvE+\neYqLXLH6V+w2FLJd0sGzRgvf+YoD95mPFTHxHsSSJI0hxj8K+RuXYFlcqkkQ\nptvx9DNOTpQIvXmAHxHA+DVIvM9p85mhl5cC55+YVCUNN28QxQrsJxNErB1i\nDFqo+PJxLnItUfQdGbL+GNoD1bHjh9vYXWHM1ik5VOEv5rPc8wf5P+tMqrj6\nHeXp4QExTIvv/Yqi+9USrIHojPI9PYXklF9HQXCVypGxGmht8ag7lhwJUavl\nWMub\r\n=VnbL\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/babel__core_7.0.2_1542322733230_0.7259505779186723"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.3": {
+      "name": "@types/babel__core",
+      "version": "7.0.3",
+      "description": "TypeScript definitions for @babel/core",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Troy Gerwien",
+          "url": "https://github.com/yortus",
+          "githubUsername": "yortus"
+        },
+        {
+          "name": "Marvin Hagemeister",
+          "url": "https://github.com/marvinhagemeister",
+          "githubUsername": "marvinhagemeister"
+        },
+        {
+          "name": "Melvin Groenhoff",
+          "url": "https://github.com/mgroenhoff",
+          "githubUsername": "mgroenhoff"
+        }
+      ],
+      "main": "",
+      "types": "index",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {
+        "@babel/parser": "^7.1.0",
+        "@babel/types": "^7.0.0"
+      },
+      "typesPublisherContentHash": "74a85e84fbe8695cb9dc53d87ed2919b17cacce76023f0f9e66d21836f4d1507",
+      "typeScriptVersion": "2.9",
+      "_id": "@types/babel__core@7.0.3",
+      "dist": {
+        "integrity": "sha512-F8E0lUeQ1uaprb5dEHLdOMElH5z+hk+L/DlQykXYOvhUyPQuH+Sj4Tm0sV3W0Za2sx1YkpdNyug7P2TNetWxKQ==",
+        "shasum": "4c8fb2afd4dbea9b0aab56f828a8adce592ef567",
+        "tarball": "https://registry.npmjs.org/@types/babel__core/-/babel__core-7.0.3.tgz",
+        "fileCount": 4,
+        "unpackedSize": 20724,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJb/rpiCRA9TVsSAnZWagAA5uAP/RSOqnd1kwkZjwF8Wbj/\nc2n5tHDucrMesPP0+uPjv/+pLy71ktizvmqj89kAbIoF/74NHPBVtRQwSfCk\nWeWQAo13mjqlV/kXxEZce4J5MAZd8YUEbkx09QHeRogfbOmCuf3+0b7fQobw\ndaz3828Aa7QQKdv42q5OKLNG1VhdQ1jWcrdP0M+ZfYZ/kGOyeRf12aBIaJRL\ng8IfHDhW5DIIQBMGF9hWLMTwokc0of0ysgkLcNamuOLT0s/g+DkV3kk0Umo3\n3OSFjqEK2LVKTI8/Bartont8MmkrT8nzmeugflPbNIibSCB9bkDj0FcOdlnT\nOv4uSII+8KAaDFNeE0OdEBrvPa7VyaYynQh66F14Uf8oNh8yVqgwBvdl2yu4\nFojMvB482y3E2fa3jIpw5xoiI8W39A8uzPmpkt332dHRWQSkRghtDr2CzIbj\njxZpo8tHFSdstsOyo3CwVZtJTPWjQ7o1wg44m5iyzBpI8rtKUtyzpIgtRd2T\nymu8yQ3fjWiQNYutDi769s0MtbPMA34SbUh+keHy35iE5O2OoWdXkpbPAvVz\n2rHGjrXFfpWr/ONsXU/Wn+Tenhj2FUJkXihc0kMKPbl/8sspn8RvvY+WBWP4\noFEsgfLp8fGjfW1VZfsg5+MmUI8LxqjYpNUALmL2Z79ynT6fd4i0bisuY1TK\njuR6\r\n=w0Fj\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/babel__core_7.0.3_1543420513678_0.7620786493835316"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.4": {
+      "name": "@types/babel__core",
+      "version": "7.0.4",
+      "description": "TypeScript definitions for @babel/core",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Troy Gerwien",
+          "url": "https://github.com/yortus",
+          "githubUsername": "yortus"
+        },
+        {
+          "name": "Marvin Hagemeister",
+          "url": "https://github.com/marvinhagemeister",
+          "githubUsername": "marvinhagemeister"
+        },
+        {
+          "name": "Melvin Groenhoff",
+          "url": "https://github.com/mgroenhoff",
+          "githubUsername": "mgroenhoff"
+        }
+      ],
+      "main": "",
+      "types": "index",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {
+        "@babel/parser": "^7.1.0",
+        "@babel/types": "^7.0.0"
+      },
+      "typesPublisherContentHash": "47925a590ec85d8565d63c4f56ca6bf88bc5bf99c698763c2d60a13467e68cb1",
+      "typeScriptVersion": "2.9",
+      "_id": "@types/babel__core@7.0.4",
+      "dist": {
+        "integrity": "sha512-2Y2RK1BN5BRFfhneGfQA8mmFmTANbzGgS5uQPluoRqGNWb6uAcefqxzNbqgxPpmPkLqKapQfmYcyyl5iAQV+fA==",
+        "shasum": "14b30c11113bad353cabfaea73e327b48edb0f0e",
+        "tarball": "https://registry.npmjs.org/@types/babel__core/-/babel__core-7.0.4.tgz",
+        "fileCount": 4,
+        "unpackedSize": 20726,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcACWmCRA9TVsSAnZWagAAja4QAJCMmyYeJ0rpM/eEo1s7\nWHxFEHOdK3cfrxvob2nbcr0zS0rVdxNegy/GjAdTQQlkRmrM/g+ez65g5I4E\nknOs7JQl+pOzEDHsyLYXTtVqMjypCdtwO6hLFlv1plzpBuXbId4B3giye6JH\nX84SkfYR/P8gSdlpQPFzRkjsuD4l74/92q/fyUdR5Zu0Poy5jYcbKeMi6zWD\ncBxZSRNSxP5JHUqg7koIKCklda1xPbavJoWJlwvZAe3mC0R0ChB8VKaFTpEH\nwHxRdGQXfpIH8FrGBxBjRACFOBbei2lSUNEq6PvbRbU7rkjhoipRwcES1pfr\ns3LgDntycpyB07i47i7k/QmGXRvGMq2DzIbrPLMWu6ebiXEACIireutywpHY\n4fPCiaBznYU7nc85iQmyplWvclKjvTI+lhQ6/2phUyNwBiJ/EeIkKgHevrLb\nYZqf0I+9Bam+aGeVmR2ubq2To1gT+LyhpP8n5VWuOxJbFlXTjZbPvc2Msv+H\njJ9ZC6CaslzebCTIpoIhMeEHcGhXOe7yDjkQJMw3UauZT0D34KM4CjmTTnXg\nIvXny4hZZcOi3ivCBVYR9J+nSZK53Cbu4CQth5pMBLZgQnvefyG+ocDTcN9/\nLc77m4GQxRYJH5Ya8x0CjJb/buoX2GdS32CrsY+q2THlpbi6hjXfBbw25c+l\nsP7b\r\n=Wv1K\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/babel__core_7.0.4_1543513509443_0.8603616725716869"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.5": {
+      "name": "@types/babel__core",
+      "version": "7.0.5",
+      "description": "TypeScript definitions for @babel/core",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Troy Gerwien",
+          "url": "https://github.com/yortus",
+          "githubUsername": "yortus"
+        },
+        {
+          "name": "Marvin Hagemeister",
+          "url": "https://github.com/marvinhagemeister",
+          "githubUsername": "marvinhagemeister"
+        },
+        {
+          "name": "Melvin Groenhoff",
+          "url": "https://github.com/mgroenhoff",
+          "githubUsername": "mgroenhoff"
+        }
+      ],
+      "main": "",
+      "types": "index",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {
+        "@babel/parser": "^7.1.0",
+        "@babel/types": "^7.0.0",
+        "@types/babel__generator": "*",
+        "@types/babel__template": "*",
+        "@types/babel__traverse": "*"
+      },
+      "typesPublisherContentHash": "62f7226ef5b3ac4aba8734701c164b8426a65bb05e13568942e121345aba096d",
+      "typeScriptVersion": "2.9",
+      "_id": "@types/babel__core@7.0.5",
+      "dist": {
+        "integrity": "sha512-VWQHIzaKiXtZGFkoIWBZBb2vW4tv0opWfPDM+DiNmHx0APxMlSVGy9W4DGTvASZ87KmiyLkNs7eE+0eOt/aEjQ==",
+        "shasum": "34c55fecf643727b85024fb86c056356815040dd",
+        "tarball": "https://registry.npmjs.org/@types/babel__core/-/babel__core-7.0.5.tgz",
+        "fileCount": 4,
+        "unpackedSize": 20901,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcZIcpCRA9TVsSAnZWagAAk0IP/RKStUQN+vwoifk6F2eb\nI4CRc4j7G0ndPq07XsYjCv8jMvUxi8nMBnUDtlOIvet0zuoaYWoaP6zfiGwN\nMCz3SmIBZLnQVEGmYQGVVKLu68dNJX00XtWMY62d9qbFakyN4ZkaaFOv2gZo\nJ76fAT+p+6uptLhNYBZ3cvk15C6i80XmO3N0IT0t23e6D21/2UGujBRE/6Gg\nRmhu3UQXwcQSnZB0I4lEv638ALYOgbHxrJ9ExYEqNZ7hq4wXidUk4X/pQgD7\nM58PkMRL8Vkwrw1MKqJm8dPJpzcJCKhTIOzrAawiaknSjtWO+56v81rJvV9e\n3n8woGziKRvAbf657g7j4stnB+/ii0Uqt6QrBOVSuEnKMKd/BuksJMcwJwda\nzqrTEk76RXs+nUKuHqEsYDJfxVgwOVZ+0OjL8+B7zkaOq0IbQ03SxqQh0RWQ\nj4ToK0uhA/tK7GIOC7EmX5Cg7GNcb8eoUtovuk6q/sYe/+f+bgLbP/aAFFZh\nHVKxD4AhXci0lEDFO56n0rsCTYNF32rXFo/VqG8L1PHqGIOMvcTkFXi5lla2\nR5oBIx2/MOc9Q+b0NLmMSEm7oi2o5rEFIdNRmhBCqEdXvSc2pHxvGq4hSeTC\nGAy7I7qD3Hxe7JT/616i4v45be4AxflC3LDr6YnJbCqQM/wL1TbYtDhJzi4j\nsHG7\r\n=/4iH\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/babel__core_7.0.5_1550092072847_0.977217451870195"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.1.0": {
+      "name": "@types/babel__core",
+      "version": "7.1.0",
+      "description": "TypeScript definitions for @babel/core",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Troy Gerwien",
+          "url": "https://github.com/yortus",
+          "githubUsername": "yortus"
+        },
+        {
+          "name": "Marvin Hagemeister",
+          "url": "https://github.com/marvinhagemeister",
+          "githubUsername": "marvinhagemeister"
+        },
+        {
+          "name": "Melvin Groenhoff",
+          "url": "https://github.com/mgroenhoff",
+          "githubUsername": "mgroenhoff"
+        },
+        {
+          "name": "Jessica Franco",
+          "url": "https://github.com/Jessidhia",
+          "githubUsername": "Jessidhia"
+        }
+      ],
+      "main": "",
+      "types": "index",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {
+        "@babel/parser": "^7.1.0",
+        "@babel/types": "^7.0.0",
+        "@types/babel__generator": "*",
+        "@types/babel__template": "*",
+        "@types/babel__traverse": "*"
+      },
+      "typesPublisherContentHash": "8efd0310b6950b7d4c77bc5a14bcaafc734c3f77b4d5aea0bd99435aee21c08c",
+      "typeScriptVersion": "2.9",
+      "_id": "@types/babel__core@7.1.0",
+      "dist": {
+        "integrity": "sha512-wJTeJRt7BToFx3USrCDs2BhEi4ijBInTQjOIukj6a/5tEkwpFMVZ+1ppgmE+Q/FQyc5P/VWUbx7I9NELrKruHA==",
+        "shasum": "710f2487dda4dcfd010ca6abb2b4dc7394365c51",
+        "tarball": "https://registry.npmjs.org/@types/babel__core/-/babel__core-7.1.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 27214,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcbuHSCRA9TVsSAnZWagAA0ggP/AkJBd58Jp8Vlutp2+u3\nSFg6u1clrFIUX3GjMtQdOmvFYInkbfPGb/oZtOejwF2Ti/kxmh+z/QPjsSWG\nbcSM0leDwkA97UfFBthXf6aTa1E2CnJbKFooSj7ZNxDDJoXSCaIRPGYPqxUL\nBeub6rd8s9LVJxqPwxFw+Eg2tdYx2WPE4ZUwYKiZ/Jijbi7zeP17jK2NvqXR\nBksXaZNjb0f2N17Jg2qKyeQICuzztHaB2bmv9VGLfVS8VkWTJSn9Vsn40+IF\niruvEBnBUU34TBMcF0CELxzHpVrCL8AbMHM4Va1ufJlU9jFIq/rjzJzfuVRT\nOVR0zmSPVYQPTXMxZDZvxK478nd5quZwFDoPKQSM2h/231cIuE8XyRtc1byb\nfMlsNfcyKQnI/1TdXMFCj+2a0MLDdoCpuX4w01S+Lx9gUnQuMT9Q5NMqlAWa\nRqOvEJXog2zx87WDLwBRM0Xzjp+832AwbQfWXr48ZGlvKOAIY3Qn3KYYGb8Y\nY9cYKIJdHRXx+6VcRo/k8hMoiJRW5EzDxvJUYaz1u6LK9IMwcxRhZrX6OGpC\nB7P76A8yNWOi84G3kRwpM9f6McZeIF/dD07XDKhroWo+mzvUyDLpRV0+bVh0\nDT3i38XehPRhpa5VTKUH88ENsL4U1hD+7pj7lu2LxWvs4KCqAqlIBGbd+2tL\nGdPJ\r\n=nRaR\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/babel__core_7.1.0_1550770641962_0.29762338340372674"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.1.1": {
+      "name": "@types/babel__core",
+      "version": "7.1.1",
+      "description": "TypeScript definitions for @babel/core",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Troy Gerwien",
+          "url": "https://github.com/yortus",
+          "githubUsername": "yortus"
+        },
+        {
+          "name": "Marvin Hagemeister",
+          "url": "https://github.com/marvinhagemeister",
+          "githubUsername": "marvinhagemeister"
+        },
+        {
+          "name": "Melvin Groenhoff",
+          "url": "https://github.com/mgroenhoff",
+          "githubUsername": "mgroenhoff"
+        },
+        {
+          "name": "Jessica Franco",
+          "url": "https://github.com/Jessidhia",
+          "githubUsername": "Jessidhia"
+        }
+      ],
+      "main": "",
+      "types": "index",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/babel__core"
+      },
+      "scripts": {},
+      "dependencies": {
+        "@babel/parser": "^7.1.0",
+        "@babel/types": "^7.0.0",
+        "@types/babel__generator": "*",
+        "@types/babel__template": "*",
+        "@types/babel__traverse": "*"
+      },
+      "typesPublisherContentHash": "8225141e6aa116d8b063e5d7db974ba22195874281f9bfbe0bfab9a68bcb5933",
+      "typeScriptVersion": "2.9",
+      "_id": "@types/babel__core@7.1.1",
+      "dist": {
+        "integrity": "sha512-+hjBtgcFPYyCTo0A15+nxrCVJL7aC6Acg87TXd5OW3QhHswdrOLoles+ldL2Uk8q++7yIfl4tURtztccdeeyOw==",
+        "shasum": "ce9a9e5d92b7031421e1d0d74ae59f572ba48be6",
+        "tarball": "https://registry.npmjs.org/@types/babel__core/-/babel__core-7.1.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 27270,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcrieICRA9TVsSAnZWagAAxi4P/jHW1tjE2c/WSti3mzsn\nFhgbzpgx4ndvRrbD/q7mHBzrz6g2jHpBMPYNk7JXKxobw9gWhy6X12m6PRkt\nnuiI5pb9flAOjPZTwrDez/cePqqVjMqTr6Skkzor26B+WRzylADDUtGcKrKE\nHRs+w+e/rJv5ABh09EXeJOexKXIpZjJDREruMTrnfeToOiuBQUk5qRYeX0KW\n8yccGlhEh3+66Knfg0pvN001aazG4OLpRKf5g70aPzNs/1jljPW5UMAjKMAz\nNVtGL9UJkq9EQibn4hhi2qDmFrvvWCNao45iuY2EycP4ahg//nPPWSpONzHa\nY+Tay939hSI/GsKgXT0ZNY2tUBjqzj9bCS0JcIzbkHqHLWVb4jN3Dg9F7A9R\np4jTVfIwZF06MZ/AVfz5wPpsQRdP+hUWmmbaGppmfpue1XGeGhJ5Wt3bt7ZK\nCLRVuHibuBgWvJcbtLYMBLvpgyH7fK3ZNjeP92e367VBpwAyW1mOybKhLsAj\nTnVIGDBV3DHcyded/0VwaYEsWYFfd+42I0Cjhwl3Vps9IhJx+88hRM5o9Xe9\nKxNEr1u4ePDcboGU+OGEbkx0Ym2Sh2hClQbw7yM99cnG/8QmVN4CMDJXH4qG\nGyzFxfzreEFbrBQko+Q+6+GvfbcDjahEcj7aCS3gesbpiNdZwBXuqegjHgMm\nBiux\r\n=ySMG\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/babel__core_7.1.1_1554917255373_0.9750233609426873"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.1.2": {
+      "name": "@types/babel__core",
+      "version": "7.1.2",
+      "description": "TypeScript definitions for @babel/core",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Troy Gerwien",
+          "url": "https://github.com/yortus",
+          "githubUsername": "yortus"
+        },
+        {
+          "name": "Marvin Hagemeister",
+          "url": "https://github.com/marvinhagemeister",
+          "githubUsername": "marvinhagemeister"
+        },
+        {
+          "name": "Melvin Groenhoff",
+          "url": "https://github.com/mgroenhoff",
+          "githubUsername": "mgroenhoff"
+        },
+        {
+          "name": "Jessica Franco",
+          "url": "https://github.com/Jessidhia",
+          "githubUsername": "Jessidhia"
+        }
+      ],
+      "main": "",
+      "types": "index",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/babel__core"
+      },
+      "scripts": {},
+      "dependencies": {
+        "@babel/parser": "^7.1.0",
+        "@babel/types": "^7.0.0",
+        "@types/babel__generator": "*",
+        "@types/babel__template": "*",
+        "@types/babel__traverse": "*"
+      },
+      "typesPublisherContentHash": "8ddbc9ecfefbb1a61ece46d6e48876a63d101c6c5291bb173a929cead248d6a2",
+      "typeScriptVersion": "2.9",
+      "_id": "@types/babel__core@7.1.2",
+      "dist": {
+        "integrity": "sha512-cfCCrFmiGY/yq0NuKNxIQvZFy9kY/1immpSpTngOnyIbD4+eJOG5mxphhHDv3CHL9GltO4GcKr54kGBg3RNdbg==",
+        "shasum": "608c74f55928033fce18b99b213c16be4b3d114f",
+        "tarball": "https://registry.npmjs.org/@types/babel__core/-/babel__core-7.1.2.tgz",
+        "fileCount": 4,
+        "unpackedSize": 27343,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJc3D2gCRA9TVsSAnZWagAA7zYP/iuooi+uZfpvTESoSraC\nctAtgAAqFjf1JveEIkQcUopl6c7tbkh2nDAosGqp+wfRI2yIdDgyKNwC8V0Z\n0d8DATDEn3plM4bHEhSRbpACFcNXxVFDcZZW8+/Z1wrRFEbXu+Z5BroFEWRG\nxj71RihDaangN2IflnvsEv3pf1MwwKiWj8ek+v9aZdVnswnKt4TMZDpLPyP9\nF+4Vzf3gwFARTD0IjuFRiu58EmX3AGZethZ37PAD7DtbsoHtdH/e/M/cJ+He\ncpk37FFdxIl/WhO5ItyxOWvOWp1by2ssnUNCusu6SVI/Zg2HYVSosVq65sWd\nx8oFzqx5N5NH2DIwQZVg8ldBvYKG0DLFH58iiDNUmkCVMsXQDHEYt0bNeHwe\nX3qJOCLRfiGlvzW8lnozltkn/D/OFJ0L+jYaW2sjm48XdUR47/TFvNFgWeNd\njIqqr4jENJGIvW8sa/IsnGRWHuc11ViqCo7s5afP+P0Gx+FJd2e6wU3PiQqX\n0GIoRhreauXyxquyNc6rjvwrJ1r4AaXKuRbZEzZazge/sOZwmv0gSdV8SgVT\n0tF6qZI9WY+oI8L00TbVngIGvsm6H25aGddQFlSX6Zn4aIQValCoBP/X8e9K\ne4dnpw1hlmaEzk+n6SdaTLapG4C5Ub3tKc2wWUtiYpBbXvmYKaOaTYB2+Ol5\nlki2\r\n=Qb+C\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/babel__core_7.1.2_1557937568157_0.729868803494492"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.1.3": {
+      "name": "@types/babel__core",
+      "version": "7.1.3",
+      "description": "TypeScript definitions for @babel/core",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Troy Gerwien",
+          "url": "https://github.com/yortus",
+          "githubUsername": "yortus"
+        },
+        {
+          "name": "Marvin Hagemeister",
+          "url": "https://github.com/marvinhagemeister",
+          "githubUsername": "marvinhagemeister"
+        },
+        {
+          "name": "Melvin Groenhoff",
+          "url": "https://github.com/mgroenhoff",
+          "githubUsername": "mgroenhoff"
+        },
+        {
+          "name": "Jessica Franco",
+          "url": "https://github.com/Jessidhia",
+          "githubUsername": "Jessidhia"
+        }
+      ],
+      "main": "",
+      "types": "index",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/babel__core"
+      },
+      "scripts": {},
+      "dependencies": {
+        "@babel/parser": "^7.1.0",
+        "@babel/types": "^7.0.0",
+        "@types/babel__generator": "*",
+        "@types/babel__template": "*",
+        "@types/babel__traverse": "*"
+      },
+      "typesPublisherContentHash": "478fc636b3b91d2d8148bbc98176f96231386926f4af91893dbe95d3812775a5",
+      "typeScriptVersion": "2.9",
+      "_id": "@types/babel__core@7.1.3",
+      "dist": {
+        "integrity": "sha512-8fBo0UR2CcwWxeX7WIIgJ7lXjasFxoYgRnFHUj+hRvKkpiBJbxhdAPTCY6/ZKM0uxANFVzt4yObSLuTiTnazDA==",
+        "shasum": "e441ea7df63cd080dfcd02ab199e6d16a735fc30",
+        "tarball": "https://registry.npmjs.org/@types/babel__core/-/babel__core-7.1.3.tgz",
+        "fileCount": 4,
+        "unpackedSize": 27500,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdb/cFCRA9TVsSAnZWagAAPDkP/1Y2CDObhZ+dFs4u+pSl\nthu5CT0R/3Ikz09Wuq0zLTcUwXyynCPCBbbXkZuFCcjz/zMRPZtwtfAYqF1K\nXpYKcL1/wplql606wAfpD+fpqK4qiljbthGnUTICCdqFJzqoNvrDY085lXOq\ntZRC6K62XyxPtraOxIm0goHz6EVTzLDNsBFNNfI8unfzdUYp+g8gSU+f9nVJ\nkG1GK3F2Zq/4XSiEEJ0tEuF6EuezNujNQz9NbHX1FkGCsxn9/DRC77Ot3Ug8\naWWWRRzlQ5C36uORf1A4T07BxJo4x8ylPU2ww8lu8KYw4lS4bVGqmgKg5hdN\nF99M+j5TVx9whP9I/OUPGRg8Zsd5OTy6Oys/vpGAVcBbr6n8TabYKXYmJyi6\nIJW6AD+Ft5zqjPlAoDTVQgXH+ko27ltCoN8otKVUNrd7rkNs2EiROARDR6tT\njXkEEZWkVlrWAOooFrbau56f32juvbY10qMqM4niV/n43G60U/UbtsOwu6lj\nvvpR3gq5T7Zts3KZ1sG67jCSIFSTnJgxzoaWyIllr+aZMsCXu8oiBv6QLt5E\nyFeqQEpTETTancUNdruIKkiFRB4OZgqh+tAOtSUk/0V8GHEkppnKpDnIL6Vu\ncREW2iF+qZhe9IRjYz7DXCNOepjvJzSJcwjHp8vE38W3Yi4tDfgwNE6IFwkQ\nyrRB\r\n=Ul0Q\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/babel__core_7.1.3_1567618821161_0.047531780792570366"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.1.4": {
+      "name": "@types/babel__core",
+      "version": "7.1.4",
+      "description": "TypeScript definitions for @babel/core",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Troy Gerwien",
+          "url": "https://github.com/yortus",
+          "githubUsername": "yortus"
+        },
+        {
+          "name": "Marvin Hagemeister",
+          "url": "https://github.com/marvinhagemeister",
+          "githubUsername": "marvinhagemeister"
+        },
+        {
+          "name": "Melvin Groenhoff",
+          "url": "https://github.com/mgroenhoff",
+          "githubUsername": "mgroenhoff"
+        },
+        {
+          "name": "Jessica Franco",
+          "url": "https://github.com/Jessidhia",
+          "githubUsername": "Jessidhia"
+        }
+      ],
+      "main": "",
+      "types": "index.d.ts",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/babel__core"
+      },
+      "scripts": {},
+      "dependencies": {
+        "@babel/parser": "^7.1.0",
+        "@babel/types": "^7.0.0",
+        "@types/babel__generator": "*",
+        "@types/babel__template": "*",
+        "@types/babel__traverse": "*"
+      },
+      "typesPublisherContentHash": "571574423c1dc97a75fb9a37066b907800173dbdc95d0c84b77b092651890943",
+      "typeScriptVersion": "2.9",
+      "_id": "@types/babel__core@7.1.4",
+      "dist": {
+        "integrity": "sha512-c/5MuRz5HM4aizqL5ViYfW4iEnmfPcfbH4Xa6GgLT21dMc1NGeNnuS6egHheOmP+kCJ9CAzC4pv4SDCWTnRkbg==",
+        "shasum": "5c5569cc40e5f2737dfc00692f5444e871e4a234",
+        "tarball": "https://registry.npmjs.org/@types/babel__core/-/babel__core-7.1.4.tgz",
+        "fileCount": 4,
+        "unpackedSize": 28817,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeRt0bCRA9TVsSAnZWagAApB0P/0p2DVYH730AEWrhU9rY\niTUcM2V3W5Yqzxl7/ZHyF/K53KDg6Do08iRMhZHd8UwnGA83CUS6l+duxcYZ\nHNrOg8dcv8GKlQ5de9KjE+lpXgF/gVT6fwEH9W5erkCemJhplTyRNFJRjuge\nexYo8iqJPel2sz9+gETDw19Tz2Is/T2U7lpLLaLyBJNmwFuUzhjnNhauFKsu\nb/0+OrquxaPtqgw6vH/Q2rJHEam0ZnTvxpSo8b9ge4hGZCQlC4uSFx6AbYVq\n6GAaNzwLATKEyBWGQidZ2+oI51IxaubCsv/MmDkZLUl6fLmHTotxPk7w9gQD\nUrJfpCgcRIUlYT2+MBdcaD4h/rILbCS6eBVAtL3rD0PKnGTbG7rbHM8o0O27\nNfL/g0kv1fXBN6oYZwtb+rGRzEswr7j4Is0/YxiSJvecFoXrX4VszR7S6PBX\n6xDdj7Zcut6dGbOkEbixVRaI5fenm4IsKGgwh2R1m8SzpFVW4uL1rXIBPdPl\nSD9r33qFisKCruRNG/RCcW9yqA2CHdEPYSDPMC3beb/goiEM1Ayxc/rQRpbf\nw7xX1IOuBjdXH2rFncLVH+VEHmekz7aZ1ek0pGE5FqnfTM5JjPuxT/+Orzol\nNSDLR6ofmmVNdS1IqM7TjM1/jfDNPHveY2IqW4kCRQ3q1rmz87usGqH5x6oM\nROYn\r\n=8kVM\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/babel__core_7.1.4_1581702426689_0.23327030172295404"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.1.5": {
+      "name": "@types/babel__core",
+      "version": "7.1.5",
+      "description": "TypeScript definitions for @babel/core",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Troy Gerwien",
+          "url": "https://github.com/yortus",
+          "githubUsername": "yortus"
+        },
+        {
+          "name": "Marvin Hagemeister",
+          "url": "https://github.com/marvinhagemeister",
+          "githubUsername": "marvinhagemeister"
+        },
+        {
+          "name": "Melvin Groenhoff",
+          "url": "https://github.com/mgroenhoff",
+          "githubUsername": "mgroenhoff"
+        },
+        {
+          "name": "Jessica Franco",
+          "url": "https://github.com/Jessidhia",
+          "githubUsername": "Jessidhia"
+        }
+      ],
+      "main": "",
+      "types": "index.d.ts",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/babel__core"
+      },
+      "scripts": {},
+      "dependencies": {
+        "@babel/parser": "^7.1.0",
+        "@babel/types": "^7.0.0",
+        "@types/babel__generator": "*",
+        "@types/babel__template": "*",
+        "@types/babel__traverse": "*"
+      },
+      "typesPublisherContentHash": "a18580ec20de853eff5a602b70e64d3dbdc2b1cfea48906c2bb1a3b0ee34ab18",
+      "typeScriptVersion": "3.4",
+      "_id": "@types/babel__core@7.1.5",
+      "dist": {
+        "integrity": "sha512-+ckxwNj892FWgvwrUWLOghQ2JDgOgeqTPwrcl+0t1pG59CP8qMJ6S/efmEd999vCFSJKOpyMakvU+w380rduUQ==",
+        "shasum": "e4d84704b4df868b3ad538365a13da2fa6dbc023",
+        "tarball": "https://registry.npmjs.org/@types/babel__core/-/babel__core-7.1.5.tgz",
+        "fileCount": 4,
+        "unpackedSize": 28825,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeTtAoCRA9TVsSAnZWagAA9LMP/0YRYYrz40yesQSqHd0F\n2AB5ZrrRoLxBU3l/v1y1MSBAHdHmZFzBCDuwUQSKWj6YV+ETUjANoPAfMAW8\noOpnS2WMxUltr2QoGfi5kE1Zfq5AjeEn8SSWnLHCOs70y7QE1vfAfW840LVA\ntWpDQbOMRLuHmUd/gWpxcw/WEVHoASpTAUoS9aziBV+5HvhPqiEK4h8uVgq4\nfDspl+5tePK3OBnMhUt0S+MjK474vIzbn3QlEngYOuhxlhcQCmXBVM+xcViC\nucP9qu56ibnxS8l3ONAEFCdz4D56qyU23JIz66vfBTy8NYJEzp8wlg2rK1px\n1ETA1b1dT3YvwhLVESMrNFj1EAZ23XxK/w5VDdhRrT26eXkCl1tR1hLKvnkS\nQyJg9+Is/7wqaG4yYTG8e3FiQ3U01IIPX13UUy7qOre2ZgEVIlyMVIBBUv/m\nEgDPEzJrmKE7whFnbwbVbbqw1NCLOW3T6vlsj6/O4bmeSxa6GHpv/WVPRzq3\nDotRJUBlFhPVn/NyPDkbHd+3OCi6MZKMKQrGtDiPdOFXUAEDXbdBQuem1hQW\nhFed8pAHxvgWGvq/uS86EpeWOjxG2F2g1SrfjorDAPCmd3fNG6IECxXtggdC\nUM7QHhOR+m+nY6aB2CMEIzGvdMiIILEJVywqTCLvKylJ4WEUdfLxw9CYYZTV\nIG5L\r\n=992v\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/babel__core_7.1.5_1582223399765_0.8712350396133828"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.1.6": {
+      "name": "@types/babel__core",
+      "version": "7.1.6",
+      "description": "TypeScript definitions for @babel/core",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Troy Gerwien",
+          "url": "https://github.com/yortus",
+          "githubUsername": "yortus"
+        },
+        {
+          "name": "Marvin Hagemeister",
+          "url": "https://github.com/marvinhagemeister",
+          "githubUsername": "marvinhagemeister"
+        },
+        {
+          "name": "Melvin Groenhoff",
+          "url": "https://github.com/mgroenhoff",
+          "githubUsername": "mgroenhoff"
+        },
+        {
+          "name": "Jessica Franco",
+          "url": "https://github.com/Jessidhia",
+          "githubUsername": "Jessidhia"
+        }
+      ],
+      "main": "",
+      "types": "index.d.ts",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/babel__core"
+      },
+      "scripts": {},
+      "dependencies": {
+        "@babel/parser": "^7.1.0",
+        "@babel/types": "^7.0.0",
+        "@types/babel__generator": "*",
+        "@types/babel__template": "*",
+        "@types/babel__traverse": "*"
+      },
+      "typesPublisherContentHash": "894ec56123a8d17360888ae06a5b3aef80419218f588ec4750f4690f67de012d",
+      "typeScriptVersion": "3.4",
+      "_id": "@types/babel__core@7.1.6",
+      "dist": {
+        "integrity": "sha512-tTnhWszAqvXnhW7m5jQU9PomXSiKXk2sFxpahXvI20SZKu9ylPi8WtIxueZ6ehDWikPT0jeFujMj3X4ZHuf3Tg==",
+        "shasum": "16ff42a5ae203c9af1c6e190ed1f30f83207b610",
+        "tarball": "https://registry.npmjs.org/@types/babel__core/-/babel__core-7.1.6.tgz",
+        "fileCount": 4,
+        "unpackedSize": 28862,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeVXD1CRA9TVsSAnZWagAAYWwP/01MDwGNne7PjQlkYjg/\n4fBfosZbbepW3pmMnzmLEQMdcAm4LUivjkrq3kQTvrZEU/fV9winnsC/FukW\nC3hx5Lp0CIytsUZhm9+a8RDtXaHarZxrtXNbY8aC/eUGuHR1g6BOtm1omF1p\nHHP9Zp5YyOC1jJcqRN+bWP1WT6fXmxI0dg+MZPjgVFsznCWq5LKLI4xLHZaG\naxk+N7yWy72xURxKV1SkbLs9etOZGeYl0UnmURiraB92ct9sm7pX9SWQw47f\nB/K06oDgWxxImHU5h7HCAGJwUzEUfJzYFbbPFqkwAc6I4BhOvOmI8EkGXq3W\na/BTHWENP7HmMuy6bBbHhIyVDxpW+ymqfrVHq+d18A2ztpGbuSc+G3CbZcKQ\ncbwRdkbihRmRXp1OvooO2KK3wLV9s/iRBUMeHm1Flr8NFR+7fYJTdcoxzKSL\nkMOH6xOcs/6j20fsxWteZHW+5JQIgKCbcU4KcL2SIGbZrTgtuG38abEFRt6c\nCiS5FH1tXPOYG/L/j/uh7ViORwxpObpazvawSRL5LdDlVNKAd3qlJLMdc+3t\nxwcuBPEntvtg+Z6yTDiUlsXF5CcXhEGcEnfIENO/APeWpnbz0aQtobvITOxl\nxAe1MIRH+ACTakhseLzS+xkzqaN8rCr8+UMBpKf0ZXmkD2RxBDO5VjNb5CkZ\nezTC\r\n=6r16\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/babel__core_7.1.6_1582657781354_0.8513271038586718"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.1.7": {
+      "name": "@types/babel__core",
+      "version": "7.1.7",
+      "description": "TypeScript definitions for @babel/core",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Troy Gerwien",
+          "url": "https://github.com/yortus",
+          "githubUsername": "yortus"
+        },
+        {
+          "name": "Marvin Hagemeister",
+          "url": "https://github.com/marvinhagemeister",
+          "githubUsername": "marvinhagemeister"
+        },
+        {
+          "name": "Melvin Groenhoff",
+          "url": "https://github.com/mgroenhoff",
+          "githubUsername": "mgroenhoff"
+        },
+        {
+          "name": "Jessica Franco",
+          "url": "https://github.com/Jessidhia",
+          "githubUsername": "Jessidhia"
+        }
+      ],
+      "main": "",
+      "types": "index.d.ts",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/babel__core"
+      },
+      "scripts": {},
+      "dependencies": {
+        "@babel/parser": "^7.1.0",
+        "@babel/types": "^7.0.0",
+        "@types/babel__generator": "*",
+        "@types/babel__template": "*",
+        "@types/babel__traverse": "*"
+      },
+      "typesPublisherContentHash": "e93a4f11a93e3ba496227db0c1bc869c27b668ca27d7bb8224401ef44c4b3d1c",
+      "typeScriptVersion": "3.4",
+      "_id": "@types/babel__core@7.1.7",
+      "dist": {
+        "integrity": "sha512-RL62NqSFPCDK2FM1pSDH0scHpJvsXtZNiYlMB73DgPBaG1E38ZYVL+ei5EkWRbr+KC4YNiAUNBnRj+bgwpgjMw==",
+        "shasum": "1dacad8840364a57c98d0dd4855c6dd3752c6b89",
+        "tarball": "https://registry.npmjs.org/@types/babel__core/-/babel__core-7.1.7.tgz",
+        "fileCount": 4,
+        "unpackedSize": 28859,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeg8wSCRA9TVsSAnZWagAAMzEP/jA1QBSyr26cv96AWarl\nMQZNASsLzmey/FlsYPppWiS+lmpHml4pKoYWwi5Drw0/iUzLka3N5UmDd+Y1\ne54QxyQn69HF49kkrh+3oVO+DAkGW7ykq2q8q0lvgKXsyM0m1JD9n1KLo+SF\nhsXmSCYhDvHB/sqhd/TsSm2uW53vdWEexy9wixBc4rGBMESTEsyjMeU3knjN\ne8ZgpT9LlIlLvhiVkvLTawno1hWbXgGF3v8tpAG2jCWuAeCaxF66mp98dzMS\n4ozj7TlVhKdpTg0Slc7RdWq9ewFZplBFzLhdGHT3UO04lOH78y9q2FHU6hVU\nEzwiSmvdLvxpDLDcb7FuyttwrPujVzeQTT/CG7M18KVAy/jdv6WHXLpknalt\nacPbFbE3fiZ99WLp0BahtdYqEyu1dji/ohsZQM3l+MFCl+sFjZT9s906tmPS\nISTfmW+zqpBRKGocVF5UuG26r1QnXPLyfCM12Orzj5KGXACJmBm7fPT7hyej\nNVxFZHCbKbhp1+qxDHomAuS5VDwE9XAaKl68xIWew8Rob3+tYdoespN1MdV7\n60kWvEYOawdAdTxTf3N8iHbrBtmUuVGtRXmI/RzH2hV2ADmVzU5hNtoJbxg+\nepG51rbyKGF8UAz9EEXe9xlj1ivxci4yzNwFT9Ai1a2RJSfSOrwy19rKU85k\nGkLF\r\n=YE/2\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/babel__core_7.1.7_1585695761609_0.4562745408691944"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.1.8": {
+      "name": "@types/babel__core",
+      "version": "7.1.8",
+      "description": "TypeScript definitions for @babel/core",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Troy Gerwien",
+          "url": "https://github.com/yortus",
+          "githubUsername": "yortus"
+        },
+        {
+          "name": "Marvin Hagemeister",
+          "url": "https://github.com/marvinhagemeister",
+          "githubUsername": "marvinhagemeister"
+        },
+        {
+          "name": "Melvin Groenhoff",
+          "url": "https://github.com/mgroenhoff",
+          "githubUsername": "mgroenhoff"
+        },
+        {
+          "name": "Jessica Franco",
+          "url": "https://github.com/Jessidhia",
+          "githubUsername": "Jessidhia"
+        },
+        {
+          "name": "Ifiok Jr.",
+          "url": "https://github.com/ifiokjr",
+          "githubUsername": "ifiokjr"
+        }
+      ],
+      "main": "",
+      "types": "index.d.ts",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/babel__core"
+      },
+      "scripts": {},
+      "dependencies": {
+        "@babel/parser": "^7.1.0",
+        "@babel/types": "^7.0.0",
+        "@types/babel__generator": "*",
+        "@types/babel__template": "*",
+        "@types/babel__traverse": "*"
+      },
+      "typesPublisherContentHash": "0560b3e9f5acd92f5d9ba44c76b796af25f4196de9355a27718400bbc62b7c89",
+      "typeScriptVersion": "3.4",
+      "_id": "@types/babel__core@7.1.8",
+      "dist": {
+        "integrity": "sha512-KXBiQG2OXvaPWFPDS1rD8yV9vO0OuWIqAEqLsbfX0oU2REN5KuoMnZ1gClWcBhO5I3n6oTVAmrMufOvRqdmFTQ==",
+        "shasum": "057f725aca3641f49fc11c7a87a9de5ec588a5d7",
+        "tarball": "https://registry.npmjs.org/@types/babel__core/-/babel__core-7.1.8.tgz",
+        "fileCount": 4,
+        "unpackedSize": 29547,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJe1ZVJCRA9TVsSAnZWagAAUY8P/2JZR5lB1/mqNq/cpPa+\nF1iIWmOlHTFOUEr6N3lccS3W5kggShr8NRPgzY0td3xt4zDn9WpF/JeQrffc\nfisfbo+6ULs6vrpOdsULPtSShy4oSLBqOZU47jKWFgs4VT/YgeztWkV+xzh4\nxNJmef02phSYEwl5dZeDfPieEmA+5v3GynvXg3FzU6D0xfP/F6rmvod6OOO/\nWKyk+WIiMg27tAb0n6lUptPNsyBfbtwIVygOFb3bZmpfYWG0qx4FvxINBvoq\ndnpOuQIGsaVMKb3icMlvhTUg+8kY4Vr3GiNkFT94SEYj3VQrNo7wDnBG73Xf\nVcTnnAe+GFvwha87U4bxuO28EDlcb9nac0Xveq7M7o6eeab/rUNC2oO/rz2B\nRDXEmA+yGcIBLKqSGl5wxUcVWLrA9EZyrVoyGaR4w3is2mcMDzJUHZIYQ9tI\nTYYDyLIJc1s/10pP1fkyTeYGhAB8XGGd8bPcQklO0OQ13/D+6MX65a1aZgr0\nLCvmQjaT8NVMKV5FJfOtXREERNa3pCaxRIOlf8lXgQszaU3vlhafwFhZNJI5\npLflx4Z2xqLjmt3XkDjhREC8WAqwn5x+OuKCJKMdS/+rdDrxAGLJFu3KpcTo\natW8bqNMlsG8gQ5QXnWVY7oPX+B1mc63nGf+Ng6eRR3RHL72k1q8pGS8bDas\nYPZF\r\n=RFFt\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/babel__core_7.1.8_1591055689306_0.19321315819218787"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.1.9": {
+      "name": "@types/babel__core",
+      "version": "7.1.9",
+      "description": "TypeScript definitions for @babel/core",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Troy Gerwien",
+          "url": "https://github.com/yortus",
+          "githubUsername": "yortus"
+        },
+        {
+          "name": "Marvin Hagemeister",
+          "url": "https://github.com/marvinhagemeister",
+          "githubUsername": "marvinhagemeister"
+        },
+        {
+          "name": "Melvin Groenhoff",
+          "url": "https://github.com/mgroenhoff",
+          "githubUsername": "mgroenhoff"
+        },
+        {
+          "name": "Jessica Franco",
+          "url": "https://github.com/Jessidhia",
+          "githubUsername": "Jessidhia"
+        },
+        {
+          "name": "Ifiok Jr.",
+          "url": "https://github.com/ifiokjr",
+          "githubUsername": "ifiokjr"
+        }
+      ],
+      "main": "",
+      "types": "index.d.ts",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/babel__core"
+      },
+      "scripts": {},
+      "dependencies": {
+        "@babel/parser": "^7.1.0",
+        "@babel/types": "^7.0.0",
+        "@types/babel__generator": "*",
+        "@types/babel__template": "*",
+        "@types/babel__traverse": "*"
+      },
+      "typesPublisherContentHash": "26a4dc5658200c6408c23432c1f75108e2a178e8bc48479ee219337f00413d08",
+      "typeScriptVersion": "3.4",
+      "_id": "@types/babel__core@7.1.9",
+      "dist": {
+        "integrity": "sha512-sY2RsIJ5rpER1u3/aQ8OFSI7qGIy8o1NEEbgb2UaJcvOtXOMpd39ko723NBpjQFg9SIX7TXtjejZVGeIMLhoOw==",
+        "shasum": "77e59d438522a6fb898fa43dc3455c6e72f3963d",
+        "tarball": "https://registry.npmjs.org/@types/babel__core/-/babel__core-7.1.9.tgz",
+        "fileCount": 4,
+        "unpackedSize": 29587,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJe7xkUCRA9TVsSAnZWagAAUGQP/0a2Ij6HICMQrzUS/TdN\nUzVlYBbyGbQdBWEsVLeFlW2Z1p9khewdO2FTLknIMff4VHjiTtk0WPbKa+d2\nOkPrtF1AOB9Z1tKD//T5GEV30EqnNOAGQNiAPJEGkG3xNC3MGqst+SAD/yEM\n9Eo6qD3KB6r9aCj11KxzYwGDomcSe+bpw4BeC9U1tlX40C2/ipyYEc6ytwCT\nLCWb3QNnd/5VaaMoxxKcVsqVBOytKhG7iPiS8fnHYxthQ1lEGJ9gswdR9lBV\nY57M/xAZ6RybfP/j7MnOvYJKhpml880E8X7D+i0b8w8FyjIPqOyAEXsgX+gi\np11XQG7RLlL+7b0rqqGBJ2bQygWmG6ENL7eouj4MOi0dkz0Cy39cIWyhoKE5\nQNCHbifME2hHSjBIUh3jxZR9FH1Dx8+XWNL3nmr8xtMObNwXlUSOpBoTCWiE\n2Ku4OWaWYpEhoXYE1+KidBoRt3V+V0eevCSCuY5K/E085Qpm4e0vHpkJaWNw\nq9H5Ds9uDlYssvdTEVsmmYa/r1xQH0hlGcv/Vs0bR7IFANoEvqnGd9EDIqZM\nus+nN9g3ltVN2BM5pvbtlbC19Nd0me5B94T6LEomQFQWMZMlSOnaeY4wvfGD\njr5vQS5uJdTCVhBcRpD+J8m9Jbhob2/Ts7HFyz7NxJfwuw0dJVHGczzMeA87\npRZ/\r\n=CIe4\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/babel__core_7.1.9_1592727827750_0.5221203253257896"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.1.10": {
+      "name": "@types/babel__core",
+      "version": "7.1.10",
+      "description": "TypeScript definitions for @babel/core",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Troy Gerwien",
+          "url": "https://github.com/yortus",
+          "githubUsername": "yortus"
+        },
+        {
+          "name": "Marvin Hagemeister",
+          "url": "https://github.com/marvinhagemeister",
+          "githubUsername": "marvinhagemeister"
+        },
+        {
+          "name": "Melvin Groenhoff",
+          "url": "https://github.com/mgroenhoff",
+          "githubUsername": "mgroenhoff"
+        },
+        {
+          "name": "Jessica Franco",
+          "url": "https://github.com/Jessidhia",
+          "githubUsername": "Jessidhia"
+        },
+        {
+          "name": "Ifiok Jr.",
+          "url": "https://github.com/ifiokjr",
+          "githubUsername": "ifiokjr"
+        }
+      ],
+      "main": "",
+      "types": "index.d.ts",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/babel__core"
+      },
+      "scripts": {},
+      "dependencies": {
+        "@babel/parser": "^7.1.0",
+        "@babel/types": "^7.0.0",
+        "@types/babel__generator": "*",
+        "@types/babel__template": "*",
+        "@types/babel__traverse": "*"
+      },
+      "typesPublisherContentHash": "1820a9b81a531283d2b2f0b6f3ff7be47c310f20aaab901401b1aa2e47c9ca65",
+      "typeScriptVersion": "3.4",
+      "_id": "@types/babel__core@7.1.10",
+      "dist": {
+        "integrity": "sha512-x8OM8XzITIMyiwl5Vmo2B1cR1S1Ipkyv4mdlbJjMa1lmuKvKY9FrBbEANIaMlnWn5Rf7uO+rC/VgYabNkE17Hw==",
+        "shasum": "ca58fc195dd9734e77e57c6f2df565623636ab40",
+        "tarball": "https://registry.npmjs.org/@types/babel__core/-/babel__core-7.1.10.tgz",
+        "fileCount": 4,
+        "unpackedSize": 29588,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfbQYwCRA9TVsSAnZWagAA2BUP/RfetXLQiu8cZzANCVL2\ny4zqt9LiPfPuutODvskwnV/K+r5bEmH9wCx1W+NF3BStLjyE7irDpxDcgnm3\nSycJqXmYDK8GZmmFyKLEZ7iyDN6u4hQoBZkNqDzxCjPZCtHPBm07mmX2hBpU\nb6xtfTplrsHINMnqN2nKTaoooNzQWTUnyg6RgBrGd1Egks9GlL0/GjEI2QaG\n2hLtr6F12WTQXhLm2PEZ/An3Ju0yarSbL5VrSjEnrdAc1olER3ECK/l4rXrS\n1IfJFkc8lq/EMq7n7+yz8go4zJxPOvpVCjR0c38+WsEnMKUBHdw/B0PiI177\n0EuG1+0uWVJbIJtt+aeI9i2/dfkIG1MflHjNTFYl7PSDf3U+RT3CcKJEhzps\ntWWY3ZddKG/lilSSQgfJ5Cw7S/cCPVPEeV96GAp0c2G3mq5gfnNmcVmLjxGr\nnisHAVQT5k+jJBhLSgbCyAhdPufTs5O6lluMuwY9ODLfVlx0XNLKCX9UrrU0\nSnm5upFV6ljEUyz4/VS5/wq1AfVGyev6ddgfBrI+YCwZyKy4OI9ET6CUW8XF\nL/wJIGEHBMjDN+viCRg5cTQjiVxOl/fD2xgRnKiAL0yn8Ixbd3x8lwxJI/uy\nfE31hohAe6o0WOgaVFjmfQ0R41B4AaltilFiy7sTDNN1FtT2ItrwA8c9rxH9\noRc9\r\n=nf4K\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/babel__core_7.1.10_1600980527392_0.8118508456850371"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2018-07-25T22:30:03.389Z",
+    "7.0.0": "2018-07-25T22:30:03.730Z",
+    "modified": "2020-09-24T20:49:04.958Z",
+    "7.0.1": "2018-07-30T23:17:10.181Z",
+    "7.0.2": "2018-11-15T22:58:53.617Z",
+    "7.0.3": "2018-11-28T15:55:13.915Z",
+    "7.0.4": "2018-11-29T17:45:09.557Z",
+    "7.0.5": "2019-02-13T21:07:52.963Z",
+    "7.1.0": "2019-02-21T17:37:22.138Z",
+    "7.1.1": "2019-04-10T17:27:35.500Z",
+    "7.1.2": "2019-05-15T16:26:08.353Z",
+    "7.1.3": "2019-09-04T17:40:21.309Z",
+    "7.1.4": "2020-02-14T17:47:06.852Z",
+    "7.1.5": "2020-02-20T18:29:59.875Z",
+    "7.1.6": "2020-02-25T19:09:41.530Z",
+    "7.1.7": "2020-03-31T23:02:41.736Z",
+    "7.1.8": "2020-06-01T23:54:49.417Z",
+    "7.1.9": "2020-06-21T08:23:47.966Z",
+    "7.1.10": "2020-09-24T20:48:47.537Z"
+  },
+  "maintainers": [
+    {
+      "name": "types",
+      "email": "ts-npm-types@microsoft.com"
+    }
+  ],
+  "description": "TypeScript definitions for @babel/core",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+    "directory": "types/babel__core"
+  },
+  "contributors": [
+    {
+      "name": "Troy Gerwien",
+      "url": "https://github.com/yortus",
+      "githubUsername": "yortus"
+    },
+    {
+      "name": "Marvin Hagemeister",
+      "url": "https://github.com/marvinhagemeister",
+      "githubUsername": "marvinhagemeister"
+    },
+    {
+      "name": "Melvin Groenhoff",
+      "url": "https://github.com/mgroenhoff",
+      "githubUsername": "mgroenhoff"
+    },
+    {
+      "name": "Jessica Franco",
+      "url": "https://github.com/Jessidhia",
+      "githubUsername": "Jessidhia"
+    },
+    {
+      "name": "Ifiok Jr.",
+      "url": "https://github.com/ifiokjr",
+      "githubUsername": "ifiokjr"
+    }
+  ],
+  "license": "MIT",
+  "readme": "# Installation\r\n> `npm install --save @types/babel__core`\r\n\r\n# Summary\r\nThis package contains type definitions for @babel/core (https://github.com/babel/babel/tree/master/packages/babel-core).\r\n\r\n# Details\r\nFiles were exported from https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/babel__core.\r\n\r\n### Additional Details\r\n * Last updated: Thu, 24 Sep 2020 20:48:09 GMT\r\n * Dependencies: [@types/babel__generator](https://npmjs.com/package/@types/babel__generator), [@types/babel__traverse](https://npmjs.com/package/@types/babel__traverse), [@types/babel__template](https://npmjs.com/package/@types/babel__template), [@types/babel__types](https://npmjs.com/package/@types/babel__types), [@types/babel__parser](https://npmjs.com/package/@types/babel__parser)\r\n * Global values: `babel`\r\n\r\n# Credits\r\nThese definitions were written by [Troy Gerwien](https://github.com/yortus), [Marvin Hagemeister](https://github.com/marvinhagemeister), [Melvin Groenhoff](https://github.com/mgroenhoff), [Jessica Franco](https://github.com/Jessidhia), and [Ifiok Jr.](https://github.com/ifiokjr).\r\n",
+  "readmeFilename": ""
+}

@@ -1,0 +1,107 @@
+{
+  "name": "tap",
+  "version": "14.9.2",
+  "author": "Isaac Z. Schlueter <i@izs.me> (http://blog.izs.me)",
+  "description": "A Test-Anything-Protocol library for JavaScript",
+  "homepage": "http://www.node-tap.org/",
+  "bin": {
+    "tap": "bin/run.js"
+  },
+  "main": "lib/tap.js",
+  "engines": {
+    "node": ">=8"
+  },
+  "dependencies": {
+    "async-hook-domain": "^1.1.2",
+    "bind-obj-methods": "^2.0.0",
+    "browser-process-hrtime": "^1.0.0",
+    "chokidar": "^3.0.2",
+    "color-support": "^1.1.0",
+    "coveralls": "^3.0.6",
+    "diff": "^4.0.1",
+    "esm": "^3.2.25",
+    "findit": "^2.0.0",
+    "flow-remove-types": "^2.107.0",
+    "foreground-child": "^1.3.3",
+    "fs-exists-cached": "^1.0.0",
+    "function-loop": "^1.0.2",
+    "glob": "^7.1.4",
+    "import-jsx": "^2.0.0",
+    "ink": "^2.3.0",
+    "isexe": "^2.0.0",
+    "istanbul-lib-processinfo": "^1.0.0",
+    "jackspeak": "^1.4.0",
+    "minipass": "^3.0.0",
+    "mkdirp": "^0.5.1",
+    "nyc": "^14.1.1",
+    "opener": "^1.5.1",
+    "own-or": "^1.0.0",
+    "own-or-env": "^1.0.1",
+    "react": "^16.9.0",
+    "rimraf": "^2.7.1",
+    "signal-exit": "^3.0.0",
+    "source-map-support": "^0.5.16",
+    "stack-utils": "^1.0.2",
+    "tap-mocha-reporter": "^5.0.0",
+    "tap-parser": "^10.0.1",
+    "tap-yaml": "^1.0.0",
+    "tcompare": "^2.3.0",
+    "treport": "^0.4.2",
+    "trivial-deferred": "^1.0.1",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.6.3",
+    "which": "^2.0.1",
+    "write-file-atomic": "^3.0.0",
+    "yaml": "^1.6.0",
+    "yapool": "^1.0.0"
+  },
+  "keywords": [
+    "assert",
+    "tap",
+    "test",
+    "testing"
+  ],
+  "license": "ISC",
+  "repository": "https://github.com/tapjs/node-tap.git",
+  "scripts": {
+    "snap": "bash scripts/snap.sh",
+    "test": "node bin/run.js test -M coverage-map.js",
+    "unit": "bash scripts/unit.sh",
+    "posttest": "rm -rf cli-tests-*",
+    "postunit": "npm run posttest",
+    "t": "node bin/run.js test -J -sfails.txt",
+    "preversion": "npm test",
+    "postversion": "npm publish",
+    "postpublish": "bash postpublish.sh",
+    "www:build": "cd docs; npm ci; npm run build",
+    "www:develop": "cd docs; npm run develop",
+    "start": "npm run www:develop",
+    "www:serve": "cd docs; npm run serve"
+  },
+  "tap": {
+    "esm": false,
+    "test-ignore": "/(^|/)cli-tests-[0-9]+/",
+    "check-coverage": true
+  },
+  "nyc": {
+    "include": [
+      "bin/run.js",
+      "bin/jsx.js",
+      "bin/jack.js",
+      "lib/*.js"
+    ]
+  },
+  "files": [
+    "bin/run.js",
+    "bin/jsx.js",
+    "bin/jack.js",
+    "lib/*.js"
+  ],
+  "bundleDependencies": [
+    "treport",
+    "ink"
+  ],
+  "funding": {
+    "url": "https://github.com/sponsors/isaacs"
+  }
+}

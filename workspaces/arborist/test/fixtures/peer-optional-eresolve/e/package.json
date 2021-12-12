@@ -1,0 +1,8 @@
+{
+  "name": "@isaacs/testing-peer-optional-conflict-e",
+  "version": "1.0.0",
+  "dependencies": {
+    "@isaacs/testing-peer-optional-conflict-e-x": "1",
+    "@isaacs/testing-peer-optional-conflict-e-z": "1"
+  }
+}

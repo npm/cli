@@ -1,0 +1,139 @@
+{
+  "_id": "diff-frag",
+  "_rev": "1-def66f6723299e2e8d73bbc94a36c9cf",
+  "name": "diff-frag",
+  "dist-tags": {
+    "latest": "1.0.1"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "diff-frag",
+      "version": "1.0.0",
+      "description": "Take a big diff with a 2-line header and turn it into frags with only a reasonable amount of context",
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "https://izs.me"
+      },
+      "license": "ISC",
+      "scripts": {
+        "test": "tap",
+        "preversion": "npm test",
+        "postversion": "npm publish",
+        "postpublish": "git push origin --follow-tags"
+      },
+      "tap": {
+        "check-coverage": true
+      },
+      "devDependencies": {
+        "tap": "^14.9.2"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/isaacs"
+      },
+      "gitHead": "ec08ed829c1ad1db60559cb609c93139b122b85c",
+      "_id": "diff-frag@1.0.0",
+      "_nodeVersion": "12.12.0",
+      "_npmVersion": "6.13.1",
+      "dist": {
+        "integrity": "sha512-1DqVT8BlsGYXAH1YCsMkW14n2YUjic/3p20jsBoTZC6B5Bm5XzXVFo8JldLV4meRK4nwk36JaMULIlLviqn0ow==",
+        "shasum": "de3405b09be58d744db3d8d749b5a849ed8f0721",
+        "tarball": "https://registry.npmjs.org/diff-frag/-/diff-frag-1.0.0.tgz",
+        "fileCount": 18,
+        "unpackedSize": 204550,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd1jBSCRA9TVsSAnZWagAAS0wP/2bUQaK+hrR59MYB0DFZ\nwA73RT3vFY0FTh3ZJMo3QHDmdhXXkoi4m1dipJnci+AdIObbZLI4iUTe2brI\nrH20Iv2gr/5JPSc9tW24Yqjn4M4mXgugvJTcRllsg/5rvrFEBBp0UBQYDggk\nmkavztYo1HwSOTw8zyONhyQfJiPPSIjJY+5umzlqjO/KIf9rJ5zpPf2y7nd6\nqkCra5AktIAlCn9Puos4qilZ6eiCduEMgUSA3bp3vL4vHM2BPXYrDtfHER5F\nFZACPMcbvaYRcEuAV0bKeNlCh5q8JQK+V1UAL0cxfRCwnyYrRi1dory/q9tF\nCduQsZLAnRbV01iF75VPRwKg4D7wDSRRLAC4nlkJb9e1zItJuhb1cfNEST3j\n/wLXbidg8mbM59lQmILqT1opIoq/DdaserLLzKUmrPjbycjIaM60Zm7cFhLT\nosO4KUeRhoN/r1sNDjfM7Ps/d9tv9aN5a+Q9yIFo0wKFSNmQpAlocLw9Ju3R\nmmHxiIJIBhG+EwPyn6dIW+xgtixETXOlsiFf7THDcLLfa6iOCB4S3eNSoffn\nsbi27R3MK1mDUQo4d0YTjmPAi0KrSeqO9h8IlUYXvFtzzFR8uP2ORkQggEss\nYLULkl06eXBgZO7L+pmoA4nTT25zeFeRBnx59xS0TNarJPq/evhThYmBLWBq\n0ggZ\r\n=5GcC\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/diff-frag_1.0.0_1574318162341_0.5731649720389702"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.0.1": {
+      "name": "diff-frag",
+      "version": "1.0.1",
+      "description": "Take a big diff with a 2-line header and turn it into frags with only a reasonable amount of context",
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "https://izs.me"
+      },
+      "license": "ISC",
+      "scripts": {
+        "test": "tap",
+        "preversion": "npm test",
+        "postversion": "npm publish",
+        "postpublish": "git push origin --follow-tags"
+      },
+      "tap": {
+        "check-coverage": true
+      },
+      "devDependencies": {
+        "tap": "^14.9.2"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/isaacs"
+      },
+      "gitHead": "8a018258c21b8e7074d6631b412956c84ec31295",
+      "_id": "diff-frag@1.0.1",
+      "_nodeVersion": "12.12.0",
+      "_npmVersion": "6.13.1",
+      "dist": {
+        "integrity": "sha512-6/v2PC/6UTGcWPPetb9acL8foberUg/CtPdALeJUdD1B/weHNvzftoo00gYznqHGRhHEbykUGzqfG9RWOSr5yw==",
+        "shasum": "a7bb51789743e8c0b40e2509166bd155e5833826",
+        "tarball": "https://registry.npmjs.org/diff-frag/-/diff-frag-1.0.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 5093,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd1jCzCRA9TVsSAnZWagAAdvUQAJ2DUmMfPAiViflYBbn0\nx6bLiOonfulg5PmAWvUBKabv7GwQ0dqtCjxKeZGC7tqRrxBwK62UWUBlJ8Lh\nuwuNPLqnRt69kGMtZSCmPSuI8Mbfn9YXAVm0z5hYlR2Kgg3MetlSIBw+8nE+\nlbTx6zHZ0vASE0Nm7SNFYvUWkWJIXKImDGpp9de1qJkTlBWlHo4rNfnryV9M\nJ6Qz5W7LRk0gjdHZFMVZ2tAbVc93idgRkPfAofoM4KxiM/JAEMQ2uUgEUMoZ\nYkKREOdOY93Y0nCbe/DzamtDnE6BH7Waho+Ox+nTO3/O+7KUS+4MUW4m/BnT\nX644uAC/QvpneL86UWq/xG5ZrfUzEqGtGmCl4rfZ0puoaDrHJmivKcMgJGCj\nYjAy0YuaMGO0AnLrs3c6GS7fXI0Ee33KlpsHn/X6I56agNsr288gBebnQFAQ\nLoyUzsTOcOnENJpSDwsMrN9FWs6FDLuP9JUo5aF3Y7mGIzLBApJipeS76jOD\nFT4T7PHQD04X7A7LgV8HfproAF50bixy860SZ4cBTBrOCR4mqiYL06SOwxNw\nL8TifKtHHNFS5oybed6Fjipc+dFIMynQjmEKuIx2f4ruDhICN7Xy2Zk2sKpp\nDO+a0DtaSlxpr0O8SXUiPT7ko5E2ZXjEVfcbJhjns9sczagVXii4QK+/Ns/Y\n6u82\r\n=f9OI\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/diff-frag_1.0.1_1574318259189_0.9084394099490205"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2019-11-21T06:36:02.340Z",
+    "1.0.0": "2019-11-21T06:36:02.483Z",
+    "modified": "2019-11-21T06:37:41.699Z",
+    "1.0.1": "2019-11-21T06:37:39.405Z"
+  },
+  "maintainers": [
+    {
+      "name": "isaacs",
+      "email": "i@izs.me"
+    }
+  ],
+  "description": "Take a big diff with a 2-line header and turn it into frags with only a reasonable amount of context",
+  "author": {
+    "name": "Isaac Z. Schlueter",
+    "email": "i@izs.me",
+    "url": "https://izs.me"
+  },
+  "license": "ISC",
+  "readme": "# diff-frag\n\nTake a big diff with a 2-line header and turn it into frags with only a\nreasonable amount of context\n\nFor example, you might have a program that spits out a diff like this:\n\n```diff\nsome header data\nAuthor: Bobo The Cat <bobo@cat.kitty>\nDate: Wed Nov 20 20:13:08 2019 -0800\n\ndiff --git a/bowl.txt b/bowl.txt\nindex glorp..prolg 100655\n--- a/bowl.txt\n+++ b/bowl.txt\n space-prefixed lines are the same in both\n but we were sloppy in what got included in the diff\n so you get 1000 lines of identical output ...\n\n but dumping that all to ta teerminal is so ruuuuuude\n\n-what you want\n+what you want is just this bit\n+ just the changes\n\n more more more more more.... it goes on and on for a long time...\n```\n\nIn that case, what you'd really prefer is something like:\n\n```diff\nsome header data\nAuthor: Bobo The Cat <bobo@cat.kitty>\nDate: Wed Nov 20 20:13:08 2019 -0800\n\ndiff --git a/bowl.txt b/bowl.txt\nindex glorp..prolg 100655\n--- a/bowl.txt\n+++ b/bowl.txt\n@@ -1000,6 +1000,7 @@ so you get 1000 lines of identical...\n\n but dumping that all to ta teerminal is so ruuuuuude\n\n-what you want\n+what you want is just this bit\n+just the changes\n\n more more more more more.... it goes on and on for a long time...\n@@ -2456,5 +2567,5 @@ another bit of context here\n\n+ added line\n- removed line\n+ well, you get\n- the idea\n\n just the changes, is what I'm saying, not the 1000 lines between.\n```\n\nThis function will take the first kind of string, and turn it into the\nsecond.  It's useful for [test frameworks](https://node-tap.org) that\npretty-print object diffs, for object matching assertions, and want to make\nthem prettier when the object is really big.\n\n## USAGE\n\n```js\nconst diffFrag = require('diff-frag')\nconst fraggedDiff = diffFrag(rawDiff)\n// that's it, it's just the one function\n```\n",
+  "readmeFilename": "README.md"
+}

@@ -1,0 +1,640 @@
+{
+  "_id": "p-retry",
+  "_rev": "10-640bc99bda33230566a0cc4e32798cfb",
+  "name": "p-retry",
+  "description": "Retry a promise-returning or async function",
+  "dist-tags": {
+    "latest": "4.2.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "p-retry",
+      "version": "1.0.0",
+      "description": "Retry a promise-returning or async function",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/p-retry.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "promise",
+        "retry",
+        "retries",
+        "operation",
+        "failed",
+        "rejected",
+        "try",
+        "exponential",
+        "backoff",
+        "attempt",
+        "async",
+        "await",
+        "promises",
+        "concurrently",
+        "concurrency",
+        "parallel",
+        "bluebird"
+      ],
+      "dependencies": {
+        "retry": "^0.10.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "delay": "^1.3.1",
+        "xo": "*"
+      },
+      "xo": {
+        "esnext": true
+      },
+      "gitHead": "7d9ea993a59e23ca8d19cd651efa39a1651e6357",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/p-retry/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/p-retry#readme",
+      "_id": "p-retry@1.0.0",
+      "_shasum": "3927332a4b7d70269b535515117fc547da1a6968",
+      "_from": ".",
+      "_npmVersion": "2.15.9",
+      "_nodeVersion": "4.6.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "3927332a4b7d70269b535515117fc547da1a6968",
+        "tarball": "https://registry.npmjs.org/p-retry/-/p-retry-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/p-retry-1.0.0.tgz_1477036222168_0.5073128861840814"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "p-retry",
+      "version": "2.0.0",
+      "description": "Retry a promise-returning or async function",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/p-retry.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "promise",
+        "retry",
+        "retries",
+        "operation",
+        "failed",
+        "rejected",
+        "try",
+        "exponential",
+        "backoff",
+        "attempt",
+        "async",
+        "await",
+        "promises",
+        "concurrently",
+        "concurrency",
+        "parallel",
+        "bluebird"
+      ],
+      "dependencies": {
+        "retry": "^0.12.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "delay": "^2.0.0",
+        "xo": "*"
+      },
+      "gitHead": "8fa0decbb30cf97a74f242c9ab70bd069cd3e446",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/p-retry/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/p-retry#readme",
+      "_id": "p-retry@2.0.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.11.1",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-ZbCuzAmiwJ45q4evp/IG9D+5MUllGSUeCWwPt3j/tdYSi1KPkSD+46uqmAA1LhccDhOXv8kYZKNb8x78VflzfA==",
+        "shasum": "b97f1f4d6d81a3c065b2b40107b811e995c1bfba",
+        "tarball": "https://registry.npmjs.org/p-retry/-/p-retry-2.0.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 5629,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa4i26CRA9TVsSAnZWagAATwIP/1n1EEaOrGwqi3kX7Ivg\n9o0okbSaOktXAhkXDn7WyirQPc9PKMHoKS6IRPFzw/0EtPJzwE4nw2eYE0xu\nTe9qSH1nTdfPlp2objfT487MubFy//wBHCduTRN0RcA5XmioXpNg7GL9EBUY\nvRR5vArD1jCm8VNIuryOWAUvhtrOFpcScQuEL1Q17gyWUJ/X/LfSUpDbSLeZ\nKf1D3FGMQ+EaaIyrZS2KZeMgWq3QIJRzp7GafXtgc9SIFVJAzr21qkcYGzZ9\n8Bt0PfZ3aubCbhCX1wWRRJ0nDgmzb0V6MZYJyZY4XSAaG5xzFqtnHKc8uazO\nBiIVs9Rh0WyZe/iOltik0WfP8P/0/AiwAM23KGNFYVDqqP765k9mIKv2IgJM\nbt12KyReEVEKSdIleZO+o5AJjg1P2IJN6MufW0QadHLW6Sw9VeXn39YKc12q\nCvU7tfFrwZUbf7DyEci0mys7RiQCN3aHkv/dOWFB45yldny1zN46qWJdwEi/\nwToT+6RNNIxmDr+YsRLpF8QGHc3Lu9tRYqGWo6Hj5qcYPz5033VTzjpXwmcn\nEo9u6F0oycmcgzHwu1nPeSXZNxGNpkZOho13Iv5F6CGkcCJFD+ayxVazpfqq\nlaDBsw3thqPKRb2EE9G3S2YQmo8vVulNBTlwllLegdJtTnRW8IGgqr1hirxd\nI6yk\r\n=HiK1\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/p-retry_2.0.0_1524772281457_0.13741405149716912"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.0": {
+      "name": "p-retry",
+      "version": "3.0.0",
+      "description": "Retry a promise-returning or async function",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/p-retry.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "keywords": [
+        "promise",
+        "retry",
+        "retries",
+        "operation",
+        "failed",
+        "rejected",
+        "try",
+        "exponential",
+        "backoff",
+        "attempt",
+        "async",
+        "await",
+        "promises",
+        "concurrently",
+        "concurrency",
+        "parallel",
+        "bluebird"
+      ],
+      "dependencies": {
+        "retry": "^0.12.0"
+      },
+      "devDependencies": {
+        "ava": "^0.25.0",
+        "delay": "^4.1.0",
+        "xo": "^0.23.0"
+      },
+      "gitHead": "a9b5fc1e71ebc1fd5bd5926d2b1eff57512c124f",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/p-retry/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/p-retry#readme",
+      "_id": "p-retry@3.0.0",
+      "_npmVersion": "6.5.0",
+      "_nodeVersion": "10.13.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-fAB7bebxaj8nylNAsxPNkwPZ/48bXFdFnWrz0v2sV+H5BsGfVL7Ap7KgONqy7rOK4ZI1I+SU+lmettO3hM+2HQ==",
+        "shasum": "f1a09233417dd40b42a7a4a3ed0f4780f23b90d8",
+        "tarball": "https://registry.npmjs.org/p-retry/-/p-retry-3.0.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 6024,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcESWVCRA9TVsSAnZWagAArOwP/0p+mRIhK3+IVAB63YSE\n9nDYrW6Kdg/H63TIagopJ4uoWABKKy84IFZFYFndcUkTs9Sa6DRNEn2Hmyhb\nRSOC2WlNy9ZKE9ZEACUuJRW69isnDj2ORYWH6Vp59PYgMNb1EDeKGSm38+ny\n0yOhkJjmyNxAe9mT1zGlff1pEESXPfTdIHiQ/uvqAyqrCAPf63KAWbHMlFdR\nOYeIDBoBjQyAV9Sj8m9Z9f1swdSVzFfeiVgfiLL7pmB0FkGkqNPqY8xn+qGo\n9draJJlIzyuYEeYLO9MvQ9KkhwKozZ92bfGB19PFNnvuj2sPfizcFFWvk2gL\nkRprWSRp6476nGCx2Hx9deA7Vgia9pyzGjiOPFTnMfoDaVqcozTtiWER+6dE\nELEtdQz9TCMYU42Iy/N48AeuR3YuXavzWr61TN2EHSfs7xqIzCwJNRzNTeP0\n3wGW/2yG/e4e8/y+rJk6FbPavcSRbeFLlPI6CqaSJ7u8IyeaiJmTdye8OIIE\nceTCLTyrwo/ggyKMWueWE1SWt+y3jnvp5klOvAgyhk/pdVdziiEnA308WxjG\nDvk3wyfw8yPKSy+10Y4Wdt1qA6bnbyGtoRYsiYChoEOH6TimF1K/7w6mVvuR\nbve8h07DgGHkmh9083dpCVDNB3rtQFmRWgj9uqarrhnwVDjF/4OATMRcIpu8\nCXLV\r\n=ouCA\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/p-retry_3.0.0_1544627604837_0.13288153733032493"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.1": {
+      "name": "p-retry",
+      "version": "3.0.1",
+      "description": "Retry a promise-returning or async function",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/p-retry.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "keywords": [
+        "promise",
+        "retry",
+        "retries",
+        "operation",
+        "failed",
+        "rejected",
+        "try",
+        "exponential",
+        "backoff",
+        "attempt",
+        "async",
+        "await",
+        "promises",
+        "concurrently",
+        "concurrency",
+        "parallel",
+        "bluebird"
+      ],
+      "dependencies": {
+        "retry": "^0.12.0"
+      },
+      "devDependencies": {
+        "ava": "^1.1.0",
+        "delay": "^4.1.0",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "2187e87bca3d06795b34d5422c940bd99d3dd3d1",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/p-retry/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/p-retry#readme",
+      "_id": "p-retry@3.0.1",
+      "_npmVersion": "6.5.0",
+      "_nodeVersion": "10.13.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-XE6G4+YTTkT2a0UWb2kjZe8xNwf8bIbnqpc/IS/idOBVhyves0mK5OJgeocjx7q5pvX/6m23xuzVPYT1uGM73w==",
+        "shasum": "316b4c8893e2c8dc1cfa891f406c4b422bebf328",
+        "tarball": "https://registry.npmjs.org/p-retry/-/p-retry-3.0.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 6360,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcPJVRCRA9TVsSAnZWagAADW4P/3B97InLQLUYgxvfgH3B\nHyog9CWU/OzvY0f7wTuDXbG7eaCuki5652pHfW4AonUC/v9o5bSpfY67yb2w\ndXrsO+GMZZtieFsaZW+tB8U/QzvKCfvKbQkSd3pdgL3mWkYnM0wOKjVcmasO\nB4atXZoqXMzbYpnWyRzQ5hjMlC99nKJnRRMC2MUsTP1AX4swXVfbuQ3EhxPw\n9UuzNBMyNuRZdPVBCvcOySiLwpEfas8S+53OGS7JuhtlVTAUtGQAmY56wOWF\nBUy7RK7AeKAjHB6jmqRAA2J/KeJNoMj/FHOQ4gGiORUubRq6Hz79l06CqHJo\n1CQMppsJwtBw3M7Cjt6QvOCOPVxnki6ZpNn/lyVO1H85IbEyGtLGuz+ej8G2\ntgaLroEBHfCGjRf8gRjsxeZPn9TuhiSFqDNoBg6URPnEMKLRAte9Zd8iYojq\nQ7vaqPN++N1DRqWxw6IrMklSz70djK4wErKhiWdai1dieDcqcgdwFz5+AJ17\nerTmK1bHpAAXAp6xyA66P61WccgjXxopFBY25OVrgJsFQTTzCzXBk6GiVVPD\nexaAndvcxr3VO5xr/eSPab4vx/QhoIH/kkiuJ7YOWYQvAceR3/J6ZYpLzveO\nqgpN+WwKlOA+cvGLBTUBSUOUE5Mz6aPcYA7ANgVzo5bSye2xgNjKCB1byp/0\nu3IP\r\n=bb5S\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/p-retry_3.0.1_1547474257271_0.5381000574836654"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.0.0": {
+      "name": "p-retry",
+      "version": "4.0.0",
+      "description": "Retry a promise-returning or async function",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/p-retry.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd-check"
+      },
+      "keywords": [
+        "promise",
+        "retry",
+        "retries",
+        "operation",
+        "failed",
+        "rejected",
+        "try",
+        "exponential",
+        "backoff",
+        "attempt",
+        "async",
+        "await",
+        "promises",
+        "concurrently",
+        "concurrency",
+        "parallel",
+        "bluebird"
+      ],
+      "dependencies": {
+        "@types/retry": "^0.12.0",
+        "retry": "^0.12.0"
+      },
+      "devDependencies": {
+        "ava": "^1.3.1",
+        "delay": "^4.1.0",
+        "tsd-check": "^0.3.0",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "0e71c46bc994114b2fa56aa38c79e667f22f46de",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/p-retry/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/p-retry#readme",
+      "_id": "p-retry@4.0.0",
+      "_nodeVersion": "8.15.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-bMW1FwszSBsMi6DgPnDKLhAVMDhqeySD4viMI0UiKRv7cQzRS/KYhRPWjnoxSQdvunXwZYKgN10Ya6VxF9w+Og==",
+        "shasum": "56633299ac2fc9f6ecda749398330fdff632607a",
+        "tarball": "https://registry.npmjs.org/p-retry/-/p-retry-4.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 8018,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJchelwCRA9TVsSAnZWagAAUAUP/AqaZoeQYMbb0VRz5XMJ\nVdELSGP2vk1eHDYruV/UXV0kvcpi5ce11Ml1FtiBRfNLPtujN0O07KV5vNxJ\nAbCuoLyB9q4/AgLUVEtnsfoDBXQe3f/K6vn5fqcPd6QICe/mehQuHCdBma09\nkfDVxMkgqS805Jl3ZkWCIJHaKmYS+MYPk/g+//742gxEbwU3+J6sDCnsdFTi\nWBGoc9FiDi94MuiU3jVuRqBLUzVSkOgcamndYYsGPcdWI0bFgIXuGkTnXkx/\ndGMRu5HFpz4fVHgb3ObbhhlPLdcDyMMxrkFHtfhFo3hAeUi88oVXwKUGCx0e\nxsnvgYePczmzlEwL9MvW+M00suec0r4Gg+gRXMa9KleAkcWjzB/WRwErjaJh\n640MGlqpjT11NGz1NSvKqsM6uBQpS6M2o2Q6RLkZU47qrPd3RJvj+MKmq9HT\n4Ah+iutZbEQDGp4Fcq+S9q156wmc1knrWeftz0LsY3i0WpIOOTPWwMYAn6OO\nR6aNKzGV9lwcy+GaKBW4uhPRsszN67xcGBP7XR9sinGEOPxtZWkpMlYw1L5p\nyoVo/aIZArQB2YDJiOM5vZpNa5m6bpOQvle6AmDY3hdF1o+M9F/YTFZqTkhW\n2/9TsfGAPPfTozsbwYoVF0UuzpXK142V96dAtvjC2/sKJSH3Jf+9zuvE7DUm\nO8w8\r\n=sSXH\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/p-retry_4.0.0_1552279919864_0.31116028535357"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.1.0": {
+      "name": "p-retry",
+      "version": "4.1.0",
+      "description": "Retry a promise-returning or async function",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/p-retry.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "promise",
+        "retry",
+        "retries",
+        "operation",
+        "failed",
+        "rejected",
+        "try",
+        "exponential",
+        "backoff",
+        "attempt",
+        "async",
+        "await",
+        "promises",
+        "concurrently",
+        "concurrency",
+        "parallel",
+        "bluebird"
+      ],
+      "dependencies": {
+        "@types/retry": "^0.12.0",
+        "retry": "^0.12.0"
+      },
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "delay": "^4.1.0",
+        "tsd": "^0.7.1",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "9e2c0169f5e52ce2b9f08aa1ea024ed99e6c8f20",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/p-retry/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/p-retry#readme",
+      "_id": "p-retry@4.1.0",
+      "_nodeVersion": "8.15.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-oepllyG9gX1qH4Sm20YAKxg1GA7L7puhvGnTfimi31P07zSIj7SDV6YtuAx9nbJF51DES+2CIIRkXs8GKqWJxA==",
+        "shasum": "9ce7cef2069e84bf590df3b8ec18d740109338d6",
+        "tarball": "https://registry.npmjs.org/p-retry/-/p-retry-4.1.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 9071,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcoKr6CRA9TVsSAnZWagAAqIAP/AoqYWHfa3UjmQSYEQKZ\nrIZBom40lSEgovWa2RMnh8EeszSKFtEaRCxQ7/iaep4KGanURFQLhTG+A3Wy\nyM5wlZgbgniUrZauFk4xtQwqGN/rQAXMA5kUPvkOG3NY4ySrzXKqc8lOcUzP\nScaSvL1qHvdq7ihX53lC/QLVFJzRqyNvjV2DHjXirXxgC0psDAXvVvWA8TaN\n2scPs5nqV/fkPyYb7FhOlQ4N8yUQz1M+1IUmcKRGTwhmbtCTmqjwDokeuJzZ\nUew6eGHGkIGUqTQhwvFw9KDoVCtFAC1C1/cC0dEEjmCfU/91xvPio/qaW0mW\nhmxxKz3cs+Mez1RheK6zkziAuz3Wd9OXAVMzuzN6SDpioBiJhVHSkF83OZEi\ngbzMtlV624iG6QKRMmKDOXTh3KJ5Qf4lA+bwI8bfTIitYAxake77AepNlI5c\nuPu8zxXQUND6K5ywY71YDFvA6oqGysoRQuFJZsKHHFUeVJZf0hdPuEJPRVsC\nMXYiqtJu+ySa8HCklaqgk0MlbXdt5rgdfjdEwhPkqilCgDYT5BL96ar5Ndk/\nGJifIZ0a9+jYo1gBpk4GA1NLxDcDor4lmoWKOzNjQnqkRgn0G01Wv4WrII+m\njxUA5PtH29tlwlP320Cfqi+GEsq5USGxWNh/qJSe/D5+UNtoe51qV/Fmi0k5\nqXhO\r\n=FfH+\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/p-retry_4.1.0_1554033401809_0.38545075931703976"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.2.0": {
+      "name": "p-retry",
+      "version": "4.2.0",
+      "description": "Retry a promise-returning or async function",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/p-retry.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "promise",
+        "retry",
+        "retries",
+        "operation",
+        "failed",
+        "rejected",
+        "try",
+        "exponential",
+        "backoff",
+        "attempt",
+        "async",
+        "await",
+        "promises",
+        "concurrently",
+        "concurrency",
+        "parallel",
+        "bluebird"
+      ],
+      "dependencies": {
+        "@types/retry": "^0.12.0",
+        "retry": "^0.12.0"
+      },
+      "devDependencies": {
+        "ava": "^2.4.0",
+        "delay": "^4.1.0",
+        "tsd": "^0.10.0",
+        "xo": "^0.25.3"
+      },
+      "gitHead": "7cf46fe6037cd4f8303f06b7ce4bda29cc6f4010",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/p-retry/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/p-retry#readme",
+      "_id": "p-retry@4.2.0",
+      "_nodeVersion": "10.16.3",
+      "_npmVersion": "6.12.1",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-jPH38/MRh263KKcq0wBNOGFJbm+U6784RilTmHjB/HM9kH9V8WlCpVUcdOmip9cjXOh6MxZ5yk1z2SjDUJfWmA==",
+        "shasum": "ea9066c6b44f23cab4cd42f6147cdbbc6604da5d",
+        "tarball": "https://registry.npmjs.org/p-retry/-/p-retry-4.2.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 10232,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdusTnCRA9TVsSAnZWagAAy5AP/R1Cm+osSni2bNUDI3TQ\n9YajvxxcWk6tsE/6JinW3DuzeDd9qJROSGbw49aFok/HCL9Civ9z0cirBcTb\nbjvFc8tv7duxl/lxctEFcWzKh6XP4yisFBPbD/ncCTt8X2PLcV6cOYECu/lW\nzT6/q2GzggpTffR7IAV0Te0A8MIR9+G6oAxFwRrlNxanDh4F4kGcy4uEboEy\nZz0suO0b+mPs5oqlFgBWYGKmI+bQJ+1dX4clF9gPVj1RxzWot8jiLoN7oo4Y\ncebU13ptmxrVibIDjwmQWZ6gtW4NVa+V3mQGL0vt/+w5FSdIYwCPRTCeaTiT\n8NU939x9wY2+tqalqrho9Ju77Zr9pR9vn8fh96Qi+tzxRB2KQhDi8zYm+eLR\ngT5mpd1V98cGw2G2J7KCw+G4Uslbv6phADG06G6gngubJeewGrtmyBDTUdio\nk/JCk5+CEGjOxOqHiK25aXMrwdp0Tp2hlUnQS0jBNiXIFlDRNidk6bUJe52x\nqB1IZB0kq/iC/Y0gNLPlAHUneLghTXjB/5PjiIjn2ixKawchjvrkL//8Iekl\nR3RjvJm6TVwfFWeA8wtVWWk5YT/YPXwKsjHdFouJfyapTAckqyduQaSsg1I6\nO9w7rJhtTFNfdlmS4mwOSpqMwrTtKQWW4EhseOBiYw7EWZZsXAERLp12crKO\ncl0H\r\n=YYLB\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/p-retry_4.2.0_1572521190506_0.46832001284144087"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# p-retry [![Build Status](https://travis-ci.org/sindresorhus/p-retry.svg?branch=master)](https://travis-ci.org/sindresorhus/p-retry)\n\n> Retry a promise-returning or async function\n\nIt does exponential backoff and supports custom retry strategies for failed operations.\n\n\n## Install\n\n```\n$ npm install p-retry\n```\n\n\n## Usage\n\n```js\nconst pRetry = require('p-retry');\nconst fetch = require('node-fetch');\n\nconst run = async () => {\n\tconst response = await fetch('https://sindresorhus.com/unicorn');\n\n\t// Abort retrying if the resource doesn't exist\n\tif (response.status === 404) {\n\t\tthrow new pRetry.AbortError(response.statusText);\n\t}\n\n\treturn response.blob();\n};\n\n(async () => {\n\tconsole.log(await pRetry(run, {retries: 5}));\n})();\n```\n\n## API\n\n### pRetry(input, options?)\n\nReturns a `Promise` that is fulfilled when calling `input` returns a fulfilled promise. If calling `input` returns a rejected promise, `input` is called again until the maximum number of retries is reached. It then rejects with the last rejection reason.\n\nIt doesn't retry on `TypeError` as that's a user error.\n\n#### input\n\nType: `Function`\n\nReceives the current attempt number as the first argument and is expected to return a `Promise` or any value.\n\n#### options\n\nType: `object`\n\nOptions are passed to the [`retry`](https://github.com/tim-kos/node-retry#retryoperationoptions) module.\n\n##### onFailedAttempt(error)\n\nType: `Function`\n\nCallback invoked on each retry. Receives the error thrown by `input` as the first argument with properties `attemptNumber` and `retriesLeft` which indicate the current attempt number and the number of attempts left, respectively.\n\n```js\nconst run = async () => {\n\tconst response = await fetch('https://sindresorhus.com/unicorn');\n\n\tif (response.status !== 200) {\n\t\tthrow new Error(response.statusText);\n\t}\n\n\treturn response.json();\n};\n\n(async () => {\n\tconst result = await pRetry(run, {\n\t\tonFailedAttempt: error => {\n\t\t\tconsole.log(`Attempt ${error.attemptNumber} failed. There are ${error.retriesLeft} retries left.`);\n\t\t\t// 1st request => Attempt 1 failed. There are 4 retries left.\n\t\t\t// 2nd request => Attempt 2 failed. There are 3 retries left.\n\t\t\t// …\n\t\t},\n\t\tretries: 5\n\t});\n\n\tconsole.log(result);\n})();\n```\n\nThe `onFailedAttempt` function can return a promise. For example, to add a [delay](https://github.com/sindresorhus/delay):\n\n```js\nconst pRetry = require('p-retry');\nconst delay = require('delay');\n\nconst run = async () => { ... };\n\n(async () => {\n\tconst result = await pRetry(run, {\n\t\tonFailedAttempt: async error => {\n\t\t\tconsole.log('Waiting for 1 second before retrying');\n\t\t\tawait delay(1000);\n\t\t}\n\t});\n})();\n```\n\nIf the `onFailedAttempt` function throws, all retries will be aborted and the original promise will reject with the thrown error.\n\n### pRetry.AbortError(message)\n### pRetry.AbortError(error)\n\nAbort retrying and reject the promise.\n\n### message\n\nType: `string`\n\nError message.\n\n### error\n\nType: `Error`\n\nCustom error.\n\n\n## Tip\n\nYou can pass arguments to the function being retried by wrapping it in an inline arrow function:\n\n```js\nconst pRetry = require('p-retry');\n\nconst run = async emoji => {\n\t// …\n};\n\n(async () => {\n\t// Without arguments\n\tawait pRetry(run, {retries: 5});\n\n\t// With arguments\n\tawait pRetry(() => run('🦄'), {retries: 5});\n})();\n```\n\n\n## Related\n\n- [p-timeout](https://github.com/sindresorhus/p-timeout) - Timeout a promise after a specified amount of time\n- [More…](https://github.com/sindresorhus/promise-fun)\n",
+  "maintainers": [
+    {
+      "name": "sindresorhus",
+      "email": "sindresorhus@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2019-10-31T11:26:34.590Z",
+    "created": "2016-10-21T07:50:24.250Z",
+    "1.0.0": "2016-10-21T07:50:24.250Z",
+    "2.0.0": "2018-04-26T19:51:21.523Z",
+    "3.0.0": "2018-12-12T15:13:25.041Z",
+    "3.0.1": "2019-01-14T13:57:37.382Z",
+    "4.0.0": "2019-03-11T04:52:00.041Z",
+    "4.1.0": "2019-03-31T11:56:41.924Z",
+    "4.2.0": "2019-10-31T11:26:30.643Z"
+  },
+  "homepage": "https://github.com/sindresorhus/p-retry#readme",
+  "keywords": [
+    "promise",
+    "retry",
+    "retries",
+    "operation",
+    "failed",
+    "rejected",
+    "try",
+    "exponential",
+    "backoff",
+    "attempt",
+    "async",
+    "await",
+    "promises",
+    "concurrently",
+    "concurrency",
+    "parallel",
+    "bluebird"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/p-retry.git"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "bugs": {
+    "url": "https://github.com/sindresorhus/p-retry/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md",
+  "users": {
+    "rocket0191": true,
+    "johnloy": true,
+    "ash": true
+  }
+}

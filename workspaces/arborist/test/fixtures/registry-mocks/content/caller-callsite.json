@@ -1,0 +1,495 @@
+{
+  "_id": "caller-callsite",
+  "_rev": "7-86ec153af3371b790be8bec4836504de",
+  "name": "caller-callsite",
+  "description": "Get the callsite of the caller function",
+  "dist-tags": {
+    "latest": "4.1.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "caller-callsite",
+      "version": "1.0.0",
+      "description": "Get the callsite of the caller function",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/caller-callsite"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "caller",
+        "calling",
+        "module",
+        "parent",
+        "callsites",
+        "callsite",
+        "stacktrace",
+        "stack",
+        "trace",
+        "function",
+        "file"
+      ],
+      "dependencies": {
+        "callsites": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "0.0.4"
+      },
+      "gitHead": "365b9d2cd05c2481956dc95f2921a6adc35af6e3",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/caller-callsite/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/caller-callsite",
+      "_id": "caller-callsite@1.0.0",
+      "_shasum": "188f9228bf0bdf5cf36d67a89b5cf6dff00173e9",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "188f9228bf0bdf5cf36d67a89b5cf6dff00173e9",
+        "tarball": "https://registry.npmjs.org/caller-callsite/-/caller-callsite-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "caller-callsite",
+      "version": "1.0.1",
+      "description": "Get the callsite of the caller function",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/caller-callsite.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "caller",
+        "calling",
+        "module",
+        "parent",
+        "callsites",
+        "callsite",
+        "stacktrace",
+        "stack",
+        "trace",
+        "function",
+        "file"
+      ],
+      "dependencies": {
+        "callsites": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "0.0.4"
+      },
+      "gitHead": "d436c7a4ddd163baf636c9dc9d5e22a29fd1c546",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/caller-callsite/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/caller-callsite#readme",
+      "_id": "caller-callsite@1.0.1",
+      "_shasum": "f52372738266e22c1f42eec1e9160ed24cbd68fc",
+      "_from": ".",
+      "_npmVersion": "2.15.9",
+      "_nodeVersion": "4.5.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "f52372738266e22c1f42eec1e9160ed24cbd68fc",
+        "tarball": "https://registry.npmjs.org/caller-callsite/-/caller-callsite-1.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/caller-callsite-1.0.1.tgz_1472342417728_0.2670957464724779"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "caller-callsite",
+      "version": "2.0.0",
+      "description": "Get the callsite of the caller function",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/caller-callsite.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "caller",
+        "calling",
+        "module",
+        "parent",
+        "callsites",
+        "callsite",
+        "stacktrace",
+        "stack",
+        "trace",
+        "function",
+        "file"
+      ],
+      "dependencies": {
+        "callsites": "^2.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "xo": {
+        "esnext": true
+      },
+      "gitHead": "1ce43fc89a890a702f5da866ed151b14e2ff54e5",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/caller-callsite/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/caller-callsite#readme",
+      "_id": "caller-callsite@2.0.0",
+      "_shasum": "847e0fce0a223750a9a027c54b33731ad3154134",
+      "_from": ".",
+      "_npmVersion": "2.15.9",
+      "_nodeVersion": "4.5.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "847e0fce0a223750a9a027c54b33731ad3154134",
+        "tarball": "https://registry.npmjs.org/caller-callsite/-/caller-callsite-2.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/caller-callsite-2.0.0.tgz_1472345319010_0.3864558374043554"
+      },
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "caller-callsite",
+      "version": "3.0.0",
+      "description": "Get the callsite of the caller function",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/caller-callsite.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "caller",
+        "calling",
+        "module",
+        "parent",
+        "callsites",
+        "callsite",
+        "stacktrace",
+        "stack",
+        "trace",
+        "function",
+        "file"
+      ],
+      "dependencies": {
+        "callsites": "^2.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "a1e1ac9d97b097a9d39237dfb48f637cafac7c3f",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/caller-callsite/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/caller-callsite#readme",
+      "_id": "caller-callsite@3.0.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.11.1",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-/KKfFS+O210sONxwadGBiWa0SlKBOh0QcAkEpSExSw+3exLnZTOBCDsNobA+K72SZ7/U6OQfx3PXIWlJ02t0XQ==",
+        "shasum": "098183c36281310694b82c6be1ffd399211af017",
+        "tarball": "https://registry.npmjs.org/caller-callsite/-/caller-callsite-3.0.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 2752,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbCE5DCRA9TVsSAnZWagAAKdAQAJGoGs2aAk6XQoj52vyl\n8n/AYe9kaTO5dQVFAmwceozz2o566FJ9Js8H7rcA4+4ViJxzc1nntwNEkrNh\nA1XlsAzoaR5araGY95KY63WVstb5vnNPbpmt3VjbdEpABZPCPNGiFC9hhzJ/\nU18MxgEx9zsqjE6GLZCqQFdfv6OqwEHpX4IpkrqcyVH0mAAWUuwZL1ggucmh\n/f7NaSKYhADp7EWqKqKkSGyvvC9sAyhb6fEK2bl+fbQsHvsjtWY5vtfx5LIY\nOVb1A7TeyzjDx9MxHvC71wQpN9jCmJ9y+qYkDo2VZvFYxOB+cXgUXP/Oc5xB\nsU0Ms/E1NRCK1YgATqbQPbyky+pxbJYGBMqShFKkxtAVukHmVjF4pOHLEzG5\nKB7+bKqotwj9obiu14k6rSMxrgGdszLnq5b+CYF0wJ4qKHKotgJ8lVFOt3Wp\ntfD5o7yQv4fc9Oyrkv/zchP/5wOKN6JWyh7Pgon900eO8O/A3lDyP9niEMML\nNYtdKN/qh6iyQFU7FisZlpyhMjaj5CxuTQr5Dsug+xBJkYYhe44/pFi0Gbkc\nsJGWBX5u9zgFW4NvDoQr1krQ5WkmSXAt3uQHlUv4qVYNqR7NANJ2IYHa8Wf9\nvM5guFVYdn5jDZSJM1vCcsJxRYcEqkkFmqgTeCrHFRSPOC3FlYQGNt3UXTbk\n8WZb\r\n=1ZiU\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/caller-callsite_3.0.0_1527270978320_0.06904103483848645"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.0.0": {
+      "name": "caller-callsite",
+      "version": "4.0.0",
+      "description": "Get the callsite of the caller function",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/caller-callsite.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "caller",
+        "calling",
+        "module",
+        "parent",
+        "callsites",
+        "callsite",
+        "stacktrace",
+        "stack",
+        "trace",
+        "function",
+        "file"
+      ],
+      "dependencies": {
+        "callsites": "^3.1.0"
+      },
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "37b1b9b108c5f010f71c0529002fbaf296627b3e",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/caller-callsite/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/caller-callsite#readme",
+      "_id": "caller-callsite@4.0.0",
+      "_nodeVersion": "8.16.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-ZASXM0oX5XUaYErf39VMD2vxy49k2OR5YxMnqiLicyw6Rr3FeL8zzjBdqT5GlxRNwOcLDNVZ6+VbVeG1Ekx88Q==",
+        "shasum": "5e0a91e685a450fb311488dfee6a7f754ac1e8ed",
+        "tarball": "https://registry.npmjs.org/caller-callsite/-/caller-callsite-4.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 3376,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcy7X/CRA9TVsSAnZWagAAfL4P/j+JELrFtArgz6+5WYN1\nuQ3vTH79Htm7OyGDPA5ZcWFsYYb2La1qMDyHpZkJVXzU/olMDDlh8vVdzERy\nvC5N1O4pKgxcIguey6iKg5WXdCS78KXdqz5dxZOzx5Sx235TC1/Ec8C9NGiW\ngTqGeus2/WigxFcE631tvQMqUKxYtYvr2I5oqGqd0xPwi+A6xbZBPQvQxkNF\nwJIGsz0yaVkShfIL07Qx0uwdfUZa6Brmu8Cm/0AxuK8g47K7FO8U0T9CLab2\n6sf1+By9V4ZhQxlHqPeVqXrGZ7SY53oIMyf6iSjnz0KRZesbIWH56CM2pkeh\nS4WNvKJftXY7t5p27l+qu6yycYjgI9js0RtInaH0bRiz05ESzQh75a95eI2A\nBt1x4zIxJZILyssGdrijMc8GSUlzIewL3ocrvniH9IroJFJiA3EmaapBjJGC\nXCM+UIxkI8//xkEMicLbhfBrRz5kHc5NyMTwZQxwP1rFD2DZT6AxJ7TkrRLk\npcHgpMgJwSppmBz4gL/n39cIpwVxTjYCPr9xL5RfhZqxXv53Y0TUtkpBUmyR\nxyVjBE8yEafZl9OzIoO9AmLU/q7BHmObRIcFZhiyOeDp7kS0DMDBfz71uCbI\nBXTHyf+1Gvy+E7MOoVbz4jjMCevsTL8R3ktCDDvmLR95Uxhaa2/MZc7xirF5\n4fdp\r\n=Qoy/\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/caller-callsite_4.0.0_1556854270743_0.9746273336361679"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.1.0": {
+      "name": "caller-callsite",
+      "version": "4.1.0",
+      "description": "Get the callsite of the caller function",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/caller-callsite.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "caller",
+        "calling",
+        "module",
+        "parent",
+        "callsites",
+        "callsite",
+        "stacktrace",
+        "stack",
+        "trace",
+        "function",
+        "file"
+      ],
+      "dependencies": {
+        "callsites": "^3.1.0"
+      },
+      "devDependencies": {
+        "ava": "^2.2.0",
+        "tsd": "^0.7.4",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "6e7da58bf17f9deed697326f9ef3cf8fac4d801a",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/caller-callsite/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/caller-callsite#readme",
+      "_id": "caller-callsite@4.1.0",
+      "_nodeVersion": "10.16.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-99nnnGlJexTc41xwQTr+mWl15OI5PPczUJzM4YRE7QjkefMKCXGa5gfQjCOuVrD+1TjI/fevIDHg2nz3iYN5Ig==",
+        "shasum": "3e33cb1d910e7b09332d59a3503b9af7462f7295",
+        "tarball": "https://registry.npmjs.org/caller-callsite/-/caller-callsite-4.1.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 5026,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdJG92CRA9TVsSAnZWagAAqqAP/1XlMfI30yCbJLtDBfUd\n6e3/ZdJnIYgARv43Qe0haRQy8kWRFpymUkVT1xuBTGlaaoL4kkeblmZ9lkpC\nTChK1yDxK1Iern5auEgiqrDXDayPFAIbd3gzbr5teGqnCc1qXm2p57A9WXO+\n+64sVNvzUdSMjGr0dZdDSQyzZflJsZKPI59aj0JqSSEWAlPEAd827omab360\nfZqec/ZNOmIcWQW48UID1EMXa1iIuqHbhK/sTa/xWarHL6zRmzkQszKZ92JO\nycGM0I4W3El/23H24+FebTC77KjSaRMP7J7K8saSnsN1cquXVio2qbacaPl5\nZdtE/veKgR4fEzu28gJCsBaFm23Ar+p3c3XnCD/jmDbOQFHQwDanei55FT2G\nE4MA2kVUp1IhAdPlh75rOKk3Z59jXHXJGCZQOV5yK9zVJ+JPmPrHyy8RJAar\naCXu0GwFqNRkUVDgZ/nFIL2orAG3lExi3CZx+9O1zkq9WmpsAjmWHKi6dPE+\n77It20oEuNigp1/bHa0BTlCnf8d2Q/723NPZdfIa21yxibkfXB1uKER/xiKk\nmrYpx+Zfo2FjPxSl6K5xMWu47DBAl8yI6/oVmJqOH6cokuoOkHWXsHnVhodu\nT8gIaVRB5SVB5EWKtHZK9S/IQ8OPSvbtrkFDBAkpr0YXwyOpsQYkhXLUgo1R\nytx3\r\n=oLul\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/caller-callsite_4.1.0_1562668917443_0.6392308800701345"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# caller-callsite [![Build Status](https://travis-ci.org/sindresorhus/caller-callsite.svg?branch=master)](https://travis-ci.org/sindresorhus/caller-callsite)\n\n> Get the [callsite](https://github.com/sindresorhus/callsites#api) of the caller function\n\n\n## Install\n\n```\n$ npm install caller-callsite\n```\n\n\n## Usage\n\n```js\n// foo.js\nconst callerCallsite = require('caller-callsite');\n\nmodule.exports = () => {\n\tconsole.log(callerCallsite().getFileName());\n\t//=> '/Users/sindresorhus/dev/unicorn/bar.js'\n}\n```\n\n```js\n// bar.js\nconst foo = require('./foo');\nfoo();\n```\n\n\n## API\n\n### callerCallsite(options?)\n\nReturns a [`callsite`](https://github.com/sindresorhus/callsites#api) object.\n\n#### options\n\nType: `object`\n\n##### depth\n\nType: `number`<br>\nDefault: `0`\n\nThe callsite depth, meaning how many levels we follow back on the stack trace.\n\nFor example:\n\n```js\n// foo.js\nconst callerCallsite = require('caller-callsite');\n\nmodule.exports = () => {\n\tconsole.log(callerCallsite().getFileName());\n\t//=> '/Users/sindresorhus/dev/unicorn/foobar.js'\n\tconsole.log(callerCallsite({depth: 1}).getFileName());\n\t//=> '/Users/sindresorhus/dev/unicorn/bar.js'\n\tconsole.log(callerCallsite({depth: 2}).getFileName());\n\t//=> '/Users/sindresorhus/dev/unicorn/foo.js'\n}\n```\n\n```js\n// bar.js\nconst foo = require('./foo');\n\nmodule.exports = () => {\n\tfoo();\n}\n```\n\n```js\n// foobar.js\nconst bar = require('./bar');\nbar();\n```\n",
+  "maintainers": [
+    {
+      "name": "sindresorhus",
+      "email": "sindresorhus@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2019-07-09T10:42:00.392Z",
+    "created": "2015-01-24T16:19:16.821Z",
+    "1.0.0": "2015-01-24T16:19:16.821Z",
+    "1.0.1": "2016-08-28T00:00:18.776Z",
+    "2.0.0": "2016-08-28T00:48:40.553Z",
+    "3.0.0": "2018-05-25T17:56:18.760Z",
+    "4.0.0": "2019-05-03T03:31:10.949Z",
+    "4.1.0": "2019-07-09T10:41:57.587Z"
+  },
+  "homepage": "https://github.com/sindresorhus/caller-callsite#readme",
+  "keywords": [
+    "caller",
+    "calling",
+    "module",
+    "parent",
+    "callsites",
+    "callsite",
+    "stacktrace",
+    "stack",
+    "trace",
+    "function",
+    "file"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/caller-callsite.git"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "bugs": {
+    "url": "https://github.com/sindresorhus/caller-callsite/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md"
+}

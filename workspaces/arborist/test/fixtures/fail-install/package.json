@@ -1,0 +1,8 @@
+{
+  "name": "@isaacs/testing-fail-install",
+  "version": "1.0.0",
+  "scripts": {
+    "install": "exit 1"
+  },
+  "license": "ISC"
+}

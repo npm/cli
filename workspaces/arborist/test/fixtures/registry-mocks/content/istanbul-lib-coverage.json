@@ -1,0 +1,1827 @@
+{
+  "_id": "istanbul-lib-coverage",
+  "_rev": "38-955e2039c8af2314996746721d691e46",
+  "name": "istanbul-lib-coverage",
+  "description": "Data library for istanbul coverage objects",
+  "dist-tags": {
+    "latest": "3.0.0"
+  },
+  "versions": {
+    "1.0.0-alpha.0": {
+      "name": "istanbul-lib-coverage",
+      "version": "1.0.0-alpha.0",
+      "description": "Data library for istanbul coverage objects",
+      "author": {
+        "name": "Krishnan Anantheswaran",
+        "email": "kananthmail-github@yahoo.com"
+      },
+      "main": "index.js",
+      "scripts": {
+        "fast": "mocha test/",
+        "pretest": "jshint index.js lib/ test/",
+        "test": "istanbul cover --include-all-sources --print=both _mocha --  test/",
+        "posttest": "istanbul check-coverage --statements 95 --branches 80"
+      },
+      "devDependencies": {
+        "chai": "^3.0.0",
+        "coveralls": "^2.11.4",
+        "istanbul": "^0.4.0",
+        "jshint": "^2.8.0",
+        "mocha": "^2.2.5"
+      },
+      "karmaDeps": {
+        "browserify-istanbul": "^0.2.1",
+        "karma": "^0.13.10",
+        "karma-browserify": "^4.2.1",
+        "karma-chrome-launcher": "^0.2.0",
+        "karma-coverage": "^0.4.2",
+        "karma-mocha": "^0.2.0",
+        "karma-phantomjs-launcher": "^0.2.0",
+        "phantomjs": "^1.9.17"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/istanbuljs/istanbul-lib-coverage.git"
+      },
+      "keywords": [
+        "istanbul",
+        "coverage",
+        "data"
+      ],
+      "license": "BSD-3-Clause",
+      "bugs": {
+        "url": "https://github.com/istanbuljs/istanbul-lib-coverage/issues"
+      },
+      "homepage": "https://github.com/istanbuljs/istanbul-lib-coverage",
+      "gitHead": "855d0be7bc0c0553fbb7adbb2396fd47f4b92978",
+      "_id": "istanbul-lib-coverage@1.0.0-alpha.0",
+      "_shasum": "dafa263562875bd8c90a9d06c8eb3f0258881653",
+      "_from": ".",
+      "_npmVersion": "2.12.0",
+      "_nodeVersion": "0.10.26",
+      "_npmUser": {
+        "name": "gotwarlost",
+        "email": "kananthmail-github@yahoo.com"
+      },
+      "maintainers": [
+        {
+          "name": "gotwarlost",
+          "email": "kananthmail-github@yahoo.com"
+        }
+      ],
+      "dist": {
+        "shasum": "dafa263562875bd8c90a9d06c8eb3f0258881653",
+        "tarball": "https://registry.npmjs.org/istanbul-lib-coverage/-/istanbul-lib-coverage-1.0.0-alpha.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.0-alpha.1": {
+      "name": "istanbul-lib-coverage",
+      "version": "1.0.0-alpha.1",
+      "description": "Data library for istanbul coverage objects",
+      "author": {
+        "name": "Krishnan Anantheswaran",
+        "email": "kananthmail-github@yahoo.com"
+      },
+      "main": "index.js",
+      "scripts": {
+        "fast": "mocha test/",
+        "pretest": "jshint index.js lib/ test/",
+        "test": "istanbul cover --include-all-sources --print=both _mocha --  test/",
+        "posttest": "istanbul check-coverage --statements 95 --branches 80"
+      },
+      "devDependencies": {
+        "chai": "^3.0.0",
+        "coveralls": "^2.11.4",
+        "istanbul": "^0.4.0",
+        "jshint": "^2.8.0",
+        "mocha": "^2.2.5"
+      },
+      "karmaDeps": {
+        "browserify-istanbul": "^0.2.1",
+        "karma": "^0.13.10",
+        "karma-browserify": "^4.2.1",
+        "karma-chrome-launcher": "^0.2.0",
+        "karma-coverage": "^0.4.2",
+        "karma-mocha": "^0.2.0",
+        "karma-phantomjs-launcher": "^0.2.0",
+        "phantomjs": "^1.9.17"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:istanbuljs/istanbul-lib-coverage.git"
+      },
+      "keywords": [
+        "istanbul",
+        "coverage",
+        "data"
+      ],
+      "license": "BSD-3-Clause",
+      "bugs": {
+        "url": "https://github.com/istanbuljs/istanbul-lib-coverage/issues"
+      },
+      "homepage": "https://github.com/istanbuljs/istanbul-lib-coverage",
+      "gitHead": "07f10ed8d5e14cd9022d72f99e619f30aff87c43",
+      "_id": "istanbul-lib-coverage@1.0.0-alpha.1",
+      "_shasum": "135face1ab5c494c61c08fe4145685863a5a0278",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "gotwarlost",
+        "email": "kananthmail-github@yahoo.com"
+      },
+      "maintainers": [
+        {
+          "name": "gotwarlost",
+          "email": "kananthmail-github@yahoo.com"
+        }
+      ],
+      "dist": {
+        "shasum": "135face1ab5c494c61c08fe4145685863a5a0278",
+        "tarball": "https://registry.npmjs.org/istanbul-lib-coverage/-/istanbul-lib-coverage-1.0.0-alpha.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.0-alpha.2": {
+      "name": "istanbul-lib-coverage",
+      "version": "1.0.0-alpha.2",
+      "description": "Data library for istanbul coverage objects",
+      "author": {
+        "name": "Krishnan Anantheswaran",
+        "email": "kananthmail-github@yahoo.com"
+      },
+      "main": "index.js",
+      "scripts": {
+        "fast": "mocha test/",
+        "pretest": "jshint index.js lib/ test/",
+        "test": "istanbul cover --include-all-sources --print=both _mocha --  test/",
+        "posttest": "istanbul check-coverage --statements 95 --branches 80"
+      },
+      "devDependencies": {
+        "chai": "^3.0.0",
+        "coveralls": "^2.11.4",
+        "istanbul": "^0.4.0",
+        "jshint": "^2.8.0",
+        "mocha": "^2.2.5"
+      },
+      "karmaDeps": {
+        "browserify-istanbul": "^0.2.1",
+        "karma": "^0.13.10",
+        "karma-browserify": "^4.2.1",
+        "karma-chrome-launcher": "^0.2.0",
+        "karma-coverage": "^0.4.2",
+        "karma-mocha": "^0.2.0",
+        "karma-phantomjs-launcher": "^0.2.0",
+        "phantomjs": "^1.9.17"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/istanbuljs/istanbul-lib-coverage.git"
+      },
+      "keywords": [
+        "istanbul",
+        "coverage",
+        "data"
+      ],
+      "license": "BSD-3-Clause",
+      "bugs": {
+        "url": "https://github.com/istanbuljs/istanbul-lib-coverage/issues"
+      },
+      "homepage": "https://github.com/istanbuljs/istanbul-lib-coverage",
+      "gitHead": "f6b75d1c738d090555edb943c260437cd03fdb1a",
+      "_id": "istanbul-lib-coverage@1.0.0-alpha.2",
+      "_shasum": "e03ca3f605f01f8aeb419e7bae2140e3b0fbdf7c",
+      "_from": ".",
+      "_npmVersion": "2.12.0",
+      "_nodeVersion": "0.10.26",
+      "_npmUser": {
+        "name": "gotwarlost",
+        "email": "kananthmail-github@yahoo.com"
+      },
+      "maintainers": [
+        {
+          "name": "gotwarlost",
+          "email": "kananthmail-github@yahoo.com"
+        }
+      ],
+      "dist": {
+        "shasum": "e03ca3f605f01f8aeb419e7bae2140e3b0fbdf7c",
+        "tarball": "https://registry.npmjs.org/istanbul-lib-coverage/-/istanbul-lib-coverage-1.0.0-alpha.2.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.0-alpha.3": {
+      "name": "istanbul-lib-coverage",
+      "version": "1.0.0-alpha.3",
+      "description": "Data library for istanbul coverage objects",
+      "author": {
+        "name": "Krishnan Anantheswaran",
+        "email": "kananthmail-github@yahoo.com"
+      },
+      "main": "index.js",
+      "scripts": {
+        "fast": "mocha test/",
+        "pretest": "jshint index.js lib/ test/",
+        "test": "istanbul cover -x 'docs/**' --include-all-sources --print=both _mocha --  test/",
+        "posttest": "istanbul check-coverage --statements 95 --branches 80"
+      },
+      "devDependencies": {
+        "chai": "^3.0.0",
+        "coveralls": "^2.11.4",
+        "istanbul": "^0.4.0",
+        "jshint": "^2.8.0",
+        "mocha": "^2.2.5"
+      },
+      "karmaDeps": {
+        "browserify-istanbul": "^0.2.1",
+        "karma": "^0.13.10",
+        "karma-browserify": "^4.2.1",
+        "karma-chrome-launcher": "^0.2.0",
+        "karma-coverage": "^0.4.2",
+        "karma-mocha": "^0.2.0",
+        "karma-phantomjs-launcher": "^0.2.0",
+        "phantomjs": "^1.9.17"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/istanbuljs/istanbul-lib-coverage.git"
+      },
+      "keywords": [
+        "istanbul",
+        "coverage",
+        "data"
+      ],
+      "license": "BSD-3-Clause",
+      "bugs": {
+        "url": "https://github.com/istanbuljs/istanbul-lib-coverage/issues"
+      },
+      "homepage": "https://github.com/istanbuljs/istanbul-lib-coverage",
+      "gitHead": "5e871f8b4ba3a3fc65c6d8ba7c1d87f5d087ccc9",
+      "_id": "istanbul-lib-coverage@1.0.0-alpha.3",
+      "_shasum": "8f810f636eb8cb11ec1ff636a807a4980e28a2ef",
+      "_from": ".",
+      "_npmVersion": "2.12.0",
+      "_nodeVersion": "0.10.26",
+      "_npmUser": {
+        "name": "gotwarlost",
+        "email": "kananthmail-github@yahoo.com"
+      },
+      "maintainers": [
+        {
+          "name": "gotwarlost",
+          "email": "kananthmail-github@yahoo.com"
+        }
+      ],
+      "dist": {
+        "shasum": "8f810f636eb8cb11ec1ff636a807a4980e28a2ef",
+        "tarball": "https://registry.npmjs.org/istanbul-lib-coverage/-/istanbul-lib-coverage-1.0.0-alpha.3.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.0-alpha.4": {
+      "name": "istanbul-lib-coverage",
+      "version": "1.0.0-alpha.4",
+      "description": "Data library for istanbul coverage objects",
+      "author": {
+        "name": "Krishnan Anantheswaran",
+        "email": "kananthmail-github@yahoo.com"
+      },
+      "main": "index.js",
+      "scripts": {
+        "fast": "mocha test/",
+        "pretest": "jshint index.js lib/ test/",
+        "test": "istanbul cover -x 'docs/**' --include-all-sources --print=both _mocha --  test/",
+        "posttest": "istanbul check-coverage --statements 95 --branches 80"
+      },
+      "devDependencies": {
+        "chai": "^3.0.0",
+        "coveralls": "^2.11.4",
+        "istanbul": "^0.4.0",
+        "jshint": "^2.8.0",
+        "mocha": "^2.2.5"
+      },
+      "karmaDeps": {
+        "browserify-istanbul": "^0.2.1",
+        "karma": "^0.13.10",
+        "karma-browserify": "^4.2.1",
+        "karma-chrome-launcher": "^0.2.0",
+        "karma-coverage": "^0.4.2",
+        "karma-mocha": "^0.2.0",
+        "karma-phantomjs-launcher": "^0.2.0",
+        "phantomjs": "^1.9.17"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/istanbuljs/istanbul-lib-coverage.git"
+      },
+      "keywords": [
+        "istanbul",
+        "coverage",
+        "data"
+      ],
+      "license": "BSD-3-Clause",
+      "bugs": {
+        "url": "https://github.com/istanbuljs/istanbul-lib-coverage/issues"
+      },
+      "homepage": "https://github.com/istanbuljs/istanbul-lib-coverage",
+      "gitHead": "20dbe19ac6d5afa1ca5cbcb151ef85473995975c",
+      "_id": "istanbul-lib-coverage@1.0.0-alpha.4",
+      "_shasum": "626f7fd9cf809b6e3bf7ed42a809f8e0b64ae976",
+      "_from": ".",
+      "_npmVersion": "2.12.0",
+      "_nodeVersion": "0.10.26",
+      "_npmUser": {
+        "name": "gotwarlost",
+        "email": "kananthmail-github@yahoo.com"
+      },
+      "maintainers": [
+        {
+          "name": "gotwarlost",
+          "email": "kananthmail-github@yahoo.com"
+        }
+      ],
+      "dist": {
+        "shasum": "626f7fd9cf809b6e3bf7ed42a809f8e0b64ae976",
+        "tarball": "https://registry.npmjs.org/istanbul-lib-coverage/-/istanbul-lib-coverage-1.0.0-alpha.4.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "istanbul-lib-coverage",
+      "version": "1.0.0",
+      "description": "Data library for istanbul coverage objects",
+      "author": {
+        "name": "Krishnan Anantheswaran",
+        "email": "kananthmail-github@yahoo.com"
+      },
+      "main": "index.js",
+      "scripts": {
+        "fast": "mocha test/",
+        "pretest": "jshint index.js lib/ test/",
+        "test": "istanbul cover -x 'docs/**' --include-all-sources --print=both _mocha --  test/",
+        "posttest": "istanbul check-coverage --statements 95 --branches 80",
+        "release": "standard-version"
+      },
+      "devDependencies": {
+        "chai": "^3.0.0",
+        "coveralls": "^2.11.4",
+        "istanbul": "^0.4.0",
+        "jshint": "^2.8.0",
+        "mocha": "^2.2.5",
+        "standard-version": "^2.4.0"
+      },
+      "karmaDeps": {
+        "browserify-istanbul": "^0.2.1",
+        "karma": "^0.13.10",
+        "karma-browserify": "^4.2.1",
+        "karma-chrome-launcher": "^0.2.0",
+        "karma-coverage": "^0.4.2",
+        "karma-mocha": "^0.2.0",
+        "karma-phantomjs-launcher": "^0.2.0",
+        "phantomjs": "^1.9.17"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/istanbuljs/istanbul-lib-coverage.git"
+      },
+      "keywords": [
+        "istanbul",
+        "coverage",
+        "data"
+      ],
+      "license": "BSD-3-Clause",
+      "bugs": {
+        "url": "https://github.com/istanbuljs/istanbul-lib-coverage/issues"
+      },
+      "homepage": "https://github.com/istanbuljs/istanbul-lib-coverage",
+      "gitHead": "6c9c65ed81ce7c0e8b4efa8a4f5d96f02349c5ea",
+      "_id": "istanbul-lib-coverage@1.0.0",
+      "_shasum": "c3f9b6d226da12424064cce87fce0fb57fdfa7a2",
+      "_from": ".",
+      "_npmVersion": "3.10.6",
+      "_nodeVersion": "5.1.0",
+      "_npmUser": {
+        "name": "bcoe",
+        "email": "ben@npmjs.com"
+      },
+      "dist": {
+        "shasum": "c3f9b6d226da12424064cce87fce0fb57fdfa7a2",
+        "tarball": "https://registry.npmjs.org/istanbul-lib-coverage/-/istanbul-lib-coverage-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "bcoe",
+          "email": "ben@npmjs.com"
+        },
+        {
+          "name": "gotwarlost",
+          "email": "kananthmail-github@yahoo.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/istanbul-lib-coverage-1.0.0.tgz_1470979978048_0.6411592594813555"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "istanbul-lib-coverage",
+      "version": "1.0.1",
+      "description": "Data library for istanbul coverage objects",
+      "author": {
+        "name": "Krishnan Anantheswaran",
+        "email": "kananthmail-github@yahoo.com"
+      },
+      "main": "index.js",
+      "scripts": {
+        "fast": "mocha test/",
+        "pretest": "jshint index.js lib/ test/",
+        "test": "istanbul cover -x 'docs/**' --include-all-sources --print=both _mocha --  test/",
+        "posttest": "istanbul check-coverage --statements 95 --branches 80",
+        "release": "standard-version"
+      },
+      "devDependencies": {
+        "chai": "^3.0.0",
+        "coveralls": "^2.11.4",
+        "istanbul": "^0.4.0",
+        "jshint": "^2.8.0",
+        "mocha": "^2.2.5",
+        "standard-version": "^2.4.0"
+      },
+      "karmaDeps": {
+        "browserify-istanbul": "^0.2.1",
+        "karma": "^0.13.10",
+        "karma-browserify": "^4.2.1",
+        "karma-chrome-launcher": "^0.2.0",
+        "karma-coverage": "^0.4.2",
+        "karma-mocha": "^0.2.0",
+        "karma-phantomjs-launcher": "^0.2.0",
+        "phantomjs": "^1.9.17"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/istanbuljs/istanbul-lib-coverage.git"
+      },
+      "keywords": [
+        "istanbul",
+        "coverage",
+        "data"
+      ],
+      "license": "BSD-3-Clause",
+      "bugs": {
+        "url": "https://github.com/istanbuljs/istanbul-lib-coverage/issues"
+      },
+      "homepage": "https://github.com/istanbuljs/istanbul-lib-coverage",
+      "gitHead": "57090278796644e1c46ac6db42001910bfc0c988",
+      "_id": "istanbul-lib-coverage@1.0.1",
+      "_shasum": "f263efb519c051c5f1f3343034fc40e7b43ff212",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.9.4",
+      "_npmUser": {
+        "name": "bcoe",
+        "email": "ben@npmjs.com"
+      },
+      "dist": {
+        "shasum": "f263efb519c051c5f1f3343034fc40e7b43ff212",
+        "tarball": "https://registry.npmjs.org/istanbul-lib-coverage/-/istanbul-lib-coverage-1.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "bcoe",
+          "email": "ben@npmjs.com"
+        },
+        {
+          "name": "gotwarlost",
+          "email": "kananthmail-github@yahoo.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/istanbul-lib-coverage-1.0.1.tgz_1484715899663_0.3293158900924027"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "istanbul-lib-coverage",
+      "version": "1.0.2",
+      "description": "Data library for istanbul coverage objects",
+      "author": {
+        "name": "Krishnan Anantheswaran",
+        "email": "kananthmail-github@yahoo.com"
+      },
+      "main": "index.js",
+      "scripts": {
+        "pretest": "jshint index.js lib/ test/",
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "chai": "^3.0.0",
+        "jshint": "^2.8.0",
+        "mocha": "^3.2.0"
+      },
+      "karmaDeps": {
+        "browserify-istanbul": "^0.2.1",
+        "karma": "^0.13.10",
+        "karma-browserify": "^4.2.1",
+        "karma-chrome-launcher": "^0.2.0",
+        "karma-coverage": "^0.4.2",
+        "karma-mocha": "^0.2.0",
+        "karma-phantomjs-launcher": "^0.2.0",
+        "phantomjs": "^1.9.17"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/istanbuljs/istanbul-lib-coverage.git"
+      },
+      "keywords": [
+        "istanbul",
+        "coverage",
+        "data"
+      ],
+      "license": "BSD-3-Clause",
+      "bugs": {
+        "url": "https://github.com/istanbuljs/istanbul-lib-coverage/issues"
+      },
+      "homepage": "https://github.com/istanbuljs/istanbul-lib-coverage",
+      "_id": "istanbul-lib-coverage@1.0.2",
+      "_shasum": "87a0c015b6910651cb3b184814dfb339337e25e1",
+      "_from": ".",
+      "_npmVersion": "4.4.1",
+      "_nodeVersion": "6.9.5",
+      "_npmUser": {
+        "name": "bcoe",
+        "email": "ben@npmjs.com"
+      },
+      "dist": {
+        "shasum": "87a0c015b6910651cb3b184814dfb339337e25e1",
+        "tarball": "https://registry.npmjs.org/istanbul-lib-coverage/-/istanbul-lib-coverage-1.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "bcoe",
+          "email": "ben@npmjs.com"
+        },
+        {
+          "name": "gotwarlost",
+          "email": "kananthmail-github@yahoo.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/istanbul-lib-coverage-1.0.2.tgz_1490593881228_0.5689495480619371"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "istanbul-lib-coverage",
+      "version": "1.1.0",
+      "description": "Data library for istanbul coverage objects",
+      "author": {
+        "name": "Krishnan Anantheswaran",
+        "email": "kananthmail-github@yahoo.com"
+      },
+      "main": "index.js",
+      "files": [
+        "lib",
+        "index.js"
+      ],
+      "scripts": {
+        "pretest": "jshint index.js lib/ test/",
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "chai": "^3.0.0",
+        "jshint": "^2.8.0",
+        "mocha": "^3.2.0"
+      },
+      "karmaDeps": {
+        "browserify-istanbul": "^0.2.1",
+        "karma": "^0.13.10",
+        "karma-browserify": "^4.2.1",
+        "karma-chrome-launcher": "^0.2.0",
+        "karma-coverage": "^0.4.2",
+        "karma-mocha": "^0.2.0",
+        "karma-phantomjs-launcher": "^0.2.0",
+        "phantomjs": "^1.9.17"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/istanbuljs/istanbul-lib-coverage.git"
+      },
+      "keywords": [
+        "istanbul",
+        "coverage",
+        "data"
+      ],
+      "license": "BSD-3-Clause",
+      "bugs": {
+        "url": "https://github.com/istanbuljs/istanbul-lib-coverage/issues"
+      },
+      "homepage": "https://github.com/istanbuljs/istanbul-lib-coverage",
+      "_id": "istanbul-lib-coverage@1.1.0",
+      "_shasum": "caca19decaef3525b5d6331d701f3f3b7ad48528",
+      "_from": ".",
+      "_npmVersion": "4.2.0",
+      "_nodeVersion": "7.1.0",
+      "_npmUser": {
+        "name": "bcoe",
+        "email": "ben@npmjs.com"
+      },
+      "dist": {
+        "shasum": "caca19decaef3525b5d6331d701f3f3b7ad48528",
+        "tarball": "https://registry.npmjs.org/istanbul-lib-coverage/-/istanbul-lib-coverage-1.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "bcoe",
+          "email": "ben@npmjs.com"
+        },
+        {
+          "name": "gotwarlost",
+          "email": "kananthmail-github@yahoo.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/istanbul-lib-coverage-1.1.0.tgz_1493442004461_0.4158393524121493"
+      },
+      "directories": {}
+    },
+    "1.1.1": {
+      "name": "istanbul-lib-coverage",
+      "version": "1.1.1",
+      "description": "Data library for istanbul coverage objects",
+      "author": {
+        "name": "Krishnan Anantheswaran",
+        "email": "kananthmail-github@yahoo.com"
+      },
+      "main": "index.js",
+      "files": [
+        "lib",
+        "index.js"
+      ],
+      "scripts": {
+        "pretest": "jshint index.js lib/ test/",
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "chai": "^3.0.0",
+        "jshint": "^2.8.0",
+        "mocha": "^3.2.0"
+      },
+      "karmaDeps": {
+        "browserify-istanbul": "^0.2.1",
+        "karma": "^0.13.10",
+        "karma-browserify": "^4.2.1",
+        "karma-chrome-launcher": "^0.2.0",
+        "karma-coverage": "^0.4.2",
+        "karma-mocha": "^0.2.0",
+        "karma-phantomjs-launcher": "^0.2.0",
+        "phantomjs": "^1.9.17"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/istanbuljs/istanbuljs.git"
+      },
+      "keywords": [
+        "istanbul",
+        "coverage",
+        "data"
+      ],
+      "license": "BSD-3-Clause",
+      "bugs": {
+        "url": "https://github.com/istanbuljs/istanbuljs/issues"
+      },
+      "homepage": "https://github.com/istanbuljs/istanbuljs",
+      "_id": "istanbul-lib-coverage@1.1.1",
+      "_npmVersion": "5.0.0",
+      "_nodeVersion": "7.1.0",
+      "_npmUser": {
+        "name": "bcoe",
+        "email": "ben@npmjs.com"
+      },
+      "dist": {
+        "integrity": "sha512-0+1vDkmzxqJIn5rcoEqapSB4DmPxE31EtI2dF2aCkV5esN9EWHxZ0dwgDClivMXJqE7zaYQxq30hj5L0nlTN5Q==",
+        "shasum": "73bfb998885299415c93d38a3e9adf784a77a9da",
+        "tarball": "https://registry.npmjs.org/istanbul-lib-coverage/-/istanbul-lib-coverage-1.1.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "bcoe",
+          "email": "ben@npmjs.com"
+        },
+        {
+          "name": "gotwarlost",
+          "email": "kananthmail-github@yahoo.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/istanbul-lib-coverage-1.1.1.tgz_1495919577863_0.9000066665466875"
+      },
+      "directories": {}
+    },
+    "1.1.2": {
+      "name": "istanbul-lib-coverage",
+      "version": "1.1.2",
+      "description": "Data library for istanbul coverage objects",
+      "author": {
+        "name": "Krishnan Anantheswaran",
+        "email": "kananthmail-github@yahoo.com"
+      },
+      "main": "index.js",
+      "files": [
+        "lib",
+        "index.js"
+      ],
+      "scripts": {
+        "pretest": "jshint index.js lib/ test/",
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "chai": "^3.0.0",
+        "jshint": "^2.8.0",
+        "mocha": "^3.2.0"
+      },
+      "karmaDeps": {
+        "browserify-istanbul": "^0.2.1",
+        "karma": "^0.13.10",
+        "karma-browserify": "^4.2.1",
+        "karma-chrome-launcher": "^0.2.0",
+        "karma-coverage": "^0.4.2",
+        "karma-mocha": "^0.2.0",
+        "karma-phantomjs-launcher": "^0.2.0",
+        "phantomjs": "^1.9.17"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/istanbuljs/istanbuljs.git"
+      },
+      "keywords": [
+        "istanbul",
+        "coverage",
+        "data"
+      ],
+      "license": "BSD-3-Clause",
+      "bugs": {
+        "url": "https://github.com/istanbuljs/istanbuljs/issues"
+      },
+      "homepage": "https://github.com/istanbuljs/istanbuljs",
+      "_id": "istanbul-lib-coverage@1.1.2",
+      "_npmVersion": "5.4.2",
+      "_nodeVersion": "8.8.1",
+      "_npmUser": {
+        "name": "bcoe",
+        "email": "ben@npmjs.com"
+      },
+      "dist": {
+        "integrity": "sha512-tZYA0v5A7qBSsOzcebJJ/z3lk3oSzH62puG78DbBA1+zupipX2CakDyiPV3pOb8He+jBwVimuwB0dTnh38hX0w==",
+        "shasum": "4113c8ff6b7a40a1ef7350b01016331f63afde14",
+        "tarball": "https://registry.npmjs.org/istanbul-lib-coverage/-/istanbul-lib-coverage-1.1.2.tgz",
+        "fileCount": 7,
+        "unpackedSize": 20981
+      },
+      "maintainers": [
+        {
+          "name": "bcoe",
+          "email": "ben@npmjs.com"
+        },
+        {
+          "name": "gotwarlost",
+          "email": "kananthmail-github@yahoo.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/istanbul-lib-coverage_1.1.2_1518500918722_0.7581515467977746"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.2.0": {
+      "name": "istanbul-lib-coverage",
+      "version": "1.2.0",
+      "description": "Data library for istanbul coverage objects",
+      "author": {
+        "name": "Krishnan Anantheswaran",
+        "email": "kananthmail-github@yahoo.com"
+      },
+      "main": "index.js",
+      "files": [
+        "lib",
+        "index.js"
+      ],
+      "scripts": {
+        "pretest": "jshint index.js lib/ test/",
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "chai": "^3.0.0",
+        "jshint": "^2.8.0",
+        "mocha": "^3.2.0"
+      },
+      "karmaDeps": {
+        "browserify-istanbul": "^0.2.1",
+        "karma": "^0.13.10",
+        "karma-browserify": "^4.2.1",
+        "karma-chrome-launcher": "^0.2.0",
+        "karma-coverage": "^0.4.2",
+        "karma-mocha": "^0.2.0",
+        "karma-phantomjs-launcher": "^0.2.0",
+        "phantomjs": "^1.9.17"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/istanbuljs/istanbuljs.git"
+      },
+      "keywords": [
+        "istanbul",
+        "coverage",
+        "data"
+      ],
+      "license": "BSD-3-Clause",
+      "bugs": {
+        "url": "https://github.com/istanbuljs/istanbuljs/issues"
+      },
+      "homepage": "https://github.com/istanbuljs/istanbuljs",
+      "_id": "istanbul-lib-coverage@1.2.0",
+      "_npmVersion": "5.4.2",
+      "_nodeVersion": "8.8.1",
+      "_npmUser": {
+        "name": "bcoe",
+        "email": "ben@npmjs.com"
+      },
+      "dist": {
+        "integrity": "sha512-GvgM/uXRwm+gLlvkWHTjDAvwynZkL9ns15calTrmhGgowlwJBbWMYzWbKqE2DT6JDP1AFXKa+Zi0EkqNCUqY0A==",
+        "shasum": "f7d8f2e42b97e37fe796114cb0f9d68b5e3a4341",
+        "tarball": "https://registry.npmjs.org/istanbul-lib-coverage/-/istanbul-lib-coverage-1.2.0.tgz",
+        "fileCount": 7,
+        "unpackedSize": 21474
+      },
+      "maintainers": [
+        {
+          "name": "bcoe",
+          "email": "ben@npmjs.com"
+        },
+        {
+          "name": "gotwarlost",
+          "email": "kananthmail-github@yahoo.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/istanbul-lib-coverage_1.2.0_1520188975940_0.3040547742493618"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.0": {
+      "name": "istanbul-lib-coverage",
+      "version": "2.0.0",
+      "description": "Data library for istanbul coverage objects",
+      "author": {
+        "name": "Krishnan Anantheswaran",
+        "email": "kananthmail-github@yahoo.com"
+      },
+      "main": "index.js",
+      "files": [
+        "lib",
+        "index.js"
+      ],
+      "scripts": {
+        "pretest": "jshint index.js lib/ test/",
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "chai": "^4.1.2",
+        "jshint": "^2.9.5",
+        "mocha": "^5.2.0"
+      },
+      "karmaDeps": {
+        "browserify-istanbul": "^0.2.1",
+        "karma": "^0.13.10",
+        "karma-browserify": "^4.2.1",
+        "karma-chrome-launcher": "^0.2.0",
+        "karma-coverage": "^0.4.2",
+        "karma-mocha": "^0.2.0",
+        "karma-phantomjs-launcher": "^0.2.0",
+        "phantomjs": "^1.9.17"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/istanbuljs/istanbuljs.git"
+      },
+      "keywords": [
+        "istanbul",
+        "coverage",
+        "data"
+      ],
+      "license": "BSD-3-Clause",
+      "bugs": {
+        "url": "https://github.com/istanbuljs/istanbuljs/issues"
+      },
+      "homepage": "https://github.com/istanbuljs/istanbuljs",
+      "readme": "istanbul-lib-coverage\n---------------------\n\n[![Greenkeeper badge](https://badges.greenkeeper.io/istanbuljs/istanbul-lib-coverage.svg)](https://greenkeeper.io/)\n[![Build Status](https://travis-ci.org/istanbuljs/istanbul-lib-coverage.svg?branch=master)](https://travis-ci.org/istanbuljs/istanbul-lib-coverage)\n\nAn API that provides a read-only view of coverage information with the ability\nto merge and summarize coverage info.\n\nSupersedes `object-utils` and `collector` from the v0 istanbul API.\n\nSee the docs for the full API.\n\n```js\n\nvar libCoverage = require('istanbul-lib-coverage');\nvar map = libCoverage.createCoverageMap(globalCoverageVar);\nvar summary = libCoverage.createCoverageSummary();\n\n// merge another coverage map into the one we created\nmap.merge(otherCoverageMap);\n\n// inspect and summarize all file coverage objects in the map\nmap.files().forEach(function (f) {\n    var fc = map.fileCoverageFor(f),\n    s = fc.toSummary();\n    summary.merge(s);\n});\n\nconsole.log('Global summary', summary);\n\n```\n\n",
+      "readmeFilename": "README.md",
+      "_id": "istanbul-lib-coverage@2.0.0",
+      "_npmVersion": "6.1.0",
+      "_nodeVersion": "10.2.1",
+      "_npmUser": {
+        "name": "bcoe",
+        "email": "ben@npmjs.com"
+      },
+      "dist": {
+        "integrity": "sha512-yMSw5xLIbdaxiVXHk3amfNM2WeBxLrwH/BCyZ9HvA/fylwziAIJOG2rKqWyLqEJqwKT725vxxqidv+SyynnGAA==",
+        "shasum": "905e71212052ffb34f2eb008102230bff03940b5",
+        "tarball": "https://registry.npmjs.org/istanbul-lib-coverage/-/istanbul-lib-coverage-2.0.0.tgz",
+        "fileCount": 7,
+        "unpackedSize": 21980,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbFy/ACRA9TVsSAnZWagAAGkUP/i4q953LLTwWsYQnRB6A\nw6hYXzE6ySHmZP5AKYbmp6ZblewOBbFLWrVDC++V1O+sMDn9dDqeFY5Rbdq6\nGGxIxeZBVVcLPC2VKb8H9L2jXooOGMM/vWA29QVsqkjhu21IKASFxNcAuiRG\nStY0RBTKovy89C6fYvvf+JRGdtAQdCqy6Sc4NM05tZUm6rgf3MB39wz5aP3+\nVLdL5US9rXpkIDddtWXvUDVW7dpPQ5QrvKn56lFrpuGLi50EU3jPxqALxTZz\nQmsKrfdsvxb+g3H9/0lBLB2uimABJh2Ovb39dimma+y+V97eF7zAO8Ve3SLO\nTLVunHvleOCKP42B0pKhBIgJiRa+3pZI934gRU8CGZfPucKBAYz4Pha+PFu2\nr9NJKuYvUB5x3YTGKvJNcNVSGKKJ/7DjpcsK+SEV3FiX4gkJ6SOp+UdnjNh3\n7W9ZklYqix4lYfYyFS8gL5RIufxQo23Jj5l+w0JiH9yvLjnWvJOoY/OdQsMg\nUeFEV9nwA3kXbvSGS3TyJvuB/WAZKaN4Arsrwki/ccBqgrVDwWRKXSebG+g9\nx92+k1VeG8uARnMjvQr/WbcUASjo/bfSXKIblDXcDJoS3QoqkDwnHFeUO8LC\nGGLH9PrWgwCFlydfkqPst9nMJVOWZ9/fGWeFCeHyYc50H0NdooXzzOWOo9Vn\nK9X6\r\n=B3+g\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "bcoe",
+          "email": "ben@npmjs.com"
+        },
+        {
+          "name": "gotwarlost",
+          "email": "kananthmail-github@yahoo.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/istanbul-lib-coverage_2.0.0_1528246207476_0.1652042678388077"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.1": {
+      "name": "istanbul-lib-coverage",
+      "version": "2.0.1",
+      "description": "Data library for istanbul coverage objects",
+      "author": {
+        "name": "Krishnan Anantheswaran",
+        "email": "kananthmail-github@yahoo.com"
+      },
+      "main": "index.js",
+      "files": [
+        "lib",
+        "index.js"
+      ],
+      "scripts": {
+        "pretest": "jshint index.js lib/ test/",
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "chai": "^4.1.2",
+        "jshint": "^2.9.5",
+        "mocha": "^5.2.0"
+      },
+      "karmaDeps": {
+        "browserify-istanbul": "^0.2.1",
+        "karma": "^0.13.10",
+        "karma-browserify": "^4.2.1",
+        "karma-chrome-launcher": "^0.2.0",
+        "karma-coverage": "^0.4.2",
+        "karma-mocha": "^0.2.0",
+        "karma-phantomjs-launcher": "^0.2.0",
+        "phantomjs": "^1.9.17"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/istanbuljs/istanbuljs.git"
+      },
+      "keywords": [
+        "istanbul",
+        "coverage",
+        "data"
+      ],
+      "license": "BSD-3-Clause",
+      "bugs": {
+        "url": "https://github.com/istanbuljs/istanbuljs/issues"
+      },
+      "homepage": "https://github.com/istanbuljs/istanbuljs",
+      "engines": {
+        "node": ">=6"
+      },
+      "_id": "istanbul-lib-coverage@2.0.1",
+      "_npmVersion": "6.1.0",
+      "_nodeVersion": "10.2.1",
+      "_npmUser": {
+        "name": "bcoe",
+        "email": "ben@npmjs.com"
+      },
+      "dist": {
+        "integrity": "sha512-nPvSZsVlbG9aLhZYaC3Oi1gT/tpyo3Yt5fNyf6NmcKIayz4VV/txxJFFKAK/gU4dcNn8ehsanBbVHVl0+amOLA==",
+        "shasum": "2aee0e073ad8c5f6a0b00e0dfbf52b4667472eda",
+        "tarball": "https://registry.npmjs.org/istanbul-lib-coverage/-/istanbul-lib-coverage-2.0.1.tgz",
+        "fileCount": 7,
+        "unpackedSize": 22238,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbQQ2zCRA9TVsSAnZWagAAJr4P/j1gsgBJA6JMwoyS4uQY\nweElVY26pbofiZeUrJnDlElNydJJtHsOLFGtTIpLeNr4mKSocJFpeOgNXE/v\n3hl7+BNaBAsuxbpDVmGK5MWiNfyNLXm3SpK6/0vHabqjT0B3/LJubVeLqI0X\nlnqXngUKwQk+FmXmMjZAhwoEfbZRnCoP6VHKWQG92jWRszJTKRfaQpS4U+Zt\nUxNdh8/DvPaGKxDqzCjsz+cEsVrQGRynJlJkO70q1MvqklCZ/A+3638jSaP9\n4Z/fcvWhLMhrDTe+WUblnd8IzKncw8rgtSL7cioiepnbFB8jQQOCtIc3zFLz\naBcJqsEhK7wur3o7zuQxADPJ+21MYOn+YdA6uoEjBK6JGGLoruyaRk9A3QJj\neolGYTwfVP78cK/qk/X57uZ3X2GJKuYuqteBfb9lauZ/kAnU2apoYPZ42ZfZ\nnFRf5Qc6pyIPUznIIWVcNRFEOitsTsbfWT8wSoPJ33Yj/aIMvOM0aN1RXwue\nw+5itLvpwyIdZ45IB6UzYD0QuQn7kiQexIvelhaM4vjVsx3Wp9svU2H4Pxed\ngiswlHaC24COgcfDHhkHF3vPitVvL2LqJi824IZO7MEuDWpiUHw+ZLcHWLcL\nAUZDFNElinc0GUfDVVdkktmYuIEW2Gn3tpmSOVPANcEzeS2iTVMcAyD5N0kx\n+aF8\r\n=RnrI\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "bcoe",
+          "email": "ben@npmjs.com"
+        },
+        {
+          "name": "gotwarlost",
+          "email": "kananthmail-github@yahoo.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/istanbul-lib-coverage_2.0.1_1530990003756_0.7448326320615257"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.2.1": {
+      "name": "istanbul-lib-coverage",
+      "version": "1.2.1",
+      "description": "Data library for istanbul coverage objects",
+      "author": {
+        "name": "Krishnan Anantheswaran",
+        "email": "kananthmail-github@yahoo.com"
+      },
+      "main": "index.js",
+      "scripts": {
+        "pretest": "jshint index.js lib/ test/",
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "chai": "^3.0.0",
+        "jshint": "^2.8.0",
+        "mocha": "^3.2.0"
+      },
+      "karmaDeps": {
+        "browserify-istanbul": "^0.2.1",
+        "karma": "^0.13.10",
+        "karma-browserify": "^4.2.1",
+        "karma-chrome-launcher": "^0.2.0",
+        "karma-coverage": "^0.4.2",
+        "karma-mocha": "^0.2.0",
+        "karma-phantomjs-launcher": "^0.2.0",
+        "phantomjs": "^1.9.17"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/istanbuljs/istanbuljs.git"
+      },
+      "keywords": [
+        "istanbul",
+        "coverage",
+        "data"
+      ],
+      "license": "BSD-3-Clause",
+      "bugs": {
+        "url": "https://github.com/istanbuljs/istanbuljs/issues"
+      },
+      "homepage": "https://github.com/istanbuljs/istanbuljs",
+      "_id": "istanbul-lib-coverage@1.2.1",
+      "_npmVersion": "6.2.0",
+      "_nodeVersion": "10.9.0",
+      "_npmUser": {
+        "name": "coreyfarrell",
+        "email": "git@cfware.com"
+      },
+      "dist": {
+        "integrity": "sha512-PzITeunAgyGbtY1ibVIUiV679EFChHjoMNRibEIobvmrCRaIgwLxNucOSimtNWUhEib/oO7QY2imD75JVgCJWQ==",
+        "shasum": "ccf7edcd0a0bb9b8f729feeb0930470f9af664f0",
+        "tarball": "https://registry.npmjs.org/istanbul-lib-coverage/-/istanbul-lib-coverage-1.2.1.tgz",
+        "fileCount": 7,
+        "unpackedSize": 21843,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbkFiJCRA9TVsSAnZWagAAejkQAIoJIKMlnnggdYh/hgDm\nTGdT8JLj7bpr6hIr+tzDCrKHhY6eQvIKZuwykWtejx7oBx+jV9BPnJZdtsZy\nPhQAv6InsZ1W3DEq6iQrdEnEM9oXCggj9RGw54+IPz3eeVmn4ikZim4vagJP\nJY583PvdJ+Yc1j9zX8OwpZk//piX23LE2Nb+U5pSDgENO4iVk4+4+kEgtB/H\naAfrYc1Z6HPpDIyr5rc6Co9/eLW2dZsyWvzQ+Raryr7unEpVa4jZK9HO0TBD\nsCLBzB5MBQ21uMU8fBvGsSXX1xQCJ0cyLfS1Ei4FMB1fWl2df4e3P+fzDV70\nP5D/RdhXrrM6DMp9aXUciV3X1iHSqo/Wh/9azvR0ET1XJCHct+hRFvL6zW8w\nesMdOhjlqry+yKpnAgghxkDSy3UphrLo4n7RLu+7TPvhCzbQ4akjXiLpkERs\ny+Yj6xKmTO3ClULCHhtKeJ2QphF/OOzfTHyw8q0LDcfSU8jE1oNnDQ2jA9zJ\nchGb69YORGfNkIsjfWPIMKjT9sJZuu3nnDlh6qnxoHh7c6FhyomrBjk2vmBJ\nEt9r3NQ4QfRFfnP3V8DFGWDbaY3/UIusarzoPC564By6p/ODrVq+/g1m7pzq\n8W8te/SlQsfRrn7YgEojGUaP6tAhTBw5OgKcqCbOdV4f2Iea/rvOaq63OGhv\nCVN9\r\n=yhvw\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "ben@npmjs.com",
+          "name": "bcoe"
+        },
+        {
+          "email": "git@cfware.com",
+          "name": "coreyfarrell"
+        },
+        {
+          "email": "kananthmail-github@yahoo.com",
+          "name": "gotwarlost"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/istanbul-lib-coverage_1.2.1_1536186504721_0.4740742607637287"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.2": {
+      "name": "istanbul-lib-coverage",
+      "version": "2.0.2",
+      "description": "Data library for istanbul coverage objects",
+      "author": {
+        "name": "Krishnan Anantheswaran",
+        "email": "kananthmail-github@yahoo.com"
+      },
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "chai": "^4.1.2",
+        "mocha": "^5.2.0"
+      },
+      "karmaDeps": {
+        "browserify-istanbul": "^0.2.1",
+        "karma": "^0.13.10",
+        "karma-browserify": "^4.2.1",
+        "karma-chrome-launcher": "^0.2.0",
+        "karma-coverage": "^0.4.2",
+        "karma-mocha": "^0.2.0",
+        "karma-phantomjs-launcher": "^0.2.0",
+        "phantomjs": "^1.9.17"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/istanbuljs/istanbuljs.git"
+      },
+      "keywords": [
+        "istanbul",
+        "coverage",
+        "data"
+      ],
+      "license": "BSD-3-Clause",
+      "bugs": {
+        "url": "https://github.com/istanbuljs/istanbuljs/issues"
+      },
+      "homepage": "https://github.com/istanbuljs/istanbuljs",
+      "engines": {
+        "node": ">=6"
+      },
+      "readme": "istanbul-lib-coverage\n---------------------\n\n[![Greenkeeper badge](https://badges.greenkeeper.io/istanbuljs/istanbul-lib-coverage.svg)](https://greenkeeper.io/)\n[![Build Status](https://travis-ci.org/istanbuljs/istanbul-lib-coverage.svg?branch=master)](https://travis-ci.org/istanbuljs/istanbul-lib-coverage)\n\nAn API that provides a read-only view of coverage information with the ability\nto merge and summarize coverage info.\n\nSupersedes `object-utils` and `collector` from the v0 istanbul API.\n\nSee the docs for the full API.\n\n```js\n\nvar libCoverage = require('istanbul-lib-coverage');\nvar map = libCoverage.createCoverageMap(globalCoverageVar);\nvar summary = libCoverage.createCoverageSummary();\n\n// merge another coverage map into the one we created\nmap.merge(otherCoverageMap);\n\n// inspect and summarize all file coverage objects in the map\nmap.files().forEach(function (f) {\n    var fc = map.fileCoverageFor(f),\n    s = fc.toSummary();\n    summary.merge(s);\n});\n\nconsole.log('Global summary', summary);\n\n```\n\n",
+      "readmeFilename": "README.md",
+      "_id": "istanbul-lib-coverage@2.0.2",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "11.5.0",
+      "_npmUser": {
+        "name": "bcoe",
+        "email": "ben@npmjs.com"
+      },
+      "dist": {
+        "integrity": "sha512-4CsY730KHy12ya/YNKubrMlb7EZZVsEPhXntyRY/Cbs7HN5HdznLbI4UbvIGHgocxHx3VkGe7l6IN1lipetuGg==",
+        "shasum": "d5db9a7a4bb8fdbd62ec746226385987b73a8f43",
+        "tarball": "https://registry.npmjs.org/istanbul-lib-coverage/-/istanbul-lib-coverage-2.0.2.tgz",
+        "fileCount": 7,
+        "unpackedSize": 22500,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcIXvcCRA9TVsSAnZWagAAUfcP/2qD2CJzskX1W0VZjpVj\n6X1eZ7R1m0IgJaustfjYkXhMnKAVnVIaBQwbbVbxa72YNtLzEepkWlfNoNLH\n3CRlwE4CK62zD61UdycHAlaMnjEvR89Vs8i7xc32nmnvz5ZzKNKWcqsSBBzK\nrM2yaXWwBoNumF4omxzZWvMbSvDH7ILNXk4rGt0zwDb5BxMXLpiYK2NRLqQX\nJfdXwdZSNW3oA4pkVT2TIJawqjavcH2h99TqAefeXSBnkJdaIsdbf47dqUC6\n8uj4FLiGE3zNwRDV6L7AHq2+HuZPAKq2uMgR7aRIz3wBJeT/6AR9j+t/2NBt\nW+uirsRomvHmxmCsTd5E5z/XcKgmqWH4dJuxLIR+sgszSxtpitHsJV5l4Ux+\njUpce4rG6NZ/EChm0Tul0z4RGmoZEBaaWDaGwtGdEtJx4LGWXwzE0PU8ratC\nzb9DUeSAeZo0SrI9hCPA2yn7pf9a+2vP8bESVxHPi/d40ZiX8EM4b0EzyArb\nXZTGI6Oo0pPSARZESQGkDTWeDpT9zQGzRgEzIAhyL7fhjmTCpcdBNqLw3E5N\nxP2RfJVb6P1knb/sQ3O2P6L3tHAhZDvJjZjr1/zWKAHPUHcGPbgQJ1+gNchl\nZYQTF/TdroZWMk12I2b48sLLBj6hV4cMfST+WXAH+Ham2djOkTRInZxH1Ziy\nB0jZ\r\n=XKqQ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "ben@npmjs.com",
+          "name": "bcoe"
+        },
+        {
+          "email": "git@cfware.com",
+          "name": "coreyfarrell"
+        },
+        {
+          "email": "kananthmail-github@yahoo.com",
+          "name": "gotwarlost"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/istanbul-lib-coverage_2.0.2_1545698267201_0.5929793883065033"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.3": {
+      "name": "istanbul-lib-coverage",
+      "version": "2.0.3",
+      "description": "Data library for istanbul coverage objects",
+      "author": {
+        "name": "Krishnan Anantheswaran",
+        "email": "kananthmail-github@yahoo.com"
+      },
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha"
+      },
+      "karmaDeps": {
+        "browserify-istanbul": "^0.2.1",
+        "karma": "^0.13.10",
+        "karma-browserify": "^4.2.1",
+        "karma-chrome-launcher": "^0.2.0",
+        "karma-coverage": "^0.4.2",
+        "karma-mocha": "^0.2.0",
+        "karma-phantomjs-launcher": "^0.2.0",
+        "phantomjs": "^1.9.17"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/istanbuljs/istanbuljs.git"
+      },
+      "keywords": [
+        "istanbul",
+        "coverage",
+        "data"
+      ],
+      "license": "BSD-3-Clause",
+      "bugs": {
+        "url": "https://github.com/istanbuljs/istanbuljs/issues"
+      },
+      "homepage": "https://github.com/istanbuljs/istanbuljs",
+      "engines": {
+        "node": ">=6"
+      },
+      "gitHead": "7875defdc3c3640787ac5d83700246de119e8b83",
+      "_id": "istanbul-lib-coverage@2.0.3",
+      "_nodeVersion": "10.14.2",
+      "_npmVersion": "lerna/3.10.5/node@v10.14.2+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-dKWuzRGCs4G+67VfW9pBFFz2Jpi4vSp/k7zBcJ888ofV5Mi1g5CUML5GvMvV6u9Cjybftu+E8Cgp+k0dI1E5lw==",
+        "shasum": "0b891e5ad42312c2b9488554f603795f9a2211ba",
+        "tarball": "https://registry.npmjs.org/istanbul-lib-coverage/-/istanbul-lib-coverage-2.0.3.tgz",
+        "fileCount": 7,
+        "unpackedSize": 22685,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcS8iQCRA9TVsSAnZWagAAwW0P+wRGQyKmSB7hQECntErV\n/2hJtZHbgxJgxDKaK9Zo/yZOGlawsF1eDIoUfQAQNjgV8dKtufCFdIRPATih\noJW69rDGeIWu4BxjOQBUso1l1Xde12Hj8NBp6u+Q/3bLktTk+zyuQOxV5wu5\nuQXBjRfyOFObTU3rN68J3EQn4YXGJUX0PexMvMYLYoKTJ5fhOI5IoiJrAoEU\nnV6xs5NPp7uEpjaDkyqQzjNhqmufu1VIWmwCerTvn4b/xTe9grln5zmmPeiq\nK1vIx2vhtkGzWQEsk4mQgJdtH0y4RsQPhXPDm7LXuv6YrwlCQGNxczaNQ5eY\nq00GTMhdlQ0FSFSls4SiUDhFubUVb3vo9HVK4XIXgrOdzwPB4kAYMpolIgOT\n5UYraVr8+QMRxQKHL12rBAPz41SCc9pMZXxnc5JaPNJO+tlC5GvEbGoNZzjA\nDhJBb88g3CEBAV5ZwSWApY9gIBmijTzw6Ae/2mbYvLvdJqFwWTAIZwH42cRB\nQWeQfvR20ijfVWn64ODcdQ/3OFXHdB8/UZr5Rxe4lk/SRzMEZDlAa4gLVJK8\n8a64pcoXwrba6tFYJzCgp8egJQkFNv3RKWoMASnbqlWG+Z5W5+rERfWYPmiP\no0J4oWTNurcBH0Kmu+xY+9JPnSxM1rw1W+hspQHRlayxAyffF+Ng1oBVwWQo\n1IKg\r\n=uejN\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "ben@npmjs.com",
+          "name": "bcoe"
+        },
+        {
+          "email": "git@cfware.com",
+          "name": "coreyfarrell"
+        },
+        {
+          "email": "kananthmail-github@yahoo.com",
+          "name": "gotwarlost"
+        }
+      ],
+      "_npmUser": {
+        "name": "coreyfarrell",
+        "email": "git@cfware.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/istanbul-lib-coverage_2.0.3_1548470414656_0.9945214635152335"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.4": {
+      "name": "istanbul-lib-coverage",
+      "version": "2.0.4",
+      "description": "Data library for istanbul coverage objects",
+      "author": {
+        "name": "Krishnan Anantheswaran",
+        "email": "kananthmail-github@yahoo.com"
+      },
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha"
+      },
+      "karmaDeps": {
+        "browserify-istanbul": "^0.2.1",
+        "karma": "^0.13.10",
+        "karma-browserify": "^4.2.1",
+        "karma-chrome-launcher": "^0.2.0",
+        "karma-coverage": "^0.4.2",
+        "karma-mocha": "^0.2.0",
+        "karma-phantomjs-launcher": "^0.2.0",
+        "phantomjs": "^1.9.17"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/istanbuljs/istanbuljs.git"
+      },
+      "keywords": [
+        "istanbul",
+        "coverage",
+        "data"
+      ],
+      "license": "BSD-3-Clause",
+      "bugs": {
+        "url": "https://github.com/istanbuljs/istanbuljs/issues"
+      },
+      "homepage": "https://istanbul.js.org/",
+      "engines": {
+        "node": ">=6"
+      },
+      "gitHead": "c81b051d83217947dfd97d8d06532bd5013e98c3",
+      "_id": "istanbul-lib-coverage@2.0.4",
+      "_nodeVersion": "10.15.3",
+      "_npmVersion": "lerna/3.13.0/node@v10.15.3+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-LXTBICkMARVgo579kWDm8SqfB6nvSDKNqIOBEjmJRnL04JvoMHCYGWaMddQnseJYtkEuEvO/sIcOxPLk9gERug==",
+        "shasum": "927a354005d99dd43a24607bb8b33fd4e9aca1ad",
+        "tarball": "https://registry.npmjs.org/istanbul-lib-coverage/-/istanbul-lib-coverage-2.0.4.tgz",
+        "fileCount": 7,
+        "unpackedSize": 22492,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJchwfrCRA9TVsSAnZWagAABfQQAIoEWa0PpRv003hogoHU\n9nEgdZDryOE7696GxmR/bwtlat98vaAhv5FgT7uR6a4hfKEtQ3e1bnozd93N\ntI50kDpxA4eYf2/G55RcITG27v82xvKQBp1drnGURMwNecABkd5PKNlPrJfR\nptfFF18WR3lpLaPHB010bE7MltdRsGA9zrUnLRId75dJCd74ypl8G1LEjqSi\nWCvYDbl3cV6dM2kHLNT0K2JV5KPT6HoFkY1S0fSJErCUU0aFmRvTs7yeEo1R\n0QT325FQDu3IB+1BV5IpahckcZJriY0vsitZIFrzoXQFrdtjTuZpp0x5zh3k\n4p4Pn0dJjUE7Du7TLTiqQ9pUKPWPmXvcVZg5/WRQedIinlx7/7/SOS+ZTYxK\nntDRruENWyMea40F3V/Q9oS7SFXL88krAHh9hZwe+qxGC4YxEIKn10QLElJQ\nvP2cf7rtfawJswx8MSid1+6/ceVwOFppydT+JwO6aDF/agyZjyuttUgKzxI2\nKjfDZefJOUhwbdXyVwiQ8tmrdLjlkN+G1gq1cEMVXWERrmlWShr7CKWdQne9\na5gZLFdiNiHByaay01tLyLX5tW2GpQEV13/SVW5+kcaUL8nefOvX+16l91E2\nYxDS2+4nyjDOKlB4uhly/mJ907qK3QynKUwxgq2pB1JVTC5JqJflkpEc810p\nl5lR\r\n=tBP0\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "ben@npmjs.com",
+          "name": "bcoe"
+        },
+        {
+          "email": "git@cfware.com",
+          "name": "coreyfarrell"
+        },
+        {
+          "email": "kananthmail-github@yahoo.com",
+          "name": "gotwarlost"
+        }
+      ],
+      "_npmUser": {
+        "name": "coreyfarrell",
+        "email": "git@cfware.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/istanbul-lib-coverage_2.0.4_1552353258474_0.45758133091216036"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.5": {
+      "name": "istanbul-lib-coverage",
+      "version": "2.0.5",
+      "description": "Data library for istanbul coverage objects",
+      "author": {
+        "name": "Krishnan Anantheswaran",
+        "email": "kananthmail-github@yahoo.com"
+      },
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha"
+      },
+      "karmaDeps": {
+        "browserify-istanbul": "^0.2.1",
+        "karma": "^0.13.10",
+        "karma-browserify": "^4.2.1",
+        "karma-chrome-launcher": "^0.2.0",
+        "karma-coverage": "^0.4.2",
+        "karma-mocha": "^0.2.0",
+        "karma-phantomjs-launcher": "^0.2.0",
+        "phantomjs": "^1.9.17"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/istanbuljs/istanbuljs.git"
+      },
+      "keywords": [
+        "istanbul",
+        "coverage",
+        "data"
+      ],
+      "license": "BSD-3-Clause",
+      "bugs": {
+        "url": "https://github.com/istanbuljs/istanbuljs/issues"
+      },
+      "homepage": "https://istanbul.js.org/",
+      "engines": {
+        "node": ">=6"
+      },
+      "gitHead": "90e60cc47833bb780680f916488ca24f0be36ca2",
+      "_id": "istanbul-lib-coverage@2.0.5",
+      "_nodeVersion": "12.0.0",
+      "_npmVersion": "lerna/3.13.3/node@v12.0.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-8aXznuEPCJvGnMSRft4udDRDtb1V3pkQkMMI5LI+6HuQz5oQ4J2UFn1H82raA3qJtyOLkkwVqICBQkjnGtn5mA==",
+        "shasum": "675f0ab69503fad4b1d849f736baaca803344f49",
+        "tarball": "https://registry.npmjs.org/istanbul-lib-coverage/-/istanbul-lib-coverage-2.0.5.tgz",
+        "fileCount": 7,
+        "unpackedSize": 22673,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcwMq7CRA9TVsSAnZWagAAxokP/jApkCIsTUYEs90ClcJ9\nc20hMTsNEysOJ5lJlNTXffPzkL4dNRUvgZK5lAy516pYFFP1QYgtBGyPMuew\nY1ANjROVBQvHCHFdnoSN21sATyspeYJZF+fhPKUt1z4P/PqEFs05rOxrkbvk\nDJG1z1aZIgypdgWYQGkuW4u1kEzAwUqfMe4InQZu02sfqPo32e0zSBxXDunP\nU7TlXvbU28kJS0OyyMuPlphyUDDgFearZVtmxLFHNK87DFGb7jQhFINXl2xp\ncDPD5C3M0mf3/nx3WyBOARgohBFqFP3xNe87Zly3mDxhfCy40meIdDlsoQ+z\nIqtsGhuXLfXxRFpluqvYJIWUDsVrp7zRY1fNSpcQJlalF5qh4twkI9vVpa/Y\ng3+xJU6peBIozaOdzMZ38zaZjpHSEbabPu0eXIFpnxz+3mQ3WX8VK21OqkuZ\nvVN5s7Vu0jGfXXRI3thGneRcrJqPf+k/PFZ15nNB2UDOmYpjquNx8ERbBQy6\nQCrn5CbRIvfrpiT6l0/zJ2s6UoLVsVxru+niukDXdtsJ/dQoVuggLhi9os3L\nJo6Pz5GPR8ftYN+wohXw9OgI12QBXiYxD0xm9GnABdvsO95EV0f5N09vLQ4i\nCo2FvcSxjWXe6bMpLU4tAtcYGw8mx4adiGMmOIyG5fWo8UFxr9YWNleL/+J9\nhcm1\r\n=8H4N\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "ben@npmjs.com",
+          "name": "bcoe"
+        },
+        {
+          "email": "git@cfware.com",
+          "name": "coreyfarrell"
+        },
+        {
+          "email": "kananthmail-github@yahoo.com",
+          "name": "gotwarlost"
+        }
+      ],
+      "_npmUser": {
+        "name": "coreyfarrell",
+        "email": "git@cfware.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/istanbul-lib-coverage_2.0.5_1556138682964_0.3841440213018934"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.0-alpha.0": {
+      "name": "istanbul-lib-coverage",
+      "version": "3.0.0-alpha.0",
+      "description": "Data library for istanbul coverage objects",
+      "author": {
+        "name": "Krishnan Anantheswaran",
+        "email": "kananthmail-github@yahoo.com"
+      },
+      "main": "index.js",
+      "scripts": {
+        "test": "nyc --nycrc-path=../../monorepo-per-package-nycrc.json mocha"
+      },
+      "devDependencies": {
+        "chai": "^4.2.0",
+        "mocha": "^6.1.4",
+        "nyc": "^14.1.1"
+      },
+      "karmaDeps": {
+        "browserify-istanbul": "^0.2.1",
+        "karma": "^0.13.10",
+        "karma-browserify": "^4.2.1",
+        "karma-chrome-launcher": "^0.2.0",
+        "karma-coverage": "^0.4.2",
+        "karma-mocha": "^0.2.0",
+        "karma-phantomjs-launcher": "^0.2.0",
+        "phantomjs": "^1.9.17"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/istanbuljs/istanbuljs.git"
+      },
+      "keywords": [
+        "istanbul",
+        "coverage",
+        "data"
+      ],
+      "license": "BSD-3-Clause",
+      "bugs": {
+        "url": "https://github.com/istanbuljs/istanbuljs/issues"
+      },
+      "homepage": "https://istanbul.js.org/",
+      "engines": {
+        "node": ">=8"
+      },
+      "gitHead": "2e885073a9398806c9b8763dd39418398182ca34",
+      "readme": "## istanbul-lib-coverage\n\n[![Greenkeeper badge](https://badges.greenkeeper.io/istanbuljs/istanbul-lib-coverage.svg)](https://greenkeeper.io/)\n[![Build Status](https://travis-ci.org/istanbuljs/istanbul-lib-coverage.svg?branch=master)](https://travis-ci.org/istanbuljs/istanbul-lib-coverage)\n\nAn API that provides a read-only view of coverage information with the ability\nto merge and summarize coverage info.\n\nSupersedes `object-utils` and `collector` from the v0 istanbul API.\n\nSee the docs for the full API.\n\n```js\nvar libCoverage = require('istanbul-lib-coverage');\nvar map = libCoverage.createCoverageMap(globalCoverageVar);\nvar summary = libCoverage.createCoverageSummary();\n\n// merge another coverage map into the one we created\nmap.merge(otherCoverageMap);\n\n// inspect and summarize all file coverage objects in the map\nmap.files().forEach(function(f) {\n    var fc = map.fileCoverageFor(f),\n        s = fc.toSummary();\n    summary.merge(s);\n});\n\nconsole.log('Global summary', summary);\n```\n",
+      "readmeFilename": "README.md",
+      "_id": "istanbul-lib-coverage@3.0.0-alpha.0",
+      "_nodeVersion": "12.3.1",
+      "_npmVersion": "lerna/3.15.0/node@v12.3.1+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-7pLWpPpyWvxnzr3wusriL3qmdopuN2f7AElw0bBJ2gjK0X/oJHPBRfhIi5wCSh5JTf+obtw+iRrIEDOyH5gzfQ==",
+        "shasum": "9bb40dc055a740a31a00b29a09b7c3e9a5a8af61",
+        "tarball": "https://registry.npmjs.org/istanbul-lib-coverage/-/istanbul-lib-coverage-3.0.0-alpha.0.tgz",
+        "fileCount": 7,
+        "unpackedSize": 22795,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdCifBCRA9TVsSAnZWagAAcSYQAJTLLP0JY57PWHwJEmN3\nmdcFYA4ISQGbJuC9LTq+dtwo+h02BuVGpgmTMZODVxqu/QyT3AyqAiYqO2Ie\nebV7p/B9RghBVPxVi+dzSrpvU7c1KRMPky75go8ADKEHNyFuslQIJXojvJRw\nZ7+X5D4Q6P7TJP7Tm7o5+8TvdQJ8pOWpl/avsQPe8kGsFgneWwACP7RgCK0V\nv17ZpCTuLX/B2yiT5TZa5QOMGZKWvxkQ4MMPqzqAZ/WaUEqP3hLLZqFGgwid\nT2FVwaV96Ipne/30ocqT3uZdVlsg0a4Fx5aVKpqRRYAqmU+UiO6Z5TfAw9hp\nDJNfzOZlnYCCuVESeWseqb6T3HQjh3Kzor6n0X4JmNyx5kbnrF/5nA0BIA/5\ndQ0Ns9IOsnj/iKje/pk7tcShZQWTI9SNl7TnMBrJjDk88xCsubRfzyMw4i2y\n2D8AVl8TvvZ0K2TqFBDfZ8ufh7AotuVIfpZ26w/lNPqzxFLt5a+Hxt0nPIY3\nXf1oPER/xx7LX/rBRWbs/m0f6F8LxKEo4mpg6/gw1qXMUXokeWcBkQJKE2Ji\nPZdKxkOIUZMVUqeB5mlWPxKTxAG9QEM2Cf8pxR6AmNctbq2KcopgBFEYpw4n\nwsQBkNaxcZqDRUElu43vp63Qo2UW2F0Zzlr1T1ej2HRTSpvS2hcTGpqzwMwh\ne3xG\r\n=ImB9\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "ben@npmjs.com",
+          "name": "bcoe"
+        },
+        {
+          "email": "git@cfware.com",
+          "name": "coreyfarrell"
+        },
+        {
+          "email": "kananthmail-github@yahoo.com",
+          "name": "gotwarlost"
+        }
+      ],
+      "_npmUser": {
+        "name": "coreyfarrell",
+        "email": "git@cfware.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/istanbul-lib-coverage_3.0.0-alpha.0_1560946625038_0.2662937582290523"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.0-alpha.1": {
+      "name": "istanbul-lib-coverage",
+      "version": "3.0.0-alpha.1",
+      "description": "Data library for istanbul coverage objects",
+      "author": {
+        "name": "Krishnan Anantheswaran",
+        "email": "kananthmail-github@yahoo.com"
+      },
+      "main": "index.js",
+      "scripts": {
+        "test": "nyc --nycrc-path=../../monorepo-per-package-full.js mocha"
+      },
+      "devDependencies": {
+        "chai": "^4.2.0",
+        "mocha": "^6.2.1",
+        "nyc": "^14.1.1"
+      },
+      "karmaDeps": {
+        "browserify-istanbul": "^0.2.1",
+        "karma": "^0.13.10",
+        "karma-browserify": "^4.2.1",
+        "karma-chrome-launcher": "^0.2.0",
+        "karma-coverage": "^0.4.2",
+        "karma-mocha": "^0.2.0",
+        "karma-phantomjs-launcher": "^0.2.0",
+        "phantomjs": "^1.9.17"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/istanbuljs/istanbuljs.git",
+        "directory": "packages/istanbul-lib-coverage"
+      },
+      "keywords": [
+        "istanbul",
+        "coverage",
+        "data"
+      ],
+      "license": "BSD-3-Clause",
+      "bugs": {
+        "url": "https://github.com/istanbuljs/istanbuljs/issues"
+      },
+      "homepage": "https://istanbul.js.org/",
+      "engines": {
+        "node": ">=8"
+      },
+      "gitHead": "4d5e777a9bc4847d178ad31f379307124cdd1e4f",
+      "readme": "## istanbul-lib-coverage\n\n[![Greenkeeper badge](https://badges.greenkeeper.io/istanbuljs/istanbul-lib-coverage.svg)](https://greenkeeper.io/)\n[![Build Status](https://travis-ci.org/istanbuljs/istanbul-lib-coverage.svg?branch=master)](https://travis-ci.org/istanbuljs/istanbul-lib-coverage)\n\nAn API that provides a read-only view of coverage information with the ability\nto merge and summarize coverage info.\n\nSupersedes `object-utils` and `collector` from the v0 istanbul API.\n\nSee the docs for the full API.\n\n```js\nvar libCoverage = require('istanbul-lib-coverage');\nvar map = libCoverage.createCoverageMap(globalCoverageVar);\nvar summary = libCoverage.createCoverageSummary();\n\n// merge another coverage map into the one we created\nmap.merge(otherCoverageMap);\n\n// inspect and summarize all file coverage objects in the map\nmap.files().forEach(function(f) {\n    var fc = map.fileCoverageFor(f),\n        s = fc.toSummary();\n    summary.merge(s);\n});\n\nconsole.log('Global summary', summary);\n```\n",
+      "readmeFilename": "README.md",
+      "_id": "istanbul-lib-coverage@3.0.0-alpha.1",
+      "_nodeVersion": "12.11.0",
+      "_npmVersion": "lerna/3.16.4/node@v12.11.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-6E/XA1/lI0NG7PuIkD3FdBuUDpTKZijp2SiQ0d08dHx6Rp4ba2Ph4LPE0Og6HE2IuqiXxy12sePpQJh9pWS53g==",
+        "shasum": "a3eeb4316f951607e4654931094676c53c85c96c",
+        "tarball": "https://registry.npmjs.org/istanbul-lib-coverage/-/istanbul-lib-coverage-3.0.0-alpha.1.tgz",
+        "fileCount": 10,
+        "unpackedSize": 24830,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdmT3/CRA9TVsSAnZWagAAHrAP/0O0bDtzs+TWRRPRxa1t\nGOYHID/S6Fi321eyIDCGGVNF3GVGGlrKL+E5oScTlXjjsOeXgEHvnGsKqxe/\nfSwcmvxJuFJn1tguP/x7stvqVqiRQRG9QTOhYWoNIKoWvs83G2Pnkm8iBv4e\nf/hPDZyD+gOWg9fcxFInE7c9xyFg8GyZxqfyxlyhd+Gk5t1C1f/HEo0F7LbQ\n6KmZxVVbmYAZ1FUi9SlnzW+2BbirPk5zbas40qs/TPMiCK0jD9tyx6A5CV6L\n2Yqi3eLHdAuFLGaARri6rXKZntsfxeQnMXDi8dvUNstOVwBI866ieyDJTJHB\nlyd+LrcjBRsAIvbw9EDCEnJ+N5n0vvivZeY0t23/TEBsVA7ewYyWdtNHvuOC\nnXmTVYWgIAiqBTBoEIITSY5sWS2wZgBKx8dcjv7CWWB04vTPKbhdJYWNj9sW\nhIe0Tdy0qUG5+RSlAAsWsc+im7D6HK33oQUjC00Ooih96GKky1y/scYjRPdn\nTrjrCZqKYN4CYVHBz8jkxXEwc5xzXppQLLUz9Kx+DJdL0jV2T54fIS4yuuC2\n7zHsDEBqq/s5xddUWNkddarXRyWomIqhWWWa7FVIAQ5ZMjAuPeWVVcVSTFze\nd1fMYtSUOay4x9UVMWdGVsdPAz3zYBZ97JDdda89HL8PzqVbJd7BzWJT4uyl\nOW2b\r\n=zd8t\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "ben@npmjs.com",
+          "name": "bcoe"
+        },
+        {
+          "email": "git@cfware.com",
+          "name": "coreyfarrell"
+        },
+        {
+          "email": "kananthmail-github@yahoo.com",
+          "name": "gotwarlost"
+        }
+      ],
+      "_npmUser": {
+        "name": "coreyfarrell",
+        "email": "git@cfware.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/istanbul-lib-coverage_3.0.0-alpha.1_1570323965803_0.13510396519590895"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.0-alpha.2": {
+      "name": "istanbul-lib-coverage",
+      "version": "3.0.0-alpha.2",
+      "description": "Data library for istanbul coverage objects",
+      "author": {
+        "name": "Krishnan Anantheswaran",
+        "email": "kananthmail-github@yahoo.com"
+      },
+      "main": "index.js",
+      "scripts": {
+        "test": "nyc --nycrc-path=../../monorepo-per-package-full.js mocha"
+      },
+      "devDependencies": {
+        "chai": "^4.2.0",
+        "mocha": "^6.2.2",
+        "nyc": "^15.0.0-beta.2"
+      },
+      "karmaDeps": {
+        "browserify-istanbul": "^0.2.1",
+        "karma": "^0.13.10",
+        "karma-browserify": "^4.2.1",
+        "karma-chrome-launcher": "^0.2.0",
+        "karma-coverage": "^0.4.2",
+        "karma-mocha": "^0.2.0",
+        "karma-phantomjs-launcher": "^0.2.0",
+        "phantomjs": "^1.9.17"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/istanbuljs/istanbuljs.git",
+        "directory": "packages/istanbul-lib-coverage"
+      },
+      "keywords": [
+        "istanbul",
+        "coverage",
+        "data"
+      ],
+      "license": "BSD-3-Clause",
+      "bugs": {
+        "url": "https://github.com/istanbuljs/istanbuljs/issues"
+      },
+      "homepage": "https://istanbul.js.org/",
+      "engines": {
+        "node": ">=8"
+      },
+      "gitHead": "9546946f0e4bc80714a5b318c59e459781f05550",
+      "readme": "## istanbul-lib-coverage\n\n[![Greenkeeper badge](https://badges.greenkeeper.io/istanbuljs/istanbul-lib-coverage.svg)](https://greenkeeper.io/)\n[![Build Status](https://travis-ci.org/istanbuljs/istanbul-lib-coverage.svg?branch=master)](https://travis-ci.org/istanbuljs/istanbul-lib-coverage)\n\nAn API that provides a read-only view of coverage information with the ability\nto merge and summarize coverage info.\n\nSupersedes `object-utils` and `collector` from the v0 istanbul API.\n\nSee the docs for the full API.\n\n```js\nvar libCoverage = require('istanbul-lib-coverage');\nvar map = libCoverage.createCoverageMap(globalCoverageVar);\nvar summary = libCoverage.createCoverageSummary();\n\n// merge another coverage map into the one we created\nmap.merge(otherCoverageMap);\n\n// inspect and summarize all file coverage objects in the map\nmap.files().forEach(function(f) {\n    var fc = map.fileCoverageFor(f),\n        s = fc.toSummary();\n    summary.merge(s);\n});\n\nconsole.log('Global summary', summary);\n```\n",
+      "readmeFilename": "README.md",
+      "_id": "istanbul-lib-coverage@3.0.0-alpha.2",
+      "_nodeVersion": "13.3.0",
+      "_npmVersion": "lerna/3.19.0/node@v13.3.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-6meka5W1D7aiwGxuPCNJW7QyMLZDLGY9SOKLC37tC9ihgVhXBIWJVoRonu25JuISh+JDQxOD3Kw0kkhXAPuVaA==",
+        "shasum": "2e8d71f8b0c217babc6aba512b5d63ff2467fbb7",
+        "tarball": "https://registry.npmjs.org/istanbul-lib-coverage/-/istanbul-lib-coverage-3.0.0-alpha.2.tgz",
+        "fileCount": 10,
+        "unpackedSize": 25060,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd69ZRCRA9TVsSAnZWagAAOYYP+wfvtm1RMcTUq6YKCZ4y\nag981RMvaB7xog8wd5wD8suKIJ6Uqptn4Qxs6EXveI/rCZcE7oP9E5a/XlvI\nGXgCrUqkvR0vsDnmDSTm1RgZp7R1tTp5uOLfUmsM7B+RZ17plZuJ1W045xnf\nxaru7/tRzB1CLF24/NXnyYW6J0UIQczSXjjP6RIiwdIyYW2ge4ZII25Jumah\n31U3kiCwSLLWSsh8GWCy5FKl93FkUTQvEUxYhav6jZT87HXJikLzJgyIwCdM\nckES/2E8JkiNJj/2ylCPJ/5QmfQWp65GMN7vK8YvVDODkl3uIrd1F8/a9ts1\naWh8XfQmRiMQ+6KQa93Sybp+7w+5DSzTgUmQZ4U9m9XrWoINGAk3J5jyjbVz\nGtkaTPlLWpe7LWRG3mYZrDdKqfuPKDxP59tU78Gdh4cF0K5trG7oHB+TmdWA\nZlyYkL2FIffmOAVKfDYJ7a87DhNGYj4e+dPtJnp0/1L4YA8vWbZjo4f5AWR3\n/7YWtMSADsnTTfcEbl65VCYImkFza+4fMqK7WS5luBdj4e7mE6xt/4PfvcDo\nyetNuzO/5v82ChlcukGVCk4+jC8jvdLoo/AjBNX5wO6fqv+iFNYfeuVuHrgX\npr1uKEUfzD/EEILWeWYbUyGDRMEQ5nASMIbH/cie2mKOnVdNu+ALg3cltN6V\nUp/u\r\n=PA/9\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "ben@npmjs.com",
+          "name": "bcoe"
+        },
+        {
+          "email": "git@cfware.com",
+          "name": "coreyfarrell"
+        },
+        {
+          "email": "kananthmail-github@yahoo.com",
+          "name": "gotwarlost"
+        }
+      ],
+      "_npmUser": {
+        "name": "coreyfarrell",
+        "email": "git@cfware.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/istanbul-lib-coverage_3.0.0-alpha.2_1575736912653_0.4885183211730184"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.0": {
+      "name": "istanbul-lib-coverage",
+      "version": "3.0.0",
+      "description": "Data library for istanbul coverage objects",
+      "author": {
+        "name": "Krishnan Anantheswaran",
+        "email": "kananthmail-github@yahoo.com"
+      },
+      "main": "index.js",
+      "scripts": {
+        "test": "nyc --nycrc-path=../../monorepo-per-package-full.js mocha"
+      },
+      "devDependencies": {
+        "chai": "^4.2.0",
+        "mocha": "^6.2.2",
+        "nyc": "^15.0.0-beta.2"
+      },
+      "karmaDeps": {
+        "browserify-istanbul": "^0.2.1",
+        "karma": "^0.13.10",
+        "karma-browserify": "^4.2.1",
+        "karma-chrome-launcher": "^0.2.0",
+        "karma-coverage": "^0.4.2",
+        "karma-mocha": "^0.2.0",
+        "karma-phantomjs-launcher": "^0.2.0",
+        "phantomjs": "^1.9.17"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/istanbuljs/istanbuljs.git",
+        "directory": "packages/istanbul-lib-coverage"
+      },
+      "keywords": [
+        "istanbul",
+        "coverage",
+        "data"
+      ],
+      "license": "BSD-3-Clause",
+      "bugs": {
+        "url": "https://github.com/istanbuljs/istanbuljs/issues"
+      },
+      "homepage": "https://istanbul.js.org/",
+      "engines": {
+        "node": ">=8"
+      },
+      "gitHead": "5319df684b508ff6fb19fe8b9a6147a3c5924e4b",
+      "readme": "## istanbul-lib-coverage\n\n[![Greenkeeper badge](https://badges.greenkeeper.io/istanbuljs/istanbul-lib-coverage.svg)](https://greenkeeper.io/)\n[![Build Status](https://travis-ci.org/istanbuljs/istanbul-lib-coverage.svg?branch=master)](https://travis-ci.org/istanbuljs/istanbul-lib-coverage)\n\nAn API that provides a read-only view of coverage information with the ability\nto merge and summarize coverage info.\n\nSupersedes `object-utils` and `collector` from the v0 istanbul API.\n\nSee the docs for the full API.\n\n```js\nvar libCoverage = require('istanbul-lib-coverage');\nvar map = libCoverage.createCoverageMap(globalCoverageVar);\nvar summary = libCoverage.createCoverageSummary();\n\n// merge another coverage map into the one we created\nmap.merge(otherCoverageMap);\n\n// inspect and summarize all file coverage objects in the map\nmap.files().forEach(function(f) {\n    var fc = map.fileCoverageFor(f),\n        s = fc.toSummary();\n    summary.merge(s);\n});\n\nconsole.log('Global summary', summary);\n```\n",
+      "readmeFilename": "README.md",
+      "_id": "istanbul-lib-coverage@3.0.0",
+      "_nodeVersion": "13.3.0",
+      "_npmVersion": "lerna/3.19.0/node@v13.3.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-UiUIqxMgRDET6eR+o5HbfRYP1l0hqkWOs7vNxC/mggutCMUIhWMm8gAHb8tHlyfD3/l6rlgNA5cKdDzEAf6hEg==",
+        "shasum": "f5944a37c70b550b02a78a5c3b2055b280cec8ec",
+        "tarball": "https://registry.npmjs.org/istanbul-lib-coverage/-/istanbul-lib-coverage-3.0.0.tgz",
+        "fileCount": 10,
+        "unpackedSize": 25259,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd/TUKCRA9TVsSAnZWagAAUI4P/AqEovVMHuccY2hdin09\nn9eVo6i43K3dOZ5APQycRwNRCSZZPYwW503vruekUtZtEBkhypXo4DHu2Z88\nY1CfCoCF83UnoNNd1SsxUFjllDB9t61DvYwIjJ9xGG6P8sFBOZwjw+feTwcP\nNF/f9v3hJXfFXJBBsJXS8Wr8cJNrjdOXVaFaPus2q7QuDXf6msEFG/rjrras\nSw+k33s6kD3U9sZw3J6LAWSYn6CNlA4JPVQL1fU0BKW1gYvddW6BuWre2ky7\noaGlisXeccVkqgRbH/aoxGrR4FX9j/uX0hduGm8IQaCtNCJTxmy6oYK/jSKE\n7hbsdPryNJbT2chytKiQ1gH6UBrHS723GIY2HJdNlMSS54q1D1WJKxG2xgQe\niZ1t1mfhqYdaj3/4FCYR/c44YiWzC7lXuSx/Fr6P2zzYAZl4WPmaTkyTHzLg\n4Ypj9tjWhRepjdIVJc81lvU4V0wEaLTaVFO+pJPAFa7B7uHv5STlOtEH8jLu\nWiGR+fu4GqXjFBuxdpwvMQ/9TNVOa8jirNixtH97AetSP4DqhBhCFAyO596i\nf75/DuxJd8sVz0l0LY5pKvrEPnUR2nrhtPa/WRB2XMJwfrYysUWOpSEwN+Sz\nigoR1YsT5w+HYiMka101VJs/agOTpJnAyOBUq/shzBIJ4HvjCUs6TLwoks6D\n98Pb\r\n=Xi5X\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "ben@npmjs.com",
+          "name": "bcoe"
+        },
+        {
+          "email": "git@cfware.com",
+          "name": "coreyfarrell"
+        },
+        {
+          "email": "kananthmail-github@yahoo.com",
+          "name": "gotwarlost"
+        }
+      ],
+      "_npmUser": {
+        "name": "coreyfarrell",
+        "email": "git@cfware.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/istanbul-lib-coverage_3.0.0_1576875274020_0.23346549984197984"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "",
+  "maintainers": [
+    {
+      "email": "ben@npmjs.com",
+      "name": "bcoe"
+    },
+    {
+      "email": "git@cfware.com",
+      "name": "coreyfarrell"
+    },
+    {
+      "email": "kananthmail-github@yahoo.com",
+      "name": "gotwarlost"
+    }
+  ],
+  "time": {
+    "modified": "2019-12-23T00:53:06.278Z",
+    "created": "2015-11-21T22:22:29.453Z",
+    "1.0.0-alpha.0": "2015-11-21T22:22:29.453Z",
+    "1.0.0-alpha.1": "2015-11-24T18:36:59.444Z",
+    "1.0.0-alpha.2": "2015-11-26T08:18:39.065Z",
+    "1.0.0-alpha.3": "2015-11-26T23:59:39.557Z",
+    "1.0.0-alpha.4": "2015-11-28T08:34:16.301Z",
+    "1.0.0": "2016-08-12T05:32:58.291Z",
+    "1.0.1": "2017-01-18T05:04:59.894Z",
+    "1.0.2": "2017-03-27T05:51:23.361Z",
+    "1.1.0": "2017-04-29T05:00:05.081Z",
+    "1.1.1": "2017-05-27T21:12:57.968Z",
+    "1.1.2": "2018-02-13T05:48:38.930Z",
+    "1.2.0": "2018-03-04T18:42:55.986Z",
+    "2.0.0": "2018-06-06T00:50:07.601Z",
+    "2.0.1": "2018-07-07T19:00:03.827Z",
+    "1.2.1": "2018-09-05T22:28:24.933Z",
+    "2.0.2": "2018-12-25T00:37:47.393Z",
+    "2.0.3": "2019-01-26T02:40:15.587Z",
+    "2.0.4": "2019-03-12T01:14:18.666Z",
+    "2.0.5": "2019-04-24T20:44:43.080Z",
+    "3.0.0-alpha.0": "2019-06-19T12:17:05.149Z",
+    "3.0.0-alpha.1": "2019-10-06T01:06:07.040Z",
+    "3.0.0-alpha.2": "2019-12-07T16:41:52.798Z",
+    "3.0.0": "2019-12-20T20:54:34.141Z"
+  },
+  "homepage": "https://istanbul.js.org/",
+  "keywords": [
+    "istanbul",
+    "coverage",
+    "data"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/istanbuljs/istanbuljs.git"
+  },
+  "author": {
+    "name": "Krishnan Anantheswaran",
+    "email": "kananthmail-github@yahoo.com"
+  },
+  "bugs": {
+    "url": "https://github.com/istanbuljs/istanbuljs/issues"
+  },
+  "license": "BSD-3-Clause",
+  "readmeFilename": "",
+  "users": {
+    "gotwarlost": true
+  }
+}

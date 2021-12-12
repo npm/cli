@@ -1,0 +1,203 @@
+{
+  "_id": "function-loop",
+  "_rev": "2-f36609d1bedc552398116deff2b5a44d",
+  "name": "function-loop",
+  "description": "Run a list of functions in order in a given object context.  The functions can be callback-taking or promise-returning.",
+  "dist-tags": {
+    "latest": "1.0.2"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "function-loop",
+      "version": "1.0.0",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap test.js --100"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/function-loop.git"
+      },
+      "keywords": [],
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/function-loop/issues"
+      },
+      "homepage": "https://github.com/isaacs/function-loop#readme",
+      "dependencies": {
+        "bluebird": "^3.4.7"
+      },
+      "devDependencies": {
+        "tap": "^9.0.3"
+      },
+      "description": "Run a list of functions in order in a given object context.  The functions can be callback-taking or promise-returning.",
+      "gitHead": "6a715ea81077965917f572eef65b1b734e1b16a1",
+      "_id": "function-loop@1.0.0",
+      "_shasum": "604086c5e0e811479128d0749bb5b93996e49225",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.9.4",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "dist": {
+        "shasum": "604086c5e0e811479128d0749bb5b93996e49225",
+        "tarball": "https://registry.npmjs.org/function-loop/-/function-loop-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/function-loop-1.0.0.tgz_1484789347570_0.3647799848113209"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "function-loop",
+      "version": "1.0.1",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap test.js --100"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/function-loop.git"
+      },
+      "keywords": [],
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/function-loop/issues"
+      },
+      "homepage": "https://github.com/isaacs/function-loop#readme",
+      "devDependencies": {
+        "tap": "^9.0.3"
+      },
+      "description": "Run a list of functions in order in a given object context.  The functions can be callback-taking or promise-returning.",
+      "gitHead": "4e4499cc60ac865f4bf8a83007c9bcf90c02abfa",
+      "_id": "function-loop@1.0.1",
+      "_shasum": "8076bb305e8e6a3cceee2920765f330d190f340c",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.9.4",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "dist": {
+        "shasum": "8076bb305e8e6a3cceee2920765f330d190f340c",
+        "tarball": "https://registry.npmjs.org/function-loop/-/function-loop-1.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/function-loop-1.0.1.tgz_1484789456274_0.8021668971050531"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "function-loop",
+      "version": "1.0.2",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap test.js --100"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/function-loop.git"
+      },
+      "keywords": [],
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/function-loop/issues"
+      },
+      "homepage": "https://github.com/isaacs/function-loop#readme",
+      "devDependencies": {
+        "tap": "^9.0.3"
+      },
+      "description": "Run a list of functions in order in a given object context.  The functions can be callback-taking or promise-returning.",
+      "gitHead": "e8e5e49d2e350a6decf7c70c26fc265f40145d1e",
+      "_id": "function-loop@1.0.2",
+      "_nodeVersion": "11.11.0",
+      "_npmVersion": "6.9.0",
+      "dist": {
+        "integrity": "sha512-Iw4MzMfS3udk/rqxTiDDCllhGwlOrsr50zViTOO/W6lS/9y6B1J0BD2VZzrnWUYBJsl3aeqjgR5v7bWWhZSYbA==",
+        "shasum": "16b93dd757845eacfeca1a8061a6a65c106e0cb2",
+        "tarball": "https://registry.npmjs.org/function-loop/-/function-loop-1.0.2.tgz",
+        "fileCount": 5,
+        "unpackedSize": 5073,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcnBESCRA9TVsSAnZWagAAt0IQAJAYvbGdAIyZymVdHZsU\nEI/WOk/5Jy98Tizb1LNJXHM+024ue95Du+TV499z2IejeTxLZoNF2bKyZF1v\nf2MuBYm4AnCCr5zurtPh+VkOXPw5XhUAvKyFYe8l4QKDhnqh5kXpij6N1/7W\n0oQaZmJh/i12Phg1eji3UFfg+wAEhyn0MC383hkMv3BOZbMRqx8wVFPgylUd\ndTMKLYfwBXby5byefqBcORqF4kqTAfKc1396jDCM8LMKcjInBra0sB7fYjHU\nszBRAeB2z2x/mHs54NaG+sDHanDLDQtv0sukZARizb9Twc2aJC+cFjxDs+AU\nczsdFaYJ8VJ1Bx1SzrPaaWNuEkf2H0+P/lmIYS6tbYj6I1m+BC4X93B+J3yx\nqsQFQ/NqkK2E0Dbc/2QAQYIraTIBohBmp56TnpfUxOVPb7iZflvQ/915aFa8\njeT1xB5FRts7agpSovupd3iJNgUZGtMF6YI0aVoC0K747KybmksS8mCfRx1r\n3lAR6RStl2YgkJzv3SSeEystL53Gcbk8XE7rUvAp244nK1gsyZgwgpSdIM7i\nXQPE9Tyyl30FZE1OQTDUxqIHqI6n9j69YULUKAsFOQUrFEHZQcxuZZoT5yjx\nhyBSbFqhqzw3nZS626+2bZX6i/vexpwEgWL2S7EG02ngjLFX2cj35sOQ9lsz\npbcl\r\n=c/jV\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/function-loop_1.0.2_1553731857608_0.5546842471363855"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# function-loop\n\nRun a list of functions in order in a given object context.  The\nfunctions can be callback-taking or promise-returning.\n\nThis module is\n[zalgo-exposing](http://blog.izs.me/post/59142742143/designing-apis-for-asynchrony),\nmeaning that synchronous calls to the cb functions will result in a\nsync call to the supplied cb, and async calls will result in the cb\nbeing called asynchronously.  It does not artificially defer if\ncallbacks are called synchronously.\n\n## API\n\n`loop(context, functionList, doneCallback, errorCallback)`\n\nRun all the functions in the context of the `context` object, and then\ncall the `doneCallback` or call the `errorCallback` if there are any\nerrors.\n",
+  "maintainers": [
+    {
+      "name": "isaacs",
+      "email": "i@izs.me"
+    }
+  ],
+  "time": {
+    "modified": "2019-03-28T00:11:01.075Z",
+    "created": "2017-01-19T01:29:09.390Z",
+    "1.0.0": "2017-01-19T01:29:09.390Z",
+    "1.0.1": "2017-01-19T01:30:58.021Z",
+    "1.0.2": "2019-03-28T00:10:57.797Z"
+  },
+  "homepage": "https://github.com/isaacs/function-loop#readme",
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isaacs/function-loop.git"
+  },
+  "author": {
+    "name": "Isaac Z. Schlueter",
+    "email": "i@izs.me",
+    "url": "http://blog.izs.me/"
+  },
+  "bugs": {
+    "url": "https://github.com/isaacs/function-loop/issues"
+  },
+  "license": "ISC",
+  "readmeFilename": "README.md"
+}
