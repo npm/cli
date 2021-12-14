@@ -2,14 +2,19 @@
   "name": "libnpmaccess",
   "version": "4.0.3",
   "description": "programmatic library for `npm access` commands",
-  "author": "Kat Marchán <kzm@sykosomatic.org>",
+  "author": "GitHub Inc.",
   "license": "ISC",
   "scripts": {
     "preversion": "npm test",
     "postversion": "npm publish",
     "postpublish": "git push origin --follow-tags",
-    "lint": "standard",
-    "test": "tap test/*.js"
+    "lint": "eslint '**/*.js'",
+    "test": "tap",
+    "postlint": "npm-template-check",
+    "lintfix": "npm run lint -- --fix",
+    "prepublishOnly": "git push origin --follow-tags",
+    "snap": "tap",
+    "posttest": "npm run lint"
   },
   "devDependencies": {
     "nock": "^12.0.1",
@@ -29,9 +34,16 @@
     "npm-registry-fetch": "^11.0.0"
   },
   "engines": {
-    "node": ">=10"
+    "node": "^12.13.0 || ^14.15.0 || >=16"
   },
   "tap": {
     "check-coverage": true
+  },
+  "files": [
+    "bin",
+    "lib"
+  ],
+  "templateOSS": {
+    "version": "2.4.1"
   }
 }

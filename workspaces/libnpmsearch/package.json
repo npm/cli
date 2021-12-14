@@ -2,9 +2,9 @@
   "name": "libnpmsearch",
   "version": "3.1.2",
   "description": "Programmatic API for searching in npm and compatible registries.",
-  "author": "Kat Marchán <kzm@sykosomatic.org>",
+  "author": "GitHub Inc.",
   "files": [
-    "*.js",
+    "bin",
     "lib"
   ],
   "keywords": [
@@ -18,8 +18,12 @@
     "preversion": "npm test",
     "postversion": "npm publish",
     "prepublishOnly": "git push origin --follow-tags",
-    "posttest": "standard",
-    "test": "tap"
+    "posttest": "npm run lint",
+    "test": "tap",
+    "lint": "eslint '**/*.js'",
+    "postlint": "npm-template-check",
+    "lintfix": "npm run lint -- --fix",
+    "snap": "tap"
   },
   "tap": {
     "check-coverage": true
@@ -39,6 +43,9 @@
     "npm-registry-fetch": "^11.0.0"
   },
   "engines": {
-    "node": ">=10"
+    "node": "^12.13.0 || ^14.15.0 || >=16"
+  },
+  "templateOSS": {
+    "version": "2.4.1"
   }
 }

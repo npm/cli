@@ -2,25 +2,28 @@
   "name": "libnpmpublish",
   "version": "4.0.2",
   "description": "Programmatic API for the bits behind npm publish and unpublish",
-  "author": "npm Inc. <support@npmjs.com>",
+  "author": "GitHub Inc.",
   "contributors": [
     "Kat Marchán <kzm@zkat.tech>",
     "Claudia Hernández <claudia@npmjs.com>"
   ],
   "main": "index.js",
   "files": [
-    "*.js"
+    "bin",
+    "lib"
   ],
   "license": "ISC",
   "scripts": {
     "eslint": "eslint",
-    "lint": "npm run eslint -- \"*.js\"",
+    "lint": "eslint '**/*.js'",
     "lintfix": "npm run lint -- --fix",
     "preversion": "npm test",
     "postversion": "npm publish",
     "prepublishOnly": "git push origin --follow-tags",
     "test": "tap",
-    "posttest": "npm run lint"
+    "posttest": "npm run lint",
+    "postlint": "npm-template-check",
+    "snap": "tap"
   },
   "tap": {
     "check-coverage": true
@@ -51,6 +54,9 @@
     "ssri": "^8.0.1"
   },
   "engines": {
-    "node": ">=10"
+    "node": "^12.13.0 || ^14.15.0 || >=16"
+  },
+  "templateOSS": {
+    "version": "2.4.1"
   }
 }

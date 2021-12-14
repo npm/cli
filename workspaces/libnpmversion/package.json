@@ -3,24 +3,27 @@
   "version": "2.0.1",
   "main": "lib/index.js",
   "files": [
-    "lib/*.js"
+    "bin",
+    "lib"
   ],
   "description": "library to do the things that 'npm version' does",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/npm/libnpmversion"
   },
-  "author": "Isaac Z. Schlueter <i@izs.me> (https://izs.me)",
+  "author": "GitHub Inc.",
   "license": "ISC",
   "scripts": {
-    "lint": "standard",
+    "lint": "eslint '**/*.js'",
     "lint:fix": "standard --fix",
     "test": "tap",
     "posttest": "npm run lint",
     "snap": "tap",
     "preversion": "npm test",
     "postversion": "npm publish",
-    "prepublishOnly": "git push origin --follow-tags"
+    "prepublishOnly": "git push origin --follow-tags",
+    "postlint": "npm-template-check",
+    "lintfix": "npm run lint -- --fix"
   },
   "standard": {
     "ignore": [
@@ -45,5 +48,8 @@
   },
   "engines": {
     "node": "^12.13.0 || ^14.15.0 || >=16"
+  },
+  "templateOSS": {
+    "version": "2.4.1"
   }
 }

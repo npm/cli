@@ -2,15 +2,18 @@
   "name": "libnpmteam",
   "description": "npm Team management APIs",
   "version": "2.0.4",
-  "author": "Kat Marchán <kzm@zkat.tech>",
+  "author": "GitHub Inc.",
   "license": "ISC",
   "scripts": {
     "preversion": "npm test",
     "postversion": "npm publish",
     "prepublishOnly": "git push origin --follow-tags",
-    "lint": "standard",
+    "lint": "eslint '**/*.js'",
     "test": "tap",
-    "posttest": "npm run lint"
+    "posttest": "npm run lint",
+    "postlint": "npm-template-check",
+    "lintfix": "npm run lint -- --fix",
+    "snap": "tap"
   },
   "devDependencies": {
     "nock": "^12.0.1",
@@ -22,7 +25,8 @@
     "url": "https://github.com/npm/libnpmteam.git"
   },
   "files": [
-    "index.js"
+    "bin",
+    "lib"
   ],
   "homepage": "https://npmjs.com/package/libnpmteam",
   "dependencies": {
@@ -30,9 +34,12 @@
     "npm-registry-fetch": "^11.0.0"
   },
   "engines": {
-    "node": ">=10"
+    "node": "^12.13.0 || ^14.15.0 || >=16"
   },
   "tap": {
     "check-coverage": true
+  },
+  "templateOSS": {
+    "version": "2.4.1"
   }
 }

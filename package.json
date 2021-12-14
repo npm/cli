@@ -201,6 +201,7 @@
   ],
   "devDependencies": {
     "@npmcli/eslint-config": "^2.0.0",
+    "@npmcli/template-oss": "^2.4.1",
     "eslint": "^8.3.0",
     "licensee": "^8.2.0",
     "spawk": "^1.7.1",
@@ -234,6 +235,26 @@
     "coverage-map": "test/coverage-map.js",
     "check-coverage": true,
     "timeout": 600
+  },
+  "templateOSS": {
+    "applyRootRepoFiles": false,
+    "applyWorkspaceRepoFiles": true,
+    "applyRootModuleFiles": false,
+    "workspaces": [
+      "arborist",
+      "libnpmaccess",
+      "libnpmdiff",
+      "libnpmfund",
+      "libnpmexec",
+      "libnpmorg",
+      "libnpmhook",
+      "libnpmpack",
+      "libnpmpublish",
+      "libnpmsearch",
+      "libnpmteam",
+      "libnpmversion"
+    ],
+    "version": "2.4.1"
   },
   "license": "Artistic-2.0",
   "engines": {

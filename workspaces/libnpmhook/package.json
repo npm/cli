@@ -4,7 +4,7 @@
   "description": "programmatic API for managing npm registry hooks",
   "main": "index.js",
   "files": [
-    "*.js",
+    "bin",
     "lib"
   ],
   "scripts": {
@@ -12,7 +12,15 @@
     "postrelease": "npm publish && git push --follow-tags",
     "pretest": "standard",
     "release": "standard-version -s",
-    "test": "tap"
+    "test": "tap",
+    "lint": "eslint '**/*.js'",
+    "postlint": "npm-template-check",
+    "lintfix": "npm run lint -- --fix",
+    "preversion": "npm test",
+    "postversion": "npm publish",
+    "prepublishOnly": "git push origin --follow-tags",
+    "snap": "tap",
+    "posttest": "npm run lint"
   },
   "tap": {
     "check-coverage": true
@@ -24,7 +32,7 @@
     "registry",
     "npm api"
   ],
-  "author": "Kat Marchán <kzm@sykosomatic.org>",
+  "author": "GitHub Inc.",
   "license": "ISC",
   "dependencies": {
     "aproba": "^2.0.0",
@@ -37,6 +45,9 @@
     "tap": "^15.1.0"
   },
   "engines": {
-    "node": ">=10"
+    "node": "^12.13.0 || ^14.15.0 || >=16"
+  },
+  "templateOSS": {
+    "version": "2.4.1"
   }
 }

@@ -2,7 +2,7 @@
   "name": "libnpmorg",
   "version": "2.0.3",
   "description": "Programmatic api for `npm org` commands",
-  "author": "Kat Marchán <kzm@sykosomatic.org>",
+  "author": "GitHub Inc.",
   "keywords": [
     "libnpm",
     "npm",
@@ -16,12 +16,16 @@
     "preversion": "npm test",
     "postversion": "npm publish",
     "prepublishOnly": "git push origin --follow-tags",
-    "lint": "standard",
+    "lint": "eslint '**/*.js'",
     "test": "tap",
-    "posttest": "npm run lint"
+    "posttest": "npm run lint",
+    "postlint": "npm-template-check",
+    "lintfix": "npm run lint -- --fix",
+    "snap": "tap"
   },
   "files": [
-    "index.js"
+    "bin",
+    "lib"
   ],
   "tap": {
     "check-coverage": true
@@ -43,6 +47,9 @@
     "npm-registry-fetch": "^11.0.0"
   },
   "engines": {
-    "node": ">=10"
+    "node": "^12.13.0 || ^14.15.0 || >=16"
+  },
+  "templateOSS": {
+    "version": "2.4.1"
   }
 }
