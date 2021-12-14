@@ -7,7 +7,7 @@ const tnock = require('./fixtures/tnock.js')
 const org = require('../index.js')
 
 const OPTS = {
-  registry: 'https://mock.reg/'
+  registry: 'https://mock.reg/',
 }
 const REG = 'https://registry.npmjs.org/'
 
@@ -15,15 +15,15 @@ test('set', t => {
   const memDeets = {
     org: {
       name: 'myorg',
-      size: 15
+      size: 15,
     },
     user: 'myuser',
-    role: 'admin'
+    role: 'admin',
   }
   tnock(t, OPTS.registry)
     .put('/-/org/myorg/user', {
       user: 'myuser',
-      role: 'admin'
+      role: 'admin',
     })
     .reply(201, memDeets)
 
@@ -37,13 +37,13 @@ test('optional role for set', t => {
   const memDeets = {
     org: {
       name: 'myorg',
-      size: 15
+      size: 15,
     },
     user: 'myuser',
-    role: 'developer'
+    role: 'developer',
   }
   tnock(t, OPTS.registry).put('/-/org/myorg/user', {
-    user: 'myuser'
+    user: 'myuser',
   }).reply(201, memDeets)
   return org.set('myorg', 'myuser', OPTS).then(res => {
     t.same(res, memDeets, 'got a membership details object back')
@@ -52,7 +52,7 @@ test('optional role for set', t => {
 
 test('rm with no options', t => {
   tnock(t, REG).delete('/-/org/myorg/user', {
-    user: 'myuser'
+    user: 'myuser',
   }).reply(204)
   return org.rm('myorg', 'myuser').then(() => {
     t.ok(true, 'request succeeded')
@@ -61,7 +61,7 @@ test('rm with no options', t => {
 
 test('rm', t => {
   tnock(t, OPTS.registry).delete('/-/org/myorg/user', {
-    user: 'myuser'
+    user: 'myuser',
   }).reply(204)
   return org.rm('myorg', 'myuser', OPTS)
     .then(ret => {
@@ -74,7 +74,7 @@ test('ls with no options', t => {
   const roster = {
     zkat: 'developer',
     iarna: 'admin',
-    isaacs: 'owner'
+    isaacs: 'owner',
   }
   tnock(t, REG).get('/-/org/myorg/user').reply(200, roster)
   return org.ls('myorg').then(res => {
@@ -86,7 +86,7 @@ test('ls', t => {
   const roster = {
     zkat: 'developer',
     iarna: 'admin',
-    isaacs: 'owner'
+    isaacs: 'owner',
   }
   tnock(t, OPTS.registry).get('/-/org/myorg/user').reply(200, roster)
   return org.ls('myorg', OPTS).then(res => {
@@ -99,7 +99,7 @@ test('ls stream with no options', t => {
   const roster = {
     zkat: 'developer',
     iarna: 'admin',
-    isaacs: 'owner'
+    isaacs: 'owner',
   }
   const rosterArr = Object.keys(roster).map(k => [k, roster[k]])
   tnock(t, REG).get('/-/org/myorg/user').reply(200, roster)
@@ -116,7 +116,7 @@ test('ls stream', t => {
   const roster = {
     zkat: 'developer',
     iarna: 'admin',
-    isaacs: 'owner'
+    isaacs: 'owner',
   }
   const rosterArr = Object.keys(roster).map(k => [k, roster[k]])
   tnock(t, OPTS.registry).get('/-/org/myorg/user').reply(200, roster)

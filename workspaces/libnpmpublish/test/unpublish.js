@@ -4,7 +4,7 @@ const t = require('tap')
 const tnock = require('./fixtures/tnock.js')
 
 const OPTS = {
-  registry: 'https://mock.reg/'
+  registry: 'https://mock.reg/',
 }
 
 const REG = OPTS.registry
@@ -17,16 +17,16 @@ t.test('basic test', async t => {
     _rev: REV,
     name: 'foo',
     'dist-tags': {
-      latest: '1.0.0'
+      latest: '1.0.0',
     },
     versions: {
       '1.0.0': {
         name: 'foo',
         dist: {
-          tarball: `${REG}/foo/-/foo-1.0.0.tgz`
-        }
-      }
-    }
+          tarball: `${REG}/foo/-/foo-1.0.0.tgz`,
+        },
+      },
+    },
   }
   const srv = tnock(t, REG)
   srv.get('/foo?write=true').reply(200, doc)
@@ -41,16 +41,16 @@ t.test('scoped basic test', async t => {
     _rev: REV,
     name: '@foo/bar',
     'dist-tags': {
-      latest: '1.0.0'
+      latest: '1.0.0',
     },
     versions: {
       '1.0.0': {
         name: '@foo/bar',
         dist: {
-          tarball: `${REG}/@foo/bar/-/foo-1.0.0.tgz`
-        }
-      }
-    }
+          tarball: `${REG}/@foo/bar/-/foo-1.0.0.tgz`,
+        },
+      },
+    },
   }
   const srv = tnock(t, REG)
   srv.get('/@foo%2fbar?write=true').reply(200, doc)
@@ -65,16 +65,16 @@ t.test('unpublish specific, last version', async t => {
     _rev: REV,
     name: 'foo',
     'dist-tags': {
-      latest: '1.0.0'
+      latest: '1.0.0',
     },
     versions: {
       '1.0.0': {
         name: 'foo',
         dist: {
-          tarball: `${REG}/foo/-/foo-1.0.0.tgz`
-        }
-      }
-    }
+          tarball: `${REG}/foo/-/foo-1.0.0.tgz`,
+        },
+      },
+    },
   }
   const srv = tnock(t, REG)
   srv.get('/foo?write=true').reply(200, doc)
@@ -91,38 +91,38 @@ t.test('unpublish specific version', async t => {
     _attachments: [1, 2, 3],
     name: 'foo',
     'dist-tags': {
-      latest: '1.0.1'
+      latest: '1.0.1',
     },
     versions: {
       '1.0.0': {
         name: 'foo',
         dist: {
-          tarball: `${REG}/foo/-/foo-1.0.0.tgz`
-        }
+          tarball: `${REG}/foo/-/foo-1.0.0.tgz`,
+        },
       },
       '1.0.1': {
         name: 'foo',
         dist: {
-          tarball: `${REG}/foo/-/foo-1.0.1.tgz`
-        }
-      }
-    }
+          tarball: `${REG}/foo/-/foo-1.0.1.tgz`,
+        },
+      },
+    },
   }
   const postEdit = {
     _id: 'foo',
     _rev: REV,
     name: 'foo',
     'dist-tags': {
-      latest: '1.0.0'
+      latest: '1.0.0',
     },
     versions: {
       '1.0.0': {
         name: 'foo',
         dist: {
-          tarball: `${REG}/foo/-/foo-1.0.0.tgz`
-        }
-      }
-    }
+          tarball: `${REG}/foo/-/foo-1.0.0.tgz`,
+        },
+      },
+    },
   }
 
   const srv = tnock(t, REG)
@@ -158,8 +158,8 @@ t.test('packument with missing versions unpublishes whole thing', async t => {
     _rev: REV,
     name: 'foo',
     'dist-tags': {
-      latest: '1.0.0'
-    }
+      latest: '1.0.0',
+    },
   }
   const srv = tnock(t, REG)
   srv.get('/foo?write=true').reply(200, doc)
@@ -174,16 +174,16 @@ t.test('packument with missing specific version assumed unpublished', async t =>
     _rev: REV,
     name: 'foo',
     'dist-tags': {
-      latest: '1.0.0'
+      latest: '1.0.0',
     },
     versions: {
       '1.0.0': {
         name: 'foo',
         dist: {
-          tarball: `${REG}/foo/-/foo-1.0.0.tgz`
-        }
-      }
-    }
+          tarball: `${REG}/foo/-/foo-1.0.0.tgz`,
+        },
+      },
+    },
   }
   const srv = tnock(t, REG)
   srv.get('/foo?write=true').reply(200, doc)
@@ -199,38 +199,38 @@ t.test('unpublish specific version without dist-tag update', async t => {
     _attachments: [1, 2, 3],
     name: 'foo',
     'dist-tags': {
-      latest: '1.0.0'
+      latest: '1.0.0',
     },
     versions: {
       '1.0.0': {
         name: 'foo',
         dist: {
-          tarball: `${REG}/foo/-/foo-1.0.0.tgz`
-        }
+          tarball: `${REG}/foo/-/foo-1.0.0.tgz`,
+        },
       },
       '1.0.1': {
         name: 'foo',
         dist: {
-          tarball: `${REG}/foo/-/foo-1.0.1.tgz`
-        }
-      }
-    }
+          tarball: `${REG}/foo/-/foo-1.0.1.tgz`,
+        },
+      },
+    },
   }
   const postEdit = {
     _id: 'foo',
     _rev: REV,
     name: 'foo',
     'dist-tags': {
-      latest: '1.0.0'
+      latest: '1.0.0',
     },
     versions: {
       '1.0.0': {
         name: 'foo',
         dist: {
-          tarball: `${REG}/foo/-/foo-1.0.0.tgz`
-        }
-      }
-    }
+          tarball: `${REG}/foo/-/foo-1.0.0.tgz`,
+        },
+      },
+    },
   }
   const srv = tnock(t, REG)
   srv.get('/foo?write=true').reply(200, doc)

@@ -7,7 +7,7 @@ const access = require('../index.js')
 
 const REG = 'http://localhost:1337'
 const OPTS = {
-  registry: REG
+  registry: REG,
 }
 
 t.test('access public', t => {
@@ -50,7 +50,7 @@ t.test('access restricted - failure', t => {
 
 t.test('access 2fa-required', t => {
   tnock(t, REG).post('/-/package/%40foo%2Fbar/access', {
-    publish_requires_tfa: true
+    publish_requires_tfa: true,
   }).reply(200, { ok: true })
   return access.tfaRequired('@foo/bar', OPTS).then(ret => {
     t.same(ret, true, 'request succeeded')
@@ -59,7 +59,7 @@ t.test('access 2fa-required', t => {
 
 t.test('access 2fa-not-required', t => {
   tnock(t, REG).post('/-/package/%40foo%2Fbar/access', {
-    publish_requires_tfa: false
+    publish_requires_tfa: false,
   }).reply(200, { ok: true })
   return access.tfaNotRequired('@foo/bar', OPTS).then(ret => {
     t.same(ret, true, 'request succeeded')
@@ -69,7 +69,7 @@ t.test('access 2fa-not-required', t => {
 t.test('access grant basic read-write', t => {
   tnock(t, REG).put('/-/team/myorg/myteam/package', {
     package: '@foo/bar',
-    permissions: 'read-write'
+    permissions: 'read-write',
   }).reply(201)
   return access.grant(
     '@foo/bar', 'myorg:myteam', 'read-write', OPTS
@@ -81,7 +81,7 @@ t.test('access grant basic read-write', t => {
 t.test('access grant basic read-only', t => {
   tnock(t, REG).put('/-/team/myorg/myteam/package', {
     package: '@foo/bar',
-    permissions: 'read-only'
+    permissions: 'read-only',
   }).reply(201)
   return access.grant(
     '@foo/bar', 'myorg:myteam', 'read-only', OPTS
@@ -121,7 +121,7 @@ t.test('access grant no entity', t => {
 t.test('access grant basic unscoped', t => {
   tnock(t, REG).put('/-/team/myorg/myteam/package', {
     package: 'bar',
-    permissions: 'read-write'
+    permissions: 'read-write',
   }).reply(201)
   return access.grant(
     'bar', 'myorg:myteam', 'read-write', OPTS
@@ -136,7 +136,7 @@ t.test('access grant no opts passed', t => {
   tnock(t, 'https://registry.npmjs.org')
     .put('/-/team/myorg/myteam/package', {
       package: 'bar',
-      permissions: 'read-write'
+      permissions: 'read-write',
     })
     .reply(201)
   return access.grant('bar', 'myorg:myteam', 'read-write')
@@ -147,7 +147,7 @@ t.test('access grant no opts passed', t => {
 
 t.test('access revoke basic', t => {
   tnock(t, REG).delete('/-/team/myorg/myteam/package', {
-    package: '@foo/bar'
+    package: '@foo/bar',
   }).reply(200)
   return access.revoke('@foo/bar', 'myorg:myteam', OPTS).then(ret => {
     t.same(ret, true, 'request succeeded')
@@ -156,7 +156,7 @@ t.test('access revoke basic', t => {
 
 t.test('access revoke basic unscoped', t => {
   tnock(t, REG).delete('/-/team/myorg/myteam/package', {
-    package: 'bar'
+    package: 'bar',
   }).reply(200, { accessChanged: true })
   return access.revoke('bar', 'myorg:myteam', OPTS).then(ret => {
     t.same(ret, true, 'request succeeded')
@@ -168,7 +168,7 @@ t.test('access revoke no opts passed', t => {
   // will be defauled to real registry url
   tnock(t, 'https://registry.npmjs.org')
     .delete('/-/team/myorg/myteam/package', {
-      package: 'bar'
+      package: 'bar',
     })
     .reply(201)
   return access.revoke('bar', 'myorg:myteam')
@@ -181,12 +181,12 @@ t.test('ls-packages on team', t => {
   const serverPackages = {
     '@foo/bar': 'write',
     '@foo/util': 'read',
-    '@foo/other': 'shrödinger'
+    '@foo/other': 'shrödinger',
   }
   const clientPackages = {
     '@foo/bar': 'read-write',
     '@foo/util': 'read-only',
-    '@foo/other': 'shrödinger'
+    '@foo/other': 'shrödinger',
   }
   tnock(t, REG).get(
     '/-/team/myorg/myteam/package?format=cli'
@@ -200,12 +200,12 @@ t.test('ls-packages on org', t => {
   const serverPackages = {
     '@foo/bar': 'write',
     '@foo/util': 'read',
-    '@foo/other': 'shrödinger'
+    '@foo/other': 'shrödinger',
   }
   const clientPackages = {
     '@foo/bar': 'read-write',
     '@foo/util': 'read-only',
-    '@foo/other': 'shrödinger'
+    '@foo/other': 'shrödinger',
   }
   tnock(t, REG).get(
     '/-/org/myorg/package?format=cli'
@@ -219,12 +219,12 @@ t.test('ls-packages on user', t => {
   const serverPackages = {
     '@foo/bar': 'write',
     '@foo/util': 'read',
-    '@foo/other': 'shrödinger'
+    '@foo/other': 'shrödinger',
   }
   const clientPackages = {
     '@foo/bar': 'read-write',
     '@foo/util': 'read-only',
-    '@foo/other': 'shrödinger'
+    '@foo/other': 'shrödinger',
   }
   const srv = tnock(t, REG)
   srv.get('/-/org/myuser/package?format=cli').reply(404, { error: 'not found' })
@@ -237,7 +237,9 @@ t.test('ls-packages on user', t => {
 t.test('ls-packages error on team', t => {
   tnock(t, REG).get('/-/team/myorg/myteam/package?format=cli').reply(404)
   return access.lsPackages('myorg:myteam', OPTS).then(
-    () => { throw new Error('should not have succeeded') },
+    () => {
+      throw new Error('should not have succeeded')
+    },
     err => t.equal(err.code, 'E404', 'spit out 404 directly if team provided')
   )
 })
@@ -247,7 +249,9 @@ t.test('ls-packages error on user', t => {
   srv.get('/-/org/myuser/package?format=cli').reply(404, { error: 'not found' })
   srv.get('/-/user/myuser/package?format=cli').reply(404, { error: 'not found' })
   return access.lsPackages('myuser', OPTS).then(
-    () => { throw new Error('should not have succeeded') },
+    () => {
+      throw new Error('should not have succeeded')
+    },
     err => t.equal(err.code, 'E404', 'spit out 404 if both reqs fail')
   )
 })
@@ -265,12 +269,12 @@ t.test('ls-packages stream', t => {
   const serverPackages = {
     '@foo/bar': 'write',
     '@foo/util': 'read',
-    '@foo/other': 'shrödinger'
+    '@foo/other': 'shrödinger',
   }
   const clientPackages = [
     ['@foo/bar', 'read-write'],
     ['@foo/util', 'read-only'],
-    ['@foo/other', 'shrödinger']
+    ['@foo/other', 'shrödinger'],
   ]
   tnock(t, REG).get(
     '/-/team/myorg/myteam/package?format=cli'
@@ -286,12 +290,12 @@ t.test('ls-packages stream no opts', t => {
   const serverPackages = {
     '@foo/bar': 'write',
     '@foo/util': 'read',
-    '@foo/other': 'shrödinger'
+    '@foo/other': 'shrödinger',
   }
   const clientPackages = [
     ['@foo/bar', 'read-write'],
     ['@foo/util', 'read-only'],
-    ['@foo/other', 'shrödinger']
+    ['@foo/other', 'shrödinger'],
   ]
   // NOTE: mocking real url, because no opts variable means `registry` value
   // will be defauled to real registry url
@@ -309,12 +313,12 @@ t.test('ls-collaborators', t => {
   const serverCollaborators = {
     'myorg:myteam': 'write',
     'myorg:anotherteam': 'read',
-    'myorg:thirdteam': 'special-case'
+    'myorg:thirdteam': 'special-case',
   }
   const clientCollaborators = {
     'myorg:myteam': 'read-write',
     'myorg:anotherteam': 'read-only',
-    'myorg:thirdteam': 'special-case'
+    'myorg:thirdteam': 'special-case',
   }
   tnock(t, REG).get(
     '/-/package/%40foo%2Fbar/collaborators?format=cli'
@@ -328,12 +332,12 @@ t.test('ls-collaborators stream', t => {
   const serverCollaborators = {
     'myorg:myteam': 'write',
     'myorg:anotherteam': 'read',
-    'myorg:thirdteam': 'special-case'
+    'myorg:thirdteam': 'special-case',
   }
   const clientCollaborators = [
     ['myorg:myteam', 'read-write'],
     ['myorg:anotherteam', 'read-only'],
-    ['myorg:thirdteam', 'special-case']
+    ['myorg:thirdteam', 'special-case'],
   ]
   tnock(t, REG).get(
     '/-/package/%40foo%2Fbar/collaborators?format=cli'
@@ -349,12 +353,12 @@ t.test('ls-collaborators w/scope', t => {
   const serverCollaborators = {
     'myorg:myteam': 'write',
     'myorg:anotherteam': 'read',
-    'myorg:thirdteam': 'special-case'
+    'myorg:thirdteam': 'special-case',
   }
   const clientCollaborators = {
     'myorg:myteam': 'read-write',
     'myorg:anotherteam': 'read-only',
-    'myorg:thirdteam': 'special-case'
+    'myorg:thirdteam': 'special-case',
   }
   tnock(t, REG).get(
     '/-/package/%40foo%2Fbar/collaborators?format=cli&user=zkat'
@@ -368,12 +372,12 @@ t.test('ls-collaborators w/o scope', t => {
   const serverCollaborators = {
     'myorg:myteam': 'write',
     'myorg:anotherteam': 'read',
-    'myorg:thirdteam': 'special-case'
+    'myorg:thirdteam': 'special-case',
   }
   const clientCollaborators = {
     'myorg:myteam': 'read-write',
     'myorg:anotherteam': 'read-only',
-    'myorg:thirdteam': 'special-case'
+    'myorg:thirdteam': 'special-case',
   }
   tnock(t, REG).get(
     '/-/package/bar/collaborators?format=cli&user=zkat'
@@ -393,7 +397,9 @@ t.test('ls-collaborators bad response', t => {
 })
 
 t.test('error on non-registry specs', t => {
-  const resolve = () => { throw new Error('should not succeed') }
+  const resolve = () => {
+    throw new Error('should not succeed')
+  }
   const reject = err => t.match(
     err.message, /spec.*must be a registry spec/, 'registry spec required'
   )
@@ -404,7 +410,7 @@ t.test('error on non-registry specs', t => {
     access.revoke('foo/bar', 'myorg', 'myteam').then(resolve, reject),
     access.lsCollaborators('foo/bar').then(resolve, reject),
     access.tfaRequired('foo/bar').then(resolve, reject),
-    access.tfaNotRequired('foo/bar').then(resolve, reject)
+    access.tfaNotRequired('foo/bar').then(resolve, reject),
   ])
 })
 

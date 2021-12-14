@@ -7,7 +7,7 @@ const team = require('../index.js')
 
 const REG = 'http://localhost:1337'
 const OPTS = {
-  registry: REG
+  registry: REG,
 }
 
 test('create', t => {
@@ -34,26 +34,34 @@ test('create - no options', t => {
 
 test('create bad entity name', t => {
   return team.create('go away', OPTS).then(
-    () => { throw new Error('should not succeed') },
-    err => { t.ok(err, 'error on bad entity name') }
+    () => {
+      throw new Error('should not succeed')
+    },
+    err => {
+      t.ok(err, 'error on bad entity name')
+    }
   )
 })
 
 test('create empty entity', t => {
   return team.create(undefined, OPTS).then(
-    () => { throw new Error('should not succeed') },
-    err => { t.ok(err, 'error on bad entity name') }
+    () => {
+      throw new Error('should not succeed')
+    },
+    err => {
+      t.ok(err, 'error on bad entity name')
+    }
   )
 })
 
 test('create w/ description', t => {
   tnock(t, REG).put('/-/org/foo/team', {
     name: 'cli',
-    description: 'just some cool folx'
+    description: 'just some cool folx',
   }).reply(201, { name: 'cli' })
   return team.create('@foo:cli', {
     ...OPTS,
-    description: 'just some cool folx'
+    description: 'just some cool folx',
   }).then(ret => {
     t.same(ret, { name: 'cli' }, 'no desc in return')
   })
@@ -148,8 +156,12 @@ test('lsTeams error', t => {
     '/-/org/foo/team?format=cli'
   ).reply(500)
   return team.lsTeams('foo', OPTS).then(
-    () => { throw new Error('should not succeed') },
-    err => { t.equal(err.code, 'E500', 'got error code') }
+    () => {
+      throw new Error('should not succeed')
+    },
+    err => {
+      t.equal(err.code, 'E500', 'got error code')
+    }
   )
 })
 
@@ -183,8 +195,12 @@ test('lsUsers', t => {
     '/-/team/foo/cli/user?format=cli'
   ).reply(500)
   return team.lsUsers('@foo:cli', OPTS).then(
-    () => { throw new Error('should not succeed') },
-    err => { t.equal(err.code, 'E500', 'got error code') }
+    () => {
+      throw new Error('should not succeed')
+    },
+    err => {
+      t.equal(err.code, 'E500', 'got error code')
+    }
   )
 })
 
@@ -196,8 +212,12 @@ test('lsUsers - no options', t => {
     .reply(500)
 
   return team.lsUsers('@foo:cli').then(
-    () => { throw new Error('should not succeed') },
-    err => { t.equal(err.code, 'E500', 'got error code') }
+    () => {
+      throw new Error('should not succeed')
+    },
+    err => {
+      t.equal(err.code, 'E500', 'got error code')
+    }
   )
 })
 

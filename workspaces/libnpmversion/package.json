@@ -15,7 +15,6 @@
   "license": "ISC",
   "scripts": {
     "lint": "eslint '**/*.js'",
-    "lint:fix": "standard --fix",
     "test": "tap",
     "posttest": "npm run lint",
     "snap": "tap",
@@ -25,18 +24,12 @@
     "postlint": "npm-template-check",
     "lintfix": "npm run lint -- --fix"
   },
-  "standard": {
-    "ignore": [
-      "tap-snapshots"
-    ]
-  },
   "tap": {
     "coverage-map": "map.js",
     "check-coverage": true
   },
   "devDependencies": {
     "require-inject": "^1.4.4",
-    "standard": "^16.0.3",
     "tap": "^15"
   },
   "dependencies": {

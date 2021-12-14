@@ -10,8 +10,6 @@
   "scripts": {
     "prerelease": "npm t",
     "postrelease": "npm publish && git push --follow-tags",
-    "pretest": "standard",
-    "release": "standard-version -s",
     "test": "tap",
     "lint": "eslint '**/*.js'",
     "postlint": "npm-template-check",
@@ -40,8 +38,6 @@
   },
   "devDependencies": {
     "nock": "^9.6.1",
-    "standard": "^11.0.1",
-    "standard-version": "^4.4.0",
     "tap": "^15.1.0"
   },
   "engines": {

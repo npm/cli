@@ -18,7 +18,6 @@
   },
   "devDependencies": {
     "nock": "^12.0.1",
-    "standard": "^14.3.0",
     "tap": "^15.1.0"
   },
   "repository": {

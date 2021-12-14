@@ -339,7 +339,7 @@ t.test('prompt, accepts', async t => {
       'proc-log': {
         clearProgress () {
           t.ok(true, 'should call clearProgress function')
-        }
+        },
       },
       read (opts, cb) {
         cb(null, 'y')
@@ -404,7 +404,7 @@ t.test('prompt, refuses', async t => {
       'proc-log': {
         clearProgress () {
           t.ok(true, 'should call clearProgress function')
-        }
+        },
       },
       read (opts, cb) {
         cb(null, 'n')

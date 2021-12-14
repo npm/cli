@@ -7,5 +7,5 @@ t.same(Object.keys(procLog), [
   'warn', 'info',
   'verbose', 'http',
   'silly', 'pause',
-  'resume'
+  'resume',
 ])

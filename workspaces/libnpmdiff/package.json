@@ -41,11 +41,6 @@
   "tap": {
     "check-coverage": true
   },
-  "standard": {
-    "ignore": [
-      "/tap-snapshots/"
-    ]
-  },
   "devDependencies": {
     "eslint": "^8.1.0",
     "tap": "^15.0.9"

@@ -3,14 +3,14 @@ const requireInject = require('require-inject')
 let tag
 const retrieveTag = requireInject('../lib/retrieve-tag.js', {
   '@npmcli/git': {
-    spawn: async (cmd, opts) => ({ stdout: tag + '\n' })
-  }
+    spawn: async (cmd, opts) => ({ stdout: tag + '\n' }),
+  },
 })
 
 t.test('not a valid semver tag', t => {
   tag = 'this is not a version'
   return t.rejects(retrieveTag(), {
-    message: 'Tag is not a valid version: "this is not a version"'
+    message: 'Tag is not a valid version: "this is not a version"',
   })
 })
 

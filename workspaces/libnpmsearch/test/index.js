@@ -5,7 +5,7 @@ const test = require('tap').test
 const tnock = require('./fixtures/tnock.js')
 
 const OPTS = {
-  registry: 'https://mock.reg/'
+  registry: 'https://mock.reg/',
 }
 
 const REG = OPTS.registry
@@ -19,21 +19,21 @@ test('basic test no options', t => {
     from: 0,
     quality: 0.65,
     popularity: 0.98,
-    maintenance: 0.5
+    maintenance: 0.5,
   })
   tnock(t, NPM_REG).get(`/-/v1/search?${query}`).once().reply(200, {
     objects: [
       { package: { name: 'cool', version: '1.0.0' } },
-      { package: { name: 'foo', version: '2.0.0' } }
-    ]
+      { package: { name: 'foo', version: '2.0.0' } },
+    ],
   })
   return search('oo').then(results => {
     t.match(results, [{
       name: 'cool',
-      version: '1.0.0'
+      version: '1.0.0',
     }, {
       name: 'foo',
-      version: '2.0.0'
+      version: '2.0.0',
     }], 'got back an array of search results')
   })
 })
@@ -45,21 +45,21 @@ test('basic test', t => {
     from: 0,
     quality: 0.65,
     popularity: 0.98,
-    maintenance: 0.5
+    maintenance: 0.5,
   })
   tnock(t, REG).get(`/-/v1/search?${query}`).once().reply(200, {
     objects: [
       { package: { name: 'cool', version: '1.0.0' } },
-      { package: { name: 'foo', version: '2.0.0' } }
-    ]
+      { package: { name: 'foo', version: '2.0.0' } },
+    ],
   })
   return search('oo', OPTS).then(results => {
     t.match(results, [{
       name: 'cool',
-      version: '1.0.0'
+      version: '1.0.0',
     }, {
       name: 'foo',
-      version: '2.0.0'
+      version: '2.0.0',
     }], 'got back an array of search results')
   })
 })
@@ -71,13 +71,13 @@ test('basic test supports nested options', t => {
     from: 1,
     quality: 0.65,
     popularity: 0.98,
-    maintenance: 0.5
+    maintenance: 0.5,
   })
   tnock(t, REG).get(`/-/v1/search?${query}`).once().reply(200, {
     objects: [
       { package: { name: 'cool', version: '1.0.0' } },
-      { package: { name: 'foo', version: '2.0.0' } }
-    ]
+      { package: { name: 'foo', version: '2.0.0' } },
+    ],
   })
 
   // this test is to ensure we don't break the nested opts parameter
@@ -85,10 +85,10 @@ test('basic test supports nested options', t => {
   return search('oo', { ...OPTS, opts: { from: 1 } }).then(results => {
     t.match(results, [{
       name: 'cool',
-      version: '1.0.0'
+      version: '1.0.0',
     }, {
       name: 'foo',
-      version: '2.0.0'
+      version: '2.0.0',
     }], 'got back an array of search results')
   })
 })
@@ -100,21 +100,21 @@ test('search.stream', t => {
     from: 0,
     quality: 0.65,
     popularity: 0.98,
-    maintenance: 0.5
+    maintenance: 0.5,
   })
   tnock(t, REG).get(`/-/v1/search?${query}`).once().reply(200, {
     objects: [
       { package: { name: 'cool', version: '1.0.0', date: new Date().toISOString() } },
-      { package: { name: 'foo', version: '2.0.0' } }
-    ]
+      { package: { name: 'foo', version: '2.0.0' } },
+    ],
   })
   return search.stream('oo', OPTS).collect().then(results => {
     t.match(results, [{
       name: 'cool',
-      version: '1.0.0'
+      version: '1.0.0',
     }, {
       name: 'foo',
-      version: '2.0.0'
+      version: '2.0.0',
     }], 'has a stream-based API function with identical results')
   })
 })
@@ -126,15 +126,15 @@ test('accepts a limit option', t => {
     from: 0,
     quality: 0.65,
     popularity: 0.98,
-    maintenance: 0.5
+    maintenance: 0.5,
   })
   tnock(t, REG).get(`/-/v1/search?${query}`).once().reply(200, {
     objects: [
       { package: { name: 'cool', version: '1.0.0' } },
       { package: { name: 'cool', version: '1.0.0' } },
       { package: { name: 'cool', version: '1.0.0' } },
-      { package: { name: 'cool', version: '1.0.0' } }
-    ]
+      { package: { name: 'cool', version: '1.0.0' } },
+    ],
   })
   return search('oo', { ...OPTS, limit: 3 }).then(results => {
     t.equal(results.length, 4, 'returns more results if endpoint does so')
@@ -148,15 +148,15 @@ test('accepts a from option', t => {
     from: 1,
     quality: 0.65,
     popularity: 0.98,
-    maintenance: 0.5
+    maintenance: 0.5,
   })
   tnock(t, REG).get(`/-/v1/search?${query}`).once().reply(200, {
     objects: [
       { package: { name: 'cool', version: '1.0.0' } },
       { package: { name: 'cool', version: '1.1.0' } },
       { package: { name: 'cool', version: '1.0.0' } },
-      { package: { name: 'cool', version: '1.0.0' } }
-    ]
+      { package: { name: 'cool', version: '1.0.0' } },
+    ],
   })
   return search('oo', { ...OPTS, from: 1 }).then(results => {
     t.equal(results.length, 4, 'returns more results if endpoint does so')
@@ -170,21 +170,21 @@ test('accepts quality/mainenance/popularity options', t => {
     from: 0,
     quality: 1,
     popularity: 2,
-    maintenance: 3
+    maintenance: 3,
   })
   tnock(t, REG).get(`/-/v1/search?${query}`).once().reply(200, {
     objects: [
       { package: { name: 'cool', version: '1.0.0' } },
       { package: { name: 'cool', version: '1.0.0' } },
       { package: { name: 'cool', version: '1.0.0' } },
-      { package: { name: 'cool', version: '1.0.0' } }
-    ]
+      { package: { name: 'cool', version: '1.0.0' } },
+    ],
   })
   return search('oo', {
     ...OPTS,
     quality: 1,
     popularity: 2,
-    maintenance: 3
+    maintenance: 3,
   }).then(results => {
     t.equal(results.length, 4, 'returns more results if endpoint does so')
   })
@@ -197,19 +197,19 @@ test('sortBy: quality', t => {
     from: 0,
     quality: 1,
     popularity: 0,
-    maintenance: 0
+    maintenance: 0,
   })
   tnock(t, REG).get(`/-/v1/search?${query}`).once().reply(200, {
     objects: [
       { package: { name: 'cool', version: '1.0.0' } },
       { package: { name: 'cool', version: '1.0.0' } },
       { package: { name: 'cool', version: '1.0.0' } },
-      { package: { name: 'cool', version: '1.0.0' } }
-    ]
+      { package: { name: 'cool', version: '1.0.0' } },
+    ],
   })
   return search('oo', {
     ...OPTS,
-    sortBy: 'quality'
+    sortBy: 'quality',
   }).then(results => {
     t.equal(results.length, 4, 'returns more results if endpoint does so')
   })
@@ -222,19 +222,19 @@ test('sortBy: popularity', t => {
     from: 0,
     quality: 0,
     popularity: 1,
-    maintenance: 0
+    maintenance: 0,
   })
   tnock(t, REG).get(`/-/v1/search?${query}`).once().reply(200, {
     objects: [
       { package: { name: 'cool', version: '1.0.0' } },
       { package: { name: 'cool', version: '1.0.0' } },
       { package: { name: 'cool', version: '1.0.0' } },
-      { package: { name: 'cool', version: '1.0.0' } }
-    ]
+      { package: { name: 'cool', version: '1.0.0' } },
+    ],
   })
   return search('oo', {
     ...OPTS,
-    sortBy: 'popularity'
+    sortBy: 'popularity',
   }).then(results => {
     t.equal(results.length, 4, 'returns more results if endpoint does so')
   })
@@ -247,19 +247,19 @@ test('sortBy: maintenance', t => {
     from: 0,
     quality: 0,
     popularity: 0,
-    maintenance: 1
+    maintenance: 1,
   })
   tnock(t, REG).get(`/-/v1/search?${query}`).once().reply(200, {
     objects: [
       { package: { name: 'cool', version: '1.0.0' } },
       { package: { name: 'cool', version: '1.0.0' } },
       { package: { name: 'cool', version: '1.0.0' } },
-      { package: { name: 'cool', version: '1.0.0' } }
-    ]
+      { package: { name: 'cool', version: '1.0.0' } },
+    ],
   })
   return search('oo', {
     ...OPTS,
-    sortBy: 'maintenance'
+    sortBy: 'maintenance',
   }).then(results => {
     t.equal(results.length, 4, 'returns more results if endpoint does so')
   })
@@ -272,19 +272,19 @@ test('sortBy: optimal', t => {
     from: 0,
     quality: 0.65,
     popularity: 0.98,
-    maintenance: 0.5
+    maintenance: 0.5,
   })
   tnock(t, REG).get(`/-/v1/search?${query}`).once().reply(200, {
     objects: [
       { package: { name: 'cool', version: '1.0.0' } },
       { package: { name: 'cool', version: '1.0.0' } },
       { package: { name: 'cool', version: '1.0.0' } },
-      { package: { name: 'cool', version: '1.0.0' } }
-    ]
+      { package: { name: 'cool', version: '1.0.0' } },
+    ],
   })
   return search('oo', {
     ...OPTS,
-    sortBy: 'optimal'
+    sortBy: 'optimal',
   }).then(results => {
     t.equal(results.length, 4, 'returns more results if endpoint does so')
   })
@@ -297,7 +297,7 @@ test('detailed format', t => {
     from: 0,
     quality: 0,
     popularity: 0,
-    maintenance: 1
+    maintenance: 1,
   })
   const results = [
     {
@@ -307,10 +307,10 @@ test('detailed format', t => {
         detail: {
           quality: 0.9270640902288084,
           popularity: 0.8484861649808381,
-          maintenance: 0.9962706951777409
-        }
+          maintenance: 0.9962706951777409,
+        },
       },
-      searchScore: 100000.914
+      searchScore: 100000.914,
     },
     {
       package: { name: 'ok', version: '2.0.0' },
@@ -319,19 +319,19 @@ test('detailed format', t => {
         detail: {
           quality: 0.9270602288084,
           popularity: 0.8461649808381,
-          maintenance: 0.9706951777409
-        }
+          maintenance: 0.9706951777409,
+        },
       },
-      searchScore: 1000.91
-    }
+      searchScore: 1000.91,
+    },
   ]
   tnock(t, REG).get(`/-/v1/search?${query}`).once().reply(200, {
-    objects: results
+    objects: results,
   })
   return search('oo', {
     ...OPTS,
     sortBy: 'maintenance',
-    detailed: true
+    detailed: true,
   }).then(res => {
     t.same(res, results, 'return full-format results with opts.detailed')
   })
@@ -344,7 +344,7 @@ test('space-separates and URI-encodes multiple search params', t => {
     from: 0,
     quality: 1,
     popularity: 2,
-    maintenance: 3
+    maintenance: 3,
   }).replace(/%20/g, '+')
 
   tnock(t, REG).get(`/-/v1/search?${query}`).reply(200, { objects: [] })
@@ -353,7 +353,7 @@ test('space-separates and URI-encodes multiple search params', t => {
     limit: 1,
     quality: 1,
     popularity: 2,
-    maintenance: 3
+    maintenance: 3,
   }).then(
     () => t.ok(true, 'sent parameters correctly urlencoded')
   )

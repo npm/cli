@@ -7,15 +7,15 @@ const enforceClean = requireInject('../lib/enforce-clean.js', {
         case 'clean': return true
         case 'unclean': return false
         case 'nogit': throw Object.assign(new Error('no git'), {
-          code: 'ENOGIT'
+          code: 'ENOGIT',
         })
         case 'error': throw new Error('poop')
         default:
           console.error('unknown cwd: %j', cwd)
           process.exit(1)
       }
-    }
-  }
+    },
+  },
 })
 
 const warnings = []
@@ -24,22 +24,28 @@ const log = { warn: (...msg) => warnings.push(msg) }
 t.test('clean, ok', t =>
   t.resolveMatch(enforceClean({ log, cwd: 'clean' }), true)
     .then(() => t.strictSame(warnings, []))
-    .then(() => { warnings.length = 0 }))
+    .then(() => {
+      warnings.length = 0
+    }))
 
 t.test('unclean, no force, throws', t =>
   t.rejects(enforceClean({ log, cwd: 'unclean' }))
     .then(() => t.strictSame(warnings, []))
-    .then(() => { warnings.length = 0 }))
+    .then(() => {
+      warnings.length = 0
+    }))
 
 t.test('unclean, forced, no throw', t =>
   t.resolveMatch(enforceClean({ log, cwd: 'unclean', force: true }), true)
     .then(() => t.strictSame(warnings, [
       [
         'version',
-        'Git working directory not clean, proceeding forcefully.'
-      ]
+        'Git working directory not clean, proceeding forcefully.',
+      ],
     ]))
-    .then(() => { warnings.length = 0 }))
+    .then(() => {
+      warnings.length = 0
+    }))
 
 t.test('nogit, return false, no throw', t =>
   t.resolveMatch(enforceClean({ log, cwd: 'nogit' }), false)
@@ -47,12 +53,16 @@ t.test('nogit, return false, no throw', t =>
       [
         'version',
         'This is a Git checkout, but the git command was not found.',
-        'npm could not create a Git tag for this release!'
-      ]
+        'npm could not create a Git tag for this release!',
+      ],
     ]))
-    .then(() => { warnings.length = 0 }))
+    .then(() => {
+      warnings.length = 0
+    }))
 
 t.test('other error, throw it', t =>
   t.rejects(enforceClean({ log, cwd: 'error' }), new Error('poop'))
     .then(() => t.strictSame(warnings, []))
-    .then(() => { warnings.length = 0 }))
+    .then(() => {
+      warnings.length = 0
+    }))

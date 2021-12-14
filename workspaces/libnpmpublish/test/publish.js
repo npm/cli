@@ -12,13 +12,13 @@ const tnock = require('./fixtures/tnock.js')
 const testDir = t.testdir({
   'package.json': JSON.stringify({
     name: 'libnpmpublish',
-    version: '1.0.0'
+    version: '1.0.0',
   }, null, 2),
-  'index.js': 'hello'
+  'index.js': 'hello',
 })
 
 const OPTS = {
-  registry: 'https://mock.reg/'
+  registry: 'https://mock.reg/',
 }
 
 const REG = OPTS.registry
@@ -27,7 +27,7 @@ t.test('basic publish', async t => {
   const manifest = {
     name: 'libnpmpublish',
     version: '1.0.0',
-    description: 'some stuff'
+    description: 'some stuff',
   }
 
   const tarData = await pack(`file:${testDir}`, { ...OPTS })
@@ -38,7 +38,7 @@ t.test('basic publish', async t => {
     name: 'libnpmpublish',
     description: 'some stuff',
     'dist-tags': {
-      latest: '1.0.0'
+      latest: '1.0.0',
     },
     versions: {
       '1.0.0': {
@@ -50,18 +50,18 @@ t.test('basic publish', async t => {
         dist: {
           shasum,
           integrity: integrity.toString(),
-          tarball: 'http://mock.reg/libnpmpublish/-/libnpmpublish-1.0.0.tgz'
-        }
-      }
+          tarball: 'http://mock.reg/libnpmpublish/-/libnpmpublish-1.0.0.tgz',
+        },
+      },
     },
     access: 'public',
     _attachments: {
       'libnpmpublish-1.0.0.tgz': {
         content_type: 'application/octet-stream',
         data: tarData.toString('base64'),
-        length: tarData.length
-      }
-    }
+        length: tarData.length,
+      },
+    },
   }
 
   const srv = tnock(t, REG)
@@ -69,12 +69,12 @@ t.test('basic publish', async t => {
     t.same(body, packument, 'posted packument matches expectations')
     return true
   }, {
-    authorization: 'Bearer deadbeef'
+    authorization: 'Bearer deadbeef',
   }).reply(201, {})
 
   const ret = await publish(manifest, tarData, {
     ...OPTS,
-    token: 'deadbeef'
+    token: 'deadbeef',
   })
   t.ok(ret, 'publish succeeded')
 })
@@ -83,7 +83,7 @@ t.test('scoped publish', async t => {
   const manifest = {
     name: '@claudiahdz/libnpmpublish',
     version: '1.0.0',
-    description: 'some stuff'
+    description: 'some stuff',
   }
 
   const tarData = await pack(`file:${testDir}`, { ...OPTS })
@@ -94,7 +94,7 @@ t.test('scoped publish', async t => {
     name: '@claudiahdz/libnpmpublish',
     description: 'some stuff',
     'dist-tags': {
-      latest: '1.0.0'
+      latest: '1.0.0',
     },
     versions: {
       '1.0.0': {
@@ -107,18 +107,19 @@ t.test('scoped publish', async t => {
         dist: {
           shasum,
           integrity: integrity.toString(),
-          tarball: 'http://mock.reg/@claudiahdz/libnpmpublish/-/@claudiahdz/libnpmpublish-1.0.0.tgz'
-        }
-      }
+          tarball: 'http://mock.reg/@claudiahdz/libnpmpublish/'
+            + '-/@claudiahdz/libnpmpublish-1.0.0.tgz',
+        },
+      },
     },
     access: 'restricted',
     _attachments: {
       '@claudiahdz/libnpmpublish-1.0.0.tgz': {
         content_type: 'application/octet-stream',
         data: tarData.toString('base64'),
-        length: tarData.length
-      }
-    }
+        length: tarData.length,
+      },
+    },
   }
 
   const srv = tnock(t, REG)
@@ -126,13 +127,13 @@ t.test('scoped publish', async t => {
     t.same(body, packument, 'posted packument matches expectations')
     return true
   }, {
-    authorization: 'Bearer deadbeef'
+    authorization: 'Bearer deadbeef',
   }).reply(201, {})
 
   const ret = await publish(manifest, tarData, {
     ...OPTS,
     npmVersion: '6.13.7',
-    token: 'deadbeef'
+    token: 'deadbeef',
   })
   t.ok(ret, 'publish succeeded')
 })
@@ -142,7 +143,7 @@ t.test('retry after a conflict', async t => {
   const manifest = {
     name: 'libnpmpublish',
     version: '1.0.0',
-    description: 'some stuff'
+    description: 'some stuff',
   }
 
   const tarData = await pack(`file:${testDir}`, { ...OPTS })
@@ -156,14 +157,14 @@ t.test('retry after a conflict', async t => {
     _id: 'libnpmpublish',
     'dist-tags': {},
     versions: {},
-    _attachments: {}
+    _attachments: {},
   }
   const currentPackument = cloneDeep({
     ...basePackument,
     time: {
       modified: new Date().toISOString(),
       created: new Date().toISOString(),
-      '1.0.1': new Date().toISOString()
+      '1.0.1': new Date().toISOString(),
     },
     'dist-tags': { latest: '1.0.1' },
     versions: {
@@ -177,17 +178,17 @@ t.test('retry after a conflict', async t => {
         dist: {
           shasum,
           integrity: integrity.toString(),
-          tarball: 'http://mock.reg/libnpmpublish/-/libnpmpublish-1.0.1.tgz'
-        }
-      }
+          tarball: 'http://mock.reg/libnpmpublish/-/libnpmpublish-1.0.1.tgz',
+        },
+      },
     },
     _attachments: {
       'libnpmpublish-1.0.1.tgz': {
         content_type: 'application/octet-stream',
         data: tarData.toString('base64'),
-        length: tarData.length
-      }
-    }
+        length: tarData.length,
+      },
+    },
   })
   const newPackument = cloneDeep({
     ...basePackument,
@@ -203,24 +204,24 @@ t.test('retry after a conflict', async t => {
         dist: {
           shasum,
           integrity: integrity.toString(),
-          tarball: 'http://mock.reg/libnpmpublish/-/libnpmpublish-1.0.0.tgz'
-        }
-      }
+          tarball: 'http://mock.reg/libnpmpublish/-/libnpmpublish-1.0.0.tgz',
+        },
+      },
     },
     _attachments: {
       'libnpmpublish-1.0.0.tgz': {
         content_type: 'application/octet-stream',
         data: tarData.toString('base64'),
-        length: tarData.length
-      }
-    }
+        length: tarData.length,
+      },
+    },
   })
   const mergedPackument = cloneDeep({
     ...basePackument,
     time: currentPackument.time,
     'dist-tags': { latest: '1.0.0' },
     versions: { ...currentPackument.versions, ...newPackument.versions },
-    _attachments: { ...currentPackument._attachments, ...newPackument._attachments }
+    _attachments: { ...currentPackument._attachments, ...newPackument._attachments },
   })
 
   const srv = tnock(t, REG)
@@ -232,13 +233,13 @@ t.test('retry after a conflict', async t => {
 
   srv.get('/libnpmpublish?write=true').reply(200, {
     _rev: REV,
-    ...currentPackument
+    ...currentPackument,
   })
 
   srv.put('/libnpmpublish', body => {
     t.same(body, {
       _rev: REV,
-      ...mergedPackument
+      ...mergedPackument,
     }, 'posted packument includes _rev and a merged version')
     return true
   }).reply(201, {})
@@ -246,7 +247,7 @@ t.test('retry after a conflict', async t => {
   const ret = await publish(manifest, tarData, {
     ...OPTS,
     token: 'deadbeef',
-    npmVersion: '6.13.7'
+    npmVersion: '6.13.7',
   })
 
   t.ok(ret, 'publish succeeded')
@@ -257,7 +258,7 @@ t.test('retry after a conflict -- no versions on remote', async t => {
   const manifest = {
     name: 'libnpmpublish',
     version: '1.0.0',
-    description: 'some stuff'
+    description: 'some stuff',
   }
 
   const tarData = await pack(`file:${testDir}`, { ...OPTS })
@@ -268,7 +269,7 @@ t.test('retry after a conflict -- no versions on remote', async t => {
     name: 'libnpmpublish',
     description: 'some stuff',
     access: 'public',
-    _id: 'libnpmpublish'
+    _id: 'libnpmpublish',
   }
   const currentPackument = { ...basePackument }
   const newPackument = cloneDeep({
@@ -285,23 +286,23 @@ t.test('retry after a conflict -- no versions on remote', async t => {
         dist: {
           shasum,
           integrity: integrity.toString(),
-          tarball: 'http://mock.reg/libnpmpublish/-/libnpmpublish-1.0.0.tgz'
-        }
-      }
+          tarball: 'http://mock.reg/libnpmpublish/-/libnpmpublish-1.0.0.tgz',
+        },
+      },
     },
     _attachments: {
       'libnpmpublish-1.0.0.tgz': {
         content_type: 'application/octet-stream',
         data: tarData.toString('base64'),
-        length: tarData.length
-      }
-    }
+        length: tarData.length,
+      },
+    },
   })
   const mergedPackument = cloneDeep({
     ...basePackument,
     'dist-tags': { latest: '1.0.0' },
     versions: { ...newPackument.versions },
-    _attachments: { ...newPackument._attachments }
+    _attachments: { ...newPackument._attachments },
   })
 
   const srv = tnock(t, REG)
@@ -313,13 +314,13 @@ t.test('retry after a conflict -- no versions on remote', async t => {
 
   srv.get('/libnpmpublish?write=true').reply(200, {
     _rev: REV,
-    ...currentPackument
+    ...currentPackument,
   })
 
   srv.put('/libnpmpublish', body => {
     t.same(body, {
       _rev: REV,
-      ...mergedPackument
+      ...mergedPackument,
     }, 'posted packument includes _rev and a merged version')
     return true
   }).reply(201, {})
@@ -327,7 +328,7 @@ t.test('retry after a conflict -- no versions on remote', async t => {
   const ret = await publish(manifest, tarData, {
     ...OPTS,
     npmVersion: '6.13.7',
-    token: 'deadbeef'
+    token: 'deadbeef',
   })
 
   t.ok(ret, 'publish succeeded')
@@ -338,7 +339,7 @@ t.test('version conflict', async t => {
   const manifest = {
     name: 'libnpmpublish',
     version: '1.0.0',
-    description: 'some stuff'
+    description: 'some stuff',
   }
 
   const tarData = await pack(`file:${testDir}`, { ...OPTS })
@@ -351,7 +352,7 @@ t.test('version conflict', async t => {
     _id: 'libnpmpublish',
     'dist-tags': {},
     versions: {},
-    _attachments: {}
+    _attachments: {},
   }
   const newPackument = cloneDeep(Object.assign({}, basePackument, {
     'dist-tags': { latest: '1.0.0' },
@@ -366,17 +367,17 @@ t.test('version conflict', async t => {
         dist: {
           shasum,
           integrity: integrity.toString(),
-          tarball: 'http://mock.reg/libnpmpublish/-/libnpmpublish-1.0.0.tgz'
-        }
-      }
+          tarball: 'http://mock.reg/libnpmpublish/-/libnpmpublish-1.0.0.tgz',
+        },
+      },
     },
     _attachments: {
       'libnpmpublish-1.0.0.tgz': {
         content_type: 'application/octet-stream',
         data: tarData.toString('base64'),
-        length: tarData.length
-      }
-    }
+        length: tarData.length,
+      },
+    },
   }))
 
   const srv = tnock(t, REG)
@@ -388,14 +389,14 @@ t.test('version conflict', async t => {
 
   srv.get('/libnpmpublish?write=true').reply(200, {
     _rev: REV,
-    ...newPackument
+    ...newPackument,
   })
 
   try {
     await publish(manifest, tarData, {
       ...OPTS,
       npmVersion: '6.13.7',
-      token: 'deadbeef'
+      token: 'deadbeef',
     })
   } catch (err) {
     t.equal(err.code, 'EPUBLISHCONFLICT', 'got publish conflict code')
@@ -407,14 +408,14 @@ t.test('refuse if package marked private', async t => {
     name: 'libnpmpublish',
     version: '1.0.0',
     description: 'some stuff',
-    private: true
+    private: true,
   }
 
   try {
     await publish(manifest, Buffer.from(''), {
       ...OPTS,
       npmVersion: '6.9.0',
-      token: 'deadbeef'
+      token: 'deadbeef',
     })
   } catch (err) {
     t.equal(err.code, 'EPRIVATE', 'got correct error code')
@@ -425,7 +426,7 @@ t.test('publish includes access', async t => {
   const manifest = {
     name: 'libnpmpublish',
     version: '1.0.0',
-    description: 'some stuff'
+    description: 'some stuff',
   }
 
   const tarData = await pack(`file:${testDir}`, { ...OPTS })
@@ -437,7 +438,7 @@ t.test('publish includes access', async t => {
     access: 'public',
     _id: 'libnpmpublish',
     'dist-tags': {
-      latest: '1.0.0'
+      latest: '1.0.0',
     },
     versions: {
       '1.0.0': {
@@ -449,17 +450,17 @@ t.test('publish includes access', async t => {
         dist: {
           shasum,
           integrity: integrity.toString(),
-          tarball: 'http://mock.reg/libnpmpublish/-/libnpmpublish-1.0.0.tgz'
-        }
-      }
+          tarball: 'http://mock.reg/libnpmpublish/-/libnpmpublish-1.0.0.tgz',
+        },
+      },
     },
     _attachments: {
       'libnpmpublish-1.0.0.tgz': {
         content_type: 'application/octet-stream',
         data: tarData.toString('base64'),
-        length: tarData.length
-      }
-    }
+        length: tarData.length,
+      },
+    },
   }
 
   const srv = tnock(t, REG)
@@ -467,13 +468,13 @@ t.test('publish includes access', async t => {
     t.same(body, packument, 'posted packument matches expectations')
     return true
   }, {
-    authorization: 'Bearer deadbeef'
+    authorization: 'Bearer deadbeef',
   }).reply(201, {})
 
   const ret = await publish(manifest, tarData, {
     ...OPTS,
     token: 'deadbeef',
-    access: 'public'
+    access: 'public',
   })
 
   t.ok(ret, 'publish succeeded')
@@ -483,14 +484,14 @@ t.test('refuse if package is unscoped plus `restricted` access', async t => {
   const manifest = {
     name: 'libnpmpublish',
     version: '1.0.0',
-    description: 'some stuff'
+    description: 'some stuff',
   }
 
   try {
     await publish(manifest, Buffer.from(''), {
       ...OPTS,
       npmVersion: '6.13.7',
-      access: 'restricted'
+      access: 'restricted',
     })
   } catch (err) {
     t.equal(err.code, 'EUNSCOPED', 'got correct error code')
@@ -501,7 +502,7 @@ t.test('refuse if bad semver on manifest', async t => {
   const manifest = {
     name: 'libnpmpublish',
     version: 'lmao',
-    description: 'some stuff'
+    description: 'some stuff',
   }
 
   try {
@@ -515,7 +516,7 @@ t.test('other error code', async t => {
   const manifest = {
     name: 'libnpmpublish',
     version: '1.0.0',
-    description: 'some stuff'
+    description: 'some stuff',
   }
 
   const tarData = await pack(`file:${testDir}`, { ...OPTS })
@@ -527,7 +528,7 @@ t.test('other error code', async t => {
     access: 'public',
     _id: 'libnpmpublish',
     'dist-tags': {
-      latest: '1.0.0'
+      latest: '1.0.0',
     },
     versions: {
       '1.0.0': {
@@ -540,17 +541,17 @@ t.test('other error code', async t => {
         dist: {
           shasum,
           integrity: integrity.toString(),
-          tarball: 'http://mock.reg/libnpmpublish/-/libnpmpublish-1.0.0.tgz'
-        }
-      }
+          tarball: 'http://mock.reg/libnpmpublish/-/libnpmpublish-1.0.0.tgz',
+        },
+      },
     },
     _attachments: {
       'libnpmpublish-1.0.0.tgz': {
         content_type: 'application/octet-stream',
         data: tarData.toString('base64'),
-        length: tarData.length
-      }
-    }
+        length: tarData.length,
+      },
+    },
   }
 
   const srv = tnock(t, REG)
@@ -558,14 +559,14 @@ t.test('other error code', async t => {
     t.same(body, packument, 'posted packument matches expectations')
     return true
   }, {
-    authorization: 'Bearer deadbeef'
+    authorization: 'Bearer deadbeef',
   }).reply(500, { error: 'go away' })
 
   try {
     await publish(manifest, tarData, {
       ...OPTS,
       npmVersion: '6.13.7',
-      token: 'deadbeef'
+      token: 'deadbeef',
     })
   } catch (err) {
     t.match(err.message, /go away/, 'no retry on non-409')
