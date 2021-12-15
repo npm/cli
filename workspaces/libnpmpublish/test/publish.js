@@ -6,7 +6,7 @@ const crypto = require('crypto')
 const pack = require('libnpmpack')
 const cloneDeep = require('lodash.clonedeep')
 
-const publish = require('../publish.js')
+const publish = require('../lib/publish.js')
 const tnock = require('./fixtures/tnock.js')
 
 const testDir = t.testdir({

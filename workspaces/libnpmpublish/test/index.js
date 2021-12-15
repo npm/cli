@@ -1,6 +1,6 @@
 const t = require('tap')
-const index = require('../index.js')
+const index = require('../lib/index.js')
 t.strictSame(index, {
-  publish: require('../publish.js'),
-  unpublish: require('../unpublish.js'),
+  publish: require('../lib/publish.js'),
+  unpublish: require('../lib/unpublish.js'),
 })

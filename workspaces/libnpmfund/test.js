@@ -6,7 +6,7 @@ const {
   readTree,
   normalizeFunding,
   isValidFunding,
-} = require('./index.js')
+} = require('./lib/index.js')
 const { join } = require('path')
 
 t.test('symlink tree', async (t) => {

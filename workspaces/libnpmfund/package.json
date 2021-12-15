@@ -1,6 +1,7 @@
 {
   "name": "libnpmfund",
   "version": "2.0.2",
+  "main": "lib/index.js",
   "files": [
     "bin",
     "lib"

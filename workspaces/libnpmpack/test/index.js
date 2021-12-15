@@ -1,7 +1,7 @@
 'use strict'
 
 const t = require('tap')
-const pack = require('../index.js')
+const pack = require('../lib/index.js')
 const tnock = require('./fixtures/tnock.js')
 
 const OPTS = {

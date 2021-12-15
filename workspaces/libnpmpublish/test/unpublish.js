@@ -9,7 +9,7 @@ const OPTS = {
 
 const REG = OPTS.registry
 const REV = '72-47f2986bfd8e8b55068b204588bbf484'
-const unpub = require('../unpublish.js')
+const unpub = require('../lib/unpublish.js')
 
 t.test('basic test', async t => {
   const doc = {

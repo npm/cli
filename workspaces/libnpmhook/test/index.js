@@ -3,7 +3,7 @@
 const test = require('tap').test
 const tnock = require('./fixtures/tnock.js')
 
-const hooks = require('../index.js')
+const hooks = require('../lib/index.js')
 
 const OPTS = {
   registry: 'https://mock.reg/',

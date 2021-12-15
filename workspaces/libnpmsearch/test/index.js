@@ -10,7 +10,7 @@ const OPTS = {
 
 const REG = OPTS.registry
 const NPM_REG = 'https://registry.npmjs.org/'
-const search = require('../index.js')
+const search = require('../lib/index.js')
 
 test('basic test no options', t => {
   const query = qs.stringify({

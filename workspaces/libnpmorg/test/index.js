@@ -4,7 +4,7 @@ const Minipass = require('minipass')
 const test = require('tap').test
 const tnock = require('./fixtures/tnock.js')
 
-const org = require('../index.js')
+const org = require('../lib/index.js')
 
 const OPTS = {
   registry: 'https://mock.reg/',

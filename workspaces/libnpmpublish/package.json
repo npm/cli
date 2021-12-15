@@ -3,11 +3,11 @@
   "version": "5.0.0",
   "description": "Programmatic API for the bits behind npm publish and unpublish",
   "author": "GitHub Inc.",
+  "main": "lib/index.js",
   "contributors": [
     "Kat Marchán <kzm@zkat.tech>",
     "Claudia Hernández <claudia@npmjs.com>"
   ],
-  "main": "index.js",
   "files": [
     "bin",
     "lib"

@@ -3,7 +3,7 @@
 const { test } = require('tap')
 const tnock = require('./fixtures/tnock.js')
 
-const team = require('../index.js')
+const team = require('../lib/index.js')
 
 const REG = 'http://localhost:1337'
 const OPTS = {
