@@ -1,0 +1,326 @@
+{
+  "_id": "detect-node",
+  "_rev": "14-a2d69a62996b39bd5394e0f0baf686a7",
+  "name": "detect-node",
+  "description": "Detect Node.JS (as opposite to browser environment) (reliable)",
+  "dist-tags": {
+    "latest": "2.0.4"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "detect-node",
+      "version": "1.0.0",
+      "description": "Detect Node.JS (as opposite to browser environment) (reliable)",
+      "main": "index.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/iliakan/detect-node"
+      },
+      "keywords": [
+        "detect",
+        "node"
+      ],
+      "author": {
+        "name": "Ilya Kantor"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/iliakan/detect-node/issues"
+      },
+      "homepage": "https://github.com/iliakan/detect-node",
+      "_id": "detect-node@1.0.0",
+      "_shasum": "0dce710909dcb78d46a44889f8b78c983d27f1df",
+      "_from": ".",
+      "_npmVersion": "1.4.21",
+      "_npmUser": {
+        "name": "iliakan",
+        "email": "iliakan@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "iliakan",
+          "email": "iliakan@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "0dce710909dcb78d46a44889f8b78c983d27f1df",
+        "tarball": "https://registry.npmjs.org/detect-node/-/detect-node-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "detect-node",
+      "version": "2.0.0",
+      "description": "Detect Node.JS (as opposite to browser environment) (reliable)",
+      "main": "index.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/iliakan/detect-node"
+      },
+      "keywords": [
+        "detect",
+        "node"
+      ],
+      "author": {
+        "name": "Ilya Kantor"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/iliakan/detect-node/issues"
+      },
+      "homepage": "https://github.com/iliakan/detect-node",
+      "gitHead": "3e1d2591bdbf5e3ac1d36f4b81ddb91f37fc2280",
+      "_id": "detect-node@2.0.0",
+      "_shasum": "5ed01329818006b14a19ac8f68ec1e1a65cce725",
+      "_from": ".",
+      "_npmVersion": "1.4.21",
+      "_npmUser": {
+        "name": "iliakan",
+        "email": "iliakan@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "iliakan",
+          "email": "iliakan@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "5ed01329818006b14a19ac8f68ec1e1a65cce725",
+        "tarball": "https://registry.npmjs.org/detect-node/-/detect-node-2.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.1": {
+      "name": "detect-node",
+      "version": "2.0.1",
+      "description": "Detect Node.JS (as opposite to browser environment) (reliable)",
+      "main": "index.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/iliakan/detect-node"
+      },
+      "keywords": [
+        "detect",
+        "node"
+      ],
+      "author": {
+        "name": "Ilya Kantor"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/iliakan/detect-node/issues"
+      },
+      "homepage": "https://github.com/iliakan/detect-node",
+      "_id": "detect-node@2.0.1",
+      "_shasum": "d10f1b84000e46670f9f3d1456d92d07a3ac3bdf",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "iliakan",
+        "email": "iliakan@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "iliakan",
+          "email": "iliakan@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "d10f1b84000e46670f9f3d1456d92d07a3ac3bdf",
+        "tarball": "https://registry.npmjs.org/detect-node/-/detect-node-2.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.2": {
+      "name": "detect-node",
+      "version": "2.0.2",
+      "description": "Detect Node.JS (as opposite to browser environment) (reliable)",
+      "main": "index.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/iliakan/detect-node"
+      },
+      "keywords": [
+        "detect",
+        "node"
+      ],
+      "author": {
+        "name": "Ilya Kantor"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/iliakan/detect-node/issues"
+      },
+      "homepage": "https://github.com/iliakan/detect-node",
+      "_id": "detect-node@2.0.2",
+      "_shasum": "1d35ceac9f2b4becc5e8eae0f46a70c730e921f5",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "iliakan",
+        "email": "iliakan@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "iliakan",
+          "email": "iliakan@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "1d35ceac9f2b4becc5e8eae0f46a70c730e921f5",
+        "tarball": "https://registry.npmjs.org/detect-node/-/detect-node-2.0.2.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.3": {
+      "name": "detect-node",
+      "version": "2.0.3",
+      "description": "Detect Node.JS (as opposite to browser environment) (reliable)",
+      "main": "index.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/iliakan/detect-node"
+      },
+      "keywords": [
+        "detect",
+        "node"
+      ],
+      "author": {
+        "name": "Ilya Kantor"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/iliakan/detect-node/issues"
+      },
+      "homepage": "https://github.com/iliakan/detect-node",
+      "gitHead": "4837fa0620d2e8db948a718a8b5f89a8073c8ff4",
+      "_id": "detect-node@2.0.3",
+      "_shasum": "a2033c09cc8e158d37748fbde7507832bd6ce127",
+      "_from": ".",
+      "_npmVersion": "1.4.21",
+      "_npmUser": {
+        "name": "iliakan",
+        "email": "iliakan@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "iliakan",
+          "email": "iliakan@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "a2033c09cc8e158d37748fbde7507832bd6ce127",
+        "tarball": "https://registry.npmjs.org/detect-node/-/detect-node-2.0.3.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.4": {
+      "name": "detect-node",
+      "version": "2.0.4",
+      "description": "Detect Node.JS (as opposite to browser environment) (reliable)",
+      "main": "index.js",
+      "browser": "browser.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/iliakan/detect-node.git"
+      },
+      "keywords": [
+        "detect",
+        "node"
+      ],
+      "author": {
+        "name": "Ilya Kantor"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/iliakan/detect-node/issues"
+      },
+      "homepage": "https://github.com/iliakan/detect-node",
+      "gitHead": "563e0b838ec1dd9b169d843268cdb220b78ddd91",
+      "_id": "detect-node@2.0.4",
+      "_npmVersion": "6.4.0",
+      "_nodeVersion": "10.9.0",
+      "_npmUser": {
+        "name": "iliakan",
+        "email": "iliakan@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-ZIzRpLJrOj7jjP2miAtgqIfmzbxa4ZOr5jJc601zklsfEx9oTzmmj2nVpIPRpNlRTIh8lc1kyViIY7BWSGNmKw==",
+        "shasum": "014ee8f8f669c5c58023da64b8179c083a28c46c",
+        "tarball": "https://registry.npmjs.org/detect-node/-/detect-node-2.0.4.tgz",
+        "fileCount": 5,
+        "unpackedSize": 2549,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbiWQ3CRA9TVsSAnZWagAAMrwQAJUWqhr3R8fUX9E2H04D\nNcoFtX6tYlFDUWz7AegYBpyj8E2c85Osf16LOM/WCAYhusmIw0kkEfd1suU2\nw7tXK+hQeDvQvhh5WGXqT88fI6UY33ryXHK4/J6QX5k1AXMO4jm74EQ8hXCs\nINjy6O+DC2CEni+CgUgxxU1CmIABcRGaB7WIwFOuwlgaHo7QRUnVnpqeZ6ZN\n7RpVE+3ucJjvCW1s5d/6pLYiRoRZIfudBMRD9OYkdvFGzQ71BKo7AhPQa4Bz\n5w8g3i0UQ6sx7RSYrWNeXRlrAD798fwvGtXsUwIkUE9QJzfT+k5jdHS/aFJT\n3cIIq4+jwV9ODJkkGxmILaWRpuBLpHI+syh3/Xmb113bB1QpcLij1BXJS8sN\ncR1xnLlD72CuFYuAeDkxsTk47D+mK0IDVWa9HgDi8D7IqBSwNOZLW1tuddql\nThwQWn6KIzzCzMKlBajt0rqyIUt5J4kLVXVS7wKvJRQhyaCrguFrdE4jbsjy\npCoqBydwvtrBnLlydr0WbNE94xoLPudJPlxjnyWrAd/MmjvI3RfhAAM+oQkE\n6s00+x2fx2cT51wjX/w+STN5CvNLGZerpTM0xgZmztwB2aWUVBybvAxdtW4F\nhaIf21JXHvTl5F8UXqKHD4dv6mB1w9X1ZcDYZ/hxetoj70xhevfvmFGZ3mVs\n6W0B\r\n=HQIg\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "iliakan",
+          "email": "iliakan@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/detect-node_2.0.4_1535730743130_0.9044559921683464"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "### Install\n\n```shell\nnpm install --save detect-node\n```\n\n### Usage:\n\n```js\nvar isNode = require('detect-node');\n\nif (isNode) {\n  console.log(\"Running under Node.JS\");\n} else {\n  alert(\"Hello from browser (or whatever not-a-node env)\");\n}\n```\n\nThe check is performed as:\n```js\nmodule.exports = false;\n\n// Only Node.JS has a process variable that is of [[Class]] process\ntry {\n module.exports = Object.prototype.toString.call(global.process) === '[object process]' \n} catch(e) {}\n\n```\n\nThanks to Ingvar Stepanyan for the initial idea. This check is both **the most reliable I could find** and it does not use `process` env directly, which would cause browserify to include it into the build.\n",
+  "maintainers": [
+    {
+      "name": "iliakan",
+      "email": "iliakan@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2019-01-02T21:18:08.875Z",
+    "created": "2014-07-31T10:20:21.252Z",
+    "1.0.0": "2014-07-31T10:20:21.252Z",
+    "2.0.0": "2014-07-31T10:30:55.255Z",
+    "2.0.1": "2014-07-31T10:34:58.862Z",
+    "2.0.2": "2014-07-31T10:36:39.833Z",
+    "2.0.3": "2014-08-01T16:28:40.851Z",
+    "2.0.4": "2018-08-31T15:52:23.291Z"
+  },
+  "homepage": "https://github.com/iliakan/detect-node",
+  "keywords": [
+    "detect",
+    "node"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iliakan/detect-node.git"
+  },
+  "author": {
+    "name": "Ilya Kantor"
+  },
+  "bugs": {
+    "url": "https://github.com/iliakan/detect-node/issues"
+  },
+  "license": "ISC",
+  "readmeFilename": "Readme.md",
+  "users": {
+    "xch": true,
+    "i-erokhin": true,
+    "cliff": true
+  }
+}

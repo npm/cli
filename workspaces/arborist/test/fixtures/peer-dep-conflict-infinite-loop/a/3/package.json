@@ -1,0 +1,9 @@
+{
+  "name": "@isaacs/peer-dep-conflict-infinite-loop-a",
+  "version": "3.0.0",
+  "dependencies": {
+    "@isaacs/peer-dep-conflict-infinite-loop-x": "",
+    "@isaacs/peer-dep-conflict-infinite-loop-y": "",
+    "@isaacs/peer-dep-conflict-infinite-loop-j": "3"
+  }
+}

@@ -1,0 +1,468 @@
+{
+  "_id": "eslint-visitor-keys",
+  "_rev": "19-a1bfb75844530e27f0c7e581352b2b74",
+  "name": "eslint-visitor-keys",
+  "description": "Constants and utilities about visitor keys to traverse AST.",
+  "dist-tags": {
+    "latest": "2.0.0"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "eslint-visitor-keys",
+      "version": "0.1.0",
+      "description": "Constants and utilities about visitor keys to traverse AST.",
+      "main": "lib/index.js",
+      "files": [
+        "lib"
+      ],
+      "engines": {
+        "node": ">=4"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "eslint": "^4.7.2",
+        "eslint-config-eslint": "^4.0.0",
+        "eslint-release": "^0.10.3",
+        "mocha": "^3.5.3",
+        "nyc": "^11.2.1",
+        "opener": "^1.4.3"
+      },
+      "scripts": {
+        "lint": "eslint lib tests/lib",
+        "pretest": "npm run -s lint",
+        "test": "nyc mocha tests/lib",
+        "coverage": "nyc report --reporter lcov && opener coverage/lcov-report/index.html",
+        "release": "eslint-release",
+        "ci-release": "eslint-ci-release"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/eslint/eslint-visitor-keys.git"
+      },
+      "keywords": [],
+      "author": {
+        "name": "Toru Nagashima",
+        "url": "https://github.com/mysticatea"
+      },
+      "license": "Apache-2.0",
+      "bugs": {
+        "url": "https://github.com/eslint/eslint-visitor-keys/issues"
+      },
+      "homepage": "https://github.com/eslint/eslint-visitor-keys#readme",
+      "gitHead": "1888d3834d201439e1972e8da71946753310b18a",
+      "_id": "eslint-visitor-keys@0.1.0",
+      "_npmVersion": "5.4.2",
+      "_nodeVersion": "8.8.0",
+      "_npmUser": {
+        "name": "eslint",
+        "email": "nicholas+eslint@nczconsulting.com"
+      },
+      "dist": {
+        "integrity": "sha512-h+3ctwf0epIY9qaN0mq1ZoHSH19zSy98pzS1bYKDgxkJMRKDmo9n4r7lPtHD6ZEyzBIvXFV7e/Dg5ci/zvMPoA==",
+        "shasum": "f7ed2314b90c36bd4b84a18e26c86cb4b4d04675",
+        "tarball": "https://registry.npmjs.org/eslint-visitor-keys/-/eslint-visitor-keys-0.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "eslint",
+          "email": "nicholas+eslint@nczconsulting.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eslint-visitor-keys-0.1.0.tgz_1510908773288_0.2083733738400042"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "eslint-visitor-keys",
+      "version": "1.0.0",
+      "description": "Constants and utilities about visitor keys to traverse AST.",
+      "main": "lib/index.js",
+      "files": [
+        "lib"
+      ],
+      "engines": {
+        "node": ">=4"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "eslint": "^4.7.2",
+        "eslint-config-eslint": "^4.0.0",
+        "eslint-release": "^0.10.3",
+        "mocha": "^3.5.3",
+        "nyc": "^11.2.1",
+        "opener": "^1.4.3"
+      },
+      "scripts": {
+        "lint": "eslint lib tests/lib",
+        "pretest": "npm run -s lint",
+        "test": "nyc mocha tests/lib",
+        "coverage": "nyc report --reporter lcov && opener coverage/lcov-report/index.html",
+        "release": "eslint-release",
+        "ci-release": "eslint-ci-release"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/eslint/eslint-visitor-keys.git"
+      },
+      "keywords": [],
+      "author": {
+        "name": "Toru Nagashima",
+        "url": "https://github.com/mysticatea"
+      },
+      "license": "Apache-2.0",
+      "bugs": {
+        "url": "https://github.com/eslint/eslint-visitor-keys/issues"
+      },
+      "homepage": "https://github.com/eslint/eslint-visitor-keys#readme",
+      "gitHead": "7f35599b67605e4b1ddc84740077e15a84da5a36",
+      "_id": "eslint-visitor-keys@1.0.0",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.3",
+      "_npmUser": {
+        "name": "eslint",
+        "email": "nicholas+eslint@nczconsulting.com"
+      },
+      "dist": {
+        "integrity": "sha512-qzm/XxIbxm/FHyH341ZrbnMUpe+5Bocte9xkmFMzPMjRaZMcXww+MpBptFvtU+79L362nqiLhekCxCxDPaUMBQ==",
+        "shasum": "3f3180fb2e291017716acb4c9d6d5b5c34a6a81d",
+        "tarball": "https://registry.npmjs.org/eslint-visitor-keys/-/eslint-visitor-keys-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "eslint",
+          "email": "nicholas+eslint@nczconsulting.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eslint-visitor-keys-1.0.0.tgz_1513594527044_0.7528314294759184"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "eslint-visitor-keys",
+      "version": "1.1.0",
+      "description": "Constants and utilities about visitor keys to traverse AST.",
+      "main": "lib/index.js",
+      "engines": {
+        "node": ">=4"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "eslint": "^4.7.2",
+        "eslint-config-eslint": "^4.0.0",
+        "eslint-release": "^1.0.0",
+        "mocha": "^3.5.3",
+        "nyc": "^11.2.1",
+        "opener": "^1.4.3"
+      },
+      "scripts": {
+        "lint": "eslint lib tests/lib",
+        "pretest": "npm run -s lint",
+        "test": "nyc mocha tests/lib",
+        "coverage": "nyc report --reporter lcov && opener coverage/lcov-report/index.html",
+        "generate-release": "eslint-generate-release",
+        "generate-alpharelease": "eslint-generate-prerelease alpha",
+        "generate-betarelease": "eslint-generate-prerelease beta",
+        "generate-rcrelease": "eslint-generate-prerelease rc",
+        "publish-release": "eslint-publish-release"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/eslint/eslint-visitor-keys.git"
+      },
+      "keywords": [],
+      "author": {
+        "name": "Toru Nagashima",
+        "url": "https://github.com/mysticatea"
+      },
+      "license": "Apache-2.0",
+      "bugs": {
+        "url": "https://github.com/eslint/eslint-visitor-keys/issues"
+      },
+      "homepage": "https://github.com/eslint/eslint-visitor-keys#readme",
+      "gitHead": "0516192692d32b22509d3b34705dc13ec713f996",
+      "_id": "eslint-visitor-keys@1.1.0",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.15.2",
+      "_npmUser": {
+        "name": "eslint",
+        "email": "nicholas+eslint@nczconsulting.com"
+      },
+      "dist": {
+        "integrity": "sha512-8y9YjtM1JBJU/A9Kc+SbaOV4y29sSWckBwMHa+FGtVj5gN/sbnKDf6xJUl+8g7FAij9LVaP8C24DUiH/f/2Z9A==",
+        "shasum": "e2a82cea84ff246ad6fb57f9bde5b46621459ec2",
+        "tarball": "https://registry.npmjs.org/eslint-visitor-keys/-/eslint-visitor-keys-1.1.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 23254,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdUsT8CRA9TVsSAnZWagAA85oP/RyWgGWzGds87KuKknDy\nxG+DGniUHjXPXD3z+YBeLy/Vev2/r19D3PAT9f4/FI0YdB657jKq1dtup9s6\nTQFrZr1Pihyixr/2JpsfTgVamTOkLTEmqXBXjsWeX5OSKH7BOoBCW1LIGkW+\nezTR7SpYlAZuG0dVnRnz0yxH6U4NRx5GmNoumzv1I6Xp8kpCHyUi92DT63/8\nf+vDASK8ue3Xl30OrsQr2Ll2+p+icCCwi82BsOaRfmktVKIMP9xbwJYbaNKe\nenm6tyyZWNVlLgeM4g40LR4UR0kEw++bRMk2D0Jqm8z/q+wui09a1mQSli6s\nzR1RYksscPNEvcUOLw+UUDCT6svKD0TFP43wMSnYOb3KLOPDF1pGs4BX788J\nkjDPot5C/veQdw+CQ4P3igrquo8Oh3YrD/cIdbHsE4BmJ0bwpHWp9EBzrUfF\n0mYNPMg9pIvok7pzTe+/JDFVYJMb3QHJGbBTULqblGQp8B8CvnintZ7vdcZL\nf9xO/sDw6zFwLTjCfAVximjEo5DdmFtF1TYpi6n0OKjOv1Qy6kkdTLQpUSg/\nfW08tG5rZ7ZVWZlwoVi6XPSRmld1dZ4FZJnEBprquJaROYPKwqoqgGXdDEsN\nDNguKAqxHyW4IBc9wD0J9ogiz2gZWfcuwBqkmsEokHpqCF8jug0NaP5bUhow\ne8kM\r\n=saZS\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "eslint",
+          "email": "nicholas+eslint@nczconsulting.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eslint-visitor-keys_1.1.0_1565705468147_0.9677851640877779"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.2.0": {
+      "name": "eslint-visitor-keys",
+      "version": "1.2.0",
+      "description": "Constants and utilities about visitor keys to traverse AST.",
+      "main": "lib/index.js",
+      "engines": {
+        "node": ">=4"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "eslint": "^4.7.2",
+        "eslint-config-eslint": "^4.0.0",
+        "eslint-release": "^1.0.0",
+        "mocha": "^3.5.3",
+        "nyc": "^11.2.1",
+        "opener": "^1.4.3"
+      },
+      "scripts": {
+        "lint": "eslint lib tests/lib",
+        "pretest": "npm run -s lint",
+        "test": "nyc mocha tests/lib",
+        "coverage": "nyc report --reporter lcov && opener coverage/lcov-report/index.html",
+        "generate-release": "eslint-generate-release",
+        "generate-alpharelease": "eslint-generate-prerelease alpha",
+        "generate-betarelease": "eslint-generate-prerelease beta",
+        "generate-rcrelease": "eslint-generate-prerelease rc",
+        "publish-release": "eslint-publish-release"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/eslint/eslint-visitor-keys.git"
+      },
+      "keywords": [],
+      "author": {
+        "name": "Toru Nagashima",
+        "url": "https://github.com/mysticatea"
+      },
+      "license": "Apache-2.0",
+      "bugs": {
+        "url": "https://github.com/eslint/eslint-visitor-keys/issues"
+      },
+      "homepage": "https://github.com/eslint/eslint-visitor-keys#readme",
+      "gitHead": "d15b95435c7732b8ade7b607d3bb3242f95a8c4f",
+      "_id": "eslint-visitor-keys@1.2.0",
+      "_nodeVersion": "12.16.3",
+      "_npmVersion": "6.14.4",
+      "dist": {
+        "integrity": "sha512-WFb4ihckKil6hu3Dp798xdzSfddwKKU3+nGniKF6HfeW6OLd2OUDEPP7TcHtB5+QXOKg2s6B2DaMPE1Nn/kxKQ==",
+        "shasum": "74415ac884874495f78ec2a97349525344c981fa",
+        "tarball": "https://registry.npmjs.org/eslint-visitor-keys/-/eslint-visitor-keys-1.2.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 23471,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJe2NVcCRA9TVsSAnZWagAAljYP/A6BOPYIxVvy1AxIyJ8+\nPrE9/LqSuIacIDq1gvIiWMS7bjxeoHpb9eVWkebRqzr9DilCtcoQxh22rkdm\nwKFFtG5zCbAdgIUwsREabQjqUs1xlBZLZ8kMXC+WLDpceW1qd8llY+xJnnpL\njGxLgEyaK67BFAOFozhKHWg+Gig8w/1wGsEiqKXJlUMY3YYs5ReX4s7+sK73\nmj6pbIfppedcp79N99yOPVUDycAOHn2A1k2i/X4wZNS3wgWkYWgRuye/VoT0\njf37mdzQG2Lxyt1NbKXYDbHoa9CumlJTQ3Gv1rB+KApY0ZqwoA8xqLVDidLG\nWe3f9syw3K6JWwZlYC6q71tCOXveoVQKweRZVdU01pv0TjW2SOxE1My6bpke\niKY6Xyr/w7oNk/nZAHvHwCKK+4/DwtMFG9+1csAC9+KC1AgwPDauuVJwzGq0\ngIdWhjpHy/y58ktFnK3KSqx/5Ovz7Np/WQn+v9b3XVBgrtFpGEDfxJLZl7Gt\nki4Rf4iVH1NxKbwzbLy4LJ1Cr6vpKR4Q1HXSt/+GFVzXoAEUi/wo2MbP20pi\nxD/rco7JRPUIcLmLVqsqAkym8jRgBzUdzyFmJ0iFt44FPfHudw3855XLM7uQ\n+KIFHto/JEmHRrTn8s0n6Zggyy6BzxFIJ6vcR17sr5yN4ZX/U1Xcgs5cCzPv\nxpC9\r\n=y3dX\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "nicholas+eslint@nczconsulting.com",
+          "name": "eslintbot"
+        },
+        {
+          "email": "kai@kaicataldo.com",
+          "name": "kaicataldo"
+        }
+      ],
+      "_npmUser": {
+        "name": "eslintbot",
+        "email": "nicholas+eslint@nczconsulting.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eslint-visitor-keys_1.2.0_1591268700227_0.8416030607944931"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.3.0": {
+      "name": "eslint-visitor-keys",
+      "version": "1.3.0",
+      "description": "Constants and utilities about visitor keys to traverse AST.",
+      "main": "lib/index.js",
+      "engines": {
+        "node": ">=4"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "eslint": "^4.7.2",
+        "eslint-config-eslint": "^4.0.0",
+        "eslint-release": "^1.0.0",
+        "mocha": "^3.5.3",
+        "nyc": "^11.2.1",
+        "opener": "^1.4.3"
+      },
+      "scripts": {
+        "lint": "eslint lib tests/lib",
+        "pretest": "npm run -s lint",
+        "test": "nyc mocha tests/lib",
+        "coverage": "nyc report --reporter lcov && opener coverage/lcov-report/index.html",
+        "generate-release": "eslint-generate-release",
+        "generate-alpharelease": "eslint-generate-prerelease alpha",
+        "generate-betarelease": "eslint-generate-prerelease beta",
+        "generate-rcrelease": "eslint-generate-prerelease rc",
+        "publish-release": "eslint-publish-release"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/eslint/eslint-visitor-keys.git"
+      },
+      "keywords": [],
+      "author": {
+        "name": "Toru Nagashima",
+        "url": "https://github.com/mysticatea"
+      },
+      "license": "Apache-2.0",
+      "bugs": {
+        "url": "https://github.com/eslint/eslint-visitor-keys/issues"
+      },
+      "homepage": "https://github.com/eslint/eslint-visitor-keys#readme",
+      "gitHead": "80a3ee826297902d8fb777706670622536889eaf",
+      "_id": "eslint-visitor-keys@1.3.0",
+      "_nodeVersion": "12.18.0",
+      "_npmVersion": "6.14.4",
+      "dist": {
+        "integrity": "sha512-6J72N8UNa462wa/KFODt/PJ3IU60SDpC3QXC1Hjc1BXXpfL2C9R5+AU7jhe0F6GREqVMh4Juu+NY7xn+6dipUQ==",
+        "shasum": "30ebd1ef7c2fdff01c3a4f151044af25fab0523e",
+        "tarball": "https://registry.npmjs.org/eslint-visitor-keys/-/eslint-visitor-keys-1.3.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 23716,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJe7OpmCRA9TVsSAnZWagAAEnEP/2H481yww20/aVys47TC\n6MliS06pGKGDCsJloq+YvyyJElytxY/aII2iOc2gsacqj9k0D5EclYR2aGme\n53r0goqFI+j57rv3csfyT8ZZ8vAlRlLXkWkX+k8INOsoWJAIaEm5VpcXH8Vj\nZioKocrHrElCKwrwW0spS4amSz37ofc8kCtsJzFuydWApFJpqr8//TzU57Qq\n6el/natbfcilwW1VYh4pUbvrLPYxJr4xClty7o0Tzea4WrE76dHURBowzpU+\n6gmSKpkCpz0XfBfkOQoGq28owCy81qJ9i2sD8N7XZ+N7JUUZCZ907zDg1VhU\ncNNHfJ9/WuPPfwscBDI6gJ1hPblVgrhwUtK9+sL3VFdo60fcKFUF2yEtY3Su\nklyjKHxiaL4SQNCSu7eD4sERih6t1pHyAMnGoRQ2T1AOeoPvtQurzqCFqTUJ\nszAYZRtdYUXA2vjDiQkMU2vputzt07sBy6r2ITjo66xfMZJtUL9GATmMiYR7\nKlGqUhGDe/3cdZqWhdDO60mtCSncWKAs9xuXlNdmSEw0G23I2az7iL578nmb\nzBQ3oKkq/HrmriFDskSV/yL0WTpwCyIhYN0yo9TJcAJGhjoD/Vi8hXMd/zhY\noxWub8SY50W7BSJEtUmxrylZBwTl663W5OrQMiQpLP7AiK1dNJOowHP7gZ20\ngkk7\r\n=UcLn\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "nicholas+eslint@nczconsulting.com",
+          "name": "eslintbot"
+        },
+        {
+          "email": "kai@kaicataldo.com",
+          "name": "kaicataldo"
+        }
+      ],
+      "_npmUser": {
+        "name": "eslintbot",
+        "email": "nicholas+eslint@nczconsulting.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eslint-visitor-keys_1.3.0_1592584806258_0.32240890612923456"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.0": {
+      "name": "eslint-visitor-keys",
+      "version": "2.0.0",
+      "description": "Constants and utilities about visitor keys to traverse AST.",
+      "main": "lib/index.js",
+      "engines": {
+        "node": ">=10"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "eslint": "^4.7.2",
+        "eslint-config-eslint": "^4.0.0",
+        "eslint-release": "^1.0.0",
+        "mocha": "^3.5.3",
+        "nyc": "^11.2.1",
+        "opener": "^1.4.3"
+      },
+      "scripts": {
+        "lint": "eslint lib tests/lib",
+        "test": "nyc mocha tests/lib",
+        "coverage": "nyc report --reporter lcov && opener coverage/lcov-report/index.html",
+        "generate-release": "eslint-generate-release",
+        "generate-alpharelease": "eslint-generate-prerelease alpha",
+        "generate-betarelease": "eslint-generate-prerelease beta",
+        "generate-rcrelease": "eslint-generate-prerelease rc",
+        "publish-release": "eslint-publish-release"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/eslint/eslint-visitor-keys.git"
+      },
+      "keywords": [],
+      "author": {
+        "name": "Toru Nagashima",
+        "url": "https://github.com/mysticatea"
+      },
+      "license": "Apache-2.0",
+      "bugs": {
+        "url": "https://github.com/eslint/eslint-visitor-keys/issues"
+      },
+      "homepage": "https://github.com/eslint/eslint-visitor-keys#readme",
+      "gitHead": "abd411ba452cd24fe0473cc77a3067ff56e82cd9",
+      "_id": "eslint-visitor-keys@2.0.0",
+      "_nodeVersion": "12.18.3",
+      "_npmVersion": "6.14.6",
+      "dist": {
+        "integrity": "sha512-QudtT6av5WXels9WjIM7qz1XD1cWGvX4gGXvp/zBn9nXG02D0utdU3Em2m/QjTnrsk6bBjmCygl3rmj118msQQ==",
+        "shasum": "21fdc8fbcd9c795cc0321f0563702095751511a8",
+        "tarball": "https://registry.npmjs.org/eslint-visitor-keys/-/eslint-visitor-keys-2.0.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 24034,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfNvMmCRA9TVsSAnZWagAA2QAQAJySEfcwC6+Dqyd+qNUh\nyZgMwkC2PK9X/Y8c8wSLfAt5OA8dkeBvn09XmnIQ6yYY69TOrFaIZ1vkSNyk\n7s0ZSxO3IzDeKktLh8p52usa6XKzYcYvEBId8sj33ppOH4Tz8VHUyHlxlbgv\nJASO1JXXPN5VVVWTbcvk4LsgFXCzLjCsBHUE9ckDSZI8iIr6gb1dxsvIabb1\nr9vg6G+CGznYTQpYER+lOHAcRmYYcK1y/LX9NFeShplqjvDdI0O3MPRnBhWQ\nl/2cdiwwZS/3a6rgpCbzpXB0iyhY6jMTHNgaUlnnNHLhUk6jpLd1i4aSTQ4v\nNpFdBNW5CXrxy6xqxaosjRcJIbcl3iFKZbS7W2MBxJ0Ui82tk3PzB2MOUCE5\nCzSW9jrbCR7RZsWPUHYEb6C5BhisSU3LEVeCKT7vQI734RR6DX90c38KKdhV\nRgLPvJAXNMaLdzzJC5pW+Z9qCUA0VrK99zN03SPxBKkjWtdMr9rmbyyl94Oi\ntyeQvUi1JMBItukYlzb/HbPDqms1oR6JfXEd+wWccR6cB16RfKgKYo0ndzRp\nhpm6I5FC0rlVHK/8Anes78LBteyHpS7qzFGQc8BdCs4XaaJ1tZghXXOxKejm\nTHyqeJqLkeT7skphk4ywDlGB0Bzf3jzlxGW+IVrgX2CFl872aSzkSakFG9QO\nbnzJ\r\n=niOm\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "nicholas+eslint@nczconsulting.com",
+          "name": "eslintbot"
+        }
+      ],
+      "_npmUser": {
+        "name": "eslintbot",
+        "email": "nicholas+eslint@nczconsulting.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eslint-visitor-keys_2.0.0_1597436710184_0.41598997638384483"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# eslint-visitor-keys\n\n[![npm version](https://img.shields.io/npm/v/eslint-visitor-keys.svg)](https://www.npmjs.com/package/eslint-visitor-keys)\n[![Downloads/month](https://img.shields.io/npm/dm/eslint-visitor-keys.svg)](http://www.npmtrends.com/eslint-visitor-keys)\n[![Build Status](https://travis-ci.org/eslint/eslint-visitor-keys.svg?branch=master)](https://travis-ci.org/eslint/eslint-visitor-keys)\n[![Dependency Status](https://david-dm.org/eslint/eslint-visitor-keys.svg)](https://david-dm.org/eslint/eslint-visitor-keys)\n\nConstants and utilities about visitor keys to traverse AST.\n\n## 💿 Installation\n\nUse [npm] to install.\n\n```bash\n$ npm install eslint-visitor-keys\n```\n\n### Requirements\n\n- [Node.js] 4.0.0 or later.\n\n## 📖 Usage\n\n```js\nconst evk = require(\"eslint-visitor-keys\")\n```\n\n### evk.KEYS\n\n> type: `{ [type: string]: string[] | undefined }`\n\nVisitor keys. This keys are frozen.\n\nThis is an object. Keys are the type of [ESTree] nodes. Their values are an array of property names which have child nodes.\n\nFor example:\n\n```\nconsole.log(evk.KEYS.AssignmentExpression) // → [\"left\", \"right\"]\n```\n\n### evk.getKeys(node)\n\n> type: `(node: object) => string[]`\n\nGet the visitor keys of a given AST node.\n\nThis is similar to `Object.keys(node)` of ES Standard, but some keys are excluded: `parent`, `leadingComments`, `trailingComments`, and names which start with `_`.\n\nThis will be used to traverse unknown nodes.\n\nFor example:\n\n```\nconst node = {\n    type: \"AssignmentExpression\",\n    left: { type: \"Identifier\", name: \"foo\" },\n    right: { type: \"Literal\", value: 0 }\n}\nconsole.log(evk.getKeys(node)) // → [\"type\", \"left\", \"right\"]\n```\n\n### evk.unionWith(additionalKeys)\n\n> type: `(additionalKeys: object) => { [type: string]: string[] | undefined }`\n\nMake the union set with `evk.KEYS` and the given keys.\n\n- The order of keys is, `additionalKeys` is at first, then `evk.KEYS` is concatenated after that.\n- It removes duplicated keys as keeping the first one.\n\nFor example:\n\n```\nconsole.log(evk.unionWith({\n    MethodDefinition: [\"decorators\"]\n})) // → { ..., MethodDefinition: [\"decorators\", \"key\", \"value\"], ... }\n```\n\n## 📰 Change log\n\nSee [GitHub releases](https://github.com/eslint/eslint-visitor-keys/releases).\n\n## 🍻 Contributing\n\nWelcome. See [ESLint contribution guidelines](https://eslint.org/docs/developer-guide/contributing/).\n\n### Development commands\n\n- `npm test` runs tests and measures code coverage.\n- `npm run lint` checks source codes with ESLint.\n- `npm run coverage` opens the code coverage report of the previous test with your default browser.\n- `npm run release` publishes this package to [npm] registory.\n\n\n[npm]: https://www.npmjs.com/\n[Node.js]: https://nodejs.org/en/\n[ESTree]: https://github.com/estree/estree\n",
+  "maintainers": [
+    {
+      "email": "nicholas+eslint@nczconsulting.com",
+      "name": "eslintbot"
+    }
+  ],
+  "time": {
+    "modified": "2020-08-14T20:25:13.731Z",
+    "created": "2017-11-17T08:52:53.415Z",
+    "0.1.0": "2017-11-17T08:52:53.415Z",
+    "1.0.0": "2017-12-18T10:55:27.110Z",
+    "1.1.0": "2019-08-13T14:11:08.272Z",
+    "1.2.0": "2020-06-04T11:05:00.390Z",
+    "1.3.0": "2020-06-19T16:40:06.400Z",
+    "2.0.0": "2020-08-14T20:25:10.300Z"
+  },
+  "homepage": "https://github.com/eslint/eslint-visitor-keys#readme",
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eslint/eslint-visitor-keys.git"
+  },
+  "author": {
+    "name": "Toru Nagashima",
+    "url": "https://github.com/mysticatea"
+  },
+  "bugs": {
+    "url": "https://github.com/eslint/eslint-visitor-keys/issues"
+  },
+  "license": "Apache-2.0",
+  "readmeFilename": "README.md"
+}

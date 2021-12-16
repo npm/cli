@@ -1,0 +1,857 @@
+{
+  "_id": "standardx",
+  "_rev": "13-eca314d7a7d618572215d44292ebff7d",
+  "name": "standardx",
+  "description": "JavaScript Standard Style with custom tweaks",
+  "dist-tags": {
+    "latest": "5.0.0"
+  },
+  "versions": {
+    "1.0.0-alpha.1": {
+      "name": "standardx",
+      "description": "JavaScript Standard Style with custom tweaks",
+      "version": "1.0.0-alpha.1",
+      "author": {
+        "name": "Dan Flettre",
+        "email": "flettre@gmail.com"
+      },
+      "bin": {
+        "standardx": "./bin/cmd.js"
+      },
+      "bugs": {
+        "url": "https://github.com/standard/standardx/issues"
+      },
+      "devDependencies": {
+        "standard": "^10.0.3",
+        "tap-spec": "^4.0.2",
+        "tape": "^4.0.0"
+      },
+      "homepage": "https://github.com/standard/standardx",
+      "keywords": [],
+      "license": "MIT",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/standard/standardx.git"
+      },
+      "scripts": {
+        "test": "standard && tape test/*.js | tap-spec"
+      },
+      "eslintConfig": {
+        "rules": {
+          "camelcase": 0
+        }
+      },
+      "gitHead": "02d974779f08a7a7ac32e6859333dbb8eb6021c9",
+      "_id": "standardx@1.0.0-alpha.1",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "6.11.0",
+      "_npmUser": {
+        "name": "flet",
+        "email": "flettre@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-u5KyunrND9FzCz1tyIiApC7Qik4xMR5QmFtd1ZLhMJAFvUdz9DTs2wwv2AQR5IXs3RKXFA40IKyOfay3NORQBA==",
+        "shasum": "0e9a8de3b92890d05937ffc1ce641add17279247",
+        "tarball": "https://registry.npmjs.org/standardx/-/standardx-1.0.0-alpha.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "flet",
+          "email": "flettre@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/standardx-1.0.0-alpha.1.tgz_1502481039198_0.10005956259556115"
+      },
+      "directories": {}
+    },
+    "1.0.0-alpha.2": {
+      "name": "standardx",
+      "description": "JavaScript Standard Style with custom tweaks",
+      "version": "1.0.0-alpha.2",
+      "author": {
+        "name": "Dan Flettre",
+        "email": "flettre@gmail.com"
+      },
+      "bin": {
+        "standardx": "./bin/cmd.js"
+      },
+      "bugs": {
+        "url": "https://github.com/standard/standardx/issues"
+      },
+      "devDependencies": {
+        "standard": "^10.0.3",
+        "tap-spec": "^4.0.2",
+        "tape": "^4.0.0"
+      },
+      "homepage": "https://github.com/standard/standardx",
+      "keywords": [],
+      "license": "MIT",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/standard/standardx.git"
+      },
+      "scripts": {
+        "test": "standard && tape test/*.js | tap-spec"
+      },
+      "eslintConfig": {
+        "rules": {
+          "camelcase": 0
+        }
+      },
+      "dependencies": {
+        "standard-engine": "^7.0.0"
+      },
+      "gitHead": "806972d8f5e25015984abc6c23daf575ccc8ffae",
+      "_id": "standardx@1.0.0-alpha.2",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "6.11.0",
+      "_npmUser": {
+        "name": "flet",
+        "email": "flettre@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-YI5DrtaArgZ7k4d+ydb6YoBG37G4PE4PjUmPFu6gI52o11v/KFDpRMvol//9WKHq/vAEGJ3k2BIE7QbJ54HfPw==",
+        "shasum": "aba8449d7438e5eeb817e24c791685841e3e556e",
+        "tarball": "https://registry.npmjs.org/standardx/-/standardx-1.0.0-alpha.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "flet",
+          "email": "flettre@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/standardx-1.0.0-alpha.2.tgz_1502481211905_0.7650451338849962"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "standardx",
+      "description": "JavaScript Standard Style with custom tweaks",
+      "version": "1.0.0",
+      "author": {
+        "name": "Dan Flettre",
+        "email": "flettre@gmail.com"
+      },
+      "bin": {
+        "standardx": "./bin/cmd.js"
+      },
+      "bugs": {
+        "url": "https://github.com/standard/standardx/issues"
+      },
+      "devDependencies": {
+        "standard": "^10.0.3",
+        "tap-spec": "^4.0.2",
+        "tape": "^4.0.0"
+      },
+      "homepage": "https://github.com/standard/standardx",
+      "keywords": [],
+      "license": "MIT",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/standard/standardx.git"
+      },
+      "scripts": {
+        "test": "standard && tape test/*.js | tap-spec"
+      },
+      "eslintConfig": {
+        "rules": {
+          "camelcase": 0
+        }
+      },
+      "dependencies": {
+        "standard-engine": "^7.0.0"
+      },
+      "gitHead": "e703847f636ad843e2aa4730ca2eb0c19649dc79",
+      "_id": "standardx@1.0.0",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "6.11.0",
+      "_npmUser": {
+        "name": "flet",
+        "email": "flettre@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-pTSn0q9iwNfnZGsuBNCc/gB9hFZSq6q2LsGy3abyGZx1y4QDE4zJNnD6r+/s5YYcdx5rNq8O8msVhyw0RW96cg==",
+        "shasum": "ec1951c5411f25a5727a4228525568af6d7fc080",
+        "tarball": "https://registry.npmjs.org/standardx/-/standardx-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "flet",
+          "email": "flettre@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/standardx-1.0.0.tgz_1502481280617_0.2882279579062015"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "standardx",
+      "description": "JavaScript Standard Style with custom tweaks",
+      "version": "1.0.1",
+      "author": {
+        "name": "Dan Flettre",
+        "email": "flettre@gmail.com"
+      },
+      "bin": {
+        "standardx": "./bin/cmd.js"
+      },
+      "bugs": {
+        "url": "https://github.com/standard/standardx/issues"
+      },
+      "devDependencies": {
+        "tap-spec": "^4.0.2",
+        "tape": "^4.0.0"
+      },
+      "homepage": "https://github.com/standard/standardx",
+      "keywords": [],
+      "license": "MIT",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/standard/standardx.git"
+      },
+      "scripts": {
+        "test": "standard && tape test/*.js | tap-spec"
+      },
+      "eslintConfig": {
+        "rules": {
+          "camelcase": 0
+        }
+      },
+      "dependencies": {
+        "standard": "^10.0.3",
+        "standard-engine": "^7.0.0"
+      },
+      "gitHead": "66770af1f4c9dcf818cff09ecff7ef95ef649030",
+      "_id": "standardx@1.0.1",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "6.11.0",
+      "_npmUser": {
+        "name": "flet",
+        "email": "flettre@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-67UzYe882DG43kxPs3Iz2cBFU7LBwjvLiE6NrT73FEP3OaMfhPbe+ACkDLcX8L0VFjmIlDL81tocaxRmwdLaww==",
+        "shasum": "99e73bc2ddc8372bc55cbeef8e3b296c86bd8ef4",
+        "tarball": "https://registry.npmjs.org/standardx/-/standardx-1.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "flet",
+          "email": "flettre@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/standardx-1.0.1.tgz_1502481365401_0.22912449948489666"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "standardx",
+      "description": "JavaScript Standard Style with custom tweaks",
+      "version": "1.0.2",
+      "author": {
+        "name": "Dan Flettre",
+        "email": "flettre@gmail.com"
+      },
+      "bin": {
+        "standardx": "./bin/cmd.js"
+      },
+      "bugs": {
+        "url": "https://github.com/standard/standardx/issues"
+      },
+      "devDependencies": {
+        "tap-spec": "^4.0.2",
+        "tape": "^4.0.0"
+      },
+      "homepage": "https://github.com/standard/standardx",
+      "keywords": [],
+      "license": "MIT",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/standard/standardx.git"
+      },
+      "scripts": {
+        "test": "standard && tape test/*.js | tap-spec"
+      },
+      "eslintConfig": {
+        "rules": {
+          "camelcase": 0
+        }
+      },
+      "dependencies": {
+        "standard": "^10.0.3",
+        "standard-engine": "^7.0.0"
+      },
+      "gitHead": "6add017e57f3da8622486517c46906bb6d283f33",
+      "_id": "standardx@1.0.2",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "6.11.0",
+      "_npmUser": {
+        "name": "flet",
+        "email": "flettre@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-Y58PkMHwzKDxWlysV7E9bUJ9HvJqe6Sbc3RG7dfyB7ysnGH9VenQrafbADxwC8SMuL1FB/WX213Vc7NgQ/IJZg==",
+        "shasum": "2f5adcc36046066455cd9edd25d796c02aabdf94",
+        "tarball": "https://registry.npmjs.org/standardx/-/standardx-1.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "flet",
+          "email": "flettre@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/standardx-1.0.2.tgz_1502482562913_0.060235305689275265"
+      },
+      "directories": {}
+    },
+    "1.0.3": {
+      "name": "standardx",
+      "description": "JavaScript Standard Style with custom tweaks",
+      "version": "1.0.3",
+      "author": {
+        "name": "Dan Flettre",
+        "email": "flettre@gmail.com"
+      },
+      "bin": {
+        "standardx": "./bin/cmd.js"
+      },
+      "bugs": {
+        "url": "https://github.com/standard/standardx/issues"
+      },
+      "devDependencies": {
+        "tap-spec": "^4.0.2",
+        "tape": "^4.0.0"
+      },
+      "homepage": "https://github.com/standard/standardx",
+      "keywords": [],
+      "license": "MIT",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/standard/standardx.git"
+      },
+      "scripts": {
+        "test": "standard && tape test/*.js | tap-spec"
+      },
+      "eslintConfig": {
+        "rules": {
+          "camelcase": 0
+        }
+      },
+      "dependencies": {
+        "standard": "^10.0.3",
+        "standard-engine": "^7.0.0"
+      },
+      "gitHead": "c5448770b89fa4b03de94e2abd0521aca868b756",
+      "_id": "standardx@1.0.3",
+      "_npmVersion": "5.4.2",
+      "_nodeVersion": "8.7.0",
+      "_npmUser": {
+        "name": "flet",
+        "email": "flettre@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-jlB3z74BIJlvuddTaAFPk1WsGlxrN+2WdiHO7eDq+yOv/nwNSKoBMd4LDyUHRXQx73EXLgyxA/SiFTJQX3EthQ==",
+        "shasum": "89ea1a4c4dbb87f019e3c5f3117b7f70e678014a",
+        "tarball": "https://registry.npmjs.org/standardx/-/standardx-1.0.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "flet",
+          "email": "flettre@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/standardx-1.0.3.tgz_1510085102576_0.7207378344610333"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "standardx",
+      "description": "JavaScript Standard Style with custom tweaks",
+      "version": "2.0.0",
+      "author": {
+        "name": "Dan Flettre",
+        "email": "flettre@gmail.com"
+      },
+      "bin": {
+        "standardx": "./bin/cmd.js"
+      },
+      "bugs": {
+        "url": "https://github.com/standard/standardx/issues"
+      },
+      "devDependencies": {
+        "tap-spec": "^4.0.2",
+        "tape": "^4.0.0"
+      },
+      "homepage": "https://github.com/standard/standardx",
+      "keywords": [],
+      "license": "MIT",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/standard/standardx.git"
+      },
+      "scripts": {
+        "test": "standard && tape test/*.js | tap-spec"
+      },
+      "eslintConfig": {
+        "rules": {
+          "camelcase": 0
+        }
+      },
+      "dependencies": {
+        "standard": "^11.0.0",
+        "standard-engine": "^8.0.0"
+      },
+      "gitHead": "d46c3519266489489a23db8143eadca839a0fb8d",
+      "_id": "standardx@2.0.0",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.7.0",
+      "_npmUser": {
+        "name": "flet",
+        "email": "flettre@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-3mHVMRI+rpIWtPCRFkcT08L5CMa7QUCl39HHIAdumpGF3er1sv+ssYyX4C9AO/cLAfRFf97TmMcVS92/+KSoCg==",
+        "shasum": "775b9ea7129bb4ed3c9e53df3e1368426177aabc",
+        "tarball": "https://registry.npmjs.org/standardx/-/standardx-2.0.0.tgz",
+        "fileCount": 11,
+        "unpackedSize": 10381
+      },
+      "maintainers": [
+        {
+          "name": "flet",
+          "email": "flettre@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/standardx_2.0.0_1520275347149_0.5243368262360684"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.1.0": {
+      "name": "standardx",
+      "description": "JavaScript Standard Style with custom tweaks",
+      "version": "2.1.0",
+      "author": {
+        "name": "Dan Flettre",
+        "email": "flettre@gmail.com"
+      },
+      "bin": {
+        "standardx": "./bin/cmd.js"
+      },
+      "bugs": {
+        "url": "https://github.com/standard/standardx/issues"
+      },
+      "devDependencies": {
+        "tap-spec": "^4.0.2",
+        "tape": "^4.0.0"
+      },
+      "homepage": "https://github.com/standard/standardx",
+      "keywords": [],
+      "license": "MIT",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/standard/standardx.git"
+      },
+      "scripts": {
+        "test": "standard && tape test/*.js | tap-spec"
+      },
+      "eslintConfig": {
+        "rules": {
+          "camelcase": 0
+        }
+      },
+      "dependencies": {
+        "standard": "^11.0.0",
+        "standard-engine": "^9.0.0"
+      },
+      "gitHead": "f976a7b7b5bb953361689d600ab6dad4eb4709c2",
+      "_id": "standardx@2.1.0",
+      "_npmVersion": "6.0.1",
+      "_nodeVersion": "8.11.1",
+      "_npmUser": {
+        "name": "feross",
+        "email": "feross@feross.org"
+      },
+      "dist": {
+        "integrity": "sha512-MZnCu5LMVBk+pfOQVMNFVT0wL1JKQ+DUawzOWh9F14Hz9fhbCb3N5QJVrbqorylcF/75FXS4aVghctmlZzY7YA==",
+        "shasum": "4eab66a0f32962f40390dda24400fa71a73b3baf",
+        "tarball": "https://registry.npmjs.org/standardx/-/standardx-2.1.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 5787,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa/EgeCRA9TVsSAnZWagAAQF0P/1o+LTeeDht+AKmN5CcQ\nUptBceFlBfQpQAHW+1cvFozQK7F8CXsp+zxQf7g9ojg4e3bQwSf7TqAa09Ve\noSRRFDKCaIy/R/piEutCEGEYJ0DyfArijCCqoAH/wfWC3QqHatICuTFQ9RV+\nP7hDG79LYSMxrOkTIlxl3Wni9s2MjGS2m4L5RLZWECWS1W0GMjuBPTIySU2i\nS97v8XNe4nMHBx+zkgk5oruls9VpnlMWFUZgebHgj/Kc600V+SUGYvmd+Buf\nkZyKd4YjIY0nMpN6+pzCjO4dU+WMfW/q4YhMkKQPPHjAFxET/GoLdM991e5s\nS2XWBXFFoOtT34oKyHf+b/w+Bq2hzIPYUWKTjEYCqzhtbTS3UouEmzi6dyiW\nzm/iNmHJsxZrihxAb7SDre2h+SKw+BWlbZFaD9ZXsmuw9ZXcb55ngOmvkt6v\nh4s+HD4QGU0raFDfwWFw2fsasBX3C3kFdrxRl/lT3PzQWw+L2bxF8SzUgY37\nfzX0vtKrHEWxwbz7W9IkIM+JsoWkT1oYx5HOGPJDZ+8siojWJDEqd1b/BKsS\nlxUtKjyc/IfhuTY5UOCGXbyQxIb9i1GBZkdlbme9fJ2zW3cN5a4lDklXIwdd\nPRheDzr5vk3QHh7FRaBVuyvqPZ+m+3pWzgRsjYSxBJfPNXU2g0hDN9w3L6bJ\nzf8z\r\n=x7oo\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "feross@feross.org",
+          "name": "feross"
+        },
+        {
+          "email": "flettre@gmail.com",
+          "name": "flet"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/standardx_2.1.0_1526482973251_0.545694256957314"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.0": {
+      "name": "standardx",
+      "description": "JavaScript Standard Style with custom tweaks",
+      "version": "3.0.0",
+      "author": {
+        "name": "Dan Flettre",
+        "email": "flettre@gmail.com"
+      },
+      "bin": {
+        "standardx": "./bin/cmd.js"
+      },
+      "bugs": {
+        "url": "https://github.com/standard/standardx/issues"
+      },
+      "dependencies": {
+        "standard": "^12.0.1",
+        "standard-engine": "^9.0.0"
+      },
+      "devDependencies": {
+        "cross-spawn": "^6.0.5",
+        "tap-spec": "^5.0.0",
+        "tape": "^4.0.0"
+      },
+      "homepage": "https://github.com/standard/standardx",
+      "keywords": [],
+      "license": "MIT",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/standard/standardx.git"
+      },
+      "scripts": {
+        "test": "standard && tape test/*.js | tap-spec"
+      },
+      "standard": {
+        "ignore": [
+          "test/test-repo-eslintrc",
+          "test/test-repo-package-json"
+        ]
+      },
+      "gitHead": "911a24f24f4315584daf996dff209b2983808661",
+      "_id": "standardx@3.0.0",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.9.0",
+      "_npmUser": {
+        "name": "feross",
+        "email": "feross@feross.org"
+      },
+      "dist": {
+        "integrity": "sha512-Ks1eQAm/wyejwJHvP7/pVMgbscwdgsXQTaJ5K0j9PCEEhU7KQpA8/CgMs+pAdIsblZNMRdHNXtRcmla/Rrg0wg==",
+        "shasum": "98f3e59df3ed51ec2a86a67108e6a00580e03dce",
+        "tarball": "https://registry.npmjs.org/standardx/-/standardx-3.0.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 5955,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbiFG7CRA9TVsSAnZWagAAhrQQAJCu3HhfJYmHm13fxnPm\nV88JZxcYIFEch765+yhnhpASVB8TXsSXyEXsJi6uJn0+7ERRb5oda6avFTL6\nFOHv1RIklISOAXeilm6VzMvhsa8W1W9XabPQUErohHR/7SIbVMSddMG3Gfak\nYcD65XPvh4EfDctUxjEgTsMqEV2XZ0L14vuPzzifISziqQaQTxQkbdNzykdt\nW4GVIr2JM3EroLmRePrI/aQDw14jf/Tp8PaDtFoXUYryks4CcazIOo8a/Fcp\n08XUXFpD6hU2YqAOwooBT/kCLsOCIt/j6TtcUlv274/5d+wDe19Y5s+YyFvi\nqS49KelbjcltmAT+MONzFSlfH9uB9WQjLDSN7OufvQ0ylIe+2v88xB+HdkQx\n9rgeULRnOfSDHuAh7vWUPfWzUpIzKQfhejRw7R+SZ/jxAjKn4HmdBE3XxRr5\nwC4wqUPslFEDQ5bZ+ZBsf6WhmUxcexoF9lrI3Wh1Q8PkHlv43uXaSG0e1USr\nUhISdH8NIMQEJuCA8dFe5ro+jCVyh6cad7lMgUfBAgRccP3HmwvAPOf4o5F1\nuftBYnbvVleE1kUkRf8F9tap9QzGr94GpkznjEGyqHk26TSFXzvGlUrBelKz\nUTh49YvHTx8risFN5S9DHgx5kr4U/S/87INrs8nNLCkJYjoDs2wtklXlfSYv\nvrvc\r\n=TX00\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "feross@feross.org",
+          "name": "feross"
+        },
+        {
+          "email": "flettre@gmail.com",
+          "name": "flet"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/standardx_3.0.0_1535660475147_0.23531300619122852"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.1": {
+      "name": "standardx",
+      "description": "JavaScript Standard Style with custom tweaks",
+      "version": "3.0.1",
+      "author": {
+        "name": "Dan Flettre",
+        "email": "flettre@gmail.com"
+      },
+      "bin": {
+        "standardx": "./bin/cmd.js"
+      },
+      "bugs": {
+        "url": "https://github.com/standard/standardx/issues"
+      },
+      "dependencies": {
+        "standard": "^12.0.1",
+        "standard-engine": "^10.0.0"
+      },
+      "devDependencies": {
+        "cross-spawn": "^6.0.5",
+        "tap-spec": "^5.0.0",
+        "tape": "^4.0.0"
+      },
+      "homepage": "https://github.com/standard/standardx",
+      "keywords": [],
+      "license": "MIT",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/standard/standardx.git"
+      },
+      "scripts": {
+        "test": "standard && tape test/*.js | tap-spec"
+      },
+      "standard": {
+        "ignore": [
+          "test/test-repo-eslintrc",
+          "test/test-repo-package-json"
+        ]
+      },
+      "gitHead": "152e4e4dff68bb1f1b0b499d2adffca0ad078cdb",
+      "_id": "standardx@3.0.1",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.9.0",
+      "_npmUser": {
+        "name": "feross",
+        "email": "feross@feross.org"
+      },
+      "dist": {
+        "integrity": "sha512-HU4c9V/F6TAKAokrnClUIzuETYyVpO3iYs77stT29YRJu8HR0CQ7ypM2sgW1Qmn3+VPB6/eSy4aPMt8NYPtl3A==",
+        "shasum": "342b2515f63d62a12e9574d7f044ae0aafd1dbf1",
+        "tarball": "https://registry.npmjs.org/standardx/-/standardx-3.0.1.tgz",
+        "fileCount": 6,
+        "unpackedSize": 5956,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbiGH/CRA9TVsSAnZWagAAS5gQAI6loXAbhTFpSn/PM/9/\n1pnq9e3MNAF4MtVWe+7ZJkqCPkJ3I3WiVq6H2a2ooeXsmEGEXaNmSnVuN5Jo\nULgtwQT02b5wkmwZDqVjckLj/RPZjvMh/JaM7P8w+s35isy4ZXKoPyHjU+GW\neeTp3bwdWpOgGHPQgdlc3s63SZHeoGUxRo/7g8q+UFtchJgCjCZkPhluhWHg\nal3SCKbpQV6Lb250SI0xeVhYYwitFsw1gJR+zh9nNswhlbjUznx1EttzKiiB\nUJpK1nJhSoE/pv/EuzFJF/K/9uTzvFE8zLHSrxpBwRF9O/g9TYPJvFMF/WYH\nMzEurR/FAJ3lyCeomt8pZ6Xc8mhUWc7AbKRxo1ra06uQ0//HXBu1s0Qp0FmJ\n+PCPf9LySirnV2AHG/T9XdXoFOVa8c+afVNEWkkOyHD0poobTVxBKFE3y+ew\nFPMz8rpMk+9J0xJZdyhP/DaiDD/dCw0w/H8mPkC0EGQa6D5fLabhbiEiNdEo\n9DXxc5TCoDpsh8zGgixBY55sn+WyVWb9OC0UbbTcnheSEmuCQfXvSxDWdDPo\ny7FZqtO460X9x5xfoh+38nj8gAXPhgocVFfaeAH1FoCYPbyTUEW3Y6KmxxRC\nozuxZo15cYRJZdJ2caR14lAnS+KqVofP4eP5Ablunsm0sC0hRgNRybUHx9QA\nO0xs\r\n=/yBT\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "feross@feross.org",
+          "name": "feross"
+        },
+        {
+          "email": "flettre@gmail.com",
+          "name": "flet"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/standardx_3.0.1_1535664639162_0.9068816879374009"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.0.0": {
+      "name": "standardx",
+      "description": "JavaScript Standard Style with custom tweaks",
+      "version": "4.0.0",
+      "author": {
+        "name": "Dan Flettre",
+        "email": "flettre@gmail.com"
+      },
+      "bin": {
+        "standardx": "./bin/cmd.js"
+      },
+      "bugs": {
+        "url": "https://github.com/standard/standardx/issues"
+      },
+      "dependencies": {
+        "standard": "^13.0.0",
+        "standard-engine": "^10.0.0"
+      },
+      "devDependencies": {
+        "cross-spawn": "^6.0.5",
+        "tap-spec": "^5.0.0",
+        "tape": "^4.0.0"
+      },
+      "homepage": "https://github.com/standard/standardx",
+      "keywords": [],
+      "license": "MIT",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/standard/standardx.git"
+      },
+      "scripts": {
+        "test": "standard && tape test/*.js | tap-spec"
+      },
+      "standard": {
+        "ignore": [
+          "test/test-repo-eslintrc",
+          "test/test-repo-package-json"
+        ]
+      },
+      "gitHead": "03556c46a3a88926257912b4f7335565078c5ed1",
+      "_id": "standardx@4.0.0",
+      "_nodeVersion": "10.16.0",
+      "_npmVersion": "6.10.0",
+      "dist": {
+        "integrity": "sha512-Squ76+EHv78+zk2LqTJJvMOZX4P5qtFXmmalc5+ArP0/uKThuERcsAs4pttWbt915P5o5+vHzOog0YLtm4KbXg==",
+        "shasum": "7cb5f878c11db7cc23c78aac2f616e00d3cca2f3",
+        "tarball": "https://registry.npmjs.org/standardx/-/standardx-4.0.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 5956,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdJoJiCRA9TVsSAnZWagAAAbwP/jOgnPM2eJDTpTfyDwt4\n2UaTd6evuHYalToawgNeBB02PYqfxzm+2ETUJKWHXW2BuKghBljB6pgA7f+8\nfn43rfaeaE4NHKvwIqlg6CIBaDsrswY3mUAS7moZIZuBB41D+EIOOnZ4QwCr\nLATzqyeX/Vfk1XVwp8vP2zQNMFW7VGLQn9WEf0zTykI4o5i0ZbhMuWBcmJiM\nMx6Gi4fzy2hzaQTbOOM9Rmv8uTm5LJ9nxBgSS3/0gN9XaxJs5Jgg9CZ7y9Fv\n2lKNBtD1AFyII8QPY4pXMPlE9YDgbB7JBqZD76ZusqUbOokdPbi3tlpokU1h\nQoOSJ42WFLT1Ax/TyFOl93BY6fUrOnGwPwSxKBOt90ayueRzmehI+Gyt60Cc\nBhG0/yK1268PBimc7BQ5E00f3L/5YMKZ1ORz3ug5DEA2Nu6YeaIWI3K9+e9r\njt4lE+3AnliDTKeyw4OoK+q6qLuBv6nTGOSvy90BPh8DX2ohLM6EQolxxceO\ndS1tfgnWw6uS8gczH+GCZuXsidE2TRceJ1sTDtOsdbj2sriA+V1W+qFRsD6r\nNAmIHMW8pUIyFAmfOwGrMUS5ZhylH+7hlGb1u1Ph1fmu4QsdZjMwjmj1SiTS\nNRLTI5yMGTwXRfv2UIu25qySbwxDY+qtx2rNMJ0wqFi2qARt0VO8/KILV7Rt\nFF2B\r\n=Kfn4\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "feross@feross.org",
+          "name": "feross"
+        },
+        {
+          "email": "flettre@gmail.com",
+          "name": "flet"
+        }
+      ],
+      "_npmUser": {
+        "name": "feross",
+        "email": "feross@feross.org"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/standardx_4.0.0_1562804833670_0.9157445184136643"
+      },
+      "_hasShrinkwrap": false
+    },
+    "5.0.0": {
+      "name": "standardx",
+      "description": "JavaScript Standard Style with custom tweaks",
+      "version": "5.0.0",
+      "author": {
+        "name": "Dan Flettre",
+        "email": "flettre@gmail.com"
+      },
+      "bin": {
+        "standardx": "./bin/cmd.js"
+      },
+      "bugs": {
+        "url": "https://github.com/standard/standardx/issues"
+      },
+      "dependencies": {
+        "standard": "^14.0.0",
+        "standard-engine": "^12.0.0"
+      },
+      "devDependencies": {
+        "cross-spawn": "^6.0.5",
+        "tap-spec": "^5.0.0",
+        "tape": "^4.0.0"
+      },
+      "homepage": "https://github.com/standard/standardx",
+      "keywords": [],
+      "license": "MIT",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/standard/standardx.git"
+      },
+      "scripts": {
+        "test": "standard && tape test/*.js | tap-spec"
+      },
+      "standard": {
+        "ignore": [
+          "test/test-repo-eslintrc",
+          "test/test-repo-package-json"
+        ]
+      },
+      "gitHead": "db2b1eb1a85b43d3b573a5ecd6d5b46fe5a4d0f3",
+      "_id": "standardx@5.0.0",
+      "_nodeVersion": "10.16.3",
+      "_npmVersion": "6.10.3",
+      "dist": {
+        "integrity": "sha512-dWbhU91EqwwWTED224B4X0h1q01Tv2wIv30mFz4NOQ+JMEJKtCrBOUEgMpBIynSFm6MDJYr+H7xUPVMYjGd8HA==",
+        "shasum": "e69864a669e655519d3cf48e9761465ff363f55d",
+        "tarball": "https://registry.npmjs.org/standardx/-/standardx-5.0.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 5956,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdWy+gCRA9TVsSAnZWagAAzcgP/1GnLTIxOLEh2YsutL9b\nUQ52QnlSo8cSM/am2X5wNFnrl2xSdI3E+XKL3mJvEVo1993xs38guJvKPGgI\nPXnwCWSpGijVUQYJyzwQZXnRyt3WImv4RDYdjpupJitJzoVlTcbNuDEMZRTe\nyF6jJLMMqBNxMfi7Chkz1LqmjZiHgUmNtHr9O/0mitiQFMws+X9E5y/YACEd\nA6VqbmtQqMuBIRNI3ufoDgvPQlnidMpvmojr2j4QfyRvgWAaUMciMdzbLsC2\npqPiMQbeVA6Y9NH/zjgGCxhMmz7IhpPwMu4dngHhhysbDuox3Iw1MW33Ny2+\n0lnMbKbstlBIFIOIQVcU//+l8u0t0hiox5UrKCCb8Lg6dWmPDytwXpaiYBtM\nDA9MQCEPmREYXEkM1pK/Ik3FEZYMSrdosGl/alg/XLLqd57xYg+kVeoX0bBg\nL3EWMUCfgxlJW+iDNk1AwbRWcYdlYrT3vOYlU7a2Y4oI+pDz84JnqJx6PXuj\nAxa5CGNeU3EuvwscLFbbHIXzrcvrCZW2U+YLx6Mpemwc7fOqEzlV7CRowL+d\neuIfvVs9RNvfrr3WUCX+Jw9mdMLzHUaoAt7iWO7lh/U6e9Va7/26f5vvU3Tc\nLQYk3vh37oxiGyhzH8VA3AS9dh0mEKshZkBUv8XphJOZqWeXW9IVhFJ8cPch\nXCfK\r\n=SOkP\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "feross@feross.org",
+          "name": "feross"
+        },
+        {
+          "email": "flettre@gmail.com",
+          "name": "flet"
+        }
+      ],
+      "_npmUser": {
+        "name": "feross",
+        "email": "feross@feross.org"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/standardx_5.0.0_1566257056213_0.2958482066071251"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# standardx\n\nJavaScript Standard Style with custom tweaks\n\n[![npm][npm-image]][npm-url]\n[![travis][travis-image]][travis-url]\n[![standard][standard-image]][standard-url]\n\n[npm-image]: https://img.shields.io/npm/v/standardx.svg?style=flat-square\n[npm-url]: https://www.npmjs.com/package/standardx\n[travis-image]: https://img.shields.io/travis/standard/standardx.svg?style=flat-square\n[travis-url]: https://travis-ci.org/standard/standardx\n[standard-image]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square\n[standard-url]: http://npm.im/standard\n\n\n## Overview\n\nThis package allows users to follow JavaScript Standard Style, but deviate if needed. This can be done by adding an `.eslintrc` file to their project directory or by adding an `\"eslintConfig\"` attribute to your `packages.json`. That eslint config will be layed on top of the `standard` ruleset.\n\nIf there is a `standard` attribute in your `package.json` for defining globals or ignoring files, rename it to `standardx`:\n\n```js\n\"standardx\": {\n    \"global\": [\n      \"chrome\",\n      \"muon\",\n      \"postMessage\"\n    ]\n}\n```\n\nAll other `standard` features remain intact (including `--fix`!)\n\n## Install\n\n```\nnpm install standardx --global\n```\n\n## Usage\nUse `standardx` on the command line the same way you use `standard`:\n\n```\nUsage:\n    standardx <flags> [FILES...]\n\n    If FILES is omitted, then all JavaScript source files (*.js, *.jsx) in the current\n    working directory are checked, recursively.\n\n    Certain paths (node_modules/, coverage/, vendor/, *.min.js, bundle.js, and\n    files/folders that begin with '.' like .git/) are automatically ignored.\n\n    Paths in a project's root .gitignore file are also automatically ignored.\n\nFlags:\n        --fix       Automatically fix problems\n    -v, --verbose   Show rule names for errors (to ignore specific rules)\n        --version   Show current version\n    -h, --help      Show usage information\n\nFlags (advanced):\n        --stdin     Read file text from stdin\n        --global    Declare global variable\n        --plugin    Use custom eslint plugin\n        --env       Use custom eslint environment\n        --parser    Use custom js parser (e.g. babel-eslint)\n```\n\n## Configuring\n\nRunning `standardx` with no additional configuration is the same as running `standard` itself. (Except rename the `\"standard\"` property in `package.json` to `\"standardx\"` if you have one.)\n\nIf there are rules you would like turned off, modify the ruleset using eslint config. Check out [Configuring eslint](http://eslint.org/docs/user-guide/configuring) for more information.\n\n### Example: Allow snake_case by turning off the camelCase rule\n\nVia: `.eslintrc`:\n```json\n{\n  \"rules\": {\n    \"camelcase\": 0\n  }\n}\n```\n\nor via package.json:\n```json\n{\n  \"name\": \"coolproject\",\n  \"description\": \"My Cool Project\",\n  \"version\": \"1.0.0\",\n  \"author\": \"Fantastic Developer\",\n  \"eslintConfig\": {\n    \"rules\": {\n      \"camelcase\": 0\n    }\n  }\n}\n```\n\nNow, running `standardx` (with no additional arguments) will allow snake_case without error!\n\n## Contributing\n\nContributions welcome! Please read the [contributing guidelines](CONTRIBUTING.md) first.\n\n## License\n\n[MIT](LICENSE.md)\n",
+  "maintainers": [
+    {
+      "email": "feross@feross.org",
+      "name": "feross"
+    },
+    {
+      "email": "flettre@gmail.com",
+      "name": "flet"
+    }
+  ],
+  "time": {
+    "modified": "2019-08-19T23:24:18.995Z",
+    "created": "2017-08-11T19:50:40.098Z",
+    "1.0.0-alpha.1": "2017-08-11T19:50:40.098Z",
+    "1.0.0-alpha.2": "2017-08-11T19:53:33.017Z",
+    "1.0.0": "2017-08-11T19:54:41.580Z",
+    "1.0.1": "2017-08-11T19:56:06.301Z",
+    "1.0.2": "2017-08-11T20:16:03.844Z",
+    "1.0.3": "2017-11-07T20:05:03.484Z",
+    "2.0.0": "2018-03-05T18:42:27.262Z",
+    "2.1.0": "2018-05-16T15:02:53.421Z",
+    "3.0.0": "2018-08-30T20:21:15.272Z",
+    "3.0.1": "2018-08-30T21:30:39.441Z",
+    "4.0.0": "2019-07-11T00:27:13.798Z",
+    "5.0.0": "2019-08-19T23:24:16.315Z"
+  },
+  "homepage": "https://github.com/standard/standardx",
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/standard/standardx.git"
+  },
+  "author": {
+    "name": "Dan Flettre",
+    "email": "flettre@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/standard/standardx/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md"
+}

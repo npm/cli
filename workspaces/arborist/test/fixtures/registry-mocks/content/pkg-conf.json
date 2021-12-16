@@ -1,0 +1,873 @@
+{
+  "_id": "pkg-conf",
+  "_rev": "10-43afbeeb48cf2b78bc5921a72026949e",
+  "name": "pkg-conf",
+  "description": "Get namespaced config from the closest package.json",
+  "dist-tags": {
+    "latest": "3.1.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "pkg-conf",
+      "version": "1.0.0",
+      "description": "Get namespaced config from the closest package.json",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/pkg-conf.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "json",
+        "read",
+        "parse",
+        "file",
+        "fs",
+        "graceful",
+        "load",
+        "pkg",
+        "package",
+        "config",
+        "conf",
+        "configuration",
+        "object",
+        "namespace",
+        "namespaced"
+      ],
+      "dependencies": {
+        "find-up": "^1.0.0",
+        "read-pkg": "^1.0.0",
+        "symbol": "^0.2.1"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "fixture": {
+        "foo": true
+      },
+      "gitHead": "079fab87b04819091fcf0fc27baa9c767f602344",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/pkg-conf/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/pkg-conf#readme",
+      "_id": "pkg-conf@1.0.0",
+      "_shasum": "05b24fb6f4df5c2d04b30bb155f38c8abe23c914",
+      "_from": ".",
+      "_npmVersion": "2.13.3",
+      "_nodeVersion": "3.0.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "05b24fb6f4df5c2d04b30bb155f38c8abe23c914",
+        "tarball": "https://registry.npmjs.org/pkg-conf/-/pkg-conf-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "pkg-conf",
+      "version": "1.0.1",
+      "description": "Get namespaced config from the closest package.json",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/pkg-conf.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "json",
+        "read",
+        "parse",
+        "file",
+        "fs",
+        "graceful",
+        "load",
+        "pkg",
+        "package",
+        "config",
+        "conf",
+        "configuration",
+        "object",
+        "namespace",
+        "namespaced"
+      ],
+      "dependencies": {
+        "find-up": "^1.0.0",
+        "read-pkg": "^1.0.0",
+        "symbol": "^0.2.1"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "fixture": {
+        "foo": true
+      },
+      "gitHead": "4b65276fde28f47bbc2ff0c64ede56c2dda1115b",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/pkg-conf/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/pkg-conf#readme",
+      "_id": "pkg-conf@1.0.1",
+      "_shasum": "cb88d2459a734c76575e0a78cb812ee2ff8ffa82",
+      "_from": ".",
+      "_npmVersion": "2.13.3",
+      "_nodeVersion": "3.0.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "cb88d2459a734c76575e0a78cb812ee2ff8ffa82",
+        "tarball": "https://registry.npmjs.org/pkg-conf/-/pkg-conf-1.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "pkg-conf",
+      "version": "1.1.0",
+      "description": "Get namespaced config from the closest package.json",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/pkg-conf.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "json",
+        "read",
+        "parse",
+        "file",
+        "fs",
+        "graceful",
+        "load",
+        "pkg",
+        "package",
+        "config",
+        "conf",
+        "configuration",
+        "object",
+        "namespace",
+        "namespaced"
+      ],
+      "dependencies": {
+        "find-up": "^1.0.0",
+        "object-assign": "^4.0.1",
+        "read-pkg": "^1.0.0",
+        "symbol": "^0.2.1"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "fixture": {
+        "foo": true
+      },
+      "gitHead": "30b9f0af2ef581fe10bb6c6770726fab5d793ecb",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/pkg-conf/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/pkg-conf#readme",
+      "_id": "pkg-conf@1.1.0",
+      "_shasum": "b4b8edd1144e5c9973c61878d4e2c96397250f3d",
+      "_from": ".",
+      "_npmVersion": "3.6.0",
+      "_nodeVersion": "4.2.4",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "b4b8edd1144e5c9973c61878d4e2c96397250f3d",
+        "tarball": "https://registry.npmjs.org/pkg-conf/-/pkg-conf-1.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.1.1": {
+      "name": "pkg-conf",
+      "version": "1.1.1",
+      "description": "Get namespaced config from the closest package.json",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/pkg-conf.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "json",
+        "read",
+        "parse",
+        "file",
+        "fs",
+        "graceful",
+        "load",
+        "pkg",
+        "package",
+        "config",
+        "conf",
+        "configuration",
+        "object",
+        "namespace",
+        "namespaced"
+      ],
+      "dependencies": {
+        "find-up": "^1.0.0",
+        "object-assign": "^4.0.1",
+        "read-pkg": "^1.0.0",
+        "symbol": "^0.2.1"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "fixture": {
+        "foo": true
+      },
+      "gitHead": "9bb0bb78f4e6d8b6e14e8ef28b1cfba7305341f6",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/pkg-conf/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/pkg-conf#readme",
+      "_id": "pkg-conf@1.1.1",
+      "_shasum": "a3caee3fb9c23ab4abad3baaea02f0001c75f200",
+      "_from": ".",
+      "_npmVersion": "3.6.0",
+      "_nodeVersion": "4.2.4",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "a3caee3fb9c23ab4abad3baaea02f0001c75f200",
+        "tarball": "https://registry.npmjs.org/pkg-conf/-/pkg-conf-1.1.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.1.2": {
+      "name": "pkg-conf",
+      "version": "1.1.2",
+      "description": "Get namespaced config from the closest package.json",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/pkg-conf.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "json",
+        "read",
+        "parse",
+        "file",
+        "fs",
+        "graceful",
+        "load",
+        "pkg",
+        "package",
+        "config",
+        "conf",
+        "configuration",
+        "object",
+        "namespace",
+        "namespaced"
+      ],
+      "dependencies": {
+        "find-up": "^1.0.0",
+        "load-json-file": "^1.1.0",
+        "object-assign": "^4.0.1",
+        "symbol": "^0.2.1"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "fixture": {
+        "foo": true
+      },
+      "gitHead": "066eebf23bfb8a40ae6a7c155fa00b5d59417756",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/pkg-conf/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/pkg-conf#readme",
+      "_id": "pkg-conf@1.1.2",
+      "_shasum": "e826877a9c15dc7ca9fa06afa38ccd620384e92c",
+      "_from": ".",
+      "_npmVersion": "3.8.3",
+      "_nodeVersion": "4.3.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "e826877a9c15dc7ca9fa06afa38ccd620384e92c",
+        "tarball": "https://registry.npmjs.org/pkg-conf/-/pkg-conf-1.1.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/pkg-conf-1.1.2.tgz_1458981997858_0.6328517564106733"
+      },
+      "directories": {}
+    },
+    "1.1.3": {
+      "name": "pkg-conf",
+      "version": "1.1.3",
+      "description": "Get namespaced config from the closest package.json",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/pkg-conf.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "json",
+        "read",
+        "parse",
+        "file",
+        "fs",
+        "graceful",
+        "load",
+        "pkg",
+        "package",
+        "config",
+        "conf",
+        "configuration",
+        "object",
+        "namespace",
+        "namespaced"
+      ],
+      "dependencies": {
+        "find-up": "^1.0.0",
+        "load-json-file": "^1.1.0",
+        "object-assign": "^4.0.1",
+        "symbol": "^0.2.1"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "fixture": {
+        "foo": true
+      },
+      "gitHead": "e1030ef1a395162399987b1c92a1f76b9bfe600f",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/pkg-conf/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/pkg-conf#readme",
+      "_id": "pkg-conf@1.1.3",
+      "_shasum": "378e56d6fd13e88bfb6f4a25df7a83faabddba5b",
+      "_from": ".",
+      "_npmVersion": "2.15.0",
+      "_nodeVersion": "4.4.2",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "378e56d6fd13e88bfb6f4a25df7a83faabddba5b",
+        "tarball": "https://registry.npmjs.org/pkg-conf/-/pkg-conf-1.1.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/pkg-conf-1.1.3.tgz_1464062415515_0.5557844769209623"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "pkg-conf",
+      "version": "2.0.0",
+      "description": "Get namespaced config from the closest package.json",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/pkg-conf.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "json",
+        "read",
+        "parse",
+        "file",
+        "fs",
+        "graceful",
+        "load",
+        "pkg",
+        "package",
+        "config",
+        "conf",
+        "configuration",
+        "object",
+        "namespace",
+        "namespaced"
+      ],
+      "dependencies": {
+        "find-up": "^2.0.0",
+        "load-json-file": "^2.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "xo": {
+        "esnext": true
+      },
+      "fixture": {
+        "foo": true
+      },
+      "gitHead": "9c1bba03f9fdd9449e9218eb03d1edc86acc0b28",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/pkg-conf/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/pkg-conf#readme",
+      "_id": "pkg-conf@2.0.0",
+      "_shasum": "071c87650403bccfb9c627f58751bfe47c067279",
+      "_from": ".",
+      "_npmVersion": "2.15.9",
+      "_nodeVersion": "4.6.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "071c87650403bccfb9c627f58751bfe47c067279",
+        "tarball": "https://registry.npmjs.org/pkg-conf/-/pkg-conf-2.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/pkg-conf-2.0.0.tgz_1476127507292_0.7264729030430317"
+      },
+      "directories": {}
+    },
+    "2.1.0": {
+      "name": "pkg-conf",
+      "version": "2.1.0",
+      "description": "Get namespaced config from the closest package.json",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/pkg-conf.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "json",
+        "read",
+        "parse",
+        "file",
+        "fs",
+        "graceful",
+        "load",
+        "pkg",
+        "package",
+        "config",
+        "conf",
+        "configuration",
+        "object",
+        "namespace",
+        "namespaced"
+      ],
+      "dependencies": {
+        "find-up": "^2.0.0",
+        "load-json-file": "^4.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "fixture": {
+        "foo": true
+      },
+      "gitHead": "a57403234f29ff56d890c06d4048a24e51708bfe",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/pkg-conf/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/pkg-conf#readme",
+      "_id": "pkg-conf@2.1.0",
+      "_shasum": "2126514ca6f2abfebd168596df18ba57867f0058",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "4.8.4",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "2126514ca6f2abfebd168596df18ba57867f0058",
+        "tarball": "https://registry.npmjs.org/pkg-conf/-/pkg-conf-2.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/pkg-conf-2.1.0.tgz_1514366465737_0.7428827714174986"
+      },
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "pkg-conf",
+      "version": "3.0.0",
+      "description": "Get namespaced config from the closest package.json",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/pkg-conf.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd-check"
+      },
+      "keywords": [
+        "json",
+        "read",
+        "parse",
+        "file",
+        "fs",
+        "graceful",
+        "load",
+        "pkg",
+        "package",
+        "config",
+        "conf",
+        "configuration",
+        "object",
+        "namespace",
+        "namespaced"
+      ],
+      "dependencies": {
+        "find-up": "^3.0.0",
+        "load-json-file": "^5.2.0"
+      },
+      "devDependencies": {
+        "ava": "^1.2.1",
+        "tsd-check": "^0.3.0",
+        "xo": "^0.24.0"
+      },
+      "fixture": {
+        "foo": true
+      },
+      "gitHead": "dfe3280d0b3924b3ec6b022866568658c993c083",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/pkg-conf/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/pkg-conf#readme",
+      "_id": "pkg-conf@3.0.0",
+      "_nodeVersion": "10.15.1",
+      "_npmVersion": "6.8.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-YOvV9hWNY9+abaZdgaZs4eyTzfeO1bwEYCYRskER2aP5ZWZAdrb/8YeOo95mb6tr01MR9ZUGArl1sMy2At/YWQ==",
+        "shasum": "41f836458fb83b080e08e62b2d63a68aa8c436df",
+        "tarball": "https://registry.npmjs.org/pkg-conf/-/pkg-conf-3.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 8462,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJceo9nCRA9TVsSAnZWagAAY4oP/0a3ZY4YLBe5X2b6Y3JB\nm249oy7+kppDolyyJ58UUZzoh9HKykhREhDvv5t/T1wjApGTRAeIcZp+q47O\n+PAhveDt+1YEPEmA011HsifXMoFHSQjDSz3VEdlTMuw1b3rWu+U6OT8mkykT\n7vQPfSVsykgHgGzOeZE9qauXZyKwoMvBsWMTOYDT0JmLIkfHbp6eAw0B8cjz\ngbU2pcTdS7VSvr6HVuAelF3cDR6P2eCqQRVJv6KNFGc1eflSWd9fwgJV9D7j\n99MRVv5uH5oiFqK/WUMW7wfFHmjRlp5j0f0s2aj+4hXcGGyQ7efKitEy6eVh\nNfTS6SVBLQBIV8V3Cxh2jYivfRkD50DOoDCX5uTh5yLFlgaCvuO9oRZx2CcC\nicZL2OAGPMjslNFMLJp1cthssnzYXGwXWFLBt26TQmX4SoPrdglSVuv4WjES\nkWvUixBoJ/OfxWIZzDhlgVDBGw5LoSZHF9l5axBhXyvn5rNmOmHuEF09dXY+\n6Dte5RnXvzZa1MIyW86pJHo5RlZEgsbx6E2cnoK9TcQLLNUogWM8KNSX38kW\n2UgfEKbnXhTKHbmt0vRWg8uTBR039qlMu+Z6onCByyWwbfPBZQ7461gf1fFd\ntejcne956IVMKmZgg1uBdhbYp1sBph6I/Wu1dHvTHal5HvIDgrxcTqotf318\nItJT\r\n=uPka\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/pkg-conf_3.0.0_1551535974836_0.37506960462023864"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.1.0": {
+      "name": "pkg-conf",
+      "version": "3.1.0",
+      "description": "Get namespaced config from the closest package.json",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/pkg-conf.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "json",
+        "read",
+        "parse",
+        "file",
+        "fs",
+        "graceful",
+        "load",
+        "pkg",
+        "package",
+        "config",
+        "conf",
+        "configuration",
+        "object",
+        "namespace",
+        "namespaced"
+      ],
+      "dependencies": {
+        "find-up": "^3.0.0",
+        "load-json-file": "^5.2.0"
+      },
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "fixture": {
+        "foo": true
+      },
+      "gitHead": "50a682621fb0b429e7e471191df276e34a136d18",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/pkg-conf/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/pkg-conf#readme",
+      "_id": "pkg-conf@3.1.0",
+      "_nodeVersion": "8.15.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-m0OTbR/5VPNPqO1ph6Fqbj7Hv6QU7gR/tQW40ZqrL1rjgCU85W6C1bJn0BItuJqnR98PWzw7Z8hHeChD1WrgdQ==",
+        "shasum": "d9f9c75ea1bae0e77938cde045b276dac7cc69ae",
+        "tarball": "https://registry.npmjs.org/pkg-conf/-/pkg-conf-3.1.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 8899,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcqE+yCRA9TVsSAnZWagAAfUkP/Rg2TGONbfc10gP4MAwO\nf4daZ78R2cfUwYDbDoY7kJ4PaLa0AVe96KZz7iLUaWiYtrJ0N+ipBJPwWg5d\nFKgvAic6n/7iIkKbfGHAbRkV5ht9B1+kTi0m3TkzcMn4kd033HFpGTpNa8Bv\nTuhtJgEkZTldVC06/3L/2YPMI9nfS1BHkxRLRC3VI8C1AVRwDwYxPpsCeySx\n7HymYlj3/a/aNFKf5KsvlQaSFtnXiDE1PbqbQ07RWnS+TyiWP+4g/LneYyUn\n7F6BdQ1dcryf6I7jBSBakllw87oC3AtDn6FJXLGGOxq78274d32gHg4BStz9\n5tMlbMEXi0JQZ89lr/Co7PbvNXLv6usB5InnFO1UADcBUPz64rRQ6AuA9dbz\n2kL4832hbwi6DqjsfSEDIrB9d7APZxZ1sp7ns4E4kYLro/J5VomzzCIz+93C\nWbJAlDCIZY26/Rfe7wORhMzydYtS6GOHVTHFdG7ulh4KOr/Q/NVtylaqCZnu\nquWATaOAxZGi3S9V7NP1gMcR1l/ghUMq2bPNDdt29JYB56ebs/kvsGqEXY5M\nhjwmqtgKx/uiQ6u0TtJnZ9csZYT5D7lrQy7mfHlfi0N5NE6opQ89lgtoVdp7\nUQSqnuVSAqPhGrABGh5qN2pRY9S6ldBEvIFvYW6kyY8S0iuPVUTlYCtqOsEY\n5LcX\r\n=UN4x\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/pkg-conf_3.1.0_1554534321667_0.7685623035085318"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# pkg-conf [![Build Status](https://travis-ci.org/sindresorhus/pkg-conf.svg?branch=master)](https://travis-ci.org/sindresorhus/pkg-conf)\n\n> Get namespaced config from the closest package.json\n\nHaving tool specific config in package.json reduces the amount of metafiles in your repo (there are usually a lot!) and makes the config obvious compared to hidden dotfiles like `.eslintrc`, which can end up causing confusion. [XO](https://github.com/xojs/xo), for example, uses the `xo` namespace in package.json, and [ESLint](http://eslint.org) uses `eslintConfig`. Many more tools supports this, like [AVA](https://ava.li), [Babel](https://babeljs.io), [nyc](https://github.com/istanbuljs/nyc), etc.\n\n\n## Install\n\n```\n$ npm install pkg-conf\n```\n\n\n## Usage\n\n```json\n{\n\t\"name\": \"some-package\",\n\t\"version\": \"1.0.0\",\n\t\"unicorn\": {\n\t\t\"rainbow\": true\n\t}\n}\n```\n\n```js\nconst pkgConf = require('pkg-conf');\n\n(async () => {\n\tconst config = await pkgConf('unicorn');\n\n\tconsole.log(config.rainbow);\n\t//=> true\n})();\n```\n\n\n## API\n\nIt [walks up](https://github.com/sindresorhus/find-up) parent directories until a `package.json` can be found, reads it, and returns the user specified namespace or an empty object if not found.\n\n### pkgConf(namespace, [options])\n\nReturns a `Promise` for the config.\n\n### pkgConf.sync(namespace, [options])\n\nReturns the config.\n\n#### namespace\n\nType: `string`\n\nThe package.json namespace you want.\n\n#### options\n\nType: `Object`\n\n##### cwd\n\nType: `string`<br>\nDefault: `process.cwd()`\n\nDirectory to start looking up for a package.json file.\n\n##### defaults\n\nType: `Object`<br>\n\nDefault config.\n\n##### skipOnFalse\n\nType: `boolean`<br>\nDefault: `false`\n\nSkip `package.json` files that have the namespaced config explicitly set to `false`.\n\nContinues searching upwards until the next `package.json` file is reached. This can be useful when you need to support the ability for users to have nested `package.json` files, but only read from the root one, like in the case of [`electron-builder`](https://github.com/electron-userland/electron-builder/wiki/Options#AppMetadata) where you have one `package.json` file for the app and one top-level for development.\n\nExample usage for the user:\n\n```json\n{\n\t\"name\": \"some-package\",\n\t\"version\": \"1.0.0\",\n\t\"unicorn\": false\n}\n```\n\n### pkgConf.filepath(config)\n\nPass in the `config` returned from any of the above methods.\n\nReturns the filepath to the package.json file or `null` when not found.\n\n\n## Related\n\n- [read-pkg-up](https://github.com/sindresorhus/read-pkg-up) - Read the closest package.json file\n- [read-pkg](https://github.com/sindresorhus/read-pkg) - Read a package.json file\n- [find-up](https://github.com/sindresorhus/find-up) - Find a file by walking up parent directories\n\n\n## License\n\nMIT © [Sindre Sorhus](https://sindresorhus.com)\n",
+  "maintainers": [
+    {
+      "name": "sindresorhus",
+      "email": "sindresorhus@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2019-04-06T07:05:24.573Z",
+    "created": "2015-09-02T10:27:59.319Z",
+    "1.0.0": "2015-09-02T10:27:59.319Z",
+    "1.0.1": "2015-09-02T16:44:32.797Z",
+    "1.1.0": "2016-01-23T22:49:30.062Z",
+    "1.1.1": "2016-01-24T01:30:19.236Z",
+    "1.1.2": "2016-03-26T08:46:38.266Z",
+    "1.1.3": "2016-05-24T04:00:17.609Z",
+    "2.0.0": "2016-10-10T19:25:09.580Z",
+    "2.1.0": "2017-12-27T09:21:06.593Z",
+    "3.0.0": "2019-03-02T14:12:55.022Z",
+    "3.1.0": "2019-04-06T07:05:21.846Z"
+  },
+  "homepage": "https://github.com/sindresorhus/pkg-conf#readme",
+  "keywords": [
+    "json",
+    "read",
+    "parse",
+    "file",
+    "fs",
+    "graceful",
+    "load",
+    "pkg",
+    "package",
+    "config",
+    "conf",
+    "configuration",
+    "object",
+    "namespace",
+    "namespaced"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/pkg-conf.git"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "bugs": {
+    "url": "https://github.com/sindresorhus/pkg-conf/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md"
+}

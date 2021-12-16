@@ -1,0 +1,692 @@
+{
+  "_id": "clone-response",
+  "_rev": "9-7ee1757c8e8a45333fe2de2f57654fd5",
+  "name": "clone-response",
+  "description": "Clone a Node.js HTTP response stream",
+  "dist-tags": {
+    "latest": "1.0.2"
+  },
+  "versions": {
+    "0.0.0": {
+      "name": "clone-response",
+      "version": "0.0.0",
+      "description": "Clone a Node.js response object",
+      "main": "src/index.js",
+      "scripts": {
+        "test": "xo && nyc ava",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/clone-response.git"
+      },
+      "keywords": [
+        "async",
+        "asynchronous",
+        "non-blocking",
+        "base64",
+        "encode",
+        "decode"
+      ],
+      "author": {
+        "name": "Luke Childs",
+        "email": "lukechilds123@gmail.com",
+        "url": "http://lukechilds.co.uk"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/lukechilds/clone-response/issues"
+      },
+      "homepage": "https://github.com/lukechilds/clone-response",
+      "dependencies": {},
+      "devDependencies": {
+        "ava": "^0.19.1",
+        "coveralls": "^2.13.1",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "nyc": "^10.3.2",
+        "xo": "^0.19.0"
+      },
+      "gitHead": "eb11503122152fc224e75593d56eecf1e9e0bba6",
+      "_id": "clone-response@0.0.0",
+      "_npmVersion": "5.0.0",
+      "_nodeVersion": "8.0.0",
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-Zze/x9w0nRaaCi2+hgU5GkmzT4D0izCj89YGIGiteCVDFqs5nXdw6gIvZ3XgKDTEnZTVqR0XfyucdH+rL7sz2A==",
+        "shasum": "14c14a912cc34fba56c3ddb996ac3e70aec17b0f",
+        "tarball": "https://registry.npmjs.org/clone-response/-/clone-response-0.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/clone-response-0.0.0.tgz_1496313212628_0.3775720295961946"
+      },
+      "directories": {}
+    },
+    "0.1.0": {
+      "name": "clone-response",
+      "version": "0.1.0",
+      "description": "Clone a Node.js response object",
+      "main": "src/index.js",
+      "scripts": {
+        "test": "xo && nyc ava",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/clone-response.git"
+      },
+      "keywords": [
+        "async",
+        "asynchronous",
+        "non-blocking",
+        "base64",
+        "encode",
+        "decode"
+      ],
+      "author": {
+        "name": "Luke Childs",
+        "email": "lukechilds123@gmail.com",
+        "url": "http://lukechilds.co.uk"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/lukechilds/clone-response/issues"
+      },
+      "homepage": "https://github.com/lukechilds/clone-response",
+      "dependencies": {},
+      "devDependencies": {
+        "ava": "^0.19.1",
+        "coveralls": "^2.13.1",
+        "create-test-server": "^0.1.0",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "get-stream": "^3.0.0",
+        "nyc": "^10.3.2",
+        "rfpify": "^1.0.0",
+        "xo": "^0.19.0"
+      },
+      "gitHead": "cb68480b467474ee01fe521d016a557a68c440a3",
+      "_id": "clone-response@0.1.0",
+      "_npmVersion": "5.0.0",
+      "_nodeVersion": "8.0.0",
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-ts+zUMLrGd9f3iO9LUk+qEcKJSiP4tqO+1Oli6RSlx5Ha4b2cI5QScz9SAzjaslBicOMQOz76L28zdikidqXvA==",
+        "shasum": "ee9ba731a99c70668b006eaebf3f1503df40836a",
+        "tarball": "https://registry.npmjs.org/clone-response/-/clone-response-0.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/clone-response-0.1.0.tgz_1496390670787_0.1935164975002408"
+      },
+      "directories": {}
+    },
+    "0.1.1": {
+      "name": "clone-response",
+      "version": "0.1.1",
+      "description": "Clone a Node.js response object",
+      "main": "src/index.js",
+      "scripts": {
+        "test": "xo && nyc ava",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/clone-response.git"
+      },
+      "keywords": [
+        "async",
+        "asynchronous",
+        "non-blocking",
+        "base64",
+        "encode",
+        "decode"
+      ],
+      "author": {
+        "name": "Luke Childs",
+        "email": "lukechilds123@gmail.com",
+        "url": "http://lukechilds.co.uk"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/lukechilds/clone-response/issues"
+      },
+      "homepage": "https://github.com/lukechilds/clone-response",
+      "dependencies": {},
+      "devDependencies": {
+        "ava": "^0.19.1",
+        "coveralls": "^2.13.1",
+        "create-test-server": "^0.1.0",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "get-stream": "^3.0.0",
+        "nyc": "^10.3.2",
+        "rfpify": "^1.0.0",
+        "xo": "^0.19.0"
+      },
+      "gitHead": "86f4f00e61905a3921b0a4d43cccda8871b7dea4",
+      "_id": "clone-response@0.1.1",
+      "_npmVersion": "5.0.0",
+      "_nodeVersion": "8.0.0",
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-LfqdnW4bZ3A2jr8tL3GJANzfJ//mPCdNzPSIudkvtRuf1T4xd6vE9aj2KKr0px/7o+ldEiLPpq/sSAkYL6B8MQ==",
+        "shasum": "6dc95e0ee70f7262585a8743587a327847b21519",
+        "tarball": "https://registry.npmjs.org/clone-response/-/clone-response-0.1.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/clone-response-0.1.1.tgz_1496390993550_0.6186737371608615"
+      },
+      "directories": {}
+    },
+    "0.2.0": {
+      "name": "clone-response",
+      "version": "0.2.0",
+      "description": "Clone a Node.js response object",
+      "main": "src/index.js",
+      "scripts": {
+        "test": "xo && nyc ava",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/clone-response.git"
+      },
+      "keywords": [
+        "async",
+        "asynchronous",
+        "non-blocking",
+        "base64",
+        "encode",
+        "decode"
+      ],
+      "author": {
+        "name": "Luke Childs",
+        "email": "lukechilds123@gmail.com",
+        "url": "http://lukechilds.co.uk"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/lukechilds/clone-response/issues"
+      },
+      "homepage": "https://github.com/lukechilds/clone-response",
+      "dependencies": {},
+      "devDependencies": {
+        "ava": "^0.19.1",
+        "coveralls": "^2.13.1",
+        "create-test-server": "^0.1.0",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "get-stream": "^3.0.0",
+        "nyc": "^10.3.2",
+        "rfpify": "^1.0.0",
+        "xo": "^0.19.0"
+      },
+      "gitHead": "1e4c18b99aafee599260bfeb2eaa82ec36c13fc1",
+      "_id": "clone-response@0.2.0",
+      "_npmVersion": "5.0.0",
+      "_nodeVersion": "8.0.0",
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-Qi6+0zKEcRkehT6A5TFQ2rOfL7Q5qp9xHARvMiyXiNdLFdm6o2zbSqjEtnyTu/hvFRPJaLhFZNAiKXmtz+wW5w==",
+        "shasum": "5cff071a359afc43c0199ba673356a948482cadb",
+        "tarball": "https://registry.npmjs.org/clone-response/-/clone-response-0.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/clone-response-0.2.0.tgz_1496392152797_0.6868132923264056"
+      },
+      "directories": {}
+    },
+    "0.2.1": {
+      "name": "clone-response",
+      "version": "0.2.1",
+      "description": "Clone a Node.js response object",
+      "main": "src/index.js",
+      "scripts": {
+        "test": "xo && nyc ava",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/clone-response.git"
+      },
+      "keywords": [
+        "async",
+        "asynchronous",
+        "non-blocking",
+        "base64",
+        "encode",
+        "decode"
+      ],
+      "author": {
+        "name": "Luke Childs",
+        "email": "lukechilds123@gmail.com",
+        "url": "http://lukechilds.co.uk"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/lukechilds/clone-response/issues"
+      },
+      "homepage": "https://github.com/lukechilds/clone-response",
+      "dependencies": {
+        "mimic-response": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "^0.19.1",
+        "coveralls": "^2.13.1",
+        "create-test-server": "^0.1.0",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "get-stream": "^3.0.0",
+        "nyc": "^10.3.2",
+        "pify": "^3.0.0",
+        "xo": "^0.19.0"
+      },
+      "gitHead": "9b1128d5758d4669d4f1b4db6ef6a7cb5495ed65",
+      "_id": "clone-response@0.2.1",
+      "_npmVersion": "5.0.0",
+      "_nodeVersion": "8.0.0",
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-CRslSnR3z9MQ/8MNShNRQBwTzI7SI1GWWRQEc8+/dgbefXUoD7/S3pZQhF1YeIS3237owLg5IFkuo52X4nBAEA==",
+        "shasum": "b7b2fa85a083f5b4b467af31ee6a766ad99d9342",
+        "tarball": "https://registry.npmjs.org/clone-response/-/clone-response-0.2.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/clone-response-0.2.1.tgz_1496460501457_0.03791434480808675"
+      },
+      "directories": {}
+    },
+    "0.2.2": {
+      "name": "clone-response",
+      "version": "0.2.2",
+      "description": "Clone a Node.js response object",
+      "main": "src/index.js",
+      "scripts": {
+        "test": "xo && nyc ava",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/clone-response.git"
+      },
+      "keywords": [
+        "clone",
+        "duplicate",
+        "copy",
+        "response"
+      ],
+      "author": {
+        "name": "Luke Childs",
+        "email": "lukechilds123@gmail.com",
+        "url": "http://lukechilds.co.uk"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/lukechilds/clone-response/issues"
+      },
+      "homepage": "https://github.com/lukechilds/clone-response",
+      "dependencies": {
+        "mimic-response": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "^0.19.1",
+        "coveralls": "^2.13.1",
+        "create-test-server": "^0.1.0",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "get-stream": "^3.0.0",
+        "nyc": "^10.3.2",
+        "pify": "^3.0.0",
+        "xo": "^0.19.0"
+      },
+      "gitHead": "b942a1f08548c5d82ff6770ffa39a6a266fc223e",
+      "_id": "clone-response@0.2.2",
+      "_npmVersion": "5.0.0",
+      "_nodeVersion": "8.0.0",
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-fZt1B3Fj5A13LBBKcGQhmxEz1pQyG8SVMvWdC+4WEIpnZrvRsqDZDkiqmaT00HASlGDUxMxyGye/gH2LO2zWMA==",
+        "shasum": "d8f8c277f7a4f22653585130bd834c2266c77c6e",
+        "tarball": "https://registry.npmjs.org/clone-response/-/clone-response-0.2.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/clone-response-0.2.2.tgz_1496468080100_0.45025671273469925"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "clone-response",
+      "version": "1.0.0",
+      "description": "Clone a Node.js HTTP response stream",
+      "main": "src/index.js",
+      "scripts": {
+        "test": "xo && nyc ava",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/clone-response.git"
+      },
+      "keywords": [
+        "clone",
+        "duplicate",
+        "copy",
+        "response",
+        "HTTP",
+        "stream"
+      ],
+      "author": {
+        "name": "Luke Childs",
+        "email": "lukechilds123@gmail.com",
+        "url": "http://lukechilds.co.uk"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/lukechilds/clone-response/issues"
+      },
+      "homepage": "https://github.com/lukechilds/clone-response",
+      "dependencies": {
+        "mimic-response": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "^0.19.1",
+        "coveralls": "^2.13.1",
+        "create-test-server": "^1.1.1",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "get-stream": "^3.0.0",
+        "nyc": "^10.3.2",
+        "pify": "^3.0.0",
+        "xo": "^0.19.0"
+      },
+      "gitHead": "45bad5bda2ebcb5c510638273ba53147d61acd8f",
+      "_id": "clone-response@1.0.0",
+      "_npmVersion": "5.0.3",
+      "_nodeVersion": "8.0.0",
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-dIA1J7HryFHdlfo7GJ+2wypKWKYOvLEU7oNLOZPoBc4qIM0tdJ0B0aZv6LWNd48ehlSN6ZsByGdXqwIX/jwuuA==",
+        "shasum": "098632e140f04cdca509c6926c7ad3a8c44f36a6",
+        "tarball": "https://registry.npmjs.org/clone-response/-/clone-response-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/clone-response-1.0.0.tgz_1497615089253_0.2357099496293813"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "clone-response",
+      "version": "1.0.1",
+      "description": "Clone a Node.js HTTP response stream",
+      "main": "src/index.js",
+      "scripts": {
+        "test": "xo && nyc ava",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/clone-response.git"
+      },
+      "keywords": [
+        "clone",
+        "duplicate",
+        "copy",
+        "response",
+        "HTTP",
+        "stream"
+      ],
+      "author": {
+        "name": "Luke Childs",
+        "email": "lukechilds123@gmail.com",
+        "url": "http://lukechilds.co.uk"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/lukechilds/clone-response/issues"
+      },
+      "homepage": "https://github.com/lukechilds/clone-response",
+      "dependencies": {
+        "mimic-response": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "^0.20.0",
+        "coveralls": "^2.13.1",
+        "create-test-server": "^2.0.1",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "get-stream": "^3.0.0",
+        "nyc": "^11.0.2",
+        "pify": "^3.0.0",
+        "xo": "^0.19.0"
+      },
+      "gitHead": "b90422a12709acb5d15e0b462c3623d06fb62923",
+      "_id": "clone-response@1.0.1",
+      "_shasum": "35ecdb6235f5a064979a8ef263325cc75da6d40e",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "8.1.2",
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "dist": {
+        "shasum": "35ecdb6235f5a064979a8ef263325cc75da6d40e",
+        "tarball": "https://registry.npmjs.org/clone-response/-/clone-response-1.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/clone-response-1.0.1.tgz_1498827743228_0.20690521295182407"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "clone-response",
+      "version": "1.0.2",
+      "description": "Clone a Node.js HTTP response stream",
+      "main": "src/index.js",
+      "scripts": {
+        "test": "xo && nyc ava",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/clone-response.git"
+      },
+      "keywords": [
+        "clone",
+        "duplicate",
+        "copy",
+        "response",
+        "HTTP",
+        "stream"
+      ],
+      "author": {
+        "name": "Luke Childs",
+        "email": "lukechilds123@gmail.com",
+        "url": "http://lukechilds.co.uk"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/lukechilds/clone-response/issues"
+      },
+      "homepage": "https://github.com/lukechilds/clone-response",
+      "dependencies": {
+        "mimic-response": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "^0.22.0",
+        "coveralls": "^2.13.1",
+        "create-test-server": "^2.0.1",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "get-stream": "^3.0.0",
+        "nyc": "^11.0.2",
+        "pify": "^3.0.0",
+        "xo": "^0.19.0"
+      },
+      "gitHead": "857094916c5393a7ce78838a4e447fa944263cca",
+      "_id": "clone-response@1.0.2",
+      "_shasum": "d1dc973920314df67fbeb94223b4ee350239e96b",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "8.4.0",
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "dist": {
+        "shasum": "d1dc973920314df67fbeb94223b4ee350239e96b",
+        "tarball": "https://registry.npmjs.org/clone-response/-/clone-response-1.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/clone-response-1.0.2.tgz_1502988274674_0.8035625964403152"
+      },
+      "directories": {}
+    }
+  },
+  "readme": "# clone-response\n\n> Clone a Node.js HTTP response stream\n\n[![Build Status](https://travis-ci.org/lukechilds/clone-response.svg?branch=master)](https://travis-ci.org/lukechilds/clone-response)\n[![Coverage Status](https://coveralls.io/repos/github/lukechilds/clone-response/badge.svg?branch=master)](https://coveralls.io/github/lukechilds/clone-response?branch=master)\n[![npm](https://img.shields.io/npm/dm/clone-response.svg)](https://www.npmjs.com/package/clone-response)\n[![npm](https://img.shields.io/npm/v/clone-response.svg)](https://www.npmjs.com/package/clone-response)\n\nReturns a new stream and copies over all properties and methods from the original response giving you a complete duplicate.\n\nThis is useful in situations where you need to consume the response stream but also want to pass an unconsumed stream somewhere else to be consumed later.\n\n## Install\n\n```shell\nnpm install --save clone-response\n```\n\n## Usage\n\n```js\nconst http = require('http');\nconst cloneResponse = require('clone-response');\n\nhttp.get('http://example.com', response => {\n  const clonedResponse = cloneResponse(response);\n  response.pipe(process.stdout);\n\n  setImmediate(() => {\n    // The response stream has already been consumed by the time this executes,\n    // however the cloned response stream is still available.\n    doSomethingWithResponse(clonedResponse);\n  });\n});\n```\n\nPlease bear in mind that the process of cloning a stream consumes it. However, you can consume a stream multiple times in the same tick, therefore allowing you to create multiple clones. e.g:\n\n```js\nconst clone1 = cloneResponse(response);\nconst clone2 = cloneResponse(response);\n// response can still be consumed in this tick but cannot be consumed if passed\n// into any async callbacks. clone1 and clone2 can be passed around and be\n// consumed in the future.\n```\n\n## API\n\n### cloneResponse(response)\n\nReturns a clone of the passed in response.\n\n#### response\n\nType: `stream`\n\nA [Node.js HTTP response stream](https://nodejs.org/api/http.html#http_class_http_incomingmessage) to clone.\n\n## License\n\nMIT © Luke Childs\n",
+  "maintainers": [
+    {
+      "name": "lukechilds",
+      "email": "lukechilds123@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2017-08-17T16:44:35.584Z",
+    "created": "2017-06-01T10:33:32.704Z",
+    "0.0.0": "2017-06-01T10:33:32.704Z",
+    "0.1.0": "2017-06-02T08:04:30.901Z",
+    "0.1.1": "2017-06-02T08:09:53.625Z",
+    "0.2.0": "2017-06-02T08:29:13.105Z",
+    "0.2.1": "2017-06-03T03:28:21.554Z",
+    "0.2.2": "2017-06-03T05:34:40.172Z",
+    "1.0.0": "2017-06-16T12:11:29.393Z",
+    "1.0.1": "2017-06-30T13:02:24.398Z",
+    "1.0.2": "2017-08-17T16:44:35.584Z"
+  },
+  "homepage": "https://github.com/lukechilds/clone-response",
+  "keywords": [
+    "clone",
+    "duplicate",
+    "copy",
+    "response",
+    "HTTP",
+    "stream"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lukechilds/clone-response.git"
+  },
+  "author": {
+    "name": "Luke Childs",
+    "email": "lukechilds123@gmail.com",
+    "url": "http://lukechilds.co.uk"
+  },
+  "bugs": {
+    "url": "https://github.com/lukechilds/clone-response/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "_attachments": {}
+}

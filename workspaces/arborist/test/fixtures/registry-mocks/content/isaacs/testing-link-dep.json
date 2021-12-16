@@ -1,0 +1,92 @@
+{
+  "_id": "@isaacs/testing-link-dep",
+  "_rev": "1-760d669efdb2cce77bfefce99d410030",
+  "name": "@isaacs/testing-link-dep",
+  "dist-tags": {
+    "latest": "2.0.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "@isaacs/testing-link-dep",
+      "version": "1.0.0",
+      "dependencies": {
+        "linked-dep": "file:target"
+      },
+      "_id": "@isaacs/testing-link-dep@1.0.0",
+      "_nodeVersion": "13.4.0",
+      "_npmVersion": "6.13.4",
+      "dist": {
+        "integrity": "sha512-pcFALrJNXI/F0WXRtSUdyJEwdmUV6IwQrTmFwDASfNTv6/fZTyUgXpUtmKGrpFnvzj+mU/2U12lKOVjSErlFNg==",
+        "shasum": "1c207f922d6e7f2299aa5c2bf2617d560077457d",
+        "tarball": "https://registry.npmjs.org/@isaacs/testing-link-dep/-/testing-link-dep-1.0.0.tgz",
+        "fileCount": 2,
+        "unpackedSize": 169,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeCusCCRA9TVsSAnZWagAAu/sP/RiltiWWIqGJGyqO1h8W\nQtArvWSn/LqtJA/BFp3Y3BCjqEw/HpaN9yM8Wk1RMuA6/EMMEa85taKRi6hg\nImjXK9E7P68E0Oml4zlq02VauosHb9SfxK/vzITcC2TAIGiNIj8Shxu/JH4+\nRMhsRaJ2xvoOrjkpkxBdWCv64g+1O1Uyf+jleMFSy7nCU1ak/OyVo9zAC8bQ\n9HYaHdVJXLrutdUUbeTJD9eTrhq9FhK9Q2dQ5JLcLI3GtXkaayVT2eed6Y71\nQ8nRWIhSEaALTTMgKM+sEkMGDqA8d2Co1GquJugCIKAntJuSUdNQtSVk/59z\nIVvN2yKQvKkxftg0WkUl1Uz3s1LnrlbtPDW63ukGauATZhIxe6laJIB7RDm0\nBa7Az6dPFT5jSqT7HvCEyDxDCpqg2GyHsDuabfHLruPvxFQrT0V4dxkVJe1t\n2S4aZaKEvMhtTiC/iw4uXgIVJWCwrZsfsalI18pynEHYtO63U+vkqq+r88fk\n7Ho0YRn1xAqkBdlogWzwb9myQNMEyXZiPHMCwvBaXGucqzLvvBpio7KxbFKW\nSw6DRUpZjjxvB2b/1d9e9cCz1B+i8qWAzK+PKoe75Ic5H5/TLyCTrUv2PYtC\nEGm5zH4BwSxgB4cNbN2cQPUS0bqKsVtyq5iVlB3tmMDzivbJ9NUOrYww0Ste\nB2mi\r\n=KBEn\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/testing-link-dep_1.0.0_1577773826199_0.18301199280163072"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.0": {
+      "name": "@isaacs/testing-link-dep",
+      "version": "2.0.0",
+      "dependencies": {
+        "linked-dep": "file:target"
+      },
+      "_id": "@isaacs/testing-link-dep@2.0.0",
+      "_nodeVersion": "13.4.0",
+      "_npmVersion": "6.13.4",
+      "dist": {
+        "integrity": "sha512-VyX/5mlmQEUZKCQeMcKVZeJjnhqr+bclJFWVF2zMsu7hpEnwHWwdfr1V7z0JpiXZthkuu1qn64OV7dkQIacRIg==",
+        "shasum": "d2e0e2814adfc9354d241c324f234d32110226c8",
+        "tarball": "https://registry.npmjs.org/@isaacs/testing-link-dep/-/testing-link-dep-2.0.0.tgz",
+        "fileCount": 2,
+        "unpackedSize": 169,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeCutlCRA9TVsSAnZWagAAGEwP/2uPFwTAY0zm/9CuIvmX\ntQEf+4vz5u++pqTrnKxjf2PkxBNjKeQTppbNEle9BNxljVwVdyA05WSm+P54\nSzyZSYhQJyqw16M+yr83cObD9kEjGjBrYF1sJ1zjdykTfEQcmqqJ5VXiA74D\n7dTSVTb6UJDHzyAfCD1lhexQc+uQc61EaL0q2zOBYeiFWJQoEcf/1Hh392Jf\n6BtfOotuaUXHYLmFiBLE1IZnG5DIODJBLHbypJbdPBDgxIDs3JR6ZkIvJx1o\nAZchDF2TNvTx2UJlxoQ2H1p+sv8C52Qab3tszO2Om2HpTqw3sUh038vP+fw8\nQjz1Yeoex7d1gILF7hQZzzUITk9yfkZZKZCC9bqpHZ05CSiEH9WT8eVDz21I\n/j9o+/fFVP8jTeKIUCE4bBtjDsORYSukKpj9btIcf0ZwVUOJYNmlRXoIBlKG\nO/xeNhR7l1d1J2NO+tjySSGD5YqUcmwqiSKh1k1Qnx15BaoE7DJzUtHFjwDo\n2JZz713PEAnxCdMr1CgZgJFhFm8RtMEHuEJyCdqu/Z5Qdmq26/XkaJGqfLw1\nrBLJkNSgsCR8GX8bAPNBBzhC9mzjYikDUGd+wULXcWbwdvuyjxVdpIYobrJd\nC+ebDEuakUEXUg6DqykTmldWfaKQdvNAqa6/EDv15lJ6w0k6qf0iYkDgZjI4\nq9/5\r\n=7knf\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/testing-link-dep_2.0.0_1577773925581_0.8639221089096438"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2019-12-31T06:30:26.172Z",
+    "1.0.0": "2019-12-31T06:30:26.305Z",
+    "modified": "2019-12-31T06:32:07.929Z",
+    "2.0.0": "2019-12-31T06:32:05.692Z"
+  },
+  "maintainers": [
+    {
+      "name": "isaacs",
+      "email": "i@izs.me"
+    }
+  ],
+  "readme": "ERROR: No README data found!",
+  "readmeFilename": ""
+}

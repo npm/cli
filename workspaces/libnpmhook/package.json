@@ -1,0 +1,49 @@
+{
+  "name": "libnpmhook",
+  "version": "7.0.0",
+  "description": "programmatic API for managing npm registry hooks",
+  "main": "lib/index.js",
+  "files": [
+    "bin",
+    "lib"
+  ],
+  "scripts": {
+    "prerelease": "npm t",
+    "postrelease": "npm publish && git push --follow-tags",
+    "test": "tap",
+    "lint": "eslint '**/*.js'",
+    "postlint": "npm-template-check",
+    "lintfix": "npm run lint -- --fix",
+    "preversion": "npm test",
+    "postversion": "npm publish",
+    "prepublishOnly": "git push origin --follow-tags",
+    "snap": "tap",
+    "posttest": "npm run lint"
+  },
+  "tap": {
+    "check-coverage": true
+  },
+  "repository": "https://github.com/npm/libnpmhook",
+  "keywords": [
+    "npm",
+    "hooks",
+    "registry",
+    "npm api"
+  ],
+  "author": "GitHub Inc.",
+  "license": "ISC",
+  "dependencies": {
+    "aproba": "^2.0.0",
+    "npm-registry-fetch": "^11.0.0"
+  },
+  "devDependencies": {
+    "nock": "^9.6.1",
+    "tap": "^15.1.0"
+  },
+  "engines": {
+    "node": "^12.13.0 || ^14.15.0 || >=16"
+  },
+  "templateOSS": {
+    "version": "2.4.1"
+  }
+}

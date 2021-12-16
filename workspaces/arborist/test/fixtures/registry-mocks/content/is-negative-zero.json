@@ -1,0 +1,455 @@
+{
+  "_id": "is-negative-zero",
+  "_rev": "13-ae3bbd195c8655de7ef9a51793383b6b",
+  "name": "is-negative-zero",
+  "description": "Is this value negative zero? === will lie to you",
+  "dist-tags": {
+    "latest": "2.0.0"
+  },
+  "versions": {
+    "0.0.0": {
+      "name": "is-negative-zero",
+      "version": "0.0.0",
+      "description": "Is this value negative zero? === will lie to you",
+      "author": {
+        "name": "Jordan Harband"
+      },
+      "license": "MIT",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test.js && npm run coverage-quiet",
+        "coverage": "covert test.js",
+        "coverage-quiet": "covert test.js --quiet"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/ljharb/is-negative-zero.git"
+      },
+      "bugs": {
+        "url": "https://github.com/ljharb/is-negative-zero/issues"
+      },
+      "homepage": "https://github.com/ljharb/is-negative-zero",
+      "keywords": [
+        "is",
+        "negative",
+        "zero",
+        "negative zero",
+        "number",
+        "positive",
+        "0",
+        "-0"
+      ],
+      "dependencies": {},
+      "devDependencies": {
+        "tape": "~2.3.2",
+        "covert": "~0.3.0"
+      },
+      "testling": {
+        "files": "test.js",
+        "browsers": [
+          "iexplore/6.0..latest",
+          "firefox/3.0..6.0",
+          "firefox/15.0..latest",
+          "firefox/nightly",
+          "chrome/4.0..10.0",
+          "chrome/20.0..latest",
+          "chrome/canary",
+          "opera/10.0..12.0",
+          "opera/15.0..latest",
+          "opera/next",
+          "safari/4.0..latest",
+          "ipad/6.0..latest",
+          "iphone/6.0..latest",
+          "android-browser/4.2"
+        ]
+      },
+      "engines": {
+        "node": ">= 0.4"
+      },
+      "_id": "is-negative-zero@0.0.0",
+      "dist": {
+        "shasum": "f5ddc0ef86ce7de2aa1970a5fa595db69bf24293",
+        "tarball": "https://registry.npmjs.org/is-negative-zero/-/is-negative-zero-0.0.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.21",
+      "_npmUser": {
+        "name": "ljharb",
+        "email": "ljharb@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "ljharb",
+          "email": "ljharb@gmail.com"
+        }
+      ],
+      "deprecated": "Contains a bug: negative numbers are negative zero",
+      "directories": {}
+    },
+    "0.1.0": {
+      "name": "is-negative-zero",
+      "version": "0.1.0",
+      "description": "Is this value negative zero? === will lie to you",
+      "author": {
+        "name": "Jordan Harband"
+      },
+      "license": "MIT",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test.js && npm run coverage-quiet",
+        "coverage": "covert test.js",
+        "coverage-quiet": "covert test.js --quiet"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/ljharb/is-negative-zero.git"
+      },
+      "bugs": {
+        "url": "https://github.com/ljharb/is-negative-zero/issues"
+      },
+      "homepage": "https://github.com/ljharb/is-negative-zero",
+      "keywords": [
+        "is",
+        "negative",
+        "zero",
+        "negative zero",
+        "number",
+        "positive",
+        "0",
+        "-0"
+      ],
+      "dependencies": {},
+      "devDependencies": {
+        "tape": "~2.12.3",
+        "covert": "~0.4.0"
+      },
+      "testling": {
+        "files": "test.js",
+        "browsers": [
+          "iexplore/6.0..latest",
+          "firefox/3.0..6.0",
+          "firefox/15.0..latest",
+          "firefox/nightly",
+          "chrome/4.0..10.0",
+          "chrome/20.0..latest",
+          "chrome/canary",
+          "opera/10.0..12.0",
+          "opera/15.0..latest",
+          "opera/next",
+          "safari/4.0..latest",
+          "ipad/6.0..latest",
+          "iphone/6.0..latest",
+          "android-browser/4.2"
+        ]
+      },
+      "engines": {
+        "node": ">= 0.4"
+      },
+      "_id": "is-negative-zero@0.1.0",
+      "_shasum": "ce009a87d2848b03640d458ef9f272efe0518ed6",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "ljharb",
+        "email": "ljharb@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "ljharb",
+          "email": "ljharb@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "ce009a87d2848b03640d458ef9f272efe0518ed6",
+        "tarball": "https://registry.npmjs.org/is-negative-zero/-/is-negative-zero-0.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.1.1": {
+      "name": "is-negative-zero",
+      "version": "0.1.1",
+      "description": "Is this value negative zero? === will lie to you",
+      "author": {
+        "name": "Jordan Harband"
+      },
+      "license": "MIT",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test.js && npm run coverage-quiet",
+        "coverage": "covert test.js",
+        "coverage-quiet": "covert test.js --quiet"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/ljharb/is-negative-zero.git"
+      },
+      "bugs": {
+        "url": "https://github.com/ljharb/is-negative-zero/issues"
+      },
+      "homepage": "https://github.com/ljharb/is-negative-zero",
+      "keywords": [
+        "is",
+        "negative",
+        "zero",
+        "negative zero",
+        "number",
+        "positive",
+        "0",
+        "-0"
+      ],
+      "dependencies": {},
+      "devDependencies": {
+        "tape": "~2.12.3",
+        "covert": "~0.4.0"
+      },
+      "testling": {
+        "files": "test.js",
+        "browsers": [
+          "iexplore/6.0..latest",
+          "firefox/3.0..6.0",
+          "firefox/15.0..latest",
+          "firefox/nightly",
+          "chrome/4.0..10.0",
+          "chrome/20.0..latest",
+          "chrome/canary",
+          "opera/10.0..12.0",
+          "opera/15.0..latest",
+          "opera/next",
+          "safari/4.0..latest",
+          "ipad/6.0..latest",
+          "iphone/6.0..latest",
+          "android-browser/4.2"
+        ]
+      },
+      "engines": {
+        "node": ">= 0.4"
+      },
+      "_id": "is-negative-zero@0.1.1",
+      "_shasum": "7c6334beeca98297baebdf52a6be32850c4e7027",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "ljharb",
+        "email": "ljharb@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "ljharb",
+          "email": "ljharb@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "7c6334beeca98297baebdf52a6be32850c4e7027",
+        "tarball": "https://registry.npmjs.org/is-negative-zero/-/is-negative-zero-0.1.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "is-negative-zero",
+      "version": "1.0.0",
+      "description": "Is this value negative zero? === will lie to you",
+      "author": {
+        "name": "Jordan Harband"
+      },
+      "license": "MIT",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test.js && npm run coverage-quiet",
+        "coverage": "covert test.js",
+        "coverage-quiet": "covert test.js --quiet"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/ljharb/is-negative-zero.git"
+      },
+      "bugs": {
+        "url": "https://github.com/ljharb/is-negative-zero/issues"
+      },
+      "homepage": "https://github.com/ljharb/is-negative-zero",
+      "keywords": [
+        "is",
+        "negative",
+        "zero",
+        "negative zero",
+        "number",
+        "positive",
+        "0",
+        "-0"
+      ],
+      "dependencies": {},
+      "devDependencies": {
+        "tape": "~2.14.0",
+        "covert": "~0.4.0"
+      },
+      "testling": {
+        "files": "test.js",
+        "browsers": [
+          "iexplore/6.0..latest",
+          "firefox/3.0..6.0",
+          "firefox/15.0..latest",
+          "firefox/nightly",
+          "chrome/4.0..10.0",
+          "chrome/20.0..latest",
+          "chrome/canary",
+          "opera/10.0..12.0",
+          "opera/15.0..latest",
+          "opera/next",
+          "safari/4.0..latest",
+          "ipad/6.0..latest",
+          "iphone/6.0..latest",
+          "android-browser/4.2"
+        ]
+      },
+      "engines": {
+        "node": ">= 0.4"
+      },
+      "gitHead": "f632ae1bf060a8681676751f17ffa18f02f62882",
+      "_id": "is-negative-zero@1.0.0",
+      "_shasum": "1d6854ab92b1eaefeb8164bac0d05efdd532ac85",
+      "_from": ".",
+      "_npmVersion": "1.4.21",
+      "_npmUser": {
+        "name": "ljharb",
+        "email": "ljharb@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "ljharb",
+          "email": "ljharb@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "1d6854ab92b1eaefeb8164bac0d05efdd532ac85",
+        "tarball": "https://registry.npmjs.org/is-negative-zero/-/is-negative-zero-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "is-negative-zero",
+      "version": "2.0.0",
+      "description": "Is this value negative zero? === will lie to you",
+      "author": {
+        "name": "Jordan Harband"
+      },
+      "license": "MIT",
+      "main": "index.js",
+      "scripts": {
+        "test": "npm run lint && node test.js && npm run coverage-quiet",
+        "coverage": "covert test.js",
+        "coverage-quiet": "covert test.js --quiet",
+        "lint": "npm run jscs && npm run eslint",
+        "jscs": "jscs *.js",
+        "eslint": "eslint *.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/ljharb/is-negative-zero.git"
+      },
+      "bugs": {
+        "url": "https://github.com/ljharb/is-negative-zero/issues"
+      },
+      "homepage": "https://github.com/ljharb/is-negative-zero",
+      "keywords": [
+        "is",
+        "negative",
+        "zero",
+        "negative zero",
+        "number",
+        "positive",
+        "0",
+        "-0"
+      ],
+      "dependencies": {},
+      "devDependencies": {
+        "tape": "^4.0.1",
+        "covert": "^1.1.0",
+        "jscs": "^1.13.1",
+        "eslint": "^1.0.0-rc-3",
+        "@ljharb/eslint-config": "^1.0.3"
+      },
+      "testling": {
+        "files": "test.js",
+        "browsers": [
+          "iexplore/6.0..latest",
+          "firefox/3.0..6.0",
+          "firefox/15.0..latest",
+          "firefox/nightly",
+          "chrome/4.0..10.0",
+          "chrome/20.0..latest",
+          "chrome/canary",
+          "opera/10.0..12.0",
+          "opera/15.0..latest",
+          "opera/next",
+          "safari/4.0..latest",
+          "ipad/6.0..latest",
+          "iphone/6.0..latest",
+          "android-browser/4.2"
+        ]
+      },
+      "engines": {
+        "node": ">= 0.4"
+      },
+      "gitHead": "e387d0e5fdc75b6bf49efa43d2f9afe0c69fc68f",
+      "_id": "is-negative-zero@2.0.0",
+      "_shasum": "9553b121b0fac28869da9ed459e20c7543788461",
+      "_from": ".",
+      "_npmVersion": "2.13.0",
+      "_nodeVersion": "2.4.0",
+      "_npmUser": {
+        "name": "ljharb",
+        "email": "ljharb@gmail.com"
+      },
+      "dist": {
+        "shasum": "9553b121b0fac28869da9ed459e20c7543788461",
+        "tarball": "https://registry.npmjs.org/is-negative-zero/-/is-negative-zero-2.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "ljharb",
+          "email": "ljharb@gmail.com"
+        }
+      ],
+      "directories": {}
+    }
+  },
+  "readme": "#is-negative-zero <sup>[![Version Badge][2]][1]</sup>\n\n[![Build Status][3]][4]\n[![dependency status][5]][6]\n[![dev dependency status][7]][8]\n[![License][license-image]][license-url]\n[![Downloads][downloads-image]][downloads-url]\n\n[![npm badge][11]][1]\n\n[![browser support][9]][10]\n\nIs this value negative zero? === will lie to you.\n\n## Example\n\n```js\nvar isNegativeZero = require('is-negative-zero');\nvar assert = require('assert');\n\nassert.notOk(isNegativeZero(undefined));\nassert.notOk(isNegativeZero(null));\nassert.notOk(isNegativeZero(false));\nassert.notOk(isNegativeZero(true));\nassert.notOk(isNegativeZero(0));\nassert.notOk(isNegativeZero(42));\nassert.notOk(isNegativeZero(Infinity));\nassert.notOk(isNegativeZero(-Infinity));\nassert.notOk(isNegativeZero(NaN));\nassert.notOk(isNegativeZero('foo'));\nassert.notOk(isNegativeZero(function () {}));\nassert.notOk(isNegativeZero([]));\nassert.notOk(isNegativeZero({}));\n\nassert.ok(isNegativeZero(-0));\n```\n\n## Tests\nSimply clone the repo, `npm install`, and run `npm test`\n\n[1]: https://npmjs.org/package/is-negative-zero\n[2]: http://vb.teelaun.ch/ljharb/is-negative-zero.svg\n[3]: https://travis-ci.org/ljharb/is-negative-zero.svg\n[4]: https://travis-ci.org/ljharb/is-negative-zero\n[5]: https://david-dm.org/ljharb/is-negative-zero.svg\n[6]: https://david-dm.org/ljharb/is-negative-zero\n[7]: https://david-dm.org/ljharb/is-negative-zero/dev-status.svg\n[8]: https://david-dm.org/ljharb/is-negative-zero#info=devDependencies\n[9]: https://ci.testling.com/ljharb/is-negative-zero.png\n[10]: https://ci.testling.com/ljharb/is-negative-zero\n[11]: https://nodei.co/npm/is-negative-zero.png?downloads=true&stars=true\n[license-image]: http://img.shields.io/npm/l/is-negative-zero.svg\n[license-url]: LICENSE\n[downloads-image]: http://img.shields.io/npm/dm/is-negative-zero.svg\n[downloads-url]: http://npm-stat.com/charts.html?package=is-negative-zero\n\n",
+  "maintainers": [
+    {
+      "email": "ljharb@gmail.com",
+      "name": "ljharb"
+    }
+  ],
+  "time": {
+    "modified": "2019-11-12T20:29:33.214Z",
+    "created": "2014-01-20T07:28:03.828Z",
+    "0.0.0": "2014-01-20T07:28:03.828Z",
+    "0.1.0": "2014-05-13T23:56:14.193Z",
+    "0.1.1": "2014-05-14T06:42:22.193Z",
+    "1.0.0": "2014-08-08T19:49:39.755Z",
+    "2.0.0": "2015-07-25T04:27:39.097Z"
+  },
+  "readmeFilename": "README.md",
+  "users": {},
+  "homepage": "https://github.com/ljharb/is-negative-zero",
+  "keywords": [
+    "is",
+    "negative",
+    "zero",
+    "negative zero",
+    "number",
+    "positive",
+    "0",
+    "-0"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ljharb/is-negative-zero.git"
+  },
+  "author": {
+    "name": "Jordan Harband"
+  },
+  "bugs": {
+    "url": "https://github.com/ljharb/is-negative-zero/issues"
+  },
+  "license": "MIT"
+}

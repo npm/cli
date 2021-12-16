@@ -1,0 +1,1139 @@
+{
+  "_id": "parse-asn1",
+  "_rev": "39-7ab862fb8052c5078ab8a9294aa211f6",
+  "name": "parse-asn1",
+  "description": "utility library for parsing asn1 files for use with browserify-sign.",
+  "dist-tags": {
+    "latest": "5.1.6"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "parse-asn1",
+      "version": "1.0.0",
+      "description": "parse-asn1 ===",
+      "main": "index.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/calvinmetcalf/parse-asn1.git"
+      },
+      "author": "",
+      "license": "ISC",
+      "dependencies": {
+        "asn1.js": "^0.6.5",
+        "asn1.js-rfc3280": "^0.5.1",
+        "pemstrip": "0.0.1"
+      },
+      "gitHead": "6cfeecb4cd46c8032833e76360386f9c64d88c19",
+      "bugs": {
+        "url": "https://github.com/calvinmetcalf/parse-asn1/issues"
+      },
+      "homepage": "https://github.com/calvinmetcalf/parse-asn1",
+      "_id": "parse-asn1@1.0.0",
+      "_shasum": "f38aed01e681fbb03a028522e9f0d68258b47e3c",
+      "_from": ".",
+      "_npmVersion": "2.1.10",
+      "_nodeVersion": "0.10.33",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "f38aed01e681fbb03a028522e9f0d68258b47e3c",
+        "tarball": "https://registry.npmjs.org/parse-asn1/-/parse-asn1-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "parse-asn1",
+      "version": "1.0.1",
+      "description": "parse-asn1 ===",
+      "main": "index.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/calvinmetcalf/parse-asn1.git"
+      },
+      "author": "",
+      "license": "ISC",
+      "dependencies": {
+        "asn1.js": "^0.6.5",
+        "asn1.js-rfc3280": "^0.5.1",
+        "pemstrip": "0.0.1"
+      },
+      "gitHead": "4ba433ad8ca2c5e5d5b6f6f136334c1de57850cd",
+      "bugs": {
+        "url": "https://github.com/calvinmetcalf/parse-asn1/issues"
+      },
+      "homepage": "https://github.com/calvinmetcalf/parse-asn1",
+      "_id": "parse-asn1@1.0.1",
+      "_shasum": "0f585a6a2a2d216ba95cf52ed90f3c016ce8c1bc",
+      "_from": ".",
+      "_npmVersion": "2.1.10",
+      "_nodeVersion": "0.11.14",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "0f585a6a2a2d216ba95cf52ed90f3c016ce8c1bc",
+        "tarball": "https://registry.npmjs.org/parse-asn1/-/parse-asn1-1.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "parse-asn1",
+      "version": "1.1.0",
+      "description": "parse-asn1 ===",
+      "main": "index.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/calvinmetcalf/parse-asn1.git"
+      },
+      "author": "",
+      "license": "ISC",
+      "dependencies": {
+        "asn1.js": "^0.6.5",
+        "asn1.js-rfc3280": "^0.5.1",
+        "pemstrip": "0.0.1"
+      },
+      "gitHead": "38920a36fe21fae3c7af3373b4d865cb3471d0e2",
+      "bugs": {
+        "url": "https://github.com/calvinmetcalf/parse-asn1/issues"
+      },
+      "homepage": "https://github.com/calvinmetcalf/parse-asn1",
+      "_id": "parse-asn1@1.1.0",
+      "_shasum": "aa57c6b247ae742888ddf2696c66a8ce5f43ae19",
+      "_from": ".",
+      "_npmVersion": "2.1.10",
+      "_nodeVersion": "0.10.33",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "aa57c6b247ae742888ddf2696c66a8ce5f43ae19",
+        "tarball": "https://registry.npmjs.org/parse-asn1/-/parse-asn1-1.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.2.0": {
+      "name": "parse-asn1",
+      "version": "1.2.0",
+      "description": "parse-asn1 ===",
+      "main": "index.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/calvinmetcalf/parse-asn1.git"
+      },
+      "author": "",
+      "license": "ISC",
+      "dependencies": {
+        "asn1.js": "^0.6.5",
+        "asn1.js-rfc3280": "^0.5.1",
+        "pemstrip": "0.0.1"
+      },
+      "gitHead": "5f14a56ae367d72cb8c0b72b82040f9d120a4788",
+      "bugs": {
+        "url": "https://github.com/calvinmetcalf/parse-asn1/issues"
+      },
+      "homepage": "https://github.com/calvinmetcalf/parse-asn1",
+      "_id": "parse-asn1@1.2.0",
+      "_shasum": "d6a8926be45c4ff032842bd86b36b7b574a810ae",
+      "_from": ".",
+      "_npmVersion": "2.1.10",
+      "_nodeVersion": "0.11.14",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "d6a8926be45c4ff032842bd86b36b7b574a810ae",
+        "tarball": "https://registry.npmjs.org/parse-asn1/-/parse-asn1-1.2.0.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "parse-asn1",
+      "version": "2.0.0",
+      "description": "parse-asn1 ===",
+      "main": "index.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/calvinmetcalf/parse-asn1.git"
+      },
+      "author": "",
+      "license": "ISC",
+      "dependencies": {
+        "asn1.js": "^1.0.0",
+        "asn1.js-rfc3280": "^1.0.0",
+        "pemstrip": "0.0.1"
+      },
+      "gitHead": "6f8f1871dd3d076f01c5d92f72fda99c0a7e0793",
+      "bugs": {
+        "url": "https://github.com/calvinmetcalf/parse-asn1/issues"
+      },
+      "homepage": "https://github.com/calvinmetcalf/parse-asn1",
+      "_id": "parse-asn1@2.0.0",
+      "_shasum": "c8cbc588abc91ade087c02ecbdfd7b66d9a8405f",
+      "_from": ".",
+      "_npmVersion": "2.1.10",
+      "_nodeVersion": "0.11.14",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "c8cbc588abc91ade087c02ecbdfd7b66d9a8405f",
+        "tarball": "https://registry.npmjs.org/parse-asn1/-/parse-asn1-2.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "parse-asn1",
+      "version": "3.0.0",
+      "description": "parse-asn1 ===",
+      "main": "index.js",
+      "scripts": {
+        "test": "node ./test"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/calvinmetcalf/parse-asn1.git"
+      },
+      "author": "",
+      "license": "ISC",
+      "dependencies": {
+        "asn1.js": "^1.0.0",
+        "browserify-aes": "^1.0.0",
+        "create-hash": "^1.1.0",
+        "pbkdf2-compat": "^3.0.0"
+      },
+      "devDependencies": {
+        "tape": "^3.4.0"
+      },
+      "gitHead": "a6be135aec21fdc648d15f267381315821734a87",
+      "bugs": {
+        "url": "https://github.com/calvinmetcalf/parse-asn1/issues"
+      },
+      "homepage": "https://github.com/calvinmetcalf/parse-asn1",
+      "_id": "parse-asn1@3.0.0",
+      "_shasum": "36ea30eb2ad99084e738e92801647910cdbf1ee4",
+      "_from": ".",
+      "_npmVersion": "2.1.10",
+      "_nodeVersion": "0.10.36",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "36ea30eb2ad99084e738e92801647910cdbf1ee4",
+        "tarball": "https://registry.npmjs.org/parse-asn1/-/parse-asn1-3.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "3.0.1": {
+      "name": "parse-asn1",
+      "version": "3.0.1",
+      "description": "parse-asn1 ===",
+      "main": "index.js",
+      "scripts": {
+        "test": "node ./test"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/crypto-browserify/parse-asn1.git"
+      },
+      "author": "",
+      "license": "ISC",
+      "dependencies": {
+        "asn1.js": "^2.0.0",
+        "browserify-aes": "^1.0.0",
+        "create-hash": "^1.1.0",
+        "pbkdf2": "^3.0.3"
+      },
+      "devDependencies": {
+        "tape": "^3.4.0"
+      },
+      "gitHead": "c5d99d0c4b94e22a0eaf3f31e2bfa9abe52a9b76",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/parse-asn1/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/parse-asn1",
+      "_id": "parse-asn1@3.0.1",
+      "_shasum": "a0ef5aa6fc6747f4166cd18432bd67bd8dc438b5",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "a0ef5aa6fc6747f4166cd18432bd67bd8dc438b5",
+        "tarball": "https://registry.npmjs.org/parse-asn1/-/parse-asn1-3.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "3.0.2": {
+      "name": "parse-asn1",
+      "version": "3.0.2",
+      "description": "[![TRAVIS](https://secure.travis-ci.org/crypto-browserify/parse-asn1.png)](http://travis-ci.org/crypto-browserify/parse-asn1) [![NPM](http://img.shields.io/npm/v/parse-asn1.svg)](https://www.npmjs.org/package/parse-asn1)",
+      "main": "index.js",
+      "scripts": {
+        "unit": "node ./test",
+        "standard": "standard",
+        "test": "npm run standard && npm run unit"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/crypto-browserify/parse-asn1.git"
+      },
+      "author": "",
+      "license": "ISC",
+      "dependencies": {
+        "asn1.js": "^2.0.0",
+        "browserify-aes": "^1.0.0",
+        "create-hash": "^1.1.0",
+        "evp_bytestokey": "^1.0.0",
+        "pbkdf2": "^3.0.3"
+      },
+      "devDependencies": {
+        "tape": "^3.4.0",
+        "standard": "^5.0.0"
+      },
+      "gitHead": "bc8af2462a28fcebc36a9cd0e4566b81fb2b3f8e",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/parse-asn1/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/parse-asn1#readme",
+      "_id": "parse-asn1@3.0.2",
+      "_shasum": "b42431beba32e08eac6d9153a54430bfd95d2d5e",
+      "_from": ".",
+      "_npmVersion": "3.3.4",
+      "_nodeVersion": "4.1.1",
+      "_npmUser": {
+        "name": "dcousens",
+        "email": "email@dcousens.com"
+      },
+      "dist": {
+        "shasum": "b42431beba32e08eac6d9153a54430bfd95d2d5e",
+        "tarball": "https://registry.npmjs.org/parse-asn1/-/parse-asn1-3.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "directories": {}
+    },
+    "4.0.0": {
+      "name": "parse-asn1",
+      "version": "4.0.0",
+      "description": "[![TRAVIS](https://secure.travis-ci.org/crypto-browserify/parse-asn1.png)](http://travis-ci.org/crypto-browserify/parse-asn1) [![NPM](http://img.shields.io/npm/v/parse-asn1.svg)](https://www.npmjs.org/package/parse-asn1)",
+      "main": "index.js",
+      "scripts": {
+        "unit": "node ./test",
+        "standard": "standard",
+        "test": "npm run standard && npm run unit"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/crypto-browserify/parse-asn1.git"
+      },
+      "author": "",
+      "license": "ISC",
+      "dependencies": {
+        "asn1.js": "^3.0.0",
+        "browserify-aes": "^1.0.0",
+        "create-hash": "^1.1.0",
+        "evp_bytestokey": "^1.0.0",
+        "pbkdf2": "^3.0.3"
+      },
+      "devDependencies": {
+        "tape": "^3.4.0",
+        "standard": "^5.0.0"
+      },
+      "gitHead": "c895b21e8804f6b9b410b16ca761eccea8eb68a2",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/parse-asn1/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/parse-asn1#readme",
+      "_id": "parse-asn1@4.0.0",
+      "_shasum": "e28a3b660c1e7d2c3c0559ee8a7c8615cf76ff2e",
+      "_from": ".",
+      "_npmVersion": "2.14.3",
+      "_nodeVersion": "3.3.1",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "dist": {
+        "shasum": "e28a3b660c1e7d2c3c0559ee8a7c8615cf76ff2e",
+        "tarball": "https://registry.npmjs.org/parse-asn1/-/parse-asn1-4.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "directories": {}
+    },
+    "5.0.0": {
+      "name": "parse-asn1",
+      "version": "5.0.0",
+      "description": "[![TRAVIS](https://secure.travis-ci.org/crypto-browserify/parse-asn1.png)](http://travis-ci.org/crypto-browserify/parse-asn1) [![NPM](http://img.shields.io/npm/v/parse-asn1.svg)](https://www.npmjs.org/package/parse-asn1)",
+      "main": "index.js",
+      "scripts": {
+        "unit": "node ./test",
+        "standard": "standard",
+        "test": "npm run standard && npm run unit"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/crypto-browserify/parse-asn1.git"
+      },
+      "author": "",
+      "license": "ISC",
+      "dependencies": {
+        "asn1.js": "^4.0.0",
+        "browserify-aes": "^1.0.0",
+        "create-hash": "^1.1.0",
+        "evp_bytestokey": "^1.0.0",
+        "pbkdf2": "^3.0.3"
+      },
+      "devDependencies": {
+        "tape": "^3.4.0",
+        "standard": "^5.0.0"
+      },
+      "gitHead": "eb88523b7c6dc896a407b896bba470218fde70b4",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/parse-asn1/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/parse-asn1#readme",
+      "_id": "parse-asn1@5.0.0",
+      "_shasum": "35060f6d5015d37628c770f4e091a0b5a278bc23",
+      "_from": ".",
+      "_npmVersion": "2.9.0",
+      "_nodeVersion": "4.2.1",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "dist": {
+        "shasum": "35060f6d5015d37628c770f4e091a0b5a278bc23",
+        "tarball": "https://registry.npmjs.org/parse-asn1/-/parse-asn1-5.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "directories": {}
+    },
+    "5.1.0": {
+      "name": "parse-asn1",
+      "version": "5.1.0",
+      "description": "utility library for parsing asn1 files for use with browserify-sign.",
+      "main": "index.js",
+      "scripts": {
+        "unit": "node ./test",
+        "standard": "standard",
+        "test": "npm run standard && npm run unit"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/crypto-browserify/parse-asn1.git"
+      },
+      "author": "",
+      "license": "ISC",
+      "dependencies": {
+        "asn1.js": "^4.0.0",
+        "browserify-aes": "^1.0.0",
+        "create-hash": "^1.1.0",
+        "evp_bytestokey": "^1.0.0",
+        "pbkdf2": "^3.0.3"
+      },
+      "devDependencies": {
+        "tape": "^3.4.0",
+        "standard": "^5.0.0"
+      },
+      "gitHead": "da019013e56630e7f49c7bc1d90eeefab3d97c7e",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/parse-asn1/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/parse-asn1#readme",
+      "_id": "parse-asn1@5.1.0",
+      "_shasum": "37c4f9b7ed3ab65c74817b5f2480937fbf97c712",
+      "_from": ".",
+      "_npmVersion": "4.0.5",
+      "_nodeVersion": "6.9.2",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "dist": {
+        "shasum": "37c4f9b7ed3ab65c74817b5f2480937fbf97c712",
+        "tarball": "https://registry.npmjs.org/parse-asn1/-/parse-asn1-5.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/parse-asn1-5.1.0.tgz_1489415296693_0.6854203154798597"
+      },
+      "directories": {}
+    },
+    "5.1.1": {
+      "name": "parse-asn1",
+      "version": "5.1.1",
+      "description": "utility library for parsing asn1 files for use with browserify-sign.",
+      "main": "index.js",
+      "scripts": {
+        "unit": "node ./test",
+        "standard": "standard",
+        "test": "npm run standard && npm run unit"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/crypto-browserify/parse-asn1.git"
+      },
+      "author": "",
+      "license": "ISC",
+      "dependencies": {
+        "asn1.js": "^4.0.0",
+        "browserify-aes": "^1.0.0",
+        "create-hash": "^1.1.0",
+        "evp_bytestokey": "^1.0.0",
+        "pbkdf2": "^3.0.3"
+      },
+      "devDependencies": {
+        "tape": "^3.4.0",
+        "standard": "^5.0.0"
+      },
+      "gitHead": "4203d44e1c5f20b84390fb862c578b36b3334164",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/parse-asn1/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/parse-asn1#readme",
+      "_id": "parse-asn1@5.1.1",
+      "_npmVersion": "5.8.0",
+      "_nodeVersion": "8.11.1",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-KPx7flKXg775zZpnp9SxJlz00gTd4BmJ2yJufSc44gMCRrRQ7NSzAcSJQfifuOLgW6bEi+ftrALtsgALeB2Adw==",
+        "shasum": "f6bf293818332bd0dab54efb16087724745e6ca8",
+        "tarball": "https://registry.npmjs.org/parse-asn1/-/parse-asn1-5.1.1.tgz",
+        "fileCount": 38,
+        "unpackedSize": 37094
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/parse-asn1_5.1.1_1523449360549_0.37417268391545266"
+      },
+      "_hasShrinkwrap": false
+    },
+    "5.1.2": {
+      "name": "parse-asn1",
+      "version": "5.1.2",
+      "description": "utility library for parsing asn1 files for use with browserify-sign.",
+      "main": "index.js",
+      "scripts": {
+        "unit": "node ./test",
+        "standard": "standard",
+        "test": "npm run standard && npm run unit"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/crypto-browserify/parse-asn1.git"
+      },
+      "author": "",
+      "license": "ISC",
+      "dependencies": {
+        "asn1.js": "^4.0.0",
+        "browserify-aes": "^1.0.0",
+        "create-hash": "^1.1.0",
+        "evp_bytestokey": "^1.0.0",
+        "pbkdf2": "^3.0.3",
+        "safe-buffer": "^5.1.1"
+      },
+      "devDependencies": {
+        "tape": "^3.4.0",
+        "standard": "^5.0.0"
+      },
+      "gitHead": "6460966c65f9da0e57bed17de12d16263b1d0529",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/parse-asn1/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/parse-asn1#readme",
+      "_id": "parse-asn1@5.1.2",
+      "_npmVersion": "6.5.0",
+      "_nodeVersion": "10.15.0",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-zVAb35DsNvwINEA7EEK+78YoNDGRpYEAGoIl3bSHyI9OU4IIrrrU5DC4xaCLZ42gvOfQg1+wS778WbJW+mCMCQ==",
+        "shasum": "13efbaaac8da669a9751a6b50a7cfccfdef756ae",
+        "tarball": "https://registry.npmjs.org/parse-asn1/-/parse-asn1-5.1.2.tgz",
+        "fileCount": 39,
+        "unpackedSize": 39288,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcQIE3CRA9TVsSAnZWagAACeEQAKE9Y6S0EH9oul/H0nzF\niqExpxywrnSmQ+ierO0ew+RCvwrb+BKnpZYyApm77GFnLOl97Xp0N9pJuhJ/\n+bT7f5f3kcgmyyodpxsjo8Cbv7v0/MGjoQfvNmyJDJiH1adlo8Zb1W8M0OV0\n0DAxlf7x4OirSXzh0ANSEnP4V31f/ZkmTS8PzGgXxk8MSW2yD1s4WkWA1SA/\ngnqTjYuLtE0F4huH+NWsnsw0e0e9yrsL7jsF5dU9ts8HJYLMDPzV1W01UCWA\n3VmkyTD5/Upu+HgM4+HxNpYJmferZumu5Iy1tQpInqiUZUOj8idrj3z7cqAD\ndowJ9FfbPYGoapHSLviiyBd6lbeAlDBRfvXWXZLc5K0AV/N088zlau1CZvA/\nGJNHcY1IE2o7tDlN+ulWA4K9MejDsA5my/D9Krv1J4bYhDaISrq4vW2IvG03\n+n0bIWdG1Atvkp1H5ngx06hInqFbHNQZto5KKTeZDlCHzQKty8OCYI/l8/Vr\n/ifI3dPkK/OaRGSt4k2lgHYu13Bxy3tC2RKFiLZd1AOSfU9i3cXTYSlBOxD+\nSrbezxM8nyWPHpHeNEi/OZGglSMNqZNWXhS7tnWY+IyX06F6Vrt72AFgWmZ8\n8WbaFU6ssd9XWdTfenTfYXOlrDGAd4dEU3FD3lTz2m3k77ZIVDEFKI3JEwOQ\nDPMj\r\n=XSVX\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "calvin.metcalf@gmail.com",
+          "name": "cwmma"
+        },
+        {
+          "email": "npm@dcousens.com",
+          "name": "dcousens"
+        },
+        {
+          "email": "fedor@indutny.com",
+          "name": "indutny"
+        },
+        {
+          "email": "jprichardson@gmail.com",
+          "name": "jprichardson"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/parse-asn1_5.1.2_1547731255243_0.42146469361899164"
+      },
+      "_hasShrinkwrap": false
+    },
+    "5.1.3": {
+      "name": "parse-asn1",
+      "version": "5.1.3",
+      "description": "utility library for parsing asn1 files for use with browserify-sign.",
+      "main": "index.js",
+      "scripts": {
+        "unit": "node ./test",
+        "standard": "standard",
+        "test": "npm run standard && npm run unit"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/crypto-browserify/parse-asn1.git"
+      },
+      "author": "",
+      "license": "ISC",
+      "dependencies": {
+        "asn1.js": "^4.0.0",
+        "browserify-aes": "^1.0.0",
+        "create-hash": "^1.1.0",
+        "evp_bytestokey": "^1.0.0",
+        "pbkdf2": "^3.0.3",
+        "safe-buffer": "^5.1.1"
+      },
+      "devDependencies": {
+        "tape": "^3.4.0",
+        "standard": "^5.0.0"
+      },
+      "gitHead": "2fcef4d6847322ecd35a409cc38593056eb079eb",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/parse-asn1/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/parse-asn1#readme",
+      "_id": "parse-asn1@5.1.3",
+      "_npmVersion": "6.5.0",
+      "_nodeVersion": "10.15.0",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-VrPoetlz7B/FqjBLD2f5wBVZvsZVLnRUrxVLfRYhGXCODa/NWE4p3Wp+6+aV3ZPL3KM7/OZmxDIwwijD7yuucg==",
+        "shasum": "1600c6cc0727365d68b97f3aa78939e735a75204",
+        "tarball": "https://registry.npmjs.org/parse-asn1/-/parse-asn1-5.1.3.tgz",
+        "fileCount": 39,
+        "unpackedSize": 39286,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcQL3BCRA9TVsSAnZWagAAwnQP/0eyU171Hvt1/XjgciMm\ngKfO1YUC+K7WDvMFrC+3Q1MNrmuQBXPdx1kPasoSWClSELFhgiHNCpYf2uJ3\ndA8O+P3eHiNNH3k/2fKPqjBmWlNE2/OC1iDtnpHjnMqi8re/ouGy7ow+E2bC\nTE3w0a9jv8Lxu7S2PYsYuya0P4/pDlz9AvsPD2h1PZ7v++AsYJkBXdmv3zdd\nBRuJJ5nFUuwbHSOBr9kyuCNB6rw00yFd3RRNyfkwT9z9GVM6RtXH44AcqxBT\njUe3dmxR1ByeeobFUfetsWI8a9WbziMgDbKmcFiIpjfiFhMLCopYf8nO0Lx+\n0idsJPkYKSCEua/GroOmSRTyTNKeDMeVZaoV3/58jsRzOmoQ81G8M7XkaFDM\nIx+GaEzutaXYIPQXiIXc4MAOPdhNAxDpKgeANoSS8ynDwEp5rkPtbwuiS46s\nOsP+h8RwWGF69IvitJTuSiffzVe3qRywuHILfOs01b9tNVbs1opeHjhbirQg\n9vBrWMd84tzDBJAgtpShQm9Taq9a19QSyNgXXqL6hfE+kbJRN0urYUhGuvmq\nU9PuTNUXaz/rsT4NFi7mF8uUFuj9lH3AyXZIb5IilWgo52MKkWhb7Joorz+s\nq+QcqxuxvV+qUvJHm3CZN3p5B2g+bADf+jS1Z9N0Mc2Nk9gs8uK5Gn4X2pOb\n42yF\r\n=qm7I\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "calvin.metcalf@gmail.com",
+          "name": "cwmma"
+        },
+        {
+          "email": "npm@dcousens.com",
+          "name": "dcousens"
+        },
+        {
+          "email": "fedor@indutny.com",
+          "name": "indutny"
+        },
+        {
+          "email": "jprichardson@gmail.com",
+          "name": "jprichardson"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/parse-asn1_5.1.3_1547746752515_0.06173921194190379"
+      },
+      "_hasShrinkwrap": false
+    },
+    "5.1.4": {
+      "name": "parse-asn1",
+      "version": "5.1.4",
+      "description": "utility library for parsing asn1 files for use with browserify-sign.",
+      "main": "index.js",
+      "scripts": {
+        "unit": "node ./test",
+        "standard": "standard",
+        "test": "npm run standard && npm run unit"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/crypto-browserify/parse-asn1.git"
+      },
+      "author": "",
+      "license": "ISC",
+      "dependencies": {
+        "asn1.js": "^4.0.0",
+        "browserify-aes": "^1.0.0",
+        "create-hash": "^1.1.0",
+        "evp_bytestokey": "^1.0.0",
+        "pbkdf2": "^3.0.3",
+        "safe-buffer": "^5.1.1"
+      },
+      "devDependencies": {
+        "tape": "^3.4.0",
+        "standard": "^5.0.0"
+      },
+      "gitHead": "01c9a7a9ca91c9b1b2e0d5ae2abe5214705c3afe",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/parse-asn1/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/parse-asn1#readme",
+      "_id": "parse-asn1@5.1.4",
+      "_nodeVersion": "10.15.0",
+      "_npmVersion": "6.7.0",
+      "dist": {
+        "integrity": "sha512-Qs5duJcuvNExRfFZ99HDD3z4mAi3r9Wl/FOjEOijlxwCZs7E7mW2vjTpgQ4J8LpTF8x5v+1Vn5UQFejmWT11aw==",
+        "shasum": "37f6628f823fbdeb2273b4d540434a22f3ef1fcc",
+        "tarball": "https://registry.npmjs.org/parse-asn1/-/parse-asn1-5.1.4.tgz",
+        "fileCount": 39,
+        "unpackedSize": 39333,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcZZd0CRA9TVsSAnZWagAA9ooP/jme7QTlAfYmH1BCaHUQ\nAiaqPjCfLFyHvXGg8wVTSHiCLCxxbNLbwJKmQa911JLawGwuncprIJNjV2Ot\nqIP7tfNv3RkVTSopEU6Ns415Qxcxt9YSPVIDNylU1r15mPrv8BmKJz4xJG8g\nzn1Pj25pTQu4IVrQAMpV/o4pCBUC+B0ln4vzjymnj4PsADE+A6IQTLr3iUwc\n3+JQMRTdMMVhs0m67LFsdhMGTaZJN0Ok8wJ1+f5P4lC4IhqR6DR+0ccGe/jj\nn9263JhtB67pz8TfTUSHhzrwg1IxqMinqpUFB1i2BMYVB5gq3Kx4iQVyIi1s\nxXP86prtbtWZj0TJDhPFKG781mOYV4gZnr59jyO5d7Eg5tIQjqhSH/fAcen2\n4zSgLit9LjYqn1F0bVr7BNgae3nn+rHhTNW+h08Bj4DwX3uzmf39CzA79fQg\n9ZolcBdhEnYt7Czt492FLiJlfmrexC4jIIAEfG1qDRA4PGgQhetVQO1TwLWd\n0owbDu5eDrgXovKcZfKu4deiFd1kR3V7fv32/x+VSSEva3K0w2P9qAybpKKz\njIwQG6a4K0rkOH5CoxUXfrGu/T+xBuA3oLtYCoCiX2Ixmbd3f89bEfITXwMl\nya8Qyf/niAuwMAf/ml5c318iUvIVnJNYYFjr06lOOVFXqpprBfJuDRhXYJ0h\n9ody\r\n=AKWi\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "calvin.metcalf@gmail.com",
+          "name": "cwmma"
+        },
+        {
+          "email": "npm@dcousens.com",
+          "name": "dcousens"
+        },
+        {
+          "email": "fedor@indutny.com",
+          "name": "indutny"
+        },
+        {
+          "email": "jprichardson@gmail.com",
+          "name": "jprichardson"
+        }
+      ],
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/parse-asn1_5.1.4_1550161779949_0.35032546706725576"
+      },
+      "_hasShrinkwrap": false
+    },
+    "5.1.5": {
+      "name": "parse-asn1",
+      "version": "5.1.5",
+      "description": "utility library for parsing asn1 files for use with browserify-sign.",
+      "main": "index.js",
+      "scripts": {
+        "unit": "node ./test",
+        "standard": "standard",
+        "test": "npm run standard && npm run unit"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/crypto-browserify/parse-asn1.git"
+      },
+      "author": "",
+      "license": "ISC",
+      "dependencies": {
+        "asn1.js": "^4.0.0",
+        "browserify-aes": "^1.0.0",
+        "create-hash": "^1.1.0",
+        "evp_bytestokey": "^1.0.0",
+        "pbkdf2": "^3.0.3",
+        "safe-buffer": "^5.1.1"
+      },
+      "devDependencies": {
+        "tape": "^3.4.0",
+        "standard": "^5.0.0"
+      },
+      "gitHead": "84cc73573602d63e6c6206e891ebd97f28d0c0e8",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/parse-asn1/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/parse-asn1#readme",
+      "_id": "parse-asn1@5.1.5",
+      "_nodeVersion": "10.16.0",
+      "_npmVersion": "6.11.3",
+      "dist": {
+        "integrity": "sha512-jkMYn1dcJqF6d5CpU689bq7w/b5ALS9ROVSpQDPrZsqqesUJii9qutvoT5ltGedNXMO2e16YUWIghG9KxaViTQ==",
+        "shasum": "003271343da58dc94cace494faef3d2147ecea0e",
+        "tarball": "https://registry.npmjs.org/parse-asn1/-/parse-asn1-5.1.5.tgz",
+        "fileCount": 8,
+        "unpackedSize": 13056,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdghSlCRA9TVsSAnZWagAAGcUP/3Xc8F0gROouwFFwHVXM\nRRRg4yexXSp38s2ndj8QU2C3E1h4q4LZR4srnXHb0EW2g/OO50bEK9MbY/nw\nIJiEXFr20tCvM8W0wjTI+05JK5wgWlPHGltAhmYPXLaLhUFDqqsv3gm0cRwA\nfxX54837qbSxM1JcAYEwFvc+3WFb9F/IMSrbaS7QZ78t3+/lb+W4TMrSqDEp\njlO7MZXlAb7q1f9LPZBjDUjpOSPujGX5jr3E6eXWXwpbvqEvAfGyJU5z1tEl\n9YG/Pw0j4+ieT8UDwhlfjWgHy79YaJ9J2uhWUxO6kHQdS1J49Gi9A7Nr0CI1\nLNyfFSZLmgic8D3gTjOTnXJcyqvrIdNuCAqWLFHnWpRNeYaVTyXE0RJTY8sS\nwNdlSw0oJtN/ObVjEWuHyCSGejVcHbunLEA4Jgx3GSjRwxDX5c7lqf0Ehdxx\n1vqIth2d0vwxxgDV3yYB+kxz5xNnuu+1KavcUn9pQNeDXdW/RjKt/zpvPS8L\nVyK77hadSCVt6QQOwUhgpd/EEk4qhS17LURIWJtj23EFgnnyhmyPJJf1gXHa\nlLVv5ER7jNUYNjPji1Ylhleg0IMA6Elfpa6OY8OWPtHWwjkrGmu2tik4XSYn\nxFBPeo7/bLOiPLrcuKtg/hWpl0ajeXBL1kPoaYnrwn92Tl9d/lqVHZVE/9X0\nSgkY\r\n=cqTh\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "calvin.metcalf@gmail.com",
+          "name": "cwmma"
+        },
+        {
+          "email": "npm@dcousens.com",
+          "name": "dcousens"
+        },
+        {
+          "email": "fedor@indutny.com",
+          "name": "indutny"
+        },
+        {
+          "email": "jprichardson@gmail.com",
+          "name": "jprichardson"
+        }
+      ],
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/parse-asn1_5.1.5_1568806053236_0.6788907189998616"
+      },
+      "_hasShrinkwrap": false
+    },
+    "5.1.6": {
+      "name": "parse-asn1",
+      "version": "5.1.6",
+      "description": "utility library for parsing asn1 files for use with browserify-sign.",
+      "main": "index.js",
+      "scripts": {
+        "unit": "node ./test",
+        "standard": "standard",
+        "test": "npm run standard && npm run unit"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/crypto-browserify/parse-asn1.git"
+      },
+      "author": "",
+      "license": "ISC",
+      "dependencies": {
+        "asn1.js": "^5.2.0",
+        "browserify-aes": "^1.0.0",
+        "evp_bytestokey": "^1.0.0",
+        "pbkdf2": "^3.0.3",
+        "safe-buffer": "^5.1.1"
+      },
+      "devDependencies": {
+        "standard": "^14.3.4",
+        "tape": "^5.0.1"
+      },
+      "gitHead": "fbd70dca8670d17955893e083ca69118908570be",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/parse-asn1/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/parse-asn1#readme",
+      "_id": "parse-asn1@5.1.6",
+      "_nodeVersion": "12.16.0",
+      "_npmVersion": "6.14.5",
+      "dist": {
+        "integrity": "sha512-RnZRo1EPU6JBnra2vGHj0yhp6ebyjBZpmUCLHWiFhxlzvBCCpAuZ7elsBp1PVAbQN0/04VD/19rfzlBSwLstMw==",
+        "shasum": "385080a3ec13cb62a62d39409cb3e88844cdaed4",
+        "tarball": "https://registry.npmjs.org/parse-asn1/-/parse-asn1-5.1.6.tgz",
+        "fileCount": 8,
+        "unpackedSize": 13029,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfMtZXCRA9TVsSAnZWagAAAU0P/idaJ1RnfYgcAVmhmbJD\nffROlPYMpsSD+2GmuJiCJlk8LS3noQjlGn9aY8evlVudFU7XwmQO35hr6VTM\n69THOR2wlj8wWnfwUOKm0I9TpAOs+VeTj0WkGAmowyhCcB33YdVl8LylzrPz\nXutW3rwTDrksgyGnFumZlEcIEJmj4nG6s6xRCOqdIAewudUlKlca4lDlExXg\n49Jrdt32eeny/zsGYtRECymtEHpTRMDPwGpN66uAEQFXEzPXOM0o+9EehAuN\nyLSpd/b+SxdqgimMZ4Xhdf1ry0GOvonAWPNDzN8tOWxQOIjK7wuZdpD6zkLi\nVZEjtkK6Yxo5kGqvvXlgAZptXdp89n7c6MDtI357w5m12/1c9aTXWzSy2uHv\nU9W6h0gDN+xeYFiCOf56+whwBYWIxkMPfPE/kuNlKcyDOKjSxsAb/3rYrEZk\nX31W9x/fG929TEHo6+K5V6pCAit/yYOEBosVqUvvwZs5BqdHzfVfBtY3B+UC\nzRg5tHFci9Z/aHywu2JN8NIzC/bN8pMSmzVJiJyUCaDuC+MSI1h7TkthG5rz\nGrjuBJhbIui7wQ525Y6EZUQ5hmv6VemODpdkeBUzB3VJh3OLikH1YIiTlinD\nRzw86v9Xx6Xe70dWSAf6t7U+03h6vTBXzl9R775fRZS1Rgr+/t2933ETQtxe\nfmyM\r\n=gfjf\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "calvin.metcalf@gmail.com",
+          "name": "cwmma"
+        },
+        {
+          "email": "npm@dcousens.com",
+          "name": "dcousens"
+        },
+        {
+          "email": "fedor@indutny.com",
+          "name": "indutny"
+        },
+        {
+          "email": "jprichardson@gmail.com",
+          "name": "jprichardson"
+        }
+      ],
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/parse-asn1_5.1.6_1597167190910_0.7321398842975677"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# parse-asn1\n\n[![TRAVIS](https://secure.travis-ci.org/crypto-browserify/parse-asn1.png)](http://travis-ci.org/crypto-browserify/parse-asn1)\n[![NPM](http://img.shields.io/npm/v/parse-asn1.svg)](https://www.npmjs.org/package/parse-asn1)\n\n[![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)\n\nutility library for parsing asn1 files for use with browserify-sign.\n",
+  "maintainers": [
+    {
+      "email": "calvin.metcalf@gmail.com",
+      "name": "cwmma"
+    },
+    {
+      "email": "npm@dcousens.com",
+      "name": "dcousens"
+    },
+    {
+      "email": "fedor@indutny.com",
+      "name": "indutny"
+    },
+    {
+      "email": "jprichardson@gmail.com",
+      "name": "jprichardson"
+    }
+  ],
+  "time": {
+    "modified": "2020-08-11T17:33:13.478Z",
+    "created": "2014-12-16T15:19:17.427Z",
+    "1.0.0": "2014-12-16T15:19:17.427Z",
+    "1.0.1": "2014-12-16T18:17:57.777Z",
+    "1.1.0": "2014-12-18T15:19:53.485Z",
+    "1.2.0": "2014-12-18T21:32:43.373Z",
+    "1.2.1": "2015-01-04T15:08:16.341Z",
+    "2.0.0": "2015-01-06T12:48:49.764Z",
+    "3.0.0": "2015-01-28T15:04:38.418Z",
+    "3.0.1": "2015-05-21T02:59:47.870Z",
+    "3.0.2": "2015-09-27T23:24:42.405Z",
+    "4.0.0": "2015-10-26T22:34:38.086Z",
+    "4.0.1": "2015-10-29T12:56:56.234Z",
+    "5.0.0": "2015-10-29T13:09:16.782Z",
+    "5.1.0": "2017-03-13T14:28:18.602Z",
+    "5.1.1": "2018-04-11T12:22:40.727Z",
+    "5.1.2": "2019-01-17T13:20:55.487Z",
+    "5.1.3": "2019-01-17T17:39:12.620Z",
+    "5.1.4": "2019-02-14T16:29:40.122Z",
+    "5.1.5": "2019-09-18T11:27:33.382Z",
+    "5.1.6": "2020-08-11T17:33:10.992Z"
+  },
+  "homepage": "https://github.com/crypto-browserify/parse-asn1#readme",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/crypto-browserify/parse-asn1.git"
+  },
+  "bugs": {
+    "url": "https://github.com/crypto-browserify/parse-asn1/issues"
+  },
+  "license": "ISC",
+  "readmeFilename": "README.md",
+  "users": {
+    "ffi": true
+  }
+}

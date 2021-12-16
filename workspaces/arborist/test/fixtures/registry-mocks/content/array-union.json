@@ -1,0 +1,467 @@
+{
+  "_id": "array-union",
+  "_rev": "13-c1a59caf5ee8738dc06ecf7c0322ec41",
+  "name": "array-union",
+  "description": "Create an array of unique values, in order, from the input arrays",
+  "dist-tags": {
+    "latest": "2.1.0"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "array-union",
+      "version": "0.1.0",
+      "description": "Creates an array of unique values, in order, from the input arrays",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/sindresorhus/array-union"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "array",
+        "arr",
+        "set",
+        "uniq",
+        "unique",
+        "duplicate",
+        "remove",
+        "union",
+        "combine",
+        "merge"
+      ],
+      "dependencies": {
+        "array-uniq": "^0.1.0"
+      },
+      "devDependencies": {
+        "mocha": "*"
+      },
+      "bugs": {
+        "url": "https://github.com/sindresorhus/array-union/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/array-union",
+      "_id": "array-union@0.1.0",
+      "_shasum": "ede98088330665e699e1ebf0227cbc6034e627db",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "ede98088330665e699e1ebf0227cbc6034e627db",
+        "tarball": "https://registry.npmjs.org/array-union/-/array-union-0.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "array-union",
+      "version": "1.0.0",
+      "description": "Create an array of unique values, in order, from the input arrays",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/sindresorhus/array-union"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "array",
+        "arr",
+        "set",
+        "uniq",
+        "unique",
+        "duplicate",
+        "remove",
+        "union",
+        "combine",
+        "merge"
+      ],
+      "dependencies": {
+        "array-uniq": "^1.0.0"
+      },
+      "devDependencies": {
+        "mocha": "*"
+      },
+      "gitHead": "220d00ed0c3c4908e756699a8ef5720a29a37159",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/array-union/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/array-union",
+      "_id": "array-union@1.0.0",
+      "_shasum": "5c4754bb8cc9a6bd7113b20a218ba0ce7dc2f1d2",
+      "_from": ".",
+      "_npmVersion": "1.4.14",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "5c4754bb8cc9a6bd7113b20a218ba0ce7dc2f1d2",
+        "tarball": "https://registry.npmjs.org/array-union/-/array-union-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "array-union",
+      "version": "1.0.1",
+      "description": "Create an array of unique values, in order, from the input arrays",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/array-union"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "array",
+        "arr",
+        "set",
+        "uniq",
+        "unique",
+        "duplicate",
+        "remove",
+        "union",
+        "combine",
+        "merge"
+      ],
+      "dependencies": {
+        "array-uniq": "^1.0.1"
+      },
+      "devDependencies": {
+        "mocha": "*"
+      },
+      "gitHead": "d0e72cc6fbff57273032e45050c51ff44c8e137c",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/array-union/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/array-union",
+      "_id": "array-union@1.0.1",
+      "_shasum": "4d410fc8395cb247637124bade9e3f547d5d55f2",
+      "_from": ".",
+      "_npmVersion": "2.1.5",
+      "_nodeVersion": "0.10.32",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "4d410fc8395cb247637124bade9e3f547d5d55f2",
+        "tarball": "https://registry.npmjs.org/array-union/-/array-union-1.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "array-union",
+      "version": "1.0.2",
+      "description": "Create an array of unique values, in order, from the input arrays",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/array-union.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "array",
+        "arr",
+        "set",
+        "uniq",
+        "unique",
+        "duplicate",
+        "remove",
+        "union",
+        "combine",
+        "merge"
+      ],
+      "dependencies": {
+        "array-uniq": "^1.0.1"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "34e1d6a80baa4eac9723795a0674c14119ace1bd",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/array-union/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/array-union#readme",
+      "_id": "array-union@1.0.2",
+      "_shasum": "9a34410e4f4e3da23dea375be5be70f24778ec39",
+      "_from": ".",
+      "_npmVersion": "2.15.0",
+      "_nodeVersion": "4.4.2",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "9a34410e4f4e3da23dea375be5be70f24778ec39",
+        "tarball": "https://registry.npmjs.org/array-union/-/array-union-1.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/array-union-1.0.2.tgz_1466079411551_0.23353995219804347"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "array-union",
+      "version": "2.0.0",
+      "description": "Create an array of unique values, in order, from the input arrays",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/array-union.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "keywords": [
+        "array",
+        "set",
+        "uniq",
+        "unique",
+        "duplicate",
+        "remove",
+        "union",
+        "combine",
+        "merge"
+      ],
+      "devDependencies": {
+        "ava": "^1.3.1",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "deefc698911df5deeb741563b7e934d903dab5a0",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/array-union/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/array-union#readme",
+      "_id": "array-union@2.0.0",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.15.1",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-ZjSYPO4XoY3B/xgSfb1+p1AV70kKQP0Z8wzJZ/XLujK+Kc3PvZ3iVYjRDETy0HDrT58/mbJ8LzqoxFvaK51qeA==",
+        "shasum": "ce72e79b255d14c2196fe9eac4214f94fa967805",
+        "tarball": "https://registry.npmjs.org/array-union/-/array-union-2.0.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 2545,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJckdC8CRA9TVsSAnZWagAAD0wQAKHcMmoGQeQyRlNoSKgf\n50lt2Xiw3uU5KtYl6QCf4Lse6i5RbswpKaPw4u48Qulc0wetiz/e1K34aRBH\n98SW99LKYkuGYC+fB84TT2rTIfU9cD+2HDxXkQ734sG0HjsNhxLs8n9Kk96j\nmogmbqC2QV4UDwG3XNSsaIjZyz3PVIPqA2kX4dbdf6vQeQE8HpLLhejHE2SQ\nfD9r8LYIxmvX3IWQLu45Ecc1I0Yklr0m8zVeJICLx2oq7IK0GAm6r0mVpO6f\nv7GrKXGV6ZJZClk1rzaRrDfCCAKlpZVTPfuTqNUb/zOZdwnfPYKvvvK4ROGd\nBJ8dDmU5mwt+Zud5Op9r/M74IQbhZ7lxccXDyeG9I+W2/cEKzgDLINdHHLVs\nGt+vpA56YGKxgXe3C0F4w7ZGmhElipLyY7PoDycOFGQ2JFoAXHmJxxG0zLmP\nPvsebK7tJtAYHZH1/h1rnUQq9BYxUr9W8E46vCe0ldJX1xOG85BJgperhG5D\nEzFSn6x88RGTUIa4VJcQR5Zbu2O5zaYqiA+l23UkAgiDQgHpcYXahJgVN0Ne\nSGNBxDv/JD2ZTEpvGJOy0Wt8LHDy+DU8XokhaFbLF1aG5kH8P5KePE0bNRV2\njI5l8DjjZtfffMhBlL8EX8Uh7QncPYxg27ZeAA1c8dmwb31ihHKt9xhoJgzn\nW5qe\r\n=j6cw\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/array-union_2.0.0_1553060028082_0.9612036962905921"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.1.0": {
+      "name": "array-union",
+      "version": "2.1.0",
+      "description": "Create an array of unique values, in order, from the input arrays",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/array-union.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "array",
+        "set",
+        "uniq",
+        "unique",
+        "duplicate",
+        "remove",
+        "union",
+        "combine",
+        "merge"
+      ],
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "b53b00cb2db48fa614511178a3c0d388d7bc47bb",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/array-union/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/array-union#readme",
+      "_id": "array-union@2.1.0",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.15.3",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-HGyxoOTYUyCM6stUe6EJgnd4EoewAI7zMdfqO+kGjnlZmBDz/cR5pf8r/cR4Wq60sL/p0IkcjUEEPwS3GFrIyw==",
+        "shasum": "b798420adbeb1de828d84acd8a2e23d3efe85e8d",
+        "tarball": "https://registry.npmjs.org/array-union/-/array-union-2.1.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 3169,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcvXOpCRA9TVsSAnZWagAAQn8P/19t1qtz293EoCyYptRj\n6N2qnL9k/cOy9b/hVzA9XtvgfAp5mqHpcaWpXKmT7t+EW2FnMR6zaVIWHfEc\nimfFDCHRONR2pQcCCcNcTnMqOPOYGY++e26hR19jlQbqUSVAIazXeIqkeQ9X\nBpAynVt+/zSXsCJ+qlnYoG/nsmyltKXRWwHki++V+MYcbYHaHYxDNEoIp0u4\nXH33bPae6qo9grVPqQ0G9oQ13IWyI5Js1zSMaipB4sS59SC5soBJEknYyeu4\n+18CFf4i22XJoye0s3o9nNyPb4roMIABuA7N/YMoro0MSy7WKwaZkE5IAWNf\nUUSIDNQIBVQtq6Ez3qiFvVuzfDJCk8svdFmzjwmljh85JBgr+GbDsTV89b/e\nbOA+2DyBKCp1KgWBtLgPx/fWrgLz5SNVD5h82sOoKmUK6JUoI4CPDac4Fve2\nulXn2f33w0xBj6zFJGBKDHbeCmx601ptAtfoACWZNsPy5HnKP13fQyAxpFXW\np9LFwYtChWAmVXFsxEAhf8I5v8B9K50C6OKJF5HQxQrvW0ud69k2q3Qcsfqv\nXt4jtKUVhL6Ane1w0A9JicIlCp1/yy7Y74ywx5GWuks4aeP6i2dDvKU4L6ot\nN2wxUNuZBvylLR79NxJ3MqeqRKuXHILvFCKfi9YLtVXTgQynRfjCUDSbNBKm\ngCMZ\r\n=ABIm\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/array-union_2.1.0_1555919785079_0.8583172534047399"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# array-union [![Build Status](https://travis-ci.org/sindresorhus/array-union.svg?branch=master)](https://travis-ci.org/sindresorhus/array-union)\n\n> Create an array of unique values, in order, from the input arrays\n\n\n## Install\n\n```\n$ npm install array-union\n```\n\n\n## Usage\n\n```js\nconst arrayUnion = require('array-union');\n\narrayUnion([1, 1, 2, 3], [2, 3]);\n//=> [1, 2, 3]\n\narrayUnion(['foo', 'foo', 'bar']);\n//=> ['foo', 'bar']\n\narrayUnion(['🐱', '🦄', '🐻'], ['🦄', '🌈']);\n//=> ['🐱', '🦄', '🐻', '🌈']\n\narrayUnion(['🐱', '🦄'], ['🐻', '🦄'], ['🐶', '🌈', '🌈']);\n//=> ['🐱', '🦄', '🐻', '🐶', '🌈']\n```\n\n\n## License\n\nMIT © [Sindre Sorhus](https://sindresorhus.com)\n",
+  "maintainers": [
+    {
+      "name": "sindresorhus",
+      "email": "sindresorhus@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2019-04-22T07:56:27.910Z",
+    "created": "2014-06-19T15:37:29.885Z",
+    "0.1.0": "2014-06-19T15:37:29.885Z",
+    "1.0.0": "2014-08-13T16:39:20.519Z",
+    "1.0.1": "2014-11-18T08:36:27.083Z",
+    "1.0.2": "2016-06-16T12:16:52.561Z",
+    "2.0.0": "2019-03-20T05:33:48.228Z",
+    "2.1.0": "2019-04-22T07:56:25.195Z"
+  },
+  "homepage": "https://github.com/sindresorhus/array-union#readme",
+  "keywords": [
+    "array",
+    "set",
+    "uniq",
+    "unique",
+    "duplicate",
+    "remove",
+    "union",
+    "combine",
+    "merge"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/array-union.git"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "bugs": {
+    "url": "https://github.com/sindresorhus/array-union/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md",
+  "users": {
+    "rocket0191": true,
+    "d0ughtyj": true,
+    "ninozhang": true,
+    "codekiln": true
+  }
+}

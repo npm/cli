@@ -1,0 +1,1435 @@
+{
+  "_id": "lazy-cache",
+  "_rev": "24-bb5de59994591075e4195f125cb7e5aa",
+  "name": "lazy-cache",
+  "description": "Cache requires to be lazy-loaded when needed.",
+  "dist-tags": {
+    "latest": "2.0.2"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "lazy-cache",
+      "description": "Cache requires to be lazy-loaded when needed.",
+      "version": "0.1.0",
+      "homepage": "https://github.com/jonschlinkert/lazy-cache",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/lazy-cache.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/lazy-cache/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/lazy-cache/blob/master/LICENSE"
+      },
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "ansi-yellow": "^0.1.1"
+      },
+      "devDependencies": {
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [],
+      "_id": "lazy-cache@0.1.0",
+      "_shasum": "d6cd450251d415b70103765f63130a0049a03795",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "0.12.4",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "d6cd450251d415b70103765f63130a0049a03795",
+        "tarball": "https://registry.npmjs.org/lazy-cache/-/lazy-cache-0.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.0": {
+      "name": "lazy-cache",
+      "description": "Cache requires to be lazy-loaded when needed.",
+      "version": "0.2.0",
+      "homepage": "https://github.com/jonschlinkert/lazy-cache",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/lazy-cache.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/lazy-cache/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/lazy-cache/blob/master/LICENSE"
+      },
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "ansi-yellow": "^0.1.1"
+      },
+      "devDependencies": {
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [],
+      "gitHead": "7b91f8119615fdc466e39b2301b808045730bc12",
+      "_id": "lazy-cache@0.2.0",
+      "_shasum": "8c51559920767f48f11f1cfe588ba77ceedd227e",
+      "_from": ".",
+      "_npmVersion": "2.13.3",
+      "_nodeVersion": "0.12.0",
+      "_npmUser": {
+        "name": "doowb",
+        "email": "brian.woodward@gmail.com"
+      },
+      "dist": {
+        "shasum": "8c51559920767f48f11f1cfe588ba77ceedd227e",
+        "tarball": "https://registry.npmjs.org/lazy-cache/-/lazy-cache-0.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.2.1": {
+      "name": "lazy-cache",
+      "description": "Cache requires to be lazy-loaded when needed.",
+      "version": "0.2.1",
+      "homepage": "https://github.com/jonschlinkert/lazy-cache",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/lazy-cache.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/lazy-cache/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "ansi-yellow": "^0.1.1"
+      },
+      "devDependencies": {
+        "glob": "^5.0.14",
+        "mocha": "*"
+      },
+      "keywords": [],
+      "verb": {
+        "related": {
+          "list": [
+            "lint-deps"
+          ]
+        }
+      },
+      "gitHead": "7b91f8119615fdc466e39b2301b808045730bc12",
+      "_id": "lazy-cache@0.2.1",
+      "_shasum": "9a40fb3a9de675f479835cfef5d451f75836dbdb",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "0.12.4",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "9a40fb3a9de675f479835cfef5d451f75836dbdb",
+        "tarball": "https://registry.npmjs.org/lazy-cache/-/lazy-cache-0.2.1.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.2": {
+      "name": "lazy-cache",
+      "description": "Cache requires to be lazy-loaded when needed.",
+      "version": "0.2.2",
+      "homepage": "https://github.com/jonschlinkert/lazy-cache",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/lazy-cache.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/lazy-cache/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "ansi-yellow": "^0.1.1"
+      },
+      "devDependencies": {
+        "glob": "^5.0.14",
+        "mocha": "*"
+      },
+      "keywords": [],
+      "verb": {
+        "related": {
+          "list": [
+            "lint-deps"
+          ]
+        }
+      },
+      "gitHead": "a25332b0e118340af776729423135a198f10783d",
+      "_id": "lazy-cache@0.2.2",
+      "_shasum": "1836ff1e321f75ce82e0efd730e5585408dfa2aa",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "0.12.4",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "1836ff1e321f75ce82e0efd730e5585408dfa2aa",
+        "tarball": "https://registry.npmjs.org/lazy-cache/-/lazy-cache-0.2.2.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.3": {
+      "name": "lazy-cache",
+      "description": "Cache requires to be lazy-loaded when needed.",
+      "version": "0.2.3",
+      "homepage": "https://github.com/jonschlinkert/lazy-cache",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/lazy-cache.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/lazy-cache/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "ansi-yellow": "^0.1.1",
+        "glob": "^5.0.14",
+        "mocha": "*"
+      },
+      "keywords": [
+        "cache",
+        "caching",
+        "dependencies",
+        "dependency",
+        "lazy",
+        "require",
+        "requires"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "lint-deps"
+          ]
+        }
+      },
+      "gitHead": "a25332b0e118340af776729423135a198f10783d",
+      "_id": "lazy-cache@0.2.3",
+      "_shasum": "0f30be62cce1e025039f921efde5cce31f2625c8",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "0.12.4",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "0f30be62cce1e025039f921efde5cce31f2625c8",
+        "tarball": "https://registry.npmjs.org/lazy-cache/-/lazy-cache-0.2.3.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.4": {
+      "name": "lazy-cache",
+      "description": "Cache requires to be lazy-loaded when needed.",
+      "version": "0.2.4",
+      "homepage": "https://github.com/jonschlinkert/lazy-cache",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/lazy-cache.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/lazy-cache/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "utils.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "ansi-yellow": "^0.1.1",
+        "glob": "^5.0.14",
+        "mocha": "*"
+      },
+      "keywords": [
+        "cache",
+        "caching",
+        "dependencies",
+        "dependency",
+        "lazy",
+        "require",
+        "requires"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "lint-deps"
+          ]
+        }
+      },
+      "gitHead": "c3e5f7b87143e67b1698eeb8d47529efe1a6a810",
+      "_id": "lazy-cache@0.2.4",
+      "_shasum": "036a699535217acda4fb2e3fda3fc0916f8db786",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.1",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "036a699535217acda4fb2e3fda3fc0916f8db786",
+        "tarball": "https://registry.npmjs.org/lazy-cache/-/lazy-cache-0.2.4.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.5": {
+      "name": "lazy-cache",
+      "description": "Cache requires to be lazy-loaded when needed.",
+      "version": "0.2.5",
+      "homepage": "https://github.com/jonschlinkert/lazy-cache",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/lazy-cache.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/lazy-cache/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "ansi-yellow": "^0.1.1",
+        "glob": "^5.0.14",
+        "mocha": "*"
+      },
+      "keywords": [
+        "cache",
+        "caching",
+        "dependencies",
+        "dependency",
+        "lazy",
+        "require",
+        "requires"
+      ],
+      "verb": {
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "lint-deps"
+          ]
+        }
+      },
+      "gitHead": "8e20c32f45ddbca501fa6d4279abfe46e29ee71d",
+      "_id": "lazy-cache@0.2.5",
+      "_shasum": "8ba5f95b971f55b97bc2a58fc75f431dd60c3ebb",
+      "_from": ".",
+      "_npmVersion": "3.3.6",
+      "_nodeVersion": "5.0.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "8ba5f95b971f55b97bc2a58fc75f431dd60c3ebb",
+        "tarball": "https://registry.npmjs.org/lazy-cache/-/lazy-cache-0.2.5.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "lazy-cache",
+      "description": "Cache requires to be lazy-loaded when needed.",
+      "version": "1.0.0",
+      "homepage": "https://github.com/jonschlinkert/lazy-cache",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/lazy-cache.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/lazy-cache/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "ansi-yellow": "^0.1.1",
+        "glob": "^5.0.14",
+        "mocha": "*"
+      },
+      "keywords": [
+        "cache",
+        "caching",
+        "dependencies",
+        "dependency",
+        "lazy",
+        "require",
+        "requires"
+      ],
+      "verb": {
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "lint-deps"
+          ]
+        }
+      },
+      "gitHead": "4c1298a21f6b7633997519a51502d54e17372138",
+      "_id": "lazy-cache@1.0.0",
+      "_shasum": "c3f17ff8a00e591b740466bac122ebeab0a27a50",
+      "_from": ".",
+      "_npmVersion": "3.3.6",
+      "_nodeVersion": "5.0.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "c3f17ff8a00e591b740466bac122ebeab0a27a50",
+        "tarball": "https://registry.npmjs.org/lazy-cache/-/lazy-cache-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.6": {
+      "name": "lazy-cache",
+      "description": "Cache requires to be lazy-loaded when needed.",
+      "version": "0.2.6",
+      "homepage": "https://github.com/jonschlinkert/lazy-cache",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/lazy-cache.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/lazy-cache/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "ansi-yellow": "^0.1.1",
+        "glob": "^5.0.14",
+        "mocha": "*"
+      },
+      "keywords": [
+        "cache",
+        "caching",
+        "dependencies",
+        "dependency",
+        "lazy",
+        "require",
+        "requires"
+      ],
+      "verb": {
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "lint-deps"
+          ]
+        }
+      },
+      "gitHead": "6bf5c51b6307f8511f6ba5a25e496d514411a44d",
+      "_id": "lazy-cache@0.2.6",
+      "_shasum": "20593b3028c1c4cd522bf1363be7b490702b7273",
+      "_from": ".",
+      "_npmVersion": "3.5.1",
+      "_nodeVersion": "0.12.0",
+      "_npmUser": {
+        "name": "doowb",
+        "email": "brian.woodward@gmail.com"
+      },
+      "dist": {
+        "shasum": "20593b3028c1c4cd522bf1363be7b490702b7273",
+        "tarball": "https://registry.npmjs.org/lazy-cache/-/lazy-cache-0.2.6.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "lazy-cache",
+      "description": "Cache requires to be lazy-loaded when needed.",
+      "version": "1.0.1",
+      "homepage": "https://github.com/jonschlinkert/lazy-cache",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/lazy-cache.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/lazy-cache/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "ansi-yellow": "^0.1.1",
+        "glob": "^5.0.14",
+        "mocha": "*"
+      },
+      "keywords": [
+        "cache",
+        "caching",
+        "dependencies",
+        "dependency",
+        "lazy",
+        "require",
+        "requires"
+      ],
+      "verb": {
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "lint-deps"
+          ]
+        }
+      },
+      "gitHead": "bb27ed15e82faf79eabb4835b18bff08dd9b2290",
+      "_id": "lazy-cache@1.0.1",
+      "_shasum": "4837ecd98248f394ddf0b3ddacbe5c9a9fe663a3",
+      "_from": ".",
+      "_npmVersion": "3.5.1",
+      "_nodeVersion": "0.12.0",
+      "_npmUser": {
+        "name": "doowb",
+        "email": "brian.woodward@gmail.com"
+      },
+      "dist": {
+        "shasum": "4837ecd98248f394ddf0b3ddacbe5c9a9fe663a3",
+        "tarball": "https://registry.npmjs.org/lazy-cache/-/lazy-cache-1.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.2.7": {
+      "name": "lazy-cache",
+      "description": "Cache requires to be lazy-loaded when needed.",
+      "version": "0.2.7",
+      "homepage": "https://github.com/jonschlinkert/lazy-cache",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/lazy-cache.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/lazy-cache/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "ansi-yellow": "^0.1.1",
+        "glob": "^5.0.14",
+        "mocha": "*"
+      },
+      "keywords": [
+        "cache",
+        "caching",
+        "dependencies",
+        "dependency",
+        "lazy",
+        "require",
+        "requires"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "lint-deps"
+          ]
+        },
+        "plugins": [
+          "gulp-format-md"
+        ]
+      },
+      "gitHead": "1a7a6ce95ec946b19b4a23db706cfdd2de3468dd",
+      "_id": "lazy-cache@0.2.7",
+      "_shasum": "7feddf2dcb6edb77d11ef1d117ab5ffdf0ab1b65",
+      "_from": ".",
+      "_npmVersion": "3.5.1",
+      "_nodeVersion": "5.1.1",
+      "_npmUser": {
+        "name": "doowb",
+        "email": "brian.woodward@gmail.com"
+      },
+      "dist": {
+        "shasum": "7feddf2dcb6edb77d11ef1d117ab5ffdf0ab1b65",
+        "tarball": "https://registry.npmjs.org/lazy-cache/-/lazy-cache-0.2.7.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "lazy-cache",
+      "description": "Cache requires to be lazy-loaded when needed.",
+      "version": "1.0.2",
+      "homepage": "https://github.com/jonschlinkert/lazy-cache",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/lazy-cache.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/lazy-cache/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "ansi-yellow": "^0.1.1",
+        "glob": "^5.0.14",
+        "mocha": "*"
+      },
+      "keywords": [
+        "cache",
+        "caching",
+        "dependencies",
+        "dependency",
+        "lazy",
+        "require",
+        "requires"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "lint-deps"
+          ]
+        },
+        "plugins": [
+          "gulp-format-md"
+        ]
+      },
+      "gitHead": "06265aa4a6750aae03e1814fbb740dde6311fb2b",
+      "_id": "lazy-cache@1.0.2",
+      "_shasum": "2028ab14e71b64ebd09d277e269a10d63a8652c1",
+      "_from": ".",
+      "_npmVersion": "3.5.1",
+      "_nodeVersion": "5.1.1",
+      "_npmUser": {
+        "name": "doowb",
+        "email": "brian.woodward@gmail.com"
+      },
+      "dist": {
+        "shasum": "2028ab14e71b64ebd09d277e269a10d63a8652c1",
+        "tarball": "https://registry.npmjs.org/lazy-cache/-/lazy-cache-1.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.3": {
+      "name": "lazy-cache",
+      "description": "Cache requires to be lazy-loaded when needed.",
+      "version": "1.0.3",
+      "homepage": "https://github.com/jonschlinkert/lazy-cache",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/lazy-cache.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/lazy-cache/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "ansi-yellow": "^0.1.1",
+        "glob": "^6.0.1",
+        "mocha": "*"
+      },
+      "keywords": [
+        "cache",
+        "caching",
+        "dependencies",
+        "dependency",
+        "lazy",
+        "require",
+        "requires"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "lint-deps"
+          ]
+        },
+        "plugins": [
+          "gulp-format-md"
+        ]
+      },
+      "gitHead": "06265aa4a6750aae03e1814fbb740dde6311fb2b",
+      "_id": "lazy-cache@1.0.3",
+      "_shasum": "e97754618f9c886bb999b2ff69c78b82453d6674",
+      "_from": ".",
+      "_npmVersion": "3.3.6",
+      "_nodeVersion": "5.0.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "e97754618f9c886bb999b2ff69c78b82453d6674",
+        "tarball": "https://registry.npmjs.org/lazy-cache/-/lazy-cache-1.0.3.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.4": {
+      "name": "lazy-cache",
+      "description": "Cache requires to be lazy-loaded when needed.",
+      "version": "1.0.4",
+      "homepage": "https://github.com/jonschlinkert/lazy-cache",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/lazy-cache.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/lazy-cache/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "ansi-yellow": "^0.1.1",
+        "glob": "^7.0.3",
+        "gulp-format-md": "^0.1.8",
+        "mocha": "^2.4.5"
+      },
+      "keywords": [
+        "cache",
+        "caching",
+        "dependencies",
+        "dependency",
+        "lazy",
+        "require",
+        "requires"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "lint-deps"
+          ]
+        },
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "lint": {
+          "reflinks": true
+        },
+        "reflinks": [
+          "verb"
+        ]
+      },
+      "gitHead": "d081ffbda147391083a6856fafb1c5d82308f80c",
+      "_id": "lazy-cache@1.0.4",
+      "_shasum": "a1d78fc3a50474cb80845d3b3b6e1da49a446e8e",
+      "_from": ".",
+      "_npmVersion": "3.6.0",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "a1d78fc3a50474cb80845d3b3b6e1da49a446e8e",
+        "tarball": "https://registry.npmjs.org/lazy-cache/-/lazy-cache-1.0.4.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/lazy-cache-1.0.4.tgz_1461378859142_0.0996799839194864"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "lazy-cache",
+      "description": "Cache requires to be lazy-loaded when needed.",
+      "version": "2.0.0",
+      "homepage": "https://github.com/jonschlinkert/lazy-cache",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/lazy-cache.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/lazy-cache/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "ansi-cyan": "^0.1.1",
+        "ansi-magenta": "^0.1.1",
+        "ansi-yellow": "^0.1.1",
+        "glob": "^7.0.3",
+        "gulp-format-md": "^0.1.8",
+        "mocha": "^2.4.5",
+        "object.omit": "^2.0.0",
+        "object.pick": "^1.1.2"
+      },
+      "keywords": [
+        "cache",
+        "caching",
+        "dependencies",
+        "dependency",
+        "lazy",
+        "require",
+        "requires"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "lint-deps"
+          ]
+        },
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "lint": {
+          "reflinks": true
+        },
+        "reflinks": [
+          "verb"
+        ]
+      },
+      "gitHead": "371c8374eb6bfe0aae1045950503d83b5f4651dd",
+      "_id": "lazy-cache@2.0.0",
+      "_shasum": "2d9ce96d95d1d2ad9e81a4658ccdd37bf79afe96",
+      "_from": ".",
+      "_npmVersion": "3.7.5",
+      "_nodeVersion": "5.1.1",
+      "_npmUser": {
+        "name": "doowb",
+        "email": "brian.woodward@gmail.com"
+      },
+      "dist": {
+        "shasum": "2d9ce96d95d1d2ad9e81a4658ccdd37bf79afe96",
+        "tarball": "https://registry.npmjs.org/lazy-cache/-/lazy-cache-2.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/lazy-cache-2.0.0.tgz_1461890847804_0.021530432160943747"
+      },
+      "directories": {}
+    },
+    "2.0.1": {
+      "name": "lazy-cache",
+      "description": "Cache requires to be lazy-loaded when needed.",
+      "version": "2.0.1",
+      "homepage": "https://github.com/jonschlinkert/lazy-cache",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/lazy-cache.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/lazy-cache/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "ansi-cyan": "^0.1.1",
+        "ansi-magenta": "^0.1.1",
+        "ansi-yellow": "^0.1.1",
+        "glob": "^7.0.3",
+        "gulp-format-md": "^0.1.8",
+        "mocha": "^2.4.5",
+        "object.omit": "^2.0.0",
+        "object.pick": "^1.1.2"
+      },
+      "keywords": [
+        "cache",
+        "caching",
+        "dependencies",
+        "dependency",
+        "lazy",
+        "require",
+        "requires"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "lint-deps"
+          ]
+        },
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "lint": {
+          "reflinks": true
+        },
+        "reflinks": [
+          "verb"
+        ]
+      },
+      "dependencies": {
+        "set-getter": "^0.1.0"
+      },
+      "gitHead": "f4efc46feb1a0b2efc44d86f10a2fc1ec2109c53",
+      "_id": "lazy-cache@2.0.1",
+      "_shasum": "8fe998dd9bc587136005d5e53225c4e0306c921d",
+      "_from": ".",
+      "_npmVersion": "3.7.5",
+      "_nodeVersion": "5.1.1",
+      "_npmUser": {
+        "name": "doowb",
+        "email": "brian.woodward@gmail.com"
+      },
+      "dist": {
+        "shasum": "8fe998dd9bc587136005d5e53225c4e0306c921d",
+        "tarball": "https://registry.npmjs.org/lazy-cache/-/lazy-cache-2.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/lazy-cache-2.0.1.tgz_1462216081408_0.9386650142259896"
+      },
+      "directories": {}
+    },
+    "2.0.2": {
+      "name": "lazy-cache",
+      "description": "Cache requires to be lazy-loaded when needed.",
+      "version": "2.0.2",
+      "homepage": "https://github.com/jonschlinkert/lazy-cache",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Brian Woodward",
+          "email": "brian.woodward@gmail.com",
+          "url": "https://github.com/doowb"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "email": "jon.schlinkert@sellside.com",
+          "url": "http://twitter.com/jonschlinkert"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/lazy-cache.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/lazy-cache/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "set-getter": "^0.1.0"
+      },
+      "devDependencies": {
+        "ansi-cyan": "^0.1.1",
+        "ansi-magenta": "^0.1.1",
+        "ansi-yellow": "^0.1.1",
+        "glob": "^7.0.3",
+        "gulp-format-md": "^0.1.8",
+        "mocha": "^2.4.5",
+        "object.omit": "^2.0.0",
+        "object.pick": "^1.1.2"
+      },
+      "keywords": [
+        "cache",
+        "caching",
+        "dependencies",
+        "dependency",
+        "lazy",
+        "require",
+        "requires"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "lint-deps"
+          ]
+        },
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "lint": {
+          "reflinks": true
+        },
+        "reflinks": [
+          "verb"
+        ]
+      },
+      "gitHead": "ca0579a0687f9a7d915d9ecf53a93af7ad72762d",
+      "_id": "lazy-cache@2.0.2",
+      "_shasum": "b9190a4f913354694840859f8a8f7084d8822264",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.7.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "b9190a4f913354694840859f8a8f7084d8822264",
+        "tarball": "https://registry.npmjs.org/lazy-cache/-/lazy-cache-2.0.2.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/lazy-cache-2.0.2.tgz_1478577911105_0.547785654431209"
+      },
+      "directories": {}
+    }
+  },
+  "readme": "# lazy-cache [![NPM version](https://img.shields.io/npm/v/lazy-cache.svg?style=flat)](https://www.npmjs.com/package/lazy-cache) [![NPM monthly downloads](https://img.shields.io/npm/dm/lazy-cache.svg?style=flat)](https://npmjs.org/package/lazy-cache)  [![NPM total downloads](https://img.shields.io/npm/dt/lazy-cache.svg?style=flat)](https://npmjs.org/package/lazy-cache) [![Linux Build Status](https://img.shields.io/travis/jonschlinkert/lazy-cache.svg?style=flat&label=Travis)](https://travis-ci.org/jonschlinkert/lazy-cache)\n\n> Cache requires to be lazy-loaded when needed.\n\n## Install\n\nInstall with [npm](https://www.npmjs.com/):\n\n```sh\n$ npm install --save lazy-cache\n```\n\n## Heads up!\n\nIt's suprising how many libraries are in the average dependency tree that don't belong there for one reason or another. Either because they were accidentally listed as `dependencies` instead of `devDepedencies`, or they are required in a file as variables, but the variable is never actually used (poor linting), and so on. Or because the maintainer made the decision to add the deps, even though they will never ([or can't ever](https://github.com/felixge/node-dateformat/issues/36)) be used by 99.9% of users.\n\nWorse, many libraries like chalk and [shelljs](https://github.com/eslint/eslint/issues/7316) actually execute code when `require()` is called!? (shelljs was modifying the `String.prototype`, and chalk loops over some objects to dynamically create methods). In other words, they do something like this:\n\n```js\n// in the main export of a library, if you do this it will\n// automatically modify the String.prototype _globally_, \n// the moment node.js loads the dependency tree\nString.prototype.foo = function() {};\n\n// same if you do something like this\n// (dont' do this, ever. wrap this kind of code in a function\n// and allow implementors to decide when to call it)\nwhile (foo) {\n  // do stuff\n}\n```\n\nIn any case, just having these libraries in your dependency tree somewhere means that their code will excecute the moment you run your application _even if the libraries are never called by your application or any other code anywhere in the tree_.\n\n**solution**\n\nlazy-cache doesn't use any \"magic\", it uses native, plain-vanilla, tried and true javascript getters to call node's `require()` system.\n\n**Faster, safer code**\n\nThere main advantage to this, the main is that `require`s are loaded on demand, so only code that is actually used will ever be loaded. As a result, applications will load faster (sometimes much faster - we've seen load times drop from ~1 second to less than 50 milliseconds).\n\nMoreover, in some cases this also avoids inadvertently loading libraries that execute code or modifies globals, etc.\n\n**webpack users**\n\nIf you use webpack and are experiencing issues with lazy-cache, this is a known bug caused by webpack, not lazy-cache. There is a solution though, you can use [unlazy-loader](https://github.com/doowb/unlazy-loader), a webpack loader that _fixes the webpack bug_.\n\n## Usage\n\n```js\nvar utils = require('lazy-cache')(require);\n```\n\n**Use as a property on `lazy`**\n\nThe module is also added as a property to the `lazy` function so it can be called without having to call a function first.\n\n```js\nvar utils = require('lazy-cache')(require);\n\n// `npm install glob`\nutils('glob');\n\n// glob sync\nconsole.log(utils.glob.sync('*.js'));\n\n// glob async\nutils.glob('*.js', function (err, files) {\n  console.log(files);\n});\n```\n\n**Use as a function**\n\n```js\nvar utils = require('lazy-cache')(require);\nvar glob = utils('glob');\n\n// `glob` is a now a function that may be called when needed\nglob().sync('foo/*.js');\n```\n\n## Aliases\n\nAn alias may be passed as the second argument if you don't want to use the automatically camel-cased variable name.\n\n**Example**\n\n```js\nvar utils = require('lazy-cache')(require);\n\n// alias `ansi-yellow` as `yellow`\nutils('ansi-yellow', 'yellow');\nconsole.log(utils.yellow('foo'));\n```\n\nDot notation may also be used in the alias to create an object hierarchy.\n\n**Example**\n\n```js\nvar utils = require('lazy-cache')(require);\nutils('ansi-cyan', 'color.cyan');\nutils('ansi-yellow', 'color.yellow');\nutils('ansi-magenta', 'color.magenta');\nconsole.log(utils.color.cyan('foo'));\nconsole.log(utils.color.yellow('bar'));\nconsole.log(utils.color.magenta('baz'));\n```\n\n## Browserify usage\n\n**Example**\n\n```js\nvar utils = require('lazy-cache')(require);\n// temporarily re-assign `require` to trick browserify\nvar fn = require;\nrequire = utils;\n// list module dependencies (here, `require` is actually `lazy-cache`)\nrequire('glob');\nrequire = fn; // restore the native `require` function\n\n/**\n * Now you can use glob with the `utils.glob` variable\n */\n\n// sync\nconsole.log(utils.glob.sync('*.js'));\n\n// async\nutils.glob('*.js', function (err, files) {\n  console.log(files.join('\\n'));\n});\n```\n\n## Kill switch\n\nTo force lazy-cache to immediately invoke all dependencies, do:\n\n```js\nprocess.env.UNLAZY = true;\n```\n\n## About\n\n### Related projects\n\n[lint-deps](https://www.npmjs.com/package/lint-deps): CLI tool that tells you when dependencies are missing from package.json and offers you a… [more](https://github.com/jonschlinkert/lint-deps) | [homepage](https://github.com/jonschlinkert/lint-deps \"CLI tool that tells you when dependencies are missing from package.json and offers you a choice to install them. Also tells you when dependencies are listed in package.json but are not being used anywhere in your project. Node.js command line tool and API\")\n\n### Contributing\n\nPull requests and stars are always welcome. For bugs and feature requests, [please create an issue](../../issues/new).\n\n### Contributors\n\n| **Commits** | **Contributor**<br/> | \n| --- | --- |\n| 31 | [jonschlinkert](https://github.com/jonschlinkert) |\n| 27 | [doowb](https://github.com/doowb) |\n\n### Building docs\n\n_(This document was generated by [verb-generate-readme](https://github.com/verbose/verb-generate-readme) (a [verb](https://github.com/verbose/verb) generator), please don't edit the readme directly. Any changes to the readme must be made in [.verb.md](.verb.md).)_\n\nTo generate the readme and API documentation with [verb](https://github.com/verbose/verb):\n\n```sh\n$ npm install -g verb verb-generate-readme && verb\n```\n\n### Running tests\n\nInstall dev dependencies:\n\n```sh\n$ npm install -d && npm test\n```\n\n### Author\n\n**Jon Schlinkert**\n\n* [github/jonschlinkert](https://github.com/jonschlinkert)\n* [twitter/jonschlinkert](http://twitter.com/jonschlinkert)\n\n### License\n\nCopyright © 2016, [Jon Schlinkert](https://github.com/jonschlinkert).\nReleased under the [MIT license](https://github.com/jonschlinkert/lazy-cache/blob/master/LICENSE).\n\n***\n\n_This file was generated by [verb-generate-readme](https://github.com/verbose/verb-generate-readme), v0.2.0, on November 07, 2016._",
+  "maintainers": [
+    {
+      "email": "brian.woodward@gmail.com",
+      "name": "doowb"
+    },
+    {
+      "email": "github@sellside.com",
+      "name": "jonschlinkert"
+    }
+  ],
+  "time": {
+    "modified": "2017-09-26T01:49:10.651Z",
+    "created": "2015-06-01T07:30:07.895Z",
+    "0.1.0": "2015-06-01T07:30:07.895Z",
+    "0.2.0": "2015-08-18T17:38:05.477Z",
+    "0.2.1": "2015-08-19T06:39:49.252Z",
+    "0.2.2": "2015-08-19T10:22:38.139Z",
+    "0.2.3": "2015-08-21T06:14:44.510Z",
+    "0.2.4": "2015-10-24T05:41:07.858Z",
+    "0.2.5": "2015-12-08T22:49:17.844Z",
+    "1.0.0": "2015-12-08T22:52:07.362Z",
+    "0.2.6": "2015-12-09T04:22:49.293Z",
+    "1.0.1": "2015-12-09T04:28:26.921Z",
+    "0.2.7": "2015-12-09T20:04:43.858Z",
+    "1.0.2": "2015-12-09T20:16:27.593Z",
+    "1.0.3": "2015-12-20T11:26:22.604Z",
+    "1.0.4": "2016-04-23T02:34:21.150Z",
+    "2.0.0": "2016-04-29T00:47:30.152Z",
+    "2.0.1": "2016-05-02T19:08:02.440Z",
+    "2.0.2": "2016-11-08T04:05:13.081Z"
+  },
+  "homepage": "https://github.com/jonschlinkert/lazy-cache",
+  "keywords": [
+    "cache",
+    "caching",
+    "dependencies",
+    "dependency",
+    "lazy",
+    "require",
+    "requires"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonschlinkert/lazy-cache.git"
+  },
+  "author": {
+    "name": "Jon Schlinkert",
+    "url": "https://github.com/jonschlinkert"
+  },
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/lazy-cache/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "users": {
+    "jonschlinkert": true,
+    "mojaray2k": true,
+    "papasavva": true,
+    "sasquatch": true,
+    "ayiu": true
+  },
+  "contributors": [
+    {
+      "name": "Brian Woodward",
+      "email": "brian.woodward@gmail.com",
+      "url": "https://github.com/doowb"
+    },
+    {
+      "name": "Jon Schlinkert",
+      "email": "jon.schlinkert@sellside.com",
+      "url": "http://twitter.com/jonschlinkert"
+    }
+  ],
+  "_attachments": {}
+}

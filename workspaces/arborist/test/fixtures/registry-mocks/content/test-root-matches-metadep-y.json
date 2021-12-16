@@ -1,0 +1,56 @@
+{
+  "_id": "test-root-matches-metadep-y",
+  "name": "test-root-matches-metadep-y",
+  "dist-tags": {
+    "latest": "1.0.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "test-root-matches-metadep-y",
+      "version": "1.0.0",
+      "dependencies": {
+        "test-root-matches-metadep": "1.0.1"
+      },
+      "_id": "test-root-matches-metadep-y@1.0.0",
+      "_nodeVersion": "14.2.0",
+      "_npmVersion": "7.0.0-beta.2",
+      "dist": {
+        "integrity": "sha512-+MrEkeqsJyZeEKRapZSMezo7oZJEXz3vUpaZLhHGMbXW3L87G9WsOexGHylSkPOuLhOLnKcYE6fBh8nZLUjtzQ==",
+        "shasum": "2336ac92ec50f2c4473556b5739a78e3e9ed850c",
+        "tarball": "https://registry.npmjs.org/test-root-matches-metadep-y/-/test-root-matches-metadep-y-1.0.0.tgz",
+        "fileCount": 1,
+        "unpackedSize": 132,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfMJitCRA9TVsSAnZWagAADcIP/3y8babpkdcOQ8/M3qgR\ngzHn2efSshOCpYq1ELpue9OFhCtFsFTiFfYmrKTeb9Z9mWbZVnNfmaUm1Etg\nGhfrgSwF4r25zGXKG/xBWaCj/sQY4Ynk4Uzwh2JZYc+4aKMzvAik7TPeWA8E\nJLDtZcn7ThUC/KD5y7/a6eDgFLDA0cBAODs9ytT5PfHT6YjloMeuSHMh1UMV\nQt+UTFIuGiWayEbk64so+OwmQCtdMjE+hPLp7MHBruK2K+McHX9lPfM1rM/p\nRiCkbxyh/QONONWgmyMvOv9K/VEVb9E5BYlOlQGMsAn16JjwBDIAhoV6Tr5f\n+dgYRVOi7ASoVQGW0O0dPlhMYNtGgG/HuJc3QizGj0jxsct4ywmpJmRuuFoS\nZxfjTcKkDKRuXxDyAzNNjSsN2Ek5355brYNp9ohjZS8hhrw4Kc92/lcIPaEO\nvuW4NDw1YaNl4wmiSpAkzzTN1T0edRmDppjwBF+ZRyBZsmR8f3GjVfpY07d9\nbtzGJqeIkkf8T5gwenCXJ6ozBjRxr0sm5Tu6PW01mSArn9OAuokabNgPJzhp\nH6eVOcf4FMxURm/KadaoUw8gYUTFu+bnB7t5VSQSFBdVp6NinZ5YcwCdOk2O\nuYF/7wm1S/E37c151eNlaPKrcH/FhqwTsKHHBNgiPcNMxgrirj9eS5lFpW98\nejgH\r\n=gcZ6\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/test-root-matches-metadep-y_1.0.0_1597020333087_0.08004802382097553"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2020-08-10T00:45:33.049Z",
+    "1.0.0": "2020-08-10T00:45:33.200Z",
+    "modified": "2020-08-10T00:45:35.459Z"
+  },
+  "maintainers": [
+    {
+      "name": "isaacs",
+      "email": "i@izs.me"
+    }
+  ],
+  "readme": "ERROR: No README data found!",
+  "readmeFilename": ""
+}

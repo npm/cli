@@ -1,0 +1,1717 @@
+{
+  "_id": "binary-extensions",
+  "_rev": "34-59ce424285bb20a7f0ceff8ca9565f34",
+  "name": "binary-extensions",
+  "description": "List of binary file extensions",
+  "dist-tags": {
+    "latest": "2.1.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "binary-extensions",
+      "version": "1.0.0",
+      "description": "List of binary file extensions",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/binary-extensions"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "files": [
+        "index.js",
+        "binary-extensions.json"
+      ],
+      "keywords": [
+        "bin",
+        "binary",
+        "ext",
+        "extensions",
+        "extension",
+        "file",
+        "json",
+        "list",
+        "array"
+      ],
+      "devDependencies": {
+        "ava": "0.0.4"
+      },
+      "gitHead": "79100b9a8305177ba3d5908a396eaf5f9f0c087e",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/binary-extensions/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/binary-extensions",
+      "_id": "binary-extensions@1.0.0",
+      "_shasum": "2f4124ba6a3fc598eeb0206f89aa365aca6a0a50",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "2f4124ba6a3fc598eeb0206f89aa365aca6a0a50",
+        "tarball": "https://registry.npmjs.org/binary-extensions/-/binary-extensions-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "binary-extensions",
+      "version": "1.0.1",
+      "description": "List of binary file extensions",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/binary-extensions"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "files": [
+        "index.js",
+        "binary-extensions.json"
+      ],
+      "keywords": [
+        "bin",
+        "binary",
+        "ext",
+        "extensions",
+        "extension",
+        "file",
+        "json",
+        "list",
+        "array"
+      ],
+      "devDependencies": {
+        "ava": "0.0.4"
+      },
+      "gitHead": "d0890f88de71888c42e9c7f13a6d814973c454fb",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/binary-extensions/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/binary-extensions",
+      "_id": "binary-extensions@1.0.1",
+      "_shasum": "ae59c1ee647de4e10525a272fc8b8e7ab30fa6c7",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        },
+        {
+          "name": "paulmillr",
+          "email": "paul@paulmillr.com"
+        },
+        {
+          "name": "es128",
+          "email": "elan.shanker+npm@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "ae59c1ee647de4e10525a272fc8b8e7ab30fa6c7",
+        "tarball": "https://registry.npmjs.org/binary-extensions/-/binary-extensions-1.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "binary-extensions",
+      "version": "1.0.2",
+      "description": "List of binary file extensions",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/binary-extensions"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "files": [
+        "index.js",
+        "binary-extensions.json"
+      ],
+      "keywords": [
+        "bin",
+        "binary",
+        "ext",
+        "extensions",
+        "extension",
+        "file",
+        "json",
+        "list",
+        "array"
+      ],
+      "devDependencies": {
+        "ava": "0.0.4"
+      },
+      "gitHead": "7cc15fad3d8c07459674ae7c69914c191e91190a",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/binary-extensions/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/binary-extensions",
+      "_id": "binary-extensions@1.0.2",
+      "_shasum": "af27a3a2fe4297610af9b2ad63f140a2a613df90",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "es128",
+        "email": "elan.shanker+npm@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        },
+        {
+          "name": "paulmillr",
+          "email": "paul@paulmillr.com"
+        },
+        {
+          "name": "es128",
+          "email": "elan.shanker+npm@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "af27a3a2fe4297610af9b2ad63f140a2a613df90",
+        "tarball": "https://registry.npmjs.org/binary-extensions/-/binary-extensions-1.0.2.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "binary-extensions",
+      "version": "1.1.0",
+      "description": "List of binary file extensions",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/binary-extensions"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "main": "binary-extensions.json",
+      "files": [
+        "binary-extensions.json"
+      ],
+      "keywords": [
+        "bin",
+        "binary",
+        "ext",
+        "extensions",
+        "extension",
+        "file",
+        "json",
+        "list",
+        "array"
+      ],
+      "devDependencies": {
+        "ava": "0.0.4"
+      },
+      "gitHead": "ecc4b8b122db160b39472d491c7db86d5f9dca84",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/binary-extensions/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/binary-extensions",
+      "_id": "binary-extensions@1.1.0",
+      "_shasum": "74f42755e8d719b30440dac309fc02972fe23863",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "es128",
+        "email": "elan.shanker+npm@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        },
+        {
+          "name": "paulmillr",
+          "email": "paul@paulmillr.com"
+        },
+        {
+          "name": "es128",
+          "email": "elan.shanker+npm@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "74f42755e8d719b30440dac309fc02972fe23863",
+        "tarball": "https://registry.npmjs.org/binary-extensions/-/binary-extensions-1.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.1": {
+      "name": "binary-extensions",
+      "version": "1.1.1",
+      "description": "List of binary file extensions",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/binary-extensions"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "main": "binary-extensions.json",
+      "files": [
+        "binary-extensions.json"
+      ],
+      "keywords": [
+        "bin",
+        "binary",
+        "ext",
+        "extensions",
+        "extension",
+        "file",
+        "json",
+        "list",
+        "array"
+      ],
+      "devDependencies": {
+        "ava": "0.0.4"
+      },
+      "gitHead": "e2b71deb7bc9ac6f5e46efa654a7033f0bf4dc27",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/binary-extensions/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/binary-extensions",
+      "_id": "binary-extensions@1.1.1",
+      "_shasum": "68935364a1489a3c62a741352e2f28c2ef2b62d5",
+      "_from": ".",
+      "_npmVersion": "2.5.0",
+      "_nodeVersion": "0.12.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        },
+        {
+          "name": "paulmillr",
+          "email": "paul@paulmillr.com"
+        },
+        {
+          "name": "es128",
+          "email": "elan.shanker+npm@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "68935364a1489a3c62a741352e2f28c2ef2b62d5",
+        "tarball": "https://registry.npmjs.org/binary-extensions/-/binary-extensions-1.1.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.2.0": {
+      "name": "binary-extensions",
+      "version": "1.2.0",
+      "description": "List of binary file extensions",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/binary-extensions"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "main": "binary-extensions.json",
+      "files": [
+        "binary-extensions.json"
+      ],
+      "keywords": [
+        "bin",
+        "binary",
+        "ext",
+        "extensions",
+        "extension",
+        "file",
+        "json",
+        "list",
+        "array"
+      ],
+      "devDependencies": {
+        "ava": "0.0.4"
+      },
+      "gitHead": "3a4431eb9f751b1dfe76ede9156c8b8a216fa84b",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/binary-extensions/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/binary-extensions",
+      "_id": "binary-extensions@1.2.0",
+      "_shasum": "ae679b33e90cfd73baf244d03467c055a2902fd1",
+      "_from": ".",
+      "_npmVersion": "2.5.0",
+      "_nodeVersion": "0.12.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        },
+        {
+          "name": "paulmillr",
+          "email": "paul@paulmillr.com"
+        },
+        {
+          "name": "es128",
+          "email": "elan.shanker+npm@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "ae679b33e90cfd73baf244d03467c055a2902fd1",
+        "tarball": "https://registry.npmjs.org/binary-extensions/-/binary-extensions-1.2.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.3.0": {
+      "name": "binary-extensions",
+      "version": "1.3.0",
+      "description": "List of binary file extensions",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/binary-extensions"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "main": "binary-extensions.json",
+      "files": [
+        "binary-extensions.json"
+      ],
+      "keywords": [
+        "bin",
+        "binary",
+        "ext",
+        "extensions",
+        "extension",
+        "file",
+        "json",
+        "list",
+        "array"
+      ],
+      "devDependencies": {
+        "ava": "0.0.4"
+      },
+      "gitHead": "6eb14380b5f89f92d70305124abc388bc0a55af0",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/binary-extensions/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/binary-extensions",
+      "_id": "binary-extensions@1.3.0",
+      "_shasum": "8c0fd7fa1bd27cfe1e6f2a1d38721647c80b2029",
+      "_from": ".",
+      "_npmVersion": "2.5.1",
+      "_nodeVersion": "0.12.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        },
+        {
+          "name": "paulmillr",
+          "email": "paul@paulmillr.com"
+        },
+        {
+          "name": "es128",
+          "email": "elan.shanker+npm@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "8c0fd7fa1bd27cfe1e6f2a1d38721647c80b2029",
+        "tarball": "https://registry.npmjs.org/binary-extensions/-/binary-extensions-1.3.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.3.1": {
+      "name": "binary-extensions",
+      "version": "1.3.1",
+      "description": "List of binary file extensions",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/binary-extensions"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "main": "binary-extensions.json",
+      "files": [
+        "binary-extensions.json"
+      ],
+      "keywords": [
+        "bin",
+        "binary",
+        "ext",
+        "extensions",
+        "extension",
+        "file",
+        "json",
+        "list",
+        "array"
+      ],
+      "devDependencies": {
+        "ava": "0.0.4"
+      },
+      "gitHead": "38f603a7822c488436c32c67f9f5f505aca09cd3",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/binary-extensions/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/binary-extensions",
+      "_id": "binary-extensions@1.3.1",
+      "_shasum": "32dd9ed2a7c69acec56f77f6cd80df043f78777a",
+      "_from": ".",
+      "_npmVersion": "2.9.1",
+      "_nodeVersion": "0.12.3",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "32dd9ed2a7c69acec56f77f6cd80df043f78777a",
+        "tarball": "https://registry.npmjs.org/binary-extensions/-/binary-extensions-1.3.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        },
+        {
+          "name": "paulmillr",
+          "email": "paul@paulmillr.com"
+        },
+        {
+          "name": "es128",
+          "email": "elan.shanker+npm@gmail.com"
+        },
+        {
+          "name": "arthurvr",
+          "email": "contact@arthurverschaeve.be"
+        }
+      ],
+      "directories": {}
+    },
+    "1.4.0": {
+      "name": "binary-extensions",
+      "version": "1.4.0",
+      "description": "List of binary file extensions",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/binary-extensions"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "main": "binary-extensions.json",
+      "files": [
+        "binary-extensions.json"
+      ],
+      "keywords": [
+        "bin",
+        "binary",
+        "ext",
+        "extensions",
+        "extension",
+        "file",
+        "json",
+        "list",
+        "array"
+      ],
+      "devDependencies": {
+        "ava": "0.0.4"
+      },
+      "gitHead": "8c3a781127ff15ee516c8bedda97807e4dddf1ff",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/binary-extensions/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/binary-extensions",
+      "_id": "binary-extensions@1.4.0",
+      "_shasum": "d733ccb628986d7b326d88656e0ddbd3aac351b7",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.1",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "d733ccb628986d7b326d88656e0ddbd3aac351b7",
+        "tarball": "https://registry.npmjs.org/binary-extensions/-/binary-extensions-1.4.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        },
+        {
+          "name": "paulmillr",
+          "email": "paul@paulmillr.com"
+        },
+        {
+          "name": "es128",
+          "email": "elan.shanker+npm@gmail.com"
+        },
+        {
+          "name": "arthurvr",
+          "email": "contact@arthurverschaeve.be"
+        }
+      ],
+      "directories": {}
+    },
+    "1.4.1": {
+      "name": "binary-extensions",
+      "version": "1.4.1",
+      "description": "List of binary file extensions",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/binary-extensions.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "ava"
+      },
+      "main": "binary-extensions.json",
+      "files": [
+        "binary-extensions.json"
+      ],
+      "keywords": [
+        "bin",
+        "binary",
+        "ext",
+        "extensions",
+        "extension",
+        "file",
+        "json",
+        "list",
+        "array"
+      ],
+      "devDependencies": {
+        "ava": "*"
+      },
+      "gitHead": "151b647b070a838be56acbd04d6e81d4a0b71815",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/binary-extensions/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/binary-extensions#readme",
+      "_id": "binary-extensions@1.4.1",
+      "_shasum": "be94c78b44d9f9c336d0de3088545d5efa8511a8",
+      "_from": ".",
+      "_npmVersion": "2.15.0",
+      "_nodeVersion": "4.4.2",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "be94c78b44d9f9c336d0de3088545d5efa8511a8",
+        "tarball": "https://registry.npmjs.org/binary-extensions/-/binary-extensions-1.4.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        },
+        {
+          "name": "paulmillr",
+          "email": "paul@paulmillr.com"
+        },
+        {
+          "name": "es128",
+          "email": "elan.shanker+npm@gmail.com"
+        },
+        {
+          "name": "arthurvr",
+          "email": "contact@arthurverschaeve.be"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/binary-extensions-1.4.1.tgz_1464152617488_0.08830209239386022"
+      },
+      "directories": {}
+    },
+    "1.5.0": {
+      "name": "binary-extensions",
+      "version": "1.5.0",
+      "description": "List of binary file extensions",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/binary-extensions.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "ava"
+      },
+      "main": "binary-extensions.json",
+      "files": [
+        "binary-extensions.json"
+      ],
+      "keywords": [
+        "bin",
+        "binary",
+        "ext",
+        "extensions",
+        "extension",
+        "file",
+        "json",
+        "list",
+        "array"
+      ],
+      "devDependencies": {
+        "ava": "*"
+      },
+      "gitHead": "639f0353f0ce0b59a94013a1d4caa02622bacbe9",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/binary-extensions/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/binary-extensions#readme",
+      "_id": "binary-extensions@1.5.0",
+      "_shasum": "e6e2057f2cdfb17ad406349c86b71ef8069a25f5",
+      "_from": ".",
+      "_npmVersion": "2.15.5",
+      "_nodeVersion": "4.4.5",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "e6e2057f2cdfb17ad406349c86b71ef8069a25f5",
+        "tarball": "https://registry.npmjs.org/binary-extensions/-/binary-extensions-1.5.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        },
+        {
+          "name": "paulmillr",
+          "email": "paul@paulmillr.com"
+        },
+        {
+          "name": "es128",
+          "email": "elan.shanker+npm@gmail.com"
+        },
+        {
+          "name": "arthurvr",
+          "email": "contact@arthurverschaeve.be"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/binary-extensions-1.5.0.tgz_1467202210211_0.12345921993255615"
+      },
+      "directories": {}
+    },
+    "1.6.0": {
+      "name": "binary-extensions",
+      "version": "1.6.0",
+      "description": "List of binary file extensions",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/binary-extensions.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "ava"
+      },
+      "main": "binary-extensions.json",
+      "files": [
+        "binary-extensions.json"
+      ],
+      "keywords": [
+        "bin",
+        "binary",
+        "ext",
+        "extensions",
+        "extension",
+        "file",
+        "json",
+        "list",
+        "array"
+      ],
+      "devDependencies": {
+        "ava": "*"
+      },
+      "gitHead": "9c6368c4a6bc0f185e9abe791751fc0c8faef774",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/binary-extensions/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/binary-extensions#readme",
+      "_id": "binary-extensions@1.6.0",
+      "_shasum": "aa2184cbc434d29862c66a69bf81cc0a3383ee79",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.4.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "aa2184cbc434d29862c66a69bf81cc0a3383ee79",
+        "tarball": "https://registry.npmjs.org/binary-extensions/-/binary-extensions-1.6.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        },
+        {
+          "name": "paulmillr",
+          "email": "paul@paulmillr.com"
+        },
+        {
+          "name": "es128",
+          "email": "elan.shanker+npm@gmail.com"
+        },
+        {
+          "name": "arthurvr",
+          "email": "contact@arthurverschaeve.be"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/binary-extensions-1.6.0.tgz_1472800510782_0.5894664500374347"
+      },
+      "directories": {}
+    },
+    "1.7.0": {
+      "name": "binary-extensions",
+      "version": "1.7.0",
+      "description": "List of binary file extensions",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/binary-extensions.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "ava"
+      },
+      "main": "binary-extensions.json",
+      "files": [
+        "binary-extensions.json"
+      ],
+      "keywords": [
+        "bin",
+        "binary",
+        "ext",
+        "extensions",
+        "extension",
+        "file",
+        "json",
+        "list",
+        "array"
+      ],
+      "devDependencies": {
+        "ava": "*"
+      },
+      "gitHead": "6bab08ef2d6e6f1780eaba7607d347dae51768fa",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/binary-extensions/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/binary-extensions#readme",
+      "_id": "binary-extensions@1.7.0",
+      "_shasum": "6c1610db163abfb34edfe42fa423343a1e01185d",
+      "_from": ".",
+      "_npmVersion": "2.15.9",
+      "_nodeVersion": "4.5.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "6c1610db163abfb34edfe42fa423343a1e01185d",
+        "tarball": "https://registry.npmjs.org/binary-extensions/-/binary-extensions-1.7.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        },
+        {
+          "name": "paulmillr",
+          "email": "paul@paulmillr.com"
+        },
+        {
+          "name": "es128",
+          "email": "elan.shanker+npm@gmail.com"
+        },
+        {
+          "name": "arthurvr",
+          "email": "contact@arthurverschaeve.be"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/binary-extensions-1.7.0.tgz_1475458290589_0.34751846990548074"
+      },
+      "directories": {}
+    },
+    "1.8.0": {
+      "name": "binary-extensions",
+      "version": "1.8.0",
+      "description": "List of binary file extensions",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/binary-extensions.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "ava"
+      },
+      "main": "binary-extensions.json",
+      "files": [
+        "binary-extensions.json"
+      ],
+      "keywords": [
+        "bin",
+        "binary",
+        "ext",
+        "extensions",
+        "extension",
+        "file",
+        "json",
+        "list",
+        "array"
+      ],
+      "devDependencies": {
+        "ava": "*"
+      },
+      "gitHead": "7fbb033c001a17b5e41aa321f0c2398dbab5fc91",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/binary-extensions/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/binary-extensions#readme",
+      "_id": "binary-extensions@1.8.0",
+      "_shasum": "48ec8d16df4377eae5fa5884682480af4d95c774",
+      "_from": ".",
+      "_npmVersion": "4.0.2",
+      "_nodeVersion": "6.9.1",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "48ec8d16df4377eae5fa5884682480af4d95c774",
+        "tarball": "https://registry.npmjs.org/binary-extensions/-/binary-extensions-1.8.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        },
+        {
+          "name": "paulmillr",
+          "email": "paul@paulmillr.com"
+        },
+        {
+          "name": "es128",
+          "email": "elan.shanker+npm@gmail.com"
+        },
+        {
+          "name": "arthurvr",
+          "email": "contact@arthurverschaeve.be"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/binary-extensions-1.8.0.tgz_1480785169667_0.7267967818770558"
+      },
+      "directories": {}
+    },
+    "1.9.0": {
+      "name": "binary-extensions",
+      "version": "1.9.0",
+      "description": "List of binary file extensions",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/binary-extensions.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "ava"
+      },
+      "main": "binary-extensions.json",
+      "files": [
+        "binary-extensions.json"
+      ],
+      "keywords": [
+        "bin",
+        "binary",
+        "ext",
+        "extensions",
+        "extension",
+        "file",
+        "json",
+        "list",
+        "array"
+      ],
+      "devDependencies": {
+        "ava": "0.16.0"
+      },
+      "gitHead": "bbc9908995011f0c2ed76fb7b729e4e6142a2980",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/binary-extensions/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/binary-extensions#readme",
+      "_id": "binary-extensions@1.9.0",
+      "_shasum": "66506c16ce6f4d6928a5b3cd6a33ca41e941e37b",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "4.8.3",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "66506c16ce6f4d6928a5b3cd6a33ca41e941e37b",
+        "tarball": "https://registry.npmjs.org/binary-extensions/-/binary-extensions-1.9.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        },
+        {
+          "name": "paulmillr",
+          "email": "paul@paulmillr.com"
+        },
+        {
+          "name": "es128",
+          "email": "elan.shanker+npm@gmail.com"
+        },
+        {
+          "name": "arthurvr",
+          "email": "contact@arthurverschaeve.be"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/binary-extensions-1.9.0.tgz_1500760448369_0.8683658370282501"
+      },
+      "directories": {}
+    },
+    "1.10.0": {
+      "name": "binary-extensions",
+      "version": "1.10.0",
+      "description": "List of binary file extensions",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/binary-extensions.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "ava"
+      },
+      "main": "binary-extensions.json",
+      "files": [
+        "binary-extensions.json"
+      ],
+      "keywords": [
+        "bin",
+        "binary",
+        "ext",
+        "extensions",
+        "extension",
+        "file",
+        "json",
+        "list",
+        "array"
+      ],
+      "devDependencies": {
+        "ava": "0.16.0"
+      },
+      "gitHead": "2daf7c36320166a095c145d73a01d9155c1b40b6",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/binary-extensions/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/binary-extensions#readme",
+      "_id": "binary-extensions@1.10.0",
+      "_shasum": "9aeb9a6c5e88638aad171e167f5900abe24835d0",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "4.8.3",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "9aeb9a6c5e88638aad171e167f5900abe24835d0",
+        "tarball": "https://registry.npmjs.org/binary-extensions/-/binary-extensions-1.10.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        },
+        {
+          "name": "paulmillr",
+          "email": "paul@paulmillr.com"
+        },
+        {
+          "name": "es128",
+          "email": "elan.shanker+npm@gmail.com"
+        },
+        {
+          "name": "arthurvr",
+          "email": "contact@arthurverschaeve.be"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/binary-extensions-1.10.0.tgz_1502712661636_0.25032695080153644"
+      },
+      "directories": {}
+    },
+    "1.11.0": {
+      "name": "binary-extensions",
+      "version": "1.11.0",
+      "description": "List of binary file extensions",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/binary-extensions.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "ava"
+      },
+      "main": "binary-extensions.json",
+      "files": [
+        "binary-extensions.json"
+      ],
+      "keywords": [
+        "bin",
+        "binary",
+        "ext",
+        "extensions",
+        "extension",
+        "file",
+        "json",
+        "list",
+        "array"
+      ],
+      "devDependencies": {
+        "ava": "0.16.0"
+      },
+      "gitHead": "a2370df9507ac5c618c32334ea259370b34ad3be",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/binary-extensions/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/binary-extensions#readme",
+      "_id": "binary-extensions@1.11.0",
+      "_shasum": "46aa1751fb6a2f93ee5e689bb1087d4b14c6c205",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "4.8.4",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "46aa1751fb6a2f93ee5e689bb1087d4b14c6c205",
+        "tarball": "https://registry.npmjs.org/binary-extensions/-/binary-extensions-1.11.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        },
+        {
+          "name": "paulmillr",
+          "email": "paul@paulmillr.com"
+        },
+        {
+          "name": "es128",
+          "email": "elan.shanker+npm@gmail.com"
+        },
+        {
+          "name": "arthurvr",
+          "email": "contact@arthurverschaeve.be"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/binary-extensions-1.11.0.tgz_1511001002966_0.05597343691624701"
+      },
+      "directories": {}
+    },
+    "1.12.0": {
+      "name": "binary-extensions",
+      "version": "1.12.0",
+      "description": "List of binary file extensions",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/binary-extensions.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "ava"
+      },
+      "main": "binary-extensions.json",
+      "keywords": [
+        "bin",
+        "binary",
+        "ext",
+        "extensions",
+        "extension",
+        "file",
+        "json",
+        "list",
+        "array"
+      ],
+      "devDependencies": {
+        "ava": "0.16.0"
+      },
+      "gitHead": "15014048f519a3aff2ea70670f6a50a2287650b1",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/binary-extensions/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/binary-extensions#readme",
+      "_id": "binary-extensions@1.12.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.11.4",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-DYWGk01lDcxeS/K9IHPGWfT8PsJmbXRtRd2Sx72Tnb8pcYZQFF1oSDb8hJtS1vhp212q1Rzi5dUf9+nq0o9UIg==",
+        "shasum": "c2d780f53d45bba8317a8902d4ceeaf3a6385b14",
+        "tarball": "https://registry.npmjs.org/binary-extensions/-/binary-extensions-1.12.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 4573,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJboIqmCRA9TVsSAnZWagAAHyIP/ik6gA5AMyqr5V2aGhwZ\ntH/aPFBaVwHOHhQGhxeQ2JYo20XIxy/2ECr0bWAxstEjEY08Abqzd3kXItaI\nnvEvKO0X27Dm0jFgVqKY19p8R7oXqu7UkUEAQRE+mfO1D8QFgP2orcIIkcxF\nva+L76BMjDFTkYQ2r5wpoZ+saklZw5yUh7JUbaoXF0k5hWleT4k58AF7VcY8\nPcrUtWrIyIgzKCE7IH3UYjk2HObA7COKNbLDinB2RhBC62vOUxFl7h+n9R8p\n7A2uR6Ymu/Nk9CpplT8Klzr9q+uvqhef0l2SxxC6SA9dxEgJ7qZ5BNrZFfbv\n8utm+7e8o1sSTw33cn7TCuma4oLQzy3qtNkpiWd0K8e/yXvpvyeED/tEbVJR\nrbW09GVRZF/DH+C3PTzcuOU5TJvNVKYtmpnZrJWd/Z6t2tFRt+WpiXsntifd\ncHtM7DOKeVyPcX4L5h0nCvairXmhYNE1mzsVaaHRqATXIrB9jFfEHx0YTVXT\nm9o6EJb+Tg8JNZ1JzhdJoFrTsshwX1lqf/86stySpcjYIKlU2JRKCCxWv5wv\nZX3CC//gyQQnYtA2ngfDR43hw4DVz/5RUMqhpa76hrx0qpZ9OPq5DMkWU09a\nXrjuWyIDS9ZxJgflmq1iAKiLY75Hd7MYWWz3FOoMbTdbj/iF4SlOQ/fI44lr\nugR5\r\n=Vyf9\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "arthurvr",
+          "email": "contact@arthurverschaeve.be"
+        },
+        {
+          "name": "es128",
+          "email": "elan.shanker+npm@gmail.com"
+        },
+        {
+          "name": "paulmillr",
+          "email": "paul@paulmillr.com"
+        },
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/binary-extensions_1.12.0_1537247910313_0.46846812658774106"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.13.0": {
+      "name": "binary-extensions",
+      "version": "1.13.0",
+      "description": "List of binary file extensions",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/binary-extensions.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "ava"
+      },
+      "main": "binary-extensions.json",
+      "keywords": [
+        "bin",
+        "binary",
+        "ext",
+        "extensions",
+        "extension",
+        "file",
+        "json",
+        "list",
+        "array"
+      ],
+      "devDependencies": {
+        "ava": "0.16.0"
+      },
+      "gitHead": "81c838d6913dc9a0884a4d909d0c9f7b5dc20366",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/binary-extensions/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/binary-extensions#readme",
+      "_id": "binary-extensions@1.13.0",
+      "_nodeVersion": "10.15.0",
+      "_npmVersion": "6.7.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-EgmjVLMn22z7eGGv3kcnHwSnJXmFHjISTY9E/S5lIcTD3Oxw05QTcBLNkJFzcb3cNueUdF/IN4U+d78V0zO8Hw==",
+        "shasum": "9523e001306a32444b907423f1de2164222f6ab1",
+        "tarball": "https://registry.npmjs.org/binary-extensions/-/binary-extensions-1.13.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 4591,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcVrx6CRA9TVsSAnZWagAAWHUP/R9tfhIklelAkZ0Q4kvR\noHYXMRQ/9uOAptLhfs1ozM12riM0poI2UFlnBAm9RtVtSyOUky4FkXOH8keV\n4B5KIYJQuzz2m75QcKeEbDQ5pI7hlGO68ovpYsnx+sSCrr/si5zvC9FL21j/\n0ZcSEYokBMaZPqdThoKSerJigWzWMtZiMgawLJoTkqalv8ndbObnDbLOpol+\nAxNk7S3AL/1p8D4ffbA2rDlnOIZ5Qxi4isjINjD6Cywhk4c4jPOM8wc1dVFy\nCKbsvfvX5ZjPRk7fPRlFfLwv14yF26YOc4pvle3fFGYkCBrsW4u5tv8VzM/z\nhueHyjiKY6MqpftBUqmEXRbLQbRTZix7r0LLuSUHtlMil2VLE4a4Zc8of/B2\nWy4N2HvUsih8rkYb4Np/M8irH7gTvN+J3Kd3En9EXIhvPewFVk0OOz5rRVF/\ngg0U4kxXPA2sR6HbU1new3nZzCvdpl9MZL2M80JjqMYaSXxRCY2j24IQ/uKV\nDKAbZhVB2/NJBewFNzYOJozI6WatJ5EkBjPHSZZnyMUlXGQNxJwHXvdaTslK\ni7NwqhTfwTFyVzqF+7NLIA9cHayijs7B+NTkiplnGzqp7INqJHpPf7EDmbRL\nxGg8B9DQa86dPKYjw1JyYq6o8RdQwgy3Xz2n++w39rs5khiQ76v3NwI1R6yP\nm/pm\r\n=eYou\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "arthurvr",
+          "email": "contact@arthurverschaeve.be"
+        },
+        {
+          "name": "es128",
+          "email": "elan.shanker+npm@gmail.com"
+        },
+        {
+          "name": "paulmillr",
+          "email": "paul@paulmillr.com"
+        },
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/binary-extensions_1.13.0_1549188218124_0.8110681433774438"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.13.1": {
+      "name": "binary-extensions",
+      "version": "1.13.1",
+      "description": "List of binary file extensions",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/binary-extensions.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "ava"
+      },
+      "main": "binary-extensions.json",
+      "keywords": [
+        "bin",
+        "binary",
+        "ext",
+        "extensions",
+        "extension",
+        "file",
+        "json",
+        "list",
+        "array"
+      ],
+      "devDependencies": {
+        "ava": "0.16.0"
+      },
+      "gitHead": "187f5ab83698150abdc4ec8020c233ebe7303f0f",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/binary-extensions/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/binary-extensions#readme",
+      "_id": "binary-extensions@1.13.1",
+      "_nodeVersion": "8.15.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-Un7MIEDdUC5gNpcGDV97op1Ywk748MpHcFTHoYs6qnj1Z3j7I53VG3nwZhKzoBZmbdRNnb6WRdFlwl7tSDuZGw==",
+        "shasum": "598afe54755b2868a5330d2aff9d4ebb53209b65",
+        "tarball": "https://registry.npmjs.org/binary-extensions/-/binary-extensions-1.13.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 4628,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcm2wmCRA9TVsSAnZWagAA7WIP/R14BayWpIFc+ewAO6pq\n64RKg1xqeT/U/T7O1QB+d/PQv7PE7pImO9XG3F4dzyg6CHa02gHv90apqWC6\n9O5IezUuqEvOIQnSAH7UmKKokg5/SjiD1HlG04QaY679hFp1v1RL6+lW1Ckh\nZNSS3XzNCu00AcxvhgGHrXVj3g95Lrp+9XnzOYO+MH+dkgM+7XCQwXI6StCJ\nA/05RPQrBWmepSXZVDUgI7jtRKhbsn/Vnuoxes61/yOuzpjAha5fxohuIorm\nu+wn/qWudrwB4X+aPj30nXpy0pSNkSBJWc1i929Cf/cnrfSM1RtWaGncUrI0\n03dJmgMu88bOuondboQS9fMqGFPJmiJP4VvuQvKI5Pl/0O7mRZThBHKNDVlf\nCFFG4Sp5Z9OPw+JvNHEavQhK7IEcBdQCq0bGylvdujzTAnV9AjZeBoUOEht5\nPi6zG/9Zs35Uwkjov1pA5GhXSexGf7yB/3hCkUhSyhw1DAmx+zs0jwcCVTMI\nQriYXTh/WbK7OMPpQkEy+kUew//pK3R/Pg6pA7C6A6SMOp0bHh5oF2Jj8xDx\n4PpZ8pqrGUYxgPk2pFkl4WZQQQtuUV8StfFHj+CRwHPKApM73VHarcrV/5Wg\nJNG85avkZXjOPjLXIEp8r0EZIG7UsKwmXNsQp1rXXVhvZaxbIgAsVzjWfj50\n7/np\r\n=PqBz\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "sindresorhus@gmail.com",
+          "name": "sindresorhus"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/binary-extensions_1.13.1_1553689637901_0.7239438825810172"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.0": {
+      "name": "binary-extensions",
+      "version": "2.0.0",
+      "description": "List of binary file extensions",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/binary-extensions.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "binary",
+        "extensions",
+        "extension",
+        "file",
+        "json",
+        "list",
+        "array"
+      ],
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "11e076d96c41369015cc3c338428f7f456d3a92f",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/binary-extensions/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/binary-extensions#readme",
+      "_id": "binary-extensions@2.0.0",
+      "_nodeVersion": "8.15.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-Phlt0plgpIIBOGTT/ehfFnbNlfsDEiqmzE2KRXoX1bLIlir4X/MR+zSyBEkL05ffWgnRSf/DXv+WrUAVr93/ow==",
+        "shasum": "23c0df14f6a88077f5f986c0d167ec03c3d5537c",
+        "tarball": "https://registry.npmjs.org/binary-extensions/-/binary-extensions-2.0.0.tgz",
+        "fileCount": 7,
+        "unpackedSize": 5074,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcuMblCRA9TVsSAnZWagAATlQP+wSYvlsF5PR2hiifHDau\nX+dQx4OBD1pKyMfsyOA6LnED4W7jqbaECQPfaCi/cxESzaF/5Y4bLycxgRko\nJYa7oKokxjdoUdTMuSzPbi+HJFQeTh91K+SHE06o36VZ8qRG9zdF4TjYHuoV\nI3HcqayEWkSovL5APwMYZlFX6Ix9RmxYNcoWfcxFbygjPVuM5vTLDQ98WrD5\nf9WUfkxN6fHplWvTddROV0IBJV6L8dYfp727T2mAOYpWmuFBzSvL0ijOGcgh\n/5k+Aj8+yLBnLLoxBbAh2ymhYI7/L/KZSrqp1yrQzgZPwvdYeMkYd1ctlIbC\nh1A42DxCb21DvM4QQcIbK5+1LtzM2zdPWIUb6bn+bGXOTzXP+BCayWzvCWcx\nhsfwqHhttqI9ltbnxPtwvOCN07RZWdMtkCP+NpTRcbFJHVekiaCP5j9CHeK3\nef+RIGjm9AYpnapoCnn0isAm9pLh4IVKF4+6D+6wjOIZXKNYkJj7gL3PgMHv\nA0+JUv9/Fq6C4QIy47dIpNhum+LKK0T2oxoUnDuib1Pwvv20EsVlpXr4rtJT\nZ0+/HS5FWrAO0d4bWWM2Xfr71hZOn0/HpGBCOBFYmYQf0dQUCEvN9mk1ihsY\nz/oNZWvzmVrsZlt1NfcFUFDA4pBahTI7Mj/K4pQ/K5+UVG/3k7Yo+g2aR0Vj\n0Wu3\r\n=7h+9\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "sindresorhus@gmail.com",
+          "name": "sindresorhus"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/binary-extensions_2.0.0_1555613412740_0.3072676738149025"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.1.0": {
+      "name": "binary-extensions",
+      "version": "2.1.0",
+      "description": "List of binary file extensions",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/binary-extensions.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "binary",
+        "extensions",
+        "extension",
+        "file",
+        "json",
+        "list",
+        "array"
+      ],
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "4c81c9a9f3a4921f35bcedeb3b91e18902c859f7",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/binary-extensions/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/binary-extensions#readme",
+      "_id": "binary-extensions@2.1.0",
+      "_nodeVersion": "14.4.0",
+      "_npmVersion": "6.14.5",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-1Yj8h9Q+QDF5FzhMs/c9+6UntbD5MkRfRwac8DoEm9ZfUBZ7tZ55YcGVAzEe4bXsdQHEk+s9S5wsOKVdZrw0tQ==",
+        "shasum": "30fa40c9e7fe07dbc895678cd287024dea241dd9",
+        "tarball": "https://registry.npmjs.org/binary-extensions/-/binary-extensions-2.1.0.tgz",
+        "fileCount": 7,
+        "unpackedSize": 5468,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJe90MuCRA9TVsSAnZWagAA4vMQAKJIZ0x0hYZ9DvGCTdlt\n5q6/fXjlovvtL/FWssy/yasBueDf0fWk9IEJzvq9d7rozlI6khacRjiVa8c8\nij86y13/HNubK6ohhsoowxmMv5ncxnKNOP6hOmSHc9Qphv06jIGbZ2wiadnk\n3+OtvWAJXKVtyv0Bq0oPIikxBM1QK2sqhmf3GCcaRIWc+aOUyOdQow2cO+Pm\nP6KE6VwlNUkjL7oZoiHt2BZFa7NSd4DSCYFnkafF7shjWT6chHN7UcH88FBt\nOO49Pmuvop/l8pJDzAE4tjTH2354eZhV4fXDVYkDIUFb+2gNKK1r0X0VTmWa\nZQp+UyXnHdLI7qd7kRIy66UNxrmvZnb+Ek1SRCbNljtMbeHd7Y5pGjMH4/fO\nUSbdNRlql9cXKCMJzokWfn4M96Uc496CEKYZgacDcZD2Go4C6xlqljoLc0Pz\nrZYHbjYgsZ5Grx3rzA94f32IIzrxKTS5bf4MiGCetuzsYG6Du4eTQA6etbQE\nDOccbBTsGue1IOvQi3Uzhl9yq4N9rz+taFCu3dcrJ5M3uV1vmG1HClIIe/8c\nrR7IMyuO7boBwJU64r8ZXMAO5yXKwqzXrzY7M94+lm8DEcav/W4cByUk/tRK\nY4s+HacItX6lFml9AnnKLe4jOucokVQqf1t5vQcRpcEqCEh0GPVQGri6gEYA\nsxJd\r\n=Ll59\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "sindresorhus@gmail.com",
+          "name": "sindresorhus"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/binary-extensions_2.1.0_1593262894344_0.6539073910328448"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# binary-extensions [![Build Status](https://travis-ci.org/sindresorhus/binary-extensions.svg?branch=master)](https://travis-ci.org/sindresorhus/binary-extensions)\n\n> List of binary file extensions\n\nThe list is just a [JSON file](binary-extensions.json) and can be used anywhere.\n\n\n## Install\n\n```\n$ npm install binary-extensions\n```\n\n\n## Usage\n\n```js\nconst binaryExtensions = require('binary-extensions');\n\nconsole.log(binaryExtensions);\n//=> ['3ds', '3g2', …]\n```\n\n\n## Related\n\n- [is-binary-path](https://github.com/sindresorhus/is-binary-path) - Check if a filepath is a binary file\n- [text-extensions](https://github.com/sindresorhus/text-extensions) - List of text file extensions\n\n\n---\n\n<div align=\"center\">\n\t<b>\n\t\t<a href=\"https://tidelift.com/subscription/pkg/npm-binary-extensions?utm_source=npm-binary-extensions&utm_medium=referral&utm_campaign=readme\">Get professional support for this package with a Tidelift subscription</a>\n\t</b>\n\t<br>\n\t<sub>\n\t\tTidelift helps make open source sustainable for maintainers while giving companies<br>assurances about security, maintenance, and licensing for their dependencies.\n\t</sub>\n</div>\n",
+  "maintainers": [
+    {
+      "email": "sindresorhus@gmail.com",
+      "name": "sindresorhus"
+    }
+  ],
+  "time": {
+    "modified": "2020-06-27T13:01:36.620Z",
+    "created": "2015-01-24T09:04:29.927Z",
+    "1.0.0": "2015-01-24T09:04:29.927Z",
+    "1.0.1": "2015-01-26T10:56:06.676Z",
+    "1.0.2": "2015-02-06T00:27:38.427Z",
+    "1.1.0": "2015-02-06T18:36:49.046Z",
+    "1.1.1": "2015-02-15T04:26:26.313Z",
+    "1.2.0": "2015-02-16T07:23:29.790Z",
+    "1.3.0": "2015-02-16T21:10:14.299Z",
+    "1.3.1": "2015-05-17T23:39:55.173Z",
+    "1.4.0": "2015-11-18T17:00:05.622Z",
+    "1.4.1": "2016-05-25T05:03:40.065Z",
+    "1.5.0": "2016-06-29T12:10:11.507Z",
+    "1.6.0": "2016-09-02T07:15:14.131Z",
+    "1.7.0": "2016-10-03T01:31:30.814Z",
+    "1.8.0": "2016-12-03T17:12:51.759Z",
+    "1.9.0": "2017-07-22T21:54:09.279Z",
+    "1.10.0": "2017-08-14T12:11:02.540Z",
+    "1.11.0": "2017-11-18T10:30:03.052Z",
+    "1.12.0": "2018-09-18T05:18:30.443Z",
+    "1.13.0": "2019-02-03T10:03:38.268Z",
+    "1.13.1": "2019-03-27T12:27:18.018Z",
+    "2.0.0": "2019-04-18T18:50:13.054Z",
+    "2.1.0": "2020-06-27T13:01:34.492Z"
+  },
+  "homepage": "https://github.com/sindresorhus/binary-extensions#readme",
+  "keywords": [
+    "binary",
+    "extensions",
+    "extension",
+    "file",
+    "json",
+    "list",
+    "array"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/binary-extensions.git"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "bugs": {
+    "url": "https://github.com/sindresorhus/binary-extensions/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md",
+  "users": {
+    "faraoman": true
+  }
+}

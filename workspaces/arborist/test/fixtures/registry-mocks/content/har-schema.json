@@ -1,0 +1,881 @@
+{
+  "_id": "har-schema",
+  "_rev": "13-893722a2247a6d4adbc82cd01aead2a3",
+  "name": "har-schema",
+  "description": "JSON Schema for HTTP Archive (HAR)",
+  "dist-tags": {
+    "latest": "2.0.0"
+  },
+  "versions": {
+    "0.0.1": {
+      "name": "har-schema",
+      "version": "0.0.1",
+      "description": "JSON Schema for HTTP Archive (HAR)",
+      "main": "schemas/index.js",
+      "directories": {
+        "test": "test"
+      },
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/epoberezkin/har-schema.git"
+      },
+      "keywords": [
+        "har",
+        "http",
+        "archive",
+        "JSON",
+        "schema",
+        "JSON-schema"
+      ],
+      "author": {
+        "name": "Ahmad Nassri",
+        "email": "ahmad@ahmadnassri.com",
+        "url": "https://www.ahmadnassri.com/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/epoberezkin/har-schema/issues"
+      },
+      "homepage": "https://github.com/epoberezkin/har-schema#readme",
+      "devDependencies": {
+        "ajv": "^4.1.7",
+        "mocha": "^2.5.3"
+      },
+      "gitHead": "96bd138f2a57ada75b3d44cb4302751be7b02a74",
+      "_id": "har-schema@0.0.1",
+      "_shasum": "6970c6d0452587f082226b78c47ce2f5cdfe5aab",
+      "_from": ".",
+      "_npmVersion": "2.15.1",
+      "_nodeVersion": "4.4.4",
+      "_npmUser": {
+        "name": "esp",
+        "email": "e.poberezkin@me.com"
+      },
+      "maintainers": [
+        {
+          "name": "esp",
+          "email": "e.poberezkin@me.com"
+        }
+      ],
+      "dist": {
+        "shasum": "6970c6d0452587f082226b78c47ce2f5cdfe5aab",
+        "tarball": "https://registry.npmjs.org/har-schema/-/har-schema-0.0.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/har-schema-0.0.1.tgz_1468540577029_0.1468842001631856"
+      }
+    },
+    "0.1.0": {
+      "name": "har-schema",
+      "version": "0.1.0",
+      "description": "JSON Schema for HTTP Archive (HAR)",
+      "main": "schema/index.js",
+      "directories": {
+        "test": "test"
+      },
+      "scripts": {
+        "test": "mocha test/*.js -R spec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/epoberezkin/har-schema.git"
+      },
+      "keywords": [
+        "har",
+        "http",
+        "archive",
+        "JSON",
+        "schema",
+        "JSON-schema"
+      ],
+      "author": {
+        "name": "Ahmad Nassri",
+        "email": "ahmad@ahmadnassri.com",
+        "url": "https://www.ahmadnassri.com/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/epoberezkin/har-schema/issues"
+      },
+      "homepage": "https://github.com/epoberezkin/har-schema#readme",
+      "devDependencies": {
+        "ajv": "^4.1.7",
+        "mocha": "^2.5.3"
+      },
+      "gitHead": "86bfbd0caf898799d263a65e903ce8609346f89a",
+      "_id": "har-schema@0.1.0",
+      "_shasum": "bfedd6c48bc4d4da416ba2baa5eff027abaf9fef",
+      "_from": ".",
+      "_npmVersion": "2.15.1",
+      "_nodeVersion": "4.4.4",
+      "_npmUser": {
+        "name": "esp",
+        "email": "e.poberezkin@me.com"
+      },
+      "maintainers": [
+        {
+          "name": "esp",
+          "email": "e.poberezkin@me.com"
+        }
+      ],
+      "dist": {
+        "shasum": "bfedd6c48bc4d4da416ba2baa5eff027abaf9fef",
+        "tarball": "https://registry.npmjs.org/har-schema/-/har-schema-0.1.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/har-schema-0.1.0.tgz_1468574110880_0.5883410326205194"
+      }
+    },
+    "0.2.0": {
+      "version": "0.2.0",
+      "name": "har-schema",
+      "description": "JSON Schema for HTTP Archive (HAR)",
+      "author": {
+        "name": "Ahmad Nassri",
+        "email": "ahmad@ahmadnassri.com",
+        "url": "https://www.ahmadnassri.com/"
+      },
+      "contributors": [
+        {
+          "name": "Evgeny Poberezkin",
+          "email": "e.poberezkin@me.com"
+        }
+      ],
+      "homepage": "https://github.com/ahmadnassri/har-schema",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ahmadnassri/har-schema.git"
+      },
+      "license": "ISC",
+      "main": "lib/index.js",
+      "keywords": [
+        "har",
+        "http",
+        "archive",
+        "JSON",
+        "schema",
+        "JSON-schema"
+      ],
+      "engines": {
+        "node": ">=4"
+      },
+      "files": [
+        "lib"
+      ],
+      "bugs": {
+        "url": "https://github.com/ahmadnassri/har-schema/issues"
+      },
+      "scripts": {
+        "test": "tap test --reporter spec",
+        "pretest": "snazzy && echint",
+        "coverage": "tap test --reporter silent --coverage",
+        "codeclimate": "tap --coverage-report=text-lcov | codeclimate-test-reporter",
+        "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+      },
+      "config": {
+        "commitizen": {
+          "path": "./node_modules/cz-conventional-changelog"
+        }
+      },
+      "devDependencies": {
+        "ajv": "^4.9.1",
+        "codeclimate-test-reporter": "^0.4.0",
+        "cz-conventional-changelog": "^1.2.0",
+        "echint": "^2.0.0",
+        "semantic-release": "^6.3.2",
+        "snazzy": "^5.0.0",
+        "tap": "^8.0.1"
+      },
+      "gitHead": "aeae2c63d0e45a3fb36180ec2cc5d637d81ffd5e",
+      "_id": "har-schema@0.2.0",
+      "_shasum": "e2fcf2e0f7e9823126adbe464cb4705ad099cf3a",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "4.6.2",
+      "_npmUser": {
+        "name": "ahmadnassri",
+        "email": "ahmad@ahmadnassri.com"
+      },
+      "dist": {
+        "shasum": "e2fcf2e0f7e9823126adbe464cb4705ad099cf3a",
+        "tarball": "https://registry.npmjs.org/har-schema/-/har-schema-0.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "esp",
+          "email": "e.poberezkin@me.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/har-schema-0.2.0.tgz_1480813990316_0.10544799896888435"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "version": "1.0.0",
+      "name": "har-schema",
+      "description": "JSON Schema for HTTP Archive (HAR)",
+      "author": {
+        "name": "Ahmad Nassri",
+        "email": "ahmad@ahmadnassri.com",
+        "url": "https://www.ahmadnassri.com/"
+      },
+      "contributors": [
+        {
+          "name": "Evgeny Poberezkin",
+          "email": "e.poberezkin@me.com"
+        }
+      ],
+      "homepage": "https://github.com/ahmadnassri/har-schema",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ahmadnassri/har-schema.git"
+      },
+      "license": "ISC",
+      "main": "lib/index.js",
+      "keywords": [
+        "har",
+        "http",
+        "archive",
+        "JSON",
+        "schema",
+        "JSON-schema"
+      ],
+      "engines": {
+        "node": ">=4"
+      },
+      "files": [
+        "lib"
+      ],
+      "bugs": {
+        "url": "https://github.com/ahmadnassri/har-schema/issues"
+      },
+      "scripts": {
+        "test": "tap test --reporter spec",
+        "pretest": "snazzy && echint",
+        "coverage": "tap test --reporter silent --coverage",
+        "codeclimate": "tap --coverage-report=text-lcov | codeclimate-test-reporter",
+        "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+      },
+      "config": {
+        "commitizen": {
+          "path": "./node_modules/cz-conventional-changelog"
+        }
+      },
+      "devDependencies": {
+        "ajv": "^4.9.1",
+        "codeclimate-test-reporter": "^0.4.0",
+        "cz-conventional-changelog": "^1.2.0",
+        "echint": "^2.1.0",
+        "semantic-release": "^6.3.2",
+        "snazzy": "^5.0.0",
+        "tap": "^8.0.1"
+      },
+      "gitHead": "2f4f631b0fe48b0c0725e61a96995f882af616da",
+      "_id": "har-schema@1.0.0",
+      "_shasum": "69340abeb9e6cb16fe80a2652423a03c2fa1d405",
+      "_from": ".",
+      "_npmVersion": "3.10.9",
+      "_nodeVersion": "7.2.0",
+      "_npmUser": {
+        "name": "ahmadnassri",
+        "email": "ahmad@ahmadnassri.com"
+      },
+      "dist": {
+        "shasum": "69340abeb9e6cb16fe80a2652423a03c2fa1d405",
+        "tarball": "https://registry.npmjs.org/har-schema/-/har-schema-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "esp",
+          "email": "e.poberezkin@me.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/har-schema-1.0.0.tgz_1480829533240_0.6362541008275002"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "version": "1.0.1",
+      "name": "har-schema",
+      "description": "JSON Schema for HTTP Archive (HAR)",
+      "author": {
+        "name": "Ahmad Nassri",
+        "email": "ahmad@ahmadnassri.com",
+        "url": "https://www.ahmadnassri.com/"
+      },
+      "contributors": [
+        {
+          "name": "Evgeny Poberezkin",
+          "email": "e.poberezkin@me.com"
+        }
+      ],
+      "homepage": "https://github.com/ahmadnassri/har-schema",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ahmadnassri/har-schema.git"
+      },
+      "license": "ISC",
+      "main": "lib/index.js",
+      "keywords": [
+        "har",
+        "http",
+        "archive",
+        "JSON",
+        "schema",
+        "JSON-schema"
+      ],
+      "engines": {
+        "node": ">=4"
+      },
+      "files": [
+        "lib"
+      ],
+      "bugs": {
+        "url": "https://github.com/ahmadnassri/har-schema/issues"
+      },
+      "scripts": {
+        "test": "tap test --reporter spec",
+        "pretest": "snazzy && echint",
+        "coverage": "tap test --reporter silent --coverage",
+        "codeclimate": "tap --coverage-report=text-lcov | codeclimate-test-reporter",
+        "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+      },
+      "config": {
+        "commitizen": {
+          "path": "./node_modules/cz-conventional-changelog"
+        }
+      },
+      "devDependencies": {
+        "ajv": "^4.9.1",
+        "codeclimate-test-reporter": "^0.4.0",
+        "cz-conventional-changelog": "^1.2.0",
+        "echint": "^2.1.0",
+        "semantic-release": "^6.3.2",
+        "snazzy": "^5.0.0",
+        "tap": "^8.0.1"
+      },
+      "gitHead": "c484e92802dc82e8471e5615a12b74209213b590",
+      "_id": "har-schema@1.0.1",
+      "_shasum": "1db4cbcb691509a1c45b9ae22f45d9b4e29e8f37",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "4.6.2",
+      "_npmUser": {
+        "name": "ahmadnassri",
+        "email": "ahmad@ahmadnassri.com"
+      },
+      "dist": {
+        "shasum": "1db4cbcb691509a1c45b9ae22f45d9b4e29e8f37",
+        "tarball": "https://registry.npmjs.org/har-schema/-/har-schema-1.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "esp",
+          "email": "e.poberezkin@me.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/har-schema-1.0.1.tgz_1480830419047_0.8318520970642567"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "version": "1.0.2",
+      "name": "har-schema",
+      "description": "JSON Schema for HTTP Archive (HAR)",
+      "author": {
+        "name": "Ahmad Nassri",
+        "email": "ahmad@ahmadnassri.com",
+        "url": "https://www.ahmadnassri.com/"
+      },
+      "contributors": [
+        {
+          "name": "Evgeny Poberezkin",
+          "email": "e.poberezkin@me.com"
+        }
+      ],
+      "homepage": "https://github.com/ahmadnassri/har-schema",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ahmadnassri/har-schema.git"
+      },
+      "license": "ISC",
+      "main": "lib/index.js",
+      "keywords": [
+        "har",
+        "http",
+        "archive",
+        "JSON",
+        "schema",
+        "JSON-schema"
+      ],
+      "engines": {
+        "node": ">=4"
+      },
+      "files": [
+        "lib"
+      ],
+      "bugs": {
+        "url": "https://github.com/ahmadnassri/har-schema/issues"
+      },
+      "scripts": {
+        "test": "tap test --reporter spec",
+        "pretest": "snazzy && echint",
+        "coverage": "tap test --reporter silent --coverage",
+        "codeclimate": "tap --coverage-report=text-lcov | codeclimate-test-reporter",
+        "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+      },
+      "config": {
+        "commitizen": {
+          "path": "./node_modules/cz-conventional-changelog"
+        }
+      },
+      "devDependencies": {
+        "ajv": "^4.9.1",
+        "codeclimate-test-reporter": "^0.4.0",
+        "cz-conventional-changelog": "^1.2.0",
+        "echint": "^2.1.0",
+        "semantic-release": "^6.3.2",
+        "snazzy": "^5.0.0",
+        "tap": "^8.0.1"
+      },
+      "gitHead": "f0988ab5bd4b2277ecfc23984fffa72471757096",
+      "_id": "har-schema@1.0.2",
+      "_shasum": "39ad5cec5f84e6dbcfde30b6d5da6395546422f5",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "4.6.2",
+      "_npmUser": {
+        "name": "ahmadnassri",
+        "email": "ahmad@ahmadnassri.com"
+      },
+      "dist": {
+        "shasum": "39ad5cec5f84e6dbcfde30b6d5da6395546422f5",
+        "tarball": "https://registry.npmjs.org/har-schema/-/har-schema-1.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "esp",
+          "email": "e.poberezkin@me.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/har-schema-1.0.2.tgz_1480833302517_0.8595593033824116"
+      },
+      "directories": {}
+    },
+    "1.0.3": {
+      "version": "1.0.3",
+      "name": "har-schema",
+      "description": "JSON Schema for HTTP Archive (HAR)",
+      "author": {
+        "name": "Ahmad Nassri",
+        "email": "ahmad@ahmadnassri.com",
+        "url": "https://www.ahmadnassri.com/"
+      },
+      "contributors": [
+        {
+          "name": "Evgeny Poberezkin",
+          "email": "e.poberezkin@me.com"
+        }
+      ],
+      "homepage": "https://github.com/ahmadnassri/har-schema",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ahmadnassri/har-schema.git"
+      },
+      "license": "ISC",
+      "main": "lib/index.js",
+      "keywords": [
+        "har",
+        "http",
+        "archive",
+        "JSON",
+        "schema",
+        "JSON-schema"
+      ],
+      "engines": {
+        "node": ">=4"
+      },
+      "files": [
+        "lib"
+      ],
+      "bugs": {
+        "url": "https://github.com/ahmadnassri/har-schema/issues"
+      },
+      "scripts": {
+        "test": "tap test --reporter spec",
+        "pretest": "snazzy && echint",
+        "coverage": "tap test --reporter silent --coverage",
+        "codeclimate": "tap --coverage-report=text-lcov | codeclimate-test-reporter",
+        "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+      },
+      "config": {
+        "commitizen": {
+          "path": "./node_modules/cz-conventional-changelog"
+        }
+      },
+      "devDependencies": {
+        "ajv": "^4.9.1",
+        "codeclimate-test-reporter": "^0.4.0",
+        "cz-conventional-changelog": "^1.2.0",
+        "echint": "^2.1.0",
+        "semantic-release": "^6.3.2",
+        "snazzy": "^5.0.0",
+        "tap": "^8.0.1"
+      },
+      "gitHead": "82f0f692b0d77b5e2d15a5a9a7b6d0968bfe4042",
+      "_id": "har-schema@1.0.3",
+      "_shasum": "d27e54832fb4cb84dd04cb10963171e66ac91b1f",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "4.6.2",
+      "_npmUser": {
+        "name": "ahmadnassri",
+        "email": "ahmad@ahmadnassri.com"
+      },
+      "dist": {
+        "shasum": "d27e54832fb4cb84dd04cb10963171e66ac91b1f",
+        "tarball": "https://registry.npmjs.org/har-schema/-/har-schema-1.0.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "esp",
+          "email": "e.poberezkin@me.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/har-schema-1.0.3.tgz_1480839257508_0.3996701801661402"
+      },
+      "directories": {}
+    },
+    "1.0.4": {
+      "version": "1.0.4",
+      "name": "har-schema",
+      "description": "JSON Schema for HTTP Archive (HAR)",
+      "author": {
+        "name": "Ahmad Nassri",
+        "email": "ahmad@ahmadnassri.com",
+        "url": "https://www.ahmadnassri.com/"
+      },
+      "contributors": [
+        {
+          "name": "Evgeny Poberezkin",
+          "email": "e.poberezkin@me.com"
+        }
+      ],
+      "homepage": "https://github.com/ahmadnassri/har-schema",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ahmadnassri/har-schema.git"
+      },
+      "license": "ISC",
+      "main": "lib/index.js",
+      "keywords": [
+        "har",
+        "http",
+        "archive",
+        "JSON",
+        "schema",
+        "JSON-schema"
+      ],
+      "engines": {
+        "node": ">=4"
+      },
+      "files": [
+        "lib"
+      ],
+      "bugs": {
+        "url": "https://github.com/ahmadnassri/har-schema/issues"
+      },
+      "scripts": {
+        "test": "tap test --reporter spec",
+        "pretest": "snazzy && echint",
+        "coverage": "tap test --reporter silent --coverage",
+        "codeclimate": "tap --coverage-report=text-lcov | codeclimate-test-reporter",
+        "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+      },
+      "config": {
+        "commitizen": {
+          "path": "./node_modules/cz-conventional-changelog"
+        }
+      },
+      "devDependencies": {
+        "ajv": "^4.9.1",
+        "codeclimate-test-reporter": "^0.4.0",
+        "cz-conventional-changelog": "^1.2.0",
+        "echint": "^2.1.0",
+        "semantic-release": "^6.3.2",
+        "snazzy": "^5.0.0",
+        "tap": "^8.0.1"
+      },
+      "gitHead": "61274b1ee9fbd7c62b4f2267d7170b3a3b73ff57",
+      "_id": "har-schema@1.0.4",
+      "_shasum": "016256159e298d60be8c31a7e0b5ebaf80f55209",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "4.6.2",
+      "_npmUser": {
+        "name": "ahmadnassri",
+        "email": "ahmad@ahmadnassri.com"
+      },
+      "dist": {
+        "shasum": "016256159e298d60be8c31a7e0b5ebaf80f55209",
+        "tarball": "https://registry.npmjs.org/har-schema/-/har-schema-1.0.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "esp",
+          "email": "e.poberezkin@me.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/har-schema-1.0.4.tgz_1480839608122_0.10327825811691582"
+      },
+      "directories": {}
+    },
+    "1.0.5": {
+      "version": "1.0.5",
+      "name": "har-schema",
+      "description": "JSON Schema for HTTP Archive (HAR)",
+      "author": {
+        "name": "Ahmad Nassri",
+        "email": "ahmad@ahmadnassri.com",
+        "url": "https://www.ahmadnassri.com/"
+      },
+      "contributors": [
+        {
+          "name": "Evgeny Poberezkin",
+          "email": "e.poberezkin@me.com"
+        }
+      ],
+      "homepage": "https://github.com/ahmadnassri/har-schema",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ahmadnassri/har-schema.git"
+      },
+      "license": "ISC",
+      "main": "lib/index.js",
+      "keywords": [
+        "har",
+        "http",
+        "archive",
+        "JSON",
+        "schema",
+        "JSON-schema"
+      ],
+      "engines": {
+        "node": ">=4"
+      },
+      "files": [
+        "lib"
+      ],
+      "bugs": {
+        "url": "https://github.com/ahmadnassri/har-schema/issues"
+      },
+      "scripts": {
+        "test": "tap test --reporter spec",
+        "pretest": "snazzy && echint",
+        "coverage": "tap test --reporter silent --coverage",
+        "codeclimate": "tap --coverage-report=text-lcov | codeclimate-test-reporter",
+        "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+      },
+      "config": {
+        "commitizen": {
+          "path": "./node_modules/cz-conventional-changelog"
+        }
+      },
+      "devDependencies": {
+        "ajv": "^4.9.1",
+        "codeclimate-test-reporter": "^0.4.0",
+        "cz-conventional-changelog": "^1.2.0",
+        "echint": "^2.1.0",
+        "semantic-release": "^6.3.2",
+        "snazzy": "^5.0.0",
+        "tap": "^8.0.1"
+      },
+      "gitHead": "7dde6d47c93e82b6d7ef7514766d64c166de14d3",
+      "_id": "har-schema@1.0.5",
+      "_shasum": "d263135f43307c02c602afc8fe95970c0151369e",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "4.6.2",
+      "_npmUser": {
+        "name": "ahmadnassri",
+        "email": "ahmad@ahmadnassri.com"
+      },
+      "dist": {
+        "shasum": "d263135f43307c02c602afc8fe95970c0151369e",
+        "tarball": "https://registry.npmjs.org/har-schema/-/har-schema-1.0.5.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "esp",
+          "email": "e.poberezkin@me.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/har-schema-1.0.5.tgz_1480877746957_0.2995719478931278"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "version": "2.0.0",
+      "name": "har-schema",
+      "description": "JSON Schema for HTTP Archive (HAR)",
+      "author": {
+        "name": "Ahmad Nassri",
+        "email": "ahmad@ahmadnassri.com",
+        "url": "https://www.ahmadnassri.com/"
+      },
+      "contributors": [
+        {
+          "name": "Evgeny Poberezkin",
+          "email": "e.poberezkin@me.com"
+        }
+      ],
+      "homepage": "https://github.com/ahmadnassri/har-schema",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ahmadnassri/har-schema.git"
+      },
+      "license": "ISC",
+      "main": "lib/index.js",
+      "keywords": [
+        "har",
+        "http",
+        "archive",
+        "JSON",
+        "schema",
+        "JSON-schema"
+      ],
+      "engines": {
+        "node": ">=4"
+      },
+      "files": [
+        "lib"
+      ],
+      "bugs": {
+        "url": "https://github.com/ahmadnassri/har-schema/issues"
+      },
+      "scripts": {
+        "test": "tap test --reporter spec",
+        "pretest": "snazzy && echint",
+        "coverage": "tap test --reporter silent --coverage",
+        "codeclimate": "tap --coverage-report=text-lcov | codeclimate-test-reporter",
+        "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+      },
+      "config": {
+        "commitizen": {
+          "path": "./node_modules/cz-conventional-changelog"
+        }
+      },
+      "devDependencies": {
+        "ajv": "^5.0.0",
+        "codeclimate-test-reporter": "^0.4.0",
+        "cz-conventional-changelog": "^1.2.0",
+        "echint": "^2.1.0",
+        "semantic-release": "^6.3.2",
+        "snazzy": "^5.0.0",
+        "tap": "^8.0.1"
+      },
+      "gitHead": "d006b0500e083a5b3e42635f110f3fb702ccdbb1",
+      "_id": "har-schema@2.0.0",
+      "_shasum": "a94c2224ebcac04782a0d9035521f24735b7ec92",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "4.8.2",
+      "_npmUser": {
+        "name": "ahmadnassri",
+        "email": "ahmad@ahmadnassri.com"
+      },
+      "dist": {
+        "shasum": "a94c2224ebcac04782a0d9035521f24735b7ec92",
+        "tarball": "https://registry.npmjs.org/har-schema/-/har-schema-2.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "esp",
+          "email": "e.poberezkin@me.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/har-schema-2.0.0.tgz_1492544653773_0.6988900362048298"
+      },
+      "directories": {}
+    }
+  },
+  "readme": "# HAR Schema [![version][npm-version]][npm-url] [![License][npm-license]][license-url]\n\n> JSON Schema for HTTP Archive ([HAR][spec]).\n\n[![Build Status][travis-image]][travis-url]\n[![Downloads][npm-downloads]][npm-url]\n[![Code Climate][codeclimate-quality]][codeclimate-url]\n[![Coverage Status][codeclimate-coverage]][codeclimate-url]\n[![Dependency Status][dependencyci-image]][dependencyci-url]\n[![Dependencies][david-image]][david-url]\n\n## Install\n\n```bash\nnpm install --only=production --save har-schema\n```\n\n## Usage\n\nCompatible with any [JSON Schema validation tool][validator].\n\n----\n> :copyright: [ahmadnassri.com](https://www.ahmadnassri.com/) &nbsp;&middot;&nbsp;\n> License: [ISC][license-url] &nbsp;&middot;&nbsp;\n> Github: [@ahmadnassri](https://github.com/ahmadnassri) &nbsp;&middot;&nbsp;\n> Twitter: [@ahmadnassri](https://twitter.com/ahmadnassri)\n\n[license-url]: http://choosealicense.com/licenses/isc/\n\n[travis-url]: https://travis-ci.org/ahmadnassri/har-schema\n[travis-image]: https://img.shields.io/travis/ahmadnassri/har-schema.svg?style=flat-square\n\n[npm-url]: https://www.npmjs.com/package/har-schema\n[npm-license]: https://img.shields.io/npm/l/har-schema.svg?style=flat-square\n[npm-version]: https://img.shields.io/npm/v/har-schema.svg?style=flat-square\n[npm-downloads]: https://img.shields.io/npm/dm/har-schema.svg?style=flat-square\n\n[codeclimate-url]: https://codeclimate.com/github/ahmadnassri/har-schema\n[codeclimate-quality]: https://img.shields.io/codeclimate/github/ahmadnassri/har-schema.svg?style=flat-square\n[codeclimate-coverage]: https://img.shields.io/codeclimate/coverage/github/ahmadnassri/har-schema.svg?style=flat-square\n\n[david-url]: https://david-dm.org/ahmadnassri/har-schema\n[david-image]: https://img.shields.io/david/ahmadnassri/har-schema.svg?style=flat-square\n\n[dependencyci-url]: https://dependencyci.com/github/ahmadnassri/har-schema\n[dependencyci-image]: https://dependencyci.com/github/ahmadnassri/har-schema/badge?style=flat-square\n\n[spec]: https://github.com/ahmadnassri/har-spec/blob/master/versions/1.2.md\n[validator]: https://github.com/ahmadnassri/har-validator\n",
+  "maintainers": [
+    {
+      "email": "ahmad@ahmadnassri.com",
+      "name": "ahmadnassri"
+    },
+    {
+      "email": "e.poberezkin@me.com",
+      "name": "esp"
+    }
+  ],
+  "time": {
+    "modified": "2019-01-08T06:13:00.441Z",
+    "created": "2016-07-14T23:56:19.443Z",
+    "0.0.1": "2016-07-14T23:56:19.443Z",
+    "0.1.0": "2016-07-15T09:15:13.545Z",
+    "0.2.0": "2016-12-04T01:13:12.310Z",
+    "1.0.0": "2016-12-04T05:32:14.005Z",
+    "1.0.1": "2016-12-04T05:46:59.648Z",
+    "1.0.2": "2016-12-04T06:35:03.124Z",
+    "1.0.3": "2016-12-04T08:14:19.484Z",
+    "1.0.4": "2016-12-04T08:20:08.730Z",
+    "1.0.5": "2016-12-04T18:55:49.145Z",
+    "2.0.0": "2017-04-18T19:44:14.320Z"
+  },
+  "homepage": "https://github.com/ahmadnassri/har-schema",
+  "keywords": [
+    "har",
+    "http",
+    "archive",
+    "JSON",
+    "schema",
+    "JSON-schema"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahmadnassri/har-schema.git"
+  },
+  "author": {
+    "name": "Ahmad Nassri",
+    "email": "ahmad@ahmadnassri.com",
+    "url": "https://www.ahmadnassri.com/"
+  },
+  "bugs": {
+    "url": "https://github.com/ahmadnassri/har-schema/issues"
+  },
+  "license": "ISC",
+  "readmeFilename": "README.md",
+  "contributors": [
+    {
+      "name": "Evgeny Poberezkin",
+      "email": "e.poberezkin@me.com"
+    }
+  ],
+  "users": {
+    "josudoey": true,
+    "hualei": true
+  }
+}

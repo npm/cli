@@ -1,0 +1,2142 @@
+{
+  "_id": "tslib",
+  "_rev": "68-4d54ea1fc717ca01c57dd1e163ed88d1",
+  "name": "tslib",
+  "time": {
+    "modified": "2020-10-09T23:35:45.312Z",
+    "created": "2014-12-30T09:21:20.138Z",
+    "0.0.1": "2014-12-30T09:21:22.769Z",
+    "0.0.2": "2014-12-30T11:02:46.195Z",
+    "0.0.1-security": "2016-06-16T22:56:19.306Z",
+    "1.0.0": "2016-06-28T00:46:05.835Z",
+    "1.1.0": "2016-11-21T19:18:50.947Z",
+    "1.2.0": "2016-11-30T01:20:12.477Z",
+    "1.3.0": "2016-12-21T17:39:27.117Z",
+    "1.4.0": "2016-12-22T04:46:12.098Z",
+    "1.5.0": "2017-01-05T18:07:30.457Z",
+    "1.6.0": "2017-02-22T00:24:40.508Z",
+    "1.6.1": "2017-04-19T22:24:12.069Z",
+    "1.7.0": "2017-05-04T21:53:04.607Z",
+    "1.7.1": "2017-05-15T22:41:50.599Z",
+    "1.8.0": "2017-10-11T04:34:53.500Z",
+    "1.8.1": "2017-12-06T23:26:57.437Z",
+    "1.9.0": "2018-01-18T21:44:23.777Z",
+    "1.9.1": "2018-05-14T18:16:04.424Z",
+    "1.9.2": "2018-05-29T23:51:13.946Z",
+    "1.9.3": "2018-06-22T07:45:03.346Z",
+    "1.10.0": "2019-06-10T22:29:46.948Z",
+    "1.11.0": "2020-02-20T21:25:00.328Z",
+    "1.11.1": "2020-02-27T19:32:23.640Z",
+    "1.11.2": "2020-05-05T23:22:58.990Z",
+    "1.12.0": "2020-05-12T18:07:58.852Z",
+    "1.13.0": "2020-05-13T22:56:03.236Z",
+    "2.0.0": "2020-05-13T23:08:45.637Z",
+    "2.0.1": "2020-08-06T22:35:16.803Z",
+    "1.14.0": "2020-10-06T15:36:19.182Z",
+    "2.0.2": "2020-10-06T15:39:15.861Z",
+    "1.14.1": "2020-10-09T23:34:42.516Z",
+    "2.0.3": "2020-10-09T23:35:42.926Z"
+  },
+  "maintainers": [
+    {
+      "name": "typescript-deploys",
+      "email": "ortam@microsoft.com"
+    },
+    {
+      "name": "orta",
+      "email": "orta.therox@gmail.com"
+    },
+    {
+      "name": "sheetalkamat",
+      "email": "shkamat@microsoft.com"
+    },
+    {
+      "name": "rbuckton",
+      "email": "rbuckton@chronicles.org"
+    },
+    {
+      "name": "minestarks",
+      "email": "mineyalc@microsoft.com"
+    },
+    {
+      "name": "andrewbranch",
+      "email": "andrew@wheream.io"
+    },
+    {
+      "name": "sanders_n",
+      "email": "ncsander@indiana.edu"
+    },
+    {
+      "name": "weswigham",
+      "email": "wwigham@gmail.com"
+    },
+    {
+      "name": "typescript-bot",
+      "email": "typescript@microsoft.com"
+    }
+  ],
+  "dist-tags": {
+    "latest": "2.0.3"
+  },
+  "description": "Runtime library for TypeScript helper functions",
+  "readme": "# tslib\r\n\r\nThis is a runtime library for [TypeScript](http://www.typescriptlang.org/) that contains all of the TypeScript helper functions.\r\n\r\nThis library is primarily used by the `--importHelpers` flag in TypeScript.\r\nWhen using `--importHelpers`, a module that uses helper functions like `__extends` and `__assign` in the following emitted file:\r\n\r\n```ts\r\nvar __assign = (this && this.__assign) || Object.assign || function(t) {\r\n    for (var s, i = 1, n = arguments.length; i < n; i++) {\r\n        s = arguments[i];\r\n        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))\r\n            t[p] = s[p];\r\n    }\r\n    return t;\r\n};\r\nexports.x = {};\r\nexports.y = __assign({}, exports.x);\r\n\r\n```\r\n\r\nwill instead be emitted as something like the following:\r\n\r\n```ts\r\nvar tslib_1 = require(\"tslib\");\r\nexports.x = {};\r\nexports.y = tslib_1.__assign({}, exports.x);\r\n```\r\n\r\nBecause this can avoid duplicate declarations of things like `__extends`, `__assign`, etc., this means delivering users smaller files on average, as well as less runtime overhead.\r\nFor optimized bundles with TypeScript, you should absolutely consider using `tslib` and `--importHelpers`.\r\n\r\n# Installing\r\n\r\nFor the latest stable version, run:\r\n\r\n## npm\r\n\r\n```sh\r\n# TypeScript 3.9.2 or later\r\nnpm install tslib\r\n\r\n# TypeScript 3.8.4 or earlier\r\nnpm install tslib@^1\r\n\r\n# TypeScript 2.3.2 or earlier\r\nnpm install tslib@1.6.1\r\n```\r\n\r\n## yarn\r\n\r\n```sh\r\n# TypeScript 3.9.2 or later\r\nyarn add tslib\r\n\r\n# TypeScript 3.8.4 or earlier\r\nyarn add tslib@^1\r\n\r\n# TypeScript 2.3.2 or earlier\r\nyarn add tslib@1.6.1\r\n```\r\n\r\n## bower\r\n\r\n```sh\r\n# TypeScript 3.9.2 or later\r\nbower install tslib\r\n\r\n# TypeScript 3.8.4 or earlier\r\nbower install tslib@^1\r\n\r\n# TypeScript 2.3.2 or earlier\r\nbower install tslib@1.6.1\r\n```\r\n\r\n## JSPM\r\n\r\n```sh\r\n# TypeScript 3.9.2 or later\r\njspm install tslib\r\n\r\n# TypeScript 3.8.4 or earlier\r\njspm install tslib@^1\r\n\r\n# TypeScript 2.3.2 or earlier\r\njspm install tslib@1.6.1\r\n```\r\n\r\n# Usage\r\n\r\nSet the `importHelpers` compiler option on the command line:\r\n\r\n```\r\ntsc --importHelpers file.ts\r\n```\r\n\r\nor in your tsconfig.json:\r\n\r\n```json\r\n{\r\n    \"compilerOptions\": {\r\n        \"importHelpers\": true\r\n    }\r\n}\r\n```\r\n\r\n#### For bower and JSPM users\r\n\r\nYou will need to add a `paths` mapping for `tslib`, e.g. For Bower users:\r\n\r\n```json\r\n{\r\n    \"compilerOptions\": {\r\n        \"module\": \"amd\",\r\n        \"importHelpers\": true,\r\n        \"baseUrl\": \"./\",\r\n        \"paths\": {\r\n            \"tslib\" : [\"bower_components/tslib/tslib.d.ts\"]\r\n        }\r\n    }\r\n}\r\n```\r\n\r\nFor JSPM users:\r\n\r\n```json\r\n{\r\n    \"compilerOptions\": {\r\n        \"module\": \"system\",\r\n        \"importHelpers\": true,\r\n        \"baseUrl\": \"./\",\r\n        \"paths\": {\r\n            \"tslib\" : [\"jspm_packages/npm/tslib@2.x.y/tslib.d.ts\"]\r\n        }\r\n    }\r\n}\r\n```\r\n\r\n\r\n# Contribute\r\n\r\nThere are many ways to [contribute](https://github.com/Microsoft/TypeScript/blob/master/CONTRIBUTING.md) to TypeScript.\r\n\r\n* [Submit bugs](https://github.com/Microsoft/TypeScript/issues) and help us verify fixes as they are checked in.\r\n* Review the [source code changes](https://github.com/Microsoft/TypeScript/pulls).\r\n* Engage with other TypeScript users and developers on [StackOverflow](http://stackoverflow.com/questions/tagged/typescript).\r\n* Join the [#typescript](http://twitter.com/#!/search/realtime/%23typescript) discussion on Twitter.\r\n* [Contribute bug fixes](https://github.com/Microsoft/TypeScript/blob/master/CONTRIBUTING.md).\r\n\r\n# Documentation\r\n\r\n* [Quick tutorial](http://www.typescriptlang.org/Tutorial)\r\n* [Programming handbook](http://www.typescriptlang.org/Handbook)\r\n* [Homepage](http://www.typescriptlang.org/)\r\n",
+  "versions": {
+    "0.0.1-security": {
+      "name": "tslib",
+      "version": "0.0.1-security",
+      "description": "This package name is not currently in use, but was formerly occupied by another package. To avoid malicious use, npm is hanging on to the package name, but loosely, and we'll probably give it to you if you want it.",
+      "main": "index.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/npm/security-holder.git"
+      },
+      "keywords": [],
+      "author": "",
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/npm/security-holder/issues"
+      },
+      "homepage": "https://github.com/npm/security-holder#readme",
+      "gitHead": "9ef10011153183d323ed420df5bb17eaf08ab730",
+      "_id": "tslib@0.0.1-security",
+      "_shasum": "24b9ec60c77c2770dd727f6eca34d562ec5c252e",
+      "_from": ".",
+      "_npmVersion": "3.8.3",
+      "_nodeVersion": "5.10.1",
+      "_npmUser": {
+        "name": "kmanion",
+        "email": "kiera@npmjs.com"
+      },
+      "dist": {
+        "shasum": "24b9ec60c77c2770dd727f6eca34d562ec5c252e",
+        "tarball": "https://registry.npmjs.org/tslib/-/tslib-0.0.1-security.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "kmanion",
+          "email": "kiera@npmjs.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/tslib-0.0.1-security.tgz_1466117777096_0.3211661959066987"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "tslib",
+      "author": {
+        "name": "Microsoft Corp."
+      },
+      "homepage": "http://typescriptlang.org/",
+      "version": "1.0.0",
+      "licenses": [
+        {
+          "type": "Apache License 2.0",
+          "url": "https://github.com/Microsoft/tslib/blob/master/LICENSE.txt"
+        }
+      ],
+      "description": "Runtime library for TypeScript helper functions",
+      "keywords": [
+        "TypeScript",
+        "Microsoft",
+        "compiler",
+        "language",
+        "javascript",
+        "tslib",
+        "runtime"
+      ],
+      "bugs": {
+        "url": "https://github.com/Microsoft/TypeScript/issues"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Microsoft/tslib.git"
+      },
+      "main": "tslib.js",
+      "typings": "tslib.d.ts",
+      "gitHead": "fa4c8cc77570f662be17aee747797edc7988884c",
+      "_id": "tslib@1.0.0",
+      "scripts": {},
+      "_shasum": "6998194cc814ec190383692a0a82bfefaf2eb0b5",
+      "_from": ".",
+      "_npmVersion": "3.8.6",
+      "_nodeVersion": "5.11.1",
+      "_npmUser": {
+        "name": "typescript",
+        "email": "typescript@microsoft.com"
+      },
+      "dist": {
+        "shasum": "6998194cc814ec190383692a0a82bfefaf2eb0b5",
+        "tarball": "https://registry.npmjs.org/tslib/-/tslib-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "typescript",
+          "email": "typescript@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/tslib-1.0.0.tgz_1467074765430_0.27921289042569697"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "tslib",
+      "author": {
+        "name": "Microsoft Corp."
+      },
+      "homepage": "http://typescriptlang.org/",
+      "version": "1.1.0",
+      "licenses": [
+        {
+          "type": "Apache License 2.0",
+          "url": "https://github.com/Microsoft/tslib/blob/master/LICENSE.txt"
+        }
+      ],
+      "description": "Runtime library for TypeScript helper functions",
+      "keywords": [
+        "TypeScript",
+        "Microsoft",
+        "compiler",
+        "language",
+        "javascript",
+        "tslib",
+        "runtime"
+      ],
+      "bugs": {
+        "url": "https://github.com/Microsoft/TypeScript/issues"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Microsoft/tslib.git"
+      },
+      "main": "tslib.js",
+      "typings": "tslib.d.ts",
+      "gitHead": "53f2f165fdcdea32d1199d6a96759fe962b7a922",
+      "_id": "tslib@1.1.0",
+      "scripts": {},
+      "_shasum": "df06b30e178cc8e93d631899153a88f0d369b052",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.3.0",
+      "_npmUser": {
+        "name": "typescript",
+        "email": "typescript@microsoft.com"
+      },
+      "maintainers": [
+        {
+          "name": "typescript",
+          "email": "typescript@microsoft.com"
+        }
+      ],
+      "dist": {
+        "shasum": "df06b30e178cc8e93d631899153a88f0d369b052",
+        "tarball": "https://registry.npmjs.org/tslib/-/tslib-1.1.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/tslib-1.1.0.tgz_1479755930401_0.8607384378556162"
+      },
+      "directories": {}
+    },
+    "1.2.0": {
+      "name": "tslib",
+      "author": {
+        "name": "Microsoft Corp."
+      },
+      "homepage": "http://typescriptlang.org/",
+      "version": "1.2.0",
+      "licenses": [
+        {
+          "type": "Apache License 2.0",
+          "url": "https://github.com/Microsoft/tslib/blob/master/LICENSE.txt"
+        }
+      ],
+      "description": "Runtime library for TypeScript helper functions",
+      "keywords": [
+        "TypeScript",
+        "Microsoft",
+        "compiler",
+        "language",
+        "javascript",
+        "tslib",
+        "runtime"
+      ],
+      "bugs": {
+        "url": "https://github.com/Microsoft/TypeScript/issues"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Microsoft/tslib.git"
+      },
+      "main": "tslib.js",
+      "module": "tslib.es6.js",
+      "jsnext:main": "tslib.es6.js",
+      "typings": "tslib.d.ts",
+      "gitHead": "ee3bc0d49706d885b66028010f54aa79577f6c81",
+      "_id": "tslib@1.2.0",
+      "scripts": {},
+      "_shasum": "074fb171034594bdba4c4dbb197c26e4a0b88383",
+      "_from": ".",
+      "_npmVersion": "3.8.6",
+      "_nodeVersion": "5.11.1",
+      "_npmUser": {
+        "name": "typescript",
+        "email": "typescript@microsoft.com"
+      },
+      "dist": {
+        "shasum": "074fb171034594bdba4c4dbb197c26e4a0b88383",
+        "tarball": "https://registry.npmjs.org/tslib/-/tslib-1.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "typescript",
+          "email": "typescript@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/tslib-1.2.0.tgz_1480468810722_0.7613356069196016"
+      },
+      "directories": {}
+    },
+    "1.3.0": {
+      "name": "tslib",
+      "author": {
+        "name": "Microsoft Corp."
+      },
+      "homepage": "http://typescriptlang.org/",
+      "version": "1.3.0",
+      "licenses": [
+        {
+          "type": "Apache License 2.0",
+          "url": "https://github.com/Microsoft/tslib/blob/master/LICENSE.txt"
+        }
+      ],
+      "description": "Runtime library for TypeScript helper functions",
+      "keywords": [
+        "TypeScript",
+        "Microsoft",
+        "compiler",
+        "language",
+        "javascript",
+        "tslib",
+        "runtime"
+      ],
+      "bugs": {
+        "url": "https://github.com/Microsoft/TypeScript/issues"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Microsoft/tslib.git"
+      },
+      "main": "tslib.js",
+      "module": "tslib.es6.js",
+      "jsnext:main": "tslib.es6.js",
+      "typings": "tslib.d.ts",
+      "gitHead": "72389df410573470f21a1db3c3359fe889ffe7d0",
+      "_id": "tslib@1.3.0",
+      "scripts": {},
+      "_shasum": "fcc488f05abdfc34cbfcd26bba6cfdb02fe726eb",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.3.0",
+      "_npmUser": {
+        "name": "typescript",
+        "email": "typescript@microsoft.com"
+      },
+      "maintainers": [
+        {
+          "name": "typescript",
+          "email": "typescript@microsoft.com"
+        }
+      ],
+      "dist": {
+        "shasum": "fcc488f05abdfc34cbfcd26bba6cfdb02fe726eb",
+        "tarball": "https://registry.npmjs.org/tslib/-/tslib-1.3.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/tslib-1.3.0.tgz_1482341966387_0.4456295589916408"
+      },
+      "directories": {}
+    },
+    "1.4.0": {
+      "name": "tslib",
+      "author": {
+        "name": "Microsoft Corp."
+      },
+      "homepage": "http://typescriptlang.org/",
+      "version": "1.4.0",
+      "licenses": [
+        {
+          "type": "Apache License 2.0",
+          "url": "https://github.com/Microsoft/tslib/blob/master/LICENSE.txt"
+        }
+      ],
+      "description": "Runtime library for TypeScript helper functions",
+      "keywords": [
+        "TypeScript",
+        "Microsoft",
+        "compiler",
+        "language",
+        "javascript",
+        "tslib",
+        "runtime"
+      ],
+      "bugs": {
+        "url": "https://github.com/Microsoft/TypeScript/issues"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Microsoft/tslib.git"
+      },
+      "main": "tslib.js",
+      "module": "tslib.es6.js",
+      "jsnext:main": "tslib.es6.js",
+      "typings": "tslib.d.ts",
+      "gitHead": "e633121b3f22d4cdcc2a9a88c9a13bec509db69d",
+      "_id": "tslib@1.4.0",
+      "scripts": {},
+      "_shasum": "6bb6b97fe5f3d71bfbcf10e22ee1e29b6e63cc19",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "7.2.1",
+      "_npmUser": {
+        "name": "typescript",
+        "email": "typescript@microsoft.com"
+      },
+      "dist": {
+        "shasum": "6bb6b97fe5f3d71bfbcf10e22ee1e29b6e63cc19",
+        "tarball": "https://registry.npmjs.org/tslib/-/tslib-1.4.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "typescript",
+          "email": "typescript@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/tslib-1.4.0.tgz_1482381969978_0.5694500505924225"
+      },
+      "directories": {}
+    },
+    "1.5.0": {
+      "name": "tslib",
+      "author": {
+        "name": "Microsoft Corp."
+      },
+      "homepage": "http://typescriptlang.org/",
+      "version": "1.5.0",
+      "licenses": [
+        {
+          "type": "Apache License 2.0",
+          "url": "https://github.com/Microsoft/tslib/blob/master/LICENSE.txt"
+        }
+      ],
+      "description": "Runtime library for TypeScript helper functions",
+      "keywords": [
+        "TypeScript",
+        "Microsoft",
+        "compiler",
+        "language",
+        "javascript",
+        "tslib",
+        "runtime"
+      ],
+      "bugs": {
+        "url": "https://github.com/Microsoft/TypeScript/issues"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Microsoft/tslib.git"
+      },
+      "main": "tslib.js",
+      "module": "tslib.es6.js",
+      "jsnext:main": "tslib.es6.js",
+      "typings": "tslib.d.ts",
+      "gitHead": "d1e950a04d8b5c749fd53baad667d8aaef5fd4b9",
+      "_id": "tslib@1.5.0",
+      "scripts": {},
+      "_shasum": "3bb50f871e5fdf9a4555a9ff237b730860048fea",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "7.2.1",
+      "_npmUser": {
+        "name": "typescript",
+        "email": "typescript@microsoft.com"
+      },
+      "dist": {
+        "shasum": "3bb50f871e5fdf9a4555a9ff237b730860048fea",
+        "tarball": "https://registry.npmjs.org/tslib/-/tslib-1.5.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "typescript",
+          "email": "typescript@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/tslib-1.5.0.tgz_1483639649866_0.3902803307864815"
+      },
+      "directories": {}
+    },
+    "1.6.0": {
+      "name": "tslib",
+      "author": {
+        "name": "Microsoft Corp."
+      },
+      "homepage": "http://typescriptlang.org/",
+      "version": "1.6.0",
+      "licenses": [
+        {
+          "type": "Apache License 2.0",
+          "url": "https://github.com/Microsoft/tslib/blob/master/LICENSE.txt"
+        }
+      ],
+      "description": "Runtime library for TypeScript helper functions",
+      "keywords": [
+        "TypeScript",
+        "Microsoft",
+        "compiler",
+        "language",
+        "javascript",
+        "tslib",
+        "runtime"
+      ],
+      "bugs": {
+        "url": "https://github.com/Microsoft/TypeScript/issues"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Microsoft/tslib.git"
+      },
+      "main": "tslib.js",
+      "module": "tslib.es6.js",
+      "jsnext:main": "tslib.es6.js",
+      "typings": "tslib.d.ts",
+      "gitHead": "6a883a325b50a9969fe7738ac7461a03cd570363",
+      "_id": "tslib@1.6.0",
+      "scripts": {},
+      "_shasum": "cf36c93e02ae86a20fc131eae511162b869a6652",
+      "_from": ".",
+      "_npmVersion": "2.14.2",
+      "_nodeVersion": "6.9.5",
+      "_npmUser": {
+        "name": "typescript",
+        "email": "typescript@microsoft.com"
+      },
+      "maintainers": [
+        {
+          "name": "typescript",
+          "email": "typescript@microsoft.com"
+        }
+      ],
+      "dist": {
+        "shasum": "cf36c93e02ae86a20fc131eae511162b869a6652",
+        "tarball": "https://registry.npmjs.org/tslib/-/tslib-1.6.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/tslib-1.6.0.tgz_1487723078652_0.47501660767011344"
+      },
+      "directories": {}
+    },
+    "1.6.1": {
+      "name": "tslib",
+      "author": {
+        "name": "Microsoft Corp."
+      },
+      "homepage": "http://typescriptlang.org/",
+      "version": "1.6.1",
+      "license": "Apache-2.0",
+      "description": "Runtime library for TypeScript helper functions",
+      "keywords": [
+        "TypeScript",
+        "Microsoft",
+        "compiler",
+        "language",
+        "javascript",
+        "tslib",
+        "runtime"
+      ],
+      "bugs": {
+        "url": "https://github.com/Microsoft/TypeScript/issues"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Microsoft/tslib.git"
+      },
+      "main": "tslib.js",
+      "module": "tslib.es6.js",
+      "jsnext:main": "tslib.es6.js",
+      "typings": "tslib.d.ts",
+      "gitHead": "b687af3e87d37965064577b49be87f70376f7cb4",
+      "_id": "tslib@1.6.1",
+      "scripts": {},
+      "_shasum": "b77b09abc5fa4935e157d838b80e36dad47152c4",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.10.2",
+      "_npmUser": {
+        "name": "typescript",
+        "email": "typescript@microsoft.com"
+      },
+      "maintainers": [
+        {
+          "name": "typescript",
+          "email": "typescript@microsoft.com"
+        }
+      ],
+      "dist": {
+        "shasum": "b77b09abc5fa4935e157d838b80e36dad47152c4",
+        "tarball": "https://registry.npmjs.org/tslib/-/tslib-1.6.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/tslib-1.6.1.tgz_1492640651319_0.26942968158982694"
+      },
+      "directories": {}
+    },
+    "1.7.0": {
+      "name": "tslib",
+      "author": {
+        "name": "Microsoft Corp."
+      },
+      "homepage": "http://typescriptlang.org/",
+      "version": "1.7.0",
+      "license": "Apache-2.0",
+      "description": "Runtime library for TypeScript helper functions",
+      "keywords": [
+        "TypeScript",
+        "Microsoft",
+        "compiler",
+        "language",
+        "javascript",
+        "tslib",
+        "runtime"
+      ],
+      "bugs": {
+        "url": "https://github.com/Microsoft/TypeScript/issues"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Microsoft/tslib.git"
+      },
+      "main": "tslib.js",
+      "module": "tslib.es6.js",
+      "jsnext:main": "tslib.es6.js",
+      "typings": "tslib.d.ts",
+      "gitHead": "0cadbd082a3d57bec86bd5da792b131c3816edd8",
+      "_id": "tslib@1.7.0",
+      "scripts": {},
+      "_shasum": "6e8366695f72961252b35167b0dd4fbeeafba491",
+      "_from": ".",
+      "_npmVersion": "2.14.2",
+      "_nodeVersion": "6.10.2",
+      "_npmUser": {
+        "name": "typescript",
+        "email": "typescript@microsoft.com"
+      },
+      "maintainers": [
+        {
+          "name": "typescript",
+          "email": "typescript@microsoft.com"
+        }
+      ],
+      "dist": {
+        "shasum": "6e8366695f72961252b35167b0dd4fbeeafba491",
+        "tarball": "https://registry.npmjs.org/tslib/-/tslib-1.7.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/tslib-1.7.0.tgz_1493934784345_0.395422940608114"
+      },
+      "directories": {}
+    },
+    "1.7.1": {
+      "name": "tslib",
+      "author": {
+        "name": "Microsoft Corp."
+      },
+      "homepage": "http://typescriptlang.org/",
+      "version": "1.7.1",
+      "license": "Apache-2.0",
+      "description": "Runtime library for TypeScript helper functions",
+      "keywords": [
+        "TypeScript",
+        "Microsoft",
+        "compiler",
+        "language",
+        "javascript",
+        "tslib",
+        "runtime"
+      ],
+      "bugs": {
+        "url": "https://github.com/Microsoft/TypeScript/issues"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Microsoft/tslib.git"
+      },
+      "main": "tslib.js",
+      "module": "tslib.es6.js",
+      "jsnext:main": "tslib.es6.js",
+      "typings": "tslib.d.ts",
+      "gitHead": "363babce6a17743cd2247b97a008b7b25fc9322a",
+      "_id": "tslib@1.7.1",
+      "scripts": {},
+      "_shasum": "bc8004164691923a79fe8378bbeb3da2017538ec",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "7.2.1",
+      "_npmUser": {
+        "name": "typescript",
+        "email": "typescript@microsoft.com"
+      },
+      "dist": {
+        "shasum": "bc8004164691923a79fe8378bbeb3da2017538ec",
+        "tarball": "https://registry.npmjs.org/tslib/-/tslib-1.7.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "typescript",
+          "email": "typescript@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/tslib-1.7.1.tgz_1494888108332_0.903959889896214"
+      },
+      "directories": {}
+    },
+    "1.8.0": {
+      "name": "tslib",
+      "author": {
+        "name": "Microsoft Corp."
+      },
+      "homepage": "http://typescriptlang.org/",
+      "version": "1.8.0",
+      "license": "Apache-2.0",
+      "description": "Runtime library for TypeScript helper functions",
+      "keywords": [
+        "TypeScript",
+        "Microsoft",
+        "compiler",
+        "language",
+        "javascript",
+        "tslib",
+        "runtime"
+      ],
+      "bugs": {
+        "url": "https://github.com/Microsoft/TypeScript/issues"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Microsoft/tslib.git"
+      },
+      "main": "tslib.js",
+      "module": "tslib.es6.js",
+      "jsnext:main": "tslib.es6.js",
+      "typings": "tslib.d.ts",
+      "gitHead": "b780e46e4293f0d0793c6c65f4c77feb88e897c6",
+      "_id": "tslib@1.8.0",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "8.6.0",
+      "_npmUser": {
+        "name": "typescript",
+        "email": "typescript@microsoft.com"
+      },
+      "dist": {
+        "integrity": "sha512-ymKWWZJST0/CkgduC2qkzjMOWr4bouhuURNXCn/inEX0L57BnRG6FhX76o7FOnsjHazCjfU2LKeSrlS2sIKQJg==",
+        "shasum": "dc604ebad64bcbf696d613da6c954aa0e7ea1eb6",
+        "tarball": "https://registry.npmjs.org/tslib/-/tslib-1.8.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "typescript",
+          "email": "typescript@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/tslib-1.8.0.tgz_1507696492379_0.2634648806415498"
+      },
+      "directories": {}
+    },
+    "1.8.1": {
+      "name": "tslib",
+      "author": {
+        "name": "Microsoft Corp."
+      },
+      "homepage": "http://typescriptlang.org/",
+      "version": "1.8.1",
+      "license": "Apache-2.0",
+      "description": "Runtime library for TypeScript helper functions",
+      "keywords": [
+        "TypeScript",
+        "Microsoft",
+        "compiler",
+        "language",
+        "javascript",
+        "tslib",
+        "runtime"
+      ],
+      "bugs": {
+        "url": "https://github.com/Microsoft/TypeScript/issues"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Microsoft/tslib.git"
+      },
+      "main": "tslib.js",
+      "module": "tslib.es6.js",
+      "jsnext:main": "tslib.es6.js",
+      "typings": "tslib.d.ts",
+      "gitHead": "b1ed5e1b940756d18609833caf9b781e9bc3984f",
+      "_id": "tslib@1.8.1",
+      "scripts": {},
+      "_shasum": "6946af2d1d651a7b1863b531d6e5afa41aa44eac",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "7.2.1",
+      "_npmUser": {
+        "name": "typescript",
+        "email": "typescript@microsoft.com"
+      },
+      "dist": {
+        "shasum": "6946af2d1d651a7b1863b531d6e5afa41aa44eac",
+        "tarball": "https://registry.npmjs.org/tslib/-/tslib-1.8.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "typescript",
+          "email": "typescript@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/tslib-1.8.1.tgz_1512602816537_0.9111927668564022"
+      },
+      "directories": {}
+    },
+    "1.9.0": {
+      "name": "tslib",
+      "author": {
+        "name": "Microsoft Corp."
+      },
+      "homepage": "http://typescriptlang.org/",
+      "version": "1.9.0",
+      "license": "Apache-2.0",
+      "description": "Runtime library for TypeScript helper functions",
+      "keywords": [
+        "TypeScript",
+        "Microsoft",
+        "compiler",
+        "language",
+        "javascript",
+        "tslib",
+        "runtime"
+      ],
+      "bugs": {
+        "url": "https://github.com/Microsoft/TypeScript/issues"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Microsoft/tslib.git"
+      },
+      "main": "tslib.js",
+      "module": "tslib.es6.js",
+      "jsnext:main": "tslib.es6.js",
+      "typings": "tslib.d.ts",
+      "gitHead": "3d0f4d4823605e6e82cf250b509d9a685c42ad41",
+      "_id": "tslib@1.9.0",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "9.2.0",
+      "_npmUser": {
+        "name": "typescript",
+        "email": "typescript@microsoft.com"
+      },
+      "dist": {
+        "integrity": "sha512-f/qGG2tUkrISBlQZEjEqoZ3B2+npJjIf04H1wuAv9iA8i04Icp+61KRXxFdha22670NJopsZCIjhC3SnjPRKrQ==",
+        "shasum": "e37a86fda8cbbaf23a057f473c9f4dc64e5fc2e8",
+        "tarball": "https://registry.npmjs.org/tslib/-/tslib-1.9.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "typescript",
+          "email": "typescript@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/tslib-1.9.0.tgz_1516311863696_0.40897737606428564"
+      },
+      "directories": {}
+    },
+    "1.9.1": {
+      "name": "tslib",
+      "author": {
+        "name": "Microsoft Corp."
+      },
+      "homepage": "http://typescriptlang.org/",
+      "version": "1.9.1",
+      "license": "Apache-2.0",
+      "description": "Runtime library for TypeScript helper functions",
+      "keywords": [
+        "TypeScript",
+        "Microsoft",
+        "compiler",
+        "language",
+        "javascript",
+        "tslib",
+        "runtime"
+      ],
+      "bugs": {
+        "url": "https://github.com/Microsoft/TypeScript/issues"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Microsoft/tslib.git"
+      },
+      "main": "tslib.js",
+      "module": "tslib.es6.js",
+      "jsnext:main": "tslib.es6.js",
+      "typings": "tslib.d.ts",
+      "gitHead": "2c3d5d6be3594f3a202cfb7593f0b2d1b87c76ad",
+      "_id": "tslib@1.9.1",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.4.0",
+      "_npmUser": {
+        "name": "typescript",
+        "email": "typescript@microsoft.com"
+      },
+      "dist": {
+        "integrity": "sha512-avfPS28HmGLLc2o4elcc2EIq2FcH++Yo5YxpBZi9Yw93BCTGFthI4HPE4Rpep6vSYQaK8e69PelM44tPj+RaQg==",
+        "shasum": "a5d1f0532a49221c87755cfcc89ca37197242ba7",
+        "tarball": "https://registry.npmjs.org/tslib/-/tslib-1.9.1.tgz",
+        "fileCount": 12,
+        "unpackedSize": 58108,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa+dJlCRA9TVsSAnZWagAAc04P/2055iQwodzc2/wjF925\nGQEwSSuK3fseLB9zAY+/Ik0Ttv8d70p7v3AYp7L8M8/bvrZnQcmqmLxUuUJf\n3nG+j7mfizoPK6HBJ7h6LVFs5IKpHHKapxsmg+dUj9WL/xgaou4OKTPeupBl\nld/Ke8Y2bI2c7l6RsMz7aMj/KbnTSlXXMg5xTOCHHieSq20FrLRhZ23+Uoby\nNPzVuJAclBGKw7z5d9X6rL5tkYYA8lvnFwYdInz4QFvNl1tJk5WidFZ7LwUe\nvwbGsMuJ6tiqSfzqbaiQ22WSSzqzfxpFUx4dxUf3cS6NeKjNjGMi2y/U7Cid\n+PQyRWsU2GojdjptwoOie5CHHtYFXecQh8/WPYiHoL386iCH5rgX8nWXvl03\nfq89jw4/VXUfvXjMrDTekQDOakrEjkqwhbV+fnalCkdrguNQ7qBweTQ2Qetn\n6MENIqo8CecjFymZT/ggJFFiRpmi8gelV3dzC+imJJgYXh7v1icSuL3AKsF+\nVPTs/QEzGtPIWnej+NWKG1yu3X+SQgSs28Hf6hDcd3Hy0MMVuVosWDD4WG2J\n+yjEB36xLET9Z/ni5Xy4/MMNp6TynpA38/a5qA2Df66QxNWLKs8BY1NhIDv5\nIbHsA8j8s9wG2lY4Cisjii21fZP2bHNNWibmOSxB+Jgu/dFsXl4WR/L+UWw/\nRHVh\r\n=RMXV\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "typescript",
+          "email": "typescript@microsoft.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/tslib_1.9.1_1526321764351_0.034802452325894295"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.9.2": {
+      "name": "tslib",
+      "author": {
+        "name": "Microsoft Corp."
+      },
+      "homepage": "http://typescriptlang.org/",
+      "version": "1.9.2",
+      "license": "Apache-2.0",
+      "description": "Runtime library for TypeScript helper functions",
+      "keywords": [
+        "TypeScript",
+        "Microsoft",
+        "compiler",
+        "language",
+        "javascript",
+        "tslib",
+        "runtime"
+      ],
+      "bugs": {
+        "url": "https://github.com/Microsoft/TypeScript/issues"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Microsoft/tslib.git"
+      },
+      "main": "tslib.js",
+      "module": "tslib.es6.js",
+      "jsnext:main": "tslib.es6.js",
+      "typings": "tslib.d.ts",
+      "gitHead": "a921045169515012bd51cb6153c1eea692229c86",
+      "_id": "tslib@1.9.2",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.4.0",
+      "_npmUser": {
+        "name": "typescript",
+        "email": "typescript@microsoft.com"
+      },
+      "dist": {
+        "integrity": "sha512-AVP5Xol3WivEr7hnssHDsaM+lVrVXWUvd1cfXTRkTj80b//6g2wIFEH6hZG0muGZRnHGrfttpdzRk3YlBkWjKw==",
+        "shasum": "8be0cc9a1f6dc7727c38deb16c2ebd1a2892988e",
+        "tarball": "https://registry.npmjs.org/tslib/-/tslib-1.9.2.tgz",
+        "fileCount": 12,
+        "unpackedSize": 58208,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbDedzCRA9TVsSAnZWagAAsfQP/09FFQBPzm/nvPzty2rY\n+7GveoqLDO8sv1bbAJwjR/WleMPfuIsNWu1ORxzp9AKathfCl0bewO6Vv2AZ\nYdCZ2/kM2lvOF89Goj9iB/PJKReXcsNWguOdt/8d80b7z6PGxsvjDuolN00C\nn2X3zktK9MNrMng2p9CBrXicgLG6JH3RiVpWyWHppKTmazYSVz8mryYer6jV\noAAMUfdGC+n/QZtHVRzO6aBCHfJkT/wFglyH3ejZqYmGvyqese2wZ0DN0I8e\nxPs/lVNbrBXtaxSMyxOgG5YVnmhfgyLIColYapGoAc+AbFpdPARW6OjhqkyC\nVrRce2ZWOJd1xs5CXk92weHG/FW/pZzsTQvZCyiuT80uE3Q036fhQNjyHWyS\n/GV1XmbRYmOK5Qcj/mD1cSoSNom3qxG4xo8H1LHDtlIYO78apHEdU73apv6x\nySwkkMRWkMWnUc2Mwvm4IoDMX+Qw9160m/glJZfJdKBkQMfABR7emgh9k3zu\nZrMLLb6mw+KSl96iDvybTNlcFnjpc4iNWmZiB5lSXnop41LHt/pKjMQOXZzY\nmV4w/7UVSB0S++jMFC1HzlU3umnzTY+tCAQINBt8iyQm0astvyGlUlI9bGXw\nWJfbzPlSjyjzwrEctffsg34s7l+l4BtgAFmMHuI9ModEWk/Eh207BLe2licn\nmCsn\r\n=5/3y\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "typescript",
+          "email": "typescript@microsoft.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/tslib_1.9.2_1527637873859_0.7466322394870168"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.9.3": {
+      "name": "tslib",
+      "author": {
+        "name": "Microsoft Corp."
+      },
+      "homepage": "http://typescriptlang.org/",
+      "version": "1.9.3",
+      "license": "Apache-2.0",
+      "description": "Runtime library for TypeScript helper functions",
+      "keywords": [
+        "TypeScript",
+        "Microsoft",
+        "compiler",
+        "language",
+        "javascript",
+        "tslib",
+        "runtime"
+      ],
+      "bugs": {
+        "url": "https://github.com/Microsoft/TypeScript/issues"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Microsoft/tslib.git"
+      },
+      "main": "tslib.js",
+      "module": "tslib.es6.js",
+      "jsnext:main": "tslib.es6.js",
+      "typings": "tslib.d.ts",
+      "gitHead": "9dd9aa322c893e5e0b3f1609b1126314ccf37bbb",
+      "_id": "tslib@1.9.3",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.4.0",
+      "_npmUser": {
+        "name": "typescript",
+        "email": "typescript@microsoft.com"
+      },
+      "dist": {
+        "integrity": "sha512-4krF8scpejhaOgqzBEcGM7yDIEfi0/8+8zDRZhNZZ2kjmHJ4hv3zCbQWxoJGz1iw5U0Jl0nma13xzHXcncMavQ==",
+        "shasum": "d7e4dd79245d85428c4d7e4822a79917954ca286",
+        "tarball": "https://registry.npmjs.org/tslib/-/tslib-1.9.3.tgz",
+        "fileCount": 12,
+        "unpackedSize": 58392,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbLKj/CRA9TVsSAnZWagAAMbAP/0g8SAYSi20BDDGjSuw4\noNwKH5PeM4GkxOyEvI+dvrhx7I9TuH+dbBmXf/776MflvSeiZ+nzh/q7EP8o\noFTAvh/jg5o8tKbpMSZaQwMG1Zni18qt8dpb9hY39kN+/3UEPbguMEqcIJsD\nNlg8vc/QnlcvV8L1XxTr7d8x/2+lXhEJygG6+JIhDJvl58SzoCuJKvyDFRAU\nMhQ2avaorYsyh9yR5C/9shY/I/TJk0yhTDmfdLj+M/6Fc4u6XO0uSv5CJaG4\nOoB3xgg/dVJR9eNPyCDjyIaLvTH+VPjZOwwpcy1MmIJpztCa4XcZ1TBtha4a\nsOGRrik8OmawEorbOmFAeXxyhUTtTWqBq2EuaiCzBZl6niRZLY/6jWKExXPM\ngmBvKwqm2M7Vnas37Ab9Ob/Acwaq39oKs4gubutex1xJw7H2uAPNe1XlWIVV\njw61DmK278xzQXNQvCHS7HQp/sG0ma8tFz3XT8S4QM9jLdsLHjjwYUvCnv9p\nlnbdOL/fARL4ZkzzBW8RHo44o8kdDhHO/t7VqOn9hSb/s95tqJIwhWGw/XMk\nudBtWcGEAfg7mt1EDsSkwCNNhPESC54O/reBW04FrXRnWaBa8xm/XLxQmIC/\ns8yJhstov1IiIHXGx/TwSKPCHHlfPGYQrlnjgiYrIJqV6Jxti267xw+kRluD\neT4g\r\n=O9KF\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "typescript",
+          "email": "typescript@microsoft.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/tslib_1.9.3_1529653503252_0.6289690602918909"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.10.0": {
+      "name": "tslib",
+      "author": {
+        "name": "Microsoft Corp."
+      },
+      "homepage": "http://typescriptlang.org/",
+      "version": "1.10.0",
+      "license": "Apache-2.0",
+      "description": "Runtime library for TypeScript helper functions",
+      "keywords": [
+        "TypeScript",
+        "Microsoft",
+        "compiler",
+        "language",
+        "javascript",
+        "tslib",
+        "runtime"
+      ],
+      "bugs": {
+        "url": "https://github.com/Microsoft/TypeScript/issues"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Microsoft/tslib.git"
+      },
+      "main": "tslib.js",
+      "module": "tslib.es6.js",
+      "jsnext:main": "tslib.es6.js",
+      "typings": "tslib.d.ts",
+      "gitHead": "e1aae12c74c57200f72a7f9cfb53321e0c43b616",
+      "_id": "tslib@1.10.0",
+      "_nodeVersion": "11.15.0",
+      "_npmVersion": "6.7.0",
+      "dist": {
+        "integrity": "sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==",
+        "shasum": "c3c19f95973fb0a62973fb09d90d961ee43e5c8a",
+        "tarball": "https://registry.npmjs.org/tslib/-/tslib-1.10.0.tgz",
+        "fileCount": 9,
+        "unpackedSize": 38131,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJc/tnbCRA9TVsSAnZWagAAbx4P/2qh+Bkug5hngdttGPKu\nvOo3zVChx4lFykr1SBqE20AIlN+QI1NhVjlWgfhcsPJFXTuNRZR33ZsZ0ItY\nFz5St8fQw293LDW8iWS/m8eIF1UmrI0h6Udtk4zgpJPt0Y40EWjATbWPpkGB\nZpdTAjcEDJnDJANdR+hK1B4Ln+0ZLKVx+Ar6oRIk/JCdzSTHWXmZIyP6gGGi\nA7ppCZqPLs/QhB1OQNVR1lpMTTw0FX5dgTTufrfb4Srl1/yOi2epzzNA9eu4\nLN1RKiyelXmFsgQawoZoo+cSAHGuPQpv1K3dJ6F25jpIgBJHGkAHgEmydtAb\nlNWUSXokcHgL2t/DT8gICCF5Z9bmdpNljiCC/B4bq1SFpuFgKQIbWrhNCFy2\n5rRQgHFK848W8ZfsZVhdKUktd/7T4D/tFBT9TEcLHgY/1yqmOQAPL4AtUqSy\nXe5rhLMze33nl7eh1mVPQpWQlrtzGq+0GRgkwfQVTRRnStXMWIqRM3FgXrqO\ni/yy+HVrfTE71sqaZGgul8vfbDo6m70n0ca2Cpo02UJjC7oVzDH82aHwgOTf\nvWoYgU5zewKcu/Jxi5vhn3TYlkb9UQyNIur/VmMl3NZ1dceQnaqdv1Z+1UX6\nMfmhF7LL1HllVVO2u8ZqiKNoVppAHt4aJuRNcor/uth/Y2dHLTI/eWG0/9WD\nA9bw\r\n=A20l\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "typescript",
+          "email": "typescript@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "typescript",
+        "email": "typescript@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/tslib_1.10.0_1560205786771_0.9231548154121492"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.11.0": {
+      "name": "tslib",
+      "author": {
+        "name": "Microsoft Corp."
+      },
+      "homepage": "https://www.typescriptlang.org/",
+      "version": "1.11.0",
+      "license": "Apache-2.0",
+      "description": "Runtime library for TypeScript helper functions",
+      "keywords": [
+        "TypeScript",
+        "Microsoft",
+        "compiler",
+        "language",
+        "javascript",
+        "tslib",
+        "runtime"
+      ],
+      "bugs": {
+        "url": "https://github.com/Microsoft/TypeScript/issues"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Microsoft/tslib.git"
+      },
+      "main": "tslib.js",
+      "module": "tslib.es6.js",
+      "jsnext:main": "tslib.es6.js",
+      "typings": "tslib.d.ts",
+      "sideEffects": false,
+      "gitHead": "19d1e0a336c8826551956310ecc7dd9fa06511ad",
+      "_id": "tslib@1.11.0",
+      "_nodeVersion": "12.16.1",
+      "_npmVersion": "6.13.4",
+      "dist": {
+        "integrity": "sha512-BmndXUtiTn/VDDrJzQE7Mm22Ix3PxgLltW9bSNLoeCY31gnG2OPx0QqJnuc9oMIKioYrz487i6K9o4Pdn0j+Kg==",
+        "shasum": "f1f3528301621a53220d58373ae510ff747a66bc",
+        "tarball": "https://registry.npmjs.org/tslib/-/tslib-1.11.0.tgz",
+        "fileCount": 10,
+        "unpackedSize": 40599,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeTvksCRA9TVsSAnZWagAAZzwQAJ92ZNqhoMLLNyxo1Q6J\nLJdrFiMVLDrKMWmyPz90tYq//9lHUpgn1qzoKNs5paoYEBDHltndy6+dXG1U\n7BsKg/GKDstgR2ZM025I7pdRsBt9nvrpMwNItU6PaQ8bnVAZKhYLm7kHGWW3\nqDA7/aardQNGRHCVpHbXUnmz2W/T0B1bRxDSKgMceIZ1V8KOGNFH+lRQ2g26\nJ7ZFPB9D7VqUOe48JtuLXGmwq0FEA+XD1H6iUQ3vOpUCTl2K8cJFg4K/oVZe\np4VB59TeUg8VqxPe+ODYnPwATY9acp1JYOVQwIOyy6HL9ReyHpWchW2KTBCP\nhTUkqsaPld/Hqv1fTGAHmZ33a5zJZHOZ/aUr/W6NcaQA7HAu+4JTVbBFwMZl\nQ7T+FCQ7O1fwQ7HZ4BcDq0Bg269+TXDlz+8nIpU1HZGJ5Kbbtbex6IPUBQe1\nsXN4ZcH6FWem41r4Yc8KB6ntusf6qPUlVwUez/jxnWAxM+IjdhNEMAcMCjCX\nd+Z7FhS2BKACGnc910ld1Gbr8JEgDib2dSR0om3/SF056RAL+9OgMsRmV7iH\nCYMzVjWB/cdgglXVL+NZsxT7lgpxSUNUXpNRneQdHAXf3ZfhA2xhW+w4JYFy\nZ+3+w6bm2HukLN91tE3NerLwOS+rYvloGgDhD7KjIyLoXEnIf6iFe51sLiYL\nmLDe\r\n=r4E+\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "typescript",
+          "email": "typescript@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "typescript",
+        "email": "typescript@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/tslib_1.11.0_1582233900236_0.17706924280555403"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.11.1": {
+      "name": "tslib",
+      "author": {
+        "name": "Microsoft Corp."
+      },
+      "homepage": "https://www.typescriptlang.org/",
+      "version": "1.11.1",
+      "license": "Apache-2.0",
+      "description": "Runtime library for TypeScript helper functions",
+      "keywords": [
+        "TypeScript",
+        "Microsoft",
+        "compiler",
+        "language",
+        "javascript",
+        "tslib",
+        "runtime"
+      ],
+      "bugs": {
+        "url": "https://github.com/Microsoft/TypeScript/issues"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Microsoft/tslib.git"
+      },
+      "main": "tslib.js",
+      "module": "tslib.es6.js",
+      "jsnext:main": "tslib.es6.js",
+      "typings": "tslib.d.ts",
+      "sideEffects": false,
+      "gitHead": "c1f87f79190d61e1e4ca24af03894771cdf1aef9",
+      "_id": "tslib@1.11.1",
+      "_nodeVersion": "12.16.1",
+      "_npmVersion": "6.13.4",
+      "dist": {
+        "integrity": "sha512-aZW88SY8kQbU7gpV19lN24LtXh/yD4ZZg6qieAJDDg+YBsJcSmLGK9QpnUjAKVG/xefmvJGd1WUmfpT/g6AJGA==",
+        "shasum": "eb15d128827fbee2841549e171f45ed338ac7e35",
+        "tarball": "https://registry.npmjs.org/tslib/-/tslib-1.11.1.tgz",
+        "fileCount": 9,
+        "unpackedSize": 40264,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeWBlHCRA9TVsSAnZWagAAUs8P/0iuCfG3FBBkBKnELE07\n8P91jap3siRIuB6fHXxCxlRjmL5QhKOhgpyN5K5AtkLWbszu5Vzgyvaa1w+u\n2nmRJHxsxMse9QqpknFrUOI1hfjQ4lbe2+xCVw+WGp1psa4GL86vvBjdAATa\n8TkaST7X8lYT7bevEj9Aa31Zt/XbIbQgT3GufbEieutwIjnYlbmdU4o5wQ3b\nMypdTQR9WT6QxhMMp2cJK83nGs8gq2qJsz5lexQ/HpN4yzbeaqvBjs2Luyfb\n0LcV1zTrpPjryDlY8m+d+YR73Or8XUtXF/EPgePt3KVRufrI722JTaG/V4Dy\nXTgYFsrIlIxjOivCXpBIZxOtQ/RvWqvzY1rm1q9mYjyjVsggqctzpJaGb2Jd\nIbsV9+NiT/VnhTvRDrncX3Cskja6if1Yl0fSh+ejNSEWwE1MVFMKUVQlD9zN\nu7GxbVrrfy87yiXOkPVvPcEyciWMd6po8E61YG5mKPH0tqGMz8FSZ90axgVI\n1n9jH8KDsA/3d1NwycNKQIdyaVeG3ompHTemKRpI2tuu5SxEK6aYbeA4ZNU9\nEoGBq7AwXc4vfDjjEmkbr3mdS2iJqbEeoMYcrrK/2VLUKAAQDEGRVXeZ9LIj\nzMG9/RyAHdLsNIBz1pna8Eou7wI79O6E/uPfOgIGbtISYRX/0dKuaemYRRFm\nUfMR\r\n=3G+p\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "andrew@wheream.io",
+          "name": "andrewbranch"
+        },
+        {
+          "email": "mineyalc@microsoft.com",
+          "name": "minestarks"
+        },
+        {
+          "email": "rbuckton@chronicles.org",
+          "name": "rbuckton"
+        },
+        {
+          "email": "ncsander@indiana.edu",
+          "name": "sanders_n"
+        },
+        {
+          "email": "shkamat@microsoft.com",
+          "name": "sheetalkamat"
+        },
+        {
+          "email": "typescript@microsoft.com",
+          "name": "typescript-bot"
+        },
+        {
+          "email": "wwigham@gmail.com",
+          "name": "weswigham"
+        }
+      ],
+      "_npmUser": {
+        "name": "typescript-bot",
+        "email": "typescript@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/tslib_1.11.1_1582831943365_0.2501874944980056"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.11.2": {
+      "name": "tslib",
+      "author": {
+        "name": "Microsoft Corp."
+      },
+      "homepage": "https://www.typescriptlang.org/",
+      "version": "1.11.2",
+      "license": "0BSD",
+      "description": "Runtime library for TypeScript helper functions",
+      "keywords": [
+        "TypeScript",
+        "Microsoft",
+        "compiler",
+        "language",
+        "javascript",
+        "tslib",
+        "runtime"
+      ],
+      "bugs": {
+        "url": "https://github.com/Microsoft/TypeScript/issues"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Microsoft/tslib.git"
+      },
+      "main": "tslib.js",
+      "module": "tslib.es6.js",
+      "jsnext:main": "tslib.es6.js",
+      "typings": "tslib.d.ts",
+      "sideEffects": false,
+      "gitHead": "3d93421d7be470d614f527ff207d47559c859510",
+      "_id": "tslib@1.11.2",
+      "_nodeVersion": "12.16.3",
+      "_npmVersion": "6.14.4",
+      "dist": {
+        "integrity": "sha512-tTSkux6IGPnUGUd1XAZHcpu85MOkIl5zX49pO+jfsie3eP0B6pyhOlLXm3cAC6T7s+euSDDUUV+Acop5WmtkVg==",
+        "shasum": "9c79d83272c9a7aaf166f73915c9667ecdde3cc9",
+        "tarball": "https://registry.npmjs.org/tslib/-/tslib-1.11.2.tgz",
+        "fileCount": 9,
+        "unpackedSize": 31697,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJesfVTCRA9TVsSAnZWagAATHkP/j8QxfRxcsDPnlfY+jMG\nUPUdVsqAtu5mUQ2FjUrJM+RMjYv1c6uWGreeThcu3mIRBJTexWruYtHsEexr\nBOSPknV18SKXMvLfVfquyLtA1eLKG7VUVNQ6Vtn6L2VFmVNI/8m0YWLlMT2m\nAAedVx0IlwhPsQlJXYW6Q+3npbtqosujqY0idwDgTJKiyPeQivtqlW7FBbWI\nzx5IE7Vp6poS+qKcum6/cl1cRYRaTxrxQbOBCpd3fi1eE7jGqzAiGktNJHeG\nzrVmR/oTukDbU8u2IWXk2sPmSXaKAm36lWnuapTWrn8X17SXVVGlOxanpvT1\nxNFuVt+qt7GhWY43g72nfxhbcRmJhmfOiJP/hrD2JZ1GcBeHOtopzLgEfncb\n5EzlqcXiRYkAlQ69JFe56jk5GLr2YNuJ64CDkHo8FpJKYsrZwPA/oCKpyPaS\na+gAXvZVcjO1w9n0gCMiER2COakFwPrk0a54uksLT+T1IXqD7jZ04/s3Rt7s\nj9pNnPSX1I8Nq1v2IRZvW1WnThQBLsq0HaiCcN0Of8nNe6eTyvaqoF1NXO/H\ndfXWSF95rDytqVTHbhYzMaF9kLtL/nz2k1L1sG/jTce9ir9MOcznCO35owDc\nQsmnoxoqomGVcQtcGzwqSJL56F0mI6uBkjFcqlIISiTAb1IZfHkkBejSPehB\nVfto\r\n=aGAO\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "andrew@wheream.io",
+          "name": "andrewbranch"
+        },
+        {
+          "email": "mineyalc@microsoft.com",
+          "name": "minestarks"
+        },
+        {
+          "email": "orta.therox@gmail.com",
+          "name": "orta"
+        },
+        {
+          "email": "rbuckton@chronicles.org",
+          "name": "rbuckton"
+        },
+        {
+          "email": "ncsander@indiana.edu",
+          "name": "sanders_n"
+        },
+        {
+          "email": "shkamat@microsoft.com",
+          "name": "sheetalkamat"
+        },
+        {
+          "email": "typescript@microsoft.com",
+          "name": "typescript-bot"
+        },
+        {
+          "email": "ortam@microsoft.com",
+          "name": "typescript-deploys"
+        },
+        {
+          "email": "wwigham@gmail.com",
+          "name": "weswigham"
+        }
+      ],
+      "_npmUser": {
+        "name": "typescript-bot",
+        "email": "typescript@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/tslib_1.11.2_1588720978820_0.06876526908743164"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.12.0": {
+      "name": "tslib",
+      "author": {
+        "name": "Microsoft Corp."
+      },
+      "homepage": "https://www.typescriptlang.org/",
+      "version": "1.12.0",
+      "license": "0BSD",
+      "description": "Runtime library for TypeScript helper functions",
+      "keywords": [
+        "TypeScript",
+        "Microsoft",
+        "compiler",
+        "language",
+        "javascript",
+        "tslib",
+        "runtime"
+      ],
+      "bugs": {
+        "url": "https://github.com/Microsoft/TypeScript/issues"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Microsoft/tslib.git"
+      },
+      "main": "tslib.js",
+      "module": "tslib.es6.js",
+      "jsnext:main": "tslib.es6.js",
+      "typings": "tslib.d.ts",
+      "sideEffects": false,
+      "gitHead": "3a2181005919fe65dc68b3407937eea60e04e753",
+      "_id": "tslib@1.12.0",
+      "_nodeVersion": "12.16.3",
+      "_npmVersion": "6.14.4",
+      "dist": {
+        "integrity": "sha512-5rxCQkP0kytf4H1T4xz1imjxaUUPMvc5aWp0rJ/VMIN7ClRiH1FwFvBt8wOeMasp/epeUnmSW6CixSIePtiLqA==",
+        "shasum": "d1fc9cacd06a1456c62f2902b361573e83d66473",
+        "tarball": "https://registry.npmjs.org/tslib/-/tslib-1.12.0.tgz",
+        "fileCount": 9,
+        "unpackedSize": 32754,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeuuX/CRA9TVsSAnZWagAAOhMP/3nXRBheGfDW9QqWJE5r\nTpEiFUKJbzMEHiu6jEIJtQ6dPVT50YlfrhYlBkPgr7UCTnhrdfAqbnaTbG3r\nN0QuZhiEr7ZIXkmXoQTtXjWuZGVo4ywTn4bhIlPm+qlczIOxZVw89+5EFCOk\nYtqeiEy4GX78/MQJ2Rrr/I9IWVZqt//jBEqy6NVLMguN0S5uF13mSIQu3qyL\nhQm9RjiSEBIuFJxDxOB1ivqRKPTGPmELqL5TVE8UwJyyQkH6XCGG4yVPbtXf\nAg1hTtVjuTPFcaBkD0o7uqcbVfxLp5JEMjJ4t+14fBNu2u8FuypgbIlTXZVS\nzVahrgj2zFxH8oD0FP4lIuJeujW1hhZvY1JlrvdNIMZK4bT0iUJ5xpDp/unb\n+ReXwD8bxCoGXaXEBVkCw3NkKVQ6R3Wmvz6Ia1TNyXtA8n8NgAGG3Xc+R8nv\n3hjtvED59EL+LhcfEaVYiHrpwJI5ly0qCpljBU+48pip62YyXZVIxtLD5Vd5\nse4zuyGzsGZTX9HxrtoDKdqn6xD0PNSzM2juzAPuvFwOkHpEUHxZGg+S3hkG\ngBabzoEyfsJdnPfHJf5LhjNkLvyA0FJPRKna8rp7NGlmhhQXA5a7Ag30FB9+\nWO6QdsT85Eq/Yj6n2/My4C4Uxx8JWEuBXxR7/0XX4Rd56aUiLeiEX2T7yI7g\niJg9\r\n=DL+7\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "andrew@wheream.io",
+          "name": "andrewbranch"
+        },
+        {
+          "email": "mineyalc@microsoft.com",
+          "name": "minestarks"
+        },
+        {
+          "email": "orta.therox@gmail.com",
+          "name": "orta"
+        },
+        {
+          "email": "rbuckton@chronicles.org",
+          "name": "rbuckton"
+        },
+        {
+          "email": "ncsander@indiana.edu",
+          "name": "sanders_n"
+        },
+        {
+          "email": "shkamat@microsoft.com",
+          "name": "sheetalkamat"
+        },
+        {
+          "email": "typescript@microsoft.com",
+          "name": "typescript-bot"
+        },
+        {
+          "email": "ortam@microsoft.com",
+          "name": "typescript-deploys"
+        },
+        {
+          "email": "wwigham@gmail.com",
+          "name": "weswigham"
+        }
+      ],
+      "_npmUser": {
+        "name": "typescript-bot",
+        "email": "typescript@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/tslib_1.12.0_1589306878749_0.7705174932204684"
+      },
+      "_hasShrinkwrap": false,
+      "deprecated": "TSLib 1.12.0 accidentally contained a breaking change and is not compatible with the output produced by TypeScript versions 3.8 or earlier - use tslib 1.13.0 for TS <=3.8, or TSLib 2.0.0 for TS >=3.9"
+    },
+    "1.13.0": {
+      "name": "tslib",
+      "author": {
+        "name": "Microsoft Corp."
+      },
+      "homepage": "https://www.typescriptlang.org/",
+      "version": "1.13.0",
+      "license": "0BSD",
+      "description": "Runtime library for TypeScript helper functions",
+      "keywords": [
+        "TypeScript",
+        "Microsoft",
+        "compiler",
+        "language",
+        "javascript",
+        "tslib",
+        "runtime"
+      ],
+      "bugs": {
+        "url": "https://github.com/Microsoft/TypeScript/issues"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Microsoft/tslib.git"
+      },
+      "main": "tslib.js",
+      "module": "tslib.es6.js",
+      "jsnext:main": "tslib.es6.js",
+      "typings": "tslib.d.ts",
+      "sideEffects": false,
+      "gitHead": "b7e9c51bf7fb01865e8eec136fc30098c6144bb8",
+      "_id": "tslib@1.13.0",
+      "_nodeVersion": "12.16.3",
+      "_npmVersion": "6.14.4",
+      "dist": {
+        "integrity": "sha512-i/6DQjL8Xf3be4K/E6Wgpekn5Qasl1usyw++dAA35Ue5orEn65VIxOA+YvNNl9HV3qv70T7CNwjODHZrLwvd1Q==",
+        "shasum": "c881e13cc7015894ed914862d276436fa9a47043",
+        "tarball": "https://registry.npmjs.org/tslib/-/tslib-1.13.0.tgz",
+        "fileCount": 9,
+        "unpackedSize": 31919,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJevHsDCRA9TVsSAnZWagAAukUP/2swkL6F1lc/Wit/U28y\npChpPLWk+LC8OoLfTuOQ+6p9VEnjAqgx4HaKXAT8HkBbL9eFz3InxU2PrYDl\npIY4jUTxXU4bPwajFGOyvZOdAkxg9YPNNyu2EJFxsp4XUB/5ujm/8oCCkzyQ\nK4Puv7Le9+INFZDtIKvaB/6h46OcQ8+hr6WSnoY8Les02dc0yyEG+rLjmVqC\n05YW6rAulZ37POBwmOc8oidKZWTgBALE9NPrLVYKUGfnT0Bs4COnDaErHCEX\nHC7NtZChO1lmhoDJP/6i50rXoiWz02LVm9IWTpefpzgS7/Wx61vGLuVftHLc\nlDp4ftafWysf6x48Z+xma+Moh08a+UIN3VbgWqTUY1FcUUJEvpA7iMs9bx4e\nRy6h0QJogddIUZr+2vaPce8XHcB1oDonr8hVCTcyUTL1oC+3fEw8RJRUKgC1\nLb26Eo4JOhgXDQlubQ9gx24QQMCl116kLZAQUp4j5lzDIwZrMvRCCe0HgAcc\na4BVT86/xvEy/CEKenMZsV7z1ks+I6OP0pY3SwmJ5dcaYsz2bv5K4UKNf8nO\niPHCwSPPSuog8+vhnayctN5l7/SgLJI1x5hqgWIT7/audDy8e4pCH5qb372J\nvXqGiMmcdt4tYbtYCsZh03Mi8nYw7ap4OYn2JliZcGAFBiiuqKkUSCfw7bcM\nDTRf\r\n=TghQ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "andrew@wheream.io",
+          "name": "andrewbranch"
+        },
+        {
+          "email": "mineyalc@microsoft.com",
+          "name": "minestarks"
+        },
+        {
+          "email": "orta.therox@gmail.com",
+          "name": "orta"
+        },
+        {
+          "email": "rbuckton@chronicles.org",
+          "name": "rbuckton"
+        },
+        {
+          "email": "ncsander@indiana.edu",
+          "name": "sanders_n"
+        },
+        {
+          "email": "shkamat@microsoft.com",
+          "name": "sheetalkamat"
+        },
+        {
+          "email": "typescript@microsoft.com",
+          "name": "typescript-bot"
+        },
+        {
+          "email": "ortam@microsoft.com",
+          "name": "typescript-deploys"
+        },
+        {
+          "email": "wwigham@gmail.com",
+          "name": "weswigham"
+        }
+      ],
+      "_npmUser": {
+        "name": "typescript-bot",
+        "email": "typescript@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/tslib_1.13.0_1589410563138_0.2783540343901998"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.0": {
+      "name": "tslib",
+      "author": {
+        "name": "Microsoft Corp."
+      },
+      "homepage": "https://www.typescriptlang.org/",
+      "version": "2.0.0",
+      "license": "0BSD",
+      "description": "Runtime library for TypeScript helper functions",
+      "keywords": [
+        "TypeScript",
+        "Microsoft",
+        "compiler",
+        "language",
+        "javascript",
+        "tslib",
+        "runtime"
+      ],
+      "bugs": {
+        "url": "https://github.com/Microsoft/TypeScript/issues"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Microsoft/tslib.git"
+      },
+      "main": "tslib.js",
+      "module": "tslib.es6.js",
+      "jsnext:main": "tslib.es6.js",
+      "typings": "tslib.d.ts",
+      "sideEffects": false,
+      "gitHead": "2d120146f6873a0732753a49dc39a211bbd466da",
+      "_id": "tslib@2.0.0",
+      "_nodeVersion": "12.16.3",
+      "_npmVersion": "6.14.4",
+      "dist": {
+        "integrity": "sha512-lTqkx847PI7xEDYJntxZH89L2/aXInsyF2luSafe/+0fHOMjlBNXdH6th7f70qxLDhul7KZK0zC8V5ZIyHl0/g==",
+        "shasum": "18d13fc2dce04051e20f074cc8387fd8089ce4f3",
+        "tarball": "https://registry.npmjs.org/tslib/-/tslib-2.0.0.tgz",
+        "fileCount": 9,
+        "unpackedSize": 32748,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJevH3+CRA9TVsSAnZWagAALXsP/38jJZqlScB81cw5aaiF\ntEWxNoGXTwlQTesCZuCivHhMur8SpjyNGJtYAHgwY8ZjXT90jnZJ/nI9j+5b\n+uqqz1BS7qmiM/sxT/eBld/0IHQM4fOYKyoqOIx8pqaaNZt4C2EFrtiEr6BW\nTydPdwPX24qvzaN4vd7kN0icq56p6MLFdoZB1QGc6+bdK8rAxVyfd/2sQOFO\n9LL5YEd3RWu/kOuWvVrdrGSd5fUzagO1FGwoo38LaeajgzJXtT/4Cxarckae\ncM+sNYN9jZiBLXEjZOkSUdq+A4JWozF+KFbF66gGTTx5BZCNaGmvKgw7I4bx\n2hOa0g9GM2JtkEaIq6A8S5tAdEKruFrJ7VFGPEcSonkL89SfWTq8HhKIxnNR\nEQmDtyVcocGcGxIDyRxSRv9rEzumhUvgGT5buXWmxUrkaBnA1p4YpYbggNQm\nYcdJaltuuZilIJ6t6dI/PeqRLEvWpOCvKS/rRYupbppUd8gsej8FeH7kZFXB\nbUMh8+kscmYMC6dHv4rYlUeG6w0Z+S8AYd9rVq43fRvtSYw8EK4KlPkuNfcK\nboVQwSSISN8zxB7rPNSZHYcAfO1aZ9wxqBXKKDjli5Md0SDmXB1AbmTrAocJ\nE+v+ApAiLd4XjY6q1a4LanaJRQxng7QT467TRsxSa8DMSyBP8Xc5K17P+ER3\nLU4X\r\n=+5z1\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "andrew@wheream.io",
+          "name": "andrewbranch"
+        },
+        {
+          "email": "mineyalc@microsoft.com",
+          "name": "minestarks"
+        },
+        {
+          "email": "orta.therox@gmail.com",
+          "name": "orta"
+        },
+        {
+          "email": "rbuckton@chronicles.org",
+          "name": "rbuckton"
+        },
+        {
+          "email": "ncsander@indiana.edu",
+          "name": "sanders_n"
+        },
+        {
+          "email": "shkamat@microsoft.com",
+          "name": "sheetalkamat"
+        },
+        {
+          "email": "typescript@microsoft.com",
+          "name": "typescript-bot"
+        },
+        {
+          "email": "ortam@microsoft.com",
+          "name": "typescript-deploys"
+        },
+        {
+          "email": "wwigham@gmail.com",
+          "name": "weswigham"
+        }
+      ],
+      "_npmUser": {
+        "name": "typescript-bot",
+        "email": "typescript@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/tslib_2.0.0_1589411325544_0.5510561469423085"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.1": {
+      "name": "tslib",
+      "author": {
+        "name": "Microsoft Corp."
+      },
+      "homepage": "https://www.typescriptlang.org/",
+      "version": "2.0.1",
+      "license": "0BSD",
+      "description": "Runtime library for TypeScript helper functions",
+      "keywords": [
+        "TypeScript",
+        "Microsoft",
+        "compiler",
+        "language",
+        "javascript",
+        "tslib",
+        "runtime"
+      ],
+      "bugs": {
+        "url": "https://github.com/Microsoft/TypeScript/issues"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Microsoft/tslib.git"
+      },
+      "main": "tslib.js",
+      "module": "tslib.es6.js",
+      "jsnext:main": "tslib.es6.js",
+      "typings": "tslib.d.ts",
+      "sideEffects": false,
+      "gitHead": "a64b24a1fb618c892809c38861aa55b4c161e632",
+      "_id": "tslib@2.0.1",
+      "_nodeVersion": "12.18.3",
+      "_npmVersion": "6.14.6",
+      "dist": {
+        "integrity": "sha512-SgIkNheinmEBgx1IUNirK0TUD4X9yjjBRTqqjggWCU3pUEqIk3/Uwl3yRixYKT6WjQuGiwDv4NomL3wqRCj+CQ==",
+        "shasum": "410eb0d113e5b6356490eec749603725b021b43e",
+        "tarball": "https://registry.npmjs.org/tslib/-/tslib-2.0.1.tgz",
+        "fileCount": 9,
+        "unpackedSize": 32856,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfLIWlCRA9TVsSAnZWagAAD+oP/R5epFC8axJ/hUEwS903\nhhl+aUChoXbi1Wq95lJ5jQBJHdRi3FfRB6B8S7FdF7Xt/tlZ4Cshfocw4Iup\n4Mk9/Gx4wzJGonVb7gWExM96Z7a+iM4edjytVZJKS6ch8UbULHIvYPTsNBVm\nZI2jGada0uDQyrL55m0/THn+k9hIVJK/bkoFZ84E3GsF9TIpNibncj13fYf7\ncHsLYxQCfEWt43i5KYngYLTey9e8JYCbGmaGhjrNB791ZywGwppsPWH9DcZE\n0QIn6n1YfGOIq1qtZYpY3+Yw12eqJ+GEyNviSut+5EGc8MFVGT9g8WxIQlbg\nQIAH5T32qhY2SRhS89Z7IueKMaxFsS2e1oWkz6HN0p1oLDXahvHg5fc9+Irl\n6tbYuUZkuZSVf/DiizzhJfgXLg82k3LdJL7/WD67kMOk9gDKhmNtB/AsR4+e\nciX1wzs/Sl94NnQDCHbcjvh/2cWt9M1h42YRDUkla0P2A+HfXvW0PMER2C03\nFlY0IFHx/I5QjTwcb7lAMuT8ieDKX3gEkPs4yhQ1ecBQb4bFO36DGe4sEEsL\nrTx3SuccFtKudSR9fKfs66B+efDBocpKkUEUOT2masR8zYe29Qv44Y7JSXfi\nkFjycxIuOLv1Wv5vmts8NPNJ0bZismx4oWufb7wfl22ExNgyA0GTcm+CaQm9\nP9il\r\n=OBxr\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "andrew@wheream.io",
+          "name": "andrewbranch"
+        },
+        {
+          "email": "mineyalc@microsoft.com",
+          "name": "minestarks"
+        },
+        {
+          "email": "orta.therox@gmail.com",
+          "name": "orta"
+        },
+        {
+          "email": "rbuckton@chronicles.org",
+          "name": "rbuckton"
+        },
+        {
+          "email": "ncsander@indiana.edu",
+          "name": "sanders_n"
+        },
+        {
+          "email": "shkamat@microsoft.com",
+          "name": "sheetalkamat"
+        },
+        {
+          "email": "typescript@microsoft.com",
+          "name": "typescript-bot"
+        },
+        {
+          "email": "ortam@microsoft.com",
+          "name": "typescript-deploys"
+        },
+        {
+          "email": "wwigham@gmail.com",
+          "name": "weswigham"
+        }
+      ],
+      "_npmUser": {
+        "name": "typescript-bot",
+        "email": "typescript@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/tslib_2.0.1_1596753316653_0.32792054818011573"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.14.0": {
+      "name": "tslib",
+      "author": {
+        "name": "Microsoft Corp."
+      },
+      "homepage": "https://www.typescriptlang.org/",
+      "version": "1.14.0",
+      "license": "0BSD",
+      "description": "Runtime library for TypeScript helper functions",
+      "keywords": [
+        "TypeScript",
+        "Microsoft",
+        "compiler",
+        "language",
+        "javascript",
+        "tslib",
+        "runtime"
+      ],
+      "bugs": {
+        "url": "https://github.com/Microsoft/TypeScript/issues"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Microsoft/tslib.git"
+      },
+      "main": "tslib.js",
+      "module": "tslib.es6.js",
+      "jsnext:main": "tslib.es6.js",
+      "typings": "tslib.d.ts",
+      "sideEffects": false,
+      "exports": {
+        ".": {
+          "import": "./modules/index.js",
+          "default": "./tslib.js"
+        },
+        "./": "./"
+      },
+      "gitHead": "abb109f2949936a708844026c66e293fe0a76268",
+      "_id": "tslib@1.14.0",
+      "_nodeVersion": "14.11.0",
+      "_npmVersion": "6.14.8",
+      "dist": {
+        "integrity": "sha512-+Zw5lu0D9tvBMjGP8LpvMb0u2WW2QV3y+D8mO6J+cNzCYIN4sVy43Bf9vl92nqFahutN0I8zHa7cc4vihIshnw==",
+        "shasum": "d624983f3e2c5e0b55307c3dd6c86acd737622c6",
+        "tarball": "https://registry.npmjs.org/tslib/-/tslib-1.14.0.tgz",
+        "fileCount": 13,
+        "unpackedSize": 33925,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJffI7zCRA9TVsSAnZWagAAh2wP/1y9PuNFCyR1SMEuZpSn\n+JOnJnjQtZ3dPoeWJL07LLJg0VX2cYjIgSZI5H0P04uI57BQYRvL43FCSXlg\nMD4PYsV5LGmmdgoagrvbvVXq84hHYNlgvpm83fpD/8V9IYjWs32+nJcpCew8\nT6QWm0dpIKpE8itUVTW9qxQd2/9dD57NmUwdYrJ1lzD9Jt5Y0h6mq+cFFCri\n5E1DYPRG4LWZtIWeFtm6dbMTJZK33Cx6jjZ6Hv5lONKRFumf5Lcyb+jzk/oZ\nkLmtQgWIlvTGMZ1dTYOUFR7qKHk1gEdIEgD7Ni8ESDWuoMNC8uerM7h73gh8\nrknCntN+6DbYFekToYdWaZHH/iGSjXvoFyKmrJHLkUwCUs6uBSxLNknCRAGs\n/I8Yef1DugIs7T9XBCGTDnYYDHmroPJLq9mpOA52wW+yvep4L4OmOvfAcs/P\nnh0F7ttsZMLWXP4Ntx7gAlQR57LIwtRSeKpJDqQW/D7EuC9NHMvJQJXZ86MM\na5UdiKX0vHya9LP9OxKhjRXy+1sTDL7FH75UzJhOpH1dkT08SchdgwOlGmiW\nvUMTJXKKFbbttr/cQbQMBFGHO4uzjQNBY0HQ/JfrmMflXmqhXx7DydruL2sm\nLsD5GX3lj0S88E1bSyJ/1QbiFrCcvH4t2YyRf6PmfzYj7qirFO2U5ClJSrJ7\nZiw5\r\n=5jYB\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "typescript-deploys",
+          "email": "ortam@microsoft.com"
+        },
+        {
+          "name": "orta",
+          "email": "orta.therox@gmail.com"
+        },
+        {
+          "name": "sheetalkamat",
+          "email": "shkamat@microsoft.com"
+        },
+        {
+          "name": "rbuckton",
+          "email": "rbuckton@chronicles.org"
+        },
+        {
+          "name": "minestarks",
+          "email": "mineyalc@microsoft.com"
+        },
+        {
+          "name": "andrewbranch",
+          "email": "andrew@wheream.io"
+        },
+        {
+          "name": "sanders_n",
+          "email": "ncsander@indiana.edu"
+        },
+        {
+          "name": "weswigham",
+          "email": "wwigham@gmail.com"
+        },
+        {
+          "name": "typescript-bot",
+          "email": "typescript@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "typescript-bot",
+        "email": "typescript@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/tslib_1.14.0_1601998579086_0.4729021367497501"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.2": {
+      "name": "tslib",
+      "author": {
+        "name": "Microsoft Corp."
+      },
+      "homepage": "https://www.typescriptlang.org/",
+      "version": "2.0.2",
+      "license": "0BSD",
+      "description": "Runtime library for TypeScript helper functions",
+      "keywords": [
+        "TypeScript",
+        "Microsoft",
+        "compiler",
+        "language",
+        "javascript",
+        "tslib",
+        "runtime"
+      ],
+      "bugs": {
+        "url": "https://github.com/Microsoft/TypeScript/issues"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Microsoft/tslib.git"
+      },
+      "main": "tslib.js",
+      "module": "tslib.es6.js",
+      "jsnext:main": "tslib.es6.js",
+      "typings": "tslib.d.ts",
+      "sideEffects": false,
+      "exports": {
+        ".": {
+          "import": "./modules/index.js",
+          "default": "./tslib.js"
+        },
+        "./": "./"
+      },
+      "gitHead": "4dc5f8280a00c3ffeb959f47d876f9a98c1dba68",
+      "_id": "tslib@2.0.2",
+      "_nodeVersion": "14.11.0",
+      "_npmVersion": "6.14.8",
+      "dist": {
+        "integrity": "sha512-wAH28hcEKwna96/UacuWaVspVLkg4x1aDM9JlzqaQTOFczCktkVAb5fmXChgandR1EraDPs2w8P+ozM+oafwxg==",
+        "shasum": "462295631185db44b21b1ea3615b63cd1c038242",
+        "tarball": "https://registry.npmjs.org/tslib/-/tslib-2.0.2.tgz",
+        "fileCount": 11,
+        "unpackedSize": 34201,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJffI+kCRA9TVsSAnZWagAAuEQP/2SGGaTDhXidzcfZiGZg\nq9F8OG1dM/dtsRjIHJtKxN4UuPE7qPCBT1uCMfe5hJEL1CWqiccL5Z+95fNL\nob1V60pl5z3jcllvLWwWqSiEB8TV+vM2iSiLz2a81GYG9dYuzQCZfhs5xU8N\nvWJ+OWxmz8wZAeh6CgS6HvRI7F5O9Rv58uD+qVg2rATgqLz6b6SPRR2oA3EZ\nIPLMs52e6L8MtCqleLmmAGp8LkYK4w3O2V8Vz3N66mZo8KNR/ATVRItL9GNv\nKgaptC9RWXOhtiLwro4PGclxVUZUWNh7O+D2kSuamYqe7ebA/nQ3kv7u1rIZ\nOdkuhKaC+QoJeifd0w8yl1stfFCy51sfbW2zUb5mrM0pDARK2L4WhEAs33RM\n0KumJvNqQe5FO5JL1vvY7RVnnGxiI+yg1ge61F4f7QZkEDA4SKc55I6WpLZx\nk4ovJFxFofleQCCCyY8wl1H30H97pm+9+xYGVbozvmRV5KYxZrpotdP0fvJz\nSGobBlElGQXiMD34FiXWSdMSa/j6EmaICYRMtbog2NJ0s7WRUwMDS6yQhOM7\nRcGYMKSTijvMBbmGw7KTBAAbrNAVBH2tovpAm7jfl5N1B5vF0ml3Zyr8Cjhx\nQiHS0GXe7d+q+VxX+/wqC/QmDzUV9oVvyzaq4kXyKOn1xWk+6/g8dNsdehMF\n7Ef8\r\n=jdSg\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "typescript-deploys",
+          "email": "ortam@microsoft.com"
+        },
+        {
+          "name": "orta",
+          "email": "orta.therox@gmail.com"
+        },
+        {
+          "name": "sheetalkamat",
+          "email": "shkamat@microsoft.com"
+        },
+        {
+          "name": "rbuckton",
+          "email": "rbuckton@chronicles.org"
+        },
+        {
+          "name": "minestarks",
+          "email": "mineyalc@microsoft.com"
+        },
+        {
+          "name": "andrewbranch",
+          "email": "andrew@wheream.io"
+        },
+        {
+          "name": "sanders_n",
+          "email": "ncsander@indiana.edu"
+        },
+        {
+          "name": "weswigham",
+          "email": "wwigham@gmail.com"
+        },
+        {
+          "name": "typescript-bot",
+          "email": "typescript@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "typescript-bot",
+        "email": "typescript@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/tslib_2.0.2_1601998755770_0.17564797146786404"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.14.1": {
+      "name": "tslib",
+      "author": {
+        "name": "Microsoft Corp."
+      },
+      "homepage": "https://www.typescriptlang.org/",
+      "version": "1.14.1",
+      "license": "0BSD",
+      "description": "Runtime library for TypeScript helper functions",
+      "keywords": [
+        "TypeScript",
+        "Microsoft",
+        "compiler",
+        "language",
+        "javascript",
+        "tslib",
+        "runtime"
+      ],
+      "bugs": {
+        "url": "https://github.com/Microsoft/TypeScript/issues"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Microsoft/tslib.git"
+      },
+      "main": "tslib.js",
+      "module": "tslib.es6.js",
+      "jsnext:main": "tslib.es6.js",
+      "typings": "tslib.d.ts",
+      "sideEffects": false,
+      "exports": {
+        ".": {
+          "module": "./tslib.es6.js",
+          "import": "./modules/index.js",
+          "default": "./tslib.js"
+        },
+        "./": "./"
+      },
+      "gitHead": "7d33f3607d635dbaaaba006a4648346a81422f3a",
+      "_id": "tslib@1.14.1",
+      "_nodeVersion": "14.13.0",
+      "_npmVersion": "6.14.8",
+      "dist": {
+        "integrity": "sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==",
+        "shasum": "cf2d38bdc34a134bcaf1091c41f6619e2f672d00",
+        "tarball": "https://registry.npmjs.org/tslib/-/tslib-1.14.1.tgz",
+        "fileCount": 13,
+        "unpackedSize": 33965,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfgPOTCRA9TVsSAnZWagAAS3kP/0b5NPdsXvP1WMO/MpQT\nIooH5pZBih1FwG+OJvxqZAuVZPbU8NHYu4V2B8JMgVfhCKq6x86PdZEDJYDI\nKD1k3C/E3V+YOB7RDfVCrlwBPfYAGYT6Ov4ZZrBSw3Bpcc3OR0GffrsYvgiC\nB7chTtqWNc7Od5tuJWNvodewWZF50IONTYOvSwf2JfS1PofEI4VUGj57q/5y\nD63p3WBx4rvJ9Klb77YNeoOXER7kxlUH90BA6eDtPHD/ICD21QXp5I/lyNJD\n+EK9Al7qijwc5sqz4H28uHXs0w6f47pc3cYg5XePFK84TuP4adEgGGp3/TGG\nMT2aQ7KGOwQpQhVWXLBIrGo+3cXEQzSw7oUmv15lQxS46YqGZB/EkY7rwpy4\nmb4ZDCcnfG8bKXVLsbQ9rMcFYAZIf+rD4sIMaA6A7CHTej8pFv/AFAKn2Ef2\nqYl1K5qeVK744YCdQ5DIWBDz4SbWS2yY4cb3PIaas8CITEy1/qNAIaddirZV\nnYX9RSkTAn1bRm09LopWoakCYb/yFZV6JiML9drQU7WWMoFDS1q+9iSq3o2o\nwHsuH0CMzF9QveuveeQKZ+r2QCQQw+HkNfWt4p9EjZNRaeL01sRznoI/LVpu\n3IfTE5kMENTtqo8WNev9E0GA2XnBPmjaKUGWAUi/0TAU2MPdmAClzLw9y0Jy\n+Dts\r\n=g9K8\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "typescript-deploys",
+          "email": "ortam@microsoft.com"
+        },
+        {
+          "name": "orta",
+          "email": "orta.therox@gmail.com"
+        },
+        {
+          "name": "sheetalkamat",
+          "email": "shkamat@microsoft.com"
+        },
+        {
+          "name": "rbuckton",
+          "email": "rbuckton@chronicles.org"
+        },
+        {
+          "name": "minestarks",
+          "email": "mineyalc@microsoft.com"
+        },
+        {
+          "name": "andrewbranch",
+          "email": "andrew@wheream.io"
+        },
+        {
+          "name": "sanders_n",
+          "email": "ncsander@indiana.edu"
+        },
+        {
+          "name": "weswigham",
+          "email": "wwigham@gmail.com"
+        },
+        {
+          "name": "typescript-bot",
+          "email": "typescript@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "typescript-bot",
+        "email": "typescript@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/tslib_1.14.1_1602286482361_0.12401493654195783"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.3": {
+      "name": "tslib",
+      "author": {
+        "name": "Microsoft Corp."
+      },
+      "homepage": "https://www.typescriptlang.org/",
+      "version": "2.0.3",
+      "license": "0BSD",
+      "description": "Runtime library for TypeScript helper functions",
+      "keywords": [
+        "TypeScript",
+        "Microsoft",
+        "compiler",
+        "language",
+        "javascript",
+        "tslib",
+        "runtime"
+      ],
+      "bugs": {
+        "url": "https://github.com/Microsoft/TypeScript/issues"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Microsoft/tslib.git"
+      },
+      "main": "tslib.js",
+      "module": "tslib.es6.js",
+      "jsnext:main": "tslib.es6.js",
+      "typings": "tslib.d.ts",
+      "sideEffects": false,
+      "exports": {
+        ".": {
+          "module": "./tslib.es6.js",
+          "import": "./modules/index.js",
+          "default": "./tslib.js"
+        },
+        "./": "./"
+      },
+      "gitHead": "76bedfddc2cad38aa11060a32f56e9484c279c98",
+      "_id": "tslib@2.0.3",
+      "_nodeVersion": "14.13.0",
+      "_npmVersion": "6.14.8",
+      "dist": {
+        "integrity": "sha512-uZtkfKblCEQtZKBF6EBXVZeQNl82yqtDQdv+eck8u7tdPxjLu2/lp5/uPW+um2tpuxINHWy3GhiccY7QgEaVHQ==",
+        "shasum": "8e0741ac45fc0c226e58a17bfc3e64b9bc6ca61c",
+        "tarball": "https://registry.npmjs.org/tslib/-/tslib-2.0.3.tgz",
+        "fileCount": 11,
+        "unpackedSize": 34220,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfgPPPCRA9TVsSAnZWagAAlIEQAKGrvmQRjE+79HgmPKP4\nZWYTMEpY2JEpq/b75vVoAZzfopr5d0JXrlpb2w+iuUsVsAlf0IVyrxq8TW0R\ngbTAK9/T4yuMnWg2J45GXYNGiYwyuVtsTHuw/ltC80L1rt+awozwFriegUt8\nqWphTJbJiPcMBwhPL9iKFHNoIUoi+wnaIS/ucdnfMj8QU2NTiiR2KIupG7be\nzPAc4R/Gfdl+vPcIJnxaVzRfex/M3uxwsivo1xGDHdqfmcgIOd1e+NkWLNCx\nxX9w1xyXivLXI7n/B+E5b8MFZjBENTzL8p6R9/hHiAcFm9FibNcAAvPi3Xvg\n0ZJsbbJSdMkfDQgedT+ya2OaWlZvq6uxQb9Ban3Tk0YqLWFo7D9X9DTliVnH\ngLR8vuzh0dbeUcuvFd3I/Ywfcs5vegzjxkDDUsMyNBu1sLWzK+iHpP0O0vLY\n8IfZGdL0kbeM5dRCZGRcEPWf9sDrteoi1NOGhMu8ggR9ZGqsWWxBqkZSNHAF\n3lesr/stEgeyJ4urEluBCrqjTQC9v9McPuU9nLmXOfHy7Wl9R8MsxHCsWpfp\nRyHcFZnyvQ8DlujveMkQUEVvXYMXYxMDeKIF840QSTZwv9+29e5c51rsnsGZ\nbDAHZYiK7qvgJ+HOdAuv+Kb7jsd+W0rbHaJA1MxtPf6jXKJa9AIzq6nahIZz\nLlxQ\r\n=+Ir4\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "typescript-deploys",
+          "email": "ortam@microsoft.com"
+        },
+        {
+          "name": "orta",
+          "email": "orta.therox@gmail.com"
+        },
+        {
+          "name": "sheetalkamat",
+          "email": "shkamat@microsoft.com"
+        },
+        {
+          "name": "rbuckton",
+          "email": "rbuckton@chronicles.org"
+        },
+        {
+          "name": "minestarks",
+          "email": "mineyalc@microsoft.com"
+        },
+        {
+          "name": "andrewbranch",
+          "email": "andrew@wheream.io"
+        },
+        {
+          "name": "sanders_n",
+          "email": "ncsander@indiana.edu"
+        },
+        {
+          "name": "weswigham",
+          "email": "wwigham@gmail.com"
+        },
+        {
+          "name": "typescript-bot",
+          "email": "typescript@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "typescript-bot",
+        "email": "typescript@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/tslib_2.0.3_1602286542804_0.2490824255311792"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "homepage": "https://www.typescriptlang.org/",
+  "keywords": [
+    "TypeScript",
+    "Microsoft",
+    "compiler",
+    "language",
+    "javascript",
+    "tslib",
+    "runtime"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Microsoft/tslib.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Microsoft/TypeScript/issues"
+  },
+  "readmeFilename": "README.md",
+  "author": {
+    "name": "Microsoft Corp."
+  },
+  "users": {
+    "sergeyshandar": true,
+    "andr": true,
+    "monolithed": true,
+    "mataco817": true,
+    "noemandn": true,
+    "zhangaz1": true,
+    "mgthomas99": true,
+    "vinbhatt": true,
+    "vivekrp": true
+  },
+  "license": "0BSD"
+}

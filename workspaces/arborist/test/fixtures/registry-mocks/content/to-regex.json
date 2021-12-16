@@ -1,0 +1,842 @@
+{
+  "_id": "to-regex",
+  "_rev": "11-f6e80be7fab65b5444a2c2bd5021f122",
+  "name": "to-regex",
+  "description": "Generate a regex from a string or array of strings.",
+  "dist-tags": {
+    "latest": "3.0.2"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "to-regex",
+      "description": "Generate a regex from a string or array of strings.",
+      "version": "0.1.0",
+      "homepage": "https://github.com/jonschlinkert/to-regex",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/to-regex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/to-regex/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "extend-shallow": "^2.0.1"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^3.0.1",
+        "gulp-format-md": "^0.1.10",
+        "gulp-istanbul": "^1.1.1",
+        "gulp-mocha": "^3.0.1",
+        "mocha": "^3.0.2"
+      },
+      "keywords": [
+        "match",
+        "regex",
+        "regular expression",
+        "test",
+        "to"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "to-regex-range",
+            "is-glob",
+            "has-glob",
+            "path-regex"
+          ]
+        },
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "lint": {
+          "reflinks": true
+        },
+        "reflinks": [
+          "verb",
+          "verb-generate-readme"
+        ]
+      },
+      "gitHead": "0bb5d805462e5e54a9d58f39489f308e2234b621",
+      "_id": "to-regex@0.1.0",
+      "_shasum": "338de9c6694ac3d19f73bf4bc94e91a3ddbfe277",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.3.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "338de9c6694ac3d19f73bf4bc94e91a3ddbfe277",
+        "tarball": "https://registry.npmjs.org/to-regex/-/to-regex-0.1.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/to-regex-0.1.0.tgz_1474943905872_0.9498569068964571"
+      },
+      "directories": {}
+    },
+    "0.1.1": {
+      "name": "to-regex",
+      "description": "Generate a regex from a string or array of strings.",
+      "version": "0.1.1",
+      "homepage": "https://github.com/jonschlinkert/to-regex",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/to-regex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/to-regex/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "extend-shallow": "^2.0.1",
+        "regex-not": "^0.1.1"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^3.0.1",
+        "gulp-format-md": "^0.1.10",
+        "gulp-istanbul": "^1.1.1",
+        "gulp-mocha": "^3.0.1",
+        "mocha": "^3.0.2"
+      },
+      "keywords": [
+        "match",
+        "regex",
+        "regular expression",
+        "test",
+        "to"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "to-regex-range",
+            "is-glob",
+            "has-glob",
+            "path-regex"
+          ]
+        },
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "lint": {
+          "reflinks": true
+        },
+        "reflinks": [
+          "verb",
+          "verb-generate-readme"
+        ]
+      },
+      "gitHead": "6a28a49cbd109869bb36b9a3be29cb3020a5a398",
+      "_id": "to-regex@0.1.1",
+      "_shasum": "5634b4796f17a796097036357a97064fb70c3125",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.3.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "5634b4796f17a796097036357a97064fb70c3125",
+        "tarball": "https://registry.npmjs.org/to-regex/-/to-regex-0.1.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/to-regex-0.1.1.tgz_1474948578388_0.5745572135783732"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "to-regex",
+      "description": "Generate a regex from a string or array of strings.",
+      "version": "1.0.0",
+      "homepage": "https://github.com/jonschlinkert/to-regex",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/to-regex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/to-regex/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "extend-shallow": "^2.0.1",
+        "regex-not": "^0.1.1"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^3.0.1",
+        "gulp-format-md": "^0.1.10",
+        "gulp-istanbul": "^1.1.1",
+        "gulp-mocha": "^3.0.1",
+        "mocha": "^3.0.2"
+      },
+      "keywords": [
+        "match",
+        "regex",
+        "regular expression",
+        "test",
+        "to"
+      ],
+      "verb": {
+        "toc": {
+          "method": "preWrite"
+        },
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "has-glob",
+            "is-glob",
+            "path-regex",
+            "to-regex-range"
+          ]
+        },
+        "reflinks": [
+          "verb",
+          "verb-generate-readme"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "a99d68cfcc448013620d9caad3957779342168b2",
+      "_id": "to-regex@1.0.0",
+      "_shasum": "49f5efcaa9d642bce03296d4580f29f9060d89ac",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.3.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "49f5efcaa9d642bce03296d4580f29f9060d89ac",
+        "tarball": "https://registry.npmjs.org/to-regex/-/to-regex-1.0.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/to-regex-1.0.0.tgz_1475562670912_0.5451310218777508"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "to-regex",
+      "description": "Generate a regex from a string or array of strings.",
+      "version": "2.0.0",
+      "homepage": "https://github.com/jonschlinkert/to-regex",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/to-regex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/to-regex/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "extend-shallow": "^2.0.1",
+        "regex-not": "^0.1.1"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^3.0.1",
+        "gulp-format-md": "^0.1.10",
+        "gulp-istanbul": "^1.1.1",
+        "gulp-mocha": "^3.0.1",
+        "mocha": "^3.0.2"
+      },
+      "keywords": [
+        "match",
+        "regex",
+        "regular expression",
+        "test",
+        "to"
+      ],
+      "verb": {
+        "toc": {
+          "method": "preWrite"
+        },
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "has-glob",
+            "is-glob",
+            "path-regex",
+            "to-regex-range"
+          ]
+        },
+        "reflinks": [
+          "verb",
+          "verb-generate-readme"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "a99d68cfcc448013620d9caad3957779342168b2",
+      "_id": "to-regex@2.0.0",
+      "_shasum": "67ea7e4ed2f889b25734da311328bd04fe1f73de",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.3.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "67ea7e4ed2f889b25734da311328bd04fe1f73de",
+        "tarball": "https://registry.npmjs.org/to-regex/-/to-regex-2.0.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/to-regex-2.0.0.tgz_1475749448404_0.9963046805933118"
+      },
+      "directories": {}
+    },
+    "2.1.0": {
+      "name": "to-regex",
+      "description": "Generate a regex from a string or array of strings.",
+      "version": "2.1.0",
+      "homepage": "https://github.com/jonschlinkert/to-regex",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/to-regex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/to-regex/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "define-property": "^0.2.5",
+        "extend-shallow": "^2.0.1",
+        "regex-not": "^0.1.1"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^3.0.1",
+        "gulp-format-md": "^0.1.10",
+        "gulp-istanbul": "^1.1.1",
+        "gulp-mocha": "^3.0.1",
+        "mocha": "^3.0.2"
+      },
+      "keywords": [
+        "match",
+        "regex",
+        "regular expression",
+        "test",
+        "to"
+      ],
+      "verb": {
+        "toc": {
+          "method": "preWrite"
+        },
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "has-glob",
+            "is-glob",
+            "path-regex",
+            "to-regex-range"
+          ]
+        },
+        "reflinks": [
+          "verb",
+          "verb-generate-readme"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "62554d3bd1c23cf6d325dbcd7ae7443cac95e8cf",
+      "_id": "to-regex@2.1.0",
+      "_shasum": "e3ad3a40cfe119559a05aea43e4caefacc5e901d",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.7.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "e3ad3a40cfe119559a05aea43e4caefacc5e901d",
+        "tarball": "https://registry.npmjs.org/to-regex/-/to-regex-2.1.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/to-regex-2.1.0.tgz_1475754721640_0.2784986891783774"
+      },
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "to-regex",
+      "description": "Generate a regex from a string or array of strings.",
+      "version": "3.0.0",
+      "homepage": "https://github.com/jonschlinkert/to-regex",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/to-regex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/to-regex/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "define-property": "^0.2.5",
+        "extend-shallow": "^2.0.1",
+        "regex-not": "^1.0.0"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^3.0.1",
+        "gulp-format-md": "^0.1.10",
+        "gulp-istanbul": "^1.1.1",
+        "gulp-mocha": "^3.0.1",
+        "mocha": "^3.0.2"
+      },
+      "keywords": [
+        "match",
+        "regex",
+        "regular expression",
+        "test",
+        "to"
+      ],
+      "verb": {
+        "toc": {
+          "method": "preWrite"
+        },
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "has-glob",
+            "is-glob",
+            "path-regex",
+            "to-regex-range"
+          ]
+        },
+        "reflinks": [
+          "verb",
+          "verb-generate-readme"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "a9ae04d5826bca65ea72474682959a31f5186904",
+      "_id": "to-regex@3.0.0",
+      "_shasum": "58183da5021d397828892fc7ed04923664aa06db",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.7.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "58183da5021d397828892fc7ed04923664aa06db",
+        "tarball": "https://registry.npmjs.org/to-regex/-/to-regex-3.0.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/to-regex-3.0.0.tgz_1476670141173_0.00005844538100063801"
+      },
+      "directories": {}
+    },
+    "3.0.1": {
+      "name": "to-regex",
+      "description": "Generate a regex from a string or array of strings.",
+      "version": "3.0.1",
+      "homepage": "https://github.com/jonschlinkert/to-regex",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/to-regex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/to-regex/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "define-property": "^0.2.5",
+        "extend-shallow": "^2.0.1",
+        "regex-not": "^1.0.0"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^3.0.1",
+        "gulp-format-md": "^0.1.10",
+        "gulp-istanbul": "^1.1.1",
+        "gulp-mocha": "^3.0.1",
+        "mocha": "^3.0.2"
+      },
+      "keywords": [
+        "match",
+        "regex",
+        "regular expression",
+        "test",
+        "to"
+      ],
+      "verb": {
+        "toc": {
+          "method": "preWrite"
+        },
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "has-glob",
+            "is-glob",
+            "path-regex",
+            "to-regex-range"
+          ]
+        },
+        "reflinks": [
+          "verb",
+          "verb-generate-readme"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "5dda7b0b4b66902426b80055a4b39a9cd46efb70",
+      "_id": "to-regex@3.0.1",
+      "_shasum": "15358bee4a2c83bd76377ba1dc049d0f18837aae",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.7.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "15358bee4a2c83bd76377ba1dc049d0f18837aae",
+        "tarball": "https://registry.npmjs.org/to-regex/-/to-regex-3.0.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/to-regex-3.0.1.tgz_1476670515755_0.6239306144416332"
+      },
+      "directories": {}
+    },
+    "3.0.2": {
+      "name": "to-regex",
+      "description": "Generate a regex from a string or array of strings.",
+      "version": "3.0.2",
+      "homepage": "https://github.com/jonschlinkert/to-regex",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/to-regex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/to-regex/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "define-property": "^2.0.2",
+        "extend-shallow": "^3.0.2",
+        "regex-not": "^1.0.2",
+        "safe-regex": "^1.1.0"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^1.0.0",
+        "mocha": "^3.5.3"
+      },
+      "keywords": [
+        "match",
+        "regex",
+        "regular expression",
+        "test",
+        "to"
+      ],
+      "verb": {
+        "toc": {
+          "method": "preWrite"
+        },
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "has-glob",
+            "is-glob",
+            "path-regex",
+            "to-regex-range"
+          ]
+        },
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "cc5735f98f62c8e9cfb98ae5b309abea1c8a2432",
+      "_id": "to-regex@3.0.2",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.5.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "integrity": "sha512-FWtleNAtZ/Ki2qtqej2CXTOayOH9bHDQF+Q48VpWyDXjbYxA4Yz8iDB31zXOBUlOHHKidDbqGVrTUvQMPmBGBw==",
+        "shasum": "13cfdd9b336552f30b51f33a8ae1b42a7a7599ce",
+        "tarball": "https://registry.npmjs.org/to-regex/-/to-regex-3.0.2.tgz",
+        "fileCount": 4,
+        "unpackedSize": 12626
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/to-regex_3.0.2_1519460972133_0.47922488575382616"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# to-regex [![NPM version](https://img.shields.io/npm/v/to-regex.svg?style=flat)](https://www.npmjs.com/package/to-regex) [![NPM monthly downloads](https://img.shields.io/npm/dm/to-regex.svg?style=flat)](https://npmjs.org/package/to-regex) [![NPM total downloads](https://img.shields.io/npm/dt/to-regex.svg?style=flat)](https://npmjs.org/package/to-regex) [![Linux Build Status](https://img.shields.io/travis/jonschlinkert/to-regex.svg?style=flat&label=Travis)](https://travis-ci.org/jonschlinkert/to-regex)\n\n> Generate a regex from a string or array of strings.\n\nPlease consider following this project's author, [Jon Schlinkert](https://github.com/jonschlinkert), and consider starring the project to show your :heart: and support.\n\n- [Install](#install)\n- [Usage](#usage)\n- [Options](#options)\n  * [options.contains](#optionscontains)\n  * [options.negate](#optionsnegate)\n  * [options.nocase](#optionsnocase)\n  * [options.flags](#optionsflags)\n  * [options.cache](#optionscache)\n  * [options.safe](#optionssafe)\n- [About](#about)\n  * [Related projects](#related-projects)\n  * [Author](#author)\n  * [License](#license)\n\n_(TOC generated by [verb](https://github.com/verbose/verb) using [markdown-toc](https://github.com/jonschlinkert/markdown-toc))_\n\n## Install\n\nInstall with [npm](https://www.npmjs.com/):\n\n```sh\n$ npm install --save to-regex\n```\n\n## Usage\n\n```js\nvar toRegex = require('to-regex');\n\nconsole.log(toRegex('foo'));\n//=> /^(?:foo)$/\n\nconsole.log(toRegex('foo', {negate: true}));\n//=> /^(?:(?:(?!^(?:foo)$).)*)$/\n\nconsole.log(toRegex('foo', {contains: true}));\n//=> /(?:foo)/\n\nconsole.log(toRegex(['foo', 'bar'], {negate: true}));\n//=> /^(?:(?:(?!^(?:(?:foo)|(?:bar))$).)*)$/\n\nconsole.log(toRegex(['foo', 'bar'], {negate: true, contains: true}));\n//=> /^(?:(?:(?!(?:(?:foo)|(?:bar))).)*)$/\n```\n\n## Options\n\n### options.contains\n\n**Type**: `Boolean`\n\n**Default**: `undefined`\n\nGenerate a regex that will match any string that _contains_ the given pattern. By default, regex is strict will only return true for exact matches.\n\n```js\nvar toRegex = require('to-regex');\nconsole.log(toRegex('foo', {contains: true}));\n//=> /(?:foo)/\n```\n\n### options.negate\n\n**Type**: `Boolean`\n\n**Default**: `undefined`\n\nCreate a regex that will match everything except the given pattern.\n\n```js\nvar toRegex = require('to-regex');\nconsole.log(toRegex('foo', {negate: true}));\n//=> /^(?:(?:(?!^(?:foo)$).)*)$/\n```\n\n### options.nocase\n\n**Type**: `Boolean`\n\n**Default**: `undefined`\n\nAdds the `i` flag, to enable case-insensitive matching.\n\n```js\nvar toRegex = require('to-regex');\nconsole.log(toRegex('foo', {nocase: true}));\n//=> /^(?:foo)$/i\n```\n\nAlternatively you can pass the flags you want directly on [options.flags](#options.flags).\n\n### options.flags\n\n**Type**: `String`\n\n**Default**: `undefined`\n\nDefine the flags you want to use on the generated regex.\n\n```js\nvar toRegex = require('to-regex');\nconsole.log(toRegex('foo', {flags: 'gm'}));\n//=> /^(?:foo)$/gm\nconsole.log(toRegex('foo', {flags: 'gmi', nocase: true})); //<= handles redundancy\n//=> /^(?:foo)$/gmi\n```\n\n### options.cache\n\n**Type**: `Boolean`\n\n**Default**: `true`\n\nGenerated regex is cached based on the provided string and options. As a result, runtime compilation only happens once per pattern (as long as options are also the same), which can result in dramatic speed improvements.\n\nThis also helps with debugging, since adding options and pattern are added to the generated regex.\n\n**Disable caching**\n\n```js\ntoRegex('foo', {cache: false});\n```\n\n### options.safe\n\n**Type**: `Boolean`\n\n**Default**: `undefined`\n\nCheck the generated regular expression with [safe-regex](https://github.com/substack/safe-regex) and throw an error if the regex is potentially unsafe.\n\n**Examples**\n\n```js\nconsole.log(toRegex('(x+x+)+y'));\n//=> /^(?:(x+x+)+y)$/\n\n// The following would throw an error\ntoRegex('(x+x+)+y', {safe: true});\n```\n\n## About\n\n<details>\n<summary><strong>Contributing</strong></summary>\n\nPull requests and stars are always welcome. For bugs and feature requests, [please create an issue](../../issues/new).\n\n</details>\n\n<details>\n<summary><strong>Running Tests</strong></summary>\n\nRunning and reviewing unit tests is a great way to get familiarized with a library and its API. You can install dependencies and run tests with the following command:\n\n```sh\n$ npm install && npm test\n```\n\n</details>\n\n<details>\n<summary><strong>Building docs</strong></summary>\n\n_(This project's readme.md is generated by [verb](https://github.com/verbose/verb-generate-readme), please don't edit the readme directly. Any changes to the readme must be made in the [.verb.md](.verb.md) readme template.)_\n\nTo generate the readme, run the following command:\n\n```sh\n$ npm install -g verbose/verb#dev verb-generate-readme && verb\n```\n\n</details>\n\n### Related projects\n\nYou might also be interested in these projects:\n\n* [has-glob](https://www.npmjs.com/package/has-glob): Returns `true` if an array has a glob pattern. | [homepage](https://github.com/jonschlinkert/has-glob \"Returns `true` if an array has a glob pattern.\")\n* [is-glob](https://www.npmjs.com/package/is-glob): Returns `true` if the given string looks like a glob pattern or an extglob pattern… [more](https://github.com/jonschlinkert/is-glob) | [homepage](https://github.com/jonschlinkert/is-glob \"Returns `true` if the given string looks like a glob pattern or an extglob pattern. This makes it easy to create code that only uses external modules like node-glob when necessary, resulting in much faster code execution and initialization time, and a bet\")\n* [path-regex](https://www.npmjs.com/package/path-regex): Regular expression for matching the parts of a file path. | [homepage](https://github.com/regexps/path-regex \"Regular expression for matching the parts of a file path.\")\n* [to-regex-range](https://www.npmjs.com/package/to-regex-range): Pass two numbers, get a regex-compatible source string for matching ranges. Validated against more than… [more](https://github.com/micromatch/to-regex-range) | [homepage](https://github.com/micromatch/to-regex-range \"Pass two numbers, get a regex-compatible source string for matching ranges. Validated against more than 2.78 million test assertions.\")\n\n### Author\n\n**Jon Schlinkert**\n\n* [linkedin/in/jonschlinkert](https://linkedin.com/in/jonschlinkert)\n* [github/jonschlinkert](https://github.com/jonschlinkert)\n* [twitter/jonschlinkert](https://twitter.com/jonschlinkert)\n\n### License\n\nCopyright © 2018, [Jon Schlinkert](https://github.com/jonschlinkert).\nReleased under the [MIT License](LICENSE).\n\n***\n\n_This file was generated by [verb-generate-readme](https://github.com/verbose/verb-generate-readme), v0.6.0, on February 24, 2018._",
+  "maintainers": [
+    {
+      "name": "jonschlinkert",
+      "email": "github@sellside.com"
+    }
+  ],
+  "time": {
+    "modified": "2019-01-08T05:34:04.374Z",
+    "created": "2016-09-27T02:38:27.317Z",
+    "0.1.0": "2016-09-27T02:38:27.317Z",
+    "0.1.1": "2016-09-27T03:56:19.847Z",
+    "1.0.0": "2016-10-04T06:31:13.081Z",
+    "2.0.0": "2016-10-06T10:24:10.761Z",
+    "2.1.0": "2016-10-06T11:52:03.929Z",
+    "3.0.0": "2016-10-17T02:09:03.115Z",
+    "3.0.1": "2016-10-17T02:15:17.419Z",
+    "3.0.2": "2018-02-24T08:29:32.189Z"
+  },
+  "homepage": "https://github.com/jonschlinkert/to-regex",
+  "keywords": [
+    "match",
+    "regex",
+    "regular expression",
+    "test",
+    "to"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonschlinkert/to-regex.git"
+  },
+  "author": {
+    "name": "Jon Schlinkert",
+    "url": "https://github.com/jonschlinkert"
+  },
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/to-regex/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "users": {
+    "arteffeckt": true,
+    "rocket0191": true,
+    "hualei": true
+  }
+}

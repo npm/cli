@@ -1,0 +1,720 @@
+{
+  "_id": "log-symbols",
+  "_rev": "45-8d0c1ac44849f65ac2e178b93ec59943",
+  "name": "log-symbols",
+  "description": "Colored symbols for various log levels. Example: `✔︎ Success`",
+  "dist-tags": {
+    "latest": "4.0.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "log-symbols",
+      "version": "1.0.0",
+      "description": "Colored symbols for various log levels. Example: ✔︎ success",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/sindresorhus/log-symbols"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "unicode",
+        "cli",
+        "cmd",
+        "command-line",
+        "characters",
+        "char",
+        "symbol",
+        "symbols",
+        "figure",
+        "figures",
+        "fallback",
+        "win",
+        "windows",
+        "log",
+        "logging",
+        "terminal",
+        "stdout"
+      ],
+      "dependencies": {
+        "chalk": "^0.5.1"
+      },
+      "devDependencies": {
+        "ava": "0.0.3"
+      },
+      "bugs": {
+        "url": "https://github.com/sindresorhus/log-symbols/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/log-symbols",
+      "_id": "log-symbols@1.0.0",
+      "_shasum": "150dad5afd4800a74de564200ad7a734e0e8660f",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "150dad5afd4800a74de564200ad7a734e0e8660f",
+        "tarball": "https://registry.npmjs.org/log-symbols/-/log-symbols-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "log-symbols",
+      "version": "1.0.1",
+      "description": "Colored symbols for various log levels. Example: ✔︎ success",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/log-symbols"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "unicode",
+        "cli",
+        "cmd",
+        "command-line",
+        "characters",
+        "char",
+        "symbol",
+        "symbols",
+        "figure",
+        "figures",
+        "fallback",
+        "win",
+        "windows",
+        "log",
+        "logging",
+        "terminal",
+        "stdout"
+      ],
+      "dependencies": {
+        "chalk": "^0.5.1"
+      },
+      "devDependencies": {
+        "ava": "0.0.3"
+      },
+      "gitHead": "4df95a6ac075d1e847a387527e726ea88c2e53be",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/log-symbols/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/log-symbols",
+      "_id": "log-symbols@1.0.1",
+      "_shasum": "38e09b991a389585ee77186dc94a0333ab5ed727",
+      "_from": ".",
+      "_npmVersion": "2.0.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "38e09b991a389585ee77186dc94a0333ab5ed727",
+        "tarball": "https://registry.npmjs.org/log-symbols/-/log-symbols-1.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "log-symbols",
+      "version": "1.0.2",
+      "description": "Colored symbols for various log levels. Example: ✔︎ success",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/log-symbols"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "unicode",
+        "cli",
+        "cmd",
+        "command-line",
+        "characters",
+        "char",
+        "symbol",
+        "symbols",
+        "figure",
+        "figures",
+        "fallback",
+        "win",
+        "windows",
+        "log",
+        "logging",
+        "terminal",
+        "stdout"
+      ],
+      "dependencies": {
+        "chalk": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "0.0.4"
+      },
+      "gitHead": "ffcc995a1d4efc91ceed3e536fecccc8dc517c76",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/log-symbols/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/log-symbols",
+      "_id": "log-symbols@1.0.2",
+      "_shasum": "376ff7b58ea3086a0f09facc74617eca501e1a18",
+      "_from": ".",
+      "_npmVersion": "2.5.1",
+      "_nodeVersion": "0.12.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "376ff7b58ea3086a0f09facc74617eca501e1a18",
+        "tarball": "https://registry.npmjs.org/log-symbols/-/log-symbols-1.0.2.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "log-symbols",
+      "version": "2.0.0",
+      "description": "Colored symbols for various log levels. Example: ✔︎ Success",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/log-symbols.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js",
+        "browser.js"
+      ],
+      "keywords": [
+        "unicode",
+        "cli",
+        "cmd",
+        "command-line",
+        "characters",
+        "char",
+        "symbol",
+        "symbols",
+        "figure",
+        "figures",
+        "fallback",
+        "win",
+        "windows",
+        "log",
+        "logging",
+        "terminal",
+        "stdout"
+      ],
+      "dependencies": {
+        "chalk": "^2.0.1"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "strip-ansi": "^4.0.0",
+        "xo": "*"
+      },
+      "browser": "browser.js",
+      "gitHead": "ff541baee06e7438b566ce562e2d70243488a561",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/log-symbols/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/log-symbols#readme",
+      "_id": "log-symbols@2.0.0",
+      "_npmVersion": "5.0.0",
+      "_nodeVersion": "8.0.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-ValCSal2pRxRbet7O69a/1g5fZ2MLxf1YXIslNrdJF42ofY9zVf6MTqTwfhG+2x168xrbZATCgFQfXAwdNHv+w==",
+        "shasum": "595e63be4d5c8cbf294a9e09e0d5629f5913fc0c",
+        "tarball": "https://registry.npmjs.org/log-symbols/-/log-symbols-2.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/log-symbols-2.0.0.tgz_1500484153469_0.3959882273338735"
+      },
+      "directories": {}
+    },
+    "2.1.0": {
+      "name": "log-symbols",
+      "version": "2.1.0",
+      "description": "Colored symbols for various log levels. Example: ✔︎ Success",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/log-symbols.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js",
+        "browser.js"
+      ],
+      "keywords": [
+        "unicode",
+        "cli",
+        "cmd",
+        "command-line",
+        "characters",
+        "char",
+        "symbol",
+        "symbols",
+        "figure",
+        "figures",
+        "fallback",
+        "win",
+        "windows",
+        "log",
+        "logging",
+        "terminal",
+        "stdout"
+      ],
+      "dependencies": {
+        "chalk": "^2.0.1"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "strip-ansi": "^4.0.0",
+        "xo": "*"
+      },
+      "browser": "browser.js",
+      "gitHead": "721e006266ea7c55565322c99e2bcb35b04cdc4c",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/log-symbols/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/log-symbols#readme",
+      "_id": "log-symbols@2.1.0",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "8.5.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-zLeLrzMA1A2vRF1e/0Mo+LNINzi6jzBylHj5WqvQ/WK/5WCZt8si9SyN4p9llr/HRYvVR1AoXHRHl4WTHyQAzQ==",
+        "shasum": "f35fa60e278832b538dc4dddcbb478a45d3e3be6",
+        "tarball": "https://registry.npmjs.org/log-symbols/-/log-symbols-2.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/log-symbols-2.1.0.tgz_1506158437520_0.19431678322143853"
+      },
+      "directories": {}
+    },
+    "2.2.0": {
+      "name": "log-symbols",
+      "version": "2.2.0",
+      "description": "Colored symbols for various log levels. Example: ✔︎ Success",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/log-symbols.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js",
+        "browser.js"
+      ],
+      "keywords": [
+        "unicode",
+        "cli",
+        "cmd",
+        "command-line",
+        "characters",
+        "char",
+        "symbol",
+        "symbols",
+        "figure",
+        "figures",
+        "fallback",
+        "win",
+        "windows",
+        "log",
+        "logging",
+        "terminal",
+        "stdout"
+      ],
+      "dependencies": {
+        "chalk": "^2.0.1"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "strip-ansi": "^4.0.0",
+        "xo": "*"
+      },
+      "browser": "browser.js",
+      "gitHead": "029dbb35f81c0e8471a4fa1fcf014af416d3230d",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/log-symbols/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/log-symbols#readme",
+      "_id": "log-symbols@2.2.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.9.4",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-VeIAFslyIerEJLXHziedo2basKbMKtTw3vfn5IzG0XTjhAVEJyNHnL2p7vc+wBDSdQuUpNw3M2u6xb9QsAY5Eg==",
+        "shasum": "5740e1c5d6f0dfda4ad9323b5332107ef6b4c40a",
+        "tarball": "https://registry.npmjs.org/log-symbols/-/log-symbols-2.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/log-symbols-2.2.0.tgz_1516578275647_0.2500845284666866"
+      },
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "log-symbols",
+      "version": "3.0.0",
+      "description": "Colored symbols for various log levels. Example: `✔︎ Success`",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/log-symbols.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "unicode",
+        "cli",
+        "cmd",
+        "command-line",
+        "characters",
+        "symbol",
+        "symbols",
+        "figure",
+        "figures",
+        "fallback",
+        "windows",
+        "log",
+        "logging",
+        "terminal",
+        "stdout"
+      ],
+      "dependencies": {
+        "chalk": "^2.4.2"
+      },
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "strip-ansi": "^5.2.0",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "browser": "browser.js",
+      "gitHead": "1f4ac6ef31cb4c7c4c4c67b7d6f9db712d4c0186",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/log-symbols/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/log-symbols#readme",
+      "_id": "log-symbols@3.0.0",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "8.15.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-dSkNGuI7iG3mfvDzUuYZyvk5dD9ocYCYzNU6CYDE6+Xqd+gwme6Z00NS3dUh8mq/73HaEtT7m6W+yUPtU6BZnQ==",
+        "shasum": "f3a08516a5dea893336a7dee14d18a1cfdab77c4",
+        "tarball": "https://registry.npmjs.org/log-symbols/-/log-symbols-3.0.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 4107,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJct0pxCRA9TVsSAnZWagAAX/wQAI8fsLd3r9Yn6/mSwYFW\n7xAyAf+B/MuBFvv8OwRyi8ofDET0VdFtd1XktCVRnwv3O1FJERCAe2cJyewt\nOerlUnwz6ggK7rXfFeyA8bbpQB4PANYwuV2YYpusd9AIhH0FAiN4lXrOj2pq\n5mTAKSYVuIuJMpQtUj+FwtOnPY3YzWvMq/wP5ad2zVvdAmNFfSTljXdXRR7H\nSbloC7xDVz7qukQnMvyopRSaAHYe9DmQW8McIzEbKSFkclxtHpEtRqfGYTIP\n2KBu7aGippT/I9c51FGErRp8V3nVABz+3wVCpwNkSmM5X7UjvtlMGdVFs1VD\nIhAIKf6yzcinFGUPOSfllZNqnVEImSx7/EUeY8DZsBMZKTuEdtyVZUbOhOHE\nuwwYcnSXKOGrwkfR+wv4J7rewg0e3M8JdVTtWVs+H21SVTdJXNw2DPmY4i4i\nwUAPAPyHa05Z4GdY+6PQYIfLlVZ9GyeBuwG1oFknrz3ZYR0t7b1V7xjwJSmq\nse443HTZn+8O2xFcWnheNww9wFdkecZxRNWcaVHpfhWOXDLl/lXUzdswU0LZ\nRC+zlJNm25wo3bBC3NSq7TaHcMQ5PGTJBEPW3RhLUkaxeeeonCp/e5EZiFEg\n1zvJqtVwmFtmjyqEujW9QTzEghfoTFXy4x9V/1Dn7u3NxBlQLdoofvyCpHw9\n9EU0\r\n=Bfli\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/log-symbols_3.0.0_1555516016694_0.9514962763710724"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.0.0": {
+      "name": "log-symbols",
+      "version": "4.0.0",
+      "description": "Colored symbols for various log levels. Example: `✔︎ Success`",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/log-symbols.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "https://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=10"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "unicode",
+        "cli",
+        "cmd",
+        "command-line",
+        "characters",
+        "symbol",
+        "symbols",
+        "figure",
+        "figures",
+        "fallback",
+        "windows",
+        "log",
+        "logging",
+        "terminal",
+        "stdout"
+      ],
+      "dependencies": {
+        "chalk": "^4.0.0"
+      },
+      "devDependencies": {
+        "ava": "^3.7.1",
+        "strip-ansi": "^6.0.0",
+        "tsd": "^0.11.0",
+        "xo": "^0.30.0"
+      },
+      "browser": "browser.js",
+      "gitHead": "76fd8f2e7b4a4e90d58b0c807388cd034d607515",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/log-symbols/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/log-symbols#readme",
+      "_id": "log-symbols@4.0.0",
+      "_nodeVersion": "10.20.1",
+      "_npmVersion": "6.14.4",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-FN8JBzLx6CzeMrB0tg6pqlGU1wCrXW+ZXGH481kfsBqer0hToTIiHdjH4Mq8xJUbvATujKCvaREGWpGUionraA==",
+        "shasum": "69b3cc46d20f448eccdb75ea1fa733d9e821c920",
+        "tarball": "https://registry.npmjs.org/log-symbols/-/log-symbols-4.0.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 4579,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJepWbICRA9TVsSAnZWagAA/8AQAJ+dPzdYSeDLvW+Jeics\niJVXX7+k+a+IAyoNdpjsB4VztfL46DPQmg5gn44O502KzRkq61B7ojOuDnUf\n6IVkpMYdi5hiXtWVV/L69XyzvtqkCheP15agNF3KFpp8vw2vbI8gANKXADpg\naKjlS58tLIcGAmngQr121xvctTG5EhViHUhf6tVsn+NPBS7RLwKIaTH5tm1u\nJR/R/Q8U8IpN5jZuEgsB4lU4WwHpB1IVmAP0oXH5Ei2TbMOs7Lqc8vstsdpU\n9vkCFdrLpuQA0HqySwCBU0RM/5HgCM7yTDxsdEivAcw/7Zbscl9vfxdRE0ab\n5BpxiHYCvuvUG7vL4jfutcC3VlLm+im9x5oNP2KY6NZYo+3HQ1wpa/g2fsT6\nVF/o7TnnlXEYVlY/CwXfNKhQmfyKgGGg1OyR8PY4I+tYlfVu/AAiJLL5pXtW\nrnOKfS1WAF7kJ+kJVystEs28QE5i6KssF3/YjaQtKTNkJIWD9ay1ZezSygm2\n5HL387o8b5F3XJRzRlspD2PzqnFw7g+ExPoCzXa1/LZ98odrJzzKxTCnzPPb\nAHU0gqnj44D302FD2JO0MYwm9r1PVWYIoaSxIO04Iomcyw+hIYq3Rgwi21mo\nUB12NRAXXQ36cpqJ11Kl+zejxWzGAM3vozKNufBotDHDeZ/mB2cXcM7Bb6CT\n5Oja\r\n=+uXu\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/log-symbols_4.0.0_1587898056188_0.12109328307453571"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# log-symbols [![Build Status](https://travis-ci.com/sindresorhus/log-symbols.svg?branch=master)](https://travis-ci.com/sindresorhus/log-symbols)\n\n<img src=\"screenshot.png\" width=\"226\" height=\"192\" align=\"right\">\n\n> Colored symbols for various log levels\n\nIncludes fallbacks for Windows CMD which only supports a [limited character set](https://en.wikipedia.org/wiki/Code_page_437).\n\n## Install\n\n```\n$ npm install log-symbols\n```\n\n## Usage\n\n```js\nconst logSymbols = require('log-symbols');\n\nconsole.log(logSymbols.success, 'Finished successfully!');\n// On good OSes:  ✔ Finished successfully!\n// On Windows:    √ Finished successfully!\n```\n\n## API\n\n### logSymbols\n\n#### info\n#### success\n#### warning\n#### error\n\n## Related\n\n- [figures](https://github.com/sindresorhus/figures) - Unicode symbols with Windows CMD fallbacks\n- [py-log-symbols](https://github.com/ManrajGrover/py-log-symbols) - Python port\n- [log-symbols](https://github.com/palash25/log-symbols) - Ruby port\n- [guumaster/logsymbols](https://github.com/guumaster/logsymbols) - Golang port\n\n---\n\n<div align=\"center\">\n\t<b>\n\t\t<a href=\"https://tidelift.com/subscription/pkg/npm-log-symbols?utm_source=npm-log-symbols&utm_medium=referral&utm_campaign=readme\">Get professional support for this package with a Tidelift subscription</a>\n\t</b>\n\t<br>\n\t<sub>\n\t\tTidelift helps make open source sustainable for maintainers while giving companies<br>assurances about security, maintenance, and licensing for their dependencies.\n\t</sub>\n</div>\n",
+  "maintainers": [
+    {
+      "name": "sindresorhus",
+      "email": "sindresorhus@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-04-26T10:47:38.843Z",
+    "created": "2014-07-10T00:55:11.397Z",
+    "1.0.0": "2014-07-10T00:55:11.397Z",
+    "1.0.1": "2014-09-24T09:33:36.184Z",
+    "1.0.2": "2015-02-24T08:57:54.293Z",
+    "2.0.0": "2017-07-19T17:09:14.271Z",
+    "2.1.0": "2017-09-23T09:20:37.914Z",
+    "2.2.0": "2018-01-21T23:44:35.752Z",
+    "3.0.0": "2019-04-17T15:46:56.791Z",
+    "4.0.0": "2020-04-26T10:47:36.370Z"
+  },
+  "homepage": "https://github.com/sindresorhus/log-symbols#readme",
+  "keywords": [
+    "unicode",
+    "cli",
+    "cmd",
+    "command-line",
+    "characters",
+    "symbol",
+    "symbols",
+    "figure",
+    "figures",
+    "fallback",
+    "windows",
+    "log",
+    "logging",
+    "terminal",
+    "stdout"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/log-symbols.git"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "https://sindresorhus.com"
+  },
+  "bugs": {
+    "url": "https://github.com/sindresorhus/log-symbols/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md",
+  "users": {
+    "imagdy": true,
+    "kikobeats": true,
+    "rmlewisuk": true,
+    "pedroparra": true,
+    "brandonpapworth": true,
+    "phoenix-xsy": true,
+    "battlemidget": true,
+    "igz": true,
+    "gochomugo": true,
+    "jtbrinkmann": true,
+    "ahme-t": true,
+    "gor0n": true,
+    "passcod": true,
+    "ahmed-dinar": true,
+    "blacksun1": true,
+    "esenor": true,
+    "dosevader": true,
+    "ealen": true,
+    "wickie": true,
+    "coolhanddev": true,
+    "rocket0191": true,
+    "ognjen.jevremovic": true,
+    "sprying": true,
+    "alfeo92": true,
+    "danielheene": true,
+    "zhenguo.zhao": true,
+    "bigwinds": true,
+    "heartnett": true,
+    "ttionya": true,
+    "soenkekluth": true,
+    "preethamvishy": true,
+    "artin__": true,
+    "asfrom30": true,
+    "daizch": true
+  }
+}

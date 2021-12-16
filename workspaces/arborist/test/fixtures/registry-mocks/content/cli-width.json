@@ -1,0 +1,610 @@
+{
+  "_id": "cli-width",
+  "_rev": "14-74277b249eb99720ee3264521d84fc70",
+  "name": "cli-width",
+  "description": "Get stdout window width, with two fallbacks, tty and then a default.",
+  "dist-tags": {
+    "latest": "3.0.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "cli-width",
+      "version": "1.0.0",
+      "description": "Get stdout window width, with two fallbacks, tty and then a default.",
+      "main": "index.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:knownasilya/cli-width.git"
+      },
+      "author": {
+        "name": "Ilya Radchenko",
+        "email": "ilya@burstcreations.com"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/knownasilya/cli-width/issues"
+      },
+      "homepage": "https://github.com/knownasilya/cli-width",
+      "gitHead": "f1549d7c9801ad2da11a31e562f13748d10a2fe6",
+      "_id": "cli-width@1.0.0",
+      "_shasum": "58c8afd99d5147de081f9d1c058946a148e4f2fd",
+      "_from": ".",
+      "_npmVersion": "2.1.2",
+      "_nodeVersion": "0.10.26",
+      "_npmUser": {
+        "name": "knownasilya",
+        "email": "ilya@burstcreations.com"
+      },
+      "maintainers": [
+        {
+          "name": "knownasilya",
+          "email": "ilya@burstcreations.com"
+        }
+      ],
+      "dist": {
+        "shasum": "58c8afd99d5147de081f9d1c058946a148e4f2fd",
+        "tarball": "https://registry.npmjs.org/cli-width/-/cli-width-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "cli-width",
+      "version": "1.0.1",
+      "description": "Get stdout window width, with two fallbacks, tty and then a default.",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test | tap-spec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:knownasilya/cli-width.git"
+      },
+      "author": {
+        "name": "Ilya Radchenko",
+        "email": "ilya@burstcreations.com"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/knownasilya/cli-width/issues"
+      },
+      "homepage": "https://github.com/knownasilya/cli-width",
+      "devDependencies": {
+        "tap-spec": "^2.2.0",
+        "tape": "^3.4.0"
+      },
+      "gitHead": "4448d9599eee5a85da34e24baad39cfddfc1d807",
+      "_id": "cli-width@1.0.1",
+      "_shasum": "14d4f6870234d91e97f7dd81e76be8271410a1ef",
+      "_from": ".",
+      "_npmVersion": "2.1.2",
+      "_nodeVersion": "0.10.26",
+      "_npmUser": {
+        "name": "knownasilya",
+        "email": "ilya@burstcreations.com"
+      },
+      "maintainers": [
+        {
+          "name": "knownasilya",
+          "email": "ilya@burstcreations.com"
+        }
+      ],
+      "dist": {
+        "shasum": "14d4f6870234d91e97f7dd81e76be8271410a1ef",
+        "tarball": "https://registry.npmjs.org/cli-width/-/cli-width-1.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "cli-width",
+      "version": "1.1.0",
+      "description": "Get stdout window width, with two fallbacks, tty and then a default.",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test | tap-spec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/knownasilya/cli-width.git"
+      },
+      "author": {
+        "name": "Ilya Radchenko",
+        "email": "ilya@burstcreations.com"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/knownasilya/cli-width/issues"
+      },
+      "homepage": "https://github.com/knownasilya/cli-width",
+      "devDependencies": {
+        "tap-spec": "^2.2.0",
+        "tape": "^3.4.0"
+      },
+      "gitHead": "3eef3a6b1104e5662844a0b18949846d4d3391c9",
+      "_id": "cli-width@1.1.0",
+      "_shasum": "df62d1e1a980ef60d1256f364d4f2695594d7ecb",
+      "_from": ".",
+      "_npmVersion": "2.11.1",
+      "_nodeVersion": "2.3.0",
+      "_npmUser": {
+        "name": "knownasilya",
+        "email": "ilya@burstcreations.com"
+      },
+      "maintainers": [
+        {
+          "name": "knownasilya",
+          "email": "ilya@burstcreations.com"
+        }
+      ],
+      "dist": {
+        "shasum": "df62d1e1a980ef60d1256f364d4f2695594d7ecb",
+        "tarball": "https://registry.npmjs.org/cli-width/-/cli-width-1.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.1": {
+      "name": "cli-width",
+      "version": "1.1.1",
+      "description": "Get stdout window width, with two fallbacks, tty and then a default.",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test | tspec",
+        "coverage": "isparta cover test/*.js | tspec",
+        "coveralls": "npm run coverage -s && coveralls < coverage/lcov.info",
+        "postcoveralls": "rimraf ./coverage"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/knownasilya/cli-width.git"
+      },
+      "author": {
+        "name": "Ilya Radchenko",
+        "email": "ilya@burstcreations.com"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/knownasilya/cli-width/issues"
+      },
+      "homepage": "https://github.com/knownasilya/cli-width",
+      "devDependencies": {
+        "tap-spec": "^4.1.0",
+        "tape": "^3.4.0",
+        "coveralls": "^2.11.4",
+        "isparta": "^3.0.4",
+        "rimraf": "^2.4.3"
+      },
+      "gitHead": "353b24e4ebd754a748dbb07695cf1a02caf1d012",
+      "_id": "cli-width@1.1.1",
+      "_shasum": "a4d293ef67ebb7b88d4a4d42c0ccf00c4d1e366d",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.1",
+      "_npmUser": {
+        "name": "knownasilya",
+        "email": "ilya@burstcreations.com"
+      },
+      "maintainers": [
+        {
+          "name": "knownasilya",
+          "email": "ilya@burstcreations.com"
+        }
+      ],
+      "dist": {
+        "shasum": "a4d293ef67ebb7b88d4a4d42c0ccf00c4d1e366d",
+        "tarball": "https://registry.npmjs.org/cli-width/-/cli-width-1.1.1.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "cli-width",
+      "version": "2.0.0",
+      "description": "Get stdout window width, with two fallbacks, tty and then a default.",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test | tspec",
+        "coverage": "isparta cover test/*.js | tspec",
+        "coveralls": "npm run coverage -s && coveralls < coverage/lcov.info",
+        "postcoveralls": "rimraf ./coverage"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/knownasilya/cli-width.git"
+      },
+      "author": {
+        "name": "Ilya Radchenko",
+        "email": "ilya@burstcreations.com"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/knownasilya/cli-width/issues"
+      },
+      "homepage": "https://github.com/knownasilya/cli-width",
+      "devDependencies": {
+        "tap-spec": "^4.1.0",
+        "tape": "^3.4.0",
+        "coveralls": "^2.11.4",
+        "isparta": "^3.0.4",
+        "rimraf": "^2.4.3"
+      },
+      "gitHead": "a81748923ff3cdbb49853cf96de490992097cbb5",
+      "_id": "cli-width@2.0.0",
+      "_shasum": "067c42c5c92dc50f29d7cf4c5792c638c4d0b897",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.1",
+      "_npmUser": {
+        "name": "knownasilya",
+        "email": "ilya@burstcreations.com"
+      },
+      "maintainers": [
+        {
+          "name": "knownasilya",
+          "email": "ilya@burstcreations.com"
+        }
+      ],
+      "dist": {
+        "shasum": "067c42c5c92dc50f29d7cf4c5792c638c4d0b897",
+        "tarball": "https://registry.npmjs.org/cli-width/-/cli-width-2.0.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-9-west.internal.npmjs.com",
+        "tmp": "tmp/cli-width-2.0.0.tgz_1454942077201_0.3669316528830677"
+      },
+      "directories": {}
+    },
+    "2.1.0": {
+      "name": "cli-width",
+      "version": "2.1.0",
+      "description": "Get stdout window width, with two fallbacks, tty and then a default.",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test | tspec",
+        "coverage": "isparta cover test/*.js | tspec",
+        "coveralls": "npm run coverage -s && coveralls < coverage/lcov.info",
+        "postcoveralls": "rimraf ./coverage"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/knownasilya/cli-width.git"
+      },
+      "author": {
+        "name": "Ilya Radchenko",
+        "email": "ilya@burstcreations.com"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/knownasilya/cli-width/issues"
+      },
+      "homepage": "https://github.com/knownasilya/cli-width",
+      "devDependencies": {
+        "tap-spec": "^4.1.0",
+        "tape": "^3.4.0",
+        "coveralls": "^2.11.4",
+        "isparta": "^3.0.4",
+        "rimraf": "^2.4.3"
+      },
+      "gitHead": "c9506fd74bd3863ff327f8f8892601fa4ac2dbb3",
+      "_id": "cli-width@2.1.0",
+      "_shasum": "b234ca209b29ef66fc518d9b98d5847b00edf00a",
+      "_from": ".",
+      "_npmVersion": "2.14.12",
+      "_nodeVersion": "4.2.6",
+      "_npmUser": {
+        "name": "knownasilya",
+        "email": "ilya@burstcreations.com"
+      },
+      "maintainers": [
+        {
+          "name": "knownasilya",
+          "email": "ilya@burstcreations.com"
+        }
+      ],
+      "dist": {
+        "shasum": "b234ca209b29ef66fc518d9b98d5847b00edf00a",
+        "tarball": "https://registry.npmjs.org/cli-width/-/cli-width-2.1.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-9-west.internal.npmjs.com",
+        "tmp": "tmp/cli-width-2.1.0.tgz_1455570612101_0.2879865295253694"
+      },
+      "directories": {}
+    },
+    "2.1.1": {
+      "name": "cli-width",
+      "version": "2.1.1",
+      "description": "Get stdout window width, with two fallbacks, tty and then a default.",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test | tspec",
+        "coverage": "isparta cover test/*.js | tspec",
+        "coveralls": "npm run coverage -s && coveralls < coverage/lcov.info",
+        "postcoveralls": "rimraf ./coverage",
+        "release": "standard-version"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/knownasilya/cli-width.git"
+      },
+      "author": {
+        "name": "Ilya Radchenko",
+        "email": "ilya@burstcreations.com"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/knownasilya/cli-width/issues"
+      },
+      "homepage": "https://github.com/knownasilya/cli-width",
+      "devDependencies": {
+        "coveralls": "^2.11.4",
+        "isparta": "^3.0.4",
+        "rimraf": "^2.4.3",
+        "standard-version": "^4.2.0",
+        "tap-spec": "^4.1.0",
+        "tape": "^3.4.0"
+      },
+      "gitHead": "6d7cc28bdcd8b9e17b2611c332f17ff8ca2c0115",
+      "_id": "cli-width@2.1.1",
+      "_shasum": "d39c1ba0008fa7a6fc689a04197a277ba9ee05bc",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "6.9.4",
+      "_npmUser": {
+        "name": "knownasilya",
+        "email": "ilya@burstcreations.com"
+      },
+      "dist": {
+        "shasum": "d39c1ba0008fa7a6fc689a04197a277ba9ee05bc",
+        "tarball": "https://registry.npmjs.org/cli-width/-/cli-width-2.1.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "knownasilya",
+          "email": "ilya@burstcreations.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/cli-width-2.1.1.tgz_1503408530248_0.24596149008721113"
+      },
+      "directories": {}
+    },
+    "2.2.0": {
+      "name": "cli-width",
+      "version": "2.2.0",
+      "description": "Get stdout window width, with two fallbacks, tty and then a default.",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test | tspec",
+        "coverage": "isparta cover test/*.js | tspec",
+        "coveralls": "npm run coverage -s && coveralls < coverage/lcov.info",
+        "postcoveralls": "rimraf ./coverage",
+        "release": "standard-version"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/knownasilya/cli-width.git"
+      },
+      "author": {
+        "name": "Ilya Radchenko",
+        "email": "ilya@burstcreations.com"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/knownasilya/cli-width/issues"
+      },
+      "homepage": "https://github.com/knownasilya/cli-width",
+      "devDependencies": {
+        "coveralls": "^2.11.4",
+        "isparta": "^3.0.4",
+        "rimraf": "^2.4.3",
+        "standard-version": "^4.2.0",
+        "tap-spec": "^4.1.0",
+        "tape": "^3.4.0"
+      },
+      "gitHead": "176376e902a7d9fde3d82c885978e6d13d6496fc",
+      "_id": "cli-width@2.2.0",
+      "_shasum": "ff19ede8a9a5e579324147b0c11f0fbcbabed639",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "6.9.4",
+      "_npmUser": {
+        "name": "knownasilya",
+        "email": "ilya@burstcreations.com"
+      },
+      "dist": {
+        "shasum": "ff19ede8a9a5e579324147b0c11f0fbcbabed639",
+        "tarball": "https://registry.npmjs.org/cli-width/-/cli-width-2.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "knownasilya",
+          "email": "ilya@burstcreations.com"
+        },
+        {
+          "name": "sboudrias",
+          "email": "admin@simonboudrias.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/cli-width-2.2.0.tgz_1503409565255_0.3628303287550807"
+      },
+      "directories": {}
+    },
+    "2.2.1": {
+      "name": "cli-width",
+      "version": "2.2.1",
+      "description": "Get stdout window width, with two fallbacks, tty and then a default.",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test | tspec",
+        "coverage": "nyc node test | tspec",
+        "coveralls": "npm run coverage -s && coveralls < coverage/lcov.info",
+        "release": "standard-version"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/knownasilya/cli-width.git"
+      },
+      "author": {
+        "name": "Ilya Radchenko",
+        "email": "knownasilya@gmail.com"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/knownasilya/cli-width/issues"
+      },
+      "homepage": "https://github.com/knownasilya/cli-width",
+      "devDependencies": {
+        "coveralls": "^3.0.11",
+        "nyc": "^15.0.1",
+        "standard-version": "^7.1.0",
+        "tap-spec": "^5.0.0",
+        "tape": "^4.13.2"
+      },
+      "gitHead": "271bf678a0925cc5f400404cfc78ffb71e7057e6",
+      "_id": "cli-width@2.2.1",
+      "_nodeVersion": "12.16.0",
+      "_npmVersion": "6.13.4",
+      "dist": {
+        "integrity": "sha512-GRMWDxpOB6Dgk2E5Uo+3eEBvtOOlimMmpbFiKuLFnQzYDavtLFY3K5ona41jgN/WdRZtG7utuVSVTL4HbZHGkw==",
+        "shasum": "b0433d0b4e9c847ef18868a4ef16fd5fc8271c48",
+        "tarball": "https://registry.npmjs.org/cli-width/-/cli-width-2.2.1.tgz",
+        "fileCount": 9,
+        "unpackedSize": 11189,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeldKSCRA9TVsSAnZWagAANy0P/1STRKiOyZfQQIJwDYCD\nKmuLqSMMns4rmcGCs0xlxrX9WwVm+h+Wk6Hc4dC0O1GKz85QgtZiZg+WTafc\nFeOZvm6oGAKo5hCGmZ/YNBKZyPMRGdzzjxa1smfDaKbj2Uppj1lKLiG9dLx+\nllzFaURmq7tA1fLJt0ze2T48Vb6ea3SjBUIpAKcsu+kWzs5qYSzFJRcA7sLj\nO+7K5nHxs5mcpTR+g3i5MQOojntvJ2ehdmRcmdQoOm9TwW+6GqPDawTk2Hf8\nHC+GkPN4vtW4aVOmxdCLrdP5fyltpoFTPyCNnQNz1ed9GMm9tQJ8Asu6pWTS\nGRmTXhu+xA2f8IrFzKSJQtwExNZVQm6YqBr2oEFP+BJUxJ9osNd8s8cz1qri\ns+KckAZRJLFum9uJNpswyOhqU2pIBSwyD3BTVCiSFcRTwQ6E/yE0kPc3vwhO\n+oBeEqs7BEGtQztlqrOeT5i5X2cQfT4YkUb15b973NXl2XU9qEuI3xq1kujS\nMkjxn4i6xBswryJDrwcLyLHWahPIpW8xmWG1GGnWg8AwU3h7ByGXMidgVmYB\nZnf/qRzXMt1RLqOfg1WcuJvrWlsoirDGbUIVCe6Aso/4XNzk1mfD0SiwO9/H\nXD7VBQxwBvJGOJxbqK+iKkECap63rBDD0dZaGu/xMjqJtBsZNysk8n/goZs7\nEqni\r\n=nJn+\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "knownasilya",
+          "email": "ilya@burstcreations.com"
+        },
+        {
+          "name": "sboudrias",
+          "email": "admin@simonboudrias.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "knownasilya",
+        "email": "knownasilya@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/cli-width_2.2.1_1586877074212_0.7202057873507315"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.0": {
+      "name": "cli-width",
+      "version": "3.0.0",
+      "description": "Get stdout window width, with two fallbacks, tty and then a default.",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test | tspec",
+        "coverage": "nyc node test | tspec",
+        "coveralls": "npm run coverage -s && coveralls < coverage/lcov.info",
+        "release": "standard-version"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/knownasilya/cli-width.git"
+      },
+      "author": {
+        "name": "Ilya Radchenko",
+        "email": "knownasilya@gmail.com"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/knownasilya/cli-width/issues"
+      },
+      "homepage": "https://github.com/knownasilya/cli-width",
+      "engines": {
+        "node": ">= 10"
+      },
+      "devDependencies": {
+        "coveralls": "^3.0.11",
+        "nyc": "^15.0.1",
+        "standard-version": "^7.1.0",
+        "tap-spec": "^5.0.0",
+        "tape": "^4.13.2"
+      },
+      "gitHead": "c96cf6e8b9a02256ded31e412490e29dbad30603",
+      "_id": "cli-width@3.0.0",
+      "_nodeVersion": "12.16.0",
+      "_npmVersion": "6.13.4",
+      "dist": {
+        "integrity": "sha512-FxqpkPPwu1HjuN93Omfm4h8uIanXofW0RxVEW3k5RKx+mJJYSthzNhp32Kzxxy3YAEZ/Dc/EWN1vZRY0+kOhbw==",
+        "shasum": "a2f48437a2caa9a22436e794bf071ec9e61cedf6",
+        "tarball": "https://registry.npmjs.org/cli-width/-/cli-width-3.0.0.tgz",
+        "fileCount": 9,
+        "unpackedSize": 11494,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeldVmCRA9TVsSAnZWagAAvmsP/RZeOb9v056ITvwOmYQt\npdnoizv359Aho6K4fpJ5Ooxpeca+baQ8/1Ik8SDscuji2LyYm12LQR3Dvjac\n+tkleotn3CNzI1iyAkubPaBtntvCEzKPZD7xY8pJiOr6J7OKLa5WL4fAXFF3\nIzSgjfaO1wOyEFWDp3dlkBPtGiJVBLPrkOlEOz+sFiZhKqC+8KGHdLcvdA+P\nQPiSGtl3ewRerqBq1otz33iTraj7LEy/1pOTTs0+ccsJTctcFwPFIeXM6hnp\nSbZCzsNsSBdbcvjuBbmRFVOu12ajzLiEWw/lOTC1S9d0jI7A65Jw3t46A8vn\nBy2abgmhxcQ6HlaEY7Jrw9tKucbllRFXxSBaF+0LTdPbOWeKJoCzfm8zD/DT\nw3yRrZ815IwjQgwhUAIVI8oh/QPIrYS6+WHFNk2Cq4SGItaKSmOgy1DFl9Ja\n24g57GYnprXEOS1r5GPFOPRcRsSB9U2UJkfjIQ63n7bVbDx3mvje8o4XoAKr\ng+SMzY05ZUZC0h27YVbiAmSHsnH6AOumiVGR7r1QmpRun1etPrpnskzsUbyO\nyYPzOBED0lxzGL1NqvBQImXxsaK1MCKgdwVHIixDOoxiFtSwTHE9O39Qcvjk\nvPk7LX0GRhRLi1UzwfbUoPbmenKr8ZAD10I5s0bm8lIeDqMN8fzR0g8wOGE2\nFiOg\r\n=mluF\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "knownasilya",
+          "email": "ilya@burstcreations.com"
+        },
+        {
+          "name": "sboudrias",
+          "email": "admin@simonboudrias.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "knownasilya",
+        "email": "knownasilya@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/cli-width_3.0.0_1586877798281_0.1335442509204645"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# cli-width\n\nGet stdout window width, with four fallbacks, `tty`, `output.columns`, a custom environment variable and then a default.\n\n[![npm version](https://badge.fury.io/js/cli-width.svg)](http://badge.fury.io/js/cli-width)\n[![Build Status](https://travis-ci.org/knownasilya/cli-width.svg)](https://travis-ci.org/knownasilya/cli-width)\n[![Coverage Status](https://coveralls.io/repos/knownasilya/cli-width/badge.svg?branch=master&service=github)](https://coveralls.io/github/knownasilya/cli-width?branch=master)\n\nTested against NodeJS v10+\n\n## Usage\n\n```\nnpm install --save cli-width\n```\n\n```js\n\"use strict\";\n\nconst cliWidth = require(\"cli-width\");\n\ncliWidth(); // maybe 204 :)\n```\n\nYou can also set the `CLI_WIDTH` environment variable.\n\nIf none of the methods are supported, and the environment variable isn't set,\nthe default width value is going to be `0`, that can be changed using the configurable `options`.\n\n## API\n\n### cliWidth([options])\n\n`cliWidth` can be configured using an `options` parameter, the possible properties are:\n\n- **defaultWidth**\\<number\\> Defines a default value to be used if none of the methods are available, defaults to `0`\n- **output**\\<object\\> A stream to be used to read width values from, defaults to `process.stdout`\n- **tty**\\<object\\> TTY module to try to read width from as a fallback, defaults to `require('tty')`\n\n### Examples\n\nDefining both a default width value and a stream output to try to read from:\n\n```js\nconst cliWidth = require(\"cli-width\");\nconst ttys = require(\"ttys\");\n\ncliWidth({\n  defaultWidth: 80,\n  output: ttys.output,\n});\n```\n\nDefines a different tty module to read width from:\n\n```js\nconst cliWidth = require(\"cli-width\");\nconst ttys = require(\"ttys\");\n\ncliWidth({\n  tty: ttys,\n});\n```\n\n## Tests\n\n```bash\nnpm install\nnpm test\n```\n\nCoverage can be generated with `npm run coverage`.\n",
+  "maintainers": [
+    {
+      "name": "knownasilya",
+      "email": "ilya@burstcreations.com"
+    },
+    {
+      "name": "sboudrias",
+      "email": "admin@simonboudrias.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-04-14T15:23:20.823Z",
+    "created": "2015-01-21T20:33:19.178Z",
+    "1.0.0": "2015-01-21T20:33:19.178Z",
+    "1.0.1": "2015-01-22T14:29:57.778Z",
+    "1.1.0": "2015-10-16T12:28:23.132Z",
+    "1.1.1": "2016-01-26T00:31:16.054Z",
+    "2.0.0": "2016-02-08T14:34:40.031Z",
+    "2.1.0": "2016-02-15T21:10:15.968Z",
+    "2.1.1": "2017-08-22T13:28:51.196Z",
+    "2.2.0": "2017-08-22T13:46:06.289Z",
+    "2.2.1": "2020-04-14T15:11:14.372Z",
+    "3.0.0": "2020-04-14T15:23:18.434Z"
+  },
+  "homepage": "https://github.com/knownasilya/cli-width",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/knownasilya/cli-width.git"
+  },
+  "author": {
+    "name": "Ilya Radchenko",
+    "email": "knownasilya@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/knownasilya/cli-width/issues"
+  },
+  "license": "ISC",
+  "readmeFilename": "README.md",
+  "users": {
+    "knownasilya": true
+  }
+}

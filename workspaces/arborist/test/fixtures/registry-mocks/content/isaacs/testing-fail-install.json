@@ -1,0 +1,58 @@
+{
+  "_id": "@isaacs/testing-fail-install",
+  "name": "@isaacs/testing-fail-install",
+  "dist-tags": {
+    "latest": "1.0.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "@isaacs/testing-fail-install",
+      "version": "1.0.0",
+      "scripts": {
+        "install": "exit 1"
+      },
+      "license": "ISC",
+      "_id": "@isaacs/testing-fail-install@1.0.0",
+      "_nodeVersion": "13.7.0",
+      "_npmVersion": "6.13.6",
+      "dist": {
+        "integrity": "sha512-MlK05L4wasrk2/fQqgCeR8s+1KE8LEfMI3ZzaGfR5Dyvgi4R8vQY0fvwYcvKh6cqrmMX7wORvGKi5YJn8LZ9bg==",
+        "shasum": "a49032b543ce45665aac3728a31e8c30ffc083e8",
+        "tarball": "https://registry.npmjs.org/@isaacs/testing-fail-install/-/testing-fail-install-1.0.0.tgz",
+        "fileCount": 1,
+        "unpackedSize": 131,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeMLTICRA9TVsSAnZWagAAFt0P/iSVrslTQKKjq5lUcPVl\n7sWTdNmfbWlbUwfTv6vXv+Kd/KqLMccjYcre6UJfW4XoWoNSPy00sz3Du+Yz\nnMdh7QjVULyokEJ4VsLc3qpQX2Of+573pSECAGKmsafHb7S+7aF8iLZ+lXKT\n2EyfvApWg1/3MyhlXHBz2r72XomBHtTpBUmwLM/S4GjXvJ8OhbwROYf89s+Y\n+QCBk+E9fdlQ5fDuP/dF8jd1JZCekztUzX3UpE8yt4iRWbZcvubE8EYpn2aE\nGyrz1Mbbsww20NxjcQrjkMWqzq8yw6BQOu9+KbiqhQvO5zFJqsXCSG96+If9\n0ryVpIKFEaNyrMYVn0PEOjCzNcmdh9h0NhdfP14l8qzhL5VtVkuCJbdt1+B7\nTyMtUgKMCFPDBvTUzcPvqnCzsDAs4C016TMiioFm2Fd8l2Mk0UgD+vnjwP/X\nx9Bw/vjpPYBJjLgvaDTbHkMvyjUPkGYNO9i6di4AXdULFR+1GQKHBt4J4mVh\nBL1OaK7WBZrYVrHNxwgIQ4z3i1sHe+G7ufk7xjdFxeOC3/OIbdMZwKDdrYtc\ngSIVAMLtHxHsh8VnycxcEY79PX68ykBJSw9RMcYRg9sUtqcBXWxadVbSrEEx\nPCPDIlTogEfF0gr+kxEI6LnaBaueOVsqnGQVPXWwZNXnN2m98RxlFoBn4WQM\nQ0Uc\r\n=fDc7\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/testing-fail-install_1.0.0_1580250312311_0.3406906800424985"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2020-01-28T22:25:12.284Z",
+    "1.0.0": "2020-01-28T22:25:12.430Z",
+    "modified": "2020-01-28T22:25:14.753Z"
+  },
+  "maintainers": [
+    {
+      "name": "isaacs",
+      "email": "i@izs.me"
+    }
+  ],
+  "license": "ISC",
+  "readme": "ERROR: No README data found!",
+  "readmeFilename": ""
+}

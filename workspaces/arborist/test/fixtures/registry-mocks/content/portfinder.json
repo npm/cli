@@ -1,0 +1,2402 @@
+{
+  "_id": "portfinder",
+  "_rev": "60-650b2aa4abd60479e99860d9140934d7",
+  "name": "portfinder",
+  "description": "A simple tool to find an open port on the current machine",
+  "dist-tags": {
+    "latest": "1.0.28"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "portfinder",
+      "version": "0.1.0",
+      "description": "A simple tool to find an open port on the current machine",
+      "author": {
+        "name": "Charlie Robbins",
+        "email": "charlie.robbins@gmail.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/indexzero/nconf-redis.git"
+      },
+      "keywords": [
+        "http",
+        "ports",
+        "utilities"
+      ],
+      "dependencies": {
+        "async": "0.1.x"
+      },
+      "devDependencies": {
+        "vows": "0.5.x"
+      },
+      "main": "./lib/portfinder",
+      "scripts": {
+        "test": "vows test/*-test.js --spec"
+      },
+      "engines": {
+        "node": ">= 0.4.0"
+      },
+      "_npmJsonOpts": {
+        "file": "/Users/Charlie/.npm/portfinder/0.1.0/package/package.json",
+        "wscript": false,
+        "contributors": false,
+        "serverjs": false
+      },
+      "_id": "portfinder@0.1.0",
+      "_engineSupported": true,
+      "_npmVersion": "1.0.13",
+      "_nodeVersion": "v0.4.9",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "07ef1c071b93737e952b8a53fdde5127aafe4b47",
+        "tarball": "https://registry.npmjs.org/portfinder/-/portfinder-0.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.0": {
+      "name": "portfinder",
+      "version": "0.2.0",
+      "description": "A simple tool to find an open port on the current machine",
+      "author": {
+        "name": "Charlie Robbins",
+        "email": "charlie.robbins@gmail.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indexzero/node-portfinder.git"
+      },
+      "keywords": [
+        "http",
+        "ports",
+        "utilities"
+      ],
+      "dependencies": {
+        "mkdirp": "0.0.x"
+      },
+      "devDependencies": {
+        "async": "0.1.x",
+        "vows": "0.5.x"
+      },
+      "main": "./lib/portfinder",
+      "scripts": {
+        "test": "vows test/*-test.js --spec"
+      },
+      "engines": {
+        "node": ">= 0.4.0"
+      },
+      "_npmJsonOpts": {
+        "file": "/Users/Charlie/.npm/portfinder/0.2.0/package/package.json",
+        "wscript": false,
+        "contributors": false,
+        "serverjs": false
+      },
+      "_id": "portfinder@0.2.0",
+      "_engineSupported": true,
+      "_npmVersion": "1.0.15",
+      "_nodeVersion": "v0.4.8",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "96fdf989e246ea7876c20356aeaecb4c83c9b6a2",
+        "tarball": "https://registry.npmjs.org/portfinder/-/portfinder-0.2.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.1": {
+      "name": "portfinder",
+      "version": "0.2.1",
+      "description": "A simple tool to find an open port on the current machine",
+      "author": {
+        "name": "Charlie Robbins",
+        "email": "charlie.robbins@gmail.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indexzero/node-portfinder.git"
+      },
+      "keywords": [
+        "http",
+        "ports",
+        "utilities"
+      ],
+      "dependencies": {
+        "mkdirp": "0.0.x"
+      },
+      "devDependencies": {
+        "async": "0.1.x",
+        "vows": "0.5.x"
+      },
+      "main": "./lib/portfinder",
+      "scripts": {
+        "test": "vows test/*-test.js --spec"
+      },
+      "engines": {
+        "node": ">= 0.4.0"
+      },
+      "_npmUser": {
+        "name": "indexzero",
+        "email": "charlie.robbins@gmail.com"
+      },
+      "_id": "portfinder@0.2.1",
+      "_engineSupported": true,
+      "_npmVersion": "1.0.103",
+      "_nodeVersion": "v0.4.12",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "b2b9b0164f9e17fa3a9c7db2304d0a75140c71ad",
+        "tarball": "https://registry.npmjs.org/portfinder/-/portfinder-0.2.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "indexzero",
+          "email": "charlie.robbins@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.3.0": {
+      "name": "portfinder",
+      "version": "0.3.0",
+      "description": "A simple tool to find an open port on the current machine",
+      "author": {
+        "name": "Charlie Robbins",
+        "email": "charlie.robbins@gmail.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indexzero/node-portfinder.git"
+      },
+      "keywords": [
+        "http",
+        "ports",
+        "utilities"
+      ],
+      "dependencies": {
+        "mkdirp": "0.0.x"
+      },
+      "devDependencies": {
+        "async": "0.1.x",
+        "vows": "0.5.x"
+      },
+      "main": "./lib/portfinder",
+      "scripts": {
+        "test": "vows test/*-test.js --spec"
+      },
+      "engines": {
+        "node": ">= 0.4.0"
+      },
+      "license": "MIT/X11",
+      "gitHead": "711121557c2f9fee81ff3dc12042007875b65aec",
+      "bugs": {
+        "url": "https://github.com/indexzero/node-portfinder/issues"
+      },
+      "homepage": "https://github.com/indexzero/node-portfinder",
+      "_id": "portfinder@0.3.0",
+      "_shasum": "f9f2c96894440c5b5113b84e0ad1013042b7c2a0",
+      "_from": ".",
+      "_npmVersion": "2.1.5",
+      "_nodeVersion": "0.10.33",
+      "_npmUser": {
+        "name": "indexzero",
+        "email": "charlie.robbins@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "indexzero",
+          "email": "charlie.robbins@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "f9f2c96894440c5b5113b84e0ad1013042b7c2a0",
+        "tarball": "https://registry.npmjs.org/portfinder/-/portfinder-0.3.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.4.0": {
+      "name": "portfinder",
+      "version": "0.4.0",
+      "description": "A simple tool to find an open port on the current machine",
+      "author": {
+        "name": "Charlie Robbins",
+        "email": "charlie.robbins@gmail.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indexzero/node-portfinder.git"
+      },
+      "keywords": [
+        "http",
+        "ports",
+        "utilities"
+      ],
+      "dependencies": {
+        "async": "0.9.0",
+        "mkdirp": "0.5.x"
+      },
+      "devDependencies": {
+        "vows": "0.8.0"
+      },
+      "main": "./lib/portfinder",
+      "scripts": {
+        "test": "vows test/*-test.js --spec"
+      },
+      "engines": {
+        "node": ">= 0.8.0"
+      },
+      "license": "MIT/X11",
+      "gitHead": "8c3f20bf1d5ec399262c592f61129a65727004a9",
+      "bugs": {
+        "url": "https://github.com/indexzero/node-portfinder/issues"
+      },
+      "homepage": "https://github.com/indexzero/node-portfinder",
+      "_id": "portfinder@0.4.0",
+      "_shasum": "a3ffadffafe4fb98e0601a85eda27c27ce84ca1e",
+      "_from": ".",
+      "_npmVersion": "2.2.0",
+      "_nodeVersion": "0.10.33",
+      "_npmUser": {
+        "name": "indexzero",
+        "email": "charlie.robbins@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "indexzero",
+          "email": "charlie.robbins@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "a3ffadffafe4fb98e0601a85eda27c27ce84ca1e",
+        "tarball": "https://registry.npmjs.org/portfinder/-/portfinder-0.4.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "portfinder",
+      "description": "A simple tool to find an open port on the current machine",
+      "version": "1.0.0",
+      "author": {
+        "name": "Charlie Robbins",
+        "email": "charlie.robbins@gmail.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indexzero/node-portfinder.git"
+      },
+      "keywords": [
+        "http",
+        "ports",
+        "utilities"
+      ],
+      "dependencies": {
+        "async": "^1.5.2",
+        "mkdirp": "0.5.x"
+      },
+      "devDependencies": {
+        "vows": "0.8.0"
+      },
+      "main": "./lib/portfinder",
+      "scripts": {
+        "test": "vows test/*-test.js --spec"
+      },
+      "engines": {
+        "node": ">= 0.12.0"
+      },
+      "license": "MIT",
+      "gitHead": "120b4175efbfd11c65f0344f51606a2e80fb2e1e",
+      "bugs": {
+        "url": "https://github.com/indexzero/node-portfinder/issues"
+      },
+      "homepage": "https://github.com/indexzero/node-portfinder#readme",
+      "_id": "portfinder@1.0.0",
+      "_shasum": "5bcb212ff52874d76c99bf8408094c153ccf2b95",
+      "_from": ".",
+      "_npmVersion": "2.14.17",
+      "_nodeVersion": "4.2.2",
+      "_npmUser": {
+        "name": "indexzero",
+        "email": "charlie.robbins@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "indexzero",
+          "email": "charlie.robbins@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "5bcb212ff52874d76c99bf8408094c153ccf2b95",
+        "tarball": "https://registry.npmjs.org/portfinder/-/portfinder-1.0.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-5-east.internal.npmjs.com",
+        "tmp": "tmp/portfinder-1.0.0.tgz_1454482380124_0.1727100380230695"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "portfinder",
+      "description": "A simple tool to find an open port on the current machine",
+      "version": "1.0.1",
+      "author": {
+        "name": "Charlie Robbins",
+        "email": "charlie.robbins@gmail.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indexzero/node-portfinder.git"
+      },
+      "keywords": [
+        "http",
+        "ports",
+        "utilities"
+      ],
+      "dependencies": {
+        "async": "^1.5.2",
+        "mkdirp": "0.5.x"
+      },
+      "devDependencies": {
+        "vows": "0.8.0"
+      },
+      "main": "./lib/portfinder",
+      "scripts": {
+        "test": "vows test/*-test.js --spec"
+      },
+      "engines": {
+        "node": ">= 0.12.0"
+      },
+      "license": "MIT",
+      "gitHead": "669ed062561cff1c522341977e9b9cdb1688d3cf",
+      "bugs": {
+        "url": "https://github.com/indexzero/node-portfinder/issues"
+      },
+      "homepage": "https://github.com/indexzero/node-portfinder#readme",
+      "_id": "portfinder@1.0.1",
+      "_shasum": "de84effc166ec86d73a22f51c173d886cd89a529",
+      "_from": ".",
+      "_npmVersion": "2.14.1",
+      "_nodeVersion": "4.2.2",
+      "_npmUser": {
+        "name": "indexzero",
+        "email": "charlie.robbins@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "indexzero",
+          "email": "charlie.robbins@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "de84effc166ec86d73a22f51c173d886cd89a529",
+        "tarball": "https://registry.npmjs.org/portfinder/-/portfinder-1.0.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-5-east.internal.npmjs.com",
+        "tmp": "tmp/portfinder-1.0.1.tgz_1455095292823_0.15774197573773563"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "portfinder",
+      "description": "A simple tool to find an open port on the current machine",
+      "version": "1.0.2",
+      "author": {
+        "name": "Charlie Robbins",
+        "email": "charlie.robbins@gmail.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indexzero/node-portfinder.git"
+      },
+      "keywords": [
+        "http",
+        "ports",
+        "utilities"
+      ],
+      "dependencies": {
+        "async": "^1.5.2",
+        "mkdirp": "0.5.x"
+      },
+      "devDependencies": {
+        "glob": "^6.0.4",
+        "vows": "0.8.0"
+      },
+      "main": "./lib/portfinder",
+      "scripts": {
+        "test": "vows test/*-test.js --spec"
+      },
+      "engines": {
+        "node": ">= 0.12.0"
+      },
+      "license": "MIT",
+      "gitHead": "51bb0c79e1eaf3d6d593aa68e94f7c9d31cfd4cf",
+      "bugs": {
+        "url": "https://github.com/indexzero/node-portfinder/issues"
+      },
+      "homepage": "https://github.com/indexzero/node-portfinder#readme",
+      "_id": "portfinder@1.0.2",
+      "_shasum": "7ab68b4aee0ceda34925ef0af34732afa29059d0",
+      "_from": ".",
+      "_npmVersion": "3.7.3",
+      "_nodeVersion": "4.2.2",
+      "_npmUser": {
+        "name": "indexzero",
+        "email": "charlie.robbins@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "indexzero",
+          "email": "charlie.robbins@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "7ab68b4aee0ceda34925ef0af34732afa29059d0",
+        "tarball": "https://registry.npmjs.org/portfinder/-/portfinder-1.0.2.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/portfinder-1.0.2.tgz_1456889346627_0.3661695315968245"
+      },
+      "directories": {}
+    },
+    "1.0.3": {
+      "name": "portfinder",
+      "description": "A simple tool to find an open port on the current machine",
+      "version": "1.0.3",
+      "author": {
+        "name": "Charlie Robbins",
+        "email": "charlie.robbins@gmail.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indexzero/node-portfinder.git"
+      },
+      "keywords": [
+        "http",
+        "ports",
+        "utilities"
+      ],
+      "dependencies": {
+        "async": "^1.5.2",
+        "mkdirp": "0.5.x"
+      },
+      "devDependencies": {
+        "glob": "^6.0.4",
+        "vows": "0.8.0"
+      },
+      "main": "./lib/portfinder",
+      "scripts": {
+        "test": "vows test/*-test.js --spec"
+      },
+      "engines": {
+        "node": ">= 0.12.0"
+      },
+      "license": "MIT",
+      "gitHead": "e1dba743c3e545970f1127b1a21c0b73d96ef679",
+      "bugs": {
+        "url": "https://github.com/indexzero/node-portfinder/issues"
+      },
+      "homepage": "https://github.com/indexzero/node-portfinder#readme",
+      "_id": "portfinder@1.0.3",
+      "_shasum": "77944c1049271215fda7452cb1152bb9c3f05ba7",
+      "_from": ".",
+      "_npmVersion": "3.7.3",
+      "_nodeVersion": "4.2.2",
+      "_npmUser": {
+        "name": "indexzero",
+        "email": "charlie.robbins@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "indexzero",
+          "email": "charlie.robbins@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "77944c1049271215fda7452cb1152bb9c3f05ba7",
+        "tarball": "https://registry.npmjs.org/portfinder/-/portfinder-1.0.3.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-13-west.internal.npmjs.com",
+        "tmp": "tmp/portfinder-1.0.3.tgz_1458762791212_0.5817707516252995"
+      },
+      "directories": {}
+    },
+    "1.0.4": {
+      "name": "portfinder",
+      "description": "A simple tool to find an open port on the current machine",
+      "version": "1.0.4",
+      "author": {
+        "name": "Charlie Robbins",
+        "email": "charlie.robbins@gmail.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indexzero/node-portfinder.git"
+      },
+      "keywords": [
+        "http",
+        "ports",
+        "utilities"
+      ],
+      "dependencies": {
+        "async": "^1.5.2",
+        "mkdirp": "0.5.x"
+      },
+      "devDependencies": {
+        "glob": "^6.0.4",
+        "vows": "0.8.0"
+      },
+      "main": "./lib/portfinder",
+      "scripts": {
+        "test": "vows test/*-test.js --spec"
+      },
+      "engines": {
+        "node": ">= 0.12.0"
+      },
+      "license": "MIT",
+      "gitHead": "3c5ba8205433b2d3756adb4ea29407e3c0bcd391",
+      "bugs": {
+        "url": "https://github.com/indexzero/node-portfinder/issues"
+      },
+      "homepage": "https://github.com/indexzero/node-portfinder#readme",
+      "_id": "portfinder@1.0.4",
+      "_shasum": "db3f2f354624cbe79ec933d03a8ba58f5022d2f8",
+      "_from": ".",
+      "_npmVersion": "3.9.2",
+      "_nodeVersion": "5.10.1",
+      "_npmUser": {
+        "name": "eriktrom",
+        "email": "erik.trom.github@gmail.com"
+      },
+      "dist": {
+        "shasum": "db3f2f354624cbe79ec933d03a8ba58f5022d2f8",
+        "tarball": "https://registry.npmjs.org/portfinder/-/portfinder-1.0.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "eriktrom",
+          "email": "erik.trom.github@gmail.com"
+        },
+        {
+          "name": "indexzero",
+          "email": "charlie.robbins@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/portfinder-1.0.4.tgz_1468539599515_0.5078083828557283"
+      },
+      "directories": {}
+    },
+    "1.0.5": {
+      "name": "portfinder",
+      "description": "A simple tool to find an open port on the current machine",
+      "version": "1.0.5",
+      "author": {
+        "name": "Charlie Robbins",
+        "email": "charlie.robbins@gmail.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indexzero/node-portfinder.git"
+      },
+      "keywords": [
+        "http",
+        "ports",
+        "utilities"
+      ],
+      "dependencies": {
+        "async": "^1.5.2",
+        "mkdirp": "0.5.x"
+      },
+      "devDependencies": {
+        "glob": "^6.0.4",
+        "vows": "0.8.0"
+      },
+      "main": "./lib/portfinder",
+      "scripts": {
+        "test": "vows test/*-test.js --spec"
+      },
+      "engines": {
+        "node": ">= 0.12.0"
+      },
+      "license": "MIT",
+      "gitHead": "477e737ee9b70daac1af26b29ea1b6371dd61b42",
+      "bugs": {
+        "url": "https://github.com/indexzero/node-portfinder/issues"
+      },
+      "homepage": "https://github.com/indexzero/node-portfinder#readme",
+      "_id": "portfinder@1.0.5",
+      "_shasum": "71551c57af898fff89e2875d42dce843ed7e2ab4",
+      "_from": ".",
+      "_npmVersion": "3.9.2",
+      "_nodeVersion": "5.10.1",
+      "_npmUser": {
+        "name": "eriktrom",
+        "email": "erik.trom.github@gmail.com"
+      },
+      "dist": {
+        "shasum": "71551c57af898fff89e2875d42dce843ed7e2ab4",
+        "tarball": "https://registry.npmjs.org/portfinder/-/portfinder-1.0.5.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "eriktrom",
+          "email": "erik.trom.github@gmail.com"
+        },
+        {
+          "name": "indexzero",
+          "email": "charlie.robbins@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/portfinder-1.0.5.tgz_1468642872704_0.4795233248732984"
+      },
+      "directories": {}
+    },
+    "1.0.6": {
+      "name": "portfinder",
+      "description": "A simple tool to find an open port on the current machine",
+      "version": "1.0.6",
+      "author": {
+        "name": "Charlie Robbins",
+        "email": "charlie.robbins@gmail.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indexzero/node-portfinder.git"
+      },
+      "keywords": [
+        "http",
+        "ports",
+        "utilities"
+      ],
+      "files": [
+        "lib"
+      ],
+      "dependencies": {
+        "async": "^1.5.2",
+        "mkdirp": "0.5.x"
+      },
+      "devDependencies": {
+        "glob": "^6.0.4",
+        "vows": "0.8.0"
+      },
+      "main": "./lib/portfinder",
+      "scripts": {
+        "test": "vows test/*-test.js --spec"
+      },
+      "engines": {
+        "node": ">= 0.12.0"
+      },
+      "license": "MIT",
+      "gitHead": "b215f125f9c693f4ddd2fef151ad00e96388467d",
+      "bugs": {
+        "url": "https://github.com/indexzero/node-portfinder/issues"
+      },
+      "homepage": "https://github.com/indexzero/node-portfinder#readme",
+      "_id": "portfinder@1.0.6",
+      "_shasum": "3f1922c8e2063714787d3d38992aa263471c9afc",
+      "_from": ".",
+      "_npmVersion": "3.9.2",
+      "_nodeVersion": "5.10.1",
+      "_npmUser": {
+        "name": "eriktrom",
+        "email": "erik.trom.github@gmail.com"
+      },
+      "dist": {
+        "shasum": "3f1922c8e2063714787d3d38992aa263471c9afc",
+        "tarball": "https://registry.npmjs.org/portfinder/-/portfinder-1.0.6.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "eriktrom",
+          "email": "erik.trom.github@gmail.com"
+        },
+        {
+          "name": "indexzero",
+          "email": "charlie.robbins@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/portfinder-1.0.6.tgz_1470595161645_0.8010770883411169"
+      },
+      "directories": {}
+    },
+    "1.0.7-beta.0": {
+      "name": "portfinder",
+      "description": "A simple tool to find an open port on the current machine",
+      "version": "1.0.7-beta.0",
+      "author": {
+        "name": "Charlie Robbins",
+        "email": "charlie.robbins@gmail.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indexzero/node-portfinder.git"
+      },
+      "keywords": [
+        "http",
+        "ports",
+        "utilities"
+      ],
+      "files": [
+        "lib"
+      ],
+      "dependencies": {
+        "async": "^1.5.2",
+        "debug": "^2.2.0",
+        "mkdirp": "0.5.x"
+      },
+      "devDependencies": {
+        "glob": "^6.0.4",
+        "vows": "0.8.0"
+      },
+      "main": "./lib/portfinder",
+      "scripts": {
+        "test": "vows test/*-test.js --spec"
+      },
+      "engines": {
+        "node": ">= 0.12.0"
+      },
+      "license": "MIT",
+      "gitHead": "a2aa5c8dff5b74df1dd89ac5d027e5a7022a543b",
+      "bugs": {
+        "url": "https://github.com/indexzero/node-portfinder/issues"
+      },
+      "homepage": "https://github.com/indexzero/node-portfinder#readme",
+      "_id": "portfinder@1.0.7-beta.0",
+      "_shasum": "d32e2b6b40bd396a2971badafadfb2812fdccff0",
+      "_from": ".",
+      "_npmVersion": "3.10.5",
+      "_nodeVersion": "6.3.0",
+      "_npmUser": {
+        "name": "eriktrom",
+        "email": "erik.trom.github@gmail.com"
+      },
+      "dist": {
+        "shasum": "d32e2b6b40bd396a2971badafadfb2812fdccff0",
+        "tarball": "https://registry.npmjs.org/portfinder/-/portfinder-1.0.7-beta.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "eriktrom",
+          "email": "erik.trom.github@gmail.com"
+        },
+        {
+          "name": "indexzero",
+          "email": "charlie.robbins@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/portfinder-1.0.7-beta.0.tgz_1471331522140_0.8923570814076811"
+      },
+      "directories": {}
+    },
+    "1.0.7": {
+      "name": "portfinder",
+      "description": "A simple tool to find an open port on the current machine",
+      "version": "1.0.7",
+      "author": {
+        "name": "Charlie Robbins",
+        "email": "charlie.robbins@gmail.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indexzero/node-portfinder.git"
+      },
+      "keywords": [
+        "http",
+        "ports",
+        "utilities"
+      ],
+      "files": [
+        "lib"
+      ],
+      "dependencies": {
+        "async": "^1.5.2",
+        "debug": "^2.2.0",
+        "mkdirp": "0.5.x"
+      },
+      "devDependencies": {
+        "glob": "^6.0.4",
+        "vows": "0.8.0"
+      },
+      "main": "./lib/portfinder",
+      "scripts": {
+        "test": "vows test/*-test.js --spec"
+      },
+      "engines": {
+        "node": ">= 0.12.0"
+      },
+      "license": "MIT",
+      "gitHead": "39e39603ec1f5dd27d5fafa9ea1dc7d2e5a558fd",
+      "bugs": {
+        "url": "https://github.com/indexzero/node-portfinder/issues"
+      },
+      "homepage": "https://github.com/indexzero/node-portfinder#readme",
+      "_id": "portfinder@1.0.7",
+      "_shasum": "d486d2553c85ad22667f5c7841f477c64c7c1b38",
+      "_from": ".",
+      "_npmVersion": "3.10.6",
+      "_nodeVersion": "6.3.1",
+      "_npmUser": {
+        "name": "eriktrom",
+        "email": "erik.trom.github@gmail.com"
+      },
+      "dist": {
+        "shasum": "d486d2553c85ad22667f5c7841f477c64c7c1b38",
+        "tarball": "https://registry.npmjs.org/portfinder/-/portfinder-1.0.7.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "eriktrom",
+          "email": "erik.trom.github@gmail.com"
+        },
+        {
+          "name": "indexzero",
+          "email": "charlie.robbins@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/portfinder-1.0.7.tgz_1471365625716_0.8825314422138035"
+      },
+      "directories": {}
+    },
+    "1.0.8": {
+      "name": "portfinder",
+      "description": "A simple tool to find an open port on the current machine",
+      "version": "1.0.8",
+      "author": {
+        "name": "Charlie Robbins",
+        "email": "charlie.robbins@gmail.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indexzero/node-portfinder.git"
+      },
+      "keywords": [
+        "http",
+        "ports",
+        "utilities"
+      ],
+      "files": [
+        "lib"
+      ],
+      "dependencies": {
+        "async": "^1.5.2",
+        "debug": "^2.2.0",
+        "mkdirp": "0.5.x"
+      },
+      "devDependencies": {
+        "glob": "^6.0.4",
+        "vows": "0.8.0"
+      },
+      "main": "./lib/portfinder",
+      "scripts": {
+        "test": "vows test/*-test.js --spec"
+      },
+      "engines": {
+        "node": ">= 0.12.0"
+      },
+      "license": "MIT",
+      "gitHead": "5972fbf86c9cffb21f39a79156779c5234ead7b4",
+      "bugs": {
+        "url": "https://github.com/indexzero/node-portfinder/issues"
+      },
+      "homepage": "https://github.com/indexzero/node-portfinder#readme",
+      "_id": "portfinder@1.0.8",
+      "_shasum": "b08b2ed226719d682b6f4158eb8e5b69a2561f71",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "6.7.0",
+      "_npmUser": {
+        "name": "eriktrom",
+        "email": "erik.trom.github@gmail.com"
+      },
+      "dist": {
+        "shasum": "b08b2ed226719d682b6f4158eb8e5b69a2561f71",
+        "tarball": "https://registry.npmjs.org/portfinder/-/portfinder-1.0.8.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "eriktrom",
+          "email": "erik.trom.github@gmail.com"
+        },
+        {
+          "name": "indexzero",
+          "email": "charlie.robbins@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/portfinder-1.0.8.tgz_1476742507432_0.70188731350936"
+      },
+      "directories": {}
+    },
+    "1.0.9": {
+      "name": "portfinder",
+      "description": "A simple tool to find an open port on the current machine",
+      "version": "1.0.9",
+      "author": {
+        "name": "Charlie Robbins",
+        "email": "charlie.robbins@gmail.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indexzero/node-portfinder.git"
+      },
+      "keywords": [
+        "http",
+        "ports",
+        "utilities"
+      ],
+      "files": [
+        "lib"
+      ],
+      "dependencies": {
+        "async": "^1.5.2",
+        "debug": "^2.2.0",
+        "mkdirp": "0.5.x"
+      },
+      "devDependencies": {
+        "glob": "^6.0.4",
+        "vows": "0.8.0"
+      },
+      "main": "./lib/portfinder",
+      "scripts": {
+        "test": "vows test/*-test.js --spec"
+      },
+      "engines": {
+        "node": ">= 0.12.0"
+      },
+      "license": "MIT",
+      "gitHead": "6be611bfb9602b4ea7a8729c94cc96b45084feac",
+      "bugs": {
+        "url": "https://github.com/indexzero/node-portfinder/issues"
+      },
+      "homepage": "https://github.com/indexzero/node-portfinder#readme",
+      "_id": "portfinder@1.0.9",
+      "_shasum": "b1ac8755d092afc0433f1c4832fa17d6d1f5d830",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "6.7.0",
+      "_npmUser": {
+        "name": "eriktrom",
+        "email": "erik.trom.github@gmail.com"
+      },
+      "dist": {
+        "shasum": "b1ac8755d092afc0433f1c4832fa17d6d1f5d830",
+        "tarball": "https://registry.npmjs.org/portfinder/-/portfinder-1.0.9.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "eriktrom",
+          "email": "erik.trom.github@gmail.com"
+        },
+        {
+          "name": "indexzero",
+          "email": "charlie.robbins@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/portfinder-1.0.9.tgz_1476834312144_0.7961409303825349"
+      },
+      "directories": {}
+    },
+    "1.0.10": {
+      "name": "portfinder",
+      "description": "A simple tool to find an open port on the current machine",
+      "version": "1.0.10",
+      "author": {
+        "name": "Charlie Robbins",
+        "email": "charlie.robbins@gmail.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indexzero/node-portfinder.git"
+      },
+      "keywords": [
+        "http",
+        "ports",
+        "utilities"
+      ],
+      "files": [
+        "lib"
+      ],
+      "dependencies": {
+        "async": "^1.5.2",
+        "debug": "^2.2.0",
+        "mkdirp": "0.5.x"
+      },
+      "devDependencies": {
+        "glob": "^6.0.4",
+        "vows": "0.8.0"
+      },
+      "main": "./lib/portfinder",
+      "scripts": {
+        "test": "vows test/*-test.js --spec"
+      },
+      "engines": {
+        "node": ">= 0.12.0"
+      },
+      "license": "MIT",
+      "gitHead": "c5dd2cc76bd26d4771cee9e0637dfa27a7f89f24",
+      "bugs": {
+        "url": "https://github.com/indexzero/node-portfinder/issues"
+      },
+      "homepage": "https://github.com/indexzero/node-portfinder#readme",
+      "_id": "portfinder@1.0.10",
+      "_shasum": "7a4de9d98553c315da6f1e1ed05138eeb2d16bb8",
+      "_from": ".",
+      "_npmVersion": "3.10.9",
+      "_nodeVersion": "7.0.0",
+      "_npmUser": {
+        "name": "eriktrom",
+        "email": "erik.trom.github@gmail.com"
+      },
+      "dist": {
+        "shasum": "7a4de9d98553c315da6f1e1ed05138eeb2d16bb8",
+        "tarball": "https://registry.npmjs.org/portfinder/-/portfinder-1.0.10.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "eriktrom",
+          "email": "erik.trom.github@gmail.com"
+        },
+        {
+          "name": "indexzero",
+          "email": "charlie.robbins@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/portfinder-1.0.10.tgz_1478824320733_0.8213196084834635"
+      },
+      "directories": {}
+    },
+    "1.0.11": {
+      "name": "portfinder",
+      "description": "A simple tool to find an open port on the current machine",
+      "version": "1.0.11",
+      "author": {
+        "name": "Charlie Robbins",
+        "email": "charlie.robbins@gmail.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indexzero/node-portfinder.git"
+      },
+      "keywords": [
+        "http",
+        "ports",
+        "utilities"
+      ],
+      "files": [
+        "lib"
+      ],
+      "dependencies": {
+        "async": "^1.5.2",
+        "debug": "^2.2.0",
+        "mkdirp": "0.5.x"
+      },
+      "devDependencies": {
+        "glob": "^6.0.4",
+        "vows": "0.8.0"
+      },
+      "main": "./lib/portfinder",
+      "types": "./lib/portfinder.d.ts",
+      "scripts": {
+        "test": "vows test/*-test.js --spec"
+      },
+      "engines": {
+        "node": ">= 0.12.0"
+      },
+      "license": "MIT",
+      "gitHead": "3e92c594578d2f3f20502e964f08b5cb4a45260e",
+      "bugs": {
+        "url": "https://github.com/indexzero/node-portfinder/issues"
+      },
+      "homepage": "https://github.com/indexzero/node-portfinder#readme",
+      "_id": "portfinder@1.0.11",
+      "_shasum": "0163f3ec84d61f7604fc90121e53985ef30f0323",
+      "_from": ".",
+      "_npmVersion": "4.1.1",
+      "_nodeVersion": "7.3.0",
+      "_npmUser": {
+        "name": "eriktrom",
+        "email": "erik.trom.github@gmail.com"
+      },
+      "dist": {
+        "shasum": "0163f3ec84d61f7604fc90121e53985ef30f0323",
+        "tarball": "https://registry.npmjs.org/portfinder/-/portfinder-1.0.11.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "eriktrom",
+          "email": "erik.trom.github@gmail.com"
+        },
+        {
+          "name": "indexzero",
+          "email": "charlie.robbins@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/portfinder-1.0.11.tgz_1484679284465_0.22177174501121044"
+      },
+      "directories": {}
+    },
+    "1.0.12": {
+      "name": "portfinder",
+      "description": "A simple tool to find an open port on the current machine",
+      "version": "1.0.12",
+      "author": {
+        "name": "Charlie Robbins",
+        "email": "charlie.robbins@gmail.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indexzero/node-portfinder.git"
+      },
+      "keywords": [
+        "http",
+        "ports",
+        "utilities"
+      ],
+      "files": [
+        "lib"
+      ],
+      "dependencies": {
+        "async": "^1.5.2",
+        "debug": "^2.2.0",
+        "mkdirp": "0.5.x"
+      },
+      "devDependencies": {
+        "glob": "^6.0.4",
+        "vows": "0.8.0"
+      },
+      "main": "./lib/portfinder",
+      "types": "./lib/portfinder.d.ts",
+      "scripts": {
+        "test": "vows test/*-test.js --spec"
+      },
+      "engines": {
+        "node": ">= 0.12.0"
+      },
+      "license": "MIT",
+      "gitHead": "ffe3f01ba29c5e72789ce3640e1e5052c9a3e199",
+      "bugs": {
+        "url": "https://github.com/indexzero/node-portfinder/issues"
+      },
+      "homepage": "https://github.com/indexzero/node-portfinder#readme",
+      "_id": "portfinder@1.0.12",
+      "_shasum": "94a65114bec64433f9ce2116da33158238ce7ab4",
+      "_from": ".",
+      "_npmVersion": "4.1.1",
+      "_nodeVersion": "7.3.0",
+      "_npmUser": {
+        "name": "eriktrom",
+        "email": "erik.trom.github@gmail.com"
+      },
+      "dist": {
+        "shasum": "94a65114bec64433f9ce2116da33158238ce7ab4",
+        "tarball": "https://registry.npmjs.org/portfinder/-/portfinder-1.0.12.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "eriktrom",
+          "email": "erik.trom.github@gmail.com"
+        },
+        {
+          "name": "indexzero",
+          "email": "charlie.robbins@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/portfinder-1.0.12.tgz_1484683935100_0.0860381000675261"
+      },
+      "directories": {}
+    },
+    "1.0.13": {
+      "name": "portfinder",
+      "description": "A simple tool to find an open port on the current machine",
+      "version": "1.0.13",
+      "author": {
+        "name": "Charlie Robbins",
+        "email": "charlie.robbins@gmail.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indexzero/node-portfinder.git"
+      },
+      "keywords": [
+        "http",
+        "ports",
+        "utilities"
+      ],
+      "files": [
+        "lib"
+      ],
+      "dependencies": {
+        "async": "^1.5.2",
+        "debug": "^2.2.0",
+        "mkdirp": "0.5.x"
+      },
+      "devDependencies": {
+        "glob": "^6.0.4",
+        "vows": "0.8.0"
+      },
+      "main": "./lib/portfinder",
+      "types": "./lib/portfinder.d.ts",
+      "scripts": {
+        "test": "vows test/*-test.js --spec"
+      },
+      "engines": {
+        "node": ">= 0.12.0"
+      },
+      "license": "MIT",
+      "gitHead": "20161e8e00355099c90062a069a7aa68dc9bcf9b",
+      "bugs": {
+        "url": "https://github.com/indexzero/node-portfinder/issues"
+      },
+      "homepage": "https://github.com/indexzero/node-portfinder#readme",
+      "_id": "portfinder@1.0.13",
+      "_shasum": "bb32ecd87c27104ae6ee44b5a3ccbf0ebb1aede9",
+      "_from": ".",
+      "_npmVersion": "4.1.1",
+      "_nodeVersion": "7.3.0",
+      "_npmUser": {
+        "name": "eriktrom",
+        "email": "erik.trom.github@gmail.com"
+      },
+      "dist": {
+        "shasum": "bb32ecd87c27104ae6ee44b5a3ccbf0ebb1aede9",
+        "tarball": "https://registry.npmjs.org/portfinder/-/portfinder-1.0.13.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "eriktrom",
+          "email": "erik.trom.github@gmail.com"
+        },
+        {
+          "name": "indexzero",
+          "email": "charlie.robbins@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/portfinder-1.0.13.tgz_1485873781112_0.17709231283515692"
+      },
+      "directories": {}
+    },
+    "1.0.15": {
+      "name": "portfinder",
+      "description": "A simple tool to find an open port on the current machine",
+      "version": "1.0.15",
+      "author": {
+        "name": "Charlie Robbins",
+        "email": "charlie.robbins@gmail.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indexzero/node-portfinder.git"
+      },
+      "keywords": [
+        "http",
+        "ports",
+        "utilities"
+      ],
+      "files": [
+        "lib"
+      ],
+      "dependencies": {
+        "async": "^1.5.2",
+        "debug": "^2.2.0",
+        "mkdirp": "0.5.x"
+      },
+      "devDependencies": {
+        "glob": "^6.0.4",
+        "vows": "0.8.0"
+      },
+      "main": "./lib/portfinder",
+      "types": "./lib/portfinder.d.ts",
+      "scripts": {
+        "test": "vows test/*-test.js --spec"
+      },
+      "engines": {
+        "node": ">= 0.12.0"
+      },
+      "license": "MIT",
+      "gitHead": "955298c827cc662c3f9319ddd4f59952812b35bb",
+      "bugs": {
+        "url": "https://github.com/indexzero/node-portfinder/issues"
+      },
+      "homepage": "https://github.com/indexzero/node-portfinder#readme",
+      "_id": "portfinder@1.0.15",
+      "_npmVersion": "6.3.0",
+      "_nodeVersion": "8.11.1",
+      "_npmUser": {
+        "name": "eriktrom",
+        "email": "erik.trom.github@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-THpr3TlxP1bPXp7jtuxk43cs7zyckFyO5AiNf93X7e67xs26BULEqaBxXILG9LULOHaKQwkR4cvrlhzVyHV/TA==",
+        "shasum": "28990f8a1d2794a5709010b25d9f6d90fcc2fa14",
+        "tarball": "https://registry.npmjs.org/portfinder/-/portfinder-1.0.15.tgz",
+        "fileCount": 5,
+        "unpackedSize": 18613,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbaG35CRA9TVsSAnZWagAAKHIP/3Zi2puvHWuwFfcjnS54\neyEKu6yKOq59vxfkc0hCGvr7JKZTUzuzOr+pKWC8sq2NjzZstxQ5nX8fgvpb\nf4d9J5L7XHe2NvrZHmJfhfemfr6KHni/0dDH2GOh1O3pp98M4xAbPubJHb7j\ni38cuBJ+RzvPGda5xkrIUy82V3Kq5OEdhCZQ8nOUUQ/Zw9wgwB+O1WEBkUgH\nsJgO9CFGZ56EUPDqXonIr793FrMe5bYs1EPQOZamuaxJpjRIdatqGdv2Gbm7\nfwpHrodqDRYaBaalZgoNeEaaa9ExdXJZH+5LVaOIdutzsmKJJZjDNAdLzMmY\nQM+lvPBcTxh59iTxQgJdaYybCZBJv182FCzv6jgIQBWZu/rkEQHI2lU4dszx\nZgar3gbdlhvdNa9LAHzP8xe1tuVgnZhz+8MrHThHZ9yk61nifXrxz7scYqWf\no/B8RAIYaGlx6WQ018zRWIpa0WcLyJ2jKQoOay7NNg7Y82E2dOfq7Pgiyuui\nFIuz4+pvQIjwFwKUqU4nktUS+xa3GNhH/7ft6kSaMzoZNe3FpybNY7rnch6g\njfrYuZBIYJ/NYyooYH/opmoTSoaLHZOFcQt6qSCB6rnanF3OqDLCrWgeddvk\nvXVQyol7Ad8qouWp3/Gwj0qChLAU8tICEYIAFGn1r9bTFwmvA1zA1VZIJwVw\nQjJe\r\n=W6Ip\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "eriktrom",
+          "email": "erik.trom.github@gmail.com"
+        },
+        {
+          "name": "indexzero",
+          "email": "charlie.robbins@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/portfinder_1.0.15_1533570522158_0.5360536961453843"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.0.16": {
+      "name": "portfinder",
+      "description": "A simple tool to find an open port on the current machine",
+      "version": "1.0.16",
+      "author": {
+        "name": "Charlie Robbins",
+        "email": "charlie.robbins@gmail.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indexzero/node-portfinder.git"
+      },
+      "keywords": [
+        "http",
+        "ports",
+        "utilities"
+      ],
+      "files": [
+        "lib"
+      ],
+      "dependencies": {
+        "async": "^1.5.2",
+        "debug": "^2.2.0",
+        "mkdirp": "0.5.x"
+      },
+      "devDependencies": {
+        "glob": "^6.0.4",
+        "vows": "0.8.0"
+      },
+      "main": "./lib/portfinder",
+      "types": "./lib/portfinder.d.ts",
+      "scripts": {
+        "test": "vows test/*-test.js --spec"
+      },
+      "engines": {
+        "node": ">= 0.12.0"
+      },
+      "license": "MIT",
+      "gitHead": "8189856aac0f50656224393bf61cdb7cba950ace",
+      "bugs": {
+        "url": "https://github.com/indexzero/node-portfinder/issues"
+      },
+      "homepage": "https://github.com/indexzero/node-portfinder#readme",
+      "_id": "portfinder@1.0.16",
+      "_npmVersion": "6.3.0",
+      "_nodeVersion": "8.11.1",
+      "_npmUser": {
+        "name": "eriktrom",
+        "email": "erik.trom.github@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-icBXCFQxzlK2PMepOM0QeEdPPFSLAaXXeuKOv5AClJlMy1oVCBrkDGJ12IZYesI/BF8mpeVco3vRCmgeBb4+hw==",
+        "shasum": "a6a68be9c352bc66c1a4c17a261f661f3facaf52",
+        "tarball": "https://registry.npmjs.org/portfinder/-/portfinder-1.0.16.tgz",
+        "fileCount": 5,
+        "unpackedSize": 18607,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbacOzCRA9TVsSAnZWagAArIUP+wVgAkgPYZW9WM83x+/Y\nBdzhmJaEEYNaepF0aYe9XkbAsrNMFFeq87sB63PC44HXRbTFi1/mpey2gP/y\nv69RtmOOimBxbNDZlvMhGtkI0KIEx9GbvyucOJ7wL8eXbeqXn+PWc0iXqLW5\nY+aOp0Row5E9v1t9+e2jFVgE6QwZCCDQIipiKPrq+3V4XWeJuoa1y6CpHehm\nIdsBewAnknTS/5Z50Af1lFj+SVbUpt8jnC36ByL4dgtpk8WUMbl7cB+iy2yN\nO1veMkh8mWJOViHzUqfmiQFiko0Z7dypRvI0nkDHMOyDmrevtqYbQ0CKnHhh\niHfJW7Pa0ZU2s2WzRwRt2QHptT1b1Au1PtrVNdTWLmNy6PwEcvDlX4t10dTx\nwAtWrRy12bIpKgvQXjuGP0Y4lN8NrP+E7ZO3Urf27WPf/GOWjaKmRiuy4amK\nyEKncTMZ2ekESO7rgIEfT9IYdZQ7G5iFYOcIhxZq9ZvZceat6gHlPahEYnrT\nqdgaETIyE16RJHl3h5lNUW+fXLvfhoTYY4h159GcngveAV+7YuqZavfYAfmk\nQ2yxdyghKekQBNbXxtqxTFSBLR6cBtoJEQ+STkiiHqJZZbhShioz/iZ8Nl89\nT+gd2vACvR+bzjgHRUfyIQQNfosS/srZbQJEiODzNM7P9JgfTIUwSpqxz+IP\n5C9K\r\n=D1Ey\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "eriktrom",
+          "email": "erik.trom.github@gmail.com"
+        },
+        {
+          "name": "indexzero",
+          "email": "charlie.robbins@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/portfinder_1.0.16_1533658034239_0.738972112551346"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.0.17": {
+      "name": "portfinder",
+      "description": "A simple tool to find an open port on the current machine",
+      "version": "1.0.17",
+      "author": {
+        "name": "Charlie Robbins",
+        "email": "charlie.robbins@gmail.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indexzero/node-portfinder.git"
+      },
+      "keywords": [
+        "http",
+        "ports",
+        "utilities"
+      ],
+      "files": [
+        "lib"
+      ],
+      "dependencies": {
+        "async": "^1.5.2",
+        "debug": "^2.2.0",
+        "mkdirp": "0.5.x"
+      },
+      "devDependencies": {
+        "glob": "^6.0.4",
+        "vows": "0.8.0"
+      },
+      "main": "./lib/portfinder",
+      "types": "./lib/portfinder.d.ts",
+      "scripts": {
+        "test": "vows test/*-test.js --spec"
+      },
+      "engines": {
+        "node": ">= 0.12.0"
+      },
+      "license": "MIT",
+      "gitHead": "a4e69434de304b6094111eeaa559c8075bd0660d",
+      "bugs": {
+        "url": "https://github.com/indexzero/node-portfinder/issues"
+      },
+      "homepage": "https://github.com/indexzero/node-portfinder#readme",
+      "_id": "portfinder@1.0.17",
+      "_npmVersion": "6.3.0",
+      "_nodeVersion": "8.11.1",
+      "_npmUser": {
+        "name": "eriktrom",
+        "email": "erik.trom.github@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-syFcRIRzVI1BoEFOCaAiizwDolh1S1YXSodsVhncbhjzjZQulhczNRbqnUl9N31Q4dKGOXsNDqxC2BWBgSMqeQ==",
+        "shasum": "a8a1691143e46c4735edefcf4fbcccedad26456a",
+        "tarball": "https://registry.npmjs.org/portfinder/-/portfinder-1.0.17.tgz",
+        "fileCount": 5,
+        "unpackedSize": 18789,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbeiU8CRA9TVsSAnZWagAAmDMP/0WBlSqPvbodilXnwTOC\nTMXCUZ3ar49r2HXjv5Axh3bXmnqPbLMblAgEVvWklMcGLl3v0rundxYmNy/V\nDnbegtobigReq1NWcTOtNnXtH301SK2SRxEVbepQ65GV6ascytFaxfKv6D+E\nmm4MqZ5lzAuWqWKnGj/6wPXZ8el9aE5dfNrmC/oqFlA6TE94Ueqrad2S45yS\nzJnPLt63MrfytWnc/kf7Rl05U8WKJ0y/DRLRC58FbdS5olTI/0aSVmwISb3z\nNMox+wWgzjLiY3ym57V5AHcekC/Qo17OUsPIxIayDZdJlFq9rqqurmhfNvGq\n9TWUwz/J6x+wrbMexAViI3hmZ0ULHTVu2phAW/E9lJXKlxh4WOpOZZuys8fq\n3xJLXGrjOUyIYtftHcRj1utq7F0br0hggVdml9EQiCB35AuIEiasCOe9J6ip\nO7+yqIEy+t7xkoS/U2W/FuFytFKfJdmJo9onyJp6ID3XQlBVBR+dm35P823o\ntHZIHTH6MwRqxUDRxTkQGklBcMjQaEezxsFpjgObmnWwWjjToEQ/ZVu0Exxq\nhYkC1otF3XP9XMesRZfa5kockZkzfyTlX6DkrF6KNtE7RqCP2NgFpktVbWke\n6fapOBVGkbNHV/0ruKw/Bwh0Ap69oteJGakQzUHmHX7jPLCccCDWZZBXr9eR\nEJ/M\r\n=+j7M\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "eriktrom",
+          "email": "erik.trom.github@gmail.com"
+        },
+        {
+          "name": "indexzero",
+          "email": "charlie.robbins@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/portfinder_1.0.17_1534731579734_0.6744418147856364"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.0.18": {
+      "name": "portfinder",
+      "description": "A simple tool to find an open port on the current machine",
+      "version": "1.0.18",
+      "author": {
+        "name": "Charlie Robbins",
+        "email": "charlie.robbins@gmail.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indexzero/node-portfinder.git"
+      },
+      "keywords": [
+        "http",
+        "ports",
+        "utilities"
+      ],
+      "dependencies": {
+        "async": "^1.5.2",
+        "debug": "^2.2.0",
+        "mkdirp": "0.5.x"
+      },
+      "devDependencies": {
+        "glob": "^6.0.4",
+        "vows": "^0.8.2"
+      },
+      "main": "./lib/portfinder",
+      "types": "./lib/portfinder.d.ts",
+      "scripts": {
+        "test": "vows test/*-test.js --spec"
+      },
+      "engines": {
+        "node": ">= 0.12.0"
+      },
+      "license": "MIT",
+      "gitHead": "22113f250004874a00c714f14ff6121b221c20d0",
+      "bugs": {
+        "url": "https://github.com/indexzero/node-portfinder/issues"
+      },
+      "homepage": "https://github.com/indexzero/node-portfinder#readme",
+      "_id": "portfinder@1.0.18",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "8.11.1",
+      "_npmUser": {
+        "name": "eriktrom",
+        "email": "erik.trom.github@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-KanzLOERzKoX3En5yTiV8K/arnU1ykYVokmtEn0PgCzqKZG9489tqW8ifp9+v3/VJZ5YDjvDt/PAP5WaPgk7FA==",
+        "shasum": "cf1106ff336fd4329b7ce32fda7d17d62c6bcf37",
+        "tarball": "https://registry.npmjs.org/portfinder/-/portfinder-1.0.18.tgz",
+        "fileCount": 5,
+        "unpackedSize": 18790,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbx8gDCRA9TVsSAnZWagAAsa8P+gKyjKiFmNJrhQiw+kVK\nWhc2YdcxNPUY4XLbww6znml5oyB0EiX1o8KeTMH4TsrDBq47vbFpPA0mvfNd\noBgKQi1uIcHMslpwUOEUc1zmDFg6Xi5y3LOMI/Rh1DWmqVRaLPbJZU9lN2rx\nq5Kg+fCCN+vvvUz1srwBoS10XD5F3VEc2owzZy5ceKOWFz8t6TfJ0VijZOMZ\ntc5iu2Y55x8asjXcJqmkc4K4ewZKR6zRlpSZQvlPn4b8g22mDlX2jY4qw8XT\nb+nmkI3QNeAf/uIW8kZxdU1JWDM64qKBryHY4S7r9yJScmKeJsYjddyNrT3p\ncml6OuM9/YYs2jldSqkbQ/MQgt8l5zFz49F+Tnp0DhJNMTWV8TGVnOR/4or0\ntW2MwPg60tbCf/xmB+NDdUB/buesaoLtVmstfOEpcTXs7xbT+A+SkIqx82ff\nUuQ010PzYaRJfOyu6ztoSz5M1hGw0/ePwmDuAEUPYsEcSf+1hvXnsbs0Tsq0\nhxp31XB3K2DA2FCEmW8l1ZrgKEuCIhLi19NS3Fxt3T6BKPicbXJbkVLU5OLR\nkrsv3qptSBn1NwRAV7aoaVBxlAeNtsJRiPvo5Or9kJrHvEnSrfscgsqm5TTW\nWBo7aRLu6exEjLQLa0s0zIM6dIyMi7DmMtRdrB4d4PEkWPBpewONiL27P61t\ngOCx\r\n=yZD8\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "eriktrom",
+          "email": "erik.trom.github@gmail.com"
+        },
+        {
+          "name": "indexzero",
+          "email": "charlie.robbins@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/portfinder_1.0.18_1539819522685_0.5335505842980621"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.0.19": {
+      "name": "portfinder",
+      "description": "A simple tool to find an open port on the current machine",
+      "version": "1.0.19",
+      "author": {
+        "name": "Charlie Robbins",
+        "email": "charlie.robbins@gmail.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indexzero/node-portfinder.git"
+      },
+      "keywords": [
+        "http",
+        "ports",
+        "utilities"
+      ],
+      "dependencies": {
+        "async": "^1.5.2",
+        "debug": "^2.2.0",
+        "mkdirp": "0.5.x"
+      },
+      "devDependencies": {
+        "glob": "^6.0.4",
+        "vows": "^0.8.2"
+      },
+      "main": "./lib/portfinder",
+      "types": "./lib/portfinder.d.ts",
+      "scripts": {
+        "test": "vows test/*-test.js --spec"
+      },
+      "engines": {
+        "node": ">= 0.12.0"
+      },
+      "license": "MIT",
+      "gitHead": "f0f71e38e563742565006a538573076d8375a0cc",
+      "bugs": {
+        "url": "https://github.com/indexzero/node-portfinder/issues"
+      },
+      "homepage": "https://github.com/indexzero/node-portfinder#readme",
+      "_id": "portfinder@1.0.19",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "8.11.1",
+      "_npmUser": {
+        "name": "eriktrom",
+        "email": "erik.trom.github@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-23aeQKW9KgHe6citUrG3r9HjeX6vls0h713TAa+CwTKZwNIr/pD2ApaxYF4Um3ZZyq4ar+Siv3+fhoHaIwSOSw==",
+        "shasum": "07e87914a55242dcda5b833d42f018d6875b595f",
+        "tarball": "https://registry.npmjs.org/portfinder/-/portfinder-1.0.19.tgz",
+        "fileCount": 5,
+        "unpackedSize": 19148,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbzoYKCRA9TVsSAnZWagAA8kIP/1EJUzTVfAm6J/QxtNQ9\nbO//2C5Bhq9sok0BK7i9qGSYV2IqcWEBc4fOP4zQOU5Y0kf7VJCzi9Gv78vb\nX1ui7j/eJZgRLoWpjohYpzH9M7NaiEluHZ18Xj5OJCiH9oROXa1oEC91N1tn\nskZQlNmIBL5iZyIbmQBfHjFKojjhg3uO0sZhd0iADS36FHp+DShqW1qpiHGh\nEfGL4T2+cghvwtB4JyIbAEsWQxK4xqL1rUXgZKyZ8nV1eNmacl/enoqzbOki\nkIBWNz9LrdSavrcN96CReZmPupvC/SXY9lJNSxPVkVIsuOzIVJDCQ2QRu4Jg\nV3HbTf7cWAvVRiPjV7wsI5MED0p/8TCtdGxwvIyJ9UrddeH0YRtgtclo2XNh\nkf0eE82ioIqFHbJaQqmbXvG0fPornEgBFFQzAxlmeCHCE/Opqe11P7Tp+zOy\nKe16Fuh/hgvbYTyxXBd4iSRUTJBIM2f7HN11HDQiy/eDFj9c5zWED5eqm+Fv\nh2D5AatOs+R9JAJxf6QBnldwPBq9yAMzrYrKqTh2ZGPtitX4MZUcRJcp42A/\nb9l660XyNojp3YWwIJZ3IcFH/DCP56jTMEFiKumPRKct7VFquJKeGBqdfsqg\npgA3zCsWHW8h3DKCbS1cDbjTXrRt7uk+yYFtmIIpW95RFcQh8MitjXzQ0E6D\nSLgu\r\n=8ZuZ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "eriktrom",
+          "email": "erik.trom.github@gmail.com"
+        },
+        {
+          "name": "indexzero",
+          "email": "charlie.robbins@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/portfinder_1.0.19_1540261385866_0.15080079056810458"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.0.20": {
+      "name": "portfinder",
+      "description": "A simple tool to find an open port on the current machine",
+      "version": "1.0.20",
+      "author": {
+        "name": "Charlie Robbins",
+        "email": "charlie.robbins@gmail.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indexzero/node-portfinder.git"
+      },
+      "keywords": [
+        "http",
+        "ports",
+        "utilities"
+      ],
+      "dependencies": {
+        "async": "^1.5.2",
+        "debug": "^2.2.0",
+        "mkdirp": "0.5.x"
+      },
+      "devDependencies": {
+        "glob": "^6.0.4",
+        "vows": "^0.8.2"
+      },
+      "main": "./lib/portfinder",
+      "types": "./lib/portfinder.d.ts",
+      "scripts": {
+        "test": "vows test/*-test.js --spec"
+      },
+      "engines": {
+        "node": ">= 0.12.0"
+      },
+      "license": "MIT",
+      "gitHead": "8d0b757c3c318499f9fd1f8d865e8e7784801204",
+      "bugs": {
+        "url": "https://github.com/indexzero/node-portfinder/issues"
+      },
+      "homepage": "https://github.com/indexzero/node-portfinder#readme",
+      "_id": "portfinder@1.0.20",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "8.11.1",
+      "_npmUser": {
+        "name": "eriktrom",
+        "email": "erik.trom.github@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-Yxe4mTyDzTd59PZJY4ojZR8F+E5e97iq2ZOHPz3HDgSvYC5siNad2tLooQ5y5QHyQhc3xVqvyk/eNA3wuoa7Sw==",
+        "shasum": "bea68632e54b2e13ab7b0c4775e9b41bf270e44a",
+        "tarball": "https://registry.npmjs.org/portfinder/-/portfinder-1.0.20.tgz",
+        "fileCount": 5,
+        "unpackedSize": 19279,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcAcKGCRA9TVsSAnZWagAARs4P/jZxKfnJ1yAfsGPhu43h\nORZ4r+09ewUOx6frGlbrYSe2iszuJQMUT8BYZxSUmQfzie+NKX9Zz1tNysld\njRncivEGGk2pBIC99/IkCXnOFw3V4HEfqTEqgsE8eIx2Mzfn4WB5vm3IhnAt\nBXpwB2O06j/cTJDVfLAS1dAAdNdl71u1xRqeCUxqJPr7Sa4zzTCA3sANxNnv\naWQ4Q5hk4PpprJrZc27b5LS6A+f3ycQNnvs9NqYFjJUkC/psgeA9icWNRDM/\ne/KQWn0Hfjvw7zTMRqd201OcZ573Z1jhd+d6CfvkZxXYAFUN8kFfWIL80jb1\nFaNDCYq98ACJ/PjFkMKVN8srKF3qWABYEISlkrYhY1TcilrjS0QV0DOuvxTR\nCqj20CIVkcl1XRHfat+y1cD/OsV4kL6AyTKAKo1Snba3qulcj4UKCrebbbYJ\nyYB4yIn6uRkv98rj7PBD6WyWEFy3lKk3pcRhjDMZzujS0/ajoNIPkY+SGqee\ndUSUNyjYSN4u+MRP1cf1L6CjdB4LmBhEaoASjltJEcrYjZBuEFJSauJQzDlS\nNoS27BZmRfSu5eBCIjD989lb0u7kM2/b6PiHsALi2mOCb+x1XL9zuaYXubnl\nzQwgS9ea5kAxPGJUNjp2+Z49Pg8pBj6IIggZQ9Ry4mQTZtbBPGx/2NiZcag/\n/cw1\r\n=wFih\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "eriktrom",
+          "email": "erik.trom.github@gmail.com"
+        },
+        {
+          "name": "indexzero",
+          "email": "charlie.robbins@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/portfinder_1.0.20_1543619206224_0.999012403569189"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.0.21": {
+      "name": "portfinder",
+      "description": "A simple tool to find an open port on the current machine",
+      "version": "1.0.21",
+      "author": {
+        "name": "Charlie Robbins",
+        "email": "charlie.robbins@gmail.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indexzero/node-portfinder.git"
+      },
+      "keywords": [
+        "http",
+        "ports",
+        "utilities"
+      ],
+      "dependencies": {
+        "async": "^1.5.2",
+        "debug": "^2.2.0",
+        "mkdirp": "0.5.x"
+      },
+      "devDependencies": {
+        "glob": "^6.0.4",
+        "vows": "^0.8.2"
+      },
+      "main": "./lib/portfinder",
+      "types": "./lib/portfinder.d.ts",
+      "scripts": {
+        "test": "vows test/*-test.js --spec"
+      },
+      "engines": {
+        "node": ">= 0.12.0"
+      },
+      "license": "MIT",
+      "gitHead": "25556862945514cf890d9b8cee9020ab3bbe6c5f",
+      "bugs": {
+        "url": "https://github.com/indexzero/node-portfinder/issues"
+      },
+      "homepage": "https://github.com/indexzero/node-portfinder#readme",
+      "_id": "portfinder@1.0.21",
+      "_nodeVersion": "10.15.3",
+      "_npmVersion": "6.9.0",
+      "dist": {
+        "integrity": "sha512-ESabpDCzmBS3ekHbmpAIiESq3udRsCBGiBZLsC+HgBKv2ezb0R4oG+7RnYEVZ/ZCfhel5Tx3UzdNWA0Lox2QCA==",
+        "shasum": "60e1397b95ac170749db70034ece306b9a27e324",
+        "tarball": "https://registry.npmjs.org/portfinder/-/portfinder-1.0.21.tgz",
+        "fileCount": 5,
+        "unpackedSize": 19419,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdKJhlCRA9TVsSAnZWagAARMMP/3ADs4Knwf6pfUHJoRAd\nwTFCqtmweDMfYww7i+RWDv6P1yZh4nyFvKhb0a7AYIQurbKx28advkjB1irt\n6QKACRPOTxChyLG4KYNogAre+NFls+TDtn/eiY+pE9l+fhJGakaToj6Nm0hX\napSd7VxOHojTnRsml0wCndpPs6XDWxM8+TJaziKCRf4x9IXHpwTT+8O0SFwV\nJC3sp8Z2AQ0OppdThB0if6V5LdpYZ7LlHKKNlmdww7UuR5dwlyl/IbRNuMVM\n8NhqaaqK8MF8uA5GkjT9zAIxfchzqZata7JAtF1nOmhu2uLxWTLwTNSy+VtJ\nkn5BhkL3DxTUWRpykeozXHcGh43W5SFkqPtJnIfApSSqEghAlSL6mhR9ERpH\n3EKoEpJBGXfNFbNL3aLS0SfaplY4UjMHz9w4Ay23wqnYrT/53qjXaQys4qJ9\nszgV+O0q2eolkqaxJOdO+ObS8R1NjYbVhnWXv4jxhXdIroxla14kUpju/4De\n/ByeqBZBNDCF92Xc/l2wEMDgK8pbOBpwFaetM32W0J+tFuhBUnKZt4EWm+aY\nb8+1gPpejGZmCsU4os6gvaJeddquBgaMCFYCuerhVKKoW/0qgv/Z+/Rxw8aH\npNYsTPoVpDQ9YINZmyjrF1HWUIzhRMnKniuBuAP087u9tO38c33pK5RfzNIg\nd/oU\r\n=QZZc\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "eriktrom",
+          "email": "erik.trom.github@gmail.com"
+        },
+        {
+          "name": "indexzero",
+          "email": "charlie.robbins@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "eriktrom",
+        "email": "erik.trom.github@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/portfinder_1.0.21_1562941540245_0.5450296733377984"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.0.22": {
+      "name": "portfinder",
+      "description": "A simple tool to find an open port on the current machine",
+      "version": "1.0.22",
+      "author": {
+        "name": "Charlie Robbins",
+        "email": "charlie.robbins@gmail.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indexzero/node-portfinder.git"
+      },
+      "keywords": [
+        "http",
+        "ports",
+        "utilities"
+      ],
+      "dependencies": {
+        "async": "^1.5.2",
+        "debug": "^2.2.0",
+        "mkdirp": "0.5.x"
+      },
+      "devDependencies": {
+        "glob": "^6.0.4",
+        "vows": "^0.8.2"
+      },
+      "main": "./lib/portfinder",
+      "types": "./lib/portfinder.d.ts",
+      "scripts": {
+        "test": "vows test/*-test.js --spec"
+      },
+      "engines": {
+        "node": ">= 0.12.0"
+      },
+      "license": "MIT",
+      "gitHead": "f2fa9d8a0c7144bb23ebc81269cbf92d9f462946",
+      "bugs": {
+        "url": "https://github.com/indexzero/node-portfinder/issues"
+      },
+      "homepage": "https://github.com/indexzero/node-portfinder#readme",
+      "_id": "portfinder@1.0.22",
+      "_nodeVersion": "12.8.0",
+      "_npmVersion": "6.10.3",
+      "dist": {
+        "integrity": "sha512-aZuwaz9ujJsyE8C5kurXAD8UmRxsJr+RtZWyQRvRk19Z2ri5uuHw5YS4tDBZrJlOS9Zw96uAbBuPb6W4wgvV5A==",
+        "shasum": "abd10a488b5696e98ee25c60731f8ae0b76f8ddd",
+        "tarball": "https://registry.npmjs.org/portfinder/-/portfinder-1.0.22.tgz",
+        "fileCount": 5,
+        "unpackedSize": 20531,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdV9PpCRA9TVsSAnZWagAApbUQAIhz5zMWLdxF6gKCNNq6\nhP1IVSjLsgn7JHGUvAYUKppVW589o2uzMulpeH5qu7lm79W2cKhXkuqB5Iaz\nZnESx5IU5QKok03RiN5WxRDxo1JmB8uFNKL+nk5Xxe4L2daF6LG1BM0ZYURa\nnyQ20sxMUELfMttwwZEPc15JMpeyoSqaIByIeW3b0P+k0zCU49g9mo/YShXs\nnrBon++VXJBelk8X6oxsxXxfkBwo/LCEAWMWi/txJhMrcfK825SDA2T4lXEN\nnKrgRIxifbw+Ryet5P3OevyeiK0F1yTuMHWm5WNx62KQqAdGOKd3xJNVkL7r\n/mSQs7/qbu5AbMEeKxoc8KhnfBKieDTR8SRODtApvFS6YxcqF/nkP7N8x03w\nfYvUd7QbOITVcydAG3rBL92g+ZasXDRkOhQuIm2EvWpI+Czwl0AqRbGgYQ3q\nfXRZhbGbnlyZegatPd35ALkYY84Nlbf41wwHX9BVeYFExZfelxvLG6QDJ9EB\nPkVW3e3MUrsmt7Lkv4baDH7woZ6qZ5HjWZX4UKh08lGvzJC1YmWnSFaL2xuD\nayfwW8q0Bg4RE4nuba+xhzDKtirdE+n2LYpQvWUSWwgYmERec7PEhYvQPpMe\nIu2zdxLrrEyUc2WOPGLh+t4mfNiMs6Kcpr652d5WjPdg6izfibSYcYhFmNWC\nqiSH\r\n=I6yd\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "eriktrom",
+          "email": "erik.trom.github@gmail.com"
+        },
+        {
+          "name": "indexzero",
+          "email": "charlie.robbins@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "eriktrom",
+        "email": "erik.trom.github@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/portfinder_1.0.22_1566036968795_0.8818524221746387"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.0.23": {
+      "name": "portfinder",
+      "description": "A simple tool to find an open port on the current machine",
+      "version": "1.0.23",
+      "author": {
+        "name": "Charlie Robbins",
+        "email": "charlie.robbins@gmail.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indexzero/node-portfinder.git"
+      },
+      "keywords": [
+        "http",
+        "ports",
+        "utilities"
+      ],
+      "dependencies": {
+        "async": "^1.5.2",
+        "debug": "^2.2.0",
+        "mkdirp": "0.5.x"
+      },
+      "devDependencies": {
+        "glob": "^6.0.4",
+        "vows": "^0.8.2"
+      },
+      "main": "./lib/portfinder",
+      "types": "./lib/portfinder.d.ts",
+      "scripts": {
+        "test": "vows test/*-test.js --spec"
+      },
+      "engines": {
+        "node": ">= 0.12.0"
+      },
+      "license": "MIT",
+      "gitHead": "727ee4e6943ed0b25a8e1a5fb93c8ebd65729ef2",
+      "bugs": {
+        "url": "https://github.com/indexzero/node-portfinder/issues"
+      },
+      "homepage": "https://github.com/indexzero/node-portfinder#readme",
+      "_id": "portfinder@1.0.23",
+      "_nodeVersion": "12.8.0",
+      "_npmVersion": "6.10.3",
+      "dist": {
+        "integrity": "sha512-B729mL/uLklxtxuiJKfQ84WPxNw5a7Yhx3geQZdcA4GjNjZSTSSMMWyoennMVnTWSmAR0lMdzWYN0JLnHrg1KQ==",
+        "shasum": "894db4bcc5daf02b6614517ce89cd21a38226b82",
+        "tarball": "https://registry.npmjs.org/portfinder/-/portfinder-1.0.23.tgz",
+        "fileCount": 5,
+        "unpackedSize": 19419,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdWwSGCRA9TVsSAnZWagAAbdAP/2SBoOTbJZuzrJcfan36\nZaan4sI5PItTmX4i1I5yI1Nd1hEhKmhN4pZCD5IdyckI5nulTnIOzT5/5nKl\nopFmXiJuJ4/+ePplHlWnet7+IYKr3p4ZvF9F6NhtJ5tD9+rJ5aHjvurrMSOd\nyKN00nNf2LetN/w5TZ+ypws8CjoGSOgworp3n/AJDt4J6MrMmE67dwcys5Wv\nblzDUffqK8ti1Ju6bN9IZXFK585QJI5ayy1HZwJ9nlu0IjBpk2xYNMbyKrVD\nB4RbTmLFFznguwLpJOs6GSXH7c2U8mtWqXHxvpXqc7DWFe2VI6aXqSkDSf6Z\n7b4HaPbrip+jc2ASscsjbOheMOJSWRKG4KDPQ/JIWcD/hG44PACiu4fVWpVl\nlEm8pUYwtkT86XtM+E6DSFE4fi96d5/lad5nelGAZdLKdk7CuXkTf0XUCugS\nJ2zHpDiW9h4M/IyF4KbwrqjKO7ucBXA54R3e/o7/aqkHw/R8+sq7ecjIE8lM\nNSoqIbzNBUnOXMrqMczY7FOfZ9ksh0ZBDmUM3fIaWjET386kxHkpntc4eAZi\nRKhRaQXiEWDAfSICXIvSCx2zPL+vXkAtVR2KaHJmyyQ0skuRWUmdBHjpUcBJ\njpqEsV3DrOmL333pLL23ZQCRPAHMf3sjEy+IZtwok6okLDJEqwv1h0IR6/o4\nF3H/\r\n=1JNa\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "eriktrom",
+          "email": "erik.trom.github@gmail.com"
+        },
+        {
+          "name": "indexzero",
+          "email": "charlie.robbins@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "eriktrom",
+        "email": "erik.trom.github@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/portfinder_1.0.23_1566246021540_0.4401182672890174"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.0.24": {
+      "name": "portfinder",
+      "description": "A simple tool to find an open port on the current machine",
+      "version": "1.0.24",
+      "author": {
+        "name": "Charlie Robbins",
+        "email": "charlie.robbins@gmail.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indexzero/node-portfinder.git"
+      },
+      "keywords": [
+        "http",
+        "ports",
+        "utilities"
+      ],
+      "dependencies": {
+        "async": "^1.5.2",
+        "debug": "^2.2.0",
+        "mkdirp": "0.5.x"
+      },
+      "devDependencies": {
+        "glob": "^6.0.4",
+        "vows": "^0.8.2"
+      },
+      "main": "./lib/portfinder",
+      "types": "./lib/portfinder.d.ts",
+      "scripts": {
+        "test": "vows test/*-test.js --spec"
+      },
+      "engines": {
+        "node": ">= 0.12.0"
+      },
+      "license": "MIT",
+      "gitHead": "f4e4ebed357ac0e1f3df8dab413133e565523a26",
+      "bugs": {
+        "url": "https://github.com/indexzero/node-portfinder/issues"
+      },
+      "homepage": "https://github.com/indexzero/node-portfinder#readme",
+      "_id": "portfinder@1.0.24",
+      "_nodeVersion": "12.8.0",
+      "_npmVersion": "6.10.3",
+      "dist": {
+        "integrity": "sha512-ekRl7zD2qxYndYflwiryJwMioBI7LI7rVXg3EnLK3sjkouT5eOuhS3gS255XxBksa30VG8UPZYZCdgfGOfkSUg==",
+        "shasum": "11efbc6865f12f37624b6531ead1d809ed965cfa",
+        "tarball": "https://registry.npmjs.org/portfinder/-/portfinder-1.0.24.tgz",
+        "fileCount": 5,
+        "unpackedSize": 19421,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdcWJsCRA9TVsSAnZWagAAyMEQAI6U2EC/hUTu4Jud2+xR\n/5C6dfeJxYeNia9zTFVuRd6Oj5fBaFCpofKLMZTCIXYAcuSp4Vz1W0Rr2izu\natEZ7wadRa7lP/0oVMDkjjTQFoQHZrTZSyQUTEhPbBou63w6qgtJ8oHdYBgo\nS9Ab3w3YOl1ZQB0rSgoSiiqSSyeoJpHzbfK/o+BnpbBPp2GsPAGpYYi2Guy4\nidZw9INI6u9+nltkb/g8tRYIoK5Kwlotz7R6gKn9iPBGDU/rgaqMYB3wzK5G\nYhpgY9GMouul3YFgCv5EneIqcGZj26SmrsSmrT4niJ4rH6BGYdRUbSJU9wiq\nzfaIoy82q/l7oc0nmk3TnWtau6nPkctQq2i3qtxUrA4cnoulrzKGoi4C5AW2\nAV+DhvUBUKNyZ+TW7GOr37c8GAeO3eJ9TgZVVLei8aCc9Gre4ORHSjPF38uv\nXLYNTBMYb+H2ijLjBMPWRni/FApfv7zk4kkpj2IaKl5UD7ryLUqpAChx7rPT\nCCVAFHlwiDflJS7V73qPkyEglZletH8RNR/wPOp5NoPJiezBnoFUU3vyMGfe\n5wWTznMh4F2PsM0RlXgWY5O2X+sKOgjO5sUq9QPRSvL3nmXXnjpvbvGa2tso\n/ld/idRi5aKyLyue0KX9ukVNtKnjy9Mo6manumKoy7ioB0StBCy6N0Jk1OFS\nXTnl\r\n=tM5z\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "eriktrom",
+          "email": "erik.trom.github@gmail.com"
+        },
+        {
+          "name": "indexzero",
+          "email": "charlie.robbins@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "eriktrom",
+        "email": "erik.trom.github@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/portfinder_1.0.24_1567711851492_0.07352392535543406"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.0.25": {
+      "name": "portfinder",
+      "description": "A simple tool to find an open port on the current machine",
+      "version": "1.0.25",
+      "author": {
+        "name": "Charlie Robbins",
+        "email": "charlie.robbins@gmail.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indexzero/node-portfinder.git"
+      },
+      "keywords": [
+        "http",
+        "ports",
+        "utilities"
+      ],
+      "dependencies": {
+        "async": "^2.6.2",
+        "debug": "^3.1.1",
+        "mkdirp": "^0.5.1"
+      },
+      "devDependencies": {
+        "glob": "^7.1.4",
+        "vows": "^0.8.2"
+      },
+      "main": "./lib/portfinder",
+      "types": "./lib/portfinder.d.ts",
+      "scripts": {
+        "test": "vows test/*-test.js --spec"
+      },
+      "engines": {
+        "node": ">= 0.12.0"
+      },
+      "license": "MIT",
+      "gitHead": "e89425234f6794bad6ef0dea1e7d13b834fb3c01",
+      "bugs": {
+        "url": "https://github.com/indexzero/node-portfinder/issues"
+      },
+      "homepage": "https://github.com/indexzero/node-portfinder#readme",
+      "_id": "portfinder@1.0.25",
+      "_nodeVersion": "12.8.0",
+      "_npmVersion": "6.10.3",
+      "dist": {
+        "integrity": "sha512-6ElJnHBbxVA1XSLgBp7G1FiCkQdlqGzuF7DswL5tcea+E8UpuvPU7beVAjjRwCioTS9ZluNbu+ZyRvgTsmqEBg==",
+        "shasum": "254fd337ffba869f4b9d37edc298059cb4d35eca",
+        "tarball": "https://registry.npmjs.org/portfinder/-/portfinder-1.0.25.tgz",
+        "fileCount": 5,
+        "unpackedSize": 19425,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdpkA2CRA9TVsSAnZWagAACmUP/107q/fcQoJZZfLiqF1k\nmlQXZzy6Qz1RrgJUoA/LxhrVh38C9P1yTMemwolvXgNQ87hvbj/Xj21X4P3k\ngYRZ2Ce3nNYwImMpFem4CNz3w/+rTRwJWCdTiVLV8iYeDdeKlGKjED0gg1K9\n2Xq1rKYNjZQlkL9r3ASAU6LTOe0T+gkvCPEM+vPHiQsDhBk9Xf0xSsO8MoSY\n9tw5qTV6BIMgLLmJWKOU8gTomLvQlEV5YU1mhdDQxAFsJuZbY9qpN7Vum0AV\ngunCfNFMJ8HUDO8W4O4Ko7wonGPveEu4KftrNBRkWTNCaEwR6GUyPfLBvjJr\nw5rSinFMwhMWoxZHIDBeHYZn0VKeF+SpTB/06/Dq+c2f+OP6IJJRfj4LDiyL\nVrZDmz2rGTs/4ccD0JcFyt9oKXKxJ01lfx2UgISEBC9GRPiPo9YL0d1GGgaw\nuAeqMZjw1TXkmfp+my/5GkZoojwsjkQcL4lPgATD6CmJhgqOegOAOfaOKjxG\nzMV0YFBpmJHdBP09n87jVxqKBwdX8D2sDteyZzCJjYtLWNuyPf4UNS9ZomHq\nlLmSG1lDEcZI8u6L0MTyHohkqgAe5sK1TM4go6K2OOO2ztYkXi1DLwMMhm7J\nSof1tnBoDB93ctZ5ZlRHkb6uyKdA8cr/GIw6v1r80RmEyoAV6QngU2Ng7Q94\ndXIh\r\n=Cyn4\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "eriktrom",
+          "email": "erik.trom.github@gmail.com"
+        },
+        {
+          "name": "indexzero",
+          "email": "charlie.robbins@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "eriktrom",
+        "email": "erik.trom.github@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/portfinder_1.0.25_1571176501472_0.2935766816563923"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.0.26": {
+      "name": "portfinder",
+      "description": "A simple tool to find an open port on the current machine",
+      "version": "1.0.26",
+      "author": {
+        "name": "Charlie Robbins",
+        "email": "charlie.robbins@gmail.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/http-party/node-portfinder.git"
+      },
+      "keywords": [
+        "http",
+        "ports",
+        "utilities"
+      ],
+      "dependencies": {
+        "async": "^2.6.2",
+        "debug": "^3.1.1",
+        "mkdirp": "^0.5.1"
+      },
+      "devDependencies": {
+        "glob": "^7.1.4",
+        "vows": "^0.8.2"
+      },
+      "main": "./lib/portfinder",
+      "types": "./lib/portfinder.d.ts",
+      "scripts": {
+        "test": "vows test/*-test.js --spec"
+      },
+      "engines": {
+        "node": ">= 0.12.0"
+      },
+      "license": "MIT",
+      "gitHead": "3709e43085335c9ffa462b64a0733740b9a21d1e",
+      "bugs": {
+        "url": "https://github.com/http-party/node-portfinder/issues"
+      },
+      "homepage": "https://github.com/http-party/node-portfinder#readme",
+      "_id": "portfinder@1.0.26",
+      "_nodeVersion": "14.0.0",
+      "_npmVersion": "6.14.4",
+      "dist": {
+        "integrity": "sha512-Xi7mKxJHHMI3rIUrnm/jjUgwhbYMkp/XKEcZX3aG4BrumLpq3nmoQMX+ClYnDZnZ/New7IatC1no5RX0zo1vXQ==",
+        "shasum": "475658d56ca30bed72ac7f1378ed350bd1b64e70",
+        "tarball": "https://registry.npmjs.org/portfinder/-/portfinder-1.0.26.tgz",
+        "fileCount": 5,
+        "unpackedSize": 19427,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeqJkBCRA9TVsSAnZWagAA/4MQAIqdFso6sAK+lOodo0d4\nyh4MEqHviwpqP14+MQdN6IK+FTtKO87+JpTIyd9ZC+lIVP8fQ3xZbwx20qtl\nLaQr0z1cw5Ax479Ml+9G8iyuYjLsQDqOJ7JPfOo0kzuThIV/mcWxHz9fqLys\nhJVFh+qgS4+pwAsLEki/lqviD2kQmKBlC4MqTkW2d/CWzimIn15UiEpOm2QX\ngxcUmApha83loURIGVLkAeNI+gN/T4Ca4yAVtLOygNjk2TjZUyaT8gUuRFWz\nEyto+LU4MLojFdxNUBqzMp+Ao92x8b2p8aEAd6DHSPel66tdJ4CsHIAAHtEk\nJPOKE6+0xH7VoqQQN2kBPCKsEil+hqN7XDs1HrLea3ETlsnmQ8Yfi6EOhvmB\n7ExaFw1PfUdqqazDa13jvcBioxOG9IL20Awyf+zqc2AlBray2QZOO4iOWk0B\nN4SM56axRq0iV69zGLhmsGOlgk+APOKTOCUQSCe3si2J7ZrayBm7QS9llpgZ\nxIZy7jP+YEr4WgFBiN+bT8ad1rhHxeZuJ9UYPiKgO7VVus2N3OezSBwJ++uc\ng6wBOxW8hpGs4ZN22fOpXpHNPI9Rc13NuIjEfB9HaDlUEv5xqANU+kVzo7kr\nb2EiwPjuF/pWtCw6l3ZQmmDrMI4ASLbHrQ7fDsXM+UIr805QdlqR+nQmn2M5\nxYN2\r\n=Pwiv\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "eriktrom",
+          "email": "erik.trom.github@gmail.com"
+        },
+        {
+          "name": "indexzero",
+          "email": "charlie.robbins@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "eriktrom",
+        "email": "erik.trom.github@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/portfinder_1.0.26_1588107520962_0.8334711827775307"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.0.27": {
+      "name": "portfinder",
+      "description": "A simple tool to find an open port on the current machine",
+      "version": "1.0.27",
+      "author": {
+        "name": "Charlie Robbins",
+        "email": "charlie.robbins@gmail.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/http-party/node-portfinder.git"
+      },
+      "keywords": [
+        "http",
+        "ports",
+        "utilities"
+      ],
+      "dependencies": {
+        "async": "^2.6.2",
+        "debug": "^3.1.1",
+        "mkdirp": "^0.5.1"
+      },
+      "devDependencies": {
+        "glob": "^7.1.4",
+        "vows": "^0.8.2"
+      },
+      "main": "./lib/portfinder",
+      "types": "./lib/portfinder.d.ts",
+      "scripts": {
+        "test": "vows test/*-test.js --spec"
+      },
+      "engines": {
+        "node": ">= 0.12.0"
+      },
+      "license": "MIT",
+      "gitHead": "170ac7f28cbcf2f81eff902e129baeb3f93fe81f",
+      "bugs": {
+        "url": "https://github.com/http-party/node-portfinder/issues"
+      },
+      "homepage": "https://github.com/http-party/node-portfinder#readme",
+      "_id": "portfinder@1.0.27",
+      "_nodeVersion": "14.5.0",
+      "_npmVersion": "6.14.5",
+      "dist": {
+        "integrity": "sha512-bJ3U3MThKnyJ9Dx1Idtm5pQmxXqw08+XOHhi/Lie8OF1OlhVaBFhsntAIhkZYjfDcCzszSr0w1yCbccThhzgxQ==",
+        "shasum": "a41333c116b5e5f3d380f9745ac2f35084c4c758",
+        "tarball": "https://registry.npmjs.org/portfinder/-/portfinder-1.0.27.tgz",
+        "fileCount": 5,
+        "unpackedSize": 19427,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfFPTjCRA9TVsSAnZWagAA4y0P/1AOTG6oqT96UCJn7gn7\nbCSOZPwTUfxJCH7Of/US7OYRW0NE+xZlqRcd9e5KD2n8FiAsRIwn9PcEvDr1\nK4N5IYUfKd440wAEbKX6WvBiEu2JD3+N+xcsXdt2cqkI91RTBSFnVR97XTJZ\n5q8rI4lxL84Vn0FoGOkvSzWrLHzvSk1Pk+LW/2R1M7v8e6JW+YV+9Wxe0RfI\nU1p4qmufLTMeeB/iDKi4P84o4dHHWhtyuWlMOdFSDX45kRJevwIhiTBmWwd7\nuFRYzsEYx8EILs9a4ERJjy04e5wQPOnhdAfcwrAANshNoNqmNW2ZpP4xDtXm\nBBoCkJZpzNWh5ZLoizaeVzV86LfTyQBjck4zzOnJzYwIdxu3w1bGVbX8DNdk\nL6SNvRKpdlZep9JVS3kaYvJUJ+iZre2atWrebSN59IH8ARTwapTCCFAR7Sjn\nFdAdG9L8MSO3Mv18Z2KC/4WbDWKumTuOtF8c0fEuetvgmnl3326ypLf6S8oK\nQEsnXYHM0vTtYIhWzb/H7MycSyTSc8kdhng+raX/uyYUwp+XI0mbRs8ObvW/\n0lyKxnSkwgfUt99CpvC2XPFa/cVknEV/BsPJ1d0yp309l3IIiWLydSq09yRZ\nOqe4zE6KlAuk6H1t/bb1u0Funyi0cRnPHbvJXgqNXOGTgnfGI7dQz1V55rQZ\njSbC\r\n=JZKL\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "eriktrom",
+          "email": "erik.trom.github@gmail.com"
+        },
+        {
+          "name": "indexzero",
+          "email": "charlie.robbins@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "eriktrom",
+        "email": "erik.trom.github@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/portfinder_1.0.27_1595208931065_0.5102827953009685"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.0.28": {
+      "name": "portfinder",
+      "description": "A simple tool to find an open port on the current machine",
+      "version": "1.0.28",
+      "author": {
+        "name": "Charlie Robbins",
+        "email": "charlie.robbins@gmail.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/http-party/node-portfinder.git"
+      },
+      "keywords": [
+        "http",
+        "ports",
+        "utilities"
+      ],
+      "dependencies": {
+        "async": "^2.6.2",
+        "debug": "^3.1.1",
+        "mkdirp": "^0.5.5"
+      },
+      "devDependencies": {
+        "glob": "^7.1.4",
+        "vows": "^0.8.2"
+      },
+      "main": "./lib/portfinder",
+      "types": "./lib/portfinder.d.ts",
+      "scripts": {
+        "test": "vows test/*-test.js --spec"
+      },
+      "engines": {
+        "node": ">= 0.12.0"
+      },
+      "license": "MIT",
+      "gitHead": "8895293a96a41a454b6648b50ecc7bff7f13fc22",
+      "bugs": {
+        "url": "https://github.com/http-party/node-portfinder/issues"
+      },
+      "homepage": "https://github.com/http-party/node-portfinder#readme",
+      "_id": "portfinder@1.0.28",
+      "_nodeVersion": "14.5.0",
+      "_npmVersion": "6.14.5",
+      "dist": {
+        "integrity": "sha512-Se+2isanIcEqf2XMHjyUKskczxbPH7dQnlMjXX6+dybayyHvAf/TCgyMRlzf/B6QDhAEFOGes0pzRo3by4AbMA==",
+        "shasum": "67c4622852bd5374dd1dd900f779f53462fac778",
+        "tarball": "https://registry.npmjs.org/portfinder/-/portfinder-1.0.28.tgz",
+        "fileCount": 5,
+        "unpackedSize": 19427,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfIRf/CRA9TVsSAnZWagAACrIP/3/umAyiNj7dFpIpmx8u\nbZ2ZiBRsarYLtS6OOYDmNn3BfQlLblnIIfmAAIRToNKWtKdAkXaRhn+YfIXW\nN8z5rPIY2RYqefxKgDOxBeyofKrw9LHlSB3u4BAXbET5nFKGNcGhAAVgfrWi\nuz2veBCefkKYjkjQqqWG/1mx3AuMLrfE10t9FYwoHNQuqT1HLwLe8C/mZf36\nNGUN51MOdssFF/NlLfX+nUtML1ZL18sUOMGNdpC8K7tvuLopqlofst/tmrlE\nxtKtZx6654Q2x8it72H0MThsky+3IEogJCrKA6n51e6TJT0dymZjdr9xkauq\nhshZ7jlDyGRPTrB5u7TsCnOcFkKsgzg466nC/t8BotRHAk9kD23RRscI8AOI\n35JhsipVS1wpWYdUZpHUlN77VwzHdBl8TL2pUYz1X8vtLVNZTQduVRWGDTUI\nlpzRAKrfeYlsEl/z/YWI689a1YiZgG4WKphgh1wHhVq8ZZplMzUcdlNccbWV\naNqxOhXoQLUzFST+9C5mlEHzqAtRYnltTP0V7Slj6gJ2PFaAsdjxv2f2kh3j\nZB0POe2uEuBzwEoAS+pCZx+Wz0iwaynEyaHGsOGkBAOn9zV66vZDCMc1NF4/\nlwl+FMekfioeyyB7SKakj9/jFtSCyMXBSc/bYC516CrsTfqYSqfX383V+J+2\nxeLT\r\n=496T\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "eriktrom",
+          "email": "erik.trom.github@gmail.com"
+        },
+        {
+          "name": "indexzero",
+          "email": "charlie.robbins@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "eriktrom",
+        "email": "erik.trom.github@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/portfinder_1.0.28_1596004351259_0.8561920579977917"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "maintainers": [
+    {
+      "name": "eriktrom",
+      "email": "erik.trom.github@gmail.com"
+    },
+    {
+      "name": "indexzero",
+      "email": "charlie.robbins@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-07-29T06:32:33.553Z",
+    "created": "2011-07-08T19:30:31.334Z",
+    "0.1.0": "2011-07-08T19:30:31.474Z",
+    "0.2.0": "2011-07-11T00:13:17.919Z",
+    "0.2.1": "2011-11-20T19:30:29.396Z",
+    "0.3.0": "2014-12-17T17:27:35.231Z",
+    "0.4.0": "2015-02-06T04:18:37.956Z",
+    "1.0.0": "2016-02-03T06:53:02.521Z",
+    "1.0.1": "2016-02-10T09:08:14.800Z",
+    "1.0.2": "2016-03-02T03:29:08.900Z",
+    "1.0.3": "2016-03-23T19:53:14.197Z",
+    "1.0.4": "2016-07-14T23:40:03.827Z",
+    "1.0.5": "2016-07-16T04:21:12.961Z",
+    "1.0.6": "2016-08-07T18:39:24.865Z",
+    "1.0.7-0": "2016-08-16T07:01:46.083Z",
+    "1.0.7-beta.0": "2016-08-16T07:12:06.047Z",
+    "1.0.7": "2016-08-16T16:40:25.968Z",
+    "1.0.8": "2016-10-17T22:15:07.692Z",
+    "1.0.9": "2016-10-18T23:45:12.351Z",
+    "1.0.10": "2016-11-11T00:32:02.536Z",
+    "1.0.11": "2017-01-17T18:54:46.223Z",
+    "1.0.12": "2017-01-17T20:12:16.928Z",
+    "1.0.13": "2017-01-31T14:43:01.735Z",
+    "1.0.15": "2018-08-06T15:49:01.673Z",
+    "1.0.16": "2018-08-07T16:07:14.646Z",
+    "1.0.17": "2018-08-20T02:19:39.819Z",
+    "1.0.18": "2018-10-17T23:38:42.864Z",
+    "1.0.19": "2018-10-23T02:23:06.047Z",
+    "1.0.20": "2018-11-30T23:06:46.327Z",
+    "1.0.21": "2019-07-12T14:25:40.405Z",
+    "1.0.22": "2019-08-17T10:16:08.974Z",
+    "1.0.23": "2019-08-19T20:20:21.652Z",
+    "1.0.24": "2019-09-05T19:30:51.583Z",
+    "1.0.25": "2019-10-15T21:55:01.612Z",
+    "1.0.26": "2020-04-28T20:58:41.104Z",
+    "1.0.27": "2020-07-20T01:35:31.279Z",
+    "1.0.28": "2020-07-29T06:32:31.366Z"
+  },
+  "author": {
+    "name": "Charlie Robbins",
+    "email": "charlie.robbins@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/http-party/node-portfinder.git"
+  },
+  "readme": "# node-portfinder [![Build Status](https://api.travis-ci.org/http-party/node-portfinder.svg)](https://travis-ci.org/http-party/node-portfinder)\n\n## Installation\n\n``` bash\n  $ [sudo] npm install portfinder\n```\n\n## Usage\nThe `portfinder` module has a simple interface:\n\n``` js\n  var portfinder = require('portfinder');\n\n  portfinder.getPort(function (err, port) {\n    //\n    // `port` is guaranteed to be a free port\n    // in this scope.\n    //\n  });\n```\n\nOr with promise (if Promise are supported) :\n\n``` js\n  const portfinder = require('portfinder');\n\n  portfinder.getPortPromise()\n    .then((port) => {\n        //\n        // `port` is guaranteed to be a free port\n        // in this scope.\n        //\n    })\n    .catch((err) => {\n        //\n        // Could not get a free port, `err` contains the reason.\n        //\n    });\n```\n\nIf `portfinder.getPortPromise()` is called on a Node version without Promise (<4), it will throw an Error unless [Bluebird](http://bluebirdjs.com/docs/getting-started.html) or any Promise pollyfill is used.\n\n### Ports search scope \n\nBy default `portfinder` will start searching from `8000` and scan until maximum port number (`65535`) is reached. \n\nYou can change this globally by setting:\n\n```js\nportfinder.basePort = 3000;    // default: 8000\nportfinder.highestPort = 3333; // default: 65535\n```\n\nor by passing optional options object on each invocation:\n\n```js\nportfinder.getPort({\n    port: 3000,    // minimum port\n    stopPort: 3333 // maximum port\n}, callback);\n```\n\n## Run Tests\n``` bash\n  $ npm test\n```\n\n#### Author: [Charlie Robbins][0]\n#### Maintainer: [Erik Trom][1]\n#### License: MIT/X11\n[0]: http://nodejitsu.com\n[1]: https://github.com/eriktrom\n",
+  "homepage": "https://github.com/http-party/node-portfinder#readme",
+  "keywords": [
+    "http",
+    "ports",
+    "utilities"
+  ],
+  "bugs": {
+    "url": "https://github.com/http-party/node-portfinder/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "users": {
+    "nelix": true,
+    "nickeltobias": true,
+    "octod": true,
+    "tobiasnickel": true,
+    "abdihaikal": true,
+    "evan-king": true,
+    "ivangaravito": true,
+    "krickray": true,
+    "danielpavelic": true,
+    "d-band": true,
+    "cheapsteak": true,
+    "yikuo": true,
+    "naokikimura": true,
+    "daizch": true,
+    "zuojiang": true
+  }
+}

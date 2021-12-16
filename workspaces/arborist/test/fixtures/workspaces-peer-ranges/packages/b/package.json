@@ -1,0 +1,7 @@
+{
+  "name": "b",
+  "version": "1.0.0",
+  "peerDependencies": {
+    "@ruyadorno/dep-bar": "^2.0.0"
+  }
+}

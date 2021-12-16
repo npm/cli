@@ -1,0 +1,594 @@
+{
+  "_id": "is-path-inside",
+  "_rev": "12-dd404a046e8f9bb20eb8ffd3e91504eb",
+  "name": "is-path-inside",
+  "description": "Check if a path is inside another path",
+  "dist-tags": {
+    "latest": "3.0.2"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "is-path-inside",
+      "version": "0.1.0",
+      "description": "Check if a path is inside another path",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/sindresorhus/is-path-inside"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "path",
+        "inside",
+        "folder",
+        "directory",
+        "dir",
+        "file",
+        "resolve"
+      ],
+      "dependencies": {
+        "path-is-inside": "^1.0.1"
+      },
+      "devDependencies": {
+        "mocha": "*"
+      },
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is-path-inside/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is-path-inside",
+      "_id": "is-path-inside@0.1.0",
+      "_shasum": "80a5625e69ec88acd0ebe7bc06ecb89a1438de94",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "80a5625e69ec88acd0ebe7bc06ecb89a1438de94",
+        "tarball": "https://registry.npmjs.org/is-path-inside/-/is-path-inside-0.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "is-path-inside",
+      "version": "1.0.0",
+      "description": "Check if a path is inside another path",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/is-path-inside"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "path",
+        "inside",
+        "folder",
+        "directory",
+        "dir",
+        "file",
+        "resolve"
+      ],
+      "dependencies": {
+        "path-is-inside": "^1.0.1"
+      },
+      "devDependencies": {
+        "mocha": "*"
+      },
+      "gitHead": "b507035b66a539b7c12ba8b6b486377aa02aef9f",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is-path-inside/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is-path-inside",
+      "_id": "is-path-inside@1.0.0",
+      "_shasum": "fc06e5a1683fbda13de667aff717bbc10a48f37f",
+      "_from": ".",
+      "_npmVersion": "1.4.21",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "fc06e5a1683fbda13de667aff717bbc10a48f37f",
+        "tarball": "https://registry.npmjs.org/is-path-inside/-/is-path-inside-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "is-path-inside",
+      "version": "1.0.1",
+      "description": "Check if a path is inside another path",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/is-path-inside.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "path",
+        "inside",
+        "folder",
+        "directory",
+        "dir",
+        "file",
+        "resolve"
+      ],
+      "dependencies": {
+        "path-is-inside": "^1.0.1"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "7f08550845a34a9be18f5422f31da0c83b5a50b9",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is-path-inside/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is-path-inside#readme",
+      "_id": "is-path-inside@1.0.1",
+      "_shasum": "8ef5b7de50437a3fdca6b4e865ef7aa55cb48036",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "4.8.4",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "8ef5b7de50437a3fdca6b4e865ef7aa55cb48036",
+        "tarball": "https://registry.npmjs.org/is-path-inside/-/is-path-inside-1.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is-path-inside-1.0.1.tgz_1512038091165_0.6817436330020428"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "is-path-inside",
+      "version": "2.0.0",
+      "description": "Check if a path is inside another path",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/is-path-inside.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "path",
+        "inside",
+        "folder",
+        "directory",
+        "dir",
+        "file",
+        "resolve"
+      ],
+      "dependencies": {
+        "path-is-inside": "^1.0.2"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "27b2c70c0f9df420cb13af6cc2f7807344a5d9b6",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is-path-inside/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is-path-inside#readme",
+      "_id": "is-path-inside@2.0.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.9.4",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-OmUXvSq+P7aI/aRbl1dzwdlyLn8vW7Nr2/11S7y/dcLLgnQ89hgYJp7tfc+A5SRid3rNCLpruOp2CAV68/iOcA==",
+        "shasum": "28f249020fe6906671fe31a76118f2cd490441fd",
+        "tarball": "https://registry.npmjs.org/is-path-inside/-/is-path-inside-2.0.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 2523
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is-path-inside_2.0.0_1521732624517_0.20433325811345182"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.1.0": {
+      "name": "is-path-inside",
+      "version": "2.1.0",
+      "description": "Check if a path is inside another path",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/is-path-inside.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "path",
+        "inside",
+        "folder",
+        "directory",
+        "dir",
+        "file",
+        "resolve"
+      ],
+      "dependencies": {
+        "path-is-inside": "^1.0.2"
+      },
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "2c712b73250b94cec65b8c815b687a0d115e5724",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is-path-inside/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is-path-inside#readme",
+      "_id": "is-path-inside@2.1.0",
+      "_nodeVersion": "8.15.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-wiyhTzfDWsvwAW53OBWF5zuvaOGlZ6PwYxAbPVDhpm+gM09xKQGjBq/8uYN12aDvMxnAnq3dxTyoSoRNmg5YFg==",
+        "shasum": "7c9810587d659a40d27bcdb4d5616eab059494b2",
+        "tarball": "https://registry.npmjs.org/is-path-inside/-/is-path-inside-2.1.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 3088,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJctLJPCRA9TVsSAnZWagAAaxEP/jnemeaO9y+4dl3vOLJs\nAAcUvq8FyKl3/FlmW9cJN2+C8860tLH7ESzRDlRS1AyKaMndOufSWuo5LNSR\n2ilqM8US2yzoQ0z5JuAMHHePBSHk9PH7pVp7b3pKSy2LGS+ZsoVKo+ZM8JJT\ntgBAFF6aVnwHKGzBI5uYvc1KvIx1AqR4tDT9NPai9KJwFrt0dQCxvK4ZADUy\nyxgumB5Lwu9kWQwDYMbLq8qMbj+sarKGU1pyTrRFSE9/gpxY027oWFeo/6Fr\nSm4Mnzl3JroatuobnZKjJ1EdTt9s8haHXZGmTVBhPK/hJraRgTS1qzPAlnPp\nc5T3dIICOGLQIQxdvtJ0mh6BqgJNwXPXPjBjJ1Z4ApD5EHRiKVVthV/RaenK\nQaSnCxEdlj00vnoTWyvRYMjv8tNWMJdTCBPHE4s7wm3bFdk4DssUHQ8x1IwL\nsAjRYSmFhPMjipVVOTM6ZMpmSC2eQp6hW6+eO5kTqvMMqzAKKLKvHCDLDlDf\nobxkXT+qfYKY9urTkne6/K14l46z0Z6IeWf7ApepYxG0P9L9lqgZFTiQS5m2\n8VN7cyfLVr0c/wHgSTQh4+z+Q7cSdvG8kC9t8Uj4u+mgZSC2TrfqQMNVjByv\nfpnkmzxcyYk7V1Fc+3B1Sei5vwfo395cB9jTLPtveSfc6RgiYz5nTdiAIqYH\ne9DZ\r\n=xHOY\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is-path-inside_2.1.0_1555345999308_0.36274390118968913"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.0": {
+      "name": "is-path-inside",
+      "version": "3.0.0",
+      "description": "Check if a path is inside another path",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/is-path-inside.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "path",
+        "inside",
+        "folder",
+        "directory",
+        "dir",
+        "file",
+        "resolve"
+      ],
+      "devDependencies": {
+        "ava": "^2.1.0",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "d07f9e1cc1deb228c4f94a1ae9188c76523d4b13",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is-path-inside/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is-path-inside#readme",
+      "_id": "is-path-inside@3.0.0",
+      "_nodeVersion": "10.16.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-v28/HvYQN3AepaOvkD0K93htMmCF6BczXUVWn9lShWeNdzwmT3ZU2jyFBLaTHBEOQZDoMyxkproAo2PeHcMe1w==",
+        "shasum": "1b157644770a6200864a701b4447cdae60f9bc8e",
+        "tarball": "https://registry.npmjs.org/is-path-inside/-/is-path-inside-3.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 3866,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdHtLACRA9TVsSAnZWagAAZpgQAITpb9aP4qNraB55g7Dk\nhyO+D/w2VbBvGcL9waionLEDzUSwJpjFnNePLDrI3dU3qvVAi37G7Nd/VSNs\nbHp7Ppg1dr3vq35CO4PfU3ftH1e3v/mWJCR7dZztDweGxGFo1rzz4cEdwSwy\neXIGodfWaPR4G4drmfqhyj2oTw0k+r6cmjwQCl59rfhJ/QrBMykfVZmUXvt4\nP3Eb1KsEsYgcHa/o4fBRuylNbHPLj0Ed1/x1K+gB6Oz8zXMJWobRa6PAWy7Y\nGVgY6bdxLPbxrinHg1cE2prPEqzZ2ZT5n8eBtPw+9a4Z10Szn/rb26nUznHy\nMly7e+k06MFvccC87i1sNlGYQUsH09M4I4tkuUyBYxX71taQ1+52SkqCRARS\ntfJn6p2lVxK7UihNoNKF+tAuWYsznJ6nNHXCjA/wt4484RyHeI51rkHMjWiW\njvsYRMtaxy0u34Sxs5++cW1Tr/yXedoY0SWEXgQG62Jn0dUlqht4kLl/kk/4\ncJwyJ/IVH1x+jnkOnQHiqXyeRvjuaXeMj1XzRnvCRRwjM267awqAhHB3sXbF\neYK4LdC3wtuVxr5WuOSw1baH/629KvSF17FJbqgAmkM4TqshCb21+3/DkmHy\nOULs12HkvbB3Fe3vnYsAgJOtjQntGQXy5h2lxDnP0ROSSSWtpZ3O8YINk3+R\nzaFj\r\n=i0OG\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is-path-inside_3.0.0_1562301119737_0.7632901539665864"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.1": {
+      "name": "is-path-inside",
+      "version": "3.0.1",
+      "description": "Check if a path is inside another path",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/is-path-inside.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "path",
+        "inside",
+        "folder",
+        "directory",
+        "dir",
+        "file",
+        "resolve"
+      ],
+      "devDependencies": {
+        "ava": "^2.1.0",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "cc9e12dcb78ec83e6769916f9e3347aea197378d",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is-path-inside/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is-path-inside#readme",
+      "_id": "is-path-inside@3.0.1",
+      "_nodeVersion": "12.3.1",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-CKstxrctq1kUesU6WhtZDbYKzzYBuRH0UYInAVrkc/EYdB9ltbfE0gOoayG9nhohG6447sOOVGhHqsdmBvkbNg==",
+        "shasum": "7417049ed551d053ab82bba3fdd6baa6b3a81e89",
+        "tarball": "https://registry.npmjs.org/is-path-inside/-/is-path-inside-3.0.1.tgz",
+        "fileCount": 5,
+        "unpackedSize": 3916,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdH3TzCRA9TVsSAnZWagAAc6IQAJWclEx67R7S5cs4qTJk\ndO01mY1h6nOm0GgjbJ1F7b1/ZW0zBMp2n+9+0qTRBHM926PscvCKP5A5TSHY\nGcY4lqoYYh86Bxiz3YHssaOeQpXxSCRwxkCMvhBqJDVonv5LksOT5/ODC8uf\nAwgtFci1lpX2j5hP9xWERH6/MuP6yP6rWbf0/n7aLx/i5N85cuCam7zBph0C\n89Ci8ZBP8s4JcSelktGSfK9uGPk4OduZkw/R0vlYyo1DAYrsX/r1TsrtCqMs\ncNpkGizrkxMoIaisZgCwiabh92bvXBUhKUBFW123RMzGnqix07eMSDjAxmJ5\ndPBSJhHmlYfD1lUpvUXwUZu496m6dnNeNwz2JnzrKlXzZiSnbj9nDZYNM6Xi\ncq28Fcr+HW0HZJwU3Hb1yRidjUagJ7ECcTyAH7dEDnBW/tPQgufWG3cdhYr+\n6DUN3gEect7xXzRpVrtnfZezzMUp+mly7FDTuGMj/JB2Waq66ig4TiFdBqBS\nhDpjG1bpqQLdpWvV8eDxKeHGLClEbjndMHWdgJWWH7Vwm7E1MKHzfDkL+xh7\nkRGlMyLliEJEucF+ttt6lP/QoKxsp7niTktgsipjE74ERvQ5Nm4NbfN7vnf0\n9sTqMd/2dXvj+gEXm2FRdJm7FbQwOHxUF8GPx8yhPdD5T5WOpdRWEOYF4r1K\neer/\r\n=T6t8\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is-path-inside_3.0.1_1562342642731_0.42618042099088504"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.2": {
+      "name": "is-path-inside",
+      "version": "3.0.2",
+      "description": "Check if a path is inside another path",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/is-path-inside.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "path",
+        "inside",
+        "folder",
+        "directory",
+        "dir",
+        "file",
+        "resolve"
+      ],
+      "devDependencies": {
+        "ava": "^2.1.0",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "e245fb401b668deb5cb1061ed1c7e68ab06cccbe",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is-path-inside/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is-path-inside#readme",
+      "_id": "is-path-inside@3.0.2",
+      "_nodeVersion": "10.16.3",
+      "_npmVersion": "6.11.3",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-/2UGPSgmtqwo1ktx8NDHjuPwZWmHhO+gj0f93EkhLB5RgW9RZevWYYlIkS6zePc6U2WpOdQYIwHe9YC4DWEBVg==",
+        "shasum": "f5220fc82a3e233757291dddc9c5877f2a1f3017",
+        "tarball": "https://registry.npmjs.org/is-path-inside/-/is-path-inside-3.0.2.tgz",
+        "fileCount": 5,
+        "unpackedSize": 4408,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdkcpXCRA9TVsSAnZWagAAvT8P/0CY+P2eIrRkE09fQMKn\n3q3ae0juf/NF7cb6GzI4c1Wr9kWOqdrYQwD94jBns15Ha8npA15Q2LQs+pav\nawPp/07dLkTQa0O+NDCz8/lCx0/rAGDFVvKXrwyyycQosvSmVkw64j2Njg9p\nfOGTqW/7rC+LA60LeT+VI0gnFtY7fDrGVJdDbg0HEpinmA3XzAQCJZwa1VVw\nboMp/lxfPxZPNi4xIszua5N2W26GO85mUvuTQ7SrgmcvKSn7ENpA696DAZvt\nWiE8Sl0OF3ppCEpX8M6fmqJqQlkohWrQ7mLIJz2tl43+ON1Xzukz7RK/Pn3m\nkRwQRgGVQh9htU20P5ZGmaSdsS2thsAlmL8+3EUjnyexMsGNH9QkG7qL35TT\n2vTaMptsB3wxPJVn4diFqZs1Ut3NDq9JA6hg9uZVqzA0A2Ol4N4Hi0svZWxk\nNnUIigEKAhYPT46bb8yT+TlrCrANePSegmDPoOT7WRuY+qs5eY8iU8Y/u/Y6\nyqr1gthgTdCY4X4OS81L62ub40+G5hFE2SeRcp43Mr2J+sSGdGiTulXa/+bG\nYS2FqJkANX7DnYgcG3T3fR5PPMN1J7COxy5Xak9sMYxyOx/om3ALq++wbvRH\nNHCOqYV7NXEhPiF/aMABN9QKeGWImJVQRXYBXrDfJ2Ri671wGQ7g6o+b/r9/\nCcMc\r\n=vqKl\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is-path-inside_3.0.2_1569835606260_0.5815231309008762"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# is-path-inside [![Build Status](https://travis-ci.org/sindresorhus/is-path-inside.svg?branch=master)](https://travis-ci.org/sindresorhus/is-path-inside)\n\n> Check if a path is inside another path\n\n\n## Install\n\n```\n$ npm install is-path-inside\n```\n\n\n## Usage\n\n```js\nconst isPathInside = require('is-path-inside');\n\nisPathInside('a/b/c', 'a/b');\n//=> true\n\nisPathInside('a/b/c', 'x/y');\n//=> false\n\nisPathInside('a/b/c', 'a/b/c');\n//=> false\n\nisPathInside('/Users/sindresorhus/dev/unicorn', '/Users/sindresorhus');\n//=> true\n```\n\n\n## API\n\n### isPathInside(childPath, parentPath)\n\nNote that relative paths are resolved against `process.cwd()` to make them absolute.\n\n**Important:** This package is meant for use with path manipulation. It does not check if the paths exist nor does it resolve symlinks. You should not use this as a security mechanism to guard against access to certain places on the file system.\n\n#### childPath\n\nType: `string`\n\nThe path that should be inside `parentPath`.\n\n#### parentPath\n\nType: `string`\n\nThe path that should contain `childPath`.\n\n\n---\n\n<div align=\"center\">\n\t<b>\n\t\t<a href=\"https://tidelift.com/subscription/pkg/npm-is-path-inside?utm_source=npm-is-path-inside&utm_medium=referral&utm_campaign=readme\">Get professional support for this package with a Tidelift subscription</a>\n\t</b>\n\t<br>\n\t<sub>\n\t\tTidelift helps make open source sustainable for maintainers while giving companies<br>assurances about security, maintenance, and licensing for their dependencies.\n\t</sub>\n</div>\n",
+  "maintainers": [
+    {
+      "name": "sindresorhus",
+      "email": "sindresorhus@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2019-09-30T09:26:50.917Z",
+    "created": "2014-06-20T22:19:18.874Z",
+    "0.1.0": "2014-06-20T22:19:18.874Z",
+    "1.0.0": "2014-08-14T09:47:01.189Z",
+    "1.0.1": "2017-11-30T10:34:52.892Z",
+    "2.0.0": "2018-03-22T15:30:24.655Z",
+    "2.1.0": "2019-04-15T16:33:19.419Z",
+    "3.0.0": "2019-07-05T04:31:59.865Z",
+    "3.0.1": "2019-07-05T16:04:02.853Z",
+    "3.0.2": "2019-09-30T09:26:46.419Z"
+  },
+  "homepage": "https://github.com/sindresorhus/is-path-inside#readme",
+  "keywords": [
+    "path",
+    "inside",
+    "folder",
+    "directory",
+    "dir",
+    "file",
+    "resolve"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/is-path-inside.git"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "bugs": {
+    "url": "https://github.com/sindresorhus/is-path-inside/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md",
+  "users": {
+    "recursion_excursion": true,
+    "rocket0191": true
+  }
+}

@@ -1,0 +1,742 @@
+{
+  "_id": "escape-goat",
+  "_rev": "8-bd373a9e8679996e3420c458a518f85e",
+  "name": "escape-goat",
+  "description": "Escape a string for use in HTML or the inverse",
+  "dist-tags": {
+    "latest": "3.0.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "escape-goat",
+      "version": "1.0.0",
+      "description": "Escape a string for use in HTML or the inverse",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/escape-goat.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "escape",
+        "unescape",
+        "html",
+        "entity",
+        "entities",
+        "escaping",
+        "sanitize",
+        "sanitization",
+        "utility",
+        "template",
+        "attribute",
+        "value",
+        "interpolate",
+        "xss",
+        "goat",
+        "🐐"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "a195c6d5accc937612c691cb0ac159a9cfb91f79",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/escape-goat/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/escape-goat#readme",
+      "_id": "escape-goat@1.0.0",
+      "_shasum": "2062d48541ef51fdc4a8205d1bd4de2c88753dfa",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "7.10.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "2062d48541ef51fdc4a8205d1bd4de2c88753dfa",
+        "tarball": "https://registry.npmjs.org/escape-goat/-/escape-goat-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/escape-goat-1.0.0.tgz_1495880043271_0.144944847561419"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "escape-goat",
+      "version": "1.0.1",
+      "description": "Escape a string for use in HTML or the inverse",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/escape-goat.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "escape",
+        "unescape",
+        "html",
+        "entity",
+        "entities",
+        "escaping",
+        "sanitize",
+        "sanitization",
+        "utility",
+        "template",
+        "attribute",
+        "value",
+        "interpolate",
+        "xss",
+        "goat",
+        "🐐"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "7a5b3d312ecbbd3660bacf01f54cf46031772218",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/escape-goat/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/escape-goat#readme",
+      "_id": "escape-goat@1.0.1",
+      "_shasum": "07f7da38bb408b5c48b813333c815d74037c6ec8",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "4.8.3",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "07f7da38bb408b5c48b813333c815d74037c6ec8",
+        "tarball": "https://registry.npmjs.org/escape-goat/-/escape-goat-1.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/escape-goat-1.0.1.tgz_1495950680550_0.09076580125838518"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "escape-goat",
+      "version": "1.1.0",
+      "description": "Escape a string for use in HTML or the inverse",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/escape-goat.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "escape",
+        "unescape",
+        "html",
+        "entity",
+        "entities",
+        "escaping",
+        "sanitize",
+        "sanitization",
+        "utility",
+        "template",
+        "attribute",
+        "value",
+        "interpolate",
+        "xss",
+        "goat",
+        "🐐"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "5930869364f998ad1ea45c82018b7e423e8a9a38",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/escape-goat/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/escape-goat#readme",
+      "_id": "escape-goat@1.1.0",
+      "_shasum": "9521cf4d561fbce5f6d79f97679bb1a2387b74af",
+      "_from": ".",
+      "_npmVersion": "4.2.0",
+      "_nodeVersion": "7.10.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "9521cf4d561fbce5f6d79f97679bb1a2387b74af",
+        "tarball": "https://registry.npmjs.org/escape-goat/-/escape-goat-1.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/escape-goat-1.1.0.tgz_1496211436552_0.2925461393315345"
+      },
+      "directories": {}
+    },
+    "1.2.0": {
+      "name": "escape-goat",
+      "version": "1.2.0",
+      "description": "Escape a string for use in HTML or the inverse",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/escape-goat.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "escape",
+        "unescape",
+        "html",
+        "entity",
+        "entities",
+        "escaping",
+        "sanitize",
+        "sanitization",
+        "utility",
+        "template",
+        "attribute",
+        "value",
+        "interpolate",
+        "xss",
+        "goat",
+        "🐐"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "38f9c58ba489eab97d7515f6c4973b34a59fd7f1",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/escape-goat/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/escape-goat#readme",
+      "_id": "escape-goat@1.2.0",
+      "_npmVersion": "5.0.0",
+      "_nodeVersion": "8.0.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-toMo+EtOEAy3BJV9FOadCu0j9UcesqhAD8sylGpJNPg1K04EzLADXJJ5UqwHKn6ave3uySzEQaCWYdME08QTYg==",
+        "shasum": "cea2d733ede4d9c2fd6b5fe83c83677de6d1807e",
+        "tarball": "https://registry.npmjs.org/escape-goat/-/escape-goat-1.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/escape-goat-1.2.0.tgz_1500673728312_0.22979621612466872"
+      },
+      "directories": {}
+    },
+    "1.3.0": {
+      "name": "escape-goat",
+      "version": "1.3.0",
+      "description": "Escape a string for use in HTML or the inverse",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/escape-goat.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "escape",
+        "unescape",
+        "html",
+        "entity",
+        "entities",
+        "escaping",
+        "sanitize",
+        "sanitization",
+        "utility",
+        "template",
+        "attribute",
+        "value",
+        "interpolate",
+        "xss",
+        "goat",
+        "🐐"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "deaa41d2e6a2b6345ec23fa9e5b8ff1706693c9b",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/escape-goat/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/escape-goat#readme",
+      "_id": "escape-goat@1.3.0",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "8.2.1",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-E2nU1Y39N5UgfLU8qwMlK0vZrZprIwWLeVmDYN8wd/e37hMtGzu2w1DBiREts0XHfgyZEQlj/hYr0H0izF0HDQ==",
+        "shasum": "bf3ee8ad1e488fbba404b084b2e4a55e09231c64",
+        "tarball": "https://registry.npmjs.org/escape-goat/-/escape-goat-1.3.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/escape-goat-1.3.0.tgz_1501497698607_0.654048390686512"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "escape-goat",
+      "version": "2.0.0",
+      "description": "Escape a string for use in HTML or the inverse",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/escape-goat.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "escape",
+        "unescape",
+        "html",
+        "entity",
+        "entities",
+        "escaping",
+        "sanitize",
+        "sanitization",
+        "utility",
+        "template",
+        "attribute",
+        "value",
+        "interpolate",
+        "xss",
+        "goat",
+        "🐐"
+      ],
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "235683eb791e13336cf4bd9705ea9df97e0d8e51",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/escape-goat/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/escape-goat#readme",
+      "_id": "escape-goat@2.0.0",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "8.15.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-XNBgZcQeOGSzOPRqqOrMkFjBA0MCWRb2CqfMjZatMNkAki2YrKj2PwoZhIZwk/AikpbMwGOCPUVjpe+MOeR5tw==",
+        "shasum": "be9120096b3002eae301ea9db824247d688121b9",
+        "tarball": "https://registry.npmjs.org/escape-goat/-/escape-goat-2.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 6258,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJctyBzCRA9TVsSAnZWagAAw7EQAJ/JF/HlWLm2ZkMp7YJm\nU0tjfdrnV1c1GEHEAQHFDcVlNwDdLzR2izZ+QOHR65xkdqdVZNUmD7WrLk5S\nzkAQSQ6ljPUsZlzojm5d3NkuLpYDnH/t2l6d8ZIDwa7SUbbkyxpmNd2Kz4MX\n+vHqApEqxS9S8CX3+vaZBTHUQd51Ra3BgpPumyitz87KDp4SvbryjrwMfJI7\nCwQNL7d67z6hJAuxpRxSp5T/P8c6NBWVtlr7vj3FzriGGhIRfATomBwLwK/O\n+Ze9mHcDs98iywvDAzyLA2VX76dcZg+FQl0WNJCunP5/9GG+Syi3iwoV2zVp\n6M/+9c+ngVjJD47XvolO+MUfLfHk6G4DV0091L7R4hyg3rnKcd9HjnEGfBw+\niQyTasR03NvKcNJodXnNOAiFOzOrJXyz7oC8AgKtUdO8uRCPl4pw0RZAMdE2\nEXgKf3URsTlTXR+7tXgfWwBWv7cngJtIjR63uqzzHYY1FqlY62OG3QbVbQ8H\n511Qh8LDYJFVz+KhdsbbhAVwlHRsFZnWP7CcimK6TltCmsPYAY/rVpI3Jyf4\nkxKyNFjzExpXRJO7VF9ios6BjwyFNHzXeMpKzwhbkg2nCqkixgxrrqSs3acH\nmBYV7WvVZ3tODlL1xcDNiVlZbROjkdXfrwm4JX/cvnDTLGtHfJQu/NPIfyPE\n2zQI\r\n=IiYg\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/escape-goat_2.0.0_1555505266932_0.924764560779894"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.1.0": {
+      "name": "escape-goat",
+      "version": "2.1.0",
+      "description": "Escape a string for use in HTML or the inverse",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/escape-goat.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "escape",
+        "unescape",
+        "html",
+        "entity",
+        "entities",
+        "escaping",
+        "sanitize",
+        "sanitization",
+        "utility",
+        "template",
+        "attribute",
+        "value",
+        "interpolate",
+        "xss",
+        "goat",
+        "🐐"
+      ],
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "77f2219474d9680d8039c2f8e2649f11900e7e09",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/escape-goat/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/escape-goat#readme",
+      "_id": "escape-goat@2.1.0",
+      "_nodeVersion": "8.16.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-7fMXQmS/6yjYQT/yydWKCAm5ucuU7QtqP6/CE7BIKk6z3xTP4MLqkdUBwaViQVuTAde8yZgZIjSnEAPRl6u53g==",
+        "shasum": "0f55d3fa1d41a4175fc7a26e25bdb5b2d1afbe31",
+        "tarball": "https://registry.npmjs.org/escape-goat/-/escape-goat-2.1.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 6274,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJc75/qCRA9TVsSAnZWagAAj7MP/2UWy6az6LpGYLzf/SLZ\n1sKsNXgUC6lNau23meAr7d18i0/QNhdea4ZGQAmk4tkPYId0uOHphhJOWNIX\nE/tozwhnXNs8H9RWm3o6mGZXnP/FcmoqXy8LiVPiWn79R6Ddvpo1Hp3n5NJ/\nVcb8IZNJphA5Uc4JszMcOxCgjhd4OQFHW2vN2aieLIhA1FFw0cBzLxfwVXKG\nzXGSK4TZjbVkvZkG8VpTjwPEckgaR25o71A7u1lco/Gba9X1/VByoooxf89l\n5Hu/UZp06gLvT3qfrxPLb6nqcPOepvCwTU02TjVRNhrDGrFTrgKJkhv+t1IS\n09v/cnbzE2fDWoixYr/rsUGVHVIveMQRoivIzlgrxIVp0Yc9Vtht/gmYlL0g\nuYtjt0/q0MBNVMZPRUHDd+omr9V20my6LH224V33LVfmLoFB93L18pHvudh5\nuvKEoc0ymv7hTo6w4TxOyfuqrCMeAaBjIaRa/mxNPDdQjcKVZOxH24gGs0kI\nQYP9hBErtDR8efT3mOtjNMqhMpjw9UV5yQBJFqqXLOuA7PDOmcTzvuvAbvRC\n63mpKBiTJqN6l1m6GBlj+De3n+b4ZpiQz6HeMFvtT95OOiX/kDA1oNZmXIXC\nn6ZLDDIMI8jSBS44zWKD3y44o/A/So5B7U3mXH4w5AxOQEbIvhLvQUVf0+EV\n3zC5\r\n=KK6M\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/escape-goat_2.1.0_1559207913846_0.7765709055891488"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.1.1": {
+      "name": "escape-goat",
+      "version": "2.1.1",
+      "description": "Escape a string for use in HTML or the inverse",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/escape-goat.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "escape",
+        "unescape",
+        "html",
+        "entity",
+        "entities",
+        "escaping",
+        "sanitize",
+        "sanitization",
+        "utility",
+        "template",
+        "attribute",
+        "value",
+        "interpolate",
+        "xss",
+        "goat",
+        "🐐"
+      ],
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "4d0dac2f019c9de3100615e2ba4ebace042bd604",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/escape-goat/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/escape-goat#readme",
+      "_id": "escape-goat@2.1.1",
+      "_nodeVersion": "10.16.3",
+      "_npmVersion": "6.11.3",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-8/uIhbG12Csjy2JEW7D9pHbreaVaS/OpN3ycnyvElTdwM5n6GY6W6e2IPemfvGZeUMqZ9A/3GqIZMgKnBhAw/Q==",
+        "shasum": "1b2dc77003676c457ec760b2dc68edb648188675",
+        "tarball": "https://registry.npmjs.org/escape-goat/-/escape-goat-2.1.1.tgz",
+        "fileCount": 5,
+        "unpackedSize": 6276,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdiJLbCRA9TVsSAnZWagAA5EcP+QBQe1v7XzBGNk2FjFbp\nQjeLTMO1TlLvll7utlS680w+jrv8lMJ7UeAZRiu6V/9k/Okdve0DANQQNQpI\nJCVaM79PMk3su9tVKw2itxCdK57wXcugxvFhcLzutLD4OngFqrokSq4EGCdO\nMFNBFR1HrtA6wAnGWIgjK4Ob1Iw6Ei1OzfB2pgE6DlqbTj8IeVtX1wPp3dK2\n2TH7QTWlSLngBxAph31b/3enl+shuNS3B3vp4O8HxLo1WBOzYUfoM+Iqi1jG\nKTLyhWI+4VkajucU/TAfijgWP6FvCwA/7evVvT6mPoaMl0x7VSOydsNjgsZR\nnYTyH4VHMHDkChLzyi2/a1rco8IpJhBR+P4MfW2qIwPQnXMM/VkISv7A+r4T\noOPj+TQd+s4jfr5txg98vdtMB4sFgyx/5MmS73mzLVjzCokEiNg/RMAqH0uD\nKG+2SE/7Cb9AsD+QQcL5nXoPYok5Foa1Pq0Z1kW1/WxXskGiZWV2uvuX1tH5\nMB+kdFMEXah78th+bi2q1dIluVeuzetKsy9z5h59th29CyaxMKgsWqSuW7Js\nWx/QlqH0v6P43b6MS+xKIVkmOgAH9luqnzMREyhA6woikEXh5HZMKGIIql7W\ntuFB7eb8E6z+qZPdAXEV7zidZd+ULt5DYKcx+5m+CLJe+GqZUejg1htmImkI\n04Mj\r\n=825e\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/escape-goat_2.1.1_1569231578518_0.37111587499704446"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.0": {
+      "name": "escape-goat",
+      "version": "3.0.0",
+      "description": "Escape a string for use in HTML or the inverse",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/escape-goat.git"
+      },
+      "funding": "https://github.com/sponsors/sindresorhus",
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=10"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "escape",
+        "unescape",
+        "html",
+        "entity",
+        "entities",
+        "escaping",
+        "sanitize",
+        "sanitization",
+        "utility",
+        "template",
+        "attribute",
+        "value",
+        "interpolate",
+        "xss",
+        "goat",
+        "🐐"
+      ],
+      "devDependencies": {
+        "ava": "^2.4.0",
+        "tsd": "^0.11.0",
+        "xo": "^0.25.3"
+      },
+      "gitHead": "02a4b7973b36ee18bb10789a631841904dcdcd7a",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/escape-goat/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/escape-goat#readme",
+      "_id": "escape-goat@3.0.0",
+      "_nodeVersion": "10.17.0",
+      "_npmVersion": "6.11.3",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-w3PwNZJwRxlp47QGzhuEBldEqVHHhh8/tIPcl6ecf2Bou99cdAt0knihBV0Ecc7CGxYduXVBDheH1K2oADRlvw==",
+        "shasum": "e8b5fb658553fe8a3c4959c316c6ebb8c842b19c",
+        "tarball": "https://registry.npmjs.org/escape-goat/-/escape-goat-3.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 6358,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeHof1CRA9TVsSAnZWagAA5EkP/RJfKnseNeeDoHasUZDJ\nW/i1T9uvI0/ypc/JNPCMTySoB3WN8Z63kM1wUF0f0fmVP3cGNghSnEItjjLN\naxppivg97pLzAPQKYE9wXhbFFWvzTeEK6VJFk3o3H3C91m3V5JXwKx4ge3Vf\nprKn53St+//nFYqQ6IReeFr2qUZZ7DNANBbWdBC7T21HV+phqo7zMvrnKkhr\nPsuGBBgr7lfVITzSGbgfoUJoxEgWD+gvsISOd/W3MzB4BezZWa9liMTb0Q1K\nhfIyZXBV2A/YiQkDrsaAzm01JJDB3TjvI/rKCvIBo4ZkoVTYwM+zdlElqYmP\nfKejDnAnWuh+iK8ieNmCwk8ZeJUbXlfT8FTJwaQ2xM9pAtbt4zws2z4qU/bL\nE30nl1CfOhfIpkt5ye7hmnoSk38zO+x585cOhNs5whbaexi8hmxBROq58WgP\nuuo+vBtFx/SnkxppCByNnb36jfy8asCpKEetFm6r1Nlc7sC8NOZxi1zndvxb\nvuUtqZBzx0f8NszJPVHn0x6NSPPZmRpL8iwYNCxeRv+beDfu5SB5/UEIjKrR\nRQXSp/eT8qWcnzj6dOSv5Kkit+BtpAJa7sS4pCr5C0T5c6MO7FXclLnKfNDK\nbenTok47mPbR1/qmCrCVio8O1EJQUDmwQV8MPgSnUUYDZD4Ysuud6EYbl5IK\nPK6l\r\n=ZSPH\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/escape-goat_3.0.0_1579059189503_0.99336165635811"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "<h1>\n\t<img src=\"logo.jpg\" width=\"1280\" alt=\"escape-goat\">\n</h1>\n\n> Escape a string for use in HTML or the inverse\n\n[![Build Status](https://travis-ci.org/sindresorhus/escape-goat.svg?branch=master)](https://travis-ci.org/sindresorhus/escape-goat)\n\n## Install\n\n```\n$ npm install escape-goat\n```\n\n## Usage\n\n```js\nconst {htmlEscape, htmlUnescape} = require('escape-goat');\n\nhtmlEscape('🦄 & 🐐');\n//=> '🦄 &amp; 🐐'\n\nhtmlUnescape('🦄 &amp; 🐐');\n//=> '🦄 & 🐐'\n\nhtmlEscape('Hello <em>World</em>');\n//=> 'Hello &lt;em&gt;World&lt;/em&gt;'\n\nconst url = 'https://sindresorhus.com?x=\"🦄\"';\n\nhtmlEscape`<a href=\"${url}\">Unicorn</a>`;\n//=> '<a href=\"https://sindresorhus.com?x=&quot;🦄&quot;\">Unicorn</a>'\n\nconst escapedUrl = 'https://sindresorhus.com?x=&quot;🦄&quot;';\n\nhtmlUnescape`URL from HTML: ${url}`;\n//=> 'URL from HTML: https://sindresorhus.com?x=\"🦄\"'\n```\n\n## API\n\n### htmlEscape(string)\n\nEscapes the following characters in the given `string` argument: `&` `<` `>` `\"` `'`\n\nThe function also works as a [tagged template literal](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Template_literals#Tagged_template_literals) that escapes interpolated values.\n\n### htmlUnescape(htmlString)\n\nUnescapes the following HTML entities in the given `htmlString` argument: `&amp;` `&lt;` `&gt;` `&quot;` `&#39;`\n\nThe function also works as a [tagged template literal](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Template_literals#Tagged_template_literals) that unescapes interpolated values.\n\n## Tip\n\nEnsure you always quote your HTML attributes to prevent possible [XSS](https://en.wikipedia.org/wiki/Cross-site_scripting).\n\n## FAQ\n\n### Why yet another HTML escaping package?\n\nI couldn't find one I liked that was tiny, well-tested, and had both `.escape()` and `.unescape()`.\n",
+  "maintainers": [
+    {
+      "name": "sindresorhus",
+      "email": "sindresorhus@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-01-15T03:33:11.947Z",
+    "created": "2017-05-27T10:14:03.393Z",
+    "1.0.0": "2017-05-27T10:14:03.393Z",
+    "1.0.1": "2017-05-28T05:51:20.643Z",
+    "1.1.0": "2017-05-31T06:17:16.629Z",
+    "1.2.0": "2017-07-21T21:48:49.258Z",
+    "1.3.0": "2017-07-31T10:41:39.478Z",
+    "2.0.0": "2019-04-17T12:47:47.054Z",
+    "2.1.0": "2019-05-30T09:18:33.981Z",
+    "2.1.1": "2019-09-23T09:39:38.647Z",
+    "3.0.0": "2020-01-15T03:33:09.631Z"
+  },
+  "homepage": "https://github.com/sindresorhus/escape-goat#readme",
+  "keywords": [
+    "escape",
+    "unescape",
+    "html",
+    "entity",
+    "entities",
+    "escaping",
+    "sanitize",
+    "sanitization",
+    "utility",
+    "template",
+    "attribute",
+    "value",
+    "interpolate",
+    "xss",
+    "goat",
+    "🐐"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/escape-goat.git"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "bugs": {
+    "url": "https://github.com/sindresorhus/escape-goat/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md"
+}

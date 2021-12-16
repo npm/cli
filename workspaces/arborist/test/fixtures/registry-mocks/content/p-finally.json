@@ -1,0 +1,274 @@
+{
+  "_id": "p-finally",
+  "_rev": "5-a42b5a3715c34bfc9782df668c6747d1",
+  "name": "p-finally",
+  "description": "`Promise#finally()` ponyfill - Invoked when the promise is settled regardless of outcome",
+  "dist-tags": {
+    "latest": "2.0.1"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "p-finally",
+      "version": "1.0.0",
+      "description": "`Promise#finally()` ponyfill - Invoked when the promise is settled regardless of outcome",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/p-finally.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "promise",
+        "finally",
+        "handler",
+        "function",
+        "async",
+        "await",
+        "promises",
+        "settled",
+        "ponyfill",
+        "polyfill",
+        "shim",
+        "bluebird"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "xo": {
+        "esnext": true
+      },
+      "gitHead": "9cfdd5dccb41995300916c17ab0fab784800f4d3",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/p-finally/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/p-finally#readme",
+      "_id": "p-finally@1.0.0",
+      "_shasum": "3fbcfb15b899a44123b34b6dcc18b724336a2cae",
+      "_from": ".",
+      "_npmVersion": "2.15.9",
+      "_nodeVersion": "4.6.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "3fbcfb15b899a44123b34b6dcc18b724336a2cae",
+        "tarball": "https://registry.npmjs.org/p-finally/-/p-finally-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/p-finally-1.0.0.tgz_1477029729610_0.2481102051679045"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "p-finally",
+      "version": "2.0.0",
+      "description": "`Promise#finally()` ponyfill - Invoked when the promise is settled regardless of outcome",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/p-finally.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "keywords": [
+        "promise",
+        "finally",
+        "handler",
+        "function",
+        "async",
+        "await",
+        "promises",
+        "settled",
+        "ponyfill",
+        "polyfill",
+        "shim",
+        "bluebird"
+      ],
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "7ae963410de1754b565d2fd2b4ef581fef099bd3",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/p-finally/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/p-finally#readme",
+      "_id": "p-finally@2.0.0",
+      "_nodeVersion": "8.16.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-Hh1x1SR9/Y5ndrziFD+dfB0N+chocV4uCmyzqshjN7fXj4kReUt5Fx+I50Eg9uUWml7g5gCYUzEHiselmnP3dg==",
+        "shasum": "b5bfd254f48358184552430fe55e968a83ccf593",
+        "tarball": "https://registry.npmjs.org/p-finally/-/p-finally-2.0.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 2918,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJc7TxiCRA9TVsSAnZWagAAgMMP/R1+5JDq/rkvgdz67B4H\n0TTqgsu62jBFY15DCBlbUhOQY6D5IPgnmqXFtV2K8r39HmujB/Zui7CPvJnG\nj2Cw/nJSMGo1jSK6CST1uvEUe/5wqM2JV0RTs/115+pOrmQ59GtCpkECaDaJ\nBn68aOHeO66PjVVPznco+PTD2M53gOR0ufykta5Ws1i10GEO6o410x6DVGfG\nh9V51sE4As9ZOBjx1F81aelSgxbLQJoprgJtrTFq8IpMBdKfaHWHxEF4JS0T\nWoV1XJSliaoqaEYuR/8qulUgCrtaxZzW/uA37eNK7jyQkt/NA6SLay4l/Rsx\nwWfYsAI6AeupRdnfFQiWoV8b0/SvxBCpg9ILB6hNBgi/DZFSv+4jykxRnhh1\n29f+DcuUaYIMg+9bkHvK9WpaVPxPJqPeyQUCzWZkJZTjFq6T9UGLYKWTn0Y/\nALDAwjilbLSxAYVaAc7QoxbSbBPAin3Dil49Hu5R6Pvlt5jS6wYSDg+P7p03\nhjJIowjExuuCABqTAVeZKJyniMXnE3npJBukzmH20Qb3tOHTRv7LI6UIRw+X\nfw3+ZP1FfnD1eezeWqlz1WixNfl7mAyF2qlPDhdbz1DnOm+gZRToxt8KERIo\nJ5F5fLu9EXMQ82jOvTwzoRgKPj7CUf8hwjyoxZQWe/EzRWJ9nPNBat/SNdky\nhrNL\r\n=Eahz\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/p-finally_2.0.0_1559051362108_0.403046563273898"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.1": {
+      "name": "p-finally",
+      "version": "2.0.1",
+      "description": "`Promise#finally()` ponyfill - Invoked when the promise is settled regardless of outcome",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/p-finally.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "keywords": [
+        "promise",
+        "finally",
+        "handler",
+        "function",
+        "async",
+        "await",
+        "promises",
+        "settled",
+        "ponyfill",
+        "polyfill",
+        "shim",
+        "bluebird"
+      ],
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "b73e204c7670a8f01428a8c220bcd337d395bdf6",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/p-finally/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/p-finally#readme",
+      "_id": "p-finally@2.0.1",
+      "_nodeVersion": "8.16.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-vpm09aKwq6H9phqRQzecoDpD8TmVyGw70qmWlyq5onxY7tqyTTFVvxMykxQSQKILBSFlbXpypIw2T1Ml7+DDtw==",
+        "shasum": "bd6fcaa9c559a096b680806f4d657b3f0f240561",
+        "tarball": "https://registry.npmjs.org/p-finally/-/p-finally-2.0.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 3365,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdCktbCRA9TVsSAnZWagAAtGsP/RYSaSrL0IN++15KWg94\n/YbsIRGhldWhp0xGAorpxNIe/tiNP+SiXZtfBmRQ9Z/hGlsJEOdtgAL/4Qkq\ncjl9amsLWBLT5K92bibMml1X0hod3SQg/uijdAZT4qIIegIOJG/qeQ65ihqS\nfgc8t76Gt+65sL4jVxyK7LIY+4i9/rJ8MPiuk1exx7BsjKYrEyDeFFBh+8az\n0eoywev2QHADntMq9qc7jFq2eMqTOlc3x+FNJGantlsNms/fBBeLGw6hQ/l/\njexcnvmqxsIwO1744zadSK2Zlkt1TPgKJXVDyL4OtsdztllRXG0H03dEcatF\n+rA+NygqFFZxhxRAOFNlnEDiAqYitfX7BVa3qpj1xMf5vBriTSpbdXBK46hb\nM0c8ahr0+hl42ir8scke+5D0P5bTTNVVMdSsl+xDOVq/j+JJpHetBeralLI/\nkGfzyg/qCEc8/XzHpW14TnYhiUdPtpCGbfYMFyj3N+UR7160zvZio/3CvvRQ\nIEIEa9dzULjDYgIDYlqgk7Rb2dn6p829F28Wz+hm70Sj0A3UwCTqDWSnLISi\nOdLexyKy5IwTS2T2prYqstTYBYYs5spD3m2EBVytisvxsj6PycCzgzoEgoZO\n/zkStqy1Ot4jEkA5vYDHavB9mQ1+LO786GabdBWCTEcOtTnARkY76Jy+VLbi\n3ebo\r\n=gIn0\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/p-finally_2.0.1_1560955738325_0.1225840138005696"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# p-finally [![Build Status](https://travis-ci.org/sindresorhus/p-finally.svg?branch=master)](https://travis-ci.org/sindresorhus/p-finally)\n\n> [`Promise#finally()`](https://github.com/tc39/proposal-promise-finally) [ponyfill](https://ponyfill.com) - Invoked when the promise is settled regardless of outcome\n\nUseful for cleanup.\n\n\n## Install\n\n```\n$ npm install p-finally\n```\n\n\n## Usage\n\n```js\nconst pFinally = require('p-finally');\n\nconst directory = createTempDirectory();\n\n(async () => {\n\tawait pFinally(write(directory), () => {\n\t\tcleanup(directory);\n\t});\n});\n```\n\n\n## API\n\n### pFinally(promise, onFinally?)\n\nReturns a `Promise`.\n\n#### onFinally\n\nType: `Function`\n\nNote: Throwing or returning a rejected promise will reject `promise` with the rejection reason.\n\n\n## Related\n\n- [p-try](https://github.com/sindresorhus/p-try) - `Promise.try()` ponyfill - Starts a promise chain\n- [More…](https://github.com/sindresorhus/promise-fun)\n\n\n---\n\n<div align=\"center\">\n\t<b>\n\t\t<a href=\"https://tidelift.com/subscription/pkg/npm-p-finally?utm_source=npm-p-finally&utm_medium=referral&utm_campaign=readme\">Get professional support for this package with a Tidelift subscription</a>\n\t</b>\n\t<br>\n\t<sub>\n\t\tTidelift helps make open source sustainable for maintainers while giving companies<br>assurances about security, maintenance, and licensing for their dependencies.\n\t</sub>\n</div>\n",
+  "maintainers": [
+    {
+      "name": "sindresorhus",
+      "email": "sindresorhus@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2019-06-19T14:49:01.588Z",
+    "created": "2016-10-21T06:02:09.848Z",
+    "1.0.0": "2016-10-21T06:02:09.848Z",
+    "2.0.0": "2019-05-28T13:49:22.238Z",
+    "2.0.1": "2019-06-19T14:48:58.457Z"
+  },
+  "homepage": "https://github.com/sindresorhus/p-finally#readme",
+  "keywords": [
+    "promise",
+    "finally",
+    "handler",
+    "function",
+    "async",
+    "await",
+    "promises",
+    "settled",
+    "ponyfill",
+    "polyfill",
+    "shim",
+    "bluebird"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/p-finally.git"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "bugs": {
+    "url": "https://github.com/sindresorhus/p-finally/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md",
+  "users": {
+    "rocket0191": true,
+    "sopepos": true
+  }
+}

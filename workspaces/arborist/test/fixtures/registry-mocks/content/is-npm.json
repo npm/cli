@@ -1,0 +1,386 @@
+{
+  "_id": "is-npm",
+  "_rev": "6-00ecf3746d23e10c2b19a11cc07e5e2f",
+  "name": "is-npm",
+  "description": "Check if your code is running as an npm script",
+  "dist-tags": {
+    "latest": "5.0.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "is-npm",
+      "version": "1.0.0",
+      "description": "Check if your code is running as an npm script",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/sindresorhus/is-npm"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "npm",
+        "is",
+        "check",
+        "detect",
+        "env",
+        "environment"
+      ],
+      "devDependencies": {
+        "ava": "0.0.3"
+      },
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is-npm/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is-npm",
+      "_id": "is-npm@1.0.0",
+      "_shasum": "f2fb63a65e4905b406c86072765a1a4dc793b9f4",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "f2fb63a65e4905b406c86072765a1a4dc793b9f4",
+        "tarball": "https://registry.npmjs.org/is-npm/-/is-npm-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "is-npm",
+      "version": "2.0.0",
+      "description": "Check if your code is running as an npm script",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/is-npm.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "npm",
+        "is",
+        "check",
+        "detect",
+        "env",
+        "environment",
+        "run",
+        "script"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "2daa4ad780c5a07d73eb5c317a5b9e68f7a78473",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is-npm/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is-npm#readme",
+      "_id": "is-npm@2.0.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.9.4",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-QQf2fxA0YpblpHS0FbtAk+BtNwj6ywTCyehGS8jpTLEUKFjh4sWZ+gIWaqLCDgtKrbdqB2umjGAqlTDIMiLM8A==",
+        "shasum": "d8449be037d3cf146ead95c67d84b76396fbdb32",
+        "tarball": "https://registry.npmjs.org/is-npm/-/is-npm-2.0.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 2328
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is-npm_2.0.0_1521731162192_0.38421678949459337"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.0": {
+      "name": "is-npm",
+      "version": "3.0.0",
+      "description": "Check if your code is running as an npm script",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/is-npm.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd-check"
+      },
+      "keywords": [
+        "npm",
+        "is",
+        "check",
+        "detect",
+        "env",
+        "environment",
+        "run",
+        "script"
+      ],
+      "devDependencies": {
+        "ava": "^1.3.1",
+        "tsd-check": "^0.3.0",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "5e207a26760f883d91923e3bbfe4a1ed7a9f6a5a",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is-npm/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is-npm#readme",
+      "_id": "is-npm@3.0.0",
+      "_nodeVersion": "8.15.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-wsigDr1Kkschp2opC4G3yA6r9EgVA6NjRpWzIi9axXqeIaAATPRJc4uLujXe3Nd9uO8KoDyA4MD6aZSeXTADhA==",
+        "shasum": "ec9147bfb629c43f494cf67936a961edec7e8053",
+        "tarball": "https://registry.npmjs.org/is-npm/-/is-npm-3.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 2816,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJchgKKCRA9TVsSAnZWagAAlaIP/0yWMiijYVl6mBwXaafP\nfBVdF30qK8BfYe9AgMmFm/vEDTYL9UIPSWKsKVfYSwXOSGn/Lq/NUCHuaP4h\nUxv/NQ44Z1APFFffFEkR2lOiXCDx3iAmMGUUNibOQ3PD+f1CnsEUvu560x7j\n6GsfXlNW8iX+hExhqUkvuR5RvYs8IfTNP5WlGsHHsodPc9f+F3zI0lw6/MOP\ndU8Kn4hQA7K77h2uRF/fecDSEhdBhrKvgbYP7Ue2OSDPLxiHSHUgff45qVvr\n4TFMSagrRyj7lHouI2t9IwtIU5GBVCFgDiMfyK7zUFAIo7B6XK2oD4OkkF9q\nfabQLOQr1SeXZcaM+tp8TopWnumFkVsvkCp+Y+Feqd8kP/C9OUPcpethMzMx\nnsunHQg44f99cl1tevFhDVx4Ju6jgYUNvCGn405qhx8+P787foycWzVU7I67\nEecGPm6dHPjgkzNTH0z1YksdfZw+NOZqLuUvTFzeLhafNuTQeMRja6Nub0tw\n6BXN/5UIx2wwGAvoSu4/ELrkKiTst+ZG5pakhyWURYn2UMkKScmi4AhrTE2N\nLD7vNlZeJs5fxqcnDZ8CwcbD0sN9mOAVob+HTIkqXKnSamxrzC7x0+yapj82\nixsatyZGCqq4WwY4Q7q2c56op9ZTpoA79zfypB3QMiSuAymW7yTvXQK84zk4\naILq\r\n=47IG\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is-npm_3.0.0_1552286345432_0.058244315730821006"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.0.0": {
+      "name": "is-npm",
+      "version": "4.0.0",
+      "description": "Check if your code is running as an npm script",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/is-npm.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd-check"
+      },
+      "keywords": [
+        "npm",
+        "is",
+        "check",
+        "detect",
+        "env",
+        "environment",
+        "run",
+        "script"
+      ],
+      "devDependencies": {
+        "ava": "^2.4.0",
+        "tsd-check": "^0.6.0",
+        "xo": "^0.25.3"
+      },
+      "gitHead": "5721421c221d6ba641d7a2af76c1536ce22872b7",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is-npm/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is-npm#readme",
+      "_id": "is-npm@4.0.0",
+      "_nodeVersion": "10.16.3",
+      "_npmVersion": "6.11.3",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-96ECIfh9xtDDlPylNPXhzjsykHsMJZ18ASpaWzQyBr4YRTcVjUvzaHayDAES2oU/3KpljhHUjtSRNiDwi0F0ig==",
+        "shasum": "c90dd8380696df87a7a6d823c20d0b12bbe3c84d",
+        "tarball": "https://registry.npmjs.org/is-npm/-/is-npm-4.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 4794,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdpGx4CRA9TVsSAnZWagAAkvYP/j1lhQDssWarqk6bsMZZ\nwxGh0z8LbzdHjpvFH2NxHN72IDnQrDWNMwBFrSXMI+9wQz205AhXv82eYX6F\nracad/u2hKkj04fbxeMzPxtJp7wxaQ1jBOFOXl0sUeIggDnInrXNj+rfsKBt\nAPTrQWGUBJSJ9ffXE77aVboxyJ71JDeuBgJWRM8M7XQKkYOlszRPIIRWzS8A\nhmUwQsAEpBTXdW+VnNG4hK2YoTerXR3m/ujoLQab49BLrNPjHRC/33JamkwE\nxor3L02krVUa77+/3u6/toN2a4wU1Q5OrIFafacLkPMe0TtCm9FtddvBze3x\na+TGO0HtA6Z6JRePZzSYxMcDXXCUGCEbnF8TOJMv6jXvkTlL2NB22Or+HmKx\nyrv6/jowiIyMMwykuZj5iJKdf5WEjouQWTTgdKS8CE0T1kbHe6YckI5pM6cB\njwxByhhXmNlZ0E9UzrPFTJc9gNaTv59iafjfo97HUq2SyGCoLsv76yXbQ7Dn\nmMf1DrBfXizjyC02pe77yC6T/sgsM3tDrLxiREYRMq9KwTkKf3oYh+1ssXgh\nQ46JQSROO82lD9EKWIGAA6szjEdbsDh1BvMHPcPDbJNhLUDOSwHpgyWIDRGE\nV2SnO6wKzqo9mSpu42WyZPgmvlLkWjgMhk6ABQWLJwYb/cxTMsfV6y3YJvEE\nj1vr\r\n=d3Zq\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is-npm_4.0.0_1571056759935_0.14280950742606424"
+      },
+      "_hasShrinkwrap": false
+    },
+    "5.0.0": {
+      "name": "is-npm",
+      "version": "5.0.0",
+      "description": "Check if your code is running as an npm script",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/is-npm.git"
+      },
+      "funding": "https://github.com/sponsors/sindresorhus",
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "https://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=10"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "npm",
+        "yarn",
+        "is",
+        "check",
+        "detect",
+        "env",
+        "environment",
+        "run",
+        "script"
+      ],
+      "devDependencies": {
+        "ava": "^2.4.0",
+        "tsd": "^0.11.0",
+        "xo": "^0.30.0"
+      },
+      "gitHead": "4647938c7ba294b161d07902020cf3f178815c29",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is-npm/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is-npm#readme",
+      "_id": "is-npm@5.0.0",
+      "_nodeVersion": "10.20.1",
+      "_npmVersion": "6.14.4",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-WW/rQLOazUq+ST/bCAVBp/2oMERWLsR7OrKyt052dNDk4DHcDE0/7QSXITlmi+VBcV13DfIbysG3tZJm5RfdBA==",
+        "shasum": "43e8d65cc56e1b67f8d47262cf667099193f45a8",
+        "tarball": "https://registry.npmjs.org/is-npm/-/is-npm-5.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 5104,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJevt33CRA9TVsSAnZWagAAH5gP/2sn6xtU+emTJj0p53dI\n5vcF9rgnVZWUWo52oLUN2q6P+7ZNMehn/ri7dJAVueq3KulU4HFp+0Pu4gdh\nez0x/KNrc7K6qqLP3d7TM9wPPVP0cSkG3f/OMiH8iAEfEs7rgvyjmYAcen4Y\n5fGM1RIiv8yKukWca3YTgu+n1+kvag6i1jWT0Ie1M2qD464cYgisKT0P2JDI\nd8wurtkafEFhCjhhLfzGsE9C9PwAfhrXP0V30dwoQzF3se2ext0/sGshUPtr\n4GCIkytMH2xiuukfz05VKOyVqKr3gQOEBvho8VnVRayDyqlEWeS4JNt06LGA\n83O6x3VfQcZHGIPZJXoMO1CVagvl0IxcX9dpDSObItkoL/zbaRGZDzlwIgir\nM+uXcjsTwKLBkiUg3ivRWJHVkx5aK5LDM2ZqmoWrxKM/4WCkZC+UTUFNncWZ\nbkGSz7Q7e/oWU+SNsxYfNluWD3OyiJQmGCaw1Xt6OQif1sH4MZ/gecig534g\nxf8NPFGS+RXmQKJnR2hdqfSzhzEOY30Pyh11kfx1w3ckktOZl3Wdd+mocqI0\n3eTZNTycry9t9C4zPri14ttTSMhkdiRRXstOAddGqjgu23pmXdFUu7jrYdn/\nJ65Fgq7HGnaiDuKeRFLFxuItrC8/3xGtl5SLayeDGdYX+FEpARQzlxUJJ15y\nqHfC\r\n=tEVi\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is-npm_5.0.0_1589566966767_0.06135496724857736"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# is-npm [![Build Status](https://travis-ci.com/sindresorhus/is-npm.svg?branch=master)](https://travis-ci.com/sindresorhus/is-npm)\n\n> Check if your code is running as an [npm](https://docs.npmjs.com/misc/scripts) or [yarn](https://yarnpkg.com/lang/en/docs/cli/run/) script\n\n## Install\n\n```\n$ npm install is-npm\n```\n\n## Usage\n\n```js\nconst {isNpmOrYarn, isNpm, isYarn} = require('is-npm');\n\nconsole.table({isNpmOrYarn, isNpm, isYarn});\n```\n\n```sh\n$ node foo.js\n# ┌─────────────┬────────┐\n# │   (index)   │ Values │\n# ├─────────────┼────────┤\n# │ isNpmOrYarn │ false  │\n# │    isNpm    │ false  │\n# │   isYarn    │ false  │\n# └─────────────┴────────┘\n$ npm run foo\n# ┌─────────────┬────────┐\n# │   (index)   │ Values │\n# ├─────────────┼────────┤\n# │ isNpmOrYarn │  true  │\n# │    isNpm    │  true  │\n# │   isYarn    │ false  │\n# └─────────────┴────────┘\n$ yarn run foo\n# ┌─────────────┬────────┐\n# │   (index)   │ Values │\n# ├─────────────┼────────┤\n# │ isNpmOrYarn │  true  │\n# │    isNpm    │ false  │\n# │   isYarn    │  true  │\n# └─────────────┴────────┘\n```\n\n## Related\n\n- [is-npm-cli](https://github.com/sindresorhus/is-npm-cli) - CLI for this module\n\n---\n\n<div align=\"center\">\n\t<b>\n\t\t<a href=\"https://tidelift.com/subscription/pkg/npm-is-npm?utm_source=npm-is-npm&utm_medium=referral&utm_campaign=readme\">Get professional support for this package with a Tidelift subscription</a>\n\t</b>\n\t<br>\n\t<sub>\n\t\tTidelift helps make open source sustainable for maintainers while giving companies<br>assurances about security, maintenance, and licensing for their dependencies.\n\t</sub>\n</div>\n",
+  "maintainers": [
+    {
+      "name": "sindresorhus",
+      "email": "sindresorhus@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-05-15T18:22:49.302Z",
+    "created": "2014-07-20T09:36:12.205Z",
+    "1.0.0": "2014-07-20T09:36:12.205Z",
+    "2.0.0": "2018-03-22T15:06:02.269Z",
+    "3.0.0": "2019-03-11T06:39:05.582Z",
+    "4.0.0": "2019-10-14T12:39:20.075Z",
+    "5.0.0": "2020-05-15T18:22:46.880Z"
+  },
+  "homepage": "https://github.com/sindresorhus/is-npm#readme",
+  "keywords": [
+    "npm",
+    "yarn",
+    "is",
+    "check",
+    "detect",
+    "env",
+    "environment",
+    "run",
+    "script"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/is-npm.git"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "https://sindresorhus.com"
+  },
+  "bugs": {
+    "url": "https://github.com/sindresorhus/is-npm/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md"
+}

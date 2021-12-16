@@ -1,0 +1,2703 @@
+{
+  "_id": "eventemitter3",
+  "_rev": "91-3273ec4892ea731d6daba3cc706300a0",
+  "name": "eventemitter3",
+  "description": "EventEmitter3 focuses on performance while maintaining a Node.js AND browser compatible interface.",
+  "dist-tags": {
+    "latest": "4.0.7"
+  },
+  "versions": {
+    "0.0.0": {
+      "name": "eventemitter3",
+      "version": "0.0.0",
+      "description": "EventEmitter3 focuses on performance while maintaining a Node.js AND browser compatible interface. This the source of the same EventEmitter that is used in Primus.",
+      "main": "index.js",
+      "scripts": {
+        "test": "NODE_ENV=testing ./node_modules/.bin/mocha $(find test -name '*.test.js')"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/3rd-Eden/EventEmitter3.git"
+      },
+      "keywords": [
+        "EventEmitter",
+        "EventEmitter2",
+        "EventEmitter3",
+        "Events",
+        "reactor",
+        "pub/sub",
+        "event",
+        "emitter"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/3rd-Eden/EventEmitter3/issues"
+      },
+      "devDependencies": {
+        "mocha": "~1.13.0",
+        "pre-commit": "0.0.4",
+        "chai": "~1.8.0"
+      },
+      "_id": "eventemitter3@0.0.0",
+      "dist": {
+        "shasum": "90a5cc3c2ef715169ceaed893d797ae1951c8119",
+        "tarball": "https://registry.npmjs.org/eventemitter3/-/eventemitter3-0.0.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.5",
+      "_npmUser": {
+        "name": "V1",
+        "email": "info@3rd-Eden.com"
+      },
+      "maintainers": [
+        {
+          "name": "V1",
+          "email": "info@3rd-Eden.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.1": {
+      "name": "eventemitter3",
+      "version": "0.0.1",
+      "description": "EventEmitter3 focuses on performance while maintaining a Node.js AND browser compatible interface. This the source of the same EventEmitter that is used in Primus.",
+      "main": "index.js",
+      "scripts": {
+        "test": "NODE_ENV=testing ./node_modules/.bin/mocha $(find test -name '*.test.js')"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/3rd-Eden/EventEmitter3.git"
+      },
+      "keywords": [
+        "EventEmitter",
+        "EventEmitter2",
+        "EventEmitter3",
+        "Events",
+        "reactor",
+        "pub/sub",
+        "event",
+        "emitter"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/3rd-Eden/EventEmitter3/issues"
+      },
+      "devDependencies": {
+        "mocha": "~1.13.0",
+        "pre-commit": "0.0.4",
+        "chai": "~1.8.0"
+      },
+      "_id": "eventemitter3@0.0.1",
+      "dist": {
+        "shasum": "052227d4fc69b1d3f1ec0e569b248e264ccd795b",
+        "tarball": "https://registry.npmjs.org/eventemitter3/-/eventemitter3-0.0.1.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.5",
+      "_npmUser": {
+        "name": "V1",
+        "email": "info@3rd-Eden.com"
+      },
+      "maintainers": [
+        {
+          "name": "V1",
+          "email": "info@3rd-Eden.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.0": {
+      "name": "eventemitter3",
+      "version": "0.1.0",
+      "description": "EventEmitter3 focuses on performance while maintaining a Node.js AND browser compatible interface. This the source of the same EventEmitter that is used in Primus.",
+      "main": "index.js",
+      "scripts": {
+        "test": "NODE_ENV=testing ./node_modules/.bin/mocha $(find test -name '*.test.js')"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/3rd-Eden/EventEmitter3.git"
+      },
+      "keywords": [
+        "EventEmitter",
+        "EventEmitter2",
+        "EventEmitter3",
+        "Events",
+        "reactor",
+        "pub/sub",
+        "event",
+        "emitter"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/3rd-Eden/EventEmitter3/issues"
+      },
+      "devDependencies": {
+        "mocha": "1.13.x",
+        "pre-commit": "0.0.x",
+        "chai": "1.8.x"
+      },
+      "homepage": "https://github.com/3rd-Eden/EventEmitter3",
+      "_id": "eventemitter3@0.1.0",
+      "dist": {
+        "shasum": "727e1600ea477f50f1f11328cb9a5abf752c1dff",
+        "tarball": "https://registry.npmjs.org/eventemitter3/-/eventemitter3-0.1.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.21",
+      "_npmUser": {
+        "name": "V1",
+        "email": "info@3rd-Eden.com"
+      },
+      "maintainers": [
+        {
+          "name": "V1",
+          "email": "info@3rd-Eden.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.1": {
+      "name": "eventemitter3",
+      "version": "0.1.1",
+      "description": "EventEmitter3 focuses on performance while maintaining a Node.js AND browser compatible interface. This the source of the same EventEmitter that is used in Primus.",
+      "main": "index.js",
+      "scripts": {
+        "test": "NODE_ENV=testing ./node_modules/.bin/mocha $(find test -name '*.test.js')"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/3rd-Eden/EventEmitter3.git"
+      },
+      "keywords": [
+        "EventEmitter",
+        "EventEmitter2",
+        "EventEmitter3",
+        "Events",
+        "reactor",
+        "pub/sub",
+        "event",
+        "emitter"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/3rd-Eden/EventEmitter3/issues"
+      },
+      "devDependencies": {
+        "mocha": "1.13.x",
+        "pre-commit": "0.0.x",
+        "chai": "1.8.x"
+      },
+      "homepage": "https://github.com/3rd-Eden/EventEmitter3",
+      "_id": "eventemitter3@0.1.1",
+      "dist": {
+        "shasum": "7ea62a9d6b8343cb17ddb07f6ae8d3881ecdb8c3",
+        "tarball": "https://registry.npmjs.org/eventemitter3/-/eventemitter3-0.1.1.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.21",
+      "_npmUser": {
+        "name": "V1",
+        "email": "info@3rd-Eden.com"
+      },
+      "maintainers": [
+        {
+          "name": "V1",
+          "email": "info@3rd-Eden.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.2": {
+      "name": "eventemitter3",
+      "version": "0.1.2",
+      "description": "EventEmitter3 focuses on performance while maintaining a Node.js AND browser compatible interface. This the source of the same EventEmitter that is used in Primus.",
+      "main": "index.js",
+      "scripts": {
+        "test": "NODE_ENV=testing ./node_modules/.bin/mocha $(find test -name '*.test.js')"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/3rd-Eden/EventEmitter3.git"
+      },
+      "keywords": [
+        "EventEmitter",
+        "EventEmitter2",
+        "EventEmitter3",
+        "Events",
+        "reactor",
+        "pub/sub",
+        "publish",
+        "subscribe",
+        "event",
+        "emitter",
+        "addListener",
+        "addEventListener"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/3rd-Eden/EventEmitter3/issues"
+      },
+      "devDependencies": {
+        "mocha": "1.18.x",
+        "pre-commit": "0.0.x",
+        "chai": "1.9.x"
+      },
+      "homepage": "https://github.com/3rd-Eden/EventEmitter3",
+      "_id": "eventemitter3@0.1.2",
+      "dist": {
+        "shasum": "4ede96d72b971a217987df4f1d4ca54dd8d20b79",
+        "tarball": "https://registry.npmjs.org/eventemitter3/-/eventemitter3-0.1.2.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.21",
+      "_npmUser": {
+        "name": "V1",
+        "email": "info@3rd-Eden.com"
+      },
+      "maintainers": [
+        {
+          "name": "V1",
+          "email": "info@3rd-Eden.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.3": {
+      "name": "eventemitter3",
+      "version": "0.1.3",
+      "description": "EventEmitter3 focuses on performance while maintaining a Node.js AND browser compatible interface. This the source of the same EventEmitter that is used in Primus.",
+      "main": "index.js",
+      "scripts": {
+        "test": "NODE_ENV=testing ./node_modules/.bin/mocha $(find test -name '*.test.js')"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/3rd-Eden/EventEmitter3.git"
+      },
+      "keywords": [
+        "EventEmitter",
+        "EventEmitter2",
+        "EventEmitter3",
+        "Events",
+        "reactor",
+        "pub/sub",
+        "publish",
+        "subscribe",
+        "event",
+        "emitter",
+        "addListener",
+        "addEventListener"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/3rd-Eden/EventEmitter3/issues"
+      },
+      "devDependencies": {
+        "mocha": "1.18.x",
+        "pre-commit": "0.0.x",
+        "chai": "1.9.x"
+      },
+      "homepage": "https://github.com/3rd-Eden/EventEmitter3",
+      "_id": "eventemitter3@0.1.3",
+      "_shasum": "6b8ac1392ff0a5b4d87e893bdbee79887a86d95a",
+      "_from": ".",
+      "_npmVersion": "1.4.10",
+      "_npmUser": {
+        "name": "V1",
+        "email": "info@3rd-Eden.com"
+      },
+      "maintainers": [
+        {
+          "name": "V1",
+          "email": "info@3rd-Eden.com"
+        }
+      ],
+      "dist": {
+        "shasum": "6b8ac1392ff0a5b4d87e893bdbee79887a86d95a",
+        "tarball": "https://registry.npmjs.org/eventemitter3/-/eventemitter3-0.1.3.tgz"
+      },
+      "directories": {}
+    },
+    "0.1.4": {
+      "name": "eventemitter3",
+      "version": "0.1.4",
+      "description": "EventEmitter3 focuses on performance while maintaining a Node.js AND browser compatible interface. This the source of the same EventEmitter that is used in Primus.",
+      "main": "index.js",
+      "scripts": {
+        "test": "NODE_ENV=testing ./node_modules/.bin/mocha $(find test -name '*.test.js')"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/3rd-Eden/EventEmitter3.git"
+      },
+      "keywords": [
+        "EventEmitter",
+        "EventEmitter2",
+        "EventEmitter3",
+        "Events",
+        "addEventListener",
+        "addListener",
+        "emit",
+        "emits",
+        "emitter",
+        "event",
+        "once",
+        "pub/sub",
+        "publish",
+        "reactor",
+        "subscribe"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/3rd-Eden/EventEmitter3/issues"
+      },
+      "devDependencies": {
+        "mocha": "1.18.x",
+        "pre-commit": "0.0.x",
+        "chai": "1.9.x"
+      },
+      "homepage": "https://github.com/3rd-Eden/EventEmitter3",
+      "_id": "eventemitter3@0.1.4",
+      "_shasum": "da2be74b7a1a4760272e1390f975503be5cb7e24",
+      "_from": ".",
+      "_npmVersion": "1.4.10",
+      "_npmUser": {
+        "name": "V1",
+        "email": "info@3rd-Eden.com"
+      },
+      "maintainers": [
+        {
+          "name": "V1",
+          "email": "info@3rd-Eden.com"
+        }
+      ],
+      "dist": {
+        "shasum": "da2be74b7a1a4760272e1390f975503be5cb7e24",
+        "tarball": "https://registry.npmjs.org/eventemitter3/-/eventemitter3-0.1.4.tgz"
+      },
+      "directories": {}
+    },
+    "0.1.5": {
+      "name": "eventemitter3",
+      "version": "0.1.5",
+      "description": "EventEmitter3 focuses on performance while maintaining a Node.js AND browser compatible interface. This the source of the same EventEmitter that is used in Primus.",
+      "main": "index.js",
+      "scripts": {
+        "test": "NODE_ENV=testing ./node_modules/.bin/mocha $(find test -name '*.test.js')"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/3rd-Eden/EventEmitter3.git"
+      },
+      "keywords": [
+        "EventEmitter",
+        "EventEmitter2",
+        "EventEmitter3",
+        "Events",
+        "addEventListener",
+        "addListener",
+        "emit",
+        "emits",
+        "emitter",
+        "event",
+        "once",
+        "pub/sub",
+        "publish",
+        "reactor",
+        "subscribe"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/3rd-Eden/EventEmitter3/issues"
+      },
+      "devDependencies": {
+        "mocha": "1.18.x",
+        "pre-commit": "0.0.x",
+        "chai": "1.9.x"
+      },
+      "homepage": "https://github.com/3rd-Eden/EventEmitter3",
+      "_id": "eventemitter3@0.1.5",
+      "_shasum": "fbb0655172b87911ba782bb7175409c801e5059f",
+      "_from": ".",
+      "_npmVersion": "1.4.10",
+      "_npmUser": {
+        "name": "V1",
+        "email": "info@3rd-Eden.com"
+      },
+      "maintainers": [
+        {
+          "name": "V1",
+          "email": "info@3rd-Eden.com"
+        }
+      ],
+      "dist": {
+        "shasum": "fbb0655172b87911ba782bb7175409c801e5059f",
+        "tarball": "https://registry.npmjs.org/eventemitter3/-/eventemitter3-0.1.5.tgz"
+      },
+      "directories": {}
+    },
+    "0.1.6": {
+      "name": "eventemitter3",
+      "version": "0.1.6",
+      "description": "EventEmitter3 focuses on performance while maintaining a Node.js AND browser compatible interface.",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha --reporter spec --ui bdd test.js",
+        "coverage": "istanbul cover ./node_modules/.bin/_mocha -- --reporter spec --ui bdd test.js",
+        "test-travis": "istanbul cover node_modules/.bin/_mocha --report lcovonly -- --reporter spec test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/primus/EventEmitter3.git"
+      },
+      "keywords": [
+        "EventEmitter",
+        "EventEmitter2",
+        "EventEmitter3",
+        "Events",
+        "addEventListener",
+        "addListener",
+        "emit",
+        "emits",
+        "emitter",
+        "event",
+        "once",
+        "pub/sub",
+        "publish",
+        "reactor",
+        "subscribe"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/primus/EventEmitter3/issues"
+      },
+      "devDependencies": {
+        "assume": "0.0.x",
+        "istanbul": "0.3.x",
+        "mocha": "2.0.x",
+        "pre-commit": "0.0.x"
+      },
+      "gitHead": "965f7968e2a8eb580e1f63b7863fb957b3516b36",
+      "homepage": "https://github.com/primus/EventEmitter3",
+      "_id": "eventemitter3@0.1.6",
+      "_shasum": "8c7ac44b87baab55cd50c828dc38778eac052ea5",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "V1",
+        "email": "info@3rd-Eden.com"
+      },
+      "maintainers": [
+        {
+          "name": "V1",
+          "email": "info@3rd-Eden.com"
+        }
+      ],
+      "dist": {
+        "shasum": "8c7ac44b87baab55cd50c828dc38778eac052ea5",
+        "tarball": "https://registry.npmjs.org/eventemitter3/-/eventemitter3-0.1.6.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "eventemitter3",
+      "version": "1.0.0",
+      "description": "EventEmitter3 focuses on performance while maintaining a Node.js AND browser compatible interface.",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha test.js",
+        "coverage": "istanbul cover ./node_modules/.bin/_mocha -- test.js",
+        "test-travis": "istanbul cover node_modules/.bin/_mocha --report lcovonly -- test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/primus/EventEmitter3.git"
+      },
+      "keywords": [
+        "EventEmitter",
+        "EventEmitter2",
+        "EventEmitter3",
+        "Events",
+        "addEventListener",
+        "addListener",
+        "emit",
+        "emits",
+        "emitter",
+        "event",
+        "once",
+        "pub/sub",
+        "publish",
+        "reactor",
+        "subscribe"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/primus/EventEmitter3/issues"
+      },
+      "devDependencies": {
+        "assume": "1.2.x",
+        "istanbul": "0.3.x",
+        "mocha": "2.2.x",
+        "pre-commit": "1.0.x"
+      },
+      "gitHead": "b13ef8bdb57b02c97c81c0c4a569befa30e8339a",
+      "homepage": "https://github.com/primus/EventEmitter3",
+      "_id": "eventemitter3@1.0.0",
+      "_shasum": "c738401cb6d29e46e00ee623521689082a52e1cf",
+      "_from": ".",
+      "_npmVersion": "2.7.5",
+      "_nodeVersion": "0.10.35",
+      "_npmUser": {
+        "name": "3rdeden",
+        "email": "npm@3rd-Eden.com"
+      },
+      "maintainers": [
+        {
+          "name": "v1",
+          "email": "info@3rd-Eden.com"
+        },
+        {
+          "name": "3rdeden",
+          "email": "npm@3rd-Eden.com"
+        }
+      ],
+      "dist": {
+        "shasum": "c738401cb6d29e46e00ee623521689082a52e1cf",
+        "tarball": "https://registry.npmjs.org/eventemitter3/-/eventemitter3-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "eventemitter3",
+      "version": "1.0.1",
+      "description": "EventEmitter3 focuses on performance while maintaining a Node.js AND browser compatible interface.",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha test.js",
+        "coverage": "istanbul cover ./node_modules/.bin/_mocha -- test.js",
+        "test-travis": "istanbul cover node_modules/.bin/_mocha --report lcovonly -- test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/primus/EventEmitter3.git"
+      },
+      "keywords": [
+        "EventEmitter",
+        "EventEmitter2",
+        "EventEmitter3",
+        "Events",
+        "addEventListener",
+        "addListener",
+        "emit",
+        "emits",
+        "emitter",
+        "event",
+        "once",
+        "pub/sub",
+        "publish",
+        "reactor",
+        "subscribe"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/primus/EventEmitter3/issues"
+      },
+      "devDependencies": {
+        "assume": "1.2.x",
+        "istanbul": "0.3.x",
+        "mocha": "2.2.x",
+        "pre-commit": "1.0.x"
+      },
+      "gitHead": "cd22a430db13950f3c16a72f943f61a96c9663ce",
+      "homepage": "https://github.com/primus/EventEmitter3",
+      "_id": "eventemitter3@1.0.1",
+      "_shasum": "75a110a2e1bcc5de7999fead1910fcb058f51a14",
+      "_from": ".",
+      "_npmVersion": "2.7.5",
+      "_nodeVersion": "0.10.35",
+      "_npmUser": {
+        "name": "3rdeden",
+        "email": "npm@3rd-Eden.com"
+      },
+      "maintainers": [
+        {
+          "name": "v1",
+          "email": "info@3rd-Eden.com"
+        },
+        {
+          "name": "3rdeden",
+          "email": "npm@3rd-Eden.com"
+        }
+      ],
+      "dist": {
+        "shasum": "75a110a2e1bcc5de7999fead1910fcb058f51a14",
+        "tarball": "https://registry.npmjs.org/eventemitter3/-/eventemitter3-1.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "eventemitter3",
+      "version": "1.0.2",
+      "description": "EventEmitter3 focuses on performance while maintaining a Node.js AND browser compatible interface.",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha test.js",
+        "coverage": "istanbul cover ./node_modules/.bin/_mocha -- test.js",
+        "test-travis": "istanbul cover node_modules/.bin/_mocha --report lcovonly -- test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/primus/EventEmitter3.git"
+      },
+      "keywords": [
+        "EventEmitter",
+        "EventEmitter2",
+        "EventEmitter3",
+        "Events",
+        "addEventListener",
+        "addListener",
+        "emit",
+        "emits",
+        "emitter",
+        "event",
+        "once",
+        "pub/sub",
+        "publish",
+        "reactor",
+        "subscribe"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/primus/EventEmitter3/issues"
+      },
+      "devDependencies": {
+        "assume": "1.2.x",
+        "istanbul": "0.3.x",
+        "mocha": "2.2.x",
+        "pre-commit": "1.0.x"
+      },
+      "gitHead": "8274c16a934efc7a127766ae191a8a9d0065c1a4",
+      "homepage": "https://github.com/primus/EventEmitter3",
+      "_id": "eventemitter3@1.0.2",
+      "_shasum": "1163487c15b37566bf4ea8dbd5ccb5ddd5c0a9e8",
+      "_from": ".",
+      "_npmVersion": "2.7.5",
+      "_nodeVersion": "0.10.35",
+      "_npmUser": {
+        "name": "3rdeden",
+        "email": "npm@3rd-Eden.com"
+      },
+      "maintainers": [
+        {
+          "name": "v1",
+          "email": "info@3rd-Eden.com"
+        },
+        {
+          "name": "3rdeden",
+          "email": "npm@3rd-Eden.com"
+        }
+      ],
+      "dist": {
+        "shasum": "1163487c15b37566bf4ea8dbd5ccb5ddd5c0a9e8",
+        "tarball": "https://registry.npmjs.org/eventemitter3/-/eventemitter3-1.0.2.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.3": {
+      "name": "eventemitter3",
+      "version": "1.0.3",
+      "description": "EventEmitter3 focuses on performance while maintaining a Node.js AND browser compatible interface.",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha test.js",
+        "sync": "node versions.js",
+        "coverage": "istanbul cover ./node_modules/.bin/_mocha -- test.js",
+        "test-travis": "istanbul cover node_modules/.bin/_mocha --report lcovonly -- test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/primus/EventEmitter3.git"
+      },
+      "keywords": [
+        "EventEmitter",
+        "EventEmitter2",
+        "EventEmitter3",
+        "Events",
+        "addEventListener",
+        "addListener",
+        "emit",
+        "emits",
+        "emitter",
+        "event",
+        "once",
+        "pub/sub",
+        "publish",
+        "reactor",
+        "subscribe"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/primus/EventEmitter3/issues"
+      },
+      "pre-commit": "sync, test",
+      "devDependencies": {
+        "assume": "1.2.x",
+        "istanbul": "0.3.x",
+        "mocha": "2.2.x",
+        "pre-commit": "1.0.x"
+      },
+      "gitHead": "1b479ec043fe41156bbf73295674828451b78ea6",
+      "homepage": "https://github.com/primus/EventEmitter3#readme",
+      "_id": "eventemitter3@1.0.3",
+      "_shasum": "15295f06dca6e1f35453a860b0fd43876367e258",
+      "_from": ".",
+      "_npmVersion": "2.9.1",
+      "_nodeVersion": "0.12.2",
+      "_npmUser": {
+        "name": "lpinca",
+        "email": "luigipinca@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "v1",
+          "email": "npm@3rd-Eden.com"
+        },
+        {
+          "name": "3rdeden",
+          "email": "npm@3rd-Eden.com"
+        },
+        {
+          "name": "lpinca",
+          "email": "luigipinca@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "15295f06dca6e1f35453a860b0fd43876367e258",
+        "tarball": "https://registry.npmjs.org/eventemitter3/-/eventemitter3-1.0.3.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "eventemitter3",
+      "version": "1.1.0",
+      "description": "EventEmitter3 focuses on performance while maintaining a Node.js AND browser compatible interface.",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha test.js",
+        "sync": "node versions.js",
+        "coverage": "istanbul cover ./node_modules/.bin/_mocha -- test.js",
+        "test-travis": "istanbul cover node_modules/.bin/_mocha --report lcovonly -- test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/primus/EventEmitter3.git"
+      },
+      "keywords": [
+        "EventEmitter",
+        "EventEmitter2",
+        "EventEmitter3",
+        "Events",
+        "addEventListener",
+        "addListener",
+        "emit",
+        "emits",
+        "emitter",
+        "event",
+        "once",
+        "pub/sub",
+        "publish",
+        "reactor",
+        "subscribe"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/primus/EventEmitter3/issues"
+      },
+      "pre-commit": "sync, test",
+      "devDependencies": {
+        "assume": "1.2.x",
+        "istanbul": "0.3.x",
+        "mocha": "2.2.x",
+        "pre-commit": "1.0.x"
+      },
+      "gitHead": "0cd64db5b271fa2ec3a53f006dd968f8c94f66ff",
+      "homepage": "https://github.com/primus/EventEmitter3",
+      "_id": "eventemitter3@1.1.0",
+      "_shasum": "8d94b51448fa4ae11f8725aeebb7c0c48a8e71ac",
+      "_from": ".",
+      "_npmVersion": "2.7.5",
+      "_nodeVersion": "0.10.35",
+      "_npmUser": {
+        "name": "3rdeden",
+        "email": "npm@3rd-Eden.com"
+      },
+      "maintainers": [
+        {
+          "name": "v1",
+          "email": "npm@3rd-Eden.com"
+        },
+        {
+          "name": "3rdeden",
+          "email": "npm@3rd-Eden.com"
+        },
+        {
+          "name": "lpinca",
+          "email": "luigipinca@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "8d94b51448fa4ae11f8725aeebb7c0c48a8e71ac",
+        "tarball": "https://registry.npmjs.org/eventemitter3/-/eventemitter3-1.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.1": {
+      "name": "eventemitter3",
+      "version": "1.1.1",
+      "description": "EventEmitter3 focuses on performance while maintaining a Node.js AND browser compatible interface.",
+      "main": "index.js",
+      "scripts": {
+        "test-browser": "zuul --browser-name ${BROWSER_NAME} --browser-version ${BROWSER_VERSION} -- test.js",
+        "test-node": "istanbul cover node_modules/.bin/_mocha --report lcovonly -- test.js",
+        "coverage": "istanbul cover ./node_modules/.bin/_mocha -- test.js",
+        "sync": "node versions.js",
+        "test": "mocha test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/primus/eventemitter3.git"
+      },
+      "keywords": [
+        "EventEmitter",
+        "EventEmitter2",
+        "EventEmitter3",
+        "Events",
+        "addEventListener",
+        "addListener",
+        "emit",
+        "emits",
+        "emitter",
+        "event",
+        "once",
+        "pub/sub",
+        "publish",
+        "reactor",
+        "subscribe"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/primus/eventemitter3/issues"
+      },
+      "pre-commit": "sync, test",
+      "devDependencies": {
+        "assume": "1.2.x",
+        "istanbul": "0.3.x",
+        "mocha": "2.2.x",
+        "pre-commit": "1.0.x",
+        "zuul": "3.0.x"
+      },
+      "gitHead": "91f571f40c918d71220747791c05ec33f3402a56",
+      "homepage": "https://github.com/primus/eventemitter3#readme",
+      "_id": "eventemitter3@1.1.1",
+      "_shasum": "47786bdaa087caf7b1b75e73abc5c7d540158cd0",
+      "_from": ".",
+      "_npmVersion": "2.9.1",
+      "_nodeVersion": "0.12.3",
+      "_npmUser": {
+        "name": "3rdeden",
+        "email": "npm@3rd-Eden.com"
+      },
+      "maintainers": [
+        {
+          "name": "v1",
+          "email": "npm@3rd-Eden.com"
+        },
+        {
+          "name": "3rdeden",
+          "email": "npm@3rd-Eden.com"
+        },
+        {
+          "name": "lpinca",
+          "email": "luigipinca@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "47786bdaa087caf7b1b75e73abc5c7d540158cd0",
+        "tarball": "https://registry.npmjs.org/eventemitter3/-/eventemitter3-1.1.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.2.0": {
+      "name": "eventemitter3",
+      "version": "1.2.0",
+      "description": "EventEmitter3 focuses on performance while maintaining a Node.js AND browser compatible interface.",
+      "main": "index.js",
+      "scripts": {
+        "test-node": "istanbul cover _mocha --report lcovonly -- test.js",
+        "coverage": "istanbul cover _mocha -- test.js",
+        "test-browser": "zuul -- test.js",
+        "sync": "node versions.js",
+        "test": "mocha test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/primus/eventemitter3.git"
+      },
+      "keywords": [
+        "EventEmitter",
+        "EventEmitter2",
+        "EventEmitter3",
+        "Events",
+        "addEventListener",
+        "addListener",
+        "emit",
+        "emits",
+        "emitter",
+        "event",
+        "once",
+        "pub/sub",
+        "publish",
+        "reactor",
+        "subscribe"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/primus/eventemitter3/issues"
+      },
+      "pre-commit": "sync, test",
+      "devDependencies": {
+        "assume": "1.3.x",
+        "istanbul": "0.4.x",
+        "mocha": "2.4.x",
+        "pre-commit": "1.1.x",
+        "zuul": "3.10.x"
+      },
+      "gitHead": "c78d597fed80952c259b916c0a1f4dca91d940e4",
+      "homepage": "https://github.com/primus/eventemitter3#readme",
+      "_id": "eventemitter3@1.2.0",
+      "_shasum": "1c86991d816ad1e504750e73874224ecf3bec508",
+      "_from": ".",
+      "_npmVersion": "3.8.0",
+      "_nodeVersion": "4.3.1",
+      "_npmUser": {
+        "name": "3rdeden",
+        "email": "npm@3rd-Eden.com"
+      },
+      "maintainers": [
+        {
+          "name": "v1",
+          "email": "npm@3rd-Eden.com"
+        },
+        {
+          "name": "3rdeden",
+          "email": "npm@3rd-Eden.com"
+        },
+        {
+          "name": "lpinca",
+          "email": "luigipinca@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "1c86991d816ad1e504750e73874224ecf3bec508",
+        "tarball": "https://registry.npmjs.org/eventemitter3/-/eventemitter3-1.2.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/eventemitter3-1.2.0.tgz_1458148661717_0.1867425285745412"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "eventemitter3",
+      "version": "2.0.0",
+      "description": "EventEmitter3 focuses on performance while maintaining a Node.js AND browser compatible interface.",
+      "main": "index.js",
+      "scripts": {
+        "benchmark": "find benchmarks/run -name '*.js' -exec benchmarks/start.sh {} \\;",
+        "test-node": "istanbul cover _mocha --report lcovonly -- test.js",
+        "coverage": "istanbul cover _mocha -- test.js",
+        "test-browser": "zuul -- test.js",
+        "sync": "node versions.js",
+        "test": "mocha test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/primus/eventemitter3.git"
+      },
+      "keywords": [
+        "EventEmitter",
+        "EventEmitter2",
+        "EventEmitter3",
+        "Events",
+        "addEventListener",
+        "addListener",
+        "emit",
+        "emits",
+        "emitter",
+        "event",
+        "once",
+        "pub/sub",
+        "publish",
+        "reactor",
+        "subscribe"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/primus/eventemitter3/issues"
+      },
+      "pre-commit": "sync, test",
+      "devDependencies": {
+        "assume": "1.4.x",
+        "istanbul": "0.4.x",
+        "mocha": "3.0.x",
+        "pre-commit": "1.1.x",
+        "zuul": "3.11.x"
+      },
+      "gitHead": "5d4cd1928eacf51877e73c6d01ec4daf66f3e547",
+      "homepage": "https://github.com/primus/eventemitter3#readme",
+      "_id": "eventemitter3@2.0.0",
+      "_shasum": "605f34e75ea702681fcd06b2f4ee2e7b4e019006",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.5.0",
+      "_npmUser": {
+        "name": "lpinca",
+        "email": "luigipinca@gmail.com"
+      },
+      "dist": {
+        "shasum": "605f34e75ea702681fcd06b2f4ee2e7b4e019006",
+        "tarball": "https://registry.npmjs.org/eventemitter3/-/eventemitter3-2.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "v1",
+          "email": "npm@3rd-Eden.com"
+        },
+        {
+          "name": "3rdeden",
+          "email": "npm@3rd-Eden.com"
+        },
+        {
+          "name": "lpinca",
+          "email": "luigipinca@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/eventemitter3-2.0.0.tgz_1473423580446_0.5355233517475426"
+      },
+      "directories": {}
+    },
+    "2.0.1": {
+      "name": "eventemitter3",
+      "version": "2.0.1",
+      "description": "EventEmitter3 focuses on performance while maintaining a Node.js AND browser compatible interface.",
+      "main": "index.js",
+      "scripts": {
+        "benchmark": "find benchmarks/run -name '*.js' -exec benchmarks/start.sh {} \\;",
+        "test-node": "istanbul cover _mocha --report lcovonly -- test.js",
+        "coverage": "istanbul cover _mocha -- test.js",
+        "test-browser": "zuul -- test.js",
+        "sync": "node versions.js",
+        "test": "mocha test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/primus/eventemitter3.git"
+      },
+      "keywords": [
+        "EventEmitter",
+        "EventEmitter2",
+        "EventEmitter3",
+        "Events",
+        "addEventListener",
+        "addListener",
+        "emit",
+        "emits",
+        "emitter",
+        "event",
+        "once",
+        "pub/sub",
+        "publish",
+        "reactor",
+        "subscribe"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/primus/eventemitter3/issues"
+      },
+      "pre-commit": "sync, test",
+      "devDependencies": {
+        "assume": "1.4.x",
+        "istanbul": "0.4.x",
+        "mocha": "3.0.x",
+        "pre-commit": "1.1.x",
+        "zuul": "3.11.x"
+      },
+      "gitHead": "58f3909300bb6503749c813cf1abaa0058a9778c",
+      "homepage": "https://github.com/primus/eventemitter3#readme",
+      "_id": "eventemitter3@2.0.1",
+      "_shasum": "59c8930b1d8f4da54ad752854948f44330e7f39c",
+      "_from": ".",
+      "_npmVersion": "3.10.7",
+      "_nodeVersion": "6.6.0",
+      "_npmUser": {
+        "name": "lpinca",
+        "email": "luigipinca@gmail.com"
+      },
+      "dist": {
+        "shasum": "59c8930b1d8f4da54ad752854948f44330e7f39c",
+        "tarball": "https://registry.npmjs.org/eventemitter3/-/eventemitter3-2.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "v1",
+          "email": "npm@3rd-Eden.com"
+        },
+        {
+          "name": "3rdeden",
+          "email": "npm@3rd-Eden.com"
+        },
+        {
+          "name": "lpinca",
+          "email": "luigipinca@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/eventemitter3-2.0.1.tgz_1474959547234_0.053572222124785185"
+      },
+      "directories": {}
+    },
+    "2.0.2": {
+      "name": "eventemitter3",
+      "version": "2.0.2",
+      "description": "EventEmitter3 focuses on performance while maintaining a Node.js AND browser compatible interface.",
+      "main": "index.js",
+      "typings": "index.d.ts",
+      "scripts": {
+        "benchmark": "find benchmarks/run -name '*.js' -exec benchmarks/start.sh {} \\;",
+        "test-node": "istanbul cover _mocha --report lcovonly -- test.js",
+        "coverage": "istanbul cover _mocha -- test.js",
+        "test-browser": "zuul -- test.js",
+        "sync": "node versions.js",
+        "test": "mocha test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/primus/eventemitter3.git"
+      },
+      "keywords": [
+        "EventEmitter",
+        "EventEmitter2",
+        "EventEmitter3",
+        "Events",
+        "addEventListener",
+        "addListener",
+        "emit",
+        "emits",
+        "emitter",
+        "event",
+        "once",
+        "pub/sub",
+        "publish",
+        "reactor",
+        "subscribe"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/primus/eventemitter3/issues"
+      },
+      "pre-commit": "sync, test",
+      "devDependencies": {
+        "assume": "1.4.x",
+        "istanbul": "0.4.x",
+        "mocha": "3.1.x",
+        "pre-commit": "1.1.x",
+        "zuul": "3.11.x"
+      },
+      "gitHead": "a9eedef2a58deae7006028662a83d88579486886",
+      "homepage": "https://github.com/primus/eventemitter3#readme",
+      "_id": "eventemitter3@2.0.2",
+      "_shasum": "20ce4891909ce9f35b088c94fab40e2c96f473ac",
+      "_from": ".",
+      "_npmVersion": "3.10.7",
+      "_nodeVersion": "6.7.0",
+      "_npmUser": {
+        "name": "lpinca",
+        "email": "luigipinca@gmail.com"
+      },
+      "dist": {
+        "shasum": "20ce4891909ce9f35b088c94fab40e2c96f473ac",
+        "tarball": "https://registry.npmjs.org/eventemitter3/-/eventemitter3-2.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "v1",
+          "email": "npm@3rd-Eden.com"
+        },
+        {
+          "name": "3rdeden",
+          "email": "npm@3rd-Eden.com"
+        },
+        {
+          "name": "lpinca",
+          "email": "luigipinca@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/eventemitter3-2.0.2.tgz_1475216591620_0.3523867195472121"
+      },
+      "directories": {}
+    },
+    "2.0.3": {
+      "name": "eventemitter3",
+      "version": "2.0.3",
+      "description": "EventEmitter3 focuses on performance while maintaining a Node.js AND browser compatible interface.",
+      "main": "index.js",
+      "typings": "index.d.ts",
+      "scripts": {
+        "build": "mkdir -p umd && browserify index.js -s EventEmitter3 | uglifyjs -m -o umd/eventemitter3.min.js",
+        "benchmark": "find benchmarks/run -name '*.js' -exec benchmarks/start.sh {} \\;",
+        "test": "nyc --reporter=html --reporter=text mocha",
+        "test-browser": "zuul -- test.js",
+        "prepublish": "npm run build",
+        "sync": "node versions.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/primus/eventemitter3.git"
+      },
+      "keywords": [
+        "EventEmitter",
+        "EventEmitter2",
+        "EventEmitter3",
+        "Events",
+        "addEventListener",
+        "addListener",
+        "emit",
+        "emits",
+        "emitter",
+        "event",
+        "once",
+        "pub/sub",
+        "publish",
+        "reactor",
+        "subscribe"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/primus/eventemitter3/issues"
+      },
+      "pre-commit": "sync, test",
+      "devDependencies": {
+        "assume": "~1.4.1",
+        "browserify": "~14.1.0",
+        "mocha": "~3.2.0",
+        "nyc": "~10.2.0",
+        "pre-commit": "~1.2.0",
+        "uglify-js": "~2.8.20",
+        "zuul": "~3.11.1"
+      },
+      "gitHead": "9afe1b539e52ec4b8eb4e07d69a5deb5f25c326b",
+      "homepage": "https://github.com/primus/eventemitter3#readme",
+      "_id": "eventemitter3@2.0.3",
+      "_shasum": "b5e1079b59fb5e1ba2771c0a993be060a58c99ba",
+      "_from": ".",
+      "_npmVersion": "4.2.0",
+      "_nodeVersion": "7.8.0",
+      "_npmUser": {
+        "name": "lpinca",
+        "email": "luigipinca@gmail.com"
+      },
+      "dist": {
+        "shasum": "b5e1079b59fb5e1ba2771c0a993be060a58c99ba",
+        "tarball": "https://registry.npmjs.org/eventemitter3/-/eventemitter3-2.0.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "v1",
+          "email": "npm@3rd-Eden.com"
+        },
+        {
+          "name": "3rdeden",
+          "email": "npm@3rd-Eden.com"
+        },
+        {
+          "name": "lpinca",
+          "email": "luigipinca@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/eventemitter3-2.0.3.tgz_1490971867525_0.8374074944294989"
+      },
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "eventemitter3",
+      "version": "3.0.0",
+      "description": "EventEmitter3 focuses on performance while maintaining a Node.js AND browser compatible interface.",
+      "main": "index.js",
+      "typings": "index.d.ts",
+      "scripts": {
+        "build": "mkdir -p umd && browserify index.js -s EventEmitter3 | uglifyjs -cm -o umd/eventemitter3.min.js",
+        "benchmark": "find benchmarks/run -name '*.js' -exec benchmarks/start.sh {} \\;",
+        "test": "nyc --reporter=html --reporter=text mocha test/test.js",
+        "test-browser": "node test/browser.js",
+        "prepublishOnly": "npm run build"
+      },
+      "files": [
+        "index.js",
+        "index.d.ts",
+        "umd"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/primus/eventemitter3.git"
+      },
+      "keywords": [
+        "EventEmitter",
+        "EventEmitter2",
+        "EventEmitter3",
+        "Events",
+        "addEventListener",
+        "addListener",
+        "emit",
+        "emits",
+        "emitter",
+        "event",
+        "once",
+        "pub/sub",
+        "publish",
+        "reactor",
+        "subscribe"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/primus/eventemitter3/issues"
+      },
+      "devDependencies": {
+        "assume": "~1.5.0",
+        "browserify": "~14.5.0",
+        "mocha": "~4.0.0",
+        "nyc": "~11.3.0",
+        "pre-commit": "~1.2.0",
+        "sauce-browsers": "~1.0.0",
+        "sauce-test": "~1.3.3",
+        "uglify-js": "~3.2.0"
+      },
+      "gitHead": "e36eab836feeafe7101e06e7e736d368f27b21ec",
+      "homepage": "https://github.com/primus/eventemitter3#readme",
+      "_id": "eventemitter3@3.0.0",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "lpinca",
+        "email": "luigipinca@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-62TxCtz4m2LRaOERVEvLJJ4A6rsg8lC9Xm+FLg2y/1fB/v4ZZ9JCOn+/Ppl5KkH6sRih6bhix724PVanmXYZJQ==",
+        "shasum": "fc29ecf233bd19fbd527bb4089bbf665dc90c1e3",
+        "tarball": "https://registry.npmjs.org/eventemitter3/-/eventemitter3-3.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "luigipinca@gmail.com",
+          "name": "lpinca"
+        },
+        {
+          "email": "npm@3rd-Eden.com",
+          "name": "v1"
+        },
+        {
+          "email": "npm@3rd-Eden.com",
+          "name": "3rdeden"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eventemitter3-3.0.0.tgz_1511976245786_0.8547864067368209"
+      },
+      "directories": {}
+    },
+    "3.0.1": {
+      "name": "eventemitter3",
+      "version": "3.0.1",
+      "description": "EventEmitter3 focuses on performance while maintaining a Node.js AND browser compatible interface.",
+      "main": "index.js",
+      "typings": "index.d.ts",
+      "scripts": {
+        "build": "mkdir -p umd && browserify index.js -s EventEmitter3 | uglifyjs -cm -o umd/eventemitter3.min.js",
+        "benchmark": "find benchmarks/run -name '*.js' -exec benchmarks/start.sh {} \\;",
+        "test": "nyc --reporter=html --reporter=text mocha test/test.js",
+        "test-browser": "node test/browser.js",
+        "prepublishOnly": "npm run build"
+      },
+      "files": [
+        "index.js",
+        "index.d.ts",
+        "umd"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/primus/eventemitter3.git"
+      },
+      "keywords": [
+        "EventEmitter",
+        "EventEmitter2",
+        "EventEmitter3",
+        "Events",
+        "addEventListener",
+        "addListener",
+        "emit",
+        "emits",
+        "emitter",
+        "event",
+        "once",
+        "pub/sub",
+        "publish",
+        "reactor",
+        "subscribe"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/primus/eventemitter3/issues"
+      },
+      "devDependencies": {
+        "assume": "~1.5.0",
+        "browserify": "~15.2.0",
+        "mocha": "~5.0.0",
+        "nyc": "~11.4.1",
+        "pre-commit": "~1.2.0",
+        "sauce-browsers": "~1.0.0",
+        "sauce-test": "~1.3.3",
+        "uglify-js": "~3.3.0"
+      },
+      "gitHead": "81025e2543554263f282774e248c18c69fd89e96",
+      "homepage": "https://github.com/primus/eventemitter3#readme",
+      "_id": "eventemitter3@3.0.1",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.5.0",
+      "_npmUser": {
+        "name": "lpinca",
+        "email": "luigipinca@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-QOCPu979MMWX9XNlfRZoin+Wm+bK1SP7vv3NGUniYwuSJK/+cPA10blMaeRgzg31RvoSFk6FsCDVa4vNryBTGA==",
+        "shasum": "4ce66c3fc5b5a6b9f2245e359e1938f1ab10f960",
+        "tarball": "https://registry.npmjs.org/eventemitter3/-/eventemitter3-3.0.1.tgz",
+        "fileCount": 6,
+        "unpackedSize": 20382
+      },
+      "maintainers": [
+        {
+          "email": "npm@3rd-Eden.com",
+          "name": "3rdeden"
+        },
+        {
+          "email": "luigipinca@gmail.com",
+          "name": "lpinca"
+        },
+        {
+          "email": "npm@3rd-Eden.com",
+          "name": "v1"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eventemitter3_3.0.1_1517990256516_0.4655667565871582"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.1.0": {
+      "name": "eventemitter3",
+      "version": "3.1.0",
+      "description": "EventEmitter3 focuses on performance while maintaining a Node.js AND browser compatible interface.",
+      "main": "index.js",
+      "typings": "index.d.ts",
+      "scripts": {
+        "browserify": "rm -rf umd && mkdir umd && browserify index.js -s EventEmitter3 -o umd/eventemitter3.js",
+        "minify": "uglifyjs umd/eventemitter3.js --source-map -cm -o umd/eventemitter3.min.js",
+        "benchmark": "find benchmarks/run -name '*.js' -exec benchmarks/start.sh {} \\;",
+        "test": "nyc --reporter=html --reporter=text mocha test/test.js",
+        "prepublishOnly": "npm run browserify && npm run minify",
+        "test-browser": "node test/browser.js"
+      },
+      "files": [
+        "index.js",
+        "index.d.ts",
+        "umd"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/primus/eventemitter3.git"
+      },
+      "keywords": [
+        "EventEmitter",
+        "EventEmitter2",
+        "EventEmitter3",
+        "Events",
+        "addEventListener",
+        "addListener",
+        "emit",
+        "emits",
+        "emitter",
+        "event",
+        "once",
+        "pub/sub",
+        "publish",
+        "reactor",
+        "subscribe"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/primus/eventemitter3/issues"
+      },
+      "devDependencies": {
+        "assume": "~1.5.0",
+        "browserify": "~16.2.0",
+        "mocha": "~5.1.0",
+        "nyc": "~11.7.1",
+        "pre-commit": "~1.2.0",
+        "sauce-browsers": "~1.2.0",
+        "sauce-test": "~1.3.3",
+        "uglify-js": "~3.3.0"
+      },
+      "gitHead": "5261097d5109946920d0d9d083da7186c838ce30",
+      "homepage": "https://github.com/primus/eventemitter3#readme",
+      "_id": "eventemitter3@3.1.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.11.1",
+      "_npmUser": {
+        "name": "lpinca",
+        "email": "luigipinca@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-ivIvhpq/Y0uSjcHDcOIccjmYjGLcP09MFGE7ysAwkAvkXfpZlC985pH2/ui64DKazbTW/4kN3yqozUxlXzI6cA==",
+        "shasum": "090b4d6cdbd645ed10bf750d4b5407942d7ba163",
+        "tarball": "https://registry.npmjs.org/eventemitter3/-/eventemitter3-3.1.0.tgz",
+        "fileCount": 8,
+        "unpackedSize": 36241,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa4NzSCRA9TVsSAnZWagAAYsYP/j3zNmW2uWdBC2A1cPSn\nMsgv21wWhhuCkg7qc1aotD4X2/L/0xYBwI5jbKvXVicz2NQUgcJG68q3BriU\nskYbjblLpct5R9BzPiwEMm6wRmHk0JN0Fz5bBtk1EA4xaQHugkbzrOLLhxxM\nkAa84X4wLJunz/JmTGn4akyz92FzMM6oOxZfNzzIXepw1eAxQF5YGLFRitC7\nKeJQv/p2d0dLb73MjyvDC0IPe7R1ZwMeUF06A2w+Z04/jLK8mdumM9hws9kj\nbhq5WLePhMEgnvLIlHDBAevqj4qBgXaS5GsbNCC7Za6xJaz1fLLkx+jGl8A3\nw8EGDY+DkxmKHgMPrIqM6eCNOYcCc35tUCVsSf73GFqGA+f8luuasRqI23VM\nqbBScHy08sESdFkOeaqZByJClN7zl10CVQTU5Gm/vXNFNjmx8yxYlsJRqUGq\nT8GHlr3q4oEjFmLbcR9tIYwYGx/QyNYeB2DZ0HKu51LNtWeFVbYx+TKnG8zB\nDNNdNbyaAiGOEPXXhUxjUsywxgZatymqtiPQhxd0blnIOSZHJsm1qYBggXbk\nGYLigxrN6D6bBsW4+6c74v7CbaEP3zulHAMukIQQoE5gjfq49J9vP8CjBG0w\nxE7WMeXlre4YdNrBUTxPA312/f9VtypiFzqnj7cSENsm/tynZjCR4xAdJG9z\n++Gc\r\n=f2la\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "npm@3rd-Eden.com",
+          "name": "3rdeden"
+        },
+        {
+          "email": "luigipinca@gmail.com",
+          "name": "lpinca"
+        },
+        {
+          "email": "npm@3rd-Eden.com",
+          "name": "v1"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eventemitter3_3.1.0_1524686033911_0.48391916986617156"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.1.1": {
+      "name": "eventemitter3",
+      "version": "3.1.1",
+      "description": "EventEmitter3 focuses on performance while maintaining a Node.js AND browser compatible interface.",
+      "main": "index.js",
+      "typings": "index.d.ts",
+      "scripts": {
+        "browserify": "rm -rf umd && mkdir umd && browserify index.js -s EventEmitter3 -o umd/eventemitter3.js",
+        "minify": "uglifyjs umd/eventemitter3.js --source-map -cm -o umd/eventemitter3.min.js",
+        "benchmark": "find benchmarks/run -name '*.js' -exec benchmarks/start.sh {} \\;",
+        "test": "nyc --reporter=html --reporter=text mocha test/test.js",
+        "prepublishOnly": "npm run browserify && npm run minify",
+        "test-browser": "node test/browser.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/primus/eventemitter3.git"
+      },
+      "keywords": [
+        "EventEmitter",
+        "EventEmitter2",
+        "EventEmitter3",
+        "Events",
+        "addEventListener",
+        "addListener",
+        "emit",
+        "emits",
+        "emitter",
+        "event",
+        "once",
+        "pub/sub",
+        "publish",
+        "reactor",
+        "subscribe"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/primus/eventemitter3/issues"
+      },
+      "devDependencies": {
+        "assume": "~2.2.0",
+        "browserify": "~16.2.0",
+        "mocha": "~6.1.0",
+        "nyc": "~14.0.0",
+        "pre-commit": "~1.2.0",
+        "sauce-browsers": "~2.0.0",
+        "sauce-test": "~1.3.3",
+        "uglify-js": "~3.5.0"
+      },
+      "gitHead": "52941321ad3f42c976eefcd706e891d06a0376bf",
+      "homepage": "https://github.com/primus/eventemitter3#readme",
+      "_id": "eventemitter3@3.1.1",
+      "_nodeVersion": "11.14.0",
+      "_npmVersion": "6.9.0",
+      "dist": {
+        "integrity": "sha512-MXmFv3KYbv7MPjPeGlFCTieXB9zNvmHfy4fXzZbrdMeUUk3pxQ8SS0cJ6CcwUDZnIL3ZDa01qQFzhlusB8s51Q==",
+        "shasum": "1ab02a344af74f5cbf528969601bf0fd6aeebf98",
+        "tarball": "https://registry.npmjs.org/eventemitter3/-/eventemitter3-3.1.1.tgz",
+        "fileCount": 8,
+        "unpackedSize": 36256,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcxyTtCRA9TVsSAnZWagAA7xgQAIcgU0Xe8sCjBrhQNTEd\n0tx5RLC/63afKnoM5GDTDOYZUu6aHxDnSH0i4J60AZ6NzS2zH1YCfsLj28t9\nhZ6rb3SDEwK1d7iz1wSytR0QclImlDvtvcAoP/XgUFFZIQFRkLaP7xicFCZd\ndRwTYvUScV/leuljCtN/NXfmo6U6MrWj+xYlhk8GfDchVEg+W7uTXozWIdGf\nUkvmtoOzXky8InN82J49nT/9uvDoqVL+tAi/ppzCd/tcy71U81TXgoDPfGUw\nQx8C9X29DiWohJDkmNLAiVCAjB+RpzgTAf3V8/eJuyNu9BcHL4yJJIjvA+vQ\nJ3nGarNUHNU/7ct0B8ZXvwxCgzdHtYNtqchzT3z3wDNdRCL4lUdulaonoFBB\nBijbOCTggmH1Bd0BM7PnIYv9dGC833zlKd8eyzS3ijT8s1u8tw0WlbCbW25/\nWjr8jhf6fJCH2xZskxE+erQxJLfCk71gNNwBrVIA8UTFyzBcDIPEiM2Hq5OM\nEG/0ECHWAaW6WpCU6icINJ9lK8rU9eWMv7ihArRTRmVS4rVqm565Bgn438+1\n6v6VlfH7qFi1R4QjwzX/S7DHjufsloeHM35lhh9evSHkUr+xjPy7iXhtJBey\njfn4jbghy7Yw5cclCJpc2EZ4BJYrjlAqgTVQpe+PopK6TG8DORhKINfz1EcT\nqdii\r\n=bLMn\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "npm@3rd-Eden.com",
+          "name": "3rdeden"
+        },
+        {
+          "email": "luigipinca@gmail.com",
+          "name": "lpinca"
+        },
+        {
+          "email": "npm@3rd-Eden.com",
+          "name": "v1"
+        }
+      ],
+      "_npmUser": {
+        "name": "lpinca",
+        "email": "luigipinca@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eventemitter3_3.1.1_1556554988590_0.9851152735788387"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.1.2": {
+      "name": "eventemitter3",
+      "version": "3.1.2",
+      "description": "EventEmitter3 focuses on performance while maintaining a Node.js AND browser compatible interface.",
+      "main": "index.js",
+      "typings": "index.d.ts",
+      "scripts": {
+        "browserify": "rm -rf umd && mkdir umd && browserify index.js -s EventEmitter3 -o umd/eventemitter3.js",
+        "minify": "uglifyjs umd/eventemitter3.js --source-map -cm -o umd/eventemitter3.min.js",
+        "benchmark": "find benchmarks/run -name '*.js' -exec benchmarks/start.sh {} \\;",
+        "test": "nyc --reporter=html --reporter=text mocha test/test.js",
+        "prepublishOnly": "npm run browserify && npm run minify",
+        "test-browser": "node test/browser.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/primus/eventemitter3.git"
+      },
+      "keywords": [
+        "EventEmitter",
+        "EventEmitter2",
+        "EventEmitter3",
+        "Events",
+        "addEventListener",
+        "addListener",
+        "emit",
+        "emits",
+        "emitter",
+        "event",
+        "once",
+        "pub/sub",
+        "publish",
+        "reactor",
+        "subscribe"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/primus/eventemitter3/issues"
+      },
+      "devDependencies": {
+        "assume": "~2.2.0",
+        "browserify": "~16.2.0",
+        "mocha": "~6.1.0",
+        "nyc": "~14.0.0",
+        "pre-commit": "~1.2.0",
+        "sauce-browsers": "~2.0.0",
+        "sauce-test": "~1.3.3",
+        "uglify-js": "~3.5.0"
+      },
+      "gitHead": "54b25612832e6ab21efc836b99e4d0b0f69eeb69",
+      "homepage": "https://github.com/primus/eventemitter3#readme",
+      "_id": "eventemitter3@3.1.2",
+      "_nodeVersion": "11.14.0",
+      "_npmVersion": "6.9.0",
+      "dist": {
+        "integrity": "sha512-tvtQIeLVHjDkJYnzf2dgVMxfuSGJeM/7UCG17TT4EumTfNtF+0nebF/4zWOIkCreAbtNqhGEboB6BWrwqNaw4Q==",
+        "shasum": "2d3d48f9c346698fce83a85d7d664e98535df6e7",
+        "tarball": "https://registry.npmjs.org/eventemitter3/-/eventemitter3-3.1.2.tgz",
+        "fileCount": 8,
+        "unpackedSize": 36240,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcx9cvCRA9TVsSAnZWagAA0n0P/3tqCbPIQ0J24jWYn2Aj\nm/RQ0ALKXFjQF2wf2p1peIpYZuaZnh5P3QaBMH17kYDo5S969nOYxrj0BUwu\nn/reAHnJQxXJGD9IYz22wWoVnwfUewoAGwdeOwTdxDNfrPDBJky42e0u1UvO\nS04QbCeyG8+wNH1eJDtoPsMcs2AN4Ppd2JfwV/SkKlmILD0Tp2wmf8Es5zRB\n0BsYnd4nTqMNHeQbTdQ5bfUs9cMtRE/CzPvwisIX3nhVUPQtc3vw6IuAsg0y\nYCvyrpqRqF/mwmmDFIWKnVZa2ExDAFkgaWvzOdVO1v+orLkQbvAP29k6XG47\nt7q8t6uH2iInp+tErRYzWTm+ZVFgIrvWe6/SLb1LHGYiBxCvULMDLjXA/cng\nHWumLkPjWNy6kUj9Qv/G5519smAfGoUEIc5Q2e7/u22jfGODjko08f31YgNr\nF412cUUK89FKpBv4DhSeAvXWVu3/v10g98vzaPaTf1H8RCs2wADgeWPcaqrw\nrXg3ii2HPCGI00Qhuiv6LfwieP2oHyxRiZP6IH2VA+CFV2RuPie03xHTosJm\nTf6S1c+hU1cFEg5SvP+NF0CiDVe8kn12nZMW077GjvzWsjsqTT0a7vuSxqPu\ngolJvF9rYcQVIVHMC/n+GAlTcfyLANJXwQ5R2D3GPUwD4C0HH5pdANUgiufQ\nLf98\r\n=Mfmc\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "npm@3rd-Eden.com",
+          "name": "3rdeden"
+        },
+        {
+          "email": "luigipinca@gmail.com",
+          "name": "lpinca"
+        },
+        {
+          "email": "npm@3rd-Eden.com",
+          "name": "v1"
+        }
+      ],
+      "_npmUser": {
+        "name": "lpinca",
+        "email": "luigipinca@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eventemitter3_3.1.2_1556600623068_0.2887200458648349"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.0.0": {
+      "name": "eventemitter3",
+      "version": "4.0.0",
+      "description": "EventEmitter3 focuses on performance while maintaining a Node.js AND browser compatible interface.",
+      "main": "index.js",
+      "typings": "index.d.ts",
+      "scripts": {
+        "browserify": "rm -rf umd && mkdir umd && browserify index.js -s EventEmitter3 -o umd/eventemitter3.js",
+        "minify": "uglifyjs umd/eventemitter3.js --source-map -cm -o umd/eventemitter3.min.js",
+        "benchmark": "find benchmarks/run -name '*.js' -exec benchmarks/start.sh {} \\;",
+        "test": "nyc --reporter=html --reporter=text mocha test/test.js",
+        "prepublishOnly": "npm run browserify && npm run minify",
+        "test-browser": "node test/browser.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/primus/eventemitter3.git"
+      },
+      "keywords": [
+        "EventEmitter",
+        "EventEmitter2",
+        "EventEmitter3",
+        "Events",
+        "addEventListener",
+        "addListener",
+        "emit",
+        "emits",
+        "emitter",
+        "event",
+        "once",
+        "pub/sub",
+        "publish",
+        "reactor",
+        "subscribe"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/primus/eventemitter3/issues"
+      },
+      "devDependencies": {
+        "assume": "~2.2.0",
+        "browserify": "~16.2.0",
+        "mocha": "~6.1.0",
+        "nyc": "~14.1.0",
+        "pre-commit": "~1.2.0",
+        "sauce-browsers": "~2.0.0",
+        "sauce-test": "~1.3.3",
+        "uglify-js": "~3.6.0"
+      },
+      "gitHead": "3673253ddeaa4398205bb9513315397e678c7fa0",
+      "homepage": "https://github.com/primus/eventemitter3#readme",
+      "_id": "eventemitter3@4.0.0",
+      "_nodeVersion": "12.4.0",
+      "_npmVersion": "6.9.0",
+      "dist": {
+        "integrity": "sha512-qerSRB0p+UDEssxTtm6EDKcE7W4OaoisfIMl4CngyEhjpYglocpNg6UEqCvemdGhosAsg4sO2dXJOdyBifPGCg==",
+        "shasum": "d65176163887ee59f386d64c82610b696a4a74eb",
+        "tarball": "https://registry.npmjs.org/eventemitter3/-/eventemitter3-4.0.0.tgz",
+        "fileCount": 8,
+        "unpackedSize": 37015,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdCjhECRA9TVsSAnZWagAAz0sP/jkDyKdZ8sk50fqmttAc\n2UDQYGw76sKL19pI+TPqXoqhlxoP5WsdX1+Wz4MgNBOmzp/iyGoNgokW+aUJ\nbNf6trdIS76blPItTI647EzKur/4AVmAjzz9UbjRdA77HyZ3eE2V+p8vc5eK\nMtr2B6oiGwUw8Cq/1sKBZPySNElEU/OWeRRXyrym4hzYxFYPokx7DGRmYWLv\niK85HBi6aW0zoj5bpC9FzNO3yHGFI+KFKUhhp/N+R2c5bY4IfVqbdfa8dk0H\niYy+CiF3rAudBPGxX2dYukPIaMcM1AQmjyqGqE21hrs9JGxKZ2wsi5zWEYZS\nc4Wow0oQEW/FetDdJJBLp5Epp9vVzly1C/htwZoIZ8Ki9vsERKKw2ZqyY9Ps\nW5BVxdbNxKVILt5jq1qlGoNY9QI17O0mez/etVGgFu31hqoOzGclC+IvaEpI\nRX+d5QfcSrzM/TocYD7mL/TI+Wk1tw0dklFvoM2OZRRalts4F2TyTHfFDiCJ\nmArUlwkFPq4pFlM4nGDH6I3f7KT7omWooHqNNk9bkl4qpF9KdbCzioEzoD2V\nvv55C8Lxz/MDFDc2MZujbj8Q5aUoGS9L6VK07dHyrYSUnsGXnNBDhlEcn+Sa\nsAgPPs6+kLzjPyOhDltBjjj7yZwOcsK0MPaqlFdDRidn/3DJh0G/cX5EyRDN\nZWY9\r\n=WGFs\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "npm@3rd-Eden.com",
+          "name": "3rdeden"
+        },
+        {
+          "email": "luigipinca@gmail.com",
+          "name": "lpinca"
+        },
+        {
+          "email": "npm@3rd-Eden.com",
+          "name": "v1"
+        }
+      ],
+      "_npmUser": {
+        "name": "lpinca",
+        "email": "luigipinca@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eventemitter3_4.0.0_1560950851696_0.6319974648156976"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.0.1": {
+      "name": "eventemitter3",
+      "version": "4.0.1",
+      "description": "EventEmitter3 focuses on performance while maintaining a Node.js AND browser compatible interface.",
+      "main": "index.js",
+      "typings": "index.d.ts",
+      "scripts": {
+        "browserify": "rm -rf umd && mkdir umd && browserify index.js -s EventEmitter3 -o umd/eventemitter3.js",
+        "minify": "uglifyjs umd/eventemitter3.js --source-map -cm -o umd/eventemitter3.min.js",
+        "benchmark": "find benchmarks/run -name '*.js' -exec benchmarks/start.sh {} \\;",
+        "test": "nyc --reporter=html --reporter=text mocha test/test.js",
+        "prepublishOnly": "npm run browserify && npm run minify",
+        "test-browser": "node test/browser.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/primus/eventemitter3.git"
+      },
+      "keywords": [
+        "EventEmitter",
+        "EventEmitter2",
+        "EventEmitter3",
+        "Events",
+        "addEventListener",
+        "addListener",
+        "emit",
+        "emits",
+        "emitter",
+        "event",
+        "once",
+        "pub/sub",
+        "publish",
+        "reactor",
+        "subscribe"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/primus/eventemitter3/issues"
+      },
+      "devDependencies": {
+        "assume": "~2.2.0",
+        "browserify": "~16.5.0",
+        "mocha": "~7.1.0",
+        "nyc": "~15.0.0",
+        "pre-commit": "~1.2.0",
+        "sauce-browsers": "~2.0.0",
+        "sauce-test": "~1.3.3",
+        "uglify-js": "~3.9.0"
+      },
+      "gitHead": "e8797605bfae450c67943f377e0e64f5d80dacd4",
+      "homepage": "https://github.com/primus/eventemitter3#readme",
+      "_id": "eventemitter3@4.0.1",
+      "_nodeVersion": "14.2.0",
+      "_npmVersion": "6.14.4",
+      "dist": {
+        "integrity": "sha512-MnI0l35oYL2C/c80rjJN7qu50MDx39yYE7y7oYck2YA3v+y7EaAenY8IU8AP4d1RWqE8VAKWFGSh3rfP87ll3g==",
+        "shasum": "3bcf626b0d3b16ce22ee88625a3772706300ba1f",
+        "tarball": "https://registry.npmjs.org/eventemitter3/-/eventemitter3-4.0.1.tgz",
+        "fileCount": 8,
+        "unpackedSize": 37507,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeuEABCRA9TVsSAnZWagAA7dYP/16kWKmiPXs8v5KwW5Po\nO0mRMW7pl0y6rKsRusLfibti8xuUX796UkqbrF1G103h8W0k322O0yuCeGdp\niQDIDPAgx0lMKUKH2ky4ySs6sVw7YvKUwa0OtMHGvu0LJhWaQPiOBjlTwbL/\nRVUYJ6mfE0deMblXfbnS8IxE0/rN2T8vvTjFCIuVIXNwD5yDzZnB+oFP0FLW\n7RhOyTYPosdEK3PCOUjvnBrPEaOAYqz0ahVMuahOyqNAFOJT/tcAKN0xXOOW\nveNwncBbjQWaQv2S8v/Dt3OpjhjTLEUcbefWuTDixwP8AQ8pBHadhUuAAM9v\nppovzLm52PT0iZo9ewm8C/Dqr8Qrf84JgEjYKo2wsfFyVaia73pBRKCOugA7\nIlbEmUsZbyUrnedixb7Y2bXuJU4WZGKhhGhPNsyAs3LnYso1NZuLEsmWECIv\nOjUMc6GLcSVFnS2wSsw+BaJAyENQu7TrkH322eE4iB/CIR3fD79BqIbSAzFI\nUI9PVBpQnm6UCM5jtCnRzQnsVuih4/pHd4DBh1dklRilHThUCUUO5N7BeRQl\nm4XQKGNh5U+MlkQx305u/HXQ7OBPQxJHpYerbIhcd45uB6c9YI+4B8FuhHkl\nd6q2CtifGcBeqN/ggHxohnVU55yQMXHAgXX1s13Pvhw59+I6ROzE8+KdRsb9\nvB0E\r\n=R9PK\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "npm@3rd-Eden.com",
+          "name": "3rdeden"
+        },
+        {
+          "email": "luigipinca@gmail.com",
+          "name": "lpinca"
+        },
+        {
+          "email": "npm@3rd-Eden.com",
+          "name": "v1"
+        }
+      ],
+      "_npmUser": {
+        "name": "lpinca",
+        "email": "luigipinca@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eventemitter3_4.0.1_1589133313200_0.0028477019643091683"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.0.2": {
+      "name": "eventemitter3",
+      "version": "4.0.2",
+      "description": "EventEmitter3 focuses on performance while maintaining a Node.js AND browser compatible interface.",
+      "main": "index.js",
+      "typings": "index.d.ts",
+      "scripts": {
+        "browserify": "rm -rf umd && mkdir umd && browserify index.js -s EventEmitter3 -o umd/eventemitter3.js",
+        "minify": "uglifyjs umd/eventemitter3.js --source-map -cm -o umd/eventemitter3.min.js",
+        "benchmark": "find benchmarks/run -name '*.js' -exec benchmarks/start.sh {} \\;",
+        "test": "nyc --reporter=html --reporter=text mocha test/test.js",
+        "prepublishOnly": "npm run browserify && npm run minify",
+        "test-browser": "node test/browser.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/primus/eventemitter3.git"
+      },
+      "keywords": [
+        "EventEmitter",
+        "EventEmitter2",
+        "EventEmitter3",
+        "Events",
+        "addEventListener",
+        "addListener",
+        "emit",
+        "emits",
+        "emitter",
+        "event",
+        "once",
+        "pub/sub",
+        "publish",
+        "reactor",
+        "subscribe"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/primus/eventemitter3/issues"
+      },
+      "devDependencies": {
+        "assume": "~2.2.0",
+        "browserify": "~16.5.0",
+        "mocha": "~7.1.0",
+        "nyc": "~15.0.0",
+        "pre-commit": "~1.2.0",
+        "sauce-browsers": "~2.0.0",
+        "sauce-test": "~1.3.3",
+        "uglify-js": "~3.9.0"
+      },
+      "gitHead": "6ffdbbcd28a010d7c86239e5e339a38c1c963730",
+      "homepage": "https://github.com/primus/eventemitter3#readme",
+      "_id": "eventemitter3@4.0.2",
+      "_nodeVersion": "14.2.0",
+      "_npmVersion": "6.14.4",
+      "dist": {
+        "integrity": "sha512-c8VhEv9UueTlJtfhTx5mbt94l/N1nrfN8j3H1kgl/APEv/y4E95ny3lABssobpcX+4vy/fBtrdhWi44VxTSsog==",
+        "shasum": "08daca70c33379e6b8dddc56516671f2a4c0172f",
+        "tarball": "https://registry.npmjs.org/eventemitter3/-/eventemitter3-4.0.2.tgz",
+        "fileCount": 8,
+        "unpackedSize": 37800,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeuVgzCRA9TVsSAnZWagAA6m8P/0Esx0PohpCn1fvO/Rpk\nuzfAPzkx/zhDm0o3ltEGT2aVpdXe2aX9047u8kE0lynwdFUIiO5Td8I23Y9Q\ngM07wiyis66zVgsckJA5EucnnXGY7OWC1mV1ePMPj8mnxi1mL5bJ/ickNkrZ\npQF78lW13341IuYHTH35YzRNNxLQfcbiIQ4nFHEHUYUAi4NEiz1MC/x5OOxt\nHSI1/u6pMz4rPbHtar7rtQzCCOqVe4J5Q/d7Nx6Bx3z5EJ37TcTkp6vda4/P\nPwNB9fqszV7jHE2QZXEaw4u7mIaR973dzxm9W3YWALdslfQ80WpUv0eTtR+l\nEWtCCx/yrnQIFWmPzZ5JavpuWM5pNkV7KP5E/NWdg/AmOgmASh6gFuDJ+Rng\nj8voGKGo9zshJhIutl8ZMy2sS68ukMutDVrZ9Xl+JhIdPJGROhOeiyrL5xgG\nL+vf8xp3+eiSPfXj7/MLt0WJdueDRtyIhgKhis/KW2sAkumUVUaRfhWFk16g\nHf8arNLIDTAhtYBIjq+mUxIujsyQLayfLgoxgGWEjMcVWAeUIqEpwBEXbV9d\nQl7V1kR0/yV0t1JASDZxGQQWWk+ZwDyeRFDPjD82ejFFifCkWJLtVj/WjCGt\nVXTmPU9Sr1eS8mLVtCP+UFeWP048NxzN1L6zGyvcOe0cqqzhWjvn3RRX1OOb\nbn9N\r\n=AG2s\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "npm@3rd-Eden.com",
+          "name": "3rdeden"
+        },
+        {
+          "email": "luigipinca@gmail.com",
+          "name": "lpinca"
+        },
+        {
+          "email": "npm@3rd-Eden.com",
+          "name": "v1"
+        }
+      ],
+      "_npmUser": {
+        "name": "lpinca",
+        "email": "luigipinca@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eventemitter3_4.0.2_1589205042722_0.9263808447016044"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.0.3": {
+      "name": "eventemitter3",
+      "version": "4.0.3",
+      "description": "EventEmitter3 focuses on performance while maintaining a Node.js AND browser compatible interface.",
+      "main": "index.js",
+      "typings": "index.d.ts",
+      "scripts": {
+        "browserify": "rm -rf umd && mkdir umd && browserify index.js -s EventEmitter3 -o umd/eventemitter3.js",
+        "minify": "uglifyjs umd/eventemitter3.js --source-map -cm -o umd/eventemitter3.min.js",
+        "benchmark": "find benchmarks/run -name '*.js' -exec benchmarks/start.sh {} \\;",
+        "test": "nyc --reporter=html --reporter=text mocha test/test.js",
+        "prepublishOnly": "npm run browserify && npm run minify",
+        "test-browser": "node test/browser.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/primus/eventemitter3.git"
+      },
+      "keywords": [
+        "EventEmitter",
+        "EventEmitter2",
+        "EventEmitter3",
+        "Events",
+        "addEventListener",
+        "addListener",
+        "emit",
+        "emits",
+        "emitter",
+        "event",
+        "once",
+        "pub/sub",
+        "publish",
+        "reactor",
+        "subscribe"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/primus/eventemitter3/issues"
+      },
+      "devDependencies": {
+        "assume": "~2.2.0",
+        "browserify": "~16.5.0",
+        "mocha": "~7.1.0",
+        "nyc": "~15.0.0",
+        "pre-commit": "~1.2.0",
+        "sauce-browsers": "~2.0.0",
+        "sauce-test": "~1.3.3",
+        "uglify-js": "~3.9.0"
+      },
+      "gitHead": "5f89ad3d8e84ccd5da072a2f051997764cc9d3a9",
+      "homepage": "https://github.com/primus/eventemitter3#readme",
+      "_id": "eventemitter3@4.0.3",
+      "_nodeVersion": "14.2.0",
+      "_npmVersion": "6.14.4",
+      "dist": {
+        "integrity": "sha512-HyaFeyfTa18nYjft59vEPsvuq6ZVcrCC1rBw6Fx8ZV9NcuUITBNCnTOyr0tHHkkHn//d+lzhsL1YybgtLQ7lng==",
+        "shasum": "850b43083fdb36a246f03168f189e9054f90bdb4",
+        "tarball": "https://registry.npmjs.org/eventemitter3/-/eventemitter3-4.0.3.tgz",
+        "fileCount": 8,
+        "unpackedSize": 37763,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeuVw+CRA9TVsSAnZWagAA50wP+gKNMf0lYlrKcZqYTAqM\nVzZovbf/ptx0kxNrILEUzrXfGzhotzpDw5PClh3OxocoB0kDZrSVS2pn8qhG\nUHJngoaMvacN1HGtjgDWALAma/gA2swhGbe4voicnEzAINH0L0g3FCN3DN9R\nS757IjonbsLy4XhoOqWQ0NQSvDfe8eYmIuD+bmXzlAzt148LZ3ryP+yjT3q8\nqqahkBcO+9bJj1uKu8SuhoiNULNJe3sWRZ+4lGDdEKuAEPDoOLmeCiLlDFzK\nvH7UySLvdMQeJC4lGwpJwxOHKqRzcIp4ehF+M8wvPcCP0P9Ybek2tdVPQUP3\nG1Ffoh2dlx4EWuLAO6SjhxiC1im90XosQf1R+NBr21Ly8otILsTMMVAYmTTV\nQnwD1L8mFZ2MqqpNn2cb73LmleSYz2g/V4tJj3CQKWXrFuVNz5pwVIhhFCTh\nUXKq/CLqZ64LrAJoxTxRlrN/IfoHrmZYx9LDHGwNOKfJzBcF2nsW5DI25bar\neOZ4AXv5Bf+7Iq6nIFH1d7shbYAKZq70OdFUbfpcccDlERCuN7zPnDU4Xj/N\nn57uKTL8FnjUgGElFacSOPMRCoIx5QBoCuZ2G1Dv+WWecm+B6bgQjnuXd4//\n8tj40loPv3VZhRfdGPNYO4z0oNPml7w/L8foUAqE4dMkzRGh2F4TvkuD+iEb\nf7Zt\r\n=3/C3\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "npm@3rd-Eden.com",
+          "name": "3rdeden"
+        },
+        {
+          "email": "luigipinca@gmail.com",
+          "name": "lpinca"
+        },
+        {
+          "email": "npm@3rd-Eden.com",
+          "name": "v1"
+        }
+      ],
+      "_npmUser": {
+        "name": "lpinca",
+        "email": "luigipinca@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eventemitter3_4.0.3_1589206078038_0.7199565811605375"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.0.4": {
+      "name": "eventemitter3",
+      "version": "4.0.4",
+      "description": "EventEmitter3 focuses on performance while maintaining a Node.js AND browser compatible interface.",
+      "main": "index.js",
+      "typings": "index.d.ts",
+      "scripts": {
+        "browserify": "rm -rf umd && mkdir umd && browserify index.js -s EventEmitter3 -o umd/eventemitter3.js",
+        "minify": "uglifyjs umd/eventemitter3.js --source-map -cm -o umd/eventemitter3.min.js",
+        "benchmark": "find benchmarks/run -name '*.js' -exec benchmarks/start.sh {} \\;",
+        "test": "nyc --reporter=html --reporter=text mocha test/test.js",
+        "prepublishOnly": "npm run browserify && npm run minify",
+        "test-browser": "node test/browser.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/primus/eventemitter3.git"
+      },
+      "keywords": [
+        "EventEmitter",
+        "EventEmitter2",
+        "EventEmitter3",
+        "Events",
+        "addEventListener",
+        "addListener",
+        "emit",
+        "emits",
+        "emitter",
+        "event",
+        "once",
+        "pub/sub",
+        "publish",
+        "reactor",
+        "subscribe"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/primus/eventemitter3/issues"
+      },
+      "devDependencies": {
+        "assume": "~2.2.0",
+        "browserify": "~16.5.0",
+        "mocha": "~7.1.0",
+        "nyc": "~15.0.0",
+        "pre-commit": "~1.2.0",
+        "sauce-browsers": "~2.0.0",
+        "sauce-test": "~1.3.3",
+        "uglify-js": "~3.9.0"
+      },
+      "gitHead": "b73f1902ae9564b70c960e363a904118804f8392",
+      "homepage": "https://github.com/primus/eventemitter3#readme",
+      "_id": "eventemitter3@4.0.4",
+      "_nodeVersion": "14.2.0",
+      "_npmVersion": "6.14.4",
+      "dist": {
+        "integrity": "sha512-rlaVLnVxtxvoyLsQQFBx53YmXHDxRIzzTLbdfxqi4yocpSjAxXwkU0cScM5JgSKMqEhrZpnvQ2D9gjylR0AimQ==",
+        "shasum": "b5463ace635a083d018bdc7c917b4c5f10a85384",
+        "tarball": "https://registry.npmjs.org/eventemitter3/-/eventemitter3-4.0.4.tgz",
+        "fileCount": 8,
+        "unpackedSize": 37780,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeuojlCRA9TVsSAnZWagAAUQIP/ijIqEN/78xdqiV6NdY6\ngf69c1ptPoiBIQbTJLQZiKd4CxmPNp0yXotTu30rkIfEkfvsmDwZII2HLZZG\nvd1NsS5kG7biTQk0fa2G16CImFLwoBsxk1KZrbmu/X63GtdCfmCSmCVKu/Sz\nIUkPTeQP8NoPKDs0ZWK32XgZ3qvRItmA/lQfj+PwnWqW3Vw4PqDJIWUtSAEL\nWmNaZreCIzElYX3pzJE3ccBnx011QnvXiEEMe2EgBrHl1qDfdrgLTVxVfjLj\nQUW9wVI6kh+irOKjNdYHbWtygJmX74As2F3T4XAHgqOpSgxbFZycxeUqALgQ\nsSMOkcsdWcXwX3sCOQ+sV7GB7oJk2S7YfLmFbfqYdepTeytSe7aftbD+zbC1\nbSF+mxqbXBNJjvB2XprWTd8NHgiDksyDNE2VWHNSBacN4bQXYtnc3gNerd4k\neGwl3n6j2FyY6cyH24eE5BtqouWJvy/e8IHgbS4wLmbzJ1x9cwh0bEsuJOzf\nEkAzED+MephrBNaRBvjDGdwrPFRsZ5QzFR3BxoQ4Uu7Usu0jQeupCzUs/+yY\nE7pMd+etJ6a9XgFBjj3um891aE1qTpjd2iERyQqldIQAnf7O69lq+BTlJIqF\ntuAEbhQnAZd+rcCZrUYCk4Ls+W4TCj9L0y4pqzT1ggk/crUxl/kkWxFuhfGw\nKNh4\r\n=rUKI\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "npm@3rd-Eden.com",
+          "name": "3rdeden"
+        },
+        {
+          "email": "luigipinca@gmail.com",
+          "name": "lpinca"
+        },
+        {
+          "email": "npm@3rd-Eden.com",
+          "name": "v1"
+        }
+      ],
+      "_npmUser": {
+        "name": "lpinca",
+        "email": "luigipinca@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eventemitter3_4.0.4_1589283044478_0.019940923541620803"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.0.5": {
+      "name": "eventemitter3",
+      "version": "4.0.5",
+      "description": "EventEmitter3 focuses on performance while maintaining a Node.js AND browser compatible interface.",
+      "main": "index.js",
+      "typings": "index.d.ts",
+      "scripts": {
+        "browserify": "rm -rf umd && mkdir umd && browserify index.js -s EventEmitter3 -o umd/eventemitter3.js",
+        "minify": "uglifyjs umd/eventemitter3.js --source-map -cm -o umd/eventemitter3.min.js",
+        "benchmark": "find benchmarks/run -name '*.js' -exec benchmarks/start.sh {} \\;",
+        "test": "nyc --reporter=html --reporter=text mocha test/test.js",
+        "prepublishOnly": "npm run browserify && npm run minify",
+        "test-browser": "node test/browser.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/primus/eventemitter3.git"
+      },
+      "keywords": [
+        "EventEmitter",
+        "EventEmitter2",
+        "EventEmitter3",
+        "Events",
+        "addEventListener",
+        "addListener",
+        "emit",
+        "emits",
+        "emitter",
+        "event",
+        "once",
+        "pub/sub",
+        "publish",
+        "reactor",
+        "subscribe"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/primus/eventemitter3/issues"
+      },
+      "devDependencies": {
+        "assume": "^2.2.0",
+        "browserify": "^16.5.0",
+        "mocha": "^8.0.1",
+        "nyc": "^15.1.0",
+        "pre-commit": "^1.2.0",
+        "sauce-browsers": "^2.0.0",
+        "sauce-test": "^1.3.3",
+        "uglify-js": "^3.9.0"
+      },
+      "gitHead": "47251a0649bec2e030ff6f11d056713a31985af9",
+      "homepage": "https://github.com/primus/eventemitter3#readme",
+      "_id": "eventemitter3@4.0.5",
+      "_nodeVersion": "14.8.0",
+      "_npmVersion": "6.14.7",
+      "dist": {
+        "integrity": "sha512-QR0rh0YiPuxuDQ6+T9GAO/xWTExXpxIes1Nl9RykNGTnE1HJmkuEfxJH9cubjIOQZ/GH4qNBR4u8VSHaKiWs4g==",
+        "shasum": "51d81e4f1ccc8311a04f0c20121ea824377ea6d9",
+        "tarball": "https://registry.npmjs.org/eventemitter3/-/eventemitter3-4.0.5.tgz",
+        "fileCount": 8,
+        "unpackedSize": 37792,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfQOOVCRA9TVsSAnZWagAAphoQAJtDutCAL8K6VV7UZOwG\nkopJjm9XmxHkAKx/ENe0HG0YMkasPnoHY1kMoKlvJbOjK6algYi4J2Co+ACK\n0Dx4D6G7asPwN0DOQTaJ7O876Apiz+elXlBH47Syh35xgeUVMel9GwwttXx1\nYIfmYSfEyM9R16aFowT7afWMY4N+s/rcgH+zMw/k6h7PrF+wKKGBhBMkS5FN\nyfJ0Arir2WBSn5lmVms/oX3ZOY+kBX90PE491hVFs6em1HjS8fTLt87Vmw+b\n0t49B7g8jpiOzd9BHOwI7lAvy+Q8y9X40abYen/a6S20R0OdBAn8+TcDjR2c\n+jlFJLI3meJkdaCzHv7vQk/TDylHbFk5Ej6foofgKL/2wO2tevU2c1dIJoZv\ny+W+v3aKFFWr4SNqJvLJP83u60xck/Ij3uM2utHZ2aIU2k4u07PxIFcLWb8n\nP4rYVUgKHZzNo2AnbhYETvfHWg8x031gPEBquEY13ajRQUCdhU/HgGhqQiE1\ndPMdc94whJyGTe9bMSUi2YIoO7tBnJuYKTjcVeg+XR8yqSRQ0+HZtH7wovDd\n5nqw/6+SNmhtDBgAMDtCXScK+WFzxeNgR8zUKZ8gaLknI4swQiV/KqKtVSSD\nxg8Hw5Xa2mMMq3Z+9r9NaHXX8Lkumsx+rn+ZHZU79vbnzGCxbkM8LpSKKQlN\nexQq\r\n=8Mou\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "npm@3rd-Eden.com",
+          "name": "3rdeden"
+        },
+        {
+          "email": "luigipinca@gmail.com",
+          "name": "lpinca"
+        },
+        {
+          "email": "npm@3rd-Eden.com",
+          "name": "v1"
+        }
+      ],
+      "_npmUser": {
+        "name": "lpinca",
+        "email": "luigipinca@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eventemitter3_4.0.5_1598088084558_0.6499614230865858"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.0.6": {
+      "name": "eventemitter3",
+      "version": "4.0.6",
+      "description": "EventEmitter3 focuses on performance while maintaining a Node.js AND browser compatible interface.",
+      "main": "index.js",
+      "typings": "index.d.ts",
+      "scripts": {
+        "browserify": "rm -rf umd && mkdir umd && browserify index.js -s EventEmitter3 -o umd/eventemitter3.js",
+        "minify": "uglifyjs umd/eventemitter3.js --source-map -cm -o umd/eventemitter3.min.js",
+        "benchmark": "find benchmarks/run -name '*.js' -exec benchmarks/start.sh {} \\;",
+        "test": "nyc --reporter=html --reporter=text mocha test/test.js",
+        "prepublishOnly": "npm run browserify && npm run minify",
+        "test-browser": "node test/browser.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/primus/eventemitter3.git"
+      },
+      "keywords": [
+        "EventEmitter",
+        "EventEmitter2",
+        "EventEmitter3",
+        "Events",
+        "addEventListener",
+        "addListener",
+        "emit",
+        "emits",
+        "emitter",
+        "event",
+        "once",
+        "pub/sub",
+        "publish",
+        "reactor",
+        "subscribe"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/primus/eventemitter3/issues"
+      },
+      "devDependencies": {
+        "assume": "^2.2.0",
+        "browserify": "^16.5.0",
+        "mocha": "^8.0.1",
+        "nyc": "^15.1.0",
+        "pre-commit": "^1.2.0",
+        "sauce-browsers": "^2.0.0",
+        "sauce-test": "^1.3.3",
+        "uglify-js": "^3.9.0"
+      },
+      "gitHead": "38de307205e78c574a53379b71f53058d45236c8",
+      "homepage": "https://github.com/primus/eventemitter3#readme",
+      "_id": "eventemitter3@4.0.6",
+      "_nodeVersion": "14.8.0",
+      "_npmVersion": "6.14.7",
+      "dist": {
+        "integrity": "sha512-s3GJL04SQoM+gn2c14oyqxvZ3Pcq7cduSDqy3sBFXx6UPSUmgVYwQM9zwkTn9je0lrfg0gHEwR42pF3Q2dCQkQ==",
+        "shasum": "1258f6fa51b4908aadc2cd624fcd6e64f99f49d6",
+        "tarball": "https://registry.npmjs.org/eventemitter3/-/eventemitter3-4.0.6.tgz",
+        "fileCount": 8,
+        "unpackedSize": 37849,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfRUR+CRA9TVsSAnZWagAAaaQP/1kEhIVrZcYvKC8P9QkH\njsuUiWdMOlI1KlXmkN4WaLSWY2A3w7hK2I7lYFe1e86LW8w63SERxO0+1LRc\nWIQGVSK7GAA3rPsva/OMk3pk3vZJGQSv1g141gDuZxckspVzvk/p4YRyiBTY\nloHeTvQW1D8iOrsBXnKlZ4uq1sT5EqvG3RbCPa0zLrYSvcfiNOKrOxxSjbxR\nFFF2Ewjoutp9BJtcfbpJnYjFJZDmNohO5ie6+NFK1gCwzKJqqyx524IllJC4\nBkkym2WRiRvHMUhwTQkmGILfiupTxjDvl4XqAh1BabKh1GO8/2XDGgBv8jHu\nwm4joCU+nFfFFudA/AjRhxrRUAsXZUcL3GGa3yC0mrdIqUQflKoT3BjoYm9B\n2/IN64RX5Vtc1uU7aQQr2Pm+DxYAZpIZHmcAveR/BLGDTg43HXyc7MHMbgD/\ng8PCberJty37kqYMGidw69d3sl7OGP/mtYrswTL97dOCJwDD9iB72zGGefG9\n02qQttBNSzRbYQGzwxqNeML04/oedAbIZnEVPY1Fc3A1SGAtbarHSTmStV9P\nWguN2ibRF+7f3FnDxULRSVmZSH3Rk7rkikSkungEKMozLuFUt8LwwM4+rriL\nPDcSQUdFT+nEv0vXtn4i8qnKRD9RRFEJDOfSR/zonk+WKF+MCYLRRXszi9Mr\nwH5o\r\n=Q3kF\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "npm@3rd-Eden.com",
+          "name": "3rdeden"
+        },
+        {
+          "email": "luigipinca@gmail.com",
+          "name": "lpinca"
+        },
+        {
+          "email": "npm@3rd-Eden.com",
+          "name": "v1"
+        }
+      ],
+      "_npmUser": {
+        "name": "lpinca",
+        "email": "luigipinca@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eventemitter3_4.0.6_1598375037581_0.9154824044601892"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.0.7": {
+      "name": "eventemitter3",
+      "version": "4.0.7",
+      "description": "EventEmitter3 focuses on performance while maintaining a Node.js AND browser compatible interface.",
+      "main": "index.js",
+      "typings": "index.d.ts",
+      "scripts": {
+        "browserify": "rm -rf umd && mkdir umd && browserify index.js -s EventEmitter3 -o umd/eventemitter3.js",
+        "minify": "uglifyjs umd/eventemitter3.js --source-map -cm -o umd/eventemitter3.min.js",
+        "benchmark": "find benchmarks/run -name '*.js' -exec benchmarks/start.sh {} \\;",
+        "test": "nyc --reporter=html --reporter=text mocha test/test.js",
+        "prepublishOnly": "npm run browserify && npm run minify",
+        "test-browser": "node test/browser.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/primus/eventemitter3.git"
+      },
+      "keywords": [
+        "EventEmitter",
+        "EventEmitter2",
+        "EventEmitter3",
+        "Events",
+        "addEventListener",
+        "addListener",
+        "emit",
+        "emits",
+        "emitter",
+        "event",
+        "once",
+        "pub/sub",
+        "publish",
+        "reactor",
+        "subscribe"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/primus/eventemitter3/issues"
+      },
+      "devDependencies": {
+        "assume": "^2.2.0",
+        "browserify": "^16.5.0",
+        "mocha": "^8.0.1",
+        "nyc": "^15.1.0",
+        "pre-commit": "^1.2.0",
+        "sauce-browsers": "^2.0.0",
+        "sauce-test": "^1.3.3",
+        "uglify-js": "^3.9.0"
+      },
+      "gitHead": "00ac01a329b7f2fb29058b6a3aff6850ac304f12",
+      "homepage": "https://github.com/primus/eventemitter3#readme",
+      "_id": "eventemitter3@4.0.7",
+      "_nodeVersion": "14.8.0",
+      "_npmVersion": "6.14.7",
+      "dist": {
+        "integrity": "sha512-8guHBZCwKnFhYdHr2ysuRWErTwhoN2X8XELRlrRwpmfeY2jjuUN4taQMsULKUVo1K4DvZl+0pgfyoysHxvmvEw==",
+        "shasum": "2de9b68f6528d5644ef5c59526a1b4a07306169f",
+        "tarball": "https://registry.npmjs.org/eventemitter3/-/eventemitter3-4.0.7.tgz",
+        "fileCount": 8,
+        "unpackedSize": 37967,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfR3iVCRA9TVsSAnZWagAA+1YP/RN7vVEWHMzDnY73iQbq\n092QpDsL71RWTTM7Gezwv2L1ANE+GXLA1ZuVZ7LpFMOwkvYv4ep7TuUbVL3I\nuXq60DSql7VVzKhAPL5omm9XaWwbPk7RzuNtstl4u+XcOW+QUEf87JT4SIz/\nZtNKbfvvHArGre5BY1RP2WWmNn4YnPOuGYEehoUeI1l72Ni4uAj0HIJFPak/\nh5SbLshoewiHrYH7IchgXR+gjQAgMeRoLqeGIgEFDl78hejNFZ1FR21B69LM\n9ApOc1I6ghZy04QjfOYlliCgt526fkhlingzjQe5M8czBNvrrpz6rQMZPkHy\nYHLcuEqaoAZW+gK6hlBjhGRHqTgTuLCwn9DfB02YaeFg3InEdzFgnOhv9QiE\nQR146zowzAStPvIPPX+Yb6Ip9M1lIeTwVGLjqW8zkTlQ/wYJU+nUnArMYi6r\nfVesF2Ud3JPmSWLcgiwlhc8Nntm0poBF1Vut/Cyo67D0MLq2qqf9VZ8fFxuM\ngTmuDylKrhHDzGrW9rCdz2v4mP8o1s8D51z1MVUeBaiUS2xTP9r2ROE5bDRN\nk04pbQgawdAxWoFnHO0AATBZBxsvs5WQqCitv+o/4UyTxHyPnJvR9vh+q4q/\nwtrW3TXZsUSzYu2LMTFD2XUYjnmmglTjg/yIMQe/vyN1/hFn4els9ADvzzc7\nnqbC\r\n=x1qZ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "npm@3rd-Eden.com",
+          "name": "3rdeden"
+        },
+        {
+          "email": "luigipinca@gmail.com",
+          "name": "lpinca"
+        },
+        {
+          "email": "npm@3rd-Eden.com",
+          "name": "v1"
+        }
+      ],
+      "_npmUser": {
+        "name": "lpinca",
+        "email": "luigipinca@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eventemitter3_4.0.7_1598519444845_0.23416295962222833"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# EventEmitter3\n\n[![Version npm](https://img.shields.io/npm/v/eventemitter3.svg?style=flat-square)](https://www.npmjs.com/package/eventemitter3)[![Build Status](https://img.shields.io/travis/primus/eventemitter3/master.svg?style=flat-square)](https://travis-ci.org/primus/eventemitter3)[![Dependencies](https://img.shields.io/david/primus/eventemitter3.svg?style=flat-square)](https://david-dm.org/primus/eventemitter3)[![Coverage Status](https://img.shields.io/coveralls/primus/eventemitter3/master.svg?style=flat-square)](https://coveralls.io/r/primus/eventemitter3?branch=master)[![IRC channel](https://img.shields.io/badge/IRC-irc.freenode.net%23primus-00a8ff.svg?style=flat-square)](https://webchat.freenode.net/?channels=primus)\n\n[![Sauce Test Status](https://saucelabs.com/browser-matrix/eventemitter3.svg)](https://saucelabs.com/u/eventemitter3)\n\nEventEmitter3 is a high performance EventEmitter. It has been micro-optimized\nfor various of code paths making this, one of, if not the fastest EventEmitter\navailable for Node.js and browsers. The module is API compatible with the\nEventEmitter that ships by default with Node.js but there are some slight\ndifferences:\n\n- Domain support has been removed.\n- We do not `throw` an error when you emit an `error` event and nobody is\n  listening.\n- The `newListener` and `removeListener` events have been removed as they\n  are useful only in some uncommon use-cases.\n- The `setMaxListeners`, `getMaxListeners`, `prependListener` and\n  `prependOnceListener` methods are not available.\n- Support for custom context for events so there is no need to use `fn.bind`.\n- The `removeListener` method removes all matching listeners, not only the\n  first.\n\nIt's a drop in replacement for existing EventEmitters, but just faster. Free\nperformance, who wouldn't want that? The EventEmitter is written in EcmaScript 3\nso it will work in the oldest browsers and node versions that you need to\nsupport.\n\n## Installation\n\n```bash\n$ npm install --save eventemitter3\n```\n\n## CDN\n\nRecommended CDN:\n\n```text\nhttps://unpkg.com/eventemitter3@latest/umd/eventemitter3.min.js\n```\n\n## Usage\n\nAfter installation the only thing you need to do is require the module:\n\n```js\nvar EventEmitter = require('eventemitter3');\n```\n\nAnd you're ready to create your own EventEmitter instances. For the API\ndocumentation, please follow the official Node.js documentation:\n\nhttp://nodejs.org/api/events.html\n\n### Contextual emits\n\nWe've upgraded the API of the `EventEmitter.on`, `EventEmitter.once` and\n`EventEmitter.removeListener` to accept an extra argument which is the `context`\nor `this` value that should be set for the emitted events. This means you no\nlonger have the overhead of an event that required `fn.bind` in order to get a\ncustom `this` value.\n\n```js\nvar EE = new EventEmitter()\n  , context = { foo: 'bar' };\n\nfunction emitted() {\n  console.log(this === context); // true\n}\n\nEE.once('event-name', emitted, context);\nEE.on('another-event', emitted, context);\nEE.removeListener('another-event', emitted, context);\n```\n\n### Tests and benchmarks\n\nThis module is well tested. You can run:\n\n- `npm test` to run the tests under Node.js.\n- `npm run test-browser` to run the tests in real browsers via Sauce Labs.\n\nWe also have a set of benchmarks to compare EventEmitter3 with some available\nalternatives. To run the benchmarks run `npm run benchmark`.\n\nTests and benchmarks are not included in the npm package. If you want to play\nwith them you have to clone the GitHub repository.\nNote that you will have to run an additional `npm i` in the benchmarks folder\nbefore `npm run benchmark`.\n\n## License\n\n[MIT](LICENSE)\n",
+  "maintainers": [
+    {
+      "email": "npm@3rd-Eden.com",
+      "name": "3rdeden"
+    },
+    {
+      "email": "luigipinca@gmail.com",
+      "name": "lpinca"
+    },
+    {
+      "email": "npm@3rd-Eden.com",
+      "name": "v1"
+    }
+  ],
+  "time": {
+    "modified": "2020-08-27T09:10:47.223Z",
+    "created": "2013-09-25T19:19:08.536Z",
+    "0.0.0": "2013-09-25T19:19:12.021Z",
+    "0.0.1": "2013-10-09T15:36:58.698Z",
+    "0.1.0": "2014-01-13T20:24:52.761Z",
+    "0.1.1": "2014-01-15T21:17:43.720Z",
+    "0.1.2": "2014-04-09T10:59:42.145Z",
+    "0.1.3": "2014-08-21T07:37:37.939Z",
+    "0.1.4": "2014-08-21T09:02:10.457Z",
+    "0.1.5": "2014-08-22T07:12:30.643Z",
+    "0.1.6": "2014-11-17T19:08:04.989Z",
+    "1.0.0": "2015-04-22T08:53:23.576Z",
+    "1.0.1": "2015-04-22T13:39:04.428Z",
+    "1.0.2": "2015-05-07T08:32:32.355Z",
+    "1.0.3": "2015-05-12T08:44:05.088Z",
+    "1.1.0": "2015-05-12T10:43:40.461Z",
+    "1.1.1": "2015-06-14T14:09:40.824Z",
+    "1.2.0": "2016-03-16T17:17:43.950Z",
+    "2.0.0": "2016-09-09T12:19:40.852Z",
+    "2.0.1": "2016-09-27T06:59:08.929Z",
+    "2.0.2": "2016-09-30T06:23:12.675Z",
+    "2.0.3": "2017-03-31T14:51:09.611Z",
+    "3.0.0": "2017-11-29T17:24:06.788Z",
+    "3.0.1": "2018-02-07T07:57:37.228Z",
+    "3.1.0": "2018-04-25T19:53:53.968Z",
+    "3.1.1": "2019-04-29T16:23:08.792Z",
+    "3.1.2": "2019-04-30T05:03:43.245Z",
+    "4.0.0": "2019-06-19T13:27:31.801Z",
+    "4.0.1": "2020-05-10T17:55:13.351Z",
+    "4.0.2": "2020-05-11T13:50:42.859Z",
+    "4.0.3": "2020-05-11T14:07:58.155Z",
+    "4.0.4": "2020-05-12T11:30:44.612Z",
+    "4.0.5": "2020-08-22T09:21:24.706Z",
+    "4.0.6": "2020-08-25T17:03:57.720Z",
+    "4.0.7": "2020-08-27T09:10:44.974Z"
+  },
+  "author": {
+    "name": "Arnout Kazemier"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/primus/eventemitter3.git"
+  },
+  "homepage": "https://github.com/primus/eventemitter3#readme",
+  "keywords": [
+    "EventEmitter",
+    "EventEmitter2",
+    "EventEmitter3",
+    "Events",
+    "addEventListener",
+    "addListener",
+    "emit",
+    "emits",
+    "emitter",
+    "event",
+    "once",
+    "pub/sub",
+    "publish",
+    "reactor",
+    "subscribe"
+  ],
+  "bugs": {
+    "url": "https://github.com/primus/eventemitter3/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "users": {
+    "V1": true,
+    "borjes": true,
+    "yxqme": true,
+    "koulmomo": true,
+    "lpinca": true,
+    "mikemimik": true,
+    "nickleefly": true,
+    "rochejul": true,
+    "wangnan0610": true,
+    "ziflex": true,
+    "hifaraz": true,
+    "shanewholloway": true,
+    "codebyren": true,
+    "largepuma": true,
+    "mojaray2k": true,
+    "staydan": true,
+    "rocket0191": true,
+    "lestad": true,
+    "zhongyuan": true,
+    "brend": true,
+    "kontrax": true,
+    "xyyjk": true,
+    "oleg_tsyba": true,
+    "arnold-almeida": true,
+    "nbuchanan": true,
+    "travis346": true,
+    "drmercer": true,
+    "dwqs": true,
+    "cedx": true,
+    "addamx": true,
+    "perevezentsev": true,
+    "nilz3ro": true,
+    "r_java": true,
+    "jarvis1024": true,
+    "black-black-cat": true,
+    "heartnett": true,
+    "cr8tiv": true,
+    "arcticicestudio": true,
+    "sinahwz": true,
+    "dandrewgarvin": true
+  }
+}

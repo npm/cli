@@ -1,0 +1,1019 @@
+{
+  "_id": "has-value",
+  "_rev": "15-52d84b3bf86abf1d6622b87eea937ccf",
+  "name": "has-value",
+  "description": "Returns true if a value exists, false if empty. Works with deeply nested values using object paths.",
+  "dist-tags": {
+    "latest": "2.0.2"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "has-value",
+      "description": "Returns true if a value exists, false if empty. Works for booleans, functions, numbers, strings, nulls, objects and arrays. Other libs do this, but I needed one that would optionally _not_ treat zero as empty. Also, this works with booleans and other valu",
+      "version": "0.1.0",
+      "homepage": "https://github.com/jonschlinkert/has-value",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/has-value.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/has-value/issues"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://github.com/jonschlinkert/has-value/blob/master/LICENSE-MIT"
+        }
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "devDependencies": {
+        "mocha": "*",
+        "should": "^4.0.4",
+        "verb": ">= 0.2.6"
+      },
+      "keywords": [
+        "array",
+        "boolean",
+        "empty",
+        "find",
+        "function",
+        "has",
+        "hasOwn",
+        "javascript",
+        "js",
+        "key",
+        "keys",
+        "node.js",
+        "null",
+        "number",
+        "object",
+        "properties",
+        "property",
+        "string",
+        "type",
+        "util",
+        "utilities",
+        "utility",
+        "value"
+      ],
+      "_id": "has-value@0.1.0",
+      "_shasum": "43d36b0019fce4f0106f77ced58fcbd9c82988c3",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "43d36b0019fce4f0106f77ced58fcbd9c82988c3",
+        "tarball": "https://registry.npmjs.org/has-value/-/has-value-0.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.0": {
+      "name": "has-value",
+      "description": "Returns true if a value exists, false if empty. Works with deeply nested values using object paths.",
+      "version": "0.2.0",
+      "homepage": "https://github.com/jonschlinkert/has-value",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/has-value.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/has-value/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/has-value/blob/master/LICENSE"
+      },
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "get-value": "^1.1.1",
+        "has-values": "^0.1.2"
+      },
+      "devDependencies": {
+        "mocha": "*",
+        "should": "^4.0.4"
+      },
+      "keywords": [
+        "array",
+        "boolean",
+        "empty",
+        "find",
+        "function",
+        "has",
+        "hasOwn",
+        "javascript",
+        "js",
+        "key",
+        "keys",
+        "node.js",
+        "null",
+        "number",
+        "object",
+        "properties",
+        "property",
+        "string",
+        "type",
+        "util",
+        "utilities",
+        "utility",
+        "value"
+      ],
+      "gitHead": "0e50bd07b986ac899a5f72e1428f1641f7bf6030",
+      "_id": "has-value@0.2.0",
+      "_shasum": "e4b036874a791eb6b80ab36d8ba5427c7319eac2",
+      "_from": ".",
+      "_npmVersion": "2.7.1",
+      "_nodeVersion": "1.6.2",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "e4b036874a791eb6b80ab36d8ba5427c7319eac2",
+        "tarball": "https://registry.npmjs.org/has-value/-/has-value-0.2.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.1": {
+      "name": "has-value",
+      "description": "Returns true if a value exists, false if empty. Works with deeply nested values using object paths.",
+      "version": "0.2.1",
+      "homepage": "https://github.com/jonschlinkert/has-value",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/has-value.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/has-value/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "get-value": "^2.0.0",
+        "has-values": "^0.1.3"
+      },
+      "devDependencies": {
+        "mocha": "*",
+        "should": "^4.0.4"
+      },
+      "keywords": [
+        "array",
+        "boolean",
+        "empty",
+        "find",
+        "function",
+        "has",
+        "hasOwn",
+        "javascript",
+        "js",
+        "key",
+        "keys",
+        "node.js",
+        "null",
+        "number",
+        "object",
+        "properties",
+        "property",
+        "string",
+        "type",
+        "util",
+        "utilities",
+        "utility",
+        "value"
+      ],
+      "verb": {
+        "related": {
+          "description": "",
+          "list": [
+            "get-value",
+            "set-value",
+            "get-property",
+            "get-object"
+          ]
+        }
+      },
+      "gitHead": "0e50bd07b986ac899a5f72e1428f1641f7bf6030",
+      "_id": "has-value@0.2.1",
+      "_shasum": "dbb14da140d429a8bcd4f089bc190f7db30bef70",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.1",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "dbb14da140d429a8bcd4f089bc190f7db30bef70",
+        "tarball": "https://registry.npmjs.org/has-value/-/has-value-0.2.1.tgz"
+      },
+      "directories": {}
+    },
+    "0.3.0": {
+      "name": "has-value",
+      "description": "Returns true if a value exists, false if empty. Works with deeply nested values using object paths.",
+      "version": "0.3.0",
+      "homepage": "https://github.com/jonschlinkert/has-value",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/has-value.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/has-value/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "get-value": "^2.0.0",
+        "has-values": "^0.1.3",
+        "isobject": "^2.0.0"
+      },
+      "devDependencies": {
+        "mocha": "*"
+      },
+      "keywords": [
+        "array",
+        "boolean",
+        "empty",
+        "find",
+        "function",
+        "has",
+        "hasOwn",
+        "javascript",
+        "js",
+        "key",
+        "keys",
+        "node.js",
+        "null",
+        "number",
+        "object",
+        "properties",
+        "property",
+        "string",
+        "type",
+        "util",
+        "utilities",
+        "utility",
+        "value"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "get-value",
+            "set-value",
+            "get-property",
+            "get-object"
+          ],
+          "description": ""
+        }
+      },
+      "gitHead": "7db732eb679e22fd058b64f70755389ed3b1cbb4",
+      "_id": "has-value@0.3.0",
+      "_shasum": "e63297a4d45ca7c8647337e1ba7be9f18e27ee3c",
+      "_from": ".",
+      "_npmVersion": "3.3.6",
+      "_nodeVersion": "5.0.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "e63297a4d45ca7c8647337e1ba7be9f18e27ee3c",
+        "tarball": "https://registry.npmjs.org/has-value/-/has-value-0.3.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.3.1": {
+      "name": "has-value",
+      "version": "0.3.1",
+      "description": "Returns true if a value exists, false if empty. Works with deeply nested values using object paths.",
+      "homepage": "https://github.com/jonschlinkert/has-value",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/has-value.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/has-value/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "get-value": "^2.0.3",
+        "has-values": "^0.1.4",
+        "isobject": "^2.0.0"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^0.1.7",
+        "mocha": "^2.4.5"
+      },
+      "keywords": [
+        "array",
+        "boolean",
+        "empty",
+        "find",
+        "function",
+        "has",
+        "hasOwn",
+        "javascript",
+        "js",
+        "key",
+        "keys",
+        "node.js",
+        "null",
+        "number",
+        "object",
+        "properties",
+        "property",
+        "string",
+        "type",
+        "util",
+        "utilities",
+        "utility",
+        "value"
+      ],
+      "verb": {
+        "run": true,
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "get-object",
+            "get-property",
+            "get-value",
+            "set-value"
+          ]
+        },
+        "reflinks": [
+          "verb"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "adecb27b13b7e99688694e228a946e6e635fcc64",
+      "_id": "has-value@0.3.1",
+      "_shasum": "7b1f58bada62ca827ec0a2078025654845995e1f",
+      "_from": ".",
+      "_npmVersion": "3.6.0",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "7b1f58bada62ca827ec0a2078025654845995e1f",
+        "tarball": "https://registry.npmjs.org/has-value/-/has-value-0.3.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/has-value-0.3.1.tgz_1459091935592_0.006853065919131041"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "has-value",
+      "description": "Returns true if a value exists, false if empty. Works with deeply nested values using object paths.",
+      "version": "1.0.0",
+      "homepage": "https://github.com/jonschlinkert/has-value",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "name": "Ryan M Harrison",
+          "url": "https://linkedin.com/in/harrisonrm"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/has-value.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/has-value/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "get-value": "^2.0.6",
+        "has-values": "^1.0.0",
+        "isobject": "^3.0.0"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^0.1.12",
+        "mocha": "^3.4.1"
+      },
+      "keywords": [
+        "array",
+        "boolean",
+        "empty",
+        "find",
+        "function",
+        "has",
+        "hasOwn",
+        "javascript",
+        "js",
+        "key",
+        "keys",
+        "node.js",
+        "null",
+        "number",
+        "object",
+        "properties",
+        "property",
+        "string",
+        "type",
+        "util",
+        "utilities",
+        "utility",
+        "value"
+      ],
+      "verb": {
+        "run": true,
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "define-property",
+            "get-value",
+            "set-value",
+            "unset-value"
+          ]
+        },
+        "reflinks": [],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "61b5671a48ac40206eb33b4ea75dc2507168d687",
+      "_id": "has-value@1.0.0",
+      "_shasum": "18b281da585b1c5c51def24c930ed29a0be6b177",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "7.7.3",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "18b281da585b1c5c51def24c930ed29a0be6b177",
+        "tarball": "https://registry.npmjs.org/has-value/-/has-value-1.0.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/has-value-1.0.0.tgz_1495221082986_0.06325704883784056"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "has-value",
+      "description": "Returns true if a value exists, false if empty. Works with deeply nested values using object paths.",
+      "version": "2.0.0",
+      "homepage": "https://github.com/jonschlinkert/has-value",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "name": "Ryan M Harrison",
+          "url": "https://linkedin.com/in/harrisonrm"
+        },
+        {
+          "url": "https://github.com/wtgtybhertgeghgtwtg"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/has-value.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/has-value/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "get-value": "^3.0.0",
+        "has-values": "^2.0.0"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^1.0.0",
+        "mocha": "^3.5.3"
+      },
+      "keywords": [
+        "array",
+        "boolean",
+        "check",
+        "deep",
+        "empty",
+        "function",
+        "has",
+        "hasOwn",
+        "is-empty",
+        "nested",
+        "null",
+        "number",
+        "object",
+        "object path",
+        "properties",
+        "property",
+        "string",
+        "type",
+        "value"
+      ],
+      "verb": {
+        "run": true,
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "define-property",
+            "get-value",
+            "set-value",
+            "unset-value"
+          ]
+        },
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "b7f8d300f40fb4d5502a2b9b9663d6149f061f35",
+      "_id": "has-value@2.0.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.1.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "integrity": "sha512-xtebC5A+YFrlfEIQHYBflcgECx375VotcuNjT8+U0zQDNSFiUe/zA3FX9gSdx9CwoNBFeSL9icj2V4Ps0oNvHg==",
+        "shasum": "aae2c3f2c1001313c382948a9baa77f3b28ef9be",
+        "tarball": "https://registry.npmjs.org/has-value/-/has-value-2.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/has-value-2.0.0.tgz_1517360751813_0.23941618809476495"
+      },
+      "directories": {}
+    },
+    "2.0.1": {
+      "name": "has-value",
+      "description": "Returns true if a value exists, false if empty. Works with deeply nested values using object paths.",
+      "version": "2.0.1",
+      "homepage": "https://github.com/jonschlinkert/has-value",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "name": "Ryan M Harrison",
+          "url": "https://linkedin.com/in/harrisonrm"
+        },
+        {
+          "url": "https://github.com/wtgtybhertgeghgtwtg"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/has-value.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/has-value/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "get-value": "^3.0.0",
+        "has-values": "^2.0.0"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^1.0.0",
+        "mocha": "^3.5.3"
+      },
+      "keywords": [
+        "array",
+        "boolean",
+        "check",
+        "deep",
+        "empty",
+        "function",
+        "has",
+        "hasOwn",
+        "is-empty",
+        "nested",
+        "null",
+        "number",
+        "object",
+        "object path",
+        "properties",
+        "property",
+        "string",
+        "type",
+        "value"
+      ],
+      "verb": {
+        "run": true,
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "define-property",
+            "get-value",
+            "set-value",
+            "unset-value"
+          ]
+        },
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "b2385563add4bfd7d0ebf4496adb23ec5459175a",
+      "_id": "has-value@2.0.1",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.1.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "integrity": "sha512-oCDVCcqagvg7sJFMuzwZjLaWPey4yF1NjSZ3Ch+ONuxDL+tdmTSIsNZZyTjZxPzef3FIB0YDeLqn7XUyzwcg2g==",
+        "shasum": "749e1e53104af6b73554e079c1871991be1a7895",
+        "tarball": "https://registry.npmjs.org/has-value/-/has-value-2.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/has-value-2.0.1.tgz_1517360804545_0.8370905774645507"
+      },
+      "directories": {}
+    },
+    "2.0.2": {
+      "name": "has-value",
+      "description": "Returns true if a value exists, false if empty. Works with deeply nested values using object paths.",
+      "version": "2.0.2",
+      "homepage": "https://github.com/jonschlinkert/has-value",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "name": "Ryan M Harrison",
+          "url": "https://linkedin.com/in/harrisonrm"
+        },
+        {
+          "url": "https://github.com/wtgtybhertgeghgtwtg"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/has-value.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/has-value/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "get-value": "^3.0.0",
+        "has-values": "^2.0.1"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^1.0.0",
+        "mocha": "^3.5.3"
+      },
+      "keywords": [
+        "array",
+        "boolean",
+        "check",
+        "deep",
+        "empty",
+        "function",
+        "has",
+        "hasOwn",
+        "is-empty",
+        "nested",
+        "null",
+        "number",
+        "object",
+        "object path",
+        "properties",
+        "property",
+        "string",
+        "type",
+        "value"
+      ],
+      "verb": {
+        "run": true,
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "define-property",
+            "get-value",
+            "set-value",
+            "unset-value"
+          ]
+        },
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "db042177595bde65af9286566190ce10f86b1edf",
+      "_id": "has-value@2.0.2",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.7.1",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "integrity": "sha512-ybKOlcRsK2MqrM3Hmz/lQxXHZ6ejzSPzpNabKB45jb5qDgJvKPa3SdapTsTLwEb9WltgWpOmNax7i+DzNOk4TA==",
+        "shasum": "d0f12e8780ba8e90e66ad1a21c707fdb67c25658",
+        "tarball": "https://registry.npmjs.org/has-value/-/has-value-2.0.2.tgz",
+        "fileCount": 4,
+        "unpackedSize": 10680
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/has-value_2.0.2_1520110149506_0.9471665906446345"
+      }
+    }
+  },
+  "readme": "# has-value [![NPM version](https://img.shields.io/npm/v/has-value.svg?style=flat)](https://www.npmjs.com/package/has-value) [![NPM monthly downloads](https://img.shields.io/npm/dm/has-value.svg?style=flat)](https://npmjs.org/package/has-value) [![NPM total downloads](https://img.shields.io/npm/dt/has-value.svg?style=flat)](https://npmjs.org/package/has-value) [![Linux Build Status](https://img.shields.io/travis/jonschlinkert/has-value.svg?style=flat&label=Travis)](https://travis-ci.org/jonschlinkert/has-value)\n\n> Returns true if a value exists, false if empty. Works with deeply nested values using object paths.\n\nPlease consider following this project's author, [Jon Schlinkert](https://github.com/jonschlinkert), and consider starring the project to show your :heart: and support.\n\n## Install\n\nInstall with [npm](https://www.npmjs.com/):\n\n```sh\n$ npm install --save has-value\n```\n\n## Heads up!\n\nBreaking changes in v2.0! See the [release history](#release-history) for details.\n\n## Usage\n\n```js\nconst has = require('has-value');\n\nconsole.log(has()) //=> true\nconsole.log(has('foo')) //=> true\n```\n\n**Works for:**\n\n* booleans\n* functions\n* numbers\n* strings\n* nulls\n* object\n* arrays\n\n**isEmpty**\n\nTo do the opposite and test for empty values, do:\n\n```js\nconst isEmpty = (...args) => !has(...args);\n```\n\n## Supported types\n\n### Arrays\n\n```js\nconsole.log(has({ foo: { bar: ['a'] } }, 'foo.bar'));    //=> true\nconsole.log(has({ foo: { bar: [0] } }, 'foo.bar'));      //=> true\nconsole.log(has({ foo: { bar: [[[]]] } }, 'foo.bar'));   //=> false\nconsole.log(has({ foo: { bar: [[], []] } }, 'foo.bar')); //=> false\nconsole.log(has({ foo: { bar: [] } }, 'foo.bar'));       //=> false\n```\n\n### Booleans\n\n```js\nconsole.log(has({ foo: { bar: true } }, 'foo.bar'));  //=> true\nconsole.log(has({ foo: { bar: false } }, 'foo.bar')); //=> true\n```\n\n### Buffers\n\n```js\nconsole.log(has({ foo: { bar: new Buffer() } }, 'foo.bar'));      //=> false\nconsole.log(has({ foo: { bar: new Buffer('foo') } }, 'foo.bar')); //=> true\n```\n\n### Dates\n\nDates are always true.\n\n```js\nconsole.log(has({ foo: { bar: new Date() } }, 'foo.bar')); //=> true\n```\n\n### Errors\n\nReturns `false` if `err.message` is an empty string.\n\n```js\nconsole.log(has({ foo: { bar: new Error() } }, 'foo.bar'));      //=> false\nconsole.log(has({ foo: { bar: new Error('foo') } }, 'foo.bar')); //=> true\n```\n\n### Functions\n\nFunctions are always true.\n\n```js\nconsole.log(has({ foo: { bar: function(foo) {} } }, 'foo.bar')); //=> true\nconsole.log(has({ foo: { bar: function() {} } }, 'foo.bar'));    //=> true\n```\n\n### Maps\n\n```js\nconsole.log(has({ foo: { bar: new Map() } }, 'foo.bar'));                 //=> false\nconsole.log(has({ foo: { bar: new Map([['foo', 'bar']]) } }, 'foo.bar')); //=> true\n```\n\n### Null\n\n`null` is always true, as it's assumed that this is a user-defined value, versus `undefined` which is not.\n\n```js\nconsole.log(has({ foo: { bar: null } }, 'foo.bar')); //=> true\n```\n\n### Objects\n\n```js\nconsole.log(has({ foo: { bar: {} } }, 'foo.bar')); //=> false\nconsole.log(has({ foo: { bar: { a: 'a' }} } }, 'foo.bar'));        //=> true\nconsole.log(has({ foo: { bar: { foo: undefined } } }, 'foo.bar')); //=> false\nconsole.log(has({ foo: { bar: { foo: null } } }, 'foo.bar'));      //=> true\n```\n\n### Numbers\n\n```js\nconsole.log(has({ foo: { bar: 1 } }, 'foo.bar')); //=> true\nconsole.log(has({ foo: { bar: 0 } }, 'foo.bar')); //=> true\n```\n\n### Regular expressions\n\n```js\nconsole.log(has({ foo: { bar: new RegExp() } }, 'foo.bar'));      //=> false\nconsole.log(has({ foo: { bar: new RegExp('foo') } }, 'foo.bar')); //=> true\n```\n\n### Sets\n\n```js\nconsole.log(has({ foo: { bar: new Set() } }, 'foo.bar'));               //=> false\nconsole.log(has({ foo: { bar: new Set(['foo', 'bar']) } }, 'foo.bar')); //=> true\n```\n\n### Strings\n\n```js\nconsole.log(has({ foo: { bar: 'a' } }, 'foo.bar')); //=> true\nconsole.log(has({ foo: { bar: '' } }, 'foo.bar'));  //=> false\n```\n\n## Undefined\n\n```js\nconsole.log(has({ foo: { bar:  } }, 'foo.bar'));          //=> false\nconsole.log(has({ foo: { bar: void 0 } }, 'foo.bar'));    //=> false\nconsole.log(has({ foo: { bar: undefined } }, 'foo.bar')); //=> false\n```\n\n## Release history\n\n### v2.0.0\n\n**Breaking changes**\n\n* Now returns false if the first argument is not an object, function or array, and the second argument is not a string or array.\n\n### v1.0.0\n\n* `zero` always returns true\n* `array` now recurses, so that an array of empty arrays will return `false`\n* `null` now returns true\n\n## About\n\n<details>\n<summary><strong>Contributing</strong></summary>\n\nPull requests and stars are always welcome. For bugs and feature requests, [please create an issue](../../issues/new).\n\n</details>\n\n<details>\n<summary><strong>Running Tests</strong></summary>\n\nRunning and reviewing unit tests is a great way to get familiarized with a library and its API. You can install dependencies and run tests with the following command:\n\n```sh\n$ npm install && npm test\n```\n\n</details>\n\n<details>\n<summary><strong>Building docs</strong></summary>\n\n_(This project's readme.md is generated by [verb](https://github.com/verbose/verb-generate-readme), please don't edit the readme directly. Any changes to the readme must be made in the [.verb.md](.verb.md) readme template.)_\n\nTo generate the readme, run the following command:\n\n```sh\n$ npm install -g verbose/verb#dev verb-generate-readme && verb\n```\n\n</details>\n\n### Related projects\n\nYou might also be interested in these projects:\n\n* [define-property](https://www.npmjs.com/package/define-property): Define a non-enumerable property on an object. Uses Reflect.defineProperty when available, otherwise Object.defineProperty. | [homepage](https://github.com/jonschlinkert/define-property \"Define a non-enumerable property on an object. Uses Reflect.defineProperty when available, otherwise Object.defineProperty.\")\n* [get-value](https://www.npmjs.com/package/get-value): Use property paths like 'a.b.c' to get a nested value from an object. Even works… [more](https://github.com/jonschlinkert/get-value) | [homepage](https://github.com/jonschlinkert/get-value \"Use property paths like 'a.b.c' to get a nested value from an object. Even works when keys have dots in them (no other dot-prop library can do this!).\")\n* [set-value](https://www.npmjs.com/package/set-value): Create nested values and any intermediaries using dot notation (`'a.b.c'`) paths. | [homepage](https://github.com/jonschlinkert/set-value \"Create nested values and any intermediaries using dot notation (`'a.b.c'`) paths.\")\n* [unset-value](https://www.npmjs.com/package/unset-value): Delete nested properties from an object using dot notation. | [homepage](https://github.com/jonschlinkert/unset-value \"Delete nested properties from an object using dot notation.\")\n\n### Contributors\n\n| **Commits** | **Contributor** | \n| --- | --- |\n| 32 | [jonschlinkert](https://github.com/jonschlinkert) |\n| 2 | [rmharrison](https://github.com/rmharrison) |\n| 1 | [wtgtybhertgeghgtwtg](https://github.com/wtgtybhertgeghgtwtg) |\n\n### Author\n\n**Jon Schlinkert**\n\n* [LinkedIn Profile](https://linkedin.com/in/jonschlinkert)\n* [GitHub Profile](https://github.com/jonschlinkert)\n* [Twitter Profile](https://twitter.com/jonschlinkert)\n\n### License\n\nCopyright © 2018, [Jon Schlinkert](https://github.com/jonschlinkert).\nReleased under the [MIT License](LICENSE).\n\n***\n\n_This file was generated by [verb-generate-readme](https://github.com/verbose/verb-generate-readme), v0.6.0, on March 03, 2018._",
+  "maintainers": [
+    {
+      "name": "jonschlinkert",
+      "email": "github@sellside.com"
+    }
+  ],
+  "time": {
+    "modified": "2018-03-03T20:49:10.735Z",
+    "created": "2014-09-22T01:44:49.852Z",
+    "0.1.0": "2014-09-22T01:44:49.852Z",
+    "0.2.0": "2015-03-25T19:47:23.519Z",
+    "0.2.1": "2015-10-30T19:53:26.993Z",
+    "0.3.0": "2015-11-24T02:22:33.282Z",
+    "0.3.1": "2016-03-27T15:18:56.829Z",
+    "1.0.0": "2017-05-19T19:11:24.026Z",
+    "2.0.0": "2018-01-31T01:05:52.860Z",
+    "2.0.1": "2018-01-31T01:06:45.561Z",
+    "2.0.2": "2018-03-03T20:49:09.585Z"
+  },
+  "homepage": "https://github.com/jonschlinkert/has-value",
+  "keywords": [
+    "array",
+    "boolean",
+    "check",
+    "deep",
+    "empty",
+    "function",
+    "has",
+    "hasOwn",
+    "is-empty",
+    "nested",
+    "null",
+    "number",
+    "object",
+    "object path",
+    "properties",
+    "property",
+    "string",
+    "type",
+    "value"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonschlinkert/has-value.git"
+  },
+  "author": {
+    "name": "Jon Schlinkert",
+    "url": "https://github.com/jonschlinkert"
+  },
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/has-value/issues"
+  },
+  "readmeFilename": "README.md",
+  "license": "MIT",
+  "users": {
+    "ninozhang": true,
+    "456wyc": true,
+    "rocket0191": true,
+    "bsara": true,
+    "rahulraghavankklm": true
+  },
+  "contributors": [
+    {
+      "name": "Jon Schlinkert",
+      "url": "http://twitter.com/jonschlinkert"
+    },
+    {
+      "name": "Ryan M Harrison",
+      "url": "https://linkedin.com/in/harrisonrm"
+    },
+    {
+      "url": "https://github.com/wtgtybhertgeghgtwtg"
+    }
+  ],
+  "_attachments": {}
+}

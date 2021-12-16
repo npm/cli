@@ -1,0 +1,1363 @@
+{
+  "_id": "rollup-plugin-cleanup",
+  "_rev": "18-491d83411031156cdd3785dcf4189790",
+  "name": "rollup-plugin-cleanup",
+  "description": "Rollup plugin to trim trailing spaces, compact empty lines, and normalize line endings",
+  "dist-tags": {
+    "latest": "3.2.1"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "rollup-plugin-cleanup",
+      "version": "0.1.0",
+      "description": "Rollup plugin to trim trailing spaces, compact empty lines, and normalize line endings",
+      "main": "dist/rollup-plugin-cleanup.cjs.js",
+      "jsnext:main": "dist/rollup-plugin-cleanup.es.js",
+      "scripts": {
+        "test": "npm run build-cjs && mocha test/run.js",
+        "pretest": "npm build",
+        "build": "npm run build-cjs && npm run build-es6 && npm run build-pre",
+        "build-cjs": "rollup -c -f cjs -o dist/rollup-plugin-cleanup.cjs.js",
+        "build-es6": "rollup -c -f es -o dist/rollup-plugin-cleanup.es.js",
+        "build-pre": "rollup -c -f cjs --environment LEGACY=1 -o dist/legacy/rollup-plugin-cleanup.js"
+      },
+      "files": [
+        "dist",
+        "README.md"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/aMarCruz/rollup-plugin-cleanup.git"
+      },
+      "keywords": [
+        "rollup",
+        "rollup-plugin",
+        "javascript",
+        "es2015",
+        "es6",
+        "modules",
+        "cleanup"
+      ],
+      "author": {
+        "name": "amarcruz",
+        "email": "amarcruzbox-git@yahoo.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/aMarCruz/rollup-plugin-cleanup/issues"
+      },
+      "homepage": "https://github.com/aMarCruz/rollup-plugin-cleanup",
+      "dependencies": {
+        "magic-string": "^0.16.0",
+        "rollup-pluginutils": "^1.5.2"
+      },
+      "devDependencies": {
+        "eslint": "^3.4.0",
+        "expect": "^1.20.2",
+        "mocha": "^3.0.2",
+        "rollup": "^0.34.13",
+        "rollup-plugin-buble": "^0.13.0"
+      },
+      "gitHead": "87c4e65670cde12d13acb9493025d5c5ace0d062",
+      "_id": "rollup-plugin-cleanup@0.1.0",
+      "_shasum": "c2eb4b7d81e54ee71142f385a1d4fc3196e38172",
+      "_from": ".",
+      "_npmVersion": "3.8.6",
+      "_nodeVersion": "5.12.0",
+      "_npmUser": {
+        "name": "amarcruz",
+        "email": "amarcruz@yahoo.com"
+      },
+      "dist": {
+        "shasum": "c2eb4b7d81e54ee71142f385a1d4fc3196e38172",
+        "tarball": "https://registry.npmjs.org/rollup-plugin-cleanup/-/rollup-plugin-cleanup-0.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amarcruz",
+          "email": "amarcruz@yahoo.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/rollup-plugin-cleanup-0.1.0.tgz_1473077313934_0.6919191651977599"
+      },
+      "directories": {}
+    },
+    "0.1.1": {
+      "name": "rollup-plugin-cleanup",
+      "version": "0.1.1",
+      "description": "Rollup plugin to trim trailing spaces, compact empty lines, and normalize line endings",
+      "main": "dist/rollup-plugin-cleanup.cjs.js",
+      "jsnext:main": "dist/rollup-plugin-cleanup.es.js",
+      "engines": {
+        "node": ">=0.12"
+      },
+      "scripts": {
+        "test": "node-version-gte-4 && mocha || mocha --compilers js:./buble-register",
+        "lint": "node-version-gte-4 && eslint src test/run.js || node-version-lt-4",
+        "pretest": "npm run lint && npm run build",
+        "build": "rm -rf dist/* && npm run build:cjs && npm run build:es6",
+        "build:cjs": "rollup -c -f cjs -o dist/rollup-plugin-cleanup.cjs.js",
+        "build:es6": "rollup -c -f es -o dist/rollup-plugin-cleanup.es.js",
+        "prepublish": "npm test"
+      },
+      "files": [
+        "dist"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/aMarCruz/rollup-plugin-cleanup.git"
+      },
+      "keywords": [
+        "rollup",
+        "rollup-plugin",
+        "javascript",
+        "es2015",
+        "es6",
+        "modules",
+        "cleanup"
+      ],
+      "author": {
+        "name": "aMarCruz",
+        "email": "amarcruzbox-git@yahoo.com",
+        "url": "https://github.com/aMarCruz"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/aMarCruz/rollup-plugin-cleanup/issues"
+      },
+      "homepage": "https://github.com/aMarCruz/rollup-plugin-cleanup",
+      "dependencies": {
+        "magic-string": "^0.16.0",
+        "rollup-pluginutils": "^1.5.2"
+      },
+      "devDependencies": {
+        "eslint": "^3.4.0",
+        "expect": "^1.20.2",
+        "mocha": "^3.0.2",
+        "node-version-check": "^2.1.1",
+        "rollup": "^0.34.13",
+        "rollup-plugin-buble": "^0.13.0"
+      },
+      "gitHead": "65e4fad7c2e8c2fa17e7782d5a18c71f7e582f9c",
+      "_id": "rollup-plugin-cleanup@0.1.1",
+      "_shasum": "2ecd7ba820ce1bf9a7bccaaa1a1e849787fa3671",
+      "_from": ".",
+      "_npmVersion": "3.10.5",
+      "_nodeVersion": "4.4.7",
+      "_npmUser": {
+        "name": "amarcruz",
+        "email": "amarcruz@yahoo.com"
+      },
+      "dist": {
+        "shasum": "2ecd7ba820ce1bf9a7bccaaa1a1e849787fa3671",
+        "tarball": "https://registry.npmjs.org/rollup-plugin-cleanup/-/rollup-plugin-cleanup-0.1.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amarcruz",
+          "email": "amarcruz@yahoo.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/rollup-plugin-cleanup-0.1.1.tgz_1473139023022_0.3131842080038041"
+      },
+      "directories": {}
+    },
+    "0.1.2": {
+      "name": "rollup-plugin-cleanup",
+      "version": "0.1.2",
+      "description": "Rollup plugin to trim trailing spaces, compact empty lines, and normalize line endings",
+      "main": "dist/rollup-plugin-cleanup.cjs.js",
+      "jsnext:main": "dist/rollup-plugin-cleanup.es.js",
+      "engines": {
+        "node": ">=0.12"
+      },
+      "scripts": {
+        "test": "node-version-gte-4 && mocha || mocha --compilers js:./buble-register",
+        "lint": "node-version-gte-4 && eslint src test/index.js || node-version-lt-4",
+        "pretest": "npm run lint && npm run build",
+        "build": "rm -rf dist/* && npm run build:cjs && npm run build:es6",
+        "build:cjs": "rollup -c -f cjs -o dist/rollup-plugin-cleanup.cjs.js",
+        "build:es6": "rollup -c -f es -o dist/rollup-plugin-cleanup.es.js",
+        "prepublish": "npm test"
+      },
+      "files": [
+        "dist",
+        "src"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/aMarCruz/rollup-plugin-cleanup.git"
+      },
+      "keywords": [
+        "rollup",
+        "rollup-plugin",
+        "javascript",
+        "es2015",
+        "es6",
+        "modules",
+        "cleanup"
+      ],
+      "author": {
+        "name": "aMarCruz",
+        "email": "amarcruzbox-git@yahoo.com",
+        "url": "https://github.com/aMarCruz"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/aMarCruz/rollup-plugin-cleanup/issues"
+      },
+      "homepage": "https://github.com/aMarCruz/rollup-plugin-cleanup",
+      "dependencies": {
+        "acorn": "^3.3.0",
+        "magic-string": "^0.16.0",
+        "rollup-pluginutils": "^1.5.2"
+      },
+      "devDependencies": {
+        "eslint": "^3.4.0",
+        "expect": "^1.20.2",
+        "mocha": "^3.0.2",
+        "node-version-check": "^2.1.1",
+        "rollup": "^0.34.13",
+        "rollup-plugin-buble": "^0.13.0"
+      },
+      "gitHead": "88834fb8ed5a15aedd0e2b3b5f988b3877ae3f2b",
+      "_id": "rollup-plugin-cleanup@0.1.2",
+      "_shasum": "930c71c19be6a2ba22dd25978003002a932653dd",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.5.0",
+      "_npmUser": {
+        "name": "amarcruz",
+        "email": "amarcruz@yahoo.com"
+      },
+      "dist": {
+        "shasum": "930c71c19be6a2ba22dd25978003002a932653dd",
+        "tarball": "https://registry.npmjs.org/rollup-plugin-cleanup/-/rollup-plugin-cleanup-0.1.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amarcruz",
+          "email": "amarcruz@yahoo.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/rollup-plugin-cleanup-0.1.2.tgz_1473342675131_0.61968834977597"
+      },
+      "directories": {}
+    },
+    "0.1.3": {
+      "name": "rollup-plugin-cleanup",
+      "version": "0.1.3",
+      "description": "Rollup plugin to trim trailing spaces, compact empty lines, and normalize line endings",
+      "main": "dist/rollup-plugin-cleanup.cjs.js",
+      "jsnext:main": "dist/rollup-plugin-cleanup.es.js",
+      "engines": {
+        "node": ">=0.12"
+      },
+      "scripts": {
+        "test": "node-version-gte-4 && mocha || mocha --compilers js:./buble-register",
+        "lint": "node-version-gte-4 && eslint src test/index.js || node-version-lt-4",
+        "pretest": "npm run build:cjs",
+        "build": "rm -rf dist/* && npm run build:cjs && npm run build:es6",
+        "build:cjs": "rollup -c -f cjs -o dist/rollup-plugin-cleanup.cjs.js",
+        "build:es6": "rollup -c -f es -o dist/rollup-plugin-cleanup.es.js",
+        "prepublish": "npm run lint && npm run build:es6 && npm test"
+      },
+      "files": [
+        "dist",
+        "src"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/aMarCruz/rollup-plugin-cleanup.git"
+      },
+      "keywords": [
+        "rollup",
+        "rollup-plugin",
+        "javascript",
+        "es2015",
+        "es6",
+        "modules",
+        "cleanup"
+      ],
+      "author": {
+        "name": "aMarCruz",
+        "email": "amarcruzbox-git@yahoo.com",
+        "url": "https://github.com/aMarCruz"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/aMarCruz/rollup-plugin-cleanup/issues"
+      },
+      "homepage": "https://github.com/aMarCruz/rollup-plugin-cleanup",
+      "dependencies": {
+        "acorn": "^3.3.0",
+        "magic-string": "^0.16.0",
+        "rollup-pluginutils": "^1.5.2"
+      },
+      "devDependencies": {
+        "eslint": "^3.4.0",
+        "expect": "^1.20.2",
+        "mocha": "^3.0.2",
+        "node-version-check": "^2.1.1",
+        "rollup": "^0.34.13",
+        "rollup-plugin-buble": "^0.13.0",
+        "rollup-plugin-jsx": "^1.0.3",
+        "rollup-plugin-riot": "^0.4.2"
+      },
+      "gitHead": "16e87643614a95a4d84dc07fe68f724d56ec17a6",
+      "_id": "rollup-plugin-cleanup@0.1.3",
+      "_shasum": "a43761b5a9f6309e86374104c32a3ac5c2b75975",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.5.0",
+      "_npmUser": {
+        "name": "amarcruz",
+        "email": "amarcruz@yahoo.com"
+      },
+      "dist": {
+        "shasum": "a43761b5a9f6309e86374104c32a3ac5c2b75975",
+        "tarball": "https://registry.npmjs.org/rollup-plugin-cleanup/-/rollup-plugin-cleanup-0.1.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amarcruz",
+          "email": "amarcruz@yahoo.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/rollup-plugin-cleanup-0.1.3.tgz_1473719481215_0.23926663724705577"
+      },
+      "directories": {}
+    },
+    "0.1.4": {
+      "name": "rollup-plugin-cleanup",
+      "version": "0.1.4",
+      "description": "Rollup plugin to trim trailing spaces, compact empty lines, and normalize line endings",
+      "main": "dist/rollup-plugin-cleanup.cjs.js",
+      "jsnext:main": "dist/rollup-plugin-cleanup.es.js",
+      "engines": {
+        "node": ">=0.12"
+      },
+      "scripts": {
+        "test": "node-version-gte-4 && mocha || mocha --compilers js:./buble-register",
+        "lint": "node-version-gte-4 && eslint src test/index.js || node-version-lt-4",
+        "pretest": "npm run build:cjs",
+        "build": "rm -rf dist/* && npm run build:cjs && npm run build:es6",
+        "build:cjs": "rollup -c -f cjs -o dist/rollup-plugin-cleanup.cjs.js",
+        "build:es6": "rollup -c -f es -o dist/rollup-plugin-cleanup.es.js",
+        "prepublish": "npm run lint && npm run build:es6 && npm test"
+      },
+      "files": [
+        "dist",
+        "src"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/aMarCruz/rollup-plugin-cleanup.git"
+      },
+      "keywords": [
+        "rollup",
+        "rollup-plugin",
+        "javascript",
+        "es2015",
+        "es6",
+        "modules",
+        "cleanup"
+      ],
+      "author": {
+        "name": "aMarCruz",
+        "email": "amarcruzbox-git@yahoo.com",
+        "url": "https://github.com/aMarCruz"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/aMarCruz/rollup-plugin-cleanup/issues"
+      },
+      "homepage": "https://github.com/aMarCruz/rollup-plugin-cleanup",
+      "dependencies": {
+        "acorn": "^3.3.0",
+        "magic-string": "^0.16.0",
+        "rollup-pluginutils": "^1.5.2"
+      },
+      "devDependencies": {
+        "eslint": "^3.4.0",
+        "expect": "^1.20.2",
+        "mocha": "^3.0.2",
+        "node-version-check": "^2.1.1",
+        "rollup": "^0.34.13",
+        "rollup-plugin-buble": "^0.13.0",
+        "rollup-plugin-jsx": "^1.0.3",
+        "rollup-plugin-riot": "^0.4.2"
+      },
+      "gitHead": "6328913bd65e80dc74272088aba568a218a1f232",
+      "_id": "rollup-plugin-cleanup@0.1.4",
+      "_shasum": "9fed3ab4300988a882d63de3321e410cdafc6331",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.5.0",
+      "_npmUser": {
+        "name": "amarcruz",
+        "email": "amarcruz@yahoo.com"
+      },
+      "dist": {
+        "shasum": "9fed3ab4300988a882d63de3321e410cdafc6331",
+        "tarball": "https://registry.npmjs.org/rollup-plugin-cleanup/-/rollup-plugin-cleanup-0.1.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amarcruz",
+          "email": "amarcruz@yahoo.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/rollup-plugin-cleanup-0.1.4.tgz_1473722850873_0.07035008887760341"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "rollup-plugin-cleanup",
+      "version": "1.0.0",
+      "description": "Rollup plugin to trim trailing spaces, compact empty lines, and normalize line endings",
+      "main": "dist/rollup-plugin-cleanup.js",
+      "jsnext:main": "dist/rollup-plugin-cleanup.es.js",
+      "engines": {
+        "node": ">=0.12"
+      },
+      "scripts": {
+        "test": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec test/index.js",
+        "lint": "node-version-gte-4 && eslint src test/index.js || node-version-lt-4",
+        "pretest": "rollup -c",
+        "build": "rm -rf dist/* && rollup -c",
+        "prepublish": "npm run lint && rm -rf dist/* && npm test"
+      },
+      "files": [
+        "dist",
+        "src"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/aMarCruz/rollup-plugin-cleanup.git"
+      },
+      "keywords": [
+        "rollup",
+        "rollup-plugin",
+        "javascript",
+        "es2015",
+        "es6",
+        "modules",
+        "cleanup"
+      ],
+      "author": {
+        "name": "aMarCruz",
+        "email": "amarcruzbox-git@yahoo.com",
+        "url": "https://github.com/aMarCruz"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/aMarCruz/rollup-plugin-cleanup/issues"
+      },
+      "homepage": "https://github.com/aMarCruz/rollup-plugin-cleanup",
+      "dependencies": {
+        "acorn": "^4.0.4",
+        "magic-string": "^0.19.0",
+        "rollup-pluginutils": "^2.0.1"
+      },
+      "devDependencies": {
+        "eslint": "^3.13.0",
+        "expect": "^1.20.2",
+        "istanbul": "^0.4.5",
+        "mocha": "^3.2.0",
+        "node-version-check": "^2.1.1",
+        "rollup": "^0.41.1",
+        "rollup-plugin-buble": "^0.15.0",
+        "rollup-plugin-jsx": "^1.0.3",
+        "rollup-plugin-riot": "^1.1.0"
+      },
+      "gitHead": "b41f77000f023dd382f02cf934ac58697056848c",
+      "_id": "rollup-plugin-cleanup@1.0.0",
+      "_shasum": "03f2be7a3b2ea496dd1b753050037f9363983224",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.9.4",
+      "_npmUser": {
+        "name": "amarcruz",
+        "email": "amarcruz@yahoo.com"
+      },
+      "dist": {
+        "shasum": "03f2be7a3b2ea496dd1b753050037f9363983224",
+        "tarball": "https://registry.npmjs.org/rollup-plugin-cleanup/-/rollup-plugin-cleanup-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amarcruz",
+          "email": "amarcruz@yahoo.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/rollup-plugin-cleanup-1.0.0.tgz_1484000768953_0.45217321952804923"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "rollup-plugin-cleanup",
+      "version": "1.0.1",
+      "description": "Rollup plugin to trim trailing spaces, compact empty lines, and normalize line endings",
+      "main": "dist/rollup-plugin-cleanup.js",
+      "module": "dist/rollup-plugin-cleanup.es.js",
+      "jsnext:main": "dist/rollup-plugin-cleanup.es.js",
+      "engines": {
+        "node": ">=0.12"
+      },
+      "scripts": {
+        "test": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec test/index.js",
+        "lint": "node-version-gte-4 && eslint src test/index.js || node-version-lt-4",
+        "pretest": "rollup -c",
+        "build": "rm -rf dist/* && rollup -c",
+        "prepublish": "npm run lint && rm -rf dist/* && npm test"
+      },
+      "files": [
+        "dist",
+        "src"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/aMarCruz/rollup-plugin-cleanup.git"
+      },
+      "keywords": [
+        "rollup",
+        "rollup-plugin",
+        "javascript",
+        "es2015",
+        "es6",
+        "modules",
+        "cleanup"
+      ],
+      "author": {
+        "name": "aMarCruz",
+        "email": "amarcruzbox-git@yahoo.com",
+        "url": "https://github.com/aMarCruz"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/aMarCruz/rollup-plugin-cleanup/issues"
+      },
+      "homepage": "https://github.com/aMarCruz/rollup-plugin-cleanup",
+      "dependencies": {
+        "acorn": "4.x",
+        "magic-string": "*",
+        "rollup-pluginutils": "*"
+      },
+      "devDependencies": {
+        "eslint": "^3.19.0",
+        "expect": "1.20.2",
+        "istanbul": "0.4.5",
+        "mocha": "3.4.2",
+        "node-version-check": "2.1.1",
+        "rollup": "*",
+        "rollup-plugin-buble": "*",
+        "rollup-plugin-jsx": "*",
+        "rollup-plugin-riot": "*"
+      },
+      "gitHead": "9e281133e7760f3c9041fe5842b80a7e8995fa0b",
+      "_id": "rollup-plugin-cleanup@1.0.1",
+      "_shasum": "ca056c74fe6ea21783f99851963b173cbe8e9359",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.10.1",
+      "_npmUser": {
+        "name": "amarcruz",
+        "email": "amarcruz@yahoo.com"
+      },
+      "dist": {
+        "shasum": "ca056c74fe6ea21783f99851963b173cbe8e9359",
+        "tarball": "https://registry.npmjs.org/rollup-plugin-cleanup/-/rollup-plugin-cleanup-1.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amarcruz",
+          "email": "amarcruz@yahoo.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/rollup-plugin-cleanup-1.0.1.tgz_1497497454030_0.9662110342178494"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "rollup-plugin-cleanup",
+      "version": "2.0.0",
+      "description": "Rollup plugin to trim trailing spaces, compact empty lines, and normalize line endings",
+      "main": "dist/rollup-plugin-cleanup.js",
+      "module": "dist/rollup-plugin-cleanup.es.js",
+      "jsnext:main": "dist/rollup-plugin-cleanup.es.js",
+      "engines": {
+        "node": ">=4.2"
+      },
+      "scripts": {
+        "test": "jest",
+        "pretest": "rollup -c",
+        "lint": "eslint src __test__/index.js",
+        "build": "npm run lint && rm -rf dist/* && npm test",
+        "prepublish": "npm run build"
+      },
+      "files": [
+        "dist",
+        "src"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/aMarCruz/rollup-plugin-cleanup.git"
+      },
+      "keywords": [
+        "rollup",
+        "rollup-plugin",
+        "javascript",
+        "es2015",
+        "es6",
+        "modules",
+        "cleanup"
+      ],
+      "author": {
+        "name": "aMarCruz",
+        "email": "amarcruzbox-git@yahoo.com",
+        "url": "https://github.com/aMarCruz"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/aMarCruz/rollup-plugin-cleanup/issues"
+      },
+      "homepage": "https://github.com/aMarCruz/rollup-plugin-cleanup",
+      "dependencies": {
+        "acorn": "4.x",
+        "magic-string": "^0.22.4",
+        "rollup-pluginutils": "^2.0.1"
+      },
+      "devDependencies": {
+        "eslint": "^4.9.0",
+        "jest": "^21.2.1",
+        "rollup": "^0.50.0",
+        "rollup-plugin-buble": "^0.16.0",
+        "rollup-plugin-jsx": "^1.0.3",
+        "rollup-plugin-riot": "^1.1.0"
+      },
+      "gitHead": "89476ea95bcac938439dfeb096908b837db28b17",
+      "_id": "rollup-plugin-cleanup@2.0.0",
+      "_shasum": "85977319a3bf54750a9d75fb909c7e51f59a2da4",
+      "_from": ".",
+      "_npmVersion": "4.2.0",
+      "_nodeVersion": "7.10.1",
+      "_npmUser": {
+        "name": "amarcruz",
+        "email": "amarcruz@yahoo.com"
+      },
+      "dist": {
+        "shasum": "85977319a3bf54750a9d75fb909c7e51f59a2da4",
+        "tarball": "https://registry.npmjs.org/rollup-plugin-cleanup/-/rollup-plugin-cleanup-2.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amarcruz",
+          "email": "amarcruz@yahoo.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/rollup-plugin-cleanup-2.0.0.tgz_1508449236189_0.06285119941458106"
+      },
+      "directories": {}
+    },
+    "2.0.1": {
+      "name": "rollup-plugin-cleanup",
+      "version": "2.0.1",
+      "description": "Rollup plugin to trim trailing spaces, compact empty lines, and normalize line endings",
+      "main": "dist/rollup-plugin-cleanup.js",
+      "module": "dist/rollup-plugin-cleanup.es.js",
+      "jsnext:main": "dist/rollup-plugin-cleanup.es.js",
+      "engines": {
+        "node": ">=4.2"
+      },
+      "scripts": {
+        "test": "jest",
+        "pretest": "rollup -c",
+        "lint": "eslint src __test__/index.js",
+        "build": "npm run lint && rm -rf dist/* && npm test",
+        "prepublish": "npm run build"
+      },
+      "files": [
+        "dist",
+        "src"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/aMarCruz/rollup-plugin-cleanup.git"
+      },
+      "keywords": [
+        "rollup",
+        "rollup-plugin",
+        "javascript",
+        "es2015",
+        "es6",
+        "modules",
+        "cleanup"
+      ],
+      "author": {
+        "name": "aMarCruz",
+        "email": "amarcruzbox-git@yahoo.com",
+        "url": "https://github.com/aMarCruz"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/aMarCruz/rollup-plugin-cleanup/issues"
+      },
+      "homepage": "https://github.com/aMarCruz/rollup-plugin-cleanup",
+      "dependencies": {
+        "acorn": "4.x",
+        "magic-string": "^0.22.4",
+        "rollup-pluginutils": "^2.0.1"
+      },
+      "devDependencies": {
+        "eslint": "^4.9.0",
+        "jest": "^21.2.1",
+        "rollup": "^0.50.0",
+        "rollup-plugin-buble": "^0.16.0",
+        "rollup-plugin-jsx": "^1.0.3",
+        "rollup-plugin-riot": "^1.1.0"
+      },
+      "peerDependencies": {
+        "rollup": ">=0.50.0"
+      },
+      "gitHead": "d768bdceab47a5b31f899ce05cdadcd1d2a54e53",
+      "_id": "rollup-plugin-cleanup@2.0.1",
+      "_npmVersion": "5.7.1",
+      "_nodeVersion": "8.9.4",
+      "_npmUser": {
+        "name": "amarcruz",
+        "email": "amarcruz@yahoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-Z2UpMe3l2Oo8jzoB2gAWcb3UqIyiGxlh8kKlcs/W53yTPtwdF8RGfhuTx+/kjRlkSc5TC03t3sX3Lj3B40k9Eg==",
+        "shasum": "62c510fe868a77000f33cf13b519fb36a9fbe2ed",
+        "tarball": "https://registry.npmjs.org/rollup-plugin-cleanup/-/rollup-plugin-cleanup-2.0.1.tgz",
+        "fileCount": 12,
+        "unpackedSize": 37256
+      },
+      "maintainers": [
+        {
+          "name": "amarcruz",
+          "email": "amarcruz@yahoo.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/rollup-plugin-cleanup_2.0.1_1523383033289_0.04492135188380808"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.0-beta.1": {
+      "name": "rollup-plugin-cleanup",
+      "version": "3.0.0-beta.1",
+      "description": "Rollup plugin to trim trailing spaces, compact empty lines, and normalize line endings",
+      "main": "dist/rollup-plugin-cleanup.js",
+      "module": "dist/rollup-plugin-cleanup.es.js",
+      "jsnext:main": "dist/rollup-plugin-cleanup.es.js",
+      "engines": {
+        "node": ">=4.2"
+      },
+      "scripts": {
+        "test": "jest",
+        "pretest": "rollup -c",
+        "lint": "eslint src __test__/index.js",
+        "build": "npm run lint && rm -rf dist/* && npm test",
+        "prepublish": "npm run build"
+      },
+      "files": [
+        "dist",
+        "src"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/aMarCruz/rollup-plugin-cleanup.git"
+      },
+      "keywords": [
+        "rollup",
+        "rollup-plugin",
+        "javascript",
+        "es2015",
+        "es6",
+        "modules",
+        "cleanup"
+      ],
+      "author": {
+        "name": "aMarCruz",
+        "email": "amarcruzbox-git@yahoo.com",
+        "url": "https://github.com/aMarCruz"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/aMarCruz/rollup-plugin-cleanup/issues"
+      },
+      "homepage": "https://github.com/aMarCruz/rollup-plugin-cleanup",
+      "dependencies": {
+        "acorn": "^5.5.3",
+        "magic-string": "^0.24.0",
+        "rollup-pluginutils": "^2.0.1"
+      },
+      "devDependencies": {
+        "eslint": "^4.19.1",
+        "jest": "^22.4.3",
+        "rollup": "^0.58.2",
+        "rollup-plugin-buble": "^0.19.2",
+        "rollup-plugin-jsx": "^1.0.3"
+      },
+      "peerDependencies": {
+        "rollup": ">=0.50.0"
+      },
+      "gitHead": "134f60deb2588efc19332bf099167ab6e1b3974f",
+      "_id": "rollup-plugin-cleanup@3.0.0-beta.1",
+      "_npmVersion": "5.7.1",
+      "_nodeVersion": "8.9.4",
+      "_npmUser": {
+        "name": "amarcruz",
+        "email": "amarcruz@yahoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-cJDQfGR4pzVx7hJaTy9fHB5Cg4sIIEId23OyqeareXza9IS+gfKIO5ypZaUnkVmStZ6ye0+IpDyu4VMOoUkt1Q==",
+        "shasum": "a6faa0fcf14cb4ed059d3c8ffb2f2fdf1ef62346",
+        "tarball": "https://registry.npmjs.org/rollup-plugin-cleanup/-/rollup-plugin-cleanup-3.0.0-beta.1.tgz",
+        "fileCount": 12,
+        "unpackedSize": 37357,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa6AwdCRA9TVsSAnZWagAAVZoQAJnr66MDLoaTj9SrHH3E\nh5h91RWLkBG+fPrr1hZrumHc2QF3BZ5Lhok8SA8K0UFV31+MBYSIaiummPnY\nztQJ7qSEbUVXKbm1udM8YlrMvdd4i6UUrzISYcMADXk2h1kVIQ83oaTvl5yW\n+74XKLz+oCW2jysn6uGC7L53zrdC1KiFitJhucj1aOnWCAe7OOPci9IqDTnG\nhGjab7WekDXHZQlr3TXPGHPTW7MJR+qcBGDWBLzvbZQEzB+PQ9fYlQLRs4Cp\n0GcB+N4spzyMGQGroCX8zutWidnDO7A/5rHV4BwcitF0BHQFNmrVgWdA8MFX\nR5nRB+PK6WfsWh/DqW85wCTkYOWoOEskNS5vSaozJlAwpa1VrHlcUdBIcYSi\nBvVoR8+unVfanUeZhSfs3oVXmS2wDeRCr1ronanvnGl3qfhZ2LQuFnYCOmWM\nKI/QgmJLN1scf/Ymf8PZ8WgiFFLBjpB8pF/eSfzQKGLJgiH94/iolA6Sr8ad\n9m1DdZyH7lPShiOvP4GKPbqHSx40dBsgbgEcLTO06qCLpyz9ccfVIJXIGu4X\nq/BASnmdGPf+hU4pxWnek2SagQWBDjzvUDUhatZnmIbM+va6YJ3VCLC6cg0w\nL/+lnLpAFjVbjwHXdOqvIAqx2B6iUbtXeMbGW0k4uZ4dz/t7zFcMU/QWNPdJ\nh6+Q\r\n=t6oI\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "amarcruz",
+          "email": "amarcruz@yahoo.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/rollup-plugin-cleanup_3.0.0-beta.1_1525156892092_0.33774717177356095"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.0": {
+      "name": "rollup-plugin-cleanup",
+      "version": "3.0.0",
+      "description": "Rollup plugin to trim trailing spaces, compact empty lines, and normalize line endings",
+      "main": "dist/rollup-plugin-cleanup.js",
+      "module": "dist/rollup-plugin-cleanup.es.js",
+      "jsnext:main": "dist/rollup-plugin-cleanup.es.js",
+      "engines": {
+        "node": ">=6.14"
+      },
+      "scripts": {
+        "test": "jest",
+        "pretest": "rollup -c",
+        "lint": "eslint src",
+        "build": "npm run lint && rm -rf dist/* && npm test",
+        "prepublish": "npm run build"
+      },
+      "files": [
+        "dist",
+        "src"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/aMarCruz/rollup-plugin-cleanup.git"
+      },
+      "keywords": [
+        "rollup",
+        "rollup-plugin",
+        "javascript",
+        "es2015",
+        "es6",
+        "modules",
+        "cleanup"
+      ],
+      "author": {
+        "name": "aMarCruz",
+        "email": "amarcruzbox-git@yahoo.com",
+        "url": "https://github.com/aMarCruz"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/aMarCruz/rollup-plugin-cleanup/issues"
+      },
+      "homepage": "https://github.com/aMarCruz/rollup-plugin-cleanup",
+      "dependencies": {
+        "acorn": "^5.7.1",
+        "magic-string": "^0.25.0",
+        "rollup-pluginutils": "^2.3.0"
+      },
+      "devDependencies": {
+        "acorn-dynamic-import": "^3.0.0",
+        "eslint": "^5.0.1",
+        "jest": "^22.4.3",
+        "rollup": "^0.58.2",
+        "rollup-plugin-buble": "^0.19.2",
+        "rollup-plugin-jsx": "^1.0.3"
+      },
+      "peerDependencies": {
+        "rollup": ">=0.50.0"
+      },
+      "gitHead": "224b567c80f2287a1ab8c7cd7358a36b45bcbfc4",
+      "_id": "rollup-plugin-cleanup@3.0.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.11.2",
+      "_npmUser": {
+        "name": "amarcruz",
+        "email": "amarcruz@yahoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-G7CGGvwIx1uEWm6TRaYiEez3+9PmSGlty6RjBZyrs9JlsXDGs58HiJZAdy9/KuRaPfwD974qU5444JtpPiduCA==",
+        "shasum": "d23b3eef6c3fab78fc313a89eb8f0c955526815f",
+        "tarball": "https://registry.npmjs.org/rollup-plugin-cleanup/-/rollup-plugin-cleanup-3.0.0.tgz",
+        "fileCount": 12,
+        "unpackedSize": 43014,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbQCmZCRA9TVsSAnZWagAAna4P/2HPW7zFjvNLNoSMjj23\nUECb4pTt9OYzG53lUKjNYTRHn+TU0C68AbHIUE3I7cwxgJc6rGqz8cp0iCCV\n1EEOMnPafFS8XSswpKth0T9Y2MSFLVW4kxDmmVfiwQDwno2mPAUeQzxiBvZi\nQCmZzcuDXML4wiQ7I6VjwoDI5wHTlb8tPXT1Demdlgh20cNcnP4sHJJHplIz\n+w7EXwjt3RU5u5a1j8Q3ilWlljAMd9M4HpRo+9FitAueIhQwbw1rayTtCOIs\nxGhpB8Yn0FT7TWnmCh8xn37ur77deYbQepQsyhjk9ip594cBWi/AycYqzLPv\nFu5C4CmFUSgFsGGUFme1VxaYgfr3+BpVqDNjuhL3SUxdujwj49MS3eemF2JE\nXBuuew1rCkQRs1k9JJ9J4NFYmSvSU0B7wYaQN/0dYjyFupWiOnKsJgVx0qMw\nCsHAcULt8KsNLRypMXmIToz3nalfk0urQrjtoahG4lyaMnxprV1icqUgzTtD\ndTalJ+gWPegzjiYG0DcbIUnqWxbtHuaTeHz8gQJ53yP8LLcas4L+/uu/Swf6\nbGksaN9RRCa4b5LKWjl2VHBK8lujTv3blT6JzhmjEcgUHiwfVd3hNtPx7BRE\nNr87txAMwwVuppjj6EkNlviufpQw6JVYr7d3Qi+o10rXZUnT3Dy5k5SPVNxw\nqO3A\r\n=BFvp\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "amarcruz",
+          "email": "amarcruz@yahoo.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/rollup-plugin-cleanup_3.0.0_1530931609695_0.25944856786366555"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.1.0": {
+      "name": "rollup-plugin-cleanup",
+      "version": "3.1.0",
+      "description": "Rollup plugin to trim trailing spaces, compact empty lines, and normalize line endings",
+      "main": "dist/rollup-plugin-cleanup.js",
+      "module": "dist/rollup-plugin-cleanup.es.js",
+      "jsnext:main": "dist/rollup-plugin-cleanup.es.js",
+      "source": "src/index.js",
+      "engines": {
+        "node": ">=6.14"
+      },
+      "scripts": {
+        "test": "nyc mocha",
+        "pretest": "rollup -c",
+        "lint": "eslint src/*.js test/*.js",
+        "clean": "rimraf ./dist/** ./coverage/**",
+        "coverage": "nyc report -r=lcov",
+        "build": "npm run lint && rimraf ./dist/** && npm test",
+        "prepublish": "npm run build"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/aMarCruz/rollup-plugin-cleanup.git"
+      },
+      "keywords": [
+        "rollup",
+        "rollup-plugin",
+        "javascript",
+        "es6",
+        "modules",
+        "comments",
+        "removal",
+        "cleanup"
+      ],
+      "author": {
+        "name": "aMarCruz",
+        "email": "amarcruzbox-git@yahoo.com",
+        "url": "https://github.com/aMarCruz"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/aMarCruz/rollup-plugin-cleanup/issues"
+      },
+      "homepage": "https://github.com/aMarCruz/rollup-plugin-cleanup",
+      "dependencies": {
+        "js-cleanup": "^1.0.0",
+        "rollup-pluginutils": "^2.3.0"
+      },
+      "devDependencies": {
+        "eslint": "^5.11.0",
+        "expect": "1.20.2",
+        "mocha": "^5.2.0",
+        "nyc": "^13.1.0",
+        "rimraf": "^2.6.2",
+        "rollup": "^0.68.2",
+        "rollup-plugin-buble": "^0.19.6",
+        "rollup-plugin-jsx": "^1.0.3",
+        "sourcemap-validator": "^1.1.0"
+      },
+      "peerDependencies": {
+        "rollup": ">=0.50.0"
+      },
+      "gitHead": "e7e9ea9099f9765dcbec8194afb353d598b7d7c8",
+      "_id": "rollup-plugin-cleanup@3.1.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.11.2",
+      "_npmUser": {
+        "name": "amarcruz",
+        "email": "amarcruz@yahoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-HA6PyX6tvN3rK6VgGemqPcDC62vYL9FawIng7IciaXbj/wJ4ydY13JmN+S+zIOtVaqpJhB3lTH24l2YVGJlC8A==",
+        "shasum": "ba453828c9039fba76e276bb6c516e7dfd5d23d4",
+        "tarball": "https://registry.npmjs.org/rollup-plugin-cleanup/-/rollup-plugin-cleanup-3.1.0.tgz",
+        "fileCount": 9,
+        "unpackedSize": 36868,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcJOkbCRA9TVsSAnZWagAA6SYP/2RRQ9wwNxXJ307cu059\nDAliqKaaeJBFfeEnn8oBlYjE4cR2CA+I6W/T07KTippH/G83FbF7TWwM5PmM\nn3RVWIFb3XMUYhRLkt6CBKHZoCw9Er1VA29il02is+W4zXeAauAMAFOEcKEA\nESd8q8Yhs0Yhzam8AtVngaIPQ3n8ibcRcyc/VEaQKGyoFD+H271F+INGsQx4\nJTfcRcaanAazL7BSzucRl9nZ/EkS0xrunWCo52FBSwlbkCBCE8JGbip/EuqA\n26vJ9itxFqGJaPEKVYQwz9ZZqnG6P4zsQAwjKSDZblJqzT9rmTta718a5XLJ\nMW2BlwMLfM1yeXPa7gM/3ucmjU6RhF6wXmIx8TPl83/2iK3UIvFgWKmIU018\nMzb1bVfIAblWyMTr0N+Vw9CaigcpoozWqMdLwlbD9XlFAA0Oc1In5kgIWCqT\nI/PdC0o6Q5stTnnH5LGUmjrfw8KqMzu646oGPI1hBX69t9/M9MNEULcpYQPq\nSpIc0TSaYSjpqPR96jmD9i4a2gEI6PMf6edZ2Qk9N0vzBLMSjyZ9yiBDE7Zn\nJPDbR9m7rOXR3Fei4S++K5GzLnKf70SG8+CiGUmijrBmS3SozeoHBU0ou8tT\nvzNxvP3+PA4Bu9A2ZucXvLjRmSA8UpNgJ0aB8ljyG4Gb/P6pgWb/EJh1sSEH\nF8J6\r\n=dhvw\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "amarcruz",
+          "email": "amarcruz@yahoo.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/rollup-plugin-cleanup_3.1.0_1545922843003_0.4269808037390339"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.1.1": {
+      "name": "rollup-plugin-cleanup",
+      "version": "3.1.1",
+      "description": "Rollup plugin to trim trailing spaces, compact empty lines, and normalize line endings",
+      "main": "dist/rollup-plugin-cleanup.js",
+      "module": "dist/rollup-plugin-cleanup.es.js",
+      "jsnext:main": "dist/rollup-plugin-cleanup.es.js",
+      "source": "src/index.js",
+      "engines": {
+        "node": ">=6.14"
+      },
+      "scripts": {
+        "test": "nyc mocha",
+        "pretest": "rollup -c",
+        "lint": "eslint src/*.js test/*.js",
+        "clean": "rimraf ./dist/** ./coverage/**",
+        "coverage": "nyc report -r=lcov",
+        "build": "npm run lint && rimraf ./dist/** && npm test",
+        "prepublish": "npm run build"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/aMarCruz/rollup-plugin-cleanup.git"
+      },
+      "keywords": [
+        "rollup",
+        "rollup-plugin",
+        "javascript",
+        "es6",
+        "modules",
+        "comments",
+        "removal",
+        "cleanup"
+      ],
+      "author": {
+        "name": "aMarCruz",
+        "email": "amarcruzbox-git@yahoo.com",
+        "url": "https://github.com/aMarCruz"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/aMarCruz/rollup-plugin-cleanup/issues"
+      },
+      "homepage": "https://github.com/aMarCruz/rollup-plugin-cleanup",
+      "dependencies": {
+        "js-cleanup": "^1.0.1",
+        "rollup-pluginutils": "^2.3.3"
+      },
+      "devDependencies": {
+        "eslint": "^5.12.0",
+        "expect": "1.20.2",
+        "mocha": "^5.2.0",
+        "nyc": "^13.1.0",
+        "rimraf": "^2.6.2",
+        "rollup": "^0.68.2",
+        "rollup-plugin-buble": "^0.19.6",
+        "rollup-plugin-jsx": "^1.0.3",
+        "sourcemap-validator": "^1.1.0"
+      },
+      "peerDependencies": {
+        "rollup": ">=0.50.0"
+      },
+      "gitHead": "66d93bed8ee53a8327a52725d02c3ff5b0e8af78",
+      "_id": "rollup-plugin-cleanup@3.1.1",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.11.2",
+      "_npmUser": {
+        "name": "amarcruz",
+        "email": "amarcruz@yahoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-wMS9JQm4ShvlMqno1pOfqvh0yYgNLO2ZgmzDsVvKuDt4XCn+9DcMoUwRQ5t9p9b113dR5FhPFFUHnvvQ/yuEtA==",
+        "shasum": "d012faab5e212b1c4bfa8144ace70fc6ac7b3315",
+        "tarball": "https://registry.npmjs.org/rollup-plugin-cleanup/-/rollup-plugin-cleanup-3.1.1.tgz",
+        "fileCount": 9,
+        "unpackedSize": 37174,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcQiKMCRA9TVsSAnZWagAALOoP/ijx3Mc+PWrNS7Z+WU3V\nzOVD9v0coCoyK0iXZtvkrf1ysrgkYaQ4Tsm/WxmoZTdDAB9ifkvwz4QQgZiG\nGPLGyTaoaeIa+7QHMpLAUO3R8w/FaJz20cdEPUMS1grsjie2OdefAOGwIee8\na+LpryIQGuihZ5WINqeU+0CIcvuRvmkck730LmDlWw10FmiVJpxq89jU4md+\naRQIx4DUq99t1wgj5iLGe7caZNL7lbhVECmZr43N5upbQr5tT34QD3fyYVn3\nwjtFCRCrqVAivinM/QESgeTG8LV8CAPB665tX7c8bhRi+Yh1EMki4II/Bp+u\nSCVECe1Ez3oD+fJ7D6MVWWcAbrkKP6cZa7gqygIe9nkN2lScFt2Jt1ARjRMT\nh3ARSpIfRR4EoFJY+l3xZ98aV6QEB/+ySw6E2Gxo2ISGi8OsGe2Q0v8g0g0Y\n0SzUGOXyq8gusjQCPZKhARfwWLhFASc3Cb9EQCttqe/jutb4Nj3FYst2K7Sc\ndakWljXjg1p5cNlsMr4YL1oyWvmaHL6h7VnigH69k7QqxKcb3qlLpErVIutU\nZZFytyQo9rKtoWcxTZtBfXyOTeN//HvvEEMhOxdZnZzP/4llPLB/SKV0aBgK\nBaTNMoxZwfi6AyOoNHV8vmFslu1Byr0XPKrV3JCR8b2kiyJxvtcZr7jdHnH2\n7b9l\r\n=wDdW\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "amarcruz",
+          "email": "amarcruz@yahoo.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/rollup-plugin-cleanup_3.1.1_1547838091287_0.7848020356264283"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.2.0": {
+      "name": "rollup-plugin-cleanup",
+      "version": "3.2.0",
+      "description": "Rollup plugin to trim trailing spaces, compact empty lines, and normalize line endings",
+      "main": "dist/rollup-plugin-cleanup.js",
+      "module": "dist/rollup-plugin-cleanup.es.js",
+      "source": "src/index.js",
+      "engines": {
+        "node": "^10.13.0 || >=12.0.0"
+      },
+      "scripts": {
+        "test": "nyc mocha",
+        "pretest": "rollup -c",
+        "lint": "eslint -f unix src/*.js test/*.js",
+        "clean": "rimraf ./dist/** ./coverage/**",
+        "coverage": "nyc report -r=lcov",
+        "build": "yarn lint && yarn clean && yarn test",
+        "prepare": "yarn build"
+      },
+      "keywords": [
+        "rollup",
+        "rollup-plugin",
+        "javascript",
+        "es6",
+        "modules",
+        "comments",
+        "removal",
+        "cleanup"
+      ],
+      "author": {
+        "name": "aMarCruz",
+        "email": "amarcruzbox-git@yahoo.com",
+        "url": "https://github.com/aMarCruz"
+      },
+      "license": "MIT",
+      "homepage": "https://github.com/aMarCruz/rollup-plugin-cleanup",
+      "bugs": {
+        "url": "https://github.com/aMarCruz/rollup-plugin-cleanup/issues"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/aMarCruz/rollup-plugin-cleanup.git"
+      },
+      "dependencies": {
+        "js-cleanup": "^1.2.0",
+        "rollup-pluginutils": "^2.8.2"
+      },
+      "devDependencies": {
+        "@rollup/plugin-buble": "^0.21.3",
+        "eslint": "^7.9.0",
+        "expect": "1.20.2",
+        "mocha": "^8.1.3",
+        "nyc": "^15.1.0",
+        "rimraf": "^3.0.2",
+        "rollup": "^2.28.1",
+        "rollup-plugin-jsx": "^1.0.3",
+        "sourcemap-validator": "^2.1.0"
+      },
+      "peerDependencies": {
+        "rollup": ">=2.0"
+      },
+      "gitHead": "4764116d336dbf10d49b3b9bf0224393e7b3b96a",
+      "_id": "rollup-plugin-cleanup@3.2.0",
+      "_nodeVersion": "10.20.1",
+      "_npmVersion": "6.14.4",
+      "dist": {
+        "integrity": "sha512-0Ool54usOA6uqvb2x89034jgGqhGnz1JVNfGbnZ2AuVDvupEVsi5Kr6hlC7d91xAgvkQo8kJEIgzfDuXjdT5/g==",
+        "shasum": "dbb44c61bd80f9d989218778a68ef37c696a17f9",
+        "tarball": "https://registry.npmjs.org/rollup-plugin-cleanup/-/rollup-plugin-cleanup-3.2.0.tgz",
+        "fileCount": 9,
+        "unpackedSize": 36678,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfapyrCRA9TVsSAnZWagAAT/0QAKAE/j3nSsPSlYVzRu4a\n5/B5yNlGgyTFyyM6+3Cfq34B9IVr/qG0XllFyxAAKhe3GzgGX9FyqBINhCtG\nuNcQ8AnHnzpa6XqJzmP6WzJH7xt9EASNm+epirqLsIsjqWzALJ9bmcMGypXJ\n+hEMNbtPh7s2/kzIY/LbZbbzv7/QO0D6deGuLVVK9F97yZWAmtQF4UQm6Rg1\naiQrFW07RBr4q9Irs3YV4pdfhTxrl0nzLSPzneYBcAgQ0syUd3f9WUCML5eW\niSIEyqQw9LOt5sBqOuK2iGVTt+UDJvgcebBupQ2Jb060BdOIeelvRUOkm9VZ\nNKec9pffKWiju3myOeET1tlCDKLwDoFsQ8SwTHeK7Jienbz58yPUFc3hqwHh\nASZ5/MxfRvt4XZ7W3NYWzy5/rq5DQwOAlCIVNO9MOalTSEErZkVn5MuzluCr\naar29VhKXU7CW1a89By9E9VTYcBuxj/OW4weTaqe5LsOjdU1q39+WLE2stH6\nX9nXEXRT9jlkApXCHy/uUf+Exntb3x2Wn2eaA+acBjxIAzosIaGz1yJGoA0O\nAke7vX1dINn467zy4QkKqYbOSdrF0nFFIHQDqbcsiGK2h61pgQydl9uJ0SPZ\nVyZHnubwqOyOyjh4oEnan0NoUy9hQVrvp4Ag+nXKTi3hZVPFFkQft7uuT7Xt\nc1uO\r\n=u5xf\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "amarcruz",
+          "email": "amarcruz@yahoo.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "amarcruz",
+        "email": "amarcruz@yahoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/rollup-plugin-cleanup_3.2.0_1600822442908_0.16342114587305057"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.2.1": {
+      "name": "rollup-plugin-cleanup",
+      "version": "3.2.1",
+      "description": "Rollup plugin to trim trailing spaces, compact empty lines, and normalize line endings",
+      "main": "dist/rollup-plugin-cleanup.js",
+      "module": "dist/rollup-plugin-cleanup.es.js",
+      "source": "src/index.js",
+      "engines": {
+        "node": "^10.14.2 || >=12.0.0"
+      },
+      "scripts": {
+        "test": "nyc mocha",
+        "pretest": "rollup -c",
+        "lint": "eslint -f unix src/*.js test/*.js",
+        "clean": "rimraf ./dist/** ./coverage/**",
+        "coverage": "nyc report -r=lcov",
+        "build": "yarn lint && yarn clean && yarn test",
+        "prepare": "yarn build"
+      },
+      "keywords": [
+        "rollup",
+        "rollup-plugin",
+        "javascript",
+        "es6",
+        "modules",
+        "comments",
+        "removal",
+        "cleanup"
+      ],
+      "author": {
+        "name": "aMarCruz",
+        "email": "amarcruzbox-git@yahoo.com",
+        "url": "https://github.com/aMarCruz"
+      },
+      "license": "MIT",
+      "homepage": "https://github.com/aMarCruz/rollup-plugin-cleanup",
+      "bugs": {
+        "url": "https://github.com/aMarCruz/rollup-plugin-cleanup/issues"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/aMarCruz/rollup-plugin-cleanup.git"
+      },
+      "dependencies": {
+        "js-cleanup": "^1.2.0",
+        "rollup-pluginutils": "^2.8.2"
+      },
+      "devDependencies": {
+        "@rollup/plugin-buble": "^0.21.3",
+        "eslint": "^7.9.0",
+        "expect": "1.20.2",
+        "mocha": "^8.1.3",
+        "nyc": "^15.1.0",
+        "rimraf": "^3.0.2",
+        "rollup": "^2.28.1",
+        "rollup-plugin-jsx": "^1.0.3",
+        "sourcemap-validator": "^2.1.0"
+      },
+      "peerDependencies": {
+        "rollup": ">=2.0"
+      },
+      "gitHead": "4988f5428afd7ed313f1e5c5fcd3634df12eb6c7",
+      "_id": "rollup-plugin-cleanup@3.2.1",
+      "_nodeVersion": "10.20.1",
+      "_npmVersion": "6.14.4",
+      "dist": {
+        "integrity": "sha512-zuv8EhoO3TpnrU8MX8W7YxSbO4gmOR0ny06Lm3nkFfq0IVKdBUtHwhVzY1OAJyNCIAdLiyPnOrU0KnO0Fri1GQ==",
+        "shasum": "8cbc92ecf58babd7c210051929797f137bbf777c",
+        "tarball": "https://registry.npmjs.org/rollup-plugin-cleanup/-/rollup-plugin-cleanup-3.2.1.tgz",
+        "fileCount": 9,
+        "unpackedSize": 36682,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfap6wCRA9TVsSAnZWagAAakgQAJRMr9ly1jzOx1J0FbsC\nyOtW84HgMK4gBhW61GcF80KBXSdWDkmS02iidi7SqmnsuAN2yh7UpKHMj1Pq\n232mEY8D1Z98Q3NPUu6SKeUsvgB1+3PpUNRl5WTuy0uRMuWyP4142YkNF8V2\nvl5D8cG9MAlOOtr+v7a78Fcr2mvBLvsaLIKb1oNyDwXoYEpWpDknwLGHcFwW\ne5JgmgB/VtfdWTZnvs9d3imrCIfpA5kiS8Uuy3FLzd58NcOr2SSoidlvKFxH\nOHQOaPBbPuTHJibLnTUGtg3gKVTYiPV17+jBp03vUyOwNpekgZ9JoeNX5uv7\nBfjQqoZBEGAWKlJ84Bt+XGMhDdGzPWqmrIhotYc0VJMYF7rI59UBQCyXDor4\nCGqnivFmMwTmeH+mvSO2EwGCeTWchRI6EJfZdwuuLgYQ737E4w/xHGki2JvJ\n+OMYGXQqR5N0ufc/GCYGycVqvhwW6+fkK3fXCazUyIHrRpN5TC8GBJmv3qMj\nqtEZp05ZaSZOBvfXRT+lIv1J0arYfCyGwMSQR0rOgv8f8KDazlCpOspJVJJt\nOEfPyGjY26GXHAohM7l/DdZxd0o6q5cjA3/UbiTcQ9dYrGjXbD9sWRuVIBHl\nPDmw6j69OanA6v+JJQTAad8xZsoF0iJrkKuRaGyr9mf+ZPJd/Mqg6rwr5jMs\nqCIr\r\n=Bsni\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "amarcruz",
+          "email": "amarcruz@yahoo.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "amarcruz",
+        "email": "amarcruz@yahoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/rollup-plugin-cleanup_3.2.1_1600822960448_0.7776564719230756"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# rollup-plugin-cleanup\n\n[![npm Version][npm-badge]][npm-url]\n[![License][license-badge]][license-url]\n[![AppVeyor Status][appveyor-badge]][appveyor-url]\n[![Travis Status][travis-badge]][travis-url]\n[![Maintainability][climate-badge]][climate-url]\n[![Coverage][coverage-badge]][coverage-url]\n\n[Rollup](http://rollupjs.org/) plugin to remove comments, trim trailing spaces, compact empty lines, and normalize line endings in JavaScript files.\n\nWith the rollup-plugin-cleanup you have:\n\n- Compaction of empty lines within multiline comments and/or out of them.\n- Normalization of line endings to Unix, Mac, or Windows.\n- Removal of JavaScript comments through powerful, configurable filters.\n- Removal of trailing whitespace of each line.\n- TypeScript definitions.\n- Sourcemap support.\n\nFrom v3.1, this plugin no longer uses acorn. See more in the [Whats New](#whats-new) section.\n\nrollup-plugin-cleanup requires node v10.13 or above, but **avoid the buggy v11.x**\n\n**Important:**\n\nrollup-plugin-cleanup is based on [js-cleanup](https://github.com/aMarCruz/js-cleanup) and can handle any JS-like file: TypeScript, Flow, React, ES9, etc, but it is mainly a _postprocessor_, so it should be runned in a later stage of your toolchain, after any preprocessor or transpiler.\n\n**Why not Uglify?**\n\nUglify is a excelent _minifier_ but you have little control over the results, while with js-cleanup your coding style remains intact and the removal of comments is strictly under your control.\n\n## Support my Work\n\nI'm a full-stack developer with more than 20 year of experience and I try to share most of my work for free and help others, but this takes a significant amount of time and effort so, if you like my work, please consider...\n\n[<img src=\"https://amarcruz.github.io/images/kofi_blue.png\" height=\"36\" title=\"Support Me on Ko-fi\" />][kofi-url]\n\nOf course, feedback, PRs, and stars are also welcome 🙃\n\nThanks!\n\n## Install\n\n```bash\nnpm install rollup-plugin-cleanup --save-dev\n# or with yarn\nyarn add rollup-plugin-cleanup -D\n```\n\n## Usage\n\n```js\nimport { rollup } from 'rollup';\nimport awesome from 'rollup-plugin-awesome';\nimport cleanup from 'rollup-plugin-cleanup';\n\nrollup({\n  input: 'src/main.js',\n  plugins: [\n    awesome(),        // other plugins\n    cleanup()         // cleanup here\n  ]\n}).then(...)\n```\n\nThat's it.\n\nBy default, only the .js, .jsx, and .tag files are processed, but you can expand or restrict the set of accepted files using the options `include`, `exclude`, and `extensions` (see below).\n\n## Options\n\nFrom v3.1.0 `normalizeEols` is deprecated in favor of `lineEndings` and the properties `ecmaVersion`, `sourceType`, and `acornOptions` are ignored. See more in [Whats New](#whats-new) section.\n\n| Name            | Default  | Description |\n|-----------------|----------|-------------|\n| comments        | `'some'` | Filter or array of filters that determinates which comments should be preserved.<br>Use \"all\" to keep all, or \"none\" to remove all the comments. |\n| compactComments | `true`   | Should js-cleanup also compact whitespace and blank lines in the preserved multiline comments?<br>Line-ending normalization is always done. |\n| lineEndings     | `unix`   | Type of Line-ending for normalization: \"unix\", \"mac\", \"win\". |\n| maxEmptyLines   | `0`      | Maximum successive empty lines to preserve in the output.<br>Use a positive value, or `-1` to keep all the lines. |\n| sourcemap       | `true`   | Should a sourcemap be generated? |\n| extensions      | `['js', 'jsx', 'mjs']` | String or array of strings with extensions of files to process. |\n| exclude         | (none)   | [picomatch](https://github.com/micromatch/picomatch#globbing-features) or array of picomatch patterns for paths to exclude of the process. |\n| include         | (none)   | [picomatch](https://github.com/micromatch/picomatch#globbing-features) or array of picomatch patterns for paths to include in the process. |\n\n## Predefined Comment Filters\n\nInstead the special 'all' or 'none' keywords, you can use any combination of custom filters along with any of these predefined ones:\n\nName     | Will preserve...\n-------- | -----------------\nsome     | Comments containing \"@license\", \"@preserve\", or starting with \"!\".\nlicense  | Comments containing \"@license\".\neslint   | [ESLint](http://eslint.org/docs/user-guide/configuring) directives.\nflow     | Facebook [Flow](https://flow.org/en/docs) directives, [comment types](https://flow.org/en/docs/types/comments/), and [flowlint](https://flow.org/en/docs/linting/flowlint-comments/) comments.\nistanbul | [istanbul](https://github.com/gotwarlost/istanbul/blob/master/ignoring-code-for-coverage.md) ignore comments.\njsdoc    | [JSDoc](http://usejsdoc.org/) comments.\njshint   | [JSHint](http://jshint.com/docs/#inline-configuration) directives.\njslint   | [JSLint](http://www.jslint.com/help.html) directives.\nsources  | Sourcemap directives [sourceURL](https://www.html5rocks.com/en/tutorials/developertools/sourcemaps/#toc-sourceurl) and [sourceMappingURL](https://docs.google.com/document/d/1U1RGAehQwRypUTovF1KRlpiOFze0b-_2gc6fAH0KY0k/edit#heading=h.9ppdoan5f016).\nts       | MS [TypeScript](http://www.typescriptlang.org/) Triple-Slash and @ts-* directives, plus the @jsx pragma.\nts3s     | TypeScript [Triple-Slash](http://www.typescriptlang.org/docs/handbook/triple-slash-directives.html) directives.\n\nFrom v3.1.0, `some` does not includes '@cc_on' and the `jscs` filter was deprecated. See more in [Whats New](#whats-new) section.\n\n'srcmaps' will be preserved as an alias to the 'sources' filter.\n\nSee the regexes in the js-cleanup [src/predef-filters.ts](https://github.com/aMarCruz/js-cleanup/blob/master/src/predef-filters.ts) file.\n\n### Custom Filters\n\nYou can set custom filters through regexes that matches the content of the comments that you want to preserve.\n\nThe string to which the regex is applied does not includes the first slash, nor the `*/` terminator of the multiline comments, so the multiline comments begins with an asterisk (`*`) and single-line comments begins with a slash (`/`).\n\nFor example, the following filters will preserve ESLint directives and multiline comments starting with a dash:\n\n```js\nconst cleanedCode = jsCleanup(code, null, { comments: ['eslint', /^\\*-/] })\n```\n\n## What's New\n\nChanges in v3.2.1\n\n- Fixed #16 ? Thanks to @Aqours, @gevalo1 & @xania for repoting this issue\n- Using js-cleanup v1.2.0 and Rollup v2.0+\n- Requires NodeJS v10.14.2 or v12.0 and above\n- Updated dependencies\n\n## License\n\nThe [MIT License][license-url] (MIT)\n\n&copy; 2018-2020 Alberto Martínez\n\n[npm-badge]:      https://badgen.net/npm/v/rollup-plugin-cleanup\n[npm-url]:        https://www.npmjs.com/package/rollup-plugin-cleanup\n[license-badge]:  https://img.shields.io/badge/license-MIT-blue.svg?style=flat\n[license-url]:    https://github.com/aMarCruz/rollup-plugin-cleanup/blob/master/LICENSE\n[appveyor-badge]: https://ci.appveyor.com/api/projects/status/vuy62d6cbo1uo0be?svg=true\n[appveyor-url]:   https://ci.appveyor.com/project/aMarCruz/rollup-plugin-cleanup\n[travis-badge]:   https://travis-ci.org/aMarCruz/rollup-plugin-cleanup.svg?branch=master\n[travis-url]:     https://travis-ci.org/aMarCruz/rollup-plugin-cleanup\n[climate-badge]:  https://api.codeclimate.com/v1/badges/a63cdadb2dce668d3e8b/maintainability\n[climate-url]:    https://codeclimate.com/github/aMarCruz/rollup-plugin-cleanup/maintainability\n[coverage-badge]: https://codecov.io/gh/aMarCruz/rollup-plugin-cleanup/branch/master/graph/badge.svg\n[coverage-url]:   https://codecov.io/gh/aMarCruz/rollup-plugin-cleanup\n[kofi-url]:       https://ko-fi.com/C0C7LF7I\n",
+  "maintainers": [
+    {
+      "name": "amarcruz",
+      "email": "amarcruz@yahoo.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-09-23T01:02:42.756Z",
+    "created": "2016-09-05T12:08:37.275Z",
+    "0.1.0": "2016-09-05T12:08:37.275Z",
+    "0.1.1": "2016-09-06T05:17:03.647Z",
+    "0.1.2": "2016-09-08T13:51:16.554Z",
+    "0.1.3": "2016-09-12T22:31:23.160Z",
+    "0.1.4": "2016-09-12T23:27:32.636Z",
+    "1.0.0": "2017-01-09T22:26:10.645Z",
+    "1.0.1": "2017-06-15T03:30:54.924Z",
+    "2.0.0": "2017-10-19T21:40:37.081Z",
+    "2.0.1": "2018-04-10T17:57:13.349Z",
+    "3.0.0-beta.1": "2018-05-01T06:41:32.171Z",
+    "3.0.0": "2018-07-07T02:46:49.784Z",
+    "3.1.0": "2018-12-27T15:00:43.249Z",
+    "3.1.1": "2019-01-18T19:01:31.421Z",
+    "3.2.0": "2020-09-23T00:54:03.057Z",
+    "3.2.1": "2020-09-23T01:02:40.566Z"
+  },
+  "homepage": "https://github.com/aMarCruz/rollup-plugin-cleanup",
+  "keywords": [
+    "rollup",
+    "rollup-plugin",
+    "javascript",
+    "es6",
+    "modules",
+    "comments",
+    "removal",
+    "cleanup"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aMarCruz/rollup-plugin-cleanup.git"
+  },
+  "author": {
+    "name": "aMarCruz",
+    "email": "amarcruzbox-git@yahoo.com",
+    "url": "https://github.com/aMarCruz"
+  },
+  "bugs": {
+    "url": "https://github.com/aMarCruz/rollup-plugin-cleanup/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "users": {
+    "olivr70": true,
+    "vandeurenglenn": true,
+    "amenadiel": true
+  }
+}

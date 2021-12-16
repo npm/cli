@@ -1,0 +1,565 @@
+{
+  "_id": "map-obj",
+  "_rev": "16-82eddcfefda46cb5b19724d739d9c624",
+  "name": "map-obj",
+  "description": "Map object keys and values into a new object",
+  "dist-tags": {
+    "latest": "4.1.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "map-obj",
+      "version": "1.0.0",
+      "description": "Map object keys and values into a new object",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/map-obj"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "map",
+        "obj",
+        "object",
+        "key",
+        "keys",
+        "value",
+        "values",
+        "val",
+        "iterate"
+      ],
+      "devDependencies": {
+        "ava": "0.0.4"
+      },
+      "gitHead": "96c3c4363f3c7d192f33305884f129004f5c4bcb",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/map-obj/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/map-obj",
+      "_id": "map-obj@1.0.0",
+      "_shasum": "bcbdf6756758763c182daf79e18094a2f1c85766",
+      "_from": ".",
+      "_npmVersion": "2.1.2",
+      "_nodeVersion": "0.10.32",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "bcbdf6756758763c182daf79e18094a2f1c85766",
+        "tarball": "https://registry.npmjs.org/map-obj/-/map-obj-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "map-obj",
+      "version": "1.0.1",
+      "description": "Map object keys and values into a new object",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/map-obj"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "map",
+        "obj",
+        "object",
+        "key",
+        "keys",
+        "value",
+        "values",
+        "val",
+        "iterate",
+        "iterator"
+      ],
+      "devDependencies": {
+        "ava": "0.0.4"
+      },
+      "gitHead": "a4f2d49ae6b5f7c0e55130b49ab0412298b797bc",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/map-obj/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/map-obj",
+      "_id": "map-obj@1.0.1",
+      "_shasum": "d933ceb9205d82bdcf4886f6742bdc2b4dea146d",
+      "_from": ".",
+      "_npmVersion": "2.7.4",
+      "_nodeVersion": "0.12.2",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "d933ceb9205d82bdcf4886f6742bdc2b4dea146d",
+        "tarball": "https://registry.npmjs.org/map-obj/-/map-obj-1.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "map-obj",
+      "version": "2.0.0",
+      "description": "Map object keys and values into a new object",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/map-obj.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "map",
+        "obj",
+        "object",
+        "key",
+        "keys",
+        "value",
+        "values",
+        "val",
+        "iterate",
+        "iterator",
+        "rename",
+        "modify",
+        "deep",
+        "recurse",
+        "recursive"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "xo": {
+        "esnext": true
+      },
+      "gitHead": "40ce3a8b7d419249a6c0d83031b5d3214b9bf8ed",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/map-obj/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/map-obj#readme",
+      "_id": "map-obj@2.0.0",
+      "_shasum": "a65cd29087a92598b8791257a523e021222ac1f9",
+      "_from": ".",
+      "_npmVersion": "2.15.9",
+      "_nodeVersion": "4.5.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "a65cd29087a92598b8791257a523e021222ac1f9",
+        "tarball": "https://registry.npmjs.org/map-obj/-/map-obj-2.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/map-obj-2.0.0.tgz_1474089008506_0.09945452911779284"
+      },
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "map-obj",
+      "version": "3.0.0",
+      "description": "Map object keys and values into a new object",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/map-obj.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "map",
+        "obj",
+        "object",
+        "key",
+        "keys",
+        "value",
+        "values",
+        "val",
+        "iterate",
+        "iterator",
+        "rename",
+        "modify",
+        "deep",
+        "recurse",
+        "recursive"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "4db51b6f5f6d2b617bc80bb66dd6a6e528dc4cb7",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/map-obj/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/map-obj#readme",
+      "_id": "map-obj@3.0.0",
+      "_npmVersion": "6.3.0",
+      "_nodeVersion": "8.11.3",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-Ot+2wruG8WqTbJngDxz0Ifm03y2pO4iL+brq/l+yEkGjUza03BnMQqX2XT//Jls8MOOl2VTHviAoLX+/nq/HXw==",
+        "shasum": "4221cc62360f88c0735f9e7c0813bd889657f490",
+        "tarball": "https://registry.npmjs.org/map-obj/-/map-obj-3.0.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 3828,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbapFHCRA9TVsSAnZWagAASvIP/0rnvWwHNZAH8bWVBSC8\nAqJmb5GURwi3HxLfLzMdLWIErLn/oGhz2aALSZbEoiiDEP7fVJTWxtY5ihiv\nWd/fgi/iU4HFsuCyIl02nF0UiMDzFiU+09UhDfTQUZdKgYrH/UZ1K9NUxbzF\nn39PWz4FKqChUIX6yIzOyHrMTueQiuL0+AMDhId8naFiWV5jMwe5x6xuOOr1\nHeStv/Sug+LGgf+481CKidw2ZpaORq0GxcnOERSjR45aaWC36SbUjQiv7eFl\nIEvdZ9DMa7IOI2HewgGpp5clt/x9sv/uco69jAjunJbz/z+D6u17X2+Tiyce\ntVSgDTS1ipVv5kp8PHUwOIbaJytw+RVj8XXmVilMhoZdLBkWm3ENuWUxobFC\ntRxMeolAWg2wZ5Kurzyf9utCV4URdR1BC/+Wy+uE6kEsIwcb3fxTwOsQxCSF\nPu5nCscYsz4Sy8MBOZ+QaBFUjqZzf1gPXJll+eMHmGxhHNFl5QTJVMm6fCDo\ni3JW1BJVbzLap2Rs9Fzj9qyEOpi83bnt+w8KdoT5wE2OqeIMbKFMoRjBxYHn\nbt1PP5XeyOwZYZ6xh+7uQyIY2kVBb+mhKNbZRRVUtVgwYLaI3j1PH04q9csX\nvQ1Hn5CbS/KvWWXsR7C26s4rng902wYxNANUKI5wJwdjUXTapq0c26sEQvtb\nh9K/\r\n=gFyF\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/map-obj_3.0.0_1533710662889_0.49796460121473984"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.1.0": {
+      "name": "map-obj",
+      "version": "3.1.0",
+      "description": "Map object keys and values into a new object",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/map-obj.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "map",
+        "object",
+        "key",
+        "keys",
+        "value",
+        "values",
+        "iterate",
+        "iterator",
+        "rename",
+        "modify",
+        "deep",
+        "recurse",
+        "recursive"
+      ],
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "5556028fd392f4fbdf18c1c604b0b0c883dd99f7",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/map-obj/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/map-obj#readme",
+      "_id": "map-obj@3.1.0",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.15.3",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-Xg1iyYz/+iIW6YoMldux47H/e5QZyDSB41Kb0ev+YYHh3FJnyyzY0vTk/WbVeWcCvdXd70cOriUBmhP8alUFBA==",
+        "shasum": "3be9810d926db2f8612c728a2e95e03b7f109241",
+        "tarball": "https://registry.npmjs.org/map-obj/-/map-obj-3.1.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 6628,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcvWK1CRA9TVsSAnZWagAAk9cQAJLcJ5tv/izqk/dwpiN0\nAlBuYm9ELBeePfQ8KaEfHkLcvdp7uYks9kgPRlnR3tHghtQigd/XFSCTQDvN\nBvdU9aAnNKqPaejduocdW0CTBMYLerYqMkcaoS7O8rn33nQ3DenMkCiC3fbp\nCjLr80OheQz5ZIm6Plqe6nWFHBGm5i0LidGMYVBSqPh38cvBdJn2gnbbLKiT\nOSIyWHY8WE5n+c527+hjWsPU7OA2RMAac9n5OQSXWGEGaUJiU4SKc/dtkOPi\n4EDxUNcoEu+B9ec16dpycpN1Pgd28XUJf922NLJX48VTdZAiJ1MjrjNfsMs5\nL9IQdHNYZ5adFnpviGAjwfmUla4AVcghqEJpXt2SpjXjsH40z5t+8D5de4OT\nt3K9wMA+MPVczg9jqFJn8WusQaL9OYkX/9EEMYqdSjtTx5Xl+Idj+xPk5XcP\napBgejCCVUWvc6a9gMVCVfb79K5MG8RbVSYVmQj9bWBkScwPnvQanu8qTjJJ\nURMuexh193cy96XDxVJmGBHcK0Y9E8jk3rxUR2n9reJs1G1Ndz85ZkngMxVM\nap/76i7CWLsDfgSv3XQmVOJaQnc//aELcUCwXw1unuHUL9hiSyZIVd1jpD8E\nsDtJ+0z/SmWt5um+3RjCt2sVdi2KBsPujdzkVXVzBcJZsjL3pADScIwPALOS\nbjkm\r\n=Cc3B\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/map-obj_3.1.0_1555915444512_0.3163818961387286"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.0.0": {
+      "name": "map-obj",
+      "version": "4.0.0",
+      "description": "Map object keys and values into a new object",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/map-obj.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "map",
+        "object",
+        "key",
+        "keys",
+        "value",
+        "values",
+        "iterate",
+        "iterator",
+        "rename",
+        "modify",
+        "deep",
+        "recurse",
+        "recursive"
+      ],
+      "devDependencies": {
+        "ava": "^2.0.0",
+        "tsd": "^0.7.3",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "d35fa2d91642d269b7bfe2ebfe7c9915376fa92d",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/map-obj/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/map-obj#readme",
+      "_id": "map-obj@4.0.0",
+      "_nodeVersion": "10.16.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-Cqo6mRdpHmRD95I1vMjIKAv4KnH8Sn2me3Q1+BOFPboOzT7x7qr8lhtRmFwNG48RDiouOhiRL+L92kMpeBLhWw==",
+        "shasum": "20a2ac4341c42570a85de7a976ab6ba60e3c0870",
+        "tarball": "https://registry.npmjs.org/map-obj/-/map-obj-4.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 6797,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJc+hfcCRA9TVsSAnZWagAANXcP/3eFElQyX49fScUzSwQb\nKGN4OmXP6u+fh0B6dkGTteaqaVYxahqoV++nyviBm5qhLoa+zVWUET5sOGBg\nM5jI3hJ6iT1vTkgj8l65dBITjs2Q99Wrw1JQlGzw1afZXmeDMQ+uz85n0llH\n7z0aIuoVqEAxaWXKv49Z6XdXUD5eyMxTBBTL7CnqKWj0suhFhcwhKls3FnfR\ndvowLNGcusX5yS5LRvSJxXEt9SB+Dc3rviIqoUtVBL4IQ4t5dD+FJQ0Wdj1c\nMb682FZ2KE0q/LYYxpjz18Wen39AK+FM2cRRqs183v4uqvSPpiJCMlI9cpHq\nfdQgZMcCbHBq/JMW2OjuumDGmoCjmmkpFuIVkaZ4FcXk8Dzh1npAnOofsiPL\nD/oRKLU4GR5MmuGzFQpDPAg1FLawC+HtRMQWK7FzUYjjMk3zwln4deXdP/vR\nLI8Gyo8TLg7gAq2iYh2iFVwfWDvawCQ8ill6a1j2BwPQwnkC2be3qUudGyLL\ncSDF4xTXnfaJwb+eqO9uIMUbtwIPOVvSeDJMGtrgXIui+tpOH5a9BQAScOoN\nfLlkAS13VaD/iTpMLgMYhJib3+0qarkEeIiL+YcGSdus/OJ0J6C21bNmc8kd\nAdBB8DRG/Xr1eJUa74A7ZuEwKsBKaVepCt1DytyKXvLrw1AWAEOmtbVtr0eG\nmKOz\r\n=bVih\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/map-obj_4.0.0_1559893979425_0.9001481014415618"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.1.0": {
+      "name": "map-obj",
+      "version": "4.1.0",
+      "description": "Map object keys and values into a new object",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/map-obj.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "map",
+        "object",
+        "key",
+        "keys",
+        "value",
+        "values",
+        "iterate",
+        "iterator",
+        "rename",
+        "modify",
+        "deep",
+        "recurse",
+        "recursive"
+      ],
+      "devDependencies": {
+        "ava": "^2.0.0",
+        "tsd": "^0.7.3",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "ab153427cc788e28448f2e1800eaec1c43610d38",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/map-obj/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/map-obj#readme",
+      "_id": "map-obj@4.1.0",
+      "_nodeVersion": "8.16.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-glc9y00wgtwcDmp7GaE/0b0OnxpNJsVf3ael/An6Fe2Q51LLwN1er6sdomLRzz5h0+yMpiYLhWYF5R7HeqVd4g==",
+        "shasum": "b91221b542734b9f14256c0132c897c5d7256fd5",
+        "tarball": "https://registry.npmjs.org/map-obj/-/map-obj-4.1.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 7054,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdBIskCRA9TVsSAnZWagAAY9AP/1k8+pmTqJ90rEGXi6vZ\nEByP6XwafRMz5yae+2GFxy0MTkvR38Me8vz5tN134XdBpJ6JMbTXSXWpX/yU\nvggfsIds1jA5jP/ivfcOJwlshutX9xmnmLAsj6idQ1We/0syS58xCtKLmOYs\nXNyzserR6QX0/SVOwTkpP/ayKktCArCVfQ34kaLraEb9UDn79NDN5by90a9R\n3d+SonjPYMC3RKPmOWbWHsJ3tkWR6/CPsgplKSrshZDwWHdgeP6L2vH4Ion2\narxIXMQfBtuk5ndb8IeWcY5HnKi2MH+L2DkvH9zDDpi94BRQmyWi1kYAJmBo\nlINFKbE7HmAjvCYbvl1hmHYAGR+jm/UyHleKOjt9kuDQHXFoATZMKGeDHuFn\n3qL88+p1or3x80yhNGtrS0JgAbltaoY2amhktocGE/cs9hEhVeSWfH3GK8PT\nYDLwZ2GS/RRsCNR5D20iRn+0Yum9+t6DxqrXVcQKN549N+QzaJ1t0EkwvaSw\nLpppEedOPS/kZe2MnlrL5yCn82mlMhqvWkNwNtrXUHZ3MHWL+YNKN0eTK6rP\n4gt1XuFCZ/KfsgTGFTvL6T8HPSwWFchn/5QK4hzi+JoNTFMGfqUL+5G2kHus\nml6YJv8QPTKe4ElJZv8yoSZvKXQwLtuGuz8KukY9cqvmcDRr0uvCFls6+cw7\nCQ22\r\n=I4Q7\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/map-obj_4.1.0_1560578851920_0.028448962438873515"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# map-obj [![Build Status](https://travis-ci.org/sindresorhus/map-obj.svg?branch=master)](https://travis-ci.org/sindresorhus/map-obj)\n\n> Map object keys and values into a new object\n\n\n## Install\n\n```\n$ npm install map-obj\n```\n\n\n## Usage\n\n```js\nconst mapObject = require('map-obj');\n\nconst newObject = mapObject({foo: 'bar'}, (key, value) => [value, key]);\n//=> {bar: 'foo'}\n```\n\n\n## API\n\n### mapObject(source, mapper, options?)\n\n#### source\n\nType: `object`\n\nSource object to copy properties from.\n\n#### mapper\n\nType: `Function`\n\nMapping function.\n\n- It has signature `mapper(sourceKey, sourceValue, source)`.\n- It must return a two item array: `[targetKey, targetValue]`.\n\n#### options\n\nType: `object`\n\n##### deep\n\nType: `boolean`<br>\nDefault: `false`\n\nRecurse nested objects and objects in arrays.\n\n##### target\n\nType: `object`<br>\nDefault: `{}`\n\nTarget object to map properties on to.\n\n\n## Related\n\n- [filter-obj](https://github.com/sindresorhus/filter-obj) - Filter object keys and values into a new object\n\n\n---\n\n<div align=\"center\">\n\t<b>\n\t\t<a href=\"https://tidelift.com/subscription/pkg/npm-map-obj?utm_source=npm-map-obj&utm_medium=referral&utm_campaign=readme\">Get professional support for this package with a Tidelift subscription</a>\n\t</b>\n\t<br>\n\t<sub>\n\t\tTidelift helps make open source sustainable for maintainers while giving companies<br>assurances about security, maintenance, and licensing for their dependencies.\n\t</sub>\n</div>\n",
+  "maintainers": [
+    {
+      "name": "sindresorhus",
+      "email": "sindresorhus@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2019-06-15T06:07:34.923Z",
+    "created": "2014-10-12T11:47:07.079Z",
+    "1.0.0": "2014-10-12T11:47:07.079Z",
+    "1.0.1": "2015-05-02T18:02:46.655Z",
+    "2.0.0": "2016-09-17T05:10:08.778Z",
+    "3.0.0": "2018-08-08T06:44:23.091Z",
+    "3.1.0": "2019-04-22T06:44:04.714Z",
+    "4.0.0": "2019-06-07T07:52:59.540Z",
+    "4.1.0": "2019-06-15T06:07:32.018Z"
+  },
+  "homepage": "https://github.com/sindresorhus/map-obj#readme",
+  "keywords": [
+    "map",
+    "object",
+    "key",
+    "keys",
+    "value",
+    "values",
+    "iterate",
+    "iterator",
+    "rename",
+    "modify",
+    "deep",
+    "recurse",
+    "recursive"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/map-obj.git"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "bugs": {
+    "url": "https://github.com/sindresorhus/map-obj/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md",
+  "users": {
+    "nichoth": true,
+    "scott.m.sarsfield": true,
+    "rocket0191": true,
+    "cr8tiv": true
+  }
+}

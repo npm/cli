@@ -1,0 +1,1207 @@
+{
+  "_id": "is-descriptor",
+  "_rev": "11-5ada999fb5c3006289a2647acc3a9de6",
+  "name": "is-descriptor",
+  "description": "Returns true if a value has the characteristics of a valid JavaScript descriptor. Works for data descriptors and accessor descriptors.",
+  "dist-tags": {
+    "latest": "3.0.0",
+    "bugfix": "0.1.6"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "is-descriptor",
+      "description": "Returns true if a value has the characteristics of a valid JavaScript descriptor. Works for data descriptors and accessor descriptors.",
+      "version": "0.1.0",
+      "homepage": "https://github.com/jonschlinkert/is-descriptor",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/is-descriptor.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/is-descriptor/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "is-accessor-descriptor": "^0.1.0",
+        "is-data-descriptor": "^0.1.0",
+        "kind-of": "^2.0.1"
+      },
+      "devDependencies": {
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "accessor",
+        "check",
+        "data",
+        "descriptor",
+        "get",
+        "getter",
+        "is",
+        "keys",
+        "object",
+        "properties",
+        "property",
+        "set",
+        "setter",
+        "type",
+        "valid",
+        "value"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "is-descriptor",
+            "is-data-descriptor",
+            "is-accessor-descriptor",
+            "isobject"
+          ]
+        }
+      },
+      "gitHead": "b5d8c39843c98588b67069325a4e6455beb8aef3",
+      "_id": "is-descriptor@0.1.0",
+      "_shasum": "fc69a5b16b538f61b708e91bc9d9370a7d95830d",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "0.12.4",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "fc69a5b16b538f61b708e91bc9d9370a7d95830d",
+        "tarball": "https://registry.npmjs.org/is-descriptor/-/is-descriptor-0.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.1.1": {
+      "name": "is-descriptor",
+      "description": "Returns true if a value has the characteristics of a valid JavaScript descriptor. Works for data descriptors and accessor descriptors.",
+      "version": "0.1.1",
+      "homepage": "https://github.com/jonschlinkert/is-descriptor",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/is-descriptor.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/is-descriptor/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "is-accessor-descriptor": "^0.1.0",
+        "is-data-descriptor": "^0.1.0",
+        "kind-of": "^2.0.1",
+        "lazy-cache": "^0.2.3"
+      },
+      "devDependencies": {
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "accessor",
+        "check",
+        "data",
+        "descriptor",
+        "get",
+        "getter",
+        "is",
+        "keys",
+        "object",
+        "properties",
+        "property",
+        "set",
+        "setter",
+        "type",
+        "valid",
+        "value"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "is-descriptor",
+            "is-data-descriptor",
+            "is-accessor-descriptor",
+            "isobject"
+          ]
+        }
+      },
+      "gitHead": "dd9c4315dd61be73f42d07bc71ddb97414dfdbcf",
+      "_id": "is-descriptor@0.1.1",
+      "_shasum": "c3b0dcde084c854af9bd09ad83d2310abec08648",
+      "_from": ".",
+      "_npmVersion": "2.14.4",
+      "_nodeVersion": "4.1.1",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "c3b0dcde084c854af9bd09ad83d2310abec08648",
+        "tarball": "https://registry.npmjs.org/is-descriptor/-/is-descriptor-0.1.1.tgz"
+      },
+      "directories": {}
+    },
+    "0.1.2": {
+      "name": "is-descriptor",
+      "description": "Returns true if a value has the characteristics of a valid JavaScript descriptor. Works for data descriptors and accessor descriptors.",
+      "version": "0.1.2",
+      "homepage": "https://github.com/jonschlinkert/is-descriptor",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/is-descriptor.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/is-descriptor/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "utils.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "is-accessor-descriptor": "^0.1.0",
+        "is-data-descriptor": "^0.1.0",
+        "kind-of": "^2.0.1",
+        "lazy-cache": "^0.2.3"
+      },
+      "devDependencies": {
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "accessor",
+        "check",
+        "data",
+        "descriptor",
+        "get",
+        "getter",
+        "is",
+        "keys",
+        "object",
+        "properties",
+        "property",
+        "set",
+        "setter",
+        "type",
+        "valid",
+        "value"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "is-descriptor",
+            "is-data-descriptor",
+            "is-accessor-descriptor",
+            "isobject"
+          ]
+        }
+      },
+      "gitHead": "3aaf1ce8483bdee217e2f18b293937a09634a33b",
+      "_id": "is-descriptor@0.1.2",
+      "_shasum": "7b42058e4c9bb52909d1cb326a9a6d68942b0e40",
+      "_from": ".",
+      "_npmVersion": "2.14.4",
+      "_nodeVersion": "4.1.1",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "7b42058e4c9bb52909d1cb326a9a6d68942b0e40",
+        "tarball": "https://registry.npmjs.org/is-descriptor/-/is-descriptor-0.1.2.tgz"
+      },
+      "directories": {}
+    },
+    "0.1.3": {
+      "name": "is-descriptor",
+      "description": "Returns true if a value has the characteristics of a valid JavaScript descriptor. Works for data descriptors and accessor descriptors.",
+      "version": "0.1.3",
+      "homepage": "https://github.com/jonschlinkert/is-descriptor",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/is-descriptor.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/is-descriptor/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "utils.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "is-accessor-descriptor": "^0.1.4",
+        "is-data-descriptor": "^0.1.3",
+        "kind-of": "^3.0.2",
+        "lazy-cache": "^1.0.3"
+      },
+      "devDependencies": {
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "accessor",
+        "check",
+        "data",
+        "descriptor",
+        "get",
+        "getter",
+        "is",
+        "keys",
+        "object",
+        "properties",
+        "property",
+        "set",
+        "setter",
+        "type",
+        "valid",
+        "value"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "is-accessor-descriptor",
+            "is-data-descriptor",
+            "is-descriptor",
+            "isobject"
+          ]
+        },
+        "plugins": [
+          "gulp-format-md"
+        ]
+      },
+      "gitHead": "8e6c159cfa23b357dbac8f977c3a9421172aafeb",
+      "_id": "is-descriptor@0.1.3",
+      "_shasum": "e23fd4be1bd3f82bba664596a776ab497ea4c10a",
+      "_from": ".",
+      "_npmVersion": "3.3.6",
+      "_nodeVersion": "5.0.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "e23fd4be1bd3f82bba664596a776ab497ea4c10a",
+        "tarball": "https://registry.npmjs.org/is-descriptor/-/is-descriptor-0.1.3.tgz"
+      },
+      "directories": {}
+    },
+    "0.1.4": {
+      "name": "is-descriptor",
+      "description": "Returns true if a value has the characteristics of a valid JavaScript descriptor. Works for data descriptors and accessor descriptors.",
+      "version": "0.1.4",
+      "homepage": "https://github.com/jonschlinkert/is-descriptor",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/is-descriptor.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/is-descriptor/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "utils.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "is-accessor-descriptor": "^0.1.6",
+        "is-data-descriptor": "^0.1.4",
+        "kind-of": "^3.0.2",
+        "lazy-cache": "^1.0.3"
+      },
+      "devDependencies": {
+        "mocha": "*"
+      },
+      "keywords": [
+        "accessor",
+        "check",
+        "data",
+        "descriptor",
+        "get",
+        "getter",
+        "is",
+        "keys",
+        "object",
+        "properties",
+        "property",
+        "set",
+        "setter",
+        "type",
+        "valid",
+        "value"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "is-accessor-descriptor",
+            "is-data-descriptor",
+            "is-descriptor",
+            "isobject"
+          ]
+        },
+        "plugins": [
+          "gulp-format-md"
+        ]
+      },
+      "gitHead": "161400d896ae3bd216fdaaf7565e16e544a43aa6",
+      "_id": "is-descriptor@0.1.4",
+      "_shasum": "c2cfa0d85099a90df94af5b7eb7ee1c7e1413186",
+      "_from": ".",
+      "_npmVersion": "3.3.6",
+      "_nodeVersion": "5.0.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "c2cfa0d85099a90df94af5b7eb7ee1c7e1413186",
+        "tarball": "https://registry.npmjs.org/is-descriptor/-/is-descriptor-0.1.4.tgz"
+      },
+      "directories": {}
+    },
+    "0.1.5": {
+      "name": "is-descriptor",
+      "description": "Returns true if a value has the characteristics of a valid JavaScript descriptor. Works for data descriptors and accessor descriptors.",
+      "version": "0.1.5",
+      "homepage": "https://github.com/jonschlinkert/is-descriptor",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "email": "wtgtybhertgeghgtwtg@gmail.com",
+          "url": "https://github.com/wtgtybhertgeghgtwtg"
+        },
+        {
+          "name": "Brian Woodward",
+          "email": "brian.woodward@gmail.com",
+          "url": "https://github.com/doowb"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "email": "jon.schlinkert@sellside.com",
+          "url": "http://twitter.com/jonschlinkert"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/is-descriptor.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/is-descriptor/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "utils.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "is-accessor-descriptor": "^0.1.6",
+        "is-data-descriptor": "^0.1.4",
+        "kind-of": "^3.0.2",
+        "lazy-cache": "^2.0.2"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^0.1.11",
+        "mocha": "*"
+      },
+      "keywords": [
+        "accessor",
+        "check",
+        "data",
+        "descriptor",
+        "get",
+        "getter",
+        "is",
+        "keys",
+        "object",
+        "properties",
+        "property",
+        "set",
+        "setter",
+        "type",
+        "valid",
+        "value"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "is-accessor-descriptor",
+            "is-data-descriptor",
+            "is-descriptor",
+            "isobject"
+          ]
+        },
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "bc3cf6915686d4a964997ae7585bf65005bbf955",
+      "_id": "is-descriptor@0.1.5",
+      "_shasum": "e3fb8b4ab65f3a37373388e18b401d78c58cbea7",
+      "_from": ".",
+      "_npmVersion": "4.1.2",
+      "_nodeVersion": "7.5.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "e3fb8b4ab65f3a37373388e18b401d78c58cbea7",
+        "tarball": "https://registry.npmjs.org/is-descriptor/-/is-descriptor-0.1.5.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/is-descriptor-0.1.5.tgz_1488061797811_0.4672183636575937"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "is-descriptor",
+      "description": "Returns true if a value has the characteristics of a valid JavaScript descriptor. Works for data descriptors and accessor descriptors.",
+      "version": "1.0.0",
+      "homepage": "https://github.com/jonschlinkert/is-descriptor",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "email": "wtgtybhertgeghgtwtg@gmail.com",
+          "url": "https://github.com/wtgtybhertgeghgtwtg"
+        },
+        {
+          "name": "Brian Woodward",
+          "email": "brian.woodward@gmail.com",
+          "url": "https://github.com/doowb"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "email": "jon.schlinkert@sellside.com",
+          "url": "http://twitter.com/jonschlinkert"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/is-descriptor.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/is-descriptor/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "utils.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "is-accessor-descriptor": "^0.1.6",
+        "is-data-descriptor": "^0.1.4",
+        "kind-of": "^3.0.2",
+        "lazy-cache": "^2.0.2"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^0.1.11",
+        "mocha": "*"
+      },
+      "keywords": [
+        "accessor",
+        "check",
+        "data",
+        "descriptor",
+        "get",
+        "getter",
+        "is",
+        "keys",
+        "object",
+        "properties",
+        "property",
+        "set",
+        "setter",
+        "type",
+        "valid",
+        "value"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "is-accessor-descriptor",
+            "is-data-descriptor",
+            "is-descriptor",
+            "isobject"
+          ]
+        },
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "bdcab7a7977b417da073c2ade5203a0deac47fe3",
+      "_id": "is-descriptor@1.0.0",
+      "_shasum": "d6ec686f238f6b02f23757abe12cf6b2ea2790f9",
+      "_from": ".",
+      "_npmVersion": "4.1.2",
+      "_nodeVersion": "7.5.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "d6ec686f238f6b02f23757abe12cf6b2ea2790f9",
+        "tarball": "https://registry.npmjs.org/is-descriptor/-/is-descriptor-1.0.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/is-descriptor-1.0.0.tgz_1488061824742_0.7234284023288637"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "is-descriptor",
+      "description": "Returns true if a value has the characteristics of a valid JavaScript descriptor. Works for data descriptors and accessor descriptors.",
+      "version": "1.0.1",
+      "homepage": "https://github.com/jonschlinkert/is-descriptor",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Brian Woodward",
+          "url": "https://twitter.com/doowb"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "url": "https://github.com/wtgtybhertgeghgtwtg"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/is-descriptor.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/is-descriptor/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "is-accessor-descriptor": "^0.1.6",
+        "is-data-descriptor": "^0.1.4",
+        "kind-of": "^5.0.0"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^1.0.0",
+        "mocha": "^3.4.2"
+      },
+      "keywords": [
+        "accessor",
+        "check",
+        "data",
+        "descriptor",
+        "get",
+        "getter",
+        "is",
+        "keys",
+        "object",
+        "properties",
+        "property",
+        "set",
+        "setter",
+        "type",
+        "valid",
+        "value"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "is-accessor-descriptor",
+            "is-data-descriptor",
+            "is-descriptor",
+            "isobject"
+          ]
+        },
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "2b58af6426d0700607419b096766829aff27f642",
+      "_id": "is-descriptor@1.0.1",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "7.7.3",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "integrity": "sha512-G3fFVFTqfaqu7r4YuSBHKBAuOaLz8Sy7ekklUpFEliaLMP1Y2ZjoN9jS62YWCAPQrQpMUQSitRlrzibbuCZjdA==",
+        "shasum": "2c6023599bde2de9d5d2c8b9a9d94082036b6ef2",
+        "tarball": "https://registry.npmjs.org/is-descriptor/-/is-descriptor-1.0.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is-descriptor-1.0.1.tgz_1500738534279_0.7674877592362463"
+      },
+      "directories": {}
+    },
+    "0.1.6": {
+      "name": "is-descriptor",
+      "description": "Returns true if a value has the characteristics of a valid JavaScript descriptor. Works for data descriptors and accessor descriptors.",
+      "version": "0.1.6",
+      "homepage": "https://github.com/jonschlinkert/is-descriptor",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Brian Woodward",
+          "url": "https://twitter.com/doowb"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "url": "https://github.com/wtgtybhertgeghgtwtg"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/is-descriptor.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/is-descriptor/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "is-accessor-descriptor": "^0.1.6",
+        "is-data-descriptor": "^0.1.4",
+        "kind-of": "^5.0.0"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^1.0.0",
+        "mocha": "^3.4.2"
+      },
+      "keywords": [
+        "accessor",
+        "check",
+        "data",
+        "descriptor",
+        "get",
+        "getter",
+        "is",
+        "keys",
+        "object",
+        "properties",
+        "property",
+        "set",
+        "setter",
+        "type",
+        "valid",
+        "value"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "is-accessor-descriptor",
+            "is-data-descriptor",
+            "is-descriptor",
+            "isobject"
+          ]
+        },
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "7559403830553097fcdd56ae93fe69d4ef2b21db",
+      "_id": "is-descriptor@0.1.6",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "7.7.3",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "integrity": "sha512-avDYr0SB3DwO9zsMov0gKCESFYqCnE4hq/4z3TdUlukEy5t9C0YRq7HLrsN52NAcqXKaepeCD0n+B0arnVG3Hg==",
+        "shasum": "366d8240dde487ca51823b1ab9f07a10a78251ca",
+        "tarball": "https://registry.npmjs.org/is-descriptor/-/is-descriptor-0.1.6.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is-descriptor-0.1.6.tgz_1500744018543_0.5760307745076716"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "is-descriptor",
+      "description": "Returns true if a value has the characteristics of a valid JavaScript descriptor. Works for data descriptors and accessor descriptors.",
+      "version": "1.0.2",
+      "homepage": "https://github.com/jonschlinkert/is-descriptor",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Brian Woodward",
+          "url": "https://twitter.com/doowb"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "url": "https://github.com/wtgtybhertgeghgtwtg"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/is-descriptor.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/is-descriptor/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "is-accessor-descriptor": "^1.0.0",
+        "is-data-descriptor": "^1.0.0",
+        "kind-of": "^6.0.2"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^1.0.0",
+        "mocha": "^3.5.3"
+      },
+      "keywords": [
+        "accessor",
+        "check",
+        "data",
+        "descriptor",
+        "get",
+        "getter",
+        "is",
+        "keys",
+        "object",
+        "properties",
+        "property",
+        "set",
+        "setter",
+        "type",
+        "valid",
+        "value"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "is-accessor-descriptor",
+            "is-data-descriptor",
+            "is-descriptor",
+            "isobject"
+          ]
+        },
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "324635c990dc7f1e6d169deecd19769dea72114c",
+      "_id": "is-descriptor@1.0.2",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.1.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "integrity": "sha512-2eis5WqQGV7peooDyLmNEPUrps9+SXX5c9pL3xEB+4e9HnGuDa7mB7kHxHw4CbqS9k1T2hOH3miL8n8WtiYVtg==",
+        "shasum": "3b159746a66604b04f8c81524ba365c5f14d86ec",
+        "tarball": "https://registry.npmjs.org/is-descriptor/-/is-descriptor-1.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is-descriptor-1.0.2.tgz_1514502694043_0.9101065774448216"
+      },
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "is-descriptor",
+      "description": "Returns true if a value has the characteristics of a valid JavaScript descriptor. Works for data descriptors and accessor descriptors.",
+      "version": "3.0.0",
+      "homepage": "https://github.com/jonschlinkert/is-descriptor",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "url": "https://github.com/wtgtybhertgeghgtwtg"
+        },
+        {
+          "name": "Brian Woodward",
+          "url": "https://twitter.com/doowb"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/is-descriptor.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/is-descriptor/issues"
+      },
+      "license": "MIT",
+      "main": "index.js",
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^2.0.0",
+        "mocha": "^5.2.0"
+      },
+      "keywords": [
+        "accessor",
+        "check",
+        "data",
+        "descriptor",
+        "get",
+        "getter",
+        "is",
+        "keys",
+        "object",
+        "properties",
+        "property",
+        "set",
+        "setter",
+        "type",
+        "valid",
+        "value"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "is-accessor-descriptor",
+            "is-data-descriptor",
+            "is-descriptor",
+            "isobject"
+          ]
+        },
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "7f7e2c865674526424f5cd1fb98f0ed7811a67f9",
+      "_id": "is-descriptor@3.0.0",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "11.4.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "integrity": "sha512-ulS4dmaxyKmco18hEL9EfipAUTiDH8M/hqEqsGf3kc7F1JWsvOR8daPmela52pc/p6PDo03Lsy6gR7Pf5JwITg==",
+        "shasum": "5fca20996d4bb12111f4e0e9fdf0ab770927e6e9",
+        "tarball": "https://registry.npmjs.org/is-descriptor/-/is-descriptor-3.0.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 10393,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcEyzoCRA9TVsSAnZWagAA4RkP/3OE8qFhsXFk3Svm3J7b\neTfwD2x6//lq5oLlDOage4JF+zNrmx/tee+fri0QM3woMrtrO1mbf7IqKdTn\nHqwZMtll3ecwvpCr8ksUB25JwTtA4vXWl87NRmjS2AjWn10IPjvTiqK+/OTn\nywP8puihBJZfk+qEUZBy/5b4d6n3qPIFYsl2A945SNwjvErx72kXIOj3h64/\neK4U9w3v4a/Yb6SpgzIAaD0UM8WDNbiyvs6Ir0QTxjUsnVmq9qpWc4BkTyxC\nDk7A5AINYIQyhx8xbqGOHK2mXqhY7PxsU/2lGLKkn2ZScIexSvJ35PdwzCMo\nVfTDKE2G4Ua9hoCUyC/khCnGB4X7bmIukktjASBBc1lpWsyo0uZ/+ZiBgVPM\nrvvnY8MtiwhtJk3v5F11HEAeIc8J034NLN0SGnykfDAfgWw9Pc4bMipD1Jrx\n/S2cUmad9lCFyuQ+DQd9AHu6n+CMoFQTxQGuPJFBOVdKw2y4BWWjnEXU67gM\n/7IKV4T0HqrzcjeNjjc9W6YWMD13qJVJU6fkIeFFKbxxKV7B3YIlyMmx5rl+\nXJZ8uGHF8GHKoGZjShH3BcYxwVaVBVZemsNyUazIlqingstCEHGCFSDIc6ZF\nJTx4Urhm4jUv+AP5q0uApXdF3ePI6KUerQoH+s36+QIAeNG+4Gt009R1T1Ob\nM2Gh\r\n=aBTR\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is-descriptor_3.0.0_1544760552055_0.5067295331188355"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# is-descriptor [![NPM version](https://img.shields.io/npm/v/is-descriptor.svg?style=flat)](https://www.npmjs.com/package/is-descriptor) [![NPM monthly downloads](https://img.shields.io/npm/dm/is-descriptor.svg?style=flat)](https://npmjs.org/package/is-descriptor) [![NPM total downloads](https://img.shields.io/npm/dt/is-descriptor.svg?style=flat)](https://npmjs.org/package/is-descriptor) [![Linux Build Status](https://img.shields.io/travis/jonschlinkert/is-descriptor.svg?style=flat&label=Travis)](https://travis-ci.org/jonschlinkert/is-descriptor)\n\n> Returns true if a value has the characteristics of a valid JavaScript descriptor. Works for data descriptors and accessor descriptors.\n\nPlease consider following this project's author, [Jon Schlinkert](https://github.com/jonschlinkert), and consider starring the project to show your :heart: and support.\n\n## Install\n\nInstall with [npm](https://www.npmjs.com/):\n\n```sh\n$ npm install --save is-descriptor\n```\n\n## Usage\n\n```js\nconst isDescriptor = require('is-descriptor');\n\nisDescriptor({ value: 'foo' })\n//=> true\nisDescriptor({ get: function() {}, set: function() {} })\n//=> true\nisDescriptor({ get: 'foo', set: function() {} })\n//=> false\n```\n\nYou may also check for a descriptor by passing an object as the first argument and property name (`string`) as the second argument.\n\n```js\nconst obj = {};\nobj.foo = null;\n\nObject.defineProperty(obj, 'bar', { value: 'xyz' });\nReflect.defineProperty(obj, 'baz', { value: 'xyz' });\n\nisDescriptor(obj, 'foo'); //=> true\nisDescriptor(obj, 'bar'); //=> true\nisDescriptor(obj, 'baz'); //=> true\n```\n\n## Examples\n\n### value type\n\nReturns `false` when not an object\n\n```js\nisDescriptor('a'); //=> false\nisDescriptor(null); //=> false\nisDescriptor([]); //=> false\n```\n\n### data descriptor\n\nReturns `true` when the object has valid properties with valid values.\n\n```js\nisDescriptor({ value: 'foo' }); //=> true\nisDescriptor({ value: function() {} }); //=> true\n```\n\nReturns `false` when the object has invalid properties\n\n```js\nisDescriptor({ value: 'foo', bar: 'baz' }); //=> false\nisDescriptor({ value: 'foo', bar: 'baz' }); //=> false\nisDescriptor({ value: 'foo', get: function() {} }); //=> false\nisDescriptor({ get: function() {}, value: function() {} }); //=> false\n```\n\n`false` when a value is not the correct type\n\n```js\nisDescriptor({ value: 'foo', enumerable: 'foo' }); //=> false\nisDescriptor({ value: 'foo', configurable: 'foo' }); //=> false\nisDescriptor({ value: 'foo', writable: 'foo' }); //=> false\n```\n\n### accessor descriptor\n\n`true` when the object has valid properties with valid values.\n\n```js\nisDescriptor({ get: function() {}, set: function() {} }); //=> true\nisDescriptor({ get: function() {} }); //=> true\nisDescriptor({ set: function() {} }); //=> true\n```\n\n`false` when the object has invalid properties\n\n```js\nisDescriptor({ get: function() {}, set: function() {}, bar: 'baz' }); //=> false\nisDescriptor({ get: function() {}, writable: true }); //=> false\nisDescriptor({ get: function() {}, value: true }); //=> false\n```\n\nReturns `false` when an accessor is not a function\n\n```js\nisDescriptor({ get: function() {}, set: 'baz' }); //=> false\nisDescriptor({ get: 'foo', set: function() {} }); //=> false\nisDescriptor({ get: 'foo', bar: 'baz' }); //=> false\nisDescriptor({ get: 'foo', set: 'baz' }); //=> false\n```\n\nReturns `false` when a value is not the correct type\n\n```js\nisDescriptor({ get: function() {}, set: function() {}, enumerable: 'foo' }); //=> false\nisDescriptor({ set: function() {}, configurable: 'foo' }); //=> false\nisDescriptor({ get: function() {}, configurable: 'foo' }); //=> false\n```\n\n## About\n\n<details>\n<summary><strong>Contributing</strong></summary>\n\nPull requests and stars are always welcome. For bugs and feature requests, [please create an issue](../../issues/new).\n\n</details>\n\n<details>\n<summary><strong>Running Tests</strong></summary>\n\nRunning and reviewing unit tests is a great way to get familiarized with a library and its API. You can install dependencies and run tests with the following command:\n\n```sh\n$ npm install && npm test\n```\n\n</details>\n\n<details>\n<summary><strong>Building docs</strong></summary>\n\n_(This project's readme.md is generated by [verb](https://github.com/verbose/verb-generate-readme), please don't edit the readme directly. Any changes to the readme must be made in the [.verb.md](.verb.md) readme template.)_\n\nTo generate the readme, run the following command:\n\n```sh\n$ npm install -g verbose/verb#dev verb-generate-readme && verb\n```\n\n</details>\n\n### Related projects\n\nYou might also be interested in these projects:\n\n* [is-accessor-descriptor](https://www.npmjs.com/package/is-accessor-descriptor): Returns true if a value has the characteristics of a valid JavaScript accessor descriptor. | [homepage](https://github.com/jonschlinkert/is-accessor-descriptor \"Returns true if a value has the characteristics of a valid JavaScript accessor descriptor.\")\n* [is-data-descriptor](https://www.npmjs.com/package/is-data-descriptor): Returns true if a value has the characteristics of a valid JavaScript data descriptor. | [homepage](https://github.com/jonschlinkert/is-data-descriptor \"Returns true if a value has the characteristics of a valid JavaScript data descriptor.\")\n* [is-descriptor](https://www.npmjs.com/package/is-descriptor): Returns true if a value has the characteristics of a valid JavaScript descriptor. Works for… [more](https://github.com/jonschlinkert/is-descriptor) | [homepage](https://github.com/jonschlinkert/is-descriptor \"Returns true if a value has the characteristics of a valid JavaScript descriptor. Works for data descriptors and accessor descriptors.\")\n* [isobject](https://www.npmjs.com/package/isobject): Returns true if the value is an object and not an array or null. | [homepage](https://github.com/jonschlinkert/isobject \"Returns true if the value is an object and not an array or null.\")\n\n### Contributors\n\n| **Commits** | **Contributor** |  \n| --- | --- |  \n| 33 | [jonschlinkert](https://github.com/jonschlinkert) |  \n| 1  | [doowb](https://github.com/doowb) |  \n| 1  | [realityking](https://github.com/realityking) |  \n| 1  | [wtgtybhertgeghgtwtg](https://github.com/wtgtybhertgeghgtwtg) |  \n\n### Author\n\n**Jon Schlinkert**\n\n* [GitHub Profile](https://github.com/jonschlinkert)\n* [Twitter Profile](https://twitter.com/jonschlinkert)\n* [LinkedIn Profile](https://linkedin.com/in/jonschlinkert)\n\n### License\n\nCopyright © 2018, [Jon Schlinkert](https://github.com/jonschlinkert).\nReleased under the [MIT License](LICENSE).\n\n***\n\n_This file was generated by [verb-generate-readme](https://github.com/verbose/verb-generate-readme), v0.8.0, on December 13, 2018._",
+  "maintainers": [
+    {
+      "name": "jonschlinkert",
+      "email": "github@sellside.com"
+    }
+  ],
+  "time": {
+    "modified": "2019-01-04T05:37:22.310Z",
+    "created": "2015-08-31T06:08:04.328Z",
+    "0.1.0": "2015-08-31T06:08:04.328Z",
+    "0.1.1": "2015-10-04T19:01:06.566Z",
+    "0.1.2": "2015-10-04T19:02:29.180Z",
+    "0.1.3": "2015-12-20T12:03:22.950Z",
+    "0.1.4": "2015-12-28T09:44:36.366Z",
+    "0.1.5": "2017-02-25T22:29:58.564Z",
+    "1.0.0": "2017-02-25T22:30:26.909Z",
+    "1.0.1": "2017-07-22T15:48:55.348Z",
+    "0.1.6": "2017-07-22T17:20:19.515Z",
+    "1.0.2": "2017-12-28T23:11:35.031Z",
+    "3.0.0": "2018-12-14T04:09:12.183Z"
+  },
+  "homepage": "https://github.com/jonschlinkert/is-descriptor",
+  "keywords": [
+    "accessor",
+    "check",
+    "data",
+    "descriptor",
+    "get",
+    "getter",
+    "is",
+    "keys",
+    "object",
+    "properties",
+    "property",
+    "set",
+    "setter",
+    "type",
+    "valid",
+    "value"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonschlinkert/is-descriptor.git"
+  },
+  "author": {
+    "name": "Jon Schlinkert",
+    "url": "https://github.com/jonschlinkert"
+  },
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/is-descriptor/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "contributors": [
+    {
+      "url": "https://github.com/wtgtybhertgeghgtwtg"
+    },
+    {
+      "name": "Brian Woodward",
+      "url": "https://twitter.com/doowb"
+    },
+    {
+      "name": "Jon Schlinkert",
+      "url": "http://twitter.com/jonschlinkert"
+    }
+  ]
+}

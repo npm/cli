@@ -1,0 +1,2306 @@
+{
+  "_id": "cache-base",
+  "_rev": "35-c48b972b49fdfd59bd3e9337abcd3bec",
+  "name": "cache-base",
+  "description": "Basic object cache with `get`, `set`, `del`, and `has` methods for node.js/javascript projects.",
+  "dist-tags": {
+    "latest": "4.0.0"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "cache-base",
+      "description": "Basic, general purpose object cache for node.js/javascript projects.",
+      "version": "0.1.0",
+      "homepage": "https://github.com/jonschlinkert/cache-base",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/cache-base.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/cache-base/issues"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://github.com/jonschlinkert/cache-base/blob/master/LICENSE-MIT"
+        }
+      ],
+      "keywords": [
+        "config",
+        "hash",
+        "object",
+        "store",
+        "data",
+        "cache"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "devDependencies": {
+        "mocha": "*",
+        "should": "^4.0.4",
+        "verb": ">= 0.2.6",
+        "verb-tag-jscomments": "^0.2.0"
+      },
+      "dependencies": {
+        "for-in": "^0.1.3",
+        "for-own": "^0.1.2",
+        "get-value": "^0.2.1",
+        "kind-of": "^0.1.0",
+        "mixin-deep": "^0.1.0"
+      },
+      "_id": "cache-base@0.1.0",
+      "_shasum": "2115511b7399d5d0bc556803c182c297172677ad",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "2115511b7399d5d0bc556803c182c297172677ad",
+        "tarball": "https://registry.npmjs.org/cache-base/-/cache-base-0.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.0": {
+      "name": "cache-base",
+      "description": "Basic, general purpose object cache for node.js/javascript projects.",
+      "version": "0.2.0",
+      "homepage": "https://github.com/jonschlinkert/cache-base",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/cache-base.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/cache-base/issues"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://github.com/jonschlinkert/cache-base/blob/master/LICENSE-MIT"
+        }
+      ],
+      "keywords": [
+        "config",
+        "hash",
+        "object",
+        "store",
+        "data",
+        "cache"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "devDependencies": {
+        "mocha": "*",
+        "should": "^4.0.4"
+      },
+      "dependencies": {
+        "array-slice": "^0.2.2",
+        "get-value": "^0.2.1",
+        "kind-of": "^0.1.0",
+        "lodash": "^2.4.1",
+        "option-cache": "^0.1.4"
+      },
+      "_id": "cache-base@0.2.0",
+      "_shasum": "437d177042cce156ed7db43b29843ef8029c4a84",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "437d177042cce156ed7db43b29843ef8029c4a84",
+        "tarball": "https://registry.npmjs.org/cache-base/-/cache-base-0.2.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.1": {
+      "name": "cache-base",
+      "description": "Basic, general purpose object cache for node.js/javascript projects.",
+      "version": "0.2.1",
+      "homepage": "https://github.com/jonschlinkert/cache-base",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/cache-base.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/cache-base/issues"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://github.com/jonschlinkert/cache-base/blob/master/LICENSE-MIT"
+        }
+      ],
+      "keywords": [
+        "config",
+        "hash",
+        "object",
+        "store",
+        "data",
+        "cache"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "devDependencies": {
+        "mocha": "*",
+        "should": "^4.0.4"
+      },
+      "dependencies": {
+        "array-slice": "^0.2.2",
+        "get-value": "^0.2.1",
+        "kind-of": "^0.1.0",
+        "lodash": "^2.4.1",
+        "option-cache": "^0.1.4"
+      },
+      "_id": "cache-base@0.2.1",
+      "_shasum": "d9d79593bbf79c608b255bc7cc40eb9b502342b5",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "d9d79593bbf79c608b255bc7cc40eb9b502342b5",
+        "tarball": "https://registry.npmjs.org/cache-base/-/cache-base-0.2.1.tgz"
+      },
+      "directories": {}
+    },
+    "0.3.0": {
+      "name": "cache-base",
+      "description": "Generic object cache for node.js/javascript projects.",
+      "version": "0.3.0",
+      "homepage": "https://github.com/jonschlinkert/cache-base",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/cache-base.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/cache-base/issues"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://github.com/jonschlinkert/cache-base/blob/master/LICENSE"
+        }
+      ],
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha",
+        "lint": "deps -e test"
+      },
+      "devDependencies": {
+        "mocha": "*",
+        "should": "^4.0.4"
+      },
+      "dependencies": {
+        "chalk": "^0.5.1",
+        "get-value": "^1.0.2",
+        "kind-of": "^1.1.0",
+        "lodash": "^3.2.0",
+        "option-cache": "^1.1.0"
+      },
+      "keywords": [
+        "config",
+        "hash",
+        "object",
+        "store",
+        "data",
+        "cache"
+      ],
+      "gitHead": "697b5a236bd4d575c084593b7c76ea7308649ac0",
+      "_id": "cache-base@0.3.0",
+      "_shasum": "e6be14f0b978fed492637cc7964d6cb9d8923641",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "e6be14f0b978fed492637cc7964d6cb9d8923641",
+        "tarball": "https://registry.npmjs.org/cache-base/-/cache-base-0.3.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.4.0": {
+      "name": "cache-base",
+      "description": "Generic object cache for node.js/javascript projects.",
+      "version": "0.4.0",
+      "homepage": "https://github.com/jonschlinkert/cache-base",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/cache-base.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/cache-base/issues"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://github.com/jonschlinkert/cache-base/blob/master/LICENSE"
+        }
+      ],
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha",
+        "lint": "deps -e test"
+      },
+      "devDependencies": {
+        "mocha": "*",
+        "should": "^4.0.4"
+      },
+      "dependencies": {
+        "chalk": "^0.5.1",
+        "get-value": "^1.0.2",
+        "kind-of": "^1.1.0",
+        "lodash": "^3.2.0",
+        "object.omit": "^0.2.1",
+        "object.pick": "^1.1.1",
+        "option-cache": "^1.1.0"
+      },
+      "keywords": [
+        "config",
+        "hash",
+        "object",
+        "store",
+        "data",
+        "cache"
+      ],
+      "gitHead": "697b5a236bd4d575c084593b7c76ea7308649ac0",
+      "_id": "cache-base@0.4.0",
+      "_shasum": "074522c5c3d6ee14a34f85cc64f4df7956a18606",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "074522c5c3d6ee14a34f85cc64f4df7956a18606",
+        "tarball": "https://registry.npmjs.org/cache-base/-/cache-base-0.4.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.6.0": {
+      "name": "cache-base",
+      "description": "Generic object cache for node.js/javascript projects.",
+      "version": "0.6.0",
+      "homepage": "https://github.com/jonschlinkert/cache-base",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/cache-base.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/cache-base/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/cache-base/blob/master/LICENSE"
+      },
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "get-value": "^1.1.1",
+        "kind-of": "^1.1.0",
+        "lodash": "^3.5.0",
+        "option-cache": "^1.2.2"
+      },
+      "devDependencies": {
+        "mocha": "*",
+        "should": "^5.1.0"
+      },
+      "keywords": [
+        "config",
+        "hash",
+        "object",
+        "store",
+        "data",
+        "cache"
+      ],
+      "gitHead": "87deb0e2c4d37707599711038c06dfd5b6b7a9ac",
+      "_id": "cache-base@0.6.0",
+      "_shasum": "9cdaaa865eee46eb9b7ebf6065f581febf63107b",
+      "_from": ".",
+      "_npmVersion": "2.5.1",
+      "_nodeVersion": "0.12.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "9cdaaa865eee46eb9b7ebf6065f581febf63107b",
+        "tarball": "https://registry.npmjs.org/cache-base/-/cache-base-0.6.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.7.0": {
+      "name": "cache-base",
+      "description": "Generic object cache for node.js/javascript projects.",
+      "version": "0.7.0",
+      "homepage": "https://github.com/jonschlinkert/cache-base",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/cache-base.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/cache-base/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "collection-visit": "^0.2.1",
+        "get-value": "^2.0.0",
+        "has-value": "^0.3.0",
+        "isobject": "^2.0.0",
+        "set-value": "^0.3.1",
+        "unset-value": "^0.1.1"
+      },
+      "devDependencies": {
+        "mocha": "^2.3.4"
+      },
+      "keywords": [
+        "cache",
+        "config",
+        "data",
+        "get",
+        "has",
+        "hash",
+        "hasown",
+        "object",
+        "set",
+        "store"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "set-value",
+            "get-value",
+            "has-value",
+            "unset-value",
+            "base-methods",
+            "option-cache"
+          ]
+        }
+      },
+      "gitHead": "ccf566163990977afb1bef0a6d1f17c8fea4d7db",
+      "_id": "cache-base@0.7.0",
+      "_shasum": "dfee887dda0e7edd98eaabe116a83b6d821a85d4",
+      "_from": ".",
+      "_npmVersion": "3.3.6",
+      "_nodeVersion": "5.0.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "dfee887dda0e7edd98eaabe116a83b6d821a85d4",
+        "tarball": "https://registry.npmjs.org/cache-base/-/cache-base-0.7.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.7.1": {
+      "name": "cache-base",
+      "description": "Basic object cache with `get`, `set`, `del`, and `has` methods for node.js/javascript projects.",
+      "version": "0.7.1",
+      "homepage": "https://github.com/jonschlinkert/cache-base",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/cache-base.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/cache-base/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "utils.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "collection-visit": "^0.2.1",
+        "component-emitter": "^1.2.0",
+        "get-value": "^2.0.0",
+        "has-value": "^0.3.0",
+        "isobject": "^2.0.0",
+        "lazy-cache": "^0.2.4",
+        "set-value": "^0.3.1",
+        "unset-value": "^0.1.1"
+      },
+      "devDependencies": {
+        "mocha": "^2.3.4"
+      },
+      "keywords": [
+        "cache",
+        "config",
+        "data",
+        "get",
+        "has",
+        "hash",
+        "hasown",
+        "object",
+        "set",
+        "store"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "set-value",
+            "get-value",
+            "has-value",
+            "unset-value",
+            "base-methods",
+            "option-cache"
+          ]
+        }
+      },
+      "gitHead": "36c215fc52d51682de92f509f3c05ac2085aa849",
+      "_id": "cache-base@0.7.1",
+      "_shasum": "11e3e39d7bf823d114bfb157ca96ce43fabb74b7",
+      "_from": ".",
+      "_npmVersion": "3.3.6",
+      "_nodeVersion": "5.0.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "11e3e39d7bf823d114bfb157ca96ce43fabb74b7",
+        "tarball": "https://registry.npmjs.org/cache-base/-/cache-base-0.7.1.tgz"
+      },
+      "directories": {}
+    },
+    "0.7.2": {
+      "name": "cache-base",
+      "description": "Basic object cache with `get`, `set`, `del`, and `has` methods for node.js/javascript projects.",
+      "version": "0.7.2",
+      "homepage": "https://github.com/jonschlinkert/cache-base",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/cache-base.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/cache-base/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "utils.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "collection-visit": "^0.2.1",
+        "component-emitter": "^1.2.0",
+        "get-value": "^2.0.3",
+        "has-value": "^0.3.0",
+        "isobject": "^2.0.0",
+        "lazy-cache": "^1.0.3",
+        "set-value": "^0.3.3",
+        "unset-value": "^0.1.1"
+      },
+      "devDependencies": {
+        "mocha": "*"
+      },
+      "keywords": [
+        "cache",
+        "config",
+        "data",
+        "get",
+        "has",
+        "hash",
+        "hasown",
+        "object",
+        "set",
+        "store"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "set-value",
+            "get-value",
+            "has-value",
+            "unset-value",
+            "base-methods",
+            "option-cache"
+          ]
+        }
+      },
+      "gitHead": "988c99575bc1b80c159431595c5c2cbb7f6f592c",
+      "_id": "cache-base@0.7.2",
+      "_shasum": "ce81d4b07286b9ca5f8d865755be65ed0e756831",
+      "_from": ".",
+      "_npmVersion": "3.3.12",
+      "_nodeVersion": "5.3.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "ce81d4b07286b9ca5f8d865755be65ed0e756831",
+        "tarball": "https://registry.npmjs.org/cache-base/-/cache-base-0.7.2.tgz"
+      },
+      "directories": {}
+    },
+    "0.8.0": {
+      "name": "cache-base",
+      "description": "Basic object cache with `get`, `set`, `del`, and `has` methods for node.js/javascript projects.",
+      "version": "0.8.0",
+      "homepage": "https://github.com/jonschlinkert/cache-base",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/cache-base.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/cache-base/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "utils.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "collection-visit": "^0.2.1",
+        "component-emitter": "^1.2.0",
+        "get-value": "^2.0.3",
+        "has-value": "^0.3.0",
+        "isobject": "^2.0.0",
+        "lazy-cache": "^1.0.3",
+        "set-value": "^0.3.3",
+        "to-object-path": "^0.3.0",
+        "unset-value": "^0.1.1"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^0.1.5",
+        "mocha": "*"
+      },
+      "keywords": [
+        "cache",
+        "config",
+        "data",
+        "get",
+        "has",
+        "hash",
+        "hasown",
+        "object",
+        "set",
+        "store"
+      ],
+      "verb": {
+        "layout": "default",
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "highligh": "base",
+          "list": [
+            "base-methods",
+            "get-value",
+            "has-value",
+            "option-cache",
+            "set-value",
+            "unset-value"
+          ]
+        }
+      },
+      "gitHead": "dc28ab8eb665992ddbadcbaba5708eb9848d383e",
+      "_id": "cache-base@0.8.0",
+      "_shasum": "253e03ac6cb9210ca32a945d8819a50327f78aef",
+      "_from": ".",
+      "_npmVersion": "3.6.0",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "253e03ac6cb9210ca32a945d8819a50327f78aef",
+        "tarball": "https://registry.npmjs.org/cache-base/-/cache-base-0.8.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-5-east.internal.npmjs.com",
+        "tmp": "tmp/cache-base-0.8.0.tgz_1455044284605_0.5968321738764644"
+      },
+      "directories": {}
+    },
+    "0.8.1": {
+      "name": "cache-base",
+      "description": "Basic object cache with `get`, `set`, `del`, and `has` methods for node.js/javascript projects.",
+      "version": "0.8.1",
+      "homepage": "https://github.com/jonschlinkert/cache-base",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/cache-base.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/cache-base/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "utils.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "collection-visit": "^0.2.1",
+        "component-emitter": "^1.2.0",
+        "get-value": "^2.0.3",
+        "has-value": "^0.3.0",
+        "isobject": "^2.0.0",
+        "lazy-cache": "^1.0.3",
+        "set-value": "^0.3.3",
+        "to-object-path": "^0.3.0",
+        "unset-value": "^0.1.1"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^0.1.7",
+        "mocha": "*"
+      },
+      "keywords": [
+        "cache",
+        "config",
+        "data",
+        "get",
+        "has",
+        "hash",
+        "hasown",
+        "object",
+        "set",
+        "store"
+      ],
+      "verb": {
+        "layout": "default",
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "highligh": "base",
+          "list": [
+            "base-methods",
+            "get-value",
+            "has-value",
+            "option-cache",
+            "set-value",
+            "unset-value"
+          ]
+        }
+      },
+      "gitHead": "fd34085d5173232e54010521140261e2c571822f",
+      "_id": "cache-base@0.8.1",
+      "_shasum": "4167d4a3fd9bde0bc9762fd313d366497b259230",
+      "_from": ".",
+      "_npmVersion": "3.6.0",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "4167d4a3fd9bde0bc9762fd313d366497b259230",
+        "tarball": "https://registry.npmjs.org/cache-base/-/cache-base-0.8.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-5-east.internal.npmjs.com",
+        "tmp": "tmp/cache-base-0.8.1.tgz_1456722752065_0.9806904334109277"
+      },
+      "directories": {}
+    },
+    "0.8.2": {
+      "name": "cache-base",
+      "description": "Basic object cache with `get`, `set`, `del`, and `has` methods for node.js/javascript projects.",
+      "version": "0.8.2",
+      "homepage": "https://github.com/jonschlinkert/cache-base",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/cache-base.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/cache-base/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "utils.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "collection-visit": "^0.2.1",
+        "component-emitter": "^1.2.0",
+        "get-value": "^2.0.3",
+        "has-value": "^0.3.0",
+        "isobject": "^2.0.0",
+        "lazy-cache": "^1.0.3",
+        "set-value": "^0.3.3",
+        "to-object-path": "^0.3.0",
+        "unset-value": "^0.1.1"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^0.1.7",
+        "mocha": "*"
+      },
+      "keywords": [
+        "cache",
+        "config",
+        "data",
+        "get",
+        "has",
+        "hash",
+        "hasown",
+        "object",
+        "set",
+        "store"
+      ],
+      "verb": {
+        "run": true,
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "highligh": "base",
+          "list": [
+            "base-methods",
+            "get-value",
+            "has-value",
+            "option-cache",
+            "set-value",
+            "unset-value"
+          ]
+        },
+        "reflinks": [
+          "verb"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "7484bb56a11e7d6123f9c30d48f6c398e580f7f8",
+      "_id": "cache-base@0.8.2",
+      "_shasum": "e26525892c17db051abc4daeb7a1a6100e79421c",
+      "_from": ".",
+      "_npmVersion": "3.6.0",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "e26525892c17db051abc4daeb7a1a6100e79421c",
+        "tarball": "https://registry.npmjs.org/cache-base/-/cache-base-0.8.2.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-13-west.internal.npmjs.com",
+        "tmp": "tmp/cache-base-0.8.2.tgz_1456952918583_0.050363336224108934"
+      },
+      "directories": {}
+    },
+    "0.8.3": {
+      "name": "cache-base",
+      "description": "Basic object cache with `get`, `set`, `del`, and `has` methods for node.js/javascript projects.",
+      "version": "0.8.3",
+      "homepage": "https://github.com/jonschlinkert/cache-base",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/cache-base.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/cache-base/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "utils.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "collection-visit": "^0.2.1",
+        "component-emitter": "^1.2.1",
+        "get-value": "^2.0.5",
+        "has-value": "^0.3.1",
+        "isobject": "^2.0.0",
+        "lazy-cache": "^1.0.3",
+        "set-value": "^0.3.3",
+        "to-object-path": "^0.3.0",
+        "union-value": "^0.2.3",
+        "unset-value": "^0.1.1"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^0.1.8",
+        "mocha": "^2.4.5"
+      },
+      "keywords": [
+        "cache",
+        "config",
+        "data",
+        "get",
+        "has",
+        "hash",
+        "hasown",
+        "object",
+        "set",
+        "store"
+      ],
+      "verb": {
+        "run": true,
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "highligh": "base",
+          "list": [
+            "base-methods",
+            "get-value",
+            "has-value",
+            "option-cache",
+            "set-value",
+            "unset-value"
+          ]
+        },
+        "reflinks": [
+          "verb"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "517efb52c8b58846ae78107413031b334ef3497a",
+      "_id": "cache-base@0.8.3",
+      "_shasum": "ee5a31e77082f7dff05aaf90120410faf77ecec9",
+      "_from": ".",
+      "_npmVersion": "3.6.0",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "ee5a31e77082f7dff05aaf90120410faf77ecec9",
+        "tarball": "https://registry.npmjs.org/cache-base/-/cache-base-0.8.3.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/cache-base-0.8.3.tgz_1461219662983_0.5647087474353611"
+      },
+      "directories": {}
+    },
+    "0.8.4": {
+      "name": "cache-base",
+      "description": "Basic object cache with `get`, `set`, `del`, and `has` methods for node.js/javascript projects.",
+      "version": "0.8.4",
+      "homepage": "https://github.com/jonschlinkert/cache-base",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/cache-base.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/cache-base/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "utils.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "collection-visit": "^0.2.1",
+        "component-emitter": "^1.2.1",
+        "get-value": "^2.0.5",
+        "has-value": "^0.3.1",
+        "isobject": "^2.1.0",
+        "lazy-cache": "^2.0.1",
+        "set-value": "^0.3.3",
+        "to-object-path": "^0.3.0",
+        "union-value": "^0.2.3",
+        "unset-value": "^0.1.1"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^0.1.8",
+        "mocha": "^2.4.5"
+      },
+      "keywords": [
+        "cache",
+        "config",
+        "data",
+        "get",
+        "has",
+        "hash",
+        "hasown",
+        "object",
+        "set",
+        "store"
+      ],
+      "verb": {
+        "run": true,
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "highligh": "base",
+          "list": [
+            "base-methods",
+            "get-value",
+            "has-value",
+            "option-cache",
+            "set-value",
+            "unset-value"
+          ]
+        },
+        "reflinks": [
+          "verb"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "38bec2e70f8fbd041ded5fea817551b7f890df9e",
+      "_id": "cache-base@0.8.4",
+      "_shasum": "a943eaea2a5d9005475a8aa6b77a39affd566586",
+      "_from": ".",
+      "_npmVersion": "3.8.9",
+      "_nodeVersion": "6.2.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "a943eaea2a5d9005475a8aa6b77a39affd566586",
+        "tarball": "https://registry.npmjs.org/cache-base/-/cache-base-0.8.4.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/cache-base-0.8.4.tgz_1464591761112_0.2978548831306398"
+      },
+      "directories": {}
+    },
+    "0.8.5": {
+      "name": "cache-base",
+      "description": "Basic object cache with `get`, `set`, `del`, and `has` methods for node.js/javascript projects.",
+      "version": "0.8.5",
+      "homepage": "https://github.com/jonschlinkert/cache-base",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "email": "wtgtybhertgeghgtwtg@gmail.com",
+          "url": "https://github.com/wtgtybhertgeghgtwtg"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "email": "jon.schlinkert@sellside.com",
+          "url": "http://twitter.com/jonschlinkert"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/cache-base.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/cache-base/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "utils.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "collection-visit": "^0.2.1",
+        "component-emitter": "^1.2.1",
+        "get-value": "^2.0.5",
+        "has-value": "^0.3.1",
+        "isobject": "^3.0.0",
+        "lazy-cache": "^2.0.1",
+        "set-value": "^0.4.2",
+        "to-object-path": "^0.3.0",
+        "union-value": "^0.2.3",
+        "unset-value": "^0.1.1"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^0.1.8",
+        "mocha": "^2.4.5"
+      },
+      "keywords": [
+        "base",
+        "cache",
+        "config",
+        "data",
+        "get",
+        "has",
+        "hash",
+        "hasown",
+        "object",
+        "set",
+        "store"
+      ],
+      "verb": {
+        "run": true,
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "highligh": "base",
+          "list": [
+            "base-methods",
+            "get-value",
+            "has-value",
+            "option-cache",
+            "set-value",
+            "unset-value"
+          ]
+        },
+        "reflinks": [
+          "verb"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "4a175759fcbf098b1617df40a7c243388ad671d6",
+      "_id": "cache-base@0.8.5",
+      "_shasum": "60ceb3504021eceec7011fd3384b7f4e95729bfa",
+      "_from": ".",
+      "_npmVersion": "4.1.2",
+      "_nodeVersion": "7.5.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "60ceb3504021eceec7011fd3384b7f4e95729bfa",
+        "tarball": "https://registry.npmjs.org/cache-base/-/cache-base-0.8.5.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/cache-base-0.8.5.tgz_1488061942816_0.2875675887335092"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "cache-base",
+      "description": "Basic object cache with `get`, `set`, `del`, and `has` methods for node.js/javascript projects.",
+      "version": "1.0.0",
+      "homepage": "https://github.com/jonschlinkert/cache-base",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "email": "wtgtybhertgeghgtwtg@gmail.com",
+          "url": "https://github.com/wtgtybhertgeghgtwtg"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "email": "jon.schlinkert@sellside.com",
+          "url": "http://twitter.com/jonschlinkert"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/cache-base.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/cache-base/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "utils.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "collection-visit": "^0.2.1",
+        "component-emitter": "^1.2.1",
+        "get-value": "^2.0.5",
+        "has-value": "^0.3.1",
+        "isobject": "^3.0.0",
+        "lazy-cache": "^2.0.1",
+        "set-value": "^0.4.2",
+        "to-object-path": "^0.3.0",
+        "union-value": "^0.2.3",
+        "unset-value": "^0.1.1"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^0.1.8",
+        "mocha": "^2.4.5"
+      },
+      "keywords": [
+        "base",
+        "cache",
+        "config",
+        "data",
+        "get",
+        "has",
+        "hash",
+        "hasown",
+        "object",
+        "set",
+        "store"
+      ],
+      "verb": {
+        "run": true,
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "highligh": "base",
+          "list": [
+            "base-methods",
+            "get-value",
+            "has-value",
+            "option-cache",
+            "set-value",
+            "unset-value"
+          ]
+        },
+        "reflinks": [
+          "verb"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "48f296f681b74b7cb9e703c0a1e1ef1f333f3f2f",
+      "_id": "cache-base@1.0.0",
+      "_shasum": "5c0f629fd175f0d232d25e25e3d6ee76e644d999",
+      "_from": ".",
+      "_npmVersion": "4.1.2",
+      "_nodeVersion": "7.5.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "5c0f629fd175f0d232d25e25e3d6ee76e644d999",
+        "tarball": "https://registry.npmjs.org/cache-base/-/cache-base-1.0.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/cache-base-1.0.0.tgz_1488061976386_0.2394583688583225"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "cache-base",
+      "description": "Basic object cache with `get`, `set`, `del`, and `has` methods for node.js/javascript projects.",
+      "version": "1.0.1",
+      "homepage": "https://github.com/jonschlinkert/cache-base",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "url": "https://github.com/wtgtybhertgeghgtwtg"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/cache-base.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/cache-base/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "collection-visit": "^1.0.0",
+        "component-emitter": "^1.2.1",
+        "get-value": "^2.0.6",
+        "has-value": "^1.0.0",
+        "isobject": "^3.0.1",
+        "set-value": "^2.0.0",
+        "to-object-path": "^0.3.0",
+        "union-value": "^1.0.0",
+        "unset-value": "^1.0.0"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^1.0.0",
+        "mocha": "^3.4.2"
+      },
+      "keywords": [
+        "base",
+        "cache",
+        "config",
+        "data",
+        "get",
+        "has",
+        "hash",
+        "hasown",
+        "object",
+        "set",
+        "store"
+      ],
+      "verb": {
+        "run": true,
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "highligh": "base",
+          "list": [
+            "base-methods",
+            "get-value",
+            "has-value",
+            "option-cache",
+            "set-value",
+            "unset-value"
+          ]
+        },
+        "reflinks": [
+          "verb"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "0889aab765c66585ffbe7b41f9a733ef097665cf",
+      "_id": "cache-base@1.0.1",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "7.7.3",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        }
+      ],
+      "dist": {
+        "integrity": "sha512-AKcdTnFSWATd5/GCPRxr2ChwIJ85CeyrEyjRHlKxQ56d4XJMGym0uAiKn0xbLOGOl3+yRpOTi484dVCEc5AUzQ==",
+        "shasum": "0a7f46416831c8b662ee36fe4e7c59d76f666ab2",
+        "tarball": "https://registry.npmjs.org/cache-base/-/cache-base-1.0.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/cache-base-1.0.1.tgz_1500744367725_0.26231536315754056"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "cache-base",
+      "description": "Basic object cache with `get`, `set`, `del`, and `has` methods for node.js/javascript projects.",
+      "version": "2.0.0",
+      "homepage": "https://github.com/jonschlinkert/cache-base",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "url": "https://github.com/wtgtybhertgeghgtwtg"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/cache-base.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/cache-base/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "@sellside/emitter": "^1.2.1",
+        "collection-visit": "^1.0.0",
+        "get-value": "^2.0.6",
+        "isobject": "^3.0.1",
+        "set-value": "^2.0.0",
+        "union-value": "^1.0.0",
+        "unset-value": "^1.0.0"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^1.0.0",
+        "mocha": "^3.5.3"
+      },
+      "keywords": [
+        "base",
+        "cache",
+        "config",
+        "data",
+        "get",
+        "has",
+        "hash",
+        "hasown",
+        "object",
+        "set",
+        "store"
+      ],
+      "verb": {
+        "run": true,
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "highligh": "base",
+          "list": [
+            "base-methods",
+            "get-value",
+            "has-value",
+            "option-cache",
+            "set-value",
+            "unset-value"
+          ]
+        },
+        "reflinks": [
+          "verb"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "30f41ece679076b85d5b5d088525d499fd94c456",
+      "_id": "cache-base@2.0.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.1.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "integrity": "sha512-0y6b/M23lUZKhN0pvKj5EMGJkYwyiBYET3VsaPp/IQgDmiMS5RpOXQzBWcWko47GHnMSQgOh1h1HrKJbhkb1YA==",
+        "shasum": "1159cbcf4f0f404b9811727c5e70300a0049bf37",
+        "tarball": "https://registry.npmjs.org/cache-base/-/cache-base-2.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "brian.woodward@gmail.com",
+          "name": "doowb"
+        },
+        {
+          "email": "github@sellside.com",
+          "name": "jonschlinkert"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/cache-base-2.0.0.tgz_1513568299112_0.880666432203725"
+      },
+      "directories": {}
+    },
+    "2.0.1": {
+      "name": "cache-base",
+      "description": "Basic object cache with `get`, `set`, `del`, and `has` methods for node.js/javascript projects.",
+      "version": "2.0.1",
+      "homepage": "https://github.com/jonschlinkert/cache-base",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "url": "https://github.com/wtgtybhertgeghgtwtg"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/cache-base.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/cache-base/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "@sellside/emitter": "^1.2.1",
+        "collection-visit": "^1.0.0",
+        "get-value": "^2.0.6",
+        "isobject": "^3.0.1",
+        "set-value": "^2.0.0",
+        "union-value": "^1.0.0",
+        "unset-value": "^1.0.0"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^1.0.0",
+        "mocha": "^3.5.3"
+      },
+      "keywords": [
+        "base",
+        "cache",
+        "config",
+        "data",
+        "get",
+        "has",
+        "hash",
+        "hasown",
+        "object",
+        "set",
+        "store"
+      ],
+      "verb": {
+        "run": true,
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "highligh": "base",
+          "list": [
+            "base-methods",
+            "get-value",
+            "has-value",
+            "option-cache",
+            "set-value",
+            "unset-value"
+          ]
+        },
+        "reflinks": [
+          "verb"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "772a21b6832acd2560fd196dd559d46805d84d9c",
+      "_id": "cache-base@2.0.1",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.1.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "integrity": "sha512-uF0rXr1w6kcRob7l0L4Q1keRhzS5M6nS1avl2CnDXRrlrenWEzT38aIjLeGvSgggjoUFbvk9f4kHi3Tpaa0cpQ==",
+        "shasum": "f9defb3b3e8ce1183965461ecaf298728a02b0e1",
+        "tarball": "https://registry.npmjs.org/cache-base/-/cache-base-2.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "brian.woodward@gmail.com",
+          "name": "doowb"
+        },
+        {
+          "email": "github@sellside.com",
+          "name": "jonschlinkert"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/cache-base-2.0.1.tgz_1513576363114_0.538754248758778"
+      },
+      "directories": {}
+    },
+    "2.0.2": {
+      "name": "cache-base",
+      "description": "Basic object cache with `get`, `set`, `del`, and `has` methods for node.js/javascript projects.",
+      "version": "2.0.2",
+      "homepage": "https://github.com/jonschlinkert/cache-base",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "url": "https://github.com/wtgtybhertgeghgtwtg"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/cache-base.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/cache-base/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "@sellside/emitter": "^1.2.1",
+        "collection-visit": "^1.0.0",
+        "get-value": "^2.0.6",
+        "isobject": "^3.0.1",
+        "set-value": "^2.0.0",
+        "union-value": "^1.0.0",
+        "unset-value": "^1.0.0"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^1.0.0",
+        "mocha": "^3.5.3"
+      },
+      "keywords": [
+        "base",
+        "cache",
+        "config",
+        "data",
+        "get",
+        "has",
+        "hash",
+        "hasown",
+        "object",
+        "set",
+        "store"
+      ],
+      "verb": {
+        "run": true,
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "highligh": "base",
+          "list": [
+            "base-methods",
+            "get-value",
+            "has-value",
+            "option-cache",
+            "set-value",
+            "unset-value"
+          ]
+        },
+        "reflinks": [
+          "verb"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "5a3f4ac82722cd2ec55c7b4f354fd2da87d2b999",
+      "_id": "cache-base@2.0.2",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.1.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "integrity": "sha512-qU8SRzqRQwZAfk9iwBfcr2fod7LuugGE+zdGzejudnWia0cIMA+sizwpJmL8JNxuvdwUE+RAvstFG6l3FaRIfA==",
+        "shasum": "c9f0cd8db658cc5d9f3db208828c47129e7b4814",
+        "tarball": "https://registry.npmjs.org/cache-base/-/cache-base-2.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "brian.woodward@gmail.com",
+          "name": "doowb"
+        },
+        {
+          "email": "github@sellside.com",
+          "name": "jonschlinkert"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/cache-base-2.0.2.tgz_1513695988287_0.5332709613721818"
+      },
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "cache-base",
+      "description": "Basic object cache with `get`, `set`, `del`, and `has` methods for node.js/javascript projects.",
+      "version": "3.0.0",
+      "homepage": "https://github.com/jonschlinkert/cache-base",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "url": "https://github.com/wtgtybhertgeghgtwtg"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/cache-base.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/cache-base/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "nyc --reporter=text --reporter=html mocha"
+      },
+      "dependencies": {
+        "@sellside/emitter": "^1.2.1",
+        "collection-visit": "^1.0.0",
+        "get-value": "^3.0.1",
+        "has-own-deep": "^1.1.0",
+        "kind-of": "^6.0.2",
+        "set-value": "^3.0.0",
+        "union-value": "^1.0.0",
+        "unset-value": "^1.0.0"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^1.0.0",
+        "mocha": "^3.5.3",
+        "nyc": "^11.6.0"
+      },
+      "keywords": [
+        "base",
+        "cache",
+        "config",
+        "data",
+        "get",
+        "has",
+        "hash",
+        "hasown",
+        "object",
+        "set",
+        "store"
+      ],
+      "verb": {
+        "run": true,
+        "toc": true,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "highligh": "base",
+          "list": [
+            "base-methods",
+            "get-value",
+            "has-value",
+            "option-cache",
+            "set-value",
+            "unset-value"
+          ]
+        },
+        "reflinks": [
+          "verb"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "b3ee0b9b5d074e06d84cc8bda530dbf92002cb40",
+      "_id": "cache-base@3.0.0",
+      "_npmVersion": "5.7.1",
+      "_nodeVersion": "9.7.1",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "integrity": "sha512-cX57ixoTCSyznPrMzLVuOSvLCxYCdMB47dlbpLwriYFZ2OyHpcuCsKCLYrwcFjNqamnZfAjqR7aWZMrTkafWCg==",
+        "shasum": "2895d98839c180d41394d6dbb36dbb5fe23fea83",
+        "tarball": "https://registry.npmjs.org/cache-base/-/cache-base-3.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 28531
+      },
+      "maintainers": [
+        {
+          "email": "brian.woodward@gmail.com",
+          "name": "doowb"
+        },
+        {
+          "email": "github@sellside.com",
+          "name": "jonschlinkert"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/cache-base_3.0.0_1521835136324_0.24266317880012056"
+      }
+    },
+    "4.0.0": {
+      "name": "cache-base",
+      "description": "Basic object cache with `get`, `set`, `del`, and `has` methods for node.js/javascript projects.",
+      "version": "4.0.0",
+      "homepage": "https://github.com/jonschlinkert/cache-base",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "url": "https://github.com/wtgtybhertgeghgtwtg"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/cache-base.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/cache-base/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "nyc --reporter=text --reporter=html mocha"
+      },
+      "dependencies": {
+        "@sellside/emitter": "^1.2.1",
+        "collection-visit": "^1.0.0",
+        "get-value": "^3.0.1",
+        "has-own-deep": "^1.1.0",
+        "kind-of": "^6.0.2",
+        "set-value": "^3.0.0",
+        "union-value": "^1.0.0",
+        "unset-value": "^1.0.0"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^1.0.0",
+        "mocha": "^3.5.3",
+        "nyc": "^11.6.0"
+      },
+      "keywords": [
+        "base",
+        "cache",
+        "config",
+        "data",
+        "get",
+        "has",
+        "hash",
+        "hasown",
+        "object",
+        "set",
+        "store"
+      ],
+      "verb": {
+        "run": true,
+        "toc": true,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "highligh": "base",
+          "list": [
+            "base-methods",
+            "get-value",
+            "has-value",
+            "option-cache",
+            "set-value",
+            "unset-value"
+          ]
+        },
+        "reflinks": [
+          "verb"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "e4d50b78a57099aedabce9baff8c1b3212099c99",
+      "_id": "cache-base@4.0.0",
+      "_npmVersion": "5.8.0",
+      "_nodeVersion": "9.9.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "integrity": "sha512-Ou2dop27F3N1xwvdO0Y3QYM1uuhSgpHezJqIItIVmWtWhOXkRAM0k56gJZjTV+wbJwwA+hI4iq0Tl6HmFm0IzQ==",
+        "shasum": "e9c181bd61443644bfcf98c583173301976eac61",
+        "tarball": "https://registry.npmjs.org/cache-base/-/cache-base-4.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 28911
+      },
+      "maintainers": [
+        {
+          "email": "brian.woodward@gmail.com",
+          "name": "doowb"
+        },
+        {
+          "email": "github@sellside.com",
+          "name": "jonschlinkert"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/cache-base_4.0.0_1522378895459_0.5543859406930611"
+      }
+    }
+  },
+  "readme": "# cache-base [![NPM version](https://img.shields.io/npm/v/cache-base.svg?style=flat)](https://www.npmjs.com/package/cache-base) [![NPM monthly downloads](https://img.shields.io/npm/dm/cache-base.svg?style=flat)](https://npmjs.org/package/cache-base) [![NPM total downloads](https://img.shields.io/npm/dt/cache-base.svg?style=flat)](https://npmjs.org/package/cache-base) [![Linux Build Status](https://img.shields.io/travis/jonschlinkert/cache-base.svg?style=flat&label=Travis)](https://travis-ci.org/jonschlinkert/cache-base)\n\n> Basic object cache with `get`, `set`, `del`, and `has` methods for node.js/javascript projects.\n\nPlease consider following this project's author, [Jon Schlinkert](https://github.com/jonschlinkert), and consider starring the project to show your :heart: and support.\n\n- [Install](#install)\n- [Quickstart](#quickstart)\n- [API](#api)\n- [Usage examples](#usage-examples)\n- [About](#about)\n\n_(TOC generated by [verb](https://github.com/verbose/verb) using [markdown-toc](https://github.com/jonschlinkert/markdown-toc))_\n\n## Install\n\nInstall with [npm](https://www.npmjs.com/):\n\n```sh\n$ npm install --save cache-base\n```\n\n## Quickstart\n\n```js\nconst CacheBase = require('cache-base');\nconst app = new CacheBase();\n\napp.set('a.b', 'c');\n\nconsole.log(app.cache.a);    //=> { b: 'c' }\nconsole.log(app.cache.a.b);  //=> 'c'\n\nconsole.log(app.get('a'));   //=> { b: 'c' }\nconsole.log(app.get('a.b')); //=> 'c'\n```\n\nMore [usage examples](#usage-examples) below.\n\n## API\n\n**Params**\n\n* `prop` **{String|Object}**: (optional) Property name to use for the cache, or the object to initialize with.\n* `cache` **{Object}**: (optional) An object to initialize with.\n\n**Example**\n\n```js\nconst app = new CacheBase();\n```\n\n### [.set](index.js#L65)\n\nAssign `value` to `key`. Also emits `set` with the key and value.\n\n**Params**\n\n* `key` **{String|Array}**: The name of the property to set. Dot-notation may be used to set nested properties.\n* `value` **{any}**\n* `returns` **{Object}**: Returns the instance for chaining.\n\n**Events**\n\n* `emits`: `set` with `key` and `value` as arguments.\n\n**Example**\n\n```js\napp.on('set', function(key, val) {\n  // do something when `set` is emitted\n});\n\napp.set('admin', true);\n\n// also takes an object or an array of objects\napp.set({ name: 'Brian' });\napp.set([{ foo: 'bar' }, { baz: 'quux' }]);\nconsole.log(app);\n//=> { name: 'Brian', foo: 'bar', baz: 'quux' }\n```\n\n### [.get](index.js#L90)\n\nReturn the value of `key`.\n\n**Params**\n\n* `key` **{String|Array}**: The name of the property to get. Dot-notation may be used to set nested properties.\n* `returns` **{any}**: Returns the value of `key`\n\n**Events**\n\n* `emits`: `get` with `key` and `value` as arguments.\n\n**Example**\n\n```js\napp.set('a.b.c', 'd');\napp.get('a.b');\n//=> { c: 'd' }\n```\n\n### [.prime](index.js#L120)\n\nCreate a property on the cache with the given `value` only if it doesn't already exist.\n\n**Params**\n\n* `key` **{String}**: Property name or object path notation.\n* `val` **{any}**\n* `returns` **{Object}**: Returns the instance for chaining.\n\n**Example**\n\n```js\nconsole.log(app.cache); //=> {}\napp.set('one', { foo: 'bar' });\napp.prime('one', { a: 'b' });\napp.prime('two', { c: 'd' });\nconsole.log(app.cache.one); //=> { foo: 'bar' }\nconsole.log(app.cache.two); //=> { c: 'd' }\n```\n\n### [.default](index.js#L162)\n\nSet a default value to be used when `.get()` is called and the value is not defined on the cache. Returns a value from the defaults when only a key is passed.\n\n**Params**\n\n* `key` **{String|Array}**: The name of the property to set. Dot-notation may be used to set nested properties.\n* `value` **{any}**: (optional) The value to set on the defaults object.\n* `returns` **{Object}**: Returns the instance for chaining.\n\n**Example**\n\n```js\napp.set('foo', 'xxx');\napp.default('foo', 'one');\napp.default('bar', 'two');\napp.default('baz', 'three');\napp.set('baz', 'zzz');\n\nconsole.log(app.get('foo'));\n//=> 'xxx'\n\nconsole.log(app.get('bar'));\n//=> 'two'\n\nconsole.log(app.get('baz'));\n//=> 'zzz'\n\nconsole.log(app);\n// CacheBase {\n//   cache: { foo: 'xxx', bar: 'two', baz: 'zzz' },\n//   defaults: { foo: 'one', bar: 'two', baz: 'three' } }\n```\n\n### [.union](index.js#L199)\n\nSet an array of unique values on cache `key`.\n\n**Params**\n\n* `key` **{String|Array}**: The name of the property to union. Dot-notation may be used to set nested properties.\n* `value` **{any}**\n* `returns` **{Object}**: Returns the instance for chaining.\n\n**Example**\n\n```js\napp.union('a.b.c', 'foo');\napp.union('a.b.c', 'bar');\napp.union('a.b.c', ['bar', 'baz']);\nconsole.log(app.get('a'));\n//=> { b: { c: ['foo', 'bar', 'baz'] } }\n```\n\n### [.has](index.js#L223)\n\nReturn true if the value of property `key` is not `undefined`.\n\n**Params**\n\n* `key` **{String|Array}**: The name of the property to check. Dot-notation may be used to set nested properties.\n* `returns` **{Boolean}**\n\n**Example**\n\n```js\napp.set('foo', true);\napp.set('baz', null);\napp.set('bar', undefined);\n\napp.has('foo'); //=> true\napp.has('bar'); //=> true\napp.has('baz'); //=> false\n```\n\n### [.hasOwn](index.js#L253)\n\nReturns true if the specified property is an own (not inherited) property. Similar to [.has()](#has), but returns true if the key exists, even if the value is `undefined`.\n\n**Params**\n\n* `key` **{String}**\n* `returns` **{Boolean}**: Returns true if object `key` exists. Dot-notation may be used to set nested properties.\n\n**Example**\n\n```js\napp.set('a.b.c', 'd');\napp.set('x', false);\napp.set('y', null);\napp.set('z', undefined);\n\napp.hasOwn('a');      //=> true\napp.hasOwn('b');      //=> true\napp.hasOwn('c');      //=> true\napp.hasOwn('a.b.c');  //=> true\napp.hasOwn('x');      //=> true\napp.hasOwn('y');      //=> true\napp.hasOwn('z');      //=> true\napp.hasOwn('lslsls'); //=> false\n```\n\n### [.del](index.js#L278)\n\nDelete one or more properties from the instance.\n\n**Params**\n\n* `key` **{String|Array}**: The name of the property to delete. Dot-notation may be used to set nested properties.\n* `returns` **{Object}**: Returns the instance for chaining.\n\n**Events**\n\n* `emits`: `del` with the `key` as the only argument.\n\n**Example**\n\n```js\n// setup a listener to update a property with a default\n// value when it's deleted by the user\napp.on('del', key => app.set(key, app.default(key)));\n\napp.del(); // delete all properties on the cache\n// or\napp.del('foo');\n// or an array of keys\napp.del(['foo', 'bar']);\n```\n\n### [.clear](index.js#L301)\n\nReset the entire cache to an empty object. Note that this does not also clear the `defaults` object, since you can manually do `cache.defaults = {}` if you want to reset that object as well.\n\n**Example**\n\n```js\n// clear \"defaults\" whenever the cache is cleared\napp.on('clear', key => (app.defaults = {}));\napp.clear();\n```\n\n### [.visit](index.js#L318)\n\nVisit (or map visit) the specified method (`key`) over the properties in the\ngiven object or array.\n\n**Params**\n\n* `key` **{String|Array}**: The name of the method to visit.\n* `val` **{Object|Array}**: The object or array to iterate over.\n* `returns` **{Object}**: Returns the instance for chaining.\n\n### [.keys](index.js#L338)\n\nGets an array of names of all enumerable properties on the cache.\n\n**Example**\n\n```js\nconst app = new CacheBase();\napp.set('user', true);\napp.set('admin', false);\n\nconsole.log(app.keys);\n//=> ['user', 'admin']\n```\n\n### [.size](index.js#L357)\n\nGets the length of [keys](#keys).\n\n**Example**\n\n```js\nconst app = new CacheBase();\napp.set('user', true);\napp.set('admin', false);\n\nconsole.log(app.size);\n//=> 2\n```\n\n## Usage examples\n\n**Create an instance of cache-base**\n\n```js\nconst app = new CacheBase();\n\napp.set('a', 'b');\napp.set('c.d', 'e');\n\nconsole.log(app.get('a'));\n//=> 'b'\nconsole.log(app.get('c'));\n//=> { d: 'e' }\nconsole.log(app);\n//=> CacheBase { a: 'b' }\n```\n\n**Initialize with an object**\n\n```js\nconst app = new CacheBase({ a: 'b', c: { d: 'e' } });\n\nconsole.log(app.get('a'));\n//=> 'b'\nconsole.log(app.get('c'));\n//=> { d: 'e' }\nconsole.log(app.get('c.d'));\n//=> 'e'\nconsole.log(app);\n//=> CacheBase { cache: { a: 'b' } }\n```\n\n**Inherit**\n\n```js\nclass MyApp extends CacheBase {}\n\nconst app = new MyApp();\napp.set('a', 'b');\napp.set('c', 'd');\n\nconsole.log(app.get('a'));\n//=> 'b'\n\nconsole.log(app);\n//=> MyApp { cache: { a: 'b', c: 'd' } }\n```\n\n**Custom namespace**\n\nPass a string as the first value to the contructor to define a custom property name to use for the cache. By default values are stored on the `cache` property.\n\n```js\nconst CacheBase = require('cache-base');\nconst app = new CacheBase('data', { a: 'b' });\napp.set('c.d', 'e');\n\n// get values\nconsole.log(app.get('a'));\n//=> 'b'\nconsole.log(app.get('c'));\n//=> { d: 'e' }\nconsole.log(app.data);\n//=> { a: 'b', c: { d: 'e' } }\nconsole.log(app);\n//=> CacheBase { data: { a: 'b', c: { d: 'e' } } }\n```\n\n## About\n\n<details>\n<summary><strong>Contributing</strong></summary>\n\nPull requests and stars are always welcome. For bugs and feature requests, [please create an issue](../../issues/new).\n\n</details>\n\n<details>\n<summary><strong>Running Tests</strong></summary>\n\nRunning and reviewing unit tests is a great way to get familiarized with a library and its API. You can install dependencies and run tests with the following command:\n\n```sh\n$ npm install && npm test\n```\n\n</details>\n\n<details>\n<summary><strong>Building docs</strong></summary>\n\n_(This project's readme.md is generated by [verb](https://github.com/verbose/verb-generate-readme), please don't edit the readme directly. Any changes to the readme must be made in the [.verb.md](.verb.md) readme template.)_\n\nTo generate the readme, run the following command:\n\n```sh\n$ npm install -g verbose/verb#dev verb-generate-readme && verb\n```\n\n</details>\n\n### Related projects\n\nYou might also be interested in these projects:\n\n* [base-methods](https://www.npmjs.com/package/base-methods): base-methods is the foundation for creating modular, unit testable and highly pluggable node.js applications, starting… [more](https://github.com/jonschlinkert/base-methods) | [homepage](https://github.com/jonschlinkert/base-methods \"base-methods is the foundation for creating modular, unit testable and highly pluggable node.js applications, starting with a handful of common methods, like `set`, `get`, `del` and `use`.\")\n* [get-value](https://www.npmjs.com/package/get-value): Use property paths like 'a.b.c' to get a nested value from an object. Even works… [more](https://github.com/jonschlinkert/get-value) | [homepage](https://github.com/jonschlinkert/get-value \"Use property paths like 'a.b.c' to get a nested value from an object. Even works when keys have dots in them (no other dot-prop library can do this!).\")\n* [has-value](https://www.npmjs.com/package/has-value): Returns true if a value exists, false if empty. Works with deeply nested values using… [more](https://github.com/jonschlinkert/has-value) | [homepage](https://github.com/jonschlinkert/has-value \"Returns true if a value exists, false if empty. Works with deeply nested values using object paths.\")\n* [option-cache](https://www.npmjs.com/package/option-cache): Simple API for managing options in JavaScript applications. | [homepage](https://github.com/jonschlinkert/option-cache \"Simple API for managing options in JavaScript applications.\")\n* [set-value](https://www.npmjs.com/package/set-value): Create nested values and any intermediaries using dot notation (`'a.b.c'`) paths. | [homepage](https://github.com/jonschlinkert/set-value \"Create nested values and any intermediaries using dot notation (`'a.b.c'`) paths.\")\n* [unset-value](https://www.npmjs.com/package/unset-value): Delete nested properties from an object using dot notation. | [homepage](https://github.com/jonschlinkert/unset-value \"Delete nested properties from an object using dot notation.\")\n\n### Contributors\n\n| **Commits** | **Contributor** | \n| --- | --- |\n| 67 | [jonschlinkert](https://github.com/jonschlinkert) |\n| 2 | [wtgtybhertgeghgtwtg](https://github.com/wtgtybhertgeghgtwtg) |\n\n### Author\n\n**Jon Schlinkert**\n\n* [LinkedIn Profile](https://linkedin.com/in/jonschlinkert)\n* [GitHub Profile](https://github.com/jonschlinkert)\n* [Twitter Profile](https://twitter.com/jonschlinkert)\n\n### License\n\nCopyright © 2018, [Jon Schlinkert](https://github.com/jonschlinkert).\nReleased under the [MIT License](LICENSE).\n\n***\n\n_This file was generated by [verb-generate-readme](https://github.com/verbose/verb-generate-readme), v0.6.0, on March 23, 2018._",
+  "maintainers": [
+    {
+      "email": "brian.woodward@gmail.com",
+      "name": "doowb"
+    },
+    {
+      "email": "github@sellside.com",
+      "name": "jonschlinkert"
+    }
+  ],
+  "time": {
+    "modified": "2018-03-30T03:01:36.367Z",
+    "created": "2014-10-12T12:37:46.409Z",
+    "0.1.0": "2014-10-12T12:37:46.409Z",
+    "0.2.0": "2014-11-15T22:28:25.249Z",
+    "0.2.1": "2014-11-15T23:09:43.506Z",
+    "0.3.0": "2015-02-14T04:32:08.892Z",
+    "0.4.0": "2015-02-14T05:08:56.802Z",
+    "0.6.0": "2015-03-12T02:24:21.448Z",
+    "0.7.0": "2015-11-24T03:32:31.230Z",
+    "0.7.1": "2015-11-24T03:48:08.695Z",
+    "0.7.2": "2016-01-31T15:57:27.013Z",
+    "0.8.0": "2016-02-09T18:58:06.630Z",
+    "0.8.1": "2016-02-29T05:12:33.531Z",
+    "0.8.2": "2016-03-02T21:08:41.372Z",
+    "0.8.3": "2016-04-21T06:21:04.329Z",
+    "0.8.4": "2016-05-30T07:02:43.156Z",
+    "0.8.5": "2017-02-25T22:32:24.849Z",
+    "1.0.0": "2017-02-25T22:32:57.156Z",
+    "1.0.1": "2017-07-22T17:26:08.779Z",
+    "2.0.0": "2017-12-18T03:38:20.129Z",
+    "2.0.1": "2017-12-18T05:52:44.090Z",
+    "2.0.2": "2017-12-19T15:06:29.232Z",
+    "3.0.0": "2018-03-23T19:58:56.371Z",
+    "3.0.1": "2018-03-30T02:49:10.835Z",
+    "4.0.0": "2018-03-30T03:01:35.538Z"
+  },
+  "homepage": "https://github.com/jonschlinkert/cache-base",
+  "keywords": [
+    "base",
+    "cache",
+    "config",
+    "data",
+    "get",
+    "has",
+    "hash",
+    "hasown",
+    "object",
+    "set",
+    "store"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonschlinkert/cache-base.git"
+  },
+  "author": {
+    "name": "Jon Schlinkert",
+    "url": "https://github.com/jonschlinkert"
+  },
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/cache-base/issues"
+  },
+  "readmeFilename": "README.md",
+  "users": {
+    "andrebassi": true,
+    "jun.lu": true,
+    "abudayah": true
+  },
+  "license": "MIT",
+  "contributors": [
+    {
+      "name": "Jon Schlinkert",
+      "url": "http://twitter.com/jonschlinkert"
+    },
+    {
+      "url": "https://github.com/wtgtybhertgeghgtwtg"
+    }
+  ],
+  "_attachments": {}
+}

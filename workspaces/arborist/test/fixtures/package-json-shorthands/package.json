@@ -1,0 +1,7 @@
+{
+  "name": "package-json-shorthands",
+  "version": "1.0.0",
+  "bin": "./index.js",
+  "main": "./index.js",
+  "funding": "https://example.com"
+}

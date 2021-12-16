@@ -1,0 +1,58 @@
+{
+  "_id": "@isaacs/testing-peer-deps-d",
+  "name": "@isaacs/testing-peer-deps-d",
+  "dist-tags": {
+    "latest": "2.0.0"
+  },
+  "versions": {
+    "2.0.0": {
+      "name": "@isaacs/testing-peer-deps-d",
+      "version": "2.0.0",
+      "description": "depends on a v2, which has a peer dep on b v2, which has a peer dep on c",
+      "dependencies": {
+        "@isaacs/testing-peer-deps-a": "2"
+      },
+      "_id": "@isaacs/testing-peer-deps-d@2.0.0",
+      "_nodeVersion": "12.12.0",
+      "_npmVersion": "6.13.1",
+      "dist": {
+        "integrity": "sha512-uVdlNNBv6K1Cqo9NeCCX6Byv5WobrWpAgW3I9FnyVb3w2M7Q7kds+zvcXn5tDY+VzKUqFH/JcrKmSXRo7Jt2xQ==",
+        "shasum": "353fdb88c809e3abd91f90afe897ed737c63ddc8",
+        "tarball": "https://registry.npmjs.org/@isaacs/testing-peer-deps-d/-/testing-peer-deps-d-2.0.0.tgz",
+        "fileCount": 1,
+        "unpackedSize": 222,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd23HrCRA9TVsSAnZWagAAijQP/0n2YlgyIxz2l7EtOcgq\nu0+BnBTajfNpCFyVsh5g1szApCk1dt2wm4ZqM81dHQYwhFY/Dg6JrZ+vpBeU\nHgDVYhduuizF2mO2CK9DDx5Ww6aRC6NgR4OGXTvfkR9WwGQCcQ1UClFZb3yF\n35+2D9bjXMxW/ZLDNt2xjbOAlL24QHWh7d6RZbeypOHhERsGA0b43Q1o+Uwa\n+zZCnPBtlcUKpodiQPqSs5fo2hC/Eirj6TPWJKywGIZk2GMLDaaTnCszGj83\nChzm/TuupQ5JY++ugCx7jkOwe/O3hchfj4JyRmtjGNz9rUYS/3iJOgRxy5Y7\nbMTjrkHOp0bbdSAzjSnTqHaeFDnH8vIb+VBYlv7OFr652EMqhrSzbyMf8AuW\nwMb4Er9RJ+1ykEWT0EZqj5CbNpPT22mb3YAhE64GIs9LBMaVygW2sugTAoNO\n7ylx+CVofpB0J07OtO2novXIDTTZT5sUPvS/Qiu/1d7DkdRYmiNM2CV9sCtJ\nGyGPNqyxkebWlP8xcj/xkOKMyMpH9X10sB8PQ1sObX4vZzR0RwTL6RYq4TVm\nzEV35uhR1e0q5Z/Rlk5YdofngpeDLmYlehWxgm+t1gdB760jvwxsepjOwT1x\nal/Ur4ep2e0D/0goTuO4VTyAeq+Af96KMjAoyADNgD1fErtYlmUNdCy8lLTx\nn6C3\r\n=hoeq\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/testing-peer-deps-d_2.0.0_1574662634711_0.8580056748121294"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2019-11-25T06:17:14.425Z",
+    "2.0.0": "2019-11-25T06:17:14.851Z",
+    "modified": "2019-11-25T06:17:17.469Z"
+  },
+  "maintainers": [
+    {
+      "name": "isaacs",
+      "email": "i@izs.me"
+    }
+  ],
+  "description": "depends on a v2, which has a peer dep on b v2, which has a peer dep on c",
+  "readme": "ERROR: No README data found!",
+  "readmeFilename": ""
+}

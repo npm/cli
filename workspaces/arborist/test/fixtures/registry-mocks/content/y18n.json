@@ -1,0 +1,1073 @@
+{
+  "_id": "y18n",
+  "_rev": "25-d6309bbd96f4ecd45cfb12d70edd6bb2",
+  "name": "y18n",
+  "description": "the bare-bones internationalization library used by yargs",
+  "dist-tags": {
+    "latest": "5.0.3",
+    "next": "4.0.0",
+    "engines-test": "6.0.0-alpha.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "y18n",
+      "version": "1.0.0",
+      "description": "the bare-bones internationalization library used by yargs",
+      "main": "index.js",
+      "scripts": {
+        "pretest": "standard",
+        "test": "nyc mocha"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:bcoe/y18n.git"
+      },
+      "keywords": [
+        "i18n",
+        "internationalization",
+        "yargs"
+      ],
+      "author": {
+        "name": "Ben Coe",
+        "email": "ben@npmjs.com"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/bcoe/y18n/issues"
+      },
+      "homepage": "https://github.com/bcoe/y18n",
+      "devDependencies": {
+        "chai": "^3.2.0",
+        "mocha": "^2.2.5",
+        "nyc": "^3.0.1",
+        "rimraf": "^2.4.2",
+        "standard": "^4.5.4"
+      },
+      "gitHead": "da3facd10d36b380d02dfa14db367f09ff124869",
+      "_id": "y18n@1.0.0",
+      "_shasum": "408ca633ce1cb2e8e1e288acb8c7007dcb28a588",
+      "_from": ".",
+      "_npmVersion": "2.7.5",
+      "_nodeVersion": "0.10.36",
+      "_npmUser": {
+        "name": "bcoe",
+        "email": "ben@npmjs.com"
+      },
+      "dist": {
+        "shasum": "408ca633ce1cb2e8e1e288acb8c7007dcb28a588",
+        "tarball": "https://registry.npmjs.org/y18n/-/y18n-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "bcoe",
+          "email": "ben@npmjs.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "y18n",
+      "version": "1.1.0",
+      "description": "the bare-bones internationalization library used by yargs",
+      "main": "index.js",
+      "scripts": {
+        "pretest": "standard",
+        "test": "nyc mocha",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/bcoe/y18n.git"
+      },
+      "keywords": [
+        "i18n",
+        "internationalization",
+        "yargs"
+      ],
+      "author": {
+        "name": "Ben Coe",
+        "email": "ben@npmjs.com"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/bcoe/y18n/issues"
+      },
+      "homepage": "https://github.com/bcoe/y18n",
+      "devDependencies": {
+        "chai": "^3.2.0",
+        "coveralls": "^2.11.3",
+        "mocha": "^2.2.5",
+        "nyc": "^3.0.1",
+        "rimraf": "^2.4.2",
+        "standard": "^4.5.4"
+      },
+      "gitHead": "84becd79cc173a7dbfd97decbbc50aec85a52694",
+      "_id": "y18n@1.1.0",
+      "_shasum": "ba6bce6ebc50bcdb66bebadcd8f2c6fa5f5d6e4d",
+      "_from": ".",
+      "_npmVersion": "2.13.2",
+      "_nodeVersion": "2.0.2",
+      "_npmUser": {
+        "name": "bcoe",
+        "email": "ben@npmjs.com"
+      },
+      "dist": {
+        "shasum": "ba6bce6ebc50bcdb66bebadcd8f2c6fa5f5d6e4d",
+        "tarball": "https://registry.npmjs.org/y18n/-/y18n-1.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "bcoe",
+          "email": "ben@npmjs.com"
+        }
+      ],
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "y18n",
+      "version": "2.0.0",
+      "description": "the bare-bones internationalization library used by yargs",
+      "main": "index.js",
+      "scripts": {
+        "pretest": "standard",
+        "test": "nyc mocha",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/bcoe/y18n.git"
+      },
+      "keywords": [
+        "i18n",
+        "internationalization",
+        "yargs"
+      ],
+      "author": {
+        "name": "Ben Coe",
+        "email": "ben@npmjs.com"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/bcoe/y18n/issues"
+      },
+      "homepage": "https://github.com/bcoe/y18n",
+      "devDependencies": {
+        "chai": "^3.2.0",
+        "coveralls": "^2.11.3",
+        "mocha": "^2.2.5",
+        "nyc": "^3.0.1",
+        "rimraf": "^2.4.2",
+        "standard": "^4.5.4"
+      },
+      "gitHead": "17c6b1146fc008e4e95645105f1733210733e786",
+      "_id": "y18n@2.0.0",
+      "_shasum": "c4bc87a9add7962f72d208f8d04660abd774e4de",
+      "_from": ".",
+      "_npmVersion": "2.13.2",
+      "_nodeVersion": "2.0.2",
+      "_npmUser": {
+        "name": "bcoe",
+        "email": "ben@npmjs.com"
+      },
+      "dist": {
+        "shasum": "c4bc87a9add7962f72d208f8d04660abd774e4de",
+        "tarball": "https://registry.npmjs.org/y18n/-/y18n-2.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "bcoe",
+          "email": "ben@npmjs.com"
+        }
+      ],
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "y18n",
+      "version": "3.0.0",
+      "description": "the bare-bones internationalization library used by yargs",
+      "main": "index.js",
+      "scripts": {
+        "pretest": "standard",
+        "test": "nyc mocha",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/bcoe/y18n.git"
+      },
+      "keywords": [
+        "i18n",
+        "internationalization",
+        "yargs"
+      ],
+      "author": {
+        "name": "Ben Coe",
+        "email": "ben@npmjs.com"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/bcoe/y18n/issues"
+      },
+      "homepage": "https://github.com/bcoe/y18n",
+      "devDependencies": {
+        "chai": "^3.2.0",
+        "coveralls": "^2.11.3",
+        "mocha": "^2.2.5",
+        "nyc": "^3.0.1",
+        "rimraf": "^2.4.2",
+        "standard": "^4.5.4"
+      },
+      "gitHead": "58bf38fb645839f75f0ccfae16ef819fe0df2986",
+      "_id": "y18n@3.0.0",
+      "_shasum": "848c0149c64003945d62287d6a0a3b91d7fdf6f5",
+      "_from": ".",
+      "_npmVersion": "2.13.2",
+      "_nodeVersion": "2.0.2",
+      "_npmUser": {
+        "name": "bcoe",
+        "email": "ben@npmjs.com"
+      },
+      "dist": {
+        "shasum": "848c0149c64003945d62287d6a0a3b91d7fdf6f5",
+        "tarball": "https://registry.npmjs.org/y18n/-/y18n-3.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "bcoe",
+          "email": "ben@npmjs.com"
+        }
+      ],
+      "directories": {}
+    },
+    "3.1.0": {
+      "name": "y18n",
+      "version": "3.1.0",
+      "description": "the bare-bones internationalization library used by yargs",
+      "main": "index.js",
+      "scripts": {
+        "pretest": "standard",
+        "test": "nyc mocha",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/bcoe/y18n.git"
+      },
+      "keywords": [
+        "i18n",
+        "internationalization",
+        "yargs"
+      ],
+      "author": {
+        "name": "Ben Coe",
+        "email": "ben@npmjs.com"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/bcoe/y18n/issues"
+      },
+      "homepage": "https://github.com/bcoe/y18n",
+      "devDependencies": {
+        "chai": "^3.2.0",
+        "coveralls": "^2.11.4",
+        "mocha": "^2.2.5",
+        "nyc": "^3.1.0",
+        "rimraf": "^2.4.2",
+        "standard": "^5.1.0"
+      },
+      "gitHead": "a75460b306db0097aed0c7e12362bb222e8de90b",
+      "_id": "y18n@3.1.0",
+      "_shasum": "dfcf19493e8dd9763a3d4bd0fa673de37cf8e860",
+      "_from": ".",
+      "_npmVersion": "2.13.1",
+      "_nodeVersion": "0.12.7",
+      "_npmUser": {
+        "name": "abg",
+        "email": "andrewbgoode@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "bcoe",
+          "email": "ben@npmjs.com"
+        },
+        {
+          "name": "abg",
+          "email": "andrewbgoode@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "dfcf19493e8dd9763a3d4bd0fa673de37cf8e860",
+        "tarball": "https://registry.npmjs.org/y18n/-/y18n-3.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "3.2.0": {
+      "name": "y18n",
+      "version": "3.2.0",
+      "description": "the bare-bones internationalization library used by yargs",
+      "main": "index.js",
+      "scripts": {
+        "pretest": "standard",
+        "test": "nyc mocha",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/bcoe/y18n.git"
+      },
+      "keywords": [
+        "i18n",
+        "internationalization",
+        "yargs"
+      ],
+      "author": {
+        "name": "Ben Coe",
+        "email": "ben@npmjs.com"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/bcoe/y18n/issues"
+      },
+      "homepage": "https://github.com/bcoe/y18n",
+      "devDependencies": {
+        "chai": "^3.3.0",
+        "coveralls": "^2.11.4",
+        "mocha": "^2.3.3",
+        "nyc": "^3.2.2",
+        "rimraf": "^2.4.3",
+        "standard": "^5.3.1"
+      },
+      "gitHead": "a92184823afa8cccef4c8100a0b79338f85ab089",
+      "_id": "y18n@3.2.0",
+      "_shasum": "3bec64c93b730d924a6148c765757932433e34c8",
+      "_from": ".",
+      "_npmVersion": "2.14.2",
+      "_nodeVersion": "0.12.7",
+      "_npmUser": {
+        "name": "abg",
+        "email": "andrewbgoode@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "bcoe",
+          "email": "ben@npmjs.com"
+        },
+        {
+          "name": "abg",
+          "email": "andrewbgoode@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "3bec64c93b730d924a6148c765757932433e34c8",
+        "tarball": "https://registry.npmjs.org/y18n/-/y18n-3.2.0.tgz"
+      },
+      "directories": {}
+    },
+    "3.2.1": {
+      "name": "y18n",
+      "version": "3.2.1",
+      "description": "the bare-bones internationalization library used by yargs",
+      "main": "index.js",
+      "scripts": {
+        "pretest": "standard",
+        "test": "nyc mocha",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/yargs/y18n.git"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "i18n",
+        "internationalization",
+        "yargs"
+      ],
+      "author": {
+        "name": "Ben Coe",
+        "email": "ben@npmjs.com"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/yargs/y18n/issues"
+      },
+      "homepage": "https://github.com/yargs/y18n",
+      "devDependencies": {
+        "chai": "^3.4.1",
+        "coveralls": "^2.11.6",
+        "mocha": "^2.3.4",
+        "nyc": "^6.1.1",
+        "rimraf": "^2.5.0",
+        "standard": "^5.4.1"
+      },
+      "gitHead": "34d6ad7bfeac67721ccbcf3bbcc761f33d787c90",
+      "_id": "y18n@3.2.1",
+      "_shasum": "6d15fba884c08679c0d77e88e7759e811e07fa41",
+      "_from": ".",
+      "_npmVersion": "3.3.0",
+      "_nodeVersion": "3.2.0",
+      "_npmUser": {
+        "name": "bcoe",
+        "email": "ben@npmjs.com"
+      },
+      "dist": {
+        "shasum": "6d15fba884c08679c0d77e88e7759e811e07fa41",
+        "tarball": "https://registry.npmjs.org/y18n/-/y18n-3.2.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "bcoe",
+          "email": "ben@npmjs.com"
+        },
+        {
+          "name": "nexdrew",
+          "email": "andrew@npmjs.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-13-west.internal.npmjs.com",
+        "tmp": "tmp/y18n-3.2.1.tgz_1458191070611_0.9606689948122948"
+      },
+      "directories": {}
+    },
+    "4.0.0": {
+      "name": "y18n",
+      "version": "4.0.0",
+      "description": "the bare-bones internationalization library used by yargs",
+      "main": "index.js",
+      "scripts": {
+        "pretest": "standard",
+        "test": "nyc mocha",
+        "coverage": "nyc report --reporter=text-lcov | coveralls",
+        "release": "standard-version"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/yargs/y18n.git"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "i18n",
+        "internationalization",
+        "yargs"
+      ],
+      "author": {
+        "name": "Ben Coe",
+        "email": "ben@npmjs.com"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/yargs/y18n/issues"
+      },
+      "homepage": "https://github.com/yargs/y18n",
+      "devDependencies": {
+        "chai": "^4.0.1",
+        "coveralls": "^3.0.0",
+        "mocha": "^4.0.1",
+        "nyc": "^11.0.1",
+        "rimraf": "^2.5.0",
+        "standard": "^10.0.0-beta.0",
+        "standard-version": "^4.2.0"
+      },
+      "gitHead": "45d2568800d6c57be045e76dc4984b2ef3432233",
+      "_id": "y18n@4.0.0",
+      "_npmVersion": "5.4.2",
+      "_nodeVersion": "8.6.0",
+      "_npmUser": {
+        "name": "nexdrew",
+        "email": "andrewbgoode@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-r9S/ZyXu/Xu9q1tYlpsLIsa3EeLXXk0VwlxqTcFRfg9EhMW+17kbt9G0NrgCmhGb5vT2hyhJZLfDGx+7+5Uj/w==",
+        "shasum": "95ef94f85ecc81d007c264e190a120f0a3c8566b",
+        "tarball": "https://registry.npmjs.org/y18n/-/y18n-4.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "andrewbgoode@gmail.com",
+          "name": "nexdrew"
+        },
+        {
+          "email": "ben@npmjs.com",
+          "name": "bcoe"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/y18n-4.0.0.tgz_1507662196433_0.6819839081726968"
+      },
+      "directories": {}
+    },
+    "5.0.0": {
+      "name": "y18n",
+      "version": "5.0.0",
+      "description": "the bare-bones internationalization library used by yargs",
+      "exports": {
+        "import": "./index.mjs",
+        "require": "./build/index.cjs"
+      },
+      "type": "module",
+      "module": "./build/lib/index.js",
+      "types": "./build/index.cjs.d.ts",
+      "keywords": [
+        "i18n",
+        "internationalization",
+        "yargs"
+      ],
+      "homepage": "https://github.com/yargs/y18n",
+      "bugs": {
+        "url": "https://github.com/yargs/y18n/issues"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/yargs/y18n.git"
+      },
+      "license": "ISC",
+      "author": {
+        "name": "Ben Coe",
+        "email": "bencoe@gmail.com"
+      },
+      "main": "index.js",
+      "scripts": {
+        "check": "standardx '**/*.ts' '**/*.cjs' '**/*.mjs'",
+        "fix": "standardx --fix '**/*.ts' '**/*.cjs' '**/*.mjs'",
+        "pretest": "rimraf build && tsc -p tsconfig.test.json && cross-env NODE_ENV=test npm run build:cjs",
+        "test": "c8 --reporter=text --reporter=html mocha test/*.cjs",
+        "test:esm": "c8 --reporter=text --reporter=html mocha test/esm/*.mjs",
+        "posttest": "npm run check",
+        "coverage": "c8 report --check-coverage",
+        "precompile": "rimraf build",
+        "compile": "tsc",
+        "postcompile": "npm run build:cjs",
+        "build:cjs": "rollup -c",
+        "prepare": "npm run compile"
+      },
+      "devDependencies": {
+        "@types/node": "^14.6.4",
+        "@wessberg/rollup-plugin-ts": "^1.3.1",
+        "c8": "^7.3.0",
+        "chai": "^4.0.1",
+        "cross-env": "^7.0.2",
+        "gts": "^2.0.2",
+        "mocha": "^8.0.0",
+        "rimraf": "^3.0.2",
+        "rollup": "^2.26.10",
+        "standardx": "^5.0.0",
+        "ts-transform-default-export": "^1.0.2",
+        "typescript": "^4.0.0"
+      },
+      "engines": {
+        "node": ">=10"
+      },
+      "standardx": {
+        "ignore": [
+          "build"
+        ]
+      },
+      "gitHead": "335133842bfa398ba34d53ae17135d2604bf3e68",
+      "_id": "y18n@5.0.0",
+      "_nodeVersion": "12.18.2",
+      "_npmVersion": "6.14.5",
+      "dist": {
+        "integrity": "sha512-kmhFIXV4iTEaUF09bNkcjbwp0XKUKF5SGmKHusIj+oQOvZyfy3Z+UFkjJWbKhPiHVNExkEuw2UmCDBGELch4jA==",
+        "shasum": "8e056f5aa98abd2bcfa2cf2c3557c5d24ac472ae",
+        "tarball": "https://registry.npmjs.org/y18n/-/y18n-5.0.0.tgz",
+        "fileCount": 9,
+        "unpackedSize": 20481,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfUvl0CRA9TVsSAnZWagAAq08P/2j00Ww2HPHYfHimXaq2\nC1ALZRCtELgrQPln5l1V0XCvht9/VoxUJajrvu9ff2ARCWzDe2zJZ+5TwONN\nO0dVwfG+idNkarLfSH2iduGDUmAfNsWzeWvbZ3UMQuDffRlG/vTN3IKavLkT\nHEGORY+J4oX9xJcDwvG203JXK1/mL6dyuO0Y2sCW58PgiJVqUgokTHwTCyEq\n/QNqFrRRsudvdp2YvRbVeQO8ez0+LcHlPr2R51EDO4K5ecEtr8vbNAtiXPQu\nGxM9fx4UAx454VwmXhtp8wMeTPQgoy6AdceYjyukooFXneQekrNoHALvUthB\n9rsRyL8t16OjltILG0WZ4nkAKquY5Se4HuuA4YaTwIddPs23Ia+oIhPdvbU6\n927zIuIuIc0jQJ93DLXvYS3YO+bz+1KgSTJEaHvAZIWJujjAclyzxLlFakoc\nukZml0RW12DkaXr+8CqJdvL/hy7to6YUiKd5hG2btql09vUqo0uGjZsSVvP+\nrEM0bBQDVq+NQku35R8uhNjQXG4twsywVAuJzIl8NI6Cn2ZPCJabcHFR8T8W\nm7FSGjhQEbQKnIusZIxAaeJq+A6utAlrmhX3sBhVFvB5QLk7ZEoZVKH2j2aj\nEhyYUIrgt6TD3VSNmD9avq7J6AO6j2cx0/N4CDY4uVQqMJmGffV0KkWgVT2r\nfU4f\r\n=Aj11\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "ben@npmjs.com",
+          "name": "bcoe"
+        },
+        {
+          "email": "andrewbgoode@gmail.com",
+          "name": "nexdrew"
+        }
+      ],
+      "_npmUser": {
+        "name": "bcoe",
+        "email": "bencoe@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/y18n_5.0.0_1599273332047_0.682491923761469"
+      },
+      "_hasShrinkwrap": false
+    },
+    "5.0.1": {
+      "name": "y18n",
+      "version": "5.0.1",
+      "description": "the bare-bones internationalization library used by yargs",
+      "exports": {
+        "import": "./index.mjs",
+        "require": "./build/index.cjs"
+      },
+      "type": "module",
+      "module": "./build/lib/index.js",
+      "keywords": [
+        "i18n",
+        "internationalization",
+        "yargs"
+      ],
+      "homepage": "https://github.com/yargs/y18n",
+      "bugs": {
+        "url": "https://github.com/yargs/y18n/issues"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/yargs/y18n.git"
+      },
+      "license": "ISC",
+      "author": {
+        "name": "Ben Coe",
+        "email": "bencoe@gmail.com"
+      },
+      "main": "./build/index.cjs",
+      "scripts": {
+        "check": "standardx '**/*.ts' '**/*.cjs' '**/*.mjs'",
+        "fix": "standardx --fix '**/*.ts' '**/*.cjs' '**/*.mjs'",
+        "pretest": "rimraf build && tsc -p tsconfig.test.json && cross-env NODE_ENV=test npm run build:cjs",
+        "test": "c8 --reporter=text --reporter=html mocha test/*.cjs",
+        "test:esm": "c8 --reporter=text --reporter=html mocha test/esm/*.mjs",
+        "posttest": "npm run check",
+        "coverage": "c8 report --check-coverage",
+        "precompile": "rimraf build",
+        "compile": "tsc",
+        "postcompile": "npm run build:cjs",
+        "build:cjs": "rollup -c",
+        "prepare": "npm run compile"
+      },
+      "devDependencies": {
+        "@types/node": "^14.6.4",
+        "@wessberg/rollup-plugin-ts": "^1.3.1",
+        "c8": "^7.3.0",
+        "chai": "^4.0.1",
+        "cross-env": "^7.0.2",
+        "gts": "^2.0.2",
+        "mocha": "^8.0.0",
+        "rimraf": "^3.0.2",
+        "rollup": "^2.26.10",
+        "standardx": "^5.0.0",
+        "ts-transform-default-export": "^1.0.2",
+        "typescript": "^4.0.0"
+      },
+      "engines": {
+        "node": ">=10"
+      },
+      "standardx": {
+        "ignore": [
+          "build"
+        ]
+      },
+      "gitHead": "786ffdc6cdabc15fd8e50240f662ea11e67ef5cc",
+      "_id": "y18n@5.0.1",
+      "_nodeVersion": "14.9.0",
+      "_npmVersion": "6.14.8",
+      "dist": {
+        "integrity": "sha512-/jJ831jEs4vGDbYPQp4yGKDYPSCCEQ45uZWJHE1AoYBzqdZi8+LDWas0z4HrmJXmKdpFsTiowSHXdxyFhpmdMg==",
+        "shasum": "1ad2a7eddfa8bce7caa2e1f6b5da96c39d99d571",
+        "tarball": "https://registry.npmjs.org/y18n/-/y18n-5.0.1.tgz",
+        "fileCount": 9,
+        "unpackedSize": 20729,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfVCYICRA9TVsSAnZWagAABYwP/iojZVX1+4wla/SyTgEu\nc642hp7iVvg3eGo3J4yQ4/Pigiy4z1z9/dVXkQ/Evmm+C6I5UZcgMC2A8L4E\n7mkLeldGJFnGz80rPR3hZfxatTqUGFoN1Rr4x1gD4YwcG0koOkDbgsO5U3xy\nks7APhSIAHHG/Oj12Ldrj2d7HZpHzFgCsU/KsXc72APBlHblq0E6LDPa+Ioj\nis9SE7Xis+voKZ7A/Tuvk90T+mYBSFXaMR13cpzdo1AuUEmY5NV815PxWrq4\nXcPGtbcJ73k0d3a28AeyMbV5W3E2l72/TD7tJY0RpcBUO1G8gc4uTVb1LPQt\nlNJLOFrKi3cyBsdHbONXmrTRtGSwwkZr/6skYQ++3iX6WHxDLiRyQcWfJWQY\n5kATU1cHF0f7xPaqW/vyIt+QYeADAeS+a1557P9B9PWeOOj7MHwdDt7lIAHF\nrsAhYAryVZWH7bKavzUMIUZJ8ZeULg6gXcFOU2u2UJ07yy4f+p35U4W3uOFX\nkp//danQq003zVdNh3c5g2PwiJw/Mm3ZHs3VA21/5A8DZrhE6KsMmIclEWwy\nlOfjHYOEfn3xH+USqg1ipl6O2qpLOsMAy0Jw4UsdqB8AEyfKHrGUBvsPeeXK\n7YN1K3R4nhC57CTLtJkf4RVRdXjrUtPBZAXft2eJrunlTapQNAJPjP5kljMJ\ne3j8\r\n=1L39\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "ben@npmjs.com",
+          "name": "bcoe"
+        },
+        {
+          "email": "andrewbgoode@gmail.com",
+          "name": "nexdrew"
+        }
+      ],
+      "_npmUser": {
+        "name": "oss-bot",
+        "email": "bencoe+oss-bot@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/y18n_5.0.1_1599350279463_0.9581207231521827"
+      },
+      "_hasShrinkwrap": false
+    },
+    "6.0.0-alpha.0": {
+      "name": "y18n",
+      "version": "6.0.0-alpha.0",
+      "description": "the bare-bones internationalization library used by yargs",
+      "exports": {
+        "import": "./index.mjs",
+        "require": "./build/index.cjs"
+      },
+      "type": "module",
+      "module": "./build/lib/index.js",
+      "keywords": [
+        "i18n",
+        "internationalization",
+        "yargs"
+      ],
+      "homepage": "https://github.com/yargs/y18n",
+      "bugs": {
+        "url": "https://github.com/yargs/y18n/issues"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/yargs/y18n.git"
+      },
+      "license": "ISC",
+      "author": {
+        "name": "Ben Coe",
+        "email": "bencoe@gmail.com"
+      },
+      "main": "./build/index.cjs",
+      "scripts": {
+        "check": "standardx '**/*.ts' '**/*.cjs' '**/*.mjs'",
+        "fix": "standardx --fix '**/*.ts' '**/*.cjs' '**/*.mjs'",
+        "pretest": "rimraf build && tsc -p tsconfig.test.json && cross-env NODE_ENV=test npm run build:cjs",
+        "test": "c8 --reporter=text --reporter=html mocha test/*.cjs",
+        "test:esm": "c8 --reporter=text --reporter=html mocha test/esm/*.mjs",
+        "posttest": "npm run check",
+        "coverage": "c8 report --check-coverage",
+        "precompile": "rimraf build",
+        "compile": "tsc",
+        "postcompile": "npm run build:cjs",
+        "build:cjs": "rollup -c",
+        "prepare": "npm run compile"
+      },
+      "devDependencies": {
+        "@types/node": "^14.6.4",
+        "@wessberg/rollup-plugin-ts": "^1.3.1",
+        "c8": "^7.3.0",
+        "chai": "^4.0.1",
+        "cross-env": "^7.0.2",
+        "gts": "^2.0.2",
+        "mocha": "^8.0.0",
+        "rimraf": "^3.0.2",
+        "rollup": "^2.26.10",
+        "standardx": "^5.0.0",
+        "ts-transform-default-export": "^1.0.2",
+        "typescript": "^4.0.0"
+      },
+      "engines": {
+        "node": ">=12"
+      },
+      "standardx": {
+        "ignore": [
+          "build"
+        ]
+      },
+      "readme": "# y18n\n\n[![NPM version][npm-image]][npm-url]\n[![js-standard-style][standard-image]][standard-url]\n[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)\n\nThe bare-bones internationalization library used by yargs.\n\nInspired by [i18n](https://www.npmjs.com/package/i18n).\n\n## Examples\n\n_simple string translation:_\n\n```js\nconst __ = require('y18n')().__;\n\nconsole.log(__('my awesome string %s', 'foo'));\n```\n\noutput:\n\n`my awesome string foo`\n\n_using tagged template literals_\n\n```js\nconst __ = require('y18n')().__;\n\nconst str = 'foo';\n\nconsole.log(__`my awesome string ${str}`);\n```\n\noutput:\n\n`my awesome string foo`\n\n_pluralization support:_\n\n```js\nconst __n = require('y18n')().__n;\n\nconsole.log(__n('one fish %s', '%d fishes %s', 2, 'foo'));\n```\n\noutput:\n\n`2 fishes foo`\n\n## Deno Example\n\nAs of `v5` `y18n` supports [Deno](https://github.com/denoland/deno):\n\n```typescript\nimport y18n from \"https://deno.land/x/y18n/deno.ts\";\n\nconst __ = y18n({\n  locale: 'pirate',\n  directory: './test/locales'\n}).__\n\nconsole.info(__`Hi, ${'Ben'} ${'Coe'}!`)\n```\n\nYou will need to run with `--allow-read` to load alternative locales.\n\n## JSON Language Files\n\nThe JSON language files should be stored in a `./locales` folder.\nFile names correspond to locales, e.g., `en.json`, `pirate.json`.\n\nWhen strings are observed for the first time they will be\nadded to the JSON file corresponding to the current locale.\n\n## Methods\n\n### require('y18n')(config)\n\nCreate an instance of y18n with the config provided, options include:\n\n* `directory`: the locale directory, default `./locales`.\n* `updateFiles`: should newly observed strings be updated in file, default `true`.\n* `locale`: what locale should be used.\n* `fallbackToLanguage`: should fallback to a language-only file (e.g. `en.json`)\n  be allowed if a file matching the locale does not exist (e.g. `en_US.json`),\n  default `true`.\n\n### y18n.\\_\\_(str, arg, arg, arg)\n\nPrint a localized string, `%s` will be replaced with `arg`s.\n\nThis function can also be used as a tag for a template literal. You can use it\nlike this: <code>__&#96;hello ${'world'}&#96;</code>. This will be equivalent to\n`__('hello %s', 'world')`.\n\n### y18n.\\_\\_n(singularString, pluralString, count, arg, arg, arg)\n\nPrint a localized string with appropriate pluralization. If `%d` is provided\nin the string, the `count` will replace this placeholder.\n\n### y18n.setLocale(str)\n\nSet the current locale being used.\n\n### y18n.getLocale()\n\nWhat locale is currently being used?\n\n### y18n.updateLocale(obj)\n\nUpdate the current locale with the key value pairs in `obj`.\n\n## Supported Node.js Versions\n\nLibraries in this ecosystem make a best effort to track\n[Node.js' release schedule](https://nodejs.org/en/about/releases/). Here's [a\npost on why we think this is important](https://medium.com/the-node-js-collection/maintainers-should-consider-following-node-js-release-schedule-ab08ed4de71a).\n\n## License\n\nISC\n\n[npm-url]: https://npmjs.org/package/y18n\n[npm-image]: https://img.shields.io/npm/v/y18n.svg\n[standard-image]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg\n[standard-url]: https://github.com/feross/standard\n",
+      "readmeFilename": "README.md",
+      "gitHead": "9c8a079a2917b71dd55086233f4272da521fc600",
+      "_id": "y18n@6.0.0-alpha.0",
+      "_nodeVersion": "12.18.3",
+      "_npmVersion": "6.14.6",
+      "dist": {
+        "integrity": "sha512-J9CO+Qo98a30YwPMgXt1IetZS4823Y+KzBEWHPQYaO2sWcwtvVascTF0eNdUgU0Me3Efl36PnCygmVPdzqQmJg==",
+        "shasum": "eccd8e2176c2bf786dee53c4881cd88e3e4cbfc5",
+        "tarball": "https://registry.npmjs.org/y18n/-/y18n-6.0.0-alpha.0.tgz",
+        "fileCount": 9,
+        "unpackedSize": 20737,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfXBQ2CRA9TVsSAnZWagAAM+4P/16Qogev2yixoICuoNHr\n7M6kQHMOigj5oh4YCavKfO3zm8bpQNEdu21bT2SXPYxMSgVzR8hZsJi0p56D\n68MiFTkXJLWKyjmEIrXprtLYDYOSm8BkKsFG4tiV1tgoYLryWIN8F8vzYD11\nRtB8P3Wu9INr+hbwF9XNUH0JyZfeEtmrabTodZT+/PnHV7pcnnBR45zuFuiM\nHDd4cPR5/2Ngn2+UAYF8ItIchCStN1uOFLBoq86wD98tciM2sGlu1ji7ueO3\nu1TBKXqHLjVLMPvd19ZdlAoAQwclvRk0TA2YBgqjhBc4MnnyanijwVQVKccd\nfQvPtptiSo9tgy9Z/kvXnUrsKPZ3RYus5rtyKNWI9g5jtI5R1QwYCtkTI9e7\n5+hszJIN9GJ0R49E3otwHlpVgppmZ+PEL/xfcBaAovJxHDxZbkD44EAjsBRA\nCs5A/Z9vBFJe7eytdaYPeZMEwbGPNvzZuCNfb3TpK8ZUG/TLxSsLozsVgexU\n3I5424QpbrDZ9LXYg7Ies495tc30yBhdw5TxA0sxgWzPRxaCM7kKgJlN0y3D\nxYPByUAu6f1seQ57BzQ62evhPswBSp0lyH8c1rHA3D7ufNoU1oWRb4Fj7eGu\nK1B1x/83WGMgVuJ5yimeqUDnhrKSHt7aU2sjKrwyAF7W9O1MqDuWz+fpLmIF\n5Zmv\r\n=4f0P\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "bcoe",
+          "email": "bencoe@gmail.com"
+        },
+        {
+          "name": "nexdrew",
+          "email": "andrewbgoode@gmail.com"
+        },
+        {
+          "name": "oss-bot",
+          "email": "bencoe+oss-bot@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "oss-bot",
+        "email": "bencoe+oss-bot@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/y18n_6.0.0-alpha.0_1599870005446_0.2345770096577866"
+      },
+      "_hasShrinkwrap": false
+    },
+    "5.0.2": {
+      "name": "y18n",
+      "version": "5.0.2",
+      "description": "the bare-bones internationalization library used by yargs",
+      "exports": {
+        "import": "./index.mjs",
+        "require": "./build/index.cjs"
+      },
+      "type": "module",
+      "module": "./build/lib/index.js",
+      "keywords": [
+        "i18n",
+        "internationalization",
+        "yargs"
+      ],
+      "homepage": "https://github.com/yargs/y18n",
+      "bugs": {
+        "url": "https://github.com/yargs/y18n/issues"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/yargs/y18n.git"
+      },
+      "license": "ISC",
+      "author": {
+        "name": "Ben Coe",
+        "email": "bencoe@gmail.com"
+      },
+      "main": "./build/index.cjs",
+      "scripts": {
+        "check": "standardx '**/*.ts' '**/*.cjs' '**/*.mjs'",
+        "fix": "standardx --fix '**/*.ts' '**/*.cjs' '**/*.mjs'",
+        "pretest": "rimraf build && tsc -p tsconfig.test.json && cross-env NODE_ENV=test npm run build:cjs",
+        "test": "c8 --reporter=text --reporter=html mocha test/*.cjs",
+        "test:esm": "c8 --reporter=text --reporter=html mocha test/esm/*.mjs",
+        "posttest": "npm run check",
+        "coverage": "c8 report --check-coverage",
+        "precompile": "rimraf build",
+        "compile": "tsc",
+        "postcompile": "npm run build:cjs",
+        "build:cjs": "rollup -c",
+        "prepare": "npm run compile"
+      },
+      "devDependencies": {
+        "@types/node": "^14.6.4",
+        "@wessberg/rollup-plugin-ts": "^1.3.1",
+        "c8": "^7.3.0",
+        "chai": "^4.0.1",
+        "cross-env": "^7.0.2",
+        "gts": "^2.0.2",
+        "mocha": "^8.0.0",
+        "rimraf": "^3.0.2",
+        "rollup": "^2.26.10",
+        "standardx": "^5.0.0",
+        "ts-transform-default-export": "^1.0.2",
+        "typescript": "^4.0.0"
+      },
+      "engines": {
+        "node": ">=10"
+      },
+      "standardx": {
+        "ignore": [
+          "build"
+        ]
+      },
+      "gitHead": "29e7571ece1cfa8fd5d197c284e384a2fbea79b2",
+      "_id": "y18n@5.0.2",
+      "_nodeVersion": "14.11.0",
+      "_npmVersion": "6.14.8",
+      "dist": {
+        "integrity": "sha512-CkwaeZw6dQgqgPGeTWKMXCRmMcBgETFlTml1+ZOO+q7kGst8NREJ+eWwFNPVUQ4QGdAaklbqCZHH6Zuep1RjiA==",
+        "shasum": "48218df5da2731b4403115c39a1af709c873f829",
+        "tarball": "https://registry.npmjs.org/y18n/-/y18n-5.0.2.tgz",
+        "fileCount": 9,
+        "unpackedSize": 21022,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfdh6fCRA9TVsSAnZWagAAsaAQAI9MDo11h0ZWwN9UGjFq\nZOFJyRuR7Er8m5VlrEs4Or5EoKnHm0kFR/baZrWWB0pSgJgQuNyqW7MXaYH8\nqFY8J5wr6pO/I6pyP91Ok6qH5gHfYhzgaH3FMFB9pP46HAVD6y+PW8qX628d\nmhN6Mo1LaLBSrudHpn4R4RRfY40dLaGECZFglZBkd5zSBSJXa81V4sJcuPB2\nCZGZMWpoCE7LBA645sCmchUEPnYyn0qLYInd4rfXtBy6DfrVCRJ+1Kf7l8Gq\nAk0/Yf/iMyzKMURxFt9vHfCfOovdXF+QQjJVNA9MgTUZ8aRjlPRkP73bsexG\nFEBBKsoE3sx9bIFEetQiUycCEqxNKp3oDJ9+Y208rKRK7mWiTQxXT9SS9p4Z\n2M/3KL8zjEJFysH6syIMv+Va52zwb6W2XnVNwUCjX09Fk6XJgqyu3nH/t6vJ\niDvPg0ZzhBMd8EOsOJ9rJfRpdlatipf7vRRfQsU/Tw+K2sZccxMNV1+B+0Hu\nIUlXtiIohIYz9qvcko9sZoDtr6Vm52NGCEaAgmn0gitBlwO5zVxGf7gS9qQx\nkRLLLcRehfPlVSvAg5R41BxIQN2yNtL2T2MnApoJ4W4+Ekq8UaFwFaVvQqN1\ngkXAbUKGH+YIxDVea9OlH4EegJdA9KK8+8+cn4v+Vy25LEJeq5+nx7wngdQi\nOUA/\r\n=hKDI\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "bcoe",
+          "email": "bencoe@gmail.com"
+        },
+        {
+          "name": "nexdrew",
+          "email": "andrewbgoode@gmail.com"
+        },
+        {
+          "name": "oss-bot",
+          "email": "bencoe+oss-bot@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "oss-bot",
+        "email": "bencoe+oss-bot@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/y18n_5.0.2_1601576606909_0.7193058628251092"
+      },
+      "_hasShrinkwrap": false
+    },
+    "5.0.3": {
+      "name": "y18n",
+      "version": "5.0.3",
+      "description": "the bare-bones internationalization library used by yargs",
+      "exports": [
+        {
+          "import": "./index.mjs",
+          "require": "./build/index.cjs"
+        },
+        "./build/index.cjs"
+      ],
+      "type": "module",
+      "module": "./build/lib/index.js",
+      "keywords": [
+        "i18n",
+        "internationalization",
+        "yargs"
+      ],
+      "homepage": "https://github.com/yargs/y18n",
+      "bugs": {
+        "url": "https://github.com/yargs/y18n/issues"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/yargs/y18n.git"
+      },
+      "license": "ISC",
+      "author": {
+        "name": "Ben Coe",
+        "email": "bencoe@gmail.com"
+      },
+      "main": "./build/index.cjs",
+      "scripts": {
+        "check": "standardx '**/*.ts' '**/*.cjs' '**/*.mjs'",
+        "fix": "standardx --fix '**/*.ts' '**/*.cjs' '**/*.mjs'",
+        "pretest": "rimraf build && tsc -p tsconfig.test.json && cross-env NODE_ENV=test npm run build:cjs",
+        "test": "c8 --reporter=text --reporter=html mocha test/*.cjs",
+        "test:esm": "c8 --reporter=text --reporter=html mocha test/esm/*.mjs",
+        "posttest": "npm run check",
+        "coverage": "c8 report --check-coverage",
+        "precompile": "rimraf build",
+        "compile": "tsc",
+        "postcompile": "npm run build:cjs",
+        "build:cjs": "rollup -c",
+        "prepare": "npm run compile"
+      },
+      "devDependencies": {
+        "@types/node": "^14.6.4",
+        "@wessberg/rollup-plugin-ts": "^1.3.1",
+        "c8": "^7.3.0",
+        "chai": "^4.0.1",
+        "cross-env": "^7.0.2",
+        "gts": "^3.0.0",
+        "mocha": "^8.0.0",
+        "rimraf": "^3.0.2",
+        "rollup": "^2.26.10",
+        "standardx": "^5.0.0",
+        "ts-transform-default-export": "^1.0.2",
+        "typescript": "^4.0.0"
+      },
+      "engines": {
+        "node": ">=10"
+      },
+      "standardx": {
+        "ignore": [
+          "build"
+        ]
+      },
+      "gitHead": "d3584d2f1b1d98bb8a7bfd4c8c92614d1684376a",
+      "_id": "y18n@5.0.3",
+      "_nodeVersion": "14.13.1",
+      "_npmVersion": "6.14.8",
+      "dist": {
+        "integrity": "sha512-JeFbcHQ/7hVmMBXW6UB6Tg7apStHd/ztGz1JN78y3pFi/q0Ht1eA6PVkvw56gm7UA8fcJR/ziRlYEDMGoju0yQ==",
+        "shasum": "978115b82befe2b5c762bf55980b7b01a4a2d5d9",
+        "tarball": "https://registry.npmjs.org/y18n/-/y18n-5.0.3.tgz",
+        "fileCount": 9,
+        "unpackedSize": 21371,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfiPzQCRA9TVsSAnZWagAALcMQAJxWfGfIsRzQwm7umsq4\n9yw7cUQUOGn4ltyWJ1UUCZgd3wFw1VcmWYrx7P5Y9efAQbf5djIpFT6izBOO\n04fZb/ULw8z1VHFA1FE5TiQZU6JwbeflfNS1r+p+aNT/RnCm9GY+h01LglCQ\nb92YwoQPnBgq0NavI4DKmNyRKosb58jVCVRPj6aY8Clb7mffdd43L+71RR9L\neH+1mQ9buKCe6hFeAseIR/wIyjlmNpKSA6TdfT8URVphEBHDZHLpwTJj/6vr\nxro1ngcI+7YWSdAPiSGMna+/ilzKrK8R1tWjb/t/gr7x279/3c6xEfftgp/B\njV/U/6TRcvvwj6d409QBLxrPksZkmmfVGb2rPyrcYi6ZwZiMCNRhMea8cUwK\nvyp539i6SC/JQlJMRZL2fqfZ90iV2cwmEXPk5Cj9sCellLPuqwqudl3aca6n\nFoj+CCt4KaBpUbLOkoipqqpsxAeWes9/zO6CtbKm0uuCTa9Nd4HENYdNf+Id\nb6bWO9C3K5zO6ISSQakDPA6Ni+wQMRF3u2exRh/Of5W2UKt3+oHoTOhyh5pr\nJ0X/r1RA1bP21gH/txZZaUWEFNdFmaLOUYEjP4aob85rHOqf9YJV/pUWOtPX\n6tSfYEyIG0qQQZon2aTxsgIhiWvQjlEeKWSJRzVihMMsFI7OuEXfNVo9/0rS\nRiE9\r\n=KOEc\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "bcoe",
+          "email": "bencoe@gmail.com"
+        },
+        {
+          "name": "nexdrew",
+          "email": "andrewbgoode@gmail.com"
+        },
+        {
+          "name": "oss-bot",
+          "email": "bencoe+oss-bot@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "oss-bot",
+        "email": "bencoe+oss-bot@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/y18n_5.0.3_1602813135466_0.6790940796421885"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# y18n\n\n[![NPM version][npm-image]][npm-url]\n[![js-standard-style][standard-image]][standard-url]\n[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)\n\nThe bare-bones internationalization library used by yargs.\n\nInspired by [i18n](https://www.npmjs.com/package/i18n).\n\n## Examples\n\n_simple string translation:_\n\n```js\nconst __ = require('y18n')().__;\n\nconsole.log(__('my awesome string %s', 'foo'));\n```\n\noutput:\n\n`my awesome string foo`\n\n_using tagged template literals_\n\n```js\nconst __ = require('y18n')().__;\n\nconst str = 'foo';\n\nconsole.log(__`my awesome string ${str}`);\n```\n\noutput:\n\n`my awesome string foo`\n\n_pluralization support:_\n\n```js\nconst __n = require('y18n')().__n;\n\nconsole.log(__n('one fish %s', '%d fishes %s', 2, 'foo'));\n```\n\noutput:\n\n`2 fishes foo`\n\n## Deno Example\n\nAs of `v5` `y18n` supports [Deno](https://github.com/denoland/deno):\n\n```typescript\nimport y18n from \"https://deno.land/x/y18n/deno.ts\";\n\nconst __ = y18n({\n  locale: 'pirate',\n  directory: './test/locales'\n}).__\n\nconsole.info(__`Hi, ${'Ben'} ${'Coe'}!`)\n```\n\nYou will need to run with `--allow-read` to load alternative locales.\n\n## JSON Language Files\n\nThe JSON language files should be stored in a `./locales` folder.\nFile names correspond to locales, e.g., `en.json`, `pirate.json`.\n\nWhen strings are observed for the first time they will be\nadded to the JSON file corresponding to the current locale.\n\n## Methods\n\n### require('y18n')(config)\n\nCreate an instance of y18n with the config provided, options include:\n\n* `directory`: the locale directory, default `./locales`.\n* `updateFiles`: should newly observed strings be updated in file, default `true`.\n* `locale`: what locale should be used.\n* `fallbackToLanguage`: should fallback to a language-only file (e.g. `en.json`)\n  be allowed if a file matching the locale does not exist (e.g. `en_US.json`),\n  default `true`.\n\n### y18n.\\_\\_(str, arg, arg, arg)\n\nPrint a localized string, `%s` will be replaced with `arg`s.\n\nThis function can also be used as a tag for a template literal. You can use it\nlike this: <code>__&#96;hello ${'world'}&#96;</code>. This will be equivalent to\n`__('hello %s', 'world')`.\n\n### y18n.\\_\\_n(singularString, pluralString, count, arg, arg, arg)\n\nPrint a localized string with appropriate pluralization. If `%d` is provided\nin the string, the `count` will replace this placeholder.\n\n### y18n.setLocale(str)\n\nSet the current locale being used.\n\n### y18n.getLocale()\n\nWhat locale is currently being used?\n\n### y18n.updateLocale(obj)\n\nUpdate the current locale with the key value pairs in `obj`.\n\n## Supported Node.js Versions\n\nLibraries in this ecosystem make a best effort to track\n[Node.js' release schedule](https://nodejs.org/en/about/releases/). Here's [a\npost on why we think this is important](https://medium.com/the-node-js-collection/maintainers-should-consider-following-node-js-release-schedule-ab08ed4de71a).\n\n## License\n\nISC\n\n[npm-url]: https://npmjs.org/package/y18n\n[npm-image]: https://img.shields.io/npm/v/y18n.svg\n[standard-image]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg\n[standard-url]: https://github.com/feross/standard\n",
+  "maintainers": [
+    {
+      "name": "bcoe",
+      "email": "bencoe@gmail.com"
+    },
+    {
+      "name": "nexdrew",
+      "email": "andrewbgoode@gmail.com"
+    },
+    {
+      "name": "oss-bot",
+      "email": "bencoe+oss-bot@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-10-16T01:52:18.011Z",
+    "created": "2015-07-27T07:19:00.467Z",
+    "1.0.0": "2015-07-27T07:19:00.467Z",
+    "1.1.0": "2015-07-28T04:15:40.553Z",
+    "2.0.0": "2015-07-28T05:07:08.737Z",
+    "3.0.0": "2015-07-29T07:35:44.735Z",
+    "3.1.0": "2015-08-18T22:01:52.657Z",
+    "3.2.0": "2015-09-21T20:58:01.658Z",
+    "3.2.1": "2016-03-17T05:04:31.363Z",
+    "4.0.0": "2017-10-10T19:03:17.301Z",
+    "5.0.0": "2020-09-05T02:35:32.173Z",
+    "5.0.1": "2020-09-05T23:57:59.585Z",
+    "6.0.0-alpha.0": "2020-09-12T00:20:05.591Z",
+    "5.0.2": "2020-10-01T18:23:27.000Z",
+    "5.0.3": "2020-10-16T01:52:15.606Z"
+  },
+  "homepage": "https://github.com/yargs/y18n",
+  "keywords": [
+    "i18n",
+    "internationalization",
+    "yargs"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yargs/y18n.git"
+  },
+  "author": {
+    "name": "Ben Coe",
+    "email": "bencoe@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/yargs/y18n/issues"
+  },
+  "license": "ISC",
+  "readmeFilename": "README.md",
+  "users": {
+    "slurm": true,
+    "alberh": true,
+    "terrychan": true,
+    "arttse": true,
+    "metaa": true,
+    "zeligzhou": true
+  }
+}

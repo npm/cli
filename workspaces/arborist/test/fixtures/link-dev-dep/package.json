@@ -1,0 +1,7 @@
+{
+  "name": "@isaacs/testing-link-dev-dep",
+  "version": "2.0.1",
+  "devDependencies": {
+    "linked-dev-dep": "file:target"
+  }
+}

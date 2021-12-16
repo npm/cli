@@ -1,0 +1,680 @@
+{
+  "_id": "nested-error-stacks",
+  "_rev": "18-39803a8aa92b9f93ac76468be49b9bda",
+  "name": "nested-error-stacks",
+  "description": "An Error subclass that will chain nested Errors and dump nested stacktraces",
+  "dist-tags": {
+    "latest": "2.1.0"
+  },
+  "versions": {
+    "0.0.1": {
+      "name": "nested-error-stacks",
+      "version": "0.0.1",
+      "description": "An Error subclass that will chain nested Errors and dump nested stacktraces",
+      "bugs": {
+        "url": "https://github.com/mdlavin/nested-error-stacks/issues"
+      },
+      "keywords": [
+        "error",
+        "nested",
+        "stack"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mdlavin/nested-error-stacks.git"
+      },
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha"
+      },
+      "author": {
+        "name": "Matt Lavin",
+        "email": "matt.lavin@gmail.com"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "mocha": "^1.18.2",
+        "uuid": "^1.4.1",
+        "chai": "^1.9.1"
+      },
+      "homepage": "https://github.com/mdlavin/nested-error-stacks",
+      "_id": "nested-error-stacks@0.0.1",
+      "dist": {
+        "shasum": "b0655f5407b13566e660482354b582056d0acd70",
+        "tarball": "https://registry.npmjs.org/nested-error-stacks/-/nested-error-stacks-0.0.1.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.4.3",
+      "_npmUser": {
+        "name": "mdlavin",
+        "email": "matt.lavin@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "mdlavin",
+          "email": "matt.lavin@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.2": {
+      "name": "nested-error-stacks",
+      "version": "0.0.2",
+      "description": "An Error subclass that will chain nested Errors and dump nested stacktraces",
+      "bugs": {
+        "url": "https://github.com/mdlavin/nested-error-stacks/issues"
+      },
+      "keywords": [
+        "error",
+        "nested",
+        "stack"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mdlavin/nested-error-stacks.git"
+      },
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha"
+      },
+      "author": {
+        "name": "Matt Lavin",
+        "email": "matt.lavin@gmail.com"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "mocha": "^1.18.2",
+        "uuid": "^1.4.1",
+        "chai": "^1.9.1"
+      },
+      "homepage": "https://github.com/mdlavin/nested-error-stacks",
+      "_id": "nested-error-stacks@0.0.2",
+      "dist": {
+        "shasum": "9263eed7575ec0b984389c7625696352f0a7f287",
+        "tarball": "https://registry.npmjs.org/nested-error-stacks/-/nested-error-stacks-0.0.2.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.4.3",
+      "_npmUser": {
+        "name": "mdlavin",
+        "email": "matt.lavin@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "mdlavin",
+          "email": "matt.lavin@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.3": {
+      "name": "nested-error-stacks",
+      "version": "0.0.3",
+      "description": "An Error subclass that will chain nested Errors and dump nested stacktraces",
+      "bugs": {
+        "url": "https://github.com/mdlavin/nested-error-stacks/issues"
+      },
+      "keywords": [
+        "error",
+        "nested",
+        "stack"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mdlavin/nested-error-stacks.git"
+      },
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha"
+      },
+      "author": {
+        "name": "Matt Lavin",
+        "email": "matt.lavin@gmail.com"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "mocha": "~1.18.2",
+        "uuid": "~1.4.1",
+        "chai": "~1.9.1"
+      },
+      "homepage": "https://github.com/mdlavin/nested-error-stacks",
+      "_id": "nested-error-stacks@0.0.3",
+      "dist": {
+        "shasum": "37a9a70305ca484056144c3cd2a9d8cef5f7cc47",
+        "tarball": "https://registry.npmjs.org/nested-error-stacks/-/nested-error-stacks-0.0.3.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.4.3",
+      "_npmUser": {
+        "name": "mdlavin",
+        "email": "matt.lavin@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "mdlavin",
+          "email": "matt.lavin@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.4": {
+      "name": "nested-error-stacks",
+      "version": "0.0.4",
+      "description": "An Error subclass that will chain nested Errors and dump nested stacktraces",
+      "bugs": {
+        "url": "https://github.com/mdlavin/nested-error-stacks/issues"
+      },
+      "keywords": [
+        "error",
+        "nested",
+        "stack"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mdlavin/nested-error-stacks.git"
+      },
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha"
+      },
+      "author": {
+        "name": "Matt Lavin",
+        "email": "matt.lavin@gmail.com"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "mocha": "~1.18.2",
+        "uuid": "~1.4.1",
+        "chai": "~1.9.1"
+      },
+      "gitHead": "b5334fd46dc9d47e36229d01cec1b340e71ed6ee",
+      "homepage": "https://github.com/mdlavin/nested-error-stacks",
+      "_id": "nested-error-stacks@0.0.4",
+      "_shasum": "ff65d69d4822fdb1b5a1fb37db4ba53b18867bc4",
+      "_from": "./",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "mdlavin",
+        "email": "matt.lavin@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "mdlavin",
+          "email": "matt.lavin@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "ff65d69d4822fdb1b5a1fb37db4ba53b18867bc4",
+        "tarball": "https://registry.npmjs.org/nested-error-stacks/-/nested-error-stacks-0.0.4.tgz"
+      },
+      "directories": {}
+    },
+    "0.0.5": {
+      "name": "nested-error-stacks",
+      "version": "0.0.5",
+      "description": "An Error subclass that will chain nested Errors and dump nested stacktraces",
+      "bugs": {
+        "url": "https://github.com/mdlavin/nested-error-stacks/issues"
+      },
+      "keywords": [
+        "error",
+        "nested",
+        "stack"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mdlavin/nested-error-stacks.git"
+      },
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha"
+      },
+      "author": {
+        "name": "Matt Lavin",
+        "email": "matt.lavin@gmail.com"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "mocha": "~1.18.2",
+        "uuid": "~1.4.1",
+        "chai": "~1.9.1"
+      },
+      "gitHead": "52763e5967cdf392cd215a035cbd2dac5b99dffc",
+      "homepage": "https://github.com/mdlavin/nested-error-stacks",
+      "_id": "nested-error-stacks@0.0.5",
+      "_shasum": "b239338208fd783cd3d0b6c597a83d2027f9cf58",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "mdlavin",
+        "email": "matt.lavin@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "mdlavin",
+          "email": "matt.lavin@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "b239338208fd783cd3d0b6c597a83d2027f9cf58",
+        "tarball": "https://registry.npmjs.org/nested-error-stacks/-/nested-error-stacks-0.0.5.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "nested-error-stacks",
+      "version": "1.0.0",
+      "description": "An Error subclass that will chain nested Errors and dump nested stacktraces",
+      "bugs": {
+        "url": "https://github.com/mdlavin/nested-error-stacks/issues"
+      },
+      "keywords": [
+        "error",
+        "nested",
+        "stack"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mdlavin/nested-error-stacks.git"
+      },
+      "main": "index.js",
+      "files": [
+        "index.js",
+        "LICENSE"
+      ],
+      "scripts": {
+        "test": "mocha"
+      },
+      "author": {
+        "name": "Matt Lavin",
+        "email": "matt.lavin@gmail.com"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "mocha": "~1.18.2",
+        "uuid": "~1.4.1",
+        "chai": "~1.9.1"
+      },
+      "gitHead": "a6b1b29b91d9203516e1654c6e8db0e7cf297085",
+      "homepage": "https://github.com/mdlavin/nested-error-stacks",
+      "_id": "nested-error-stacks@1.0.0",
+      "_shasum": "3bd2785bb1fa9ebbf608e293e9ccb9ea765254c7",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "mdlavin",
+        "email": "matt.lavin@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "mdlavin",
+          "email": "matt.lavin@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "3bd2785bb1fa9ebbf608e293e9ccb9ea765254c7",
+        "tarball": "https://registry.npmjs.org/nested-error-stacks/-/nested-error-stacks-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "nested-error-stacks",
+      "version": "1.0.1",
+      "description": "An Error subclass that will chain nested Errors and dump nested stacktraces",
+      "bugs": {
+        "url": "https://github.com/mdlavin/nested-error-stacks/issues"
+      },
+      "keywords": [
+        "error",
+        "nested",
+        "stack"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mdlavin/nested-error-stacks.git"
+      },
+      "main": "index.js",
+      "files": [
+        "index.js",
+        "LICENSE"
+      ],
+      "scripts": {
+        "test": "mocha"
+      },
+      "author": {
+        "name": "Matt Lavin",
+        "email": "matt.lavin@gmail.com"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "inherits": "~2.0.1"
+      },
+      "devDependencies": {
+        "mocha": "~1.18.2",
+        "uuid": "~1.4.1",
+        "chai": "~1.9.1"
+      },
+      "gitHead": "ba63770f16f3dd41c424822057fa78b82e2c0269",
+      "homepage": "https://github.com/mdlavin/nested-error-stacks",
+      "_id": "nested-error-stacks@1.0.1",
+      "_shasum": "d7bb90f2e66069d1f40b9d6e8daa69885ba39173",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "mdlavin",
+        "email": "matt.lavin@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "mdlavin",
+          "email": "matt.lavin@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "d7bb90f2e66069d1f40b9d6e8daa69885ba39173",
+        "tarball": "https://registry.npmjs.org/nested-error-stacks/-/nested-error-stacks-1.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "nested-error-stacks",
+      "version": "1.0.2",
+      "description": "An Error subclass that will chain nested Errors and dump nested stacktraces",
+      "bugs": {
+        "url": "https://github.com/mdlavin/nested-error-stacks/issues"
+      },
+      "keywords": [
+        "error",
+        "nested",
+        "stack"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mdlavin/nested-error-stacks.git"
+      },
+      "main": "index.js",
+      "files": [
+        "index.js",
+        "LICENSE"
+      ],
+      "scripts": {
+        "test": "if [ \"$RUN_ZUUL\" != \"true\" ]; then node_modules/.bin/mocha; else npm install zuul && node_modules/.bin/zuul -- test.js; fi"
+      },
+      "author": {
+        "name": "Matt Lavin",
+        "email": "matt.lavin@gmail.com"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "inherits": "~2.0.1"
+      },
+      "devDependencies": {
+        "chai": "~1.9.1",
+        "mocha": "~1.18.2",
+        "uuid": "~1.4.1"
+      },
+      "gitHead": "7eb0c2058a0fd038d63703b953ca9bacd70b866f",
+      "homepage": "https://github.com/mdlavin/nested-error-stacks#readme",
+      "_id": "nested-error-stacks@1.0.2",
+      "_shasum": "19f619591519f096769a5ba9a86e6eeec823c3cf",
+      "_from": ".",
+      "_npmVersion": "2.13.2",
+      "_nodeVersion": "2.5.0",
+      "_npmUser": {
+        "name": "mdlavin",
+        "email": "matt.lavin@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "mdlavin",
+          "email": "matt.lavin@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "19f619591519f096769a5ba9a86e6eeec823c3cf",
+        "tarball": "https://registry.npmjs.org/nested-error-stacks/-/nested-error-stacks-1.0.2.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "nested-error-stacks",
+      "version": "2.0.0",
+      "description": "An Error subclass that will chain nested Errors and dump nested stacktraces",
+      "bugs": {
+        "url": "https://github.com/mdlavin/nested-error-stacks/issues"
+      },
+      "keywords": [
+        "error",
+        "nested",
+        "stack"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mdlavin/nested-error-stacks.git"
+      },
+      "main": "index.js",
+      "files": [
+        "index.js",
+        "LICENSE"
+      ],
+      "scripts": {
+        "test": "if node --version | grep -vE 'v(0|3)' > /dev/null 2>&1; then eslint . || exit -1; fi; if [ \"$RUN_ZUUL\" != \"true\" ]; then node_modules/.bin/mocha; else npm install zuul && node_modules/.bin/zuul -- test.js; fi"
+      },
+      "author": {
+        "name": "Matt Lavin",
+        "email": "matt.lavin@gmail.com"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "inherits": "~2.0.1"
+      },
+      "devDependencies": {
+        "chai": "^3.5.0",
+        "eslint": "^3.9.1",
+        "mocha": "^3.1.2",
+        "uuid": "^2.0.3"
+      },
+      "gitHead": "b9c587d406292eb9af2416e5638c1fa5a3846e7c",
+      "homepage": "https://github.com/mdlavin/nested-error-stacks#readme",
+      "_id": "nested-error-stacks@2.0.0",
+      "_shasum": "98b2ffaefb4610fa3936f1e71435d30700de2840",
+      "_from": ".",
+      "_npmVersion": "2.15.1",
+      "_nodeVersion": "0.10.48",
+      "_npmUser": {
+        "name": "mdlavin",
+        "email": "matt.lavin@gmail.com"
+      },
+      "dist": {
+        "shasum": "98b2ffaefb4610fa3936f1e71435d30700de2840",
+        "tarball": "https://registry.npmjs.org/nested-error-stacks/-/nested-error-stacks-2.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mdlavin",
+          "email": "matt.lavin@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/nested-error-stacks-2.0.0.tgz_1478705056336_0.8261979138478637"
+      },
+      "directories": {}
+    },
+    "2.0.1": {
+      "name": "nested-error-stacks",
+      "version": "2.0.1",
+      "description": "An Error subclass that will chain nested Errors and dump nested stacktraces",
+      "bugs": {
+        "url": "https://github.com/mdlavin/nested-error-stacks/issues"
+      },
+      "keywords": [
+        "error",
+        "nested",
+        "stack"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mdlavin/nested-error-stacks.git"
+      },
+      "main": "index.js",
+      "files": [
+        "index.js",
+        "LICENSE"
+      ],
+      "scripts": {
+        "test": "if node --version | grep -vE 'v(0|3)' > /dev/null 2>&1; then eslint . || exit -1; fi; if [ \"$RUN_ZUUL\" != \"true\" ]; then node_modules/.bin/mocha; else npm install zuul && node_modules/.bin/zuul -- test.js; fi"
+      },
+      "author": {
+        "name": "Matt Lavin",
+        "email": "matt.lavin@gmail.com"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "chai": "^3.5.0",
+        "eslint": "^3.9.1",
+        "mocha": "^3.1.2",
+        "uuid": "^2.0.3"
+      },
+      "gitHead": "b2113ca6cf8b154df412f89d9d9d477ec69ae3eb",
+      "homepage": "https://github.com/mdlavin/nested-error-stacks#readme",
+      "_id": "nested-error-stacks@2.0.1",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.11.2",
+      "_npmUser": {
+        "name": "mdlavin",
+        "email": "matt.lavin@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-SrQrok4CATudVzBS7coSz26QRSmlK9TzzoFbeKfcPBUFPjcQM9Rqvr/DlJkOrwI/0KcgvMub1n1g5Jt9EgRn4A==",
+        "shasum": "d2cc9fc5235ddb371fc44d506234339c8e4b0a4b",
+        "tarball": "https://registry.npmjs.org/nested-error-stacks/-/nested-error-stacks-2.0.1.tgz",
+        "fileCount": 6,
+        "unpackedSize": 5384,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbBMdoCRA9TVsSAnZWagAAfJEQAKG0RvFKgYNafHUDushJ\nRUvvIrE+LOtqSUMApRBS4UZL5XXzI1hkBO6oGhKOzqi0V4SvheO7yJL1yqt4\nYHXJBuTUyoAypAjds9KB8Ejc0TNjKN0KMZ8DvUhpivMI1XJZXmFiLUOwSfd6\nc4b5ZKYdvI3DXBCyISKGXcY8JiRk3LjHgLFhtFdyuy5gdCcW1kqcg0hicam3\n/7SNsMOadsCv4e44u6+vuM69yUVrbCW1PNwmxkAN9NPd2T1OQr3SEOKNVTn8\nHjyyXoEelASfPyNN8hZps/WhDV58q0IfRT629Co3AaiyGQ2OBMRicH5dDuXN\noplYoZ1/mSAvfwqQt3qqUWwAtvREqcHUpKl/Le2WU3DEQb1kA2RoEDIIfSG9\nZsQSO27yOO8Ip7DHlGAbXnfhlgqgNXLvCyF7fo3eI56T0JkC2k1gA+DVBbn1\n4LFvfqrZC3i0/TxCZgVNib56kB6QNrJFvmf3mSzqE470KDZM7hR8DlcDsq77\nBugFp2A17nSIT2b07xDaU37lDFY5i84Uk2ZBVbFFgp042w85/8usGhXWKZTP\nfjhAs/2W/Gngo9Xa0kAdggyVGIbm1odDirbYk/qz8SvdbJ3gKCXE1wNOzWOg\ntkEseF5l8v8LZuLQeNM65wNbD/2KBSKYeBf7hw14DEHbbVD0t4JR3cOcQ21A\nu9rw\r\n=43/m\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "mdlavin",
+          "email": "matt.lavin@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/nested-error-stacks_2.0.1_1527039847180_0.8584198541373815"
+      }
+    },
+    "2.1.0": {
+      "name": "nested-error-stacks",
+      "version": "2.1.0",
+      "description": "An Error subclass that will chain nested Errors and dump nested stacktraces",
+      "bugs": {
+        "url": "https://github.com/mdlavin/nested-error-stacks/issues"
+      },
+      "keywords": [
+        "error",
+        "nested",
+        "stack"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mdlavin/nested-error-stacks.git"
+      },
+      "main": "index.js",
+      "files": [
+        "index.js",
+        "LICENSE"
+      ],
+      "scripts": {
+        "test": "if node --version | grep -vE 'v(0|3)' > /dev/null 2>&1; then eslint . || exit -1; fi; if [ \"$RUN_ZUUL\" != \"true\" ]; then node_modules/.bin/mocha; else npm install zuul && node_modules/.bin/zuul -- test.js; fi"
+      },
+      "author": {
+        "name": "Matt Lavin",
+        "email": "matt.lavin@gmail.com"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "chai": "^3.5.0",
+        "eslint": "^3.9.1",
+        "mocha": "^3.1.2",
+        "uuid": "^2.0.3"
+      },
+      "gitHead": "cdcf5fb17f0dcecaa56428510b08b0c52ce605b1",
+      "homepage": "https://github.com/mdlavin/nested-error-stacks#readme",
+      "_id": "nested-error-stacks@2.1.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.11.1",
+      "_npmUser": {
+        "name": "mdlavin",
+        "email": "matt.lavin@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-AO81vsIO1k1sM4Zrd6Hu7regmJN1NSiAja10gc4bX3F0wd+9rQmcuHQaHVQCYIEC8iFXnE+mavh23GOt7wBgug==",
+        "shasum": "0fbdcf3e13fe4994781280524f8b96b0cdff9c61",
+        "tarball": "https://registry.npmjs.org/nested-error-stacks/-/nested-error-stacks-2.1.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 5453,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbcYdVCRA9TVsSAnZWagAAzG8P/RcB+Dz63x+6Bk+tAK3W\njcdD05rcToqVXREe1XV0rxX+8zXYiz2VQ7Hbdwmlb6OxtDQe+OdKjcWQzJ8a\n7192dWXYKf8w+KyUa0yqB9aqZfCkBYTdqTeMNtfYkRAdQ7vGnSsixiYiuqsk\nzNVdMFIKdV1QVRgEGuM6095BwPKUWceB5y2nSVbf7ULz7mvAdMZ8l/gLwMmV\n6EdLPF9dT5YXHorFDG63qPOZLC07bMtKteNax1ghGT7L5u5UfoT8zVrKW4rb\nJdv0eppWOG8h/Tb+MQYBBh8uj07gTa1gd3dmO+iOLY9v6fpBFbXukCH2cr7w\nZMVk0Ey4tF1XPI1XmAclaRH9i/NE7crKOyFqZ3hzvEBTUFh4QJIFO5Dg3U1x\nYaZj9QsnQsq4h2LwEtqHhuSdTP7+lIX/fRnTi4B0wEkoxYTIAHn9KzFkG2oR\ncCdjMm9hhcGL1hi2hVlFuwaMmal0ghOf3NSS+OmyQ1Vnv0iHaEv+F5+SCTOY\nVhMcwy7xKonA1Nw3BhulztMPBfvJQDZnAXRFQbWZ7b2Sdlw/pMAGeBcWVAEe\nP3ZOLu2ceRAJhpMf+OBFncLuqZexMcf+oZm6ZpcYhO32oxAeYNvc8TLYQRwM\nHoehuLtgbI+YCWD38b9S99YXDpRkWxgfgLdi6ZVfkyM/H5XHMrQVYgl+ucaE\n5FjB\r\n=CwYN\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "mdlavin",
+          "email": "matt.lavin@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/nested-error-stacks_2.1.0_1534166868709_0.9764420223448063"
+      }
+    }
+  },
+  "readme": "Nested stacktraces for Node.js!\n===============================\n\n[![Build Status](https://travis-ci.org/mdlavin/nested-error-stacks.svg)](https://travis-ci.org/mdlavin/nested-error-stacks)\n[![NPM version](https://badge.fury.io/js/nested-error-stacks.svg)](http://badge.fury.io/js/nested-error-stacks)\n[![Dependency Status](https://david-dm.org/mdlavin/nested-error-stacks.svg)](https://david-dm.org/mdlavin/nested-error-stacks)\n\nWith this module, you can wrap a caught exception with extra context\nfor better debugging.  For example, a network error's stack would normally look\nlike this:\n\n    Error: connect ECONNREFUSED\n        at errnoException (net.js:904:11)\n        at Object.afterConnect [as oncomplete] (net.js:895:19)\n\nUsing this module, you can wrap the Error with more context to get a stack\nthat looks like this:\n\n    NestedError: Failed to communicate with localhost:8080\n        at Socket.<anonymous> (/Users/mattlavin/Projects/nested-stacks/demo.js:6:18)\n        at Socket.EventEmitter.emit (events.js:95:17)\n        at net.js:440:14\n        at process._tickCallback (node.js:415:13)\n    Caused By: Error: connect ECONNREFUSED\n        at errnoException (net.js:904:11)\n        at Object.afterConnect [as oncomplete] (net.js:895:19)\n\nHow to wrap errors\n------------------\n\nHere is an example program that uses this module to add more context to errors:\n\n```js\nvar NestedError = require('nested-error-stacks');\nvar net = require('net');\n    \nvar client = net.connect({port: 8080});\nclient.on('error', function (err) {\n    var newErr = new NestedError(\"Failed to communicate with localhost:8080\", err);\n    console.log(newErr.stack);\n});\n```\n\nHow to inherit\n--------------\n\nIt is recommended to use explicit names for Error classes. You can do it\nlike this:\n\n```js\nvar util = require('util');\nvar NestedError = require('nested-error-stacks');\n\nfunction MyError(message, nested) {\n    NestedError.call(this, message, nested);\n}\n\nutil.inherits(MyError, NestedError);\nMyError.prototype.name = 'MyError';\n```\n",
+  "maintainers": [
+    {
+      "name": "mdlavin",
+      "email": "matt.lavin@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2018-08-13T13:27:53.989Z",
+    "created": "2014-04-17T15:30:19.413Z",
+    "0.0.1": "2014-04-17T15:30:19.413Z",
+    "0.0.2": "2014-04-17T15:35:03.113Z",
+    "0.0.3": "2014-04-18T15:05:22.597Z",
+    "0.0.4": "2015-03-17T13:42:43.179Z",
+    "0.0.5": "2015-03-30T13:21:15.528Z",
+    "1.0.0": "2015-04-02T18:11:58.699Z",
+    "1.0.1": "2015-07-17T13:57:35.015Z",
+    "1.0.2": "2015-11-20T16:14:13.042Z",
+    "2.0.0": "2016-11-09T15:24:16.887Z",
+    "2.0.1": "2018-05-23T01:44:07.402Z",
+    "2.1.0": "2018-08-13T13:27:48.865Z"
+  },
+  "homepage": "https://github.com/mdlavin/nested-error-stacks#readme",
+  "keywords": [
+    "error",
+    "nested",
+    "stack"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mdlavin/nested-error-stacks.git"
+  },
+  "author": {
+    "name": "Matt Lavin",
+    "email": "matt.lavin@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/mdlavin/nested-error-stacks/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "users": {
+    "brandonpapworth": true,
+    "netwjx": true,
+    "zhenguo.zhao": true
+  },
+  "_attachments": {}
+}

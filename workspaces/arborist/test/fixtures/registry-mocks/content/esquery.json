@@ -1,0 +1,989 @@
+{
+  "_id": "esquery",
+  "_rev": "21-b3e6e62d9fd96f5562a9058646e37eaf",
+  "name": "esquery",
+  "description": "A query library for ECMAScript AST using a CSS selector like query language.",
+  "dist-tags": {
+    "latest": "1.3.1"
+  },
+  "versions": {
+    "0.0.1": {
+      "name": "esquery",
+      "preferGlobal": false,
+      "version": "0.0.1",
+      "author": {
+        "name": "Joel Feenstra",
+        "email": "jrfeenst+esquery@gmail.com"
+      },
+      "description": "A query library for ECMAScript AST using a CSS selector like query language.",
+      "scripts": {
+        "test": "node_modules/jstestr/bin/jstestr.js path=tests"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jrfeenst/esquery.git"
+      },
+      "keywords": [
+        "ast",
+        "ecmascript",
+        "javascript",
+        "query"
+      ],
+      "devDependencies": {
+        "jstestr": ">=0.4"
+      },
+      "license": "BSD",
+      "engines": {
+        "node": ">=0.6"
+      },
+      "_id": "esquery@0.0.1",
+      "dist": {
+        "shasum": "d42025e726e72eb64b413ba24b2acecc9718f1b6",
+        "tarball": "https://registry.npmjs.org/esquery/-/esquery-0.0.1.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.2.17",
+      "_npmUser": {
+        "name": "jrfeenst",
+        "email": "jrfeenst@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "jrfeenst",
+          "email": "jrfeenst@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.0": {
+      "name": "esquery",
+      "preferGlobal": false,
+      "version": "0.1.0",
+      "author": {
+        "name": "Joel Feenstra",
+        "email": "jrfeenst+esquery@gmail.com"
+      },
+      "description": "A query library for ECMAScript AST using a CSS selector like query language.",
+      "scripts": {
+        "test": "node_modules/jstestr/bin/jstestr.js path=tests"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jrfeenst/esquery.git"
+      },
+      "keywords": [
+        "ast",
+        "ecmascript",
+        "javascript",
+        "query"
+      ],
+      "devDependencies": {
+        "jstestr": ">=0.4"
+      },
+      "license": "BSD",
+      "engines": {
+        "node": ">=0.6"
+      },
+      "_id": "esquery@0.1.0",
+      "dist": {
+        "shasum": "b812f49d96c896c59806a21bba613dc03bb67c1c",
+        "tarball": "https://registry.npmjs.org/esquery/-/esquery-0.1.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.2.17",
+      "_npmUser": {
+        "name": "jrfeenst",
+        "email": "jrfeenst@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "jrfeenst",
+          "email": "jrfeenst@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.2.0": {
+      "name": "esquery",
+      "preferGlobal": false,
+      "version": "0.2.0",
+      "author": {
+        "name": "Joel Feenstra",
+        "email": "jrfeenst+esquery@gmail.com"
+      },
+      "description": "A query library for ECMAScript AST using a CSS selector like query language.",
+      "main": "esquery.js",
+      "scripts": {
+        "test": "node node_modules/jstestr/bin/jstestr.js path=tests"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jrfeenst/esquery.git"
+      },
+      "keywords": [
+        "ast",
+        "ecmascript",
+        "javascript",
+        "query"
+      ],
+      "devDependencies": {
+        "jstestr": ">=0.4"
+      },
+      "license": "BSD",
+      "engines": {
+        "node": ">=0.6"
+      },
+      "_id": "esquery@0.2.0",
+      "dist": {
+        "shasum": "07bc770fb94b879687326d5c6cd0afaf7273d002",
+        "tarball": "https://registry.npmjs.org/esquery/-/esquery-0.2.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.2.17",
+      "_npmUser": {
+        "name": "jrfeenst",
+        "email": "jrfeenst@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "jrfeenst",
+          "email": "jrfeenst@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.3.0": {
+      "name": "esquery",
+      "preferGlobal": false,
+      "version": "0.3.0",
+      "author": {
+        "name": "Joel Feenstra",
+        "email": "jrfeenst+esquery@gmail.com"
+      },
+      "description": "A query library for ECMAScript AST using a CSS selector like query language.",
+      "main": "esquery.js",
+      "scripts": {
+        "test": "node node_modules/jstestr/bin/jstestr.js path=tests"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jrfeenst/esquery.git"
+      },
+      "keywords": [
+        "ast",
+        "ecmascript",
+        "javascript",
+        "query"
+      ],
+      "devDependencies": {
+        "jstestr": ">=0.4",
+        "pegjs": "~0.7.0"
+      },
+      "license": "BSD",
+      "engines": {
+        "node": ">=0.6"
+      },
+      "dependencies": {
+        "estraverse": "~1.3.1"
+      },
+      "_id": "esquery@0.3.0",
+      "dist": {
+        "shasum": "e43f2d321614d9d7cf6abd96243c70fc056585fa",
+        "tarball": "https://registry.npmjs.org/esquery/-/esquery-0.3.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.2.17",
+      "_npmUser": {
+        "name": "jrfeenst",
+        "email": "jrfeenst@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "jrfeenst",
+          "email": "jrfeenst@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.4.0": {
+      "name": "esquery",
+      "preferGlobal": false,
+      "version": "0.4.0",
+      "author": {
+        "name": "Joel Feenstra",
+        "email": "jrfeenst+esquery@gmail.com"
+      },
+      "description": "A query library for ECMAScript AST using a CSS selector like query language.",
+      "main": "esquery.js",
+      "files": [
+        "esquery.js",
+        "parser.js",
+        "license.txt",
+        "README.md"
+      ],
+      "scripts": {
+        "test": "node node_modules/jstestr/bin/jstestr.js path=tests"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jrfeenst/esquery.git"
+      },
+      "keywords": [
+        "ast",
+        "ecmascript",
+        "javascript",
+        "query"
+      ],
+      "devDependencies": {
+        "jstestr": ">=0.4",
+        "pegjs": "~0.7.0",
+        "commonjs-everywhere": "~0.9.4",
+        "esprima": "~1.1.1"
+      },
+      "license": "BSD",
+      "engines": {
+        "node": ">=0.6"
+      },
+      "dependencies": {
+        "estraverse": "^4.0.0"
+      },
+      "gitHead": "dee284cc4eac7a31d251076199409b1ab5df86b5",
+      "bugs": {
+        "url": "https://github.com/jrfeenst/esquery/issues"
+      },
+      "homepage": "https://github.com/jrfeenst/esquery",
+      "_id": "esquery@0.4.0",
+      "_shasum": "4c4fb5f6a5854fc12bbe2bebf3933b4ed9d4413e",
+      "_from": ".",
+      "_npmVersion": "2.7.4",
+      "_nodeVersion": "0.12.2",
+      "_npmUser": {
+        "name": "michaelficarra",
+        "email": "npm@michael.ficarra.me"
+      },
+      "maintainers": [
+        {
+          "name": "jrfeenst",
+          "email": "jrfeenst@gmail.com"
+        },
+        {
+          "name": "michaelficarra",
+          "email": "npm@michael.ficarra.me"
+        }
+      ],
+      "dist": {
+        "shasum": "4c4fb5f6a5854fc12bbe2bebf3933b4ed9d4413e",
+        "tarball": "https://registry.npmjs.org/esquery/-/esquery-0.4.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "esquery",
+      "preferGlobal": false,
+      "version": "1.0.0",
+      "author": {
+        "name": "Joel Feenstra",
+        "email": "jrfeenst+esquery@gmail.com"
+      },
+      "description": "A query library for ECMAScript AST using a CSS selector like query language.",
+      "main": "esquery.js",
+      "files": [
+        "esquery.js",
+        "parser.js",
+        "license.txt",
+        "README.md"
+      ],
+      "scripts": {
+        "test": "node node_modules/jstestr/bin/jstestr.js path=tests"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jrfeenst/esquery.git"
+      },
+      "keywords": [
+        "ast",
+        "ecmascript",
+        "javascript",
+        "query"
+      ],
+      "devDependencies": {
+        "jstestr": ">=0.4",
+        "pegjs": "~0.7.0",
+        "commonjs-everywhere": "~0.9.4",
+        "esprima": "~1.1.1"
+      },
+      "license": "BSD",
+      "engines": {
+        "node": ">=0.6"
+      },
+      "dependencies": {
+        "estraverse": "^4.0.0"
+      },
+      "gitHead": "c029e89dcef7bc4ca66588a503ec154bd68f0e05",
+      "bugs": {
+        "url": "https://github.com/jrfeenst/esquery/issues"
+      },
+      "homepage": "https://github.com/jrfeenst/esquery#readme",
+      "_id": "esquery@1.0.0",
+      "_shasum": "cfba8b57d7fba93f17298a8a006a04cda13d80fa",
+      "_from": ".",
+      "_npmVersion": "4.1.2",
+      "_nodeVersion": "7.5.0",
+      "_npmUser": {
+        "name": "michaelficarra",
+        "email": "npm@michael.ficarra.me"
+      },
+      "dist": {
+        "shasum": "cfba8b57d7fba93f17298a8a006a04cda13d80fa",
+        "tarball": "https://registry.npmjs.org/esquery/-/esquery-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "jrfeenst",
+          "email": "jrfeenst@gmail.com"
+        },
+        {
+          "name": "michaelficarra",
+          "email": "npm@michael.ficarra.me"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/esquery-1.0.0.tgz_1489187536588_0.0852991035208106"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "esquery",
+      "preferGlobal": false,
+      "version": "1.0.1",
+      "author": {
+        "name": "Joel Feenstra",
+        "email": "jrfeenst+esquery@gmail.com"
+      },
+      "description": "A query library for ECMAScript AST using a CSS selector like query language.",
+      "main": "esquery.js",
+      "files": [
+        "esquery.js",
+        "parser.js",
+        "license.txt",
+        "README.md"
+      ],
+      "scripts": {
+        "test": "node node_modules/jstestr/bin/jstestr.js path=tests"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jrfeenst/esquery.git"
+      },
+      "keywords": [
+        "ast",
+        "ecmascript",
+        "javascript",
+        "query"
+      ],
+      "devDependencies": {
+        "jstestr": ">=0.4",
+        "pegjs": "~0.7.0",
+        "commonjs-everywhere": "~0.9.4",
+        "esprima": "~1.1.1"
+      },
+      "license": "BSD-3-Clause",
+      "engines": {
+        "node": ">=0.6"
+      },
+      "dependencies": {
+        "estraverse": "^4.0.0"
+      },
+      "gitHead": "1853a6fbaf40709dc2bf9f3c027163a573c3824f",
+      "bugs": {
+        "url": "https://github.com/jrfeenst/esquery/issues"
+      },
+      "homepage": "https://github.com/jrfeenst/esquery#readme",
+      "_id": "esquery@1.0.1",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.7.0",
+      "_npmUser": {
+        "name": "michaelficarra",
+        "email": "npm@michael.ficarra.me"
+      },
+      "maintainers": [
+        {
+          "name": "jrfeenst",
+          "email": "jrfeenst@gmail.com"
+        },
+        {
+          "name": "michaelficarra",
+          "email": "npm@michael.ficarra.me"
+        }
+      ],
+      "dist": {
+        "integrity": "sha512-SmiyZ5zIWH9VM+SRUReLS5Q8a7GxtRdxEBVZpm98rJM7Sb+A9DVCndXfkeFUd3byderg+EbDkfnevfCwynWaNA==",
+        "shasum": "406c51658b1f5991a5f9b62b1dc25b00e3e5c708",
+        "tarball": "https://registry.npmjs.org/esquery/-/esquery-1.0.1.tgz",
+        "fileCount": 5,
+        "unpackedSize": 94954
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/esquery_1.0.1_1522684887830_0.4750576904720585"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.1.0": {
+      "name": "esquery",
+      "preferGlobal": false,
+      "version": "1.1.0",
+      "author": {
+        "name": "Joel Feenstra",
+        "email": "jrfeenst+esquery@gmail.com"
+      },
+      "description": "A query library for ECMAScript AST using a CSS selector like query language.",
+      "main": "esquery.js",
+      "scripts": {
+        "test": "node node_modules/jstestr/bin/jstestr.js path=tests"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jrfeenst/esquery.git"
+      },
+      "keywords": [
+        "ast",
+        "ecmascript",
+        "javascript",
+        "query"
+      ],
+      "devDependencies": {
+        "jstestr": ">=0.4",
+        "pegjs": "~0.7.0",
+        "commonjs-everywhere": "~0.9.4",
+        "esprima": "~1.1.1"
+      },
+      "license": "BSD-3-Clause",
+      "engines": {
+        "node": ">=0.6"
+      },
+      "dependencies": {
+        "estraverse": "^4.0.0"
+      },
+      "gitHead": "cf004f240a26bb0b2de673b558889de5723444be",
+      "bugs": {
+        "url": "https://github.com/jrfeenst/esquery/issues"
+      },
+      "homepage": "https://github.com/jrfeenst/esquery#readme",
+      "_id": "esquery@1.1.0",
+      "_nodeVersion": "12.13.0",
+      "_npmVersion": "6.12.0",
+      "dist": {
+        "integrity": "sha512-MxYW9xKmROWF672KqjO75sszsA8Mxhw06YFeS5VHlB98KDHbOSurm3ArsjO60Eaf3QmGMCP1yn+0JQkNLo/97Q==",
+        "shasum": "c5c0b66f383e7656404f86b31334d72524eddb48",
+        "tarball": "https://registry.npmjs.org/esquery/-/esquery-1.1.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 95122,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeREB3CRA9TVsSAnZWagAA/vcP/1EfgVGzGfUoqfP+wC+A\nqCPlAUNUeaZy77LSqOQpIDcW5b3lMIlLHnU61q/LULxdF6stWywDKJl6vuiS\nHDosdX11NCZSJFXPsUUAvm7dQgZuLXJK5SdOlMO4tX+c5nWcPyoxbiPdTbqv\nhPE4LGNu79XSeiNX87MmauCO+o2yNtaCOOCR/YbOerQgEjhN8tavQmHckdaf\nXUv95puAeJND5GmuJLzW/vK/5f8jkM+D0ErZ2jzCF38vMPSVaqIXotyY5aon\njBtAmAqjK1hRUkJlzTHf8dXHd075vZBiYQzDs3NbCwni5UYlEvMWmV3XygfK\nQnKXvs7G55FsvM8NlZ1YJanQ9LmlDxTUyLCQhtvwDxO1xv0DOnS3yuOEmRaZ\nMonVlk12H2PUPBC2EdWdolBRECtYU+vaIYvAD0CX0ECwGzJ8kN5lRGR/tx3j\n4dKiut09ODRsLSAlX0VpdcZM7vD2WC4xpF+gX14afINk2brLI+jE0eCm69f9\nzNUZGIPir8aQPvuhDaY+dsl7zwPWvaMtylHRt2i9SwNI0IYE1hc0+0AJ6My0\nzGRndpSBb9lYThEZEbIjXTq8XVwb0TRv+JVPz5wC/D6Wr912RnG4HGcdp3WY\n3M7UFATgYpbNvIecNQMxH5wnlqJz7EG33nu5+Fpao1juV7FQ3ct9oqvPR3GK\nfAiE\r\n=mh03\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "jrfeenst",
+          "email": "jrfeenst@gmail.com"
+        },
+        {
+          "name": "michaelficarra",
+          "email": "npm@michael.ficarra.me"
+        }
+      ],
+      "_npmUser": {
+        "name": "michaelficarra",
+        "email": "npm@michael.ficarra.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/esquery_1.1.0_1581531255452_0.8107591957315223"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.2.0": {
+      "name": "esquery",
+      "version": "1.2.0",
+      "author": {
+        "name": "Joel Feenstra",
+        "email": "jrfeenst+esquery@gmail.com"
+      },
+      "contributors": [],
+      "description": "A query library for ECMAScript AST using a CSS selector like query language.",
+      "main": "dist/esquery.min.js",
+      "module": "dist/esquery.esm.min.js",
+      "nyc": {
+        "branches": 100,
+        "lines": 100,
+        "functions": 100,
+        "statements": 100,
+        "reporter": [
+          "html",
+          "text"
+        ],
+        "exclude": [
+          "parser.js",
+          "dist",
+          "tests"
+        ]
+      },
+      "scripts": {
+        "prepublishOnly": "npm run build && npm test",
+        "build:parser": "rm parser.js && pegjs --cache --format umd -o \"parser.js\" \"grammar.pegjs\"",
+        "build:browser": "rollup -c",
+        "build": "npm run build:parser && npm run build:browser",
+        "mocha": "mocha --require chai/register-assert --require esm tests",
+        "test": "nyc npm run mocha && npm run lint",
+        "test:ci": "npm run mocha",
+        "lint": "eslint ."
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/estools/esquery.git"
+      },
+      "bugs": {
+        "url": "https://github.com/estools/esquery/issues"
+      },
+      "homepage": "https://github.com/estools/esquery/",
+      "keywords": [
+        "ast",
+        "ecmascript",
+        "javascript",
+        "query"
+      ],
+      "devDependencies": {
+        "@rollup/plugin-commonjs": "^11.0.2",
+        "@rollup/plugin-json": "^4.0.2",
+        "@rollup/plugin-node-resolve": "^7.1.1",
+        "chai": "^4.2.0",
+        "eslint": "^6.8.0",
+        "esm": "^3.2.25",
+        "esprima": "~4.0.1",
+        "mocha": "^7.1.1",
+        "nyc": "^15.0.0",
+        "pegjs": "~0.10.0",
+        "rollup": "^1.32.0",
+        "rollup-plugin-terser": "^5.2.0"
+      },
+      "license": "BSD-3-Clause",
+      "engines": {
+        "node": ">=8.0"
+      },
+      "dependencies": {
+        "estraverse": "^5.0.0"
+      },
+      "gitHead": "3721d7a01b31ac4fcf5704b4128f5160a1821d54",
+      "_id": "esquery@1.2.0",
+      "_nodeVersion": "12.16.1",
+      "_npmVersion": "6.13.4",
+      "_npmUser": {
+        "name": "michaelficarra",
+        "email": "npm@michael.ficarra.me"
+      },
+      "maintainers": [
+        {
+          "name": "jrfeenst",
+          "email": "jrfeenst@gmail.com"
+        },
+        {
+          "name": "michaelficarra",
+          "email": "npm@michael.ficarra.me"
+        }
+      ],
+      "dist": {
+        "integrity": "sha512-weltsSqdeWIX9G2qQZz7KlTRJdkkOCTPgLYJUz1Hacf48R4YOwGPHO3+ORfWedqJKbq5WQmsgK90n+pFLIKt/Q==",
+        "shasum": "a010a519c0288f2530b3404124bfb5f02e9797fe",
+        "tarball": "https://registry.npmjs.org/esquery/-/esquery-1.2.0.tgz",
+        "fileCount": 10,
+        "unpackedSize": 680647,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeeDN/CRA9TVsSAnZWagAAHZoP/2ufL3zG0efy1Bdci3/e\nqGzYI1P2Jtjzt1r5Sn1lEdcJ1RHoVn+oTDTza6qRwGmOptggILUuzB0wKkp+\nwHwAar4cniYmcCx3+DAjCUTNk37CyZ2ZZ4q4Xqs1YfiQRQjSDVw4qYVQLUAW\nYY4Sdc69nmJVrjRNO3L1XQmSopp7Ou9Zv6FCjuBZ9jdPhRqhEeYbobqaz8gz\nOVpPx4lo6D2uX6HS6UDEQjUyN5IatK4gm9qRnOh2s20C/56R8ympufBvwwnZ\n+8i9WxTxTDuv3fvP3bLPNnJndVZltwGW4ln/+g3G+iZ3oXMs2DBc4qE8pIIL\nbA5ZUVeOcDfo1iEaV7jaVmseCHE09mMGmJBRTpyCL0QXqTWh40KHdH49MTPz\nzcUziS+2rE+9WyCKCtt1FywcvOZkZdqKChJBFaDUS8D7S2uy3s8fDJYyJ4Zy\nUn03Sc8WpRMrnFro9tZzq7uLAM5mWPqcDF7OMkESYWtwur2yRCgUaYq1UQwo\nLkENka38YWCUIcOCBUkAz/2AwjnK+/TQve5RGycBBijgvbifHD1KdcBhqRHu\n72czhKh6wpoe31lSw2o/eOsKblOT2akx5qB86wxKpP0A8TMJTJJswLQR7wda\nLexHlzf+z+0d1DxKz9Ey0pOsGAaB6+M6M9CObej8ep7i9ndEr5nxkqR8IRz1\ni7x3\r\n=CBns\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/esquery_1.2.0_1584935806764_0.6006702810822124"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.2.1": {
+      "name": "esquery",
+      "version": "1.2.1",
+      "author": {
+        "name": "Joel Feenstra",
+        "email": "jrfeenst+esquery@gmail.com"
+      },
+      "contributors": [],
+      "description": "A query library for ECMAScript AST using a CSS selector like query language.",
+      "main": "dist/esquery.min.js",
+      "module": "dist/esquery.esm.min.js",
+      "nyc": {
+        "branches": 100,
+        "lines": 100,
+        "functions": 100,
+        "statements": 100,
+        "reporter": [
+          "html",
+          "text"
+        ],
+        "exclude": [
+          "parser.js",
+          "dist",
+          "tests"
+        ]
+      },
+      "scripts": {
+        "prepublishOnly": "npm run build && npm test",
+        "build:parser": "rm parser.js && pegjs --cache --format umd -o \"parser.js\" \"grammar.pegjs\"",
+        "build:browser": "rollup -c",
+        "build": "npm run build:parser && npm run build:browser",
+        "mocha": "mocha --require chai/register-assert --require @babel/register tests",
+        "test": "nyc npm run mocha && npm run lint",
+        "test:ci": "npm run mocha",
+        "lint": "eslint ."
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/estools/esquery.git"
+      },
+      "bugs": {
+        "url": "https://github.com/estools/esquery/issues"
+      },
+      "homepage": "https://github.com/estools/esquery/",
+      "keywords": [
+        "ast",
+        "ecmascript",
+        "javascript",
+        "query"
+      ],
+      "devDependencies": {
+        "@babel/core": "^7.9.0",
+        "@babel/preset-env": "^7.9.0",
+        "@babel/register": "^7.9.0",
+        "@rollup/plugin-commonjs": "^11.0.2",
+        "@rollup/plugin-json": "^4.0.2",
+        "@rollup/plugin-node-resolve": "^7.1.1",
+        "babel-plugin-transform-es2017-object-entries": "0.0.5",
+        "chai": "^4.2.0",
+        "eslint": "^6.8.0",
+        "esprima": "~4.0.1",
+        "mocha": "^7.1.1",
+        "nyc": "^15.0.0",
+        "pegjs": "~0.10.0",
+        "rollup": "^1.32.0",
+        "rollup-plugin-babel": "^4.4.0",
+        "rollup-plugin-terser": "^5.2.0"
+      },
+      "license": "BSD-3-Clause",
+      "engines": {
+        "node": ">=0.10"
+      },
+      "dependencies": {
+        "estraverse": "^5.0.0"
+      },
+      "gitHead": "a97c44c64d88700e49a175fa1f31fd1d89683a38",
+      "_id": "esquery@1.2.1",
+      "_nodeVersion": "13.11.0",
+      "_npmVersion": "6.13.7",
+      "dist": {
+        "integrity": "sha512-/IcAXa9GWOX9BUIb/Tz2QrrAWFWzWGrFIeLeMRwtiuwg9qTFhSYemsi9DixwrFFqVbhBZ47vGcxEnu5mbPqbig==",
+        "shasum": "105239e215c5aa480369c7794d74b8b5914c19d4",
+        "tarball": "https://registry.npmjs.org/esquery/-/esquery-1.2.1.tgz",
+        "fileCount": 10,
+        "unpackedSize": 699693,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJelM3NCRA9TVsSAnZWagAAD6UQAIkqBAc0yq2mdEnlN8av\nqnJHc3Ek1YcPBvEw6KAUsV2rZgULpNeKj19166v0DGyyARHFKN4VuAU9XM3a\ntukuURhe3tlHHg7mC6IrJtndZ1sbYZQ2E+Ab1fOX+A0XuehF0jrXMygUZ6Z3\nmt06EEvqBCkUkWFBweZ4aO1fPFDxQu6QcXzEqfGRnuiKxhg+VfdgXM5GmLgF\nycgXIfphI0nDPcl5fvmSgqV4+Z6RJMmTj83mraQ+9YM2XcC/rrwRj00ifxOH\n2sqvnFVrLaAUeyZUu8sHlYQvmkqzfEQis1keYysQ0Kvp+zwk4nxe96Lw8fc3\nzVV//h6FkshxoHnMMmIDvVmVccbbsyotwHjgRmBCoqO3pKh246hCdJauWNSQ\nEXvlpa56ed744MhY3JeXs9FNCokMp1HdQjLK8dc54JoIGFInTgDOSzBhjtUg\n2S64vF7WqtwFkVpEVwwAnpiH4edZU6Ms8coeiBc8FCxFPKfDQYE+Ei5Zg5JI\nHsLCYdq8L+fB2Q7AWT72Xgl8TEHxpkOHW5YkcrUVS5j9Xgip2swLZQw1E+WO\n3XHeaEF0adkCoNz2byb580bKYBs35qGWCYMrtgJqkS+JkcjvR5awbemoaVLF\nYlzAo9Ry4iILT0jGgaGkkjN6oP1hchNCc3JLZ2g7+db0rRpB1HX3O9kQ2oLf\nwI9g\r\n=UMm0\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "jrfeenst",
+          "email": "jrfeenst@gmail.com"
+        },
+        {
+          "name": "michaelficarra",
+          "email": "npm@michael.ficarra.me"
+        }
+      ],
+      "_npmUser": {
+        "name": "michaelficarra",
+        "email": "npm@michael.ficarra.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/esquery_1.2.1_1586810317247_0.04426990571162315"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.3.0": {
+      "name": "esquery",
+      "version": "1.3.0",
+      "author": {
+        "name": "Joel Feenstra",
+        "email": "jrfeenst+esquery@gmail.com"
+      },
+      "contributors": [],
+      "description": "A query library for ECMAScript AST using a CSS selector like query language.",
+      "main": "dist/esquery.min.js",
+      "module": "dist/esquery.esm.min.js",
+      "nyc": {
+        "branches": 100,
+        "lines": 100,
+        "functions": 100,
+        "statements": 100,
+        "reporter": [
+          "html",
+          "text"
+        ],
+        "exclude": [
+          "parser.js",
+          "dist",
+          "tests"
+        ]
+      },
+      "scripts": {
+        "prepublishOnly": "npm run build && npm test",
+        "build:parser": "rm parser.js && pegjs --cache --format umd -o \"parser.js\" \"grammar.pegjs\"",
+        "build:browser": "rollup -c",
+        "build": "npm run build:parser && npm run build:browser",
+        "mocha": "mocha --require chai/register-assert --require @babel/register tests",
+        "test": "nyc npm run mocha && npm run lint",
+        "test:ci": "npm run mocha",
+        "lint": "eslint ."
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/estools/esquery.git"
+      },
+      "bugs": {
+        "url": "https://github.com/estools/esquery/issues"
+      },
+      "homepage": "https://github.com/estools/esquery/",
+      "keywords": [
+        "ast",
+        "ecmascript",
+        "javascript",
+        "query"
+      ],
+      "devDependencies": {
+        "@babel/core": "^7.9.0",
+        "@babel/preset-env": "^7.9.0",
+        "@babel/register": "^7.9.0",
+        "@rollup/plugin-commonjs": "^11.0.2",
+        "@rollup/plugin-json": "^4.0.2",
+        "@rollup/plugin-node-resolve": "^7.1.1",
+        "babel-plugin-transform-es2017-object-entries": "0.0.5",
+        "chai": "^4.2.0",
+        "eslint": "^6.8.0",
+        "esprima": "~4.0.1",
+        "mocha": "^7.1.1",
+        "nyc": "^15.0.0",
+        "pegjs": "~0.10.0",
+        "rollup": "^1.32.0",
+        "rollup-plugin-babel": "^4.4.0",
+        "rollup-plugin-terser": "^5.2.0"
+      },
+      "license": "BSD-3-Clause",
+      "engines": {
+        "node": ">=0.10"
+      },
+      "dependencies": {
+        "estraverse": "^5.0.0"
+      },
+      "gitHead": "333b9841e404714d7b1d0521bdcf97fa702a519e",
+      "_id": "esquery@1.3.0",
+      "_nodeVersion": "13.11.0",
+      "_npmVersion": "6.13.7",
+      "dist": {
+        "integrity": "sha512-/5qB+Mb0m2bh86tjGbA8pB0qBfdmCIK6ZNPjcw4/TtEH0+tTf0wLA5HK4KMTweSMwLGHwBDWCBV+6+2+EuHmgg==",
+        "shasum": "e5e29a6f66a837840d34f68cb9ce355260d1128b",
+        "tarball": "https://registry.npmjs.org/esquery/-/esquery-1.3.0.tgz",
+        "fileCount": 10,
+        "unpackedSize": 702847,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJelmCgCRA9TVsSAnZWagAAM7kP/ArzICTiB9nWgqG8Im/L\niJa3/4C6LfOnDzWYhQ/LY8QV9Jqr5LyxmxKrazRy2+xAfYc/jfhID1mZoIix\nHM76PYhrD0epAVONJgUmDgwulLxEKeMxfs6LvsmoIzFU4eUvDF0hq+im5I+0\n9cP1HDR13n8v3vqb5oKEOqx4DMyDqmsQRE4PhLc3EMkFrsUQ4QqNDNNFindP\ns6UfjbxDSae+UliEuwaQeQbeIGsxPNdT7x9ryYNIkXissChjXLtWynEzckJm\n0DCbeE5uTGJbroXBgdJ3RWSSuIW3r8Y6/sqiNk+5Gb3+mVZo9TXiM5o5PECf\nRMZ9dul3OOK3zs/Vx0posCtNhII/KVX2Bzt8Iz3LgKy4X1UeFu3Jc5VcqDA+\nwfSP+rHOAQXs4/PeAzciFk1nIqLPXUGcnExaFb2d+aGji7ZiQvIu9ZyHkXNt\n5zbGiEK8nZE9ii+G9ru/7z3uFkbOIhPovcjj8KfX2bcAdtmyhhoUuVdYyU+V\nMEfxlSs0ZvC12i8XJzVtDHe/9ThOe9DEra+bBw4GKgkiDGxxG/mjcNjpzTXg\ncj/5CAwi8bdUrnZAfFycihLaPfhiN2c6YxzIgEt3esj57Ta8aKqEuOQTKCBX\nTSUL2QRIQH/4VpnCufs6g62fskj3XmhoNrisWsnJETqblCrCqtrJBl9bj15j\nOTvJ\r\n=1h2Z\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "jrfeenst",
+          "email": "jrfeenst@gmail.com"
+        },
+        {
+          "name": "michaelficarra",
+          "email": "npm@michael.ficarra.me"
+        }
+      ],
+      "_npmUser": {
+        "name": "michaelficarra",
+        "email": "npm@michael.ficarra.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/esquery_1.3.0_1586913439707_0.7481198259181494"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.3.1": {
+      "name": "esquery",
+      "version": "1.3.1",
+      "author": {
+        "name": "Joel Feenstra",
+        "email": "jrfeenst+esquery@gmail.com"
+      },
+      "contributors": [],
+      "description": "A query library for ECMAScript AST using a CSS selector like query language.",
+      "main": "dist/esquery.min.js",
+      "module": "dist/esquery.esm.min.js",
+      "nyc": {
+        "branches": 100,
+        "lines": 100,
+        "functions": 100,
+        "statements": 100,
+        "reporter": [
+          "html",
+          "text"
+        ],
+        "exclude": [
+          "parser.js",
+          "dist",
+          "tests"
+        ]
+      },
+      "scripts": {
+        "prepublishOnly": "npm run build && npm test",
+        "build:parser": "rm parser.js && pegjs --cache --format umd -o \"parser.js\" \"grammar.pegjs\"",
+        "build:browser": "rollup -c",
+        "build": "npm run build:parser && npm run build:browser",
+        "mocha": "mocha --require chai/register-assert --require @babel/register tests",
+        "test": "nyc npm run mocha && npm run lint",
+        "test:ci": "npm run mocha",
+        "lint": "eslint ."
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/estools/esquery.git"
+      },
+      "bugs": {
+        "url": "https://github.com/estools/esquery/issues"
+      },
+      "homepage": "https://github.com/estools/esquery/",
+      "keywords": [
+        "ast",
+        "ecmascript",
+        "javascript",
+        "query"
+      ],
+      "devDependencies": {
+        "@babel/core": "^7.9.0",
+        "@babel/preset-env": "^7.9.5",
+        "@babel/register": "^7.9.0",
+        "@rollup/plugin-commonjs": "^11.1.0",
+        "@rollup/plugin-json": "^4.0.2",
+        "@rollup/plugin-node-resolve": "^7.1.3",
+        "babel-plugin-transform-es2017-object-entries": "0.0.5",
+        "chai": "^4.2.0",
+        "eslint": "^6.8.0",
+        "esprima": "~4.0.1",
+        "mocha": "^7.1.1",
+        "nyc": "^15.0.1",
+        "pegjs": "~0.10.0",
+        "rollup": "^1.32.1",
+        "rollup-plugin-babel": "^4.4.0",
+        "rollup-plugin-terser": "^5.3.0"
+      },
+      "license": "BSD-3-Clause",
+      "engines": {
+        "node": ">=0.10"
+      },
+      "dependencies": {
+        "estraverse": "^5.1.0"
+      },
+      "gitHead": "a48262deb20861568acf1bca0b7e02867e0b2c48",
+      "_id": "esquery@1.3.1",
+      "_nodeVersion": "13.11.0",
+      "_npmVersion": "6.13.7",
+      "dist": {
+        "integrity": "sha512-olpvt9QG0vniUBZspVRN6lwB7hOZoTRtT+jzR+tS4ffYx2mzbw+z0XCOk44aaLYKApNX5nMm+E+P6o25ip/DHQ==",
+        "shasum": "b78b5828aa8e214e29fb74c4d5b752e1c033da57",
+        "tarball": "https://registry.npmjs.org/esquery/-/esquery-1.3.1.tgz",
+        "fileCount": 10,
+        "unpackedSize": 705627,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJemKEHCRA9TVsSAnZWagAAjCEQAJhWEyt9XQP8POeAvzBJ\nXAVlD48eUh2bNDK+sBkUx2VQd4klowVHfcHBrSyq7fnqK6zXSkZ6NhL88Vlp\noiWYK4BbU1PKDKgv/qddGThiBowWikXekYKEzJidFusFG4N1yoA7x1hea67l\nUx2btbw9bh4PF37latprcFNLd6SXAJm9CWe3bzoq4+zqNYGuatxsN7cQvjcE\nTrktNEUvcie4/qXTakit9aaRX9s9QF6AFedIsxAacSGt9guuZg9+8Ne6ivt/\nA6m43roRUcMCWc42tvCQ1EPE7aZhloTRyHBml18u7XLT4X41Zn0VM2mBYqs1\nPx7pRwTvAhkL9aOE46+NwebsjGxk3oq9GFcTmoGW6AOETC/kF86NOK/fqXbY\nKmwSX+1psesuD+z9lMtak3Zm+MBBnX67QgFe4se6ZQ8pr2BmOWTb9zEh79ED\nSxIylXIMVYmoYBhrC+Ow0k43FSFwXIlN+o9nYErUemZYhhh2yrRpxo0f5RCC\naNwbH4tCZ0A1xg3Hy5c8xA3xzGyXz9T/sBhwX/viRIk6pLJ6a0IX7pwJ58pz\nJnkRh5njhpGUImA501000m1I69aNP70auur8Fg+Oujgh+/LVy6bcx9iRESOo\nmyU3VVC46MLJoOdpFqbRE2gqBJt6EJZkSRb3un9skAXkSZf6kkEbTDnn0/tj\nOKRS\r\n=chGg\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "jrfeenst",
+          "email": "jrfeenst@gmail.com"
+        },
+        {
+          "name": "michaelficarra",
+          "email": "npm@michael.ficarra.me"
+        }
+      ],
+      "_npmUser": {
+        "name": "michaelficarra",
+        "email": "npm@michael.ficarra.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/esquery_1.3.1_1587060998631_0.7794353253302886"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "ESQuery is a library for querying the AST output by Esprima for patterns of syntax using a CSS style selector system. Check out the demo:\n\n[demo](https://estools.github.io/esquery/)\n\nThe following selectors are supported:\n* AST node type: `ForStatement`\n* [wildcard](http://dev.w3.org/csswg/selectors4/#universal-selector): `*`\n* [attribute existence](http://dev.w3.org/csswg/selectors4/#attribute-selectors): `[attr]`\n* [attribute value](http://dev.w3.org/csswg/selectors4/#attribute-selectors): `[attr=\"foo\"]` or `[attr=123]`\n* attribute regex: `[attr=/foo.*/]` or (with flags) `[attr=/foo.*/is]`\n* attribute conditions: `[attr!=\"foo\"]`, `[attr>2]`, `[attr<3]`, `[attr>=2]`, or `[attr<=3]`\n* nested attribute: `[attr.level2=\"foo\"]`\n* field: `FunctionDeclaration > Identifier.id`\n* [First](http://dev.w3.org/csswg/selectors4/#the-first-child-pseudo) or [last](http://dev.w3.org/csswg/selectors4/#the-last-child-pseudo) child: `:first-child` or `:last-child`\n* [nth-child](http://dev.w3.org/csswg/selectors4/#the-nth-child-pseudo) (no ax+b support): `:nth-child(2)`\n* [nth-last-child](http://dev.w3.org/csswg/selectors4/#the-nth-last-child-pseudo) (no ax+b support): `:nth-last-child(1)`\n* [descendant](http://dev.w3.org/csswg/selectors4/#descendant-combinators): `ancestor descendant`\n* [child](http://dev.w3.org/csswg/selectors4/#child-combinators): `parent > child`\n* [following sibling](http://dev.w3.org/csswg/selectors4/#general-sibling-combinators): `node ~ sibling`\n* [adjacent sibling](http://dev.w3.org/csswg/selectors4/#adjacent-sibling-combinators): `node + adjacent`\n* [negation](http://dev.w3.org/csswg/selectors4/#negation-pseudo): `:not(ForStatement)`\n* [has](https://drafts.csswg.org/selectors-4/#has-pseudo): `:has(ForStatement)`\n* [matches-any](http://dev.w3.org/csswg/selectors4/#matches): `:matches([attr] > :first-child, :last-child)`\n* [subject indicator](http://dev.w3.org/csswg/selectors4/#subject): `!IfStatement > [name=\"foo\"]`\n* class of AST node: `:statement`, `:expression`, `:declaration`, `:function`, or `:pattern`\n\n[![Build Status](https://travis-ci.org/estools/esquery.png?branch=master)](https://travis-ci.org/estools/esquery)\n",
+  "maintainers": [
+    {
+      "name": "jrfeenst",
+      "email": "jrfeenst@gmail.com"
+    },
+    {
+      "name": "michaelficarra",
+      "email": "npm@michael.ficarra.me"
+    }
+  ],
+  "time": {
+    "modified": "2020-04-16T18:16:41.213Z",
+    "created": "2013-07-24T00:20:02.985Z",
+    "0.0.1": "2013-07-24T00:20:04.295Z",
+    "0.1.0": "2013-08-03T19:06:36.521Z",
+    "0.2.0": "2013-08-06T23:48:02.992Z",
+    "0.3.0": "2013-11-04T23:31:50.965Z",
+    "0.4.0": "2015-05-05T04:17:31.458Z",
+    "1.0.0": "2017-03-10T23:12:16.863Z",
+    "1.0.1": "2018-04-02T16:01:27.890Z",
+    "1.1.0": "2020-02-12T18:14:15.571Z",
+    "1.2.0": "2020-03-23T03:56:46.904Z",
+    "1.2.1": "2020-04-13T20:38:37.463Z",
+    "1.3.0": "2020-04-15T01:17:19.865Z",
+    "1.3.1": "2020-04-16T18:16:38.750Z"
+  },
+  "author": {
+    "name": "Joel Feenstra",
+    "email": "jrfeenst+esquery@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/estools/esquery.git"
+  },
+  "keywords": [
+    "ast",
+    "ecmascript",
+    "javascript",
+    "query"
+  ],
+  "license": "BSD-3-Clause",
+  "readmeFilename": "README.md",
+  "homepage": "https://github.com/estools/esquery/",
+  "bugs": {
+    "url": "https://github.com/estools/esquery/issues"
+  },
+  "users": {
+    "chocolateboy": true,
+    "jjdanois": true,
+    "kaizendad": true
+  },
+  "contributors": []
+}

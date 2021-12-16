@@ -1,0 +1,3290 @@
+{
+  "_id": "@babel/plugin-transform-for-of",
+  "_rev": "75-dbdc25bc82b9b94cd1a0c715bff0c623",
+  "name": "@babel/plugin-transform-for-of",
+  "description": "Compile ES2015 for...of to ES5",
+  "dist-tags": {
+    "latest": "7.12.1"
+  },
+  "versions": {
+    "7.0.0-beta.4": {
+      "name": "@babel/plugin-transform-for-of",
+      "version": "7.0.0-beta.4",
+      "description": "Compile ES2015 for...of to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-for-of"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.3"
+      },
+      "devDependencies": {
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.4"
+      },
+      "_id": "@babel/plugin-transform-for-of@7.0.0-beta.4",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.1.4",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-Wj00srmy2O+uaCJ6uxy8X+LvV/sX59pof/z9mTKj3NxngiObHU6kACvzo2RYqcQAnIMLRtzFHUnu+rI3FQ7S4Q==",
+        "shasum": "1c467672803c135dbd06eeedc92e9c48c175dfa3",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-for-of/-/plugin-transform-for-of-7.0.0-beta.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-for-of-7.0.0-beta.4.tgz_1509388475621_0.8676948146894574"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.5": {
+      "name": "@babel/plugin-transform-for-of",
+      "version": "7.0.0-beta.5",
+      "description": "Compile ES2015 for...of to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-for-of"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.4 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.5"
+      },
+      "_id": "@babel/plugin-transform-for-of@7.0.0-beta.5",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.1.4",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-4JepXGtZjLjW4wV8GUvCz5OVDymJjKxMIIJ61G3Rbgl2/eURPvXzR8lIZsC2nzh5haiyMhLoiq69tUr2WdU7Ug==",
+        "shasum": "13f7fdc1968838e47ef12308623ed5fc5feb954e",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-for-of/-/plugin-transform-for-of-7.0.0-beta.5.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-for-of-7.0.0-beta.5.tgz_1509396975057_0.9072201231028885"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.31": {
+      "name": "@babel/plugin-transform-for-of",
+      "version": "7.0.0-beta.31",
+      "description": "Compile ES2015 for...of to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-for-of"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.31"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.31",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.31"
+      },
+      "_id": "@babel/plugin-transform-for-of@7.0.0-beta.31",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.1.4",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-aDO6QokC3emLJ7eFVMr0xpVTu7l879xCykC89Ig0lulMAn84IeyMq3ZdzEQVv1i8uMkNXUBmprVZL/BCSkj98g==",
+        "shasum": "238c3157eb95859bf3fc35fe12b92869264f4fdf",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-for-of/-/plugin-transform-for-of-7.0.0-beta.31.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-for-of-7.0.0-beta.31.tgz_1509739403210_0.01482198340818286"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.32": {
+      "name": "@babel/plugin-transform-for-of",
+      "version": "7.0.0-beta.32",
+      "description": "Compile ES2015 for...of to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-for-of"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.32"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.32",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.32"
+      },
+      "_id": "@babel/plugin-transform-for-of@7.0.0-beta.32",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-ZtqM+YVsF+AcVo+lFhkjObBrifD/tRFbjHVGCw79Y9imNqn8KIlC2NAN7dcz/G5A5Qn87KYwug5kyJ79PHoeDA==",
+        "shasum": "73fefd71f1518243466c6a0f9e9bb2e4c305a61a",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-for-of/-/plugin-transform-for-of-7.0.0-beta.32.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-for-of-7.0.0-beta.32.tgz_1510493593355_0.48983508138917387"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.33": {
+      "name": "@babel/plugin-transform-for-of",
+      "version": "7.0.0-beta.33",
+      "description": "Compile ES2015 for...of to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-for-of"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.33"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.33",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.33"
+      },
+      "_id": "@babel/plugin-transform-for-of@7.0.0-beta.33",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-gwMsIxxLWpWjewu89CHwYinlwtv+uRjnJGQNOUUcSlgn3KGtt5inTjvkZg3sWMlOCYkEkEuZfdypfHR6aVa/tg==",
+        "shasum": "1405d6bbe7c48dc0a125ed57e1bfc98c6e06dc8c",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-for-of/-/plugin-transform-for-of-7.0.0-beta.33.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-for-of-7.0.0-beta.33.tgz_1512138496153_0.7918374335858971"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.34": {
+      "name": "@babel/plugin-transform-for-of",
+      "version": "7.0.0-beta.34",
+      "description": "Compile ES2015 for...of to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-for-of"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.34"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.34",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.34"
+      },
+      "_id": "@babel/plugin-transform-for-of@7.0.0-beta.34",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-BwSxmFpZJ0pWjokMiXdhuH+oApTkrn26m50LMQk346A6Zvu+HJ/UdmaS4zw58809twrggOMaEoip0XuPfMPLUw==",
+        "shasum": "046d1ab80157e70fb0bdeed01443f26e48fbfcf4",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-for-of/-/plugin-transform-for-of-7.0.0-beta.34.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-for-of-7.0.0-beta.34.tgz_1512225556438_0.8974282045383006"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.35": {
+      "name": "@babel/plugin-transform-for-of",
+      "version": "7.0.0-beta.35",
+      "description": "Compile ES2015 for...of to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-for-of"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.35"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.35",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.35"
+      },
+      "_id": "@babel/plugin-transform-for-of@7.0.0-beta.35",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-iBefZVo6LLNILCaaa5530OANwqQHXjHtu3vdiL9M9A5r0ULj2kAqSNKkMDvQ0Yaxe0M7VzUOHVsWoUzrSDH6lQ==",
+        "shasum": "50774c6c1cf68a38493ee76d34acb7b55470e05f",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-for-of/-/plugin-transform-for-of-7.0.0-beta.35.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-for-of-7.0.0-beta.35.tgz_1513288063602_0.06614756071940064"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.36": {
+      "name": "@babel/plugin-transform-for-of",
+      "version": "7.0.0-beta.36",
+      "description": "Compile ES2015 for...of to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-for-of"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.36"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.36",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.36"
+      },
+      "_id": "@babel/plugin-transform-for-of@7.0.0-beta.36",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-KuBEFkwwp1Rwb782nBJi0FpObFyexTtclNIbqzWgMna7HQsMpJtmVBBC7encRK31ZpTQnWKHz1IyHnVTO2FdQA==",
+        "shasum": "71aa5f727c8e9f458ab700e5e9f92ef868a70093",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-for-of/-/plugin-transform-for-of-7.0.0-beta.36.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "james@henry.sc",
+          "name": "jameshenry"
+        },
+        {
+          "email": "kent@doddsfamily.us",
+          "name": "kentcdodds"
+        },
+        {
+          "email": "kaicataldo@gmail.com",
+          "name": "kaicataldo"
+        },
+        {
+          "email": "teddy.katz@gmail.com",
+          "name": "not-an-aardvark"
+        },
+        {
+          "email": "star.ctor@gmail.com",
+          "name": "mysticatea"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-for-of-7.0.0-beta.36.tgz_1514228675042_0.1061358917504549"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.37": {
+      "name": "@babel/plugin-transform-for-of",
+      "version": "7.0.0-beta.37",
+      "description": "Compile ES2015 for...of to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-for-of"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.37"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.37",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.37"
+      },
+      "_id": "@babel/plugin-transform-for-of@7.0.0-beta.37",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-ULsgsAAj0fGFVDdEZeajaKuTEXAoh/tza2VwAPC6h0qaflB01k7DojlTHEiap6h0Fs3m+P0Ax/rcH+sYeJx1Ow==",
+        "shasum": "c02c9c0fcb8dc2aa928e9595d831d590e28fa765",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-for-of/-/plugin-transform-for-of-7.0.0-beta.37.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-for-of-7.0.0-beta.37.tgz_1515427349350_0.961452568648383"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.38": {
+      "name": "@babel/plugin-transform-for-of",
+      "version": "7.0.0-beta.38",
+      "description": "Compile ES2015 for...of to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-for-of"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.38"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.38",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.38"
+      },
+      "_id": "@babel/plugin-transform-for-of@7.0.0-beta.38",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-ui9oNgRvVNYzJeYbOmNCL1UIr1++7twyiYIuzOuQ9ArSF1WOaO4fluQa43zccgWRd610CRkljNRszag0aKB4Wg==",
+        "shasum": "fbca88770877d45c6bf26b492e4b126ee43b8111",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-for-of/-/plugin-transform-for-of-7.0.0-beta.38.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-for-of-7.0.0-beta.38.tgz_1516206711515_0.9692230201326311"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.39": {
+      "name": "@babel/plugin-transform-for-of",
+      "version": "7.0.0-beta.39",
+      "description": "Compile ES2015 for...of to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-for-of"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.39"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.39",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.39"
+      },
+      "_id": "@babel/plugin-transform-for-of@7.0.0-beta.39",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-FwM6eMvqAXHlwH6mn4fWxgaEMka5tTz1eD8sQu4xSeyLVc+4iym0x1Par7TicDwHLDqcSy4E5Mlw9JajMY9k7Q==",
+        "shasum": "77d11bcc9a21267c5848511431ad28b1aa1401db",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-for-of/-/plugin-transform-for-of-7.0.0-beta.39.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-for-of-7.0.0-beta.39.tgz_1517344052379_0.24714867235161364"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.40": {
+      "name": "@babel/plugin-transform-for-of",
+      "version": "7.0.0-beta.40",
+      "description": "Compile ES2015 for...of to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-for-of"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.40"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.40",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.40"
+      },
+      "_id": "@babel/plugin-transform-for-of@7.0.0-beta.40",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-ArDbLAGMzI++G5Ut8HIbLvnAxZNOC5tFzMXiud51JJTHRaeFB7AwX+duY9x/Hu/KypISXjels3BYVYCV/EH+ow==",
+        "shasum": "67920d749bac4840ceeae9907d918dad33908244",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-for-of/-/plugin-transform-for-of-7.0.0-beta.40.tgz",
+        "fileCount": 3,
+        "unpackedSize": 12222
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-for-of_7.0.0-beta.40_1518453693855_0.08171490206906795"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.41": {
+      "name": "@babel/plugin-transform-for-of",
+      "version": "7.0.0-beta.41",
+      "description": "Compile ES2015 for...of to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-for-of"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.41"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.41"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.41",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.41"
+      },
+      "_id": "@babel/plugin-transform-for-of@7.0.0-beta.41",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-t+ESNeYMC+Fff5U54ODMaExhOEmXPHJj6gOPdtrgRSH0VRRuZpm9rbieNqnA1+f/bhRei2/kE24Y/x1Pz3CRBQ==",
+        "shasum": "5f3519a5ffcca00eaa07f1c0faa83f35319fbff7",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-for-of/-/plugin-transform-for-of-7.0.0-beta.41.tgz",
+        "fileCount": 3,
+        "unpackedSize": 12454
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-for-of_7.0.0-beta.41_1521044766916_0.12110377022725838"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.42": {
+      "name": "@babel/plugin-transform-for-of",
+      "version": "7.0.0-beta.42",
+      "description": "Compile ES2015 for...of to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-for-of"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.42"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.42"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.42",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.42"
+      },
+      "_id": "@babel/plugin-transform-for-of@7.0.0-beta.42",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-pn+fmrr6pfXeEUMyx7JrKAOG/XCiABvXFOmQYqLoCl0POcW8sE75r8w/Lu2wHFayrNgDqR7/RCb7RW4h/U2u1Q==",
+        "shasum": "acf51c5986050e1aff054c8d2a95ef3f6bec153e",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-for-of/-/plugin-transform-for-of-7.0.0-beta.42.tgz",
+        "fileCount": 3,
+        "unpackedSize": 12454
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-for-of_7.0.0-beta.42_1521147041934_0.2690711323401709"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.43": {
+      "name": "@babel/plugin-transform-for-of",
+      "version": "7.0.0-beta.43",
+      "description": "Compile ES2015 for...of to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-for-of"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.43"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.43"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.43",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.43"
+      },
+      "_id": "@babel/plugin-transform-for-of@7.0.0-beta.43",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-x1dZhT370HW0R6/+X01dxsDR+x5bejHtuM+qMkDdzVsQZI/nPWV/KLf7dCuFvY0cZOmP9j2Of6hzVYAD2ODdxQ==",
+        "shasum": "f309f82b4ab3f2de44c119ce28fd0535cab31623",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-for-of/-/plugin-transform-for-of-7.0.0-beta.43.tgz",
+        "fileCount": 3,
+        "unpackedSize": 12725
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-for-of_7.0.0-beta.43_1522687703664_0.08516388528929375"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.44": {
+      "name": "@babel/plugin-transform-for-of",
+      "version": "7.0.0-beta.44",
+      "description": "Compile ES2015 for...of to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-for-of"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.44"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.44"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.44",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.44"
+      },
+      "_id": "@babel/plugin-transform-for-of@7.0.0-beta.44",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-910UuvEuN6CM3G7+V3fHnYFBbw/YZUGgQlXpdlQnzN43uny2Xy33BxoFlWq1dOS1Q7xJnsJNEb2mm2Eks2uTvg==",
+        "shasum": "b157e38e74c07beacbac01c1946b8ad11dbea32c",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-for-of/-/plugin-transform-for-of-7.0.0-beta.44.tgz",
+        "fileCount": 3,
+        "unpackedSize": 12858
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-for-of_7.0.0-beta.44_1522707606244_0.12454945990879862"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.45": {
+      "name": "@babel/plugin-transform-for-of",
+      "version": "7.0.0-beta.45",
+      "description": "Compile ES2015 for...of to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-for-of"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.45"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.45"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.45",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.45"
+      },
+      "_id": "@babel/plugin-transform-for-of@7.0.0-beta.45",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-iV1yH5vEDKBodp6GnUNGMm/7qkO/nhi0uKSCxX31CemluQxDdlHVHwS9F2Ie7nCrLOvBhD6TIh8EeFd1w61wsw==",
+        "shasum": "bf0095583d2951ce88f7aa017622cb3e92a71f0c",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-for-of/-/plugin-transform-for-of-7.0.0-beta.45.tgz",
+        "fileCount": 3,
+        "unpackedSize": 12858,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa3T1fCRA9TVsSAnZWagAA+UsP/jNh669FFS2HawKHp2Gq\nc8LT2JF5OkMPI1bbFzAHlZTBxPCUe1iX/1f2rbbChLN6Bc9LZm9vJisG4kCd\nuarlUTRcdR6WmaT72+Na/ttlTyOrL3rzYYNwaQy8v7lNZ8OEVMl9SdYF2VV/\nn0jr/CwEDeUgwBzRzoeYo/LVr08e2DRbwbUO00VEpQHcuPNs99MIyNOxSgIn\nN7PZDaRVhhZpSYaM/+DzPGgELRoRCw7WtZW5Hin7pA7njvF8Qzj907kqwtyS\nRLfK7mCa7cwtyIxyVJPLf11UqmrNh5FnwFyszVFLeOzAiNtwkGG3pGexruDg\nojFjmmTlZQ9uk/RjTVjJ+KQyvaUjsOe9EAnAWvo3WgvP4VLs0GtnEe7NMAxg\nyaDYgQNjlRcnH40JYMw1mrBklxEVjSrq0knfXnqGOnKxNNo3wi15+Wj4SR3V\nJfu5I6NTO0pMDb86gGZNYT9cJE1/0S5FJ3rLbtR4dyfKG9ZpTLVEicdYgztY\ns3i1sbUtwCje18qbLrS5Ads5dStHe6n3HiwOl0O8JnJHj5Llx87/slWHbO4O\nGkoMKXGlehd5ZOZ5DOHTorWtZe6TU7iYTnM3B9WYxy6YHVGhkVcmaiyOODsX\nl7C1pju947q8aHQlJ+pEgXS8fDvCYbGRnZ9M5obKiQr1xBziX46wMzWpusqn\nvfc/\r\n=v+eM\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-for-of_7.0.0-beta.45_1524448607108_0.9717994194133148"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.46": {
+      "name": "@babel/plugin-transform-for-of",
+      "version": "7.0.0-beta.46",
+      "description": "Compile ES2015 for...of to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-for-of"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.46"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.46"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.46",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.46"
+      },
+      "_id": "@babel/plugin-transform-for-of@7.0.0-beta.46",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.4.0",
+      "_npmUser": {
+        "name": "loganfsmyth",
+        "email": "loganfsmyth@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-a1gpwuO26szyz5K2FrRrI5nUDgvkaJfZ7GeDtFAH8XyrK/pNdtpW/7DFCf1PdQc6SbEMM/1QXsH7Y2YRkWoTeA==",
+        "shasum": "ce643487384c96d1bd1f57a112b2ccba6c34da5c",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-for-of/-/plugin-transform-for-of-7.0.0-beta.46.tgz",
+        "fileCount": 3,
+        "unpackedSize": 12858,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa3WGNCRA9TVsSAnZWagAAbekP/3SzpezCy7Ea0MGwaH40\n8xsdk+MWyTHz7nYK0Md/4cUqUy4yixcnxOz6BHRp3UIqECVG5wpmziouXK7E\np0tOpybj0DptrecAxRK10TEFAGWwDGWJm2kpUz9gFc6g4bVRPehBzcFpAnr6\nGNL6DonvVkhMUGYJ9HFuQks04/QI3KdBPQiwxZoEMgjM+6Ray+2MVHXDqCJk\nqiYAYsjQegdBj2diQAK9YtjD2ZgpUZUv3xNJqYnPHt+JGbttmsPv+R/NlkDb\njtxaGiUU/HinptuPVBaD4NPVAW47HAg5RI0i8y5uxdGs9Wq518x+fyoVT/dJ\nyTorfnA+L2bm7PMnWy2PEtexHk9E/dcE2wkyogNrjWHmeK8JmcGq40T38Azv\nLbIdW0WvJh78qMFGm0EDqd/YRbsr6CgZpVO/wRuPDfUIO3edCpUVfL8qG9vp\nuyluyyFz3NkD8+2q5VtHJxE5y/A4FDWSwcgZevOuSZYUPJITTx39sVz112qP\nblpUCMDt7dV/AIcSFthz5bSpmY1IgsyJNXnjmfdtbESV3CmSOVvQR8efOyde\noofDPi+FAIaap/DG76NPRjNp0GmJXM55KsixzixGWiH+TQH4lmyNceI/tcL0\nQdgOdriphzVfsnr4lsBhIK/W4K88t97VnxPdfv5C7Fka/cz8Y6I9U+WyYnm/\ng1aa\r\n=qq1D\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-for-of_7.0.0-beta.46_1524457868755_0.7834453689668464"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.47": {
+      "name": "@babel/plugin-transform-for-of",
+      "version": "7.0.0-beta.47",
+      "description": "Compile ES2015 for...of to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-for-of"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.47"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.47"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.47",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.47"
+      },
+      "_id": "@babel/plugin-transform-for-of@7.0.0-beta.47",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-tfH5OMzV9fWLYJTzWDhoRJKr8kvBZWH26jiCgM0ayNq75ES/X947MqMNAgBjJdTAVEV2kOyks2ItgNAJT4rOUw==",
+        "shasum": "527d5dc24e4a4ad0fc1d0a3990d29968cb984e76",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-for-of/-/plugin-transform-for-of-7.0.0-beta.47.tgz",
+        "fileCount": 3,
+        "unpackedSize": 12849,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa+iUUCRA9TVsSAnZWagAAQW4P/j2np5t/XXW658cJS5zA\nUb1UDJ7V3KKgYKmPRXWV9kNWSVzdHiOQDLuahJdTb7I73GQmZLA6DAQFPfXl\nfXl0xwwBuuAP2s7AZ3Yr7cPYBBCw7RGAOhpqlgtRa6KmN2ny7Q8KFck38RpP\n3PqTZzlL6RMcbl1XwJH/D+XYOV8RR8ms2GvtXFadpwifD7vQ9jWNSiJx53wy\nzJaItXZCXr6b44KcCVxtUBK85mYK9xm/FVpRK8Ixdt6ZCSH8A7dHl9VQ0Gcf\nZC5jLm7VDpBsyz/dVuPwrJmCWFmShMjWsAh9r/V26s2dTqnw2J/AaaV8xrBE\nQkY60oHqVYIuqhW90OsYxD1vix6R39htimQvL10yBSPni+ViNDaoeV5T/eAn\nlLyNE2g0Bw1xS6jCAA4Sv16DTXl7ExyQmCOEdiOJ4itJKwLSIBxP5Emi5t28\nlHA8jcZGcLqsOI1UAhXZm35LtpAYMjCj+t1xVgICXehVnNt5zvlqcshMyb0f\n2zKrnBzUbl8v+i7D71vfiN3HMt8BeffNvgMG/KpJbbHI4TLypFANwpGq72eY\nxuSrbuBB+UMYWgiaPuqHUyENhhVoR34Vu+h1zMA4KT+xINNHV0ChIhvOP6/U\njzavoSiUVler4UilKsCsb8hW/EB4gCGGKAlUqm1wtjGWNvm0g8aQ5hH3sPpN\n5vpA\r\n=CfHS\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-for-of_7.0.0-beta.47_1526342931799_0.7222557455878678"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.48": {
+      "name": "@babel/plugin-transform-for-of",
+      "version": "7.0.0-beta.48",
+      "description": "Compile ES2015 for...of to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-for-of"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.48"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.48"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.48",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.48"
+      },
+      "_id": "@babel/plugin-transform-for-of@7.0.0-beta.48",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-Pm1iNyT1bZEB0aQs+VvMuubOTPEuDCbonljBKp4/VxP89S8nmyyrw1jAsxUOUnZq1RlOzcrhKFmd+gI/C3DOoQ==",
+        "shasum": "654e89c230a03132ce690dcf05d03a8fe3c1cae6",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-for-of/-/plugin-transform-for-of-7.0.0-beta.48.tgz",
+        "fileCount": 3,
+        "unpackedSize": 12725,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbBxDtCRA9TVsSAnZWagAAZ5oQAIA1Xy3MxLrGUW5VOEEm\nBQzNC73aVret5IXYsRwdLZXhr9Mg5ubRobJnUFIbI/HjCsSvK1gyej7WEgCS\nbFsqfCuwOlA4pmXDpJNwezUc/Pz1VQQcr402VOs7OUc7xnEs4+M4wQMuvOGh\nlSpIFuPSc8GWGOrZYT6VTFy8ckwAzFuNpHsAe8fhQ29dBgIn5J66cwQqitTg\nb+NPVAnQyVg9OVArngMeH0gTPtg5rxhkC3Ieh4ZjkvvRuXIg63e97mbAe0kL\nAL73/yHqOTt59NQukA8fkJ+T19bCBu/53Qv6RimGfxyrcS+MS0OTEZAWx4Jr\nwkiJcynAcjeHExos67G0NbFV4LQ3pWhJwiv/Jjzz+wpFnOvWLLrLE8rAcNpL\nNMeRyhIpYE0IQtqtBplL30ChtyKGB6+nZ92cEf3F3Y4uwY8GPK1hkwDAak9o\nqLcIncFW4EC1dVLNg1kOK/2v774tMJ2Uiool6nqIWUKMF8Laky5iUcTK/6W6\nDnltdzA+6/b9oktnqbk/plzIdM2GZaeDYCkhZc5bxwCsAwT3EvGcOikJYKoK\nfSGnITPbJJjLUNiYALi1wwCa2HLqmcEKTnAj2H/bHWMZ6tyaGZDRIs7bhjwd\nfqubFYQJnfp+bLzfd0ZNiGiEG8yRettZltUht9zOGGi0ZJ5yjvlsZ5jJuS0w\noohA\r\n=siMa\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-for-of_7.0.0-beta.48_1527189740504_0.15769282586777367"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.49": {
+      "name": "@babel/plugin-transform-for-of",
+      "version": "7.0.0-beta.49",
+      "description": "Compile ES2015 for...of to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-for-of"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.49"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.49"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.49",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.49"
+      },
+      "_id": "@babel/plugin-transform-for-of@7.0.0-beta.49",
+      "scripts": {},
+      "_shasum": "3ec72726bf1d89a0d4d511be7a9549066f57aade",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.12.3",
+      "_npmUser": {
+        "name": "loganfsmyth",
+        "email": "loganfsmyth@gmail.com"
+      },
+      "dist": {
+        "shasum": "3ec72726bf1d89a0d4d511be7a9549066f57aade",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-for-of/-/plugin-transform-for-of-7.0.0-beta.49.tgz",
+        "fileCount": 4,
+        "unpackedSize": 12740,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbCDN+CRA9TVsSAnZWagAA39QP/2/67V8uC3fIjs+4Q4Na\nnYcZ/k2Io1I5kQ6jo19OStHxS3I6kaNbhycgBHcpo/0gSD3VPbkxwAJ/cXsD\npo90q/9DTOGWLgQ/Am40AS57KP5HPftzArV8+ryPN54zA0MyJbu+dKAr95xy\ns4tqxb1llLiVXYcuW6N2Adppy7fVGtBm5b+P5dGxV0hVvQjRdb72+3l1Dlbn\nh7/XMeZvlrnWZgGXeRx2HYld+ZOF5atvllBh9bWSh4rV0thttMfmki30ANoK\njYsr4A2o4N2OmfiaZbwm8INkHrqW7LWlwJxB+d22X1Kd3WQiSHPWSuOIdC52\nxrSosj6G58S37PoPtIT8zQtdn2nZ2KSdouACKRuJ1QkZEWEqOLKc88srbiGT\ngE2Ql+n/zD1tic+EaEj2EsEKc2SLxBm4MiDPdSYgpIbjAyvRneHmj4Da9U9p\nO7kalp5Oym1jk0o5uJJLjf3+QUEDK9t0cW6Of9GUXzNIzZN5WHsT+GFBEX3f\nashUMXRujCg3Pjqb/9E5mPBaig13F7k+245dt8hsZzB34ZCY9xzxeqzyB5RZ\nDb5ZJJ5TBHmdZhgJY+MALoPa1LtMZo9COs64RSgYec3t0FXCLxFO/lAidRBS\nFP4jLi0jY7BUAx7w78MuRp2YiX58A/IurzeWWUiP/cwVM6BJcK838yMcZplA\nNYdL\r\n=bS9y\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-for-of_7.0.0-beta.49_1527264125810_0.9107014660360366"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.50": {
+      "name": "@babel/plugin-transform-for-of",
+      "version": "7.0.0-beta.50",
+      "description": "Compile ES2015 for...of to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-for-of"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.50"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.49"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.50",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.50"
+      },
+      "_id": "@babel/plugin-transform-for-of@7.0.0-beta.50",
+      "dist": {
+        "shasum": "eb73bf473c563e7cc744abe8e531d4f0bfc7d613",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-for-of/-/plugin-transform-for-of-7.0.0-beta.50.tgz",
+        "fileCount": 5,
+        "unpackedSize": 10337
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-for-of_7.0.0-beta.50_1528832835534_0.8383584830966502"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.51": {
+      "name": "@babel/plugin-transform-for-of",
+      "version": "7.0.0-beta.51",
+      "description": "Compile ES2015 for...of to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-for-of"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.51"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.51",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.51"
+      },
+      "_id": "@babel/plugin-transform-for-of@7.0.0-beta.51",
+      "dist": {
+        "shasum": "44f476b06c4035517a8403a2624fb164c4371455",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-for-of/-/plugin-transform-for-of-7.0.0-beta.51.tgz",
+        "fileCount": 5,
+        "unpackedSize": 10351
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-for-of_7.0.0-beta.51_1528838385998_0.049636161814268664"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.52": {
+      "name": "@babel/plugin-transform-for-of",
+      "version": "7.0.0-beta.52",
+      "description": "Compile ES2015 for...of to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-for-of"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.52"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.52",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.52"
+      },
+      "_id": "@babel/plugin-transform-for-of@7.0.0-beta.52",
+      "dist": {
+        "shasum": "42e678de92b39387e7bb3a5e784b00b7ffe85ea7",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-for-of/-/plugin-transform-for-of-7.0.0-beta.52.tgz",
+        "fileCount": 5,
+        "unpackedSize": 10350
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-for-of_7.0.0-beta.52_1530838764582_0.5839603479814255"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.53": {
+      "name": "@babel/plugin-transform-for-of",
+      "version": "7.0.0-beta.53",
+      "description": "Compile ES2015 for...of to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-for-of"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.53"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.53",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.53"
+      },
+      "_id": "@babel/plugin-transform-for-of@7.0.0-beta.53",
+      "dist": {
+        "shasum": "fa065215e18569c8f74dd524b5721e11dcca973b",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-for-of/-/plugin-transform-for-of-7.0.0-beta.53.tgz",
+        "fileCount": 5,
+        "unpackedSize": 10350
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-for-of_7.0.0-beta.53_1531316414981_0.6816357317919763"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.54": {
+      "name": "@babel/plugin-transform-for-of",
+      "version": "7.0.0-beta.54",
+      "description": "Compile ES2015 for...of to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-for-of"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.54"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.54",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.54"
+      },
+      "_id": "@babel/plugin-transform-for-of@7.0.0-beta.54",
+      "dist": {
+        "shasum": "261d2992058a9e09234b9ff67820054ffc55f79c",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-for-of/-/plugin-transform-for-of-7.0.0-beta.54.tgz",
+        "fileCount": 5,
+        "unpackedSize": 10350
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-for-of_7.0.0-beta.54_1531764005786_0.786881754463493"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.55": {
+      "name": "@babel/plugin-transform-for-of",
+      "version": "7.0.0-beta.55",
+      "description": "Compile ES2015 for...of to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-for-of"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.55"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.55",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.55"
+      },
+      "_id": "@babel/plugin-transform-for-of@7.0.0-beta.55",
+      "dist": {
+        "shasum": "cf3058c6d81a3d69e5df086294688dac28a42710",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-for-of/-/plugin-transform-for-of-7.0.0-beta.55.tgz",
+        "fileCount": 5,
+        "unpackedSize": 10350
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-for-of_7.0.0-beta.55_1532815635301_0.23165469035904285"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.56": {
+      "name": "@babel/plugin-transform-for-of",
+      "version": "7.0.0-beta.56",
+      "description": "Compile ES2015 for...of to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-for-of"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.56"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.56",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.56"
+      },
+      "_id": "@babel/plugin-transform-for-of@7.0.0-beta.56",
+      "dist": {
+        "shasum": "a95335820f8dedf30b96ec03e4cac09a5bb4edf2",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-for-of/-/plugin-transform-for-of-7.0.0-beta.56.tgz",
+        "integrity": "sha512-z4sift6xY65vOpFlRyPrcKNgusCV9NZZGOR9Dxt64XUEWnyxpabHZ9mGe0B3mqJbm168cK7sbxruvnyfyrO2fg==",
+        "fileCount": 5,
+        "unpackedSize": 10350,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbZPvdCRA9TVsSAnZWagAAfRgP/RIC7JOtmHdYRIes+Bx8\nBFL58xCMv0jbNKoFsQe3GLaPZYUuxhBKrIfF/YXtEwHxRxX0OGHus0mlY4Tt\niSn70dkV6Dx93hnmX/umpg4aF+z4b9N48IWbEFJBRseV+IavZ6QP0Ln/oJQ8\nVQz+r0PYhqCYa12BKqpAdWnL98bAFqJDyMHXedPtfC44K7Msh0gop8MgKg0Z\nuauEGXvN8EOX2GxySybMtx/+pjHXtj0icacECk+6ZWWebSEpP9/SWfk/MqS3\nCs6wKuGvkemzbpjhLo1qun7gTX/lJJJRRanDsB7KnA97FFHoOBzwXffQtQ/Z\nUyV25nqBmgy/bb+fjkUrOjRLFnCp5npShxLB0veYU1OFGSt60BJTO65AsKLg\n/k/G5Yawdwiunfaw2WGslBftUj4KcBtm1sYIu5a9FELdt7LE4PtgYwtn3wfN\nrFhmCHyjEKrbcew/FOzqRSq7zxAvsalAxHAZ9qL+nXn6B+1niyheLo8jWS6p\nInRPvoR8EDaEBHV7qVL5fJecl3eoryqMe8xEoGEtLco9epayQwoflydac2nG\nr/a3ueaacLcvpCzC9YtnKspPLVW8xYDoHVaAs5wBwp+O8h03MrOU1dn1rqiV\nDAnWpb3VN1UuG7WkWUzLA+rQBwEYHlykuccLbkBiwJ3mhcvmhYLaqVMsFaP5\nfVA9\r\n=Mig/\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-for-of_7.0.0-beta.56_1533344725972_0.7623907861468826"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-rc.0": {
+      "name": "@babel/plugin-transform-for-of",
+      "version": "7.0.0-rc.0",
+      "description": "Compile ES2015 for...of to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-for-of"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-rc.0"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-rc.0",
+        "@babel/helper-plugin-test-runner": "7.0.0-rc.0"
+      },
+      "_id": "@babel/plugin-transform-for-of@7.0.0-rc.0",
+      "dist": {
+        "shasum": "a54e9ac190f379dabb673405730f1257c75e2a36",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-for-of/-/plugin-transform-for-of-7.0.0-rc.0.tgz",
+        "integrity": "sha512-mUvrRWPWwtHmhqg3rwkGO8wkgynSxOexECVXsGm7WLclHQlodvXce5DcYO3c/cL9dXyiHfX+45UqcMHEJimZog==",
+        "fileCount": 5,
+        "unpackedSize": 10338,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbbGSXCRA9TVsSAnZWagAAz54QAJnmK3/CWP+Hz6Cu3970\nmggS7pNh/hvQxRs1t0IJPljOjC5sU/0fFiRzLVzqmwdVt+g4WVcbUuGR4aUr\nZaviSLwrvxlULZ9rJs2te5wlYefamWi0FXo65sIr+dqErhXNUwAuQtjxwBid\ncexYlBWRG8MaoadhI6sbvFVTtS6fw27xyODTUUx+mz3zaTXivzr2rgtIpQKV\nIIYn8C4vDWOl+WwxRuNQFm/pKzs154X5LKttrFi9YCCL1NINvWEetD9gB/WR\n9fgY09eAFyOvcGvADlfdu8HM6QI48bnvG1SLJoZ3beNFu6gQnrNwhCJatamd\nMJZr/1Znw+p5hqx+R04YhG1QL9npFSvWGeDbOfpeJ67IaPFNiQfndTnHKcug\nzyLw3XijrwyMHPwtnKKHeOi0zWm+hp2Aj8iNH4TYf0w/NQtLQvK9rrClCQD7\n2OiuTQytodH/U+fyt3KksgpKltIJUxjM5xvWZuwkP/FbePbcc91cLzhRMEns\n8E7MZspcuwln+TlC16TnGCo93GjdW5XVHlUxttF/CDqUNi2d7ftG/KxblgHy\nfq/JJOt/3HbHWth3GypA8gpKs87e4sbOdq64VirJDlg+xUQ/I9dEwl5r2fdb\nn94tLAj//Unsty8++f+ZuUmf171e5UBnJ2NRpXdX4+0WJNRPl0oc1DJmIBvR\nW4Nu\r\n=T2hl\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-for-of_7.0.0-rc.0_1533830294631_0.3012329144335584"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-rc.1": {
+      "name": "@babel/plugin-transform-for-of",
+      "version": "7.0.0-rc.1",
+      "description": "Compile ES2015 for...of to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-for-of"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-rc.1"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-rc.1",
+        "@babel/helper-plugin-test-runner": "7.0.0-rc.1"
+      },
+      "_id": "@babel/plugin-transform-for-of@7.0.0-rc.1",
+      "dist": {
+        "shasum": "1ad4f8986003f38db9251fb694c4f86657e9ec18",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-for-of/-/plugin-transform-for-of-7.0.0-rc.1.tgz",
+        "integrity": "sha512-v09o2ywKHu+b/vkLknjKPV9QXCxuU2cVFxkWhBqcKwl3ERe3clhiab7a/8T9Sc332o4Im6n/LLugKMtpfxqRsQ==",
+        "fileCount": 5,
+        "unpackedSize": 10319,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbbJ8bCRA9TVsSAnZWagAA9h0P/3utJLV8fZaIDN1RQ/UN\njU5U8tqVukdXwL9c4i2MS7Tx4886APqV127NiZe2jFKaHFh90+1npKYdHWWn\n8EZNjyKqsvDt1ANYEL9QS9TI4EeTghKw8jZJ4b+i5SfPSzsXEEejxCBJI3cM\nXQ+V6OgD4lwavmXm8FGk05M80LNMoyKfmYsoexh05rQuIDogJznsQeXQsrfr\n4wMLfciFxIA1SOe+cPjgfkmXwCWomSWM/ZTXHbdjzUgQjcm8cVdxdIZn2R9G\nbs7j4Gxf76LS1Hd+ulaZEbx9vDJePCzHcD96Z3OL6yG08V5JvF7RLBRTYXkq\nP2wzxVpZOZEuArJ4aa+gY+vNbWAU54g5+kmt+BfVVsKZRso8/rxaxxwGXEfp\nyKc+PWlg2+SLngtH78fb7GEcNaQnE/CJkWUFyoLFJzy3NsPt0IyzBbnk8fDL\nWMb9XNnU8ahHflw35+DEWTBKGrQU5iKtqsiBJNtenOkZC+m9O56gsqpTmRJg\nn0Ym09UXp6VrENxQjcuCayDRs65IqeZt8T4ZNSYz+NzPtgeLx6zoG35/XBKf\ne+78WqQR6LW34iJwe3qcymzTqpwX/mFIp6cNwD/G+4lSH0uWxI4rCyJ8LG9V\nI1IcBKKPE9j1zuloeF57E7KdRJXGITc51/M6mt714zbP2gyHKodzLfdyUEUU\nEWMw\r\n=93V8\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-for-of_7.0.0-rc.1_1533845274859_0.6539571395229333"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-rc.2": {
+      "name": "@babel/plugin-transform-for-of",
+      "version": "7.0.0-rc.2",
+      "description": "Compile ES2015 for...of to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-for-of"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-rc.2"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-rc.2",
+        "@babel/helper-plugin-test-runner": "7.0.0-rc.2"
+      },
+      "_id": "@babel/plugin-transform-for-of@7.0.0-rc.2",
+      "dist": {
+        "shasum": "2ef81a326faf68fb7eca37a3ebf45c5426f84bae",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-for-of/-/plugin-transform-for-of-7.0.0-rc.2.tgz",
+        "integrity": "sha512-6alRFzRGQEYlsYsm/WCOZ3+XND9f+/Pj0wkM4+uWPy7lmYoUHLVESGYJc8wFXjk/diNYzjowrx9JZn6sn6lXNw==",
+        "fileCount": 5,
+        "unpackedSize": 10319,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbfGbGCRA9TVsSAnZWagAAe50P/3q/JRYIimXA/2NPC0gZ\nfjqhXFX84OKSO0YBidZbmiHX4TuQHMSq5nKMbl+U9zjhUQ9VjBwwpqkPBk/F\nsJy88utTBbXFb+A/LrFhUptKAAnNQSHj+tbm0BhJVBmTOMzgM2osdLtQaqQr\nogyIbSKp11tyofW0VRPOf5+1AmTeKCR8Mf34Kl1cHLbqC9g46bnPL3tUjLqV\npK9iM44VaA2LvZ8NIJ3y3uraEK6Oi+t4nEctIT0A1IoYyCOEd0JNaB8FwvBI\n6+S2X8UFcNK+Slbkk2mzvw3d9BRM0KykCHELVUoE4UT8/z3Y474hHx1OLfe2\nyebP190s3m2rLy8nccmugCS5VprctQp595i+bwegart8j0dyvtrZNTtBz6DD\nTwZzuq/rCWxyW5NDFgCnkwGwCVm15PxLRuW+C3kwYG90VRtDdohAqd20QmF5\nmt1DaPyYcp9sqnoX4B3XiDUrLGDzqVFIra9oksNjiNstkoKYYw5FiMA33Ggs\nZprA1Bk4ge8yA5r7S1jxcMJBlR+suC+g2BsAqIMs1is1WKmqnQUpxLWfgf+n\nK+cZZK5MAtVWvZ7HLH0VB4pBTiQ81wy2WJ/mpT40Ud4B9fUCarGIN/UWcZ4p\n+Rzf7imc7pdaWzl2xy503HqBE4soyJYi9UwlDi9QYJ5BK1uLIq2J4pcK0CR7\nBFNe\r\n=X6kW\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-for-of_7.0.0-rc.2_1534879430011_0.14939680679890444"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-rc.3": {
+      "name": "@babel/plugin-transform-for-of",
+      "version": "7.0.0-rc.3",
+      "description": "Compile ES2015 for...of to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-for-of"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-rc.3"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-rc.3",
+        "@babel/helper-plugin-test-runner": "7.0.0-rc.3"
+      },
+      "licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie <sebmck@gmail.com>\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/plugin-transform-for-of@7.0.0-rc.3",
+      "dist": {
+        "shasum": "e4444180fe6f4a2a5244e9398cf8cfd3b7b9b1ae",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-for-of/-/plugin-transform-for-of-7.0.0-rc.3.tgz",
+        "integrity": "sha512-gYMyNOFt+J6ZPsUm/tY/suc2oySv0Klp5MUqUgvhOXvfMexzS5WFzL3gG2aI3buSoi2GswC7mULttx2GA/N8UQ==",
+        "fileCount": 6,
+        "unpackedSize": 11418,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbgEl8CRA9TVsSAnZWagAA1eYP/3I1nJGL1LfgdfdKmVib\nTTP22Q7IoeXgJxWjtbQnJzysudxranxyiyQcfpG8aDWybDBrCNOh5SNNkwXq\n5g87QoHLwR3tABwWhSGJhE3y01Kof4yZ8V+emTO8m3yVF5RuHSm2y7mqBMxA\n+NhoboYPwBnPbfPBX3KGuDfOokcgzWpjGRZsaK1+M0SyMNXLbcszlBLZLgMV\nCTSCdAYbX5HCogzW0Vwm15Yx/e9wq7eLZHi+kmMEqDTMTOUZFhkaJ7XTZd7z\nbNiFOtjcuNVuxKP8UXZ6xq2OBmP5MxX/BEVbBqCIb1aLjRVX7MsqktSC0fyo\nZ1lQI3kVInyJkQra2C8ipl/j6ORuIGL8TrfSQymC6NQMMp0okqcCo5AYVUcV\nThLb3FGpMLh1Juu9cxu1f1zZ+hXpdxOIcz/jqrhV0G/6WcH2XwFPesAmJ9EG\nRt4yeZllJqIspkr7W40MtG/qvc+JxYD73GajY2nT3yHipkzBOW08A7EgmQKr\n6SA8aW0nPm07Rk2hGYVFz3xxqyB84E/URBGFFsJsBibEh2vRYTC9RNDOjIRw\nJ8VIMl9aSkaFulZ/XbXG6Vpp+d4Z5Ju2ren6ocPFH3uzCCDT71U8XHYnNUY7\ntT0Ly9h0I6h3zocA+EE90azxWeoYp8SEudVL7WqKKagIk1m4yoIC6TKffZ0P\nyESi\r\n=kP6q\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-for-of_7.0.0-rc.3_1535134075723_0.412150817873832"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-rc.4": {
+      "name": "@babel/plugin-transform-for-of",
+      "version": "7.0.0-rc.4",
+      "description": "Compile ES2015 for...of to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-for-of"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.0.0-rc.4"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.0.0-rc.4",
+        "@babel/helper-plugin-test-runner": "^7.0.0-rc.4"
+      },
+      "licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie <sebmck@gmail.com>\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/plugin-transform-for-of@7.0.0-rc.4",
+      "dist": {
+        "shasum": "1c027b8047f39cd8fd829cbaff8066aec35d0e30",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-for-of/-/plugin-transform-for-of-7.0.0-rc.4.tgz",
+        "integrity": "sha512-8KNUC8vcavZc+1j9L3JQcdsbMuD1/eTX5UF+7C7nCCntTx4v+epwfsk4dHGkZ0+qK35JotYX+oCXaRVeWqN84A==",
+        "fileCount": 6,
+        "unpackedSize": 11421,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbhCpZCRA9TVsSAnZWagAArpoP/R+LSJf6/jsb7ltBGPd/\nYN+xGKjmgJP/tDK82Hi5Cj9yLs/7jRH3EUMEA0XaLkM8Gdw/SaxCpAiGNzbv\nwiQIcYDIeF7/U6gDiK4Qjbqz1QaF97W9UnNzsyZ5upDfoZH01CTNDiUrPDz5\n3WqiD18k3E3Yd62APi44/piEYPr+LCAGSOzjBBqnTzoFSROmPV0JTngguHhz\notfu4L8SE4Y3boeqTKhDWQNBNUjCybVvOcrriqP/2no3lv4BCEdm/SqCrheX\nXdFVT48uBdBOe+cx5HdRb+JS8S0KYmpawl9c9kZRA2BqTuC6njYBewWColir\nw8pbSf7v1crSWgXYhlFKgRXy+h8GSAD8/flBv+xohkjBRL2XX07vUOWFt0UA\nxukrCgfvXGqCrKfL2EZ6/1tWWaLYHi4Hekbz9Rux0ZZyE5/Vnt1MBnWVe37O\nvsgoEKPz4AeSKUNt/vRRC3pDZ5COELK7fS2x9pSj5luaGVttvXDS0ruOHZGV\nW0/I5AdzxvA5VWdkhX5QzV53dskT8fBykEYEkl/fxAk0/MSwjAVYd1vpwnFW\nvuLHAm3mzWUPnfIUbnq8SkU8ZE5iwto5EUmNp5RQON2BLqPckLtpoNIVNl+G\nqfcgBXzhFabVCocKjJKHJG9jKeGU5HO+vY5Ikmc7tJGLqt3M0Cqa5236MomC\nuyc1\r\n=bs5X\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-for-of_7.0.0-rc.4_1535388248969_0.2760870451707249"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0": {
+      "name": "@babel/plugin-transform-for-of",
+      "version": "7.0.0",
+      "description": "Compile ES2015 for...of to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-for-of"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.0.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.0.0",
+        "@babel/helper-plugin-test-runner": "^7.0.0"
+      },
+      "readmeFilename": "README.md",
+      "readme": "# @babel/plugin-transform-for-of\n\n> Compile ES2015 for...of to ES5\n\nSee our website [@babel/plugin-transform-for-of](https://babeljs.io/docs/en/next/babel-plugin-transform-for-of.html) for more information.\n\n## Install\n\nUsing npm:\n\n```sh\nnpm install --save-dev @babel/plugin-transform-for-of\n```\n\nor using yarn:\n\n```sh\nyarn add @babel/plugin-transform-for-of --dev\n```\n",
+      "licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie <sebmck@gmail.com>\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/plugin-transform-for-of@7.0.0",
+      "dist": {
+        "shasum": "f2ba4eadb83bd17dc3c7e9b30f4707365e1c3e39",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-for-of/-/plugin-transform-for-of-7.0.0.tgz",
+        "integrity": "sha512-TlxKecN20X2tt2UEr2LNE6aqA0oPeMT1Y3cgz8k4Dn1j5ObT8M3nl9aA37LLklx0PBZKETC9ZAf9n/6SujTuXA==",
+        "fileCount": 6,
+        "unpackedSize": 11401,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbhHBpCRA9TVsSAnZWagAAX/8QAIK11n4qI2q+OoRdSl90\nnIPq4lv7QVntl4U1tMViXSebgKbxafzifTCZhZHZfXrkFpatRlr3rCdCyt15\ncJVYDiOJqWJUiDabOkasOCKjpV9qVgF9zlkFxhZXtoP6vnQI+iAsWRrL78uM\nDuvpJf9FjZgJtnZfm+/aPP558w0guQ+fyQzSMSmEfP+mIiIUe02olGVx12RI\nrRNdVy6CRAHXzadbvAp5e6VHMowhoz+mTxawjRIeO8fHMnt876xfsOGXE85/\nSsx0Nn6iex/MQuapAGKJbl1lD6TeKJ/XbhsMM3GeDfrVN5K7QXKq05Zl7HCG\n7T4bIwWaKv1ocKP29O+XQKteldEWyh7M0rTA2zCPMGSIPJd8Jr5GTRzQDF3D\n93s8Q7Bow40FAVBzgNHrcQtchadYbmLTliJR2Hnz4fxx8oGqE9AMGz/WW3Pa\nMAj+DOjaur+tJgRWC7AgoxZJoeZKvSelk2hF5yhNGSavEmdBnW8RX+9u2By7\nfX1scpgakNsle6HoasLBPv2aarnG3qc0ojcvptaKL2/UVBx5sK5nieIOWcBu\nIjk11XCCWRRfpieVDRIjT1uzfI+CohFhW5wcZW7tuVSqlUn1GiVWl2tXnqqw\nKgIEnGaRIpcbFMVM+zBkaebSdU3dbelp6MoECbeOkjEgw2hK9f3dcpa4DVv0\nkvHw\r\n=HsTL\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-for-of_7.0.0_1535406185381_0.1043565640475772"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.2.0": {
+      "name": "@babel/plugin-transform-for-of",
+      "version": "7.2.0",
+      "description": "Compile ES2015 for...of to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-for-of"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.0.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.2.0",
+        "@babel/helper-plugin-test-runner": "^7.0.0"
+      },
+      "licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie and other contributors\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/plugin-transform-for-of@7.2.0",
+      "dist": {
+        "shasum": "ab7468befa80f764bb03d3cb5eef8cc998e1cad9",
+        "integrity": "sha512-Kz7Mt0SsV2tQk6jG5bBv5phVbkd0gd27SgYD4hH1aLMJRchM0dzHaXvrWhVZ+WxAlDoAKZ7Uy3jVTW2mKXQ1WQ==",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-for-of/-/plugin-transform-for-of-7.2.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 11516,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcBX2BCRA9TVsSAnZWagAAXEMP+wZ6uYxyaMg5NLDdiCfZ\nIG80LF/MExlEiLycM9ypnoCPIAwp1hmXlyOi3+e788JArCFteCynUroaEK8y\nm146Ro96xTi6agmfHBB4+r/aHoMwtVhy6j1lvx+YL+rwv8lrIFmw9lxXGeVb\nukAb48/hCg2hnCKq+hacvvXKxPZScdIR/frc727GpZ/4ECLw5yuZT2r6xHJ/\njnbD5QmsVrrM9sBOxCnvPTliEs1dlRTBAZDA6LCG/0kyxiUIszTC7YiugCtg\nIhop37AeF2hVHxuiIH6WHvtulSPYX21GpQGGs33Cwyqzi4QY93LQ8L9ho3IC\nByXPI/qdWbQWtHme4e2Kc3mXptoTnMUAeoNEb/DGuNWcX8XRcWkIMpZtclwn\nA0ai4QDyB3qJhYhlSreDEAR1Nc3PxjGkcnBUb9Jj6GJp7Dy6jUP2ngIMcsim\ne5rZE4toWJ/LvIKSDAwwnFS45NmRlY/9N99a7iAYNYxvObStrXsp4o6VLEUp\nBljNvh3NrItG7CeOTURyDwe8pXdwx0o4e0y7fWProYl9cRpW5dbF97RMcMdW\nRcs39d+VZcJ81F4JcHJcSpwmselNi3oS7Rp8SCeXYpSs+NoogcL8gtWU24xI\nRL4mFrfz4VQdQC8cLUXHSeLQmKdEpBS6gjctC0Gn5Gc9lirJfa2LRENo5/ra\noy2P\r\n=+K+a\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-for-of_7.2.0_1543863681235_0.8350892903971929"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.4.0": {
+      "name": "@babel/plugin-transform-for-of",
+      "version": "7.4.0",
+      "description": "Compile ES2015 for...of to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-for-of"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.0.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.4.0",
+        "@babel/helper-plugin-test-runner": "^7.0.0"
+      },
+      "gitHead": "f1328fb913b5a93d54dfc6e3728b1f56c8f4a804",
+      "licenseText": "MIT License\n\nCopyright (c) 2014-present Sebastian McKenzie and other contributors\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/plugin-transform-for-of@7.4.0",
+      "dist": {
+        "shasum": "56c8c36677f5d4a16b80b12f7b768de064aaeb5f",
+        "integrity": "sha512-vWdfCEYLlYSxbsKj5lGtzA49K3KANtb8qCPQ1em07txJzsBwY+cKJzBHizj5fl3CCx7vt+WPdgDLTHmydkbQSQ==",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-for-of/-/plugin-transform-for-of-7.4.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 11450,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJckVSrCRA9TVsSAnZWagAASWwP/1QljcGrPQ95V7Hk6TGw\nI1swST2kN9yn+yJVu/quHNR2nEDkfGDeQ3xR5ZLtNK7UX6rygfk7DU52oTNe\nDUUWRGefyQDLaNDIX/3tZPyJNPGXbnAKYCa6Cr1xV9JYi/SBp6iTNpZcSlpJ\nCY0vvNxVEUM9cHsdYf/gtM1PxNiJxoTPqTypWMZf0EM9rU1CscwXy6/bIG78\nZMIceu+GpSHR7c8HcNv1Aanuc8b/U4vHpW9C3NIrWp46niDfxTpojGzvxKyt\nAGZqiL/V6ns7Is0qMgaeshWEqLijmLWOlS2d+z7MugxzFRe4LKWpUz7gwogf\nwWDC2k47AN1zh4lVedheWLwJCWo2z69VuFW+XC/mSpQ3/Mqp+52qmvXkpAhL\neN1JHlx6hcjTKQq/8kM3399qQ7n7fHcZdYfDyZStu2J1Hi5UPTP7rVTOFRqf\nI7Bod9f2pyrY/FMJxFptMGwOCKKwLQC7wZQpfAA6t0m33J4DjKgzf5zRc9a8\n4uPlajXQUleJX956nR7CRyBdTEUA1bBKZkTFEemw2SmyuvhO2olH6CUbhvIa\nMzOvzooZ/BHE5caiKeDhUH8UNdJRr+R17D8jGAs/uGxF6RMFBNg5ldkg2exb\n4XXBLPmFzpcYTCspDnA/rR/i7R2UDQh0iM65rFp3W9WlXBtYcpWyg9H7CErL\nEd9g\r\n=5/4D\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-for-of_7.4.0_1553028267237_0.011536193703352016"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.4.3": {
+      "name": "@babel/plugin-transform-for-of",
+      "version": "7.4.3",
+      "description": "Compile ES2015 for...of to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-for-of"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.0.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.4.3",
+        "@babel/helper-plugin-test-runner": "^7.0.0"
+      },
+      "gitHead": "508fde4009f31883f318b9e6546459ac1b086a91",
+      "licenseText": "MIT License\n\nCopyright (c) 2014-present Sebastian McKenzie and other contributors\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/plugin-transform-for-of@7.4.3",
+      "dist": {
+        "shasum": "c36ff40d893f2b8352202a2558824f70cd75e9fe",
+        "integrity": "sha512-UselcZPwVWNSURnqcfpnxtMehrb8wjXYOimlYQPBnup/Zld426YzIhNEvuRsEWVHfESIECGrxoI6L5QqzuLH5Q==",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-for-of/-/plugin-transform-for-of-7.4.3.tgz",
+        "fileCount": 4,
+        "unpackedSize": 11309,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJco75GCRA9TVsSAnZWagAArDcQAIRm0DqaHYLREhNj8+R2\n7zy2THNnbsE5wa270qFVITLbvAPIoYHKoiRWZXQ7CXjfOY6wIWpHC1knKOUB\nE61pBnaApNLdETBDaewgY0dl/57zb1d5/t3lcajRxffWzfyM2O7JAI4AI+PZ\nnT7vBVFPZ+ZVe9qBwiom+VcPJsvORqFZ0eiJbtaKdMMk6QGctCD5TIXN6sbF\nVBg1fQRBHE5wWhxUdxtbDSR6FQzhfOjqjIY9/UOoI6NPqsGU9Hdkyc054vSK\nFxsxkdgh9vJZ/y4jMt13SB1KuSVvn3LYHgr02sXV5qkoIfEs6zm19C25knb2\nmUBtQUBmb443SU1P7U6BQNkwKypDfL/ycNIycJpP5TJZNMdJLOWwL5M4fGlZ\nS1ctC9xvrqi+OuuSEEz+/L+yo4uEemh5EvWmKF1h8ddkdgHmn8QSdOja/GUg\nNmoo9v8Tfh3Ib3mbxp/q8GLy+8oKFy5HCWn+rV0JH0fwopcJn4rCYmdAWXA/\nRfofujSWiJW7S5UmMRj7+e1ZaIwZGa6HG8oSnItK856ruYuy8WoVf6ls0hH+\nbWi5c1P+7p6M5YLFa7Pd7KcO+zHcpLZe98yqukiZDJdsGErzudp5dv6JTpFc\nJNjy8XQ9N6yUxB4DTxQ5EH294aAtfM54oBDCxCrQ0IXIrQ71SpqtB/dUhtBn\nkg3b\r\n=MBgY\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-for-of_7.4.3_1554234950112_0.10458295194777478"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.4.4": {
+      "name": "@babel/plugin-transform-for-of",
+      "version": "7.4.4",
+      "description": "Compile ES2015 for...of to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-for-of"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.0.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.4.4",
+        "@babel/helper-plugin-test-runner": "^7.0.0"
+      },
+      "gitHead": "2c88694388831b1e5b88e4bbed6781eb2be1edba",
+      "licenseText": "MIT License\n\nCopyright (c) 2014-present Sebastian McKenzie and other contributors\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/plugin-transform-for-of@7.4.4",
+      "dist": {
+        "shasum": "0267fc735e24c808ba173866c6c4d1440fc3c556",
+        "integrity": "sha512-9T/5Dlr14Z9TIEXLXkt8T1DU7F24cbhwhMNUziN3hB1AXoZcdzPcTiKGRn/6iOymDqtTKWnr/BtRKN9JwbKtdQ==",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-for-of/-/plugin-transform-for-of-7.4.4.tgz",
+        "fileCount": 4,
+        "unpackedSize": 11309,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcw3I/CRA9TVsSAnZWagAAM+oP/3gUOQ3zi1Tj7bpoA2LB\neuyLNLJSdhkuJ5vXDVEpJChz57V4VjXRIaVin25NzUYzmii41SbYO93A7ciF\nZgVFKdmFgJ9J2OoUGIFK1Oi/qXoVgEM3sgZ3HyLUShsc+8szDC4LOf/3f0p9\ndQ9g1XugPer+UWR0W7UPoBkgejZNQzUAbES1m8qs2Ofao+gmpLvGkHHJphmE\nwIILGly6w7mu/87TChjmH76BaCDaVzftYGbkJ1pIt6QFoPzC6pROHqstJP4k\nr016aKS9gt4iY6Unr3i+85s2dvAuA8S2RO5iqoQV3JLAATHLgw2rD+Yay7IX\nFfDFakbVc2WLxP29/n4lsvC9SRYrxoBT/8B3wmsjZjIcopoiVuEnJr2yV6T0\nWF3NP0gMKz6hjOuh3A+rHXlXdjx94TABlNIgz8befnlin/PtJBQiU8+lJP+W\nvXf4/GCP9iUgnLJy7FXBI4u8OFQEoULwbl0VWdcPJaEhl/MEPNaIzpNwe+9J\n4Cnb8mu/OVmJ3MSZx6gcKzDZHBVgM5RSa4xMFrr4GcC/4KrEAKElkEoQzQWH\nY6A4v8EDUU9CD/zx871h+KrO/DkLm+Q1A+KhoZuk+t7hBd4Qe425+hsb7Uan\nda1jLR8wliNnFqIANVOISSBgsqBISodRscL/1c65AAhD+JEUh464q6CyGdHk\nYiWv\r\n=0qkl\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-for-of_7.4.4_1556312638536_0.7484554531929701"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.7.4": {
+      "name": "@babel/plugin-transform-for-of",
+      "version": "7.7.4",
+      "description": "Compile ES2015 for...of to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-for-of"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.0.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.7.4",
+        "@babel/helper-plugin-test-runner": "^7.7.4"
+      },
+      "gitHead": "75767d87cb147709b9bd9b99bf44daa6688874a9",
+      "_id": "@babel/plugin-transform-for-of@7.7.4",
+      "_nodeVersion": "13.1.0",
+      "_npmVersion": "lerna/3.19.0/node@v13.1.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-zZ1fD1B8keYtEcKF+M1TROfeHTKnijcVQm0yO/Yu1f7qoDoxEIc/+GX6Go430Bg84eM/xwPFp0+h4EbZg7epAA==",
+        "shasum": "248800e3a5e507b1f103d8b4ca998e77c63932bc",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-for-of/-/plugin-transform-for-of-7.7.4.tgz",
+        "fileCount": 4,
+        "unpackedSize": 11000,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd2G/5CRA9TVsSAnZWagAA9AsP/2S8mT2cBO0iInMb9tbA\nZL+8wuZSaotWSTF+vxmA0X5CkGBdHsr3nL9GDg9IiibeL7TPsw3mrf8QeYsJ\n2h4OWLDX2WcLv5us/NNXAL1sKonu+Oz201E9zUmUiBiALLgRH0PvS0+3HgVI\nV6lAkzIhbDSDqGK/cg1Oa4rMrzwVjjRRTeiEEnO4KKgSJLUilqVKyeD3I9Lm\n0RDR+GO+JV3jY4iIAUzFuXrmG0ymv1kOGEiIkMe8ESTlqgIKG4EBxq+oWTbS\nAEq150FSsR8pXZwMsn/9seNn4XPghbXKnrgdKwYhkO7VI1wvIsk2OCcjVv76\n/mS/sWASa+pz1TLLvYJrATnQ6J+BkibCheBZXYH7ZemflHWe+dunpWPSusMx\nUV/UxnJAdt20v/QwUWQfhew2hjmTCtja5iQiGs/nkM3FB8+eFqGA4NTb90kK\nPTTLCuvziM4ZDOPqi5fsQkAdWBEYeGWda0FTmShB6vIQy1v5ZGZEaHsqQLj1\nxgn8go6HHeYJ4TsJ0aD9RIye42p6D+0Tni7oDc1E61aPqdCNhLbdLolooJNc\n2c5rVI6LYhKwjzEuDeNJ+K9twwT8R8pC4DTV0AaY7VUxO45nZHOFG6jiiX1L\n+/iQHqVw9/psNse5QmIqNwvCDLwiYHDV8nJ+nNVCqcYW0UUHgMmR43S68W4J\nLkq1\r\n=bMnH\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "jason@developit.ca",
+          "name": "developit"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-for-of_7.7.4_1574465528840_0.5392563427564439"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.8.0": {
+      "name": "@babel/plugin-transform-for-of",
+      "version": "7.8.0",
+      "description": "Compile ES2015 for...of to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-for-of"
+      },
+      "license": "MIT",
+      "type": "commonjs",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.8.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.8.0",
+        "@babel/helper-plugin-test-runner": "^7.8.0"
+      },
+      "gitHead": "2486615a74580283c49475d66067bd7fcab3330e",
+      "_id": "@babel/plugin-transform-for-of@7.8.0",
+      "_nodeVersion": "13.6.0",
+      "_npmVersion": "lerna/3.19.0/node@v13.6.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-9j9g0qViCAo8E5qCBSaQdghymn7A9bRXSfS9jU7oLpYccYFZg9A+1KO8X+HV7fhJYH6mZ+e7MRg4p3sLo+RG6Q==",
+        "shasum": "4a2960b76d42f4cc8a821edb66f4a7eadf6042ce",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-for-of/-/plugin-transform-for-of-7.8.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 11022,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeGmVfCRA9TVsSAnZWagAAxj8P/0iu74nAa8hHigjgLEaz\npqWAfoswCtxJJcO1q/IA2x5SreHylYIGB9sPaatfbcFAF9S7SbDJZWFV9FiN\nGkrGPkGllxF1rmzvClTDzdIz2ML70LJLmCPUcsbCCJSA/B4PqB/Znr43P8Vo\nWUulDxHAIOO8iZ9ifq8hmAI29BIc8zT7PwzNz8CZ6ogUrQbv83oUy3dbDgdf\nYuq6ojBiigf76xE/Ku8NbxSt8mVE5NjibRplvgoCQP1y33Am+8PvOST24J6O\n2pnDKXy8fxYhv7MFMNy10lhkd3kZVgNfG7FU0gwpejsVmAsuEdieWV50wGrN\n7yWsgW2wA9PrU49pvpXR/NG8DoKufxuRN3U3cahAQCDcgpQDwQ9aAYu8vpkC\nmhc6z252/+szbpgDostS6RQvUec43lKMXd0T1L+3/DqLoZTMZz3nTecjxxRA\naa+DnEx4z2m5DPRuuZTF1iGvBf4Tg96ETTNnxNa9KiqjqrFaAAM6VfHvT1nS\n1dZFvfkDIEps2MsYdqfJlbxpJbaDJz6jTmTqzw3WZkwbvS78Jtnahg30msNK\nagkJFmXxJXK3UggbOGBiMaVbZdfUuz2EjI1FGXDllyImljrZiQS/EDZ6ORVf\nitnUMZZUt7jNh+b61W9wD3uuWim8qFG5u3/nWdMdn+LAFP7D8fsxuLBjZ0GK\nSJuK\r\n=BNKO\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "jason@developit.ca",
+          "name": "developit"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-for-of_7.8.0_1578788190752_0.3445309851604921"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.8.3": {
+      "name": "@babel/plugin-transform-for-of",
+      "version": "7.8.3",
+      "description": "Compile ES2015 for...of to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-for-of"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.8.3"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.8.3",
+        "@babel/helper-plugin-test-runner": "^7.8.3"
+      },
+      "gitHead": "a7620bd266ae1345975767bbc7abf09034437017",
+      "_id": "@babel/plugin-transform-for-of@7.8.3",
+      "_nodeVersion": "13.6.0",
+      "_npmVersion": "lerna/3.19.0/node@v13.6.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-ZjXznLNTxhpf4Q5q3x1NsngzGA38t9naWH8Gt+0qYZEJAcvPI9waSStSh56u19Ofjr7QmD0wUsQ8hw8s/p1VnA==",
+        "shasum": "15f17bce2fc95c7d59a24b299e83e81cedc22e18",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-for-of/-/plugin-transform-for-of-7.8.3.tgz",
+        "fileCount": 4,
+        "unpackedSize": 11000,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeHOQPCRA9TVsSAnZWagAALe4QAIz7nWLsB+zXEWNEOsCt\nzJnyISl3uPAsDRGIChT72T+NjSHEkxTzTbuhZyfUUj5lkzCCFSSudF08yVRZ\nsXXPWMBU5ZSClwUr+QHqqutK24hEx+DyTTfov2jX/tZdaWOapRvCtC4WMzQq\nQ+Ri5zWiC6WOfcu/W36V4iy1S6b+roEZFOziXtx12Wsy6PGNCU6iuyGjyHc9\n5CQUPsRb0TbfsmTm6pboqYX/oSaQz8qnAfUt6s7EFFSHbAmJMCFAKiIXH3An\ns5FCxt3v8kFUzq6QhQS8a745AWNOcjDMSSzUzmfCQbRp5Ba8iYmyfNfNy/V/\n/MdfZe93HIa7dt46+vMbLmyioVYCqRMGudEwwjBZU+orxnybmHjBo3kwHAdf\noZt7T1vrXG/ChDadsDz3SJqsHJyJMkDURvjRovcoHHZjWxK+FPuF/ANSKo8A\nE5Oa+akIRDHHvaHQyWaZ0V28Wk21wHsUH/MsRTGCgEfrftmrOfG0ePGM2+QU\nUlvny0asMJke6Bi4ihJ+zXuDFByELvoRHrY7y95+bbtMn56ot4v8F6YcyCW4\nSKvqF6wEkRwFTOGro06sL016R+tCOQsCujmx4FSbelUbKo7sFgpbQ47sqP9l\ngqIF+U60MYJX22GGQWpTPKp/eM8Qs2WdPQU4VEjNtLmzuLS/66xBKEWDKQuB\n9CY0\r\n=qA4M\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "jason@developit.ca",
+          "name": "developit"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-for-of_7.8.3_1578951687917_0.07701180094929261"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.8.4": {
+      "name": "@babel/plugin-transform-for-of",
+      "version": "7.8.4",
+      "description": "Compile ES2015 for...of to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-for-of"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.8.3"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.8.4",
+        "@babel/helper-plugin-test-runner": "^7.8.3"
+      },
+      "gitHead": "5c2e6bc07fed3d28801d93168622c99ae622653a",
+      "_id": "@babel/plugin-transform-for-of@7.8.4",
+      "_nodeVersion": "13.7.0",
+      "_npmVersion": "lerna/3.19.0/node@v13.7.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-iAXNlOWvcYUYoV8YIxwS7TxGRJcxyl8eQCfT+A5j8sKUzRFvJdcyjp97jL2IghWSRDaL2PU2O2tX8Cu9dTBq5A==",
+        "shasum": "6fe8eae5d6875086ee185dd0b098a8513783b47d",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-for-of/-/plugin-transform-for-of-7.8.4.tgz",
+        "fileCount": 4,
+        "unpackedSize": 11087,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeMs3yCRA9TVsSAnZWagAARv8P/jglLdw2cqlfsBGUZk0j\nywg42oFaLjiTYUBr40OEEeWreHrUw4HkL+Q7NA10YrSHJd9hV5wosTRVZR8V\nV4WwLxI0ZyMGS4Q7sXnNkVUVSO7xK4nkesdcXKpr7m6icQxWVDnTCqll2ZoU\nGvgH1OH6Z4/bOBeE5Zz/2RfnsypePhFsDXtGGDqKrT62m7LptBb/hfgoL3cA\ntPlFAehgm52l4BmL02dCY1AIld6QBygEnZDR/NE7jORJseVVcB83lho4ELcX\nQrUJsTmT7I125mBKU1lyja3TK5h1ONKC9HRmgEHNeYBrAw71LtUzNEHQ2qIq\nC0DwS/OuqN4vZ1t/UHSD/KwE8Y6FRFoUkbE5KXpHXsH+GUdNUIWkzAAHvbMX\n7c0S/T+ZEsW3ljXaA4U6++nOa+L/Pfaf8DFhqIiX9OLNibs3Ac+dU8+aJ9O4\nYXOp4mxdRC0tkTtJBZxwctsWsTYiyRGr8h8SYvHhcW7tnTby+Z9GzMj4Uo9Y\nSHvjcZhyirGz/TDvOYZMRjWF50Hg7PE7U6lLsv50M3eojRBoqswEgxOwEAgi\nxGYsQGRQj2ByPz4bHE4eW4JDe/W+EdoFSFgXG92ZXT/l89hreU/D2ifElLZj\n57uxY/HqSVM4SKa/vykiXCpy1OCJRDVvPFURa6qEqFujwi6EA2RZCmtiftbn\n3XJh\r\n=rTMi\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "jason@developit.ca",
+          "name": "developit"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-for-of_7.8.4_1580387826565_0.10239162889536879"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.8.6": {
+      "name": "@babel/plugin-transform-for-of",
+      "version": "7.8.6",
+      "description": "Compile ES2015 for...of to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-for-of"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.8.3"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.8.6",
+        "@babel/helper-plugin-test-runner": "^7.8.3"
+      },
+      "gitHead": "750d3dde3bd2d390819820fd22c05441da78751b",
+      "_id": "@babel/plugin-transform-for-of@7.8.6",
+      "_nodeVersion": "13.7.0",
+      "_npmVersion": "lerna/3.19.0/node@v13.7.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-M0pw4/1/KI5WAxPsdcUL/w2LJ7o89YHN3yLkzNjg7Yl15GlVGgzHyCU+FMeAxevHGsLVmUqbirlUIKTafPmzdw==",
+        "shasum": "a051bd1b402c61af97a27ff51b468321c7c2a085",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-for-of/-/plugin-transform-for-of-7.8.6.tgz",
+        "fileCount": 4,
+        "unpackedSize": 11386,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeV7RBCRA9TVsSAnZWagAAzxQP/i9mQ6TUwixTDrIWBXh0\naI2YkWFNX7akOqjEkOEsQnBGDVfiSWmQYL14tPlAi33gkNHnLO6jcYduzVoV\nHxFZ9/TxLmvPI5MogDtZXevoXtmexFl97byhLZocS0PmtiKwcoGGV1xfQ/Db\nxaTInzQoTF44U7IIhkxprove8gBK+zXphwzlsi7v2OzJK8ON3LxgjDBZBKTq\n3WXj2Ulh1/4sgbHt26ZNfdMDGJJowWPuQs2DUiX/eyWpK9b3GpTpa5x3vEPU\nA/vBLGd6MdPnbR3BfrB7BXcNrreFHoOA+2m1urvpcXc4TMShR2jv5kj/pQaU\nuHO2sCxBgnF9aeu2hsPb1oLAF1M1yu+om76mI1nFxMNKiFzDTVOeUV2Cp7ai\n6DkPk8Yleva5szeT9EWhEOInMLhMSqCTbswJprsIUKGwx6o2g3GiGPwLp4Mq\nU9+Yikx7QH6FnU5Uv5QRa9t9hCarg2MSxRNjId0A8/KOavQL1ayClubxsbM0\nVYkvnLeLgkx5PNb0pPmFz/2FO/A9slRZRzfj5N2tVgGhIXtYNLWXGJfiAIWT\ncG+WTf/tNs5SBsLfgvJAZu8zt7o+ZAgAMsbvN95CAITikJYASazXlsiNq0Qf\nWEAYA13lRpFdKQDQAK/X4K9JOhckbvR15mmduLiP3cRzCXGQNkl7dDYTQXkl\nJ/KJ\r\n=J3tM\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "jason@developit.ca",
+          "name": "developit"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-for-of_7.8.6_1582806081476_0.3466205436190555"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.9.0": {
+      "name": "@babel/plugin-transform-for-of",
+      "version": "7.9.0",
+      "description": "Compile ES2015 for...of to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-for-of"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.8.3"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.9.0",
+        "@babel/helper-plugin-test-runner": "^7.8.3"
+      },
+      "gitHead": "8d5e422be27251cfaadf8dd2536b31b4a5024b02",
+      "_id": "@babel/plugin-transform-for-of@7.9.0",
+      "_nodeVersion": "13.11.0",
+      "_npmVersion": "lerna/3.19.0/node@v13.11.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-lTAnWOpMwOXpyDx06N+ywmF3jNbafZEqZ96CGYabxHrxNX8l5ny7dt4bK/rGwAh9utyP2b2Hv7PlZh1AAS54FQ==",
+        "shasum": "0f260e27d3e29cd1bb3128da5e76c761aa6c108e",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-for-of/-/plugin-transform-for-of-7.9.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 13440,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJedOOsCRA9TVsSAnZWagAAn50P/A9SaMZDpjrn43C3pC5M\n42prl/yZbDSdUPCw7KVsb0yrK68Bsna3aQjU32kkwm/52XX0vHXf5mrF5X7Y\npCngFos8QPXIQQ3Z31R55JC+Ay3kAmCl6TZDCaC+xdx2fVUXiFlKjqT5TyvP\nOgjd10De5xlzQRRb/94/nehvdu+PJzoGinGyOVq17o9VM18fe/fU5SYUp0QU\ny2m/jd9xC5Fk57TNmCzipqvdRG11nvEbBxEHCr9TUKLTTyB8cOFylw02DoKC\nE/iwbPKdTTTJzLMXSXOpOuzbsOKSYOR0yXnPumawQbiw5yZPidypg1+uWEIJ\nHneAGF7EhV4w8ielWQiuIYk13cypTp02ijykoH0OKKTI2PQGtyJ/ljJsnXoR\nVIMngaByIJN30SqCdcXYQe5aOGhuUEdmVMFaUR125o3wRSsLOb4XjNyg6FRQ\nfrPKLUA2+N+rslM51KNomS9b68z8H43X2VWXp34JdTIGG+zsSufvaB2nxh1k\nzE6CnP5jcAlno28zJh/eSMKU4Up7favnnAqA63q+PlaM6o1+x4Q80IqZ5iIm\nDTscyY5Fc206JDi8ZKnVfaiz0OIlQY3DTP8q7ds/EbRU2DFKqZfD34yygRjP\nbLLMdLWZ92L1rD1kVn7npZ6Y4burk+wZsoEg+h/lv2jjxTJc5wNAvFvUFoJx\nfEkW\r\n=jNwS\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "jason@developit.ca",
+          "name": "developit"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-for-of_7.9.0_1584718756400_0.5522189587191002"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.10.0": {
+      "name": "@babel/plugin-transform-for-of",
+      "version": "7.10.0",
+      "description": "Compile ES2015 for...of to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-for-of"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.8.3"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.10.0",
+        "@babel/helper-plugin-test-runner": "^7.8.3"
+      },
+      "gitHead": "5da2440adff6f25579fb6e9a018062291c89416f",
+      "_id": "@babel/plugin-transform-for-of@7.10.0",
+      "_nodeVersion": "14.3.0",
+      "_npmVersion": "lerna/3.19.0/node@v14.3.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-0ldl5xEe9kbuhB1cDqs17JiBPEm1+6/LH7loo29+MAJOyB/xbpLI/u6mRzDPjr0nYL7z0S14FPT4hs2gH8Im9Q==",
+        "shasum": "ff2bf95dc1deb9b309c7fd78d9620ac9266a3efe",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-for-of/-/plugin-transform-for-of-7.10.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 13924,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJezY1zCRA9TVsSAnZWagAAXdQP/1dG//ZgDa7pQfMpM2wR\nJN6kz4sPn5CCB61VH+6fBiFP6p77YBy6/OJxu9g28i2UTeF7q29L+IA9Ymcm\nu7wQC5B7F3zEQcSLw+RxJ5nHqFl2FQKhI+TH/irdSuGD75n3azWgcM2JtpUm\nZ3cQ2O2VvctswRNg4rp0qmFhSh+hF4xoIUvWhVQ7HmXRyU8FePvG0t2tOXyU\nosZozGu7sAP13XUlUJluE76Z2qiucqdWO33ynl15JqSZXoHl4yAj5VqtsC3I\nRC9hy64rEQc38tdFWC5BtwpXuJDCAsFFMUWbbtu2pApJUN1UCFbY/dqTo/QV\nWU50Hl/xxkyRFtwDgMOa+5Y7uRRrd6v56fmi7uM0UCzQngNUSF5wlfkJKnIS\naTUc6QNZrcUmU63cANhtgbeb+dO2wptUEp5/Vwt/zbpJOOSYJpiZtTL5cUQL\nI4otgKjBYPnZxu41VkOtnanTiPI2yXWoHjt6EAUfmAECjraYXC5bgfSIMa6v\nvEP4XZd3kBfmZR44CwbIRi/GpkoK0o1eHmku5v1zW45GOTiAJng2RSViPJS7\n71lPx8a5v/LIAk+zB6nL1mB+n66pg5wF5hDP1CYPSsWVw7QUku8eZHkEbUp1\nkXa98us1hDV+mKncI/vEA49Wc0FZx5FrlioPst+h3qq8ZxGuQhbSEA4am4vX\nTkh+\r\n=RMRT\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-for-of_7.10.0_1590529395245_0.12224455338495566"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.10.1": {
+      "name": "@babel/plugin-transform-for-of",
+      "version": "7.10.1",
+      "description": "Compile ES2015 for...of to ES5",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/babel/babel.git",
+        "directory": "packages/babel-plugin-transform-for-of"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.10.1"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.10.1",
+        "@babel/helper-plugin-test-runner": "^7.10.1"
+      },
+      "gitHead": "88f57a7ea659d25232bf62de1efceb5d6299b8cf",
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "homepage": "https://github.com/babel/babel#readme",
+      "_id": "@babel/plugin-transform-for-of@7.10.1",
+      "_nodeVersion": "12.16.3",
+      "_npmVersion": "lerna/3.19.0/node@v12.16.3+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-US8KCuxfQcn0LwSCMWMma8M2R5mAjJGsmoCBVwlMygvmDUMkTCykc84IqN1M7t+agSfOmLYTInLCHJM+RUoz+w==",
+        "shasum": "ff01119784eb0ee32258e8646157ba2501fcfda5",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-for-of/-/plugin-transform-for-of-7.10.1.tgz",
+        "fileCount": 5,
+        "unpackedSize": 13974,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJezuSaCRA9TVsSAnZWagAA0QQP/i/+3fSAMILV9pq2YTDY\n/F1+NvSQ6rXQrjWPDLtxidEfXj6JRG+gkw7lN6UtSyzMKEuUofOm/+Jt7Fk6\na9B97pcORMaYNPlD5uPREivjG4JSOeysjROgxIOHXqgLR7pjtZnhjoaEw0q+\nI16xhSrXuN1L16VIGJ24bPoCh0K0JEi/0+Q9wr9uWl2x9Zo70y4LckEsGMrx\nLUCuOGTtW1dB+0FJZu6NJEx7bLZkYhnRfQwHwglkbBpFYJNHahZvYnCSCS3t\nfnnbc3W+kd5kvAuXBkfZNC3u0j5n2SZ8qblGef7pOfsRPB37JBc2JQHW64Qw\n7ozrqINUIyCcAf4OskULOZ0oZ2kbOJliIo57djHlzS7N5v88SmTq1ZFY+xgg\n05iG84PJHVEsHX4b3khsiFeWOv1jx6mADAZfZoP16Cdi+hulxcWZvz4N1A/5\nU3AzXQsh1HFs1E8Ps1pIJMgO77QRl8za9RLsXBJtk6WQK3ccA1FsatSr+8kU\nT09yu3Jz8c2pOmzXAw7J78iIpvRZvChQB87HwZWgVg0cZAtIrWl1NA16Ddu+\n0k5Sq9WeWphpX117nZn9IMAud8VPaLQrDQCKzH+TP6xcwcyE0QDlDCHjn2WP\nH3q29y77tT8gulrJJ1mdapLyHZp5BkkNLjP8f+hzjOtwR3r0x9wJnkXv9z5Q\nA1r9\r\n=BsF+\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-for-of_7.10.1_1590617242394_0.8774009508527967"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.10.4": {
+      "name": "@babel/plugin-transform-for-of",
+      "version": "7.10.4",
+      "description": "Compile ES2015 for...of to ES5",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/babel/babel.git",
+        "directory": "packages/babel-plugin-transform-for-of"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.10.4"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.10.4",
+        "@babel/helper-plugin-test-runner": "^7.10.4"
+      },
+      "gitHead": "7fd40d86a0d03ff0e9c3ea16b29689945433d4df",
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "homepage": "https://github.com/babel/babel#readme",
+      "_id": "@babel/plugin-transform-for-of@7.10.4",
+      "_nodeVersion": "14.4.0",
+      "_npmVersion": "lerna/3.19.0/node@v14.4.0+x64 (darwin)",
+      "dist": {
+        "integrity": "sha512-ItdQfAzu9AlEqmusA/65TqJ79eRcgGmpPPFvBnGILXZH975G0LNjP1yjHvGgfuCxqrPPueXOPe+FsvxmxKiHHQ==",
+        "shasum": "c08892e8819d3a5db29031b115af511dbbfebae9",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-for-of/-/plugin-transform-for-of-7.10.4.tgz",
+        "fileCount": 5,
+        "unpackedSize": 13974,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJe+zogCRA9TVsSAnZWagAA/cQP/2oBxXOvMZvGCJnfLzKK\n3O9M8IGio9mPeFgKma2wmu545WClGcLVsMKDHvWq+B9xQtTSOHTd0kgUFg2n\nReQVjK0hXyy66H1RzL5tWHnl2avMl5zrRUStCowy9o2L5menmRMYd2ZpdQ3r\nQ390OJY1CMxkAdU9Ru/ov36FA7d1g3Ef22Ve5b9wxXxelcDyyGEKT3J8TOJa\nXlp/LKo0OKe0ysP3xYsUhpG8iPnhAQ0yesAbe1SsKh1gNgFJWZBTt7M7pKYp\n6bwXGF4hMog2snWUj9ZGuXAnKZmeSwO8VEL6R21YI5UIEgIE1kaIIkm9t/Bo\n6ctBmMk/x8e/QIG3JhkYdTHcHKUU/dLim1Fafrea1nXkR6fmd4Xwme4OnEl+\nzI7x5KhCfwsKwuACAlzzDtmR3XUiJ3+zprXNHlK969aIU6Oy9EZ4v/oonRZC\nmg9nUF2k0tfdgyHa6LEl+NpVx47NpRt+ocfeeq2LSC5BjwMb7ST066TcCPYX\nEkOn8Tfvg1j+/+b+X9HSIngwWgPhMW7WUFmogmJShMpedbHW0N2i33InoHAD\nyJdWpA6BkCUsIU9V6vj3taSIbx+gP7QY8PhtdMCbBmvrcCLXyMWaIZAZyFsf\n66tV9mZgc2hsudpq2xh1wv80NCTmaBvzs4sp/RB9YpMx4DG5/1dvLfhDz9xu\nL5mn\r\n=Baoy\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "i@jhuang.me",
+          "name": "jlhwung"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "jlhwung",
+        "email": "i@jhuang.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-for-of_7.10.4_1593522720052_0.9906906649106884"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.12.1": {
+      "name": "@babel/plugin-transform-for-of",
+      "version": "7.12.1",
+      "description": "Compile ES2015 for...of to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel.git",
+        "directory": "packages/babel-plugin-transform-for-of"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.10.4"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.12.1",
+        "@babel/helper-plugin-test-runner": "7.10.4"
+      },
+      "_id": "@babel/plugin-transform-for-of@7.12.1",
+      "dist": {
+        "shasum": "07640f28867ed16f9511c99c888291f560921cfa",
+        "integrity": "sha512-Zaeq10naAsuHo7heQvyV0ptj4dlZJwZgNAtBYBnu5nNKJoW62m0zKcIEyVECrUKErkUkg6ajMy4ZfnVZciSBhg==",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-for-of/-/plugin-transform-for-of-7.12.1.tgz",
+        "fileCount": 5,
+        "unpackedSize": 13915,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfiM/FCRA9TVsSAnZWagAASMkQAIZxpBoP0xEVM2+u2iks\nXLipqId29Ncfj7wL+ixxDNy5p4aniWwEPN9JkwLGAOdXLmtjVI2Dh/5+vNfS\n1z0TeRbsJBD+A8HKVzBctep7rM5LD1Y57eM+92YI1VIDCZ/zBe09hrb/sPRN\ndVsjjg5uhqC+YY5pYYpLqY/c3dcEBTn4H5E7sOuTlW62//tTGzxUXvk9j1Al\n2zv6qeoufSReQK6jxMVvDJnH0vNmhwH4/TSlh7Y5513fJnIYmNrkjnIE/vxC\nxovWzGoUXUraR8OjGuiY0pWOhfofqcbxKTU/9WUTaYD7wAY0XbsjavlufT+w\nwMOlzAA850YzsE2y+ZqyxDSC4g/Uq6iFlZxuP42k/LafVfhW8mH1S7RE+9Wf\npl058im+VwZPqvf52atwa+rUyKiUBUT9Wxb7vwSLv5or/AMpipXB+S2MRGqc\nBljXCbEUEBgrXWeUBNexv3SSnXKr4uvzj4BvpgzUf+QBGQZfzulexV95M2BE\nfyX3QCT/LIQ9me5Ic9M6Eqrwo1YbZXgYXscFsXciqGWBO3xmX1APM3Hqw8yk\nSElwdnsLOLQQ/dwHl3PIjQSHn3fxYPbvwnx+ujyItquXF913Hu5zjFgv9gWg\nxyY07DekxTzCRp4oxFrCCxSUw2/9CY6xIcugOCqywZQkW1pwNxlgFegzYJ2u\nwWPH\r\n=Fgxl\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "jlhwung",
+          "email": "i@jhuang.me"
+        },
+        {
+          "name": "nicolo-ribaudo",
+          "email": "nicolo.ribaudo@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "danez",
+          "email": "daniel@tschinder.de"
+        },
+        {
+          "name": "existentialism",
+          "email": "bng412@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-for-of_7.12.1_1602801604588_0.5531953560860225"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "",
+  "maintainers": [
+    {
+      "name": "jlhwung",
+      "email": "i@jhuang.me"
+    },
+    {
+      "name": "nicolo-ribaudo",
+      "email": "nicolo.ribaudo@gmail.com"
+    },
+    {
+      "name": "hzoo",
+      "email": "hi@henryzoo.com"
+    },
+    {
+      "name": "loganfsmyth",
+      "email": "loganfsmyth@gmail.com"
+    },
+    {
+      "name": "danez",
+      "email": "daniel@tschinder.de"
+    },
+    {
+      "name": "existentialism",
+      "email": "bng412@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-10-15T22:40:10.437Z",
+    "created": "2017-10-30T18:34:35.676Z",
+    "7.0.0-beta.4": "2017-10-30T18:34:35.676Z",
+    "7.0.0-beta.5": "2017-10-30T20:56:15.497Z",
+    "7.0.0-beta.31": "2017-11-03T20:03:23.273Z",
+    "7.0.0-beta.32": "2017-11-12T13:33:14.356Z",
+    "7.0.0-beta.33": "2017-12-01T14:28:16.286Z",
+    "7.0.0-beta.34": "2017-12-02T14:39:17.471Z",
+    "7.0.0-beta.35": "2017-12-14T21:47:43.688Z",
+    "7.0.0-beta.36": "2017-12-25T19:04:35.966Z",
+    "7.0.0-beta.37": "2018-01-08T16:02:29.466Z",
+    "7.0.0-beta.38": "2018-01-17T16:31:51.603Z",
+    "7.0.0-beta.39": "2018-01-30T20:27:32.475Z",
+    "7.0.0-beta.40": "2018-02-12T16:41:33.930Z",
+    "7.0.0-beta.41": "2018-03-14T16:26:06.981Z",
+    "7.0.0-beta.42": "2018-03-15T20:50:42.004Z",
+    "7.0.0-beta.43": "2018-04-02T16:48:23.726Z",
+    "7.0.0-beta.44": "2018-04-02T22:20:06.438Z",
+    "7.0.0-beta.45": "2018-04-23T01:56:47.230Z",
+    "7.0.0-beta.46": "2018-04-23T04:31:09.300Z",
+    "7.0.0-beta.47": "2018-05-15T00:08:51.867Z",
+    "7.0.0-beta.48": "2018-05-24T19:22:20.574Z",
+    "7.0.0-beta.49": "2018-05-25T16:02:05.906Z",
+    "7.0.0-beta.50": "2018-06-12T19:47:15.621Z",
+    "7.0.0-beta.51": "2018-06-12T21:19:46.055Z",
+    "7.0.0-beta.52": "2018-07-06T00:59:24.689Z",
+    "7.0.0-beta.53": "2018-07-11T13:40:15.025Z",
+    "7.0.0-beta.54": "2018-07-16T18:00:05.833Z",
+    "7.0.0-beta.55": "2018-07-28T22:07:15.385Z",
+    "7.0.0-beta.56": "2018-08-04T01:05:26.033Z",
+    "7.0.0-rc.0": "2018-08-09T15:58:14.717Z",
+    "7.0.0-rc.1": "2018-08-09T20:07:54.962Z",
+    "7.0.0-rc.2": "2018-08-21T19:23:50.095Z",
+    "7.0.0-rc.3": "2018-08-24T18:07:55.814Z",
+    "7.0.0-rc.4": "2018-08-27T16:44:09.043Z",
+    "7.0.0": "2018-08-27T21:43:05.476Z",
+    "7.2.0": "2018-12-03T19:01:21.368Z",
+    "7.4.0": "2019-03-19T20:44:27.356Z",
+    "7.4.3": "2019-04-02T19:55:50.307Z",
+    "7.4.4": "2019-04-26T21:03:58.623Z",
+    "7.7.4": "2019-11-22T23:32:08.976Z",
+    "7.8.0": "2020-01-12T00:16:30.850Z",
+    "7.8.3": "2020-01-13T21:41:28.088Z",
+    "7.8.4": "2020-01-30T12:37:06.662Z",
+    "7.8.6": "2020-02-27T12:21:21.656Z",
+    "7.9.0": "2020-03-20T15:39:24.048Z",
+    "7.10.0": "2020-05-26T21:43:15.354Z",
+    "7.10.1": "2020-05-27T22:07:22.537Z",
+    "7.10.4": "2020-06-30T13:12:00.152Z",
+    "7.12.1": "2020-10-15T22:40:04.904Z"
+  },
+  "keywords": [
+    "babel-plugin"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/babel/babel.git",
+    "directory": "packages/babel-plugin-transform-for-of"
+  },
+  "license": "MIT",
+  "readmeFilename": ""
+}

@@ -1,0 +1,928 @@
+{
+  "_id": "bonjour",
+  "_rev": "23-11d74546c593958ecd83b02d801958bc",
+  "name": "bonjour",
+  "description": "A Bonjour/Zeroconf implementation in pure JavaScript",
+  "dist-tags": {
+    "latest": "3.5.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "bonjour",
+      "version": "1.0.0",
+      "description": "a Sails application",
+      "dependencies": {
+        "sails": "0.9.4",
+        "grunt": "0.4.1",
+        "sails-disk": "~0.9.0",
+        "ejs": "0.8.4",
+        "optimist": "0.3.4",
+        "request": "~2.27.0"
+      },
+      "scripts": {
+        "start": "node app.js",
+        "debug": "node debug app.js"
+      },
+      "main": "app.js",
+      "repository": "",
+      "author": "",
+      "license": "",
+      "_id": "bonjour@1.0.0",
+      "dist": {
+        "shasum": "9c9445248ecd4beedf78aeafad271f64f6e1feb9",
+        "tarball": "https://registry.npmjs.org/bonjour/-/bonjour-1.0.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.2.15",
+      "_npmUser": {
+        "name": "balderdashy",
+        "email": "mike@balderdash.co"
+      },
+      "maintainers": [
+        {
+          "name": "balderdashy",
+          "email": "mike@balderdash.co"
+        }
+      ],
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "bonjour",
+      "version": "2.0.0",
+      "description": "A Bonjour/Zeroconf protocol implementation in JavaScript",
+      "main": "index.js",
+      "dependencies": {
+        "mdns-txt": "^1.0.0",
+        "multicast-dns": "^4.0.0",
+        "multicast-dns-service-types": "^1.1.0"
+      },
+      "devDependencies": {
+        "standard": "^5.3.1",
+        "tape": "^4.2.2"
+      },
+      "scripts": {
+        "test": "standard && tape test/service.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/watson/bonjour.git"
+      },
+      "keywords": [
+        "bonjour",
+        "zeroconf",
+        "zero",
+        "configuration",
+        "mdns",
+        "dns",
+        "service",
+        "discovery",
+        "multicast",
+        "broadcast",
+        "dns-sd"
+      ],
+      "author": {
+        "name": "Thomas Watson Steen",
+        "email": "w@tson.dk",
+        "url": "https://twitter.com/wa7son"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/watson/bonjour/issues"
+      },
+      "homepage": "https://github.com/watson/bonjour",
+      "coordinates": [
+        55.6809588,
+        12.57191
+      ],
+      "gitHead": "b46e67446223f7d3c11ada4352aa7687f1599fbd",
+      "_id": "bonjour@2.0.0",
+      "_shasum": "00ecd28aa298db4f9aee2ce9da839a1441a8f58f",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.2",
+      "_npmUser": {
+        "name": "watson",
+        "email": "w@tson.dk"
+      },
+      "maintainers": [
+        {
+          "name": "watson",
+          "email": "w@tson.dk"
+        }
+      ],
+      "dist": {
+        "shasum": "00ecd28aa298db4f9aee2ce9da839a1441a8f58f",
+        "tarball": "https://registry.npmjs.org/bonjour/-/bonjour-2.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "bonjour",
+      "version": "3.0.0",
+      "description": "A Bonjour/Zeroconf protocol implementation in JavaScript",
+      "main": "index.js",
+      "dependencies": {
+        "mdns-txt": "^2.0.0",
+        "multicast-dns": "^5.0.0",
+        "multicast-dns-service-types": "^1.1.0"
+      },
+      "devDependencies": {
+        "after-all": "^2.0.2",
+        "standard": "^5.4.1",
+        "tape": "^4.4.0"
+      },
+      "scripts": {
+        "test": "standard && tape test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/watson/bonjour.git"
+      },
+      "keywords": [
+        "bonjour",
+        "zeroconf",
+        "zero",
+        "configuration",
+        "mdns",
+        "dns",
+        "service",
+        "discovery",
+        "multicast",
+        "broadcast",
+        "dns-sd"
+      ],
+      "author": {
+        "name": "Thomas Watson Steen",
+        "email": "w@tson.dk",
+        "url": "https://twitter.com/wa7son"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/watson/bonjour/issues"
+      },
+      "homepage": "https://github.com/watson/bonjour",
+      "coordinates": [
+        53.5462394,
+        10.0150485
+      ],
+      "gitHead": "79c342b342aba75c8caecb02ae4c7af0a1eafbf7",
+      "_id": "bonjour@3.0.0",
+      "_shasum": "53b5d031449c1f5a96e0ff9c0be865cd5aea18df",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.2",
+      "_npmUser": {
+        "name": "watson",
+        "email": "w@tson.dk"
+      },
+      "maintainers": [
+        {
+          "name": "watson",
+          "email": "w@tson.dk"
+        }
+      ],
+      "dist": {
+        "shasum": "53b5d031449c1f5a96e0ff9c0be865cd5aea18df",
+        "tarball": "https://registry.npmjs.org/bonjour/-/bonjour-3.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "3.0.1": {
+      "name": "bonjour",
+      "version": "3.0.1",
+      "description": "A Bonjour/Zeroconf implementation in pure JavaScript",
+      "main": "index.js",
+      "dependencies": {
+        "dns-equal": "^1.0.0",
+        "mdns-txt": "^2.0.0",
+        "multicast-dns": "^5.0.0",
+        "multicast-dns-service-types": "^1.1.0"
+      },
+      "devDependencies": {
+        "after-all": "^2.0.2",
+        "standard": "^5.4.1",
+        "tape": "^4.4.0"
+      },
+      "scripts": {
+        "test": "standard && tape test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/watson/bonjour.git"
+      },
+      "keywords": [
+        "bonjour",
+        "zeroconf",
+        "zero",
+        "configuration",
+        "mdns",
+        "dns",
+        "service",
+        "discovery",
+        "multicast",
+        "broadcast",
+        "dns-sd"
+      ],
+      "author": {
+        "name": "Thomas Watson Steen",
+        "email": "w@tson.dk",
+        "url": "https://twitter.com/wa7son"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/watson/bonjour/issues"
+      },
+      "homepage": "https://github.com/watson/bonjour",
+      "coordinates": [
+        56.00998453265667,
+        11.96187322358469
+      ],
+      "gitHead": "a1c55090b3d75ab0e870e7be8a0e5b8ff2ef5984",
+      "_id": "bonjour@3.0.1",
+      "_shasum": "4f1020bda6b507a6fde7efec158a25a6e703154e",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.2",
+      "_npmUser": {
+        "name": "watson",
+        "email": "w@tson.dk"
+      },
+      "maintainers": [
+        {
+          "name": "watson",
+          "email": "w@tson.dk"
+        }
+      ],
+      "dist": {
+        "shasum": "4f1020bda6b507a6fde7efec158a25a6e703154e",
+        "tarball": "https://registry.npmjs.org/bonjour/-/bonjour-3.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "3.1.0": {
+      "name": "bonjour",
+      "version": "3.1.0",
+      "description": "A Bonjour/Zeroconf implementation in pure JavaScript",
+      "main": "index.js",
+      "dependencies": {
+        "dns-equal": "^1.0.0",
+        "mdns-txt": "^2.0.0",
+        "multicast-dns": "^5.0.0",
+        "multicast-dns-service-types": "^1.1.0"
+      },
+      "devDependencies": {
+        "after-all": "^2.0.2",
+        "standard": "^5.4.1",
+        "tape": "^4.4.0"
+      },
+      "scripts": {
+        "test": "standard && tape test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/watson/bonjour.git"
+      },
+      "keywords": [
+        "bonjour",
+        "zeroconf",
+        "zero",
+        "configuration",
+        "mdns",
+        "dns",
+        "service",
+        "discovery",
+        "multicast",
+        "broadcast",
+        "dns-sd"
+      ],
+      "author": {
+        "name": "Thomas Watson Steen",
+        "email": "w@tson.dk",
+        "url": "https://twitter.com/wa7son"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/watson/bonjour/issues"
+      },
+      "homepage": "https://github.com/watson/bonjour",
+      "coordinates": [
+        59.992475702944795,
+        11.08010022705082
+      ],
+      "gitHead": "b0c7842105ee8115e642dd3c075415e18073293e",
+      "_id": "bonjour@3.1.0",
+      "_shasum": "57cf1c3f1a17ed5d07345773051ce1a1fb3582e8",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.2",
+      "_npmUser": {
+        "name": "watson",
+        "email": "w@tson.dk"
+      },
+      "maintainers": [
+        {
+          "name": "watson",
+          "email": "w@tson.dk"
+        }
+      ],
+      "dist": {
+        "shasum": "57cf1c3f1a17ed5d07345773051ce1a1fb3582e8",
+        "tarball": "https://registry.npmjs.org/bonjour/-/bonjour-3.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "3.2.0": {
+      "name": "bonjour",
+      "version": "3.2.0",
+      "description": "A Bonjour/Zeroconf implementation in pure JavaScript",
+      "main": "index.js",
+      "dependencies": {
+        "dns-equal": "^1.0.0",
+        "mdns-txt": "^2.0.0",
+        "multicast-dns": "^5.0.0",
+        "multicast-dns-service-types": "^1.1.0"
+      },
+      "devDependencies": {
+        "after-all": "^2.0.2",
+        "standard": "^5.4.1",
+        "tape": "^4.4.0"
+      },
+      "scripts": {
+        "test": "standard && tape test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/watson/bonjour.git"
+      },
+      "keywords": [
+        "bonjour",
+        "zeroconf",
+        "zero",
+        "configuration",
+        "mdns",
+        "dns",
+        "service",
+        "discovery",
+        "multicast",
+        "broadcast",
+        "dns-sd"
+      ],
+      "author": {
+        "name": "Thomas Watson Steen",
+        "email": "w@tson.dk",
+        "url": "https://twitter.com/wa7son"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/watson/bonjour/issues"
+      },
+      "homepage": "https://github.com/watson/bonjour",
+      "coordinates": [
+        55.6667216,
+        12.5799133
+      ],
+      "gitHead": "4c2d85626b649c29aabe3b9baea7a2bb4a153e5b",
+      "_id": "bonjour@3.2.0",
+      "_shasum": "2c01244a4dc46fb875ee75dc6ffd7a303f543887",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.2",
+      "_npmUser": {
+        "name": "watson",
+        "email": "w@tson.dk"
+      },
+      "maintainers": [
+        {
+          "name": "watson",
+          "email": "w@tson.dk"
+        }
+      ],
+      "dist": {
+        "shasum": "2c01244a4dc46fb875ee75dc6ffd7a303f543887",
+        "tarball": "https://registry.npmjs.org/bonjour/-/bonjour-3.2.0.tgz"
+      },
+      "directories": {}
+    },
+    "3.2.1": {
+      "name": "bonjour",
+      "version": "3.2.1",
+      "description": "A Bonjour/Zeroconf implementation in pure JavaScript",
+      "main": "index.js",
+      "dependencies": {
+        "array-flatten": "^2.0.0",
+        "dns-equal": "^1.0.0",
+        "mdns-txt": "^2.0.0",
+        "multicast-dns": "^5.0.0",
+        "multicast-dns-service-types": "^1.1.0"
+      },
+      "devDependencies": {
+        "after-all": "^2.0.2",
+        "standard": "^5.4.1",
+        "tape": "^4.4.0"
+      },
+      "scripts": {
+        "test": "standard && tape test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/watson/bonjour.git"
+      },
+      "keywords": [
+        "bonjour",
+        "zeroconf",
+        "zero",
+        "configuration",
+        "mdns",
+        "dns",
+        "service",
+        "discovery",
+        "multicast",
+        "broadcast",
+        "dns-sd"
+      ],
+      "author": {
+        "name": "Thomas Watson Steen",
+        "email": "w@tson.dk",
+        "url": "https://twitter.com/wa7son"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/watson/bonjour/issues"
+      },
+      "homepage": "https://github.com/watson/bonjour",
+      "coordinates": [
+        55.6665113,
+        12.580161
+      ],
+      "gitHead": "543214037caed28afa8b22c5d971956ac9b442b8",
+      "_id": "bonjour@3.2.1",
+      "_shasum": "5a4c148223c2473657167bd887088b96218fbcb5",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.2",
+      "_npmUser": {
+        "name": "watson",
+        "email": "w@tson.dk"
+      },
+      "maintainers": [
+        {
+          "name": "watson",
+          "email": "w@tson.dk"
+        }
+      ],
+      "dist": {
+        "shasum": "5a4c148223c2473657167bd887088b96218fbcb5",
+        "tarball": "https://registry.npmjs.org/bonjour/-/bonjour-3.2.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-6-west.internal.npmjs.com",
+        "tmp": "tmp/bonjour-3.2.1.tgz_1456739202772_0.8810477105434984"
+      },
+      "directories": {}
+    },
+    "3.2.2": {
+      "name": "bonjour",
+      "version": "3.2.2",
+      "description": "A Bonjour/Zeroconf implementation in pure JavaScript",
+      "main": "index.js",
+      "dependencies": {
+        "array-flatten": "^2.0.0",
+        "dns-equal": "^1.0.0",
+        "dns-txt": "^2.0.1",
+        "multicast-dns": "^5.0.0",
+        "multicast-dns-service-types": "^1.1.0"
+      },
+      "devDependencies": {
+        "after-all": "^2.0.2",
+        "standard": "^5.4.1",
+        "tape": "^4.4.0"
+      },
+      "scripts": {
+        "test": "standard && tape test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/watson/bonjour.git"
+      },
+      "keywords": [
+        "bonjour",
+        "zeroconf",
+        "zero",
+        "configuration",
+        "mdns",
+        "dns",
+        "service",
+        "discovery",
+        "multicast",
+        "broadcast",
+        "dns-sd"
+      ],
+      "author": {
+        "name": "Thomas Watson Steen",
+        "email": "w@tson.dk",
+        "url": "https://twitter.com/wa7son"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/watson/bonjour/issues"
+      },
+      "homepage": "https://github.com/watson/bonjour",
+      "coordinates": [
+        55.6665535,
+        12.5801863
+      ],
+      "gitHead": "821db40546d46e7aed46fe12655b0462b63b4c47",
+      "_id": "bonjour@3.2.2",
+      "_shasum": "4f5bd4c10cfcd9f7fb659ecfde8f6682f05cd6dc",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.2",
+      "_npmUser": {
+        "name": "watson",
+        "email": "w@tson.dk"
+      },
+      "maintainers": [
+        {
+          "name": "watson",
+          "email": "w@tson.dk"
+        }
+      ],
+      "dist": {
+        "shasum": "4f5bd4c10cfcd9f7fb659ecfde8f6682f05cd6dc",
+        "tarball": "https://registry.npmjs.org/bonjour/-/bonjour-3.2.2.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-5-east.internal.npmjs.com",
+        "tmp": "tmp/bonjour-3.2.2.tgz_1456770719339_0.5535003917757422"
+      },
+      "directories": {}
+    },
+    "3.3.0": {
+      "name": "bonjour",
+      "version": "3.3.0",
+      "description": "A Bonjour/Zeroconf implementation in pure JavaScript",
+      "main": "index.js",
+      "dependencies": {
+        "array-flatten": "^2.0.0",
+        "dns-equal": "^1.0.0",
+        "dns-txt": "^2.0.1",
+        "multicast-dns": "^5.0.0",
+        "multicast-dns-service-types": "^1.1.0"
+      },
+      "devDependencies": {
+        "after-all": "^2.0.2",
+        "standard": "^5.4.1",
+        "tape": "^4.4.0"
+      },
+      "scripts": {
+        "test": "standard && tape test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/watson/bonjour.git"
+      },
+      "keywords": [
+        "bonjour",
+        "zeroconf",
+        "zero",
+        "configuration",
+        "mdns",
+        "dns",
+        "service",
+        "discovery",
+        "multicast",
+        "broadcast",
+        "dns-sd"
+      ],
+      "author": {
+        "name": "Thomas Watson Steen",
+        "email": "w@tson.dk",
+        "url": "https://twitter.com/wa7son"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/watson/bonjour/issues"
+      },
+      "homepage": "https://github.com/watson/bonjour",
+      "coordinates": [
+        55.6808085,
+        12.5719105
+      ],
+      "gitHead": "d6f5759dec702fda1af053127e01cab206926faa",
+      "_id": "bonjour@3.3.0",
+      "_shasum": "20cd443fdde3f74e579577d4e8e9aa46e1f64c3a",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.2",
+      "_npmUser": {
+        "name": "watson",
+        "email": "w@tson.dk"
+      },
+      "maintainers": [
+        {
+          "name": "watson",
+          "email": "w@tson.dk"
+        }
+      ],
+      "dist": {
+        "shasum": "20cd443fdde3f74e579577d4e8e9aa46e1f64c3a",
+        "tarball": "https://registry.npmjs.org/bonjour/-/bonjour-3.3.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/bonjour-3.3.0.tgz_1461187377832_0.2997572396416217"
+      },
+      "directories": {}
+    },
+    "3.3.1": {
+      "name": "bonjour",
+      "version": "3.3.1",
+      "description": "A Bonjour/Zeroconf implementation in pure JavaScript",
+      "main": "index.js",
+      "dependencies": {
+        "array-flatten": "^2.1.0",
+        "dns-equal": "^1.0.0",
+        "dns-txt": "^2.0.2",
+        "multicast-dns": "^6.0.1",
+        "multicast-dns-service-types": "^1.1.0"
+      },
+      "devDependencies": {
+        "after-all": "^2.0.2",
+        "standard": "^6.0.8",
+        "tape": "^4.5.1"
+      },
+      "scripts": {
+        "test": "standard && tape test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/watson/bonjour.git"
+      },
+      "keywords": [
+        "bonjour",
+        "zeroconf",
+        "zero",
+        "configuration",
+        "mdns",
+        "dns",
+        "service",
+        "discovery",
+        "multicast",
+        "broadcast",
+        "dns-sd"
+      ],
+      "author": {
+        "name": "Thomas Watson Steen",
+        "email": "w@tson.dk",
+        "url": "https://twitter.com/wa7son"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/watson/bonjour/issues"
+      },
+      "homepage": "https://github.com/watson/bonjour",
+      "coordinates": [
+        52.5308832,
+        13.3838183
+      ],
+      "gitHead": "1e9c12ee27bb453f332bd9561ead0909dbb84586",
+      "_id": "bonjour@3.3.1",
+      "_shasum": "7494237fb6ec11cc2e8c0eb71386357c15059a5e",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.2",
+      "_npmUser": {
+        "name": "watson",
+        "email": "w@tson.dk"
+      },
+      "maintainers": [
+        {
+          "name": "watson",
+          "email": "w@tson.dk"
+        }
+      ],
+      "dist": {
+        "shasum": "7494237fb6ec11cc2e8c0eb71386357c15059a5e",
+        "tarball": "https://registry.npmjs.org/bonjour/-/bonjour-3.3.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/bonjour-3.3.1.tgz_1462051268827_0.2535813821014017"
+      },
+      "directories": {}
+    },
+    "3.4.0": {
+      "name": "bonjour",
+      "version": "3.4.0",
+      "description": "A Bonjour/Zeroconf implementation in pure JavaScript",
+      "main": "index.js",
+      "dependencies": {
+        "array-flatten": "^2.1.0",
+        "deep-equal": "^1.0.1",
+        "dns-equal": "^1.0.0",
+        "dns-txt": "^2.0.2",
+        "multicast-dns": "^6.0.1",
+        "multicast-dns-service-types": "^1.1.0"
+      },
+      "devDependencies": {
+        "after-all": "^2.0.2",
+        "standard": "^6.0.8",
+        "tape": "^4.5.1"
+      },
+      "scripts": {
+        "test": "standard && tape test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/watson/bonjour.git"
+      },
+      "keywords": [
+        "bonjour",
+        "zeroconf",
+        "zero",
+        "configuration",
+        "mdns",
+        "dns",
+        "service",
+        "discovery",
+        "multicast",
+        "broadcast",
+        "dns-sd"
+      ],
+      "author": {
+        "name": "Thomas Watson Steen",
+        "email": "w@tson.dk",
+        "url": "https://twitter.com/wa7son"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/watson/bonjour/issues"
+      },
+      "homepage": "https://github.com/watson/bonjour",
+      "coordinates": [
+        55.6877288,
+        12.5955495
+      ],
+      "gitHead": "b865400c2a2b57f06b8f888f5d7c4c5064c279ae",
+      "_id": "bonjour@3.4.0",
+      "_shasum": "fd97cb64aa2d4c1d5b973d122b2198f5790aab90",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.2",
+      "_npmUser": {
+        "name": "watson",
+        "email": "w@tson.dk"
+      },
+      "maintainers": [
+        {
+          "name": "watson",
+          "email": "w@tson.dk"
+        }
+      ],
+      "dist": {
+        "shasum": "fd97cb64aa2d4c1d5b973d122b2198f5790aab90",
+        "tarball": "https://registry.npmjs.org/bonjour/-/bonjour-3.4.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/bonjour-3.4.0.tgz_1462562731096_0.9826692077331245"
+      },
+      "directories": {}
+    },
+    "3.5.0": {
+      "name": "bonjour",
+      "version": "3.5.0",
+      "description": "A Bonjour/Zeroconf implementation in pure JavaScript",
+      "main": "index.js",
+      "dependencies": {
+        "array-flatten": "^2.1.0",
+        "deep-equal": "^1.0.1",
+        "dns-equal": "^1.0.0",
+        "dns-txt": "^2.0.2",
+        "multicast-dns": "^6.0.1",
+        "multicast-dns-service-types": "^1.1.0"
+      },
+      "devDependencies": {
+        "after-all": "^2.0.2",
+        "standard": "^6.0.8",
+        "tape": "^4.5.1"
+      },
+      "scripts": {
+        "test": "standard && tape test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/watson/bonjour.git"
+      },
+      "keywords": [
+        "bonjour",
+        "zeroconf",
+        "zero",
+        "configuration",
+        "mdns",
+        "dns",
+        "service",
+        "discovery",
+        "multicast",
+        "broadcast",
+        "dns-sd"
+      ],
+      "author": {
+        "name": "Thomas Watson Steen",
+        "email": "w@tson.dk",
+        "url": "https://twitter.com/wa7son"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/watson/bonjour/issues"
+      },
+      "homepage": "https://github.com/watson/bonjour",
+      "coordinates": [
+        55.68250900965318,
+        12.586377442991648
+      ],
+      "gitHead": "416412bc13bc269800784792494ecbe7642c4bef",
+      "_id": "bonjour@3.5.0",
+      "_shasum": "8e890a183d8ee9a2393b3844c691a42bcf7bc9f5",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.2",
+      "_npmUser": {
+        "name": "watson",
+        "email": "w@tson.dk"
+      },
+      "maintainers": [
+        {
+          "name": "watson",
+          "email": "w@tson.dk"
+        }
+      ],
+      "dist": {
+        "shasum": "8e890a183d8ee9a2393b3844c691a42bcf7bc9f5",
+        "tarball": "https://registry.npmjs.org/bonjour/-/bonjour-3.5.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/bonjour-3.5.0.tgz_1462615076654_0.2484443129505962"
+      },
+      "directories": {}
+    }
+  },
+  "readme": "# bonjour\n\nA Bonjour/Zeroconf protocol implementation in pure JavaScript. Publish\nservices on the local network or discover existing services using\nmulticast DNS.\n\n[![Build status](https://travis-ci.org/watson/bonjour.svg?branch=master)](https://travis-ci.org/watson/bonjour)\n[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)\n\n## Installation\n\n```\nnpm install bonjour\n```\n\n## Usage\n\n```js\nvar bonjour = require('bonjour')()\n\n// advertise an HTTP server on port 3000\nbonjour.publish({ name: 'My Web Server', type: 'http', port: 3000 })\n\n// browse for all http services\nbonjour.find({ type: 'http' }, function (service) {\n  console.log('Found an HTTP server:', service)\n})\n```\n\n## API\n\n### Initializing\n\n```js\nvar bonjour = require('bonjour')([options])\n```\n\nThe `options` are optional and will be used when initializing the\nunderlying multicast-dns server. For details see [the multicast-dns\ndocumentation](https://github.com/mafintosh/multicast-dns#mdns--multicastdnsoptions).\n\n### Publishing\n\n#### `var service = bonjour.publish(options)`\n\nPublishes a new service.\n\nOptions are:\n\n- `name` (string)\n- `host` (string, optional) - defaults to local hostname\n- `port` (number)\n- `type` (string)\n- `subtypes` (array of strings, optional)\n- `protocol` (string, optional) - `udp` or `tcp` (default)\n- `txt` (object, optional) - a key/value object to broadcast as the TXT\n  record\n\nIANA maintains a [list of official service types and port\nnumbers](http://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml).\n\n#### `bonjour.unpublishAll([callback])`\n\nUnpublish all services. The optional `callback` will be called when the\nservices have been unpublished.\n\n#### `bonjour.destroy()`\n\nDestroy the mdns instance. Closes the udp socket.\n\n### Browser\n\n#### `var browser = bonjour.find(options[, onup])`\n\nListen for services advertised on the network. An optional callback can\nbe provided as the 2nd argument and will be added as an event listener\nfor the `up` event.\n\nOptions (all optional):\n\n- `type` (string)\n- `subtypes` (array of strings)\n- `protocol` (string) - defaults to `tcp`\n- `txt` (object) - passed into [dns-txt\n  module](https://github.com/watson/dns-txt) contructor. Set to `{\n  binary: true }` if you want to keep the TXT records in binary\n\n#### `var browser = bonjour.findOne(options[, callback])`\n\nListen for and call the `callback` with the first instance of a service\nmatching the `options`. If no `callback` is given, it's expected that\nyou listen for the `up` event. The returned `browser` will automatically\nstop it self after the first matching service.\n\nOptions are the same as given in the `browser.find` function.\n\n#### `Event: up`\n\nEmitted every time a new service is found that matches the browser.\n\n#### `Event: down`\n\nEmitted every time an existing service emmits a goodbye message.\n\n#### `browser.services`\n\nAn array of services known by the browser to be online.\n\n#### `browser.start()`\n\nStart looking for matching services.\n\n#### `browser.stop()`\n\nStop looking for matching services.\n\n#### `browser.update()`\n\nBroadcast the query again.\n\n### Service\n\n#### `Event: up`\n\nEmitted when the service is up.\n\n#### `Event: error`\n\nEmitted if an error occurrs while publishing the service.\n\n#### `service.stop([callback])`\n\nUnpublish the service. The optional `callback` will be called when the\nservice have been unpublished.\n\n#### `service.start()`\n\nPublish the service.\n\n#### `service.name`\n\nThe name of the service, e.g. `Apple TV`.\n\n#### `service.type`\n\nThe type of the service, e.g. `http`.\n\n#### `service.subtypes`\n\nAn array of subtypes. Note that this property might be `null`.\n\n#### `service.protocol`\n\nThe protocol used by the service, e.g. `tcp`.\n\n#### `service.host`\n\nThe hostname or ip address where the service resides.\n\n#### `service.port`\n\nThe port on which the service listens, e.g. `5000`.\n\n#### `service.fqdn`\n\nThe fully qualified domain name of the service. E.g. if given the name\n`Foo Bar`, the type `http` and the protocol `tcp`, the `service.fqdn`\nproperty will be `Foo Bar._http._tcp.local`.\n\n#### `service.txt`\n\nThe TXT record advertised by the service (a key/value object). Note that\nthis property might be `null`.\n\n#### `service.published`\n\nA boolean indicating if the service is currently published.\n\n## License\n\nMIT\n",
+  "maintainers": [
+    {
+      "name": "watson",
+      "email": "w@tson.dk"
+    }
+  ],
+  "time": {
+    "modified": "2018-01-17T10:29:01.987Z",
+    "created": "2013-10-03T17:58:46.826Z",
+    "1.0.0": "2013-10-03T17:58:50.007Z",
+    "2.0.0": "2015-12-14T20:27:07.614Z",
+    "3.0.0": "2015-12-29T19:12:35.432Z",
+    "3.0.1": "2016-01-10T16:53:18.786Z",
+    "3.1.0": "2016-01-18T06:46:49.660Z",
+    "3.2.0": "2016-01-23T17:56:58.837Z",
+    "3.2.1": "2016-02-29T09:46:45.804Z",
+    "3.2.2": "2016-02-29T18:32:01.123Z",
+    "3.3.0": "2016-04-20T21:22:58.934Z",
+    "3.3.1": "2016-04-30T21:21:11.223Z",
+    "3.4.0": "2016-05-06T19:25:32.727Z",
+    "3.5.0": "2016-05-07T09:57:57.679Z"
+  },
+  "readmeFilename": "README.md",
+  "homepage": "https://github.com/watson/bonjour",
+  "keywords": [
+    "bonjour",
+    "zeroconf",
+    "zero",
+    "configuration",
+    "mdns",
+    "dns",
+    "service",
+    "discovery",
+    "multicast",
+    "broadcast",
+    "dns-sd"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/watson/bonjour.git"
+  },
+  "author": {
+    "name": "Thomas Watson Steen",
+    "email": "w@tson.dk",
+    "url": "https://twitter.com/wa7son"
+  },
+  "bugs": {
+    "url": "https://github.com/watson/bonjour/issues"
+  },
+  "license": "MIT",
+  "users": {
+    "yrocq": true,
+    "phgyorgygulyas": true,
+    "m80126colin": true
+  },
+  "_attachments": {}
+}

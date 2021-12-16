@@ -1,0 +1,7 @@
+{
+  "name": "link-dep-has-dep-with-optional-dep",
+  "version": "1.0.0",
+  "dependencies": {
+    "a": "./a"
+  }
+}

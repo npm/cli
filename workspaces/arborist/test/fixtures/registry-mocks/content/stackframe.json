@@ -1,0 +1,1121 @@
+{
+  "_id": "stackframe",
+  "_rev": "23-d016163a6e7f0ec4dfa94e09e39d702b",
+  "name": "stackframe",
+  "description": "JS Object representation of a stack frame",
+  "dist-tags": {
+    "latest": "1.2.0",
+    "beta": "1.0.0"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "stackframe",
+      "description": "JS Object representation of a stack frame",
+      "author": {
+        "name": "Eric Wendelin",
+        "email": "me@eriwen.com",
+        "url": "http://eriwen.com"
+      },
+      "version": "0.1.0",
+      "keywords": [
+        "stacktrace",
+        "error"
+      ],
+      "homepage": "http://www.stacktracejs.com",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/stacktracejs/stackframe.git"
+      },
+      "bugs": {
+        "url": "https://github.com/stacktracejs/stackframe/issues"
+      },
+      "licenses": [
+        {
+          "type": "Public Domain",
+          "url": "https://github.com/stacktracejs/stackframe/blob/master/LICENSE"
+        }
+      ],
+      "main": "./stackframe.js",
+      "_id": "stackframe@0.1.0",
+      "_shasum": "c00e29e047b7769ed768935b0cc35856240b0f8b",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "eriwen",
+        "email": "me@eriwen.com"
+      },
+      "maintainers": [
+        {
+          "name": "eriwen",
+          "email": "me@eriwen.com"
+        }
+      ],
+      "dist": {
+        "shasum": "0c8c18653955c1e86ffa4cea9ccac6036bdebc79",
+        "tarball": "https://registry.npmjs.org/stackframe/-/stackframe-0.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.1.1": {
+      "name": "stackframe",
+      "description": "JS Object representation of a stack frame",
+      "maintainers": [
+        {
+          "name": "eriwen",
+          "email": "me@eriwen.com"
+        }
+      ],
+      "version": "0.1.1",
+      "keywords": [
+        "stacktrace",
+        "error",
+        "debugger"
+      ],
+      "homepage": "http://www.stacktracejs.com",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/stacktracejs/stackframe.git"
+      },
+      "devDependencies": {
+        "colors": "~1.0.3",
+        "coveralls": "^2.11.2",
+        "jasmine-node": "~1.14",
+        "jshint": "^2.5.6",
+        "karma": "~0.12",
+        "karma-chrome-launcher": "^0.1.5",
+        "karma-coverage": "^0.2.6",
+        "karma-firefox-launcher": "^0.1.3",
+        "karma-ie-launcher": "^0.1.5",
+        "karma-jasmine": "^0.1.5",
+        "karma-opera-launcher": "^0.1.0",
+        "karma-phantomjs-launcher": "^0.1.4",
+        "karma-safari-launcher": "^0.1.1",
+        "karma-sauce-launcher": "^0.2.10"
+      },
+      "bugs": {
+        "url": "https://github.com/stacktracejs/stackframe/issues"
+      },
+      "licenses": [
+        {
+          "type": "Public Domain",
+          "url": "https://github.com/stacktracejs/stackframe/blob/master/LICENSE"
+        }
+      ],
+      "main": "./stackframe.js",
+      "scripts": {
+        "test": "make test"
+      },
+      "gitHead": "b3c31ea4c804e1fd44f39cec03dfb1b230b6152b",
+      "_id": "stackframe@0.1.1",
+      "_shasum": "55baa1e962849a5d50194365b5ec69d7f8aa2b00",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "eriwen",
+        "email": "me@eriwen.com"
+      },
+      "dist": {
+        "shasum": "55baa1e962849a5d50194365b5ec69d7f8aa2b00",
+        "tarball": "https://registry.npmjs.org/stackframe/-/stackframe-0.1.1.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.0": {
+      "name": "stackframe",
+      "description": "JS Object representation of a stack frame",
+      "maintainers": [
+        {
+          "name": "eriwen",
+          "email": "me@eriwen.com"
+        }
+      ],
+      "version": "0.2.0",
+      "keywords": [
+        "stacktrace",
+        "error",
+        "debugger",
+        "stack frame"
+      ],
+      "homepage": "http://www.stacktracejs.com",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/stacktracejs/stackframe.git"
+      },
+      "devDependencies": {
+        "colors": "~1.0.3",
+        "coveralls": "^2.11.2",
+        "jasmine-node": "~1.14",
+        "jshint": "^2.5.6",
+        "karma": "~0.12",
+        "karma-chrome-launcher": "^0.1.5",
+        "karma-coverage": "^0.2.6",
+        "karma-firefox-launcher": "^0.1.3",
+        "karma-ie-launcher": "^0.1.5",
+        "karma-jasmine": "^0.1.5",
+        "karma-opera-launcher": "^0.1.0",
+        "karma-phantomjs-launcher": "^0.1.4",
+        "karma-safari-launcher": "^0.1.1",
+        "karma-sauce-launcher": "^0.2.10"
+      },
+      "bugs": {
+        "url": "https://github.com/stacktracejs/stackframe/issues"
+      },
+      "licenses": [
+        {
+          "type": "Public Domain",
+          "url": "https://github.com/stacktracejs/stackframe/blob/master/LICENSE"
+        }
+      ],
+      "main": "./stackframe.js",
+      "scripts": {
+        "test": "make test"
+      },
+      "gitHead": "3059c54fda81f5bb5a60e150866f59c559d7fe0a",
+      "_id": "stackframe@0.2.0",
+      "_shasum": "ce9a9a990f8602ab5b1e055c69cd9bd24ebeaeeb",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "eriwen",
+        "email": "me@eriwen.com"
+      },
+      "dist": {
+        "shasum": "ce9a9a990f8602ab5b1e055c69cd9bd24ebeaeeb",
+        "tarball": "https://registry.npmjs.org/stackframe/-/stackframe-0.2.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.1": {
+      "name": "stackframe",
+      "description": "JS Object representation of a stack frame",
+      "maintainers": [
+        {
+          "name": "eriwen",
+          "email": "me@eriwen.com"
+        }
+      ],
+      "version": "0.2.1",
+      "keywords": [
+        "stacktrace",
+        "error",
+        "debugger",
+        "stack frame"
+      ],
+      "homepage": "http://www.stacktracejs.com",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/stacktracejs/stackframe.git"
+      },
+      "devDependencies": {
+        "colors": "~1.0.3",
+        "coveralls": "^2.11.2",
+        "jasmine-node": "~1.14",
+        "jshint": "^2.5.10",
+        "karma": "~0.12",
+        "karma-chrome-launcher": "^0.1.5",
+        "karma-coverage": "^0.2.6",
+        "karma-firefox-launcher": "^0.1.3",
+        "karma-ie-launcher": "^0.1.5",
+        "karma-jasmine": "^0.2.3",
+        "karma-opera-launcher": "^0.1.0",
+        "karma-phantomjs-launcher": "^0.1.4",
+        "karma-safari-launcher": "^0.1.1",
+        "karma-sauce-launcher": "^0.2.10",
+        "uglify-js2": "^2.1.11"
+      },
+      "bugs": {
+        "url": "https://github.com/stacktracejs/stackframe/issues"
+      },
+      "licenses": [
+        {
+          "type": "Public Domain",
+          "url": "https://github.com/stacktracejs/stackframe/blob/master/LICENSE"
+        }
+      ],
+      "main": "./stackframe.js",
+      "scripts": {
+        "test": "make test"
+      },
+      "gitHead": "6feb108f6826aaf87d570bdc70f03405a9751770",
+      "_id": "stackframe@0.2.1",
+      "_shasum": "f9e19eaaccf3962060b05194ed837d9a503219d4",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "eriwen",
+        "email": "me@eriwen.com"
+      },
+      "dist": {
+        "shasum": "f9e19eaaccf3962060b05194ed837d9a503219d4",
+        "tarball": "https://registry.npmjs.org/stackframe/-/stackframe-0.2.1.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.2": {
+      "name": "stackframe",
+      "description": "JS Object representation of a stack frame",
+      "maintainers": [
+        {
+          "name": "eriwen",
+          "email": "me@eriwen.com"
+        }
+      ],
+      "version": "0.2.2",
+      "keywords": [
+        "stacktrace",
+        "error",
+        "debugger",
+        "stack frame"
+      ],
+      "homepage": "http://www.stacktracejs.com",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/stacktracejs/stackframe.git"
+      },
+      "devDependencies": {
+        "colors": "~1.0.3",
+        "coveralls": "^2.11.2",
+        "jasmine-node": "~1.14",
+        "jshint": "^2.6.0",
+        "karma": "~0.12",
+        "karma-chrome-launcher": "^0.1.5",
+        "karma-coverage": "^0.2.6",
+        "karma-firefox-launcher": "^0.1.3",
+        "karma-ie-launcher": "^0.1.5",
+        "karma-jasmine": "^0.2.3",
+        "karma-opera-launcher": "^0.1.0",
+        "karma-phantomjs-launcher": "^0.1.4",
+        "karma-safari-launcher": "^0.1.1",
+        "karma-sauce-launcher": "^0.2.10",
+        "uglify-js2": "^2.1.11"
+      },
+      "bugs": {
+        "url": "https://github.com/stacktracejs/stackframe/issues"
+      },
+      "licenses": [
+        {
+          "type": "Public Domain",
+          "url": "https://github.com/stacktracejs/stackframe/blob/master/LICENSE"
+        }
+      ],
+      "main": "./stackframe.js",
+      "scripts": {
+        "test": "make test"
+      },
+      "gitHead": "49dd7e8c64309217e6c146ee7d56b9893c91f9cd",
+      "_id": "stackframe@0.2.2",
+      "_shasum": "477b3d067b2ca51c287039ad054192fe5492f95e",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "eriwen",
+        "email": "me@eriwen.com"
+      },
+      "dist": {
+        "shasum": "477b3d067b2ca51c287039ad054192fe5492f95e",
+        "tarball": "https://registry.npmjs.org/stackframe/-/stackframe-0.2.2.tgz"
+      },
+      "directories": {}
+    },
+    "0.3.0": {
+      "name": "stackframe",
+      "description": "JS Object representation of a stack frame",
+      "maintainers": [
+        {
+          "name": "eriwen",
+          "email": "me@eriwen.com"
+        }
+      ],
+      "version": "0.3.0",
+      "keywords": [
+        "stacktrace",
+        "error",
+        "debugger",
+        "stack frame"
+      ],
+      "homepage": "http://www.stacktracejs.com",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/stacktracejs/stackframe.git"
+      },
+      "devDependencies": {
+        "colors": "~1.0.3",
+        "coveralls": "^2.11.2",
+        "jasmine-node": "~1.14",
+        "jshint": "^2.6.0",
+        "karma": "~0.12",
+        "karma-chrome-launcher": "^0.1.5",
+        "karma-coverage": "^0.2.6",
+        "karma-firefox-launcher": "^0.1.3",
+        "karma-ie-launcher": "^0.1.5",
+        "karma-jasmine": "^0.2.3",
+        "karma-opera-launcher": "^0.1.0",
+        "karma-phantomjs-launcher": "^0.1.4",
+        "karma-safari-launcher": "^0.1.1",
+        "karma-sauce-launcher": "^0.2.10",
+        "uglify-js2": "^2.1.11"
+      },
+      "bugs": {
+        "url": "https://github.com/stacktracejs/stackframe/issues"
+      },
+      "licenses": [
+        {
+          "type": "Public Domain",
+          "url": "https://github.com/stacktracejs/stackframe/blob/master/LICENSE"
+        }
+      ],
+      "main": "./stackframe.js",
+      "scripts": {
+        "test": "make test"
+      },
+      "gitHead": "50893d707f730454cf8d8100a1535f733e228d91",
+      "_id": "stackframe@0.3.0",
+      "_shasum": "4e07808e181f9f2951f042ffc3fd120899b65525",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "0.12.4",
+      "_npmUser": {
+        "name": "eriwen",
+        "email": "me@eriwen.com"
+      },
+      "dist": {
+        "shasum": "4e07808e181f9f2951f042ffc3fd120899b65525",
+        "tarball": "https://registry.npmjs.org/stackframe/-/stackframe-0.3.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.3.1": {
+      "name": "stackframe",
+      "description": "JS Object representation of a stack frame",
+      "maintainers": [
+        {
+          "name": "eriwen",
+          "email": "me@eriwen.com"
+        }
+      ],
+      "version": "0.3.1",
+      "license": "SEE LICENSE IN LICENSE",
+      "keywords": [
+        "stacktrace",
+        "error",
+        "debugger",
+        "stack frame"
+      ],
+      "homepage": "http://www.stacktracejs.com",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/stacktracejs/stackframe.git"
+      },
+      "devDependencies": {
+        "colors": "^1.1.2",
+        "del": "^1.2.0",
+        "gulp": "^3.9.0",
+        "gulp-coveralls": "^0.1.4",
+        "gulp-jshint": "^1.11.2",
+        "gulp-rename": "^1.2.2",
+        "gulp-sourcemaps": "^1.5.2",
+        "gulp-uglify": "^1.2.0",
+        "jasmine-node": "~1.14",
+        "karma": "~0.12",
+        "karma-chrome-launcher": "^0.1.5",
+        "karma-coverage": "^0.2.6",
+        "karma-firefox-launcher": "^0.1.3",
+        "karma-ie-launcher": "^0.1.5",
+        "karma-jasmine": "^0.2.3",
+        "karma-opera-launcher": "^0.1.0",
+        "karma-phantomjs2-launcher": "^0.3.0",
+        "karma-safari-launcher": "^0.1.1",
+        "karma-sauce-launcher": "^0.2.10",
+        "run-sequence": "^1.1.2"
+      },
+      "bugs": {
+        "url": "https://github.com/stacktracejs/stackframe/issues"
+      },
+      "main": "./stackframe.js",
+      "scripts": {
+        "test": "gulp test"
+      },
+      "gitHead": "8886fa805e7252bf8854647e06b7f6a2d50339b1",
+      "_id": "stackframe@0.3.1",
+      "_shasum": "33aa84f1177a5548c8935533cbfeb3420975f5a4",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "0.12.4",
+      "_npmUser": {
+        "name": "eriwen",
+        "email": "me@eriwen.com"
+      },
+      "dist": {
+        "shasum": "33aa84f1177a5548c8935533cbfeb3420975f5a4",
+        "tarball": "https://registry.npmjs.org/stackframe/-/stackframe-0.3.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "stackframe",
+      "description": "JS Object representation of a stack frame",
+      "maintainers": [
+        {
+          "name": "eriwen",
+          "email": "me@eriwen.com"
+        },
+        {
+          "name": "oliversalzburg",
+          "email": "oliver.salzburg@gmail.com"
+        }
+      ],
+      "version": "1.0.0",
+      "license": "SEE LICENSE IN LICENSE",
+      "keywords": [
+        "stacktrace",
+        "error",
+        "debugger",
+        "stack frame"
+      ],
+      "homepage": "https://www.stacktracejs.com",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/stacktracejs/stackframe.git"
+      },
+      "devDependencies": {
+        "colors": "^1.1.2",
+        "del": "^2.2.0",
+        "gulp": "^3.9.0",
+        "gulp-coveralls": "^0.1.4",
+        "gulp-jshint": "^2.0.0",
+        "gulp-rename": "^1.2.2",
+        "gulp-sourcemaps": "^1.6.0",
+        "gulp-uglify": "^1.5.1",
+        "jasmine": "^2.4.1",
+        "jasmine-core": "^2.4.1",
+        "jshint": "^2.8.0",
+        "karma": "^0.13.15",
+        "karma-chrome-launcher": "^0.2.2",
+        "karma-coverage": "^0.5.3",
+        "karma-firefox-launcher": "^0.1.7",
+        "karma-ie-launcher": "^0.2.0",
+        "karma-jasmine": "^0.3.6",
+        "karma-opera-launcher": "^0.3.0",
+        "karma-phantomjs2-launcher": "^0.3.2",
+        "karma-safari-launcher": "^0.1.1",
+        "karma-sauce-launcher": "^0.3.0",
+        "run-sequence": "^1.1.5"
+      },
+      "bugs": {
+        "url": "https://github.com/stacktracejs/stackframe/issues"
+      },
+      "main": "./stackframe.js",
+      "scripts": {
+        "test": "gulp test"
+      },
+      "gitHead": "7fea06d2f74706cde5b8c4ebfcf2ddc7c4e9ca25",
+      "_id": "stackframe@1.0.0",
+      "_shasum": "ea6dd6c25e7a4529ed62d40974e193fe2e7339d6",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "0.12.4",
+      "_npmUser": {
+        "name": "eriwen",
+        "email": "me@eriwen.com"
+      },
+      "dist": {
+        "shasum": "ea6dd6c25e7a4529ed62d40974e193fe2e7339d6",
+        "tarball": "https://registry.npmjs.org/stackframe/-/stackframe-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "stackframe",
+      "description": "JS Object representation of a stack frame",
+      "maintainers": [
+        {
+          "name": "eriwen",
+          "email": "me@eriwen.com"
+        },
+        {
+          "name": "oliversalzburg",
+          "email": "oliver.salzburg@gmail.com"
+        }
+      ],
+      "version": "1.0.1",
+      "license": "Unlicense",
+      "keywords": [
+        "stacktrace",
+        "error",
+        "debugger",
+        "stack frame"
+      ],
+      "homepage": "https://www.stacktracejs.com",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/stacktracejs/stackframe.git"
+      },
+      "devDependencies": {
+        "colors": "^1.1.2",
+        "del": "^2.2.0",
+        "gulp": "^3.9.0",
+        "gulp-coveralls": "^0.1.4",
+        "gulp-jshint": "^2.0.0",
+        "gulp-rename": "^1.2.2",
+        "gulp-sourcemaps": "^1.6.0",
+        "gulp-uglify": "^1.5.1",
+        "jasmine": "^2.4.1",
+        "jasmine-core": "^2.4.1",
+        "jshint": "^2.8.0",
+        "karma": "^0.13.15",
+        "karma-chrome-launcher": "^0.2.2",
+        "karma-coverage": "^0.5.3",
+        "karma-firefox-launcher": "^0.1.7",
+        "karma-ie-launcher": "^0.2.0",
+        "karma-jasmine": "^0.3.6",
+        "karma-opera-launcher": "^0.3.0",
+        "karma-phantomjs2-launcher": "^0.3.2",
+        "karma-safari-launcher": "^0.1.1",
+        "karma-sauce-launcher": "^0.3.0",
+        "run-sequence": "^1.1.5"
+      },
+      "bugs": {
+        "url": "https://github.com/stacktracejs/stackframe/issues"
+      },
+      "main": "./stackframe.js",
+      "scripts": {
+        "test": "gulp test"
+      },
+      "gitHead": "f9970fe622c8a3662d1bbb2e4f17d565224aa927",
+      "_id": "stackframe@1.0.1",
+      "_shasum": "d250261e0717257d383cf9ae4ad68f0e46abbb3c",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "0.12.4",
+      "_npmUser": {
+        "name": "eriwen",
+        "email": "me@eriwen.com"
+      },
+      "dist": {
+        "shasum": "d250261e0717257d383cf9ae4ad68f0e46abbb3c",
+        "tarball": "https://registry.npmjs.org/stackframe/-/stackframe-1.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "stackframe",
+      "description": "JS Object representation of a stack frame",
+      "maintainers": [
+        {
+          "name": "eriwen",
+          "email": "me@eriwen.com"
+        },
+        {
+          "name": "oliversalzburg",
+          "email": "oliver.salzburg@gmail.com"
+        }
+      ],
+      "version": "1.0.2",
+      "license": "Unlicense",
+      "keywords": [
+        "stacktrace",
+        "error",
+        "debugger",
+        "stack frame"
+      ],
+      "homepage": "https://www.stacktracejs.com",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/stacktracejs/stackframe.git"
+      },
+      "devDependencies": {
+        "colors": "^1.1.2",
+        "del": "^2.2.0",
+        "gulp": "^3.9.0",
+        "gulp-coveralls": "^0.1.4",
+        "gulp-jshint": "^2.0.0",
+        "gulp-rename": "^1.2.2",
+        "gulp-sourcemaps": "^1.6.0",
+        "gulp-uglify": "^1.5.1",
+        "jasmine": "^2.4.1",
+        "jasmine-core": "^2.4.1",
+        "jshint": "^2.8.0",
+        "karma": "^0.13.15",
+        "karma-chrome-launcher": "^0.2.2",
+        "karma-coverage": "^0.5.3",
+        "karma-firefox-launcher": "^0.1.7",
+        "karma-ie-launcher": "^0.2.0",
+        "karma-jasmine": "^0.3.6",
+        "karma-opera-launcher": "^0.3.0",
+        "karma-phantomjs2-launcher": "^0.3.2",
+        "karma-safari-launcher": "^0.1.1",
+        "karma-sauce-launcher": "^0.3.0",
+        "run-sequence": "^1.1.5"
+      },
+      "bugs": {
+        "url": "https://github.com/stacktracejs/stackframe/issues"
+      },
+      "main": "./stackframe.js",
+      "scripts": {
+        "test": "gulp test"
+      },
+      "gitHead": "73f58c28eafd8ba0db92f40d99d461059626fef4",
+      "_id": "stackframe@1.0.2",
+      "_shasum": "162245509c687d328b14f671dab8fdb755b1e1e8",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "0.12.4",
+      "_npmUser": {
+        "name": "eriwen",
+        "email": "me@eriwen.com"
+      },
+      "dist": {
+        "shasum": "162245509c687d328b14f671dab8fdb755b1e1e8",
+        "tarball": "https://registry.npmjs.org/stackframe/-/stackframe-1.0.2.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.3": {
+      "name": "stackframe",
+      "description": "JS Object representation of a stack frame",
+      "maintainers": [
+        {
+          "name": "eriwen",
+          "email": "me@eriwen.com"
+        },
+        {
+          "name": "oliversalzburg",
+          "email": "oliver.salzburg@gmail.com"
+        }
+      ],
+      "version": "1.0.3",
+      "license": "MIT",
+      "keywords": [
+        "stacktrace",
+        "error",
+        "debugger",
+        "stack frame"
+      ],
+      "homepage": "https://www.stacktracejs.com",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/stacktracejs/stackframe.git"
+      },
+      "devDependencies": {
+        "colors": "^1.1.2",
+        "del": "^2.2.0",
+        "gulp": "^3.9.1",
+        "gulp-coveralls": "^0.1.4",
+        "gulp-jshint": "^2.0.0",
+        "gulp-rename": "^1.2.2",
+        "gulp-sourcemaps": "^1.6.0",
+        "gulp-uglify": "^1.5.1",
+        "jasmine": "^2.4.1",
+        "jasmine-core": "^2.4.1",
+        "jscs": "^2.9.0",
+        "jshint": "^2.8.0",
+        "karma": "^0.13.15",
+        "karma-chrome-launcher": "^0.2.2",
+        "karma-coverage": "^0.5.3",
+        "karma-firefox-launcher": "^0.1.7",
+        "karma-ie-launcher": "^0.2.0",
+        "karma-jasmine": "^0.3.6",
+        "karma-opera-launcher": "^0.3.0",
+        "karma-phantomjs2-launcher": "^0.3.2",
+        "karma-safari-launcher": "^0.1.1",
+        "karma-sauce-launcher": "^0.3.0",
+        "karma-spec-reporter": "0.0.23",
+        "run-sequence": "^1.1.5"
+      },
+      "bugs": {
+        "url": "https://github.com/stacktracejs/stackframe/issues"
+      },
+      "main": "./stackframe.js",
+      "scripts": {
+        "test": "gulp test",
+        "prepublish": "gulp dist"
+      },
+      "gitHead": "302f6c5dcd49957f14066c50bf0bc665e8810d01",
+      "_id": "stackframe@1.0.3",
+      "_shasum": "fe64ab20b170e4ce49044b126c119dfa0e5dc7cc",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.3.1",
+      "_npmUser": {
+        "name": "eriwen",
+        "email": "me@eriwen.com"
+      },
+      "dist": {
+        "shasum": "fe64ab20b170e4ce49044b126c119dfa0e5dc7cc",
+        "tarball": "https://registry.npmjs.org/stackframe/-/stackframe-1.0.3.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/stackframe-1.0.3.tgz_1493516368186_0.9330694573000073"
+      },
+      "directories": {}
+    },
+    "1.0.4": {
+      "name": "stackframe",
+      "description": "JS Object representation of a stack frame",
+      "maintainers": [
+        {
+          "email": "oliver.salzburg@gmail.com",
+          "name": "oliversalzburg"
+        },
+        {
+          "email": "me@eriwen.com",
+          "name": "eriwen"
+        }
+      ],
+      "version": "1.0.4",
+      "license": "MIT",
+      "keywords": [
+        "stacktrace",
+        "error",
+        "debugger",
+        "stack frame"
+      ],
+      "homepage": "https://www.stacktracejs.com",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/stacktracejs/stackframe.git"
+      },
+      "devDependencies": {
+        "colors": "^1.1.2",
+        "del": "^2.2.2",
+        "gulp": "^3.9.1",
+        "gulp-coveralls": "^0.1.4",
+        "gulp-jshint": "^2.0.4",
+        "gulp-rename": "^1.2.2",
+        "gulp-sourcemaps": "^1.12.0",
+        "gulp-uglify": "^1.5.4",
+        "jasmine": "^2.7.0",
+        "jasmine-core": "^2.7.0",
+        "jscs": "^2.11.0",
+        "jshint": "^2.9.5",
+        "karma": "^0.13.22",
+        "karma-chrome-launcher": "^0.2.3",
+        "karma-coverage": "^0.5.5",
+        "karma-firefox-launcher": "^0.1.7",
+        "karma-ie-launcher": "^0.2.0",
+        "karma-jasmine": "^0.3.8",
+        "karma-opera-launcher": "^0.3.0",
+        "karma-phantomjs2-launcher": "^0.3.2",
+        "karma-safari-launcher": "^0.1.1",
+        "karma-sauce-launcher": "^0.3.1",
+        "karma-spec-reporter": "0.0.23",
+        "run-sequence": "^1.2.2"
+      },
+      "bugs": {
+        "url": "https://github.com/stacktracejs/stackframe/issues"
+      },
+      "main": "./stackframe.js",
+      "scripts": {
+        "test": "gulp test",
+        "prepublish": "gulp dist"
+      },
+      "gitHead": "8a6e914ebfe3057f5a8a4825f29c2160dc32eb72",
+      "_id": "stackframe@1.0.4",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "8.1.2",
+      "_npmUser": {
+        "name": "eriwen",
+        "email": "me@eriwen.com"
+      },
+      "dist": {
+        "integrity": "sha512-to7oADIniaYwS3MhtCa/sQhrxidCCQiF/qp4/m5iN3ipf0Y7Xlri0f6eG29r08aL7JYl8n32AF3Q5GYBZ7K8vw==",
+        "shasum": "357b24a992f9427cba6b545d96a14ed2cbca187b",
+        "tarball": "https://registry.npmjs.org/stackframe/-/stackframe-1.0.4.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/stackframe-1.0.4.tgz_1502558785262_0.29956461605615914"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "stackframe",
+      "description": "JS Object representation of a stack frame",
+      "maintainers": [
+        {
+          "email": "me@eriwen.com",
+          "name": "eriwen"
+        },
+        {
+          "email": "oliver.salzburg@gmail.com",
+          "name": "oliversalzburg"
+        }
+      ],
+      "version": "1.1.0",
+      "license": "MIT",
+      "keywords": [
+        "stacktrace",
+        "error",
+        "debugger",
+        "stack frame"
+      ],
+      "homepage": "https://www.stacktracejs.com",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/stacktracejs/stackframe.git"
+      },
+      "devDependencies": {
+        "colors": "^1.3.2",
+        "del": "^3.0.0",
+        "eslint": "^5.7.0",
+        "gulp": "^3.9.1",
+        "gulp-coveralls": "^0.1.4",
+        "gulp-eslint": "^5.0.0",
+        "gulp-rename": "^1.4.0",
+        "gulp-sourcemaps": "^2.6.4",
+        "gulp-uglify": "^3.0.1",
+        "jasmine": "^3.2.0",
+        "jasmine-core": "^3.2.1",
+        "karma": "^3.1.0",
+        "karma-chrome-launcher": "^2.2.0",
+        "karma-coverage": "^1.1.2",
+        "karma-firefox-launcher": "^1.1.0",
+        "karma-ie-launcher": "^1.0.0",
+        "karma-jasmine": "^1.1.2",
+        "karma-opera-launcher": "^1.0.0",
+        "karma-phantomjs-launcher": "^1.0.4",
+        "karma-safari-launcher": "^1.0.0",
+        "karma-sauce-launcher": "^1.2.0",
+        "karma-spec-reporter": "0.0.32",
+        "run-sequence": "^2.2.1"
+      },
+      "bugs": {
+        "url": "https://github.com/stacktracejs/stackframe/issues"
+      },
+      "main": "./stackframe.js",
+      "scripts": {
+        "lint": " ./node_modules/.bin/eslint stackframe.js spec/stackframe-spec.js",
+        "test": "gulp test",
+        "prepare": "gulp dist"
+      },
+      "gitHead": "aff47e4a30a9964249868bac0870618b5f5ba01c",
+      "_id": "stackframe@1.1.0",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "8.16.0",
+      "_npmUser": {
+        "name": "eriwen",
+        "email": "me@eriwen.com"
+      },
+      "dist": {
+        "integrity": "sha512-Vx6W1Yvy+AM1R/ckVwcHQHV147pTPBKWCRLrXMuPrFVfvBUc3os7PR1QLIWCMhPpRg5eX9ojzbQIMLGBwyLjqg==",
+        "shasum": "e3fc2eb912259479c9822f7d1f1ff365bd5cbc83",
+        "tarball": "https://registry.npmjs.org/stackframe/-/stackframe-1.1.0.tgz",
+        "fileCount": 17,
+        "unpackedSize": 39220,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdgXn5CRA9TVsSAnZWagAALY4P/2itsYiQ178IX/2kRx3p\nC4GOo1O71FEXYAV6wwRorqa2I9vn4SqLir2OUr6CXH5JDRS3WT0MLWjuZWHH\nZCHKnul/6Zlhmi094xVesFdQpmyS/Na3nYsJcEztNPo0MNkuTifq+9oro2hf\n83d8A+oHVZP67Sn0d81sOEb/xb6mNAv0lGbexT+UaC/rDPcZgpDYgXf9pwIv\nalbyouJmW3JCZwbF5Nlal6XmxfzyMJJGKSZsRjuZ7npr3tLWJrWpRmUCm8Qg\nwZ+Sw5fmyKLmZU8Ka/7Ut/Txvc/rWeg6vE5wnBytbBX8J1lsM7dCrBDBmCNz\nBN5yZauBRsL1zuqHa69fFkxU2Guh61LNL5pq7CcLEOraU0PtsIzRM6dyWbeH\nxd4ge8AQq8vLhHxoIgON1cCv+nA9QUYEAz1qxwLDkp/PeTfK58UNIz47Oo6j\ntjJZbwA0iuw9mWqeLbjp/qaAuvM8zpIOSdIaSV4vCyxbEM/IR+AiUc8u0EEC\nCz5Zgv/dqhjNeaAsCEv4znFu0eJ3Ly7Eox0E5jSNWM/Y3dvruhtZD8X9AzLd\nX72GoZvK4ggNzp3sEsrdQ9jI5oPTDMBQ3dlAL2iuui1qaqNJETk49UH/e62T\nLOxFHFweXaQjh7DaEcwJl4ST9aMeLepmoPJxpDF4D53de+Chg0qcEvPW+80Y\noA6j\r\n=35Fo\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/stackframe_1.1.0_1568766456418_0.20215787615250114"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.1.1": {
+      "name": "stackframe",
+      "description": "JS Object representation of a stack frame",
+      "maintainers": [
+        {
+          "email": "me@eriwen.com",
+          "name": "eriwen"
+        },
+        {
+          "email": "oliver.salzburg@gmail.com",
+          "name": "oliversalzburg"
+        }
+      ],
+      "version": "1.1.1",
+      "license": "MIT",
+      "keywords": [
+        "stacktrace",
+        "error",
+        "debugger",
+        "stack frame"
+      ],
+      "homepage": "https://www.stacktracejs.com",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/stacktracejs/stackframe.git"
+      },
+      "devDependencies": {
+        "eslint": "^6.8.0",
+        "jasmine": "^3.5.0",
+        "jasmine-core": "^3.5.0",
+        "karma": "^4.4.1",
+        "karma-chrome-launcher": "^3.1.0",
+        "karma-coverage": "^2.0.1",
+        "karma-coveralls": "^2.1.0",
+        "karma-firefox-launcher": "^1.2.0",
+        "karma-ie-launcher": "^1.0.0",
+        "karma-jasmine": "^1.1.2",
+        "karma-opera-launcher": "^1.0.0",
+        "karma-phantomjs-launcher": "^1.0.4",
+        "karma-safari-launcher": "^1.0.0",
+        "karma-sauce-launcher": "^2.0.2",
+        "karma-spec-reporter": "0.0.32",
+        "uglify-es": "^3.3.9"
+      },
+      "bugs": {
+        "url": "https://github.com/stacktracejs/stackframe/issues"
+      },
+      "main": "./stackframe.js",
+      "scripts": {
+        "lint": "eslint --fix .",
+        "test": "karma start karma.conf.js --single-run",
+        "test-pr": "karma start karma.conf.js --single-run --browsers Firefox,Chrome_Travis",
+        "test-ci": "karma start karma.conf.ci.js --single-run",
+        "prepare": "cp stackframe.js dist/ && uglifyjs stackframe.js -o dist/stackframe.min.js --compress --mangle --source-map \"url=stackframe.min.js.map\""
+      },
+      "gitHead": "8528f092b963da31814073b59055b879fc51ecd9",
+      "_id": "stackframe@1.1.1",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "8.16.0",
+      "_npmUser": {
+        "name": "eriwen",
+        "email": "me@eriwen.com"
+      },
+      "dist": {
+        "integrity": "sha512-0PlYhdKh6AfFxRyK/v+6/k+/mMfyiEBbTM5L94D0ZytQnJ166wuwoTYLHFWGbs2dpA8Rgq763KGWmN1EQEYHRQ==",
+        "shasum": "ffef0a3318b1b60c3b58564989aca5660729ec71",
+        "tarball": "https://registry.npmjs.org/stackframe/-/stackframe-1.1.1.tgz",
+        "fileCount": 16,
+        "unpackedSize": 30753,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeElVlCRA9TVsSAnZWagAAplcQAJNI8V/K+3FUa0NifMMB\nxILaf0vNtX93EB2+imuLe6ySgQ9RljHtf44u1c25LNSuUHun566sTCcKCWB5\nzJhCrPD1MpeOB+aRMF+ZK8AhBMU3Q6NMRwI/NBmejLqNIWYNR34bofdOiqnd\nORs4ENnFf0mxR7dO8FvukVd7y65zvvyBnyQ3ZtGaPOve403RQ0kKNamnhWHf\niDpAYRzMVA4qQkdPDp3sAOXeyYnYwctFfMj4EBgr64+n0D9uwoAicMoQjuzh\nfyfH/h7aKKgUXPGV4092g4jK3NassgTKfahI8NlUy1SztCUcdmr8EMu4I4Ig\nWJvWKtb+apbXRU/nTKqR+YD1oIibSXOFaj28o65Gj9r1h26FCS5d74wJXoVQ\nIF5a7Ov5pwq5efeL1XFxwmArF1p3hbCIPPB5HxwL+Q7NJ563+NLtMnXUGk54\nzpuiF0H+R6C1IbW5Q6oIeqLv1nqHyDoOm990Hxr/0qHaFLAOIAeEOSLmYrIe\n/7Ea6hkuam5vDSW/WNbi8k0tttfUcrQlKEBJboRNKNjlmk/jaRXnm+v/iqo+\n1oxV7dh49ACtbbWSSTOgtzo2z7TAqd5EKTwvJxLYCmOiPmJoFvRaRD5fbBcV\nDKSVdj/mmZdLriLJS/5E3G8s/WBvaMy6kuy5bQNzvUlR0sWShkybK5fcSJwE\nkHuX\r\n=2wZh\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/stackframe_1.1.1_1578259812819_0.013462277719981985"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.2.0": {
+      "name": "stackframe",
+      "description": "JS Object representation of a stack frame",
+      "maintainers": [
+        {
+          "email": "me@eriwen.com",
+          "name": "eriwen"
+        },
+        {
+          "email": "oliver.salzburg@gmail.com",
+          "name": "oliversalzburg"
+        }
+      ],
+      "version": "1.2.0",
+      "license": "MIT",
+      "keywords": [
+        "stacktrace",
+        "error",
+        "debugger",
+        "stack frame"
+      ],
+      "homepage": "https://www.stacktracejs.com",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/stacktracejs/stackframe.git"
+      },
+      "devDependencies": {
+        "eslint": "^6.8.0",
+        "jasmine": "^3.5.0",
+        "jasmine-core": "^3.5.0",
+        "karma": "^4.4.1",
+        "karma-chrome-launcher": "^3.1.0",
+        "karma-coverage": "^2.0.2",
+        "karma-coveralls": "^2.1.0",
+        "karma-firefox-launcher": "^1.2.0",
+        "karma-ie-launcher": "^1.0.0",
+        "karma-jasmine": "^1.1.2",
+        "karma-opera-launcher": "^1.0.0",
+        "karma-phantomjs-launcher": "^1.0.4",
+        "karma-safari-launcher": "^1.0.0",
+        "karma-sauce-launcher": "^2.0.2",
+        "karma-spec-reporter": "0.0.32",
+        "uglify-es": "^3.3.9"
+      },
+      "bugs": {
+        "url": "https://github.com/stacktracejs/stackframe/issues"
+      },
+      "main": "./stackframe.js",
+      "scripts": {
+        "lint": "eslint --fix .",
+        "test": "karma start karma.conf.js --single-run",
+        "test-pr": "karma start karma.conf.js --single-run --browsers Firefox,Chrome_Travis",
+        "test-ci": "karma start karma.conf.ci.js --single-run",
+        "prepare": "cp stackframe.js dist/ && uglifyjs stackframe.js -o dist/stackframe.min.js --compress --mangle --source-map \"url=stackframe.min.js.map\""
+      },
+      "gitHead": "04efd0c212e5e99c7a6e0daf67fb55ecdb9d175e",
+      "_id": "stackframe@1.2.0",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "8.16.0",
+      "_npmUser": {
+        "name": "eriwen",
+        "email": "me@eriwen.com"
+      },
+      "dist": {
+        "integrity": "sha512-GrdeshiRmS1YLMYgzF16olf2jJ/IzxXY9lhKOskuVziubpTYcYqyOwYeJKzQkwy7uN0fYSsbsC4RQaXf9LCrYA==",
+        "shasum": "52429492d63c62eb989804c11552e3d22e779303",
+        "tarball": "https://registry.npmjs.org/stackframe/-/stackframe-1.2.0.tgz",
+        "fileCount": 16,
+        "unpackedSize": 31934,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJe0oGpCRA9TVsSAnZWagAA6sUQAIJT5acVRN4NnHgtoBot\nAxOrEdswQ+RjNO+1/UrRqMUPfA6bX2EqNu3GKxrWNrokuPfqQGk4tETtWV8E\nI2LPXFBazdudGaYZ4LFnAdWii/9PUVzvArBQXqjQqXocMFx8Wx0KJnlj7cqV\neDZmYCwEwJ8AqULZhl8FXxSr371gflqqOHH7KzuJ2MEauxhiBQ7DakQBaS4A\nWUrawhcQaAtP0Ww2HmC2d2JK2dL6K6iJLSRacUJ7ujgEQhmL/0/g1XsJLzqe\nokJIX72+W0x2fpZJ9juLIDjaRFP+S0jUjcxCc8mIArIJhNpOmkavCeoBr4r3\nMgzQoAnRhPJcPwX1TYNQA+I5va3lb7dltd5RWsvTJLEjhYeqJ7A8Go97OAyL\nvp0wMsfi3xlRFvvfYj/CETxTy8Ovm4TTuuk9kMdyYYYZx0gzfvN0/S9yvWfb\nWdnFPneeonDXbUDbJlBZrapcwQfh3ZXExvMDipMpn2tnipZ0YWj/kuHSBLgy\noBTBq1pTkfGxjKGw1qoydn1701aqMz3WE/UHOGcsE0q/ZaJ7D2b7a7SGhgSR\nDw2XR0X6EgyiYtVHu24kpTj4j7eqbCxNPEw5w4VHlrKWsmiufZdv+RTSo99V\n3V3PQje5oYKGiwpeOveniGr4WHDT21vd7gRXj9TiTaXI5umCvnq+aLcTtJs3\nTV8U\r\n=XU6Z\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/stackframe_1.2.0_1590854057273_0.6110762575478574"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "stackframe \n==========\n## JS Object representation of a stack frame\n[![Build Status](https://img.shields.io/travis/stacktracejs/stackframe/master.svg?style=flat-square)](https://travis-ci.org/stacktracejs/stackframe)\n[![Coverage Status](https://img.shields.io/coveralls/stacktracejs/stackframe.svg?style=flat-square)](https://coveralls.io/r/stacktracejs/stackframe?branch=master)\n[![GitHub license](https://img.shields.io/github/license/stacktracejs/stackframe.svg?style=flat-square)](https://opensource.org/licenses/MIT)\n[![dependencies](https://img.shields.io/badge/dependencies-0-green.svg?style=flat-square)](https://github.com/stacktracejs/stackframe/releases)\n[![gzip size](https://img.shields.io/badge/gzipped-0.96k-green.svg?style=flat-square)](https://github.com/stacktracejs/stackframe/releases)\n[![module format](https://img.shields.io/badge/module%20format-umd-lightgrey.svg?style=flat-square&colorB=ff69b4)](https://github.com/stacktracejs/stackframe/releases)\n[![code of conduct](https://img.shields.io/badge/code%20of-conduct-lightgrey.svg?style=flat-square&colorB=ff69b4)](http://todogroup.org/opencodeofconduct/#stacktrace.js/me@eriwen.com)\n\nUnderlies functionality of other modules within [stacktrace.js](https://www.stacktracejs.com).\n\nWritten to closely resemble StackFrame representations in [Gecko](http://mxr.mozilla.org/mozilla-central/source/xpcom/base/nsIException.idl#14) and [V8](https://github.com/v8/v8/wiki/Stack%20Trace%20API)\n\n## Usage\n```js\n// Create StackFrame and set properties\nvar stackFrame = new StackFrame({\n    functionName: 'funName',\n    args: ['args'],\n    fileName: 'http://localhost:3000/file.js',\n    lineNumber: 1,\n    columnNumber: 3288, \n    isEval: true,\n    isNative: false,\n    source: 'ORIGINAL_STACK_LINE'\n    evalOrigin: new StackFrame({functionName: 'withinEval', lineNumber: 2, columnNumber: 43})\n});\n\nstackFrame.functionName      // => \"funName\"\nstackFrame.setFunctionName('newName')\nstackFrame.getFunctionName() // => \"newName\"\n\nstackFrame.args              // => [\"args\"]\nstackFrame.setArgs([])\nstackFrame.getArgs()         // => []\n\nstackFrame.fileName          // => 'http://localhost:3000/file.min.js'\nstackFrame.setFileName('http://localhost:3000/file.js')  \nstackFrame.getFileName()     // => 'http://localhost:3000/file.js'\n\nstackFrame.lineNumber        // => 1\nstackFrame.setLineNumber(325)\nstackFrame.getLineNumber()   // => 325\n\nstackFrame.columnNumber      // => 3288\nstackFrame.setColumnNumber(20)\nstackFrame.getColumnNumber() // => 20\n\nstackFrame.source            // => 'ORIGINAL_STACK_LINE'\nstackFrame.setSource('NEW_SOURCE')\nstackFrame.getSource()       // => 'NEW_SOURCE'\n\nstackFrame.isEval            // => true\nstackFrame.setIsEval(false)\nstackFrame.getIsEval()       // => false\n\nstackFrame.isNative          // => false\nstackFrame.setIsNative(true)\nstackFrame.getIsNative()     // => true\n\nstackFrame.evalOrigin                         // => StackFrame({functionName: 'withinEval', lineNumber: ...})\nstackFrame.setEvalOrigin({functionName: 'evalFn', fileName: 'anonymous'})\nstackFrame.getEvalOrigin().getFunctionName()  // => 'evalFn'\n\nstackFrame.toString() // => 'funName(args)@http://localhost:3000/file.js:325:20'\n```\n\n## Browser Support\n[![Sauce Test Status](https://saucelabs.com/browser-matrix/stacktracejs.svg)](https://saucelabs.com/u/stacktracejs)\n\n## Installation\n```\nnpm install stackframe\nbower install stackframe\nhttps://raw.githubusercontent.com/stacktracejs/stackframe/master/dist/stackframe.min.js\n```\n",
+  "maintainers": [
+    {
+      "email": "me@eriwen.com",
+      "name": "eriwen"
+    },
+    {
+      "email": "oliver.salzburg@gmail.com",
+      "name": "oliversalzburg"
+    }
+  ],
+  "time": {
+    "modified": "2020-05-30T15:54:21.210Z",
+    "created": "2014-10-06T00:56:13.583Z",
+    "0.1.0": "2014-10-06T00:56:13.583Z",
+    "0.1.1": "2014-10-10T22:46:42.615Z",
+    "0.2.0": "2014-11-01T17:09:58.391Z",
+    "0.2.1": "2014-11-16T22:29:43.201Z",
+    "0.2.2": "2015-01-25T20:25:30.851Z",
+    "0.3.0": "2015-07-07T02:57:04.147Z",
+    "0.3.1": "2015-08-14T03:03:15.596Z",
+    "1.0.0": "2015-12-30T18:25:34.366Z",
+    "1.0.1": "2015-12-30T19:06:23.299Z",
+    "1.0.2": "2015-12-30T20:07:18.854Z",
+    "1.0.3": "2017-04-30T01:39:29.910Z",
+    "1.0.4": "2017-08-12T17:26:26.273Z",
+    "1.1.0": "2019-09-18T00:27:36.566Z",
+    "1.1.1": "2020-01-05T21:30:13.020Z",
+    "1.2.0": "2020-05-30T15:54:17.388Z"
+  },
+  "homepage": "https://www.stacktracejs.com",
+  "keywords": [
+    "stacktrace",
+    "error",
+    "debugger",
+    "stack frame"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/stacktracejs/stackframe.git"
+  },
+  "bugs": {
+    "url": "https://github.com/stacktracejs/stackframe/issues"
+  },
+  "readmeFilename": "README.md",
+  "license": "MIT",
+  "users": {
+    "shanewholloway": true
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "root",
+  "version": "1.2.3",
+  "dependencies": {
+    "@scope/x": "1"
+  },
+  "optionalDependencies": {
+    "notinstalledhere": ""
+  },
+  "devDependencies": {
+    "foo": "*"
+  },
+  "peerDependencies": {
+    "@scope/y": ">0.99.0"
+  }
+}

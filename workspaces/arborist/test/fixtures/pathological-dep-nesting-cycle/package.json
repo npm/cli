@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@isaacs/pathological-dep-nesting-a": "^1.0.0"
+  }
+}

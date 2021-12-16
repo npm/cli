@@ -1,0 +1,547 @@
+{
+  "_id": "code-excerpt",
+  "_rev": "8-c9572a70b107a694e1044c2a514b6062",
+  "name": "code-excerpt",
+  "description": "Extract code excerpts",
+  "dist-tags": {
+    "latest": "3.0.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "code-excerpt",
+      "version": "1.0.0",
+      "description": "Extract code excerpts",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/vdemedes/code-excerpt.git"
+      },
+      "author": {
+        "name": "vdemedes",
+        "email": "vdemedes@gmail.com",
+        "url": "github.com/vdemedes"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "dependencies": {
+        "convert-to-spaces": "^1.0.0",
+        "repeating": "^3.0.0"
+      },
+      "devDependencies": {
+        "ava": "^0.16.0",
+        "xo": "^0.17.1"
+      },
+      "xo": {
+        "esnext": true
+      },
+      "gitHead": "f5e525671de2db8b7699c17fc00db9e6717af7bc",
+      "bugs": {
+        "url": "https://github.com/vdemedes/code-excerpt/issues"
+      },
+      "homepage": "https://github.com/vdemedes/code-excerpt#readme",
+      "_id": "code-excerpt@1.0.0",
+      "_shasum": "ba0b3b0f61d0521c06c54038fec13912a027a7b3",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "6.9.1",
+      "_npmUser": {
+        "name": "vdemedes",
+        "email": "vdemedes@gmail.com"
+      },
+      "dist": {
+        "shasum": "ba0b3b0f61d0521c06c54038fec13912a027a7b3",
+        "tarball": "https://registry.npmjs.org/code-excerpt/-/code-excerpt-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "vdemedes",
+          "email": "vdemedes@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/code-excerpt-1.0.0.tgz_1479052815107_0.5139174887444824"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "code-excerpt",
+      "version": "1.0.1",
+      "description": "Extract code excerpts",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/vdemedes/code-excerpt.git"
+      },
+      "author": {
+        "name": "vdemedes",
+        "email": "vdemedes@gmail.com",
+        "url": "github.com/vdemedes"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "dependencies": {
+        "convert-to-spaces": "^1.0.1"
+      },
+      "devDependencies": {
+        "ava": "^0.16.0",
+        "xo": "^0.17.1"
+      },
+      "xo": {
+        "esnext": true
+      },
+      "gitHead": "04a3f8cda21a8c63c94d784295ca57458b8ea250",
+      "bugs": {
+        "url": "https://github.com/vdemedes/code-excerpt/issues"
+      },
+      "homepage": "https://github.com/vdemedes/code-excerpt#readme",
+      "_id": "code-excerpt@1.0.1",
+      "_shasum": "997a51b65fade6dbb98f00567a0039dc35e4c68d",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "6.9.1",
+      "_npmUser": {
+        "name": "vdemedes",
+        "email": "vdemedes@gmail.com"
+      },
+      "dist": {
+        "shasum": "997a51b65fade6dbb98f00567a0039dc35e4c68d",
+        "tarball": "https://registry.npmjs.org/code-excerpt/-/code-excerpt-1.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "vdemedes",
+          "email": "vdemedes@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/code-excerpt-1.0.1.tgz_1479054549188_0.3028081937227398"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "code-excerpt",
+      "version": "1.0.2",
+      "description": "Extract code excerpts",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/vdemedes/code-excerpt.git"
+      },
+      "author": {
+        "name": "vdemedes",
+        "email": "vdemedes@gmail.com",
+        "url": "github.com/vdemedes"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "dependencies": {
+        "convert-to-spaces": "^1.0.1"
+      },
+      "devDependencies": {
+        "ava": "^0.16.0",
+        "xo": "^0.17.1"
+      },
+      "xo": {
+        "esnext": true
+      },
+      "gitHead": "cca85a62851db832d35e2e17f54a8f065ddd3f59",
+      "bugs": {
+        "url": "https://github.com/vdemedes/code-excerpt/issues"
+      },
+      "homepage": "https://github.com/vdemedes/code-excerpt#readme",
+      "_id": "code-excerpt@1.0.2",
+      "_shasum": "c7ef931b442daa871105dbf0c98a501b63014e0e",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "6.9.1",
+      "_npmUser": {
+        "name": "vdemedes",
+        "email": "vdemedes@gmail.com"
+      },
+      "dist": {
+        "shasum": "c7ef931b442daa871105dbf0c98a501b63014e0e",
+        "tarball": "https://registry.npmjs.org/code-excerpt/-/code-excerpt-1.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "vdemedes",
+          "email": "vdemedes@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/code-excerpt-1.0.2.tgz_1479558804043_0.18496258277446032"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "code-excerpt",
+      "version": "1.1.0",
+      "description": "Extract code excerpts",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/vdemedes/code-excerpt.git"
+      },
+      "author": {
+        "name": "vdemedes",
+        "email": "vdemedes@gmail.com",
+        "url": "github.com/vdemedes"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "dependencies": {
+        "convert-to-spaces": "^1.0.1"
+      },
+      "devDependencies": {
+        "ava": "^0.16.0",
+        "xo": "^0.17.1"
+      },
+      "xo": {
+        "esnext": true
+      },
+      "gitHead": "ee9b8d35e39e6ab8825d3eae060ba67ee7523885",
+      "bugs": {
+        "url": "https://github.com/vdemedes/code-excerpt/issues"
+      },
+      "homepage": "https://github.com/vdemedes/code-excerpt#readme",
+      "_id": "code-excerpt@1.1.0",
+      "_shasum": "d3306fec6fded624d333e19b063b66863883c108",
+      "_from": ".",
+      "_npmVersion": "4.0.5",
+      "_nodeVersion": "7.4.0",
+      "_npmUser": {
+        "name": "vdemedes",
+        "email": "vdemedes@gmail.com"
+      },
+      "dist": {
+        "shasum": "d3306fec6fded624d333e19b063b66863883c108",
+        "tarball": "https://registry.npmjs.org/code-excerpt/-/code-excerpt-1.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "vdemedes",
+          "email": "vdemedes@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/code-excerpt-1.1.0.tgz_1483617692054_0.9965790407732129"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "code-excerpt",
+      "version": "2.0.0",
+      "description": "Extract code excerpts",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/vdemedes/code-excerpt.git"
+      },
+      "author": {
+        "name": "vdemedes",
+        "email": "vdemedes@gmail.com",
+        "url": "github.com/vdemedes"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "dependencies": {
+        "convert-to-spaces": "^1.0.1"
+      },
+      "devDependencies": {
+        "ava": "^0.16.0",
+        "xo": "^0.17.1"
+      },
+      "xo": {
+        "esnext": true
+      },
+      "gitHead": "26675588915c03417faa863aa5d17ae733071171",
+      "bugs": {
+        "url": "https://github.com/vdemedes/code-excerpt/issues"
+      },
+      "homepage": "https://github.com/vdemedes/code-excerpt#readme",
+      "_id": "code-excerpt@2.0.0",
+      "_shasum": "82d7bae1ccf3c6f13c475aa29a55d82c18ec8fce",
+      "_from": ".",
+      "_npmVersion": "4.0.5",
+      "_nodeVersion": "7.4.0",
+      "_npmUser": {
+        "name": "vdemedes",
+        "email": "vdemedes@gmail.com"
+      },
+      "dist": {
+        "shasum": "82d7bae1ccf3c6f13c475aa29a55d82c18ec8fce",
+        "tarball": "https://registry.npmjs.org/code-excerpt/-/code-excerpt-2.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "vdemedes",
+          "email": "vdemedes@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/code-excerpt-2.0.0.tgz_1483621539427_0.7830027579329908"
+      },
+      "directories": {}
+    },
+    "2.1.0": {
+      "name": "code-excerpt",
+      "version": "2.1.0",
+      "description": "Extract code excerpts",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/vadimdemedes/code-excerpt.git"
+      },
+      "author": {
+        "name": "vdemedes",
+        "email": "vdemedes@gmail.com",
+        "url": "github.com/vadimdemedes"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "dependencies": {
+        "convert-to-spaces": "^1.0.1"
+      },
+      "devDependencies": {
+        "ava": "^0.16.0",
+        "xo": "^0.17.1"
+      },
+      "xo": {
+        "esnext": true
+      },
+      "gitHead": "38020c10d88e975f87bc328be26f253167d5a532",
+      "bugs": {
+        "url": "https://github.com/vadimdemedes/code-excerpt/issues"
+      },
+      "homepage": "https://github.com/vadimdemedes/code-excerpt#readme",
+      "_id": "code-excerpt@2.1.0",
+      "_shasum": "5dcc081e88f4a7e3b554e9e35d7ef232d47f8147",
+      "_from": ".",
+      "_npmVersion": "4.0.5",
+      "_nodeVersion": "7.4.0",
+      "_npmUser": {
+        "name": "vdemedes",
+        "email": "vdemedes@gmail.com"
+      },
+      "dist": {
+        "shasum": "5dcc081e88f4a7e3b554e9e35d7ef232d47f8147",
+        "tarball": "https://registry.npmjs.org/code-excerpt/-/code-excerpt-2.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "vdemedes",
+          "email": "vdemedes@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/code-excerpt-2.1.0.tgz_1485986238142_0.45498511497862637"
+      },
+      "directories": {}
+    },
+    "2.1.1": {
+      "name": "code-excerpt",
+      "version": "2.1.1",
+      "description": "Extract code excerpts",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/vadimdemedes/code-excerpt.git"
+      },
+      "author": {
+        "name": "vdemedes",
+        "email": "vdemedes@gmail.com",
+        "url": "github.com/vadimdemedes"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "dependencies": {
+        "convert-to-spaces": "^1.0.1"
+      },
+      "devDependencies": {
+        "ava": "^0.16.0",
+        "xo": "^0.17.1"
+      },
+      "xo": {
+        "esnext": true
+      },
+      "gitHead": "ff6c8e6903e25db5e45d9f90baa8cb25a9033432",
+      "bugs": {
+        "url": "https://github.com/vadimdemedes/code-excerpt/issues"
+      },
+      "homepage": "https://github.com/vadimdemedes/code-excerpt#readme",
+      "_id": "code-excerpt@2.1.1",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "vdemedes",
+        "email": "vdemedes@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-tJLhH3EpFm/1x7heIW0hemXJTUU5EWl2V0EIX558jp05Mt1U6DVryCgkp3l37cxqs+DNbNgxG43SkwJXpQ14Jw==",
+        "shasum": "5fe3057bfbb71a5f300f659ef2cc0a47651ba77c",
+        "tarball": "https://registry.npmjs.org/code-excerpt/-/code-excerpt-2.1.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "vdemedes",
+          "email": "vdemedes@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/code-excerpt-2.1.1.tgz_1516448354909_0.38318837177939713"
+      },
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "code-excerpt",
+      "version": "3.0.0",
+      "description": "Extract code excerpts",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/vadimdemedes/code-excerpt.git"
+      },
+      "author": {
+        "name": "vdemedes",
+        "email": "vdemedes@gmail.com",
+        "url": "github.com/vadimdemedes"
+      },
+      "engines": {
+        "node": ">=10"
+      },
+      "scripts": {
+        "test": "tsd && xo && ava"
+      },
+      "dependencies": {
+        "convert-to-spaces": "^1.0.1"
+      },
+      "devDependencies": {
+        "ava": "^3.9.0",
+        "tsd": "^0.11.0",
+        "xo": "^0.32.0"
+      },
+      "gitHead": "cc24cbd441fae9dcfede1dcd215fa68730e2dc8f",
+      "bugs": {
+        "url": "https://github.com/vadimdemedes/code-excerpt/issues"
+      },
+      "homepage": "https://github.com/vadimdemedes/code-excerpt#readme",
+      "_id": "code-excerpt@3.0.0",
+      "_nodeVersion": "12.13.1",
+      "_npmVersion": "6.12.1",
+      "dist": {
+        "integrity": "sha512-VHNTVhd7KsLGOqfX3SyeO8RyYPMp1GJOg194VITk04WMYCv4plV68YWe6TJZxd9MhobjtpMRnVky01gqZsalaw==",
+        "shasum": "fcfb6748c03dba8431c19f5474747fad3f250f10",
+        "tarball": "https://registry.npmjs.org/code-excerpt/-/code-excerpt-3.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 4080,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJe6QuiCRA9TVsSAnZWagAAzK0QAIk/V4l0TmPaIBbvS556\nKPJ4/NYvCtwhUOD2BC8AH2ywxUZNP2DIg8puy4lamaD1pf8IsR82Q2nLgvTl\nhOdv3vZVtbvPoeacPulKcUdQlzJsghUMa9adlp/5OB9hI5WiCCnHD2W3dbL6\nANYwX77D9lji0bQj8TEvM4xXS2SRfK+rRkuBeK0Sgt8y9F3nbkQYJl3Q9R01\nghvKNNrkl/ksnldBcne3jAt3eMtz5WX5L3QPiF3fSFVV7R2c4dohITHR6eAj\ndnxTT5EFRBfhmJxkpFM7r5CdFka89/NVlfPjqGpxCc5gHwyJZp87fumF1tZ0\n8Jlk8fTwQ27RVBr4B5HUTUZ706AooV+EaM2O+tzY4CSN0J7rX6f2inHoSlmi\nkQngck6L1FO9QwDCqELEPThjB6cQd81pykDZWpylTm2NMDviYgdZPqt42h+c\nUph4Ex2UYhBIBoYIJfzIs/g8s8UUWU5nEG7RtA0hdQijaCdaBrt+VgfR75cx\n/Qd6+HInqdnZyjBe0Him76T7vDa4T5aBZbI/Dg1tXNc8DsJkPZRdDc7MIC8e\nMjUmcM6Ly+VYshRtPVOZP7xojrrYIkaTtYlx8r1lAOdsKPtL373Bw6FIDahM\naH1DlYHnoedMZEVgbwVHs/OkV42GK8ZNSxtsWDOJU06mI4qBqTCSLijIhXS2\nsMoP\r\n=D/Cu\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "vdemedes",
+          "email": "vdemedes@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "vdemedes",
+        "email": "vdemedes@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/code-excerpt_3.0.0_1592331170020_0.47361389519819963"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# code-excerpt ![test](https://github.com/vadimdemedes/code-excerpt/workflows/test/badge.svg)\n\n> Extract code excerpts\n\n## Install\n\n```\n$ npm install --save code-excerpt\n```\n\n## Usage\n\n```js\nconst codeExcerpt = require('code-excerpt');\n\nconst source = `\n'use strict';\n\nfunction someFunc() {}\n\nmodule.exports = () => {\n\tconst a = 1;\n\tconst b = 2;\n\tconst c = 3;\n\n\tsomeFunc();\n};\n`.trim();\n\nconst excerpt = codeExcerpt(source, 5);\n//=> [\n//\t{line: 2, value: ''},\n//\t{line: 3, value: 'function someFunc() {}'},\n//\t{line: 4, value: ''},\n//\t{line: 5, value: 'module.exports = () => {'},\n//\t{line: 6, value: '  const a = 1;'},\n//\t{line: 7, value: '  const b = 2;'},\n//\t{line: 8, value: '  const c = 3;'}\n// ]\n```\n\n## API\n\n### codeExcerpt(source, line, [options])\n\n#### source\n\nType: `string`\n\nSource code.\n\n#### line\n\nType: `number`\n\nLine number to extract excerpt for.\n\n#### options\n\n##### around\n\nType: `number`<br>\nDefault: `3`\n\nNumber of surrounding lines to extract.\n",
+  "maintainers": [
+    {
+      "name": "vdemedes",
+      "email": "vdemedes@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-06-16T18:12:52.703Z",
+    "created": "2016-11-13T16:00:15.636Z",
+    "1.0.0": "2016-11-13T16:00:15.636Z",
+    "1.0.1": "2016-11-13T16:29:09.722Z",
+    "1.0.2": "2016-11-19T12:33:25.916Z",
+    "1.1.0": "2017-01-05T12:01:32.581Z",
+    "2.0.0": "2017-01-05T13:05:41.364Z",
+    "2.1.0": "2017-02-01T21:57:18.672Z",
+    "2.1.1": "2018-01-20T11:39:15.913Z",
+    "3.0.0": "2020-06-16T18:12:50.122Z"
+  },
+  "homepage": "https://github.com/vadimdemedes/code-excerpt#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vadimdemedes/code-excerpt.git"
+  },
+  "author": {
+    "name": "vdemedes",
+    "email": "vdemedes@gmail.com",
+    "url": "github.com/vadimdemedes"
+  },
+  "bugs": {
+    "url": "https://github.com/vadimdemedes/code-excerpt/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md"
+}

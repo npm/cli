@@ -1,0 +1,1032 @@
+{
+  "_id": "string-width",
+  "_rev": "15-6f36c13f8da07cbd6b4eb3fa732f6b58",
+  "name": "string-width",
+  "description": "Get the visual width of a string - the number of columns required to display it",
+  "dist-tags": {
+    "latest": "4.2.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "string-width",
+      "version": "1.0.0",
+      "description": "Get the visual width of a string - the number of columns required to display it",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/string-width"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "string",
+        "str",
+        "character",
+        "char",
+        "unicode",
+        "width",
+        "visual",
+        "column",
+        "columns",
+        "fullwidth",
+        "full-width",
+        "full",
+        "ansi",
+        "escape",
+        "codes",
+        "cli",
+        "command-line",
+        "terminal",
+        "console",
+        "cjk",
+        "chinese",
+        "japanese",
+        "korean",
+        "fixed-width"
+      ],
+      "dependencies": {
+        "code-point-at": "^1.0.0",
+        "is-fullwidth-code-point": "^1.0.0",
+        "strip-ansi": "^3.0.0"
+      },
+      "devDependencies": {
+        "ava": "0.0.4"
+      },
+      "gitHead": "4bbfa2814ce7411a12f2dea7395316606b9d2c39",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/string-width/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/string-width",
+      "_id": "string-width@1.0.0",
+      "_shasum": "facc17cd1dc81311b6ef9014eb7ffa4e89858f3b",
+      "_from": ".",
+      "_npmVersion": "2.11.2",
+      "_nodeVersion": "0.12.5",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "facc17cd1dc81311b6ef9014eb7ffa4e89858f3b",
+        "tarball": "https://registry.npmjs.org/string-width/-/string-width-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "string-width",
+      "version": "1.0.1",
+      "description": "Get the visual width of a string - the number of columns required to display it",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/string-width"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "string",
+        "str",
+        "character",
+        "char",
+        "unicode",
+        "width",
+        "visual",
+        "column",
+        "columns",
+        "fullwidth",
+        "full-width",
+        "full",
+        "ansi",
+        "escape",
+        "codes",
+        "cli",
+        "command-line",
+        "terminal",
+        "console",
+        "cjk",
+        "chinese",
+        "japanese",
+        "korean",
+        "fixed-width"
+      ],
+      "dependencies": {
+        "code-point-at": "^1.0.0",
+        "is-fullwidth-code-point": "^1.0.0",
+        "strip-ansi": "^3.0.0"
+      },
+      "devDependencies": {
+        "ava": "0.0.4"
+      },
+      "gitHead": "f279cfd14835f0a3c8df69ba18e9a3960156e135",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/string-width/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/string-width",
+      "_id": "string-width@1.0.1",
+      "_shasum": "c92129b6f1d7f52acf9af424a26e3864a05ceb0a",
+      "_from": ".",
+      "_npmVersion": "2.11.2",
+      "_nodeVersion": "0.12.5",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "c92129b6f1d7f52acf9af424a26e3864a05ceb0a",
+        "tarball": "https://registry.npmjs.org/string-width/-/string-width-1.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "string-width",
+      "version": "1.0.2",
+      "description": "Get the visual width of a string - the number of columns required to display it",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/string-width.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "string",
+        "str",
+        "character",
+        "char",
+        "unicode",
+        "width",
+        "visual",
+        "column",
+        "columns",
+        "fullwidth",
+        "full-width",
+        "full",
+        "ansi",
+        "escape",
+        "codes",
+        "cli",
+        "command-line",
+        "terminal",
+        "console",
+        "cjk",
+        "chinese",
+        "japanese",
+        "korean",
+        "fixed-width"
+      ],
+      "dependencies": {
+        "code-point-at": "^1.0.0",
+        "is-fullwidth-code-point": "^1.0.0",
+        "strip-ansi": "^3.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "282cf3d53918a92cc3ee0778dcf938039bcbc47b",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/string-width/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/string-width#readme",
+      "_id": "string-width@1.0.2",
+      "_shasum": "118bdf5b8cdc51a2a7e70d211e07e2b0b9b107d3",
+      "_from": ".",
+      "_npmVersion": "2.15.5",
+      "_nodeVersion": "4.4.5",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "118bdf5b8cdc51a2a7e70d211e07e2b0b9b107d3",
+        "tarball": "https://registry.npmjs.org/string-width/-/string-width-1.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/string-width-1.0.2.tgz_1471188233009_0.6573935742489994"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "string-width",
+      "version": "2.0.0",
+      "description": "Get the visual width of a string - the number of columns required to display it",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/string-width.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "string",
+        "str",
+        "character",
+        "char",
+        "unicode",
+        "width",
+        "visual",
+        "column",
+        "columns",
+        "fullwidth",
+        "full-width",
+        "full",
+        "ansi",
+        "escape",
+        "codes",
+        "cli",
+        "command-line",
+        "terminal",
+        "console",
+        "cjk",
+        "chinese",
+        "japanese",
+        "korean",
+        "fixed-width"
+      ],
+      "dependencies": {
+        "is-fullwidth-code-point": "^2.0.0",
+        "strip-ansi": "^3.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "xo": {
+        "esnext": true
+      },
+      "gitHead": "523d7ba4dbb24d40cde88d2c36bb1c7124ab6f82",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/string-width/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/string-width#readme",
+      "_id": "string-width@2.0.0",
+      "_shasum": "635c5436cc72a6e0c387ceca278d4e2eec52687e",
+      "_from": ".",
+      "_npmVersion": "3.10.7",
+      "_nodeVersion": "4.5.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "635c5436cc72a6e0c387ceca278d4e2eec52687e",
+        "tarball": "https://registry.npmjs.org/string-width/-/string-width-2.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/string-width-2.0.0.tgz_1474527284011_0.7386264291126281"
+      },
+      "directories": {}
+    },
+    "2.1.0": {
+      "name": "string-width",
+      "version": "2.1.0",
+      "description": "Get the visual width of a string - the number of columns required to display it",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/string-width.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "string",
+        "str",
+        "character",
+        "char",
+        "unicode",
+        "width",
+        "visual",
+        "column",
+        "columns",
+        "fullwidth",
+        "full-width",
+        "full",
+        "ansi",
+        "escape",
+        "codes",
+        "cli",
+        "command-line",
+        "terminal",
+        "console",
+        "cjk",
+        "chinese",
+        "japanese",
+        "korean",
+        "fixed-width"
+      ],
+      "dependencies": {
+        "is-fullwidth-code-point": "^2.0.0",
+        "strip-ansi": "^4.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "175b26f4cd503d6236b5ea2a1664263b56f1e352",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/string-width/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/string-width#readme",
+      "_id": "string-width@2.1.0",
+      "_shasum": "030664561fc146c9423ec7d978fe2457437fe6d0",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "8.0.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "030664561fc146c9423ec7d978fe2457437fe6d0",
+        "tarball": "https://registry.npmjs.org/string-width/-/string-width-2.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/string-width-2.1.0.tgz_1498493708563_0.051171303959563375"
+      },
+      "directories": {}
+    },
+    "2.1.1": {
+      "name": "string-width",
+      "version": "2.1.1",
+      "description": "Get the visual width of a string - the number of columns required to display it",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/string-width.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "string",
+        "str",
+        "character",
+        "char",
+        "unicode",
+        "width",
+        "visual",
+        "column",
+        "columns",
+        "fullwidth",
+        "full-width",
+        "full",
+        "ansi",
+        "escape",
+        "codes",
+        "cli",
+        "command-line",
+        "terminal",
+        "console",
+        "cjk",
+        "chinese",
+        "japanese",
+        "korean",
+        "fixed-width"
+      ],
+      "dependencies": {
+        "is-fullwidth-code-point": "^2.0.0",
+        "strip-ansi": "^4.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "74d8d552b465692790c41169b123409669d41079",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/string-width/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/string-width#readme",
+      "_id": "string-width@2.1.1",
+      "_npmVersion": "5.0.0",
+      "_nodeVersion": "8.0.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-nOqH59deCq9SRHlxq1Aw85Jnt4w6KvLKqWVik6oA9ZklXLNIOlqg4F2yrT1MVaTjAqvVwdfeZ7w7aCvJD7ugkw==",
+        "shasum": "ab93f27a8dc13d28cac815c462143a6d9012ae9e",
+        "tarball": "https://registry.npmjs.org/string-width/-/string-width-2.1.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/string-width-2.1.1.tgz_1500376154382_0.7171604454051703"
+      },
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "string-width",
+      "version": "3.0.0",
+      "description": "Get the visual width of a string - the number of columns required to display it",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/string-width.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "keywords": [
+        "string",
+        "str",
+        "character",
+        "char",
+        "unicode",
+        "width",
+        "visual",
+        "column",
+        "columns",
+        "fullwidth",
+        "full-width",
+        "full",
+        "ansi",
+        "escape",
+        "codes",
+        "cli",
+        "command-line",
+        "terminal",
+        "console",
+        "cjk",
+        "chinese",
+        "japanese",
+        "korean",
+        "fixed-width"
+      ],
+      "dependencies": {
+        "emoji-regex": "^7.0.1",
+        "is-fullwidth-code-point": "^2.0.0",
+        "strip-ansi": "^5.0.0"
+      },
+      "devDependencies": {
+        "ava": "^1.0.1",
+        "xo": "^0.23.0"
+      },
+      "gitHead": "58147d249083e44c15c00f9de032d1f25e2039fe",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/string-width/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/string-width#readme",
+      "_id": "string-width@3.0.0",
+      "_npmVersion": "6.5.0",
+      "_nodeVersion": "10.13.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-rr8CUxBbvOZDUvc5lNIJ+OC1nPVpz+Siw9VBtUjB9b6jZehZLFt0JMCZzShFHIsI8cbhm0EsNIfWJMFV3cu3Ew==",
+        "shasum": "5a1690a57cc78211fffd9bf24bbe24d090604eb1",
+        "tarball": "https://registry.npmjs.org/string-width/-/string-width-3.0.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 3928,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcFQxRCRA9TVsSAnZWagAAUGcP/RMaOMcTiEPzw6CKx8Aw\nVYY9DOqoxRxEarNwUFerDX10ezHNzS+vhw1bB6LDIWwOFqy0KFYsUCkzgcIT\ngwrVWLIRJIHppLc0/4cwgmaj+bwkq7zLqiFR/rRfSbFAJYUxucMokgX1S80Z\ntQabeDKKh6PAyrrSZFauSiUz5mEkxB0yLPKvvLnLl0t7xBzcMl4F1LxTgZ8g\nusM931jqRgf3SE9AHnKZGlL2OkaGOPEoRIQwcWkWzEyqm0suULZ0So9f6127\nMSPi8q/v3t1VnfD6w9XeQwfyHu1AbPGwoYRlUjILwyAhxzyftb1D7wzeZK0n\nHEwR9FBgjBK2rgK+4IuDu9U27p5H49Qez4W8zHxtYLLA5HF6QI48ut9t6hMC\nvt/g0kbkV5TNILl8L55cH8Q4DyGwzpNQY0XAl0hKzt1WYuAxcp2QVa/xlyaU\nXznYCBJ4VitsxLPi+MAgj1hUTtzZKTbc14EJ9mgFpWdApfBxU6GRiaHmC1Cw\nMvuqgHHdJqFpvetWC7COo9fXgEVAbHaKaTARYp1Z/uwKPBwHBs2ab9v2GB8g\nb4euKRjobYQ6DdIXKMfRgezzFDDy6LUwbv+4QrlaVWCxT43NQogRkOIV1dOz\nW3DDrR7wQ+T0/a7vtFYvMsw0Rq1Ldr1TT+uOP7bXaKbGZs4NmELjk7gZvM/w\nodqZ\r\n=M9ad\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/string-width_3.0.0_1544883280763_0.9155794194309814"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.1.0": {
+      "name": "string-width",
+      "version": "3.1.0",
+      "description": "Get the visual width of a string - the number of columns required to display it",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/string-width.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "keywords": [
+        "string",
+        "str",
+        "character",
+        "char",
+        "unicode",
+        "width",
+        "visual",
+        "column",
+        "columns",
+        "fullwidth",
+        "full-width",
+        "full",
+        "ansi",
+        "escape",
+        "codes",
+        "cli",
+        "command-line",
+        "terminal",
+        "console",
+        "cjk",
+        "chinese",
+        "japanese",
+        "korean",
+        "fixed-width"
+      ],
+      "dependencies": {
+        "emoji-regex": "^7.0.1",
+        "is-fullwidth-code-point": "^2.0.0",
+        "strip-ansi": "^5.1.0"
+      },
+      "devDependencies": {
+        "ava": "^1.0.1",
+        "xo": "^0.23.0"
+      },
+      "gitHead": "3b3da68dfea82e193f9d6deee77224cf8e5c3803",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/string-width/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/string-width#readme",
+      "_id": "string-width@3.1.0",
+      "_nodeVersion": "8.15.0",
+      "_npmVersion": "6.8.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-vafcv6KjVZKSgz06oM/H6GDBrAtz8vdhQakGjFIvNrHA6y3HCF1CInLy+QLq8dTJPQ1b+KDUqDFctkdRW44e1w==",
+        "shasum": "22767be21b62af1081574306f69ac51b62203961",
+        "tarball": "https://registry.npmjs.org/string-width/-/string-width-3.1.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 4009,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcgiZYCRA9TVsSAnZWagAAii4QAKDSW3PDbYUGmg95Fi36\ncRIzc/l97f2Y4Smf4yx5KgDASaiW4AO3PlQnoCFs8EGX/TLpgUpcS/XL2IQz\np83UuTYMqkNnCR7KCXm5SlpENLO/tJ/9i6M+nROCdlSvwVzZGCQrd6wsvNUo\n6gQMgimFy0YspA9H8tkmPOkNrz0kTCPWvYzdBXe1u7RtpBLTO6WvK1banY/K\nyIyWPK1Fy94Xc3mK6M1ha2FOI2eR0yem7wzCJGLZ1g0w2SUX+0DToNV7Ag50\n36Wpy02qy3hErZ4Dx0XE3xuRCX4i6OBlTKtvODlndYeIpF7Mtt8ThcbuAyOE\nZMjd+zTIqyA2dK3IsMKwTmCEGowoVRGGw/IABtft6KgPMSNTuteRXtGFSN0o\nrjxdHU94e8l2xeo6818S3teigw55WCuZn4lBswJAXSchYSt5Gs71bE90OrJM\n4qFj2j6ACz2/Amvsi9O+i43ezvQiePJeIkv18bqgGARtSBJIwoK7InbbIhLo\nsznU1y+gi3CAWcGog8wD9bYmCOUStUyhIrXXFb7wwihbTgEvKBZ89RlupXmp\n7+ONMZZhnWLgvX2UtHAGb7xTCDE+ny/z1Q+9QZv5LZ7G83CvEWxzt5UO7b4s\nOEwFREjr2dJfTIDBGYSNchZihQi91RWr1H7w0T6sHrQ5cYAP/sEeoeImdFrN\nHAN4\r\n=c+uK\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/string-width_3.1.0_1552033367672_0.5762074411129379"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.0.0": {
+      "name": "string-width",
+      "version": "4.0.0",
+      "description": "Get the visual width of a string - the number of columns required to display it",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/string-width.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd-check"
+      },
+      "keywords": [
+        "string",
+        "character",
+        "unicode",
+        "width",
+        "visual",
+        "column",
+        "columns",
+        "fullwidth",
+        "full-width",
+        "full",
+        "ansi",
+        "escape",
+        "codes",
+        "cli",
+        "command-line",
+        "terminal",
+        "console",
+        "cjk",
+        "chinese",
+        "japanese",
+        "korean",
+        "fixed-width"
+      ],
+      "dependencies": {
+        "emoji-regex": "^8.0.0",
+        "is-fullwidth-code-point": "^3.0.0",
+        "strip-ansi": "^5.1.0"
+      },
+      "devDependencies": {
+        "ava": "^1.3.1",
+        "tsd-check": "^0.5.0",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "2ca2bc7443a6408feab185200ae55fd6333199c6",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/string-width/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/string-width#readme",
+      "_id": "string-width@4.0.0",
+      "_nodeVersion": "8.15.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-r6JqKDbluBXG8TvRNZNA7ZNQgDc1q1Uw5Po/fHQMiDfQNxIdBGkiJ3sE0HfdTaOmKjh7kVCOjL9pNKiowqtIHw==",
+        "shasum": "44fe19da01e4e52ba868ef6734207f5bbe11be51",
+        "tarball": "https://registry.npmjs.org/string-width/-/string-width-4.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 4598,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcj1WVCRA9TVsSAnZWagAA2zMP/RJZ7wHDL/ZlZs7T8w4X\nnusZFm54hKVonAuc02lcNVqD0af3yWPXplyWIiDw8GA3uWtXC1GXY8NSzDpf\nnm1n0ThHpl4/HGWx2EVtT0ya4BJZcE2HFod+eQz6mrjY+uZEXxsjyx4NMD39\nGuff40EyQ9jovo4a9hRnwLGKoVLXxKg1V/nHqvNHUuK9emxDmv2MHiU/hT16\n2ClfMEl1ObnvxkAvzSlmVj3px6A36okoATm9GqVlExnxxEhkgzXSEwN4xtVT\ngSjEdknN9xFPklRtv8BIntSBLisVyfmWlHnuYvXmvaJ1rZGQglFlBLjM7hLN\nPxkRAt0fSa+0o05cx/fVMG5SpDWPMmHqGTgM2voETH4CRqt9QTyt2TFxYjXi\n+zPGqASGimFLPq7v2gB9u4f0J7WzZczjb1UB85zA2IY4SG4+nA/dZLnQlEQG\n8IBIx/f9eezQ1FRzgPdTqxz3/SrMPgGM1mSiqEmztLuxldTaemzcrD24wwI6\nee6uAJ3Z83Syr6tyFF8n0HFBo6TAkx+2tretqvEfAbCC/SgbD86CsboFkOoU\ns2H4AgeM6NoKEeKZeEy3aBQWUgTciwNXh4rQ3MdVVAMvJgyVJln2JH9+IoXn\nrzPpIxQ+tKYm49hBECZSIRwgKeL6uDxvzJDPoG1M+qA+lzJAkoa3f38eborK\nnBfF\r\n=+AGL\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/string-width_4.0.0_1552897428563_0.6535148093489709"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.1.0": {
+      "name": "string-width",
+      "version": "4.1.0",
+      "description": "Get the visual width of a string - the number of columns required to display it",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/string-width.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "string",
+        "character",
+        "unicode",
+        "width",
+        "visual",
+        "column",
+        "columns",
+        "fullwidth",
+        "full-width",
+        "full",
+        "ansi",
+        "escape",
+        "codes",
+        "cli",
+        "command-line",
+        "terminal",
+        "console",
+        "cjk",
+        "chinese",
+        "japanese",
+        "korean",
+        "fixed-width"
+      ],
+      "dependencies": {
+        "emoji-regex": "^8.0.0",
+        "is-fullwidth-code-point": "^3.0.0",
+        "strip-ansi": "^5.2.0"
+      },
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "tsd": "^0.7.1",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "272fccd2b2f90d74e0ab45299d109644bbc1751b",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/string-width/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/string-width#readme",
+      "_id": "string-width@4.1.0",
+      "_nodeVersion": "8.15.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-NrX+1dVVh+6Y9dnQ19pR0pP4FiEIlUvdTGn8pw6CKTNq5sgib2nIhmUNT5TAmhWmvKr3WcxBcP3E8nWezuipuQ==",
+        "shasum": "ba846d1daa97c3c596155308063e075ed1c99aff",
+        "tarball": "https://registry.npmjs.org/string-width/-/string-width-4.1.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 4871,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcoK6qCRA9TVsSAnZWagAAWcgP/jVyAs1x3o6qWfpQXJR5\n+SIxdMk06A7izF3BZAZ0CGwxt49I4VZt2k6G8qDZOuex8ajxRKepGPROSUNW\n6u+R0SICrATI21i40GfV6DPhDio6f0Ps7uMachUY8+X9sA+rFhHIC4jMrY3d\ndyBXqsN+FJO4Vo1+uvO4Pl9Fjkrfa3hFIzUR7sjGZO+v7j/uw0BbdPnl3GT7\n0TPe+iwfStsQyfYYGkrOiR9S4mfwg6gKwOAZimwhV5wq7FVt0SfcoE0NfxjL\nr8NRgkMtFs5lOrK9fvRnSq+/6dOUeur5XCwuom1yyO94BzLGh6QfHwIDGKvs\nXCd8DPWvzWdanNYS3te5j6oBqlBB1hvxjrbDaHEMhAoI/8qOf1EcKRwgUw3x\nOCY33spl3Ba5l/aZzzu3zDuq8XtMwlyXIt5h8cdJTyO1+GUmpx6IafaFUUd0\n5Y8zE76gAwEsrY0sziBUrYPg8Pg7Fgdy1ZIhYJSQF3Q25TGTFveBYBOjATH9\ne8/t6mw9ILFToj9VvjQlPqli399gDujTJqo8MAQTGwjpE2xdPhB5BDd7pk2r\nJ7vH2L3iGqLlYZS2RSD5MOMWXYxtjtbjAfOJjfM6jnFW58DiMdO2HEOmtZUC\nVlkDOCjbgC1wbTTLk4Ek4psXdeEdiHib0zO0cOX0c+M6lEHkgADzZ1lMAPmu\n17lX\r\n=SM2+\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/string-width_4.1.0_1554034345729_0.021962184962448505"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.2.0": {
+      "name": "string-width",
+      "version": "4.2.0",
+      "description": "Get the visual width of a string - the number of columns required to display it",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/string-width.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "string",
+        "character",
+        "unicode",
+        "width",
+        "visual",
+        "column",
+        "columns",
+        "fullwidth",
+        "full-width",
+        "full",
+        "ansi",
+        "escape",
+        "codes",
+        "cli",
+        "command-line",
+        "terminal",
+        "console",
+        "cjk",
+        "chinese",
+        "japanese",
+        "korean",
+        "fixed-width"
+      ],
+      "dependencies": {
+        "emoji-regex": "^8.0.0",
+        "is-fullwidth-code-point": "^3.0.0",
+        "strip-ansi": "^6.0.0"
+      },
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "tsd": "^0.7.1",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "34bca56b5b301b46fef0258aba4446792d794dab",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/string-width/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/string-width#readme",
+      "_id": "string-width@4.2.0",
+      "_nodeVersion": "12.13.0",
+      "_npmVersion": "6.12.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-zUz5JD+tgqtuDjMhwIg5uFVV3dtqZ9yQJlZVfq4I01/K5Paj5UHj7VyrQOJvzawSVlKpObApbfD0Ed6yJc+1eg==",
+        "shasum": "952182c46cc7b2c313d1596e623992bd163b72b5",
+        "tarball": "https://registry.npmjs.org/string-width/-/string-width-4.2.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 5251,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdyYcNCRA9TVsSAnZWagAA6ysP/jiZ2cV8jap8OG/y9gS1\nDthT5O3BNBZT1noi8/2VzwyyImFCxdf66cYUk1vCRzaJH2TWFY5bWVjtFUuS\n7Oo3oaPRr8wMvAoPJHc5cKLgUMEfkbxisK+M2ChMz4Hn3zJ09xUbVq0/fVSL\nGYIMFgJZ7N3pdHSc42xPKi1PkaOlhaa5xRUXndX7B5XQyq9y2wHRTd8dS1XE\nwf5QYBJGA8YF8FR4SVv/gJ8ncaMNtBONBopidGVJCqAhT87y4D7ihYNAcDxi\n/mrsejhfTFOweByoMfSLcsxsZD+deDK49/bdHa+kQv6iXkBrNSceTZgmkqEr\n53aYJ3RRerobU8ShtoG/2wQXgixmKdbqL5wYljg7o8+dUNd+GLLBl34rrlrv\nzI4X42SfOQ4Joxgmm6fwxAdqyFm6b17gI2xhm/CVJ2dMMwJYb8072mj4tQjc\nzXtYvjsjD11FxtrIK2AmaB+AHbQF2RbGsAnrrGMX2wd/6lJk/Q4SnNkU1T0w\nOTSoyL2w50BoTTvEYkoicnDXKJCfHFH07K++K2BlkB7CF/1bvODPFPEh7p1h\nbo8WGlkilw/rvcAjkAtff5SuOBldifmaql4P8jl0A/LrErZ3p4HSUc/oP3AN\ngfkl97TUmejnGCs+V5WBcEJeSaq/4Y52s02VYv/Xz10atWk9KxTa2S13KUwV\noZb2\r\n=jm7P\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/string-width_4.2.0_1573488396754_0.6519093851604172"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# string-width [![Build Status](https://travis-ci.org/sindresorhus/string-width.svg?branch=master)](https://travis-ci.org/sindresorhus/string-width)\n\n> Get the visual width of a string - the number of columns required to display it\n\nSome Unicode characters are [fullwidth](https://en.wikipedia.org/wiki/Halfwidth_and_fullwidth_forms) and use double the normal width. [ANSI escape codes](https://en.wikipedia.org/wiki/ANSI_escape_code) are stripped and doesn't affect the width.\n\nUseful to be able to measure the actual width of command-line output.\n\n\n## Install\n\n```\n$ npm install string-width\n```\n\n\n## Usage\n\n```js\nconst stringWidth = require('string-width');\n\nstringWidth('a');\n//=> 1\n\nstringWidth('古');\n//=> 2\n\nstringWidth('\\u001B[1m古\\u001B[22m');\n//=> 2\n```\n\n\n## Related\n\n- [string-width-cli](https://github.com/sindresorhus/string-width-cli) - CLI for this module\n- [string-length](https://github.com/sindresorhus/string-length) - Get the real length of a string\n- [widest-line](https://github.com/sindresorhus/widest-line) - Get the visual width of the widest line in a string\n\n\n---\n\n<div align=\"center\">\n\t<b>\n\t\t<a href=\"https://tidelift.com/subscription/pkg/npm-string-width?utm_source=npm-string-width&utm_medium=referral&utm_campaign=readme\">Get professional support for this package with a Tidelift subscription</a>\n\t</b>\n\t<br>\n\t<sub>\n\t\tTidelift helps make open source sustainable for maintainers while giving companies<br>assurances about security, maintenance, and licensing for their dependencies.\n\t</sub>\n</div>\n",
+  "maintainers": [
+    {
+      "name": "sindresorhus",
+      "email": "sindresorhus@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2019-11-11T16:06:39.267Z",
+    "created": "2015-07-16T22:08:17.757Z",
+    "1.0.0": "2015-07-16T22:08:17.757Z",
+    "1.0.1": "2015-07-20T01:31:09.758Z",
+    "1.0.2": "2016-08-14T15:23:54.869Z",
+    "2.0.0": "2016-09-22T06:54:45.828Z",
+    "2.1.0": "2017-06-26T16:15:09.531Z",
+    "2.1.1": "2017-07-18T11:09:15.295Z",
+    "3.0.0": "2018-12-15T14:14:40.848Z",
+    "3.1.0": "2019-03-08T08:22:47.824Z",
+    "4.0.0": "2019-03-18T08:23:48.708Z",
+    "4.1.0": "2019-03-31T12:12:25.885Z",
+    "4.2.0": "2019-11-11T16:06:36.863Z"
+  },
+  "homepage": "https://github.com/sindresorhus/string-width#readme",
+  "keywords": [
+    "string",
+    "character",
+    "unicode",
+    "width",
+    "visual",
+    "column",
+    "columns",
+    "fullwidth",
+    "full-width",
+    "full",
+    "ansi",
+    "escape",
+    "codes",
+    "cli",
+    "command-line",
+    "terminal",
+    "console",
+    "cjk",
+    "chinese",
+    "japanese",
+    "korean",
+    "fixed-width"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/string-width.git"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "bugs": {
+    "url": "https://github.com/sindresorhus/string-width/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md",
+  "users": {
+    "vsemozhetbyt": true,
+    "scottfreecode": true,
+    "shrimpseaweed": true,
+    "gzg1500521074": true
+  }
+}

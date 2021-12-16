@@ -1,0 +1,12 @@
+{
+  "name": "@isaacs/testing-peer-optional-conflict-c-z",
+  "version": "1.0.0",
+  "peerDependencies": {
+    "@isaacs/testing-peer-optional-conflict-c-y": "2.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@isaacs/testing-peer-optional-conflict-c-y": {
+      "optional": true
+    }
+  }
+}

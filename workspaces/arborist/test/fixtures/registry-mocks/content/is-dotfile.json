@@ -1,0 +1,648 @@
+{
+  "_id": "is-dotfile",
+  "_rev": "13-caaedaee1a0ee31311feedeaa08ceccb",
+  "name": "is-dotfile",
+  "description": "Return true if a file path is (or has) a dotfile. Returns false if the path is a dot directory.",
+  "dist-tags": {
+    "latest": "2.0.0"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "is-dotfile",
+      "description": "Return true if a file path is (or has) a dotfile.",
+      "version": "0.1.0",
+      "homepage": "https://github.com/regexps/is-dotfile",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/regexps/is-dotfile.git"
+      },
+      "bugs": {
+        "url": "https://github.com/regexps/is-dotfile/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/regexps/is-dotfile/blob/master/LICENSE-MIT"
+      },
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "devDependencies": {
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "detect",
+        "dotfile",
+        "expression",
+        "regular expression",
+        "find",
+        "match",
+        "regex",
+        "regexp",
+        "regular"
+      ],
+      "_id": "is-dotfile@0.1.0",
+      "_shasum": "79dad828bd8e6e940165c2ecfbf596f01998b8c7",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "79dad828bd8e6e940165c2ecfbf596f01998b8c7",
+        "tarball": "https://registry.npmjs.org/is-dotfile/-/is-dotfile-0.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.1.1": {
+      "name": "is-dotfile",
+      "description": "Return true if a file path is (or has) a dotfile.",
+      "version": "0.1.1",
+      "homepage": "https://github.com/regexps/is-dotfile",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/regexps/is-dotfile.git"
+      },
+      "bugs": {
+        "url": "https://github.com/regexps/is-dotfile/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/regexps/is-dotfile/blob/master/LICENSE-MIT"
+      },
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "devDependencies": {
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "detect",
+        "dotfile",
+        "expression",
+        "regular expression",
+        "find",
+        "match",
+        "regex",
+        "regexp",
+        "regular"
+      ],
+      "dependencies": {
+        "dotfile-regex": "^0.1.2"
+      },
+      "gitHead": "e2145fa7630061a55a52b7d283b7aee8150d1038",
+      "_id": "is-dotfile@0.1.1",
+      "_shasum": "c76c95692ff99a057784ce0041e15714bf869486",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "c76c95692ff99a057784ce0041e15714bf869486",
+        "tarball": "https://registry.npmjs.org/is-dotfile/-/is-dotfile-0.1.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "is-dotfile",
+      "description": "Return true if a file path is (or has) a dotfile.",
+      "version": "1.0.0",
+      "homepage": "https://github.com/regexps/is-dotfile",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/regexps/is-dotfile.git"
+      },
+      "bugs": {
+        "url": "https://github.com/regexps/is-dotfile/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/regexps/is-dotfile/blob/master/LICENSE-MIT"
+      },
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "devDependencies": {
+        "benchmarked": "^0.1.3",
+        "dotfile-regex": "^0.1.2",
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "detect",
+        "dotfile",
+        "expression",
+        "regular expression",
+        "find",
+        "match",
+        "regex",
+        "regexp",
+        "regular"
+      ],
+      "gitHead": "f5d2165befc5f311dee16fa985f304a7bc00e470",
+      "_id": "is-dotfile@1.0.0",
+      "_shasum": "cfb6c7d7ebcb99e97ea8a353230dd4eea3e72825",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "cfb6c7d7ebcb99e97ea8a353230dd4eea3e72825",
+        "tarball": "https://registry.npmjs.org/is-dotfile/-/is-dotfile-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "is-dotfile",
+      "description": "Return true if a file path is (or has) a dotfile.",
+      "version": "1.0.1",
+      "homepage": "https://github.com/jonschlinkert/is-dotfile",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/is-dotfile.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/is-dotfile/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "benchmarked": "^0.1.3",
+        "dotfile-regex": "^0.1.2",
+        "mocha": "*"
+      },
+      "keywords": [
+        "detect",
+        "dotfile",
+        "expression",
+        "regular expression",
+        "find",
+        "match",
+        "regex",
+        "regexp",
+        "regular"
+      ],
+      "gitHead": "73de4314c679e80783335a95d6c37139c1fd40c0",
+      "_id": "is-dotfile@1.0.1",
+      "_shasum": "38beee44a79a835242c6cce328a88b7eddac5d5f",
+      "_from": ".",
+      "_npmVersion": "2.5.1",
+      "_nodeVersion": "0.12.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "38beee44a79a835242c6cce328a88b7eddac5d5f",
+        "tarball": "https://registry.npmjs.org/is-dotfile/-/is-dotfile-1.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "is-dotfile",
+      "description": "Return true if a file path is (or has) a dotfile. Returns false if the path is a dot directory.",
+      "version": "1.0.2",
+      "homepage": "https://github.com/jonschlinkert/is-dotfile",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/is-dotfile.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/is-dotfile/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "benchmarked": "^0.1.3",
+        "dotfile-regex": "^0.1.2",
+        "mocha": "*"
+      },
+      "keywords": [
+        "detect",
+        "dot",
+        "dotfile",
+        "expression",
+        "file",
+        "filepath",
+        "find",
+        "fs",
+        "is",
+        "match",
+        "path",
+        "regex",
+        "regexp",
+        "regular"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "has-glob",
+            "is-glob",
+            "dotfile-regex",
+            "is-dotdir"
+          ]
+        }
+      },
+      "gitHead": "df258600b0afa6403a2a840f2ec486c9d350492f",
+      "_id": "is-dotfile@1.0.2",
+      "_shasum": "2c132383f39199f8edc268ca01b9b007d205cc4d",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.1",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "2c132383f39199f8edc268ca01b9b007d205cc4d",
+        "tarball": "https://registry.npmjs.org/is-dotfile/-/is-dotfile-1.0.2.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.3": {
+      "name": "is-dotfile",
+      "description": "Return true if a file path is (or has) a dotfile. Returns false if the path is a dot directory.",
+      "version": "1.0.3",
+      "homepage": "https://github.com/jonschlinkert/is-dotfile",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Evan Lowry",
+          "url": "http://exitiumonline.com"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/is-dotfile.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/is-dotfile/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "benchmarked": "^0.1.3",
+        "dotfile-regex": "^0.1.2",
+        "gulp-format-md": "^0.1.12",
+        "mocha": "*"
+      },
+      "keywords": [
+        "detect",
+        "dot",
+        "dotfile",
+        "expression",
+        "file",
+        "filepath",
+        "find",
+        "fs",
+        "is",
+        "match",
+        "path",
+        "regex",
+        "regexp",
+        "regular"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "dotdir-regex",
+            "dotfile-regex",
+            "is-dotdir",
+            "is-glob"
+          ]
+        },
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "1548d0045c182dfb0ac7b747e2d484dcd382b09d",
+      "_id": "is-dotfile@1.0.3",
+      "_shasum": "a6a2f32ffd2dfb04f5ca25ecd0f6b83cf798a1e1",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "7.7.3",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "a6a2f32ffd2dfb04f5ca25ecd0f6b83cf798a1e1",
+        "tarball": "https://registry.npmjs.org/is-dotfile/-/is-dotfile-1.0.3.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is-dotfile-1.0.3.tgz_1496154299381_0.9273945165332407"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "is-dotfile",
+      "description": "Return true if a file path is (or has) a dotfile. Returns false if the path is a dot directory.",
+      "version": "2.0.0",
+      "homepage": "https://github.com/jonschlinkert/is-dotfile",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Evan Lowry",
+          "url": "http://exitiumonline.com"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/is-dotfile.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/is-dotfile/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "benchmarked": "^0.1.3",
+        "dotfile-regex": "^0.1.2",
+        "gulp-format-md": "^0.1.12",
+        "mocha": "*"
+      },
+      "keywords": [
+        "detect",
+        "dot",
+        "dotfile",
+        "expression",
+        "file",
+        "filepath",
+        "find",
+        "fs",
+        "is",
+        "match",
+        "path",
+        "regex",
+        "regexp",
+        "regular"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "dotdir-regex",
+            "dotfile-regex",
+            "is-dotdir",
+            "is-glob"
+          ]
+        },
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "dependencies": {
+        "dotfile-regex": "^0.1.2"
+      },
+      "gitHead": "65e7b047ec2973d07c9c1fb3ddfd16bcdd725e56",
+      "_id": "is-dotfile@2.0.0",
+      "_shasum": "4fc252eaaf52c8f3583a796bffaaecc95b2a4ca4",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "7.7.3",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "4fc252eaaf52c8f3583a796bffaaecc95b2a4ca4",
+        "tarball": "https://registry.npmjs.org/is-dotfile/-/is-dotfile-2.0.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is-dotfile-2.0.0.tgz_1496155684715_0.49212755751796067"
+      },
+      "directories": {}
+    }
+  },
+  "readme": "# is-dotfile [![NPM version](https://img.shields.io/npm/v/is-dotfile.svg?style=flat)](https://www.npmjs.com/package/is-dotfile) [![NPM monthly downloads](https://img.shields.io/npm/dm/is-dotfile.svg?style=flat)](https://npmjs.org/package/is-dotfile) [![NPM total downloads](https://img.shields.io/npm/dt/is-dotfile.svg?style=flat)](https://npmjs.org/package/is-dotfile) [![Linux Build Status](https://img.shields.io/travis/jonschlinkert/is-dotfile.svg?style=flat&label=Travis)](https://travis-ci.org/jonschlinkert/is-dotfile)\n\n> Return true if a file path is (or has) a dotfile. Returns false if the path is a dot directory.\n\n## Install\n\nInstall with [npm](https://www.npmjs.com/):\n\n```sh\n$ npm install --save is-dotfile\n```\n\n## Usage\n\nTo be considered a dotfile, it must be the last filename in the path, like `.gitignore`. Otherwise it's a [dot directory](https://github.com/jonschlinkert/is-dotdir), like `.git/` and `.github/`.\n\n```js\nvar isDotfile = require('is-dotfile');\n```\n\n**false**\n\nAll of the following return `false`:\n\n```js\nisDotfile('a/b/c.js');\nisDotfile('/.git/foo');\nisDotfile('a/b/c/.git/foo');\n//=> false\n```\n\n**true**\n\nAll of the following return `true`:\n\n```js\nisDotfile('a/b/.gitignore');\nisDotfile('.gitignore');\nisDotfile('/.gitignore');\n//=> true\n```\n\n## About\n\n### Related projects\n\n* [dotdir-regex](https://www.npmjs.com/package/dotdir-regex): Regex for matching dot-directories, like `.git/` | [homepage](https://github.com/regexps/dotdir-regex \"Regex for matching dot-directories, like `.git/`\")\n* [dotfile-regex](https://www.npmjs.com/package/dotfile-regex): Regular expresson for matching dotfiles. | [homepage](https://github.com/regexps/dotfile-regex \"Regular expresson for matching dotfiles.\")\n* [is-dotdir](https://www.npmjs.com/package/is-dotdir): Returns true if a path is a dot-directory. | [homepage](https://github.com/jonschlinkert/is-dotdir \"Returns true if a path is a dot-directory.\")\n* [is-glob](https://www.npmjs.com/package/is-glob): Returns `true` if the given string looks like a glob pattern or an extglob pattern… [more](https://github.com/jonschlinkert/is-glob) | [homepage](https://github.com/jonschlinkert/is-glob \"Returns `true` if the given string looks like a glob pattern or an extglob pattern. This makes it easy to create code that only uses external modules like node-glob when necessary, resulting in much faster code execution and initialization time, and a bet\")\n\n### Contributing\n\nPull requests and stars are always welcome. For bugs and feature requests, [please create an issue](../../issues/new).\n\n### Contributors\n\n| **Commits** | **Contributor** | \n| --- | --- |\n| 13 | [jonschlinkert](https://github.com/jonschlinkert) |\n| 1 | [Lykathia](https://github.com/Lykathia) |\n\n### Building docs\n\n_(This project's readme.md is generated by [verb](https://github.com/verbose/verb-generate-readme), please don't edit the readme directly. Any changes to the readme must be made in the [.verb.md](.verb.md) readme template.)_\n\nTo generate the readme, run the following command:\n\n```sh\n$ npm install -g verbose/verb#dev verb-generate-readme && verb\n```\n\n### Running tests\n\nRunning and reviewing unit tests is a great way to get familiarized with a library and its API. You can install dependencies and run tests with the following command:\n\n```sh\n$ npm install && npm test\n```\n\n### Author\n\n**Jon Schlinkert**\n\n* [github/jonschlinkert](https://github.com/jonschlinkert)\n* [twitter/jonschlinkert](https://twitter.com/jonschlinkert)\n\n### License\n\nCopyright © 2017, [Jon Schlinkert](https://github.com/jonschlinkert).\nReleased under the [MIT License](LICENSE).\n\n***\n\n_This file was generated by [verb-generate-readme](https://github.com/verbose/verb-generate-readme), v0.6.0, on May 30, 2017._",
+  "maintainers": [
+    {
+      "name": "doowb",
+      "email": "brian.woodward@gmail.com"
+    },
+    {
+      "name": "jonschlinkert",
+      "email": "github@sellside.com"
+    }
+  ],
+  "time": {
+    "modified": "2017-05-30T14:48:05.615Z",
+    "created": "2015-01-22T04:50:29.140Z",
+    "0.1.0": "2015-01-22T04:50:29.140Z",
+    "0.1.1": "2015-01-22T05:50:16.807Z",
+    "1.0.0": "2015-01-24T02:37:59.187Z",
+    "1.0.1": "2015-05-25T15:25:41.541Z",
+    "1.0.2": "2015-10-20T04:57:51.926Z",
+    "1.0.3": "2017-05-30T14:25:00.456Z",
+    "2.0.0": "2017-05-30T14:48:05.615Z"
+  },
+  "homepage": "https://github.com/jonschlinkert/is-dotfile",
+  "keywords": [
+    "detect",
+    "dot",
+    "dotfile",
+    "expression",
+    "file",
+    "filepath",
+    "find",
+    "fs",
+    "is",
+    "match",
+    "path",
+    "regex",
+    "regexp",
+    "regular"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonschlinkert/is-dotfile.git"
+  },
+  "author": {
+    "name": "Jon Schlinkert",
+    "url": "https://github.com/jonschlinkert"
+  },
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/is-dotfile/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "users": {
+    "arteffeckt": true,
+    "rocket0191": true
+  },
+  "contributors": [
+    {
+      "name": "Evan Lowry",
+      "url": "http://exitiumonline.com"
+    },
+    {
+      "name": "Jon Schlinkert",
+      "url": "http://twitter.com/jonschlinkert"
+    }
+  ],
+  "_attachments": {}
+}

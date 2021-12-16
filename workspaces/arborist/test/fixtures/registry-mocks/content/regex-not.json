@@ -1,0 +1,609 @@
+{
+  "_id": "regex-not",
+  "_rev": "8-ab1df1484140d702b3be91caecf5b007",
+  "name": "regex-not",
+  "description": "Create a javascript regular expression for matching everything except for the given string.",
+  "dist-tags": {
+    "latest": "1.0.2"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "regex-not",
+      "description": "Create a regex to match every except for the given string.",
+      "version": "0.1.0",
+      "homepage": "https://github.com/jonschlinkert/regex-not",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/regex-not.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/regex-not/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "keywords": [
+        "exec",
+        "match",
+        "negate",
+        "negation",
+        "not",
+        "regex",
+        "regular expression",
+        "test"
+      ],
+      "devDependencies": {
+        "gulp-format-md": "^0.1.10",
+        "mocha": "^3.0.2"
+      },
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "to-regex",
+            "regex-cache"
+          ]
+        },
+        "reflinks": [
+          "verb",
+          "verb-generate-readme"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "_id": "regex-not@0.1.0",
+      "_shasum": "33c1b703b596f42e720768b94af6479b4393a704",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.3.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "33c1b703b596f42e720768b94af6479b4393a704",
+        "tarball": "https://registry.npmjs.org/regex-not/-/regex-not-0.1.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/regex-not-0.1.0.tgz_1474948229934_0.9674226979259402"
+      },
+      "directories": {}
+    },
+    "0.1.1": {
+      "name": "regex-not",
+      "description": "Create a javascript regular expression for matching everything except for the given string.",
+      "version": "0.1.1",
+      "homepage": "https://github.com/jonschlinkert/regex-not",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/regex-not.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/regex-not/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "keywords": [
+        "exec",
+        "match",
+        "negate",
+        "negation",
+        "not",
+        "regex",
+        "regular expression",
+        "test"
+      ],
+      "devDependencies": {
+        "gulp-format-md": "^0.1.10",
+        "mocha": "^3.0.2"
+      },
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "to-regex",
+            "regex-cache"
+          ]
+        },
+        "reflinks": [
+          "verb",
+          "verb-generate-readme"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "e54c3681ff2212640ab8201b4c835cbe25dbf0dd",
+      "_id": "regex-not@0.1.1",
+      "_shasum": "f9f6c90afced5324044354d7e9ad1c8bda7c2ab4",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.3.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "f9f6c90afced5324044354d7e9ad1c8bda7c2ab4",
+        "tarball": "https://registry.npmjs.org/regex-not/-/regex-not-0.1.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/regex-not-0.1.1.tgz_1474948484514_0.6983254891820252"
+      },
+      "directories": {}
+    },
+    "0.1.2": {
+      "name": "regex-not",
+      "description": "Create a javascript regular expression for matching everything except for the given string.",
+      "version": "0.1.2",
+      "homepage": "https://github.com/jonschlinkert/regex-not",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/regex-not.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/regex-not/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^0.1.10",
+        "mocha": "^3.0.2"
+      },
+      "keywords": [
+        "exec",
+        "match",
+        "negate",
+        "negation",
+        "not",
+        "regex",
+        "regular expression",
+        "test"
+      ],
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "regex-cache",
+            "to-regex"
+          ]
+        },
+        "reflinks": [
+          "verb",
+          "verb-generate-readme"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "bc6a4dbce9aa1f610f898105a2e6422db5596d7f",
+      "_id": "regex-not@0.1.2",
+      "_shasum": "bc7f1c4944b1188353d07deeb912b94e0ade25db",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.3.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "bc7f1c4944b1188353d07deeb912b94e0ade25db",
+        "tarball": "https://registry.npmjs.org/regex-not/-/regex-not-0.1.2.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/regex-not-0.1.2.tgz_1474949899655_0.21038869419135153"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "regex-not",
+      "description": "Create a javascript regular expression for matching everything except for the given string.",
+      "version": "1.0.0",
+      "homepage": "https://github.com/jonschlinkert/regex-not",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/regex-not.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/regex-not/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "extend-shallow": "^2.0.1"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^0.1.10",
+        "mocha": "^3.0.2"
+      },
+      "keywords": [
+        "exec",
+        "match",
+        "negate",
+        "negation",
+        "not",
+        "regex",
+        "regular expression",
+        "test"
+      ],
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "regex-cache",
+            "to-regex"
+          ]
+        },
+        "reflinks": [
+          "verb",
+          "verb-generate-readme"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "89320311834104e22dd3e5c468d17f6662c35259",
+      "_id": "regex-not@1.0.0",
+      "_shasum": "42f83e39771622df826b02af176525d6a5f157f9",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.7.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "42f83e39771622df826b02af176525d6a5f157f9",
+        "tarball": "https://registry.npmjs.org/regex-not/-/regex-not-1.0.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/regex-not-1.0.0.tgz_1475895569600_0.9545667197089642"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "regex-not",
+      "description": "Create a javascript regular expression for matching everything except for the given string.",
+      "version": "1.0.1",
+      "homepage": "https://github.com/jonschlinkert/regex-not",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/regex-not.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/regex-not/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "extend-shallow": "^3.0.2",
+        "safe-regex": "^1.1.0"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^1.0.0",
+        "mocha": "^3.5.3"
+      },
+      "keywords": [
+        "exec",
+        "match",
+        "negate",
+        "negation",
+        "not",
+        "regex",
+        "regular expression",
+        "test"
+      ],
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "regex-cache",
+            "to-regex"
+          ]
+        },
+        "reflinks": [
+          "verb",
+          "verb-generate-readme"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "fb77cca62926d3176c4e4bb7441e62b6b6bd80a1",
+      "_id": "regex-not@1.0.1",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.5.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "integrity": "sha512-9gH3iyUkkKg5jFP2vWaElWn7SVGxAlrE75IRCe9wi6/nR7yN+bJOkTz2taRBaG2sYxsPsyToIRJLpnjuDdFB/w==",
+        "shasum": "4b8273f3e5c06e79a1b23fec221557bd5fb3c50f",
+        "tarball": "https://registry.npmjs.org/regex-not/-/regex-not-1.0.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 8460
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/regex-not_1.0.1_1519091357855_0.5534107028344075"
+      }
+    },
+    "1.0.2": {
+      "name": "regex-not",
+      "description": "Create a javascript regular expression for matching everything except for the given string.",
+      "version": "1.0.2",
+      "homepage": "https://github.com/jonschlinkert/regex-not",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/regex-not.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/regex-not/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "extend-shallow": "^3.0.2",
+        "safe-regex": "^1.1.0"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^1.0.0",
+        "mocha": "^3.5.3"
+      },
+      "keywords": [
+        "exec",
+        "match",
+        "negate",
+        "negation",
+        "not",
+        "regex",
+        "regular expression",
+        "test"
+      ],
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "regex-cache",
+            "to-regex"
+          ]
+        },
+        "reflinks": [
+          "verb",
+          "verb-generate-readme"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "7e368998898e1fc7428596636ef5412ede414f3e",
+      "_id": "regex-not@1.0.2",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.5.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "integrity": "sha512-J6SDjUgDxQj5NusnOtdFxDwN/+HWykR8GELwctJ7mdqhcyy1xEc4SRFHUXvxTp661YaVKAjfRLZ9cCqS6tn32A==",
+        "shasum": "1f4ece27e00b0b65e0247a6810e6a85d83a5752c",
+        "tarball": "https://registry.npmjs.org/regex-not/-/regex-not-1.0.2.tgz",
+        "fileCount": 4,
+        "unpackedSize": 8459
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/regex-not_1.0.2_1519093874391_0.48484026521777035"
+      }
+    }
+  },
+  "readme": "# regex-not [![NPM version](https://img.shields.io/npm/v/regex-not.svg?style=flat)](https://www.npmjs.com/package/regex-not) [![NPM monthly downloads](https://img.shields.io/npm/dm/regex-not.svg?style=flat)](https://npmjs.org/package/regex-not) [![NPM total downloads](https://img.shields.io/npm/dt/regex-not.svg?style=flat)](https://npmjs.org/package/regex-not) [![Linux Build Status](https://img.shields.io/travis/jonschlinkert/regex-not.svg?style=flat&label=Travis)](https://travis-ci.org/jonschlinkert/regex-not)\n\n> Create a javascript regular expression for matching everything except for the given string.\n\nPlease consider following this project's author, [Jon Schlinkert](https://github.com/jonschlinkert), and consider starring the project to show your :heart: and support.\n\n## Install\n\nInstall with [npm](https://www.npmjs.com/):\n\n```sh\n$ npm install --save regex-not\n```\n\n## Usage\n\n```js\nvar not = require('regex-not');\n```\n\nThe main export is a function that takes a string an options object.\n\n```js\nnot(string[, options]);\n```\n\n**Example**\n\n```js\nvar not = require('regex-not');\nconsole.log(not('foo'));\n//=> /^(?:(?!^(?:foo)$).)+$/\n```\n\n**Strict matching**\n\nBy default, the returned regex is for strictly (not) matching the exact given pattern (in other words, \"match this string if it does NOT _exactly equal_ `foo`\"):\n\n```js\nvar re = not('foo');\nconsole.log(re.test('foo'));     //=> false\nconsole.log(re.test('bar'));     //=> true\nconsole.log(re.test('foobar'));  //=> true\nconsole.log(re.test('barfoo'));  //=> true\n```\n\n### .create\n\nReturns a string to allow you to create your own regex:\n\n```js\nconsole.log(not.create('foo'));\n//=> '(?:(?!^(?:foo)$).)+'\n```\n\n### Options\n\n**options.contains**\n\nYou can relax strict matching by setting `options.contains` to true (in other words, \"match this string if it does NOT _contain_ `foo`\"):\n\n```js\nvar re = not('foo');\nconsole.log(re.test('foo', {contains: true}));     //=> false\nconsole.log(re.test('bar', {contains: true}));     //=> true\nconsole.log(re.test('foobar', {contains: true}));  //=> false\nconsole.log(re.test('barfoo', {contains: true}));  //=> false\n```\n\n## About\n\n<details>\n<summary><strong>Contributing</strong></summary>\n\nPull requests and stars are always welcome. For bugs and feature requests, [please create an issue](../../issues/new).\n\n</details>\n\n<details>\n<summary><strong>Running Tests</strong></summary>\n\nRunning and reviewing unit tests is a great way to get familiarized with a library and its API. You can install dependencies and run tests with the following command:\n\n```sh\n$ npm install && npm test\n```\n\n</details>\n\n<details>\n<summary><strong>Building docs</strong></summary>\n\n_(This project's readme.md is generated by [verb](https://github.com/verbose/verb-generate-readme), please don't edit the readme directly. Any changes to the readme must be made in the [.verb.md](.verb.md) readme template.)_\n\nTo generate the readme, run the following command:\n\n```sh\n$ npm install -g verbose/verb#dev verb-generate-readme && verb\n```\n\n</details>\n\n### Related projects\n\nYou might also be interested in these projects:\n\n* [regex-cache](https://www.npmjs.com/package/regex-cache): Memoize the results of a call to the RegExp constructor, avoiding repetitious runtime compilation of… [more](https://github.com/jonschlinkert/regex-cache) | [homepage](https://github.com/jonschlinkert/regex-cache \"Memoize the results of a call to the RegExp constructor, avoiding repetitious runtime compilation of the same string and options, resulting in surprising performance improvements.\")\n* [to-regex](https://www.npmjs.com/package/to-regex): Generate a regex from a string or array of strings. | [homepage](https://github.com/jonschlinkert/to-regex \"Generate a regex from a string or array of strings.\")\n\n### Contributors\n\n| **Commits** | **Contributor** | \n| --- | --- |\n| 9 | [jonschlinkert](https://github.com/jonschlinkert) |\n| 1 | [doowb](https://github.com/doowb) |\n| 1 | [EdwardBetts](https://github.com/EdwardBetts) |\n\n### Author\n\n**Jon Schlinkert**\n\n* [linkedin/in/jonschlinkert](https://linkedin.com/in/jonschlinkert)\n* [github/jonschlinkert](https://github.com/jonschlinkert)\n* [twitter/jonschlinkert](https://twitter.com/jonschlinkert)\n\n### License\n\nCopyright © 2018, [Jon Schlinkert](https://github.com/jonschlinkert).\nReleased under the [MIT License](LICENSE).\n\n***\n\n_This file was generated by [verb-generate-readme](https://github.com/verbose/verb-generate-readme), v0.6.0, on February 19, 2018._",
+  "maintainers": [
+    {
+      "name": "jonschlinkert",
+      "email": "github@sellside.com"
+    }
+  ],
+  "time": {
+    "modified": "2018-02-20T02:31:15.333Z",
+    "created": "2016-09-27T03:50:31.394Z",
+    "0.1.0": "2016-09-27T03:50:31.394Z",
+    "0.1.1": "2016-09-27T03:54:45.992Z",
+    "0.1.2": "2016-09-27T04:18:21.404Z",
+    "1.0.0": "2016-10-08T02:59:30.201Z",
+    "1.0.1": "2018-02-20T01:49:17.954Z",
+    "1.0.2": "2018-02-20T02:31:14.441Z"
+  },
+  "homepage": "https://github.com/jonschlinkert/regex-not",
+  "keywords": [
+    "exec",
+    "match",
+    "negate",
+    "negation",
+    "not",
+    "regex",
+    "regular expression",
+    "test"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonschlinkert/regex-not.git"
+  },
+  "author": {
+    "name": "Jon Schlinkert",
+    "url": "https://github.com/jonschlinkert"
+  },
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/regex-not/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "users": {
+    "arteffeckt": true,
+    "rocket0191": true
+  },
+  "_attachments": {}
+}

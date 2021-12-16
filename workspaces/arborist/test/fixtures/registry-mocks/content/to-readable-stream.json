@@ -1,0 +1,275 @@
+{
+  "_id": "to-readable-stream",
+  "_rev": "2-42f99d6686598a790f918e616ff02a86",
+  "name": "to-readable-stream",
+  "dist-tags": {
+    "latest": "2.1.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "to-readable-stream",
+      "version": "1.0.0",
+      "description": "Convert a string/Buffer/Uint8Array to a readable stream",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/to-readable-stream.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "stream",
+        "readablestream",
+        "string",
+        "buffer",
+        "uint8array",
+        "from",
+        "into",
+        "to",
+        "transform",
+        "convert",
+        "readable",
+        "pull"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "get-stream": "^3.0.0",
+        "xo": "*"
+      },
+      "gitHead": "7c14929a752216bf91af6249c1aa99638aa1a970",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/to-readable-stream/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/to-readable-stream#readme",
+      "_id": "to-readable-stream@1.0.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.11.1",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-Iq25XBt6zD5npPhlLVXGFN3/gyR2/qODcKNNyTMd4vbm39HUaOiAM4PMq0eMVC/Tkxz+Zjdsc55g9yyz+Yq00Q==",
+        "shasum": "ce0aa0c2f3df6adf852efb404a783e77c0475771",
+        "tarball": "https://registry.npmjs.org/to-readable-stream/-/to-readable-stream-1.0.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 2789,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa6D5hCRA9TVsSAnZWagAAC/cP/jan6UOboZggTM4zo3C8\nllQpPBh/PRaGyOW9Aqz+wKZFYEIUxbMWyD2N9kCmrwWPiJhzLS/7QXwqOASV\nHhzZEQ8s1NOWMbaZ0PUuAyaxUqa3OlnbBMLvB/dckOc/wwNZ2WrHiJK83d94\ngiwXT3nycuKQ5NWlq1JYdIAN4sDG/zgaASh72qpPIgVjagDzyQjlbyvyo7TX\nB1w8RGAvVY3zqaLgxnerVbSGc5jCHu4EHoa5JrgIg9bu+leKxsIyCif9+Tys\nMsb+6CPUq2wdp5QxL9mrlT1qcmQEEfAPFYmXQPhW3ucqdcbcQUJR79CG4tAF\nbND9KmqIG+NNVPxuhe6O40vYABW17AnJNI3FbQBYOUgfPaSBcuqaT7OijtzZ\nxNxpH9L6oueKI58dvF4izZcHNxbAEUrK5n+d9kIPOUU4CId2cY673fZyxt7u\nOF+TwZO9N39hcasIa9iexFNuWyIvZG80qfZYk3xhcoNAwgcghN+/6jrCXs5T\n7/0HPUa3fjLC1l5teXGn+1zWb0FQ+8pV5JhtCZWvbvfs3INCT5S6mCTz4XXy\nlZAUVcftTXtKdkKjdL6KNzppZpCXVkicVGvKW7YWXlgj7Zi0jI8TnbUM8rpA\nqUL3PKVDclj0uGdV8g1aIvCZ4VQ8sOrxNw0c57hFhG6cdXSPxAr7/Kr1fJLF\nPZwE\r\n=wmns\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/to-readable-stream_1.0.0_1525169760500_0.22127793788711592"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.0": {
+      "name": "to-readable-stream",
+      "version": "2.0.0",
+      "description": "Convert a string/Buffer/Uint8Array to a readable stream",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/to-readable-stream.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd-check"
+      },
+      "keywords": [
+        "stream",
+        "readablestream",
+        "string",
+        "buffer",
+        "uint8array",
+        "from",
+        "into",
+        "to",
+        "transform",
+        "convert",
+        "readable",
+        "pull"
+      ],
+      "devDependencies": {
+        "ava": "^1.3.1",
+        "get-stream": "^4.1.0",
+        "tsd-check": "^0.3.0",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "eea277f01eba6eff5dba922e8ea5a326154a9519",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/to-readable-stream/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/to-readable-stream#readme",
+      "_id": "to-readable-stream@2.0.0",
+      "_nodeVersion": "8.15.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-TweD6hGPGftdseXBldfGDCahLdpyDLLppXzbPkOoVVnE4RcP3on90Zbb4mBIWRkF+37srJ1KvaTmY7v5vAruHw==",
+        "shasum": "9ae214cc07615e1b2d38b144316a94fe9a1dc6c7",
+        "tarball": "https://registry.npmjs.org/to-readable-stream/-/to-readable-stream-2.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 3330,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJche1LCRA9TVsSAnZWagAACbAQAI5yL0USd8JoFW+xJ2cV\n4c21MkBiiL85DMM70ij6cLRrVfUv5eK61akOtaLPG0BqXJ6wSSwkJLBe0vMh\nw5tTI3tGNn68VxP+PAUjp4SVSEnxvvplh+hhgBX9uqbvB2MNQLx8aIwKZqw5\ncaSUr1jri4QAZcWm26viHVOSvIq1si+vjcmHa1sNZaZ61PBpsiUsbELAKVm0\n+8g9bwFgne4tgf48dCmF/CjMPUxgkueIteid6NIiahhW38iW4AIwDvp3RpdT\nAfsITAni0li66alkLgkDfrzB4su7KhNVQe6/4A0gor+UuD18dnMPBbcntVcu\ndGqgmXWpUQjorl9kT7ntuRUCSvSeRn1F6JDgcItdTrgxwAQosZ+t6gCxL4p8\nIK3xIlfr9YLlwWbilyQscUoeZ0ABg9kRxw+wjlJS4aRO14pq4Yfdqx3PzKHG\nkRuehtpyUokpAU94JRRBzRAdQnPHVq2jYDCz5Ksttpuy9OAe4Pk3IwShQ4X1\nDdZfQeMZL/KC8IJSWeIYgQWPdocTvzxKyuXGCE7wthKCHAGItN4Ryrkom3Ae\npe9Tb95LdXZdxVji4AZ7J43nIuqNZpcgrrzoh1tRssqntAe4TFQsWYCUgbZQ\nYa/XQYz3gwp12TxhBvmWbeRMXZnIOUDDe18IV/CLkkBcTlEOHAIbAO5+Dr4B\nkllA\r\n=1Qli\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/to-readable-stream_2.0.0_1552280906895_0.6061959780403399"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.1.0": {
+      "name": "to-readable-stream",
+      "version": "2.1.0",
+      "description": "Convert a string/Buffer/Uint8Array to a readable stream",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/to-readable-stream.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "stream",
+        "readablestream",
+        "string",
+        "buffer",
+        "uint8array",
+        "from",
+        "into",
+        "to",
+        "transform",
+        "convert",
+        "readable",
+        "pull"
+      ],
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "get-stream": "^5.0.0",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "89ccd4b90d53994beb53bc9f9899b6a15cb6b43f",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/to-readable-stream/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/to-readable-stream#readme",
+      "_id": "to-readable-stream@2.1.0",
+      "_nodeVersion": "8.15.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-o3Qa6DGg1CEXshSdvWNX2sN4QHqg03SPq7U6jPXRahlQdl5dK8oXjkU/2/sGrnOZKeGV1zLSO8qPwyKklPPE7w==",
+        "shasum": "82880316121bea662cdc226adb30addb50cb06e8",
+        "tarball": "https://registry.npmjs.org/to-readable-stream/-/to-readable-stream-2.1.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 3770,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcpv26CRA9TVsSAnZWagAAuaYP/2uIQeBHdJ9tCMXK815g\nEbJx1yTNQFz4Rq4BxDLMD6L1mnqmCofTm6LJMXHNySUpjx30eKQ1u5DM4JiA\nwnYrOXCtlXLgQGYpN5Yuw1PaDYbAm+Tri7s6gy8zapyo7GOuSM85StzRDLU8\n3TvubMTdcLav2Wfc52kzv2Jd6QUKpcUduzB7/n6otFzxN0wI1sowm71Vy9G1\nW0mxD+lzzvRWe5TVCq7u6771iPkPvZSC5GRKgHMKSPEudb1Y/Rxy/wSrHUBp\n8tr8jsqUZHnMRrqMDeM89JNgQFGSzF/+2rDn2dNz0Ljv2V+9cG2drfmTkNQK\nJG7l5tF43L+J0sruvzbgW+wf7MCTZjwcT02gxNWj35TSi7u3chYlq8NLP6j4\nUxDl+ymRhXrAt5FTmGI6N5j0WfRx8pcGTyqwwlqj6L7NW0cGnkJhzYnw4acG\nRIrfwCjbywO8yzNqF03C+5QpwLlw4/lK9xc/wOsj56GjPZIUFDoI/zZFZXji\nseLLVx6NbnR/CjrhnPA9ZIngdInJXR2nVYavAhPS9tJFONjNYJyOW44OxP6O\nQgYo5qgCj/SfQREgcuEeSL2MfEIKnVU4ATHqaMuNtg/JSMR99JtBWbucqT/M\nyUV/x5u+d9Eb8Aspx38OhRImI+hqLuu67qZTv9S+5oqBm97t4SuiBJxCXScE\nqorn\r\n=Vafm\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/to-readable-stream_2.1.0_1554447801974_0.3863996496217337"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2018-05-01T10:16:00.499Z",
+    "1.0.0": "2018-05-01T10:16:00.606Z",
+    "modified": "2019-04-05T07:03:24.808Z",
+    "2.0.0": "2019-03-11T05:08:27.162Z",
+    "2.1.0": "2019-04-05T07:03:22.152Z"
+  },
+  "maintainers": [
+    {
+      "name": "sindresorhus",
+      "email": "sindresorhus@gmail.com"
+    }
+  ],
+  "description": "Convert a string/Buffer/Uint8Array to a readable stream",
+  "homepage": "https://github.com/sindresorhus/to-readable-stream#readme",
+  "keywords": [
+    "stream",
+    "readablestream",
+    "string",
+    "buffer",
+    "uint8array",
+    "from",
+    "into",
+    "to",
+    "transform",
+    "convert",
+    "readable",
+    "pull"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/to-readable-stream.git"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "bugs": {
+    "url": "https://github.com/sindresorhus/to-readable-stream/issues"
+  },
+  "license": "MIT",
+  "readme": "# to-readable-stream [![Build Status](https://travis-ci.org/sindresorhus/to-readable-stream.svg?branch=master)](https://travis-ci.org/sindresorhus/to-readable-stream)\n\n> Convert a string/Buffer/Uint8Array to a [readable stream](https://nodejs.org/api/stream.html#stream_readable_streams)\n\n\n## Install\n\n```\n$ npm install to-readable-stream\n```\n\n\n## Usage\n\n```js\nconst toReadableStream = require('to-readable-stream');\n\ntoReadableStream('🦄🌈').pipe(process.stdout);\n```\n\n\n## API\n\n### toReadableStream(input)\n\nReturns a [`stream.Readable`](https://nodejs.org/api/stream.html#stream_readable_streams).\n\n#### input\n\nType: `string` `Buffer` `Uint8Array`\n\nValue to convert to a stream.\n\n\n## Related\n\n- [into-stream](https://github.com/sindresorhus/into-stream) - More advanced version of this module\n\n\n## License\n\nMIT © [Sindre Sorhus](https://sindresorhus.com)\n",
+  "readmeFilename": "readme.md"
+}

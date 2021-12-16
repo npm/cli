@@ -1,0 +1,107 @@
+{
+  "_id": "yargs-test-extends",
+  "_rev": "2-674c538911b61db7fa3f9df39b0ec69d",
+  "name": "yargs-test-extends",
+  "description": "test yargs' extends functionality",
+  "dist-tags": {
+    "latest": "1.0.1"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "yargs-test-extends",
+      "version": "1.0.0",
+      "description": "test yargs' extends functionality",
+      "main": "index.json",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "author": {
+        "name": "Ben Coe",
+        "email": "ben@npmjs.com"
+      },
+      "license": "ISC",
+      "_id": "yargs-test-extends@1.0.0",
+      "_shasum": "a2261a84872aa5fb8391104860953074477f4188",
+      "_from": ".",
+      "_npmVersion": "4.2.0",
+      "_nodeVersion": "7.1.0",
+      "_npmUser": {
+        "name": "bcoe",
+        "email": "ben@npmjs.com"
+      },
+      "dist": {
+        "shasum": "a2261a84872aa5fb8391104860953074477f4188",
+        "tarball": "https://registry.npmjs.org/yargs-test-extends/-/yargs-test-extends-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "bcoe",
+          "email": "ben@npmjs.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/yargs-test-extends-1.0.0.tgz_1493598104643_0.9411074831150472"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "yargs-test-extends",
+      "version": "1.0.1",
+      "description": "test yargs' extends functionality",
+      "main": "index.json",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "author": {
+        "name": "Ben Coe",
+        "email": "ben@npmjs.com"
+      },
+      "license": "ISC",
+      "_id": "yargs-test-extends@1.0.1",
+      "_shasum": "de69f22d5264db48282c33692ab96cd8ee1cb819",
+      "_from": ".",
+      "_npmVersion": "4.2.0",
+      "_nodeVersion": "7.1.0",
+      "_npmUser": {
+        "name": "bcoe",
+        "email": "ben@npmjs.com"
+      },
+      "dist": {
+        "shasum": "de69f22d5264db48282c33692ab96cd8ee1cb819",
+        "tarball": "https://registry.npmjs.org/yargs-test-extends/-/yargs-test-extends-1.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "bcoe",
+          "email": "ben@npmjs.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/yargs-test-extends-1.0.1.tgz_1493598493957_0.5522333197295666"
+      },
+      "directories": {}
+    }
+  },
+  "readme": "# yargs-test-extends\n\nUsed in the following unit test:\n\n```js\nit('allows a module to be extended, rather than a JSON file', () => {\n  var argv = yargs()\n    .config({\n      a: 2,\n      extends: 'yargs-test-extends'\n    })\n    .argv\n\n  argv.a.should.equal(2)\n  argv.c.should.equal(201)\n})\n```\n\nTo make sure that yargs can extend configuration from a module.\n\n## index.json\n\n```json\n{\n  \"c\": 201\n}\n```\n\n## package.json\n\n```json\n{\n  \"name\": \"yargs-test-extends\",\n  \"version\": \"1.0.0\",\n  \"description\": \"test yargs' extends functionality\",\n  \"main\": \"index.json\",\n  \"scripts\": {\n    \"test\": \"echo \\\"Error: no test specified\\\" && exit 1\"\n  },\n  \"author\": \"Ben Coe <ben@npmjs.com>\",\n  \"license\": \"ISC\"\n}\n```\n",
+  "maintainers": [
+    {
+      "name": "bcoe",
+      "email": "ben@npmjs.com"
+    }
+  ],
+  "time": {
+    "modified": "2017-05-01T00:28:15.851Z",
+    "created": "2017-05-01T00:21:46.474Z",
+    "1.0.0": "2017-05-01T00:21:46.474Z",
+    "1.0.1": "2017-05-01T00:28:15.851Z"
+  },
+  "author": {
+    "name": "Ben Coe",
+    "email": "ben@npmjs.com"
+  },
+  "license": "ISC",
+  "readmeFilename": "README.md",
+  "_attachments": {}
+}

@@ -1,0 +1,11 @@
+{
+  "name": "@isaacs/testing-prod-dep-tgz-missing",
+  "version": "1.0.1",
+  "description": "a package with an optional dependency on a package whose tarball does not exist",
+  "dependencies": {
+    "@isaacs/testing-missing-tgz": "*"
+  },
+  "scripts": {
+    "install": "this never gets run"
+  }
+}

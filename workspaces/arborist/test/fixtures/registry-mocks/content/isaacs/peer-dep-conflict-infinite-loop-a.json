@@ -1,0 +1,169 @@
+{
+  "_id": "@isaacs/peer-dep-conflict-infinite-loop-a",
+  "_rev": "3-ef5729a1f3bb04367d2b26e58670bb16",
+  "name": "@isaacs/peer-dep-conflict-infinite-loop-a",
+  "dist-tags": {
+    "latest": "4.0.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "@isaacs/peer-dep-conflict-infinite-loop-a",
+      "version": "1.0.0",
+      "dependencies": {
+        "@isaacs/peer-dep-conflict-infinite-loop-x": "",
+        "@isaacs/peer-dep-conflict-infinite-loop-y": "",
+        "@isaacs/peer-dep-conflict-infinite-loop-j": "1"
+      },
+      "gitHead": "ddeb2d9792ec2715bb77ac434b9e17255c4df2a0",
+      "_id": "@isaacs/peer-dep-conflict-infinite-loop-a@1.0.0",
+      "_nodeVersion": "16.5.0",
+      "_npmVersion": "7.24.0",
+      "dist": {
+        "integrity": "sha512-06b93/5+wHKYyiKTHiNETITYYKl0Ey1xLO/Fr+HtVoTl5Bce3aCtHdo08rULKAssT/M3f9Z3SXS1XsuNdkbZDQ==",
+        "shasum": "866e7a99fa942723920ca53c0428d6be5f159d1f",
+        "tarball": "https://registry.npmjs.org/@isaacs/peer-dep-conflict-infinite-loop-a/-/peer-dep-conflict-infinite-loop-a-1.0.0.tgz",
+        "fileCount": 1,
+        "unpackedSize": 264
+      },
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/peer-dep-conflict-infinite-loop-a_1.0.0_1632440799283_0.4794535063402967"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.0": {
+      "name": "@isaacs/peer-dep-conflict-infinite-loop-a",
+      "version": "2.0.0",
+      "dependencies": {
+        "@isaacs/peer-dep-conflict-infinite-loop-x": "",
+        "@isaacs/peer-dep-conflict-infinite-loop-y": "",
+        "@isaacs/peer-dep-conflict-infinite-loop-j": "2"
+      },
+      "gitHead": "137958c5358b73ba1c42fecf0ccab3f719fa2ec7",
+      "_id": "@isaacs/peer-dep-conflict-infinite-loop-a@2.0.0",
+      "_nodeVersion": "16.5.0",
+      "_npmVersion": "7.24.0",
+      "dist": {
+        "integrity": "sha512-jMCj8Sip/3FE1WZ94b76xUS0WKZFBwG6odtdQCn+cznDnWaaRoLDKk+RbP8vNHkR53H/7VEFzpzyFwyHYcZgKA==",
+        "shasum": "07a8f1e66ac944a0b6a41599c78514dd5961d7e1",
+        "tarball": "https://registry.npmjs.org/@isaacs/peer-dep-conflict-infinite-loop-a/-/peer-dep-conflict-infinite-loop-a-2.0.0.tgz",
+        "fileCount": 1,
+        "unpackedSize": 264
+      },
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/peer-dep-conflict-infinite-loop-a_2.0.0_1632503270084_0.935325882117573"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.0": {
+      "name": "@isaacs/peer-dep-conflict-infinite-loop-a",
+      "version": "3.0.0",
+      "dependencies": {
+        "@isaacs/peer-dep-conflict-infinite-loop-x": "",
+        "@isaacs/peer-dep-conflict-infinite-loop-y": "",
+        "@isaacs/peer-dep-conflict-infinite-loop-j": "3"
+      },
+      "gitHead": "137958c5358b73ba1c42fecf0ccab3f719fa2ec7",
+      "_id": "@isaacs/peer-dep-conflict-infinite-loop-a@3.0.0",
+      "_nodeVersion": "16.5.0",
+      "_npmVersion": "7.24.0",
+      "dist": {
+        "integrity": "sha512-sKnFMllVQPVxn3Ql0MnaQIoZKfn8dHyJrVagMsykl0SMAYJYh1s1fdQ5XXIDVEganunh+tuWfk+VxVWWRuymvw==",
+        "shasum": "76206debae953a4f5da5803ff507fbda40e54c48",
+        "tarball": "https://registry.npmjs.org/@isaacs/peer-dep-conflict-infinite-loop-a/-/peer-dep-conflict-infinite-loop-a-3.0.0.tgz",
+        "fileCount": 1,
+        "unpackedSize": 264
+      },
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/peer-dep-conflict-infinite-loop-a_3.0.0_1632503271144_0.8546372434647922"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.0.0": {
+      "name": "@isaacs/peer-dep-conflict-infinite-loop-a",
+      "version": "4.0.0",
+      "dependencies": {
+        "@isaacs/peer-dep-conflict-infinite-loop-x": "",
+        "@isaacs/peer-dep-conflict-infinite-loop-y": ""
+      },
+      "gitHead": "137958c5358b73ba1c42fecf0ccab3f719fa2ec7",
+      "_id": "@isaacs/peer-dep-conflict-infinite-loop-a@4.0.0",
+      "_nodeVersion": "16.5.0",
+      "_npmVersion": "7.24.0",
+      "dist": {
+        "integrity": "sha512-fBtaph1m34gv42gfPmjENhhqt3z8damsyl9dAj5rYA+lgH/Zx0p1aN0fOZu03LNfbf02hEq4Xi770mRK+gw3kg==",
+        "shasum": "eb398ba46f2166d8855714cdf6a35a111dccd064",
+        "tarball": "https://registry.npmjs.org/@isaacs/peer-dep-conflict-infinite-loop-a/-/peer-dep-conflict-infinite-loop-a-4.0.0.tgz",
+        "fileCount": 1,
+        "unpackedSize": 210
+      },
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/peer-dep-conflict-infinite-loop-a_4.0.0_1632503272116_0.43315515334995247"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2021-09-23T23:46:39.231Z",
+    "1.0.0": "2021-09-23T23:46:39.458Z",
+    "modified": "2021-09-24T17:07:52.292Z",
+    "2.0.0": "2021-09-24T17:07:50.232Z",
+    "3.0.0": "2021-09-24T17:07:51.269Z",
+    "4.0.0": "2021-09-24T17:07:52.250Z"
+  },
+  "maintainers": [
+    {
+      "name": "isaacs",
+      "email": "i@izs.me"
+    }
+  ],
+  "readme": "ERROR: No README data found!",
+  "readmeFilename": ""
+}

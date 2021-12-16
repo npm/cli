@@ -1,0 +1,429 @@
+{
+  "_id": "flush-write-stream",
+  "_rev": "8-3eca78c97f065586c2d67ad20109dfa1",
+  "name": "flush-write-stream",
+  "description": "A write stream constructor that supports a flush function that is called before finish is emitted",
+  "dist-tags": {
+    "latest": "2.0.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "flush-write-stream",
+      "version": "1.0.0",
+      "description": "A write stream constructor that supports a flush function that is called before finish is emitted",
+      "main": "index.js",
+      "dependencies": {
+        "readable-stream": "^2.0.4"
+      },
+      "devDependencies": {
+        "tape": "^4.2.2"
+      },
+      "scripts": {
+        "test": "tape test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mafintosh/flush-write-stream.git"
+      },
+      "author": {
+        "name": "Mathias Buus",
+        "url": "@mafintosh"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/flush-write-stream/issues"
+      },
+      "homepage": "https://github.com/mafintosh/flush-write-stream",
+      "gitHead": "50e81d8eeee8a9666c7d5105775a6c89b7ae9dfa",
+      "_id": "flush-write-stream@1.0.0",
+      "_shasum": "cc4fc24f4b4c973f80027f27cc095841639965a7",
+      "_from": ".",
+      "_npmVersion": "2.14.4",
+      "_nodeVersion": "4.1.1",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "shasum": "cc4fc24f4b4c973f80027f27cc095841639965a7",
+        "tarball": "https://registry.npmjs.org/flush-write-stream/-/flush-write-stream-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "flush-write-stream",
+      "version": "1.0.1",
+      "description": "A write stream constructor that supports a flush function that is called before finish is emitted",
+      "main": "index.js",
+      "dependencies": {
+        "readable-stream": "^2.0.4"
+      },
+      "devDependencies": {
+        "tape": "^4.2.2"
+      },
+      "scripts": {
+        "test": "tape test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mafintosh/flush-write-stream.git"
+      },
+      "author": {
+        "name": "Mathias Buus",
+        "url": "@mafintosh"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/flush-write-stream/issues"
+      },
+      "homepage": "https://github.com/mafintosh/flush-write-stream",
+      "gitHead": "7f00179b7018083158fdf58c416aaa77ed2696c3",
+      "_id": "flush-write-stream@1.0.1",
+      "_shasum": "39dd8e6627109b5e833461d1b1eeb25edff3c4ba",
+      "_from": ".",
+      "_npmVersion": "2.14.12",
+      "_nodeVersion": "4.2.6",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "shasum": "39dd8e6627109b5e833461d1b1eeb25edff3c4ba",
+        "tarball": "https://registry.npmjs.org/flush-write-stream/-/flush-write-stream-1.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/flush-write-stream-1.0.1.tgz_1476614551011_0.6873086630366743"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "flush-write-stream",
+      "version": "1.0.2",
+      "description": "A write stream constructor that supports a flush function that is called before finish is emitted",
+      "main": "index.js",
+      "dependencies": {
+        "inherits": "^2.0.1",
+        "readable-stream": "^2.0.4"
+      },
+      "devDependencies": {
+        "tape": "^4.2.2"
+      },
+      "scripts": {
+        "test": "tape test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mafintosh/flush-write-stream.git"
+      },
+      "author": {
+        "name": "Mathias Buus",
+        "url": "@mafintosh"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/flush-write-stream/issues"
+      },
+      "homepage": "https://github.com/mafintosh/flush-write-stream",
+      "gitHead": "d35a4071dacbcc60fc40d798fa58fc425cba3efc",
+      "_id": "flush-write-stream@1.0.2",
+      "_shasum": "c81b90d8746766f1a609a46809946c45dd8ae417",
+      "_from": ".",
+      "_npmVersion": "2.14.12",
+      "_nodeVersion": "4.2.6",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "shasum": "c81b90d8746766f1a609a46809946c45dd8ae417",
+        "tarball": "https://registry.npmjs.org/flush-write-stream/-/flush-write-stream-1.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/flush-write-stream-1.0.2.tgz_1476614807882_0.22224654001183808"
+      },
+      "directories": {}
+    },
+    "1.0.3": {
+      "name": "flush-write-stream",
+      "version": "1.0.3",
+      "description": "A write stream constructor that supports a flush function that is called before finish is emitted",
+      "main": "index.js",
+      "dependencies": {
+        "inherits": "^2.0.1",
+        "readable-stream": "^2.0.4"
+      },
+      "devDependencies": {
+        "tape": "^4.2.2"
+      },
+      "scripts": {
+        "test": "tape test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mafintosh/flush-write-stream.git"
+      },
+      "author": {
+        "name": "Mathias Buus",
+        "url": "@mafintosh"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/flush-write-stream/issues"
+      },
+      "homepage": "https://github.com/mafintosh/flush-write-stream",
+      "gitHead": "3a0c6e62c7c9a5c22abf49cd1a06c960487fa2c9",
+      "_id": "flush-write-stream@1.0.3",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.7.1",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-calZMC10u0FMUqoiunI2AiGIIUtUIvifNwkHhNupZH4cbNnW1Itkoh/Nf5HFYmDrwWPjrUxpkZT0KhuCq0jmGw==",
+        "shasum": "c5d586ef38af6097650b49bc41b55fabb19f35bd",
+        "tarball": "https://registry.npmjs.org/flush-write-stream/-/flush-write-stream-1.0.3.tgz",
+        "fileCount": 7,
+        "unpackedSize": 6512
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/flush-write-stream_1.0.3_1521632961113_0.42985920051576776"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.1.0": {
+      "name": "flush-write-stream",
+      "version": "1.1.0",
+      "description": "A write stream constructor that supports a flush function that is called before finish is emitted",
+      "main": "index.js",
+      "dependencies": {
+        "inherits": "^2.0.3",
+        "readable-stream": "^3.1.1"
+      },
+      "devDependencies": {
+        "tape": "^4.2.2"
+      },
+      "scripts": {
+        "test": "tape test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mafintosh/flush-write-stream.git"
+      },
+      "author": {
+        "name": "Mathias Buus",
+        "url": "@mafintosh"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/flush-write-stream/issues"
+      },
+      "homepage": "https://github.com/mafintosh/flush-write-stream",
+      "gitHead": "85d36bb3cde116622da5ac3c966e2cd58d9a75ff",
+      "_id": "flush-write-stream@1.1.0",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.15.1",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-6MHED/cmsyux1G4/Cek2Z776y9t7WCNd3h2h/HW91vFeU7pzMhA8XvAlDhHcanG5IWuIh/xcC7JASY4WQpG6xg==",
+        "shasum": "2e89a8bd5eee42f8ec97e43aae81e3d5099c2ddc",
+        "tarball": "https://registry.npmjs.org/flush-write-stream/-/flush-write-stream-1.1.0.tgz",
+        "fileCount": 7,
+        "unpackedSize": 6512,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcWANoCRA9TVsSAnZWagAAyzwP/0R/kZ0ApTRQZswgVKZv\nBS1qKpEz4jfTDV/OELjYh88cTPKvAFApDJ9mR6eyH5W/t6MsAe8d/j9miTxz\nWj8/5e37KEKy3qZTz1uUk7Mf9oYROG0qpNpehH/xGNxS1cOzg09uyD3j3QUU\ngNAtVyMGnMFYlq7ibJlhKZOiYu+8enRPOfj2BGXYGkDt+ujvBzOFUUpeSY03\n2wbiJkwVkCsWGPpkUd5MDYjovPK4Q5Mip6TzIfAaQiH0GZUrMgNh3wyCuTob\niC3q7l0MxmZqjovWwqMOXNnTiCE4i+RDVbM7jPd89Gec4rs/95T9n284iCw+\nGVv9MExeVOoMkzZ9fesqrA8ezWcJ/sj6OwH05N1Uz0fmUsXVtxmQjval6eUe\ncaijTikLRabA463njYi7CX/VROOqZzrV4USU/Rl2IBzwJFfAnkSuI0Xa8hWy\nv/xKCVvJb2uZPG0/24WJqfE0Qy+9i0JLq+/8dSm+QFJxpi06i89nmWywmxox\nAbY2N579+Be2eYt32hkBNT/BVvPWtv5EiZtplXV0WeFZECqG1J6qi58GW8j8\ncJ0/0Pkg3SPqqMdD3kLWNsUOKE7AlAbJ2ujC7Prml2WN7l17gsER2oZvhpBo\nYVanzxl0mzA+yosqUbBe1ZXgLlAOsVsCcDZlaY7I4Ow0eoUFlCHLTkp729Xv\n9XBg\r\n=kCSG\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/flush-write-stream_1.1.0_1549271911926_0.4645147990967873"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.1.1": {
+      "name": "flush-write-stream",
+      "version": "1.1.1",
+      "description": "A write stream constructor that supports a flush function that is called before finish is emitted",
+      "main": "index.js",
+      "dependencies": {
+        "inherits": "^2.0.3",
+        "readable-stream": "^2.3.6"
+      },
+      "devDependencies": {
+        "tape": "^4.2.2"
+      },
+      "scripts": {
+        "test": "tape test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mafintosh/flush-write-stream.git"
+      },
+      "author": {
+        "name": "Mathias Buus",
+        "url": "@mafintosh"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/flush-write-stream/issues"
+      },
+      "homepage": "https://github.com/mafintosh/flush-write-stream",
+      "gitHead": "bab61bb3805d5750cb864aeee387fbddea93c913",
+      "_id": "flush-write-stream@1.1.1",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.15.1",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-3Z4XhFZ3992uIq0XOqb9AreonueSYphE6oYbpt5+3u06JWklbsPkNv3ZKkP9Bz/r+1MWCaMoSQ28P85+1Yc77w==",
+        "shasum": "8dd7d873a1babc207d94ead0c2e0e44276ebf2e8",
+        "tarball": "https://registry.npmjs.org/flush-write-stream/-/flush-write-stream-1.1.1.tgz",
+        "fileCount": 7,
+        "unpackedSize": 6503,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcXWhRCRA9TVsSAnZWagAAO6AP/1PeJON8gEoXFRpQyMvK\nev0cTYLHqU0z52V9dvugJ+RVvrdXfLXf63lSAiOjc3KBONbdhKFavJU+QlrA\nbqIx7pq5X61gvsFzgWfkGVluOCb0sgr2aJ4BcyeYrETrPCUV2QibPz0tqoyu\ntUvTeeIR3wGrksA5HUIHdf3f35E5ZTBMK18sTaA2PkTgj6VuQ4m8NBxgkatL\n1LVNh+n3kQvzH2nBtwsPZKzDFSXHvTpPNgjwIuasewe96f9rJAsPBgA32c1j\nVUs5QVKQyl3fGFCpA5W9fQBS40j89I1yAetgT+6zXMfRz2z9Gvx0C5UTyD3h\njX7vu/ktZb2kmlWPbHcNwRFCSsm53cpZ2LFj0u5Pw9EcC9aBiK2dGdQJeOaS\nd2Vn7IXMUKip7yOZcnMv3N4YGx6+mjHIOweIJKfu1z/S4kjGmZ2nLQKrO2Vz\nzOZCJoRjMpZUbv+ATZ2t2WfKe3YcXLmfJHs3p0fRSe1HjBvkrjHbRE7L0ML+\nksZr0m2fi0bYu3uY08VkJN9pR1c+4iuU5zc1gCUH5EgnkEH0MHfXrcbXskwy\ndk9Qpc2BkWD+wcIHjw/xApktFqPsCTM7SrR+XEHElgyUOyeW7H4gQ741iOHf\nhFmMUl0zin/p2Jstylv+zDI8e2JKfFQ3WsgMSq7Qi1XJ8Ta4Q2xtwbhBpkd+\nQLEn\r\n=Qfkq\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/flush-write-stream_1.1.1_1549625425108_0.2525437003881257"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.0": {
+      "name": "flush-write-stream",
+      "version": "2.0.0",
+      "description": "A write stream constructor that supports a flush function that is called before finish is emitted",
+      "main": "index.js",
+      "dependencies": {
+        "inherits": "^2.0.3",
+        "readable-stream": "^3.1.1"
+      },
+      "devDependencies": {
+        "tape": "^4.2.2"
+      },
+      "scripts": {
+        "test": "tape test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mafintosh/flush-write-stream.git"
+      },
+      "author": {
+        "name": "Mathias Buus",
+        "url": "@mafintosh"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/flush-write-stream/issues"
+      },
+      "homepage": "https://github.com/mafintosh/flush-write-stream",
+      "gitHead": "cea3fbb3a3d11fb1e226d8893a1749178627b284",
+      "_id": "flush-write-stream@2.0.0",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.15.1",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-uXClqPxT4xW0lcdSBheb2ObVU+kuqUk3Jk64EwieirEXZx9XUrVwp/JuBfKAWaM4T5Td/VL7QLDWPXp/MvGm/g==",
+        "shasum": "6f58e776154f5eefacff92a6e5a681c88ac50f7c",
+        "tarball": "https://registry.npmjs.org/flush-write-stream/-/flush-write-stream-2.0.0.tgz",
+        "fileCount": 7,
+        "unpackedSize": 6503,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcXWh3CRA9TVsSAnZWagAAiHIP/3xb/bnCTbJW9iASegn7\n6NoyhqP7JD28hrwOHRrw2xE12wOsMkGTWcydTVhlOjjLjfYuOtyf197n2gm/\nPI41F+T+y5fXIwe9SCdmlrlcS1KKPNFJMVdNxDHsqYmV5fSwcgtG3xuVLCgg\nA5ap0bw5YBzGPOexBT5tpqrlAnXYFrl7bHOpqjdGPa5EPaxTCTlU7QJMfe2J\nh1jqFxXx3eHWb1cBs/8goxC0ISXCnvqPNUl8LU5GzhJ82xtjXzLS6HGRrKXJ\nnp4Xlb6znV27OsxV/SuFzhq8AZTeHJPJmNEMa8VrBgU9bN4U5fAwZJoBOqt3\nTL/SAkP4layhJb7YVYa2pyNFTKjH1S+N3vq7j/kQNZ4F4b5YYsvBF4kgA9xe\nSwW726sNIIgDl4GxmlTrZletQW74YVCwkuK3oSzugpxXBzVybJH/WAaAhzbL\nbSf5owGfPm0QMxJeEn19um5fspdbCk3lWNOp+9BdtimIVEWPJMGxNhy63pdW\nQcNK3w3hpFEvesAlNrP/Yu/vgx7Cx/JLqJID1vbJMM7GHD6DbItlHrl92BHE\nGsSQCg8i5aTyQBAsRTqAjrAk+WkxF/w6jbxuzvoTsTbFFh46KASGABzNht+x\nei2jxhkWeWrl5JOr61/s0Y/EV6He0bBDXl99WpSH0PL1EjNYR+0CHANxnjzp\nnqL3\r\n=e35e\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/flush-write-stream_2.0.0_1549625462928_0.38196138371240473"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# flush-write-stream\n\nA write stream constructor that supports a flush function that is called before `finish` is emitted\n\n```\nnpm install flush-write-stream\n```\n\n[![build status](http://img.shields.io/travis/mafintosh/flush-write-stream.svg?style=flat)](http://travis-ci.org/mafintosh/flush-write-stream)\n\n## Usage\n\n``` js\nvar writer = require('flush-write-stream')\n\nvar ws = writer(write, flush)\n\nws.on('finish', function () {\n  console.log('finished')\n})\n\nws.write('hello')\nws.write('world')\nws.end()\n\nfunction write (data, enc, cb) {\n  // i am your normal ._write method\n  console.log('writing', data.toString())\n  cb()\n}\n\nfunction flush (cb) {\n  // i am called before finish is emitted\n  setTimeout(cb, 1000) // wait 1 sec\n}\n```\n\nIf you run the above it will produce the following output\n\n```\nwriting hello\nwriting world\n(nothing happens for 1 sec)\nfinished\n```\n\n## API\n\n#### `var ws = writer([options], write, [flush])`\n\nCreate a new writable stream. Options are forwarded to the stream constructor.\n\n#### `var ws = writer.obj([options], write, [flush])`\n\nSame as the above except `objectMode` is set to `true` per default.\n\n## License\n\nMIT\n",
+  "maintainers": [
+    {
+      "name": "mafintosh",
+      "email": "mathiasbuus@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2019-02-08T11:31:05.545Z",
+    "created": "2015-11-06T21:57:03.152Z",
+    "1.0.0": "2015-11-06T21:57:03.152Z",
+    "1.0.1": "2016-10-16T10:42:32.651Z",
+    "1.0.2": "2016-10-16T10:46:49.463Z",
+    "1.0.3": "2018-03-21T11:49:21.221Z",
+    "1.1.0": "2019-02-04T09:18:32.074Z",
+    "1.1.1": "2019-02-08T11:30:25.188Z",
+    "2.0.0": "2019-02-08T11:31:03.031Z"
+  },
+  "homepage": "https://github.com/mafintosh/flush-write-stream",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mafintosh/flush-write-stream.git"
+  },
+  "author": {
+    "name": "Mathias Buus",
+    "url": "@mafintosh"
+  },
+  "bugs": {
+    "url": "https://github.com/mafintosh/flush-write-stream/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "users": {
+    "bret": true
+  }
+}

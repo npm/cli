@@ -1,0 +1,1794 @@
+{
+  "_id": "make-error",
+  "_rev": "32-04ae3a7cd5d71028f0712ba426968ea8",
+  "name": "make-error",
+  "description": "Make your own error types!",
+  "dist-tags": {
+    "next": "0.0.0",
+    "latest": "1.3.6"
+  },
+  "versions": {
+    "0.0.0": {
+      "name": "make-error",
+      "version": "0.0.0",
+      "license": "ISC",
+      "description": "Make your own error types!",
+      "keywords": [
+        "custom",
+        "derive",
+        "Error",
+        "extend",
+        "inherit"
+      ],
+      "homepage": "https://github.com/julien-f/js-make-error",
+      "bugs": {
+        "url": "https://github.com/julien-f/js-make-error/issues"
+      },
+      "author": {
+        "name": "Julien Fontanet",
+        "email": "julien.fontanet@isonoe.net"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/julien-f/js-make-error.git"
+      },
+      "devDependencies": {
+        "chai": "^1.9.2",
+        "mocha": "^1.21.4"
+      },
+      "scripts": {
+        "test": "mocha index.spec.js"
+      },
+      "files": [
+        "index.js"
+      ],
+      "gitHead": "d373f26112532ca0bc04b229f2b5bbe7edaa6e32",
+      "_id": "make-error@0.0.0",
+      "_shasum": "e63a3493611c745fcdc39f62333573cb3e42beab",
+      "_from": ".",
+      "_npmVersion": "2.1.2",
+      "_nodeVersion": "0.10.32",
+      "_npmUser": {
+        "name": "julien-f",
+        "email": "julien.fontanet@isonoe.net"
+      },
+      "maintainers": [
+        {
+          "name": "julien-f",
+          "email": "julien.fontanet@isonoe.net"
+        }
+      ],
+      "dist": {
+        "shasum": "e63a3493611c745fcdc39f62333573cb3e42beab",
+        "tarball": "https://registry.npmjs.org/make-error/-/make-error-0.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.1.0": {
+      "name": "make-error",
+      "version": "0.1.0",
+      "license": "ISC",
+      "description": "Make your own error types!",
+      "keywords": [
+        "custom",
+        "derive",
+        "Error",
+        "extend",
+        "inherit"
+      ],
+      "homepage": "https://github.com/julien-f/js-make-error",
+      "bugs": {
+        "url": "https://github.com/julien-f/js-make-error/issues"
+      },
+      "author": {
+        "name": "Julien Fontanet",
+        "email": "julien.fontanet@isonoe.net"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/julien-f/js-make-error.git"
+      },
+      "devDependencies": {
+        "browserify": "^6.0.3",
+        "chai": "^1.9.2",
+        "mocha": "^1.21.4",
+        "uglify-js": "^2.4.15"
+      },
+      "scripts": {
+        "browserify": "mkdir -p dist && browserify -s makeError index.js | uglifyjs -c > dist/make-error.js",
+        "browser-test": "mkdir -p dist && browserify index.spec.js -o dist/test.js",
+        "test": "mocha index.spec.js"
+      },
+      "files": [
+        "index.js"
+      ],
+      "gitHead": "87c7b3c8f83b4d5dc63f37e49288246035f9735d",
+      "_id": "make-error@0.1.0",
+      "_shasum": "7c72b4a26fb41862bb9d4e49a60c67f637359d3e",
+      "_from": ".",
+      "_npmVersion": "2.1.4",
+      "_nodeVersion": "0.10.32",
+      "_npmUser": {
+        "name": "julien-f",
+        "email": "julien.fontanet@isonoe.net"
+      },
+      "maintainers": [
+        {
+          "name": "julien-f",
+          "email": "julien.fontanet@isonoe.net"
+        }
+      ],
+      "dist": {
+        "shasum": "7c72b4a26fb41862bb9d4e49a60c67f637359d3e",
+        "tarball": "https://registry.npmjs.org/make-error/-/make-error-0.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.0": {
+      "name": "make-error",
+      "version": "0.2.0",
+      "license": "ISC",
+      "description": "Make your own error types!",
+      "keywords": [
+        "custom",
+        "derive",
+        "Error",
+        "extend",
+        "inherit"
+      ],
+      "homepage": "https://github.com/julien-f/js-make-error",
+      "bugs": {
+        "url": "https://github.com/julien-f/js-make-error/issues"
+      },
+      "author": {
+        "name": "Julien Fontanet",
+        "email": "julien.fontanet@isonoe.net"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/julien-f/js-make-error.git"
+      },
+      "devDependencies": {
+        "browserify": "^6.0.3",
+        "chai": "^1.9.2",
+        "mocha": "^1.21.4",
+        "testling": "^1.7.1",
+        "uglify-js": "^2.4.15"
+      },
+      "scripts": {
+        "browserify": "mkdir -p dist && browserify -s makeError index.js | uglifyjs -c > dist/make-error.js",
+        "test": "mocha index.spec.js",
+        "test-browser": "testling -u"
+      },
+      "testling": {
+        "harness": "mocha-bdd",
+        "files": "index.spec.js",
+        "browsers": [
+          "ie/8..Latest",
+          "chrome/latest",
+          "firefox/latest"
+        ]
+      },
+      "files": [
+        "index.js"
+      ],
+      "gitHead": "c275dc9237b9becb5f033684e64ce44589110854",
+      "_id": "make-error@0.2.0",
+      "_shasum": "33752dd87db89b20f9666d63a078e39fee799200",
+      "_from": ".",
+      "_npmVersion": "2.1.4",
+      "_nodeVersion": "0.10.32",
+      "_npmUser": {
+        "name": "julien-f",
+        "email": "julien.fontanet@isonoe.net"
+      },
+      "maintainers": [
+        {
+          "name": "julien-f",
+          "email": "julien.fontanet@isonoe.net"
+        }
+      ],
+      "dist": {
+        "shasum": "33752dd87db89b20f9666d63a078e39fee799200",
+        "tarball": "https://registry.npmjs.org/make-error/-/make-error-0.2.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.3.0": {
+      "name": "make-error",
+      "version": "0.3.0",
+      "license": "ISC",
+      "description": "Make your own error types!",
+      "keywords": [
+        "custom",
+        "derive",
+        "Error",
+        "extend",
+        "inherit"
+      ],
+      "homepage": "https://github.com/julien-f/js-make-error",
+      "bugs": {
+        "url": "https://github.com/julien-f/js-make-error/issues"
+      },
+      "author": {
+        "name": "Julien Fontanet",
+        "email": "julien.fontanet@isonoe.net"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/julien-f/js-make-error.git"
+      },
+      "devDependencies": {
+        "browserify": "^6.0.3",
+        "chai": "^1.9.2",
+        "mocha": "^1.21.4",
+        "testling": "^1.7.1",
+        "uglify-js": "^2.4.15"
+      },
+      "scripts": {
+        "browserify": "mkdir -p dist && browserify -s makeError index.js | uglifyjs -c > dist/make-error.js",
+        "test": "mocha index.spec.js",
+        "test-browser": "testling -u"
+      },
+      "testling": {
+        "harness": "mocha-bdd",
+        "files": "index.spec.js",
+        "browsers": [
+          "ie/8..Latest",
+          "chrome/latest",
+          "firefox/latest"
+        ]
+      },
+      "files": [
+        "index.js"
+      ],
+      "gitHead": "3bacf27b2a1d5b37a3d237a23e7337e8bc678a0b",
+      "_id": "make-error@0.3.0",
+      "_shasum": "c2ee42c95bb319077e33c855b163a3421390870d",
+      "_from": ".",
+      "_npmVersion": "2.1.4",
+      "_nodeVersion": "0.10.32",
+      "_npmUser": {
+        "name": "julien-f",
+        "email": "julien.fontanet@isonoe.net"
+      },
+      "maintainers": [
+        {
+          "name": "julien-f",
+          "email": "julien.fontanet@isonoe.net"
+        }
+      ],
+      "dist": {
+        "shasum": "c2ee42c95bb319077e33c855b163a3421390870d",
+        "tarball": "https://registry.npmjs.org/make-error/-/make-error-0.3.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "make-error",
+      "version": "1.0.0",
+      "license": "ISC",
+      "description": "Make your own error types!",
+      "keywords": [
+        "custom",
+        "derive",
+        "Error",
+        "extend",
+        "inherit"
+      ],
+      "homepage": "https://github.com/julien-f/js-make-error",
+      "bugs": {
+        "url": "https://github.com/julien-f/js-make-error/issues"
+      },
+      "author": {
+        "name": "Julien Fontanet",
+        "email": "julien.fontanet@isonoe.net"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/julien-f/js-make-error.git"
+      },
+      "devDependencies": {
+        "browserify": "^6.0.3",
+        "chai": "^1.9.2",
+        "mocha": "^1.21.4",
+        "standard": "*",
+        "testling": "^1.7.1",
+        "uglify-js": "^2.4.15"
+      },
+      "scripts": {
+        "browserify": "mkdir -p dist && browserify -s makeError index.js | uglifyjs -c > dist/make-error.js",
+        "test": "standard && mocha index.spec.js",
+        "test-browser": "testling -u"
+      },
+      "testling": {
+        "harness": "mocha-bdd",
+        "files": "index.spec.js",
+        "browsers": [
+          "ie/8..Latest",
+          "chrome/latest",
+          "firefox/latest"
+        ]
+      },
+      "files": [
+        "index.js"
+      ],
+      "standard": {
+        "ignore": [
+          "dist/**"
+        ]
+      },
+      "gitHead": "07efc8f13b90c7cb4f64e0520ccc1fee19d8618d",
+      "_id": "make-error@1.0.0",
+      "_shasum": "90915f2faada2b3a4dd941ceaa08fae55a0dba2e",
+      "_from": ".",
+      "_npmVersion": "2.7.5",
+      "_nodeVersion": "0.10.38",
+      "_npmUser": {
+        "name": "julien-f",
+        "email": "julien.fontanet@isonoe.net"
+      },
+      "maintainers": [
+        {
+          "name": "julien-f",
+          "email": "julien.fontanet@isonoe.net"
+        }
+      ],
+      "dist": {
+        "shasum": "90915f2faada2b3a4dd941ceaa08fae55a0dba2e",
+        "tarball": "https://registry.npmjs.org/make-error/-/make-error-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "make-error",
+      "version": "1.0.1",
+      "license": "ISC",
+      "description": "Make your own error types!",
+      "keywords": [
+        "custom",
+        "derive",
+        "Error",
+        "extend",
+        "inherit"
+      ],
+      "homepage": "https://github.com/julien-f/js-make-error",
+      "bugs": {
+        "url": "https://github.com/julien-f/js-make-error/issues"
+      },
+      "author": {
+        "name": "Julien Fontanet",
+        "email": "julien.fontanet@isonoe.net"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/julien-f/js-make-error.git"
+      },
+      "devDependencies": {
+        "browserify": "^9.0.8",
+        "chai": "^2.2.0",
+        "mocha": "^2.2.4",
+        "standard": "*",
+        "testling": "^1.7.1",
+        "uglify-js": "^2.4.19"
+      },
+      "scripts": {
+        "browserify": "mkdir -p dist && browserify -s makeError index.js | uglifyjs -c > dist/make-error.js",
+        "test": "standard && mocha index.spec.js",
+        "test-browser": "testling -u"
+      },
+      "testling": {
+        "harness": "mocha-bdd",
+        "files": "index.spec.js",
+        "browsers": [
+          "ie/8..Latest",
+          "chrome/latest",
+          "firefox/latest"
+        ]
+      },
+      "files": [
+        "index.js"
+      ],
+      "standard": {
+        "ignore": [
+          "dist/**"
+        ]
+      },
+      "gitHead": "118e2621793001e8a448eeec4fa35750a8cb7f54",
+      "_id": "make-error@1.0.1",
+      "_shasum": "cdb497d80cdcffde9d4886f516b5fc6e4fec9a5b",
+      "_from": ".",
+      "_npmVersion": "2.7.5",
+      "_nodeVersion": "0.10.38",
+      "_npmUser": {
+        "name": "julien-f",
+        "email": "julien.fontanet@isonoe.net"
+      },
+      "maintainers": [
+        {
+          "name": "julien-f",
+          "email": "julien.fontanet@isonoe.net"
+        }
+      ],
+      "dist": {
+        "shasum": "cdb497d80cdcffde9d4886f516b5fc6e4fec9a5b",
+        "tarball": "https://registry.npmjs.org/make-error/-/make-error-1.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "make-error",
+      "version": "1.0.2",
+      "license": "ISC",
+      "description": "Make your own error types!",
+      "keywords": [
+        "custom",
+        "derive",
+        "Error",
+        "extend",
+        "inherit"
+      ],
+      "homepage": "https://github.com/julien-f/js-make-error",
+      "bugs": {
+        "url": "https://github.com/julien-f/js-make-error/issues"
+      },
+      "author": {
+        "name": "Julien Fontanet",
+        "email": "julien.fontanet@isonoe.net"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/julien-f/js-make-error.git"
+      },
+      "devDependencies": {
+        "browserify": "^9.0.8",
+        "chai": "^2.2.0",
+        "mocha": "^2.2.4",
+        "standard": "*",
+        "testling": "^1.7.1",
+        "uglify-js": "^2.4.19"
+      },
+      "scripts": {
+        "browserify": "mkdir -p dist && browserify -s makeError index.js | uglifyjs -c > dist/make-error.js",
+        "test": "standard && mocha index.spec.js",
+        "test-browser": "testling -u"
+      },
+      "testling": {
+        "harness": "mocha-bdd",
+        "files": "index.spec.js",
+        "browsers": [
+          "ie/8..Latest",
+          "chrome/latest",
+          "firefox/latest"
+        ]
+      },
+      "files": [
+        "index.js"
+      ],
+      "standard": {
+        "ignore": [
+          "dist/**"
+        ]
+      },
+      "gitHead": "576b90b4f62cc50123491a77cb20b2fb073d4ca2",
+      "_id": "make-error@1.0.2",
+      "_shasum": "1cb20a79908a220ef51a505b44b21591c4a122c5",
+      "_from": ".",
+      "_npmVersion": "2.7.6",
+      "_nodeVersion": "0.10.38",
+      "_npmUser": {
+        "name": "julien-f",
+        "email": "julien.fontanet@isonoe.net"
+      },
+      "maintainers": [
+        {
+          "name": "julien-f",
+          "email": "julien.fontanet@isonoe.net"
+        }
+      ],
+      "dist": {
+        "shasum": "1cb20a79908a220ef51a505b44b21591c4a122c5",
+        "tarball": "https://registry.npmjs.org/make-error/-/make-error-1.0.2.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.3": {
+      "name": "make-error",
+      "version": "1.0.3",
+      "license": "ISC",
+      "description": "Make your own error types!",
+      "keywords": [
+        "custom",
+        "derive",
+        "Error",
+        "extend",
+        "inherit"
+      ],
+      "homepage": "https://github.com/julien-f/js-make-error",
+      "bugs": {
+        "url": "https://github.com/julien-f/js-make-error/issues"
+      },
+      "author": {
+        "name": "Julien Fontanet",
+        "email": "julien.fontanet@isonoe.net"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/julien-f/js-make-error.git"
+      },
+      "devDependencies": {
+        "browserify": "^11.2.0",
+        "chai": "^3.3.0",
+        "mocha": "^2.2.4",
+        "standard": "*",
+        "testling": "^1.7.1",
+        "uglify-js": "^2.4.19"
+      },
+      "scripts": {
+        "browserify": "mkdir -p dist && browserify -s makeError index.js | uglifyjs -c > dist/make-error.js",
+        "test": "standard && mocha index.spec.js",
+        "test-browser": "testling -u"
+      },
+      "testling": {
+        "harness": "mocha-bdd",
+        "files": "index.spec.js",
+        "browsers": [
+          "ie/8..Latest",
+          "chrome/latest",
+          "firefox/latest"
+        ]
+      },
+      "files": [
+        "index.js"
+      ],
+      "standard": {
+        "ignore": [
+          "dist/**"
+        ]
+      },
+      "gitHead": "f083ac75771b56f4237f649b5095c2aac37a729a",
+      "_id": "make-error@1.0.3",
+      "_shasum": "ed1573be4f0871b4b0f036f4b5ea8652e9bcacb6",
+      "_from": ".",
+      "_npmVersion": "3.3.4",
+      "_nodeVersion": "4.1.1",
+      "_npmUser": {
+        "name": "julien-f",
+        "email": "julien.fontanet@isonoe.net"
+      },
+      "dist": {
+        "shasum": "ed1573be4f0871b4b0f036f4b5ea8652e9bcacb6",
+        "tarball": "https://registry.npmjs.org/make-error/-/make-error-1.0.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "julien-f",
+          "email": "julien.fontanet@isonoe.net"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.4": {
+      "name": "make-error",
+      "version": "1.0.4",
+      "license": "ISC",
+      "description": "Make your own error types!",
+      "keywords": [
+        "custom",
+        "derive",
+        "Error",
+        "extend",
+        "inherit"
+      ],
+      "homepage": "https://github.com/julien-f/js-make-error",
+      "bugs": {
+        "url": "https://github.com/julien-f/js-make-error/issues"
+      },
+      "author": {
+        "name": "Julien Fontanet",
+        "email": "julien.fontanet@isonoe.net"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/julien-f/js-make-error.git"
+      },
+      "devDependencies": {
+        "browserify": "^11.2.0",
+        "chai": "^3.3.0",
+        "mocha": "^2.2.4",
+        "standard": "*",
+        "testling": "^1.7.1",
+        "uglify-js": "^2.4.19"
+      },
+      "scripts": {
+        "browserify": "mkdir -p dist && browserify -s makeError index.js | uglifyjs -c > dist/make-error.js",
+        "test": "standard && mocha index.spec.js",
+        "test-browser": "testling -u"
+      },
+      "testling": {
+        "harness": "mocha-bdd",
+        "files": "index.spec.js",
+        "browsers": [
+          "ie/8..Latest",
+          "chrome/latest",
+          "firefox/latest"
+        ]
+      },
+      "files": [
+        "index.js"
+      ],
+      "standard": {
+        "ignore": [
+          "dist/**"
+        ]
+      },
+      "gitHead": "8a879347301b7d29462a976ab14e39331bc16ec1",
+      "_id": "make-error@1.0.4",
+      "_shasum": "43a5c24245350ffe8a595abee472b5e36b3b9c0e",
+      "_from": ".",
+      "_npmVersion": "3.3.4",
+      "_nodeVersion": "4.1.1",
+      "_npmUser": {
+        "name": "julien-f",
+        "email": "julien.fontanet@isonoe.net"
+      },
+      "dist": {
+        "shasum": "43a5c24245350ffe8a595abee472b5e36b3b9c0e",
+        "tarball": "https://registry.npmjs.org/make-error/-/make-error-1.0.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "julien-f",
+          "email": "julien.fontanet@isonoe.net"
+        }
+      ],
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "make-error",
+      "version": "1.1.0",
+      "license": "ISC",
+      "description": "Make your own error types!",
+      "keywords": [
+        "custom",
+        "derive",
+        "Error",
+        "extend",
+        "inherit"
+      ],
+      "homepage": "https://github.com/julien-f/js-make-error",
+      "bugs": {
+        "url": "https://github.com/julien-f/js-make-error/issues"
+      },
+      "author": {
+        "name": "Julien Fontanet",
+        "email": "julien.fontanet@isonoe.net"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/julien-f/js-make-error.git"
+      },
+      "devDependencies": {
+        "browserify": "^13.0.0",
+        "chai": "^3.3.0",
+        "mocha": "^2.2.4",
+        "standard": "*",
+        "testling": "^1.7.1",
+        "uglify-js": "^2.4.19"
+      },
+      "scripts": {
+        "browserify": "mkdir -p dist && browserify -s makeError index.js | uglifyjs -c > dist/make-error.js",
+        "test": "standard && mocha index.spec.js",
+        "test-browser": "testling -u"
+      },
+      "testling": {
+        "harness": "mocha-bdd",
+        "files": "index.spec.js",
+        "browsers": [
+          "ie/8..Latest",
+          "chrome/latest",
+          "firefox/latest"
+        ]
+      },
+      "files": [
+        "index.js"
+      ],
+      "gitHead": "66d804258af53b30c57285d737d08044ca25dcd1",
+      "_id": "make-error@1.1.0",
+      "_shasum": "85438a420f0b058de99ea10ae3d3c36c54bcd963",
+      "_from": ".",
+      "_npmVersion": "3.5.2",
+      "_nodeVersion": "4.2.4",
+      "_npmUser": {
+        "name": "julien-f",
+        "email": "julien.fontanet@isonoe.net"
+      },
+      "dist": {
+        "shasum": "85438a420f0b058de99ea10ae3d3c36c54bcd963",
+        "tarball": "https://registry.npmjs.org/make-error/-/make-error-1.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "julien-f",
+          "email": "julien.fontanet@isonoe.net"
+        }
+      ],
+      "directories": {}
+    },
+    "1.1.1": {
+      "name": "make-error",
+      "version": "1.1.1",
+      "license": "ISC",
+      "description": "Make your own error types!",
+      "keywords": [
+        "custom",
+        "derive",
+        "Error",
+        "extend",
+        "inherit"
+      ],
+      "homepage": "https://github.com/julien-f/js-make-error",
+      "bugs": {
+        "url": "https://github.com/julien-f/js-make-error/issues"
+      },
+      "author": {
+        "name": "Julien Fontanet",
+        "email": "julien.fontanet@isonoe.net"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/julien-f/js-make-error.git"
+      },
+      "devDependencies": {
+        "browserify": "^13.0.0",
+        "chai": "^3.3.0",
+        "mocha": "^2.2.4",
+        "standard": "*",
+        "testling": "^1.7.1",
+        "uglify-js": "^2.4.19"
+      },
+      "scripts": {
+        "browserify": "mkdir -p dist && browserify -s makeError index.js | uglifyjs -c > dist/make-error.js",
+        "test": "standard && mocha index.spec.js",
+        "test-browser": "testling -u"
+      },
+      "testling": {
+        "harness": "mocha-bdd",
+        "files": "index.spec.js",
+        "browsers": [
+          "ie/8..Latest",
+          "chrome/latest",
+          "firefox/latest"
+        ]
+      },
+      "files": [
+        "index.js"
+      ],
+      "gitHead": "85ecdd11d9760be732c96ad49b3a50c4c014cdfd",
+      "_id": "make-error@1.1.1",
+      "_shasum": "5ed667566c5d80e8406865c91f157bac67fdad51",
+      "_from": ".",
+      "_npmVersion": "3.7.1",
+      "_nodeVersion": "4.2.4",
+      "_npmUser": {
+        "name": "julien-f",
+        "email": "julien.fontanet@isonoe.net"
+      },
+      "dist": {
+        "shasum": "5ed667566c5d80e8406865c91f157bac67fdad51",
+        "tarball": "https://registry.npmjs.org/make-error/-/make-error-1.1.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "julien-f",
+          "email": "julien.fontanet@isonoe.net"
+        },
+        {
+          "name": "marsaud",
+          "email": "marsaud.fabrice@neuf.fr"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-5-east.internal.npmjs.com",
+        "tmp": "tmp/make-error-1.1.1.tgz_1455010194765_0.6916712960228324"
+      },
+      "directories": {}
+    },
+    "1.2.0": {
+      "name": "make-error",
+      "version": "1.2.0",
+      "license": "ISC",
+      "description": "Make your own error types!",
+      "keywords": [
+        "custom",
+        "derive",
+        "Error",
+        "extend",
+        "inherit"
+      ],
+      "homepage": "https://github.com/julien-f/js-make-error",
+      "bugs": {
+        "url": "https://github.com/julien-f/js-make-error/issues"
+      },
+      "author": {
+        "name": "Julien Fontanet",
+        "email": "julien.fontanet@isonoe.net"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/julien-f/js-make-error.git"
+      },
+      "devDependencies": {
+        "browserify": "^13.0.0",
+        "chai": "^3.3.0",
+        "mocha": "^2.2.4",
+        "standard": "*",
+        "testling": "^1.7.1",
+        "uglify-js": "^2.4.19"
+      },
+      "scripts": {
+        "browserify": "mkdir -p dist && browserify -s makeError index.js | uglifyjs -c > dist/make-error.js",
+        "test": "standard && mocha index.spec.js",
+        "test-browser": "testling -u"
+      },
+      "testling": {
+        "harness": "mocha-bdd",
+        "files": "index.spec.js",
+        "browsers": [
+          "ie/8..Latest",
+          "chrome/latest",
+          "firefox/latest"
+        ]
+      },
+      "files": [
+        "index.js",
+        "index.d.ts"
+      ],
+      "gitHead": "b87f687cf989640ea3df8b4bc22ef6eaf99e4ed1",
+      "_id": "make-error@1.2.0",
+      "_shasum": "b58eca92530bbdb765d2d5847133b4fec748ac12",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "4.4.2",
+      "_npmUser": {
+        "name": "julien-f",
+        "email": "julien.fontanet@isonoe.net"
+      },
+      "dist": {
+        "shasum": "b58eca92530bbdb765d2d5847133b4fec748ac12",
+        "tarball": "https://registry.npmjs.org/make-error/-/make-error-1.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "julien-f",
+          "email": "julien.fontanet@isonoe.net"
+        },
+        {
+          "name": "marsaud",
+          "email": "marsaud.fabrice@neuf.fr"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/make-error-1.2.0.tgz_1469046822351_0.4271084354259074"
+      },
+      "directories": {}
+    },
+    "1.2.1": {
+      "name": "make-error",
+      "version": "1.2.1",
+      "license": "ISC",
+      "description": "Make your own error types!",
+      "keywords": [
+        "custom",
+        "derive",
+        "Error",
+        "extend",
+        "inherit"
+      ],
+      "homepage": "https://github.com/JsCommunity/make-error",
+      "bugs": {
+        "url": "https://github.com/JsCommunity/make-error/issues"
+      },
+      "author": {
+        "name": "Julien Fontanet",
+        "email": "julien.fontanet@isonoe.net"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/JsCommunity/make-error.git"
+      },
+      "devDependencies": {
+        "browserify": "^13.0.0",
+        "chai": "^3.3.0",
+        "mocha": "^3.0.0",
+        "standard": "^8.0.0",
+        "testling": "^1.7.1",
+        "uglify-js": "^2.4.19"
+      },
+      "scripts": {
+        "browserify": "mkdir -p dist && browserify -s makeError index.js | uglifyjs -c > dist/make-error.js",
+        "dev-test": "mocha --watch --reporter=min index.spec.js",
+        "test": "standard && mocha index.spec.js",
+        "test-browser": "testling -u"
+      },
+      "testling": {
+        "harness": "mocha-bdd",
+        "files": "index.spec.js",
+        "browsers": [
+          "ie/8..Latest",
+          "chrome/latest",
+          "firefox/latest"
+        ]
+      },
+      "files": [
+        "index.js",
+        "index.d.ts"
+      ],
+      "gitHead": "da5f271700a1df98e7d25034f7aef6cb2d35a691",
+      "_id": "make-error@1.2.1",
+      "_shasum": "9a6dfb4844423b9f145806728d05c6e935670e75",
+      "_from": ".",
+      "_npmVersion": "3.10.6",
+      "_nodeVersion": "0.12.15",
+      "_npmUser": {
+        "name": "julien-f",
+        "email": "julien.fontanet@isonoe.net"
+      },
+      "dist": {
+        "shasum": "9a6dfb4844423b9f145806728d05c6e935670e75",
+        "tarball": "https://registry.npmjs.org/make-error/-/make-error-1.2.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "julien-f",
+          "email": "julien.fontanet@isonoe.net"
+        },
+        {
+          "name": "marsaud",
+          "email": "marsaud.fabrice@neuf.fr"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/make-error-1.2.1.tgz_1473148018649_0.09818827407434583"
+      },
+      "directories": {}
+    },
+    "1.2.2": {
+      "name": "make-error",
+      "version": "1.2.2",
+      "license": "ISC",
+      "description": "Make your own error types!",
+      "keywords": [
+        "create",
+        "custom",
+        "derive",
+        "error",
+        "errors",
+        "extend",
+        "extending",
+        "extension",
+        "factory",
+        "inherit",
+        "make",
+        "subclass"
+      ],
+      "homepage": "https://github.com/JsCommunity/make-error",
+      "bugs": {
+        "url": "https://github.com/JsCommunity/make-error/issues"
+      },
+      "author": {
+        "name": "Julien Fontanet",
+        "email": "julien.fontanet@isonoe.net"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/JsCommunity/make-error.git"
+      },
+      "devDependencies": {
+        "browserify": "^14.1.0",
+        "husky": "^0.13.1",
+        "jest": "^19.0.2",
+        "standard": "^9.0.0",
+        "uglify-js": "^2.4.19"
+      },
+      "scripts": {
+        "commitmsg": "yarn test",
+        "dev-test": "jest --watch",
+        "prepublish": "mkdir -p dist && browserify -s makeError index.js | uglifyjs -c > dist/make-error.js",
+        "pretest": "standard",
+        "test": "jest"
+      },
+      "files": [
+        "dist/",
+        "index.js",
+        "index.d.ts"
+      ],
+      "gitHead": "6b5686c87d26421b4f206affcb3b315e1a9112ad",
+      "_id": "make-error@1.2.2",
+      "_shasum": "e4e270e474f642cca20fa126fe441163957832ef",
+      "_from": ".",
+      "_npmVersion": "4.2.0",
+      "_nodeVersion": "7.6.0",
+      "_npmUser": {
+        "name": "julien-f",
+        "email": "julien.fontanet@isonoe.net"
+      },
+      "dist": {
+        "shasum": "e4e270e474f642cca20fa126fe441163957832ef",
+        "tarball": "https://registry.npmjs.org/make-error/-/make-error-1.2.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "julien-f",
+          "email": "julien.fontanet@isonoe.net"
+        },
+        {
+          "name": "marsaud",
+          "email": "marsaud.fabrice@neuf.fr"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/make-error-1.2.2.tgz_1488356988964_0.03184026968665421"
+      },
+      "directories": {}
+    },
+    "1.2.3": {
+      "name": "make-error",
+      "version": "1.2.3",
+      "license": "ISC",
+      "description": "Make your own error types!",
+      "keywords": [
+        "create",
+        "custom",
+        "derive",
+        "error",
+        "errors",
+        "extend",
+        "extending",
+        "extension",
+        "factory",
+        "inherit",
+        "make",
+        "subclass"
+      ],
+      "homepage": "https://github.com/JsCommunity/make-error",
+      "bugs": {
+        "url": "https://github.com/JsCommunity/make-error/issues"
+      },
+      "author": {
+        "name": "Julien Fontanet",
+        "email": "julien.fontanet@isonoe.net"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/JsCommunity/make-error.git"
+      },
+      "devDependencies": {
+        "browserify": "^14.1.0",
+        "husky": "^0.13.1",
+        "jest": "^19.0.2",
+        "standard": "^9.0.0",
+        "uglify-js": "^2.4.19"
+      },
+      "scripts": {
+        "commitmsg": "yarn test",
+        "dev-test": "jest --watch",
+        "prepublish": "mkdir -p dist && browserify -s makeError index.js | uglifyjs -c > dist/make-error.js",
+        "pretest": "standard",
+        "test": "jest"
+      },
+      "files": [
+        "dist/",
+        "index.js",
+        "index.d.ts"
+      ],
+      "gitHead": "bbec8ae4681809328ddba847b1909e2ecb4c9d74",
+      "_id": "make-error@1.2.3",
+      "_shasum": "6c4402df732e0977ac6faf754a5074b3d2b1d19d",
+      "_from": ".",
+      "_npmVersion": "4.2.0",
+      "_nodeVersion": "7.6.0",
+      "_npmUser": {
+        "name": "julien-f",
+        "email": "julien.fontanet@isonoe.net"
+      },
+      "dist": {
+        "shasum": "6c4402df732e0977ac6faf754a5074b3d2b1d19d",
+        "tarball": "https://registry.npmjs.org/make-error/-/make-error-1.2.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "julien-f",
+          "email": "julien.fontanet@isonoe.net"
+        },
+        {
+          "name": "marsaud",
+          "email": "marsaud.fabrice@neuf.fr"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/make-error-1.2.3.tgz_1489050107670_0.17617521877400577"
+      },
+      "directories": {}
+    },
+    "1.3.0": {
+      "name": "make-error",
+      "version": "1.3.0",
+      "main": "index.js",
+      "license": "ISC",
+      "description": "Make your own error types!",
+      "keywords": [
+        "create",
+        "custom",
+        "derive",
+        "error",
+        "errors",
+        "extend",
+        "extending",
+        "extension",
+        "factory",
+        "inherit",
+        "make",
+        "subclass"
+      ],
+      "homepage": "https://github.com/JsCommunity/make-error",
+      "bugs": {
+        "url": "https://github.com/JsCommunity/make-error/issues"
+      },
+      "author": {
+        "name": "Julien Fontanet",
+        "email": "julien.fontanet@isonoe.net"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/JsCommunity/make-error.git"
+      },
+      "devDependencies": {
+        "browserify": "^14.3.0",
+        "husky": "^0.13.3",
+        "jest": "^20.0.3",
+        "standard": "^10.0.2",
+        "uglify-js": "^3.0.10"
+      },
+      "scripts": {
+        "commitmsg": "yarn test",
+        "dev-test": "jest --watch",
+        "prepublish": "mkdir -p dist && browserify -s makeError index.js | uglifyjs -c > dist/make-error.js",
+        "pretest": "standard",
+        "test": "jest"
+      },
+      "files": [
+        "dist/",
+        "index.js",
+        "index.d.ts"
+      ],
+      "gitHead": "adac41f9d1b3bd465f845b0c9cf87f1c88d1d7f7",
+      "_id": "make-error@1.3.0",
+      "_shasum": "52ad3a339ccf10ce62b4040b708fe707244b8b96",
+      "_from": ".",
+      "_npmVersion": "4.5.0",
+      "_nodeVersion": "7.10.0",
+      "_npmUser": {
+        "name": "julien-f",
+        "email": "julien.fontanet@isonoe.net"
+      },
+      "dist": {
+        "shasum": "52ad3a339ccf10ce62b4040b708fe707244b8b96",
+        "tarball": "https://registry.npmjs.org/make-error/-/make-error-1.3.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "julien-f",
+          "email": "julien.fontanet@isonoe.net"
+        },
+        {
+          "name": "marsaud",
+          "email": "marsaud.fabrice@neuf.fr"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/make-error-1.3.0.tgz_1495404802218_0.3306263096164912"
+      },
+      "directories": {}
+    },
+    "1.3.1": {
+      "name": "make-error",
+      "version": "1.3.1",
+      "main": "index.js",
+      "license": "ISC",
+      "description": "Make your own error types!",
+      "keywords": [
+        "create",
+        "custom",
+        "derive",
+        "error",
+        "errors",
+        "extend",
+        "extending",
+        "extension",
+        "factory",
+        "inherit",
+        "make",
+        "subclass"
+      ],
+      "homepage": "https://github.com/JsCommunity/make-error",
+      "bugs": {
+        "url": "https://github.com/JsCommunity/make-error/issues"
+      },
+      "author": {
+        "name": "Julien Fontanet",
+        "email": "julien.fontanet@isonoe.net"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/JsCommunity/make-error.git"
+      },
+      "devDependencies": {
+        "browserify": "^14.5.0",
+        "husky": "^0.14.3",
+        "jest": "^20",
+        "standard": "^10.0.3",
+        "uglify-js": "^3.3.2"
+      },
+      "jest": {
+        "testEnvironment": "node"
+      },
+      "scripts": {
+        "commitmsg": "yarn test",
+        "dev-test": "jest --watch",
+        "prepublish": "mkdir -p dist && browserify -s makeError index.js | uglifyjs -c > dist/make-error.js",
+        "pretest": "standard",
+        "test": "jest"
+      },
+      "files": [
+        "dist/",
+        "index.js",
+        "index.d.ts"
+      ],
+      "gitHead": "2dd311f150d56518c8a9572144076911950a48fc",
+      "_id": "make-error@1.3.1",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "9.3.0",
+      "_npmUser": {
+        "name": "julien-f",
+        "email": "julien.fontanet@isonoe.net"
+      },
+      "dist": {
+        "integrity": "sha512-J0Z9PlMgAbZyOAmVwRAdrDFKO9CmJDVu9iTyXM6NMM7P9e6FRB0XMV6Si5EbdIfNXvzQnYKs6qlWbPkVpZaQ3w==",
+        "shasum": "0d6fb0a0e3ceec21b75b9cf3d5b8d7d13c55e0e1",
+        "tarball": "https://registry.npmjs.org/make-error/-/make-error-1.3.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "julien-f",
+          "email": "julien.fontanet@isonoe.net"
+        },
+        {
+          "name": "marsaud",
+          "email": "marsaud.fabrice@neuf.fr"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/make-error-1.3.1.tgz_1514391857522_0.7302443510852754"
+      },
+      "directories": {}
+    },
+    "1.3.2": {
+      "name": "make-error",
+      "version": "1.3.2",
+      "main": "index.js",
+      "license": "ISC",
+      "description": "Make your own error types!",
+      "keywords": [
+        "create",
+        "custom",
+        "derive",
+        "error",
+        "errors",
+        "extend",
+        "extending",
+        "extension",
+        "factory",
+        "inherit",
+        "make",
+        "subclass"
+      ],
+      "homepage": "https://github.com/JsCommunity/make-error",
+      "bugs": {
+        "url": "https://github.com/JsCommunity/make-error/issues"
+      },
+      "author": {
+        "name": "Julien Fontanet",
+        "email": "julien.fontanet@isonoe.net"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/JsCommunity/make-error.git"
+      },
+      "devDependencies": {
+        "browserify": "^14.5.0",
+        "husky": "^0.14.3",
+        "jest": "^20",
+        "standard": "^10.0.3",
+        "uglify-js": "^3.3.2"
+      },
+      "jest": {
+        "testEnvironment": "node"
+      },
+      "scripts": {
+        "commitmsg": "yarn test",
+        "dev-test": "jest --watch",
+        "prepublishOnly": "mkdir -p dist && browserify -s makeError index.js | uglifyjs -c > dist/make-error.js",
+        "pretest": "standard",
+        "test": "jest"
+      },
+      "files": [
+        "dist/",
+        "index.js",
+        "index.d.ts"
+      ],
+      "gitHead": "7aab20f75ba92d0b56f7bfabb468b2c41ea45fbd",
+      "_id": "make-error@1.3.2",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.3.0",
+      "_npmUser": {
+        "name": "julien-f",
+        "email": "julien.fontanet@isonoe.net"
+      },
+      "dist": {
+        "integrity": "sha512-l9ra35l5VWLF24y75Tg8XgfGLX0ueRhph118WKM6H5denx4bB5QF59+4UAm9oJ2qsPQZas/CQUDdtDdfvYHBdQ==",
+        "shasum": "8762ffad2444dd8ff1f7c819629fa28e24fea1c4",
+        "tarball": "https://registry.npmjs.org/make-error/-/make-error-1.3.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "julien-f",
+          "email": "julien.fontanet@isonoe.net"
+        },
+        {
+          "name": "marsaud",
+          "email": "marsaud.fabrice@neuf.fr"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/make-error-1.3.2.tgz_1514410593852_0.39473605365492404"
+      },
+      "directories": {}
+    },
+    "1.3.3": {
+      "name": "make-error",
+      "version": "1.3.3",
+      "main": "index.js",
+      "license": "ISC",
+      "description": "Make your own error types!",
+      "keywords": [
+        "create",
+        "custom",
+        "derive",
+        "error",
+        "errors",
+        "extend",
+        "extending",
+        "extension",
+        "factory",
+        "inherit",
+        "make",
+        "subclass"
+      ],
+      "homepage": "https://github.com/JsCommunity/make-error",
+      "bugs": {
+        "url": "https://github.com/JsCommunity/make-error/issues"
+      },
+      "author": {
+        "name": "Julien Fontanet",
+        "email": "julien.fontanet@isonoe.net"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/JsCommunity/make-error.git"
+      },
+      "devDependencies": {
+        "browserify": "^14.5.0",
+        "husky": "^0.14.3",
+        "jest": "^20",
+        "standard": "^10.0.3",
+        "uglify-js": "^3.3.2"
+      },
+      "jest": {
+        "testEnvironment": "node"
+      },
+      "scripts": {
+        "commitmsg": "yarn test",
+        "dev-test": "jest --watch",
+        "prepublishOnly": "mkdir -p dist && browserify -s makeError index.js | uglifyjs -c > dist/make-error.js",
+        "pretest": "standard",
+        "test": "jest"
+      },
+      "files": [
+        "dist/",
+        "index.js",
+        "index.d.ts"
+      ],
+      "gitHead": "2862f9747d3d80e7cfeca2e25f7e53f8eb669767",
+      "_id": "make-error@1.3.3",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.9.4",
+      "_npmUser": {
+        "name": "julien-f",
+        "email": "julien.fontanet@isonoe.net"
+      },
+      "dist": {
+        "integrity": "sha512-j3dZCri3cCd23wgPqK/0/KvTN8R+W6fXDqQe8BNLbTpONjbA8SPaRr+q0BQq9bx3Q/+g68/gDIh9FW3by702Tg==",
+        "shasum": "a97ae14ffd98b05f543e83ddc395e1b2b6e4cc6a",
+        "tarball": "https://registry.npmjs.org/make-error/-/make-error-1.3.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "julien-f",
+          "email": "julien.fontanet@isonoe.net"
+        },
+        {
+          "name": "marsaud",
+          "email": "marsaud.fabrice@neuf.fr"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/make-error-1.3.3.tgz_1517851786621_0.2403488173149526"
+      },
+      "directories": {}
+    },
+    "1.3.4": {
+      "name": "make-error",
+      "version": "1.3.4",
+      "main": "index.js",
+      "license": "ISC",
+      "description": "Make your own error types!",
+      "keywords": [
+        "create",
+        "custom",
+        "derive",
+        "error",
+        "errors",
+        "extend",
+        "extending",
+        "extension",
+        "factory",
+        "inherit",
+        "make",
+        "subclass"
+      ],
+      "homepage": "https://github.com/JsCommunity/make-error",
+      "bugs": {
+        "url": "https://github.com/JsCommunity/make-error/issues"
+      },
+      "author": {
+        "name": "Julien Fontanet",
+        "email": "julien.fontanet@isonoe.net"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/JsCommunity/make-error.git"
+      },
+      "devDependencies": {
+        "browserify": "^14.5.0",
+        "husky": "^0.14.3",
+        "jest": "^20",
+        "standard": "^10.0.3",
+        "uglify-js": "^3.3.2"
+      },
+      "jest": {
+        "testEnvironment": "node"
+      },
+      "scripts": {
+        "commitmsg": "yarn test",
+        "dev-test": "jest --watch",
+        "prepublishOnly": "mkdir -p dist && browserify -s makeError index.js | uglifyjs -c > dist/make-error.js",
+        "pretest": "standard",
+        "test": "jest"
+      },
+      "files": [
+        "dist/",
+        "index.js",
+        "index.d.ts"
+      ],
+      "gitHead": "f3086a7f33ad1451e474fbcace5698275fa27eda",
+      "_id": "make-error@1.3.4",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.5.0",
+      "_npmUser": {
+        "name": "julien-f",
+        "email": "julien.fontanet@isonoe.net"
+      },
+      "dist": {
+        "integrity": "sha512-0Dab5btKVPhibSalc9QGXb559ED7G7iLjFXBaj9Wq8O3vorueR5K5jaE3hkG6ZQINyhA/JgG6Qk4qdFQjsYV6g==",
+        "shasum": "19978ed575f9e9545d2ff8c13e33b5d18a67d535",
+        "tarball": "https://registry.npmjs.org/make-error/-/make-error-1.3.4.tgz",
+        "fileCount": 5,
+        "unpackedSize": 10835
+      },
+      "maintainers": [
+        {
+          "name": "julien-f",
+          "email": "julien.fontanet@isonoe.net"
+        },
+        {
+          "name": "marsaud",
+          "email": "marsaud.fabrice@neuf.fr"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/make-error_1.3.4_1518691500866_0.5483263344751117"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.3.5": {
+      "name": "make-error",
+      "version": "1.3.5",
+      "main": "index.js",
+      "license": "ISC",
+      "description": "Make your own error types!",
+      "keywords": [
+        "create",
+        "custom",
+        "derive",
+        "error",
+        "errors",
+        "extend",
+        "extending",
+        "extension",
+        "factory",
+        "inherit",
+        "make",
+        "subclass"
+      ],
+      "homepage": "https://github.com/JsCommunity/make-error",
+      "bugs": {
+        "url": "https://github.com/JsCommunity/make-error/issues"
+      },
+      "author": {
+        "name": "Julien Fontanet",
+        "email": "julien.fontanet@isonoe.net"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/JsCommunity/make-error.git"
+      },
+      "devDependencies": {
+        "browserify": "^14.5.0",
+        "husky": "^0.14.3",
+        "jest": "^20",
+        "standard": "^10.0.3",
+        "uglify-js": "^3.3.2"
+      },
+      "jest": {
+        "testEnvironment": "node"
+      },
+      "scripts": {
+        "commitmsg": "yarn test",
+        "dev-test": "jest --watch",
+        "prepublishOnly": "mkdir -p dist && browserify -s makeError index.js | uglifyjs -c > dist/make-error.js",
+        "pretest": "standard",
+        "test": "jest"
+      },
+      "gitHead": "b39e648ef19f62491908cdf6fe9233c9d9c90d4d",
+      "_id": "make-error@1.3.5",
+      "_npmVersion": "6.4.0",
+      "_nodeVersion": "8.11.4",
+      "_npmUser": {
+        "name": "julien-f",
+        "email": "julien.fontanet@isonoe.net"
+      },
+      "dist": {
+        "integrity": "sha512-c3sIjNUow0+8swNwVpqoH4YCShKNFkMaw6oH1mNS2haDZQqkeZFlHS3dhoeEbKKmJB4vXpJucU6oH75aDYeE9g==",
+        "shasum": "efe4e81f6db28cadd605c70f29c831b58ef776c8",
+        "tarball": "https://registry.npmjs.org/make-error/-/make-error-1.3.5.tgz",
+        "fileCount": 6,
+        "unpackedSize": 11564,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbh/0PCRA9TVsSAnZWagAARCEP/A5ElgnyUWW1kXvx00Yr\nKvxhTDzm8QAWBSak9lqsHkn9PthCWnN0ZSzjJ0oSO4QbzS3uQtU7+W35/8JO\nYBcTGRu9e4DAuIJ674x/nJCKXKcBFdNN73mCUbGkPqgeWES+L/PvfDC5Nqmg\nhEhZFgNnvuXqL70pzvQ8+yFo9VgBeNsWSyoHjdZZPLybJcWUoi119dcm9mlH\nFX8bRDfTL8NE8MQTuvHc8ontA8ed6WDlHYzWIPLTswW5FAcHzjNz0HIL6koe\ndYEl1IlP4aHS4V+kBZET7r/9ypm6INa2CYDTXL8A8bQ3XJKnXEARsVmqC/+H\nZyvpk8BX2sHULxLUDJw32LKENfDp2aD9Jv+VANxPNtCEK2HGE4qrKCgoObHA\nAIYPlR0VO6hMhR4fee9y9EaFD7d5+Pws3eWoYHabxf3BheAHIW/HJoevMNm0\nmYQYFKbWUYn4tLhHBTnmuaDHwYWAJxOSKie3IRra8E0xmTH38aTfQPPGq5Lk\nT9kJIug7++KeJZwi4wUgkXVF7c0PJvkCoqM+H8MQou+gyIv+pIKTInQbuekz\nnJ4Bm31keDUJ5YrzVE9NCBjrR1xn4h26KbH3ZTf2KIfHKpY86kyZtXHiYbUT\n0uTte0jSiOSSGZkyEucr8uHugNzdzl+Nl3ZiUsBLWKuXX1GPiROGd4FrRgxL\ns7+I\r\n=SFBY\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "julien.fontanet@isonoe.net",
+          "name": "julien-f"
+        },
+        {
+          "email": "marsaud.fabrice@neuf.fr",
+          "name": "marsaud"
+        },
+        {
+          "email": "pierre.donias@gmail.com",
+          "name": "pdonias"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/make-error_1.3.5_1535638798780_0.5289600604915765"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.3.6": {
+      "name": "make-error",
+      "version": "1.3.6",
+      "main": "index.js",
+      "license": "ISC",
+      "description": "Make your own error types!",
+      "keywords": [
+        "create",
+        "custom",
+        "derive",
+        "error",
+        "errors",
+        "extend",
+        "extending",
+        "extension",
+        "factory",
+        "inherit",
+        "make",
+        "subclass"
+      ],
+      "homepage": "https://github.com/JsCommunity/make-error",
+      "bugs": {
+        "url": "https://github.com/JsCommunity/make-error/issues"
+      },
+      "author": {
+        "name": "Julien Fontanet",
+        "email": "julien.fontanet@isonoe.net"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/JsCommunity/make-error.git"
+      },
+      "devDependencies": {
+        "browserify": "^16.2.3",
+        "eslint": "^6.5.1",
+        "eslint-config-prettier": "^6.4.0",
+        "eslint-config-standard": "^14.1.0",
+        "eslint-plugin-import": "^2.14.0",
+        "eslint-plugin-node": "^10.0.0",
+        "eslint-plugin-promise": "^4.0.1",
+        "eslint-plugin-standard": "^4.0.0",
+        "husky": "^3.0.9",
+        "jest": "^24",
+        "prettier": "^1.14.3",
+        "uglify-js": "^3.3.2"
+      },
+      "jest": {
+        "testEnvironment": "node"
+      },
+      "scripts": {
+        "dev-test": "jest --watch",
+        "format": "prettier --write '**'",
+        "prepublishOnly": "mkdir -p dist && browserify -s makeError index.js | uglifyjs -c > dist/make-error.js",
+        "pretest": "eslint --ignore-path .gitignore .",
+        "test": "jest"
+      },
+      "husky": {
+        "hooks": {
+          "commit-msg": "npm run test"
+        }
+      },
+      "gitHead": "5ea5cebd9d9fa78e920ad2d2054b6fd66dd5c7d1",
+      "_id": "make-error@1.3.6",
+      "_nodeVersion": "8.17.0",
+      "_npmVersion": "6.13.4",
+      "dist": {
+        "integrity": "sha512-s8UhlNe7vPKomQhC1qFelMokr/Sc3AgNbso3n74mVPA5LTZwkB9NlXf4XPamLxJE8h0gh73rM94xvwRT2CVInw==",
+        "shasum": "2eb2e37ea9b67c4891f684a1394799af484cf7a2",
+        "tarball": "https://registry.npmjs.org/make-error/-/make-error-1.3.6.tgz",
+        "fileCount": 6,
+        "unpackedSize": 12434,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeTQEsCRA9TVsSAnZWagAA2cYQAKAGbofZDvFJmKmx6t9B\nzZlrG2DiPDrFDtSFm88x95GQ32zf4rQgWWaPGdShwZ5ifHjtb0kMJJVdeVsT\nGSdg6HJ+YatszJBWSzdrk1foTkSILj4soBCkuDVJ2VkKX+J3+ryA9Rhs3EZd\nVr9UINxcgqIYAaS1gaBiUIy4zc1bgqqCCE88GfJZe38g/FLCp+qq+vkCt61L\nLHzAZQcRjPdjQdEvaIww+oEYuHFN+3X9vS75k48ZkB3U9jtgP4UIm034f9Ek\nab3+XKFeVWcTnGfCgM9RKB8YybarPoo70pkMSLGaDEE9ph+fwWIrkGutNraC\njmBZZ7q2/r650JrntoaRoOAXMSIkK6EJX2YotJulftWWe4iRbcITjZvRCKeV\nBbG+H5Hj0LvtbVq0U7npNG2TpTDAIJetmMnXlxjrfYQ9Joe3ye5ABrOBqumf\n55oRF/HfpjVll3736Ictp6OYwVgXx0yVvuClVp9Y1OvjiuMmG4JRU9S6Ass/\nNkj/+i6o0SjYK+Fatnx4jpsTOQDu8+iVVQ+/RJGgNPcmfVWzPv67JcNI9LSk\nnxVjQH9TyUv6svz41t12YbIgDAbgBA0vxWyqQeHdzL0WQ7HWrZfZTDKAgooE\n1disQuh1LDM/LC4eYBlAXpii6b4W/2QXRv8beJrdS2ZcnOFx/efOAR0rUOQE\nCYGN\r\n=robn\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "julien.fontanet@isonoe.net",
+          "name": "julien-f"
+        },
+        {
+          "email": "marsaud.fabrice@neuf.fr",
+          "name": "marsaud"
+        },
+        {
+          "email": "pierre.donias@gmail.com",
+          "name": "pdonias"
+        }
+      ],
+      "_npmUser": {
+        "name": "julien-f",
+        "email": "julien.fontanet@isonoe.net"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/make-error_1.3.6_1582104876474_0.5381472711808042"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# make-error\n\n[![Package Version](https://badgen.net/npm/v/make-error)](https://npmjs.org/package/make-error) [![Build Status](https://travis-ci.org/JsCommunity/make-error.png?branch=master)](https://travis-ci.org/JsCommunity/make-error) [![PackagePhobia](https://badgen.net/packagephobia/install/make-error)](https://packagephobia.now.sh/result?p=make-error) [![Latest Commit](https://badgen.net/github/last-commit/JsCommunity/make-error)](https://github.com/JsCommunity/make-error/commits/master)\n\n> Make your own error types!\n\n## Features\n\n- Compatible Node & browsers\n- `instanceof` support\n- `error.name` & `error.stack` support\n- compatible with [CSP](https://en.wikipedia.org/wiki/Content_Security_Policy) (i.e. no `eval()`)\n\n## Installation\n\n### Node & [Browserify](http://browserify.org/)/[Webpack](https://webpack.js.org/)\n\nInstallation of the [npm package](https://npmjs.org/package/make-error):\n\n```\n> npm install --save make-error\n```\n\nThen require the package:\n\n```javascript\nvar makeError = require(\"make-error\");\n```\n\n### Browser\n\nYou can directly use the build provided at [unpkg.com](https://unpkg.com):\n\n```html\n<script src=\"https://unpkg.com/make-error@1/dist/make-error.js\"></script>\n```\n\n## Usage\n\n### Basic named error\n\n```javascript\nvar CustomError = makeError(\"CustomError\");\n\n// Parameters are forwarded to the super class (here Error).\nthrow new CustomError(\"a message\");\n```\n\n### Advanced error class\n\n```javascript\nfunction CustomError(customValue) {\n  CustomError.super.call(this, \"custom error message\");\n\n  this.customValue = customValue;\n}\nmakeError(CustomError);\n\n// Feel free to extend the prototype.\nCustomError.prototype.myMethod = function CustomError$myMethod() {\n  console.log(\"CustomError.myMethod (%s, %s)\", this.code, this.message);\n};\n\n//-----\n\ntry {\n  throw new CustomError(42);\n} catch (error) {\n  error.myMethod();\n}\n```\n\n### Specialized error\n\n```javascript\nvar SpecializedError = makeError(\"SpecializedError\", CustomError);\n\nthrow new SpecializedError(42);\n```\n\n### Inheritance\n\n> Best for ES2015+.\n\n```javascript\nimport { BaseError } from \"make-error\";\n\nclass CustomError extends BaseError {\n  constructor() {\n    super(\"custom error message\");\n  }\n}\n```\n\n## Related\n\n- [make-error-cause](https://www.npmjs.com/package/make-error-cause): Make your own error types, with a cause!\n\n## Contributions\n\nContributions are _very_ welcomed, either on the documentation or on\nthe code.\n\nYou may:\n\n- report any [issue](https://github.com/JsCommunity/make-error/issues)\n  you've encountered;\n- fork and create a pull request.\n\n## License\n\nISC © [Julien Fontanet](http://julien.isonoe.net)\n",
+  "maintainers": [
+    {
+      "email": "julien.fontanet@isonoe.net",
+      "name": "julien-f"
+    },
+    {
+      "email": "marsaud.fabrice@neuf.fr",
+      "name": "marsaud"
+    },
+    {
+      "email": "pierre.donias@gmail.com",
+      "name": "pdonias"
+    }
+  ],
+  "time": {
+    "modified": "2020-02-19T09:34:39.546Z",
+    "created": "2014-10-08T20:14:03.594Z",
+    "0.0.0": "2014-10-08T20:14:03.594Z",
+    "0.1.0": "2014-10-11T14:03:14.244Z",
+    "0.2.0": "2014-10-11T16:04:07.701Z",
+    "0.3.0": "2014-10-12T09:42:25.384Z",
+    "1.0.0": "2015-04-10T08:31:16.281Z",
+    "1.0.1": "2015-04-10T08:56:11.916Z",
+    "1.0.2": "2015-04-14T15:50:31.472Z",
+    "1.0.3": "2015-10-06T17:18:56.828Z",
+    "1.0.4": "2015-10-07T10:27:15.211Z",
+    "1.1.0": "2016-01-20T08:42:35.201Z",
+    "1.1.1": "2016-02-09T09:29:56.225Z",
+    "1.2.0": "2016-07-20T20:33:43.895Z",
+    "1.2.1": "2016-09-06T07:46:59.306Z",
+    "1.2.2": "2017-03-01T08:29:50.694Z",
+    "1.2.3": "2017-03-09T09:01:49.635Z",
+    "1.3.0": "2017-05-21T22:13:23.316Z",
+    "1.3.1": "2017-12-27T16:24:18.336Z",
+    "1.3.2": "2017-12-27T21:36:34.674Z",
+    "1.3.3": "2018-02-05T17:29:47.474Z",
+    "1.3.4": "2018-02-15T10:45:01.534Z",
+    "1.3.5": "2018-08-30T14:19:58.898Z",
+    "1.3.6": "2020-02-19T09:34:36.597Z"
+  },
+  "homepage": "https://github.com/JsCommunity/make-error",
+  "keywords": [
+    "create",
+    "custom",
+    "derive",
+    "error",
+    "errors",
+    "extend",
+    "extending",
+    "extension",
+    "factory",
+    "inherit",
+    "make",
+    "subclass"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/JsCommunity/make-error.git"
+  },
+  "author": {
+    "name": "Julien Fontanet",
+    "email": "julien.fontanet@isonoe.net"
+  },
+  "bugs": {
+    "url": "https://github.com/JsCommunity/make-error/issues"
+  },
+  "license": "ISC",
+  "readmeFilename": "README.md",
+  "users": {
+    "chocolateboy": true,
+    "timdp": true,
+    "phntm": true,
+    "shreyjain1994": true
+  }
+}

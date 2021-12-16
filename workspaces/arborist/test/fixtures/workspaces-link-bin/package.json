@@ -1,0 +1,10 @@
+{
+  "name": "workspace-duplicate",
+  "bin": "foo.js",
+  "workspaces": [
+    "packages/*"
+  ],
+  "dependencies": {
+    "a": "*"
+  }
+}

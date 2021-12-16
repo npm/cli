@@ -1,0 +1,12 @@
+{
+  "name": "prune-with-dev-dep-duplicate",
+  "description": "fixture",
+  "version": "0.0.1",
+  "main": "index.js",
+  "dependencies": {
+    "once": "^1.0.0"
+  },
+  "devDependencies": {
+    "once": "^1.0.0"
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "optionalDependencies": {
+    "@isaacs/this-does-not-exist-at-all": "^0.5.1"
+  }
+}

@@ -1,0 +1,445 @@
+{
+  "_id": "slash",
+  "_rev": "32-bacbb6bc89cbc773fe05ec51eea845b6",
+  "name": "slash",
+  "description": "Convert Windows backslash paths to slash paths",
+  "dist-tags": {
+    "latest": "3.0.0"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "slash",
+      "version": "0.1.0",
+      "description": "Convert Windows backslash paths to slash paths",
+      "keywords": [
+        "path",
+        "seperator",
+        "sep",
+        "slash",
+        "backslash",
+        "windows",
+        "win"
+      ],
+      "homepage": "https://github.com/sindresorhus/slash",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/slash/issues"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "main": "slash.js",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/sindresorhus/slash.git"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "mocha": "~1.11.0"
+      },
+      "engines": {
+        "node": ">=0.8.0"
+      },
+      "licenses": [
+        {
+          "type": "MIT"
+        }
+      ],
+      "files": [
+        "slash.js"
+      ],
+      "_id": "slash@0.1.0",
+      "dist": {
+        "shasum": "1726ee854d6a95c056dc697ec8d5be9a43926243",
+        "tarball": "https://registry.npmjs.org/slash/-/slash-0.1.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.2.32",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.1": {
+      "name": "slash",
+      "version": "0.1.1",
+      "description": "Convert Windows backslash paths to slash paths",
+      "keywords": [
+        "path",
+        "seperator",
+        "sep",
+        "slash",
+        "backslash",
+        "windows",
+        "win"
+      ],
+      "homepage": "https://github.com/sindresorhus/slash",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/slash/issues"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "main": "slash.js",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/sindresorhus/slash.git"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "mocha": "~1.11.0"
+      },
+      "engines": {
+        "node": ">=0.8.0"
+      },
+      "licenses": [
+        {
+          "type": "MIT"
+        }
+      ],
+      "files": [
+        "slash.js"
+      ],
+      "_id": "slash@0.1.1",
+      "dist": {
+        "shasum": "e3b93c40a94a547a246367b71b8c31a793521a65",
+        "tarball": "https://registry.npmjs.org/slash/-/slash-0.1.1.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.10",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.3": {
+      "name": "slash",
+      "version": "0.1.3",
+      "description": "Convert Windows backslash paths to slash paths",
+      "keywords": [
+        "path",
+        "seperator",
+        "sep",
+        "slash",
+        "backslash",
+        "windows",
+        "win"
+      ],
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "main": "slash.js",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/sindresorhus/slash"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "mocha": "*"
+      },
+      "engines": {
+        "node": ">=0.8.0"
+      },
+      "license": "MIT",
+      "files": [
+        "slash.js"
+      ],
+      "bugs": {
+        "url": "https://github.com/sindresorhus/slash/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/slash",
+      "_id": "slash@0.1.3",
+      "dist": {
+        "shasum": "aa710c8ef50b8e1d187ad6cff46f38c656ba0e57",
+        "tarball": "https://registry.npmjs.org/slash/-/slash-0.1.3.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.4.6",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "slash",
+      "version": "1.0.0",
+      "description": "Convert Windows backslash paths to slash paths",
+      "keywords": [
+        "path",
+        "seperator",
+        "sep",
+        "slash",
+        "backslash",
+        "windows",
+        "win"
+      ],
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/sindresorhus/slash"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "mocha": "*"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "gitHead": "c801dd4568ad9380b534067eabe88942394f82ff",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/slash/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/slash",
+      "_id": "slash@1.0.0",
+      "_shasum": "c41f2f6c39fc16d1cd17ad4b5d896114ae470d55",
+      "_from": ".",
+      "_npmVersion": "1.4.14",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "c41f2f6c39fc16d1cd17ad4b5d896114ae470d55",
+        "tarball": "https://registry.npmjs.org/slash/-/slash-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "slash",
+      "version": "2.0.0",
+      "description": "Convert Windows backslash paths to slash paths",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/slash.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "path",
+        "seperator",
+        "sep",
+        "slash",
+        "backslash",
+        "windows",
+        "win"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "0d8c8d1f50b6634b86248705a1ee9c3ad6707ebc",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/slash/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/slash#readme",
+      "_id": "slash@2.0.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-ZYKh3Wh2z1PpEXWr0MpSBZ0V6mZHAQfYevttO11c51CaWjGTaadiKZ+wVt1PbMlDV5qhMFslpZCemhwOK7C89A==",
+        "shasum": "de552851a1759df3a8f206535442f5ec4ddeab44",
+        "tarball": "https://registry.npmjs.org/slash/-/slash-2.0.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 2819
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/slash_2.0.0_1521792101357_0.30105296160091255"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.0": {
+      "name": "slash",
+      "version": "3.0.0",
+      "description": "Convert Windows backslash paths to slash paths",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/slash.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "path",
+        "seperator",
+        "slash",
+        "backslash",
+        "windows",
+        "convert"
+      ],
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "262981c1fca19193a20657ac99690214d9483d0e",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/slash/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/slash#readme",
+      "_id": "slash@3.0.0",
+      "_nodeVersion": "10.15.3",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==",
+        "shasum": "6539be870c165adbd5240220dbe361f1bc4d4634",
+        "tarball": "https://registry.npmjs.org/slash/-/slash-3.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 3507,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcxStYCRA9TVsSAnZWagAAsvIP/iXpZHVuBU3NCxi5hUA8\nUsX+z9EThoOOnVY4bdiUBQSZExZcRt6/n4qkEPgcYtPsQAFnx4fZsA6rkhgk\n0Yh75/aup1Hizu4n3kX9lVLOqhXs8V9hU2BaJY0McxyzX45Fpl5+cP99Okfv\naEDj4S6rtudKIzkDHNvkJE6/cjhFplL/CnvsrPjadd8GnRzBx25n3NCQ1MP1\n9Yz4nHA1wYSVDnRYjAmsoU46vo02aRclzLvSZiQ+F0gENpBR75TnIBg6YNf+\naKXBAhwpq6j+s9BQQluMTbtv8KWDyHqHoGrC8XTB6dLf+ANYaXGDbOXkszS9\nOkziCwr/+3YpPnU/O1DmOcVp0lbcE2wxN4pfCvrrOh5RLLE6bfH8ikVEzzQ1\nbsgEQ7dW1ungOyGnpylfAL357jRZ6bb10U5TYbPZAoDi4zR47ar4NXRkeW6f\nW5GDRdTk8n3bm3QoFJR7XMvDXAPIg8YwCadhmFurbzACDYhOB4sbrc57wywt\npQRCWbf3ik57clBB9KggkWEmq2ymoSj8iy4tvrP+aR0WbtJO9lHrKEZeiucE\nClWWq84aFOvEtKxRe1dbJrRXbFcTAbeVn+tavJ/aKQQnmSpyn6G38hxJ2N5/\nGTnvH6HWNMSK5qaKSESV1D7mz0sY24ZQFWWwEhlRD02HTvDqVSdH6rJkGCNP\npGd7\r\n=FmeP\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/slash_3.0.0_1556425560214_0.8479364180448674"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# slash [![Build Status](https://travis-ci.org/sindresorhus/slash.svg?branch=master)](https://travis-ci.org/sindresorhus/slash)\n\n> Convert Windows backslash paths to slash paths: `foo\\\\bar` ➔ `foo/bar`\n\n[Forward-slash paths can be used in Windows](http://superuser.com/a/176395/6877) as long as they're not extended-length paths and don't contain any non-ascii characters.\n\nThis was created since the `path` methods in Node.js outputs `\\\\` paths on Windows.\n\n\n## Install\n\n```\n$ npm install slash\n```\n\n\n## Usage\n\n```js\nconst path = require('path');\nconst slash = require('slash');\n\nconst string = path.join('foo', 'bar');\n// Unix    => foo/bar\n// Windows => foo\\\\bar\n\nslash(string);\n// Unix    => foo/bar\n// Windows => foo/bar\n```\n\n\n## API\n\n### slash(path)\n\nType: `string`\n\nAccepts a Windows backslash path and returns a path with forward slashes.\n\n\n## License\n\nMIT © [Sindre Sorhus](https://sindresorhus.com)\n",
+  "maintainers": [
+    {
+      "name": "sindresorhus",
+      "email": "sindresorhus@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2019-04-28T04:26:02.946Z",
+    "created": "2013-07-18T23:34:04.300Z",
+    "0.1.0": "2013-07-18T23:34:07.348Z",
+    "0.1.1": "2013-10-08T19:09:41.668Z",
+    "0.1.3": "2014-04-30T22:47:43.354Z",
+    "1.0.0": "2014-08-13T10:15:02.780Z",
+    "2.0.0": "2018-03-23T08:01:41.518Z",
+    "3.0.0": "2019-04-28T04:26:00.409Z"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/slash.git"
+  },
+  "users": {
+    "passy": true,
+    "tommyzzm": true,
+    "itonyyo": true,
+    "lshearer": true,
+    "iamstarkov": true,
+    "huhgawz": true,
+    "wujr5": true,
+    "cblumer": true,
+    "balazserdos": true,
+    "marcrobinson": true,
+    "vboctor": true,
+    "hsiang": true,
+    "jochemstoel": true
+  },
+  "homepage": "https://github.com/sindresorhus/slash#readme",
+  "keywords": [
+    "path",
+    "seperator",
+    "slash",
+    "backslash",
+    "windows",
+    "convert"
+  ],
+  "bugs": {
+    "url": "https://github.com/sindresorhus/slash/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md"
+}

@@ -1,0 +1,464 @@
+{
+  "_id": "perf-regexes",
+  "_rev": "5-7a93528a5893aacdeeae66300303e34e",
+  "name": "perf-regexes",
+  "description": "Optimized and powerful regexes for JavaScript",
+  "dist-tags": {
+    "latest": "1.0.1"
+  },
+  "versions": {
+    "0.0.1": {
+      "name": "perf-regexes",
+      "version": "0.0.1",
+      "description": "Optimized and powerful regexes for JavaScript",
+      "main": "dist/perf-regexes.cjs.js",
+      "jsnext:main": "dist/perf-regexes.es.js",
+      "engines": {
+        "node": ">=0.12"
+      },
+      "scripts": {
+        "test": "node-version-gte-4 && mocha || mocha --compilers js:./buble-register",
+        "lint": "node-version-gte-4 && eslint src test/index.js || node-version-lt-4",
+        "pretest": "npm run lint && npm run build",
+        "build": "rm -rf dist/* && npm run build:cjs && npm run build:es6",
+        "build:cjs": "rollup -c -f cjs -o dist/perf-regexes.cjs.js",
+        "build:es6": "rollup -c -f es -o dist/perf-regexes.es.js",
+        "prepublish": "npm test"
+      },
+      "files": [
+        "dist",
+        "src"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/aMarCruz/perf-regexes.git"
+      },
+      "keywords": [
+        "regex",
+        "regexes",
+        "javascript",
+        "modules",
+        "match",
+        "source"
+      ],
+      "author": {
+        "name": "aMarCruz",
+        "email": "amarcruzbox-git@yahoo.com",
+        "url": "https://github.com/aMarCruz"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/aMarCruz/perf-regexes/issues"
+      },
+      "homepage": "https://github.com/aMarCruz/perf-regexes",
+      "dependencies": {},
+      "devDependencies": {
+        "eslint": "^3.4.0",
+        "expect": "^1.20.2",
+        "mocha": "^3.0.2",
+        "node-version-check": "^2.1.1",
+        "rollup": "^0.34.13",
+        "rollup-plugin-buble": "^0.13.0"
+      },
+      "gitHead": "94a6e4f6d3729e862d82249ca7020a67889061f2",
+      "_id": "perf-regexes@0.0.1",
+      "_shasum": "9e41c980bd724edf2e79dbb97af2f9b09d306f8f",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.5.0",
+      "_npmUser": {
+        "name": "amarcruz",
+        "email": "amarcruz@yahoo.com"
+      },
+      "dist": {
+        "shasum": "9e41c980bd724edf2e79dbb97af2f9b09d306f8f",
+        "tarball": "https://registry.npmjs.org/perf-regexes/-/perf-regexes-0.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amarcruz",
+          "email": "amarcruz@yahoo.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/perf-regexes-0.0.1.tgz_1473244182319_0.9009743514470756"
+      },
+      "directories": {}
+    },
+    "0.0.2": {
+      "name": "perf-regexes",
+      "version": "0.0.2",
+      "description": "Optimized and powerful regexes for JavaScript",
+      "main": "dist/perf-regexes.cjs.js",
+      "jsnext:main": "dist/perf-regexes.es.js",
+      "engines": {
+        "node": ">=0.12"
+      },
+      "scripts": {
+        "test": "node-version-gte-4 && mocha || mocha --compilers js:./buble-register",
+        "lint": "node-version-gte-4 && eslint src test/index.js || node-version-lt-4",
+        "pretest": "npm run lint && npm run build",
+        "build": "rm -rf dist/* && npm run build:cjs && npm run build:es6",
+        "build:cjs": "rollup -c -f cjs -o dist/perf-regexes.cjs.js",
+        "build:es6": "rollup -c -f es -o dist/perf-regexes.es.js",
+        "prepublish": "npm test"
+      },
+      "files": [
+        "dist",
+        "src"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/aMarCruz/perf-regexes.git"
+      },
+      "keywords": [
+        "regex",
+        "regexes",
+        "javascript",
+        "modules",
+        "match",
+        "source"
+      ],
+      "author": {
+        "name": "aMarCruz",
+        "email": "amarcruzbox-git@yahoo.com",
+        "url": "https://github.com/aMarCruz"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/aMarCruz/perf-regexes/issues"
+      },
+      "homepage": "https://github.com/aMarCruz/perf-regexes",
+      "dependencies": {},
+      "devDependencies": {
+        "eslint": "^3.4.0",
+        "expect": "^1.20.2",
+        "mocha": "^3.0.2",
+        "node-version-check": "^2.1.1",
+        "rollup": "^0.34.13",
+        "rollup-plugin-buble": "^0.13.0"
+      },
+      "gitHead": "6910f718c895a2e060eef52957a7ac7849d711cf",
+      "_id": "perf-regexes@0.0.2",
+      "_shasum": "93783a6737de858af348b64a71c0f96e7df54d57",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.5.0",
+      "_npmUser": {
+        "name": "amarcruz",
+        "email": "amarcruz@yahoo.com"
+      },
+      "dist": {
+        "shasum": "93783a6737de858af348b64a71c0f96e7df54d57",
+        "tarball": "https://registry.npmjs.org/perf-regexes/-/perf-regexes-0.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amarcruz",
+          "email": "amarcruz@yahoo.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/perf-regexes-0.0.2.tgz_1473349457737_0.9960543322376907"
+      },
+      "directories": {}
+    },
+    "0.1.2": {
+      "name": "perf-regexes",
+      "version": "0.1.2",
+      "description": "Optimized and powerful regexes for JavaScript",
+      "main": "dist/perf-regexes.cjs.js",
+      "jsnext:main": "dist/perf-regexes.es.js",
+      "engines": {
+        "node": ">=0.12"
+      },
+      "scripts": {
+        "test": "npm run build:cjs && mocha",
+        "lint": "node-version-gte-4 && eslint src test/index.js || node-version-lt-4",
+        "build": "npm run build:cjs && npm run build:es6",
+        "build:cjs": "rollup -c -f cjs -o dist/perf-regexes.cjs.js",
+        "build:es6": "rollup -c -f es -o dist/perf-regexes.es.js",
+        "prepublish": "npm run lint && rm -rf dist/* && npm t && npm run build:es6"
+      },
+      "files": [
+        "dist",
+        "src"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/aMarCruz/perf-regexes.git"
+      },
+      "keywords": [
+        "regex",
+        "regexes",
+        "javascript",
+        "modules",
+        "match",
+        "source"
+      ],
+      "author": {
+        "name": "aMarCruz",
+        "email": "amarcruzbox-git@yahoo.com",
+        "url": "https://github.com/aMarCruz"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/aMarCruz/perf-regexes/issues"
+      },
+      "homepage": "https://github.com/aMarCruz/perf-regexes",
+      "dependencies": {},
+      "devDependencies": {
+        "eslint": "^3.4.0",
+        "expect": "^1.20.2",
+        "mocha": "^3.0.2",
+        "node-version-check": "^2.1.1",
+        "rollup": "^0.34.13"
+      },
+      "gitHead": "1d8474cb39f5f39dbc375ca49aa9727560a6197a",
+      "_id": "perf-regexes@0.1.2",
+      "_shasum": "4e3838786d0513e7bf3fe0c3672297be94bc9751",
+      "_from": ".",
+      "_npmVersion": "3.10.5",
+      "_nodeVersion": "4.4.7",
+      "_npmUser": {
+        "name": "amarcruz",
+        "email": "amarcruz@yahoo.com"
+      },
+      "dist": {
+        "shasum": "4e3838786d0513e7bf3fe0c3672297be94bc9751",
+        "tarball": "https://registry.npmjs.org/perf-regexes/-/perf-regexes-0.1.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amarcruz",
+          "email": "amarcruz@yahoo.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/perf-regexes-0.1.2.tgz_1474644324888_0.6301897945813835"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "perf-regexes",
+      "version": "1.0.0",
+      "description": "Optimized and powerful regexes for JavaScript",
+      "main": "./dist/perf-regexes.js",
+      "module": "./dist/perf-regexes.mjs",
+      "browser": "index.min.js",
+      "types": "index.d.ts",
+      "source": "./src/index.js",
+      "engines": {
+        "node": ">=6.14"
+      },
+      "keywords": [
+        "html",
+        "javascript",
+        "typescript",
+        "comments",
+        "regexp",
+        "regexes",
+        "search",
+        "match",
+        "source"
+      ],
+      "scripts": {
+        "start": "rollup -c && mocha -w test/index.js",
+        "pretest": "rollup -c",
+        "test": "mocha test/index.js",
+        "prek": "rollup -c rollup.browser.js",
+        "k": "karma start ./test/karma.conf.js",
+        "lint": "eslint src/*.js test/*.js",
+        "build": "rollup -c && rollup -c rollup.browser.js",
+        "prepublish": "npm run lint && npm run prek && npm t"
+      },
+      "author": {
+        "name": "aMarCruz",
+        "email": "amarcruzbox-git@yahoo.com",
+        "url": "https://github.com/aMarCruz"
+      },
+      "homepage": "https://github.com/aMarCruz/perf-regexes",
+      "bugs": {
+        "url": "https://github.com/aMarCruz/perf-regexes/issues"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/aMarCruz/perf-regexes.git"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "eslint": "^5.10.0",
+        "expect": "^1.20.2",
+        "karma": "^3.1.4",
+        "karma-chrome-launcher": "^2.2.0",
+        "karma-firefox-launcher": "^1.1.0",
+        "karma-mocha": "^1.3.0",
+        "mocha": "^5.2.0",
+        "rollup": "^0.68.1",
+        "rollup-plugin-uglify": "^6.0.0",
+        "skip-regex": "^1.0.1"
+      },
+      "gitHead": "5a75e5f55ff15e1a9477408502d738557555231c",
+      "_id": "perf-regexes@1.0.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.11.2",
+      "_npmUser": {
+        "name": "amarcruz",
+        "email": "amarcruz@yahoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-WG4XJ5MelEw/rehwS39+oJZ4MBsqejgVB/PS7v/gSAX9oITNf6O43TBzPY9QMB0QIbWXtdpyZ2xgU7iPXe2LZQ==",
+        "shasum": "72df953e8a910657e5cff97b31f3a547704fc8a2",
+        "tarball": "https://registry.npmjs.org/perf-regexes/-/perf-regexes-1.0.0.tgz",
+        "fileCount": 9,
+        "unpackedSize": 23073,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcHtVSCRA9TVsSAnZWagAAiRAP/3x+rwGmv3l0bRuKFfYG\nHfDkxCYtWUz1364REtEVxWp2qhKwq5r5hJJsCxbAtUL2S6nPxQMOjqWlJwnx\nb7Rx/osDFWp3BnEfK01pwXBxEtFwl2UEhyhDdToi4ZTFFw8T+G/z1pLU/k92\nScKTRlspFwRoR+7ZaqAvRIEdUysVg7JYWeCTKYXl3NFbAfX3R5jCbPTrji+O\nCNjv5enF4raNXFihtU1E5DV4qQhUWJ0d2MYH6fGzFQqUo9phbXuPcJ4M/pDo\nCENDGJsRvXUp6A/rIGhyQmYGd9qQ1ynAWf7fOVEcGpjVvd6CdUCtKofyugND\n3p/aDMSqUBy6vI/6k1bO5O6qH622TIO7tEVcQ5LO6ZUpTol5jw4AJf3/2bs8\nn/1OjQ/aqkuRYkwedVY5Hvn/SahOOqnwmc/6ODyNVEuQb+4kruj2pjlcPGLm\nC1SDampLGqIv1K+rO7KBg0SauKK7qRGLtK3g6Ixb4l78z+C9sWQLNTGNsZ3E\nMbyRrB7ydm13pKeq0gJexwdHjCaTfL3w5Bi5rxQeoDKoCse+K8PkU/Lcyvn+\nLwO2beXVqicKy6o4e8npFzh87talpi2ZUVdfDXnbKLUOBxS15KIFc7KaEtMN\n8M9JR3MqGvNOsnBS/vCLoDdUHCW38Mme6slFLRAFHXnb6SDB7fI8B2RRASnn\nMfpo\r\n=fDLZ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "amarcruz",
+          "email": "amarcruz@yahoo.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/perf-regexes_1.0.0_1545524561664_0.7529000613346957"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.0.1": {
+      "name": "perf-regexes",
+      "version": "1.0.1",
+      "description": "Optimized and powerful regexes for JavaScript",
+      "main": "./dist/perf-regexes.js",
+      "module": "./dist/perf-regexes.mjs",
+      "browser": "index.min.js",
+      "types": "index.d.ts",
+      "source": "./src/index.js",
+      "engines": {
+        "node": ">=6.14"
+      },
+      "keywords": [
+        "html",
+        "javascript",
+        "typescript",
+        "comments",
+        "regexp",
+        "regexes",
+        "search",
+        "match",
+        "source"
+      ],
+      "scripts": {
+        "start": "rollup -c && mocha -w test/index.js",
+        "pretest": "rollup -c",
+        "test": "mocha test/index.js",
+        "prek": "rollup -c rollup.browser.js",
+        "k": "karma start ./test/karma.conf.js",
+        "lint": "eslint src/*.js test/*.js",
+        "build": "rollup -c && rollup -c rollup.browser.js",
+        "prepublish": "npm run lint && npm run prek && npm t"
+      },
+      "author": {
+        "name": "aMarCruz",
+        "email": "amarcruzbox-git@yahoo.com",
+        "url": "https://github.com/aMarCruz"
+      },
+      "homepage": "https://github.com/aMarCruz/perf-regexes",
+      "bugs": {
+        "url": "https://github.com/aMarCruz/perf-regexes/issues"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/aMarCruz/perf-regexes.git"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "eslint": "^5.10.0",
+        "expect": "^1.20.2",
+        "karma": "^3.1.4",
+        "karma-chrome-launcher": "^2.2.0",
+        "karma-firefox-launcher": "^1.1.0",
+        "karma-mocha": "^1.3.0",
+        "mocha": "^5.2.0",
+        "rollup": "^0.68.1",
+        "rollup-plugin-uglify": "^6.0.0",
+        "skip-regex": "^1.0.1"
+      },
+      "gitHead": "1fa787b085ddd4c58514c455472f37eb421eb924",
+      "_id": "perf-regexes@1.0.1",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.11.2",
+      "_npmUser": {
+        "name": "amarcruz",
+        "email": "amarcruz@yahoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-L7MXxUDtqr4PUaLFCDCXBfGV/6KLIuSEccizDI7JxT+c9x1G1v04BQ4+4oag84SHaCdrBgQAIs/Cqn+flwFPng==",
+        "shasum": "6da1d62f5a94bf9353a0451bccacf69068b75d0b",
+        "tarball": "https://registry.npmjs.org/perf-regexes/-/perf-regexes-1.0.1.tgz",
+        "fileCount": 9,
+        "unpackedSize": 23866,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcINstCRA9TVsSAnZWagAAqjUP/Ri822CLBa5rAq4sexjM\nSx/VvUE8CVjLYzq+BC+44VoB1rTrZ5I7WoKth2rLd+G67BPcwPJVjtkbcJRf\nGdCNElLUohB5N3dhavdXEeowmaJwd7bZWlXHsPD7mKB/0WvQks1uA5b7C/qw\nKBvUOFIxTSOZjE9m2q0ZnzM+z+NkLD5BUSSqc9qmDGDXJIBFsTqlCl4QqjAO\neYUzlsnTNDKiwkW7wW9HOWKB45lFOzLZeRBrS9/STKbVyI3ju6EY03tWYCh8\nQDcZOHwIifzfgHej2a1Rmczd4GtzAdKtiZoNVMTuHotxqoztUyPxf3ICBbYM\nc08mOf+B0XvG7Z5SHUB5hfwZiNRtt4Lc1UPV7gPfWcVbJ8JDBUx/AJD8eE+s\n/Tha94wd79dYKub3k2psNICajSDfXvcJwEBZy2nPEVkfq1dusDfiCnckkZzh\nU4GRrSgiK9eUSfaXsyn35BeO1WwH1l5vRhE/QyAzQX9dvSALxOvnlSmQv+ae\n++K/eh9/dhPZen1ChPmycVmxBX10bHk/EGAwhse+q49g+ZFGznMznvuzvkDa\n+ZJCtgAlS43adYGEx3n7j4+3/tKW4o6Bmh1Lksivcr31cwT+eSE61rRFsiJC\nT2twhSic12IhP9OooktBEtT9sdvG7bCoia+n16CNX7/TIK8XpPofS4J7ZHAz\n8ELy\r\n=dzNE\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "amarcruz",
+          "email": "amarcruz@yahoo.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/perf-regexes_1.0.1_1545657132766_0.6527229299230055"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# perf-regexes\n\nOptimized and powerful regexes for JavaScript\n\n[![npm Version][npm-badge]][npm-url]\n[![License][license-badge]][license-url]\n[![Build Status][build-badge]][build-url]\n[![Bundle Size][size-badge]][size-url]\n\n## Breaking Changes\n\nIn ES5, matching literal regexes with other regex in medium complexity code is highly risky.<br>In ES6 it is practically impossible.\n\nFor this reason, as of v1.0 `JS_REGEX_P` is deprecated and will be removed in the next minor version.\n\n`JS_REGEX` will be maintained, but its use should be limited to complement other utilities, such as [skip-regex](https://github.com/aMarCruz/skip-regex), which uses a customized version of `JS_REGEX` to identify regular expresions reliably.\n\nThe minimum supported version of NodeJS now is 6.14 (oldest maintained LTS version w/fixes).\n\n## Install\n\n```sh\nnpm install perf-regexes --save\n# or\nyarn add perf-regexes\n```\n\nIn the browser, this loads perf-regexes in the global `R` object:\n\n```html\n<script src=\"https://unpkg.com/perf-regexes/index.min.js\"></script>\n```\n\n## Included Regexes\n\nAll of these regexes recognize Win/Mac/Unix line-endings and are ready to be used, but you can customize them using the `RegExp` constructor and the `source` property of the desired regex.\n\nHTML:\n\nName       | Flags | Matches\n---------- | :---: | -------\nHTML_CMNT  | g     | Valid HTML comments, according to the [SGML](https://www.w3.org/TR/html4/intro/sgmltut.html#h-3.2.4) standard.\n\nJavaScript:\n\nName       | Flags | Matches\n---------- | :---: | -------\nJS_MLCMNT  | g     | Multiline JS comment, with support for embedded `'/*'` sequences.\nJS_SLCMNT  | g     | Single-line JS comments, not including its line-ending.\nJS_DQSTR   | g     | Double quoted JS string, with support for escaped quotes and line-endings.\nJS_SQSTR   | g     | Single quoted JS string, with support for escaped quotes and line-endings.\nJS_STRING  | g     | Combines `JS_SQSTR` and `JS_DQSTR` to match single or double quoted strings.\nJS_REGEX   | g     | Regex. **Note:** The result must be validated.\nJS_REGEX_P | g     | _Deprecated, do not use it._\n\nSelection of lines:\n\nName            | Flags | Matches\n--------------- | :---: | -------\nEMPTY_LINES     | gm    | Empty line or line with only whitespace within, including its line-ending, if it has one.\nNON_EMPTY_LINES | gm    | Line with at least one non-whitespace character, including its line-ending, if it has one.\nTRAILING_WS     | gm    | The trailing whitespace of a line, without including its line-ending.\nOPT_WS_EOL      | g     | Zero or more blank characters followed by a line-ending, or the final blanks, if the (last) line has no line-ending.\nEOL             | g     | Line-ending of any type\n\n### NOTE\n\nBecause the `'g'` flag, always set `lastIndex` or clone the regex before using it with the `exec` method.\n\n## Example\n\nUsing only one regex, this simple example will...\n\n- Remove trailing whitespace of each line.\n- Remove the empty lines.\n- Normalize the line-endings to unix style.\n\n```js\nconst R = require('perf-regexes')\n\nconst cleaner = (text) => text.split(R.OPT_WS_EOL).filter(Boolean).join('\\n')\n\nconsole.dir(cleaner(' \\r\\r\\n\\nAA\\t\\t\\t\\r\\n\\rBB\\nCC  \\rDD  '))\n// ⇒ 'AA\\nBB\\nCC\\nDD'\n```\n\nUse the previous function to cleanup HTML text:\n\n```js\nconst htmlCleaner = (html) => cleaner(html.replace(R.HTML_CMNT, ''))\n\nconsole.dir(htmlCleaner(\n  '\\r<!--header--><h1>A</h1>\\r<div>B<br>\\r\\nC</div> <!--end-->\\n'))\n// ⇒ '<h1>A</h1>\\n<div>B<br>\\nC</div>'\n```\n\n### Line-endings Normalization\n\n```js\nconst R = require('perf-regexes')\n\nconst normalize = (text) => text.split(R.EOL).join('\\n')\n\nconsole.dir(normalize('\\rAA\\r\\r\\nBB\\r\\nCC \\nDD\\r'))\n// ⇒ '\\nAA\\n\\nBB\\nCC \\nDD\\n'\n```\n\n### Double-quoted to single-quoted strings\n\n```js\nconst toSingleQuotes = (text) => text.replace(R.JS_STRING, (str) => {\n  return str[0] === '\"'\n    ? `'${str.slice(1, -1).replace(/'/g, \"\\\\'\")}'`\n    : str\n})\n\nconsole.log(toSingleQuotes(`\"A's\" 'B' \"C\"`))\n// ⇒ 'A\\'s' 'B' 'C'\n```\n\n### Matching Regexes\n\nWith the arrival of [ES6TL](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) and new keywords, finding literal regexes with another regex is not viable, you need a JS parser such as [acorn](https://www.npmjs.com/package/acorn) or a specialized one such as [skip-regex](https://www.npmjs.com/package/skip-regex) to do it correctly.\n\nThis is a very basic example that uses skip-regex:\n\n```js\nimport R from 'perf-regexes'\nimport skipRegex from 'skip-regex'\n\n/**\n * Source to match quoted string, comments, and slashes.\n * Captures en $1 the slash\n */\nconst reStr = `${R.JS_STRING.source}|${R.JS_MLCMNT.source}|${R.JS_SLCMNT.source}|(/)`\n\n/**\n * Search regexes in `code` and display the result to the console.\n */\nconst searchRegexes = (code) => {\n\n  // Creating `re` here keeps its lastIndex private\n  const re = RegExp(reStr, 'g')\n  let match = re.exec(code)\n\n  while (match) {\n    if (match[1]) {\n      const start = match.index\n      const end = skipRegex(code, start)\n\n      // skipRegex returns start+1 if this is not a regex\n      if (end > start + 1) {\n        console.log(`Found \"${code.slice(start, end)}\" at ${start}`)\n      }\n      re.lastIndex = end\n    }\n    match = re.exec(code)\n  }\n}\n\nconst code = `\nconst A = 2\nconst s = '/A/'            // must not find /A/\n\nconst re1 = /A/g           // regex\nre1.lastIndex = 2 /A/ 1    // must not find /A/\n\n/* /B/                     // must not find /B/\n*/\nconst re2 = /B/g           // regex\nre1.exec(s || \"/B/\")       // must not find /B/\n`\n\nsearchRegexes(code)\n// output:\n// Found \"/A/g\" at 74\n// Found \"/B/b\" at 210\n```\n\nThe previous code does not support ES6TL, but it works quite well on ES5 files and is very fast.\n\nFor a more complete example of using perf-regexes, see [js-cleanup](https://github.com/aMarCruz/js-cleanup), an advanced utility with support for ES6 that trims trailing spaces, compacts empty lines, normalizes line-endings, and removes comments conditionally.\n\n### ES6 Template Literals\n\nES6TLs are too complex to be identified by one single regex, do not even try.\n\n## Support my Work\n\nI'm a full-stack developer with more than 20 year of experience and I try to share most of my work for free and help others, but this takes a significant amount of time and effort so, if you like my work, please consider...\n\n[<img src=\"https://amarcruz.github.io/images/kofi_blue.png\" height=\"36\" title=\"Support Me on Ko-fi\" />][kofi-url]\n\nOf course, feedback, PRs, and stars are also welcome 🙃\n\nThanks for your support!\n\n## License\n\nThe [MIT License](LICENCE) (MIT)\n\n[build-badge]:    https://img.shields.io/travis/aMarCruz/perf-regexes.svg\n[build-url]:      https://travis-ci.org/aMarCruz/perf-regexes\n[npm-badge]:      https://img.shields.io/npm/v/perf-regexes.svg\n[npm-url]:        https://www.npmjs.com/package/perf-regexes\n[license-badge]:  https://img.shields.io/npm/l/express.svg\n[license-url]:    badge://github.com/aMarCruz/perf-regexes/blob/master/LICENSE\n[size-badge]:     https://badgen.net/bundlephobia/min/perf-regexes\n[size-url]:       https://bundlephobia.com/result?p=perf-regexes\n[kofi-url]:       https://ko-fi.com/C0C7LF7I\n",
+  "maintainers": [
+    {
+      "name": "amarcruz",
+      "email": "amarcruz@yahoo.com"
+    }
+  ],
+  "time": {
+    "modified": "2019-01-05T03:13:23.275Z",
+    "created": "2016-09-07T10:29:43.386Z",
+    "0.0.1": "2016-09-07T10:29:43.386Z",
+    "0.0.2": "2016-09-08T15:44:19.454Z",
+    "0.1.2": "2016-09-23T15:25:26.865Z",
+    "1.0.0": "2018-12-23T00:22:41.855Z",
+    "1.0.1": "2018-12-24T13:12:12.907Z"
+  },
+  "homepage": "https://github.com/aMarCruz/perf-regexes",
+  "keywords": [
+    "html",
+    "javascript",
+    "typescript",
+    "comments",
+    "regexp",
+    "regexes",
+    "search",
+    "match",
+    "source"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aMarCruz/perf-regexes.git"
+  },
+  "author": {
+    "name": "aMarCruz",
+    "email": "amarcruzbox-git@yahoo.com",
+    "url": "https://github.com/aMarCruz"
+  },
+  "bugs": {
+    "url": "https://github.com/aMarCruz/perf-regexes/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md"
+}

@@ -1,0 +1,888 @@
+{
+  "_id": "loader-runner",
+  "_rev": "15-2456ca6363edac50eb9809d1372750cc",
+  "name": "loader-runner",
+  "description": "Runs (webpack) loaders",
+  "dist-tags": {
+    "latest": "4.1.0",
+    "old": "2.4.0"
+  },
+  "versions": {
+    "2.0.0": {
+      "name": "loader-runner",
+      "version": "2.0.0",
+      "description": "Runs (webpack) loaders",
+      "main": "lib/LoaderRunner.js",
+      "scripts": {
+        "beautify-lint": "beautify-lint lib/**.js test/*.js",
+        "beautify": "beautify-rewrite lib/**.js test/*.js",
+        "lint": "eslint lib test",
+        "pretest": "npm run lint && npm run beautify-lint",
+        "test": "mocha --reporter spec",
+        "precover": "npm run lint && npm run beautify-lint",
+        "cover": "istanbul cover node_modules/mocha/bin/_mocha -- -R spec",
+        "travis": "npm run cover -- --report lcovonly"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack/loader-runner.git"
+      },
+      "keywords": [
+        "webpack",
+        "loader"
+      ],
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/webpack/loader-runner/issues"
+      },
+      "homepage": "https://github.com/webpack/loader-runner#readme",
+      "devDependencies": {
+        "beautify-lint": "^1.0.4",
+        "codecov.io": "^0.1.6",
+        "coveralls": "^2.11.6",
+        "eslint": "^1.10.3",
+        "eslint-plugin-nodeca": "^1.0.3",
+        "istanbul": "^0.4.1",
+        "mocha": "^2.3.4",
+        "should": "^8.0.2"
+      },
+      "_id": "loader-runner@2.0.0",
+      "_shasum": "d8bae1bf75761ef160a687ec92347483b57b152f",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "0.12.4",
+      "_npmUser": {
+        "name": "sokra",
+        "email": "tobias.koppers@googlemail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sokra",
+          "email": "tobias.koppers@googlemail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "d8bae1bf75761ef160a687ec92347483b57b152f",
+        "tarball": "https://registry.npmjs.org/loader-runner/-/loader-runner-2.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.1": {
+      "name": "loader-runner",
+      "version": "2.0.1",
+      "description": "Runs (webpack) loaders",
+      "main": "lib/LoaderRunner.js",
+      "scripts": {
+        "beautify-lint": "beautify-lint lib/**.js test/*.js",
+        "beautify": "beautify-rewrite lib/**.js test/*.js",
+        "lint": "eslint lib test",
+        "pretest": "npm run lint && npm run beautify-lint",
+        "test": "mocha --reporter spec",
+        "precover": "npm run lint && npm run beautify-lint",
+        "cover": "istanbul cover node_modules/mocha/bin/_mocha",
+        "travis": "npm run cover -- --report lcovonly"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack/loader-runner.git"
+      },
+      "keywords": [
+        "webpack",
+        "loader"
+      ],
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/webpack/loader-runner/issues"
+      },
+      "homepage": "https://github.com/webpack/loader-runner#readme",
+      "devDependencies": {
+        "beautify-lint": "^1.0.4",
+        "codecov.io": "^0.1.6",
+        "coveralls": "^2.11.6",
+        "eslint": "^1.10.3",
+        "eslint-plugin-nodeca": "^1.0.3",
+        "istanbul": "^0.4.1",
+        "mocha": "^2.3.4",
+        "should": "^8.0.2"
+      },
+      "gitHead": "2821bf65f5a22cd45ae431981f370f6ee1a2a125",
+      "_id": "loader-runner@2.0.1",
+      "_shasum": "504717c0634a484bc7f676feaee6178644cacee6",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "0.12.4",
+      "_npmUser": {
+        "name": "sokra",
+        "email": "tobias.koppers@googlemail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sokra",
+          "email": "tobias.koppers@googlemail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "504717c0634a484bc7f676feaee6178644cacee6",
+        "tarball": "https://registry.npmjs.org/loader-runner/-/loader-runner-2.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "2.1.0": {
+      "name": "loader-runner",
+      "version": "2.1.0",
+      "description": "Runs (webpack) loaders",
+      "main": "lib/LoaderRunner.js",
+      "scripts": {
+        "beautify-lint": "beautify-lint lib/**.js test/*.js",
+        "beautify": "beautify-rewrite lib/**.js test/*.js",
+        "lint": "eslint lib test",
+        "pretest": "npm run lint && npm run beautify-lint",
+        "test": "mocha --reporter spec",
+        "precover": "npm run lint && npm run beautify-lint",
+        "cover": "istanbul cover node_modules/mocha/bin/_mocha",
+        "travis": "npm run cover -- --report lcovonly"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack/loader-runner.git"
+      },
+      "keywords": [
+        "webpack",
+        "loader"
+      ],
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/webpack/loader-runner/issues"
+      },
+      "homepage": "https://github.com/webpack/loader-runner#readme",
+      "devDependencies": {
+        "beautify-lint": "^1.0.4",
+        "codecov.io": "^0.1.6",
+        "coveralls": "^2.11.6",
+        "eslint": "^1.10.3",
+        "eslint-plugin-nodeca": "^1.0.3",
+        "istanbul": "^0.4.1",
+        "mocha": "^2.3.4",
+        "should": "^8.0.2"
+      },
+      "gitHead": "c295187856c310684491b940f72d8193136218c4",
+      "_id": "loader-runner@2.1.0",
+      "_shasum": "9d09f7bc6ebee9a13c4fd688c4d15c1c83875e76",
+      "_from": ".",
+      "_npmVersion": "3.3.3",
+      "_nodeVersion": "5.4.1",
+      "_npmUser": {
+        "name": "sokra",
+        "email": "tobias.koppers@googlemail.com"
+      },
+      "dist": {
+        "shasum": "9d09f7bc6ebee9a13c4fd688c4d15c1c83875e76",
+        "tarball": "https://registry.npmjs.org/loader-runner/-/loader-runner-2.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sokra",
+          "email": "tobias.koppers@googlemail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "2.1.1": {
+      "name": "loader-runner",
+      "version": "2.1.1",
+      "description": "Runs (webpack) loaders",
+      "main": "lib/LoaderRunner.js",
+      "scripts": {
+        "beautify-lint": "beautify-lint lib/**.js test/*.js",
+        "beautify": "beautify-rewrite lib/**.js test/*.js",
+        "lint": "eslint lib test",
+        "pretest": "npm run lint && npm run beautify-lint",
+        "test": "mocha --reporter spec",
+        "precover": "npm run lint && npm run beautify-lint",
+        "cover": "istanbul cover node_modules/mocha/bin/_mocha",
+        "travis": "npm run cover -- --report lcovonly"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack/loader-runner.git"
+      },
+      "keywords": [
+        "webpack",
+        "loader"
+      ],
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/webpack/loader-runner/issues"
+      },
+      "homepage": "https://github.com/webpack/loader-runner#readme",
+      "devDependencies": {
+        "beautify-lint": "^1.0.4",
+        "codecov.io": "^0.1.6",
+        "coveralls": "^2.11.6",
+        "eslint": "^1.10.3",
+        "eslint-plugin-nodeca": "^1.0.3",
+        "istanbul": "^0.4.1",
+        "mocha": "^2.3.4",
+        "should": "^8.0.2"
+      },
+      "gitHead": "31460593795b9b66ab590312c9e21bec5556c240",
+      "_id": "loader-runner@2.1.1",
+      "_shasum": "60a30f2a7c8eae79f0805b5848fee134f8ade519",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "0.12.4",
+      "_npmUser": {
+        "name": "sokra",
+        "email": "tobias.koppers@googlemail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sokra",
+          "email": "tobias.koppers@googlemail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "60a30f2a7c8eae79f0805b5848fee134f8ade519",
+        "tarball": "https://registry.npmjs.org/loader-runner/-/loader-runner-2.1.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-6-west.internal.npmjs.com",
+        "tmp": "tmp/loader-runner-2.1.1.tgz_1454531680561_0.005646316800266504"
+      },
+      "directories": {}
+    },
+    "2.2.0": {
+      "name": "loader-runner",
+      "version": "2.2.0",
+      "description": "Runs (webpack) loaders",
+      "main": "lib/LoaderRunner.js",
+      "scripts": {
+        "beautify-lint": "beautify-lint lib/**.js test/*.js",
+        "beautify": "beautify-rewrite lib/**.js test/*.js",
+        "lint": "eslint lib test",
+        "pretest": "npm run lint && npm run beautify-lint",
+        "test": "mocha --reporter spec",
+        "precover": "npm run lint && npm run beautify-lint",
+        "cover": "istanbul cover node_modules/mocha/bin/_mocha",
+        "travis": "npm run cover -- --report lcovonly"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack/loader-runner.git"
+      },
+      "keywords": [
+        "webpack",
+        "loader"
+      ],
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/webpack/loader-runner/issues"
+      },
+      "homepage": "https://github.com/webpack/loader-runner#readme",
+      "devDependencies": {
+        "beautify-lint": "^1.0.4",
+        "codecov.io": "^0.1.6",
+        "coveralls": "^2.11.6",
+        "eslint": "^1.10.3",
+        "eslint-plugin-nodeca": "^1.0.3",
+        "istanbul": "^0.4.1",
+        "mocha": "^2.3.4",
+        "should": "^8.0.2"
+      },
+      "gitHead": "c404687b153831ef3fe1ce4171a210241caa388b",
+      "_id": "loader-runner@2.2.0",
+      "_shasum": "824c1b699c4e7a2b6501b85902d5b862bf45b3fa",
+      "_from": ".",
+      "_npmVersion": "3.3.3",
+      "_nodeVersion": "6.3.1",
+      "_npmUser": {
+        "name": "sokra",
+        "email": "tobias.koppers@googlemail.com"
+      },
+      "dist": {
+        "shasum": "824c1b699c4e7a2b6501b85902d5b862bf45b3fa",
+        "tarball": "https://registry.npmjs.org/loader-runner/-/loader-runner-2.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sokra",
+          "email": "tobias.koppers@googlemail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/loader-runner-2.2.0.tgz_1473891180613_0.5520296646282077"
+      },
+      "directories": {}
+    },
+    "2.3.0": {
+      "name": "loader-runner",
+      "version": "2.3.0",
+      "description": "Runs (webpack) loaders",
+      "main": "lib/LoaderRunner.js",
+      "scripts": {
+        "beautify-lint": "beautify-lint lib/**.js test/*.js",
+        "beautify": "beautify-rewrite lib/**.js test/*.js",
+        "lint": "eslint lib test",
+        "pretest": "npm run lint && npm run beautify-lint",
+        "test": "mocha --reporter spec",
+        "precover": "npm run lint && npm run beautify-lint",
+        "cover": "istanbul cover node_modules/mocha/bin/_mocha",
+        "travis": "npm run cover -- --report lcovonly"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack/loader-runner.git"
+      },
+      "keywords": [
+        "webpack",
+        "loader"
+      ],
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/webpack/loader-runner/issues"
+      },
+      "homepage": "https://github.com/webpack/loader-runner#readme",
+      "engines": {
+        "node": ">=4.3.0 <5.0.0 || >=5.10"
+      },
+      "files": [
+        "lib/",
+        "bin/",
+        "hot/",
+        "web_modules/",
+        "schemas/"
+      ],
+      "devDependencies": {
+        "beautify-lint": "^1.0.4",
+        "codecov.io": "^0.1.6",
+        "coveralls": "^2.11.6",
+        "eslint": "^3.12.2",
+        "eslint-plugin-node": "^3.0.5",
+        "eslint-plugin-nodeca": "^1.0.3",
+        "istanbul": "^0.4.1",
+        "mocha": "^3.2.0",
+        "should": "^8.0.2"
+      },
+      "gitHead": "c875814f169348ef712b78e22c6404a7f585df3f",
+      "_id": "loader-runner@2.3.0",
+      "_shasum": "f482aea82d543e07921700d5a46ef26fdac6b8a2",
+      "_from": ".",
+      "_npmVersion": "4.0.5",
+      "_nodeVersion": "7.4.0",
+      "_npmUser": {
+        "name": "sokra",
+        "email": "tobias.koppers@googlemail.com"
+      },
+      "dist": {
+        "shasum": "f482aea82d543e07921700d5a46ef26fdac6b8a2",
+        "tarball": "https://registry.npmjs.org/loader-runner/-/loader-runner-2.3.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sokra",
+          "email": "tobias.koppers@googlemail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/loader-runner-2.3.0.tgz_1485390251126_0.9998536882922053"
+      },
+      "directories": {}
+    },
+    "2.3.1": {
+      "name": "loader-runner",
+      "version": "2.3.1",
+      "description": "Runs (webpack) loaders",
+      "main": "lib/LoaderRunner.js",
+      "scripts": {
+        "beautify-lint": "beautify-lint lib/**.js test/*.js",
+        "beautify": "beautify-rewrite lib/**.js test/*.js",
+        "lint": "eslint lib test",
+        "pretest": "npm run lint && npm run beautify-lint",
+        "test": "mocha --reporter spec",
+        "precover": "npm run lint && npm run beautify-lint",
+        "cover": "istanbul cover node_modules/mocha/bin/_mocha",
+        "travis": "npm run cover -- --report lcovonly"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack/loader-runner.git"
+      },
+      "keywords": [
+        "webpack",
+        "loader"
+      ],
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/webpack/loader-runner/issues"
+      },
+      "homepage": "https://github.com/webpack/loader-runner#readme",
+      "engines": {
+        "node": ">=4.3.0 <5.0.0 || >=5.10"
+      },
+      "devDependencies": {
+        "beautify-lint": "^1.0.4",
+        "codecov.io": "^0.1.6",
+        "coveralls": "^2.11.6",
+        "eslint": "^3.12.2",
+        "eslint-plugin-node": "^3.0.5",
+        "eslint-plugin-nodeca": "^1.0.3",
+        "istanbul": "^0.4.1",
+        "mocha": "^3.2.0",
+        "should": "^8.0.2"
+      },
+      "gitHead": "2815f40dea982dc14dc872ab7b40657a537371df",
+      "_id": "loader-runner@2.3.1",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.11.4",
+      "_npmUser": {
+        "name": "sokra",
+        "email": "tobias.koppers@googlemail.com"
+      },
+      "dist": {
+        "integrity": "sha512-By6ZFY7ETWOc9RFaAIb23IjJVcM4dvJC/N57nmdz9RSkMXvAXGI7SyVlAw3v8vjtDRlqThgVDVmTnr9fqMlxkw==",
+        "shasum": "026f12fe7c3115992896ac02ba022ba92971b979",
+        "tarball": "https://registry.npmjs.org/loader-runner/-/loader-runner-2.3.1.tgz",
+        "fileCount": 5,
+        "unpackedSize": 16037,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbpMj+CRA9TVsSAnZWagAAFeQP/RXP47MF76LnkjViyKlT\nME1zYLtvlRAFaKV5BNVTc0L+H+kL72bkavQ4KVgJ3e574IlM/Fvdh8UKgtov\nSZ0W/rQB0lrY87tEridc4y3cZT54nV0nYk1N43hUcmLSt4PEgqxRcFN71Dgg\nF4JZznkbJzH6H+ZfuF8DlgFIRkFPukhEQj+c+SUDFU7jlv826iQ41F2cwWrL\ncML7kysIvvFnlVLT3HxMhzmNieq5KWNeCQ6x1iFOwJiOxFDhURgZq0tOCADV\nIQZ+iTEQdmuAkV7hri8126JBpHvHdi4RkY8lAjuEDAGJwvqEDHgqV1PEqdqx\n1UdhUFWZWaRO8HlyL+4Lp4jnHJa6rzM/ZFIM8CZxgUa7bj9kXiWaaMDglFUF\nFeOVHiEIjiB8BvivxPzS0RG6K2CwiqPddnRaOvu7FrquIQsGZrWO1n6kyu9P\n5RUEVZURcjbGv9jVZE1OMELClSJ5q/VMXbvDociSfk8FGFkr8OrQIX/riK3Q\nWtRzCIdOW8yvPU1+Y0H5l/12pEn+rONSGSPLEHFaxIcqD0GGaBpd+vGhkbEp\n1L3rwjGWZBanvrv7AvE974KbBuzblw4SlXqxbe0bX7XzUQDuqcVh0DZjLOn4\nAfkTpCoFu3ptibh0GZjZuef0cq+2OBHglZh/L3xwfUKc1rLkWo2qc3dOpaoq\nBZkq\r\n=VAJg\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sokra",
+          "email": "tobias.koppers@googlemail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/loader-runner_2.3.1_1537526013899_0.6287133545659194"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.0": {
+      "name": "loader-runner",
+      "version": "3.0.0",
+      "description": "Runs (webpack) loaders",
+      "main": "lib/LoaderRunner.js",
+      "scripts": {
+        "lint": "eslint lib test",
+        "pretest": "npm run lint",
+        "test": "mocha --reporter spec",
+        "precover": "npm run lint",
+        "cover": "istanbul cover node_modules/mocha/bin/_mocha",
+        "travis": "npm run cover -- --report lcovonly"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack/loader-runner.git"
+      },
+      "keywords": [
+        "webpack",
+        "loader"
+      ],
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/webpack/loader-runner/issues"
+      },
+      "homepage": "https://github.com/webpack/loader-runner#readme",
+      "engines": {
+        "node": ">=6.11.5"
+      },
+      "devDependencies": {
+        "codecov.io": "^0.1.6",
+        "coveralls": "^2.11.6",
+        "eslint": "^3.12.2",
+        "eslint-plugin-node": "^3.0.5",
+        "eslint-plugin-nodeca": "^1.0.3",
+        "istanbul": "^0.4.1",
+        "mocha": "^3.2.0",
+        "should": "^8.0.2"
+      },
+      "gitHead": "6767b5a873df9821174e18a57e574db1d897e1d6",
+      "_id": "loader-runner@3.0.0",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.15.0",
+      "_npmUser": {
+        "name": "sokra",
+        "email": "tobias.koppers@googlemail.com"
+      },
+      "dist": {
+        "integrity": "sha512-BlinBEAJYOUubaKH9hMxshD1FltYLTd3FA4DoxEh/82C0Rc4cmcqI61bEUj0/osbmW9FCTXTpMAO/jHZDZC5Fw==",
+        "shasum": "c86f303af2dacbd27eabd2ea3aaa957291562e23",
+        "tarball": "https://registry.npmjs.org/loader-runner/-/loader-runner-3.0.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 15941,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcPcFpCRA9TVsSAnZWagAAg34P/3HarCfikemUhqyrjyN+\nlZ2nbapVHWyRnTA7ho+Z/HsJPrb5ub97YB+yMrM9u+lzrAJrQ6cderwJ9Jox\nk5ZYIe/SHwZ/9PjXjU/pH7BvCyMN0b/VMP7YA+053hHYVc4B2swf0D47ar7d\nZS3R2prg8AAkJxio/V0U8JvLvRVeg6EFxcWWKA2bQ2SzHaoDlDLk7UAdonr5\nanDNeX8azf/JqpXRbC8gCp349Dky/qw5mm0L3ez6IwfONC7eMaIQG9byp92I\nPyxKEsy3064DYNek0rb0R2DK2myI087tRSug7kYW5ofsFNpG+XZJNN2JpZqd\npR2HJtoc4fTCIcQoBElYNjXKWyGqu9EITADrGoqzrDYjI3IszN9T6nNezBvn\nrmZ4a/eDfuJma/CQ7RujsWSqhFylA0IPnMbzLrLdIQ95Sv5ruX2rVADDVhqm\nsiazHTty+YJmwZD2J1a1WGnSq29XoADBJpAu2q3xpq3izyU4hTVgwcQAMndc\neTjkimLP2A56XYM7amdI/qXsUOYshj4GZ1PPb9bfWQ0am5P1lX4ESjRi6H/n\n4u3yYhmaKbBqdOtVPA3hmiG6wUJ8iY0O2emhub9xoHX+kIXIClq3hkLV9IEP\nTGVluClwzzxd1nNlXLzx7HP9f8D/MQLx53cCDL0zSmuWOr8cHU7faeH9vfLz\n/+Ny\r\n=5zVI\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sokra",
+          "email": "tobias.koppers@googlemail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/loader-runner_3.0.0_1547551080960_0.6934724322474928"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.4.0": {
+      "name": "loader-runner",
+      "version": "2.4.0",
+      "description": "Runs (webpack) loaders",
+      "main": "lib/LoaderRunner.js",
+      "scripts": {
+        "lint": "eslint lib test",
+        "pretest": "npm run lint",
+        "test": "mocha --reporter spec",
+        "precover": "npm run lint",
+        "cover": "istanbul cover node_modules/mocha/bin/_mocha",
+        "travis": "npm run cover -- --report lcovonly"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack/loader-runner.git"
+      },
+      "keywords": [
+        "webpack",
+        "loader"
+      ],
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/webpack/loader-runner/issues"
+      },
+      "homepage": "https://github.com/webpack/loader-runner#readme",
+      "engines": {
+        "node": ">=4.3.0 <5.0.0 || >=5.10"
+      },
+      "devDependencies": {
+        "codecov.io": "^0.1.6",
+        "coveralls": "^2.11.6",
+        "eslint": "^3.12.2",
+        "eslint-plugin-node": "^3.0.5",
+        "eslint-plugin-nodeca": "^1.0.3",
+        "istanbul": "^0.4.1",
+        "mocha": "^3.2.0",
+        "should": "^8.0.2"
+      },
+      "readme": "# loader-runner\n\n``` js\nimport { runLoaders } from \"loader-runner\";\n\nrunLoaders({\n\tresource: \"/abs/path/to/file.txt?query\",\n\t// String: Absolute path to the resource (optionally including query string)\n\n\tloaders: [\"/abs/path/to/loader.js?query\"],\n\t// String[]: Absolute paths to the loaders (optionally including query string)\n\t// {loader, options}[]: Absolute paths to the loaders with options object\n\n\tcontext: { minimize: true },\n\t// Additional loader context which is used as base context\n\n\treadResource: fs.readFile.bind(fs)\n\t// A function to read the resource\n\t// Must have signature function(path, function(err, buffer))\n\n}, function(err, result) {\n\t// err: Error?\n\n\t// result.result: Buffer | String\n\t// The result\n\n\t// result.resourceBuffer: Buffer\n\t// The raw resource as Buffer (useful for SourceMaps)\n\n\t// result.cacheable: Bool\n\t// Is the result cacheable or do it require reexecution?\n\n\t// result.fileDependencies: String[]\n\t// An array of paths (files) on which the result depends on\n\n\t// result.contextDependencies: String[]\n\t// An array of paths (directories) on which the result depends on\n})\n```\n\nMore documentation following...\n\n",
+      "readmeFilename": "README.md",
+      "gitHead": "4e817fdf48ba866cbfa2e0a91c9b720f09410422",
+      "_id": "loader-runner@2.4.0",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.15.0",
+      "_npmUser": {
+        "name": "sokra",
+        "email": "tobias.koppers@googlemail.com"
+      },
+      "dist": {
+        "integrity": "sha512-Jsmr89RcXGIwivFY21FcRrisYZfvLMTWx5kOLc+JTxtpBOG6xML0vzbc6SEQG2FO9/4Fc3wW4LVcB5DmGflaRw==",
+        "shasum": "ed47066bfe534d7e84c4c7b9998c2a75607d9357",
+        "tarball": "https://registry.npmjs.org/loader-runner/-/loader-runner-2.4.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 16285,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcPeRPCRA9TVsSAnZWagAAooEP/jd+6k010eAZbJtXYYaJ\nFDURrIqHpuSiq1M3ErGWJZZsm7GctTKhyuxmI/Cbbs+2bEaj+nBN0vEzH6Cu\nlCyxRxRn284e13XYkAcskh+9JZAof5ut1XmTmQvDuasz/7mAzPWXRXeGDOSo\nexBE3vK9g1mjyRd4EhQPp14vEBV2on3qSWVON+z6xSj9kF7uhduBZ29I2Baz\nsxjNrbhDc8r2pioLO4xfDLtFnr65dq0uS8RCyVCFhECwndImU/NFIqKgTx9Y\nINp5GD+9dSz4rRTtuokmXgt0niToBwly78v3LrLEVMAY9AQXDDjuG4+eUf0U\nZt/qMkqmlxMasU0sgpqknSEbtiMUkM+ZPTU/28Gm9tV9ccSQua39PDwuWRbJ\nfztKxhaurUqcdajoJn0+9GsTuqCKE+J767Pb7QwzWn7kUUsFOhVmr+pLClJb\nvUlssEjB+Mvgl3VyKmACwhcaByB8pQLTIVdLgy/07QUczUQtGLSZfTr8E9Rv\nMYY7SkUIPrz8j3VabPdUUw+u8RQXdkG9kwUhxGcCtaMxulMJeceBgQIXBudC\nfQApB9/ep0AJnmKWHmWo9Qk+YLNP7Hi3zPUjOEnW8BAXE9Oc6yltJhvXsDAE\nwviO4Jy6al9JMzeO3yuNZ6suHAhKRFqAzM9JLHtXoJ/pCR9NZ/su7sMpFLkV\nEc2m\r\n=17l7\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sokra",
+          "email": "tobias.koppers@googlemail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/loader-runner_2.4.0_1547560015150_0.8059995476306019"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.1.0": {
+      "name": "loader-runner",
+      "version": "3.1.0",
+      "description": "Runs (webpack) loaders",
+      "main": "lib/LoaderRunner.js",
+      "scripts": {
+        "lint": "eslint lib test",
+        "pretest": "npm run lint",
+        "test": "mocha --reporter spec",
+        "precover": "npm run lint",
+        "cover": "istanbul cover node_modules/mocha/bin/_mocha",
+        "travis": "npm run cover -- --report lcovonly"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack/loader-runner.git"
+      },
+      "keywords": [
+        "webpack",
+        "loader"
+      ],
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/webpack/loader-runner/issues"
+      },
+      "homepage": "https://github.com/webpack/loader-runner#readme",
+      "engines": {
+        "node": ">=6.11.5"
+      },
+      "devDependencies": {
+        "codecov.io": "^0.1.6",
+        "coveralls": "^2.11.6",
+        "eslint": "^3.12.2",
+        "eslint-plugin-node": "^3.0.5",
+        "eslint-plugin-nodeca": "^1.0.3",
+        "istanbul": "^0.4.1",
+        "mocha": "^3.2.0",
+        "should": "^8.0.2"
+      },
+      "gitHead": "160c809d8d03cebe282fdb3b9d3cecedd4f6da5b",
+      "_id": "loader-runner@3.1.0",
+      "_nodeVersion": "12.13.0",
+      "_npmVersion": "6.12.0",
+      "dist": {
+        "integrity": "sha512-wE/bOCdTKMR2rm7Xxh+eirDOmN7Vx7hntWgiTayuFPtF8MgsFDo49SP8kkYz8IVlEBTOtR7P+XI7bE1xjo/IkA==",
+        "shasum": "e9440e5875f2ad2f968489cd2c7b59a4f2847fcb",
+        "tarball": "https://registry.npmjs.org/loader-runner/-/loader-runner-3.1.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 16335,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd3DMECRA9TVsSAnZWagAA200P/1JMHUMVQsDZKyVpC2LT\n8JVK9vUIJVj7IZk3VLIuPjjnAJHmeGkk7K2EMKtwmc868Cup7TpPFeDkbfP0\ntETFxZbo04wE1/Mdp3I3wWKQafubw64g/w45Jg5fiaiW+1/Og2VtD4rGl8Dh\ngcnGMvfKkiCMV6lN06/rkfbiSXBQoNHLfjL+cU2Q8ClnrN0XjNYzJjaM7p+I\nZSbjQFt/Nh1GCk4OC3Y2Zd+zNZFdhkE6xldhpYvij8ZG+ngdnAECrzhqIiyk\ngSWEyyLa/DOtyX3aIdja0OTamqMJQZWeuMtpSB4oMgfh7HI2Aw8lJCWxjiSn\n0rdWdGFLcl62O65UdfiYe0WXUhfzH4AB9lnFga29afuFqkF4d99AIJQEWBPi\najMmfCTFCw3dYmiyG/hoWCxCdasxAlrkdQUTeb1EWURks7OczQpEZM1pgNQM\nWtg/ZGbdKYe9D5V62j3nBJJioYlrkbzLqJLz/gEbYT7llNm1MsyrByEOahaf\nlXIlBXaoYV1UJZOxcZ+ITsWA3yJbTgWJVsavrH6rvM8YD0sMi5xPZ9T2bMny\n5zC8o3E4vaNIsM8PnhVpnTil1B5rBwOc7HEC/R/usmroCEbYn0/8Pq25wm4S\ny9m/ecidibpgfq5hh7NkEVuhgusBgfAd0D5kFsig1agRao9q3gGrBg6W4gPS\nNpv4\r\n=+MLk\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sokra",
+          "email": "tobias.koppers@googlemail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "sokra",
+        "email": "tobias.koppers@googlemail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/loader-runner_3.1.0_1574712067805_0.7914792748361543"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.0.0": {
+      "name": "loader-runner",
+      "version": "4.0.0",
+      "description": "Runs (webpack) loaders",
+      "main": "lib/LoaderRunner.js",
+      "scripts": {
+        "lint": "eslint lib test",
+        "pretest": "npm run lint",
+        "test": "mocha --reporter spec",
+        "precover": "npm run lint",
+        "cover": "istanbul cover node_modules/mocha/bin/_mocha",
+        "travis": "npm run cover -- --report lcovonly"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack/loader-runner.git"
+      },
+      "keywords": [
+        "webpack",
+        "loader"
+      ],
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/webpack/loader-runner/issues"
+      },
+      "homepage": "https://github.com/webpack/loader-runner#readme",
+      "engines": {
+        "node": ">=6.11.5"
+      },
+      "devDependencies": {
+        "codecov.io": "^0.1.6",
+        "coveralls": "^2.11.6",
+        "eslint": "^3.12.2",
+        "eslint-plugin-node": "^3.0.5",
+        "eslint-plugin-nodeca": "^1.0.3",
+        "istanbul": "^0.4.1",
+        "mocha": "^3.2.0",
+        "should": "^8.0.2"
+      },
+      "gitHead": "fbbfb6685d6d3bbdd81ac9a34878d6b777dc4b4a",
+      "_id": "loader-runner@4.0.0",
+      "_nodeVersion": "14.3.0",
+      "_npmVersion": "6.14.5",
+      "dist": {
+        "integrity": "sha512-Rqf48ufrr48gFjnaqss04QesoXB7VenbpFFIV/0yOKGnpbejrVlOPqTsoX42FG5goXM5Ixekcs4DqDzHOX2z7Q==",
+        "shasum": "02abcfd9fe6ff7a5aeb3547464746c4dc6ba333d",
+        "tarball": "https://registry.npmjs.org/loader-runner/-/loader-runner-4.0.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 17550,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJe/0V1CRA9TVsSAnZWagAAH7YP/2pFuDJ2bw52Urb+IQDz\nXVRufic9BSLPIRcdZHEjd+UfWpfRXhagGJ/xR45//E2DbxCGNOyanKZQNTW7\ne+rCMitF1AFi0kRh/Orhnq7K/qv9gwt4B4ZGPTJrPz6v1tj/B7hry+bwNMxr\novy76Cn8U56bURRYzXXYrga9213b5Dm1dOE1A5o1myHjpJe2AVrrejJbsbXz\nYrdSypx+spOO7LEPAp4FW6UJtrrINN1sc+BLGQPi9CCbmpwH0eojaFg4qaOl\n3kuhgYTIlALcPuLIA6FHwGlE1Ha0x7zfinW8h8/pst69nMBeRqSqhjEjxhqk\nL15C/CH+CneqWxLZPjAxRaPq8bU5vJUD21c1aQk5H+pKzPG7rcLUH3C81lz7\nV06M9x4vTmv5jm0KmvaZMt30MoGdcR4B4B0+xVQwkXA1k7IoOBpzAFyB9nQz\np67/dQVk2SiJTxTpy02Ko+5uwAO7yaLXh/qgikn1r/pCm2nkLme1orQMlhKg\nsCxWL1+hGg2jnMcLLTcdN6rLUgsOReNqNmU8RGhGUx6wzrNfnbYuHjh+2hAP\nYyKmVJiWFXOCcokaEWlvx5uOcBcf5no38Mt/z45G3hhqXyFhnYUyj1aH1eyS\nrEbFtYvKibKwGT+52qzTUojyaPPTGUA0C6vAyfckY+j4oVlJLnIl+W7175a8\nQhGf\r\n=ouTp\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sokra",
+          "email": "tobias.koppers@googlemail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "sokra",
+        "email": "tobias.koppers@googlemail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/loader-runner_4.0.0_1593787765288_0.7672169760556056"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.1.0": {
+      "name": "loader-runner",
+      "version": "4.1.0",
+      "description": "Runs (webpack) loaders",
+      "main": "lib/LoaderRunner.js",
+      "scripts": {
+        "lint": "eslint lib test",
+        "pretest": "npm run lint",
+        "test": "mocha --reporter spec",
+        "precover": "npm run lint",
+        "cover": "istanbul cover node_modules/mocha/bin/_mocha",
+        "travis": "npm run cover -- --report lcovonly"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack/loader-runner.git"
+      },
+      "keywords": [
+        "webpack",
+        "loader"
+      ],
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/webpack/loader-runner/issues"
+      },
+      "homepage": "https://github.com/webpack/loader-runner#readme",
+      "engines": {
+        "node": ">=6.11.5"
+      },
+      "devDependencies": {
+        "codecov.io": "^0.1.6",
+        "coveralls": "^2.11.6",
+        "eslint": "^3.12.2",
+        "eslint-plugin-node": "^3.0.5",
+        "eslint-plugin-nodeca": "^1.0.3",
+        "istanbul": "^0.4.1",
+        "mocha": "^3.2.0",
+        "should": "^8.0.2"
+      },
+      "gitHead": "cebc687275edc688a5d8cf0d7c9a2be34c67fa4d",
+      "_id": "loader-runner@4.1.0",
+      "_nodeVersion": "14.9.0",
+      "_npmVersion": "6.14.8",
+      "dist": {
+        "integrity": "sha512-oR4lB4WvwFoC70ocraKhn5nkKSs23t57h9udUgw8o0iH8hMXeEoRuUgfcvgUwAJ1ZpRqBvcou4N2SMvM1DwMrA==",
+        "shasum": "f70bc0c29edbabdf2043e7ee73ccc3fe1c96b42d",
+        "tarball": "https://registry.npmjs.org/loader-runner/-/loader-runner-4.1.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 17729,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfdDK/CRA9TVsSAnZWagAAaZ8P/jmMEJvDh858fmy/1Pto\nEYFIq/bORENH44kpg+0I7hFvpzj5oXdFl9IoDuS1lIzBmsALhuJkNTo4BBi/\nm5Wo1Q3r+IlzFhlrGotalbJWUvr0s42SeaDBnQTS+X+mBqWRtMo+87H4lIb8\nTBFK6ddje0jI0OmJDZDiSqnCeGKyqpbQC70F7c//4uEhZG+wHqs8kIQ9FtPt\nq0ws5k8ihGwU5d93/KRpPgRO4oZ7qHP0pqrdTVbnWMvPJgfv+8hTGxTd4LMe\nxOaOVTfHFgYvvW6hPhwEh5Dmt7IfHgH4RMECc4A4JXqmigKiXquRjSquk0YX\nQlR98Z8rWd+Wgvd7qIbyV8aBS3FJa47uDmw5rP5962oUNGspdb993mURr3N+\nt70spV1O4mU/lwyX+VItThQIDNhWqwA4d7WR4UKShriJIFISMmMbGf1XEILZ\nk5rrj0Qvl/JwYMCW2bwZnKoDxQjq5bKaJoQt2oaR4mYV2fJTN3R6GahuDkEi\nyDyEreJ6ilJqF9i5vCG3HuMWnTjgvYOsXXyCBprIdo5PGDGUIwpJBFGkrsC5\nL0c0gK05zv0rWNq89rv8gMUEOg4Lg0tR7XKJ/4SC62Vqov6RMrrpcfA0Ngu+\nzCN19fL9J7h6YPT1KIz3GIkAMRRlwHqQpEddFAm7sSg2hMSdiwTbAjc4k2K0\n7Kcg\r\n=srNq\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sokra",
+          "email": "tobias.koppers@googlemail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "sokra",
+        "email": "tobias.koppers@googlemail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/loader-runner_4.1.0_1601450686604_0.7358849863898114"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# loader-runner\n\n``` js\nimport { runLoaders } from \"loader-runner\";\n\nrunLoaders({\n\tresource: \"/abs/path/to/file.txt?query\",\n\t// String: Absolute path to the resource (optionally including query string)\n\n\tloaders: [\"/abs/path/to/loader.js?query\"],\n\t// String[]: Absolute paths to the loaders (optionally including query string)\n\t// {loader, options}[]: Absolute paths to the loaders with options object\n\n\tcontext: { minimize: true },\n\t// Additional loader context which is used as base context\n\n\treadResource: fs.readFile.bind(fs)\n\t// A function to read the resource\n\t// Must have signature function(path, function(err, buffer))\n\n}, function(err, result) {\n\t// err: Error?\n\n\t// result.result: Buffer | String\n\t// The result\n\n\t// result.resourceBuffer: Buffer\n\t// The raw resource as Buffer (useful for SourceMaps)\n\n\t// result.cacheable: Bool\n\t// Is the result cacheable or do it require reexecution?\n\n\t// result.fileDependencies: String[]\n\t// An array of paths (files) on which the result depends on\n\n\t// result.contextDependencies: String[]\n\t// An array of paths (directories) on which the result depends on\n})\n```\n\nMore documentation following...\n\n",
+  "maintainers": [
+    {
+      "name": "sokra",
+      "email": "tobias.koppers@googlemail.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-09-30T07:24:50.473Z",
+    "created": "2016-01-03T17:15:15.368Z",
+    "2.0.0": "2016-01-03T17:15:15.368Z",
+    "2.0.1": "2016-01-03T17:43:16.995Z",
+    "2.1.0": "2016-01-21T18:04:04.452Z",
+    "2.1.1": "2016-02-03T20:34:43.426Z",
+    "2.2.0": "2016-09-14T22:13:01.689Z",
+    "2.3.0": "2017-01-26T00:24:11.732Z",
+    "2.3.1": "2018-09-21T10:33:33.998Z",
+    "3.0.0": "2019-01-15T11:18:01.076Z",
+    "2.4.0": "2019-01-15T13:46:55.265Z",
+    "3.1.0": "2019-11-25T20:01:07.926Z",
+    "4.0.0": "2020-07-03T14:49:25.410Z",
+    "4.1.0": "2020-09-30T07:24:46.723Z"
+  },
+  "homepage": "https://github.com/webpack/loader-runner#readme",
+  "keywords": [
+    "webpack",
+    "loader"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webpack/loader-runner.git"
+  },
+  "author": {
+    "name": "Tobias Koppers @sokra"
+  },
+  "bugs": {
+    "url": "https://github.com/webpack/loader-runner/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "users": {
+    "langri-sha": true,
+    "nelix": true,
+    "ttionya": true
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "name": "tap-and-flow",
+  "version": "1.0.0",
+  "dependencies": {
+    "flow-parser": "0.x",
+    "flow-remove-types": "^2.112.0",
+    "ink": "^2.6.0",
+    "tap": "14"
+  }
+}

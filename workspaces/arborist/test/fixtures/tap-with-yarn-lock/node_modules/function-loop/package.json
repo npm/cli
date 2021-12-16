@@ -1,0 +1,23 @@
+{
+  "name": "function-loop",
+  "version": "1.0.2",
+  "main": "index.js",
+  "scripts": {
+    "test": "tap test.js --100"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isaacs/function-loop.git"
+  },
+  "keywords": [],
+  "author": "Isaac Z. Schlueter <i@izs.me> (http://blog.izs.me/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/isaacs/function-loop/issues"
+  },
+  "homepage": "https://github.com/isaacs/function-loop#readme",
+  "devDependencies": {
+    "tap": "^9.0.3"
+  },
+  "description": "Run a list of functions in order in a given object context.  The functions can be callback-taking or promise-returning."
+}

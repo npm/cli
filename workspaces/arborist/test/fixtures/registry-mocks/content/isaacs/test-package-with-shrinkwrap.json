@@ -1,0 +1,56 @@
+{
+  "_id": "@isaacs/test-package-with-shrinkwrap",
+  "name": "@isaacs/test-package-with-shrinkwrap",
+  "dist-tags": {
+    "latest": "1.0.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "@isaacs/test-package-with-shrinkwrap",
+      "version": "1.0.0",
+      "dependencies": {
+        "abbrev": "^1.1.1"
+      },
+      "_id": "@isaacs/test-package-with-shrinkwrap@1.0.0",
+      "_nodeVersion": "15.3.0",
+      "_npmVersion": "7.5.3",
+      "dist": {
+        "integrity": "sha512-GDiKNO3uSliDRlGtwzg+QR23XrnkmReMqlca0njWJ9t6Cd7+2MRJqaYYScnYbv1OFnUZgfVg7W/gBo5s6bzu0g==",
+        "shasum": "a89ed71ae688c901cd95cd529025b19c6bdafd2b",
+        "tarball": "https://registry.npmjs.org/@isaacs/test-package-with-shrinkwrap/-/test-package-with-shrinkwrap-1.0.0.tgz",
+        "fileCount": 2,
+        "unpackedSize": 935,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJgIzwfCRA9TVsSAnZWagAAghMP/2iAP7WrexlrjnL5h3M6\nNPqFyffEBoeEQOfkfVLjDd5x3xGQGN9fzKwDtW1uqkzWxLIXN5QojL70Jnjf\nS26UXExnKzCxKY1qtP9FEmjVsPt3FVXXV+QBx5gd2Owqy2wZRqHn94Cadwtw\nQLJdApX6SKun+JpYxeprSNa+ZJfUdQONhfXJ9X3o/gQc2Scj6Vs1OXDxtVzx\nink2qSFPW+GP+ilPp5Xp0r7Aiob2DhuDAQNP2Js4nDVSfRPqMRgaWzQJO1yv\nehurCNco8XsyZWVqCysek3wh6/0Wv3a5im9zIW3+bsyHL0KPBpszwAfjyFI2\ng/ExLwnwqLzjkIiAnRqmyfc/6hCISRTBbzRRnI6M3VS3J9UvIae0VKLvrSfc\nY9A8NZM4IhGJkyABvOHK0yCaG0kaWch3sJR8xnx7Vz1vWKJEooCdZ3jmUGf6\nUIZcqAikYih/DeM5r3ICKzEjPxsOP71obZaV2tY7NCO3Btlo17TwwT28B0Sq\nJDMXm0KgB1f5YtzUdv7/jenUWUvL7o2LpnPA7OQV49wF8tDdCt+Ee/LXIx2q\nuAO5LHk2+LWPf2GuJvprhSI8dCfXhuz2aAYscFLVtx0hq2JGOHlvJ4Ar6Srh\n3Z8QfViYEBv1j2r+pdfo/ZnvkLP5UKsjpechhrvvkoY8W0UZdqF4fH2asvSL\ne84H\r\n=K+m4\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/test-package-with-shrinkwrap_1.0.0_1612921885954_0.9308552673485551"
+      },
+      "_hasShrinkwrap": true
+    }
+  },
+  "time": {
+    "created": "2021-02-10T01:51:25.916Z",
+    "1.0.0": "2021-02-10T01:51:26.072Z",
+    "modified": "2021-02-10T01:51:30.822Z"
+  },
+  "maintainers": [
+    {
+      "name": "isaacs",
+      "email": "i@izs.me"
+    }
+  ],
+  "readme": "ERROR: No README data found!",
+  "readmeFilename": ""
+}

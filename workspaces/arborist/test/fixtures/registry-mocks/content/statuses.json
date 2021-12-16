@@ -1,0 +1,1131 @@
+{
+  "_id": "statuses",
+  "_rev": "64-bba177e63128f3968f712ce70a79bd14",
+  "name": "statuses",
+  "description": "HTTP status utility",
+  "dist-tags": {
+    "latest": "2.0.0"
+  },
+  "versions": {
+    "1.0.1": {
+      "name": "statuses",
+      "description": "HTTP status utility",
+      "version": "1.0.1",
+      "author": {
+        "name": "Jonathan Ong",
+        "email": "me@jongleberry.com",
+        "url": "http://jongleberry.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/expressjs/statuses.git"
+      },
+      "bugs": {
+        "url": "https://github.com/expressjs/statuses/issues",
+        "email": "me@jongleberry.com"
+      },
+      "license": "MIT",
+      "homepage": "https://github.com/expressjs/statuses",
+      "_id": "statuses@1.0.1",
+      "dist": {
+        "shasum": "e6e059e1bc769dfccd80fe7e9901a20a48b8ce9a",
+        "tarball": "https://registry.npmjs.org/statuses/-/statuses-1.0.1.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.4.3",
+      "_npmUser": {
+        "name": "jongleberry",
+        "email": "jonathanrichardong@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "jongleberry",
+          "email": "jonathanrichardong@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "statuses",
+      "description": "HTTP status utility",
+      "version": "1.0.2",
+      "author": {
+        "name": "Jonathan Ong",
+        "email": "me@jongleberry.com",
+        "url": "http://jongleberry.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/expressjs/statuses.git"
+      },
+      "bugs": {
+        "url": "https://github.com/expressjs/statuses/issues",
+        "email": "me@jongleberry.com"
+      },
+      "license": "MIT",
+      "homepage": "https://github.com/expressjs/statuses",
+      "_id": "statuses@1.0.2",
+      "dist": {
+        "shasum": "6e8a73c2fb0886f5eecf78e0aa2a1b9ae92ab73b",
+        "tarball": "https://registry.npmjs.org/statuses/-/statuses-1.0.2.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.4.4",
+      "_npmUser": {
+        "name": "jongleberry",
+        "email": "jonathanrichardong@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "jongleberry",
+          "email": "jonathanrichardong@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.3": {
+      "name": "statuses",
+      "description": "HTTP status utility",
+      "version": "1.0.3",
+      "author": {
+        "name": "Jonathan Ong",
+        "email": "me@jongleberry.com",
+        "url": "http://jongleberry.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/expressjs/statuses.git"
+      },
+      "bugs": {
+        "url": "https://github.com/expressjs/statuses/issues",
+        "email": "me@jongleberry.com"
+      },
+      "license": "MIT",
+      "homepage": "https://github.com/expressjs/statuses",
+      "_id": "statuses@1.0.3",
+      "_shasum": "a7d9bfb30bce92281bdba717ceb9db10d8640afb",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "jongleberry",
+        "email": "jonathanrichardong@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "jongleberry",
+          "email": "jonathanrichardong@gmail.com"
+        },
+        {
+          "name": "tjholowaychuk",
+          "email": "tj@vision-media.ca"
+        },
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "shtylman",
+          "email": "shtylman@gmail.com"
+        },
+        {
+          "name": "mscdex",
+          "email": "mscdex@mscdex.net"
+        },
+        {
+          "name": "fishrock123",
+          "email": "fishrock123@rocketmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "a7d9bfb30bce92281bdba717ceb9db10d8640afb",
+        "tarball": "https://registry.npmjs.org/statuses/-/statuses-1.0.3.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.4": {
+      "name": "statuses",
+      "description": "HTTP status utility",
+      "version": "1.0.4",
+      "author": {
+        "name": "Jonathan Ong",
+        "email": "me@jongleberry.com",
+        "url": "http://jongleberry.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jshttp/statuses"
+      },
+      "license": "MIT",
+      "keywords": [
+        "http",
+        "status",
+        "code"
+      ],
+      "files": [
+        "index.js"
+      ],
+      "gitHead": "0315a85435546839b4bcafaf5c1e6ac2acab660a",
+      "bugs": {
+        "url": "https://github.com/jshttp/statuses/issues"
+      },
+      "homepage": "https://github.com/jshttp/statuses",
+      "_id": "statuses@1.0.4",
+      "scripts": {},
+      "_shasum": "a8b203f645cf475a66426f6be690205c85f3ebdd",
+      "_from": ".",
+      "_npmVersion": "1.4.21",
+      "_npmUser": {
+        "name": "jongleberry",
+        "email": "jonathanrichardong@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "jongleberry",
+          "email": "jonathanrichardong@gmail.com"
+        },
+        {
+          "name": "tjholowaychuk",
+          "email": "tj@vision-media.ca"
+        },
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "shtylman",
+          "email": "shtylman@gmail.com"
+        },
+        {
+          "name": "mscdex",
+          "email": "mscdex@mscdex.net"
+        },
+        {
+          "name": "fishrock123",
+          "email": "fishrock123@rocketmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "a8b203f645cf475a66426f6be690205c85f3ebdd",
+        "tarball": "https://registry.npmjs.org/statuses/-/statuses-1.0.4.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "statuses",
+      "description": "HTTP status utility",
+      "version": "1.1.0",
+      "author": {
+        "name": "Jonathan Ong",
+        "email": "me@jongleberry.com",
+        "url": "http://jongleberry.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jshttp/statuses"
+      },
+      "license": "MIT",
+      "keywords": [
+        "http",
+        "status",
+        "code"
+      ],
+      "files": [
+        "index.js",
+        "codes.json",
+        "LICENSE"
+      ],
+      "devDependencies": {
+        "mocha": "1",
+        "istanbul": "0"
+      },
+      "scripts": {
+        "update": "node update.js",
+        "test": "mocha --reporter spec --bail --check-leaks",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot --check-leaks",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter spec --check-leaks"
+      },
+      "gitHead": "4d540d3e25368b97d1410bf8bd5637a5c9e20ce8",
+      "bugs": {
+        "url": "https://github.com/jshttp/statuses/issues"
+      },
+      "homepage": "https://github.com/jshttp/statuses",
+      "_id": "statuses@1.1.0",
+      "_shasum": "937882caad053f8d808d845b333cfab9def03222",
+      "_from": ".",
+      "_npmVersion": "2.0.2",
+      "_nodeVersion": "0.11.13",
+      "_npmUser": {
+        "name": "jongleberry",
+        "email": "jonathanrichardong@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "jongleberry",
+          "email": "jonathanrichardong@gmail.com"
+        },
+        {
+          "name": "tjholowaychuk",
+          "email": "tj@vision-media.ca"
+        },
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "shtylman",
+          "email": "shtylman@gmail.com"
+        },
+        {
+          "name": "mscdex",
+          "email": "mscdex@mscdex.net"
+        },
+        {
+          "name": "fishrock123",
+          "email": "fishrock123@rocketmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "937882caad053f8d808d845b333cfab9def03222",
+        "tarball": "https://registry.npmjs.org/statuses/-/statuses-1.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.1": {
+      "name": "statuses",
+      "description": "HTTP status utility",
+      "version": "1.1.1",
+      "author": {
+        "name": "Jonathan Ong",
+        "email": "me@jongleberry.com",
+        "url": "http://jongleberry.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jshttp/statuses"
+      },
+      "license": "MIT",
+      "keywords": [
+        "http",
+        "status",
+        "code"
+      ],
+      "files": [
+        "index.js",
+        "codes.json",
+        "LICENSE"
+      ],
+      "devDependencies": {
+        "mocha": "1",
+        "istanbul": "0"
+      },
+      "scripts": {
+        "update": "node update.js",
+        "test": "mocha --reporter spec --bail --check-leaks",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot --check-leaks",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter spec --check-leaks"
+      },
+      "gitHead": "9b775578df2b528c377f53f3ed3cfa03da4d1274",
+      "bugs": {
+        "url": "https://github.com/jshttp/statuses/issues"
+      },
+      "homepage": "https://github.com/jshttp/statuses",
+      "_id": "statuses@1.1.1",
+      "_shasum": "10d1811e1bd3182ea3f566bf6b4745cf8edee6cc",
+      "_from": ".",
+      "_npmVersion": "2.0.0",
+      "_npmUser": {
+        "name": "jongleberry",
+        "email": "jonathanrichardong@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "jongleberry",
+          "email": "jonathanrichardong@gmail.com"
+        },
+        {
+          "name": "tjholowaychuk",
+          "email": "tj@vision-media.ca"
+        },
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "shtylman",
+          "email": "shtylman@gmail.com"
+        },
+        {
+          "name": "mscdex",
+          "email": "mscdex@mscdex.net"
+        },
+        {
+          "name": "fishrock123",
+          "email": "fishrock123@rocketmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "10d1811e1bd3182ea3f566bf6b4745cf8edee6cc",
+        "tarball": "https://registry.npmjs.org/statuses/-/statuses-1.1.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.2.0": {
+      "name": "statuses",
+      "description": "HTTP status utility",
+      "version": "1.2.0",
+      "author": {
+        "name": "Jonathan Ong",
+        "email": "me@jongleberry.com",
+        "url": "http://jongleberry.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jshttp/statuses"
+      },
+      "license": "MIT",
+      "keywords": [
+        "http",
+        "status",
+        "code"
+      ],
+      "files": [
+        "index.js",
+        "codes.json",
+        "LICENSE"
+      ],
+      "devDependencies": {
+        "csv-parse": "0.0.6",
+        "istanbul": "0",
+        "mocha": "1",
+        "request": "^2.44.0",
+        "stream-to-array": "^2.0.2"
+      },
+      "scripts": {
+        "build": "node scripts/build.js",
+        "update": "node scripts/update.js",
+        "test": "mocha --reporter spec --bail --check-leaks",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot --check-leaks",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter spec --check-leaks"
+      },
+      "gitHead": "64dc7753f28f0302e4140602e36f0e270ddbb1bd",
+      "bugs": {
+        "url": "https://github.com/jshttp/statuses/issues"
+      },
+      "homepage": "https://github.com/jshttp/statuses",
+      "_id": "statuses@1.2.0",
+      "_shasum": "4445790d65bec29184f50d54810f67e290c1679e",
+      "_from": ".",
+      "_npmVersion": "2.0.2",
+      "_nodeVersion": "0.11.14",
+      "_npmUser": {
+        "name": "jongleberry",
+        "email": "jonathanrichardong@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "jongleberry",
+          "email": "jonathanrichardong@gmail.com"
+        },
+        {
+          "name": "tjholowaychuk",
+          "email": "tj@vision-media.ca"
+        },
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "shtylman",
+          "email": "shtylman@gmail.com"
+        },
+        {
+          "name": "mscdex",
+          "email": "mscdex@mscdex.net"
+        },
+        {
+          "name": "fishrock123",
+          "email": "fishrock123@rocketmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "4445790d65bec29184f50d54810f67e290c1679e",
+        "tarball": "https://registry.npmjs.org/statuses/-/statuses-1.2.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.2.1": {
+      "name": "statuses",
+      "description": "HTTP status utility",
+      "version": "1.2.1",
+      "author": {
+        "name": "Jonathan Ong",
+        "email": "me@jongleberry.com",
+        "url": "http://jongleberry.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jshttp/statuses"
+      },
+      "license": "MIT",
+      "keywords": [
+        "http",
+        "status",
+        "code"
+      ],
+      "files": [
+        "index.js",
+        "codes.json",
+        "LICENSE"
+      ],
+      "devDependencies": {
+        "csv-parse": "0.0.6",
+        "istanbul": "0",
+        "mocha": "1",
+        "stream-to-array": "2"
+      },
+      "scripts": {
+        "build": "node scripts/build.js",
+        "update": "node scripts/update.js",
+        "test": "mocha --reporter spec --bail --check-leaks",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot --check-leaks",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter spec --check-leaks"
+      },
+      "gitHead": "49e6ac7ae4c63ee8186f56cb52112a7eeda28ed7",
+      "bugs": {
+        "url": "https://github.com/jshttp/statuses/issues"
+      },
+      "homepage": "https://github.com/jshttp/statuses",
+      "_id": "statuses@1.2.1",
+      "_shasum": "dded45cc18256d51ed40aec142489d5c61026d28",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "maintainers": [
+        {
+          "name": "jongleberry",
+          "email": "jonathanrichardong@gmail.com"
+        },
+        {
+          "name": "tjholowaychuk",
+          "email": "tj@vision-media.ca"
+        },
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "shtylman",
+          "email": "shtylman@gmail.com"
+        },
+        {
+          "name": "mscdex",
+          "email": "mscdex@mscdex.net"
+        },
+        {
+          "name": "fishrock123",
+          "email": "fishrock123@rocketmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "dded45cc18256d51ed40aec142489d5c61026d28",
+        "tarball": "https://registry.npmjs.org/statuses/-/statuses-1.2.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.3.0": {
+      "name": "statuses",
+      "description": "HTTP status utility",
+      "version": "1.3.0",
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "Jonathan Ong",
+          "email": "me@jongleberry.com",
+          "url": "http://jongleberry.com"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jshttp/statuses"
+      },
+      "license": "MIT",
+      "keywords": [
+        "http",
+        "status",
+        "code"
+      ],
+      "files": [
+        "HISTORY.md",
+        "index.js",
+        "codes.json",
+        "LICENSE"
+      ],
+      "devDependencies": {
+        "csv-parse": "1.0.1",
+        "eslint": "2.10.2",
+        "eslint-config-standard": "5.3.1",
+        "eslint-plugin-promise": "1.1.0",
+        "eslint-plugin-standard": "1.3.2",
+        "istanbul": "0.4.3",
+        "mocha": "1.21.5",
+        "stream-to-array": "2.2.0"
+      },
+      "engines": {
+        "node": ">= 0.6"
+      },
+      "scripts": {
+        "build": "node scripts/build.js",
+        "fetch": "node scripts/fetch.js",
+        "lint": "eslint **/*.js",
+        "test": "mocha --reporter spec --check-leaks --bail test/",
+        "test-ci": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter spec --check-leaks test/",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot --check-leaks test/",
+        "update": "npm run fetch && npm run build"
+      },
+      "gitHead": "b3e31e8c32dd8107e898b44b8c0b2dfff3cba495",
+      "bugs": {
+        "url": "https://github.com/jshttp/statuses/issues"
+      },
+      "homepage": "https://github.com/jshttp/statuses",
+      "_id": "statuses@1.3.0",
+      "_shasum": "8e55758cb20e7682c1f4fce8dcab30bf01d1e07a",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "maintainers": [
+        {
+          "name": "defunctzombie",
+          "email": "shtylman@gmail.com"
+        },
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "fishrock123",
+          "email": "fishrock123@rocketmail.com"
+        },
+        {
+          "name": "jongleberry",
+          "email": "jonathanrichardong@gmail.com"
+        },
+        {
+          "name": "mscdex",
+          "email": "mscdex@mscdex.net"
+        },
+        {
+          "name": "tjholowaychuk",
+          "email": "tj@vision-media.ca"
+        }
+      ],
+      "dist": {
+        "shasum": "8e55758cb20e7682c1f4fce8dcab30bf01d1e07a",
+        "tarball": "https://registry.npmjs.org/statuses/-/statuses-1.3.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/statuses-1.3.0.tgz_1463517875633_0.19560232176445425"
+      },
+      "directories": {}
+    },
+    "1.3.1": {
+      "name": "statuses",
+      "description": "HTTP status utility",
+      "version": "1.3.1",
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "Jonathan Ong",
+          "email": "me@jongleberry.com",
+          "url": "http://jongleberry.com"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jshttp/statuses"
+      },
+      "license": "MIT",
+      "keywords": [
+        "http",
+        "status",
+        "code"
+      ],
+      "files": [
+        "HISTORY.md",
+        "index.js",
+        "codes.json",
+        "LICENSE"
+      ],
+      "devDependencies": {
+        "csv-parse": "1.1.7",
+        "eslint": "3.10.0",
+        "eslint-config-standard": "6.2.1",
+        "eslint-plugin-promise": "3.3.2",
+        "eslint-plugin-standard": "2.0.1",
+        "istanbul": "0.4.5",
+        "mocha": "1.21.5",
+        "stream-to-array": "2.3.0"
+      },
+      "engines": {
+        "node": ">= 0.6"
+      },
+      "scripts": {
+        "build": "node scripts/build.js",
+        "fetch": "node scripts/fetch.js",
+        "lint": "eslint .",
+        "test": "mocha --reporter spec --check-leaks --bail test/",
+        "test-ci": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter spec --check-leaks test/",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot --check-leaks test/",
+        "update": "npm run fetch && npm run build"
+      },
+      "gitHead": "28a619be77f5b4741e6578a5764c5b06ec6d4aea",
+      "bugs": {
+        "url": "https://github.com/jshttp/statuses/issues"
+      },
+      "homepage": "https://github.com/jshttp/statuses",
+      "_id": "statuses@1.3.1",
+      "_shasum": "faf51b9eb74aaef3b3acf4ad5f61abf24cb7b93e",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "maintainers": [
+        {
+          "name": "defunctzombie",
+          "email": "shtylman@gmail.com"
+        },
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "fishrock123",
+          "email": "fishrock123@rocketmail.com"
+        },
+        {
+          "name": "jongleberry",
+          "email": "jonathanrichardong@gmail.com"
+        },
+        {
+          "name": "mscdex",
+          "email": "mscdex@mscdex.net"
+        },
+        {
+          "name": "tjholowaychuk",
+          "email": "tj@vision-media.ca"
+        }
+      ],
+      "dist": {
+        "shasum": "faf51b9eb74aaef3b3acf4ad5f61abf24cb7b93e",
+        "tarball": "https://registry.npmjs.org/statuses/-/statuses-1.3.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/statuses-1.3.1.tgz_1478923281491_0.5574048184789717"
+      },
+      "directories": {}
+    },
+    "1.4.0": {
+      "name": "statuses",
+      "description": "HTTP status utility",
+      "version": "1.4.0",
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "Jonathan Ong",
+          "email": "me@jongleberry.com",
+          "url": "http://jongleberry.com"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jshttp/statuses.git"
+      },
+      "license": "MIT",
+      "keywords": [
+        "http",
+        "status",
+        "code"
+      ],
+      "files": [
+        "HISTORY.md",
+        "index.js",
+        "codes.json",
+        "LICENSE"
+      ],
+      "devDependencies": {
+        "csv-parse": "1.2.4",
+        "eslint": "3.19.0",
+        "eslint-config-standard": "10.2.1",
+        "eslint-plugin-import": "2.8.0",
+        "eslint-plugin-markdown": "1.0.0-beta.6",
+        "eslint-plugin-node": "5.2.0",
+        "eslint-plugin-promise": "3.6.0",
+        "eslint-plugin-standard": "3.0.1",
+        "istanbul": "0.4.5",
+        "mocha": "1.21.5",
+        "raw-body": "2.3.2",
+        "stream-to-array": "2.3.0"
+      },
+      "engines": {
+        "node": ">= 0.6"
+      },
+      "scripts": {
+        "build": "node scripts/build.js",
+        "fetch": "node scripts/fetch-apache.js && node scripts/fetch-iana.js && node scripts/fetch-nginx.js && node scripts/fetch-node.js",
+        "lint": "eslint --plugin markdown --ext js,md .",
+        "test": "mocha --reporter spec --check-leaks --bail test/",
+        "test-ci": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter spec --check-leaks test/",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot --check-leaks test/",
+        "update": "npm run fetch && npm run build"
+      },
+      "gitHead": "f76682144d9f0ed2c726bf0a8c868a33e393a8e5",
+      "bugs": {
+        "url": "https://github.com/jshttp/statuses/issues"
+      },
+      "homepage": "https://github.com/jshttp/statuses#readme",
+      "_id": "statuses@1.4.0",
+      "_npmVersion": "5.4.2",
+      "_nodeVersion": "6.11.4",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "dist": {
+        "integrity": "sha512-zhSCtt8v2NDrRlPQpCNtw/heZLtfUDqxBM1udqikb/Hbk52LK4nQSwr10u77iopCW5LsyHpuXS0GnEc48mLeew==",
+        "shasum": "bb73d446da2796106efcc1b601a253d6c46bd087",
+        "tarball": "https://registry.npmjs.org/statuses/-/statuses-1.4.0.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "shtylman@gmail.com",
+          "name": "defunctzombie"
+        },
+        {
+          "email": "tj@vision-media.ca",
+          "name": "tjholowaychuk"
+        },
+        {
+          "email": "doug@somethingdoug.com",
+          "name": "dougwilson"
+        },
+        {
+          "email": "mscdex@mscdex.net",
+          "name": "mscdex"
+        },
+        {
+          "email": "fishrock123@rocketmail.com",
+          "name": "fishrock123"
+        },
+        {
+          "email": "jonathanrichardong@gmail.com",
+          "name": "jongleberry"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/statuses-1.4.0.tgz_1508525480889_0.6966120798606426"
+      },
+      "directories": {}
+    },
+    "1.5.0": {
+      "name": "statuses",
+      "description": "HTTP status utility",
+      "version": "1.5.0",
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "Jonathan Ong",
+          "email": "me@jongleberry.com",
+          "url": "http://jongleberry.com"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jshttp/statuses.git"
+      },
+      "license": "MIT",
+      "keywords": [
+        "http",
+        "status",
+        "code"
+      ],
+      "files": [
+        "HISTORY.md",
+        "index.js",
+        "codes.json",
+        "LICENSE"
+      ],
+      "devDependencies": {
+        "csv-parse": "1.2.4",
+        "eslint": "4.19.1",
+        "eslint-config-standard": "11.0.0",
+        "eslint-plugin-import": "2.9.0",
+        "eslint-plugin-markdown": "1.0.0-beta.6",
+        "eslint-plugin-node": "6.0.1",
+        "eslint-plugin-promise": "3.7.0",
+        "eslint-plugin-standard": "3.0.1",
+        "istanbul": "0.4.5",
+        "mocha": "1.21.5",
+        "raw-body": "2.3.2",
+        "stream-to-array": "2.3.0"
+      },
+      "engines": {
+        "node": ">= 0.6"
+      },
+      "scripts": {
+        "build": "node scripts/build.js",
+        "fetch": "node scripts/fetch-apache.js && node scripts/fetch-iana.js && node scripts/fetch-nginx.js && node scripts/fetch-node.js",
+        "lint": "eslint --plugin markdown --ext js,md .",
+        "test": "mocha --reporter spec --check-leaks --bail test/",
+        "test-ci": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter spec --check-leaks test/",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot --check-leaks test/",
+        "update": "npm run fetch && npm run build"
+      },
+      "gitHead": "4fcf6fb80ef50e8f0603b87946b0fa7868c815e7",
+      "bugs": {
+        "url": "https://github.com/jshttp/statuses/issues"
+      },
+      "homepage": "https://github.com/jshttp/statuses#readme",
+      "_id": "statuses@1.5.0",
+      "_shasum": "161c7dac177659fd9811f43771fa99381478628c",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.13.1",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "dist": {
+        "shasum": "161c7dac177659fd9811f43771fa99381478628c",
+        "tarball": "https://registry.npmjs.org/statuses/-/statuses-1.5.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 11034
+      },
+      "maintainers": [
+        {
+          "email": "shtylman@gmail.com",
+          "name": "defunctzombie"
+        },
+        {
+          "email": "doug@somethingdoug.com",
+          "name": "dougwilson"
+        },
+        {
+          "email": "fishrock123@rocketmail.com",
+          "name": "fishrock123"
+        },
+        {
+          "email": "jonathanrichardong@gmail.com",
+          "name": "jongleberry"
+        },
+        {
+          "email": "mscdex@mscdex.net",
+          "name": "mscdex"
+        },
+        {
+          "email": "tj@vision-media.ca",
+          "name": "tjholowaychuk"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/statuses_1.5.0_1522201397898_0.27375877363523005"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.0": {
+      "name": "statuses",
+      "description": "HTTP status utility",
+      "version": "2.0.0",
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "Jonathan Ong",
+          "email": "me@jongleberry.com",
+          "url": "http://jongleberry.com"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jshttp/statuses.git"
+      },
+      "license": "MIT",
+      "keywords": [
+        "http",
+        "status",
+        "code"
+      ],
+      "devDependencies": {
+        "csv-parse": "4.8.8",
+        "eslint": "6.8.0",
+        "eslint-config-standard": "14.1.1",
+        "eslint-plugin-import": "2.20.2",
+        "eslint-plugin-markdown": "1.0.2",
+        "eslint-plugin-node": "11.1.0",
+        "eslint-plugin-promise": "4.2.1",
+        "eslint-plugin-standard": "4.0.1",
+        "mocha": "7.1.1",
+        "nyc": "15.0.1",
+        "raw-body": "2.4.1",
+        "stream-to-array": "2.3.0"
+      },
+      "engines": {
+        "node": ">= 0.8"
+      },
+      "scripts": {
+        "build": "node scripts/build.js",
+        "fetch": "node scripts/fetch-apache.js && node scripts/fetch-iana.js && node scripts/fetch-nginx.js && node scripts/fetch-node.js",
+        "lint": "eslint --plugin markdown --ext js,md .",
+        "test": "mocha --reporter spec --check-leaks --bail test/",
+        "test-ci": "nyc --reporter=text npm test",
+        "test-cov": "nyc --reporter=html --reporter=text npm test",
+        "update": "npm run fetch && npm run build",
+        "version": "node scripts/version-history.js && git add HISTORY.md"
+      },
+      "gitHead": "3bf877301beccf9a4dd0814ff8e2e0e260a7e7c6",
+      "bugs": {
+        "url": "https://github.com/jshttp/statuses/issues"
+      },
+      "homepage": "https://github.com/jshttp/statuses#readme",
+      "_id": "statuses@2.0.0",
+      "_nodeVersion": "13.12.0",
+      "_npmVersion": "6.14.4",
+      "dist": {
+        "integrity": "sha512-w9jNUUQdpuVoYqXxnyOakhckBbOxRaoYqJscyIBYCS5ixyCnO7nQn7zBZvP9zf5QOPZcz2DLUpE3KsNPbJBOFA==",
+        "shasum": "aa7b107e018eb33e08e8aee2e7337e762dda1028",
+        "tarball": "https://registry.npmjs.org/statuses/-/statuses-2.0.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 11666,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJenLN9CRA9TVsSAnZWagAATRcQAJUaqCVG9040tRrUxUdA\nIw3zgdZE2bFqllS/qFdwrho8dnxFhvVTZH9ufDQKFrnD52j7Zq/aF3j0UGEF\nW+1dSPzmleON/wagvwsi61GqsyNZWUOYYXsQtfJw6UtLrgcmAeNkXvcWyqvY\n9gWW8/27sMqpcECZLdXX9CaH9ZnBdJr8hIx/qUCAVKBhKLXTVN23/vrlguUM\nXPavbi0uuWy4qFYx1Pejs1BBgizSvD1/8oNf9IldtEX0vtIvE8JHBxCc1nFE\noQiTH+G8PUHUDvW14pxvMge+sXiLIYYfUipxBjzUVimv3QkeBUq9kLDjuwUO\nhegOeaxCqti73VlNHS+Xrgyqsr6nxcyDAiQcfVA4Kq8D3DEOUsBQK1BaDX3D\nuWNRi7mxDxP0I9IE6waj1kH8W4aaPY5q7rN4FDkeM5Cqd0BIQmlzOh1KrRsq\npgAAh+Jke6fDvegcPhNFXUsikAxbggbkBZtbana6lIcevuufOGQTmvktmcuw\nUHKixZEnuuhxR1OuGLU+PPGGugJcckRY56Xe37RriVXUZmWgPcBfb4mMKC2L\n52zMuRvy8j87j+uMN79TYdrZQw9DH+A428o22kKamIGBkGquXRIQu8sK1Is9\n6jOnhoilhjBZ7bgEa4snAlL1s2VeRpqdKWkwIVlGMYUWR73E0khTqgJ8Oblv\n9n90\r\n=DsWi\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "doug@somethingdoug.com",
+          "name": "dougwilson"
+        },
+        {
+          "email": "jonathanrichardong@gmail.com",
+          "name": "jongleberry"
+        }
+      ],
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/statuses_2.0.0_1587327868540_0.816822952129105"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# statuses\n\n[![NPM Version][npm-version-image]][npm-url]\n[![NPM Downloads][npm-downloads-image]][npm-url]\n[![Node.js Version][node-version-image]][node-version-url]\n[![Build Status][travis-image]][travis-url]\n[![Test Coverage][coveralls-image]][coveralls-url]\n\nHTTP status utility for node.\n\nThis module provides a list of status codes and messages sourced from\na few different projects:\n\n  * The [IANA Status Code Registry](https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml)\n  * The [Node.js project](https://nodejs.org/)\n  * The [NGINX project](https://www.nginx.com/)\n  * The [Apache HTTP Server project](https://httpd.apache.org/)\n\n## Installation\n\nThis is a [Node.js](https://nodejs.org/en/) module available through the\n[npm registry](https://www.npmjs.com/). Installation is done using the\n[`npm install` command](https://docs.npmjs.com/getting-started/installing-npm-packages-locally):\n\n```sh\n$ npm install statuses\n```\n\n## API\n\n<!-- eslint-disable no-unused-vars -->\n\n```js\nvar status = require('statuses')\n```\n\n### status(code)\n\nReturns the status message string for a known HTTP status code. The code\nmay be a number or a string. An error is thrown for an unknown status code.\n\n<!-- eslint-disable no-undef -->\n\n```js\nstatus(403) // => 'Forbidden'\nstatus('403') // => 'Forbidden'\nstatus(306) // throws\n```\n\n### status(msg)\n\nReturns the numeric status code for a known HTTP status message. The message\nis case-insensitive. An error is thrown for an unknown status message.\n\n<!-- eslint-disable no-undef -->\n\n```js\nstatus('forbidden') // => 403\nstatus('Forbidden') // => 403\nstatus('foo') // throws\n```\n\n### status.codes\n\nReturns an array of all the status codes as `Integer`s.\n\n### status.code[msg]\n\nReturns the numeric status code for a known status message (in lower-case),\notherwise `undefined`.\n\n<!-- eslint-disable no-undef, no-unused-expressions -->\n\n```js\nstatus['not found'] // => 404\n```\n\n### status.empty[code]\n\nReturns `true` if a status code expects an empty body.\n\n<!-- eslint-disable no-undef, no-unused-expressions -->\n\n```js\nstatus.empty[200] // => undefined\nstatus.empty[204] // => true\nstatus.empty[304] // => true\n```\n\n### status.message[code]\n\nReturns the string message for a known numeric status code, otherwise\n`undefined`. This object is the same format as the\n[Node.js http module `http.STATUS_CODES`](https://nodejs.org/dist/latest/docs/api/http.html#http_http_status_codes).\n\n<!-- eslint-disable no-undef, no-unused-expressions -->\n\n```js\nstatus.message[404] // => 'Not Found'\n```\n\n### status.redirect[code]\n\nReturns `true` if a status code is a valid redirect status.\n\n<!-- eslint-disable no-undef, no-unused-expressions -->\n\n```js\nstatus.redirect[200] // => undefined\nstatus.redirect[301] // => true\n```\n\n### status.retry[code]\n\nReturns `true` if you should retry the rest.\n\n<!-- eslint-disable no-undef, no-unused-expressions -->\n\n```js\nstatus.retry[501] // => undefined\nstatus.retry[503] // => true\n```\n\n## License\n\n[MIT](LICENSE)\n\n[coveralls-image]: https://badgen.net/coveralls/c/github/jshttp/statuses/master\n[coveralls-url]: https://coveralls.io/r/jshttp/statuses?branch=master\n[node-version-image]: https://badgen.net/npm/node/statuses\n[node-version-url]: https://nodejs.org/en/download\n[npm-downloads-image]: https://badgen.net/npm/dm/statuses\n[npm-url]: https://npmjs.org/package/statuses\n[npm-version-image]: https://badgen.net/npm/v/statuses\n[travis-image]: https://badgen.net/travis/jshttp/statuses/master\n[travis-url]: https://travis-ci.org/jshttp/statuses\n",
+  "maintainers": [
+    {
+      "email": "doug@somethingdoug.com",
+      "name": "dougwilson"
+    },
+    {
+      "email": "jonathanrichardong@gmail.com",
+      "name": "jongleberry"
+    }
+  ],
+  "time": {
+    "modified": "2020-04-19T20:24:31.140Z",
+    "created": "2014-03-13T01:21:33.978Z",
+    "1.0.1": "2014-03-13T01:21:33.978Z",
+    "1.0.2": "2014-03-14T19:13:18.390Z",
+    "1.0.3": "2014-06-09T07:25:34.449Z",
+    "1.0.4": "2014-08-21T08:55:36.731Z",
+    "1.1.0": "2014-09-22T00:42:03.183Z",
+    "1.1.1": "2014-09-25T00:25:01.485Z",
+    "1.2.0": "2014-09-29T04:11:14.857Z",
+    "1.2.1": "2015-02-01T23:52:50.008Z",
+    "1.3.0": "2016-05-17T20:44:38.170Z",
+    "1.3.1": "2016-11-12T04:01:23.592Z",
+    "1.4.0": "2017-10-20T18:51:21.858Z",
+    "1.5.0": "2018-03-28T01:43:17.941Z",
+    "2.0.0": "2020-04-19T20:24:28.697Z"
+  },
+  "homepage": "https://github.com/jshttp/statuses#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jshttp/statuses.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jshttp/statuses/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "users": {
+    "tunnckocore": true,
+    "mimmo1": true,
+    "darkowlzz": true,
+    "docksteaderluke": true,
+    "goodseller": true,
+    "maximilianschmitt": true,
+    "j3kz": true,
+    "h0ward": true,
+    "unboundev": true,
+    "igorissen": true,
+    "cwagner": true,
+    "mojaray2k": true,
+    "kodekracker": true,
+    "nickeltobias": true,
+    "ziflex": true,
+    "jota": true,
+    "wangnan0610": true,
+    "quafoo": true,
+    "bengi": true,
+    "daizch": true,
+    "456wyc": true,
+    "snowdream": true,
+    "xueboren": true,
+    "eyson": true,
+    "tedyhy": true,
+    "zhenguo.zhao": true,
+    "hualei": true
+  },
+  "keywords": [
+    "http",
+    "status",
+    "code"
+  ],
+  "contributors": [
+    {
+      "name": "Douglas Christopher Wilson",
+      "email": "doug@somethingdoug.com"
+    },
+    {
+      "name": "Jonathan Ong",
+      "email": "me@jongleberry.com",
+      "url": "http://jongleberry.com"
+    }
+  ]
+}

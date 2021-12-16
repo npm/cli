@@ -1,0 +1,121 @@
+{
+  "_id": "release-zalgo",
+  "_rev": "2-bbe8ff7d546cee9e07d2db9511b99734",
+  "name": "release-zalgo",
+  "description": "Helps you write code with promise-like chains that can run both synchronously and asynchronously",
+  "dist-tags": {
+    "latest": "1.0.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "release-zalgo",
+      "version": "1.0.0",
+      "description": "Helps you write code with promise-like chains that can run both synchronously and asynchronously",
+      "main": "index.js",
+      "files": [
+        "index.js",
+        "lib"
+      ],
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "lint": "as-i-preach",
+        "test": "ava",
+        "posttest": "as-i-preach",
+        "coverage": "nyc npm test"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/novemberborn/release-zalgo.git"
+      },
+      "keywords": [
+        "babel"
+      ],
+      "author": {
+        "name": "Mark Wubben",
+        "url": "https://novemberborn.net/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/novemberborn/release-zalgo/issues"
+      },
+      "homepage": "https://github.com/novemberborn/release-zalgo#readme",
+      "dependencies": {
+        "es6-error": "^4.0.1"
+      },
+      "devDependencies": {
+        "@novemberborn/as-i-preach": "^7.0.0",
+        "ava": "^0.18.0",
+        "coveralls": "^2.11.15",
+        "nyc": "^10.1.2"
+      },
+      "nyc": {
+        "reporter": [
+          "html",
+          "lcov",
+          "text"
+        ]
+      },
+      "standard-engine": "@novemberborn/as-i-preach",
+      "gitHead": "696e6ac92340120fe4b26fce4152f0197b45183b",
+      "_id": "release-zalgo@1.0.0",
+      "_shasum": "09700b7e5074329739330e535c5a90fb67851730",
+      "_from": ".",
+      "_npmVersion": "4.1.2",
+      "_nodeVersion": "7.4.0",
+      "_npmUser": {
+        "name": "novemberborn",
+        "email": "mark@novemberborn.net"
+      },
+      "dist": {
+        "shasum": "09700b7e5074329739330e535c5a90fb67851730",
+        "tarball": "https://registry.npmjs.org/release-zalgo/-/release-zalgo-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "novemberborn",
+          "email": "mark@novemberborn.net"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/release-zalgo-1.0.0.tgz_1486135246627_0.704961761366576"
+      },
+      "directories": {}
+    }
+  },
+  "readme": "# release-zalgo\n\nHelps you write code with promise-like chains that can run both synchronously\nand asynchronously.\n\n## Installation\n\n```console\n$ npm install --save release-zalgo\n```\n\n## Usage\n\nIf you use this module, you'll release **Ẕ̶̨̫̹̌͊͌͑͊̕͢͟a̡̜̦̝͓͇͗̉̆̂͋̏͗̍ͅl̡̛̝͍̅͆̎̊̇̕͜͢ģ̧̧͍͓̜̲͖̹̂͋̆̃̑͗̋͌̊̏ͅǫ̷̧͓̣͚̞̣̋̂̑̊̂̀̿̀̚͟͠ͅ**. You mustn't do that.\n\nBefore you proceed, please read this great post by [Isaac\nSchlueter](http://izs.me/) on [Designing APIs for\nAsynchrony](http://blog.izs.me/post/59142742143/designing-apis-for-asynchrony).\n\nThe first rule of using this package is to keep your external API consistent.\n\nThe second rule is to accept the burden of controlling Ẕ̶̨̫̹̌͊͌͑͊̕͢͟a̡̜̦̝͓͇͗̉̆̂͋̏͗̍ͅl̡̛̝͍̅͆̎̊̇̕͜͢ģ̧̧͍͓̜̲͖̹̂͋̆̃̑͗̋͌̊̏ͅǫ̷̧͓̣͚̞̣̋̂̑̊̂̀̿̀̚͟͠ͅ by ensuring he does not escape your API boundary.\n\nWith that out of the way… this package lets you write code that can run both\nsynchronously and asynchronously. This is useful if you have fairly complex\nlogic for which you don't want to write multiple implementations. See\n[`package-hash`](https://github.com/novemberborn/package-hash) for instance.\n\nThis is best shown by example. Let's say you have a `hashFile()` function:\n\n```js\nconst crypto = require('crypto')\nconst fs = require('fs')\n\nfunction hashFile (file) {\n  return new Promise((resolve, reject) => {\n    fs.readFile(file, (err, buffer) => err ? reject(err) : resolve(buffer))\n  })\n    .then(buffer => {\n      const hash = crypto.createHash('sha1')\n      hash.update(buffer)\n      return hash.digest('hex')\n    })\n}\n```\n\nA synchronous version could be implemented like this:\n\n```js\nfunction hashFileSync (file) {\n  const buffer = fs.readFileSync(file)\n  const hash = crypto.createHash('sha1')\n  hash.update(buffer)\n  return hash.digest('hex')\n}\n```\n\nHere's the version that uses `release-zalgo`:\n\n```js\nconst crypto = require('crypto')\nconst fs = require('fs')\n\nconst releaseZalgo = require('release-zalgo')\n\nconst readFile = {\n  async (file) {\n    return new Promise((resolve, reject) => {\n      fs.readFile(file, (err, buffer) => err ? reject(err) : resolve(buffer))\n    })\n  },\n\n  sync (file) {\n    return fs.readFileSync(file)\n  }\n}\n\nfunction run (zalgo, file) {\n  return zalgo.run(readFile, file)\n    .then(buffer => {\n      const hash = crypto.createHash('sha1')\n      hash.update(buffer)\n      return hash.digest('hex')\n    })\n}\n\nfunction hashFile (file) {\n  return run(releaseZalgo.async(), file)\n}\n\nfunction hashFileSync (file) {\n  const result = run(releaseZalgo.sync(), file)\n  return releaseZalgo.unwrapSync(result)\n}\n```\n\nNote how close the `run()` implementation is to the original `hashFile()`.\n\nJust don't do this:\n\n```js\nfunction badExample (zalgo, file) {\n  let buffer\n  zalgo.run(readFile, file)\n    .then(result => { buffer = result })\n\n  const hash = crypto.createHash('sha1')\n  hash.update(buffer)\n  return hash.digest('hex')\n}\n```\n\nThis won't work asynchronously. Just pretend you're working with promises and\nyou'll be OK.\n\n## API\n\nFirst require the package:\n\n```js\nconst releaseZalgo = require('release-zalgo')\n```\n\n### `releaseZalgo.sync()`\n\nReturns a `zalgo` object that runs code synchronously:\n\n```js\nconst zalgo = releaseZalgo.sync()\n```\n\n### `releaseZalgo.async()`\n\nReturns a `zalgo` object that runs code asynchronously:\n\n```js\nconst zalgo = releaseZalgo.async()\n```\n\n### `releaseZalgo.unwrapSync(thenable)`\n\nSynchronously unwraps a [thenable], which is returned when running\nsynchronously. Returns the [thenable]s fulfilment value, or throws its\nrejection reason. Throws if the [thenable] is asynchronous.\n\n### `zalgo.run(executors, ...args)`\n\nWhen running synchronously, `executors.sync()` is called. When running\nasynchronously `executors.async()` is used. The executer is invoked immediately\nand passed the remaining arguments.\n\nFor asynchronous execution a `Promise` is returned. It is fulfilled with\n`executors.async()`'s return value, or rejected if `executors.async()` throws.\n\nFor synchronous execution a *[thenable]* is returned. It has the same methods as\n`Promise` except that callbacks are invoked immediately. The [thenable] is\nfulfilled with `executors.sync()`'s return value, or rejected if\n`executors.sync()` throws.\n\n### `zalgo.all(arr)`\n\nWhen running synchronously, returns a new [thenable] which is fulfilled with\nan array, after unwrapping all items in `arr`.\n\nWhen running asynchronously, delegates to `Promise.all(arr)`.\n\n### `zalgo.returns(value)`\n\nWhen running synchronously, returns a new [thenable] which is fulfilled with\n`value`.\n\nWhen running asynchronously, delegates to `Promise.resolve(value)`.\n\n### `zalgo.throws(reason)`\n\nWhen running synchronously, returns a new [thenable] which is rejected with\n`reason`.\n\nWhen running asynchronously, delegates to `Promise.reject(reason)`.\n\n### Thenables\n\nThenables are returned when running sychronously. They're much like `Promise`s,\nin that they have `then()` and `catch()` methods. You can pass callbacks and\nthey'll be invoked with the fulfilment value or rejection reason. Callbacks\ncan return other thenables or throw exceptions.\n\nNote that `then()` and `catch()` must be called on the thenable, e.g.\n`thenable.then()`, not `(thenable.then)()`.\n\nThenables should not be exposed outside of your API. Use\n`releaseZalgo.unwrapSync()` to unwrap them.\n\n[thenable]: #thenables\n",
+  "maintainers": [
+    {
+      "name": "novemberborn",
+      "email": "mark@novemberborn.net"
+    }
+  ],
+  "time": {
+    "modified": "2017-10-01T10:15:04.458Z",
+    "created": "2017-02-03T15:20:48.613Z",
+    "1.0.0": "2017-02-03T15:20:48.613Z"
+  },
+  "homepage": "https://github.com/novemberborn/release-zalgo#readme",
+  "keywords": [
+    "babel"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/novemberborn/release-zalgo.git"
+  },
+  "author": {
+    "name": "Mark Wubben",
+    "url": "https://novemberborn.net/"
+  },
+  "bugs": {
+    "url": "https://github.com/novemberborn/release-zalgo/issues"
+  },
+  "license": "ISC",
+  "readmeFilename": "README.md",
+  "users": {
+    "sampic": true
+  },
+  "_attachments": {}
+}

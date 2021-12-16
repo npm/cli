@@ -1,0 +1,1058 @@
+{
+  "_id": "hash.js",
+  "_rev": "47-44a0cea30cd6ec6f76d35d71076c57f1",
+  "name": "hash.js",
+  "description": "Various hash functions that could be run by both browser and node",
+  "dist-tags": {
+    "latest": "1.1.7"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "hash.js",
+      "version": "0.1.0",
+      "description": "Various hash functions that could be run by both browser and node",
+      "main": "lib/hash.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/hash.js"
+      },
+      "keywords": [
+        "hash",
+        "sha256",
+        "sha224",
+        "hmac"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/hash.js/issues"
+      },
+      "homepage": "https://github.com/indutny/hash.js",
+      "devDependencies": {
+        "mocha": "^1.18.2"
+      },
+      "_id": "hash.js@0.1.0",
+      "_shasum": "88ee2ca98ab25399b592cb935d77419bf948fd25",
+      "_from": ".",
+      "_npmVersion": "1.4.7",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "88ee2ca98ab25399b592cb935d77419bf948fd25",
+        "tarball": "https://registry.npmjs.org/hash.js/-/hash.js-0.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.0": {
+      "name": "hash.js",
+      "version": "0.2.0",
+      "description": "Various hash functions that could be run by both browser and node",
+      "main": "lib/hash.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/hash.js"
+      },
+      "keywords": [
+        "hash",
+        "sha256",
+        "sha224",
+        "hmac"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/hash.js/issues"
+      },
+      "homepage": "https://github.com/indutny/hash.js",
+      "devDependencies": {
+        "mocha": "^1.18.2"
+      },
+      "_id": "hash.js@0.2.0",
+      "_shasum": "be3729680fd5541fbce74b70a5514bd0d3afdd81",
+      "_from": ".",
+      "_npmVersion": "1.4.7",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "be3729680fd5541fbce74b70a5514bd0d3afdd81",
+        "tarball": "https://registry.npmjs.org/hash.js/-/hash.js-0.2.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.1": {
+      "name": "hash.js",
+      "version": "0.2.1",
+      "description": "Various hash functions that could be run by both browser and node",
+      "main": "lib/hash.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/hash.js"
+      },
+      "keywords": [
+        "hash",
+        "sha256",
+        "sha224",
+        "hmac"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/hash.js/issues"
+      },
+      "homepage": "https://github.com/indutny/hash.js",
+      "devDependencies": {
+        "mocha": "^1.18.2"
+      },
+      "_id": "hash.js@0.2.1",
+      "_shasum": "30a06810932478e53c0c4509fe7f1db62e38c6ff",
+      "_from": ".",
+      "_npmVersion": "1.4.7",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "30a06810932478e53c0c4509fe7f1db62e38c6ff",
+        "tarball": "https://registry.npmjs.org/hash.js/-/hash.js-0.2.1.tgz"
+      },
+      "directories": {}
+    },
+    "0.3.1": {
+      "name": "hash.js",
+      "version": "0.3.1",
+      "description": "Various hash functions that could be run by both browser and node",
+      "main": "lib/hash.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/hash.js"
+      },
+      "keywords": [
+        "hash",
+        "sha256",
+        "sha224",
+        "hmac"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/hash.js/issues"
+      },
+      "homepage": "https://github.com/indutny/hash.js",
+      "dependencies": {
+        "inherits": "^2.0.1"
+      },
+      "devDependencies": {
+        "mocha": "^1.18.2"
+      },
+      "_id": "hash.js@0.3.1",
+      "_shasum": "36db4f82c22b2862713f7b53457ff55cf8d01827",
+      "_from": ".",
+      "_npmVersion": "1.4.7",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "36db4f82c22b2862713f7b53457ff55cf8d01827",
+        "tarball": "https://registry.npmjs.org/hash.js/-/hash.js-0.3.1.tgz"
+      },
+      "directories": {}
+    },
+    "0.3.2": {
+      "name": "hash.js",
+      "version": "0.3.2",
+      "description": "Various hash functions that could be run by both browser and node",
+      "main": "lib/hash.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/hash.js"
+      },
+      "keywords": [
+        "hash",
+        "sha256",
+        "sha224",
+        "hmac"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/hash.js/issues"
+      },
+      "homepage": "https://github.com/indutny/hash.js",
+      "dependencies": {
+        "inherits": "^2.0.1"
+      },
+      "devDependencies": {
+        "mocha": "^1.18.2"
+      },
+      "gitHead": "fcca8374d368b728da4ade9d9d2719180bae9a2a",
+      "_id": "hash.js@0.3.2",
+      "_shasum": "6a945434ba8dbbadebb4e5065f9287b02529b93c",
+      "_from": ".",
+      "_npmVersion": "1.4.21",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "6a945434ba8dbbadebb4e5065f9287b02529b93c",
+        "tarball": "https://registry.npmjs.org/hash.js/-/hash.js-0.3.2.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "hash.js",
+      "version": "1.0.0",
+      "description": "Various hash functions that could be run by both browser and node",
+      "main": "lib/hash.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/hash.js"
+      },
+      "keywords": [
+        "hash",
+        "sha256",
+        "sha224",
+        "hmac"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/hash.js/issues"
+      },
+      "homepage": "https://github.com/indutny/hash.js",
+      "dependencies": {
+        "inherits": "^2.0.1"
+      },
+      "devDependencies": {
+        "mocha": "^1.18.2"
+      },
+      "gitHead": "39826eb20cb5e6a220a85daa689810ded095545a",
+      "_id": "hash.js@1.0.0",
+      "_shasum": "b2b534d73aa44273728ac4ac5c3f7058b65e52ac",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "b2b534d73aa44273728ac4ac5c3f7058b65e52ac",
+        "tarball": "https://registry.npmjs.org/hash.js/-/hash.js-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "hash.js",
+      "version": "1.0.1",
+      "description": "Various hash functions that could be run by both browser and node",
+      "main": "lib/hash.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/hash.js"
+      },
+      "keywords": [
+        "hash",
+        "sha256",
+        "sha224",
+        "hmac"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/hash.js/issues"
+      },
+      "homepage": "https://github.com/indutny/hash.js",
+      "dependencies": {
+        "inherits": "^2.0.1"
+      },
+      "devDependencies": {
+        "mocha": "^1.18.2"
+      },
+      "gitHead": "69d670274daacea8ab688369aa05e485089b596c",
+      "_id": "hash.js@1.0.1",
+      "_shasum": "6f18adbfe43efe34d6f0f02be8d55126c7519d2d",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "6f18adbfe43efe34d6f0f02be8d55126c7519d2d",
+        "tarball": "https://registry.npmjs.org/hash.js/-/hash.js-1.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "hash.js",
+      "version": "1.0.2",
+      "description": "Various hash functions that could be run by both browser and node",
+      "main": "lib/hash.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/hash.js"
+      },
+      "keywords": [
+        "hash",
+        "sha256",
+        "sha224",
+        "hmac"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/hash.js/issues"
+      },
+      "homepage": "https://github.com/indutny/hash.js",
+      "dependencies": {
+        "inherits": "^2.0.1"
+      },
+      "devDependencies": {
+        "mocha": "^1.18.2"
+      },
+      "gitHead": "9a85e099dbf05531e1c3956c7f205405f6bfc13c",
+      "_id": "hash.js@1.0.2",
+      "_shasum": "bc7d601f4e0d05a32f3526d11fe39f7a5eb8c187",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "bc7d601f4e0d05a32f3526d11fe39f7a5eb8c187",
+        "tarball": "https://registry.npmjs.org/hash.js/-/hash.js-1.0.2.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.3": {
+      "name": "hash.js",
+      "version": "1.0.3",
+      "description": "Various hash functions that could be run by both browser and node",
+      "main": "lib/hash.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/hash.js.git"
+      },
+      "keywords": [
+        "hash",
+        "sha256",
+        "sha224",
+        "hmac"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/hash.js/issues"
+      },
+      "homepage": "https://github.com/indutny/hash.js",
+      "dependencies": {
+        "inherits": "^2.0.1"
+      },
+      "devDependencies": {
+        "mocha": "^1.18.2"
+      },
+      "gitHead": "9c2ec8f5cdcdc255d5f6951427c5c803c097f7c6",
+      "_id": "hash.js@1.0.3",
+      "_shasum": "1332ff00156c0a0ffdd8236013d07b77a0451573",
+      "_from": ".",
+      "_npmVersion": "2.9.0",
+      "_nodeVersion": "2.0.0",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "1332ff00156c0a0ffdd8236013d07b77a0451573",
+        "tarball": "https://registry.npmjs.org/hash.js/-/hash.js-1.0.3.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "hash.js",
+      "version": "1.1.0",
+      "description": "Various hash functions that could be run by both browser and node",
+      "main": "lib/hash.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js && npm run lint",
+        "lint": "eslint lib/*.js lib/**/*.js lib/**/**/*.js test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/hash.js.git"
+      },
+      "keywords": [
+        "hash",
+        "sha256",
+        "sha224",
+        "hmac"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/hash.js/issues"
+      },
+      "homepage": "https://github.com/indutny/hash.js",
+      "dependencies": {
+        "inherits": "^2.0.3",
+        "minimalistic-assert": "^1.0.0",
+        "mocha": "^3.4.2"
+      },
+      "devDependencies": {
+        "eslint": "^4.0.0"
+      },
+      "gitHead": "224838e0f0d67db3cbe3e2be0920ffe2a7fbfbac",
+      "_id": "hash.js@1.1.0",
+      "_npmVersion": "5.0.3",
+      "_nodeVersion": "8.0.0",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "dist": {
+        "integrity": "sha512-UpPhT4r7U+SZlbz8W4c9ka7SpEINzenNH9NunpzFAEB9BOVHSNGn560p004huBamjTX/nUyPjdo5n8WSo5Nfug==",
+        "shasum": "67da897b1ced6f42a70dae5b3650ca3742e9ae91",
+        "tarball": "https://registry.npmjs.org/hash.js/-/hash.js-1.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/hash.js-1.1.0.tgz_1497934355515_0.33835372352041304"
+      },
+      "directories": {}
+    },
+    "1.1.1": {
+      "name": "hash.js",
+      "version": "1.1.1",
+      "description": "Various hash functions that could be run by both browser and node",
+      "main": "lib/hash.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js && npm run lint",
+        "lint": "eslint lib/*.js lib/**/*.js lib/**/**/*.js test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/hash.js.git"
+      },
+      "keywords": [
+        "hash",
+        "sha256",
+        "sha224",
+        "hmac"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/hash.js/issues"
+      },
+      "homepage": "https://github.com/indutny/hash.js",
+      "dependencies": {
+        "inherits": "^2.0.3",
+        "minimalistic-assert": "^1.0.0"
+      },
+      "devDependencies": {
+        "eslint": "^4.0.0",
+        "mocha": "^3.4.2"
+      },
+      "gitHead": "78fa691ee8ea2f3ffd43472ecae8c87823c7c84e",
+      "_id": "hash.js@1.1.1",
+      "_npmVersion": "5.0.3",
+      "_nodeVersion": "8.0.0",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "dist": {
+        "integrity": "sha512-I2TYCUjYQMmqmRMCp6jKMC5bvdXxGIZ/heITRR/0F1u0OP920ImEj/cXt3WgcTKBnNYGn7enxUzdai3db829JA==",
+        "shasum": "5cb2e796499224e69fd0b00ed01d2d4a16e7a323",
+        "tarball": "https://registry.npmjs.org/hash.js/-/hash.js-1.1.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/hash.js-1.1.1.tgz_1497948343086_0.251419770764187"
+      },
+      "directories": {}
+    },
+    "1.1.2": {
+      "name": "hash.js",
+      "version": "1.1.2",
+      "description": "Various hash functions that could be run by both browser and node",
+      "main": "lib/hash.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js && npm run lint",
+        "lint": "eslint lib/*.js lib/**/*.js lib/**/**/*.js test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/hash.js.git"
+      },
+      "keywords": [
+        "hash",
+        "sha256",
+        "sha224",
+        "hmac"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/hash.js/issues"
+      },
+      "homepage": "https://github.com/indutny/hash.js",
+      "dependencies": {
+        "inherits": "^2.0.3",
+        "minimalistic-assert": "^1.0.0"
+      },
+      "devDependencies": {
+        "eslint": "^4.0.0",
+        "mocha": "^3.4.2"
+      },
+      "gitHead": "cf43ff09e5b38de85f98829a72438a01390ffa8d",
+      "_id": "hash.js@1.1.2",
+      "_npmVersion": "5.0.4",
+      "_nodeVersion": "8.0.0",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "dist": {
+        "integrity": "sha512-SsNl8Ro2uz5xUTRYq8ysWzX8B7jCj7pLvX3opktaI6ZrTT2YElqjFVJXHJZe+5Aby20c9UC7elCjJDe1dhTaAw==",
+        "shasum": "bf5c887825cfe40b9efde7bf11bd2db26e6bf01b",
+        "tarball": "https://registry.npmjs.org/hash.js/-/hash.js-1.1.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/hash.js-1.1.2.tgz_1498538308655_0.3117987022269517"
+      },
+      "directories": {}
+    },
+    "1.1.3": {
+      "name": "hash.js",
+      "version": "1.1.3",
+      "description": "Various hash functions that could be run by both browser and node",
+      "main": "lib/hash.js",
+      "typings": "lib/hash.d.ts",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js && npm run lint",
+        "lint": "eslint lib/*.js lib/**/*.js lib/**/**/*.js test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/hash.js.git"
+      },
+      "keywords": [
+        "hash",
+        "sha256",
+        "sha224",
+        "hmac"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/hash.js/issues"
+      },
+      "homepage": "https://github.com/indutny/hash.js",
+      "dependencies": {
+        "inherits": "^2.0.3",
+        "minimalistic-assert": "^1.0.0"
+      },
+      "devDependencies": {
+        "eslint": "^4.0.0",
+        "mocha": "^3.4.2"
+      },
+      "gitHead": "99b093196d0104b54192d31169a9041c3a588411",
+      "_id": "hash.js@1.1.3",
+      "_npmVersion": "5.0.4",
+      "_nodeVersion": "8.0.0",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "dist": {
+        "integrity": "sha512-/UETyP0W22QILqS+6HowevwhEFJ3MBJnwTf75Qob9Wz9t0DPuisL8kW8YZMK62dHAKE1c1p+gY1TtOLY+USEHA==",
+        "shasum": "340dedbe6290187151c1ea1d777a3448935df846",
+        "tarball": "https://registry.npmjs.org/hash.js/-/hash.js-1.1.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/hash.js-1.1.3.tgz_1498923085485_0.6784083768725395"
+      },
+      "directories": {}
+    },
+    "1.1.4": {
+      "name": "hash.js",
+      "version": "1.1.4",
+      "description": "Various hash functions that could be run by both browser and node",
+      "main": "lib/hash.js",
+      "typings": "lib/hash.d.ts",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js && npm run lint",
+        "lint": "eslint lib/*.js lib/**/*.js lib/**/**/*.js test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/hash.js.git"
+      },
+      "keywords": [
+        "hash",
+        "sha256",
+        "sha224",
+        "hmac"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/hash.js/issues"
+      },
+      "homepage": "https://github.com/indutny/hash.js",
+      "dependencies": {
+        "inherits": "^2.0.3",
+        "minimalistic-assert": "^1.0.0"
+      },
+      "devDependencies": {
+        "eslint": "^4.0.0",
+        "mocha": "^3.4.2"
+      },
+      "gitHead": "65e82132bb12c55c7c03c652fcc85d9e7acbb99e",
+      "_id": "hash.js@1.1.4",
+      "_npmVersion": "6.1.0",
+      "_nodeVersion": "10.0.0",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "dist": {
+        "integrity": "sha512-A6RlQvvZEtFS5fLU43IDu0QUmBy+fDO9VMdTXvufKwIkt/rFfvICAViCax5fbDO4zdNzaC3/27ZhKUok5bAJyw==",
+        "shasum": "8b50e1f35d51bd01e5ed9ece4dbe3549ccfa0a3c",
+        "tarball": "https://registry.npmjs.org/hash.js/-/hash.js-1.1.4.tgz",
+        "fileCount": 19,
+        "unpackedSize": 40147,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbHw9MCRA9TVsSAnZWagAASYYP/AhjGGyo7z9Gcgkz5PKw\nZ+rTOppS3ilGD8oFayP+CbwlQE7TyWPXzrGFBfGkCJNot1BFdsMiABY2oy7L\nRAxhUgPvI2mH9iyMzkJfMZLfvBrXdbI40TXxQStMk6I5lf69g15r82rqRn5M\n+9k75mWPAOyX1FC18f9eyI1vcPF5qsmMZCWhILdPsi4UnE7M54uy+C3NUZgM\nbZfRcpP0TetwrMuiimdte1q1e27Ysu0O/RMG9wdCX/bAulVfCfsQeLox4Oiw\nQREFh1moJf7Tz4IzaqpA1yTjJomskW5R5pGTAgnrPFLxeFwChRhfusDAybZB\nCC2ERltsUmw6HbRqmYmE+UC6/kwR1j3+ylyXJofnkkgAMVWsjAyFitxoSiLN\nUJcY/8WJh9Vc1ljPw6mukgKwBnvgbTWVjBqFWH1NylGuLhjE7vvBlfQFK5jT\nFn5o5FrQu9I0wk0anGpFEj+4qS/5HLYbj2UhvKY4oP6e8Vvq0nHUnwMG5w+o\nA7EFMrOKkdFcZ/qFaczThiL/p9tzfp1LZvDwOJOCTBhspYhds8rlg9Zx0TKj\nFZ4RuxHA0wwYR7ng7cqvozsLRNgNI7a/4VuRUPIUlxKG2sqgWfiFkFZ9/i+w\nLUZdlFh2PgPiDWS1oudIEKsZQtS7nQnCc8jjrEGRkKGb3SWP60D2/gAUWLmi\nAt+u\r\n=YZGD\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/hash.js_1.1.4_1528762188030_0.7123934148661004"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.1.5": {
+      "name": "hash.js",
+      "version": "1.1.5",
+      "description": "Various hash functions that could be run by both browser and node",
+      "main": "lib/hash.js",
+      "typings": "lib/hash.d.ts",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js && npm run lint",
+        "lint": "eslint lib/*.js lib/**/*.js lib/**/**/*.js test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/hash.js.git"
+      },
+      "keywords": [
+        "hash",
+        "sha256",
+        "sha224",
+        "hmac"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/hash.js/issues"
+      },
+      "homepage": "https://github.com/indutny/hash.js",
+      "dependencies": {
+        "inherits": "^2.0.3",
+        "minimalistic-assert": "^1.0.1"
+      },
+      "devDependencies": {
+        "eslint": "^4.19.1",
+        "mocha": "^5.2.0"
+      },
+      "gitHead": "07aeaf2769bc0b07bb62d4af113e6ab4975855a7",
+      "_id": "hash.js@1.1.5",
+      "_npmVersion": "6.1.0",
+      "_nodeVersion": "10.5.0",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "dist": {
+        "integrity": "sha512-eWI5HG9Np+eHV1KQhisXWwM+4EPPYe5dFX1UZZH7k/E3JzDEazVH+VGlZi6R94ZqImq+A3D1mCEtrFIfg/E7sA==",
+        "shasum": "e38ab4b85dfb1e0c40fe9265c0e9b54854c23812",
+        "tarball": "https://registry.npmjs.org/hash.js/-/hash.js-1.1.5.tgz",
+        "fileCount": 19,
+        "unpackedSize": 40175,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbQ4nmCRA9TVsSAnZWagAAaGEP/1MfRjHUe1LlhnNHtL3X\n4rSNIs1kV9+Hw3+kF2gGcOtNP4n+Y5xeoZ5//Fp97hgwO4V1amEjHpqfGnsk\nMNpZmnXLfeybj4Tx0ZsPWwDRU9Je16ggehDy1etK3CaRcl6H7Jsqrz5IVCS5\nZUOflL2rWFCfPwDAYkwVp/Z/97KrlFB9+M4wFDuTAPOsQinsKzo0+vVB84BB\nhlmtlod7l/X+tkDCAV+rT8uKRfP+qZvcHTLKCCV6edgn7Xd+gY75IbFDqWfn\nZ9sSAo6ffBbz/bRsoARG/nDJ3CcWD2MxqiuQ/6fc505QHroXI0N7Q8HHySsa\neGZHSLXvwdP/M+0J9fiqQQFSjWhDqPxKXhDielhdvesw5UpCdD+q5W0CsC9Q\nx6/MNhDrqpx31WYcrMo0aj1Z6XQjVBg3c1EL5isnzimg6usObpN0IAG8ezHz\n2kYLKF8JFjXAFhSAdDqZAfZvIAF5RcPC659RRNuGzZRczeFBPOgBWl+t+4wg\nYIH7hXX6yEeQuhVtPCLoWEIY99jK1wma719IESH8X+/BMuEOFaO74PyYEsxh\nBlrrPQ8UV5vaQ1EnWvfWvuvgq4bopZVMVgCM290O/9o+jc2aveQA5w4F3q5z\nCPA+uwHEfGVJap5FDas5CSsEbI/eevhgUXO0nX0n6kSfeB5tmF3P7LNXh1sF\nVuj2\r\n=IY11\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/hash.js_1.1.5_1531152870113_0.14399955072989146"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.1.6": {
+      "name": "hash.js",
+      "version": "1.1.6",
+      "description": "Various hash functions that could be run by both browser and node",
+      "main": "lib/hash.js",
+      "typings": "lib/hash.d.ts",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js && npm run lint",
+        "lint": "eslint lib/*.js lib/**/*.js lib/**/**/*.js test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/hash.js.git"
+      },
+      "keywords": [
+        "hash",
+        "sha256",
+        "sha224",
+        "hmac"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/hash.js/issues"
+      },
+      "homepage": "https://github.com/indutny/hash.js",
+      "dependencies": {
+        "inherits": "^2.0.3",
+        "minimalistic-assert": "^1.0.1"
+      },
+      "devDependencies": {
+        "eslint": "^4.19.1",
+        "mocha": "^5.2.0"
+      },
+      "gitHead": "4758e9a9fa808bbe0b5f05e9e3fe692f13e2e6ca",
+      "_id": "hash.js@1.1.6",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "11.0.0",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "dist": {
+        "integrity": "sha512-fj4u34pebbF6PKHDfVsQtIJGwr1M0goQyiqJE8OXCjiAgInFfKb/BGjD2ht6K9gCXeG6k1ZIR7mQ+KZSsxXK3A==",
+        "shasum": "6d22881dd6aff23c5333033c7d418f5ee366bfc8",
+        "tarball": "https://registry.npmjs.org/hash.js/-/hash.js-1.1.6.tgz",
+        "fileCount": 19,
+        "unpackedSize": 41697,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcAW0sCRA9TVsSAnZWagAAW/IP/0c51U+cjejkcMduYcHj\n6fwic3ifAVefX6zHYAWM+yN7pvnssAhSlfaeFiz3Nj1Rwgb2owb/VWe7jJ+I\n87crBfZKPOKlVsOF0p8YbLSUHfK953Ll517+57rNl2HwNa18BcU5T6wFGr5N\n/kzqnFlDv6sJTvJ7R03t/CdlBcRS0Te0g+9zHyi7uBWIw41mYeCcf2CoOi+g\n+osPoQQOJJWL/pq9zRfyRhrnxDAmhE/M3h955t2e+pOXfwnt95Jsfr8aHwlR\noJnjDrMAGSNucnz25lfQpzKJTZoyUe+MK0enKSbTxP8umI93jBWizbjSmq4m\nQltLxK7BQ0RPKsqnjd/+7etG8AEdBIUmFPEobk8GbgPlMWfqwCN/nkPekGds\nFhjmW8uSjkFysfK+7J9ruW5TGHp5U9/M4w7pCtCp2N/JKBULhvAydApaM/aj\nmJPDTXBmz21zSbOZRJ1pQGBxaNeTFsg8KDuiEXrcV89AZvTs4b2AZQdOjxar\nGQ2BUo/KOS1lCE5tIdMYsSVfjgDguK35nFORvWNQh9uVPsrpJaSlLZu4sCHz\ncm9wDSSzoUeJGO47Ywvo5HgLDd9NtB5jXNeL9lC61mYNi7+W1bdvR8MTRriI\nr6V3TEzbMTNHbZHOiHb9hEm98JOp77OyD92hN0f5NCqS0f8stcNvGWiePt6q\nTZev\r\n=qhGm\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/hash.js_1.1.6_1543597355459_0.42108067159887663"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.1.7": {
+      "name": "hash.js",
+      "version": "1.1.7",
+      "description": "Various hash functions that could be run by both browser and node",
+      "main": "lib/hash.js",
+      "typings": "lib/hash.d.ts",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js && npm run lint",
+        "lint": "eslint lib/*.js lib/**/*.js lib/**/**/*.js test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/hash.js.git"
+      },
+      "keywords": [
+        "hash",
+        "sha256",
+        "sha224",
+        "hmac"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/hash.js/issues"
+      },
+      "homepage": "https://github.com/indutny/hash.js",
+      "dependencies": {
+        "inherits": "^2.0.3",
+        "minimalistic-assert": "^1.0.1"
+      },
+      "devDependencies": {
+        "eslint": "^4.19.1",
+        "mocha": "^5.2.0"
+      },
+      "gitHead": "fcd35edcc4e30145be4b7a737477ad54e83afc25",
+      "_id": "hash.js@1.1.7",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "11.0.0",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "dist": {
+        "integrity": "sha512-taOaskGt4z4SOANNseOviYDvjEJinIkRgmp7LbKP2YTTmVxWBl87s/uzK9r+44BclBSp2X7K1hqeNfz9JbBeXA==",
+        "shasum": "0babca538e8d4ee4a0f8988d68866537a003cf42",
+        "tarball": "https://registry.npmjs.org/hash.js/-/hash.js-1.1.7.tgz",
+        "fileCount": 19,
+        "unpackedSize": 41697,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcAZRsCRA9TVsSAnZWagAAK24P/j0OaTdXWUfwNTqMarCv\nEUzPS0oN71Rz19aDW94FXXguHW2jhfYbK/CUb3tXOIZgdNz7L9QubXbB2PZ+\nkVE0p99Oha+ESYS+LKKwIzcYBA59XtuRBQGlhg2QeWoJOwJzIsey1O74GPGl\nYXh/FlMaFA/OPBEfmLzSrlzIggCdPKYEU+Obtl9b+oTRRawyE/acH9gaK1/t\n21pi7zwku3xWsioArFqSGVSIy3ZIRqTrCkT1XvkhYqtZ81BUdXPh6zXmMsS6\nK/77qHNCUdDImvYUK2h65aNXc4pkYPuqP14cB9SJ/4HjnIj6z9KVt6GLC+kP\n728fUzRIwj+fA6U1YovuZnhfqGK5mDvJ4xaH6STnaOW29m9HScoFyTW/51ZW\n18gOpCndZOv90UKTfwkm6YpryczG8Asn1Jck8fC7gcNP1WyJRIzD15XPFEXI\nQOGOs7SHcxusmLztMSJfpCDfkQHVnPQ5IeLZCHJatCWNZwHsSL6chAcNFTUJ\nF2qA8mFx0YkK88Yvmt9QK5jcC42n90ni+wU+qlG7kviiXCO7M6hJB3ZNR7pl\nYCSHcBSvX2pAWx7GOTRO+kHQ7r5Y/vTNf6Dk0QusrYeEgeJcTlrrgipo//J5\nEP4kyHJh+QNHvUQxxJxMQGHrpCVw5DcOyBTRgtluysLFzmwuBKjo9rKWWj9e\nx7An\r\n=d0k+\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/hash.js_1.1.7_1543607403183_0.5084942256681579"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# hash.js [![Build Status](https://secure.travis-ci.org/indutny/hash.js.svg)](http://travis-ci.org/indutny/hash.js)\n\nJust a bike-shed.\n\n## Install\n\n```sh\nnpm install hash.js\n```\n\n## Usage\n\n```js\nvar hash = require('hash.js')\nhash.sha256().update('abc').digest('hex')\n```\n\n## Selective hash usage\n\n```js\nvar sha512 = require('hash.js/lib/hash/sha/512');\nsha512().update('abc').digest('hex');\n```\n\n#### LICENSE\n\nThis software is licensed under the MIT License.\n\nCopyright Fedor Indutny, 2014.\n\nPermission is hereby granted, free of charge, to any person obtaining a\ncopy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to permit\npersons to whom the Software is furnished to do so, subject to the\nfollowing conditions:\n\nThe above copyright notice and this permission notice shall be included\nin all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS\nOR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN\nNO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,\nDAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR\nOTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE\nUSE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+  "maintainers": [
+    {
+      "name": "indutny",
+      "email": "fedor@indutny.com"
+    }
+  ],
+  "time": {
+    "modified": "2019-01-04T02:40:35.190Z",
+    "created": "2014-04-25T21:12:00.996Z",
+    "0.1.0": "2014-04-25T21:12:00.996Z",
+    "0.2.0": "2014-04-26T11:55:07.892Z",
+    "0.2.1": "2014-05-06T09:38:56.886Z",
+    "0.3.0": "2014-05-10T20:37:09.709Z",
+    "0.3.1": "2014-05-10T20:38:14.606Z",
+    "0.3.2": "2014-08-31T10:48:35.490Z",
+    "1.0.0": "2015-01-05T20:50:34.271Z",
+    "1.0.1": "2015-01-06T00:53:52.794Z",
+    "1.0.2": "2015-01-06T00:56:33.448Z",
+    "1.0.3": "2015-05-21T12:29:07.098Z",
+    "1.1.0": "2017-06-20T04:52:36.503Z",
+    "1.1.1": "2017-06-20T08:45:44.087Z",
+    "1.1.2": "2017-06-27T04:38:29.648Z",
+    "1.1.3": "2017-07-01T15:31:26.446Z",
+    "1.1.4": "2018-06-12T00:09:48.080Z",
+    "1.1.5": "2018-07-09T16:14:30.207Z",
+    "1.1.6": "2018-11-30T17:02:35.608Z",
+    "1.1.7": "2018-11-30T19:50:03.326Z"
+  },
+  "homepage": "https://github.com/indutny/hash.js",
+  "keywords": [
+    "hash",
+    "sha256",
+    "sha224",
+    "hmac"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/indutny/hash.js.git"
+  },
+  "author": {
+    "name": "Fedor Indutny",
+    "email": "fedor@indutny.com"
+  },
+  "bugs": {
+    "url": "https://github.com/indutny/hash.js/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "users": {
+    "fonologico": true,
+    "guywicks": true,
+    "asaupup": true,
+    "thejeshgn.com": true,
+    "aswinkolli": true,
+    "cedx": true,
+    "faraoman": true,
+    "thejeshgn": true,
+    "nuwaio": true,
+    "psychollama": true,
+    "anasyusuf": true,
+    "monkeymonk": true,
+    "rokeyzki": true
+  }
+}

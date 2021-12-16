@@ -1,0 +1,2177 @@
+{
+  "_id": "meow",
+  "_rev": "128-81376db0c77255e64abbcb7e31ce9e96",
+  "name": "meow",
+  "time": {
+    "modified": "2020-09-27T02:27:14.069Z",
+    "created": "2013-01-24T03:46:08.917Z",
+    "0.0.0": "2013-01-24T03:46:15.395Z",
+    "1.0.0": "2014-10-12T14:29:21.941Z",
+    "2.0.0": "2014-10-21T21:49:43.338Z",
+    "2.1.0": "2015-01-08T09:25:01.893Z",
+    "3.0.0": "2015-01-23T15:56:16.289Z",
+    "3.1.0": "2015-02-26T04:57:36.384Z",
+    "3.3.0": "2015-06-18T23:18:00.331Z",
+    "3.4.0": "2015-10-03T16:49:46.630Z",
+    "3.4.1": "2015-10-03T18:05:20.683Z",
+    "3.4.2": "2015-10-07T06:51:39.741Z",
+    "3.5.0": "2015-10-30T05:04:51.853Z",
+    "3.6.0": "2015-11-15T12:55:03.287Z",
+    "3.7.0": "2016-01-04T14:20:49.240Z",
+    "4.0.0": "2017-11-26T10:49:43.309Z",
+    "4.0.1": "2018-04-25T03:05:56.651Z",
+    "5.0.0": "2018-04-25T03:22:50.133Z",
+    "6.0.0": "2019-12-07T14:55:05.771Z",
+    "6.0.1": "2020-02-14T18:25:50.016Z",
+    "6.1.0": "2020-03-19T17:58:18.280Z",
+    "6.1.1": "2020-05-02T10:02:36.697Z",
+    "7.0.0": "2020-05-07T05:49:56.632Z",
+    "7.0.1": "2020-05-11T13:58:13.246Z",
+    "7.1.0": "2020-08-10T20:29:43.861Z",
+    "7.1.1": "2020-08-29T09:27:16.605Z"
+  },
+  "maintainers": [
+    {
+      "name": "sindresorhus",
+      "email": "sindresorhus@gmail.com"
+    }
+  ],
+  "dist-tags": {
+    "latest": "7.1.1"
+  },
+  "description": "CLI app helper",
+  "readme": "# meow [![Build Status](https://travis-ci.org/sindresorhus/meow.svg?branch=master)](https://travis-ci.org/sindresorhus/meow)\n\n> CLI app helper\n\n![](meow.gif)\n\n## Features\n\n- Parses arguments\n- Converts flags to [camelCase](https://github.com/sindresorhus/camelcase)\n- Negates flags when using the `--no-` prefix\n- Outputs version when `--version`\n- Outputs description and supplied help text when `--help`\n- Makes unhandled rejected promises [fail hard](https://github.com/sindresorhus/hard-rejection) instead of the default silent fail\n- Sets the process title to the binary name defined in package.json\n\n## Install\n\n```\n$ npm install meow\n```\n\n## Usage\n\n```\n$ ./foo-app.js unicorns --rainbow\n```\n\n**CommonJS**\n\n```js\n#!/usr/bin/env node\n'use strict';\nconst meow = require('meow');\nconst foo = require('.');\n\nconst cli = meow(`\n\tUsage\n\t  $ foo <input>\n\n\tOptions\n\t  --rainbow, -r  Include a rainbow\n\n\tExamples\n\t  $ foo unicorns --rainbow\n\t  🌈 unicorns 🌈\n`, {\n\tflags: {\n\t\trainbow: {\n\t\t\ttype: 'boolean',\n\t\t\talias: 'r'\n\t\t}\n\t}\n});\n/*\n{\n\tinput: ['unicorns'],\n\tflags: {rainbow: true},\n\t...\n}\n*/\n\nfoo(cli.input[0], cli.flags);\n```\n\n**ES Modules**\n\n```js\n#!/usr/bin/env node\nimport {createRequire} from 'module';\nimport foo from './lib/index.js';\n\nconst meow = createRequire(import.meta.url)('meow');\n\nconst cli = meow(`\n\tUsage\n\t  $ foo <input>\n\n\tOptions\n\t  --rainbow, -r  Include a rainbow\n\n\tExamples\n\t  $ foo unicorns --rainbow\n\t  🌈 unicorns 🌈\n`, {\n\tflags: {\n\t\trainbow: {\n\t\t\ttype: 'boolean',\n\t\t\talias: 'r'\n\t\t}\n\t}\n});\n/*\n{\n\tinput: ['unicorns'],\n\tflags: {rainbow: true},\n\t...\n}\n*/\n\nfoo(cli.input[0], cli.flags);\n```\n\n## API\n\n### meow(helpText, options?)\n### meow(options)\n\nReturns an `object` with:\n\n- `input` *(Array)* - Non-flag arguments\n- `flags` *(Object)* - Flags converted to camelCase excluding aliases\n- `unnormalizedFlags` *(Object)* - Flags converted to camelCase including aliases\n- `pkg` *(Object)* - The `package.json` object\n- `help` *(string)* - The help text used with `--help`\n- `showHelp([exitCode=2])` *(Function)* - Show the help text and exit with `exitCode`\n- `showVersion()` *(Function)* - Show the version text and exit\n\n#### helpText\n\nType: `string`\n\nShortcut for the `help` option.\n\n#### options\n\nType: `object`\n\n##### flags\n\nType: `object`\n\nDefine argument flags.\n\nThe key is the flag name and the value is an object with any of:\n\n- `type`: Type of value. (Possible values: `string` `boolean` `number`)\n- `alias`: Usually used to define a short flag alias.\n- `default`: Default value when the flag is not specified.\n- `isRequired`: Determine if the flag is required. (Default: false)\n\t- If it's only known at runtime whether the flag is required or not, you can pass a `Function` instead of a `boolean`, which based on the given flags and other non-flag arguments, should decide if the flag is required. Two arguments are passed to the function:\n\t- The first argument is the **flags** object, which contains the flags converted to camel-case excluding aliases.\n\t- The second argument is the **input** string array, which contains the non-flag arguments.\n\t- The function should return a `boolean`, true if the flag is required, otherwise false.\n- `isMultiple`: Indicates a flag can be set multiple times. Values are turned into an array. (Default: false)\n\nExample:\n\n```js\nflags: {\n\tunicorn: {\n\t\ttype: 'string',\n\t\talias: 'u',\n\t\tdefault: ['rainbow', 'cat'],\n\t\tisMultiple: true,\n\t\tisRequired: (flags, input) => {\n\t\t\tif (flags.otherFlag) {\n\t\t\t\treturn true;\n\t\t\t}\n\n\t\t\treturn false;\n\t\t}\n\t}\n}\n```\n\n##### description\n\nType: `string | boolean`\\\nDefault: The package.json `\"description\"` property\n\nDescription to show above the help text.\n\nSet it to `false` to disable it altogether.\n\n##### help\n\nType: `string | boolean`\n\nThe help text you want shown.\n\nThe input is reindented and starting/ending newlines are trimmed which means you can use a [template literal](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/template_strings) without having to care about using the correct amount of indent.\n\nThe description will be shown above your help text automatically.\n\n##### version\n\nType: `string | boolean`\\\nDefault: The package.json `\"version\"` property\n\nSet a custom version output.\n\n##### autoHelp\n\nType: `boolean`\\\nDefault: `true`\n\nAutomatically show the help text when the `--help` flag is present. Useful to set this value to `false` when a CLI manages child CLIs with their own help text.\n\nThis option is only considered when there is only one argument in `process.argv`.\n\n##### autoVersion\n\nType: `boolean`\\\nDefault: `true`\n\nAutomatically show the version text when the `--version` flag is present. Useful to set this value to `false` when a CLI manages child CLIs with their own version text.\n\n This option is only considered when there is only one argument in `process.argv`.\n\n##### pkg\n\nType: `object`\\\nDefault: Closest package.json upwards\n\npackage.json as an `object`.\n\n*You most likely don't need this option.*\n\n##### argv\n\nType: `string[]`\\\nDefault: `process.argv.slice(2)`\n\nCustom arguments object.\n\n##### inferType\n\nType: `boolean`\\\nDefault: `false`\n\nInfer the argument type.\n\nBy default, the argument `5` in `$ foo 5` becomes a string. Enabling this would infer it as a number.\n\n##### booleanDefault\n\nType: `boolean | null | undefined`\\\nDefault: `false`\n\nValue of `boolean` flags not defined in `argv`.\nIf set to `undefined` the flags not defined in `argv` will be excluded from the result.\nThe `default` value set in `boolean` flags take precedence over `booleanDefault`.\n\nExample:\n\n```js\nconst meow = require('meow');\n\nconst cli = meow(`\n\tUsage\n\t  $ foo\n\n\tOptions\n\t  --rainbow, -r  Include a rainbow\n\t  --unicorn, -u  Include a unicorn\n\t  --no-sparkles  Exclude sparkles\n\n\tExamples\n\t  $ foo\n\t  🌈 unicorns✨🌈\n`, {\n\tbooleanDefault: undefined,\n\tflags: {\n\t\trainbow: {\n\t\t\ttype: 'boolean',\n\t\t\tdefault: true,\n\t\t\talias: 'r'\n\t\t},\n\t\tunicorn: {\n\t\t\ttype: 'boolean',\n\t\t\tdefault: false,\n\t\t\talias: 'u'\n\t\t},\n\t\tcake: {\n\t\t\ttype: 'boolean',\n\t\t\talias: 'c'\n\t\t},\n\t\tsparkles: {\n\t\t\ttype: 'boolean',\n\t\t\tdefault: true\n\t\t}\n\t}\n});\n/*\n{\n\tflags: {\n\t\trainbow: true,\n\t\tunicorn: false,\n\t\tsparkles: true\n\t},\n\tunnormalizedFlags: {\n\t\trainbow: true,\n\t\tr: true,\n\t\tunicorn: false,\n\t\tu: false,\n\t\tsparkles: true\n\t},\n\t…\n}\n*/\n```\n\n##### hardRejection\n\nType: `boolean`\\\nDefault: `true`\n\nWhether to use [`hard-rejection`](https://github.com/sindresorhus/hard-rejection) or not. Disabling this can be useful if you need to handle `process.on('unhandledRejection')` yourself.\n\n## Promises\n\nMeow will make unhandled rejected promises [fail hard](https://github.com/sindresorhus/hard-rejection) instead of the default silent fail. Meaning you don't have to manually `.catch()` promises used in your CLI.\n\n## Tips\n\nSee [`chalk`](https://github.com/chalk/chalk) if you want to colorize the terminal output.\n\nSee [`get-stdin`](https://github.com/sindresorhus/get-stdin) if you want to accept input from stdin.\n\nSee [`conf`](https://github.com/sindresorhus/conf) if you need to persist some data.\n\nSee [`update-notifier`](https://github.com/yeoman/update-notifier) if you want update notifications.\n\n[More useful CLI utilities…](https://github.com/sindresorhus/awesome-nodejs#command-line-utilities)\n\n---\n\n<div align=\"center\">\n\t<b>\n\t\t<a href=\"https://tidelift.com/subscription/pkg/npm-meow?utm_source=npm-meow&utm_medium=referral&utm_campaign=readme\">Get professional support for this package with a Tidelift subscription</a>\n\t</b>\n\t<br>\n\t<sub>\n\t\tTidelift helps make open source sustainable for maintainers while giving companies<br>assurances about security, maintenance, and licensing for their dependencies.\n\t</sub>\n</div>\n",
+  "versions": {
+    "1.0.0": {
+      "name": "meow",
+      "version": "1.0.0",
+      "description": "CLI app helper",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/meow"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "cli",
+        "bin",
+        "util",
+        "utility",
+        "helper",
+        "argv"
+      ],
+      "dependencies": {
+        "camelcase-keys": "^1.0.0",
+        "indent-string": "^1.1.0",
+        "minimist": "^1.1.0",
+        "object-assign": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "0.0.4"
+      },
+      "gitHead": "5e64f799fe4665587f10615f3dfcbd7703734d78",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/meow/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/meow",
+      "_id": "meow@1.0.0",
+      "_shasum": "d0ac10fe5b7a53796e7101e7068ff02ab698178b",
+      "_from": ".",
+      "_npmVersion": "2.1.2",
+      "_nodeVersion": "0.10.32",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "d0ac10fe5b7a53796e7101e7068ff02ab698178b",
+        "tarball": "https://registry.npmjs.org/meow/-/meow-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "meow",
+      "version": "2.0.0",
+      "description": "CLI app helper",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/meow"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "cli",
+        "bin",
+        "util",
+        "utility",
+        "helper",
+        "argv"
+      ],
+      "dependencies": {
+        "camelcase-keys": "^1.0.0",
+        "indent-string": "^1.1.0",
+        "minimist": "^1.1.0",
+        "object-assign": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "0.0.4"
+      },
+      "gitHead": "fe0271306137c613527d38b920667d7aa4380197",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/meow/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/meow",
+      "_id": "meow@2.0.0",
+      "_shasum": "8f530a8ecf5d40d3f4b4df93c3472900fba2a8f1",
+      "_from": ".",
+      "_npmVersion": "2.1.2",
+      "_nodeVersion": "0.10.32",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "8f530a8ecf5d40d3f4b4df93c3472900fba2a8f1",
+        "tarball": "https://registry.npmjs.org/meow/-/meow-2.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "2.1.0": {
+      "name": "meow",
+      "version": "2.1.0",
+      "description": "CLI app helper",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/meow"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "cli",
+        "bin",
+        "util",
+        "utility",
+        "helper",
+        "argv"
+      ],
+      "dependencies": {
+        "camelcase-keys": "^1.0.0",
+        "indent-string": "^1.1.0",
+        "minimist": "^1.1.0",
+        "object-assign": "^2.0.0"
+      },
+      "devDependencies": {
+        "ava": "0.0.4"
+      },
+      "gitHead": "ff65ef46ae2395ac39ce38829e0e1fff61d391cc",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/meow/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/meow",
+      "_id": "meow@2.1.0",
+      "_shasum": "3a63f77977c150c16fd84484d0cef677c4182799",
+      "_from": ".",
+      "_npmVersion": "2.1.16",
+      "_nodeVersion": "0.10.32",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "3a63f77977c150c16fd84484d0cef677c4182799",
+        "tarball": "https://registry.npmjs.org/meow/-/meow-2.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "meow",
+      "version": "3.0.0",
+      "description": "CLI app helper",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/meow"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "cli",
+        "bin",
+        "util",
+        "utility",
+        "helper",
+        "argv"
+      ],
+      "dependencies": {
+        "camelcase-keys": "^1.0.0",
+        "indent-string": "^1.1.0",
+        "minimist": "^1.1.0",
+        "object-assign": "^2.0.0"
+      },
+      "devDependencies": {
+        "ava": "0.0.4"
+      },
+      "gitHead": "1683d8290db551edb8abe78b5419187bd98110a4",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/meow/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/meow",
+      "_id": "meow@3.0.0",
+      "_shasum": "07c0edaade76c77498618d119aebb18a28d91b6d",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "07c0edaade76c77498618d119aebb18a28d91b6d",
+        "tarball": "https://registry.npmjs.org/meow/-/meow-3.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "3.1.0": {
+      "name": "meow",
+      "version": "3.1.0",
+      "description": "CLI app helper",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/meow"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "cli",
+        "bin",
+        "util",
+        "utility",
+        "helper",
+        "argv"
+      ],
+      "dependencies": {
+        "camelcase-keys": "^1.0.0",
+        "indent-string": "^1.1.0",
+        "minimist": "^1.1.0",
+        "object-assign": "^2.0.0"
+      },
+      "devDependencies": {
+        "ava": "0.0.4"
+      },
+      "gitHead": "70a811351fe7a551d82e689e20f96eb8d10037e7",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/meow/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/meow",
+      "_id": "meow@3.1.0",
+      "_shasum": "5974708a0fe0dcbf27e0e6a49120b4c5e82c3cea",
+      "_from": ".",
+      "_npmVersion": "2.5.1",
+      "_nodeVersion": "0.12.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "5974708a0fe0dcbf27e0e6a49120b4c5e82c3cea",
+        "tarball": "https://registry.npmjs.org/meow/-/meow-3.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "3.3.0": {
+      "name": "meow",
+      "version": "3.3.0",
+      "description": "CLI app helper",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/meow"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "cli",
+        "bin",
+        "util",
+        "utility",
+        "helper",
+        "argv",
+        "command",
+        "line",
+        "meow",
+        "cat",
+        "kitten",
+        "parser",
+        "option",
+        "flags",
+        "input",
+        "cmd",
+        "console"
+      ],
+      "dependencies": {
+        "camelcase-keys": "^1.0.0",
+        "indent-string": "^1.1.0",
+        "minimist": "^1.1.0",
+        "object-assign": "^3.0.0"
+      },
+      "devDependencies": {
+        "ava": "0.0.4"
+      },
+      "gitHead": "0ec1cbe26d544d93533eef1ad31c0b351b4106a3",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/meow/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/meow",
+      "_id": "meow@3.3.0",
+      "_shasum": "f8777fd0db67f73d1de1beee08c97c8665efc6ed",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "0.12.4",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "f8777fd0db67f73d1de1beee08c97c8665efc6ed",
+        "tarball": "https://registry.npmjs.org/meow/-/meow-3.3.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "3.4.0": {
+      "name": "meow",
+      "version": "3.4.0",
+      "description": "CLI app helper",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/meow"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "cli",
+        "bin",
+        "util",
+        "utility",
+        "helper",
+        "argv",
+        "command",
+        "line",
+        "meow",
+        "cat",
+        "kitten",
+        "parser",
+        "option",
+        "flags",
+        "input",
+        "cmd",
+        "console"
+      ],
+      "dependencies": {
+        "camelcase-keys": "^1.0.0",
+        "loud-rejection": "^1.0.0",
+        "minimist": "^1.1.3",
+        "object-assign": "^4.0.1",
+        "read-pkg-up": "^1.0.1",
+        "redent": "^1.0.0",
+        "trim-newlines": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "indent-string": "^2.1.0",
+        "xo": "*"
+      },
+      "gitHead": "ab891aad597806246af4f98e419e786b2eacb06b",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/meow/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/meow",
+      "_id": "meow@3.4.0",
+      "_shasum": "e21ea52f050bb9053a8b96793d749f2961a16716",
+      "_from": ".",
+      "_npmVersion": "2.14.4",
+      "_nodeVersion": "4.1.1",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "e21ea52f050bb9053a8b96793d749f2961a16716",
+        "tarball": "https://registry.npmjs.org/meow/-/meow-3.4.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "3.4.1": {
+      "name": "meow",
+      "version": "3.4.1",
+      "description": "CLI app helper",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/meow"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "cli",
+        "bin",
+        "util",
+        "utility",
+        "helper",
+        "argv",
+        "command",
+        "line",
+        "meow",
+        "cat",
+        "kitten",
+        "parser",
+        "option",
+        "flags",
+        "input",
+        "cmd",
+        "console"
+      ],
+      "dependencies": {
+        "camelcase-keys": "^1.0.0",
+        "loud-rejection": "^1.0.0",
+        "minimist": "^1.1.3",
+        "object-assign": "^4.0.1",
+        "read-pkg-up": "^1.0.1",
+        "redent": "^1.0.0",
+        "trim-newlines": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "indent-string": "^2.1.0",
+        "xo": "*"
+      },
+      "gitHead": "db0c0512b4c52ee0235db171952982bb80f561d2",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/meow/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/meow",
+      "_id": "meow@3.4.1",
+      "_shasum": "efbd3318202976592efc7c0feefb2e37fd793cea",
+      "_from": ".",
+      "_npmVersion": "2.14.4",
+      "_nodeVersion": "4.1.1",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "efbd3318202976592efc7c0feefb2e37fd793cea",
+        "tarball": "https://registry.npmjs.org/meow/-/meow-3.4.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "3.4.2": {
+      "name": "meow",
+      "version": "3.4.2",
+      "description": "CLI app helper",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/meow"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "cli",
+        "bin",
+        "util",
+        "utility",
+        "helper",
+        "argv",
+        "command",
+        "line",
+        "meow",
+        "cat",
+        "kitten",
+        "parser",
+        "option",
+        "flags",
+        "input",
+        "cmd",
+        "console"
+      ],
+      "dependencies": {
+        "camelcase-keys": "^1.0.0",
+        "loud-rejection": "^1.0.0",
+        "minimist": "^1.1.3",
+        "normalize-package-data": "^2.3.4",
+        "object-assign": "^4.0.1",
+        "read-pkg-up": "^1.0.1",
+        "redent": "^1.0.0",
+        "trim-newlines": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "indent-string": "^2.1.0",
+        "xo": "*"
+      },
+      "gitHead": "77d36e3edc90939044c852518b15c9f69fc028ac",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/meow/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/meow",
+      "_id": "meow@3.4.2",
+      "_shasum": "5f11a00596301d7adc352d1b86fc8573df0b93f0",
+      "_from": ".",
+      "_npmVersion": "2.14.4",
+      "_nodeVersion": "4.1.1",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "5f11a00596301d7adc352d1b86fc8573df0b93f0",
+        "tarball": "https://registry.npmjs.org/meow/-/meow-3.4.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "3.5.0": {
+      "name": "meow",
+      "version": "3.5.0",
+      "description": "CLI app helper",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/meow"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "cli",
+        "bin",
+        "util",
+        "utility",
+        "helper",
+        "argv",
+        "command",
+        "line",
+        "meow",
+        "cat",
+        "kitten",
+        "parser",
+        "option",
+        "flags",
+        "input",
+        "cmd",
+        "console"
+      ],
+      "dependencies": {
+        "camelcase-keys": "^1.0.0",
+        "loud-rejection": "^1.0.0",
+        "minimist": "^1.1.3",
+        "normalize-package-data": "^2.3.4",
+        "object-assign": "^4.0.1",
+        "read-pkg-up": "^1.0.1",
+        "redent": "^1.0.0",
+        "trim-newlines": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "indent-string": "^2.1.0",
+        "xo": "*"
+      },
+      "gitHead": "4dacf47d674e96d07a1be3807189682bdb92944a",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/meow/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/meow",
+      "_id": "meow@3.5.0",
+      "_shasum": "bc5a5d8b5b848ef6aa50158be0570182eb0d5e4d",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.1",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "bc5a5d8b5b848ef6aa50158be0570182eb0d5e4d",
+        "tarball": "https://registry.npmjs.org/meow/-/meow-3.5.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "3.6.0": {
+      "name": "meow",
+      "version": "3.6.0",
+      "description": "CLI app helper",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/meow"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "cli",
+        "bin",
+        "util",
+        "utility",
+        "helper",
+        "argv",
+        "command",
+        "line",
+        "meow",
+        "cat",
+        "kitten",
+        "parser",
+        "option",
+        "flags",
+        "input",
+        "cmd",
+        "console"
+      ],
+      "dependencies": {
+        "camelcase-keys": "^2.0.0",
+        "loud-rejection": "^1.0.0",
+        "minimist": "^1.1.3",
+        "normalize-package-data": "^2.3.4",
+        "object-assign": "^4.0.1",
+        "read-pkg-up": "^1.0.1",
+        "redent": "^1.0.0",
+        "trim-newlines": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "indent-string": "^2.1.0",
+        "xo": "*"
+      },
+      "gitHead": "9812414dabbfff8dac0929265c95622e10167093",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/meow/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/meow",
+      "_id": "meow@3.6.0",
+      "_shasum": "e7a535295cb89db0e0782428e55fa8615bf9e150",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.1",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "e7a535295cb89db0e0782428e55fa8615bf9e150",
+        "tarball": "https://registry.npmjs.org/meow/-/meow-3.6.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "3.7.0": {
+      "name": "meow",
+      "version": "3.7.0",
+      "description": "CLI app helper",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/meow.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "cli",
+        "bin",
+        "util",
+        "utility",
+        "helper",
+        "argv",
+        "command",
+        "line",
+        "meow",
+        "cat",
+        "kitten",
+        "parser",
+        "option",
+        "flags",
+        "input",
+        "cmd",
+        "console"
+      ],
+      "dependencies": {
+        "camelcase-keys": "^2.0.0",
+        "decamelize": "^1.1.2",
+        "loud-rejection": "^1.0.0",
+        "map-obj": "^1.0.1",
+        "minimist": "^1.1.3",
+        "normalize-package-data": "^2.3.4",
+        "object-assign": "^4.0.1",
+        "read-pkg-up": "^1.0.1",
+        "redent": "^1.0.0",
+        "trim-newlines": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "execa": "^0.1.1",
+        "indent-string": "^2.1.0",
+        "xo": "*"
+      },
+      "gitHead": "9a5c90af79fb8f5f29c97e6b92b63f41e2df4f34",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/meow/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/meow#readme",
+      "_id": "meow@3.7.0",
+      "_shasum": "72cb668b425228290abbfa856892587308a801fb",
+      "_from": ".",
+      "_npmVersion": "2.14.12",
+      "_nodeVersion": "4.2.4",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "72cb668b425228290abbfa856892587308a801fb",
+        "tarball": "https://registry.npmjs.org/meow/-/meow-3.7.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "4.0.0": {
+      "name": "meow",
+      "version": "4.0.0",
+      "description": "CLI app helper",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/meow.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "cli",
+        "bin",
+        "util",
+        "utility",
+        "helper",
+        "argv",
+        "command",
+        "line",
+        "meow",
+        "cat",
+        "kitten",
+        "parser",
+        "option",
+        "flags",
+        "input",
+        "cmd",
+        "console"
+      ],
+      "dependencies": {
+        "camelcase-keys": "^4.0.0",
+        "decamelize-keys": "^1.0.0",
+        "loud-rejection": "^1.0.0",
+        "minimist": "^1.1.3",
+        "minimist-options": "^3.0.1",
+        "normalize-package-data": "^2.3.4",
+        "read-pkg-up": "^3.0.0",
+        "redent": "^2.0.0",
+        "trim-newlines": "^2.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "execa": "^0.8.0",
+        "indent-string": "^3.0.0",
+        "xo": "*"
+      },
+      "xo": {
+        "rules": {
+          "unicorn/no-process-exit": "off"
+        }
+      },
+      "gitHead": "8c82a18c70e1081771d97f88a6d5f5ce9b00005d",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/meow/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/meow#readme",
+      "_id": "meow@4.0.0",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-Me/kel335m6vMKmEmA6c87Z6DUFW3JqkINRnxkbC+A/PUm0D5Fl2dEBQrPKnqCL9Te/CIa1MUt/0InMJhuC/sw==",
+        "shasum": "fd5855dd008db5b92c552082db1c307cba20b29d",
+        "tarball": "https://registry.npmjs.org/meow/-/meow-4.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/meow-4.0.0.tgz_1511693382432_0.692835133522749"
+      },
+      "directories": {}
+    },
+    "4.0.1": {
+      "name": "meow",
+      "version": "4.0.1",
+      "description": "CLI app helper",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/meow.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "cli",
+        "bin",
+        "util",
+        "utility",
+        "helper",
+        "argv",
+        "command",
+        "line",
+        "meow",
+        "cat",
+        "kitten",
+        "parser",
+        "option",
+        "flags",
+        "input",
+        "cmd",
+        "console"
+      ],
+      "dependencies": {
+        "camelcase-keys": "^4.0.0",
+        "decamelize-keys": "^1.0.0",
+        "loud-rejection": "^1.0.0",
+        "minimist": "^1.1.3",
+        "minimist-options": "^3.0.1",
+        "normalize-package-data": "^2.3.4",
+        "read-pkg-up": "^3.0.0",
+        "redent": "^2.0.0",
+        "trim-newlines": "^2.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "execa": "^0.8.0",
+        "indent-string": "^3.0.0",
+        "xo": "*"
+      },
+      "xo": {
+        "rules": {
+          "unicorn/no-process-exit": "off"
+        }
+      },
+      "gitHead": "e9ff0fb2ec1c381d85fbc2bf6b6dcc4c11258f36",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/meow/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/meow#readme",
+      "_id": "meow@4.0.1",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "10.0.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-xcSBHD5Z86zaOc+781KrupuHAzeGXSLtiAOmBsiLDiPSaYSB6hdew2ng9EBAnZ62jagG9MHAOdxpDi/lWBFJ/A==",
+        "shasum": "d48598f6f4b1472f35bf6317a95945ace347f975",
+        "tarball": "https://registry.npmjs.org/meow/-/meow-4.0.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 8773,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa3/CVCRA9TVsSAnZWagAAKcQP/0tVUT4F/G87EvbspBrH\nI2gZps6h1Jol06dpEJGSzr4OH3hA/2bBhIfsvfIEv+rpcJKWKbRxjtgcwmG5\nZhSdgF1st2iorXpb1GWoLNCE/DSQ9ZES/00qi5hEGVJKIusQnRynESOxuLsD\ntIefEkE5NZGHir9OeeKgMA80zadTP7vzTwVcqS+121W2e3c8dgFhTYby5qfm\nuisFZmtEaKJd79HJ/dKpLqpxPLuvsV9I/QEe3heehF7rFySCoIqUD8gDgl9V\n5jSva5U0nwqIYB12fa+ZGi7vBaAHDzuI24YQPqRfaxLzFNh9oJfu95dqIEE3\nuewGbPnH0szHtrY8IoyYCUrm/tlgYJXDjJlRNMrAVpPEdgsBcYtgE5+U+/be\nshtxUcLo4I7QxBO900DJFJ/EGtWQM5DenBzXpwFOTp1pj0q7NZuGltzUiO1Q\nNl814649m6/1cW8lCapAZFJRfbifB+Py10uIJSOHCbB5NG2KKibfpU07nFKP\n4k6YGJLeJepSprNIjzBg7F1qOq3KzpB12YNcH07xByvEoJAK6FoRPdXjteqw\npiwypPCLYfL5bJ+KRWYs/EDN5/u2mCuYKDvT2FMquAxB+IWytPuXwLGWxNfn\njgpDTz6riUkoPEBUappwWE9H4Oj/6Nbr24q7jfbvQJZi02T35I/xYgsGZwma\nnBIm\r\n=XACV\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/meow_4.0.1_1524625556547_0.6038605365423053"
+      },
+      "_hasShrinkwrap": false
+    },
+    "5.0.0": {
+      "name": "meow",
+      "version": "5.0.0",
+      "description": "CLI app helper",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/meow.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "cli",
+        "bin",
+        "util",
+        "utility",
+        "helper",
+        "argv",
+        "command",
+        "line",
+        "meow",
+        "cat",
+        "kitten",
+        "parser",
+        "option",
+        "flags",
+        "input",
+        "cmd",
+        "console"
+      ],
+      "dependencies": {
+        "camelcase-keys": "^4.0.0",
+        "decamelize-keys": "^1.0.0",
+        "loud-rejection": "^1.0.0",
+        "minimist-options": "^3.0.1",
+        "normalize-package-data": "^2.3.4",
+        "read-pkg-up": "^3.0.0",
+        "redent": "^2.0.0",
+        "trim-newlines": "^2.0.0",
+        "yargs-parser": "^10.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "execa": "^0.10.0",
+        "indent-string": "^3.0.0",
+        "xo": "*"
+      },
+      "xo": {
+        "rules": {
+          "unicorn/no-process-exit": "off"
+        }
+      },
+      "gitHead": "e04760557cca1200af91d96a60072f47d6a06aa1",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/meow/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/meow#readme",
+      "_id": "meow@5.0.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "10.0.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-CbTqYU17ABaLefO8vCU153ZZlprKYWDljcndKKDCFcYQITzWCXZAVk4QMFZPgvzrnUQ3uItnIE/LoUOwrT15Ig==",
+        "shasum": "dfc73d63a9afc714a5e371760eb5c88b91078aa4",
+        "tarball": "https://registry.npmjs.org/meow/-/meow-5.0.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 10123,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa3/SLCRA9TVsSAnZWagAAqOcP/0vi4WF6tYsGcx+2O05H\nmgKUqG8+QgUPbXihJgh9BC4ycp40//NFAFKBrW/m6fq8FjxXf7xvPhH9ehHj\npPlyb6R1IDaflGKszMFUwgE1HiBIbJ+kPQ+NxIKoiO/X12BqbNqYluD8Dc+U\nuvhftPlc2s5J92v9ew/CarpmOGnMoXSvZ4V3omrnhjkVJEDS6q8kTSW2/Kay\nexO60D/AYMt5DSPxJx/rFSUbdzen/1cC0JQ1tQoedAmfK0J7kkypVudLpizi\nN/O1UZ3h4w1IiD05SDt0UO0OokIxrBQTtW7byUgizPWVKslOfCRARJmFQqFc\nWOjkEVMjsYJ1CAOjjy3OO2xzRKbSw9aCdxOxSw22B2qwTk/cLj8jo93a3SZS\neY+6Qe5k1jfgULTdabA7+suLmSrp9pKD+XuzHMgFJDhELMnxJ9VyOZo3WyvZ\nJswLfMyPC3XkpL0Upt9lsV8tl++jJZWu7ARPvmy/eF5O9Eha5MDlJzeFQUMR\n9Ew7n8Q3N3iVx8BOmZEujOB4xdMYhNEWgziY/UQuCsOu9vJGGJ8geLI+PJP8\nRNgSgSCg8kq4nThrJWdwlj4rGuvkY84Xn7VOm8EY/QvZ+zryrp6awEk0ggkQ\nMzCxOjUp51/dS0glnMDh9QK0RslT7rToaVXWJ/nLEwyjmaq2zaME8Y+W5Gmv\niG3p\r\n=sT83\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/meow_5.0.0_1524626569972_0.17133376895214236"
+      },
+      "_hasShrinkwrap": false
+    },
+    "6.0.0": {
+      "name": "meow",
+      "version": "6.0.0",
+      "description": "CLI app helper",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/meow.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "cli",
+        "bin",
+        "util",
+        "utility",
+        "helper",
+        "argv",
+        "command",
+        "line",
+        "meow",
+        "cat",
+        "kitten",
+        "parser",
+        "option",
+        "flags",
+        "input",
+        "cmd",
+        "console"
+      ],
+      "dependencies": {
+        "@types/minimist": "^1.2.0",
+        "camelcase-keys": "^6.1.1",
+        "decamelize-keys": "^1.1.0",
+        "hard-rejection": "^2.0.0",
+        "minimist-options": "^4.0.1",
+        "normalize-package-data": "^2.5.0",
+        "read-pkg-up": "^7.0.0",
+        "redent": "^3.0.0",
+        "trim-newlines": "^3.0.0",
+        "type-fest": "^0.8.1",
+        "yargs-parser": "^16.1.0"
+      },
+      "devDependencies": {
+        "ava": "^2.4.0",
+        "execa": "^3.3.0",
+        "indent-string": "^4.0.0",
+        "tsd": "^0.11.0",
+        "xo": "^0.25.3"
+      },
+      "xo": {
+        "rules": {
+          "unicorn/no-process-exit": "off"
+        }
+      },
+      "gitHead": "5975fe618eb8dd70c06911d34ab52dd689a60616",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/meow/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/meow#readme",
+      "_id": "meow@6.0.0",
+      "_nodeVersion": "10.17.0",
+      "_npmVersion": "6.13.2",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-x4rYsjigPBDAxY+BGuK83YLhUIqui5wYyZoqb6QJCUOs+0fiYq+i/NV4Jt8OgIfObZFxG9iTyvLDu4UTohGTFw==",
+        "shasum": "949196fdf21d979379e3bdccb0411e60f8cffd93",
+        "tarball": "https://registry.npmjs.org/meow/-/meow-6.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 17400,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd671KCRA9TVsSAnZWagAAfhMQAKOLdJZ9pRJOS6nqyRyO\nAVnpCX0R7MbaRb9Av2UzyMgLqJhOzqIpIEj4nPbn0wYeMZX2kdVzvA2Ezp0R\nhF78GD8Zh7pml6xM22jWnaW86e64h/w0tDR6Q+4yMR+EnSLjBQ/w7ODz5/dU\nK6nMUQ60M4sW3SixLdK7kkdy4PD4cdnPHtZJ+4bfM/80lvewwpXGAaQa7Eoh\n5jKIHq2nLMVBxUdkHQMYxJSrsQniu1nmJ1ddnJLI5TsfxVGIPKw9O1TmipJ/\natWRhQYG6ed5lJ7C++oyZaxo3mCN7/CeEiV0WJ2E0tPk4301fLJaTRqvotH1\nsIb2i+tJ/q97rAnklEI1m6is5mEhhV3NNgZbz5LNiPn+05nCRgal4Dy3j7Ps\ndW2Q+osZL+yaSyvrwVGhCz0gMCgH9oLoAv6TYYBIR8HD53znHjCdPr5G8JGo\nSHLOGxTE5Jm3N4os35CE2P3lrXCarm7uECEAZeoCRxTEGkgQrC/JQdMqfDJQ\n0hn0rawu7eV5VkjkAihtXyHHHkPVr2gUl4iVOy5ZhLCdSFfKOvBG2b7Mgj/G\nyE+ZqFw+r1OWy93Wxtv2iQdEAcZKUna/2OaPHNVMpbVAqcmKvuKDmLBMWVLI\n/DpEOsbLIA6jaEKoMTghf60xRZyQ3fkwOrCO9i9SEey7pKNcTecfxL6pv7aT\ny3Sk\r\n=1nOU\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/meow_6.0.0_1575730505607_0.4930019783093347"
+      },
+      "_hasShrinkwrap": false
+    },
+    "6.0.1": {
+      "name": "meow",
+      "version": "6.0.1",
+      "description": "CLI app helper",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/meow.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "cli",
+        "bin",
+        "util",
+        "utility",
+        "helper",
+        "argv",
+        "command",
+        "line",
+        "meow",
+        "cat",
+        "kitten",
+        "parser",
+        "option",
+        "flags",
+        "input",
+        "cmd",
+        "console"
+      ],
+      "dependencies": {
+        "@types/minimist": "^1.2.0",
+        "camelcase-keys": "^6.1.1",
+        "decamelize-keys": "^1.1.0",
+        "hard-rejection": "^2.0.0",
+        "minimist-options": "^4.0.1",
+        "normalize-package-data": "^2.5.0",
+        "read-pkg-up": "^7.0.0",
+        "redent": "^3.0.0",
+        "trim-newlines": "^3.0.0",
+        "type-fest": "^0.8.1",
+        "yargs-parser": "^16.1.0"
+      },
+      "devDependencies": {
+        "ava": "^2.4.0",
+        "execa": "^3.3.0",
+        "indent-string": "^4.0.0",
+        "tsd": "^0.11.0",
+        "xo": "^0.25.3"
+      },
+      "xo": {
+        "rules": {
+          "unicorn/no-process-exit": "off"
+        }
+      },
+      "gitHead": "f17525e646cb02b93b579543f7362a5458d33bc9",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/meow/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/meow#readme",
+      "_id": "meow@6.0.1",
+      "_nodeVersion": "13.1.0",
+      "_npmVersion": "6.12.1",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-kxGTFgT/b7/oSRSQsJ0qsT5IMU+bgZ1eAdSA3kIV7onkW0QWo/hL5RbGlMfvBjHJKPE1LaPX0kdecYFiqYWjUw==",
+        "shasum": "f9b3f912c9aa039142cebcf74315129f4cd1ce1c",
+        "tarball": "https://registry.npmjs.org/meow/-/meow-6.0.1.tgz",
+        "fileCount": 5,
+        "unpackedSize": 17707,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeRuYuCRA9TVsSAnZWagAAA5gQAIe8brqeL2oLDOV5ZrMH\nOXtwiOYBiC+VzNZlNfcTF9GNeIq4oyeNpK3RwIf1vxrU8BD8tx/X1+jy4t6X\nJEt+iVYfxiYTnRpYSYEnMS4+yJ64/jcUkd3JOzW3DQzQmJdUtKEP5PBbgKe9\nY/QGooVkjYK7sGsk4I3DgueAdRqfpRAZ8r+rPGPAwY97FD2Xu+cHNwUa3Z7j\nCBHeJ4tYJM/cgUQdK4VXsfxki5ggFCtZGL+tWbl6D3EBHNvA3vbftmJ9dzVG\nWwfU7VbPIHbijspCPP7Rqj6gRQCQiYDKYqOhJvw/KqWGRJ+ENwrWlcAeTIra\nL68CRDyIpjyXnO1U2jNA+CePEx8IhAmIrIvtmTg0rftGXqUDDOI+bKJVYX/G\nV0zxoNp30JaP+AJnL2LrL5MIuBUWbL594Nqs9kmB7Uz7bUMXeWKYb8dUTJUw\nZ1xO58oLWsP+WySVhSKRMVaHF2fLBK9xvd0zE+5udr6ujdXBI1IpGNPWVO7B\ntO2Gm8hd4R35f6Pdivzxjx09BoXycZw2VJ3mBkAy3hn0tZOIQdW9VDH2qyDB\nlhxZWOxzwSxHdW5LFtcecw/uoNhDEbQSIGT5J6Mwh2iIjyf4Hat9QnWBhV8X\n1gGbMSmyqOfRFzh+pxcBGlQmTncDwTw9J4Yrmc8jM9cKR/zkVuXvHUc3Dd33\nymGy\r\n=l5b+\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/meow_6.0.1_1581704749862_0.19490924382432806"
+      },
+      "_hasShrinkwrap": false
+    },
+    "6.1.0": {
+      "name": "meow",
+      "version": "6.1.0",
+      "description": "CLI app helper",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/meow.git"
+      },
+      "funding": "https://github.com/sponsors/sindresorhus",
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "https://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "cli",
+        "bin",
+        "util",
+        "utility",
+        "helper",
+        "argv",
+        "command",
+        "line",
+        "meow",
+        "cat",
+        "kitten",
+        "parser",
+        "option",
+        "flags",
+        "input",
+        "cmd",
+        "console"
+      ],
+      "dependencies": {
+        "@types/minimist": "^1.2.0",
+        "camelcase-keys": "^6.1.1",
+        "decamelize-keys": "^1.1.0",
+        "hard-rejection": "^2.0.0",
+        "minimist-options": "^4.0.1",
+        "normalize-package-data": "^2.5.0",
+        "read-pkg-up": "^7.0.0",
+        "redent": "^3.0.0",
+        "trim-newlines": "^3.0.0",
+        "type-fest": "^0.8.1",
+        "yargs-parser": "^18.1.1"
+      },
+      "devDependencies": {
+        "ava": "^2.4.0",
+        "execa": "^3.3.0",
+        "indent-string": "^4.0.0",
+        "tsd": "^0.11.0",
+        "xo": "^0.25.3"
+      },
+      "xo": {
+        "rules": {
+          "unicorn/no-process-exit": "off"
+        }
+      },
+      "gitHead": "2954ed2e2f614952413abb91d9ee2f5286bac511",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/meow/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/meow#readme",
+      "_id": "meow@6.1.0",
+      "_nodeVersion": "10.18.1",
+      "_npmVersion": "6.14.2",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-iIAoeI01v6pmSfObAAWFoITAA4GgiT45m4SmJgoxtZfvI0fyZwhV4d0lTwiUXvAKIPlma05Feb2Xngl52Mj5Cg==",
+        "shasum": "4ff4641818d3502afcddc631f94cb6971a581cb3",
+        "tarball": "https://registry.npmjs.org/meow/-/meow-6.1.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 17745,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJec7K6CRA9TVsSAnZWagAAg6UP/2mfjOnRF5RZELPjrCJ3\nj3N5Oug55WBOY+Kwzgktb/iFgnMUdd+2S6Ydj2RD8E7xxSpHWXPjdRTVR7wy\n4Q0Zp/g+tlD1j40oLUNuoO1MX39VFT+O/i5XvIyOlr/qrEVDrXRgUOdmAlRk\nXSRlEzc4MJNr8r9VnyHtGs3Xh/3yHApHVsJ/kwCtJFDe2rB7W7yueg9fzIXz\nzWz+W4jMJ9/sJrlMX4VbBdJl/mSlbnnOMShl7LF5aqxBgXyGTayRC5gRlQ2c\nH9h962qjJk79g1ub5UpKBLJfdyTNsXVqr0S7G5vEn1VLlHMtadaY7sQrmDlF\n5DE0EVt5nV92VeqBV6rRZhnqIJQb9Dtup6bKAe1Wb5qrGDFwghWAadZUayAU\ndT6legCFWFqFWugKqkyBJOVv1Obp4c8kScTsNnX2V2ixmrxqcJtzLCLC0YVq\ne9eGOeQnVYr7rgyQ5E7CKFWd/Syeh5TITA7bpqzyYaiFkYvd8Pz7eEeruEuL\nedWuKilg/cJac8TYztDhC8tnjnrh4L1/CcLkWJlzK68OcVYyIpKq1ZaVfean\nTUvj/6SLx1H3rqMQxHxVKfVj/7JE+AU5gDYzrMK59Ovl2Uw7lbUBDE32TT/+\nPv0unelq/7fCv+nLF9/umght49QOWxMGLw55IqKvHOTLWpT+IcAUyqsxF/43\nktIm\r\n=1pnt\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/meow_6.1.0_1584640698138_0.6985497734405455"
+      },
+      "_hasShrinkwrap": false
+    },
+    "6.1.1": {
+      "name": "meow",
+      "version": "6.1.1",
+      "description": "CLI app helper",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/meow.git"
+      },
+      "funding": "https://github.com/sponsors/sindresorhus",
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "https://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "cli",
+        "bin",
+        "util",
+        "utility",
+        "helper",
+        "argv",
+        "command",
+        "line",
+        "meow",
+        "cat",
+        "kitten",
+        "parser",
+        "option",
+        "flags",
+        "input",
+        "cmd",
+        "console"
+      ],
+      "dependencies": {
+        "@types/minimist": "^1.2.0",
+        "camelcase-keys": "^6.2.2",
+        "decamelize-keys": "^1.1.0",
+        "hard-rejection": "^2.1.0",
+        "minimist-options": "^4.0.2",
+        "normalize-package-data": "^2.5.0",
+        "read-pkg-up": "^7.0.1",
+        "redent": "^3.0.0",
+        "trim-newlines": "^3.0.0",
+        "type-fest": "^0.13.1",
+        "yargs-parser": "^18.1.3"
+      },
+      "devDependencies": {
+        "ava": "^2.4.0",
+        "execa": "^4.0.0",
+        "indent-string": "^4.0.0",
+        "tsd": "^0.11.0",
+        "xo": "^0.30.0"
+      },
+      "xo": {
+        "rules": {
+          "unicorn/no-process-exit": "off",
+          "node/no-unsupported-features/es-syntax": "off"
+        }
+      },
+      "gitHead": "3c23328fb014e775e3aaf82342f177fef3f00f8b",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/meow/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/meow#readme",
+      "_id": "meow@6.1.1",
+      "_nodeVersion": "10.20.1",
+      "_npmVersion": "6.14.4",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-3YffViIt2QWgTy6Pale5QpopX/IvU3LPL03jOTqp6pGj3VjesdO/U8CuHMKpnQr4shCNCM5fd5XFFvIIl6JBHg==",
+        "shasum": "1ad64c4b76b2a24dfb2f635fddcadf320d251467",
+        "tarball": "https://registry.npmjs.org/meow/-/meow-6.1.1.tgz",
+        "fileCount": 5,
+        "unpackedSize": 17778,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJerUU9CRA9TVsSAnZWagAALyAP/jbqewxXSAoPb7GjodjW\nFIPWFuHC7HpLzUY0R3mkys6D3y5XZBq9b63U2rZf/z2Q2vSGabFLHUcDVHE/\nTf2yPFr4TxGvy67zC4l0HgNvBEs8gFXAigocFMPlSFiBj03U+iG6EWdM3e86\nuVw4zid3hkqu/zzbBopDcEmu9lBAFNJHtiyIm3BXyHDO8SCqlPM2ltyxjtJc\nru0mCfXrM/c+waJoQQRAlLhB+9oUys0KKnpqEzLm69OY5vZEqqhEE78d57LW\nhJin1oHa3/XrMBnpzCjDFyBCajSuC/OAPXHA0v0/DrI2RMio5Jt68YjiJ+IE\nTAe+Vq5t9mwmLkoN3ofux1UwHY1faqlqtoSIatomX+9dnjrMwU9jem+TEIJP\n4IiVZBgOqwRYDzH6JeCeybw3q+gQsdGpTl1XU3lJQbCiOStJRD9lyO8f+Ny7\nWTP/We7ppklm1W9BsPHF7Q/K9BHL38biMP71zYtDag6oXR/wzzDM6JsgfKuN\nvSQsUNMwCkOxzWNMpTdIixqMVWYfWF4jfdL85JoJaV9AH/Zfe5f8JLUV9Cm2\nPWmT6mZO8GQf2GdtVEZsHVF39xxQ+bf272kSaOBUSh3PaeFbzbRdn0nvSJcI\nJrcENTPsYRfSXslXUylVOoG9PI5+DYriyccggfOi7m12fsdcg3mPH4mZ6WDp\nBVF7\r\n=nH/u\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/meow_6.1.1_1588413756613_0.050278564366997625"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0": {
+      "name": "meow",
+      "version": "7.0.0",
+      "description": "CLI app helper",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/meow.git"
+      },
+      "funding": "https://github.com/sponsors/sindresorhus",
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "https://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=10"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "cli",
+        "bin",
+        "util",
+        "utility",
+        "helper",
+        "argv",
+        "command",
+        "line",
+        "meow",
+        "cat",
+        "kitten",
+        "parser",
+        "option",
+        "flags",
+        "input",
+        "cmd",
+        "console"
+      ],
+      "dependencies": {
+        "@types/minimist": "^1.2.0",
+        "arrify": "^2.0.1",
+        "camelcase-keys": "^6.2.2",
+        "decamelize-keys": "^1.1.0",
+        "hard-rejection": "^2.1.0",
+        "minimist-options": "^4.0.2",
+        "normalize-package-data": "^2.5.0",
+        "read-pkg-up": "^7.0.1",
+        "redent": "^3.0.0",
+        "trim-newlines": "^3.0.0",
+        "type-fest": "^0.13.1",
+        "yargs-parser": "^18.1.3"
+      },
+      "devDependencies": {
+        "ava": "^2.4.0",
+        "execa": "^4.0.0",
+        "indent-string": "^4.0.0",
+        "tsd": "^0.11.0",
+        "xo": "^0.30.0"
+      },
+      "xo": {
+        "rules": {
+          "unicorn/no-process-exit": "off",
+          "node/no-unsupported-features/es-syntax": "off"
+        },
+        "ignores": [
+          "estest/index.js"
+        ]
+      },
+      "ava": {
+        "files": [
+          "test/*"
+        ]
+      },
+      "gitHead": "e3301ed05b5c6b65c6c1140297b43bf55bf846b2",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/meow/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/meow#readme",
+      "_id": "meow@7.0.0",
+      "_nodeVersion": "10.20.1",
+      "_npmVersion": "6.14.4",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-He6nRo6zYQtzdm0rUKRjpc+V2uvfUnz76i2zxosiLrAvKhk9dSRqWabL/3fNZv9hpb3PQIJNym0M0pzPZa0pvw==",
+        "shasum": "2d21adc6df0e1b4659b2b2ce63852d954e5c440a",
+        "tarball": "https://registry.npmjs.org/meow/-/meow-7.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 22979,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJes6GFCRA9TVsSAnZWagAAgD4P/087F4viL0iv1aaDUj2A\nirSWxvLhm2wgWcpwr5baRsSIGsYiNC9D6mJp/o1fcQ/CGVbAq/ZUAgb+qMSa\noAOtUVI6qB5UACqUNfOQGNiZEdoQ4VmJtLCHym/uQBWoZCP/TARl6MBqdLPi\nxyV9odb6SMY8d75WUSNdVmzzkmj2n07ILNe/auvPw/EGlCZYjMbHGS6ekYEP\nuaOdDqAMZyZRPn48+rCHmG3quZ6VahRaYu0A13iNDh0cYzXDM7x6nClLYOaT\ncLuKaU5JxXfYFokOq0VfUN6fW9MRKxI+XKZypy96QT8z1rMufC9aL09023J1\nFrsHLdkEe1NHChi5G2H7sexWBVFiJ2c105G+zy3mhJ/Ty9lITAlS8o1Kd2D0\n5KNs2SG5ebJPAqTuZRRiLAhW9cliWNaWqkNKy4jTTPi1JnrPo4HQl3iSycTC\nFJFXo3k4TNyih6TPQO2tv4+oM2z5NWeW83KuzvYasaQKlr6VCb9QLIxPauEv\nchgZx0HlvcrNMvMXXlqqNSvyw71IlXjvKLa1hgqQrOvSEl2CmH0toY9yu+pB\n9zBt3PB8HsNPE2BZNNF8QUOgpSCNdEP7HFe48qwg83OKGV0TQCUW+623lrNU\nDCqNRRwG18c8zNCqACUTQE1vMfzuWYZMglxC/0qIh5Llwn1NOZzajNCsJqXJ\ntjsI\r\n=j+9W\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/meow_7.0.0_1588830596525_0.799254388017071"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.1": {
+      "name": "meow",
+      "version": "7.0.1",
+      "description": "CLI app helper",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/meow.git"
+      },
+      "funding": "https://github.com/sponsors/sindresorhus",
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "https://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=10"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "cli",
+        "bin",
+        "util",
+        "utility",
+        "helper",
+        "argv",
+        "command",
+        "line",
+        "meow",
+        "cat",
+        "kitten",
+        "parser",
+        "option",
+        "flags",
+        "input",
+        "cmd",
+        "console"
+      ],
+      "dependencies": {
+        "@types/minimist": "^1.2.0",
+        "arrify": "^2.0.1",
+        "camelcase": "^6.0.0",
+        "camelcase-keys": "^6.2.2",
+        "decamelize-keys": "^1.1.0",
+        "hard-rejection": "^2.1.0",
+        "minimist-options": "^4.0.2",
+        "normalize-package-data": "^2.5.0",
+        "read-pkg-up": "^7.0.1",
+        "redent": "^3.0.0",
+        "trim-newlines": "^3.0.0",
+        "type-fest": "^0.13.1",
+        "yargs-parser": "^18.1.3"
+      },
+      "devDependencies": {
+        "ava": "^2.4.0",
+        "execa": "^4.0.0",
+        "indent-string": "^4.0.0",
+        "tsd": "^0.11.0",
+        "xo": "^0.30.0"
+      },
+      "xo": {
+        "rules": {
+          "unicorn/no-process-exit": "off",
+          "node/no-unsupported-features/es-syntax": "off"
+        },
+        "ignores": [
+          "estest/index.js"
+        ]
+      },
+      "ava": {
+        "files": [
+          "test/*"
+        ]
+      },
+      "gitHead": "1f265e4cbe2b8e9d2b55387dac8bfd993773a29a",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/meow/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/meow#readme",
+      "_id": "meow@7.0.1",
+      "_nodeVersion": "10.20.1",
+      "_npmVersion": "6.14.5",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-tBKIQqVrAHqwit0vfuFPY3LlzJYkEOFyKa3bPgxzNl6q/RtN8KQ+ALYEASYuFayzSAsjlhXj/JZ10rH85Q6TUw==",
+        "shasum": "1ed4a0a50b3844b451369c48362eb0515f04c1dc",
+        "tarball": "https://registry.npmjs.org/meow/-/meow-7.0.1.tgz",
+        "fileCount": 5,
+        "unpackedSize": 23060,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeuVn1CRA9TVsSAnZWagAAfnIP/06Qh+8L2ntH9iRf/aKL\n7mgZPs++ouSJ1InSBiUahXDo/Ph9xweGolkThJ4C/5IxeIt6kkonehgwDIOX\n0flKEp5nZzr++Al4t5zuyxc2uy1zFYhh3RgKNl7QlJy6u/dVS1U2+DImhL/9\nmAJZ6qWpC8kSfvQIGhzdJZS4z82f08qn6UiVNp2ylfse/T3Utu7+w0/ygMYH\nY03cLABId3HCMLhIZVhr6Gl8gacLFhDEfc5YBmBCTjbeDVG86C6VhfXPbbZ9\nqnHa6GCNQMIzTvStrf416oCrEflQklS9pzAdbWuGrpCwSgc3y6p+ZLHHxw88\n1lXnmywx6BBo16cycN9XeLEiiK6ZqhHy4C9I42fk+6xuG8jNAIf3sR7FvVss\nTR1mBjWPt5zLE/aoZYNhgkbtLo4su9MgDRkYD1GCqu5tT9cS7GJ49ZOlXAqr\nNhWkZ1ZRIMFf4yfb38uyUAXN3Ls9wsqX3x6pCjxmtRZFKhHJCr6ek5tyxqPP\nH2M4irHwtOjJfL+QQ8GIFd0G60sDGj4odMVA7vImX6XlY6GumkyyHqin/Luh\nWvv9pptTJhK1dNzWAM6Uc/E4htHCRJ7ca8/owEBw5WBqkrivPXuBlj6i30/R\ng7b8NcdE5Wr+cYFe9LLEUbb2q/HGp63G2LFHkD8THLuG6RziX5LUMZnjNWAI\nBRm6\r\n=+58x\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/meow_7.0.1_1589205493109_0.7798090984321033"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.1.0": {
+      "name": "meow",
+      "version": "7.1.0",
+      "description": "CLI app helper",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/meow.git"
+      },
+      "funding": "https://github.com/sponsors/sindresorhus",
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "https://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=10"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "cli",
+        "bin",
+        "util",
+        "utility",
+        "helper",
+        "argv",
+        "command",
+        "line",
+        "meow",
+        "cat",
+        "kitten",
+        "parser",
+        "option",
+        "flags",
+        "input",
+        "cmd",
+        "console"
+      ],
+      "dependencies": {
+        "@types/minimist": "^1.2.0",
+        "camelcase-keys": "^6.2.2",
+        "decamelize-keys": "^1.1.0",
+        "hard-rejection": "^2.1.0",
+        "minimist-options": "4.1.0",
+        "normalize-package-data": "^2.5.0",
+        "read-pkg-up": "^7.0.1",
+        "redent": "^3.0.0",
+        "trim-newlines": "^3.0.0",
+        "type-fest": "^0.13.1",
+        "yargs-parser": "^18.1.3"
+      },
+      "devDependencies": {
+        "ava": "^2.4.0",
+        "execa": "^4.0.0",
+        "indent-string": "^4.0.0",
+        "tsd": "^0.11.0",
+        "xo": "^0.30.0"
+      },
+      "xo": {
+        "rules": {
+          "unicorn/no-process-exit": "off",
+          "node/no-unsupported-features/es-syntax": "off"
+        },
+        "ignores": [
+          "estest/index.js"
+        ]
+      },
+      "ava": {
+        "files": [
+          "test/*"
+        ]
+      },
+      "gitHead": "ebe00a174f9e64dbf26bf37d283ae666d580964a",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/meow/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/meow#readme",
+      "_id": "meow@7.1.0",
+      "_nodeVersion": "14.5.0",
+      "_npmVersion": "6.14.7",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-kq5F0KVteskZ3JdfyQFivJEj2RaA8NFsS4+r9DaMKLcUHpk5OcHS3Q0XkCXONB1mZRPsu/Y/qImKri0nwSEZog==",
+        "shasum": "50ecbcdafa16f8b58fb7eb9675b933f6473b3a59",
+        "tarball": "https://registry.npmjs.org/meow/-/meow-7.1.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 22577,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfMa44CRA9TVsSAnZWagAAqx0P/1e3J42xUgXRiaE8UBg3\nZr84GYVbePhWp16IjaxElYowcuuE2eIPnUyRB9WmvpzbVz+fAR6qNe/kuLCK\nJeLt5iAmLbSvSRbNY0k9dyfrg36iEX5qcmhOjHhHzby1p9+yGZaz5ohPeOop\nO94gFT9jA2NCMg4Lo1uXkhcbL7FQpv+5XsHZ7/kaobvb7lmxo8XdidmTOrGP\n4cJwlW1S22PQBxdTWJSjYQF79wQipDoCP7MKkwFCfnC+OoALu4Gp/TcXSUuI\nuWTb7HjpvO2o3rsHP9z+reJzJCe74MF/mB1DYJChDU2n+nQzvmvirwQWWlYQ\nCYJPhhEtpgB50x6x7uI7PhXu8iFtVOSLbCJJT7YJA1IZFku8K2FeuGJkKwq6\nDZqFWPIbaVu4Hwtb7EbgzoWoGQl9QoZaW8FohanflVWhVi9sEzNxms2AuAGZ\nrVDlCDQFoGOhNv7DcrsYbLfUKt7qZmeb3/L28J5DgM4JZKtJNR4CbUBiZ3Wu\nvuCU85JzNScZKl3uvVVcZ2f0mbdDG/D5n7s5BMO99tnV4dIcYHlMDKoBwSHM\nHd2GjU+CSS/YckgsOMDt9Qq1g7Jr0on4jp9YKsfDtZHSiOxEmGoB//Ajdrvf\nRzwho58WZ5vN5uerefLcjtCpxUVqbE1OrdgCzlJKsM0Td8yjYTPVn9nxppMI\ne8Wr\r\n=Nbrq\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/meow_7.1.0_1597091383736_0.8968089828101085"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.1.1": {
+      "name": "meow",
+      "version": "7.1.1",
+      "description": "CLI app helper",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/meow.git"
+      },
+      "funding": "https://github.com/sponsors/sindresorhus",
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "https://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=10"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "cli",
+        "bin",
+        "util",
+        "utility",
+        "helper",
+        "argv",
+        "command",
+        "line",
+        "meow",
+        "cat",
+        "kitten",
+        "parser",
+        "option",
+        "flags",
+        "input",
+        "cmd",
+        "console"
+      ],
+      "dependencies": {
+        "@types/minimist": "^1.2.0",
+        "camelcase-keys": "^6.2.2",
+        "decamelize-keys": "^1.1.0",
+        "hard-rejection": "^2.1.0",
+        "minimist-options": "4.1.0",
+        "normalize-package-data": "^2.5.0",
+        "read-pkg-up": "^7.0.1",
+        "redent": "^3.0.0",
+        "trim-newlines": "^3.0.0",
+        "type-fest": "^0.13.1",
+        "yargs-parser": "^18.1.3"
+      },
+      "devDependencies": {
+        "ava": "^2.4.0",
+        "execa": "^4.0.0",
+        "indent-string": "^4.0.0",
+        "tsd": "^0.11.0",
+        "xo": "^0.30.0"
+      },
+      "xo": {
+        "rules": {
+          "unicorn/no-process-exit": "off",
+          "node/no-unsupported-features/es-syntax": "off"
+        },
+        "ignores": [
+          "estest/index.js"
+        ]
+      },
+      "ava": {
+        "files": [
+          "test/*"
+        ]
+      },
+      "gitHead": "dc7dae4820bfc7397193a92833487d47f82c7411",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/meow/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/meow#readme",
+      "_id": "meow@7.1.1",
+      "_nodeVersion": "12.18.2",
+      "_npmVersion": "6.14.7",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-GWHvA5QOcS412WCo8vwKDlTelGLsCGBVevQB5Kva961rmNfun0PCbv5+xta2kUMFJyR8/oWnn7ddeKdosbAPbA==",
+        "shasum": "7c01595e3d337fcb0ec4e8eed1666ea95903d306",
+        "tarball": "https://registry.npmjs.org/meow/-/meow-7.1.1.tgz",
+        "fileCount": 5,
+        "unpackedSize": 22626,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfSh91CRA9TVsSAnZWagAA+OUP/1H6JM8SRZ7nwbfsMT/M\nufa+NcAVVcFaktmJ3ZMVQwQDtFi+Cz7L0436wP7Iy6p22dLzO4TDwb7OVdRe\nChXeznJtJk/huZxm9le9Pm2L0hPKztWo2iZ/hGbX8IaD4U90BVKh2Cbwl7QP\nOoSPs++2VfZXIIl6OG7PpfuU2w+s5Zq1mnBICtQrD8NzOypnTs+XAW+aktUH\nhjXalhOJUAPVNw5fVlZzvA1z3JjBHsfmg/95Vdm/5RVxdTtiiKRJ+5BQt0TU\nxnz82EekFitXakCzrd1znY1ewEVd6kktd/ICK1M0jWyIbxyU8W/en/vIELdR\nXJ5GwSwQZGIGzY2Q6hRqmc/ioOkbPKF9/1HrqgokVyK8KyZB3tM7salEJv2m\nhx4GjDqKlvWn1DgTTE8+XNIgHxPG/11i+dphJQx28dZUzbbe+5bAdbcetIBC\nqdEJI3hN7ivYdPXoLV2fnAVx0nTgjmzFMJfb/Y5kThVZVtUmAc7Z4aSNFXwY\niKgjUJIPxd4xqN4HEZc4rVDovljBj/YtHacAtyOxjm7KDtwwmxoZ9ttvtykv\nRvZE69pIbK82cUXKQNDOvDMSAQlQDjLkCatKbKkpWNItFwa87RGdlgCDON6M\n1dxvJUczTX7QJ4cXa5SP0Zfp3rlBSUO34P60Gm6aOirzZaR68iZD64pkur9e\n5r9c\r\n=8CnU\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/meow_7.1.1_1598693236493_0.5484227949051657"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "homepage": "https://github.com/sindresorhus/meow#readme",
+  "keywords": [
+    "cli",
+    "bin",
+    "util",
+    "utility",
+    "helper",
+    "argv",
+    "command",
+    "line",
+    "meow",
+    "cat",
+    "kitten",
+    "parser",
+    "option",
+    "flags",
+    "input",
+    "cmd",
+    "console"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/meow.git"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "https://sindresorhus.com"
+  },
+  "bugs": {
+    "url": "https://github.com/sindresorhus/meow/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md",
+  "users": {
+    "ionutvmi": true,
+    "maxogden": true,
+    "pid": true,
+    "mage3k": true,
+    "solygen": true,
+    "goodseller": true,
+    "guiambros": true,
+    "s4g6": true,
+    "phalanxia": true,
+    "ddffx": true,
+    "anhulife": true,
+    "forivall": true,
+    "eijs": true,
+    "bojand": true,
+    "ugarz": true,
+    "timdp": true,
+    "knksmith57": true,
+    "goblindegook": true,
+    "allenmoore": true,
+    "eshinn": true,
+    "jerrywu": true,
+    "heineiuo": true,
+    "nichoth": true,
+    "rochejul": true,
+    "sakura": true,
+    "brennebeck": true,
+    "recursion_excursion": true,
+    "j.su": true,
+    "ctesniere": true,
+    "panlw": true,
+    "icedemon": true,
+    "otbe": true,
+    "edm00se": true,
+    "jonahss": true,
+    "dannyfritz": true,
+    "jonathas": true,
+    "penglu": true,
+    "yoking": true,
+    "whitelynx": true,
+    "monjer": true,
+    "langri-sha": true,
+    "jedaviata": true,
+    "theoryofnekomata": true,
+    "soenkekluth": true,
+    "wickie": true,
+    "seangenabe": true,
+    "shreyawhiz": true,
+    "leonzhao": true,
+    "onel0p3z": true,
+    "daizch": true,
+    "nickleefly": true,
+    "brandonb927": true,
+    "jasonmelgoza": true,
+    "ukuli": true,
+    "saadbinsaeed": true,
+    "imaginary": true,
+    "g120hbq": true,
+    "mrxf": true,
+    "mlcdf": true,
+    "usex": true,
+    "stone_breaker": true,
+    "clpo13": true,
+    "joaquin.briceno": true,
+    "iuykza": true,
+    "xinwangwang": true,
+    "waawal": true,
+    "icodeforcookies": true,
+    "ahmedfarooki": true,
+    "broadway69": true,
+    "isayme": true,
+    "bsdprojects": true,
+    "yologith": true,
+    "detj": true,
+    "ksketo": true,
+    "izolate": true,
+    "three": true,
+    "bluejeansandrain": true,
+    "chrisackerman": true,
+    "xiechao06": true,
+    "tg-z": true,
+    "liunian": true
+  }
+}

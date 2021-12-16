@@ -2,7 +2,7 @@ const { resolve } = require('path')
 
 const t = require('tap')
 
-const diff = require('../index.js')
+const diff = require('../lib/index.js')
 
 const normalizePath = p => p
   .replace(/\\+/g, '/')

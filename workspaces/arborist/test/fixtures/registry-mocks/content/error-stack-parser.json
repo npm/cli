@@ -1,0 +1,2301 @@
+{
+  "_id": "error-stack-parser",
+  "_rev": "46-b649e484a6c70aa7a7e6593882d87bee",
+  "name": "error-stack-parser",
+  "description": "Extract meaning from JS Errors",
+  "dist-tags": {
+    "latest": "2.0.6",
+    "next": "1.3.3"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "error-stack-parser",
+      "description": "Extract meaning from JS Errors",
+      "author": {
+        "name": "Eric Wendelin",
+        "email": "me@eriwen.com",
+        "url": "http://eriwen.com"
+      },
+      "version": "0.1.0",
+      "keywords": [
+        "stacktrace",
+        "error"
+      ],
+      "homepage": "http://www.stacktracejs.com",
+      "dependencies": {
+        "stackframe": "0.1.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/stacktracejs/error-stack-parser.git"
+      },
+      "bugs": {
+        "url": "https://github.com/stacktracejs/error-stack-parser/issues"
+      },
+      "licenses": [
+        {
+          "type": "Public Domain",
+          "url": "https://github.com/stacktracejs/error-stack-parser/blob/master/LICENSE"
+        }
+      ],
+      "main": "./error-stack-parser.js",
+      "scripts": {
+        "test": "make jstd"
+      },
+      "_id": "error-stack-parser@0.1.0",
+      "_shasum": "f45e5785851eafd50353d987ebf517482607d7e9",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "eriwen",
+        "email": "me@eriwen.com"
+      },
+      "maintainers": [
+        {
+          "name": "eriwen",
+          "email": "me@eriwen.com"
+        }
+      ],
+      "dist": {
+        "shasum": "0dc90e0141883463345e36fcbd2025646d6647a6",
+        "tarball": "https://registry.npmjs.org/error-stack-parser/-/error-stack-parser-0.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.0": {
+      "name": "error-stack-parser",
+      "description": "Extract meaning from JS Errors",
+      "maintainers": [
+        {
+          "name": "eriwen",
+          "email": "me@eriwen.com"
+        }
+      ],
+      "version": "0.2.0",
+      "keywords": [
+        "stacktrace",
+        "error"
+      ],
+      "homepage": "http://www.stacktracejs.com",
+      "dependencies": {
+        "stackframe": "~0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/stacktracejs/error-stack-parser.git"
+      },
+      "devDependencies": {
+        "colors": "~1.0.3",
+        "coveralls": "^2.11.2",
+        "jshint": "^2.5.6",
+        "karma": "~0.12",
+        "karma-chrome-launcher": "^0.1.5",
+        "karma-coverage": "^0.2.6",
+        "karma-firefox-launcher": "^0.1.3",
+        "karma-ie-launcher": "^0.1.5",
+        "karma-jasmine": "^0.1.5",
+        "karma-opera-launcher": "^0.1.0",
+        "karma-phantomjs-launcher": "^0.1.4",
+        "karma-safari-launcher": "^0.1.1",
+        "karma-sauce-launcher": "^0.2.10"
+      },
+      "bugs": {
+        "url": "https://github.com/stacktracejs/error-stack-parser/issues"
+      },
+      "licenses": [
+        {
+          "type": "Public Domain",
+          "url": "https://github.com/stacktracejs/error-stack-parser/blob/master/LICENSE"
+        }
+      ],
+      "main": "./error-stack-parser.js",
+      "scripts": {
+        "test": "make clean test"
+      },
+      "gitHead": "36a80eb858d761f9abdc76282ff6c20c747cf10d",
+      "_id": "error-stack-parser@0.2.0",
+      "_shasum": "98b9876fd19dfe9d92824edac3e502c9d2399712",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "eriwen",
+        "email": "me@eriwen.com"
+      },
+      "dist": {
+        "shasum": "98b9876fd19dfe9d92824edac3e502c9d2399712",
+        "tarball": "https://registry.npmjs.org/error-stack-parser/-/error-stack-parser-0.2.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.1": {
+      "name": "error-stack-parser",
+      "description": "Extract meaning from JS Errors",
+      "maintainers": [
+        {
+          "name": "eriwen",
+          "email": "me@eriwen.com"
+        }
+      ],
+      "version": "0.2.1",
+      "keywords": [
+        "stacktrace",
+        "error"
+      ],
+      "homepage": "http://www.stacktracejs.com",
+      "dependencies": {
+        "stackframe": "~0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/stacktracejs/error-stack-parser.git"
+      },
+      "devDependencies": {
+        "colors": "~1.0.3",
+        "coveralls": "^2.11.2",
+        "jshint": "^2.5.6",
+        "karma": "~0.12",
+        "karma-chrome-launcher": "^0.1.5",
+        "karma-coverage": "^0.2.6",
+        "karma-firefox-launcher": "^0.1.3",
+        "karma-ie-launcher": "^0.1.5",
+        "karma-jasmine": "^0.1.5",
+        "karma-opera-launcher": "^0.1.0",
+        "karma-phantomjs-launcher": "^0.1.4",
+        "karma-safari-launcher": "^0.1.1",
+        "karma-sauce-launcher": "^0.2.10",
+        "uglify-js2": "^2.1.11"
+      },
+      "bugs": {
+        "url": "https://github.com/stacktracejs/error-stack-parser/issues"
+      },
+      "licenses": [
+        {
+          "type": "Public Domain",
+          "url": "https://github.com/stacktracejs/error-stack-parser/blob/master/LICENSE"
+        }
+      ],
+      "main": "./error-stack-parser.js",
+      "scripts": {
+        "test": "make clean test"
+      },
+      "gitHead": "ac1283544db1a74a7ba0c3e26c71453c24cddc30",
+      "_id": "error-stack-parser@0.2.1",
+      "_shasum": "225d76b89bb53de37b3f8ad965238be187142187",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "eriwen",
+        "email": "me@eriwen.com"
+      },
+      "dist": {
+        "shasum": "225d76b89bb53de37b3f8ad965238be187142187",
+        "tarball": "https://registry.npmjs.org/error-stack-parser/-/error-stack-parser-0.2.1.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.2": {
+      "name": "error-stack-parser",
+      "description": "Extract meaning from JS Errors",
+      "maintainers": [
+        {
+          "name": "eriwen",
+          "email": "me@eriwen.com"
+        }
+      ],
+      "version": "0.2.2",
+      "keywords": [
+        "stacktrace",
+        "error"
+      ],
+      "homepage": "http://www.stacktracejs.com",
+      "dependencies": {
+        "stackframe": "~0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/stacktracejs/error-stack-parser.git"
+      },
+      "devDependencies": {
+        "colors": "~1.0.3",
+        "coveralls": "^2.11.2",
+        "jasmine-node": "~1.14",
+        "jshint": "^2.5.6",
+        "karma": "~0.12",
+        "karma-chrome-launcher": "^0.1.5",
+        "karma-coverage": "^0.2.6",
+        "karma-firefox-launcher": "^0.1.3",
+        "karma-ie-launcher": "^0.1.5",
+        "karma-jasmine": "^0.1.5",
+        "karma-opera-launcher": "^0.1.0",
+        "karma-phantomjs-launcher": "^0.1.4",
+        "karma-safari-launcher": "^0.1.1",
+        "karma-sauce-launcher": "^0.2.10",
+        "uglify-js2": "^2.1.11"
+      },
+      "bugs": {
+        "url": "https://github.com/stacktracejs/error-stack-parser/issues"
+      },
+      "licenses": [
+        {
+          "type": "Public Domain",
+          "url": "https://github.com/stacktracejs/error-stack-parser/blob/master/LICENSE"
+        }
+      ],
+      "main": "./error-stack-parser.js",
+      "files": [
+        "LICENSE",
+        "README.md",
+        "error-stack-parser.js",
+        "dist/",
+        "node_modules/stacktrame/"
+      ],
+      "scripts": {
+        "test": "make clean test"
+      },
+      "gitHead": "d28b436bdf25a94f4acd3735e1108c535ab8be0e",
+      "_id": "error-stack-parser@0.2.2",
+      "_shasum": "be57f411825398d1fdde55a6137e803a8fe23e29",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "eriwen",
+        "email": "me@eriwen.com"
+      },
+      "dist": {
+        "shasum": "be57f411825398d1fdde55a6137e803a8fe23e29",
+        "tarball": "https://registry.npmjs.org/error-stack-parser/-/error-stack-parser-0.2.2.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.3": {
+      "name": "error-stack-parser",
+      "description": "Extract meaning from JS Errors",
+      "maintainers": [
+        {
+          "name": "eriwen",
+          "email": "me@eriwen.com"
+        }
+      ],
+      "version": "0.2.3",
+      "keywords": [
+        "stacktrace",
+        "error"
+      ],
+      "homepage": "http://www.stacktracejs.com",
+      "dependencies": {
+        "stackframe": "~0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/stacktracejs/error-stack-parser.git"
+      },
+      "devDependencies": {
+        "colors": "~1.0.3",
+        "coveralls": "^2.11.2",
+        "jasmine-node": "~1.14",
+        "jshint": "^2.5.6",
+        "karma": "~0.12",
+        "karma-chrome-launcher": "^0.1.5",
+        "karma-coverage": "^0.2.6",
+        "karma-firefox-launcher": "^0.1.3",
+        "karma-ie-launcher": "^0.1.5",
+        "karma-jasmine": "^0.1.5",
+        "karma-opera-launcher": "^0.1.0",
+        "karma-phantomjs-launcher": "^0.1.4",
+        "karma-safari-launcher": "^0.1.1",
+        "karma-sauce-launcher": "^0.2.10",
+        "uglify-js2": "^2.1.11"
+      },
+      "bugs": {
+        "url": "https://github.com/stacktracejs/error-stack-parser/issues"
+      },
+      "licenses": [
+        {
+          "type": "Public Domain",
+          "url": "https://github.com/stacktracejs/error-stack-parser/blob/master/LICENSE"
+        }
+      ],
+      "main": "./error-stack-parser.js",
+      "files": [
+        "LICENSE",
+        "README.md",
+        "error-stack-parser.js",
+        "dist/",
+        "node_modules/stackframe/"
+      ],
+      "scripts": {
+        "test": "make clean test"
+      },
+      "gitHead": "66220265b338c0ed88089efb5fe921bf18322829",
+      "_id": "error-stack-parser@0.2.3",
+      "_shasum": "05fe89901b78bf76ea3acdbe37d0e305bd4f99b9",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "eriwen",
+        "email": "me@eriwen.com"
+      },
+      "dist": {
+        "shasum": "05fe89901b78bf76ea3acdbe37d0e305bd4f99b9",
+        "tarball": "https://registry.npmjs.org/error-stack-parser/-/error-stack-parser-0.2.3.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.4": {
+      "name": "error-stack-parser",
+      "description": "Extract meaning from JS Errors",
+      "maintainers": [
+        {
+          "name": "eriwen",
+          "email": "me@eriwen.com"
+        }
+      ],
+      "version": "0.2.4",
+      "keywords": [
+        "stacktrace",
+        "error"
+      ],
+      "homepage": "http://www.stacktracejs.com",
+      "dependencies": {
+        "stackframe": "~0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/stacktracejs/error-stack-parser.git"
+      },
+      "devDependencies": {
+        "colors": "~1.0.3",
+        "coveralls": "^2.11.2",
+        "jasmine-node": "~1.14",
+        "jshint": "^2.5.6",
+        "karma": "~0.12",
+        "karma-chrome-launcher": "^0.1.5",
+        "karma-coverage": "^0.2.6",
+        "karma-firefox-launcher": "^0.1.3",
+        "karma-ie-launcher": "^0.1.5",
+        "karma-jasmine": "^0.1.5",
+        "karma-opera-launcher": "^0.1.0",
+        "karma-phantomjs-launcher": "^0.1.4",
+        "karma-safari-launcher": "^0.1.1",
+        "karma-sauce-launcher": "^0.2.10",
+        "uglify-js2": "^2.1.11"
+      },
+      "bugs": {
+        "url": "https://github.com/stacktracejs/error-stack-parser/issues"
+      },
+      "licenses": [
+        {
+          "type": "Public Domain",
+          "url": "https://github.com/stacktracejs/error-stack-parser/blob/master/LICENSE"
+        }
+      ],
+      "main": "./error-stack-parser.js",
+      "files": [
+        "LICENSE",
+        "README.md",
+        "error-stack-parser.js",
+        "dist/",
+        "node_modules/stackframe/"
+      ],
+      "scripts": {
+        "test": "make clean test"
+      },
+      "gitHead": "ad0c28a11d87321831ba3f50a3ce436b25f9393f",
+      "_id": "error-stack-parser@0.2.4",
+      "_shasum": "3c9f9de1b8107d6233aeaef99a699f66f8afb2d8",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "eriwen",
+        "email": "me@eriwen.com"
+      },
+      "dist": {
+        "shasum": "3c9f9de1b8107d6233aeaef99a699f66f8afb2d8",
+        "tarball": "https://registry.npmjs.org/error-stack-parser/-/error-stack-parser-0.2.4.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "error-stack-parser",
+      "description": "Extract meaning from JS Errors",
+      "maintainers": [
+        {
+          "name": "eriwen",
+          "email": "me@eriwen.com"
+        }
+      ],
+      "version": "1.0.0",
+      "keywords": [
+        "stacktrace",
+        "error",
+        "stack"
+      ],
+      "homepage": "http://www.stacktracejs.com",
+      "dependencies": {
+        "stackframe": "~0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/stacktracejs/error-stack-parser.git"
+      },
+      "devDependencies": {
+        "colors": "~1.0.3",
+        "coveralls": "^2.11.2",
+        "jasmine-node": "~1.14",
+        "jshint": "^2.5.6",
+        "karma": "~0.12",
+        "karma-chrome-launcher": "^0.1.5",
+        "karma-coverage": "^0.2.6",
+        "karma-firefox-launcher": "^0.1.3",
+        "karma-ie-launcher": "^0.1.5",
+        "karma-jasmine": "^0.1.5",
+        "karma-opera-launcher": "^0.1.0",
+        "karma-phantomjs-launcher": "^0.1.4",
+        "karma-safari-launcher": "^0.1.1",
+        "karma-sauce-launcher": "^0.2.10",
+        "uglify-js2": "^2.1.11"
+      },
+      "bugs": {
+        "url": "https://github.com/stacktracejs/error-stack-parser/issues"
+      },
+      "licenses": [
+        {
+          "type": "Public Domain",
+          "url": "https://github.com/stacktracejs/error-stack-parser/blob/master/LICENSE"
+        }
+      ],
+      "main": "./error-stack-parser.js",
+      "files": [
+        "LICENSE",
+        "README.md",
+        "error-stack-parser.js",
+        "dist/",
+        "node_modules/stackframe/"
+      ],
+      "scripts": {
+        "test": "make clean test"
+      },
+      "gitHead": "ac8c2c66ed0acd66ae44f7dfcec3fb0f542e8546",
+      "_id": "error-stack-parser@1.0.0",
+      "_shasum": "88257580312b5bd4af2acfee1dab4b81c97d47a0",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "eriwen",
+        "email": "me@eriwen.com"
+      },
+      "dist": {
+        "shasum": "88257580312b5bd4af2acfee1dab4b81c97d47a0",
+        "tarball": "https://registry.npmjs.org/error-stack-parser/-/error-stack-parser-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "error-stack-parser",
+      "description": "Extract meaning from JS Errors",
+      "maintainers": [
+        {
+          "name": "eriwen",
+          "email": "me@eriwen.com"
+        }
+      ],
+      "version": "1.1.0",
+      "keywords": [
+        "stacktrace",
+        "error",
+        "stack"
+      ],
+      "homepage": "http://www.stacktracejs.com",
+      "dependencies": {
+        "stackframe": "~0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/stacktracejs/error-stack-parser.git"
+      },
+      "devDependencies": {
+        "colors": "~1.0.3",
+        "coveralls": "^2.11.2",
+        "jasmine-node": "~1.14",
+        "jshint": "^2.5.6",
+        "karma": "~0.12",
+        "karma-chrome-launcher": "^0.1.5",
+        "karma-coverage": "^0.2.6",
+        "karma-firefox-launcher": "^0.1.3",
+        "karma-ie-launcher": "^0.1.5",
+        "karma-jasmine": "^0.1.5",
+        "karma-opera-launcher": "^0.1.0",
+        "karma-phantomjs-launcher": "^0.1.4",
+        "karma-safari-launcher": "^0.1.1",
+        "karma-sauce-launcher": "^0.2.10",
+        "uglify-js2": "^2.1.11"
+      },
+      "bugs": {
+        "url": "https://github.com/stacktracejs/error-stack-parser/issues"
+      },
+      "licenses": [
+        {
+          "type": "Public Domain",
+          "url": "https://github.com/stacktracejs/error-stack-parser/blob/master/LICENSE"
+        }
+      ],
+      "main": "./error-stack-parser.js",
+      "files": [
+        "LICENSE",
+        "README.md",
+        "error-stack-parser.js",
+        "dist/",
+        "node_modules/stackframe/"
+      ],
+      "scripts": {
+        "test": "make clean test"
+      },
+      "gitHead": "1c38bf7cdff597d8424e8bd341b9f95441df70dc",
+      "_id": "error-stack-parser@1.1.0",
+      "_shasum": "d5b438993657d3659b35d79bc7156d671c830492",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "eriwen",
+        "email": "me@eriwen.com"
+      },
+      "dist": {
+        "shasum": "d5b438993657d3659b35d79bc7156d671c830492",
+        "tarball": "https://registry.npmjs.org/error-stack-parser/-/error-stack-parser-1.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.1": {
+      "name": "error-stack-parser",
+      "description": "Extract meaning from JS Errors",
+      "maintainers": [
+        {
+          "name": "eriwen",
+          "email": "me@eriwen.com"
+        }
+      ],
+      "version": "1.1.1",
+      "keywords": [
+        "stacktrace",
+        "error",
+        "stack"
+      ],
+      "homepage": "http://www.stacktracejs.com",
+      "dependencies": {
+        "stackframe": "~0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/stacktracejs/error-stack-parser.git"
+      },
+      "devDependencies": {
+        "colors": "~1.0.3",
+        "coveralls": "^2.11.2",
+        "jasmine-node": "~1.14",
+        "jshint": "^2.5.6",
+        "karma": "~0.12",
+        "karma-chrome-launcher": "^0.1.5",
+        "karma-coverage": "^0.2.6",
+        "karma-firefox-launcher": "^0.1.3",
+        "karma-ie-launcher": "^0.1.5",
+        "karma-jasmine": "^0.1.5",
+        "karma-opera-launcher": "^0.1.0",
+        "karma-phantomjs-launcher": "^0.1.4",
+        "karma-safari-launcher": "^0.1.1",
+        "karma-sauce-launcher": "^0.2.10",
+        "uglify-js2": "^2.1.11"
+      },
+      "bugs": {
+        "url": "https://github.com/stacktracejs/error-stack-parser/issues"
+      },
+      "licenses": [
+        {
+          "type": "Public Domain",
+          "url": "https://github.com/stacktracejs/error-stack-parser/blob/master/LICENSE"
+        }
+      ],
+      "main": "./error-stack-parser.js",
+      "files": [
+        "LICENSE",
+        "README.md",
+        "error-stack-parser.js",
+        "dist/",
+        "node_modules/stackframe/"
+      ],
+      "scripts": {
+        "test": "make clean test"
+      },
+      "gitHead": "7f6828ec08bbfe50dc0c47042a2b0c571cdab3d1",
+      "_id": "error-stack-parser@1.1.1",
+      "_shasum": "26d018fcec17c9ea16e8acf727da03f4a15375e6",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "eriwen",
+        "email": "me@eriwen.com"
+      },
+      "dist": {
+        "shasum": "26d018fcec17c9ea16e8acf727da03f4a15375e6",
+        "tarball": "https://registry.npmjs.org/error-stack-parser/-/error-stack-parser-1.1.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.2": {
+      "name": "error-stack-parser",
+      "description": "Extract meaning from JS Errors",
+      "maintainers": [
+        {
+          "name": "eriwen",
+          "email": "me@eriwen.com"
+        }
+      ],
+      "version": "1.1.2",
+      "keywords": [
+        "stacktrace",
+        "error",
+        "stack"
+      ],
+      "homepage": "http://www.stacktracejs.com",
+      "dependencies": {
+        "stackframe": "~0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/stacktracejs/error-stack-parser.git"
+      },
+      "devDependencies": {
+        "colors": "~1.0.3",
+        "coveralls": "^2.11.2",
+        "jasmine-node": "~1.14",
+        "jshint": "^2.5.6",
+        "karma": "~0.12",
+        "karma-chrome-launcher": "^0.1.5",
+        "karma-coverage": "^0.2.6",
+        "karma-firefox-launcher": "^0.1.3",
+        "karma-ie-launcher": "^0.1.5",
+        "karma-jasmine": "^0.1.5",
+        "karma-opera-launcher": "^0.1.0",
+        "karma-phantomjs-launcher": "^0.1.4",
+        "karma-safari-launcher": "^0.1.1",
+        "karma-sauce-launcher": "^0.2.10",
+        "uglify-js2": "^2.1.11"
+      },
+      "bugs": {
+        "url": "https://github.com/stacktracejs/error-stack-parser/issues"
+      },
+      "licenses": [
+        {
+          "type": "Public Domain",
+          "url": "https://github.com/stacktracejs/error-stack-parser/blob/master/LICENSE"
+        }
+      ],
+      "main": "./error-stack-parser.js",
+      "files": [
+        "LICENSE",
+        "README.md",
+        "error-stack-parser.js",
+        "dist/",
+        "node_modules/stackframe/"
+      ],
+      "scripts": {
+        "test": "make clean test"
+      },
+      "gitHead": "b7d7968e6b7e42b8c8ec1061fd172bd1ca13ee66",
+      "_id": "error-stack-parser@1.1.2",
+      "_shasum": "8073e9c8eb7139715b7c9fa7425ce09e4579b3db",
+      "_from": ".",
+      "_npmVersion": "2.5.0",
+      "_nodeVersion": "0.10.35",
+      "_npmUser": {
+        "name": "eriwen",
+        "email": "me@eriwen.com"
+      },
+      "dist": {
+        "shasum": "8073e9c8eb7139715b7c9fa7425ce09e4579b3db",
+        "tarball": "https://registry.npmjs.org/error-stack-parser/-/error-stack-parser-1.1.2.tgz"
+      },
+      "directories": {}
+    },
+    "1.2.0": {
+      "name": "error-stack-parser",
+      "description": "Extract meaning from JS Errors",
+      "maintainers": [
+        {
+          "name": "eriwen",
+          "email": "me@eriwen.com"
+        }
+      ],
+      "version": "1.2.0",
+      "keywords": [
+        "stacktrace",
+        "error",
+        "stack"
+      ],
+      "homepage": "http://www.stacktracejs.com",
+      "dependencies": {
+        "stackframe": "~0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/stacktracejs/error-stack-parser.git"
+      },
+      "devDependencies": {
+        "colors": "~1.0.3",
+        "coveralls": "^2.11.2",
+        "jasmine-node": "~1.14",
+        "jshint": "^2.5.6",
+        "karma": "~0.12",
+        "karma-chrome-launcher": "^0.1.5",
+        "karma-coverage": "^0.2.6",
+        "karma-firefox-launcher": "^0.1.3",
+        "karma-ie-launcher": "^0.1.5",
+        "karma-jasmine": "^0.1.5",
+        "karma-opera-launcher": "^0.1.0",
+        "karma-phantomjs-launcher": "^0.1.4",
+        "karma-safari-launcher": "^0.1.1",
+        "karma-sauce-launcher": "^0.2.10",
+        "uglify-js2": "^2.1.11"
+      },
+      "bugs": {
+        "url": "https://github.com/stacktracejs/error-stack-parser/issues"
+      },
+      "licenses": [
+        {
+          "type": "Public Domain",
+          "url": "https://github.com/stacktracejs/error-stack-parser/blob/master/LICENSE"
+        }
+      ],
+      "main": "./error-stack-parser.js",
+      "files": [
+        "LICENSE",
+        "README.md",
+        "error-stack-parser.js",
+        "dist/",
+        "node_modules/stackframe/"
+      ],
+      "scripts": {
+        "test": "make clean test"
+      },
+      "gitHead": "2965497583c3f6ad99aba0e324b29547b169782a",
+      "_id": "error-stack-parser@1.2.0",
+      "_shasum": "23b84a76db68f4b3924f65837ce121d8c0571a1d",
+      "_from": ".",
+      "_npmVersion": "2.5.0",
+      "_nodeVersion": "0.10.35",
+      "_npmUser": {
+        "name": "eriwen",
+        "email": "me@eriwen.com"
+      },
+      "dist": {
+        "shasum": "23b84a76db68f4b3924f65837ce121d8c0571a1d",
+        "tarball": "https://registry.npmjs.org/error-stack-parser/-/error-stack-parser-1.2.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.2.1": {
+      "name": "error-stack-parser",
+      "description": "Extract meaning from JS Errors",
+      "maintainers": [
+        {
+          "name": "eriwen",
+          "email": "me@eriwen.com"
+        }
+      ],
+      "version": "1.2.1",
+      "license": "SEE LICENSE IN LICENSE",
+      "keywords": [
+        "stacktrace",
+        "error",
+        "stack"
+      ],
+      "homepage": "http://www.stacktracejs.com",
+      "dependencies": {
+        "stackframe": "^0.3.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/stacktracejs/error-stack-parser.git"
+      },
+      "devDependencies": {
+        "colors": "~1.0.3",
+        "coveralls": "^2.11.3",
+        "del": "^1.2.0",
+        "gulp": "^3.9.0",
+        "gulp-concat": "^2.6.0",
+        "gulp-coveralls": "^0.1.4",
+        "gulp-jshint": "^1.11.2",
+        "gulp-sourcemaps": "^1.5.2",
+        "gulp-uglify": "^1.2.0",
+        "jasmine-node": "~1.14",
+        "karma": "~0.12",
+        "karma-chrome-launcher": "^0.1.5",
+        "karma-coverage": "^0.5.0",
+        "karma-firefox-launcher": "^0.1.3",
+        "karma-ie-launcher": "^0.1.5",
+        "karma-jasmine": "^0.1.6",
+        "karma-opera-launcher": "^0.1.0",
+        "karma-phantomjs2-launcher": "^0.3.0",
+        "karma-safari-launcher": "^0.1.1",
+        "karma-sauce-launcher": "^0.2.10",
+        "run-sequence": "^1.1.1"
+      },
+      "bugs": {
+        "url": "https://github.com/stacktracejs/error-stack-parser/issues"
+      },
+      "licenses": [
+        {
+          "type": "Public Domain",
+          "url": "https://github.com/stacktracejs/error-stack-parser/blob/master/LICENSE"
+        }
+      ],
+      "main": "./error-stack-parser.js",
+      "files": [
+        "LICENSE",
+        "README.md",
+        "error-stack-parser.js",
+        "dist/"
+      ],
+      "scripts": {
+        "test": "gulp clean test"
+      },
+      "gitHead": "27a19a704bb0ca9f9befd17b0a06c0e834d06098",
+      "_id": "error-stack-parser@1.2.1",
+      "_shasum": "41344fb8af38570aa16cf762ede25c2aa66b959d",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "0.12.4",
+      "_npmUser": {
+        "name": "eriwen",
+        "email": "me@eriwen.com"
+      },
+      "dist": {
+        "shasum": "41344fb8af38570aa16cf762ede25c2aa66b959d",
+        "tarball": "https://registry.npmjs.org/error-stack-parser/-/error-stack-parser-1.2.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.2.2": {
+      "name": "error-stack-parser",
+      "description": "Extract meaning from JS Errors",
+      "maintainers": [
+        {
+          "name": "eriwen",
+          "email": "me@eriwen.com"
+        }
+      ],
+      "version": "1.2.2",
+      "license": "SEE LICENSE IN LICENSE",
+      "keywords": [
+        "stacktrace",
+        "error",
+        "stack"
+      ],
+      "homepage": "http://www.stacktracejs.com",
+      "dependencies": {
+        "stackframe": "^0.3.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/stacktracejs/error-stack-parser.git"
+      },
+      "devDependencies": {
+        "colors": "^1.1.2",
+        "del": "^1.2.0",
+        "gulp": "^3.9.0",
+        "gulp-concat": "^2.6.0",
+        "gulp-coveralls": "^0.1.4",
+        "gulp-jshint": "^1.11.2",
+        "gulp-sourcemaps": "^1.5.2",
+        "gulp-uglify": "^1.2.0",
+        "jasmine-node": "~1.14",
+        "karma": "~0.12",
+        "karma-chrome-launcher": "^0.1.5",
+        "karma-coverage": "^0.5.0",
+        "karma-firefox-launcher": "^0.1.3",
+        "karma-ie-launcher": "^0.1.5",
+        "karma-jasmine": "^0.1.6",
+        "karma-opera-launcher": "^0.1.0",
+        "karma-phantomjs2-launcher": "^0.3.1",
+        "karma-safari-launcher": "^0.1.1",
+        "karma-sauce-launcher": "^0.2.10",
+        "run-sequence": "^1.1.1"
+      },
+      "bugs": {
+        "url": "https://github.com/stacktracejs/error-stack-parser/issues"
+      },
+      "main": "./error-stack-parser.js",
+      "files": [
+        "LICENSE",
+        "README.md",
+        "error-stack-parser.js",
+        "dist/"
+      ],
+      "scripts": {
+        "test": "gulp test"
+      },
+      "gitHead": "fdde0cb1a9e82007e40d76357035c910fc3eff00",
+      "_id": "error-stack-parser@1.2.2",
+      "_shasum": "97d7516fa577078a515e68aba26724ce36d528e8",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "0.12.4",
+      "_npmUser": {
+        "name": "eriwen",
+        "email": "me@eriwen.com"
+      },
+      "dist": {
+        "shasum": "97d7516fa577078a515e68aba26724ce36d528e8",
+        "tarball": "https://registry.npmjs.org/error-stack-parser/-/error-stack-parser-1.2.2.tgz"
+      },
+      "directories": {}
+    },
+    "1.2.3": {
+      "name": "error-stack-parser",
+      "description": "Extract meaning from JS Errors",
+      "maintainers": [
+        {
+          "name": "eriwen",
+          "email": "me@eriwen.com"
+        }
+      ],
+      "version": "1.2.3",
+      "license": "SEE LICENSE IN LICENSE",
+      "keywords": [
+        "stacktrace",
+        "error",
+        "stack"
+      ],
+      "homepage": "http://www.stacktracejs.com",
+      "dependencies": {
+        "stackframe": "^0.3.1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/stacktracejs/error-stack-parser.git"
+      },
+      "devDependencies": {
+        "colors": "^1.1.2",
+        "del": "^1.2.1",
+        "gulp": "^3.9.0",
+        "gulp-concat": "^2.6.0",
+        "gulp-coveralls": "^0.1.4",
+        "gulp-jshint": "^1.11.2",
+        "gulp-sourcemaps": "^1.5.2",
+        "gulp-uglify": "^1.4.1",
+        "jasmine-node": "~1.14",
+        "karma": "~0.12",
+        "karma-chrome-launcher": "^0.1.5",
+        "karma-coverage": "^0.5.2",
+        "karma-firefox-launcher": "^0.1.3",
+        "karma-ie-launcher": "^0.1.5",
+        "karma-jasmine": "^0.1.6",
+        "karma-opera-launcher": "^0.1.0",
+        "karma-phantomjs2-launcher": "^0.3.2",
+        "karma-safari-launcher": "^0.1.1",
+        "karma-sauce-launcher": "^0.2.10",
+        "run-sequence": "^1.1.1"
+      },
+      "bugs": {
+        "url": "https://github.com/stacktracejs/error-stack-parser/issues"
+      },
+      "main": "./error-stack-parser.js",
+      "files": [
+        "LICENSE",
+        "README.md",
+        "error-stack-parser.js",
+        "dist/"
+      ],
+      "scripts": {
+        "test": "gulp test"
+      },
+      "gitHead": "1d247018323b83270c3db6e3659c37938582f23d",
+      "_id": "error-stack-parser@1.2.3",
+      "_shasum": "4342dfc056e3acb842b12d554d2b22161c4db741",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "0.12.4",
+      "_npmUser": {
+        "name": "eriwen",
+        "email": "me@eriwen.com"
+      },
+      "dist": {
+        "shasum": "4342dfc056e3acb842b12d554d2b22161c4db741",
+        "tarball": "https://registry.npmjs.org/error-stack-parser/-/error-stack-parser-1.2.3.tgz"
+      },
+      "directories": {}
+    },
+    "1.3.0": {
+      "name": "error-stack-parser",
+      "description": "Extract meaning from JS Errors",
+      "maintainers": [
+        {
+          "name": "eriwen",
+          "email": "me@eriwen.com"
+        },
+        {
+          "name": "oliversalzburg",
+          "email": "oliver.salzburg@gmail.com"
+        }
+      ],
+      "version": "1.3.0",
+      "license": "SEE LICENSE IN LICENSE",
+      "keywords": [
+        "stacktrace",
+        "error",
+        "stack",
+        "parser"
+      ],
+      "homepage": "http://www.stacktracejs.com",
+      "dependencies": {
+        "stackframe": "^0.3.1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/stacktracejs/error-stack-parser.git"
+      },
+      "devDependencies": {
+        "colors": "^1.1.2",
+        "del": "^1.2.1",
+        "gulp": "^3.9.0",
+        "gulp-concat": "^2.6.0",
+        "gulp-coveralls": "^0.1.4",
+        "gulp-jshint": "^1.11.2",
+        "gulp-sourcemaps": "^1.5.2",
+        "gulp-uglify": "^1.4.1",
+        "jasmine-node": "~1.14",
+        "karma": "~0.12",
+        "karma-chrome-launcher": "^0.1.5",
+        "karma-coverage": "^0.5.2",
+        "karma-firefox-launcher": "^0.1.3",
+        "karma-ie-launcher": "^0.1.5",
+        "karma-jasmine": "^0.1.6",
+        "karma-opera-launcher": "^0.1.0",
+        "karma-phantomjs2-launcher": "^0.3.2",
+        "karma-safari-launcher": "^0.1.1",
+        "karma-sauce-launcher": "^0.2.10",
+        "run-sequence": "^1.1.1"
+      },
+      "bugs": {
+        "url": "https://github.com/stacktracejs/error-stack-parser/issues"
+      },
+      "main": "./error-stack-parser.js",
+      "files": [
+        "LICENSE",
+        "README.md",
+        "error-stack-parser.js",
+        "dist/"
+      ],
+      "scripts": {
+        "test": "gulp test"
+      },
+      "gitHead": "6d1b89bf77dd2514e25141146c8f3a5f721685af",
+      "_id": "error-stack-parser@1.3.0",
+      "_shasum": "05391996a4ab2e23d35ac23d135908d80ba25de0",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "0.12.4",
+      "_npmUser": {
+        "name": "eriwen",
+        "email": "me@eriwen.com"
+      },
+      "dist": {
+        "shasum": "05391996a4ab2e23d35ac23d135908d80ba25de0",
+        "tarball": "https://registry.npmjs.org/error-stack-parser/-/error-stack-parser-1.3.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.3.1": {
+      "name": "error-stack-parser",
+      "description": "Extract meaning from JS Errors",
+      "maintainers": [
+        {
+          "name": "eriwen",
+          "email": "me@eriwen.com"
+        },
+        {
+          "name": "oliversalzburg",
+          "email": "oliver.salzburg@gmail.com"
+        }
+      ],
+      "version": "1.3.1",
+      "license": "SEE LICENSE IN LICENSE",
+      "keywords": [
+        "stacktrace",
+        "error",
+        "stack",
+        "parser"
+      ],
+      "homepage": "http://www.stacktracejs.com",
+      "dependencies": {
+        "stackframe": "^0.3.1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/stacktracejs/error-stack-parser.git"
+      },
+      "devDependencies": {
+        "colors": "^1.1.2",
+        "del": "^1.2.1",
+        "gulp": "^3.9.0",
+        "gulp-concat": "^2.6.0",
+        "gulp-coveralls": "^0.1.4",
+        "gulp-jshint": "^1.11.2",
+        "gulp-sourcemaps": "^1.5.2",
+        "gulp-uglify": "^1.4.1",
+        "jasmine-node": "~1.14",
+        "karma": "~0.12",
+        "karma-chrome-launcher": "^0.1.5",
+        "karma-coverage": "^0.5.2",
+        "karma-firefox-launcher": "^0.1.3",
+        "karma-ie-launcher": "^0.1.5",
+        "karma-jasmine": "^0.1.6",
+        "karma-opera-launcher": "^0.1.0",
+        "karma-phantomjs2-launcher": "^0.3.2",
+        "karma-safari-launcher": "^0.1.1",
+        "karma-sauce-launcher": "^0.2.10",
+        "run-sequence": "^1.1.1"
+      },
+      "bugs": {
+        "url": "https://github.com/stacktracejs/error-stack-parser/issues"
+      },
+      "main": "./error-stack-parser.js",
+      "files": [
+        "LICENSE",
+        "README.md",
+        "error-stack-parser.js",
+        "dist/"
+      ],
+      "scripts": {
+        "test": "gulp test"
+      },
+      "gitHead": "53dd6f8877ac1c3c335257f50a57179ddd47376b",
+      "_id": "error-stack-parser@1.3.1",
+      "_shasum": "5639993b710bdc6fe2a54be61ff6bce403e42451",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "0.12.4",
+      "_npmUser": {
+        "name": "eriwen",
+        "email": "me@eriwen.com"
+      },
+      "dist": {
+        "shasum": "5639993b710bdc6fe2a54be61ff6bce403e42451",
+        "tarball": "https://registry.npmjs.org/error-stack-parser/-/error-stack-parser-1.3.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.3.2": {
+      "name": "error-stack-parser",
+      "description": "Extract meaning from JS Errors",
+      "maintainers": [
+        {
+          "name": "eriwen",
+          "email": "me@eriwen.com"
+        },
+        {
+          "name": "oliversalzburg",
+          "email": "oliver.salzburg@gmail.com"
+        }
+      ],
+      "version": "1.3.2",
+      "license": "SEE LICENSE IN LICENSE",
+      "keywords": [
+        "stacktrace",
+        "error",
+        "stack",
+        "parser"
+      ],
+      "homepage": "http://www.stacktracejs.com",
+      "dependencies": {
+        "stackframe": "^0.3.1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/stacktracejs/error-stack-parser.git"
+      },
+      "devDependencies": {
+        "colors": "^1.1.2",
+        "del": "^1.2.1",
+        "gulp": "^3.9.0",
+        "gulp-concat": "^2.6.0",
+        "gulp-coveralls": "^0.1.4",
+        "gulp-jshint": "^2.0.0",
+        "gulp-sourcemaps": "^1.6.0",
+        "gulp-uglify": "^1.5.1",
+        "jasmine": "^2.3.2",
+        "jasmine-core": "^2.3.4",
+        "jshint": "^2.8.0",
+        "karma": "~0.13",
+        "karma-chrome-launcher": "^0.1.12",
+        "karma-coverage": "^0.5.3",
+        "karma-firefox-launcher": "^0.1.7",
+        "karma-ie-launcher": "^0.2.0",
+        "karma-jasmine": "^0.3.6",
+        "karma-opera-launcher": "^0.1.0",
+        "karma-phantomjs2-launcher": "^0.3.2",
+        "karma-safari-launcher": "^0.1.1",
+        "karma-sauce-launcher": "^0.3.0",
+        "run-sequence": "^1.1.5"
+      },
+      "bugs": {
+        "url": "https://github.com/stacktracejs/error-stack-parser/issues"
+      },
+      "main": "./error-stack-parser.js",
+      "files": [
+        "LICENSE",
+        "README.md",
+        "error-stack-parser.js",
+        "dist/"
+      ],
+      "scripts": {
+        "test": "gulp test"
+      },
+      "gitHead": "3e56eaeaac88e808b5f9bd3835f6d3986350968b",
+      "_id": "error-stack-parser@1.3.2",
+      "_shasum": "29e21522b2ca531e669beb550c5efdfc489ef4aa",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "0.12.4",
+      "_npmUser": {
+        "name": "eriwen",
+        "email": "me@eriwen.com"
+      },
+      "dist": {
+        "shasum": "29e21522b2ca531e669beb550c5efdfc489ef4aa",
+        "tarball": "https://registry.npmjs.org/error-stack-parser/-/error-stack-parser-1.3.2.tgz"
+      },
+      "directories": {}
+    },
+    "1.3.3": {
+      "name": "error-stack-parser",
+      "description": "Extract meaning from JS Errors",
+      "maintainers": [
+        {
+          "name": "eriwen",
+          "email": "me@eriwen.com"
+        },
+        {
+          "name": "oliversalzburg",
+          "email": "oliver.salzburg@gmail.com"
+        }
+      ],
+      "version": "1.3.3",
+      "license": "Unlicense",
+      "keywords": [
+        "stacktrace",
+        "error",
+        "stack",
+        "parser"
+      ],
+      "homepage": "https://www.stacktracejs.com",
+      "dependencies": {
+        "stackframe": "^0.3.1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/stacktracejs/error-stack-parser.git"
+      },
+      "devDependencies": {
+        "colors": "^1.1.2",
+        "del": "^1.2.1",
+        "gulp": "^3.9.0",
+        "gulp-concat": "^2.6.0",
+        "gulp-coveralls": "^0.1.4",
+        "gulp-jshint": "^2.0.0",
+        "gulp-sourcemaps": "^1.6.0",
+        "gulp-uglify": "^1.5.1",
+        "jasmine": "^2.3.2",
+        "jasmine-core": "^2.3.4",
+        "jshint": "^2.8.0",
+        "karma": "~0.13",
+        "karma-chrome-launcher": "^0.1.12",
+        "karma-coverage": "^0.5.3",
+        "karma-firefox-launcher": "^0.1.7",
+        "karma-ie-launcher": "^0.2.0",
+        "karma-jasmine": "^0.3.6",
+        "karma-opera-launcher": "^0.1.0",
+        "karma-phantomjs2-launcher": "^0.3.2",
+        "karma-safari-launcher": "^0.1.1",
+        "karma-sauce-launcher": "^0.3.0",
+        "karma-spec-reporter": "0.0.23",
+        "run-sequence": "^1.1.5"
+      },
+      "bugs": {
+        "url": "https://github.com/stacktracejs/error-stack-parser/issues"
+      },
+      "main": "./error-stack-parser.js",
+      "files": [
+        "LICENSE",
+        "README.md",
+        "error-stack-parser.js",
+        "dist/"
+      ],
+      "scripts": {
+        "test": "gulp test"
+      },
+      "gitHead": "b6d8241317c1b77f01907852727e9c96fcbb1136",
+      "_id": "error-stack-parser@1.3.3",
+      "_shasum": "fada6e3a9cd2b0e080e6d6fc751418649734f35c",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "0.12.4",
+      "_npmUser": {
+        "name": "eriwen",
+        "email": "me@eriwen.com"
+      },
+      "dist": {
+        "shasum": "fada6e3a9cd2b0e080e6d6fc751418649734f35c",
+        "tarball": "https://registry.npmjs.org/error-stack-parser/-/error-stack-parser-1.3.3.tgz"
+      },
+      "directories": {}
+    },
+    "1.3.4": {
+      "name": "error-stack-parser",
+      "description": "Extract meaning from JS Errors",
+      "maintainers": [
+        {
+          "name": "eriwen",
+          "email": "me@eriwen.com"
+        },
+        {
+          "name": "oliversalzburg",
+          "email": "oliver.salzburg@gmail.com"
+        }
+      ],
+      "version": "1.3.4",
+      "license": "Unlicense",
+      "keywords": [
+        "stacktrace",
+        "error",
+        "stack",
+        "parser"
+      ],
+      "homepage": "https://www.stacktracejs.com",
+      "dependencies": {
+        "stackframe": "^0.3.1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/stacktracejs/error-stack-parser.git"
+      },
+      "devDependencies": {
+        "colors": "^1.1.2",
+        "del": "^1.2.1",
+        "gulp": "^3.9.0",
+        "gulp-concat": "^2.6.0",
+        "gulp-coveralls": "^0.1.4",
+        "gulp-jshint": "^2.0.0",
+        "gulp-sourcemaps": "^1.6.0",
+        "gulp-uglify": "^1.5.1",
+        "jasmine": "^2.3.2",
+        "jasmine-core": "^2.3.4",
+        "jscs": "^2.9.0",
+        "jshint": "^2.8.0",
+        "karma": "~0.13",
+        "karma-chrome-launcher": "^0.1.12",
+        "karma-coverage": "^0.5.3",
+        "karma-firefox-launcher": "^0.1.7",
+        "karma-ie-launcher": "^0.2.0",
+        "karma-jasmine": "^0.3.6",
+        "karma-opera-launcher": "^0.1.0",
+        "karma-phantomjs2-launcher": "^0.3.2",
+        "karma-safari-launcher": "^0.1.1",
+        "karma-sauce-launcher": "^0.3.0",
+        "karma-spec-reporter": "0.0.23",
+        "run-sequence": "^1.1.5"
+      },
+      "bugs": {
+        "url": "https://github.com/stacktracejs/error-stack-parser/issues"
+      },
+      "main": "./error-stack-parser.js",
+      "files": [
+        "LICENSE",
+        "README.md",
+        "error-stack-parser.js",
+        "dist/"
+      ],
+      "scripts": {
+        "test": "gulp test"
+      },
+      "gitHead": "29281309b4401bb5331f0446f1b43984a2c547db",
+      "_id": "error-stack-parser@1.3.4",
+      "_shasum": "955a9248600eae7c0b596f6f65589e5440a28bb8",
+      "_from": ".",
+      "_npmVersion": "3.3.12",
+      "_nodeVersion": "5.3.0",
+      "_npmUser": {
+        "name": "eriwen",
+        "email": "me@eriwen.com"
+      },
+      "dist": {
+        "shasum": "955a9248600eae7c0b596f6f65589e5440a28bb8",
+        "tarball": "https://registry.npmjs.org/error-stack-parser/-/error-stack-parser-1.3.4.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/error-stack-parser-1.3.4.tgz_1459536512050_0.946812434354797"
+      },
+      "directories": {}
+    },
+    "1.3.5": {
+      "name": "error-stack-parser",
+      "description": "Extract meaning from JS Errors",
+      "maintainers": [
+        {
+          "name": "eriwen",
+          "email": "me@eriwen.com"
+        },
+        {
+          "name": "oliversalzburg",
+          "email": "oliver.salzburg@gmail.com"
+        }
+      ],
+      "version": "1.3.5",
+      "license": "Unlicense",
+      "keywords": [
+        "stacktrace",
+        "error",
+        "stack",
+        "parser"
+      ],
+      "homepage": "https://www.stacktracejs.com",
+      "dependencies": {
+        "stackframe": "^0.3.1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/stacktracejs/error-stack-parser.git"
+      },
+      "devDependencies": {
+        "colors": "^1.1.2",
+        "del": "^1.2.1",
+        "gulp": "^3.9.0",
+        "gulp-concat": "^2.6.0",
+        "gulp-coveralls": "^0.1.4",
+        "gulp-jshint": "^2.0.0",
+        "gulp-sourcemaps": "^1.6.0",
+        "gulp-uglify": "^1.5.1",
+        "jasmine": "^2.3.2",
+        "jasmine-core": "^2.3.4",
+        "jscs": "^2.9.0",
+        "jshint": "^2.8.0",
+        "karma": "~0.13",
+        "karma-chrome-launcher": "^0.1.12",
+        "karma-coverage": "^0.5.3",
+        "karma-firefox-launcher": "^0.1.7",
+        "karma-ie-launcher": "^0.2.0",
+        "karma-jasmine": "^0.3.6",
+        "karma-opera-launcher": "^0.1.0",
+        "karma-phantomjs2-launcher": "^0.3.2",
+        "karma-safari-launcher": "^0.1.1",
+        "karma-sauce-launcher": "^0.3.0",
+        "karma-spec-reporter": "0.0.23",
+        "run-sequence": "^1.1.5"
+      },
+      "bugs": {
+        "url": "https://github.com/stacktracejs/error-stack-parser/issues"
+      },
+      "main": "./error-stack-parser.js",
+      "files": [
+        "LICENSE",
+        "README.md",
+        "error-stack-parser.js",
+        "dist/"
+      ],
+      "scripts": {
+        "test": "gulp test",
+        "prepublish": "gulp dist"
+      },
+      "gitHead": "97aa0aa08dc964aad887ba19a640154b3f6c144f",
+      "_id": "error-stack-parser@1.3.5",
+      "_shasum": "5430ee6474758cd5f554b23346bdc04066eb9ed2",
+      "_from": ".",
+      "_npmVersion": "3.3.12",
+      "_nodeVersion": "5.3.0",
+      "_npmUser": {
+        "name": "eriwen",
+        "email": "me@eriwen.com"
+      },
+      "dist": {
+        "shasum": "5430ee6474758cd5f554b23346bdc04066eb9ed2",
+        "tarball": "https://registry.npmjs.org/error-stack-parser/-/error-stack-parser-1.3.5.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/error-stack-parser-1.3.5.tgz_1459537516993_0.49045107420533895"
+      },
+      "directories": {}
+    },
+    "1.3.6": {
+      "name": "error-stack-parser",
+      "description": "Extract meaning from JS Errors",
+      "maintainers": [
+        {
+          "name": "eriwen",
+          "email": "me@eriwen.com"
+        },
+        {
+          "name": "oliversalzburg",
+          "email": "oliver.salzburg@gmail.com"
+        }
+      ],
+      "version": "1.3.6",
+      "license": "Unlicense",
+      "keywords": [
+        "stacktrace",
+        "error",
+        "stack",
+        "parser"
+      ],
+      "homepage": "https://www.stacktracejs.com",
+      "dependencies": {
+        "stackframe": "^0.3.1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/stacktracejs/error-stack-parser.git"
+      },
+      "devDependencies": {
+        "colors": "^1.1.2",
+        "del": "^1.2.1",
+        "gulp": "^3.9.0",
+        "gulp-concat": "^2.6.0",
+        "gulp-coveralls": "^0.1.4",
+        "gulp-jshint": "^2.0.0",
+        "gulp-sourcemaps": "^1.6.0",
+        "gulp-uglify": "^1.5.1",
+        "jasmine": "^2.3.2",
+        "jasmine-core": "^2.3.4",
+        "jscs": "^2.9.0",
+        "jsdoc-dash-template": "^1.2.0",
+        "jshint": "^2.8.0",
+        "karma": "~0.13",
+        "karma-chrome-launcher": "^0.1.12",
+        "karma-coverage": "^0.5.3",
+        "karma-firefox-launcher": "^0.1.7",
+        "karma-ie-launcher": "^0.2.0",
+        "karma-jasmine": "^0.3.6",
+        "karma-opera-launcher": "^0.1.0",
+        "karma-phantomjs2-launcher": "^0.3.2",
+        "karma-safari-launcher": "^0.1.1",
+        "karma-sauce-launcher": "^0.3.0",
+        "karma-spec-reporter": "0.0.23",
+        "run-sequence": "^1.1.5"
+      },
+      "bugs": {
+        "url": "https://github.com/stacktracejs/error-stack-parser/issues"
+      },
+      "main": "./error-stack-parser.js",
+      "files": [
+        "LICENSE",
+        "README.md",
+        "error-stack-parser.js",
+        "dist/"
+      ],
+      "scripts": {
+        "test": "gulp test",
+        "prepublish": "gulp dist"
+      },
+      "gitHead": "04b29272bff2047496b822d165f7c0b0fd211b31",
+      "_id": "error-stack-parser@1.3.6",
+      "_shasum": "e0e73b93e417138d1cd7c0b746b1a4a14854c292",
+      "_from": ".",
+      "_npmVersion": "3.3.12",
+      "_nodeVersion": "5.3.0",
+      "_npmUser": {
+        "name": "eriwen",
+        "email": "me@eriwen.com"
+      },
+      "dist": {
+        "shasum": "e0e73b93e417138d1cd7c0b746b1a4a14854c292",
+        "tarball": "https://registry.npmjs.org/error-stack-parser/-/error-stack-parser-1.3.6.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/error-stack-parser-1.3.6.tgz_1463348711004_0.6289220121689141"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "error-stack-parser",
+      "description": "Extract meaning from JS Errors",
+      "maintainers": [
+        {
+          "name": "eriwen",
+          "email": "me@eriwen.com"
+        },
+        {
+          "name": "oliversalzburg",
+          "email": "oliver.salzburg@gmail.com"
+        }
+      ],
+      "version": "2.0.0",
+      "license": "Unlicense",
+      "keywords": [
+        "stacktrace",
+        "error",
+        "stack",
+        "parser"
+      ],
+      "homepage": "https://www.stacktracejs.com",
+      "dependencies": {
+        "stackframe": "^1.0.2"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/stacktracejs/error-stack-parser.git"
+      },
+      "devDependencies": {
+        "colors": "^1.1.2",
+        "del": "^1.2.1",
+        "gulp": "^3.9.0",
+        "gulp-concat": "^2.6.0",
+        "gulp-coveralls": "^0.1.4",
+        "gulp-jshint": "^2.0.0",
+        "gulp-sourcemaps": "^1.6.0",
+        "gulp-uglify": "^1.5.1",
+        "jasmine": "^2.3.2",
+        "jasmine-core": "^2.3.4",
+        "jscs": "^2.9.0",
+        "jsdoc-dash-template": "^1.2.0",
+        "jshint": "^2.8.0",
+        "karma": "~0.13",
+        "karma-chrome-launcher": "^0.1.12",
+        "karma-coverage": "^0.5.3",
+        "karma-firefox-launcher": "^0.1.7",
+        "karma-ie-launcher": "^0.2.0",
+        "karma-jasmine": "^0.3.6",
+        "karma-opera-launcher": "^0.1.0",
+        "karma-phantomjs2-launcher": "^0.3.2",
+        "karma-safari-launcher": "^0.1.1",
+        "karma-sauce-launcher": "^0.3.0",
+        "karma-spec-reporter": "0.0.23",
+        "run-sequence": "^1.1.5"
+      },
+      "bugs": {
+        "url": "https://github.com/stacktracejs/error-stack-parser/issues"
+      },
+      "main": "./error-stack-parser.js",
+      "files": [
+        "LICENSE",
+        "README.md",
+        "error-stack-parser.js",
+        "dist/"
+      ],
+      "scripts": {
+        "test": "gulp test",
+        "prepublish": "gulp dist"
+      },
+      "gitHead": "d9eb56a2804d0e5c1f3bf26e067a09f094fdd0de",
+      "_id": "error-stack-parser@2.0.0",
+      "_shasum": "9ce7777b32480e34a34c12a88b3428093fcd14b0",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.3.1",
+      "_npmUser": {
+        "name": "eriwen",
+        "email": "me@eriwen.com"
+      },
+      "dist": {
+        "shasum": "9ce7777b32480e34a34c12a88b3428093fcd14b0",
+        "tarball": "https://registry.npmjs.org/error-stack-parser/-/error-stack-parser-2.0.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/error-stack-parser-2.0.0.tgz_1481341792851_0.26317130448296666"
+      },
+      "directories": {}
+    },
+    "2.0.1": {
+      "name": "error-stack-parser",
+      "description": "Extract meaning from JS Errors",
+      "maintainers": [
+        {
+          "name": "eriwen",
+          "email": "me@eriwen.com"
+        },
+        {
+          "name": "oliversalzburg",
+          "email": "oliver.salzburg@gmail.com"
+        }
+      ],
+      "version": "2.0.1",
+      "license": "MIT",
+      "keywords": [
+        "stacktrace",
+        "error",
+        "stack",
+        "parser"
+      ],
+      "homepage": "https://www.stacktracejs.com",
+      "dependencies": {
+        "stackframe": "^1.0.3"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/stacktracejs/error-stack-parser.git"
+      },
+      "devDependencies": {
+        "colors": "^1.1.2",
+        "del": "^1.2.1",
+        "gulp": "^3.9.0",
+        "gulp-concat": "^2.6.0",
+        "gulp-coveralls": "^0.1.4",
+        "gulp-jshint": "^2.0.0",
+        "gulp-sourcemaps": "^1.6.0",
+        "gulp-uglify": "^1.5.1",
+        "jasmine": "^2.3.2",
+        "jasmine-core": "^2.3.4",
+        "jscs": "^2.9.0",
+        "jsdoc-dash-template": "^1.2.0",
+        "jshint": "^2.8.0",
+        "karma": "~0.13",
+        "karma-chrome-launcher": "^0.1.12",
+        "karma-coverage": "^0.5.3",
+        "karma-firefox-launcher": "^0.1.7",
+        "karma-ie-launcher": "^0.2.0",
+        "karma-jasmine": "^0.3.6",
+        "karma-opera-launcher": "^0.1.0",
+        "karma-phantomjs2-launcher": "^0.3.2",
+        "karma-safari-launcher": "^0.1.1",
+        "karma-sauce-launcher": "^0.3.0",
+        "karma-spec-reporter": "0.0.23",
+        "run-sequence": "^1.1.5"
+      },
+      "bugs": {
+        "url": "https://github.com/stacktracejs/error-stack-parser/issues"
+      },
+      "main": "./error-stack-parser.js",
+      "typings": "./error-stack-parser.d.ts",
+      "files": [
+        "LICENSE",
+        "README.md",
+        "error-stack-parser.js",
+        "error-stack-parser.d.ts",
+        "dist/"
+      ],
+      "scripts": {
+        "test": "gulp test",
+        "prepublish": "gulp dist"
+      },
+      "gitHead": "9114c3bd51d04d4d9f470470194c085dcf014ff2",
+      "_id": "error-stack-parser@2.0.1",
+      "_shasum": "a3202b8fb03114aa9b40a0e3669e48b2b65a010a",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.3.1",
+      "_npmUser": {
+        "name": "eriwen",
+        "email": "me@eriwen.com"
+      },
+      "dist": {
+        "shasum": "a3202b8fb03114aa9b40a0e3669e48b2b65a010a",
+        "tarball": "https://registry.npmjs.org/error-stack-parser/-/error-stack-parser-2.0.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/error-stack-parser-2.0.1.tgz_1493521121783_0.17893171915784478"
+      },
+      "directories": {}
+    },
+    "2.0.2": {
+      "name": "error-stack-parser",
+      "description": "Extract meaning from JS Errors",
+      "maintainers": [
+        {
+          "email": "me@eriwen.com",
+          "name": "eriwen"
+        },
+        {
+          "email": "oliver.salzburg@gmail.com",
+          "name": "oliversalzburg"
+        }
+      ],
+      "version": "2.0.2",
+      "license": "MIT",
+      "keywords": [
+        "stacktrace",
+        "error",
+        "stack",
+        "parser"
+      ],
+      "homepage": "https://www.stacktracejs.com",
+      "dependencies": {
+        "stackframe": "^1.0.4"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/stacktracejs/error-stack-parser.git"
+      },
+      "devDependencies": {
+        "colors": "^1.1.2",
+        "del": "^3.0.0",
+        "gulp": "^3.9.0",
+        "gulp-concat": "^2.6.0",
+        "gulp-coveralls": "^0.1.4",
+        "gulp-jshint": "^2.0.0",
+        "gulp-sourcemaps": "^1.12.0",
+        "gulp-uglify": "^1.5.1",
+        "jasmine": "^2.7.0",
+        "jasmine-core": "^2.7.0",
+        "jscs": "^2.9.0",
+        "jsdoc-dash-template": "^2.0.1",
+        "jshint": "^2.9.5",
+        "karma": "^1.7.0",
+        "karma-chrome-launcher": "^2.2.0",
+        "karma-coverage": "^1.1.1",
+        "karma-firefox-launcher": "^1.0.1",
+        "karma-ie-launcher": "^1.0.0",
+        "karma-jasmine": "^1.1.0",
+        "karma-opera-launcher": "^1.0.0",
+        "karma-phantomjs2-launcher": "^0.5.0",
+        "karma-safari-launcher": "^1.0.0",
+        "karma-sauce-launcher": "^1.1.0",
+        "karma-spec-reporter": "^0.0.31",
+        "run-sequence": "^1.1.5"
+      },
+      "bugs": {
+        "url": "https://github.com/stacktracejs/error-stack-parser/issues"
+      },
+      "main": "./error-stack-parser.js",
+      "typings": "./error-stack-parser.d.ts",
+      "files": [
+        "LICENSE",
+        "README.md",
+        "error-stack-parser.js",
+        "error-stack-parser.d.ts",
+        "dist/"
+      ],
+      "scripts": {
+        "test": "gulp test",
+        "prepublish": "gulp dist"
+      },
+      "gitHead": "2d84c602aeb2182544e4e5cc65add13d990473de",
+      "_id": "error-stack-parser@2.0.2",
+      "_npmVersion": "5.4.1",
+      "_nodeVersion": "8.1.2",
+      "_npmUser": {
+        "name": "eriwen",
+        "email": "me@eriwen.com"
+      },
+      "dist": {
+        "integrity": "sha512-E1fPutRDdIj/hohG0UpT5mayXNCxXP9d+snxFsPU9X0XgccOumKraa3juDMwTUyi7+Bu5+mCGagjg4IYeNbOdw==",
+        "shasum": "4ae8dbaa2bf90a8b450707b9149dcabca135520d",
+        "tarball": "https://registry.npmjs.org/error-stack-parser/-/error-stack-parser-2.0.2.tgz",
+        "fileCount": 9,
+        "unpackedSize": 48056,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbEEoUCRA9TVsSAnZWagAA+o0QAJnK2yY63FKjYSd4pkGp\nJA9RruXN5x4R5JRG61cJS3yZVUnjoWe1Ozs4oC912AYpqSZQcaJ7sJhw6qA2\nCnDoxFk+Ege0SumL817FeRUcQejcBI/1zKwBxDVgN2TjURxiVmBz+Nra+1++\nOW9ea1ZPtPgSvsTQJLSscKKIAZdoE8eL/VsbDcoHnWHMVFpjiYAUN//tlFBe\nphRniMy7OJMxdJrNTNYDfYHIXkxx9v/UqBSqDjhvGjAW2f0F3W9xVJZUp8j8\nU925eesXSpJf9yYTNZDh+PbXcCW562r/JBIHcKJWkho3LAI+DiDR0HdMjbQA\nwcJBPb/7ofZ0LFJX8viHRCP/Nn5jf/Js29VcWWVtzyiwNhju2cSoIQ7DRFDo\nlMtg506gola3s4V2AhCGG6Y0xyvyw2o8EapOBj4w8f1U4gbd9GLon9wsU+n8\nCvdmpK/lokj4G94dB6QnYWJakVkZhVP5zEAXNXPoVxbbKlzqJY7OiZRMHX8G\nzfNtLxciqx6t18xgPR/dPGRxXdsYe7yIiRMlvCcZuJzgjjD14T/PGnGZhcEK\nkhaci53j+Uj9gwFzjE2xfNYsQw/KK9BFD+SX70gKN0RkDShiq8dmwiHu89UM\nMlWadPqojUMgrsu9LIotE1ncKAgW2N4x3TojCBsOQSBpNe81cSBk1wRBU4AR\nfsmc\r\n=BkN7\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/error-stack-parser_2.0.2_1527794195956_0.5325946963227692"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.3": {
+      "name": "error-stack-parser",
+      "description": "Extract meaning from JS Errors",
+      "maintainers": [
+        {
+          "email": "me@eriwen.com",
+          "name": "eriwen"
+        },
+        {
+          "email": "oliver.salzburg@gmail.com",
+          "name": "oliversalzburg"
+        }
+      ],
+      "version": "2.0.3",
+      "license": "MIT",
+      "keywords": [
+        "stacktrace",
+        "error",
+        "stack",
+        "parser"
+      ],
+      "homepage": "https://www.stacktracejs.com",
+      "dependencies": {
+        "stackframe": "^1.0.4"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/stacktracejs/error-stack-parser.git"
+      },
+      "devDependencies": {
+        "colors": "^1.1.2",
+        "del": "^3.0.0",
+        "gulp": "^3.9.0",
+        "gulp-concat": "^2.6.0",
+        "gulp-coveralls": "^0.1.4",
+        "gulp-jshint": "^2.0.0",
+        "gulp-sourcemaps": "^1.12.0",
+        "gulp-uglify": "^1.5.1",
+        "jasmine": "^2.7.0",
+        "jasmine-core": "^2.7.0",
+        "jscs": "^2.9.0",
+        "jsdoc-dash-template": "^2.0.1",
+        "jshint": "^2.9.5",
+        "karma": "^1.7.0",
+        "karma-chrome-launcher": "^2.2.0",
+        "karma-coverage": "^1.1.1",
+        "karma-firefox-launcher": "^1.0.1",
+        "karma-ie-launcher": "^1.0.0",
+        "karma-jasmine": "^1.1.0",
+        "karma-opera-launcher": "^1.0.0",
+        "karma-phantomjs2-launcher": "^0.5.0",
+        "karma-safari-launcher": "^1.0.0",
+        "karma-sauce-launcher": "^2.0.2",
+        "karma-spec-reporter": "^0.0.31",
+        "run-sequence": "^1.1.5"
+      },
+      "bugs": {
+        "url": "https://github.com/stacktracejs/error-stack-parser/issues"
+      },
+      "main": "./error-stack-parser.js",
+      "typings": "./error-stack-parser.d.ts",
+      "scripts": {
+        "test": "gulp test"
+      },
+      "gitHead": "83a014c36403386aef1bc4cb6f2ae7e756f25d84",
+      "_id": "error-stack-parser@2.0.3",
+      "_nodeVersion": "10.15.2",
+      "_npmVersion": "6.10.3",
+      "_npmUser": {
+        "name": "eriwen",
+        "email": "me@eriwen.com"
+      },
+      "dist": {
+        "integrity": "sha512-vRC4rKv87twMZy92X4+TmUdv3iYMsmePbpG/YguHsfzmZ8bYJZYYep7yrXH09yFUaCEPKgNK5X79+Yq7hwLVOA==",
+        "shasum": "9d3c000fb9f5c461f7c4e63c1aa75373ac7aaa36",
+        "tarball": "https://registry.npmjs.org/error-stack-parser/-/error-stack-parser-2.0.3.tgz",
+        "fileCount": 9,
+        "unpackedSize": 50131,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdUoTgCRA9TVsSAnZWagAA1RQP/1j87IcYZcVQSBqZWnda\nGw+CG3hHz/4pEl6wpxlqfwzDNJFY4U24Zu50M2qh5WEG59FbSZw45kRP2tKV\ni7O6TCyrM8kKTSsiZ2i0M2SNgWrFjHShUHbfjL5GQJ2CVka+v4wI53uJisby\nTiA9JzvOiEw/BAyXFUdQrYPdf57TEjE4qEaHv4yAtcf2MATk3S0bZ3WusyAC\n2wXjLavp1unD4xNKB+/skNX5dSqlgeeE0OtNEcBQhjLH+T+y+kL4hX/wTOOX\nLRWKaQWOqqqzRi1kxoFP2NqQp+JHy4ieNo/UtsdXatGC3dHTQ7yHYmP/yHPb\nNKTR5htyXXrKsFH7MnFoHRSyaVTF2o0YJRSsqSzCHO3m1FqrufxQNDa0TUjf\nLlra5dx33acxIJrHaFaAwqHvhZ8ULX3+Gj2U6xS1L3zIMET0QF9IzplrfQxE\nytpjvrEWyhALuvfqSgjMaps/45cT1LACsYO4IJ3qn89GIRMpwL3mP1P9EqC8\nxhmUpogztRugBzSjuoWshR/V1ZeY4VoK2okVqd/l9GERC0e4iu4wPEBkj2QV\n4iZlNE3mgbD0dJ++DpfQVvto0rQkzIzyVSVaoYYAijvKeznosMyPAVDLeGCj\n27TH2h8MXMouzSLcWguyM9o28hLRAxFARqhaYGkXp+I2lvEc7+EHOuIb6FPl\nlwfY\r\n=KAs1\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/error-stack-parser_2.0.3_1565689055931_0.5255486090768198"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.4": {
+      "name": "error-stack-parser",
+      "description": "Extract meaning from JS Errors",
+      "maintainers": [
+        {
+          "email": "me@eriwen.com",
+          "name": "eriwen"
+        },
+        {
+          "email": "oliver.salzburg@gmail.com",
+          "name": "oliversalzburg"
+        }
+      ],
+      "version": "2.0.4",
+      "license": "MIT",
+      "keywords": [
+        "stacktrace",
+        "error",
+        "stack",
+        "parser"
+      ],
+      "homepage": "https://www.stacktracejs.com",
+      "dependencies": {
+        "stackframe": "^1.1.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/stacktracejs/error-stack-parser.git"
+      },
+      "devDependencies": {
+        "colors": "^1.1.2",
+        "del": "^3.0.0",
+        "gulp": "^3.9.0",
+        "gulp-concat": "^2.6.0",
+        "gulp-coveralls": "^0.1.4",
+        "gulp-jshint": "^2.0.0",
+        "gulp-sourcemaps": "^1.12.0",
+        "gulp-uglify": "^1.5.1",
+        "jasmine": "^2.7.0",
+        "jasmine-core": "^2.7.0",
+        "jscs": "^2.9.0",
+        "jsdoc-dash-template": "^2.0.1",
+        "jshint": "^2.9.5",
+        "karma": "^1.7.0",
+        "karma-chrome-launcher": "^2.2.0",
+        "karma-coverage": "^1.1.1",
+        "karma-firefox-launcher": "^1.0.1",
+        "karma-ie-launcher": "^1.0.0",
+        "karma-jasmine": "^1.1.0",
+        "karma-opera-launcher": "^1.0.0",
+        "karma-phantomjs2-launcher": "^0.5.0",
+        "karma-safari-launcher": "^1.0.0",
+        "karma-sauce-launcher": "^2.0.2",
+        "karma-spec-reporter": "^0.0.31",
+        "run-sequence": "^1.1.5"
+      },
+      "bugs": {
+        "url": "https://github.com/stacktracejs/error-stack-parser/issues"
+      },
+      "main": "./error-stack-parser.js",
+      "typings": "./error-stack-parser.d.ts",
+      "scripts": {
+        "test": "gulp test",
+        "prepublishOnly": "gulp dist"
+      },
+      "gitHead": "1ac336028affeb2b21287af1065eb9efc3d41c7c",
+      "_id": "error-stack-parser@2.0.4",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "8.16.0",
+      "_npmUser": {
+        "name": "eriwen",
+        "email": "me@eriwen.com"
+      },
+      "dist": {
+        "integrity": "sha512-fZ0KkoxSjLFmhW5lHbUT3tLwy3nX1qEzMYo8koY1vrsAco53CMT1djnBSeC/wUjTEZRhZl9iRw7PaMaxfJ4wzQ==",
+        "shasum": "a757397dc5d9de973ac9a5d7d4e8ade7cfae9101",
+        "tarball": "https://registry.npmjs.org/error-stack-parser/-/error-stack-parser-2.0.4.tgz",
+        "fileCount": 9,
+        "unpackedSize": 52130,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdgYEqCRA9TVsSAnZWagAAUXwP/22wHDoT6JcJ45HyOYOq\ndn1lCR+gIbhR1wie9jBzU4RJxnpJ+UkLvwridxi8Qq6su3ZOnQBgMx4vWFuX\nQXt/+BdjcjwhHJbGYG96VOGtOfJMc81pHhl5HBTyhfMoQm9BCeqCHNbk616w\nuv5TZX39MS5qoHqYreYPhpc5Dv6aEDU2/+++gp4596Lt1wxJIJk9G6y+u4kV\n+27eY/fXrtzDpSOnQSH7szipMET88+qBUIITKTshnjwChVLdLNdo94jp/+xT\nuppfcCYZea2QpAqxRfpW+5vzK5p+luvM3xXNrIZX5pC+7uKkA1uA2ZpaVHCL\nm6FXHmAc/jLqzJXbWEZyr5Au7haAAEvn54wmqiA3IrkYGaaqOCePfWtOK0Xh\n9tjwXgA6LwEAkIsdJhSEXXx+7xTB89vOKAqwqe25QEF+ArlTHyqEKxan0v+3\nQEZ36UyWgPLuSoGWbd/wgADP5EmrDgWi6+VGcSL3gQXl3qToJ9u1pfwcmYmA\ntGakx45qovCt+OpMGNqPSFz+P0FwUdqVm6k2MH30DqkVKp8djtxWAS04i8QE\nk118V/HBR4CU2O9q9959uTjP00hiRv2DpkGs4EPvyL7xOlW8unRRMA8iJP9h\njTPFT1KSxkQRKLVpoNE57fYDwHZF7LddTvrQLD0iyg252bgOCda1xFVnhA49\n3b2h\r\n=GDY4\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/error-stack-parser_2.0.4_1568768298284_0.8806279293178472"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.5": {
+      "name": "error-stack-parser",
+      "description": "Extract meaning from JS Errors",
+      "maintainers": [
+        {
+          "email": "me@eriwen.com",
+          "name": "eriwen"
+        },
+        {
+          "email": "oliver.salzburg@gmail.com",
+          "name": "oliversalzburg"
+        }
+      ],
+      "version": "2.0.5",
+      "license": "MIT",
+      "keywords": [
+        "stacktrace",
+        "error",
+        "stack",
+        "parser"
+      ],
+      "homepage": "https://www.stacktracejs.com",
+      "dependencies": {
+        "stackframe": "^1.1.1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/stacktracejs/error-stack-parser.git"
+      },
+      "devDependencies": {
+        "eslint": "^6.8.0",
+        "jasmine": "^3.5.0",
+        "jasmine-core": "^3.5.0",
+        "karma": "^4.4.1",
+        "karma-chrome-launcher": "^3.1.0",
+        "karma-coverage": "^2.0.1",
+        "karma-coveralls": "^2.1.0",
+        "karma-firefox-launcher": "^1.2.0",
+        "karma-ie-launcher": "^1.0.0",
+        "karma-jasmine": "^1.1.2",
+        "karma-opera-launcher": "^1.0.0",
+        "karma-phantomjs-launcher": "^1.0.4",
+        "karma-safari-launcher": "^1.0.0",
+        "karma-sauce-launcher": "^2.0.2",
+        "karma-spec-reporter": "0.0.32",
+        "uglify-es": "^3.3.9"
+      },
+      "bugs": {
+        "url": "https://github.com/stacktracejs/error-stack-parser/issues"
+      },
+      "main": "./error-stack-parser.js",
+      "typings": "./error-stack-parser.d.ts",
+      "scripts": {
+        "lint": "eslint --fix .",
+        "test": "karma start karma.conf.js --single-run",
+        "test-pr": "karma start karma.conf.js --single-run --browsers Firefox,Chrome_Travis",
+        "test-ci": "karma start karma.conf.ci.js --single-run",
+        "prepare": "cp error-stack-parser.js dist/ && uglifyjs error-stack-parser.js -o dist/error-stack-parser.min.js --compress --mangle --source-map \"url=error-stack-parser.min.js.map\""
+      },
+      "gitHead": "570435fc0c50863c8893fbc1580ca46bcd1cc151",
+      "_id": "error-stack-parser@2.0.5",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "8.16.0",
+      "_npmUser": {
+        "name": "eriwen",
+        "email": "me@eriwen.com"
+      },
+      "dist": {
+        "integrity": "sha512-qje/eecbL7EtZC9CsYV3djRHqtifFpXP5Ai6yfSh6hVqV8er/C0605+nKG8IPry2YgXldyUbEOHm+rOZZsQpIQ==",
+        "shasum": "f6914bb51e68cce5c804be65e7a5a028ca2a667e",
+        "tarball": "https://registry.npmjs.org/error-stack-parser/-/error-stack-parser-2.0.5.tgz",
+        "fileCount": 9,
+        "unpackedSize": 33010,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeElwNCRA9TVsSAnZWagAAWuIP+gN0DX8Yw6V0JskqMb2q\nW70LAU32DdWBV9u6fCslLooWMHmixqkfTQs0umXVhvRvf0rKbtxAN6eeL5xv\nPxTPZIbQ2BqTO2Y9CFHgdjEWBQGB/5YnLJe7T5HxrV52A/e2CpmFr/l7hYUg\np62jgCt9wf4lS5R14X3e2CzldY/51+gSys0lioTDqnXzzZ1L1H3THN8ukNRa\ntychermG/XsmthqX7AJm295FC3QXhKLoNSp3affKc2tiKm+l5UP95zzDujZH\njHrpU4DM1Zy2Y496VtlYzDl+hnX9rZnkdMAsZJUfY73ag6+JsP88MUgAhlJi\nSKTKNdJmcLKa7cAdmgMsbKO/KziQ/+7eJqkv0Stp5DLv7nEFu5BrLyVHT7qv\nI7VYEJmOfMXLqBSbk/eKPlKvz6B0qbpEcTFQLQ0uZW7uAv7fyWKRAQ6bn5Ac\nxvTn7S9Yadac2fxn95i5gvKnp0hEV2rsdgxRYnRe2HWNnYhOHdC1MZsuzfDt\nXdtOEjm9O5Eup3mspwLBUzbmnCagsAq63tf1MDhiTR2nHphC3JgkONp3QCoR\nyEiL87dVnWlouUbha6bix5+fsEXK10t5+C6Z0mLfylKv2l5kSlxqlq8iccjP\nQYDToYXXftW8ff5Ul6KCAG0Qnd6efKrq8IkwJnfC24GWntG11f8HNWRcMPAJ\njH4O\r\n=81G5\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/error-stack-parser_2.0.5_1578261517477_0.7168791675224135"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.6": {
+      "name": "error-stack-parser",
+      "description": "Extract meaning from JS Errors",
+      "maintainers": [
+        {
+          "email": "me@eriwen.com",
+          "name": "eriwen"
+        },
+        {
+          "email": "oliver.salzburg@gmail.com",
+          "name": "oliversalzburg"
+        }
+      ],
+      "version": "2.0.6",
+      "license": "MIT",
+      "keywords": [
+        "stacktrace",
+        "error",
+        "stack",
+        "parser"
+      ],
+      "homepage": "https://www.stacktracejs.com",
+      "dependencies": {
+        "stackframe": "^1.1.1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/stacktracejs/error-stack-parser.git"
+      },
+      "devDependencies": {
+        "eslint": "^6.8.0",
+        "jasmine": "^3.5.0",
+        "jasmine-core": "^3.5.0",
+        "karma": "^4.4.1",
+        "karma-chrome-launcher": "^3.1.0",
+        "karma-coverage": "^2.0.1",
+        "karma-coveralls": "^2.1.0",
+        "karma-firefox-launcher": "^1.2.0",
+        "karma-ie-launcher": "^1.0.0",
+        "karma-jasmine": "^1.1.2",
+        "karma-opera-launcher": "^1.0.0",
+        "karma-phantomjs-launcher": "^1.0.4",
+        "karma-safari-launcher": "^1.0.0",
+        "karma-sauce-launcher": "^2.0.2",
+        "karma-spec-reporter": "0.0.32",
+        "uglify-es": "^3.3.9"
+      },
+      "bugs": {
+        "url": "https://github.com/stacktracejs/error-stack-parser/issues"
+      },
+      "main": "./error-stack-parser.js",
+      "typings": "./error-stack-parser.d.ts",
+      "scripts": {
+        "lint": "eslint --fix .",
+        "test": "karma start karma.conf.js --single-run",
+        "test-pr": "karma start karma.conf.js --single-run --browsers Firefox,Chrome_Travis",
+        "test-ci": "karma start karma.conf.ci.js --single-run",
+        "prepare": "cp error-stack-parser.js dist/ && uglifyjs node_modules/stackframe/stackframe.js error-stack-parser.js -o dist/error-stack-parser.min.js --compress --mangle --source-map \"url=error-stack-parser.min.js.map\""
+      },
+      "gitHead": "71e43a05b08a2e7369a35638fe82c0e9bb4a5843",
+      "_id": "error-stack-parser@2.0.6",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "8.16.0",
+      "_npmUser": {
+        "name": "eriwen",
+        "email": "me@eriwen.com"
+      },
+      "dist": {
+        "integrity": "sha512-d51brTeqC+BHlwF0BhPtcYgF5nlzf9ZZ0ZIUQNZpc9ZB9qw5IJ2diTrBY9jlCJkTLITYPjmiX6OWCwH+fuyNgQ==",
+        "shasum": "5a99a707bd7a4c58a797902d48d82803ede6aad8",
+        "tarball": "https://registry.npmjs.org/error-stack-parser/-/error-stack-parser-2.0.6.tgz",
+        "fileCount": 9,
+        "unpackedSize": 38057,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeEsVmCRA9TVsSAnZWagAAtq0P/0Q2sx2f8NZok2ru+LgP\nxI/0cR83I+/wvMhxmbkz62ZxvqZ3P68K12KcSEiQeZDCD3dY30rBR4RI+5gc\no6mmmTdglGz/3fuZG6ebp1snDB9rz9FTiJ10YORU7IiWpnGvmAHWiX9NaDbu\nkZtQF+xjw5ZblOaPOGeZjhQmn340B5Vhh4ecQIf4bhVuLtwezJYc9d6ovhv5\nY0msovgKqyw30T2Gg3sMzRcuHRFGbGJQ/CHt9+2U1LVuovC1GUO6QO5P9eDG\nh9ofco105UC3ES1WZJ5FNypfEG+glCo7WPUWqp7NmWL0G9zD2BhkA0CrntEZ\nvaCMdZf3f/EFihfq96AnEgk8Uicnalp96qvYRowT/mATR9pPjueeyrUP1NEE\nH5BuElVLtuBrrheyA/TUpG72rZt0Xp63H1kFo2w5mui5GTeu8LsopY2rlXe6\nbi5flUtksZEkGUecKEOC4rvTdMsl0MGn21OOC5BZYleutgRr5Xe1ScF27rPc\nL20gxt361xKnCEjwXg58hFYiKywK122tjHp89vPb/0ZWbr5RgBe7AooRv6c7\nlhPRgX5YntDfvRzrana7mpP7kMoNrAn+je3Ofmd2QU3YfT+jOrRw/Pu2ACJW\nWkXjY9O3LWw5hGPywijz5PGl2fgzvgWMly6Z0BJcdYeLnWPHhD0ZBfnSESi5\nD1QG\r\n=GVlK\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/error-stack-parser_2.0.6_1578288485903_0.7413797061981073"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "error-stack-parser.js - Extract meaning from JS Errors\n===============\n[![Build Status](https://img.shields.io/travis/stacktracejs/error-stack-parser/master.svg?style=flat-square)](https://travis-ci.org/stacktracejs/error-stack-parser)\n[![Coverage Status](https://img.shields.io/coveralls/stacktracejs/error-stack-parser.svg?style=flat-square)](https://coveralls.io/r/stacktracejs/error-stack-parser?branch=master)\n[![GitHub license](https://img.shields.io/github/license/stacktracejs/error-stack-parser.svg?style=flat-square)](https://opensource.org/licenses/MIT)\n[![size with dependencies](https://img.shields.io/badge/size-4.8k-green.svg?style=flat-square)](https://github.com/stacktracejs/error-stack-parser/releases)\n[![gzip size](https://img.shields.io/badge/gzipped-1.8k-green.svg?style=flat-square)](https://github.com/stacktracejs/error-stack-parser/releases)\n[![module format](https://img.shields.io/badge/module%20format-umd-lightgrey.svg?style=flat-square&colorB=ff69b4)](https://github.com/stacktracejs/error-stack-parser/releases)\n[![code of conduct](https://img.shields.io/badge/code%20of-conduct-lightgrey.svg?style=flat-square&colorB=ff69b4)](http://todogroup.org/opencodeofconduct/#stacktrace.js/me@eriwen.com)\n[![jsDelivr Hits](https://data.jsdelivr.com/v1/package/npm/error-stack-parser/badge)](https://www.jsdelivr.com/package/npm/error-stack-parser)\n\nSimple, cross-browser [Error](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error) parser.\nThis library parses and extracts function names, URLs, line numbers, and column numbers from the given Error's `stack` as\nan Array of [StackFrame](http://git.io/stackframe)s. \n\nOnce you have parsed out StackFrames, you can do much more interesting things. See [stacktrace-gps](http://git.io/stacktrace-gps).\n\nNote that in IE9 and earlier, `Error` objects don't have enough information to extract much of anything. In IE 10, `Error`s\nare given a `stack` once they're `throw`n.\n\n## Browser Support\n[![Sauce Test Status](https://saucelabs.com/browser-matrix/stacktracejs.svg)](https://saucelabs.com/u/stacktracejs)\n\n## Usage\n```js\nErrorStackParser.parse(new Error('BOOM'));\n\n=> [\n        StackFrame({functionName: 'foo', args: [], fileName: 'path/to/file.js', lineNumber: 35, columnNumber: 79, isNative: false, isEval: false}),\n        StackFrame({functionName: 'Bar', fileName: 'https://cdn.somewherefast.com/utils.min.js', lineNumber: 1, columnNumber: 832, isNative: false, isEval: false, isConstructor: true}),\n        StackFrame(... and so on ...)\n   ]\n```\n\n## Installation\n```bash\nnpm install error-stack-parser\nbower install error-stack-parser\nhttps://raw.githubusercontent.com/stacktracejs/error-stack-parser/master/dist/error-stack-parser.min.js\n```\n\n## Contributing\nWant to be listed as a *Contributor*? Start with the [Contributing Guide](.github/CONTRIBUTING.md)!\n\n",
+  "maintainers": [
+    {
+      "email": "me@eriwen.com",
+      "name": "eriwen"
+    },
+    {
+      "email": "oliver.salzburg@gmail.com",
+      "name": "oliversalzburg"
+    }
+  ],
+  "time": {
+    "modified": "2020-01-06T05:28:09.905Z",
+    "created": "2014-10-06T02:34:56.383Z",
+    "0.1.0": "2014-10-06T02:34:56.383Z",
+    "0.2.0": "2014-11-01T18:42:06.542Z",
+    "0.2.1": "2014-11-17T01:03:14.209Z",
+    "0.2.2": "2014-11-29T18:12:47.633Z",
+    "0.2.3": "2014-11-30T03:33:54.212Z",
+    "0.2.4": "2014-11-30T20:59:16.009Z",
+    "1.0.0": "2014-12-14T22:00:31.596Z",
+    "1.1.0": "2015-01-26T03:39:47.995Z",
+    "1.1.1": "2015-01-26T03:50:23.034Z",
+    "1.1.2": "2015-02-18T04:27:37.896Z",
+    "1.2.0": "2015-03-11T02:39:17.694Z",
+    "1.2.1": "2015-08-11T02:09:58.018Z",
+    "1.2.2": "2015-08-14T03:04:29.359Z",
+    "1.2.3": "2015-09-21T00:58:30.486Z",
+    "1.3.0": "2015-11-17T15:49:22.786Z",
+    "1.3.1": "2015-11-29T22:07:08.994Z",
+    "1.3.2": "2015-12-16T15:11:26.515Z",
+    "1.3.3": "2016-01-02T06:48:13.451Z",
+    "1.3.4": "2016-04-01T18:48:32.512Z",
+    "1.3.5": "2016-04-01T19:05:17.456Z",
+    "1.3.6": "2016-05-15T21:45:12.942Z",
+    "2.0.0": "2016-12-10T03:49:54.547Z",
+    "2.0.1": "2017-04-30T02:58:43.561Z",
+    "2.0.2": "2018-05-31T19:16:36.035Z",
+    "2.0.3": "2019-08-13T09:37:36.036Z",
+    "2.0.4": "2019-09-18T00:58:18.429Z",
+    "2.0.5": "2020-01-05T21:58:37.604Z",
+    "2.0.6": "2020-01-06T05:28:06.063Z"
+  },
+  "homepage": "https://www.stacktracejs.com",
+  "keywords": [
+    "stacktrace",
+    "error",
+    "stack",
+    "parser"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/stacktracejs/error-stack-parser.git"
+  },
+  "bugs": {
+    "url": "https://github.com/stacktracejs/error-stack-parser/issues"
+  },
+  "readmeFilename": "README.md",
+  "license": "MIT",
+  "users": {
+    "davidchase": true,
+    "shanewholloway": true,
+    "subinvarghesein": true,
+    "zhenguo.zhao": true
+  }
+}

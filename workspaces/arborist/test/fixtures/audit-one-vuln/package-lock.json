@@ -1,0 +1,11 @@
+{
+  "requires": true,
+  "lockfileVersion": 1,
+  "dependencies": {
+    "minimist": {
+      "version": "1.0.0",
+      "resolved": "https://registry.npmjs.org/minimist/-/minimist-1.0.0.tgz",
+      "integrity": "sha1-lCnE+D4NIlkKdq62EABtzD+Jxw8="
+    }
+  }
+}

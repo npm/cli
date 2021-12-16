@@ -1,0 +1,49 @@
+{
+  "name": "@nlf/shrinkwrapped-dep-updates-a",
+  "version": "2.0.0",
+  "lockfileVersion": 2,
+  "requires": true,
+  "packages": {
+    "": {
+      "name": "@nlf/shrinkwrapped-dep-updates-a",
+      "version": "2.0.0",
+      "dependencies": {
+        "@nlf/shrinkwrapped-dep-updates-b": "^2.0.0",
+        "@nlf/shrinkwrapped-dep-updates-c": "^1.0.0",
+        "@nlf/shrinkwrapped-dep-updates-e": "^1.0.0"
+      }
+    },
+    "node_modules/@nlf/shrinkwrapped-dep-updates-b": {
+      "version": "2.0.0",
+      "resolved": "https://registry.npmjs.org/@nlf/shrinkwrapped-dep-updates-b/-/shrinkwrapped-dep-updates-b-2.0.0.tgz",
+      "integrity": "sha512-B5arzHMzN1kp67O/tVRR+OtosYDYVdNH7dLKkVR9Ruov+M6a7mrj2bOAJd8HZMQlQ5yjMRy3UXTp2amgh9EhqA=="
+    },
+    "node_modules/@nlf/shrinkwrapped-dep-updates-c": {
+      "version": "1.0.0",
+      "resolved": "https://registry.npmjs.org/@nlf/shrinkwrapped-dep-updates-c/-/shrinkwrapped-dep-updates-c-1.0.0.tgz",
+      "integrity": "sha512-Ny4NLloQxmjos+llolUBcc9+5FTa+JCh5/CqshFYq6d6s3RykpGuFnqPN/3vO6Uftp3lPtBOGjvlXSJtN4ZDQA=="
+    },
+    "node_modules/@nlf/shrinkwrapped-dep-updates-e": {
+      "version": "1.0.0",
+      "resolved": "https://registry.npmjs.org/@nlf/shrinkwrapped-dep-updates-e/-/shrinkwrapped-dep-updates-e-1.0.0.tgz",
+      "integrity": "sha512-k41VmVMeLH/AgnD7Nx2TIQvt12xd0dKSrWmraYDNZIMxtuuwUjaq1lH8eo8todBU7U5aj94cH4xlLU0g3SgsBA=="
+    }
+  },
+  "dependencies": {
+    "@nlf/shrinkwrapped-dep-updates-b": {
+      "version": "2.0.0",
+      "resolved": "https://registry.npmjs.org/@nlf/shrinkwrapped-dep-updates-b/-/shrinkwrapped-dep-updates-b-2.0.0.tgz",
+      "integrity": "sha512-B5arzHMzN1kp67O/tVRR+OtosYDYVdNH7dLKkVR9Ruov+M6a7mrj2bOAJd8HZMQlQ5yjMRy3UXTp2amgh9EhqA=="
+    },
+    "@nlf/shrinkwrapped-dep-updates-c": {
+      "version": "1.0.0",
+      "resolved": "https://registry.npmjs.org/@nlf/shrinkwrapped-dep-updates-c/-/shrinkwrapped-dep-updates-c-1.0.0.tgz",
+      "integrity": "sha512-Ny4NLloQxmjos+llolUBcc9+5FTa+JCh5/CqshFYq6d6s3RykpGuFnqPN/3vO6Uftp3lPtBOGjvlXSJtN4ZDQA=="
+    },
+    "@nlf/shrinkwrapped-dep-updates-e": {
+      "version": "1.0.0",
+      "resolved": "https://registry.npmjs.org/@nlf/shrinkwrapped-dep-updates-e/-/shrinkwrapped-dep-updates-e-1.0.0.tgz",
+      "integrity": "sha512-k41VmVMeLH/AgnD7Nx2TIQvt12xd0dKSrWmraYDNZIMxtuuwUjaq1lH8eo8todBU7U5aj94cH4xlLU0g3SgsBA=="
+    }
+  }
+}

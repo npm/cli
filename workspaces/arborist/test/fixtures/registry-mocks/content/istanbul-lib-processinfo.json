@@ -1,0 +1,354 @@
+{
+  "_id": "istanbul-lib-processinfo",
+  "_rev": "7-19527f8006b0e58909de634d506373d4",
+  "name": "istanbul-lib-processinfo",
+  "dist-tags": {
+    "latest": "2.0.2"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "istanbul-lib-processinfo",
+      "version": "1.0.0",
+      "description": "A utility for managing the `processinfo` folder that NYC uses.",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap -j1",
+        "snap": "tap -j1",
+        "preversion": "npm test",
+        "postversion": "npm publish",
+        "postpublish": "git push origin --all; git push origin --tags"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/istanbuljs/istanbul-lib-processinfo.git"
+      },
+      "license": "ISC",
+      "dependencies": {
+        "archy": "^1.0.0",
+        "cross-spawn": "^6.0.5",
+        "istanbul-lib-coverage": "^2.0.3",
+        "rimraf": "^2.6.3",
+        "uuid": "^3.3.2"
+      },
+      "devDependencies": {
+        "nyc": "^14.0.0-rc.1",
+        "tap": "^13.0.0-rc.23"
+      },
+      "tap": {
+        "check-coverage": true
+      },
+      "nyc": {
+        "include": "index.js"
+      },
+      "gitHead": "49c45fd49500c84870b727f50862e09b4f24ff7d",
+      "bugs": {
+        "url": "https://github.com/istanbuljs/istanbul-lib-processinfo/issues"
+      },
+      "homepage": "https://github.com/istanbuljs/istanbul-lib-processinfo#readme",
+      "_id": "istanbul-lib-processinfo@1.0.0",
+      "_nodeVersion": "11.11.0",
+      "_npmVersion": "6.9.0",
+      "dist": {
+        "integrity": "sha512-FY0cPmWa4WoQNlvB8VOcafiRoB5nB+l2Pz2xGuXHRSy1KM8QFOYfz/rN+bGMCAeejrY3mrpF5oJHcN0s/garCg==",
+        "shasum": "6c0b59411d2897313ea09165fd95464a32be5610",
+        "tarball": "https://registry.npmjs.org/istanbul-lib-processinfo/-/istanbul-lib-processinfo-1.0.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 16766,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJctLaZCRA9TVsSAnZWagAAgKgP/2t+qr/EhvENnULC9qp5\nC9MoTR+qkDrtQDSczRWUhs16sWNRx+Qf0gGAoVycBqndRuVQNV2fTg3Bw+ni\nFuaBUk2mlHjK/3RfVwwB0lM9P73GLaqJWQhpMizV6FQSqB/4l4u8La+wGlI0\nEc0xXtXl0lYAO9vJlLHrKTahEiFr8mEKFmjXxBT1mwwpRRvLg35fS1GKIswD\nh4IQ/pgjg9Z9qK0bOHYtnDQaMMO84cx3m5XJlqJ4n+i3nTVO3RP9qK+lChrm\ng6I5JRyIsvKOBzosH41KsjoRWFFVesUd3VQ1+/ysSipikYn/Ow0P+cseSeGP\n6Oo6JnpMtvM7VEp3loEdIyK6EgsE8/XHPcRM2paiezi8RsH5dZ86VIfAhD/9\nEMiEIHlzFmQxBTANz3Imzesk869/rdlPc6qIWmzrfkKVNA752VmuEWdNnkmS\nXVgA+6bXLLP/FGLOASxvLOjIyxiZficU1bw6cSrOHBoUrsNCbVeG/MeLCPJr\nEqXOMv3BkaGU2HoBkt49yiTjWhH+rGcQdQMmgHtccz8gBf4WngCOUGSAQL4k\nTUMXn38A1dvRo6KPRmAIp849+IrUlQtDeZ13f7LXwFGCIrnc04QJd/atQIXf\nHUryBCr0ytZn6YTIFRy8V0511HEUGZdxE5zgwk8yii+6p+vnCIcj/4c9lupm\npxhd\r\n=K81K\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/istanbul-lib-processinfo_1.0.0_1555347096786_0.17458002255784866"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.0": {
+      "name": "istanbul-lib-processinfo",
+      "version": "2.0.0",
+      "description": "A utility for managing the `processinfo` folder that NYC uses.",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap",
+        "snap": "tap",
+        "release": "standard-version"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/istanbuljs/istanbul-lib-processinfo.git"
+      },
+      "license": "ISC",
+      "dependencies": {
+        "archy": "^1.0.0",
+        "cross-spawn": "^6.0.5",
+        "istanbul-lib-coverage": "^3.0.0-alpha.0",
+        "make-dir": "^3.0.0",
+        "rimraf": "^2.6.3",
+        "uuid": "^3.3.2"
+      },
+      "devDependencies": {
+        "standard-version": "^6.0.1",
+        "tap": "^14.0.0"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "tap": {
+        "check-coverage": true,
+        "jobs": 1
+      },
+      "nyc": {
+        "include": "index.js"
+      },
+      "readme": "# istanbul-lib-processinfo\n\nA utility for managing the `processinfo` folder that NYC uses.\n\nThis is intended to be used along with [NYC](https://npm.im/nyc), but can also\nbe used by other tools that wish to consume NYC's processinfo data.\n\n## API\n\n### class ProcessInfo\n\nA representation of information about a single process.\n\n#### constructor(fields)\n\nPass in fields that will be printed to the processinfo file.  Several defaults\nwill be provided if not specified.\n\n#### processInfo.save()\n\nWrite this process info to disk.  This works by passing the ProcessInfo object\nto JSON.stringify, and writing to `${this.directory}/${this.uuid}.json`.\n\n#### processInfo.getCoverageMap(nyc)\n\nGet a merged coverage map of the current process, as well as any child\nprocesses.  This should only be called during tree rendering, as it depends on\nchild nodes being present in the `nodes` array.\n\nThe `nyc` instance is required to load the report information and apply\nsourcemaps properly.\n\n### processInfo.label\n\nA read-only string for when archy prints the process tree.\n\n### processInfo.nodes\n\nA list of the child nodes used during tree rendering.\n\n### processInfo.directory\n\nIf a process will be saved, it must have a `directory` included\nin the list of fields.  This property is not saved to the processinfo file.\n\n## class ProcessDB\n\nA utility for interacting with the collection of ProcessInfo files in the\nprocessinfo folder.\n\n### constructor(directory)\n\nSupply the directory where processinfo files are found.  This should be the\nfull path, something like `${cwd}/.nyc_output/processinfo`.\n\n### processDB.directory\n\nA read-only property showing the directory where this object is working.\n\n### processDB.nodes\n\nA list of child ProcessInfo nodes used in tree printing.\n\n### processDB.label\n\nThe string `'nyc'`, used as the default root node in the archy tree rendering.\n\n### processDB.writeIndex()\n\nCreate the `index.json` file in the processinfo folder, which is required for\ntree generation and expunging.\n\nWARNING: Index writing is non-atomic, and should not be performed by multiple \n\n### processDB.readIndex()\n\nRead and return the contents of the `index.json` file.  If the `index.json` is\nnot present or not valid, then it will attempt to generate one.\n\n### processDB.readProcessInfos()\n\nRead all the data files in the processinfo folder, and return an object mapping\nthe file basename to the resulting object.  Used in tree generation.\n\n### processDB.renderTree(nyc)\n\nRender the tree as a string using archy, suitable for printing to the terminal.\n\n### processDB.buildProcessTree()\n\nBuild the hierarchical tree of nodes for tree rendering.  Populates the `nodes`\narray of this object and all `ProcessInfo` objects in the tree.\n\n### processDB.getCoverageMap(nyc)\n\nUsed in tree rendering, to show the total coverage of all the processinfo files\nin the data folder.\n\n### processDB.spawn(name, file, args, options)\n\nSpawn a child process with a unique name provided by the caller.  This name is\nstored as the `externalId` property in the child process's `ProcessInfo` data,\nand is tracked in the `externalIds` section of the index.\n\nNote that if the current process is not already wrapped by nyc, then you must\nprefix the spawned program with nyc, in order for this to take effect.  For\nexample, instead of `processDB.spawn('foo', 'node', ['foo.js'])`, you would run\n`processDB.spawn('foo', 'nyc', ['node', 'foo.js'])`.\n\nIf a process with that name already exists in the index, then it will be\nexpunged.\n\nIf `options.regenerateIndex` is `true`, then ProcessDB will re-write the index\nwhen the process is completed.\n\nWARNING: Calling `expunge` (which this method does) will result in the index\nbeing out of date.  It is the caller's responsibility to call\n`processDB.writeIndex()` when all named processes are completed.\n\n### processDB.spawnSync(name, file, args, options)\n\nSync form of `processDB.spawn()`.\n\n### processDB.expunge(name)\n\nIf a process exists in the process info data folder with the specified name\n(ie, it had previously been run with `processDB.spawn(name, ...)`) then the\ncoverage and processinfo files for it and all of its children are removed.\n\nThis allows for a test harness to re-run or resume test suites, without\nspurious coverage results.\n\nWARNING: Calling `expunge` will result in the index being out of date.  It is\nthe caller's responsibility to call `processDB.writeIndex()` when all named\nprocesses are completed.\n\n## DATA STRUCTURES and FILES\n\nProcessInfo files MUST match the following structure:\n\n```\n{\n  \"uuid\": \"UUID of the process itself\",\n  \"parent\": \"UUID of the parent process, or null\",\n  \"pid\": Number,\n  \"ppid\": Number (pid of parent process),\n  \"argv\": Array<String>,\n  \"execArgv\": Array<String>,\n  \"cwd\": path,\n  \"time\": Number (timestamp in ms),\n  \"coverageFilename\": \"Path to NYC coverage info for this process\",\n  \"externalId\": \"The externally specified name for this process, or null\",\n}\n```\n\nThe index file is saved to `${this.directory}/index.json`.  It has\nthe following structure:\n\n```\n{\n  \"processes\": {\n    \"<uuid>\": {\n      \"parent\": \"parent uuid, or null\",\n      \"children\": [\"children\", \"uuids\", \"or empty array\"],\n      \"externalId\": \"externally specified name, if provided\"\n    },\n    ...\n  },\n  \"files\": {\n    \"/path/to/covered/file.js\": [\n      \"<uuids of processes that covered this file>\",\n      ...\n    ],\n    ...\n  },\n  \"externalIds\": {\n    \"externally specified name\": {\n      \"root\": \"<uuid of process run under this name>\",\n      \"children\": [\n        \"<uuids of all descendant processes from this point in the tree>\",\n        ...\n      ]\n    },\n    ...\n  }\n}\n```\n",
+      "readmeFilename": "README.md",
+      "gitHead": "c6cfcf6bfee8249223fb72d8b7465de1ce944c91",
+      "bugs": {
+        "url": "https://github.com/istanbuljs/istanbul-lib-processinfo/issues"
+      },
+      "homepage": "https://github.com/istanbuljs/istanbul-lib-processinfo#readme",
+      "_id": "istanbul-lib-processinfo@2.0.0",
+      "_nodeVersion": "12.3.1",
+      "_npmVersion": "6.9.0",
+      "dist": {
+        "integrity": "sha512-cGGEhDsoFx6GDOAUWDWDqPrk1c9frPnIHto452UpV/xN3KI3gc2JJG3KZvyUkkTuhpxDWQETrzepI4IpRGCJ5w==",
+        "shasum": "741143aab52239fb7bff173d66fd4ef502e1017d",
+        "tarball": "https://registry.npmjs.org/istanbul-lib-processinfo/-/istanbul-lib-processinfo-2.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 18327,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdDKxgCRA9TVsSAnZWagAAYLwP/3LBsQSzYIVZqzWvBWjW\n+4GOGmk7lnSTT7gsRoBd/ILEPexEUERhWN4gHl1A7pAzn5EiGfZwVMQkxqN4\nT2AICWdWmEtqm6g239RZlKUep9dt3wIyg1OgMrxCF8kRjLxZlBgEmu2vizys\nleNhCU073D7wKeyOFJuz3W44m8/QNa8Qj/0soG7Cyalmy7eQXcqnHBnbTl1V\nBCp4d8SVQ+md15y9+4h6+C0dOtrj8Zb5+GH2EDc6e9yjrllF3A5EDzPuSs+I\nVmrUgIwgFcIRoKfeWt8xl34FYzQFla6gboXD8WnHkkYVuRGjNX+NDkEyX5bo\nAb+A/L/v55y8/Xp+EAUy4vGZfTjRd/6E7DHELuWJ6gxncp4HTiyeGBdvrGDu\nqsc7Q/Iy3AhMwEMkD4f9BnztSoImENstmGMVpInT1H9cV0wFoxLIAgP2L33D\n5xWwP8wsZKmHuOcwa9+elNZg2uqIdKXzjC4KidL62Kb4qftC19deSSTYLjgC\n3AWX1L9TKhDnWc1wC7eyeJRJ6jlEwa78KjITLrvbLrk/0TuuzcEWUh+GSR2J\n2Fi+UPc8PV8OQKQXmt0dPkGP3v9ihsMNsca6g7K/FcODdEE04P3MACE9hh2V\ne9a76pjDOFZoJfvavNxWKO26ICIQS3nDbq6EQvotWoM33MM4TRGTx1Cv7aaS\nSyx7\r\n=s96x\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "bencoe@gmail.com",
+          "name": "bcoe"
+        },
+        {
+          "email": "git@cfware.com",
+          "name": "coreyfarrell"
+        },
+        {
+          "email": "i@izs.me",
+          "name": "isaacs"
+        }
+      ],
+      "_npmUser": {
+        "name": "coreyfarrell",
+        "email": "git@cfware.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/istanbul-lib-processinfo_2.0.0_1561111647445_0.821273276870774"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.1": {
+      "name": "istanbul-lib-processinfo",
+      "version": "2.0.1",
+      "description": "A utility for managing the `processinfo` folder that NYC uses.",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap",
+        "snap": "tap",
+        "release": "standard-version"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/istanbuljs/istanbul-lib-processinfo.git"
+      },
+      "license": "ISC",
+      "dependencies": {
+        "archy": "^1.0.0",
+        "cross-spawn": "^7.0.0",
+        "istanbul-lib-coverage": "^3.0.0-alpha.1",
+        "make-dir": "^3.0.0",
+        "p-map": "^3.0.0",
+        "rimraf": "^3.0.0",
+        "uuid": "^3.3.3"
+      },
+      "devDependencies": {
+        "standard-version": "^7.0.0",
+        "tap": "^14.6.5"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "tap": {
+        "check-coverage": true,
+        "jobs": 1
+      },
+      "nyc": {
+        "include": "index.js"
+      },
+      "readme": "# istanbul-lib-processinfo\n\nA utility for managing the `processinfo` folder that NYC uses.\n\nThis is intended to be used along with [NYC](https://npm.im/nyc), but can also\nbe used by other tools that wish to consume NYC's processinfo data.\n\n## API\n\n### class ProcessInfo\n\nA representation of information about a single process.\n\n#### constructor(fields)\n\nPass in fields that will be printed to the processinfo file.  Several defaults\nwill be provided if not specified.\n\n#### async processInfo.save()\n\nWrite this process info to disk.  This works by passing the ProcessInfo object\nto JSON.stringify, and writing to `${this.directory}/${this.uuid}.json`.\n\n#### processInfo.saveSync()\n\nThe synchronous version of `.save()`.\n\n#### async processInfo.getCoverageMap(nyc)\n\nGet a merged coverage map of the current process, as well as any child\nprocesses.  This should only be called during tree rendering, as it depends on\nchild nodes being present in the `nodes` array.\n\nThe `nyc` instance is required to load the report information and apply\nsourcemaps properly.\n\n### processInfo.label\n\nA read-only string for when archy prints the process tree.\n\n### processInfo.nodes\n\nA list of the child nodes used during tree rendering.\n\n### processInfo.directory\n\nIf a process will be saved, it must have a `directory` included\nin the list of fields.  This property is not saved to the processinfo file.\n\n## class ProcessDB\n\nA utility for interacting with the collection of ProcessInfo files in the\nprocessinfo folder.\n\n### constructor(directory)\n\nSupply the directory where processinfo files are found.  This should be the\nfull path, something like `${cwd}/.nyc_output/processinfo`.\n\n### processDB.directory\n\nA read-only property showing the directory where this object is working.\n\n### processDB.nodes\n\nA list of child ProcessInfo nodes used in tree printing.\n\n### processDB.label\n\nThe string `'nyc'`, used as the default root node in the archy tree rendering.\n\n### async processDB.writeIndex()\n\nCreate the `index.json` file in the processinfo folder, which is required for\ntree generation and expunging.\n\nWARNING: Index writing is non-atomic, and should not be performed by multiple\nprocesses.\n\n### async processDB.readIndex()\n\nRead and return the contents of the `index.json` file.  If the `index.json` is\nnot present or not valid, then it will attempt to generate one.\n\n### async processDB.readProcessInfos()\n\nRead all the data files in the processinfo folder, and return an object mapping\nthe file basename to the resulting object.  Used in tree generation.\n\n### async processDB.renderTree(nyc)\n\nRender the tree as a string using archy, suitable for printing to the terminal.\n\n### async processDB.buildProcessTree()\n\nBuild the hierarchical tree of nodes for tree rendering.  Populates the `nodes`\narray of this object and all `ProcessInfo` objects in the tree.\n\n### async processDB.getCoverageMap(nyc)\n\nUsed in tree rendering, to show the total coverage of all the processinfo files\nin the data folder.\n\n### async processDB.spawn(name, file, args, options)\n\nSpawn a child process with a unique name provided by the caller.  This name is\nstored as the `externalId` property in the child process's `ProcessInfo` data,\nand is tracked in the `externalIds` section of the index.\n\nNote that if the current process is not already wrapped by nyc, then you must\nprefix the spawned program with nyc, in order for this to take effect.  For\nexample, instead of `processDB.spawn('foo', 'node', ['foo.js'])`, you would run\n`processDB.spawn('foo', 'nyc', ['node', 'foo.js'])`.\n\nIf a process with that name already exists in the index, then it will be\nexpunged.\n\nUnlike `child_process.spawn` this function returns a Promise which resolves to\nthe `ChildProcess` object.\n\nWARNING: Calling `expunge` (which this method does) will result in the index\nbeing out of date.  It is the caller's responsibility to call\n`processDB.writeIndex()` when all named processes are completed.\n\n### async processDB.expunge(name)\n\nIf a process exists in the process info data folder with the specified name\n(ie, it had previously been run with `processDB.spawn(name, ...)`) then the\ncoverage and processinfo files for it and all of its children are removed.\n\nThis allows for a test harness to re-run or resume test suites, without\nspurious coverage results.\n\nWARNING: Calling `expunge` will result in the index being out of date.  It is\nthe caller's responsibility to call `processDB.writeIndex()` when all named\nprocesses are completed.\n\n## DATA STRUCTURES and FILES\n\nProcessInfo files MUST match the following structure:\n\n```\n{\n  \"uuid\": \"UUID of the process itself\",\n  \"parent\": \"UUID of the parent process, or null\",\n  \"pid\": Number,\n  \"ppid\": Number (pid of parent process),\n  \"argv\": Array<String>,\n  \"execArgv\": Array<String>,\n  \"cwd\": path,\n  \"time\": Number (timestamp in ms),\n  \"coverageFilename\": \"Path to NYC coverage info for this process\",\n  \"externalId\": \"The externally specified name for this process, or null\",\n}\n```\n\nThe index file is saved to `${this.directory}/index.json`.  It has\nthe following structure:\n\n```\n{\n  \"processes\": {\n    \"<uuid>\": {\n      \"parent\": \"parent uuid, or null\",\n      \"children\": [\"children\", \"uuids\", \"or empty array\"],\n      \"externalId\": \"externally specified name, if provided\"\n    },\n    ...\n  },\n  \"files\": {\n    \"/path/to/covered/file.js\": [\n      \"<uuids of processes that covered this file>\",\n      ...\n    ],\n    ...\n  },\n  \"externalIds\": {\n    \"externally specified name\": {\n      \"root\": \"<uuid of process run under this name>\",\n      \"children\": [\n        \"<uuids of all descendant processes from this point in the tree>\",\n        ...\n      ]\n    },\n    ...\n  }\n}\n```\n",
+      "readmeFilename": "README.md",
+      "gitHead": "4cd2064f42c0718dc5a7076d4c11d3d946adca54",
+      "bugs": {
+        "url": "https://github.com/istanbuljs/istanbul-lib-processinfo/issues"
+      },
+      "homepage": "https://github.com/istanbuljs/istanbul-lib-processinfo#readme",
+      "_id": "istanbul-lib-processinfo@2.0.1",
+      "_nodeVersion": "12.11.0",
+      "_npmVersion": "6.11.3",
+      "dist": {
+        "integrity": "sha512-4phn1Da5BCA8bPceeVJbJ6k2sJC0cJm3MAII4sPxl+qiMwPLhSgf2yZZt7ZKOJb/DGvLli2nHGiW9W7aND7cMQ==",
+        "shasum": "725d27a0003840cd1abea5e4f537d18bfc60c078",
+        "tarball": "https://registry.npmjs.org/istanbul-lib-processinfo/-/istanbul-lib-processinfo-2.0.1.tgz",
+        "fileCount": 5,
+        "unpackedSize": 19224,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdmrBuCRA9TVsSAnZWagAA93YP+QCxrN/Kf9BCkZw0NU3r\niYM8L9Hjzfigst5SJs3RNqUj3tv2sHh5mRV8T3fVOOssl5QZtSrXzBwCmiJx\nWnq0gZfPK1V7azLRM7Mgda/zLup0CwhHtcbsjMjDGFYS63UvthSaiYJ4HM5e\nbFvmN7My1B4UIC/sUzgacXv//eHmu7CUMXbddkEvbw9VHMDXXHD1yKB6docB\nCqrijwUxiM/rRUoO9WSWG7e/W6Oy6S2RmWmAq49fA8+Kp5U9Km2h7fGsbtfO\nxuvjS9bbORO+O9n3PtAxZkWek/9XH7aE9dwk0fCAq9Jtw46hi5NPkvVQgCBN\noAtBM/dH6lEEfHnrkkWlg3mvfXhZ6ii7GU3Hy5PHi2bsIRx4MjxZ2YnqiSXY\nlRwGru05KMoA79cmXPbUGSsXr+Sj/Jrw51i7PzLfjVRLesyQi4WkRI5f30Hf\nWVfRMBNByoDXfBkhAG8igEMdxUvYcv85ytbWFNU0nNvi1Xnmp67wkpBBU9Jl\nAN66ucAGY44ohtZBgtNO9KeGSrnVQIi1iTrD0IIZ9lyQl/fWR5JVul/eCXfD\n7dEg9hkJ+vX3ni4HxXYzgYO18wglg2/E/hNPDq7lZmUDtS/iLR3q2+XjzmM1\n7S5Ju9QqvARgdXsBa+iQOaIRKvBmqA3eQHKzleY9Y4CekbXCU1qN6GjnFKwB\nRukB\r\n=Ai2f\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "bencoe@gmail.com",
+          "name": "bcoe"
+        },
+        {
+          "email": "git@cfware.com",
+          "name": "coreyfarrell"
+        },
+        {
+          "email": "i@izs.me",
+          "name": "isaacs"
+        }
+      ],
+      "_npmUser": {
+        "name": "coreyfarrell",
+        "email": "git@cfware.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/istanbul-lib-processinfo_2.0.1_1570418797828_0.08468783774553357"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.2": {
+      "name": "istanbul-lib-processinfo",
+      "version": "2.0.2",
+      "description": "A utility for managing the `processinfo` folder that NYC uses.",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap",
+        "snap": "tap",
+        "release": "standard-version"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/istanbuljs/istanbul-lib-processinfo.git"
+      },
+      "license": "ISC",
+      "dependencies": {
+        "archy": "^1.0.0",
+        "cross-spawn": "^7.0.0",
+        "istanbul-lib-coverage": "^3.0.0-alpha.1",
+        "make-dir": "^3.0.0",
+        "p-map": "^3.0.0",
+        "rimraf": "^3.0.0",
+        "uuid": "^3.3.3"
+      },
+      "devDependencies": {
+        "standard-version": "^7.0.0",
+        "tap": "^14.6.5",
+        "nyc": "^15.0.0-alpha.0"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "tap": {
+        "check-coverage": true,
+        "jobs": 1
+      },
+      "nyc": {
+        "include": "index.js"
+      },
+      "readme": "# istanbul-lib-processinfo\n\nA utility for managing the `processinfo` folder that NYC uses.\n\nThis is intended to be used along with [NYC](https://npm.im/nyc), but can also\nbe used by other tools that wish to consume NYC's processinfo data.\n\n## API\n\n### class ProcessInfo\n\nA representation of information about a single process.\n\n#### constructor(fields)\n\nPass in fields that will be printed to the processinfo file.  Several defaults\nwill be provided if not specified.\n\n#### async processInfo.save()\n\nWrite this process info to disk.  This works by passing the ProcessInfo object\nto JSON.stringify, and writing to `${this.directory}/${this.uuid}.json`.\n\n#### processInfo.saveSync()\n\nThe synchronous version of `.save()`.\n\n#### async processInfo.getCoverageMap(nyc)\n\nGet a merged coverage map of the current process, as well as any child\nprocesses.  This should only be called during tree rendering, as it depends on\nchild nodes being present in the `nodes` array.\n\nThe `nyc` instance is required to load the report information and apply\nsourcemaps properly.\n\n### processInfo.label\n\nA read-only string for when archy prints the process tree.\n\n### processInfo.nodes\n\nA list of the child nodes used during tree rendering.\n\n### processInfo.directory\n\nIf a process will be saved, it must have a `directory` included\nin the list of fields.  This property is not saved to the processinfo file.\n\n## class ProcessDB\n\nA utility for interacting with the collection of ProcessInfo files in the\nprocessinfo folder.\n\n### constructor(directory)\n\nSupply the directory where processinfo files are found.  This should be the\nfull path, something like `${cwd}/.nyc_output/processinfo`.\n\n### processDB.directory\n\nA read-only property showing the directory where this object is working.\n\n### processDB.nodes\n\nA list of child ProcessInfo nodes used in tree printing.\n\n### processDB.label\n\nThe string `'nyc'`, used as the default root node in the archy tree rendering.\n\n### async processDB.writeIndex()\n\nCreate the `index.json` file in the processinfo folder, which is required for\ntree generation and expunging.\n\nWARNING: Index writing is non-atomic, and should not be performed by multiple\nprocesses.\n\n### async processDB.readIndex()\n\nRead and return the contents of the `index.json` file.  If the `index.json` is\nnot present or not valid, then it will attempt to generate one.\n\n### async processDB.readProcessInfos()\n\nRead all the data files in the processinfo folder, and return an object mapping\nthe file basename to the resulting object.  Used in tree generation.\n\n### async processDB.renderTree(nyc)\n\nRender the tree as a string using archy, suitable for printing to the terminal.\n\n### async processDB.buildProcessTree()\n\nBuild the hierarchical tree of nodes for tree rendering.  Populates the `nodes`\narray of this object and all `ProcessInfo` objects in the tree.\n\n### async processDB.getCoverageMap(nyc)\n\nUsed in tree rendering, to show the total coverage of all the processinfo files\nin the data folder.\n\n### async processDB.spawn(name, file, args, options)\n\nSpawn a child process with a unique name provided by the caller.  This name is\nstored as the `externalId` property in the child process's `ProcessInfo` data,\nand is tracked in the `externalIds` section of the index.\n\nNote that if the current process is not already wrapped by nyc, then you must\nprefix the spawned program with nyc, in order for this to take effect.  For\nexample, instead of `processDB.spawn('foo', 'node', ['foo.js'])`, you would run\n`processDB.spawn('foo', 'nyc', ['node', 'foo.js'])`.\n\nIf a process with that name already exists in the index, then it will be\nexpunged.\n\nUnlike `child_process.spawn` this function returns a Promise which resolves to\nthe `ChildProcess` object.\n\nWARNING: Calling `expunge` (which this method does) will result in the index\nbeing out of date.  It is the caller's responsibility to call\n`processDB.writeIndex()` when all named processes are completed.\n\n### async processDB.expunge(name)\n\nIf a process exists in the process info data folder with the specified name\n(ie, it had previously been run with `processDB.spawn(name, ...)`) then the\ncoverage and processinfo files for it and all of its children are removed.\n\nThis allows for a test harness to re-run or resume test suites, without\nspurious coverage results.\n\nWARNING: Calling `expunge` will result in the index being out of date.  It is\nthe caller's responsibility to call `processDB.writeIndex()` when all named\nprocesses are completed.\n\n## DATA STRUCTURES and FILES\n\nProcessInfo files MUST match the following structure:\n\n```\n{\n  \"uuid\": \"UUID of the process itself\",\n  \"parent\": \"UUID of the parent process, or null\",\n  \"pid\": Number,\n  \"ppid\": Number (pid of parent process),\n  \"argv\": Array<String>,\n  \"execArgv\": Array<String>,\n  \"cwd\": path,\n  \"time\": Number (timestamp in ms),\n  \"coverageFilename\": \"Path to NYC coverage info for this process\",\n  \"externalId\": \"The externally specified name for this process, or null\",\n}\n```\n\nThe index file is saved to `${this.directory}/index.json`.  It has\nthe following structure:\n\n```\n{\n  \"processes\": {\n    \"<uuid>\": {\n      \"parent\": \"parent uuid, or null\",\n      \"children\": [\"children\", \"uuids\", \"or empty array\"],\n      \"externalId\": \"externally specified name, if provided\"\n    },\n    ...\n  },\n  \"files\": {\n    \"/path/to/covered/file.js\": [\n      \"<uuids of processes that covered this file>\",\n      ...\n    ],\n    ...\n  },\n  \"externalIds\": {\n    \"externally specified name\": {\n      \"root\": \"<uuid of process run under this name>\",\n      \"children\": [\n        \"<uuids of all descendant processes from this point in the tree>\",\n        ...\n      ]\n    },\n    ...\n  }\n}\n```\n",
+      "readmeFilename": "README.md",
+      "gitHead": "5c356cd1a541c1b22a72a6ce5e09070386162dee",
+      "bugs": {
+        "url": "https://github.com/istanbuljs/istanbul-lib-processinfo/issues"
+      },
+      "homepage": "https://github.com/istanbuljs/istanbul-lib-processinfo#readme",
+      "_id": "istanbul-lib-processinfo@2.0.2",
+      "_nodeVersion": "12.11.0",
+      "_npmVersion": "6.11.3",
+      "dist": {
+        "integrity": "sha512-kOwpa7z9hme+IBPZMzQ5vdQj8srYgAtaRqeI48NGmAQ+/5yKiHLV0QbYqQpxsdEF0+w14SoB8YbnHKcXE2KnYw==",
+        "shasum": "e1426514662244b2f25df728e8fd1ba35fe53b9c",
+        "tarball": "https://registry.npmjs.org/istanbul-lib-processinfo/-/istanbul-lib-processinfo-2.0.2.tgz",
+        "fileCount": 5,
+        "unpackedSize": 19381,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdm9ZGCRA9TVsSAnZWagAAmh0QAJMhCNYRWPjySam9NDAA\nK4pWQuVrH+IUAKDxhEQtSSCDXENav2E529P5b+hLyejx3Vc2irfZu4H4+MJ6\nMcFycCw2JkIaoahfZ+xfsIZHFTV7tW8D+mE5lUIdxt0cIeu8NnnzVRLW0IcQ\np1KMgxrSIhaPA7i5yj+pZUni5YptmU6enuSIdL0VwOKWmAZd/dxdDu1zwwBD\nfFVB9mhzQRaLRaazxCEUJssWsmbZ0rtHAN1mTX8rPtPk4LDKNqb/0ezDWSK5\nigITcKishj30ZvRRHPwWusMX3+hghaWOyqhoe+ViK7bevxuFGziUNMKIkUHu\nXAwZ8M5fjOM1IweYHayGROoIQ5xyzyIfKu5r0P3ibkqiAK665p0Nrj8KpoMj\n+uno6uf5K44VRB1rkuNhFiyW2GM/xuafziGhxpvyXCNxp4tSmVO2PYBdORLC\njF2R8Tw8l0LlLLjLWcQq3Hh6EeybKWekT4bYRgwQScNJSJEtj4R7+NYblbqz\nTwv5YKGck06KMs9GU0waM7j0Sk2C4tMBNXO21vfVAaiqalj8ZF8WcZPWAHdK\nO0FWHEsvB/fkinRZISQSvrgrkjKGj3JaDr4eAIZyVc28flP3xMErlJZYVzC5\niNLUcy6Vjd6LeP9rAIPNZmx/qpd0Yu9WvWS/7I1ZmwCbTTevSijYwpNwpI+h\nzZcJ\r\n=6vJG\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "bencoe@gmail.com",
+          "name": "bcoe"
+        },
+        {
+          "email": "git@cfware.com",
+          "name": "coreyfarrell"
+        },
+        {
+          "email": "i@izs.me",
+          "name": "isaacs"
+        }
+      ],
+      "_npmUser": {
+        "name": "coreyfarrell",
+        "email": "git@cfware.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/istanbul-lib-processinfo_2.0.2_1570494021789_0.2912939420150831"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2019-04-15T16:51:36.786Z",
+    "1.0.0": "2019-04-15T16:51:36.961Z",
+    "modified": "2019-12-21T02:15:21.978Z",
+    "2.0.0": "2019-06-21T10:07:27.564Z",
+    "2.0.1": "2019-10-07T03:26:37.936Z",
+    "2.0.2": "2019-10-08T00:20:21.919Z"
+  },
+  "maintainers": [
+    {
+      "email": "bencoe@gmail.com",
+      "name": "bcoe"
+    },
+    {
+      "email": "git@cfware.com",
+      "name": "coreyfarrell"
+    },
+    {
+      "email": "i@izs.me",
+      "name": "isaacs"
+    }
+  ],
+  "description": "A utility for managing the `processinfo` folder that NYC uses.",
+  "homepage": "https://github.com/istanbuljs/istanbul-lib-processinfo#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/istanbuljs/istanbul-lib-processinfo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/istanbuljs/istanbul-lib-processinfo/issues"
+  },
+  "license": "ISC",
+  "readme": "",
+  "readmeFilename": ""
+}

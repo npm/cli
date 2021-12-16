@@ -1,0 +1,943 @@
+{
+  "_id": "@nodelib/fs.scandir",
+  "_rev": "15-b1486770cfc54121f40f4d46ba512bce",
+  "name": "@nodelib/fs.scandir",
+  "dist-tags": {
+    "latest": "2.1.3"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "@nodelib/fs.scandir",
+      "version": "1.0.0",
+      "description": "List files and directories inside the specified path",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/nodelib/nodelib/tree/master/packages/fs.scandir"
+      },
+      "keywords": [
+        "NodeLib",
+        "fs",
+        "FileSystem",
+        "file system",
+        "scandir",
+        "readdir"
+      ],
+      "engines": {
+        "node": ">= 6"
+      },
+      "main": "out/index.js",
+      "typings": "out/index.d.ts",
+      "scripts": {
+        "clean": "rimraf out",
+        "lint": "tslint \"src/**/*.ts\" -p . -t stylish",
+        "compile": "tsc -p .",
+        "test": "mocha \"out/**/*.spec.js\" -s 0",
+        "build": "npm run clean && npm run lint && npm run compile && npm test",
+        "watch": "npm run clean && npm run lint && npm run compile -- --sourceMap --watch"
+      },
+      "dependencies": {
+        "@nodelib/fs.stat": "^1.0.1"
+      },
+      "gitHead": "ae213336c96216a8dd59ea675efc9ae3f4cf0fcf",
+      "_id": "@nodelib/fs.scandir@1.0.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "10.0.0",
+      "_npmUser": {
+        "name": "mrmlnc",
+        "email": "dmalinochkin@rambler.ru"
+      },
+      "dist": {
+        "integrity": "sha512-qfPyUWaRbx2/c5ra/yhLJAAY0pyp4cML1grW2vHNeoKWqxMKzi4w5Xe0KRKMy1NGov3bdcU+LFGtQaKSPtjV3w==",
+        "shasum": "85bf713f9a29498319b6b415258ff7518e2aa35f",
+        "tarball": "https://registry.npmjs.org/@nodelib/fs.scandir/-/fs.scandir-1.0.0.tgz",
+        "fileCount": 12,
+        "unpackedSize": 10811,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa+VhsCRA9TVsSAnZWagAASwwP+wQ6M1w4WaekNSv8spLh\nJr8/tGpALQ9q/BnEB6xGZKlQ60FnbqfYz+nT5Covuu3kJ7N6KkFmR+r3mosn\nYdwXkoZX6RIhThe/FB3/CDByWPgtkki0s7K886n57Q9UmyEDefI38QzqIoro\nwCGPDKTBms04YfLvrfSHtdTaEBdO0J9M74MxroDxmsU2QjqycNqqE8kGLnLX\nM+0KV8zVYzoZPTr2+zAnZoBaWXVOJPoa2NNyHSHNI4h7962DiT4Gf8KCd1Hm\nUKVX7/atvWHbQp1/DcRdvjw19Vfu27nbOdeW/SoYTHCanCGqIjx0+o5JWqq5\npBOCAoPw4EwWaBLa5A2EM/N9rqQAjIPmhBHDgHJ3mCAXmmjhyQD3RHjL38St\ngFi0EWL0Ec3DQbOH0oIE/8kbG2k2094J2C9EyNlmOrZLWBZCzZ1oVBV2sFuK\n6FJHpdwsCpt7ns6JqjwkfF5tq1MbfBU5/3Cf4BaDtzl5w09MW9poP2L4oVj1\nrS3MOB54jXH28+J8bVA1TKmC/rnQkHN70U4j095/c4xSb8D9jexbfRJxZgpX\nhlT5ySQPlZRST53gt0CNN1Sd/yO9kekSm43g9HbEPnIsPhQxKgYeIH+yl18M\nl/ovcXwAIrkvTDBSmDbcaX3VNGBdNos4PTQbahnLZc/vqnS46oRc8C8AJu5j\nCLSn\r\n=Ha2U\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "mrmlnc",
+          "email": "dmalinochkin@rambler.ru"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/fs.scandir_1.0.0_1526290539473_0.9000954208493939"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.0.1": {
+      "name": "@nodelib/fs.scandir",
+      "version": "1.0.1",
+      "description": "List files and directories inside the specified path",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/nodelib/nodelib/tree/master/packages/fs.scandir"
+      },
+      "keywords": [
+        "NodeLib",
+        "fs",
+        "FileSystem",
+        "file system",
+        "scandir",
+        "readdir"
+      ],
+      "engines": {
+        "node": ">= 6"
+      },
+      "main": "out/index.js",
+      "typings": "out/index.d.ts",
+      "scripts": {
+        "clean": "rimraf out",
+        "lint": "tslint \"src/**/*.ts\" -p . -t stylish",
+        "compile": "tsc -p .",
+        "test": "mocha \"out/**/*.spec.js\" -s 0",
+        "build": "npm run clean && npm run lint && npm run compile && npm test",
+        "watch": "npm run clean && npm run lint && npm run compile -- --sourceMap --watch"
+      },
+      "dependencies": {
+        "@nodelib/fs.stat": "^1.0.1"
+      },
+      "gitHead": "d40ac39d85b3954b9cf87e941c8f1408bdb9598f",
+      "_id": "@nodelib/fs.scandir@1.0.1",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "10.0.0",
+      "_npmUser": {
+        "name": "mrmlnc",
+        "email": "dmalinochkin@rambler.ru"
+      },
+      "dist": {
+        "integrity": "sha512-COfw/tTO2mieiaEU3QhnOowjXd8zsHlG372E7b0vmoqxU/P8FNfG2miabWdu+u3U+s+fJepGe97DM6sAM6ouoA==",
+        "shasum": "a44f4a61998eeff37d02e2b7dad9e75b407267e5",
+        "tarball": "https://registry.npmjs.org/@nodelib/fs.scandir/-/fs.scandir-1.0.1.tgz",
+        "fileCount": 12,
+        "unpackedSize": 11101,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa+o5DCRA9TVsSAnZWagAA3pEQAIP5hpzPNi2FtU+s2cg4\nx8qetsLR1PQhv4925g1HHDMJzxA+78U53au1BnK3fkqm8z2a4JHeEGnjPmGE\nvGrr4ITDxOuMWRmZAOqI21kkEcCFUPiGtydzdkGgA1+D0KyebgfDavYMCGy/\njJ3gn2MOxkgcimjcm8wp58Sv4nWsw5fJTd6qf4i78UfPCZDQB9Yf7oIgwGri\ne3tIgooFnv8BiRF6ydADUaFNz/gp8SKBaC1wNedQkVNfefMbU6yc5dUxCBaE\n0J4aN/rYvV8+Bwxk00v2uFzAjCwByB1v31qALdnt+7fByEUUrff0x33l2SYH\nf/WGms3XalGSLdbtSH1L53ja9T+N81eVXm2trme6PQdnaDEEp4sGWxz0A7GU\nUr9pISfJQTaw+T0oZRJW+OzPmtN+0klQuzoEeeA1BjiZCKpZM8OxS4lfpQL5\n1BP24hpWQfMBLis7R6Z2upzqYC2VNIUlyfK+nl05ez59gqS0MZ4wpA8oj32K\noW1Tc5GjXUfK8Hc3/468j6Jhxc/8jqYp/jCH9jyQq0k+xj+Np5XtgoiNiBGt\nB8oSfqXq/LDnqUMmaGqoi8sQIDaVfgsoabQo2qK6thZhMoA0jdO1Zkr28sZu\n2jov0ehF7kAO5oc+UeGA1nZDQ9O5AG8DfAzzcX0RJn4AkyHreg9ypDtcD40U\nR8kq\r\n=213f\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "mrmlnc",
+          "email": "dmalinochkin@rambler.ru"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/fs.scandir_1.0.1_1526369859284_0.8582642953297683"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.1.0": {
+      "name": "@nodelib/fs.scandir",
+      "version": "1.1.0",
+      "description": "List files and directories inside the specified path",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/nodelib/nodelib/tree/master/packages/fs.scandir"
+      },
+      "keywords": [
+        "NodeLib",
+        "fs",
+        "FileSystem",
+        "file system",
+        "scandir",
+        "readdir"
+      ],
+      "engines": {
+        "node": ">= 6"
+      },
+      "main": "out/index.js",
+      "typings": "out/index.d.ts",
+      "scripts": {
+        "clean": "rimraf out",
+        "lint": "tslint \"src/**/*.ts\" -p . -t stylish",
+        "compile": "tsc -p .",
+        "test": "mocha \"out/**/*.spec.js\" -s 0",
+        "build": "npm run clean && npm run lint && npm run compile && npm test",
+        "watch": "npm run clean && npm run lint && npm run compile -- --sourceMap --watch"
+      },
+      "dependencies": {
+        "@nodelib/fs.stat": "^1.0.1"
+      },
+      "gitHead": "a42562d478149d246d972793bac42d7f83cb6c0d",
+      "_id": "@nodelib/fs.scandir@1.1.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "10.0.0",
+      "_npmUser": {
+        "name": "mrmlnc",
+        "email": "dmalinochkin@rambler.ru"
+      },
+      "dist": {
+        "integrity": "sha512-l0oAi5f++lRsGPMLXoGoAV+aAgDfSfJ/vZ5jtZeYI/JleptPL3bvYUmEiOJQ/cUX/tNZdktTYo+W9/wHi4ssrw==",
+        "shasum": "416575b0c4a1f2fccdd01b9bc7857e3effd5ddac",
+        "tarball": "https://registry.npmjs.org/@nodelib/fs.scandir/-/fs.scandir-1.1.0.tgz",
+        "fileCount": 12,
+        "unpackedSize": 11572,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa+88NCRA9TVsSAnZWagAAY2AP/AxFjaXiyKo+b6Rc46jV\npnHeKvdXHm7hNXmmnGlOzu/CMrCSr/AB9slYGftMypFpIZo3IZk8aclUlH+J\nbxAZiwMrI2nSHZNB4phyNq20NGv/oDFlwaKc6B+ojEYVAhgHuqCRaIfjFXAF\ndTJYhr2MpPze7LxGtklUQBkk8yZ5mR8t+4PZkLmI39So8Ez6AyNXovsi7/eo\n8VJOnKXkILmJr1lbdVlAg7PuAM/iFfe0Aw6v8PVLABcnIvC5QMTlQiPsrkzA\nLFZNc0R94XztJGmCj7Yl2usTG6f2HYb2iVukJS3YfGMccwLxq+Qq1yZMR4rz\nPkBzcIO+KZZ0TwhjO7sCohiusES8xqMhzIQKhhzYB858BrQEXCbEkFXQSYyi\nJFLt4s/6eh/gFofoXRF4/NRwVuffM3orwbkiLcPB/7xA58Zk49Z43HYoNFpl\n8+cm+hN/7qh7B9SFV8jyWwhSlDLSGHt/MvEETg+rLInS90lb9ioXSkS/NuwP\nf45RXMP6wys3YYakUXJsMwK3H56nVvtWUUllf5dCe+7janL8lF4b6qk8JuhS\nEhAD8M85Xq1Bed4/rzXaqeLbYFDXFhjzSIqFsZ9qeV7/ai8GRxwrprHHSi2Y\nZa1YS31I5YvtYIzkulKgZvaSXaBb1ygCpV7qgneYQM/j+xpPG/PxuzJjhe7z\n4bos\r\n=2Ji9\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "mrmlnc",
+          "email": "dmalinochkin@rambler.ru"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/fs.scandir_1.1.0_1526451980448_0.4543365587843571"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.1.1": {
+      "name": "@nodelib/fs.scandir",
+      "version": "1.1.1",
+      "description": "List files and directories inside the specified path",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/nodelib/nodelib/tree/master/packages/fs.scandir"
+      },
+      "keywords": [
+        "NodeLib",
+        "fs",
+        "FileSystem",
+        "file system",
+        "scandir",
+        "readdir"
+      ],
+      "engines": {
+        "node": ">= 6"
+      },
+      "main": "out/index.js",
+      "typings": "out/index.d.ts",
+      "scripts": {
+        "clean": "rimraf out",
+        "lint": "tslint \"src/**/*.ts\" -p . -t stylish",
+        "compile": "tsc -p .",
+        "test": "mocha \"out/**/*.spec.js\" -s 0",
+        "build": "npm run clean && npm run lint && npm run compile && npm test",
+        "watch": "npm run clean && npm run lint && npm run compile -- --sourceMap --watch"
+      },
+      "dependencies": {
+        "@nodelib/fs.stat": "^1.1.0"
+      },
+      "gitHead": "12bf340ba9630871dbe8d1df874d65b46c8d4ab7",
+      "_id": "@nodelib/fs.scandir@1.1.1",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "10.1.0",
+      "_npmUser": {
+        "name": "mrmlnc",
+        "email": "dmalinochkin@rambler.ru"
+      },
+      "dist": {
+        "integrity": "sha512-VWbf4/wxpdxVVfEWNunPJzeb6Zp0AjN5JaSasHPdtQeeWx4yeMQWJRsCQWGyv37O0Ag13iN9XeXPSo1mbTzlHA==",
+        "shasum": "262ede8bab78619810bcca8925676691f74cee5e",
+        "tarball": "https://registry.npmjs.org/@nodelib/fs.scandir/-/fs.scandir-1.1.1.tgz",
+        "fileCount": 2,
+        "unpackedSize": 3402,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbBQjUCRA9TVsSAnZWagAAm+oQAJRbwstxwDgIf+HdmgPg\nAC4keZ9/+py2n3utBBWwdz8t4eSN0q/YjF5ZwlbY1DppePIxMkxmc0hFoVU+\n8I+3Y05BiNg8fX2we+MJuli809Yvyn58ygaoDMBTNYRgI7aNF0CAvI9ZocXj\nVSVmpOOPINGV0d6/wmiD5wEmmaJ36Y+ptc1tZy+vCSY0wOJ/MRmBXVJJTqVe\nm3eSoG2gkRgxSIVJyp+8e8XYzEXQDI201OTkp8pWqR//o8Ze7rMCEOn/ez4t\nxYttYfzCQsLavcJU5dDgV0LhlRp4K9grPZUVw5pMkBWcFWKdl44pQrY0/MFm\nTEWICKS/6YCp80udFj01/Ih/R4lhqjt4l4hQKbrvKCyqSAUyr2Ypr/IGMwWS\n+Ntcjqu3dAVr48F3KViPNOXvo3hHvShVPOMZar71XIicjQFzNfYqDu3DvrWb\n7tXdePQPnmNtj84Y6X26oPDphe1IJLzX3KXAEfIpzLbj7Wl7JvYjgsPEoq2f\nTLtSF2s0Z3knycA/QGrJpQJmchVMudw+PpssgQZ7Xy6JiUXZUM37IXMoFPEU\nm0m7lI1Epfxn/+wFS3jMYWczZBXomkZe7rNayXzvjugiKki+e/EPgFB15jwB\nRkaVLD97CJDhXwsHeznvaJwa/o5sQWyLoFF7iRrID1KQINiPvn0Ud6MWyuPI\nhg1r\r\n=RLk5\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "mrmlnc",
+          "email": "dmalinochkin@rambler.ru"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/fs.scandir_1.1.1_1527056595784_0.4531899241136119"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.2.0": {
+      "name": "@nodelib/fs.scandir",
+      "version": "1.2.0",
+      "description": "List files and directories inside the specified path",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/nodelib/nodelib/tree/master/packages/fs.scandir"
+      },
+      "keywords": [
+        "NodeLib",
+        "fs",
+        "FileSystem",
+        "file system",
+        "scandir",
+        "readdir"
+      ],
+      "engines": {
+        "node": ">= 6"
+      },
+      "main": "out/index.js",
+      "typings": "out/index.d.ts",
+      "scripts": {
+        "clean": "rimraf out",
+        "lint": "tslint \"src/**/*.ts\" -p . -t stylish",
+        "compile": "tsc -p .",
+        "test": "mocha \"out/**/*.spec.js\" -s 0",
+        "build": "npm run clean && npm run lint && npm run compile && npm test",
+        "watch": "npm run clean && npm run lint && npm run compile -- --sourceMap --watch"
+      },
+      "dependencies": {
+        "@nodelib/fs.stat": "^1.1.0",
+        "run-parallel": "^1.1.9"
+      },
+      "gitHead": "076137b53f3bab6eb6dcc380bc7a94d9dd7a6796",
+      "_id": "@nodelib/fs.scandir@1.2.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "10.1.0",
+      "_npmUser": {
+        "name": "mrmlnc",
+        "email": "dmalinochkin@rambler.ru"
+      },
+      "dist": {
+        "integrity": "sha512-xvhAjfOFD8jikXwiCLl02TnuLyjvI/04TA7NillRKGi7wTT6nC6/uoG3ze/iqCxf9XwYKrWDxCrnfIrkueb3cg==",
+        "shasum": "e618313f18b8c766acc99571551d165afb57560c",
+        "tarball": "https://registry.npmjs.org/@nodelib/fs.scandir/-/fs.scandir-1.2.0.tgz",
+        "fileCount": 12,
+        "unpackedSize": 12828,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbLTpkCRA9TVsSAnZWagAAL5oP/1lzstzA5XYh/cNt5CCN\n4ZlfdwuAx7bTU0PWmKjauTAIp3RwU9V1eKuBTKhWslAwzSShHuIlVTPqYRDf\nfCFLe/+HNxKzdTKKvQl8rYCItKrL9Cul6KeJ8OMAcsJsHfgomcdrgdO9YxWC\n70GC5NypKd4PjgRjS+zSixN9cNfhHkgkmgYdPxwjD9RkTjL/cs5Lx7Z6bNHs\nxhoMRVfAxf+0p2QKR+iMdZ9MKZCkd9/2Ts3pSjHm/HuinCWDLvCGYUBNz5SI\nl1ac4raJRfg9wcDY+YGQHnmR9PYKBU6gz2Dq6QDm4xCotlDydJrH45Q6ST6A\nuSyP0zsYLC6EOqfZ3tg2RsSk3zOkdZyQrsoswx3HD6AKDeBr8ZZq5uoHLpAq\nNp4ZS3zCPsSd2rCjU8R2c5ERB88OT+aIx9ZAXNnya92BtEq8p4MRaExVTklU\nARo1CPdsvJdHDOs5PjNJsKyOxFu6smY/FY3XmSCXWylbZGs1LMue5Ed+xRy9\n6tMwcIsmoCmKia1a3c/LQlcxprNvoUznncs6zAQiiiM0vDv300yfOedpgTbb\nocAryPRixvvelZDK2tWzlz6zS71o7zVTrxDRcXmr/H+5DflDIxXgV9fYZ4J7\nBuOgsnx+C0zHskyNPQb0TCNFmHMHih0w3SUW9HD0laEM/BlmjvP308PuxxQ7\nTswc\r\n=Tyb+\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "mrmlnc",
+          "email": "dmalinochkin@rambler.ru"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/fs.scandir_1.2.0_1529690723454_0.04195324468354822"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.2.1": {
+      "name": "@nodelib/fs.scandir",
+      "version": "1.2.1",
+      "description": "List files and directories inside the specified path",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/nodelib/nodelib/tree/master/packages/fs.scandir"
+      },
+      "keywords": [
+        "NodeLib",
+        "fs",
+        "FileSystem",
+        "file system",
+        "scandir",
+        "readdir"
+      ],
+      "engines": {
+        "node": ">= 6"
+      },
+      "main": "out/index.js",
+      "typings": "out/index.d.ts",
+      "scripts": {
+        "clean": "rimraf out",
+        "lint": "tslint \"src/**/*.ts\" -p . -t stylish",
+        "compile": "tsc -p .",
+        "test": "mocha \"out/**/*.spec.js\" -s 0",
+        "build": "npm run clean && npm run lint && npm run compile && npm test",
+        "watch": "npm run clean && npm run compile -- --sourceMap --watch"
+      },
+      "dependencies": {
+        "@nodelib/fs.stat": "^1.1.1",
+        "run-parallel": "^1.1.9"
+      },
+      "_id": "@nodelib/fs.scandir@1.2.1",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "10.1.0",
+      "_npmUser": {
+        "name": "mrmlnc",
+        "email": "dmalinochkin@rambler.ru"
+      },
+      "dist": {
+        "integrity": "sha512-DUsaG/tnEtNw/CpPpzGL0rdBdeX9wFSz5Rd0ploEW/d+LWWIj6WxdQ99yNg7e4qrZnyoZbKNgm/TV9jGkVizHQ==",
+        "shasum": "3f0dd8bc79ba4c7dd0e2a2ecc586d2644f20b445",
+        "tarball": "https://registry.npmjs.org/@nodelib/fs.scandir/-/fs.scandir-1.2.1.tgz",
+        "fileCount": 21,
+        "unpackedSize": 16603,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbeZwGCRA9TVsSAnZWagAANg8P/iU5NLV2DiR7J1wpXKZ1\nV/vt5p9Y/Eut8QfH2F3jVw37KkiSSZPzZOGGjswTd0srMOfnKXp1bwlewXKw\nSWJIQ5s8iYJmtO//awGQ1yON4cb9eQ2Si4RMGuzqEEduaClcA+bxGQ5xgtYm\nnNFafHCvVBlFeivgYvtVnazLJc0OaQiVmQvugegzr1B7hGOhLtEybsAXgUZg\n4wjl5abI31dnNdNZoleEcXy/6odxHri+eIClinytKKlymMFgJ36V0zAjOWQu\nRo8MUJvg4VGreyn9CEU+6VYBBjW+KKZT0TK1oHKc5o/p31xJ7lv1Jm0rmCSk\nZ2QNWfiMJj15LTOTj5IgefYaZpWnqTVI9njmnfOp0U/KzEpQNJu5PlthMh1p\ngz83HC0BWyKUyu/8Zw0xWKp8FnXy8ee91xwM+e1f1thsZ2+BJsorwCqHEZPD\nBwKeel6fz2bvhahKZ1KkDmUkjhS8+/Nqas+I0rE/3qvBQxwnViOsGCHVbB6v\nVS0H5OKkXDEubeMcU6PowFEfvWcChFMsCH8OGT5avKwWpdQBRqntRl0MdczE\nWbkdnV+leUwDXqVYL3usL9G29vkq+yhQQp8EUOdaXRomYQSAZchVozv9mB1/\nsr7Z8QDjtZKkN+T3wVYPimKPF0J7asGzNZa05fI/zDIUQbp8gwagP9IIJvhr\nAyY6\r\n=ArNT\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "mrmlnc",
+          "email": "dmalinochkin@rambler.ru"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/fs.scandir_1.2.1_1534696453750_0.10288354510942166"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.2.2": {
+      "name": "@nodelib/fs.scandir",
+      "version": "1.2.2",
+      "description": "List files and directories inside the specified path",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/nodelib/nodelib/tree/master/packages/fs.scandir"
+      },
+      "keywords": [
+        "NodeLib",
+        "fs",
+        "FileSystem",
+        "file system",
+        "scandir",
+        "readdir"
+      ],
+      "engines": {
+        "node": ">= 6"
+      },
+      "main": "out/index.js",
+      "typings": "out/index.d.ts",
+      "scripts": {
+        "clean": "rimraf out",
+        "lint": "tslint \"src/**/*.ts\" -p . -t stylish",
+        "compile": "tsc -b .",
+        "compile:watch": "tsc -p . --watch",
+        "test": "mocha \"out/**/*.spec.js\" -s 0",
+        "build": "npm run clean && npm run lint && npm run compile && npm test",
+        "watch": "npm run clean && npm run compile:watch"
+      },
+      "dependencies": {
+        "@nodelib/fs.stat": "^1.1.2",
+        "run-parallel": "^1.1.9"
+      },
+      "gitHead": "2258cf26a596d8a8aaca1a1cd548214398057e47",
+      "_resolved": "",
+      "_integrity": "",
+      "_from": "file:nodelib-fs.scandir-1.2.2.tgz",
+      "_id": "@nodelib/fs.scandir@1.2.2",
+      "_npmVersion": "6.4.0",
+      "_nodeVersion": "10.9.0",
+      "_npmUser": {
+        "name": "mrmlnc",
+        "email": "dmalinochkin@rambler.ru"
+      },
+      "dist": {
+        "integrity": "sha512-yGhgJk6Em+OeWQOABRmrvPLchV4S1Wilf0nwlKxQwkeJAYJX6FAbNhDSwHGr2uof6iprV5iVBG2xyM4iuYRG4g==",
+        "shasum": "2db78a45eb17d1bd8bae2411b1ff57799c11da3f",
+        "tarball": "https://registry.npmjs.org/@nodelib/fs.scandir/-/fs.scandir-1.2.2.tgz",
+        "fileCount": 12,
+        "unpackedSize": 13178,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbjZsJCRA9TVsSAnZWagAAEGEQAJTUonKkqIbCpdrLIoTO\nk1kzMJ4BIHiR7i8u3Kjb0sPXHCz/Xvbw6Xd8s6VmPW0NmymZm9G82ClZvH1n\nKlIfES2QkpH4yASwvt7FS7OK6Ly6+OdSeZXoNaUxVEVS+I3vaZEc2a+ICHVh\nRyS5KuHEyVvGcEEuLRsmd2XLqPYiPcXvUqrnVXdTM3tqjKLAjN+jmcdLEju8\n6wBhx5Uv9OXktWIUFvxfzE8OOFjqnw2fMZuwSEMODSigRC+MIweLInf/Rv0t\nFicXS8nag/Yh7dUhSh33sWVdPAFFI2JfYLHuPNMZ0f7pMi3Yl9V08vpQ52X7\nEwhMY57c5noLZdcFqK+R+yCpdsIxV4kqOElRihetTMQrRlA0WkJh/MAQ7dYR\nDNCg20ldqVhtmyE5tIzko+DNMbqwdpo4cwxakbcYau05kyVso9wQLYsUAB3N\n6/tAH2goUPdhhY3FeyQyLj+N83WGJzThhNj7j6273kWJS2X/8lSj5V0BywvN\nsXOO6Vhk6m1JGHjwwTVstybJSbIdGFT8Bu5q95NKRXc0295rsgyX9WTiM0yu\nnsC7ulhJLNruBkjdTApFrle3bm8g/C8KvDgbq0bRUEVzbvKFIbocCUyZyRud\nPvdhSpIduJomc0WSkmVVyVWwCBOa4A8PTsR79V7wZsk6Gle4zVYUGrQ6TswN\nKRMF\r\n=xIb+\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "mrmlnc",
+          "email": "dmalinochkin@rambler.ru"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/fs.scandir_1.2.2_1536006920875_0.08631601405398359"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.2.3": {
+      "name": "@nodelib/fs.scandir",
+      "version": "1.2.3",
+      "description": "List files and directories inside the specified path",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/nodelib/nodelib/tree/master/packages/fs/fs.scandir"
+      },
+      "keywords": [
+        "NodeLib",
+        "fs",
+        "FileSystem",
+        "file system",
+        "scandir",
+        "readdir"
+      ],
+      "engines": {
+        "node": ">= 6"
+      },
+      "main": "out/index.js",
+      "typings": "out/index.d.ts",
+      "scripts": {
+        "clean": "rimraf out",
+        "lint": "tslint \"src/**/*.ts\" -p . -t stylish",
+        "compile": "tsc -b .",
+        "compile:watch": "tsc -p . --watch --sourceMap",
+        "test": "mocha \"out/**/*.spec.js\" -s 0",
+        "build": "npm run clean && npm run lint && npm run compile && npm test",
+        "watch": "npm run clean && npm run compile:watch"
+      },
+      "dependencies": {
+        "@nodelib/fs.stat": "1.1.3",
+        "run-parallel": "^1.1.9"
+      },
+      "_id": "@nodelib/fs.scandir@1.2.3",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "11.0.0",
+      "_npmUser": {
+        "name": "mrmlnc",
+        "email": "dmalinochkin@rambler.ru"
+      },
+      "dist": {
+        "integrity": "sha512-AVuxU3wvJTeYj6m1AVnVwGh8LhUc8YEsnbQTQSFV+FZqH0G3gg+GpS5Z1LS3hGQHjS75OQUHmTkbfy3cbfnO6A==",
+        "shasum": "4afd44c5081b9fd1f841d87d67039df631c72adc",
+        "tarball": "https://registry.npmjs.org/@nodelib/fs.scandir/-/fs.scandir-1.2.3.tgz",
+        "fileCount": 12,
+        "unpackedSize": 12969,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJb3IjbCRA9TVsSAnZWagAAvVEP/3uIhBvn3K8y2EgQQDrC\ndjYo6p8X3W0inATstwLUAxzJmvIU+qjJPy0kz/KP6ZUpK6Pf74vfaF4V82+P\n1pANzgH9YMcOnybdbavo48kiprhr1vyDhUaMtdrMwOVmmmkUN1vi6uogsjci\nKdwLyqPAekWY9ynu2pdDWX9/v+Cabmrp2YRz9FobpCyu1ed5bpBCtYgpHRcE\nA90Q2jQdh+lNdXL9h5HzLZUgpQ1SFqcRh9xJEKRstyBYcHkBJ/OZ1c/9Ut48\nTIDwKZ0Lo/B6CtVjvxXO45fFec7olWGx5yOApECphh4dqXSFBRKRHqytF61t\nqGcuol9byhciddxXfeZKBIcS2w/iiymw65T/SxvN3sE1/tWjp8dBhGhhjFLh\n3R5o/Olxb1M+xYmBgcqva+OW39u6LNh1ArhJFidPAaxNerqrPdicDQViblP6\nSxlboKNaiTD9eU/Ly3apGTqwSSC3DfsAfZK06jErAfaoTFDeDblSHDQhWYmK\nXAjHmuooRHQK7WKo2XPXM/HQXFmBxkgrbLTGeu9bFJBO9We1jhsqh+YUT2PY\nYG50lujzfxkRmcFJakopi4Xr1N0G5N7NkxFIdFx0fBokszvfk+qXeWNZwqu2\n9meri6BxbvH+Mggw/jQbF1vjgQy+GCLw8smCP7iwS1zujn87GMxHpvy3yYPo\n/BOp\r\n=Tu5Z\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "mrmlnc",
+          "email": "dmalinochkin@rambler.ru"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/fs.scandir_1.2.3_1541179611026_0.597227643762231"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.0": {
+      "name": "@nodelib/fs.scandir",
+      "version": "2.0.0",
+      "description": "List files and directories inside the specified directory",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/nodelib/nodelib/tree/master/packages/fs/fs.scandir"
+      },
+      "keywords": [
+        "NodeLib",
+        "fs",
+        "FileSystem",
+        "file system",
+        "scandir",
+        "readdir",
+        "dirent"
+      ],
+      "engines": {
+        "node": ">= 8"
+      },
+      "main": "out/index.js",
+      "typings": "out/index.d.ts",
+      "scripts": {
+        "clean": "rimraf {tsconfig.tsbuildinfo,out}",
+        "lint": "tslint \"src/**/*.ts\" -p . -t stylish",
+        "compile": "tsc -b .",
+        "compile:watch": "tsc -p . --watch --sourceMap",
+        "test": "mocha \"out/**/*.spec.js\" -s 0",
+        "build": "npm run clean && npm run compile && npm run lint && npm test",
+        "watch": "npm run clean && npm run compile:watch"
+      },
+      "dependencies": {
+        "@nodelib/fs.stat": "2.0.0",
+        "run-parallel": "^1.1.9"
+      },
+      "_id": "@nodelib/fs.scandir@2.0.0",
+      "_nodeVersion": "12.2.0",
+      "_npmVersion": "6.9.0",
+      "dist": {
+        "integrity": "sha512-9rgZFuBxEQMizsbYA0biERcToc+oGO6QBBcYKU+3MbemNtibh6GoLmZgOA5IlRyZMA3dIU8mGGzVvlhlF6TczA==",
+        "shasum": "f32112476ff010c10ca4d46f2af72ebbbae9810b",
+        "tarball": "https://registry.npmjs.org/@nodelib/fs.scandir/-/fs.scandir-2.0.0.tgz",
+        "fileCount": 20,
+        "unpackedSize": 19054,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJc1/LlCRA9TVsSAnZWagAAlYYP/inmKNpdjP/FYPU3kbXP\nKS8e7mJCSFeGkBRYiSqA0ZWBrWMK5CgKdQyIwzhpnFkUe3emVjqIcQX6Ycv8\nJUyDJjW4x5d3dCh9eU+6rfDfwxBj9m1cQz+44XoF+W5AdLn9ShcyYhB7bGnw\neX0O9R8XmSt6+fiiaJj1LBWJhIdRjtU4QOmnBOXg3tYFGQ9U3o6iHSxjV+Hx\nqwIuke71PFJihwRCZvxWHzoFxJxNpJOd6Wn5z4PlWlKCP3j2Qdg0eGocXfMU\nwGzwfwIcvp+wKdsb85rY9KbmQ5WUt0HvJBRVEVd5V5hoyXcsrLyLBk4nd8dg\nxbnmR7kYKz3o3AjGaLDjLKif77gcFnDn7zDQG0wgWCwO4m4opsX1R9uyoz+j\nimKMtWoFMO+5yx0X9MlM6ZLQYuNzeNYszn+D/EfDO5OGRygbY/ZuJYyBJXz5\nadjVtSuji/4ydksk42HFGopSnYf3/aVpxERMv2kzl1KZWL1fOcGdFp7Vbq/a\n8426OrBH4jKqm2WG4gDwQJz/CDCzW4HFH56hl5HOTA9hqrgQNm47RClreiZ+\nLJMirLTdQ2sMxIEJAkD4fZq3wU1YQjSlk2ROpFPUS7ff0nmaOTcQP7eGyvo+\nEQr6wWfZEtzaJmGX3TmbUdmKJm21/1ZMQDK5zw1Yyp7i7hkMH7DDNPE49kNS\n8MPK\r\n=sSNA\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "mrmlnc",
+          "email": "dmalinochkin@rambler.ru"
+        }
+      ],
+      "_npmUser": {
+        "name": "mrmlnc",
+        "email": "dmalinochkin@rambler.ru"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/fs.scandir_2.0.0_1557656293213_0.8485190226647823"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.1": {
+      "name": "@nodelib/fs.scandir",
+      "version": "2.0.1",
+      "description": "List files and directories inside the specified directory",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/nodelib/nodelib/tree/master/packages/fs/fs.scandir"
+      },
+      "keywords": [
+        "NodeLib",
+        "fs",
+        "FileSystem",
+        "file system",
+        "scandir",
+        "readdir",
+        "dirent"
+      ],
+      "engines": {
+        "node": ">= 8"
+      },
+      "main": "out/index.js",
+      "typings": "out/index.d.ts",
+      "scripts": {
+        "clean": "rimraf {tsconfig.tsbuildinfo,out}",
+        "lint": "tslint \"src/**/*.ts\" -p . -t stylish",
+        "compile": "tsc -b .",
+        "compile:watch": "tsc -p . --watch --sourceMap",
+        "test": "mocha \"out/**/*.spec.js\" -s 0",
+        "build": "npm run clean && npm run compile && npm run lint && npm test",
+        "watch": "npm run clean && npm run compile:watch"
+      },
+      "dependencies": {
+        "@nodelib/fs.stat": "2.0.1",
+        "run-parallel": "^1.1.9"
+      },
+      "gitHead": "14a421c7401f269bf868e1a53fac0c3624247518",
+      "_id": "@nodelib/fs.scandir@2.0.1",
+      "_nodeVersion": "12.3.1",
+      "_npmVersion": "lerna/3.14.1/node@v12.3.1+x64 (win32)",
+      "dist": {
+        "integrity": "sha512-p2mECeAoBC1G3PfTt65jKoNAd926rJTPg7RgsW7jR42Y1y/vrDkBcd9cvCKAUWB5aSaI3rBoYRE4qLw5sHjKeg==",
+        "shasum": "120ff490365eb7a86b7f883af216382963c8436f",
+        "tarball": "https://registry.npmjs.org/@nodelib/fs.scandir/-/fs.scandir-2.0.1.tgz",
+        "fileCount": 20,
+        "unpackedSize": 18532,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJc8mjICRA9TVsSAnZWagAAMIAP/i/zvdZkj/Z8qM8nDnfY\n0T0pvgeX/3EDfCsfGM97kQKDm+hTh1Jz8AW9L/iiGLVC1EMHmzPGQuCwdzli\nksYGEyBNOdzfqN8dKyvsvssjStD/L+aw4gYSGbxz7C4sR7ltjX5usGp6TV9J\nwZNy0S+jstgfBFYJIqggNaNDxEbZaRH+iGVS9jEkW0uaC+jGlScbJI42r5RZ\nKnWmkPjFFo5Hzs9sFfqV726ECRX8SIxiywK2jxp0NoRWZYwevel6E7DH4e/I\nSAkRribp9notnCi9IIHbw+LwdK7FPNpzDWxyv49KerURCW0qKuTD63w60WM6\nwoGopjjTDIAtlwQPM3G1Zy0fRfazkSyfB9dObhRd7vvVL6QzrfEIRDAJqEK3\nSWPfi+dtJnEdVh7+oj1dA1SDQtCkj4gGYckPKLe/LpHK6CaS21s9czA2hGt+\naFIfNdv6Z6S4skjS/mwPswH9NhfuaclQ0nMP6DFVkCZaVItV4vr13bk/5lE2\nu6y/IWmqDUxYdj+QCt05K7UYAzeURYC+PbgTi+0ume9+BilFgZGJzPIVsJwi\nftPGKJk2AJDc+5okjBl9QMx+PGFrDToA1SPjJp4JmXs01Sb6cF/REsJ47fUj\nrZaIXf1huMoYOfaJuteXzVXUCRmbrRq1Any0iQ7QrzD0Q+aX3JMlhLbnx3X+\n/BuK\r\n=7uLI\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "mrmlnc",
+          "email": "dmalinochkin@rambler.ru"
+        }
+      ],
+      "_npmUser": {
+        "name": "mrmlnc",
+        "email": "dmalinochkin@rambler.ru"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/fs.scandir_2.0.1_1559390408097_0.7633100846522014"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.1.0": {
+      "name": "@nodelib/fs.scandir",
+      "version": "2.1.0",
+      "description": "List files and directories inside the specified directory",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/nodelib/nodelib/tree/master/packages/fs/fs.scandir"
+      },
+      "keywords": [
+        "NodeLib",
+        "fs",
+        "FileSystem",
+        "file system",
+        "scandir",
+        "readdir",
+        "dirent"
+      ],
+      "engines": {
+        "node": ">= 8"
+      },
+      "main": "out/index.js",
+      "typings": "out/index.d.ts",
+      "scripts": {
+        "clean": "rimraf {tsconfig.tsbuildinfo,out}",
+        "lint": "tslint \"src/**/*.ts\" -p . -t stylish",
+        "compile": "tsc -b .",
+        "compile:watch": "tsc -p . --watch --sourceMap",
+        "test": "mocha \"out/**/*.spec.js\" -s 0",
+        "build": "npm run clean && npm run compile && npm run lint && npm test",
+        "watch": "npm run clean && npm run compile:watch"
+      },
+      "dependencies": {
+        "@nodelib/fs.stat": "2.0.1",
+        "run-parallel": "^1.1.9"
+      },
+      "gitHead": "e23fc3908c45a4a71f0cc844cbf5e4fbdd6c71aa",
+      "_id": "@nodelib/fs.scandir@2.1.0",
+      "_nodeVersion": "12.4.0",
+      "_npmVersion": "lerna/3.15.0/node@v12.4.0+x64 (win32)",
+      "dist": {
+        "integrity": "sha512-yATT+eSfMUc2oKtIac0vWK+0ovBPHWOKb70T6T9pumO1RlTO2XcANsBezVNChVukQQtsufdkJI2I3AzwJU7WgA==",
+        "shasum": "86748e46f5f0cc0c91fa3000a717c5b9790597c2",
+        "tarball": "https://registry.npmjs.org/@nodelib/fs.scandir/-/fs.scandir-2.1.0.tgz",
+        "fileCount": 20,
+        "unpackedSize": 19034,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdDmIXCRA9TVsSAnZWagAAABIQAIl0B7kXV/Oihk42KOd0\nC24tohE6nvvRQpovnFrZS6hQxA6kUxh6t8KAt7NLeJeVwlXEhqmqugQJapC6\nPYhWsLCbf/6iK4OMvlxCg9PhUp+cgvZ8NxXHyRoTBKOcy1jeWVruRysWNGP2\nv1wd9F6YrlmHX4j11taBkIuRh4E32FL/539J368kEzL6u9wIzPnz+Msgl7re\nec8Qd0e0zds7LkHhVdHAtGv4xXJpDx0aQ68pwCVNzTtEhOrqO948u25pNkbT\n9L7JPG4lhCXthF7Y87evBVIzAZaFK+yKoL8kr6Ad+K96EMvW0oWou1mjHm9F\nowyzkn0vqBgcG9OoXaPeV6dCAAFpVa4N6noJ4SHmtbIWpdcHWBvVg3yiK0+p\nKaAmo1sTqRJNrtsfQNJS/S++2818qmOYJm/TOFnEFyMmQ9MrGr0MCVGfKFuY\nPHnGI/CSDPO9jv1Xu2iqa9Hfsq9lwFUvZWEgGlz/dHzHUv9gmYEvoIcBzhAX\n7FLdnSzkXvPXgeNd/A/RcOOr24sCD7AxJgaX7ytlSjmsXfJvgIbTm/91tSCE\nO9v246mB20eqKLX+jNch9XG6lEjIZj5yz5abKJ4MpVY6Ve6CbdD/w+/PxQiE\n9+6wqI1ZZMm8S1sscwMdFXkOvNrywDINwECPmiUZWWPFEERvEYLkdJZUSO0M\nsV55\r\n=3yd0\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "mrmlnc",
+          "email": "dmalinochkin@rambler.ru"
+        }
+      ],
+      "_npmUser": {
+        "name": "mrmlnc",
+        "email": "dmalinochkin@rambler.ru"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/fs.scandir_2.1.0_1561223703096_0.5214453111705171"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.1.1": {
+      "name": "@nodelib/fs.scandir",
+      "version": "2.1.1",
+      "description": "List files and directories inside the specified directory",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/nodelib/nodelib/tree/master/packages/fs/fs.scandir"
+      },
+      "keywords": [
+        "NodeLib",
+        "fs",
+        "FileSystem",
+        "file system",
+        "scandir",
+        "readdir",
+        "dirent"
+      ],
+      "engines": {
+        "node": ">= 8"
+      },
+      "main": "out/index.js",
+      "typings": "out/index.d.ts",
+      "scripts": {
+        "clean": "rimraf {tsconfig.tsbuildinfo,out}",
+        "lint": "tslint \"src/**/*.ts\" -p . -t stylish",
+        "compile": "tsc -b .",
+        "compile:watch": "tsc -p . --watch --sourceMap",
+        "test": "mocha \"out/**/*.spec.js\" -s 0",
+        "build": "npm run clean && npm run compile && npm run lint && npm test",
+        "watch": "npm run clean && npm run compile:watch"
+      },
+      "dependencies": {
+        "@nodelib/fs.stat": "2.0.1",
+        "run-parallel": "^1.1.9"
+      },
+      "gitHead": "f2e0caa6ff76566953dcfac75b916d80474a5e45",
+      "_id": "@nodelib/fs.scandir@2.1.1",
+      "_nodeVersion": "12.4.0",
+      "_npmVersion": "lerna/3.15.0/node@v12.4.0+x64 (win32)",
+      "dist": {
+        "integrity": "sha512-NT/skIZjgotDSiXs0WqYhgcuBKhUMgfekCmCGtkUAiLqZdOnrdjmZr9wRl3ll64J9NF79uZ4fk16Dx0yMc/Xbg==",
+        "shasum": "7fa8fed654939e1a39753d286b48b4836d00e0eb",
+        "tarball": "https://registry.npmjs.org/@nodelib/fs.scandir/-/fs.scandir-2.1.1.tgz",
+        "fileCount": 20,
+        "unpackedSize": 19033,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdEboTCRA9TVsSAnZWagAA8RMQAJ5k09LHpQB4Qgxktk0W\nZSq7fqRlN/N/4KPYZpFdYcr/oj6gzjgdqrSLGX+YLiMgPGZHdnnIauQF/IcT\nm/0hlBzZQXCzpDKmw3Cu2LmfCT40LVP3XkzU0t/SLZLsOTRDV5fr8GeUTu9m\nXdqvJunARK0HzrhxN5DMcg6nHLMLupAGJthKjmoFC7dt0Lttrcl7EVBMpM08\naV3sE9T01Qg/PQ1eqAR5VBFJIDngK9csNsKxAzyWz2Z9PzT7+Z+En/f/Qnks\nTILpNI98QdoUxmacD/5vhmcmee2WtF/MQiG5DkXh+YQJkimHsWBHlWmHZiMg\nSuAn1+0okiNgsd1mH+vpdEgfqCY5d9a7UkyKjGKBiWKUP5ak3cLc5D3R7xRA\nNGcANYI6PebdjzMqdOovdDqVJXBBkRhD/invKeVWzwCjD7x45Z5zkE1wlvm+\noVBPgHLQGmiyJsUeLOL0XEDzjYAwhldqfxOAwY6PVjaXEboUG97g8UPzqgiQ\nu0Jjaz4gLJy5WO6GBMKfmmLgmnqOquWxmSLL6etL6tfikcXDxwI+h5zl6fn8\nKx8Gl3W0pG2mSs0EfSVfH4JRuslFuTY95UwoXeaCo5BW1fvTVnMwJRKYYaPU\n5DZds76ayvsh7hYVnpgYe5AfdJ0aZxcBoo7lLVaLUS3+VlOvXskME/aLFGuy\nxeiC\r\n=7rGs\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "mrmlnc",
+          "email": "dmalinochkin@rambler.ru"
+        }
+      ],
+      "_npmUser": {
+        "name": "mrmlnc",
+        "email": "dmalinochkin@rambler.ru"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/fs.scandir_2.1.1_1561442834411_0.2980626421902397"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.1.2": {
+      "name": "@nodelib/fs.scandir",
+      "version": "2.1.2",
+      "description": "List files and directories inside the specified directory",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/nodelib/nodelib/tree/master/packages/fs/fs.scandir"
+      },
+      "keywords": [
+        "NodeLib",
+        "fs",
+        "FileSystem",
+        "file system",
+        "scandir",
+        "readdir",
+        "dirent"
+      ],
+      "engines": {
+        "node": ">= 8"
+      },
+      "main": "out/index.js",
+      "typings": "out/index.d.ts",
+      "scripts": {
+        "clean": "rimraf {tsconfig.tsbuildinfo,out}",
+        "lint": "tslint \"src/**/*.ts\" -p . -t stylish",
+        "compile": "tsc -b .",
+        "compile:watch": "tsc -p . --watch --sourceMap",
+        "test": "mocha \"out/**/*.spec.js\" -s 0",
+        "build": "npm run clean && npm run compile && npm run lint && npm test",
+        "watch": "npm run clean && npm run compile:watch"
+      },
+      "dependencies": {
+        "@nodelib/fs.stat": "2.0.2",
+        "run-parallel": "^1.1.9"
+      },
+      "gitHead": "b56e041e80bc6ae6c5fa31c327d5174ed1b8957a",
+      "_id": "@nodelib/fs.scandir@2.1.2",
+      "_nodeVersion": "12.8.0",
+      "_npmVersion": "lerna/3.16.4/node@v12.8.0+x64 (win32)",
+      "dist": {
+        "integrity": "sha512-wrIBsjA5pl13f0RN4Zx4FNWmU71lv03meGKnqRUoCyan17s4V3WL92f3w3AIuWbNnpcrQyFBU5qMavJoB8d27w==",
+        "shasum": "1f981cd5b83e85cfdeb386fc693d4baab392fa54",
+        "tarball": "https://registry.npmjs.org/@nodelib/fs.scandir/-/fs.scandir-2.1.2.tgz",
+        "fileCount": 21,
+        "unpackedSize": 20112,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdZkigCRA9TVsSAnZWagAAmcIQAKRE5vRCRedMFTMOO6oB\n5gxrR33CwXdXlecgk3ALv+j4pdX6MU7c+ia9j7fdhdeLgnqgjpo9PI8suVMT\nv/PSdLX4Cv2QtBwQAWsoE8U44HWm8D3vcjTT21uRyesACjDKM/J7U80GRaku\npBSTD6hCAKE4W1iiKeDeGkEVq8bbz77z1a227XnPBR/o0VZKlBxy3cpitON5\nVXVcrBBvM+RxdR2CaWnWXIZXbVdb2BZNi34SkAerRapPqkOpoMJWzgVYT5D9\nDjlcwicDe64k5zY5X1MaADlPW0/fF028wvQUjapPsHl8nu5KrdDf89smSDWg\nKzbZdGoufsWAJ8h9vEd3fpm0KQLlj5Bs3UPaKGm8XPLgg9wNb1Uh+8A6b2eh\ngFbuT45cTI4jPR8xWZCgrhdWhRyG81PaBw9+d04LxIplfhqvKSfc24EdSmhg\njTxGMXLHWq5766Yn+Mo3ftlezFiMr/vgQabK6aOjrD4+1xojG/mxyJ1DWhl9\nABidLPb+hKceQbQP3Rh1JCh6Mxk7O2RARIiNHAZ6vk2qhgJK4ShH6jyF+8Vj\nEOzWOhEZtZUv9Xt3fK56J8z7ljcftS2E1o+u42HEYipdBTDeiZ2NZilNl9lO\nqAUYunXNZCXRenX/RgxWng33fmtros+LLg9d45nkp6SWD5/56rgh5bwHwE1z\n/j0T\r\n=six8\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "mrmlnc",
+          "email": "dmalinochkin@rambler.ru"
+        }
+      ],
+      "_npmUser": {
+        "name": "mrmlnc",
+        "email": "dmalinochkin@rambler.ru"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/fs.scandir_2.1.2_1566984351776_0.9876353292895399"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.1.3": {
+      "name": "@nodelib/fs.scandir",
+      "version": "2.1.3",
+      "description": "List files and directories inside the specified directory",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/nodelib/nodelib/tree/master/packages/fs/fs.scandir"
+      },
+      "keywords": [
+        "NodeLib",
+        "fs",
+        "FileSystem",
+        "file system",
+        "scandir",
+        "readdir",
+        "dirent"
+      ],
+      "engines": {
+        "node": ">= 8"
+      },
+      "main": "out/index.js",
+      "typings": "out/index.d.ts",
+      "scripts": {
+        "clean": "rimraf {tsconfig.tsbuildinfo,out}",
+        "lint": "eslint \"src/**/*.ts\" --cache",
+        "compile": "tsc -b .",
+        "compile:watch": "tsc -p . --watch --sourceMap",
+        "test": "mocha \"out/**/*.spec.js\" -s 0",
+        "build": "npm run clean && npm run compile && npm run lint && npm test",
+        "watch": "npm run clean && npm run compile:watch"
+      },
+      "dependencies": {
+        "@nodelib/fs.stat": "2.0.3",
+        "run-parallel": "^1.1.9"
+      },
+      "gitHead": "3b1ef7554ad7c061b3580858101d483fba847abf",
+      "_id": "@nodelib/fs.scandir@2.1.3",
+      "_nodeVersion": "12.8.0",
+      "_npmVersion": "lerna/3.16.4/node@v12.8.0+x64 (win32)",
+      "dist": {
+        "integrity": "sha512-eGmwYQn3gxo4r7jdQnkrrN6bY478C3P+a/y72IJukF8LjB6ZHeB3c+Ehacj3sYeSmUXGlnA67/PmbM9CVwL7Dw==",
+        "shasum": "3a582bdb53804c6ba6d146579c46e52130cf4a3b",
+        "tarball": "https://registry.npmjs.org/@nodelib/fs.scandir/-/fs.scandir-2.1.3.tgz",
+        "fileCount": 21,
+        "unpackedSize": 20514,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdlvDvCRA9TVsSAnZWagAAQpwQAImz9Twd2paLWU/2+Z4/\nvEfs7aZHO2sps0DbVGVrVcG8r5nCmUqeBUo/eqfl2xcBGhWSfKiOZyzT/6wQ\n6508wr4fsoa6XdxL9Yf4Mm1AhBRmv9zE9Fw25OVCXvTmPsqFJiU8aSgCAgd/\nlRnZqu9uktqwaMpuoYB7xXr70YYVFB32DVZlZYqjTm1EHkq54RvR7gDU1T0b\n2ayJhGhaZzf2B/CZFtk/Vb06HmYn7FsY7t21w8u3hiBfju5lXwEEy6t/5ITh\nQWJJjOzJzSOqGHv3+QgCUDBZHPjE5LiNZyoMVz0Q3vRvNjRBVei9ovEkja9U\n68I2ufjoxWA333j9xX4wgJI5laD39lNSAorHH3C24Vm+PcttPfJNkeGFcBhP\nN8gHJj3DPipumGdt4Z/CYJkSbQ39mqGOcEB5XJJXHegcNdpBl5rF1GD+/Kg0\n/8Y7B8dPX6NoJH8QHL5PvPGRTs9yzNk+jw1jxU995v7I2g95zfLIHH00evDJ\nfou2c+uT9o9CUQnFAvV07mzJxNn93SJZunf1N+ih0+GoJf7dJynTjwTUocTz\ngFxzs5DazEDDaLmKIcsUHPJutABJo1wqHdoBiU9jXSW7eLxMU2fO8Rm1F1ha\nAWxLTTfPsCw6vhyMIqEy1ist3bC6GTeouc2R1AUoeWSqd/T19baLm3XaHd2D\nu+MV\r\n=176S\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "mrmlnc",
+          "email": "dmalinochkin@rambler.ru"
+        }
+      ],
+      "_npmUser": {
+        "name": "mrmlnc",
+        "email": "dmalinochkin@rambler.ru"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/fs.scandir_2.1.3_1570173166752_0.07827536155873238"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2018-05-14T09:35:39.362Z",
+    "1.0.0": "2018-05-14T09:35:39.566Z",
+    "modified": "2019-10-04T07:12:49.356Z",
+    "1.0.1": "2018-05-15T07:37:39.367Z",
+    "1.1.0": "2018-05-16T06:26:20.605Z",
+    "1.1.1": "2018-05-23T06:23:15.970Z",
+    "1.2.0": "2018-06-22T18:05:24.650Z",
+    "1.2.1": "2018-08-19T16:34:13.850Z",
+    "1.2.2": "2018-09-03T20:35:21.028Z",
+    "1.2.3": "2018-11-02T17:26:51.165Z",
+    "2.0.0": "2019-05-12T10:18:13.296Z",
+    "2.0.1": "2019-06-01T12:00:08.211Z",
+    "2.1.0": "2019-06-22T17:15:03.180Z",
+    "2.1.1": "2019-06-25T06:07:14.547Z",
+    "2.1.2": "2019-08-28T09:25:51.910Z",
+    "2.1.3": "2019-10-04T07:12:46.906Z"
+  },
+  "maintainers": [
+    {
+      "name": "mrmlnc",
+      "email": "dmalinochkin@rambler.ru"
+    }
+  ],
+  "description": "List files and directories inside the specified directory",
+  "keywords": [
+    "NodeLib",
+    "fs",
+    "FileSystem",
+    "file system",
+    "scandir",
+    "readdir",
+    "dirent"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nodelib/nodelib/tree/master/packages/fs/fs.scandir"
+  },
+  "license": "MIT",
+  "readme": "# @nodelib/fs.scandir\n\n> List files and directories inside the specified directory.\n\n## :bulb: Highlights\n\nThe package is aimed at obtaining information about entries in the directory.\n\n* :moneybag: Returns useful information: `name`, `path`, `dirent` and `stats` (optional).\n* :gear: On Node.js 10.10+ uses the mechanism without additional calls to determine the entry type. See [`old` and `modern` mode](#old-and-modern-mode).\n* :link: Can safely work with broken symbolic links.\n\n## Install\n\n```console\nnpm install @nodelib/fs.scandir\n```\n\n## Usage\n\n```ts\nimport * as fsScandir from '@nodelib/fs.scandir';\n\nfsScandir.scandir('path', (error, stats) => { /* … */ });\n```\n\n## API\n\n### .scandir(path, [optionsOrSettings], callback)\n\nReturns an array of plain objects ([`Entry`](#entry)) with information about entry for provided path with standard callback-style.\n\n```ts\nfsScandir.scandir('path', (error, entries) => { /* … */ });\nfsScandir.scandir('path', {}, (error, entries) => { /* … */ });\nfsScandir.scandir('path', new fsScandir.Settings(), (error, entries) => { /* … */ });\n```\n\n### .scandirSync(path, [optionsOrSettings])\n\nReturns an array of plain objects ([`Entry`](#entry)) with information about entry for provided path.\n\n```ts\nconst entries = fsScandir.scandirSync('path');\nconst entries = fsScandir.scandirSync('path', {});\nconst entries = fsScandir.scandirSync(('path', new fsScandir.Settings());\n```\n\n#### path\n\n* Required: `true`\n* Type: `string | Buffer | URL`\n\nA path to a file. If a URL is provided, it must use the `file:` protocol.\n\n#### optionsOrSettings\n\n* Required: `false`\n* Type: `Options | Settings`\n* Default: An instance of `Settings` class\n\nAn [`Options`](#options) object or an instance of [`Settings`](#settingsoptions) class.\n\n> :book: When you pass a plain object, an instance of the `Settings` class will be created automatically. If you plan to call the method frequently, use a pre-created instance of the `Settings` class.\n\n### Settings([options])\n\nA class of full settings of the package.\n\n```ts\nconst settings = new fsScandir.Settings({ followSymbolicLinks: false });\n\nconst entries = fsScandir.scandirSync('path', settings);\n```\n\n## Entry\n\n* `name` — The name of the entry (`unknown.txt`).\n* `path` — The path of the entry relative to call directory (`root/unknown.txt`).\n* `dirent` — An instance of [`fs.Dirent`](./src/types/index.ts) class. On Node.js below 10.10 will be emulated by [`DirentFromStats`](./src/utils/fs.ts) class.\n* `stats` (optional) — An instance of `fs.Stats` class.\n\nFor example, the `scandir` call for `tools` directory with one directory inside:\n\n```ts\n{\n\tdirent: Dirent { name: 'typedoc', /* … */ },\n\tname: 'typedoc',\n\tpath: 'tools/typedoc'\n}\n```\n\n## Options\n\n### stats\n\n* Type: `boolean`\n* Default: `false`\n\nAdds an instance of `fs.Stats` class to the [`Entry`](#entry).\n\n> :book: Always use `fs.readdir` without the `withFileTypes` option. ??TODO??\n\n### followSymbolicLinks\n\n* Type: `boolean`\n* Default: `false`\n\nFollow symbolic links or not. Call `fs.stat` on symbolic link if `true`.\n\n### `throwErrorOnBrokenSymbolicLink`\n\n* Type: `boolean`\n* Default: `true`\n\nThrow an error when symbolic link is broken if `true` or safely use `lstat` call if `false`.\n\n### `pathSegmentSeparator`\n\n* Type: `string`\n* Default: `path.sep`\n\nBy default, this package uses the correct path separator for your OS (`\\` on Windows, `/` on Unix-like systems). But you can set this option to any separator character(s) that you want to use instead.\n\n### `fs`\n\n* Type: [`FileSystemAdapter`](./src/adapters/fs.ts)\n* Default: A default FS methods\n\nBy default, the built-in Node.js module (`fs`) is used to work with the file system. You can replace any method with your own.\n\n```ts\ninterface FileSystemAdapter {\n\tlstat?: typeof fs.lstat;\n\tstat?: typeof fs.stat;\n\tlstatSync?: typeof fs.lstatSync;\n\tstatSync?: typeof fs.statSync;\n\treaddir?: typeof fs.readdir;\n\treaddirSync?: typeof fs.readdirSync;\n}\n\nconst settings = new fsScandir.Settings({\n\tfs: { lstat: fakeLstat }\n});\n```\n\n## `old` and `modern` mode\n\nThis package has two modes that are used depending on the environment and parameters of use.\n\n### old\n\n* Node.js below `10.10` or when the `stats` option is enabled\n\nWhen working in the old mode, the directory is read first (`fs.readdir`), then the type of entries is determined (`fs.lstat` and/or `fs.stat` for symbolic links).\n\n### modern\n\n* Node.js 10.10+ and the `stats` option is disabled\n\nIn the modern mode, reading the directory (`fs.readdir` with the `withFileTypes` option) is combined with obtaining information about its entries. An additional call for symbolic links (`fs.stat`) is still present.\n\nThis mode makes fewer calls to the file system. It's faster.\n\n## Changelog\n\nSee the [Releases section of our GitHub project](https://github.com/nodelib/nodelib/releases) for changelog for each release version.\n\n## License\n\nThis software is released under the terms of the MIT license.\n",
+  "readmeFilename": "README.md"
+}

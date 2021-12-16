@@ -1,0 +1,10 @@
+{
+  "name": "root",
+  "version": "1.2.3",
+  "dependencies": {
+    "child": "file:child-1.2.3.tgz"
+  },
+  "bundleDependencies": [
+    "child"
+  ]
+}

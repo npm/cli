@@ -1,0 +1,12 @@
+{
+  "name": "@isaacs/conflicted-peer-optional-from-dev-dep-b",
+  "version": "1.0.0",
+  "peerDependencies": {
+    "@isaacs/conflicted-peer-optional-from-dev-dep-peer": "2"
+  },
+  "peerDependenciesMeta": {
+    "@isaacs/conflicted-peer-optional-from-dev-dep-peer": {
+      "optional": true
+    }
+  }
+}

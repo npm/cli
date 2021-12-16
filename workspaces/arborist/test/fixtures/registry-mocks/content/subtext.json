@@ -1,0 +1,2979 @@
+{
+  "_id": "subtext",
+  "_rev": "117-2151ff7899f4b8ae99252584649a7b06",
+  "name": "subtext",
+  "description": "HTTP payload parsing",
+  "dist-tags": {
+    "latest": "6.0.12",
+    "lts": "5.0.1"
+  },
+  "versions": {
+    "0.0.0": {
+      "name": "subtext",
+      "description": "HTTP payload parsing",
+      "version": "0.0.0",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/hapijs/payload"
+      },
+      "main": "index",
+      "keywords": [
+        "http",
+        "payload",
+        "file",
+        "stream",
+        "multipart"
+      ],
+      "engines": {
+        "node": ">=0.10.32"
+      },
+      "dependencies": {
+        "boom": "2.x.x",
+        "hoek": "2.x.x",
+        "qs": "2.x.x",
+        "pez": "1.x.x",
+        "wreck": "5.x.x"
+      },
+      "devDependencies": {
+        "lab": "4.x.x"
+      },
+      "scripts": {
+        "test": "make test-cov"
+      },
+      "licenses": [
+        {
+          "type": "BSD",
+          "url": "http://github.com/hapijs/subtext/raw/master/LICENSE"
+        }
+      ],
+      "gitHead": "e3c8be17d78192f1438860eb9e7b023a3f00b6cc",
+      "bugs": {
+        "url": "https://github.com/hapijs/payload/issues"
+      },
+      "homepage": "https://github.com/hapijs/payload",
+      "_id": "subtext@0.0.0",
+      "_shasum": "45d9c9f754b3aefc7913b6a9f2c8b039a0f46195",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "hueniverse",
+        "email": "eran@hueniverse.com"
+      },
+      "maintainers": [
+        {
+          "name": "hueniverse",
+          "email": "eran@hueniverse.com"
+        }
+      ],
+      "dist": {
+        "shasum": "45d9c9f754b3aefc7913b6a9f2c8b039a0f46195",
+        "tarball": "https://registry.npmjs.org/subtext/-/subtext-0.0.0.tgz"
+      },
+      "directories": {},
+      "deprecated": "This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial)."
+    },
+    "1.0.0": {
+      "name": "subtext",
+      "description": "HTTP payload parsing",
+      "version": "1.0.0",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/hapijs/payload"
+      },
+      "main": "index",
+      "keywords": [
+        "http",
+        "payload",
+        "file",
+        "stream",
+        "multipart"
+      ],
+      "engines": {
+        "node": ">=0.10.32"
+      },
+      "dependencies": {
+        "boom": "2.x.x",
+        "content": "1.x.x.",
+        "hoek": "2.x.x",
+        "qs": "2.x.x",
+        "pez": "1.x.x",
+        "wreck": "5.x.x"
+      },
+      "devDependencies": {
+        "form-data": "0.1.x",
+        "lab": "4.x.x"
+      },
+      "scripts": {
+        "test": "make test-cov"
+      },
+      "licenses": [
+        {
+          "type": "BSD",
+          "url": "http://github.com/hapijs/subtext/raw/master/LICENSE"
+        }
+      ],
+      "gitHead": "e8513ffc34979716b2a2c10109615a435496ae0f",
+      "bugs": {
+        "url": "https://github.com/hapijs/payload/issues"
+      },
+      "homepage": "https://github.com/hapijs/payload",
+      "_id": "subtext@1.0.0",
+      "_shasum": "ff86f36c5309887d3924e160f77122d26c2cceae",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "hueniverse",
+        "email": "eran@hueniverse.com"
+      },
+      "maintainers": [
+        {
+          "name": "hueniverse",
+          "email": "eran@hueniverse.com"
+        }
+      ],
+      "dist": {
+        "shasum": "ff86f36c5309887d3924e160f77122d26c2cceae",
+        "tarball": "https://registry.npmjs.org/subtext/-/subtext-1.0.0.tgz"
+      },
+      "directories": {},
+      "deprecated": "This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial)."
+    },
+    "1.0.1": {
+      "name": "subtext",
+      "description": "HTTP payload parsing",
+      "version": "1.0.1",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/hapijs/payload"
+      },
+      "main": "index",
+      "keywords": [
+        "http",
+        "payload",
+        "file",
+        "stream",
+        "multipart"
+      ],
+      "engines": {
+        "node": ">=0.10.32"
+      },
+      "dependencies": {
+        "boom": "2.x.x",
+        "content": "1.x.x",
+        "hoek": "2.x.x",
+        "qs": "2.x.x",
+        "pez": "1.x.x",
+        "wreck": "5.x.x"
+      },
+      "devDependencies": {
+        "form-data": "0.1.x",
+        "lab": "4.x.x"
+      },
+      "scripts": {
+        "test": "make test-cov"
+      },
+      "licenses": [
+        {
+          "type": "BSD",
+          "url": "http://github.com/hapijs/subtext/raw/master/LICENSE"
+        }
+      ],
+      "gitHead": "1fa95a4586f12c351b744b0d965c3d3d5223ffc9",
+      "bugs": {
+        "url": "https://github.com/hapijs/payload/issues"
+      },
+      "homepage": "https://github.com/hapijs/payload",
+      "_id": "subtext@1.0.1",
+      "_shasum": "7ec15d2747f475a0a3c47bb9f5b47311458e29b9",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "hueniverse",
+        "email": "eran@hueniverse.com"
+      },
+      "maintainers": [
+        {
+          "name": "hueniverse",
+          "email": "eran@hueniverse.com"
+        }
+      ],
+      "dist": {
+        "shasum": "7ec15d2747f475a0a3c47bb9f5b47311458e29b9",
+        "tarball": "https://registry.npmjs.org/subtext/-/subtext-1.0.1.tgz"
+      },
+      "directories": {},
+      "deprecated": "This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial)."
+    },
+    "1.0.2": {
+      "name": "subtext",
+      "description": "HTTP payload parsing",
+      "version": "1.0.2",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/hapijs/payload"
+      },
+      "main": "index",
+      "keywords": [
+        "http",
+        "payload",
+        "file",
+        "stream",
+        "multipart"
+      ],
+      "engines": {
+        "node": ">=0.10.32"
+      },
+      "dependencies": {
+        "boom": "2.x.x",
+        "content": "1.x.x",
+        "hoek": "2.x.x",
+        "qs": "2.x.x",
+        "pez": "1.x.x",
+        "wreck": "5.x.x"
+      },
+      "devDependencies": {
+        "code": "1.x.x",
+        "form-data": "0.1.x",
+        "lab": "5.x.x"
+      },
+      "scripts": {
+        "test": "make test-cov"
+      },
+      "licenses": [
+        {
+          "type": "BSD",
+          "url": "http://github.com/hapijs/subtext/raw/master/LICENSE"
+        }
+      ],
+      "gitHead": "d2d9821dac3275cc2c1801097da21215e65ca541",
+      "bugs": {
+        "url": "https://github.com/hapijs/payload/issues"
+      },
+      "homepage": "https://github.com/hapijs/payload",
+      "_id": "subtext@1.0.2",
+      "_shasum": "da7b1fde712b7f12cdd0e0a166e21781a998206b",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "hueniverse",
+        "email": "eran@hueniverse.com"
+      },
+      "maintainers": [
+        {
+          "name": "hueniverse",
+          "email": "eran@hueniverse.com"
+        }
+      ],
+      "dist": {
+        "shasum": "da7b1fde712b7f12cdd0e0a166e21781a998206b",
+        "tarball": "https://registry.npmjs.org/subtext/-/subtext-1.0.2.tgz"
+      },
+      "directories": {},
+      "deprecated": "This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial)."
+    },
+    "1.1.0": {
+      "name": "subtext",
+      "description": "HTTP payload parsing",
+      "version": "1.1.0",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/hapijs/subtext.git"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "http",
+        "payload",
+        "file",
+        "stream",
+        "multipart"
+      ],
+      "engines": {
+        "node": ">=0.10.32"
+      },
+      "dependencies": {
+        "boom": "2.x.x",
+        "content": "1.x.x",
+        "hoek": "2.x.x",
+        "qs": "2.x.x",
+        "pez": "1.x.x",
+        "wreck": "5.x.x"
+      },
+      "devDependencies": {
+        "code": "1.x.x",
+        "form-data": "0.1.x",
+        "lab": "5.x.x"
+      },
+      "scripts": {
+        "test": "lab -a code -t 100 -L",
+        "test-cov-html": "lab -a code -r html -o coverage.html"
+      },
+      "license": "BSD-3-Clause",
+      "gitHead": "a7bf55ee4632de64c3313f283c8c176830557655",
+      "bugs": {
+        "url": "https://github.com/hapijs/subtext/issues"
+      },
+      "homepage": "https://github.com/hapijs/subtext#readme",
+      "_id": "subtext@1.1.0",
+      "_shasum": "30aefcd2f95db7094191f4db2fe6d427b6702a2a",
+      "_from": ".",
+      "_npmVersion": "2.10.0",
+      "_nodeVersion": "0.10.38",
+      "_npmUser": {
+        "name": "hueniverse",
+        "email": "eran@hammer.io"
+      },
+      "dist": {
+        "shasum": "30aefcd2f95db7094191f4db2fe6d427b6702a2a",
+        "tarball": "https://registry.npmjs.org/subtext/-/subtext-1.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "hueniverse",
+          "email": "eran@hueniverse.com"
+        }
+      ],
+      "directories": {},
+      "deprecated": "This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial)."
+    },
+    "1.1.1": {
+      "name": "subtext",
+      "description": "HTTP payload parsing",
+      "version": "1.1.1",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/hapijs/subtext.git"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "http",
+        "payload",
+        "file",
+        "stream",
+        "multipart"
+      ],
+      "engines": {
+        "node": ">=0.10.32"
+      },
+      "dependencies": {
+        "boom": "2.x.x",
+        "content": "1.x.x",
+        "hoek": "2.x.x",
+        "qs": "4.x.x",
+        "pez": "1.x.x",
+        "wreck": "6.x.x"
+      },
+      "devDependencies": {
+        "code": "1.x.x",
+        "form-data": "0.1.x",
+        "lab": "5.x.x"
+      },
+      "scripts": {
+        "test": "lab -a code -t 100 -L",
+        "test-cov-html": "lab -a code -r html -o coverage.html"
+      },
+      "license": "BSD-3-Clause",
+      "gitHead": "5fb4404bf54e4366576e0446a8258554d807dc97",
+      "bugs": {
+        "url": "https://github.com/hapijs/subtext/issues"
+      },
+      "homepage": "https://github.com/hapijs/subtext#readme",
+      "_id": "subtext@1.1.1",
+      "_shasum": "0c91825ae65d517855593d831e33ef75a284156b",
+      "_from": ".",
+      "_npmVersion": "2.10.0",
+      "_nodeVersion": "0.10.38",
+      "_npmUser": {
+        "name": "hueniverse",
+        "email": "eran@hammer.io"
+      },
+      "dist": {
+        "shasum": "0c91825ae65d517855593d831e33ef75a284156b",
+        "tarball": "https://registry.npmjs.org/subtext/-/subtext-1.1.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "hueniverse",
+          "email": "eran@hueniverse.com"
+        }
+      ],
+      "directories": {},
+      "deprecated": "This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial)."
+    },
+    "2.0.0": {
+      "name": "subtext",
+      "description": "HTTP payload parsing",
+      "version": "2.0.0",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/hapijs/subtext.git"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "http",
+        "payload",
+        "file",
+        "stream",
+        "multipart"
+      ],
+      "engines": {
+        "node": ">=0.10.40"
+      },
+      "dependencies": {
+        "boom": "2.x.x",
+        "content": "1.x.x",
+        "hoek": "2.x.x",
+        "qs": "4.x.x",
+        "pez": "1.x.x",
+        "wreck": "6.x.x"
+      },
+      "devDependencies": {
+        "code": "1.x.x",
+        "form-data": "0.1.x",
+        "lab": "5.x.x"
+      },
+      "scripts": {
+        "test": "lab -a code -t 100 -L",
+        "test-cov-html": "lab -a code -r html -o coverage.html"
+      },
+      "license": "BSD-3-Clause",
+      "gitHead": "ee53c3bfa1434721874294130775467b3fca452d",
+      "bugs": {
+        "url": "https://github.com/hapijs/subtext/issues"
+      },
+      "homepage": "https://github.com/hapijs/subtext#readme",
+      "_id": "subtext@2.0.0",
+      "_shasum": "239950e9208143f1548ab25e1c9579bdb68d894e",
+      "_from": ".",
+      "_npmVersion": "2.13.4",
+      "_nodeVersion": "0.10.40",
+      "_npmUser": {
+        "name": "hueniverse",
+        "email": "eran@hammer.io"
+      },
+      "dist": {
+        "shasum": "239950e9208143f1548ab25e1c9579bdb68d894e",
+        "tarball": "https://registry.npmjs.org/subtext/-/subtext-2.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "hueniverse",
+          "email": "eran@hueniverse.com"
+        }
+      ],
+      "directories": {},
+      "deprecated": "This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial)."
+    },
+    "2.0.1": {
+      "name": "subtext",
+      "description": "HTTP payload parsing",
+      "version": "2.0.1",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/hapijs/subtext"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "http",
+        "payload",
+        "file",
+        "stream",
+        "multipart"
+      ],
+      "engines": {
+        "node": ">=0.10.40"
+      },
+      "dependencies": {
+        "boom": "2.x.x",
+        "content": "1.x.x",
+        "hoek": "2.x.x",
+        "qs": "4.x.x",
+        "pez": "1.x.x",
+        "wreck": "6.x.x"
+      },
+      "devDependencies": {
+        "code": "1.x.x",
+        "form-data": "0.1.x",
+        "lab": "6.x.x"
+      },
+      "scripts": {
+        "test": "lab -a code -t 100 -L",
+        "test-cov-html": "lab -a code -r html -o coverage.html"
+      },
+      "license": "BSD-3-Clause",
+      "gitHead": "e72c497c5d50cc77444ea1d2e9a3cc656498c0b0",
+      "bugs": {
+        "url": "https://github.com/hapijs/subtext/issues"
+      },
+      "homepage": "https://github.com/hapijs/subtext",
+      "_id": "subtext@2.0.1",
+      "_shasum": "77ad565405e4d70ec2adad7d8f189cf0866a139d",
+      "_from": ".",
+      "_npmVersion": "2.14.2",
+      "_nodeVersion": "4.0.0",
+      "_npmUser": {
+        "name": "johnbrett",
+        "email": "johnbrett7@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "hueniverse",
+          "email": "eran@hammer.io"
+        },
+        {
+          "name": "johnbrett",
+          "email": "johnbrett7@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "77ad565405e4d70ec2adad7d8f189cf0866a139d",
+        "tarball": "https://registry.npmjs.org/subtext/-/subtext-2.0.1.tgz"
+      },
+      "directories": {},
+      "deprecated": "This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial)."
+    },
+    "2.0.2": {
+      "name": "subtext",
+      "description": "HTTP payload parsing",
+      "version": "2.0.2",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/hapijs/subtext"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "http",
+        "payload",
+        "file",
+        "stream",
+        "multipart"
+      ],
+      "engines": {
+        "node": ">=0.10.40"
+      },
+      "dependencies": {
+        "boom": "2.x.x",
+        "content": "1.x.x",
+        "hoek": "2.x.x",
+        "pez": "1.x.x",
+        "qs": "5.x.x",
+        "wreck": "6.x.x"
+      },
+      "devDependencies": {
+        "code": "1.x.x",
+        "form-data": "0.1.x",
+        "lab": "6.x.x"
+      },
+      "scripts": {
+        "test": "lab -a code -t 100 -L",
+        "test-cov-html": "lab -a code -r html -o coverage.html"
+      },
+      "license": "BSD-3-Clause",
+      "gitHead": "57c547bdb3ba345ea1a794dcbafb14a946349b17",
+      "bugs": {
+        "url": "https://github.com/hapijs/subtext/issues"
+      },
+      "homepage": "https://github.com/hapijs/subtext",
+      "_id": "subtext@2.0.2",
+      "_shasum": "30efd72258bd4d966f5aaac67219de21fe972290",
+      "_from": ".",
+      "_npmVersion": "2.14.2",
+      "_nodeVersion": "4.0.0",
+      "_npmUser": {
+        "name": "johnbrett",
+        "email": "johnbrett7@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "hueniverse",
+          "email": "eran@hammer.io"
+        },
+        {
+          "name": "johnbrett",
+          "email": "johnbrett7@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "30efd72258bd4d966f5aaac67219de21fe972290",
+        "tarball": "https://registry.npmjs.org/subtext/-/subtext-2.0.2.tgz"
+      },
+      "directories": {},
+      "deprecated": "This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial)."
+    },
+    "3.0.0": {
+      "name": "subtext",
+      "description": "HTTP payload parsing",
+      "version": "3.0.0",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/hapijs/subtext.git"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "http",
+        "payload",
+        "file",
+        "stream",
+        "multipart"
+      ],
+      "engines": {
+        "node": ">=4.0.0"
+      },
+      "dependencies": {
+        "boom": "3.x.x",
+        "content": "3.x.x",
+        "hoek": "3.x.x",
+        "pez": "2.x.x",
+        "qs": "6.x.x",
+        "wreck": "7.x.x"
+      },
+      "devDependencies": {
+        "code": "2.x.x",
+        "form-data": "0.1.x",
+        "lab": "7.x.x"
+      },
+      "scripts": {
+        "test": "lab -a code -t 100 -L",
+        "test-cov-html": "lab -a code -r html -o coverage.html"
+      },
+      "license": "BSD-3-Clause",
+      "gitHead": "728d5edc8d462d43adbf88b96a30285646e19e06",
+      "bugs": {
+        "url": "https://github.com/hapijs/subtext/issues"
+      },
+      "homepage": "https://github.com/hapijs/subtext#readme",
+      "_id": "subtext@3.0.0",
+      "_shasum": "c73e49dab44f247982192241f8b84b4174fab84c",
+      "_from": ".",
+      "_npmVersion": "3.3.9",
+      "_nodeVersion": "4.2.1",
+      "_npmUser": {
+        "name": "hueniverse",
+        "email": "eran@hammer.io"
+      },
+      "dist": {
+        "shasum": "c73e49dab44f247982192241f8b84b4174fab84c",
+        "tarball": "https://registry.npmjs.org/subtext/-/subtext-3.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "hueniverse",
+          "email": "eran@hammer.io"
+        },
+        {
+          "name": "johnbrett",
+          "email": "johnbrett7@gmail.com"
+        }
+      ],
+      "directories": {},
+      "deprecated": "This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial)."
+    },
+    "3.0.1": {
+      "name": "subtext",
+      "description": "HTTP payload parsing",
+      "version": "3.0.1",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/hapijs/subtext"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "http",
+        "payload",
+        "file",
+        "stream",
+        "multipart"
+      ],
+      "engines": {
+        "node": ">=4.0.0"
+      },
+      "dependencies": {
+        "boom": "3.x.x",
+        "content": "3.x.x",
+        "hoek": "3.x.x",
+        "pez": "2.x.x",
+        "qs": "6.x.x",
+        "wreck": "7.x.x"
+      },
+      "devDependencies": {
+        "code": "2.x.x",
+        "form-data": "0.1.x",
+        "lab": "7.x.x"
+      },
+      "scripts": {
+        "test": "lab -a code -t 100 -L",
+        "test-cov-html": "lab -a code -r html -o coverage.html"
+      },
+      "license": "BSD-3-Clause",
+      "gitHead": "131b4f1804f6e214939f2b7caae792a5938e8bf6",
+      "bugs": {
+        "url": "https://github.com/hapijs/subtext/issues"
+      },
+      "homepage": "https://github.com/hapijs/subtext",
+      "_id": "subtext@3.0.1",
+      "_shasum": "88176068fb8162a1764326339470964bdbe137c3",
+      "_from": ".",
+      "_npmVersion": "3.3.6",
+      "_nodeVersion": "5.0.0",
+      "_npmUser": {
+        "name": "johnbrett",
+        "email": "johnbrett7@gmail.com"
+      },
+      "dist": {
+        "shasum": "88176068fb8162a1764326339470964bdbe137c3",
+        "tarball": "https://registry.npmjs.org/subtext/-/subtext-3.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "hueniverse",
+          "email": "eran@hammer.io"
+        },
+        {
+          "name": "johnbrett",
+          "email": "johnbrett7@gmail.com"
+        }
+      ],
+      "directories": {},
+      "deprecated": "This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial)."
+    },
+    "3.0.2": {
+      "name": "subtext",
+      "description": "HTTP payload parsing",
+      "version": "3.0.2",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/hapijs/subtext"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "http",
+        "payload",
+        "file",
+        "stream",
+        "multipart"
+      ],
+      "engines": {
+        "node": ">=4.0.0"
+      },
+      "dependencies": {
+        "boom": "3.x.x",
+        "content": "3.x.x",
+        "hoek": "3.x.x",
+        "pez": "2.x.x",
+        "qs": "6.x.x",
+        "wreck": "7.x.x"
+      },
+      "devDependencies": {
+        "code": "2.x.x",
+        "form-data": "0.1.x",
+        "lab": "7.x.x"
+      },
+      "scripts": {
+        "test": "lab -a code -t 100 -L",
+        "test-cov-html": "lab -a code -r html -o coverage.html"
+      },
+      "license": "BSD-3-Clause",
+      "gitHead": "1b2e20f977cfa8cac8bc4f7b87cb8b396d6649fc",
+      "bugs": {
+        "url": "https://github.com/hapijs/subtext/issues"
+      },
+      "homepage": "https://github.com/hapijs/subtext",
+      "_id": "subtext@3.0.2",
+      "_shasum": "98a479cb8f3aae1a68332cc36358db73d0436e37",
+      "_from": ".",
+      "_npmVersion": "3.3.6",
+      "_nodeVersion": "5.0.0",
+      "_npmUser": {
+        "name": "johnbrett",
+        "email": "johnbrett7@gmail.com"
+      },
+      "dist": {
+        "shasum": "98a479cb8f3aae1a68332cc36358db73d0436e37",
+        "tarball": "https://registry.npmjs.org/subtext/-/subtext-3.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "hueniverse",
+          "email": "eran@hammer.io"
+        },
+        {
+          "name": "johnbrett",
+          "email": "johnbrett7@gmail.com"
+        }
+      ],
+      "directories": {},
+      "deprecated": "This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial)."
+    },
+    "4.0.0": {
+      "name": "subtext",
+      "description": "HTTP payload parsing",
+      "version": "4.0.0",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/hapijs/subtext"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "http",
+        "payload",
+        "file",
+        "stream",
+        "multipart"
+      ],
+      "engines": {
+        "node": ">=4.0.0"
+      },
+      "dependencies": {
+        "boom": "3.x.x",
+        "content": "3.x.x",
+        "hoek": "3.x.x",
+        "pez": "2.x.x",
+        "wreck": "7.x.x"
+      },
+      "devDependencies": {
+        "code": "2.x.x",
+        "form-data": "0.1.x",
+        "lab": "8.x.x"
+      },
+      "scripts": {
+        "test": "lab -a code -t 100 -L",
+        "test-cov-html": "lab -a code -r html -o coverage.html"
+      },
+      "license": "BSD-3-Clause",
+      "gitHead": "f401a78a8cc3cc6219bfcb7d657100a344b171cb",
+      "bugs": {
+        "url": "https://github.com/hapijs/subtext/issues"
+      },
+      "homepage": "https://github.com/hapijs/subtext",
+      "_id": "subtext@4.0.0",
+      "_shasum": "fad7695dd82fdf0b80a6bf23551207719bb95eb8",
+      "_from": ".",
+      "_npmVersion": "2.14.2",
+      "_nodeVersion": "4.0.0",
+      "_npmUser": {
+        "name": "johnbrett",
+        "email": "johnbrett7@gmail.com"
+      },
+      "dist": {
+        "shasum": "fad7695dd82fdf0b80a6bf23551207719bb95eb8",
+        "tarball": "https://registry.npmjs.org/subtext/-/subtext-4.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "hueniverse",
+          "email": "eran@hammer.io"
+        },
+        {
+          "name": "johnbrett",
+          "email": "johnbrett7@gmail.com"
+        }
+      ],
+      "directories": {},
+      "deprecated": "This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial)."
+    },
+    "4.0.1": {
+      "name": "subtext",
+      "description": "HTTP payload parsing",
+      "version": "4.0.1",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/hapijs/subtext"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "http",
+        "payload",
+        "file",
+        "stream",
+        "multipart"
+      ],
+      "engines": {
+        "node": ">=4.0.0"
+      },
+      "dependencies": {
+        "boom": "3.x.x",
+        "content": "3.x.x",
+        "hoek": "3.x.x",
+        "pez": "2.x.x",
+        "wreck": "7.x.x"
+      },
+      "devDependencies": {
+        "code": "2.x.x",
+        "form-data": "0.1.x",
+        "lab": "8.x.x"
+      },
+      "scripts": {
+        "test": "lab -a code -t 100 -L",
+        "test-cov-html": "lab -a code -r html -o coverage.html"
+      },
+      "license": "BSD-3-Clause",
+      "gitHead": "7999788d23fad6aeb805e8102807b7663b47df70",
+      "bugs": {
+        "url": "https://github.com/hapijs/subtext/issues"
+      },
+      "homepage": "https://github.com/hapijs/subtext",
+      "_id": "subtext@4.0.1",
+      "_shasum": "2e62195d57d661d483b3f1744e0649fef86c7bf7",
+      "_from": ".",
+      "_npmVersion": "2.14.2",
+      "_nodeVersion": "4.0.0",
+      "_npmUser": {
+        "name": "johnbrett",
+        "email": "johnbrett7@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "hueniverse",
+          "email": "eran@hammer.io"
+        },
+        {
+          "name": "johnbrett",
+          "email": "johnbrett7@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "2e62195d57d661d483b3f1744e0649fef86c7bf7",
+        "tarball": "https://registry.npmjs.org/subtext/-/subtext-4.0.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/subtext-4.0.1.tgz_1459955550854_0.18252183496952057"
+      },
+      "directories": {},
+      "deprecated": "This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial)."
+    },
+    "4.0.2": {
+      "name": "subtext",
+      "description": "HTTP payload parsing",
+      "version": "4.0.2",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/hapijs/subtext"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "http",
+        "payload",
+        "file",
+        "stream",
+        "multipart"
+      ],
+      "engines": {
+        "node": ">=4.0.0"
+      },
+      "dependencies": {
+        "boom": "3.x.x",
+        "content": "3.x.x",
+        "hoek": "4.x.x",
+        "pez": "2.x.x",
+        "wreck": "7.x.x"
+      },
+      "devDependencies": {
+        "code": "2.x.x",
+        "form-data": "0.1.x",
+        "lab": "10.x.x"
+      },
+      "scripts": {
+        "test": "lab -a code -t 100 -L",
+        "test-cov-html": "lab -a code -r html -o coverage.html"
+      },
+      "license": "BSD-3-Clause",
+      "gitHead": "8b5ab2e45d7065d734b688c852a2f981418ce44a",
+      "bugs": {
+        "url": "https://github.com/hapijs/subtext/issues"
+      },
+      "homepage": "https://github.com/hapijs/subtext",
+      "_id": "subtext@4.0.2",
+      "_shasum": "9145ef601f37696a5528b71ce4226591ef4b3f14",
+      "_from": ".",
+      "_npmVersion": "3.8.6",
+      "_nodeVersion": "6.1.0",
+      "_npmUser": {
+        "name": "johnbrett",
+        "email": "johnbrett7@gmail.com"
+      },
+      "dist": {
+        "shasum": "9145ef601f37696a5528b71ce4226591ef4b3f14",
+        "tarball": "https://registry.npmjs.org/subtext/-/subtext-4.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "hueniverse",
+          "email": "eran@hammer.io"
+        },
+        {
+          "name": "johnbrett",
+          "email": "johnbrett7@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/subtext-4.0.2.tgz_1462738479586_0.422189214034006"
+      },
+      "directories": {},
+      "deprecated": "This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial)."
+    },
+    "4.0.3": {
+      "name": "subtext",
+      "description": "HTTP payload parsing",
+      "version": "4.0.3",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/hapijs/subtext"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "http",
+        "payload",
+        "file",
+        "stream",
+        "multipart"
+      ],
+      "engines": {
+        "node": ">=4.0.0"
+      },
+      "dependencies": {
+        "boom": "3.x.x",
+        "content": "3.x.x",
+        "hoek": "4.x.x",
+        "pez": "2.x.x",
+        "wreck": "7.x.x"
+      },
+      "devDependencies": {
+        "code": "2.x.x",
+        "form-data": "0.2.x",
+        "lab": "10.x.x"
+      },
+      "scripts": {
+        "test": "lab -a code -t 100 -L",
+        "test-cov-html": "lab -a code -r html -o coverage.html"
+      },
+      "license": "BSD-3-Clause",
+      "gitHead": "a6a4e4eb6333911253ed2065501cdbe4a75ba77c",
+      "bugs": {
+        "url": "https://github.com/hapijs/subtext/issues"
+      },
+      "homepage": "https://github.com/hapijs/subtext",
+      "_id": "subtext@4.0.3",
+      "_shasum": "5c5d9c54cc65ff6f767ff073bb87ec2135308524",
+      "_from": ".",
+      "_npmVersion": "2.14.3",
+      "_nodeVersion": "4.1.0",
+      "_npmUser": {
+        "name": "johnbrett",
+        "email": "johnbrett7@gmail.com"
+      },
+      "dist": {
+        "shasum": "5c5d9c54cc65ff6f767ff073bb87ec2135308524",
+        "tarball": "https://registry.npmjs.org/subtext/-/subtext-4.0.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "hueniverse",
+          "email": "eran@hammer.io"
+        },
+        {
+          "name": "johnbrett",
+          "email": "johnbrett7@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/subtext-4.0.3.tgz_1462980307612_0.81875547231175"
+      },
+      "directories": {},
+      "deprecated": "This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial)."
+    },
+    "4.0.4": {
+      "name": "subtext",
+      "description": "HTTP payload parsing",
+      "version": "4.0.4",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/hapijs/subtext"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "http",
+        "payload",
+        "file",
+        "stream",
+        "multipart"
+      ],
+      "engines": {
+        "node": ">=4.0.0"
+      },
+      "dependencies": {
+        "boom": "3.x.x",
+        "content": "3.x.x",
+        "hoek": "4.x.x",
+        "pez": "2.x.x",
+        "wreck": "7.x.x"
+      },
+      "devDependencies": {
+        "code": "3.x.x",
+        "form-data": "0.2.x",
+        "lab": "10.x.x"
+      },
+      "scripts": {
+        "test": "lab -a code -t 100 -L",
+        "test-cov-html": "lab -a code -r html -o coverage.html"
+      },
+      "license": "BSD-3-Clause",
+      "gitHead": "19c43aeb9949162494061ffd60a81c29b31d4e7d",
+      "bugs": {
+        "url": "https://github.com/hapijs/subtext/issues"
+      },
+      "homepage": "https://github.com/hapijs/subtext",
+      "_id": "subtext@4.0.4",
+      "_shasum": "7eb65bcba57fa98b29011f01457a3ad9858bd907",
+      "_from": ".",
+      "_npmVersion": "2.15.1",
+      "_nodeVersion": "4.4.4",
+      "_npmUser": {
+        "name": "johnbrett",
+        "email": "johnbrett7@gmail.com"
+      },
+      "dist": {
+        "shasum": "7eb65bcba57fa98b29011f01457a3ad9858bd907",
+        "tarball": "https://registry.npmjs.org/subtext/-/subtext-4.0.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "hueniverse",
+          "email": "eran@hammer.io"
+        },
+        {
+          "name": "johnbrett",
+          "email": "johnbrett7@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/subtext-4.0.4.tgz_1463835903602_0.21506206085905433"
+      },
+      "directories": {},
+      "deprecated": "This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial)."
+    },
+    "4.0.5": {
+      "name": "subtext",
+      "description": "HTTP payload parsing",
+      "version": "4.0.5",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/hapijs/subtext.git"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "http",
+        "payload",
+        "file",
+        "stream",
+        "multipart"
+      ],
+      "engines": {
+        "node": ">=4.0.0"
+      },
+      "dependencies": {
+        "boom": "3.x.x",
+        "content": "3.x.x",
+        "hoek": "4.x.x",
+        "pez": "2.x.x",
+        "wreck": "8.x.x"
+      },
+      "devDependencies": {
+        "code": "3.x.x",
+        "form-data": "0.2.x",
+        "lab": "10.x.x"
+      },
+      "scripts": {
+        "test": "lab -a code -t 100 -L",
+        "test-cov-html": "lab -a code -r html -o coverage.html"
+      },
+      "license": "BSD-3-Clause",
+      "gitHead": "d5c1ed95a8be2f0a4ae9edba0009a0d8bf1b4ccd",
+      "bugs": {
+        "url": "https://github.com/hapijs/subtext/issues"
+      },
+      "homepage": "https://github.com/hapijs/subtext#readme",
+      "_id": "subtext@4.0.5",
+      "_shasum": "2cb7e16f9561484fa3afbee53338b94e6ac927aa",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.3.0",
+      "_npmUser": {
+        "name": "hueniverse",
+        "email": "eran@hammer.io"
+      },
+      "dist": {
+        "shasum": "2cb7e16f9561484fa3afbee53338b94e6ac927aa",
+        "tarball": "https://registry.npmjs.org/subtext/-/subtext-4.0.5.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "hueniverse",
+          "email": "eran@hammer.io"
+        },
+        {
+          "name": "johnbrett",
+          "email": "johnbrett7@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/subtext-4.0.5.tgz_1469733888934_0.7889518640004098"
+      },
+      "directories": {},
+      "deprecated": "This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial)."
+    },
+    "4.1.0": {
+      "name": "subtext",
+      "description": "HTTP payload parsing",
+      "version": "4.1.0",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/hapijs/subtext.git"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "http",
+        "payload",
+        "file",
+        "stream",
+        "multipart"
+      ],
+      "engines": {
+        "node": ">=4.0.0"
+      },
+      "dependencies": {
+        "boom": "3.x.x",
+        "content": "3.x.x",
+        "hoek": "4.x.x",
+        "pez": "2.x.x",
+        "wreck": "8.x.x"
+      },
+      "devDependencies": {
+        "code": "3.x.x",
+        "form-data": "0.2.x",
+        "lab": "11.x.x"
+      },
+      "scripts": {
+        "test": "lab -a code -t 100 -L",
+        "test-cov-html": "lab -a code -r html -o coverage.html"
+      },
+      "license": "BSD-3-Clause",
+      "gitHead": "4c6dcf8d0b20e65bd53ba0231d1b7f200944292a",
+      "bugs": {
+        "url": "https://github.com/hapijs/subtext/issues"
+      },
+      "homepage": "https://github.com/hapijs/subtext#readme",
+      "_id": "subtext@4.1.0",
+      "_shasum": "5de35be4eb5360a480fbe25cfb8beba1b9c5c5fd",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.4.0",
+      "_npmUser": {
+        "name": "hueniverse",
+        "email": "eran@hammer.io"
+      },
+      "dist": {
+        "shasum": "5de35be4eb5360a480fbe25cfb8beba1b9c5c5fd",
+        "tarball": "https://registry.npmjs.org/subtext/-/subtext-4.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "hueniverse",
+          "email": "eran@hammer.io"
+        },
+        {
+          "name": "johnbrett",
+          "email": "johnbrett7@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/subtext-4.1.0.tgz_1471849053887_0.7292527644895017"
+      },
+      "directories": {},
+      "deprecated": "This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial)."
+    },
+    "4.2.0": {
+      "name": "subtext",
+      "description": "HTTP payload parsing",
+      "version": "4.2.0",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/hapijs/subtext.git"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "http",
+        "payload",
+        "file",
+        "stream",
+        "multipart"
+      ],
+      "engines": {
+        "node": ">=4.0.0"
+      },
+      "dependencies": {
+        "boom": "3.x.x",
+        "content": "3.x.x",
+        "hoek": "4.x.x",
+        "pez": "2.x.x",
+        "wreck": "8.x.x"
+      },
+      "devDependencies": {
+        "code": "3.x.x",
+        "form-data": "0.2.x",
+        "lab": "11.x.x"
+      },
+      "scripts": {
+        "test": "lab -a code -t 100 -L",
+        "test-cov-html": "lab -a code -r html -o coverage.html"
+      },
+      "license": "BSD-3-Clause",
+      "gitHead": "cdf0ab5bbee53911e76a8cce34c4cbadb1992306",
+      "bugs": {
+        "url": "https://github.com/hapijs/subtext/issues"
+      },
+      "homepage": "https://github.com/hapijs/subtext#readme",
+      "_id": "subtext@4.2.0",
+      "_shasum": "9a9fd5cfdd8965321452f83d1cfc8de97acf6b86",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.4.0",
+      "_npmUser": {
+        "name": "hueniverse",
+        "email": "eran@hammer.io"
+      },
+      "dist": {
+        "shasum": "9a9fd5cfdd8965321452f83d1cfc8de97acf6b86",
+        "tarball": "https://registry.npmjs.org/subtext/-/subtext-4.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "hueniverse",
+          "email": "eran@hammer.io"
+        },
+        {
+          "name": "johnbrett",
+          "email": "johnbrett7@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/subtext-4.2.0.tgz_1472178139261_0.29981561889871955"
+      },
+      "directories": {},
+      "deprecated": "This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial)."
+    },
+    "4.2.1": {
+      "name": "subtext",
+      "description": "HTTP payload parsing",
+      "version": "4.2.1",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/hapijs/subtext.git"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "http",
+        "payload",
+        "file",
+        "stream",
+        "multipart"
+      ],
+      "engines": {
+        "node": ">=4.0.0"
+      },
+      "dependencies": {
+        "boom": "3.x.x",
+        "content": "3.x.x",
+        "hoek": "4.x.x",
+        "pez": "2.x.x",
+        "wreck": "8.x.x"
+      },
+      "devDependencies": {
+        "code": "3.x.x",
+        "form-data": "0.2.x",
+        "lab": "11.x.x"
+      },
+      "scripts": {
+        "test": "lab -a code -t 100 -L",
+        "test-cov-html": "lab -a code -r html -o coverage.html"
+      },
+      "license": "BSD-3-Clause",
+      "gitHead": "4eabaa1def5e440880e1f95489691c1b08e157b6",
+      "bugs": {
+        "url": "https://github.com/hapijs/subtext/issues"
+      },
+      "homepage": "https://github.com/hapijs/subtext#readme",
+      "_id": "subtext@4.2.1",
+      "_shasum": "ee3e72557f5e5c59b3f8c15b699f1b3f959fd8e0",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.4.0",
+      "_npmUser": {
+        "name": "hueniverse",
+        "email": "eran@hammer.io"
+      },
+      "dist": {
+        "shasum": "ee3e72557f5e5c59b3f8c15b699f1b3f959fd8e0",
+        "tarball": "https://registry.npmjs.org/subtext/-/subtext-4.2.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "hueniverse",
+          "email": "eran@hammer.io"
+        },
+        {
+          "name": "johnbrett",
+          "email": "johnbrett7@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/subtext-4.2.1.tgz_1472178399710_0.99308837717399"
+      },
+      "directories": {},
+      "deprecated": "This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial)."
+    },
+    "4.2.2": {
+      "name": "subtext",
+      "description": "HTTP payload parsing",
+      "version": "4.2.2",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/hapijs/subtext.git"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "http",
+        "payload",
+        "file",
+        "stream",
+        "multipart"
+      ],
+      "engines": {
+        "node": ">=4.0.0"
+      },
+      "dependencies": {
+        "boom": "4.x.x",
+        "content": "3.x.x",
+        "hoek": "4.x.x",
+        "pez": "2.x.x",
+        "wreck": "10.x.x"
+      },
+      "devDependencies": {
+        "code": "4.x.x",
+        "form-data": "2.1.x",
+        "lab": "11.x.x"
+      },
+      "scripts": {
+        "test": "lab -a code -t 100 -L",
+        "test-cov-html": "lab -a code -r html -o coverage.html"
+      },
+      "license": "BSD-3-Clause",
+      "gitHead": "6dc7f7577450d553443fe69a23dcd39a0922108b",
+      "bugs": {
+        "url": "https://github.com/hapijs/subtext/issues"
+      },
+      "homepage": "https://github.com/hapijs/subtext#readme",
+      "_id": "subtext@4.2.2",
+      "_shasum": "6251d5c7b3da72d070293c4d798932d881c600eb",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.3.0",
+      "_npmUser": {
+        "name": "johnbrett",
+        "email": "johnbrett7@gmail.com"
+      },
+      "dist": {
+        "shasum": "6251d5c7b3da72d070293c4d798932d881c600eb",
+        "tarball": "https://registry.npmjs.org/subtext/-/subtext-4.2.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "hueniverse",
+          "email": "eran@hammer.io"
+        },
+        {
+          "name": "johnbrett",
+          "email": "johnbrett7@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/subtext-4.2.2.tgz_1474969413997_0.9308483744971454"
+      },
+      "directories": {},
+      "deprecated": "This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial)."
+    },
+    "4.3.0": {
+      "name": "subtext",
+      "description": "HTTP payload parsing",
+      "version": "4.3.0",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/hapijs/subtext.git"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "http",
+        "payload",
+        "file",
+        "stream",
+        "multipart"
+      ],
+      "engines": {
+        "node": ">=4.0.0"
+      },
+      "dependencies": {
+        "boom": "4.x.x",
+        "content": "3.x.x",
+        "hoek": "4.x.x",
+        "pez": "2.x.x",
+        "wreck": "10.x.x"
+      },
+      "devDependencies": {
+        "code": "4.x.x",
+        "form-data": "2.1.x",
+        "lab": "11.x.x"
+      },
+      "scripts": {
+        "test": "lab -a code -t 100 -L",
+        "test-cov-html": "lab -a code -r html -o coverage.html"
+      },
+      "license": "BSD-3-Clause",
+      "gitHead": "6499a27967610035fddb5d9c799ca79d2915faac",
+      "bugs": {
+        "url": "https://github.com/hapijs/subtext/issues"
+      },
+      "homepage": "https://github.com/hapijs/subtext#readme",
+      "_id": "subtext@4.3.0",
+      "_shasum": "dfac90492ec35669fd6e00c6e5d938b06d7ccfbb",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.7.0",
+      "_npmUser": {
+        "name": "johnbrett",
+        "email": "johnbrett7@gmail.com"
+      },
+      "dist": {
+        "shasum": "dfac90492ec35669fd6e00c6e5d938b06d7ccfbb",
+        "tarball": "https://registry.npmjs.org/subtext/-/subtext-4.3.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "hueniverse",
+          "email": "eran@hammer.io"
+        },
+        {
+          "name": "johnbrett",
+          "email": "johnbrett7@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/subtext-4.3.0.tgz_1476867039041_0.5316658683586866"
+      },
+      "directories": {},
+      "deprecated": "This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial)."
+    },
+    "4.4.0": {
+      "name": "subtext",
+      "description": "HTTP payload parsing",
+      "version": "4.4.0",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/hapijs/subtext.git"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "http",
+        "payload",
+        "file",
+        "stream",
+        "multipart"
+      ],
+      "engines": {
+        "node": ">=4.0.0"
+      },
+      "dependencies": {
+        "boom": "4.x.x",
+        "content": "3.x.x",
+        "hoek": "4.x.x",
+        "pez": "2.x.x",
+        "wreck": "10.x.x"
+      },
+      "devDependencies": {
+        "code": "4.x.x",
+        "form-data": "2.1.x",
+        "lab": "13.x.x"
+      },
+      "scripts": {
+        "test": "lab -a code -t 100 -L",
+        "test-cov-html": "lab -a code -r html -o coverage.html"
+      },
+      "license": "BSD-3-Clause",
+      "gitHead": "041b9be6f80468f5f7e5fba19e95543264617abd",
+      "bugs": {
+        "url": "https://github.com/hapijs/subtext/issues"
+      },
+      "homepage": "https://github.com/hapijs/subtext#readme",
+      "_id": "subtext@4.4.0",
+      "_shasum": "0cf137965f47fe0e126a56a2488bb1c88dc93514",
+      "_from": ".",
+      "_npmVersion": "4.1.2",
+      "_nodeVersion": "7.7.0",
+      "_npmUser": {
+        "name": "hueniverse",
+        "email": "eran@hammer.io"
+      },
+      "dist": {
+        "shasum": "0cf137965f47fe0e126a56a2488bb1c88dc93514",
+        "tarball": "https://registry.npmjs.org/subtext/-/subtext-4.4.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "hueniverse",
+          "email": "eran@hammer.io"
+        },
+        {
+          "name": "johnbrett",
+          "email": "johnbrett7@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/subtext-4.4.0.tgz_1490079004544_0.7148506466764957"
+      },
+      "directories": {},
+      "deprecated": "This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial)."
+    },
+    "4.4.1": {
+      "name": "subtext",
+      "description": "HTTP payload parsing",
+      "version": "4.4.1",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/hapijs/subtext.git"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "http",
+        "payload",
+        "file",
+        "stream",
+        "multipart"
+      ],
+      "engines": {
+        "node": ">=4.0.0"
+      },
+      "dependencies": {
+        "boom": "5.x.x",
+        "content": "3.x.x",
+        "hoek": "4.x.x",
+        "pez": "2.x.x",
+        "wreck": "12.x.x"
+      },
+      "devDependencies": {
+        "code": "4.x.x",
+        "form-data": "2.1.x",
+        "lab": "13.x.x"
+      },
+      "scripts": {
+        "test": "lab -a code -t 100 -L",
+        "test-cov-html": "lab -a code -r html -o coverage.html"
+      },
+      "license": "BSD-3-Clause",
+      "gitHead": "bd3c6c1b890bd2dca5c11f799aa434cb359e0a61",
+      "bugs": {
+        "url": "https://github.com/hapijs/subtext/issues"
+      },
+      "homepage": "https://github.com/hapijs/subtext#readme",
+      "_id": "subtext@4.4.1",
+      "_shasum": "2fcec945de429283c3d18b151ff0fa1f1b87aec9",
+      "_from": ".",
+      "_npmVersion": "4.2.0",
+      "_nodeVersion": "7.8.0",
+      "_npmUser": {
+        "name": "hueniverse",
+        "email": "eran@hammer.io"
+      },
+      "dist": {
+        "shasum": "2fcec945de429283c3d18b151ff0fa1f1b87aec9",
+        "tarball": "https://registry.npmjs.org/subtext/-/subtext-4.4.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "hueniverse",
+          "email": "eran@hammer.io"
+        },
+        {
+          "name": "johnbrett",
+          "email": "johnbrett7@gmail.com"
+        },
+        {
+          "name": "marsup",
+          "email": "nicolas@morel.io"
+        },
+        {
+          "name": "nlf",
+          "email": "quitlahok@gmail.com"
+        },
+        {
+          "name": "wyatt",
+          "email": "wpreul@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/subtext-4.4.1.tgz_1495954477864_0.49044136167503893"
+      },
+      "directories": {},
+      "deprecated": "This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial)."
+    },
+    "5.0.0": {
+      "name": "subtext",
+      "description": "HTTP payload parsing",
+      "version": "5.0.0",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/hapijs/subtext.git"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "http",
+        "payload",
+        "file",
+        "stream",
+        "multipart"
+      ],
+      "engines": {
+        "node": ">=4.0.0"
+      },
+      "dependencies": {
+        "boom": "5.x.x",
+        "content": "3.x.x",
+        "hoek": "4.x.x",
+        "pez": "2.x.x",
+        "wreck": "12.x.x"
+      },
+      "devDependencies": {
+        "code": "4.x.x",
+        "form-data": "2.x.x",
+        "lab": "14.x.x"
+      },
+      "scripts": {
+        "test": "lab -a code -t 100 -L",
+        "test-cov-html": "lab -a code -r html -o coverage.html"
+      },
+      "license": "BSD-3-Clause",
+      "gitHead": "1c8d6216ca0da173016d70d4aa7fbeed38fe4774",
+      "bugs": {
+        "url": "https://github.com/hapijs/subtext/issues"
+      },
+      "homepage": "https://github.com/hapijs/subtext#readme",
+      "_id": "subtext@5.0.0",
+      "_npmVersion": "5.0.0",
+      "_nodeVersion": "8.0.0",
+      "_npmUser": {
+        "name": "johnbrett",
+        "email": "johnbrett7@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-2nXG1G1V+K64Z20cQII7k0s38J2DSycMXBLMAk9RXUFG0uAkAbLSVoa88croX9VhTdBCJbLAe9g6LmzKwpJhhQ==",
+        "shasum": "9c3f083018bb1586b167ad8cfd87083f5ccdfe0f",
+        "tarball": "https://registry.npmjs.org/subtext/-/subtext-5.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "hueniverse",
+          "email": "eran@hammer.io"
+        },
+        {
+          "name": "johnbrett",
+          "email": "johnbrett7@gmail.com"
+        },
+        {
+          "name": "marsup",
+          "email": "nicolas@morel.io"
+        },
+        {
+          "name": "nlf",
+          "email": "quitlahok@gmail.com"
+        },
+        {
+          "name": "wyatt",
+          "email": "wpreul@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/subtext-5.0.0.tgz_1498818065924_0.9540198354516178"
+      },
+      "directories": {},
+      "deprecated": "This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial)."
+    },
+    "6.0.0": {
+      "name": "subtext",
+      "description": "HTTP payload parsing",
+      "version": "6.0.0",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/hapijs/subtext.git"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "http",
+        "payload",
+        "file",
+        "stream",
+        "multipart"
+      ],
+      "engines": {
+        "node": ">=8.0.0"
+      },
+      "dependencies": {
+        "boom": "5.x.x",
+        "content": "3.x.x",
+        "hoek": "4.x.x",
+        "pez": "2.x.x",
+        "wreck": "13.x.x"
+      },
+      "devDependencies": {
+        "code": "5.x.x",
+        "form-data": "2.1.x",
+        "lab": "14.x.x"
+      },
+      "scripts": {
+        "test": "lab -a code -t 100 -L",
+        "test-cov-html": "lab -a code -r html -o coverage.html"
+      },
+      "license": "BSD-3-Clause",
+      "gitHead": "0bf83af78e364518577913db1bbc9c27bc739d7a",
+      "bugs": {
+        "url": "https://github.com/hapijs/subtext/issues"
+      },
+      "homepage": "https://github.com/hapijs/subtext#readme",
+      "_id": "subtext@6.0.0",
+      "_npmVersion": "5.4.2",
+      "_nodeVersion": "8.4.0",
+      "_npmUser": {
+        "name": "hueniverse",
+        "email": "eran@hammer.io"
+      },
+      "dist": {
+        "integrity": "sha512-O4F+Z+hYp/jMzgkTnD2YC7erIfmy/NWwtmZqFV9+oWvP7kKgkb02b3pD6uYa0pEQcj204/Er7uc2XlZoFtOtDQ==",
+        "shasum": "5d107e8cc5f48f4d0cfc54b90950710d5ca0e58b",
+        "tarball": "https://registry.npmjs.org/subtext/-/subtext-6.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "johnbrett7@gmail.com",
+          "name": "johnbrett"
+        },
+        {
+          "email": "eran@hammer.io",
+          "name": "hueniverse"
+        },
+        {
+          "email": "wpreul@gmail.com",
+          "name": "wyatt"
+        },
+        {
+          "email": "nicolas@morel.io",
+          "name": "marsup"
+        },
+        {
+          "email": "quitlahok@gmail.com",
+          "name": "nlf"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/subtext-6.0.0.tgz_1505774630973_0.7163297417573631"
+      },
+      "directories": {},
+      "deprecated": "This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial)."
+    },
+    "6.0.1": {
+      "name": "subtext",
+      "description": "HTTP payload parsing",
+      "version": "6.0.1",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/hapijs/subtext.git"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "http",
+        "payload",
+        "file",
+        "stream",
+        "multipart"
+      ],
+      "engines": {
+        "node": ">=8.0.0"
+      },
+      "dependencies": {
+        "boom": "5.x.x",
+        "content": "4.x.x",
+        "hoek": "4.x.x",
+        "pez": "2.x.x",
+        "wreck": "13.x.x"
+      },
+      "devDependencies": {
+        "code": "5.x.x",
+        "form-data": "2.1.x",
+        "lab": "14.x.x"
+      },
+      "scripts": {
+        "test": "lab -a code -t 100 -L",
+        "test-cov-html": "lab -a code -r html -o coverage.html"
+      },
+      "license": "BSD-3-Clause",
+      "gitHead": "e5b4fcc302a4eb0f49693e888154f803bca59f0f",
+      "bugs": {
+        "url": "https://github.com/hapijs/subtext/issues"
+      },
+      "homepage": "https://github.com/hapijs/subtext#readme",
+      "_id": "subtext@6.0.1",
+      "_npmVersion": "5.4.2",
+      "_nodeVersion": "8.4.0",
+      "_npmUser": {
+        "name": "hueniverse",
+        "email": "eran@hammer.io"
+      },
+      "dist": {
+        "integrity": "sha512-uHxdt4uZua/Y2afxfGCfpBTBLmNtnE4kLG2PEOPRdAQyGq3em6ckrJyKouQI6CGATyaWDEgvFh5gboghjoQc6g==",
+        "shasum": "84ca531915d4361e65f127d09b90f4019b6798d1",
+        "tarball": "https://registry.npmjs.org/subtext/-/subtext-6.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "johnbrett7@gmail.com",
+          "name": "johnbrett"
+        },
+        {
+          "email": "eran@hammer.io",
+          "name": "hueniverse"
+        },
+        {
+          "email": "wpreul@gmail.com",
+          "name": "wyatt"
+        },
+        {
+          "email": "nicolas@morel.io",
+          "name": "marsup"
+        },
+        {
+          "email": "quitlahok@gmail.com",
+          "name": "nlf"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/subtext-6.0.1.tgz_1506385719386_0.9879666194319725"
+      },
+      "directories": {},
+      "deprecated": "This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial)."
+    },
+    "6.0.3": {
+      "name": "subtext",
+      "description": "HTTP payload parsing",
+      "version": "6.0.3",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/hapijs/subtext.git"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "http",
+        "payload",
+        "file",
+        "stream",
+        "multipart"
+      ],
+      "engines": {
+        "node": ">=8.0.0"
+      },
+      "dependencies": {
+        "boom": "6.x.x",
+        "content": "4.x.x",
+        "hoek": "5.x.x",
+        "pez": "3.x.x",
+        "wreck": "13.x.x"
+      },
+      "devDependencies": {
+        "code": "5.x.x",
+        "form-data": "2.1.x",
+        "lab": "14.x.x"
+      },
+      "scripts": {
+        "test": "lab -a code -t 100 -L",
+        "test-cov-html": "lab -a code -r html -o coverage.html"
+      },
+      "license": "BSD-3-Clause",
+      "gitHead": "a4b2b65628630e62d54cc5059f652fd06b311307",
+      "bugs": {
+        "url": "https://github.com/hapijs/subtext/issues"
+      },
+      "homepage": "https://github.com/hapijs/subtext#readme",
+      "_id": "subtext@6.0.3",
+      "_npmVersion": "5.4.2",
+      "_nodeVersion": "8.4.0",
+      "_npmUser": {
+        "name": "hueniverse",
+        "email": "eran@hammer.io"
+      },
+      "dist": {
+        "integrity": "sha512-MdojbEp1XrWDLa/izfdrx5XVEbZX2lGlh+KbN75KXxT34uqJbidWMKZg4HjmZpkCEr+VySFM8bwbKwrH7XU7dQ==",
+        "shasum": "6b5da2431a0196b803fe66e7f625f39a103a8375",
+        "tarball": "https://registry.npmjs.org/subtext/-/subtext-6.0.3.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "johnbrett7@gmail.com",
+          "name": "johnbrett"
+        },
+        {
+          "email": "eran@hammer.io",
+          "name": "hueniverse"
+        },
+        {
+          "email": "wpreul@gmail.com",
+          "name": "wyatt"
+        },
+        {
+          "email": "nicolas@morel.io",
+          "name": "marsup"
+        },
+        {
+          "email": "quitlahok@gmail.com",
+          "name": "nlf"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/subtext-6.0.3.tgz_1506579929933_0.9805588016752154"
+      },
+      "directories": {},
+      "deprecated": "This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial)."
+    },
+    "6.0.4": {
+      "name": "subtext",
+      "description": "HTTP payload parsing",
+      "version": "6.0.4",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/hapijs/subtext.git"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "http",
+        "payload",
+        "file",
+        "stream",
+        "multipart"
+      ],
+      "engines": {
+        "node": ">=8.0.0"
+      },
+      "dependencies": {
+        "boom": "6.x.x",
+        "content": "4.x.x",
+        "hoek": "5.x.x",
+        "pez": "4.x.x",
+        "wreck": "13.x.x"
+      },
+      "devDependencies": {
+        "code": "5.x.x",
+        "form-data": "2.1.x",
+        "lab": "14.x.x"
+      },
+      "scripts": {
+        "test": "lab -a code -t 100 -L",
+        "test-cov-html": "lab -a code -r html -o coverage.html"
+      },
+      "license": "BSD-3-Clause",
+      "gitHead": "f305290eb72cb2991a4cc379d6d4870ccf53565b",
+      "bugs": {
+        "url": "https://github.com/hapijs/subtext/issues"
+      },
+      "homepage": "https://github.com/hapijs/subtext#readme",
+      "_id": "subtext@6.0.4",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.6.0",
+      "_npmUser": {
+        "name": "hueniverse",
+        "email": "eran@hammer.io"
+      },
+      "dist": {
+        "integrity": "sha512-3QKtcWPUnlx/FwvBP6FJ3xZHd0YzF/LkjRPpXDfW76Rp9fB7+USPza+gFL8j55HyUZNCmdRe9MSiD9DZ0a480A==",
+        "shasum": "079164976c52a0fd16f631251f19658c4fdf8ffc",
+        "tarball": "https://registry.npmjs.org/subtext/-/subtext-6.0.4.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "johnbrett7@gmail.com",
+          "name": "johnbrett"
+        },
+        {
+          "email": "eran@hammer.io",
+          "name": "hueniverse"
+        },
+        {
+          "email": "wpreul@gmail.com",
+          "name": "wyatt"
+        },
+        {
+          "email": "nicolas@morel.io",
+          "name": "marsup"
+        },
+        {
+          "email": "quitlahok@gmail.com",
+          "name": "nlf"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/subtext-6.0.4.tgz_1508435532326_0.38998889992944896"
+      },
+      "directories": {},
+      "deprecated": "This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial)."
+    },
+    "6.0.5": {
+      "name": "subtext",
+      "description": "HTTP payload parsing",
+      "version": "6.0.5",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/hapijs/subtext.git"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "http",
+        "payload",
+        "file",
+        "stream",
+        "multipart"
+      ],
+      "engines": {
+        "node": ">=8.0.0"
+      },
+      "dependencies": {
+        "boom": "6.x.x",
+        "content": "4.x.x",
+        "hoek": "5.x.x",
+        "pez": "4.x.x",
+        "wreck": "14.x.x"
+      },
+      "devDependencies": {
+        "code": "5.x.x",
+        "form-data": "2.1.x",
+        "lab": "14.x.x"
+      },
+      "scripts": {
+        "test": "lab -a code -t 100 -L",
+        "test-cov-html": "lab -a code -r html -o coverage.html"
+      },
+      "license": "BSD-3-Clause",
+      "gitHead": "cb5bbf11ee70ba2f0a00a089ce7e96863d6ae659",
+      "bugs": {
+        "url": "https://github.com/hapijs/subtext/issues"
+      },
+      "homepage": "https://github.com/hapijs/subtext#readme",
+      "_id": "subtext@6.0.5",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.6.0",
+      "_npmUser": {
+        "name": "hueniverse",
+        "email": "eran@hammer.io"
+      },
+      "dist": {
+        "integrity": "sha512-G8RG/3a42IrZbN7eFOewmilj3+fDW+WkSW+5VkEYY3aQmMqMdtH0Ube/2tIV47gjfo4ri8QPXfOPJ6VCY7FY6w==",
+        "shasum": "f03ac3e995e6a04842235403f877e5f00e0af062",
+        "tarball": "https://registry.npmjs.org/subtext/-/subtext-6.0.5.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "johnbrett7@gmail.com",
+          "name": "johnbrett"
+        },
+        {
+          "email": "eran@hammer.io",
+          "name": "hueniverse"
+        },
+        {
+          "email": "wpreul@gmail.com",
+          "name": "wyatt"
+        },
+        {
+          "email": "nicolas@morel.io",
+          "name": "marsup"
+        },
+        {
+          "email": "quitlahok@gmail.com",
+          "name": "nlf"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/subtext-6.0.5.tgz_1508661945978_0.5868981198873371"
+      },
+      "directories": {},
+      "deprecated": "This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial)."
+    },
+    "6.0.6": {
+      "name": "subtext",
+      "description": "HTTP payload parsing",
+      "version": "6.0.6",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/hapijs/subtext.git"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "http",
+        "payload",
+        "file",
+        "stream",
+        "multipart"
+      ],
+      "engines": {
+        "node": ">=8.9.0"
+      },
+      "dependencies": {
+        "boom": "7.x.x",
+        "content": "4.x.x",
+        "hoek": "5.x.x",
+        "pez": "4.x.x",
+        "wreck": "14.x.x"
+      },
+      "devDependencies": {
+        "code": "5.x.x",
+        "form-data": "2.1.x",
+        "lab": "15.x.x"
+      },
+      "scripts": {
+        "test": "lab -a code -t 100 -L",
+        "test-cov-html": "lab -a code -r html -o coverage.html"
+      },
+      "license": "BSD-3-Clause",
+      "gitHead": "fb43116258685685544fde3f586b5afdc194382d",
+      "bugs": {
+        "url": "https://github.com/hapijs/subtext/issues"
+      },
+      "homepage": "https://github.com/hapijs/subtext#readme",
+      "_id": "subtext@6.0.6",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.0",
+      "_npmUser": {
+        "name": "hueniverse",
+        "email": "eran@hammer.io"
+      },
+      "dist": {
+        "integrity": "sha512-7hQhg7g6YFaarhcHB9NdMYRL6gq6/27H/C0F4wYcrgLL5r2YLVJdAEmDymGH7MxLwGQBz7hFgNDPGZJmdcyKxw==",
+        "shasum": "0794df0194c5b536c7e3d339476f801616e71557",
+        "tarball": "https://registry.npmjs.org/subtext/-/subtext-6.0.6.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "johnbrett7@gmail.com",
+          "name": "johnbrett"
+        },
+        {
+          "email": "eran@hammer.io",
+          "name": "hueniverse"
+        },
+        {
+          "email": "wpreul@gmail.com",
+          "name": "wyatt"
+        },
+        {
+          "email": "nicolas@morel.io",
+          "name": "marsup"
+        },
+        {
+          "email": "quitlahok@gmail.com",
+          "name": "nlf"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/subtext-6.0.6.tgz_1509698769339_0.8483884029556066"
+      },
+      "directories": {},
+      "deprecated": "This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial)."
+    },
+    "6.0.7": {
+      "name": "subtext",
+      "description": "HTTP payload parsing",
+      "version": "6.0.7",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/hapijs/subtext.git"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "http",
+        "payload",
+        "file",
+        "stream",
+        "multipart"
+      ],
+      "engines": {
+        "node": ">=8.9.0"
+      },
+      "dependencies": {
+        "boom": "7.x.x",
+        "content": "4.x.x",
+        "hoek": "5.x.x",
+        "pez": "4.x.x",
+        "wreck": "14.x.x"
+      },
+      "devDependencies": {
+        "code": "5.x.x",
+        "form-data": "2.1.x",
+        "lab": "15.x.x"
+      },
+      "scripts": {
+        "test": "lab -a code -t 100 -L",
+        "test-cov-html": "lab -a code -r html -o coverage.html"
+      },
+      "license": "BSD-3-Clause",
+      "gitHead": "f5f6c221da695c0cd2f26e976fda304d537fb059",
+      "bugs": {
+        "url": "https://github.com/hapijs/subtext/issues"
+      },
+      "homepage": "https://github.com/hapijs/subtext#readme",
+      "_id": "subtext@6.0.7",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.0",
+      "_npmUser": {
+        "name": "hueniverse",
+        "email": "eran@hammer.io"
+      },
+      "dist": {
+        "integrity": "sha512-IcJUvRjeR+NB437Iq+LORFNJW4L6Knqkj3oQrBrkdhIaS2VKJvx/9aYEq7vi+PEx5/OuehOL/40SkSZotLi/MA==",
+        "shasum": "8e40a67901a734d598142665c90e398369b885f9",
+        "tarball": "https://registry.npmjs.org/subtext/-/subtext-6.0.7.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "johnbrett7@gmail.com",
+          "name": "johnbrett"
+        },
+        {
+          "email": "eran@hammer.io",
+          "name": "hueniverse"
+        },
+        {
+          "email": "wpreul@gmail.com",
+          "name": "wyatt"
+        },
+        {
+          "email": "nicolas@morel.io",
+          "name": "marsup"
+        },
+        {
+          "email": "quitlahok@gmail.com",
+          "name": "nlf"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/subtext-6.0.7.tgz_1509740371988_0.9311339475680143"
+      },
+      "directories": {},
+      "deprecated": "This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial)."
+    },
+    "6.0.8": {
+      "name": "subtext",
+      "description": "HTTP payload parsing",
+      "version": "6.0.8",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/hapijs/subtext.git"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "http",
+        "payload",
+        "file",
+        "stream",
+        "multipart"
+      ],
+      "engines": {
+        "node": ">=8.12.0"
+      },
+      "dependencies": {
+        "boom": "7.x.x",
+        "content": "4.x.x",
+        "hoek": "5.x.x",
+        "pez": "4.x.x",
+        "wreck": "14.x.x"
+      },
+      "devDependencies": {
+        "code": "5.x.x",
+        "form-data": "2.1.x",
+        "lab": "17.x.x"
+      },
+      "scripts": {
+        "test": "lab -a code -t 100 -L",
+        "test-cov-html": "lab -a code -r html -o coverage.html"
+      },
+      "license": "BSD-3-Clause",
+      "gitHead": "1e94039118ce84b4756b45f7ed33199e3fd923a7",
+      "bugs": {
+        "url": "https://github.com/hapijs/subtext/issues"
+      },
+      "homepage": "https://github.com/hapijs/subtext#readme",
+      "_id": "subtext@6.0.8",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "8.12.0",
+      "_npmUser": {
+        "name": "hueniverse",
+        "email": "eran@hammer.io"
+      },
+      "dist": {
+        "integrity": "sha512-c8t5TzqP6o0O2TvQpy/drV8hL4AYSxel6H5EsjfaS+usUhc6jVRRDWBmgwWDpl0OeXrswfF6vgnq/koF5dneNg==",
+        "shasum": "0280a2aab004f9eeb9c7a90bed0468e635bcb36b",
+        "tarball": "https://registry.npmjs.org/subtext/-/subtext-6.0.8.tgz",
+        "fileCount": 5,
+        "unpackedSize": 13947,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJb2heoCRA9TVsSAnZWagAA65gP/At2tL7VowO9Fx3UMCYC\nHl3JPGshoBJmByp1Qpl8Ru2FdEmu/AbjGzNfoPogKQ8fQVxBU6V2eOQpD5ZG\nLvIwSHVO9gvEmmuT0ybJZx9xiC/NsDwGDv+KwObrdDNkbwSG/spbcdgfsnL0\noPvCwQchyB9cX2EeQrjZ2urevFxtE0cUlo1CAnJRtN9WM0BBsO/2MVSDAlpM\nydg+9GAX2dZPlmZjVIzV1+auUqnCPrty5vWS1l5nMG9dFTR0IAcENsFLkgbR\n1HBVd/k/3m2SvW/aGEsQ/AXl7sB7KoHIVrdHKUt33yXdHZ6GzQgyrqm7TN6R\nV9YrgvJD8Q2KcP+Qg6ShyauKhezsusZVPAXABzmJ6fHVk1BZ6JhTLtZXDOxb\nz9mQdG7tRH1jta+IGl8hO24vhuZEB8Hkex+ePLF7ZRUmedIknZf7R2sqkye8\nuAOOqRnsXyKl052roK5GmVWxRCQYi+tZzd/iCZyFH2qKKKoJFrVDKKmUMelV\nv5+5CBLTVmCt2VQe4ridWRzvxEaUGuKpIWqxAajHDFvVt6yBhuJaci03lm0t\n5qtec47fBUTAaN+MVmDWzkpq2FAX87Y6zHBzt6VALJa5ySC2WiTDcadPxx9e\nVJ2XB3ezV9PPlyjXQ+U81GX34Oau8moxT+KWPiWQntJBAqymMH6926roSfRL\nQZ8i\r\n=vcNH\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "eran@hammer.io",
+          "name": "hueniverse"
+        },
+        {
+          "email": "johnbrett7@gmail.com",
+          "name": "johnbrett"
+        },
+        {
+          "email": "nicolas@morel.io",
+          "name": "marsup"
+        },
+        {
+          "email": "quitlahok@gmail.com",
+          "name": "nlf"
+        },
+        {
+          "email": "wpreul@gmail.com",
+          "name": "wyatt"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/subtext_6.0.8_1541019559402_0.9236511081591319"
+      },
+      "_hasShrinkwrap": false,
+      "deprecated": "This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial)."
+    },
+    "6.0.9": {
+      "name": "subtext",
+      "description": "HTTP payload parsing",
+      "version": "6.0.9",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/hapijs/subtext.git"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "http",
+        "payload",
+        "file",
+        "stream",
+        "multipart"
+      ],
+      "engines": {
+        "node": ">=8.12.0"
+      },
+      "dependencies": {
+        "boom": "7.x.x",
+        "content": "4.x.x",
+        "hoek": "6.x.x",
+        "pez": "4.x.x",
+        "wreck": "14.x.x"
+      },
+      "devDependencies": {
+        "code": "5.x.x",
+        "form-data": "2.1.x",
+        "lab": "17.x.x"
+      },
+      "scripts": {
+        "test": "lab -a code -t 100 -L",
+        "test-cov-html": "lab -a code -r html -o coverage.html"
+      },
+      "license": "BSD-3-Clause",
+      "gitHead": "82b2d670d8686606dc0ee2297eca8f46c8896898",
+      "bugs": {
+        "url": "https://github.com/hapijs/subtext/issues"
+      },
+      "homepage": "https://github.com/hapijs/subtext#readme",
+      "_id": "subtext@6.0.9",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "8.12.0",
+      "_npmUser": {
+        "name": "hueniverse",
+        "email": "eran@hammer.io"
+      },
+      "dist": {
+        "integrity": "sha512-UX8Y6GCHfo4Dw0ED7vLQVc+2E3SR1f1rKvqUf2HwDjLjT18SGejX73RIcwYia298+gU/ACZJKEJ8v9MBNVIvdw==",
+        "shasum": "4cf119af400648c8a61b382ae4a8660f9caaedaa",
+        "tarball": "https://registry.npmjs.org/subtext/-/subtext-6.0.9.tgz",
+        "fileCount": 5,
+        "unpackedSize": 13947,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJb21MACRA9TVsSAnZWagAAUQMP/1OZYM1cV23Z/KLI//pE\nLThATeoVaN+Wly8KVE7zTOXePbJTyPsYXK33TqDLM7S8ogigUBhsDnmyuxv3\n21MD08TAAKuOAcIw/VykBFyaOk3owvHYS9G+R6lycbb8XUdvac54xRx3Kp+D\nppRV4g3gqHDnfJTOmAVc+N88NbB0U4uYTocFAb9eAKtjW27BnBYC+h6YbzQv\nHKCvo/9XSbvfjZVJbw0OkeIxhCvtdhRHbZLCWAgOVenzKijkm76SwR5elQjK\njyqyTvVoOByFmCSM9JlDA/BSCmgFAO08fEgiWScfH53Wp0SOp5b7pjDsczbg\nSmQ+0wrsIBU+4QLauXCMWhZ+S32K26cj7gVW5TTV402XCtouVWrwM+XD/5Si\nit5g7nkXomSW6Pw1t0+rV+TPDzb5WohknD72scO3ZdLHnFplzAZuSGs2A+wo\n7et99nwt01yG4bQJDCQvNsP6Nh5UCQHhddUrlZjUboNRlMin2Ig2/7OJRcL4\nVh2aihMPHgcj90gx7J+uP9qQBcjta2U/6PWTBBSAAoJ9k7pM97bCtrxH6RNR\n3L5gGQ1cKsguDY9e7ZUJiorcmeucHeRTn8JyYDx/t0swBz4xRh6YM8yq6n0v\nXgAjDBwEbHymh3dHy6sYQWxhTy/WXraXxDUedaGUfpSCj3tuhGcs71fMUPMK\nsarD\r\n=+3vk\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "eran@hammer.io",
+          "name": "hueniverse"
+        },
+        {
+          "email": "johnbrett7@gmail.com",
+          "name": "johnbrett"
+        },
+        {
+          "email": "nicolas@morel.io",
+          "name": "marsup"
+        },
+        {
+          "email": "quitlahok@gmail.com",
+          "name": "nlf"
+        },
+        {
+          "email": "wpreul@gmail.com",
+          "name": "wyatt"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/subtext_6.0.9_1541100287341_0.25470314175441144"
+      },
+      "_hasShrinkwrap": false,
+      "deprecated": "This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial)."
+    },
+    "6.0.10": {
+      "name": "subtext",
+      "description": "HTTP payload parsing",
+      "version": "6.0.10",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/hapijs/subtext.git"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "http",
+        "payload",
+        "file",
+        "stream",
+        "multipart"
+      ],
+      "engines": {
+        "node": ">=8.12.0"
+      },
+      "dependencies": {
+        "boom": "7.x.x",
+        "content": "4.x.x",
+        "hoek": "6.x.x",
+        "pez": "4.x.x",
+        "wreck": "14.x.x"
+      },
+      "devDependencies": {
+        "code": "5.x.x",
+        "form-data": "2.1.x",
+        "lab": "17.x.x"
+      },
+      "scripts": {
+        "test": "lab -a code -t 100 -L",
+        "test-cov-html": "lab -a code -r html -o coverage.html"
+      },
+      "license": "BSD-3-Clause",
+      "gitHead": "8da5fef0ce54af4c0ba7b75a075064da5d0b8b8f",
+      "bugs": {
+        "url": "https://github.com/hapijs/subtext/issues"
+      },
+      "homepage": "https://github.com/hapijs/subtext#readme",
+      "_id": "subtext@6.0.10",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "8.12.0",
+      "_npmUser": {
+        "name": "hueniverse",
+        "email": "eran@hammer.io"
+      },
+      "dist": {
+        "integrity": "sha512-eegy4p15t3kniScXLBPutJYhJDOuZ9qnOCgYMuzwPJpmlKfWK3XY/TiD8oFs91MpHn5m4mDnzgd3s9JRkSH/RA==",
+        "shasum": "5006049ec0fff2a557938446de76ad5eb8c70f52",
+        "tarball": "https://registry.npmjs.org/subtext/-/subtext-6.0.10.tgz",
+        "fileCount": 5,
+        "unpackedSize": 13899,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJb3I5yCRA9TVsSAnZWagAAJ9AP/1nRfxAhGovoUMG6KEs1\np2L9Dg40YDEWHZoqdBVj8SNPtwKs7DlAF2WQcRtrrCsXPMZHgrST7lLoSgt9\nUirIUGrDkNV+TbIGiMAyu6Xw7th+dhFoyCKTQAeZnp54PTulYa8H0WBrn8uh\nVU9SMpdyt+2/giaxcT5FjKrk8kTq6nWDBnu08C/M6CIDL8vLKkogITycMmoG\n/8hMSM05Jfzaj9x7UYA+jrp77q03eFJ0KeXDqBsQofmYoEkpVOsKLiD8lCtS\n6PrWvDFNvYIYKAOtKogfl8hL0hXMPZRlJtVjNPMLVf7sWNIzWea7+Pee7bBT\nPL3YQ9fa++pCSDa8bsWZVcH8eRg0zELJxyCb83L9Qc7NUCVN8KRp3SKzbGn5\npRNpF7d2qTyGj29NOlTSXL1v8MpsBBtYRhyl+ssBGwzDPHfmBB/0liWDITXM\nKePYNrYX30AD4fVhJBo71fdH2oaHGrPrqvCniGzdUrDmPEKhwwj3qi+TR3pY\nMcd4BbFilIPw8FiL/Q+c5wUwyGM+0dzl7SE2LuaeJslC8v7i8H2BInC9PpBs\nSAi4J9fN4l34ldTukXWHf0XLasWQp4CfUB6l/jb5XokROl55EmUqWju1mUl2\nbDBYO0qngGaLgCbO4GeDcWsjnlqnU6w0BEEkoDCjU/AD41JrpkviEgWAsZQP\nZlii\r\n=t1B/\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "eran@hammer.io",
+          "name": "hueniverse"
+        },
+        {
+          "email": "johnbrett7@gmail.com",
+          "name": "johnbrett"
+        },
+        {
+          "email": "nicolas@morel.io",
+          "name": "marsup"
+        },
+        {
+          "email": "quitlahok@gmail.com",
+          "name": "nlf"
+        },
+        {
+          "email": "wpreul@gmail.com",
+          "name": "wyatt"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/subtext_6.0.10_1541181041336_0.8281616810302921"
+      },
+      "_hasShrinkwrap": false,
+      "deprecated": "This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial)."
+    },
+    "6.0.11": {
+      "name": "subtext",
+      "description": "HTTP payload parsing",
+      "version": "6.0.11",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/hapijs/subtext.git"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "http",
+        "payload",
+        "file",
+        "stream",
+        "multipart"
+      ],
+      "dependencies": {
+        "boom": "7.x.x",
+        "content": "4.x.x",
+        "hoek": "6.x.x",
+        "pez": "4.x.x",
+        "wreck": "14.x.x"
+      },
+      "devDependencies": {
+        "code": "5.x.x",
+        "form-data": "2.1.x",
+        "lab": "17.x.x"
+      },
+      "scripts": {
+        "test": "lab -a code -t 100 -L",
+        "test-cov-html": "lab -a code -r html -o coverage.html"
+      },
+      "license": "BSD-3-Clause",
+      "gitHead": "96ad4b6647910011b10c5ca3e5db53f1310676f3",
+      "bugs": {
+        "url": "https://github.com/hapijs/subtext/issues"
+      },
+      "homepage": "https://github.com/hapijs/subtext#readme",
+      "_id": "subtext@6.0.11",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "8.12.0",
+      "_npmUser": {
+        "name": "hueniverse",
+        "email": "eran@hammer.io"
+      },
+      "dist": {
+        "integrity": "sha512-jap1ev33dbVTBPxpIyJ5OvD9/J4oWlx1qHQ8bBnKpiwItxXt3+7tvmNZqZeTEQVTjvkReHY1ZnP/7iltNdGnOA==",
+        "shasum": "430de749b06fc5005d208ffd2668b5c7a1ca27ac",
+        "tarball": "https://registry.npmjs.org/subtext/-/subtext-6.0.11.tgz",
+        "fileCount": 5,
+        "unpackedSize": 13856,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJb3O4eCRA9TVsSAnZWagAAccoP+gPTGw+yf+K8XKQoVTZW\nqpez3UsVk0NIqoEtq5VGZ/N3Um3+sYaJiDRXN542Gq34yklIRJFtMgS4FCUf\nNtTC0FFOefKlGNT1qI2h+xIn/cZ/OSF0LUxfqyhBj5nbUCy06gvVnrL0ow+C\npEIEVyOKgwcVNEZPqeMNXG5VAv+peRRxtdUw770oc7GcDKd+fdZjugI3i6J1\n3kUkJ7l3O7xRMmAH1q/4Eflu5Wt+ESiub3RLzXwzpsl7zIKUAJqtyPGxc25n\nnGhIMHTyRNKAWO7WZw74mb2UVvS/5Thn1mVn609FO3YNoNQ9pErRB4Eat4mj\ne8zHbikP57LZNPLrhfJk1+BK4Z08up7/GJx83AzeyCAmNbyfazoGo8If6sqd\nkdA/O7oIBk3jKUvfiMYHKPdZJFnGcUQU67odmJvB0hr+2PDiaT38tVmw5LoG\nGqVSkVluaXoRdF4EXHwsEEbfprR+8OtJGop/gqj7MaWHP/OCPy9wSuAtLgAr\neLod01F8T0O803l23S5rQsoW+fDcxpb29zahWuQtJ1/SSayO14Wig1nZQt20\nKfVBXZk04/txd7HEA5l8OY2DsZzG+yQLFNhGVfk+Ifeisi4rauCn5O1bRuMU\nL9463Jv0SMPcB4ehJRPMLHbaKbKNojmD7b9N+sPN2X4q38N/3CURIS8X4Mzt\neC80\r\n=dwpp\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "eran@hammer.io",
+          "name": "hueniverse"
+        },
+        {
+          "email": "johnbrett7@gmail.com",
+          "name": "johnbrett"
+        },
+        {
+          "email": "nicolas@morel.io",
+          "name": "marsup"
+        },
+        {
+          "email": "quitlahok@gmail.com",
+          "name": "nlf"
+        },
+        {
+          "email": "wpreul@gmail.com",
+          "name": "wyatt"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/subtext_6.0.11_1541205533946_0.6588979503658285"
+      },
+      "_hasShrinkwrap": false,
+      "deprecated": "This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial)."
+    },
+    "5.0.1": {
+      "name": "subtext",
+      "description": "HTTP payload parsing",
+      "version": "5.0.1",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/hapijs/subtext.git"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "http",
+        "payload",
+        "file",
+        "stream",
+        "multipart"
+      ],
+      "engines": {
+        "node": ">=4.0.0"
+      },
+      "dependencies": {
+        "boom": "5.x.x",
+        "bourne": "1.x.x",
+        "content": "3.x.x",
+        "hoek": "4.x.x",
+        "pez": "2.x.x",
+        "wreck": "12.x.x"
+      },
+      "devDependencies": {
+        "code": "4.x.x",
+        "form-data": "2.1.x",
+        "lab": "13.x.x"
+      },
+      "scripts": {
+        "test": "lab -a code -t 100 -L -I BigUint64Array,BigInt64Array,SharedArrayBuffer,Atomics,BigInt,URL,URLSearchParams",
+        "test-cov-html": "lab -a code -r html -o coverage.html"
+      },
+      "license": "BSD-3-Clause",
+      "readme": "# subtext\n\nHTTP payload parser.\n\n[![Build Status](https://secure.travis-ci.org/hapijs/subtext.svg?branch=master)](http://travis-ci.org/hapijs/subtext)\n\nLead Maintainer: [John Brett](https://github.com/johnbrett)\n\nsubtext parses the request body and exposes it in a callback.\n\n## Example\n\n```javascript\nconst Http = require('http');\nconst Subtext = require('subtext');\n\nHttp.createServer((request, response) => {\n\n    Subtext.parse(request, null, { parse: true, output: 'data' }, (err, parsed) => {\n\n        response.writeHead(200, { 'Content-Type': 'text/plain' });\n        response.end('Payload contains: ' + parsed.payload.toString());\n    });\n\n}).listen(1337, '127.0.0.1');\n\nconsole.log('Server running at http://127.0.0.1:1337/');\n\n```\n\n## API\n\nSee the [API Reference](API.md)\n\n\n### Warning for subtext on Node below v4.3.2\n\nA Node bug in versions below Node v4.3.2 meant that the `Buffer.byteLength` function did not work correctly, and as such, using `maxBytes` options with multipart payloads will mistake the file buffer size to be incorrectly as bigger than it is. Your options here are either to upgrade to Node version greater than v4.3.2 or increase maxBytes to allow some error in calculation. [Background info in this issue here](https://github.com/hapijs/subtext/pull/32).\n",
+      "readmeFilename": "README.md",
+      "gitHead": "15be8d4230336c6947786248661e80875494f175",
+      "bugs": {
+        "url": "https://github.com/hapijs/subtext/issues"
+      },
+      "homepage": "https://github.com/hapijs/subtext#readme",
+      "_id": "subtext@5.0.1",
+      "_nodeVersion": "10.15.0",
+      "_npmVersion": "6.7.0",
+      "_npmUser": {
+        "name": "hueniverse",
+        "email": "eran@hammer.io"
+      },
+      "dist": {
+        "integrity": "sha512-zH/jaUKJ/bkrTpEe3zuTFIRnqAwv5xcGpXA2JaxEc30KRAT4k78jZnRqM45snjBSZAuvpI8chRUh1VZprcUVfw==",
+        "shasum": "3ba39c93260e2e2ee1eddcde371be9d5fbe88861",
+        "tarball": "https://registry.npmjs.org/subtext/-/subtext-5.0.1.tgz",
+        "fileCount": 5,
+        "unpackedSize": 16386,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcU03xCRA9TVsSAnZWagAAElsP/1jZ8PWSvRJcXuweNVdU\n/aRzUBZciTBvHHlCIEacWjP8rAjiVkk4xwMf9CesoSw9pYjsDNvvJcCao8bN\nlY/odY0067SjnE0baydhc7ve45NS2gsx0P2AYnXaeph9CD5Usqv/GNt406aJ\ngAjjrTIr+FGWCs2rZ7DlznWtXQGt69O7P9FZ3IVUNj1Ht73PQw9BT/R6hT6r\nN22iWJRFj6ay/G+FPXraRihZGy22nFiscgdZLRW7djqD+s7l8jyJbfoOi46n\nwk+YWxlyQ4eUA8Wj+zmcPI+lB70HkQ6WzNCQRF4OiGw38ZcCncIj8Cl8BcFs\ne/P97kxplkMHo1gPfCIOsj57gYZJuNlFXtigKN6EoMEUDHnUoA22n3ogxCjr\ning2ZopXriOvFeC1h8a27a0DuDRHef3MaJGQ8gYQOWb0I+VhgmL8n7tqAhpM\nD8spcdLX1O4yBSDWd8DA/9Md7SPsD+NXkTiQWk24WFZFwzGU5zoz1x4IZVMc\ngxithYHSibZmRa62H+7oEdtSMJYnZ+equh4LG1KSQ4fRDBzRT9fh99nf0QC2\nMGh7gwOZ/0IA7c8Rc2VHaPHiu1EfFgHvvOyu2tv0cpC2mfyT2XW4+z/V3N3d\nu204L9FVv5MBxzG2gn6oL5torDnLoOKy1g5Z0aqR79RYt6mWf0jvghPiGR5n\nPB+o\r\n=gbS6\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "eran@hammer.io",
+          "name": "hueniverse"
+        },
+        {
+          "email": "johnbrett7@gmail.com",
+          "name": "johnbrett"
+        },
+        {
+          "email": "nicolas@morel.io",
+          "name": "marsup"
+        },
+        {
+          "email": "quitlahok@gmail.com",
+          "name": "nlf"
+        },
+        {
+          "email": "wpreul@gmail.com",
+          "name": "wyatt"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/subtext_5.0.1_1548963312727_0.1309430797462514"
+      },
+      "_hasShrinkwrap": false,
+      "deprecated": "This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial)."
+    },
+    "6.0.12": {
+      "name": "subtext",
+      "description": "HTTP payload parsing",
+      "version": "6.0.12",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/hapijs/subtext.git"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "http",
+        "payload",
+        "file",
+        "stream",
+        "multipart"
+      ],
+      "dependencies": {
+        "boom": "7.x.x",
+        "bourne": "1.x.x",
+        "content": "4.x.x",
+        "hoek": "6.x.x",
+        "pez": "4.x.x",
+        "wreck": "14.x.x"
+      },
+      "devDependencies": {
+        "code": "5.x.x",
+        "form-data": "2.1.x",
+        "lab": "18.x.x"
+      },
+      "scripts": {
+        "test": "lab -a code -t 100 -L",
+        "test-cov-html": "lab -a code -r html -o coverage.html"
+      },
+      "license": "BSD-3-Clause",
+      "gitHead": "0761aa2f8ea310724a8faab974609b0b4299a5b6",
+      "bugs": {
+        "url": "https://github.com/hapijs/subtext/issues"
+      },
+      "homepage": "https://github.com/hapijs/subtext#readme",
+      "_id": "subtext@6.0.12",
+      "_nodeVersion": "10.15.0",
+      "_npmVersion": "6.7.0",
+      "_npmUser": {
+        "name": "hueniverse",
+        "email": "eran@hammer.io"
+      },
+      "dist": {
+        "integrity": "sha512-yT1wCDWVgqvL9BIkWzWqgj5spUSYo/Enu09iUV8t2ZvHcr2tKGTGg2kc9tUpVEsdhp1ihsZeTAiDqh0TQciTPQ==",
+        "shasum": "ac09be3eac1eca3396933adeadd65fc781f64fc1",
+        "tarball": "https://registry.npmjs.org/subtext/-/subtext-6.0.12.tgz",
+        "fileCount": 6,
+        "unpackedSize": 14276,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcU05bCRA9TVsSAnZWagAAk90P/j/ey+Cyh2gaVwtFG1hb\nBZnl1mSLUTNbiErjIJB07vUpSmjSR8jOjc8anB44nQ0GgpQXW72LJsPIJ4Pp\np6m9mAUgs9ls+OOtRYI/5OfHDep/JtVh3dMQGRqVhGFoLHogOZcLfeg91aN+\nGotKQR678e9qGPmzxXBsKI7P7q+XB2q8awBfiTSfYRFw+AQ2NIf0LJyip9VD\nZ85a9flobU8RCjD24IkqftRXoXNHRmK5UToY+4utogr+QhEb+tZLsreeGN5n\ntWZBaLgXmNtwezwyF10JxV+nTle5ot1V4nsp9Y7/OG0dgg7zMNzlbBeT5GuL\n9ajOS70dE3CuX6M/0aKi9PccRzj+YdeFKhjZBKtaR5Ihw4OLE5Uyc56K1IAS\nJTmjYbYSxpURdZJx8HzzcgOe064A0BZqp4hHvcNwpZjc0EkqoQi3MZWXtRno\niC6RKTQcOPT8HSifl2C39Voa6Q2paXs9U9UWO/rOLtS0rOFtmrsjtPwyyWX+\nlU2OX4dGUasHxbrKHbxo39jHqXxR7djeK9o54TYGKqu1GSLw2xulmBC8pdh0\nvE7QX1CERQJblYzPb4TKdEtwfiIwM8+5hNHaOYwNx5UH5k5D2e2ayT7+t+OE\nImbls+Sg8jK9oRIWKZC+yqc4I5cl5YTHqiGI6rj7arOa8miXtSULgluKcB+q\nxJFd\r\n=IRgf\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "eran@hammer.io",
+          "name": "hueniverse"
+        },
+        {
+          "email": "johnbrett7@gmail.com",
+          "name": "johnbrett"
+        },
+        {
+          "email": "nicolas@morel.io",
+          "name": "marsup"
+        },
+        {
+          "email": "quitlahok@gmail.com",
+          "name": "nlf"
+        },
+        {
+          "email": "wpreul@gmail.com",
+          "name": "wyatt"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/subtext_6.0.12_1548963418756_0.6456363598008825"
+      },
+      "_hasShrinkwrap": false,
+      "deprecated": "This module has moved and is now available at @hapi/subtext. Please update your dependencies as this version is no longer maintained an may contain bugs and security issues."
+    }
+  },
+  "readme": "# subtext\n\nHTTP payload parser.\n\n[![Build Status](https://secure.travis-ci.org/hapijs/subtext.svg?branch=master)](http://travis-ci.org/hapijs/subtext)\n\nLead Maintainer: [Eran Hammer](https://github.com/hueniverse)\n\n`subtext` parses the request body and returns it in a promise.\n\n## Example\n\n```javascript\nconst Http = require('http');\nconst Subtext = require('subtext');\n\nHttp.createServer(async (request, response) => {\n\n  const { payload, mime } = await Subtext.parse(request, null, { parse: true, output: 'data' });\n\n  response.writeHead(200, { 'Content-Type': 'text/plain' });\n  response.end(`Payload contains: ${JSON.stringify(payload)}`);\n\n}).listen(1337, '127.0.0.1');\n\nconsole.log('Server running at http://127.0.0.1:1337/');\n\n```\n\n## API\n\nSee the [API Reference](API.md)\n",
+  "maintainers": [
+    {
+      "email": "eran@hammer.io",
+      "name": "hueniverse"
+    }
+  ],
+  "time": {
+    "modified": "2019-04-23T19:13:44.926Z",
+    "created": "2014-09-29T01:56:03.878Z",
+    "0.0.0": "2014-09-29T01:56:03.878Z",
+    "1.0.0": "2014-10-02T21:35:25.655Z",
+    "1.0.1": "2014-10-02T21:43:36.752Z",
+    "1.0.2": "2014-11-07T08:19:50.255Z",
+    "1.1.0": "2015-07-01T04:00:48.920Z",
+    "1.1.1": "2015-07-03T22:40:07.023Z",
+    "2.0.0": "2015-08-11T21:39:24.129Z",
+    "2.0.1": "2015-09-30T14:40:34.842Z",
+    "2.0.2": "2015-10-20T09:39:45.207Z",
+    "3.0.0": "2015-11-03T06:13:07.869Z",
+    "3.0.1": "2015-11-14T14:07:41.309Z",
+    "3.0.2": "2015-11-14T17:37:52.790Z",
+    "4.0.0": "2015-12-22T21:23:49.338Z",
+    "4.0.1": "2016-04-06T15:12:33.153Z",
+    "4.0.2": "2016-05-08T20:14:42.241Z",
+    "4.0.3": "2016-05-11T15:25:10.121Z",
+    "4.0.4": "2016-05-21T13:05:04.755Z",
+    "4.0.5": "2016-07-28T19:24:49.164Z",
+    "4.1.0": "2016-08-22T06:57:35.373Z",
+    "4.2.0": "2016-08-26T02:22:19.503Z",
+    "4.2.1": "2016-08-26T02:26:41.713Z",
+    "4.2.2": "2016-09-27T09:43:36.053Z",
+    "4.3.0": "2016-10-19T08:50:39.610Z",
+    "4.4.0": "2017-03-21T06:50:04.801Z",
+    "4.4.1": "2017-05-28T06:54:37.997Z",
+    "5.0.0": "2017-06-30T10:21:06.880Z",
+    "6.0.0": "2017-09-18T22:43:51.074Z",
+    "6.0.1": "2017-09-26T00:28:39.461Z",
+    "6.0.3": "2017-09-28T06:25:30.022Z",
+    "6.0.4": "2017-10-19T17:52:12.414Z",
+    "6.0.5": "2017-10-22T08:45:46.051Z",
+    "6.0.6": "2017-11-03T08:46:09.408Z",
+    "6.0.7": "2017-11-03T20:19:32.048Z",
+    "6.0.8": "2018-10-31T20:59:19.627Z",
+    "6.0.9": "2018-11-01T19:24:47.476Z",
+    "6.0.10": "2018-11-02T17:50:41.478Z",
+    "6.0.11": "2018-11-03T00:38:54.129Z",
+    "5.0.1": "2019-01-31T19:35:12.809Z",
+    "6.0.12": "2019-01-31T19:36:58.890Z"
+  },
+  "homepage": "https://github.com/hapijs/subtext#readme",
+  "keywords": [
+    "http",
+    "payload",
+    "file",
+    "stream",
+    "multipart"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/hapijs/subtext.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hapijs/subtext/issues"
+  },
+  "readmeFilename": "README.md",
+  "license": "BSD-3-Clause",
+  "users": {
+    "shakakira": true,
+    "ruiquelhas": true
+  }
+}

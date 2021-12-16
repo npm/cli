@@ -1,0 +1,1774 @@
+{
+  "_id": "upath",
+  "_rev": "38-eee2771ed34419b4d21b2b3b442e1199",
+  "name": "upath",
+  "description": "A proxy to `path`, replacing `\\` with `/` for all results (supports UNC paths) & new methods to normalize & join keeping leading `./` and add, change, default, trim file extensions.",
+  "dist-tags": {
+    "latest": "2.0.1"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "upath",
+      "description": "A proxy to `path`, replacing `\\` with `/` for all results & methods to add, change, default, trim file extensions.",
+      "version": "0.1.0",
+      "homepage": "http://github.com/anodynos/upath/",
+      "author": {
+        "name": "Agelos Pikoulas",
+        "email": "agelos.pikoulas@gmail.com"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://www.opensource.org/licenses/mit-license.php"
+        }
+      ],
+      "keywords": [
+        "path",
+        "unix",
+        "windows",
+        "extension",
+        "file extension",
+        "replace extension",
+        "change extension",
+        "trim extension",
+        "add extension",
+        "default extension"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/anodynos/upath"
+      },
+      "bugs": {
+        "url": "http://github.com/anodynos/upath/issues",
+        "email": "agelos.pikoulas@gmail.com"
+      },
+      "main": "./build/code/upath.js",
+      "preferGlobal": false,
+      "scripts": {
+        "test": "grunt"
+      },
+      "directories": {
+        "doc": "./doc",
+        "dist": "./build"
+      },
+      "engines": {
+        "node": "0.10.x"
+      },
+      "dependencies": {
+        "lodash": "*",
+        "underscore.string": "^2.3.0"
+      },
+      "devDependencies": {
+        "chai": "^1.9.0",
+        "coffee-script": "^1.8.0",
+        "mocha": "^2.0.0",
+        "grunt": "0.4.x",
+        "grunt-contrib-clean": "0.4.x",
+        "grunt-contrib-concat": "0.1.x",
+        "grunt-shell": "~0.3.x",
+        "grunt-contrib-watch": "~0.5.x",
+        "uberscore": "0.0.16"
+      },
+      "gitHead": "75f8bb50dc920a4f68f4a930e7b0946d3a413f0c",
+      "_id": "upath@0.1.0",
+      "_shasum": "823665902b2c9b37a5efcfb79a9b53b91738aa9b",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "anodynos",
+        "email": "agelos.pikoulas@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "anodynos",
+          "email": "agelos.pikoulas@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "823665902b2c9b37a5efcfb79a9b53b91738aa9b",
+        "tarball": "https://registry.npmjs.org/upath/-/upath-0.1.0.tgz"
+      }
+    },
+    "0.1.1": {
+      "name": "upath",
+      "description": "A proxy to `path`, replacing `\\` with `/` for all results & methods to add, change, default, trim file extensions.",
+      "version": "0.1.1",
+      "homepage": "http://github.com/anodynos/upath/",
+      "author": {
+        "name": "Agelos Pikoulas",
+        "email": "agelos.pikoulas@gmail.com"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://www.opensource.org/licenses/mit-license.php"
+        }
+      ],
+      "keywords": [
+        "path",
+        "unix",
+        "windows",
+        "extension",
+        "file extension",
+        "replace extension",
+        "change extension",
+        "trim extension",
+        "add extension",
+        "default extension"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/anodynos/upath"
+      },
+      "bugs": {
+        "url": "http://github.com/anodynos/upath/issues",
+        "email": "agelos.pikoulas@gmail.com"
+      },
+      "main": "./build/code/upath.js",
+      "preferGlobal": false,
+      "scripts": {
+        "test": "grunt"
+      },
+      "directories": {
+        "doc": "./doc",
+        "dist": "./build"
+      },
+      "engines": {
+        "node": "0.10.x"
+      },
+      "dependencies": {
+        "lodash": "*",
+        "underscore.string": "^2.3.0"
+      },
+      "devDependencies": {
+        "chai": "^1.9.0",
+        "coffee-script": "^1.8.0",
+        "mocha": "^2.0.0",
+        "grunt": "0.4.x",
+        "grunt-contrib-clean": "0.4.x",
+        "grunt-contrib-concat": "0.1.x",
+        "grunt-shell": "~0.3.x",
+        "grunt-contrib-watch": "~0.5.x",
+        "uberscore": "0.0.16"
+      },
+      "gitHead": "a85237754056be321492164043485e7cf56a529a",
+      "_id": "upath@0.1.1",
+      "_shasum": "203a77784555e133c5bde9c8698693defaf3e9e7",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "anodynos",
+        "email": "agelos.pikoulas@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "anodynos",
+          "email": "agelos.pikoulas@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "203a77784555e133c5bde9c8698693defaf3e9e7",
+        "tarball": "https://registry.npmjs.org/upath/-/upath-0.1.1.tgz"
+      }
+    },
+    "0.1.2": {
+      "name": "upath",
+      "description": "A proxy to `path`, replacing `\\` with `/` for all results & methods to add, change, default, trim file extensions.",
+      "version": "0.1.2",
+      "homepage": "http://github.com/anodynos/upath/",
+      "author": {
+        "name": "Agelos Pikoulas",
+        "email": "agelos.pikoulas@gmail.com"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://www.opensource.org/licenses/mit-license.php"
+        }
+      ],
+      "keywords": [
+        "path",
+        "unix",
+        "windows",
+        "extension",
+        "file extension",
+        "replace extension",
+        "change extension",
+        "trim extension",
+        "add extension",
+        "default extension"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/anodynos/upath"
+      },
+      "bugs": {
+        "url": "http://github.com/anodynos/upath/issues",
+        "email": "agelos.pikoulas@gmail.com"
+      },
+      "main": "./build/code/upath.js",
+      "preferGlobal": false,
+      "scripts": {
+        "test": "grunt"
+      },
+      "directories": {
+        "doc": "./doc",
+        "dist": "./build"
+      },
+      "engines": {
+        "node": "0.10.x"
+      },
+      "dependencies": {
+        "lodash": "*",
+        "underscore.string": "^2.3.0"
+      },
+      "devDependencies": {
+        "chai": "^1.9.0",
+        "coffee-script": "^1.8.0",
+        "mocha": "^2.0.0",
+        "grunt": "0.4.x",
+        "grunt-contrib-clean": "0.4.x",
+        "grunt-contrib-concat": "0.1.x",
+        "grunt-shell": "~0.3.x",
+        "grunt-contrib-watch": "~0.5.x",
+        "uberscore": "0.0.16"
+      },
+      "gitHead": "4cc6ced23237872d66a38087c28d740d3b6d98b3",
+      "_id": "upath@0.1.2",
+      "_shasum": "2306202c6b65cfa5d150b1b76388e81427a4f221",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "anodynos",
+        "email": "agelos.pikoulas@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "anodynos",
+          "email": "agelos.pikoulas@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "2306202c6b65cfa5d150b1b76388e81427a4f221",
+        "tarball": "https://registry.npmjs.org/upath/-/upath-0.1.2.tgz"
+      }
+    },
+    "0.1.3": {
+      "name": "upath",
+      "description": "A proxy to `path`, replacing `\\` with `/` for all results & methods to add, change, default, trim file extensions.",
+      "version": "0.1.3",
+      "homepage": "http://github.com/anodynos/upath/",
+      "author": {
+        "name": "Agelos Pikoulas",
+        "email": "agelos.pikoulas@gmail.com"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://www.opensource.org/licenses/mit-license.php"
+        }
+      ],
+      "keywords": [
+        "path",
+        "unix",
+        "windows",
+        "extension",
+        "file extension",
+        "replace extension",
+        "change extension",
+        "trim extension",
+        "add extension",
+        "default extension"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/anodynos/upath"
+      },
+      "bugs": {
+        "url": "http://github.com/anodynos/upath/issues",
+        "email": "agelos.pikoulas@gmail.com"
+      },
+      "main": "./build/code/upath.js",
+      "preferGlobal": false,
+      "scripts": {
+        "test": "grunt"
+      },
+      "directories": {
+        "doc": "./doc",
+        "dist": "./build"
+      },
+      "engines": {
+        "node": "0.10.x"
+      },
+      "dependencies": {
+        "lodash": "*",
+        "underscore.string": "^2.3.0"
+      },
+      "devDependencies": {
+        "chai": "^1.9.0",
+        "coffee-script": "^1.8.0",
+        "mocha": "^2.0.0",
+        "grunt": "0.4.x",
+        "grunt-contrib-clean": "0.4.x",
+        "grunt-contrib-concat": "0.1.x",
+        "grunt-shell": "~0.3.x",
+        "grunt-contrib-watch": "~0.5.x",
+        "uberscore": "0.0.16"
+      },
+      "gitHead": "4e6006015baa7f00ecf7c64868fe82728422819a",
+      "_id": "upath@0.1.3",
+      "_shasum": "7b195b998f469dd1a021fd1c48fb6046dd9064dc",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "anodynos",
+        "email": "agelos.pikoulas@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "anodynos",
+          "email": "agelos.pikoulas@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "7b195b998f469dd1a021fd1c48fb6046dd9064dc",
+        "tarball": "https://registry.npmjs.org/upath/-/upath-0.1.3.tgz"
+      }
+    },
+    "0.1.4": {
+      "name": "upath",
+      "description": "A proxy to `path`, replacing `\\` with `/` for all results & methods to add, change, default, trim file extensions.",
+      "version": "0.1.4",
+      "homepage": "http://github.com/anodynos/upath/",
+      "author": {
+        "name": "Agelos Pikoulas",
+        "email": "agelos.pikoulas@gmail.com"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://www.opensource.org/licenses/mit-license.php"
+        }
+      ],
+      "keywords": [
+        "path",
+        "unix",
+        "windows",
+        "extension",
+        "file extension",
+        "replace extension",
+        "change extension",
+        "trim extension",
+        "add extension",
+        "default extension"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/anodynos/upath"
+      },
+      "bugs": {
+        "url": "http://github.com/anodynos/upath/issues",
+        "email": "agelos.pikoulas@gmail.com"
+      },
+      "main": "./build/code/upath.js",
+      "preferGlobal": false,
+      "scripts": {
+        "test": "grunt"
+      },
+      "directories": {
+        "doc": "./doc",
+        "dist": "./build"
+      },
+      "engines": {
+        "node": "0.10.x"
+      },
+      "dependencies": {
+        "lodash": "*",
+        "underscore.string": "^2.3.0"
+      },
+      "devDependencies": {
+        "chai": "^1.9.0",
+        "coffee-script": "^1.8.0",
+        "mocha": "^2.0.0",
+        "grunt": "0.4.x",
+        "grunt-contrib-clean": "0.4.x",
+        "grunt-contrib-concat": "0.1.x",
+        "grunt-shell": "~0.3.x",
+        "grunt-contrib-watch": "~0.5.x",
+        "uberscore": "0.0.16"
+      },
+      "gitHead": "c0f7cdd53721872c88b3101dfacac3d735c1079f",
+      "_id": "upath@0.1.4",
+      "_shasum": "7008becb374e3b75063235848e4bacd6d3c4d9b3",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "anodynos",
+        "email": "agelos.pikoulas@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "anodynos",
+          "email": "agelos.pikoulas@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "7008becb374e3b75063235848e4bacd6d3c4d9b3",
+        "tarball": "https://registry.npmjs.org/upath/-/upath-0.1.4.tgz"
+      }
+    },
+    "0.1.5": {
+      "name": "upath",
+      "description": "A proxy to `path`, replacing `\\` with `/` for all results & methods to add, change, default, trim file extensions.",
+      "version": "0.1.5",
+      "homepage": "http://github.com/anodynos/upath/",
+      "author": {
+        "name": "Agelos Pikoulas",
+        "email": "agelos.pikoulas@gmail.com"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://www.opensource.org/licenses/mit-license.php"
+        }
+      ],
+      "keywords": [
+        "path",
+        "unix",
+        "windows",
+        "extension",
+        "file extension",
+        "replace extension",
+        "change extension",
+        "trim extension",
+        "add extension",
+        "default extension"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/anodynos/upath"
+      },
+      "bugs": {
+        "url": "http://github.com/anodynos/upath/issues",
+        "email": "agelos.pikoulas@gmail.com"
+      },
+      "main": "./build/code/upath.js",
+      "preferGlobal": false,
+      "scripts": {
+        "test": "grunt"
+      },
+      "directories": {
+        "doc": "./doc",
+        "dist": "./build"
+      },
+      "engines": {
+        "node": "0.10.x"
+      },
+      "dependencies": {
+        "lodash": "*",
+        "underscore.string": "^2.3.0"
+      },
+      "devDependencies": {
+        "chai": "^1.9.0",
+        "mocha": "^2.0.0",
+        "grunt": "0.4.5",
+        "grunt-contrib-watch": "~0.5.x",
+        "grunt-urequire": "0.7.x",
+        "urequire": "0.7.x",
+        "uberscore": "0.0.16",
+        "urequire-ab-specrunner": "^0.1.10",
+        "urequire-rc-inject-version": "^0.1.2"
+      },
+      "gitHead": "0ba92813c422b6137b5cda10538a745fbf20227e",
+      "_id": "upath@0.1.5",
+      "_shasum": "04eb8709ce6ee7f5067ea112a2b60c6eba544485",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "anodynos",
+        "email": "agelos.pikoulas@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "anodynos",
+          "email": "agelos.pikoulas@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "04eb8709ce6ee7f5067ea112a2b60c6eba544485",
+        "tarball": "https://registry.npmjs.org/upath/-/upath-0.1.5.tgz"
+      }
+    },
+    "0.1.6": {
+      "name": "upath",
+      "description": "A proxy to `path`, replacing `\\` with `/` for all results & new methods to normalize & join keeping leading `./` and add, change, default, trim file extensions.",
+      "version": "0.1.6",
+      "homepage": "http://github.com/anodynos/upath/",
+      "author": {
+        "name": "Angelos Pikoulas",
+        "email": "agelos.pikoulas@gmail.com"
+      },
+      "license": "MIT",
+      "keywords": [
+        "path",
+        "unix",
+        "windows",
+        "extension",
+        "file extension",
+        "replace extension",
+        "change extension",
+        "trim extension",
+        "add extension",
+        "default extension"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/anodynos/upath.git"
+      },
+      "bugs": {
+        "url": "http://github.com/anodynos/upath/issues",
+        "email": "agelos.pikoulas@gmail.com"
+      },
+      "main": "./build/code/upath.js",
+      "preferGlobal": false,
+      "scripts": {
+        "test": "grunt"
+      },
+      "directories": {
+        "doc": "./doc",
+        "dist": "./build"
+      },
+      "engines": {
+        "node": ">=0.10.x <=0.12.x"
+      },
+      "dependencies": {
+        "lodash": ">=2.x",
+        "underscore.string": "2.3.x"
+      },
+      "devDependencies": {
+        "chai": "1.9.x",
+        "mocha": "2.0.x",
+        "grunt": "0.4.5",
+        "grunt-contrib-watch": "0.5.x",
+        "grunt-urequire": "0.7.x",
+        "urequire": "0.7.0-beta.20",
+        "uberscore": "0.0.16",
+        "urequire-ab-specrunner": "0.2.x",
+        "urequire-rc-inject-version": "0.1.x"
+      },
+      "gitHead": "aebcd89d227675b473c870aa2dbd3302d98dfc36",
+      "_id": "upath@0.1.6",
+      "_shasum": "4809de430e55c5845b1cec6319f0fe6c877aa958",
+      "_from": ".",
+      "_npmVersion": "2.11.3",
+      "_nodeVersion": "0.12.7",
+      "_npmUser": {
+        "name": "anodynos",
+        "email": "agelos.pikoulas@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "anodynos",
+          "email": "agelos.pikoulas@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "4809de430e55c5845b1cec6319f0fe6c877aa958",
+        "tarball": "https://registry.npmjs.org/upath/-/upath-0.1.6.tgz"
+      }
+    },
+    "0.1.7": {
+      "name": "upath",
+      "description": "A proxy to `path`, replacing `\\` with `/` for all results & new methods to normalize & join keeping leading `./` and add, change, default, trim file extensions.",
+      "version": "0.1.7",
+      "homepage": "http://github.com/anodynos/upath/",
+      "author": {
+        "name": "Angelos Pikoulas",
+        "email": "agelos.pikoulas@gmail.com"
+      },
+      "license": "MIT",
+      "keywords": [
+        "path",
+        "unix",
+        "windows",
+        "extension",
+        "file extension",
+        "replace extension",
+        "change extension",
+        "trim extension",
+        "add extension",
+        "default extension"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/anodynos/upath"
+      },
+      "bugs": {
+        "url": "http://github.com/anodynos/upath/issues",
+        "email": "agelos.pikoulas@gmail.com"
+      },
+      "main": "./build/code/upath.js",
+      "preferGlobal": false,
+      "scripts": {
+        "test": "grunt"
+      },
+      "directories": {
+        "doc": "./doc",
+        "dist": "./build"
+      },
+      "engines": {
+        "node": ">=0.10 <=5"
+      },
+      "typescript": {
+        "definition": "upath.d.ts"
+      },
+      "dependencies": {
+        "lodash": "3.x",
+        "underscore.string": "2.3.x"
+      },
+      "devDependencies": {
+        "chai": "3.5.x",
+        "mocha": "2.4.x",
+        "grunt": "0.4.5",
+        "grunt-contrib-watch": "0.6.x",
+        "grunt-urequire": "0.7.x",
+        "urequire": "0.7.0-beta.25",
+        "uberscore": "0.0.16",
+        "urequire-ab-specrunner": "^0.2.2",
+        "urequire-rc-inject-version": "^0.1.6"
+      },
+      "gitHead": "512f6605511c66ca79600dc8c3594476705b2320",
+      "_id": "upath@0.1.7",
+      "_shasum": "7c5bbfe9a4e074ff0b83131ad0c13c2d8601383b",
+      "_from": ".",
+      "_npmVersion": "2.14.12",
+      "_nodeVersion": "4.3.1",
+      "_npmUser": {
+        "name": "anodynos",
+        "email": "agelos.pikoulas@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "anodynos",
+          "email": "agelos.pikoulas@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "7c5bbfe9a4e074ff0b83131ad0c13c2d8601383b",
+        "tarball": "https://registry.npmjs.org/upath/-/upath-0.1.7.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-5-east.internal.npmjs.com",
+        "tmp": "tmp/upath-0.1.7.tgz_1456101854015_0.8668476182501763"
+      }
+    },
+    "0.2.0": {
+      "name": "upath",
+      "description": "A proxy to `path`, replacing `\\` with `/` for all results & new methods to normalize & join keeping leading `./` and add, change, default, trim file extensions.",
+      "version": "0.2.0",
+      "homepage": "http://github.com/anodynos/upath/",
+      "author": {
+        "name": "Angelos Pikoulas",
+        "email": "agelos.pikoulas@gmail.com"
+      },
+      "license": "MIT",
+      "keywords": [
+        "path",
+        "unix",
+        "windows",
+        "extension",
+        "file extension",
+        "replace extension",
+        "change extension",
+        "trim extension",
+        "add extension",
+        "default extension"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/anodynos/upath.git"
+      },
+      "bugs": {
+        "url": "http://github.com/anodynos/upath/issues",
+        "email": "agelos.pikoulas@gmail.com"
+      },
+      "main": "./build/code/upath.js",
+      "preferGlobal": false,
+      "scripts": {
+        "test": "grunt"
+      },
+      "directories": {
+        "doc": "./doc",
+        "dist": "./build"
+      },
+      "engines": {
+        "node": ">=0.10 <=5"
+      },
+      "typescript": {
+        "definition": "upath.d.ts"
+      },
+      "dependencies": {
+        "lodash": "3.x",
+        "underscore.string": "2.3.x"
+      },
+      "devDependencies": {
+        "chai": "3.5.x",
+        "grunt": "0.4.5",
+        "grunt-contrib-watch": "0.6.x",
+        "grunt-urequire": "0.7.x",
+        "mocha": "2.4.x",
+        "uberscore": "0.0.19",
+        "urequire": "0.7.0-beta.29",
+        "urequire-ab-specrunner": "^0.2.5",
+        "urequire-rc-inject-version": "^0.1.6"
+      },
+      "gitHead": "037431d3b8217397045055364029deddbba4194d",
+      "_id": "upath@0.2.0",
+      "_shasum": "bdbad0f2c60afea165f8127dbb1b5bdee500ad81",
+      "_from": ".",
+      "_npmVersion": "2.15.0",
+      "_nodeVersion": "0.10.44",
+      "_npmUser": {
+        "name": "anodynos",
+        "email": "agelos.pikoulas@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "anodynos",
+          "email": "agelos.pikoulas@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "bdbad0f2c60afea165f8127dbb1b5bdee500ad81",
+        "tarball": "https://registry.npmjs.org/upath/-/upath-0.2.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/upath-0.2.0.tgz_1467507212666_0.4532309107016772"
+      }
+    },
+    "1.0.0": {
+      "name": "upath",
+      "description": "A proxy to `path`, replacing `\\` with `/` for all results & new methods to normalize & join keeping leading `./` and add, change, default, trim file extensions.",
+      "version": "1.0.0",
+      "homepage": "http://github.com/anodynos/upath/",
+      "author": {
+        "name": "Angelos Pikoulas",
+        "email": "agelos.pikoulas@gmail.com"
+      },
+      "license": "MIT",
+      "keywords": [
+        "path",
+        "unix",
+        "windows",
+        "extension",
+        "file extension",
+        "replace extension",
+        "change extension",
+        "trim extension",
+        "add extension",
+        "default extension"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/anodynos/upath.git"
+      },
+      "bugs": {
+        "url": "http://github.com/anodynos/upath/issues",
+        "email": "agelos.pikoulas@gmail.com"
+      },
+      "main": "./build/code/upath.js",
+      "types": "./upath.d.ts",
+      "preferGlobal": false,
+      "scripts": {
+        "test": "grunt",
+        "build": "grunt lib"
+      },
+      "directories": {
+        "doc": "./doc",
+        "dist": "./build"
+      },
+      "engines": {
+        "node": ">=0.10 <=7"
+      },
+      "dependencies": {
+        "lodash": "3.x",
+        "underscore.string": "2.3.x"
+      },
+      "devDependencies": {
+        "chai": "3.5.x",
+        "grunt": "0.4.5",
+        "grunt-contrib-watch": "0.6.x",
+        "grunt-urequire": "0.7.x",
+        "mocha": "2.4.x",
+        "uberscore": "0.0.19",
+        "urequire": "0.7.0-beta.29",
+        "urequire-ab-specrunner": "^0.2.5",
+        "urequire-rc-inject-version": "^0.1.6"
+      },
+      "gitHead": "dd3b692bdfbcc327f07e62a73de6a1d27ea90dee",
+      "_id": "upath@1.0.0",
+      "_shasum": "b4706b9461ca8473adf89133d235689ca17f3656",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.9.5",
+      "_npmUser": {
+        "name": "anodynos",
+        "email": "agelos.pikoulas@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "anodynos",
+          "email": "agelos.pikoulas@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "b4706b9461ca8473adf89133d235689ca17f3656",
+        "tarball": "https://registry.npmjs.org/upath/-/upath-1.0.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/upath-1.0.0.tgz_1486482461557_0.5026046861894429"
+      }
+    },
+    "1.0.2": {
+      "name": "upath",
+      "description": "A proxy to `path`, replacing `\\` with `/` for all results & new methods to normalize & join keeping leading `./` and add, change, default, trim file extensions.",
+      "version": "1.0.2",
+      "homepage": "http://github.com/anodynos/upath/",
+      "author": {
+        "name": "Angelos Pikoulas",
+        "email": "agelos.pikoulas@gmail.com"
+      },
+      "license": "MIT",
+      "keywords": [
+        "path",
+        "unix",
+        "windows",
+        "extension",
+        "file extension",
+        "replace extension",
+        "change extension",
+        "trim extension",
+        "add extension",
+        "default extension"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/anodynos/upath.git"
+      },
+      "bugs": {
+        "url": "http://github.com/anodynos/upath/issues",
+        "email": "agelos.pikoulas@gmail.com"
+      },
+      "main": "./build/code/upath.js",
+      "types": "./upath.d.ts",
+      "preferGlobal": false,
+      "scripts": {
+        "test": "grunt",
+        "build": "grunt lib"
+      },
+      "directories": {
+        "doc": "./doc",
+        "dist": "./build"
+      },
+      "engines": {
+        "node": ">=4 <=9"
+      },
+      "dependencies": {
+        "lodash.endswith": "^4.2.1",
+        "lodash.startswith": "^4.2.1",
+        "lodash.isfunction": "^3.0.8",
+        "lodash.isstring": "^4.0.1"
+      },
+      "devDependencies": {
+        "chai": "~4.0.2",
+        "coffee-script": "1.12.6",
+        "grunt": "0.4.5",
+        "grunt-contrib-watch": "~1.0.0",
+        "grunt-urequire": "0.7.x",
+        "mocha": "~3.4.2",
+        "uberscore": "0.0.19",
+        "underscore.string": "~3.3.4",
+        "urequire": "0.7.0-beta.33",
+        "urequire-ab-specrunner": "^0.2.5",
+        "urequire-rc-inject-version": "^0.1.6"
+      },
+      "gitHead": "a28b9a893684a51f94e8454a1a99e1200b8b962b",
+      "_id": "upath@1.0.2",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "9.1.0",
+      "_npmUser": {
+        "name": "anodynos",
+        "email": "agelos.pikoulas@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "anodynos",
+          "email": "agelos.pikoulas@gmail.com"
+        }
+      ],
+      "dist": {
+        "integrity": "sha512-fCmij7T5LnwUme3dbnVSejvOHHlARjB3ikJFwgZfz386pHmf/gueuTLRFU94FZEaeCLlbQrweiUU700gG41tUw==",
+        "shasum": "80aaae5395abc5fd402933ae2f58694f0860204c",
+        "tarball": "https://registry.npmjs.org/upath/-/upath-1.0.2.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/upath-1.0.2.tgz_1510614878269_0.19207502622157335"
+      }
+    },
+    "1.0.3": {
+      "name": "upath",
+      "description": "A proxy to `path`, replacing `\\` with `/` for all results & new methods to normalize & join keeping leading `./` and add, change, default, trim file extensions.",
+      "version": "1.0.3",
+      "homepage": "http://github.com/anodynos/upath/",
+      "author": {
+        "name": "Angelos Pikoulas",
+        "email": "agelos.pikoulas@gmail.com"
+      },
+      "license": "MIT",
+      "keywords": [
+        "path",
+        "unix",
+        "windows",
+        "extension",
+        "file extension",
+        "replace extension",
+        "change extension",
+        "trim extension",
+        "add extension",
+        "default extension"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/anodynos/upath.git"
+      },
+      "bugs": {
+        "url": "http://github.com/anodynos/upath/issues",
+        "email": "agelos.pikoulas@gmail.com"
+      },
+      "main": "./build/code/upath.js",
+      "types": "./upath.d.ts",
+      "preferGlobal": false,
+      "scripts": {
+        "test": "grunt",
+        "build": "grunt lib"
+      },
+      "directories": {
+        "doc": "./doc",
+        "dist": "./build"
+      },
+      "engines": {
+        "node": ">=4 <=9"
+      },
+      "dependencies": {
+        "lodash.endswith": "^4.2.1",
+        "lodash.startswith": "^4.2.1",
+        "lodash.isfunction": "^3.0.8",
+        "lodash.isstring": "^4.0.1"
+      },
+      "devDependencies": {
+        "chai": "~4.0.2",
+        "coffee-script": "1.12.6",
+        "grunt": "0.4.5",
+        "grunt-contrib-watch": "~1.0.0",
+        "grunt-urequire": "0.7.x",
+        "lodash": "^4.17.4",
+        "mocha": "~3.4.2",
+        "uberscore": "0.0.19",
+        "underscore.string": "~3.3.4",
+        "urequire": "0.7.0-beta.33",
+        "urequire-ab-specrunner": "^0.2.5",
+        "urequire-rc-inject-version": "^0.1.6"
+      },
+      "gitHead": "f2a64fc55e984324083d61cd9938c312df7e53b6",
+      "_id": "upath@1.0.3",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.4.0",
+      "_npmUser": {
+        "name": "anodynos",
+        "email": "agelos.pikoulas@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-oubdFMfUobEIMojWoHXA3Xh794XY+MWvQVtLNf1Pv8cjPVumqEsxll7+5t7HwjNRGEch30h1yQN0kCeK/GOC5Q==",
+        "shasum": "18a4822d3f668cc69876245d3c2ca74a498eba9b",
+        "tarball": "https://registry.npmjs.org/upath/-/upath-1.0.3.tgz",
+        "fileCount": 5,
+        "unpackedSize": 33736
+      },
+      "maintainers": [
+        {
+          "name": "anodynos",
+          "email": "agelos.pikoulas@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/upath_1.0.3_1519600460285_0.9068103125432261"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.0.4": {
+      "name": "upath",
+      "description": "A proxy to `path`, replacing `\\` with `/` for all results & new methods to normalize & join keeping leading `./` and add, change, default, trim file extensions.",
+      "version": "1.0.4",
+      "homepage": "http://github.com/anodynos/upath/",
+      "author": {
+        "name": "Angelos Pikoulas",
+        "email": "agelos.pikoulas@gmail.com"
+      },
+      "license": "MIT",
+      "keywords": [
+        "path",
+        "unix",
+        "windows",
+        "extension",
+        "file extension",
+        "replace extension",
+        "change extension",
+        "trim extension",
+        "add extension",
+        "default extension"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/anodynos/upath.git"
+      },
+      "bugs": {
+        "url": "http://github.com/anodynos/upath/issues",
+        "email": "agelos.pikoulas@gmail.com"
+      },
+      "main": "./build/code/upath.js",
+      "types": "./upath.d.ts",
+      "preferGlobal": false,
+      "scripts": {
+        "test": "grunt",
+        "build": "grunt lib"
+      },
+      "directories": {
+        "doc": "./doc",
+        "dist": "./build"
+      },
+      "engines": {
+        "node": ">=4 <=9"
+      },
+      "devDependencies": {
+        "chai": "~4.0.2",
+        "coffee-script": "1.12.6",
+        "grunt": "0.4.5",
+        "grunt-contrib-watch": "~1.0.0",
+        "grunt-urequire": "0.7.x",
+        "lodash": "^4.17.4",
+        "mocha": "~3.4.2",
+        "uberscore": "0.0.19",
+        "underscore.string": "~3.3.4",
+        "urequire": "0.7.0-beta.33",
+        "urequire-ab-specrunner": "^0.2.5",
+        "urequire-rc-inject-version": "^0.1.6"
+      },
+      "gitHead": "3bdcd474017e7635ecbc7509ea03c6b036df3b8d",
+      "_id": "upath@1.0.4",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.4.0",
+      "_npmUser": {
+        "name": "anodynos",
+        "email": "agelos.pikoulas@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-d4SJySNBXDaQp+DPrziv3xGS6w3d2Xt69FijJr86zMPBy23JEloMCEOUBBzuN7xCtjLCnmB9tI/z7SBCahHBOw==",
+        "shasum": "ee2321ba0a786c50973db043a50b7bcba822361d",
+        "tarball": "https://registry.npmjs.org/upath/-/upath-1.0.4.tgz",
+        "fileCount": 5,
+        "unpackedSize": 33783
+      },
+      "maintainers": [
+        {
+          "name": "anodynos",
+          "email": "agelos.pikoulas@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/upath_1.0.4_1519604006586_0.1287124338797132"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.0.5": {
+      "name": "upath",
+      "description": "A proxy to `path`, replacing `\\` with `/` for all results & new methods to normalize & join keeping leading `./` and add, change, default, trim file extensions.",
+      "version": "1.0.5",
+      "homepage": "http://github.com/anodynos/upath/",
+      "author": {
+        "name": "Angelos Pikoulas",
+        "email": "agelos.pikoulas@gmail.com"
+      },
+      "license": "MIT",
+      "keywords": [
+        "path",
+        "unix",
+        "windows",
+        "extension",
+        "file extension",
+        "replace extension",
+        "change extension",
+        "trim extension",
+        "add extension",
+        "default extension"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/anodynos/upath.git"
+      },
+      "bugs": {
+        "url": "http://github.com/anodynos/upath/issues",
+        "email": "agelos.pikoulas@gmail.com"
+      },
+      "main": "./build/code/upath.js",
+      "types": "./upath.d.ts",
+      "preferGlobal": false,
+      "scripts": {
+        "test": "grunt",
+        "build": "grunt lib"
+      },
+      "directories": {
+        "doc": "./doc",
+        "dist": "./build"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "devDependencies": {
+        "chai": "~4.0.2",
+        "coffee-script": "1.12.6",
+        "grunt": "0.4.5",
+        "grunt-contrib-watch": "~1.0.0",
+        "grunt-urequire": "0.7.x",
+        "lodash": "^4.17.4",
+        "mocha": "~3.4.2",
+        "uberscore": "0.0.19",
+        "underscore.string": "~3.3.4",
+        "urequire": "0.7.0-beta.33",
+        "urequire-ab-specrunner": "^0.2.5",
+        "urequire-rc-inject-version": "^0.1.6"
+      },
+      "gitHead": "2b181f4f1a19f2c919e452e5b837d4719d93118c",
+      "_id": "upath@1.0.5",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "10.0.0",
+      "_npmUser": {
+        "name": "anodynos",
+        "email": "agelos.pikoulas@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-qbKn90aDQ0YEwvXoLqj0oiuUYroLX2lVHZ+b+xwjozFasAOC4GneDq5+OaIG5Zj+jFmbz/uO+f7a9qxjktJQww==",
+        "shasum": "02cab9ecebe95bbec6d5fc2566325725ab6d1a73",
+        "tarball": "https://registry.npmjs.org/upath/-/upath-1.0.5.tgz",
+        "fileCount": 5,
+        "unpackedSize": 33787,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa42TwCRA9TVsSAnZWagAA9QIP/206dH8DHDUquF4oPOzU\nJepJ6H+XcmdcMtLf+EOrsD0xSH3YzIFovmUpOByJif5rmqj4lQ8QcNu4iuJf\nP7FzTQgWTkvtFtG13FIPkggu0gKr/5kEdjLar1Zh4lU65vh1LGOQGwquyEAQ\nLlIa9uxbV6z6erd2oV6hBM8LsdNocVNuYp/LOWWISbH1hrn4VAbFixd17fj+\nNvKVSWkxZiXdHw8BAbp6fQaOtVEizbQ9+V/6J6IAUMDiTmJKLanZDgsBGjHM\nKyfzVVId3nPlVxuTC5FZRYz7TYaDqhY6v1K9jAgraEZirbqcWcJjDAEBBrJD\nJ70rZ3xMvwHVRM+c73ob7DoUv0DJGNmsanTzx6LZSyjvefD/1ir8HSa/wZ2S\nXO4OqDFdF4PLA3cH1xf7qxZRkhEeGJr9QDG5bA/XsuFhE+QhaSPIUMikxREl\n8HNmjIenGGZcVizOaBywX6qfZ8LEIVUG0T5Di1M/zLONpHp1CmTTktDLXI54\nkPzrphxX3dMVrwQ2IML8kI4H3iDekh0lMjOF1piyjB5d8UHymOLlD2Yy95Xv\nXOwWAOtRksCjySr8oU84r7e6J6p1+JCmLquXEYcWTJGGxrooCfO4Y9X10dR6\ndCF2uhxFaqFVg8FAIUsGgC7OA1FMpypg0j2uan/S9sWFfhaBxbxs9AVLmWEj\ngIGb\r\n=e5xJ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "anodynos",
+          "email": "agelos.pikoulas@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/upath_1.0.5_1524851951300_0.5330775232308282"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.1.0": {
+      "name": "upath",
+      "description": "A proxy to `path`, replacing `\\` with `/` for all results & new methods to normalize & join keeping leading `./` and add, change, default, trim file extensions.",
+      "version": "1.1.0",
+      "homepage": "http://github.com/anodynos/upath/",
+      "author": {
+        "name": "Angelos Pikoulas",
+        "email": "agelos.pikoulas@gmail.com"
+      },
+      "license": "MIT",
+      "keywords": [
+        "path",
+        "unix",
+        "windows",
+        "extension",
+        "file extension",
+        "replace extension",
+        "change extension",
+        "trim extension",
+        "add extension",
+        "default extension"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/anodynos/upath.git"
+      },
+      "bugs": {
+        "url": "http://github.com/anodynos/upath/issues",
+        "email": "agelos.pikoulas@gmail.com"
+      },
+      "main": "./build/code/upath.js",
+      "types": "./upath.d.ts",
+      "preferGlobal": false,
+      "scripts": {
+        "test": "grunt",
+        "build": "grunt lib"
+      },
+      "directories": {
+        "doc": "./doc",
+        "dist": "./build"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "devDependencies": {
+        "chai": "~4.0.2",
+        "coffee-script": "1.12.6",
+        "grunt": "0.4.5",
+        "grunt-contrib-watch": "~1.0.0",
+        "grunt-urequire": "0.7.x",
+        "lodash": "^4.17.4",
+        "mocha": "~3.4.2",
+        "uberscore": "0.0.19",
+        "underscore.string": "~3.3.4",
+        "urequire": "0.7.0-beta.33",
+        "urequire-ab-specrunner": "^0.2.5",
+        "urequire-rc-inject-version": "^0.1.6"
+      },
+      "gitHead": "34fe330e405caacacf201a9abbb91e81b114518e",
+      "_id": "upath@1.1.0",
+      "_npmVersion": "5.8.0",
+      "_nodeVersion": "9.9.0",
+      "_npmUser": {
+        "name": "anodynos",
+        "email": "agelos.pikoulas@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-bzpH/oBhoS/QI/YtbkqCg6VEiPYjSZtrHQM6/QnJS6OL9pKUFLqb3aFh4Scvwm45+7iAgiMkLhSbaZxUqmrprw==",
+        "shasum": "35256597e46a581db4793d0ce47fa9aebfc9fabd",
+        "tarball": "https://registry.npmjs.org/upath/-/upath-1.1.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 33919,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa+1CWCRA9TVsSAnZWagAAHlUP/05vdAPUSMWKDe63Bq40\n8egTXxFeSpx9PsBIHdKOdbe3Tn3TEId8MKOdeEZspr8VEhR6RX5IwwvZDfx1\n6O/SUgzxRzddXS2YnqrFI4E68FkHScRMLpFfDdKrG2BQr1tXunDQf4/Z/wVo\nn64g558Sul8piyNypeXFegohFFYpifAeeDSrN5hMGLtmmwAAd4Io7N+smtST\nTRuMoSGez7atwSN9SJjxjfUgvIqdBkpavwmzEsOAW6OeqNQtqw8SmtbAMKqJ\nzzuolUbBoQFQVKylqYnxni2Q1lFcQCuvUeO00fc4pBkt+rWZT0R0HANMjkW3\nWdU/YDqz0K/T8rwhgG8641uP8j/MzpwhLH6hqJ1FB2VHQveB2nAtbvRhergJ\nBZc71lF+JKbTIjrjQzpwgnXWstj6JXt3EO2ny8pcB57vKpZTSXapnJJztijp\nXFCp3hfBSTZLYFWwuJB0OpPTUJUfXOr/CHPQZMXf3tgSqai1JiUwgWcKlMtn\n0BEvm3DGUXFs8l2dCyDoHmxZHmtuPwNil2ltZxCVChmRaoVc9S21I+dES2bV\nhOd82IObtF3pBPnauvYrmWCRm0y6PjMZoTcVZPi5DvBP6/NSAYVTBXvi/yqW\nUINWHr0wXYLFisgV4OXFou1CEhRnTALbrD/SSUtyWwLxY1B4c2kmFUTj3FD7\n63wv\r\n=tYTf\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "anodynos",
+          "email": "agelos.pikoulas@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/upath_1.1.0_1526419605863_0.9798545761860444"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.1.1": {
+      "name": "upath",
+      "description": "A proxy to `path`, replacing `\\` with `/` for all results & new methods to normalize & join keeping leading `./` and add, change, default, trim file extensions.",
+      "version": "1.1.1",
+      "homepage": "http://github.com/anodynos/upath/",
+      "author": {
+        "name": "Angelos Pikoulas",
+        "email": "agelos.pikoulas@gmail.com"
+      },
+      "license": "MIT",
+      "keywords": [
+        "path",
+        "unix",
+        "windows",
+        "extension",
+        "file extension",
+        "replace extension",
+        "change extension",
+        "trim extension",
+        "add extension",
+        "default extension"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/anodynos/upath.git"
+      },
+      "bugs": {
+        "url": "http://github.com/anodynos/upath/issues",
+        "email": "agelos.pikoulas@gmail.com"
+      },
+      "main": "./build/code/upath.js",
+      "types": "./upath.d.ts",
+      "preferGlobal": false,
+      "scripts": {
+        "test": "grunt",
+        "build": "grunt lib"
+      },
+      "directories": {
+        "doc": "./doc",
+        "dist": "./build"
+      },
+      "engines": {
+        "node": ">=4",
+        "yarn": ">=1"
+      },
+      "devDependencies": {
+        "chai": "~4.0.2",
+        "coffee-script": "1.12.6",
+        "grunt": "0.4.5",
+        "grunt-contrib-watch": "~1.0.0",
+        "grunt-urequire": "0.7.x",
+        "lodash": "^4.17.4",
+        "mocha": "~3.4.2",
+        "uberscore": "0.0.19",
+        "underscore.string": "~3.3.4",
+        "urequire": "0.7.0-beta.33",
+        "urequire-ab-specrunner": "^0.2.5",
+        "urequire-rc-inject-version": "^0.1.6"
+      },
+      "gitHead": "8cbc8538e2e127eede7c891ff350a4d42bd8f4a8",
+      "_id": "upath@1.1.1",
+      "_npmVersion": "6.5.0",
+      "_nodeVersion": "11.8.0",
+      "_npmUser": {
+        "name": "anodynos",
+        "email": "agelos.pikoulas@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "anodynos",
+          "email": "agelos.pikoulas@gmail.com"
+        }
+      ],
+      "dist": {
+        "integrity": "sha512-D0yetkpIOKiZQquxjM2Syvy48Y1DbZ0SWxgsZiwd9GCWRpc75vN8ytzem14WDSg+oiX6+Qt31FpiS/ExODCrLg==",
+        "shasum": "497f7c1090b0818f310bbfb06783586a68d28014",
+        "tarball": "https://registry.npmjs.org/upath/-/upath-1.1.1.tgz",
+        "fileCount": 5,
+        "unpackedSize": 33939,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcgPZ1CRA9TVsSAnZWagAAhKkP/2yweS1mn17+S+BQYAsF\nt30FP3g3FwNWdR3fKzf328+tWvR6cv4w/Mqzlyodw3TN7nYkzG/r73sTcFUV\nFCUBa6gby59SJakMIG7mJ3WNv41TlEgRt8BpVH0YdmNDhEYjfvl46/RJH3US\n4ps4w1tbc0K8qQzwl2fpj62AGQhaFz2YhhL6Z/tPUq3HKJTcY7MN1oH3pbML\nZOQuKt9F5Co7pIRPiwwbZzPet6HIJD1WRNurQQtV5iFHXlsGGL0d93a64TXa\n1BxWGIalCxLUxPCqLAeldO2mFFqigqX4FZ942KqV5wyAbWso/aBHLTSmNzKK\nCZKT99HXlUlQgl37UqaTsN64HN0eT62L4aLOeE+4WUstn6/bfSUu+zssWUj/\n6vip/Yv2m187gHrcN1BoO4IsFqK4CZOVZ2iDHOhux73wyINFrKjr47JH2oPM\nMmcF7YxiUHq19Nex0RwBWeG4N8IJDpI6T7S4cQQwwsF+cLKg/469wbvFnIZG\nJkP0AZohNclOBcKVAewckqHct5QZKTLreUkIp+fyc7BIAP31AdxLERzdHVLp\nEs9GLzkG+XSlstbIDA7vpSeVFZ075RTa1qw3/NYfKRk4VTBZnfonyDpjOvVa\ntWC7EwcYHEelrqcgRHiUZCisehe0IlISgXAyyXJmFS00G7DFqmc350TbqoiW\nvjcd\r\n=I66C\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/upath_1.1.1_1551955572495_0.18914717102935752"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.1.2": {
+      "name": "upath",
+      "description": "A proxy to `path`, replacing `\\` with `/` for all results & new methods to normalize & join keeping leading `./` and add, change, default, trim file extensions.",
+      "version": "1.1.2",
+      "homepage": "http://github.com/anodynos/upath/",
+      "author": {
+        "name": "Angelos Pikoulas",
+        "email": "agelos.pikoulas@gmail.com"
+      },
+      "license": "MIT",
+      "keywords": [
+        "path",
+        "unix",
+        "windows",
+        "extension",
+        "file extension",
+        "replace extension",
+        "change extension",
+        "trim extension",
+        "add extension",
+        "default extension"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/anodynos/upath.git"
+      },
+      "bugs": {
+        "url": "http://github.com/anodynos/upath/issues",
+        "email": "agelos.pikoulas@gmail.com"
+      },
+      "main": "./build/code/upath.js",
+      "types": "./upath.d.ts",
+      "preferGlobal": false,
+      "scripts": {
+        "test": "grunt",
+        "build": "grunt lib"
+      },
+      "directories": {
+        "doc": "./doc",
+        "dist": "./build"
+      },
+      "engines": {
+        "node": ">=4",
+        "yarn": "*"
+      },
+      "devDependencies": {
+        "chai": "~4.0.2",
+        "coffee-script": "1.12.6",
+        "grunt": "0.4.5",
+        "grunt-contrib-watch": "~1.0.0",
+        "grunt-urequire": "0.7.x",
+        "lodash": "^4.17.4",
+        "mocha": "~3.4.2",
+        "uberscore": "0.0.19",
+        "underscore.string": "~3.3.4",
+        "urequire": "0.7.0-beta.33",
+        "urequire-ab-specrunner": "^0.2.5",
+        "urequire-rc-inject-version": "^0.1.6"
+      },
+      "gitHead": "611e9861a4f5411e28123e43bcdc4c8cbd264819",
+      "_id": "upath@1.1.2",
+      "_npmVersion": "6.5.0",
+      "_nodeVersion": "11.8.0",
+      "_npmUser": {
+        "name": "anodynos",
+        "email": "agelos.pikoulas@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "anodynos",
+          "email": "agelos.pikoulas@gmail.com"
+        }
+      ],
+      "dist": {
+        "integrity": "sha512-kXpym8nmDmlCBr7nKdIx8P2jNBa+pBpIUFRnKJ4dr8htyYGJFokkr2ZvERRtUN+9SY+JqXouNgUPtv6JQva/2Q==",
+        "shasum": "3db658600edaeeccbe6db5e684d67ee8c2acd068",
+        "tarball": "https://registry.npmjs.org/upath/-/upath-1.1.2.tgz",
+        "fileCount": 5,
+        "unpackedSize": 33937,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJchlt/CRA9TVsSAnZWagAA3BgP/iAh9ECWWJz3wwVA5rVW\nnI/xr0Tjny30nDwTBLDStq3Gc5cxwnUWZ4EWakUQjKQThYaUtDn6awTBqJ76\nhRM/XpJN9Kxj0SK8NxOcMgSy3p/hnot+7kvJeF5qaAfpikA4xULuNDex6Spf\nWxIkaxHTViwpK9toXDySrb1CyXK59ZGjig5OZz6Z715si8w5crpk2SB49Je1\nMgh4xUGuGB8HJh8CBvkY26jZENZj+NzlDB53fQ9fu3u2Y7URMKekGOwhfJYE\nWGag2SaQBOTy9vspukKfTbBPd5h6p+BosBR7xF0CnUVyE6wPT0NVDUU2Tbzp\ncXBYGCCdgNuOP2/DNUezb4fwxj3paqrJaoqomUNQJGNT+kRkEJiB6KCvcDxt\ngfhLbUxFrmn/Hksz3TCdXtLnTFcompphxjozczKWvKXahs9cEtoLlefTPpW1\npXTmWCQivdvzQ6FiCPk8hcAltzXu305e9mUPCyIPeJvuchfhoA6q8BTeKUFy\nnPLi/1W+2l3YckrwdrCMD+gnEE3l6GgrqMelbutgfr3JGXKh7AJ3JxJiNs50\nZdV7ayb9InombHtwI7934kvYj7D4wD+M4VGzekX1p9NIL4GYV+E/MH7hz7/y\nDgYxeRlPZqFGsRE1b6qByHKANb1Xd9cGWVm+ZZMbE2oCmqDlWa2XXhP8JXxB\npnE8\r\n=Y6le\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/upath_1.1.2_1552309119040_0.3862582480498318"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.2.0": {
+      "name": "upath",
+      "description": "A proxy to `path`, replacing `\\` with `/` for all results & new methods to normalize & join keeping leading `./` and add, change, default, trim file extensions.",
+      "version": "1.2.0",
+      "homepage": "http://github.com/anodynos/upath/",
+      "author": {
+        "name": "Angelos Pikoulas",
+        "email": "agelos.pikoulas@gmail.com"
+      },
+      "license": "MIT",
+      "keywords": [
+        "path",
+        "unix",
+        "windows",
+        "extension",
+        "file extension",
+        "replace extension",
+        "change extension",
+        "trim extension",
+        "add extension",
+        "default extension"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/anodynos/upath.git"
+      },
+      "bugs": {
+        "url": "http://github.com/anodynos/upath/issues",
+        "email": "agelos.pikoulas@gmail.com"
+      },
+      "main": "./build/code/upath.js",
+      "types": "./upath.d.ts",
+      "preferGlobal": false,
+      "scripts": {
+        "test": "grunt",
+        "build": "grunt lib"
+      },
+      "directories": {
+        "doc": "./doc",
+        "dist": "./build"
+      },
+      "engines": {
+        "node": ">=4",
+        "yarn": "*"
+      },
+      "devDependencies": {
+        "chai": "~4.0.2",
+        "coffee-script": "1.12.6",
+        "grunt": "0.4.5",
+        "grunt-contrib-watch": "^1.1.0",
+        "grunt-urequire": "0.7.x",
+        "lodash": "^4.17.15",
+        "mocha": "~3.4.2",
+        "uberscore": "0.0.19",
+        "underscore.string": "^3.3.5",
+        "urequire": "0.7.0-beta.33",
+        "urequire-ab-specrunner": "^0.2.5",
+        "urequire-rc-inject-version": "^0.1.6"
+      },
+      "gitHead": "48138967b05a828abcb626f83fcf6795fa0bf405",
+      "_id": "upath@1.2.0",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.14.2",
+      "_npmUser": {
+        "name": "anodynos",
+        "email": "agelos.pikoulas@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "anodynos",
+          "email": "agelos.pikoulas@gmail.com"
+        }
+      ],
+      "dist": {
+        "integrity": "sha512-aZwGpamFO61g3OlfT7OQCHqhGnW43ieH9WZeP7QxN/G/jS4jfqUkZxoryvJgVPEcrl5NL/ggHsSmLMHuH64Lhg==",
+        "shasum": "8f66dbcd55a883acdae4408af8b035a5044c1894",
+        "tarball": "https://registry.npmjs.org/upath/-/upath-1.2.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 34250,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdbX6wCRA9TVsSAnZWagAAU9sP/jnoeR6l+2uqYUBsremU\nXjhxv+U015g9ycp7YVPNR+dO8O4jepBzchhBLeB1bPoP432Gm4Z04XJaT158\njiAUAFrWu5ccyz2kr2dl1Ycj/U0QtCwalcgkTJvU1hsSIZQPO/8Lculz8jID\nXl/LG1lWoI9oFlnXuRUtimjMeqfAUAoysMc+CcfeAji8mCKkxKYL6cRq03DH\njzO0j/uWodld8vl8RVgl4BlaEfrIuXeSnlIPMjvgoDzYwvxOCtE3uZzn3J8E\nGowIHXyz7iB3OQZBf0+Q0BOoJcdZWALut28U/0Q0ojiyBtnUP5hO0j8rovHx\nQxd9DWO9W0ugxzeeeKWPSMLrui9YtLf3ADuoFnbhyfE3I98Qzmf21jIj5E35\nywEre0NfRtv8SxyUrpeh+vs0ZRizvw2ePi0JiOi91IGL22JRx50Qy0Xxwrci\nJSnvwWkWqmx6dUB1pHV3zGwtleurpocfW7/HPdZOBoKMbH8s/Ih4UNVFse3A\nhd/Z4WLKz4UahSrGBR2NhlzsOaVTJXJg850271scDjSMJ9bmUEwky9nIa/Jy\nT+SKIVbW0JDXxRBqcEpyExxRh6B3PKui5AHO4PukGP81ZxX3zJAdzB2RF1jF\n8MLiZW2k/KbPu8Fc+oKuqJBdDJwGkqY8TBZ2Sny8fMxreq0yvOr7Txmedg7f\ne45Y\r\n=Y6jJ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/upath_1.2.0_1567456943891_0.766137715814621"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.0": {
+      "name": "upath",
+      "description": "A proxy to `path`, replacing `\\` with `/` for all results (supports UNC paths) & new methods to normalize & join keeping leading `./` and add, change, default, trim file extensions.",
+      "version": "2.0.0",
+      "homepage": "http://github.com/anodynos/upath/",
+      "author": {
+        "name": "Angelos Pikoulas",
+        "email": "agelos.pikoulas@gmail.com"
+      },
+      "license": "MIT",
+      "keywords": [
+        "path",
+        "unix",
+        "windows",
+        "extension",
+        "file extension",
+        "replace extension",
+        "change extension",
+        "trim extension",
+        "add extension",
+        "default extension",
+        "UNC paths"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/anodynos/upath.git"
+      },
+      "bugs": {
+        "url": "http://github.com/anodynos/upath/issues",
+        "email": "agelos.pikoulas@gmail.com"
+      },
+      "main": "./build/code/upath.js",
+      "types": "./upath.d.ts",
+      "preferGlobal": false,
+      "scripts": {
+        "test": "npx grunt",
+        "build": "npx grunt lib"
+      },
+      "directories": {
+        "doc": "./doc",
+        "dist": "./build"
+      },
+      "engines": {
+        "node": ">=4",
+        "yarn": "*"
+      },
+      "devDependencies": {
+        "chai": "~4.0.2",
+        "coffee-script": "1.12.6",
+        "grunt": "0.4.5",
+        "grunt-contrib-watch": "^1.1.0",
+        "grunt-urequire": "0.7.x",
+        "lodash": "^4.17.20",
+        "mocha": "~3.4.2",
+        "uberscore": "0.0.19",
+        "underscore.string": "^3.3.5",
+        "urequire": "0.7.0-beta.33",
+        "urequire-ab-specrunner": "^0.2.5",
+        "urequire-rc-inject-version": "^0.1.6"
+      },
+      "gitHead": "6d71bca2b3dc1a9972158906cfe22477531a4776",
+      "_id": "upath@2.0.0",
+      "_nodeVersion": "12.16.3",
+      "_npmVersion": "6.14.5",
+      "_npmUser": {
+        "name": "anodynos",
+        "email": "agelos.pikoulas@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "anodynos",
+          "email": "agelos.pikoulas@gmail.com"
+        }
+      ],
+      "dist": {
+        "integrity": "sha512-ghi1XxsVYPOZPDsOZrfOJIwQU5I3JVYB3Q6IbBGn1KFeOa89i0nUy5tCEkY9pVm83U83qZ1QG40RQKGknllV4w==",
+        "shasum": "7234f3c1e7fd2bcb4f6aaba3e5565ee13ce6d287",
+        "tarball": "https://registry.npmjs.org/upath/-/upath-2.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 36731,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJffLQyCRA9TVsSAnZWagAA8osP/2f8GcngYjckypwVf1ki\nE5YA4p5rsEBm4WxVnJblq/9h4fB5oFNR4LB9w2e4GX2cNbXaSFH/HNDq7H8x\nA9Sg2vQXN/ERVAqZef8Rf7pkzeSuVaET5WmU98j4W7CwyVTfxW7/nzGp925u\nUaS9lAFtZrPKZ+psxr8BkB0m/h+dRxUFVOqwLzzYL2vS4wo8qMgF+HvnGFhl\nLiyHyNr4p7eQFBrER4dkpOPfmYheU3k/FJJOBkvMMU7rFydqNBgLMzclFkg7\nfvbuwi7TwacAOLV9fBCmuMXNdUvOTDkn153AoZiIvKtBNK1A95OkCDI4urT4\nMRQruluZ+JL7bYVbbNa+kL9dR7XgBpGV3vNu87tyX56cf4D/saii5pilZKuH\nvQPwV3ijZmOrJdrVhiWk7ZYZSIZ9KrKPBOoaV0QxWfT5vFOZod+/BQS0/O0y\nO9f8zdW+Bny5zafy3YT+wDQa9CQsGKlazj+Dg5vv0ur/8EzTc1+I1gYqHXam\nFXUt8/aymSyY7GLnPa03CRMgyTxLz3luumLRjdFzIw9C+hA5jhINQXZ3R/zT\nO4E5VgUrd1qLk8BGNPigrFIdB+vDohptcnuTFJhaRCgC7LNRm6gRLGNv0/Gd\ns+zhv5Fbq1aInoFFJZn+NjNsfbB79+2FIhYALnKhatxhqxRk2Y9AlFI7gWQX\nHJIN\r\n=Wsd1\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/upath_2.0.0_1602008114576_0.49612663397823287"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.1": {
+      "name": "upath",
+      "description": "A proxy to `path`, replacing `\\` with `/` for all results (supports UNC paths) & new methods to normalize & join keeping leading `./` and add, change, default, trim file extensions.",
+      "version": "2.0.1",
+      "homepage": "http://github.com/anodynos/upath/",
+      "author": {
+        "name": "Angelos Pikoulas",
+        "email": "agelos.pikoulas@gmail.com"
+      },
+      "license": "MIT",
+      "keywords": [
+        "path",
+        "unix",
+        "windows",
+        "extension",
+        "file extension",
+        "replace extension",
+        "change extension",
+        "trim extension",
+        "add extension",
+        "default extension",
+        "UNC paths"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/anodynos/upath.git"
+      },
+      "bugs": {
+        "url": "http://github.com/anodynos/upath/issues",
+        "email": "agelos.pikoulas@gmail.com"
+      },
+      "main": "./build/code/upath.js",
+      "types": "./upath.d.ts",
+      "preferGlobal": false,
+      "scripts": {
+        "test": "npx grunt",
+        "build": "npx grunt lib"
+      },
+      "directories": {
+        "doc": "./doc",
+        "dist": "./build"
+      },
+      "engines": {
+        "node": ">=4",
+        "yarn": "*"
+      },
+      "devDependencies": {
+        "chai": "~4.0.2",
+        "coffee-script": "1.12.6",
+        "grunt": "0.4.5",
+        "grunt-contrib-watch": "^1.1.0",
+        "grunt-urequire": "0.7.x",
+        "lodash": "^4.17.20",
+        "mocha": "~3.4.2",
+        "uberscore": "0.0.19",
+        "underscore.string": "^3.3.5",
+        "urequire": "0.7.0-beta.33",
+        "urequire-ab-specrunner": "^0.2.5",
+        "urequire-rc-inject-version": "^0.1.6"
+      },
+      "gitHead": "04a89182fd2029365876e44896f828182369618f",
+      "_id": "upath@2.0.1",
+      "_nodeVersion": "12.16.3",
+      "_npmVersion": "6.14.5",
+      "_npmUser": {
+        "name": "anodynos",
+        "email": "agelos.pikoulas@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "anodynos",
+          "email": "agelos.pikoulas@gmail.com"
+        }
+      ],
+      "dist": {
+        "integrity": "sha512-1uEe95xksV1O0CYKXo8vQvN1JEbtJp7lb7C5U9HMsIp6IVwntkH/oNUzyVNQSd4S1sYk2FpSSW44FqMc8qee5w==",
+        "shasum": "50c73dea68d6f6b990f51d279ce6081665d61a8b",
+        "tarball": "https://registry.npmjs.org/upath/-/upath-2.0.1.tgz",
+        "fileCount": 5,
+        "unpackedSize": 36733,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfptLuCRA9TVsSAnZWagAABwoP/iHAlLEgwmZlPREjBfwt\nf0beWKwvOTYptE5bDgkxblXU65+L7aWotxdxeSkCEaD71JO70eihdOxQrrQo\nK4p6eD7WnlEmvSHup2wlUWDR3A/xcW3TBQrSqoHaY/+6P1YVdtJR7I+F4BEi\nAwbdCTQ8REJBoW8soS6P+vVdxgBhi2745CdVKeOv+y+GV1IynL2OUvmIvG1y\nkYTZYRDCrjHzgq9pKJgheLb2sbl9MhY248xAf+Jyiw8TYCJmNVvvkfNbqkrQ\nxyWQQi72ACUUZbJVanMU5Tm5OlWTgazNqOhyLXKhmT/xstXqKDlGP0b+QOOf\nnyjCaMt43HNCoGHkS0VIBudvczvgYh+fofWuH+aW+sSrCaY/xbhmMS9jPMku\n5tpc2PTAt3OMyQGZ3DpyzsFflmJ9nfEQiFdDQAVqHhGANNBSYe7ZWEGadtWi\nt9yrND9MgvMoecpylQqOFPMtJcZAmj3t0tGxGAvNoHuOX7pF4lbWd4bI8lVq\n/GJ9Hr7s1YQUGGQ8FQNpG0l70qqnDPfwzDAQgV9yVcAm5Av86w8WC/FaHbXU\ndt/4MBxHBEYFv6EDVxUVQzYvh06PxQ/WFEg8yuplEWZy//9VbuQJnon5FIgs\nERFgQKK0cyRlUcCLkjOexk3l3APoJ+McU5s+CujGp6AELcMszEbE0QZIUYuE\nRBJo\r\n=C/BT\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/upath_2.0.1_1604768493989_0.6257685547230398"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# upath v2.0.1\n\n[![Build Status](https://travis-ci.org/anodynos/upath.svg?branch=master)](https://travis-ci.org/anodynos/upath)\n[![Up to date Status](https://david-dm.org/anodynos/upath.png)](https://david-dm.org/anodynos/upath)\n\nA drop-in replacement / proxy to nodejs's `path` that:\n\n  * Replaces the windows `\\` with the unix `/` in all string params & results. This has significant positives - see below.\n\n  * Adds **filename extensions** functions `addExt`, `trimExt`, `removeExt`, `changeExt`, and `defaultExt`.\n\n  * Add a `normalizeSafe` function to preserve any meaningful leading `./` & a `normalizeTrim` which additionally trims any useless ending `/`.\n\n  * Plus a helper `toUnix` that simply converts `\\` to `/` and consolidates duplicates.\n\n**Useful note: these docs are actually auto generated from [specs](https://github.com/anodynos/upath/blob/master/source/spec/upath-spec.coffee), running on Linux.**\n\nNotes:\n\n * `upath.sep` is set to `'/'` for seamless replacement (as of 1.0.3).\n\n * upath has no runtime dependencies, except built-in `path` (as of 1.0.4)\n\n * travis-ci tested in node versions 8 to 14 (on linux)\n\n * Also tested on Windows / node@12.18.0 (without CI)  \n\nHistory brief:\n\n * 1.x   : Initial release and various features / fixes\n\n * 2.0.0 : Adding UNC paths support - see https://github.com/anodynos/upath/pull/38\n\n## Why ?\n\nNormal `path` doesn't convert paths to a unified format (ie `/`) before calculating paths (`normalize`, `join`), which can lead to numerous problems.\nAlso path joining, normalization etc on the two formats is not consistent, depending on where it runs. Running `path` on Windows yields different results than when it runs on Linux / Mac.\n\nIn general, if you code your paths logic while developing on Unix/Mac and it runs on Windows, you may run into problems when using `path`.\n\nNote that using **Unix `/` on Windows** works perfectly inside nodejs (and other languages), so there's no reason to stick to the Windows legacy at all.\n\n##### Examples / specs\n        \n\nCheck out the different (improved) behavior to vanilla `path`:\n\n    `upath.normalize(path)`        --returns-->\n\n          ✓ `'c:/windows/nodejs/path'`         --->      `'c:/windows/nodejs/path'`  // equal to `path.normalize()`\n          ✓ `'c:/windows/../nodejs/path'`      --->              `'c:/nodejs/path'`  // equal to `path.normalize()`\n          ✓ `'c:\\\\windows\\\\nodejs\\\\path'`      --->      `'c:/windows/nodejs/path'`  // `path.normalize()` gives `'c:\\windows\\nodejs\\path'`\n          ✓ `'c:\\\\windows\\\\..\\\\nodejs\\\\path'`  --->              `'c:/nodejs/path'`  // `path.normalize()` gives `'c:\\windows\\..\\nodejs\\path'`\n          ✓ `'/windows\\\\unix/mixed'`           --->         `'/windows/unix/mixed'`  // `path.normalize()` gives `'/windows\\unix/mixed'`\n          ✓ `'\\\\windows//unix/mixed'`          --->         `'/windows/unix/mixed'`  // `path.normalize()` gives `'\\windows/unix/mixed'`\n          ✓ `'\\\\windows\\\\..\\\\unix/mixed/'`     --->                `'/unix/mixed/'`  // `path.normalize()` gives `'\\windows\\..\\unix/mixed/'`\n        \n\nJoining paths can also be a problem:\n\n    `upath.join(paths...)`        --returns-->\n\n          ✓ `'some/nodejs/deep', '../path'`       --->       `'some/nodejs/path'`  // equal to `path.join()`\n          ✓ `'some/nodejs\\\\windows', '../path'`   --->       `'some/nodejs/path'`  // `path.join()` gives `'some/path'`\n          ✓ `'some\\\\windows\\\\only', '..\\\\path'`   --->      `'some/windows/path'`  // `path.join()` gives `'some\\windows\\only/..\\path'`\n        \n\nParsing with `path.parse()` should also be consistent across OSes:\n\n  `upath.parse(path)`        --returns-->\n\n          ✓ `'c:\\Windows\\Directory\\somefile.ext'`      ---> `{ root: '', dir: 'c:/Windows/Directory', base: 'somefile.ext', ext: '.ext', name: 'somefile'\n}`\n                                    // `path.parse()` gives `'{ root: '', dir: '', base: 'c:\\\\Windows\\\\Directory\\\\somefile.ext', ext: '.ext', name: 'c:\\\\Windows\\\\Directory\\\\somefile'\n}'`\n          ✓ `'/root/of/unix/somefile.ext'`             ---> `{ root: '/', dir: '/root/of/unix', base: 'somefile.ext', ext: '.ext', name: 'somefile'\n}`  // equal to `path.parse()`\n    \n\n## Added functions\n      \n\n#### `upath.toUnix(path)`\n\nJust converts all `` to `/` and consolidates duplicates, without performing any normalization.\n\n##### Examples / specs\n\n    `upath.toUnix(path)`        --returns-->\n\n        ✓ `'.//windows\\//unix//mixed////'`      --->         `'./windows/unix/mixed/'`\n        ✓ `'..///windows\\..\\\\unix/mixed'`       --->      `'../windows/../unix/mixed'`\n      \n\n#### `upath.normalizeSafe(path)`\n\nExactly like `path.normalize(path)`, but it keeps the first meaningful `./` or `//`.\n\nNote that the unix `/` is returned everywhere, so windows `\\` is always converted to unix `/`.\n\n##### Examples / specs & how it differs from vanilla `path`\n\n    `upath.normalizeSafe(path)`        --returns-->\n\n        ✓ `''`                               --->                              `'.'`  // equal to `path.normalize()`\n        ✓ `'.'`                              --->                              `'.'`  // equal to `path.normalize()`\n        ✓ `'./'`                             --->                             `'./'`  // equal to `path.normalize()`\n        ✓ `'.//'`                            --->                             `'./'`  // equal to `path.normalize()`\n        ✓ `'.\\\\'`                            --->                             `'./'`  // `path.normalize()` gives `'.\\'`\n        ✓ `'.\\\\//'`                          --->                             `'./'`  // `path.normalize()` gives `'.\\/'`\n        ✓ `'./..'`                           --->                             `'..'`  // equal to `path.normalize()`\n        ✓ `'.//..'`                          --->                             `'..'`  // equal to `path.normalize()`\n        ✓ `'./../'`                          --->                            `'../'`  // equal to `path.normalize()`\n        ✓ `'.\\\\..\\\\'`                        --->                            `'../'`  // `path.normalize()` gives `'.\\..\\'`\n        ✓ `'./../dep'`                       --->                         `'../dep'`  // equal to `path.normalize()`\n        ✓ `'../dep'`                         --->                         `'../dep'`  // equal to `path.normalize()`\n        ✓ `'../path/dep'`                    --->                    `'../path/dep'`  // equal to `path.normalize()`\n        ✓ `'../path/../dep'`                 --->                         `'../dep'`  // equal to `path.normalize()`\n        ✓ `'dep'`                            --->                            `'dep'`  // equal to `path.normalize()`\n        ✓ `'path//dep'`                      --->                       `'path/dep'`  // equal to `path.normalize()`\n        ✓ `'./dep'`                          --->                          `'./dep'`  // `path.normalize()` gives `'dep'`\n        ✓ `'./path/dep'`                     --->                     `'./path/dep'`  // `path.normalize()` gives `'path/dep'`\n        ✓ `'./path/../dep'`                  --->                          `'./dep'`  // `path.normalize()` gives `'dep'`\n        ✓ `'.//windows\\\\unix/mixed/'`        --->          `'./windows/unix/mixed/'`  // `path.normalize()` gives `'windows\\unix/mixed/'`\n        ✓ `'..//windows\\\\unix/mixed'`        --->          `'../windows/unix/mixed'`  // `path.normalize()` gives `'../windows\\unix/mixed'`\n        ✓ `'windows\\\\unix/mixed/'`           --->            `'windows/unix/mixed/'`  // `path.normalize()` gives `'windows\\unix/mixed/'`\n        ✓ `'..//windows\\\\..\\\\unix/mixed'`    --->                  `'../unix/mixed'`  // `path.normalize()` gives `'../windows\\..\\unix/mixed'`\n        ✓ `'\\\\\\\\server\\\\share\\\\file'`        --->            `'//server/share/file'`  // `path.normalize()` gives `'\\\\server\\share\\file'`\n        ✓ `'//server/share/file'`            --->            `'//server/share/file'`  // `path.normalize()` gives `'/server/share/file'`\n        ✓ `'\\\\\\\\?\\\\UNC\\\\server\\\\share\\\\file'` --->      `'//?/UNC/server/share/file'`  // `path.normalize()` gives `'\\\\?\\UNC\\server\\share\\file'`\n        ✓ `'\\\\\\\\LOCALHOST\\\\c$\\\\temp\\\\file'`  --->       `'//LOCALHOST/c$/temp/file'`  // `path.normalize()` gives `'\\\\LOCALHOST\\c$\\temp\\file'`\n        ✓ `'\\\\\\\\?\\\\c:\\\\temp\\\\file'`          --->               `'//?/c:/temp/file'`  // `path.normalize()` gives `'\\\\?\\c:\\temp\\file'`\n        ✓ `'\\\\\\\\.\\\\c:\\\\temp\\\\file'`          --->               `'//./c:/temp/file'`  // `path.normalize()` gives `'\\\\.\\c:\\temp\\file'`\n        ✓ `'//./c:/temp/file'`               --->               `'//./c:/temp/file'`  // `path.normalize()` gives `'/c:/temp/file'`\n        ✓ `'////\\\\.\\\\c:/temp\\\\//file'`       --->               `'//./c:/temp/file'`  // `path.normalize()` gives `'/\\.\\c:/temp\\/file'`\n      \n\n#### `upath.normalizeTrim(path)`\n\nExactly like `path.normalizeSafe(path)`, but it trims any useless ending `/`.\n\n##### Examples / specs\n\n    `upath.normalizeTrim(path)`        --returns-->\n\n        ✓ `'./'`                          --->                         `'.'`  // `upath.normalizeSafe()` gives `'./'`\n        ✓ `'./../'`                       --->                        `'..'`  // `upath.normalizeSafe()` gives `'../'`\n        ✓ `'./../dep/'`                   --->                    `'../dep'`  // `upath.normalizeSafe()` gives `'../dep/'`\n        ✓ `'path//dep\\\\'`                 --->                  `'path/dep'`  // `upath.normalizeSafe()` gives `'path/dep/'`\n        ✓ `'.//windows\\\\unix/mixed/'`     --->      `'./windows/unix/mixed'`  // `upath.normalizeSafe()` gives `'./windows/unix/mixed/'`\n      \n\n#### `upath.joinSafe([path1][, path2][, ...])`\n\nExactly like `path.join()`, but it keeps the first meaningful `./` or `//`.\n\nNote that the unix `/` is returned everywhere, so windows `\\` is always converted to unix `/`.\n\n##### Examples / specs & how it differs from vanilla `path`\n\n    `upath.joinSafe(path)`        --returns-->\n\n        ✓ `'some/nodejs/deep', '../path'`                --->           `'some/nodejs/path'`  // equal to `path.join()`\n        ✓ `'./some/local/unix/', '../path'`              --->          `'./some/local/path'`  // `path.join()` gives `'some/local/path'`\n        ✓ `'./some\\\\current\\\\mixed', '..\\\\path'`         --->        `'./some/current/path'`  // `path.join()` gives `'some\\current\\mixed/..\\path'`\n        ✓ `'../some/relative/destination', '..\\\\path'`   --->      `'../some/relative/path'`  // `path.join()` gives `'../some/relative/destination/..\\path'`\n        ✓ `'\\\\\\\\server\\\\share\\\\file', '..\\\\path'`        --->        `'//server/share/path'`  // `path.join()` gives `'\\\\server\\share\\file/..\\path'`\n        ✓ `'\\\\\\\\.\\\\c:\\\\temp\\\\file', '..\\\\path'`          --->           `'//./c:/temp/path'`  // `path.join()` gives `'\\\\.\\c:\\temp\\file/..\\path'`\n        ✓ `'//server/share/file', '../path'`             --->        `'//server/share/path'`  // `path.join()` gives `'/server/share/path'`\n        ✓ `'//./c:/temp/file', '../path'`                --->           `'//./c:/temp/path'`  // `path.join()` gives `'/c:/temp/path'`\n    \n\n## Added functions for *filename extension* manipulation.\n\n**Happy notes:**\n\n  In all functions you can:\n\n  * use both `.ext` & `ext` - the dot `.` on the extension is always adjusted correctly.\n\n  * omit the `ext` param (pass null/undefined/empty string) and the common sense thing will happen.\n\n  * ignore specific extensions from being considered as valid ones (eg `.min`, `.dev` `.aLongExtIsNotAnExt` etc), hence no trimming or replacement takes place on them.\n\n       \n\n#### `upath.addExt(filename, [ext])`\n\nAdds `.ext` to `filename`, but only if it doesn't already have the exact extension.\n\n##### Examples / specs\n\n    `upath.addExt(filename, 'js')`     --returns-->\n\n        ✓ `'myfile/addExt'`           --->           `'myfile/addExt.js'`\n        ✓ `'myfile/addExt.txt'`       --->       `'myfile/addExt.txt.js'`\n        ✓ `'myfile/addExt.js'`        --->           `'myfile/addExt.js'`\n        ✓ `'myfile/addExt.min.'`      --->      `'myfile/addExt.min..js'`\n        \n\nIt adds nothing if no `ext` param is passed.\n\n    `upath.addExt(filename)`           --returns-->\n\n          ✓ `'myfile/addExt'`           --->              `'myfile/addExt'`\n          ✓ `'myfile/addExt.txt'`       --->          `'myfile/addExt.txt'`\n          ✓ `'myfile/addExt.js'`        --->           `'myfile/addExt.js'`\n          ✓ `'myfile/addExt.min.'`      --->         `'myfile/addExt.min.'`\n      \n\n#### `upath.trimExt(filename, [ignoreExts], [maxSize=7])`\n\nTrims a filename's extension.\n\n  * Extensions are considered to be up to `maxSize` chars long, counting the dot (defaults to 7).\n\n  * An `Array` of `ignoreExts` (eg `['.min']`) prevents these from being considered as extension, thus are not trimmed.\n\n##### Examples / specs\n\n    `upath.trimExt(filename)`          --returns-->\n\n        ✓ `'my/trimedExt.txt'`             --->                 `'my/trimedExt'`\n        ✓ `'my/trimedExt'`                 --->                 `'my/trimedExt'`\n        ✓ `'my/trimedExt.min'`             --->                 `'my/trimedExt'`\n        ✓ `'my/trimedExt.min.js'`          --->             `'my/trimedExt.min'`\n        ✓ `'../my/trimedExt.longExt'`      --->      `'../my/trimedExt.longExt'`\n        \n\nIt is ignoring `.min` & `.dev` as extensions, and considers exts with up to 8 chars.\n\n    `upath.trimExt(filename, ['min', '.dev'], 8)`          --returns-->\n\n          ✓ `'my/trimedExt.txt'`              --->                  `'my/trimedExt'`\n          ✓ `'my/trimedExt.min'`              --->              `'my/trimedExt.min'`\n          ✓ `'my/trimedExt.dev'`              --->              `'my/trimedExt.dev'`\n          ✓ `'../my/trimedExt.longExt'`       --->               `'../my/trimedExt'`\n          ✓ `'../my/trimedExt.longRExt'`      --->      `'../my/trimedExt.longRExt'`\n      \n\n#### `upath.removeExt(filename, ext)`\n\nRemoves the specific `ext` extension from filename, if it has it. Otherwise it leaves it as is.\nAs in all upath functions, it be `.ext` or `ext`.\n\n##### Examples / specs\n\n    `upath.removeExt(filename, '.js')`          --returns-->\n\n        ✓ `'removedExt.js'`          --->          `'removedExt'`\n        ✓ `'removedExt.txt.js'`      --->      `'removedExt.txt'`\n        ✓ `'notRemoved.txt'`         --->      `'notRemoved.txt'`\n      \n\nIt does not care about the length of exts.\n\n    `upath.removeExt(filename, '.longExt')`          --returns-->\n\n        ✓ `'removedExt.longExt'`          --->          `'removedExt'`\n        ✓ `'removedExt.txt.longExt'`      --->      `'removedExt.txt'`\n        ✓ `'notRemoved.txt'`              --->      `'notRemoved.txt'`\n      \n\n#### `upath.changeExt(filename, [ext], [ignoreExts], [maxSize=7])`\n\nChanges a filename's extension to `ext`. If it has no (valid) extension, it adds it.\n\n  * Valid extensions are considered to be up to `maxSize` chars long, counting the dot (defaults to 7).\n\n  * An `Array` of `ignoreExts` (eg `['.min']`) prevents these from being considered as extension, thus are not changed - the new extension is added instead.\n\n##### Examples / specs\n\n    `upath.changeExt(filename, '.js')`  --returns-->\n\n        ✓ `'my/module.min'`            --->                `'my/module.js'`\n        ✓ `'my/module.coffee'`         --->                `'my/module.js'`\n        ✓ `'my/module'`                --->                `'my/module.js'`\n        ✓ `'file/withDot.'`            --->             `'file/withDot.js'`\n        ✓ `'file/change.longExt'`      --->      `'file/change.longExt.js'`\n        \n\nIf no `ext` param is given, it trims the current extension (if any).\n\n    `upath.changeExt(filename)`        --returns-->\n\n          ✓ `'my/module.min'`            --->                   `'my/module'`\n          ✓ `'my/module.coffee'`         --->                   `'my/module'`\n          ✓ `'my/module'`                --->                   `'my/module'`\n          ✓ `'file/withDot.'`            --->                `'file/withDot'`\n          ✓ `'file/change.longExt'`      --->         `'file/change.longExt'`\n        \n\nIt is ignoring `.min` & `.dev` as extensions, and considers exts with up to 8 chars.\n\n    `upath.changeExt(filename, 'js', ['min', '.dev'], 8)`        --returns-->\n\n          ✓ `'my/module.coffee'`          --->                 `'my/module.js'`\n          ✓ `'file/notValidExt.min'`      --->      `'file/notValidExt.min.js'`\n          ✓ `'file/notValidExt.dev'`      --->      `'file/notValidExt.dev.js'`\n          ✓ `'file/change.longExt'`       --->               `'file/change.js'`\n          ✓ `'file/change.longRExt'`      --->      `'file/change.longRExt.js'`\n      \n\n#### `upath.defaultExt(filename, [ext], [ignoreExts], [maxSize=7])`\n\nAdds `.ext` to `filename`, only if it doesn't already have _any_ *old* extension.\n\n  * (Old) extensions are considered to be up to `maxSize` chars long, counting the dot (defaults to 7).\n\n  * An `Array` of `ignoreExts` (eg `['.min']`) will force adding default `.ext` even if one of these is present.\n\n##### Examples / specs\n\n    `upath.defaultExt(filename, 'js')`   --returns-->\n\n        ✓ `'fileWith/defaultExt'`              --->              `'fileWith/defaultExt.js'`\n        ✓ `'fileWith/defaultExt.js'`           --->              `'fileWith/defaultExt.js'`\n        ✓ `'fileWith/defaultExt.min'`          --->             `'fileWith/defaultExt.min'`\n        ✓ `'fileWith/defaultExt.longExt'`      --->      `'fileWith/defaultExt.longExt.js'`\n        \n\nIf no `ext` param is passed, it leaves filename intact.\n\n    `upath.defaultExt(filename)`       --returns-->\n\n          ✓ `'fileWith/defaultExt'`              --->                 `'fileWith/defaultExt'`\n          ✓ `'fileWith/defaultExt.js'`           --->              `'fileWith/defaultExt.js'`\n          ✓ `'fileWith/defaultExt.min'`          --->             `'fileWith/defaultExt.min'`\n          ✓ `'fileWith/defaultExt.longExt'`      --->         `'fileWith/defaultExt.longExt'`\n        \n\nIt is ignoring `.min` & `.dev` as extensions, and considers exts with up to 8 chars.\n\n    `upath.defaultExt(filename, 'js', ['min', '.dev'], 8)` --returns-->\n\n          ✓ `'fileWith/defaultExt'`               --->               `'fileWith/defaultExt.js'`\n          ✓ `'fileWith/defaultExt.min'`           --->           `'fileWith/defaultExt.min.js'`\n          ✓ `'fileWith/defaultExt.dev'`           --->           `'fileWith/defaultExt.dev.js'`\n          ✓ `'fileWith/defaultExt.longExt'`       --->          `'fileWith/defaultExt.longExt'`\n          ✓ `'fileWith/defaultExt.longRext'`      --->      `'fileWith/defaultExt.longRext.js'`\n\n  \nCopyright(c) 2014-2020 Angelos Pikoulas (agelos.pikoulas@gmail.com)\n\nPermission is hereby granted, free of charge, to any person\nobtaining a copy of this software and associated documentation\nfiles (the \"Software\"), to deal in the Software without\nrestriction, including without limitation the rights to use,\ncopy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the\nSoftware is furnished to do so, subject to the following\nconditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES\nOF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT\nHOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,\nWHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING\nFROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR\nOTHER DEALINGS IN THE SOFTWARE.\n",
+  "maintainers": [
+    {
+      "name": "anodynos",
+      "email": "agelos.pikoulas@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-11-07T17:01:36.528Z",
+    "created": "2014-10-29T02:29:05.388Z",
+    "0.1.0": "2014-10-29T02:29:05.388Z",
+    "0.1.1": "2014-10-29T03:16:42.083Z",
+    "0.1.2": "2014-10-29T20:35:51.915Z",
+    "0.1.3": "2014-10-29T23:38:16.925Z",
+    "0.1.4": "2014-11-08T18:39:33.427Z",
+    "0.1.5": "2014-11-17T22:52:30.607Z",
+    "0.1.6": "2015-08-20T22:41:00.942Z",
+    "0.1.7": "2016-02-22T00:44:17.009Z",
+    "0.2.0": "2016-07-03T00:53:34.833Z",
+    "1.0.0": "2017-02-07T15:47:42.333Z",
+    "1.0.2": "2017-11-13T23:14:39.343Z",
+    "1.0.3": "2018-02-25T23:14:20.642Z",
+    "1.0.4": "2018-02-26T00:13:26.634Z",
+    "1.0.5": "2018-04-27T17:59:11.364Z",
+    "1.1.0": "2018-05-15T21:26:45.945Z",
+    "1.1.1": "2019-03-07T10:46:12.624Z",
+    "1.1.2": "2019-03-11T12:58:39.143Z",
+    "1.2.0": "2019-09-02T20:42:24.075Z",
+    "2.0.0": "2020-10-06T18:15:14.685Z",
+    "2.0.1": "2020-11-07T17:01:34.154Z"
+  },
+  "homepage": "http://github.com/anodynos/upath/",
+  "keywords": [
+    "path",
+    "unix",
+    "windows",
+    "extension",
+    "file extension",
+    "replace extension",
+    "change extension",
+    "trim extension",
+    "add extension",
+    "default extension",
+    "UNC paths"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/anodynos/upath.git"
+  },
+  "author": {
+    "name": "Angelos Pikoulas",
+    "email": "agelos.pikoulas@gmail.com"
+  },
+  "bugs": {
+    "url": "http://github.com/anodynos/upath/issues",
+    "email": "agelos.pikoulas@gmail.com"
+  },
+  "readmeFilename": "readme.md",
+  "users": {
+    "thoroc": true,
+    "n03024735": true,
+    "vonthar": true,
+    "anodynos": true,
+    "rochejul": true,
+    "zand3rs": true
+  },
+  "license": "MIT"
+}

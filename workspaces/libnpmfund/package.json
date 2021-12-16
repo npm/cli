@@ -1,0 +1,56 @@
+{
+  "name": "libnpmfund",
+  "version": "2.0.2",
+  "main": "lib/index.js",
+  "files": [
+    "bin",
+    "lib"
+  ],
+  "description": "Programmatic API for npm fund",
+  "repository": "https://github.com/npm/libnpmfund",
+  "keywords": [
+    "npm",
+    "npmcli",
+    "libnpm",
+    "cli",
+    "git",
+    "fund",
+    "gitfund"
+  ],
+  "author": "GitHub Inc.",
+  "contributors": [
+    {
+      "name": "Ruy Adorno",
+      "url": "https://ruyadorno.com",
+      "twitter": "ruyadorno"
+    }
+  ],
+  "license": "ISC",
+  "scripts": {
+    "eslint": "eslint",
+    "lint": "eslint '**/*.js'",
+    "lintfix": "npm run lint -- --fix",
+    "posttest": "npm run lint",
+    "test": "tap",
+    "snap": "tap",
+    "preversion": "npm test",
+    "postversion": "npm publish",
+    "prepublishOnly": "git push origin --follow-tags",
+    "postlint": "npm-template-check"
+  },
+  "tap": {
+    "check-coverage": true
+  },
+  "devDependencies": {
+    "tap": "^15.0.9"
+  },
+  "dependencies": {
+    "@npmcli/arborist": "^4.0.0"
+  },
+  "engines": {
+    "node": "^12.13.0 || ^14.15.0 || >=16"
+  },
+  "templateOSS": {
+    "version": "2.4.1"
+  }
+}

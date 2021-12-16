@@ -1,0 +1,874 @@
+{
+  "_id": "fresh",
+  "_rev": "45-2ea2e347c7b1853450c8fc132432c64a",
+  "name": "fresh",
+  "description": "HTTP response freshness testing",
+  "dist-tags": {
+    "latest": "0.5.2"
+  },
+  "versions": {
+    "0.0.1": {
+      "name": "fresh",
+      "author": {
+        "name": "TJ Holowaychuk",
+        "email": "tj@vision-media.ca",
+        "url": "http://tjholowaychuk.com"
+      },
+      "description": "HTTP response freshness testing",
+      "version": "0.0.1",
+      "main": "index.js",
+      "dependencies": {},
+      "devDependencies": {
+        "mocha": "*",
+        "should": "*"
+      },
+      "_npmUser": {
+        "name": "tjholowaychuk",
+        "email": "tj@vision-media.ca"
+      },
+      "_id": "fresh@0.0.1",
+      "optionalDependencies": {},
+      "engines": {
+        "node": "*"
+      },
+      "_engineSupported": true,
+      "_npmVersion": "1.1.24",
+      "_nodeVersion": "v0.6.19",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "f98a0a1b9001b6e227fb9c65ff3927bdb7b404fa",
+        "tarball": "https://registry.npmjs.org/fresh/-/fresh-0.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "tjholowaychuk",
+          "email": "tj@vision-media.ca"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.0": {
+      "name": "fresh",
+      "author": {
+        "name": "TJ Holowaychuk",
+        "email": "tj@vision-media.ca",
+        "url": "http://tjholowaychuk.com"
+      },
+      "description": "HTTP response freshness testing",
+      "version": "0.1.0",
+      "main": "index.js",
+      "dependencies": {},
+      "devDependencies": {
+        "mocha": "*",
+        "should": "*"
+      },
+      "_npmUser": {
+        "name": "tjholowaychuk",
+        "email": "tj@vision-media.ca"
+      },
+      "_id": "fresh@0.1.0",
+      "optionalDependencies": {},
+      "engines": {
+        "node": "*"
+      },
+      "_engineSupported": true,
+      "_npmVersion": "1.1.24",
+      "_nodeVersion": "v0.6.19",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "03e4b0178424e4c2d5d19a54d8814cdc97934850",
+        "tarball": "https://registry.npmjs.org/fresh/-/fresh-0.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "tjholowaychuk",
+          "email": "tj@vision-media.ca"
+        }
+      ],
+      "directories": {}
+    },
+    "0.2.0": {
+      "name": "fresh",
+      "author": {
+        "name": "TJ Holowaychuk",
+        "email": "tj@vision-media.ca",
+        "url": "http://tjholowaychuk.com"
+      },
+      "description": "HTTP response freshness testing",
+      "version": "0.2.0",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/visionmedia/node-fresh.git"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "mocha": "*",
+        "should": "*"
+      },
+      "bugs": {
+        "url": "https://github.com/visionmedia/node-fresh/issues"
+      },
+      "_id": "fresh@0.2.0",
+      "dist": {
+        "shasum": "bfd9402cf3df12c4a4c310c79f99a3dde13d34a7",
+        "tarball": "https://registry.npmjs.org/fresh/-/fresh-0.2.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.4",
+      "_npmUser": {
+        "name": "tjholowaychuk",
+        "email": "tj@vision-media.ca"
+      },
+      "maintainers": [
+        {
+          "name": "tjholowaychuk",
+          "email": "tj@vision-media.ca"
+        }
+      ],
+      "directories": {}
+    },
+    "0.2.1": {
+      "name": "fresh",
+      "author": {
+        "name": "TJ Holowaychuk",
+        "email": "tj@vision-media.ca",
+        "url": "http://tjholowaychuk.com"
+      },
+      "description": "HTTP response freshness testing",
+      "version": "0.2.1",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/visionmedia/node-fresh.git"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "mocha": "*",
+        "should": "*"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://github.com/visionmedia/node-fresh/blob/master/Readme.md#license"
+        }
+      ],
+      "bugs": {
+        "url": "https://github.com/visionmedia/node-fresh/issues"
+      },
+      "homepage": "https://github.com/visionmedia/node-fresh",
+      "_id": "fresh@0.2.1",
+      "dist": {
+        "shasum": "13cc0b1f53fe0e6fa6a70c18d52ce3c5c56be066",
+        "tarball": "https://registry.npmjs.org/fresh/-/fresh-0.2.1.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.15",
+      "_npmUser": {
+        "name": "tjholowaychuk",
+        "email": "tj@vision-media.ca"
+      },
+      "maintainers": [
+        {
+          "name": "tjholowaychuk",
+          "email": "tj@vision-media.ca"
+        }
+      ],
+      "directories": {}
+    },
+    "0.2.2": {
+      "name": "fresh",
+      "author": {
+        "name": "TJ Holowaychuk",
+        "email": "tj@vision-media.ca",
+        "url": "http://tjholowaychuk.com"
+      },
+      "description": "HTTP response freshness testing",
+      "version": "0.2.2",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/visionmedia/node-fresh.git"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "mocha": "*",
+        "should": "*"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://github.com/visionmedia/node-fresh/blob/master/Readme.md#license"
+        }
+      ],
+      "bugs": {
+        "url": "https://github.com/visionmedia/node-fresh/issues"
+      },
+      "homepage": "https://github.com/visionmedia/node-fresh",
+      "_id": "fresh@0.2.2",
+      "dist": {
+        "shasum": "9731dcf5678c7faeb44fb903c4f72df55187fa77",
+        "tarball": "https://registry.npmjs.org/fresh/-/fresh-0.2.2.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.15",
+      "_npmUser": {
+        "name": "tjholowaychuk",
+        "email": "tj@vision-media.ca"
+      },
+      "maintainers": [
+        {
+          "name": "tjholowaychuk",
+          "email": "tj@vision-media.ca"
+        }
+      ],
+      "directories": {}
+    },
+    "0.2.3": {
+      "name": "fresh",
+      "author": {
+        "name": "TJ Holowaychuk",
+        "email": "tj@vision-media.ca",
+        "url": "http://tjholowaychuk.com"
+      },
+      "description": "HTTP response freshness testing",
+      "version": "0.2.3",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jshttp/fresh"
+      },
+      "devDependencies": {
+        "istanbul": "0",
+        "mocha": "1",
+        "should": "3"
+      },
+      "license": "MIT",
+      "scripts": {
+        "test": "mocha --reporter spec --require should",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot --require should",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter dot --require should"
+      },
+      "keywords": [
+        "fresh",
+        "http",
+        "conditional",
+        "cache"
+      ],
+      "files": [
+        "index.js"
+      ],
+      "gitHead": "a94cacdf94f85bd6a1e1210c5928e4b0d8518043",
+      "bugs": {
+        "url": "https://github.com/jshttp/fresh/issues"
+      },
+      "homepage": "https://github.com/jshttp/fresh",
+      "_id": "fresh@0.2.3",
+      "_shasum": "2db40d43bc63830f418519380879d6bedde2e845",
+      "_from": ".",
+      "_npmVersion": "1.4.21",
+      "_npmUser": {
+        "name": "jongleberry",
+        "email": "jonathanrichardong@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "tjholowaychuk",
+          "email": "tj@vision-media.ca"
+        },
+        {
+          "name": "jonathanong",
+          "email": "jonathanrichardong@gmail.com"
+        },
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "jongleberry",
+          "email": "jonathanrichardong@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "2db40d43bc63830f418519380879d6bedde2e845",
+        "tarball": "https://registry.npmjs.org/fresh/-/fresh-0.2.3.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.4": {
+      "name": "fresh",
+      "description": "HTTP response freshness testing",
+      "version": "0.2.4",
+      "author": {
+        "name": "TJ Holowaychuk",
+        "email": "tj@vision-media.ca",
+        "url": "http://tjholowaychuk.com"
+      },
+      "license": "MIT",
+      "keywords": [
+        "fresh",
+        "http",
+        "conditional",
+        "cache"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jshttp/fresh"
+      },
+      "devDependencies": {
+        "istanbul": "0",
+        "mocha": "1",
+        "should": "3"
+      },
+      "files": [
+        "HISTORY.md",
+        "LICENSE",
+        "index.js"
+      ],
+      "engines": {
+        "node": ">= 0.6"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec --require should",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot --require should",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter dot --require should"
+      },
+      "gitHead": "8440a4ca75fb091dec06e88654b3b1c31d7e7164",
+      "bugs": {
+        "url": "https://github.com/jshttp/fresh/issues"
+      },
+      "homepage": "https://github.com/jshttp/fresh",
+      "_id": "fresh@0.2.4",
+      "_shasum": "3582499206c9723714190edd74b4604feb4a614c",
+      "_from": ".",
+      "_npmVersion": "1.4.21",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "maintainers": [
+        {
+          "name": "tjholowaychuk",
+          "email": "tj@vision-media.ca"
+        },
+        {
+          "name": "jonathanong",
+          "email": "jonathanrichardong@gmail.com"
+        },
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "jongleberry",
+          "email": "jonathanrichardong@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "3582499206c9723714190edd74b4604feb4a614c",
+        "tarball": "https://registry.npmjs.org/fresh/-/fresh-0.2.4.tgz"
+      },
+      "directories": {}
+    },
+    "0.3.0": {
+      "name": "fresh",
+      "description": "HTTP response freshness testing",
+      "version": "0.3.0",
+      "author": {
+        "name": "TJ Holowaychuk",
+        "email": "tj@vision-media.ca",
+        "url": "http://tjholowaychuk.com"
+      },
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "Jonathan Ong",
+          "email": "me@jongleberry.com",
+          "url": "http://jongleberry.com"
+        }
+      ],
+      "license": "MIT",
+      "keywords": [
+        "fresh",
+        "http",
+        "conditional",
+        "cache"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jshttp/fresh"
+      },
+      "devDependencies": {
+        "istanbul": "0.3.9",
+        "mocha": "1.21.5"
+      },
+      "files": [
+        "HISTORY.md",
+        "LICENSE",
+        "index.js"
+      ],
+      "engines": {
+        "node": ">= 0.6"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec --bail --check-leaks test/",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot --check-leaks test/",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter spec --check-leaks test/"
+      },
+      "gitHead": "14616c9748368ca08cd6a955dd88ab659b778634",
+      "bugs": {
+        "url": "https://github.com/jshttp/fresh/issues"
+      },
+      "homepage": "https://github.com/jshttp/fresh",
+      "_id": "fresh@0.3.0",
+      "_shasum": "651f838e22424e7566de161d8358caa199f83d4f",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "maintainers": [
+        {
+          "name": "tjholowaychuk",
+          "email": "tj@vision-media.ca"
+        },
+        {
+          "name": "jonathanong",
+          "email": "jonathanrichardong@gmail.com"
+        },
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "jongleberry",
+          "email": "jonathanrichardong@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "651f838e22424e7566de161d8358caa199f83d4f",
+        "tarball": "https://registry.npmjs.org/fresh/-/fresh-0.3.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.4.0": {
+      "name": "fresh",
+      "description": "HTTP response freshness testing",
+      "version": "0.4.0",
+      "author": {
+        "name": "TJ Holowaychuk",
+        "email": "tj@vision-media.ca",
+        "url": "http://tjholowaychuk.com"
+      },
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "Jonathan Ong",
+          "email": "me@jongleberry.com",
+          "url": "http://jongleberry.com"
+        }
+      ],
+      "license": "MIT",
+      "keywords": [
+        "fresh",
+        "http",
+        "conditional",
+        "cache"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jshttp/fresh.git"
+      },
+      "devDependencies": {
+        "eslint": "3.15.0",
+        "eslint-config-standard": "6.2.1",
+        "eslint-plugin-promise": "3.4.0",
+        "eslint-plugin-standard": "2.0.1",
+        "istanbul": "0.4.5",
+        "mocha": "1.21.5"
+      },
+      "files": [
+        "HISTORY.md",
+        "LICENSE",
+        "index.js"
+      ],
+      "engines": {
+        "node": ">= 0.6"
+      },
+      "scripts": {
+        "lint": "eslint .",
+        "test": "mocha --reporter spec --bail --check-leaks test/",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot --check-leaks test/",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter spec --check-leaks test/"
+      },
+      "gitHead": "c0af4deba75d95d1f5d56906b7dc45b849cbaa21",
+      "bugs": {
+        "url": "https://github.com/jshttp/fresh/issues"
+      },
+      "homepage": "https://github.com/jshttp/fresh#readme",
+      "_id": "fresh@0.4.0",
+      "_shasum": "475626a934a8d3480b2101a1d6ecef7dafd7c553",
+      "_from": ".",
+      "_npmVersion": "2.15.9",
+      "_nodeVersion": "4.6.0",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "dist": {
+        "shasum": "475626a934a8d3480b2101a1d6ecef7dafd7c553",
+        "tarball": "https://registry.npmjs.org/fresh/-/fresh-0.4.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/fresh-0.4.0.tgz_1486346746830_0.760833503678441"
+      },
+      "directories": {}
+    },
+    "0.5.0": {
+      "name": "fresh",
+      "description": "HTTP response freshness testing",
+      "version": "0.5.0",
+      "author": {
+        "name": "TJ Holowaychuk",
+        "email": "tj@vision-media.ca",
+        "url": "http://tjholowaychuk.com"
+      },
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "Jonathan Ong",
+          "email": "me@jongleberry.com",
+          "url": "http://jongleberry.com"
+        }
+      ],
+      "license": "MIT",
+      "keywords": [
+        "fresh",
+        "http",
+        "conditional",
+        "cache"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jshttp/fresh.git"
+      },
+      "devDependencies": {
+        "eslint": "3.16.0",
+        "eslint-config-standard": "6.2.1",
+        "eslint-plugin-promise": "3.4.2",
+        "eslint-plugin-standard": "2.0.1",
+        "istanbul": "0.4.5",
+        "mocha": "1.21.5"
+      },
+      "files": [
+        "HISTORY.md",
+        "LICENSE",
+        "index.js"
+      ],
+      "engines": {
+        "node": ">= 0.6"
+      },
+      "scripts": {
+        "lint": "eslint .",
+        "test": "mocha --reporter spec --bail --check-leaks test/",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot --check-leaks test/",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter spec --check-leaks test/"
+      },
+      "gitHead": "b1d26abb390d5dd1d9b82f0a5b890ab0ef1fee5c",
+      "bugs": {
+        "url": "https://github.com/jshttp/fresh/issues"
+      },
+      "homepage": "https://github.com/jshttp/fresh#readme",
+      "_id": "fresh@0.5.0",
+      "_shasum": "f474ca5e6a9246d6fd8e0953cfa9b9c805afa78e",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "4.7.3",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "dist": {
+        "shasum": "f474ca5e6a9246d6fd8e0953cfa9b9c805afa78e",
+        "tarball": "https://registry.npmjs.org/fresh/-/fresh-0.5.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/fresh-0.5.0.tgz_1487738798128_0.4817247486207634"
+      },
+      "directories": {}
+    },
+    "0.5.1": {
+      "name": "fresh",
+      "description": "HTTP response freshness testing",
+      "version": "0.5.1",
+      "author": {
+        "name": "TJ Holowaychuk",
+        "email": "tj@vision-media.ca",
+        "url": "http://tjholowaychuk.com"
+      },
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "Jonathan Ong",
+          "email": "me@jongleberry.com",
+          "url": "http://jongleberry.com"
+        }
+      ],
+      "license": "MIT",
+      "keywords": [
+        "fresh",
+        "http",
+        "conditional",
+        "cache"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jshttp/fresh.git"
+      },
+      "devDependencies": {
+        "beautify-benchmark": "0.2.4",
+        "benchmark": "2.1.4",
+        "eslint": "3.19.0",
+        "eslint-config-standard": "10.2.1",
+        "eslint-plugin-import": "2.7.0",
+        "eslint-plugin-markdown": "1.0.0-beta.6",
+        "eslint-plugin-node": "5.1.1",
+        "eslint-plugin-promise": "3.5.0",
+        "eslint-plugin-standard": "3.0.1",
+        "istanbul": "0.4.5",
+        "mocha": "1.21.5"
+      },
+      "files": [
+        "HISTORY.md",
+        "LICENSE",
+        "index.js"
+      ],
+      "engines": {
+        "node": ">= 0.6"
+      },
+      "scripts": {
+        "bench": "node benchmark/index.js",
+        "lint": "eslint --plugin markdown --ext js,md .",
+        "test": "mocha --reporter spec --bail --check-leaks test/",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot --check-leaks test/",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter spec --check-leaks test/"
+      },
+      "gitHead": "e8a4aaffc75b6169a6f57168ac79dee7a7f02c92",
+      "bugs": {
+        "url": "https://github.com/jshttp/fresh/issues"
+      },
+      "homepage": "https://github.com/jshttp/fresh#readme",
+      "_id": "fresh@0.5.1",
+      "_shasum": "c3a08bcec0fcdcc223edf3b23eb327f1f9fcbf5c",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.11.1",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "dist": {
+        "shasum": "c3a08bcec0fcdcc223edf3b23eb327f1f9fcbf5c",
+        "tarball": "https://registry.npmjs.org/fresh/-/fresh-0.5.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/fresh-0.5.1.tgz_1505187168525_0.3156159908976406"
+      },
+      "directories": {}
+    },
+    "0.5.2": {
+      "name": "fresh",
+      "description": "HTTP response freshness testing",
+      "version": "0.5.2",
+      "author": {
+        "name": "TJ Holowaychuk",
+        "email": "tj@vision-media.ca",
+        "url": "http://tjholowaychuk.com"
+      },
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "Jonathan Ong",
+          "email": "me@jongleberry.com",
+          "url": "http://jongleberry.com"
+        }
+      ],
+      "license": "MIT",
+      "keywords": [
+        "fresh",
+        "http",
+        "conditional",
+        "cache"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jshttp/fresh.git"
+      },
+      "devDependencies": {
+        "beautify-benchmark": "0.2.4",
+        "benchmark": "2.1.4",
+        "eslint": "3.19.0",
+        "eslint-config-standard": "10.2.1",
+        "eslint-plugin-import": "2.7.0",
+        "eslint-plugin-markdown": "1.0.0-beta.6",
+        "eslint-plugin-node": "5.1.1",
+        "eslint-plugin-promise": "3.5.0",
+        "eslint-plugin-standard": "3.0.1",
+        "istanbul": "0.4.5",
+        "mocha": "1.21.5"
+      },
+      "files": [
+        "HISTORY.md",
+        "LICENSE",
+        "index.js"
+      ],
+      "engines": {
+        "node": ">= 0.6"
+      },
+      "scripts": {
+        "bench": "node benchmark/index.js",
+        "lint": "eslint --plugin markdown --ext js,md .",
+        "test": "mocha --reporter spec --bail --check-leaks test/",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot --check-leaks test/",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter spec --check-leaks test/"
+      },
+      "gitHead": "02df6303ff260b6b7da0b479f3e42222e8157b47",
+      "bugs": {
+        "url": "https://github.com/jshttp/fresh/issues"
+      },
+      "homepage": "https://github.com/jshttp/fresh#readme",
+      "_id": "fresh@0.5.2",
+      "_shasum": "3d8cadd90d976569fa835ab1f8e4b23a105605a7",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.11.1",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "dist": {
+        "shasum": "3d8cadd90d976569fa835ab1f8e4b23a105605a7",
+        "tarball": "https://registry.npmjs.org/fresh/-/fresh-0.5.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/fresh-0.5.2.tgz_1505365391149_0.7952043106779456"
+      },
+      "directories": {}
+    }
+  },
+  "readme": "# fresh\n\n[![NPM Version][npm-image]][npm-url]\n[![NPM Downloads][downloads-image]][downloads-url]\n[![Node.js Version][node-version-image]][node-version-url]\n[![Build Status][travis-image]][travis-url]\n[![Test Coverage][coveralls-image]][coveralls-url]\n\nHTTP response freshness testing\n\n## Installation\n\nThis is a [Node.js](https://nodejs.org/en/) module available through the\n[npm registry](https://www.npmjs.com/). Installation is done using the\n[`npm install` command](https://docs.npmjs.com/getting-started/installing-npm-packages-locally):\n\n```\n$ npm install fresh\n```\n\n## API\n\n<!-- eslint-disable no-unused-vars -->\n\n```js\nvar fresh = require('fresh')\n```\n\n### fresh(reqHeaders, resHeaders)\n\nCheck freshness of the response using request and response headers.\n\nWhen the response is still \"fresh\" in the client's cache `true` is\nreturned, otherwise `false` is returned to indicate that the client\ncache is now stale and the full response should be sent.\n\nWhen a client sends the `Cache-Control: no-cache` request header to\nindicate an end-to-end reload request, this module will return `false`\nto make handling these requests transparent.\n\n## Known Issues\n\nThis module is designed to only follow the HTTP specifications, not\nto work-around all kinda of client bugs (especially since this module\ntypically does not recieve enough information to understand what the\nclient actually is).\n\nThere is a known issue that in certain versions of Safari, Safari\nwill incorrectly make a request that allows this module to validate\nfreshness of the resource even when Safari does not have a\nrepresentation of the resource in the cache. The module\n[jumanji](https://www.npmjs.com/package/jumanji) can be used in\nan Express application to work-around this issue and also provides\nlinks to further reading on this Safari bug.\n\n## Example\n\n### API usage\n\n<!-- eslint-disable no-redeclare, no-undef -->\n\n```js\nvar reqHeaders = { 'if-none-match': '\"foo\"' }\nvar resHeaders = { 'etag': '\"bar\"' }\nfresh(reqHeaders, resHeaders)\n// => false\n\nvar reqHeaders = { 'if-none-match': '\"foo\"' }\nvar resHeaders = { 'etag': '\"foo\"' }\nfresh(reqHeaders, resHeaders)\n// => true\n```\n\n### Using with Node.js http server\n\n```js\nvar fresh = require('fresh')\nvar http = require('http')\n\nvar server = http.createServer(function (req, res) {\n  // perform server logic\n  // ... including adding ETag / Last-Modified response headers\n\n  if (isFresh(req, res)) {\n    // client has a fresh copy of resource\n    res.statusCode = 304\n    res.end()\n    return\n  }\n\n  // send the resource\n  res.statusCode = 200\n  res.end('hello, world!')\n})\n\nfunction isFresh (req, res) {\n  return fresh(req.headers, {\n    'etag': res.getHeader('ETag'),\n    'last-modified': res.getHeader('Last-Modified')\n  })\n}\n\nserver.listen(3000)\n```\n\n## License\n\n[MIT](LICENSE)\n\n[npm-image]: https://img.shields.io/npm/v/fresh.svg\n[npm-url]: https://npmjs.org/package/fresh\n[node-version-image]: https://img.shields.io/node/v/fresh.svg\n[node-version-url]: https://nodejs.org/en/\n[travis-image]: https://img.shields.io/travis/jshttp/fresh/master.svg\n[travis-url]: https://travis-ci.org/jshttp/fresh\n[coveralls-image]: https://img.shields.io/coveralls/jshttp/fresh/master.svg\n[coveralls-url]: https://coveralls.io/r/jshttp/fresh?branch=master\n[downloads-image]: https://img.shields.io/npm/dm/fresh.svg\n[downloads-url]: https://npmjs.org/package/fresh\n",
+  "maintainers": [
+    {
+      "name": "dougwilson",
+      "email": "doug@somethingdoug.com"
+    }
+  ],
+  "time": {
+    "modified": "2017-12-04T10:08:50.043Z",
+    "created": "2012-06-10T19:09:34.892Z",
+    "0.0.1": "2012-06-10T19:09:36.227Z",
+    "0.1.0": "2012-06-15T23:07:11.778Z",
+    "0.2.0": "2013-08-10T21:44:55.387Z",
+    "0.2.1": "2014-01-29T20:16:08.494Z",
+    "0.2.2": "2014-02-19T23:28:15.565Z",
+    "0.2.3": "2014-09-08T01:09:11.214Z",
+    "0.2.4": "2014-09-08T02:50:40.194Z",
+    "0.3.0": "2015-05-12T15:10:38.713Z",
+    "0.4.0": "2017-02-06T02:05:48.973Z",
+    "0.5.0": "2017-02-22T04:46:40.181Z",
+    "0.5.1": "2017-09-12T03:32:49.448Z",
+    "0.5.2": "2017-09-14T05:03:12.205Z"
+  },
+  "author": {
+    "name": "TJ Holowaychuk",
+    "email": "tj@vision-media.ca",
+    "url": "http://tjholowaychuk.com"
+  },
+  "users": {
+    "m42am": true,
+    "goodseller": true,
+    "simplyianm": true,
+    "ninozhang": true,
+    "moimikey": true,
+    "nickeltobias": true,
+    "tobiasnickel": true,
+    "wangnan0610": true,
+    "jovinbm": true,
+    "mojaray2k": true,
+    "ckaatz": true,
+    "oldfish": true,
+    "wxttxw125": true,
+    "eyson": true
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jshttp/fresh.git"
+  },
+  "readmeFilename": "README.md",
+  "homepage": "https://github.com/jshttp/fresh#readme",
+  "bugs": {
+    "url": "https://github.com/jshttp/fresh/issues"
+  },
+  "keywords": [
+    "fresh",
+    "http",
+    "conditional",
+    "cache"
+  ],
+  "license": "MIT",
+  "contributors": [
+    {
+      "name": "Douglas Christopher Wilson",
+      "email": "doug@somethingdoug.com"
+    },
+    {
+      "name": "Jonathan Ong",
+      "email": "me@jongleberry.com",
+      "url": "http://jongleberry.com"
+    }
+  ],
+  "_attachments": {}
+}

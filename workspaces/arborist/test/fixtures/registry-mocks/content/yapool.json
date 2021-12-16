@@ -1,0 +1,92 @@
+{
+  "_id": "yapool",
+  "_rev": "1-317eefd219b2180d25c792fdeb5581f3",
+  "name": "yapool",
+  "description": "Yet Another object pool in JavaScript",
+  "dist-tags": {
+    "latest": "1.0.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "yapool",
+      "version": "1.0.0",
+      "description": "Yet Another object pool in JavaScript",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap test.js --100"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/yapool.git"
+      },
+      "keywords": [],
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/yapool/issues"
+      },
+      "homepage": "https://github.com/isaacs/yapool#readme",
+      "devDependencies": {
+        "tap": "^9.0.3 || 10"
+      },
+      "gitHead": "1042e24f9977e0ba71ccf9a781b18e1e9f3cd723",
+      "_id": "yapool@1.0.0",
+      "_shasum": "f693f29a315b50d9a9da2646a7a6645c96985b6a",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.9.4",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "dist": {
+        "shasum": "f693f29a315b50d9a9da2646a7a6645c96985b6a",
+        "tarball": "https://registry.npmjs.org/yapool/-/yapool-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/yapool-1.0.0.tgz_1484786753884_0.3986512061674148"
+      },
+      "directories": {}
+    }
+  },
+  "readme": "# yapool\n\nYet Another object pool in JavaScript\n\nBecause [yallist](http://npm.im/yallist) is sometimes too featureful,\nthis is a very dead-simple linked-list pool thingie in JavaScript that\nlets you add and remove objects in a set.\n\nNot suitable for very long lists, because all searches are `O(n)`, but\nfor small `n`, it has very low complexity.\n\n## API\n\n`p = new Pool()`\n\nConstructor takes no arguments\n\n`p.add(someObject)`\n\nput an object in the pool\n\n`p.length`\n\nreturn the number of things in the pool.\n\n`p.remove(someObject)`\n\nremove that object from the pool.\n",
+  "maintainers": [
+    {
+      "name": "isaacs",
+      "email": "i@izs.me"
+    }
+  ],
+  "time": {
+    "modified": "2017-01-19T00:45:55.714Z",
+    "created": "2017-01-19T00:45:55.714Z",
+    "1.0.0": "2017-01-19T00:45:55.714Z"
+  },
+  "homepage": "https://github.com/isaacs/yapool#readme",
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isaacs/yapool.git"
+  },
+  "author": {
+    "name": "Isaac Z. Schlueter",
+    "email": "i@izs.me",
+    "url": "http://blog.izs.me/"
+  },
+  "bugs": {
+    "url": "https://github.com/isaacs/yapool/issues"
+  },
+  "license": "ISC",
+  "readmeFilename": "README.md",
+  "_attachments": {}
+}

@@ -1,0 +1,2816 @@
+{
+  "_id": "get-value",
+  "_rev": "60-ff7c7c5cda4f51c285e913781575cd17",
+  "name": "get-value",
+  "time": {
+    "modified": "2018-03-17T08:34:37.620Z",
+    "created": "2014-10-06T16:49:43.142Z",
+    "0.1.1": "2014-10-06T16:49:43.142Z",
+    "0.1.0": "2014-10-07T20:49:47.984Z",
+    "0.1.2": "2014-10-07T20:50:53.592Z",
+    "0.2.0": "2014-10-08T06:33:47.548Z",
+    "0.2.1": "2014-10-08T06:44:25.198Z",
+    "0.2.2": "2014-10-08T14:47:42.044Z",
+    "0.3.0": "2014-10-18T20:37:49.687Z",
+    "0.3.1": "2014-10-26T12:19:53.648Z",
+    "0.3.2": "2014-11-02T01:54:55.176Z",
+    "1.0.0": "2015-01-26T12:31:14.445Z",
+    "1.1.0": "2015-02-13T08:39:54.029Z",
+    "1.0.1": "2015-02-13T08:40:41.452Z",
+    "1.0.2": "2015-02-13T09:26:45.295Z",
+    "1.0.3": "2015-02-23T03:07:50.256Z",
+    "1.0.4": "2015-02-23T03:54:44.779Z",
+    "1.1.1": "2015-03-12T02:06:09.041Z",
+    "1.1.2": "2015-03-25T09:55:54.883Z",
+    "1.1.3": "2015-03-29T00:23:50.138Z",
+    "1.1.4": "2015-05-03T18:48:09.629Z",
+    "1.1.5": "2015-06-02T21:19:16.614Z",
+    "1.2.0": "2015-09-02T10:50:26.319Z",
+    "1.2.1": "2015-09-02T10:56:13.066Z",
+    "1.3.0": "2015-10-29T03:28:50.244Z",
+    "1.3.1": "2015-10-29T03:46:15.492Z",
+    "2.0.0": "2015-10-29T07:30:40.184Z",
+    "2.0.1": "2015-12-11T00:50:19.996Z",
+    "2.0.2": "2015-12-11T01:36:17.515Z",
+    "2.0.3": "2016-01-19T13:31:00.895Z",
+    "2.0.4": "2016-03-27T15:22:57.068Z",
+    "2.0.5": "2016-03-27T15:24:12.030Z",
+    "2.0.6": "2016-06-18T08:27:49.973Z",
+    "3.0.0": "2018-01-30T19:06:46.294Z",
+    "3.0.1": "2018-03-07T05:27:53.926Z"
+  },
+  "maintainers": [
+    {
+      "name": "doowb",
+      "email": "brian.woodward@gmail.com"
+    },
+    {
+      "name": "jonschlinkert",
+      "email": "github@sellside.com"
+    }
+  ],
+  "dist-tags": {
+    "latest": "3.0.1"
+  },
+  "description": "Use property paths like 'a.b.c' to get a nested value from an object. Even works when keys have dots in them (no other dot-prop library can do this!).",
+  "readme": "# get-value [![NPM version](https://img.shields.io/npm/v/get-value.svg?style=flat)](https://www.npmjs.com/package/get-value) [![NPM monthly downloads](https://img.shields.io/npm/dm/get-value.svg?style=flat)](https://npmjs.org/package/get-value) [![NPM total downloads](https://img.shields.io/npm/dt/get-value.svg?style=flat)](https://npmjs.org/package/get-value) [![Linux Build Status](https://img.shields.io/travis/jonschlinkert/get-value.svg?style=flat&label=Travis)](https://travis-ci.org/jonschlinkert/get-value)\n\n> Use property paths like 'a.b.c' to get a nested value from an object. Even works when keys have dots in them (no other dot-prop library can do this!).\n\nPlease consider following this project's author, [Jon Schlinkert](https://github.com/jonschlinkert), and consider starring the project to show your :heart: and support.\n\n## Table of Contents\n\n<details>\n<summary><strong>Details</strong></summary>\n\n- [Install](#install)\n- [Usage](#usage)\n  * [Supports keys with dots](#supports-keys-with-dots)\n  * [Supports arrays](#supports-arrays)\n  * [Supports functions](#supports-functions)\n  * [Supports passing object path as an array](#supports-passing-object-path-as-an-array)\n- [Options](#options)\n  * [options.default](#optionsdefault)\n  * [options.isValid](#optionsisvalid)\n  * [options.split](#optionssplit)\n  * [options.separator](#optionsseparator)\n  * [options.join](#optionsjoin)\n  * [options.joinChar](#optionsjoinchar)\n- [Benchmarks](#benchmarks)\n  * [Running the benchmarks](#running-the-benchmarks)\n- [Release history](#release-history)\n  * [v3.0.0](#v300)\n- [About](#about)\n\n</details>\n\n## Install\n\nInstall with [npm](https://www.npmjs.com/):\n\n```sh\n$ npm install --save get-value\n```\n\n## Usage\n\nSee the [unit tests](test/test.js) for many more examples.\n\n```js\nconst get = require('foo');\nconst obj = { a: { b: { c: { d: 'foo' } } } };\n\nconsole.log(get(obj));            //=> { a: { b: { c: { d: 'foo' } } } };\nconsole.log(get(obj, 'a'));       //=> { b: { c: { d: 'foo' } } }\nconsole.log(get(obj, 'a.b'));     //=> { c: { d: 'foo' } }\nconsole.log(get(obj, 'a.b.c'));   //=> { d: 'foo' }\nconsole.log(get(obj, 'a.b.c.d')); //=> 'foo'\n```\n\n### Supports keys with dots\n\nUnlike other dot-prop libraries, get-value works when keys have dots in them:\n\n```js\nconsole.log(get({ 'a.b': { c: 'd' } }, 'a.b.c'));\n//=> 'd'\n\nconsole.log(get({ 'a.b': { c: { 'd.e': 'f' } } }, 'a.b.c.d.e'));\n//=> 'f'\n```\n\n### Supports arrays\n\n```js\nconsole.log(get({ a: { b: { c: { d: 'foo' } } }, e: [{ f: 'g' }, { f: 'h' }] }, 'e.1.f'));   \n//=> 'h'\n\nconsole.log(get({ a: { b: [{ c: 'd' }] } }, 'a.b.0.c')); \n//=> 'f'\n\nconsole.log(get({ a: { b: [{ c: 'd' }, { e: 'f' }] } }, 'a.b.1.e'));\n//=> 'f'\n```\n\n### Supports functions\n\n```js\nfunction foo() {}\nfoo.bar = { baz: 'qux' };\n\nconsole.log(get(foo));            \n//=> { [Function: foo] bar: { baz: 'qux' } }\n\nconsole.log(get(foo, 'bar'));     \n//=> { baz: 'qux' }\n\nconsole.log(get(foo, 'bar.baz')); \n//=> qux\n```\n\n### Supports passing object path as an array\n\nSlighly improve performance by passing an array of strings to use as object path segments (this is also useful when you need to dynamically build up the path segments):\n\n```js\nconsole.log(get({ a: { b: 'c' } }, ['a', 'b']));\n//=> 'c'\n```\n\n## Options\n\n### options.default\n\n**Type**: `any`\n\n**Default**: `undefined`\n\nThe default value to return when get-value cannot resolve a value from the given object.\n\n```js\nconst obj = { foo: { a: { b: { c: { d: 'e' } } } } };\nconsole.log(get(obj, 'foo.a.b.c.d', { default: true }));  //=> 'e'\nconsole.log(get(obj, 'foo.bar.baz', { default: true }));  //=> true\nconsole.log(get(obj, 'foo.bar.baz', { default: false })); //=> false\nconsole.log(get(obj, 'foo.bar.baz', { default: null }));  //=> null\n\n// you can also pass the default value as the last argument\n// (this is necessary if the default value is an object)\nconsole.log(get(obj, 'foo.a.b.c.d', true));  //=> 'e'\nconsole.log(get(obj, 'foo.bar.baz', true));  //=> true\nconsole.log(get(obj, 'foo.bar.baz', false)); //=> false\nconsole.log(get(obj, 'foo.bar.baz', null));  //=> null\n```\n\n### options.isValid\n\n**Type**: `function`\n\n**Default**: `true`\n\nIf defined, this function is called on each resolved value. Useful if you want to do `.hasOwnProperty` or `Object.prototype.propertyIsEnumerable`.\n\n```js\nconst isEnumerable = Object.prototype.propertyIsEnumerable;\nconst options = {\n  isValid: (key, obj) => isEnumerable.call(obj, key)\n};\n\nconst obj = {};\nObject.defineProperty(obj, 'foo', { value: 'bar', enumerable: false });\n\nconsole.log(get(obj, 'foo', options));           //=> undefined\nconsole.log(get({}, 'hasOwnProperty', options)); //=> undefined\nconsole.log(get({}, 'constructor', options));    //=> undefined\n\n// without \"isValid\" check\nconsole.log(get(obj, 'foo', options));           //=> bar\nconsole.log(get({}, 'hasOwnProperty', options)); //=> [Function: hasOwnProperty]\nconsole.log(get({}, 'constructor', options));    //=> [Function: Object]\n```\n\n### options.split\n\n**Type**: `function`\n\n**Default**: `String.split()`\n\nCustom function to use for splitting the string into object path segments.\n\n```js\nconst obj = { 'a.b': { c: { d: 'e' } } };\n\n// example of using a string to split the object path\nconst options = { split: path => path.split('/') };\nconsole.log(get(obj, 'a.b/c/d', options)); //=> 'e'\n\n// example of using a regex to split the object path\n// (removing escaped dots is unnecessary, this is just an example)\nconst options = { split: path => path.split(/\\\\?\\./) };\nconsole.log(get(obj, 'a\\\\.b.c.d', options)); //=> 'e'\n```\n\n### options.separator\n\n**Type**: `string|regex`\n\n**Default**: `.`\n\nThe separator to use for spliting the string (this is probably not needed when `options.split` is used).\n\n```js\nconst obj = { 'a.b': { c: { d: 'e' } } };\n\nconsole.log(get(obj, 'a.b/c/d', { separator: '/' }));       \n//=> 'e'\n\nconsole.log(get(obj, 'a\\\\.b.c.d', { separator: /\\\\?\\./ })); \n//=> 'e'\n```\n\n### options.join\n\n**Type**: `function`\n\n**Default**: `Array.join()`\n\nCustomize how the object path is created when iterating over path segments.\n\n```js\nconst obj = { 'a/b': { c: { d: 'e' } } };\nconst options = {\n  // when segs === ['a', 'b'] use a \"/\" to join, otherwise use a \".\"\n  join: segs => segs.join(segs[0] === 'a' ? '/' : '.')\n};\n\nconsole.log(get(obj, 'a.b.c.d', options));\n//=> 'e'\n```\n\n### options.joinChar\n\n**Type**: `string`\n\n**Default**: `.`\n\nThe character to use when re-joining the string to check for keys with dots in them (this is probably not needed when `options.join` is used). This can be a different value than the separator, since the separator can be a string or regex.\n\n```js\nconst target = { 'a-b': { c: { d: 'e' } } };\nconst options = { joinChar: '-' };\nconsole.log(get(target, 'a.b.c.d', options)); \n//=> 'e'\n```\n\n## Benchmarks\n\n_(benchmarks were run on a MacBook Pro 2.5 GHz Intel Core i7, 16 GB 1600 MHz DDR3)_.\n\nget-value is more reliable and has more features than dot-prop, without sacrificing performance.\n\n```\n# deep (175 bytes)\n  dot-prop x 883,166 ops/sec ±0.93% (86 runs sampled)\n  get-value x 1,448,928 ops/sec ±1.53% (87 runs sampled)\n  getobject x 213,797 ops/sec ±0.85% (90 runs sampled)\n  object-path x 184,347 ops/sec ±2.48% (85 runs sampled)\n\n  fastest is get-value (by 339% avg)\n\n# root (210 bytes)\n  dot-prop x 3,905,828 ops/sec ±1.36% (87 runs sampled)\n  get-value x 16,391,934 ops/sec ±1.43% (83 runs sampled)\n  getobject x 1,200,021 ops/sec ±1.81% (88 runs sampled)\n  object-path x 2,788,494 ops/sec ±1.81% (86 runs sampled)\n\n  fastest is get-value (by 623% avg)\n\n# shallow (84 bytes)\n  dot-prop x 2,553,558 ops/sec ±0.89% (89 runs sampled)\n  get-value x 3,070,159 ops/sec ±0.88% (90 runs sampled)\n  getobject x 726,670 ops/sec ±0.81% (86 runs sampled)\n  object-path x 922,351 ops/sec ±2.05% (86 runs sampled)\n\n  fastest is get-value (by 219% avg)\n\n```\n\n### Running the benchmarks\n\nClone this library into a local directory:\n\n```sh\n$ git clone https://github.com/jonschlinkert/get-value.git\n```\n\nThen install devDependencies and run benchmarks:\n\n```sh\n$ npm install && node benchmark\n```\n\n## Release history\n\n### v3.0.0\n\n* Improved support for escaping. It's no longer necessary to use backslashes to escape keys.\n* Adds `options.default` for defining a default value to return when no value is resolved.\n* Adds `options.isValid` to allow the user to check the object after each iteration.\n* Adds `options.separator` for customizing character to split on.\n* Adds `options.split` for customizing how the object path is split.\n* Adds `options.join` for customizing how the object path is joined when iterating over path segments.\n* Adds `options.joinChar` for customizing the join character.\n\n## About\n\n<details>\n<summary><strong>Contributing</strong></summary>\n\nPull requests and stars are always welcome. For bugs and feature requests, [please create an issue](../../issues/new).\n\n</details>\n\n<details>\n<summary><strong>Running Tests</strong></summary>\n\nRunning and reviewing unit tests is a great way to get familiarized with a library and its API. You can install dependencies and run tests with the following command:\n\n```sh\n$ npm install && npm test\n```\n\n</details>\n\n<details>\n<summary><strong>Building docs</strong></summary>\n\n_(This project's readme.md is generated by [verb](https://github.com/verbose/verb-generate-readme), please don't edit the readme directly. Any changes to the readme must be made in the [.verb.md](.verb.md) readme template.)_\n\nTo generate the readme, run the following command:\n\n```sh\n$ npm install -g verbose/verb#dev verb-generate-readme && verb\n```\n\n</details>\n\n### Related projects\n\nYou might also be interested in these projects:\n\n* [has-any-deep](https://www.npmjs.com/package/has-any-deep): Return true if `key` exists deeply on the given object.  | [homepage](https://github.com/jonschlinkert/has-any-deep \"Return true if `key` exists deeply on the given object. \")\n* [has-any](https://www.npmjs.com/package/has-any): Returns true if an object has any of the specified keys. | [homepage](https://github.com/jonschlinkert/has-any \"Returns true if an object has any of the specified keys.\")\n* [has-value](https://www.npmjs.com/package/has-value): Returns true if a value exists, false if empty. Works with deeply nested values using… [more](https://github.com/jonschlinkert/has-value) | [homepage](https://github.com/jonschlinkert/has-value \"Returns true if a value exists, false if empty. Works with deeply nested values using object paths.\")\n* [set-value](https://www.npmjs.com/package/set-value): Create nested values and any intermediaries using dot notation (`'a.b.c'`) paths. | [homepage](https://github.com/jonschlinkert/set-value \"Create nested values and any intermediaries using dot notation (`'a.b.c'`) paths.\")\n* [unset-value](https://www.npmjs.com/package/unset-value): Delete nested properties from an object using dot notation. | [homepage](https://github.com/jonschlinkert/unset-value \"Delete nested properties from an object using dot notation.\")\n\n### Contributors\n\n| **Commits** | **Contributor** | \n| --- | --- |\n| 81 | [jonschlinkert](https://github.com/jonschlinkert) |\n| 2 | [ianwalter](https://github.com/ianwalter) |\n| 1 | [doowb](https://github.com/doowb) |\n\n### Author\n\n**Jon Schlinkert**\n\n* [LinkedIn Profile](https://linkedin.com/in/jonschlinkert)\n* [GitHub Profile](https://github.com/jonschlinkert)\n* [Twitter Profile](https://twitter.com/jonschlinkert)\n\n### License\n\nCopyright © 2018, [Jon Schlinkert](https://github.com/jonschlinkert).\nReleased under the [MIT License](LICENSE).\n\n***\n\n_This file was generated by [verb-generate-readme](https://github.com/verbose/verb-generate-readme), v0.6.0, on March 07, 2018._",
+  "versions": {
+    "0.1.0": {
+      "name": "get-value",
+      "description": "Use property paths (`a.b.c`) get a nested value from an object.",
+      "version": "0.1.0",
+      "homepage": "https://github.com/jonschlinkert/get-value",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/get-value.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/get-value/issues"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://github.com/jonschlinkert/get-value/blob/master/LICENSE-MIT"
+        }
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "devDependencies": {
+        "mocha": "*",
+        "should": "^4.0.4",
+        "verb": ">= 0.2.6",
+        "verb-tag-jscomments": ">= 0.2.0"
+      },
+      "keywords": [
+        "key",
+        "nested",
+        "object",
+        "path",
+        "paths",
+        "prop",
+        "properties",
+        "property",
+        "props",
+        "util",
+        "utilities",
+        "utility",
+        "utils",
+        "value",
+        "values"
+      ],
+      "dependencies": {
+        "isobject": "^0.2.0"
+      },
+      "_id": "get-value@0.1.0",
+      "_shasum": "a07411896d764f45082483114368787883adcc32",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "a07411896d764f45082483114368787883adcc32",
+        "tarball": "https://registry.npmjs.org/get-value/-/get-value-0.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.1.2": {
+      "name": "get-value",
+      "description": "Use property paths (`a.b.c`) get a nested value from an object.",
+      "version": "0.1.2",
+      "homepage": "https://github.com/jonschlinkert/get-value",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/get-value.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/get-value/issues"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://github.com/jonschlinkert/get-value/blob/master/LICENSE-MIT"
+        }
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "devDependencies": {
+        "mocha": "*",
+        "should": "^4.0.4",
+        "verb": ">= 0.2.6",
+        "verb-tag-jscomments": ">= 0.2.0"
+      },
+      "keywords": [
+        "key",
+        "nested",
+        "object",
+        "path",
+        "paths",
+        "prop",
+        "properties",
+        "property",
+        "props",
+        "util",
+        "utilities",
+        "utility",
+        "utils",
+        "value",
+        "values"
+      ],
+      "dependencies": {
+        "isobject": "^0.2.0"
+      },
+      "_id": "get-value@0.1.2",
+      "_shasum": "66c81f361bc99e14be549b24174596d0c68dd305",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "66c81f361bc99e14be549b24174596d0c68dd305",
+        "tarball": "https://registry.npmjs.org/get-value/-/get-value-0.1.2.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.0": {
+      "name": "get-value",
+      "description": "Use property paths (`a.b.c`) get a nested value from an object.",
+      "version": "0.2.0",
+      "homepage": "https://github.com/jonschlinkert/get-value",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/get-value.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/get-value/issues"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://github.com/jonschlinkert/get-value/blob/master/LICENSE-MIT"
+        }
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "devDependencies": {
+        "mocha": "*",
+        "should": "^4.0.4",
+        "verb": ">= 0.2.6",
+        "verb-tag-jscomments": ">= 0.2.0"
+      },
+      "keywords": [
+        "key",
+        "nested",
+        "object",
+        "path",
+        "paths",
+        "prop",
+        "properties",
+        "property",
+        "props",
+        "util",
+        "utilities",
+        "utility",
+        "utils",
+        "value",
+        "values"
+      ],
+      "dependencies": {
+        "isobject": "^0.2.0"
+      },
+      "_id": "get-value@0.2.0",
+      "_shasum": "6d4e3be73979a4732c78a980c4501bf1b1fc29fd",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "6d4e3be73979a4732c78a980c4501bf1b1fc29fd",
+        "tarball": "https://registry.npmjs.org/get-value/-/get-value-0.2.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.1": {
+      "name": "get-value",
+      "description": "Use property paths (`a.b.c`) get a nested value from an object.",
+      "version": "0.2.1",
+      "homepage": "https://github.com/jonschlinkert/get-value",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/get-value.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/get-value/issues"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://github.com/jonschlinkert/get-value/blob/master/LICENSE-MIT"
+        }
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "devDependencies": {
+        "mocha": "*",
+        "should": "^4.0.4",
+        "verb": ">= 0.2.6",
+        "verb-tag-jscomments": ">= 0.2.0"
+      },
+      "keywords": [
+        "key",
+        "nested",
+        "object",
+        "path",
+        "paths",
+        "prop",
+        "properties",
+        "property",
+        "props",
+        "util",
+        "utilities",
+        "utility",
+        "utils",
+        "value",
+        "values"
+      ],
+      "dependencies": {
+        "isobject": "^0.2.0"
+      },
+      "_id": "get-value@0.2.1",
+      "_shasum": "0279ca54122126dafbbe1fad13b05063ae40d969",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "0279ca54122126dafbbe1fad13b05063ae40d969",
+        "tarball": "https://registry.npmjs.org/get-value/-/get-value-0.2.1.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.2": {
+      "name": "get-value",
+      "description": "Use property paths (`a.b.c`) get a nested value from an object.",
+      "version": "0.2.2",
+      "homepage": "https://github.com/jonschlinkert/get-value",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/get-value.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/get-value/issues"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://github.com/jonschlinkert/get-value/blob/master/LICENSE-MIT"
+        }
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "devDependencies": {
+        "mocha": "*",
+        "should": "^4.0.4",
+        "verb": ">= 0.2.6",
+        "verb-tag-jscomments": ">= 0.2.0"
+      },
+      "keywords": [
+        "key",
+        "nested",
+        "object",
+        "path",
+        "paths",
+        "prop",
+        "properties",
+        "property",
+        "props",
+        "util",
+        "utilities",
+        "utility",
+        "utils",
+        "value",
+        "values"
+      ],
+      "dependencies": {
+        "isobject": "^0.2.0"
+      },
+      "_id": "get-value@0.2.2",
+      "_shasum": "dd4b70f7f5a85e972059a99a181aef4de32b169f",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "dd4b70f7f5a85e972059a99a181aef4de32b169f",
+        "tarball": "https://registry.npmjs.org/get-value/-/get-value-0.2.2.tgz"
+      },
+      "directories": {}
+    },
+    "0.3.0": {
+      "name": "get-value",
+      "description": "Use property paths (`a.b.c`) get a nested value from an object.",
+      "version": "0.3.0",
+      "homepage": "https://github.com/jonschlinkert/get-value",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/get-value.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/get-value/issues"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://github.com/jonschlinkert/get-value/blob/master/LICENSE-MIT"
+        }
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "devDependencies": {
+        "mocha": "*",
+        "should": "^4.0.4",
+        "verb": ">= 0.2.6",
+        "verb-tag-jscomments": ">= 0.2.0"
+      },
+      "keywords": [
+        "get",
+        "key",
+        "nested",
+        "object",
+        "path",
+        "paths",
+        "prop",
+        "properties",
+        "property",
+        "props",
+        "segment",
+        "util",
+        "utilities",
+        "utility",
+        "utils",
+        "value",
+        "values"
+      ],
+      "dependencies": {
+        "isobject": "^0.2.0"
+      },
+      "_id": "get-value@0.3.0",
+      "_shasum": "02a571ec9c89d1be5d6f9299af55ee0f9d680964",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "02a571ec9c89d1be5d6f9299af55ee0f9d680964",
+        "tarball": "https://registry.npmjs.org/get-value/-/get-value-0.3.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.3.1": {
+      "name": "get-value",
+      "description": "Use property paths (`a.b.c`) get a nested value from an object.",
+      "version": "0.3.1",
+      "homepage": "https://github.com/jonschlinkert/get-value",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/get-value.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/get-value/issues"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://github.com/jonschlinkert/get-value/blob/master/LICENSE-MIT"
+        }
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "devDependencies": {
+        "benchmarked": "^0.1.1",
+        "getobject": "^0.1.0",
+        "mocha": "*",
+        "should": "^4.0.4",
+        "verb": ">= 0.2.6",
+        "verb-tag-jscomments": ">= 0.2.0"
+      },
+      "keywords": [
+        "get",
+        "key",
+        "nested",
+        "object",
+        "path",
+        "paths",
+        "prop",
+        "properties",
+        "property",
+        "props",
+        "segment",
+        "util",
+        "utilities",
+        "utility",
+        "utils",
+        "value",
+        "values"
+      ],
+      "dependencies": {
+        "isobject": "^0.2.0"
+      },
+      "_id": "get-value@0.3.1",
+      "_shasum": "75f4c5561ac0f880ebb586b4fbd178d40ed936a0",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "75f4c5561ac0f880ebb586b4fbd178d40ed936a0",
+        "tarball": "https://registry.npmjs.org/get-value/-/get-value-0.3.1.tgz"
+      },
+      "directories": {}
+    },
+    "0.3.2": {
+      "name": "get-value",
+      "description": "Use property paths (`a.b.c`) get a nested value from an object.",
+      "version": "0.3.2",
+      "homepage": "https://github.com/jonschlinkert/get-value",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/get-value.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/get-value/issues"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://github.com/jonschlinkert/get-value/blob/master/LICENSE-MIT"
+        }
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "devDependencies": {
+        "benchmarked": "^0.1.1",
+        "getobject": "^0.1.0",
+        "mocha": "*",
+        "should": "^4.0.4",
+        "verb": ">= 0.2.6",
+        "verb-tag-jscomments": ">= 0.2.0"
+      },
+      "keywords": [
+        "get",
+        "key",
+        "nested",
+        "object",
+        "path",
+        "paths",
+        "prop",
+        "properties",
+        "property",
+        "props",
+        "segment",
+        "util",
+        "utilities",
+        "utility",
+        "utils",
+        "value",
+        "values"
+      ],
+      "dependencies": {
+        "isobject": "^0.2.0"
+      },
+      "_id": "get-value@0.3.2",
+      "_shasum": "d52e793355ee75e4b8b04decbe2a330942ccc845",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "d52e793355ee75e4b8b04decbe2a330942ccc845",
+        "tarball": "https://registry.npmjs.org/get-value/-/get-value-0.3.2.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "get-value",
+      "description": "Use property paths (`a.b.c`) get a nested value from an object.",
+      "version": "1.0.0",
+      "homepage": "https://github.com/jonschlinkert/get-value",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/get-value.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/get-value/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/get-value/blob/master/LICENSE"
+      },
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "dependencies": {
+        "isobject": "^0.2.0"
+      },
+      "files": [
+        "index.js"
+      ],
+      "devDependencies": {
+        "arr-reduce": "^1.0.0",
+        "benchmarked": "^0.1.1",
+        "chalk": "^0.5.1",
+        "dot-prop": "^1.0.1",
+        "getobject": "^0.1.0",
+        "glob": "^4.3.5",
+        "minimist": "^1.1.0",
+        "mocha": "*",
+        "should": "^4.0.4"
+      },
+      "keywords": [
+        "get",
+        "key",
+        "nested",
+        "object",
+        "path",
+        "paths",
+        "prop",
+        "properties",
+        "property",
+        "props",
+        "segment",
+        "util",
+        "utilities",
+        "utility",
+        "utils",
+        "value",
+        "values"
+      ],
+      "gitHead": "47d14599797900aaf01828ba9a8f95374ab81a02",
+      "_id": "get-value@1.0.0",
+      "_shasum": "009e1d6e404926d3ab315ae785314b2e944311d5",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "009e1d6e404926d3ab315ae785314b2e944311d5",
+        "tarball": "https://registry.npmjs.org/get-value/-/get-value-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "get-value",
+      "description": "Use property paths (`a.b.c`) get a nested value from an object.",
+      "version": "1.0.1",
+      "homepage": "https://github.com/jonschlinkert/get-value",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/get-value.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/get-value/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/get-value/blob/master/LICENSE"
+      },
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "dependencies": {
+        "isobject": "^0.2.0"
+      },
+      "files": [
+        "index.js"
+      ],
+      "devDependencies": {
+        "arr-reduce": "^1.0.0",
+        "benchmarked": "^0.1.1",
+        "chalk": "^0.5.1",
+        "dot-prop": "^1.0.1",
+        "getobject": "^0.1.0",
+        "glob": "^4.3.5",
+        "minimist": "^1.1.0",
+        "mocha": "*",
+        "should": "^4.0.4"
+      },
+      "keywords": [
+        "get",
+        "key",
+        "nested",
+        "object",
+        "path",
+        "paths",
+        "prop",
+        "properties",
+        "property",
+        "props",
+        "segment",
+        "util",
+        "utilities",
+        "utility",
+        "utils",
+        "value",
+        "values"
+      ],
+      "gitHead": "c76fc1af9c8943abe6f42b51acdfd4f497c7e1fb",
+      "_id": "get-value@1.0.1",
+      "_shasum": "e16357e6fcbc6ecec022f5f87e8db7682b65d14c",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "e16357e6fcbc6ecec022f5f87e8db7682b65d14c",
+        "tarball": "https://registry.npmjs.org/get-value/-/get-value-1.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "get-value",
+      "description": "Use property paths (`a.b.c`) get a nested value from an object.",
+      "version": "1.0.2",
+      "homepage": "https://github.com/jonschlinkert/get-value",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/get-value.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/get-value/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/get-value/blob/master/LICENSE"
+      },
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "isobject": "^0.2.0"
+      },
+      "devDependencies": {
+        "arr-reduce": "^1.0.0",
+        "benchmarked": "^0.1.1",
+        "chalk": "^0.5.1",
+        "dot-prop": "^1.0.1",
+        "getobject": "^0.1.0",
+        "glob": "^4.3.5",
+        "minimist": "^1.1.0",
+        "mocha": "*",
+        "should": "^4.0.4"
+      },
+      "keywords": [
+        "get",
+        "key",
+        "nested",
+        "object",
+        "path",
+        "paths",
+        "prop",
+        "properties",
+        "property",
+        "props",
+        "segment",
+        "value",
+        "values"
+      ],
+      "gitHead": "f0cdb46a2898f455991540de031317788e9125e4",
+      "_id": "get-value@1.0.2",
+      "_shasum": "6df09e3bfce55b44fbb1ceac5b35e3801cf26a69",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "6df09e3bfce55b44fbb1ceac5b35e3801cf26a69",
+        "tarball": "https://registry.npmjs.org/get-value/-/get-value-1.0.2.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.3": {
+      "name": "get-value",
+      "description": "Use property paths (`a.b.c`) get a nested value from an object.",
+      "version": "1.0.3",
+      "homepage": "https://github.com/jonschlinkert/get-value",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/get-value.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/get-value/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/get-value/blob/master/LICENSE"
+      },
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "isobject": "^0.2.0"
+      },
+      "devDependencies": {
+        "arr-reduce": "^1.0.0",
+        "benchmarked": "^0.1.1",
+        "chalk": "^0.5.1",
+        "dot-prop": "^1.0.1",
+        "getobject": "^0.1.0",
+        "glob": "^4.3.5",
+        "minimist": "^1.1.0",
+        "mocha": "*",
+        "should": "^4.0.4"
+      },
+      "keywords": [
+        "get",
+        "key",
+        "nested",
+        "object",
+        "path",
+        "paths",
+        "prop",
+        "properties",
+        "property",
+        "props",
+        "segment",
+        "value",
+        "values"
+      ],
+      "gitHead": "acaecc3c34b8d06f6a7366e8487a74637a7344de",
+      "_id": "get-value@1.0.3",
+      "_shasum": "8746cf0e20b1dd5eb4e760b61ea56b485dcb2d8a",
+      "_from": ".",
+      "_npmVersion": "2.5.1",
+      "_nodeVersion": "0.12.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "8746cf0e20b1dd5eb4e760b61ea56b485dcb2d8a",
+        "tarball": "https://registry.npmjs.org/get-value/-/get-value-1.0.3.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.4": {
+      "name": "get-value",
+      "description": "Use property paths (`a.b.c`) get a nested value from an object.",
+      "version": "1.0.4",
+      "homepage": "https://github.com/jonschlinkert/get-value",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/get-value.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/get-value/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/get-value/blob/master/LICENSE"
+      },
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "isobject": "^0.2.0",
+        "noncharacters": "^1.0.0"
+      },
+      "devDependencies": {
+        "arr-reduce": "^1.0.0",
+        "benchmarked": "^0.1.1",
+        "chalk": "^0.5.1",
+        "dot-prop": "^1.0.1",
+        "getobject": "^0.1.0",
+        "glob": "^4.3.5",
+        "minimist": "^1.1.0",
+        "mocha": "*",
+        "should": "^4.0.4"
+      },
+      "keywords": [
+        "get",
+        "key",
+        "nested",
+        "object",
+        "path",
+        "paths",
+        "prop",
+        "properties",
+        "property",
+        "props",
+        "segment",
+        "value",
+        "values"
+      ],
+      "gitHead": "c0e7bffc585a09400a00250c16f7897461e82201",
+      "_id": "get-value@1.0.4",
+      "_shasum": "4f2d51c1fd393ab83b267138a84a189b1846c105",
+      "_from": ".",
+      "_npmVersion": "2.5.1",
+      "_nodeVersion": "0.12.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "4f2d51c1fd393ab83b267138a84a189b1846c105",
+        "tarball": "https://registry.npmjs.org/get-value/-/get-value-1.0.4.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.1": {
+      "name": "get-value",
+      "description": "Use property paths (`a.b.c`) get a nested value from an object.",
+      "version": "1.1.1",
+      "homepage": "https://github.com/jonschlinkert/get-value",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/get-value.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/get-value/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/get-value/blob/master/LICENSE"
+      },
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "isobject": "^0.2.0",
+        "noncharacters": "^1.0.0"
+      },
+      "devDependencies": {
+        "arr-reduce": "^1.0.0",
+        "benchmarked": "^0.1.1",
+        "chalk": "^0.5.1",
+        "dot-prop": "^1.0.1",
+        "getobject": "^0.1.0",
+        "glob": "^4.3.5",
+        "minimist": "^1.1.0",
+        "mocha": "*",
+        "should": "^4.0.4"
+      },
+      "keywords": [
+        "get",
+        "key",
+        "nested",
+        "object",
+        "path",
+        "paths",
+        "prop",
+        "properties",
+        "property",
+        "props",
+        "segment",
+        "value",
+        "values"
+      ],
+      "gitHead": "6fd670b1d48cd72a48fc3c27179e2ed3b39be5df",
+      "_id": "get-value@1.1.1",
+      "_shasum": "370f92421db312410dd7c6253a63a869099f85dd",
+      "_from": ".",
+      "_npmVersion": "2.5.1",
+      "_nodeVersion": "0.12.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "370f92421db312410dd7c6253a63a869099f85dd",
+        "tarball": "https://registry.npmjs.org/get-value/-/get-value-1.1.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.2": {
+      "name": "get-value",
+      "description": "Use property paths (`a.b.c`) get a nested value from an object.",
+      "version": "1.1.2",
+      "homepage": "https://github.com/jonschlinkert/get-value",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/get-value.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/get-value/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/get-value/blob/master/LICENSE"
+      },
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "isobject": "^0.2.0",
+        "noncharacters": "^1.0.0"
+      },
+      "devDependencies": {
+        "arr-reduce": "^1.0.0",
+        "benchmarked": "^0.1.1",
+        "chalk": "^0.5.1",
+        "dot-prop": "^1.0.1",
+        "getobject": "^0.1.0",
+        "glob": "^4.3.5",
+        "minimist": "^1.1.0",
+        "mocha": "*",
+        "should": "^4.0.4"
+      },
+      "keywords": [
+        "get",
+        "key",
+        "nested",
+        "object",
+        "path",
+        "paths",
+        "prop",
+        "properties",
+        "property",
+        "props",
+        "segment",
+        "value",
+        "values"
+      ],
+      "gitHead": "8c0bdc2bf341cc67f898e921e6e4c6abfa819358",
+      "_id": "get-value@1.1.2",
+      "_shasum": "bafe82b38ade9ebce7dbf41e93e7bf18a5611679",
+      "_from": ".",
+      "_npmVersion": "2.7.1",
+      "_nodeVersion": "1.6.2",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "bafe82b38ade9ebce7dbf41e93e7bf18a5611679",
+        "tarball": "https://registry.npmjs.org/get-value/-/get-value-1.1.2.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.3": {
+      "name": "get-value",
+      "description": "Use property paths (`a.b.c`) get a nested value from an object.",
+      "version": "1.1.3",
+      "homepage": "https://github.com/jonschlinkert/get-value",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/get-value.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/get-value/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/get-value/blob/master/LICENSE"
+      },
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "isobject": "^1.0.0",
+        "noncharacters": "^1.1.0"
+      },
+      "devDependencies": {
+        "arr-reduce": "^1.0.1",
+        "benchmarked": "^0.1.4",
+        "chalk": "^1.0.0",
+        "getobject": "^0.1.0",
+        "glob": "^5.0.3",
+        "minimist": "^1.1.1",
+        "mocha": "^2.2.1",
+        "should": "^5.2.0"
+      },
+      "keywords": [
+        "get",
+        "key",
+        "nested",
+        "object",
+        "path",
+        "paths",
+        "prop",
+        "properties",
+        "property",
+        "props",
+        "segment",
+        "value",
+        "values"
+      ],
+      "gitHead": "4d237f003fd744694b293cc936083d424c1abe5b",
+      "_id": "get-value@1.1.3",
+      "_shasum": "6894a37f833b75acb3be02b811f00cae699d9f14",
+      "_from": ".",
+      "_npmVersion": "2.5.1",
+      "_nodeVersion": "0.12.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "6894a37f833b75acb3be02b811f00cae699d9f14",
+        "tarball": "https://registry.npmjs.org/get-value/-/get-value-1.1.3.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.4": {
+      "name": "get-value",
+      "description": "Use property paths (`a.b.c`) get a nested value from an object.",
+      "version": "1.1.4",
+      "homepage": "https://github.com/jonschlinkert/get-value",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/get-value.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/get-value/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/get-value/blob/master/LICENSE"
+      },
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "isobject": "^1.0.0",
+        "noncharacters": "^1.1.0"
+      },
+      "devDependencies": {
+        "arr-reduce": "^1.0.1",
+        "benchmarked": "^0.1.4",
+        "chalk": "^1.0.0",
+        "getobject": "^0.1.0",
+        "glob": "^5.0.5",
+        "minimist": "^1.1.1",
+        "mocha": "^2.2.4",
+        "should": "^6.0.1"
+      },
+      "keywords": [
+        "get",
+        "key",
+        "nested",
+        "object",
+        "path",
+        "paths",
+        "prop",
+        "properties",
+        "property",
+        "props",
+        "segment",
+        "value",
+        "values"
+      ],
+      "gitHead": "183afbc4ebef07bbba66d2263f42c3f1be7c1d7d",
+      "_id": "get-value@1.1.4",
+      "_shasum": "514801d69a62c741d9d15deafeb603e3ac38c564",
+      "_from": ".",
+      "_npmVersion": "2.5.1",
+      "_nodeVersion": "0.12.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "514801d69a62c741d9d15deafeb603e3ac38c564",
+        "tarball": "https://registry.npmjs.org/get-value/-/get-value-1.1.4.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.5": {
+      "name": "get-value",
+      "description": "Use property paths (`a.b.c`) to get a nested value from an object.",
+      "version": "1.1.5",
+      "homepage": "https://github.com/jonschlinkert/get-value",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/get-value.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/get-value/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "isobject": "^1.0.0",
+        "noncharacters": "^1.1.0"
+      },
+      "devDependencies": {
+        "arr-reduce": "^1.0.1",
+        "benchmarked": "^0.1.4",
+        "chalk": "^1.0.0",
+        "getobject": "^0.1.0",
+        "glob": "^5.0.5",
+        "minimist": "^1.1.1",
+        "mocha": "^2.2.4",
+        "should": "^6.0.1"
+      },
+      "keywords": [
+        "get",
+        "key",
+        "nested",
+        "object",
+        "path",
+        "paths",
+        "prop",
+        "properties",
+        "property",
+        "props",
+        "segment",
+        "value",
+        "values"
+      ],
+      "gitHead": "183afbc4ebef07bbba66d2263f42c3f1be7c1d7d",
+      "_id": "get-value@1.1.5",
+      "_shasum": "59ad9bf9004b2a900761ead3b72dc42ee161a6a6",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "0.12.4",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "59ad9bf9004b2a900761ead3b72dc42ee161a6a6",
+        "tarball": "https://registry.npmjs.org/get-value/-/get-value-1.1.5.tgz"
+      },
+      "directories": {}
+    },
+    "1.2.0": {
+      "name": "get-value",
+      "description": "Use property paths (`a.b.c`) to get a nested value from an object.",
+      "version": "1.2.0",
+      "homepage": "https://github.com/jonschlinkert/get-value",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/get-value.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/get-value/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "is-extendable": "^0.1.1",
+        "isobject": "^1.0.0",
+        "noncharacters": "^1.1.0"
+      },
+      "devDependencies": {
+        "arr-reduce": "^1.0.1",
+        "benchmarked": "^0.1.4",
+        "chalk": "^1.0.0",
+        "getobject": "^0.1.0",
+        "glob": "^5.0.5",
+        "minimist": "^1.1.1",
+        "mocha": "^2.2.4",
+        "should": "^6.0.1"
+      },
+      "keywords": [
+        "get",
+        "key",
+        "nested",
+        "object",
+        "path",
+        "paths",
+        "prop",
+        "properties",
+        "property",
+        "props",
+        "segment",
+        "value",
+        "values"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "unset-value",
+            "has-value",
+            "set-value",
+            "has-any",
+            "has-any-deep"
+          ]
+        }
+      },
+      "gitHead": "1948c93122235f7e14a5f55c7bfde64728bdb692",
+      "_id": "get-value@1.2.0",
+      "_shasum": "731f451320e1428bdccaa0e510223e25f62bfe49",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "0.12.4",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "731f451320e1428bdccaa0e510223e25f62bfe49",
+        "tarball": "https://registry.npmjs.org/get-value/-/get-value-1.2.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.2.1": {
+      "name": "get-value",
+      "description": "Use property paths (`a.b.c`) to get a nested value from an object.",
+      "version": "1.2.1",
+      "homepage": "https://github.com/jonschlinkert/get-value",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/get-value.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/get-value/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "is-extendable": "^0.1.1",
+        "isobject": "^1.0.0",
+        "noncharacters": "^1.1.0"
+      },
+      "devDependencies": {
+        "arr-reduce": "^1.0.1",
+        "benchmarked": "^0.1.4",
+        "chalk": "^1.0.0",
+        "getobject": "^0.1.0",
+        "glob": "^5.0.5",
+        "minimist": "^1.1.1",
+        "mocha": "^2.2.4",
+        "should": "^6.0.1"
+      },
+      "keywords": [
+        "get",
+        "key",
+        "nested",
+        "object",
+        "path",
+        "paths",
+        "prop",
+        "properties",
+        "property",
+        "props",
+        "segment",
+        "value",
+        "values"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "unset-value",
+            "has-value",
+            "set-value",
+            "has-any",
+            "has-any-deep"
+          ]
+        }
+      },
+      "gitHead": "1948c93122235f7e14a5f55c7bfde64728bdb692",
+      "_id": "get-value@1.2.1",
+      "_shasum": "b309beebce2f4ae0945b77767c611a5a6af3ff6f",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "0.12.4",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "b309beebce2f4ae0945b77767c611a5a6af3ff6f",
+        "tarball": "https://registry.npmjs.org/get-value/-/get-value-1.2.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.3.0": {
+      "name": "get-value",
+      "description": "Use property paths (`a.b.c`) to get a nested value from an object.",
+      "version": "1.3.0",
+      "homepage": "https://github.com/jonschlinkert/get-value",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/get-value.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/get-value/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "arr-flatten": "^1.0.1",
+        "is-extendable": "^0.1.1",
+        "lazy-cache": "^0.2.4",
+        "noncharacters": "^1.1.0"
+      },
+      "devDependencies": {
+        "ansi-bold": "^0.1.1",
+        "arr-reduce": "^1.0.1",
+        "benchmarked": "^0.1.4",
+        "getobject": "^0.1.0",
+        "isobject": "^2.0.0",
+        "matched": "^0.3.2",
+        "minimist": "^1.2.0",
+        "mocha": "^2.3.3",
+        "should": "^7.1.1"
+      },
+      "keywords": [
+        "get",
+        "key",
+        "nested",
+        "object",
+        "path",
+        "paths",
+        "prop",
+        "properties",
+        "property",
+        "props",
+        "segment",
+        "value",
+        "values"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "unset-value",
+            "has-value",
+            "set-value",
+            "has-any",
+            "has-any-deep"
+          ]
+        }
+      },
+      "gitHead": "72eacd9f6fb5aa4dd1eed500832f479be875d116",
+      "_id": "get-value@1.3.0",
+      "_shasum": "0cb41d0bc435559b482a629d0192529ce02aff8b",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.1",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "0cb41d0bc435559b482a629d0192529ce02aff8b",
+        "tarball": "https://registry.npmjs.org/get-value/-/get-value-1.3.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.3.1": {
+      "name": "get-value",
+      "description": "Use property paths (`a.b.c`) to get a nested value from an object.",
+      "version": "1.3.1",
+      "homepage": "https://github.com/jonschlinkert/get-value",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/get-value.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/get-value/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "utils.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "arr-flatten": "^1.0.1",
+        "is-extendable": "^0.1.1",
+        "lazy-cache": "^0.2.4",
+        "noncharacters": "^1.1.0"
+      },
+      "devDependencies": {
+        "ansi-bold": "^0.1.1",
+        "arr-reduce": "^1.0.1",
+        "benchmarked": "^0.1.4",
+        "getobject": "^0.1.0",
+        "isobject": "^2.0.0",
+        "matched": "^0.3.2",
+        "minimist": "^1.2.0",
+        "mocha": "^2.3.3",
+        "should": "^7.1.1"
+      },
+      "keywords": [
+        "get",
+        "key",
+        "nested",
+        "object",
+        "path",
+        "paths",
+        "prop",
+        "properties",
+        "property",
+        "props",
+        "segment",
+        "value",
+        "values"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "unset-value",
+            "has-value",
+            "set-value",
+            "has-any",
+            "has-any-deep"
+          ]
+        }
+      },
+      "gitHead": "72eacd9f6fb5aa4dd1eed500832f479be875d116",
+      "_id": "get-value@1.3.1",
+      "_shasum": "8ac7ef4f20382392b2646548f9b9ad2dc6c89642",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.1",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "8ac7ef4f20382392b2646548f9b9ad2dc6c89642",
+        "tarball": "https://registry.npmjs.org/get-value/-/get-value-1.3.1.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "get-value",
+      "description": "Use property paths (`a.b.c`) to get a nested value from an object.",
+      "version": "2.0.0",
+      "homepage": "https://github.com/jonschlinkert/get-value",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/get-value.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/get-value/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "ansi-bold": "^0.1.1",
+        "arr-reduce": "^1.0.1",
+        "benchmarked": "^0.1.4",
+        "dot-prop": "^2.2.0",
+        "getobject": "^0.1.0",
+        "gulp": "^3.9.0",
+        "gulp-istanbul": "^0.10.2",
+        "gulp-jshint": "^1.11.2",
+        "gulp-mocha": "^2.1.3",
+        "isobject": "^2.0.0",
+        "jshint-stylish": "^2.0.1",
+        "matched": "^0.3.2",
+        "minimist": "^1.2.0",
+        "mocha": "^2.3.3",
+        "should": "^7.1.1"
+      },
+      "keywords": [
+        "get",
+        "key",
+        "nested",
+        "object",
+        "path",
+        "paths",
+        "prop",
+        "properties",
+        "property",
+        "props",
+        "segment",
+        "value",
+        "values"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "unset-value",
+            "has-value",
+            "set-value",
+            "has-any",
+            "has-any-deep"
+          ]
+        }
+      },
+      "gitHead": "df1e88cf5ddb5353f12fbc11ed63243585376445",
+      "_id": "get-value@2.0.0",
+      "_shasum": "de1d3ba0714ebce2d807977e48a616187fd94809",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.1",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "de1d3ba0714ebce2d807977e48a616187fd94809",
+        "tarball": "https://registry.npmjs.org/get-value/-/get-value-2.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.1": {
+      "name": "get-value",
+      "description": "Use property paths (`a.b.c`) to get a nested value from an object.",
+      "version": "2.0.1",
+      "homepage": "https://github.com/jonschlinkert/get-value",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/get-value.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/get-value/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "ansi-bold": "^0.1.1",
+        "arr-reduce": "^1.0.1",
+        "benchmarked": "^0.1.4",
+        "dot-prop": "^2.2.0",
+        "getobject": "^0.1.0",
+        "gulp": "^3.9.0",
+        "gulp-eslint": "^1.1.1",
+        "gulp-istanbul": "^0.10.2",
+        "gulp-mocha": "^2.1.3",
+        "isobject": "^2.0.0",
+        "matched": "^0.3.2",
+        "minimist": "^1.2.0",
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "get",
+        "key",
+        "nested",
+        "object",
+        "path",
+        "paths",
+        "prop",
+        "properties",
+        "property",
+        "props",
+        "segment",
+        "value",
+        "values"
+      ],
+      "verb": {
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "unset-value",
+            "has-value",
+            "set-value",
+            "has-any",
+            "has-any-deep"
+          ]
+        }
+      },
+      "gitHead": "e7eb881af2d58224f36f4f1974f360d5c3a87018",
+      "_id": "get-value@2.0.1",
+      "_shasum": "b6daee9249910c1d14fdbb7468906a775f43439a",
+      "_from": ".",
+      "_npmVersion": "3.3.6",
+      "_nodeVersion": "5.0.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "b6daee9249910c1d14fdbb7468906a775f43439a",
+        "tarball": "https://registry.npmjs.org/get-value/-/get-value-2.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.2": {
+      "name": "get-value",
+      "description": "Use property paths (`a.b.c`) to get a nested value from an object.",
+      "version": "2.0.2",
+      "homepage": "https://github.com/jonschlinkert/get-value",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/get-value.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/get-value/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "ansi-bold": "^0.1.1",
+        "arr-reduce": "^1.0.1",
+        "benchmarked": "^0.1.4",
+        "dot-prop": "^2.2.0",
+        "getobject": "^0.1.0",
+        "gulp": "^3.9.0",
+        "gulp-eslint": "^1.1.1",
+        "gulp-istanbul": "^0.10.2",
+        "gulp-mocha": "^2.1.3",
+        "isobject": "^2.0.0",
+        "matched": "^0.3.2",
+        "minimist": "^1.2.0",
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "get",
+        "key",
+        "nested",
+        "object",
+        "path",
+        "paths",
+        "prop",
+        "properties",
+        "property",
+        "props",
+        "segment",
+        "value",
+        "values"
+      ],
+      "verb": {
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "unset-value",
+            "has-value",
+            "set-value",
+            "has-any",
+            "has-any-deep"
+          ]
+        }
+      },
+      "gitHead": "87c35de815c35ee151d06397472ad0fb65938466",
+      "_id": "get-value@2.0.2",
+      "_shasum": "1cdcafe16cd02ac4a44b58a155adf227b83b150d",
+      "_from": ".",
+      "_npmVersion": "3.3.6",
+      "_nodeVersion": "5.0.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "1cdcafe16cd02ac4a44b58a155adf227b83b150d",
+        "tarball": "https://registry.npmjs.org/get-value/-/get-value-2.0.2.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.3": {
+      "name": "get-value",
+      "description": "Use property paths (`a.b.c`) to get a nested value from an object.",
+      "version": "2.0.3",
+      "homepage": "https://github.com/jonschlinkert/get-value",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/get-value.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/get-value/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "ansi-bold": "^0.1.1",
+        "arr-reduce": "^1.0.1",
+        "benchmarked": "^0.1.4",
+        "dot-prop": "^2.2.0",
+        "getobject": "^0.1.0",
+        "gulp": "^3.9.0",
+        "gulp-eslint": "^1.1.1",
+        "gulp-format-md": "^0.1.5",
+        "gulp-istanbul": "^0.10.2",
+        "gulp-mocha": "^2.1.3",
+        "isobject": "^2.0.0",
+        "matched": "^0.3.2",
+        "minimist": "^1.2.0",
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "get",
+        "key",
+        "nested",
+        "object",
+        "path",
+        "paths",
+        "prop",
+        "properties",
+        "property",
+        "props",
+        "segment",
+        "value",
+        "values"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "unset-value",
+            "has-value",
+            "set-value",
+            "has-any",
+            "has-any-deep"
+          ]
+        },
+        "plugins": [
+          "gulp-format-md"
+        ]
+      },
+      "gitHead": "85507d3fc907c37dcdb84619766e5655407c542a",
+      "_id": "get-value@2.0.3",
+      "_shasum": "13a50f0faf69a201c1f0aabdb52c21edd48f105d",
+      "_from": ".",
+      "_npmVersion": "3.3.12",
+      "_nodeVersion": "5.3.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "13a50f0faf69a201c1f0aabdb52c21edd48f105d",
+        "tarball": "https://registry.npmjs.org/get-value/-/get-value-2.0.3.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.4": {
+      "name": "get-value",
+      "description": "Use property paths (`a.b.c`) to get a nested value from an object.",
+      "version": "2.0.4",
+      "homepage": "https://github.com/jonschlinkert/get-value",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/get-value.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/get-value/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "ansi-bold": "^0.1.1",
+        "arr-reduce": "^1.0.1",
+        "benchmarked": "^0.1.4",
+        "dot-prop": "^2.2.0",
+        "getobject": "^0.1.0",
+        "gulp": "^3.9.0",
+        "gulp-eslint": "^1.1.1",
+        "gulp-format-md": "^0.1.5",
+        "gulp-istanbul": "^0.10.2",
+        "gulp-mocha": "^2.1.3",
+        "isobject": "^2.0.0",
+        "matched": "^0.3.2",
+        "minimist": "^1.2.0",
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "get",
+        "key",
+        "nested",
+        "object",
+        "path",
+        "paths",
+        "prop",
+        "properties",
+        "property",
+        "props",
+        "segment",
+        "value",
+        "values"
+      ],
+      "verb": {
+        "run": true,
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "has-any",
+            "has-any-deep",
+            "has-value",
+            "set-value",
+            "unset-value"
+          ]
+        },
+        "reflinks": [
+          "verb"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "d96b39593d3eecfa4a56cec0220d5e8640db8f10",
+      "_id": "get-value@2.0.4",
+      "_shasum": "d73104aba3f6413610eded22113379cfdf8247d0",
+      "_from": ".",
+      "_npmVersion": "3.6.0",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "d73104aba3f6413610eded22113379cfdf8247d0",
+        "tarball": "https://registry.npmjs.org/get-value/-/get-value-2.0.4.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/get-value-2.0.4.tgz_1459092174622_0.320156384492293"
+      },
+      "directories": {}
+    },
+    "2.0.5": {
+      "name": "get-value",
+      "description": "Use property paths (`a.b.c`) to get a nested value from an object.",
+      "version": "2.0.5",
+      "homepage": "https://github.com/jonschlinkert/get-value",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/get-value.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/get-value/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "ansi-bold": "^0.1.1",
+        "arr-reduce": "^1.0.1",
+        "benchmarked": "^0.1.4",
+        "dot-prop": "^2.2.0",
+        "getobject": "^0.1.0",
+        "gulp": "^3.9.0",
+        "gulp-eslint": "^1.1.1",
+        "gulp-format-md": "^0.1.5",
+        "gulp-istanbul": "^0.10.2",
+        "gulp-mocha": "^2.1.3",
+        "isobject": "^2.0.0",
+        "matched": "^0.3.2",
+        "minimist": "^1.2.0",
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "get",
+        "key",
+        "nested",
+        "object",
+        "path",
+        "paths",
+        "prop",
+        "properties",
+        "property",
+        "props",
+        "segment",
+        "value",
+        "values"
+      ],
+      "verb": {
+        "run": true,
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "has-any",
+            "has-any-deep",
+            "has-value",
+            "set-value",
+            "unset-value"
+          ]
+        },
+        "reflinks": [
+          "verb"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "14c43971784c0ef94f20a2be2edd9fa9e44a35a1",
+      "_id": "get-value@2.0.5",
+      "_shasum": "af917a37935e88aa548f5fd0e1a8745d914046db",
+      "_from": ".",
+      "_npmVersion": "3.6.0",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "af917a37935e88aa548f5fd0e1a8745d914046db",
+        "tarball": "https://registry.npmjs.org/get-value/-/get-value-2.0.5.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/get-value-2.0.5.tgz_1459092249587_0.9073094315826893"
+      },
+      "directories": {}
+    },
+    "2.0.6": {
+      "name": "get-value",
+      "description": "Use property paths (`a.b.c`) to get a nested value from an object.",
+      "version": "2.0.6",
+      "homepage": "https://github.com/jonschlinkert/get-value",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/get-value.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/get-value/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "ansi-bold": "^0.1.1",
+        "arr-reduce": "^1.0.1",
+        "benchmarked": "^0.1.4",
+        "dot-prop": "^2.2.0",
+        "getobject": "^0.1.0",
+        "gulp": "^3.9.0",
+        "gulp-eslint": "^1.1.1",
+        "gulp-format-md": "^0.1.5",
+        "gulp-istanbul": "^0.10.2",
+        "gulp-mocha": "^2.1.3",
+        "isobject": "^2.0.0",
+        "matched": "^0.3.2",
+        "minimist": "^1.2.0"
+      },
+      "keywords": [
+        "get",
+        "key",
+        "nested",
+        "object",
+        "path",
+        "paths",
+        "prop",
+        "properties",
+        "property",
+        "props",
+        "segment",
+        "value",
+        "values"
+      ],
+      "verb": {
+        "run": true,
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "has-any",
+            "has-any-deep",
+            "has-value",
+            "set-value",
+            "unset-value"
+          ]
+        },
+        "reflinks": [
+          "verb",
+          "verb-readme-generator"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "5dc7466a65eec37e3b9e3d94f274b7aba193ea60",
+      "_id": "get-value@2.0.6",
+      "_shasum": "dc15ca1c672387ca76bd37ac0a395ba2042a2c28",
+      "_from": ".",
+      "_npmVersion": "3.8.9",
+      "_nodeVersion": "6.2.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "dc15ca1c672387ca76bd37ac0a395ba2042a2c28",
+        "tarball": "https://registry.npmjs.org/get-value/-/get-value-2.0.6.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/get-value-2.0.6.tgz_1466238467647_0.5326845925301313"
+      },
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "get-value",
+      "description": "Use property paths like 'a.b.c' to get a nested value from an object. Even works when keys have dots in them (no other dot-prop library can do this!).",
+      "version": "3.0.0",
+      "homepage": "https://github.com/jonschlinkert/get-value",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/get-value.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/get-value/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=6.0"
+      },
+      "scripts": {
+        "test": "nyc --reporter=text --reporter=html mocha"
+      },
+      "dependencies": {
+        "isobject": "^3.0.1"
+      },
+      "devDependencies": {
+        "arr-reduce": "^1.0.1",
+        "benchmarked": "^2.0.0",
+        "dot-prop": "^4.2.0",
+        "getobject": "^0.1.0",
+        "gulp-format-md": "^1.0.0",
+        "micromatch": "^3.1.5",
+        "minimist": "^1.2.0",
+        "mocha": "^3.5.3",
+        "nyc": "^11.4.1"
+      },
+      "keywords": [
+        "get",
+        "key",
+        "nested",
+        "object",
+        "path",
+        "paths",
+        "prop",
+        "properties",
+        "property",
+        "props",
+        "segment",
+        "value",
+        "values"
+      ],
+      "verb": {
+        "run": true,
+        "toc": "collapsible",
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "has-any",
+            "has-any-deep",
+            "has-value",
+            "set-value",
+            "unset-value"
+          ]
+        },
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "61143e59a1553ef703d15a27f5f1397e743dbee0",
+      "_id": "get-value@3.0.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.1.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "integrity": "sha512-AvQx2mGq9phwebBJBScxxEXlPBVwi7Fz8Pt0wcvtGv7cun4Roipt6FwQkN7lMSg6Wcavw0+3GC1zSe+XaroJJg==",
+        "shasum": "dd1442206a3bd100109ebbbb79c3b2425b2a7bcb",
+        "tarball": "https://registry.npmjs.org/get-value/-/get-value-3.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/get-value-3.0.0.tgz_1517339205284_0.6575652312021703"
+      },
+      "directories": {}
+    },
+    "3.0.1": {
+      "name": "get-value",
+      "description": "Use property paths like 'a.b.c' to get a nested value from an object. Even works when keys have dots in them (no other dot-prop library can do this!).",
+      "version": "3.0.1",
+      "homepage": "https://github.com/jonschlinkert/get-value",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/get-value.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/get-value/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=6.0"
+      },
+      "scripts": {
+        "test": "nyc --reporter=text --reporter=html mocha"
+      },
+      "dependencies": {
+        "isobject": "^3.0.1"
+      },
+      "devDependencies": {
+        "arr-reduce": "^1.0.1",
+        "benchmarked": "^2.0.0",
+        "dot-prop": "^4.2.0",
+        "getobject": "^0.1.0",
+        "glob": "^7.1.2",
+        "gulp-format-md": "^1.0.0",
+        "micromatch": "^3.1.5",
+        "minimist": "^1.2.0",
+        "mocha": "^3.5.3",
+        "nyc": "^11.4.1",
+        "object-path": "^0.11.4",
+        "write": "^1.0.3"
+      },
+      "keywords": [
+        "get",
+        "key",
+        "nested",
+        "object",
+        "path",
+        "paths",
+        "prop",
+        "properties",
+        "property",
+        "props",
+        "segment",
+        "value",
+        "values"
+      ],
+      "verb": {
+        "run": true,
+        "toc": "collapsible",
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "has-any",
+            "has-any-deep",
+            "has-value",
+            "set-value",
+            "unset-value"
+          ]
+        },
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "f703b744ac60592ca5a8d3dee8cb7de6fbb88a9c",
+      "_id": "get-value@3.0.1",
+      "_npmVersion": "5.7.1",
+      "_nodeVersion": "9.7.1",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "integrity": "sha512-mKZj9JLQrwMBtj5wxi6MH8Z5eSKaERpAwjg43dPtlGI1ZVEgH/qC7T8/6R2OBSUA+zzHBZgICsVJaEIV2tKTDA==",
+        "shasum": "5efd2a157f1d6a516d7524e124ac52d0a39ef5a8",
+        "tarball": "https://registry.npmjs.org/get-value/-/get-value-3.0.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 16889
+      },
+      "maintainers": [
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/get-value_3.0.1_1520400473888_0.8710185921842548"
+      }
+    }
+  },
+  "homepage": "https://github.com/jonschlinkert/get-value",
+  "keywords": [
+    "get",
+    "key",
+    "nested",
+    "object",
+    "path",
+    "paths",
+    "prop",
+    "properties",
+    "property",
+    "props",
+    "segment",
+    "value",
+    "values"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonschlinkert/get-value.git"
+  },
+  "author": {
+    "name": "Jon Schlinkert",
+    "url": "https://github.com/jonschlinkert"
+  },
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/get-value/issues"
+  },
+  "readmeFilename": "README.md",
+  "license": "MIT",
+  "users": {
+    "knownasilya": true,
+    "den-dp": true,
+    "ninozhang": true,
+    "rocket0191": true,
+    "rbecheras": true,
+    "cr8tiv": true,
+    "isayme": true
+  },
+  "_attachments": {}
+}

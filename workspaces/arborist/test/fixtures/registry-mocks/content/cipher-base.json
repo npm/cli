@@ -1,0 +1,325 @@
+{
+  "_id": "cipher-base",
+  "_rev": "5-af6d8d7be0aab60a0a9ee9a638a80f6c",
+  "name": "cipher-base",
+  "description": "abstract base class for crypto-streams",
+  "dist-tags": {
+    "latest": "1.0.4"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "cipher-base",
+      "version": "1.0.0",
+      "description": "abstract base class for crypto-streams",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crypto-browserify/cipher-base.git"
+      },
+      "keywords": [
+        "cipher",
+        "stream"
+      ],
+      "author": {
+        "name": "Calvin Metcalf",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/cipher-base/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/cipher-base#readme",
+      "dependencies": {
+        "inherits": "^2.0.1"
+      },
+      "devDependencies": {
+        "tap-spec": "^4.1.0",
+        "tape": "^4.2.0"
+      },
+      "gitHead": "8fbd9e7654d384b578e63d12e0311ae16dc07741",
+      "_id": "cipher-base@1.0.0",
+      "_shasum": "b7aa42ea5fe8e7615926380528c4ee3a2d33444d",
+      "_from": ".",
+      "_npmVersion": "2.13.2",
+      "_nodeVersion": "2.5.0",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "dist": {
+        "shasum": "b7aa42ea5fe8e7615926380528c4ee3a2d33444d",
+        "tarball": "https://registry.npmjs.org/cipher-base/-/cipher-base-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "cipher-base",
+      "version": "1.0.1",
+      "description": "abstract base class for crypto-streams",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crypto-browserify/cipher-base.git"
+      },
+      "keywords": [
+        "cipher",
+        "stream"
+      ],
+      "author": {
+        "name": "Calvin Metcalf",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/cipher-base/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/cipher-base#readme",
+      "dependencies": {
+        "inherits": "^2.0.1"
+      },
+      "devDependencies": {
+        "tap-spec": "^4.1.0",
+        "tape": "^4.2.0"
+      },
+      "gitHead": "5f5eb4a23599806ef5f92aa25930ac0beeb35bd1",
+      "_id": "cipher-base@1.0.1",
+      "_shasum": "b714888e810519106b3b039948e4fc9e2718c563",
+      "_from": ".",
+      "_npmVersion": "2.14.4",
+      "_nodeVersion": "4.1.1",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "dist": {
+        "shasum": "b714888e810519106b3b039948e4fc9e2718c563",
+        "tarball": "https://registry.npmjs.org/cipher-base/-/cipher-base-1.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "cipher-base",
+      "version": "1.0.2",
+      "description": "abstract base class for crypto-streams",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crypto-browserify/cipher-base.git"
+      },
+      "keywords": [
+        "cipher",
+        "stream"
+      ],
+      "author": {
+        "name": "Calvin Metcalf",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/cipher-base/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/cipher-base#readme",
+      "dependencies": {
+        "inherits": "^2.0.1"
+      },
+      "devDependencies": {
+        "tap-spec": "^4.1.0",
+        "tape": "^4.2.0"
+      },
+      "gitHead": "c295535e1eef90a587dba110c8799bfd68f75161",
+      "_id": "cipher-base@1.0.2",
+      "_shasum": "54ac1d1ebdf6a1bcd3559e6f369d72697f2cab8f",
+      "_from": ".",
+      "_npmVersion": "2.9.0",
+      "_nodeVersion": "4.2.1",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "dist": {
+        "shasum": "54ac1d1ebdf6a1bcd3559e6f369d72697f2cab8f",
+        "tarball": "https://registry.npmjs.org/cipher-base/-/cipher-base-1.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.3": {
+      "name": "cipher-base",
+      "version": "1.0.3",
+      "description": "abstract base class for crypto-streams",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crypto-browserify/cipher-base.git"
+      },
+      "keywords": [
+        "cipher",
+        "stream"
+      ],
+      "author": {
+        "name": "Calvin Metcalf",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/cipher-base/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/cipher-base#readme",
+      "dependencies": {
+        "inherits": "^2.0.1"
+      },
+      "devDependencies": {
+        "tap-spec": "^4.1.0",
+        "tape": "^4.2.0"
+      },
+      "gitHead": "de2af9758ce75ef5f9a9bdaf0ba5312609a7e59a",
+      "_id": "cipher-base@1.0.3",
+      "_shasum": "eeabf194419ce900da3018c207d212f2a6df0a07",
+      "_from": ".",
+      "_npmVersion": "3.8.6",
+      "_nodeVersion": "5.12.0",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "dist": {
+        "shasum": "eeabf194419ce900da3018c207d212f2a6df0a07",
+        "tarball": "https://registry.npmjs.org/cipher-base/-/cipher-base-1.0.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/cipher-base-1.0.3.tgz_1473767078206_0.1380389309488237"
+      },
+      "directories": {}
+    },
+    "1.0.4": {
+      "name": "cipher-base",
+      "version": "1.0.4",
+      "description": "abstract base class for crypto-streams",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crypto-browserify/cipher-base.git"
+      },
+      "keywords": [
+        "cipher",
+        "stream"
+      ],
+      "author": {
+        "name": "Calvin Metcalf",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/cipher-base/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/cipher-base#readme",
+      "dependencies": {
+        "inherits": "^2.0.1",
+        "safe-buffer": "^5.0.1"
+      },
+      "devDependencies": {
+        "standard": "^10.0.2",
+        "tap-spec": "^4.1.0",
+        "tape": "^4.2.0"
+      },
+      "gitHead": "bc18dc847050c34f11f7a0472ff13a76b53fedc6",
+      "_id": "cipher-base@1.0.4",
+      "_npmVersion": "5.1.0",
+      "_nodeVersion": "8.1.1",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-Kkht5ye6ZGmwv40uUDZztayT2ThLQGfnj/T71N/XzeZeo3nf8foyW7zGTsPYkEya3m5f3cAypH+qe7YOrM1U2Q==",
+        "shasum": "8760e4ecc272f4c363532f926d874aae2c1397de",
+        "tarball": "https://registry.npmjs.org/cipher-base/-/cipher-base-1.0.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/cipher-base-1.0.4.tgz_1499455256804_0.9936195954214782"
+      },
+      "directories": {}
+    }
+  },
+  "readme": "cipher-base\n===\n\n[![Build Status](https://travis-ci.org/crypto-browserify/cipher-base.svg)](https://travis-ci.org/crypto-browserify/cipher-base)\n\nAbstract base class to inherit from if you want to create streams implementing\nthe same api as node crypto streams.\n\nRequires you to implement 2 methods `_final` and `_update`. `_update` takes a\nbuffer and should return a buffer, `_final` takes no arguments and should return\na buffer.\n\n\nThe constructor takes one argument and that is a string which if present switches\nit into hash mode, i.e. the object you get from crypto.createHash or\ncrypto.createSign, this switches the name of the final method to be the string\nyou passed instead of `final` and returns `this` from update.\n",
+  "maintainers": [
+    {
+      "name": "cwmma",
+      "email": "calvin.metcalf@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2017-07-07T19:20:57.712Z",
+    "created": "2015-09-26T21:01:59.671Z",
+    "1.0.0": "2015-09-26T21:01:59.671Z",
+    "1.0.1": "2015-09-26T22:01:11.047Z",
+    "1.0.2": "2015-10-23T18:30:27.552Z",
+    "1.0.3": "2016-09-13T11:44:40.235Z",
+    "1.0.4": "2017-07-07T19:20:57.712Z"
+  },
+  "homepage": "https://github.com/crypto-browserify/cipher-base#readme",
+  "keywords": [
+    "cipher",
+    "stream"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crypto-browserify/cipher-base.git"
+  },
+  "author": {
+    "name": "Calvin Metcalf",
+    "email": "calvin.metcalf@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/crypto-browserify/cipher-base/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "_attachments": {}
+}

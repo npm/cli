@@ -1,0 +1,502 @@
+{
+  "_id": "semver-diff",
+  "_rev": "11-5f26658056703b17af0f6e4c9f8b465d",
+  "name": "semver-diff",
+  "description": "Get the diff type of two semver versions: 0.0.1 0.0.2 → patch",
+  "dist-tags": {
+    "latest": "3.1.1"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "semver-diff",
+      "version": "0.1.0",
+      "description": "Get the diff type of two semver versions: 0.0.1 0.0.2 → patch",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/sindresorhus/semver-diff"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "semver",
+        "version",
+        "semantic",
+        "diff",
+        "difference"
+      ],
+      "dependencies": {
+        "semver": "^2.2.1"
+      },
+      "devDependencies": {
+        "mocha": "*"
+      },
+      "bugs": {
+        "url": "https://github.com/sindresorhus/semver-diff/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/semver-diff",
+      "_id": "semver-diff@0.1.0",
+      "_shasum": "4f6057ca3eba23cc484b51f64aaf88b131a3855d",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "4f6057ca3eba23cc484b51f64aaf88b131a3855d",
+        "tarball": "https://registry.npmjs.org/semver-diff/-/semver-diff-0.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "semver-diff",
+      "version": "1.0.0",
+      "description": "Get the diff type of two semver versions: 0.0.1 0.0.2 → patch",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/sindresorhus/semver-diff"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "semver",
+        "version",
+        "semantic",
+        "diff",
+        "difference"
+      ],
+      "dependencies": {
+        "semver": "^3.0.1"
+      },
+      "devDependencies": {
+        "mocha": "*"
+      },
+      "gitHead": "9bf149f9beee7dced2a035429cf525c8372e84f5",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/semver-diff/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/semver-diff",
+      "_id": "semver-diff@1.0.0",
+      "_shasum": "efa952393625b56d21ba146661dff68e90552b25",
+      "_from": ".",
+      "_npmVersion": "1.4.14",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "efa952393625b56d21ba146661dff68e90552b25",
+        "tarball": "https://registry.npmjs.org/semver-diff/-/semver-diff-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "semver-diff",
+      "version": "2.0.0",
+      "description": "Get the diff type of two semver versions: 0.0.1 0.0.2 → patch",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/semver-diff"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "semver",
+        "version",
+        "semantic",
+        "diff",
+        "difference"
+      ],
+      "dependencies": {
+        "semver": "^4.0.0"
+      },
+      "devDependencies": {
+        "mocha": "*"
+      },
+      "gitHead": "470d02dd7e3d9d90f1b4316471661453b76a5f07",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/semver-diff/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/semver-diff",
+      "_id": "semver-diff@2.0.0",
+      "_shasum": "d43024f91aa7843937dc1379002766809f7480d2",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "d43024f91aa7843937dc1379002766809f7480d2",
+        "tarball": "https://registry.npmjs.org/semver-diff/-/semver-diff-2.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "2.1.0": {
+      "name": "semver-diff",
+      "version": "2.1.0",
+      "description": "Get the diff type of two semver versions: 0.0.1 0.0.2 → patch",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/semver-diff"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "semver",
+        "version",
+        "semantic",
+        "diff",
+        "difference"
+      ],
+      "dependencies": {
+        "semver": "^5.0.3"
+      },
+      "devDependencies": {
+        "mocha": "*"
+      },
+      "gitHead": "58205f4b171e86b07942a30fb4502bc0ca60a071",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/semver-diff/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/semver-diff",
+      "_id": "semver-diff@2.1.0",
+      "_shasum": "4bbb8437c8d37e4b0cf1a68fd726ec6d645d6d36",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.1",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "4bbb8437c8d37e4b0cf1a68fd726ec6d645d6d36",
+        "tarball": "https://registry.npmjs.org/semver-diff/-/semver-diff-2.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "semver-diff",
+      "version": "3.0.0",
+      "description": "Get the diff type of two semver versions: 0.0.1 0.0.2 → patch",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/semver-diff.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "semver",
+        "version",
+        "semantic",
+        "diff",
+        "difference"
+      ],
+      "dependencies": {
+        "semver": "^6.0.0"
+      },
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "703f0f99431b2efc869a8fb45fe70b839851a931",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/semver-diff/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/semver-diff#readme",
+      "_id": "semver-diff@3.0.0",
+      "_nodeVersion": "10.15.3",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-5pXYcMUhJfyLQ4QpHBT0AjDCfCllSHhrJtzzODZAnBkUV+9muRQvg6jY1B1IPpeLchi2LCvuubj60mq0NK86Yg==",
+        "shasum": "9ce65b316bfdaeb2d979ba9bce4956b285195ef5",
+        "tarball": "https://registry.npmjs.org/semver-diff/-/semver-diff-3.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 4728,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcwpaMCRA9TVsSAnZWagAAhhkP/1YpAnBKRIgUqGJUOxVl\nqAKLMfucD59V3smUG65WSNrxUa9PdXKWlPMX+pEqxXwIUxGy49Zh1Yrf7lXn\nm2kNKBGxPUwfE9bob8ovL/H8rgkL+660YGxp9M24EUWuJyWANvb5Bw7lIvZB\nI98aosRpktLfaVfG1JP+y2/iFFs0MiVGR3549/yNPWO9tVuCROZPNeKsxDrl\nC16WYLhrSrF+T4EbD+ppZO1BzWmCT8GfiEsCVtAr3wZrgu8HnaUapeqR6Zvg\nz44Bm4W2tA6M26gbJBQ2AU6R2jbzh87Aj+hGKP18YkqxTkZdqk4yWp8wgLF/\n5Bnya9XxNvVbD6FRXbHuZdLsX3WBoWf5DDJuJrdgF1dsZrUMh2lost/01jln\nAZlTiH7eLBnoMiIHojKlJzyHU0Ygq7lJoFTx2Fw638TrtNE9hW5gk2MF6GV5\n/MC3ZxZrkrMNCUhr+IXHLElcqLudd4ClHVFJduxOFVi6SWQBJBpPi3W6wcmn\nZfxPovSM2P8rTFfsPkQ2AfzClpIEKbW/cIiUpLD0lBgpkCdMuDvnvxibeHwO\n655qeEsq1MsFZxQQbfkxxU+Essw0l/6uROAdYHuO7LZSPF1LEY3wJIqgRGLF\n/CWqcOZDywUCTHyNymRvL/uXK7id2NTRiVZnuCnlTUyHwngL2LACJbZ+/O1F\nrg9q\r\n=JEGf\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/semver-diff_3.0.0_1556256395994_0.6492744522381146"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.1.0": {
+      "name": "semver-diff",
+      "version": "3.1.0",
+      "description": "Get the diff type of two semver versions: 0.0.1 0.0.2 → patch",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/semver-diff.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "semver",
+        "version",
+        "semantic",
+        "diff",
+        "difference"
+      ],
+      "dependencies": {
+        "semver": "^6.1.0"
+      },
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "14a40e312a0f3c22d01d78478b55537e2c942050",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/semver-diff/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/semver-diff#readme",
+      "_id": "semver-diff@3.1.0",
+      "_nodeVersion": "8.16.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-ASrAPykxraxsdkDJzBE6P8hnp64bdWPguExRDZHv90s5/pmeQkXcR1xRjeRdzOzIu1LhahexCy7PAHeQ8ZNnzw==",
+        "shasum": "19699e14038e1f4660d1d7ca9c79bd0aa9c92b55",
+        "tarball": "https://registry.npmjs.org/semver-diff/-/semver-diff-3.1.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 4460,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJc73+iCRA9TVsSAnZWagAAtPcP/2WmpHdEnpNUnJahrjh1\nZ6pXoqt0PDhtbhvzE1iqp5xWCSAVJsib/6ACryOVN4fIlus7wJQ/qY8cEfDO\nW8zU9qIQaWEgAEedZHSoGniI4F21xd7FaA89P1fyUhII2zGtgO0xFfmC5hFZ\nfB1a26XsweDNM1MHogb2c+FGdfUdw0J4hhs2YbDLtvdkiwpKBsdYuxYrj5pZ\nliJGsQxSwvljWmQw8y83jwpn0bnJdssVb7pt2SUU1GIwk9VeBZobaZ573IKV\nD/u16uPm+9SZITYNeL2rCiMv+KxGiYafkGi+87Un6at8HqvU3i4ePj5TpAtc\nuqu905r7A8qtaREqUNrfam+XTe7QOU2QVWgnc3QWtWuTp+9dzgRv3qz6QRwU\nA+F8NR8+DPRmjizQ02tWf8CS5yIbYMv3f3UydqWPQ9yNo41nTNrpsj6PqBm4\npGBg0qPc0LVgKr396w7XRk5/EwwCMITwJuWKj/9CUa+xBNJU0GD8Ryvq6SNT\nhuAM3dLhmhd29nxNGTAlm2SL0xCNmBg0/5KiFSSVLsPLaCduEVGyzQ/PwlHV\nRPcpeHzD8cz/von/d5tq0+NmhCRkliYa9cKM/BH+K7sZQSunrXWI8BcvnoXS\nfX5a4EcpCYga6L6TFS6X09IHSEdVn4gRRVOjIIzIhl3stT0jBPfR0jOvllDh\njtJr\r\n=1zFp\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/semver-diff_3.1.0_1559199649701_0.22882779494950345"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.1.1": {
+      "name": "semver-diff",
+      "version": "3.1.1",
+      "description": "Get the diff type of two semver versions: 0.0.1 0.0.2 → patch",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/semver-diff.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "semver",
+        "version",
+        "semantic",
+        "diff",
+        "difference"
+      ],
+      "dependencies": {
+        "semver": "^6.3.0"
+      },
+      "devDependencies": {
+        "ava": "^2.4.0",
+        "tsd": "^0.9.0",
+        "xo": "^0.25.3"
+      },
+      "gitHead": "12659d0ec02a2707c2dec435d9ef66def4065b74",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/semver-diff/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/semver-diff#readme",
+      "_id": "semver-diff@3.1.1",
+      "_nodeVersion": "10.16.3",
+      "_npmVersion": "6.11.3",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-GX0Ix/CJcHyB8c4ykpHGIAvLyOwOobtM/8d+TQkAd81/bEjgPHrfba41Vpesr7jX/t8Uh+R3EX9eAS5be+jQYg==",
+        "shasum": "05f77ce59f325e00e2706afd67bb506ddb1ca32b",
+        "tarball": "https://registry.npmjs.org/semver-diff/-/semver-diff-3.1.1.tgz",
+        "fileCount": 5,
+        "unpackedSize": 5243,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdpImKCRA9TVsSAnZWagAApVsP/AzEsVOabelFkK50L1x8\nzrL9+FHy5cMbqgm2LUG3Z6IV+PV63xSwFQSc0ghL4MeJqNfXnVsOs33iViQF\nJcW/Dr6NCUNOaCkKAo5mDdmhNo7v8dHV25r2dedpZiqqeDvEf+OWAaJv7RRf\nkGuN3muPWQAjOjr1S92+OcNHd9Iv8VhhhYzw/ojMPzZ0oGAD0vqbPfQLIPwG\nLrVUumBpWv3X0pE0E2o6XRfS3ATNkftrJRFso/W01GTc4qZ3dwNO2nTHrvxn\n0iEuIZDr5aFRwOSp+BO1ecrkWaHZxTyczRzEXoGdqSCgiQuyBJQRLghfJuys\nGN/sEis6S518X3Ddaf1OCWp3o9CUQZojXZb3KJf7T6Kw1Lh+a3YK5tGziSW9\nEi5nCDTscZopEF+dwAj8wW3Xtum4XksRK552w9XgjTdutxKuNjdsG66sNnbh\nf8M4amPkVWD9pFwEWqPKf0hyYAGNgO3qrUj4Us0MNWc5ElSdHsUYtG3vcAEU\np2mqPOcq3H6l2BggKpSl5FKRmr9/3nQHg2O4fis6Eks6PliFhBSwnijrs2Hj\nY5eftidp5ZvTgRU/LpRATWAvF7ODj/5QyC+O2/HqeHva/zRS1IhqwNx8dGmW\nOsI6NN4lEJ9Vf8B5Lh0T4X9NpRQSFL2peF/+i017tjMfJefjqUbP0910lvX1\nFXg/\r\n=fuZv\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/semver-diff_3.1.1_1571064201840_0.6683845957133756"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# semver-diff [![Build Status](https://travis-ci.org/sindresorhus/semver-diff.svg?branch=master)](https://travis-ci.org/sindresorhus/semver-diff)\n\n> Get the diff type of two [semver](https://github.com/npm/node-semver) versions: `0.0.1 0.0.2` → `patch`\n\n\n## Install\n\n```\n$ npm install semver-diff\n```\n\n\n## Usage\n\n```js\nconst semverDiff = require('semver-diff');\n\nsemverDiff('1.1.1', '1.1.2');\n//=> 'patch'\n\nsemverDiff('1.1.1-foo', '1.1.2');\n//=> 'prepatch'\n\nsemverDiff('0.0.1', '1.0.0');\n//=> 'major'\n\nsemverDiff('0.0.1-foo', '1.0.0');\n//=> 'premajor'\n\nsemverDiff('0.0.1', '0.1.0');\n//=> 'minor'\n\nsemverDiff('0.0.1-foo', '0.1.0');\n//=> 'preminor'\n\nsemverDiff('0.0.1-foo', '0.0.1-foo.bar');\n//=> 'prerelease'\n\nsemverDiff('0.1.0', '0.1.0+foo');\n//=> 'build'\n\nsemverDiff('0.0.1', '0.0.1');\n//=> undefined\n\nsemverDiff('0.0.2', '0.0.1');\n//=> undefined\n```\n\n\n## API\n\n### semverDiff(versionA, versionB)\n\nReturns the difference type between two semver versions, or `undefined` if they're identical or the second one is lower than the first.\n\nPossible values: `'major'`, `'premajor'`, `'minor'`, `'preminor'`, `'patch'`, `'prepatch'`, `'prerelease'`, `'build'`, `undefined`.\n\n\n## Related\n\n- [latest-semver](https://github.com/sindresorhus/latest-semver) - Get the latest stable semver version from an array of versions\n- [to-semver](https://github.com/sindresorhus/to-semver) - Get an array of valid, sorted, and cleaned semver versions from an array of strings\n- [semver-regex](https://github.com/sindresorhus/semver-regex) - Regular expression for matching semver versions\n- [semver-truncate](https://github.com/sindresorhus/semver-truncate) - Truncate a semver version: `1.2.3` → `1.2.0`\n\n\n---\n\n<div align=\"center\">\n\t<b>\n\t\t<a href=\"https://tidelift.com/subscription/pkg/npm-semver-diff?utm_source=npm-semver-diff&utm_medium=referral&utm_campaign=readme\">Get professional support for this package with a Tidelift subscription</a>\n\t</b>\n\t<br>\n\t<sub>\n\t\tTidelift helps make open source sustainable for maintainers while giving companies<br>assurances about security, maintenance, and licensing for their dependencies.\n\t</sub>\n</div>\n",
+  "maintainers": [
+    {
+      "name": "sindresorhus",
+      "email": "sindresorhus@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2019-10-14T14:43:24.484Z",
+    "created": "2014-05-03T13:34:00.881Z",
+    "0.1.0": "2014-05-03T13:34:00.881Z",
+    "1.0.0": "2014-08-02T21:36:24.749Z",
+    "2.0.0": "2014-09-29T10:56:46.792Z",
+    "2.1.0": "2015-11-14T12:31:30.545Z",
+    "3.0.0": "2019-04-26T05:26:36.190Z",
+    "3.1.0": "2019-05-30T07:00:49.815Z",
+    "3.1.1": "2019-10-14T14:43:21.949Z"
+  },
+  "homepage": "https://github.com/sindresorhus/semver-diff#readme",
+  "keywords": [
+    "semver",
+    "version",
+    "semantic",
+    "diff",
+    "difference"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/semver-diff.git"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "bugs": {
+    "url": "https://github.com/sindresorhus/semver-diff/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md",
+  "users": {
+    "itonyyo": true
+  }
+}

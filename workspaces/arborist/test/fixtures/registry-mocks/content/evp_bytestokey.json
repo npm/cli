@@ -1,0 +1,352 @@
+{
+  "_id": "evp_bytestokey",
+  "_rev": "7-34fe1c21a347d25a892270015d5e9d65",
+  "name": "evp_bytestokey",
+  "description": "The insecure key derivation algorithm from OpenSSL",
+  "dist-tags": {
+    "latest": "1.0.3"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "evp_bytestokey",
+      "version": "1.0.0",
+      "description": "he super secure key derivation algorithm from openssl",
+      "main": "index.js",
+      "scripts": {
+        "test": "standard && node test.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crypto-browserify/EVP_BytesToKey.git"
+      },
+      "keywords": [
+        "crypto",
+        "openssl"
+      ],
+      "author": {
+        "name": "Calvin Metcalf",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/EVP_BytesToKey/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/EVP_BytesToKey",
+      "dependencies": {
+        "create-hash": "^1.1.1"
+      },
+      "devDependencies": {
+        "standard": "^5.3.1",
+        "tap-spec": "^4.1.0",
+        "tape": "^4.2.0"
+      },
+      "gitHead": "563bd30d95a7771ff0a18afc82cf92ed18f008d3",
+      "_id": "evp_bytestokey@1.0.0",
+      "_shasum": "497b66ad9fef65cd7c08a6180824ba1476b66e53",
+      "_from": ".",
+      "_npmVersion": "2.14.4",
+      "_nodeVersion": "4.1.1",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "dist": {
+        "shasum": "497b66ad9fef65cd7c08a6180824ba1476b66e53",
+        "tarball": "https://registry.npmjs.org/evp_bytestokey/-/evp_bytestokey-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "evp_bytestokey",
+      "version": "1.0.1",
+      "description": "The insecure key derivation algorithm from OpenSSL",
+      "keywords": [
+        "crypto",
+        "openssl"
+      ],
+      "homepage": "https://github.com/crypto-browserify/EVP_BytesToKey",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/EVP_BytesToKey/issues"
+      },
+      "license": "MIT",
+      "author": {
+        "name": "Calvin Metcalf",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "contributors": [
+        {
+          "name": "Kirill Fomichev",
+          "email": "fanatid@ya.ru"
+        }
+      ],
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crypto-browserify/EVP_BytesToKey.git"
+      },
+      "scripts": {
+        "coverage": "nyc tape test/*.js",
+        "lint": "standard",
+        "test": "npm run lint && npm run unit",
+        "test:prepare": "node-gyp rebuild",
+        "unit": "tape test/*.js",
+        "install": "node-gyp rebuild"
+      },
+      "devDependencies": {
+        "bindings": "^1.2.1",
+        "nan": "^2.4.0",
+        "nyc": "^8.1.0",
+        "standard": "^8.0.0",
+        "tape": "^4.6.0"
+      },
+      "gypfile": true,
+      "dependencies": {
+        "md5.js": "^1.3.4",
+        "safe-buffer": "^5.1.1"
+      },
+      "gitHead": "17a7dd425c5412881ac6cd80b10390ab0943214c",
+      "_id": "evp_bytestokey@1.0.1",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "8.4.0",
+      "_npmUser": {
+        "name": "dcousens",
+        "email": "npm@dcousens.com"
+      },
+      "dist": {
+        "integrity": "sha512-RNZXcRCZDNw9O8Jt2LFKufGSG31ok3l+tyodgqcDX637C8bhfuDZJgcBr0K2h3r3Lvbnot6yFdRD1Xo5TL6fZg==",
+        "shasum": "7a0fa93c760ddff02ec417906572870e812d0dc0",
+        "tarball": "https://registry.npmjs.org/evp_bytestokey/-/evp_bytestokey-1.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "npm@dcousens.com",
+          "name": "dcousens"
+        },
+        {
+          "email": "calvin.metcalf@gmail.com",
+          "name": "cwmma"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/evp_bytestokey-1.0.1.tgz_1503350976253_0.4808340894524008"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "evp_bytestokey",
+      "version": "1.0.2",
+      "description": "The insecure key derivation algorithm from OpenSSL",
+      "keywords": [
+        "crypto",
+        "openssl"
+      ],
+      "homepage": "https://github.com/crypto-browserify/EVP_BytesToKey",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/EVP_BytesToKey/issues"
+      },
+      "license": "MIT",
+      "author": {
+        "name": "Calvin Metcalf",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "contributors": [
+        {
+          "name": "Kirill Fomichev",
+          "email": "fanatid@ya.ru"
+        }
+      ],
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crypto-browserify/EVP_BytesToKey.git"
+      },
+      "scripts": {
+        "coverage": "nyc tape test/*.js",
+        "lint": "standard",
+        "test": "npm run lint && npm run unit",
+        "test:prepare": "node-gyp rebuild",
+        "unit": "tape test/*.js"
+      },
+      "devDependencies": {
+        "bindings": "^1.2.1",
+        "nan": "^2.4.0",
+        "nyc": "^8.1.0",
+        "standard": "^8.0.0",
+        "tape": "^4.6.0"
+      },
+      "gypfile": false,
+      "dependencies": {
+        "md5.js": "^1.3.4",
+        "safe-buffer": "^5.1.1"
+      },
+      "gitHead": "df89a89d2cf5ef762557ff0b3a817f18ce00ace0",
+      "_id": "evp_bytestokey@1.0.2",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "8.4.0",
+      "_npmUser": {
+        "name": "dcousens",
+        "email": "npm@dcousens.com"
+      },
+      "dist": {
+        "integrity": "sha512-ni0r0lrm7AOzsh2qC5mi9sj8S0gmj5fLNjfFpxN05FB4tAVZEKotbkjOtLPqTCX/CXT7NsUr6juZb4IFJeNNdA==",
+        "shasum": "f66bb88ecd57f71a766821e20283ea38c68bf80a",
+        "tarball": "https://registry.npmjs.org/evp_bytestokey/-/evp_bytestokey-1.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "npm@dcousens.com",
+          "name": "dcousens"
+        },
+        {
+          "email": "calvin.metcalf@gmail.com",
+          "name": "cwmma"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/evp_bytestokey-1.0.2.tgz_1503352313286_0.022157371742650867"
+      },
+      "directories": {}
+    },
+    "1.0.3": {
+      "name": "evp_bytestokey",
+      "version": "1.0.3",
+      "description": "The insecure key derivation algorithm from OpenSSL",
+      "keywords": [
+        "crypto",
+        "openssl"
+      ],
+      "homepage": "https://github.com/crypto-browserify/EVP_BytesToKey",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/EVP_BytesToKey/issues"
+      },
+      "license": "MIT",
+      "author": {
+        "name": "Calvin Metcalf",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "contributors": [
+        {
+          "name": "Kirill Fomichev",
+          "email": "fanatid@ya.ru"
+        }
+      ],
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crypto-browserify/EVP_BytesToKey.git"
+      },
+      "scripts": {
+        "coverage": "nyc tape test/*.js",
+        "lint": "standard",
+        "test": "npm run lint && npm run unit",
+        "test:prepare": "node-gyp rebuild",
+        "unit": "tape test/*.js"
+      },
+      "devDependencies": {
+        "bindings": "^1.2.1",
+        "nan": "^2.4.0",
+        "nyc": "^8.1.0",
+        "standard": "^8.0.0",
+        "tape": "^4.6.0"
+      },
+      "gypfile": false,
+      "dependencies": {
+        "md5.js": "^1.3.4",
+        "safe-buffer": "^5.1.1"
+      },
+      "gitHead": "5b83312539cf4d21989e99562c09ba32a65070c8",
+      "_id": "evp_bytestokey@1.0.3",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "8.4.0",
+      "_npmUser": {
+        "name": "dcousens",
+        "email": "npm@dcousens.com"
+      },
+      "dist": {
+        "integrity": "sha512-/f2Go4TognH/KvCISP7OUsHn85hT9nUkxxA9BEWxFn+Oj9o8ZNLm/40hdlgSLyuOimsrTKLUMEorQexp/aPQeA==",
+        "shasum": "7fcbdb198dc71959432efe13842684e0525acb02",
+        "tarball": "https://registry.npmjs.org/evp_bytestokey/-/evp_bytestokey-1.0.3.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "npm@dcousens.com",
+          "name": "dcousens"
+        },
+        {
+          "email": "calvin.metcalf@gmail.com",
+          "name": "cwmma"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/evp_bytestokey-1.0.3.tgz_1504606836017_0.7082570272032171"
+      },
+      "directories": {}
+    }
+  },
+  "readme": "# EVP\\_BytesToKey\n[![NPM Package](https://img.shields.io/npm/v/evp_bytestokey.svg?style=flat-square)](https://www.npmjs.org/package/evp_bytestokey)\n[![Build Status](https://img.shields.io/travis/crypto-browserify/EVP_BytesToKey.svg?branch=master&style=flat-square)](https://travis-ci.org/crypto-browserify/EVP_BytesToKey)\n[![Dependency status](https://img.shields.io/david/crypto-browserify/EVP_BytesToKey.svg?style=flat-square)](https://david-dm.org/crypto-browserify/EVP_BytesToKey#info=dependencies)\n\n[![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)\n\nThe insecure [key derivation algorithm from OpenSSL.][1]\n\n**WARNING: DO NOT USE, except for compatibility reasons.**\n\nMD5 is insecure.\n\nUse at least `scrypt` or `pbkdf2-hmac-sha256` instead.\n\n\n## API\n`EVP_BytesToKey(password, salt, keyLen, ivLen)`\n\n* `password` - `Buffer`, password used to derive the key data.\n* `salt` - 8 byte `Buffer` or `null`, salt is used as a salt in the derivation.\n* `keyBits` - `number`, key length in **bits**.\n* `ivLen` - `number`, iv length in bytes.\n\n*Returns*: `{ key: Buffer, iv: Buffer }`\n\n\n## Examples\nMD5 with `aes-256-cbc`:\n\n```js\nconst crypto = require('crypto')\nconst EVP_BytesToKey = require('evp_bytestokey')\n\nconst result = EVP_BytesToKey(\n  'my-secret-password',\n  null,\n  32,\n  16\n)\n// =>\n// { key: <Buffer e3 4f 96 f3 86 24 82 7c c2 5d ff 23 18 6f 77 72 54 45 7f 49 d4 be 4b dd 4f 6e 1b cc 92 a4 27 33>,\n//   iv: <Buffer 85 71 9a bf ae f4 1e 74 dd 46 b6 13 79 56 f5 5b> }\n\nconst cipher = crypto.createCipheriv('aes-256-cbc', result.key, result.iv)\n```\n\n## LICENSE [MIT](LICENSE)\n\n[1]: https://wiki.openssl.org/index.php/Manual:EVP_BytesToKey(3)\n[2]: https://nodejs.org/api/crypto.html#crypto_class_hash\n",
+  "maintainers": [
+    {
+      "email": "npm@dcousens.com",
+      "name": "dcousens"
+    },
+    {
+      "email": "calvin.metcalf@gmail.com",
+      "name": "cwmma"
+    }
+  ],
+  "time": {
+    "modified": "2017-09-24T12:09:09.174Z",
+    "created": "2015-09-27T14:44:27.075Z",
+    "1.0.0": "2015-09-27T14:44:27.075Z",
+    "1.0.1": "2017-08-21T21:29:36.372Z",
+    "1.0.2": "2017-08-21T21:51:53.562Z",
+    "1.0.3": "2017-09-05T10:20:36.240Z"
+  },
+  "homepage": "https://github.com/crypto-browserify/EVP_BytesToKey",
+  "keywords": [
+    "crypto",
+    "openssl"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crypto-browserify/EVP_BytesToKey.git"
+  },
+  "author": {
+    "name": "Calvin Metcalf",
+    "email": "calvin.metcalf@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/crypto-browserify/EVP_BytesToKey/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "users": {
+    "dlv_201": true,
+    "princetoad": true
+  },
+  "contributors": [
+    {
+      "name": "Kirill Fomichev",
+      "email": "fanatid@ya.ru"
+    }
+  ],
+  "_attachments": {}
+}

@@ -1,0 +1,242 @@
+{
+  "_id": "hashish",
+  "_rev": "18-014e216a7a74aa66ca92ad2b2a5dcc68",
+  "name": "hashish",
+  "description": "Hash data structure manipulation functions",
+  "dist-tags": {
+    "latest": "0.0.4"
+  },
+  "versions": {
+    "0.0.1": {
+      "name": "hashish",
+      "version": "0.0.1",
+      "description": "Hash data structure manipulation functions",
+      "main": "./index",
+      "repository": {
+        "type": "git",
+        "url": "http://github.com/substack/node-hashish.git"
+      },
+      "keywords": [
+        "hash",
+        "object",
+        "convenience",
+        "manipulation",
+        "data structure"
+      ],
+      "author": {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "http://substack.net"
+      },
+      "dependencies": {
+        "traverse": ">0.2.4"
+      },
+      "devDependencies": {
+        "expresso": ">=0.6.0"
+      },
+      "scripts": {
+        "test": "expresso"
+      },
+      "license": "MIT/X11",
+      "engine": [
+        "node >=0.2.0"
+      ],
+      "_id": "hashish@0.0.1",
+      "engines": {
+        "node": "*"
+      },
+      "_engineSupported": true,
+      "_npmVersion": "0.2.16",
+      "_nodeVersion": "v0.3.8-pre",
+      "directories": {},
+      "files": [
+        ""
+      ],
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "088b26565d8f4b5edb8a5dc331bd20d6f563b24c",
+        "tarball": "https://registry.npmjs.org/hashish/-/hashish-0.0.1.tgz"
+      }
+    },
+    "0.0.2": {
+      "name": "hashish",
+      "version": "0.0.2",
+      "description": "Hash data structure manipulation functions",
+      "main": "./index",
+      "repository": {
+        "type": "git",
+        "url": "http://github.com/substack/node-hashish.git"
+      },
+      "keywords": [
+        "hash",
+        "object",
+        "convenience",
+        "manipulation",
+        "data structure"
+      ],
+      "author": {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "http://substack.net"
+      },
+      "dependencies": {
+        "traverse": ">=0.2.4"
+      },
+      "devDependencies": {
+        "expresso": ">=0.6.0"
+      },
+      "scripts": {
+        "test": "expresso"
+      },
+      "license": "MIT/X11",
+      "engine": [
+        "node >=0.2.0"
+      ],
+      "_id": "hashish@0.0.2",
+      "engines": {
+        "node": "*"
+      },
+      "_engineSupported": true,
+      "_npmVersion": "0.2.16",
+      "_nodeVersion": "v0.3.8-pre",
+      "directories": {},
+      "files": [
+        ""
+      ],
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "5422907a80fcf4702bf0ffdd8f839822a7986886",
+        "tarball": "https://registry.npmjs.org/hashish/-/hashish-0.0.2.tgz"
+      }
+    },
+    "0.0.3": {
+      "name": "hashish",
+      "version": "0.0.3",
+      "description": "Hash data structure manipulation functions",
+      "main": "./index.js",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/substack/node-hashish.git"
+      },
+      "keywords": [
+        "hash",
+        "object",
+        "convenience",
+        "manipulation",
+        "data structure"
+      ],
+      "author": {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "http://substack.net"
+      },
+      "dependencies": {
+        "traverse": ">=0.2.4"
+      },
+      "devDependencies": {
+        "expresso": ">=0.6.0"
+      },
+      "scripts": {
+        "test": "expresso"
+      },
+      "license": "MIT/X11",
+      "engine": [
+        "node >=0.2.0"
+      ],
+      "_id": "hashish@0.0.3",
+      "engines": {
+        "node": "*"
+      },
+      "_engineSupported": true,
+      "_npmVersion": "1.0.10",
+      "_nodeVersion": "v0.5.0-pre",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "8ead8cc73ea6245bc61a2d87c511ccf0a9724e40",
+        "tarball": "https://registry.npmjs.org/hashish/-/hashish-0.0.3.tgz"
+      },
+      "directories": {}
+    },
+    "0.0.4": {
+      "name": "hashish",
+      "version": "0.0.4",
+      "description": "Hash data structure manipulation functions",
+      "main": "./index.js",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/substack/node-hashish.git"
+      },
+      "keywords": [
+        "hash",
+        "object",
+        "convenience",
+        "manipulation",
+        "data structure"
+      ],
+      "author": {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "http://substack.net"
+      },
+      "dependencies": {
+        "traverse": ">=0.2.4"
+      },
+      "devDependencies": {
+        "expresso": ">=0.6.0"
+      },
+      "scripts": {
+        "test": "expresso"
+      },
+      "license": "MIT/X11",
+      "engine": [
+        "node >=0.2.0"
+      ],
+      "_id": "hashish@0.0.4",
+      "engines": {
+        "node": "*"
+      },
+      "_engineSupported": true,
+      "_npmVersion": "1.0.10",
+      "_nodeVersion": "v0.5.0-pre",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "6d60bc6ffaf711b6afd60e426d077988014e6554",
+        "tarball": "https://registry.npmjs.org/hashish/-/hashish-0.0.4.tgz"
+      },
+      "directories": {}
+    }
+  },
+  "maintainers": [
+    {
+      "name": "substack",
+      "email": "mail@substack.net"
+    }
+  ],
+  "time": {
+    "modified": "2017-10-13T05:26:30.101Z",
+    "created": "2011-02-09T13:03:22.418Z",
+    "0.0.1": "2011-02-09T13:03:22.921Z",
+    "0.0.2": "2011-02-12T04:37:36.218Z",
+    "0.0.3": "2011-06-15T06:25:31.485Z",
+    "0.0.4": "2011-07-23T00:08:00.295Z"
+  },
+  "author": {
+    "name": "James Halliday",
+    "email": "mail@substack.net",
+    "url": "http://substack.net"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/substack/node-hashish.git"
+  },
+  "users": {
+    "vasc": true,
+    "fgribreau": true,
+    "pid": true,
+    "dfl": true,
+    "majj": true,
+    "tunnckocore": true,
+    "eliellis": true
+  },
+  "_attachments": {}
+}

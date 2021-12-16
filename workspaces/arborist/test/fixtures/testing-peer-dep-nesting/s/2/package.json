@@ -1,0 +1,8 @@
+{
+  "name": "@isaacs/testing-peer-dep-nesting-s",
+  "version": "2.0.0",
+  "dependencies": {
+    "@isaacs/testing-peer-dep-nesting-x": "",
+    "@isaacs/testing-peer-dep-nesting-y": ""
+  }
+}

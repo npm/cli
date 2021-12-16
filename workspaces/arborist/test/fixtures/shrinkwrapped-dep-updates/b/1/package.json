@@ -1,0 +1,5 @@
+{
+  "name": "@nlf/shrinkwrapped-dep-updates-b",
+  "version": "1.0.0",
+  "description": "a dependency that a shrinkwrapped dependency depends on"
+}

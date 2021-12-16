@@ -1,0 +1,439 @@
+{
+  "_id": "skip-regex",
+  "_rev": "7-0e7e3e2f31726bd0a90fd1e81e385de1",
+  "name": "skip-regex",
+  "description": "Micro parser for detection of literal regexes",
+  "dist-tags": {
+    "latest": "1.0.2"
+  },
+  "versions": {
+    "0.2.0": {
+      "name": "skip-regex",
+      "version": "0.2.0",
+      "description": "Micro parser for detection of literal regexes",
+      "main": "./dist/skip-regex.js",
+      "module": "./lib/skip-regex.js",
+      "jsnext:main": "./lib/skip-regex.js",
+      "types": "./index.d.ts",
+      "engines": {
+        "node": ">=4.2",
+        "npm": ">=3.0"
+      },
+      "scripts": {
+        "test": "node ./test/run.js",
+        "pretest": "rollup -c",
+        "build": "rm -rf ./dist/* && npm t",
+        "prepublish": "npm run build"
+      },
+      "keywords": [
+        "regexp",
+        "parser",
+        "javascript",
+        "es6"
+      ],
+      "homepage": "https://github.com/aMarCruz/skip-regex",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/aMarCruz/skip-regex.git"
+      },
+      "author": {
+        "name": "aMarCruz",
+        "email": "amarcruz@yahoo.com"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "rollup": "^0.43.0",
+        "rollup-plugin-buble": "^0.15.0"
+      },
+      "gitHead": "5869d6189f1335226639975bededdc87dc6dbb91",
+      "bugs": {
+        "url": "https://github.com/aMarCruz/skip-regex/issues"
+      },
+      "_id": "skip-regex@0.2.0",
+      "_shasum": "e256cba1eb98b78a46574f9461ae931a691bac6e",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.10.1",
+      "_npmUser": {
+        "name": "amarcruz",
+        "email": "amarcruz@yahoo.com"
+      },
+      "dist": {
+        "shasum": "e256cba1eb98b78a46574f9461ae931a691bac6e",
+        "tarball": "https://registry.npmjs.org/skip-regex/-/skip-regex-0.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amarcruz",
+          "email": "amarcruz@yahoo.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/skip-regex-0.2.0.tgz_1498135450265_0.11395376455038786"
+      },
+      "directories": {}
+    },
+    "0.3.0": {
+      "name": "skip-regex",
+      "version": "0.3.0",
+      "description": "Micro parser for detection of literal regexes",
+      "main": "./dist/skip-regex.js",
+      "module": "./dist/skip-regex.esm.js",
+      "jsnext:main": "./dist/skip-regex.esm.js",
+      "types": "./index.d.ts",
+      "files": [
+        "*.ts",
+        "dist/"
+      ],
+      "engines": {
+        "node": ">=4.2",
+        "npm": ">=3.0"
+      },
+      "scripts": {
+        "test": "node ./test/run.js",
+        "pretest": "rollup -c",
+        "build": "rm -rf ./dist/* && npm t",
+        "prepublish": "npm run build"
+      },
+      "keywords": [
+        "regexp",
+        "parser",
+        "javascript",
+        "es6"
+      ],
+      "homepage": "https://github.com/aMarCruz/skip-regex",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/aMarCruz/skip-regex.git"
+      },
+      "author": {
+        "name": "aMarCruz",
+        "email": "amarcruz@yahoo.com"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "rollup": "^0.43.0",
+        "rollup-plugin-buble": "^0.15.0"
+      },
+      "gitHead": "5d2ea6fd2d1509f0d8f4a9195db57916ab70fdca",
+      "bugs": {
+        "url": "https://github.com/aMarCruz/skip-regex/issues"
+      },
+      "_id": "skip-regex@0.3.0",
+      "_shasum": "444388d2ed9b19180fecb0c85d0251b872a0af7f",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.10.1",
+      "_npmUser": {
+        "name": "amarcruz",
+        "email": "amarcruz@yahoo.com"
+      },
+      "dist": {
+        "shasum": "444388d2ed9b19180fecb0c85d0251b872a0af7f",
+        "tarball": "https://registry.npmjs.org/skip-regex/-/skip-regex-0.3.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amarcruz",
+          "email": "amarcruz@yahoo.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/skip-regex-0.3.0.tgz_1499193693830_0.76380804926157"
+      },
+      "directories": {}
+    },
+    "0.3.1": {
+      "name": "skip-regex",
+      "version": "0.3.1",
+      "description": "Micro parser for detection of literal regexes",
+      "main": "./dist/skip-regex.js",
+      "module": "./dist/skip-regex.esm.js",
+      "jsnext:main": "./dist/skip-regex.esm.js",
+      "types": "./index.d.ts",
+      "files": [
+        "*.ts",
+        "dist/"
+      ],
+      "engines": {
+        "node": ">=4.2"
+      },
+      "scripts": {
+        "test": "node ./test/run.js",
+        "pretest": "rollup -c",
+        "build": "rm -rf ./dist/* && npm t",
+        "prepublish": "npm run build"
+      },
+      "keywords": [
+        "regexp",
+        "parser",
+        "javascript",
+        "es6"
+      ],
+      "homepage": "https://github.com/aMarCruz/skip-regex",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/aMarCruz/skip-regex.git"
+      },
+      "author": {
+        "name": "aMarCruz",
+        "email": "amarcruz@yahoo.com"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "rollup": "^0.50.0",
+        "rollup-plugin-buble": "^0.16.0"
+      },
+      "gitHead": "fbb1839a3fbb6797342c70ee2fbe66d02a8cb80a",
+      "bugs": {
+        "url": "https://github.com/aMarCruz/skip-regex/issues"
+      },
+      "_id": "skip-regex@0.3.1",
+      "_shasum": "17919aae2ac4ce3d61d5e77eedd88206c64aa215",
+      "_from": ".",
+      "_npmVersion": "4.2.0",
+      "_nodeVersion": "7.10.1",
+      "_npmUser": {
+        "name": "amarcruz",
+        "email": "amarcruz@yahoo.com"
+      },
+      "dist": {
+        "shasum": "17919aae2ac4ce3d61d5e77eedd88206c64aa215",
+        "tarball": "https://registry.npmjs.org/skip-regex/-/skip-regex-0.3.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amarcruz",
+          "email": "amarcruz@yahoo.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/skip-regex-0.3.1.tgz_1508446973173_0.46138732973486185"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "skip-regex",
+      "version": "1.0.1",
+      "description": "Micro parser for detection of literal regexes",
+      "main": "./dist/skip-regex.js",
+      "module": "./dist/skip-regex.mjs",
+      "jsnext:main": "./dist/skip-regex.mjs",
+      "browser": "./index.min.js",
+      "source": "src/skip-regex.js",
+      "types": "./index.d.ts",
+      "engines": {
+        "node": ">=4.2"
+      },
+      "scripts": {
+        "test": "nyc mocha ./test/index.js",
+        "pretest": "rollup -mc",
+        "k": "karma start ./test/karma.conf.js",
+        "prek": "rollup -c rollup.browser.js",
+        "build": "rollup -mc && rollup -c rollup.browser.js",
+        "lint": "eslint src/*.js test/*.js",
+        "coverage": "nyc report -r=lcov",
+        "prepublish": "rm ./dist/* && npm run build && npm test"
+      },
+      "keywords": [
+        "javascript",
+        "typescript",
+        "es6",
+        "micro",
+        "parser",
+        "detection",
+        "regex",
+        "regexp"
+      ],
+      "homepage": "https://github.com/aMarCruz/skip-regex",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/aMarCruz/skip-regex.git"
+      },
+      "author": {
+        "name": "aMarCruz",
+        "email": "amarcruz@yahoo.com"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "eslint": "^5.10.0",
+        "karma": "^3.1.4",
+        "karma-chrome-launcher": "^2.2.0",
+        "karma-firefox-launcher": "^1.1.0",
+        "karma-mocha": "^1.3.0",
+        "mocha": "^5.2.0",
+        "nyc": "^13.1.0",
+        "rollup": "^0.68.1",
+        "rollup-plugin-buble": "^0.19.0",
+        "rollup-plugin-cleanup": "^3.0.0",
+        "rollup-plugin-uglify": "^6.0.0"
+      },
+      "gitHead": "8281c8ecc067dd9f861ee0f81d2b18002db1fd78",
+      "bugs": {
+        "url": "https://github.com/aMarCruz/skip-regex/issues"
+      },
+      "_id": "skip-regex@1.0.1",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.11.2",
+      "_npmUser": {
+        "name": "amarcruz",
+        "email": "amarcruz@yahoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-2SF0aPxt9o+71AiZZ9754c0/sJfZBfbZLkIlel3vSVc00/ebBDGRZUB3aFzSxAj4opQd/bH04JFpR7kDl25COA==",
+        "shasum": "1ab50b3152e19acc5b168d837d12b1a403793785",
+        "tarball": "https://registry.npmjs.org/skip-regex/-/skip-regex-1.0.1.tgz",
+        "fileCount": 10,
+        "unpackedSize": 24415,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcHJJPCRA9TVsSAnZWagAAebYQAIxrYtN/+4Z5fQte6R6h\nakMSHxyX16bTSPLu1KXW2CKYVvfyhTmUepOBUMX5kj0dDa22EWgBb+fy0EjG\nK91N8IxLHJIB68IFgUh54gQNm1Fhg/KU2nKnsSJVoQtZ0Xt1LuT5x+FHILUg\nmdempQpxKfVcrcfQ/w1szmolDpE+M7o6qNdktLV583ot9kXD9USxzw2bTtiA\nhqn9ISEkFU5MsGBlqOe8Yl8rknx2GwJumofRbZHOvjW/UhmIq61XkW/gbM2/\nSC7Z4DYYt1XqJCH4SqhI4/+ntbAaw2IcSB46+zWmKOKhqL9aAbhUxE0Y30bM\ncqEfwr0hnLrkMdoP4192ok2ccM+v3/HkbGr8nRBsRB9SiutmhVwwXZxC4ugP\n5ZWotm4PS3bMY0uti5R1ldsDKxWR9NT9XHZYu5VtRWA1HtXHNmgDgLdE+J8a\nxkSIoxD9vpcikKJkFDHrFINpdT9n6vRGdT9uRzXz9fNhc9ux8f5EMwyMQFJf\nept39nZVZ+q3D6N6fF2JVdkjZF8lSK+t84hVsVo5+rkcdUzU42u+ZiM8oVjG\nSj8iwm0anWC8BgBhHiHznaw9tOZROzTS9DzLJuFsVaMAfN6rNBpIHAxfBlou\n+GTwjNIsRUs5rH4ja3ZBh+wkPWv3zBrw4zBervqDN7//3OwN8pw48StkXerp\nf841\r\n=U+hK\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "amarcruz",
+          "email": "amarcruz@yahoo.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/skip-regex_1.0.1_1545376334724_0.36396184087611805"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.0.2": {
+      "name": "skip-regex",
+      "version": "1.0.2",
+      "description": "Micro parser for detection of literal regexes",
+      "main": "./dist/skip-regex.js",
+      "module": "./dist/skip-regex.mjs",
+      "jsnext:main": "./dist/skip-regex.mjs",
+      "browser": "./index.min.js",
+      "source": "src/skip-regex.js",
+      "types": "./index.d.ts",
+      "engines": {
+        "node": ">=4.2"
+      },
+      "scripts": {
+        "test": "nyc mocha ./test/index.js",
+        "pretest": "rollup -mc",
+        "k": "karma start ./test/karma.conf.js",
+        "prek": "rollup -c rollup.browser.js",
+        "build": "rollup -mc && rollup -c rollup.browser.js",
+        "lint": "eslint src/*.js test/*.js",
+        "coverage": "nyc report -r=lcov",
+        "prepublish": "rm ./dist/* && npm run build && npm test"
+      },
+      "keywords": [
+        "javascript",
+        "typescript",
+        "es6",
+        "micro",
+        "parser",
+        "detection",
+        "regex",
+        "regexp"
+      ],
+      "homepage": "https://github.com/aMarCruz/skip-regex",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/aMarCruz/skip-regex.git"
+      },
+      "author": {
+        "name": "aMarCruz",
+        "email": "amarcruz@yahoo.com"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "eslint": "^5.10.0",
+        "karma": "^3.1.4",
+        "karma-chrome-launcher": "^2.2.0",
+        "karma-firefox-launcher": "^1.1.0",
+        "karma-mocha": "^1.3.0",
+        "mocha": "^5.2.0",
+        "nyc": "^13.1.0",
+        "rollup": "^0.68.1",
+        "rollup-plugin-buble": "^0.19.0",
+        "rollup-plugin-cleanup": "^3.0.0",
+        "rollup-plugin-uglify": "^6.0.0"
+      },
+      "gitHead": "1ce5518d347a519388edc965dc2537f80c1deae3",
+      "bugs": {
+        "url": "https://github.com/aMarCruz/skip-regex/issues"
+      },
+      "_id": "skip-regex@1.0.2",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.11.2",
+      "_npmUser": {
+        "name": "amarcruz",
+        "email": "amarcruz@yahoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-pEjMUbwJ5Pl/6Vn6FsamXHXItJXSRftcibixDmNCWbWhic0hzHrwkMZo0IZ7fMRH9KxcWDFSkzhccB4285PutA==",
+        "shasum": "ac655d77e7c771ac2b9f37585fea37bff56ad65b",
+        "tarball": "https://registry.npmjs.org/skip-regex/-/skip-regex-1.0.2.tgz",
+        "fileCount": 10,
+        "unpackedSize": 25273,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcIKt5CRA9TVsSAnZWagAAsp0QAJ6zt1VP4S7xf5jGndJc\ngHKWAZSvbZ6K9Ax/ecRt5NF3zcrfzPR66Im3xkDDAkNkbqTgsgOvJMLX6HRf\nug387whlmXE3421rf5EPl6ftA9ePlHyL8O/XaeTC31F/Ipr/hL88G1iqXSH1\n2GXDwe6qcMUD+bcF29gC0qZppkHLwJYln8qWWUbcPKOf9mnWTq6CDGmIFZl7\nC//SGkInXDXIs9e6eBdTZbve9NMJqKK4JXKJX4aVuNjE6JuyYjjvbNYZdyf6\nf56YuVjip0KLntVY+9lZCu+HeFz/6xubjGb5ZW6CnxUX/EeX+0gf7+g5Owv7\nIompx7xfXf6JXRe4MwL3Hx1g9GBZwK8pkiyYpRHVR+9i6ajY/yNpRLZLRsoo\n10G6yRmeG5HxNS4OLIKlKJKDsqQAnchWrNpy1bwdPv7RIAaP4H4yYmt1psMp\nthdVV8a5dC1QlsXMOSy2V4WNFohzmxSCCqUST/WTICFLYUdhXzNnAizqltaf\niA8e2UA3eOiNSaPgkExdd1uEO1XEzdUMHyn5RwE7bep+UFseDH9MwzSwn9O1\niiv5f0OkmkNo6YS+EYTtzW/Koyy3bbBG0LcvD4yYDPPuGcu5egmvVifEb07d\ndPXxaTFlNN2nRg4esLaIqqDyYhePd3tfHzVFmtnX/nAumSXTr3Aqnpsmf2UW\nceJm\r\n=hWZd\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "amarcruz",
+          "email": "amarcruz@yahoo.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/skip-regex_1.0.2_1545644920059_0.58340694136706"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# skipRegex\n\n[![npm Version][npm-badge]][npm-url]\n[![License][license-badge]][license-url]\n[![Build Status][travis-badge]][travis-url]\n[![Coverage][codecov-badge]][codecov-url]\n[![Minified Size][size-badge]][size-url]\n\nMicro parser for detection of literal regexes.\n\n- Fast detection with high accuracy.\n- Minimum size.\n- Compatible with NodeJS, bundlers, IE9+, and modern Browsers.\n- TypeScript definition.\n- Zero dependencies.\n\n## Install\n\n```bash\nnpm install skip-regex --save\n# or\nyarn add skip-regex\n```\n\nor load the global `skipRegex` function in your browser:\n\n```html\n<script src=\"https://unpkg.com/skip-regex/index.min.js\"></script>\n```\n\nThree formats transpiled to ES5:\n\n- CommonJS for node.js and browserify-like bundlers.\n- ESM for bundlers like [Rollup](https://github.com/rollup/rollup).\n- UMD for AMD, CommonJS, and browsers.\n\n## Syntax\n\n```ts\nskipRegex(source: string, start: number) => number\n```\n\nThe `start` position _must_ point to a slash within `source`.\n\nFrom there, `skipRegex` will find the end of a regular expression in the given string.\n\nThe returned value is the position of the character following the regex, or `start+1` if the slash does not start a regex.\n\n## Example\n\nThis is a silly example, but it will give the idea.\n\n```js\nimport skipRegex from 'skip-regex'\n\nconst source = ' /.*/ '\nconst start  = source.indexOf('/')\n\nif (~start) {\n  const end = skipRegex(source, start)\n\n  if (end > start + 1) {      // detected as regex?\n    const regex = source.slice(start, end)\n    console.log(`Found regex ${regex} at position ${start}!`)\n\n  } else if (source[end] === '*' || source[end] === '/') {\n    console.log('The slash starts a JS comment.')\n\n  } else {\n    console.log('The slash is a division sign.')\n  }\n}\n```\n\nFor something more complete see the [js-cleanup](https://github.com/aMarCruz/js-cleanup) code, an utility to clean comments safely in JS-like sources, which uses skip-regex to skip regular expressions.\n\nFor Rollup, you can use [rollup-plugin-node-resolve](https://github.com/rollup/rollup-plugin-node-resolve) to resolve 'skip-regex' as an ES6 module.\n\nFor TypeScript, enable `esModuleInterop` in your tsconfig.json _or_ use the `\"import=require\"` syntax:\n\n```ts\nimport skipRegex = require('skip-regex')\n\n//...\n```\n\n## Related Links\n\nSome sites and tools that have been helpful:\n\n- [RegExp (Regular Expressions) Objects](https://www.ecma-international.org/ecma-262/9.0/index.html#sec-regexp-regular-expression-objects) : ECMA Specs\n- [RegExp on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp) : MDN Reference\n- [RegEgg](http://www.rexegg.com/) : Complete tutorial, various regex dialects\n- [RegExr](https://regexr.com/) : Online tool for learn and test regexes\n- [RegExp Preview and Editor](https://marketplace.visualstudio.com/items?itemName=le0zh.vscode-regexp-preivew) : VSCode extension based on regexper-static\n\n## Support my Work\n\nI'm a full-stack developer with more than 20 year of experience and I try to share most of my work for free and help others, but this takes a significant amount of time and effort so, if you like my work, please consider...\n\n<!-- markdownlint-disable MD033 -->\n[<img src=\"https://amarcruz.github.io/images/kofi_blue.png\" height=\"36\" title=\"Support Me on Ko-fi\" />][kofi-url]\n<!-- markdownlint-enable MD033 -->\n\nOf course, feedback, PRs, and stars are also welcome 🙃\n\nThanks for your support!\n\n## Licence\n\nThe [MIT license](LICENSE) (MIT)\n\n&copy; 2018 Alberto Martínez\n\n[npm-badge]:      https://badgen.net/npm/v/skip-regex\n[npm-url]:        https://www.npmjs.com/package/skip-regex\n[license-badge]:  https://badgen.net/npm/license/skip-regex\n[license-url]:    https://github.com/aMarCruz/skip-regex/blob/master/LICENSE\n[travis-badge]:   https://travis-ci.org/aMarCruz/skip-regex.svg?branch=master\n[travis-url]:     https://travis-ci.org/aMarCruz/skip-regex\n[codecov-badge]:  https://codecov.io/gh/aMarCruz/skip-regex/branch/master/graph/badge.svg\n[codecov-url]:    https://codecov.io/gh/aMarCruz/skip-regex\n[size-badge]:     https://badgen.net/bundlephobia/min/skip-regex\n[size-url]:       https://bundlephobia.com/result?p=skip-regex\n[kofi-url]:       https://ko-fi.com/C0C7LF7I\n",
+  "maintainers": [
+    {
+      "name": "amarcruz",
+      "email": "amarcruz@yahoo.com"
+    }
+  ],
+  "time": {
+    "modified": "2018-12-24T09:48:44.435Z",
+    "created": "2017-06-22T12:44:11.315Z",
+    "0.2.0": "2017-06-22T12:44:11.315Z",
+    "0.3.0": "2017-07-04T18:41:34.781Z",
+    "0.3.1": "2017-10-19T21:02:54.041Z",
+    "1.0.0": "2018-12-21T07:02:10.751Z",
+    "1.0.1": "2018-12-21T07:12:14.844Z",
+    "1.0.2": "2018-12-24T09:48:40.246Z"
+  },
+  "homepage": "https://github.com/aMarCruz/skip-regex",
+  "keywords": [
+    "javascript",
+    "typescript",
+    "es6",
+    "micro",
+    "parser",
+    "detection",
+    "regex",
+    "regexp"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aMarCruz/skip-regex.git"
+  },
+  "author": {
+    "name": "aMarCruz",
+    "email": "amarcruz@yahoo.com"
+  },
+  "bugs": {
+    "url": "https://github.com/aMarCruz/skip-regex/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "users": {
+    "amarcruz": true
+  }
+}

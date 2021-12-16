@@ -1,0 +1,8 @@
+{
+  "name": "@isaacs/prod-dep-enotarget",
+  "version": "1.0.0",
+  "description": "a production dep that is not satisfiable",
+  "dependencies": {
+    "tap": "9999.0000.9999"
+  }
+}

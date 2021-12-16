@@ -1,0 +1,1412 @@
+{
+  "_id": "furi",
+  "_rev": "14-d8241aab66e1a78e14541f47b3618a7c",
+  "name": "furi",
+  "dist-tags": {
+    "latest": "2.0.0",
+    "next": "2.0.0-build.86"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "furi",
+      "version": "0.1.0",
+      "description": "File URI library",
+      "private": false,
+      "main": "index",
+      "types": "index.d.ts",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/demurgos/furi.git"
+      },
+      "keywords": [
+        "error"
+      ],
+      "pre-commit": {
+        "run": [
+          "test"
+        ]
+      },
+      "author": {
+        "name": "Charles Samborski",
+        "email": "demurgos@demurgos.net",
+        "url": "https://demurgos.net"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "@types/is-windows": "^0.2.0",
+        "is-windows": "^1.0.2"
+      },
+      "devDependencies": {
+        "@types/chai": "^4.1.3",
+        "@types/minimist": "^1.2.0",
+        "@types/mocha": "^5.2.0",
+        "@types/node": "^10.12.0",
+        "@types/tmp": "^0.0.33",
+        "chai": "^4.1.2",
+        "codecov": "^3.0.1",
+        "esm": "^3.0.30",
+        "gulp": "^4.0.0",
+        "gulp-cli": "^2.0.1",
+        "minimist": "^1.2.0",
+        "pre-commit": "^1.2.2",
+        "tmp": "^0.0.33",
+        "ts-node": "^6.0.3",
+        "turbo-gulp": "^0.17.1",
+        "typescript": "^2.8.3"
+      },
+      "nyc": {
+        "include": [
+          "build/test/lib/**/*.js",
+          "build/test/lib/**/*.mjs"
+        ],
+        "reporter": [
+          "text",
+          "html"
+        ],
+        "extension": [
+          ".mjs"
+        ]
+      },
+      "gitHead": "e478eb57046c4db82de9514067ab7e7abbf67e2c",
+      "bugs": {
+        "url": "https://github.com/demurgos/furi/issues"
+      },
+      "homepage": "https://github.com/demurgos/furi#readme",
+      "_id": "furi@0.1.0",
+      "_npmVersion": "6.3.0",
+      "_nodeVersion": "10.11.0",
+      "_npmUser": {
+        "name": "demurgos",
+        "email": "demurgos@demurgos.net"
+      },
+      "dist": {
+        "integrity": "sha512-GbsDuhcrkv9n3MH38v+xEvGUTFavHLPGtLvG1SZb++pDa+Vl/FGcHBZtioFag+Y5dKVP2/+PRNot2fRR6LtIZQ==",
+        "shasum": "e7cf24bf1432978e6072a3b49c9987258a72028b",
+        "tarball": "https://registry.npmjs.org/furi/-/furi-0.1.0.tgz",
+        "fileCount": 8,
+        "unpackedSize": 16346,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbxkWVCRA9TVsSAnZWagAAiEoP/0RznjHWOMYB4qTyUNn1\nHRK7HY7t5cZjCV9/4lccTcr6zeGlVpvfKCuJQa9Ur9/l0/bv7JjzID2orl7p\nASKicKDKsiyLjng4XnGlZ1pEutCTmhU+ktabESSak2n/l9EAL0Pgjnxew+3m\n63Pt098BS5dMb363teJrgh54+wJ2T4ZcWNd5q4ELoTaHKtDDR6do1AbvIw3E\nN4YIRnC6rj0O18TeY4JvwC3k3bqU+Fo0iXSu9dD4C8847O0SR+IVFsPDXCmn\ngYsFYAO4xY/x5LWv9CIEsIQLu/w/UJXPx5rzLuxwZ6VEYOn/0XcR8h4J+MxL\nm6w7Pb97m2dmBg2wTo534EXGrSNUba4N/B2tobPkTeKtW+PH3SVNkZfY7ZuF\nGGIvcLhrJUS798kEEouT6a4lHg9DuSj+xPRJcgTXZ5VPyGM9C9mWCiP4ZjlF\nhWfhcGLxAlfQq6OTVHt9jmLMZwHIbrzuXOTchCqMgoJtKXgeXXmw2wMB4Rmq\nTuAl+G5Hr3gLLl1h5mN07WPIr3aOJt9tCPoOpQnu+Bqy9e8nD27qRSUmxUQi\n0xeYpipK6exvOOo8EPYYhk6qY6HJV+ydf3OVzqzKi0OY4imsnwi5uG3B1Qhu\n/d3UN8MTpfLMGpHBUaaA0o2aGSaotIa5UxP+BE4cE9SilKeBf6gMe/xfBXZ1\nFbsV\r\n=jGt3\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "demurgos",
+          "email": "demurgos@demurgos.net"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/furi_0.1.0_1539720596796_0.7602462288624574"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.1.0-build.9": {
+      "name": "furi",
+      "version": "0.1.0-build.9",
+      "description": "File URI library",
+      "private": false,
+      "main": "index",
+      "types": "index.d.ts",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/demurgos/furi.git"
+      },
+      "keywords": [
+        "error"
+      ],
+      "pre-commit": {
+        "run": [
+          "test"
+        ]
+      },
+      "author": {
+        "name": "Charles Samborski",
+        "email": "demurgos@demurgos.net",
+        "url": "https://demurgos.net"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "@types/is-windows": "^0.2.0",
+        "is-windows": "^1.0.2"
+      },
+      "devDependencies": {
+        "@types/chai": "^4.1.3",
+        "@types/minimist": "^1.2.0",
+        "@types/mocha": "^5.2.0",
+        "@types/node": "^10.12.0",
+        "@types/tmp": "^0.0.33",
+        "chai": "^4.1.2",
+        "codecov": "^3.0.1",
+        "esm": "^3.0.30",
+        "gulp": "^4.0.0",
+        "gulp-cli": "^2.0.1",
+        "minimist": "^1.2.0",
+        "pre-commit": "^1.2.2",
+        "tmp": "^0.0.33",
+        "ts-node": "^6.0.3",
+        "turbo-gulp": "^0.17.1",
+        "typescript": "^2.8.3"
+      },
+      "nyc": {
+        "include": [
+          "build/test/lib/**/*.js",
+          "build/test/lib/**/*.mjs"
+        ],
+        "reporter": [
+          "text",
+          "html"
+        ],
+        "extension": [
+          ".mjs"
+        ]
+      },
+      "gitHead": "cc4573fcd4a085d49b86c1b446ef0b4bd8b64a18",
+      "readme": "# furi\n\n[![npm](https://img.shields.io/npm/v/furi.svg?maxAge=2592000)](https://www.npmjs.com/package/furi)\n[![GitHub repository](https://img.shields.io/badge/Github-demurgos%2Ffuri-blue.svg)](https://github.com/demurgos/furi)\n[![Build status](https://img.shields.io/travis/demurgos/furi/master.svg?maxAge=2592000)](https://travis-ci.org/demurgos/furi)\n[![Codecov](https://codecov.io/gh/demurgos/furi/branch/master/graph/badge.svg)](https://codecov.io/gh/demurgos/furi)\n\nFile URI library.\n\n## Installation\n\n```shell\nnpm install --save furi\n```\n\n## References\n\n- https://tools.ietf.org/html/rfc3986#section-3.3\n- https://url.spec.whatwg.org/\n- https://github.com/nodejs/node/blob/deaddd212c499c7ff88d20034753b5f3f00d5153/lib/internal/url.js#L1414\n\n## License\n\n[MIT License](./LICENSE.md)\n",
+      "readmeFilename": "README.md",
+      "bugs": {
+        "url": "https://github.com/demurgos/furi/issues"
+      },
+      "homepage": "https://github.com/demurgos/furi#readme",
+      "_id": "furi@0.1.0-build.9",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.12.0",
+      "_npmUser": {
+        "name": "demurgos",
+        "email": "demurgos@demurgos.net"
+      },
+      "dist": {
+        "integrity": "sha512-h+w9gBrb+f1gdKeoPuXXP409zejOHIq5teAghojPN6bKZlYCcsGDNHYGEfluy3+3pa15GFAAmyjOB1LjxbtBdQ==",
+        "shasum": "60cbc3081a340219aee2c9db52f6795d1728f91f",
+        "tarball": "https://registry.npmjs.org/furi/-/furi-0.1.0-build.9.tgz",
+        "fileCount": 8,
+        "unpackedSize": 16354,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbx6IPCRA9TVsSAnZWagAAnSMP/3NrknNqZUa0mLt3T8J1\numZSTPOlLAsMmb0fbZvCMHCYQStg/WDjul84Jgm7fjcu3+fcFCE/yXaokB8g\nUWV3HVODi8CpYpA8gjWPgYYz7ZLzUGZCO4DPOtv/kuix5wRDPfySKewhxtun\n5i54OInqz0AdZ9qzWUchjzNfqqP1sSLD4chW/C13LIGlBGjXxcfA9hbr8FqR\nq7v3yi5spP4zkuwWY10JmRUknT3S4quf/FNk2yLf1zMtUa3YtN8BfX/ryew6\nOcbmw1eWpSQwkJTSJ7tA0wsZvkn0AsupgiGHd1BnmcAcTjwD0VcJM2C960Ir\ncGJ2qeadVl6XebzzdSjBIA00YbjwhDdXewm75RVebfVcj7DStHNJWB+f+yVb\nzhE0QHQmva9qVAdE2ic21wUcf8gKOForyloOUaIRKQ8oLHgZyGLND4+mF+mK\nV1Ils8E0rlH6Wb1Cke3hxlu+hvNjw9j6JYXnQaGYojp4PRBxrxvmcZwErYx8\nHtnBw+wcuZ8lLMJrTJ14IBDAZtKhrKVVLlOgofh7ssRee47FxOzze0iwwus/\n08b1+fHjkYpPVgzrslo9vyzDXJas9WdV/QWOxnclfNXArrhXa7mwxlAW/eR8\n1JQXtbzU27WahKn85YB5ss/6GNMFmzKPvD1AmQkmZszzOGHJAovFG3VhjCFN\nINfK\r\n=3tMs\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "demurgos",
+          "email": "demurgos@demurgos.net"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/furi_0.1.0-build.9_1539809807176_0.14451281892589574"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.2.0-build.11": {
+      "name": "furi",
+      "version": "0.2.0-build.11",
+      "description": "File URI manipulation library",
+      "private": false,
+      "main": "index",
+      "types": "index.d.ts",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/demurgos/furi.git"
+      },
+      "keywords": [
+        "error"
+      ],
+      "pre-commit": {
+        "run": [
+          "test"
+        ]
+      },
+      "author": {
+        "name": "Charles Samborski",
+        "email": "demurgos@demurgos.net",
+        "url": "https://demurgos.net"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "@types/is-windows": "^0.2.0",
+        "is-windows": "^1.0.2"
+      },
+      "devDependencies": {
+        "@types/chai": "^4.1.3",
+        "@types/minimist": "^1.2.0",
+        "@types/mocha": "^5.2.0",
+        "@types/node": "^10.12.0",
+        "@types/tmp": "^0.0.33",
+        "chai": "^4.1.2",
+        "codecov": "^3.0.1",
+        "esm": "^3.0.30",
+        "gulp": "^4.0.0",
+        "gulp-cli": "^2.0.1",
+        "minimist": "^1.2.0",
+        "pre-commit": "^1.2.2",
+        "tmp": "^0.0.33",
+        "ts-node": "^6.0.3",
+        "turbo-gulp": "^0.17.1",
+        "typescript": "^2.8.3"
+      },
+      "nyc": {
+        "include": [
+          "build/test/lib/**/*.js",
+          "build/test/lib/**/*.mjs"
+        ],
+        "reporter": [
+          "text",
+          "html"
+        ],
+        "extension": [
+          ".mjs"
+        ]
+      },
+      "gitHead": "01b601393ce1af20be79ecc0793ed2be9c4cc42c",
+      "readme": "# furi\n\n[![npm](https://img.shields.io/npm/v/furi.svg?maxAge=2592000)](https://www.npmjs.com/package/furi)\n[![GitHub repository](https://img.shields.io/badge/Github-demurgos%2Ffuri-blue.svg)](https://github.com/demurgos/furi)\n[![Build status](https://img.shields.io/travis/demurgos/furi/master.svg?maxAge=2592000)](https://travis-ci.org/demurgos/furi)\n[![Codecov](https://codecov.io/gh/demurgos/furi/branch/master/graph/badge.svg)](https://codecov.io/gh/demurgos/furi)\n\nFile URI manipulation library.\n\n## Installation\n\n```shell\nnpm install --save furi\n```\n\n## References\n\n- https://tools.ietf.org/html/rfc3986#section-3.3\n- https://url.spec.whatwg.org/\n- https://github.com/nodejs/node/blob/deaddd212c499c7ff88d20034753b5f3f00d5153/lib/internal/url.js#L1414\n- https://github.com/nodejs/node/blob/master/test/parallel/test-url-pathtofileurl.js\n- https://docs.microsoft.com/en-us/windows/desktop/FileIO/naming-a-file\n\n## License\n\n[MIT License](./LICENSE.md)\n",
+      "readmeFilename": "README.md",
+      "bugs": {
+        "url": "https://github.com/demurgos/furi/issues"
+      },
+      "homepage": "https://github.com/demurgos/furi#readme",
+      "_id": "furi@0.2.0-build.11",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.13.0",
+      "_npmUser": {
+        "name": "demurgos",
+        "email": "demurgos@demurgos.net"
+      },
+      "dist": {
+        "integrity": "sha512-7RtfdKPbiUvc41qjODqlYPD5sML0v8PsSWwc2LV2UYzhmmfrSwWP3ysvNUI2HZiSXFpDKjqw4nQvQZPnyDwKqg==",
+        "shasum": "c05cb773484b5caa4e4d0e32944296a5c639cd2b",
+        "tarball": "https://registry.npmjs.org/furi/-/furi-0.2.0-build.11.tgz",
+        "fileCount": 8,
+        "unpackedSize": 25054,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJb9XSTCRA9TVsSAnZWagAA8K4P/iTBS0LvDh1fjTM9GUvG\nCECfreY7ZHVcmbGRQe+Wl43dRUWRu9Xrmi1MGj4wl9qtAhvOuW2DVtJWz4Wi\nO/p9pjiNUKMdOHWyPL5yXJtSMDjs1DCd1L8KIRixJB9Qc/Rcz4MCCa0Yn7Uu\nR2cTEtjYbfGiLMZGM2955QeY5F2v6xNBoD72cfSGq15t+yVZs1xmYVkHiVEc\nL2TkSfgYaykbyhYRMllRQGBrus/yBUzBzPoOT1/oj28NmFaIdcZBjollTB+x\nu0UtAFW1fhNzNp2ixaLIb2Sl+LihuFRH7zIObAUwUX42Owr/pBIoHecDr+Ae\nqs61OFuTtHUHme7TzxWaQlquc9w+MZBtM2xf6jSgYdYwBVG3JRXEJnwn/b/h\nnnlclSyTzriaEuaUVA/sm+HAn1rDeapQ0XVZfiSzAK7Jh+/yuWsjYUio9ASn\n/fL5A/fw1rTMzM4bX2pild8jN2xSSfagytttkby0fnh8HYM3KyVTQMaN/7eM\ns5u4SIZP1aqSEKbh4NuZuhh3HhGRsnakQfetLBXxPBE7hTu1giHpMo7dqktu\ndr2n5WnDVXzNZtBBnRV/aTw8idt3PsUEalAsgeLTC4Qyba0D8AI9fCo1kDga\nH5v8X1qmZ09x97JXBJN8UOZr5Ms61xQRUbQvq0ccTs1b7ygSrC58wB0k9c7w\nVMXn\r\n=IZM+\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "demurgos",
+          "email": "demurgos@demurgos.net"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/furi_0.2.0-build.11_1542812818495_0.06333856165748308"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.2.0": {
+      "name": "furi",
+      "version": "0.2.0",
+      "description": "File URI manipulation library",
+      "private": false,
+      "main": "index",
+      "types": "index.d.ts",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/demurgos/furi.git"
+      },
+      "keywords": [
+        "error"
+      ],
+      "pre-commit": {
+        "run": [
+          "test"
+        ]
+      },
+      "author": {
+        "name": "Charles Samborski",
+        "email": "demurgos@demurgos.net",
+        "url": "https://demurgos.net"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "@types/is-windows": "^0.2.0",
+        "is-windows": "^1.0.2"
+      },
+      "devDependencies": {
+        "@types/chai": "^4.1.3",
+        "@types/minimist": "^1.2.0",
+        "@types/mocha": "^5.2.0",
+        "@types/node": "^10.12.0",
+        "@types/tmp": "^0.0.33",
+        "chai": "^4.1.2",
+        "codecov": "^3.0.1",
+        "esm": "^3.0.30",
+        "gulp": "^4.0.0",
+        "gulp-cli": "^2.0.1",
+        "minimist": "^1.2.0",
+        "pre-commit": "^1.2.2",
+        "tmp": "^0.0.33",
+        "ts-node": "^6.0.3",
+        "turbo-gulp": "^0.17.1",
+        "typescript": "^2.8.3"
+      },
+      "nyc": {
+        "include": [
+          "build/test/lib/**/*.js",
+          "build/test/lib/**/*.mjs"
+        ],
+        "reporter": [
+          "text",
+          "html"
+        ],
+        "extension": [
+          ".mjs"
+        ]
+      },
+      "gitHead": "a43c4ca45431e913e0c5a07f57c6a7895a592936",
+      "bugs": {
+        "url": "https://github.com/demurgos/furi/issues"
+      },
+      "homepage": "https://github.com/demurgos/furi#readme",
+      "_id": "furi@0.2.0",
+      "_npmVersion": "6.3.0",
+      "_nodeVersion": "10.12.0",
+      "_npmUser": {
+        "name": "demurgos",
+        "email": "demurgos@demurgos.net"
+      },
+      "dist": {
+        "integrity": "sha512-J+3TlDgabzAwGOWSBvvCywm00PLQtyCU3kDiB/Q1m8qF/LNuYVTHVOHMdqZ41QbMv0CIL7LVL4Kp5VL5nMOuLg==",
+        "shasum": "600c60988a745a1c1458f137ffdd6f491fb89515",
+        "tarball": "https://registry.npmjs.org/furi/-/furi-0.2.0.tgz",
+        "fileCount": 8,
+        "unpackedSize": 25045,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJb9XUuCRA9TVsSAnZWagAAlTYP/RvLjBCe8aBcxHLTgFvS\nsOEyIU77WuUz/W9NQSrs53jCVJjeubXJBcNXE74KczQkrnL30BgwSdhj9Scr\nOhRNsQDeQSW8k/uxHSKerqeZJMGR35lvTi8oLN8zvJnobf1xj5lWL0bFc+gd\nuDTFC1p6fAts2wEIdbYJdRn1C9c7fwj+v37Xbnxn4sBUMv34I+05ekRjMyUn\ngyhzqefV2sNgfC3d9GncZxKoXdZOSz4RTV5uSw1KmeoWnBSyLBTT3fS/34P5\n7nWVUJo9Q0LRg0qdEzz//daiGswrihsev2yZKk1SncDNMfj4hTv+Wxwhcqqs\nZTrkDl9zZHqLJyar8LuAlcrBlOCgPxxDcj7HEPyDc5kJTcOycQJmVgon3q4S\nyJGJYBT8jHPLgbPmKW31DIvGjeDahi8e5tDU3y57jc4UUebOB17x9zRyZEkh\nKhAwj54q7nSEsp53joy8JZrrtTa7TXps/80pzafcmmJfjLzNeOn4Z4gJSWAL\nsMo6+DBEf92waI8J0EQFAsSrTfMMbGmB8Wf6x/+t6DOULGOJIY8T9wbZYuSx\nqLK2F6nsSyuMaGZ5JdDdxY3pAXcqmx9wJbs4zzLpoivRfPUcCNCweu/MEK5i\nNHEuKfzhWpoK8pj2P5B69VSbjOMZJELpKJDNyQrwbPDTFJK/TaRk6eAd/aiR\nPMXT\r\n=nB08\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "demurgos",
+          "email": "demurgos@demurgos.net"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/furi_0.2.0_1542812974021_0.8088903802450664"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.0.0": {
+      "name": "furi",
+      "version": "1.0.0",
+      "description": "File URI manipulation library",
+      "private": false,
+      "main": "index",
+      "types": "index.d.ts",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/demurgos/furi.git"
+      },
+      "keywords": [
+        "error"
+      ],
+      "pre-commit": {
+        "run": [
+          "test"
+        ]
+      },
+      "author": {
+        "name": "Charles Samborski",
+        "email": "demurgos@demurgos.net",
+        "url": "https://demurgos.net"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "@types/is-windows": "^0.2.0",
+        "is-windows": "^1.0.2"
+      },
+      "devDependencies": {
+        "@types/chai": "^4.1.3",
+        "@types/minimist": "^1.2.0",
+        "@types/mocha": "^5.2.0",
+        "@types/node": "^10.12.0",
+        "@types/tmp": "^0.0.33",
+        "chai": "^4.1.2",
+        "codecov": "^3.0.1",
+        "esm": "^3.0.30",
+        "gulp": "^4.0.0",
+        "gulp-cli": "^2.0.1",
+        "minimist": "^1.2.0",
+        "pre-commit": "^1.2.2",
+        "tmp": "^0.0.33",
+        "ts-node": "^6.0.3",
+        "turbo-gulp": "^0.17.1",
+        "typescript": "^2.8.3"
+      },
+      "nyc": {
+        "include": [
+          "build/test/lib/**/*.js",
+          "build/test/lib/**/*.mjs"
+        ],
+        "reporter": [
+          "text",
+          "html"
+        ],
+        "extension": [
+          ".mjs"
+        ]
+      },
+      "gitHead": "bd02f89bb6cf5b9565a73c0f9875062ac2ccd915",
+      "bugs": {
+        "url": "https://github.com/demurgos/furi/issues"
+      },
+      "homepage": "https://github.com/demurgos/furi#readme",
+      "_id": "furi@1.0.0",
+      "_npmVersion": "6.3.0",
+      "_nodeVersion": "10.12.0",
+      "_npmUser": {
+        "name": "demurgos",
+        "email": "demurgos@demurgos.net"
+      },
+      "dist": {
+        "integrity": "sha512-jwY6hz7dEXS+c0FAiPFJ20W6QnwZO0uthR0xgWoM+giKN3RLKWDDOiG17VUD+Vmw8A3Kj327cxAKUyNbWahnsQ==",
+        "shasum": "cd14fffa8282cec5441b29144b992e9abb152a99",
+        "tarball": "https://registry.npmjs.org/furi/-/furi-1.0.0.tgz",
+        "fileCount": 8,
+        "unpackedSize": 39902,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJb9ZLECRA9TVsSAnZWagAA9WEP/AzfH3vMndXfayOrtt83\n1R+Vlb3Nmqe5ob76o67h5AGkEzdSs3s84GQL2DHRP6Rw0UlyTkaxo7y9NyFd\nEiAbIcA1KXpTArm9Xj/jpn4ETh+BZA7m33/7VsQGuL9YuTf7LieAYoXa7Usi\nazR1qdlgDUflJQaueB/f+av9DKp71NA+PBhDXanuXhEVYhFG9H9fUcIPIEXi\nLMGkqk99Dq7PwflE61fkmqwGtzH/uzyUIFiidU0xe/tWntXAn4Pbt1NOksmq\ndRV6IK6rI9RzsxUpL+vHudgEVJzIsFSYt9KVRhx4YmUt99vxHEhL408cy1aM\nPAQtO/l8kM7mRN4Gp673aN3iRgopj1jkrXj/mLEivMILOSlA0cICnMlYCf/P\nj585LN5mytXXcaXE/Y0o1rA002LXQNmlXckHW+L5BtehCk1ObXm7J1MBOjJ0\nkzl+12wzwef10JfI9Eeun5bU+zSCytDsMAU4uyTypL/NigofZ3kCy84bYayl\nG3annbBrpGShrxxQZpizE+L+pnAywkE1iOIkb12axu1lS1a8CGZ4GsPefbbG\nTlO7HNOewLwtwrI1znSto9qO+Q4hy+q+byppZYi0gJn3SCWiPBl5M7as26In\nRjMkVg+7t7IHfePk47GriKiQSdvuvwJ6w3a/VA2eLYv/G4Hvp8kKQZ++eXP+\nmrL/\r\n=hzME\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "demurgos",
+          "email": "demurgos@demurgos.net"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/furi_1.0.0_1542820547777_0.3557301903430421"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.0.0-build.26": {
+      "name": "furi",
+      "version": "1.0.0-build.26",
+      "description": "File URI manipulation library",
+      "private": false,
+      "main": "index",
+      "types": "index.d.ts",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/demurgos/furi.git"
+      },
+      "pre-commit": {
+        "run": [
+          "pre-commit"
+        ]
+      },
+      "keywords": [
+        "file",
+        "url"
+      ],
+      "author": {
+        "name": "Charles Samborski",
+        "email": "demurgos@demurgos.net",
+        "url": "https://demurgos.net"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "@types/is-windows": "^0.2.0",
+        "is-windows": "^1.0.2"
+      },
+      "devDependencies": {
+        "@types/chai": "^4.1.7",
+        "@types/gulp": "^4.0.5",
+        "@types/minimist": "^1.2.0",
+        "@types/mocha": "^5.2.5",
+        "@types/node": "^10.12.12",
+        "@types/tmp": "^0.0.33",
+        "chai": "^4.2.0",
+        "codecov": "^3.1.0",
+        "esm": "^3.0.84",
+        "gulp": "^4.0.0",
+        "gulp-cli": "^2.0.1",
+        "minimist": "^1.2.0",
+        "pre-commit": "^1.2.2",
+        "tmp": "^0.0.33",
+        "ts-node": "^7.0.1",
+        "turbo-gulp": "^0.18.0",
+        "typescript": "^3.2.1"
+      },
+      "c88": {
+        "match": [
+          "build/test/lib/*.{js,mjs}",
+          "build/test/lib/**/*.{js,mjs}"
+        ]
+      },
+      "gitHead": "c7ffcd38d19c1d39618943035c97678c612ebe19",
+      "readme": "# furi\n\n[![npm](https://img.shields.io/npm/v/furi.svg?maxAge=2592000)](https://www.npmjs.com/package/furi)\n[![GitHub repository](https://img.shields.io/badge/Github-demurgos%2Ffuri-blue.svg)](https://github.com/demurgos/furi)\n[![Build status](https://img.shields.io/travis/demurgos/furi/master.svg?maxAge=2592000)](https://travis-ci.org/demurgos/furi)\n[![Codecov](https://codecov.io/gh/demurgos/furi/branch/master/graph/badge.svg)](https://codecov.io/gh/demurgos/furi)\n\nFile URI manipulation library.\n\nThis library is intended as a toolbox to handle `file://` URIs. It currently\nfocuses on conversion between file URIs and system dependent paths.\n\nThe conversion supports Windows UNC paths, Windows long paths, trailing\nseparators, special characters and non-ASCII characters.\n\n## Installation\n\n```shell\nnpm install --save furi\n```\n\n## API documentation\n\nSee [documentation](https://demurgos.github.io/furi/).\n\n## References\n\n- https://tools.ietf.org/html/rfc3986#section-3.3\n- https://url.spec.whatwg.org/\n- https://github.com/nodejs/node/blob/deaddd212c499c7ff88d20034753b5f3f00d5153/lib/internal/url.js#L1414\n- https://github.com/nodejs/node/blob/master/test/parallel/test-url-pathtofileurl.js\n- https://docs.microsoft.com/en-us/windows/desktop/FileIO/naming-a-file\n\n## License\n\n[MIT License](./LICENSE.md)\n",
+      "readmeFilename": "README.md",
+      "bugs": {
+        "url": "https://github.com/demurgos/furi/issues"
+      },
+      "homepage": "https://github.com/demurgos/furi#readme",
+      "_id": "furi@1.0.0-build.26",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.14.1",
+      "_npmUser": {
+        "name": "demurgos",
+        "email": "demurgos@demurgos.net"
+      },
+      "dist": {
+        "integrity": "sha512-N3O+xaVi+XMwEoWVg9tZDjevvtSYJHUuyVkj70FOZuIH4BHF1XI3pPzTgtzS8p1lQmEtXu0hJTN9G7wLLGchjg==",
+        "shasum": "9ab57528ded2abd2e479717b0f1d7dc51a34f2c5",
+        "tarball": "https://registry.npmjs.org/furi/-/furi-1.0.0-build.26.tgz",
+        "fileCount": 9,
+        "unpackedSize": 63276,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcBaHhCRA9TVsSAnZWagAA/aMP/A9TPh3o2M1ihYYLS/Qy\notyGeNj3glP24sTnNfXtSq/5V2eSoePP7ls7KXrKT3zanqmrMD/OTbbROrk8\nktLA0BNBM1+PIhpBncavbEMr61i6ejVj709/eHHlfgY/kGi7i8N8FlWOqcGG\naZbdNtgRrYQTUxuoupiZd0XhD04hRbo2yqBoHm70tLSenF8SsyHwJXb5tT2i\n6Az+uUp+JChbyDsl+P6Icrs4oTYOKl39i80AmXrfhbCzz6/HtEx37Eo3Qnrx\nfoD2hqaWw090vOrnssdKqFNYzFPCqYI1KVs3lgkQcN1bykpVijCtsZjvmy90\nGlAeGL+IBs+vdISZc22NAR36O9ApJJkR1K5Amzwh3SLEDp8w7lxTXrKjd+wi\nOGyBdVmCEzkyUWteM9VY6QYQ37qyq0+ctm5e1NFJP5tY8SMB6ElJkLJ6YotW\nQx1zKDPcMqQd/fl+910qsF4B+p8Cmw47tz3QQnMETR7s9kikdknsRgc7rje8\nfVtwxkIXTj98s9R7YvZb/EkcB6MQwSduMwnDQE/oVr9HT2A9g43+x3noNHdo\nM03AkdK5RYjVJBHHcWcCKYlzvdGzDBtOoByMxo+gl6tI7HptdLP5UjezN5XD\ne/xsO374NbIzNWI84h7zmBspk4h7CsIFBmLJ2wKXiQ6cfxqK6lGSNIpXS5MT\nI42f\r\n=I6D/\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "demurgos",
+          "email": "demurgos@demurgos.net"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/furi_1.0.0-build.26_1543872992249_0.18131794888057184"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.1.0": {
+      "name": "furi",
+      "version": "1.1.0",
+      "description": "File URI manipulation library",
+      "private": false,
+      "main": "index",
+      "types": "index.d.ts",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/demurgos/furi.git"
+      },
+      "pre-commit": {
+        "run": [
+          "pre-commit"
+        ]
+      },
+      "keywords": [
+        "file",
+        "url"
+      ],
+      "author": {
+        "name": "Charles Samborski",
+        "email": "demurgos@demurgos.net",
+        "url": "https://demurgos.net"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "@types/is-windows": "^0.2.0",
+        "is-windows": "^1.0.2"
+      },
+      "devDependencies": {
+        "@types/chai": "^4.1.7",
+        "@types/gulp": "^4.0.5",
+        "@types/minimist": "^1.2.0",
+        "@types/mocha": "^5.2.5",
+        "@types/node": "^10.12.12",
+        "@types/tmp": "^0.0.33",
+        "chai": "^4.2.0",
+        "codecov": "^3.1.0",
+        "esm": "^3.0.84",
+        "gulp": "^4.0.0",
+        "gulp-cli": "^2.0.1",
+        "minimist": "^1.2.0",
+        "pre-commit": "^1.2.2",
+        "tmp": "^0.0.33",
+        "ts-node": "^7.0.1",
+        "turbo-gulp": "^0.18.0",
+        "typescript": "^3.2.1"
+      },
+      "c88": {
+        "match": [
+          "build/test/lib/*.{js,mjs}",
+          "build/test/lib/**/*.{js,mjs}"
+        ]
+      },
+      "gitHead": "b98245906fa3b5a3a5f64999baec6ed144832f00",
+      "bugs": {
+        "url": "https://github.com/demurgos/furi/issues"
+      },
+      "homepage": "https://github.com/demurgos/furi#readme",
+      "_id": "furi@1.1.0",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.14.1",
+      "_npmUser": {
+        "name": "demurgos",
+        "email": "demurgos@demurgos.net"
+      },
+      "dist": {
+        "integrity": "sha512-OYfqLak8m4oZs7uYQmVuMz07XxEM16VY8yrYPeul/RmEac1m1vC33eRkjccvRaxnKnYqy4+RHjFuF/fIVviNLQ==",
+        "shasum": "8d5fb83c01f77a1be0b3a629aee1028b2fe6426c",
+        "tarball": "https://registry.npmjs.org/furi/-/furi-1.1.0.tgz",
+        "fileCount": 9,
+        "unpackedSize": 63281,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcBaLaCRA9TVsSAnZWagAAovsQAJy8VX2H5/VNiLaTGoQB\n2mjAhN8vvSYyfjFJNa5GyZSGFx9LjDgogjdYOFAzY/jopYFNcAIgfGmNCQMy\n9UI8K05pl5Wdrb6SBJD/uNrq29R7RUZmw4/BrnuA0hb8ReyiBktR/YXoLjfc\nvZRBBaR5RFwOtGqMPyJg1mbQKfBnYCpGdzEAgPTD6mg8La37Wcbe5FqB6XBl\nxlzB4E2bH0i4HB9PJPj5zVeuqTScRM2BlhHptHbPD7LSg14pCOKwEC3q2U75\n/BvXEZEH1Xp0muWqdwNP/ufBj7syLPL6Ftc29ceY68CM7yeET1Ru8NdeaV7O\ncNN9/mdhhPIoC+7WNDNeZP7BJ2eLh91FEtylbsC1bcO9ZNMWALzsPGakZXrY\nRZvFRJR9SVxTaSps9wdyjnjr6hCMt/awEhiptpLMK2RJ+ww37C7AWLWyrnnR\nUR2vpxGhLOXObIA9Mjf1j9JMGoEMCPrRxYooPo3m1hxuGMF8qjrxDWzZl6qF\nngXhPEu07DrhQVN2L2UX77RcKC7b8Tr9tKz3NnKdJGrLMutCQqN3WzlK+0be\ntYn/ltMwYYjK5Ze+UknFJjnupbX+Gl7iIO0uAt7uDNaVvHv+rhtrIvaSBEit\nTEKUe1RWh5V1IW/kt9HzdcCoJiWMIrzGCTTwT3UppKwj0ZE7Zip57NSubhz1\nZjWo\r\n=rFL3\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "demurgos",
+          "email": "demurgos@demurgos.net"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/furi_1.1.0_1543873241616_0.48407469588435736"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.2.0": {
+      "name": "furi",
+      "version": "1.2.0",
+      "description": "File URI manipulation library",
+      "private": false,
+      "main": "index",
+      "types": "index.d.ts",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/demurgos/furi.git"
+      },
+      "pre-commit": {
+        "run": [
+          "pre-commit"
+        ]
+      },
+      "keywords": [
+        "file",
+        "url"
+      ],
+      "author": {
+        "name": "Charles Samborski",
+        "email": "demurgos@demurgos.net",
+        "url": "https://demurgos.net"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "@types/is-windows": "^0.2.0",
+        "is-windows": "^1.0.2"
+      },
+      "devDependencies": {
+        "@types/chai": "^4.1.7",
+        "@types/gulp": "^4.0.5",
+        "@types/minimist": "^1.2.0",
+        "@types/mocha": "^5.2.5",
+        "@types/node": "^10.12.12",
+        "@types/tmp": "^0.0.33",
+        "chai": "^4.2.0",
+        "codecov": "^3.1.0",
+        "esm": "^3.0.84",
+        "gulp": "^4.0.0",
+        "gulp-cli": "^2.0.1",
+        "minimist": "^1.2.0",
+        "pre-commit": "^1.2.2",
+        "tmp": "^0.0.33",
+        "ts-node": "^7.0.1",
+        "turbo-gulp": "^0.18.0",
+        "typescript": "^3.2.1"
+      },
+      "c88": {
+        "match": [
+          "build/test/lib/*.{js,mjs}",
+          "build/test/lib/**/*.{js,mjs}"
+        ]
+      },
+      "gitHead": "7bf29c9120151dd5d76169c88a920b693b60f9f3",
+      "bugs": {
+        "url": "https://github.com/demurgos/furi/issues"
+      },
+      "homepage": "https://github.com/demurgos/furi#readme",
+      "_id": "furi@1.2.0",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.14.1",
+      "_npmUser": {
+        "name": "demurgos",
+        "email": "demurgos@demurgos.net"
+      },
+      "dist": {
+        "integrity": "sha512-Dsc4gyFMogjUs5SERTcPtsO+RFlnJyzZVikpR32Fv//luyEGPeojsww+29/mOvGhT0bi+8AiVxOwvatuEWhM9A==",
+        "shasum": "e276b939763a7a489adf2ae51489c02e0fd7017e",
+        "tarball": "https://registry.npmjs.org/furi/-/furi-1.2.0.tgz",
+        "fileCount": 9,
+        "unpackedSize": 76930,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcBqqtCRA9TVsSAnZWagAAmgUP/3kXE4VF7+64KACRfkbd\nW61s+h2ajAwH8BtaSx3BSeh8lN+tigtRMWjpizEUyw8t2l4z82QtqZvs8oyH\nwoXsZPuLRbNNgu/+16UZ5reAZZkb0lQNHBDbj7wF7hRQM323pRVjieDeMesT\njl1fbb/ktUnamNTZWkBg7LvmikJjogLdOTQ/ckcRTpYZ6AzN2Bp+uNYtZnk8\n0HjsimK2LZ0PJlcZjYICjftgGd/GyM1XMl/KAMM9Xe0jqFP65Z1dh3zDTDJo\nIf9FRWuiKgeGn44QOyzI7lIYThctb2JhWtZxmwmgkyIXhKZNRhUExIQz1220\nS2BvTfx8C4l8J75CE6QBy9gHg4Y5ffq5pG8sRInnOU70B2cJWgdBSwrYYyfZ\nUobfN0WdurWskfKiR5QJO8jWirRKLHDcaxYxeT8spK0TbTBIfXJ1ixOsuM+s\n1EctTC8G/VHdk5UzyGnAburcT3IpI1HdwiYJa9IPifbCc80XfXcvFS1ax1V4\ntlKrukY0sUlB6aca8VbTiNKokW/sq2iyC+eHey4c8aW1FkrWlFNnG7yfzYZq\n1aeQXoqMZIQrs+8XEHyvW9tQPMKmeDxxpfxEWMl5wOsxLVrN0nT5iI2Mo7oa\nQJVDYYNosmdGY/FeWjuifmzB0D7BRyf1Gndn0xpH37t8+1W7xNmGQxuyvngx\nd9BS\r\n=jysN\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "demurgos",
+          "email": "demurgos@demurgos.net"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/furi_1.2.0_1543940780626_0.8971278262609994"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.3.0": {
+      "name": "furi",
+      "version": "1.3.0",
+      "description": "File URI manipulation library",
+      "private": false,
+      "main": "index",
+      "types": "index.d.ts",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/demurgos/furi.git"
+      },
+      "pre-commit": {
+        "run": [
+          "pre-commit"
+        ]
+      },
+      "keywords": [
+        "file",
+        "url"
+      ],
+      "author": {
+        "name": "Charles Samborski",
+        "email": "demurgos@demurgos.net",
+        "url": "https://demurgos.net"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "@types/is-windows": "^0.2.0",
+        "is-windows": "^1.0.2"
+      },
+      "devDependencies": {
+        "@types/chai": "^4.1.7",
+        "@types/gulp": "^4.0.5",
+        "@types/minimist": "^1.2.0",
+        "@types/mocha": "^5.2.5",
+        "@types/node": "^10.12.12",
+        "@types/tmp": "^0.0.33",
+        "chai": "^4.2.0",
+        "codecov": "^3.1.0",
+        "esm": "^3.0.84",
+        "gulp": "^4.0.0",
+        "gulp-cli": "^2.0.1",
+        "minimist": "^1.2.0",
+        "pre-commit": "^1.2.2",
+        "tmp": "^0.0.33",
+        "ts-node": "^7.0.1",
+        "turbo-gulp": "^0.18.0",
+        "typescript": "^3.2.1"
+      },
+      "c88": {
+        "match": [
+          "build/test/lib/*.{js,mjs}",
+          "build/test/lib/**/*.{js,mjs}"
+        ]
+      },
+      "gitHead": "5bda0fbf4750210a80f1690848a112c63822ebad",
+      "bugs": {
+        "url": "https://github.com/demurgos/furi/issues"
+      },
+      "homepage": "https://github.com/demurgos/furi#readme",
+      "_id": "furi@1.3.0",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.14.1",
+      "_npmUser": {
+        "name": "demurgos",
+        "email": "demurgos@demurgos.net"
+      },
+      "dist": {
+        "integrity": "sha512-TYoXEeRLKHXNWcCBP0VH1psPktQ9G8Y0GfZwMXCvwVbhbfNx7JItKWhB5mMBYufNjqxEHq+Ivd1nLtr5vQyVoQ==",
+        "shasum": "5fd4186d805ae80a3acd29efaf954761003391f8",
+        "tarball": "https://registry.npmjs.org/furi/-/furi-1.3.0.tgz",
+        "fileCount": 9,
+        "unpackedSize": 82141,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcBw+hCRA9TVsSAnZWagAA/H8P/2KxmgZGtwctovPMKqWt\nWE2hGdt8yeDxPntBkZ9fRjDtsbwSn44sBzxJVUIkC3Sg9t/pi+wr57aVg/hc\ntIWpufz9lmoPcMvqcKC19Phj4cY8ymptJrKZO7xrog00ZVVSASCZfvWy5Zgq\nlJmpQRQrLK6Ul8AhCOIyxPR7tOxOsUjcnmrK31oc2JpJlDoSlQvsmDX48xfb\n7rqXlFZiiIoch0DyTNYFyg3uGTmIBIh1DHTfqfv+PG8eahS1nBGEJOVNJaG/\nL3qW93kFSkOYnDjS06cNzTxN02D8H4NAtr5P34PIpcAESVFbXCOcDa+yntU7\nxmNCmZOPNghM5Vbmddnde2bPEo+6Uu3ejt59ovTNjnc9Pxhpe462lnPk8BFS\nSpvseaLcT6I/LNHAvqaqrUUOQXmz4Mtc4XuR6Wp+VG+MXuK31Oem0fhEF8mr\nCVK02fMExMzizXTAkgbCmdwtde4HoaSGnty3hO9aNnUvvqDHETRel8Idqqj8\nu/DTP5kPg/saGJYrHQ3/D/SxggS/aYXN77jjSC4yc5oJruiN+E3mz+s+fdku\n2eRfHQcblersj6Y5TRzg4okB8jlXnCek820tlna5YvzhdTFoXAe1nq62PFEt\nXROdkm6Pq++h+cJSDbdf9MMX90r9hNJD/zX5Dto+p6nNs+JJZwK3knnrfrAy\n5jr3\r\n=srvR\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "demurgos",
+          "email": "demurgos@demurgos.net"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/furi_1.3.0_1543966624175_0.31490423111746835"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.3.0-build.61": {
+      "name": "furi",
+      "version": "1.3.0-build.61",
+      "description": "File URI manipulation library",
+      "private": false,
+      "main": "index",
+      "types": "index.d.ts",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/demurgos/furi.git"
+      },
+      "pre-commit": {
+        "run": [
+          "lint"
+        ]
+      },
+      "keywords": [
+        "file",
+        "url"
+      ],
+      "author": {
+        "name": "Charles Samborski",
+        "email": "demurgos@demurgos.net",
+        "url": "https://demurgos.net"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "@types/is-windows": "^1.0.0",
+        "is-windows": "^1.0.2"
+      },
+      "devDependencies": {
+        "@types/chai": "^4.2.6",
+        "@types/gulp": "^4.0.6",
+        "@types/minimist": "^1.2.0",
+        "@types/mocha": "^5.2.7",
+        "@types/node": "^12.12.14",
+        "@types/tmp": "^0.1.0",
+        "chai": "^4.2.0",
+        "codecov": "^3.6.1",
+        "gulp": "^4.0.2",
+        "gulp-cli": "^2.2.0",
+        "minimist": "^1.2.0",
+        "pre-commit": "^1.2.2",
+        "tmp": "^0.1.0",
+        "ts-node": "^8.5.4",
+        "turbo-gulp": "^0.20.2",
+        "typescript": "^3.7.3"
+      },
+      "c88": {
+        "match": [
+          "build/test/lib/*.{js,mjs}",
+          "build/test/lib/**/*.{js,mjs}"
+        ]
+      },
+      "gitHead": "c1e2bd8e3b3539e41656f17d4de535ed5718d2a3",
+      "readme": "# furi\n\n[![npm](https://img.shields.io/npm/v/furi.svg?maxAge=2592000)](https://www.npmjs.com/package/furi)\n[![GitHub repository](https://img.shields.io/badge/Github-demurgos%2Ffuri-blue.svg)](https://github.com/demurgos/furi)\n[![Build status](https://img.shields.io/travis/demurgos/furi/master.svg?maxAge=2592000)](https://travis-ci.org/demurgos/furi)\n[![Codecov](https://codecov.io/gh/demurgos/furi/branch/master/graph/badge.svg)](https://codecov.io/gh/demurgos/furi)\n\nFile URI manipulation library.\n\nThis library is intended as a toolbox to handle `file://` URIs. It currently\nfocuses on conversion between file URIs and system dependent paths.\n\nThe conversion supports Windows UNC paths, Windows long paths, trailing\nseparators, special characters and non-ASCII characters.\n\n## Installation\n\n```shell\nnpm install --save furi\n```\n\n## API documentation\n\nSee [documentation](https://demurgos.github.io/furi/).\n\n## References\n\n- https://tools.ietf.org/html/rfc3986#section-3.3\n- https://url.spec.whatwg.org/\n- https://github.com/nodejs/node/blob/deaddd212c499c7ff88d20034753b5f3f00d5153/lib/internal/url.js#L1414\n- https://github.com/nodejs/node/blob/master/test/parallel/test-url-pathtofileurl.js\n- https://docs.microsoft.com/en-us/windows/desktop/FileIO/naming-a-file\n\n## License\n\n[MIT License](./LICENSE.md)\n",
+      "readmeFilename": "README.md",
+      "bugs": {
+        "url": "https://github.com/demurgos/furi/issues"
+      },
+      "homepage": "https://github.com/demurgos/furi#readme",
+      "_id": "furi@1.3.0-build.61",
+      "_nodeVersion": "13.3.0",
+      "_npmVersion": "6.13.1",
+      "dist": {
+        "integrity": "sha512-/AG+sNjL2q8KaxBWjw9ZXMJJceYvSRfM5M1sB4fYNlQIKupTSpeDfilQY5kqutfuSrHmcWN4LkXA4kmKhFWf1g==",
+        "shasum": "00f8caa2fca50b837e3a7322c27907cb6485e455",
+        "tarball": "https://registry.npmjs.org/furi/-/furi-1.3.0-build.61.tgz",
+        "fileCount": 8,
+        "unpackedSize": 80491,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd6lkfCRA9TVsSAnZWagAAZwgP/062jMd7YOQxL7nDn7Ep\nGSEj18EH7jJ+/sGEXUcG9k4wN0SWBiL+Cu9zar2HBUD9l7HjrGYBIlVHGBGw\n/n0gAtKnF11oWJ0B24p/7MB6lVgNKLBoEbVFaxPY+LxN8engJH8kE6S9sgBh\nzQXuf3gralZzlAYq+9Bvu9I/BDHtkravnxxqVjbrFw5a/z+yaz3G4adp6Ykt\nN0ar6DKAM8PpdrdtZmgC2KjnMFr9YppFgT1zhtxS3FbgNQ2vk10F5GNLuZxz\nf5rLhPK2+iqNinOaZaEv+bqg0r5OhjCgcXwX6exKM4HgBCTXa+x4+Y91c2bQ\n8wJzrcXdUa1kww+TUQXo8nXVKITlz2YvdUvz6mldWK5CT9q8x6F84cwWSeUy\nz0bXG1oDsu2T6ftDVk6eG4LzoYz8RDF6xgkmZYhEShpWHMFc8lR4CnIJadGZ\nrSPrNjpPxNryrf/c3wGzbiq3CmRxTIVd0uVD2WujQ9QGxYEsLNyxYRkgzCDi\ntg36hW9Q5uXKEQVFOrQsVuW0BzT4huUMg+/UtbFCZ7AK7WrlfZ3QqiWe25gD\niDHbja0sMaF6wH5B6/DMAAkg0CTY9O8etX5nJiuOd9MCyXCELJo0bzb3/FtC\neGswB7aV09sOwpPTWts1ZF104dTFRHHnERrlja7wjlu8vp3Vot9xVPUmMhx+\nF7N2\r\n=j1iU\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "demurgos",
+          "email": "demurgos@demurgos.net"
+        }
+      ],
+      "_npmUser": {
+        "name": "demurgos",
+        "email": "demurgos@demurgos.net"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/furi_1.3.0-build.61_1575639327439_0.8135308272468138"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.3.0-build.73": {
+      "name": "furi",
+      "version": "1.3.0-build.73",
+      "description": "File URI manipulation library",
+      "private": false,
+      "main": "index",
+      "types": "index.d.ts",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/demurgos/furi.git"
+      },
+      "pre-commit": {
+        "run": [
+          "lint"
+        ]
+      },
+      "keywords": [
+        "file",
+        "url"
+      ],
+      "author": {
+        "name": "Charles Samborski",
+        "email": "demurgos@demurgos.net",
+        "url": "https://demurgos.net"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "@types/is-windows": "^1.0.0",
+        "is-windows": "^1.0.2"
+      },
+      "devDependencies": {
+        "@types/chai": "^4.2.6",
+        "@types/gulp": "^4.0.6",
+        "@types/minimist": "^1.2.0",
+        "@types/mocha": "^5.2.7",
+        "@types/node": "^12.12.14",
+        "@types/tmp": "^0.1.0",
+        "chai": "^4.2.0",
+        "codecov": "^3.6.1",
+        "gulp": "^4.0.2",
+        "gulp-cli": "^2.2.0",
+        "minimist": "^1.2.0",
+        "pre-commit": "^1.2.2",
+        "tmp": "^0.1.0",
+        "ts-node": "^8.5.4",
+        "turbo-gulp": "^0.20.2",
+        "typescript": "^3.7.3"
+      },
+      "c88": {
+        "match": [
+          "build/test/lib/*.{js,mjs}",
+          "build/test/lib/**/*.{js,mjs}"
+        ]
+      },
+      "gitHead": "8f470047efdbb47eacae42023c028bb8cd39f98e",
+      "readme": "# furi\n\n[![npm](https://img.shields.io/npm/v/furi.svg?maxAge=2592000)](https://www.npmjs.com/package/furi)\n[![GitHub repository](https://img.shields.io/badge/Github-demurgos%2Ffuri-blue.svg)](https://github.com/demurgos/furi)\n[![Build status](https://img.shields.io/travis/com/demurgos/furi/master.svg?maxAge=2592000)](https://travis-ci.com/demurgos/furi)\n[![Codecov](https://codecov.io/gh/demurgos/furi/branch/master/graph/badge.svg)](https://codecov.io/gh/demurgos/furi)\n\nFile URI manipulation library.\n\nThis library is intended as a toolbox to handle `file://` URIs. It currently\nfocuses on conversion between file URIs and system dependent paths.\n\nThe conversion supports Windows UNC paths, Windows long paths, trailing\nseparators, special characters and non-ASCII characters.\n\n## Installation\n\n```shell\nnpm install --save furi\n```\n\n## API documentation\n\nSee [documentation](https://demurgos.github.io/furi/).\n\n## References\n\n- https://tools.ietf.org/html/rfc3986#section-3.3\n- https://url.spec.whatwg.org/\n- https://github.com/nodejs/node/blob/deaddd212c499c7ff88d20034753b5f3f00d5153/lib/internal/url.js#L1414\n- https://github.com/nodejs/node/blob/master/test/parallel/test-url-pathtofileurl.js\n- https://docs.microsoft.com/en-us/windows/desktop/FileIO/naming-a-file\n\n## License\n\n[MIT License](./LICENSE.md)\n",
+      "readmeFilename": "README.md",
+      "bugs": {
+        "url": "https://github.com/demurgos/furi/issues"
+      },
+      "homepage": "https://github.com/demurgos/furi#readme",
+      "_id": "furi@1.3.0-build.73",
+      "_nodeVersion": "13.3.0",
+      "_npmVersion": "6.13.1",
+      "dist": {
+        "integrity": "sha512-VkjMJS//i7UX5av2seffnBodYABoNsCMG1ZyHg5CAB/wuXAIZXAZiOPYkE1hC6V8+q+l7LFDP1gtxOyIGPELKw==",
+        "shasum": "17f87c99e2f8cb5cff3d0bca220e6e5f30a48b48",
+        "tarball": "https://registry.npmjs.org/furi/-/furi-1.3.0-build.73.tgz",
+        "fileCount": 8,
+        "unpackedSize": 109250,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd694kCRA9TVsSAnZWagAA64wP/j3D56+Q8+CyYGNzETa1\nWYY2HUf4/8n/hQvbMW1CTqGpSrG85xLSwKFODIiSsqmp/oz6f++vPGARI8os\niLf7xzZOMPIw8snKJmHD4xY9HEw1r+ByHVIudqowamo/z1IXx8lNx1vnnW8O\nGaKNKLelfpoEwfnJlH9qWaqE2zbVCx8C4iTk/ocoyBlymj8+UB7JfXYjqbEh\nOA2Ngb7EhMznuzCH1CXysCngqjbFd2qS+a+mkUT/EbNnRGvD/Oi6zL7GgZii\nI5LkYe7BrRsJyDMIObz9y7xxj3KwQ5q0HUI3gc1tQPvMsR8t60epYefWXt30\n2lc/K6IT74HD3enDA9H1rafwC8MguOJOL/TMSVV5yKSN7TM78Ifcs3IUDYo7\nl2LZXjvs4fvQQaE6w8DkTSjtScAzGScxPKScoVc//9pcIBdxcEs0Y8XRE6J8\nwkkBnglWR6bbVJc9GVcaZt1Smco1aoFLNHe04Mtei7rSP1TTxC5mojcS5D6e\nJCdSQ23T9IMZcI5NR0SJH0c0yCpB/92zXFZNh/57UjVtVmLpffiXQTEUw8EH\nlDfOEjl3NPjWJnRgU0j+5ragUJ2m7ZjNWtSr2LxKnxGHCPnOWiLGOl6CAEm/\n7TEDYcYR7clB80ZbHO41OY5JhmlQ6Vap69gPsFOI+JHtjC+pvhUosit4ap9U\nGKFW\r\n=sbtR\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "demurgos",
+          "email": "demurgos@demurgos.net"
+        }
+      ],
+      "_npmUser": {
+        "name": "demurgos",
+        "email": "demurgos@demurgos.net"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/furi_1.3.0-build.73_1575738916522_0.813834493508429"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.3.0-build.79": {
+      "name": "furi",
+      "version": "1.3.0-build.79",
+      "description": "File URI manipulation library",
+      "private": false,
+      "main": "index",
+      "types": "index.d.ts",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/demurgos/furi.git"
+      },
+      "pre-commit": {
+        "run": [
+          "lint"
+        ]
+      },
+      "keywords": [
+        "file",
+        "url"
+      ],
+      "author": {
+        "name": "Charles Samborski",
+        "email": "demurgos@demurgos.net",
+        "url": "https://demurgos.net"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "@types/is-windows": "^1.0.0",
+        "is-windows": "^1.0.2"
+      },
+      "devDependencies": {
+        "@types/chai": "^4.2.6",
+        "@types/gulp": "^4.0.6",
+        "@types/minimist": "^1.2.0",
+        "@types/mocha": "^5.2.7",
+        "@types/node": "^12.12.14",
+        "@types/tmp": "^0.1.0",
+        "chai": "^4.2.0",
+        "codecov": "^3.6.1",
+        "gulp": "^4.0.2",
+        "gulp-cli": "^2.2.0",
+        "minimist": "^1.2.0",
+        "pre-commit": "^1.2.2",
+        "tmp": "^0.1.0",
+        "ts-node": "^8.5.4",
+        "turbo-gulp": "^0.20.2",
+        "typescript": "^3.7.3"
+      },
+      "c88": {
+        "match": [
+          "build/test/lib/*.{js,mjs}",
+          "build/test/lib/**/*.{js,mjs}"
+        ]
+      },
+      "gitHead": "e6e910c3e48d258475a4f2052f66de45428c53ae",
+      "readme": "# furi\n\n[![npm](https://img.shields.io/npm/v/furi.svg?maxAge=2592000)](https://www.npmjs.com/package/furi)\n[![GitHub repository](https://img.shields.io/badge/Github-demurgos%2Ffuri-blue.svg)](https://github.com/demurgos/furi)\n[![Build status](https://img.shields.io/travis/com/demurgos/furi/master.svg?maxAge=2592000)](https://travis-ci.com/demurgos/furi)\n[![Codecov](https://codecov.io/gh/demurgos/furi/branch/master/graph/badge.svg)](https://codecov.io/gh/demurgos/furi)\n\nFile URI manipulation library.\n\nThis library is intended as a toolbox to handle `file://` URIs. It currently\nfocuses on conversion between file URIs and system dependent paths.\n\nThe conversion supports Windows UNC paths, Windows long paths, trailing\nseparators, special characters and non-ASCII characters.\n\n## Installation\n\n```shell\nnpm install --save furi\n```\n\n## API documentation\n\nSee [documentation](https://demurgos.github.io/furi/).\n\n## References\n\n- https://tools.ietf.org/html/rfc3986#section-3.3\n- https://url.spec.whatwg.org/\n- https://github.com/nodejs/node/blob/deaddd212c499c7ff88d20034753b5f3f00d5153/lib/internal/url.js#L1414\n- https://github.com/nodejs/node/blob/master/test/parallel/test-url-pathtofileurl.js\n- https://docs.microsoft.com/en-us/windows/desktop/FileIO/naming-a-file\n\n## License\n\n[MIT License](./LICENSE.md)\n",
+      "readmeFilename": "README.md",
+      "bugs": {
+        "url": "https://github.com/demurgos/furi/issues"
+      },
+      "homepage": "https://github.com/demurgos/furi#readme",
+      "_id": "furi@1.3.0-build.79",
+      "_nodeVersion": "13.2.0",
+      "_npmVersion": "6.13.1",
+      "dist": {
+        "integrity": "sha512-RKUCa8NF15fmgm5Z4bc9pRzEwtPy0WGCUuuLoprO/N9NZIJOmIrck7iy4IiljinhQNEzJBKfnINtPDsc0GYo6g==",
+        "shasum": "7fa83fb31efd975433a3e012d54c6828de0aa1d4",
+        "tarball": "https://registry.npmjs.org/furi/-/furi-1.3.0-build.79.tgz",
+        "fileCount": 8,
+        "unpackedSize": 122240,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd7DLFCRA9TVsSAnZWagAAXp4QAI4PmZXrybOaD/OCpNhV\nuhboCcAIDy+iPZXdsJC3LCbRFpUpJet2z+03AjX/nlBDHFbtaKf0Zc9uqCkC\nniwDcvWCaYaXLPbr3y4cwTzn21jYsgTjq88jh3am4hDg6+4bWa9YMBfFTbSQ\nIUz7c5k5RUn7OwOomwKSl35fo20jtlzm5RK1QU6oxF6KbAt11ImJH4yIJUM+\nfhf5rOw/zdjKY3YfOrFVtXw4uWgwcSID3U+HRdORgUorrLv/lBKAZpBDiXu1\nafzUfI+cNaO/Pqm+t8L0bEUFlC4bcNcsYoGUTzPp9+EahXGL/Pi1UjHmwW92\nPf2tvgBJrgzqvsvSJNzolarH/Y89hVmIY3/3MIvPc/3IKJLO6hDcD5QXZ8BI\n4rugp695aLrhzgyWC1pkeBcUfZrIP1bhI/89qRux7gjw7AqAMTFHVjjJnAlU\nlHeH08ggTw5hPdOfabgELbTt2F+jKLaaAd94E0WbzY708y/vHxhsIOraASTE\nL5SS8uwUh8XoUE/q+4uWF2ZD5O6DRhYWsHO3jdqUYCWYu0KHBAyeefPU2kUG\ny2VXzPdwKN3SumpwYOgEnzktTL1/LBbWbXw3V2ZOfKOhBzQIYv96AhndEfty\nnxT9CRSsysh2lzAmtMitSB5wrOApWJV9BveVsKy4C78fCJsYtBQ0dtYT3xa4\nwjpT\r\n=/xzZ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "demurgos",
+          "email": "demurgos@demurgos.net"
+        }
+      ],
+      "_npmUser": {
+        "name": "demurgos",
+        "email": "demurgos@demurgos.net"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/furi_1.3.0-build.79_1575760581151_0.9485577659374618"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.3.0-build.82": {
+      "name": "furi",
+      "version": "1.3.0-build.82",
+      "description": "File URI manipulation library",
+      "private": false,
+      "main": "index",
+      "types": "index.d.ts",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/demurgos/furi.git"
+      },
+      "pre-commit": {
+        "run": [
+          "lint"
+        ]
+      },
+      "keywords": [
+        "file",
+        "url"
+      ],
+      "author": {
+        "name": "Charles Samborski",
+        "email": "demurgos@demurgos.net",
+        "url": "https://demurgos.net"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "@types/is-windows": "^1.0.0",
+        "is-windows": "^1.0.2"
+      },
+      "devDependencies": {
+        "@types/chai": "^4.2.6",
+        "@types/gulp": "^4.0.6",
+        "@types/minimist": "^1.2.0",
+        "@types/mocha": "^5.2.7",
+        "@types/node": "^12.12.14",
+        "@types/tmp": "^0.1.0",
+        "chai": "^4.2.0",
+        "codecov": "^3.6.1",
+        "gulp": "^4.0.2",
+        "gulp-cli": "^2.2.0",
+        "minimist": "^1.2.0",
+        "pre-commit": "^1.2.2",
+        "tmp": "^0.1.0",
+        "ts-node": "^8.5.4",
+        "turbo-gulp": "^0.20.2",
+        "typescript": "^3.7.3"
+      },
+      "c88": {
+        "match": [
+          "build/test/lib/*.{js,mjs}",
+          "build/test/lib/**/*.{js,mjs}"
+        ]
+      },
+      "gitHead": "15e87acc4ed9a4b92867edafb512e4483980685e",
+      "readme": "# furi\n\n[![npm](https://img.shields.io/npm/v/furi.svg?maxAge=2592000)](https://www.npmjs.com/package/furi)\n[![GitHub repository](https://img.shields.io/badge/Github-demurgos%2Ffuri-blue.svg)](https://github.com/demurgos/furi)\n[![Build status](https://img.shields.io/travis/com/demurgos/furi/master.svg?maxAge=2592000)](https://travis-ci.com/demurgos/furi)\n[![Codecov](https://codecov.io/gh/demurgos/furi/branch/master/graph/badge.svg)](https://codecov.io/gh/demurgos/furi)\n\nFile URI manipulation library.\n\nThis library is intended as a toolbox to handle `file://` URIs. It currently\nfocuses on conversion between file URIs and system dependent paths.\n\nThe conversion supports Windows UNC paths, Windows long paths, trailing\nseparators, special characters and non-ASCII characters.\n\n## Installation\n\n```shell\nnpm install --save furi\n```\n\n## API documentation\n\nSee [documentation](https://demurgos.github.io/furi/).\n\n## References\n\n- https://tools.ietf.org/html/rfc3986#section-3.3\n- https://url.spec.whatwg.org/\n- https://github.com/nodejs/node/blob/deaddd212c499c7ff88d20034753b5f3f00d5153/lib/internal/url.js#L1414\n- https://github.com/nodejs/node/blob/master/test/parallel/test-url-pathtofileurl.js\n- https://docs.microsoft.com/en-us/windows/desktop/FileIO/naming-a-file\n\n## License\n\n[MIT License](./LICENSE.md)\n",
+      "readmeFilename": "README.md",
+      "bugs": {
+        "url": "https://github.com/demurgos/furi/issues"
+      },
+      "homepage": "https://github.com/demurgos/furi#readme",
+      "_id": "furi@1.3.0-build.82",
+      "_nodeVersion": "13.3.0",
+      "_npmVersion": "6.13.1",
+      "dist": {
+        "integrity": "sha512-2e1zeTbXOz9lpjywRPZeD/VP+HzhTznnuE+7M3ceH90oB3QiuKvTMFAplvai8yD/Ak15+HnKDh+r01ihNACEYg==",
+        "shasum": "6c1e0d00a4a709db358fa505e414edfb4aec1d4a",
+        "tarball": "https://registry.npmjs.org/furi/-/furi-1.3.0-build.82.tgz",
+        "fileCount": 8,
+        "unpackedSize": 124340,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd7n2aCRA9TVsSAnZWagAAjE8P/jm5c3zqyQ2LSASka/o9\nFHoald3HrlwmY93Eg6wPoBSwYxA3PRN+poZgQQSVhNBXb5bRGn6PgMc4tqXT\ngLvzX6ESEgmzd3t0jlN8EvitESTmCM1Y3l5yZo9ZhsvzihiJM9pdXo2iLm7I\n83K6/7Rxyt1hKk5egpOWR5Bp+wbaa6iGFHixEzoFOxtZkKzuLCEDnuUkfDSD\nnDS4pVHF7o63oy09H1xBWwqmP+E4/rTfCq+EZwKsKw3ria4YQ2Y6d/r7AKpx\nsZDYIM/SLc4FnFkwDsXlt9u8FYYBXumzpizdrRgupgBEdYPJgdUGi9r+62Y9\nwSa2Go3k4F+xCd0IzU4watwt0wlvtbJSr3rSYyu85AiGUIRMoh/fCttDkirm\negWo9IakCaDyUvW/5ZfzLcKUgavMwMIPUvmgiAMK/xeeLrKp793xFrnSxAqP\nAva/roZAy1lvmvdiqdZ8g9579nzBKfuX4zzbC/icXx8CY5g2ygzIE+/Zezgl\nCmtUIDRnbjCo5FaGjHJL/JR5dQbyevlJsNhN1onCW3ZPFhXl5flzZX7iGzxj\nPl5RvJlpdU/ml8tzQhDlZMvRIXcKmLBn4iaTsaSdK8rQGEP5HBEjGRElkuhr\ndTQpt+ZVlDLiPg5ejMdRPrx9tgcV+V+u7fP0jLcuT7bUJop44GlXMQ/Ytm7p\ncd8c\r\n=JIea\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "demurgos",
+          "email": "demurgos@demurgos.net"
+        }
+      ],
+      "_npmUser": {
+        "name": "demurgos",
+        "email": "demurgos@demurgos.net"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/furi_1.3.0-build.82_1575910810414_0.6303054513027644"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.0": {
+      "name": "furi",
+      "version": "2.0.0",
+      "description": "File URI manipulation library",
+      "private": false,
+      "main": "index",
+      "types": "index.d.ts",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/demurgos/furi.git"
+      },
+      "pre-commit": {
+        "run": [
+          "lint"
+        ]
+      },
+      "keywords": [
+        "file",
+        "url"
+      ],
+      "author": {
+        "name": "Charles Samborski",
+        "email": "demurgos@demurgos.net",
+        "url": "https://demurgos.net"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "@types/is-windows": "^1.0.0",
+        "is-windows": "^1.0.2"
+      },
+      "devDependencies": {
+        "@types/chai": "^4.2.7",
+        "@types/gulp": "^4.0.6",
+        "@types/minimist": "^1.2.0",
+        "@types/mocha": "^5.2.7",
+        "@types/node": "^13.5.0",
+        "@types/tmp": "^0.1.0",
+        "chai": "^4.2.0",
+        "codecov": "^3.6.2",
+        "gulp": "^4.0.2",
+        "gulp-cli": "^2.2.0",
+        "minimist": "^1.2.0",
+        "pre-commit": "^1.2.2",
+        "tmp": "^0.1.0",
+        "ts-node": "^8.6.2",
+        "turbo-gulp": "^0.21.1",
+        "typescript": "^3.7.5"
+      },
+      "c88": {
+        "match": [
+          "build/test/lib/*.{js,mjs}",
+          "build/test/lib/**/*.{js,mjs}"
+        ]
+      },
+      "gitHead": "999af1ec8f277f1cc2c29b32f8f60b2087a65549",
+      "bugs": {
+        "url": "https://github.com/demurgos/furi/issues"
+      },
+      "homepage": "https://github.com/demurgos/furi#readme",
+      "_id": "furi@2.0.0",
+      "_nodeVersion": "13.7.0",
+      "_npmVersion": "6.13.6",
+      "dist": {
+        "integrity": "sha512-uKuNsaU0WVaK/vmvj23wW1bicOFfyqSsAIH71bRZx8kA4Xj+YCHin7CJKJJjkIsmxYaPFLk9ljmjEyB7xF7WvQ==",
+        "shasum": "13d85826a1af21acc691da6254b3888fc39f0b4a",
+        "tarball": "https://registry.npmjs.org/furi/-/furi-2.0.0.tgz",
+        "fileCount": 8,
+        "unpackedSize": 124343,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeLyA1CRA9TVsSAnZWagAAHDIP/2EL88cUUI0xkwAuiIEi\n5o4gvlk+ZNIp4QAOXY59jsBtSJ+Mug1+Y+9gkvtAPyfGVZtrJ8TyUgZ6iVIH\nmd2+PYtZs3ZGv7K97qO02vNe/AqaZ/4IWcsfa8B4kKXqTU41kA5lLVC0/SVx\njgcd50QGnbBTi60ggew0yWQjTmA+4E0lVT26x+Qoa0/PPndZbiSg+78Mkqgv\n7mg5C6MZ6wGklAUtbN4p/CH5MC6dilYpbdNmEb7rSzolf/yYslHcG7SMh7I+\nARfzaU0GEkV7jKSKhpDUft1JQUhCOmRkjrmwkm4Z0O9IHQKrc5NFrwi32S77\nlNvv0QweyHTNZuOrrLgk6G8i6K21PZjSfHd3NIPwvq/f1Juzxcveg6VkExji\nz2+6epboG8Ol+vkPoXghCfxKsN83+FtzK0UykF20auxXduIAPtL3pZudwXd+\nz1vwdH48Vb/Vq1BuePugQ/WUemx5vqjOSNmX5W6XwQRUxYEFtmeTTUt9CIOU\nd+0lGrRvYkwrw+dN1J+0w/GAYD1q2pzGCVACOc5pZKQ9yRnLttzZQEtWGWi6\n1ne61n9xb1QD3fM66SIrXtY+jPbSBb5yB2M4fUs0bbnAJqfPGWVZBDOzZFhF\niUKQGqqWnGwMOoepY+Db8CTzLB/cKgw8s/AsLupp19rlcF8AsQ8HpXAauSuM\nEnqs\r\n=8L/2\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "demurgos",
+          "email": "demurgos@demurgos.net"
+        }
+      ],
+      "_npmUser": {
+        "name": "demurgos",
+        "email": "demurgos@demurgos.net"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/furi_2.0.0_1580146740484_0.6198344664081175"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.0-build.86": {
+      "name": "furi",
+      "version": "2.0.0-build.86",
+      "description": "File URI manipulation library",
+      "private": false,
+      "main": "index",
+      "types": "index.d.ts",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/demurgos/furi.git"
+      },
+      "pre-commit": {
+        "run": [
+          "lint"
+        ]
+      },
+      "keywords": [
+        "file",
+        "url"
+      ],
+      "author": {
+        "name": "Charles Samborski",
+        "email": "demurgos@demurgos.net",
+        "url": "https://demurgos.net"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "@types/is-windows": "^1.0.0",
+        "is-windows": "^1.0.2"
+      },
+      "devDependencies": {
+        "@types/chai": "^4.2.7",
+        "@types/gulp": "^4.0.6",
+        "@types/minimist": "^1.2.0",
+        "@types/mocha": "^5.2.7",
+        "@types/node": "^13.5.0",
+        "@types/tmp": "^0.1.0",
+        "chai": "^4.2.0",
+        "codecov": "^3.6.2",
+        "gulp": "^4.0.2",
+        "gulp-cli": "^2.2.0",
+        "minimist": "^1.2.0",
+        "pre-commit": "^1.2.2",
+        "tmp": "^0.1.0",
+        "ts-node": "^8.6.2",
+        "turbo-gulp": "^0.21.1",
+        "typescript": "^3.7.5"
+      },
+      "c88": {
+        "match": [
+          "build/test/lib/*.{js,mjs}",
+          "build/test/lib/**/*.{js,mjs}"
+        ]
+      },
+      "gitHead": "999af1ec8f277f1cc2c29b32f8f60b2087a65549",
+      "readme": "# furi\n\n[![npm](https://img.shields.io/npm/v/furi.svg?maxAge=2592000)](https://www.npmjs.com/package/furi)\n[![GitHub repository](https://img.shields.io/badge/Github-demurgos%2Ffuri-blue.svg)](https://github.com/demurgos/furi)\n[![Build status](https://img.shields.io/travis/com/demurgos/furi/master.svg?maxAge=2592000)](https://travis-ci.com/demurgos/furi)\n[![Codecov](https://codecov.io/gh/demurgos/furi/branch/master/graph/badge.svg)](https://codecov.io/gh/demurgos/furi)\n\nFile URI manipulation library.\n\nThis library is intended as a toolbox to handle `file://` URIs. It currently\nfocuses on conversion between file URIs and system dependent paths.\n\nThe conversion supports Windows UNC paths, Windows long paths, trailing\nseparators, special characters and non-ASCII characters.\n\n## Installation\n\n```shell\nnpm install --save furi\n```\n\n## API documentation\n\nSee [documentation](https://demurgos.github.io/furi/).\n\n## References\n\n- https://tools.ietf.org/html/rfc3986#section-3.3\n- https://url.spec.whatwg.org/\n- https://github.com/nodejs/node/blob/deaddd212c499c7ff88d20034753b5f3f00d5153/lib/internal/url.js#L1414\n- https://github.com/nodejs/node/blob/master/test/parallel/test-url-pathtofileurl.js\n- https://docs.microsoft.com/en-us/windows/desktop/FileIO/naming-a-file\n\n## License\n\n[MIT License](./LICENSE.md)\n",
+      "readmeFilename": "README.md",
+      "bugs": {
+        "url": "https://github.com/demurgos/furi/issues"
+      },
+      "homepage": "https://github.com/demurgos/furi#readme",
+      "_id": "furi@2.0.0-build.86",
+      "_nodeVersion": "13.7.0",
+      "_npmVersion": "6.13.6",
+      "dist": {
+        "integrity": "sha512-uvmav5tPAgbTGer7tiZK9NibMcA+ZGDn3V/utxNWnhXZT0PRKoqyE9j8rv1+tlwxrDprTsw6QBsZIEE/ot7QBg==",
+        "shasum": "93b9d04a882ffeec376c787ce29cc5aba23a6044",
+        "tarball": "https://registry.npmjs.org/furi/-/furi-2.0.0-build.86.tgz",
+        "fileCount": 8,
+        "unpackedSize": 124352,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeLyA5CRA9TVsSAnZWagAA20MP/0Gm0ims9v5uK0VQf//7\nq+KbuJbCSjc+uImc8Hq1FSHdeEPinyqsyIz5Y2QyK1+0GH7elNN5x2upDf0L\nKrbzrK9cE/gP9DQkc7h1RL47F7aGneZoxz3FEKBKW6jqhQ1Qqr1kINvUGsWu\nhThhj6CHe2W93KmPzimCc3pC7TS98Ry/ilgE6Zu2H7/LPk+8vZZlm/MGLxvg\nUxeaiX1HTYFlVkZ4OmQvuPw6igZviKExVgknQN+kGA9DWj0y8y3g5WYHaX06\nMkStXmmPqHzU/bPkjQ1vDp8BXApeA/5pgQ+rQl2IgoJWKIRCKJDsRYtsdZDI\neqwpBKV5R7jZwNius3UgspIRfYegvm5yhQ6e9o4FcwskVi2KlLeWZv52pXa6\nWJ5B/3UyG/2d9t5UHI+E7tLXcz5odS1Ae+KI156tSrfRmDSq3ZPk1f9g6huE\nyzFv6Szn8i2xKYfvfrgQ+JraIt4xVFxY5xGKxknXa8ia9bggiOORsxXlRN1t\n7NIZSPToc+HBPMLiqkvAhxqRq5CDoqvlzKE68y9YTAOl1z2rf440us4woqbj\npiWbdzP6E78XNDgFAHeLLHmoJpt+Q9kRyBlKDcTepvaQqfJ2OjpcRO3qmmJU\njCPEttJKvlQWV3UBQdqF/HP1bXSTNCzOiHmI7DyV9tJaboqZeHCAp/NjhFy3\nfhag\r\n=ry8+\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "demurgos",
+          "email": "demurgos@demurgos.net"
+        }
+      ],
+      "_npmUser": {
+        "name": "demurgos",
+        "email": "demurgos@demurgos.net"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/furi_2.0.0-build.86_1580146745146_0.2980883260382803"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2018-10-16T20:09:56.796Z",
+    "0.1.0": "2018-10-16T20:09:56.942Z",
+    "modified": "2020-01-27T17:39:07.708Z",
+    "0.1.0-build.9": "2018-10-17T20:56:47.332Z",
+    "0.2.0-build.11": "2018-11-21T15:06:58.631Z",
+    "0.2.0": "2018-11-21T15:09:34.237Z",
+    "1.0.0": "2018-11-21T17:15:47.905Z",
+    "1.0.0-build.26": "2018-12-03T21:36:32.422Z",
+    "1.1.0": "2018-12-03T21:40:41.760Z",
+    "1.2.0": "2018-12-04T16:26:20.762Z",
+    "1.3.0": "2018-12-04T23:37:04.330Z",
+    "1.3.0-build.61": "2019-12-06T13:35:27.569Z",
+    "1.3.0-build.73": "2019-12-07T17:15:16.655Z",
+    "1.3.0-build.79": "2019-12-07T23:16:21.293Z",
+    "1.3.0-build.82": "2019-12-09T17:00:10.570Z",
+    "2.0.0": "2020-01-27T17:39:00.666Z",
+    "2.0.0-build.86": "2020-01-27T17:39:05.247Z"
+  },
+  "maintainers": [
+    {
+      "name": "demurgos",
+      "email": "demurgos@demurgos.net"
+    }
+  ],
+  "description": "File URI manipulation library",
+  "homepage": "https://github.com/demurgos/furi#readme",
+  "keywords": [
+    "file",
+    "url"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/demurgos/furi.git"
+  },
+  "author": {
+    "name": "Charles Samborski",
+    "email": "demurgos@demurgos.net",
+    "url": "https://demurgos.net"
+  },
+  "bugs": {
+    "url": "https://github.com/demurgos/furi/issues"
+  },
+  "license": "MIT",
+  "readme": "",
+  "readmeFilename": ""
+}

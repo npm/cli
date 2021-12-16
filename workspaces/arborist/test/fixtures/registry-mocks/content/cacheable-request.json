@@ -1,0 +1,2791 @@
+{
+  "_id": "cacheable-request",
+  "_rev": "31-d8cbfe92525c36e244698ac6a3f88047",
+  "name": "cacheable-request",
+  "description": "Wrap native HTTP requests with RFC compliant cache support",
+  "dist-tags": {
+    "latest": "7.0.1"
+  },
+  "versions": {
+    "0.0.0": {
+      "name": "cacheable-request",
+      "version": "0.0.0",
+      "description": "Wrap native HTTP requests with RFC compliant cache support",
+      "main": "src/index.js",
+      "scripts": {
+        "test": "xo && nyc ava",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/cacheable-request.git"
+      },
+      "keywords": [
+        "async",
+        "asynchronous",
+        "non-blocking",
+        "base64",
+        "encode",
+        "decode"
+      ],
+      "author": {
+        "name": "Luke Childs",
+        "email": "lukechilds123@gmail.com",
+        "url": "http://lukechilds.co.uk"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/lukechilds/cacheable-request/issues"
+      },
+      "homepage": "https://github.com/lukechilds/cacheable-request",
+      "dependencies": {},
+      "devDependencies": {
+        "ava": "^0.19.1",
+        "coveralls": "^2.13.1",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "nyc": "^10.3.2",
+        "xo": "^0.19.0"
+      },
+      "gitHead": "aede9335680bfc35ee56e26eeb37af42a44a73a7",
+      "_id": "cacheable-request@0.0.0",
+      "_npmVersion": "5.0.0",
+      "_nodeVersion": "8.0.0",
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-wQQZ1mqV5oGz+4Wp68EIND0F9Iarzj+u43BuZpRaYaM8Z8dvh9sKmdpddZAECbSFuC7xzsLX/USVw9PFiHSEiQ==",
+        "shasum": "f4f1805e973bee28ed9d51891c34f1330276e8d6",
+        "tarball": "https://registry.npmjs.org/cacheable-request/-/cacheable-request-0.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/cacheable-request-0.0.0.tgz_1496407010001_0.7954089867416769"
+      },
+      "directories": {}
+    },
+    "0.1.0": {
+      "name": "cacheable-request",
+      "version": "0.1.0",
+      "description": "Wrap native HTTP requests with RFC compliant cache support",
+      "main": "src/index.js",
+      "scripts": {
+        "test": "xo && nyc ava",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/cacheable-request.git"
+      },
+      "keywords": [
+        "HTTP",
+        "HTTPS",
+        "cache",
+        "caching",
+        "layer",
+        "cacheable",
+        "RFC 7234",
+        "RFC",
+        "7234",
+        "compliant"
+      ],
+      "author": {
+        "name": "Luke Childs",
+        "email": "lukechilds123@gmail.com",
+        "url": "http://lukechilds.co.uk"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/lukechilds/cacheable-request/issues"
+      },
+      "homepage": "https://github.com/lukechilds/cacheable-request",
+      "dependencies": {
+        "get-stream": "^3.0.0",
+        "http-cache-semantics": "^3.7.3",
+        "lowercase-keys": "^1.0.0",
+        "normalize-url": "^1.9.1",
+        "responselike": "^0.1.0",
+        "url-parse-lax": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "^0.19.1",
+        "coveralls": "^2.13.1",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "nyc": "^10.3.2",
+        "xo": "^0.19.0"
+      },
+      "gitHead": "afa2b9eae682df60f28e398f5bf91ddd64b336d1",
+      "_id": "cacheable-request@0.1.0",
+      "_npmVersion": "5.0.0",
+      "_nodeVersion": "8.0.0",
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-JPqaaVPmkswSoSwJ7+QC0OChdmbP3AD59PkdNmisW098jtz0N8hQJrON7Ruc+Pk1NKESn75i8g/LU5qi8tE/lw==",
+        "shasum": "d63d59e819f02f23c744f0e116af49f7d340b177",
+        "tarball": "https://registry.npmjs.org/cacheable-request/-/cacheable-request-0.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/cacheable-request-0.1.0.tgz_1497017206986_0.45462921005673707"
+      },
+      "directories": {}
+    },
+    "0.2.0": {
+      "name": "cacheable-request",
+      "version": "0.2.0",
+      "description": "Wrap native HTTP requests with RFC compliant cache support",
+      "main": "src/index.js",
+      "scripts": {
+        "test": "xo && nyc ava",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/cacheable-request.git"
+      },
+      "keywords": [
+        "HTTP",
+        "HTTPS",
+        "cache",
+        "caching",
+        "layer",
+        "cacheable",
+        "RFC 7234",
+        "RFC",
+        "7234",
+        "compliant"
+      ],
+      "author": {
+        "name": "Luke Childs",
+        "email": "lukechilds123@gmail.com",
+        "url": "http://lukechilds.co.uk"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/lukechilds/cacheable-request/issues"
+      },
+      "homepage": "https://github.com/lukechilds/cacheable-request",
+      "dependencies": {
+        "clone-response": "^0.2.2",
+        "get-stream": "^3.0.0",
+        "http-cache-semantics": "^3.7.3",
+        "lowercase-keys": "^1.0.0",
+        "normalize-url": "^1.9.1",
+        "responselike": "^0.1.0",
+        "url-parse-lax": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "^0.19.1",
+        "coveralls": "^2.13.1",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "nyc": "^10.3.2",
+        "xo": "^0.19.0"
+      },
+      "gitHead": "8b0bd76a9f4fa3c3b07323e052202d0a7a7d0db2",
+      "_id": "cacheable-request@0.2.0",
+      "_npmVersion": "5.0.0",
+      "_nodeVersion": "8.0.0",
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-da3a+Os26/qymCzK5z6Hon26oJL56UfyPYyq0BR7V6DjJJ19iOoZlEWOy99t0SOG/42URjYorQEa+s83HAoTNA==",
+        "shasum": "2a5d28aea595e9877175f368516b112fd18f1cca",
+        "tarball": "https://registry.npmjs.org/cacheable-request/-/cacheable-request-0.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/cacheable-request-0.2.0.tgz_1497067124166_0.8747847008053213"
+      },
+      "directories": {}
+    },
+    "0.3.0": {
+      "name": "cacheable-request",
+      "version": "0.3.0",
+      "description": "Wrap native HTTP requests with RFC compliant cache support",
+      "main": "src/index.js",
+      "scripts": {
+        "test": "xo && nyc ava",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/cacheable-request.git"
+      },
+      "keywords": [
+        "HTTP",
+        "HTTPS",
+        "cache",
+        "caching",
+        "layer",
+        "cacheable",
+        "RFC 7234",
+        "RFC",
+        "7234",
+        "compliant"
+      ],
+      "author": {
+        "name": "Luke Childs",
+        "email": "lukechilds123@gmail.com",
+        "url": "http://lukechilds.co.uk"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/lukechilds/cacheable-request/issues"
+      },
+      "homepage": "https://github.com/lukechilds/cacheable-request",
+      "dependencies": {
+        "clone-response": "^0.2.2",
+        "get-stream": "^3.0.0",
+        "http-cache-semantics": "^3.7.3",
+        "lowercase-keys": "^1.0.0",
+        "normalize-url": "^1.9.1",
+        "responselike": "^0.1.0",
+        "url-parse-lax": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "^0.19.1",
+        "coveralls": "^2.13.1",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "nyc": "^10.3.2",
+        "xo": "^0.19.0"
+      },
+      "gitHead": "02e5b2702b69ee0c55724692c2a1924819f6dfd8",
+      "_id": "cacheable-request@0.3.0",
+      "_npmVersion": "5.0.0",
+      "_nodeVersion": "8.0.0",
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-Y+MYzXZPIv/Ovj2cLWx8lgh/Qeapk0zaVhA7VdqFxZVJi/VUU9Bz4UOi/Tbq1RzuBnjOacO4RRkZ3RmRtvVWNw==",
+        "shasum": "26f62a65a5d9550c0af2a526bb6d97f995e12e4f",
+        "tarball": "https://registry.npmjs.org/cacheable-request/-/cacheable-request-0.3.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/cacheable-request-0.3.0.tgz_1497079276774_0.04189830622635782"
+      },
+      "directories": {}
+    },
+    "0.4.0": {
+      "name": "cacheable-request",
+      "version": "0.4.0",
+      "description": "Wrap native HTTP requests with RFC compliant cache support",
+      "main": "src/index.js",
+      "scripts": {
+        "test": "xo && nyc ava",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/cacheable-request.git"
+      },
+      "keywords": [
+        "HTTP",
+        "HTTPS",
+        "cache",
+        "caching",
+        "layer",
+        "cacheable",
+        "RFC 7234",
+        "RFC",
+        "7234",
+        "compliant"
+      ],
+      "author": {
+        "name": "Luke Childs",
+        "email": "lukechilds123@gmail.com",
+        "url": "http://lukechilds.co.uk"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/lukechilds/cacheable-request/issues"
+      },
+      "homepage": "https://github.com/lukechilds/cacheable-request",
+      "dependencies": {
+        "clone-response": "^1.0.1",
+        "get-stream": "^3.0.0",
+        "http-cache-semantics": "^3.7.3",
+        "keyv": "^1.0.4",
+        "lowercase-keys": "^1.0.0",
+        "normalize-url": "^1.9.1",
+        "responselike": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "^0.21.0",
+        "coveralls": "^2.13.1",
+        "create-test-server": "^2.0.0",
+        "delay": "^2.0.0",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "get-stream": "^3.0.0",
+        "nyc": "^11.0.2",
+        "xo": "^0.19.0"
+      },
+      "gitHead": "93eb8379ca2e9eb4d7475eb7bac38906ee79db7b",
+      "_id": "cacheable-request@0.4.0",
+      "_shasum": "071a42a18ca8a45c28408ce15231209809fe0ced",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "8.1.2",
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "dist": {
+        "shasum": "071a42a18ca8a45c28408ce15231209809fe0ced",
+        "tarball": "https://registry.npmjs.org/cacheable-request/-/cacheable-request-0.4.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/cacheable-request-0.4.0.tgz_1502496737940_0.10047852876596153"
+      },
+      "directories": {}
+    },
+    "0.5.0": {
+      "name": "cacheable-request",
+      "version": "0.5.0",
+      "description": "Wrap native HTTP requests with RFC compliant cache support",
+      "main": "src/index.js",
+      "scripts": {
+        "test": "xo && nyc ava",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/cacheable-request.git"
+      },
+      "keywords": [
+        "HTTP",
+        "HTTPS",
+        "cache",
+        "caching",
+        "layer",
+        "cacheable",
+        "RFC 7234",
+        "RFC",
+        "7234",
+        "compliant"
+      ],
+      "author": {
+        "name": "Luke Childs",
+        "email": "lukechilds123@gmail.com",
+        "url": "http://lukechilds.co.uk"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/lukechilds/cacheable-request/issues"
+      },
+      "homepage": "https://github.com/lukechilds/cacheable-request",
+      "dependencies": {
+        "clone-response": "^1.0.1",
+        "get-stream": "^3.0.0",
+        "http-cache-semantics": "^3.7.3",
+        "keyv": "^1.0.4",
+        "lowercase-keys": "^1.0.0",
+        "normalize-url": "^1.9.1",
+        "responselike": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "^0.21.0",
+        "coveralls": "^2.13.1",
+        "create-test-server": "^2.0.0",
+        "delay": "^2.0.0",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "get-stream": "^3.0.0",
+        "keyv-sqlite": "^1.2.4",
+        "nyc": "^11.0.2",
+        "pify": "^3.0.0",
+        "sqlite3": "^3.1.9",
+        "this": "^1.0.2",
+        "xo": "^0.19.0"
+      },
+      "gitHead": "058843d1b00e336be1ce61434feaa888dd6e5ea8",
+      "_id": "cacheable-request@0.5.0",
+      "_shasum": "b08b6feaf2dbb0ed95897d3d035ee379cfe24581",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "8.1.2",
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "dist": {
+        "shasum": "b08b6feaf2dbb0ed95897d3d035ee379cfe24581",
+        "tarball": "https://registry.npmjs.org/cacheable-request/-/cacheable-request-0.5.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/cacheable-request-0.5.0.tgz_1502625752366_0.030264430213719606"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "cacheable-request",
+      "version": "1.0.0",
+      "description": "Wrap native HTTP requests with RFC compliant cache support",
+      "main": "src/index.js",
+      "scripts": {
+        "test": "xo && nyc ava",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/cacheable-request.git"
+      },
+      "keywords": [
+        "HTTP",
+        "HTTPS",
+        "cache",
+        "caching",
+        "layer",
+        "cacheable",
+        "RFC 7234",
+        "RFC",
+        "7234",
+        "compliant"
+      ],
+      "author": {
+        "name": "Luke Childs",
+        "email": "lukechilds123@gmail.com",
+        "url": "http://lukechilds.co.uk"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/lukechilds/cacheable-request/issues"
+      },
+      "homepage": "https://github.com/lukechilds/cacheable-request",
+      "dependencies": {
+        "clone-response": "^1.0.1",
+        "get-stream": "^3.0.0",
+        "http-cache-semantics": "^3.7.3",
+        "keyv": "^2.0.1",
+        "lowercase-keys": "^1.0.0",
+        "normalize-url": "^1.9.1",
+        "responselike": "^1.0.0"
+      },
+      "devDependencies": {
+        "@keyv/sqlite": "^1.2.6",
+        "ava": "^0.21.0",
+        "coveralls": "^2.13.1",
+        "create-test-server": "^2.0.0",
+        "delay": "^2.0.0",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "get-stream": "^3.0.0",
+        "nyc": "^11.0.2",
+        "pify": "^3.0.0",
+        "sqlite3": "^3.1.9",
+        "this": "^1.0.2",
+        "xo": "^0.19.0"
+      },
+      "gitHead": "4ffe384c90bd04deb8c365ab177a8d582a6c0b52",
+      "_id": "cacheable-request@1.0.0",
+      "_shasum": "46b82562631895eda02913ab0cdc0910c0266a48",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "8.1.2",
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "dist": {
+        "shasum": "46b82562631895eda02913ab0cdc0910c0266a48",
+        "tarball": "https://registry.npmjs.org/cacheable-request/-/cacheable-request-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/cacheable-request-1.0.0.tgz_1502631103552_0.8947162763215601"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "cacheable-request",
+      "version": "1.0.1",
+      "description": "Wrap native HTTP requests with RFC compliant cache support",
+      "main": "src/index.js",
+      "scripts": {
+        "test": "xo && nyc ava",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/cacheable-request.git"
+      },
+      "keywords": [
+        "HTTP",
+        "HTTPS",
+        "cache",
+        "caching",
+        "layer",
+        "cacheable",
+        "RFC 7234",
+        "RFC",
+        "7234",
+        "compliant"
+      ],
+      "author": {
+        "name": "Luke Childs",
+        "email": "lukechilds123@gmail.com",
+        "url": "http://lukechilds.co.uk"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/lukechilds/cacheable-request/issues"
+      },
+      "homepage": "https://github.com/lukechilds/cacheable-request",
+      "dependencies": {
+        "clone-response": "^1.0.1",
+        "get-stream": "^3.0.0",
+        "http-cache-semantics": "^3.7.3",
+        "keyv": "^2.0.1",
+        "lowercase-keys": "^1.0.0",
+        "normalize-url": "^1.9.1",
+        "responselike": "^1.0.0"
+      },
+      "devDependencies": {
+        "@keyv/sqlite": "^1.2.6",
+        "ava": "^0.21.0",
+        "coveralls": "^2.13.1",
+        "create-test-server": "^2.0.0",
+        "delay": "^2.0.0",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "get-stream": "^3.0.0",
+        "nyc": "^11.0.2",
+        "pify": "^3.0.0",
+        "sqlite3": "^3.1.9",
+        "this": "^1.0.2",
+        "xo": "^0.19.0"
+      },
+      "gitHead": "7f38564fb96741998607e3724629a5cabf694fba",
+      "_id": "cacheable-request@1.0.1",
+      "_shasum": "846ed1388acda5037bdd36cd0f3e9180bda5f79b",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "8.1.2",
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "dist": {
+        "shasum": "846ed1388acda5037bdd36cd0f3e9180bda5f79b",
+        "tarball": "https://registry.npmjs.org/cacheable-request/-/cacheable-request-1.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/cacheable-request-1.0.1.tgz_1502632786565_0.8828422036021948"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "cacheable-request",
+      "version": "1.0.2",
+      "description": "Wrap native HTTP requests with RFC compliant cache support",
+      "main": "src/index.js",
+      "scripts": {
+        "test": "xo && nyc ava",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/cacheable-request.git"
+      },
+      "keywords": [
+        "HTTP",
+        "HTTPS",
+        "cache",
+        "caching",
+        "layer",
+        "cacheable",
+        "RFC 7234",
+        "RFC",
+        "7234",
+        "compliant"
+      ],
+      "author": {
+        "name": "Luke Childs",
+        "email": "lukechilds123@gmail.com",
+        "url": "http://lukechilds.co.uk"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/lukechilds/cacheable-request/issues"
+      },
+      "homepage": "https://github.com/lukechilds/cacheable-request",
+      "dependencies": {
+        "clone-response": "^1.0.1",
+        "get-stream": "^3.0.0",
+        "http-cache-semantics": "^3.7.3",
+        "keyv": "^2.0.1",
+        "lowercase-keys": "^1.0.0",
+        "normalize-url": "^1.9.1",
+        "responselike": "^1.0.0"
+      },
+      "devDependencies": {
+        "@keyv/sqlite": "^1.2.6",
+        "ava": "^0.21.0",
+        "coveralls": "^2.13.1",
+        "create-test-server": "^2.0.0",
+        "delay": "^2.0.0",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "get-stream": "^3.0.0",
+        "nyc": "^11.0.2",
+        "pify": "^3.0.0",
+        "sqlite3": "^3.1.9",
+        "this": "^1.0.2",
+        "xo": "^0.19.0"
+      },
+      "gitHead": "00c8b6a23524df455df275d5fa005249ae9f8425",
+      "_id": "cacheable-request@1.0.2",
+      "_shasum": "9a69c7c5a7dcb3bda8e399f55bc2bd723b435fab",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "8.1.2",
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "dist": {
+        "shasum": "9a69c7c5a7dcb3bda8e399f55bc2bd723b435fab",
+        "tarball": "https://registry.npmjs.org/cacheable-request/-/cacheable-request-1.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/cacheable-request-1.0.2.tgz_1502640426366_0.9370210326742381"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "cacheable-request",
+      "version": "1.1.0",
+      "description": "Wrap native HTTP requests with RFC compliant cache support",
+      "main": "src/index.js",
+      "scripts": {
+        "test": "xo && nyc ava",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/cacheable-request.git"
+      },
+      "keywords": [
+        "HTTP",
+        "HTTPS",
+        "cache",
+        "caching",
+        "layer",
+        "cacheable",
+        "RFC 7234",
+        "RFC",
+        "7234",
+        "compliant"
+      ],
+      "author": {
+        "name": "Luke Childs",
+        "email": "lukechilds123@gmail.com",
+        "url": "http://lukechilds.co.uk"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/lukechilds/cacheable-request/issues"
+      },
+      "homepage": "https://github.com/lukechilds/cacheable-request",
+      "dependencies": {
+        "clone-response": "^1.0.1",
+        "get-stream": "^3.0.0",
+        "http-cache-semantics": "^3.7.3",
+        "keyv": "^2.0.1",
+        "lowercase-keys": "^1.0.0",
+        "normalize-url": "^1.9.1",
+        "responselike": "^1.0.0"
+      },
+      "devDependencies": {
+        "@keyv/sqlite": "^1.2.6",
+        "ava": "^0.21.0",
+        "coveralls": "^2.13.1",
+        "create-test-server": "^2.0.0",
+        "delay": "^2.0.0",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "get-stream": "^3.0.0",
+        "nyc": "^11.0.2",
+        "pify": "^3.0.0",
+        "sqlite3": "^3.1.9",
+        "this": "^1.0.2",
+        "xo": "^0.19.0"
+      },
+      "gitHead": "c7df98ffe39636b3729473dd720e715fce1c5192",
+      "_id": "cacheable-request@1.1.0",
+      "_shasum": "fb516d9893add37cc25cdcd44f02cc84a33d4a59",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "8.1.2",
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "dist": {
+        "shasum": "fb516d9893add37cc25cdcd44f02cc84a33d4a59",
+        "tarball": "https://registry.npmjs.org/cacheable-request/-/cacheable-request-1.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/cacheable-request-1.1.0.tgz_1502643010619_0.6955999496858567"
+      },
+      "directories": {}
+    },
+    "1.1.1": {
+      "name": "cacheable-request",
+      "version": "1.1.1",
+      "description": "Wrap native HTTP requests with RFC compliant cache support",
+      "main": "src/index.js",
+      "scripts": {
+        "test": "xo && nyc ava",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/cacheable-request.git"
+      },
+      "keywords": [
+        "HTTP",
+        "HTTPS",
+        "cache",
+        "caching",
+        "layer",
+        "cacheable",
+        "RFC 7234",
+        "RFC",
+        "7234",
+        "compliant"
+      ],
+      "author": {
+        "name": "Luke Childs",
+        "email": "lukechilds123@gmail.com",
+        "url": "http://lukechilds.co.uk"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/lukechilds/cacheable-request/issues"
+      },
+      "homepage": "https://github.com/lukechilds/cacheable-request",
+      "dependencies": {
+        "clone-response": "^1.0.1",
+        "get-stream": "^3.0.0",
+        "http-cache-semantics": "^3.7.3",
+        "keyv": "^2.0.1",
+        "lowercase-keys": "^1.0.0",
+        "normalize-url": "^1.9.1",
+        "responselike": "^1.0.0"
+      },
+      "devDependencies": {
+        "@keyv/sqlite": "^1.2.6",
+        "ava": "^0.21.0",
+        "coveralls": "^2.13.1",
+        "create-test-server": "^2.0.0",
+        "delay": "^2.0.0",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "get-stream": "^3.0.0",
+        "nyc": "^11.0.2",
+        "pify": "^3.0.0",
+        "sqlite3": "^3.1.9",
+        "this": "^1.0.2",
+        "xo": "^0.19.0"
+      },
+      "gitHead": "7d2eed54d36b37e25d5621e2f83262588eda14a8",
+      "_id": "cacheable-request@1.1.1",
+      "_shasum": "8e63e273cc2dd46aaa46f080f430f1bb74cf19fd",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "8.1.2",
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "dist": {
+        "shasum": "8e63e273cc2dd46aaa46f080f430f1bb74cf19fd",
+        "tarball": "https://registry.npmjs.org/cacheable-request/-/cacheable-request-1.1.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/cacheable-request-1.1.1.tgz_1502647738160_0.3317284758668393"
+      },
+      "directories": {}
+    },
+    "1.1.2": {
+      "name": "cacheable-request",
+      "version": "1.1.2",
+      "description": "Wrap native HTTP requests with RFC compliant cache support",
+      "main": "src/index.js",
+      "scripts": {
+        "test": "xo && nyc ava",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/cacheable-request.git"
+      },
+      "keywords": [
+        "HTTP",
+        "HTTPS",
+        "cache",
+        "caching",
+        "layer",
+        "cacheable",
+        "RFC 7234",
+        "RFC",
+        "7234",
+        "compliant"
+      ],
+      "author": {
+        "name": "Luke Childs",
+        "email": "lukechilds123@gmail.com",
+        "url": "http://lukechilds.co.uk"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/lukechilds/cacheable-request/issues"
+      },
+      "homepage": "https://github.com/lukechilds/cacheable-request",
+      "dependencies": {
+        "clone-response": "^1.0.1",
+        "get-stream": "^3.0.0",
+        "http-cache-semantics": "^3.7.3",
+        "keyv": "^2.0.1",
+        "lowercase-keys": "^1.0.0",
+        "normalize-url": "^1.9.1",
+        "responselike": "^1.0.0"
+      },
+      "devDependencies": {
+        "@keyv/sqlite": "^1.2.6",
+        "ava": "^0.22.0",
+        "coveralls": "^2.13.1",
+        "create-test-server": "^2.0.0",
+        "delay": "^2.0.0",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "get-stream": "^3.0.0",
+        "nyc": "^11.0.2",
+        "pify": "^3.0.0",
+        "sqlite3": "^3.1.9",
+        "this": "^1.0.2",
+        "xo": "^0.19.0"
+      },
+      "gitHead": "103d8f087ddfa382b3c81150a38afccc6ae0f6a1",
+      "_id": "cacheable-request@1.1.2",
+      "_shasum": "36ec8a0e0dc21cc44e0ccb6c669190f19e63fe3a",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "8.4.0",
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "dist": {
+        "shasum": "36ec8a0e0dc21cc44e0ccb6c669190f19e63fe3a",
+        "tarball": "https://registry.npmjs.org/cacheable-request/-/cacheable-request-1.1.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/cacheable-request-1.1.2.tgz_1502987901793_0.16526940814219415"
+      },
+      "directories": {}
+    },
+    "1.1.3": {
+      "name": "cacheable-request",
+      "version": "1.1.3",
+      "description": "Wrap native HTTP requests with RFC compliant cache support",
+      "main": "src/index.js",
+      "scripts": {
+        "test": "xo && nyc ava",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/cacheable-request.git"
+      },
+      "keywords": [
+        "HTTP",
+        "HTTPS",
+        "cache",
+        "caching",
+        "layer",
+        "cacheable",
+        "RFC 7234",
+        "RFC",
+        "7234",
+        "compliant"
+      ],
+      "author": {
+        "name": "Luke Childs",
+        "email": "lukechilds123@gmail.com",
+        "url": "http://lukechilds.co.uk"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/lukechilds/cacheable-request/issues"
+      },
+      "homepage": "https://github.com/lukechilds/cacheable-request",
+      "dependencies": {
+        "clone-response": "^1.0.1",
+        "get-stream": "^3.0.0",
+        "http-cache-semantics": "^3.7.3",
+        "keyv": "^2.0.1",
+        "lowercase-keys": "^1.0.0",
+        "normalize-url": "^1.9.1",
+        "responselike": "^1.0.0"
+      },
+      "devDependencies": {
+        "@keyv/sqlite": "^1.2.6",
+        "ava": "^0.22.0",
+        "coveralls": "^2.13.1",
+        "create-test-server": "^2.0.0",
+        "delay": "^2.0.0",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "get-stream": "^3.0.0",
+        "nyc": "^11.0.2",
+        "pify": "^3.0.0",
+        "sqlite3": "^3.1.9",
+        "this": "^1.0.2",
+        "xo": "^0.19.0"
+      },
+      "gitHead": "74b976f25ea73e636de92549930c4d12dee47601",
+      "_id": "cacheable-request@1.1.3",
+      "_shasum": "0a45a87518445efc55be646081eca078cf481ab5",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "8.4.0",
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "dist": {
+        "shasum": "0a45a87518445efc55be646081eca078cf481ab5",
+        "tarball": "https://registry.npmjs.org/cacheable-request/-/cacheable-request-1.1.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/cacheable-request-1.1.3.tgz_1502988122999_0.5417015382554382"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "cacheable-request",
+      "version": "2.0.0",
+      "description": "Wrap native HTTP requests with RFC compliant cache support",
+      "main": "src/index.js",
+      "scripts": {
+        "test": "xo && nyc ava",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/cacheable-request.git"
+      },
+      "keywords": [
+        "HTTP",
+        "HTTPS",
+        "cache",
+        "caching",
+        "layer",
+        "cacheable",
+        "RFC 7234",
+        "RFC",
+        "7234",
+        "compliant"
+      ],
+      "author": {
+        "name": "Luke Childs",
+        "email": "lukechilds123@gmail.com",
+        "url": "http://lukechilds.co.uk"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/lukechilds/cacheable-request/issues"
+      },
+      "homepage": "https://github.com/lukechilds/cacheable-request",
+      "dependencies": {
+        "clone-response": "1.0.1",
+        "get-stream": "3.0.0",
+        "http-cache-semantics": "3.7.3",
+        "keyv": "3.0.0  ",
+        "lowercase-keys": "1.0.0",
+        "normalize-url": "1.9.1",
+        "responselike": "1.0.0"
+      },
+      "devDependencies": {
+        "@keyv/sqlite": "^1.2.6",
+        "ava": "^0.22.0",
+        "coveralls": "^3.0.0",
+        "create-test-server": "^2.0.0",
+        "delay": "^2.0.0",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "get-stream": "^3.0.0",
+        "nyc": "^11.0.2",
+        "pify": "^3.0.0",
+        "sqlite3": "^3.1.9",
+        "this": "^1.0.2",
+        "xo": "^0.19.0"
+      },
+      "gitHead": "4751ce0f5bf30bb7f0c0f14b88f3f7a108a744ff",
+      "_id": "cacheable-request@2.0.0",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "8.5.0",
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-08//JkAupjZ2U45jwt4ldXu0WSGU9+BKynNImDyaH6g7TkU3mMrbN4h+s5p5lwafLW0cVQ5+lz4nJwB9iMqEmg==",
+        "shasum": "23d7001efe4de5b3add360d66220e054f00f40f8",
+        "tarball": "https://registry.npmjs.org/cacheable-request/-/cacheable-request-2.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/cacheable-request-2.0.0.tgz_1507039125295_0.9671146804466844"
+      },
+      "directories": {}
+    },
+    "2.0.1": {
+      "name": "cacheable-request",
+      "version": "2.0.1",
+      "description": "Wrap native HTTP requests with RFC compliant cache support",
+      "main": "src/index.js",
+      "scripts": {
+        "test": "xo && nyc ava",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/cacheable-request.git"
+      },
+      "keywords": [
+        "HTTP",
+        "HTTPS",
+        "cache",
+        "caching",
+        "layer",
+        "cacheable",
+        "RFC 7234",
+        "RFC",
+        "7234",
+        "compliant"
+      ],
+      "author": {
+        "name": "Luke Childs",
+        "email": "lukechilds123@gmail.com",
+        "url": "http://lukechilds.co.uk"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/lukechilds/cacheable-request/issues"
+      },
+      "homepage": "https://github.com/lukechilds/cacheable-request",
+      "dependencies": {
+        "clone-response": "1.0.1",
+        "get-stream": "3.0.0",
+        "http-cache-semantics": "3.8.0",
+        "keyv": "3.0.0  ",
+        "lowercase-keys": "1.0.0",
+        "normalize-url": "1.9.1",
+        "responselike": "1.0.0"
+      },
+      "devDependencies": {
+        "@keyv/sqlite": "^1.2.6",
+        "ava": "^0.22.0",
+        "coveralls": "^3.0.0",
+        "create-test-server": "^2.0.0",
+        "delay": "^2.0.0",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "get-stream": "^3.0.0",
+        "nyc": "^11.0.2",
+        "pify": "^3.0.0",
+        "sqlite3": "^3.1.9",
+        "this": "^1.0.2",
+        "xo": "^0.19.0"
+      },
+      "gitHead": "b9e9a745f9c8a80bd13d6c23884e230ed2ec49e0",
+      "_id": "cacheable-request@2.0.1",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "8.6.0",
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-hovRLYMty6MSJukmtIDFDTxuIZQHmniHvIfOG8xImXN+E/3ZTEEkToVXrQQWNQpJd2BmBQVwSbknDMCvuirTqQ==",
+        "shasum": "b531cbce0c0bba4773837f69b31db09d3c6fc53a",
+        "tarball": "https://registry.npmjs.org/cacheable-request/-/cacheable-request-2.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/cacheable-request-2.0.1.tgz_1507825564918_0.560035809641704"
+      },
+      "directories": {}
+    },
+    "2.1.0": {
+      "name": "cacheable-request",
+      "version": "2.1.0",
+      "description": "Wrap native HTTP requests with RFC compliant cache support",
+      "main": "src/index.js",
+      "scripts": {
+        "test": "xo && nyc ava",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/cacheable-request.git"
+      },
+      "keywords": [
+        "HTTP",
+        "HTTPS",
+        "cache",
+        "caching",
+        "layer",
+        "cacheable",
+        "RFC 7234",
+        "RFC",
+        "7234",
+        "compliant"
+      ],
+      "author": {
+        "name": "Luke Childs",
+        "email": "lukechilds123@gmail.com",
+        "url": "http://lukechilds.co.uk"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/lukechilds/cacheable-request/issues"
+      },
+      "homepage": "https://github.com/lukechilds/cacheable-request",
+      "dependencies": {
+        "clone-response": "1.0.1",
+        "get-stream": "3.0.0",
+        "http-cache-semantics": "3.8.0",
+        "keyv": "3.0.0  ",
+        "lowercase-keys": "1.0.0",
+        "normalize-url": "1.9.1",
+        "responselike": "1.0.0"
+      },
+      "devDependencies": {
+        "@keyv/sqlite": "^1.2.6",
+        "ava": "^0.23.0",
+        "coveralls": "^3.0.0",
+        "create-test-server": "^2.0.0",
+        "delay": "^2.0.0",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "get-stream": "^3.0.0",
+        "nyc": "^11.0.2",
+        "pify": "^3.0.0",
+        "sqlite3": "^3.1.9",
+        "this": "^1.0.2",
+        "xo": "^0.19.0"
+      },
+      "gitHead": "3d48da6b412879ee8fe956f3bbd55b224b526899",
+      "_id": "cacheable-request@2.1.0",
+      "_shasum": "3861c968678c0e86fd6450da07123f372cfac9d7",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "8.6.0",
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "dist": {
+        "shasum": "3861c968678c0e86fd6450da07123f372cfac9d7",
+        "tarball": "https://registry.npmjs.org/cacheable-request/-/cacheable-request-2.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/cacheable-request-2.1.0.tgz_1510486924789_0.5684960193466395"
+      },
+      "directories": {}
+    },
+    "2.1.1": {
+      "name": "cacheable-request",
+      "version": "2.1.1",
+      "description": "Wrap native HTTP requests with RFC compliant cache support",
+      "main": "src/index.js",
+      "scripts": {
+        "test": "xo && nyc ava",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/cacheable-request.git"
+      },
+      "keywords": [
+        "HTTP",
+        "HTTPS",
+        "cache",
+        "caching",
+        "layer",
+        "cacheable",
+        "RFC 7234",
+        "RFC",
+        "7234",
+        "compliant"
+      ],
+      "author": {
+        "name": "Luke Childs",
+        "email": "lukechilds123@gmail.com",
+        "url": "http://lukechilds.co.uk"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/lukechilds/cacheable-request/issues"
+      },
+      "homepage": "https://github.com/lukechilds/cacheable-request",
+      "dependencies": {
+        "clone-response": "1.0.1",
+        "get-stream": "3.0.0",
+        "http-cache-semantics": "3.8.0",
+        "keyv": "3.0.0  ",
+        "lowercase-keys": "1.0.0",
+        "normalize-url": "1.9.1",
+        "responselike": "1.0.0"
+      },
+      "devDependencies": {
+        "@keyv/sqlite": "^1.2.6",
+        "ava": "^0.23.0",
+        "coveralls": "^3.0.0",
+        "create-test-server": "^2.0.0",
+        "delay": "^2.0.0",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "get-stream": "^3.0.0",
+        "nyc": "^11.0.2",
+        "pify": "^3.0.0",
+        "sqlite3": "^3.1.9",
+        "this": "^1.0.2",
+        "xo": "^0.19.0"
+      },
+      "gitHead": "0a865d605bc2a25bf3e84a5bc69c695b90bcc630",
+      "_id": "cacheable-request@2.1.1",
+      "_shasum": "aa205ee287eae520950fec3dc71c5f41ee5550dd",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "8.6.0",
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "dist": {
+        "shasum": "aa205ee287eae520950fec3dc71c5f41ee5550dd",
+        "tarball": "https://registry.npmjs.org/cacheable-request/-/cacheable-request-2.1.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/cacheable-request-2.1.1.tgz_1510824909378_0.31228654691949487"
+      },
+      "directories": {}
+    },
+    "2.1.2": {
+      "name": "cacheable-request",
+      "version": "2.1.2",
+      "description": "Wrap native HTTP requests with RFC compliant cache support",
+      "main": "src/index.js",
+      "scripts": {
+        "test": "xo && nyc ava",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/cacheable-request.git"
+      },
+      "keywords": [
+        "HTTP",
+        "HTTPS",
+        "cache",
+        "caching",
+        "layer",
+        "cacheable",
+        "RFC 7234",
+        "RFC",
+        "7234",
+        "compliant"
+      ],
+      "author": {
+        "name": "Luke Childs",
+        "email": "lukechilds123@gmail.com",
+        "url": "http://lukechilds.co.uk"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/lukechilds/cacheable-request/issues"
+      },
+      "homepage": "https://github.com/lukechilds/cacheable-request",
+      "dependencies": {
+        "clone-response": "1.0.1",
+        "get-stream": "3.0.0",
+        "http-cache-semantics": "3.8.1",
+        "keyv": "3.0.0  ",
+        "lowercase-keys": "1.0.0",
+        "normalize-url": "2.0.0",
+        "responselike": "1.0.0"
+      },
+      "devDependencies": {
+        "@keyv/sqlite": "^1.2.6",
+        "ava": "^0.24.0",
+        "coveralls": "^3.0.0",
+        "create-test-server": "^2.0.0",
+        "delay": "^2.0.0",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "get-stream": "^3.0.0",
+        "nyc": "^11.0.2",
+        "pify": "^3.0.0",
+        "sqlite3": "^3.1.9",
+        "this": "^1.0.2",
+        "xo": "^0.19.0"
+      },
+      "gitHead": "6682d9695b03a8d268a63160ba5b974f8c5d1888",
+      "_id": "cacheable-request@2.1.2",
+      "_shasum": "133288c62db51f45d63eb0c4bca121f03d251c71",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "9.2.0",
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "dist": {
+        "shasum": "133288c62db51f45d63eb0c4bca121f03d251c71",
+        "tarball": "https://registry.npmjs.org/cacheable-request/-/cacheable-request-2.1.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/cacheable-request-2.1.2.tgz_1512133736098_0.04721390572376549"
+      },
+      "directories": {}
+    },
+    "2.1.3": {
+      "name": "cacheable-request",
+      "version": "2.1.3",
+      "description": "Wrap native HTTP requests with RFC compliant cache support",
+      "main": "src/index.js",
+      "scripts": {
+        "test": "xo && nyc ava",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/cacheable-request.git"
+      },
+      "keywords": [
+        "HTTP",
+        "HTTPS",
+        "cache",
+        "caching",
+        "layer",
+        "cacheable",
+        "RFC 7234",
+        "RFC",
+        "7234",
+        "compliant"
+      ],
+      "author": {
+        "name": "Luke Childs",
+        "email": "lukechilds123@gmail.com",
+        "url": "http://lukechilds.co.uk"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/lukechilds/cacheable-request/issues"
+      },
+      "homepage": "https://github.com/lukechilds/cacheable-request",
+      "dependencies": {
+        "clone-response": "1.0.2",
+        "get-stream": "3.0.0",
+        "http-cache-semantics": "3.8.1",
+        "keyv": "3.0.0",
+        "lowercase-keys": "1.0.0",
+        "normalize-url": "2.0.0",
+        "responselike": "1.0.2"
+      },
+      "devDependencies": {
+        "@keyv/sqlite": "^1.2.6",
+        "ava": "^0.24.0",
+        "coveralls": "^3.0.0",
+        "create-test-server": "^2.0.0",
+        "delay": "^2.0.0",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "nyc": "^11.0.2",
+        "pify": "^3.0.0",
+        "sqlite3": "^3.1.9",
+        "this": "^1.0.2",
+        "xo": "^0.19.0"
+      },
+      "gitHead": "4b3e33b8f1d79bd9be8cc9af8105e8f4b5729736",
+      "_id": "cacheable-request@2.1.3",
+      "_shasum": "b935607dd2ab2812898befb224f66aa86c533dbb",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "9.2.0",
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "dist": {
+        "shasum": "b935607dd2ab2812898befb224f66aa86c533dbb",
+        "tarball": "https://registry.npmjs.org/cacheable-request/-/cacheable-request-2.1.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/cacheable-request-2.1.3.tgz_1512215347112_0.4187504805158824"
+      },
+      "directories": {}
+    },
+    "2.1.4": {
+      "name": "cacheable-request",
+      "version": "2.1.4",
+      "description": "Wrap native HTTP requests with RFC compliant cache support",
+      "main": "src/index.js",
+      "scripts": {
+        "test": "xo && nyc ava",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/cacheable-request.git"
+      },
+      "keywords": [
+        "HTTP",
+        "HTTPS",
+        "cache",
+        "caching",
+        "layer",
+        "cacheable",
+        "RFC 7234",
+        "RFC",
+        "7234",
+        "compliant"
+      ],
+      "author": {
+        "name": "Luke Childs",
+        "email": "lukechilds123@gmail.com",
+        "url": "http://lukechilds.co.uk"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/lukechilds/cacheable-request/issues"
+      },
+      "homepage": "https://github.com/lukechilds/cacheable-request",
+      "dependencies": {
+        "clone-response": "1.0.2",
+        "get-stream": "3.0.0",
+        "http-cache-semantics": "3.8.1",
+        "keyv": "3.0.0",
+        "lowercase-keys": "1.0.0",
+        "normalize-url": "2.0.1",
+        "responselike": "1.0.2"
+      },
+      "devDependencies": {
+        "@keyv/sqlite": "^1.2.6",
+        "ava": "^0.24.0",
+        "coveralls": "^3.0.0",
+        "create-test-server": "^2.0.0",
+        "delay": "^2.0.0",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "nyc": "^11.0.2",
+        "pify": "^3.0.0",
+        "sqlite3": "^3.1.9",
+        "this": "^1.0.2",
+        "xo": "^0.19.0"
+      },
+      "gitHead": "3f2d8e2f64af835a82721c51898bd6f08883c4de",
+      "_id": "cacheable-request@2.1.4",
+      "_shasum": "0d808801b6342ad33c91df9d0b44dc09b91e5c3d",
+      "_from": ".",
+      "_npmVersion": "3.8.6",
+      "_nodeVersion": "5.12.0",
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "dist": {
+        "shasum": "0d808801b6342ad33c91df9d0b44dc09b91e5c3d",
+        "tarball": "https://registry.npmjs.org/cacheable-request/-/cacheable-request-2.1.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/cacheable-request-2.1.4.tgz_1514318995331_0.5610265193972737"
+      },
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "cacheable-request",
+      "version": "3.0.0",
+      "description": "Wrap native HTTP requests with RFC compliant cache support",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/cacheable-request.git"
+      },
+      "author": {
+        "name": "Luke Childs",
+        "email": "lukechilds123@gmail.com",
+        "url": "http://lukechilds.co.uk"
+      },
+      "main": "src/index.js",
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && nyc ava",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "files": [
+        "src"
+      ],
+      "keywords": [
+        "HTTP",
+        "HTTPS",
+        "cache",
+        "caching",
+        "layer",
+        "cacheable",
+        "RFC 7234",
+        "RFC",
+        "7234",
+        "compliant"
+      ],
+      "dependencies": {
+        "clone-response": "^1.0.2",
+        "get-stream": "^3.0.0",
+        "http-cache-semantics": "^4.0.0",
+        "keyv": "^3.0.0",
+        "lowercase-keys": "^1.0.1",
+        "normalize-url": "^3.1.0",
+        "responselike": "^1.0.2"
+      },
+      "devDependencies": {
+        "@keyv/sqlite": "^1.2.6",
+        "ava": "*",
+        "coveralls": "^3.0.0",
+        "create-test-server": "2.1.1",
+        "delay": "^3.0.0",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "nyc": "^12.0.2",
+        "pify": "^3.0.0",
+        "sqlite3": "^4.0.1",
+        "this": "^1.0.2",
+        "xo": "*"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "gitHead": "4b7f86a3ce4b88ca0fd9df312a95876a5ebfade6",
+      "bugs": {
+        "url": "https://github.com/lukechilds/cacheable-request/issues"
+      },
+      "homepage": "https://github.com/lukechilds/cacheable-request#readme",
+      "_id": "cacheable-request@3.0.0",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "9.3.0",
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-aOitOP6oU2AdPVfOKWfRFyzdxlO1Ot+kL/NXtWZ3fPiw5XeBUPhp+OCIiF/eN8ZWh+o0U50N0/gdWZw2as914Q==",
+        "shasum": "c83b8a76126da0c7472cc14d0be47fc0db34faa1",
+        "tarball": "https://registry.npmjs.org/cacheable-request/-/cacheable-request-3.0.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 14069,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbPstuCRA9TVsSAnZWagAAUTAP/jQYZbSCUkJWtm5J/eSR\nLozf9JDTjACgdcJzFGgT/F0PEQ43AsEsI4gpUjv3bQFUwXPPMfZqzMTHElBF\nSvJa8y25R+nX5HIVZAlfyvgldlUB/BQqBqFo5O5R9FtwPZq6E7Hvi/TjIvAH\nc/u8I0wd/JoKt8GjjC6//aIHA8d/VL+KUiz6JlVRQtZ43LYqBmRt3OgdlvjR\na1q/jNQ9iA8QzJmN3KU032JQJ1U5VOAMi2MGyHWLyLHvFmmqyxjoCBqlwYUx\n1WCAGFWr43oNuRdm2wbjZ80q9oHiQLBUkMOYduqoSjcRUI7JoTn2+m8WAs7G\ner4nkSMXtFLlgv6qFY6cuo3n1UXXpoKGarnXY8EueAXP2PnC/ovpcvHCWzWF\nfXWaToPqx5IGaGZ4sA+1dYugJAurI+thIFtSfdJdhGD2dPEDeCGdWPMZqwjh\n2xQCpQFIFB3bI9sd0LXuGeyjEc+S2Hh79xChH93mElFwQIsHT/UtGg+QVg0Q\nTxS6AX3CSCoZ/awwF5cAl/sVLpWiN+5drpO4UXxS+2SiXJwITbPWAiu5Of+u\ndlX23pzEm08c3/c8hkH61WnJ2UirlnXAiLjN7HdLZn/McjYEYywbshBJdTUq\ndEWcl515J/yvj7VPCmlgLptiYF2zOs4vC+evdipXFKLpmadCV2ezF7RBptqZ\nyejE\r\n=N6wb\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/cacheable-request_3.0.0_1530841966610_0.006173654088653002"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.0.0": {
+      "name": "cacheable-request",
+      "version": "4.0.0",
+      "description": "Wrap native HTTP requests with RFC compliant cache support",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/cacheable-request.git"
+      },
+      "author": {
+        "name": "Luke Childs",
+        "email": "lukechilds123@gmail.com",
+        "url": "http://lukechilds.co.uk"
+      },
+      "main": "src/index.js",
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && nyc ava",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "files": [
+        "src"
+      ],
+      "keywords": [
+        "HTTP",
+        "HTTPS",
+        "cache",
+        "caching",
+        "layer",
+        "cacheable",
+        "RFC 7234",
+        "RFC",
+        "7234",
+        "compliant"
+      ],
+      "dependencies": {
+        "clone-response": "^1.0.2",
+        "get-stream": "^3.0.0",
+        "http-cache-semantics": "^4.0.0",
+        "keyv": "^3.0.0",
+        "lowercase-keys": "^1.0.1",
+        "normalize-url": "^3.1.0",
+        "responselike": "^1.0.2"
+      },
+      "devDependencies": {
+        "@keyv/sqlite": "^1.2.6",
+        "ava": "*",
+        "coveralls": "^3.0.0",
+        "create-test-server": "2.1.1",
+        "delay": "^3.0.0",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "nyc": "^12.0.2",
+        "pify": "^3.0.0",
+        "sqlite3": "^4.0.1",
+        "this": "^1.0.2",
+        "xo": "*"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "gitHead": "5e16303663935d8797ba3070f1d3a0d8d2cd36c0",
+      "bugs": {
+        "url": "https://github.com/lukechilds/cacheable-request/issues"
+      },
+      "homepage": "https://github.com/lukechilds/cacheable-request#readme",
+      "_id": "cacheable-request@4.0.0",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "9.3.0",
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-aMoyzOd+NA3kMwTr4DtNwDfz6mOldFci7IvBu1NBu+0+4TRnaPM3p8jcT9ocRiGG25Vmb2sO+3GS9/ve3z7sXQ==",
+        "shasum": "3c90168895f7fb5c4645b97ec60d818bc1764ffe",
+        "tarball": "https://registry.npmjs.org/cacheable-request/-/cacheable-request-4.0.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 15234,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbUbtNCRA9TVsSAnZWagAA7loP/jhHB+/rR5YXhQsGqrSJ\np4tI0m1DPrNDaQ0rODTSAnvbNTC3EbhZhmg9OsXsEIYIbG5qHwu664EucHgc\nq/QUWXLB4gES8rK4yZBW1tHH3IKXCEujCV2KzXgqUqF1QCfPwBjEj3W4mP7a\n/r6rEQiiJY38yzQW20ywiZlGH0husQ1QU/ODIDrlTKOyxj5hY+ptjsf+/mdo\nAeVkqVZ1wUC0jEWVtsBIvRfIwZk/jWAT6SvCD5xqx2Ty7D8mHD2u3QoaRV0B\nWOPfPT8hK6dNS0Ts+rEktkcxzncbJAudPsZCHjBeEyvgVzrZPRgd8fcAAKl6\nvJZ0xTVEtTOupj+xuR/kusF1JiyCzqDODjrzV5R6C186NlJuJ8Rm8Uh9IzNF\nUw78rawIetEMdx+eL+JVOcAmeIXSamCb5ib6BhTRUSzzZLyVjfMCsL+uIyEj\nMabD+LxpvIKCma6hCbc7vq6A4g85cVSoYl3SJxZTHmTZIyqL7mV4yyCNHMvj\nzWnEpVpmGrfUUsG0DVxK6Z9A3vWFCZkc/y/WZ0jiXajUpmo5bLjDolp1uBno\nSvTiQ9l9ExX+ND5zh9VH8pkDmrhIDKlruwG1RJ+thCDUV9/zDvGT80QO2n80\nk0Fh6JXio29ZGr6qyKcOpF40WyF6GGFqUsjWm8OqzvxJcHK0QoL6x8HWXQun\nJw8+\r\n=w+7q\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/cacheable-request_4.0.0_1532083021230_0.7315888443717646"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.0.1": {
+      "name": "cacheable-request",
+      "version": "4.0.1",
+      "description": "Wrap native HTTP requests with RFC compliant cache support",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/cacheable-request.git"
+      },
+      "author": {
+        "name": "Luke Childs",
+        "email": "lukechilds123@gmail.com",
+        "url": "http://lukechilds.co.uk"
+      },
+      "main": "src/index.js",
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && nyc ava",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "files": [
+        "src"
+      ],
+      "keywords": [
+        "HTTP",
+        "HTTPS",
+        "cache",
+        "caching",
+        "layer",
+        "cacheable",
+        "RFC 7234",
+        "RFC",
+        "7234",
+        "compliant"
+      ],
+      "dependencies": {
+        "clone-response": "^1.0.2",
+        "get-stream": "^3.0.0",
+        "http-cache-semantics": "^4.0.0",
+        "keyv": "^3.0.0",
+        "lowercase-keys": "^1.0.1",
+        "normalize-url": "^3.1.0",
+        "responselike": "^1.0.2"
+      },
+      "devDependencies": {
+        "@keyv/sqlite": "^1.2.6",
+        "ava": "*",
+        "coveralls": "^3.0.0",
+        "create-test-server": "2.1.1",
+        "delay": "^3.0.0",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "nyc": "^12.0.2",
+        "pify": "^3.0.0",
+        "sqlite3": "^4.0.1",
+        "this": "^1.0.2",
+        "xo": "*"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "gitHead": "25253bc039b293375d38324dff92b5020a613d15",
+      "bugs": {
+        "url": "https://github.com/lukechilds/cacheable-request/issues"
+      },
+      "homepage": "https://github.com/lukechilds/cacheable-request#readme",
+      "_id": "cacheable-request@4.0.1",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "9.3.0",
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-sJJ9ivV+1DytIdAgQG1CsRjAESGD5WnjTr4BsQ3X4xZKp3O9i6Es7MWeQ1pOTuE0bTLVEf86YFjSGpr53wz7nw==",
+        "shasum": "c93bbb87d7c67c62738f2e336e4ff8e78d9533fa",
+        "tarball": "https://registry.npmjs.org/cacheable-request/-/cacheable-request-4.0.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 15309,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbVKZqCRA9TVsSAnZWagAAMnQQAKCcrCCbyGdn9pjZnql4\n3phQSIESybk1d7ULr7eL/hEVITOWkmKaQZBI7jE6yGWqCwPnD9puhjJDA5uw\n0OdhAZaFJ2ST10AuKcsSOWvk02h4cyzPyjThgzz1X5Gbw91nJbK2uSFeu0xx\nsXWM0eYDyvATgMltZ6AfVbPi/3nnBxs529vEojcDa0ulrBQo+qHqsaq1knj7\nVUAxSVOjv3qlVOiyEg69kOBZtmXsgXPdjBhZnuIXOQh5F48oSBzA82Cn7kLN\n/X14PGGEAX+s+QtTqqUy8yTfsHvRNOOBqIZmiZI/dotaavS+uVOS014m7Rqj\ngvSbZ5yNB+WT8eWuwoboFcVw7tiX2SkShhfB+wYwyoryCU80IllaRFshwm71\na3s00KaUq+FXH/3KB5vrp3hNv1rw94QivR9SF4IcaOhNWRBf4WkZ02Vi+yzP\n7XordJ7/l8mVzewwT5fm0C08D6FnQ7QQQnuZLH0lxEOdhPsmgERGbO1I3Lny\nAWVXpF3YBz+0eUtuZWgWC8wGIiH/XM+Vkxwxucwd7rmqOAO5YJiXatae1rRs\nIzVhGo/C26Kbn5K4qC2Jw8dY6buTR3v60frRj06LJVjvuUc2HGQAfpwMgSRZ\n3zx3sLrrcRkjPNnBxtEr1MJTnIeXsxeBlgJOYp5aRv3r83guOmE/JcA7UPVz\nVf57\r\n=TCyR\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/cacheable-request_4.0.1_1532274282703_0.20938672501885258"
+      },
+      "_hasShrinkwrap": false
+    },
+    "5.0.0": {
+      "name": "cacheable-request",
+      "version": "5.0.0",
+      "description": "Wrap native HTTP requests with RFC compliant cache support",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/cacheable-request.git"
+      },
+      "author": {
+        "name": "Luke Childs",
+        "email": "lukechilds123@gmail.com",
+        "url": "http://lukechilds.co.uk"
+      },
+      "main": "src/index.js",
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && nyc ava",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "keywords": [
+        "HTTP",
+        "HTTPS",
+        "cache",
+        "caching",
+        "layer",
+        "cacheable",
+        "RFC 7234",
+        "RFC",
+        "7234",
+        "compliant"
+      ],
+      "dependencies": {
+        "clone-response": "^1.0.2",
+        "get-stream": "^4.0.0",
+        "http-cache-semantics": "^4.0.0",
+        "keyv": "^3.0.0",
+        "lowercase-keys": "^1.0.1",
+        "normalize-url": "^3.1.0",
+        "responselike": "^1.0.2"
+      },
+      "devDependencies": {
+        "@keyv/sqlite": "^2.0.0",
+        "ava": "^0.25.0",
+        "coveralls": "^3.0.0",
+        "create-test-server": "2.1.1",
+        "delay": "^4.0.0",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "nyc": "^13.0.1",
+        "pify": "^4.0.0",
+        "sqlite3": "^4.0.2",
+        "this": "^1.0.2",
+        "xo": "^0.22.0"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "gitHead": "c23ffedd5914b4ff929ea2b55e49d4b29c4d18bc",
+      "bugs": {
+        "url": "https://github.com/lukechilds/cacheable-request/issues"
+      },
+      "homepage": "https://github.com/lukechilds/cacheable-request#readme",
+      "_id": "cacheable-request@5.0.0",
+      "_npmVersion": "6.2.0",
+      "_nodeVersion": "10.9.0",
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-gU53XCfodl+GZ37ecX/uLobGE+WvgE2QE3VfhX7sPf04Kc35tNPip3IfCKfqJ2e04HLuHRxFCWgGWttv8OQbfw==",
+        "shasum": "7ce347741c48d85c76bc41b78f6bf13e2907056d",
+        "tarball": "https://registry.npmjs.org/cacheable-request/-/cacheable-request-5.0.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 15617,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbj+33CRA9TVsSAnZWagAAEdwP/iGfckwHu/2jyemyi30J\nKCM1IH3Eca9OCYrPv6bwp8eoX3QcBVeFnp2p/Cm7lja6zxaDL0axmUzHBS4I\nfWBk/K98lp+bCl4VCnoua0SemZtuHH5TZLQvrUfVqu9xNNE/psJnl/MC/IUz\nkrhq07OE5rRsyHZl5Rm+Dx/Zw69s1U8P2fwp2dyakpJ6CZQKuI4MBZwwHUek\n688m6Ydj8t0Aj5H3f7D52zVECO201esuGpg09lpODpgGCL8amDdg2So/immh\nozVMc+1hYOx2PoDVkK4kX9ClTNCh+gaSl4HOl19yY5yWoZLcD+/r/QJzPd6X\n5QPSV5YgMpZ4afGlxEIDfEqXEAuJmuexQRN/ViaXyVlh5a70jPOv9DUGjnr4\nAlIloEqwr3sflmnJ++fZA20iWNEq1G7Op2GdS4Fgq2N9sEmGb0drjwTE8Lsi\nM/pGig//qaSNvzgRVvHJgWZlJ/c5RPlngwof18MribuLHf/UdyoElxaw2Gfb\nI2VpJNXgG/OivfMhIoEJ4TXYK1bUdZBL28zb6n6o2RXwDRlg7+kb33SOYcvT\nYUOJvWdh3Gv2cDuTkbvZJ1MxIDz9vay05fEDTKBNgoaVkqXa3PbNcVV6UI2/\n6iws1ROce7gtc2RpbQ6GBGoPUfD/xfGXUgTMa7px3Dr/6SCKmTO6bBuAszRO\nmEye\r\n=e/R6\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/cacheable-request_5.0.0_1536159222562_0.515616338733607"
+      },
+      "_hasShrinkwrap": false
+    },
+    "5.1.0": {
+      "name": "cacheable-request",
+      "version": "5.1.0",
+      "description": "Wrap native HTTP requests with RFC compliant cache support",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/cacheable-request.git"
+      },
+      "author": {
+        "name": "Luke Childs",
+        "email": "lukechilds123@gmail.com",
+        "url": "http://lukechilds.co.uk"
+      },
+      "main": "src/index.js",
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && nyc ava",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "keywords": [
+        "HTTP",
+        "HTTPS",
+        "cache",
+        "caching",
+        "layer",
+        "cacheable",
+        "RFC 7234",
+        "RFC",
+        "7234",
+        "compliant"
+      ],
+      "dependencies": {
+        "clone-response": "^1.0.2",
+        "get-stream": "^4.0.0",
+        "http-cache-semantics": "^4.0.0",
+        "keyv": "^3.0.0",
+        "lowercase-keys": "^1.0.1",
+        "normalize-url": "^3.1.0",
+        "responselike": "^1.0.2"
+      },
+      "devDependencies": {
+        "@keyv/sqlite": "^2.0.0",
+        "ava": "^0.25.0",
+        "coveralls": "^3.0.0",
+        "create-test-server": "2.1.1",
+        "delay": "^4.0.0",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "nyc": "^13.0.1",
+        "pify": "^4.0.0",
+        "sqlite3": "^4.0.2",
+        "this": "^1.0.2",
+        "xo": "^0.22.0"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "gitHead": "a1d01f4cf8d4233e70deff036abd388c5649a486",
+      "bugs": {
+        "url": "https://github.com/lukechilds/cacheable-request/issues"
+      },
+      "homepage": "https://github.com/lukechilds/cacheable-request#readme",
+      "_id": "cacheable-request@5.1.0",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "8.12.0",
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-UCdjX4N/QjymZGpKY7hW4VJsxsVJM+drIiCxPa9aTvFQN5sL2+kJCYyeys8f2W0dJ0sU6Et54Ovl0sAmCpHHsA==",
+        "shasum": "ce0958e977bdb4a5b718464049793b8d4bf7d75d",
+        "tarball": "https://registry.npmjs.org/cacheable-request/-/cacheable-request-5.1.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 15839,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbx0oQCRA9TVsSAnZWagAAiwkP+weZQyiBHxPprdx9J1kr\n8jHpJaujMWtYMfPVz6edikNxDqJnGQRZYDq8gLrQtNe0wwAJYbcSt4KhQcWI\nf3ATnFFTyKHP5VGQ0eJ7NVF5kj/9am/sVzPc27CbZ15j+SS0DJiJvq6cKSji\np1MiantJQtDrDAiaGnEVJsSLNryalRUuvfaju2wqH52ChVqD33VtnjAzg2O8\niYUZvw1R+jIXmy00SGcM2a0a/uMWtjnpcs/zKeYKilKrUZV8pD0uqkl9NT4j\nOgBf3IAaRrfJu5a9hGXzmD6e849h+ftaonkNpwmjnb/aj2E8iELHiPucSpdX\nsGY1CMMv78EUk139BlycXNopWj4dIRaJdaRk1UtgG8aXP2BkB218hF2VRj6w\ncn7TMZY3oChRgai68bYRW48IrKUl8Btv7Gi101zZKG9mjbwgitZUvoxZzp3n\nyo2RzNwpD7911/63cSOrq8lobluAhwwYvvnR0nhZ7kE2sOFVUE1tOZJfehUz\nlKa9TCyoA84RPrRWISVkKiMK0IGUo+tUCIQTOevZGjqUE/14hpqEJck5t66v\nNfW6J5s4KERRju9ACXuYjo9B9z/8csRgyuPYbWXgIBJFUPsqpLveMoUNAR9m\nX+oZCQs2gT0h+zVqyj1j0+qc6DH7XwVBcQ35eduNMrdQJ2/CGtj+JNRUUnuj\n0RU2\r\n=7OX3\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/cacheable-request_5.1.0_1539787279399_0.8749830873969406"
+      },
+      "_hasShrinkwrap": false
+    },
+    "5.2.0": {
+      "name": "cacheable-request",
+      "version": "5.2.0",
+      "description": "Wrap native HTTP requests with RFC compliant cache support",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/cacheable-request.git"
+      },
+      "author": {
+        "name": "Luke Childs",
+        "email": "lukechilds123@gmail.com",
+        "url": "http://lukechilds.co.uk"
+      },
+      "main": "src/index.js",
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && nyc ava",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "keywords": [
+        "HTTP",
+        "HTTPS",
+        "cache",
+        "caching",
+        "layer",
+        "cacheable",
+        "RFC 7234",
+        "RFC",
+        "7234",
+        "compliant"
+      ],
+      "dependencies": {
+        "clone-response": "^1.0.2",
+        "get-stream": "^4.0.0",
+        "http-cache-semantics": "^4.0.0",
+        "keyv": "^3.0.0",
+        "lowercase-keys": "^1.0.1",
+        "normalize-url": "^3.1.0",
+        "responselike": "^1.0.2"
+      },
+      "devDependencies": {
+        "@keyv/sqlite": "^2.0.0",
+        "ava": "^0.25.0",
+        "coveralls": "^3.0.0",
+        "create-test-server": "2.1.1",
+        "delay": "^4.0.0",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "nyc": "^13.0.1",
+        "pify": "^4.0.0",
+        "sqlite3": "^4.0.2",
+        "this": "^1.0.2",
+        "xo": "^0.22.0"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "gitHead": "919af89701308c3e23daaab7147669c15b0948da",
+      "bugs": {
+        "url": "https://github.com/lukechilds/cacheable-request/issues"
+      },
+      "homepage": "https://github.com/lukechilds/cacheable-request#readme",
+      "_id": "cacheable-request@5.2.0",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "8.12.0",
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-h1n0vjpFaByTvU6PiyTKk2kx4OnuV1aVUynCUd/FiKl4icpPSceowk3rHczwFEBuZvz+E1EU4KExR0MCPeQfaQ==",
+        "shasum": "00c87097835af4caf92a97390660ecadce51187d",
+        "tarball": "https://registry.npmjs.org/cacheable-request/-/cacheable-request-5.2.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 15977,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJb6opfCRA9TVsSAnZWagAAVX0P/0AadRqIKOf7Vy7B8sz+\nT3u0w11AE5SXnnMhy1bygZ/W/5ea/jYFrlBQ8t9u+a4It+OQQJSZz9+QF1Hi\nAzzFV4B2Dps6Ev+eYhV4AX/MQlcMXx195DUjLYl7C0dmj1i2tbTdTiIYBbho\n4kkt1Oyq+BzrnUAmjVi07CW9Eij7x9zE3JhGUEJtqwLcO+s9y/O4nvLjL5lY\nfLCl1Qa8wXD1mxSDYKE5sFHfZjlg9b4j2Bt4i6hoYkMJKB0iOKMoy8EIoZED\nluQtsz4YJ7X2w58/aVYnAlcLidb/ml2ECnPdFEfHCpBlofhZfl0g8LlH+JW5\noxaUCY7iWeXAsBYp82MJDL9mqBO9zaoKW10chqesCC8cUCn3BlioSHI7DE9Z\n8lb8CTGiEMD1Hi37NsnNfXstZ/FoPKpCY7iysvQUdhP774E1KYmS9gmYGlfW\nBgvk/D3zKyhKHCX5P7Rj0VuVjt15azgxpnlz4zLJ/lS3LlChsUgK6teTdxVN\n4NLBgwCBlZaWwiEK57STwOKVjVRqKDKjQExApMqpFI0BtM20Bv0J6flVsqzM\nBzAsTtbFFTyh+zI25gwjiIogVIfDe2dpsjVtYgQj54dT00Os2K5LIE0tVZRa\n5CSKZP0bwrBPd/5ILMKhr2dWdoTbHpCHyKolWmuJyaKKNIDLozxRGmUNT2cy\nihyy\r\n=zjoA\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/cacheable-request_5.2.0_1542097502462_0.37772493732477685"
+      },
+      "_hasShrinkwrap": false
+    },
+    "5.2.1": {
+      "name": "cacheable-request",
+      "version": "5.2.1",
+      "description": "Wrap native HTTP requests with RFC compliant cache support",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/cacheable-request.git"
+      },
+      "author": {
+        "name": "Luke Childs",
+        "email": "lukechilds123@gmail.com",
+        "url": "http://lukechilds.co.uk"
+      },
+      "main": "src/index.js",
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && nyc ava",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "keywords": [
+        "HTTP",
+        "HTTPS",
+        "cache",
+        "caching",
+        "layer",
+        "cacheable",
+        "RFC 7234",
+        "RFC",
+        "7234",
+        "compliant"
+      ],
+      "dependencies": {
+        "clone-response": "^1.0.2",
+        "get-stream": "^4.0.0",
+        "http-cache-semantics": "^4.0.0",
+        "keyv": "^3.0.0",
+        "lowercase-keys": "^1.0.1",
+        "normalize-url": "^3.1.0",
+        "responselike": "^1.0.2"
+      },
+      "devDependencies": {
+        "@keyv/sqlite": "^2.0.0",
+        "ava": "^0.25.0",
+        "coveralls": "^3.0.0",
+        "create-test-server": "2.1.1",
+        "delay": "^4.0.0",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "nyc": "^13.0.1",
+        "pify": "^4.0.0",
+        "sqlite3": "^4.0.2",
+        "this": "^1.0.2",
+        "xo": "^0.22.0"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "gitHead": "06bd6b3bf83b82de767b6f15ac154d05fb5e2356",
+      "bugs": {
+        "url": "https://github.com/lukechilds/cacheable-request/issues"
+      },
+      "homepage": "https://github.com/lukechilds/cacheable-request#readme",
+      "_id": "cacheable-request@5.2.1",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "8.12.0",
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-+dLut9zvvuIM/MrtdHBVSh/QYJ9+uCKYoqww9cOYrndQH4O4rD/qH0IAwFhD5WJKfmWE6WgCOrLQPd/H5YJRVQ==",
+        "shasum": "41814b0460b68b9baf74f57f5a6046224d55d71e",
+        "tarball": "https://registry.npmjs.org/cacheable-request/-/cacheable-request-5.2.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 16523,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcHctUCRA9TVsSAnZWagAA4Y8QAIk5MqiKOU/oaQw4qazY\nV5BqSrNF1fIKJSeNBExwelQoV2ZQ7vuP/Wz3bOKL+5DSA8sVn+bB8Eiu6Rue\nPEqVtS3trXvF+oEkQTBGjfAa7h4Ckfgx9b8x3yp1QITzF9yhNIxI/i9odYls\nlJZp9CodXQxXwtDzYO3fAvRXizvwti6y3D7RGdwS6sHEbzzeF1ykAF3hs2B8\ndx79KoPhsZGiDxAIoh75zupfSD/Dn88Nt+J75v9dKTtY1jxaTTm5qobNikFZ\nHNqjnWGYrxtqv7gZ4IbMeGclAhLYtDwSe/+nsnSI4V0xyXVzM7/WZ3UewB0K\nzvz/I/q+FSSBy92ctsoLlMqMd10tbF1AmEue62rL3rTlKwq5uFxh5RUhEeQ5\n0bG6hqd88HnA5zQ+FfTxLN5pgsYoQom4CnnPYvbOtI8lHctCtTjsH3wf+AMv\n7q22ql6P7xs4a8iMHYD86P39XDWarz/2efJaQacWYZHyqmKNF2w+Aeua4OJ4\nv3i4CUueTKKIEGmFkBg5LFJucDOkfHt97ukXqoNN7DUrGYZL256dzD17jVEK\nZt2+9K47P9r4f8mnvmB5UU7fBau1Z5KqKiW7tmnTxesFMxL9iTKMmi3zSqFQ\nEWOHbQ4rvOdisqcg9BS3l0wlTq6tG5aEh23N39mXYd5VHdlgZXoqC0VVM2Y4\nKwmA\r\n=6bIN\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/cacheable-request_5.2.1_1545456467765_0.8719920249351871"
+      },
+      "_hasShrinkwrap": false
+    },
+    "6.0.0": {
+      "name": "cacheable-request",
+      "version": "6.0.0",
+      "description": "Wrap native HTTP requests with RFC compliant cache support",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/cacheable-request.git"
+      },
+      "author": {
+        "name": "Luke Childs",
+        "email": "lukechilds123@gmail.com",
+        "url": "http://lukechilds.co.uk"
+      },
+      "main": "src/index.js",
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && nyc ava",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "keywords": [
+        "HTTP",
+        "HTTPS",
+        "cache",
+        "caching",
+        "layer",
+        "cacheable",
+        "RFC 7234",
+        "RFC",
+        "7234",
+        "compliant"
+      ],
+      "dependencies": {
+        "clone-response": "^1.0.2",
+        "get-stream": "^4.0.0",
+        "http-cache-semantics": "^4.0.0",
+        "keyv": "^3.0.0",
+        "lowercase-keys": "^1.0.1",
+        "normalize-url": "^3.1.0",
+        "responselike": "^1.0.2"
+      },
+      "devDependencies": {
+        "@keyv/sqlite": "^2.0.0",
+        "ava": "^0.25.0",
+        "coveralls": "^3.0.0",
+        "create-test-server": "2.1.1",
+        "delay": "^4.0.0",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "nyc": "^13.0.1",
+        "pify": "^4.0.0",
+        "sqlite3": "^4.0.2",
+        "this": "^1.0.2",
+        "xo": "^0.22.0"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "gitHead": "ea92da1fb1e44e795fbe51d39f86630c2015e5fe",
+      "bugs": {
+        "url": "https://github.com/lukechilds/cacheable-request/issues"
+      },
+      "homepage": "https://github.com/lukechilds/cacheable-request#readme",
+      "_id": "cacheable-request@6.0.0",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "8.12.0",
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-2N7AmszH/WPPpl5Z3XMw1HAP+8d+xugnKQAeKvxFZ/04dbT/CAznqwbl+7eSr3HkwdepNwtb2yx3CAMQWvG01Q==",
+        "shasum": "4a1727414e02ac4af82560c4da1b61daa3fa2b63",
+        "tarball": "https://registry.npmjs.org/cacheable-request/-/cacheable-request-6.0.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 16525,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcLw1HCRA9TVsSAnZWagAA/eYP/iZd3/dcO8tPXlALoQ0M\nGdNAZBpRHZQIzgRmY+q4Ehv969PeeZCyzqc3MlTOhobXvPcQP45AnzpskYG4\n1gVxSJewP1rGFFd0XJcd9IlrREkt2uxqT97INl/sNJLPDy0x84cemPfcLDsl\naYhTFDXFRkKQ4LC7OfqNBlQUhRqTrG71DbGC8wu7DG2RcqMWOPciYf4yxIU0\nEqEx2ZtOcGhPNRPsp+1OsyjndunsGfUi7xnuTiXuVjEc2o1/jVgFYVHzpy92\nVyPXjHHngW3GqpKz9Wtj4qKVB2MLk43qzgOeYW+lBSUoBd1C5p56hvuCmMK+\nP2Pohwuqz7ouFW5AV73eVXLt9XD65Yqheeydh52skB811Gz+9LViQwdn+nwL\nj1XF8D6RcgGFLh4B5H5DNAro5R1fOjp8OOidnaVHv7zxhhBQw3U6sA4DlwTE\nJiRqhT7M77MoYit6g1CpVWSnwEBb1mQ/oWGY3JLwfoO8LqBTamnEg4UIP5Qm\nFbhhoJ4TFyguyny2BfpK+eNtGwmDZFbi35wU8P+5VKyIT/XudQyUD+N3ZR6i\ni9wi/VfwXHhC7XA2eH/LuQp56gyRyOYxbLE4c4iJ2reXt0bgshZDhzRpzkR3\nkhZjpDgBKV7aUPT72IGceusJmzSI9NI9uG6QK5JEMwZh/AKuqk074TM7lmp6\nueKC\r\n=9djW\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/cacheable-request_6.0.0_1546587463235_0.8245971191548354"
+      },
+      "_hasShrinkwrap": false
+    },
+    "6.1.0": {
+      "name": "cacheable-request",
+      "version": "6.1.0",
+      "description": "Wrap native HTTP requests with RFC compliant cache support",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/cacheable-request.git"
+      },
+      "author": {
+        "name": "Luke Childs",
+        "email": "lukechilds123@gmail.com",
+        "url": "http://lukechilds.co.uk"
+      },
+      "main": "src/index.js",
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && nyc ava",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "keywords": [
+        "HTTP",
+        "HTTPS",
+        "cache",
+        "caching",
+        "layer",
+        "cacheable",
+        "RFC 7234",
+        "RFC",
+        "7234",
+        "compliant"
+      ],
+      "dependencies": {
+        "clone-response": "^1.0.2",
+        "get-stream": "^5.1.0",
+        "http-cache-semantics": "^4.0.0",
+        "keyv": "^3.0.0",
+        "lowercase-keys": "^2.0.0",
+        "normalize-url": "^4.1.0",
+        "responselike": "^1.0.2"
+      },
+      "devDependencies": {
+        "@keyv/sqlite": "^2.0.0",
+        "ava": "^1.1.0",
+        "coveralls": "^3.0.0",
+        "create-test-server": "3.0.0",
+        "delay": "^4.0.0",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "nyc": "^14.1.1",
+        "pify": "^4.0.0",
+        "sqlite3": "^4.0.2",
+        "this": "^1.0.2",
+        "xo": "^0.23.0"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "gitHead": "d50e6af350b6f52814c71ce3908e704a3d5f428e",
+      "bugs": {
+        "url": "https://github.com/lukechilds/cacheable-request/issues"
+      },
+      "homepage": "https://github.com/lukechilds/cacheable-request#readme",
+      "_id": "cacheable-request@6.1.0",
+      "_nodeVersion": "12.0.0",
+      "_npmVersion": "6.9.0",
+      "dist": {
+        "integrity": "sha512-Oj3cAGPCqOZX7Rz64Uny2GYAZNliQSqfbePrgAQ1wKAihYmCUnraBtJtKcGR4xz7wF+LoJC+ssFZvv5BgF9Igg==",
+        "shasum": "20ffb8bd162ba4be11e9567d823db651052ca912",
+        "tarball": "https://registry.npmjs.org/cacheable-request/-/cacheable-request-6.1.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 16750,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJc+gELCRA9TVsSAnZWagAAg4UP/icEa1kgzzzsS3WW4kLV\nxLC66G4F22SX1oGRPoVGDKT7/rn/cGBiiLyGvlQPMoTd/chYCAKIHSIiSoWU\nPkuPcZuFA2A+stiQ9TPPnZYyUxkFqB+9UwZBqqHXFZ+zoS5pdoUA2U6zhM5Z\nagiv8tV5TmzbyCq7AaWIl1xGA3MnwgWp7Yt2xpUW2KRYLfQDiCMB13O/5W9b\nfjz0qBqY0ebxtEiN4gS29QPNRo9SNtrGVB5fdQtiWd43abIvy3g+YytlVTRh\nfYAazeo0itA4txKIRYxz0eomNyaOJlER5qdNS667zuDyCDWl5+RQMf15AMeE\nvSHp7nMjzq0e6bjAo7M2aD/f2Be40s5Mo+JffZ0ZxPUa2A6oa9NypKnjtwOV\nVRqVadXuz2z2XVD+5kprL1ibZW8dtEL6pr8zaZ1bLqxnUvzVypi6BWdVKolp\nJM093Y2y6iUo3RpawHWVIlXGgOzXzZFwmSDjgG05h6MH4CeuGhMSdMRkQUjd\n2Egc+xaN+bzlNVBzcyIx8twvAETU7UjIF+tUdusVU0AGbSfiLIB6riZlr2QB\nZaUQmLGSxMWHcHDOFiJXIWv6FRFhlNpQa3Ft1mSv0TQxa6ZNE3VKEnV2O0Ca\nODS+lRX5xlQf+frQ14pmSW/gbj5qtYbn0SWN1oEgnpsXja0Fv0MZ1fBbLUpv\n1A3/\r\n=zWoo\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/cacheable-request_6.1.0_1559888139040_0.21564101704262906"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0": {
+      "name": "cacheable-request",
+      "version": "7.0.0",
+      "description": "Wrap native HTTP requests with RFC compliant cache support",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/cacheable-request.git"
+      },
+      "author": {
+        "name": "Luke Childs",
+        "email": "lukechilds123@gmail.com",
+        "url": "http://lukechilds.co.uk"
+      },
+      "main": "src/index.js",
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && nyc ava",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "keywords": [
+        "HTTP",
+        "HTTPS",
+        "cache",
+        "caching",
+        "layer",
+        "cacheable",
+        "RFC 7234",
+        "RFC",
+        "7234",
+        "compliant"
+      ],
+      "dependencies": {
+        "clone-response": "^1.0.2",
+        "get-stream": "^5.1.0",
+        "http-cache-semantics": "^4.0.0",
+        "keyv": "^3.0.0",
+        "lowercase-keys": "^2.0.0",
+        "normalize-url": "^4.1.0",
+        "responselike": "^2.0.0"
+      },
+      "devDependencies": {
+        "@keyv/sqlite": "^2.0.0",
+        "ava": "^1.1.0",
+        "coveralls": "^3.0.0",
+        "create-test-server": "3.0.0",
+        "delay": "^4.0.0",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "nyc": "^14.1.1",
+        "pify": "^4.0.0",
+        "sqlite3": "^4.0.2",
+        "this": "^1.0.2",
+        "xo": "^0.23.0"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "gitHead": "130fcbe79b9b7427b1d8016756be85aa3d52a303",
+      "bugs": {
+        "url": "https://github.com/lukechilds/cacheable-request/issues"
+      },
+      "homepage": "https://github.com/lukechilds/cacheable-request#readme",
+      "_id": "cacheable-request@7.0.0",
+      "_nodeVersion": "12.11.1",
+      "_npmVersion": "6.11.3",
+      "dist": {
+        "integrity": "sha512-UVG4gMn3WjnAeFBBx7RFoprgOANIAkMwN5Dta6ONmfSwrCxfm0Ip7g0mIBxIRJZX9aDsoID0Ry3dU5Pr0csKKA==",
+        "shasum": "12421aa084e943ec81eac8c93e56af90c624788a",
+        "tarball": "https://registry.npmjs.org/cacheable-request/-/cacheable-request-7.0.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 16750,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdnnoSCRA9TVsSAnZWagAA62YP/1GHLWNOoqYw68C4i+mK\nfXummdUJINDVQJoChC+LjDGhg2cViZnlneqkQiiw7+gye4dQzZSdeEQiM40a\nvSh9/zTH6vUXZFck4mcBTCGUT2VBA0zaCBL7bNg5ocssHGL0ZymVyRbLaoOq\nTwaK1CYvHzZw78hPXlTH6CnziJY1o4JYptXUoF67FB1pdkPkRQFk4ShWe/Ma\nJ0EZ7DsdBITAVp1E2d/oEJy3Jg8Q/i4ROnhQsZuRd0vgoc73FTyD/ifK+ved\nPXovFUk5squxwFVlHrn3UGER9q8v0tqtO6YYTaEgDqT99rDxc6ovhWQ/dPVn\n+OeeW9vlw+xhxKgcLBAtxY/YnjOTXX9fjxHOnYgLhMd4bXleD2Api122xcdM\niv1VL7ZoYuF98Zhq8Ng/ofrQVy9rkjKVluYoPEk3QjUyA+M9E7uO9Ap+0CVb\nkL2FkRNqfziaXaeNk39JemwZmZ5qDyXDnko1XvDl3XLj1hAF38ksCC4qVQqm\nLOrGEflzw4SkKUx4WuPnkib/boHugnGXx7ErRuYRf9YCeoHuPdPkp76lbQuc\nmtnFR8cLrKIVEZuWscd1GqrVgYmWVfaOlR9PEKpEYYE4HYGV27k2WErTdJzx\nu58QzRFydt6Qd4q5le//9SEYpJHh5Bo8FjRNZ2eeFTObO/Lo0d/CtiVtNxuJ\n0CTJ\r\n=PuEi\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/cacheable-request_7.0.0_1570667026222_0.23845783578515323"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.1": {
+      "name": "cacheable-request",
+      "version": "7.0.1",
+      "description": "Wrap native HTTP requests with RFC compliant cache support",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/cacheable-request.git"
+      },
+      "author": {
+        "name": "Luke Childs",
+        "email": "lukechilds123@gmail.com",
+        "url": "http://lukechilds.co.uk"
+      },
+      "main": "src/index.js",
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && nyc ava",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "keywords": [
+        "HTTP",
+        "HTTPS",
+        "cache",
+        "caching",
+        "layer",
+        "cacheable",
+        "RFC 7234",
+        "RFC",
+        "7234",
+        "compliant"
+      ],
+      "dependencies": {
+        "clone-response": "^1.0.2",
+        "get-stream": "^5.1.0",
+        "http-cache-semantics": "^4.0.0",
+        "keyv": "^4.0.0",
+        "lowercase-keys": "^2.0.0",
+        "normalize-url": "^4.1.0",
+        "responselike": "^2.0.0"
+      },
+      "devDependencies": {
+        "@keyv/sqlite": "^2.0.0",
+        "ava": "^1.1.0",
+        "coveralls": "^3.0.0",
+        "create-test-server": "3.0.0",
+        "delay": "^4.0.0",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "nyc": "^14.1.1",
+        "pify": "^4.0.0",
+        "sqlite3": "^4.0.2",
+        "this": "^1.0.2",
+        "xo": "^0.23.0"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "gitHead": "0656a46a3573a4de09f592f1d334433d223e68b7",
+      "bugs": {
+        "url": "https://github.com/lukechilds/cacheable-request/issues"
+      },
+      "homepage": "https://github.com/lukechilds/cacheable-request#readme",
+      "_id": "cacheable-request@7.0.1",
+      "_nodeVersion": "12.11.1",
+      "_npmVersion": "6.11.3",
+      "dist": {
+        "integrity": "sha512-lt0mJ6YAnsrBErpTMWeu5kl/tg9xMAWjavYTN6VQXM1A/teBITuNcccXsCxF0tDQQJf9DfAaX5O4e0zp0KlfZw==",
+        "shasum": "062031c2856232782ed694a257fa35da93942a58",
+        "tarball": "https://registry.npmjs.org/cacheable-request/-/cacheable-request-7.0.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 16750,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeJt/RCRA9TVsSAnZWagAA64UP/3Kn8Q4fuH4c74KU13Gf\nqscYlQCryUoxJJr1gADawf/iMQD1dNyafITP4TkHXxdEpyD9jyZYK+3B22S3\ncI9VYWtW0vRgbwEvXN1nXCGi04CCTQvbBiQ2GaMRWnzBZkA3vv1k48sPr/tl\ncbF888Ct3hVHDcKWTDCLFNSlkH95vnyxCBDzLYAwVQ4DdOAJOvWOZ2CbKTNd\n64U4PKAnOqoVEiSJmNEUSxjipemj3FKvYfBfuIHwCY8L3+BucVys+RKN0H3S\n5+4aMzfTB+Z0u7DiJxqCpe+NZA1VxqKPex4bW10GLkYCdrgif5HeSnIbyUko\nA6t1iOP8jAXE2AGOCkidC5XtQSNRwVGe1Rhop8JKtXD6xN//CxxrCsD9UdkR\nhVYojiAG2qjUZASjOug1ugB3k/N6brVsr0mfWJD4xME+10TS9Aq2drXmj5TF\nbVUpp/f+5H9DphgNpTK625aRpctUil4OCfY1XgcuF37bm58v2ek7QMSF0OLW\n/ZI9b9WX7WGY76UHXKwYxAP6rFV8igpuxmfbDNldCw97RmpRT/VTZ48ohjVc\nChT3irUZEjLvZ118SZdtaGjtCTefEgBwa4bMdh+K9Bz1dH3RkA08e/krBP/x\n9QeFUas5hyJMLMDDIrspTpqMagSwYLJevVlX6BdwQdv5CRPCQhTiVGooEOy2\ngRp9\r\n=KzGv\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/cacheable-request_7.0.1_1579605969134_0.1316842713674622"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# cacheable-request\n\n> Wrap native HTTP requests with RFC compliant cache support\n\n[![Build Status](https://travis-ci.org/lukechilds/cacheable-request.svg?branch=master)](https://travis-ci.org/lukechilds/cacheable-request)\n[![Coverage Status](https://coveralls.io/repos/github/lukechilds/cacheable-request/badge.svg?branch=master)](https://coveralls.io/github/lukechilds/cacheable-request?branch=master)\n[![npm](https://img.shields.io/npm/dm/cacheable-request.svg)](https://www.npmjs.com/package/cacheable-request)\n[![npm](https://img.shields.io/npm/v/cacheable-request.svg)](https://www.npmjs.com/package/cacheable-request)\n\n[RFC 7234](http://httpwg.org/specs/rfc7234.html) compliant HTTP caching for native Node.js HTTP/HTTPS requests. Caching works out of the box in memory or is easily pluggable with a wide range of storage adapters.\n\n**Note:** This is a low level wrapper around the core HTTP modules, it's not a high level request library.\n\n## Features\n\n- Only stores cacheable responses as defined by RFC 7234\n- Fresh cache entries are served directly from cache\n- Stale cache entries are revalidated with `If-None-Match`/`If-Modified-Since` headers\n- 304 responses from revalidation requests use cached body\n- Updates `Age` header on cached responses\n- Can completely bypass cache on a per request basis\n- In memory cache by default\n- Official support for Redis, MongoDB, SQLite, PostgreSQL and MySQL storage adapters\n- Easily plug in your own or third-party storage adapters\n- If DB connection fails, cache is automatically bypassed ([disabled by default](#optsautomaticfailover))\n- Adds cache support to any existing HTTP code with minimal changes\n- Uses [http-cache-semantics](https://github.com/pornel/http-cache-semantics) internally for HTTP RFC 7234 compliance\n\n## Install\n\n```shell\nnpm install cacheable-request\n```\n\n## Usage\n\n```js\nconst http = require('http');\nconst CacheableRequest = require('cacheable-request');\n\n// Then instead of\nconst req = http.request('http://example.com', cb);\nreq.end();\n\n// You can do\nconst cacheableRequest = new CacheableRequest(http.request);\nconst cacheReq = cacheableRequest('http://example.com', cb);\ncacheReq.on('request', req => req.end());\n// Future requests to 'example.com' will be returned from cache if still valid\n\n// You pass in any other http.request API compatible method to be wrapped with cache support:\nconst cacheableRequest = new CacheableRequest(https.request);\nconst cacheableRequest = new CacheableRequest(electron.net);\n```\n\n## Storage Adapters\n\n`cacheable-request` uses [Keyv](https://github.com/lukechilds/keyv) to support a wide range of storage adapters.\n\nFor example, to use Redis as a cache backend, you just need to install the official Redis Keyv storage adapter:\n\n```\nnpm install @keyv/redis\n```\n\nAnd then you can pass `CacheableRequest` your connection string:\n\n```js\nconst cacheableRequest = new CacheableRequest(http.request, 'redis://user:pass@localhost:6379');\n```\n\n[View all official Keyv storage adapters.](https://github.com/lukechilds/keyv#official-storage-adapters)\n\nKeyv also supports anything that follows the Map API so it's easy to write your own storage adapter or use a third-party solution.\n\ne.g The following are all valid storage adapters\n\n```js\nconst storageAdapter = new Map();\n// or\nconst storageAdapter = require('./my-storage-adapter');\n// or\nconst QuickLRU = require('quick-lru');\nconst storageAdapter = new QuickLRU({ maxSize: 1000 });\n\nconst cacheableRequest = new CacheableRequest(http.request, storageAdapter);\n```\n\nView the [Keyv docs](https://github.com/lukechilds/keyv) for more information on how to use storage adapters.\n\n## API\n\n### new cacheableRequest(request, [storageAdapter])\n\nReturns the provided request function wrapped with cache support.\n\n#### request\n\nType: `function`\n\nRequest function to wrap with cache support. Should be [`http.request`](https://nodejs.org/api/http.html#http_http_request_options_callback) or a similar API compatible request function.\n\n#### storageAdapter\n\nType: `Keyv storage adapter`<br>\nDefault: `new Map()`\n\nA [Keyv](https://github.com/lukechilds/keyv) storage adapter instance, or connection string if using with an official Keyv storage adapter.\n\n### Instance\n\n#### cacheableRequest(opts, [cb])\n\nReturns an event emitter.\n\n##### opts\n\nType: `object`, `string`\n\n- Any of the default request functions options.\n- Any [`http-cache-semantics`](https://github.com/kornelski/http-cache-semantics#constructor-options) options.\n- Any of the following:\n\n###### opts.cache\n\nType: `boolean`<br>\nDefault: `true`\n\nIf the cache should be used. Setting this to false will completely bypass the cache for the current request.\n\n###### opts.strictTtl\n\nType: `boolean`<br>\nDefault: `false`\n\nIf set to `true` once a cached resource has expired it is deleted and will have to be re-requested.\n\nIf set to `false` (default), after a cached resource's TTL expires it is kept in the cache and will be revalidated on the next request with `If-None-Match`/`If-Modified-Since` headers.\n\n###### opts.maxTtl\n\nType: `number`<br>\nDefault: `undefined`\n\nLimits TTL. The `number` represents milliseconds.\n\n###### opts.automaticFailover\n\nType: `boolean`<br>\nDefault: `false`\n\nWhen set to `true`, if the DB connection fails we will automatically fallback to a network request. DB errors will still be emitted to notify you of the problem even though the request callback may succeed.\n\n###### opts.forceRefresh\n\nType: `boolean`<br>\nDefault: `false`\n\nForces refreshing the cache. If the response could be retrieved from the cache, it will perform a new request and override the cache instead.\n\n##### cb\n\nType: `function`\n\nThe callback function which will receive the response as an argument.\n\nThe response can be either a [Node.js HTTP response stream](https://nodejs.org/api/http.html#http_class_http_incomingmessage) or a [responselike object](https://github.com/lukechilds/responselike). The response will also have a `fromCache` property set with a boolean value.\n\n##### .on('request', request)\n\n`request` event to get the request object of the request.\n\n**Note:** This event will only fire if an HTTP request is actually made, not when a response is retrieved from cache. However, you should always handle the `request` event to end the request and handle any potential request errors.\n\n##### .on('response', response)\n\n`response` event to get the response object from the HTTP request or cache.\n\n##### .on('error', error)\n\n`error` event emitted in case of an error with the cache.\n\nErrors emitted here will be an instance of `CacheableRequest.RequestError` or `CacheableRequest.CacheError`. You will only ever receive a `RequestError` if the request function throws (normally caused by invalid user input). Normal request errors should be handled inside the `request` event.\n\nTo properly handle all error scenarios you should use the following pattern:\n\n```js\ncacheableRequest('example.com', cb)\n  .on('error', err => {\n    if (err instanceof CacheableRequest.CacheError) {\n      handleCacheError(err); // Cache error\n    } else if (err instanceof CacheableRequest.RequestError) {\n      handleRequestError(err); // Request function thrown\n    }\n  })\n  .on('request', req => {\n    req.on('error', handleRequestError); // Request error emitted\n    req.end();\n  });\n```\n\n**Note:** Database connection errors are emitted here, however `cacheable-request` will attempt to re-request the resource and bypass the cache on a connection error. Therefore a database connection error doesn't necessarily mean the request won't be fulfilled.\n\n## License\n\nMIT © Luke Childs\n",
+  "maintainers": [
+    {
+      "name": "lukechilds",
+      "email": "lukechilds123@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-01-21T11:26:12.109Z",
+    "created": "2017-06-02T12:36:50.988Z",
+    "0.0.0": "2017-06-02T12:36:50.988Z",
+    "0.1.0": "2017-06-09T14:06:47.087Z",
+    "0.2.0": "2017-06-10T03:58:44.270Z",
+    "0.3.0": "2017-06-10T07:21:16.883Z",
+    "0.4.0": "2017-08-12T00:12:18.953Z",
+    "0.5.0": "2017-08-13T12:02:33.299Z",
+    "1.0.0": "2017-08-13T13:31:44.524Z",
+    "1.0.1": "2017-08-13T13:59:47.583Z",
+    "1.0.2": "2017-08-13T16:07:07.348Z",
+    "1.1.0": "2017-08-13T16:50:11.531Z",
+    "1.1.1": "2017-08-13T18:08:59.153Z",
+    "1.1.2": "2017-08-17T16:38:22.801Z",
+    "1.1.3": "2017-08-17T16:42:04.020Z",
+    "2.0.0": "2017-10-03T13:58:46.286Z",
+    "2.0.1": "2017-10-12T16:26:06.084Z",
+    "2.1.0": "2017-11-12T11:42:04.930Z",
+    "2.1.1": "2017-11-16T09:35:09.462Z",
+    "2.1.2": "2017-12-01T13:08:56.165Z",
+    "2.1.3": "2017-12-02T11:49:07.190Z",
+    "2.1.4": "2017-12-26T20:09:56.307Z",
+    "3.0.0": "2018-07-06T01:52:46.696Z",
+    "4.0.0": "2018-07-20T10:37:01.341Z",
+    "4.0.1": "2018-07-22T15:44:42.793Z",
+    "5.0.0": "2018-09-05T14:53:42.689Z",
+    "5.1.0": "2018-10-17T14:41:19.627Z",
+    "5.2.0": "2018-11-13T08:25:02.628Z",
+    "5.2.1": "2018-12-22T05:27:47.866Z",
+    "6.0.0": "2019-01-04T07:37:43.357Z",
+    "6.1.0": "2019-06-07T06:15:39.202Z",
+    "7.0.0": "2019-10-10T00:23:46.330Z",
+    "7.0.1": "2020-01-21T11:26:09.303Z"
+  },
+  "homepage": "https://github.com/lukechilds/cacheable-request#readme",
+  "keywords": [
+    "HTTP",
+    "HTTPS",
+    "cache",
+    "caching",
+    "layer",
+    "cacheable",
+    "RFC 7234",
+    "RFC",
+    "7234",
+    "compliant"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lukechilds/cacheable-request.git"
+  },
+  "author": {
+    "name": "Luke Childs",
+    "email": "lukechilds123@gmail.com",
+    "url": "http://lukechilds.co.uk"
+  },
+  "bugs": {
+    "url": "https://github.com/lukechilds/cacheable-request/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "users": {
+    "shanewholloway": true
+  }
+}

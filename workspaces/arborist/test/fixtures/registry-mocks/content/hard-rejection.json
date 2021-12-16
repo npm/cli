@@ -1,0 +1,367 @@
+{
+  "_id": "hard-rejection",
+  "_rev": "4-a04b43cc789f4eaab701b62b3712e2b8",
+  "name": "hard-rejection",
+  "description": "Make unhandled promise rejections fail hard right away instead of the default silent fail",
+  "dist-tags": {
+    "latest": "2.1.0"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "hard-rejection",
+      "version": "0.1.0",
+      "description": "Make unhandled promise rejections fail hard right away instead of the default silent fail",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/hard-rejection.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js",
+        "register.js"
+      ],
+      "keywords": [
+        "promise",
+        "promises",
+        "unhandled",
+        "uncaught",
+        "rejection",
+        "hard",
+        "fail",
+        "catch",
+        "throw",
+        "handler",
+        "exit",
+        "debug",
+        "debugging",
+        "verbose",
+        "immediate",
+        "immediately"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "execa": "^0.4.0",
+        "xo": "*"
+      },
+      "gitHead": "b17d20107d2af3a64fc60ca82fa8a3819f1a00b8",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/hard-rejection/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/hard-rejection#readme",
+      "_id": "hard-rejection@0.1.0",
+      "_shasum": "119f7f1a81c0f76f37ee6cb0a06a937aef9495d9",
+      "_from": ".",
+      "_npmVersion": "2.15.9",
+      "_nodeVersion": "4.5.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "119f7f1a81c0f76f37ee6cb0a06a937aef9495d9",
+        "tarball": "https://registry.npmjs.org/hard-rejection/-/hard-rejection-0.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/hard-rejection-0.1.0.tgz_1472328672666_0.8819668914657086"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "hard-rejection",
+      "version": "1.0.0",
+      "description": "Make unhandled promise rejections fail hard right away instead of the default silent fail",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/hard-rejection.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js",
+        "register.js"
+      ],
+      "keywords": [
+        "promise",
+        "promises",
+        "unhandled",
+        "uncaught",
+        "rejection",
+        "hard",
+        "fail",
+        "catch",
+        "throw",
+        "handler",
+        "exit",
+        "debug",
+        "debugging",
+        "verbose",
+        "immediate",
+        "immediately"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "execa": "^0.6.0",
+        "xo": "*"
+      },
+      "gitHead": "f4b230ddbd7ee399bb79327c4a5b36110e5c7939",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/hard-rejection/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/hard-rejection#readme",
+      "_id": "hard-rejection@1.0.0",
+      "_shasum": "8f3b476c8e2f221bed73c64640fe217d717dac36",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "4.6.2",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "8f3b476c8e2f221bed73c64640fe217d717dac36",
+        "tarball": "https://registry.npmjs.org/hard-rejection/-/hard-rejection-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/hard-rejection-1.0.0.tgz_1484302727221_0.9670357657596469"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "hard-rejection",
+      "version": "2.0.0",
+      "description": "Make unhandled promise rejections fail hard right away instead of the default silent fail",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/hard-rejection.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd-check"
+      },
+      "keywords": [
+        "promise",
+        "promises",
+        "unhandled",
+        "uncaught",
+        "rejection",
+        "hard",
+        "fail",
+        "catch",
+        "throw",
+        "handler",
+        "exit",
+        "debug",
+        "debugging",
+        "verbose",
+        "immediate",
+        "immediately"
+      ],
+      "devDependencies": {
+        "ava": "^1.3.1",
+        "execa": "^1.0.0",
+        "tsd-check": "^0.5.0",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "c7ad279b7b0c8264cace7fb487a6f8ef73867d7d",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/hard-rejection/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/hard-rejection#readme",
+      "_id": "hard-rejection@2.0.0",
+      "_nodeVersion": "8.15.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-3u5up+jmoSJjmudS3Z3AuqD0pH586torAxsqRFbWT5Zx4fKv3LQj5aWdNJkkSX+VVdSIkf01NJhz+CAF5JtBMw==",
+        "shasum": "3831e0e6cd26280b261c0686ca3181af575fca1f",
+        "tarball": "https://registry.npmjs.org/hard-rejection/-/hard-rejection-2.0.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 4860,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcjkNfCRA9TVsSAnZWagAAPBYP/2rMMwidlhDzPUO0X1S3\nMSsNUJwglz8g3VcKF8JGXv7f7ei4bJUYw6YNrVQCqF7TMsWpIvPIoMyTf8NJ\n8wVC2uGMkwn+Tz8Dyjzge/cdjRcneEkt8HszuyjKxN3AFpwG59L7owrnkYmd\nKCVuUKcdE7SZJLXqtZ49QNACfbmJNIERxOIEqwIiIt1JLtZ/HnonEXx/+R4o\nds5gOmSLS+KenFjZ17klduv9XJpRwvloxs8MnnbnMm9dhUJFZ2hRdo0RlD80\nqHt042DrP46dzLyrWuUIBTlwAxnUwFc/Z6JglejiSSexvWzvGDWwU9XK2FTP\nCJdi+nUbN/4otDy4FXMM8/j4M+77cgt0lNYZbRbNroXwnbCooj4HbTX4taPt\nsguhIeeReHrD/tZJUY32ngOtxfUB09RUvL8KsSnr4eHKVwbQ2bl5yy4UaMpY\niYA92Y4YXaz1n9iZ57Nh/BuzHGJ0xKin6sDA8GNv5XDT0jg7KrUM9CS25fWt\nR2yyrF/OZNj3dc5GGAjw9tzq9G1xkwTjcZxbH7dRZQxHYw0LHAiKpDt/FpWx\nCi+vbPlDbxl5Rin+jZcUS89TZ6khvf9vuCd/85CUOPT2dhihe01jZSl6tvwo\nyvkxWiy2/5AVMrgc9qwJcWiUjDlkqCi1uxv8G9sl6nEn58VI1Q5WByolnDUa\nI+Cp\r\n=NC4l\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/hard-rejection_2.0.0_1552827230430_0.6926210459554436"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.1.0": {
+      "name": "hard-rejection",
+      "version": "2.1.0",
+      "description": "Make unhandled promise rejections fail hard right away instead of the default silent fail",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/hard-rejection.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "promise",
+        "promises",
+        "unhandled",
+        "uncaught",
+        "rejection",
+        "hard",
+        "fail",
+        "catch",
+        "throw",
+        "handler",
+        "exit",
+        "debug",
+        "debugging",
+        "verbose",
+        "immediate",
+        "immediately"
+      ],
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "execa": "^1.0.0",
+        "tsd": "^0.7.1",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "71300d4b742f2cee0f926f4ad3459b66c88d610f",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/hard-rejection/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/hard-rejection#readme",
+      "_id": "hard-rejection@2.1.0",
+      "_nodeVersion": "8.15.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-VIZB+ibDhx7ObhAe7OVtoEbuP4h/MuOTHJ+J8h/eBXotJYl0fBgR72xDFCKgIh22OJZIOVNxBMWuhAr10r8HdA==",
+        "shasum": "1c6eda5c1685c63942766d79bb40ae773cecd883",
+        "tarball": "https://registry.npmjs.org/hard-rejection/-/hard-rejection-2.1.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 5142,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcoszHCRA9TVsSAnZWagAAX/oP/1rglB8nnb2N698dmy+m\ngo7yTYFFXQNhZruo812YRiNSC05txZHTVkbTny5IboxWH2p/jg/xAAsPlUZ2\na4awtyL7/R+15aJSIJ46fJg0jM8sEbiRV8NyrXN3hPoIKWeMRhUoCIKwVJHj\n7SNJXovwDJ8u1R0ZOmlBoTZtH5Y0dM20UHiVmFoa3RGe3/HPj0fEZVHOW3Wr\ny7cOkpO8UNBU6eoJ77QZjhs0EEU7L08WKk1PwBQxTNAkQP048aPkHZZi48r7\no9SXZYOdohQv/qXC0X2Uze20kn79Jv3Ez/F8acQ3bsGQPdXL/PSuf94yvgHM\nNbZKc0TW/HCq2aLkXN6wZ0hltPl7VPnyKcgi8z5fPGw0NDwCMaIFnvv+cLTF\nfpAxSwG2vHjt3bJYHu2k2Ju3vSAPPTXCzC4oXt1WOEgSaM35XACDhnbmQdfc\n92UUEMQZ5lEAtRyj6C3rXAdWbK5BWEcSGPczhBtcTkdNqUTfW5RZNhWjY2jz\ntUWcm7WtYBuUKCG3aeG/qqzH/i6sjZJqk6y3UeltJ28nkWCApQhomG14EgT/\n2rGgoTiJpW+yEDp3ShTwwm3n2morC8ro7afTrzUc8aItvacnE6toU2Ix32jb\nOhJSiXYkTAeEXLTx058fJoNJ2DBXXRtiEfwP0DGnCanI1WAyqpdXSumI6kBH\nn28E\r\n=KtHy\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/hard-rejection_2.1.0_1554173126513_0.9019311825096288"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# hard-rejection [![Build Status](https://travis-ci.org/sindresorhus/hard-rejection.svg?branch=master)](https://travis-ci.org/sindresorhus/hard-rejection)\n\n> Make unhandled promise rejections fail hard right away instead of the default [silent fail](https://gist.github.com/benjamingr/0237932cee84712951a2)\n\nPromises fail silently if you don't attach a `.catch()` handler.\n\nThis module exits the process with an error message right away when an unhandled rejection is encountered.<br>\n**Note: That might not be desirable as unhandled rejections can be [handled at a future point in time](https://nodejs.org/api/process.html#process_event_unhandledrejection), although not common. You've been warned.**\n\nIntended for top-level long-running processes like servers, **but not in reusable modules.**<br>\nFor command-line apps and tests, see [`loud-rejection`](https://github.com/sindresorhus/loud-rejection).\n\n\n## Install\n\n```\n$ npm install hard-rejection\n```\n\n\n## Usage\n\n```js\nconst hardRejection = require('hard-rejection');\nconst promiseFunction = require('some-promise-fn');\n\n// Install the handler\nhardRejection();\n\npromiseFunction();\n```\n\nWithout this module it's more verbose and you might even miss some that will fail silently:\n\n```js\nconst promiseFunction = require('some-promise-fn');\n\nfunction error(error) {\n\tconsole.error(error.stack);\n\tprocess.exit(1);\n}\n\npromiseFunction().catch(error);\n```\n\n### Register script\n\nAlternatively to the above, you may simply require `hard-rejection/register` and the handler will be automagically installed for you.\n\nThis is handy for ES2015 imports:\n\n```js\nimport 'hard-rejection/register';\n```\n\n\n## API\n\n### hardRejection([log])\n\n#### log\n\nType: `Function`<br>\nDefault: `console.error`\n\nCustom logging function to print the rejected promise. Receives the error stack.\n\n\n## Related\n\n- [loud-rejection](https://github.com/sindresorhus/loud-rejection) - Make unhandled promise rejections fail loudly instead of the default silent fail\n- [More…](https://github.com/sindresorhus/promise-fun)\n\n\n## License\n\nMIT © [Sindre Sorhus](https://sindresorhus.com)\n",
+  "maintainers": [
+    {
+      "name": "sindresorhus",
+      "email": "sindresorhus@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2019-04-02T02:45:29.149Z",
+    "created": "2016-08-27T20:11:13.702Z",
+    "0.1.0": "2016-08-27T20:11:13.702Z",
+    "1.0.0": "2017-01-13T10:18:47.437Z",
+    "2.0.0": "2019-03-17T12:53:50.619Z",
+    "2.1.0": "2019-04-02T02:45:26.609Z"
+  },
+  "homepage": "https://github.com/sindresorhus/hard-rejection#readme",
+  "keywords": [
+    "promise",
+    "promises",
+    "unhandled",
+    "uncaught",
+    "rejection",
+    "hard",
+    "fail",
+    "catch",
+    "throw",
+    "handler",
+    "exit",
+    "debug",
+    "debugging",
+    "verbose",
+    "immediate",
+    "immediately"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/hard-rejection.git"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "bugs": {
+    "url": "https://github.com/sindresorhus/hard-rejection/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md"
+}

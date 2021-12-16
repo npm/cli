@@ -1,0 +1,2521 @@
+{
+  "_id": "sockjs-client",
+  "_rev": "57-9e617832a9d7f64cf34ef9b61421b386",
+  "name": "sockjs-client",
+  "description": "SockJS-client is a browser JavaScript library that provides a WebSocket-like object.",
+  "dist-tags": {
+    "latest": "1.5.0"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "sockjs-client",
+      "author": {
+        "name": "Matthew Sackman"
+      },
+      "version": "0.1.0",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/sockjs/sockjs-client-node.git"
+      },
+      "main": "index",
+      "description": "Client library for SockJS",
+      "dependencies": {
+        "node-uuid": "1.3.3"
+      },
+      "_npmUser": {
+        "name": "msackman",
+        "email": "matthew@rabbitmq.com"
+      },
+      "_id": "sockjs-client@0.1.0",
+      "devDependencies": {},
+      "engines": {
+        "node": "*"
+      },
+      "_engineSupported": true,
+      "_npmVersion": "1.1.0-beta-10",
+      "_nodeVersion": "v0.6.7",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "b9bcf1e5334de90500817e7e12dba724a02de17d",
+        "tarball": "https://registry.npmjs.org/sockjs-client/-/sockjs-client-0.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "msackman",
+          "email": "matthew@rabbitmq.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.1": {
+      "name": "sockjs-client",
+      "author": {
+        "name": "Matthew Sackman"
+      },
+      "version": "0.1.1",
+      "keywords": [
+        "websockets",
+        "websocket"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/sockjs/sockjs-client-node.git"
+      },
+      "main": "index",
+      "description": "Client library for SockJS",
+      "dependencies": {
+        "node-uuid": "1.3.3"
+      },
+      "_npmUser": {
+        "name": "msackman",
+        "email": "matthew@rabbitmq.com"
+      },
+      "_id": "sockjs-client@0.1.1",
+      "devDependencies": {},
+      "engines": {
+        "node": "*"
+      },
+      "_engineSupported": true,
+      "_npmVersion": "1.1.0-beta-10",
+      "_nodeVersion": "v0.6.7",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "b65d9f24532da2a4e4ec4ca29d1b174d691884a5",
+        "tarball": "https://registry.npmjs.org/sockjs-client/-/sockjs-client-0.1.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "msackman",
+          "email": "matthew@rabbitmq.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.2": {
+      "name": "sockjs-client",
+      "author": {
+        "name": "Matthew Sackman"
+      },
+      "version": "0.1.2",
+      "keywords": [
+        "websockets",
+        "websocket"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/sockjs/sockjs-client-node.git"
+      },
+      "main": "index",
+      "description": "Client library for SockJS",
+      "dependencies": {
+        "node-uuid": "1.3.3"
+      },
+      "_npmUser": {
+        "name": "msackman",
+        "email": "matthew@rabbitmq.com"
+      },
+      "_id": "sockjs-client@0.1.2",
+      "devDependencies": {},
+      "engines": {
+        "node": "*"
+      },
+      "_engineSupported": true,
+      "_npmVersion": "1.1.0-beta-10",
+      "_nodeVersion": "v0.6.7",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "6991468810a36a9eff9bb0338091c5ff653a7f06",
+        "tarball": "https://registry.npmjs.org/sockjs-client/-/sockjs-client-0.1.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "msackman",
+          "email": "matthew@rabbitmq.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.3": {
+      "name": "sockjs-client",
+      "author": {
+        "name": "Matthew Sackman"
+      },
+      "version": "0.1.3",
+      "keywords": [
+        "websockets",
+        "websocket"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/sockjs/sockjs-client-node.git"
+      },
+      "main": "index",
+      "description": "Client library for SockJS",
+      "dependencies": {
+        "node-uuid": "1.3.3"
+      },
+      "_npmUser": {
+        "name": "msackman",
+        "email": "matthew@rabbitmq.com"
+      },
+      "_id": "sockjs-client@0.1.3",
+      "devDependencies": {},
+      "optionalDependencies": {},
+      "engines": {
+        "node": "*"
+      },
+      "_engineSupported": true,
+      "_npmVersion": "1.1.16",
+      "_nodeVersion": "v0.6.15",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "aaaf2f27bf4bf6f101e69f71008c8dbe6e810a81",
+        "tarball": "https://registry.npmjs.org/sockjs-client/-/sockjs-client-0.1.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "msackman",
+          "email": "matthew@rabbitmq.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.0-beta.4": {
+      "name": "sockjs-client",
+      "description": "SockJS-client is a browser JavaScript library that provides a WebSocket-like object. SockJS gives you a coherent, cross-browser, Javascript API which creates a low latency, full duplex, cross-domain communication channel between the browser and the web se",
+      "version": "1.0.0-beta.4",
+      "author": {
+        "name": "Bryce Kahle"
+      },
+      "browser": {
+        "./lib/transport/driver/websocket.js": "./lib/transport/browser/websocket.js",
+        "eventsource": "./lib/transport/browser/eventsource.js",
+        "./lib/transport/driver/xhr.js": "./lib/transport/browser/abstract-xhr.js",
+        "crypto": "./lib/utils/browser-crypto.js",
+        "events": "./lib/event/emitter.js"
+      },
+      "bugs": {
+        "url": "https://github.com/sockjs/sockjs-client/issues"
+      },
+      "contributors": [
+        {
+          "name": "Bryce Kahle",
+          "email": "bkahle@gmail.com"
+        },
+        {
+          "name": "Marek Majkowski",
+          "email": "deadbeef@popcount.org"
+        }
+      ],
+      "dependencies": {
+        "debug": "^2.1.0",
+        "eventsource": "^0.1.3",
+        "faye-websocket": "~0.7.3",
+        "inherits": "^2.0.1",
+        "json3": "^3.3.2",
+        "url-parse": "^0.1.0"
+      },
+      "devDependencies": {
+        "browserify": "^6.1.0",
+        "envify": "~3.0.0",
+        "expect.js": "~0.3.1",
+        "gulp": "^3.8.8",
+        "gulp-eslint": "~0.1.8",
+        "gulp-header": "^1.2.2",
+        "gulp-mocha": "~1.1.1",
+        "gulp-rename": "~1.2.0",
+        "gulp-sourcemaps": "~1.2.4",
+        "gulp-uglify": "~1.0.1",
+        "mocha": "^1.21.5",
+        "node-static": "^0.7.6",
+        "proxyquire": "~1.0.1",
+        "sockjs": "^0.3.11",
+        "vinyl-buffer": "~1.0.0",
+        "vinyl-source-stream": "^1.0.0",
+        "zuul": "git://github.com/brycekahle/zuul#ngrok"
+      },
+      "homepage": "http://sockjs.org",
+      "keywords": [
+        "websockets",
+        "websocket"
+      ],
+      "license": "MIT",
+      "main": "./lib/entry.js",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sockjs/sockjs-client.git"
+      },
+      "scripts": {
+        "test": "make test",
+        "test_local": "zuul --local 9090 -- tests/browser.js",
+        "zuul": "zuul -- tests/browser.js"
+      },
+      "gitHead": "dbfc219259701a1e8a649f6cdffb81fa59da9168",
+      "_id": "sockjs-client@1.0.0-beta.4",
+      "_shasum": "9bb31d1b2941e018386346541e645bf0f71f367f",
+      "_from": ".",
+      "_npmVersion": "2.0.0",
+      "_npmUser": {
+        "name": "brycekahle",
+        "email": "bkahle@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "msackman",
+          "email": "matthew@rabbitmq.com"
+        },
+        {
+          "name": "brycekahle",
+          "email": "bkahle@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "9bb31d1b2941e018386346541e645bf0f71f367f",
+        "tarball": "https://registry.npmjs.org/sockjs-client/-/sockjs-client-1.0.0-beta.4.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.0-beta.5": {
+      "name": "sockjs-client",
+      "description": "SockJS-client is a browser JavaScript library that provides a WebSocket-like object. SockJS gives you a coherent, cross-browser, Javascript API which creates a low latency, full duplex, cross-domain communication channel between the browser and the web se",
+      "version": "1.0.0-beta.5",
+      "author": {
+        "name": "Bryce Kahle"
+      },
+      "browser": {
+        "./lib/transport/driver/websocket.js": "./lib/transport/browser/websocket.js",
+        "eventsource": "./lib/transport/browser/eventsource.js",
+        "./lib/transport/driver/xhr.js": "./lib/transport/browser/abstract-xhr.js",
+        "crypto": "./lib/utils/browser-crypto.js",
+        "events": "./lib/event/emitter.js"
+      },
+      "bugs": {
+        "url": "https://github.com/sockjs/sockjs-client/issues"
+      },
+      "contributors": [
+        {
+          "name": "Bryce Kahle",
+          "email": "bkahle@gmail.com"
+        },
+        {
+          "name": "Marek Majkowski",
+          "email": "deadbeef@popcount.org"
+        }
+      ],
+      "dependencies": {
+        "debug": "^2.1.0",
+        "eventsource": "^0.1.3",
+        "faye-websocket": "~0.7.3",
+        "inherits": "^2.0.1",
+        "json3": "^3.3.2",
+        "url-parse": "^0.1.1"
+      },
+      "devDependencies": {
+        "browserify": "^6.1.0",
+        "envify": "~3.0.0",
+        "expect.js": "~0.3.1",
+        "gulp": "^3.8.8",
+        "gulp-eslint": "~0.1.8",
+        "gulp-header": "^1.2.2",
+        "gulp-mocha": "~1.1.1",
+        "gulp-rename": "~1.2.0",
+        "gulp-sourcemaps": "~1.2.4",
+        "gulp-uglify": "~1.0.1",
+        "mocha": "^1.21.5",
+        "node-static": "^0.7.6",
+        "proxyquire": "~1.0.1",
+        "sockjs": "^0.3.11",
+        "vinyl-buffer": "~1.0.0",
+        "vinyl-source-stream": "^1.0.0",
+        "zuul": "git://github.com/brycekahle/zuul#ngrok"
+      },
+      "homepage": "http://sockjs.org",
+      "keywords": [
+        "websockets",
+        "websocket"
+      ],
+      "license": "MIT",
+      "main": "./lib/entry.js",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sockjs/sockjs-client.git"
+      },
+      "scripts": {
+        "test": "make test",
+        "test_local": "zuul --local 9090 -- tests/browser.js",
+        "zuul": "zuul -- tests/browser.js"
+      },
+      "gitHead": "ac3abbd3cfd37e5a138aea5fdd79a81dbb9a9879",
+      "_id": "sockjs-client@1.0.0-beta.5",
+      "_shasum": "79717d8946721257c04dc727ac633c16baa6858a",
+      "_from": ".",
+      "_npmVersion": "2.0.0",
+      "_npmUser": {
+        "name": "brycekahle",
+        "email": "bkahle@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "brycekahle",
+          "email": "bkahle@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "79717d8946721257c04dc727ac633c16baa6858a",
+        "tarball": "https://registry.npmjs.org/sockjs-client/-/sockjs-client-1.0.0-beta.5.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.0-beta.6": {
+      "name": "sockjs-client",
+      "description": "SockJS-client is a browser JavaScript library that provides a WebSocket-like object. SockJS gives you a coherent, cross-browser, Javascript API which creates a low latency, full duplex, cross-domain communication channel between the browser and the web se",
+      "version": "1.0.0-beta.6",
+      "author": {
+        "name": "Bryce Kahle"
+      },
+      "browser": {
+        "./lib/transport/driver/websocket.js": "./lib/transport/browser/websocket.js",
+        "eventsource": "./lib/transport/browser/eventsource.js",
+        "./lib/transport/driver/xhr.js": "./lib/transport/browser/abstract-xhr.js",
+        "crypto": "./lib/utils/browser-crypto.js",
+        "events": "./lib/event/emitter.js"
+      },
+      "bugs": {
+        "url": "https://github.com/sockjs/sockjs-client/issues"
+      },
+      "contributors": [
+        {
+          "name": "Bryce Kahle",
+          "email": "bkahle@gmail.com"
+        },
+        {
+          "name": "Marek Majkowski",
+          "email": "deadbeef@popcount.org"
+        }
+      ],
+      "dependencies": {
+        "debug": "^2.1.0",
+        "eventsource": "^0.1.3",
+        "faye-websocket": "~0.7.3",
+        "inherits": "^2.0.1",
+        "json3": "^3.3.2",
+        "url-parse": "^0.1.3"
+      },
+      "devDependencies": {
+        "browserify": "^6.1.0",
+        "envify": "~3.0.0",
+        "expect.js": "~0.3.1",
+        "gulp": "^3.8.8",
+        "gulp-eslint": "~0.1.8",
+        "gulp-header": "^1.2.2",
+        "gulp-mocha": "~1.1.1",
+        "gulp-rename": "~1.2.0",
+        "gulp-sourcemaps": "~1.2.4",
+        "gulp-uglify": "~1.0.1",
+        "mocha": "^1.21.5",
+        "node-static": "^0.7.6",
+        "proxyquire": "~1.0.1",
+        "sockjs": "^0.3.11",
+        "vinyl-buffer": "~1.0.0",
+        "vinyl-source-stream": "^1.0.0",
+        "zuul": "git://github.com/brycekahle/zuul#ngrok"
+      },
+      "homepage": "http://sockjs.org",
+      "keywords": [
+        "websockets",
+        "websocket"
+      ],
+      "license": "MIT",
+      "main": "./lib/entry.js",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sockjs/sockjs-client.git"
+      },
+      "scripts": {
+        "test": "make test",
+        "test_local": "zuul --local 9090 -- tests/browser.js",
+        "zuul": "zuul -- tests/browser.js"
+      },
+      "gitHead": "b912ce19a2b0069575848ddfd740a3e0980fc652",
+      "_id": "sockjs-client@1.0.0-beta.6",
+      "_shasum": "b8ea8a86defe5b0b85ae2516ae861a341924369d",
+      "_from": ".",
+      "_npmVersion": "2.0.0",
+      "_npmUser": {
+        "name": "brycekahle",
+        "email": "bkahle@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "brycekahle",
+          "email": "bkahle@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "b8ea8a86defe5b0b85ae2516ae861a341924369d",
+        "tarball": "https://registry.npmjs.org/sockjs-client/-/sockjs-client-1.0.0-beta.6.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.0-beta.7": {
+      "name": "sockjs-client",
+      "description": "SockJS-client is a browser JavaScript library that provides a WebSocket-like object. SockJS gives you a coherent, cross-browser, Javascript API which creates a low latency, full duplex, cross-domain communication channel between the browser and the web se",
+      "version": "1.0.0-beta.7",
+      "author": {
+        "name": "Bryce Kahle"
+      },
+      "browser": {
+        "./lib/transport/driver/websocket.js": "./lib/transport/browser/websocket.js",
+        "eventsource": "./lib/transport/browser/eventsource.js",
+        "./lib/transport/driver/xhr.js": "./lib/transport/browser/abstract-xhr.js",
+        "crypto": "./lib/utils/browser-crypto.js",
+        "events": "./lib/event/emitter.js"
+      },
+      "bugs": {
+        "url": "https://github.com/sockjs/sockjs-client/issues"
+      },
+      "contributors": [
+        {
+          "name": "Bryce Kahle",
+          "email": "bkahle@gmail.com"
+        },
+        {
+          "name": "Marek Majkowski",
+          "email": "deadbeef@popcount.org"
+        }
+      ],
+      "dependencies": {
+        "debug": "^2.1.0",
+        "eventsource": "^0.1.3",
+        "faye-websocket": "~0.7.3",
+        "inherits": "^2.0.1",
+        "json3": "^3.3.2",
+        "url-parse": "^0.1.5"
+      },
+      "devDependencies": {
+        "browserify": "^6.1.0",
+        "envify": "~3.0.0",
+        "expect.js": "~0.3.1",
+        "gulp": "^3.8.8",
+        "gulp-eslint": "~0.1.8",
+        "gulp-header": "^1.2.2",
+        "gulp-mocha": "~1.1.1",
+        "gulp-rename": "~1.2.0",
+        "gulp-sourcemaps": "~1.2.4",
+        "gulp-uglify": "~1.0.1",
+        "mocha": "^1.21.5",
+        "node-static": "^0.7.6",
+        "proxyquire": "~1.0.1",
+        "sockjs": "^0.3.11",
+        "vinyl-buffer": "~1.0.0",
+        "vinyl-source-stream": "^1.0.0",
+        "zuul": "git://github.com/brycekahle/zuul#ngrok"
+      },
+      "homepage": "http://sockjs.org",
+      "keywords": [
+        "websockets",
+        "websocket"
+      ],
+      "license": "MIT",
+      "main": "./lib/entry.js",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sockjs/sockjs-client.git"
+      },
+      "scripts": {
+        "test": "make test",
+        "test_local": "zuul --local 9090 -- tests/browser.js",
+        "zuul": "zuul -- tests/browser.js",
+        "gulp": "gulp"
+      },
+      "gitHead": "d5db71471865f686aa5238298a9206749efa8a00",
+      "_id": "sockjs-client@1.0.0-beta.7",
+      "_shasum": "7b11ea76414d2ed237ab90d3f932e5822cee62f8",
+      "_from": ".",
+      "_npmVersion": "2.1.11",
+      "_nodeVersion": "0.10.33",
+      "_npmUser": {
+        "name": "brycekahle",
+        "email": "bkahle@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "brycekahle",
+          "email": "bkahle@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "7b11ea76414d2ed237ab90d3f932e5822cee62f8",
+        "tarball": "https://registry.npmjs.org/sockjs-client/-/sockjs-client-1.0.0-beta.7.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.0-beta.8": {
+      "name": "sockjs-client",
+      "description": "SockJS-client is a browser JavaScript library that provides a WebSocket-like object. SockJS gives you a coherent, cross-browser, Javascript API which creates a low latency, full duplex, cross-domain communication channel between the browser and the web se",
+      "version": "1.0.0-beta.8",
+      "author": {
+        "name": "Bryce Kahle"
+      },
+      "browser": {
+        "./lib/transport/driver/websocket.js": "./lib/transport/browser/websocket.js",
+        "eventsource": "./lib/transport/browser/eventsource.js",
+        "./lib/transport/driver/xhr.js": "./lib/transport/browser/abstract-xhr.js",
+        "crypto": "./lib/utils/browser-crypto.js",
+        "events": "./lib/event/emitter.js"
+      },
+      "bugs": {
+        "url": "https://github.com/sockjs/sockjs-client/issues"
+      },
+      "contributors": [
+        {
+          "name": "Bryce Kahle",
+          "email": "bkahle@gmail.com"
+        },
+        {
+          "name": "Marek Majkowski",
+          "email": "deadbeef@popcount.org"
+        }
+      ],
+      "dependencies": {
+        "debug": "^2.1.0",
+        "eventsource": "^0.1.3",
+        "faye-websocket": "~0.7.3",
+        "inherits": "^2.0.1",
+        "json3": "^3.3.2",
+        "url-parse": "^0.2.0"
+      },
+      "devDependencies": {
+        "browserify": "^6.1.0",
+        "envify": "~3.0.0",
+        "expect.js": "~0.3.1",
+        "gulp": "^3.8.8",
+        "gulp-eslint": "~0.1.8",
+        "gulp-header": "^1.2.2",
+        "gulp-mocha": "~1.1.1",
+        "gulp-rename": "~1.2.0",
+        "gulp-sourcemaps": "~1.2.4",
+        "gulp-uglify": "~1.0.1",
+        "mocha": "^1.21.5",
+        "node-static": "^0.7.6",
+        "proxyquire": "~1.0.1",
+        "sockjs": "^0.3.11",
+        "vinyl-buffer": "~1.0.0",
+        "vinyl-source-stream": "^1.0.0",
+        "zuul": "git://github.com/brycekahle/zuul#ngrok"
+      },
+      "homepage": "http://sockjs.org",
+      "keywords": [
+        "websockets",
+        "websocket"
+      ],
+      "license": "MIT",
+      "main": "./lib/entry.js",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sockjs/sockjs-client.git"
+      },
+      "scripts": {
+        "test": "make test",
+        "test_local": "zuul --local 9090 -- tests/browser.js",
+        "zuul": "zuul -- tests/browser.js",
+        "gulp": "gulp"
+      },
+      "gitHead": "c7ec8069fc7b759f6c29536dcd69f399b636dad7",
+      "_id": "sockjs-client@1.0.0-beta.8",
+      "_shasum": "f66c4bb9e62be01e7903437c4cd70497ff5f2a07",
+      "_from": ".",
+      "_npmVersion": "2.1.12",
+      "_nodeVersion": "0.10.28",
+      "_npmUser": {
+        "name": "brycekahle",
+        "email": "bkahle@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "brycekahle",
+          "email": "bkahle@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "f66c4bb9e62be01e7903437c4cd70497ff5f2a07",
+        "tarball": "https://registry.npmjs.org/sockjs-client/-/sockjs-client-1.0.0-beta.8.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.0-beta.9": {
+      "name": "sockjs-client",
+      "description": "SockJS-client is a browser JavaScript library that provides a WebSocket-like object. SockJS gives you a coherent, cross-browser, Javascript API which creates a low latency, full duplex, cross-domain communication channel between the browser and the web se",
+      "version": "1.0.0-beta.9",
+      "author": {
+        "name": "Bryce Kahle"
+      },
+      "browser": {
+        "./lib/transport/driver/websocket.js": "./lib/transport/browser/websocket.js",
+        "eventsource": "./lib/transport/browser/eventsource.js",
+        "./lib/transport/driver/xhr.js": "./lib/transport/browser/abstract-xhr.js",
+        "crypto": "./lib/utils/browser-crypto.js",
+        "events": "./lib/event/emitter.js"
+      },
+      "bugs": {
+        "url": "https://github.com/sockjs/sockjs-client/issues"
+      },
+      "contributors": [
+        {
+          "name": "Bryce Kahle",
+          "email": "bkahle@gmail.com"
+        },
+        {
+          "name": "Marek Majkowski",
+          "email": "deadbeef@popcount.org"
+        }
+      ],
+      "dependencies": {
+        "debug": "^2.1.0",
+        "eventsource": "^0.1.3",
+        "faye-websocket": "~0.7.3",
+        "inherits": "^2.0.1",
+        "json3": "^3.3.2",
+        "url-parse": "^0.2.1"
+      },
+      "devDependencies": {
+        "browserify": "^6.1.0",
+        "envify": "~3.0.0",
+        "expect.js": "~0.3.1",
+        "gulp": "^3.8.8",
+        "gulp-eslint": "~0.1.8",
+        "gulp-header": "^1.2.2",
+        "gulp-mocha": "~1.1.1",
+        "gulp-rename": "~1.2.0",
+        "gulp-sourcemaps": "~1.2.4",
+        "gulp-uglify": "~1.0.1",
+        "mocha": "^1.21.5",
+        "node-static": "^0.7.6",
+        "proxyquire": "~1.0.1",
+        "sockjs": "^0.3.11",
+        "vinyl-buffer": "~1.0.0",
+        "vinyl-source-stream": "^1.0.0",
+        "zuul": "git://github.com/brycekahle/zuul#ngrok"
+      },
+      "homepage": "http://sockjs.org",
+      "keywords": [
+        "websockets",
+        "websocket"
+      ],
+      "license": "MIT",
+      "main": "./lib/entry.js",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sockjs/sockjs-client.git"
+      },
+      "scripts": {
+        "test": "make test",
+        "test_local": "zuul --local 9090 -- tests/browser.js",
+        "zuul": "zuul -- tests/browser.js",
+        "gulp": "gulp"
+      },
+      "gitHead": "761e66f19da7c188d24c363d4837d624e30b70d8",
+      "_id": "sockjs-client@1.0.0-beta.9",
+      "_shasum": "ad9e533249386efc9119ebaa2026ebf36ed5837d",
+      "_from": ".",
+      "_npmVersion": "2.1.12",
+      "_nodeVersion": "0.10.28",
+      "_npmUser": {
+        "name": "brycekahle",
+        "email": "bkahle@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "brycekahle",
+          "email": "bkahle@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "ad9e533249386efc9119ebaa2026ebf36ed5837d",
+        "tarball": "https://registry.npmjs.org/sockjs-client/-/sockjs-client-1.0.0-beta.9.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.0-beta.10": {
+      "name": "sockjs-client",
+      "description": "SockJS-client is a browser JavaScript library that provides a WebSocket-like object. SockJS gives you a coherent, cross-browser, Javascript API which creates a low latency, full duplex, cross-domain communication channel between the browser and the web se",
+      "version": "1.0.0-beta.10",
+      "author": {
+        "name": "Bryce Kahle"
+      },
+      "browser": {
+        "./lib/transport/driver/websocket.js": "./lib/transport/browser/websocket.js",
+        "eventsource": "./lib/transport/browser/eventsource.js",
+        "./lib/transport/driver/xhr.js": "./lib/transport/browser/abstract-xhr.js",
+        "crypto": "./lib/utils/browser-crypto.js",
+        "events": "./lib/event/emitter.js"
+      },
+      "bugs": {
+        "url": "https://github.com/sockjs/sockjs-client/issues"
+      },
+      "contributors": [
+        {
+          "name": "Bryce Kahle",
+          "email": "bkahle@gmail.com"
+        },
+        {
+          "name": "Marek Majkowski",
+          "email": "deadbeef@popcount.org"
+        }
+      ],
+      "dependencies": {
+        "debug": "^2.1.0",
+        "eventsource": "^0.1.3",
+        "faye-websocket": "~0.7.3",
+        "inherits": "^2.0.1",
+        "json3": "^3.3.2",
+        "url-parse": "^0.2.3"
+      },
+      "devDependencies": {
+        "browserify": "^6.1.0",
+        "envify": "~3.0.0",
+        "expect.js": "~0.3.1",
+        "gulp": "^3.8.8",
+        "gulp-eslint": "~0.1.8",
+        "gulp-header": "^1.2.2",
+        "gulp-mocha": "~1.1.1",
+        "gulp-rename": "~1.2.0",
+        "gulp-sourcemaps": "~1.2.4",
+        "gulp-uglify": "~1.0.1",
+        "mocha": "^1.21.5",
+        "node-static": "^0.7.6",
+        "proxyquire": "~1.0.1",
+        "sockjs": "^0.3.11",
+        "vinyl-buffer": "~1.0.0",
+        "vinyl-source-stream": "^1.0.0",
+        "zuul": "git://github.com/brycekahle/zuul#ngrok"
+      },
+      "homepage": "http://sockjs.org",
+      "keywords": [
+        "websockets",
+        "websocket"
+      ],
+      "license": "MIT",
+      "main": "./lib/entry.js",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sockjs/sockjs-client.git"
+      },
+      "scripts": {
+        "test": "make test",
+        "test_local": "zuul --local 9090 -- tests/browser.js",
+        "zuul": "zuul -- tests/browser.js",
+        "gulp": "gulp"
+      },
+      "gitHead": "50e58d8c70ebcd2117d51d305d745f6f05424b47",
+      "_id": "sockjs-client@1.0.0-beta.10",
+      "_shasum": "5cd009db31fdd8631ff73ca7b4ae8f3ca3c6f986",
+      "_from": ".",
+      "_npmVersion": "2.1.8",
+      "_nodeVersion": "0.10.28",
+      "_npmUser": {
+        "name": "brycekahle",
+        "email": "bkahle@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "brycekahle",
+          "email": "bkahle@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "5cd009db31fdd8631ff73ca7b4ae8f3ca3c6f986",
+        "tarball": "https://registry.npmjs.org/sockjs-client/-/sockjs-client-1.0.0-beta.10.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.0-beta.11": {
+      "name": "sockjs-client",
+      "description": "SockJS-client is a browser JavaScript library that provides a WebSocket-like object. SockJS gives you a coherent, cross-browser, Javascript API which creates a low latency, full duplex, cross-domain communication channel between the browser and the web se",
+      "version": "1.0.0-beta.11",
+      "author": {
+        "name": "Bryce Kahle"
+      },
+      "browser": {
+        "./lib/transport/driver/websocket.js": "./lib/transport/browser/websocket.js",
+        "eventsource": "./lib/transport/browser/eventsource.js",
+        "./lib/transport/driver/xhr.js": "./lib/transport/browser/abstract-xhr.js",
+        "crypto": "./lib/utils/browser-crypto.js",
+        "events": "./lib/event/emitter.js"
+      },
+      "bugs": {
+        "url": "https://github.com/sockjs/sockjs-client/issues"
+      },
+      "contributors": [
+        {
+          "name": "Bryce Kahle",
+          "email": "bkahle@gmail.com"
+        },
+        {
+          "name": "Marek Majkowski",
+          "email": "deadbeef@popcount.org"
+        }
+      ],
+      "dependencies": {
+        "debug": "^2.1.0",
+        "eventsource": "^0.1.3",
+        "faye-websocket": "~0.7.3",
+        "inherits": "^2.0.1",
+        "json3": "^3.3.2",
+        "url-parse": "^1.0.0"
+      },
+      "devDependencies": {
+        "browserify": "^6.1.0",
+        "envify": "~3.0.0",
+        "expect.js": "~0.3.1",
+        "gulp": "^3.8.8",
+        "gulp-eslint": "~0.1.8",
+        "gulp-header": "^1.2.2",
+        "gulp-mocha": "~1.1.1",
+        "gulp-rename": "~1.2.0",
+        "gulp-sourcemaps": "~1.2.4",
+        "gulp-uglify": "~1.0.1",
+        "mocha": "^1.21.5",
+        "node-static": "^0.7.6",
+        "proxyquire": "~1.0.1",
+        "sockjs": "^0.3.11",
+        "vinyl-buffer": "~1.0.0",
+        "vinyl-source-stream": "^1.0.0",
+        "zuul": "git://github.com/brycekahle/zuul#ngrok"
+      },
+      "homepage": "http://sockjs.org",
+      "keywords": [
+        "websockets",
+        "websocket"
+      ],
+      "license": "MIT",
+      "main": "./lib/entry.js",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sockjs/sockjs-client.git"
+      },
+      "scripts": {
+        "test": "make test",
+        "test_local": "zuul --local 9090 -- tests/browser.js",
+        "zuul": "zuul -- tests/browser.js",
+        "gulp": "gulp"
+      },
+      "gitHead": "70c186c4ea6549d458db808ab5fe94778ae407ba",
+      "_id": "sockjs-client@1.0.0-beta.11",
+      "_shasum": "4bf090e20087251cc8ef7d2a2688ff3b620358c3",
+      "_from": ".",
+      "_npmVersion": "2.1.8",
+      "_nodeVersion": "0.10.28",
+      "_npmUser": {
+        "name": "brycekahle",
+        "email": "bkahle@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "brycekahle",
+          "email": "bkahle@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "4bf090e20087251cc8ef7d2a2688ff3b620358c3",
+        "tarball": "https://registry.npmjs.org/sockjs-client/-/sockjs-client-1.0.0-beta.11.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.0-beta.12": {
+      "name": "sockjs-client",
+      "description": "SockJS-client is a browser JavaScript library that provides a WebSocket-like object. SockJS gives you a coherent, cross-browser, Javascript API which creates a low latency, full duplex, cross-domain communication channel between the browser and the web se",
+      "version": "1.0.0-beta.12",
+      "author": {
+        "name": "Bryce Kahle"
+      },
+      "browser": {
+        "./lib/transport/driver/websocket.js": "./lib/transport/browser/websocket.js",
+        "eventsource": "./lib/transport/browser/eventsource.js",
+        "./lib/transport/driver/xhr.js": "./lib/transport/browser/abstract-xhr.js",
+        "crypto": "./lib/utils/browser-crypto.js",
+        "events": "./lib/event/emitter.js"
+      },
+      "bugs": {
+        "url": "https://github.com/sockjs/sockjs-client/issues"
+      },
+      "contributors": [
+        {
+          "name": "Bryce Kahle",
+          "email": "bkahle@gmail.com"
+        },
+        {
+          "name": "Marek Majkowski",
+          "email": "deadbeef@popcount.org"
+        }
+      ],
+      "dependencies": {
+        "debug": "^2.1.0",
+        "eventsource": "^0.1.3",
+        "faye-websocket": "~0.7.3",
+        "inherits": "^2.0.1",
+        "json3": "^3.3.2",
+        "url-parse": "^1.0.0"
+      },
+      "devDependencies": {
+        "browserify": "^6.1.0",
+        "envify": "~3.0.0",
+        "expect.js": "~0.3.1",
+        "gulp": "^3.8.8",
+        "gulp-eslint": "~0.1.8",
+        "gulp-header": "^1.2.2",
+        "gulp-mocha": "~1.1.1",
+        "gulp-rename": "~1.2.0",
+        "gulp-sourcemaps": "~1.2.4",
+        "gulp-uglify": "~1.0.1",
+        "mocha": "^1.21.5",
+        "node-static": "^0.7.6",
+        "proxyquire": "~1.0.1",
+        "sockjs": "^0.3.11",
+        "vinyl-buffer": "~1.0.0",
+        "vinyl-source-stream": "^1.0.0",
+        "zuul": "git://github.com/brycekahle/zuul#ngrok"
+      },
+      "homepage": "http://sockjs.org",
+      "keywords": [
+        "websockets",
+        "websocket"
+      ],
+      "license": "MIT",
+      "main": "./lib/entry.js",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sockjs/sockjs-client.git"
+      },
+      "scripts": {
+        "test": "make test",
+        "test_local": "zuul --local 9090 -- tests/browser.js",
+        "zuul": "zuul -- tests/browser.js",
+        "gulp": "gulp"
+      },
+      "gitHead": "2978ed72b6c41e413d417a6f989914b94e8cb9d7",
+      "_id": "sockjs-client@1.0.0-beta.12",
+      "_shasum": "5e7a4b662447bb92de9bc7613b771b36c4804a6f",
+      "_from": ".",
+      "_npmVersion": "2.1.8",
+      "_nodeVersion": "0.10.28",
+      "_npmUser": {
+        "name": "brycekahle",
+        "email": "bkahle@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "brycekahle",
+          "email": "bkahle@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "5e7a4b662447bb92de9bc7613b771b36c4804a6f",
+        "tarball": "https://registry.npmjs.org/sockjs-client/-/sockjs-client-1.0.0-beta.12.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.0-beta.13": {
+      "name": "sockjs-client",
+      "description": "SockJS-client is a browser JavaScript library that provides a WebSocket-like object. SockJS gives you a coherent, cross-browser, Javascript API which creates a low latency, full duplex, cross-domain communication channel between the browser and the web se",
+      "version": "1.0.0-beta.13",
+      "author": {
+        "name": "Bryce Kahle"
+      },
+      "browser": {
+        "./lib/transport/driver/websocket.js": "./lib/transport/browser/websocket.js",
+        "eventsource": "./lib/transport/browser/eventsource.js",
+        "./lib/transport/driver/xhr.js": "./lib/transport/browser/abstract-xhr.js",
+        "crypto": "./lib/utils/browser-crypto.js",
+        "events": "./lib/event/emitter.js"
+      },
+      "bugs": {
+        "url": "https://github.com/sockjs/sockjs-client/issues"
+      },
+      "contributors": [
+        {
+          "name": "Bryce Kahle",
+          "email": "bkahle@gmail.com"
+        },
+        {
+          "name": "Marek Majkowski",
+          "email": "deadbeef@popcount.org"
+        }
+      ],
+      "dependencies": {
+        "debug": "^2.1.0",
+        "eventsource": "^0.1.3",
+        "faye-websocket": "~0.7.3",
+        "inherits": "^2.0.1",
+        "json3": "^3.3.2",
+        "url-parse": "^1.0.0"
+      },
+      "devDependencies": {
+        "browserify": "^6.1.0",
+        "envify": "~3.0.0",
+        "expect.js": "~0.3.1",
+        "gulp": "^3.8.8",
+        "gulp-eslint": "~0.1.8",
+        "gulp-header": "^1.2.2",
+        "gulp-mocha": "~1.1.1",
+        "gulp-rename": "~1.2.0",
+        "gulp-sourcemaps": "~1.2.4",
+        "gulp-uglify": "~1.0.1",
+        "mocha": "^1.21.5",
+        "node-static": "^0.7.6",
+        "proxyquire": "~1.0.1",
+        "sockjs": "^0.3.11",
+        "vinyl-buffer": "~1.0.0",
+        "vinyl-source-stream": "^1.0.0",
+        "zuul": "git://github.com/brycekahle/zuul.git#ngrok"
+      },
+      "homepage": "http://sockjs.org",
+      "keywords": [
+        "websockets",
+        "websocket"
+      ],
+      "license": "MIT",
+      "main": "./lib/entry.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sockjs/sockjs-client.git"
+      },
+      "scripts": {
+        "test": "make test",
+        "test_local": "zuul --local 9090 -- tests/browser.js",
+        "zuul": "zuul -- tests/browser.js",
+        "gulp": "gulp"
+      },
+      "gitHead": "fdf37dac50db90a2f647846e7bec4d2e9f325857",
+      "_id": "sockjs-client@1.0.0-beta.13",
+      "_shasum": "434e3960b80a7c721ca31b010d1a3f098217a973",
+      "_from": ".",
+      "_npmVersion": "2.9.0",
+      "_nodeVersion": "0.10.38",
+      "_npmUser": {
+        "name": "brycekahle",
+        "email": "bkahle@gmail.com"
+      },
+      "dist": {
+        "shasum": "434e3960b80a7c721ca31b010d1a3f098217a973",
+        "tarball": "https://registry.npmjs.org/sockjs-client/-/sockjs-client-1.0.0-beta.13.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "brycekahle",
+          "email": "bkahle@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "sockjs-client",
+      "description": "SockJS-client is a browser JavaScript library that provides a WebSocket-like object. SockJS gives you a coherent, cross-browser, Javascript API which creates a low latency, full duplex, cross-domain communication channel between the browser and the web se",
+      "version": "1.0.0",
+      "author": {
+        "name": "Bryce Kahle"
+      },
+      "browser": {
+        "./lib/transport/driver/websocket.js": "./lib/transport/browser/websocket.js",
+        "eventsource": "./lib/transport/browser/eventsource.js",
+        "./lib/transport/driver/xhr.js": "./lib/transport/browser/abstract-xhr.js",
+        "crypto": "./lib/utils/browser-crypto.js",
+        "events": "./lib/event/emitter.js"
+      },
+      "bugs": {
+        "url": "https://github.com/sockjs/sockjs-client/issues"
+      },
+      "contributors": [
+        {
+          "name": "Bryce Kahle",
+          "email": "bkahle@gmail.com"
+        },
+        {
+          "name": "Marek Majkowski",
+          "email": "deadbeef@popcount.org"
+        }
+      ],
+      "dependencies": {
+        "debug": "^2.1.0",
+        "eventsource": "^0.1.3",
+        "faye-websocket": "~0.7.3",
+        "inherits": "^2.0.1",
+        "json3": "^3.3.2",
+        "url-parse": "^1.0.1"
+      },
+      "devDependencies": {
+        "browserify": "^6.1.0",
+        "envify": "~3.0.0",
+        "expect.js": "~0.3.1",
+        "gulp": "^3.8.8",
+        "gulp-eslint": "~0.1.8",
+        "gulp-header": "^1.2.2",
+        "gulp-mocha": "~1.1.1",
+        "gulp-rename": "~1.2.0",
+        "gulp-sourcemaps": "~1.2.4",
+        "gulp-uglify": "~1.0.1",
+        "mocha": "^1.21.5",
+        "node-static": "^0.7.6",
+        "proxyquire": "~1.0.1",
+        "sockjs": "^0.3.11",
+        "vinyl-buffer": "~1.0.0",
+        "vinyl-source-stream": "^1.0.0",
+        "zuul": "git://github.com/brycekahle/zuul.git#ngrok"
+      },
+      "homepage": "http://sockjs.org",
+      "keywords": [
+        "websockets",
+        "websocket"
+      ],
+      "license": "MIT",
+      "main": "./lib/entry.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sockjs/sockjs-client.git"
+      },
+      "scripts": {
+        "test": "make test",
+        "test_local": "zuul --local 9090 -- tests/browser.js",
+        "zuul": "zuul -- tests/browser.js",
+        "gulp": "gulp"
+      },
+      "gitHead": "d3417e7914124002b7ad212976176e5c0d506efb",
+      "_id": "sockjs-client@1.0.0",
+      "_shasum": "af6d2d340482709bde27890a0ba804dfd765f8f9",
+      "_from": ".",
+      "_npmVersion": "2.9.0",
+      "_nodeVersion": "0.10.38",
+      "_npmUser": {
+        "name": "brycekahle",
+        "email": "bkahle@gmail.com"
+      },
+      "dist": {
+        "shasum": "af6d2d340482709bde27890a0ba804dfd765f8f9",
+        "tarball": "https://registry.npmjs.org/sockjs-client/-/sockjs-client-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "brycekahle",
+          "email": "bkahle@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "sockjs-client",
+      "description": "SockJS-client is a browser JavaScript library that provides a WebSocket-like object. SockJS gives you a coherent, cross-browser, Javascript API which creates a low latency, full duplex, cross-domain communication channel between the browser and the web se",
+      "version": "1.0.1",
+      "author": {
+        "name": "Bryce Kahle"
+      },
+      "browser": {
+        "./lib/transport/driver/websocket.js": "./lib/transport/browser/websocket.js",
+        "eventsource": "./lib/transport/browser/eventsource.js",
+        "./lib/transport/driver/xhr.js": "./lib/transport/browser/abstract-xhr.js",
+        "crypto": "./lib/utils/browser-crypto.js",
+        "events": "./lib/event/emitter.js"
+      },
+      "bugs": {
+        "url": "https://github.com/sockjs/sockjs-client/issues"
+      },
+      "contributors": [
+        {
+          "name": "Bryce Kahle",
+          "email": "bkahle@gmail.com"
+        },
+        {
+          "name": "Marek Majkowski",
+          "email": "deadbeef@popcount.org"
+        }
+      ],
+      "dependencies": {
+        "debug": "^2.1.0",
+        "eventsource": "^0.1.3",
+        "faye-websocket": "~0.7.3",
+        "inherits": "^2.0.1",
+        "json3": "^3.3.2",
+        "url-parse": "^1.0.1"
+      },
+      "devDependencies": {
+        "browserify": "^6.1.0",
+        "envify": "~3.0.0",
+        "expect.js": "~0.3.1",
+        "gulp": "^3.8.8",
+        "gulp-eslint": "~0.1.8",
+        "gulp-header": "^1.2.2",
+        "gulp-mocha": "~1.1.1",
+        "gulp-rename": "~1.2.0",
+        "gulp-sourcemaps": "~1.2.4",
+        "gulp-uglify": "~1.0.1",
+        "mocha": "^1.21.5",
+        "node-static": "^0.7.6",
+        "proxyquire": "~1.0.1",
+        "sockjs": "^0.3.11",
+        "vinyl-buffer": "~1.0.0",
+        "vinyl-source-stream": "^1.0.0",
+        "zuul": "git://github.com/brycekahle/zuul.git#ngrok"
+      },
+      "homepage": "http://sockjs.org",
+      "keywords": [
+        "websockets",
+        "websocket"
+      ],
+      "license": "MIT",
+      "main": "./lib/entry.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sockjs/sockjs-client.git"
+      },
+      "scripts": {
+        "test": "make test",
+        "test_local": "zuul --local 9090 -- tests/browser.js",
+        "zuul": "zuul -- tests/browser.js",
+        "gulp": "gulp"
+      },
+      "gitHead": "5af2fce8ec2c33be207b95b45b10c3cd14223532",
+      "_id": "sockjs-client@1.0.1",
+      "_shasum": "8943ae05b46547bc2054816c409002cf5e2fe026",
+      "_from": ".",
+      "_npmVersion": "2.9.0",
+      "_nodeVersion": "0.10.38",
+      "_npmUser": {
+        "name": "brycekahle",
+        "email": "bkahle@gmail.com"
+      },
+      "dist": {
+        "shasum": "8943ae05b46547bc2054816c409002cf5e2fe026",
+        "tarball": "https://registry.npmjs.org/sockjs-client/-/sockjs-client-1.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "brycekahle",
+          "email": "bkahle@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "sockjs-client",
+      "description": "SockJS-client is a browser JavaScript library that provides a WebSocket-like object. SockJS gives you a coherent, cross-browser, Javascript API which creates a low latency, full duplex, cross-domain communication channel between the browser and the web se",
+      "version": "1.0.2",
+      "author": {
+        "name": "Bryce Kahle"
+      },
+      "browser": {
+        "./lib/transport/driver/websocket.js": "./lib/transport/browser/websocket.js",
+        "eventsource": "./lib/transport/browser/eventsource.js",
+        "./lib/transport/driver/xhr.js": "./lib/transport/browser/abstract-xhr.js",
+        "crypto": "./lib/utils/browser-crypto.js",
+        "events": "./lib/event/emitter.js"
+      },
+      "bugs": {
+        "url": "https://github.com/sockjs/sockjs-client/issues"
+      },
+      "contributors": [
+        {
+          "name": "Bryce Kahle",
+          "email": "bkahle@gmail.com"
+        },
+        {
+          "name": "Marek Majkowski",
+          "email": "deadbeef@popcount.org"
+        }
+      ],
+      "dependencies": {
+        "debug": "^2.1.0",
+        "eventsource": "^0.1.3",
+        "faye-websocket": "~0.7.3",
+        "inherits": "^2.0.1",
+        "json3": "^3.3.2",
+        "url-parse": "^1.0.1"
+      },
+      "devDependencies": {
+        "browserify": "^6.1.0",
+        "envify": "~3.0.0",
+        "expect.js": "~0.3.1",
+        "gulp": "^3.8.8",
+        "gulp-eslint": "~0.1.8",
+        "gulp-header": "^1.2.2",
+        "gulp-mocha": "~1.1.1",
+        "gulp-rename": "~1.2.0",
+        "gulp-sourcemaps": "~1.2.4",
+        "gulp-uglify": "~1.0.1",
+        "mocha": "^1.21.5",
+        "node-static": "^0.7.6",
+        "proxyquire": "~1.0.1",
+        "sockjs": "^0.3.11",
+        "vinyl-buffer": "~1.0.0",
+        "vinyl-source-stream": "^1.0.0",
+        "zuul": "git://github.com/brycekahle/zuul.git#ngrok"
+      },
+      "homepage": "http://sockjs.org",
+      "keywords": [
+        "websockets",
+        "websocket"
+      ],
+      "license": "MIT",
+      "main": "./lib/entry.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sockjs/sockjs-client.git"
+      },
+      "scripts": {
+        "test": "make test",
+        "test_local": "zuul --local 9090 -- tests/browser.js",
+        "zuul": "zuul -- tests/browser.js",
+        "gulp": "gulp"
+      },
+      "gitHead": "6a76e12999b0b1344537a9162f6c50b1eb096660",
+      "_id": "sockjs-client@1.0.2",
+      "_shasum": "7875d75ef31706a0d0213353164de953f3fe30d5",
+      "_from": ".",
+      "_npmVersion": "2.9.0",
+      "_nodeVersion": "0.10.38",
+      "_npmUser": {
+        "name": "brycekahle",
+        "email": "bkahle@gmail.com"
+      },
+      "dist": {
+        "shasum": "7875d75ef31706a0d0213353164de953f3fe30d5",
+        "tarball": "https://registry.npmjs.org/sockjs-client/-/sockjs-client-1.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "brycekahle",
+          "email": "bkahle@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.3": {
+      "name": "sockjs-client",
+      "description": "SockJS-client is a browser JavaScript library that provides a WebSocket-like object. SockJS gives you a coherent, cross-browser, Javascript API which creates a low latency, full duplex, cross-domain communication channel between the browser and the web se",
+      "version": "1.0.3",
+      "author": {
+        "name": "Bryce Kahle"
+      },
+      "browser": {
+        "./lib/transport/driver/websocket.js": "./lib/transport/browser/websocket.js",
+        "eventsource": "./lib/transport/browser/eventsource.js",
+        "./lib/transport/driver/xhr.js": "./lib/transport/browser/abstract-xhr.js",
+        "crypto": "./lib/utils/browser-crypto.js",
+        "events": "./lib/event/emitter.js"
+      },
+      "bugs": {
+        "url": "https://github.com/sockjs/sockjs-client/issues"
+      },
+      "contributors": [
+        {
+          "name": "Bryce Kahle",
+          "email": "bkahle@gmail.com"
+        },
+        {
+          "name": "Marek Majkowski",
+          "email": "deadbeef@popcount.org"
+        }
+      ],
+      "dependencies": {
+        "debug": "^2.1.0",
+        "eventsource": "^0.1.3",
+        "faye-websocket": "~0.7.3",
+        "inherits": "^2.0.1",
+        "json3": "^3.3.2",
+        "url-parse": "^1.0.1"
+      },
+      "devDependencies": {
+        "browserify": "^6.1.0",
+        "envify": "~3.0.0",
+        "expect.js": "~0.3.1",
+        "gulp": "^3.8.8",
+        "gulp-eslint": "~0.1.8",
+        "gulp-header": "^1.2.2",
+        "gulp-mocha": "~1.1.1",
+        "gulp-rename": "~1.2.0",
+        "gulp-sourcemaps": "~1.2.4",
+        "gulp-uglify": "~1.0.1",
+        "mocha": "^1.21.5",
+        "node-static": "^0.7.6",
+        "proxyquire": "~1.0.1",
+        "sockjs": "^0.3.11",
+        "vinyl-buffer": "~1.0.0",
+        "vinyl-source-stream": "^1.0.0",
+        "zuul": "git://github.com/brycekahle/zuul.git#ngrok"
+      },
+      "homepage": "http://sockjs.org",
+      "keywords": [
+        "websockets",
+        "websocket"
+      ],
+      "license": "MIT",
+      "main": "./lib/entry.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sockjs/sockjs-client.git"
+      },
+      "scripts": {
+        "test": "make test",
+        "test_local": "zuul --local 9090 -- tests/browser.js",
+        "zuul": "zuul -- tests/browser.js",
+        "gulp": "gulp"
+      },
+      "gitHead": "c887e34e23e6b4d18e1f1ce4848cf4f8b08f5109",
+      "_id": "sockjs-client@1.0.3",
+      "_shasum": "b0d8280998460eb2564c5d79d7e3d7cfd8a353ad",
+      "_from": ".",
+      "_npmVersion": "2.13.1",
+      "_nodeVersion": "0.10.38",
+      "_npmUser": {
+        "name": "brycekahle",
+        "email": "bkahle@gmail.com"
+      },
+      "dist": {
+        "shasum": "b0d8280998460eb2564c5d79d7e3d7cfd8a353ad",
+        "tarball": "https://registry.npmjs.org/sockjs-client/-/sockjs-client-1.0.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "brycekahle",
+          "email": "bkahle@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "sockjs-client",
+      "description": "SockJS-client is a browser JavaScript library that provides a WebSocket-like object. SockJS gives you a coherent, cross-browser, Javascript API which creates a low latency, full duplex, cross-domain communication channel between the browser and the web se",
+      "version": "1.1.0",
+      "author": {
+        "name": "Bryce Kahle"
+      },
+      "browser": {
+        "./lib/transport/driver/websocket.js": "./lib/transport/browser/websocket.js",
+        "eventsource": "./lib/transport/browser/eventsource.js",
+        "./lib/transport/driver/xhr.js": "./lib/transport/browser/abstract-xhr.js",
+        "crypto": "./lib/utils/browser-crypto.js",
+        "events": "./lib/event/emitter.js"
+      },
+      "bugs": {
+        "url": "https://github.com/sockjs/sockjs-client/issues"
+      },
+      "contributors": [
+        {
+          "name": "Bryce Kahle",
+          "email": "bkahle@gmail.com"
+        },
+        {
+          "name": "Marek Majkowski",
+          "email": "deadbeef@popcount.org"
+        }
+      ],
+      "dependencies": {
+        "debug": "^2.1.0",
+        "eventsource": "^0.1.3",
+        "faye-websocket": "~0.11.0",
+        "inherits": "^2.0.1",
+        "json3": "^3.3.2",
+        "url-parse": "^1.0.1"
+      },
+      "devDependencies": {
+        "browserify": "^6.1.0",
+        "envify": "~3.0.0",
+        "expect.js": "~0.3.1",
+        "gulp": "^3.8.8",
+        "gulp-eslint": "~0.1.8",
+        "gulp-header": "^1.2.2",
+        "gulp-mocha": "~1.1.1",
+        "gulp-rename": "~1.2.0",
+        "gulp-sourcemaps": "~1.2.4",
+        "gulp-uglify": "~1.0.1",
+        "mocha": "^1.21.5",
+        "node-static": "^0.7.6",
+        "proxyquire": "~1.0.1",
+        "sockjs": "^0.3.17",
+        "vinyl-buffer": "~1.0.0",
+        "vinyl-source-stream": "^1.0.0",
+        "zuul": "git://github.com/brycekahle/zuul.git#ngrok"
+      },
+      "homepage": "http://sockjs.org",
+      "keywords": [
+        "websockets",
+        "websocket"
+      ],
+      "license": "MIT",
+      "main": "./lib/entry.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sockjs/sockjs-client.git"
+      },
+      "scripts": {
+        "test": "make test",
+        "test_local": "zuul --local 9090 -- tests/browser.js",
+        "zuul": "zuul -- tests/browser.js",
+        "gulp": "gulp",
+        "lint": "gulp eslint"
+      },
+      "gitHead": "3be0c73f55de9474cf7d81e77cec49f08fa798ae",
+      "_id": "sockjs-client@1.1.0",
+      "_shasum": "1404b670b47ad5f6ae959e319e84ee718523f477",
+      "_from": ".",
+      "_npmVersion": "2.14.6",
+      "_nodeVersion": "0.10.38",
+      "_npmUser": {
+        "name": "brycekahle",
+        "email": "bkahle@gmail.com"
+      },
+      "dist": {
+        "shasum": "1404b670b47ad5f6ae959e319e84ee718523f477",
+        "tarball": "https://registry.npmjs.org/sockjs-client/-/sockjs-client-1.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "brycekahle",
+          "email": "bkahle@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/sockjs-client-1.1.0.tgz_1462053674763_0.7162165541667491"
+      },
+      "directories": {}
+    },
+    "1.1.1": {
+      "name": "sockjs-client",
+      "description": "SockJS-client is a browser JavaScript library that provides a WebSocket-like object. SockJS gives you a coherent, cross-browser, Javascript API which creates a low latency, full duplex, cross-domain communication channel between the browser and the web se",
+      "version": "1.1.1",
+      "author": {
+        "name": "Bryce Kahle"
+      },
+      "browser": {
+        "./lib/transport/driver/websocket.js": "./lib/transport/browser/websocket.js",
+        "eventsource": "./lib/transport/browser/eventsource.js",
+        "./lib/transport/driver/xhr.js": "./lib/transport/browser/abstract-xhr.js",
+        "crypto": "./lib/utils/browser-crypto.js",
+        "events": "./lib/event/emitter.js"
+      },
+      "bugs": {
+        "url": "https://github.com/sockjs/sockjs-client/issues"
+      },
+      "contributors": [
+        {
+          "name": "Bryce Kahle",
+          "email": "bkahle@gmail.com"
+        },
+        {
+          "name": "Marek Majkowski",
+          "email": "deadbeef@popcount.org"
+        }
+      ],
+      "dependencies": {
+        "debug": "^2.2.0",
+        "eventsource": "~0.1.6",
+        "faye-websocket": "~0.11.0",
+        "inherits": "^2.0.1",
+        "json3": "^3.3.2",
+        "url-parse": "^1.1.1"
+      },
+      "devDependencies": {
+        "browserify": "^6.1.0",
+        "envify": "~3.0.0",
+        "expect.js": "~0.3.1",
+        "gulp": "^3.8.8",
+        "gulp-eslint": "~0.1.8",
+        "gulp-header": "^1.2.2",
+        "gulp-mocha": "~1.1.1",
+        "gulp-rename": "~1.2.0",
+        "gulp-sourcemaps": "~1.2.4",
+        "gulp-uglify": "~1.0.1",
+        "mocha": "^1.21.5",
+        "node-static": "^0.7.6",
+        "proxyquire": "~1.0.1",
+        "sockjs": "^0.3.17",
+        "vinyl-buffer": "~1.0.0",
+        "vinyl-source-stream": "^1.0.0",
+        "zuul": "git://github.com/brycekahle/zuul.git#ngrok"
+      },
+      "homepage": "http://sockjs.org",
+      "keywords": [
+        "websockets",
+        "websocket"
+      ],
+      "license": "MIT",
+      "main": "./lib/entry.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sockjs/sockjs-client.git"
+      },
+      "scripts": {
+        "test": "make test",
+        "test_local": "zuul --local 9090 -- tests/browser.js",
+        "zuul": "zuul -- tests/browser.js",
+        "gulp": "gulp",
+        "lint": "gulp eslint"
+      },
+      "gitHead": "91e30059cc32c6b41ddd0de05c68681e9b00d503",
+      "_id": "sockjs-client@1.1.1",
+      "_shasum": "284843e9a9784d7c474b1571b3240fca9dda4bb0",
+      "_from": ".",
+      "_npmVersion": "2.14.6",
+      "_nodeVersion": "0.10.38",
+      "_npmUser": {
+        "name": "brycekahle",
+        "email": "bkahle@gmail.com"
+      },
+      "dist": {
+        "shasum": "284843e9a9784d7c474b1571b3240fca9dda4bb0",
+        "tarball": "https://registry.npmjs.org/sockjs-client/-/sockjs-client-1.1.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "brycekahle",
+          "email": "bkahle@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/sockjs-client-1.1.1.tgz_1463768700428_0.4972501073498279"
+      },
+      "directories": {}
+    },
+    "1.1.2": {
+      "name": "sockjs-client",
+      "description": "SockJS-client is a browser JavaScript library that provides a WebSocket-like object. SockJS gives you a coherent, cross-browser, Javascript API which creates a low latency, full duplex, cross-domain communication channel between the browser and the web se",
+      "version": "1.1.2",
+      "author": {
+        "name": "Bryce Kahle"
+      },
+      "browser": {
+        "./lib/transport/driver/websocket.js": "./lib/transport/browser/websocket.js",
+        "eventsource": "./lib/transport/browser/eventsource.js",
+        "./lib/transport/driver/xhr.js": "./lib/transport/browser/abstract-xhr.js",
+        "crypto": "./lib/utils/browser-crypto.js",
+        "events": "./lib/event/emitter.js"
+      },
+      "bugs": {
+        "url": "https://github.com/sockjs/sockjs-client/issues"
+      },
+      "contributors": [
+        {
+          "name": "Bryce Kahle",
+          "email": "bkahle@gmail.com"
+        },
+        {
+          "name": "Marek Majkowski",
+          "email": "deadbeef@popcount.org"
+        }
+      ],
+      "dependencies": {
+        "debug": "^2.2.0",
+        "eventsource": "0.1.6",
+        "faye-websocket": "~0.11.0",
+        "inherits": "^2.0.1",
+        "json3": "^3.3.2",
+        "url-parse": "^1.1.1"
+      },
+      "devDependencies": {
+        "browserify": "^13.3.0",
+        "envify": "^4.0.0",
+        "eslint": "^3.14.0",
+        "expect.js": "~0.3.1",
+        "gulp": "^3.9.1",
+        "gulp-header": "^1.8.8",
+        "gulp-rename": "~1.2.0",
+        "gulp-replace": "^0.5.4",
+        "gulp-sourcemaps": "^2.4.0",
+        "gulp-uglify": "^2.0.0",
+        "mocha": "^3.2.0",
+        "node-static": "^0.7.6",
+        "proxyquire": "^1.7.10",
+        "pump": "^1.0.2",
+        "sockjs": "^0.3.17",
+        "vinyl-buffer": "~1.0.0",
+        "vinyl-source-stream": "^1.0.0",
+        "zuul": "github:brycekahle/zuul#ngrok",
+        "zuul-ngrok": "github:brycekahle/zuul-ngrok#master"
+      },
+      "homepage": "http://sockjs.org",
+      "keywords": [
+        "websockets",
+        "websocket"
+      ],
+      "license": "MIT",
+      "main": "./lib/entry.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sockjs/sockjs-client.git"
+      },
+      "scripts": {
+        "test": "mocha tests/node.js",
+        "test:bundle": "gulp testbundle",
+        "test:browser_local": "npm run test:bundle && zuul --disable-tunnel --local 9090 -- tests/browser.js",
+        "test:browser_remote": "npm run test:bundle && zuul -- tests/browser.js",
+        "gulp": "gulp",
+        "lint": "eslint .",
+        "version": "gulp release && git add -A dist lib/version.js",
+        "postversion": "npm publish",
+        "postpublish": "git push origin --all && git push origin --tags"
+      },
+      "gitHead": "1d48f43b6effb13c1abb0be3fc2ec00f9c8aeecb",
+      "_id": "sockjs-client@1.1.2",
+      "_shasum": "f0212a8550e4c9468c8cceaeefd2e3493c033ad5",
+      "_from": ".",
+      "_npmVersion": "4.0.5",
+      "_nodeVersion": "6.9.4",
+      "_npmUser": {
+        "name": "brycekahle",
+        "email": "bkahle@gmail.com"
+      },
+      "dist": {
+        "shasum": "f0212a8550e4c9468c8cceaeefd2e3493c033ad5",
+        "tarball": "https://registry.npmjs.org/sockjs-client/-/sockjs-client-1.1.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "brycekahle",
+          "email": "bkahle@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/sockjs-client-1.1.2.tgz_1485215207434_0.7400715253315866"
+      },
+      "directories": {}
+    },
+    "1.1.4": {
+      "name": "sockjs-client",
+      "description": "SockJS-client is a browser JavaScript library that provides a WebSocket-like object.",
+      "version": "1.1.4",
+      "author": {
+        "name": "Bryce Kahle"
+      },
+      "browser": {
+        "./lib/transport/driver/websocket.js": "./lib/transport/browser/websocket.js",
+        "eventsource": "./lib/transport/browser/eventsource.js",
+        "./lib/transport/driver/xhr.js": "./lib/transport/browser/abstract-xhr.js",
+        "crypto": "./lib/utils/browser-crypto.js",
+        "events": "./lib/event/emitter.js"
+      },
+      "bugs": {
+        "url": "https://github.com/sockjs/sockjs-client/issues"
+      },
+      "contributors": [
+        {
+          "name": "Bryce Kahle",
+          "email": "bkahle@gmail.com"
+        },
+        {
+          "name": "Marek Majkowski",
+          "email": "deadbeef@popcount.org"
+        }
+      ],
+      "dependencies": {
+        "debug": "^2.6.6",
+        "eventsource": "0.1.6",
+        "faye-websocket": "~0.11.0",
+        "inherits": "^2.0.1",
+        "json3": "^3.3.2",
+        "url-parse": "^1.1.8"
+      },
+      "devDependencies": {
+        "browserify": "^13.3.0",
+        "envify": "^4.0.0",
+        "eslint": "^3.19.0",
+        "expect.js": "~0.3.1",
+        "gulp": "^3.9.1",
+        "gulp-header": "^1.8.8",
+        "gulp-rename": "~1.2.0",
+        "gulp-replace": "^0.5.4",
+        "gulp-sourcemaps": "^2.6.0",
+        "gulp-uglify": "^2.1.2",
+        "mocha": "^3.3.0",
+        "node-static": "^0.7.6",
+        "proxyquire": "^1.7.11",
+        "pump": "^1.0.2",
+        "sockjs": "^0.3.17",
+        "vinyl-buffer": "~1.0.0",
+        "vinyl-source-stream": "^1.0.0",
+        "zuul": "github:brycekahle/zuul#ngrok",
+        "zuul-ngrok": "github:brycekahle/zuul-ngrok#master"
+      },
+      "homepage": "http://sockjs.org",
+      "keywords": [
+        "websockets",
+        "websocket"
+      ],
+      "license": "MIT",
+      "main": "./lib/entry.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sockjs/sockjs-client.git"
+      },
+      "scripts": {
+        "test": "mocha tests/node.js",
+        "test:bundle": "gulp testbundle",
+        "test:browser_local": "npm run test:bundle && zuul --disable-tunnel --local 9090 -- tests/browser.js",
+        "test:browser_remote": "npm run test:bundle && zuul -- tests/browser.js",
+        "gulp": "gulp",
+        "lint": "eslint .",
+        "version": "gulp release && git add -A dist lib/version.js",
+        "postversion": "npm publish",
+        "postpublish": "git push origin --all && git push origin --tags"
+      },
+      "gitHead": "f2067b33dccad3b81be5c9b1bdff8cb86dbaf57e",
+      "_id": "sockjs-client@1.1.4",
+      "_shasum": "5babe386b775e4cf14e7520911452654016c8b12",
+      "_from": ".",
+      "_npmVersion": "4.5.0",
+      "_nodeVersion": "6.9.4",
+      "_npmUser": {
+        "name": "brycekahle",
+        "email": "bkahle@gmail.com"
+      },
+      "dist": {
+        "shasum": "5babe386b775e4cf14e7520911452654016c8b12",
+        "tarball": "https://registry.npmjs.org/sockjs-client/-/sockjs-client-1.1.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "brycekahle",
+          "email": "bkahle@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/sockjs-client-1.1.4.tgz_1493586265626_0.5522258910350502"
+      },
+      "directories": {}
+    },
+    "1.1.5": {
+      "name": "sockjs-client",
+      "description": "SockJS-client is a browser JavaScript library that provides a WebSocket-like object.",
+      "version": "1.1.5",
+      "author": {
+        "name": "Bryce Kahle"
+      },
+      "jsdelivr": "dist/sockjs.min.js",
+      "browser": {
+        "./lib/transport/driver/websocket.js": "./lib/transport/browser/websocket.js",
+        "eventsource": "./lib/transport/browser/eventsource.js",
+        "./lib/transport/driver/xhr.js": "./lib/transport/browser/abstract-xhr.js",
+        "crypto": "./lib/utils/browser-crypto.js",
+        "events": "./lib/event/emitter.js"
+      },
+      "bugs": {
+        "url": "https://github.com/sockjs/sockjs-client/issues"
+      },
+      "contributors": [
+        {
+          "name": "Bryce Kahle",
+          "email": "bkahle@gmail.com"
+        },
+        {
+          "name": "Marek Majkowski",
+          "email": "deadbeef@popcount.org"
+        }
+      ],
+      "dependencies": {
+        "debug": "^2.6.6",
+        "eventsource": "0.1.6",
+        "faye-websocket": "~0.11.0",
+        "inherits": "^2.0.1",
+        "json3": "^3.3.2",
+        "url-parse": "^1.1.8"
+      },
+      "devDependencies": {
+        "browserify": "^13.3.0",
+        "envify": "^4.0.0",
+        "eslint": "^3.19.0",
+        "expect.js": "~0.3.1",
+        "gulp": "^3.9.1",
+        "gulp-header": "^1.8.8",
+        "gulp-rename": "~1.2.0",
+        "gulp-replace": "^0.5.4",
+        "gulp-sourcemaps": "^2.6.0",
+        "gulp-uglify": "^2.1.2",
+        "mocha": "^3.3.0",
+        "node-static": "^0.7.6",
+        "proxyquire": "^1.7.11",
+        "pump": "^1.0.2",
+        "sockjs": "^0.3.17",
+        "vinyl-buffer": "~1.0.0",
+        "vinyl-source-stream": "^1.0.0",
+        "zuul": "github:brycekahle/zuul#ngrok",
+        "zuul-ngrok": "github:brycekahle/zuul-ngrok#master"
+      },
+      "homepage": "http://sockjs.org",
+      "keywords": [
+        "websockets",
+        "websocket"
+      ],
+      "license": "MIT",
+      "main": "./lib/entry.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sockjs/sockjs-client.git"
+      },
+      "scripts": {
+        "test": "mocha tests/node.js",
+        "test:bundle": "gulp testbundle",
+        "test:browser_local": "npm run test:bundle && zuul --disable-tunnel --local 9090 -- tests/browser.js",
+        "test:browser_remote": "npm run test:bundle && zuul -- tests/browser.js",
+        "gulp": "gulp",
+        "lint": "eslint .",
+        "version": "gulp release && git add -A dist lib/version.js",
+        "postversion": "npm publish",
+        "postpublish": "git push origin --all && git push origin --tags"
+      },
+      "gitHead": "c58872c92def222bfe5305721e7dfaa8b736c620",
+      "_id": "sockjs-client@1.1.5",
+      "_shasum": "1bb7c0f7222c40f42adf14f4442cbd1269771a83",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.14.2",
+      "_npmUser": {
+        "name": "brycekahle",
+        "email": "bkahle@gmail.com"
+      },
+      "dist": {
+        "shasum": "1bb7c0f7222c40f42adf14f4442cbd1269771a83",
+        "tarball": "https://registry.npmjs.org/sockjs-client/-/sockjs-client-1.1.5.tgz",
+        "fileCount": 68,
+        "unpackedSize": 812165,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbDeQaCRA9TVsSAnZWagAAZyMP/At4L4Hs8abKR624bmh1\nXWhWBL6zCh3J9ZqWFOFsX0NnQ9Pna8TNQwkfv5ai56s+XO1fe5WeFH0F0VuM\nwOOGq8gCujU7RgroHkQJmDwjPuPiptaXQEw6jAc+GdPX5H+TZIFhwK2oZDn6\nDRVGHzlUqm1nfU55iKnCFGA/9b6+iHLdjQj2zbAEHApsIlgvzld92tyCkJIj\nkBazuXaGK9vgrCgznrSJz39neAYFFtXxx5aA01fIXbqlND42Tawtlxt3+To8\n9ff0yooPOWUV7MkaT+XRPtzGDojFLmLMwJEJTihisvGvmorAQAUn9ztkpKn/\n41vEoEAsQeHjJP6mPFhF67QMihYjsKwINhFTdnZtnigrPjtajEqQpx1hytYS\n00Fv1uJOJK4bP4JL+j922bFlVjdDU5PAeq27JvYvsp3R9jyaP3r5rSs8V6zc\n8jWNv+ubrQOY/oOQNsVeFNCHacjx/aP2oFpKwx6aAm260tjUKH2QTA7HOUyI\nLVuUr3MEyBAixCTVhPUlo4Cc9AATD7UGtDzUr7LkyqA1P5RNQya0kTE+JzV/\nfPeNj7AVRtaHJapxOBtuQGw4YYWx0RECQ2Q7v7pKCmnR874byj1tD2gbPGZo\ngTGj2Q2k/7yCjt8/i/dE0cZn+9oG/0eArw906SBaD2V2vMGBcf1rcuvGYkOH\nioOU\r\n=A5hz\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "brycekahle",
+          "email": "bkahle@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/sockjs-client_1.1.5_1527637016480_0.10252123034147997"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.2.0": {
+      "name": "sockjs-client",
+      "description": "SockJS-client is a browser JavaScript library that provides a WebSocket-like object.",
+      "version": "1.2.0",
+      "author": {
+        "name": "Bryce Kahle"
+      },
+      "jsdelivr": "dist/sockjs.min.js",
+      "browser": {
+        "./lib/transport/driver/websocket.js": "./lib/transport/browser/websocket.js",
+        "eventsource": "./lib/transport/browser/eventsource.js",
+        "./lib/transport/driver/xhr.js": "./lib/transport/browser/abstract-xhr.js",
+        "crypto": "./lib/utils/browser-crypto.js",
+        "events": "./lib/event/emitter.js"
+      },
+      "bugs": {
+        "url": "https://github.com/sockjs/sockjs-client/issues"
+      },
+      "contributors": [
+        {
+          "name": "Bryce Kahle",
+          "email": "bkahle@gmail.com"
+        },
+        {
+          "name": "Marek Majkowski",
+          "email": "deadbeef@popcount.org"
+        }
+      ],
+      "dependencies": {
+        "debug": "^4.0.1",
+        "eventsource": "^1.0.7",
+        "faye-websocket": "~0.11.1",
+        "inherits": "^2.0.3",
+        "json3": "^3.3.2",
+        "url-parse": "^1.4.3"
+      },
+      "devDependencies": {
+        "browserify": "^16.2.2",
+        "envify": "^4.0.0",
+        "eslint": "^5.6.0",
+        "expect.js": "~0.3.1",
+        "gulp": "^4.0.0",
+        "gulp-header": "^2.0.5",
+        "gulp-rename": "^1.4.0",
+        "gulp-replace": "^1.0.0",
+        "gulp-sourcemaps": "^2.6.0",
+        "gulp-uglify": "^3.0.1",
+        "karma": "^3.0.0",
+        "karma-browserify": "^5.3.0",
+        "karma-browserstack-launcher": "git+https://git@github.com/karma-runner/karma-browserstack-launcher.git#310c22835987b50a908b99d0995fc1655a7e06f5",
+        "karma-chrome-launcher": "^2.2.0",
+        "karma-mocha": "^1.3.0",
+        "mocha": "^5.2.0",
+        "node-static": "^0.7.6",
+        "proxyquire": "^2.1.0",
+        "pump": "^3.0.0",
+        "sockjs": "^0.3.17",
+        "vinyl-buffer": "~1.0.0",
+        "vinyl-source-stream": "^2.0.0"
+      },
+      "homepage": "http://sockjs.org",
+      "keywords": [
+        "websockets",
+        "websocket"
+      ],
+      "license": "MIT",
+      "main": "./lib/entry.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sockjs/sockjs-client.git"
+      },
+      "scripts": {
+        "test": "mocha tests/node.js",
+        "test:bundle": "gulp testbundle",
+        "test:browser_local": "npm run test:bundle && npx karma start --browsers Chrome",
+        "test:browser_remote": "npm run test:bundle && npx karma start",
+        "gulp": "gulp",
+        "lint": "eslint .",
+        "version": "gulp release && git add -A dist lib/version.js",
+        "postversion": "npm publish",
+        "postpublish": "git push origin --all && git push origin --tags"
+      },
+      "gitHead": "7c158a2b41a5a1b3e2bf6a08e89cf483c835012b",
+      "_id": "sockjs-client@1.2.0",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "8.11.4",
+      "_npmUser": {
+        "name": "brycekahle",
+        "email": "bkahle@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-sAibkw+jfBSCBcxsZZqPpw0fPtH4yf1HlGqkmrsB3DisahTsnUXJScX0jqkebW3SHRXTYxZyUVyDbzKDfflYgw==",
+        "shasum": "43a0b6d70c7f07049897b2ec26b9571e4cdab4c6",
+        "tarball": "https://registry.npmjs.org/sockjs-client/-/sockjs-client-1.2.0.tgz",
+        "fileCount": 64,
+        "unpackedSize": 824897,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbpTUGCRA9TVsSAnZWagAAHjgP/3YlJM/PPTm3kukBE4s3\nrieR6MQTS8DNyC+QCEAqdUkAv+sEyS1TTkrBwcp4WkJ5obqnSgDfHVgrOmJ3\n/Evrj1BZHIT3a+VZxOePekhvI6cOrZPD83BW2S9iod+u8UQUmRyY0/RtaZ+z\njNKCf2qkiC29YfxBq/GjwGSEghm0k9x2bYFkcCc64L1mSTlZI8UxxgSkzUEi\nzDz+SQUC7q3eGdCyGICbawADgq9uCSjac4MyNOjkAeT55USzCshQRxtQiZsS\nTHcUaTdiqCR5KmGsgROTSzrplYnLOoFhjUOdnv4T6IXBmMY7yOrUB+JxYZ2l\nhaINLCMTQQP4uwmQDrmNmM/FQNAqm1SmVk+1JrIU4/yvkAruuVnVDz4H0Moi\neeY7hyclxKrzVKGqeAljBlwfqM1gDbgRiiaTkwFCxzNl7Q/5MQQ7jLGmR94T\nsI7LEDX4TXvhZHvjD5UWRDKWjeH5VoYKAgbYSYF+b4OybyHSlKzpJD4JWXyo\nv9Pr4adxbVJT08oED7C9c/pUAEfu5Q1q814jN9I7MFOvVyES9NI1RSki+Tsc\nThTpmEVzNDG0mXOrYL8il5uGs5QccNqPpHdGtWJDAdzV+N14WhbARKpv+luk\nFavduDbI6DaKQQSpFyCm6ULo0L07GbMjGgB88EWUsTO8orGqb19+Piy2lakr\nszg3\r\n=2sFQ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "brycekahle",
+          "email": "bkahle@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/sockjs-client_1.2.0_1537553669452_0.210169940109739"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.3.0": {
+      "name": "sockjs-client",
+      "description": "SockJS-client is a browser JavaScript library that provides a WebSocket-like object.",
+      "version": "1.3.0",
+      "author": {
+        "name": "Bryce Kahle"
+      },
+      "jsdelivr": "dist/sockjs.min.js",
+      "browser": {
+        "./lib/transport/driver/websocket.js": "./lib/transport/browser/websocket.js",
+        "eventsource": "./lib/transport/browser/eventsource.js",
+        "./lib/transport/driver/xhr.js": "./lib/transport/browser/abstract-xhr.js",
+        "crypto": "./lib/utils/browser-crypto.js",
+        "events": "./lib/event/emitter.js"
+      },
+      "bugs": {
+        "url": "https://github.com/sockjs/sockjs-client/issues"
+      },
+      "contributors": [
+        {
+          "name": "Bryce Kahle",
+          "email": "bkahle@gmail.com"
+        },
+        {
+          "name": "Marek Majkowski",
+          "email": "deadbeef@popcount.org"
+        }
+      ],
+      "dependencies": {
+        "debug": "^3.2.5",
+        "eventsource": "^1.0.7",
+        "faye-websocket": "~0.11.1",
+        "inherits": "^2.0.3",
+        "json3": "^3.3.2",
+        "url-parse": "^1.4.3"
+      },
+      "devDependencies": {
+        "browserify": "^16.2.2",
+        "envify": "^4.0.0",
+        "eslint": "^5.6.0",
+        "expect.js": "~0.3.1",
+        "gulp": "^4.0.0",
+        "gulp-header": "^2.0.5",
+        "gulp-rename": "^1.4.0",
+        "gulp-replace": "^1.0.0",
+        "gulp-sourcemaps": "^2.6.0",
+        "gulp-uglify": "^3.0.1",
+        "karma": "^3.0.0",
+        "karma-browserify": "^5.3.0",
+        "karma-browserstack-launcher": "git+https://git@github.com/karma-runner/karma-browserstack-launcher.git#310c22835987b50a908b99d0995fc1655a7e06f5",
+        "karma-chrome-launcher": "^2.2.0",
+        "karma-mocha": "^1.3.0",
+        "mocha": "^5.2.0",
+        "node-static": "^0.7.6",
+        "proxyquire": "^2.1.0",
+        "pump": "^3.0.0",
+        "sockjs": "^0.3.17",
+        "vinyl-buffer": "~1.0.0",
+        "vinyl-source-stream": "^2.0.0"
+      },
+      "homepage": "http://sockjs.org",
+      "keywords": [
+        "websockets",
+        "websocket"
+      ],
+      "license": "MIT",
+      "main": "./lib/entry.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sockjs/sockjs-client.git"
+      },
+      "scripts": {
+        "test": "mocha tests/node.js",
+        "test:bundle": "gulp testbundle",
+        "test:browser_local": "npm run test:bundle && npx karma start --browsers Chrome",
+        "test:browser_remote": "npm run test:bundle && npx karma start",
+        "gulp": "gulp",
+        "lint": "eslint .",
+        "version": "gulp release && git add -A dist lib/version.js",
+        "postversion": "npm publish",
+        "postpublish": "git push origin --all && git push origin --tags"
+      },
+      "gitHead": "e077df367f73a5f207da2307141528c36778d83d",
+      "_id": "sockjs-client@1.3.0",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "8.11.4",
+      "_npmUser": {
+        "name": "brycekahle",
+        "email": "bkahle@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-R9jxEzhnnrdxLCNln0xg5uGHqMnkhPSTzUZH2eXcR03S/On9Yvoq2wyUZILRUhZCNVu2PmwWVoyuiPz8th8zbg==",
+        "shasum": "12fc9d6cb663da5739d3dc5fb6e8687da95cb177",
+        "tarball": "https://registry.npmjs.org/sockjs-client/-/sockjs-client-1.3.0.tgz",
+        "fileCount": 64,
+        "unpackedSize": 825834,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbqQamCRA9TVsSAnZWagAAOOkP/3+8shVpu1COFdOaczMo\n3KCZ+mxhp5AWVOe4zwJSb7O3cY7k+htExg0eh7RcpHoUH/WJIQABEAA/5m/P\nlsomTD6+b16S/DueJlksRC9xJU/rlZRhQqptTJ0CzPwxZbpNXMJdOA7p/vtO\n4/mram2eYD9/VM81GA0bQdkTN7ZIx03nJp+q0UZh2FpgPn8STfyeoPky2irv\nwRwEAkGisa9p5PY8mgwagtYpTS7hu2KWiuIwNoaEalld3BrPuU165lzWUNex\nbuczYte+saufKkPPfkqVgEji47uaEMXynlKjSRqzVa2HOQPcjRORskt8zERM\n4JebOkRnK07goU7sTzIVIotGAm93LIEuPnnm9X9v+K6fdwmskts88x1OVV+C\nX7rkgAh9vdx9HriBGQf6jzvCTAfB3bf1uniZv4IHn+TDmK8iDHjiJOweIzGs\nb4Ey3OOw2sZAoz62JW+CfuZmIt2eF9k8xos2qoQoo7zKXrGLxBEOivtgTH12\nll6YZ0tQAxm+obwT8VyIrN0Hs3xBJfqmILwixW4UZ3bqIiVxp6gKh6KJ9rvS\nLxBergd6pVWTVv77HG9zWv4EdPtq4IK0qcrCpdxENpzZPiawaPjSncGfj0U5\nsuEyv6MR1ki4WwjHOp9k5T8a/tMa1qQY7xn2juzHjCbS5C0o9YN8Xolu3mV9\nCxFW\r\n=QZF5\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "brycekahle",
+          "email": "bkahle@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/sockjs-client_1.3.0_1537803941847_0.9962823452871308"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.4.0": {
+      "name": "sockjs-client",
+      "description": "SockJS-client is a browser JavaScript library that provides a WebSocket-like object.",
+      "version": "1.4.0",
+      "author": {
+        "name": "Bryce Kahle"
+      },
+      "jsdelivr": "dist/sockjs.min.js",
+      "browser": {
+        "./lib/transport/driver/websocket.js": "./lib/transport/browser/websocket.js",
+        "eventsource": "./lib/transport/browser/eventsource.js",
+        "./lib/transport/driver/xhr.js": "./lib/transport/browser/abstract-xhr.js",
+        "crypto": "./lib/utils/browser-crypto.js",
+        "events": "./lib/event/emitter.js"
+      },
+      "bugs": {
+        "url": "https://github.com/sockjs/sockjs-client/issues"
+      },
+      "contributors": [
+        {
+          "name": "Bryce Kahle",
+          "email": "bkahle@gmail.com"
+        },
+        {
+          "name": "Marek Majkowski",
+          "email": "deadbeef@popcount.org"
+        }
+      ],
+      "dependencies": {
+        "debug": "^3.2.5",
+        "eventsource": "^1.0.7",
+        "faye-websocket": "~0.11.1",
+        "inherits": "^2.0.3",
+        "json3": "^3.3.2",
+        "url-parse": "^1.4.3"
+      },
+      "devDependencies": {
+        "browserify": "^16.2.3",
+        "envify": "^4.0.0",
+        "eslint": "^6.2.1",
+        "expect.js": "~0.3.1",
+        "gulp": "^4.0.2",
+        "gulp-header": "^2.0.5",
+        "gulp-rename": "^1.4.0",
+        "gulp-replace": "^1.0.0",
+        "gulp-sourcemaps": "^2.6.0",
+        "gulp-uglify": "^3.0.2",
+        "karma": "^4.2.0",
+        "karma-browserify": "^6.1.0",
+        "karma-browserstack-launcher": "^1.5.1",
+        "karma-chrome-launcher": "^2.2.0",
+        "karma-mocha": "^1.3.0",
+        "mocha": "^5.2.0",
+        "node-static": "^0.7.6",
+        "proxyquire": "^2.1.0",
+        "pump": "^3.0.0",
+        "sockjs": "^0.3.17",
+        "vinyl-buffer": "~1.0.0",
+        "vinyl-source-stream": "^2.0.0"
+      },
+      "homepage": "http://sockjs.org",
+      "keywords": [
+        "websockets",
+        "websocket"
+      ],
+      "license": "MIT",
+      "main": "./lib/entry.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sockjs/sockjs-client.git"
+      },
+      "scripts": {
+        "test": "mocha tests/node.js",
+        "test:bundle": "gulp testbundle",
+        "test:browser_local": "npm run test:bundle && npx karma start --browsers Chrome",
+        "test:browser_remote": "npm run test:bundle && npx karma start",
+        "gulp": "gulp",
+        "lint": "eslint .",
+        "version": "gulp release && git add -A dist lib/version.js Changelog.md",
+        "postversion": "npm publish",
+        "postpublish": "git push origin --all && git push origin --tags"
+      },
+      "gitHead": "cffcff536fc2fb7394a43ba70092fffdccaece96",
+      "_id": "sockjs-client@1.4.0",
+      "_nodeVersion": "10.16.3",
+      "_npmVersion": "6.9.0",
+      "dist": {
+        "integrity": "sha512-5zaLyO8/nri5cua0VtOrFXBPK1jbL4+1cebT/mmKA1E1ZXOvJrII75bPu0l0k843G/+iAbhEqzyKr0w/eCCj7g==",
+        "shasum": "c9f2568e19c8fd8173b4997ea3420e0bb306c7d5",
+        "tarball": "https://registry.npmjs.org/sockjs-client/-/sockjs-client-1.4.0.tgz",
+        "fileCount": 66,
+        "unpackedSize": 827860,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdXvuyCRA9TVsSAnZWagAA/vAP/31wRSOu2OM7bm+ZelqL\nRHrZDzBaLu0DTELYsziQ3UcaaQw2vfnXHJCOOrHZC8atbIjLAitTg5TrFUT/\ndqTijIMajF/aLSlW6fQjSxluZ5rBvDa6ve3iWaH5LjrPtKVx3cZjgF5VGOU/\naM2Hzcqd+ITEOeHiExGJxL4kMkR0PiJf2xWSHxRVip8WS/wTew+6Mn2aiOs0\niNOldL3T0oi7Yy/xVWmkFl6WrYOL+QPosxmQScWvt8FdolOIqUEic0pLBCUU\nisTA4XKv+aMv7yDRfsSalUkkSkpkjdFll0LWI0+riPEtDVah1hiU8wsNDIyl\nqsusyX3ZR+yEblYW/7VgMOKPiIjaf8apbYJ4nua9kMKpeAZBB9SS4kHXgg2u\nDFolDNxfZFDl1B3NOSBjuJYQTh+bqNOKK3ZWyd6a4cCB73DSVuNiZ7KaH4jT\nPwnH9stplOvIROK8MmC2xaBoR260mgXJC9K5d4Lveteo9bzDEAUqPSYkstP1\n0hqHq/jH1boaRolDHP0JUcIRfbkL1AQj1/8YVLqEwBcF8cmLGeG5+l1PsvdM\nOdTgkapr9XAdTYwDax1d3mUL+uoIT3AHIGLnggAIPBiU5VSpmSQyAVdHz3bf\nD89u8tAWFZiobWkcPTAjnaQEep67HymBwCIHiIqjQ40kVOXHJ1pQXCzoLIm5\nAKaM\r\n=kHpw\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "brycekahle",
+          "email": "bkahle@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "brycekahle",
+        "email": "bkahle@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/sockjs-client_1.4.0_1566505905145_0.09790336547819822"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.5.0": {
+      "name": "sockjs-client",
+      "description": "SockJS-client is a browser JavaScript library that provides a WebSocket-like object.",
+      "version": "1.5.0",
+      "author": {
+        "name": "Bryce Kahle"
+      },
+      "jsdelivr": "dist/sockjs.min.js",
+      "browser": {
+        "./lib/transport/driver/websocket.js": "./lib/transport/browser/websocket.js",
+        "eventsource": "./lib/transport/browser/eventsource.js",
+        "./lib/transport/driver/xhr.js": "./lib/transport/browser/abstract-xhr.js",
+        "crypto": "./lib/utils/browser-crypto.js",
+        "events": "./lib/event/emitter.js"
+      },
+      "bugs": {
+        "url": "https://github.com/sockjs/sockjs-client/issues"
+      },
+      "contributors": [
+        {
+          "name": "Bryce Kahle",
+          "email": "bkahle@gmail.com"
+        },
+        {
+          "name": "Marek Majkowski",
+          "email": "deadbeef@popcount.org"
+        }
+      ],
+      "dependencies": {
+        "debug": "^3.2.6",
+        "eventsource": "^1.0.7",
+        "faye-websocket": "^0.11.3",
+        "inherits": "^2.0.4",
+        "json3": "^3.3.3",
+        "url-parse": "^1.4.7"
+      },
+      "devDependencies": {
+        "browserify": "^16.5.1",
+        "envify": "^4.0.0",
+        "eslint": "^7.6.0",
+        "expect.js": "~0.3.1",
+        "gulp": "^4.0.2",
+        "gulp-header": "^2.0.9",
+        "gulp-rename": "^2.0.0",
+        "gulp-replace": "^1.0.0",
+        "gulp-sourcemaps": "^2.6.5",
+        "gulp-uglify": "^3.0.2",
+        "karma": "^5.1.1",
+        "karma-browserify": "^7.0.0",
+        "karma-browserstack-launcher": "^1.6.0",
+        "karma-chrome-launcher": "^3.1.0",
+        "karma-mocha": "^2.0.1",
+        "mocha": "^8.1.0",
+        "proxyquire": "^2.1.3",
+        "pump": "^3.0.0",
+        "serve-static": "^1.14.1",
+        "sockjs": "^0.3.21",
+        "vinyl-buffer": "~1.0.0",
+        "vinyl-source-stream": "^2.0.0"
+      },
+      "homepage": "http://sockjs.org",
+      "keywords": [
+        "websockets",
+        "websocket"
+      ],
+      "license": "MIT",
+      "main": "./lib/entry.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sockjs/sockjs-client.git"
+      },
+      "scripts": {
+        "test": "mocha tests/node.js",
+        "test:bundle": "gulp testbundle",
+        "test:browser_local": "npm run test:bundle && npx karma start --browsers Chrome",
+        "test:browser_remote": "npm run test:bundle && npx karma start",
+        "gulp": "gulp",
+        "lint": "eslint .",
+        "version": "gulp release && git add -A dist lib/version.js Changelog.md",
+        "postversion": "npm publish",
+        "postpublish": "git push origin --all && git push origin --tags"
+      },
+      "gitHead": "d8f5fa86aad9ebc57c6868c8607aa62e5b6e4caa",
+      "_id": "sockjs-client@1.5.0",
+      "_nodeVersion": "12.18.3",
+      "_npmVersion": "6.14.6",
+      "dist": {
+        "integrity": "sha512-8Dt3BDi4FYNrCFGTL/HtwVzkARrENdwOUf1ZoW/9p3M8lZdFT35jVdrHza+qgxuG9H3/shR4cuX/X9umUrjP8Q==",
+        "shasum": "2f8ff5d4b659e0d092f7aba0b7c386bd2aa20add",
+        "tarball": "https://registry.npmjs.org/sockjs-client/-/sockjs-client-1.5.0.tgz",
+        "fileCount": 66,
+        "unpackedSize": 839190,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfJzkpCRA9TVsSAnZWagAAotcQAI3XZAvKN6oUR4B+keX0\nJ6mC5m50MZ1cJgmVN+sRySA3Ppk87adWEnoVAce4bOqEFY7KUg3AtQoiQGdG\nmLGfoBmC38EjzYa4r/7UV4Gyh1Ng2wwqFeZAktsMOrJj3iLBjTIhMydydlEn\nHT6yhUd2pCL2sqmOKh0EIJwRJcfDwrrmN8IN8nUaTATWP/+S8OxbDa5E7zV+\nXPycNZp3buVhkf+WdK/7S/SMm2kSHfgaa1iCiMTccxt3+uE7+GeBOOkONa1n\nfUXyj1SIJT7zi935mrS1sy5C/hjf827dgsYm5LRJrGDVvQ2iLGjPeOWxeb8A\nTTh53058N8v/xkaB9XlV3kMhgeSG07yysxX61213228mlMSdEQ6UxHJuGj9W\nYMPW1SqBTm4d6YhFlURq/KmbJmkwnolQ8ivbRnhkpIRcOViV94dgMN3nv3x9\n+PwpZDjNxwSgUsveWTsjnAS95lYQYpSnM0KeIjKMUpDo0UnK1pAQBkgbHkPO\nHl9nSYV/DY9+xeNgBpM/6HZqceNN06OSXDuej19QLn4A30qcelk52pXLPHCK\nU9VkPeSMskwN6UB7WSfIhtzNR40J3RiRF/CLFr2amGlDW5jt5Z+U3LZ7m4O5\nhZJTnqIT4jdGAd8hOfvdCiGK9q58RQ3ux49jjUVFOhzoYuXOJBxQtwa2I1zD\nUnOV\r\n=G8cB\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "brycekahle",
+          "email": "bkahle@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "brycekahle",
+        "email": "npm@brycekahle.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/sockjs-client_1.5.0_1596406056817_0.1897448217954354"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "\n# SockJS-client\n\n[![npm version](https://img.shields.io/npm/v/sockjs-client.svg?style=flat-square)](https://www.npmjs.com/package/sockjs-client)[![Build Status](https://img.shields.io/travis/sockjs/sockjs-client/master.svg?style=flat-square)](https://travis-ci.org/sockjs/sockjs-client)[![Dependencies](https://img.shields.io/librariesio/release/npm/sockjs-client.svg?style=flat-square)](https://libraries.io/npm/sockjs-client)[![Chat](https://img.shields.io/badge/Chat-gitter.im-blue.svg?style=flat-square)](https://gitter.im/sockjs/sockjs-client)[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg?style=flat-square)](code-of-conduct.md)\n[![BrowserStack Status](https://automate.browserstack.com/badge.svg?badge_key=N3V0cStKM3RtUy9Bb2l2cHFhMVdobTZnUitBZ1lLcUkwYnl2TWgyMHppQT0tLWxncU5UeTdLb0Rqc1VQQTI5SklRelE9PQ==--596ccf9d3cd2f462f1043ee6803a9405e00446ac)](https://automate.browserstack.com/public-build/N3V0cStKM3RtUy9Bb2l2cHFhMVdobTZnUitBZ1lLcUkwYnl2TWgyMHppQT0tLWxncU5UeTdLb0Rqc1VQQTI5SklRelE9PQ==--596ccf9d3cd2f462f1043ee6803a9405e00446ac)\n\n<a href=\"https://www.netlify.com\">\n  <img src=\"https://www.netlify.com/img/global/badges/netlify-color-accent.svg\"/>\n</a>\n\n# SockJS for enterprise\n\nAvailable as part of the Tidelift Subscription.\n\nThe maintainers of SockJS and thousands of other packages are working with Tidelift to deliver commercial support and maintenance for the open source dependencies you use to build your applications. Save time, reduce risk, and improve code health, while paying the maintainers of the exact dependencies you use. [Learn more.](https://tidelift.com/subscription/pkg/npm-sockjs-client?utm_source=npm-sockjs-client&utm_medium=referral&utm_campaign=enterprise&utm_term=repo)\n\n# Summary\n\nSockJS is a browser JavaScript library that provides a WebSocket-like\nobject. SockJS gives you a coherent, cross-browser, Javascript API\nwhich creates a low latency, full duplex, cross-domain communication\nchannel between the browser and the web server.\n\nUnder the hood SockJS tries to use native WebSockets first. If that\nfails it can use a variety of browser-specific transport protocols and\npresents them through WebSocket-like abstractions.\n\nSockJS is intended to work for all modern browsers and in environments\nwhich don't support the WebSocket protocol -- for example, behind restrictive\ncorporate proxies.\n\nSockJS-client does require a server counterpart:\n\n * [SockJS-node](https://github.com/sockjs/sockjs-node) is a SockJS\n   server for Node.js.\n\n\nPhilosophy:\n\n * The API should follow\n   [HTML5 Websockets API](https://www.w3.org/TR/websockets/) as\n   closely as possible.\n * All the transports must support cross domain connections out of the\n   box. It's possible and recommended to host a SockJS server on a\n   different server than your main web site.\n * There is support for at least one streaming protocol for every\n   major browser.\n * Streaming transports should work cross-domain and\n   should support cookies (for cookie-based sticky sessions).\n * Polling transports are used as a fallback for old browsers and\n   hosts behind restrictive proxies.\n * Connection establishment should be fast and lightweight.\n * No Flash inside (no need to open port 843 - which doesn't work\n   through proxies, no need to host 'crossdomain.xml', no need\n   [to wait for 3 seconds](https://github.com/gimite/web-socket-js/issues/49)\n   in order to detect problems)\n\n\nSubscribe to\n[SockJS mailing list](https://groups.google.com/forum/#!forum/sockjs) for\ndiscussions and support.\n\n# SockJS family\n\n  * [SockJS-client](https://github.com/sockjs/sockjs-client) JavaScript client library\n  * [SockJS-node](https://github.com/sockjs/sockjs-node) Node.js server\n  * [SockJS-erlang](https://github.com/sockjs/sockjs-erlang) Erlang server\n  * [SockJS-cyclone](https://github.com/flaviogrossi/sockjs-cyclone) Python/Cyclone/Twisted server\n  * [SockJS-tornado](https://github.com/MrJoes/sockjs-tornado) Python/Tornado server\n  * [SockJS-twisted](https://github.com/DesertBus/sockjs-twisted/) Python/Twisted server\n  * [SockJS-aiohttp](https://github.com/aio-libs/sockjs/) Python/Aiohttp server\n  * [Spring Framework](https://projects.spring.io/spring-framework) Java [client](https://docs.spring.io/spring-framework/docs/current/spring-framework-reference/web.html#websocket-fallback-sockjs-client) & server\n  * [vert.x](https://github.com/vert-x/vert.x) Java/vert.x server\n  * [Xitrum](https://xitrum-framework.github.io/) Scala server\n  * [Atmosphere Framework](https://github.com/Atmosphere/atmosphere) JavaEE Server, Play Framework, Netty, Vert.x\n  * [Actix SockJS](https://github.com/fafhrd91/actix-sockjs) Rust Server, Actix Framework\n\nWork in progress:\n\n  * [SockJS-ruby](https://github.com/nyarly/sockjs-ruby)\n  * [SockJS-netty](https://github.com/cgbystrom/sockjs-netty)\n  * [SockJS-gevent](https://github.com/ksava/sockjs-gevent) ([SockJS-gevent fork](https://github.com/njoyce/sockjs-gevent))\n  * [pyramid-SockJS](https://github.com/fafhrd91/pyramid_sockjs)\n  * [wildcloud-websockets](https://github.com/wildcloud/wildcloud-websockets)\n  * [wai-SockJS](https://github.com/Palmik/wai-sockjs)\n  * [SockJS-perl](https://github.com/vti/sockjs-perl)\n  * [SockJS-go](https://github.com/igm/sockjs-go/)\n  * [syp.biz.SockJS.NET](https://github.com/sypbiz/SockJS.NET) - .NET port of the SockJS client\n\n# Getting Started\n\nSockJS mimics the [WebSockets API](https://www.w3.org/TR/websockets/),\nbut instead of `WebSocket` there is a `SockJS` Javascript object.\n\nFirst, you need to load the SockJS JavaScript library. For example, you can\nput that in your HTML head:\n\n```html\n<script src=\"https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js\"></script>\n```\n\nAfter the script is loaded you can establish a connection with the\nSockJS server. Here's a simple example:\n\n```javascript\n var sock = new SockJS('https://mydomain.com/my_prefix');\n sock.onopen = function() {\n     console.log('open');\n     sock.send('test');\n };\n\n sock.onmessage = function(e) {\n     console.log('message', e.data);\n     sock.close();\n };\n\n sock.onclose = function() {\n     console.log('close');\n };\n\n```\n\n# SockJS-client API\n\n## SockJS class\n\nSimilar to the 'WebSocket' API, the 'SockJS' constructor takes one, or more arguments:\n\n```javascript\nvar sockjs = new SockJS(url, _reserved, options);\n```\n\n`url` may contain a query string, if one is desired.\n\nWhere `options` is a hash which can contain:\n\n *  **server (string)**\n\n    String to append to url for actual data connection. Defaults to a random 4 digit number.\n\n *  **transports (string OR array of strings)**\n\n    Sometimes it is useful to disable some fallback transports. This\n    option allows you to supply a list transports that may be used by\n    SockJS. By default all available transports will be used.\n\n *  **sessionId (number OR function)**\n\n    Both client and server use session identifiers to distinguish connections.\n    If you specify this option as a number, SockJS will use its random string\n    generator function to generate session ids that are N-character long\n    (where N corresponds to the number specified by **sessionId**).\n    When you specify this option as a function, the function must return a\n    randomly generated string. Every time SockJS needs to generate a session\n    id it will call this function and use the returned string directly.\n    If you don't specify this option, the default is to use the default random\n    string generator to generate 8-character long session ids.\n\n  * **timeout (number)**\n\n    Specify a minimum timeout in milliseconds to use for the transport connections.\n    By default this is dynamically calculated based on the measured RTT and\n    the number of expected round trips. This setting will establish a minimum,\n    but if the calculated timeout is higher, that will be used.\n\nAlthough the 'SockJS' object tries to emulate the 'WebSocket'\nbehaviour, it's impossible to support all of its features. An\nimportant SockJS limitation is the fact that you're not allowed to\nopen more than one SockJS connection to a single domain at a time.\nThis limitation is caused by an in-browser limit of outgoing\nconnections - usually [browsers don't allow opening more than two\noutgoing connections to a single domain](https://stackoverflow.com/questions/985431/max-parallel-http-connections-in-a-browser). A single SockJS session\nrequires those two connections - one for downloading data, the other for\nsending messages.  Opening a second SockJS session at the same time\nwould most likely block, and can result in both sessions timing out.\n\nOpening more than one SockJS connection at a time is generally a\nbad practice. If you absolutely must do it, you can use\nmultiple subdomains, using a different subdomain for every\nSockJS connection.\n\n# Supported transports, by browser (html served from http:// or https://)\n\n_Browser_       | _Websockets_     | _Streaming_ | _Polling_\n----------------|------------------|-------------|-------------------\nIE 6, 7         | no               | no          | jsonp-polling\nIE 8, 9 (cookies=no) |    no       | xdr-streaming &dagger; | xdr-polling &dagger;\nIE 8, 9 (cookies=yes)|    no       | iframe-htmlfile | iframe-xhr-polling\nIE 10           | rfc6455          | xhr-streaming   | xhr-polling\nChrome 6-13     | hixie-76         | xhr-streaming   | xhr-polling\nChrome 14+      | hybi-10 / rfc6455| xhr-streaming   | xhr-polling\nFirefox <10     | no &Dagger;      | xhr-streaming   | xhr-polling\nFirefox 10+     | hybi-10 / rfc6455| xhr-streaming   | xhr-polling\nSafari 5.x      | hixie-76         | xhr-streaming   | xhr-polling\nSafari 6+       | rfc6455          | xhr-streaming   | xhr-polling\nOpera 10.70+    | no &Dagger;      | iframe-eventsource | iframe-xhr-polling\nOpera 12.10+    | rfc6455          | xhr-streaming | xhr-polling\nKonqueror       | no               | no          | jsonp-polling\n\n\n * **&dagger;**: IE 8+ supports [XDomainRequest][^9], which is\n    essentially a modified AJAX/XHR that can do requests across\n    domains. But unfortunately it doesn't send any cookies, which\n    makes it inappropriate for deployments when the load balancer uses\n    JSESSIONID cookie to do sticky sessions.\n\n * **&Dagger;**: Firefox 4.0 and Opera 11.00 and shipped with disabled\n     Websockets \"hixie-76\". They can still be enabled by manually\n     changing a browser setting.\n\n# Supported transports, by browser (html served from file://)\n\nSometimes you may want to serve your html from \"file://\" address - for\ndevelopment or if you're using PhoneGap or similar technologies. But\ndue to the Cross Origin Policy files served from \"file://\" have no\nOrigin, and that means some of SockJS transports won't work. For this\nreason the SockJS transport table is different than usually, major\ndifferences are:\n\n_Browser_       | _Websockets_  | _Streaming_        | _Polling_\n----------------|---------------|--------------------|-------------------\nIE 8, 9         | same as above | iframe-htmlfile    | iframe-xhr-polling\nOther           | same as above | iframe-eventsource | iframe-xhr-polling\n\n# Supported transports, by name\n\n_Transport_          | _References_\n---------------------|---------------\nwebsocket (rfc6455)  | [rfc 6455][^10]\nwebsocket (hixie-76) | [draft-hixie-thewebsocketprotocol-76][^1]\nwebsocket (hybi-10)  | [draft-ietf-hybi-thewebsocketprotocol-10][^2]\nxhr-streaming        | Transport using [Cross domain XHR][^5] [streaming][^7] capability (readyState=3).\nxdr-streaming        | Transport using [XDomainRequest][^9] [streaming][^7] capability (readyState=3).\neventsource          | [EventSource/Server-sent events][^4].\niframe-eventsource   | [EventSource/Server-sent events][^4] used from an [iframe via postMessage][^3].\nhtmlfile             | [HtmlFile][^8].\niframe-htmlfile      | [HtmlFile][^8] used from an [iframe via postMessage][^3].\nxhr-polling          | Long-polling using [cross domain XHR][^5].\nxdr-polling          | Long-polling using [XDomainRequest][^9].\niframe-xhr-polling   | Long-polling using normal AJAX from an [iframe via postMessage][^3].\njsonp-polling        | Slow and old fashioned [JSONP polling][^6]. This transport will show \"busy indicator\" (aka: \"spinning wheel\") when sending data.\n\n\n[^1]: https://tools.ietf.org/html/draft-hixie-thewebsocketprotocol-76\n[^2]: https://tools.ietf.org/html/draft-ietf-hybi-thewebsocketprotocol-10\n[^3]: https://developer.mozilla.org/en/DOM/window.postMessage\n[^4]: https://html.spec.whatwg.org/multipage/comms.html#server-sent-events\n[^5]: https://secure.wikimedia.org/wikipedia/en/wiki/XMLHttpRequest#Cross-domain_requests\n[^6]: https://secure.wikimedia.org/wikipedia/en/wiki/JSONP\n[^7]: http://www.debugtheweb.com/test/teststreaming.aspx\n[^8]: http://cometdaily.com/2007/11/18/ie-activexhtmlfile-transport-part-ii/\n[^9]: https://blogs.msdn.microsoft.com/ieinternals/2010/05/13/xdomainrequest-restrictions-limitations-and-workarounds/\n[^10]: https://www.rfc-editor.org/rfc/rfc6455.txt\n\n\n# Connecting to SockJS without the client\n\nAlthough the main point of SockJS is to enable browser-to-server\nconnectivity, it is possible to connect to SockJS from an external\napplication. Any SockJS server complying with 0.3 protocol does\nsupport a raw WebSocket url. The raw WebSocket url for the test server\nlooks like:\n\n * ws://localhost:8081/echo/websocket\n\nYou can connect any WebSocket RFC 6455 compliant WebSocket client to\nthis url. This can be a command line client, external application,\nthird party code or even a browser (though I don't know why you would\nwant to do so).\n\n\n# Deployment\n\nYou should use a version of sockjs-client\nthat supports the protocol used by your server. For example:\n\n```html\n<script src=\"https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js\"></script>\n```\n\n\nFor server-side deployment tricks, especially about load balancing and\nsession stickiness, take a look at the\n[SockJS-node readme](https://github.com/sockjs/sockjs-node#readme).\n\n\n# Development and testing\n\nSockJS-client needs [node.js](https://nodejs.org/) for running a test\nserver and JavaScript minification. If you want to work on\nSockJS-client source code, checkout the git repo and follow these\nsteps:\n\n    cd sockjs-client\n    npm install\n\nTo generate JavaScript, run:\n\n    gulp browserify\n\nTo generate minified JavaScript, run:\n\n    gulp browserify:min\n\nBoth commands output into the `build` directory.\n\n## Testing\n\nAutomated testing provided by:\n\n<a href=\"https://browserstack.com\"><img src=\"img/Browserstack-logo@2x.png\" height=\"50\"></a>\n\nOnce you've compiled the SockJS-client you may want to check if your changes\npass all the tests.\n\n    npm run test:browser_local\n\nThis will start [karma](https://karma-runner.github.io) and a test support server.\n\n# Browser Quirks\n\nThere are various browser quirks which we don't intend to address:\n\n * Pressing ESC in Firefox, before Firefox 20, closes the SockJS connection. For a workaround\n   and discussion see [#18](https://github.com/sockjs/sockjs-client/issues/18).\n * `jsonp-polling` transport will show a \"spinning wheel\" (aka. \"busy indicator\")\n   when sending data.\n * You can't open more than one SockJS connection to one domain at the\n   same time due to [the browser's limit of concurrent connections](https://stackoverflow.com/questions/985431/max-parallel-http-connections-in-a-browser)\n   (this limit is not counting native WebSocket connections).\n * Although SockJS is trying to escape any strange Unicode characters\n   (even invalid ones - [like surrogates \\xD800-\\xDBFF](https://en.wikipedia.org/wiki/Mapping_of_Unicode_characters#Surrogates) or [\\xFFFE and \\xFFFF](https://en.wikipedia.org/wiki/Unicode#Character_General_Category))\n   it's advisable to use only valid characters. Using invalid\n   characters is a bit slower, and may not work with SockJS servers\n   that have proper Unicode support.\n * Having a global function called `onmessage` or such is probably a\n   bad idea, as it could be called by the built-in `postMessage` API.\n * From SockJS' point of view there is nothing special about\n   SSL/HTTPS. Connecting between unencrypted and encrypted sites\n   should work just fine.\n * Although SockJS does its best to support both prefix and cookie based\n   sticky sessions, the latter may not work well cross-domain with\n   browsers that don't accept third-party cookies by default (Safari).\n   In order to get around this make sure you're connecting to SockJS\n   from the same parent domain as the main site. For example\n   'sockjs.a.com' is able to set cookies if you're connecting from\n   'www.a.com' or 'a.com'.\n * Trying to connect from secure \"https://\" to insecure \"http://\" is\n   not a good idea. The other way around should be fine.\n * Long polling is known to cause problems on Heroku, but a\n   [workaround for SockJS is available](https://github.com/sockjs/sockjs-node/issues/57#issuecomment-5242187).\n * SockJS [websocket transport is more stable over SSL](https://github.com/sockjs/sockjs-client/issues/94). If\n   you're a serious SockJS user then consider using SSL\n   ([more info](https://www.ietf.org/mail-archive/web/hybi/current/msg01605.html)).\n",
+  "maintainers": [
+    {
+      "name": "brycekahle",
+      "email": "bkahle@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-08-02T22:07:39.200Z",
+    "created": "2012-03-23T16:31:29.232Z",
+    "0.1.0": "2012-03-23T16:31:29.992Z",
+    "0.1.1": "2012-03-23T16:35:45.514Z",
+    "0.1.2": "2012-04-02T17:09:29.716Z",
+    "0.1.3": "2012-05-01T13:00:42.080Z",
+    "1.0.0-beta.4": "2014-11-19T19:07:05.656Z",
+    "1.0.0-beta.5": "2014-11-21T21:39:12.408Z",
+    "1.0.0-beta.6": "2014-11-22T19:19:39.508Z",
+    "1.0.0-beta.7": "2014-12-08T18:02:15.212Z",
+    "1.0.0-beta.8": "2014-12-16T21:20:05.596Z",
+    "1.0.0-beta.9": "2014-12-16T23:06:08.991Z",
+    "1.0.0-beta.10": "2014-12-17T21:16:54.798Z",
+    "1.0.0-beta.11": "2015-02-01T16:45:17.128Z",
+    "1.0.0-beta.12": "2015-02-01T16:54:29.746Z",
+    "1.0.0-beta.13": "2015-05-05T19:36:12.780Z",
+    "1.0.0": "2015-05-14T05:33:20.390Z",
+    "1.0.1": "2015-07-20T00:58:26.063Z",
+    "1.0.2": "2015-07-22T06:20:43.424Z",
+    "1.0.3": "2015-07-31T18:14:31.658Z",
+    "1.1.0": "2016-04-30T22:01:16.785Z",
+    "1.1.1": "2016-05-20T18:25:01.576Z",
+    "1.1.2": "2017-01-23T23:46:48.194Z",
+    "1.1.3": "2017-04-30T21:02:02.502Z",
+    "1.1.4": "2017-04-30T21:04:27.746Z",
+    "1.1.5": "2018-05-29T23:36:56.638Z",
+    "1.2.0": "2018-09-21T18:14:29.645Z",
+    "1.3.0": "2018-09-24T15:45:41.966Z",
+    "1.4.0": "2019-08-22T20:31:45.357Z",
+    "1.5.0": "2020-08-02T22:07:36.995Z"
+  },
+  "author": {
+    "name": "Bryce Kahle"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sockjs/sockjs-client.git"
+  },
+  "keywords": [
+    "websockets",
+    "websocket"
+  ],
+  "readmeFilename": "README.md",
+  "homepage": "http://sockjs.org",
+  "contributors": [
+    {
+      "name": "Bryce Kahle",
+      "email": "bkahle@gmail.com"
+    },
+    {
+      "name": "Marek Majkowski",
+      "email": "deadbeef@popcount.org"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/sockjs/sockjs-client/issues"
+  },
+  "license": "MIT",
+  "users": {
+    "famousgarkin": true,
+    "antanst": true,
+    "jackstraw": true,
+    "preco21": true,
+    "segen": true,
+    "staydan": true,
+    "isik": true,
+    "shahyar": true,
+    "shuoshubao": true,
+    "panlw": true,
+    "muzi131313": true,
+    "moueza": true
+  }
+}

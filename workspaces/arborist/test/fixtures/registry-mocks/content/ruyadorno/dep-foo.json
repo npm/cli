@@ -1,0 +1,161 @@
+{
+  "_id": "@ruyadorno/dep-foo",
+  "_rev": "3-4bd060a4c66d07bc3421f0eb27e6a050",
+  "name": "@ruyadorno/dep-foo",
+  "dist-tags": {
+    "latest": "2.0.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "@ruyadorno/dep-foo",
+      "version": "1.0.0",
+      "description": "",
+      "main": "index.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "funding": {
+        "type": "Patreon",
+        "url": "https://patreon.com/ruyadorno"
+      },
+      "author": {
+        "name": "Ruy Adorno"
+      },
+      "license": "ISC",
+      "_id": "@ruyadorno/dep-foo@1.0.0",
+      "_nodeVersion": "13.0.0",
+      "_npmVersion": "6.12.1",
+      "_npmUser": {
+        "name": "ruyadorno",
+        "email": "ruyadorno@hotmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-ffU1K0OPjx+75PIZRjDQy/Iwj/tAFYczGiqYx5ak9JWDRDubLwN2VLarPq4w0QqPdZtJ7Z9AMGDLKPmLnu6iZw==",
+        "shasum": "e38c4b28777b4dd574e3299e9a136f13122187c8",
+        "tarball": "https://registry.npmjs.org/@ruyadorno/dep-foo/-/dep-foo-1.0.0.tgz",
+        "fileCount": 1,
+        "unpackedSize": 310,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJduQxPCRA9TVsSAnZWagAAcmoQAIiAMx+K7AQE1i+20ZRm\nEX+tlbM39IucK9Eyg8ut6GvT7GhwhJE5j992GlVDN3DIidLDtZH3IKlqc5wF\nYv41DHGDFnm6XTaSAIYmUzthNxouW93WFPfqDCHRFlEoK1oDhS+cVVpwaqZm\nQ0SPjN0xbjzwIOr53ogcksFIFe7PAIMaBLi71qfwPYdIxXCwjFv65FHOs7ih\n4k+ZetV68AEJJvEbwPMFRCEklZQPCL0jMj/AxT/CSdOcF3iP6ikirdD1eEkN\nf04zEhTwldiBNvBRyTL7bc2YUKExcK+ToeMFD3SXAMDdiEG68CYjyXUwnqqm\n0A6xye9Ss/Y9JRAk4ansQXy280RB3QEAXIALoztRZWViq7ADuWIF3wkvoWxf\n5qUB+3OUbYFOXoORqG7NWU40f5jXfWNmsfjWNuTL0JKL91Dse1+nd7qyhTjI\n9Z2JHonbp5IYxM4Oa0nqg8xqPtvBTW0SMY4yLpobPg4AWcd2BHO7X0uWgTdu\nw5Waj8wBGrBB2gg372zSS93Dfcu34zrj7WxdUYsPkWfxsWGWgUV1v1DBe/xO\nWepMx+Kooyj40hjNk5HN6+tLz+5BjtT5+jGRWKzuneM24HucWA7rt5Zp927D\nxTADAR6azEiO69PkuVAcN6wvgjwgQrS1gMto5TLeRBLeJAMjU+kgWpRD8lzb\nqoUO\r\n=pKWH\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "ruyadorno",
+          "email": "ruyadorno@hotmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/dep-foo_1.0.0_1572408399518_0.5042852410228669"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.0.0-beta.1": {
+      "name": "@ruyadorno/dep-foo",
+      "version": "1.0.0-beta.1",
+      "description": "",
+      "main": "index.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "funding": {
+        "type": "Patreon",
+        "url": "https://patreon.com/ruyadorno"
+      },
+      "author": {
+        "name": "Ruy Adorno"
+      },
+      "license": "ISC",
+      "_id": "@ruyadorno/dep-foo@1.0.0-beta.1",
+      "_nodeVersion": "14.12.0",
+      "_npmVersion": "7.0.0-beta.12",
+      "dist": {
+        "integrity": "sha512-ca00xIpoIdF2V4d5H7hCL8QoGeK97qBRAOyb917tX11p3EKul6st5JbLpa2+X0N8vG4tfRCOUqZOXLqP3URzWQ==",
+        "shasum": "420f97f4be17efed1f961c69f92138cfd1b76681",
+        "tarball": "https://registry.npmjs.org/@ruyadorno/dep-foo/-/dep-foo-1.0.0-beta.1.tgz",
+        "fileCount": 1,
+        "unpackedSize": 317,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfcopxCRA9TVsSAnZWagAA59QP/32oQdzmtzUQlxQgXCdp\ne13b06r1dXQ7jEooxfbHIDmx2Hr4+RQABSwUInZjKYcNFybQ4Qrr7G1lXqKY\n6UJmNUvzSoD0rgIIVzozD+GAOJf8LnUxFRoNOEORgfNe89DYieTEerdzhBNy\nikyS4//w9nrJJh7DfoqOvFftnMiX2JZ86ecr6iKG8mAaV+jWwfzOKKwjuvDB\nd66CfgwegzhkuFDZS2GHCLKMwkcKl/4aair9iPDLsL/G9I+rsSaC6OghWiRu\nxDtDmPwlziBCxEWns0gTrDRmOaJMJanbN8yuI6Deca9Cr3xWV5c1mXfCp9/f\nqZJEXiUQMRjwBX4BQrwhPcHPeCQ6xnd8g5f+eqee689Dva7UfWroZL2isCX7\nC3Yng3s/svu2loiAFsaJZc0ZAAkPEL9oa+RaE4rVNlGSjg/BSi9AAIOEwxKX\n6gdQcEahvZRaQ8LfsQkCLNVSaBIpzB6sOjuyzWp1R5oHi6J9VFBkrAB6q4bZ\nlcsoMesREvInt4pzBC0Xo03jnSWJZGjUk9YAPxWoWS5ap5BM6ilPjGmtNVq0\nlyoMKgIg2PSBiE4SYnhjzMML7kaZzeCaH3qFcaWc6IpDL0DBVJbAuzNFli1V\noWQzWbDXmD1mcv9EV18+F8h9n6bAdWeqXS/dhbHOQU3SjlHtj8AzhrVGPHdg\niZ2y\r\n=V7TS\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "ruyadorno",
+          "email": "ruyadorno@hotmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "ruyadorno",
+        "email": "ruyadorno@hotmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/dep-foo_1.0.0-beta.1_1601342065051_0.21444424675519658"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.0": {
+      "name": "@ruyadorno/dep-foo",
+      "version": "2.0.0",
+      "description": "",
+      "main": "index.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "funding": {
+        "type": "Patreon",
+        "url": "https://patreon.com/ruyadorno"
+      },
+      "author": {
+        "name": "Ruy Adorno"
+      },
+      "license": "ISC",
+      "_id": "@ruyadorno/dep-foo@2.0.0",
+      "_nodeVersion": "14.12.0",
+      "_npmVersion": "7.0.0-beta.12",
+      "dist": {
+        "integrity": "sha512-eIGN9WXstw67g21kBJYKkMsyVugCL+ZAroJ0q7J/4oLqqIcfVkTX83ZEP+3GSeC3dv0JIjF60lJg6yWMS6DZgA==",
+        "shasum": "19a7bca5934aca0a56d6748af67de389818aba30",
+        "tarball": "https://registry.npmjs.org/@ruyadorno/dep-foo/-/dep-foo-2.0.0.tgz",
+        "fileCount": 1,
+        "unpackedSize": 310,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfcor2CRA9TVsSAnZWagAAmuEP/0dl0UVF1Anbw8S91pCz\nphNjuAupoVLRXgDeQKvqchIvOnoa9PyQxfvkNTZErKo7cT8+6Et9b9WpO4VC\n6XX5EAPc1TKiRbus9FmzHSZpqZ25ZdYZDMdoFzt49OlsooYiGNUxPmfXM5EB\n1oAwiXgkBzHerM79zL6fhBVPaW6Ef0u8qNPcOjDBMIVPJoxvNGR5EndecOVT\n44ZiD+7aLyF1ypfyRz1OyzLd64TkzpxRvih5her6JcXp/RZMBvJPF9anUYkA\n2jjoIuZjqqLlbX4bMEprPLtJ1oU6xybjefPaKvnMU/R6HbYnhDR2Rx9oaTW5\nJ0NDC8qO2O0oNkyqrP4n90+r+UpWdDQV1ywdWhpDjPWSCGmSyNjNjonUIa3R\nqclCCOfYC0Vgs+dNf/F/5V4E+hJHJvwjsqCnDJ6meSkdJftQSO32vf2qMBtf\niUBEbk6v2Hc0B9XiXUUc5mRAeSqaIF9ruMoPMkAVtVU5ikDCISdvmpXlswu6\neMDD27VmrHgAfxA5AnWuSeQiV97i9trPMyDYmUDgaH1luEacrLulH0+HyRdl\nrZ4rK4iHJN1V6SbFBoRxWc0NDfKVcQwGjqpDQwPC9xqOj/eB9DLNj+kAJ9HX\nZUZKb/cnO4dIxWslG+Qh12jky/hNKQROXQ5Gha7AeCw5HQHvI37KojH14O4R\nujMA\r\n=ERPJ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "ruyadorno",
+          "email": "ruyadorno@hotmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "ruyadorno",
+        "email": "ruyadorno@hotmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/dep-foo_2.0.0_1601342197861_0.885368571889003"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2019-10-30T04:06:39.297Z",
+    "1.0.0": "2019-10-30T04:06:39.648Z",
+    "modified": "2020-09-29T01:16:40.220Z",
+    "1.0.0-beta.1": "2020-09-29T01:14:25.187Z",
+    "2.0.0": "2020-09-29T01:16:37.990Z"
+  },
+  "maintainers": [
+    {
+      "name": "ruyadorno",
+      "email": "ruyadorno@hotmail.com"
+    }
+  ],
+  "author": {
+    "name": "Ruy Adorno"
+  },
+  "license": "ISC",
+  "readme": "ERROR: No README data found!",
+  "readmeFilename": ""
+}

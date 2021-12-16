@@ -1,0 +1,20 @@
+{
+  "_id": "latest-is-prerelease",
+  "_rev": "477-deadbeef",
+  "name": "latest-is-prerelease",
+  "dist-tags": {
+    "latest": "1.0.0-beta-rc.3"
+  },
+  "versions": {
+    "1.0.0-beta-rc.3": {
+      "name": "latest-is-prerelease",
+      "version": "1.0.0-beta-rc.3",
+      "_id": "latest-is-prerelease@1.0.0-beta-rc.3",
+      "dist": {
+        "integrity": "sha512-7SaiJ5Jl1pzXFqooC9SsOOnSjg3EgJhaBCXJgiCOYDThMWPeTXZfJdKkjL+ditI/96gnqpsINTXfC5OyhM1SbA==",
+        "shasum": "cff0810166a8becd0b469b520f0072ee5af1e015",
+        "tarball": "https://registry.npmjs.org/latest-is-prerelease/-/latest-is-prerelease-1.0.0-beta-rc.3.tgz"
+      }
+    }
+  }
+}

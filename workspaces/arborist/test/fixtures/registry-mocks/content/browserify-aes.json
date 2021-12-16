@@ -1,0 +1,1794 @@
+{
+  "_id": "browserify-aes",
+  "_rev": "53-01da6ebf5ecf3826bf5a3be0624fea7c",
+  "name": "browserify-aes",
+  "description": "aes, for browserify",
+  "dist-tags": {
+    "latest": "1.2.0"
+  },
+  "versions": {
+    "0.0.0": {
+      "name": "browserify-aes",
+      "version": "0.0.0",
+      "description": "aes, for browserify",
+      "main": "index.js",
+      "directories": {
+        "test": "test"
+      },
+      "scripts": {
+        "test": "node test/index.js|tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/calvinmetcalf/browserify-aes.git"
+      },
+      "keywords": [
+        "aes",
+        "crypto",
+        "browserify"
+      ],
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/calvinmetcalf/browserify-aes/issues"
+      },
+      "homepage": "https://github.com/calvinmetcalf/browserify-aes",
+      "dependencies": {
+        "inherits": "^2.0.1",
+        "duplexer2": "0.0.2"
+      },
+      "devDependencies": {
+        "tape": "^3.0.0",
+        "tap-spec": "^1.0.0"
+      },
+      "_id": "browserify-aes@0.0.0",
+      "dist": {
+        "shasum": "af2dd3155e9e6a5ae86dcf0f29391a3ece55e1f4",
+        "tarball": "https://registry.npmjs.org/browserify-aes/-/browserify-aes-0.0.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.4.3",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ]
+    },
+    "0.1.0": {
+      "name": "browserify-aes",
+      "version": "0.1.0",
+      "description": "aes, for browserify",
+      "main": "index.js",
+      "directories": {
+        "test": "test"
+      },
+      "scripts": {
+        "test": "node test/index.js|tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/calvinmetcalf/browserify-aes.git"
+      },
+      "keywords": [
+        "aes",
+        "crypto",
+        "browserify"
+      ],
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/calvinmetcalf/browserify-aes/issues"
+      },
+      "homepage": "https://github.com/calvinmetcalf/browserify-aes",
+      "dependencies": {
+        "inherits": "^2.0.1",
+        "duplexer2": "0.0.2"
+      },
+      "devDependencies": {
+        "tape": "^3.0.0",
+        "tap-spec": "^1.0.0"
+      },
+      "_id": "browserify-aes@0.1.0",
+      "dist": {
+        "shasum": "36ace6b260459d8ad306c26d66681be3c67d54f1",
+        "tarball": "https://registry.npmjs.org/browserify-aes/-/browserify-aes-0.1.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.4.3",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ]
+    },
+    "0.2.0": {
+      "name": "browserify-aes",
+      "version": "0.2.0",
+      "description": "aes, for browserify",
+      "main": "index.js",
+      "directories": {
+        "test": "test"
+      },
+      "scripts": {
+        "test": "node test/index.js|tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/calvinmetcalf/browserify-aes.git"
+      },
+      "keywords": [
+        "aes",
+        "crypto",
+        "browserify"
+      ],
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/calvinmetcalf/browserify-aes/issues"
+      },
+      "homepage": "https://github.com/calvinmetcalf/browserify-aes",
+      "dependencies": {
+        "inherits": "^2.0.1",
+        "duplexer2": "0.0.2"
+      },
+      "devDependencies": {
+        "tape": "^3.0.0",
+        "tap-spec": "^1.0.0"
+      },
+      "_id": "browserify-aes@0.2.0",
+      "dist": {
+        "shasum": "04cd8ac6104bb1c99ebdea040d8ad1972e563292",
+        "tarball": "https://registry.npmjs.org/browserify-aes/-/browserify-aes-0.2.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.4.3",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ]
+    },
+    "0.2.1": {
+      "name": "browserify-aes",
+      "version": "0.2.1",
+      "description": "aes, for browserify",
+      "main": "index.js",
+      "directories": {
+        "test": "test"
+      },
+      "scripts": {
+        "test": "node test/index.js|tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/calvinmetcalf/browserify-aes.git"
+      },
+      "keywords": [
+        "aes",
+        "crypto",
+        "browserify"
+      ],
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/calvinmetcalf/browserify-aes/issues"
+      },
+      "homepage": "https://github.com/calvinmetcalf/browserify-aes",
+      "dependencies": {
+        "inherits": "^2.0.1",
+        "duplexer2": "0.0.2"
+      },
+      "devDependencies": {
+        "tape": "^3.0.0",
+        "tap-spec": "^1.0.0"
+      },
+      "gitHead": "6d117a8db53f61d6c765e65b58225ebaf8b4879e",
+      "_id": "browserify-aes@0.2.1",
+      "_shasum": "93ec05e085d1bee8159401c1ffb552a718a8ae7f",
+      "_from": ".",
+      "_npmVersion": "2.0.0",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "93ec05e085d1bee8159401c1ffb552a718a8ae7f",
+        "tarball": "https://registry.npmjs.org/browserify-aes/-/browserify-aes-0.2.1.tgz"
+      }
+    },
+    "0.2.2": {
+      "name": "browserify-aes",
+      "version": "0.2.2",
+      "description": "aes, for browserify",
+      "main": "index.js",
+      "directories": {
+        "test": "test"
+      },
+      "scripts": {
+        "test": "node test/index.js|tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/calvinmetcalf/browserify-aes.git"
+      },
+      "keywords": [
+        "aes",
+        "crypto",
+        "browserify"
+      ],
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/calvinmetcalf/browserify-aes/issues"
+      },
+      "homepage": "https://github.com/calvinmetcalf/browserify-aes",
+      "dependencies": {
+        "inherits": "^2.0.1"
+      },
+      "devDependencies": {
+        "tape": "^3.0.0",
+        "tap-spec": "^1.0.0"
+      },
+      "_id": "browserify-aes@0.2.2",
+      "dist": {
+        "shasum": "e6396db2bbac19ea2632da3accd367bf561c199e",
+        "tarball": "https://registry.npmjs.org/browserify-aes/-/browserify-aes-0.2.2.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.4.3",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ]
+    },
+    "0.3.0": {
+      "name": "browserify-aes",
+      "version": "0.3.0",
+      "description": "aes, for browserify",
+      "main": "index.js",
+      "directories": {
+        "test": "test"
+      },
+      "scripts": {
+        "test": "node test/index.js|tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/calvinmetcalf/browserify-aes.git"
+      },
+      "keywords": [
+        "aes",
+        "crypto",
+        "browserify"
+      ],
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/calvinmetcalf/browserify-aes/issues"
+      },
+      "homepage": "https://github.com/calvinmetcalf/browserify-aes",
+      "dependencies": {
+        "inherits": "^2.0.1"
+      },
+      "devDependencies": {
+        "tape": "^3.0.0",
+        "tap-spec": "^1.0.0"
+      },
+      "_id": "browserify-aes@0.3.0",
+      "dist": {
+        "shasum": "b419eb1d0ba212103fb67851299643af8492fd6c",
+        "tarball": "https://registry.npmjs.org/browserify-aes/-/browserify-aes-0.3.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.4.3",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ]
+    },
+    "0.4.0": {
+      "name": "browserify-aes",
+      "version": "0.4.0",
+      "description": "aes, for browserify",
+      "main": "index.js",
+      "directories": {
+        "test": "test"
+      },
+      "scripts": {
+        "test": "node test/index.js|tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/calvinmetcalf/browserify-aes.git"
+      },
+      "keywords": [
+        "aes",
+        "crypto",
+        "browserify"
+      ],
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/calvinmetcalf/browserify-aes/issues"
+      },
+      "homepage": "https://github.com/calvinmetcalf/browserify-aes",
+      "dependencies": {
+        "inherits": "^2.0.1"
+      },
+      "devDependencies": {
+        "tape": "^3.0.0",
+        "tap-spec": "^1.0.0"
+      },
+      "_id": "browserify-aes@0.4.0",
+      "dist": {
+        "shasum": "067149b668df31c4b58533e02d01e806d8608e2c",
+        "tarball": "https://registry.npmjs.org/browserify-aes/-/browserify-aes-0.4.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.4.3",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ]
+    },
+    "0.5.0": {
+      "name": "browserify-aes",
+      "version": "0.5.0",
+      "description": "aes, for browserify",
+      "main": "index.js",
+      "directories": {
+        "test": "test"
+      },
+      "scripts": {
+        "test": "node test/index.js|tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/calvinmetcalf/browserify-aes.git"
+      },
+      "keywords": [
+        "aes",
+        "crypto",
+        "browserify"
+      ],
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/calvinmetcalf/browserify-aes/issues"
+      },
+      "homepage": "https://github.com/calvinmetcalf/browserify-aes",
+      "dependencies": {
+        "inherits": "^2.0.1"
+      },
+      "devDependencies": {
+        "tape": "^3.0.0",
+        "tap-spec": "^1.0.0"
+      },
+      "_id": "browserify-aes@0.5.0",
+      "dist": {
+        "shasum": "a58d6a7a440b575aa7f1c1726fe1df172b973a9b",
+        "tarball": "https://registry.npmjs.org/browserify-aes/-/browserify-aes-0.5.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.4.3",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ]
+    },
+    "0.6.0": {
+      "name": "browserify-aes",
+      "version": "0.6.0",
+      "description": "aes, for browserify",
+      "main": "index.js",
+      "directories": {
+        "test": "test"
+      },
+      "scripts": {
+        "test": "node test/index.js|tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/calvinmetcalf/browserify-aes.git"
+      },
+      "keywords": [
+        "aes",
+        "crypto",
+        "browserify"
+      ],
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/calvinmetcalf/browserify-aes/issues"
+      },
+      "homepage": "https://github.com/calvinmetcalf/browserify-aes",
+      "dependencies": {
+        "inherits": "^2.0.1"
+      },
+      "devDependencies": {
+        "tape": "^3.0.0",
+        "tap-spec": "^1.0.0"
+      },
+      "_id": "browserify-aes@0.6.0",
+      "dist": {
+        "shasum": "07df03037306a94f453da08cbaf1b42afcc3b18f",
+        "tarball": "https://registry.npmjs.org/browserify-aes/-/browserify-aes-0.6.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.4.3",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ]
+    },
+    "0.6.1": {
+      "name": "browserify-aes",
+      "version": "0.6.1",
+      "description": "aes, for browserify",
+      "main": "index.js",
+      "directories": {
+        "test": "test"
+      },
+      "scripts": {
+        "test": "node test/index.js|tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/calvinmetcalf/browserify-aes.git"
+      },
+      "keywords": [
+        "aes",
+        "crypto",
+        "browserify"
+      ],
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/calvinmetcalf/browserify-aes/issues"
+      },
+      "homepage": "https://github.com/calvinmetcalf/browserify-aes",
+      "dependencies": {
+        "inherits": "^2.0.1"
+      },
+      "devDependencies": {
+        "tape": "^3.0.0",
+        "tap-spec": "^1.0.0"
+      },
+      "gitHead": "4ce42880f95a8fd95c05ecfbc1214134a8f1696b",
+      "_id": "browserify-aes@0.6.1",
+      "_shasum": "a7466136ffcb0a2a955d98afa8dc2ced6dc6c004",
+      "_from": ".",
+      "_npmVersion": "2.1.10",
+      "_nodeVersion": "0.11.14",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "a7466136ffcb0a2a955d98afa8dc2ced6dc6c004",
+        "tarball": "https://registry.npmjs.org/browserify-aes/-/browserify-aes-0.6.1.tgz"
+      }
+    },
+    "0.7.1": {
+      "name": "browserify-aes",
+      "version": "0.7.1",
+      "description": "aes, for browserify",
+      "main": "index.js",
+      "directories": {
+        "test": "test"
+      },
+      "scripts": {
+        "test": "node test/index.js|tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/calvinmetcalf/browserify-aes.git"
+      },
+      "keywords": [
+        "aes",
+        "crypto",
+        "browserify"
+      ],
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/calvinmetcalf/browserify-aes/issues"
+      },
+      "homepage": "https://github.com/calvinmetcalf/browserify-aes",
+      "dependencies": {
+        "inherits": "^2.0.1"
+      },
+      "devDependencies": {
+        "tape": "^3.0.0",
+        "tap-spec": "^1.0.0"
+      },
+      "gitHead": "991dc0f09a06bd4b82066db15e60b27fe816ac4f",
+      "_id": "browserify-aes@0.7.1",
+      "_shasum": "40e3542bd5ef1e1e0243072650710de866e46a0d",
+      "_from": ".",
+      "_npmVersion": "2.1.10",
+      "_nodeVersion": "0.10.35",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "40e3542bd5ef1e1e0243072650710de866e46a0d",
+        "tarball": "https://registry.npmjs.org/browserify-aes/-/browserify-aes-0.7.1.tgz"
+      }
+    },
+    "0.7.2": {
+      "name": "browserify-aes",
+      "version": "0.7.2",
+      "description": "aes, for browserify",
+      "main": "index.js",
+      "directories": {
+        "test": "test"
+      },
+      "scripts": {
+        "test": "node test/index.js|tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/calvinmetcalf/browserify-aes.git"
+      },
+      "keywords": [
+        "aes",
+        "crypto",
+        "browserify"
+      ],
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/calvinmetcalf/browserify-aes/issues"
+      },
+      "homepage": "https://github.com/calvinmetcalf/browserify-aes",
+      "dependencies": {
+        "inherits": "^2.0.1"
+      },
+      "devDependencies": {
+        "tape": "^3.0.0",
+        "tap-spec": "^1.0.0"
+      },
+      "gitHead": "1bf29868497e73bab37fdbc642cbfc20c8116e25",
+      "_id": "browserify-aes@0.7.2",
+      "_shasum": "bdee40de0bb607b4f8794a9e23ee69eedc59ca47",
+      "_from": ".",
+      "_npmVersion": "2.1.10",
+      "_nodeVersion": "0.10.35",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "bdee40de0bb607b4f8794a9e23ee69eedc59ca47",
+        "tarball": "https://registry.npmjs.org/browserify-aes/-/browserify-aes-0.7.2.tgz"
+      }
+    },
+    "0.7.3": {
+      "name": "browserify-aes",
+      "version": "0.7.3",
+      "description": "aes, for browserify",
+      "main": "index.js",
+      "directories": {
+        "test": "test"
+      },
+      "scripts": {
+        "test": "node test/index.js|tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/calvinmetcalf/browserify-aes.git"
+      },
+      "keywords": [
+        "aes",
+        "crypto",
+        "browserify"
+      ],
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/calvinmetcalf/browserify-aes/issues"
+      },
+      "homepage": "https://github.com/calvinmetcalf/browserify-aes",
+      "dependencies": {
+        "inherits": "^2.0.1"
+      },
+      "devDependencies": {
+        "tape": "^3.0.0",
+        "tap-spec": "^1.0.0"
+      },
+      "gitHead": "2808b98c06f1b93566f01f71ff0fe29b20c81277",
+      "_id": "browserify-aes@0.7.3",
+      "_shasum": "d39a16bdc5e42cb54cf9c3e860dfb0c6c53534fe",
+      "_from": ".",
+      "_npmVersion": "2.0.0",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "d39a16bdc5e42cb54cf9c3e860dfb0c6c53534fe",
+        "tarball": "https://registry.npmjs.org/browserify-aes/-/browserify-aes-0.7.3.tgz"
+      }
+    },
+    "0.8.0": {
+      "name": "browserify-aes",
+      "version": "0.8.0",
+      "description": "aes, for browserify",
+      "main": "index.js",
+      "directories": {
+        "test": "test"
+      },
+      "scripts": {
+        "test": "node test/index.js|tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/calvinmetcalf/browserify-aes.git"
+      },
+      "keywords": [
+        "aes",
+        "crypto",
+        "browserify"
+      ],
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/calvinmetcalf/browserify-aes/issues"
+      },
+      "homepage": "https://github.com/calvinmetcalf/browserify-aes",
+      "dependencies": {
+        "inherits": "^2.0.1"
+      },
+      "devDependencies": {
+        "tape": "^3.0.0",
+        "tap-spec": "^1.0.0"
+      },
+      "gitHead": "11c13d00f23b675356c716eadf2cc84d1148b9e0",
+      "_id": "browserify-aes@0.8.0",
+      "_shasum": "77887bae1f2539899c84dce10a9bf8a3ac40398a",
+      "_from": ".",
+      "_npmVersion": "2.0.0",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "77887bae1f2539899c84dce10a9bf8a3ac40398a",
+        "tarball": "https://registry.npmjs.org/browserify-aes/-/browserify-aes-0.8.0.tgz"
+      }
+    },
+    "0.8.1": {
+      "name": "browserify-aes",
+      "version": "0.8.1",
+      "description": "aes, for browserify",
+      "main": "index.js",
+      "directories": {
+        "test": "test"
+      },
+      "scripts": {
+        "test": "node test/index.js|tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/calvinmetcalf/browserify-aes.git"
+      },
+      "keywords": [
+        "aes",
+        "crypto",
+        "browserify"
+      ],
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/calvinmetcalf/browserify-aes/issues"
+      },
+      "homepage": "https://github.com/calvinmetcalf/browserify-aes",
+      "dependencies": {
+        "inherits": "^2.0.1"
+      },
+      "devDependencies": {
+        "tape": "^3.0.0",
+        "tap-spec": "^1.0.0"
+      },
+      "gitHead": "8bf9886a900b7fce19ea2b82a5d0762e278483dc",
+      "_id": "browserify-aes@0.8.1",
+      "_shasum": "05902c0db3817b7f67f1668f74efb14ee900801d",
+      "_from": ".",
+      "_npmVersion": "2.1.10",
+      "_nodeVersion": "0.11.14",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "05902c0db3817b7f67f1668f74efb14ee900801d",
+        "tarball": "https://registry.npmjs.org/browserify-aes/-/browserify-aes-0.8.1.tgz"
+      }
+    },
+    "1.0.0": {
+      "name": "browserify-aes",
+      "version": "1.0.0",
+      "description": "aes, for browserify",
+      "browser": "browser.js",
+      "main": "index.js",
+      "directories": {
+        "test": "test"
+      },
+      "scripts": {
+        "test": "node test/index.js|tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/crypto-browserify/browserify-aes.git"
+      },
+      "keywords": [
+        "aes",
+        "crypto",
+        "browserify"
+      ],
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/browserify-aes/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/browserify-aes",
+      "dependencies": {
+        "create-hash": "^1.1.0",
+        "inherits": "^2.0.1"
+      },
+      "devDependencies": {
+        "tape": "^3.0.0",
+        "tap-spec": "^1.0.0"
+      },
+      "gitHead": "67c90814f512df1ef2330a2156c24dc854fa99a5",
+      "_id": "browserify-aes@1.0.0",
+      "_shasum": "582efc30561166f89855fcdc945b686919848b62",
+      "_from": ".",
+      "_npmVersion": "2.1.10",
+      "_nodeVersion": "0.10.35",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "jp",
+          "email": "jprichardson@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "582efc30561166f89855fcdc945b686919848b62",
+        "tarball": "https://registry.npmjs.org/browserify-aes/-/browserify-aes-1.0.0.tgz"
+      }
+    },
+    "1.0.1": {
+      "name": "browserify-aes",
+      "version": "1.0.1",
+      "description": "aes, for browserify",
+      "browser": "browser.js",
+      "main": "index.js",
+      "directories": {
+        "test": "test"
+      },
+      "scripts": {
+        "test": "standard && node test/index.js|tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/crypto-browserify/browserify-aes.git"
+      },
+      "keywords": [
+        "aes",
+        "crypto",
+        "browserify"
+      ],
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/browserify-aes/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/browserify-aes",
+      "dependencies": {
+        "create-hash": "^1.1.0",
+        "inherits": "^2.0.1"
+      },
+      "devDependencies": {
+        "standard": "^3.7.3",
+        "tap-spec": "^1.0.0",
+        "tape": "^3.0.0"
+      },
+      "gitHead": "5f0fe487d8028daf740a48965a0b37bc9afbbbc3",
+      "_id": "browserify-aes@1.0.1",
+      "_shasum": "796543bab86b84688cb58db1dee164bd1bb2af27",
+      "_from": ".",
+      "_npmVersion": "2.9.0",
+      "_nodeVersion": "0.12.3",
+      "_npmUser": {
+        "name": "dcousens",
+        "email": "email@dcousens.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "796543bab86b84688cb58db1dee164bd1bb2af27",
+        "tarball": "https://registry.npmjs.org/browserify-aes/-/browserify-aes-1.0.1.tgz"
+      }
+    },
+    "1.0.2": {
+      "name": "browserify-aes",
+      "version": "1.0.2",
+      "description": "aes, for browserify",
+      "browser": "browser.js",
+      "main": "index.js",
+      "directories": {
+        "test": "test"
+      },
+      "scripts": {
+        "test": "standard && node test/index.js|tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/crypto-browserify/browserify-aes.git"
+      },
+      "keywords": [
+        "aes",
+        "crypto",
+        "browserify"
+      ],
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/browserify-aes/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/browserify-aes",
+      "dependencies": {
+        "buffer-xor": "^1.0.2",
+        "create-hash": "^1.1.0",
+        "inherits": "^2.0.1"
+      },
+      "devDependencies": {
+        "standard": "^3.7.3",
+        "tap-spec": "^1.0.0",
+        "tape": "^3.0.0"
+      },
+      "gitHead": "8e1364cab35081814a7e46b7f85651df39725e48",
+      "_id": "browserify-aes@1.0.2",
+      "_shasum": "3309c3f45426d226747c070827b6ef92c98a9fdb",
+      "_from": ".",
+      "_npmVersion": "2.9.0",
+      "_nodeVersion": "2.4.0",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "3309c3f45426d226747c070827b6ef92c98a9fdb",
+        "tarball": "https://registry.npmjs.org/browserify-aes/-/browserify-aes-1.0.2.tgz"
+      }
+    },
+    "1.0.3": {
+      "name": "browserify-aes",
+      "version": "1.0.3",
+      "description": "aes, for browserify",
+      "browser": "browser.js",
+      "main": "index.js",
+      "directories": {
+        "test": "test"
+      },
+      "scripts": {
+        "test": "standard && node test/index.js|tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/crypto-browserify/browserify-aes.git"
+      },
+      "keywords": [
+        "aes",
+        "crypto",
+        "browserify"
+      ],
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/browserify-aes/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/browserify-aes",
+      "dependencies": {
+        "buffer-xor": "^1.0.2",
+        "create-hash": "^1.1.0",
+        "inherits": "^2.0.1"
+      },
+      "devDependencies": {
+        "standard": "^3.7.3",
+        "tap-spec": "^1.0.0",
+        "tape": "^3.0.0"
+      },
+      "gitHead": "92262abda78d990b92df6f01af9b8808b28e16c3",
+      "_id": "browserify-aes@1.0.3",
+      "_shasum": "c5d03d36fb3fcbaa549a71ee602f91c4e5657cff",
+      "_from": ".",
+      "_npmVersion": "2.9.0",
+      "_nodeVersion": "2.5.0",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "c5d03d36fb3fcbaa549a71ee602f91c4e5657cff",
+        "tarball": "https://registry.npmjs.org/browserify-aes/-/browserify-aes-1.0.3.tgz"
+      }
+    },
+    "1.0.4": {
+      "name": "browserify-aes",
+      "version": "1.0.4",
+      "description": "aes, for browserify",
+      "browser": "browser.js",
+      "main": "index.js",
+      "directories": {
+        "test": "test"
+      },
+      "scripts": {
+        "test": "standard && node test/index.js|tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/crypto-browserify/browserify-aes.git"
+      },
+      "keywords": [
+        "aes",
+        "crypto",
+        "browserify"
+      ],
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/browserify-aes/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/browserify-aes",
+      "dependencies": {
+        "buffer-xor": "^1.0.2",
+        "create-hash": "^1.1.0",
+        "inherits": "^2.0.1"
+      },
+      "devDependencies": {
+        "standard": "^3.7.3",
+        "tap-spec": "^1.0.0",
+        "tape": "^3.0.0"
+      },
+      "gitHead": "7bace27bfe83bee11646ec2b411c76b76697ad0c",
+      "_id": "browserify-aes@1.0.4",
+      "_shasum": "f233838d6f1759599960c0a19e85ca1630f4bb6e",
+      "_from": ".",
+      "_npmVersion": "3.3.3",
+      "_nodeVersion": "4.1.0",
+      "_npmUser": {
+        "name": "dcousens",
+        "email": "email@dcousens.com"
+      },
+      "dist": {
+        "shasum": "f233838d6f1759599960c0a19e85ca1630f4bb6e",
+        "tarball": "https://registry.npmjs.org/browserify-aes/-/browserify-aes-1.0.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ]
+    },
+    "1.0.5": {
+      "name": "browserify-aes",
+      "version": "1.0.5",
+      "description": "aes, for browserify",
+      "browser": "browser.js",
+      "main": "index.js",
+      "directories": {
+        "test": "test"
+      },
+      "scripts": {
+        "test": "standard && node test/index.js|tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/crypto-browserify/browserify-aes.git"
+      },
+      "keywords": [
+        "aes",
+        "crypto",
+        "browserify"
+      ],
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/browserify-aes/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/browserify-aes",
+      "dependencies": {
+        "buffer-xor": "^1.0.2",
+        "cipher-base": "^1.0.0",
+        "create-hash": "^1.1.0",
+        "evp_bytestokey": "^1.0.0",
+        "inherits": "^2.0.1"
+      },
+      "devDependencies": {
+        "standard": "^3.7.3",
+        "tap-spec": "^1.0.0",
+        "tape": "^3.0.0"
+      },
+      "gitHead": "d45d4674a0949a28745dfe48afc4d4984dfe56fa",
+      "_id": "browserify-aes@1.0.5",
+      "_shasum": "447e7e4671fceb575f6bb16c7f31a20924f0c303",
+      "_from": ".",
+      "_npmVersion": "3.3.4",
+      "_nodeVersion": "4.1.1",
+      "_npmUser": {
+        "name": "dcousens",
+        "email": "email@dcousens.com"
+      },
+      "dist": {
+        "shasum": "447e7e4671fceb575f6bb16c7f31a20924f0c303",
+        "tarball": "https://registry.npmjs.org/browserify-aes/-/browserify-aes-1.0.5.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ]
+    },
+    "1.0.6": {
+      "name": "browserify-aes",
+      "version": "1.0.6",
+      "description": "aes, for browserify",
+      "browser": "browser.js",
+      "main": "index.js",
+      "directories": {
+        "test": "test"
+      },
+      "scripts": {
+        "test": "standard && node test/index.js|tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/crypto-browserify/browserify-aes.git"
+      },
+      "keywords": [
+        "aes",
+        "crypto",
+        "browserify"
+      ],
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/browserify-aes/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/browserify-aes",
+      "dependencies": {
+        "buffer-xor": "^1.0.2",
+        "cipher-base": "^1.0.0",
+        "create-hash": "^1.1.0",
+        "evp_bytestokey": "^1.0.0",
+        "inherits": "^2.0.1"
+      },
+      "devDependencies": {
+        "standard": "^3.7.3",
+        "tap-spec": "^1.0.0",
+        "tape": "^3.0.0"
+      },
+      "gitHead": "51f8b9055371c045af448fa07bacaae3df6c8e51",
+      "_id": "browserify-aes@1.0.6",
+      "_shasum": "5e7725dbdef1fd5930d4ebab48567ce451c48a0a",
+      "_from": ".",
+      "_npmVersion": "3.3.12",
+      "_nodeVersion": "5.4.0",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "dist": {
+        "shasum": "5e7725dbdef1fd5930d4ebab48567ce451c48a0a",
+        "tarball": "https://registry.npmjs.org/browserify-aes/-/browserify-aes-1.0.6.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ]
+    },
+    "1.0.7": {
+      "name": "browserify-aes",
+      "version": "1.0.7",
+      "description": "aes, for browserify",
+      "browser": "browser.js",
+      "main": "index.js",
+      "directories": {
+        "test": "test"
+      },
+      "scripts": {
+        "standard": "standard",
+        "unit": "node test/index.js | tspec",
+        "test": "npm run standard && npm run unit"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/crypto-browserify/browserify-aes.git"
+      },
+      "keywords": [
+        "aes",
+        "crypto",
+        "browserify"
+      ],
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/browserify-aes/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/browserify-aes",
+      "dependencies": {
+        "buffer-xor": "^1.0.3",
+        "cipher-base": "^1.0.0",
+        "create-hash": "^1.1.0",
+        "evp_bytestokey": "^1.0.3",
+        "inherits": "^2.0.1",
+        "safe-buffer": "^5.0.1"
+      },
+      "devDependencies": {
+        "standard": "^9.0.0",
+        "tap-spec": "^4.1.1",
+        "tape": "^4.6.3"
+      },
+      "gitHead": "77262c65c386790808b06d9ebd949d96259d22f0",
+      "_id": "browserify-aes@1.0.7",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "8.4.0",
+      "_npmUser": {
+        "name": "dcousens",
+        "email": "npm@dcousens.com"
+      },
+      "dist": {
+        "integrity": "sha512-cnClT3H8JOM0OutZkiLFo8fjXkImHA3gERZyixrT96pdcbYO0QsZ/+Q5mbwBnzBovycHx9Dfa4Cu2fFXcKPmhQ==",
+        "shasum": "cf6ecb9c6a651d720c9e28b37bc87d10d35d6dbe",
+        "tarball": "https://registry.npmjs.org/browserify-aes/-/browserify-aes-1.0.7.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/browserify-aes-1.0.7.tgz_1504606968820_0.154796598944813"
+      }
+    },
+    "1.0.8": {
+      "name": "browserify-aes",
+      "version": "1.0.8",
+      "description": "aes, for browserify",
+      "browser": "browser.js",
+      "main": "index.js",
+      "directories": {
+        "test": "test"
+      },
+      "scripts": {
+        "standard": "standard",
+        "unit": "node test/index.js | tspec",
+        "test": "npm run standard && npm run unit"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/crypto-browserify/browserify-aes.git"
+      },
+      "keywords": [
+        "aes",
+        "crypto",
+        "browserify"
+      ],
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/browserify-aes/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/browserify-aes",
+      "dependencies": {
+        "buffer-xor": "^1.0.3",
+        "cipher-base": "^1.0.0",
+        "create-hash": "^1.1.0",
+        "evp_bytestokey": "^1.0.3",
+        "inherits": "^2.0.1",
+        "safe-buffer": "^5.0.1"
+      },
+      "devDependencies": {
+        "standard": "^9.0.0",
+        "tap-spec": "^4.1.1",
+        "tape": "^4.6.3"
+      },
+      "gitHead": "845b5d173bb5243cc0a79f5bdd9044a5c5de462c",
+      "_id": "browserify-aes@1.0.8",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "8.4.0",
+      "_npmUser": {
+        "name": "dcousens",
+        "email": "npm@dcousens.com"
+      },
+      "dist": {
+        "integrity": "sha512-WYCMOT/PtGTlpOKFht0YJFYcPy6pLCR98CtWfzK13zoynLlBMvAdEMSRGmgnJCw2M2j/5qxBkinZQFobieM8dQ==",
+        "shasum": "c8fa3b1b7585bb7ba77c5560b60996ddec6d5309",
+        "tarball": "https://registry.npmjs.org/browserify-aes/-/browserify-aes-1.0.8.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/browserify-aes-1.0.8.tgz_1504610053961_0.5263194553554058"
+      }
+    },
+    "1.1.0": {
+      "name": "browserify-aes",
+      "version": "1.1.0",
+      "description": "aes, for browserify",
+      "browser": "browser.js",
+      "main": "index.js",
+      "directories": {
+        "test": "test"
+      },
+      "scripts": {
+        "standard": "standard",
+        "unit": "node test/index.js | tspec",
+        "test": "npm run standard && npm run unit"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/crypto-browserify/browserify-aes.git"
+      },
+      "keywords": [
+        "aes",
+        "crypto",
+        "browserify"
+      ],
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/browserify-aes/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/browserify-aes",
+      "dependencies": {
+        "buffer-xor": "^1.0.3",
+        "cipher-base": "^1.0.0",
+        "create-hash": "^1.1.0",
+        "evp_bytestokey": "^1.0.3",
+        "inherits": "^2.0.1",
+        "safe-buffer": "^5.0.1"
+      },
+      "devDependencies": {
+        "standard": "^9.0.0",
+        "tap-spec": "^4.1.1",
+        "tape": "^4.6.3"
+      },
+      "gitHead": "a6311163477932f035807691314e104da1ba8370",
+      "_id": "browserify-aes@1.1.0",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.6.0",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-W2bIMLYoZ9oow7TyePpMJk9l9LY7O3R61a/68bVCDOtnJynnwe3ZeW2IzzSkrQnPKNdJrxVDn3ALZNisSBwb7g==",
+        "shasum": "1d2ad62a8b479f23f0ab631c1be86a82dbccbe48",
+        "tarball": "https://registry.npmjs.org/browserify-aes/-/browserify-aes-1.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/browserify-aes-1.1.0.tgz_1507833281191_0.3169722533784807"
+      }
+    },
+    "1.1.1": {
+      "name": "browserify-aes",
+      "version": "1.1.1",
+      "description": "aes, for browserify",
+      "browser": "browser.js",
+      "main": "index.js",
+      "directories": {
+        "test": "test"
+      },
+      "scripts": {
+        "standard": "standard",
+        "unit": "node test/index.js | tspec",
+        "test": "npm run standard && npm run unit"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/crypto-browserify/browserify-aes.git"
+      },
+      "keywords": [
+        "aes",
+        "crypto",
+        "browserify"
+      ],
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/browserify-aes/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/browserify-aes",
+      "dependencies": {
+        "buffer-xor": "^1.0.3",
+        "cipher-base": "^1.0.0",
+        "create-hash": "^1.1.0",
+        "evp_bytestokey": "^1.0.3",
+        "inherits": "^2.0.1",
+        "safe-buffer": "^5.0.1"
+      },
+      "devDependencies": {
+        "standard": "^9.0.0",
+        "tap-spec": "^4.1.1",
+        "tape": "^4.6.3"
+      },
+      "gitHead": "235f3d120dfb45ea13bcfff83c5e9c485c48dc71",
+      "_id": "browserify-aes@1.1.1",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.6.0",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-UGnTYAnB2a3YuYKIRy1/4FB2HdM866E0qC46JXvVTYKlBlZlnvfpSfY6OKfXZAkv70eJ2a1SqzpAo5CRhZGDFg==",
+        "shasum": "38b7ab55edb806ff2dcda1a7f1620773a477c49f",
+        "tarball": "https://registry.npmjs.org/browserify-aes/-/browserify-aes-1.1.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/browserify-aes-1.1.1.tgz_1508416355286_0.8882713539060205"
+      }
+    },
+    "1.2.0": {
+      "name": "browserify-aes",
+      "version": "1.2.0",
+      "description": "aes, for browserify",
+      "browser": "browser.js",
+      "main": "index.js",
+      "directories": {
+        "test": "test"
+      },
+      "scripts": {
+        "standard": "standard",
+        "unit": "node test/index.js | tspec",
+        "test": "npm run standard && npm run unit"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/crypto-browserify/browserify-aes.git"
+      },
+      "keywords": [
+        "aes",
+        "crypto",
+        "browserify"
+      ],
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/browserify-aes/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/browserify-aes",
+      "dependencies": {
+        "buffer-xor": "^1.0.3",
+        "cipher-base": "^1.0.0",
+        "create-hash": "^1.1.0",
+        "evp_bytestokey": "^1.0.3",
+        "inherits": "^2.0.1",
+        "safe-buffer": "^5.0.1"
+      },
+      "devDependencies": {
+        "standard": "^9.0.0",
+        "tap-spec": "^4.1.1",
+        "tape": "^4.6.3"
+      },
+      "gitHead": "aff6836a7017aa9e55289aec357ddb199e15bd98",
+      "_id": "browserify-aes@1.2.0",
+      "_npmVersion": "5.8.0",
+      "_nodeVersion": "8.11.1",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-+7CHXqGuspUn/Sl5aO7Ea0xWGAtETPXNSAjHo48JfLdPWcMng33Xe4znFvQweqc/uzk5zSOI3H52CYnjCfb5hA==",
+        "shasum": "326734642f403dabc3003209853bb70ad428ef48",
+        "tarball": "https://registry.npmjs.org/browserify-aes/-/browserify-aes-1.2.0.tgz",
+        "fileCount": 22,
+        "unpackedSize": 29767
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/browserify-aes_1.2.0_1522765396670_0.4253645800545085"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# browserify-aes\n[![Build Status](https://travis-ci.org/crypto-browserify/browserify-aes.svg)](https://travis-ci.org/crypto-browserify/browserify-aes)\n\nNode style aes for use in the browser.\nImplements:\n\n - createCipher\n - createCipheriv\n - createDecipher\n - createDecipheriv\n - getCiphers\n\nIn node.js, the `crypto` implementation is used, in browsers it falls back to a pure JavaScript implementation.\n\nMuch of this library has been taken from the aes implementation in [triplesec](https://github.com/keybase/triplesec),  a partial derivation of [crypto-js](https://code.google.com/p/crypto-js/).\n\n`EVP_BytesToKey` is a straight up port of the same function from OpenSSL as there is literally no documenation on it beyond it using 'undocumented extensions' for longer keys.\n\n## LICENSE [MIT](LICENSE)\n",
+  "maintainers": [
+    {
+      "email": "calvin.metcalf@gmail.com",
+      "name": "cwmma"
+    },
+    {
+      "email": "fedor@indutny.com",
+      "name": "indutny"
+    },
+    {
+      "email": "npm@dcousens.com",
+      "name": "dcousens"
+    },
+    {
+      "email": "jprichardson@gmail.com",
+      "name": "jprichardson"
+    }
+  ],
+  "time": {
+    "modified": "2019-01-01T10:51:29.823Z",
+    "created": "2014-10-15T21:24:21.295Z",
+    "0.0.0": "2014-10-15T21:24:21.295Z",
+    "0.1.0": "2014-10-16T13:55:12.697Z",
+    "0.2.0": "2014-10-16T19:09:27.713Z",
+    "0.2.1": "2014-10-16T22:34:59.912Z",
+    "0.2.2": "2014-10-17T12:54:15.473Z",
+    "0.3.0": "2014-10-20T12:26:39.571Z",
+    "0.4.0": "2014-10-28T20:10:54.971Z",
+    "0.5.0": "2014-11-11T20:10:48.011Z",
+    "0.6.0": "2014-11-11T23:52:37.022Z",
+    "0.6.1": "2014-12-01T14:13:47.295Z",
+    "0.7.1": "2014-12-23T15:31:45.034Z",
+    "0.7.2": "2014-12-23T16:11:51.496Z",
+    "0.7.3": "2015-01-03T14:19:57.999Z",
+    "0.8.0": "2015-01-04T18:29:11.912Z",
+    "0.8.1": "2015-01-05T16:16:00.973Z",
+    "1.0.0": "2015-01-19T15:26:54.948Z",
+    "1.0.1": "2015-05-21T05:50:21.062Z",
+    "1.0.2": "2015-07-20T15:58:16.167Z",
+    "1.0.3": "2015-08-07T16:34:08.671Z",
+    "1.0.4": "2015-09-23T18:24:06.555Z",
+    "1.0.5": "2015-09-27T23:21:28.118Z",
+    "1.0.6": "2016-01-21T19:50:40.204Z",
+    "1.0.7": "2017-09-05T10:22:48.884Z",
+    "1.0.8": "2017-09-05T11:14:14.083Z",
+    "1.1.0": "2017-10-12T18:34:42.123Z",
+    "1.1.1": "2017-10-19T12:32:36.201Z",
+    "1.2.0": "2018-04-03T14:23:16.754Z"
+  },
+  "homepage": "https://github.com/crypto-browserify/browserify-aes",
+  "keywords": [
+    "aes",
+    "crypto",
+    "browserify"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/crypto-browserify/browserify-aes.git"
+  },
+  "bugs": {
+    "url": "https://github.com/crypto-browserify/browserify-aes/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "users": {
+    "leonning": true
+  }
+}

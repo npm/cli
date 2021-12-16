@@ -1,0 +1,335 @@
+{
+  "_id": "websocket-extensions",
+  "_rev": "9-672d4a01418f5a0647845718f5aa1390",
+  "name": "websocket-extensions",
+  "description": "Generic extension manager for WebSocket connections",
+  "dist-tags": {
+    "latest": "0.1.4"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "websocket-extensions",
+      "description": "Generic extension manager for WebSocket connections",
+      "homepage": "http://github.com/faye/websocket-extensions-node",
+      "author": {
+        "name": "James Coglan",
+        "email": "jcoglan@gmail.com",
+        "url": "http://jcoglan.com/"
+      },
+      "keywords": [
+        "websocket"
+      ],
+      "license": "MIT",
+      "version": "0.1.0",
+      "engines": {
+        "node": ">=0.6.0"
+      },
+      "main": "./lib/websocket_extensions",
+      "devDependencies": {
+        "jstest": ""
+      },
+      "scripts": {
+        "test": "jstest spec/runner.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/faye/websocket-extensions-node.git"
+      },
+      "bugs": {
+        "url": "http://github.com/faye/websocket-extensions-node/issues"
+      },
+      "gitHead": "ea98426dc116d67c2ff7b51b0fa491d5f6058fb7",
+      "_id": "websocket-extensions@0.1.0",
+      "_shasum": "43567457158085e83ce7050f17ac6d988936320a",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "jcoglan",
+        "email": "jcoglan@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "jcoglan",
+          "email": "jcoglan@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "43567457158085e83ce7050f17ac6d988936320a",
+        "tarball": "https://registry.npmjs.org/websocket-extensions/-/websocket-extensions-0.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.1.1": {
+      "name": "websocket-extensions",
+      "description": "Generic extension manager for WebSocket connections",
+      "homepage": "http://github.com/faye/websocket-extensions-node",
+      "author": {
+        "name": "James Coglan",
+        "email": "jcoglan@gmail.com",
+        "url": "http://jcoglan.com/"
+      },
+      "keywords": [
+        "websocket"
+      ],
+      "license": "MIT",
+      "version": "0.1.1",
+      "engines": {
+        "node": ">=0.6.0"
+      },
+      "main": "./lib/websocket_extensions",
+      "devDependencies": {
+        "jstest": ""
+      },
+      "scripts": {
+        "test": "jstest spec/runner.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/faye/websocket-extensions-node.git"
+      },
+      "bugs": {
+        "url": "http://github.com/faye/websocket-extensions-node/issues"
+      },
+      "gitHead": "89104ddd48ccbbff20237e3fc5c123b4d4c5d9c1",
+      "_id": "websocket-extensions@0.1.1",
+      "_shasum": "76899499c184b6ef754377c2dbb0cd6cb55d29e7",
+      "_from": ".",
+      "_npmVersion": "2.5.1",
+      "_nodeVersion": "0.12.0",
+      "_npmUser": {
+        "name": "jcoglan",
+        "email": "jcoglan@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "jcoglan",
+          "email": "jcoglan@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "76899499c184b6ef754377c2dbb0cd6cb55d29e7",
+        "tarball": "https://registry.npmjs.org/websocket-extensions/-/websocket-extensions-0.1.1.tgz"
+      },
+      "directories": {}
+    },
+    "0.1.2": {
+      "name": "websocket-extensions",
+      "description": "Generic extension manager for WebSocket connections",
+      "homepage": "http://github.com/faye/websocket-extensions-node",
+      "author": {
+        "name": "James Coglan",
+        "email": "jcoglan@gmail.com",
+        "url": "http://jcoglan.com/"
+      },
+      "keywords": [
+        "websocket"
+      ],
+      "license": "MIT",
+      "version": "0.1.2",
+      "engines": {
+        "node": ">=0.8.0"
+      },
+      "files": [
+        "lib"
+      ],
+      "main": "./lib/websocket_extensions",
+      "devDependencies": {
+        "jstest": "*"
+      },
+      "scripts": {
+        "test": "jstest spec/runner.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/faye/websocket-extensions-node.git"
+      },
+      "bugs": {
+        "url": "http://github.com/faye/websocket-extensions-node/issues"
+      },
+      "gitHead": "5f040a15af1343f512af2fce9b12339044ce25eb",
+      "_id": "websocket-extensions@0.1.2",
+      "_shasum": "0e18781de629a18308ce1481650f67ffa2693a5d",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "4.8.4",
+      "_npmUser": {
+        "name": "jcoglan",
+        "email": "jcoglan@gmail.com"
+      },
+      "dist": {
+        "shasum": "0e18781de629a18308ce1481650f67ffa2693a5d",
+        "tarball": "https://registry.npmjs.org/websocket-extensions/-/websocket-extensions-0.1.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "jcoglan",
+          "email": "jcoglan@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/websocket-extensions-0.1.2.tgz_1505062237525_0.6339729737956077"
+      },
+      "directories": {}
+    },
+    "0.1.3": {
+      "name": "websocket-extensions",
+      "description": "Generic extension manager for WebSocket connections",
+      "homepage": "http://github.com/faye/websocket-extensions-node",
+      "author": {
+        "name": "James Coglan",
+        "email": "jcoglan@gmail.com",
+        "url": "http://jcoglan.com/"
+      },
+      "keywords": [
+        "websocket"
+      ],
+      "license": "MIT",
+      "version": "0.1.3",
+      "engines": {
+        "node": ">=0.8.0"
+      },
+      "files": [
+        "lib"
+      ],
+      "main": "./lib/websocket_extensions",
+      "devDependencies": {
+        "jstest": "*"
+      },
+      "scripts": {
+        "test": "jstest spec/runner.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/faye/websocket-extensions-node.git"
+      },
+      "bugs": {
+        "url": "http://github.com/faye/websocket-extensions-node/issues"
+      },
+      "gitHead": "2af2c182515de125938430a82d1fe2c85a71c88b",
+      "_id": "websocket-extensions@0.1.3",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "jcoglan",
+        "email": "jcoglan@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-nqHUnMXmBzT0w570r2JpJxfiSD1IzoI+HGVdd3aZ0yNi3ngvQ4jv1dtHt5VGxfI2yj5yqImPhOK4vmIh2xMbGg==",
+        "shasum": "5d2ff22977003ec687a4b87073dfbbac146ccf29",
+        "tarball": "https://registry.npmjs.org/websocket-extensions/-/websocket-extensions-0.1.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "jcoglan",
+          "email": "jcoglan@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/websocket-extensions-0.1.3.tgz_1510363474240_0.04513196274638176"
+      },
+      "directories": {}
+    },
+    "0.1.4": {
+      "name": "websocket-extensions",
+      "description": "Generic extension manager for WebSocket connections",
+      "homepage": "http://github.com/faye/websocket-extensions-node",
+      "author": {
+        "name": "James Coglan",
+        "email": "jcoglan@gmail.com",
+        "url": "http://jcoglan.com/"
+      },
+      "keywords": [
+        "websocket"
+      ],
+      "license": "Apache-2.0",
+      "version": "0.1.4",
+      "engines": {
+        "node": ">=0.8.0"
+      },
+      "main": "./lib/websocket_extensions",
+      "devDependencies": {
+        "jstest": "*"
+      },
+      "scripts": {
+        "test": "jstest spec/runner.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/faye/websocket-extensions-node.git"
+      },
+      "bugs": {
+        "url": "http://github.com/faye/websocket-extensions-node/issues"
+      },
+      "_resolved": "",
+      "_integrity": "",
+      "_from": "file:websocket-extensions-0.1.4.tgz",
+      "_id": "websocket-extensions@0.1.4",
+      "_nodeVersion": "14.3.0",
+      "_npmVersion": "6.14.5",
+      "dist": {
+        "integrity": "sha512-OqedPIGOfsDlo31UNwYbCFMSaO9m9G/0faIHj5/dZFDMFqPTcx6UwqyOy3COEaEOg/9VsGIpdqn62W5KhoKSpg==",
+        "shasum": "7f8473bc839dfd87608adb95d7eb075211578a42",
+        "tarball": "https://registry.npmjs.org/websocket-extensions/-/websocket-extensions-0.1.4.tgz",
+        "fileCount": 12,
+        "unpackedSize": 55037,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJe1k1ZCRA9TVsSAnZWagAAMw0P/0szPpEF3uzh53+imaau\nnA5kKAlDuoEw2H3wnW5A2yfMrSz6+VjkgzPH6y5aagZxLHOgXSuPJuWzRe1y\n2avLUXzKbqKSrsBhYwuDK2ysmMKAphcEl7GgmDoBrkHfJR31qHnxq6a3zPVX\nckOfDASA5vC+5aJIqyVsMudqV0Mu1fmqFzwgGedcAxNZfNurI8jIytrkXeL1\n/DfhaMGOiRFSW2J77ECrY0hRs1SyMXXISshFuM8FReRV1Y8/FsWvznEpnwRa\n83MGMP1m1KIgabj8mp/9WYTEIM6Wr01ilYew7dIiQKYS+nPp+yCVcdtGqjCm\nFKsQWI7rSAeP5itkLxSJu1MIEnIn7Z2pE0wiXyMIYH9jSZ6uzzGhJXBz8bYF\nq/HarfusWLFgUOPPSNx34ZMPzoX7Vs4AGIEFk/EEPrFlzvjOXeNpfJzsHzG1\nNKEARo2HwgxC0d64XXaKeloxTx1vNMvptaXRUaAd8rQH3BJJDIuvlmmFMYQF\nOpTahn3ZQ1u2YKYO2q9hHGxP02A8dYvq1lWd0yKaHW+xCVObx2SSY7noB1Vz\nlJ7bRd8aConiB57+hMb9U7vzZmFDN9w6pvcbajznDi9F3tpNIPv/DLUJQIre\n+zNluPmXM31BUp/xLfKNNuqh+v6duwguMji/C4cnHTi1hU8eScWAm6npRnu0\n6CT3\r\n=S4is\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "jcoglan",
+          "email": "jcoglan@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "jcoglan",
+        "email": "jcoglan@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/websocket-extensions_0.1.4_1591102809396_0.3827298260434504"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# websocket-extensions [![Build status](https://secure.travis-ci.org/faye/websocket-extensions-node.svg)](http://travis-ci.org/faye/websocket-extensions-node)\n\nA minimal framework that supports the implementation of WebSocket extensions in\na way that's decoupled from the main protocol. This library aims to allow a\nWebSocket extension to be written and used with any protocol library, by\ndefining abstract representations of frames and messages that allow modules to\nco-operate.\n\n`websocket-extensions` provides a container for registering extension plugins,\nand provides all the functions required to negotiate which extensions to use\nduring a session via the `Sec-WebSocket-Extensions` header. By implementing the\nAPIs defined in this document, an extension may be used by any WebSocket library\nbased on this framework.\n\n## Installation\n\n```\n$ npm install websocket-extensions\n```\n\n## Usage\n\nThere are two main audiences for this library: authors implementing the\nWebSocket protocol, and authors implementing extensions. End users of a\nWebSocket library or an extension should be able to use any extension by passing\nit as an argument to their chosen protocol library, without needing to know how\neither of them work, or how the `websocket-extensions` framework operates.\n\nThe library is designed with the aim that any protocol implementation and any\nextension can be used together, so long as they support the same abstract\nrepresentation of frames and messages.\n\n### Data types\n\nThe APIs provided by the framework rely on two data types; extensions will\nexpect to be given data and to be able to return data in these formats:\n\n#### *Frame*\n\n*Frame* is a structure representing a single WebSocket frame of any type. Frames\nare simple objects that must have at least the following properties, which\nrepresent the data encoded in the frame:\n\n| property     | description                                                        |\n| ------------ | ------------------------------------------------------------------ |\n| `final`      | `true` if the `FIN` bit is set, `false` otherwise                  |\n| `rsv1`       | `true` if the `RSV1` bit is set, `false` otherwise                 |\n| `rsv2`       | `true` if the `RSV2` bit is set, `false` otherwise                 |\n| `rsv3`       | `true` if the `RSV3` bit is set, `false` otherwise                 |\n| `opcode`     | the numeric opcode (`0`, `1`, `2`, `8`, `9`, or `10`) of the frame |\n| `masked`     | `true` if the `MASK` bit is set, `false` otherwise                 |\n| `maskingKey` | a 4-byte `Buffer` if `masked` is `true`, otherwise `null`          |\n| `payload`    | a `Buffer` containing the (unmasked) application data              |\n\n#### *Message*\n\nA *Message* represents a complete application message, which can be formed from\ntext, binary and continuation frames. It has the following properties:\n\n| property | description                                                       |\n| -------- | ----------------------------------------------------------------- |\n| `rsv1`   | `true` if the first frame of the message has the `RSV1` bit set   |\n| `rsv2`   | `true` if the first frame of the message has the `RSV2` bit set   |\n| `rsv3`   | `true` if the first frame of the message has the `RSV3` bit set   |\n| `opcode` | the numeric opcode (`1` or `2`) of the first frame of the message |\n| `data`   | the concatenation of all the frame payloads in the message        |\n\n### For driver authors\n\nA driver author is someone implementing the WebSocket protocol proper, and who\nwishes end users to be able to use WebSocket extensions with their library.\n\nAt the start of a WebSocket session, on both the client and the server side,\nthey should begin by creating an extension container and adding whichever\nextensions they want to use.\n\n```js\nvar Extensions = require('websocket-extensions'),\n    deflate    = require('permessage-deflate');\n\nvar exts = new Extensions();\nexts.add(deflate);\n```\n\nIn the following examples, `exts` refers to this `Extensions` instance.\n\n#### Client sessions\n\nClients will use the methods `generateOffer()` and `activate(header)`.\n\nAs part of the handshake process, the client must send a\n`Sec-WebSocket-Extensions` header to advertise that it supports the registered\nextensions. This header should be generated using:\n\n```js\nrequest.headers['sec-websocket-extensions'] = exts.generateOffer();\n```\n\nThis returns a string, for example `\"permessage-deflate;\nclient_max_window_bits\"`, that represents all the extensions the client is\noffering to use, and their parameters. This string may contain multiple offers\nfor the same extension.\n\nWhen the client receives the handshake response from the server, it should pass\nthe incoming `Sec-WebSocket-Extensions` header in to `exts` to activate the\nextensions the server has accepted:\n\n```js\nexts.activate(response.headers['sec-websocket-extensions']);\n```\n\nIf the server has sent any extension responses that the client does not\nrecognize, or are in conflict with one another for use of RSV bits, or that use\ninvalid parameters for the named extensions, then `exts.activate()` will\n`throw`. In this event, the client driver should fail the connection with\nclosing code `1010`.\n\n#### Server sessions\n\nServers will use the method `generateResponse(header)`.\n\nA server session needs to generate a `Sec-WebSocket-Extensions` header to send\nin its handshake response:\n\n```js\nvar clientOffer = request.headers['sec-websocket-extensions'],\n    extResponse = exts.generateResponse(clientOffer);\n\nresponse.headers['sec-websocket-extensions'] = extResponse;\n```\n\nCalling `exts.generateResponse(header)` activates those extensions the client\nhas asked to use, if they are registered, asks each extension for a set of\nresponse parameters, and returns a string containing the response parameters for\nall accepted extensions.\n\n#### In both directions\n\nBoth clients and servers will use the methods `validFrameRsv(frame)`,\n`processIncomingMessage(message)` and `processOutgoingMessage(message)`.\n\nThe WebSocket protocol requires that frames do not have any of the `RSV` bits\nset unless there is an extension in use that allows otherwise. When processing\nan incoming frame, sessions should pass a *Frame* object to:\n\n```js\nexts.validFrameRsv(frame)\n```\n\nIf this method returns `false`, the session should fail the WebSocket connection\nwith closing code `1002`.\n\nTo pass incoming messages through the extension stack, a session should\nconstruct a *Message* object according to the above datatype definitions, and\ncall:\n\n```js\nexts.processIncomingMessage(message, function(error, msg) {\n  // hand the message off to the application\n});\n```\n\nIf any extensions fail to process the message, then the callback will yield an\nerror and the session should fail the WebSocket connection with closing code\n`1010`. If `error` is `null`, then `msg` should be passed on to the application.\n\nTo pass outgoing messages through the extension stack, a session should\nconstruct a *Message* as before, and call:\n\n```js\nexts.processOutgoingMessage(message, function(error, msg) {\n  // write message to the transport\n});\n```\n\nIf any extensions fail to process the message, then the callback will yield an\nerror and the session should fail the WebSocket connection with closing code\n`1010`. If `error` is `null`, then `message` should be converted into frames\n(with the message's `rsv1`, `rsv2`, `rsv3` and `opcode` set on the first frame)\nand written to the transport.\n\nAt the end of the WebSocket session (either when the protocol is explicitly\nended or the transport connection disconnects), the driver should call:\n\n```js\nexts.close(function() {})\n```\n\nThe callback is invoked when all extensions have finished processing any\nmessages in the pipeline and it's safe to close the socket.\n\n### For extension authors\n\nAn extension author is someone implementing an extension that transforms\nWebSocket messages passing between the client and server. They would like to\nimplement their extension once and have it work with any protocol library.\n\nExtension authors will not install `websocket-extensions` or call it directly.\nInstead, they should implement the following API to allow their extension to\nplug into the `websocket-extensions` framework.\n\nAn `Extension` is any object that has the following properties:\n\n| property | description                                                                  |\n| -------- | ---------------------------------------------------------------------------- |\n| `name`   | a string containing the name of the extension as used in negotiation headers |\n| `type`   | a string, must be `\"permessage\"`                                             |\n| `rsv1`   | either `true` if the extension uses the RSV1 bit, `false` otherwise          |\n| `rsv2`   | either `true` if the extension uses the RSV2 bit, `false` otherwise          |\n| `rsv3`   | either `true` if the extension uses the RSV3 bit, `false` otherwise          |\n\nIt must also implement the following methods:\n\n```js\next.createClientSession()\n```\n\nThis returns a *ClientSession*, whose interface is defined below.\n\n```js\next.createServerSession(offers)\n```\n\nThis takes an array of offer params and returns a *ServerSession*, whose\ninterface is defined below. For example, if the client handshake contains the\noffer header:\n\n```\nSec-WebSocket-Extensions: permessage-deflate; server_no_context_takeover; server_max_window_bits=8, \\\n                          permessage-deflate; server_max_window_bits=15\n```\n\nthen the `permessage-deflate` extension will receive the call:\n\n```js\next.createServerSession([\n  { server_no_context_takeover: true, server_max_window_bits: 8 },\n  { server_max_window_bits: 15 }\n]);\n```\n\nThe extension must decide which set of parameters it wants to accept, if any,\nand return a *ServerSession* if it wants to accept the parameters and `null`\notherwise.\n\n#### *ClientSession*\n\nA *ClientSession* is the type returned by `ext.createClientSession()`. It must\nimplement the following methods, as well as the *Session* API listed below.\n\n```js\nclientSession.generateOffer()\n// e.g.  -> [\n//            { server_no_context_takeover: true, server_max_window_bits: 8 },\n//            { server_max_window_bits: 15 }\n//          ]\n```\n\nThis must return a set of parameters to include in the client's\n`Sec-WebSocket-Extensions` offer header. If the session wants to offer multiple\nconfigurations, it can return an array of sets of parameters as shown above.\n\n```js\nclientSession.activate(params) // -> true\n```\n\nThis must take a single set of parameters from the server's handshake response\nand use them to configure the client session. If the client accepts the given\nparameters, then this method must return `true`. If it returns any other value,\nthe framework will interpret this as the client rejecting the response, and will\n`throw`.\n\n#### *ServerSession*\n\nA *ServerSession* is the type returned by `ext.createServerSession(offers)`. It\nmust implement the following methods, as well as the *Session* API listed below.\n\n```js\nserverSession.generateResponse()\n// e.g.  -> { server_max_window_bits: 8 }\n```\n\nThis returns the set of parameters the server session wants to send in its\n`Sec-WebSocket-Extensions` response header. Only one set of parameters is\nreturned to the client per extension. Server sessions that would confict on\ntheir use of RSV bits are not activated.\n\n#### *Session*\n\nThe *Session* API must be implemented by both client and server sessions. It\ncontains two methods, `processIncomingMessage(message)` and\n`processOutgoingMessage(message)`.\n\n```js\nsession.processIncomingMessage(message, function(error, msg) { ... })\n```\n\nThe session must implement this method to take an incoming *Message* as defined\nabove, transform it in any way it needs, then return it via the callback. If\nthere is an error processing the message, this method should yield an error as\nthe first argument.\n\n```js\nsession.processOutgoingMessage(message, function(error, msg) { ... })\n```\n\nThe session must implement this method to take an outgoing *Message* as defined\nabove, transform it in any way it needs, then return it via the callback. If\nthere is an error processing the message, this method should yield an error as\nthe first argument.\n\nNote that both `processIncomingMessage()` and `processOutgoingMessage()` can\nperform their logic asynchronously, are allowed to process multiple messages\nconcurrently, and are not required to complete working on messages in the same\norder the messages arrive. `websocket-extensions` will reorder messages as your\nextension emits them and will make sure every extension is given messages in the\norder they arrive from the driver. This allows extensions to maintain state that\ndepends on the messages' wire order, for example keeping a DEFLATE compression\ncontext between messages.\n\n```js\nsession.close()\n```\n\nThe framework will call this method when the WebSocket session ends, allowing\nthe session to release any resources it's using.\n\n## Examples\n\n- Consumer: [websocket-driver](https://github.com/faye/websocket-driver-node)\n- Provider: [permessage-deflate](https://github.com/faye/permessage-deflate-node)\n",
+  "maintainers": [
+    {
+      "name": "jcoglan",
+      "email": "jcoglan@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-06-02T13:00:13.735Z",
+    "created": "2014-12-13T12:22:20.526Z",
+    "0.1.0": "2014-12-13T12:22:20.526Z",
+    "0.1.1": "2015-02-19T09:48:20.048Z",
+    "0.1.2": "2017-09-10T16:50:38.683Z",
+    "0.1.3": "2017-11-11T01:24:35.510Z",
+    "0.1.4": "2020-06-02T13:00:09.535Z"
+  },
+  "homepage": "http://github.com/faye/websocket-extensions-node",
+  "keywords": [
+    "websocket"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/faye/websocket-extensions-node.git"
+  },
+  "author": {
+    "name": "James Coglan",
+    "email": "jcoglan@gmail.com",
+    "url": "http://jcoglan.com/"
+  },
+  "bugs": {
+    "url": "http://github.com/faye/websocket-extensions-node/issues"
+  },
+  "license": "Apache-2.0",
+  "readmeFilename": "README.md",
+  "users": {
+    "staydan": true,
+    "jimknopf": true
+  }
+}

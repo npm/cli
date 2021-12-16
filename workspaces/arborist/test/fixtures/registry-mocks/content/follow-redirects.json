@@ -1,0 +1,4459 @@
+{
+  "_id": "follow-redirects",
+  "_rev": "63-855da6d472f913b3e1dd3c33e858ef06",
+  "name": "follow-redirects",
+  "description": "HTTP and HTTPS modules that follow redirects.",
+  "dist-tags": {
+    "latest": "1.13.0"
+  },
+  "versions": {
+    "0.0.1": {
+      "name": "follow-redirects",
+      "version": "0.0.1",
+      "description": "HTTP and HTTPS modules that follow redirects.",
+      "main": "index.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:olalonde/follow-redirects.git"
+      },
+      "homepage": "",
+      "keywords": [
+        "http",
+        "https",
+        "url",
+        "redirect",
+        "client",
+        "location",
+        "utility"
+      ],
+      "author": {
+        "name": "Olivier Lalonde",
+        "email": "olalonde@gmail.com",
+        "url": "http://www.syskall.com"
+      },
+      "dependencies": {
+        "underscore": ""
+      },
+      "devDependencies": {
+        "colors": ""
+      },
+      "license": "BSD",
+      "_id": "follow-redirects@0.0.1",
+      "dist": {
+        "shasum": "b0b9078dc855b13a7acfebcb099b9f98f2366772",
+        "tarball": "https://registry.npmjs.org/follow-redirects/-/follow-redirects-0.0.1.tgz"
+      },
+      "_npmVersion": "1.1.62",
+      "_npmUser": {
+        "name": "olalonde",
+        "email": "olalonde@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "olalonde",
+          "email": "olalonde@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.2": {
+      "name": "follow-redirects",
+      "version": "0.0.2",
+      "description": "HTTP and HTTPS modules that follow redirects.",
+      "main": "index.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:olalonde/follow-redirects.git"
+      },
+      "homepage": "",
+      "keywords": [
+        "http",
+        "https",
+        "url",
+        "redirect",
+        "client",
+        "location",
+        "utility"
+      ],
+      "author": {
+        "name": "Olivier Lalonde",
+        "email": "olalonde@gmail.com",
+        "url": "http://www.syskall.com"
+      },
+      "dependencies": {
+        "underscore": ""
+      },
+      "devDependencies": {
+        "colors": ""
+      },
+      "license": "BSD",
+      "_id": "follow-redirects@0.0.2",
+      "dist": {
+        "shasum": "06c81345f422a3bfd93583bd0b6c0daa58cb54b9",
+        "tarball": "https://registry.npmjs.org/follow-redirects/-/follow-redirects-0.0.2.tgz"
+      },
+      "_npmVersion": "1.1.62",
+      "_npmUser": {
+        "name": "olalonde",
+        "email": "olalonde@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "olalonde",
+          "email": "olalonde@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.3": {
+      "name": "follow-redirects",
+      "version": "0.0.3",
+      "description": "HTTP and HTTPS modules that follow redirects.",
+      "main": "index.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:olalonde/follow-redirects.git"
+      },
+      "homepage": "",
+      "keywords": [
+        "http",
+        "https",
+        "url",
+        "redirect",
+        "client",
+        "location",
+        "utility"
+      ],
+      "author": {
+        "name": "Olivier Lalonde",
+        "email": "olalonde@gmail.com",
+        "url": "http://www.syskall.com"
+      },
+      "dependencies": {
+        "underscore": ""
+      },
+      "devDependencies": {
+        "colors": ""
+      },
+      "license": "BSD",
+      "_id": "follow-redirects@0.0.3",
+      "dist": {
+        "shasum": "6ce67a24db1fe13f226c1171a72a7ef2b17b8f65",
+        "tarball": "https://registry.npmjs.org/follow-redirects/-/follow-redirects-0.0.3.tgz"
+      },
+      "_npmVersion": "1.1.62",
+      "_npmUser": {
+        "name": "olalonde",
+        "email": "olalonde@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "olalonde",
+          "email": "olalonde@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.4": {
+      "name": "follow-redirects",
+      "version": "0.0.4",
+      "description": "HTTP and HTTPS modules that follow redirects.",
+      "main": "index.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:olalonde/follow-redirects.git"
+      },
+      "homepage": "https://github.com/olalonde/follow-redirects",
+      "keywords": [
+        "http",
+        "https",
+        "url",
+        "redirect",
+        "client",
+        "location",
+        "utility"
+      ],
+      "author": {
+        "name": "Olivier Lalonde",
+        "email": "olalonde@gmail.com",
+        "url": "http://www.syskall.com"
+      },
+      "dependencies": {
+        "underscore": ""
+      },
+      "devDependencies": {
+        "colors": ""
+      },
+      "license": "MIT",
+      "gitHead": "0eb72aca9f61ffdf0b064b3582a4591756890853",
+      "bugs": {
+        "url": "https://github.com/olalonde/follow-redirects/issues"
+      },
+      "_id": "follow-redirects@0.0.4",
+      "_shasum": "78d2faec253da7bbd4bbb6733e05132a6ae9b483",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "olalonde",
+        "email": "olalonde@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "olalonde",
+          "email": "olalonde@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "78d2faec253da7bbd4bbb6733e05132a6ae9b483",
+        "tarball": "https://registry.npmjs.org/follow-redirects/-/follow-redirects-0.0.4.tgz"
+      },
+      "directories": {}
+    },
+    "0.0.5": {
+      "name": "follow-redirects",
+      "version": "0.0.5",
+      "description": "HTTP and HTTPS modules that follow redirects.",
+      "main": "index.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:olalonde/follow-redirects.git"
+      },
+      "homepage": "https://github.com/olalonde/follow-redirects",
+      "keywords": [
+        "http",
+        "https",
+        "url",
+        "redirect",
+        "client",
+        "location",
+        "utility"
+      ],
+      "author": {
+        "name": "Olivier Lalonde",
+        "email": "olalonde@gmail.com",
+        "url": "http://www.syskall.com"
+      },
+      "dependencies": {
+        "debug": "^2.2.0",
+        "underscore": ""
+      },
+      "devDependencies": {
+        "colors": ""
+      },
+      "license": "MIT",
+      "gitHead": "1dd1218dbbcbea595b00c107a7fc04aab17e900d",
+      "bugs": {
+        "url": "https://github.com/olalonde/follow-redirects/issues"
+      },
+      "_id": "follow-redirects@0.0.5",
+      "_shasum": "c4d40dddfd8a9349e052c50c00222a5e393bae32",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "olalonde",
+        "email": "olalonde@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "olalonde",
+          "email": "olalonde@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "c4d40dddfd8a9349e052c50c00222a5e393bae32",
+        "tarball": "https://registry.npmjs.org/follow-redirects/-/follow-redirects-0.0.5.tgz"
+      },
+      "directories": {}
+    },
+    "0.0.6": {
+      "name": "follow-redirects",
+      "version": "0.0.6",
+      "description": "HTTP and HTTPS modules that follow redirects.",
+      "main": "index.js",
+      "scripts": {
+        "test": "npm run cover && npm run lint && npm run style",
+        "lint": "jshint *.js test/*.js test/**/*.js",
+        "style": "jscs *.js && jscs test/*.js test/**/*.js --config=test/.jscsrc",
+        "cover": "BLUEBIRD_DEBUG=1 istanbul cover ./node_modules/.bin/_mocha",
+        "debug": "BLUEBIRD_DEBUG=1 mocha"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:olalonde/follow-redirects.git"
+      },
+      "homepage": "https://github.com/olalonde/follow-redirects",
+      "bugs": {
+        "url": "https://github.com/olalonde/follow-redirects/issues"
+      },
+      "keywords": [
+        "http",
+        "https",
+        "url",
+        "redirect",
+        "client",
+        "location",
+        "utility"
+      ],
+      "author": {
+        "name": "Olivier Lalonde",
+        "email": "olalonde@gmail.com",
+        "url": "http://www.syskall.com"
+      },
+      "contributors": [
+        {
+          "name": "James Talmage",
+          "email": "james@talmage.io"
+        }
+      ],
+      "files": [
+        "index.js",
+        "create.js",
+        "http.js",
+        "https.js"
+      ],
+      "dependencies": {
+        "debug": "^2.2.0"
+      },
+      "devDependencies": {
+        "bluebird": "^2.9.30",
+        "concat-stream": "^1.5.0",
+        "coveralls": "^2.11.2",
+        "express": "^4.13.0",
+        "istanbul": "^0.3.17",
+        "jscs": "^1.13.1",
+        "jshint": "^2.8.0",
+        "mocha": "^2.2.5",
+        "semver": "~4.3.6"
+      },
+      "license": "MIT",
+      "gitHead": "795bae039c7a756dbed9ce7c4a45cf2d2ed7dd83",
+      "_id": "follow-redirects@0.0.6",
+      "_shasum": "a3d57beaea728d96a5dbb6f1e790351d2ee18331",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "olalonde",
+        "email": "olalonde@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "olalonde",
+          "email": "olalonde@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "a3d57beaea728d96a5dbb6f1e790351d2ee18331",
+        "tarball": "https://registry.npmjs.org/follow-redirects/-/follow-redirects-0.0.6.tgz"
+      },
+      "directories": {}
+    },
+    "0.0.7": {
+      "name": "follow-redirects",
+      "version": "0.0.7",
+      "description": "HTTP and HTTPS modules that follow redirects.",
+      "main": "index.js",
+      "scripts": {
+        "test": "npm run cover && npm run lint && npm run style",
+        "lint": "jshint *.js test/*.js test/**/*.js",
+        "style": "jscs *.js && jscs test/*.js test/**/*.js --config=test/.jscsrc",
+        "cover": "BLUEBIRD_DEBUG=1 istanbul cover ./node_modules/.bin/_mocha",
+        "debug": "BLUEBIRD_DEBUG=1 mocha"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/olalonde/follow-redirects.git"
+      },
+      "homepage": "https://github.com/olalonde/follow-redirects",
+      "bugs": {
+        "url": "https://github.com/olalonde/follow-redirects/issues"
+      },
+      "keywords": [
+        "http",
+        "https",
+        "url",
+        "redirect",
+        "client",
+        "location",
+        "utility"
+      ],
+      "author": {
+        "name": "Olivier Lalonde",
+        "email": "olalonde@gmail.com",
+        "url": "http://www.syskall.com"
+      },
+      "contributors": [
+        {
+          "name": "James Talmage",
+          "email": "james@talmage.io"
+        }
+      ],
+      "files": [
+        "index.js",
+        "create.js",
+        "http.js",
+        "https.js"
+      ],
+      "dependencies": {
+        "debug": "^2.2.0",
+        "stream-consume": "^0.1.0"
+      },
+      "devDependencies": {
+        "bluebird": "^2.9.30",
+        "concat-stream": "^1.5.0",
+        "coveralls": "^2.11.2",
+        "express": "^4.13.0",
+        "istanbul": "^0.3.17",
+        "jscs": "^1.13.1",
+        "jshint": "^2.8.0",
+        "mocha": "^2.2.5",
+        "semver": "~4.3.6"
+      },
+      "license": "MIT",
+      "gitHead": "5137f3958a179f0bf9310886edb77efd3b85a208",
+      "_id": "follow-redirects@0.0.7",
+      "_shasum": "34b90bab2a911aa347571da90f22bd36ecd8a919",
+      "_from": ".",
+      "_npmVersion": "2.14.2",
+      "_nodeVersion": "0.12.7",
+      "_npmUser": {
+        "name": "james.talmage",
+        "email": "james@talmage.io"
+      },
+      "dist": {
+        "shasum": "34b90bab2a911aa347571da90f22bd36ecd8a919",
+        "tarball": "https://registry.npmjs.org/follow-redirects/-/follow-redirects-0.0.7.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "olalonde",
+          "email": "olalonde@gmail.com"
+        },
+        {
+          "name": "james.talmage",
+          "email": "james@talmage.io"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.0": {
+      "name": "follow-redirects",
+      "version": "0.1.0",
+      "description": "HTTP and HTTPS modules that follow redirects.",
+      "main": "index.js",
+      "scripts": {
+        "test": "npm run cover && npm run lint && npm run style",
+        "lint": "jshint *.js test/*.js test/**/*.js",
+        "style": "jscs *.js && jscs test/*.js test/**/*.js --config=test/.jscsrc",
+        "cover": "BLUEBIRD_DEBUG=1 istanbul cover ./node_modules/.bin/_mocha",
+        "debug": "BLUEBIRD_DEBUG=1 mocha"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/olalonde/follow-redirects.git"
+      },
+      "homepage": "https://github.com/olalonde/follow-redirects",
+      "bugs": {
+        "url": "https://github.com/olalonde/follow-redirects/issues"
+      },
+      "keywords": [
+        "http",
+        "https",
+        "url",
+        "redirect",
+        "client",
+        "location",
+        "utility"
+      ],
+      "author": {
+        "name": "Olivier Lalonde",
+        "email": "olalonde@gmail.com",
+        "url": "http://www.syskall.com"
+      },
+      "contributors": [
+        {
+          "name": "James Talmage",
+          "email": "james@talmage.io"
+        }
+      ],
+      "files": [
+        "index.js",
+        "create.js",
+        "http.js",
+        "https.js"
+      ],
+      "dependencies": {
+        "debug": "^2.2.0",
+        "stream-consume": "^0.1.0"
+      },
+      "devDependencies": {
+        "bluebird": "^2.9.30",
+        "concat-stream": "^1.5.0",
+        "coveralls": "^2.11.2",
+        "express": "^4.13.0",
+        "istanbul": "^0.3.17",
+        "jscs": "^1.13.1",
+        "jshint": "^2.8.0",
+        "mocha": "^2.2.5",
+        "semver": "~4.3.6"
+      },
+      "license": "MIT",
+      "gitHead": "20537d21a1e4eb9371a0c2d74cff5a041ee2e22a",
+      "_id": "follow-redirects@0.1.0",
+      "_shasum": "8333fbee65d2fa8585241ebb1372fc01e5b1f671",
+      "_from": ".",
+      "_npmVersion": "3.8.2",
+      "_nodeVersion": "5.9.0",
+      "_npmUser": {
+        "name": "jamestalmage",
+        "email": "james@talmage.io"
+      },
+      "dist": {
+        "shasum": "8333fbee65d2fa8585241ebb1372fc01e5b1f671",
+        "tarball": "https://registry.npmjs.org/follow-redirects/-/follow-redirects-0.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "jamestalmage",
+          "email": "james@talmage.io"
+        },
+        {
+          "name": "olalonde",
+          "email": "olalonde@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/follow-redirects-0.1.0.tgz_1460316696773_0.05581280658952892"
+      },
+      "directories": {}
+    },
+    "0.2.0": {
+      "name": "follow-redirects",
+      "version": "0.2.0",
+      "description": "HTTP and HTTPS modules that follow redirects.",
+      "main": "index.js",
+      "scripts": {
+        "test": "xo && BLUEBIRD_DEBUG=1 nyc mocha"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/olalonde/follow-redirects.git"
+      },
+      "homepage": "https://github.com/olalonde/follow-redirects",
+      "bugs": {
+        "url": "https://github.com/olalonde/follow-redirects/issues"
+      },
+      "keywords": [
+        "http",
+        "https",
+        "url",
+        "redirect",
+        "client",
+        "location",
+        "utility"
+      ],
+      "author": {
+        "name": "Olivier Lalonde",
+        "email": "olalonde@gmail.com",
+        "url": "http://www.syskall.com"
+      },
+      "contributors": [
+        {
+          "name": "James Talmage",
+          "email": "james@talmage.io"
+        }
+      ],
+      "files": [
+        "index.js",
+        "create.js",
+        "http.js",
+        "https.js"
+      ],
+      "dependencies": {
+        "debug": "^2.2.0",
+        "stream-consume": "^0.1.0"
+      },
+      "devDependencies": {
+        "bluebird": "^3.4.0",
+        "concat-stream": "^1.5.0",
+        "coveralls": "^2.11.2",
+        "express": "^4.13.0",
+        "mocha": "^2.2.5",
+        "nyc": "^6.4.4",
+        "semver": "~5.1.0",
+        "xo": "^0.15.1"
+      },
+      "license": "MIT",
+      "nyc": {
+        "reporter": [
+          "lcov",
+          "text"
+        ]
+      },
+      "xo": {
+        "envs": [
+          "mocha"
+        ]
+      },
+      "gitHead": "9a13ff409ce5b05463ee0785cb4c048c21800561",
+      "_id": "follow-redirects@0.2.0",
+      "_shasum": "e0229d7a388bb5ff7b29f44fc1e1b62e921272df",
+      "_from": ".",
+      "_npmVersion": "3.8.6",
+      "_nodeVersion": "5.10.1",
+      "_npmUser": {
+        "name": "jamestalmage",
+        "email": "james@talmage.io"
+      },
+      "dist": {
+        "shasum": "e0229d7a388bb5ff7b29f44fc1e1b62e921272df",
+        "tarball": "https://registry.npmjs.org/follow-redirects/-/follow-redirects-0.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "jamestalmage",
+          "email": "james@talmage.io"
+        },
+        {
+          "name": "olalonde",
+          "email": "olalonde@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/follow-redirects-0.2.0.tgz_1465250402713_0.451352697564289"
+      },
+      "directories": {}
+    },
+    "0.3.0": {
+      "name": "follow-redirects",
+      "version": "0.3.0",
+      "description": "HTTP and HTTPS modules that follow redirects.",
+      "main": "index.js",
+      "scripts": {
+        "test": "xo && BLUEBIRD_DEBUG=1 nyc mocha"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/olalonde/follow-redirects.git"
+      },
+      "homepage": "https://github.com/olalonde/follow-redirects",
+      "bugs": {
+        "url": "https://github.com/olalonde/follow-redirects/issues"
+      },
+      "keywords": [
+        "http",
+        "https",
+        "url",
+        "redirect",
+        "client",
+        "location",
+        "utility"
+      ],
+      "author": {
+        "name": "Olivier Lalonde",
+        "email": "olalonde@gmail.com",
+        "url": "http://www.syskall.com"
+      },
+      "contributors": [
+        {
+          "name": "James Talmage",
+          "email": "james@talmage.io"
+        }
+      ],
+      "files": [
+        "index.js",
+        "create.js",
+        "http.js",
+        "https.js"
+      ],
+      "dependencies": {
+        "debug": "^2.2.0"
+      },
+      "devDependencies": {
+        "bluebird": "^3.4.0",
+        "concat-stream": "^1.5.0",
+        "coveralls": "^2.11.2",
+        "express": "^4.13.0",
+        "mocha": "^3.1.2",
+        "nyc": "^8.3.1",
+        "semver": "^5.3.0",
+        "xo": "^0.17.0"
+      },
+      "license": "MIT",
+      "nyc": {
+        "reporter": [
+          "lcov",
+          "text"
+        ]
+      },
+      "xo": {
+        "envs": [
+          "mocha"
+        ]
+      },
+      "gitHead": "3a3f8b040b32098606630278176e2dc54cf29723",
+      "_id": "follow-redirects@0.3.0",
+      "_shasum": "6d9935db28386943b19730cbc0ae1a3b72ef0bc8",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.7.0",
+      "_npmUser": {
+        "name": "rubenverborgh",
+        "email": "ruben.verborgh@gmail.com"
+      },
+      "dist": {
+        "shasum": "6d9935db28386943b19730cbc0ae1a3b72ef0bc8",
+        "tarball": "https://registry.npmjs.org/follow-redirects/-/follow-redirects-0.3.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "jamestalmage",
+          "email": "james@talmage.io"
+        },
+        {
+          "name": "olalonde",
+          "email": "olalonde@gmail.com"
+        },
+        {
+          "name": "rubenverborgh",
+          "email": "ruben.verborgh@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/follow-redirects-0.3.0.tgz_1476978547120_0.37060856400057673"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "follow-redirects",
+      "version": "1.0.0",
+      "description": "HTTP and HTTPS modules that follow redirects.",
+      "main": "index.js",
+      "scripts": {
+        "test": "xo && BLUEBIRD_DEBUG=1 nyc mocha"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/olalonde/follow-redirects.git"
+      },
+      "homepage": "https://github.com/olalonde/follow-redirects",
+      "bugs": {
+        "url": "https://github.com/olalonde/follow-redirects/issues"
+      },
+      "keywords": [
+        "http",
+        "https",
+        "url",
+        "redirect",
+        "client",
+        "location",
+        "utility"
+      ],
+      "author": {
+        "name": "Olivier Lalonde",
+        "email": "olalonde@gmail.com",
+        "url": "http://www.syskall.com"
+      },
+      "contributors": [
+        {
+          "name": "James Talmage",
+          "email": "james@talmage.io"
+        },
+        {
+          "name": "Ruben Verborgh",
+          "email": "ruben@verborgh.org",
+          "url": "https://ruben.verborgh.org/"
+        }
+      ],
+      "files": [
+        "index.js",
+        "create.js",
+        "http.js",
+        "https.js"
+      ],
+      "dependencies": {
+        "debug": "^2.2.0"
+      },
+      "devDependencies": {
+        "bluebird": "^3.4.0",
+        "concat-stream": "^1.5.0",
+        "coveralls": "^2.11.2",
+        "express": "^4.13.0",
+        "mocha": "^3.1.2",
+        "nyc": "^8.3.1",
+        "xo": "^0.17.0"
+      },
+      "license": "MIT",
+      "nyc": {
+        "reporter": [
+          "lcov",
+          "text"
+        ]
+      },
+      "xo": {
+        "envs": [
+          "mocha"
+        ]
+      },
+      "gitHead": "4010b44f4715c89dd75037f66458b93fd59599a1",
+      "_id": "follow-redirects@1.0.0",
+      "_shasum": "8e34298cbd2e176f254effec75a1c78cc849fd37",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.7.0",
+      "_npmUser": {
+        "name": "rubenverborgh",
+        "email": "ruben.verborgh@gmail.com"
+      },
+      "dist": {
+        "shasum": "8e34298cbd2e176f254effec75a1c78cc849fd37",
+        "tarball": "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "jamestalmage",
+          "email": "james@talmage.io"
+        },
+        {
+          "name": "olalonde",
+          "email": "olalonde@gmail.com"
+        },
+        {
+          "name": "rubenverborgh",
+          "email": "ruben.verborgh@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/follow-redirects-1.0.0.tgz_1477238992406_0.5941755524836481"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "follow-redirects",
+      "version": "1.1.0",
+      "description": "HTTP and HTTPS modules that follow redirects.",
+      "main": "index.js",
+      "scripts": {
+        "test": "xo && BLUEBIRD_DEBUG=1 nyc mocha"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/olalonde/follow-redirects.git"
+      },
+      "homepage": "https://github.com/olalonde/follow-redirects",
+      "bugs": {
+        "url": "https://github.com/olalonde/follow-redirects/issues"
+      },
+      "keywords": [
+        "http",
+        "https",
+        "url",
+        "redirect",
+        "client",
+        "location",
+        "utility"
+      ],
+      "author": {
+        "name": "Olivier Lalonde",
+        "email": "olalonde@gmail.com",
+        "url": "http://www.syskall.com"
+      },
+      "contributors": [
+        {
+          "name": "James Talmage",
+          "email": "james@talmage.io"
+        },
+        {
+          "name": "Ruben Verborgh",
+          "email": "ruben@verborgh.org",
+          "url": "https://ruben.verborgh.org/"
+        }
+      ],
+      "files": [
+        "index.js",
+        "create.js",
+        "http.js",
+        "https.js"
+      ],
+      "dependencies": {
+        "debug": "^2.2.0"
+      },
+      "devDependencies": {
+        "bluebird": "^3.4.0",
+        "concat-stream": "^1.5.0",
+        "coveralls": "^2.11.2",
+        "express": "^4.13.0",
+        "mocha": "^3.1.2",
+        "nyc": "^8.3.1",
+        "xo": "^0.17.0"
+      },
+      "license": "MIT",
+      "nyc": {
+        "reporter": [
+          "lcov",
+          "text"
+        ]
+      },
+      "xo": {
+        "envs": [
+          "mocha"
+        ]
+      },
+      "gitHead": "6626d432f0e6a9919dab492bce484e3d9f4657e4",
+      "_id": "follow-redirects@1.1.0",
+      "_shasum": "f0a07e20b96396f096873f16ea2b9638a79e7b0c",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.7.0",
+      "_npmUser": {
+        "name": "rubenverborgh",
+        "email": "ruben.verborgh@gmail.com"
+      },
+      "dist": {
+        "shasum": "f0a07e20b96396f096873f16ea2b9638a79e7b0c",
+        "tarball": "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "jamestalmage",
+          "email": "james@talmage.io"
+        },
+        {
+          "name": "olalonde",
+          "email": "olalonde@gmail.com"
+        },
+        {
+          "name": "rubenverborgh",
+          "email": "ruben.verborgh@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/follow-redirects-1.1.0.tgz_1478450677901_0.6304203481413424"
+      },
+      "directories": {}
+    },
+    "1.2.0": {
+      "name": "follow-redirects",
+      "version": "1.2.0",
+      "description": "HTTP and HTTPS modules that follow redirects.",
+      "main": "index.js",
+      "scripts": {
+        "test": "xo && BLUEBIRD_DEBUG=1 nyc mocha"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/olalonde/follow-redirects.git"
+      },
+      "homepage": "https://github.com/olalonde/follow-redirects",
+      "bugs": {
+        "url": "https://github.com/olalonde/follow-redirects/issues"
+      },
+      "keywords": [
+        "http",
+        "https",
+        "url",
+        "redirect",
+        "client",
+        "location",
+        "utility"
+      ],
+      "author": {
+        "name": "Olivier Lalonde",
+        "email": "olalonde@gmail.com",
+        "url": "http://www.syskall.com"
+      },
+      "contributors": [
+        {
+          "name": "James Talmage",
+          "email": "james@talmage.io"
+        },
+        {
+          "name": "Ruben Verborgh",
+          "email": "ruben@verborgh.org",
+          "url": "https://ruben.verborgh.org/"
+        }
+      ],
+      "files": [
+        "index.js",
+        "create.js",
+        "http.js",
+        "https.js"
+      ],
+      "dependencies": {
+        "debug": "^2.2.0"
+      },
+      "devDependencies": {
+        "bluebird": "^3.4.0",
+        "concat-stream": "^1.5.0",
+        "coveralls": "^2.11.2",
+        "express": "^4.13.0",
+        "mocha": "^3.1.2",
+        "nyc": "^8.3.1",
+        "xo": "^0.17.0"
+      },
+      "license": "MIT",
+      "nyc": {
+        "reporter": [
+          "lcov",
+          "text"
+        ]
+      },
+      "xo": {
+        "envs": [
+          "mocha"
+        ]
+      },
+      "gitHead": "7dd0cb2a92cf04c8e95432c341a3ec881abeff41",
+      "_id": "follow-redirects@1.2.0",
+      "_shasum": "e1746cbf9c9c1d5fbff07de315d0c8730ad68172",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.7.0",
+      "_npmUser": {
+        "name": "rubenverborgh",
+        "email": "ruben.verborgh@gmail.com"
+      },
+      "dist": {
+        "shasum": "e1746cbf9c9c1d5fbff07de315d0c8730ad68172",
+        "tarball": "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "jamestalmage",
+          "email": "james@talmage.io"
+        },
+        {
+          "name": "olalonde",
+          "email": "olalonde@gmail.com"
+        },
+        {
+          "name": "rubenverborgh",
+          "email": "ruben.verborgh@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/follow-redirects-1.2.0.tgz_1481147454200_0.2246841248124838"
+      },
+      "directories": {}
+    },
+    "1.2.1": {
+      "name": "follow-redirects",
+      "version": "1.2.1",
+      "description": "HTTP and HTTPS modules that follow redirects.",
+      "main": "index.js",
+      "scripts": {
+        "test": "xo && BLUEBIRD_DEBUG=1 nyc mocha"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/olalonde/follow-redirects.git"
+      },
+      "homepage": "https://github.com/olalonde/follow-redirects",
+      "bugs": {
+        "url": "https://github.com/olalonde/follow-redirects/issues"
+      },
+      "keywords": [
+        "http",
+        "https",
+        "url",
+        "redirect",
+        "client",
+        "location",
+        "utility"
+      ],
+      "author": {
+        "name": "Olivier Lalonde",
+        "email": "olalonde@gmail.com",
+        "url": "http://www.syskall.com"
+      },
+      "contributors": [
+        {
+          "name": "James Talmage",
+          "email": "james@talmage.io"
+        },
+        {
+          "name": "Ruben Verborgh",
+          "email": "ruben@verborgh.org",
+          "url": "https://ruben.verborgh.org/"
+        }
+      ],
+      "files": [
+        "index.js",
+        "create.js",
+        "http.js",
+        "https.js"
+      ],
+      "dependencies": {
+        "debug": "^2.4.5"
+      },
+      "devDependencies": {
+        "bluebird": "^3.4.0",
+        "concat-stream": "^1.5.0",
+        "coveralls": "^2.11.15",
+        "express": "^4.13.0",
+        "mocha": "^3.2.0",
+        "nyc": "^10.0.0",
+        "xo": "^0.17.1"
+      },
+      "license": "MIT",
+      "nyc": {
+        "reporter": [
+          "lcov",
+          "text"
+        ]
+      },
+      "xo": {
+        "envs": [
+          "mocha"
+        ]
+      },
+      "gitHead": "a3cca068fbc3ea7377f8aaf658982f997c1c6dd3",
+      "_id": "follow-redirects@1.2.1",
+      "_shasum": "796c716970df4fb0096165393545040f61b00f59",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.7.0",
+      "_npmUser": {
+        "name": "rubenverborgh",
+        "email": "ruben.verborgh@gmail.com"
+      },
+      "dist": {
+        "shasum": "796c716970df4fb0096165393545040f61b00f59",
+        "tarball": "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.2.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "jamestalmage",
+          "email": "james@talmage.io"
+        },
+        {
+          "name": "olalonde",
+          "email": "olalonde@gmail.com"
+        },
+        {
+          "name": "rubenverborgh",
+          "email": "ruben.verborgh@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/follow-redirects-1.2.1.tgz_1482065567827_0.582136373501271"
+      },
+      "directories": {}
+    },
+    "1.2.2": {
+      "name": "follow-redirects",
+      "version": "1.2.2",
+      "description": "HTTP and HTTPS modules that follow redirects.",
+      "main": "index.js",
+      "scripts": {
+        "test": "xo && BLUEBIRD_DEBUG=1 nyc mocha"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/olalonde/follow-redirects.git"
+      },
+      "homepage": "https://github.com/olalonde/follow-redirects",
+      "bugs": {
+        "url": "https://github.com/olalonde/follow-redirects/issues"
+      },
+      "keywords": [
+        "http",
+        "https",
+        "url",
+        "redirect",
+        "client",
+        "location",
+        "utility"
+      ],
+      "author": {
+        "name": "Olivier Lalonde",
+        "email": "olalonde@gmail.com",
+        "url": "http://www.syskall.com"
+      },
+      "contributors": [
+        {
+          "name": "James Talmage",
+          "email": "james@talmage.io"
+        },
+        {
+          "name": "Ruben Verborgh",
+          "email": "ruben@verborgh.org",
+          "url": "https://ruben.verborgh.org/"
+        }
+      ],
+      "files": [
+        "index.js",
+        "create.js",
+        "http.js",
+        "https.js"
+      ],
+      "dependencies": {
+        "debug": "^2.4.5"
+      },
+      "devDependencies": {
+        "bluebird": "^3.4.0",
+        "concat-stream": "^1.5.0",
+        "coveralls": "^2.11.15",
+        "express": "^4.13.0",
+        "mocha": "^3.2.0",
+        "nyc": "^10.0.0",
+        "xo": "^0.17.1"
+      },
+      "license": "MIT",
+      "nyc": {
+        "reporter": [
+          "lcov",
+          "text"
+        ]
+      },
+      "xo": {
+        "envs": [
+          "mocha"
+        ]
+      },
+      "gitHead": "f6e923e03ff734319bb0dbbfe50112ed4518aa7a",
+      "_id": "follow-redirects@1.2.2",
+      "_shasum": "45e4248c741128874f4a4900fd7e14f644b0bc40",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.7.0",
+      "_npmUser": {
+        "name": "rubenverborgh",
+        "email": "ruben.verborgh@gmail.com"
+      },
+      "dist": {
+        "shasum": "45e4248c741128874f4a4900fd7e14f644b0bc40",
+        "tarball": "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.2.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "jamestalmage",
+          "email": "james@talmage.io"
+        },
+        {
+          "name": "olalonde",
+          "email": "olalonde@gmail.com"
+        },
+        {
+          "name": "rubenverborgh",
+          "email": "ruben.verborgh@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/follow-redirects-1.2.2.tgz_1489096432046_0.3155715446919203"
+      },
+      "directories": {}
+    },
+    "1.2.3": {
+      "name": "follow-redirects",
+      "version": "1.2.3",
+      "description": "HTTP and HTTPS modules that follow redirects.",
+      "main": "index.js",
+      "scripts": {
+        "test": "xo && BLUEBIRD_DEBUG=1 nyc mocha"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/olalonde/follow-redirects.git"
+      },
+      "homepage": "https://github.com/olalonde/follow-redirects",
+      "bugs": {
+        "url": "https://github.com/olalonde/follow-redirects/issues"
+      },
+      "keywords": [
+        "http",
+        "https",
+        "url",
+        "redirect",
+        "client",
+        "location",
+        "utility"
+      ],
+      "author": {
+        "name": "Olivier Lalonde",
+        "email": "olalonde@gmail.com",
+        "url": "http://www.syskall.com"
+      },
+      "contributors": [
+        {
+          "name": "James Talmage",
+          "email": "james@talmage.io"
+        },
+        {
+          "name": "Ruben Verborgh",
+          "email": "ruben@verborgh.org",
+          "url": "https://ruben.verborgh.org/"
+        }
+      ],
+      "files": [
+        "index.js",
+        "create.js",
+        "http.js",
+        "https.js"
+      ],
+      "dependencies": {
+        "debug": "^2.4.5"
+      },
+      "devDependencies": {
+        "bluebird": "^3.4.0",
+        "concat-stream": "^1.5.2",
+        "coveralls": "^2.11.15",
+        "express": "^4.13.0",
+        "mocha": "^3.2.0",
+        "nyc": "^10.0.0",
+        "xo": "^0.17.1"
+      },
+      "license": "MIT",
+      "nyc": {
+        "reporter": [
+          "lcov",
+          "text"
+        ]
+      },
+      "xo": {
+        "envs": [
+          "mocha"
+        ]
+      },
+      "gitHead": "ad35f4c9ab0c3fbf23c8486ba5e241d08d6b39b4",
+      "_id": "follow-redirects@1.2.3",
+      "_shasum": "01abaeca85e3609837d9fcda3167a7e42fdaca21",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.7.0",
+      "_npmUser": {
+        "name": "rubenverborgh",
+        "email": "ruben.verborgh@gmail.com"
+      },
+      "dist": {
+        "shasum": "01abaeca85e3609837d9fcda3167a7e42fdaca21",
+        "tarball": "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.2.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "jamestalmage",
+          "email": "james@talmage.io"
+        },
+        {
+          "name": "olalonde",
+          "email": "olalonde@gmail.com"
+        },
+        {
+          "name": "rubenverborgh",
+          "email": "ruben.verborgh@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/follow-redirects-1.2.3.tgz_1489164681760_0.5944589097052813"
+      },
+      "directories": {}
+    },
+    "1.2.4": {
+      "name": "follow-redirects",
+      "version": "1.2.4",
+      "description": "HTTP and HTTPS modules that follow redirects.",
+      "main": "index.js",
+      "engines": {
+        "node": ">=4.0"
+      },
+      "scripts": {
+        "test": "xo && BLUEBIRD_DEBUG=1 nyc mocha"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/olalonde/follow-redirects.git"
+      },
+      "homepage": "https://github.com/olalonde/follow-redirects",
+      "bugs": {
+        "url": "https://github.com/olalonde/follow-redirects/issues"
+      },
+      "keywords": [
+        "http",
+        "https",
+        "url",
+        "redirect",
+        "client",
+        "location",
+        "utility"
+      ],
+      "author": {
+        "name": "Olivier Lalonde",
+        "email": "olalonde@gmail.com",
+        "url": "http://www.syskall.com"
+      },
+      "contributors": [
+        {
+          "name": "James Talmage",
+          "email": "james@talmage.io"
+        },
+        {
+          "name": "Ruben Verborgh",
+          "email": "ruben@verborgh.org",
+          "url": "https://ruben.verborgh.org/"
+        }
+      ],
+      "files": [
+        "index.js",
+        "create.js",
+        "http.js",
+        "https.js"
+      ],
+      "dependencies": {
+        "debug": "^2.4.5"
+      },
+      "devDependencies": {
+        "bluebird": "^3.4.0",
+        "concat-stream": "^1.5.2",
+        "coveralls": "^2.11.15",
+        "express": "^4.13.0",
+        "mocha": "^3.2.0",
+        "nyc": "^10.0.0",
+        "xo": "^0.17.1"
+      },
+      "license": "MIT",
+      "nyc": {
+        "reporter": [
+          "lcov",
+          "text"
+        ]
+      },
+      "xo": {
+        "envs": [
+          "mocha"
+        ]
+      },
+      "gitHead": "c3770de92eb2898ccc638f269a1046919329bd81",
+      "_id": "follow-redirects@1.2.4",
+      "_npmVersion": "5.0.3",
+      "_nodeVersion": "8.0.0",
+      "_npmUser": {
+        "name": "rubenverborgh",
+        "email": "ruben.verborgh@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-Suw6KewLV2hReSyEOeql+UUkBVyiBm3ok1VPrVFRZnQInWpdoZbbiG5i8aJVSjTr0yQ4Ava0Sh6/joCg1Brdqw==",
+        "shasum": "355e8f4d16876b43f577b0d5ce2668b9723214ea",
+        "tarball": "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.2.4.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "ruben.verborgh@gmail.com",
+          "name": "rubenverborgh"
+        },
+        {
+          "email": "james@talmage.io",
+          "name": "jamestalmage"
+        },
+        {
+          "email": "olalonde@gmail.com",
+          "name": "olalonde"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/follow-redirects-1.2.4.tgz_1498073966897_0.48846928821876645"
+      },
+      "directories": {}
+    },
+    "1.2.5": {
+      "name": "follow-redirects",
+      "version": "1.2.5",
+      "description": "HTTP and HTTPS modules that follow redirects.",
+      "main": "index.js",
+      "engines": {
+        "node": ">=4.0"
+      },
+      "scripts": {
+        "test": "xo && BLUEBIRD_DEBUG=1 nyc mocha"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/olalonde/follow-redirects.git"
+      },
+      "homepage": "https://github.com/olalonde/follow-redirects",
+      "bugs": {
+        "url": "https://github.com/olalonde/follow-redirects/issues"
+      },
+      "keywords": [
+        "http",
+        "https",
+        "url",
+        "redirect",
+        "client",
+        "location",
+        "utility"
+      ],
+      "author": {
+        "name": "Olivier Lalonde",
+        "email": "olalonde@gmail.com",
+        "url": "http://www.syskall.com"
+      },
+      "contributors": [
+        {
+          "name": "James Talmage",
+          "email": "james@talmage.io"
+        },
+        {
+          "name": "Ruben Verborgh",
+          "email": "ruben@verborgh.org",
+          "url": "https://ruben.verborgh.org/"
+        }
+      ],
+      "files": [
+        "index.js",
+        "create.js",
+        "http.js",
+        "https.js"
+      ],
+      "dependencies": {
+        "debug": "^2.6.9"
+      },
+      "devDependencies": {
+        "bluebird": "^3.4.0",
+        "concat-stream": "^1.5.2",
+        "coveralls": "^2.11.15",
+        "express": "^4.13.0",
+        "mocha": "^3.2.0",
+        "nyc": "^10.0.0",
+        "xo": "^0.17.1"
+      },
+      "license": "MIT",
+      "nyc": {
+        "reporter": [
+          "lcov",
+          "text"
+        ]
+      },
+      "xo": {
+        "envs": [
+          "mocha"
+        ]
+      },
+      "gitHead": "be81edd4dd413bd8f7f12344809b982df888e061",
+      "_id": "follow-redirects@1.2.5",
+      "_npmVersion": "5.4.2",
+      "_nodeVersion": "8.4.0",
+      "_npmUser": {
+        "name": "rubenverborgh",
+        "email": "ruben.verborgh@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-lMhwQTryFbG+wYsAIEKC1Kf5IGDlVNnONRogIBllh7LLoV7pNIxW0z9fhjRar9NBql+hd2Y49KboVVNxf6GEfg==",
+        "shasum": "ffd3e14cbdd5eaa72f61b6368c1f68516c2a26cc",
+        "tarball": "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.2.5.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "ruben.verborgh@gmail.com",
+          "name": "rubenverborgh"
+        },
+        {
+          "email": "james@talmage.io",
+          "name": "jamestalmage"
+        },
+        {
+          "email": "olalonde@gmail.com",
+          "name": "olalonde"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/follow-redirects-1.2.5.tgz_1507223053004_0.14782698079943657"
+      },
+      "directories": {}
+    },
+    "1.2.6": {
+      "name": "follow-redirects",
+      "version": "1.2.6",
+      "description": "HTTP and HTTPS modules that follow redirects.",
+      "main": "index.js",
+      "engines": {
+        "node": ">=4.0"
+      },
+      "scripts": {
+        "test": "xo && BLUEBIRD_DEBUG=1 nyc mocha"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/olalonde/follow-redirects.git"
+      },
+      "homepage": "https://github.com/olalonde/follow-redirects",
+      "bugs": {
+        "url": "https://github.com/olalonde/follow-redirects/issues"
+      },
+      "keywords": [
+        "http",
+        "https",
+        "url",
+        "redirect",
+        "client",
+        "location",
+        "utility"
+      ],
+      "author": {
+        "name": "Olivier Lalonde",
+        "email": "olalonde@gmail.com",
+        "url": "http://www.syskall.com"
+      },
+      "contributors": [
+        {
+          "name": "James Talmage",
+          "email": "james@talmage.io"
+        },
+        {
+          "name": "Ruben Verborgh",
+          "email": "ruben@verborgh.org",
+          "url": "https://ruben.verborgh.org/"
+        }
+      ],
+      "files": [
+        "index.js",
+        "create.js",
+        "http.js",
+        "https.js"
+      ],
+      "dependencies": {
+        "debug": "^3.1.0"
+      },
+      "devDependencies": {
+        "bluebird": "^3.4.0",
+        "concat-stream": "^1.5.2",
+        "coveralls": "^3.0.0",
+        "express": "^4.13.0",
+        "mocha": "^4.0.1",
+        "nyc": "^11.3.0",
+        "xo": "^0.17.1"
+      },
+      "license": "MIT",
+      "nyc": {
+        "reporter": [
+          "lcov",
+          "text"
+        ]
+      },
+      "xo": {
+        "envs": [
+          "mocha"
+        ]
+      },
+      "gitHead": "99bd703a765992a260f07e1a2721005fa8b7501d",
+      "_id": "follow-redirects@1.2.6",
+      "_npmVersion": "5.4.2",
+      "_nodeVersion": "8.8.1",
+      "_npmUser": {
+        "name": "rubenverborgh",
+        "email": "ruben.verborgh@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-FrMqZ/FONtHnbqO651UPpfRUVukIEwJhXMfdr/JWAmrDbeYBu773b1J6gdWDyRIj4hvvzQEHoEOTrdR8o6KLYA==",
+        "shasum": "4dcdc7e4ab3dd6765a97ff89c3b4c258117c79bf",
+        "tarball": "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.2.6.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "ruben.verborgh@gmail.com",
+          "name": "rubenverborgh"
+        },
+        {
+          "email": "james@talmage.io",
+          "name": "jamestalmage"
+        },
+        {
+          "email": "olalonde@gmail.com",
+          "name": "olalonde"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/follow-redirects-1.2.6.tgz_1511346901294_0.8867264720611274"
+      },
+      "directories": {}
+    },
+    "1.3.0": {
+      "name": "follow-redirects",
+      "version": "1.3.0",
+      "description": "HTTP and HTTPS modules that follow redirects.",
+      "main": "index.js",
+      "engines": {
+        "node": ">=4.0"
+      },
+      "scripts": {
+        "test": "npm run lint && npm run mocha",
+        "lint": "eslint *.js test",
+        "mocha": "nyc mocha"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/olalonde/follow-redirects.git"
+      },
+      "homepage": "https://github.com/olalonde/follow-redirects",
+      "bugs": {
+        "url": "https://github.com/olalonde/follow-redirects/issues"
+      },
+      "keywords": [
+        "http",
+        "https",
+        "url",
+        "redirect",
+        "client",
+        "location",
+        "utility"
+      ],
+      "author": {
+        "name": "Olivier Lalonde",
+        "email": "olalonde@gmail.com",
+        "url": "http://www.syskall.com"
+      },
+      "contributors": [
+        {
+          "name": "James Talmage",
+          "email": "james@talmage.io"
+        },
+        {
+          "name": "Ruben Verborgh",
+          "email": "ruben@verborgh.org",
+          "url": "https://ruben.verborgh.org/"
+        }
+      ],
+      "files": [
+        "index.js",
+        "create.js",
+        "http.js",
+        "https.js"
+      ],
+      "dependencies": {
+        "debug": "^3.1.0"
+      },
+      "devDependencies": {
+        "bluebird": "^3.4.0",
+        "concat-stream": "^1.5.2",
+        "coveralls": "^3.0.0",
+        "eslint": "^4.14.0",
+        "express": "^4.13.0",
+        "mocha": "^4.0.1",
+        "nyc": "^11.3.0"
+      },
+      "license": "MIT",
+      "nyc": {
+        "reporter": [
+          "lcov",
+          "text"
+        ]
+      },
+      "gitHead": "dc709643b367ba1fd8039a83431f844ea8f03b64",
+      "_id": "follow-redirects@1.3.0",
+      "_shasum": "f684871fc116d2e329fda55ef67687f4fabc905c",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "4.8.7",
+      "_npmUser": {
+        "name": "rubenverborgh",
+        "email": "ruben.verborgh@gmail.com"
+      },
+      "dist": {
+        "shasum": "f684871fc116d2e329fda55ef67687f4fabc905c",
+        "tarball": "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.3.0.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "ruben.verborgh@gmail.com",
+          "name": "rubenverborgh"
+        },
+        {
+          "email": "james@talmage.io",
+          "name": "jamestalmage"
+        },
+        {
+          "email": "olalonde@gmail.com",
+          "name": "olalonde"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/follow-redirects-1.3.0.tgz_1515178643188_0.43387531186454"
+      },
+      "directories": {}
+    },
+    "1.4.0": {
+      "name": "follow-redirects",
+      "version": "1.4.0",
+      "description": "HTTP and HTTPS modules that follow redirects.",
+      "main": "index.js",
+      "engines": {
+        "node": ">=4.0"
+      },
+      "scripts": {
+        "test": "npm run lint && npm run mocha",
+        "lint": "eslint *.js test",
+        "mocha": "nyc mocha"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/olalonde/follow-redirects.git"
+      },
+      "homepage": "https://github.com/olalonde/follow-redirects",
+      "bugs": {
+        "url": "https://github.com/olalonde/follow-redirects/issues"
+      },
+      "keywords": [
+        "http",
+        "https",
+        "url",
+        "redirect",
+        "client",
+        "location",
+        "utility"
+      ],
+      "author": {
+        "name": "Olivier Lalonde",
+        "email": "olalonde@gmail.com",
+        "url": "http://www.syskall.com"
+      },
+      "contributors": [
+        {
+          "name": "James Talmage",
+          "email": "james@talmage.io"
+        },
+        {
+          "name": "Ruben Verborgh",
+          "email": "ruben@verborgh.org",
+          "url": "https://ruben.verborgh.org/"
+        }
+      ],
+      "files": [
+        "index.js",
+        "create.js",
+        "http.js",
+        "https.js"
+      ],
+      "dependencies": {
+        "debug": "^3.1.0"
+      },
+      "devDependencies": {
+        "bluebird": "^3.4.0",
+        "concat-stream": "^1.5.2",
+        "coveralls": "^3.0.0",
+        "eslint": "^4.14.0",
+        "express": "^4.13.0",
+        "mocha": "^4.0.1",
+        "nyc": "^11.3.0"
+      },
+      "license": "MIT",
+      "nyc": {
+        "reporter": [
+          "lcov",
+          "text"
+        ]
+      },
+      "gitHead": "8faff2e73cf2a760f1e9d87bc193209042ac5364",
+      "_id": "follow-redirects@1.4.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.9.4",
+      "_npmUser": {
+        "name": "rubenverborgh",
+        "email": "ruben.verborgh@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-SLUmsiaGeQa2qgJJzJgHpQ6lARP3uyVr0SkMryJmoE86XvUeM7RkYD5FT0rNyjCV5zHlNUpcp3l/6oUkqMEOqg==",
+        "shasum": "a146a3a5d402201c7a3e6128643f0e336d212b10",
+        "tarball": "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.4.0.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "ruben.verborgh@gmail.com",
+          "name": "rubenverborgh"
+        },
+        {
+          "email": "james@talmage.io",
+          "name": "jamestalmage"
+        },
+        {
+          "email": "olalonde@gmail.com",
+          "name": "olalonde"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/follow-redirects-1.4.0.tgz_1516571750943_0.4768338876310736"
+      },
+      "directories": {}
+    },
+    "1.4.1": {
+      "name": "follow-redirects",
+      "version": "1.4.1",
+      "description": "HTTP and HTTPS modules that follow redirects.",
+      "main": "index.js",
+      "engines": {
+        "node": ">=4.0"
+      },
+      "scripts": {
+        "test": "npm run lint && npm run mocha",
+        "lint": "eslint *.js test",
+        "mocha": "nyc mocha"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/olalonde/follow-redirects.git"
+      },
+      "homepage": "https://github.com/olalonde/follow-redirects",
+      "bugs": {
+        "url": "https://github.com/olalonde/follow-redirects/issues"
+      },
+      "keywords": [
+        "http",
+        "https",
+        "url",
+        "redirect",
+        "client",
+        "location",
+        "utility"
+      ],
+      "author": {
+        "name": "Olivier Lalonde",
+        "email": "olalonde@gmail.com",
+        "url": "http://www.syskall.com"
+      },
+      "contributors": [
+        {
+          "name": "James Talmage",
+          "email": "james@talmage.io"
+        },
+        {
+          "name": "Ruben Verborgh",
+          "email": "ruben@verborgh.org",
+          "url": "https://ruben.verborgh.org/"
+        }
+      ],
+      "files": [
+        "index.js",
+        "create.js",
+        "http.js",
+        "https.js"
+      ],
+      "dependencies": {
+        "debug": "^3.1.0"
+      },
+      "devDependencies": {
+        "bluebird": "^3.5.1",
+        "concat-stream": "^1.6.0",
+        "coveralls": "^3.0.0",
+        "eslint": "^4.16.0",
+        "express": "^4.16.2",
+        "mocha": "^5.0.0",
+        "nyc": "^11.4.1"
+      },
+      "license": "MIT",
+      "nyc": {
+        "reporter": [
+          "lcov",
+          "text"
+        ]
+      },
+      "gitHead": "1b6340f83ad5596a0a38c16a7113692bd90301f2",
+      "_id": "follow-redirects@1.4.1",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.9.4",
+      "_npmUser": {
+        "name": "rubenverborgh",
+        "email": "ruben.verborgh@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-uxYePVPogtya1ktGnAAXOacnbIuRMB4dkvqeNz2qTtTQsuzSfbDolV+wMMKxAmCx0bLgAKLbBOkjItMbbkR1vg==",
+        "shasum": "d8120f4518190f55aac65bb6fc7b85fcd666d6aa",
+        "tarball": "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.4.1.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "ruben.verborgh@gmail.com",
+          "name": "rubenverborgh"
+        },
+        {
+          "email": "james@talmage.io",
+          "name": "jamestalmage"
+        },
+        {
+          "email": "olalonde@gmail.com",
+          "name": "olalonde"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/follow-redirects-1.4.1.tgz_1516754560314_0.16931934002786875"
+      },
+      "directories": {}
+    },
+    "1.5.0": {
+      "name": "follow-redirects",
+      "version": "1.5.0",
+      "description": "HTTP and HTTPS modules that follow redirects.",
+      "main": "index.js",
+      "engines": {
+        "node": ">=4.0"
+      },
+      "scripts": {
+        "test": "npm run lint && npm run mocha",
+        "lint": "eslint *.js test",
+        "mocha": "nyc mocha"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/olalonde/follow-redirects.git"
+      },
+      "homepage": "https://github.com/olalonde/follow-redirects",
+      "bugs": {
+        "url": "https://github.com/olalonde/follow-redirects/issues"
+      },
+      "keywords": [
+        "http",
+        "https",
+        "url",
+        "redirect",
+        "client",
+        "location",
+        "utility"
+      ],
+      "author": {
+        "name": "Olivier Lalonde",
+        "email": "olalonde@gmail.com",
+        "url": "http://www.syskall.com"
+      },
+      "contributors": [
+        {
+          "name": "James Talmage",
+          "email": "james@talmage.io"
+        },
+        {
+          "name": "Ruben Verborgh",
+          "email": "ruben@verborgh.org",
+          "url": "https://ruben.verborgh.org/"
+        }
+      ],
+      "files": [
+        "index.js",
+        "create.js",
+        "http.js",
+        "https.js"
+      ],
+      "dependencies": {
+        "debug": "^3.1.0"
+      },
+      "devDependencies": {
+        "bluebird": "^3.5.1",
+        "concat-stream": "^1.6.0",
+        "coveralls": "^3.0.0",
+        "eslint": "^4.19.1",
+        "express": "^4.16.2",
+        "mocha": "^5.0.0",
+        "nyc": "^11.8.0"
+      },
+      "license": "MIT",
+      "nyc": {
+        "reporter": [
+          "lcov",
+          "text"
+        ]
+      },
+      "gitHead": "23f66feabb9eb22e3b251251b5935725fb1845bf",
+      "_id": "follow-redirects@1.5.0",
+      "_npmVersion": "6.0.0",
+      "_nodeVersion": "10.0.0",
+      "_npmUser": {
+        "name": "rubenverborgh",
+        "email": "ruben.verborgh@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-fdrt472/9qQ6Kgjvb935ig6vJCuofpBUD14f9Vb+SLlm7xIe4Qva5gey8EKtv8lp7ahE1wilg3xL1znpVGtZIA==",
+        "shasum": "234f49cf770b7f35b40e790f636ceba0c3a0ab77",
+        "tarball": "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.5.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 18729,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbAE4ZCRA9TVsSAnZWagAAhUEP/R+3IwcS8XgjikEcHeTF\nXGCAZ633ZHqPa3ZsXeCSQ5HtFfOef8nx8jIKsrOzNVTHZYMfiV4LqAZku8+Q\nIJD1sL395TeB9ysOg8iFINaLOC4VtChUcq9mwgwSIlacsKt6RoJ7Z9eZBjCJ\n2/mdTYxr3nXKBqrsg9lSkvkfeR8ysIHSgI3E6UTCVa6Q3E2c9vZqGbYSbTr0\nKTvf+ZWGfeWvc5xGj0epAISiJEhtdp9d+ATRBsJH8LL+gpGtwsM/PDp33TNU\nbAbNfBU73Brhu2XUtOABaKQYCWoDnb2DsuOphFnfZ9MLg0ZfmopR1QohaSPV\no0BBAhmnE73Ksp1xhk5JctTmLTH+zO163eUE9MdZ23i64Rhvk0ozZ4SRy6r6\n6d2Y0lt3E/A88iXTJZIMtlODgWm4M6dXneNJV+0e4SKDxmiJvzCHbMjgUVhj\n3eUMVPJ069yUHYa+vWR6MIeGyrCz6v21ip0Et/uvpql8kmYPLFTzR98SFDc/\n08DUTLBZIHFuBQrQPWfNUzaMLU5ziaE8x1d3HBwKjo/Gz8FV7s1i/3cXMF3u\nP+rBj0aALpynKEqligANpN5R01zcAp1qReyHsMvGjMuwl3KDpX8X8HIeciXi\nYCzGOWIGbC47080rnsJ4ct2hFifL8Ee3pmfYHet+Kn1urcFH91Lyb/oOxj9m\nJ/HX\r\n=oo9R\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "james@talmage.io",
+          "name": "jamestalmage"
+        },
+        {
+          "email": "olalonde@gmail.com",
+          "name": "olalonde"
+        },
+        {
+          "email": "ruben.verborgh@gmail.com",
+          "name": "rubenverborgh"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/follow-redirects_1.5.0_1526746647796_0.20553048579519562"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.5.1": {
+      "name": "follow-redirects",
+      "version": "1.5.1",
+      "description": "HTTP and HTTPS modules that follow redirects.",
+      "main": "index.js",
+      "engines": {
+        "node": ">=4.0"
+      },
+      "scripts": {
+        "test": "npm run lint && npm run mocha",
+        "lint": "eslint *.js test",
+        "mocha": "nyc mocha"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/olalonde/follow-redirects.git"
+      },
+      "homepage": "https://github.com/olalonde/follow-redirects",
+      "bugs": {
+        "url": "https://github.com/olalonde/follow-redirects/issues"
+      },
+      "keywords": [
+        "http",
+        "https",
+        "url",
+        "redirect",
+        "client",
+        "location",
+        "utility"
+      ],
+      "author": {
+        "name": "Olivier Lalonde",
+        "email": "olalonde@gmail.com",
+        "url": "http://www.syskall.com"
+      },
+      "contributors": [
+        {
+          "name": "James Talmage",
+          "email": "james@talmage.io"
+        },
+        {
+          "name": "Ruben Verborgh",
+          "email": "ruben@verborgh.org",
+          "url": "https://ruben.verborgh.org/"
+        }
+      ],
+      "files": [
+        "index.js",
+        "create.js",
+        "http.js",
+        "https.js"
+      ],
+      "dependencies": {
+        "debug": "^3.1.0"
+      },
+      "devDependencies": {
+        "bluebird": "^3.5.1",
+        "concat-stream": "^1.6.0",
+        "coveralls": "^3.0.0",
+        "eslint": "^4.19.1",
+        "express": "^4.16.2",
+        "mocha": "^5.0.0",
+        "nyc": "^11.8.0"
+      },
+      "license": "MIT",
+      "nyc": {
+        "reporter": [
+          "lcov",
+          "text"
+        ]
+      },
+      "gitHead": "6a74f5480e2bc0f93d03577865e371a4817ceae2",
+      "_id": "follow-redirects@1.5.1",
+      "_npmVersion": "6.1.0",
+      "_nodeVersion": "10.0.0",
+      "_npmUser": {
+        "name": "rubenverborgh",
+        "email": "ruben.verborgh@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-v9GI1hpaqq1ZZR6pBD1+kI7O24PhDvNGNodjS3MdcEqyrahCp8zbtpv+2B/krUnSmUH80lbAS7MrdeK5IylgKg==",
+        "shasum": "67a8f14f5a1f67f962c2c46469c79eaec0a90291",
+        "tarball": "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.5.1.tgz",
+        "fileCount": 6,
+        "unpackedSize": 18825,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbPoNFCRA9TVsSAnZWagAAg+4P/0/cIO3/7dHL/bUgTB8X\nhJH/teo2Iy5mv1mtqE9OEltWx2JsrEUPC5ZVZDCCc8ufKsHvobs/84mH7cS/\ndCHG9xDIFQWMifr2MEDEudI0Zh+7z+0jWpVi3siXWJ4Ka/rY88jFV9gjKRH0\nyLL8pc50e6ibuAihzAcDqgu2TxRMcB+9CrG2rBOIIMC7ln1DIlKDhPBjtxeZ\n5dSOHgrk4SgR9nIMWXjXbb+vp8n72VHg07ppqXofLOZopqHvfuMXZdk8+g/b\ntHPVd73uyReXGjdnmZNH+NXptKTGEArL3elRC86L6no8jdtco7aFDG4EOGOl\npDgShyy4KWkl5JNglsHEW0J2C09TdyE5vYM3q0PBo6SC5TczuJsxTbeCM//4\necLAFGrrw0ce8D/WyMAp7MmcYmcu5UtjcrooxJ7xPNKcxMKKzR+t2s3XnrZ2\n0+asUDIotwKU7alW4k3FyeDDEI0gYtZhRXU4auR5nkCZJEashKxN38kDeJXa\nnBvejV/qcyX5zkVg7ZnJ1V9QAkeR9lXlxYSM2v3jwDuCZk0qkQ+Dj21VAyJZ\nUp5xJ1/VPcMPeATGFrOsEkruutDhriV/rYG1cGyyBg1ty3iG0MgELM9BzqAB\n6yT8Iq/1GV4f4drWpyAZbj1cTocw2K/PQ6+t2Ojt6iywQI45JEQCski3qznU\nHqDK\r\n=411h\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "james@talmage.io",
+          "name": "jamestalmage"
+        },
+        {
+          "email": "olalonde@gmail.com",
+          "name": "olalonde"
+        },
+        {
+          "email": "ruben.verborgh@gmail.com",
+          "name": "rubenverborgh"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/follow-redirects_1.5.1_1530823492901_0.29396077553661915"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.5.2": {
+      "name": "follow-redirects",
+      "version": "1.5.2",
+      "description": "HTTP and HTTPS modules that follow redirects.",
+      "main": "index.js",
+      "engines": {
+        "node": ">=4.0"
+      },
+      "scripts": {
+        "test": "npm run lint && npm run mocha",
+        "lint": "eslint *.js test",
+        "mocha": "nyc mocha"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/olalonde/follow-redirects.git"
+      },
+      "homepage": "https://github.com/olalonde/follow-redirects",
+      "bugs": {
+        "url": "https://github.com/olalonde/follow-redirects/issues"
+      },
+      "keywords": [
+        "http",
+        "https",
+        "url",
+        "redirect",
+        "client",
+        "location",
+        "utility"
+      ],
+      "author": {
+        "name": "Olivier Lalonde",
+        "email": "olalonde@gmail.com",
+        "url": "http://www.syskall.com"
+      },
+      "contributors": [
+        {
+          "name": "James Talmage",
+          "email": "james@talmage.io"
+        },
+        {
+          "name": "Ruben Verborgh",
+          "email": "ruben@verborgh.org",
+          "url": "https://ruben.verborgh.org/"
+        }
+      ],
+      "files": [
+        "index.js",
+        "create.js",
+        "http.js",
+        "https.js"
+      ],
+      "dependencies": {
+        "debug": "^3.1.0"
+      },
+      "devDependencies": {
+        "bluebird": "^3.5.1",
+        "concat-stream": "^1.6.0",
+        "coveralls": "^3.0.0",
+        "eslint": "^4.19.1",
+        "express": "^4.16.2",
+        "mocha": "^5.0.0",
+        "nyc": "^11.8.0"
+      },
+      "license": "MIT",
+      "nyc": {
+        "reporter": [
+          "lcov",
+          "text"
+        ]
+      },
+      "gitHead": "4d328f0ef3e07575b7e5b950f9dcc521906104b2",
+      "_id": "follow-redirects@1.5.2",
+      "_npmVersion": "6.2.0",
+      "_nodeVersion": "10.0.0",
+      "_npmUser": {
+        "name": "rubenverborgh",
+        "email": "ruben.verborgh@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-kssLorP/9acIdpQ2udQVTiCS5LQmdEz9mvdIfDcl1gYX2tPKFADHSyFdvJS040XdFsPzemWtgI3q8mFVCxtX8A==",
+        "shasum": "5a9d80e0165957e5ef0c1210678fc5c4acb9fb03",
+        "tarball": "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.5.2.tgz",
+        "fileCount": 6,
+        "unpackedSize": 19118,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbYf1SCRA9TVsSAnZWagAAB1kP/ijEe8beBvmA/Pu4iq7K\n9ZsTHYQ5enR+xtzFpcdL7OepgE10ztRak9YTWx9nzQmQkqbBlUpTWSp4x4IE\nKDGGzat1qPSn5nJSgonotfNyuK9fVlE0B58CHRdvV9whb+9X0brs8DuKQcPb\nRQyuszljkz9UVnBhKmGKwLQ9WiFTlgywiMfY0yArqyVtSkyaOlwSczUZUA0+\nMhuAUU2cq8MUrYFDMTurV2258jRLFrkojiMYrwQlrA7Rsssen5R6lKGZURH3\nvePD8L4ORf6HAbkJUckf+gaag1HPKstz27PsoXp2nRKF+Lr7UFxGUMNlAxIP\ntZTAdrn/+026wDSf1MZHOlIx5L87yQfrUz93QmIkF1eqrgnOO1uc2Vfp+Fi5\nGlpgZschXo22v/fXjfM1+qHdlSbc92ZjUBKhu7qWUV00tFhqxkExhFj7i5dr\nzcb8EHMqfHlfrwhCIG3TBjVJBOwpl6SvTE5o8So7AutpJU4dfg4Dp9AGC+mh\n3sp3hMTtwpK3XNAIGHP+/tPn1S0jXCbiitjvsEv+S/kcx0QakSx09YkUkA8Z\nfegWmqthuT8w3N99VVY2H9kK3Ci6TRAzqUPqGR8Q6jDRp5GiOQtqEw1lTxTv\nvT+lpOrpS7ND4lmmkHpILBzMzBrGc7xt5pWVrn/IEQ7cN3TCFgiChJybIJh9\nedJE\r\n=PcuT\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "james@talmage.io",
+          "name": "jamestalmage"
+        },
+        {
+          "email": "olalonde@gmail.com",
+          "name": "olalonde"
+        },
+        {
+          "email": "ruben.verborgh@gmail.com",
+          "name": "rubenverborgh"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/follow-redirects_1.5.2_1533148497739_0.4948117273541661"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.5.3": {
+      "name": "follow-redirects",
+      "version": "1.5.3",
+      "description": "HTTP and HTTPS modules that follow redirects.",
+      "main": "index.js",
+      "engines": {
+        "node": ">=4.0"
+      },
+      "scripts": {
+        "test": "npm run lint && npm run mocha",
+        "lint": "eslint *.js test",
+        "mocha": "nyc mocha"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/olalonde/follow-redirects.git"
+      },
+      "homepage": "https://github.com/olalonde/follow-redirects",
+      "bugs": {
+        "url": "https://github.com/olalonde/follow-redirects/issues"
+      },
+      "keywords": [
+        "http",
+        "https",
+        "url",
+        "redirect",
+        "client",
+        "location",
+        "utility"
+      ],
+      "author": {
+        "name": "Olivier Lalonde",
+        "email": "olalonde@gmail.com",
+        "url": "http://www.syskall.com"
+      },
+      "contributors": [
+        {
+          "name": "James Talmage",
+          "email": "james@talmage.io"
+        },
+        {
+          "name": "Ruben Verborgh",
+          "email": "ruben@verborgh.org",
+          "url": "https://ruben.verborgh.org/"
+        }
+      ],
+      "files": [
+        "index.js",
+        "create.js",
+        "http.js",
+        "https.js"
+      ],
+      "dependencies": {
+        "debug": "^3.1.0"
+      },
+      "devDependencies": {
+        "bluebird": "^3.5.1",
+        "concat-stream": "^1.6.0",
+        "coveralls": "^3.0.0",
+        "eslint": "^4.19.1",
+        "express": "^4.16.2",
+        "mocha": "^5.0.0",
+        "nyc": "^11.8.0"
+      },
+      "license": "MIT",
+      "nyc": {
+        "reporter": [
+          "lcov",
+          "text"
+        ]
+      },
+      "gitHead": "20c5169d1a6dc76ab78c69ccd78d2d884cd16a27",
+      "_id": "follow-redirects@1.5.3",
+      "_npmVersion": "6.2.0",
+      "_nodeVersion": "10.8.0",
+      "_npmUser": {
+        "name": "rubenverborgh",
+        "email": "ruben.verborgh@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-Q19GwKpz/zVkwVzbEkICtentX0NKcCix7g1l3vNewCLZ6KwGAU7bdJEQEZb9NN0D9kapySzQPMrOuj6rvrLXnQ==",
+        "shasum": "ba150caf15e2f0b30c789993be9b912db553855b",
+        "tarball": "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.5.3.tgz",
+        "fileCount": 6,
+        "unpackedSize": 19146,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbcWhVCRA9TVsSAnZWagAAKNsP/iXcKhxuZgTu7/e1Eozm\nyhhM5uZzrEsiGhv2e8K9ZRjpldwvKJ6kUMn+MMJx7ZtioK378IBSereCBGuu\nHv04XJC42RZjEeBqu8CkP1NBM4wQgap9sm8cmTol1zzx2G7sNY//ekfbJ5mz\n4c8eKqC3De3LmGv/hdC9sdWWDyKET/52nhyGcbQDYAlT9dSpmGOHI8m9MkZJ\nhGUjip1vVqBxndrc47b7AOvcTS+fcyd2yUskxK8wq0nDfT6vJ38pcXOjIj7N\n62etsAg7KE/gfEED+vqU5MCBh/D4NuM4JEJggdVnUUo+gEkyh3R0ii/xvtju\nujU3CPY7sWL0uTIv9I5nkUQijnxwau45qsxGINXuvTiCFc7c9ILS/8DRoW0C\n34Ck2YYhMi9EkDvh60A4CAxvWyOWcIM3vpQchjd6uM7kCtF/4MeWqbDhB9Ok\nPbf3uXNC1t2CbNxPaQAZ/u0DpUXzU/eUKygcxh7i6tK0L0XN4sTTF30fJv8B\nY19O6/KJDqRqqrJYUt7qYLD006THwx3/lnBzt6pdsFNmZT3CgaGe/W2+fCDO\nE5qGr4mKlvyTUUztXbsLXXSn0j1EsFrVZoe4UiocAt3vwkBMfAU040x77xPd\nZVmC6c+txQXcUnx71cnKamp/dEri8Bm9M/iSj9RcUYm4nOWxK0Mik7zD5qMN\nE2kz\r\n=v4+N\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "james@talmage.io",
+          "name": "jamestalmage"
+        },
+        {
+          "email": "olalonde@gmail.com",
+          "name": "olalonde"
+        },
+        {
+          "email": "ruben.verborgh@gmail.com",
+          "name": "rubenverborgh"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/follow-redirects_1.5.3_1534158932609_0.26887812892104646"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.5.4": {
+      "name": "follow-redirects",
+      "version": "1.5.4",
+      "description": "HTTP and HTTPS modules that follow redirects.",
+      "main": "index.js",
+      "engines": {
+        "node": ">=4.0"
+      },
+      "scripts": {
+        "test": "npm run lint && npm run mocha",
+        "lint": "eslint *.js test",
+        "mocha": "nyc mocha"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/olalonde/follow-redirects.git"
+      },
+      "homepage": "https://github.com/olalonde/follow-redirects",
+      "bugs": {
+        "url": "https://github.com/olalonde/follow-redirects/issues"
+      },
+      "keywords": [
+        "http",
+        "https",
+        "url",
+        "redirect",
+        "client",
+        "location",
+        "utility"
+      ],
+      "author": {
+        "name": "Olivier Lalonde",
+        "email": "olalonde@gmail.com",
+        "url": "http://www.syskall.com"
+      },
+      "contributors": [
+        {
+          "name": "James Talmage",
+          "email": "james@talmage.io"
+        },
+        {
+          "name": "Ruben Verborgh",
+          "email": "ruben@verborgh.org",
+          "url": "https://ruben.verborgh.org/"
+        }
+      ],
+      "files": [
+        "index.js",
+        "create.js",
+        "http.js",
+        "https.js"
+      ],
+      "dependencies": {
+        "debug": "^3.1.0"
+      },
+      "devDependencies": {
+        "bluebird": "^3.5.1",
+        "concat-stream": "^1.6.0",
+        "coveralls": "^3.0.0",
+        "eslint": "^4.19.1",
+        "express": "^4.16.2",
+        "mocha": "^5.0.0",
+        "nyc": "^11.8.0"
+      },
+      "license": "MIT",
+      "nyc": {
+        "reporter": [
+          "lcov",
+          "text"
+        ]
+      },
+      "gitHead": "6dc19f9f17e087c979c44d91215c445dd34d8a20",
+      "_id": "follow-redirects@1.5.4",
+      "_npmVersion": "6.3.0",
+      "_nodeVersion": "10.0.0",
+      "_npmUser": {
+        "name": "rubenverborgh",
+        "email": "ruben.verborgh@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-qGsq5ExgV2z6YTV2mkqemjo6sy6BaXWwKlNYSmpvBONGdFDcpML0ieQ7iQDDlu82JrMTmft4zrpSFfS8PIPoHA==",
+        "shasum": "86d1bb946f24cb988d660aaa2ca2478c0772ead1",
+        "tarball": "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.5.4.tgz",
+        "fileCount": 6,
+        "unpackedSize": 19148,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbcYUPCRA9TVsSAnZWagAAoPMP/ROCKpdJmF1Ml1wQloU1\n/97jDpo+EpL8l6wRZjTbFaGbNT5Wn5dK1wbnhEoWt8lTc19kvCOAWktSf2Hx\njel+Ci1jOfDxavFrOaYadQs8iHLL0jFVeXzKh62V2ocme3474LIhLqIgD4YQ\nJ0qtAIdlhe3AQQf0lRUjDITHjYixd2OUUIAOpk51gt975SRQam37tIUNAC3x\nZkaKm7aiiCpzzS5fR/cI2+Cx7kboExrFqmi7GUY+aPtmpWn9rTdD2kKpFFUU\ng1uSUTza34ytYltu9TvNXiHOH3yFpl1eG/o6XJikf/d3ds0jwr9lV6glvel/\nHqSp1Nlu06YjlddML++i/osnNkPzdHhnvvWQKtMI9ls+bXcYHWpEApO49Wnp\nasCtK4t0HWyNJJnGri8+gr4PVIU3uykAyM1JKAFl4b1qnPkg1KOsxRRbx5VA\nwBLtoN/CZukQGga5co01/OiENJssfp6NS0yUMYMni0Myi5k99B6JSZUaG8fi\n4VtrLR657NnZ/Fcu1D5csqR0fjFFrWaxZT32w6shra58VqWtubgEWnXAdy/R\nwjIJON5aETNTciEAmGzqRxz1bNHMjUCpeNIx+UXbnhAEVvm23GkjRrsRZ0FY\nD0XeX8a0XkxJX+tgfF7X39GqKf2XzRvTgFYejPM2khAL7nWJuMkOtprIc9YQ\nxYFu\r\n=0WBo\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "james@talmage.io",
+          "name": "jamestalmage"
+        },
+        {
+          "email": "olalonde@gmail.com",
+          "name": "olalonde"
+        },
+        {
+          "email": "ruben.verborgh@gmail.com",
+          "name": "rubenverborgh"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/follow-redirects_1.5.4_1534166286574_0.17784307842570124"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.5.5": {
+      "name": "follow-redirects",
+      "version": "1.5.5",
+      "description": "HTTP and HTTPS modules that follow redirects.",
+      "main": "index.js",
+      "engines": {
+        "node": ">=4.0"
+      },
+      "scripts": {
+        "test": "npm run lint && npm run mocha",
+        "lint": "eslint *.js test",
+        "mocha": "nyc mocha"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/olalonde/follow-redirects.git"
+      },
+      "homepage": "https://github.com/olalonde/follow-redirects",
+      "bugs": {
+        "url": "https://github.com/olalonde/follow-redirects/issues"
+      },
+      "keywords": [
+        "http",
+        "https",
+        "url",
+        "redirect",
+        "client",
+        "location",
+        "utility"
+      ],
+      "author": {
+        "name": "Olivier Lalonde",
+        "email": "olalonde@gmail.com",
+        "url": "http://www.syskall.com"
+      },
+      "contributors": [
+        {
+          "name": "James Talmage",
+          "email": "james@talmage.io"
+        },
+        {
+          "name": "Ruben Verborgh",
+          "email": "ruben@verborgh.org",
+          "url": "https://ruben.verborgh.org/"
+        }
+      ],
+      "files": [
+        "index.js",
+        "create.js",
+        "http.js",
+        "https.js"
+      ],
+      "dependencies": {
+        "debug": "^3.1.0"
+      },
+      "devDependencies": {
+        "bluebird": "^3.5.1",
+        "concat-stream": "^1.6.0",
+        "coveralls": "^3.0.0",
+        "eslint": "^4.19.1",
+        "express": "^4.16.2",
+        "mocha": "^5.0.0",
+        "nyc": "^11.8.0"
+      },
+      "license": "MIT",
+      "nyc": {
+        "reporter": [
+          "lcov",
+          "text"
+        ]
+      },
+      "gitHead": "de80dec9d8e7a1d99a242e357e653039b96bae9e",
+      "_id": "follow-redirects@1.5.5",
+      "_npmVersion": "6.2.0",
+      "_nodeVersion": "10.8.0",
+      "_npmUser": {
+        "name": "rubenverborgh",
+        "email": "ruben.verborgh@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-GHjtHDlY/ehslqv0Gr5N0PUJppgg/q0rOBvX0na1s7y1A3LWxPqCYU76s3Z1bM4+UZB4QF0usaXLT5wFpof5PA==",
+        "shasum": "3c143ca599a2e22e62876687d68b23d55bad788b",
+        "tarball": "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.5.5.tgz",
+        "fileCount": 6,
+        "unpackedSize": 19125,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbccemCRA9TVsSAnZWagAAtCEP/A4f3eHwGBSRl6Th3xx1\nwKeTmf6qczJkIWGE7iw9L3DE1B6sGW8ttCn6Qj/AQVWGDcWtYP32az2Kso4z\neJ5Jckbx8hHXVtJLEEHMJk7kymPHXHQenhBoe6u5cpdqcgDzILcHWFQ9mGcl\nVVMqMEzc7uuVvY6akf4vxmLAn+lOGqwlQz/cql8jpOVP0CuIFhFF//VRS0vL\nv3yxF+1CjKv4DX2zapo6H/KmbMMPs//7ofNbg87qR8DGT3BCY9XO6sU8Ze46\nn8/jDcYLmF6vjzMjJwP7qmeoX5PpK/CmGy8KJt+EEfFNi3KF63FGteUBJ7NP\nw8fquRpeDTHTOQRnTDCyvYM4kKqlZK1IrqoFzo5DNh6RBUWLNR/Abie/Vbke\nqvq5njsSghqLvJoTwgvMyxj+Bh54m5FQWw4xvh93uF8SsmFOGukvut21BbuC\nGD5QAWghlv2CcKk3i2UE86z1iCnVuWCTNwmhJHIoX98XKNnDGRbB/iAETe7Q\nYsCoZOLRgCrM9ZR892A5OHSGo8w0PqI7cVPYSGsVALUlc39CVCJXDONJVVvp\nm4Hjp+SEWpwXAA03JO8RLMTnzFs/pyRKx44PrUcCMBziNO495bc68qpGoiAs\npt9LainlBMUzdrqxk9ELIWgeR1ew96AddAcBV0e3tWGlSBq8JPO/mgeAAbhN\n6PVf\r\n=A7dn\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "james@talmage.io",
+          "name": "jamestalmage"
+        },
+        {
+          "email": "olalonde@gmail.com",
+          "name": "olalonde"
+        },
+        {
+          "email": "ruben.verborgh@gmail.com",
+          "name": "rubenverborgh"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/follow-redirects_1.5.5_1534183334213_0.1548457281029405"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.5.6": {
+      "name": "follow-redirects",
+      "version": "1.5.6",
+      "description": "HTTP and HTTPS modules that follow redirects.",
+      "main": "index.js",
+      "engines": {
+        "node": ">=4.0"
+      },
+      "scripts": {
+        "test": "npm run lint && npm run mocha",
+        "lint": "eslint *.js test",
+        "mocha": "nyc mocha"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/olalonde/follow-redirects.git"
+      },
+      "homepage": "https://github.com/olalonde/follow-redirects",
+      "bugs": {
+        "url": "https://github.com/olalonde/follow-redirects/issues"
+      },
+      "keywords": [
+        "http",
+        "https",
+        "url",
+        "redirect",
+        "client",
+        "location",
+        "utility"
+      ],
+      "author": {
+        "name": "Olivier Lalonde",
+        "email": "olalonde@gmail.com",
+        "url": "http://www.syskall.com"
+      },
+      "contributors": [
+        {
+          "name": "James Talmage",
+          "email": "james@talmage.io"
+        },
+        {
+          "name": "Ruben Verborgh",
+          "email": "ruben@verborgh.org",
+          "url": "https://ruben.verborgh.org/"
+        }
+      ],
+      "files": [
+        "index.js",
+        "create.js",
+        "http.js",
+        "https.js"
+      ],
+      "dependencies": {
+        "debug": "^3.1.0"
+      },
+      "devDependencies": {
+        "bluebird": "^3.5.1",
+        "concat-stream": "^1.6.0",
+        "coveralls": "^3.0.0",
+        "eslint": "^4.19.1",
+        "express": "^4.16.2",
+        "mocha": "^5.0.0",
+        "nyc": "^11.8.0"
+      },
+      "license": "MIT",
+      "nyc": {
+        "reporter": [
+          "lcov",
+          "text"
+        ]
+      },
+      "gitHead": "7d4a56aa9d33dc91895f75ada95d725b6ab98083",
+      "_id": "follow-redirects@1.5.6",
+      "_npmVersion": "6.4.0",
+      "_nodeVersion": "10.8.0",
+      "_npmUser": {
+        "name": "rubenverborgh",
+        "email": "ruben.verborgh@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-xay/eYZGgdpb3rpugZj1HunNaPcqc6fud/RW7LNEQntvKzuRO4DDLL+MnJIbTHh6t3Kda3v2RvhY2doxUddnig==",
+        "shasum": "44eb4fe1981dff25e2bd86b7d4033abcdb81e965",
+        "tarball": "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.5.6.tgz",
+        "fileCount": 6,
+        "unpackedSize": 19237,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbe26UCRA9TVsSAnZWagAA/OgQAITs7BjctCy1nPMbBS/a\nekq3MPD9/qd5I7q34MIC7x1ryS1VJRhB5bcUew7xham6tzgX5kb4kzSs7S0T\nOCnydQUxmkHqJ2ArVek0GL1BoAcv1aukzGBUsA0DfM8glWDezF0l2ovBGsSa\nd8VcoxsU3Ez4mxY57bWzJWo25JxhfHsEByFv0Q6NLrRmetA6onzTvUyqmRQw\nhG07wzvjPWTSMEMdQM9OPAYd6Kj3U/AoPw8mnF5gurBCZx+raoC3knbRzW7o\nUzRjyo5x+nTLIK/5VR2UuZACaD4KxZLP+K0x94vZu/pwkQcsqJ0vNHQfTsdX\nu7BweUZrG0tPqtyw6JIBhW7CCxs7GoUlNiBnCP/ssrZEOlVuFCAKPyzQ1+sf\nd93p9eHBxTAd05b59uKqWrWTCIRSwoEt6C3EXKdkfB+LNyVahwsCx3jL+wMN\nMnHtdQ8K0ypa/6AsopMEYNgFNbgYdiknkCtVQW52B+uG71Ej+PTpqJ5e/J8R\nOP0xUoiczr4fP4LxHSJmP4ZmQexSnkv9dmkoMk7dGyWl/RJWT9KfAfGqXNnV\nq0swteE4yEy6LSV64y6thouq5UTSdGboTNxuP1OyFA/8RJDwCmC2zUG5+T7A\nvytO94UmDI15jAT76mppeeTAl0hzOq8LOLJOWk/NZ8e5orhVJA5RVoJyBXnc\nktQI\r\n=u2AQ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "james@talmage.io",
+          "name": "jamestalmage"
+        },
+        {
+          "email": "olalonde@gmail.com",
+          "name": "olalonde"
+        },
+        {
+          "email": "ruben.verborgh@gmail.com",
+          "name": "rubenverborgh"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/follow-redirects_1.5.6_1534815892063_0.5635425139833941"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.5.7": {
+      "name": "follow-redirects",
+      "version": "1.5.7",
+      "description": "HTTP and HTTPS modules that follow redirects.",
+      "main": "index.js",
+      "engines": {
+        "node": ">=4.0"
+      },
+      "scripts": {
+        "test": "npm run lint && npm run mocha",
+        "lint": "eslint *.js test",
+        "mocha": "nyc mocha"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/olalonde/follow-redirects.git"
+      },
+      "homepage": "https://github.com/olalonde/follow-redirects",
+      "bugs": {
+        "url": "https://github.com/olalonde/follow-redirects/issues"
+      },
+      "keywords": [
+        "http",
+        "https",
+        "url",
+        "redirect",
+        "client",
+        "location",
+        "utility"
+      ],
+      "author": {
+        "name": "Olivier Lalonde",
+        "email": "olalonde@gmail.com",
+        "url": "http://www.syskall.com"
+      },
+      "contributors": [
+        {
+          "name": "James Talmage",
+          "email": "james@talmage.io"
+        },
+        {
+          "name": "Ruben Verborgh",
+          "email": "ruben@verborgh.org",
+          "url": "https://ruben.verborgh.org/"
+        }
+      ],
+      "files": [
+        "index.js",
+        "create.js",
+        "http.js",
+        "https.js"
+      ],
+      "dependencies": {
+        "debug": "^3.1.0"
+      },
+      "devDependencies": {
+        "bluebird": "^3.5.1",
+        "concat-stream": "^1.6.0",
+        "coveralls": "^3.0.0",
+        "eslint": "^4.19.1",
+        "express": "^4.16.2",
+        "mocha": "^5.0.0",
+        "nyc": "^11.8.0"
+      },
+      "license": "MIT",
+      "nyc": {
+        "reporter": [
+          "lcov",
+          "text"
+        ]
+      },
+      "gitHead": "7fd6bf3a56cd1632d2171d7e11d3386e1bccb949",
+      "_id": "follow-redirects@1.5.7",
+      "_npmVersion": "6.4.0",
+      "_nodeVersion": "10.8.0",
+      "_npmUser": {
+        "name": "rubenverborgh",
+        "email": "ruben.verborgh@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-NONJVIFiX7Z8k2WxfqBjtwqMifx7X42ORLFrOZ2LTKGj71G3C0kfdyTqGqr8fx5zSX6Foo/D95dgGWbPUiwnew==",
+        "shasum": "a39e4804dacb90202bca76a9e2ac10433ca6a69a",
+        "tarball": "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.5.7.tgz",
+        "fileCount": 6,
+        "unpackedSize": 19548,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbfaVBCRA9TVsSAnZWagAAFGwP+QBVZLosWW0bEwyhgXka\n64JvK0X82Gz218ZTzxYzkXPVYtoCZm+gLAppdaAKS+xemhvw7UFYoYSopVb4\nLF4ZL7JCTz7pyn1sDuWHnqfd/xNqUPYfHF0ylE03tjEfSJREM/9q2tnt9ruJ\nfE1hsFa3GGuUNsjbntMwhJ+o/3kiXr6dZqTStsOg9W2oWd/vzP5cxWCX3RxK\nSVISYcSZrVu8e2vYBhtedEcHjIC2PVUufEmHrcOQ8DPvpliOT/L4HQbXwrfA\nQx6ElABUSyD/U4JvV5799sdV/JTxJ1HKMTqKNqeeO0j3D8HeAB95ykqI1zwD\nUocEz4mSPNDIiKYr1wcP6B0rs7i/pqbSj8v9mlu3385ziMV2sVJJ7zfJj0Q5\ncUE59dbDusFxe6QSaliPbfq3kjwgLiiFI3fVTEXDnwZJ3y9gDgripyHpx9St\n9CrkNTe/vT90tnXb3Ak8C+exNC/yZcfFd1rXz29Akk6uRHQQR4536bEL/kb9\nQ00ozRuZWJDXev8PZRnO0R/PLR+NP4+ZxH4l3nkF+RVtJXOzn9D7IMw0MV1Y\nOoQwyxDdokTbgvNSlnEfJa3jWxJ0aYrJTnCnnIF9dyUpvizFNGFROifuImgH\n6K7dxHQtH4B//2EvWghOB51u66FS7UglRTRArpJ16h9CrTETx+2I7Y3q8yNK\nhY3M\r\n=G3OF\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "james@talmage.io",
+          "name": "jamestalmage"
+        },
+        {
+          "email": "olalonde@gmail.com",
+          "name": "olalonde"
+        },
+        {
+          "email": "ruben.verborgh@gmail.com",
+          "name": "rubenverborgh"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/follow-redirects_1.5.7_1534960961042_0.010777989922793552"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.5.8": {
+      "name": "follow-redirects",
+      "version": "1.5.8",
+      "description": "HTTP and HTTPS modules that follow redirects.",
+      "main": "index.js",
+      "engines": {
+        "node": ">=4.0"
+      },
+      "scripts": {
+        "test": "npm run lint && npm run mocha",
+        "lint": "eslint *.js test",
+        "mocha": "nyc mocha"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/olalonde/follow-redirects.git"
+      },
+      "homepage": "https://github.com/olalonde/follow-redirects",
+      "bugs": {
+        "url": "https://github.com/olalonde/follow-redirects/issues"
+      },
+      "keywords": [
+        "http",
+        "https",
+        "url",
+        "redirect",
+        "client",
+        "location",
+        "utility"
+      ],
+      "author": {
+        "name": "Olivier Lalonde",
+        "email": "olalonde@gmail.com",
+        "url": "http://www.syskall.com"
+      },
+      "contributors": [
+        {
+          "name": "James Talmage",
+          "email": "james@talmage.io"
+        },
+        {
+          "name": "Ruben Verborgh",
+          "email": "ruben@verborgh.org",
+          "url": "https://ruben.verborgh.org/"
+        }
+      ],
+      "dependencies": {
+        "debug": "=3.1.0"
+      },
+      "devDependencies": {
+        "bluebird": "^3.5.1",
+        "concat-stream": "^1.6.0",
+        "coveralls": "^3.0.0",
+        "eslint": "^4.19.1",
+        "express": "^4.16.2",
+        "mocha": "^5.0.0",
+        "nyc": "^11.8.0"
+      },
+      "license": "MIT",
+      "nyc": {
+        "reporter": [
+          "lcov",
+          "text"
+        ]
+      },
+      "gitHead": "0a75768c122cf693dddfa85fd218f35c29bfe81e",
+      "_id": "follow-redirects@1.5.8",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.9.0",
+      "_npmUser": {
+        "name": "rubenverborgh",
+        "email": "ruben.verborgh@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-sy1mXPmv7kLAMKW/8XofG7o9T+6gAjzdZK4AJF6ryqQYUa/hnzgiypoeUecZ53x7XiqKNEpNqLtS97MshW2nxg==",
+        "shasum": "1dbfe13e45ad969f813e86c00e5296f525c885a1",
+        "tarball": "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.5.8.tgz",
+        "fileCount": 6,
+        "unpackedSize": 19548,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbmBa/CRA9TVsSAnZWagAAuTsP/1UQNUc2CA5UKKrSLI5E\nStiPsQXJI5nmVuNOyTHxFb6bWzRa4rXlLxJ/NkPyGXl6Vc+DMof1h9AU0vRX\nZwpSP4wp/kB49/ZS8+t/0GZ4QSoJlhtOpubL7XyHGsssMjEsMcTBWKQc8MbL\nUobJnJapu3ryyuj2sBh0UwZAaUBL0PsTCtoDWzj5um5sdsU/2wFjKMVUFBl7\n6DQolXWUFcUAnwFC9UnPMxKIPuVIreksVTpx6SW6l26OSEmAm3AWKEmD/mbD\nIHiIUowJ8VSwSRaOCRUKSwfrFp494nIJESDZAU8yMB7m4krN4+l51I80jZeO\no33NpB3NBBWz+Tfj5ST+vIz3U92FaMZop4Q4qSXR3fXXg3iaAB9DsNRvMlIz\nbDQYRCWSBpnvOBzPwDVPZmKexQM6UpQphlLTTXu4qtuVHG8byc3z5oWY8MFw\nlgqh1PGXjXmwhtFSnd2cXd1voUK1Ljrzp4ei356uScjE/8kzNr9shgPz5y7W\nJNqlsmnTaS7LWdVFKcxbbFY53mxxEh6Rx0CuH6v963IDOWWBpyyIOi2PO2em\nbS52oglk/h3NBiP55hdDQ+dsj28h2Dw3Na8LIyDQvO0vhbSiuKEKNxRC40SP\nYCtpuhXluvtYeEvlFzWcQaUNLa1w0wZ1cERWaq5PeilVA3sS57Ib9RXZcd4k\n3pAC\r\n=JSYr\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "james@talmage.io",
+          "name": "jamestalmage"
+        },
+        {
+          "email": "olalonde@gmail.com",
+          "name": "olalonde"
+        },
+        {
+          "email": "ruben.verborgh@gmail.com",
+          "name": "rubenverborgh"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/follow-redirects_1.5.8_1536693950574_0.5199163289035582"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.5.9": {
+      "name": "follow-redirects",
+      "version": "1.5.9",
+      "description": "HTTP and HTTPS modules that follow redirects.",
+      "main": "index.js",
+      "engines": {
+        "node": ">=4.0"
+      },
+      "scripts": {
+        "test": "npm run lint && npm run mocha",
+        "lint": "eslint *.js test",
+        "mocha": "nyc mocha"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/olalonde/follow-redirects.git"
+      },
+      "homepage": "https://github.com/olalonde/follow-redirects",
+      "bugs": {
+        "url": "https://github.com/olalonde/follow-redirects/issues"
+      },
+      "keywords": [
+        "http",
+        "https",
+        "url",
+        "redirect",
+        "client",
+        "location",
+        "utility"
+      ],
+      "author": {
+        "name": "Olivier Lalonde",
+        "email": "olalonde@gmail.com",
+        "url": "http://www.syskall.com"
+      },
+      "contributors": [
+        {
+          "name": "James Talmage",
+          "email": "james@talmage.io"
+        },
+        {
+          "name": "Ruben Verborgh",
+          "email": "ruben@verborgh.org",
+          "url": "https://ruben.verborgh.org/"
+        }
+      ],
+      "dependencies": {
+        "debug": "=3.1.0"
+      },
+      "devDependencies": {
+        "concat-stream": "^1.6.0",
+        "coveralls": "^3.0.0",
+        "eslint": "^4.19.1",
+        "express": "^4.16.2",
+        "mocha": "^5.0.0",
+        "nyc": "^11.8.0"
+      },
+      "license": "MIT",
+      "nyc": {
+        "reporter": [
+          "lcov",
+          "text"
+        ]
+      },
+      "gitHead": "90a52f7c9bc084c20ae167d7fcd0ede4770f582e",
+      "_id": "follow-redirects@1.5.9",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.9.0",
+      "_npmUser": {
+        "name": "rubenverborgh",
+        "email": "ruben@verborgh.org"
+      },
+      "dist": {
+        "integrity": "sha512-Bh65EZI/RU8nx0wbYF9shkFZlqLP+6WT/5FnA3cE/djNSuKNHJEinGGZgu/cQEkeeb2GdFOgenAmn8qaqYke2w==",
+        "shasum": "c9ed9d748b814a39535716e531b9196a845d89c6",
+        "tarball": "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.5.9.tgz",
+        "fileCount": 6,
+        "unpackedSize": 19522,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbvNDqCRA9TVsSAnZWagAAvKkP/j2g9UU23tkeBbnBBcDU\nfk0cBX6C+0D6Jo4FFXLr6ZBCZ77yHwZLHcbWGcHJzGaBDRG71aQC9DpoEMXq\nPeBGtp1Ag8tS1uC8SgCq1jYKqv3J84NzkpnKpzPA7PWcU6uG9erGjcRKenpB\nyWnF8EUTNLFA52WBhfE+lzn5yNx2nEpdxV55uYAwTyMZkub8edh/l48EwG9U\nH1XsySLz7MsEXr+1zsKl9MwsW6Z/ukFXFSZhiIJVM5ygq56AMiN57644uEbQ\ntXet7FNj+JafBXSuQnqrhatWnqu6oCxuuNYGpYiYjqbE53ExF3UHHRaHFMpY\n/IUbGUg3NsfGxgpBw9NGrai80eFhXr+m48dpWHGD3RjBRRVsbkjM1klxLo00\n7/o/nFGckmmf5w6GO0ev960QNoVJuDhDeM7Z5aDloEmazfUA6SvsoIHSCxEf\njxYh5RfnuNq5f8neqgvxp4TZ4WIzwHt9qL17YYAj4yqFEAZAfceZ3rrL4dcJ\nXmrEistf5DAiChl92vmUMT+hGpFUrUbk8cQ/DM4w0+Gk3Ikkn3J5fPBEHiBl\nE9HQNzkDrPzGTgnH+rRPw+lO5CDBMS6RZ/uoiQI+dDETUKtLg9+uCsfIaGBN\ntXtlW4EvzTLAASofbQheIOmg188y6vg4R4iNB0vDeM576QWpV1Jn9MSw6BEO\npP1Y\r\n=Zxsh\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "james@talmage.io",
+          "name": "jamestalmage"
+        },
+        {
+          "email": "olalonde@gmail.com",
+          "name": "olalonde"
+        },
+        {
+          "email": "ruben.verborgh@gmail.com",
+          "name": "rubenverborgh"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/follow-redirects_1.5.9_1539100905320_0.008006507326728585"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.5.10": {
+      "name": "follow-redirects",
+      "version": "1.5.10",
+      "description": "HTTP and HTTPS modules that follow redirects.",
+      "main": "index.js",
+      "engines": {
+        "node": ">=4.0"
+      },
+      "scripts": {
+        "test": "npm run lint && npm run mocha",
+        "lint": "eslint *.js test",
+        "mocha": "nyc mocha"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/follow-redirects/follow-redirects.git"
+      },
+      "homepage": "https://github.com/follow-redirects/follow-redirects",
+      "bugs": {
+        "url": "https://github.com/follow-redirects/follow-redirects/issues"
+      },
+      "keywords": [
+        "http",
+        "https",
+        "url",
+        "redirect",
+        "client",
+        "location",
+        "utility"
+      ],
+      "author": {
+        "name": "Ruben Verborgh",
+        "email": "ruben@verborgh.org",
+        "url": "https://ruben.verborgh.org/"
+      },
+      "contributors": [
+        {
+          "name": "Olivier Lalonde",
+          "email": "olalonde@gmail.com",
+          "url": "http://www.syskall.com"
+        },
+        {
+          "name": "James Talmage",
+          "email": "james@talmage.io"
+        }
+      ],
+      "dependencies": {
+        "debug": "=3.1.0"
+      },
+      "devDependencies": {
+        "concat-stream": "^1.6.0",
+        "coveralls": "^3.0.2",
+        "eslint": "^4.19.1",
+        "express": "^4.16.2",
+        "mocha": "^5.0.0",
+        "nyc": "^11.8.0"
+      },
+      "license": "MIT",
+      "nyc": {
+        "reporter": [
+          "lcov",
+          "text"
+        ]
+      },
+      "gitHead": "91842752013b26ed780f7b04e557c72f02228cde",
+      "_id": "follow-redirects@1.5.10",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.9.0",
+      "_npmUser": {
+        "name": "rubenverborgh",
+        "email": "ruben@verborgh.org"
+      },
+      "dist": {
+        "integrity": "sha512-0V5l4Cizzvqt5D44aTXbFZz+FtyXV1vrDN6qrelxtfYQKW0KO0W2T/hkE8xvGa/540LkZlkaUjO4ailYTFtHVQ==",
+        "shasum": "7b7a9f9aea2fdff36786a94ff643ed07f4ff5e2a",
+        "tarball": "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.5.10.tgz",
+        "fileCount": 6,
+        "unpackedSize": 19800,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJb8ypeCRA9TVsSAnZWagAAR7AP/RwuZoZJOzKWB2RcWOk6\n+U2yuf3DRHCEEZuaynkOZTBc5B+xIpYFkDWgO+3lFQ8mTFVRfl9b87vJ4tQ2\npXeYcbWvt79hB+K4jh2VavKxsA3zByh4o0AVOWoaSn5qzull6Z4n9InAe2hN\ned5R3PZpMqY4YXuWMtHCLn+NJePGnFyEY2ESP0Ehs4DKDypj02HO3s9qCuqO\nlhSw9VmpQ+imJMge8o7EyvwfZaWEmb0ERaL1thLUOY2trHDKVO85JXla4h38\nM4oOc1g7o3yc0rVT8vZk9C56lkTQgULBIKc5HXUHjOkTO7wfbR+vq+cuUMaq\nBqyQb2qsy54nPC8EK6C36nIKXIy2F0UvARc1x/302XQkCjNajEIoPtX3vouo\nU3MIg8UKm0jJxjf6/PAgeDN4rtHaDUgK3N3YMzvhcIU/H+Bz00rEyn0GMCTM\npi6zo6aa3VXjyFP2+vQghXax6PYcbyec2/cBuUk9KZOfORvJ5gmvCkbLWWZC\nQUapjl2+4sWA2j1kT+m8JkUo969yiayjmKeI4zP0jLPFwZ0IPcN1+/ekMnD0\nAtwF0k7RPz06GrdleYaKk/+3+88ViuEkfH0tBomMIgSZ7Zui0SsPS6ToQcxK\nPHjOCKAFOcYs10ZFhfhgV/wF8LR16rIRwXnlYREKQE6YuAMvhNN5UyLEqwNE\nqVU1\r\n=Xtc4\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "james@talmage.io",
+          "name": "jamestalmage"
+        },
+        {
+          "email": "olalonde@gmail.com",
+          "name": "olalonde"
+        },
+        {
+          "email": "ruben.verborgh@gmail.com",
+          "name": "rubenverborgh"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/follow-redirects_1.5.10_1542662749815_0.6076235029881887"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.6.0": {
+      "name": "follow-redirects",
+      "version": "1.6.0",
+      "description": "HTTP and HTTPS modules that follow redirects.",
+      "main": "index.js",
+      "engines": {
+        "node": ">=4.0"
+      },
+      "scripts": {
+        "test": "npm run lint && npm run mocha",
+        "lint": "eslint *.js test",
+        "mocha": "nyc mocha"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/follow-redirects/follow-redirects.git"
+      },
+      "homepage": "https://github.com/follow-redirects/follow-redirects",
+      "bugs": {
+        "url": "https://github.com/follow-redirects/follow-redirects/issues"
+      },
+      "keywords": [
+        "http",
+        "https",
+        "url",
+        "redirect",
+        "client",
+        "location",
+        "utility"
+      ],
+      "author": {
+        "name": "Ruben Verborgh",
+        "email": "ruben@verborgh.org",
+        "url": "https://ruben.verborgh.org/"
+      },
+      "contributors": [
+        {
+          "name": "Olivier Lalonde",
+          "email": "olalonde@gmail.com",
+          "url": "http://www.syskall.com"
+        },
+        {
+          "name": "James Talmage",
+          "email": "james@talmage.io"
+        }
+      ],
+      "dependencies": {
+        "debug": "=3.1.0"
+      },
+      "devDependencies": {
+        "concat-stream": "^1.6.0",
+        "coveralls": "^3.0.2",
+        "eslint": "^4.19.1",
+        "express": "^4.16.2",
+        "mocha": "^5.0.0",
+        "nyc": "^11.8.0"
+      },
+      "license": "MIT",
+      "nyc": {
+        "reporter": [
+          "lcov",
+          "text"
+        ]
+      },
+      "gitHead": "10476676a84c9f1e44b93e4ca28a1dbf7145e673",
+      "_id": "follow-redirects@1.6.0",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.14.2",
+      "_npmUser": {
+        "name": "rubenverborgh",
+        "email": "ruben@verborgh.org"
+      },
+      "dist": {
+        "integrity": "sha512-4Oh4eI3S9OueVV41AgJ1oLjpaJUhbJ7JDGOMhe0AFqoSejl5Q2nn3eGglAzRUKVKZE8jG5MNn66TjCJMAnpsWA==",
+        "shasum": "d12452c031e8c67eb6637d861bfc7a8090167933",
+        "tarball": "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.6.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 21984,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcIq7WCRA9TVsSAnZWagAAuNEQAJWykCTynA9/C+60/9m/\n60s8Un+AfmRb/EDi0juPUuJZZQ0W1/RQfN3oCBpx8vMMjuztK/zUuLa5wLI/\nsX0Eaa2dG9TEFqEKWoQvhXv5mP33uEoa25yYtku64usRPXV6cw/1oggBKKlA\npsYNr0TZz34baoTN+oT9A0FpsByRA+Tn+HGtzRXY6J55DxZAbWoJAS5jTIOF\nwGvYKFPj+UIG1E0o8QiepgslMM6D2P/Xx4AFN25E8uMcF4mEkIRS979UIyTl\n4oCJch98KgwOqcb4ZiKO/bDXdXig1S8YUwoPAK88unGATIgitLLQtpYNspWN\nx9TJen67V8askFhyDng9a3dWfHtYTi3RDORCx4j216MD9jHGPetArQaYi0aZ\nUTLvuYtVqHvwHPZ8UYzmuMxyPhMTZEPhRTbtpgAkCRBMhrWy+gaz6nkWU2aW\nqp80LHIIdjtCDtR9IWEnRmX+JMJx2s/0N+hMGqXTXpDs0M2HxKkF9n3wPXVI\nlprD0dPuMNY1gR9cunSzbl+AF5AH4xif5QVdHGoSkichuhVFUZNub9O36sTA\nc6Vw7FIVLF6fcAIk0SM/VLMq4G956rWiFcnhChrmvXjMqlEnmZWL9UrP1gwh\n4dMwM0hcd6313x0PgiIWfGCFFP/2gAceHD6rsGpy1nv/VRhBYKHkujNrAoWO\nMaEu\r\n=8Rks\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "james@talmage.io",
+          "name": "jamestalmage"
+        },
+        {
+          "email": "olalonde@gmail.com",
+          "name": "olalonde"
+        },
+        {
+          "email": "ruben.verborgh@gmail.com",
+          "name": "rubenverborgh"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/follow-redirects_1.6.0_1545776853871_0.9355239754490214"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.6.1": {
+      "name": "follow-redirects",
+      "version": "1.6.1",
+      "description": "HTTP and HTTPS modules that follow redirects.",
+      "main": "index.js",
+      "engines": {
+        "node": ">=4.0"
+      },
+      "scripts": {
+        "test": "npm run lint && npm run mocha",
+        "lint": "eslint *.js test",
+        "mocha": "nyc mocha"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/follow-redirects/follow-redirects.git"
+      },
+      "homepage": "https://github.com/follow-redirects/follow-redirects",
+      "bugs": {
+        "url": "https://github.com/follow-redirects/follow-redirects/issues"
+      },
+      "keywords": [
+        "http",
+        "https",
+        "url",
+        "redirect",
+        "client",
+        "location",
+        "utility"
+      ],
+      "author": {
+        "name": "Ruben Verborgh",
+        "email": "ruben@verborgh.org",
+        "url": "https://ruben.verborgh.org/"
+      },
+      "contributors": [
+        {
+          "name": "Olivier Lalonde",
+          "email": "olalonde@gmail.com",
+          "url": "http://www.syskall.com"
+        },
+        {
+          "name": "James Talmage",
+          "email": "james@talmage.io"
+        }
+      ],
+      "dependencies": {
+        "debug": "=3.1.0"
+      },
+      "devDependencies": {
+        "concat-stream": "^1.6.0",
+        "coveralls": "^3.0.2",
+        "eslint": "^4.19.1",
+        "express": "^4.16.2",
+        "mocha": "^5.0.0",
+        "nyc": "^11.8.0"
+      },
+      "license": "MIT",
+      "nyc": {
+        "reporter": [
+          "lcov",
+          "text"
+        ]
+      },
+      "gitHead": "0cbcaac65e5c0fdff425af75939d0e92f54cfe73",
+      "_id": "follow-redirects@1.6.1",
+      "_npmVersion": "6.5.0",
+      "_nodeVersion": "10.14.2",
+      "_npmUser": {
+        "name": "rubenverborgh",
+        "email": "ruben@verborgh.org"
+      },
+      "dist": {
+        "integrity": "sha512-t2JCjbzxQpWvbhts3l6SH1DKzSrx8a+SsaVf4h6bG4kOXUuPYS/kg2Lr4gQSb7eemaHqJkOThF1BGyjlUkO1GQ==",
+        "shasum": "514973c44b5757368bad8bddfe52f81f015c94cb",
+        "tarball": "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.6.1.tgz",
+        "fileCount": 6,
+        "unpackedSize": 20845,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcLeLrCRA9TVsSAnZWagAA7GsQAJGbHWOu1A2HhmqPwWGG\n0xWiMBnggNuxljneb+J4JXp+2gPrC6ZRnWoGijY4yu/d5zv9Z4Yjt1/7MgfA\n7sbJ110OIyinX99qEbB75R9xho4kmm6eLfZX9xjMiK2uNcMCtdUiZMUhE5dy\nRYZDT7SW+/9JAnqWo2FyyR1aC/ypZWSVZ4p6kSLR4tL841urFyk3WmZzsHQT\n9+FAkmSlSkzGHfiDitzh6nHmncztCXZ0abClV2q0/BdYaGkwlJUO0F2uagBF\nhDIyiQnIhiN8/8IRJDozlr/an5PM3RTZs3S29/RoeLnURpTkWw0Hk0XN6ZVH\nf/YvuW5sHGwJU36pz6OnfJeLWUcRcxr8EDQJBqAaGqZURr9f9Rsv4/r/D0l2\nR52pOQSbOxwngYVITDGmXPkYwH/ZEjNtiZZW2RVuJx1joIzNOE7s93Mvu79i\n9WPjcc0KXhK7ANaNE77ZqB5v1fIps050vlaYPVnbr5n+4hNYvaZf1Ib4cTTW\nUJN5p3NfsMxnQOVD26Sgs/QtfV3BVC6xTJDyS398RWDauWXZMv5r+LSLHJYy\noiAw6YKYcjpv8Dk4kl3Z8BAEwHVr4ftKIPfu7fGSGbXqvh+9dKHeFIaUdQGE\nVYJirggQPnUammloIB4cH7ZGKgv2QtfEy5CeunhQk9ZEGVMZDhvpaYb/Ed2e\nTg8m\r\n=2SpE\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "james@talmage.io",
+          "name": "jamestalmage"
+        },
+        {
+          "email": "olalonde@gmail.com",
+          "name": "olalonde"
+        },
+        {
+          "email": "ruben.verborgh@gmail.com",
+          "name": "rubenverborgh"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/follow-redirects_1.6.1_1546511083043_0.9607381997588877"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.7.0": {
+      "name": "follow-redirects",
+      "version": "1.7.0",
+      "description": "HTTP and HTTPS modules that follow redirects.",
+      "main": "index.js",
+      "engines": {
+        "node": ">=4.0"
+      },
+      "scripts": {
+        "test": "npm run lint && npm run mocha",
+        "lint": "eslint *.js test",
+        "mocha": "nyc mocha"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/follow-redirects/follow-redirects.git"
+      },
+      "homepage": "https://github.com/follow-redirects/follow-redirects",
+      "bugs": {
+        "url": "https://github.com/follow-redirects/follow-redirects/issues"
+      },
+      "keywords": [
+        "http",
+        "https",
+        "url",
+        "redirect",
+        "client",
+        "location",
+        "utility"
+      ],
+      "author": {
+        "name": "Ruben Verborgh",
+        "email": "ruben@verborgh.org",
+        "url": "https://ruben.verborgh.org/"
+      },
+      "contributors": [
+        {
+          "name": "Olivier Lalonde",
+          "email": "olalonde@gmail.com",
+          "url": "http://www.syskall.com"
+        },
+        {
+          "name": "James Talmage",
+          "email": "james@talmage.io"
+        }
+      ],
+      "dependencies": {
+        "debug": "^3.2.6"
+      },
+      "devDependencies": {
+        "concat-stream": "^1.6.0",
+        "coveralls": "^3.0.2",
+        "eslint": "^4.19.1",
+        "express": "^4.16.2",
+        "lolex": "^3.0.0",
+        "mocha": "^5.0.0",
+        "nyc": "^11.8.0"
+      },
+      "license": "MIT",
+      "nyc": {
+        "reporter": [
+          "lcov",
+          "text"
+        ]
+      },
+      "gitHead": "301e0b45122faeb8fad8b887b6c73ef36538d628",
+      "_id": "follow-redirects@1.7.0",
+      "_npmVersion": "6.5.0",
+      "_nodeVersion": "10.14.2",
+      "_npmUser": {
+        "name": "rubenverborgh",
+        "email": "ruben@verborgh.org"
+      },
+      "dist": {
+        "integrity": "sha512-m/pZQy4Gj287eNy94nivy5wchN3Kp+Q5WgUPNy5lJSZ3sgkVKSYV/ZChMAQVIgx1SqfZ2zBZtPA2YlXIWxxJOQ==",
+        "shasum": "489ebc198dc0e7f64167bd23b03c4c19b5784c76",
+        "tarball": "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.7.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 21525,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcZI7aCRA9TVsSAnZWagAA4wYP/i0UEluhn6QsNUW7FsQC\nV6csdzuDsSeSgskqm/CI6rqTxpXxSMUMG4GtFfnynrAEYz2dwa+KNonZOvhc\nP0DRvRJerUwyblF6deVA9cYDNj8WSE1ftOjQp6X7r5LW4jud+vTM+tCYFvIo\nbJW1IaTunyz1HNemveYSwC8W/qeCuDY7UlLOoz7IWypivuLZSwjKfcL7BVjO\nVwn77IivSNNLSbDtcmXIiR6zGVBSkY9JMXPM4bBC5kJytWO5QwE6OzGY0xNq\nTDnBh0hHNRw3RkcIotM/U0YVais8HuaDr2WO7/N3pGfqtLVHT92hxZtIcnSu\nDJFzs8ptzBB5jzx2/uD6wpXq9+fNxc/EcbeH9GFNBxMA9Ks4rT2VdbjJnkFu\npWfAwaYKcCTz0CRffkeN64Py4NDiwQ0MuNYlKlGthTzz08f3c7Z/DssV+ffD\neVrZ8C0Z400+dsMdvGH74DKw+8qYaVXZ++Yaxc8PoG+mKnW49IAa5nN7huL5\nvNNFGES6lVnOtHPSJpdUK9MAJGr8L1PTBqZYr8ALVcUkHeKzb/3Z3Z8NfE/i\nCUdxcsCoP+C52bmESwhJIN3SLSuMb4Nbx+/s3f0zx+gZ2HieGQicYyRybBEj\nkkzparnDuGJ+63+IWc4rbEv0vD7iw8EX5SazL+/DDAH0X9jsU6gkZYIVc6SK\neyjn\r\n=xy7d\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "james@talmage.io",
+          "name": "jamestalmage"
+        },
+        {
+          "email": "olalonde@gmail.com",
+          "name": "olalonde"
+        },
+        {
+          "email": "ruben.verborgh@gmail.com",
+          "name": "rubenverborgh"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/follow-redirects_1.7.0_1550094042182_0.6861824070554166"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.8.0": {
+      "name": "follow-redirects",
+      "version": "1.8.0",
+      "description": "HTTP and HTTPS modules that follow redirects.",
+      "main": "index.js",
+      "engines": {
+        "node": ">=6.0"
+      },
+      "scripts": {
+        "test": "npm run lint && npm run mocha",
+        "lint": "eslint *.js test",
+        "mocha": "nyc mocha"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/follow-redirects/follow-redirects.git"
+      },
+      "homepage": "https://github.com/follow-redirects/follow-redirects",
+      "bugs": {
+        "url": "https://github.com/follow-redirects/follow-redirects/issues"
+      },
+      "keywords": [
+        "http",
+        "https",
+        "url",
+        "redirect",
+        "client",
+        "location",
+        "utility"
+      ],
+      "author": {
+        "name": "Ruben Verborgh",
+        "email": "ruben@verborgh.org",
+        "url": "https://ruben.verborgh.org/"
+      },
+      "contributors": [
+        {
+          "name": "Olivier Lalonde",
+          "email": "olalonde@gmail.com",
+          "url": "http://www.syskall.com"
+        },
+        {
+          "name": "James Talmage",
+          "email": "james@talmage.io"
+        }
+      ],
+      "dependencies": {
+        "debug": "^4.1.1"
+      },
+      "devDependencies": {
+        "concat-stream": "^2.0.0",
+        "coveralls": "^3.0.3",
+        "eslint": "^5.16.0",
+        "express": "^4.16.4",
+        "lolex": "^3.1.0",
+        "mocha": "^6.0.2",
+        "nyc": "^14.1.1"
+      },
+      "license": "MIT",
+      "nyc": {
+        "reporter": [
+          "lcov",
+          "text"
+        ]
+      },
+      "gitHead": "b7a8216d3014dd82a605bd36e8756cd40936878c",
+      "_id": "follow-redirects@1.8.0",
+      "_nodeVersion": "10.14.2",
+      "_npmVersion": "6.9.0",
+      "dist": {
+        "integrity": "sha512-eYyazyi+vwXZ6LfSQicvqFwaNEF5xTvnB/rpzRLuqwK45u7WbBEnQ/dDic66KD/A8IzTXFlj2ROAcaP0f2v4lg==",
+        "shasum": "dcf34930bcfdb6c1eb22b8eb7c457ec95a3dcf40",
+        "tarball": "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.8.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 22157,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdZQ+vCRA9TVsSAnZWagAAwA4P/iVHFFfoYSdGJ2tiqvXX\njtykXmGCqIgwK1pZ6tjotSJSVDT9VZNFIVZCuIcPIjGB/TbH7kWCF2bpvBnt\nfp3Z3BW9+NGv7/zBSymQWSzYapB881VWf6O1Nuz5t1T8BH9TNb56R9L1ooVO\nZQYUOKB3hw3EyhQRQWl4InUzSpNwh2oLr4l4TotHx6/AUEq29DPp8BxoXe4F\nV9IOWW+ViVphXnDtHSi8zulHKv9ZwnoknbkSnD+8PKFMyEpDYM2VXqb2Oxsn\nYkxp9OSCZioJtafzzOWfow4Fo3R7+E7IWlTBlhXr+QzVOYPS9eg2QXgY/nPr\nwokYdQIMeEYOy906Xe8QoRiOJgcqWutcPivFPeodp6gAzNUsIAKm1qAeNNPM\nMhj7Lml3i5eTa5zuIGAZEIwhHaNqAyPB8seaih140jIarPxhTzSN2vCqCgmN\nmLyMki9CM+v0jiljxrtdBrj1X8DZEMMOYTKk81cdpc/EFhgns1MG315lZm97\nMIYNbPU18IdYTy7T7iSdlTdVOufwUiDmaayZDPQlINb53TgA8+Huck7gaTGs\nPSArjdXVkpVvDDcuo7QEX19tSq18hc/kgVWFndkmZ+v5WZyv/kskh7GA8qZZ\nNlcRxdW2K0CPGHOCSAl1hLaj2gmWXEwejm9wn0zskSq8sbm5T50iLxTjNK6W\negO/\r\n=HCb6\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "james@talmage.io",
+          "name": "jamestalmage"
+        },
+        {
+          "email": "olalonde@gmail.com",
+          "name": "olalonde"
+        },
+        {
+          "email": "ruben.verborgh@gmail.com",
+          "name": "rubenverborgh"
+        }
+      ],
+      "_npmUser": {
+        "name": "rubenverborgh",
+        "email": "ruben@verborgh.org"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/follow-redirects_1.8.0_1566904239145_0.5933962124783387"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.8.1": {
+      "name": "follow-redirects",
+      "version": "1.8.1",
+      "description": "HTTP and HTTPS modules that follow redirects.",
+      "license": "MIT",
+      "main": "index.js",
+      "engines": {
+        "node": ">=4.0"
+      },
+      "scripts": {
+        "test": "npm run lint && npm run mocha",
+        "lint": "eslint *.js test",
+        "mocha": "nyc mocha"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/follow-redirects/follow-redirects.git"
+      },
+      "homepage": "https://github.com/follow-redirects/follow-redirects",
+      "bugs": {
+        "url": "https://github.com/follow-redirects/follow-redirects/issues"
+      },
+      "keywords": [
+        "http",
+        "https",
+        "url",
+        "redirect",
+        "client",
+        "location",
+        "utility"
+      ],
+      "author": {
+        "name": "Ruben Verborgh",
+        "email": "ruben@verborgh.org",
+        "url": "https://ruben.verborgh.org/"
+      },
+      "contributors": [
+        {
+          "name": "Olivier Lalonde",
+          "email": "olalonde@gmail.com",
+          "url": "http://www.syskall.com"
+        },
+        {
+          "name": "James Talmage",
+          "email": "james@talmage.io"
+        }
+      ],
+      "dependencies": {
+        "debug": "^3.0.0"
+      },
+      "devDependencies": {
+        "concat-stream": "^2.0.0",
+        "eslint": "^5.16.0",
+        "express": "^4.16.4",
+        "lolex": "^3.1.0",
+        "mocha": "^6.0.2",
+        "nyc": "^14.1.1"
+      },
+      "gitHead": "5e38b2279e21086952aaa8590e0d83adf9c028f9",
+      "_id": "follow-redirects@1.8.1",
+      "_nodeVersion": "10.14.2",
+      "_npmVersion": "6.9.0",
+      "dist": {
+        "integrity": "sha512-micCIbldHioIegeKs41DoH0KS3AXfFzgS30qVkM6z/XOE/GJgvmsoc839NUqa1B9udYe9dQxgv7KFwng6+p/dw==",
+        "shasum": "24804f9eaab67160b0e840c085885d606371a35b",
+        "tarball": "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.8.1.tgz",
+        "fileCount": 6,
+        "unpackedSize": 22063,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdZWpxCRA9TVsSAnZWagAA8CkQAInJyjtAmvR/Jmc2H4m+\n+GLuWGtxQXAh5jAVfLFVBOYAogY5OGqNQvkKLWYuPOp5Q5c5WYQYnXz3uifI\n647JAXSjFOIEIDDHi3qWGvQbA8NlT+XoHRICocGk3/ogir4x7KMx1L0UZ2Yj\nwSw5zdJB9iP4LoGMuOx7/06mgv9Pox9QOruKM4tXqAaraPyTRAAw4qf30kq5\neRAKGujNeaoeOaCqHym9mB2p20dq9VvRWm56QDC/lIzuDip26XjbduQZABjM\nOiyI0NB54FjT9v91q6ZgIqSIwSuU4/MKoBDymvr95/DaQgiEcW3P3IhTHzyv\nGQ0CNEF+ruPBbw6DhiBhWB38Tv7LvAvSIb7d6xOuhrYIFLYPfkIZIfSNsigZ\nZPxILHiPShHQd1rJUZoeu0Ek2PVRuL8znnXsIj/B32ZjN11gRii2NfWZBILq\n5cK8YTBfnCXbUhpiBhAjfr93P/CGZ5oJSBaZCG30XvAn2WU5AUw93jwen7HQ\nyPnvUSR76UYdMQalugCyn9oE6fq150XFQMI9rNNN1GfxeTEPTcefvAG2rrtK\naakpIfkcNIZRPvntKM5KDeB90ah1KhNTVosZ3mPk89mXJC7rXCls4cOh+wxq\ntXQ7G/pLy+qrzkhlCyh0r++UHtM3i5dh+bEcIebnD85GeqL+YI6S+37uAEAY\npOoq\r\n=SrNP\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "james@talmage.io",
+          "name": "jamestalmage"
+        },
+        {
+          "email": "olalonde@gmail.com",
+          "name": "olalonde"
+        },
+        {
+          "email": "ruben.verborgh@gmail.com",
+          "name": "rubenverborgh"
+        }
+      ],
+      "_npmUser": {
+        "name": "rubenverborgh",
+        "email": "ruben@verborgh.org"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/follow-redirects_1.8.1_1566927473228_0.8108710547104683"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.9.0": {
+      "name": "follow-redirects",
+      "version": "1.9.0",
+      "description": "HTTP and HTTPS modules that follow redirects.",
+      "license": "MIT",
+      "main": "index.js",
+      "engines": {
+        "node": ">=4.0"
+      },
+      "scripts": {
+        "test": "npm run lint && npm run mocha",
+        "lint": "eslint *.js test",
+        "mocha": "nyc mocha"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/follow-redirects/follow-redirects.git"
+      },
+      "homepage": "https://github.com/follow-redirects/follow-redirects",
+      "bugs": {
+        "url": "https://github.com/follow-redirects/follow-redirects/issues"
+      },
+      "keywords": [
+        "http",
+        "https",
+        "url",
+        "redirect",
+        "client",
+        "location",
+        "utility"
+      ],
+      "author": {
+        "name": "Ruben Verborgh",
+        "email": "ruben@verborgh.org",
+        "url": "https://ruben.verborgh.org/"
+      },
+      "contributors": [
+        {
+          "name": "Olivier Lalonde",
+          "email": "olalonde@gmail.com",
+          "url": "http://www.syskall.com"
+        },
+        {
+          "name": "James Talmage",
+          "email": "james@talmage.io"
+        }
+      ],
+      "dependencies": {
+        "debug": "^3.0.0"
+      },
+      "devDependencies": {
+        "concat-stream": "^2.0.0",
+        "eslint": "^5.16.0",
+        "express": "^4.16.4",
+        "lolex": "^3.1.0",
+        "mocha": "^6.0.2",
+        "nyc": "^14.1.1"
+      },
+      "gitHead": "2215c54e527663cf39b2c4e8c6dd862207390824",
+      "_id": "follow-redirects@1.9.0",
+      "_nodeVersion": "10.14.2",
+      "_npmVersion": "6.9.0",
+      "dist": {
+        "integrity": "sha512-CRcPzsSIbXyVDl0QI01muNDu69S8trU4jArW9LpOt2WtC6LyUJetcIrmfHsRBx7/Jb6GHJUiuqyYxPooFfNt6A==",
+        "shasum": "8d5bcdc65b7108fe1508649c79c12d732dcedb4f",
+        "tarball": "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.9.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 22100,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdclssCRA9TVsSAnZWagAAz9IP/2MzQdIJBkQMV2fMW8eX\nejrm9NKiRDWy5iHHlMNP4Ab5Q/L6EoWQfIey+tsvVXdeKg4yX3CmrGHAD2YU\nRPDD2m/D+9ODwl6DkA1eJgB/CeFqOuPXLdAO996N/HNJraF1D13X7eakNr0X\n46Q2l4fXatrHbFnjCAQXDbn7Xc27wgqBYWz0QPFhllQU025/vnk9p0mpgb3F\noUaSiK0YyHpWTlFHTI9Q4T4JzLn4UOtrWKAII3OcfxDcoKvM7HHaBT+Pm4aF\nQrx8MrC/KWgARmN3b//Na4qdjvVSigiXfG2jyVXx+KrryHCmN987439BsvYP\nwM172NFHOav+GCL5pCvNnrLVmtyO75TKpd5yPS4usNiOlZYl8lVrJGBo7e4W\ng2p60W6ihMfVBNFagXK1B6MXFi8ukgXFk+Y0M8peY2ZpA3PwBuE2RIf+fkYn\n74tghvFa15FZXO7Fm8G7sHHA1TNj4/6eehTXir3+P4TQwMCTt+WHJpbCcxfk\nCryarN58fnkYI6ErmFYZsiPmuqsuFE6ZG3XTXu7xq1oSmIJneByyc8QhZq2V\nGc0THH7minRYYN9QAFYNDPORBdHAgwyFctICpNFt3rqFVK4eryLqbMJKqwSR\nLgVuqL2uWOd4K3zxeLYsqmDp5Ww8SdITJFtVXkyJfK5T4dSwtiMyQwpgJTfk\neWy5\r\n=NYvs\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "james@talmage.io",
+          "name": "jamestalmage"
+        },
+        {
+          "email": "olalonde@gmail.com",
+          "name": "olalonde"
+        },
+        {
+          "email": "ruben.verborgh@gmail.com",
+          "name": "rubenverborgh"
+        }
+      ],
+      "_npmUser": {
+        "name": "rubenverborgh",
+        "email": "ruben@verborgh.org"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/follow-redirects_1.9.0_1567775532196_0.9615187287965778"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.9.1": {
+      "name": "follow-redirects",
+      "version": "1.9.1",
+      "description": "HTTP and HTTPS modules that follow redirects.",
+      "license": "MIT",
+      "main": "index.js",
+      "engines": {
+        "node": ">=4.0"
+      },
+      "scripts": {
+        "test": "npm run lint && npm run mocha",
+        "lint": "eslint *.js test",
+        "mocha": "nyc mocha"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/follow-redirects/follow-redirects.git"
+      },
+      "homepage": "https://github.com/follow-redirects/follow-redirects",
+      "bugs": {
+        "url": "https://github.com/follow-redirects/follow-redirects/issues"
+      },
+      "keywords": [
+        "http",
+        "https",
+        "url",
+        "redirect",
+        "client",
+        "location",
+        "utility"
+      ],
+      "author": {
+        "name": "Ruben Verborgh",
+        "email": "ruben@verborgh.org",
+        "url": "https://ruben.verborgh.org/"
+      },
+      "contributors": [
+        {
+          "name": "Olivier Lalonde",
+          "email": "olalonde@gmail.com",
+          "url": "http://www.syskall.com"
+        },
+        {
+          "name": "James Talmage",
+          "email": "james@talmage.io"
+        }
+      ],
+      "dependencies": {
+        "debug": "^3.0.0"
+      },
+      "devDependencies": {
+        "concat-stream": "^2.0.0",
+        "eslint": "^5.16.0",
+        "express": "^4.16.4",
+        "lolex": "^3.1.0",
+        "mocha": "^6.0.2",
+        "nyc": "^14.1.1"
+      },
+      "gitHead": "9df47ad6d7aa4c54fe293ce5ef9637650ce9c460",
+      "_id": "follow-redirects@1.9.1",
+      "_nodeVersion": "12.14.0",
+      "_npmVersion": "6.13.4",
+      "dist": {
+        "integrity": "sha512-oUNbrdUjHItyCytZQrHxWQ81ebL4xCFLH10sG0poUMgbKWoBnswpICjUBld3PLJ1lF6cCYVUBG7hAdLro0JNvg==",
+        "shasum": "26e329669886f8b3baccbaf352067b0253da6c2d",
+        "tarball": "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.9.1.tgz",
+        "fileCount": 6,
+        "unpackedSize": 22322,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeLNU7CRA9TVsSAnZWagAA9OwP/0q/xlzGdXLvctnmG22L\njYFGGcAzMS04Jve+FmofdtUKQG5YVyQTjJsy1Te8mJkggc0GYHmxcpQFSOEp\n6WxT1jjc0aQd1utL8T0hANlEvtPYcqV2o6vn14GQwOgbbcAc3FhjAeK96+Wl\nsgk51vwTlVXqoI1VUrq8ckxzzs4zGI2LaHINtIeMF5fBvRH/FkHZMdw1eUMs\niJhP5ydEBNBXSj/aD8d5SybbwW3Dsj2/ighXIIjck9ssoWBTVf6UtxeJR9P7\nGF1Np2W0psLbGfMQKE1k3XS+UTOhFAkXrLT70pL9YzcZskvGOlzws6aN6BSB\nVDSitmNmiSav6b2aQvosG0aH0K/PFD+wetCwo42K3AlTP8jIwZUKiHmPenJs\nezE8hpJ8kHra73GAzsAkQ5r5P/2Ic7rrzJxElLkgXOwK3ld4bEK3StsmSJwO\n7gCNGFSGXHk2if7cK5lwA430rRmgAdp23EBIGg1qanko/BaiuhjXvEo1gYnp\n5SSwy7cHdzG1t6AYBhiic0TZADNDifZB+pHd4dCZjxibY9fHHg6Q88acbiKr\nkDzJQWZ4yGkZp1+3Vg1WlnQxRn4BfRu63ux7zm0D24Gk1GkKu6af80uz3/Um\nrbxTIhaObp0FaD8eQsk+uaMAIyeOACqpaKrzngTmeS9utLygkr3DPYYJayXw\np3Ym\r\n=bIRS\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "james@talmage.io",
+          "name": "jamestalmage"
+        },
+        {
+          "email": "olalonde@gmail.com",
+          "name": "olalonde"
+        },
+        {
+          "email": "ruben.verborgh@gmail.com",
+          "name": "rubenverborgh"
+        }
+      ],
+      "_npmUser": {
+        "name": "rubenverborgh",
+        "email": "ruben@verborgh.org"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/follow-redirects_1.9.1_1579996474755_0.05050984072533149"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.10.0": {
+      "name": "follow-redirects",
+      "version": "1.10.0",
+      "description": "HTTP and HTTPS modules that follow redirects.",
+      "license": "MIT",
+      "main": "index.js",
+      "engines": {
+        "node": ">=4.0"
+      },
+      "scripts": {
+        "test": "npm run lint && npm run mocha",
+        "lint": "eslint *.js test",
+        "mocha": "nyc mocha"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/follow-redirects/follow-redirects.git"
+      },
+      "homepage": "https://github.com/follow-redirects/follow-redirects",
+      "bugs": {
+        "url": "https://github.com/follow-redirects/follow-redirects/issues"
+      },
+      "keywords": [
+        "http",
+        "https",
+        "url",
+        "redirect",
+        "client",
+        "location",
+        "utility"
+      ],
+      "author": {
+        "name": "Ruben Verborgh",
+        "email": "ruben@verborgh.org",
+        "url": "https://ruben.verborgh.org/"
+      },
+      "contributors": [
+        {
+          "name": "Olivier Lalonde",
+          "email": "olalonde@gmail.com",
+          "url": "http://www.syskall.com"
+        },
+        {
+          "name": "James Talmage",
+          "email": "james@talmage.io"
+        }
+      ],
+      "dependencies": {
+        "debug": "^3.0.0"
+      },
+      "devDependencies": {
+        "concat-stream": "^2.0.0",
+        "eslint": "^5.16.0",
+        "express": "^4.16.4",
+        "lolex": "^3.1.0",
+        "mocha": "^6.0.2",
+        "nyc": "^14.1.1"
+      },
+      "gitHead": "670c3a7b38e0707a22d111fa766b4e82d277ec41",
+      "_id": "follow-redirects@1.10.0",
+      "_nodeVersion": "12.14.0",
+      "_npmVersion": "6.13.4",
+      "dist": {
+        "integrity": "sha512-4eyLK6s6lH32nOvLLwlIOnr9zrL8Sm+OvW4pVTJNoXeGzYIkHVf+pADQi+OJ0E67hiuSLezPVPyBcIZO50TmmQ==",
+        "shasum": "01f5263aee921c6a54fb91667f08f4155ce169eb",
+        "tarball": "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.10.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 23170,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeLiJfCRA9TVsSAnZWagAAMCoQAKUGsAjNMrjM8v1P+Rrq\nCQkexRzO2E3kywImR9837V1NvO/qjrGs3B6fHcP4uvWi237W6pNNpi+9HC2J\nhwUO1AugHjdlGBmZ3xpjZLGgI0oy7Ws9UrHTAyHZcfY7B4YzuF8//P65W6LE\nW9JlqfIPIC8dYX2Y9fR+sqk3urlRSf0SyulYvOMeZYe2+/3PaiKG/JeGHY7T\nsfzi52wk7Y4sQ33VPWa03umgoRWlZ75KTQLcvLKtbR7upBAp1mbc7029PJPB\nPR05STVaOa8di3jvJP89pUs7V7I3yLoSdtKxPatoDPFsAZPWh7seQMJJjzfa\ndo8MdjA1DLNoR7sMUmYsu8dIVd1JHzGHH2HDnDrEZrsIKUQTQC7ovw4MyZ05\niNo/vRg7Pg7xYEqmYq/7YM4TERVWQzf/C2yo4Q2iQsER73FXW3zTglW1uA6g\n4eMgxPKf+6390oxrL8pBAONxM11WeRjJDt7Rrx23nfPCMkVky9vRPTUapsv0\nELVkb+NPTDs4wiEO0t6TQNFdClmSUwfVotSLD6Z79YagB1jrxLJ7zK0Ntz8m\nflaZCpG0SdLC/YFIX7pCc3K9AsZSeNkrt7ejuMTCxFAPXWGfPerSGbEuv/8X\nLBApiH7cvjha+qG1shEA+unjAr6/l5PHX8/bFFDYzI9X3HHxv5UJf/7uXm7K\nKiJk\r\n=0B6u\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "james@talmage.io",
+          "name": "jamestalmage"
+        },
+        {
+          "email": "olalonde@gmail.com",
+          "name": "olalonde"
+        },
+        {
+          "email": "ruben.verborgh@gmail.com",
+          "name": "rubenverborgh"
+        }
+      ],
+      "_npmUser": {
+        "name": "rubenverborgh",
+        "email": "ruben@verborgh.org"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/follow-redirects_1.10.0_1580081759334_0.796661405877777"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.11.0": {
+      "name": "follow-redirects",
+      "version": "1.11.0",
+      "description": "HTTP and HTTPS modules that follow redirects.",
+      "license": "MIT",
+      "main": "index.js",
+      "engines": {
+        "node": ">=4.0"
+      },
+      "scripts": {
+        "test": "npm run lint && npm run mocha",
+        "lint": "eslint *.js test",
+        "mocha": "nyc mocha"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/follow-redirects/follow-redirects.git"
+      },
+      "homepage": "https://github.com/follow-redirects/follow-redirects",
+      "bugs": {
+        "url": "https://github.com/follow-redirects/follow-redirects/issues"
+      },
+      "keywords": [
+        "http",
+        "https",
+        "url",
+        "redirect",
+        "client",
+        "location",
+        "utility"
+      ],
+      "author": {
+        "name": "Ruben Verborgh",
+        "email": "ruben@verborgh.org",
+        "url": "https://ruben.verborgh.org/"
+      },
+      "contributors": [
+        {
+          "name": "Olivier Lalonde",
+          "email": "olalonde@gmail.com",
+          "url": "http://www.syskall.com"
+        },
+        {
+          "name": "James Talmage",
+          "email": "james@talmage.io"
+        }
+      ],
+      "dependencies": {
+        "debug": "^3.0.0"
+      },
+      "devDependencies": {
+        "concat-stream": "^2.0.0",
+        "eslint": "^5.16.0",
+        "express": "^4.16.4",
+        "lolex": "^3.1.0",
+        "mocha": "^6.0.2",
+        "nyc": "^14.1.1"
+      },
+      "gitHead": "0de31a8a0afbb859eca1b522fb3306121ba7c0a4",
+      "_id": "follow-redirects@1.11.0",
+      "_nodeVersion": "12.14.0",
+      "_npmVersion": "6.13.4",
+      "dist": {
+        "integrity": "sha512-KZm0V+ll8PfBrKwMzdo5D13b1bur9Iq9Zd/RMmAoQQcl2PxxFml8cxXPaaPYVbV0RjNjq1CU7zIzAOqtUPudmA==",
+        "shasum": "afa14f08ba12a52963140fe43212658897bc0ecb",
+        "tarball": "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.11.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 23524,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJegH5gCRA9TVsSAnZWagAAnLMP/jR2M97OJB0tx9WA781R\n9n6DD/Ikjyi6coHArH6vMnqW0K4IK1Jsn29rR13M/uc/hZnn+Y/Y9d1lCBuy\n5hPm13ZCtbfNDaCqYMqSd6WGhzj/S/FDjjDHZKyoLlA5JxRpBszwNL6c78SZ\ntYJJMMRAOfZo4apotVG+fvpq1eZ/qw3Vrxsrihzc6v9Xd9RAdLsOh7345RKN\nAJEfm1XcQl54HaRv8jrrLtb1ESHjIeMWcLYS8tI0koCvS8eO1Jf2Hl0Bonrz\n8QDd9YfIS/5qRRXpubKvZ21yKFJ8rWRCJRgjvCSn1DM3fbp66XvjESh61lHN\nLxeIjsMdwv1vGumyJJtcej8DjGfwsBUAcMlrqMo1fpwGJq5u2Zw2TMAGeVK1\nu9myTSynjp/fpv2smZvE7taiYb2Ws01HRadc1CxiRcxHU+UV9SwLKAWaPGIq\n50uF0VfXswFecMY8Mblh5BudCpejf5KBpHKt6Fr3boQFj5jqXlZoGZkSwJea\npZhT14ELTkFqQ4I9EE1wyI8smtXfVVKrpZSoJWuKZDg8TLYf9EHZvu5zcBnT\nHoyhM1SUy6B0AowPDmWBJ92W2d10PcuWFoKFb4bEyzpfYSHaJGoeBiYvboDc\nFBlnbCiamAASn+RzwGu/u+NkxodQUOI1UavxfVCq4qoctRzMK3qU9aJTSVGM\nA+64\r\n=Qy8M\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "james@talmage.io",
+          "name": "jamestalmage"
+        },
+        {
+          "email": "olalonde@gmail.com",
+          "name": "olalonde"
+        },
+        {
+          "email": "ruben.verborgh@gmail.com",
+          "name": "rubenverborgh"
+        }
+      ],
+      "_npmUser": {
+        "name": "rubenverborgh",
+        "email": "ruben@verborgh.org"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/follow-redirects_1.11.0_1585479263559_0.7488129880046406"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.12.0": {
+      "name": "follow-redirects",
+      "version": "1.12.0",
+      "description": "HTTP and HTTPS modules that follow redirects.",
+      "license": "MIT",
+      "main": "index.js",
+      "engines": {
+        "node": ">=4.0"
+      },
+      "scripts": {
+        "test": "npm run lint && npm run mocha",
+        "lint": "eslint *.js test",
+        "mocha": "nyc mocha"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/follow-redirects/follow-redirects.git"
+      },
+      "homepage": "https://github.com/follow-redirects/follow-redirects",
+      "bugs": {
+        "url": "https://github.com/follow-redirects/follow-redirects/issues"
+      },
+      "keywords": [
+        "http",
+        "https",
+        "url",
+        "redirect",
+        "client",
+        "location",
+        "utility"
+      ],
+      "author": {
+        "name": "Ruben Verborgh",
+        "email": "ruben@verborgh.org",
+        "url": "https://ruben.verborgh.org/"
+      },
+      "contributors": [
+        {
+          "name": "Olivier Lalonde",
+          "email": "olalonde@gmail.com",
+          "url": "http://www.syskall.com"
+        },
+        {
+          "name": "James Talmage",
+          "email": "james@talmage.io"
+        }
+      ],
+      "peerDependencies": {
+        "debug": "^3.0.0 || ^4.0.0"
+      },
+      "devDependencies": {
+        "concat-stream": "^2.0.0",
+        "eslint": "^5.16.0",
+        "express": "^4.16.4",
+        "lolex": "^3.1.0",
+        "mocha": "^6.0.2",
+        "nyc": "^14.1.1"
+      },
+      "gitHead": "89fc462674c9a1b88262f1b7d0e828f4ced1b890",
+      "_id": "follow-redirects@1.12.0",
+      "_nodeVersion": "14.2.0",
+      "_npmVersion": "6.14.4",
+      "dist": {
+        "integrity": "sha512-JgawlbfBQKjbKegPn8vUsvJqplE7KHJuhGO4yPcb+ZOIYKSr+xobMVlfRBToZwZUUxy7lFiKBdFNloz9ui368Q==",
+        "shasum": "ff0ccf85cf2c867c481957683b5f91b75b25e240",
+        "tarball": "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.12.0.tgz",
+        "fileCount": 7,
+        "unpackedSize": 23697,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJe6S2GCRA9TVsSAnZWagAAfPgP/1NdDvODI9cnOFEXtzyJ\nRFtpkrpuWSpZWxnv7nyQBuPiXJRLSOqtGaP1CfOJjL2uP9Tbf2ogZLnMA5oA\nz2Ie6pCh/U1p/bvxNNXRBAoSGOgzB1/2IZUTuR0/LK6Gt321uF8i/yQKmyug\nzGUKQjz3GONyheTfyhLrcy5PCZwfSADLyAILsFMuMI1AB4ifm/6Zp0oshQw+\nUuE0SiftQvVG0BVxS2vYS66fAMKktxc6DPvUbn6EKAfaM7Ggj48OqHu77TAD\nJEem8+dYZ9Q2+eY4UyiaZwS3+grO49oymzZ5he6XyRh+6BLclTs8FPlfb+da\nTatRA+ksV9AMVdr3vAoCnxu6I5QxXYnlsNgan1TOzm+edV4zXYwtg6MP+luk\nSD2VQJXi3q/IReADnqWtBfZ9GLHMlAEX9RHubzNsY7bL2F0M6qUSMSIfdHmW\neTTB2YgD5VIVH6HoM4GiI6vwcnupBLrI0wTuBUjswTIIHC3DXsZ+/l5bdKiD\nICcV2MURZ6P7I5HNtdkJVCgydIOY+4vw7y7QNmdyMvq+ALM+tjhAG0N1RvL2\nXaQzfCkG3DaGLEr4h/nfN7yU/NLdi7EDUyYT+vEV0owvoGXrSBoyVEAfVbwe\nGRXRw4RomjGZK5qrnJkOXugSm7zcapK0bz3Do5u96Pp+gLYHCBVy1ka3+vq0\nf8iI\r\n=7ygN\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "james@talmage.io",
+          "name": "jamestalmage"
+        },
+        {
+          "email": "olalonde@gmail.com",
+          "name": "olalonde"
+        },
+        {
+          "email": "ruben.verborgh@gmail.com",
+          "name": "rubenverborgh"
+        }
+      ],
+      "_npmUser": {
+        "name": "rubenverborgh",
+        "email": "ruben@verborgh.org"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/follow-redirects_1.12.0_1592339846541_0.940755220987272"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.12.1": {
+      "name": "follow-redirects",
+      "version": "1.12.1",
+      "description": "HTTP and HTTPS modules that follow redirects.",
+      "license": "MIT",
+      "main": "index.js",
+      "engines": {
+        "node": ">=4.0"
+      },
+      "scripts": {
+        "test": "npm run lint && npm run mocha",
+        "lint": "eslint *.js test",
+        "mocha": "nyc mocha"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/follow-redirects/follow-redirects.git"
+      },
+      "homepage": "https://github.com/follow-redirects/follow-redirects",
+      "bugs": {
+        "url": "https://github.com/follow-redirects/follow-redirects/issues"
+      },
+      "keywords": [
+        "http",
+        "https",
+        "url",
+        "redirect",
+        "client",
+        "location",
+        "utility"
+      ],
+      "author": {
+        "name": "Ruben Verborgh",
+        "email": "ruben@verborgh.org",
+        "url": "https://ruben.verborgh.org/"
+      },
+      "contributors": [
+        {
+          "name": "Olivier Lalonde",
+          "email": "olalonde@gmail.com",
+          "url": "http://www.syskall.com"
+        },
+        {
+          "name": "James Talmage",
+          "email": "james@talmage.io"
+        }
+      ],
+      "funding": [
+        {
+          "type": "individual",
+          "url": "https://github.com/sponsors/RubenVerborgh"
+        }
+      ],
+      "devDependencies": {
+        "concat-stream": "^2.0.0",
+        "eslint": "^5.16.0",
+        "express": "^4.16.4",
+        "lolex": "^3.1.0",
+        "mocha": "^6.0.2",
+        "nyc": "^14.1.1"
+      },
+      "gitHead": "aa6ce01c8145b1f968031c663d9aa87a692cfca7",
+      "_id": "follow-redirects@1.12.1",
+      "_nodeVersion": "12.18.0",
+      "_npmVersion": "6.14.4",
+      "dist": {
+        "integrity": "sha512-tmRv0AVuR7ZyouUHLeNSiO6pqulF7dYa3s19c6t+wz9LD69/uSzdMxJ2S91nTI9U3rt/IldxpzMOFejp6f0hjg==",
+        "shasum": "de54a6205311b93d60398ebc01cf7015682312b6",
+        "tarball": "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.12.1.tgz",
+        "fileCount": 7,
+        "unpackedSize": 23900,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJe6+ybCRA9TVsSAnZWagAAsAcP/1TfXM557wagSC8+bQ1K\n9rHGMRSLAFf7AI3mc6sWLgNPGnh8KiLph98mCy5u7RZmeHWEwNiN5WYcXKPD\ns/q5GnacO6uRdxbC69YwUvY5VljBpdAGqLn2rg85kRF/MkoWWGIe0OXI+eQm\nHZKTlVrRoYA2nOfMjNkws6/3pRSX1FHdgn/uihauW7Z/yHEMR4tt9hYsHtKt\nl9wLbBF+nEq85zSLesBWGyZnAo4JCSaHhRRuRYVON+YYYgi0JXtMgIw01K3k\nw2/DRCzs1gWBgwp2Xb/lIkfY530MQg6ChaC0V+YwSyLyH9l/KMho1qFoUTeL\n1gFPV9qd0+N/ZsjyFOX11HEcoj2cQNZqAkrUKNX0xPLKcwoKlI5B6zCIRvIm\n/3ETO3sFi4otJIzY86DwNWFku+0r9FNftKEiXLlTskh2omdX5Rm/f8CyAChU\nnXThZKYAS7/+miM8aY15WN/yYuxK0nFfNNCTDwMb5sgqTYWJ6jCoIHchxbIK\n2VHK5XT/aezSLmLEKVvmE4LqaaEONqhqnfBngx6fcCDHhPlo5oDDwWQGId/u\n5MlJI3V/YA8zDFhqR8L445Y6w/bMRFIBI7E2xvUij9AZ5MCN/qzZyUcaiGhW\n81gPvWFXoCP6KmAKKAk/FvRBPibk+YLp1sQNaDZlerVnuHpt9jjcDyB0aPmJ\n40A/\r\n=nX59\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "james@talmage.io",
+          "name": "jamestalmage"
+        },
+        {
+          "email": "olalonde@gmail.com",
+          "name": "olalonde"
+        },
+        {
+          "email": "ruben.verborgh@gmail.com",
+          "name": "rubenverborgh"
+        }
+      ],
+      "_npmUser": {
+        "name": "rubenverborgh",
+        "email": "ruben@verborgh.org"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/follow-redirects_1.12.1_1592519834666_0.2575521981101132"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.13.0": {
+      "name": "follow-redirects",
+      "version": "1.13.0",
+      "description": "HTTP and HTTPS modules that follow redirects.",
+      "license": "MIT",
+      "main": "index.js",
+      "engines": {
+        "node": ">=4.0"
+      },
+      "scripts": {
+        "test": "npm run lint && npm run mocha",
+        "lint": "eslint *.js test",
+        "mocha": "nyc mocha"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/follow-redirects/follow-redirects.git"
+      },
+      "homepage": "https://github.com/follow-redirects/follow-redirects",
+      "bugs": {
+        "url": "https://github.com/follow-redirects/follow-redirects/issues"
+      },
+      "keywords": [
+        "http",
+        "https",
+        "url",
+        "redirect",
+        "client",
+        "location",
+        "utility"
+      ],
+      "author": {
+        "name": "Ruben Verborgh",
+        "email": "ruben@verborgh.org",
+        "url": "https://ruben.verborgh.org/"
+      },
+      "contributors": [
+        {
+          "name": "Olivier Lalonde",
+          "email": "olalonde@gmail.com",
+          "url": "http://www.syskall.com"
+        },
+        {
+          "name": "James Talmage",
+          "email": "james@talmage.io"
+        }
+      ],
+      "funding": [
+        {
+          "type": "individual",
+          "url": "https://github.com/sponsors/RubenVerborgh"
+        }
+      ],
+      "devDependencies": {
+        "concat-stream": "^2.0.0",
+        "eslint": "^5.16.0",
+        "express": "^4.16.4",
+        "lolex": "^3.1.0",
+        "mocha": "^6.0.2",
+        "nyc": "^14.1.1"
+      },
+      "gitHead": "b2f2ea52edb4d5949751e2467d9e6d42ca24c8d0",
+      "_id": "follow-redirects@1.13.0",
+      "_nodeVersion": "12.18.0",
+      "_npmVersion": "6.14.4",
+      "dist": {
+        "integrity": "sha512-aq6gF1BEKje4a9i9+5jimNFIpq4Q1WiwBToeRK5NvZBd/TRsmW8BsJfOEGkr76TbOyPVD3OVDN910EcUNtRYEA==",
+        "shasum": "b42e8d93a2a7eea5ed88633676d6597bc8e384db",
+        "tarball": "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.13.0.tgz",
+        "fileCount": 7,
+        "unpackedSize": 24066,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfMTJXCRA9TVsSAnZWagAAH+QP/RYg/ow5bVtgXIxGYoBT\n/mncbw9r192KpPWj/3C7vn3izLTf/GvWuU6DjETTYenRkpOF1QkjlRFyVDBJ\nEYrDlXmHL5AIdQRPQoRFXIRgdOx+bMjYFdeV4KVTqMq9Yh3vFFqho63oBnTP\nRo8iGZ8KGzF2ZVNXRwEnoGSANERPXKsoLKlvBMA0MAXtjQCgOpdzYlNv5h5j\nSXLwxZobsc/4piJWvRjdrITE45UYR5HnknUM90Pm73kVfg5kNdrPqLWUCJ1+\nO/Nf9lzFXrgO8j3fNLw+VB0i8gsAZZz4MOmn/AUUERx8c2mvU7g0R3c5NM4o\nbL+CSNutmz8Vtlu7wxXA7kCJKTPxHQmpfHlZR3B3pKH8nKqGw3lto6XdjWNn\nYZu+YzzJg7v5WVVp7BY54FnVgS+JHz5qog1YqG95IOeErAlA1JWupA7TZrdG\nmm6H5zVI3+qKMUwMUk8TDwpzrInbYbndEcOfgC5OIn7Fc7qxn48duwqcOCBE\nX3VmJJJWil6GP6QsL2DkMC8fEbFluXPeB8BNzxY1HfWWetTI708oYRBVqEQt\nhBqTgF/Px5EeA6BJ5cVg/swOnRYEQ8jL7Bx867bBsfzhE/hC8bmFu29AWXU5\nIM1yHtvey8jgaPVmbFzoWbW9cObfsqmdwIDNamtjhMGDrPeKEhb9CVDXaB4T\n0n4A\r\n=QqNW\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "james@talmage.io",
+          "name": "jamestalmage"
+        },
+        {
+          "email": "olalonde@gmail.com",
+          "name": "olalonde"
+        },
+        {
+          "email": "ruben.verborgh@gmail.com",
+          "name": "rubenverborgh"
+        }
+      ],
+      "_npmUser": {
+        "name": "rubenverborgh",
+        "email": "ruben@verborgh.org"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/follow-redirects_1.13.0_1597059670652_0.3409890757494629"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "## Follow Redirects\n\nDrop-in replacement for Node's `http` and `https` modules that automatically follows redirects.\n\n[![npm version](https://img.shields.io/npm/v/follow-redirects.svg)](https://www.npmjs.com/package/follow-redirects)\n[![Build Status](https://travis-ci.org/follow-redirects/follow-redirects.svg?branch=master)](https://travis-ci.org/follow-redirects/follow-redirects)\n[![Coverage Status](https://coveralls.io/repos/follow-redirects/follow-redirects/badge.svg?branch=master)](https://coveralls.io/r/follow-redirects/follow-redirects?branch=master)\n[![npm downloads](https://img.shields.io/npm/dm/follow-redirects.svg)](https://www.npmjs.com/package/follow-redirects)\n[![Sponsor on GitHub](https://img.shields.io/static/v1?label=Sponsor&message=%F0%9F%92%96&logo=GitHub)](https://github.com/sponsors/RubenVerborgh)\n\n`follow-redirects` provides [request](https://nodejs.org/api/http.html#http_http_request_options_callback) and [get](https://nodejs.org/api/http.html#http_http_get_options_callback)\n methods that behave identically to those found on the native [http](https://nodejs.org/api/http.html#http_http_request_options_callback) and [https](https://nodejs.org/api/https.html#https_https_request_options_callback)\n modules, with the exception that they will seamlessly follow redirects.\n\n```javascript\nconst { http, https } = require('follow-redirects');\n\nhttp.get('http://bit.ly/900913', response => {\n  response.on('data', chunk => {\n    console.log(chunk);\n  });\n}).on('error', err => {\n  console.error(err);\n});\n```\n\nYou can inspect the final redirected URL through the `responseUrl` property on the `response`.\nIf no redirection happened, `responseUrl` is the original request URL.\n\n```javascript\nconst request = https.request({\n  host: 'bitly.com',\n  path: '/UHfDGO',\n}, response => {\n  console.log(response.responseUrl);\n  // 'http://duckduckgo.com/robots.txt'\n});\nrequest.end();\n```\n\n## Options\n### Global options\nGlobal options are set directly on the `follow-redirects` module:\n\n```javascript\nconst followRedirects = require('follow-redirects');\nfollowRedirects.maxRedirects = 10;\nfollowRedirects.maxBodyLength = 20 * 1024 * 1024; // 20 MB\n```\n\nThe following global options are supported:\n\n- `maxRedirects` (default: `21`) – sets the maximum number of allowed redirects; if exceeded, an error will be emitted.\n\n- `maxBodyLength` (default: 10MB) – sets the maximum size of the request body; if exceeded, an error will be emitted.\n\n### Per-request options\nPer-request options are set by passing an `options` object:\n\n```javascript\nconst url = require('url');\nconst { http, https } = require('follow-redirects');\n\nconst options = url.parse('http://bit.ly/900913');\noptions.maxRedirects = 10;\noptions.beforeRedirect = (options, { headers }) => {\n  // Use this to adjust the request options upon redirecting,\n  // to inspect the latest response headers,\n  // or to cancel the request by throwing an error\n  if (options.hostname === \"example.com\") {\n    options.auth = \"user:password\";\n  }\n};\nhttp.request(options);\n```\n\nIn addition to the [standard HTTP](https://nodejs.org/api/http.html#http_http_request_options_callback) and [HTTPS options](https://nodejs.org/api/https.html#https_https_request_options_callback),\nthe following per-request options are supported:\n- `followRedirects` (default: `true`) – whether redirects should be followed.\n\n- `maxRedirects` (default: `21`) – sets the maximum number of allowed redirects; if exceeded, an error will be emitted.\n\n- `maxBodyLength` (default: 10MB) – sets the maximum size of the request body; if exceeded, an error will be emitted.\n\n- `beforeRedirect` (default: `undefined`) – optionally change the request `options` on redirects, or abort the request by throwing an error.\n\n- `agents` (default: `undefined`) – sets the `agent` option per protocol, since HTTP and HTTPS use different agents. Example value: `{ http: new http.Agent(), https: new https.Agent() }`\n\n- `trackRedirects` (default: `false`) – whether to store the redirected response details into the `redirects` array on the response object.\n\n\n### Advanced usage\nBy default, `follow-redirects` will use the Node.js default implementations\nof [`http`](https://nodejs.org/api/http.html)\nand [`https`](https://nodejs.org/api/https.html).\nTo enable features such as caching and/or intermediate request tracking,\nyou might instead want to wrap `follow-redirects` around custom protocol implementations:\n\n```javascript\nconst { http, https } = require('follow-redirects').wrap({\n  http: require('your-custom-http'),\n  https: require('your-custom-https'),\n});\n```\n\nSuch custom protocols only need an implementation of the `request` method.\n\n## Browser Usage\n\nDue to the way the browser works,\nthe `http` and `https` browser equivalents perform redirects by default.\n\nBy requiring `follow-redirects` this way:\n```javascript\nconst http = require('follow-redirects/http');\nconst https = require('follow-redirects/https');\n```\nyou can easily tell webpack and friends to replace\n`follow-redirect` by the built-in versions:\n\n```json\n{\n  \"follow-redirects/http\"  : \"http\",\n  \"follow-redirects/https\" : \"https\"\n}\n```\n\n## Contributing\n\nPull Requests are always welcome. Please [file an issue](https://github.com/follow-redirects/follow-redirects/issues)\n detailing your proposal before you invest your valuable time. Additional features and bug fixes should be accompanied\n by tests. You can run the test suite locally with a simple `npm test` command.\n\n## Debug Logging\n\n`follow-redirects` uses the excellent [debug](https://www.npmjs.com/package/debug) for logging. To turn on logging\n set the environment variable `DEBUG=follow-redirects` for debug output from just this module. When running the test\n suite it is sometimes advantageous to set `DEBUG=*` to see output from the express server as well.\n\n## Authors\n\n- [Ruben Verborgh](https://ruben.verborgh.org/)\n- [Olivier Lalonde](mailto:olalonde@gmail.com)\n- [James Talmage](mailto:james@talmage.io)\n\n## License\n\n[MIT License](https://github.com/follow-redirects/follow-redirects/blob/master/LICENSE)\n",
+  "maintainers": [
+    {
+      "email": "james@talmage.io",
+      "name": "jamestalmage"
+    },
+    {
+      "email": "olalonde@gmail.com",
+      "name": "olalonde"
+    },
+    {
+      "email": "ruben.verborgh@gmail.com",
+      "name": "rubenverborgh"
+    }
+  ],
+  "time": {
+    "modified": "2020-08-10T11:41:15.992Z",
+    "created": "2012-11-15T22:23:37.885Z",
+    "0.0.1": "2012-11-15T22:23:44.078Z",
+    "0.0.2": "2012-11-21T00:14:20.978Z",
+    "0.0.3": "2012-11-29T08:19:21.319Z",
+    "0.0.4": "2015-07-01T14:43:59.128Z",
+    "0.0.5": "2015-07-01T15:27:15.970Z",
+    "0.0.6": "2015-07-04T13:26:09.166Z",
+    "0.0.7": "2015-09-10T01:41:18.073Z",
+    "0.1.0": "2016-04-10T19:31:39.368Z",
+    "0.2.0": "2016-06-06T22:00:05.075Z",
+    "0.3.0": "2016-10-20T15:49:08.939Z",
+    "1.0.0": "2016-10-23T16:09:54.517Z",
+    "1.1.0": "2016-11-06T16:44:38.542Z",
+    "1.2.0": "2016-12-07T21:50:56.326Z",
+    "1.2.1": "2016-12-18T12:52:48.546Z",
+    "1.2.2": "2017-03-09T21:53:54.031Z",
+    "1.2.3": "2017-03-10T16:51:22.410Z",
+    "1.2.4": "2017-06-21T19:39:27.920Z",
+    "1.2.5": "2017-10-05T17:04:14.010Z",
+    "1.2.6": "2017-11-22T10:35:02.216Z",
+    "1.3.0": "2018-01-05T18:57:24.272Z",
+    "1.4.0": "2018-01-21T21:55:51.028Z",
+    "1.4.1": "2018-01-24T00:42:40.382Z",
+    "1.5.0": "2018-05-19T16:17:27.946Z",
+    "1.5.1": "2018-07-05T20:44:53.010Z",
+    "1.5.2": "2018-08-01T18:34:57.855Z",
+    "1.5.3": "2018-08-13T11:15:32.833Z",
+    "1.5.4": "2018-08-13T13:18:06.652Z",
+    "1.5.5": "2018-08-13T18:02:14.290Z",
+    "1.5.6": "2018-08-21T01:44:52.160Z",
+    "1.5.7": "2018-08-22T18:02:41.148Z",
+    "1.5.8": "2018-09-11T19:25:50.658Z",
+    "1.5.9": "2018-10-09T16:01:45.434Z",
+    "1.5.10": "2018-11-19T21:25:49.948Z",
+    "1.6.0": "2018-12-25T22:27:34.053Z",
+    "1.6.1": "2019-01-03T10:24:43.194Z",
+    "1.7.0": "2019-02-13T21:40:42.432Z",
+    "1.8.0": "2019-08-27T11:10:39.307Z",
+    "1.8.1": "2019-08-27T17:37:53.351Z",
+    "1.9.0": "2019-09-06T13:12:12.301Z",
+    "1.9.1": "2020-01-25T23:54:34.866Z",
+    "1.10.0": "2020-01-26T23:35:59.450Z",
+    "1.11.0": "2020-03-29T10:54:23.756Z",
+    "1.12.0": "2020-06-16T20:37:26.684Z",
+    "1.12.1": "2020-06-18T22:37:14.802Z",
+    "1.13.0": "2020-08-10T11:41:11.024Z"
+  },
+  "author": {
+    "name": "Ruben Verborgh",
+    "email": "ruben@verborgh.org",
+    "url": "https://ruben.verborgh.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/follow-redirects/follow-redirects.git"
+  },
+  "users": {
+    "antongorodezkiy": true,
+    "eklem": true,
+    "alejcerro": true,
+    "tarkeshwar": true,
+    "lababygirl": true,
+    "poginni": true,
+    "shentengtu": true,
+    "edwardxyt": true,
+    "g120hbq": true
+  },
+  "homepage": "https://github.com/follow-redirects/follow-redirects",
+  "keywords": [
+    "http",
+    "https",
+    "url",
+    "redirect",
+    "client",
+    "location",
+    "utility"
+  ],
+  "bugs": {
+    "url": "https://github.com/follow-redirects/follow-redirects/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "contributors": [
+    {
+      "name": "Olivier Lalonde",
+      "email": "olalonde@gmail.com",
+      "url": "http://www.syskall.com"
+    },
+    {
+      "name": "James Talmage",
+      "email": "james@talmage.io"
+    }
+  ]
+}

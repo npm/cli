@@ -1,0 +1,27 @@
+{
+  "name": "@isaacs/testing-shrinkwrap-abbrev",
+  "version": "1.1.0",
+  "lockfileVersion": 2,
+  "requires": true,
+  "packages": {
+    "": {
+      "name": "@isaacs/testing-shrinkwrap-abbrev",
+      "version": "1.1.0",
+      "dependencies": {
+        "abbrev": "*"
+      }
+    },
+    "node_modules/abbrev": {
+      "version": "1.1.0",
+      "resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.1.0.tgz",
+      "integrity": "sha1-0FVMIlZjbi9W58LlrRg/hZQo2B8="
+    }
+  },
+  "dependencies": {
+    "abbrev": {
+      "version": "1.1.0",
+      "resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.1.0.tgz",
+      "integrity": "sha1-0FVMIlZjbi9W58LlrRg/hZQo2B8="
+    }
+  }
+}

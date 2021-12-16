@@ -1,0 +1,440 @@
+{
+  "_id": "human-signals",
+  "_rev": "3-eaccab2eba8b7dcdd9945c29344c523e",
+  "name": "human-signals",
+  "dist-tags": {
+    "latest": "2.1.0"
+  },
+  "versions": {
+    "1.1.0": {
+      "name": "human-signals",
+      "version": "1.1.0",
+      "main": "build/src/main.js",
+      "scripts": {
+        "test": "gulp test"
+      },
+      "husky": {
+        "hooks": {
+          "pre-push": "gulp check --full"
+        }
+      },
+      "description": "Human-friendly process signals",
+      "keywords": [
+        "signal",
+        "signals",
+        "handlers",
+        "error-handling",
+        "errors",
+        "interrupts",
+        "sigterm",
+        "sigint",
+        "irq",
+        "process",
+        "exit",
+        "exit-code",
+        "status",
+        "operating-system",
+        "es6",
+        "javascript",
+        "linux",
+        "macos",
+        "windows",
+        "nodejs"
+      ],
+      "license": "Apache-2.0",
+      "homepage": "https://git.io/JeluP",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ehmicky/human-signals.git"
+      },
+      "bugs": {
+        "url": "https://github.com/ehmicky/human-signals/issues"
+      },
+      "author": {
+        "name": "ehmicky",
+        "email": "ehmicky@gmail.com",
+        "url": "https://github.com/ehmicky"
+      },
+      "directories": {
+        "lib": "src",
+        "test": "test"
+      },
+      "dependencies": {
+        "core-js": "^3.2.1"
+      },
+      "devDependencies": {
+        "@ehmicky/dev-tasks": "^0.30.46",
+        "ajv": "^6.10.2",
+        "ava": "^2.4.0",
+        "fast-deep-equal": "^2.0.1",
+        "gulp": "^4.0.2",
+        "husky": "^3.0.8",
+        "test-each": "^1.7.2"
+      },
+      "engines": {
+        "node": ">=8.12.0"
+      },
+      "gitHead": "a75bbce358f69bbf50c526f91baa19faf8451cf0",
+      "_id": "human-signals@1.1.0",
+      "_nodeVersion": "12.12.0",
+      "_npmVersion": "6.12.0",
+      "dist": {
+        "integrity": "sha512-Gvq61o07QrVxxSaRTAJZnzYaoE31l8snVpwZgTgcojYwuQqkYWVRlRfamtxJV3PdV+4Nmp2wWD6htI9tHkFJkA==",
+        "shasum": "6f5878f93f94776ff667b6d8666d5d9cad6b524c",
+        "tarball": "https://registry.npmjs.org/human-signals/-/human-signals-1.1.0.tgz",
+        "fileCount": 12,
+        "unpackedSize": 42695,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdoiEKCRA9TVsSAnZWagAA5qgP+QGBrKiA+LP5fEhBmoN7\nzYRaW0la1AwlzclSbUphbm05UdxG1LHIOBPxsHx8gqHj+FTuWaV8yZJ+im0I\nc0yUTTlkRRuOCv/Nti6Bxf0XdC2FDC1lVnfpP/aQhUEJkocGdqfinYOvu6sK\nqPWnJgEdOub6FZBL2TnhV0+W5eN2Nn57xBqyLaZmgOvcH+zGnIhvO07hltxd\nzUu8mkOG23Gd/nr8Q8tzvt82wGx/S0u7BWWZdmnQEhvjXx9skQzSEe/GZjeb\nKPPKrnbmWAKsj2r6KDgBQKIlPDPv9kayrEQjRy+aOEeWGIAJlD1BWAi0W9LT\nyEv+nNQAQAimMcE2mkgefNyZVJuzHN+29ZzGZ/jKiJHQ4dxSekVQDiIEKCWe\n6N0bxZoCs81Ps4Kq2AmuEk1uBm/DwrE9g72FgznCSutHxvTUFA+hxa74r0Gm\nWTwH+2Eeti31HPv5urMN0dDVH8gezdtkqo9HGhhNsL8rF1FGoFRjmcMLA7rY\nFzU6XfH4g+9cBmABNlZtGpjXxD7KXCiO63htpvrq+P4rxDb36gAOS58r9OwC\nph55OlXHkFfqAm0gOl2+4hIFIT5LRZK6oeKkmK4mfWW/E675zQzPbL2i6vU1\n9JxHBSddeQaMtnyjxpd8Y0hi71ibjvaLcP5rgYN22FFJpHebWnGO/AK2wmGn\nHBNm\r\n=3k+d\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "ehmicky",
+          "email": "ehmicky@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "ehmicky",
+        "email": "ehmicky@gmail.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/human-signals_1.1.0_1570906378356_0.5954442608497985"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.1.1": {
+      "name": "human-signals",
+      "version": "1.1.1",
+      "main": "build/src/main.js",
+      "scripts": {
+        "test": "gulp test"
+      },
+      "husky": {
+        "hooks": {
+          "pre-push": "gulp check --full"
+        }
+      },
+      "description": "Human-friendly process signals",
+      "keywords": [
+        "signal",
+        "signals",
+        "handlers",
+        "error-handling",
+        "errors",
+        "interrupts",
+        "sigterm",
+        "sigint",
+        "irq",
+        "process",
+        "exit",
+        "exit-code",
+        "status",
+        "operating-system",
+        "es6",
+        "javascript",
+        "linux",
+        "macos",
+        "windows",
+        "nodejs"
+      ],
+      "license": "Apache-2.0",
+      "homepage": "https://git.io/JeluP",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ehmicky/human-signals.git"
+      },
+      "bugs": {
+        "url": "https://github.com/ehmicky/human-signals/issues"
+      },
+      "author": {
+        "name": "ehmicky",
+        "email": "ehmicky@gmail.com",
+        "url": "https://github.com/ehmicky"
+      },
+      "directories": {
+        "lib": "src",
+        "test": "test"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "@ehmicky/dev-tasks": "^0.30.48",
+        "ajv": "^6.10.2",
+        "ava": "^2.4.0",
+        "fast-deep-equal": "^2.0.1",
+        "gulp": "^4.0.2",
+        "husky": "^3.0.9",
+        "test-each": "^1.7.2"
+      },
+      "engines": {
+        "node": ">=8.12.0"
+      },
+      "gitHead": "10ad2027d34ce8d93f72ff1458d5c0e536d89b28",
+      "_id": "human-signals@1.1.1",
+      "_nodeVersion": "12.12.0",
+      "_npmVersion": "6.11.3",
+      "dist": {
+        "integrity": "sha512-SEQu7vl8KjNL2eoGBLF3+wAjpsNfA9XMlXAYj/3EdaNfAlxKthD1xjEQfGOUhllCGGJVNY34bRr6lPINhNjyZw==",
+        "shasum": "c5b1cd14f50aeae09ab6c59fe63ba3395fe4dfa3",
+        "tarball": "https://registry.npmjs.org/human-signals/-/human-signals-1.1.1.tgz",
+        "fileCount": 12,
+        "unpackedSize": 42370,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdpu1CCRA9TVsSAnZWagAA1CgP/2qzo9Wi/ZxPyNsa/Jub\n7uGv6TLBjWDAHuX+0j3Gw+TgFDLG+fojYbR/TwgSSDl3ao+p+jSu6pA5ZJ9Y\nrlu8wpxDvDd9T4OqizhLlr2j41aJevuOQIKQoxVcZcBggNgnZIstYeytk5u3\n3gWosf9U4NXjvb+sYNXhC9XC9gVnhyX4PmcReWijpp7KSqWSGvvsbE2YFxWJ\n+sfzfOGk7q30AHvisaYg/eEv3frzQS/QBL4zA0Vzk5LiK8hX7ZUWMxqosNp2\nhNuvujD95Hz24NKWzWMd2PixarKAcA72BUZkMPbMmjU+stuvKA6um+uV6lNv\n+KZMzWkzbqJ2KhZXg8o7CnMLQnOHxT9kb23IFCMhBAahHqFsR5+EaaRdSfmC\nTMr0KaFT3oB8rdiztREp3s/VJOFdfSTZkkCXKKxSQhzjSRurY5Kq0nrV9tCS\nyQYCCgn52RaMoaEzZeGwKCdmvT8Q5YMYNtAkm6+6LqQNA4XNF1/nJEK/tHk3\nF9wFBnZM1BhX+pg/BA3a+elI6rnXDk92Rfgtybt69CgaSaxWrwGgRaczXKxC\n9HpxtyLSMcIc93IGnGYvOyw8TOPHlUXIOz8TBLzHFVytRIJFGItI/H/TXInY\nHpO4ktePMvtdTEi0bNNsJjKTNQZfCEwXmkyR/OUCVwA5R9S7Da6p5ZPBplqg\n9YWq\r\n=WI4h\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "ehmicky",
+          "email": "ehmicky@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "ehmicky",
+        "email": "ehmicky@gmail.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/human-signals_1.1.1_1571220802278_0.05624079018996775"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.0": {
+      "name": "human-signals",
+      "version": "2.0.0",
+      "main": "build/src/main.js",
+      "scripts": {
+        "test": "gulp test"
+      },
+      "husky": {
+        "hooks": {
+          "pre-push": "gulp check --full"
+        }
+      },
+      "description": "Human-friendly process signals",
+      "keywords": [
+        "signal",
+        "signals",
+        "handlers",
+        "error-handling",
+        "errors",
+        "interrupts",
+        "sigterm",
+        "sigint",
+        "irq",
+        "process",
+        "exit",
+        "exit-code",
+        "status",
+        "operating-system",
+        "es6",
+        "javascript",
+        "linux",
+        "macos",
+        "windows",
+        "nodejs"
+      ],
+      "license": "Apache-2.0",
+      "homepage": "https://git.io/JeluP",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ehmicky/human-signals.git"
+      },
+      "bugs": {
+        "url": "https://github.com/ehmicky/human-signals/issues"
+      },
+      "author": {
+        "name": "ehmicky",
+        "email": "ehmicky@gmail.com",
+        "url": "https://github.com/ehmicky"
+      },
+      "directories": {
+        "lib": "src",
+        "test": "test"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "@ehmicky/dev-tasks": "^0.31.0",
+        "ajv": "^6.10.2",
+        "ava": "^2.4.0",
+        "gulp": "^4.0.2",
+        "husky": "^3.1.0",
+        "test-each": "^2.0.0"
+      },
+      "engines": {
+        "node": ">=10.17.0"
+      },
+      "gitHead": "b9d9225669a1f3b4c6b39343bbac18e9cdc7bf95",
+      "_id": "human-signals@2.0.0",
+      "_nodeVersion": "13.5.0",
+      "_npmVersion": "6.13.4",
+      "dist": {
+        "integrity": "sha512-61H5jEHa2GyZm2EgzVpewkhtcZsCqq0qOjHmFpX6N692CXx4TyQgDN4QmP8DJAR5Yu4NafbZav8zxM9r8Lee/Q==",
+        "shasum": "e5840924f83b9b9146dad6252e31f63855b6d568",
+        "tarball": "https://registry.npmjs.org/human-signals/-/human-signals-2.0.0.tgz",
+        "fileCount": 12,
+        "unpackedSize": 42416,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeA4oyCRA9TVsSAnZWagAACJ0P/0Mv4jL1x/307ZCG4tqY\n5bvHuucIYmXiMmBsFqjih8lP1UmHIM7/RNpjlZFjIadKw/zNyDxnJCuucHH5\nImM95rib0vE3cG7MNxqf9gux3oQAq8g+/GbdO5qRLtsXl1zOYgjmeRLIjrVk\n7EsV3a3V9mltlvkWujM3VOsqB4mso2R8j88l3B7zvyd2H8fft6m/S7ruvytk\n+ZcZrvpHJ+AF/74/74EvExuGFoYXEbFIz53KGjqe0A0VeScnH4s8gHeupEoH\njuUHu5X37H+peXKHJsnr1gokY5yrVLkli6G0e8kKpdybvHzoQ3ArMV0YDhmE\njlvius8eBt1CHgOKhOczBTY19le6vRf7HehUy6h331KoJMsonkiDDpIlMjPO\nOiU9O4ZiwWLk8/EO/mCqN8u9wbf0snC0n+JDlnObjTm9eftD/OzWVtaLSVi/\nuPgb6YvLuwWKSkdXUkAuCu3/L6Yz0j/0XqlEeVmaNK2TUzAhK2pEl29cl4RJ\n48tgs2VyfZg5zjtyq/Mo4KhO9Zi4c8l0bjZan+hDbI6tFEQQTU662s76IneL\nbFpBugJfk9ji0ufY56Ji8dNYJD3R64tJDoNfDw/UnNJWVDv1A2YSB7FYy4Ss\nErgbmyl2lnjunKWfuo6qC3KjxGrHpA9yH3OCETwZ+fBdrVw9/rbTKvxvWzcB\nnp6O\r\n=by17\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "ehmicky",
+          "email": "ehmicky@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "ehmicky",
+        "email": "ehmicky@gmail.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/human-signals_2.0.0_1577290289915_0.459201984412124"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.1.0": {
+      "name": "human-signals",
+      "version": "2.1.0",
+      "main": "build/src/main.js",
+      "scripts": {
+        "test": "gulp test"
+      },
+      "husky": {
+        "hooks": {
+          "pre-push": "gulp check --full"
+        }
+      },
+      "description": "Human-friendly process signals",
+      "keywords": [
+        "signal",
+        "signals",
+        "handlers",
+        "error-handling",
+        "errors",
+        "interrupts",
+        "sigterm",
+        "sigint",
+        "irq",
+        "process",
+        "exit",
+        "exit-code",
+        "status",
+        "operating-system",
+        "es6",
+        "javascript",
+        "linux",
+        "macos",
+        "windows",
+        "nodejs"
+      ],
+      "license": "Apache-2.0",
+      "homepage": "https://git.io/JeluP",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ehmicky/human-signals.git"
+      },
+      "bugs": {
+        "url": "https://github.com/ehmicky/human-signals/issues"
+      },
+      "author": {
+        "name": "ehmicky",
+        "email": "ehmicky@gmail.com",
+        "url": "https://github.com/ehmicky"
+      },
+      "directories": {
+        "lib": "src",
+        "test": "test"
+      },
+      "types": "build/src/main.d.ts",
+      "dependencies": {},
+      "devDependencies": {
+        "@ehmicky/dev-tasks": "^0.31.9",
+        "ajv": "^6.12.0",
+        "ava": "^3.5.0",
+        "gulp": "^4.0.2",
+        "husky": "^4.2.3",
+        "test-each": "^2.0.0"
+      },
+      "engines": {
+        "node": ">=10.17.0"
+      },
+      "gitHead": "55a61f4716b23a817de686773ed0f7ec32901650",
+      "_id": "human-signals@2.1.0",
+      "_nodeVersion": "13.11.0",
+      "_npmVersion": "6.13.7",
+      "dist": {
+        "integrity": "sha512-B4FFZ6q/T2jhhksgkbEW3HBvWIfDW85snkQgawt07S7J5QXTk6BkNV+0yAeZrM5QpMAdYlocGoljn0sJ/WQkFw==",
+        "shasum": "dc91fcba42e4d06e4abaed33b3e7a3c02f514ea0",
+        "tarball": "https://registry.npmjs.org/human-signals/-/human-signals-2.1.0.tgz",
+        "fileCount": 13,
+        "unpackedSize": 44307,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJebPPtCRA9TVsSAnZWagAAnIMP/imfQdtvcXuwUgUSAZ3m\nT3G3yggoHDY1xQF8yaFa7Zpcs0uf972sNkdkDzrx/r4z1hmQm8j7K/YaHtht\n651ZuUj3LEwhnJk/Wgr9OwWD5zT773jYQxY4AsfheUt4RLHHdKR47B3d4fTU\n8/Xm/R4sNI0Aen1V2B8sX3GdwbxZICeSqiiJ/+pmEWDLa7Vf6sZ1ZK2M5kOL\nDJVwO59BdfgXmk5ipoO5ViOa0Tbu/HwfJ23NzMj/Ibz8cpG2npvjF2sqA35Z\nfNI/nmFsZIUuTRBzs96qpiMCjsdsr4FIBeP4AvUa5V3o3R85B/wzHyFiZhjQ\n+d392hF27+JC8RRwCHTYaQsKkhA78NNzYWr/ddWua4UsLB8O3iYMf+JkbsH+\ncfBrib+XOMHj7z7u3kaHth+DB8k5c5zHR1k6yVSuzI/0tCB7oXW6FrMURc3d\nKQscVoY/iWrISmVRP41AuW+qowQmoYQnIoioz1h+PheON18J6yBi3AYyi1a6\n+clCjbzCFSFEQQxqU16ztaJWx0CjKGALugG3V41R8u+ww+ze4/JG55X2cES4\nhQHLgwwkSDHGqpU+Kzd9bQcg2BVqIfGKV8c6Z/9aZnT0sbX/VTfpoEy8wvHH\n81g1u0cQzqBQmKg2FP2Tg0UlpOvlE8FAwMagOtBM+rCNm4wWWJAyRvErRrIK\nV+OX\r\n=oN4G\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "ehmicky",
+          "email": "ehmicky@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "ehmicky",
+        "email": "ehmicky@gmail.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/human-signals_2.1.0_1584198636813_0.43863526583602575"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2019-10-12T18:52:58.137Z",
+    "1.1.0": "2019-10-12T18:52:58.513Z",
+    "modified": "2020-03-14T15:10:39.422Z",
+    "1.1.1": "2019-10-16T10:13:22.409Z",
+    "2.0.0": "2019-12-25T16:11:30.019Z",
+    "2.1.0": "2020-03-14T15:10:37.036Z"
+  },
+  "maintainers": [
+    {
+      "name": "ehmicky",
+      "email": "ehmicky@gmail.com"
+    }
+  ],
+  "description": "Human-friendly process signals",
+  "homepage": "https://git.io/JeluP",
+  "keywords": [
+    "signal",
+    "signals",
+    "handlers",
+    "error-handling",
+    "errors",
+    "interrupts",
+    "sigterm",
+    "sigint",
+    "irq",
+    "process",
+    "exit",
+    "exit-code",
+    "status",
+    "operating-system",
+    "es6",
+    "javascript",
+    "linux",
+    "macos",
+    "windows",
+    "nodejs"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ehmicky/human-signals.git"
+  },
+  "author": {
+    "name": "ehmicky",
+    "email": "ehmicky@gmail.com",
+    "url": "https://github.com/ehmicky"
+  },
+  "bugs": {
+    "url": "https://github.com/ehmicky/human-signals/issues"
+  },
+  "license": "Apache-2.0",
+  "readme": "[![Codecov](https://img.shields.io/codecov/c/github/ehmicky/human-signals.svg?label=tested&logo=codecov)](https://codecov.io/gh/ehmicky/human-signals)\n[![Travis](https://img.shields.io/badge/cross-platform-4cc61e.svg?logo=travis)](https://travis-ci.org/ehmicky/human-signals)\n[![Node](https://img.shields.io/node/v/human-signals.svg?logo=node.js)](https://www.npmjs.com/package/human-signals)\n[![Gitter](https://img.shields.io/gitter/room/ehmicky/human-signals.svg?logo=gitter)](https://gitter.im/ehmicky/human-signals)\n[![Twitter](https://img.shields.io/badge/%E2%80%8B-twitter-4cc61e.svg?logo=twitter)](https://twitter.com/intent/follow?screen_name=ehmicky)\n[![Medium](https://img.shields.io/badge/%E2%80%8B-medium-4cc61e.svg?logo=medium)](https://medium.com/@ehmicky)\n\nHuman-friendly process signals.\n\nThis is a map of known process signals with some information about each signal.\n\nUnlike\n[`os.constants.signals`](https://nodejs.org/api/os.html#os_signal_constants)\nthis includes:\n\n- human-friendly [descriptions](#description)\n- [default actions](#action), including whether they [can be prevented](#forced)\n- whether the signal is [supported](#supported) by the current OS\n\n# Example\n\n```js\nconst { signalsByName, signalsByNumber } = require('human-signals')\n\nconsole.log(signalsByName.SIGINT)\n// {\n//   name: 'SIGINT',\n//   number: 2,\n//   description: 'User interruption with CTRL-C',\n//   supported: true,\n//   action: 'terminate',\n//   forced: false,\n//   standard: 'ansi'\n// }\n\nconsole.log(signalsByNumber[8])\n// {\n//   name: 'SIGFPE',\n//   number: 8,\n//   description: 'Floating point arithmetic error',\n//   supported: true,\n//   action: 'core',\n//   forced: false,\n//   standard: 'ansi'\n// }\n```\n\n# Install\n\n```bash\nnpm install human-signals\n```\n\n# Usage\n\n## signalsByName\n\n_Type_: `object`\n\nObject whose keys are signal [names](#name) and values are\n[signal objects](#signal).\n\n## signalsByNumber\n\n_Type_: `object`\n\nObject whose keys are signal [numbers](#number) and values are\n[signal objects](#signal).\n\n## signal\n\n_Type_: `object`\n\nSignal object with the following properties.\n\n### name\n\n_Type_: `string`\n\nStandard name of the signal, for example `'SIGINT'`.\n\n### number\n\n_Type_: `number`\n\nCode number of the signal, for example `2`. While most `number` are\ncross-platform, some are different between different OS.\n\n### description\n\n_Type_: `string`\n\nHuman-friendly description for the signal, for example\n`'User interruption with CTRL-C'`.\n\n### supported\n\n_Type_: `boolean`\n\nWhether the current OS can handle this signal in Node.js using\n[`process.on(name, handler)`](https://nodejs.org/api/process.html#process_signal_events).\n\nThe list of supported signals\n[is OS-specific](https://github.com/ehmicky/cross-platform-node-guide/blob/master/docs/6_networking_ipc/signals.md#cross-platform-signals).\n\n### action\n\n_Type_: `string`\\\n_Enum_: `'terminate'`, `'core'`, `'ignore'`, `'pause'`, `'unpause'`\n\nWhat is the default action for this signal when it is not handled.\n\n### forced\n\n_Type_: `boolean`\n\nWhether the signal's default action cannot be prevented. This is `true` for\n`SIGTERM`, `SIGKILL` and `SIGSTOP`.\n\n### standard\n\n_Type_: `string`\\\n_Enum_: `'ansi'`, `'posix'`, `'bsd'`, `'systemv'`, `'other'`\n\nWhich standard defined that signal.\n\n# Support\n\nIf you found a bug or would like a new feature, _don't hesitate_ to\n[submit an issue on GitHub](../../issues).\n\nFor other questions, feel free to\n[chat with us on Gitter](https://gitter.im/ehmicky/human-signals).\n\nEveryone is welcome regardless of personal background. We enforce a\n[Code of conduct](CODE_OF_CONDUCT.md) in order to promote a positive and\ninclusive environment.\n\n# Contributing\n\nThis project was made with ❤️. The simplest way to give back is by starring and\nsharing it online.\n\nIf the documentation is unclear or has a typo, please click on the page's `Edit`\nbutton (pencil icon) and suggest a correction.\n\nIf you would like to help us fix a bug or add a new feature, please check our\n[guidelines](CONTRIBUTING.md). Pull requests are welcome!\n\nThanks go to our wonderful contributors:\n\n<!-- ALL-CONTRIBUTORS-LIST:START -->\n<!-- prettier-ignore-start -->\n<!-- markdownlint-disable -->\n<table>\n  <tr>\n    <td align=\"center\"><a href=\"https://twitter.com/ehmicky\"><img src=\"https://avatars2.githubusercontent.com/u/8136211?v=4\" width=\"100px;\" alt=\"\"/><br /><sub><b>ehmicky</b></sub></a><br /><a href=\"https://github.com/ehmicky/human-signals/commits?author=ehmicky\" title=\"Code\">💻</a> <a href=\"#design-ehmicky\" title=\"Design\">🎨</a> <a href=\"#ideas-ehmicky\" title=\"Ideas, Planning, & Feedback\">🤔</a> <a href=\"https://github.com/ehmicky/human-signals/commits?author=ehmicky\" title=\"Documentation\">📖</a></td>\n    <td align=\"center\"><a href=\"http://www.electrovir.com\"><img src=\"https://avatars0.githubusercontent.com/u/1205860?v=4\" width=\"100px;\" alt=\"\"/><br /><sub><b>electrovir</b></sub></a><br /><a href=\"https://github.com/ehmicky/human-signals/commits?author=electrovir\" title=\"Code\">💻</a></td>\n  </tr>\n</table>\n\n<!-- markdownlint-enable -->\n<!-- prettier-ignore-end -->\n\n<!-- ALL-CONTRIBUTORS-LIST:END -->\n",
+  "readmeFilename": "README.md"
+}

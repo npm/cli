@@ -1,0 +1,2752 @@
+{
+  "_id": "@babel/plugin-proposal-export-namespace-from",
+  "_rev": "60-3378ebd7d630103c27228f2de2c26f05",
+  "name": "@babel/plugin-proposal-export-namespace-from",
+  "description": "Compile export namespace to ES2015",
+  "dist-tags": {
+    "latest": "7.12.1"
+  },
+  "versions": {
+    "7.0.0-beta.33": {
+      "name": "@babel/plugin-proposal-export-namespace-from",
+      "version": "7.0.0-beta.33",
+      "description": "Compile export namespace to ES2015",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-export-namespace-from"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/plugin-syntax-export-namespace-from": "7.0.0-beta.33"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.33"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.33",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.33"
+      },
+      "_id": "@babel/plugin-proposal-export-namespace-from@7.0.0-beta.33",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-E1pXl1aKlKn1TbZzsa57wpYAB3mZW1G8R5wkVVFIjPg1Eh54r6SgkubGmZuoX4H7uWPeweYBzo0fC9FqWYaINg==",
+        "shasum": "221194b452adae0c36607a53993240cd0b102208",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-export-namespace-from/-/plugin-proposal-export-namespace-from-7.0.0-beta.33.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-export-namespace-from-7.0.0-beta.33.tgz_1512138524589_0.5708884715568274"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.34": {
+      "name": "@babel/plugin-proposal-export-namespace-from",
+      "version": "7.0.0-beta.34",
+      "description": "Compile export namespace to ES2015",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-export-namespace-from"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/plugin-syntax-export-namespace-from": "7.0.0-beta.34"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.34"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.34",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.34"
+      },
+      "_id": "@babel/plugin-proposal-export-namespace-from@7.0.0-beta.34",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-Yi30yWa0BsEYFXMLzoVp7OtHtZValuAieis4K5TEI9rPP6trKea1K3J7EkwqPrsiIkGnIB+E70YvK/zitvb/kA==",
+        "shasum": "37bfe39e26663f3a756ae9dc74fc718b4fc15119",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-export-namespace-from/-/plugin-proposal-export-namespace-from-7.0.0-beta.34.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "existentialism",
+          "email": "bng412@gmail.com"
+        },
+        {
+          "name": "danez",
+          "email": "daniel@tschinder.de"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-export-namespace-from-7.0.0-beta.34.tgz_1512225583664_0.3890640730969608"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.35": {
+      "name": "@babel/plugin-proposal-export-namespace-from",
+      "version": "7.0.0-beta.35",
+      "description": "Compile export namespace to ES2015",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-export-namespace-from"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/plugin-syntax-export-namespace-from": "7.0.0-beta.35"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.35"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.35",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.35"
+      },
+      "_id": "@babel/plugin-proposal-export-namespace-from@7.0.0-beta.35",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-7iPLp115DHtG3DHm2Cge9cyhFYB0UotFX16ce0eEAA3jXs4E0BJ67Kzjs7KrOKK9xOiThIIj+21RUTP/hiPw1g==",
+        "shasum": "58b3810c8063ad2e2f8de9c3ed0f0e1d8b8385a1",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-export-namespace-from/-/plugin-proposal-export-namespace-from-7.0.0-beta.35.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "existentialism",
+          "email": "bng412@gmail.com"
+        },
+        {
+          "name": "danez",
+          "email": "daniel@tschinder.de"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-export-namespace-from-7.0.0-beta.35.tgz_1513288084362_0.9166162824258208"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.36": {
+      "name": "@babel/plugin-proposal-export-namespace-from",
+      "version": "7.0.0-beta.36",
+      "description": "Compile export namespace to ES2015",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-export-namespace-from"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/plugin-syntax-export-namespace-from": "7.0.0-beta.36"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.36"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.36",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.36"
+      },
+      "_id": "@babel/plugin-proposal-export-namespace-from@7.0.0-beta.36",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-nb4JAp+qHb5aj3MIPWA8Q9w8Xif1YhfFJdjuVKwssWaDkNxpmc5F0Vby3nPTj4ikmGB3yKlmtJuE8GUZqLN3ZA==",
+        "shasum": "77146d4ad0929bd61d2fac4b1aa926fc03beffba",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-export-namespace-from/-/plugin-proposal-export-namespace-from-7.0.0-beta.36.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "james@henry.sc",
+          "name": "jameshenry"
+        },
+        {
+          "email": "kent@doddsfamily.us",
+          "name": "kentcdodds"
+        },
+        {
+          "email": "kaicataldo@gmail.com",
+          "name": "kaicataldo"
+        },
+        {
+          "email": "teddy.katz@gmail.com",
+          "name": "not-an-aardvark"
+        },
+        {
+          "email": "star.ctor@gmail.com",
+          "name": "mysticatea"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-export-namespace-from-7.0.0-beta.36.tgz_1514228703581_0.6509438974317163"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.37": {
+      "name": "@babel/plugin-proposal-export-namespace-from",
+      "version": "7.0.0-beta.37",
+      "description": "Compile export namespace to ES2015",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-export-namespace-from"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/plugin-syntax-export-namespace-from": "7.0.0-beta.37"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.37"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.37",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.37"
+      },
+      "_id": "@babel/plugin-proposal-export-namespace-from@7.0.0-beta.37",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-x4+Fg6wCH279bWX79n9UzIJxCYQtJHld8I4p0/SRV6YyxHxidhHERq2Kx4r8HKYZ8dRogVVCjywnPrKb98og+g==",
+        "shasum": "aba647dbb627f7831601f3d9b0462f53881dfb44",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-export-namespace-from/-/plugin-proposal-export-namespace-from-7.0.0-beta.37.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-export-namespace-from-7.0.0-beta.37.tgz_1515427366318_0.6026493683457375"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.38": {
+      "name": "@babel/plugin-proposal-export-namespace-from",
+      "version": "7.0.0-beta.38",
+      "description": "Compile export namespace to ES2015",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-export-namespace-from"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/plugin-syntax-export-namespace-from": "7.0.0-beta.38"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.38"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.38",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.38"
+      },
+      "_id": "@babel/plugin-proposal-export-namespace-from@7.0.0-beta.38",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-wqw4hGMnhNTVCvcXHtBQbsOAA52SSvgu2SgSxgyDsRp+LM+zwrMTwvRI1aZmlZUApGaEgQBtXlJWJFdirX9nEA==",
+        "shasum": "c53ccce30677c2576c2cbb0ded5c10a2e95e437b",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-export-namespace-from/-/plugin-proposal-export-namespace-from-7.0.0-beta.38.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-export-namespace-from-7.0.0-beta.38.tgz_1516206734375_0.7372386988718063"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.39": {
+      "name": "@babel/plugin-proposal-export-namespace-from",
+      "version": "7.0.0-beta.39",
+      "description": "Compile export namespace to ES2015",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-export-namespace-from"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/plugin-syntax-export-namespace-from": "7.0.0-beta.39"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.39"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.39",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.39"
+      },
+      "_id": "@babel/plugin-proposal-export-namespace-from@7.0.0-beta.39",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-NJaAlmZcPaL3gzF24RJ0ErlyuyTLytSQLrfxL50g1U5jelzBQOHJbzPSQ80OopU2eq6zHUxvIYt1q3ft+iDinw==",
+        "shasum": "861ca8b83e2df981e5022193760e459a0c41300a",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-export-namespace-from/-/plugin-proposal-export-namespace-from-7.0.0-beta.39.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-export-namespace-from-7.0.0-beta.39.tgz_1517344066767_0.10798267112113535"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.40": {
+      "name": "@babel/plugin-proposal-export-namespace-from",
+      "version": "7.0.0-beta.40",
+      "description": "Compile export namespace to ES2015",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-export-namespace-from"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/plugin-syntax-export-namespace-from": "7.0.0-beta.40"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.40"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.40",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.40"
+      },
+      "_id": "@babel/plugin-proposal-export-namespace-from@7.0.0-beta.40",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-tzJeDx0ajiT/Ittfnoaurqnb002J1YDIb0wRuhjJ3f1dsIaLrbkt920aKfmA1+pitzSdSE0PDFXNtQw7hIN/lg==",
+        "shasum": "ae8cdf479c256823f45a052e023b3a50aa350c5a",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-export-namespace-from/-/plugin-proposal-export-namespace-from-7.0.0-beta.40.tgz",
+        "fileCount": 3,
+        "unpackedSize": 2937
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-export-namespace-from_7.0.0-beta.40_1518453722505_0.7095806316877733"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.41": {
+      "name": "@babel/plugin-proposal-export-namespace-from",
+      "version": "7.0.0-beta.41",
+      "description": "Compile export namespace to ES2015",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-export-namespace-from"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.41",
+        "@babel/plugin-syntax-export-namespace-from": "7.0.0-beta.41"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.41"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.41",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.41"
+      },
+      "_id": "@babel/plugin-proposal-export-namespace-from@7.0.0-beta.41",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-TxvCSI2eWgMCuDUlnuPF41AlaD7wCFJsSwHA3dmaccAOyp44LwtBdOSuYGf06l8a95SYxUzCn3kaXf77BRERyw==",
+        "shasum": "57b2e7a89a1d30f41b5d5d07a69db7d4b5bbb59e",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-export-namespace-from/-/plugin-proposal-export-namespace-from-7.0.0-beta.41.tgz",
+        "fileCount": 3,
+        "unpackedSize": 3148
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-export-namespace-from_7.0.0-beta.41_1521044782184_0.1578830509208915"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.42": {
+      "name": "@babel/plugin-proposal-export-namespace-from",
+      "version": "7.0.0-beta.42",
+      "description": "Compile export namespace to ES2015",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-export-namespace-from"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.42",
+        "@babel/plugin-syntax-export-namespace-from": "7.0.0-beta.42"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.42"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.42",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.42"
+      },
+      "_id": "@babel/plugin-proposal-export-namespace-from@7.0.0-beta.42",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-F48NJRViqyiW2iAxEx9MvTSDz52y93+9UQIcqwnfQmI/H+YFCmzJGTa5w1htz4BvxOxAFFJZI+UUPPQqiR1Vjg==",
+        "shasum": "6cdf36049c07111accf3e7b9dbc91d9a2ab1287a",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-export-namespace-from/-/plugin-proposal-export-namespace-from-7.0.0-beta.42.tgz",
+        "fileCount": 3,
+        "unpackedSize": 3148
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-export-namespace-from_7.0.0-beta.42_1521147096520_0.4578460069976653"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.43": {
+      "name": "@babel/plugin-proposal-export-namespace-from",
+      "version": "7.0.0-beta.43",
+      "description": "Compile export namespace to ES2015",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-export-namespace-from"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.43",
+        "@babel/plugin-syntax-export-namespace-from": "7.0.0-beta.43"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.43"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.43",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.43"
+      },
+      "_id": "@babel/plugin-proposal-export-namespace-from@7.0.0-beta.43",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-SZRlxRcJOJQgnzK8RV8Z0mJtLDyi34mF71TCv8ClRV1Tx4q3jzk0BV+K+KZ1rIBU+PrckeP6dzqysfZ65kS2UA==",
+        "shasum": "2ceaca64fbb8f4fd07fd9aa50eb9ada2996d6734",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-export-namespace-from/-/plugin-proposal-export-namespace-from-7.0.0-beta.43.tgz",
+        "fileCount": 3,
+        "unpackedSize": 3509
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-export-namespace-from_7.0.0-beta.43_1522687713544_0.8490037124339398"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.44": {
+      "name": "@babel/plugin-proposal-export-namespace-from",
+      "version": "7.0.0-beta.44",
+      "description": "Compile export namespace to ES2015",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-export-namespace-from"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.44",
+        "@babel/plugin-syntax-export-namespace-from": "7.0.0-beta.44"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.44"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.44",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.44"
+      },
+      "_id": "@babel/plugin-proposal-export-namespace-from@7.0.0-beta.44",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-rEU/M4gaeJRD/ReYkKukuDnAqyf0rMYlkk8IaLkvLgBgE/74+BFz9S239ueBIcmSZdTrAefdG/cpoxal0KkkTw==",
+        "shasum": "00ac9d8a28addd88599d356f098894ae3d8ec1de",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-export-namespace-from/-/plugin-proposal-export-namespace-from-7.0.0-beta.44.tgz",
+        "fileCount": 3,
+        "unpackedSize": 3558
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-export-namespace-from_7.0.0-beta.44_1522707615109_0.11477438547642627"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.45": {
+      "name": "@babel/plugin-proposal-export-namespace-from",
+      "version": "7.0.0-beta.45",
+      "description": "Compile export namespace to ES2015",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-export-namespace-from"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.45",
+        "@babel/plugin-syntax-export-namespace-from": "7.0.0-beta.45"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.45"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.45",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.45"
+      },
+      "_id": "@babel/plugin-proposal-export-namespace-from@7.0.0-beta.45",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-wsPdlt8N6FXS/ZvArW4vFUO3rP3tHBjMdDT4vI6AMm64zYJy181MN8ZIEPt5hc6JMTVKdyvEDKbQxRKFuiAGWQ==",
+        "shasum": "f3d04f0aa687e7c6e614c37e6465554e2a6552fb",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-export-namespace-from/-/plugin-proposal-export-namespace-from-7.0.0-beta.45.tgz",
+        "fileCount": 3,
+        "unpackedSize": 3558,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa3T1+CRA9TVsSAnZWagAAm0oP/jtvzibqkt3rTkjjPvLR\nUAML4o/X5X5jFGRUEqhDEpDSuM87SlMXGezw9sfpxWSQqKNH+fi9/iH+dOnu\nInT+BSSte/tBmDbUeaJ+S3AuBXJykrQQ5eW3liEMzkewwE6El2FbRKHK04Z4\nV1cG7xqWUegdPXEuYPgdjfvPsUEGfY3eDb6qWJ/f9B9rF3dCTJFEvwvOQFyf\nNyVDdqEbOCrWIbbT7hR4elH+woxZu6VWkUDsYIErebOCtCrP0SzKerxCSUVt\nBkkV/FGUPWM28V4x26ZkvjQEeRMcsNw9cWmfTUC3JDPFiL+e3A30N6h4vS6h\nlz799oDr+3mCGwEPgMM3y6jMryb77ahfPqhf5Swyx2RYxZptA/qRcVfLd8/v\nCDot4gnMr8crv3VW8CfZe+7SxyCCik9ycUQEj0e3grZyRwQT4SfJurB02G9g\nwiWG8ApPAXG9dIVoUT+BWI10R8p94kGe9J7ALg8yAAZA8bj+WmgEdCP4EmOE\nkgQGIJi4AapItCI2QXUe3T6Dojcasp1LQdxMMcF17RJEzTFuEZE1DhiqNeA+\n7zOWyFD82ISQaBEuQhMs02aoDgwUtof4j/5DaWNmC0lOGoCYhy46X97X39Zn\n1uetyrVz5BozL8NCRbCqHtAhvxa3LdMnJtbOX4oH3/jCTRDLS3TysEqdoCVV\nLGNN\r\n=kPSM\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-export-namespace-from_7.0.0-beta.45_1524448637466_0.334480983283026"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.46": {
+      "name": "@babel/plugin-proposal-export-namespace-from",
+      "version": "7.0.0-beta.46",
+      "description": "Compile export namespace to ES2015",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-export-namespace-from"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.46",
+        "@babel/plugin-syntax-export-namespace-from": "7.0.0-beta.46"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.46"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.46",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.46"
+      },
+      "_id": "@babel/plugin-proposal-export-namespace-from@7.0.0-beta.46",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.4.0",
+      "_npmUser": {
+        "name": "loganfsmyth",
+        "email": "loganfsmyth@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-9B7d8NfGZ3F1aKQgINmpc1SAphVgGvKEyw1ppetMpThT6EFWAdW6p1/K6QT7kI+hOo6iKUmUo8sOwD30nWVr9w==",
+        "shasum": "81fa717faa390db694c2b2f241830a31d01f5170",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-export-namespace-from/-/plugin-proposal-export-namespace-from-7.0.0-beta.46.tgz",
+        "fileCount": 3,
+        "unpackedSize": 3558,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa3WGuCRA9TVsSAnZWagAAYvcP+QFt4mtvFFyM1zhxa/Ie\nfcgBKeRjeAvByai4lNiy4TLSaMUa9U7kABvxO6DvpVcy5rqaPamt3unqgPZF\nbrDGNV1Q3QxoEOnSzsFL5QWPEuSk9AELOv7P06vaLeIwXRlO6l3rCtPNTbfz\npDmGpZorvuff6NHYeI/eOu5t9iJUEfJid2UcvgFBSPF908K3FEJWAlHR1Tee\nn1TD2W4aPwMSdxvumYDigN2XW+sgkxN2hKmBmD6Hg1MEYluOFa71Y/HRb5VB\nbejQNMUMhvNcubVG2JD7pAfNp2y7i3deDc5yIWV53i5+AscAI4QvmtPfW/HX\nLnydtgtdvqDqnuSsBOtdAVa7WJw3cuKUHGOzierCxCc79XPfrfV/H1KTv2JI\ncXA1WKAZaHibb8ehyypB2vMA2mqSJrBifKGqrb9G2EcbztMzf/FTqL+Ai+H/\nh6nJr7g3fkoGgPzEalVtPrPHxrvp7DvqkWpCidyhXKi3g46u9Yxkt4zABCJj\nou1GtklnXxenOv6zLQboG+1mSA+Gh0PGNMylrerbn81QVmkWHzI9wExob7fN\nNLFBtP6lDQrk1d8jv7XOY2gbbVZk6iZOy/sj9/rMNrPq2IAwJa/FqgMSZoQi\n6i0e1raajAGpJSlMM86tWD8pDd2+qPS+3COKFInaCV3fkf2gpdlgFgK6FFQq\n2AVT\r\n=s8Ed\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-export-namespace-from_7.0.0-beta.46_1524457901514_0.34146482293272107"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.47": {
+      "name": "@babel/plugin-proposal-export-namespace-from",
+      "version": "7.0.0-beta.47",
+      "description": "Compile export namespace to ES2015",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-export-namespace-from"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.47",
+        "@babel/plugin-syntax-export-namespace-from": "7.0.0-beta.47"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.47"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.47",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.47"
+      },
+      "_id": "@babel/plugin-proposal-export-namespace-from@7.0.0-beta.47",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-tTYnPZzCrOm8NK+7lRi4LGxPaw6lErDsozNInM/FWOXGe7s2EpQnTa40S7/gLLNGvpNshYHdykJtKgfiar9qkA==",
+        "shasum": "38171dd0fd5f54aee377d338ed41bb92e25d6720",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-export-namespace-from/-/plugin-proposal-export-namespace-from-7.0.0-beta.47.tgz",
+        "fileCount": 3,
+        "unpackedSize": 3540,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa+iU9CRA9TVsSAnZWagAAySUP/3hs3JHFwjVnXO2xB8am\nji5TFUV6atH3FjJV158uNyXqbZVsYU0n1SHy/S/Q7ntO1yGwiWCF+wgH6r8V\nOF72kNRCE/4iveN/qMuz4M6VOoC69i9HPqH3PfaijrFeBSc/EFVoQqBSzqja\n+FquGSil3ueDlyb9q3TrcxwtXOKzuvvTaDmCkzuaT+aZ4ZbMqXkcoJ023hAb\nKhuMHIQ41mbGP2SaKaMqeHlCiaPjhZNrOEni7/x3xv+xFasHNvUm11wUnu1Q\nh09cIhhrf5jYF8/5r6AJtMiiQeSlPfGK6NbsZ5P9po5q6SiqYNtvxyIErZJm\nNV6cEw2kxk3W0Sb/imb2DLAHMYngs6t4xPhomE7Qy3fdCYns0450tl6vLRiI\nA54yhRkIk1s0P6CtFypbPJG55MeHlILsd6Cz3fQd0j+ti3x/ahcoLtIi0uiB\nQrCpj9SEMd7zE/ZqTohYL9Lu3EE6sZLU6X9Kldnb5vWVekUzJWT8l1BIzLSP\nVpcIH15+V6D+vRdeG+NM+4V2YGxJrO7PGENZfksl/YD2T7oJQPMnjVtqBVF0\n9nYeamPHqEtoBfYpGs+OPyWQjlajwFnpvbCQhBgW8e3pu2j3kFzvsuP/EszJ\ncTrQgTAzmKohD20tzEr2F4AyIru0NYoTndKTsJR9raxFWUypyo8lHtNEkVKK\nlZXO\r\n=k8Lc\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-export-namespace-from_7.0.0-beta.47_1526342972492_0.3120705983249661"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.48": {
+      "name": "@babel/plugin-proposal-export-namespace-from",
+      "version": "7.0.0-beta.48",
+      "description": "Compile export namespace to ES2015",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-export-namespace-from"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.48",
+        "@babel/plugin-syntax-export-namespace-from": "7.0.0-beta.48"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.48"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.48",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.48"
+      },
+      "_id": "@babel/plugin-proposal-export-namespace-from@7.0.0-beta.48",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-9ouQhPyzutmzD+5oA7eCCEsXsFvPFNOdO0c4zig45zKhEfdll0Odds3fKY9nt3O2NVK5DDvVMeMAYc+f/fe3ug==",
+        "shasum": "9c296fbd12b55cd1964369776407674f0747e1d1",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-export-namespace-from/-/plugin-proposal-export-namespace-from-7.0.0-beta.48.tgz",
+        "fileCount": 3,
+        "unpackedSize": 3509,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbBxEpCRA9TVsSAnZWagAAaKEP/R7pmUEuN/26qE1fbIH1\nzhO49QB4+bgw0XUYzl+L7wXsajpTJUMePUOyK7GykB+6ujP6P7laqdJKrEHG\nyLuYLJtBZSufHOgdC/d/uR80AmGCtxD5CU+g7WthjY2RjUDDAOoGE0W86c2D\nq82typyvcs9TgRQt+t6uRz2KPvmR5rzQ7bFyCufpoK13PeSmJv+3I0MW298J\n5Gh3ABYvfLJgQHMaZQ3mT+PsGRXVZ/VYNQ4k2FR+Q4T4w0ygnp2llXqPNEO9\nQCYk/iS5ZLIMFfmq8u3OY3iYG5gaolaALal5TtR4YnL/wMtbxCszT4jZ9cdy\nPreiwXLI950r1N5OulXjMPNetCMxD6eNHXYgpuakoVoE0+lntbqWcJywvoJY\nl8n776aLEMl5+R3AzOIzMcgh2YdaFINz6o5RFCUNXti/+F9Kvzw2CtnnkB9P\nqTu3kfym4kMfjKTBl0+tV+sEXftSNKlNgPac/715Td7O/aS+Qag0su+wei5w\nuNiTtqZ0M9dCQLTjd9beaSnx0Zpd52LJrAolfOZHLHocC4VeTENGeDCom5hn\njpMKWeAuD7uTpT/+0g6lfmlN0jIYodwqkF0XM/kPGyo+FqorkdQ38v6QnXsX\n5M4rCU4tvxd04eBrzMwJ0sO8Vb2q4vUsBpEWhn37jfRIhRzq/iMD3HHGzUVY\negAm\r\n=9mFu\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-export-namespace-from_7.0.0-beta.48_1527189800660_0.9172713117488995"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.49": {
+      "name": "@babel/plugin-proposal-export-namespace-from",
+      "version": "7.0.0-beta.49",
+      "description": "Compile export namespace to ES2015",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-export-namespace-from"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.49",
+        "@babel/plugin-syntax-export-namespace-from": "7.0.0-beta.49"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.49"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.49",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.49"
+      },
+      "_id": "@babel/plugin-proposal-export-namespace-from@7.0.0-beta.49",
+      "scripts": {},
+      "_shasum": "6f35b129102a6046d3c93d45f97d84ac97c7fe8a",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.12.3",
+      "_npmUser": {
+        "name": "loganfsmyth",
+        "email": "loganfsmyth@gmail.com"
+      },
+      "dist": {
+        "shasum": "6f35b129102a6046d3c93d45f97d84ac97c7fe8a",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-export-namespace-from/-/plugin-proposal-export-namespace-from-7.0.0-beta.49.tgz",
+        "fileCount": 4,
+        "unpackedSize": 3524,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbCDOlCRA9TVsSAnZWagAACU0P/i3MINKxaFmXar2JpB2N\niuHOSOuX96mjhhj1nxGLM49JhWTAeSfqPai139baKEjSTPoYc7Synef+LBdf\nTyi8a1kytU5A318ZxtDG2ak+W0VPYrRMe+Fbh+s4qhhc9KWiyjMXiqxhROjJ\n1Z70Iw83iBOTIZyoo+Py1lxiKUVTgk7KJvVTEyDAgfR1ftIHpSRfWfaHAUE2\neNeBv8UVEAjhe0SmNHsgZezrChP7VlXYW21DJ1KqGo1NHyX4QvQQ4EQlp2FS\nrIl28dM8vqSCLkZ9wQ0TD+HvrarsU0LtTUVWT6uLa0WROFmqFUQamfbjsDQ+\nHHSigmfzOtrMpMnFsWprpnodVAbpiXXMAbe1e3uRdoAETZckL0/1EP6k3jsM\nZJr3Kw/0xQYJWk49n2AgsRIuUhuUx3vSnwoOEXTR983saX2cZ040rUNnqiRg\nmBuLwWJDUc0x3sja1DIGdN0yAjnkF9hicE/hpPIdV+WTNNU+Wwk769SeEpPX\nojHffvf5OVYwpF+feSZ2sExPiqc4Gg+WpcdcalrWprduRO/40qaZasvuxgnp\nglqBcQXQWarBT3WydCw6rqJg5Ui7QAftyVhxpUeUwUlSi1sFvPFw1hn1CzZ3\nIfxMFK1+YXofYLKI2nhpziNcbYMN1SDfHDuhL4T1ap5A7WXnVTSIVDifucDg\nQ9dk\r\n=qiEV\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-export-namespace-from_7.0.0-beta.49_1527264165221_0.4954266510765539"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.50": {
+      "name": "@babel/plugin-proposal-export-namespace-from",
+      "version": "7.0.0-beta.50",
+      "description": "Compile export namespace to ES2015",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-export-namespace-from"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.50",
+        "@babel/plugin-syntax-export-namespace-from": "7.0.0-beta.50"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.49"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.50",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.50"
+      },
+      "_id": "@babel/plugin-proposal-export-namespace-from@7.0.0-beta.50",
+      "dist": {
+        "shasum": "c0ee81d7e1c8187ebd45e566400deaf6b55ace3b",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-export-namespace-from/-/plugin-proposal-export-namespace-from-7.0.0-beta.50.tgz",
+        "fileCount": 5,
+        "unpackedSize": 3099
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-export-namespace-from_7.0.0-beta.50_1528832850654_0.4379350293558437"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.51": {
+      "name": "@babel/plugin-proposal-export-namespace-from",
+      "version": "7.0.0-beta.51",
+      "description": "Compile export namespace to ES2015",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-export-namespace-from"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.51",
+        "@babel/plugin-syntax-export-namespace-from": "7.0.0-beta.51"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.51",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.51"
+      },
+      "_id": "@babel/plugin-proposal-export-namespace-from@7.0.0-beta.51",
+      "dist": {
+        "shasum": "979a3c5951cf4caf78e4ce061c51b9fcfc275dbf",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-export-namespace-from/-/plugin-proposal-export-namespace-from-7.0.0-beta.51.tgz",
+        "fileCount": 5,
+        "unpackedSize": 3113
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-export-namespace-from_7.0.0-beta.51_1528838406460_0.3558880464883636"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.52": {
+      "name": "@babel/plugin-proposal-export-namespace-from",
+      "version": "7.0.0-beta.52",
+      "description": "Compile export namespace to ES2015",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-export-namespace-from"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.52",
+        "@babel/plugin-syntax-export-namespace-from": "7.0.0-beta.52"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.52",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.52"
+      },
+      "_id": "@babel/plugin-proposal-export-namespace-from@7.0.0-beta.52",
+      "dist": {
+        "shasum": "776abbbf3907d7de8f55ea712ca72ec4b952c0fe",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-export-namespace-from/-/plugin-proposal-export-namespace-from-7.0.0-beta.52.tgz",
+        "fileCount": 5,
+        "unpackedSize": 3112
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-export-namespace-from_7.0.0-beta.52_1530838771264_0.01875321668773333"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.53": {
+      "name": "@babel/plugin-proposal-export-namespace-from",
+      "version": "7.0.0-beta.53",
+      "description": "Compile export namespace to ES2015",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-export-namespace-from"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.53",
+        "@babel/plugin-syntax-export-namespace-from": "7.0.0-beta.53"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.53",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.53"
+      },
+      "_id": "@babel/plugin-proposal-export-namespace-from@7.0.0-beta.53",
+      "dist": {
+        "shasum": "35ca2e1f9ac56736c40d70a6d50c2a4890c44ff0",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-export-namespace-from/-/plugin-proposal-export-namespace-from-7.0.0-beta.53.tgz",
+        "fileCount": 5,
+        "unpackedSize": 3112
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-export-namespace-from_7.0.0-beta.53_1531316429830_0.2903630024799748"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.54": {
+      "name": "@babel/plugin-proposal-export-namespace-from",
+      "version": "7.0.0-beta.54",
+      "description": "Compile export namespace to ES2015",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-export-namespace-from"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.54",
+        "@babel/plugin-syntax-export-namespace-from": "7.0.0-beta.54"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.54",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.54"
+      },
+      "_id": "@babel/plugin-proposal-export-namespace-from@7.0.0-beta.54",
+      "dist": {
+        "shasum": "87ccd73694aa0edb1ddb758da40b648036b40313",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-export-namespace-from/-/plugin-proposal-export-namespace-from-7.0.0-beta.54.tgz",
+        "fileCount": 5,
+        "unpackedSize": 3112
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-export-namespace-from_7.0.0-beta.54_1531764012200_0.10228754241909654"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.55": {
+      "name": "@babel/plugin-proposal-export-namespace-from",
+      "version": "7.0.0-beta.55",
+      "description": "Compile export namespace to ES2015",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-export-namespace-from"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.55",
+        "@babel/plugin-syntax-export-namespace-from": "7.0.0-beta.55"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.55",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.55"
+      },
+      "_id": "@babel/plugin-proposal-export-namespace-from@7.0.0-beta.55",
+      "dist": {
+        "shasum": "00d46ff9ee371601865d4c4610c359610960d5b2",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-export-namespace-from/-/plugin-proposal-export-namespace-from-7.0.0-beta.55.tgz",
+        "fileCount": 5,
+        "unpackedSize": 3112
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-export-namespace-from_7.0.0-beta.55_1532815656090_0.5033118976981192"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.56": {
+      "name": "@babel/plugin-proposal-export-namespace-from",
+      "version": "7.0.0-beta.56",
+      "description": "Compile export namespace to ES2015",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-export-namespace-from"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.56",
+        "@babel/plugin-syntax-export-namespace-from": "7.0.0-beta.56"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.56",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.56"
+      },
+      "_id": "@babel/plugin-proposal-export-namespace-from@7.0.0-beta.56",
+      "dist": {
+        "shasum": "e070d923818b122e8a18df5d97b2facc3342277a",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-export-namespace-from/-/plugin-proposal-export-namespace-from-7.0.0-beta.56.tgz",
+        "integrity": "sha512-8+ez+5YqHSlmx8ZVoutjcSby8jaxtCH80enQg+hVhctvZEfxn5skl9ptdoonqDs+/9I3tuhowcBro7gqckEYYA==",
+        "fileCount": 5,
+        "unpackedSize": 3112,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbZPwUCRA9TVsSAnZWagAAC6kP/1QUqv4ZO7vVyb5gmnz/\nqXr5SwcDWPaYU7aAqPLD4W+g8Jly7abLYujBo2RlItIVNzzyTpdZ8XdcDiRl\nfgql58WXLDmyLZPpvdyvAxhec939KZ/MLHzFnVSnm8jjqoXVq7lljUy/ymv/\nxSLmpSg1hCoi/JYbU6cJj09GOsRmrVrZIaZUI8W1OclCvVLsJsXLBsv9xiC2\ns5/8vgjlTxaFfKllf6HBHa+hDfWAqtwNe6TzEFrnhjN4oi9RW3yKJPFRXp9h\n2b6ptdlbmdEi4ASmDRE+c9R7xK7GpCU9CgoqzvnWhw/zDhsd7693Vi+zP0tC\nLWylbggyiOsH1Z7ouYBCFSJmXuoMQl+pmJKbq+L5w8Svt30NI7w+3gGEazWp\nScnG+CEdGSRbDuc7t/XTZzLIz80Y9JkWqc+zMkxtyTx8EGoFr7lCDUTN5+c2\niasPJ3BP94iPj8nBeTQCKStLz3xe0LSsYpvzFpR4aNbhFSN7yf1l0xw2hzOR\n5AoVXKKCV5cJBUbTPm/HkCSbwnWzj8tQZwTJUOmUKl4EWSZdrzQLqyPGitWg\nvzUiBLwvqlh7nw7Es37xuuLekqssgMJkvncZsgxf0XUSNS6xLlNs0KOggqQE\n7iuEnConJXq1L0SphM6pkVmiDGfCllatFOLBeaDZolo5Jlp6Uj/lQLwwBfPP\nGPu+\r\n=REkR\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-export-namespace-from_7.0.0-beta.56_1533344787875_0.05718024321886528"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-rc.0": {
+      "name": "@babel/plugin-proposal-export-namespace-from",
+      "version": "7.0.0-rc.0",
+      "description": "Compile export namespace to ES2015",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-export-namespace-from"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-rc.0",
+        "@babel/plugin-syntax-export-namespace-from": "7.0.0-rc.0"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-rc.0",
+        "@babel/helper-plugin-test-runner": "7.0.0-rc.0"
+      },
+      "_id": "@babel/plugin-proposal-export-namespace-from@7.0.0-rc.0",
+      "dist": {
+        "shasum": "54e06001dafdbebf93124541da74fb1303eaa212",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-export-namespace-from/-/plugin-proposal-export-namespace-from-7.0.0-rc.0.tgz",
+        "integrity": "sha512-l2zLHX5IDFk77/w12NbEN/vopmuCG594eQA2/UK6nGHK9RJWWuUgbTrJDdicB/cKUROjFHAbry2Ipd/tu2ROcQ==",
+        "fileCount": 5,
+        "unpackedSize": 3097,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbbGS3CRA9TVsSAnZWagAAANwP/1E3UUwzMP2oA4LehsEm\no+unIEOWWLoAlNHUjHWA1G6rn50qSgaqI3fg11PTbvr1mvCfJjpblYS3JvQo\ndGw5iu36ovwD+KNtg+fXdqZ2UsVs6toSiJe0rkV94e6TWzZtVx85bLBLX96p\n/9a32uT9c5R42Y8Nz8NfYjZXpXc9TVb+60LryAEajfgyUPT29GyfohfFUIYe\nVXRjb1/nUjxhfFWa6NGF9UDCwve1NgD+0zOC0fI/8EhJu8He1aJvee0Hb579\n95wh+StPKPr4dYrYiEYoiOwdN4AUjNb92DsFMP7d5BbuV1IELGHHTnE1teZG\n0cLLGRMqJa/dlHtjg+mvzS94WU/xRQkW/IVSbejICIG1bg/s7PzmbWggmr8W\n/bQeH6SKCr0rchx62z3KKgl6CAiaStRbjQb3iX1Afp3GL9rLIWgW/u/1mwcy\nrJdmISkITbDzZhl6SJEDLCZdFmehIfN1nvnZTd9Jsh5kWJCE6HhE6/dyPI4B\naUTWkSdBqLOtZlW33quWiQl/VsPYV1/5zXQb2nSCanNhdPouWT6RbGPwSkKK\n3sG+PLtH47JuK11RUL5fHuAzM/Szjx/4RznQ64mPYNnC3Cal5KniERLucWFw\nPHGXf8YUR7JOF/UIY0a/Hk1iGBDqSPaBXPu2OqVXmbtZebdBnqKyzK89rKsF\nmK7K\r\n=SlZz\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-export-namespace-from_7.0.0-rc.0_1533830326993_0.8086910074570326"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-rc.1": {
+      "name": "@babel/plugin-proposal-export-namespace-from",
+      "version": "7.0.0-rc.1",
+      "description": "Compile export namespace to ES2015",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-export-namespace-from"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-rc.1",
+        "@babel/plugin-syntax-export-namespace-from": "7.0.0-rc.1"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-rc.1",
+        "@babel/helper-plugin-test-runner": "7.0.0-rc.1"
+      },
+      "_id": "@babel/plugin-proposal-export-namespace-from@7.0.0-rc.1",
+      "dist": {
+        "shasum": "6483305f41d0609517e9a87deb34935a1f0a756e",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-export-namespace-from/-/plugin-proposal-export-namespace-from-7.0.0-rc.1.tgz",
+        "integrity": "sha512-21vmpq6GHiOComKrNxleuh6H4apOwK7dO2k+J3rQD1VdOzYcNM6sMReXmf/Ly6Rdlebc4thJvOS4JnqsV2ktKA==",
+        "fileCount": 5,
+        "unpackedSize": 3078,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbbJ88CRA9TVsSAnZWagAA4lYQAKE05utqIMIEr0pI3A2/\nFQXi3iN7T5p5oDDbh3xhCn5ZwHY/EOtgQfCj0lu9DYJ2BUh/BLjuJ+BMvLYG\nzKCwxIHnAUvlGCUQcdcFpJsxz4jn8O1s5DDfuXZ12VhtAGUO1O28yd8gc26W\nSqHDgxS/89bYYTWzZZPr3pRzHKpaVYbghtkcBEt8erqMwDCtDa4sziTXHR+G\nWNfW+V/1f5W+LanHS7YOXEFnUKjMAJgEUrkrvNVt0ynzBrv7Iif5hgpZn8qR\n/PPNTLEGQQ/m+ILtbyxChdF/FOoLPUaGcMUzIo7h/MZMmj83ZRrH8wBIeqF/\nSoOz/uhY+o09S1InfNpkttxjUF/fHqfHuN3Ip6AuVCEsJs/v51YSQUjIE1sG\nYlFYlOstfaCrR0L4jrMPa1L35+ofOnkfC6DOQc/vEe+1W3Aq69YLfF9DDS5T\nnfNm37yQ2E9E+isiZhZ1JDoN0elbYUww6fpRXPfQ2SShnqXeBRhrq4FSy1Qn\nzbJPBuID1HjIxq6cAVp8xOZpS5eDgq5pVI5Cj5rAsnkR5grTCJy8S2iPH8Vf\nvKecbNQ2iWiZdcbfpDVm/a+8T2dktQebCW9Qkol2ALlp3KpdWbKTgiiUhdPr\n+2OhYyP9paSMK/ACIY3qcK3SkFyNSaxMa1HOcp/9tLTeUO73U6kZBYoBGIv/\ncpXG\r\n=i3a2\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-export-namespace-from_7.0.0-rc.1_1533845308285_0.2250941844432086"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-rc.2": {
+      "name": "@babel/plugin-proposal-export-namespace-from",
+      "version": "7.0.0-rc.2",
+      "description": "Compile export namespace to ES2015",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-export-namespace-from"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-rc.2",
+        "@babel/plugin-syntax-export-namespace-from": "7.0.0-rc.2"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-rc.2",
+        "@babel/helper-plugin-test-runner": "7.0.0-rc.2"
+      },
+      "_id": "@babel/plugin-proposal-export-namespace-from@7.0.0-rc.2",
+      "dist": {
+        "shasum": "aafdbed675d50155f48bc0f2a9aa2ffebf23ccd2",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-export-namespace-from/-/plugin-proposal-export-namespace-from-7.0.0-rc.2.tgz",
+        "integrity": "sha512-TAQT4oYXwJ/4OPgECmePN20aAhHECnrl47txNB3dZkvmqU33CVMnHFnigPKW6cXftBs3iwzC33PycB86xLFuxA==",
+        "fileCount": 5,
+        "unpackedSize": 3078,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbfGbyCRA9TVsSAnZWagAA7w0QAI07APFPiKUNSzOtu1x1\njkKrgpxRA5yvPFHGImcENE/RTVGxcxeqOFW8Zy3bBZzEax9GHj2/+Ancx/WM\nthVuCYo0KhKbG9cVMscVuK42v15NzJUfAp2pqKYpmNlEP14S5xroj+/uIOW9\n8PqWU+f8xF8tad5d55JC4YbEuANmwdbBuMstCZNLSfuptoO4Uo32cvfke95e\nWNQ3JkW26UMUPGpf8V8ubV97UydBJLW2S0ktqzI0Slhs/XXMZlBzZOZakpvG\nXmYsbRYZi4V8kM/SWdV8UdfPUyP0u96JJdES+uhc/pxhNSo3M9ckJi+gqVki\nkJmUNAeler5QmRUsWU41+ffG4nVB6UZgRUxYck+ZkyLM1ponDI+4nZW+6MuR\na5eq5fUq5rO6ldVdCLlVrJMCS3HPRQfYmzESQPAPwbHZfm3RUfbM36/z7VuA\ng5YsMr4RD4XtzdNOMhcBzVfx0flW7d/d2pMUTBfugBtbWHH0lmb1TyKNU32b\nz7VPvgN/X2mEf/8Z5ilDqcp4xng8EE4Upk0/YLvEdYZ5+m9NsHECNSoHX+nn\nzVR+g9QkvI5Vago/HvchNxnH/z+0fyAkCP/aUnE5H93PoaB5gVJqQ1Gdqcik\nh6+rAxMvKrvHUz+fOETiAv9Z4+4RfEwA4jjDk8iQ+XxpiIJGgd/67jPLe/IH\nv2Mn\r\n=CHFU\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-export-namespace-from_7.0.0-rc.2_1534879474007_0.38744225614063277"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-rc.3": {
+      "name": "@babel/plugin-proposal-export-namespace-from",
+      "version": "7.0.0-rc.3",
+      "description": "Compile export namespace to ES2015",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-export-namespace-from"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-rc.3",
+        "@babel/plugin-syntax-export-namespace-from": "7.0.0-rc.3"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-rc.3",
+        "@babel/helper-plugin-test-runner": "7.0.0-rc.3"
+      },
+      "licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie <sebmck@gmail.com>\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/plugin-proposal-export-namespace-from@7.0.0-rc.3",
+      "dist": {
+        "shasum": "21ebd470798cb9000151c377576de47cbc34da8c",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-export-namespace-from/-/plugin-proposal-export-namespace-from-7.0.0-rc.3.tgz",
+        "integrity": "sha512-8FXkMLO4ROU/mdkY8iNqKniEfGZhcnf4qY1pFHoF6MwuusjrTQZ/Dp/PnnSYKNRnYizaY5P+Pf2r8Kc0lPKJug==",
+        "fileCount": 6,
+        "unpackedSize": 4177,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbgEmbCRA9TVsSAnZWagAA6hUP/jLJock6kz4O8MNi9zX9\ne3GyY4BUWeFs0Ek2cUdBw3H194P+8pLJ3Yv/dYpgSGWGcND5r38hEttHncM0\nZN35Gjr3NZn1UblHlNLK0E70A6nD2OpwaAnRgX2yWx3XOiQ0sNJySwZcYHAc\nfdDMLQJ8/VWfjf0J//FhMQk51lMngdfid3LEt2pki6LQ26DHhpAGQ+R466eT\nI/d8csv1Kh/5+pkg2YoANxc2g/X3ehix21wrvgN7W0mghOASgreOWm+xdosl\np07rPL9Finvm88kccg94BRD4CUqL3Kc9MVJ9UXXz3/cw/nklsxoykAIP+SxL\njkwIcs4yzW/ZENm+R43FibAZXX6a6T9G0APYjSPgoeLO09y0EZLzgbA2rMiA\n+f2d+5AnipiVnb0Z0cWxzRE4bX4G+vICNQGmDhlLzmCNeSXiotZqD4gYCPb3\n9Pap+fuvi4hZvr2t4d2d14ncan4dZQIUPt4iRgMPOV/WrWl/10wmQrYcR4dy\nw25K4jmDBfwfw3NZnxZIeITQBZs/DLbQ8C3GOLbUipebaOg3Dxy03kjwab+9\nGE6Zo7NwkXw/+GGB/8oXR4BxtQMQM7/vedtaQMBKeinmu+Xr+bUJg3NiFyl8\nNsScBA0lWUt3i47F00PrtVbQkptRcwbEshr8aKb164K9gGHYH9XchLhZGNbl\nzWbG\r\n=usZD\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-export-namespace-from_7.0.0-rc.3_1535134106910_0.45199772990888376"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-rc.4": {
+      "name": "@babel/plugin-proposal-export-namespace-from",
+      "version": "7.0.0-rc.4",
+      "description": "Compile export namespace to ES2015",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-export-namespace-from"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.0.0-rc.4",
+        "@babel/plugin-syntax-export-namespace-from": "^7.0.0-rc.4"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.0.0-rc.4",
+        "@babel/helper-plugin-test-runner": "^7.0.0-rc.4"
+      },
+      "licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie <sebmck@gmail.com>\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/plugin-proposal-export-namespace-from@7.0.0-rc.4",
+      "dist": {
+        "shasum": "dafa4ed1d24911c667d40f871b957fa28fc59712",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-export-namespace-from/-/plugin-proposal-export-namespace-from-7.0.0-rc.4.tgz",
+        "integrity": "sha512-AleWANj2SImGoPnO2WwOhQZR4CpPWkQ2W9wt+6muENUWac+1hFtU3KttdpXBhIxmY7rDXy0Ad+y54vMT6LpmpQ==",
+        "fileCount": 6,
+        "unpackedSize": 4181,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbhCp7CRA9TVsSAnZWagAAXuoP/3LeMutIzj8OAi1eSqvx\n1WEyOuqI+rjBLstaeZPmEOcfJirWquBx1Zc2qqAugRk71BtBEQCnbPAryvcR\nt6trF2zSO91xfudiBa0WWRdENFIi+qIuhgbS+LFrdQQqvMKjo5SG4WqUG18d\nFfhNQBbOptzE3V/4RK+FGZChC67iG/7a4EWpEmThn0OpaKTB8FYovZJBYgYb\nHfJ+DSq48LP0zfOTYa4BLKJ1jGEjclxeCJUoX1hBMwDPiLQbZ6XaHFEDuRGV\nk53rRG/yelya+4MfOflw4M8AcNOD6qrYh7w6T0Pc/etf5kkZh0Hb1+KvOW8f\nt3iWwEZnknbyZsMkHxpHjPGzcZtF5JDhmdfr+I7mp9IAC0frYlAnqThauiBD\n94kckkA1c+tE3hwFUG0SLVuJMEDklb+r+M9VRdqOQ6IGX2EjUUgbxZ0kDZ9D\n9oERY3WElLwGeyrVqnCBBN8KeSCNFlIeSXc5yyghpuJoUlWwBkPw8JT5JyY7\npW750E2iRywsAW7DiL20vv0GWh1pyf9g60ZPHeRw4h1XVOqWwHr/bjowrHut\nCAxyUO5eiwC2lRzwSYiHulpqwm7+LrB5Tt3hi+7D8da4/30Sm8IUb03HLEEO\nZeU/UaVMbfqtqm/kbA1SNuhoNWS+RinN0fRrwOItkogy72sJM4sbjozvQOGo\n9Hoi\r\n=TPS9\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-export-namespace-from_7.0.0-rc.4_1535388282308_0.16608242925689676"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0": {
+      "name": "@babel/plugin-proposal-export-namespace-from",
+      "version": "7.0.0",
+      "description": "Compile export namespace to ES2015",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-export-namespace-from"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.0.0",
+        "@babel/plugin-syntax-export-namespace-from": "^7.0.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.0.0",
+        "@babel/helper-plugin-test-runner": "^7.0.0"
+      },
+      "readmeFilename": "README.md",
+      "readme": "# @babel/plugin-proposal-export-namespace-from\n\n> Compile export namespace to ES2015\n\nSee our website [@babel/plugin-proposal-export-namespace-from](https://babeljs.io/docs/en/next/babel-plugin-proposal-export-namespace-from.html) for more information.\n\n## Install\n\nUsing npm:\n\n```sh\nnpm install --save-dev @babel/plugin-proposal-export-namespace-from\n```\n\nor using yarn:\n\n```sh\nyarn add @babel/plugin-proposal-export-namespace-from --dev\n```\n",
+      "licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie <sebmck@gmail.com>\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/plugin-proposal-export-namespace-from@7.0.0",
+      "dist": {
+        "shasum": "ce847cc62c3626547107a1b835592b8ee494af51",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-export-namespace-from/-/plugin-proposal-export-namespace-from-7.0.0.tgz",
+        "integrity": "sha512-UZuK8lkobh3570vCu0sxDQn+ZlCV6CVLlXe+nNohvPr6/zI5I+j4Ir2fTTCG0ayBQanym0N+29K5+v4c8SATaQ==",
+        "fileCount": 6,
+        "unpackedSize": 4156,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbhHCKCRA9TVsSAnZWagAATq4P/1rZ6GgIuDg4Pmm3qsAP\nE6zyst2ZT3L7WWQcVkwuj1fsaJB7k+V+nTTu/2bgYz0PHi3gy2xOVU96JB5p\nTxyZbgITneEvrZ+FTcf/QO+PYgvuvWqpQKO50MIDjdX2QNMNP3BF5URv8hK6\n6QeMXXO7JD02aPtRInzHDxJRD+UMnmDcsHvUpeVOf4KrKHfn+aKWec89Amzj\njahHaNNKUflzjKT/q9G3wuzYUEFJdgrRnkBsDo27z+QSyLRK0Si7SuqPqjwY\n08GYoWKc3xuYR478JcicRAjAa8CWDl0oq0JKdI2M2FiEIoMGQv7NvPROxbYT\n1vsmKV9jp/HL7NZMEXLmxZFyPSuJQ5XvDQGVGa6nEW5ZAdmabzIFN/AUMg8f\n4IIT8CcivSrA0L08qLoINxJqiRWFZQna2nHqKeBwrbkf/kj2kvOaCbuJubGq\na2fLb7qlrzNTuE4g73EZo/hyOXTyKCLrnKrkSXXIZrLFH8pB73Vh5mRV2QVl\nNaP1lOSqCn6NhCu/6tJQCfJw4JjIJx/aNPN0JtPKeGSfvmRJzOSqgy7CThp4\nXdxYHdJA1uO+uWIwdTPdTbvfUvLCpWkwfD+T4+T5S5GWcHlYF6pfC8mbN46b\n29TSCPqFLYcAkQJUsv2as3lCVT9sTbNjCbfb+ZqGXlgeGQtWpEeT4cAI25Vr\nSTlL\r\n=2n9M\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-export-namespace-from_7.0.0_1535406218177_0.8728044274947842"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.2.0": {
+      "name": "@babel/plugin-proposal-export-namespace-from",
+      "version": "7.2.0",
+      "description": "Compile export namespace to ES2015",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-export-namespace-from"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.0.0",
+        "@babel/plugin-syntax-export-namespace-from": "^7.2.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.2.0",
+        "@babel/helper-plugin-test-runner": "^7.0.0"
+      },
+      "licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie and other contributors\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/plugin-proposal-export-namespace-from@7.2.0",
+      "dist": {
+        "shasum": "308fd4d04ff257fc3e4be090550840eeabad5dd9",
+        "integrity": "sha512-DZUxbHYxQ5fUFIkMEnh75ogEdBLPfL+mQUqrO2hNY2LGm+tqFnxE924+mhAcCOh/8za8AaZsWHbq6bBoS3TAzA==",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-export-namespace-from/-/plugin-proposal-export-namespace-from-7.2.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 4253,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcBX3DCRA9TVsSAnZWagAABO4P/3Prc57KigSap/6ageID\nm1qhiw9c/cxhxfVwgsAX9GwdcPORfQoy/ANPpmXzIWGRJhijpNtBlL5aR8jb\nmyywhDpk7NELbQKJjGHzoBqqYVle04ZNiCDKgvp6n4qdACAhkVjW0HSYNxG3\nTggkyg64MIe4dqeqS58jn1RC8wZ2dB0nbtLkelEdWyQ0V2wC3ru7giaaUK87\n0kACGem0WwvPPKsjifzZUldLjkX30USCWiSrv4DLfklXPBWnGV4sFU5sqvpx\nX/afrmf3Y6mxEnrBHz6h+E+bFz+Qt58UF/lbc4NeNK7PQWzN12HTR9fxxNKx\nDEjF/Wjlufnw2NKHayEFs0p1zB8WUXYIB0BYfeSIOwOeN/VX53tS07mHdKVN\n0JRCwhzXWH5yHpdxcRGpENlYMsLFriKmfV6lHvBAPRta5d1fXuDI1qbNMivB\ncufBFc99sl3lNCr6Z8eJaqLz2r8YbCb2KYLRjJaFjNH2oCxd/t4CwxbZxtae\neXUrCBMVmOVzWxGHYXxQ0ciNr+dOt+GE3wTo1nJ8NsjzbpL/KQX9exYozGdW\nDhujueVXyFMUo0MP6MyEEJHJbe5qZ1t7HwthgcwRt6HOwFa1QO6gxZiRuLvs\nsKQ5mK8nlKoQaYrPRmoU/tdTAwDI8oiLt6oul0YmM358GyhLdks4Mj14T5Je\nwlck\r\n=AjG7\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-export-namespace-from_7.2.0_1543863746471_0.3913252793057542"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.5.2": {
+      "name": "@babel/plugin-proposal-export-namespace-from",
+      "version": "7.5.2",
+      "description": "Compile export namespace to ES2015",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-export-namespace-from"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.0.0",
+        "@babel/plugin-syntax-export-namespace-from": "^7.2.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.2.0",
+        "@babel/helper-plugin-test-runner": "^7.0.0"
+      },
+      "gitHead": "0dbf99bedb1d82b8414685181416c19336dd0d96",
+      "_id": "@babel/plugin-proposal-export-namespace-from@7.5.2",
+      "_nodeVersion": "11.14.0",
+      "_npmVersion": "lerna/3.15.0/node@v11.14.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-TKUdOL07anjZEbR1iSxb5WFh810KyObdd29XLFLGo1IDsSuGrjH3ouWSbAxHNmrVKzr9X71UYl2dQ7oGGcRp0g==",
+        "shasum": "ccd5ed05b06d700688ff1db01a9dd27155e0d2a0",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-export-namespace-from/-/plugin-proposal-export-namespace-from-7.5.2.tgz",
+        "fileCount": 4,
+        "unpackedSize": 4400,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdI560CRA9TVsSAnZWagAAXMQQAJEY6HEOjGMcCz3uzEkC\nGrbIXIC+n1peb9Qbu2DWZ/uTjGqgBwgZq7qdj5NRmaI2vqXiCqL4itvukZjQ\n+p4LEP0HE9lfLXgfhE4Jb/7POS4TIOMN4H5NedjMkDnqhT5YR7SXdhdhJDKa\nT4OAInhj4eeXw4W0PaIN/A4eMu2dZnhlVDCI6uuiSrEydzz7uQPBffg2GSOK\nARQ7GW7QE6O7W022mjV1dADUdFOlSu13T69Cuq9mIhgmNCfN0pmx1BuM80Il\nd791kzJuVVvRD/Lo392cAJoqcckjbHEBm5rXYNTw+BBiufw6WHfUDtdTFPnX\nmn0l+PFkE+XbpcTbuT1MTTLCwsTHAknlr/nefPQ1uJRhlZVvL6Lw3hYWRRi/\nSpstlRk9H2NXSRJhAo5tWR73iAzhBM2IUhrUUNUCsRyXrb9IiGSmzazlraL1\n20v/4f32yUjvZyrWUqdyHjMLI+VaPSWyDn+faf7iSjanj/uDAxhg6fxDtmLC\nMWrTD79z5z0uDoYun544u0efopOmyChQDo56JArD5mQGlXmq1jisFXsPQE4w\naBj4ClXojM00enH8ZA2iWoibXy0o+2sp/2sgn8WTrCCXAZHvm55an6OKxnDK\nrjr7jwdiqoqxhB34miitUucmLsw17e529nCPc8JhjtGMLuXgbtSOjwtHoqia\nPG+y\r\n=MG4X\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-export-namespace-from_7.5.2_1562615475543_0.6085633873496841"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.7.4": {
+      "name": "@babel/plugin-proposal-export-namespace-from",
+      "version": "7.7.4",
+      "description": "Compile export namespace to ES2015",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-export-namespace-from"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.0.0",
+        "@babel/plugin-syntax-export-namespace-from": "^7.7.4"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.7.4",
+        "@babel/helper-plugin-test-runner": "^7.7.4"
+      },
+      "gitHead": "75767d87cb147709b9bd9b99bf44daa6688874a9",
+      "_id": "@babel/plugin-proposal-export-namespace-from@7.7.4",
+      "_nodeVersion": "13.1.0",
+      "_npmVersion": "lerna/3.19.0/node@v13.1.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-3whN5U7iZjKdbwRSFwBOjGBgH7apXCzwielljxVH8D/iYcGRqPPw63vlIbG0GqQoT9bO0QYPcIUVkhQG5hcHtg==",
+        "shasum": "9b32a9e3538ba4b0e2fa08942f0a8e5f60899dea",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-export-namespace-from/-/plugin-proposal-export-namespace-from-7.7.4.tgz",
+        "fileCount": 4,
+        "unpackedSize": 4077,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd2HAUCRA9TVsSAnZWagAA7f0QAIw+yb8aVfUKE0UIjyl8\nvlddd+85wIxodKG1OZXeW8d+I4FbVfWWrEGfrbJHCTPnYjSz+qjo7CsO5hZM\nE036z3JbbxWmjb2XlHjOvpdfZY7zBS93hwIakfSB/tjJ5/vWmu0ocTI6jYx+\n9tnMUeiAw4T83D2SXR6M28y57U54wm7XsH57ataC029jHL1221MqvcB3aEvC\nCinNWGnk7KCHe+I46OwM7NKm6EVGOk5zLHqsnXP6QyN1epLeNQSXVOwJSbDP\n/i8Ga4Xyc5+i6wY0d2Xd0dp6hpX6sSp65ION0mZygTI352FbZA4jorjeJc4G\nniwM64X1JAXE8c8O1UQHP9jXJN3KOiFsNZs1nJFXIUXFbziptndWpURozKJA\ns7w+4ndFM/7OZdpwZOyZ+o7UwC1oHLrtC3AMsXd49yYa35nVerYD5Fiu2pcz\n4zZFiIv/eghpUPC0zbq8PelrzEW3eAdAMNe4siSnffSvmGum0He4U3pzKHa4\nmML6Lk9XPYTQySZtiMvqXfPQC9mPym91VF4JTvgI7zL0sJjacEnnwwPFMz0W\n42RJlGRM2cKxmiq0FYrFZFfdv0lz6igTNfcgXp/rbPTcGSXXvJ/iBj/UPn/r\n9vgfGOKUpW7Bbf5+U9LnFAx1sg5myiaQB/SD4YGshTkdeTfRYj6p/juvK+OJ\ndLWG\r\n=je0W\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "jason@developit.ca",
+          "name": "developit"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-export-namespace-from_7.7.4_1574465555960_0.5666799979907864"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.8.0": {
+      "name": "@babel/plugin-proposal-export-namespace-from",
+      "version": "7.8.0",
+      "description": "Compile export namespace to ES2015",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-export-namespace-from"
+      },
+      "license": "MIT",
+      "type": "commonjs",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.8.0",
+        "@babel/plugin-syntax-export-namespace-from": "^7.8.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.8.0",
+        "@babel/helper-plugin-test-runner": "^7.8.0"
+      },
+      "gitHead": "2486615a74580283c49475d66067bd7fcab3330e",
+      "_id": "@babel/plugin-proposal-export-namespace-from@7.8.0",
+      "_nodeVersion": "13.6.0",
+      "_npmVersion": "lerna/3.19.0/node@v13.6.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-WTcu6CSvDRpWOCOVHfQpaM2Y3aiKpl1FBpoZfFZt5f2NR5TgEHvfwThOTrrCVdqhjLX81zbudnykxTSJj/n5uw==",
+        "shasum": "60bbb22deb6f7b4a93b630d2db6f53d3abc615c8",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-export-namespace-from/-/plugin-proposal-export-namespace-from-7.8.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 4099,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeGmWCCRA9TVsSAnZWagAAuIkP/iUO4NI/UNttH7KAyFRp\nQ3TdTHd/h63gEuhYVE0kQjuom7iau7TcvCjxHgNXypC+s5s3ToClSG+tgP9C\nQqlPHwgQuc+T+keb3ikvORM4BTd2iD3L8Fl30Tgi0yXQkZIye/6JTdvkk4Pk\ncgZIvJmaG9dqIKzbIg14YfymWj2VGnBUl+B4J2h32Hy37q373lsrAKbaNUD/\nGjcyPgw95gisY+B6TWc3DldeGVAdI44Ih9SOW9sYOcGKcU/pKMsjfD0p3hXl\n9eRatJ+qlZUqu6ZjaPKnXr9sqAJxexYUuY72iwJhBDWQ5U4ua9XN9Q9dURCE\nu8/j7obuQXacRk5C7e8dk5uOKxawP7qQ71r3W1UmVZJjL2jFkLr63fRHrhIG\n5sANdCFeo8iWaPY4AFFEi40qLO/vaZnw4zGwhQEnFpm3uApAP9QZqLicExPL\nCFSH/XctiF8qiwAtmnQZ5tQhCAxOeyrNRGUzH/o9kKQ4+D5VZ4WIvwVBZISY\nXOYpxOckCdrNelc65aBxRsmKMb9FiCQ4gS2Okk1+PM7ZWZeQUzIE9vBMl2Hq\nOJ+wqa/+BLR08yp2rBpvFX048vQ5YNReaVMNmVxd6eWamtjI9ZeBrFAtbWia\nxTU5h+62X5nGxVDJQj98yz115j1syNF1u4vOG3jJDZ1J8vZYqJIBgyy8Xhv0\nilNL\r\n=u98i\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "jason@developit.ca",
+          "name": "developit"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-export-namespace-from_7.8.0_1578788219260_0.8607822950674402"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.8.3": {
+      "name": "@babel/plugin-proposal-export-namespace-from",
+      "version": "7.8.3",
+      "description": "Compile export namespace to ES2015",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-export-namespace-from"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.8.3",
+        "@babel/plugin-syntax-export-namespace-from": "^7.8.3"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.8.3",
+        "@babel/helper-plugin-test-runner": "^7.8.3"
+      },
+      "gitHead": "a7620bd266ae1345975767bbc7abf09034437017",
+      "_id": "@babel/plugin-proposal-export-namespace-from@7.8.3",
+      "_nodeVersion": "13.6.0",
+      "_npmVersion": "lerna/3.19.0/node@v13.6.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-WKK+9jz6TWUTX1uej9/EUVOmM1sK7aHv6bZyxbUV3NJjbiIZRqJITeXGMo7D631J72PEnIORh5VOlFCSlrLicg==",
+        "shasum": "63ad57265d0e3912afd666eb44ce26fa8cd2c774",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-export-namespace-from/-/plugin-proposal-export-namespace-from-7.8.3.tgz",
+        "fileCount": 4,
+        "unpackedSize": 4077,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeHOQjCRA9TVsSAnZWagAAUQwP/1n7wPLOW/UndpPQ+R5V\n8hYfxjdEDYzeuoz3YuR5TiOz3seTn6tWneQBeJhg48yZj/hc5/Ln7QVsmeYs\nkBTh6CCy8ay8k/+iKzHZwe5U+x1BdkgVrYXdq5qHw7uLRtELBT3FQHR54Tzg\nRTFx3IC6eUN0wMPlYAxibXCk6jduMds8KIMCdwSBSRegCH3wEjLY4GJ2ZIjK\nFptDGoRnL2C6F/xJoT6MlTgKlO4zboos6Hqdenu6UTNKIrfGRvQQgkiJhevT\n7qE9RTAoGv2Ct5iqJYUhplcqUhQ1SwEMM6jslqtvbFwkI9zElBd6fJmzcX87\n6XtJ9hmLBcgnlrULBb0OcRPcm3by0mpq3P49Rl+CvStbKVirqUtnSlR5mJnn\n4x5Nu7/NPyYOYXJ4rq4+7ZaFuMO7/13foX4ClG1KZJl/oSlzPCMpjyIpHUGd\n5XChEG1FUkt/EGn3JDOY5eyQNvhoAwATcOGn6fObNeusu20e2y5Gx4x4s8n9\n2/ygY+1AVOS4gBBRwHbnFbEraXu6w5pTJsJvAP/UKH41S8+EGer1XcYiAOlJ\nttXsgXHsW2gepKu3UeGWhKHrLqi80AYU4iPggFSeqfvEZ+C7WBnVv3s1fd17\nJG8Oz2uf/1LMW8XDsVasd1nck1ZwKGvag1y5Sv2A5iSbS2ztPPvmGo7KsLg6\nx9an\r\n=nMWI\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "jason@developit.ca",
+          "name": "developit"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-export-namespace-from_7.8.3_1578951714814_0.10558087200766364"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.10.1": {
+      "name": "@babel/plugin-proposal-export-namespace-from",
+      "version": "7.10.1",
+      "description": "Compile export namespace to ES2015",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/babel/babel.git",
+        "directory": "packages/babel-plugin-proposal-export-namespace-from"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.10.1",
+        "@babel/plugin-syntax-export-namespace-from": "^7.8.3"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.10.1",
+        "@babel/helper-plugin-test-runner": "^7.10.1"
+      },
+      "gitHead": "88f57a7ea659d25232bf62de1efceb5d6299b8cf",
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "homepage": "https://github.com/babel/babel#readme",
+      "_id": "@babel/plugin-proposal-export-namespace-from@7.10.1",
+      "_nodeVersion": "12.16.3",
+      "_npmVersion": "lerna/3.19.0/node@v12.16.3+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-eR4CoYb6mh5y9LWjnb4CyUatuhtZ8pNLXLDi46GkqtF7WPafFqXycHdvF5qWviozZVGRSAmHzdayc8wUReCdjA==",
+        "shasum": "512ee069cd866256600bdf89639cf7e1b51fbfe9",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-export-namespace-from/-/plugin-proposal-export-namespace-from-7.10.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 4129,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJezuSECRA9TVsSAnZWagAAYGwQAICQpHIKaXEpeS17IuNP\nCquII2AMFyaKeSEb7LH+GUBfYU2vXc3tuICtH9VLylCY3f+zfxXvh1aoe9ji\nyaZw0k3CgnUvvMAPfIu+97UFUDxMAjIlejI/eyJzHXDcMTCH4r8izoILPAef\naqxe/QR1GIG5+iir5yerJWsnb6vVBwtFezxlBZD3KFJ5arersoMgMBkWMYJZ\nAsyHfL6ak6R5PtuSTpzHLC5HOvmKfdN/7819M/InIgucXu/w5+I4GE7LNwn8\nOBfDgpmE96caKYBsqMgnUJTNRqToNBt5BrHTFM+PaUYVGcT2Phq6AUpnRYUP\nwWw4bILEeTuO3/8ugpiGH2ItXnkF69Une3Id0SMoMPf0vn5qalwugig7Hmnw\nSFsE2ZewQ21O3OJ0FYOAALxkYU4OuiFAPtLzTPgXNhAIGkCkAb0RYTVAWz1K\n9hyZLyTPQaywXSJ/0bxmdBf6OMhdibOIW78qeikWpOlUBuCCWcx2DyNZChH3\ng1QWciHEAbknt4eLsp//DMJzCDc0ulceMkQZof8zVdJCo8uS7B/wZhUTU9nR\nTm4/oulM9b8SZodwjfxlAzlOdI/40v3RFifRuUQkumZXaFgfI97LvIBAMlHv\nL6s/8JpIHk4FIxXdd2Ego2jwrQzDDRMRIbH94S7Z0EZSfQ/2QN7vgKZl3aEy\nCIgm\r\n=OaHf\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-export-namespace-from_7.10.1_1590617220549_0.6333055352051289"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.10.4": {
+      "name": "@babel/plugin-proposal-export-namespace-from",
+      "version": "7.10.4",
+      "description": "Compile export namespace to ES2015",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/babel/babel.git",
+        "directory": "packages/babel-plugin-proposal-export-namespace-from"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.10.4",
+        "@babel/plugin-syntax-export-namespace-from": "^7.8.3"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.10.4",
+        "@babel/helper-plugin-test-runner": "^7.10.4"
+      },
+      "gitHead": "7fd40d86a0d03ff0e9c3ea16b29689945433d4df",
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "homepage": "https://github.com/babel/babel#readme",
+      "_id": "@babel/plugin-proposal-export-namespace-from@7.10.4",
+      "_nodeVersion": "14.4.0",
+      "_npmVersion": "lerna/3.19.0/node@v14.4.0+x64 (darwin)",
+      "dist": {
+        "integrity": "sha512-aNdf0LY6/3WXkhh0Fdb6Zk9j1NMD8ovj3F6r0+3j837Pn1S1PdNtcwJ5EG9WkVPNHPxyJDaxMaAOVq4eki0qbg==",
+        "shasum": "570d883b91031637b3e2958eea3c438e62c05f54",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-export-namespace-from/-/plugin-proposal-export-namespace-from-7.10.4.tgz",
+        "fileCount": 4,
+        "unpackedSize": 4129,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJe+zoLCRA9TVsSAnZWagAA20AP/i4yQ+g3x08k57BIRJyW\nBRZgfWcb68jWjSGgNOPRhc7GnsIs9+Wh3nohZXrhS19Apyngx/gJT8kPb2FZ\nTM+GYGHtwJk3IzkbStEuBsOBKhrKa/252gDhGzwnz0KXdh4VjfWjIVTEgE9g\nXPIRU66/JdiH6Ukf2DMiGN/JVcFQ/iOrk8bqyNPMT1jiJn/A8Qpd1vxW4Gwu\nhD/3cuVs2DCGrBcbjHo1qJEArhL8TgRj4Mm2G32eUWVDptrGL6sVCzLrcJWm\nCijOtlxiIsan9PB6l//+C04FIuY/TMrWXodd5eXPW2yE4iySNiI8RDaKocKy\n5wyRYK0o5qEAlBNMFzXLuuSFe5shYpg4+ugxx8+mnpw1Nz4cvoXRs63fcDcl\nD+Tb1/7zZ5dArTN9JTCBtdxGJ/u3FfjmgwbK6gD9zeJViuJumK0O3YrKxMon\n9fNSaNGCLPlGdUyrJjFJpipZn7/YjokuaYmKb61NZKTC6kV1Ybjmg03k278o\nfX+y4L4GwDqO3NSFpQrpV5pY6Kv4XgWmrrfnr7YB8+/HXfSwDk1UTgm04Vm/\nZtpru+yjhxuICGAE+T+zhEK+HMDnFnmPzbakCHQtNsQuHZ/3N3xknws/PUke\nWb5n+PKwSsj1fINpVcoA9bdq22zPZVbnR5nWgFRESCEmc/QG3TJWBwRBXU6z\n0b9p\r\n=P/XW\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "i@jhuang.me",
+          "name": "jlhwung"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "jlhwung",
+        "email": "i@jhuang.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-export-namespace-from_7.10.4_1593522698710_0.6434402825608967"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.12.0": {
+      "name": "@babel/plugin-proposal-export-namespace-from",
+      "version": "7.12.0",
+      "description": "Compile export namespace to ES2015",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel.git",
+        "directory": "packages/babel-plugin-proposal-export-namespace-from"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.10.4",
+        "@babel/plugin-syntax-export-namespace-from": "^7.8.3"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.12.0",
+        "@babel/helper-plugin-test-runner": "^7.10.4"
+      },
+      "_id": "@babel/plugin-proposal-export-namespace-from@7.12.0",
+      "dist": {
+        "shasum": "08b0f8100bbae1199a5f5294f38a1b0b8d8402fc",
+        "integrity": "sha512-ao43U2ptSe+mIZAQo2nBV5Wx2Ie3i2XbLt8jCXZpv+bvLY1Twv0lak4YZ1Ps5OwbeLMAl3iOVScgGMOImBae1g==",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-export-namespace-from/-/plugin-proposal-export-namespace-from-7.12.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 4161,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfh1lgCRA9TVsSAnZWagAA47oQAJ4O5blXe+miWgxBL4QU\nB1gjCE7jRCGhUhih3u9Vo6QlslQ4g+NKU9rYDXmUkL5tBmdgnUXxNyt5/Ci+\nXE9AK7ZHXx0FZp2duisiRsTL11JOdiDiqsa1RnHBtAmnPNXVjn85etkLeGeX\nWItmbHO8J66pRsTlLLAOyaFlT6Pmw8ubSTl1U48mobwFBh8Tyk3TOm2kCF1o\n95pZlL/ainLUNn6vu1RSW1d/04ZT+P2t+DDS4PcG+YBv85pSIqdzWfOp5+X4\niwoL4wT4M/PJM9yMXILh4A8SpU3pVDKQa0/tm5HtN6SSHtWPNzs3B6+50yY8\n/35S+MOChYkspiBoXXikBQsWamyuC6fHExbq12I9gxYdbcB0SJtNk00TdAWJ\ni5Yi7HNaoo1WlxHs4BS4CbG5iErdk+XCjPw0bm4not3J2tr3x1YXB4lV8Iv3\n2vaaepf5HHolkNrDCaULUfW9IaQaAC7zgGG9tvrS7SRux2rdUwc4dm0xkORR\nxVNSGf/2s6oifd70tGk0X0HAoPdIYAPuOSSYuXzDX9WDS+7mXHBYuzrS6KaR\n32UHyv01LATrVz9jLFeIoDqzvO0o0OUHHjURhGzR/WAq8xYSCNRzKoULsaor\nF9nLdAQyjxp03VzTUKahEA5T+n5tJvivuUvrP2GUvpCZAW9mWgvQ0FxkIQ7Y\nT0I5\r\n=255x\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "jlhwung",
+          "email": "i@jhuang.me"
+        },
+        {
+          "name": "nicolo-ribaudo",
+          "email": "nicolo.ribaudo@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "danez",
+          "email": "daniel@tschinder.de"
+        },
+        {
+          "name": "existentialism",
+          "email": "bng412@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-export-namespace-from_7.12.0_1602705759751_0.12710851601059292"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.12.1": {
+      "name": "@babel/plugin-proposal-export-namespace-from",
+      "version": "7.12.1",
+      "description": "Compile export namespace to ES2015",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel.git",
+        "directory": "packages/babel-plugin-proposal-export-namespace-from"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.10.4",
+        "@babel/plugin-syntax-export-namespace-from": "^7.8.3"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.12.1",
+        "@babel/helper-plugin-test-runner": "7.10.4"
+      },
+      "_id": "@babel/plugin-proposal-export-namespace-from@7.12.1",
+      "dist": {
+        "shasum": "8b9b8f376b2d88f5dd774e4d24a5cc2e3679b6d4",
+        "integrity": "sha512-6CThGf0irEkzujYS5LQcjBx8j/4aQGiVv7J9+2f7pGfxqyKh3WnmVJYW3hdrQjyksErMGBPQrCnHfOtna+WLbw==",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-proposal-export-namespace-from/-/plugin-proposal-export-namespace-from-7.12.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 4160,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfiM+cCRA9TVsSAnZWagAAZfsQAIzpQb4HT31FtivrCcd9\nxR+mHBubsdoHRBON0BBNZeuU/xmvArQPyOKUDWEd3fS+FU+EnwCLDIlOYzH5\nozPgp0lEkuTjXTpFt6nCvEbGq3w2v44mrfjLGhFfAvrr9LWhOKYAjxveWVwF\nzuH088amSNLx8uB/ATZYw7lLdhuPVrVORHaK7mufg3uTkyea7+QUdJCQyGv7\nf1H4ON94T0bFGAAihO3yamUFbOwLyPrM1TeLbGn5qEnvqV7BUt7Ol75psqNJ\njU7nq1mcntbKqKAQ+l9oHIbquoDXa08POOp2bzw9stTgy9rgughp1TyIUFj6\nhG4SJjrYysQEZVT2+lk+SeMpro7GFlLnKcTKks3OrO24FeA+WD3zot6rc+5w\ny4y321cYU1BPHKkBZrfkeiTtIzVfxNXYNPQo6TZ+OqrhOovGM0GQdHs+DnPC\nhmnWehrPpeDY5NCK8pe1ajz0tx1gozn78nY7a3lzRE45yTHdO6YQ+GemhMNf\nuh1Zpu3+uC3ScRNA3ZKEjv2jh2DFRGvdpAhVl23zI/50vyWz+xnrg/Lv7SRZ\nFWgg3lDWsC6+dCJP56gXLxuvZAgJSG0vSxwCW7b77jVv46HRKVNLlaKMGpDx\nlfUWywxi0iYK3QFRsZ1XWDMWoMFn/PnHEfcloqLqE/XkTViS78MQfb8BQS3o\nbysu\r\n=4s83\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "jlhwung",
+          "email": "i@jhuang.me"
+        },
+        {
+          "name": "nicolo-ribaudo",
+          "email": "nicolo.ribaudo@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "danez",
+          "email": "daniel@tschinder.de"
+        },
+        {
+          "name": "existentialism",
+          "email": "bng412@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-proposal-export-namespace-from_7.12.1_1602801564276_0.014597981612983313"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "",
+  "maintainers": [
+    {
+      "name": "jlhwung",
+      "email": "i@jhuang.me"
+    },
+    {
+      "name": "nicolo-ribaudo",
+      "email": "nicolo.ribaudo@gmail.com"
+    },
+    {
+      "name": "hzoo",
+      "email": "hi@henryzoo.com"
+    },
+    {
+      "name": "loganfsmyth",
+      "email": "loganfsmyth@gmail.com"
+    },
+    {
+      "name": "danez",
+      "email": "daniel@tschinder.de"
+    },
+    {
+      "name": "existentialism",
+      "email": "bng412@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-10-15T22:39:26.748Z",
+    "created": "2017-12-01T14:28:45.502Z",
+    "7.0.0-beta.33": "2017-12-01T14:28:45.502Z",
+    "7.0.0-beta.34": "2017-12-02T14:39:44.445Z",
+    "7.0.0-beta.35": "2017-12-14T21:48:04.412Z",
+    "7.0.0-beta.36": "2017-12-25T19:05:04.403Z",
+    "7.0.0-beta.37": "2018-01-08T16:02:46.415Z",
+    "7.0.0-beta.38": "2018-01-17T16:32:14.511Z",
+    "7.0.0-beta.39": "2018-01-30T20:27:47.285Z",
+    "7.0.0-beta.40": "2018-02-12T16:42:02.583Z",
+    "7.0.0-beta.41": "2018-03-14T16:26:22.241Z",
+    "7.0.0-beta.42": "2018-03-15T20:51:36.580Z",
+    "7.0.0-beta.43": "2018-04-02T16:48:33.637Z",
+    "7.0.0-beta.44": "2018-04-02T22:20:15.195Z",
+    "7.0.0-beta.45": "2018-04-23T01:57:17.558Z",
+    "7.0.0-beta.46": "2018-04-23T04:31:41.627Z",
+    "7.0.0-beta.47": "2018-05-15T00:09:32.607Z",
+    "7.0.0-beta.48": "2018-05-24T19:23:20.746Z",
+    "7.0.0-beta.49": "2018-05-25T16:02:45.277Z",
+    "7.0.0-beta.50": "2018-06-12T19:47:30.754Z",
+    "7.0.0-beta.51": "2018-06-12T21:20:06.554Z",
+    "7.0.0-beta.52": "2018-07-06T00:59:31.323Z",
+    "7.0.0-beta.53": "2018-07-11T13:40:29.904Z",
+    "7.0.0-beta.54": "2018-07-16T18:00:12.244Z",
+    "7.0.0-beta.55": "2018-07-28T22:07:36.168Z",
+    "7.0.0-beta.56": "2018-08-04T01:06:27.951Z",
+    "7.0.0-rc.0": "2018-08-09T15:58:47.102Z",
+    "7.0.0-rc.1": "2018-08-09T20:08:28.368Z",
+    "7.0.0-rc.2": "2018-08-21T19:24:34.144Z",
+    "7.0.0-rc.3": "2018-08-24T18:08:26.961Z",
+    "7.0.0-rc.4": "2018-08-27T16:44:42.425Z",
+    "7.0.0": "2018-08-27T21:43:38.262Z",
+    "7.2.0": "2018-12-03T19:02:26.590Z",
+    "7.5.2": "2019-07-08T19:51:15.653Z",
+    "7.7.4": "2019-11-22T23:32:36.068Z",
+    "7.8.0": "2020-01-12T00:16:59.422Z",
+    "7.8.3": "2020-01-13T21:41:54.908Z",
+    "7.10.1": "2020-05-27T22:07:00.686Z",
+    "7.10.4": "2020-06-30T13:11:38.837Z",
+    "7.12.0": "2020-10-14T20:02:39.918Z",
+    "7.12.1": "2020-10-15T22:39:24.390Z"
+  },
+  "keywords": [
+    "babel-plugin"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/babel/babel.git",
+    "directory": "packages/babel-plugin-proposal-export-namespace-from"
+  },
+  "license": "MIT",
+  "readmeFilename": ""
+}

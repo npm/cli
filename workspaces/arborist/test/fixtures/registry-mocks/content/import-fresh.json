@@ -1,0 +1,422 @@
+{
+  "_id": "import-fresh",
+  "_rev": "4-f891d92a67eabc790baccd1b4024bd38",
+  "name": "import-fresh",
+  "description": "Import a module while bypassing the cache",
+  "dist-tags": {
+    "latest": "3.2.1"
+  },
+  "versions": {
+    "2.0.0": {
+      "name": "import-fresh",
+      "version": "2.0.0",
+      "description": "Import a module while bypassing the cache",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/import-fresh.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava",
+        "heapdump": "optional-dev-dependency && node heapdump.js"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "require",
+        "cache",
+        "uncache",
+        "uncached",
+        "module",
+        "fresh",
+        "bypass"
+      ],
+      "dependencies": {
+        "caller-path": "^2.0.0",
+        "resolve-from": "^3.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "optional-dev-dependency": "^2.0.1",
+        "xo": "^0.18.2"
+      },
+      "optionalDevDependencies": {
+        "heapdump": "^0.3.7"
+      },
+      "xo": {
+        "rules": {
+          "import/no-extraneous-dependencies": "off"
+        }
+      },
+      "gitHead": "db00a4e9b6bb761bd32ab92c0e7955075fbc4e49",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/import-fresh/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/import-fresh#readme",
+      "_id": "import-fresh@2.0.0",
+      "_shasum": "d81355c15612d386c61f9ddd3922d4304822a546",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "4.8.3",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "d81355c15612d386c61f9ddd3922d4304822a546",
+        "tarball": "https://registry.npmjs.org/import-fresh/-/import-fresh-2.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/import-fresh-2.0.0.tgz_1495366784518_0.4047558819875121"
+      },
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "import-fresh",
+      "version": "3.0.0",
+      "description": "Import a module while bypassing the cache",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/import-fresh.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && ava",
+        "heapdump": "node heapdump.js"
+      },
+      "keywords": [
+        "require",
+        "cache",
+        "uncache",
+        "uncached",
+        "module",
+        "fresh",
+        "bypass"
+      ],
+      "dependencies": {
+        "parent-module": "^1.0.0",
+        "resolve-from": "^4.0.0"
+      },
+      "devDependencies": {
+        "ava": "^1.0.1",
+        "heapdump": "^0.3.12",
+        "xo": "^0.23.0"
+      },
+      "gitHead": "0bf56d798cf5f6c845d3f32b5908b2f4e952f7d0",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/import-fresh/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/import-fresh#readme",
+      "_id": "import-fresh@3.0.0",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "11.5.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-pOnA9tfM3Uwics+SaBLCNyZZZbK+4PTu0OPZtLlMIrv17EdBoC15S9Kn8ckJ9TZTyKb3ywNE5y1yeDxxGA7nTQ==",
+        "shasum": "a3d897f420cab0e671236897f75bc14b4885c390",
+        "tarball": "https://registry.npmjs.org/import-fresh/-/import-fresh-3.0.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 3658,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcIlmcCRA9TVsSAnZWagAAV5cQAJsYOnPbZc4Zq52zI4Ug\n1HWTZGWJtTFl+Q+oPmUyHgJ/URc2TbmWZOm4FMh22Cp5W9bqD+vNp/5d6lkt\n8vsLm+aHlLgFKBCp8fffH/DZnnYemsj2yWx4UAv/09HYfbmpLwh+AcY48Z0O\n5W8uIGD95vZyXGUQ0HZ6IsJFFotLrD5PKR1I4aMzltK1bSbPZRa6PR6f052T\n4WXhanMMlM1HwNlv53j6qpgErEuFzw7TmVyEoe74TNV6p9ZDOdPn/WoN9ZQk\nzNcUW6g6+EijAppxKGpeqWFKDsb04pDzHu1zSxt7yLDvH1MFnH7vRAU4CBql\nZEG3Y6MyDJZenkyr+Mm7bQwZMYySRVgpjSTIkocMc1p3eUEwOUD7IZ6YhbPL\nTcvvI1adpdoQqvF/dRH1wDgbIgTr+Js4JS5l7ihvkEXSnTZulUMvJirjHPJP\nJq8OhbHO4ebP7TNdFyJlRywtxVVFvMGIbTYxnQnmlLORaJcA7v1eoFFQavCU\n/EH194VooCS27mii5Wt5VvRqOr6sW228sw+SPKsOz/wVR6fOjqmymI1sLvtA\nZWWSmR+fdov3dTWjT4v3HskDQiqvrlnZmlkpMPMS/2FNIHh7DO/XlkBQhFHc\n9myB1pW2Xp+abXVhlZEGG60rmmZ8r0QRWVXx1b2Qy0MjsuJ+U/JTX3Cgooir\nK+BT\r\n=Jbhi\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/import-fresh_3.0.0_1545755035608_0.9390160260884601"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.1.0": {
+      "name": "import-fresh",
+      "version": "3.1.0",
+      "description": "Import a module while bypassing the cache",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/import-fresh.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd",
+        "heapdump": "node heapdump.js"
+      },
+      "keywords": [
+        "require",
+        "cache",
+        "uncache",
+        "uncached",
+        "module",
+        "fresh",
+        "bypass"
+      ],
+      "dependencies": {
+        "parent-module": "^1.0.0",
+        "resolve-from": "^4.0.0"
+      },
+      "devDependencies": {
+        "ava": "^1.0.1",
+        "heapdump": "^0.3.12",
+        "tsd": "^0.7.3",
+        "xo": "^0.23.0"
+      },
+      "gitHead": "ed2fcde9acaec943427a6756563a39aeb858d1e8",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/import-fresh/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/import-fresh#readme",
+      "_id": "import-fresh@3.1.0",
+      "_nodeVersion": "10.16.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-PpuksHKGt8rXfWEr9m9EHIpgyyaltBy8+eF6GJM0QCAxMgxCfucMF3mjecK2QsJr0amJW7gTqh5/wht0z2UhEQ==",
+        "shasum": "6d33fa1dcef6df930fae003446f33415af905118",
+        "tarball": "https://registry.npmjs.org/import-fresh/-/import-fresh-3.1.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 4464,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdGIiKCRA9TVsSAnZWagAAYE4P/3qWXKRccVedN2jMkrDd\npV6CdtsSooo11bzcfsTxZpw9zqATd4qYC9VRT2fXjLhpjpOeG5d6zANhnqO/\nYTWGl8sXrEaqR3/AA+O2yYrfYltmp4aLCoMjhC1jejsGaHZG1NMDNG9WUiyX\nPaHpLy7zM81Zt3qG03P/zFGHroZPAqZODCGbgzsDstR4U6x9XHRsY9RF3PC3\nBmzeDdaSfwJ96i9icoSToH6CKlN3jZsEvMGvaWQr+lW8uKqOeG09g3bIBq/I\nd8YGZGAxXcmBJ8/5en0kKHYrN4AN+DKtzSePTwdV6DNQ7aP6Fv4lgK377NSZ\nMtyauKRL7ktgLDOFlGiEINS5MImEyz9k//67gqFZuhHZb5PyeSbxF0eKZIp3\nM+WpKH7ZAG/FOcBpeeofTj4IsQnSmhZYlcL18hMOG3bIBFbj+XBvUr/Gb4/D\nhur7O/Xk/tDmwulfm7jIFuPBmArZYOG6bmqQdw6Cq22ZfjAKQ3C9BqTTguLE\ninK2LAb8o54tqr2+ncFH7EXwwdYexuX611rftb89JAkJ5hV1Nl5d+bUEpf3a\nKEc0N8UUOm6b6MCwUbE9zNGCkksTkSKHhVg0YtG9bxKuMTBC6kpXPL9WrzTB\nlQ3NPg/cckKtlFHn0DHeuHUNXx3P7NGGMPvNNZloz3np66cvZUCDcPTIBY3X\nKnmq\r\n=j0eY\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/import-fresh_3.1.0_1561888905311_0.3754017808551846"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.2.0": {
+      "name": "import-fresh",
+      "version": "3.2.0",
+      "description": "Import a module while bypassing the cache",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/import-fresh.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd",
+        "heapdump": "node heapdump.js"
+      },
+      "keywords": [
+        "require",
+        "cache",
+        "uncache",
+        "uncached",
+        "module",
+        "fresh",
+        "bypass"
+      ],
+      "dependencies": {
+        "parent-module": "^1.0.0",
+        "resolve-from": "^4.0.0"
+      },
+      "devDependencies": {
+        "ava": "^1.0.1",
+        "heapdump": "^0.3.12",
+        "tsd": "^0.7.3",
+        "xo": "^0.23.0"
+      },
+      "gitHead": "28ab80a357703431d925fc4a852662e85130a476",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/import-fresh/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/import-fresh#readme",
+      "_id": "import-fresh@3.2.0",
+      "_nodeVersion": "10.17.0",
+      "_npmVersion": "6.11.3",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-w1waegcRoBrRQ6kfX2+KWc3lIaVUvHiib7F1ZpggbL5+GyZZrpbOnOVNNuylJonNHO6aCJubjfDUzH6J8HmwSA==",
+        "shasum": "fed4d772a13949de7d9894b647e77297db14dedf",
+        "tarball": "https://registry.npmjs.org/import-fresh/-/import-fresh-3.2.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 4603,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdy919CRA9TVsSAnZWagAA4LcP/2ZAgcZgfvAWvMzwqyAM\nDnTksMfMpSumEAmSujNsH+tzxbjx68czOrf0w5kOw6UcrCXGskmHShsC40hN\nGX6gCbiygWW6GVIlgY6hhseBfeULVXhhjusuc1hVoQINtlQmXlRr1BlLNCTk\nXma0qHXtV9naTLYsu8+o+i/M9wh9PqSY+lGiTK4tyZeIwFDRm7FvFCIT5mno\nZKkhRt5pxIifDPicaXwx8vQWutzxveJEDihpral50cxEwpi649Qj4KKm2Scz\noC64qOrVeE6hIeZ3+S8sDlIu/QNCpFuhxBDZ7Q6crQBCLWxBeORMp6PdjW3V\nWtjCQ4PkC6Y9/h00arOTg5rSLQ1TSRlAelxUKNvMEbnVJCcpUTL9qel3xNBt\n3X48efro19OB1WvWiahD2m77+7MFbc5JDGJpD8UdALMWFSSIFjEn7lRVsg0I\n/zpob0M9bR0/2Mh3/p5MtQqCRFMuTfv094Q0vVEs3Ih2zgL43US1XOIsZhqV\n77sZENxT+ssdP31p2cXa7SMwbq8F3Qt6UA5yjaxWNg1Luo8U1PJrbecRqpcC\n/J9dtbhQZlBBa4WdqBwwlBrUUtI6/e7qAfYVipW3QxZKGzA8JgKGEi4C+qtJ\nIm2E/Vw1QsAlUtZP/u6PtjxK7DMnXRU+Fi62jHrTmHQugv6b2/BlBA3myVEC\nDrd2\r\n=ad3S\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/import-fresh_3.2.0_1573641597593_0.574712556072138"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.2.1": {
+      "name": "import-fresh",
+      "version": "3.2.1",
+      "description": "Import a module while bypassing the cache",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/import-fresh.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd",
+        "heapdump": "node heapdump.js"
+      },
+      "keywords": [
+        "require",
+        "cache",
+        "uncache",
+        "uncached",
+        "module",
+        "fresh",
+        "bypass"
+      ],
+      "dependencies": {
+        "parent-module": "^1.0.0",
+        "resolve-from": "^4.0.0"
+      },
+      "devDependencies": {
+        "ava": "^1.0.1",
+        "heapdump": "^0.3.12",
+        "tsd": "^0.7.3",
+        "xo": "^0.23.0"
+      },
+      "gitHead": "8a7a217edee030110b0412853c64a37f6d055fac",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/import-fresh/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/import-fresh#readme",
+      "_id": "import-fresh@3.2.1",
+      "_nodeVersion": "10.17.0",
+      "_npmVersion": "6.11.3",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-6e1q1cnWP2RXD9/keSkxHScg508CdXqXWgWBaETNhyuBFz+kUZlKboh+ISK+bU++DmbHimVBrOz/zzPe0sZ3sQ==",
+        "shasum": "633ff618506e793af5ac91bf48b72677e15cbe66",
+        "tarball": "https://registry.npmjs.org/import-fresh/-/import-fresh-3.2.1.tgz",
+        "fileCount": 5,
+        "unpackedSize": 4833,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdzDiuCRA9TVsSAnZWagAA/9EP/1uUk0BSmmvMlOBfc7LP\npbkVDpiY4NhBP6Cws6LNdyTj/7GLEL4E/idujY/gpXF5BpeYg3vGtT+YGlKC\n2ENuWgRQGXeAf/4J0q4KuQvgEWnLm55j+RpHwXLzJYKi35zE/Gp9h//BwBWr\nfJtZCB9v4gqYZCq4JwyLHmu+TtHojjzVz+a8jmfXRgEFG1/2tKGpNsXH8+2D\ntgUZrMx1dkJXNewyQH3GTQn2otnLinaaAKS0Oc/1YPSS04dXJkE07ZjOLZOE\nBmTspaziqXLwyFBHHf8/extR7Rd4QCGe97swAQ+7UBqEobKZEmpIHilo2AFI\nVbYcEIBU5bIs2qzHFPJE4KTazJzlx0pMfmu0JPNPPuqy+MvFX5yVhBVLCSlf\n9SD1vRKNjBdCE7End8FawZrLzibm5sR1P8+hPIsz6CNijhCDnloBeogJZkLj\nnj4QlbszX8V6/9rAUd3y4izuM2VTkfotafb26octGpt0xp8krRiPafyi5mV3\nsmQrfw0l1k+x/5OupEXdGa/JjATBHbKDIY15PANbGgUeICxUZsmxK8RKvJC4\nyd296jPlfkmG07vgcl3Eh/4PVX3Sz3CSpKfibWYFgRmy7tRR4Vuls1qwHPIT\nIvlyM0wvvovwOxjahGgA+X0hRrO+s7vjp/ehIBPdqy70YLNcGny1VS1y5srF\nsCG8\r\n=Z6Nn\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/import-fresh_3.2.1_1573664942240_0.9935450999499267"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# import-fresh [![Build Status](https://travis-ci.org/sindresorhus/import-fresh.svg?branch=master)](https://travis-ci.org/sindresorhus/import-fresh)\n\n> Import a module while bypassing the [cache](https://nodejs.org/api/modules.html#modules_caching)\n\nUseful for testing purposes when you need to freshly import a module.\n\n\n## Install\n\n```\n$ npm install import-fresh\n```\n\n\n## Usage\n\n```js\n// foo.js\nlet i = 0;\nmodule.exports = () => ++i;\n```\n\n```js\nconst importFresh = require('import-fresh');\n\nrequire('./foo')();\n//=> 1\n\nrequire('./foo')();\n//=> 2\n\nimportFresh('./foo')();\n//=> 1\n\nimportFresh('./foo')();\n//=> 1\n```\n\n\n## import-fresh for enterprise\n\nAvailable as part of the Tidelift Subscription.\n\nThe maintainers of import-fresh and thousands of other packages are working with Tidelift to deliver commercial support and maintenance for the open source dependencies you use to build your applications. Save time, reduce risk, and improve code health, while paying the maintainers of the exact dependencies you use. [Learn more.](https://tidelift.com/subscription/pkg/npm-import-fresh?utm_source=npm-import-fresh&utm_medium=referral&utm_campaign=enterprise&utm_term=repo)\n\n\n## Related\n\n- [clear-module](https://github.com/sindresorhus/clear-module) - Clear a module from the import cache\n- [import-from](https://github.com/sindresorhus/import-from) - Import a module from a given path\n- [import-cwd](https://github.com/sindresorhus/import-cwd) - Import a module from the current working directory\n- [import-lazy](https://github.com/sindresorhus/import-lazy) - Import modules lazily\n",
+  "maintainers": [
+    {
+      "name": "sindresorhus",
+      "email": "sindresorhus@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2019-11-13T17:09:05.343Z",
+    "created": "2017-05-21T11:39:44.813Z",
+    "2.0.0": "2017-05-21T11:39:44.813Z",
+    "3.0.0": "2018-12-25T16:23:55.753Z",
+    "3.1.0": "2019-06-30T10:01:45.483Z",
+    "3.2.0": "2019-11-13T10:39:57.695Z",
+    "3.2.1": "2019-11-13T17:09:02.349Z"
+  },
+  "homepage": "https://github.com/sindresorhus/import-fresh#readme",
+  "keywords": [
+    "require",
+    "cache",
+    "uncache",
+    "uncached",
+    "module",
+    "fresh",
+    "bypass"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/import-fresh.git"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "bugs": {
+    "url": "https://github.com/sindresorhus/import-fresh/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md"
+}

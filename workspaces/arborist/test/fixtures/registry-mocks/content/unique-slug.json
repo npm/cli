@@ -1,0 +1,292 @@
+{
+  "_id": "unique-slug",
+  "_rev": "22-7111bcfd57566c170253abc9647d56c0",
+  "name": "unique-slug",
+  "description": "Generate a unique character string suitible for use in files and URLs.",
+  "dist-tags": {
+    "latest": "2.0.2"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "unique-slug",
+      "version": "1.0.0",
+      "description": "Generate a unique character string suitible for use in files and URLs.",
+      "main": "index.js",
+      "scripts": {
+        "test": "standard && tap test"
+      },
+      "keywords": [],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "devDependencies": {
+        "standard": "^3.7.3",
+        "tap": "^1.0.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/iarna/unique-slug.git"
+      },
+      "gitHead": "024b3bd3c0184550702c93f088822e3f38da5c17",
+      "bugs": {
+        "url": "https://github.com/iarna/unique-slug/issues"
+      },
+      "homepage": "https://github.com/iarna/unique-slug",
+      "_id": "unique-slug@1.0.0",
+      "_shasum": "4459d12416f576cc091a3deb19939ec99c735626",
+      "_from": ".",
+      "_npmVersion": "2.7.6",
+      "_nodeVersion": "1.6.2",
+      "_npmUser": {
+        "name": "iarna",
+        "email": "me@re-becca.org"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        }
+      ],
+      "dist": {
+        "shasum": "4459d12416f576cc091a3deb19939ec99c735626",
+        "tarball": "https://registry.npmjs.org/unique-slug/-/unique-slug-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "unique-slug",
+      "version": "2.0.0",
+      "description": "Generate a unique character string suitible for use in files and URLs.",
+      "main": "index.js",
+      "scripts": {
+        "test": "standard && tap --coverage test"
+      },
+      "keywords": [],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "devDependencies": {
+        "standard": "^5.4.1",
+        "tap": "^2.3.1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/iarna/unique-slug.git"
+      },
+      "dependencies": {
+        "imurmurhash": "^0.1.4"
+      },
+      "gitHead": "b1d9d082ee5bd381961a2011a9aa3d9988e83ca7",
+      "bugs": {
+        "url": "https://github.com/iarna/unique-slug/issues"
+      },
+      "homepage": "https://github.com/iarna/unique-slug#readme",
+      "_id": "unique-slug@2.0.0",
+      "_shasum": "db6676e7c7cc0629878ff196097c78855ae9f4ab",
+      "_from": ".",
+      "_npmVersion": "3.5.1",
+      "_nodeVersion": "5.1.0",
+      "_npmUser": {
+        "name": "othiym23",
+        "email": "ogd@aoaioxxysz.net"
+      },
+      "dist": {
+        "shasum": "db6676e7c7cc0629878ff196097c78855ae9f4ab",
+        "tarball": "https://registry.npmjs.org/unique-slug/-/unique-slug-2.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        },
+        {
+          "name": "othiym23",
+          "email": "ogd@aoaioxxysz.net"
+        }
+      ],
+      "directories": {}
+    },
+    "2.0.1": {
+      "name": "unique-slug",
+      "version": "2.0.1",
+      "description": "Generate a unique character string suitible for use in files and URLs.",
+      "main": "index.js",
+      "scripts": {
+        "test": "standard && tap --coverage test"
+      },
+      "keywords": [],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "devDependencies": {
+        "standard": "^5.4.1",
+        "tap": "^2.3.1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/iarna/unique-slug.git"
+      },
+      "dependencies": {
+        "imurmurhash": "^0.1.4"
+      },
+      "gitHead": "b5c58f7086b55e0cb3311de5cfcbefdc7d3fb295",
+      "bugs": {
+        "url": "https://github.com/iarna/unique-slug/issues"
+      },
+      "homepage": "https://github.com/iarna/unique-slug#readme",
+      "_id": "unique-slug@2.0.1",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.10.0",
+      "_npmUser": {
+        "name": "iarna",
+        "email": "me@re-becca.org"
+      },
+      "dist": {
+        "integrity": "sha512-n9cU6+gITaVu7VGj1Z8feKMmfAjEAQGhwD9fE3zvpRRa0wEIx8ODYkVGfSc94M2OX00tUFV8wH3zYbm1I8mxFg==",
+        "shasum": "5e9edc6d1ce8fb264db18a507ef9bd8544451ca6",
+        "tarball": "https://registry.npmjs.org/unique-slug/-/unique-slug-2.0.1.tgz",
+        "fileCount": 6,
+        "unpackedSize": 3107,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbo85TCRA9TVsSAnZWagAAqFIP/2I5qpBTE3kR9xJGnE9t\nXKUvEd+2iJ7UsuQMG9CJwdWIwUa6tGGGpkKEXZBAjnFgfqK1I/iGG5t3oIuP\nwVECLNnPGCxkHhDp9XZJL3RPXWBX8X+3APE056uX8ad0CA0zOoJBvRip4/3Y\nXbZHHkd37hdi0o29Uunwt4g7Qz5TASFTVwn8jwMgPgMLPHZrMt4ZZgpOW+2U\npJOEm2pdGCjT3ANoauMBMdawMhGxIQimI2M27RsBIp16JqjrHSyNfdMJjxLw\nvGJ+QnGJL1WCI/BAB1KC8OK8PHKvIUixM1zNdB9w15wRHRwelajhvOuhCdKe\nWRPJ1I9bsp7ZMSA35bNb3y/UH6Dh1GccmtrRdD1B5iRtlA0LRSy21tauDCa5\nMVQNbS1HQcRGptq/uTODxQc69BAsR+r/N9MNe134c6ppcYlP5xI/qS+yzD9t\nJofFoOYC8FbZOvxXL8p3N1i2AcYI10XkOnZNGCn4TWV3NBVpJA1BmkDIG4zE\nkV94TaTRlh3aDQFaQr7r5osHTSKjGf+noUFs+DKNgeAWhS1ZEj7DtyT6UE6m\nLa7o7RRIhqzo9o17yZOeb61G0qFB17rBoE0WETKzC2SEtnCQtCU/H08xpn2E\nfo173Qa9pYNe9jK3cx/+Y9fAMbnMtMD+9U8wmXEsWqItNgczS2J+cVWKYAau\nfsr0\r\n=3e5B\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "me@re-becca.org",
+          "name": "iarna"
+        },
+        {
+          "email": "ogd@aoaioxxysz.net",
+          "name": "othiym23"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/unique-slug_2.0.1_1537461842981_0.0688486787472038"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.2": {
+      "name": "unique-slug",
+      "version": "2.0.2",
+      "description": "Generate a unique character string suitible for use in files and URLs.",
+      "main": "index.js",
+      "scripts": {
+        "test": "standard && tap --coverage test"
+      },
+      "keywords": [],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "devDependencies": {
+        "standard": "^12.0.1",
+        "tap": "^12.7.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/iarna/unique-slug.git"
+      },
+      "dependencies": {
+        "imurmurhash": "^0.1.4"
+      },
+      "gitHead": "36b094bac6905e0bd199971ef3c646dd982d5c30",
+      "bugs": {
+        "url": "https://github.com/iarna/unique-slug/issues"
+      },
+      "homepage": "https://github.com/iarna/unique-slug#readme",
+      "_id": "unique-slug@2.0.2",
+      "_nodeVersion": "10.15.3",
+      "_npmVersion": "6.9.1-next.0",
+      "dist": {
+        "integrity": "sha512-zoWr9ObaxALD3DOPfjPSqxt4fnZiWblxHIgeWqW8x7UqDzEtHEQLzji2cuJYQFCU6KmoJikOYAZlrTHHebjx2w==",
+        "shasum": "baabce91083fc64e945b0f3ad613e264f7cd4e6c",
+        "tarball": "https://registry.npmjs.org/unique-slug/-/unique-slug-2.0.2.tgz",
+        "fileCount": 6,
+        "unpackedSize": 2679,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJc/+93CRA9TVsSAnZWagAASukP/0eBevExHSP+c2nl4MQS\nH3Yrnzt72mB75TWwTvyqZkEx7OH+usPcfSfFVAfZmALrYdHCb8GTIYOYFtXI\n1W58L2hrf+bBF/9PUstsF/nOwFiybflsH2GM0tRDJMVT798t1rnBueNXtn5p\nG2ARm20PAmD5OaRhq5yIwdO1/xbmM2F/5E0AeP8P2VdvBAvl+p0euZ4JCIUB\n4B0eybM+/bvWAlnVAHfrCH6gtfN6tKi2nmlhpqS+MPS285OXsttXzCB54I6F\np2JFvQtLrW1/kWTS3wojBazId/CXER/Qdlo7slkTLj6vjJCD5jqRaf5GmvOU\nXdJJHjt1jdXmpFfikhkeRDUgE1S+ANPMvwV3UDy8/YEYhCxCx4Nr2UkrPgiN\nBNE9tUvng6yxWCcXal8ES17FdA6xbSjOLqPlXkzZ71af8uIZ4JK6V1ybyerg\n0oAG7ucd1a6roQfZ+gu/TES85JxVycQpQWrsZReP3+wiFoai9tkdAdxyp+pB\n+8Ahm0WyVWifR/UvDvQ+NN1bwr1eQSNV51/y+Kj70fD5Cn35PvVDaowA3QwF\n251tETG2uebnbXzbuInYPS1GBOTZSqigZsVxCQc9SCelt5bf3oRg81SHfAZM\nWuFmOjzkLQ01Abw9FECMFCZ3lML2YI2Qk7Kw899PNH8Tc6X1hLL4+Ri9O6cl\nyC1E\r\n=XASP\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "me@re-becca.org",
+          "name": "iarna"
+        },
+        {
+          "email": "ogd@aoaioxxysz.net",
+          "name": "othiym23"
+        },
+        {
+          "email": "npm@zkat.tech",
+          "name": "zkat"
+        }
+      ],
+      "_npmUser": {
+        "name": "zkat",
+        "email": "npm@zkat.tech"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/unique-slug_2.0.2_1560276854352_0.9545905133271473"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "unique-slug\n===========\n\nGenerate a unique character string suitible for use in files and URLs.\n\n```\nvar uniqueSlug = require('unique-slug')\n\nvar randomSlug = uniqueSlug()\nvar fileSlug = uniqueSlug('/etc/passwd')\n```\n\n### uniqueSlug(*str*) → String (8 chars)\n\nIf *str* is passed in then the return value will be its murmur hash in\nhex.\n\nIf *str* is not passed in, it will be 4 randomly generated bytes\nconverted into 8 hexadecimal characters.\n",
+  "maintainers": [
+    {
+      "email": "quitlahok@gmail.com",
+      "name": "nlf"
+    },
+    {
+      "email": "ruyadorno@hotmail.com",
+      "name": "ruyadorno"
+    },
+    {
+      "email": "darcy@darcyclarke.me",
+      "name": "darcyclarke"
+    },
+    {
+      "email": "i@izs.me",
+      "name": "isaacs"
+    }
+  ],
+  "time": {
+    "modified": "2020-10-19T13:51:01.005Z",
+    "created": "2015-05-07T22:25:31.152Z",
+    "1.0.0": "2015-05-07T22:25:31.152Z",
+    "2.0.0": "2015-12-03T22:44:34.276Z",
+    "2.0.1": "2018-09-20T16:44:03.228Z",
+    "2.0.2": "2019-06-11T18:14:14.530Z"
+  },
+  "homepage": "https://github.com/iarna/unique-slug#readme",
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/iarna/unique-slug.git"
+  },
+  "author": {
+    "name": "Rebecca Turner",
+    "email": "me@re-becca.org",
+    "url": "http://re-becca.org"
+  },
+  "bugs": {
+    "url": "https://github.com/iarna/unique-slug/issues"
+  },
+  "license": "ISC",
+  "readmeFilename": "README.md",
+  "users": {
+    "iarna": true
+  }
+}

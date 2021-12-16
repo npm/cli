@@ -1,0 +1,266 @@
+{
+  "_id": "@istanbuljs/schema",
+  "_rev": "2-8b40d7666378deeee8699287ec6ba1d0",
+  "name": "@istanbuljs/schema",
+  "dist-tags": {
+    "latest": "0.1.2"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "@istanbuljs/schema",
+      "version": "0.1.0",
+      "description": "Schemas describing various structures used by nyc and istanbuljs",
+      "main": "index.js",
+      "scripts": {
+        "release": "standard-version --sign",
+        "pretest": "xo",
+        "test": "tap",
+        "snap": "npm test -- --snapshot"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "author": {
+        "name": "Corey Farrell"
+      },
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/istanbuljs/schema.git"
+      },
+      "bugs": {
+        "url": "https://github.com/istanbuljs/schema/issues"
+      },
+      "homepage": "https://github.com/istanbuljs/schema#readme",
+      "devDependencies": {
+        "standard-version": "^7.0.0",
+        "tap": "^14.6.7",
+        "xo": "^0.25.3"
+      },
+      "gitHead": "aee069a30c962045f155c8aa3aa311c87185a7ac",
+      "_id": "@istanbuljs/schema@0.1.0",
+      "_nodeVersion": "12.11.0",
+      "_npmVersion": "6.11.3",
+      "dist": {
+        "integrity": "sha512-juX6y33AgnEkto3n3AhViX70IP19N3x6Np1eIikPcH5ATqj8ntLWD3MsOF5ohg0h+mAv6IFUfABBHjmve9dncg==",
+        "shasum": "4d15167b200776a485f15f30dddb21301938f5e9",
+        "tarball": "https://registry.npmjs.org/@istanbuljs/schema/-/schema-0.1.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 13924,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdmJ9FCRA9TVsSAnZWagAAzDMQAKPIQanr8MxLqDj0LO+r\nY1Hit0DRPQEs7BRZTnV/jt0zQ/PdEonP2LUqugniEqmDeBukrIPA0GdH8hVk\nZR2b5FAdAAme0i2v3SQ+Hd+qoEzUCT5HFt71qD7fLI5zXB7WkaBDeq0zJ76C\nhDdgePWNMvmfSRL/ZyG7HZ9NBc2rEGMK0f8Z/iPK0rsCbPWVH3voYT1G0BAK\nb5xAy5ibXP7dDWYmj7gbWUv3GhJHovTgqxHunDYnozuERCTt/otDUP/yB8ds\nRmtX3R573oBSyyuGUwfx79N//MCzwxuMcK6kUACvuaRHES7p3N9O5TyBBm4I\naZIsP0zPxTfh/pO0NymIcdk58E62xzYuI202ylfsSs9Zp01STuUFoUGLZGrb\nGNGAgrvC6nX1q5GD7GEmSzBe4KRk6lcO1Rl8Aqy29Rwe0CuC+FJwjgezadUv\nnwKB1I2rnbKDGppx8HqlJ+xbqE+sc2/qR7CKcaNAJ5BmrEusWt7pq0sFH1q+\nVDLKzjCgaPccuxBUdsU4uEGShY4lNKjLYymnBG7lOYYsnLn2HCAMcXyDiLa8\nFLxmkoEaNvxGLSRZ0pFTjrAoIop4kIvm0NMdA+na98Vy+1f6wRenHFhqZJpt\nncVNaO92DzKXF1M5RptVo/qj751XEXRYT4utXVE9cSEaDxLTfQkzrwv6SK4P\nQGbG\r\n=QTsH\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "coreyfarrell",
+          "email": "git@cfware.com"
+        },
+        {
+          "name": "bcoe",
+          "email": "bencoe@gmail.com"
+        },
+        {
+          "name": "jakxz",
+          "email": "jgkurian@me.com"
+        },
+        {
+          "name": "gotwarlost",
+          "email": "kananthmail-github@yahoo.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "coreyfarrell",
+        "email": "git@cfware.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/schema_0.1.0_1570283332565_0.9009838838247752"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.1.1": {
+      "name": "@istanbuljs/schema",
+      "version": "0.1.1",
+      "description": "Schemas describing various structures used by nyc and istanbuljs",
+      "main": "index.js",
+      "scripts": {
+        "release": "standard-version --sign",
+        "pretest": "xo",
+        "test": "tap",
+        "snap": "npm test -- --snapshot"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "author": {
+        "name": "Corey Farrell"
+      },
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/istanbuljs/schema.git"
+      },
+      "bugs": {
+        "url": "https://github.com/istanbuljs/schema/issues"
+      },
+      "homepage": "https://github.com/istanbuljs/schema#readme",
+      "devDependencies": {
+        "standard-version": "^7.0.0",
+        "tap": "^14.6.7",
+        "xo": "^0.25.3"
+      },
+      "gitHead": "4c2e58e7eac011ebc178e397101167656a2b3b88",
+      "_id": "@istanbuljs/schema@0.1.1",
+      "_nodeVersion": "12.11.0",
+      "_npmVersion": "6.11.3",
+      "dist": {
+        "integrity": "sha512-Dt63B/JcXUxwnngdR8BYqSuQBX0HVXgLZtGMsKAAIQLe0whQdypOjsuqcSf8HR5M00/L8NuRC/+dZb6rEc+b5g==",
+        "shasum": "0bd2538b2ee89a95943756028aa80ed95f973e0f",
+        "tarball": "https://registry.npmjs.org/@istanbuljs/schema/-/schema-0.1.1.tgz",
+        "fileCount": 6,
+        "unpackedSize": 14670,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdmpptCRA9TVsSAnZWagAAIU4P/A+ZmbX+hLhZXhAroL55\nkAf0HaeTaO4SS8l/TFGjbWWjOHCRkjBxTm++iFyk73qWIjhEfz0RbuqpApfn\n+ozGf6Wk+9w3qwV6VhyQt/HaI1EnMznLdMYBxAnFrBuKUzyjKRgrmeJaLId8\nlBmZjsIbf7P4icgMDzl8nY3/UlXFjMesCk4+EXCVE8DXuV7qdCOqgwfSpKnf\nFeZqYFE5QdQJKPVOia8M4f/kWPirAYAzZ88Ihln66mubscA8OkiHQsuqoWQh\nh4J/GAXihbqcU77t5UioW5IUHeaHE9oU8AXtbriyjPTy+uUyYP8hOVT9mY0Y\nkrfkQzQB+UnDwEk+95vFodoqVNiYzszeGKsk4YmykWIhpPClWrad3c80pqS+\n+A1oXu72kf6BAt3wdHUR7C0sxFB6xZDX+9kYN+HBPMNaLumohYHRDVCkMzR9\n+/dMZV8ZkGRu+GWwSZnHGCoCRWg1o2kvmHzPM5OYuZq/8T6BspRnoCyXuejC\nqCtL+ZBlQvqF+r4SZCCbj1kT0tkhvMm1XvktItcFi7zUmwoGqQly3/s6V0jO\n1ZFXRBtFpCVbbYUgjRx6/NaMzBLTlhd9KG/uidSiXVj2v6RhJAr3RuFLm/yJ\nYpITT3/ml5P9tYrjgIuy7peDNJcFTD5toXdu8SqR6BrqgFsadBe8Y+a2ljL+\ngZqk\r\n=K7WJ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "bcoe",
+          "email": "bencoe@gmail.com"
+        },
+        {
+          "name": "coreyfarrell",
+          "email": "git@cfware.com"
+        },
+        {
+          "name": "gotwarlost",
+          "email": "kananthmail-github@yahoo.com"
+        },
+        {
+          "name": "jakxz",
+          "email": "jgkurian@me.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "coreyfarrell",
+        "email": "git@cfware.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/schema_0.1.1_1570413164690_0.4733196292610997"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.1.2": {
+      "name": "@istanbuljs/schema",
+      "version": "0.1.2",
+      "description": "Schemas describing various structures used by nyc and istanbuljs",
+      "main": "index.js",
+      "scripts": {
+        "release": "standard-version --sign",
+        "pretest": "xo",
+        "test": "tap",
+        "snap": "npm test -- --snapshot"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "author": {
+        "name": "Corey Farrell"
+      },
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/istanbuljs/schema.git"
+      },
+      "bugs": {
+        "url": "https://github.com/istanbuljs/schema/issues"
+      },
+      "homepage": "https://github.com/istanbuljs/schema#readme",
+      "devDependencies": {
+        "standard-version": "^7.0.0",
+        "tap": "^14.6.7",
+        "xo": "^0.25.3"
+      },
+      "gitHead": "61c69da39a0af8f4387ba8aa1eddb633227c3938",
+      "_id": "@istanbuljs/schema@0.1.2",
+      "_nodeVersion": "13.2.0",
+      "_npmVersion": "6.13.2",
+      "dist": {
+        "integrity": "sha512-tsAQNx32a8CoFhjhijUIhI4kccIAgmGhy8LZMZgGfmXcpMbPRUqn5LWmgRttILi6yeGmBJd2xsPkFMs0PzgPCw==",
+        "shasum": "26520bf09abe4a5644cd5414e37125a8954241dd",
+        "tarball": "https://registry.npmjs.org/@istanbuljs/schema/-/schema-0.1.2.tgz",
+        "fileCount": 6,
+        "unpackedSize": 15239,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd6Uc2CRA9TVsSAnZWagAA2gQQAIGMAXIxgd8q+wq+GUrC\nQSOysEsXQSE9tGF2uiFydXqUstB5iPi4OCQP7ygFV76hOQNwYiQStkIlw/7P\n//9qZkF3ZTymRR6X+nM920nzJS7hSh3FxT0Tc/r/LSEcSIH+uXnsfqKCjJ+1\nGjZefQqSSxGE59bosmr9IJgWGl5jaIKJVGMpPf28RXq0G7bMcr5l+MbUvIsP\noUUSXyOxKc/AbSlN7H38MacC2Yr2EPo146rXA3/HHMxeHvNWNi3xeXnceqNc\nU13xLcVfdmWZHqpGVRfS79wkLrVRkQwBkaDjEdJptUcs+7jT1qCQFznnaLm0\n20JAeVo42txxvAj2N/cZgzKQr7tnunlsHpUSRtHlIL2G9hBvL4HzRxW1IqJq\nqoMWsrnAAZ2XiJPqjYkA+yRtdYro5u44LEM849DX2aroefibkO2ITV5JE+z7\nUz+OopXrfCPM/TDVYcU666SgB4zGRswHuJpnSJqCmFcb8IKOD16HR2pmOs/h\nRRKu1Q6yw6FrsatjLhan+cwadtYJRXptaZbz68rWjUZcDFt/YShOUJVYHVLR\nQfnIbm06JdYEbhiFN2Guo92BHeEMR1u0CDhqbNw1W0vCVgG5MvMAY6wuHCNh\nkLQt0ADQSx64pLcr8vFFPEfYEdVJPXZRyIUxRsiog2h30I+RdVeUmol6AbRH\nYQ3x\r\n=0q2F\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "bcoe",
+          "email": "bencoe@gmail.com"
+        },
+        {
+          "name": "coreyfarrell",
+          "email": "git@cfware.com"
+        },
+        {
+          "name": "gotwarlost",
+          "email": "kananthmail-github@yahoo.com"
+        },
+        {
+          "name": "jakxz",
+          "email": "jgkurian@me.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "coreyfarrell",
+        "email": "git@cfware.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/schema_0.1.2_1575569206293_0.8325799365476045"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2019-10-05T13:48:52.461Z",
+    "0.1.0": "2019-10-05T13:48:52.674Z",
+    "modified": "2019-12-05T18:06:48.866Z",
+    "0.1.1": "2019-10-07T01:52:44.843Z",
+    "0.1.2": "2019-12-05T18:06:46.384Z"
+  },
+  "maintainers": [
+    {
+      "name": "bcoe",
+      "email": "bencoe@gmail.com"
+    },
+    {
+      "name": "coreyfarrell",
+      "email": "git@cfware.com"
+    },
+    {
+      "name": "gotwarlost",
+      "email": "kananthmail-github@yahoo.com"
+    },
+    {
+      "name": "jakxz",
+      "email": "jgkurian@me.com"
+    }
+  ],
+  "description": "Schemas describing various structures used by nyc and istanbuljs",
+  "homepage": "https://github.com/istanbuljs/schema#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/istanbuljs/schema.git"
+  },
+  "author": {
+    "name": "Corey Farrell"
+  },
+  "bugs": {
+    "url": "https://github.com/istanbuljs/schema/issues"
+  },
+  "license": "MIT",
+  "readme": "# @istanbuljs/schema\n\n[![Travis CI][travis-image]][travis-url]\n[![Greenkeeper badge][gk-image]](https://greenkeeper.io/)\n[![NPM Version][npm-image]][npm-url]\n[![NPM Downloads][downloads-image]][downloads-url]\n[![MIT][license-image]](LICENSE)\n\nSchemas describing various structures used by nyc and istanbuljs\n\n## Usage\n\n```js\nconst {nyc} = require('@istanbuljs/schema').defaults;\n\nconsole.log(`Default exclude list:\\n\\t* ${nyc.exclude.join('\\n\\t* ')}`);\n```\n\n[npm-image]: https://img.shields.io/npm/v/@istanbuljs/schema.svg\n[npm-url]: https://npmjs.org/package/@istanbuljs/schema\n[travis-image]: https://travis-ci.org/istanbuljs/schema.svg?branch=master\n[travis-url]: https://travis-ci.org/istanbuljs/schema\n[gk-image]: https://badges.greenkeeper.io/istanbuljs/schema.svg\n[downloads-image]: https://img.shields.io/npm/dm/@istanbuljs/schema.svg\n[downloads-url]: https://npmjs.org/package/@istanbuljs/schema\n[license-image]: https://img.shields.io/npm/l/@istanbuljs/schema.svg\n",
+  "readmeFilename": "README.md"
+}

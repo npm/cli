@@ -1,0 +1,211 @@
+{
+  "_id": "multicast-dns-service-types",
+  "_rev": "4-730d3227e01d6fee174d2fbcf8c8ea3a",
+  "name": "multicast-dns-service-types",
+  "description": "Parse and stringify mdns service types",
+  "dist-tags": {
+    "latest": "1.1.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "multicast-dns-service-types",
+      "version": "1.0.0",
+      "description": "Parse and stringify mdns service types",
+      "main": "index.js",
+      "dependencies": {},
+      "devDependencies": {
+        "tape": "^4.0.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mafintosh/multicast-dns-service-types.git"
+      },
+      "scripts": {
+        "test": "tape test.js"
+      },
+      "author": {
+        "name": "Mathias Buus",
+        "url": "@mafintosh"
+      },
+      "license": "MIT",
+      "keywords": [
+        "mdns",
+        "bonjour",
+        "zero",
+        "conf"
+      ],
+      "bugs": {
+        "url": "https://github.com/mafintosh/multicast-dns-service-types/issues"
+      },
+      "homepage": "https://github.com/mafintosh/multicast-dns-service-types",
+      "gitHead": "fa2a03f1e7ca819e6bc7e24ac262934f5126f80a",
+      "_id": "multicast-dns-service-types@1.0.0",
+      "_shasum": "5c75f86131b7c55711bb954ac721c8a816411a70",
+      "_from": ".",
+      "_npmVersion": "2.7.5",
+      "_nodeVersion": "1.6.4",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "5c75f86131b7c55711bb954ac721c8a816411a70",
+        "tarball": "https://registry.npmjs.org/multicast-dns-service-types/-/multicast-dns-service-types-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "multicast-dns-service-types",
+      "version": "1.0.1",
+      "description": "Parse and stringify mdns service types",
+      "main": "index.js",
+      "dependencies": {},
+      "devDependencies": {
+        "standard": "^3.5.0",
+        "tape": "^4.0.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mafintosh/multicast-dns-service-types.git"
+      },
+      "scripts": {
+        "test": "standard && tape test.js"
+      },
+      "author": {
+        "name": "Mathias Buus",
+        "url": "@mafintosh"
+      },
+      "license": "MIT",
+      "keywords": [
+        "mdns",
+        "bonjour",
+        "zero",
+        "conf"
+      ],
+      "bugs": {
+        "url": "https://github.com/mafintosh/multicast-dns-service-types/issues"
+      },
+      "homepage": "https://github.com/mafintosh/multicast-dns-service-types",
+      "gitHead": "3eb979f126eae18d9fae5fb3d3c5a37e8b64d3b7",
+      "_id": "multicast-dns-service-types@1.0.1",
+      "_shasum": "1ebdd242a28c4c94bfbc23c3f060098882b55cb5",
+      "_from": ".",
+      "_npmVersion": "2.7.5",
+      "_nodeVersion": "1.6.4",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "1ebdd242a28c4c94bfbc23c3f060098882b55cb5",
+        "tarball": "https://registry.npmjs.org/multicast-dns-service-types/-/multicast-dns-service-types-1.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "multicast-dns-service-types",
+      "version": "1.1.0",
+      "description": "Parse and stringify mdns service types",
+      "main": "index.js",
+      "dependencies": {},
+      "devDependencies": {
+        "standard": "^3.5.0",
+        "tape": "^4.0.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mafintosh/multicast-dns-service-types.git"
+      },
+      "scripts": {
+        "test": "standard && tape test.js"
+      },
+      "author": {
+        "name": "Mathias Buus",
+        "url": "@mafintosh"
+      },
+      "license": "MIT",
+      "keywords": [
+        "mdns",
+        "bonjour",
+        "zero",
+        "conf"
+      ],
+      "bugs": {
+        "url": "https://github.com/mafintosh/multicast-dns-service-types/issues"
+      },
+      "homepage": "https://github.com/mafintosh/multicast-dns-service-types",
+      "gitHead": "4f356bd9d4ee4999b07b8d68b11a4a81611065cf",
+      "_id": "multicast-dns-service-types@1.1.0",
+      "_shasum": "899f11d9686e5e05cb91b35d5f0e63b773cfc901",
+      "_from": ".",
+      "_npmVersion": "2.7.5",
+      "_nodeVersion": "1.6.4",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "899f11d9686e5e05cb91b35d5f0e63b773cfc901",
+        "tarball": "https://registry.npmjs.org/multicast-dns-service-types/-/multicast-dns-service-types-1.1.0.tgz"
+      },
+      "directories": {}
+    }
+  },
+  "readme": "# multicast-dns-service-types\n\nParse and stringify mdns service types\n\n```\nnpm install multicast-dns-service-types\n```\n\n[![build status](http://img.shields.io/travis/mafintosh/multicast-dns-service-types.svg?style=flat)](http://travis-ci.org/mafintosh/multicast-dns-service-types)\n\n## Usage\n\n``` js\nvar types = require('multicast-dns-service-types')\n\nconsole.log(types.stringify({name: 'http', protocol: 'tcp', subtypes: ['sub1', 'sub2']})) // _http._tcp._sub1._sub2\nconsole.log(types.parse('_http._tcp._sub1._sub2')) // {name: 'http', protocol: 'tcp', subtypes: ['sub1', 'sub2']}\n```\n\nThe following shorthands also exist\n\n``` js\ntypes.stringify(name, protocol, subtypes)\ntypes.tcp(name, subtypes) // set protocol to tcp\ntypes.udp(name, subtypes) // set protocol to udp\n```\n\n## License\n\nMIT\n",
+  "maintainers": [
+    {
+      "name": "mafintosh",
+      "email": "mathiasbuus@gmail.com"
+    },
+    {
+      "name": "watson",
+      "email": "w@tson.dk"
+    }
+  ],
+  "time": {
+    "modified": "2016-01-05T14:42:02.468Z",
+    "created": "2015-04-09T17:20:42.239Z",
+    "1.0.0": "2015-04-09T17:20:42.239Z",
+    "1.0.1": "2015-04-09T17:22:41.579Z",
+    "1.1.0": "2015-04-12T04:58:13.281Z"
+  },
+  "homepage": "https://github.com/mafintosh/multicast-dns-service-types",
+  "keywords": [
+    "mdns",
+    "bonjour",
+    "zero",
+    "conf"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mafintosh/multicast-dns-service-types.git"
+  },
+  "author": {
+    "name": "Mathias Buus",
+    "url": "@mafintosh"
+  },
+  "bugs": {
+    "url": "https://github.com/mafintosh/multicast-dns-service-types/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "_attachments": {}
+}

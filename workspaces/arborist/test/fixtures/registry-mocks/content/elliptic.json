@@ -1,0 +1,5222 @@
+{
+  "_id": "elliptic",
+  "_rev": "151-74236c4c7d4c7201565122d194714176",
+  "name": "elliptic",
+  "description": "EC cryptography",
+  "dist-tags": {
+    "latest": "6.5.3"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "elliptic",
+      "version": "0.1.0",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/elliptic"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "mocha": "^1.18.2"
+      },
+      "_id": "elliptic@0.1.0",
+      "_shasum": "25c28f157470efe8fbccc290bf30261e28777dcd",
+      "_from": ".",
+      "_npmVersion": "1.4.7",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "25c28f157470efe8fbccc290bf30261e28777dcd",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-0.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.0": {
+      "name": "elliptic",
+      "version": "0.2.0",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/elliptic"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "browserify": "^3.44.2",
+        "mocha": "^1.18.2"
+      },
+      "_id": "elliptic@0.2.0",
+      "_shasum": "bedbb8376437d8b7f139610d33cef4f76b5a0cd2",
+      "_from": ".",
+      "_npmVersion": "1.4.7",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "bedbb8376437d8b7f139610d33cef4f76b5a0cd2",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-0.2.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.3.0": {
+      "name": "elliptic",
+      "version": "0.3.0",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/elliptic"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "browserify": "^3.44.2",
+        "mocha": "^1.18.2"
+      },
+      "_id": "elliptic@0.3.0",
+      "_shasum": "32167b06a350390a58beaaad9c245c35434614f6",
+      "_from": ".",
+      "_npmVersion": "1.4.7",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "32167b06a350390a58beaaad9c245c35434614f6",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-0.3.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.4.0": {
+      "name": "elliptic",
+      "version": "0.4.0",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/elliptic"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "browserify": "^3.44.2",
+        "mocha": "^1.18.2"
+      },
+      "dependencies": {
+        "hash.js": "^0.1.0"
+      },
+      "_id": "elliptic@0.4.0",
+      "_shasum": "6f318c44c9108eea4f52625b971442fbdfc52285",
+      "_from": ".",
+      "_npmVersion": "1.4.7",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "6f318c44c9108eea4f52625b971442fbdfc52285",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-0.4.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.5.0": {
+      "name": "elliptic",
+      "version": "0.5.0",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/elliptic"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "browserify": "^3.44.2",
+        "mocha": "^1.18.2"
+      },
+      "dependencies": {
+        "bn.js": "^0.1.0",
+        "hash.js": "^0.2.0"
+      },
+      "_id": "elliptic@0.5.0",
+      "_shasum": "d66122e6e8a22024ec57cd91840f028012f87283",
+      "_from": ".",
+      "_npmVersion": "1.4.7",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "d66122e6e8a22024ec57cd91840f028012f87283",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-0.5.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.6.0": {
+      "name": "elliptic",
+      "version": "0.6.0",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/elliptic"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "browserify": "^3.44.2",
+        "mocha": "^1.18.2"
+      },
+      "dependencies": {
+        "bn.js": "^0.1.0",
+        "hash.js": "^0.2.0"
+      },
+      "_id": "elliptic@0.6.0",
+      "_shasum": "f624887ebd068e7706f758c2f37e3c7db38f2789",
+      "_from": ".",
+      "_npmVersion": "1.4.7",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "f624887ebd068e7706f758c2f37e3c7db38f2789",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-0.6.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.6.1": {
+      "name": "elliptic",
+      "version": "0.6.1",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/elliptic"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "browserify": "^3.44.2",
+        "mocha": "^1.18.2"
+      },
+      "dependencies": {
+        "bn.js": "^0.1.0",
+        "hash.js": "^0.2.0"
+      },
+      "_id": "elliptic@0.6.1",
+      "_shasum": "545c229f029ba75fb1d89f3997194ffca5d7a25f",
+      "_from": ".",
+      "_npmVersion": "1.4.7",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "545c229f029ba75fb1d89f3997194ffca5d7a25f",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-0.6.1.tgz"
+      },
+      "directories": {}
+    },
+    "0.7.0": {
+      "name": "elliptic",
+      "version": "0.7.0",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/elliptic"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "browserify": "^3.44.2",
+        "mocha": "^1.18.2"
+      },
+      "dependencies": {
+        "bn.js": "^0.2.0",
+        "hash.js": "^0.2.0"
+      },
+      "_id": "elliptic@0.7.0",
+      "_shasum": "df438baaac83a4e2a45f82bd478a854f6c569f0b",
+      "_from": ".",
+      "_npmVersion": "1.4.7",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "df438baaac83a4e2a45f82bd478a854f6c569f0b",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-0.7.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.8.0": {
+      "name": "elliptic",
+      "version": "0.8.0",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/elliptic"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "browserify": "^3.44.2",
+        "mocha": "^1.18.2"
+      },
+      "dependencies": {
+        "bn.js": "^0.3.0",
+        "hash.js": "^0.2.0"
+      },
+      "_id": "elliptic@0.8.0",
+      "_shasum": "67658dd7ff907dfae3bd7df9bafcc7d9b8c6fe3a",
+      "_from": ".",
+      "_npmVersion": "1.4.7",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "67658dd7ff907dfae3bd7df9bafcc7d9b8c6fe3a",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-0.8.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.9.0": {
+      "name": "elliptic",
+      "version": "0.9.0",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/elliptic"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "browserify": "^3.44.2",
+        "mocha": "^1.18.2"
+      },
+      "dependencies": {
+        "bn.js": "^0.3.0",
+        "hash.js": "^0.2.0"
+      },
+      "_id": "elliptic@0.9.0",
+      "_shasum": "715b3dfc66182988ce3cd03d6a762c24d0443754",
+      "_from": ".",
+      "_npmVersion": "1.4.7",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "715b3dfc66182988ce3cd03d6a762c24d0443754",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-0.9.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.9.1": {
+      "name": "elliptic",
+      "version": "0.9.1",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/elliptic"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "browserify": "^3.44.2",
+        "mocha": "^1.18.2"
+      },
+      "dependencies": {
+        "bn.js": "^0.3.0",
+        "hash.js": "^0.2.0"
+      },
+      "_id": "elliptic@0.9.1",
+      "_shasum": "5404b4cf62301557604895f82a8466da3617059e",
+      "_from": ".",
+      "_npmVersion": "1.4.7",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "5404b4cf62301557604895f82a8466da3617059e",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-0.9.1.tgz"
+      },
+      "directories": {}
+    },
+    "0.9.2": {
+      "name": "elliptic",
+      "version": "0.9.2",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/elliptic"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "browserify": "^3.44.2",
+        "mocha": "^1.18.2"
+      },
+      "dependencies": {
+        "bn.js": "^0.3.0",
+        "hash.js": "^0.2.0"
+      },
+      "_id": "elliptic@0.9.2",
+      "_shasum": "9a0117f7ffdee38646538f3313fcc606d8ad5d40",
+      "_from": ".",
+      "_npmVersion": "1.4.7",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "9a0117f7ffdee38646538f3313fcc606d8ad5d40",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-0.9.2.tgz"
+      },
+      "directories": {}
+    },
+    "0.10.0": {
+      "name": "elliptic",
+      "version": "0.10.0",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/elliptic"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "browserify": "^3.44.2",
+        "mocha": "^1.18.2"
+      },
+      "dependencies": {
+        "bn.js": "^0.4.0",
+        "hash.js": "^0.2.0"
+      },
+      "_id": "elliptic@0.10.0",
+      "_shasum": "6b9bf2c5daf083a15c1bd4fcefa56f56a51d1327",
+      "_from": ".",
+      "_npmVersion": "1.4.7",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "6b9bf2c5daf083a15c1bd4fcefa56f56a51d1327",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-0.10.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.10.1": {
+      "name": "elliptic",
+      "version": "0.10.1",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/elliptic"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "browserify": "^3.44.2",
+        "mocha": "^1.18.2"
+      },
+      "dependencies": {
+        "bn.js": "^0.4.0",
+        "hash.js": "^0.2.0"
+      },
+      "_id": "elliptic@0.10.1",
+      "_shasum": "efd9cef24e3b710fb1f1cb5080d08538870d153c",
+      "_from": ".",
+      "_npmVersion": "1.4.7",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "efd9cef24e3b710fb1f1cb5080d08538870d153c",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-0.10.1.tgz"
+      },
+      "directories": {}
+    },
+    "0.10.2": {
+      "name": "elliptic",
+      "version": "0.10.2",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/elliptic"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "browserify": "^3.44.2",
+        "mocha": "^1.18.2"
+      },
+      "dependencies": {
+        "bn.js": "^0.4.0",
+        "hash.js": "^0.2.0"
+      },
+      "_id": "elliptic@0.10.2",
+      "_shasum": "5bd5ccf61f259b71232b996b9cdca9c4ba53523c",
+      "_from": ".",
+      "_npmVersion": "1.4.7",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "5bd5ccf61f259b71232b996b9cdca9c4ba53523c",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-0.10.2.tgz"
+      },
+      "directories": {}
+    },
+    "0.11.0": {
+      "name": "elliptic",
+      "version": "0.11.0",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/elliptic"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "browserify": "^3.44.2",
+        "mocha": "^1.18.2"
+      },
+      "dependencies": {
+        "bn.js": "^0.5.0",
+        "hash.js": "^0.2.0"
+      },
+      "_id": "elliptic@0.11.0",
+      "_shasum": "e82e434e9405cf53f0cf4510ac2cf4759c79a278",
+      "_from": ".",
+      "_npmVersion": "1.4.10",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "e82e434e9405cf53f0cf4510ac2cf4759c79a278",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-0.11.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.11.1": {
+      "name": "elliptic",
+      "version": "0.11.1",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/elliptic"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "browserify": "^3.44.2",
+        "mocha": "^1.18.2"
+      },
+      "dependencies": {
+        "bn.js": "^0.5.4",
+        "hash.js": "^0.2.0"
+      },
+      "_id": "elliptic@0.11.1",
+      "_shasum": "2407c5e7199bf935d457c816b291149fa05a95b4",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "2407c5e7199bf935d457c816b291149fa05a95b4",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-0.11.1.tgz"
+      },
+      "directories": {}
+    },
+    "0.12.0": {
+      "name": "elliptic",
+      "version": "0.12.0",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/elliptic"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "browserify": "^3.44.2",
+        "mocha": "^1.18.2"
+      },
+      "dependencies": {
+        "bn.js": "^0.6.0",
+        "hash.js": "^0.2.0"
+      },
+      "_id": "elliptic@0.12.0",
+      "_shasum": "a3e31678e743f036f23d17d5917166501403f841",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "a3e31678e743f036f23d17d5917166501403f841",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-0.12.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.13.1": {
+      "name": "elliptic",
+      "version": "0.13.1",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/elliptic"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "browserify": "^3.44.2",
+        "mocha": "^1.18.2"
+      },
+      "dependencies": {
+        "bn.js": "^0.7.0",
+        "hash.js": "^0.2.0"
+      },
+      "_id": "elliptic@0.13.1",
+      "_shasum": "b60844bea509c92e70af60068ce71ed386225651",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "b60844bea509c92e70af60068ce71ed386225651",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-0.13.1.tgz"
+      },
+      "directories": {}
+    },
+    "0.13.2": {
+      "name": "elliptic",
+      "version": "0.13.2",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/elliptic"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "browserify": "^3.44.2",
+        "mocha": "^1.18.2"
+      },
+      "dependencies": {
+        "bn.js": "^0.8.0",
+        "hash.js": "^0.2.0"
+      },
+      "_id": "elliptic@0.13.2",
+      "_shasum": "d5b61a076464f06741faf6d261f2df3a5662763d",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "d5b61a076464f06741faf6d261f2df3a5662763d",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-0.13.2.tgz"
+      },
+      "directories": {}
+    },
+    "0.14.0": {
+      "name": "elliptic",
+      "version": "0.14.0",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/elliptic"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "browserify": "^3.44.2",
+        "mocha": "^1.18.2"
+      },
+      "dependencies": {
+        "bn.js": "^0.10.0",
+        "hash.js": "^0.2.0",
+        "uglify-js": "^2.4.13"
+      },
+      "_id": "elliptic@0.14.0",
+      "_shasum": "eef663a2252ef2418da671955e1ca4691acfce47",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "eef663a2252ef2418da671955e1ca4691acfce47",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-0.14.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.14.1": {
+      "name": "elliptic",
+      "version": "0.14.1",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/elliptic"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "browserify": "^3.44.2",
+        "mocha": "^1.18.2"
+      },
+      "dependencies": {
+        "bn.js": "^0.10.0",
+        "hash.js": "^0.2.0",
+        "uglify-js": "^2.4.13"
+      },
+      "_id": "elliptic@0.14.1",
+      "_shasum": "ea2c26aecf7e31938138ab6453f68b9511d69159",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "ea2c26aecf7e31938138ab6453f68b9511d69159",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-0.14.1.tgz"
+      },
+      "directories": {}
+    },
+    "0.14.2": {
+      "name": "elliptic",
+      "version": "0.14.2",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/elliptic"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "browserify": "^3.44.2",
+        "mocha": "^1.18.2"
+      },
+      "dependencies": {
+        "bn.js": "^0.10.1",
+        "hash.js": "^0.2.0",
+        "uglify-js": "^2.4.13"
+      },
+      "_id": "elliptic@0.14.2",
+      "_shasum": "d0774db33dc958b3c426620b75586091b6c96d2c",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "d0774db33dc958b3c426620b75586091b6c96d2c",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-0.14.2.tgz"
+      },
+      "directories": {}
+    },
+    "0.15.0": {
+      "name": "elliptic",
+      "version": "0.15.0",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/elliptic"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "browserify": "^3.44.2",
+        "mocha": "^1.18.2"
+      },
+      "dependencies": {
+        "bn.js": "^0.11.2",
+        "hash.js": "^0.2.0",
+        "inherits": "^2.0.1",
+        "uglify-js": "^2.4.13"
+      },
+      "_id": "elliptic@0.15.0",
+      "_shasum": "c55a184c3379563b45f36a78b5fe33914de72bd2",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "c55a184c3379563b45f36a78b5fe33914de72bd2",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-0.15.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.15.1": {
+      "name": "elliptic",
+      "version": "0.15.1",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/elliptic"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "browserify": "^3.44.2",
+        "mocha": "^1.18.2"
+      },
+      "dependencies": {
+        "bn.js": "^0.11.2",
+        "hash.js": "^0.2.0",
+        "inherits": "^2.0.1",
+        "uglify-js": "^2.4.13"
+      },
+      "_id": "elliptic@0.15.1",
+      "_shasum": "40b70e9859c8744cdf5be85a7c1af8d749980e04",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "40b70e9859c8744cdf5be85a7c1af8d749980e04",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-0.15.1.tgz"
+      },
+      "directories": {}
+    },
+    "0.15.2": {
+      "name": "elliptic",
+      "version": "0.15.2",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/elliptic"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "browserify": "^3.44.2",
+        "mocha": "^1.18.2"
+      },
+      "dependencies": {
+        "bn.js": "^0.11.2",
+        "hash.js": "^0.2.0",
+        "inherits": "^2.0.1",
+        "uglify-js": "^2.4.13"
+      },
+      "_id": "elliptic@0.15.2",
+      "_shasum": "0ae5f2fb19db51989e5a8abf1c525037941c934a",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "0ae5f2fb19db51989e5a8abf1c525037941c934a",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-0.15.2.tgz"
+      },
+      "directories": {}
+    },
+    "0.15.3": {
+      "name": "elliptic",
+      "version": "0.15.3",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/elliptic"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "browserify": "^3.44.2",
+        "mocha": "^1.18.2"
+      },
+      "dependencies": {
+        "bn.js": "^0.11.5",
+        "hash.js": "^0.2.0",
+        "inherits": "^2.0.1",
+        "uglify-js": "^2.4.13"
+      },
+      "_id": "elliptic@0.15.3",
+      "_shasum": "02ae691992646e6086152411d757fd08e422efe7",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "02ae691992646e6086152411d757fd08e422efe7",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-0.15.3.tgz"
+      },
+      "directories": {}
+    },
+    "0.15.4": {
+      "name": "elliptic",
+      "version": "0.15.4",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/elliptic"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "browserify": "^3.44.2",
+        "mocha": "^1.18.2"
+      },
+      "dependencies": {
+        "bn.js": "^0.11.5",
+        "hash.js": "^0.2.0",
+        "inherits": "^2.0.1",
+        "uglify-js": "^2.4.13"
+      },
+      "_id": "elliptic@0.15.4",
+      "_shasum": "fb7ea8778d995c7e5a8927273f3e0b08e7353c5f",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "fb7ea8778d995c7e5a8927273f3e0b08e7353c5f",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-0.15.4.tgz"
+      },
+      "directories": {}
+    },
+    "0.15.5": {
+      "name": "elliptic",
+      "version": "0.15.5",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/elliptic"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "browserify": "^3.44.2",
+        "mocha": "^1.18.2"
+      },
+      "dependencies": {
+        "bn.js": "^0.11.6",
+        "hash.js": "^0.2.0",
+        "inherits": "^2.0.1",
+        "uglify-js": "^2.4.13"
+      },
+      "_id": "elliptic@0.15.5",
+      "_shasum": "ca8c77805e99b5483251caaf71396d1d5bdae250",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "ca8c77805e99b5483251caaf71396d1d5bdae250",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-0.15.5.tgz"
+      },
+      "directories": {}
+    },
+    "0.15.6": {
+      "name": "elliptic",
+      "version": "0.15.6",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/elliptic"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "browserify": "^3.44.2",
+        "mocha": "^1.18.2"
+      },
+      "dependencies": {
+        "bn.js": "^0.11.6",
+        "hash.js": "^0.2.0",
+        "inherits": "^2.0.1",
+        "uglify-js": "^2.4.13"
+      },
+      "_id": "elliptic@0.15.6",
+      "_shasum": "5a82f941000e5daab7fb98987d70410cd42f0065",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "5a82f941000e5daab7fb98987d70410cd42f0065",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-0.15.6.tgz"
+      },
+      "directories": {}
+    },
+    "0.15.7": {
+      "name": "elliptic",
+      "version": "0.15.7",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/elliptic"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "browserify": "^3.44.2",
+        "mocha": "^1.18.2"
+      },
+      "dependencies": {
+        "bn.js": "^0.11.6",
+        "hash.js": "^0.2.0",
+        "inherits": "^2.0.1",
+        "uglify-js": "^2.4.13"
+      },
+      "_id": "elliptic@0.15.7",
+      "_shasum": "33a3cfb88eeeeb04f0bbd06040f2cfc2fba93d2a",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "33a3cfb88eeeeb04f0bbd06040f2cfc2fba93d2a",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-0.15.7.tgz"
+      },
+      "directories": {}
+    },
+    "0.15.8": {
+      "name": "elliptic",
+      "version": "0.15.8",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/elliptic"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "browserify": "^3.44.2",
+        "mocha": "^1.18.2",
+        "uglify-js": "^2.4.13"
+      },
+      "dependencies": {
+        "bn.js": "^0.11.6",
+        "hash.js": "^0.2.0",
+        "inherits": "^2.0.1"
+      },
+      "gitHead": "2f0a0b193308f40f7d43006ec8b5bf0743a25752",
+      "_id": "elliptic@0.15.8",
+      "_shasum": "14046870b5d5261438f59b3c174693a89d976a85",
+      "_from": ".",
+      "_npmVersion": "1.4.21",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "14046870b5d5261438f59b3c174693a89d976a85",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-0.15.8.tgz"
+      },
+      "directories": {}
+    },
+    "0.15.9": {
+      "name": "elliptic",
+      "version": "0.15.9",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/elliptic"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "browserify": "^3.44.2",
+        "mocha": "^1.18.2",
+        "uglify-js": "^2.4.13"
+      },
+      "dependencies": {
+        "bn.js": "^0.11.6",
+        "hash.js": "^0.2.0",
+        "inherits": "^2.0.1"
+      },
+      "gitHead": "d04e686825113844cf073895e8840645c1de3d35",
+      "_id": "elliptic@0.15.9",
+      "_shasum": "009fcc41fb3d5a111afb527f7fb3bb267f905bc7",
+      "_from": ".",
+      "_npmVersion": "1.4.21",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "009fcc41fb3d5a111afb527f7fb3bb267f905bc7",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-0.15.9.tgz"
+      },
+      "directories": {}
+    },
+    "0.15.10": {
+      "name": "elliptic",
+      "version": "0.15.10",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/elliptic"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "browserify": "^3.44.2",
+        "mocha": "^1.18.2",
+        "uglify-js": "^2.4.13"
+      },
+      "dependencies": {
+        "bn.js": "^0.11.6",
+        "hash.js": "^0.2.0",
+        "inherits": "^2.0.1"
+      },
+      "gitHead": "a92e9c75590b7913f06d31b16c9f550ddda5f2b6",
+      "_id": "elliptic@0.15.10",
+      "_shasum": "b60abd01bc4b7908e01eef3b93bddf6f5775e267",
+      "_from": ".",
+      "_npmVersion": "1.4.21",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "b60abd01bc4b7908e01eef3b93bddf6f5775e267",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-0.15.10.tgz"
+      },
+      "directories": {}
+    },
+    "0.15.11": {
+      "name": "elliptic",
+      "version": "0.15.11",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/elliptic"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "browserify": "^3.44.2",
+        "mocha": "^1.18.2",
+        "uglify-js": "^2.4.13"
+      },
+      "dependencies": {
+        "bn.js": "^0.14.1",
+        "hash.js": "^0.2.0",
+        "inherits": "^2.0.1"
+      },
+      "gitHead": "02faf054accde00a42446399fb9d3c04dcb83c8d",
+      "_id": "elliptic@0.15.11",
+      "_shasum": "37c5dab7fd714ee88c2178fcd2ef2216d2f31809",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "37c5dab7fd714ee88c2178fcd2ef2216d2f31809",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-0.15.11.tgz"
+      },
+      "directories": {}
+    },
+    "0.15.12": {
+      "name": "elliptic",
+      "version": "0.15.12",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/elliptic"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "browserify": "^3.44.2",
+        "mocha": "^1.18.2",
+        "uglify-js": "^2.4.13"
+      },
+      "dependencies": {
+        "bn.js": "^0.15.0",
+        "hash.js": "^0.2.0",
+        "inherits": "^2.0.1"
+      },
+      "gitHead": "637f0c2f24d3e514236942af457706aef0bc66f1",
+      "_id": "elliptic@0.15.12",
+      "_shasum": "bafa7542ebdb9aaa2edf7cdaa86108ce6f12d4e9",
+      "_from": ".",
+      "_npmVersion": "2.1.2",
+      "_nodeVersion": "0.10.32",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "bafa7542ebdb9aaa2edf7cdaa86108ce6f12d4e9",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-0.15.12.tgz"
+      },
+      "directories": {}
+    },
+    "0.15.13": {
+      "name": "elliptic",
+      "version": "0.15.13",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/elliptic"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "browserify": "^3.44.2",
+        "mocha": "^1.18.2",
+        "uglify-js": "^2.4.13"
+      },
+      "dependencies": {
+        "bn.js": "^0.15.0",
+        "hash.js": "^0.2.0",
+        "inherits": "^2.0.1"
+      },
+      "gitHead": "274e36de37c1be8f25425ba563bcde65213566fc",
+      "_id": "elliptic@0.15.13",
+      "_shasum": "918c6b833a9e7d8ad974027d02ac4912d025f2f4",
+      "_from": ".",
+      "_npmVersion": "2.1.6",
+      "_nodeVersion": "0.10.33",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "918c6b833a9e7d8ad974027d02ac4912d025f2f4",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-0.15.13.tgz"
+      },
+      "directories": {}
+    },
+    "0.15.14": {
+      "name": "elliptic",
+      "version": "0.15.14",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/elliptic"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "browserify": "^3.44.2",
+        "mocha": "^1.18.2",
+        "uglify-js": "^2.4.13"
+      },
+      "dependencies": {
+        "bn.js": "^0.15.0",
+        "brorand": "^1.0.1",
+        "hash.js": "^0.2.0",
+        "inherits": "^2.0.1"
+      },
+      "gitHead": "e080857a1604369909d53f2f187a3b69eba113ed",
+      "_id": "elliptic@0.15.14",
+      "_shasum": "4d8cc82f030f9c7646ac60a729f0f793e083be6e",
+      "_from": ".",
+      "_npmVersion": "2.1.6",
+      "_nodeVersion": "0.10.33",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "4d8cc82f030f9c7646ac60a729f0f793e083be6e",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-0.15.14.tgz"
+      },
+      "directories": {}
+    },
+    "0.15.15": {
+      "name": "elliptic",
+      "version": "0.15.15",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/elliptic"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "browserify": "^3.44.2",
+        "mocha": "^1.18.2",
+        "uglify-js": "^2.4.13"
+      },
+      "dependencies": {
+        "bn.js": "^0.15.0",
+        "brorand": "^1.0.1",
+        "hash.js": "^0.2.0",
+        "inherits": "^2.0.1"
+      },
+      "gitHead": "4bf1f50607285bff4ae19521217dbc801c3d36af",
+      "_id": "elliptic@0.15.15",
+      "_shasum": "63269184a856d6e00871e84f37a8401ff84e4aea",
+      "_from": ".",
+      "_npmVersion": "2.1.6",
+      "_nodeVersion": "0.10.33",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "63269184a856d6e00871e84f37a8401ff84e4aea",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-0.15.15.tgz"
+      },
+      "directories": {}
+    },
+    "0.15.17": {
+      "name": "elliptic",
+      "version": "0.15.17",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/elliptic"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "browserify": "^3.44.2",
+        "mocha": "^1.18.2",
+        "uglify-js": "^2.4.13"
+      },
+      "dependencies": {
+        "bn.js": "^0.16.0",
+        "brorand": "^1.0.1",
+        "hash.js": "^0.2.0",
+        "inherits": "^2.0.1"
+      },
+      "gitHead": "e8c243a4bdbddb7220607b504a0f8ecfff48918d",
+      "_id": "elliptic@0.15.17",
+      "_shasum": "43f2bc8046c838df1ac99e5242da1b1b4bc59937",
+      "_from": ".",
+      "_npmVersion": "2.1.10",
+      "_nodeVersion": "0.10.33",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "43f2bc8046c838df1ac99e5242da1b1b4bc59937",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-0.15.17.tgz"
+      },
+      "directories": {}
+    },
+    "0.16.0": {
+      "name": "elliptic",
+      "version": "0.16.0",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/elliptic"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "browserify": "^3.44.2",
+        "mocha": "^1.18.2",
+        "uglify-js": "^2.4.13"
+      },
+      "dependencies": {
+        "bn.js": "^0.16.0",
+        "brorand": "^1.0.1",
+        "hash.js": "^0.3.2",
+        "inherits": "^2.0.1"
+      },
+      "gitHead": "be0e860d9b2443ae5dd98c5128925b922f9e6c28",
+      "_id": "elliptic@0.16.0",
+      "_shasum": "9bc84e75ccd97e3e452c97371726c535314d1a57",
+      "_from": ".",
+      "_npmVersion": "2.1.10",
+      "_nodeVersion": "0.10.33",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "9bc84e75ccd97e3e452c97371726c535314d1a57",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-0.16.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "elliptic",
+      "version": "1.0.0",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/elliptic"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "browserify": "^3.44.2",
+        "mocha": "^1.18.2",
+        "uglify-js": "^2.4.13"
+      },
+      "dependencies": {
+        "bn.js": "^1.0.0",
+        "brorand": "^1.0.1",
+        "hash.js": "^1.0.0",
+        "inherits": "^2.0.1"
+      },
+      "gitHead": "aaf14882e64fc7dedd4613d7e08cfa7fff303fe6",
+      "_id": "elliptic@1.0.0",
+      "_shasum": "28d927ae8c16c6f65e452a714b36da4095603e39",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "28d927ae8c16c6f65e452a714b36da4095603e39",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "elliptic",
+      "version": "1.0.1",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/elliptic"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "browserify": "^3.44.2",
+        "mocha": "^1.18.2",
+        "uglify-js": "^2.4.13"
+      },
+      "dependencies": {
+        "bn.js": "^1.0.0",
+        "brorand": "^1.0.1",
+        "hash.js": "^1.0.0",
+        "inherits": "^2.0.1"
+      },
+      "gitHead": "17dc013761dd1efcfb868e2b06b0b897627b40be",
+      "_id": "elliptic@1.0.1",
+      "_shasum": "d180376b66a17d74995c837796362ac4d22aefe3",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "d180376b66a17d74995c837796362ac4d22aefe3",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-1.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "elliptic",
+      "version": "2.0.0",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/elliptic"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "browserify": "^3.44.2",
+        "mocha": "^1.18.2",
+        "uglify-js": "^2.4.13"
+      },
+      "dependencies": {
+        "bn.js": "^1.0.0",
+        "brorand": "^1.0.1",
+        "hash.js": "^1.0.0",
+        "inherits": "^2.0.1"
+      },
+      "gitHead": "3bba0ba2c3d28e5698afc86850ec70334d6dbafd",
+      "_id": "elliptic@2.0.0",
+      "_shasum": "5c237269b13af8aa2dbf663f265df7e2cc521774",
+      "_from": ".",
+      "_npmVersion": "2.1.18",
+      "_nodeVersion": "1.0.2",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "5c237269b13af8aa2dbf663f265df7e2cc521774",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-2.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.1": {
+      "name": "elliptic",
+      "version": "2.0.1",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/elliptic"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "browserify": "^3.44.2",
+        "mocha": "^1.18.2",
+        "uglify-js": "^2.4.13"
+      },
+      "dependencies": {
+        "bn.js": "^1.0.0",
+        "brorand": "^1.0.1",
+        "hash.js": "^1.0.0",
+        "inherits": "^2.0.1"
+      },
+      "gitHead": "3dc8d7deace15773c379083eadb220252108fe0e",
+      "_id": "elliptic@2.0.1",
+      "_shasum": "58814b471e011eaf7e42fa444fdffcfc0d3de8df",
+      "_from": ".",
+      "_npmVersion": "2.1.18",
+      "_nodeVersion": "1.0.2",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "58814b471e011eaf7e42fa444fdffcfc0d3de8df",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-2.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.2": {
+      "name": "elliptic",
+      "version": "2.0.2",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/elliptic"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "browserify": "^3.44.2",
+        "mocha": "^2.1.0",
+        "uglify-js": "^2.4.13"
+      },
+      "dependencies": {
+        "bn.js": "^1.2.4",
+        "brorand": "^1.0.1",
+        "hash.js": "^1.0.0",
+        "inherits": "^2.0.1"
+      },
+      "gitHead": "d459a0ef6318340399d9fe2533118255aa35c5cc",
+      "_id": "elliptic@2.0.2",
+      "_shasum": "5891ba666d3103ddf311b14ec5de3fca74402afd",
+      "_from": ".",
+      "_npmVersion": "2.4.1",
+      "_nodeVersion": "1.1.0",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "5891ba666d3103ddf311b14ec5de3fca74402afd",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-2.0.2.tgz"
+      },
+      "directories": {}
+    },
+    "3.0.1": {
+      "name": "elliptic",
+      "version": "3.0.1",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/elliptic"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "browserify": "^3.44.2",
+        "mocha": "^2.1.0",
+        "uglify-js": "^2.4.13"
+      },
+      "dependencies": {
+        "bn.js": "^2.0.0",
+        "brorand": "^1.0.1",
+        "hash.js": "^1.0.0",
+        "inherits": "^2.0.1"
+      },
+      "gitHead": "6a6c943a3fe1d0ca6529dbb49816e81c4a8ce16c",
+      "_id": "elliptic@3.0.1",
+      "_shasum": "831c923399aeffb50766af1b05fdf71eba60acbf",
+      "_from": ".",
+      "_npmVersion": "2.4.1",
+      "_nodeVersion": "1.1.0",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "831c923399aeffb50766af1b05fdf71eba60acbf",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-3.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "3.0.2": {
+      "name": "elliptic",
+      "version": "3.0.2",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/elliptic"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "browserify": "^3.44.2",
+        "mocha": "^2.1.0",
+        "uglify-js": "^2.4.13"
+      },
+      "dependencies": {
+        "bn.js": "^2.0.0",
+        "brorand": "^1.0.1",
+        "hash.js": "^1.0.0",
+        "inherits": "^2.0.1"
+      },
+      "gitHead": "2713e49ab3f643b9db5dab9eadc762ff7073f267",
+      "_id": "elliptic@3.0.2",
+      "_shasum": "fc07233e8bd1c1a108cb0997fa6757c7b1a7c0bc",
+      "_from": ".",
+      "_npmVersion": "2.4.1",
+      "_nodeVersion": "1.1.0",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "fc07233e8bd1c1a108cb0997fa6757c7b1a7c0bc",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-3.0.2.tgz"
+      },
+      "directories": {}
+    },
+    "3.0.3": {
+      "name": "elliptic",
+      "version": "3.0.3",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "scripts": {
+        "test": "make lint && mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/elliptic"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "browserify": "^3.44.2",
+        "jscs": "^1.11.3",
+        "jshint": "^2.6.0",
+        "mocha": "^2.1.0",
+        "uglify-js": "^2.4.13"
+      },
+      "dependencies": {
+        "bn.js": "^2.0.0",
+        "brorand": "^1.0.1",
+        "hash.js": "^1.0.0",
+        "inherits": "^2.0.1"
+      },
+      "gitHead": "c8d7cf551fdf2ce3ecc5264b29084244ae6aa2b2",
+      "_id": "elliptic@3.0.3",
+      "_shasum": "865c9b420bfbe55006b9f969f97a0d2c44966595",
+      "_from": ".",
+      "_npmVersion": "2.5.1",
+      "_nodeVersion": "1.3.0",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "865c9b420bfbe55006b9f969f97a0d2c44966595",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-3.0.3.tgz"
+      },
+      "directories": {}
+    },
+    "3.0.4": {
+      "name": "elliptic",
+      "version": "3.0.4",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "scripts": {
+        "test": "make lint && mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/elliptic.git"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "browserify": "^3.44.2",
+        "jscs": "^1.11.3",
+        "jshint": "^2.6.0",
+        "mocha": "^2.1.0",
+        "uglify-js": "^2.4.13"
+      },
+      "dependencies": {
+        "bn.js": "^2.0.0",
+        "brorand": "^1.0.1",
+        "hash.js": "^1.0.0",
+        "inherits": "^2.0.1"
+      },
+      "gitHead": "dfef517a0dcf145faec353fb88fdee6646d95ad4",
+      "_id": "elliptic@3.0.4",
+      "_shasum": "67dbcf68dd1e843eef77b0b05376bd1db4f92f5e",
+      "_from": ".",
+      "_npmVersion": "2.9.0",
+      "_nodeVersion": "2.0.0",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "67dbcf68dd1e843eef77b0b05376bd1db4f92f5e",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-3.0.4.tgz"
+      },
+      "directories": {}
+    },
+    "3.1.0": {
+      "name": "elliptic",
+      "version": "3.1.0",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "scripts": {
+        "test": "make lint && mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/elliptic.git"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "browserify": "^3.44.2",
+        "jscs": "^1.11.3",
+        "jshint": "^2.6.0",
+        "mocha": "^2.1.0",
+        "uglify-js": "^2.4.13"
+      },
+      "dependencies": {
+        "bn.js": "^2.0.3",
+        "brorand": "^1.0.1",
+        "hash.js": "^1.0.0",
+        "inherits": "^2.0.1"
+      },
+      "gitHead": "d86cd2a8178f7e7cecbd6dd92eea084e2ab44c13",
+      "_id": "elliptic@3.1.0",
+      "_shasum": "c21682ef762769b56a74201609105da11d5f60cc",
+      "_from": ".",
+      "_npmVersion": "2.11.0",
+      "_nodeVersion": "2.2.1",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "c21682ef762769b56a74201609105da11d5f60cc",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-3.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "4.0.0": {
+      "name": "elliptic",
+      "version": "4.0.0",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "scripts": {
+        "test": "make lint && mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/elliptic.git"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "browserify": "^3.44.2",
+        "jscs": "^1.11.3",
+        "jshint": "^2.6.0",
+        "mocha": "^2.1.0",
+        "uglify-js": "^2.4.13"
+      },
+      "dependencies": {
+        "bn.js": "^2.1.0",
+        "brorand": "^1.0.1",
+        "hash.js": "^1.0.0",
+        "inherits": "^2.0.1"
+      },
+      "gitHead": "e3e2bc5374b25b8169369252e3bd3ef5732c7972",
+      "_id": "elliptic@4.0.0",
+      "_shasum": "32976ad71b274c1111d82f895837dac8ea45c073",
+      "_from": ".",
+      "_npmVersion": "2.11.0",
+      "_nodeVersion": "2.2.1",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "32976ad71b274c1111d82f895837dac8ea45c073",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-4.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "4.1.0": {
+      "name": "elliptic",
+      "version": "4.1.0",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "scripts": {
+        "test": "make lint && mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/elliptic.git"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "browserify": "^3.44.2",
+        "jscs": "^1.11.3",
+        "jshint": "^2.6.0",
+        "mocha": "^2.1.0",
+        "uglify-js": "^2.4.13"
+      },
+      "dependencies": {
+        "bn.js": "^2.1.0",
+        "brorand": "^1.0.1",
+        "hash.js": "^1.0.0",
+        "inherits": "^2.0.1"
+      },
+      "gitHead": "e4f2675e2cb2c7a5c4a0187d0e18db18470799b0",
+      "_id": "elliptic@4.1.0",
+      "_shasum": "1a660618d3d09190200149cbe0452e6a5bbe08d7",
+      "_from": ".",
+      "_npmVersion": "2.11.0",
+      "_nodeVersion": "2.2.1",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "1a660618d3d09190200149cbe0452e6a5bbe08d7",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-4.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "5.0.0": {
+      "name": "elliptic",
+      "version": "5.0.0",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "scripts": {
+        "test": "make lint && mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/elliptic.git"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "browserify": "^3.44.2",
+        "jscs": "^1.11.3",
+        "jshint": "^2.6.0",
+        "mocha": "^2.1.0",
+        "uglify-js": "^2.4.13"
+      },
+      "dependencies": {
+        "bn.js": "^3.0.0",
+        "brorand": "^1.0.1",
+        "hash.js": "^1.0.0",
+        "inherits": "^2.0.1"
+      },
+      "gitHead": "397d5f72750a55ce1a6497965f5ad17f0aa299cb",
+      "_id": "elliptic@5.0.0",
+      "_shasum": "1bdd76d5f560da765cf0ba38243f8f4481ebe01c",
+      "_from": ".",
+      "_npmVersion": "2.11.0",
+      "_nodeVersion": "2.2.1",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "1bdd76d5f560da765cf0ba38243f8f4481ebe01c",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-5.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "5.1.0": {
+      "name": "elliptic",
+      "version": "5.1.0",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "scripts": {
+        "test": "make lint && mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/elliptic.git"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "browserify": "^3.44.2",
+        "jscs": "^1.11.3",
+        "jshint": "^2.6.0",
+        "mocha": "^2.1.0",
+        "uglify-js": "^2.4.13"
+      },
+      "dependencies": {
+        "bn.js": "^3.1.1",
+        "brorand": "^1.0.1",
+        "hash.js": "^1.0.0",
+        "inherits": "^2.0.1"
+      },
+      "gitHead": "4f12b8f6bcb16e38d4a038af2d963dc10d175bde",
+      "_id": "elliptic@5.1.0",
+      "_shasum": "5658dfa7625a6a8fc687a5b8f249376bb271e6e9",
+      "_from": ".",
+      "_npmVersion": "2.12.1",
+      "_nodeVersion": "2.3.4",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "5658dfa7625a6a8fc687a5b8f249376bb271e6e9",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-5.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "5.2.0": {
+      "name": "elliptic",
+      "version": "5.2.0",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "scripts": {
+        "test": "make lint && istanbul test _mocha --reporter=spec test/*-test.js",
+        "coveralls": "cat ./coverage/lcov.info | coveralls"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/elliptic.git"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "browserify": "^3.44.2",
+        "coveralls": "^2.11.3",
+        "istanbul": "^0.3.17",
+        "jscs": "^1.11.3",
+        "jshint": "^2.6.0",
+        "mocha": "^2.1.0",
+        "uglify-js": "^2.4.13"
+      },
+      "dependencies": {
+        "bn.js": "^3.1.1",
+        "brorand": "^1.0.1",
+        "hash.js": "^1.0.0",
+        "inherits": "^2.0.1"
+      },
+      "gitHead": "742c61edd9687c672ea378ea8209cefbcf962ea9",
+      "_id": "elliptic@5.2.0",
+      "_shasum": "123fd155fd6637e57e416d95ac803c9fe7cb95bc",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.1",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "dist": {
+        "shasum": "123fd155fd6637e57e416d95ac803c9fe7cb95bc",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-5.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "directories": {}
+    },
+    "5.2.1": {
+      "name": "elliptic",
+      "version": "5.2.1",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "scripts": {
+        "test": "make lint && istanbul test _mocha --reporter=spec test/*-test.js",
+        "coveralls": "cat ./coverage/lcov.info | coveralls"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/elliptic.git"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "browserify": "^3.44.2",
+        "coveralls": "^2.11.3",
+        "istanbul": "^0.3.17",
+        "jscs": "^1.11.3",
+        "jshint": "^2.6.0",
+        "mocha": "^2.1.0",
+        "uglify-js": "^2.4.13"
+      },
+      "dependencies": {
+        "bn.js": "^3.1.1",
+        "brorand": "^1.0.1",
+        "hash.js": "^1.0.0",
+        "inherits": "^2.0.1"
+      },
+      "gitHead": "676db36e64399e5b4c0e31ae5aa4cdf8e8362014",
+      "_id": "elliptic@5.2.1",
+      "_shasum": "fa294b6563c6ddbc9ba3dc8594687ae840858f10",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.1",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "dist": {
+        "shasum": "fa294b6563c6ddbc9ba3dc8594687ae840858f10",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-5.2.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "directories": {}
+    },
+    "6.0.0": {
+      "name": "elliptic",
+      "version": "6.0.0",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "scripts": {
+        "test": "make lint && istanbul test _mocha --reporter=spec test/*-test.js",
+        "coveralls": "cat ./coverage/lcov.info | coveralls"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/elliptic.git"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "browserify": "^3.44.2",
+        "coveralls": "^2.11.3",
+        "istanbul": "^0.3.17",
+        "jscs": "^1.11.3",
+        "jshint": "^2.6.0",
+        "mocha": "^2.1.0",
+        "uglify-js": "^2.4.13"
+      },
+      "dependencies": {
+        "bn.js": "^4.0.0",
+        "brorand": "^1.0.1",
+        "hash.js": "^1.0.0",
+        "inherits": "^2.0.1"
+      },
+      "gitHead": "2477fae5cd1d0fe7adb546ad16ff6bfb8268b4ca",
+      "_id": "elliptic@6.0.0",
+      "_shasum": "c48120001e5d9c26fd5e5ed05361f09b0e838106",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.1",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "dist": {
+        "shasum": "c48120001e5d9c26fd5e5ed05361f09b0e838106",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-6.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "directories": {}
+    },
+    "6.0.1": {
+      "name": "elliptic",
+      "version": "6.0.1",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "scripts": {
+        "test": "make lint && istanbul test _mocha --reporter=spec test/*-test.js",
+        "coveralls": "cat ./coverage/lcov.info | coveralls"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/elliptic.git"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "browserify": "^3.44.2",
+        "coveralls": "^2.11.3",
+        "istanbul": "^0.3.17",
+        "jscs": "^1.11.3",
+        "jshint": "^2.6.0",
+        "mocha": "^2.1.0",
+        "uglify-js": "^2.4.13"
+      },
+      "dependencies": {
+        "bn.js": "^4.0.0",
+        "brorand": "^1.0.1",
+        "hash.js": "^1.0.0",
+        "inherits": "^2.0.1"
+      },
+      "gitHead": "a9eb628eec9a2f562e67947c5417e9b2435d0a2d",
+      "_id": "elliptic@6.0.1",
+      "_shasum": "91d573ecb2a3c274b8c07e0d1f35ff19f07e6978",
+      "_from": ".",
+      "_npmVersion": "3.3.6",
+      "_nodeVersion": "5.0.0",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "dist": {
+        "shasum": "91d573ecb2a3c274b8c07e0d1f35ff19f07e6978",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-6.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "directories": {}
+    },
+    "6.0.2": {
+      "name": "elliptic",
+      "version": "6.0.2",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "files": [
+        "lib"
+      ],
+      "scripts": {
+        "test": "make lint && istanbul test _mocha --reporter=spec test/*-test.js",
+        "coveralls": "cat ./coverage/lcov.info | coveralls"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/elliptic.git"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "browserify": "^3.44.2",
+        "coveralls": "^2.11.3",
+        "istanbul": "^0.3.17",
+        "jscs": "^1.11.3",
+        "jshint": "^2.6.0",
+        "mocha": "^2.1.0",
+        "uglify-js": "^2.4.13"
+      },
+      "dependencies": {
+        "bn.js": "^4.0.0",
+        "brorand": "^1.0.1",
+        "hash.js": "^1.0.0",
+        "inherits": "^2.0.1"
+      },
+      "gitHead": "330106da186712d228d79bc71ae8e7e68565fa9d",
+      "_id": "elliptic@6.0.2",
+      "_shasum": "219b96cd92aa9885d91d31c1fd42eaa5eb4483a9",
+      "_from": ".",
+      "_npmVersion": "3.3.6",
+      "_nodeVersion": "5.0.0",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "dist": {
+        "shasum": "219b96cd92aa9885d91d31c1fd42eaa5eb4483a9",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-6.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "directories": {}
+    },
+    "6.1.0": {
+      "name": "elliptic",
+      "version": "6.1.0",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "files": [
+        "lib"
+      ],
+      "scripts": {
+        "test": "make lint && istanbul test _mocha --reporter=spec test/*-test.js",
+        "coveralls": "cat ./coverage/lcov.info | coveralls"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/elliptic.git"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "browserify": "^3.44.2",
+        "coveralls": "^2.11.3",
+        "istanbul": "^0.3.17",
+        "jscs": "^1.11.3",
+        "jshint": "^2.6.0",
+        "mocha": "^2.1.0",
+        "uglify-js": "^2.4.13"
+      },
+      "dependencies": {
+        "bn.js": "^4.0.0",
+        "brorand": "^1.0.1",
+        "hash.js": "^1.0.0",
+        "inherits": "^2.0.1"
+      },
+      "gitHead": "b465fea90447f3b6c0b3f55e5fd6ecdedc1282f2",
+      "_id": "elliptic@6.1.0",
+      "_shasum": "68130e03823b4ce024955ad1be195e148099d654",
+      "_from": ".",
+      "_npmVersion": "3.3.12",
+      "_nodeVersion": "5.2.0",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "dist": {
+        "shasum": "68130e03823b4ce024955ad1be195e148099d654",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-6.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "directories": {}
+    },
+    "6.2.0": {
+      "name": "elliptic",
+      "version": "6.2.0",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "files": [
+        "lib"
+      ],
+      "scripts": {
+        "test": "make lint && istanbul test _mocha --reporter=spec test/*-test.js",
+        "coveralls": "cat ./coverage/lcov.info | coveralls"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/elliptic.git"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "browserify": "^3.44.2",
+        "coveralls": "^2.11.3",
+        "istanbul": "^0.3.17",
+        "jscs": "^1.11.3",
+        "jshint": "^2.6.0",
+        "mocha": "^2.1.0",
+        "uglify-js": "^2.4.13"
+      },
+      "dependencies": {
+        "bn.js": "^4.0.0",
+        "brorand": "^1.0.1",
+        "hash.js": "^1.0.0",
+        "inherits": "^2.0.1"
+      },
+      "gitHead": "6d25d373141cade9f71404cc18a2b407849bd418",
+      "_id": "elliptic@6.2.0",
+      "_shasum": "695e7233fee853883f19d6c103c3cffdb1527e12",
+      "_from": ".",
+      "_npmVersion": "3.3.12",
+      "_nodeVersion": "5.4.1",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "dist": {
+        "shasum": "695e7233fee853883f19d6c103c3cffdb1527e12",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-6.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "directories": {}
+    },
+    "6.2.1": {
+      "name": "elliptic",
+      "version": "6.2.1",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "files": [
+        "lib"
+      ],
+      "scripts": {
+        "test": "make lint && istanbul test _mocha --reporter=spec test/*-test.js",
+        "coveralls": "cat ./coverage/lcov.info | coveralls"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/elliptic.git"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "browserify": "^3.44.2",
+        "coveralls": "^2.11.3",
+        "istanbul": "^0.3.17",
+        "jscs": "^1.11.3",
+        "jshint": "^2.6.0",
+        "mocha": "^2.1.0",
+        "uglify-js": "^2.4.13"
+      },
+      "dependencies": {
+        "bn.js": "^4.0.0",
+        "brorand": "^1.0.1",
+        "hash.js": "^1.0.0",
+        "inherits": "^2.0.1"
+      },
+      "gitHead": "a706516830ff575b540953dda154a1f83d010314",
+      "_id": "elliptic@6.2.1",
+      "_shasum": "72ade423d4144e967446cc2bfbed4d088d154e71",
+      "_from": ".",
+      "_npmVersion": "3.3.12",
+      "_nodeVersion": "5.4.1",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "dist": {
+        "shasum": "72ade423d4144e967446cc2bfbed4d088d154e71",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-6.2.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "directories": {}
+    },
+    "6.2.2": {
+      "name": "elliptic",
+      "version": "6.2.2",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "files": [
+        "lib"
+      ],
+      "scripts": {
+        "test": "make lint && istanbul test _mocha --reporter=spec test/*-test.js",
+        "coveralls": "cat ./coverage/lcov.info | coveralls"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/elliptic.git"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "browserify": "^3.44.2",
+        "coveralls": "^2.11.3",
+        "istanbul": "^0.3.17",
+        "jscs": "^1.11.3",
+        "jshint": "^2.6.0",
+        "mocha": "^2.1.0",
+        "uglify-js": "^2.4.13"
+      },
+      "dependencies": {
+        "bn.js": "^4.0.0",
+        "brorand": "^1.0.1",
+        "hash.js": "^1.0.0",
+        "inherits": "^2.0.1"
+      },
+      "gitHead": "628eb61186a7f1c81247cf991d808dc9ead83645",
+      "_id": "elliptic@6.2.2",
+      "_shasum": "806bfa651a5aa4996a1e79c92b573761ea7d7574",
+      "_from": ".",
+      "_npmVersion": "3.3.12",
+      "_nodeVersion": "5.4.1",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "dist": {
+        "shasum": "806bfa651a5aa4996a1e79c92b573761ea7d7574",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-6.2.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "directories": {}
+    },
+    "6.2.3": {
+      "name": "elliptic",
+      "version": "6.2.3",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "files": [
+        "lib"
+      ],
+      "scripts": {
+        "coverage": "npm run unit --coverage",
+        "coveralls": "npm run coverage && cat ./coverage/lcov.info | coveralls",
+        "jscs": "jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/*.js",
+        "jshint": "jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/*.js",
+        "lint": "npm run jscs && npm run jshint",
+        "test": "npm run lint && npm run unit",
+        "unit": "istanbul test _mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/elliptic.git"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "coveralls": "^2.11.3",
+        "istanbul": "^0.4.2",
+        "jscs": "^2.9.0",
+        "jshint": "^2.6.0",
+        "mocha": "^2.1.0"
+      },
+      "dependencies": {
+        "bn.js": "^4.0.0",
+        "brorand": "^1.0.1",
+        "hash.js": "^1.0.0",
+        "inherits": "^2.0.1"
+      },
+      "gitHead": "c32f20b22b420eb6af3c6dda28963deb7facf823",
+      "_id": "elliptic@6.2.3",
+      "_shasum": "18e46d7306b0951275a2d42063270a14b74ebe99",
+      "_from": ".",
+      "_npmVersion": "3.3.12",
+      "_nodeVersion": "5.4.1",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "dist": {
+        "shasum": "18e46d7306b0951275a2d42063270a14b74ebe99",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-6.2.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "directories": {}
+    },
+    "6.2.4": {
+      "name": "elliptic",
+      "version": "6.2.4",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "files": [
+        "lib"
+      ],
+      "scripts": {
+        "jscs": "jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js",
+        "jshint": "jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js",
+        "lint": "npm run jscs && npm run jshint",
+        "unit": "istanbul test _mocha --reporter=spec test/index.js",
+        "test": "npm run lint && npm run unit",
+        "version": "grunt dist && git add dist/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/elliptic.git"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "brfs": "^1.4.3",
+        "coveralls": "^2.11.3",
+        "grunt": "^0.4.5",
+        "grunt-browserify": "^5.0.0",
+        "grunt-contrib-connect": "^1.0.0",
+        "grunt-contrib-copy": "^1.0.0",
+        "grunt-contrib-uglify": "^1.0.1",
+        "grunt-mocha-istanbul": "^3.0.1",
+        "grunt-saucelabs": "^8.6.2",
+        "istanbul": "^0.4.2",
+        "jscs": "^2.9.0",
+        "jshint": "^2.6.0",
+        "mocha": "^2.1.0"
+      },
+      "dependencies": {
+        "bn.js": "^4.0.0",
+        "brorand": "^1.0.1",
+        "hash.js": "^1.0.0",
+        "inherits": "^2.0.1"
+      },
+      "gitHead": "de388fb57550940624eb421feb2d7d7f24087f13",
+      "_id": "elliptic@6.2.4",
+      "_shasum": "f8a8917c3024233ac37d8901e17cca425851c7d8",
+      "_from": ".",
+      "_npmVersion": "3.8.6",
+      "_nodeVersion": "6.0.0",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "dist": {
+        "shasum": "f8a8917c3024233ac37d8901e17cca425851c7d8",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-6.2.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/elliptic-6.2.4.tgz_1463780933643_0.6566972529981285"
+      },
+      "directories": {}
+    },
+    "6.2.5": {
+      "name": "elliptic",
+      "version": "6.2.5",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "files": [
+        "lib"
+      ],
+      "scripts": {
+        "jscs": "jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js",
+        "jshint": "jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js",
+        "lint": "npm run jscs && npm run jshint",
+        "unit": "istanbul test _mocha --reporter=spec test/index.js",
+        "test": "npm run lint && npm run unit",
+        "version": "grunt dist && git add dist/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/elliptic.git"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "brfs": "^1.4.3",
+        "coveralls": "^2.11.3",
+        "grunt": "^0.4.5",
+        "grunt-browserify": "^5.0.0",
+        "grunt-contrib-connect": "^1.0.0",
+        "grunt-contrib-copy": "^1.0.0",
+        "grunt-contrib-uglify": "^1.0.1",
+        "grunt-mocha-istanbul": "^3.0.1",
+        "grunt-saucelabs": "^8.6.2",
+        "istanbul": "^0.4.2",
+        "jscs": "^2.9.0",
+        "jshint": "^2.6.0",
+        "mocha": "^2.1.0"
+      },
+      "dependencies": {
+        "bn.js": "^4.0.0",
+        "brorand": "^1.0.1",
+        "hash.js": "^1.0.0",
+        "inherits": "^2.0.1"
+      },
+      "gitHead": "fa5ffdc2d008fd6b1eb6e34864c977ea2748b7ce",
+      "_id": "elliptic@6.2.5",
+      "_shasum": "24846340477dfce75c56b8ff4b1d6d6ec258e06a",
+      "_from": ".",
+      "_npmVersion": "3.8.6",
+      "_nodeVersion": "6.0.0",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "dist": {
+        "shasum": "24846340477dfce75c56b8ff4b1d6d6ec258e06a",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-6.2.5.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/elliptic-6.2.5.tgz_1463781139171_0.8202476925216615"
+      },
+      "directories": {}
+    },
+    "6.2.6": {
+      "name": "elliptic",
+      "version": "6.2.6",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "files": [
+        "lib"
+      ],
+      "scripts": {
+        "jscs": "jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js",
+        "jshint": "jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js",
+        "lint": "npm run jscs && npm run jshint",
+        "unit": "istanbul test _mocha --reporter=spec test/index.js",
+        "test": "npm run lint && npm run unit",
+        "version": "grunt dist && git add dist/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/elliptic.git"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "brfs": "^1.4.3",
+        "coveralls": "^2.11.3",
+        "grunt": "^0.4.5",
+        "grunt-browserify": "^5.0.0",
+        "grunt-contrib-connect": "^1.0.0",
+        "grunt-contrib-copy": "^1.0.0",
+        "grunt-contrib-uglify": "^1.0.1",
+        "grunt-mocha-istanbul": "^3.0.1",
+        "grunt-saucelabs": "^8.6.2",
+        "istanbul": "^0.4.2",
+        "jscs": "^2.9.0",
+        "jshint": "^2.6.0",
+        "mocha": "^2.1.0"
+      },
+      "dependencies": {
+        "bn.js": "^4.0.0",
+        "brorand": "^1.0.1",
+        "hash.js": "^1.0.0",
+        "inherits": "^2.0.1"
+      },
+      "gitHead": "0d7910d46075c31325838d35cb0685f449f32868",
+      "_id": "elliptic@6.2.6",
+      "_shasum": "f3f9371440a4af3ee459460a8078d65ad7f9a581",
+      "_from": ".",
+      "_npmVersion": "3.8.6",
+      "_nodeVersion": "6.0.0",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "dist": {
+        "shasum": "f3f9371440a4af3ee459460a8078d65ad7f9a581",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-6.2.6.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/elliptic-6.2.6.tgz_1464201676702_0.483377248281613"
+      },
+      "directories": {}
+    },
+    "6.2.7": {
+      "name": "elliptic",
+      "version": "6.2.7",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "files": [
+        "lib"
+      ],
+      "scripts": {
+        "jscs": "jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js",
+        "jshint": "jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js",
+        "lint": "npm run jscs && npm run jshint",
+        "unit": "istanbul test _mocha --reporter=spec test/index.js",
+        "test": "npm run lint && npm run unit",
+        "version": "grunt dist && git add dist/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/elliptic.git"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "brfs": "^1.4.3",
+        "coveralls": "^2.11.3",
+        "grunt": "^0.4.5",
+        "grunt-browserify": "^5.0.0",
+        "grunt-contrib-connect": "^1.0.0",
+        "grunt-contrib-copy": "^1.0.0",
+        "grunt-contrib-uglify": "^1.0.1",
+        "grunt-mocha-istanbul": "^3.0.1",
+        "grunt-saucelabs": "^8.6.2",
+        "istanbul": "^0.4.2",
+        "jscs": "^2.9.0",
+        "jshint": "^2.6.0",
+        "mocha": "^2.1.0"
+      },
+      "dependencies": {
+        "bn.js": "^4.0.0",
+        "brorand": "^1.0.1",
+        "hash.js": "^1.0.0",
+        "inherits": "^2.0.1"
+      },
+      "gitHead": "6a8ef1457bb8f45102d6678fc1095165f77d55d3",
+      "_id": "elliptic@6.2.7",
+      "_shasum": "dce82efbf176eefa7495d4be3e8b9f5b5694b295",
+      "_from": ".",
+      "_npmVersion": "3.8.6",
+      "_nodeVersion": "6.0.0",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "dist": {
+        "shasum": "dce82efbf176eefa7495d4be3e8b9f5b5694b295",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-6.2.7.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/elliptic-6.2.7.tgz_1464201793202_0.12479878286831081"
+      },
+      "directories": {}
+    },
+    "6.2.8": {
+      "name": "elliptic",
+      "version": "6.2.8",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "files": [
+        "lib"
+      ],
+      "scripts": {
+        "jscs": "jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js",
+        "jshint": "jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js",
+        "lint": "npm run jscs && npm run jshint",
+        "unit": "istanbul test _mocha --reporter=spec test/index.js",
+        "test": "npm run lint && npm run unit",
+        "version": "grunt dist && git add dist/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/elliptic.git"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "brfs": "^1.4.3",
+        "coveralls": "^2.11.3",
+        "grunt": "^0.4.5",
+        "grunt-browserify": "^5.0.0",
+        "grunt-contrib-connect": "^1.0.0",
+        "grunt-contrib-copy": "^1.0.0",
+        "grunt-contrib-uglify": "^1.0.1",
+        "grunt-mocha-istanbul": "^3.0.1",
+        "grunt-saucelabs": "^8.6.2",
+        "istanbul": "^0.4.2",
+        "jscs": "^2.9.0",
+        "jshint": "^2.6.0",
+        "mocha": "^2.1.0"
+      },
+      "dependencies": {
+        "bn.js": "^4.0.0",
+        "brorand": "^1.0.1",
+        "hash.js": "^1.0.0",
+        "inherits": "^2.0.1"
+      },
+      "gitHead": "236f37395bdf9e4af1dfc8e84f6353bce540b93e",
+      "_id": "elliptic@6.2.8",
+      "_shasum": "44a25b3d1550bebb74d0b6d22d89940206b51739",
+      "_from": ".",
+      "_npmVersion": "3.8.6",
+      "_nodeVersion": "6.0.0",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "dist": {
+        "shasum": "44a25b3d1550bebb74d0b6d22d89940206b51739",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-6.2.8.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/elliptic-6.2.8.tgz_1464746004719_0.6379144776146859"
+      },
+      "directories": {}
+    },
+    "6.3.0": {
+      "name": "elliptic",
+      "version": "6.3.0",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "files": [
+        "lib"
+      ],
+      "scripts": {
+        "jscs": "jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js",
+        "jshint": "jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js",
+        "lint": "npm run jscs && npm run jshint",
+        "unit": "istanbul test _mocha --reporter=spec test/index.js",
+        "test": "npm run lint && npm run unit",
+        "version": "grunt dist && git add dist/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/elliptic.git"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "brfs": "^1.4.3",
+        "coveralls": "^2.11.3",
+        "grunt": "^0.4.5",
+        "grunt-browserify": "^5.0.0",
+        "grunt-contrib-connect": "^1.0.0",
+        "grunt-contrib-copy": "^1.0.0",
+        "grunt-contrib-uglify": "^1.0.1",
+        "grunt-mocha-istanbul": "^3.0.1",
+        "grunt-saucelabs": "^8.6.2",
+        "istanbul": "^0.4.2",
+        "jscs": "^2.9.0",
+        "jshint": "^2.6.0",
+        "mocha": "^2.1.0"
+      },
+      "dependencies": {
+        "bn.js": "^4.4.0",
+        "brorand": "^1.0.1",
+        "hash.js": "^1.0.0",
+        "inherits": "^2.0.1"
+      },
+      "gitHead": "7b1c732b2370a44d39345f5c9087f42e70988590",
+      "_id": "elliptic@6.3.0",
+      "_shasum": "1b5e9eba9940f12a474651c712190d373bc8b21a",
+      "_from": ".",
+      "_npmVersion": "3.8.6",
+      "_nodeVersion": "6.0.0",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "dist": {
+        "shasum": "1b5e9eba9940f12a474651c712190d373bc8b21a",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-6.3.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/elliptic-6.3.0.tgz_1465877833597_0.14170785737223923"
+      },
+      "directories": {}
+    },
+    "6.3.1": {
+      "name": "elliptic",
+      "version": "6.3.1",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "files": [
+        "lib"
+      ],
+      "scripts": {
+        "jscs": "jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js",
+        "jshint": "jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js",
+        "lint": "npm run jscs && npm run jshint",
+        "unit": "istanbul test _mocha --reporter=spec test/index.js",
+        "test": "npm run lint && npm run unit",
+        "version": "grunt dist && git add dist/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/elliptic.git"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "brfs": "^1.4.3",
+        "coveralls": "^2.11.3",
+        "grunt": "^0.4.5",
+        "grunt-browserify": "^5.0.0",
+        "grunt-contrib-connect": "^1.0.0",
+        "grunt-contrib-copy": "^1.0.0",
+        "grunt-contrib-uglify": "^1.0.1",
+        "grunt-mocha-istanbul": "^3.0.1",
+        "grunt-saucelabs": "^8.6.2",
+        "istanbul": "^0.4.2",
+        "jscs": "^2.9.0",
+        "jshint": "^2.6.0",
+        "mocha": "^2.1.0"
+      },
+      "dependencies": {
+        "bn.js": "^4.4.0",
+        "brorand": "^1.0.1",
+        "hash.js": "^1.0.0",
+        "inherits": "^2.0.1"
+      },
+      "gitHead": "c53f5cf3d832c0073eb4a4ed423a464cbce68f3e",
+      "_id": "elliptic@6.3.1",
+      "_shasum": "17781f2109ab0ec686b146bdcff5d2e8c6aeceda",
+      "_from": ".",
+      "_npmVersion": "3.8.6",
+      "_nodeVersion": "6.0.0",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "dist": {
+        "shasum": "17781f2109ab0ec686b146bdcff5d2e8c6aeceda",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-6.3.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/elliptic-6.3.1.tgz_1465921413402_0.5202967382501811"
+      },
+      "directories": {}
+    },
+    "6.3.2": {
+      "name": "elliptic",
+      "version": "6.3.2",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "files": [
+        "lib"
+      ],
+      "scripts": {
+        "jscs": "jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js",
+        "jshint": "jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js",
+        "lint": "npm run jscs && npm run jshint",
+        "unit": "istanbul test _mocha --reporter=spec test/index.js",
+        "test": "npm run lint && npm run unit",
+        "version": "grunt dist && git add dist/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/elliptic.git"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "brfs": "^1.4.3",
+        "coveralls": "^2.11.3",
+        "grunt": "^0.4.5",
+        "grunt-browserify": "^5.0.0",
+        "grunt-contrib-connect": "^1.0.0",
+        "grunt-contrib-copy": "^1.0.0",
+        "grunt-contrib-uglify": "^1.0.1",
+        "grunt-mocha-istanbul": "^3.0.1",
+        "grunt-saucelabs": "^8.6.2",
+        "istanbul": "^0.4.2",
+        "jscs": "^2.9.0",
+        "jshint": "^2.6.0",
+        "mocha": "^2.1.0"
+      },
+      "dependencies": {
+        "bn.js": "^4.4.0",
+        "brorand": "^1.0.1",
+        "hash.js": "^1.0.0",
+        "inherits": "^2.0.1"
+      },
+      "gitHead": "cbace4683a4a548dc0306ef36756151a20299cd5",
+      "_id": "elliptic@6.3.2",
+      "_shasum": "e4c81e0829cf0a65ab70e998b8232723b5c1bc48",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.3.0",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "dist": {
+        "shasum": "e4c81e0829cf0a65ab70e998b8232723b5c1bc48",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-6.3.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/elliptic-6.3.2.tgz_1473938837205_0.3108903462998569"
+      },
+      "directories": {}
+    },
+    "6.3.3": {
+      "name": "elliptic",
+      "version": "6.3.3",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "files": [
+        "lib"
+      ],
+      "scripts": {
+        "jscs": "jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js",
+        "jshint": "jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js",
+        "lint": "npm run jscs && npm run jshint",
+        "unit": "istanbul test _mocha --reporter=spec test/index.js",
+        "test": "npm run lint && npm run unit",
+        "version": "grunt dist && git add dist/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/elliptic.git"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "brfs": "^1.4.3",
+        "coveralls": "^2.11.3",
+        "grunt": "^0.4.5",
+        "grunt-browserify": "^5.0.0",
+        "grunt-cli": "^1.2.0",
+        "grunt-contrib-connect": "^1.0.0",
+        "grunt-contrib-copy": "^1.0.0",
+        "grunt-contrib-uglify": "^1.0.1",
+        "grunt-mocha-istanbul": "^3.0.1",
+        "grunt-saucelabs": "^8.6.2",
+        "istanbul": "^0.4.2",
+        "jscs": "^2.9.0",
+        "jshint": "^2.6.0",
+        "mocha": "^2.1.0"
+      },
+      "dependencies": {
+        "bn.js": "^4.4.0",
+        "brorand": "^1.0.1",
+        "hash.js": "^1.0.0",
+        "inherits": "^2.0.1"
+      },
+      "gitHead": "63aee8d697e9b7fac37ece24222029117a890a7e",
+      "_id": "elliptic@6.3.3",
+      "_shasum": "5482d9646d54bcb89fd7d994fc9e2e9568876e3f",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "7.0.0",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "dist": {
+        "shasum": "5482d9646d54bcb89fd7d994fc9e2e9568876e3f",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-6.3.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/elliptic-6.3.3.tgz_1486422837740_0.10658654430881143"
+      },
+      "directories": {}
+    },
+    "6.4.0": {
+      "name": "elliptic",
+      "version": "6.4.0",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "files": [
+        "lib"
+      ],
+      "scripts": {
+        "jscs": "jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js",
+        "jshint": "jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js",
+        "lint": "npm run jscs && npm run jshint",
+        "unit": "istanbul test _mocha --reporter=spec test/index.js",
+        "test": "npm run lint && npm run unit",
+        "version": "grunt dist && git add dist/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/elliptic.git"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "brfs": "^1.4.3",
+        "coveralls": "^2.11.3",
+        "grunt": "^0.4.5",
+        "grunt-browserify": "^5.0.0",
+        "grunt-cli": "^1.2.0",
+        "grunt-contrib-connect": "^1.0.0",
+        "grunt-contrib-copy": "^1.0.0",
+        "grunt-contrib-uglify": "^1.0.1",
+        "grunt-mocha-istanbul": "^3.0.1",
+        "grunt-saucelabs": "^8.6.2",
+        "istanbul": "^0.4.2",
+        "jscs": "^2.9.0",
+        "jshint": "^2.6.0",
+        "mocha": "^2.1.0"
+      },
+      "dependencies": {
+        "bn.js": "^4.4.0",
+        "brorand": "^1.0.1",
+        "hash.js": "^1.0.0",
+        "hmac-drbg": "^1.0.0",
+        "inherits": "^2.0.1",
+        "minimalistic-assert": "^1.0.0",
+        "minimalistic-crypto-utils": "^1.0.0"
+      },
+      "gitHead": "6b0d2b76caae91471649c8e21f0b1d3ba0f96090",
+      "_id": "elliptic@6.4.0",
+      "_shasum": "cac9af8762c85836187003c8dfe193e5e2eae5df",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "7.0.0",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "dist": {
+        "shasum": "cac9af8762c85836187003c8dfe193e5e2eae5df",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-6.4.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/elliptic-6.4.0.tgz_1487798866428_0.30510620190761983"
+      },
+      "directories": {}
+    },
+    "6.4.1": {
+      "name": "elliptic",
+      "version": "6.4.1",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "files": [
+        "lib"
+      ],
+      "scripts": {
+        "jscs": "jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js",
+        "jshint": "jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js",
+        "lint": "npm run jscs && npm run jshint",
+        "unit": "istanbul test _mocha --reporter=spec test/index.js",
+        "test": "npm run lint && npm run unit",
+        "version": "grunt dist && git add dist/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/elliptic.git"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "brfs": "^1.4.3",
+        "coveralls": "^2.11.3",
+        "grunt": "^0.4.5",
+        "grunt-browserify": "^5.0.0",
+        "grunt-cli": "^1.2.0",
+        "grunt-contrib-connect": "^1.0.0",
+        "grunt-contrib-copy": "^1.0.0",
+        "grunt-contrib-uglify": "^1.0.1",
+        "grunt-mocha-istanbul": "^3.0.1",
+        "grunt-saucelabs": "^8.6.2",
+        "istanbul": "^0.4.2",
+        "jscs": "^2.9.0",
+        "jshint": "^2.6.0",
+        "mocha": "^2.1.0"
+      },
+      "dependencies": {
+        "bn.js": "^4.4.0",
+        "brorand": "^1.0.1",
+        "hash.js": "^1.0.0",
+        "hmac-drbg": "^1.0.0",
+        "inherits": "^2.0.1",
+        "minimalistic-assert": "^1.0.0",
+        "minimalistic-crypto-utils": "^1.0.0"
+      },
+      "gitHead": "523da1cf71ddcfd607fbdee1858bc2af47f0e700",
+      "_id": "elliptic@6.4.1",
+      "_npmVersion": "6.3.0",
+      "_nodeVersion": "10.5.0",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "dist": {
+        "integrity": "sha512-BsXLz5sqX8OHcsh7CqBMztyXARmGQ3LWPtGjJi6DiJHq5C/qvi9P3OqgswKSDftbu8+IoI/QDTAm2fFnQ9SZSQ==",
+        "shasum": "c2d0b7776911b86722c632c3c06c60f2f819939a",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-6.4.1.tgz",
+        "fileCount": 17,
+        "unpackedSize": 118371,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJba7vUCRA9TVsSAnZWagAA+gcP/jWaj5GmDZ0YFi/X4g5O\nx+pxu9i3HbP9YqywT7rz3XFXSaytu0LQDeDEbddl523X69tsbKfzHRTcnW8n\n2r0VjPhttRm+0RpEhBwjSIK34VkQA1xIWh2ugOToKXVCFVLM5VFDPGzbiN6x\n/hpL7gj1hoCRVmuhjnqFQ+vPKACKfv1Eq4CsRmu2focmP37kQpWQlweD/z4V\nJF4NxA33Fvp13Fl+9g4sPHyhUVsW9ojVaG3Ijn70pCaGQM18UPlbODkWQ1QX\nAgteOFjkIOtcalJk3B3qsM8GZeHEcAFvt2T73miJkHdCGNmRQS45Ede+gnj0\nlLlZJsCCKUHtTqrlprHo6AgMnBZufmytyozYAHC1/JYniazSBi2yPHtQeniR\nl69BfiRBdD2rNrMPwmCNRkMqrgel5WMGpaD0xdaFAHF1Ru2ZQFKsA7KvPGgp\nA20+LN11cCib67Pg5XDyrZ92T3yXec+6gQ3iq9d9UBZKFGl0P8ebVqq1LrUJ\na6nekwMpRISWnKcqV72XVmQdBmUWHq9VfVLsWJzVIJqtpHmUO7q74ACP3i4W\n0/F1REeI0YEhh3NjeStdDecfjlu7PY0pLQpbk2I3ms+6DO+cAfeDEev5jFBK\nwQabRNhITeT1FVtxZAcApj33fnCdqwaWr1NS00K5ZRqhDTTzPr/O4KRN4CR1\npstU\r\n=UVBB\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/elliptic_6.4.1_1533787091502_0.6309761823717674"
+      },
+      "_hasShrinkwrap": false
+    },
+    "6.5.0": {
+      "name": "elliptic",
+      "version": "6.5.0",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "scripts": {
+        "jscs": "jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js",
+        "jshint": "jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js",
+        "lint": "npm run jscs && npm run jshint",
+        "unit": "istanbul test _mocha --reporter=spec test/index.js",
+        "test": "npm run lint && npm run unit",
+        "version": "grunt dist && git add dist/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/elliptic.git"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "brfs": "^1.4.3",
+        "coveralls": "^2.11.3",
+        "grunt": "^0.4.5",
+        "grunt-browserify": "^5.0.0",
+        "grunt-cli": "^1.2.0",
+        "grunt-contrib-connect": "^1.0.0",
+        "grunt-contrib-copy": "^1.0.0",
+        "grunt-contrib-uglify": "^1.0.1",
+        "grunt-mocha-istanbul": "^3.0.1",
+        "grunt-saucelabs": "^8.6.2",
+        "istanbul": "^0.4.2",
+        "jscs": "^2.9.0",
+        "jshint": "^2.6.0",
+        "mocha": "^2.1.0"
+      },
+      "dependencies": {
+        "bn.js": "^4.4.0",
+        "brorand": "^1.0.1",
+        "hash.js": "^1.0.0",
+        "hmac-drbg": "^1.0.0",
+        "inherits": "^2.0.1",
+        "minimalistic-assert": "^1.0.0",
+        "minimalistic-crypto-utils": "^1.0.0"
+      },
+      "gitHead": "475f066aebd14681591f0f0f18a2abc0ded8c390",
+      "_id": "elliptic@6.5.0",
+      "_nodeVersion": "12.2.0",
+      "_npmVersion": "6.9.0",
+      "dist": {
+        "integrity": "sha512-eFOJTMyCYb7xtE/caJ6JJu+bhi67WCYNbkGSknu20pmM8Ke/bqOfdnZWxyoGN26JgfxTbXrsCkEw4KheCT/KGg==",
+        "shasum": "2b8ed4c891b7de3200e14412a5b8248c7af505ca",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-6.5.0.tgz",
+        "fileCount": 17,
+        "unpackedSize": 118006,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdEu6jCRA9TVsSAnZWagAAJh4QAJXJ18MReidNMHrxFJGv\ngSONMB2uz0lWJ7eEUyggaCA/Tr6w4RBA6Ilne0Wou3jTAGou+GClpAde6Hkb\nEq1iq1brx+5gHeY3rGs8GB+T3c1JsVz+2t6934esXGM6IJNmG91TaCMSbuwQ\nTWHD62RxFylLYjffBIWt6KLximZnXcvAES0Qu7VUql1SlfvmGtaHlQAhvtLj\nG+ayBnSnWMcEvDPJdfnKi67PlGMa334spEmWzcqobFySr+y/ufiZRCp+wiSl\ndCwbFNMaH4fue+dhq1m7jGO/euFQvJw2Jf32zT/ToaM768nH8yHrrZ8lMRjs\ngCUymge8kbI5W1WA8wla7+J52Exbo6LbcBqSupVhVw6gXkOdjQCOkywBXa1c\nPiFxwOUSfdFATpkUi3/8serYCgv9NgGzvQ0rjej0//1+he6q7UUyKn9wyrdH\nMntmi18UgyQ8c1NrshKAOCb1oeniCEv7B1adfH2axH9uvMiVP8N5BMfAUNE1\nnkCD3lDXRz/7C+90DiI+h2MS3+az8ciqMTbpKlw3HrmUyCex+KvLq9+wNLGf\nyaJGd/r6NT0pu36v0M2+ul266/RbbY6D1ED/cl8gDZRFTT/SfTCkU+QAn2Mg\nfAlnn9BXogYR1XM1GNrnGUVkY7ngORiAGez5DU7P93jMpdSS9OtwAHHi1Oto\nbZ+X\r\n=LuMF\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/elliptic_6.5.0_1561521826385_0.20848274510512943"
+      },
+      "_hasShrinkwrap": false
+    },
+    "6.5.1": {
+      "name": "elliptic",
+      "version": "6.5.1",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "scripts": {
+        "jscs": "jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js",
+        "jshint": "jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js",
+        "lint": "npm run jscs && npm run jshint",
+        "unit": "istanbul test _mocha --reporter=spec test/index.js",
+        "test": "npm run lint && npm run unit",
+        "version": "grunt dist && git add dist/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/elliptic.git"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "brfs": "^1.4.3",
+        "coveralls": "^3.0.4",
+        "grunt": "^1.0.4",
+        "grunt-browserify": "^5.0.0",
+        "grunt-cli": "^1.2.0",
+        "grunt-contrib-connect": "^1.0.0",
+        "grunt-contrib-copy": "^1.0.0",
+        "grunt-contrib-uglify": "^1.0.1",
+        "grunt-mocha-istanbul": "^3.0.1",
+        "grunt-saucelabs": "^9.0.1",
+        "istanbul": "^0.4.2",
+        "jscs": "^3.0.7",
+        "jshint": "^2.6.0",
+        "mocha": "^6.1.4"
+      },
+      "dependencies": {
+        "bn.js": "^4.4.0",
+        "brorand": "^1.0.1",
+        "hash.js": "^1.0.0",
+        "hmac-drbg": "^1.0.0",
+        "inherits": "^2.0.1",
+        "minimalistic-assert": "^1.0.0",
+        "minimalistic-crypto-utils": "^1.0.0"
+      },
+      "gitHead": "71e4e8e2f5b8f0bdbfbe106c72cc9fbc746d3d60",
+      "_id": "elliptic@6.5.1",
+      "_nodeVersion": "12.2.0",
+      "_npmVersion": "6.11.2",
+      "dist": {
+        "integrity": "sha512-xvJINNLbTeWQjrl6X+7eQCrIy/YPv5XCpKW6kB5mKvtnGILoLDcySuwomfdzt0BMdLNVnuRNTuzKNHj0bva1Cg==",
+        "shasum": "c380f5f909bf1b9b4428d028cd18d3b0efd6b52b",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-6.5.1.tgz",
+        "fileCount": 17,
+        "unpackedSize": 118051,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdbyK2CRA9TVsSAnZWagAAZR0P/jpSTQHkhgrh51Ql5iEp\nk19ZPvn6rvDRJdjPBgZfimuE8jYbzRrqEk0O8OJvWJAgBUz7RGcWsYjXEb0v\ncapOYnS9iL7EGmrZm/zIk2wB4K4vqbY1brh1WSGtZPJOotaTebfrepkUcqrk\nr2ZDg5YryX+gMD2QjumRSb3xXHbQukPvM9cc5WF5ZRaEzgQxRwtwwqzNejs1\np1DzKTNqBWzDGyl3NRdNPO8sEfcaf8LCyCu85OEFR1B7HytR1TH2B1uX7bNb\n82pw62BtmFbafa3VmFxeYk6Yqi5dHXUqsqLIGAsJJyaRsVOyLe/BuT7dHWgX\nEh8bQP4quLm2WZFIIRSUml4QXHiviMyUHfYITg05T/ODZejseHy65LYGgTsS\nQtsu+tDv+a4h+2FWNfkeVyinkEMNetlp+vPkSKVFeNLbCRFTR9ufgZqLn2IL\nnxpLdHLt9y6HaWDSSWwUwUYnK7WRiF8zP1cNRqZWyf7IPLHyRruwpkUFk9/u\nc6J3IgBQpgXfLxxXJTqqDvENmmMGtcJRWN0wtDLWNcYhm5f2px9m5vdxIj0U\nQn+6IZMgxTPsuA4w3iyagWbl/xtuEEw2XZUB++TztGfUtMImRFNEOqI3LO6V\n9CnJKpeVDPckXgDBwHJF9w6ywriLQKyR9rG8hl+nlonSbohg2hdQdB7TTeWJ\n1/J0\r\n=uYn+\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/elliptic_6.5.1_1567564470143_0.35768573259267966"
+      },
+      "_hasShrinkwrap": false
+    },
+    "6.5.2": {
+      "name": "elliptic",
+      "version": "6.5.2",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "scripts": {
+        "jscs": "jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js",
+        "jshint": "jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js",
+        "lint": "npm run jscs && npm run jshint",
+        "unit": "istanbul test _mocha --reporter=spec test/index.js",
+        "test": "npm run lint && npm run unit",
+        "version": "grunt dist && git add dist/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/elliptic.git"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "brfs": "^1.4.3",
+        "coveralls": "^3.0.8",
+        "grunt": "^1.0.4",
+        "grunt-browserify": "^5.0.0",
+        "grunt-cli": "^1.2.0",
+        "grunt-contrib-connect": "^1.0.0",
+        "grunt-contrib-copy": "^1.0.0",
+        "grunt-contrib-uglify": "^1.0.1",
+        "grunt-mocha-istanbul": "^3.0.1",
+        "grunt-saucelabs": "^9.0.1",
+        "istanbul": "^0.4.2",
+        "jscs": "^3.0.7",
+        "jshint": "^2.10.3",
+        "mocha": "^6.2.2"
+      },
+      "dependencies": {
+        "bn.js": "^4.4.0",
+        "brorand": "^1.0.1",
+        "hash.js": "^1.0.0",
+        "hmac-drbg": "^1.0.0",
+        "inherits": "^2.0.1",
+        "minimalistic-assert": "^1.0.0",
+        "minimalistic-crypto-utils": "^1.0.0"
+      },
+      "gitHead": "60489415e545efdfd3010ae74b9726facbf08ca8",
+      "_id": "elliptic@6.5.2",
+      "_nodeVersion": "12.11.0",
+      "_npmVersion": "6.12.1",
+      "dist": {
+        "integrity": "sha512-f4x70okzZbIQl/NSRLkI/+tteV/9WqL98zx+SQ69KbXxmVrmjwsNUPn/gYJJ0sHvEak24cZgHIPegRePAtA/xw==",
+        "shasum": "05c5678d7173c049d8ca433552224a495d0e3762",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-6.5.2.tgz",
+        "fileCount": 17,
+        "unpackedSize": 118072,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd2DHgCRA9TVsSAnZWagAAfx0P/RYZUDcD1KNqpERJSTgL\nlA3wXXXVB78IVwSy9laMD1GdDpsMy71PHjFMZL1NM2ZaZUUi7eiNaYf8sFrP\nQWadLsl3M2tkW6T4AkgxJXMEmbf3k9hCy+ZvRdWKJUF0g44WORvK2SNzDI/C\nIuBZ9xfTS5dZ3jZJOMZNZO4+PHzMQ/pzCGXafuuzsryPlcx0PvIN66xTRQbo\n/ByAl3lIK/C5HsFUkaSxcabcSmZrVuwDw8ciKGrBXjWkXAqLzO0u9HEczucP\n+RNNFvocrTB4ge/4yV4cdGSF7QXkzJ7hPqQgnhj0TrJO//qBERKXffQq91Hr\nU/xdUsX/dnIqpzpV81E36L+0VIxxg66/21ba4qlsho0i57v83Y6jLH3wFud4\n/LGzynTDiwySpREE9Gb3tnXSR3OuZstyJORQwEglAQIp7QcneqGOghNgY4am\nuFkM/6rAJi4tGw8uBn0tgRQZHtmy8XwNtuN/ShRoBzBayN2XVmJrApUxPpJK\nu+v3O0skLnpsXqgCpskrRK4dWtgkItxSZn91DZ219eGZvpFOgS8Jnb/bA07B\nZ7mGgM0B91Bc4ZbUGyGyv17j/p5fItlA0nqX6itwNjBI+BeYlenWXG3JfEjd\npteBvQyvxCHtcnc987HIm6VYGFvj1xlI7eLD4fQXPbuos0jbyEo2ndIU8jIT\nJVlS\r\n=BoXv\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/elliptic_6.5.2_1574449632470_0.8146993695516966"
+      },
+      "_hasShrinkwrap": false
+    },
+    "6.5.3": {
+      "name": "elliptic",
+      "version": "6.5.3",
+      "description": "EC cryptography",
+      "main": "lib/elliptic.js",
+      "scripts": {
+        "jscs": "jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js",
+        "jshint": "jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js",
+        "lint": "npm run jscs && npm run jshint",
+        "unit": "istanbul test _mocha --reporter=spec test/index.js",
+        "test": "npm run lint && npm run unit",
+        "version": "grunt dist && git add dist/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/elliptic.git"
+      },
+      "keywords": [
+        "EC",
+        "Elliptic",
+        "curve",
+        "Cryptography"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/elliptic/issues"
+      },
+      "homepage": "https://github.com/indutny/elliptic",
+      "devDependencies": {
+        "brfs": "^1.4.3",
+        "coveralls": "^3.0.8",
+        "grunt": "^1.0.4",
+        "grunt-browserify": "^5.0.0",
+        "grunt-cli": "^1.2.0",
+        "grunt-contrib-connect": "^1.0.0",
+        "grunt-contrib-copy": "^1.0.0",
+        "grunt-contrib-uglify": "^1.0.1",
+        "grunt-mocha-istanbul": "^3.0.1",
+        "grunt-saucelabs": "^9.0.1",
+        "istanbul": "^0.4.2",
+        "jscs": "^3.0.7",
+        "jshint": "^2.10.3",
+        "mocha": "^6.2.2"
+      },
+      "dependencies": {
+        "bn.js": "^4.4.0",
+        "brorand": "^1.0.1",
+        "hash.js": "^1.0.0",
+        "hmac-drbg": "^1.0.0",
+        "inherits": "^2.0.1",
+        "minimalistic-assert": "^1.0.0",
+        "minimalistic-crypto-utils": "^1.0.0"
+      },
+      "gitHead": "8647803dc3d90506aa03021737f7b061ba959ae1",
+      "_id": "elliptic@6.5.3",
+      "_nodeVersion": "13.9.0",
+      "_npmVersion": "6.13.7",
+      "dist": {
+        "integrity": "sha512-IMqzv5wNQf+E6aHeIqATs0tOLeOTwj1QKbRcS3jBbYkl5oLAserA8yJTT7/VyHUYG91PRmPyeQDObKLPpeS4dw==",
+        "shasum": "cb59eb2efdaf73a0bd78ccd7015a62ad6e0f93d6",
+        "tarball": "https://registry.npmjs.org/elliptic/-/elliptic-6.5.3.tgz",
+        "fileCount": 17,
+        "unpackedSize": 118531,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJe64kfCRA9TVsSAnZWagAAnnEP/jFxX0m9YZshgdiItHkR\nVLy+kvaHKZyosZySjGqIXkJn9JQ2wzOt4YCKVyaRnrAlSxJm7D7x568Uq1fl\nOgIdY/t2VDgwgiOIYZ7RzpE4AKLnEw45LX4XvzXlQ6xxD8YV1J7AltlxYhNl\nIm8ofDd2zOTqwrRicnAUaVR0PoQwnLhKUsOaRUPSqP9WByDKq5qNjLb6Hcxi\nZVsZHaaIPQFzMah9Kxn8aAGGf9f8WizUq84qjJnL27ATTJsjrzku3V/elMvC\nljY7OtcWf+En6yZigHfK3eYVnYuZmpUmPmtP6+mcAcqnp2LDu+Tj0I0NUJjW\nbYIlOzutL1W5U6dSKwI8yi1OwR+NuXcJDu8b05cXpI2V85CbZ9uBu1uhloNY\nytwVzVkuZD1GifAjCMfe3Zjlha6KOvo5ASatWS1u9cxD887wuJA/rWpFMGgF\n/lkZASJzcij6gwDpSMmkpX3OJUE7xTrPv+8QBt7HBH22nqZm41l3HRFEH/3r\n/pkRGVI6MiyILzYHgQOo716Fbnj9u9NFXoeAcQm/fBDaaDTG/XYK34gmF2Iy\nRqbmsFNRoQ5HYbdIwHEzom2gkT8Zm9Gac+zUpIt+I/Z1wvvdai7K3VI9wHgw\n8e8+TsyJ6KB2iCo8h0uvwWrIm/dk3dAdnW19X3jxqhGc8QEV/mh/VORaXuE1\nkv4D\r\n=45uD\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/elliptic_6.5.3_1592494366350_0.7296651468879995"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# Elliptic [![Build Status](https://secure.travis-ci.org/indutny/elliptic.png)](http://travis-ci.org/indutny/elliptic) [![Coverage Status](https://coveralls.io/repos/indutny/elliptic/badge.svg?branch=master&service=github)](https://coveralls.io/github/indutny/elliptic?branch=master) [![Code Climate](https://codeclimate.com/github/indutny/elliptic/badges/gpa.svg)](https://codeclimate.com/github/indutny/elliptic)\n\n[![Saucelabs Test Status](https://saucelabs.com/browser-matrix/gh-indutny-elliptic.svg)](https://saucelabs.com/u/gh-indutny-elliptic)\n\nFast elliptic-curve cryptography in a plain javascript implementation.\n\nNOTE: Please take a look at http://safecurves.cr.yp.to/ before choosing a curve\nfor your cryptography operations.\n\n## Incentive\n\nECC is much slower than regular RSA cryptography, the JS implementations are\neven more slower.\n\n## Benchmarks\n\n```bash\n$ node benchmarks/index.js\nBenchmarking: sign\nelliptic#sign x 262 ops/sec ±0.51% (177 runs sampled)\neccjs#sign x 55.91 ops/sec ±0.90% (144 runs sampled)\n------------------------\nFastest is elliptic#sign\n========================\nBenchmarking: verify\nelliptic#verify x 113 ops/sec ±0.50% (166 runs sampled)\neccjs#verify x 48.56 ops/sec ±0.36% (125 runs sampled)\n------------------------\nFastest is elliptic#verify\n========================\nBenchmarking: gen\nelliptic#gen x 294 ops/sec ±0.43% (176 runs sampled)\neccjs#gen x 62.25 ops/sec ±0.63% (129 runs sampled)\n------------------------\nFastest is elliptic#gen\n========================\nBenchmarking: ecdh\nelliptic#ecdh x 136 ops/sec ±0.85% (156 runs sampled)\n------------------------\nFastest is elliptic#ecdh\n========================\n```\n\n## API\n\n### ECDSA\n\n```javascript\nvar EC = require('elliptic').ec;\n\n// Create and initialize EC context\n// (better do it once and reuse it)\nvar ec = new EC('secp256k1');\n\n// Generate keys\nvar key = ec.genKeyPair();\n\n// Sign the message's hash (input must be an array, or a hex-string)\nvar msgHash = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ];\nvar signature = key.sign(msgHash);\n\n// Export DER encoded signature in Array\nvar derSign = signature.toDER();\n\n// Verify signature\nconsole.log(key.verify(msgHash, derSign));\n\n// CHECK WITH NO PRIVATE KEY\n\nvar pubPoint = key.getPublic();\nvar x = pubPoint.getX();\nvar y = pubPoint.getY();\n\n// Public Key MUST be either:\n// 1) '04' + hex string of x + hex string of y; or\n// 2) object with two hex string properties (x and y); or\n// 3) object with two buffer properties (x and y)\nvar pub = pubPoint.encode('hex');                                 // case 1\nvar pub = { x: x.toString('hex'), y: y.toString('hex') };         // case 2\nvar pub = { x: x.toBuffer(), y: y.toBuffer() };                   // case 3\nvar pub = { x: x.toArrayLike(Buffer), y: y.toArrayLike(Buffer) }; // case 3\n\n// Import public key\nvar key = ec.keyFromPublic(pub, 'hex');\n\n// Signature MUST be either:\n// 1) DER-encoded signature as hex-string; or\n// 2) DER-encoded signature as buffer; or\n// 3) object with two hex-string properties (r and s); or\n// 4) object with two buffer properties (r and s)\n\nvar signature = '3046022100...'; // case 1\nvar signature = new Buffer('...'); // case 2\nvar signature = { r: 'b1fc...', s: '9c42...' }; // case 3\n\n// Verify signature\nconsole.log(key.verify(msgHash, signature));\n```\n\n### EdDSA\n\n```javascript\nvar EdDSA = require('elliptic').eddsa;\n\n// Create and initialize EdDSA context\n// (better do it once and reuse it)\nvar ec = new EdDSA('ed25519');\n\n// Create key pair from secret\nvar key = ec.keyFromSecret('693e3c...'); // hex string, array or Buffer\n\n// Sign the message's hash (input must be an array, or a hex-string)\nvar msgHash = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ];\nvar signature = key.sign(msgHash).toHex();\n\n// Verify signature\nconsole.log(key.verify(msgHash, signature));\n\n// CHECK WITH NO PRIVATE KEY\n\n// Import public key\nvar pub = '0a1af638...';\nvar key = ec.keyFromPublic(pub, 'hex');\n\n// Verify signature\nvar signature = '70bed1...';\nconsole.log(key.verify(msgHash, signature));\n```\n\n### ECDH\n\n```javascript\nvar EC = require('elliptic').ec;\nvar ec = new EC('curve25519');\n\n// Generate keys\nvar key1 = ec.genKeyPair();\nvar key2 = ec.genKeyPair();\n\nvar shared1 = key1.derive(key2.getPublic());\nvar shared2 = key2.derive(key1.getPublic());\n\nconsole.log('Both shared secrets are BN instances');\nconsole.log(shared1.toString(16));\nconsole.log(shared2.toString(16));\n```\n\nthree and more members:\n```javascript\nvar EC = require('elliptic').ec;\nvar ec = new EC('curve25519');\n\nvar A = ec.genKeyPair();\nvar B = ec.genKeyPair();\nvar C = ec.genKeyPair();\n\nvar AB = A.getPublic().mul(B.getPrivate())\nvar BC = B.getPublic().mul(C.getPrivate())\nvar CA = C.getPublic().mul(A.getPrivate())\n\nvar ABC = AB.mul(C.getPrivate())\nvar BCA = BC.mul(A.getPrivate())\nvar CAB = CA.mul(B.getPrivate())\n\nconsole.log(ABC.getX().toString(16))\nconsole.log(BCA.getX().toString(16))\nconsole.log(CAB.getX().toString(16))\n```\n\nNOTE: `.derive()` returns a [BN][1] instance.\n\n## Supported curves\n\nElliptic.js support following curve types:\n\n* Short Weierstrass\n* Montgomery\n* Edwards\n* Twisted Edwards\n\nFollowing curve 'presets' are embedded into the library:\n\n* `secp256k1`\n* `p192`\n* `p224`\n* `p256`\n* `p384`\n* `p521`\n* `curve25519`\n* `ed25519`\n\nNOTE: That `curve25519` could not be used for ECDSA, use `ed25519` instead.\n\n### Implementation details\n\nECDSA is using deterministic `k` value generation as per [RFC6979][0]. Most of\nthe curve operations are performed on non-affine coordinates (either projective\nor extended), various windowing techniques are used for different cases.\n\nAll operations are performed in reduction context using [bn.js][1], hashing is\nprovided by [hash.js][2]\n\n### Related projects\n\n* [eccrypto][3]: isomorphic implementation of ECDSA, ECDH and ECIES for both\n  browserify and node (uses `elliptic` for browser and [secp256k1-node][4] for\n  node)\n\n#### LICENSE\n\nThis software is licensed under the MIT License.\n\nCopyright Fedor Indutny, 2014.\n\nPermission is hereby granted, free of charge, to any person obtaining a\ncopy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to permit\npersons to whom the Software is furnished to do so, subject to the\nfollowing conditions:\n\nThe above copyright notice and this permission notice shall be included\nin all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS\nOR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN\nNO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,\nDAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR\nOTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE\nUSE OR OTHER DEALINGS IN THE SOFTWARE.\n\n[0]: http://tools.ietf.org/html/rfc6979\n[1]: https://github.com/indutny/bn.js\n[2]: https://github.com/indutny/hash.js\n[3]: https://github.com/bitchan/eccrypto\n[4]: https://github.com/wanderer/secp256k1-node\n",
+  "maintainers": [
+    {
+      "name": "indutny",
+      "email": "fedor@indutny.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-06-18T15:32:48.908Z",
+    "created": "2014-04-23T16:15:41.559Z",
+    "0.1.0": "2014-04-23T16:15:41.559Z",
+    "0.2.0": "2014-04-25T12:25:26.289Z",
+    "0.3.0": "2014-04-25T20:23:37.794Z",
+    "0.4.0": "2014-04-25T21:15:57.382Z",
+    "0.5.0": "2014-04-26T12:05:35.447Z",
+    "0.6.0": "2014-04-26T22:58:26.494Z",
+    "0.6.1": "2014-04-27T22:34:24.959Z",
+    "0.7.0": "2014-04-29T09:37:30.033Z",
+    "0.8.0": "2014-05-04T23:11:07.401Z",
+    "0.9.0": "2014-05-05T09:45:52.523Z",
+    "0.9.1": "2014-05-05T13:12:19.629Z",
+    "0.9.2": "2014-05-05T13:17:17.892Z",
+    "0.10.0": "2014-05-08T23:45:13.793Z",
+    "0.10.1": "2014-05-09T07:32:15.877Z",
+    "0.10.2": "2014-05-10T18:19:58.531Z",
+    "0.11.0": "2014-05-16T16:55:23.828Z",
+    "0.11.1": "2014-05-17T08:37:20.198Z",
+    "0.12.0": "2014-05-17T16:19:36.145Z",
+    "0.13.1": "2014-05-18T12:28:24.053Z",
+    "0.13.2": "2014-05-21T19:21:51.812Z",
+    "0.14.0": "2014-05-23T16:11:19.979Z",
+    "0.14.1": "2014-05-23T19:36:00.017Z",
+    "0.14.2": "2014-05-24T17:17:21.564Z",
+    "0.15.0": "2014-05-25T17:45:58.005Z",
+    "0.15.1": "2014-05-25T18:03:03.107Z",
+    "0.15.2": "2014-05-27T08:43:10.478Z",
+    "0.15.3": "2014-05-27T18:54:53.615Z",
+    "0.15.4": "2014-05-31T22:57:16.563Z",
+    "0.15.5": "2014-05-31T22:58:14.487Z",
+    "0.15.6": "2014-06-06T04:59:56.367Z",
+    "0.15.7": "2014-06-18T04:45:06.606Z",
+    "0.15.8": "2014-08-27T14:06:50.499Z",
+    "0.15.9": "2014-09-07T20:52:30.353Z",
+    "0.15.10": "2014-09-09T15:21:32.246Z",
+    "0.15.11": "2014-09-25T10:25:31.472Z",
+    "0.15.12": "2014-11-02T19:42:24.649Z",
+    "0.15.13": "2014-11-04T15:53:18.171Z",
+    "0.15.14": "2014-11-05T17:05:41.069Z",
+    "0.15.15": "2014-11-27T16:03:15.490Z",
+    "0.15.16": "2015-01-02T11:42:48.481Z",
+    "0.15.17": "2015-01-02T11:45:01.604Z",
+    "0.16.0": "2015-01-02T18:03:38.604Z",
+    "1.0.0": "2015-01-05T21:00:09.264Z",
+    "1.0.1": "2015-01-12T15:02:29.678Z",
+    "2.0.0": "2015-01-18T19:42:47.681Z",
+    "2.0.1": "2015-01-21T16:04:05.829Z",
+    "2.0.2": "2015-02-07T02:07:47.680Z",
+    "3.0.0": "2015-02-09T20:44:23.489Z",
+    "3.0.1": "2015-02-09T20:44:38.016Z",
+    "3.0.2": "2015-02-14T11:41:23.366Z",
+    "3.0.3": "2015-02-27T19:06:37.668Z",
+    "3.0.4": "2015-06-03T12:03:38.374Z",
+    "3.1.0": "2015-06-11T00:06:57.056Z",
+    "4.0.0": "2015-06-25T02:58:57.140Z",
+    "4.1.0": "2015-07-04T03:25:38.671Z",
+    "5.0.0": "2015-07-07T22:56:31.891Z",
+    "5.1.0": "2015-07-20T03:04:23.753Z",
+    "5.2.0": "2015-10-23T15:49:50.687Z",
+    "5.2.1": "2015-10-28T22:12:41.172Z",
+    "6.0.0": "2015-10-28T22:14:32.118Z",
+    "6.0.1": "2015-11-02T21:06:29.601Z",
+    "6.0.2": "2015-11-07T20:24:29.820Z",
+    "6.1.0": "2016-01-17T05:57:54.838Z",
+    "6.2.0": "2016-01-22T18:31:04.707Z",
+    "6.2.1": "2016-01-24T22:26:48.751Z",
+    "6.2.2": "2016-01-25T20:16:53.622Z",
+    "6.2.3": "2016-01-29T08:00:44.416Z",
+    "6.2.4": "2016-05-20T21:48:54.607Z",
+    "6.2.5": "2016-05-20T21:52:21.803Z",
+    "6.2.6": "2016-05-25T18:41:19.032Z",
+    "6.2.7": "2016-05-25T18:43:15.918Z",
+    "6.2.8": "2016-06-01T01:53:27.222Z",
+    "6.3.0": "2016-06-14T04:17:16.632Z",
+    "6.3.1": "2016-06-14T16:23:36.965Z",
+    "6.3.2": "2016-09-15T11:27:18.557Z",
+    "6.3.3": "2017-02-06T23:13:58.436Z",
+    "6.4.0": "2017-02-22T21:27:47.116Z",
+    "6.4.1": "2018-08-09T03:58:11.648Z",
+    "6.5.0": "2019-06-26T04:03:46.523Z",
+    "6.5.1": "2019-09-04T02:34:30.284Z",
+    "6.5.2": "2019-11-22T19:07:12.647Z",
+    "6.5.3": "2020-06-18T15:32:46.559Z"
+  },
+  "homepage": "https://github.com/indutny/elliptic",
+  "keywords": [
+    "EC",
+    "Elliptic",
+    "curve",
+    "Cryptography"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/indutny/elliptic.git"
+  },
+  "author": {
+    "name": "Fedor Indutny",
+    "email": "fedor@indutny.com"
+  },
+  "bugs": {
+    "url": "https://github.com/indutny/elliptic/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "users": {
+    "ricmoo": true,
+    "charmander": true,
+    "substack": true,
+    "freshlygrazed": true,
+    "invelo": true,
+    "shanewholloway": true,
+    "erikvold": true,
+    "bobxuyang": true,
+    "thejeshgn.com": true,
+    "thejeshgn": true,
+    "you21979": true,
+    "nickeltobias": true,
+    "vandeurenglenn": true,
+    "meeh": true,
+    "bhaskarmelkani": true
+  }
+}

@@ -1,0 +1,1359 @@
+{
+  "_id": "worker-farm",
+  "_rev": "79-8c079b200b067c75a9d52a5e6421f130",
+  "name": "worker-farm",
+  "description": "Distribute processing tasks to child processes with an über-simple API and baked-in durability & custom concurrency options.",
+  "dist-tags": {
+    "latest": "1.7.0"
+  },
+  "versions": {
+    "0.0.0": {
+      "name": "worker-farm",
+      "description": "Distribute processing tasks to child processes with a simple API, durability & custom concurrency requirements",
+      "version": "0.0.0",
+      "homepage": "https://github.com/rvagg/node-worker-farm",
+      "authors": [
+        "Rod Vagg @rvagg <rod@vagg.org> (https://github.com/rvagg)"
+      ],
+      "keywords": [
+        "worker",
+        "child",
+        "processing",
+        "farm"
+      ],
+      "main": "./lib/index.js",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/rvagg/node-worker-farm.git"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "tape": "*"
+      },
+      "scripts": {
+        "test": "node ./tests/"
+      },
+      "license": "MIT",
+      "_id": "worker-farm@0.0.0",
+      "dist": {
+        "shasum": "d2d85a67fd6dd86f532d712ad018bd5b0a53cb0f",
+        "tarball": "https://registry.npmjs.org/worker-farm/-/worker-farm-0.0.0.tgz"
+      },
+      "_npmVersion": "1.1.69",
+      "_npmUser": {
+        "name": "rvagg",
+        "email": "rod@vagg.org"
+      },
+      "maintainers": [
+        {
+          "name": "rvagg",
+          "email": "rod@vagg.org"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.1": {
+      "name": "worker-farm",
+      "description": "Distribute processing tasks to child processes with an über-simple API and baked-in durability & custom concurrency options.",
+      "version": "0.0.1",
+      "homepage": "https://github.com/rvagg/node-worker-farm",
+      "authors": [
+        "Rod Vagg @rvagg <rod@vagg.org> (https://github.com/rvagg)"
+      ],
+      "keywords": [
+        "worker",
+        "child",
+        "processing",
+        "farm"
+      ],
+      "main": "./lib/index.js",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/rvagg/node-worker-farm.git"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "tape": "*"
+      },
+      "scripts": {
+        "test": "node ./tests/"
+      },
+      "license": "MIT",
+      "_id": "worker-farm@0.0.1",
+      "dist": {
+        "shasum": "4d89a951611d850975742d601854330177553818",
+        "tarball": "https://registry.npmjs.org/worker-farm/-/worker-farm-0.0.1.tgz"
+      },
+      "_npmVersion": "1.1.69",
+      "_npmUser": {
+        "name": "rvagg",
+        "email": "rod@vagg.org"
+      },
+      "maintainers": [
+        {
+          "name": "rvagg",
+          "email": "rod@vagg.org"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.0": {
+      "name": "worker-farm",
+      "description": "Distribute processing tasks to child processes with an über-simple API and baked-in durability & custom concurrency options.",
+      "version": "0.1.0",
+      "homepage": "https://github.com/rvagg/node-worker-farm",
+      "authors": [
+        "Rod Vagg @rvagg <rod@vagg.org> (https://github.com/rvagg)"
+      ],
+      "keywords": [
+        "worker",
+        "child",
+        "processing",
+        "farm"
+      ],
+      "main": "./lib/index.js",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/rvagg/node-worker-farm.git"
+      },
+      "dependencies": {
+        "xtend": "~2.0.6"
+      },
+      "devDependencies": {
+        "tape": "*"
+      },
+      "scripts": {
+        "test": "node ./tests/"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/rvagg/node-worker-farm/issues"
+      },
+      "_id": "worker-farm@0.1.0",
+      "dist": {
+        "shasum": "77f0346c70dcf67d19ecae337910ab918972f2dc",
+        "tarball": "https://registry.npmjs.org/worker-farm/-/worker-farm-0.1.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.8",
+      "_npmUser": {
+        "name": "rvagg",
+        "email": "rod@vagg.org"
+      },
+      "maintainers": [
+        {
+          "name": "rvagg",
+          "email": "rod@vagg.org"
+        }
+      ],
+      "directories": {}
+    },
+    "0.2.0": {
+      "name": "worker-farm",
+      "description": "Distribute processing tasks to child processes with an über-simple API and baked-in durability & custom concurrency options.",
+      "version": "0.2.0",
+      "homepage": "https://github.com/rvagg/node-worker-farm",
+      "authors": [
+        "Rod Vagg @rvagg <rod@vagg.org> (https://github.com/rvagg)"
+      ],
+      "keywords": [
+        "worker",
+        "child",
+        "processing",
+        "farm"
+      ],
+      "main": "./lib/index.js",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/rvagg/node-worker-farm.git"
+      },
+      "dependencies": {
+        "xtend": "~2.0.6",
+        "errno": "~0.1.0"
+      },
+      "devDependencies": {
+        "tape": "*"
+      },
+      "scripts": {
+        "test": "node ./tests/"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/rvagg/node-worker-farm/issues"
+      },
+      "_id": "worker-farm@0.2.0",
+      "dist": {
+        "shasum": "b48d64c4be59a1743ac42641d5f460118d91f516",
+        "tarball": "https://registry.npmjs.org/worker-farm/-/worker-farm-0.2.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.8",
+      "_npmUser": {
+        "name": "rvagg",
+        "email": "rod@vagg.org"
+      },
+      "maintainers": [
+        {
+          "name": "rvagg",
+          "email": "rod@vagg.org"
+        }
+      ],
+      "directories": {}
+    },
+    "0.2.1": {
+      "name": "worker-farm",
+      "description": "Distribute processing tasks to child processes with an über-simple API and baked-in durability & custom concurrency options.",
+      "version": "0.2.1",
+      "homepage": "https://github.com/rvagg/node-worker-farm",
+      "authors": [
+        "Rod Vagg @rvagg <rod@vagg.org> (https://github.com/rvagg)"
+      ],
+      "keywords": [
+        "worker",
+        "child",
+        "processing",
+        "farm"
+      ],
+      "main": "./lib/index.js",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/rvagg/node-worker-farm.git"
+      },
+      "dependencies": {
+        "xtend": "~2.0.6",
+        "errno": "~0.1.0"
+      },
+      "devDependencies": {
+        "tape": "*"
+      },
+      "scripts": {
+        "test": "node ./tests/"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/rvagg/node-worker-farm/issues"
+      },
+      "_id": "worker-farm@0.2.1",
+      "dist": {
+        "shasum": "c028dce0c201cb682f0798d7d8f601c7cde57167",
+        "tarball": "https://registry.npmjs.org/worker-farm/-/worker-farm-0.2.1.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.8",
+      "_npmUser": {
+        "name": "rvagg",
+        "email": "rod@vagg.org"
+      },
+      "maintainers": [
+        {
+          "name": "rvagg",
+          "email": "rod@vagg.org"
+        }
+      ],
+      "directories": {}
+    },
+    "0.3.0": {
+      "name": "worker-farm",
+      "description": "Distribute processing tasks to child processes with an über-simple API and baked-in durability & custom concurrency options.",
+      "version": "0.3.0",
+      "homepage": "https://github.com/rvagg/node-worker-farm",
+      "authors": [
+        "Rod Vagg @rvagg <rod@vagg.org> (https://github.com/rvagg)"
+      ],
+      "keywords": [
+        "worker",
+        "child",
+        "processing",
+        "farm"
+      ],
+      "main": "./lib/index.js",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/rvagg/node-worker-farm.git"
+      },
+      "dependencies": {
+        "xtend": "~2.0.6",
+        "errno": "~0.1.0"
+      },
+      "devDependencies": {
+        "tape": "*"
+      },
+      "scripts": {
+        "test": "node ./tests/"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/rvagg/node-worker-farm/issues"
+      },
+      "_id": "worker-farm@0.3.0",
+      "dist": {
+        "shasum": "5263f11f93bece2a12119d4dba5c72de7db80b6d",
+        "tarball": "https://registry.npmjs.org/worker-farm/-/worker-farm-0.3.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.11",
+      "_npmUser": {
+        "name": "rvagg",
+        "email": "rod@vagg.org"
+      },
+      "maintainers": [
+        {
+          "name": "rvagg",
+          "email": "rod@vagg.org"
+        }
+      ],
+      "directories": {}
+    },
+    "0.3.1": {
+      "name": "worker-farm",
+      "description": "Distribute processing tasks to child processes with an über-simple API and baked-in durability & custom concurrency options.",
+      "version": "0.3.1",
+      "homepage": "https://github.com/rvagg/node-worker-farm",
+      "authors": [
+        "Rod Vagg @rvagg <rod@vagg.org> (https://github.com/rvagg)"
+      ],
+      "keywords": [
+        "worker",
+        "child",
+        "processing",
+        "farm"
+      ],
+      "main": "./lib/index.js",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/rvagg/node-worker-farm.git"
+      },
+      "dependencies": {
+        "xtend": "~2.1.1",
+        "errno": "~0.1.0"
+      },
+      "devDependencies": {
+        "tape": "*"
+      },
+      "scripts": {
+        "test": "node ./tests/"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/rvagg/node-worker-farm/issues"
+      },
+      "_id": "worker-farm@0.3.1",
+      "dist": {
+        "shasum": "3e80fd2c6e79a95fb12b6d7d904859be2fd81fe6",
+        "tarball": "https://registry.npmjs.org/worker-farm/-/worker-farm-0.3.1.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.8",
+      "_npmUser": {
+        "name": "rvagg",
+        "email": "rod@vagg.org"
+      },
+      "maintainers": [
+        {
+          "name": "rvagg",
+          "email": "rod@vagg.org"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "worker-farm",
+      "description": "Distribute processing tasks to child processes with an über-simple API and baked-in durability & custom concurrency options.",
+      "version": "1.0.0",
+      "homepage": "https://github.com/rvagg/node-worker-farm",
+      "authors": [
+        "Rod Vagg @rvagg <rod@vagg.org> (https://github.com/rvagg)"
+      ],
+      "keywords": [
+        "worker",
+        "child",
+        "processing",
+        "farm"
+      ],
+      "main": "./lib/index.js",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/rvagg/node-worker-farm.git"
+      },
+      "dependencies": {
+        "errno": ">=0.1.1 <0.2.0-0",
+        "xtend": ">=4.0.0 <4.1.0-0"
+      },
+      "devDependencies": {
+        "tape": ">=2.14.0 <2.15.0-0"
+      },
+      "scripts": {
+        "test": "node ./tests/"
+      },
+      "license": "MIT",
+      "gitHead": "9a70f871f29b09bdddc0d2ec657f9bf74eb99c40",
+      "bugs": {
+        "url": "https://github.com/rvagg/node-worker-farm/issues"
+      },
+      "_id": "worker-farm@1.0.0",
+      "_shasum": "23dddda1dafc560c9ab7456ed93cf1ee812e0103",
+      "_from": ".",
+      "_npmVersion": "1.4.24",
+      "_npmUser": {
+        "name": "rvagg",
+        "email": "rod@vagg.org"
+      },
+      "maintainers": [
+        {
+          "name": "rvagg",
+          "email": "rod@vagg.org"
+        }
+      ],
+      "dist": {
+        "shasum": "23dddda1dafc560c9ab7456ed93cf1ee812e0103",
+        "tarball": "https://registry.npmjs.org/worker-farm/-/worker-farm-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "worker-farm",
+      "description": "Distribute processing tasks to child processes with an über-simple API and baked-in durability & custom concurrency options.",
+      "version": "1.0.1",
+      "homepage": "https://github.com/rvagg/node-worker-farm",
+      "authors": [
+        "Rod Vagg @rvagg <rod@vagg.org> (https://github.com/rvagg)"
+      ],
+      "keywords": [
+        "worker",
+        "child",
+        "processing",
+        "farm"
+      ],
+      "main": "./lib/index.js",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/rvagg/node-worker-farm.git"
+      },
+      "dependencies": {
+        "errno": ">=0.1.1 <0.2.0-0",
+        "xtend": ">=4.0.0 <4.1.0-0"
+      },
+      "devDependencies": {
+        "tape": ">=2.14.0 <2.15.0-0"
+      },
+      "scripts": {
+        "test": "node ./tests/"
+      },
+      "license": "MIT",
+      "gitHead": "5edfc6dfa0628c25248f0a2bb179048a3ee5d878",
+      "bugs": {
+        "url": "https://github.com/rvagg/node-worker-farm/issues"
+      },
+      "_id": "worker-farm@1.0.1",
+      "_shasum": "358837e0187c9795eb6d7a07fe00fc956fbbf6ae",
+      "_from": ".",
+      "_npmVersion": "1.4.24",
+      "_npmUser": {
+        "name": "rvagg",
+        "email": "rod@vagg.org"
+      },
+      "maintainers": [
+        {
+          "name": "rvagg",
+          "email": "rod@vagg.org"
+        }
+      ],
+      "dist": {
+        "shasum": "358837e0187c9795eb6d7a07fe00fc956fbbf6ae",
+        "tarball": "https://registry.npmjs.org/worker-farm/-/worker-farm-1.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "worker-farm",
+      "description": "Distribute processing tasks to child processes with an über-simple API and baked-in durability & custom concurrency options.",
+      "version": "1.1.0",
+      "homepage": "https://github.com/rvagg/node-worker-farm",
+      "authors": [
+        "Rod Vagg @rvagg <rod@vagg.org> (https://github.com/rvagg)"
+      ],
+      "keywords": [
+        "worker",
+        "child",
+        "processing",
+        "farm"
+      ],
+      "main": "./lib/index.js",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/rvagg/node-worker-farm.git"
+      },
+      "dependencies": {
+        "errno": ">=0.1.1 <0.2.0-0",
+        "xtend": ">=4.0.0 <4.1.0-0"
+      },
+      "devDependencies": {
+        "tape": ">=3.0.3 <3.1.0-0"
+      },
+      "scripts": {
+        "test": "node ./tests/"
+      },
+      "license": "MIT",
+      "gitHead": "893a858145e50a83c053036016146b816b8c50d0",
+      "bugs": {
+        "url": "https://github.com/rvagg/node-worker-farm/issues"
+      },
+      "_id": "worker-farm@1.1.0",
+      "_shasum": "19670d0d1c157a5a5638c41c967ae5b54c538ec7",
+      "_from": ".",
+      "_npmVersion": "2.1.6",
+      "_nodeVersion": "0.10.33",
+      "_npmUser": {
+        "name": "rvagg",
+        "email": "rod@vagg.org"
+      },
+      "maintainers": [
+        {
+          "name": "rvagg",
+          "email": "rod@vagg.org"
+        }
+      ],
+      "dist": {
+        "shasum": "19670d0d1c157a5a5638c41c967ae5b54c538ec7",
+        "tarball": "https://registry.npmjs.org/worker-farm/-/worker-farm-1.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.2.0": {
+      "name": "worker-farm",
+      "description": "Distribute processing tasks to child processes with an über-simple API and baked-in durability & custom concurrency options.",
+      "version": "1.2.0",
+      "homepage": "https://github.com/rvagg/node-worker-farm",
+      "authors": [
+        "Rod Vagg @rvagg <rod@vagg.org> (https://github.com/rvagg)"
+      ],
+      "keywords": [
+        "worker",
+        "child",
+        "processing",
+        "farm"
+      ],
+      "main": "./lib/index.js",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/rvagg/node-worker-farm.git"
+      },
+      "dependencies": {
+        "errno": ">=0.1.1 <0.2.0-0",
+        "xtend": ">=4.0.0 <4.1.0-0"
+      },
+      "devDependencies": {
+        "tape": ">=3.0.3 <3.1.0-0"
+      },
+      "scripts": {
+        "test": "node ./tests/"
+      },
+      "license": "MIT",
+      "gitHead": "b9fbf74126c3b228d488883a88e8f2db9c96bb63",
+      "bugs": {
+        "url": "https://github.com/rvagg/node-worker-farm/issues"
+      },
+      "_id": "worker-farm@1.2.0",
+      "_shasum": "2aa0f1d40321fb519124a05e56b68827eee31040",
+      "_from": ".",
+      "_npmVersion": "2.4.1",
+      "_nodeVersion": "1.1.0",
+      "_npmUser": {
+        "name": "rvagg",
+        "email": "rod@vagg.org"
+      },
+      "maintainers": [
+        {
+          "name": "rvagg",
+          "email": "rod@vagg.org"
+        }
+      ],
+      "dist": {
+        "shasum": "2aa0f1d40321fb519124a05e56b68827eee31040",
+        "tarball": "https://registry.npmjs.org/worker-farm/-/worker-farm-1.2.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.3.0": {
+      "name": "worker-farm",
+      "description": "Distribute processing tasks to child processes with an über-simple API and baked-in durability & custom concurrency options.",
+      "version": "1.3.0",
+      "homepage": "https://github.com/rvagg/node-worker-farm",
+      "authors": [
+        "Rod Vagg @rvagg <rod@vagg.org> (https://github.com/rvagg)"
+      ],
+      "keywords": [
+        "worker",
+        "child",
+        "processing",
+        "farm"
+      ],
+      "main": "./lib/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rvagg/node-worker-farm.git"
+      },
+      "dependencies": {
+        "errno": ">=0.1.1 <0.2.0-0",
+        "xtend": ">=4.0.0 <4.1.0-0"
+      },
+      "devDependencies": {
+        "tape": ">=3.0.3 <3.1.0-0"
+      },
+      "scripts": {
+        "test": "node ./tests/"
+      },
+      "license": "MIT",
+      "gitHead": "419f0a992645049300ccc00ce0451d37975de962",
+      "bugs": {
+        "url": "https://github.com/rvagg/node-worker-farm/issues"
+      },
+      "_id": "worker-farm@1.3.0",
+      "_shasum": "f69d4c4d180a934c60d0f315c04074a3d999ee66",
+      "_from": ".",
+      "_npmVersion": "2.9.0",
+      "_nodeVersion": "2.0.0",
+      "_npmUser": {
+        "name": "rvagg",
+        "email": "rod@vagg.org"
+      },
+      "maintainers": [
+        {
+          "name": "rvagg",
+          "email": "rod@vagg.org"
+        }
+      ],
+      "dist": {
+        "shasum": "f69d4c4d180a934c60d0f315c04074a3d999ee66",
+        "tarball": "https://registry.npmjs.org/worker-farm/-/worker-farm-1.3.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.3.1": {
+      "name": "worker-farm",
+      "description": "Distribute processing tasks to child processes with an über-simple API and baked-in durability & custom concurrency options.",
+      "version": "1.3.1",
+      "homepage": "https://github.com/rvagg/node-worker-farm",
+      "authors": [
+        "Rod Vagg @rvagg <rod@vagg.org> (https://github.com/rvagg)"
+      ],
+      "keywords": [
+        "worker",
+        "child",
+        "processing",
+        "farm"
+      ],
+      "main": "./lib/index.js",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/rvagg/node-worker-farm.git"
+      },
+      "dependencies": {
+        "errno": ">=0.1.1 <0.2.0-0",
+        "xtend": ">=4.0.0 <4.1.0-0"
+      },
+      "devDependencies": {
+        "tape": ">=3.0.3 <3.1.0-0"
+      },
+      "scripts": {
+        "test": "node ./tests/"
+      },
+      "license": "MIT",
+      "gitHead": "36edd5f28b05bd08b99c3543ab2be87e53e11dbf",
+      "bugs": {
+        "url": "https://github.com/rvagg/node-worker-farm/issues"
+      },
+      "_id": "worker-farm@1.3.1",
+      "_shasum": "4333112bb49b17aa050b87895ca6b2cacf40e5ff",
+      "_from": ".",
+      "_npmVersion": "2.5.1",
+      "_nodeVersion": "0.12.1",
+      "_npmUser": {
+        "name": "amasad",
+        "email": "amjad.masad@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "rvagg",
+          "email": "rod@vagg.org"
+        },
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "4333112bb49b17aa050b87895ca6b2cacf40e5ff",
+        "tarball": "https://registry.npmjs.org/worker-farm/-/worker-farm-1.3.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.4.0": {
+      "name": "worker-farm",
+      "description": "Distribute processing tasks to child processes with an über-simple API and baked-in durability & custom concurrency options.",
+      "version": "1.4.0",
+      "homepage": "https://github.com/rvagg/node-worker-farm",
+      "authors": [
+        "Rod Vagg @rvagg <rod@vagg.org> (https://github.com/rvagg)"
+      ],
+      "keywords": [
+        "worker",
+        "child",
+        "processing",
+        "farm"
+      ],
+      "main": "./lib/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rvagg/node-worker-farm.git"
+      },
+      "dependencies": {
+        "errno": "^0.1.4",
+        "xtend": "^4.0.1"
+      },
+      "devDependencies": {
+        "tape": "^4.7.0"
+      },
+      "scripts": {
+        "test": "node ./tests/"
+      },
+      "license": "MIT",
+      "gitHead": "592dae67b1149ad542a217bc2842bedbfeb78d6a",
+      "bugs": {
+        "url": "https://github.com/rvagg/node-worker-farm/issues"
+      },
+      "_id": "worker-farm@1.4.0",
+      "_npmVersion": "5.0.3",
+      "_nodeVersion": "8.1.2",
+      "_npmUser": {
+        "name": "rvagg",
+        "email": "rod@vagg.org"
+      },
+      "dist": {
+        "integrity": "sha512-RWvBTapIvTAKGFVUyp6UsIU6vv6NBcZ9p0OLauWtW6ZqT168PO7ZNYla8RAsHCAlN3Zs2xNu7rQ3yy6CnuE6Qg==",
+        "shasum": "8b6484ccbcac7d1c54eba234a30b02fa1be37083",
+        "tarball": "https://registry.npmjs.org/worker-farm/-/worker-farm-1.4.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "rvagg",
+          "email": "rod@vagg.org"
+        },
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/worker-farm-1.4.0.tgz_1498781469696_0.6677367349620908"
+      },
+      "directories": {}
+    },
+    "1.4.1": {
+      "name": "worker-farm",
+      "description": "Distribute processing tasks to child processes with an über-simple API and baked-in durability & custom concurrency options.",
+      "version": "1.4.1",
+      "homepage": "https://github.com/rvagg/node-worker-farm",
+      "authors": [
+        "Rod Vagg @rvagg <rod@vagg.org> (https://github.com/rvagg)"
+      ],
+      "keywords": [
+        "worker",
+        "child",
+        "processing",
+        "farm"
+      ],
+      "main": "./lib/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rvagg/node-worker-farm.git"
+      },
+      "dependencies": {
+        "errno": "^0.1.4",
+        "xtend": "^4.0.1"
+      },
+      "devDependencies": {
+        "tape": "^4.7.0"
+      },
+      "scripts": {
+        "test": "node ./tests/"
+      },
+      "license": "MIT",
+      "gitHead": "8a74573c8e7dfbe045a0cab209276dcb483d941d",
+      "bugs": {
+        "url": "https://github.com/rvagg/node-worker-farm/issues"
+      },
+      "_id": "worker-farm@1.4.1",
+      "_npmVersion": "5.0.3",
+      "_nodeVersion": "8.1.2",
+      "_npmUser": {
+        "name": "rvagg",
+        "email": "rod@vagg.org"
+      },
+      "dist": {
+        "integrity": "sha512-tgFAtgOYLPutkAyzgpS6VJFL5HY+0ui1Tvua+fITgz8ByaJTMFGtazR6xxQfwfiAcbwE+2fLG/K49wc2TfwCNw==",
+        "shasum": "a438bc993a7a7d133bcb6547c95eca7cff4897d8",
+        "tarball": "https://registry.npmjs.org/worker-farm/-/worker-farm-1.4.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "rvagg",
+          "email": "rod@vagg.org"
+        },
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/worker-farm-1.4.1.tgz_1498781964257_0.6519602912012488"
+      },
+      "directories": {}
+    },
+    "1.5.0": {
+      "name": "worker-farm",
+      "description": "Distribute processing tasks to child processes with an über-simple API and baked-in durability & custom concurrency options.",
+      "version": "1.5.0",
+      "homepage": "https://github.com/rvagg/node-worker-farm",
+      "authors": [
+        "Rod Vagg @rvagg <rod@vagg.org> (https://github.com/rvagg)"
+      ],
+      "keywords": [
+        "worker",
+        "child",
+        "processing",
+        "farm"
+      ],
+      "main": "./lib/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rvagg/node-worker-farm.git"
+      },
+      "dependencies": {
+        "errno": "^0.1.4",
+        "xtend": "^4.0.1"
+      },
+      "devDependencies": {
+        "tape": "^4.7.0"
+      },
+      "scripts": {
+        "test": "node ./tests/"
+      },
+      "types": "./index.d.ts",
+      "license": "MIT",
+      "gitHead": "1ee4adb56f7c78eb1f840d58586194e0a4c7474a",
+      "bugs": {
+        "url": "https://github.com/rvagg/node-worker-farm/issues"
+      },
+      "_id": "worker-farm@1.5.0",
+      "_npmVersion": "5.0.3",
+      "_nodeVersion": "9.0.0-v8-canary20170609cd40078f1f",
+      "_npmUser": {
+        "name": "rvagg",
+        "email": "r@va.gg"
+      },
+      "dist": {
+        "integrity": "sha512-DHRiUggxtbruaTwnLDm2/BRDKZIoOYvrgYUj5Bam4fU6Gtvc0FaEyoswFPBjMXAweGW2H4BDNIpy//1yXXuaqQ==",
+        "shasum": "adfdf0cd40581465ed0a1f648f9735722afd5c8d",
+        "tarball": "https://registry.npmjs.org/worker-farm/-/worker-farm-1.5.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "rvagg",
+          "email": "rod@vagg.org"
+        },
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/worker-farm-1.5.0.tgz_1502693768260_0.5901387543417513"
+      },
+      "directories": {}
+    },
+    "1.5.1": {
+      "name": "worker-farm",
+      "description": "Distribute processing tasks to child processes with an über-simple API and baked-in durability & custom concurrency options.",
+      "version": "1.5.1",
+      "homepage": "https://github.com/rvagg/node-worker-farm",
+      "authors": [
+        "Rod Vagg @rvagg <rod@vagg.org> (https://github.com/rvagg)"
+      ],
+      "keywords": [
+        "worker",
+        "child",
+        "processing",
+        "farm"
+      ],
+      "main": "./lib/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rvagg/node-worker-farm.git"
+      },
+      "dependencies": {
+        "errno": "^0.1.4",
+        "xtend": "^4.0.1"
+      },
+      "devDependencies": {
+        "tape": "^4.7.0"
+      },
+      "scripts": {
+        "test": "node ./tests/"
+      },
+      "types": "./index.d.ts",
+      "license": "MIT",
+      "gitHead": "7d5c8507e3f5b4a78770c4ba087d53ce096a8215",
+      "bugs": {
+        "url": "https://github.com/rvagg/node-worker-farm/issues"
+      },
+      "_id": "worker-farm@1.5.1",
+      "_npmVersion": "5.4.2",
+      "_nodeVersion": "8.7.0",
+      "_npmUser": {
+        "name": "rvagg",
+        "email": "r@va.gg"
+      },
+      "dist": {
+        "integrity": "sha512-T5NH6Wqsd8MwGD4AK8BBllUy6LmHaqjEOyo/YIUEegZui6/v5Bqde//3jwyE3PGiGYMmWi06exFBi5LNhhPFNw==",
+        "shasum": "8e9f4a7da4f3c595aa600903051b969390423fa1",
+        "tarball": "https://registry.npmjs.org/worker-farm/-/worker-farm-1.5.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "rvagg",
+          "email": "rod@vagg.org"
+        },
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/worker-farm-1.5.1.tgz_1509360127611_0.8198427087627351"
+      },
+      "directories": {}
+    },
+    "1.5.2": {
+      "name": "worker-farm",
+      "description": "Distribute processing tasks to child processes with an über-simple API and baked-in durability & custom concurrency options.",
+      "version": "1.5.2",
+      "homepage": "https://github.com/rvagg/node-worker-farm",
+      "authors": [
+        "Rod Vagg @rvagg <rod@vagg.org> (https://github.com/rvagg)"
+      ],
+      "keywords": [
+        "worker",
+        "child",
+        "processing",
+        "farm"
+      ],
+      "main": "./lib/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rvagg/node-worker-farm.git"
+      },
+      "dependencies": {
+        "errno": "^0.1.4",
+        "xtend": "^4.0.1"
+      },
+      "devDependencies": {
+        "tape": "^4.7.0"
+      },
+      "scripts": {
+        "test": "node ./tests/"
+      },
+      "types": "./index.d.ts",
+      "license": "MIT",
+      "gitHead": "f63d988c307a6805e03b1650f8ef0fb7ca6f1546",
+      "bugs": {
+        "url": "https://github.com/rvagg/node-worker-farm/issues"
+      },
+      "_id": "worker-farm@1.5.2",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "9.2.0",
+      "_npmUser": {
+        "name": "rvagg",
+        "email": "r@va.gg"
+      },
+      "dist": {
+        "integrity": "sha512-XxiQ9kZN5n6mmnW+mFJ+wXjNNI/Nx4DIdaAKLX1Bn6LYBWlN/zaBhu34DQYPZ1AJobQuu67S2OfDdNSVULvXkQ==",
+        "shasum": "32b312e5dc3d5d45d79ef44acc2587491cd729ae",
+        "tarball": "https://registry.npmjs.org/worker-farm/-/worker-farm-1.5.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "rvagg",
+          "email": "rod@vagg.org"
+        },
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/worker-farm-1.5.2.tgz_1510810485113_0.15678795706480742"
+      },
+      "directories": {}
+    },
+    "1.5.3": {
+      "name": "worker-farm",
+      "description": "Distribute processing tasks to child processes with an über-simple API and baked-in durability & custom concurrency options.",
+      "version": "1.5.3",
+      "homepage": "https://github.com/rvagg/node-worker-farm",
+      "authors": [
+        "Rod Vagg @rvagg <rod@vagg.org> (https://github.com/rvagg)"
+      ],
+      "keywords": [
+        "worker",
+        "child",
+        "processing",
+        "farm"
+      ],
+      "main": "./lib/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rvagg/node-worker-farm.git"
+      },
+      "dependencies": {
+        "errno": "~0.1.7",
+        "xtend": "~4.0.1"
+      },
+      "devDependencies": {
+        "tape": "~4.9.0"
+      },
+      "scripts": {
+        "test": "node ./tests/"
+      },
+      "types": "./index.d.ts",
+      "license": "MIT",
+      "gitHead": "07e09e9ef2b956cb94475147c6a0f837b60c3185",
+      "bugs": {
+        "url": "https://github.com/rvagg/node-worker-farm/issues"
+      },
+      "_id": "worker-farm@1.5.3",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.3",
+      "_npmUser": {
+        "name": "rvagg",
+        "email": "r@va.gg"
+      },
+      "dist": {
+        "integrity": "sha512-oHM+VYIbqxWnDLjFbrZ9xvucrCF2yCMlTH4YWZUJAddlwDZI9movv1wXY1ele3UJdoTjKoaldjeMvlSsiag7qA==",
+        "shasum": "30d945313620490e88f16f25b7e072b24851becd",
+        "tarball": "https://registry.npmjs.org/worker-farm/-/worker-farm-1.5.3.tgz",
+        "fileCount": 16,
+        "unpackedSize": 45576
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "rvagg",
+          "email": "rod@vagg.org"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/worker-farm_1.5.3_1519612961676_0.9854356611965469"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.5.4": {
+      "name": "worker-farm",
+      "description": "Distribute processing tasks to child processes with an über-simple API and baked-in durability & custom concurrency options.",
+      "version": "1.5.4",
+      "homepage": "https://github.com/rvagg/node-worker-farm",
+      "authors": [
+        "Rod Vagg @rvagg <rod@vagg.org> (https://github.com/rvagg)"
+      ],
+      "keywords": [
+        "worker",
+        "child",
+        "processing",
+        "farm"
+      ],
+      "main": "./lib/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rvagg/node-worker-farm.git"
+      },
+      "dependencies": {
+        "errno": "~0.1.7",
+        "xtend": "~4.0.1"
+      },
+      "devDependencies": {
+        "tape": "~4.9.0"
+      },
+      "scripts": {
+        "test": "node ./tests/"
+      },
+      "types": "./index.d.ts",
+      "license": "MIT",
+      "gitHead": "56f3660103a6a9edd59a1c47c6884ecb3fed9fa1",
+      "bugs": {
+        "url": "https://github.com/rvagg/node-worker-farm/issues"
+      },
+      "_id": "worker-farm@1.5.4",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.3",
+      "_npmUser": {
+        "name": "rvagg",
+        "email": "r@va.gg"
+      },
+      "dist": {
+        "integrity": "sha512-ITyClEvcfv0ozqJl1vmWFWhvI+OIrkbInYqkEPE50wFPXj8J9Gd3FYf8+CkZJXJJsQBYe+2DvmoK9Zhx5w8W+w==",
+        "shasum": "4debbe46b40edefcc717ebde74a90b1ae1e909a1",
+        "tarball": "https://registry.npmjs.org/worker-farm/-/worker-farm-1.5.4.tgz",
+        "fileCount": 16,
+        "unpackedSize": 45584
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "rvagg",
+          "email": "rod@vagg.org"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/worker-farm_1.5.4_1519613041640_0.5768859864651479"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.6.0": {
+      "name": "worker-farm",
+      "description": "Distribute processing tasks to child processes with an über-simple API and baked-in durability & custom concurrency options.",
+      "version": "1.6.0",
+      "homepage": "https://github.com/rvagg/node-worker-farm",
+      "authors": [
+        "Rod Vagg @rvagg <rod@vagg.org> (https://github.com/rvagg)"
+      ],
+      "keywords": [
+        "worker",
+        "child",
+        "processing",
+        "farm"
+      ],
+      "main": "./lib/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rvagg/node-worker-farm.git"
+      },
+      "dependencies": {
+        "errno": "~0.1.7"
+      },
+      "devDependencies": {
+        "tape": "~4.9.0"
+      },
+      "scripts": {
+        "test": "node ./tests/"
+      },
+      "types": "./index.d.ts",
+      "license": "MIT",
+      "gitHead": "f61372e0ad99338d472b8fd09b4900a4cbff5166",
+      "bugs": {
+        "url": "https://github.com/rvagg/node-worker-farm/issues"
+      },
+      "_id": "worker-farm@1.6.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "rvagg",
+        "email": "r@va.gg"
+      },
+      "dist": {
+        "integrity": "sha512-6w+3tHbM87WnSWnENBUvA2pxJPLhQUg5LKwUQHq3r+XPhIM+Gh2R5ycbwPCyuGbNg+lPgdcnQUhuC02kJCvffQ==",
+        "shasum": "aecc405976fab5a95526180846f0dba288f3a4a0",
+        "tarball": "https://registry.npmjs.org/worker-farm/-/worker-farm-1.6.0.tgz",
+        "fileCount": 17,
+        "unpackedSize": 47168
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "rvagg",
+          "email": "rod@vagg.org"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/worker-farm_1.6.0_1520565271783_0.5530085286716173"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.7.0": {
+      "name": "worker-farm",
+      "description": "Distribute processing tasks to child processes with an über-simple API and baked-in durability & custom concurrency options.",
+      "version": "1.7.0",
+      "homepage": "https://github.com/rvagg/node-worker-farm",
+      "authors": [
+        "Rod Vagg @rvagg <rod@vagg.org> (https://github.com/rvagg)"
+      ],
+      "keywords": [
+        "worker",
+        "child",
+        "processing",
+        "farm"
+      ],
+      "main": "./lib/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rvagg/node-worker-farm.git"
+      },
+      "dependencies": {
+        "errno": "~0.1.7"
+      },
+      "devDependencies": {
+        "tape": "~4.10.1"
+      },
+      "scripts": {
+        "test": "node ./tests/"
+      },
+      "types": "./index.d.ts",
+      "license": "MIT",
+      "gitHead": "3e699ba3d7ea70475b35564f102d4514fa71d50a",
+      "bugs": {
+        "url": "https://github.com/rvagg/node-worker-farm/issues"
+      },
+      "_id": "worker-farm@1.7.0",
+      "_nodeVersion": "11.10.1",
+      "_npmVersion": "6.7.0",
+      "dist": {
+        "integrity": "sha512-rvw3QTZc8lAxyVrqcSGVm5yP/IJ2UcB3U0graE3LCFoZ0Yn2x4EoVSqJKdB/T5M+FLcRPjz4TDacRf3OCfNUzw==",
+        "shasum": "26a94c5391bbca926152002f69b84a4bf772e5a8",
+        "tarball": "https://registry.npmjs.org/worker-farm/-/worker-farm-1.7.0.tgz",
+        "fileCount": 17,
+        "unpackedSize": 49864,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJczEB8CRA9TVsSAnZWagAAYl8QAJgCWqB5uqNDgPIXrwKC\nCeYeTaKRf4NLT0h2+57z1PEdfyH1Nm8ZoasCz13uMNHhH0tV0B9nlCeFSsL7\nI3CDtpB+xcG5EAsw2hu6/inDIZKopPMkuHqE8akwWVt5lVy81kJ7f1QAllvf\n8ayAwr/Dg/yQmXHvOoV9wEe64pPc7bLfz8+65nNzILLwnaBs+u2J4oENk+70\nQRvs8Xn+3N3z/rsGr6DEIvMBdFuc30DfSzPpAuNjSoPJ57OoMUXPen6SXPHr\nQwq3Kd5KF3cGy++V1lnfc+1EtupnxeD1jWAcQrRpjGX+xEC9fdSSeHj+v/Ox\n8tpS89ygo+TCYOKGPauss4G8v8hX8YQNm3wnIJGLg9367appPOf60vohZ5/2\nsnzGpJWY/lxXE8P4HjqIsPyD6Je+bXNhTMX8pFQBlDMIdG0nLoiIaLxhjFMZ\nVyHVXBjUkHsi33XMCX2u831Nj+ikXFjpIWQhpYlC2n3Ru+Bdmz1mIoRC1Vsa\nzkPFWbzQmFNbmkReRZe/iDjiCeWDKK561CZ5wFkOekFE+g11PJMTIIf4fnxU\njv6AQuPlMEC6MwG6c+uHNpKWyO+kDR5QJM+tQVaIWzNbUp8oq0MVgkNh8a32\nso51YbVZjW6nvtJHJeRzkUSSKriI3AxWjZUXwjN7Yoxvu8sssu9Rfwz5ICk2\n+Una\r\n=g/dP\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "rvagg",
+          "email": "rod@vagg.org"
+        }
+      ],
+      "_npmUser": {
+        "name": "rvagg",
+        "email": "r@va.gg"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/worker-farm_1.7.0_1556889724363_0.7071190864654575"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# Worker Farm [![Build Status](https://secure.travis-ci.org/rvagg/node-worker-farm.svg)](http://travis-ci.org/rvagg/node-worker-farm)\n\n[![NPM](https://nodei.co/npm/worker-farm.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/worker-farm/) [![NPM](https://nodei.co/npm-dl/worker-farm.png?months=6&height=3)](https://nodei.co/npm/worker-farm/)\n\n\nDistribute processing tasks to child processes with an über-simple API and baked-in durability & custom concurrency options. *Available in npm as <strong>worker-farm</strong>*.\n\n## Example\n\nGiven a file, *child.js*:\n\n```js\nmodule.exports = function (inp, callback) {\n  callback(null, inp + ' BAR (' + process.pid + ')')\n}\n```\n\nAnd a main file:\n\n```js\nvar workerFarm = require('worker-farm')\n  , workers    = workerFarm(require.resolve('./child'))\n  , ret        = 0\n\nfor (var i = 0; i < 10; i++) {\n  workers('#' + i + ' FOO', function (err, outp) {\n    console.log(outp)\n    if (++ret == 10)\n      workerFarm.end(workers)\n  })\n}\n```\n\nWe'll get an output something like the following:\n\n```\n#1 FOO BAR (8546)\n#0 FOO BAR (8545)\n#8 FOO BAR (8545)\n#9 FOO BAR (8546)\n#2 FOO BAR (8548)\n#4 FOO BAR (8551)\n#3 FOO BAR (8549)\n#6 FOO BAR (8555)\n#5 FOO BAR (8553)\n#7 FOO BAR (8557)\n```\n\nThis example is contained in the *[examples/basic](https://github.com/rvagg/node-worker-farm/tree/master/examples/basic/)* directory.\n\n### Example #1: Estimating π using child workers\n\nYou will also find a more complex example in *[examples/pi](https://github.com/rvagg/node-worker-farm/tree/master/examples/pi/)* that estimates the value of **π** by using a Monte Carlo *area-under-the-curve* method and compares the speed of doing it all in-process vs using child workers to complete separate portions.\n\nRunning `node examples/pi` will give you something like:\n\n```\nDoing it the slow (single-process) way...\nπ ≈ 3.1416269360000006  (0.0000342824102075312 away from actual!)\ntook 8341 milliseconds\nDoing it the fast (multi-process) way...\nπ ≈ 3.1416233600000036  (0.00003070641021052367 away from actual!)\ntook 1985 milliseconds\n```\n\n## Durability\n\nAn important feature of Worker Farm is **call durability**. If a child process dies for any reason during the execution of call(s), those calls will be re-queued and taken care of by other child processes. In this way, when you ask for something to be done, unless there is something *seriously* wrong with what you're doing, you should get a result on your callback function.\n\n## My use-case\n\nThere are other libraries for managing worker processes available but my use-case was fairly specific: I need to make heavy use of the [node-java](https://github.com/nearinfinity/node-java) library to interact with JVM code. Unfortunately, because the JVM garbage collector is so difficult to interact with, it's prone to killing your Node process when the GC kicks under heavy load. For safety I needed a durable way to make calls so that (1) it wouldn't kill my main process and (2) any calls that weren't successful would be resubmitted for processing.\n\nWorker Farm allows me to spin up multiple JVMs to be controlled by Node, and have a single, uncomplicated API that acts the same way as an in-process API and the calls will be taken care of by a child process even if an error kills a child process while it is working as the call will simply be passed to a new child process.\n\n**But**, don't think that Worker Farm is specific to that use-case, it's designed to be very generic and simple to adapt to anything requiring the use of child Node processes.\n\n## API\n\nWorker Farm exports a main function and an `end()` method. The main function sets up a \"farm\" of coordinated child-process workers and it can be used to instantiate multiple farms, all operating independently.\n\n### workerFarm([options, ]pathToModule[, exportedMethods])\n\nIn its most basic form, you call `workerFarm()` with the path to a module file to be invoked by the child process. You should use an **absolute path** to the module file, the best way to obtain the path is with `require.resolve('./path/to/module')`, this function can be used in exactly the same way as `require('./path/to/module')` but it returns an absolute path.\n\n#### `exportedMethods`\n\nIf your module exports a single function on `module.exports` then you should omit the final parameter. However, if you are exporting multiple functions on `module.exports` then you should list them in an Array of Strings:\n\n```js\nvar workers = workerFarm(require.resolve('./mod'), [ 'doSomething', 'doSomethingElse' ])\nworkers.doSomething(function () {})\nworkers.doSomethingElse(function () {})\n```\n\nListing the available methods will instruct Worker Farm what API to provide you with on the returned object. If you don't list a `exportedMethods` Array then you'll get a single callable function to use; but if you list the available methods then you'll get an object with callable functions by those names.\n\n**It is assumed that each function you call on your child module will take a `callback` function as the last argument.**\n\n#### `options`\n\nIf you don't provide an `options` object then the following defaults will be used:\n\n```js\n{\n    workerOptions               : {}\n  , maxCallsPerWorker           : Infinity\n  , maxConcurrentWorkers        : require('os').cpus().length\n  , maxConcurrentCallsPerWorker : 10\n  , maxConcurrentCalls          : Infinity\n  , maxCallTime                 : Infinity\n  , maxRetries                  : Infinity\n  , autoStart                   : false\n  , onChild                     : function() {}\n}\n```\n\n  * **<code>workerOptions</code>** allows you to customize all the parameters passed to child nodes. This object supports [all possible options of `child_process.fork`](https://nodejs.org/api/child_process.html#child_process_child_process_fork_modulepath_args_options). The default options passed are the parent `execArgv`, `cwd` and `env`. Any (or all) of them can be overridden, and others can be added as well.\n\n  * **<code>maxCallsPerWorker</code>** allows you to control the lifespan of your child processes. A positive number will indicate that you only want each child to accept that many calls before it is terminated. This may be useful if you need to control memory leaks or similar in child processes.\n\n  * **<code>maxConcurrentWorkers</code>** will set the number of child processes to maintain concurrently. By default it is set to the number of CPUs available on the current system, but it can be any reasonable number, including `1`.\n\n  * **<code>maxConcurrentCallsPerWorker</code>** allows you to control the *concurrency* of individual child processes. Calls are placed into a queue and farmed out to child processes according to the number of calls they are allowed to handle concurrently. It is arbitrarily set to 10 by default so that calls are shared relatively evenly across workers, however if your calls predictably take a similar amount of time then you could set it to `Infinity` and Worker Farm won't queue any calls but spread them evenly across child processes and let them go at it. If your calls aren't I/O bound then it won't matter what value you use here as the individual workers won't be able to execute more than a single call at a time.\n\n  * **<code>maxConcurrentCalls</code>** allows you to control the maximum number of calls in the queue&mdash;either actively being processed or waiting for a worker to be processed. `Infinity` indicates no limit but if you have conditions that may endlessly queue jobs and you need to set a limit then provide a `>0` value and any calls that push the limit will return on their callback with a `MaxConcurrentCallsError` error (check `err.type == 'MaxConcurrentCallsError'`).\n\n  * **<code>maxCallTime</code>** *(use with caution, understand what this does before you use it!)* when `!== Infinity`, will cap a time, in milliseconds, that *any single call* can take to execute in a worker. If this time limit is exceeded by just a single call then the worker running that call will be killed and any calls running on that worker will have their callbacks returned with a `TimeoutError` (check `err.type == 'TimeoutError'`). If you are running with `maxConcurrentCallsPerWorker` value greater than `1` then **all calls currently executing** will fail and will be automatically resubmitted uless you've changed the `maxRetries` option. Use this if you have jobs that may potentially end in infinite loops that you can't programatically end with your child code. Preferably run this with a `maxConcurrentCallsPerWorker` so you don't interrupt other calls when you have a timeout. This timeout operates on a per-call basis but will interrupt a whole worker.\n\n  * **<code>maxRetries</code>** allows you to control the max number of call requeues after worker termination (unexpected or timeout). By default this option is set to `Infinity` which means that each call of each terminated worker will always be auto requeued. When the number of retries exceeds `maxRetries` value, the job callback will be executed with a `ProcessTerminatedError`. Note that if you are running with finite `maxCallTime` and `maxConcurrentCallsPerWorkers` greater than `1` then any `TimeoutError` will increase the retries counter *for each* concurrent call of the terminated worker.\n\n  * **<code>autoStart</code>** when set to `true` will start the workers as early as possible. Use this when your workers have to do expensive initialization. That way they'll be ready when the first request comes through.\n\n  * **<code>onChild</code>** when new child process starts this callback will be called with subprocess object as an argument. Use this when you need to add some custom communication with child processes.\n\n### workerFarm.end(farm)\n\nChild processes stay alive waiting for jobs indefinitely and your farm manager will stay alive managing its workers, so if you need it to stop then you have to do so explicitly. If you send your farm API to `workerFarm.end()` then it'll cleanly end your worker processes. Note though that it's a *soft* ending so it'll wait for child processes to finish what they are working on before asking them to die.\n\nAny calls that are queued and not yet being handled by a child process will be discarded. `end()` only waits for those currently in progress.\n\nOnce you end a farm, it won't handle any more calls, so don't even try!\n\n## Related\n\n* [farm-cli](https://github.com/Kikobeats/farm-cli) – Launch a farm of workers from CLI.\n\n## License\n\nWorker Farm is Copyright (c) 2014 Rod Vagg [@rvagg](https://twitter.com/rvagg) and licensed under the MIT license. All rights not explicitly granted in the MIT license are reserved. See the included LICENSE.md file for more details.\n",
+  "maintainers": [
+    {
+      "name": "amasad",
+      "email": "amjad.masad@gmail.com"
+    },
+    {
+      "name": "rvagg",
+      "email": "rod@vagg.org"
+    }
+  ],
+  "time": {
+    "modified": "2019-05-03T13:22:06.876Z",
+    "created": "2013-01-01T12:19:22.535Z",
+    "0.0.0": "2013-01-01T12:19:26.838Z",
+    "0.0.1": "2013-01-09T00:21:30.302Z",
+    "0.1.0": "2013-08-29T06:24:32.998Z",
+    "0.2.0": "2013-08-29T11:43:07.592Z",
+    "0.2.1": "2013-08-29T11:47:48.914Z",
+    "0.3.0": "2013-09-17T06:13:27.069Z",
+    "0.3.1": "2013-09-19T06:07:04.745Z",
+    "1.0.0": "2014-08-16T06:17:07.743Z",
+    "1.0.1": "2014-08-16T06:19:53.729Z",
+    "1.1.0": "2014-11-17T15:38:30.691Z",
+    "1.2.0": "2015-02-04T04:42:25.940Z",
+    "1.3.0": "2015-05-11T05:56:04.562Z",
+    "1.3.1": "2015-05-21T18:13:15.900Z",
+    "1.4.0": "2017-06-30T00:11:09.792Z",
+    "1.4.1": "2017-06-30T00:19:24.490Z",
+    "1.5.0": "2017-08-14T06:56:08.399Z",
+    "1.5.1": "2017-10-30T10:42:07.700Z",
+    "1.5.2": "2017-11-16T05:34:45.257Z",
+    "1.5.3": "2018-02-26T02:42:41.800Z",
+    "1.5.4": "2018-02-26T02:44:01.701Z",
+    "1.6.0": "2018-03-09T03:14:31.858Z",
+    "1.7.0": "2019-05-03T13:22:04.472Z"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rvagg/node-worker-farm.git"
+  },
+  "users": {
+    "6174": true,
+    "luk": true,
+    "humantriangle": true,
+    "matthiasg": true,
+    "mastayoda": true,
+    "antoniobrandao": true,
+    "dwayneford": true,
+    "chocolateboy": true,
+    "alectic": true,
+    "qlqllu": true,
+    "leodutra": true,
+    "guananddu": true,
+    "nicomf1982": true,
+    "moimikey": true,
+    "bcoe": true,
+    "surajs21": true,
+    "jakedetels": true,
+    "chriszs": true,
+    "du1970": true,
+    "bobxuyang": true,
+    "ahmed-dinar": true,
+    "nbuchanan": true,
+    "fabriece": true,
+    "d-band": true,
+    "drewigg": true,
+    "shanewholloway": true,
+    "aliem": true,
+    "jujyfruits": true,
+    "tzq1011": true,
+    "teamsteamdev": true,
+    "larrychen": true,
+    "sdolard": true,
+    "keyn": true,
+    "darikspark": true,
+    "joakin": true,
+    "unconfident": true
+  },
+  "homepage": "https://github.com/rvagg/node-worker-farm",
+  "keywords": [
+    "worker",
+    "child",
+    "processing",
+    "farm"
+  ],
+  "bugs": {
+    "url": "https://github.com/rvagg/node-worker-farm/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md"
+}

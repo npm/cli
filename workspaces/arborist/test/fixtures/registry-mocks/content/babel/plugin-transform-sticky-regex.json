@@ -1,0 +1,2845 @@
+{
+  "_id": "@babel/plugin-transform-sticky-regex",
+  "_rev": "68-efb9d513a1c8ee1ff2c2eba5f5fd594c",
+  "name": "@babel/plugin-transform-sticky-regex",
+  "description": "Compile ES2015 sticky regex to an ES5 RegExp constructor",
+  "dist-tags": {
+    "latest": "7.12.1"
+  },
+  "versions": {
+    "7.0.0-beta.4": {
+      "name": "@babel/plugin-transform-sticky-regex",
+      "version": "7.0.0-beta.4",
+      "description": "Compile ES2015 sticky regex to an ES5 RegExp constructor",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-sticky-regex"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-regex": "7.0.0-beta.4",
+        "@babel/types": "7.0.0-beta.4"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.3"
+      },
+      "devDependencies": {
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.4"
+      },
+      "_id": "@babel/plugin-transform-sticky-regex@7.0.0-beta.4",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.1.4",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-nyjexwylpqbiODSVhrdWzxLuvEwgSK+HHCBzK8dMsgjCFU+gp1Y0QQ5CVVUaSije5o5u+RGItJ9YDS2//iXjKA==",
+        "shasum": "678c577d4583220b84aa996f135a3c6722c7d535",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-sticky-regex/-/plugin-transform-sticky-regex-7.0.0-beta.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-sticky-regex-7.0.0-beta.4.tgz_1509388529392_0.9954312527552247"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.5": {
+      "name": "@babel/plugin-transform-sticky-regex",
+      "version": "7.0.0-beta.5",
+      "description": "Compile ES2015 sticky regex to an ES5 RegExp constructor",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-sticky-regex"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-regex": "7.0.0-beta.5",
+        "@babel/types": "7.0.0-beta.5"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.4 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.5"
+      },
+      "_id": "@babel/plugin-transform-sticky-regex@7.0.0-beta.5",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.1.4",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-lQ9xcbGpOnKW/nj73P5edq2UTnbhTcwSIh7j2dkFRDqlXCGCcZgHn9xeA9puXq1t1GEOinFF/Z6pBu1hCNJMIg==",
+        "shasum": "07025a77b137ae82d8a1b36a4366eedc03a48ec0",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-sticky-regex/-/plugin-transform-sticky-regex-7.0.0-beta.5.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-sticky-regex-7.0.0-beta.5.tgz_1509397025069_0.17160276416689157"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.31": {
+      "name": "@babel/plugin-transform-sticky-regex",
+      "version": "7.0.0-beta.31",
+      "description": "Compile ES2015 sticky regex to an ES5 RegExp constructor",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-sticky-regex"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-regex": "7.0.0-beta.31",
+        "@babel/types": "7.0.0-beta.31"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.31"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.31",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.31"
+      },
+      "_id": "@babel/plugin-transform-sticky-regex@7.0.0-beta.31",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.1.4",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-N86hE0JVv4PWqDBt6W/++Aot4c4Grp4+9YYbGa8LZgDjJyY/cNxZtseKEo6Y0SI8HHGIAgPIqi1JdQXe2/z8XA==",
+        "shasum": "4dae2706d62dd3f97d2d91d296e8842a89cefa7d",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-sticky-regex/-/plugin-transform-sticky-regex-7.0.0-beta.31.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-sticky-regex-7.0.0-beta.31.tgz_1509739437254_0.7989796879701316"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.32": {
+      "name": "@babel/plugin-transform-sticky-regex",
+      "version": "7.0.0-beta.32",
+      "description": "Compile ES2015 sticky regex to an ES5 RegExp constructor",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-sticky-regex"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-regex": "7.0.0-beta.32"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.32"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.32",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.32"
+      },
+      "_id": "@babel/plugin-transform-sticky-regex@7.0.0-beta.32",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-HvgKJ1j6ziYbphvn7QCvTHk6K/TeqNo3dFdHfv7KgXQYxz/OQV8hxCE4SK6nqesrQftOBWeZlNotexcA8qVRSw==",
+        "shasum": "efaf0faed8c183d8777860ae8a97c3931970779b",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-sticky-regex/-/plugin-transform-sticky-regex-7.0.0-beta.32.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-sticky-regex-7.0.0-beta.32.tgz_1510493623913_0.4851625291630626"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.33": {
+      "name": "@babel/plugin-transform-sticky-regex",
+      "version": "7.0.0-beta.33",
+      "description": "Compile ES2015 sticky regex to an ES5 RegExp constructor",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-sticky-regex"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-regex": "7.0.0-beta.33"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.33"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.33",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.33"
+      },
+      "_id": "@babel/plugin-transform-sticky-regex@7.0.0-beta.33",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-gFI4OrCOZ/L5OVfFCNHjAARdP3ftWEV9ABA1OOo9LZA/RQgav8OvO4tpvJd7XyWOLbAywimtIo8G5M1NKDKcxQ==",
+        "shasum": "e6eb8d7c7495d125b4bd363acd2a103aa559ef54",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-sticky-regex/-/plugin-transform-sticky-regex-7.0.0-beta.33.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-sticky-regex-7.0.0-beta.33.tgz_1512138533527_0.05170206679031253"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.34": {
+      "name": "@babel/plugin-transform-sticky-regex",
+      "version": "7.0.0-beta.34",
+      "description": "Compile ES2015 sticky regex to an ES5 RegExp constructor",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-sticky-regex"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-regex": "7.0.0-beta.34"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.34"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.34",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.34"
+      },
+      "_id": "@babel/plugin-transform-sticky-regex@7.0.0-beta.34",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-tn7GJz07Z8pV8j2mCGeaqIc/pEtCtnLmCGpAfbwOBkccyEI81YUBF0HnvqHdMTLcmN6A7TXBZmaXovEOmlZuhQ==",
+        "shasum": "1a3b656bbfdf5a161248d2559ad016a203817488",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-sticky-regex/-/plugin-transform-sticky-regex-7.0.0-beta.34.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-sticky-regex-7.0.0-beta.34.tgz_1512225592932_0.09435388259589672"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.35": {
+      "name": "@babel/plugin-transform-sticky-regex",
+      "version": "7.0.0-beta.35",
+      "description": "Compile ES2015 sticky regex to an ES5 RegExp constructor",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-sticky-regex"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-regex": "7.0.0-beta.35"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.35"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.35",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.35"
+      },
+      "_id": "@babel/plugin-transform-sticky-regex@7.0.0-beta.35",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-EEzzZi61o/4VZzb5nhcNlZ7NPpRLOviUu+SpcTYIQCf1s9QdoyQ8gqb3+3x3vLhwRcKDe8gLee8INXk3Ebg//g==",
+        "shasum": "ee70fed27bf78e407d2338519db09176cca73597",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-sticky-regex/-/plugin-transform-sticky-regex-7.0.0-beta.35.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-sticky-regex-7.0.0-beta.35.tgz_1513288091671_0.4123945194296539"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.36": {
+      "name": "@babel/plugin-transform-sticky-regex",
+      "version": "7.0.0-beta.36",
+      "description": "Compile ES2015 sticky regex to an ES5 RegExp constructor",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-sticky-regex"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-regex": "7.0.0-beta.36"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.36"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.36",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.36"
+      },
+      "_id": "@babel/plugin-transform-sticky-regex@7.0.0-beta.36",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-DcMR//iXgOhYFj1FeRXweSfO7Iyw5DMDgRxl7n/7uqj+BfjGL7X2O8OOqDQWlk8nYE7MuUmCiMLg6E52vWyxqw==",
+        "shasum": "c4cfb9ee99637698319dc0ed097560e12c48fb4d",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-sticky-regex/-/plugin-transform-sticky-regex-7.0.0-beta.36.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "james@henry.sc",
+          "name": "jameshenry"
+        },
+        {
+          "email": "kent@doddsfamily.us",
+          "name": "kentcdodds"
+        },
+        {
+          "email": "kaicataldo@gmail.com",
+          "name": "kaicataldo"
+        },
+        {
+          "email": "teddy.katz@gmail.com",
+          "name": "not-an-aardvark"
+        },
+        {
+          "email": "star.ctor@gmail.com",
+          "name": "mysticatea"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-sticky-regex-7.0.0-beta.36.tgz_1514228714689_0.11495564435608685"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.37": {
+      "name": "@babel/plugin-transform-sticky-regex",
+      "version": "7.0.0-beta.37",
+      "description": "Compile ES2015 sticky regex to an ES5 RegExp constructor",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-sticky-regex"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-regex": "7.0.0-beta.37"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.37"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.37",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.37"
+      },
+      "_id": "@babel/plugin-transform-sticky-regex@7.0.0-beta.37",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-riK/UAjidGXKbMbzyZIwfeaRcIhmCb8a8OnZuwxwfKqJKcWMs+K7c1+l4126FTX5qMysmL1r/w3CCmyb90HSYA==",
+        "shasum": "49c7183ddb19d207351d6890a251a9f095c70543",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-sticky-regex/-/plugin-transform-sticky-regex-7.0.0-beta.37.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-sticky-regex-7.0.0-beta.37.tgz_1515427374880_0.20016098930500448"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.38": {
+      "name": "@babel/plugin-transform-sticky-regex",
+      "version": "7.0.0-beta.38",
+      "description": "Compile ES2015 sticky regex to an ES5 RegExp constructor",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-sticky-regex"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-regex": "7.0.0-beta.38"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.38"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.38",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.38"
+      },
+      "_id": "@babel/plugin-transform-sticky-regex@7.0.0-beta.38",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-kwH7JLQ+UqDJK4ZkEimL/mMrRSTS/Agm8+EzEJomgr2P2xzSI7fHQ4a6F4m6PFFk3ZUpdF2TDp1V/7q4Hy8Etg==",
+        "shasum": "204a8c423948c195d164dcbe3b7adf9a8e1e0989",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-sticky-regex/-/plugin-transform-sticky-regex-7.0.0-beta.38.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-sticky-regex-7.0.0-beta.38.tgz_1516206743256_0.36844571423716843"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.39": {
+      "name": "@babel/plugin-transform-sticky-regex",
+      "version": "7.0.0-beta.39",
+      "description": "Compile ES2015 sticky regex to an ES5 RegExp constructor",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-sticky-regex"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-regex": "7.0.0-beta.39"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.39"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.39",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.39"
+      },
+      "_id": "@babel/plugin-transform-sticky-regex@7.0.0-beta.39",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-K3ZbXcK8eVt1gOqeZSZDqP7j52aLTbjcBXkaPXvZFOx7wbuJDlhKqWBo5SI2KBWnnHhS6Q5x29HchDnovYGZMg==",
+        "shasum": "9e989e99efb9dc84928507adb260934f2e336713",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-sticky-regex/-/plugin-transform-sticky-regex-7.0.0-beta.39.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-sticky-regex-7.0.0-beta.39.tgz_1517344072426_0.8879833628889173"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.40": {
+      "name": "@babel/plugin-transform-sticky-regex",
+      "version": "7.0.0-beta.40",
+      "description": "Compile ES2015 sticky regex to an ES5 RegExp constructor",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-sticky-regex"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-regex": "7.0.0-beta.40"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.40"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.40",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.40"
+      },
+      "_id": "@babel/plugin-transform-sticky-regex@7.0.0-beta.40",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-dJPUaV2D5SwSXypaDFRJd+LIhabeaWhZ3McmNo0COn+lBINJ9iL7mYuPxnqwhM/KoBNv+vYIoFFZzT/I27K6AQ==",
+        "shasum": "5b44b31f8539fc66af18962e55752b82298032ee",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-sticky-regex/-/plugin-transform-sticky-regex-7.0.0-beta.40.tgz",
+        "fileCount": 3,
+        "unpackedSize": 2273
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-sticky-regex_7.0.0-beta.40_1518453733087_0.20431007363908016"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.41": {
+      "name": "@babel/plugin-transform-sticky-regex",
+      "version": "7.0.0-beta.41",
+      "description": "Compile ES2015 sticky regex to an ES5 RegExp constructor",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-sticky-regex"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.41",
+        "@babel/helper-regex": "7.0.0-beta.41"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.41"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.41",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.41"
+      },
+      "_id": "@babel/plugin-transform-sticky-regex@7.0.0-beta.41",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-60eclaeQsp6xyYx07TYiC/qOsGqtIrAF7T9vYFM8t4kF9v+/qyIWUzXSBuGICdxnt6Di7zSOup91gI/11Kmjlw==",
+        "shasum": "00a204ee9719c33d8a8c96526de4ec908084aacb",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-sticky-regex/-/plugin-transform-sticky-regex-7.0.0-beta.41.tgz",
+        "fileCount": 3,
+        "unpackedSize": 2484
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-sticky-regex_7.0.0-beta.41_1521044779551_0.7171118894799919"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.42": {
+      "name": "@babel/plugin-transform-sticky-regex",
+      "version": "7.0.0-beta.42",
+      "description": "Compile ES2015 sticky regex to an ES5 RegExp constructor",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-sticky-regex"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.42",
+        "@babel/helper-regex": "7.0.0-beta.42"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.42"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.42",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.42"
+      },
+      "_id": "@babel/plugin-transform-sticky-regex@7.0.0-beta.42",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-zQI5NhVfnSNNFiG8JhoXXzTV89aLTfHW22inWefATRmtqe64iHZ4bivBTkDbxt6X/St1yH0aZB+4XtBDZjzcKQ==",
+        "shasum": "b0a5585ec24013dd6f0b1b8cc7a73423c4bc082f",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-sticky-regex/-/plugin-transform-sticky-regex-7.0.0-beta.42.tgz",
+        "fileCount": 3,
+        "unpackedSize": 2484
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-sticky-regex_7.0.0-beta.42_1521147051046_0.3902634901447364"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.43": {
+      "name": "@babel/plugin-transform-sticky-regex",
+      "version": "7.0.0-beta.43",
+      "description": "Compile ES2015 sticky regex to an ES5 RegExp constructor",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-sticky-regex"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.43",
+        "@babel/helper-regex": "7.0.0-beta.43"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.43"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.43",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.43"
+      },
+      "_id": "@babel/plugin-transform-sticky-regex@7.0.0-beta.43",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-+XyxUqJ+PCw1iIZ0g7bfKawKMxb0+fD/xPAYuOUHXpx0WFGAR1R2XJyJQop+EJgiMtQaEyw8zlUxL/drGBNPdA==",
+        "shasum": "94e1c2e12079cc54d435a285af3fe202a864d387",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-sticky-regex/-/plugin-transform-sticky-regex-7.0.0-beta.43.tgz",
+        "fileCount": 3,
+        "unpackedSize": 2796
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-sticky-regex_7.0.0-beta.43_1522687710095_0.6725201879457725"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.44": {
+      "name": "@babel/plugin-transform-sticky-regex",
+      "version": "7.0.0-beta.44",
+      "description": "Compile ES2015 sticky regex to an ES5 RegExp constructor",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-sticky-regex"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.44",
+        "@babel/helper-regex": "7.0.0-beta.44"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.44"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.44",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.44"
+      },
+      "_id": "@babel/plugin-transform-sticky-regex@7.0.0-beta.44",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-iqByRYvEMG59aOsAAJKRuolqwQOrRIGDfLTaDr45uaW5OLKUaQiPG/BxMF0WDNcQhKIhxiLUZ2K1s26v6SpsKg==",
+        "shasum": "512597cd7535f313aa29f31d0b60572a0374db00",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-sticky-regex/-/plugin-transform-sticky-regex-7.0.0-beta.44.tgz",
+        "fileCount": 3,
+        "unpackedSize": 2830
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-sticky-regex_7.0.0-beta.44_1522707611894_0.9135432810243806"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.45": {
+      "name": "@babel/plugin-transform-sticky-regex",
+      "version": "7.0.0-beta.45",
+      "description": "Compile ES2015 sticky regex to an ES5 RegExp constructor",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-sticky-regex"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.45",
+        "@babel/helper-regex": "7.0.0-beta.45"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.45"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.45",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.45"
+      },
+      "_id": "@babel/plugin-transform-sticky-regex@7.0.0-beta.45",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-OGjWCLXKnWTOECKQQ46n0dJgshTo8Zn+CSn7DIDZIwlyP53ReIm9YMq4SqUOJ05YFBZNZuSIuFiI25oFNcFsOA==",
+        "shasum": "276463edc8b7b43c0158cc86a75d88f04b957284",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-sticky-regex/-/plugin-transform-sticky-regex-7.0.0-beta.45.tgz",
+        "fileCount": 3,
+        "unpackedSize": 2830,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa3T1zCRA9TVsSAnZWagAALuoP+gPAU6cj1ojbzTpO64Xk\npbK0yT0s8MP+wLBJQeFHPYthbcnd3DnT97ajikU/QKF3+Yif6GyoOXNXb4p4\neJvkqzhThCNhmPGFRl8TjO1rgSi4i7LISFRL744i7+bkTq04gYumcJNBnwQj\nGAB6NMYPDLPspYnT2RzL7LMcTPFhXmuVnhkabPj/I93Hhw2oEj1/cBU1Wgs+\nm8MAYTtbQxPZ3BfgD+Qvat2rRDxoFs3dTPrtcmKZkuFVOqq9kjladMjwAMiO\n3RK3fzXLbhkXYpXn89HiCVhzuir0pYRVxNagzFEUDzMpT+un3cCPR/s5VVAj\n6iZeBrRXOxvJtHC++J030CVsyxgOiZgy/D9l6/LPUMFZZFml5MuQbrDfKNtj\n/KT+02nbcKo/GpzvgUgs2vNiWgqUkNA0l4dhMADqv6aOLBLHeV+qq2XANCfL\nvxyXPc630mISpGBe0DBNQbBTEZl/SesRJx2YBTa0wClYCJYNAs3nZ3qzCYPE\nipchjLTh5ha7P/C5aNhTe+RnFASE0QhM7TwXF3WrcXdmsfSXL6DKadHh4X+b\nUbbfID4Pt9WjGdvfd/A5FbLS3vioJfJwWN9e1EDGyZS+HkT8qt7HxW91zU7p\nmdrqggsp/YDRiuTtAIqQVm2ZDDuLjRb/PZbCoJtDU2b0TRrh0eU/3vOC9E0U\nosAZ\r\n=Pt0L\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-sticky-regex_7.0.0-beta.45_1524448627367_0.8338195308679563"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.46": {
+      "name": "@babel/plugin-transform-sticky-regex",
+      "version": "7.0.0-beta.46",
+      "description": "Compile ES2015 sticky regex to an ES5 RegExp constructor",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-sticky-regex"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.46",
+        "@babel/helper-regex": "7.0.0-beta.46"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.46"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.46",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.46"
+      },
+      "_id": "@babel/plugin-transform-sticky-regex@7.0.0-beta.46",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.4.0",
+      "_npmUser": {
+        "name": "loganfsmyth",
+        "email": "loganfsmyth@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-goMgOLODjG1cgFHlKACh/NT/wrnmuRi2CpXsjOan10eZce0fk9kahYz/04cqhppmwtV/vQWwH2ikAHODSD8r5w==",
+        "shasum": "c96c41f31272ec1cdc47dd91a22c6d75c4db70d2",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-sticky-regex/-/plugin-transform-sticky-regex-7.0.0-beta.46.tgz",
+        "fileCount": 3,
+        "unpackedSize": 2830,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa3WGgCRA9TVsSAnZWagAAXuQP/AmxvqLp76g+PmDPlWcT\nBdfSOTS8kx45w+QL53ADmYyxF3j/O9Ldb/qw5dYyvRnaSqz/XqEmP127UJ+s\neoGvu1DAKWkk8gy33OpZx7M4r8KxalIaYRKysbNplUznBE3wWdBAx4OB3nm7\nlDAlUQa4Sc3wxc0VMUOHhLEMmsl+azK7ewcP0k1gtgho/m2uv/kGuBYOFSNe\nHlEJeuzTJVXtm6xyw9LZ+deqr32XRpAKAQG+Oqc0kdOIZlBIJ3m5IPNyJBAh\nmWdGIVvauXB9og2k23NOTiUEnGqJyYNcBWLAag5whXhDw/UlU1xJD+snW9qS\n+Zd13e+R1jk18qjL3QxMyVMlOW1PsyJUyoKOHvYX40gujowfEPuRtwVrxUlV\nMxTjAHMnlFVuBc0FF8jcuaHAPZVjjN1y+TtUi5AQ9VI2j0LkIc5zNDca6Jdi\nQAlOcTUJGmSvu7qMmiz+d0dKPZf4Q8mX6EKU3dxTnJYXWxqM54kcPBl8G8lS\nOz4mo+iqkiVGmfVCznTEl3ushuJKEytXAwazRjKWyYZDcTtTgdpolzt1PNPC\nMHkMZerO/GQyfKLxlzTkOK+WnoD+mcL3kr+7LvM1Qsb/FbWTZc2KOZUazmI1\n3uW9PKxuXDDFsgYf7ZRt06NhGAmQcdQ1h/tolID8YXndT31z0GdmbUs/+3h6\nUvmK\r\n=06Zo\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-sticky-regex_7.0.0-beta.46_1524457887798_0.2991881380352559"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.47": {
+      "name": "@babel/plugin-transform-sticky-regex",
+      "version": "7.0.0-beta.47",
+      "description": "Compile ES2015 sticky regex to an ES5 RegExp constructor",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-sticky-regex"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.47",
+        "@babel/helper-regex": "7.0.0-beta.47"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.47"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.47",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.47"
+      },
+      "_id": "@babel/plugin-transform-sticky-regex@7.0.0-beta.47",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-+Rc6NihGoXcwAqAxbiumvzOYxRR0aUg1ZExfyHnI5QnQf0sf4xAfgT/YpGvEgLd5Ci0rka+IWSj54PhzZkhuTg==",
+        "shasum": "c0aa347d76b5dc87d3b37ac016ada3f950605131",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-sticky-regex/-/plugin-transform-sticky-regex-7.0.0-beta.47.tgz",
+        "fileCount": 3,
+        "unpackedSize": 2807,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa+iUvCRA9TVsSAnZWagAA12EP/RNeOfn7lLVmAB+Bc51o\n/KFRM3yo+A+vdfP+MZnrLASb6icUiv2OUF4oDRgCx370l/1/WjS2odrSEog2\nVTMcA9z+ZaNgyzW90m7DaYSaRNDGq49hUmfLUSfGPXYvcu3PAfn+bPiZMC4n\npaDAoPHhhSHbSFxgTk+Yvvy/0bTZCt1qGe0wVZkZE6hqlxMQi8T9LJH24WBH\n2Eq0CHV3gjoLZKm9UZ0bFq1C8l8ML+wxOMkc7Lo77uPQbVgzw4wYwM7qFtdC\n9jx74OtjE9CsoVX9gN0+7PgFGcHfk/SpSfMgcatDibu9p0+XhqqaeqZz+6N8\nxmVBklfWkPAtYdIxmr/yhE6cC6N/wPaIXXpmy3U2CRyltWXWl1LF69xPcDVt\na6QESGtadMnCWOqib2QLAIbVHEeMUwf647Ps7ve5qd8I2xr6QxczqloeMyw2\nq6nP+ufFpdErUVmxI6y3EYqTpFMFppYu2Vhvu2kcfmug5sDvqYiSsrsxjHL7\nnx4VpVDRLqIhD7GPWh+MPewoQ1yAY25Qb6BY3de5LpUZsgvsO6YT9pAiSgvv\nzRXK8NsIeVhhWqfQZaVNK+3FVIKp2NXhVbR7BGanY/LuTttc/5v5CwM/BU+C\nTj+O0gCF2n6+lAFwq7FfCnrs0WOu1MmpNDkjPIbNpIoR+ChRi2czyCLz/4OS\nZwSk\r\n=k3Zd\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-sticky-regex_7.0.0-beta.47_1526342958569_0.8728844918150998"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.48": {
+      "name": "@babel/plugin-transform-sticky-regex",
+      "version": "7.0.0-beta.48",
+      "description": "Compile ES2015 sticky regex to an ES5 RegExp constructor",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-sticky-regex"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.48",
+        "@babel/helper-regex": "7.0.0-beta.48"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.48"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.48",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.48"
+      },
+      "_id": "@babel/plugin-transform-sticky-regex@7.0.0-beta.48",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-HNXgYUxMMDFGgfT9Rzi7BzpM27qdQl5akXq9X1RHRejroORwdVk3FCv4+QdxPxuLIWFkiPR55ZqMGF3W/r+hyA==",
+        "shasum": "02426d9248b6dd164188d5f63cff574e6b5728fa",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-sticky-regex/-/plugin-transform-sticky-regex-7.0.0-beta.48.tgz",
+        "fileCount": 3,
+        "unpackedSize": 2796,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbBxESCRA9TVsSAnZWagAAaXAP/jMzjA4aycipw1AkkiDo\nY0p0Zkx/YvcDKHJq9ZBXbUra1XdWMDKF8fqddA8dQngX0Aisaas25QSoLUOx\n0j3h7+OyGyAPcPieyPmcjrEUDt1Ri10Va/NuqL26fDAgLiTyXLZd7DpbCM81\nZFIiO0m2bNv/e/wQHSdWDLQw4VisxEHVKrkTYr3YOiMfpEJz8OruYE2MuZwk\nVneqmSVJ1J0nIHqlvHohH90grWIkPnwxtDrQyt6v/Wv0GMpEwVt3zqsIgQvf\nW9ZCzbsqBOh/GbVO2bOfTxPHHneZeXVft4LuDl6BAz7Do6+tZyi0kJayFoP3\ny/JDaaDPPWElVLUprJWXr5OHWa2A2DBvXbwrc/31mOa3M6Afx2j8KAK7Lu7H\nJcMg6HtlergSdoPHLKP7W94J4a31rO5j36i6Rh7ceHzhEU07RvoPu1oS5R+Z\ng+thUPhl3oGRM+3uke1U8RWBJCQt4TAYXiWqEOvMt1NOAlER942RV/qVb99v\nNI7A9qsKxUttTdqnaFUnVahP9/JuQerxjVGTBwdwYFplasKdZEmcViWEeOtz\npQ6biBhsdeRzfgAnYQH8B1gsFa4nbgwYqU6AMCfVR8jPvbsJ2sNtyr/JED4b\nU8yFsrV/b0HSCzwnh7xc4eCCK79wyxC4lUM7K66969qgNzAMhh8L6C+5GEwC\ndSCw\r\n=2YBm\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-sticky-regex_7.0.0-beta.48_1527189777324_0.8115136924233026"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.49": {
+      "name": "@babel/plugin-transform-sticky-regex",
+      "version": "7.0.0-beta.49",
+      "description": "Compile ES2015 sticky regex to an ES5 RegExp constructor",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-sticky-regex"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.49",
+        "@babel/helper-regex": "7.0.0-beta.49"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.49"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.49",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.49"
+      },
+      "_id": "@babel/plugin-transform-sticky-regex@7.0.0-beta.49",
+      "scripts": {},
+      "_shasum": "08cc5b64cf6a5942a87bdd9b4a4818d4cba12df3",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.12.3",
+      "_npmUser": {
+        "name": "loganfsmyth",
+        "email": "loganfsmyth@gmail.com"
+      },
+      "dist": {
+        "shasum": "08cc5b64cf6a5942a87bdd9b4a4818d4cba12df3",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-sticky-regex/-/plugin-transform-sticky-regex-7.0.0-beta.49.tgz",
+        "fileCount": 4,
+        "unpackedSize": 2811,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbCDOZCRA9TVsSAnZWagAAyvsP/3cc/5qeGEywaNCinpP4\nXUrbgxURRol1heuDrRU29KMrd2Y2glBHce9fcnkaRREt2frEyOqav3B0Akmp\nUvCOv4wnSbgh3v7PzKvmrPnGvmvugkq0OJp5jV43Z9mT1GpuTtDJ8z89ffkG\nCopyI+WFVSNSR/HummIZeuxfbp4wRRdLLURDgyJjyur7w3+6hojQnRoGEHe6\n8h7JVBckgt1k60szuZ2qXg9NZNtSCjZQ2r8sFuFCh4GOhTB0iuGabB/C/X7z\nN7KXppMozHC7Z2bGH6v/fXU2HLEKBeQ7cjLow4wg7huv8pU/5dOy6+GB8FbP\nx60Ocy9cdGP627MW5COWlF3L2louXeFEAb+PXjWJgr7ZQPLDiISZkiZsjmTm\nve14JfmOMMmXnSwQ751vFYcYTxDRWbbr7BpOTfIKoK4Sh9PL8LnNJgUUNoD/\nqFOMMPhGv4/jVm4F1eGzXgI/HQlI1RMeh5SmsPo7RKjTAZxQmnHNTb7AO1st\nlXe6HGSC6Eh6/tvoXDPaG7DB8sds+zuF1dPOkuGCNbgxr5VllqgZBUPdXbAv\noKllUqPeT2mVD9SBaTodS/+6HXcLtmU50qwNRUk5ATfhA198rEf3tQrxJlwG\n8WBsMGyjIIHJclPPRfQHKCKsX6znJ2719lxj2NU4RNR30krCY/9gGFD4sdNk\nJ0nZ\r\n=d52Y\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-sticky-regex_7.0.0-beta.49_1527264153207_0.5704581106382707"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.50": {
+      "name": "@babel/plugin-transform-sticky-regex",
+      "version": "7.0.0-beta.50",
+      "description": "Compile ES2015 sticky regex to an ES5 RegExp constructor",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-sticky-regex"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.50",
+        "@babel/helper-regex": "7.0.0-beta.50"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.49"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.50",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.50"
+      },
+      "_id": "@babel/plugin-transform-sticky-regex@7.0.0-beta.50",
+      "dist": {
+        "shasum": "b2b646a214dc96c089f3c03f9e2ece207df2b15e",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-sticky-regex/-/plugin-transform-sticky-regex-7.0.0-beta.50.tgz",
+        "fileCount": 5,
+        "unpackedSize": 2567
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-sticky-regex_7.0.0-beta.50_1528832843959_0.1519911079510885"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.51": {
+      "name": "@babel/plugin-transform-sticky-regex",
+      "version": "7.0.0-beta.51",
+      "description": "Compile ES2015 sticky regex to an ES5 RegExp constructor",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-sticky-regex"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.51",
+        "@babel/helper-regex": "7.0.0-beta.51"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.51",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.51"
+      },
+      "_id": "@babel/plugin-transform-sticky-regex@7.0.0-beta.51",
+      "dist": {
+        "shasum": "48cbeacd31bd05ee800b5facbcb09c5781bd9619",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-sticky-regex/-/plugin-transform-sticky-regex-7.0.0-beta.51.tgz",
+        "fileCount": 5,
+        "unpackedSize": 2581
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-sticky-regex_7.0.0-beta.51_1528838396701_0.434755246613564"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.52": {
+      "name": "@babel/plugin-transform-sticky-regex",
+      "version": "7.0.0-beta.52",
+      "description": "Compile ES2015 sticky regex to an ES5 RegExp constructor",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-sticky-regex"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.52",
+        "@babel/helper-regex": "7.0.0-beta.52"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.52",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.52"
+      },
+      "_id": "@babel/plugin-transform-sticky-regex@7.0.0-beta.52",
+      "dist": {
+        "shasum": "5c8af3d6a48d658e0cbd6fb67631f8a4889eac2b",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-sticky-regex/-/plugin-transform-sticky-regex-7.0.0-beta.52.tgz",
+        "fileCount": 5,
+        "unpackedSize": 2580
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-sticky-regex_7.0.0-beta.52_1530838769226_0.17942153499664526"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.53": {
+      "name": "@babel/plugin-transform-sticky-regex",
+      "version": "7.0.0-beta.53",
+      "description": "Compile ES2015 sticky regex to an ES5 RegExp constructor",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-sticky-regex"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.53",
+        "@babel/helper-regex": "7.0.0-beta.53"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.53",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.53"
+      },
+      "_id": "@babel/plugin-transform-sticky-regex@7.0.0-beta.53",
+      "dist": {
+        "shasum": "0fcf3c994abdd8bab59ba9782fe4d9f8a545d6e7",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-sticky-regex/-/plugin-transform-sticky-regex-7.0.0-beta.53.tgz",
+        "fileCount": 5,
+        "unpackedSize": 2580
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-sticky-regex_7.0.0-beta.53_1531316428339_0.7772271652263347"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.54": {
+      "name": "@babel/plugin-transform-sticky-regex",
+      "version": "7.0.0-beta.54",
+      "description": "Compile ES2015 sticky regex to an ES5 RegExp constructor",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-sticky-regex"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.54",
+        "@babel/helper-regex": "7.0.0-beta.54"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.54",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.54"
+      },
+      "_id": "@babel/plugin-transform-sticky-regex@7.0.0-beta.54",
+      "dist": {
+        "shasum": "568f35eb5118ae96fad82eac36374d7923b47883",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-sticky-regex/-/plugin-transform-sticky-regex-7.0.0-beta.54.tgz",
+        "fileCount": 5,
+        "unpackedSize": 2580
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-sticky-regex_7.0.0-beta.54_1531764010060_0.09849177571398005"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.55": {
+      "name": "@babel/plugin-transform-sticky-regex",
+      "version": "7.0.0-beta.55",
+      "description": "Compile ES2015 sticky regex to an ES5 RegExp constructor",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-sticky-regex"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.55",
+        "@babel/helper-regex": "7.0.0-beta.55"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.55",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.55"
+      },
+      "_id": "@babel/plugin-transform-sticky-regex@7.0.0-beta.55",
+      "dist": {
+        "shasum": "d0b80b2deb8b4db03bc6459ebe79ad8b39b40546",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-sticky-regex/-/plugin-transform-sticky-regex-7.0.0-beta.55.tgz",
+        "fileCount": 5,
+        "unpackedSize": 2580
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-sticky-regex_7.0.0-beta.55_1532815644075_0.6929318233287971"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.56": {
+      "name": "@babel/plugin-transform-sticky-regex",
+      "version": "7.0.0-beta.56",
+      "description": "Compile ES2015 sticky regex to an ES5 RegExp constructor",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-sticky-regex"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.56",
+        "@babel/helper-regex": "7.0.0-beta.56"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.56",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.56"
+      },
+      "_id": "@babel/plugin-transform-sticky-regex@7.0.0-beta.56",
+      "dist": {
+        "shasum": "89b37d31fac03f0c87b99dd7b190159d098f7398",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-sticky-regex/-/plugin-transform-sticky-regex-7.0.0-beta.56.tgz",
+        "integrity": "sha512-VGPxbfefemuJg6/UVXf8WaaU9gIZRr31aLBsjDdYfj41N3W55LSvU+6CxCZ/ID6SfNCcQUEyBtZsWMWvv38Dhw==",
+        "fileCount": 5,
+        "unpackedSize": 2580,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbZPv/CRA9TVsSAnZWagAAC6cP/1cCSAgIxfaHhvcJafUx\nxlXxx5GZN0nB5fIvAueFJiKPWPYU/svzJAYNbtjG9VUQU+IQlcA835SV6sae\nNWVa3oJ1aPJdUmC8fXQFsCe0aGp6WKg7ckLi4eGdM1tjKI0UK3AXQmBMh8Y2\nBWPV6qVysHQWIkYqTs6I3wIJA1JsHjIT7cP5WUQcZNvR2eCs42FZ/KCfncYT\nGfcCeAABBcTEBhhTJ1wt749UvO4OJyTP4b8EFhyltCr1rkwViM7c1DeOXIf9\nKv8AHr0yfhQDyVhabxNq43lOGvOWRSSfwBRp2uXWm0J5y3ghkQoC/0BUz7oM\nfMBY9YOpze+8rHSCWj88t8TrzlAOFrkDsuqYiOA8J4CjFCdAFVCW5tZuFUC5\nlAKaw7gXpx6wN8vdnL0pJGAYtQje0eRM5qsQ7Nr4VrbjpK2nhPlLB+MpwDTo\npIgZIbPmpayGYJcPwsXyZ6FD647ET55jBgtjc6v7jQleNbLysIbV4v/0QmKu\nFOlAG/+eZlGWVVZ906qlI+kGzWW6Mf3XWMExyliptBghZPBTD00cswo9YSBf\ndv4BAnI5se+VpM9f+d1pKFLYAToYOmbqeVFXkjUCos0bjYfcMIt0jlo3cRiQ\nViVgTWXBNOwdS8y2o7AHTPRnxhceOvJpActo8tlGBq6r4CgFIfB2PJxwPtA5\nrlHd\r\n=wuYF\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-sticky-regex_7.0.0-beta.56_1533344767186_0.29338298684759034"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-rc.0": {
+      "name": "@babel/plugin-transform-sticky-regex",
+      "version": "7.0.0-rc.0",
+      "description": "Compile ES2015 sticky regex to an ES5 RegExp constructor",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-sticky-regex"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-rc.0",
+        "@babel/helper-regex": "7.0.0-rc.0"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-rc.0",
+        "@babel/helper-plugin-test-runner": "7.0.0-rc.0"
+      },
+      "_id": "@babel/plugin-transform-sticky-regex@7.0.0-rc.0",
+      "dist": {
+        "shasum": "818305e06319da334dedf796437365ce5ddca991",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-sticky-regex/-/plugin-transform-sticky-regex-7.0.0-rc.0.tgz",
+        "integrity": "sha512-vGY9/M6qi85ghGsrgeOcLY301ktorB7I8Tq8JJnRuBBLKfvxuGbiGoYXiS+mQILXAknUtS7NI28B0mCtu0I+iw==",
+        "fileCount": 5,
+        "unpackedSize": 2565,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbbGSvCRA9TVsSAnZWagAAt8YP/RSiSqeSiSlkyBPu41wH\n4f9GymOGb/e7PiyPLxbMZvXODf7XFqO7JzEYivunrqE6+RSB1SUTZRKgk9yt\nm0xb+eNACRiiWgr6esxzMX1fUPPkblMnwKOPdIbiiOru2AubKHbwer5gCarO\nkxxGwz4bid5HN6iy6dxbnKwl/pz7YPsaKyGZwNBrkkXYMr8lhkX51EV6l3BL\n4Mc4Y7tUAupXwfT/AkZaojuvmEBVMWyTnrXgHvbkWW8mXUSCWUwxGj0UiRDE\nGRS5ZTuwy/L1YttnT7ADBkt5frahWHcnRJUlCaCDghyAII0HsK1vAw7Jyc2D\n6t9Wt9UfvnagXLK+q7DtOwKxZomN89mMLHkyPS1e+PzuxPlr9jOVgOrT4hVa\n1yaOlMQ+0d8+ccl5S4kOqR14OKYe4HewZbcBjlKYHZrofBmN95lR3XwSxh7r\npCd+eWrSIietLSCaz7ov5L7dMAYYsli2MAhOUG7MT0MGZKIAhGu7SC7gYERM\nlngkw/kNproeFFbu2H9/mgm4kZS/suJ1yI7yTIo2ozUcS/tllEPpBezXiVQi\nQGMh3QPv4OVLEuT/G9IAFE9ORGZ27t5ozdaIhvXscFuyhYqejRB5+OKEQpTL\n7W3SJzudeUWm1nLehpz96T1+3s71jEFjSMpaxv6pOBh0tZt/prCajBW7oFK7\nB59k\r\n=sZaK\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-sticky-regex_7.0.0-rc.0_1533830318564_0.8881432828255356"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-rc.1": {
+      "name": "@babel/plugin-transform-sticky-regex",
+      "version": "7.0.0-rc.1",
+      "description": "Compile ES2015 sticky regex to an ES5 RegExp constructor",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-sticky-regex"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-rc.1",
+        "@babel/helper-regex": "7.0.0-rc.1"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-rc.1",
+        "@babel/helper-plugin-test-runner": "7.0.0-rc.1"
+      },
+      "_id": "@babel/plugin-transform-sticky-regex@7.0.0-rc.1",
+      "dist": {
+        "shasum": "88079689a70d80c8e9b159572979a9c2b80f7c38",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-sticky-regex/-/plugin-transform-sticky-regex-7.0.0-rc.1.tgz",
+        "integrity": "sha512-sXPFGI3GTtSMxVTDwrRmgwmUcq+l0ovzUZFfAd4YK1zJQ7YQCaCjcmLskuiGM20SoteYserDADg0SrLw+8B8hA==",
+        "fileCount": 5,
+        "unpackedSize": 2546,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbbJ80CRA9TVsSAnZWagAAU9AP/RzMGCPbN+LRfmSAKVDD\n2+Awxbdm8PmqmffIO2jW2pbIMjZzMQRwF+ASMqptWSHWAP04lvCpOaaja0zY\nsMI9hdjP2MrVMMd13HdJ9VSRGLhPyxiEF//Z+iLiT+UVi+G7Ju0gpt364PP+\nnzeW3ospqGHJNDqZtewpvgPkhiTeECXhj3rmipazuJ9VeF84uk+hDN0RN8Op\nP0KpcZdFMXEV209bnXjoJ9X0HdRqvdrtPdPJ1llgtyz8HQeUZWkZXKqxUAQ1\n06kl1Y3BQgcN6LGXzvAJ3rSYJ+P58LHc6umIYJ6dVmsSGevAEvnbMiIqpLGI\nGG8TJWwgVUGF60Dzd00UDqKafJjXsBuFUxprRlvTndcP5fr7sgkTyN1z6o1l\nH242P/22/z1kjFI33phvMfpWJloit2IHoeNE7ytJTOWvZcSxlvmNFeCrUcNl\nQy5MTSkuO9atiU/kDbi2uwRw+Gsbz4o//M0uOZjILericYKkanPPh2lfFieE\nw92Z+UfNrBuJ6DidVjTdIRXHY1G5b/djg5HqnpA8JUywaQlINE3uhxd26w7V\n6d/g3IgaggtUbs8SZogFEALwHNR+yeb9DMgR4GFM/wtXltC9u6htXwMjGIZ6\n2uFi7XFMBkV2Eys1iviohobokeP+smf4Pmjf17O5lvxAR8Zzilt/cO+Cs8oM\nUxeq\r\n=Hqeq\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-sticky-regex_7.0.0-rc.1_1533845299691_0.5636451642432618"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-rc.2": {
+      "name": "@babel/plugin-transform-sticky-regex",
+      "version": "7.0.0-rc.2",
+      "description": "Compile ES2015 sticky regex to an ES5 RegExp constructor",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-sticky-regex"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-rc.2",
+        "@babel/helper-regex": "7.0.0-rc.2"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-rc.2",
+        "@babel/helper-plugin-test-runner": "7.0.0-rc.2"
+      },
+      "_id": "@babel/plugin-transform-sticky-regex@7.0.0-rc.2",
+      "dist": {
+        "shasum": "b9febc20c1624455e8d5ca1008fb32315e3a414b",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-sticky-regex/-/plugin-transform-sticky-regex-7.0.0-rc.2.tgz",
+        "integrity": "sha512-//QPQAuZE6BqOkZNqr2GLfBE0gssKucez91+4wX3f4x0QN9lsMD6fLN5mymnVGWw7FKlM3XuPYEF8syqqJD4Dw==",
+        "fileCount": 5,
+        "unpackedSize": 2546,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbfGbjCRA9TVsSAnZWagAA2S8P/1f0UDfxqIsD2Cceo/nl\nLVw0ZNeME1DpKza3f6F9A4bpVKD64SpsOnL24YppW+lye/shJeEnqMYWE+ae\n95I3S1ki1JpSmp5j/Jdrh1kM8ILVvCLIY5HXabwsBlhCSV1uemsIJD5t0QDW\nE7JDXXbw9a/9VvJ+VP00a2qM8RqdMroVAC7dCpc7fzfbvsoq0trojH7EyDoU\nI23P0O7ENg9InZe3DAU0r5ywhjQ48nj4n1MW18DVJB4tmj3LA47bhILbY93S\neFZUs9UAYS6d2Iuzof3S9wOAgTkiQ7k6HSLef2pUWhGWD78T0jTnCWBiXl3z\n05gCmfuZrqvjqiPdmCGIwMk7gsqdnp17FyFKkcx1swyaoyRCgrOSJqwhtTt1\nLgMNRlO/0BW1o9NDZcOGL9Rkwk5y2lsUYjXp1YR5PjUUFnsYce0JE2/n0OxR\nN9PDo52PMxM+odVINSkYFF/a3HAlLZ2x0Ydt9oDYgE5xwcI5Cyn3n4JyrJmL\nP/hXh2FzhF1qbVmQorB+Ya6EYlY43AGibQnBuhqPuof6gwfr87rZLONDbcz/\nxvVTH7Yb82RUI/zpM0aXzmg2NAOxcZ4pspHnxooqM8k73CxU07kIj6P8qX9y\nGl8BAAja3USi/1MuoEjhcEHF2ENZOeV47DWSmyKAnM/csOXl/fLb3OTTi6dj\n6BZP\r\n=NjwW\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-sticky-regex_7.0.0-rc.2_1534879459050_0.646289001598118"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-rc.3": {
+      "name": "@babel/plugin-transform-sticky-regex",
+      "version": "7.0.0-rc.3",
+      "description": "Compile ES2015 sticky regex to an ES5 RegExp constructor",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-sticky-regex"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-rc.3",
+        "@babel/helper-regex": "7.0.0-rc.3"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-rc.3",
+        "@babel/helper-plugin-test-runner": "7.0.0-rc.3"
+      },
+      "licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie <sebmck@gmail.com>\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/plugin-transform-sticky-regex@7.0.0-rc.3",
+      "dist": {
+        "shasum": "d1c2d8cadb2783ee774d04e8504d05cf2b20b1b8",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-sticky-regex/-/plugin-transform-sticky-regex-7.0.0-rc.3.tgz",
+        "integrity": "sha512-NH3UOZblJ4Q/K/5+w+nMyRzqkkdaJZSTtLpLFLczCizoMS5AoxRQAOzTEm8HzxHX74J+AZEzv8Vqe1/rx+f3KQ==",
+        "fileCount": 6,
+        "unpackedSize": 3645,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbgEmUCRA9TVsSAnZWagAAo0EP/1xIUJfrw8lrEEPKivYc\n/MFPivTTs6u0qjsvT2E7zh+GRaHwF5CTz4NopIFRZOxbsHbsEk0kF/yMkfaY\nMJdvAfcwVEkx/y1xC6tG5eVulD3j7EAp0tLtx79YGfO8IO7AZk/dLCDtSVo+\nGAABq+atnH01BwVX9oyK8HMoy+CLKLorVfwPhANGtk/OURK4uv4BRjlqfRxO\nsFBnzoxc8d/bPOZ0RU9KFoDgmMMomBso0PmVjPWC8SzBh6bxVKwQhGiPZtZi\np2VjblUFmRrdDj7u2lWOmkE4so2yUSrXRCk7qkoTJZjiuSR0rL7sMzwxsAee\nRYssaC4KbTynxAUi0ikODpIsugVgaHOykVmUAS9TSnef/BHR4qEw+CuNo/xW\nYqrp2zTPsLDkTqbVz+a+449cdnQf8juTgSFiqOvWqTuIxXu+zEZrShnNC9V/\n7eaLd8X04t4iyFxKMXHoAjsQhNtsNRi7yqasMr6i00yKqffcpwe+rkpGEpft\nhgF8ZmOhfKLPqfvf8ydGyduyWAHOfp6LYuA90r+12rhJn9aJAV4cRNy6v3ae\n1hrZSYWK+xB/YzDxE/+IizYqK2YDlw3/m8m99sQw6ZWXgUrym0+WAXhqKZPB\n+hb7BkZ69JpAiRhw227yGLudFnEDH3FtpHeFv9cd4DGvdZb2hZteMBCMfXjY\nHOx0\r\n=n7Nf\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-sticky-regex_7.0.0-rc.3_1535134099395_0.9084723337945813"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-rc.4": {
+      "name": "@babel/plugin-transform-sticky-regex",
+      "version": "7.0.0-rc.4",
+      "description": "Compile ES2015 sticky regex to an ES5 RegExp constructor",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-sticky-regex"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.0.0-rc.4",
+        "@babel/helper-regex": "^7.0.0-rc.4"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.0.0-rc.4",
+        "@babel/helper-plugin-test-runner": "^7.0.0-rc.4"
+      },
+      "licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie <sebmck@gmail.com>\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/plugin-transform-sticky-regex@7.0.0-rc.4",
+      "dist": {
+        "shasum": "7d46329760dd75935b160864ce841a3fa8bf1574",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-sticky-regex/-/plugin-transform-sticky-regex-7.0.0-rc.4.tgz",
+        "integrity": "sha512-SH1hu444pKlhjC5WVs7F4AoA7tIfWS2gJDBP9RiE8ZAo9FYKTLhAdIAksARlxk2q3GXPp1sJqVkCEKm9kTW/Iw==",
+        "fileCount": 6,
+        "unpackedSize": 3649,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbhCpxCRA9TVsSAnZWagAAjBUQAINKWwFOXeM0ewKxkn7S\n5eTae/KaeoJW+A2ciIXHhm9Wx1HCjHAQC/B1pcAfg6taTIYVYphYtSXZNvjE\nxRj628DdJR8zuR4TVq4+3dnmTNbxxy2AA4haxHV1eL+Z47IKWUhApxInYaop\n7KPX5B0qs++ycJZGlnXiXJ0eZ2RAPy3xszRjxCZ8x/MvIz7k12oR8/5nGUS4\nG7qBT2Fr6tlpt0nON5zmRq8c/Q0FMcpuIHt+n+v07o/x0h13Q9Ubb4cQz3UP\ncYR0ESapOu2TsG7CYz0pi3u+ruy7Rz91X/VIKi0XGru8EL7ROcWLvXuw/JbW\nhZpYgDDr08lL60IvN1U0qZqDxarfWUcA4fIbs0cL3hn88KR9Z/bQQgtF9mTy\nnBfK76ys5f9WM954yIsgaIwjS+kLMWZjmc3KyL3CvlqTLXZuoVkZKi2KBcRB\nDrceEPDMmSvXeihSSfHJaLVT4sD1D1/EVBjZYf+WWN5bfW4Ku8lqUc/TN2XG\nabcUaINIlDk+zlXti/umTUrkfgTyckqq8eQzqCo4riInnz/avYqoiJohPpy6\nrFS2CNScGxmNbvUyRCbgRKSdaFMRKpMbu+4Abs4Fi4KSDvsrdfbEZwjchos0\n47/hTIexFiK5pH3neTaP+TdPWSYpMONx6tIh4dbJF3VmTOnWKMOdFE82yS9r\nV/5Z\r\n=DQba\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-sticky-regex_7.0.0-rc.4_1535388272604_0.21652370357088735"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0": {
+      "name": "@babel/plugin-transform-sticky-regex",
+      "version": "7.0.0",
+      "description": "Compile ES2015 sticky regex to an ES5 RegExp constructor",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-sticky-regex"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.0.0",
+        "@babel/helper-regex": "^7.0.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.0.0",
+        "@babel/helper-plugin-test-runner": "^7.0.0"
+      },
+      "readmeFilename": "README.md",
+      "readme": "# @babel/plugin-transform-sticky-regex\n\n> Compile ES2015 sticky regex to an ES5 RegExp constructor\n\nSee our website [@babel/plugin-transform-sticky-regex](https://babeljs.io/docs/en/next/babel-plugin-transform-sticky-regex.html) for more information.\n\n## Install\n\nUsing npm:\n\n```sh\nnpm install --save-dev @babel/plugin-transform-sticky-regex\n```\n\nor using yarn:\n\n```sh\nyarn add @babel/plugin-transform-sticky-regex --dev\n```\n",
+      "licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie <sebmck@gmail.com>\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/plugin-transform-sticky-regex@7.0.0",
+      "dist": {
+        "shasum": "30a9d64ac2ab46eec087b8530535becd90e73366",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-sticky-regex/-/plugin-transform-sticky-regex-7.0.0.tgz",
+        "integrity": "sha512-LFUToxiyS/WD+XEWpkx/XJBrUXKewSZpzX68s+yEOtIbdnsRjpryDw9U06gYc6klYEij/+KQVRnD3nz3AoKmjw==",
+        "fileCount": 6,
+        "unpackedSize": 3624,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbhHB+CRA9TVsSAnZWagAAYQcP/0JaWzgB1+cIywJaHqw6\nRhigMJCBSYA70LMFACJgcTWqAqYLrmRRHFjkTbO0RWNoTfUna4HUs9x+vM71\nawKonPxTdSgD5Fi8vw3AhP2jkWlo6dMNcRc6wBKdID0bZ6VoNMqVsyB3LWIG\nt6vblkdGF2bCGej9HTtNmzLTMwfVcMOQ7rTep5CBpk8pT6a7fImhTDKKvcvs\nK0S2V4yyNHzuSNaeXSpy/C2e1Dj0GH57eFtKOB2ZjuPNdeS18uqlKCCYmVEK\n07xyLjbimsOX1jRnoZ6XKMnc6lQWEpuJu9gDHL2ScVld9c7j57r/Gz22LmxC\nIOrHZsCuKspWWGt/EIKp6u0tJYT+uLVIBi506YQYoqWqx4Wolfn5MB13ugm8\nYc89gU2AOfJrlQGRB473hUG6sY/8WEw7/+CIZRJPAnf3e9ZTeWn+2kMzUPNq\nY/0q8yJbcyKLhM831TWd0Vy/WIZP9k27+K4CjFS5I83dMjUVDRyeFqkWT3zz\n7QBdxsiSoo3pvJmfTCsB/RO+NzDIaYjYZ293s89xOAfB89blOpL7UidxMhgg\nOMEgp3mHLDgLSkfy1DHi4E3Q3fcLjVSqyhWUrxiVmzzbgwwJqOsuURnuQo1k\n/SBJnDJVBe+nJl+io+ZOt3l2t78ON7VmngfdhV9eLANRTF67eir3OSU4hswL\n4/T2\r\n=mIS2\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-sticky-regex_7.0.0_1535406205541_0.3854859578778411"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.2.0": {
+      "name": "@babel/plugin-transform-sticky-regex",
+      "version": "7.2.0",
+      "description": "Compile ES2015 sticky regex to an ES5 RegExp constructor",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-sticky-regex"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.0.0",
+        "@babel/helper-regex": "^7.0.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.2.0",
+        "@babel/helper-plugin-test-runner": "^7.0.0"
+      },
+      "licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie and other contributors\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/plugin-transform-sticky-regex@7.2.0",
+      "dist": {
+        "shasum": "a1e454b5995560a9c1e0d537dfc15061fd2687e1",
+        "integrity": "sha512-KKYCoGaRAf+ckH8gEL3JHUaFVyNHKe3ASNsZ+AlktgHevvxGigoIttrEJb8iKN03Q7Eazlv1s6cx2B2cQ3Jabw==",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-sticky-regex/-/plugin-transform-sticky-regex-7.2.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 3713,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcBX2gCRA9TVsSAnZWagAAm2cP/30cj2NzPWQMIhsdnhgv\nJclULRzlxe33ApapJI86rxl8pkTpGl54EWvLCBYUyvn4tuP+Fxunn4DN+3gj\nUEfxhbApBcD1rzyUdDGQyA/BxlUMbAfbjYjJfK3yncEV6QO5DJ2sd5chceFD\nAkhf02krBP/zXmeBu07tl1/cPm1xQmNN8s3CH8XIXnyyeAGUKUwBu4boDXix\ncH+pmykWmxG+Jmhy4CFoUKJSTKCN01lmz06yxRu4ISHGjU4M2U2C/PRDIVec\ndq44JyO3vZzuWcmhPbMZyIZ8togGmgzpV3lc7kgYSf5rXGvMzja4f5Lw6m9w\n1U96LGQF3PZ9xae2dRMVyL7CUDYzjFdSMGGrRsGLS2NXfRRrHAOM+kZ2AsKf\ndQuT8tV4E6YYN0qLcQiF0y+bTdYV7j2B1VYxCqcqqTybD7YKL61bk29USFxl\nWddGYQ9XWKLdMyn5uB7TXQHqKAtDa8C2NIkObauzBuyK9JAzhv+xv+71Z71N\nWw64qSR5HJWbUnI6zTLRo0eeWpckuOeWvzjZNZcWU774NvnNydCOP/j6Ufyz\nghKlpgw6dtCj9a1GH3xZe6HYa9utB4qUbtuJdZIIawviVt2cVD25hwCymb9+\nqgfPQd1/AQrexCteSZZrtfXVarnYC/1kjy+dduUmUrYZInDYx5aYH+anvYq2\noKt3\r\n=vnFI\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-sticky-regex_7.2.0_1543863711567_0.7308044194965204"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.7.4": {
+      "name": "@babel/plugin-transform-sticky-regex",
+      "version": "7.7.4",
+      "description": "Compile ES2015 sticky regex to an ES5 RegExp constructor",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-sticky-regex"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.0.0",
+        "@babel/helper-regex": "^7.0.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.7.4",
+        "@babel/helper-plugin-test-runner": "^7.7.4"
+      },
+      "gitHead": "75767d87cb147709b9bd9b99bf44daa6688874a9",
+      "_id": "@babel/plugin-transform-sticky-regex@7.7.4",
+      "_nodeVersion": "13.1.0",
+      "_npmVersion": "lerna/3.19.0/node@v13.1.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-Ls2NASyL6qtVe1H1hXts9yuEeONV2TJZmplLONkMPUG158CtmnrzW5Q5teibM5UVOFjG0D3IC5mzXR6pPpUY7A==",
+        "shasum": "ffb68c05090c30732076b1285dc1401b404a123c",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-sticky-regex/-/plugin-transform-sticky-regex-7.7.4.tgz",
+        "fileCount": 4,
+        "unpackedSize": 3946,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd2HADCRA9TVsSAnZWagAAO50P/RvL9V8a/aYozGrwTb7v\noKYruM7fvSlzd6pROoF9mkE78oOJ0XRd4g9GusqdaMUIYBJYBxxZyZfBi5i5\nIH47aMbaTGsILJ5DVKtHWjzB+y6yKO0HzBPBLrG0GFHrdEYnlKsGW5njNs53\nSxP5gSGk9hVI8d6H6QWKMIAKZlZQ/u1atOxpUwbyAbAa0BDUYq9KALw8APvO\nqwH8DRwKsp6laF22BhV++fD8Hx6Yrg79nO6fJYWyWEOTlUx5CLMCiTzVtcO4\nH9qteYZWxZNBvrx/L0IozqxyXpS6NV/66z13Cj0i74hnETshoSBIrkgy9y92\nJiCUpsPET0xtJLZF+fiI1wgAj2qgDfBXNIAST/MD4xQ1nSU/1QWldtY7Pzor\n7QUM0fGI0TlkGK45vNBqli42fY+f/exltHVmgc4Yr7f3y89Bx/foGfBt3VrA\nwOzE6U5G9XZsfHuV+HVXSlksdEDYJCQrhgTXt0vDJP1cIGDTgcRGruA8SXE+\nvcaEB7f0emnPMKPLJFx4BgHmJhxvO4dCyS4JaBF0ZAcsexLKopVyMCLCGi/I\n6WtPdJiLAYS//+YxiB03wDDNCpaUtp0yR20KYrLurAQJkB5I3IqaY7nkq4tK\nIW1FC79Nzvz5xe/UZG0Vgl09jfseClBasd/u5QOXhV1OiW8VV0YIviKdS+cd\n7xXb\r\n=pu24\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "jason@developit.ca",
+          "name": "developit"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-sticky-regex_7.7.4_1574465539493_0.47722129009982384"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.8.0": {
+      "name": "@babel/plugin-transform-sticky-regex",
+      "version": "7.8.0",
+      "description": "Compile ES2015 sticky regex to an ES5 RegExp constructor",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-sticky-regex"
+      },
+      "license": "MIT",
+      "type": "commonjs",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.8.0",
+        "@babel/helper-regex": "^7.8.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.8.0",
+        "@babel/helper-plugin-test-runner": "^7.8.0"
+      },
+      "gitHead": "2486615a74580283c49475d66067bd7fcab3330e",
+      "_id": "@babel/plugin-transform-sticky-regex@7.8.0",
+      "_nodeVersion": "13.6.0",
+      "_npmVersion": "lerna/3.19.0/node@v13.6.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-uksok0Bqox8YeIRFhr6RRtlBXeGpN1ogiEVjEd7A7rVLPZBXKGbL7kODpE7MQ+avjDLv5EEKtDCeYuWZK7FF7g==",
+        "shasum": "98f634d133f7be471e1e6ccc613c6a95e7e9f1f5",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-sticky-regex/-/plugin-transform-sticky-regex-7.8.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 3968,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeGmVsCRA9TVsSAnZWagAAnMYP/2hU1Wu5fcVyJW1d7Q5F\nKR1eS4at9itnG8tGlbkpcxli/yP/37I+CX23+ey5RAo/pj9fKeBHB2cJm7mm\njwFW92eeHMLYziRrCXeczraNT0QkxFRGceDiDtqHUHDUtP6B0zqXw0eZkvPG\n7anhSGmMikJFATxxtJmjLVlgmheRgUTYZMT0m4FWIAtlQifc73gAwUQ5qO8N\nTAdHh/L2v3FadoB+vHfBtx40DS5O0pcGAwh/5E4n/3gNwSipJi4+679x6qjP\nYHBc12xVCegNOnUfDim0l/qiPLUCM/T+x3Tos/yqLya72TnTHsrfaHyvFNTa\nH66VcZTPxn07TUCCil5tb5vQzHdWcpsNkbQZitWepBJ/iPqagKJxTiRraiRd\ndTRpUXOh4gBQtMWhLDNdWBGXkzqkmxg/i7QYEpvfaiEK6r6sSuBhhxT04jt1\n8MsSgU/aLPqkE8lv0g3DbwFXGPAbzAe/MUm5D1SbuH3M2XFsoCMlYFuyBl7W\n1zmau4y5BQhDPti9ItqLURxe3M7AXYBYuxNVzBhEgOF8ix7gPqCrRrTwDIQ2\nus/AJM4DIWHSyydaD72xiSZYDzOHpEOU0OPED04Rmj2/kk+08r3f18z8Wgfs\n4okDNindwyjf3is0dG1unznNXDY5nsWc1q1c4bh0c81bnddKseYkYRtDipGa\nor0O\r\n=av0+\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "jason@developit.ca",
+          "name": "developit"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-sticky-regex_7.8.0_1578788203943_0.8877962657865586"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.8.3": {
+      "name": "@babel/plugin-transform-sticky-regex",
+      "version": "7.8.3",
+      "description": "Compile ES2015 sticky regex to an ES5 RegExp constructor",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-sticky-regex"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.8.3",
+        "@babel/helper-regex": "^7.8.3"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.8.3",
+        "@babel/helper-plugin-test-runner": "^7.8.3"
+      },
+      "gitHead": "a7620bd266ae1345975767bbc7abf09034437017",
+      "_id": "@babel/plugin-transform-sticky-regex@7.8.3",
+      "_nodeVersion": "13.6.0",
+      "_npmVersion": "lerna/3.19.0/node@v13.6.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-9Spq0vGCD5Bb4Z/ZXXSK5wbbLFMG085qd2vhL1JYu1WcQ5bXqZBAYRzU1d+p79GcHs2szYv5pVQCX13QgldaWw==",
+        "shasum": "be7a1290f81dae767475452199e1f76d6175b100",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-sticky-regex/-/plugin-transform-sticky-regex-7.8.3.tgz",
+        "fileCount": 4,
+        "unpackedSize": 3946,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeHOQcCRA9TVsSAnZWagAAJfAP+gOHAtdwAOJeX+lRS/TF\nW8+svoC2u2yfl7t0LrgMd8OGPB9cfEz28SORxIIVBLQHAUQb9eUaY9svu8Pk\nL4NEwymiyUii2hxplLK0+hoMX06hlPuIENg1BSjaSDy8StfyAfX6t0u6akxM\nAI/xhlTxnVRWlHS7YENa6p2+t7PHUXUiznewiaRDYE5uRbeyFF2DsoYLTOI+\nrANH1i9fMjowyjMl44/lPSEoEAkRcNO439sOjPILxljTUDMq8elPDzFOLzBi\ntyVvMv4+DEh5kUda3qODeg9wjDhEtgl2nh/MDUjFz+mSLLCpoYMSmMMfXuQ0\nf4Jxij3WZBXVofOK5SDzLkqbUdgNROT5zbDY+KM5mCXxPW+D5WREltgrICqf\nN458jOvQvPXQNLD8wtFkxk+qn0K/dI3FCDYUITpE9zTpFZ+5KcGrEir7+Jz3\nOP1eEHCE70+SK0/mUlykK5BZu3MvtRVr9kkqXH44qiCQnhraSTIaabYx+Yi2\nwKDHJ753YfnmlaHkinx72JcISz+kELUMnygtKmDIs2OP8mS3f44P2g8Ifkb2\n7YhxGpSNclAcj9Cfo8msy48hwyeaS5rUbptjKhLQ/qn4L/67gRNudWRhpfzg\n5mHRlyrs68S4MFfvE2rAoI+w9lRmmFyg2xPuAEWxmBaSjyUubPsG29jGNaft\n4hwv\r\n=w2tX\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "jason@developit.ca",
+          "name": "developit"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-sticky-regex_7.8.3_1578951707571_0.5376692344308838"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.10.1": {
+      "name": "@babel/plugin-transform-sticky-regex",
+      "version": "7.10.1",
+      "description": "Compile ES2015 sticky regex to an ES5 RegExp constructor",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/babel/babel.git",
+        "directory": "packages/babel-plugin-transform-sticky-regex"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.10.1",
+        "@babel/helper-regex": "^7.10.1"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.10.1",
+        "@babel/helper-plugin-test-runner": "^7.10.1"
+      },
+      "gitHead": "88f57a7ea659d25232bf62de1efceb5d6299b8cf",
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "homepage": "https://github.com/babel/babel#readme",
+      "_id": "@babel/plugin-transform-sticky-regex@7.10.1",
+      "_nodeVersion": "12.16.3",
+      "_npmVersion": "lerna/3.19.0/node@v12.16.3+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-j17ojftKjrL7ufX8ajKvwRilwqTok4q+BjkknmQw9VNHnItTyMP5anPFzxFJdCQs7clLcWpCV3ma+6qZWLnGMA==",
+        "shasum": "90fc89b7526228bed9842cff3588270a7a393b00",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-sticky-regex/-/plugin-transform-sticky-regex-7.10.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 3999,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJezuSpCRA9TVsSAnZWagAARnAP/050tyenq1jEqGf6fudI\nwkIxFGLMUpE805VEnsCeIJO1OzbsdOAgrl5lHaeYNUtSEG1aC7EW0Rmtw84A\nmWCDk4eOBKvxITfIjiJR2Ib1bceNSS/vShpvuJ1arYyYGaD0ED4WK60Chr6N\nBryEUqiXQUhba30pCCh1xgsE23NU1AU+MtLWM8XkLho96yIp8dySkd69pMXi\nB0iV2NSg8Qc4BAGWUxdmODRhKN9aoYuleaIkCcqozUVPfYAOhLUzz/iljGEv\nftbJzWYM2skVPLns+PJQRdxZKx/I5czQ6PmVpFY07o/l+2boIitO7zGdoLJI\nhcYpGeFfZm3plZLvXcC0D6/o7lESawnrIyMuHj9CtNyV/wsuTP0WzTYNQdjC\nhmi089ctrB4oVIvRVta/CcHngqMcMSs6zxkCYHShf/jWUYJ8/NsXycrs3jwO\n4TLm7hFR4+BIGP5EmDOx/T06IaKWLurk3zTX7GDdB06xeHsJqO4Kd6unzeMN\nWFx5IxacyqURWGVTRmMeBZE7X0KHiuWXiYuHvjItrCWZszJf8xJ5UXm5ae1b\nEjwxb3+UvHPljrh9qZ2KW085EmEfAxO5Gv4dVY5PgymAYa6PYM7VQdyrLKB/\n6wx5UbBDmQ9oM0wnXJy3/NTlVRI+F/uPt620x2uQgA+dAUamYTiDJ/0QBpHx\ndaZB\r\n=Z3LZ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-sticky-regex_7.10.1_1590617250685_0.4337407245593565"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.10.4": {
+      "name": "@babel/plugin-transform-sticky-regex",
+      "version": "7.10.4",
+      "description": "Compile ES2015 sticky regex to an ES5 RegExp constructor",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/babel/babel.git",
+        "directory": "packages/babel-plugin-transform-sticky-regex"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.10.4",
+        "@babel/helper-regex": "^7.10.4"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.10.4",
+        "@babel/helper-plugin-test-runner": "^7.10.4"
+      },
+      "gitHead": "7fd40d86a0d03ff0e9c3ea16b29689945433d4df",
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "homepage": "https://github.com/babel/babel#readme",
+      "_id": "@babel/plugin-transform-sticky-regex@7.10.4",
+      "_nodeVersion": "14.4.0",
+      "_npmVersion": "lerna/3.19.0/node@v14.4.0+x64 (darwin)",
+      "dist": {
+        "integrity": "sha512-Ddy3QZfIbEV0VYcVtFDCjeE4xwVTJWTmUtorAJkn6u/92Z/nWJNV+mILyqHKrUxXYKA2EoCilgoPePymKL4DvQ==",
+        "shasum": "8f3889ee8657581130a29d9cc91d7c73b7c4a28d",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-sticky-regex/-/plugin-transform-sticky-regex-7.10.4.tgz",
+        "fileCount": 4,
+        "unpackedSize": 3999,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJe+zotCRA9TVsSAnZWagAAJTMP/jtO8mRgvfk82MCKEx01\nzEZQPPus/FTQpBFiog7aQpg4iwwOdcZmrL/Jx4EOKxprnMY7P3xPc3eLgni6\nL8saAR5UkvSxlL2tUAzz+gYsxNU1IXJ1PQfbMSClnOcMzdfGXzghaDfDo5Jc\noxpmMeReaSCG9/x4UJtH79ylHf6/zuB5RjaByQvrYFew3q6AAIkhEPK5KHeG\nh09ZQ3rR1Eqkckj/KykdNrlKldHbe672wWybPQxkqGW7YbDm1JPsNSZV1/bs\nGMnscmFe0gNMKua776sZzyA/v4qVqLq0OZWkzM9cjywIxo5LRajY70IsSIAV\nQrSWzkFlJ2jQPwrb631IvLlfgC4LLhX89s31EH5qhC/wglacXsbjK6nuhnMf\nXPAqBRjdmm/ZvcCNDoae/6ORSN+jh6RIDDau36yueU6fIvN6XHDbgOtyTurP\njJvLJaFrpqiOQpx3hzYbVdSfJMgpRjQ9/Eg1jL8rrQbRRnr53pt3ImpF2Hev\npHPqjG7bUiEXCBRzZsyshe7Xxs0obznzp+zvorHJAKT+J9B2Zw6V1KgSSejq\nhRv/L35VojSe9xd7goAY/CQCR3tKPzRCLHw1JvIHIs/+J6ZEBGtIGfXs+5cc\n2HOkIt5A/bHf1w4ETV0z0ji83PGSIDtAk3siuQW+6uAMtmwFHYpmK7ej2+Mg\nSNV8\r\n=9UyK\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "i@jhuang.me",
+          "name": "jlhwung"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "jlhwung",
+        "email": "i@jhuang.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-sticky-regex_7.10.4_1593522733092_0.9704047088917052"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.12.1": {
+      "name": "@babel/plugin-transform-sticky-regex",
+      "version": "7.12.1",
+      "description": "Compile ES2015 sticky regex to an ES5 RegExp constructor",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel.git",
+        "directory": "packages/babel-plugin-transform-sticky-regex"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.10.4",
+        "@babel/helper-regex": "^7.10.4"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.12.1",
+        "@babel/helper-plugin-test-runner": "7.10.4"
+      },
+      "_id": "@babel/plugin-transform-sticky-regex@7.12.1",
+      "dist": {
+        "shasum": "5c24cf50de396d30e99afc8d1c700e8bce0f5caf",
+        "integrity": "sha512-CiUgKQ3AGVk7kveIaPEET1jNDhZZEl1RPMWdTBE1799bdz++SwqDHStmxfCtDfBhQgCl38YRiSnrMuUMZIWSUQ==",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-sticky-regex/-/plugin-transform-sticky-regex-7.12.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 3940,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfiM/eCRA9TVsSAnZWagAAxSUP/jMY+BIz6WO3j3Ud19LY\ny7uMq87AkaeAmC92jkLbzr67C+OtJWFZXDG+Bd4TUo+EfO2sm4NJ/d2xbPNk\nxZYLWWCuD2IdFSY+Wvbnxuyf5r1NnO31Px1WBko1IBOA3EH1OENyAPez0q11\na9jbpYlMCDov+fgdYzUDvQs9POkbXjGwGxfVMa803UqvQtGkyBtMtGhl0GyT\nTxugKv+kTp+FgK/qTmygkusiRGagmwhEuP/B4fBrOUnoscbpd8MbynFUhhuW\nnYTFXT51H29PNcKKswCfLPGyIQSFQDR2lbP6Y7BHT6kif0FesLlsOuaeit5Q\ntXu+7kJdS728Tr4bQlv6xTE7cimGJ88WSxbAvJzNGEkt/5oOLbqm0yRbgv8l\nG538hzPIQxOC3aYaE9/t14FRRu+SW/GNB3u6iOT1tRLrBV61KuGBvw3/4yNe\nUUs9V2K7y48hzd5w8oWyE2VjazoTGdHaLcpHHCvV8kSC9pkNughFf58VjQzL\nqWX2o2ryE3BDrAm12jVYUUvjZJ8FKhybgCtcTnF/yle1oS8c7uL4mdGksJ3E\n7Achs18/8aw5tZ+/kAokQnZiKAM8UpRFB+uS5CcKahJOLiMYAwgDPsv8+Sud\nWG+KguzBvuQvUyrbTrlkgYZvgbdA4zF5AnxpvrhFj1q5GWMe7SfcbXTTQz4C\n+PHJ\r\n=moZ3\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "jlhwung",
+          "email": "i@jhuang.me"
+        },
+        {
+          "name": "nicolo-ribaudo",
+          "email": "nicolo.ribaudo@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "danez",
+          "email": "daniel@tschinder.de"
+        },
+        {
+          "name": "existentialism",
+          "email": "bng412@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-sticky-regex_7.12.1_1602801630392_0.00180365822768902"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "",
+  "maintainers": [
+    {
+      "name": "jlhwung",
+      "email": "i@jhuang.me"
+    },
+    {
+      "name": "nicolo-ribaudo",
+      "email": "nicolo.ribaudo@gmail.com"
+    },
+    {
+      "name": "hzoo",
+      "email": "hi@henryzoo.com"
+    },
+    {
+      "name": "loganfsmyth",
+      "email": "loganfsmyth@gmail.com"
+    },
+    {
+      "name": "danez",
+      "email": "daniel@tschinder.de"
+    },
+    {
+      "name": "existentialism",
+      "email": "bng412@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-10-15T22:40:33.528Z",
+    "created": "2017-10-30T18:35:29.726Z",
+    "7.0.0-beta.4": "2017-10-30T18:35:29.726Z",
+    "7.0.0-beta.5": "2017-10-30T20:57:05.150Z",
+    "7.0.0-beta.31": "2017-11-03T20:03:57.307Z",
+    "7.0.0-beta.32": "2017-11-12T13:33:44.802Z",
+    "7.0.0-beta.33": "2017-12-01T14:28:53.587Z",
+    "7.0.0-beta.34": "2017-12-02T14:39:53.812Z",
+    "7.0.0-beta.35": "2017-12-14T21:48:11.737Z",
+    "7.0.0-beta.36": "2017-12-25T19:05:14.819Z",
+    "7.0.0-beta.37": "2018-01-08T16:02:54.962Z",
+    "7.0.0-beta.38": "2018-01-17T16:32:23.625Z",
+    "7.0.0-beta.39": "2018-01-30T20:27:52.505Z",
+    "7.0.0-beta.40": "2018-02-12T16:42:13.134Z",
+    "7.0.0-beta.41": "2018-03-14T16:26:19.651Z",
+    "7.0.0-beta.42": "2018-03-15T20:50:51.104Z",
+    "7.0.0-beta.43": "2018-04-02T16:48:30.205Z",
+    "7.0.0-beta.44": "2018-04-02T22:20:11.961Z",
+    "7.0.0-beta.45": "2018-04-23T01:57:07.462Z",
+    "7.0.0-beta.46": "2018-04-23T04:31:27.890Z",
+    "7.0.0-beta.47": "2018-05-15T00:09:18.625Z",
+    "7.0.0-beta.48": "2018-05-24T19:22:57.385Z",
+    "7.0.0-beta.49": "2018-05-25T16:02:33.376Z",
+    "7.0.0-beta.50": "2018-06-12T19:47:24.020Z",
+    "7.0.0-beta.51": "2018-06-12T21:19:56.767Z",
+    "7.0.0-beta.52": "2018-07-06T00:59:29.267Z",
+    "7.0.0-beta.53": "2018-07-11T13:40:28.426Z",
+    "7.0.0-beta.54": "2018-07-16T18:00:10.125Z",
+    "7.0.0-beta.55": "2018-07-28T22:07:24.144Z",
+    "7.0.0-beta.56": "2018-08-04T01:06:07.228Z",
+    "7.0.0-rc.0": "2018-08-09T15:58:38.656Z",
+    "7.0.0-rc.1": "2018-08-09T20:08:19.842Z",
+    "7.0.0-rc.2": "2018-08-21T19:24:19.113Z",
+    "7.0.0-rc.3": "2018-08-24T18:08:19.469Z",
+    "7.0.0-rc.4": "2018-08-27T16:44:32.700Z",
+    "7.0.0": "2018-08-27T21:43:25.635Z",
+    "7.2.0": "2018-12-03T19:01:51.787Z",
+    "7.7.4": "2019-11-22T23:32:19.628Z",
+    "7.8.0": "2020-01-12T00:16:44.095Z",
+    "7.8.3": "2020-01-13T21:41:47.802Z",
+    "7.10.1": "2020-05-27T22:07:30.849Z",
+    "7.10.4": "2020-06-30T13:12:13.211Z",
+    "7.12.1": "2020-10-15T22:40:30.583Z"
+  },
+  "keywords": [
+    "babel-plugin"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/babel/babel.git",
+    "directory": "packages/babel-plugin-transform-sticky-regex"
+  },
+  "license": "MIT",
+  "readmeFilename": ""
+}

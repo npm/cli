@@ -1,0 +1,94 @@
+{
+  "_id": "@lukekarrys/workspace-peer-dep-infinite-loop-b",
+  "_rev": "1-4a3d3b25c000b5775f766c8e659bc2e1",
+  "name": "@lukekarrys/workspace-peer-dep-infinite-loop-b",
+  "dist-tags": {
+    "latest": "2.0.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "@lukekarrys/workspace-peer-dep-infinite-loop-b",
+      "version": "1.0.0",
+      "peerDependencies": {
+        "@lukekarrys/workspace-peer-dep-infinite-loop-c": "1.0.0",
+        "@lukekarrys/workspace-peer-dep-infinite-loop-d": "1.0.0"
+      },
+      "gitHead": "bbc444f368656f5d297159648f9b73ce8a3a50a7",
+      "_id": "@lukekarrys/workspace-peer-dep-infinite-loop-b@1.0.0",
+      "_nodeVersion": "14.17.6",
+      "_npmVersion": "8.1.0",
+      "dist": {
+        "integrity": "sha512-+GvjbbvuGzZvsjQxKTjQkbIJrtNt56Gv6vSrARlORG8zV9hmKq42nLzs+WxtnK660GLAdEDfX9I6hgBNbS7/mA==",
+        "shasum": "522b8d76088df12851dc32f85776e82d864d14cb",
+        "tarball": "https://registry.npmjs.org/@lukekarrys/workspace-peer-dep-infinite-loop-b/-/workspace-peer-dep-infinite-loop-b-1.0.0.tgz",
+        "fileCount": 1,
+        "unpackedSize": 254
+      },
+      "_npmUser": {
+        "name": "lukekarrys",
+        "email": "luke@lukekarrys.com"
+      },
+      "directories": {},
+      "maintainers": [
+        {
+          "name": "lukekarrys",
+          "email": "luke@lukekarrys.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/workspace-peer-dep-infinite-loop-b_1.0.0_1634941296191_0.2369251217358015"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.0": {
+      "name": "@lukekarrys/workspace-peer-dep-infinite-loop-b",
+      "version": "2.0.0",
+      "peerDependencies": {
+        "@lukekarrys/workspace-peer-dep-infinite-loop-c": "1.0.0",
+        "@lukekarrys/workspace-peer-dep-infinite-loop-d": "1.0.0"
+      },
+      "gitHead": "bbc444f368656f5d297159648f9b73ce8a3a50a7",
+      "_id": "@lukekarrys/workspace-peer-dep-infinite-loop-b@2.0.0",
+      "_nodeVersion": "14.17.6",
+      "_npmVersion": "8.1.0",
+      "dist": {
+        "integrity": "sha512-oR7ANLAxFCdudMyKIC+tTar+z1tXbuuPorTa34MIIBH/adruSEfIOB3PcpyW+K1VrpEBVuCYLwHbAicKHCHhrw==",
+        "shasum": "48905853b45ab91ba0bafe6403d3ca5dfa887af1",
+        "tarball": "https://registry.npmjs.org/@lukekarrys/workspace-peer-dep-infinite-loop-b/-/workspace-peer-dep-infinite-loop-b-2.0.0.tgz",
+        "fileCount": 1,
+        "unpackedSize": 254
+      },
+      "_npmUser": {
+        "name": "lukekarrys",
+        "email": "luke@lukekarrys.com"
+      },
+      "directories": {},
+      "maintainers": [
+        {
+          "name": "lukekarrys",
+          "email": "luke@lukekarrys.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/workspace-peer-dep-infinite-loop-b_2.0.0_1634968303287_0.1382056167069008"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2021-10-22T22:21:36.156Z",
+    "1.0.0": "2021-10-22T22:21:36.308Z",
+    "modified": "2021-10-23T05:51:43.444Z",
+    "2.0.0": "2021-10-23T05:51:43.411Z"
+  },
+  "maintainers": [
+    {
+      "name": "lukekarrys",
+      "email": "luke@lukekarrys.com"
+    }
+  ],
+  "readme": "ERROR: No README data found!",
+  "readmeFilename": ""
+}

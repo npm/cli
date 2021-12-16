@@ -1,0 +1,298 @@
+{
+  "_id": "pupa",
+  "_rev": "4-a23bf44b493410d57f494d669f36a90f",
+  "name": "pupa",
+  "description": "Simple micro templating",
+  "dist-tags": {
+    "latest": "2.0.1"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "pupa",
+      "version": "1.0.0",
+      "description": "Simple micro templating",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/pupa.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "string",
+        "formatting",
+        "template",
+        "object",
+        "format",
+        "interpolate",
+        "interpolation",
+        "templating",
+        "str",
+        "obj",
+        "tpl",
+        "expand",
+        "simple",
+        "replace",
+        "placeholders",
+        "values",
+        "fmt",
+        "transform",
+        "micro"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "xo": {
+        "esnext": true
+      },
+      "gitHead": "05a5d7e3cbe99cb303b6d0fda6984c45e59ec45d",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/pupa/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/pupa#readme",
+      "_id": "pupa@1.0.0",
+      "_shasum": "9a9568a5af7e657b8462a6e9d5328743560ceff6",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "4.6.2",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "9a9568a5af7e657b8462a6e9d5328743560ceff6",
+        "tarball": "https://registry.npmjs.org/pupa/-/pupa-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/pupa-1.0.0.tgz_1484024976343_0.21447648899629712"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "pupa",
+      "version": "2.0.0",
+      "description": "Simple micro templating",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/pupa.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "string",
+        "formatting",
+        "template",
+        "object",
+        "format",
+        "interpolate",
+        "interpolation",
+        "templating",
+        "expand",
+        "simple",
+        "replace",
+        "placeholders",
+        "values",
+        "transform",
+        "micro"
+      ],
+      "dependencies": {
+        "escape-goat": "^2.0.0"
+      },
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "5fe0eeab4d3b6395ba97c2cc58481c34620a5ecb",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/pupa/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/pupa#readme",
+      "_id": "pupa@2.0.0",
+      "_nodeVersion": "10.15.3",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-xxy6mj9KTirR7fpsdXrIaC4oUb/uvFfchrC4K3RFxYLQ/G05RlhJIKFF2ayCQnNaFI+fOxGWzEVUhYMXHNljeQ==",
+        "shasum": "2b385e4c79d7eb7c703a6e24cbeca2c90d8cf697",
+        "tarball": "https://registry.npmjs.org/pupa/-/pupa-2.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 4744,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcyFHaCRA9TVsSAnZWagAAOgsP/R3HwKyMLuM8eFiwz9Kk\nyiaUZcsEhZ/yE4vaXsiZKuCQdfK5SpOiyaTODVpVGPuCPf9C4QytJyoqUO7q\n2cTMfJ4U79br+lJHVtISlQf3FTrYspH44zBFaqfjpTb5L9YD7DJMy/1Mnr/M\n3J7xuc3wSBwvFd0Zqfav4VUhHigk/hBqT85MufNrJnoxhpQ8uWzX4I6PpWSo\nRYqJ0mzFBeNy5lvesqfhneOmxTJwmrCPcft3K4EjvjSiFhe9ogcyxKChXtXq\n25DDH+W84/qjhrDvOyhoFGJO+6GtB19/b7w8Rg4tH4hCyDJLHbZnTyZpI/LY\nL21vvdcUFwGEQ0/vlybVRx1UJ2r48cyJwXgT51GF8RWeQTngbEuTDV0TRGAt\ntZU9WsyCF5PLKsIZluQ8a6fAw32gpOz7aXoxUlF0tundIWb2a9olLk1atx7v\nMwzn16v+fkTxDJdIgGt2LkBbLypebxIHK5v5kaFuC4+5mP+bkUYxXsocr4OF\nReN0zlwvk9KWJTSrDagT3PLmu7O2uu9BntaahIN80H07+9w3hhcqxE7BTYkb\n/o6Kt3oFqWSchA+pjtj40L6KadNr96x9WV7TNcDRu0hc9rjGjVnZPJeDi3RP\ngZ43xZN+hdQHTL8QhDOp68oTdaeWviVsW4SncF/LmP7D+PQYf6e17vF8N4ch\nXGkD\r\n=3v02\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/pupa_2.0.0_1556632025797_0.8563917558100542"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.1": {
+      "name": "pupa",
+      "version": "2.0.1",
+      "description": "Simple micro templating",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/pupa.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "string",
+        "formatting",
+        "template",
+        "object",
+        "format",
+        "interpolate",
+        "interpolation",
+        "templating",
+        "expand",
+        "simple",
+        "replace",
+        "placeholders",
+        "values",
+        "transform",
+        "micro"
+      ],
+      "dependencies": {
+        "escape-goat": "^2.0.0"
+      },
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "e4c915c8851e432ff707c3f270e2aaf22116a6c5",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/pupa/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/pupa#readme",
+      "_id": "pupa@2.0.1",
+      "_nodeVersion": "10.16.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-hEJH0s8PXLY/cdXh66tNEQGndDrIKNqNC5xmrysZy3i5C3oEoLna7YAOad+7u125+zH1HNXUmGEkrhb3c2VriA==",
+        "shasum": "dbdc9ff48ffbea4a26a069b6f9f7abb051008726",
+        "tarball": "https://registry.npmjs.org/pupa/-/pupa-2.0.1.tgz",
+        "fileCount": 5,
+        "unpackedSize": 4761,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdPHN9CRA9TVsSAnZWagAA+mYP/0LV3FFrpkiYzSQddPYQ\nGRfr2gDUpT0x4kSFozAiLBXPQYRxpey7jQs6O3CyY7Nr7GRxVAZB7rG9Ogb0\nnBdsWVYnPM3NRQA/M+j/lM2b5Y4OmzOx28rBpYypg04DHDGVqvq8tr4ZOTNT\nRgr2B4DjbN0xYv2uRdFkN1jNGvulKqX2DO0y/XmVBaIvHAKJsyMSfPAObTAr\nxxcbQ39AcCn7jmiGHjoIWP8j4G8ZV9Os3axSh7HE4TLSZgOVtibPNWdf2Jxg\nHVpPtIi8PLU3uwFTBzog+3Kj9HKD2LX/fEE5dI85Rk5jOYqJajw/yfTFT6oA\nbTZnwhi5eKGQfwc+iMJ9RyJWmIrji+mDOGv1Kz7GeJ77CrkyRZgKZZQPxiUS\nZW1gI3CCYo7hHVjn4a/m3pyzhwPQ6/r2SZsrOi3BnzSsfd5JdNL5scpt2Km9\n/yNPGIk5VHUNwhzNYhjT0w2fBzFOrArkJFDCVFXTsjoPery5jiJ/vP3KqUUF\nmiseisLf0JdNIP5pdQ4C9lYjKqStTokFipQDhuG1sGsCP7aADCd0uMnr6QE7\nkZ5KCsGmvj83/ovO+QXsBT/CUJtggcFY9oh7eExfdd/TbhzCmvNqJLIGdKTM\nabtSoiXp2ARNrvgE5TP+MHu+H98hCuAC4RZ1o961FL4RNWHFECB1b62nAtty\n0wRb\r\n=whiZ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/pupa_2.0.1_1564242812501_0.9540517658148819"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# pupa [![Build Status](https://travis-ci.org/sindresorhus/pupa.svg?branch=master)](https://travis-ci.org/sindresorhus/pupa)\n\n> Simple micro templating\n\nUseful when all you need is to fill in some placeholders.\n\n\n## Install\n\n```\n$ npm install pupa\n```\n\n\n## Usage\n\n```js\nconst pupa = require('pupa');\n\npupa('The mobile number of {name} is {phone.mobile}', {\n\tname: 'Sindre',\n\tphone: {\n\t\tmobile: '609 24 363'\n\t}\n});\n//=> 'The mobile number of Sindre is 609 24 363'\n\npupa('I like {0} and {1}', ['🦄', '🐮']);\n//=> 'I like 🦄 and 🐮'\n\n// Double braces encodes the HTML entities to avoid code injection\npupa('I like {{0}} and {{1}}', ['<br>🦄</br>', '<i>🐮</i>']);\n//=> 'I like &lt;br&gt;🦄&lt;/br&gt; and &lt;i&gt;🐮&lt;/i&gt;'\n```\n\n\n## API\n\n### pupa(template, data)\n\n#### template\n\nType: `string`\n\nText with placeholders for `data` properties.\n\n#### data\n\nType: `object | unknown[]`\n\nData to interpolate into `template`.\n\n\n## FAQ\n\n### What about template literals?\n\nTemplate literals expand on creation. This module expands the template on execution, which can be useful if either or both template and data are lazily created or user-supplied.\n\n\n## Related\n\n- [pupa-cli](https://github.com/sindresorhus/pupa-cli) - CLI for this module\n",
+  "maintainers": [
+    {
+      "name": "sindresorhus",
+      "email": "sindresorhus@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2019-07-27T15:53:35.284Z",
+    "created": "2017-01-10T05:09:38.131Z",
+    "1.0.0": "2017-01-10T05:09:38.131Z",
+    "2.0.0": "2019-04-30T13:47:05.949Z",
+    "2.0.1": "2019-07-27T15:53:32.679Z"
+  },
+  "homepage": "https://github.com/sindresorhus/pupa#readme",
+  "keywords": [
+    "string",
+    "formatting",
+    "template",
+    "object",
+    "format",
+    "interpolate",
+    "interpolation",
+    "templating",
+    "expand",
+    "simple",
+    "replace",
+    "placeholders",
+    "values",
+    "transform",
+    "micro"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/pupa.git"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "bugs": {
+    "url": "https://github.com/sindresorhus/pupa/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md",
+  "users": {
+    "rocket0191": true,
+    "rubiadias": true
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "testing-bundledeps-3",
+  "version": "1.0.0",
+  "description": "depends on a node that has a dep with bundled deps",
+  "license": "ISC",
+  "dependencies": {
+    "@isaacs/testing-bundledeps-parent": "*"
+  }
+}

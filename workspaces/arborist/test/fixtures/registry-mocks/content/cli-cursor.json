@@ -1,0 +1,581 @@
+{
+  "_id": "cli-cursor",
+  "_rev": "12-549b9de00086b62ea9048df3dacfaca4",
+  "name": "cli-cursor",
+  "description": "Toggle the CLI cursor",
+  "dist-tags": {
+    "latest": "3.1.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "cli-cursor",
+      "version": "1.0.0",
+      "description": "Toggle the CLI cursor",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/sindresorhus/cli-cursor"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "cli",
+        "cursor",
+        "ansi",
+        "toggle",
+        "display",
+        "show",
+        "hide",
+        "term",
+        "terminal",
+        "console",
+        "tty",
+        "shell",
+        "command-line"
+      ],
+      "dependencies": {
+        "restore-cursor": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "0.0.4"
+      },
+      "bugs": {
+        "url": "https://github.com/sindresorhus/cli-cursor/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/cli-cursor",
+      "_id": "cli-cursor@1.0.0",
+      "_shasum": "3d9f4365bbc3144b249dd7103b65f3ab0135b528",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "3d9f4365bbc3144b249dd7103b65f3ab0135b528",
+        "tarball": "https://registry.npmjs.org/cli-cursor/-/cli-cursor-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "cli-cursor",
+      "version": "1.0.1",
+      "description": "Toggle the CLI cursor",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/sindresorhus/cli-cursor"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "cli",
+        "cursor",
+        "ansi",
+        "toggle",
+        "display",
+        "show",
+        "hide",
+        "term",
+        "terminal",
+        "console",
+        "tty",
+        "shell",
+        "command-line"
+      ],
+      "dependencies": {
+        "restore-cursor": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "0.0.4"
+      },
+      "bugs": {
+        "url": "https://github.com/sindresorhus/cli-cursor/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/cli-cursor",
+      "_id": "cli-cursor@1.0.1",
+      "_shasum": "282b7a20ff03061b7c720e08e4659f47eab34efe",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "282b7a20ff03061b7c720e08e4659f47eab34efe",
+        "tarball": "https://registry.npmjs.org/cli-cursor/-/cli-cursor-1.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "cli-cursor",
+      "version": "1.0.2",
+      "description": "Toggle the CLI cursor",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/cli-cursor.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "cli",
+        "cursor",
+        "ansi",
+        "toggle",
+        "display",
+        "show",
+        "hide",
+        "term",
+        "terminal",
+        "console",
+        "tty",
+        "shell",
+        "command-line"
+      ],
+      "dependencies": {
+        "restore-cursor": "^1.0.1"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "6be5a384d90278c66aa30db5ecdec8dc68f17d4f",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/cli-cursor/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/cli-cursor#readme",
+      "_id": "cli-cursor@1.0.2",
+      "_shasum": "64da3f7d56a54412e59794bd62dc35295e8f2987",
+      "_from": ".",
+      "_npmVersion": "2.14.3",
+      "_nodeVersion": "4.1.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "64da3f7d56a54412e59794bd62dc35295e8f2987",
+        "tarball": "https://registry.npmjs.org/cli-cursor/-/cli-cursor-1.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "cli-cursor",
+      "version": "2.0.0",
+      "description": "Toggle the CLI cursor",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/cli-cursor.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "cli",
+        "cursor",
+        "ansi",
+        "toggle",
+        "display",
+        "show",
+        "hide",
+        "term",
+        "terminal",
+        "console",
+        "tty",
+        "shell",
+        "command-line"
+      ],
+      "dependencies": {
+        "restore-cursor": "^2.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "xo": {
+        "esnext": true
+      },
+      "gitHead": "eb49635ade57270d824961a6bffe42610fc3bee7",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/cli-cursor/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/cli-cursor#readme",
+      "_id": "cli-cursor@2.0.0",
+      "_shasum": "f4c77840ecb2bed38c2672df39e264d54a0c1148",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "4.6.2",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "f4c77840ecb2bed38c2672df39e264d54a0c1148",
+        "tarball": "https://registry.npmjs.org/cli-cursor/-/cli-cursor-2.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/cli-cursor-2.0.0.tgz_1483989942414_0.22937274118885398"
+      },
+      "directories": {}
+    },
+    "2.1.0": {
+      "name": "cli-cursor",
+      "version": "2.1.0",
+      "description": "Toggle the CLI cursor",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/cli-cursor.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "cli",
+        "cursor",
+        "ansi",
+        "toggle",
+        "display",
+        "show",
+        "hide",
+        "term",
+        "terminal",
+        "console",
+        "tty",
+        "shell",
+        "command-line"
+      ],
+      "dependencies": {
+        "restore-cursor": "^2.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "xo": {
+        "esnext": true
+      },
+      "gitHead": "5a403335e6b3980a1235b71f8afe1d63ee8c3ce1",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/cli-cursor/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/cli-cursor#readme",
+      "_id": "cli-cursor@2.1.0",
+      "_shasum": "b35dac376479facc3e94747d41d0d0f5238ffcb5",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "4.6.2",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "b35dac376479facc3e94747d41d0d0f5238ffcb5",
+        "tarball": "https://registry.npmjs.org/cli-cursor/-/cli-cursor-2.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/cli-cursor-2.1.0.tgz_1483990808692_0.16963833128102124"
+      },
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "cli-cursor",
+      "version": "3.0.0",
+      "description": "Toggle the CLI cursor",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/cli-cursor.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "cli",
+        "cursor",
+        "ansi",
+        "toggle",
+        "display",
+        "show",
+        "hide",
+        "term",
+        "terminal",
+        "console",
+        "tty",
+        "shell",
+        "command-line"
+      ],
+      "dependencies": {
+        "restore-cursor": "^2.0.0"
+      },
+      "devDependencies": {
+        "@types/node": "^11.13.0",
+        "ava": "^1.4.1",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "2a72de1ce73c99f44509be7219ebc4eb90bdfa02",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/cli-cursor/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/cli-cursor#readme",
+      "_id": "cli-cursor@3.0.0",
+      "_nodeVersion": "8.15.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-m7avcYLWHHQVU+cFxu301q3kKZJlcZcKXQSL9kffYnIvRNtqX+a7gJKXqOKusHoKXr4oquSgiMlAo1R0dDkSZA==",
+        "shasum": "f6cc68b8ae372a18894e59fbf2ae3bd659731c15",
+        "tarball": "https://registry.npmjs.org/cli-cursor/-/cli-cursor-3.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 3998,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcrCWfCRA9TVsSAnZWagAAQg8P/iqax0Sh5+WqxIR23Gh/\nuMHRC/fMBGwohqF8jCjqDyiR4HFuSqi8i4s9VLD8bpGgUY+9HtB1YFXjgT5p\ntDLo7zfnVrrlq/0UPJJgUaJwDgU5sM6rFIRjjWitnmP/bppzt4w56QT1ZE3w\nCTdTUva5Yu2dWGFv7plN5WNy3lq5V1av4nY8vc16K2e2Dh7gXPH7pTeAXq3Y\nkPWF8sFondZbJEjDk82LuYLbbx4qch1lWjsTk4wiLyn64Bcg7s98LI75xb2a\n3l/21aogVXe9dEB7x+eD97xvV0U46LT5dneXnyHpUJhMhbJLQcET3DEI5BLh\nHGgzhth1KTE4NZcAP9+mqVr9Wk5q0Cp/5nLKWFjspOpnAJ/JX/V/fkVkHulz\nE36P5ZdKqnYGpTirVxRoE3tPBr5lVO20HNq3pxmfLw7K9RY2RwkN8vxOGJhU\nYJ3CgERcygbc2/t4I791OIsr+NFMjPoWZfiaW/8iajlpUvOSnjO2w3+TQWe9\ntPX6IRC/PHFu2alXf9j3rT9GmKRpntQn8yeBQmGR4HVCFph8Y8/1Q6Gf19wt\nniMV9TS8qxx2xaqUMefIkMZYEzXnwNtsJcR9xYruJutKVBe1AJbgNoK8/+X7\n9zZ97xOVQFDVbjItUYODkjHLeLq86MsnW9IkoVrukwWvUbc22tZT84Mx3xa6\nuUsA\r\n=s6Zb\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/cli-cursor_3.0.0_1554785694351_0.7813029275132335"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.1.0": {
+      "name": "cli-cursor",
+      "version": "3.1.0",
+      "description": "Toggle the CLI cursor",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/cli-cursor.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "cli",
+        "cursor",
+        "ansi",
+        "toggle",
+        "display",
+        "show",
+        "hide",
+        "term",
+        "terminal",
+        "console",
+        "tty",
+        "shell",
+        "command-line"
+      ],
+      "dependencies": {
+        "restore-cursor": "^3.1.0"
+      },
+      "devDependencies": {
+        "@types/node": "^12.0.7",
+        "ava": "^2.1.0",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "49edacfb841a9dac691972c2aa5d40dba8e0b56b",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/cli-cursor/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/cli-cursor#readme",
+      "_id": "cli-cursor@3.1.0",
+      "_nodeVersion": "8.16.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-I/zHAwsKf9FqGoXM4WWRACob9+SNukZTd94DWF57E4toouRulbCxcUh6RKUEOQlYTHJnzkPMySvPNaaSLNfLZw==",
+        "shasum": "264305a7ae490d1d03bf0c9ba7c925d1753af307",
+        "tarball": "https://registry.npmjs.org/cli-cursor/-/cli-cursor-3.1.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 4372,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJc/92BCRA9TVsSAnZWagAAdZgP/0sTf3N0eXnmmQd3QcUJ\n2cJjxEDw+TcubH3nPCES+Mr/m15ONMCCaKxC9Kkirb7SwGFe33Svcu5wOM9f\nshjVlh+3h9A55Xl02ZnBjhM9fOaVg3/InD8ku25HvPwdUvl1AmccqIVyuoQg\npYvIVmf5CjrOFQoMh0KRjaBxR7sXtO4gmP+AA23UzLYOPeNlmgglZ8YuSsR0\nGnR+40I+E+a0ghj+J6eCh/C3e5OKGMM46501ew/g3cZMSm57keNTup0KLVBW\nZfwfgVgnLTU0+976Wu32G/+JglkQEWqeKGGYhAOMLCL9eM8Bkji4okwJe+iF\n2JVKbB310AzSUgYSvuCPq/V1yKKIkK0LNgE0GJ6cpgYqRcvK0ECS6+qyETXQ\nHf3nnoh+x322P43iXjjPcBRNxB8N5n/PKP6/7D3vTtHbrFXNQsX/vODOGxkx\nUDm2ysVmYi1x5CPTjE0t83BK9VcJ8S3m/dl2rjSeE+Z1KvFhdaZPIfMxQSWF\nFW+9Qa9Oq8R1sOy+W6cKa4JWEsTZsQls068G0nPyuHhGd3Kjo76+wYE7OAie\n6h6PEPrDeiwikrsXgrxDsdrO3YZX8tsQ716OzC/tNrNKSYC21giIiNLryYaX\n2u9GJhGS1gAp/W0v7Rpvnyy4HOB0md0+OcSO/bG+BzYl28BNvBCtuS4KU2Re\na5MJ\r\n=Ezm1\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/cli-cursor_3.1.0_1560272255624_0.6903118486191766"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# cli-cursor [![Build Status](https://travis-ci.org/sindresorhus/cli-cursor.svg?branch=master)](https://travis-ci.org/sindresorhus/cli-cursor)\n\n> Toggle the CLI cursor\n\nThe cursor is [gracefully restored](https://github.com/sindresorhus/restore-cursor) if the process exits.\n\n\n## Install\n\n```\n$ npm install cli-cursor\n```\n\n\n## Usage\n\n```js\nconst cliCursor = require('cli-cursor');\n\ncliCursor.hide();\n\nconst unicornsAreAwesome = true;\ncliCursor.toggle(unicornsAreAwesome);\n```\n\n\n## API\n\n### .show(stream?)\n\n### .hide(stream?)\n\n### .toggle(force?, stream?)\n\n#### force\n\nUseful for showing or hiding the cursor based on a boolean.\n\n#### stream\n\nType: `stream.Writable`<br>\nDefault: `process.stderr`\n\n\n---\n\n<div align=\"center\">\n\t<b>\n\t\t<a href=\"https://tidelift.com/subscription/pkg/npm-cli-cursor?utm_source=npm-cli-cursor&utm_medium=referral&utm_campaign=readme\">Get professional support for this package with a Tidelift subscription</a>\n\t</b>\n\t<br>\n\t<sub>\n\t\tTidelift helps make open source sustainable for maintainers while giving companies<br>assurances about security, maintenance, and licensing for their dependencies.\n\t</sub>\n</div>\n",
+  "maintainers": [
+    {
+      "name": "sindresorhus",
+      "email": "sindresorhus@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2019-06-11T16:57:39.952Z",
+    "created": "2014-08-31T11:48:41.699Z",
+    "1.0.0": "2014-08-31T11:48:41.699Z",
+    "1.0.1": "2014-08-31T23:31:41.380Z",
+    "1.0.2": "2015-09-18T13:47:26.541Z",
+    "2.0.0": "2017-01-09T19:25:42.647Z",
+    "2.1.0": "2017-01-09T19:40:10.885Z",
+    "3.0.0": "2019-04-09T04:54:54.592Z",
+    "3.1.0": "2019-06-11T16:57:35.876Z"
+  },
+  "homepage": "https://github.com/sindresorhus/cli-cursor#readme",
+  "keywords": [
+    "cli",
+    "cursor",
+    "ansi",
+    "toggle",
+    "display",
+    "show",
+    "hide",
+    "term",
+    "terminal",
+    "console",
+    "tty",
+    "shell",
+    "command-line"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/cli-cursor.git"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "bugs": {
+    "url": "https://github.com/sindresorhus/cli-cursor/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md",
+  "users": {
+    "ahmed-dinar": true,
+    "insomniaqc": true,
+    "cocorax": true
+  }
+}

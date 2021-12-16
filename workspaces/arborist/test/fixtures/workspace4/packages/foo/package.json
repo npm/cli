@@ -1,0 +1,8 @@
+{
+  "name": "foo",
+  "version": "1.2.3",
+  "dependencies": {
+    "mkdirp": "1",
+    "bar": "^1.0.0"
+  }
+}

@@ -1,0 +1,937 @@
+{
+  "_id": "webpack-log",
+  "_rev": "18-e3b74c41db192c2a7d3def79e0eadf9d",
+  "name": "webpack-log",
+  "description": "A logger for the Webpack ecosystem",
+  "dist-tags": {
+    "latest": "3.0.1"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "webpack-log",
+      "version": "1.0.0",
+      "description": "A common logging module for the Webpack ecosystem",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack-contrib/webpack-log.git"
+      },
+      "author": {
+        "name": "Andrew Powell",
+        "email": "andrew@shellscape.org"
+      },
+      "homepage": "http://github.com/webpack-contrib/webpack-log",
+      "maintainers": [
+        {
+          "name": "Andrew Powell",
+          "email": "andrew@shellscape.org",
+          "url": "shellscape.org"
+        }
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "beautify": "npm run lint -- --fix",
+        "ci": "npm run cover -- --report lcovonly && npm run test",
+        "cover": "istanbul cover node_modules/mocha/bin/_mocha",
+        "lint": "eslint index.js test",
+        "mocha": "mocha --full-trace --check-leaks",
+        "test": "npm run lint && npm run mocha"
+      },
+      "files": [
+        "index.js"
+      ],
+      "dependencies": {
+        "chalk": "^2.1.0",
+        "log-symbols": "^2.1.0",
+        "loglevelnext": "^1.0.0"
+      },
+      "devDependencies": {
+        "assert": "^1.4.1",
+        "codecov.io": "^0.1.6",
+        "eslint": "^4.5.0",
+        "eslint-config-webpack": "^1.2.5",
+        "eslint-plugin-import": "^2.7.0",
+        "istanbul": "^0.4.5",
+        "mocha": "^4.0.0",
+        "sinon": "^4.0.1",
+        "strip-ansi": "^4.0.0"
+      },
+      "gitHead": "61803b1f37db33e32b798f6e73e019c9de249590",
+      "bugs": {
+        "url": "https://github.com/webpack-contrib/webpack-log/issues"
+      },
+      "_id": "webpack-log@1.0.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.2.0",
+      "_npmUser": {
+        "name": "shellscape",
+        "email": "andrew@shellscape.org"
+      },
+      "dist": {
+        "integrity": "sha512-fgsoQ4Tdpz7k/7bAQz3by2RmVr84gg+Oz2iseNJdEupMf9kOjHuyUzzxM7iaW+XKwIVzCpkIZarH9fKBllT4OA==",
+        "shasum": "8325bef8ff3e713c07260b4a2c3a35e2135fd7e5",
+        "tarball": "https://registry.npmjs.org/webpack-log/-/webpack-log-1.0.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/webpack-log-1.0.0.tgz_1513576152926_0.8748496437910944"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "webpack-log",
+      "version": "1.0.1",
+      "description": "A common logging module for the Webpack ecosystem",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack-contrib/webpack-log.git"
+      },
+      "author": {
+        "name": "Andrew Powell",
+        "email": "andrew@shellscape.org"
+      },
+      "homepage": "http://github.com/webpack-contrib/webpack-log",
+      "maintainers": [
+        {
+          "name": "bebraw",
+          "email": "bebraw@gmail.com"
+        },
+        {
+          "name": "d3viant0ne",
+          "email": "wiens.joshua@gmail.com"
+        },
+        {
+          "name": "shellscape",
+          "email": "andrew@shellscape.org"
+        }
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "beautify": "npm run lint -- --fix",
+        "ci": "npm run cover -- --report lcovonly && npm run test",
+        "cover": "istanbul cover node_modules/mocha/bin/_mocha",
+        "lint": "eslint index.js test",
+        "mocha": "mocha --full-trace --check-leaks",
+        "test": "npm run lint && npm run mocha"
+      },
+      "files": [
+        "index.js"
+      ],
+      "dependencies": {
+        "chalk": "^2.1.0",
+        "log-symbols": "^2.1.0",
+        "loglevelnext": "^1.0.0"
+      },
+      "devDependencies": {
+        "assert": "^1.4.1",
+        "codecov.io": "^0.1.6",
+        "eslint": "^4.5.0",
+        "eslint-config-webpack": "^1.2.5",
+        "eslint-plugin-import": "^2.7.0",
+        "istanbul": "^0.4.5",
+        "mocha": "^4.0.0",
+        "sinon": "^4.0.1",
+        "strip-ansi": "^4.0.0"
+      },
+      "gitHead": "113e94c8d434f3fca0c898dd17487c0455b20bfa",
+      "bugs": {
+        "url": "https://github.com/webpack-contrib/webpack-log/issues"
+      },
+      "_id": "webpack-log@1.0.1",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.2.0",
+      "_npmUser": {
+        "name": "shellscape",
+        "email": "andrew@shellscape.org"
+      },
+      "dist": {
+        "integrity": "sha512-7EgLQB5DhM5S2JXBkKAXpycJIAPM25NDEegOnsQbnDWTH+2F9eLn1NZzrHSCmB7e/SwXBEE5xnM0T3lNxF2uGA==",
+        "shasum": "1f5818b5c20aaa81583cac76b6ba2e34e9f6a486",
+        "tarball": "https://registry.npmjs.org/webpack-log/-/webpack-log-1.0.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/webpack-log-1.0.1.tgz_1513613911239_0.15471291169524193"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "webpack-log",
+      "version": "1.0.2",
+      "description": "A common logging module for the Webpack ecosystem",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack-contrib/webpack-log.git"
+      },
+      "author": {
+        "name": "Andrew Powell",
+        "email": "andrew@shellscape.org"
+      },
+      "homepage": "http://github.com/webpack-contrib/webpack-log",
+      "maintainers": [
+        {
+          "name": "bebraw",
+          "email": "bebraw@gmail.com"
+        },
+        {
+          "name": "d3viant0ne",
+          "email": "wiens.joshua@gmail.com"
+        },
+        {
+          "name": "shellscape",
+          "email": "andrew@shellscape.org"
+        }
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "beautify": "npm run lint -- --fix",
+        "ci": "npm run cover -- --report lcovonly && npm run test",
+        "cover": "istanbul cover node_modules/mocha/bin/_mocha",
+        "lint": "eslint index.js test",
+        "mocha": "mocha --full-trace --check-leaks",
+        "test": "npm run lint && npm run mocha"
+      },
+      "files": [
+        "index.js"
+      ],
+      "dependencies": {
+        "chalk": "^2.1.0",
+        "log-symbols": "^2.1.0",
+        "loglevelnext": "^1.0.0"
+      },
+      "devDependencies": {
+        "assert": "^1.4.1",
+        "codecov.io": "^0.1.6",
+        "eslint": "^4.5.0",
+        "eslint-config-webpack": "^1.2.5",
+        "eslint-plugin-import": "^2.7.0",
+        "istanbul": "^0.4.5",
+        "mocha": "^4.0.0",
+        "sinon": "^4.0.1",
+        "strip-ansi": "^4.0.0"
+      },
+      "gitHead": "99d515edd044e0423fa2fc90a1c31855c7429d54",
+      "bugs": {
+        "url": "https://github.com/webpack-contrib/webpack-log/issues"
+      },
+      "_id": "webpack-log@1.0.2",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.2.0",
+      "_npmUser": {
+        "name": "shellscape",
+        "email": "andrew@shellscape.org"
+      },
+      "dist": {
+        "integrity": "sha512-IQUfem3xNSwumQb9lIit/erI/NgjQ+ueAFhOoA0+w3MH15ZgyVZMDMs9kDGSRgcVWH5v3pcDabbF5ArQ41RrNQ==",
+        "shasum": "880298b80ff81a4e30baa6e28dc44f4637b4bbf1",
+        "tarball": "https://registry.npmjs.org/webpack-log/-/webpack-log-1.0.2.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/webpack-log-1.0.2.tgz_1513663262401_0.24997188313864172"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "webpack-log",
+      "version": "1.1.0",
+      "description": "A common logging module for the Webpack ecosystem",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack-contrib/webpack-log.git"
+      },
+      "author": {
+        "name": "Andrew Powell",
+        "email": "andrew@shellscape.org"
+      },
+      "homepage": "http://github.com/webpack-contrib/webpack-log",
+      "maintainers": [
+        {
+          "name": "bebraw",
+          "email": "bebraw@gmail.com"
+        },
+        {
+          "name": "d3viant0ne",
+          "email": "wiens.joshua@gmail.com"
+        },
+        {
+          "name": "shellscape",
+          "email": "andrew@shellscape.org"
+        }
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "beautify": "npm run lint -- --fix",
+        "ci": "npm run cover -- --report lcovonly && npm run test",
+        "cover": "istanbul cover node_modules/mocha/bin/_mocha",
+        "lint": "eslint index.js test",
+        "mocha": "mocha --full-trace --check-leaks",
+        "test": "npm run lint && npm run mocha"
+      },
+      "files": [
+        "index.js"
+      ],
+      "dependencies": {
+        "chalk": "^2.1.0",
+        "log-symbols": "^2.1.0",
+        "loglevelnext": "^1.0.1",
+        "uuid": "^3.1.0"
+      },
+      "devDependencies": {
+        "assert": "^1.4.1",
+        "codecov.io": "^0.1.6",
+        "eslint": "^4.5.0",
+        "eslint-config-webpack": "^1.2.5",
+        "eslint-plugin-import": "^2.7.0",
+        "istanbul": "^0.4.5",
+        "mocha": "^4.0.0",
+        "sinon": "^4.0.1",
+        "strip-ansi": "^4.0.0"
+      },
+      "gitHead": "6972d0b7c79796d68c2d0475d85fdbef37096e80",
+      "bugs": {
+        "url": "https://github.com/webpack-contrib/webpack-log/issues"
+      },
+      "_id": "webpack-log@1.1.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.2.0",
+      "_npmUser": {
+        "name": "shellscape",
+        "email": "andrew@shellscape.org"
+      },
+      "dist": {
+        "integrity": "sha512-2//tYK+vKiTaOcRd4JJ6nVLJTbOEQKmgp5SEQC1Bt7ghJtOIt9b7xHr8UuAYBNOXgOLkM3QJpXVwoVkOlgF7jA==",
+        "shasum": "fc17ce3aba349130d09464ee31d04686e8023f6a",
+        "tarball": "https://registry.npmjs.org/webpack-log/-/webpack-log-1.1.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/webpack-log-1.1.0.tgz_1513966754242_0.05544974305666983"
+      },
+      "directories": {}
+    },
+    "1.1.1": {
+      "name": "webpack-log",
+      "version": "1.1.1",
+      "description": "A common logging module for the Webpack ecosystem",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack-contrib/webpack-log.git"
+      },
+      "author": {
+        "name": "Andrew Powell",
+        "email": "andrew@shellscape.org"
+      },
+      "homepage": "http://github.com/webpack-contrib/webpack-log",
+      "maintainers": [
+        {
+          "name": "bebraw",
+          "email": "bebraw@gmail.com"
+        },
+        {
+          "name": "d3viant0ne",
+          "email": "wiens.joshua@gmail.com"
+        },
+        {
+          "name": "shellscape",
+          "email": "andrew@shellscape.org"
+        }
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "beautify": "npm run lint -- --fix",
+        "ci": "npm run cover -- --report lcovonly && npm run test",
+        "cover": "istanbul cover node_modules/mocha/bin/_mocha",
+        "lint": "eslint index.js test",
+        "mocha": "mocha --full-trace --check-leaks",
+        "test": "npm run lint && npm run mocha"
+      },
+      "files": [
+        "index.js"
+      ],
+      "dependencies": {
+        "chalk": "^2.1.0",
+        "log-symbols": "^2.1.0",
+        "loglevelnext": "^1.0.1",
+        "uuid": "^3.1.0"
+      },
+      "devDependencies": {
+        "assert": "^1.4.1",
+        "codecov.io": "^0.1.6",
+        "eslint": "^4.5.0",
+        "eslint-config-webpack": "^1.2.5",
+        "eslint-plugin-import": "^2.7.0",
+        "istanbul": "^0.4.5",
+        "mocha": "^4.0.0",
+        "sinon": "^4.0.1",
+        "strip-ansi": "^4.0.0"
+      },
+      "gitHead": "1acd8d198982f63302f7c8d7640e50d1efa67ea6",
+      "bugs": {
+        "url": "https://github.com/webpack-contrib/webpack-log/issues"
+      },
+      "_id": "webpack-log@1.1.1",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.2.0",
+      "_npmUser": {
+        "name": "shellscape",
+        "email": "andrew@shellscape.org"
+      },
+      "dist": {
+        "integrity": "sha512-9AeZ12uxaS+DGpcIInWxNuoJMW2JbAc45bkn3fhWcdl4wK36MAq/yiyiITt5IS0TaZWjtLIWxwULCuT9V7/xoA==",
+        "shasum": "a0c7beb385245da7b2172afe46c02cf3a471ef31",
+        "tarball": "https://registry.npmjs.org/webpack-log/-/webpack-log-1.1.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/webpack-log-1.1.1.tgz_1515331696703_0.302024363540113"
+      },
+      "directories": {}
+    },
+    "1.1.2": {
+      "name": "webpack-log",
+      "version": "1.1.2",
+      "description": "A common logging module for the Webpack ecosystem",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack-contrib/webpack-log.git"
+      },
+      "author": {
+        "name": "Andrew Powell",
+        "email": "andrew@shellscape.org"
+      },
+      "homepage": "http://github.com/webpack-contrib/webpack-log",
+      "maintainers": [
+        {
+          "name": "bebraw",
+          "email": "bebraw@gmail.com"
+        },
+        {
+          "name": "d3viant0ne",
+          "email": "wiens.joshua@gmail.com"
+        },
+        {
+          "name": "shellscape",
+          "email": "andrew@shellscape.org"
+        }
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "beautify": "npm run lint -- --fix",
+        "ci": "npm run cover -- --report lcovonly && npm run test",
+        "cover": "istanbul cover node_modules/mocha/bin/_mocha",
+        "lint": "eslint index.js test",
+        "mocha": "mocha --full-trace --check-leaks",
+        "test": "npm run lint && npm run mocha"
+      },
+      "files": [
+        "index.js"
+      ],
+      "dependencies": {
+        "chalk": "^2.1.0",
+        "log-symbols": "^2.1.0",
+        "loglevelnext": "^1.0.1",
+        "uuid": "^3.1.0"
+      },
+      "devDependencies": {
+        "assert": "^1.4.1",
+        "codecov.io": "^0.1.6",
+        "eslint": "^4.5.0",
+        "eslint-config-webpack": "^1.2.5",
+        "eslint-plugin-import": "^2.7.0",
+        "istanbul": "^0.4.5",
+        "mocha": "^4.0.0",
+        "sinon": "^4.0.1",
+        "strip-ansi": "^4.0.0"
+      },
+      "gitHead": "be4a381ec7103cd0ad850bdfd7e5a2e7972c77dd",
+      "bugs": {
+        "url": "https://github.com/webpack-contrib/webpack-log/issues"
+      },
+      "_id": "webpack-log@1.1.2",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.2.0",
+      "_npmUser": {
+        "name": "shellscape",
+        "email": "andrew@shellscape.org"
+      },
+      "dist": {
+        "integrity": "sha512-B53SD4N4BHpZdUwZcj4st2QT7gVfqZtqHDruC1N+K2sciq0Rt/3F1Dx6RlylVkcrToMLTaiaeT48k9Lq4iDVDA==",
+        "shasum": "cdc76016537eed24708dc6aa3d1e52189efee107",
+        "tarball": "https://registry.npmjs.org/webpack-log/-/webpack-log-1.1.2.tgz",
+        "fileCount": 4,
+        "unpackedSize": 7283
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/webpack-log_1.1.2_1518195148983_0.24370942076791202"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.2.0": {
+      "name": "webpack-log",
+      "version": "1.2.0",
+      "description": "A common logging module for the Webpack ecosystem",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack-contrib/webpack-log.git"
+      },
+      "author": {
+        "name": "Andrew Powell",
+        "email": "andrew@shellscape.org"
+      },
+      "homepage": "http://github.com/webpack-contrib/webpack-log",
+      "maintainers": [
+        {
+          "name": "bebraw",
+          "email": "bebraw@gmail.com"
+        },
+        {
+          "name": "d3viant0ne",
+          "email": "wiens.joshua@gmail.com"
+        },
+        {
+          "name": "shellscape",
+          "email": "andrew@shellscape.org"
+        }
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "beautify": "npm run lint -- --fix",
+        "ci": "npm run cover -- --report lcovonly && npm run test",
+        "cover": "istanbul cover node_modules/mocha/bin/_mocha",
+        "lint": "eslint index.js test",
+        "mocha": "mocha --full-trace --check-leaks",
+        "test": "npm run lint && npm run mocha"
+      },
+      "files": [
+        "index.js"
+      ],
+      "dependencies": {
+        "chalk": "^2.1.0",
+        "log-symbols": "^2.1.0",
+        "loglevelnext": "^1.0.1",
+        "uuid": "^3.1.0"
+      },
+      "devDependencies": {
+        "assert": "^1.4.1",
+        "codecov.io": "^0.1.6",
+        "eslint": "^4.5.0",
+        "eslint-config-webpack": "^1.2.5",
+        "eslint-plugin-import": "^2.7.0",
+        "istanbul": "^0.4.5",
+        "mocha": "^4.0.0",
+        "sinon": "^4.0.1",
+        "strip-ansi": "^4.0.0"
+      },
+      "gitHead": "9e215a07efa0a0a069b27c30291652241c0f4c82",
+      "bugs": {
+        "url": "https://github.com/webpack-contrib/webpack-log/issues"
+      },
+      "_id": "webpack-log@1.2.0",
+      "_npmVersion": "5.8.0",
+      "_nodeVersion": "9.2.0",
+      "_npmUser": {
+        "name": "shellscape",
+        "email": "andrew@shellscape.org"
+      },
+      "dist": {
+        "integrity": "sha512-U9AnICnu50HXtiqiDxuli5gLB5PGBo7VvcHx36jRZHwK4vzOYLbImqT4lwWwoMHdQWwEKw736fCHEekokTEKHA==",
+        "shasum": "a4b34cda6b22b518dbb0ab32e567962d5c72a43d",
+        "tarball": "https://registry.npmjs.org/webpack-log/-/webpack-log-1.2.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 7589
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/webpack-log_1.2.0_1522949930569_0.09172597649872105"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.0": {
+      "name": "webpack-log",
+      "version": "2.0.0",
+      "description": "A common logger for the webpack ecosystem",
+      "main": "src/index.js",
+      "files": [
+        "src"
+      ],
+      "engines": {
+        "node": ">= 6"
+      },
+      "scripts": {
+        "lint": "eslint src test",
+        "test": "nyc --reporter lcovonly mocha --full-trace --check-leaks",
+        "release": "standard-version"
+      },
+      "dependencies": {
+        "ansi-colors": "^3.0.0",
+        "uuid": "^3.3.2"
+      },
+      "devDependencies": {
+        "assert": "^1.4.1",
+        "eslint": "^5.4.0",
+        "eslint-config-webpack": "^1.2.5",
+        "eslint-plugin-import": "^2.14.0",
+        "mocha": "^5.2.0",
+        "nyc": "^12.0.2",
+        "sinon": "^6.1.5",
+        "standard-version": "^4.4.0",
+        "strip-ansi": "^4.0.0"
+      },
+      "author": {
+        "name": "Andrew Powell",
+        "email": "andrew@shellscape.org"
+      },
+      "issues": "https://github.com/webpack-contrib/webpack-log/issues",
+      "homepage": "https://github.com/webpack-contrib/webpack-log#readme",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack-contrib/webpack-log.git"
+      },
+      "license": "MIT",
+      "gitHead": "72c77ea020425e6aeec956db01b8e500ed80ca1b",
+      "bugs": {
+        "url": "https://github.com/webpack-contrib/webpack-log/issues"
+      },
+      "_id": "webpack-log@2.0.0",
+      "_npmVersion": "6.4.0",
+      "_nodeVersion": "10.9.0",
+      "_npmUser": {
+        "name": "michael-ciniawsky",
+        "email": "michael.ciniawsky@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-cX8G2vR/85UYG59FgkoMamwHUIkSSlV3bBMRsbxVXVUk2j6NleCKjQ/WE9eYg9WY4w25O9w8wKP4rzNZFmUcUg==",
+        "shasum": "5b7928e0637593f119d32f6227c1e0ac31e1b47f",
+        "tarball": "https://registry.npmjs.org/webpack-log/-/webpack-log-2.0.0.tgz",
+        "fileCount": 9,
+        "unpackedSize": 15708,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbfuXiCRA9TVsSAnZWagAACJwQAJEIjdDQi2uXld+6gZZT\n6J7QMyswVA0P6r8WEgbUaG74o0BS9kJETHiEiAV5dR8KhmdGO3m08A9T+N8V\nHcKNoGr4QdEhxSiXTJWK0EPwpGFSTWScv40WeQt7Y/DqC6sjvQ3o2zUan2vq\n7fK3ei29rnH+U3obY6pTVGX5kaeik2HS3mF7PDDt1LHEGZotePoN7r/YGEVw\nY5irVs7eKa15ivT86T8AvR6V9r6YxUW04y8jaEwQcdtskyu3jPX6DttCkYDq\nzSgzJhVwLV0/6GdnSr4p8f5Xz99l3vT4d67MlpXoZa/XhsP2OGbzshxYoIcT\nPUHPR89FryStTEms1KYWF9hkOpI66lb3SnM/OG3iEYfGwk08gDw+et8e/pni\nz+eik5IsBSMVh2mIoUjLXEBXncDjRaVRRqtZQO5D/f1AchJJLMmt/inBHIVC\n4cITHt/iX1oK64BU6hf954GbTc/2rhh2OZabYW7BhBBykUdXN61hdu9suNpe\na/D39sXrLa26+oe3rPuQK4abekqfTRBMsqsP9Vk/SvPWaba494cE61GL29ZV\ncoN5ov2GFGOwWbDFYNzOx0Fn4TygvR0bILNwnx/xsh2/CP7f9kvIR2ct1jvW\n6x0sCbGOO0OD7+owzxhpdgBchqpLnS5YpK/zl84hP3SqK3do/V0v2bwq6wrN\nAeiE\r\n=8lsh\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "bebraw",
+          "email": "bebraw@gmail.com"
+        },
+        {
+          "name": "d3viant0ne",
+          "email": "wiens.joshua@gmail.com"
+        },
+        {
+          "name": "shellscape",
+          "email": "andrew@shellscape.org"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/webpack-log_2.0.0_1535043041935_0.6962136441284803"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.0": {
+      "name": "webpack-log",
+      "version": "3.0.0",
+      "description": "A Development Server in a Webpack Plugin",
+      "license": "MPL-2.0",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/shellscape/webpack-log.git"
+      },
+      "author": {
+        "name": "shellscape"
+      },
+      "homepage": "https://github.com/shellscape/webpack-log",
+      "bugs": {
+        "url": "https://github.com/shellscape/webpack-log/issues"
+      },
+      "bin": "",
+      "main": "lib/index.js",
+      "engines": {
+        "node": ">= 8.0.0"
+      },
+      "scripts": {
+        "ci:coverage": "nyc npm run test && nyc report --reporter=text-lcov > coverage.lcov",
+        "ci:lint": "npm run lint && npm run security",
+        "ci:lint:commits": "commitlint --from=${CIRCLE_BRANCH} --to=${CIRCLE_SHA1}",
+        "ci:test": "npm run test -- --verbose",
+        "commitlint": "commitlint",
+        "commitmsg": "commitlint -e $GIT_PARAMS",
+        "lint": "eslint --fix --cache lib test",
+        "lint-staged": "lint-staged",
+        "security": "npm audit",
+        "test": "ava"
+      },
+      "dependencies": {
+        "chalk": "^2.4.2",
+        "loglevelnext": "^3.0.1",
+        "nanoid": "^2.0.3"
+      },
+      "devDependencies": {
+        "@commitlint/cli": "^8.1.0",
+        "@commitlint/config-conventional": "^8.0.0",
+        "ava": "^2.2.0",
+        "cpy": "^7.0.1",
+        "eslint": "^6.0.1",
+        "eslint-config-shellscape": "^2.0.2",
+        "lint-staged": "^9.2.0",
+        "nyc": "^14.1.1",
+        "pre-commit": "^1.2.2",
+        "prettier": "^1.14.3",
+        "sinon": "^7.3.2",
+        "standard-version": "^7.0.0"
+      },
+      "keywords": [
+        "log",
+        "logger",
+        "logging",
+        "console",
+        "terminal",
+        "webpack"
+      ],
+      "ava": {
+        "files": [
+          "!**/fixtures/**",
+          "!**/helpers/**",
+          "!**/recipes/**"
+        ]
+      },
+      "lint-staged": {
+        "*.js": [
+          "eslint --fix",
+          "git add"
+        ]
+      },
+      "nyc": {
+        "include": [
+          "lib/**/*.js"
+        ],
+        "exclude": [
+          "lib/client*.js",
+          "test/"
+        ]
+      },
+      "pre-commit": "lint-staged",
+      "gitHead": "b3f88a0cd7a4c370289ba04f91d22684dc6eb9b8",
+      "_id": "webpack-log@3.0.0",
+      "_nodeVersion": "12.3.1",
+      "_npmVersion": "6.9.0",
+      "dist": {
+        "integrity": "sha512-Ewl+ZCAa33zIcfqq6wd1EJn+fTjxMnCyHUUMe72TzzOG4P8oZblmCrJzl6N6CEb9qz8fAKB3aUpC1xYTdQommA==",
+        "shasum": "ab46af6a67dc5d41b9720eeba8ba15336fa53cde",
+        "tarball": "https://registry.npmjs.org/webpack-log/-/webpack-log-3.0.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 23217,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdQyp/CRA9TVsSAnZWagAA8BEP/2yvzSN/JNXAk8fL6Jjc\nXpWBb2bNffr+5F6yOrw0dcZJl4ZDszHJjG21ZLNQOMLCZvfR7C15Ffm66Vpf\nTS63LJN6QOYjwKIwMIElBozH/GuQMw90NfnkzDMr2zhz4oZT6mfbfrgdO9Tx\nW1OOX8RWz1IDBMMcgVYGeK8tD9W2wsW2L6q6b/fM6Cc/JjQ7qiMG3kvEFNZd\nV64/tYheVU8/1avz6oJWMxfO5jJoJVPBsGeIUlePvK2Syr5APVNK91meHbXf\ne0wFwKQAzLfgvjfUql5JEmRMNiOmGo8AGrcZ8QpehMuCtk+mb0ceaeGkOvhn\n0gwe/1uR2jegsWzsEhU0xDpHaODzkZXFAwM6t8gBw9g99h0lhqoHuaHWE+Sk\n/PnWB6xeL/jeQ1Pvvpsb5A7C2Kl1neqx0Bra6N4PWo5F27YkH1Kz7fzrGOnA\nndWgMemjt1u72/JsWpuGdwnMvF7a9pz+q7aKHVLMdWM9Yq8B9AQf7+58mIRc\no1jrTmqZjSLACyA8JIbJMYesYVYdz2ICFZDYhYNfL0K6oyraaxpNAUoqre27\nVPA3E65cTpKGVEQjbv0BN4aMkWfudwWjdm5/YRVsAEukfrpzDoEXQFvIvG6u\ngPQMsX87LPH3/zxRCl/jHIdGq+aTeOGqfVo3crlfDrSY/SuU5T2Yl3hLNgoE\nker4\r\n=vnVl\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "wiens.joshua@gmail.com",
+          "name": "d3viant0ne"
+        },
+        {
+          "email": "andrew@shellscape.org",
+          "name": "shellscape"
+        }
+      ],
+      "_npmUser": {
+        "name": "shellscape",
+        "email": "andrew@shellscape.org"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/webpack-log_3.0.0_1564682879003_0.8357037719333116"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.1": {
+      "name": "webpack-log",
+      "version": "3.0.1",
+      "description": "A logger for the Webpack ecosystem",
+      "license": "MPL-2.0",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/shellscape/webpack-log.git"
+      },
+      "author": {
+        "name": "shellscape"
+      },
+      "homepage": "https://github.com/shellscape/webpack-log",
+      "bugs": {
+        "url": "https://github.com/shellscape/webpack-log/issues"
+      },
+      "bin": "",
+      "main": "lib/index.js",
+      "engines": {
+        "node": ">= 8.0.0"
+      },
+      "scripts": {
+        "ci:coverage": "nyc npm run test && nyc report --reporter=text-lcov > coverage.lcov",
+        "ci:lint": "npm run lint && npm run security",
+        "ci:lint:commits": "commitlint --from=${CIRCLE_BRANCH} --to=${CIRCLE_SHA1}",
+        "ci:test": "npm run test -- --verbose",
+        "commitlint": "commitlint",
+        "commitmsg": "commitlint -e $GIT_PARAMS",
+        "lint": "eslint --fix --cache lib test",
+        "lint-staged": "lint-staged",
+        "security": "npm audit",
+        "test": "ava"
+      },
+      "dependencies": {
+        "chalk": "^2.4.2",
+        "loglevelnext": "^3.0.1",
+        "nanoid": "^2.0.3"
+      },
+      "devDependencies": {
+        "@commitlint/cli": "^8.1.0",
+        "@commitlint/config-conventional": "^8.0.0",
+        "ava": "^2.2.0",
+        "cpy": "^7.0.1",
+        "eslint": "^6.0.1",
+        "eslint-config-shellscape": "^2.0.2",
+        "lint-staged": "^9.2.0",
+        "nyc": "^14.1.1",
+        "pre-commit": "^1.2.2",
+        "prettier": "^1.14.3",
+        "sinon": "^7.3.2",
+        "standard-version": "^7.0.0"
+      },
+      "keywords": [
+        "log",
+        "logger",
+        "logging",
+        "console",
+        "terminal",
+        "webpack"
+      ],
+      "ava": {
+        "files": [
+          "!**/fixtures/**",
+          "!**/helpers/**",
+          "!**/recipes/**"
+        ]
+      },
+      "lint-staged": {
+        "*.js": [
+          "eslint --fix",
+          "git add"
+        ]
+      },
+      "nyc": {
+        "include": [
+          "lib/**/*.js"
+        ],
+        "exclude": [
+          "lib/client*.js",
+          "test/"
+        ]
+      },
+      "pre-commit": "lint-staged",
+      "gitHead": "7f4464c0ba4f681a94fbcb4de87875210e5415bb",
+      "_id": "webpack-log@3.0.1",
+      "_nodeVersion": "12.3.1",
+      "_npmVersion": "6.9.0",
+      "dist": {
+        "integrity": "sha512-mX/6BJPPpxco6BGCFZJ96NjgnwBrLQx6d7Kxe1PaJ7KvjI3LFmJK9QgRPCAr9tXrPVawPN1cuM8hJ2Vadnwm+Q==",
+        "shasum": "647c42231b6f74d7cc3c3a66510370e635d066ea",
+        "tarball": "https://registry.npmjs.org/webpack-log/-/webpack-log-3.0.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 23211,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdQzEFCRA9TVsSAnZWagAAoawP/1ovQnkDOz0mz+NBo7MW\nybpv6GqJ6BD+3i36kQsMK/nnz/gQcudU5D1JIVZr+eTmegVpn+xLVe4pXF97\nypJfnHO9R9DODoeHQU3Nk6arsm9vvlUuEQwlCR3E7LGwsGjov4ycEaY3Efsy\nsHoXiVFfkEdHb1p6ZUwBigbsW8SjC02fPyCEISEefP/2qfuDIsbBsYbr8E/5\nsn2CliAlfBbibuhgQfhGDgSh17KX7PGKNE1qVg4p9m4r8OHy6QLdfhbtQK3x\nIecFOzqioC+FRvxhP1VarNTgsD54y7jTf4lz3GijtzlvkTcqAkcoJn+8Pjev\nmOQosVYqN2ybE6YfJbtsyxPVutW8w9hFZE0xGkwvy3Etx4RHtqWsEcp7fEc4\nqnNLhz3/qvT1Lg9XPokxh2m0oxqXM2xABCw/QH5Tl93cQwvpzL7bqd4ccGtf\ni0JsnpEYub+dsu8kVSE7pU84KJwss9cAxPYO/jjzjKY1fec9EZ+dJBvcG0OZ\n8xqIKOQUjnYyo+2tKuMHzq+VIclGfLxyZYDdYoQCNgWERgpmnjnrts0NsMYU\nlcBT5e5aqtS0OLA+A6aioH19TuY7sDn6DTG2KGFk0IsjszxmlDIYWALQjn0x\nWILd+H9phQLHbil+yFovex501VCIcd22Ndu/PzM4rKwnJfFRpKkTnc/piUWp\nRaK5\r\n=kPem\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "wiens.joshua@gmail.com",
+          "name": "d3viant0ne"
+        },
+        {
+          "email": "andrew@shellscape.org",
+          "name": "shellscape"
+        }
+      ],
+      "_npmUser": {
+        "name": "shellscape",
+        "email": "andrew@shellscape.org"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/webpack-log_3.0.1_1564684548566_0.14153951681926746"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "[tests]: \thttps://img.shields.io/circleci/project/github/shellscape/webpack-log.svg\n[tests-url]: https://circleci.com/gh/shellscape/webpack-log\n\n[cover]: https://codecov.io/gh/shellscape/webpack-log/branch/master/graph/badge.svg\n[cover-url]: https://codecov.io/gh/shellscape/webpack-log\n\n[size]: https://packagephobia.now.sh/badge?p=webpack-log\n[size-url]: https://packagephobia.now.sh/result?p=webpack-log\n\n<div align=\"center\">\n\t<img width=\"180\" src=\"https://raw.githubusercontent.com/shellscape/webpack-log/master/assets/log.svg?sanitize=true\" alt=\"webpack-log\"><br/><br/>\n</div>\n\n[![tests][tests]][tests-url]\n[![cover][cover]][cover-url]\n[![size][size]][size-url]\n[![libera manifesto](https://img.shields.io/badge/libera-manifesto-lightgrey.svg)](https://liberamanifesto.com)\n\n# webpack-log\n\nA logger for the Webpack ecosystem.\n\n<a href=\"https://www.patreon.com/shellscape\">\n  <img src=\"https://c5.patreon.com/external/logo/become_a_patron_button@2x.png\" width=\"160\">\n</a>\n\n_Please consider donating if you find this project useful._\n\n## Requirements\n\nThis module requires an [LTS](https://github.com/nodejs/Release) Node version (v8.0.0+).\n\n## Install\n\nUsing npm:\n\n```console\nnpm install webpack-log --save-dev\n```\n\n## Usage\n\nCreate a new logger and use it to log something wild:\n\n```js\nconst getLogger = require('webpack-log');\nconst log = getLogger({ name: 'webpack-batman' });\n\nlog.info('Jingle Bells, Batman Smells');\nlog.warn('Robin laid an egg');\nlog.error('The Batmobile lost a wheel');\nlog.debug('And the Joker got away');\n```\n\nAnd there will appear magic in your console:\n\n<div align=\"center\">\n\t<img width=\"369\" src=\"assets/demo.png\" alt=\"console magic\"><br/><br/>\n</div>\n\n## Options\n\n### `level`\nType: `String`<br>\nDefault: `info`\n\nSpecifies the level the logger should use. A logger will not produce output for\nany log level _beneath_ the specified level. Valid level names, and their order are:\n\n```js\n[\n  'trace',\n  'debug',\n  'info',\n  'warn',\n  'error',\n  'silent'\n]\n```\n\nFor example, If a level was passed as `{ level: 'warn'}` then only calls to `warn` and `error` will be displayed in the terminal.\n\n### `name`\nType: `String`<br>\nDefault: `<webpack-log>`\n\nSpecifies the name of the logger to create. This value will be part of the log output prefix.\n\n### `timestamp`\nType: `Boolean`<br>\nDefault: `false`\n\nIf `true`, the logger will display a timestamp for log output, preceding all other data\n\n### `unique`\nType: `Boolean`<br>\nDefault: `true`\n\nIf `false`, the logger will use cached versions of a log with the same name. Due to the nature of the `webpack` ecosystem and multiple plugin/loader use in the same process, loggers are created as unique instances by default.\n\n## Meta\n\n[CONTRIBUTING](./.github/CONTRIBUTING.md)\n\n[LICENSE (Mozilla Public License)](./LICENSE)\n",
+  "maintainers": [
+    {
+      "name": "shellscape",
+      "email": "andrew@shellscape.org"
+    }
+  ],
+  "time": {
+    "modified": "2019-08-08T17:42:24.924Z",
+    "created": "2017-12-18T05:49:13.840Z",
+    "1.0.0": "2017-12-18T05:49:13.840Z",
+    "1.0.1": "2017-12-18T16:18:32.148Z",
+    "1.0.2": "2017-12-19T06:01:03.571Z",
+    "1.1.0": "2017-12-22T18:19:15.459Z",
+    "1.1.1": "2018-01-07T13:28:17.605Z",
+    "1.1.2": "2018-02-09T16:52:29.673Z",
+    "1.2.0": "2018-04-05T17:38:50.708Z",
+    "2.0.0": "2018-08-23T16:50:42.006Z",
+    "3.0.0": "2019-08-01T18:07:59.126Z",
+    "3.0.1": "2019-08-01T18:35:48.690Z"
+  },
+  "homepage": "https://github.com/shellscape/webpack-log",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shellscape/webpack-log.git"
+  },
+  "author": {
+    "name": "shellscape"
+  },
+  "bugs": {
+    "url": "https://github.com/shellscape/webpack-log/issues"
+  },
+  "license": "MPL-2.0",
+  "readmeFilename": "README.md",
+  "keywords": [
+    "log",
+    "logger",
+    "logging",
+    "console",
+    "terminal",
+    "webpack"
+  ]
+}

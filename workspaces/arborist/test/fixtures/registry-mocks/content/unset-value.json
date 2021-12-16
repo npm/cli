@@ -1,0 +1,438 @@
+{
+  "_id": "unset-value",
+  "_rev": "5-d7f85086b168326e601d17fa1bf333c2",
+  "name": "unset-value",
+  "description": "Delete nested properties from an object using dot notation.",
+  "dist-tags": {
+    "latest": "1.0.0"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "unset-value",
+      "description": "Delete nested properties from an object using dot notation.",
+      "version": "0.1.0",
+      "homepage": "https://github.com/jonschlinkert/unset-value",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/unset-value.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/unset-value/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "has-value": "^0.2.0",
+        "isobject": "^2.0.0"
+      },
+      "devDependencies": {
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [],
+      "verb": {
+        "related": {
+          "list": [
+            "get-value",
+            "get-values",
+            "omit-value",
+            "put-value",
+            "set-value",
+            "union-value",
+            "upsert-value"
+          ]
+        }
+      },
+      "_id": "unset-value@0.1.0",
+      "_shasum": "fbaafe2fe1f17a9a58e25d1fc48c58fb47cf0ec6",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "0.12.4",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "fbaafe2fe1f17a9a58e25d1fc48c58fb47cf0ec6",
+        "tarball": "https://registry.npmjs.org/unset-value/-/unset-value-0.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.1.1": {
+      "name": "unset-value",
+      "description": "Delete nested properties from an object using dot notation.",
+      "version": "0.1.1",
+      "homepage": "https://github.com/jonschlinkert/unset-value",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/unset-value.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/unset-value/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "has-value": "^0.2.1",
+        "isobject": "^2.0.0"
+      },
+      "devDependencies": {
+        "mocha": "*",
+        "should": "*"
+      },
+      "verb": {
+        "related": {
+          "description": "",
+          "list": [
+            "get-value",
+            "get-values",
+            "omit-value",
+            "put-value",
+            "set-value",
+            "union-value",
+            "upsert-value"
+          ]
+        }
+      },
+      "keywords": [
+        "del",
+        "delete",
+        "key",
+        "object",
+        "omit",
+        "prop",
+        "property",
+        "remove",
+        "unset",
+        "value"
+      ],
+      "gitHead": "6fc6e855657bec006a2adbe136391a5cbd169724",
+      "_id": "unset-value@0.1.1",
+      "_shasum": "60bfdcaeaa16a4db88c95e6e79c18dd1eef97922",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.1",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "60bfdcaeaa16a4db88c95e6e79c18dd1eef97922",
+        "tarball": "https://registry.npmjs.org/unset-value/-/unset-value-0.1.1.tgz"
+      },
+      "directories": {}
+    },
+    "0.1.2": {
+      "name": "unset-value",
+      "description": "Delete nested properties from an object using dot notation.",
+      "version": "0.1.2",
+      "homepage": "https://github.com/jonschlinkert/unset-value",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "email": "wtgtybhertgeghgtwtg@gmail.com",
+          "url": "https://github.com/wtgtybhertgeghgtwtg"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "email": "jon.schlinkert@sellside.com",
+          "url": "http://twitter.com/jonschlinkert"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/unset-value.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/unset-value/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "has-value": "^0.3.1",
+        "isobject": "^3.0.0"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^0.1.11",
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "del",
+        "delete",
+        "key",
+        "object",
+        "omit",
+        "prop",
+        "property",
+        "remove",
+        "unset",
+        "value"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "get-value",
+            "get-values",
+            "omit-value",
+            "put-value",
+            "set-value",
+            "union-value",
+            "upsert-value"
+          ]
+        },
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "b4eb4edfca512c173cb91eea08a0f0effa5df9fc",
+      "_id": "unset-value@0.1.2",
+      "_shasum": "506810b867f27c2a5a6e9b04833631f6de58d310",
+      "_from": ".",
+      "_npmVersion": "4.1.2",
+      "_nodeVersion": "7.5.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "506810b867f27c2a5a6e9b04833631f6de58d310",
+        "tarball": "https://registry.npmjs.org/unset-value/-/unset-value-0.1.2.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/unset-value-0.1.2.tgz_1488061615885_0.7473359440919012"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "unset-value",
+      "description": "Delete nested properties from an object using dot notation.",
+      "version": "1.0.0",
+      "homepage": "https://github.com/jonschlinkert/unset-value",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "email": "wtgtybhertgeghgtwtg@gmail.com",
+          "url": "https://github.com/wtgtybhertgeghgtwtg"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "email": "jon.schlinkert@sellside.com",
+          "url": "http://twitter.com/jonschlinkert"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/unset-value.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/unset-value/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "has-value": "^0.3.1",
+        "isobject": "^3.0.0"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^0.1.11",
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "del",
+        "delete",
+        "key",
+        "object",
+        "omit",
+        "prop",
+        "property",
+        "remove",
+        "unset",
+        "value"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "get-value",
+            "get-values",
+            "omit-value",
+            "put-value",
+            "set-value",
+            "union-value",
+            "upsert-value"
+          ]
+        },
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "36b62353cde18d6be17a1c0dc080fddcc262d2da",
+      "_id": "unset-value@1.0.0",
+      "_shasum": "8376873f7d2335179ffb1e6fc3a8ed0dfc8ab559",
+      "_from": ".",
+      "_npmVersion": "4.1.2",
+      "_nodeVersion": "7.5.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "8376873f7d2335179ffb1e6fc3a8ed0dfc8ab559",
+        "tarball": "https://registry.npmjs.org/unset-value/-/unset-value-1.0.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/unset-value-1.0.0.tgz_1488061635259_0.42952891532331705"
+      },
+      "directories": {}
+    }
+  },
+  "readme": "# unset-value [![NPM version](https://img.shields.io/npm/v/unset-value.svg?style=flat)](https://www.npmjs.com/package/unset-value) [![NPM monthly downloads](https://img.shields.io/npm/dm/unset-value.svg?style=flat)](https://npmjs.org/package/unset-value)  [![NPM total downloads](https://img.shields.io/npm/dt/unset-value.svg?style=flat)](https://npmjs.org/package/unset-value) [![Linux Build Status](https://img.shields.io/travis/jonschlinkert/unset-value.svg?style=flat&label=Travis)](https://travis-ci.org/jonschlinkert/unset-value)\n\n> Delete nested properties from an object using dot notation.\n\n## Install\n\nInstall with [npm](https://www.npmjs.com/):\n\n```sh\n$ npm install --save unset-value\n```\n\n## Usage\n\n```js\nvar unset = require('unset-value');\n\nvar obj = {a: {b: {c: 'd', e: 'f'}}};\nunset(obj, 'a.b.c');\nconsole.log(obj);\n//=> {a: {b: {e: 'f'}}};\n```\n\n## Examples\n\n### Updates the object when a property is deleted\n\n```js\nvar obj = {a: 'b'};\nunset(obj, 'a');\nconsole.log(obj);\n//=> {}\n```\n\n### Returns true when a property is deleted\n\n```js\nunset({a: 'b'}, 'a') // true\n```\n\n### Returns `true` when a property does not exist\n\nThis is consistent with `delete` behavior in that it does not\nthrow when a property does not exist.\n\n```js\nunset({a: {b: {c: 'd'}}}, 'd') // true\n```\n\n### delete nested values\n\n```js\nvar one = {a: {b: {c: 'd'}}};\nunset(one, 'a.b');\nconsole.log(one);\n//=> {a: {}}\n\nvar two = {a: {b: {c: 'd'}}};\nunset(two, 'a.b.c');\nconsole.log(two);\n//=> {a: {b: {}}}\n\nvar three = {a: {b: {c: 'd', e: 'f'}}};\nunset(three, 'a.b.c');\nconsole.log(three);\n//=> {a: {b: {e: 'f'}}}\n```\n\n### throws on invalid args\n\n```js\nunset();\n// 'expected an object.'\n```\n\n## About\n\n### Related projects\n\n* [get-value](https://www.npmjs.com/package/get-value): Use property paths (`a.b.c`) to get a nested value from an object. | [homepage](https://github.com/jonschlinkert/get-value \"Use property paths (`a.b.c`) to get a nested value from an object.\")\n* [get-values](https://www.npmjs.com/package/get-values): Return an array of all values from the given object. | [homepage](https://github.com/jonschlinkert/get-values \"Return an array of all values from the given object.\")\n* [omit-value](https://www.npmjs.com/package/omit-value): Omit properties from an object or deeply nested property of an object using object path… [more](https://github.com/jonschlinkert/omit-value) | [homepage](https://github.com/jonschlinkert/omit-value \"Omit properties from an object or deeply nested property of an object using object path notation.\")\n* [put-value](https://www.npmjs.com/package/put-value): Update only existing values from an object, works with dot notation paths like `a.b.c` and… [more](https://github.com/tunnckocore/put-value#readme) | [homepage](https://github.com/tunnckocore/put-value#readme \"Update only existing values from an object, works with dot notation paths like `a.b.c` and support deep nesting.\")\n* [set-value](https://www.npmjs.com/package/set-value): Create nested values and any intermediaries using dot notation (`'a.b.c'`) paths. | [homepage](https://github.com/jonschlinkert/set-value \"Create nested values and any intermediaries using dot notation (`'a.b.c'`) paths.\")\n* [union-value](https://www.npmjs.com/package/union-value): Set an array of unique values as the property of an object. Supports setting deeply… [more](https://github.com/jonschlinkert/union-value) | [homepage](https://github.com/jonschlinkert/union-value \"Set an array of unique values as the property of an object. Supports setting deeply nested properties using using object-paths/dot notation.\")\n* [upsert-value](https://www.npmjs.com/package/upsert-value): Update or set nested values and any intermediaries with dot notation (`'a.b.c'`) paths. | [homepage](https://github.com/doowb/upsert-value \"Update or set nested values and any intermediaries with dot notation (`'a.b.c'`) paths.\")\n\n### Contributing\n\nPull requests and stars are always welcome. For bugs and feature requests, [please create an issue](../../issues/new).\n\n### Contributors\n\n| **Commits** | **Contributor** | \n| --- | --- |\n| 6 | [jonschlinkert](https://github.com/jonschlinkert) |\n| 2 | [wtgtybhertgeghgtwtg](https://github.com/wtgtybhertgeghgtwtg) |\n\n### Building docs\n\n_(This project's readme.md is generated by [verb](https://github.com/verbose/verb-generate-readme), please don't edit the readme directly. Any changes to the readme must be made in the [.verb.md](.verb.md) readme template.)_\n\nTo generate the readme, run the following command:\n\n```sh\n$ npm install -g verbose/verb#dev verb-generate-readme && verb\n```\n\n### Running tests\n\nRunning and reviewing unit tests is a great way to get familiarized with a library and its API. You can install dependencies and run tests with the following command:\n\n```sh\n$ npm install && npm test\n```\n\n### Author\n\n**Jon Schlinkert**\n\n* [github/jonschlinkert](https://github.com/jonschlinkert)\n* [twitter/jonschlinkert](https://twitter.com/jonschlinkert)\n\n### License\n\nCopyright © 2017, [Jon Schlinkert](https://github.com/jonschlinkert).\nReleased under the [MIT License](LICENSE).\n\n***\n\n_This file was generated by [verb-generate-readme](https://github.com/verbose/verb-generate-readme), v0.4.2, on February 25, 2017._",
+  "maintainers": [
+    {
+      "name": "jonschlinkert",
+      "email": "github@sellside.com"
+    }
+  ],
+  "time": {
+    "modified": "2017-10-21T06:50:53.712Z",
+    "created": "2015-08-27T07:59:45.273Z",
+    "0.1.0": "2015-08-27T07:59:45.273Z",
+    "0.1.1": "2015-10-30T19:55:39.243Z",
+    "0.1.2": "2017-02-25T22:26:57.734Z",
+    "1.0.0": "2017-02-25T22:27:15.940Z"
+  },
+  "homepage": "https://github.com/jonschlinkert/unset-value",
+  "keywords": [
+    "del",
+    "delete",
+    "key",
+    "object",
+    "omit",
+    "prop",
+    "property",
+    "remove",
+    "unset",
+    "value"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonschlinkert/unset-value.git"
+  },
+  "author": {
+    "name": "Jon Schlinkert",
+    "url": "https://github.com/jonschlinkert"
+  },
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/unset-value/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "contributors": [
+    {
+      "email": "wtgtybhertgeghgtwtg@gmail.com",
+      "url": "https://github.com/wtgtybhertgeghgtwtg"
+    },
+    {
+      "name": "Jon Schlinkert",
+      "email": "jon.schlinkert@sellside.com",
+      "url": "http://twitter.com/jonschlinkert"
+    }
+  ],
+  "users": {
+    "rocket0191": true
+  },
+  "_attachments": {}
+}

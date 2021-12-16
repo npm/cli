@@ -1,0 +1,579 @@
+{
+  "_id": "array-uniq",
+  "_rev": "21-35045e9794649a0b063c7db55e568bab",
+  "name": "array-uniq",
+  "description": "Create an array without duplicates",
+  "dist-tags": {
+    "latest": "2.1.0"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "array-uniq",
+      "version": "0.1.0",
+      "description": "Returns a new array without duplicates",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/sindresorhus/array-uniq"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "array",
+        "arr",
+        "set",
+        "uniq",
+        "unique",
+        "es6",
+        "duplicate",
+        "remove"
+      ],
+      "devDependencies": {
+        "es6-set": "^0.1.0",
+        "mocha": "*"
+      },
+      "bugs": {
+        "url": "https://github.com/sindresorhus/array-uniq/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/array-uniq",
+      "_id": "array-uniq@0.1.0",
+      "_shasum": "dc39af2405e05f814062e9cc88f563ec1213b24a",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "dc39af2405e05f814062e9cc88f563ec1213b24a",
+        "tarball": "https://registry.npmjs.org/array-uniq/-/array-uniq-0.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.1.1": {
+      "name": "array-uniq",
+      "version": "0.1.1",
+      "description": "Create an array without duplicates",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/sindresorhus/array-uniq"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "array",
+        "arr",
+        "set",
+        "uniq",
+        "unique",
+        "es6",
+        "duplicate",
+        "remove"
+      ],
+      "devDependencies": {
+        "es6-set": "^0.1.0",
+        "mocha": "*"
+      },
+      "bugs": {
+        "url": "https://github.com/sindresorhus/array-uniq/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/array-uniq",
+      "_id": "array-uniq@0.1.1",
+      "_shasum": "5861f3ed4e4bb6175597a4e078e8aa78ebe958c7",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "5861f3ed4e4bb6175597a4e078e8aa78ebe958c7",
+        "tarball": "https://registry.npmjs.org/array-uniq/-/array-uniq-0.1.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "array-uniq",
+      "version": "1.0.0",
+      "description": "Create an array without duplicates",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/sindresorhus/array-uniq"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "array",
+        "arr",
+        "set",
+        "uniq",
+        "unique",
+        "es6",
+        "duplicate",
+        "remove"
+      ],
+      "devDependencies": {
+        "es6-set": "^0.1.0",
+        "mocha": "*",
+        "require-uncached": "^1.0.2"
+      },
+      "gitHead": "3341fbc7cbbe748d1153efee053f723ac8bc0835",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/array-uniq/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/array-uniq",
+      "_id": "array-uniq@1.0.0",
+      "_shasum": "bc8cb48a6ff5c63e86e330736e5de5eccb2e2b9a",
+      "_from": ".",
+      "_npmVersion": "1.4.14",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "bc8cb48a6ff5c63e86e330736e5de5eccb2e2b9a",
+        "tarball": "https://registry.npmjs.org/array-uniq/-/array-uniq-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "array-uniq",
+      "version": "1.0.1",
+      "description": "Create an array without duplicates",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/array-uniq"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "array",
+        "arr",
+        "set",
+        "uniq",
+        "unique",
+        "es6",
+        "duplicate",
+        "remove"
+      ],
+      "devDependencies": {
+        "es6-set": "^0.1.0",
+        "mocha": "*",
+        "require-uncached": "^1.0.2"
+      },
+      "gitHead": "ca78ebf20825ee7fe297aaeb698437aaaffcfb44",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/array-uniq/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/array-uniq",
+      "_id": "array-uniq@1.0.1",
+      "_shasum": "25e1d96853d7f6f77cecf693f86cac4052046790",
+      "_from": ".",
+      "_npmVersion": "2.0.2",
+      "_nodeVersion": "0.10.32",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "25e1d96853d7f6f77cecf693f86cac4052046790",
+        "tarball": "https://registry.npmjs.org/array-uniq/-/array-uniq-1.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "array-uniq",
+      "version": "1.0.2",
+      "description": "Create an array without duplicates",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/array-uniq"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "array",
+        "arr",
+        "set",
+        "uniq",
+        "unique",
+        "es6",
+        "duplicate",
+        "remove"
+      ],
+      "devDependencies": {
+        "es6-set": "^0.1.0",
+        "mocha": "*",
+        "require-uncached": "^1.0.2"
+      },
+      "gitHead": "d5e311f37692dfd25ec216490df10632ce5f69f3",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/array-uniq/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/array-uniq",
+      "_id": "array-uniq@1.0.2",
+      "_shasum": "5fcc373920775723cfd64d65c64bef53bf9eba6d",
+      "_from": ".",
+      "_npmVersion": "2.1.5",
+      "_nodeVersion": "0.10.32",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "5fcc373920775723cfd64d65c64bef53bf9eba6d",
+        "tarball": "https://registry.npmjs.org/array-uniq/-/array-uniq-1.0.2.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.3": {
+      "name": "array-uniq",
+      "version": "1.0.3",
+      "description": "Create an array without duplicates",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/array-uniq.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "array",
+        "arr",
+        "set",
+        "uniq",
+        "unique",
+        "es6",
+        "duplicate",
+        "remove"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "es6-set": "^0.1.0",
+        "require-uncached": "^1.0.2",
+        "xo": "*"
+      },
+      "gitHead": "3b5bf5a90a585b3950284d575f33d09663f6083a",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/array-uniq/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/array-uniq#readme",
+      "_id": "array-uniq@1.0.3",
+      "_shasum": "af6ac877a25cc7f74e058894753858dfdb24fdb6",
+      "_from": ".",
+      "_npmVersion": "2.15.0",
+      "_nodeVersion": "4.4.2",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "af6ac877a25cc7f74e058894753858dfdb24fdb6",
+        "tarball": "https://registry.npmjs.org/array-uniq/-/array-uniq-1.0.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/array-uniq-1.0.3.tgz_1466079716839_0.9139188586268574"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "array-uniq",
+      "version": "2.0.0",
+      "description": "Create an array without duplicates",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/array-uniq.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "array",
+        "set",
+        "uniq",
+        "unique",
+        "duplicate",
+        "remove"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "53115b58c511eb7cb408b0ae6fdaaf10ef979601",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/array-uniq/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/array-uniq#readme",
+      "_id": "array-uniq@2.0.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.11.1",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-O3QZEr+3wDj7otzF7PjNGs6CA3qmYMLvt5xGkjY/V0VxS+ovvqVo/5wKM/OVOAyuX4DTh9H31zE/yKtO66hTkg==",
+        "shasum": "0009e30306e37a6dd2e2e2480db5316fdade1583",
+        "tarball": "https://registry.npmjs.org/array-uniq/-/array-uniq-2.0.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 2135,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa7HEnCRA9TVsSAnZWagAAPnQQAKKpJ2B1O+MgMZ2qEwfm\nEKMaNTtZbiQnP2Eip52l9IYstfVbWex9eHvJ+nd9R2KcVVnVFun8dcgAKNUT\n0RLaYCWpEZSe11rG4Us5nVV6Aph2kK7OJCX48Tys2ZIqnG9VKXpa9p2hY//i\ntqxSoflyiepD5PbR+GzsRQIWEHetOiqvMalt8MC3u+p7vrYLlRbCyrhC6YKZ\n86/nQuBTOP/UYAcQFuwyD4W6HHUlu5RpMC3TO3vfuhHSwjkXgEQlBku3rpTb\nEzMW9YyGH8RVlJrFTXpRAjHNGED5Zo76/wbnuzNEFRZCnsh0ydGpIuLMCDEq\nrjzCGeuNWFBIQV27pfXP47SPluIwaE/dhg/k3rySXK7biu0FpU50QTYdbiPL\no3RISimUSr/K/39f5GRWzIgp7E6kCGz752LLPy/c2etgjDQ3R59d/G9n6KAf\nsL3zhjpQG+LbmXSAceygENKF11TIqzsFaMBlXZp8GpTvgP72GeusbnS2wVbU\n+WA2lUG4e25jBILN2RokNwpJdHs5zjOJttmb98cYLWsD61+dyXMmgAlQrZ8o\nA3UbGac+x4NZFyH8vR1CZOC4Ihc00/TE/rNrh0eIubLTI3wpObaVCI8YWV/y\nn6Vu6a655ELmJED8v9/liQ8uzanByKsFvNoq35sRhbL4FtbDaHPDsssKROWI\n6OQj\r\n=eZtW\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/array-uniq_2.0.0_1525444901903_0.8672378687338878"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.1.0": {
+      "name": "array-uniq",
+      "version": "2.1.0",
+      "description": "Create an array without duplicates",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/array-uniq.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "array",
+        "set",
+        "uniq",
+        "unique",
+        "duplicate",
+        "remove"
+      ],
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "adc9201ef8bffbef549b32a575b255e2a43a47ab",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/array-uniq/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/array-uniq#readme",
+      "_id": "array-uniq@2.1.0",
+      "_nodeVersion": "8.15.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-bdHxtev7FN6+MXI1YFW0Q8mQ8dTJc2S8AMfju+ZR77pbg2yAdVyDlwkaUI7Har0LyOMRFPHrJ9lYdyjZZswdlQ==",
+        "shasum": "46603d5e28e79bfd02b046fcc1d77c6820bd8e98",
+        "tarball": "https://registry.npmjs.org/array-uniq/-/array-uniq-2.1.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 2598,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcpulSCRA9TVsSAnZWagAAxeYP+gJh+m9/BzNJbkIg1pnD\nHP3xajQ0VukzTBTt8Y/0Y7ugT9r6DqRpOqCaklfeCL1smpImET8FHS5ruLu3\ng0dggZPbSjjURAspiodN0SjPfa9lvtfM+buBcFC4rUJ3gnDLCyZVzpaIt4RS\nfGxovsh+6jf07vZuc+CqlGTC6oFQUC3tFqV6LhEySqMvPvDvLvZLxazNniym\nzNw61RnEv60hYbKqlvKwormmZgxSGdsb3x/TyNyp6lXdFDgfaScfbpjDqPyI\nnbvEgxV8MTgylMmIWIkjvgJqK+FoNwV69Gin1LBm2NeD9JPP25RB5OLnRMuG\n6znF1vroe87Y0CY+mIEh7ujvJ4k9Xmwtx7LLlXetszT/OIHTH6RKCJSW1Ham\nDW96RlArnyZ4ekPB5a0BtG5Zb/Ih1IRLvNgyzG6Y1/yLrHARefiNgtnLtWcF\njFlvH1VUEHQhd/DvKZVEAOxisw2AmxRytrUwe5qJPPdSLP0qd4QqRoDMFOja\nmNzUZLS3cJXLXaYDpx+yJIOkBOkJBSlISkk+Js3lcLxBNzpWN2wGNey7vM8S\nIgh5/0kGO1JWcmTjyKIoGoNunf87oE6sjtOuPWwWNb5Hv4cCSNTGpJMyh9kv\n3OjyPJRX6X43TwpKwLVR2H1juH/MU1Rv/3lPdcpMbkvCjv4i9+eQJ5Hd1cpv\nEVoJ\r\n=FQyG\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/array-uniq_2.1.0_1554442577266_0.6197074744361011"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# array-uniq [![Build Status](https://travis-ci.org/sindresorhus/array-uniq.svg?branch=master)](https://travis-ci.org/sindresorhus/array-uniq)\n\n> Create an array without duplicates\n\n\n## Install\n\n```\n$ npm install array-uniq\n```\n\n\n## Usage\n\n```js\nconst arrayUniq = require('array-uniq');\n\narrayUniq([1, 1, 2, 3, 3]);\n//=> [1, 2, 3]\n\narrayUniq(['foo', 'foo', 'bar', 'foo']);\n//=> ['foo', 'bar']\n```\n\n\n## License\n\nMIT © [Sindre Sorhus](https://sindresorhus.com)\n",
+  "maintainers": [
+    {
+      "name": "sindresorhus",
+      "email": "sindresorhus@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2019-04-05T05:36:20.033Z",
+    "created": "2014-06-13T18:33:32.947Z",
+    "0.1.0": "2014-06-13T18:33:32.947Z",
+    "0.1.1": "2014-07-15T00:19:17.899Z",
+    "1.0.0": "2014-08-13T16:38:30.278Z",
+    "1.0.1": "2014-09-28T20:52:20.959Z",
+    "1.0.2": "2014-12-11T05:33:57.502Z",
+    "1.0.3": "2016-06-16T12:21:59.429Z",
+    "2.0.0": "2018-05-04T14:41:41.958Z",
+    "2.1.0": "2019-04-05T05:36:17.432Z"
+  },
+  "homepage": "https://github.com/sindresorhus/array-uniq#readme",
+  "keywords": [
+    "array",
+    "set",
+    "uniq",
+    "unique",
+    "duplicate",
+    "remove"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/array-uniq.git"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "bugs": {
+    "url": "https://github.com/sindresorhus/array-uniq/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md",
+  "users": {
+    "jamescostian": true,
+    "koslun": true,
+    "vlazar": true,
+    "preco21": true,
+    "mrzmmr": true,
+    "rocket0191": true,
+    "ninozhang": true,
+    "gzg1500521074": true
+  }
+}

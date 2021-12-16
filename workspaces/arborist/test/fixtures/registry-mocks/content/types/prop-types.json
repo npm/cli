@@ -1,0 +1,810 @@
+{
+  "_id": "@types/prop-types",
+  "_rev": "443-d78097169331e9df8fadecc285d3fe17",
+  "name": "@types/prop-types",
+  "description": "TypeScript definitions for prop-types",
+  "dist-tags": {
+    "latest": "15.7.3",
+    "ts2.2": "15.5.3",
+    "ts2.3": "15.5.3",
+    "ts2.4": "15.5.3",
+    "ts2.5": "15.5.3",
+    "ts2.6": "15.5.3",
+    "ts2.7": "15.5.3",
+    "ts2.8": "15.7.3",
+    "ts2.9": "15.7.3",
+    "ts3.0": "15.7.3",
+    "ts3.1": "15.7.3",
+    "ts3.2": "15.7.3",
+    "ts3.3": "15.7.3",
+    "ts3.4": "15.7.3",
+    "ts3.5": "15.7.3",
+    "ts3.6": "15.7.3",
+    "ts3.7": "15.7.3",
+    "ts3.8": "15.7.3",
+    "ts3.9": "15.7.3",
+    "ts4.0": "15.7.3",
+    "ts4.1": "15.7.3",
+    "ts4.2": "15.7.3"
+  },
+  "versions": {
+    "15.5.0": {
+      "name": "@types/prop-types",
+      "version": "15.5.0",
+      "description": "TypeScript definitions for prop-types",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "DovydasNavickas",
+          "url": "https://github.com/DovydasNavickas"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "peerDependencies": {},
+      "typesPublisherContentHash": "d745454c696be58078aa505dd50363def7a355a970e84c4c19eb629e6e58e0bb",
+      "typeScriptVersion": "2.2",
+      "_id": "@types/prop-types@15.5.0",
+      "dist": {
+        "shasum": "8077e565cf3628cddc898de32262f153ad44b378",
+        "tarball": "https://registry.npmjs.org/@types/prop-types/-/prop-types-15.5.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/prop-types-15.5.0.tgz_1492451832154_0.9351261227857322"
+      },
+      "directories": {}
+    },
+    "15.5.1": {
+      "name": "@types/prop-types",
+      "version": "15.5.1",
+      "description": "TypeScript definitions for prop-types",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "DovydasNavickas",
+          "url": "https://github.com/DovydasNavickas"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "peerDependencies": {},
+      "typesPublisherContentHash": "3e462aec1940a5b7990ee227281674e88d8c7ba2312f60f8e18f591124e747c1",
+      "typeScriptVersion": "2.2",
+      "_id": "@types/prop-types@15.5.1",
+      "dist": {
+        "shasum": "1ecf52621299e65b855374337fb11fd2d1066fc1",
+        "tarball": "https://registry.npmjs.org/@types/prop-types/-/prop-types-15.5.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/prop-types-15.5.1.tgz_1492540156093_0.8850929217878729"
+      },
+      "directories": {}
+    },
+    "15.5.2": {
+      "name": "@types/prop-types",
+      "version": "15.5.2",
+      "description": "TypeScript definitions for prop-types",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "DovydasNavickas",
+          "url": "https://github.com/DovydasNavickas",
+          "githubUsername": "DovydasNavickas"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "748b5132d8aa5bde37793fb3f35cbfb48c339c4631dab0f33e4ae973c6744688",
+      "typeScriptVersion": "2.2",
+      "_id": "@types/prop-types@15.5.2",
+      "dist": {
+        "integrity": "sha512-pQRkAVoxiuUrLq8+CDwiQX4pTCep/PmmNgBbjIwnnsd/HoYjGpR81+FFPE030lvNXgR0haaAU6eoRtztWDE4Xw==",
+        "shasum": "3c6b8dceb2906cc87fe4358e809f9d20c8d59be1",
+        "tarball": "https://registry.npmjs.org/@types/prop-types/-/prop-types-15.5.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/prop-types-15.5.2.tgz_1506384777666_0.7195672418456525"
+      },
+      "directories": {}
+    },
+    "15.5.3": {
+      "name": "@types/prop-types",
+      "version": "15.5.3",
+      "description": "TypeScript definitions for prop-types",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "DovydasNavickas",
+          "url": "https://github.com/DovydasNavickas",
+          "githubUsername": "DovydasNavickas"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "c3d2dc452a5a81f10532428317a08162159119681bf0543ccda9cf3bda43bada",
+      "typeScriptVersion": "2.2",
+      "_id": "@types/prop-types@15.5.3",
+      "dist": {
+        "integrity": "sha512-sfjHrNF4zWRv3fJUGyZW46wVxhYJ/GeWIPdKxbnLIhY3bWR0Ncl2kIhZI7rpjY9KtUQAkDP8jWEmaGQGFFvruA==",
+        "shasum": "bef071852dca2a2dbb65fecdb7bfb30cedae2de2",
+        "tarball": "https://registry.npmjs.org/@types/prop-types/-/prop-types-15.5.3.tgz",
+        "fileCount": 4,
+        "unpackedSize": 4159,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa/zcfCRA9TVsSAnZWagAAGE8QAJcg9xH6D/TR5LKWdsp7\nlezHD4AkZWg0zmIBIl4vSpE++bVoS4PCDapnd3CmbVsvUSsNahQl5WJm7ROh\n1knBqCJA1Ao7scyzTJ3vB6mv8J+JNUXVVp7b4Ipm3QmVoOJLEhx+s/aZLl6b\nBFSSUKXVMCIpmuEYm7RHoMWfSZ+6AnNzFqTxyq9GkhU+rZ3g2gmBGNY7PP7q\neEtXf0pa5t1WNFd7b+Z4yLBlx755sBvV+xBnG30cozVNBudOKVEBUfjoGq/c\nqRjMTCCKVfc/YFP9ypx2oFdDV0xRFK91/Vno94/WeYjQ3njQdEjrPg9vk93L\nZhjee2LZzoQLOa2CiVi9rOVKpm69UmB0zumTqP4UeA4aJl9uP+BpcFcrp8L1\nraVA0NmSss715VzQQTJqs27YQG3xO777GY3eJ7VKsqh18qiDVyXARDIrT9QW\nwQh3xzNe4gMkSEBpQ8801NgHAfS/bZHwfux1ILMGl3jWp3kFwSLD4vmnXyin\nqH3plPqNtfTUgzLGh9T/m/44lYNTfJbtjPavOZKRnrnbGtuTjfk1C6jl/e6m\nxdYQ57Eb1eYYAeVYUA4qJQOUuKnGeL8nK2iugkT28bW0RUuY9J0wxB/NjZnC\nIQca4pRfmvVE9rNj/l/IpupEWOYl4QHq8X4WIMdvM1/tlxufp+jGW3XKVP93\nPBIQ\r\n=oop5\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/prop-types_15.5.3_1526675230875_0.46056876500952604"
+      },
+      "_hasShrinkwrap": false
+    },
+    "15.5.4": {
+      "name": "@types/prop-types",
+      "version": "15.5.4",
+      "description": "TypeScript definitions for prop-types",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "DovydasNavickas",
+          "url": "https://github.com/DovydasNavickas",
+          "githubUsername": "DovydasNavickas"
+        },
+        {
+          "name": "Ferdy Budhidharma",
+          "url": "https://github.com/ferdaber",
+          "githubUsername": "ferdaber"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {
+        "@types/react": "*"
+      },
+      "typesPublisherContentHash": "3f2a00ce692f5e64991478bbaf3709dab1272f09ccbfa7e397093739ee3e12bd",
+      "typeScriptVersion": "2.8",
+      "_id": "@types/prop-types@15.5.4",
+      "dist": {
+        "integrity": "sha512-RnC6YeQDmDas7DToCbRWNntB9XpIR+sqg1zUqcCUxOJTBwGeSAPfTQaXqzyNND82FIBNY67r17FedDyaKRcHBQ==",
+        "shasum": "9e6199bad131786e24c2baa2a82705a02139fbf8",
+        "tarball": "https://registry.npmjs.org/@types/prop-types/-/prop-types-15.5.4.tgz",
+        "fileCount": 4,
+        "unpackedSize": 5418,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbVnoQCRA9TVsSAnZWagAAhe4P/0xiEB1hpBCX81KIZXhg\n78j69OdKxU65HOMlHKQw02l/XpqvCWnQ6/1n15GjBpG16K4UxqlYcx5rSxxM\nN5sYrQJ3mUZKRLGzNSWzo0RoB4ZrU+DswjG6OfdOPVeIYq/GHt4sQ+1HKRiI\n8Oh12oyUgwWFXKPQfHP6bYlNljOYlihnBLtHiugs9syGgCZxkxPj1EpotIgt\nf65/g6rNZcGdig+dPQSIX+DeurjJgRaGKpzrdVKc0WmNWrihGDHjU8A9AN+4\nCYs9WMGV/eBUHwlDj6TUVrM0s5VGsz4DUKQfRCBvXuDNZVFGV97FoEbeiFUJ\nWmS8G35ZwLhhsqWThCjloClngUDEOYhyzYACKmdIGZFnq8hinrTEMfoWbKMc\nxkosTCJ7nhiRpI2xuzBKQwSKQSc5njPrWk65CM/AJ6zV6m2CGcLyZNYrBvN5\nk8EDodSUY4qquorJ3IRhwtyKT+blt7vyawbRXjiWBOg4OHZoVD8nBlE94HtK\n9UTrNaBgJJSat/CWyZCzQp8NlgTPOSgSVIv7+kjdgUrV1kkLnxs8V43CE/YG\n/lnS25sSdSY/yS+5HtmTrLPLGzsvJCyUNkZiJYocx80TyAeV/BOXs0PUMzT9\nke/UA8VPAgYaMjowKyK6RlvNj9pCkLoE8UxNYAJ5+pS56bFSh+rudtrVf7JP\nr92h\r\n=kqxT\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/prop-types_15.5.4_1532394000567_0.5406600499155199"
+      },
+      "_hasShrinkwrap": false
+    },
+    "15.5.5": {
+      "name": "@types/prop-types",
+      "version": "15.5.5",
+      "description": "TypeScript definitions for prop-types",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "DovydasNavickas",
+          "url": "https://github.com/DovydasNavickas",
+          "githubUsername": "DovydasNavickas"
+        },
+        {
+          "name": "Ferdy Budhidharma",
+          "url": "https://github.com/ferdaber",
+          "githubUsername": "ferdaber"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {
+        "@types/react": "*"
+      },
+      "typesPublisherContentHash": "82d6d419258f01e1c35e9cec68695f66179d2dd3e8db271bfd424aa8ba0be8c4",
+      "typeScriptVersion": "2.8",
+      "_id": "@types/prop-types@15.5.5",
+      "dist": {
+        "integrity": "sha512-mOrlCEdwX3seT3n0AXNt4KNPAZZxcsABUHwBgFXOt+nvFUXkxCAO6UBJHPrDxWEa2KDMil86355fjo8jbZ+K0Q==",
+        "shasum": "17038dd322c2325f5da650a94d5f9974943625e3",
+        "tarball": "https://registry.npmjs.org/@types/prop-types/-/prop-types-15.5.5.tgz",
+        "fileCount": 4,
+        "unpackedSize": 5518,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbbObfCRA9TVsSAnZWagAAcFYP/j2qqq8r474dKMX6FZl7\njY+wjRI9wBN4Va4CNEXPV8yGZnXtvedNwY6zLz71LQqEd8H/ieT7q50OmEKY\nOwRKnJffcyvAzN1yZn8cIfMw4QsTJ5HrMkpGjiSUGCfxRIGcfpA3eES5J3Na\ntUTcfn5CFSnI7zTUlCF+NXSRtpryrRZY2BlapDhrt8+lXQ6fAICgY9JFu7nZ\nDskxRA2CqgtWe00JtvXK76MIOeg04r0QlczO5hSae0KSGPxotfwOKnzGXvPK\nXMyRX6Sah+/WPar057eSqUy2+VnEAV7oBoSaO/bS+gzG1Q43oPlOZ763gjBF\nfUglYshLurDTceqm3h2AcjSKgfIWCyOT4dnvAwV74J1tZ6J7lwiD/M+fIOnK\nmzR7D7s3GI8FKv22J2YZUGblmyl83NHsPZJ6bbng7L6KTKbHeB5Olx70aFFy\nGnHGK+4k26HTMLWi6vVaxPi+QaoeYmn4ePvsrW6s2QmKBYTKsc56QHzY2m/C\naq07CZ7b9YqMAtOlgOmtX/qFG469VfhDaZmRG2ifXxQExJu/qEQoJQe7ashs\nofK0NS68stj92uqYn1t5BbXKAEzzELPy0UzlaCF6HynchOzEBw082LdV+qqw\nJnc9Wk10iucT7KpffxIXhO1T9VPgHfkyxviAObAkeYadBI4nbBs0MLCaB8L6\nR3N4\r\n=DOGO\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/prop-types_15.5.5_1533863647354_0.1962771374555139"
+      },
+      "_hasShrinkwrap": false
+    },
+    "15.5.6": {
+      "name": "@types/prop-types",
+      "version": "15.5.6",
+      "description": "TypeScript definitions for prop-types",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "DovydasNavickas",
+          "url": "https://github.com/DovydasNavickas",
+          "githubUsername": "DovydasNavickas"
+        },
+        {
+          "name": "Ferdy Budhidharma",
+          "url": "https://github.com/ferdaber",
+          "githubUsername": "ferdaber"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "830e6e1be7605334d7aa7ee8c4d1efaa522dee8d8c84dedbce93572e216f9ae8",
+      "typeScriptVersion": "2.8",
+      "_id": "@types/prop-types@15.5.6",
+      "dist": {
+        "integrity": "sha512-ZBFR7TROLVzCkswA3Fmqq+IIJt62/T7aY/Dmz+QkU7CaW2QFqAitCE8Ups7IzmGhcN1YWMBT4Qcoc07jU9hOJQ==",
+        "shasum": "9c03d3fed70a8d517c191b7734da2879b50ca26c",
+        "tarball": "https://registry.npmjs.org/@types/prop-types/-/prop-types-15.5.6.tgz",
+        "fileCount": 4,
+        "unpackedSize": 5929,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbrNF/CRA9TVsSAnZWagAAo7UP/jKB8TOmoOnx0lgfIL4O\nyZYhN25szhanTsRrOQcy6yGMYLx53C2DoVos4Uul2qwIgzfl2uhfbVEY4ZET\nr/uRCCCanTi4MvjidnsqaRAqknIgT18SsdC+IB1XK+UmS0ycj63itqsIfoCX\nGxYry6jlxSjCgF49SIdGsPj6SDw27KIKvKJrE3wX0QJ3pcy1dxESkAJFSgTy\nJrQZJwwzsYEiHfr/8pslxCxtvi/s41hZNx48cbfnGJJgQ63och4KbLbX0WWk\nJGiFqkrH4/mDqlNaEG/Ry0JxjUIVY1zCu171dYsHrL4/AKkCTNC5zyRICKCi\ntosUXarotSPsWVcNgtokfj9xfD9Q/5QMH+DGwOMTNzXHwJs1pcQXAuuIAr+O\nU/mPla1fYPUhNqaoUz9Lk3iODFOmAzKxPgoYS8eU9exEjiPooBqHUtnZp1TK\nROx7RcR4hxHq4olWb0tIqixFZFbFkCrkbeX3LbFDcthaa2+U3xnr07ImMTDD\nNjGuC5k33/TNyMLrUQl4EC1CfhniJBfyC7HYhei5D0RexwZsfNld3ArT4lok\nkyTrhE/+So7c8u7QMw8F7rZkqO12wFtdFfwmdpLJ9K+2u8X+0221IOSduWJW\npDpxf7W2pZUZSCUhobo+mMoS25cLd+GKz3LAp1Gj34L8UC9GN0w1ENZrSlqr\nooQW\r\n=qXCW\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/prop-types_15.5.6_1538052478750_0.4778100172484838"
+      },
+      "_hasShrinkwrap": false
+    },
+    "15.5.7": {
+      "name": "@types/prop-types",
+      "version": "15.5.7",
+      "description": "TypeScript definitions for prop-types",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "DovydasNavickas",
+          "url": "https://github.com/DovydasNavickas",
+          "githubUsername": "DovydasNavickas"
+        },
+        {
+          "name": "Ferdy Budhidharma",
+          "url": "https://github.com/ferdaber",
+          "githubUsername": "ferdaber"
+        }
+      ],
+      "main": "",
+      "types": "index",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "a4bc5d33236effcfdbed1befbe90ef45317b1586b55897fd7e33369660888533",
+      "typeScriptVersion": "2.8",
+      "_id": "@types/prop-types@15.5.7",
+      "dist": {
+        "integrity": "sha512-a6WH0fXkgPNiGIuLjjdpf0n/GnmgWZ4vLuVIJJnDwhmRDPEaiRBcy5ofQPh+EJFua0S1QWmk1745+JqZQGnJ8Q==",
+        "shasum": "c6f1e0d0109ff358b132d98b7b4025c7a7b707c5",
+        "tarball": "https://registry.npmjs.org/@types/prop-types/-/prop-types-15.5.7.tgz",
+        "fileCount": 4,
+        "unpackedSize": 5957,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcCuumCRA9TVsSAnZWagAAOKAP/RnJvukw4SV7bP3gEW3H\nEQyZeQlJSL3mYmmkpY/IJI0CGJ/kBYT5uX6ddkZHDT9jQlcTJEAHZnzYpXpB\nRRL5H9mmL60TOJIgPAPO+f7BuEinIVDW1SAutAlCYYsnm5vMfHq3FkzZAJRs\nEdklqY6BlkdgZKZhGcDKBYXL0b77pSOXg11wgQt4YTERliIvfgjZ+iCTEzhg\nKxNnN5CBTfxBWInJ892vbz5EJ+VvDHlQa+vjSi6UcLcIVQrHc9nFDcllU+lP\nETfEj+VHLz34ZiEm1ClVVEpWW5XUmDqrABXKyjOOh90KLsmOqSF4mmjERV5o\njYdA4AsFjK3n7cNbvZYUKEOYGu3jsQbywbbZ65TFqHtX+fQJ5jyRof+J5woM\ni7hhqobi2+Xz0gk8H2ZMwSJN+FO3G9/kXYlOuR0lJhiNdJG3naCCJ9ZRPUFS\n1areEBqSy4Y7xobDXbRXszyKgD9SR5HkxCrVYZ3I/FOgtDJjczfAk5v+FTn9\nTH6ax+e85QHffV0lVV4QrTCPk80ZNXv9AEJVoWS9ug/IJx3A2paUgIYKst4G\n/gbwy4PLByyDsBTxoDEx5cUYUz+tbtYemgg9/jYch8bK0d6rxK7V/J5WScpN\nPMX2B/OH3cPb7rM972INE8paUs7GCy1kaP42Kk3Fi1UPFFZj2WbEXABP+Cks\nisS9\r\n=7INM\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/prop-types_15.5.7_1544219558195_0.822932229699928"
+      },
+      "_hasShrinkwrap": false
+    },
+    "15.5.8": {
+      "name": "@types/prop-types",
+      "version": "15.5.8",
+      "description": "TypeScript definitions for prop-types",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "DovydasNavickas",
+          "url": "https://github.com/DovydasNavickas",
+          "githubUsername": "DovydasNavickas"
+        },
+        {
+          "name": "Ferdy Budhidharma",
+          "url": "https://github.com/ferdaber",
+          "githubUsername": "ferdaber"
+        }
+      ],
+      "main": "",
+      "types": "index",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "79627fb9a29cb55f41f004816facc84485b90cd1a53633a372dd88a74a7df06f",
+      "typeScriptVersion": "2.8",
+      "_id": "@types/prop-types@15.5.8",
+      "dist": {
+        "integrity": "sha512-3AQoUxQcQtLHsK25wtTWIoIpgYjH3vSDroZOUr7PpCHw/jLY1RB9z9E8dBT/OSmwStVgkRNvdh+ZHNiomRieaw==",
+        "shasum": "8ae4e0ea205fe95c3901a5a1df7f66495e3a56ce",
+        "tarball": "https://registry.npmjs.org/@types/prop-types/-/prop-types-15.5.8.tgz",
+        "fileCount": 4,
+        "unpackedSize": 5974,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcEV9yCRA9TVsSAnZWagAAuDwP/RXtnrnzZf/oib6HByO8\njq6pCJAVa40QPqRBfIsoFdGRUH7OSMn69t3w2pcZpVTMftG2mrShVP3ykYyg\nCR8cPtCOyoIFChwPlRhFEjsP0WyF3TXUXmnhE2c9+LAwltNY+bxFa+dqLzqs\nVC1ziJZ48akI1LOh+gNJ1M5bUhmV5xNYQKj3VoGO02wpio3JINVQ6gjXFruT\n1uUzOr0SEf+3wcmwZYXakIEmlvVs7ANizfWJDigKvhZbBDHj94dhUsWDavmi\nUo8lVLT9KGltZoDOVl2heZvV3JyLiMpzJ32FWCsWRODLuIEF9RxGqXYDY43C\nh2OBTE8PEMdy8VtEKbgg7T0h4C0+O5KZFhMN6GfgD0AUjTjoYAn44c4Pzfbv\n9W16qiJ7nlmujRDqa1U3P6LakleeqtGQfltTFs+sV4ULtPNbIlq2vPPXN7GG\nobz9+mUbJXqGCbugJvdwRk8v7uvnRT2gHlaU0Cot1GfL8K5FFXjaYxUHUwPZ\nTrl7CjuTDqdrZfINfq7XQ2bMbSQSa3LyzoO2LXgSBBhaXCK11YdZVANeLZX7\nSZvmI15ZM+TytneCMgpv6E5rliG5Zn9iWmWFgfajMPoL2qjvFfboyoHiuRcb\nyUgEwpQFoTTAv5wV4eATwy+13hbvNB+gZ+CleDH7mrSj0EndDXsYsnSdx9eO\noFVK\r\n=Odg0\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/prop-types_15.5.8_1544642417198_0.37590440263123015"
+      },
+      "_hasShrinkwrap": false
+    },
+    "15.5.9": {
+      "name": "@types/prop-types",
+      "version": "15.5.9",
+      "description": "TypeScript definitions for prop-types",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "DovydasNavickas",
+          "url": "https://github.com/DovydasNavickas",
+          "githubUsername": "DovydasNavickas"
+        },
+        {
+          "name": "Ferdy Budhidharma",
+          "url": "https://github.com/ferdaber",
+          "githubUsername": "ferdaber"
+        }
+      ],
+      "main": "",
+      "types": "index",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "9a512d5531354ae575185d624fff44a68257b5d188ae0edda3dc1804d17bd379",
+      "typeScriptVersion": "2.8",
+      "_id": "@types/prop-types@15.5.9",
+      "dist": {
+        "integrity": "sha512-Nha5b+jmBI271jdTMwrHiNXM+DvThjHOfyZtMX9kj/c/LUj2xiLHsG/1L3tJ8DjAoQN48cHwUwtqBotjyXaSdQ==",
+        "shasum": "f2d14df87b0739041bc53a7d75e3d77d726a3ec0",
+        "tarball": "https://registry.npmjs.org/@types/prop-types/-/prop-types-15.5.9.tgz",
+        "fileCount": 4,
+        "unpackedSize": 6010,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcZJNVCRA9TVsSAnZWagAAcVIP/R92filGEE7Wd+IeyGf+\nY3Avb20bBd9wsIEgPWrB23g0ye/tBlSwbFiDjQnEn64sCK502NP/+67Uon1d\nEZx+xi/b2yXcj5EI89Maaw8yatuJYkLF2kBOfy3HR/jghdCfpxU/03lKIcMk\nlxkQ12DXYyGLfrgvgZ508FrA3UCmZe7gBsDFHAROZhc75YLgb8L2RWXDZe9o\nhL6atJIVp6nnNbSlN+Lu2QUHsjmIKSooB5Lp4cGaTuaVFJVaqN3lq3FKIKvt\n9nIemXtAzUyv2TrFcOChjN1z/J6M7ej4OaqrDfNILqXHwoFLDj0Ef9/JPnQU\nLWl1U1Ii1gdfe5BOhQ07LoXHFXyOmddzR2uyzADuuHMzx4HuHD8QU53AoALC\nzyFgfSqfd1B4waJhImkUIMtgBT/PKdzst+9CLXO1NbGBqMoAapQCYdrUecoB\nQG1hH3tnzYzJ1G0+MVsaT5JvPEEK9gBRzL7rvyadYNrEXDWlpLoZWk/KrrzF\n0ZRnd1gU0ugRYjun6ufO/dHxtmGDTPLgJZReXyrMFKA9fBtOPg1Tu9C4PeMa\nKT+Vd45SFt1xUuCXe+1yAEYxf+bymdYAdU8se4kTHQ/fT0nbaZnYtgiGqJWv\nwJA0AXLBGS75eWOdXB9UcxBMn1iQCbY4DHMJlw/tqB6VOagfWEKEryeQzpmv\nFP3x\r\n=YgFs\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/prop-types_15.5.9_1550095189344_0.07448442000448696"
+      },
+      "_hasShrinkwrap": false
+    },
+    "15.7.0": {
+      "name": "@types/prop-types",
+      "version": "15.7.0",
+      "description": "TypeScript definitions for prop-types",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "DovydasNavickas",
+          "url": "https://github.com/DovydasNavickas",
+          "githubUsername": "DovydasNavickas"
+        },
+        {
+          "name": "Ferdy Budhidharma",
+          "url": "https://github.com/ferdaber",
+          "githubUsername": "ferdaber"
+        },
+        {
+          "name": "Sebastian Silbermann",
+          "url": "https://github.com/eps1lon",
+          "githubUsername": "eps1lon"
+        }
+      ],
+      "main": "",
+      "types": "index",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/prop-types"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "d0bb07ae0d773e408a2e31cda2cf60182a872489d2130e262dde73ee394fbcb2",
+      "typeScriptVersion": "2.8",
+      "_id": "@types/prop-types@15.7.0",
+      "dist": {
+        "integrity": "sha512-eItQyV43bj4rR3JPV0Skpl1SncRCdziTEK9/v8VwXmV6d/qOUO8/EuWeHBbCZcsfSHfzI5UyMJLCSXtxxznyZg==",
+        "shasum": "4c48fed958d6dcf9487195a0ef6456d5f6e0163a",
+        "tarball": "https://registry.npmjs.org/@types/prop-types/-/prop-types-15.7.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 6477,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcd01GCRA9TVsSAnZWagAABJ8P/iNaTnoi1ixAfaPqhsWQ\nkKwW47LRgXVHuZ5WTUisdikirXYB4rH2t0k8TH0FArKOobPbP7wmfOWm/eIv\noKC0nIuhvz606p5JvRRTlIrr6PfYJ58sSuxbRAA8yP2K3tB8WY+9jqess0IR\nYwYUe5VBZFDY8t4BEjUftO59Wo5uc5RxzCYMKw8PFUsWEDPvWCdMI61R8CKW\nUxB/3Q1rByIz1TbefUbD2Yemk3cYLt3mxj/C+NSSCnuejZNFfvdv5huiirtA\nC5kRJ9U1MTHj259dr6eW2Tds9YFPNtTxtVbjnT5Au+nllK+w8WGzgm4KB+H9\nAFhzIKYhVMKKyeI6e3aM/ASEJbVjhrtZHmoyK7NNQQzW6uePt5xs80ShH0pn\nQrBut4BVCkIY6gaDy6Q83BFOzCGLSP3WcRHlvNf1NOBKS5SnlAFp7h/Ieq2Q\nf8A/3GD2qOKteHcDPlcjXcGBCXJhQcdbx4Ci22rR8WtLhQWOP8TmZ94Wfi3z\nAeLLaN0OfTgorKWncm+DysmjdBM6W1mXViJpqiGhaUKun+Kueg2mv7RN1Hip\nv/8Gb1o15EV9W+FXgEGG0ozhgX4RQC2LggrYcAs7dXWR38EAuHpAUKgFeR0c\nRExOx+V4whmPJOO4IDM+62vKhK4CsTmdNI8WptM0YTVCQPCryBxIbMcPzGcG\nI57O\r\n=pheO\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/prop-types_15.7.0_1551322437840_0.09754073924981754"
+      },
+      "_hasShrinkwrap": false
+    },
+    "15.7.1": {
+      "name": "@types/prop-types",
+      "version": "15.7.1",
+      "description": "TypeScript definitions for prop-types",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "DovydasNavickas",
+          "url": "https://github.com/DovydasNavickas",
+          "githubUsername": "DovydasNavickas"
+        },
+        {
+          "name": "Ferdy Budhidharma",
+          "url": "https://github.com/ferdaber",
+          "githubUsername": "ferdaber"
+        },
+        {
+          "name": "Sebastian Silbermann",
+          "url": "https://github.com/eps1lon",
+          "githubUsername": "eps1lon"
+        }
+      ],
+      "main": "",
+      "types": "index",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/prop-types"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "428a2d0735bad0c54710672c573a150461a21fe06b7729a430a049a288c5d991",
+      "typeScriptVersion": "2.8",
+      "_id": "@types/prop-types@15.7.1",
+      "dist": {
+        "integrity": "sha512-CFzn9idOEpHrgdw8JsoTkaDDyRWk1jrzIV8djzcgpq0y9tG4B4lFT+Nxh52DVpDXV+n4+NPNv7M1Dj5uMp6XFg==",
+        "shasum": "f1a11e7babb0c3cad68100be381d1e064c68f1f6",
+        "tarball": "https://registry.npmjs.org/@types/prop-types/-/prop-types-15.7.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 6488,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJct5Q2CRA9TVsSAnZWagAAE58QAKDxyAJNFiW7yGLKqTwR\nk7AGrHQS3ILhXyx6dvb4cxiqat4TbF/5jYZ8s97KKmcNuyPKq4aLripeLULw\nXZFGIuw5DrqLt4kUYVPZV2wMZQ6B5U/+UVnKeLKQhuQWosTm7jQUL4bMs0ss\n/NnsKVuBVZ9AnEdzY25ynqwI1Ozo4YR59Zw67ZWJpF0vJ2FRQD9/u22rIOV0\nbDQdpTg24Xlr1se+BEINZAm1dwx/EtBzDO2NK7jKEIBuzl3HcOB0mflwBNko\nHYl/9bvOFi0Wew/g2DbmPZjMtAHCU1/C0oQfcaWXnKtwM9sasz6mfnX8S2Oq\n7I0ZplGCBM5yBzo7UYxQSSrZMo8dXOzlTfDCHoTdNt2cpR7eLn0BNR4oy3FA\nwWjjYJBxtq0hK/jJBvvCs66a0PKtjiH+rTGXsxhZKQGrf5v4lIMlHL0QMw6p\nT6oY1Qug2IsSYpD4Zvpsa70B+k1+LR/3qV/S+tSBVyZI+17l35FuOLACBFIZ\njn1jhDufW4vFxSN0FnjBLSo295jhcENmzsx4Jz+nAuxuAPNZc9QvBrpvCRn0\n4vnxxU2Yy1MRy30IKnR37DqH+/bvovmU3dCDq8dpn4Ap7CLZTjN3bXxzqq7q\nc3g3MrL+AGM0NRyxjtJRmsdynfMfFII4+2kcDvtiKNbbe7iw0xHqs/+WlrSr\nx2Ps\r\n=REmX\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/prop-types_15.7.1_1555534901301_0.7850912371925609"
+      },
+      "_hasShrinkwrap": false
+    },
+    "15.7.2": {
+      "name": "@types/prop-types",
+      "version": "15.7.2",
+      "description": "TypeScript definitions for prop-types",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "DovydasNavickas",
+          "url": "https://github.com/DovydasNavickas",
+          "githubUsername": "DovydasNavickas"
+        },
+        {
+          "name": "Ferdy Budhidharma",
+          "url": "https://github.com/ferdaber",
+          "githubUsername": "ferdaber"
+        },
+        {
+          "name": "Sebastian Silbermann",
+          "url": "https://github.com/eps1lon",
+          "githubUsername": "eps1lon"
+        }
+      ],
+      "main": "",
+      "types": "index",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/prop-types"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "86a8fcd8ebf476b3a22864cf401b22be2c81efc9e80c4a957664c912015f87ab",
+      "typeScriptVersion": "2.8",
+      "_id": "@types/prop-types@15.7.2",
+      "dist": {
+        "integrity": "sha512-f8JzJNWVhKtc9dg/dyDNfliTKNOJSLa7Oht/ElZdF/UbMUmAH3rLmAk3ODNjw0mZajDEgatA03tRjB4+Dp/tzA==",
+        "shasum": "0e58ae66773d7fd7c372a493aff740878ec9ceaa",
+        "tarball": "https://registry.npmjs.org/@types/prop-types/-/prop-types-15.7.2.tgz",
+        "fileCount": 4,
+        "unpackedSize": 6453,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdbuTgCRA9TVsSAnZWagAAoSoP/0QQlT1vM5muIUzoU/VT\nooLVuxQnWnAcH93PY5GFSiuRJPaVZV6dsaOKHHaIFGNqN23L70JETpHSj3A4\niJK0R/K3BEcL69aeNWukXw3rUWDQzSNfZpAxRYrPsKgNSqxzlP18mTbgf8hf\nvyCHSznmorhPodChG601fhWHJMAfEW26QQo5qH8YHGVTNYfXEg9JDvHZxP4L\nXohxcEtocjvtAd6651LatzQmhuWEm4gWFV9DC9zCU3J6foqwfmX7VmKwBQ/X\nEeXGauhpa/bsQyTEP4c+vU9BIOAHSFI5Q2UAk4HRZoR25O8bEVIGrdrApJr1\nK2qBm3qfkVFasLXfSVRJeH2MCVpgBpHgiVU7pg/uUi/oxiaFr3N6DnG/rOSI\nxJpUyZBBY76itS1lC+Ig13zwf4wgecRZ4m7PTI1i2WIFH0HIyfSg2EQsFYuR\nyEZmjV+4VrG/aGJBmHkQOIfMgAevVB/pylIZ4Kf4MBEbMzGwIsDUGmDmzUUs\nXnUJcjXBD6roh8/7b53LEs0hXIqDgoN3LIkYKyNeDt6KcBsA1c2LTBlN6l21\ne58K8JAax1YRmljXr/a783x3cz0Rrt9F+poyL7rFrKQ2HTJQWnBtwQnjl1UQ\n5ocSN+ljd3JvuGry4ApBdheWlIFPFT/yHLNgl+TtDXwE/axv/9/ptI41O5a/\nsL0h\r\n=WzaH\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/prop-types_15.7.2_1567548639727_0.8706894553244657"
+      },
+      "_hasShrinkwrap": false
+    },
+    "15.7.3": {
+      "name": "@types/prop-types",
+      "version": "15.7.3",
+      "description": "TypeScript definitions for prop-types",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "DovydasNavickas",
+          "url": "https://github.com/DovydasNavickas",
+          "githubUsername": "DovydasNavickas"
+        },
+        {
+          "name": "Ferdy Budhidharma",
+          "url": "https://github.com/ferdaber",
+          "githubUsername": "ferdaber"
+        },
+        {
+          "name": "Sebastian Silbermann",
+          "url": "https://github.com/eps1lon",
+          "githubUsername": "eps1lon"
+        }
+      ],
+      "main": "",
+      "types": "index",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/prop-types"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "09cbaa49bc0d7139a168388028da20f8772c641a1e83848ef2cdcd0f91c7ee79",
+      "typeScriptVersion": "2.8",
+      "_id": "@types/prop-types@15.7.3",
+      "dist": {
+        "integrity": "sha512-KfRL3PuHmqQLOG+2tGpRO26Ctg+Cq1E01D2DMriKEATHgWLfeNDmq9e29Q9WIky0dQ3NPkd1mzYH8Lm936Z9qw==",
+        "shasum": "2ab0d5da2e5815f94b0b9d4b95d1e5f243ab2ca7",
+        "tarball": "https://registry.npmjs.org/@types/prop-types/-/prop-types-15.7.3.tgz",
+        "fileCount": 4,
+        "unpackedSize": 6469,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdinlZCRA9TVsSAnZWagAA6c0QAI6+OtRcvi0JntSiy/Tv\nuWlwVEDbRttaI31oUiPcXUOG7oFSpwlfNFD5ujYxlKtQbx0fm7oBHz7L/Qdb\nPqfRW9Tu/HNsUSrMkSRjDlSGR4W2/NfFF4TMVtrtj3A0jWwKxnfT+9MjMe1P\nXrTgojzrYAeigYI49WctLwt4b3S7VOqjfcLTClCX1WMTL9xF/i2Ujglbi54l\nmBPQtIdNA5RV+ypEe0TvtfeUA9XcYD3BNtNTiOPl8Mp6jSkLVc+9hR/ozw/+\nhjHSbsS9XfQEEox7owHJ23ESC40EhaC18zjs+HfQavXjyqo0BZdXXaX+/jLz\nyHeJmmiVyOWru7xsVnDWRbJRbeXzQxj6HIoAKVsFDBS+gBg5nBEakZsb4QK+\nGMF/rSyHK0z7b6kZlnjr62FVJdlY/oZC+MgVoVskV/cWvY0Cw9UGySkaj5pC\ncWwa096z2LlUMQhJXaUjaOl31yb3jQDY1qmYE4ISWLMNPJ2zhVeLCefI5H7M\nEYbwuxSNUv9i/8kPPM7kyddWG1dQpcOC9K7cffCAcqY05hRr7w7QUMKXvaM3\nf9CFB1NP1qdCiBWi/bm85NbtECXnBVo5hZBFMxG1RkimnfwexBYg3x8JZtWh\nlEFBGi+rtrBOk3FrIMhpWYfrH+nWjpr/02t1V6HhaDb1kHR4FvJAxb1W2dxU\nsNfM\r\n=kTkN\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/prop-types_15.7.3_1569356120750_0.12645226494751216"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# Installation\r\n> `npm install --save @types/prop-types`\r\n\r\n# Summary\r\nThis package contains type definitions for prop-types (https://github.com/reactjs/prop-types).\r\n\r\n# Details\r\nFiles were exported from https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/prop-types\r\n\r\nAdditional Details\r\n * Last updated: Tue, 24 Sep 2019 20:14:29 GMT\r\n * Dependencies: none\r\n * Global values: none\r\n\r\n# Credits\r\nThese definitions were written by DovydasNavickas <https://github.com/DovydasNavickas>, Ferdy Budhidharma <https://github.com/ferdaber>, and Sebastian Silbermann <https://github.com/eps1lon>.\r\n",
+  "maintainers": [
+    {
+      "name": "types",
+      "email": "ts-npm-types@microsoft.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-12-07T09:20:34.773Z",
+    "created": "2017-04-17T17:57:14.002Z",
+    "15.5.0": "2017-04-17T17:57:14.002Z",
+    "15.5.1": "2017-04-18T18:29:18.141Z",
+    "15.5.2": "2017-09-26T00:12:57.780Z",
+    "15.5.3": "2018-05-18T20:27:10.963Z",
+    "15.5.4": "2018-07-24T01:00:00.638Z",
+    "15.5.5": "2018-08-10T01:14:07.424Z",
+    "15.5.6": "2018-09-27T12:47:58.847Z",
+    "15.5.7": "2018-12-07T21:52:38.294Z",
+    "15.5.8": "2018-12-12T19:20:17.470Z",
+    "15.5.9": "2019-02-13T21:59:49.511Z",
+    "15.7.0": "2019-02-28T02:53:57.953Z",
+    "15.7.1": "2019-04-17T21:01:41.531Z",
+    "15.7.2": "2019-09-03T22:10:39.854Z",
+    "15.7.3": "2019-09-24T20:15:20.957Z"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+    "directory": "types/prop-types"
+  },
+  "contributors": [
+    {
+      "name": "DovydasNavickas",
+      "url": "https://github.com/DovydasNavickas",
+      "githubUsername": "DovydasNavickas"
+    },
+    {
+      "name": "Ferdy Budhidharma",
+      "url": "https://github.com/ferdaber",
+      "githubUsername": "ferdaber"
+    },
+    {
+      "name": "Sebastian Silbermann",
+      "url": "https://github.com/eps1lon",
+      "githubUsername": "eps1lon"
+    }
+  ],
+  "license": "MIT",
+  "readmeFilename": ""
+}

@@ -1,0 +1,8 @@
+{
+  "name": "@isaacs/testing-optional-dep-metadata-missing",
+  "version": "1.0.0",
+  "description": "a package with an optional dependency on a package that does not exist",
+  "optionalDependencies": {
+    "@isaacs/this-does-not-exist-at-all": "*"
+  }
+}

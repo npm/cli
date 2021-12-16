@@ -1,0 +1,113 @@
+{
+  "_id": "dns-equal",
+  "_rev": "1-a8a0d343b162d65a852805b6ee2c669e",
+  "name": "dns-equal",
+  "description": "Compare DNS record strings for equality",
+  "dist-tags": {
+    "latest": "1.0.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "dns-equal",
+      "version": "1.0.0",
+      "description": "Compare DNS record strings for equality",
+      "main": "index.js",
+      "dependencies": {},
+      "devDependencies": {
+        "standard": "^5.4.1"
+      },
+      "scripts": {
+        "test": "standard && node test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/watson/dns-equal.git"
+      },
+      "keywords": [
+        "dns",
+        "compare",
+        "comparing",
+        "equal",
+        "equality",
+        "match",
+        "downcase",
+        "lowercase",
+        "case-insensitive"
+      ],
+      "author": {
+        "name": "Thomas Watson Steen",
+        "email": "w@tson.dk",
+        "url": "https://twitter.com/wa7son"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/watson/dns-equal/issues"
+      },
+      "homepage": "https://github.com/watson/dns-equal#readme",
+      "coordinates": [
+        56.010004025953165,
+        11.961870541375674
+      ],
+      "gitHead": "0d9c5fe125484aff559da3c54431c80b4a622d55",
+      "_id": "dns-equal@1.0.0",
+      "_shasum": "b39e7f1da6eb0a75ba9c17324b34753c47e0654d",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.2",
+      "_npmUser": {
+        "name": "watson",
+        "email": "w@tson.dk"
+      },
+      "maintainers": [
+        {
+          "name": "watson",
+          "email": "w@tson.dk"
+        }
+      ],
+      "dist": {
+        "shasum": "b39e7f1da6eb0a75ba9c17324b34753c47e0654d",
+        "tarball": "https://registry.npmjs.org/dns-equal/-/dns-equal-1.0.0.tgz"
+      },
+      "directories": {}
+    }
+  },
+  "readme": "# dns-equal\n\nCompare DNS record strings for equality. Enforces [RFC\n1035](https://tools.ietf.org/html/rfc1035) domain comparison.\n\n[![Build status](https://travis-ci.org/watson/dns-equal.svg?branch=master)](https://travis-ci.org/watson/dns-equal)\n[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)\n\n## Installation\n\n```\nnpm install dns-equal --save\n```\n\n## Usage\n\n```js\nvar dnsEqual = require('dns-equal')\n\nvar domain1 = 'Example.COM'\nvar domain2 = 'example.com'\n\nif (dnsEqual(domain1, domain2)) {\n  console.log('The two domains are the same')\n}\n```\n\n## License\n\nMIT\n",
+  "maintainers": [
+    {
+      "name": "watson",
+      "email": "w@tson.dk"
+    }
+  ],
+  "time": {
+    "modified": "2016-01-10T16:46:59.170Z",
+    "created": "2016-01-10T16:46:59.170Z",
+    "1.0.0": "2016-01-10T16:46:59.170Z"
+  },
+  "homepage": "https://github.com/watson/dns-equal#readme",
+  "keywords": [
+    "dns",
+    "compare",
+    "comparing",
+    "equal",
+    "equality",
+    "match",
+    "downcase",
+    "lowercase",
+    "case-insensitive"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/watson/dns-equal.git"
+  },
+  "author": {
+    "name": "Thomas Watson Steen",
+    "email": "w@tson.dk",
+    "url": "https://twitter.com/wa7son"
+  },
+  "bugs": {
+    "url": "https://github.com/watson/dns-equal/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "_attachments": {}
+}
