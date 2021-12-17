@@ -52,7 +52,7 @@ body:
         - **`npm config ls`**: `; "user" config from ...`
     value: |
         - npm:
-        - node:
+        - Node.js:
         - OS Name:
         - System Model Name:
         - npm config:
