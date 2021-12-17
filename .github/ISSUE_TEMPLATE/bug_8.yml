@@ -46,7 +46,7 @@ body:
     description: |
       examples:
         - **`npm -v`**: **npm**: 7.6.3
-        - **`node -v`**: **node**: 13.14.0
+        - **`node -v`**: **Node.js**: 13.14.0
         - **OS Name**: Ubuntu 20.04
         - **System Model Name**: Macbook Pro
         - **`npm config ls`**: `; "user" config from ...`
