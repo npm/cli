@@ -223,6 +223,10 @@ t.test('throws when attempting to access data before loading', t => {
   t.throws(() =>
     new Shrinkwrap().add(), Error('run load() before getting or setting data'))
   t.throws(() =>
+    new Shrinkwrap().toJSON(), Error('run load() before getting or setting data'))
+  t.throws(() =>
+    new Shrinkwrap().toString(), Error('run load() before getting or setting data'))
+  t.throws(() =>
     new Shrinkwrap().save(), Error('run load() before saving data'))
   t.end()
 })
@@ -479,6 +483,21 @@ t.test('saving dependency-free shrinkwrap object', t => {
     await sw.save({ format: false })
     fs.statSync(sw.filename)
     t.matchSnapshot(fs.readFileSync(sw.filename, 'utf8'), 'no indent json output')
+  })
+
+  t.test('load the unindented file, and generate expected contents', async t => {
+    const sw = await Shrinkwrap.load({ path: dir })
+    t.equal(
+      sw.filename,
+      resolve(`${dir}/package-lock.json`),
+      'correct filepath on shrinkwrap instance'
+    )
+    t.equal(sw.indent, '')
+    const json = await sw.toJSON()
+    t.matchSnapshot(json, 'indented json object output')
+
+    const jsonString = await sw.toString()
+    t.matchSnapshot(jsonString, 'indented json string output')
   })
 
   t.test('load the unindented file, and save it back default', async t => {
