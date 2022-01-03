@@ -1161,6 +1161,22 @@ variable will be set to `'production'` for all lifecycle scripts.
 <!-- automatically generated, do not edit manually -->
 <!-- see lib/utils/config/definitions.js -->
 
+#### `omit-lockfile-registry-resolved`
+
+* Default: false
+* Type: Boolean
+
+Set to true to omit 'resolved' key from registry dependencies in lock files.
+
+This setting is useful in projects that may install dependencies from
+different registries but would use a lockfile to lock package versions. This
+option makes installing slower because npm must fetch package manifest to
+resolve the package version's tarball. See 'record-default-registry' for an
+alternative.
+
+<!-- automatically generated, do not edit manually -->
+<!-- see lib/utils/config/definitions.js -->
+
 #### `otp`
 
 * Default: null
@@ -1329,6 +1345,22 @@ access tokens with the `npm token create` command.
 * Type: Boolean
 
 Rebuild bundled dependencies after installation.
+
+<!-- automatically generated, do not edit manually -->
+<!-- see lib/utils/config/definitions.js -->
+
+#### `record-default-registry`
+
+* Default: false
+* Type: Boolean
+
+Set to true to replace the actual registry in urls resolved from registires
+with the default registry when recording lock files.
+
+This setting is useful in projects that may install dependencies from
+different registries but would use a lockfile to lock package versions. This
+option supports registries that host tarballs at the same path. If even the
+path may change see 'omit-lockfile-registry-resolved'.
 
 <!-- automatically generated, do not edit manually -->
 <!-- see lib/utils/config/definitions.js -->

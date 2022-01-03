@@ -154,6 +154,8 @@ Array [
   "workspaces",
   "workspaces-update",
   "yes",
+  "omit-lockfile-registry-resolved",
+  "record-default-registry",
 ]
 `
 
@@ -1223,6 +1225,21 @@ If the resulting omit list includes \`'dev'\`, then the \`NODE_ENV\` environment
 variable will be set to \`'production'\` for all lifecycle scripts.
 `
 
+exports[`test/lib/utils/config/definitions.js TAP > config description for omit-lockfile-registry-resolved 1`] = `
+#### \`omit-lockfile-registry-resolved\`
+
+* Default: false
+* Type: Boolean
+
+Set to true to omit 'resolved' key from registry dependencies in lock files.
+
+This setting is useful in projects that may install dependencies from
+different registries but would use a lockfile to lock package versions. This
+option makes installing slower because npm must fetch package manifest to
+resolve the package version's tarball. See 'record-default-registry' for an
+alternative.
+`
+
 exports[`test/lib/utils/config/definitions.js TAP > config description for only 1`] = `
 #### \`only\`
 
@@ -1412,6 +1429,21 @@ exports[`test/lib/utils/config/definitions.js TAP > config description for rebui
 * Type: Boolean
 
 Rebuild bundled dependencies after installation.
+`
+
+exports[`test/lib/utils/config/definitions.js TAP > config description for record-default-registry 1`] = `
+#### \`record-default-registry\`
+
+* Default: false
+* Type: Boolean
+
+Set to true to replace the actual registry in urls resolved from registires
+with the default registry when recording lock files.
+
+This setting is useful in projects that may install dependencies from
+different registries but would use a lockfile to lock package versions. This
+option supports registries that host tarballs at the same path. If even the
+path may change see 'omit-lockfile-registry-resolved'.
 `
 
 exports[`test/lib/utils/config/definitions.js TAP > config description for registry 1`] = `
