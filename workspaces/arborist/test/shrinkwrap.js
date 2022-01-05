@@ -247,7 +247,7 @@ t.only('resolveOptions', async t => {
         dependencies: {
           registry: '^1.0.0',
           'some-other-registry': '^1.0.0',
-          '@scoped/some-other-registry': '^1.0.0',
+          '@scope/some-package': '^1.0.0',
           tar: url,
         },
       },
@@ -271,7 +271,7 @@ t.only('resolveOptions', async t => {
     })
 
     const scopedOtherRegistry = new Node({
-      pkg: { name: '@scope/some-other-registry', version: '1.2.3' },
+      pkg: { name: '@scope/some-package', version: '1.2.3' },
       resolved: someOtherRegistry,
       integrity: 'sha512-registry',
       parent: root,
@@ -310,6 +310,33 @@ t.only('resolveOptions', async t => {
     t.strictSame(data.packages['node_modules/tar'].resolved, url)
     // v1 url dependencies never have resolved.
     t.strictSame(data.dependencies.tar.resolved, undefined)
+  })
+
+  await t.test('recordDefaultRegistry: true', async t => {
+    const { data } = await getData({
+      recordDefaultRegistry: true,
+      registry: 'https://private.registry.org/deadbeef',
+      '@scope:registry': 'https://someother.registry.org',
+    })
+
+    // unscoped packages that resolve to their configured registry should be
+    // record the default registry
+    t.strictSame(data.packages['node_modules/registry'].resolved,
+      'https://registry.npmjs.org/registry/-/registry-1.2.3.tgz')
+    t.strictSame(data.dependencies.registry.resolved,
+      'https://registry.npmjs.org/registry/-/registry-1.2.3.tgz')
+
+    // scoped packages that resolve to their configured registry should be
+    // record the default registry
+    t.strictSame(data.packages['node_modules/@scope/some-package'].resolved,
+      'https://registry.npmjs.org/registry/-/registry-1.2.3.tgz')
+    t.strictSame(data.dependencies['@scope/some-package'].resolved,
+      'https://registry.npmjs.org/registry/-/registry-1.2.3.tgz')
+
+    // packages with resolved urls that don't match the configured registry
+    // should record undefined so npm resolves their url again.
+    t.strictSame(data.packages['node_modules/some-other-registry'].resolved, undefined)
+    t.strictSame(data.dependencies['some-other-registry'].resolved, undefined)
   })
 
   t.test('metaFromNode default', async t => {
