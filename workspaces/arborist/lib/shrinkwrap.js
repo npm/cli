@@ -300,13 +300,8 @@ class Shrinkwrap {
     })
 
     const resolved = consistentResolve(node.resolved, node.path, path, true)
-    // hide resolved from registry dependencies.
-    if (!resolved) {
-      // no-op
-    } else if (node.isRegistryDependency) {
-      meta.resolved = overrideResolves(resolved, options)
-    } else {
-      meta.resolved = resolved
+    if (resolved) {
+      meta.resolved = overrideResolves(node, resolved, options)
     }
 
     if (node.extraneous) {
@@ -1027,7 +1022,7 @@ class Shrinkwrap {
         spec.type !== 'git' &&
         spec.type !== 'file' &&
         spec.type !== 'remote') {
-      lock.resolved = overrideResolves(node.resolved, this.resolveOptions)
+      lock.resolved = overrideResolves(node, node.resolved, this.resolveOptions)
     }
 
     if (node.integrity) {
