@@ -29,6 +29,7 @@
     "check-coverage": true
   },
   "devDependencies": {
+    "@npmcli/template-oss": "^2.4.2",
     "require-inject": "^1.4.4",
     "tap": "^15"
   },
@@ -43,6 +44,6 @@
     "node": "^12.13.0 || ^14.15.0 || >=16"
   },
   "templateOSS": {
-    "version": "2.4.1"
+    "version": "2.4.2"
   }
 }

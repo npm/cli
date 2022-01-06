@@ -18,6 +18,7 @@
     "posttest": "npm run lint"
   },
   "devDependencies": {
+    "@npmcli/template-oss": "^2.4.2",
     "nock": "^12.0.1",
     "tap": "^15.1.0"
   },
@@ -44,6 +45,6 @@
     "lib"
   ],
   "templateOSS": {
-    "version": "2.4.1"
+    "version": "2.4.2"
   }
 }
