@@ -22,10 +22,15 @@ function printCommit (c) {
   console.log(`* [\`${c.hash}\`](${c.url})`)
   for (const pr of c.prs) {
     console.log(`  [#${pr.number}](${pr.url})`)
+    // remove the (#111) relating to this pull request from the commit message,
+    // since we manually add the link outside of the commit message
+    const msgRe = new RegExp(`\\s*\\(#${pr.number}\\)`, 'g')
+    c.message = c.message.replace(msgRe, '')
   }
-  console.log(`  ${c.message}`)
-  // no credit for deps commits
-  if (!c.message.startsWith('deps')) {
+  // no need to indent this output, it's already got 2 spaces
+  console.log(c.message)
+  // no credit for deps commits, leading spaces are important here
+  if (!c.message.startsWith('  deps')) {
     for (const user of c.credit) {
       console.log(`  ([${user.name}](${user.url}))`)
     }
@@ -36,7 +41,7 @@ const main = async () => {
   const query = `
     fragment commitCredit on GitObject {
       ... on Commit {
-        messageHeadline
+        message
         url
         authors (first:10) {
           nodes {
@@ -74,7 +79,9 @@ const main = async () => {
     const commit = {
       hash: hash.slice(1), // remove leading _
       url: data.url,
-      message: data.messageHeadline.replace(/\(#\d+\)$/, ''),
+      message: data.message.replace(/(\r?\n)+/gm, '\n') // swap multiple new lines with one
+        .replace(/^/gm, '  ') // add two spaces to the start of each line
+        .replace(/([^\s]+@\d+\.\d+\.\d+.*)/g, '`$1`'), // wrap package@version in backticks
       prs: data.associatedPullRequests.nodes.filter((pull) => pull.merged),
       credit: data.authors.nodes.map((author) => {
         if (author.user && author.user.login) {
