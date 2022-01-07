@@ -101,6 +101,7 @@ class AuditReport extends Map {
     this.log = opts.log || procLog
     this.tree = tree
     this.filterSet = opts.filterSet
+    this.package = opts.package
   }
 
   async run () {
@@ -156,6 +157,14 @@ class AuditReport extends Map {
       for (const node of this.tree.inventory.query('packageName', name)) {
         if (!shouldAudit(node, this[_omit], this.filterSet)) {
           continue
+        }
+
+	// if a package is specified
+        if (!this.package.length == 0 && !this.package.includes(node.name)) {
+          console.log(node.name, "skipping")
+          continue
+        } else {
+          console.log(node.name, "continuing")
         }
 
         // if not vulnerable by this advisory, keep searching
