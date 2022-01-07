@@ -2432,3 +2432,146 @@ t.test('add local dep with existing dev + peer/optional', async t => {
   t.equal(tree.children.get('abbrev').resolved, 'file:../../dep', 'resolved')
   t.equal(tree.children.size, 1, 'children')
 })
+
+t.test('save package.json on update', t => {
+  const pjson = {
+    dependencies: {
+      abbrev: '^1.0.9',
+    },
+  }
+  const expectedUsingSaveOption = {
+    dependencies: {
+      abbrev: '^1.1.1',
+    },
+  }
+  const plock = {
+    name: 'tap-testdir-reify-save-package.json-on-update-should-update-package-lock.json',
+    version: '1.0.0',
+    lockfileVersion: 2,
+    requires: true,
+    packages: {
+      '': {
+        name: 'a',
+        version: '1.0.0',
+        license: 'MIT',
+        dependencies: {
+          abbrev: '^1.0.9',
+        },
+      },
+      'node_modules/abbrev': {
+        version: '1.0.9',
+        resolved: 'https://registry.npmjs.org/abbrev/-/abbrev-1.0.9.tgz',
+        integrity: 'sha1-kbR5JYinc4wl813W9jdSovh3YTU=',
+      },
+    },
+    dependencies: {
+      abbrev: {
+        version: '1.0.9',
+        resolved: 'https://registry.npmjs.org/abbrev/-/abbrev-1.0.9.tgz',
+        integrity: 'sha1-kbR5JYinc4wl813W9jdSovh3YTU=',
+      },
+    },
+  }
+
+  t.test('should not touch package.json on update-all', async t => {
+    const path = t.testdir({
+      'package.json': JSON.stringify(pjson),
+    })
+
+    await reify(path, { update: true })
+
+    t.same(require(resolve(path, 'package.json')), pjson,
+      'should not have changed package.json file on update all')
+  })
+
+  t.test('should update package-lock.json', async t => {
+    const path = t.testdir({
+      'package.json': JSON.stringify(pjson),
+      'package-lock.json': JSON.stringify(plock),
+    })
+
+    await reify(path, { update: true })
+
+    t.same(require(resolve(path, 'package.json')), pjson,
+      'should not have changed package.json file on update all')
+
+    // in a package-lock the version gets updated even though the
+    // package.json dependency info hasn't been updated
+    const lock = require(resolve(path, 'package-lock.json'))
+    const lockedVersion = lock.packages['node_modules/abbrev'].version
+    t.equal(lockedVersion, '1.1.1',
+      'should update locked versions on packages entries')
+    const depRange = lock.packages[''].dependencies.abbrev
+    t.equal(depRange, '^1.0.9',
+      'should have same version range described in package.json')
+  })
+
+  t.test('should not touch package.json on named update', async t => {
+    const path = t.testdir({
+      'package.json': JSON.stringify(pjson),
+    })
+
+    await reify(path, { update: { names: ['abbrev'] } })
+
+    t.same(require(resolve(path, 'package.json')), pjson,
+      'should not have changed package.json file on named update')
+  })
+
+  t.test('should save to package.json when using save=true', async t => {
+    const path = t.testdir({
+      'package.json': JSON.stringify(pjson),
+    })
+
+    await reify(path, { update: true, save: true })
+
+    t.same(require(resolve(path, 'package.json')), expectedUsingSaveOption,
+      'should save pkg change to package.json file on update all')
+  })
+
+  t.test('should save to package.json on named update using save=true', async t => {
+    const path = t.testdir({
+      'package.json': JSON.stringify(pjson),
+    })
+
+    await reify(path, { update: { names: ['abbrev'] }, save: true })
+
+    t.same(require(resolve(path, 'package.json')), expectedUsingSaveOption,
+      'should save pkg change to package.json file on named update')
+  })
+
+  t.test('should update both package.json and package-lock.json using save=true', async t => {
+    const path = t.testdir({
+      'package.json': JSON.stringify(pjson),
+      'package-lock.json': JSON.stringify(plock),
+    })
+
+    await reify(path, { update: true, save: true })
+
+    t.same(require(resolve(path, 'package.json')), expectedUsingSaveOption,
+      'should change package.json file on update all along with lockfile')
+
+    t.matchSnapshot(fs.readFileSync(resolve(path, 'package-lock.json'), 'utf8'),
+      'should update lockfile with same dep range from now updated package.json')
+  })
+
+  t.test('should save to multiple package.json when using save=true', async t => {
+    const path = t.testdir({
+      'package.json': JSON.stringify({
+        ...pjson,
+        workspaces: ['a'],
+      }),
+      a: {
+        'package.json': JSON.stringify(pjson),
+      },
+    })
+
+    await reify(path, { update: true, save: true })
+
+    t.match(require(resolve(path, 'package.json')), expectedUsingSaveOption,
+      'should save pkg change to all package.json files on update all')
+    t.same(require(resolve(path, 'a', 'package.json')), expectedUsingSaveOption,
+      'should save workspace pkg change to all package.json files on update all')
+  })
+
+  t.end()
+})

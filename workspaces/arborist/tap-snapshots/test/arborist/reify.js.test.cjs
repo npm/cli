@@ -32468,6 +32468,34 @@ exports[`test/arborist/reify.js TAP save complete lockfile on update-all > shoul
 
 `
 
+exports[`test/arborist/reify.js TAP save package.json on update should update both package.json and package-lock.json using save=true > should update lockfile with same dep range from now updated package.json 1`] = `
+{
+  "name": "tap-testdir-reify-save-package.json-on-update-should-update-both-package.json-and-package-lock.json-using-save-true",
+  "lockfileVersion": 2,
+  "requires": true,
+  "packages": {
+    "": {
+      "dependencies": {
+        "abbrev": "^1.1.1"
+      }
+    },
+    "node_modules/abbrev": {
+      "version": "1.1.1",
+      "resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz",
+      "integrity": "sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q=="
+    }
+  },
+  "dependencies": {
+    "abbrev": {
+      "version": "1.1.1",
+      "resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz",
+      "integrity": "sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q=="
+    }
+  }
+}
+
+`
+
 exports[`test/arborist/reify.js TAP save proper lockfile with bins when upgrading lockfile complete=false > should upgrade, with bins in place 1`] = `
 {
   "name": "tap-testdir-reify-save-proper-lockfile-with-bins-when-upgrading-lockfile-complete-false",

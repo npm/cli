@@ -58,6 +58,8 @@ const _bundleUnpacked = Symbol('bundleUnpacked')
 const _bundleMissing = Symbol('bundleMissing')
 const _reifyNode = Symbol.for('reifyNode')
 const _extractOrLink = Symbol('extractOrLink')
+const _updateAll = Symbol.for('updateAll')
+const _updateNames = Symbol.for('updateNames')
 // defined by rebuild mixin
 const _checkBins = Symbol.for('checkBins')
 const _symlink = Symbol('symlink')
@@ -1148,13 +1150,8 @@ module.exports = cls => class Reifier extends cls {
     process.emit('time', 'reify:save')
 
     const updatedTrees = new Set()
-
-    // resolvedAdd is the list of user add requests, but with names added
-    // to things like git repos and tarball file/urls.  However, if the
-    // user requested 'foo@', and we have a foo@file:../foo, then we should
-    // end up saving the spec we actually used, not whatever they gave us.
-    if (this[_resolvedAdd].length) {
-      for (const { name, tree: addTree } of this[_resolvedAdd]) {
+    const updateNodes = nodes => {
+      for (const { name, tree: addTree } of nodes) {
         // addTree either the root, or a workspace
         const edge = addTree.edgesOut.get(name)
         const pkg = addTree.package
@@ -1256,6 +1253,56 @@ module.exports = cls => class Reifier extends cls {
         }
 
         updatedTrees.add(addTree)
+      }
+    }
+
+    // helper that retrieves an array of nodes that were
+    // potentially updated during the reify process, in order
+    // to limit the number of nodes to check and update, only
+    // select nodes from the inventory that are direct deps
+    // of a given package.json (project root or a workspace)
+    // and in ase of using a list of `names`, restrict nodes
+    // to only names that are found in this list
+    const retrieveUpdatedNodes = names => {
+      const filterDirectDependencies = node =>
+        !node.isRoot && node.resolveParent.isRoot
+        && (!names || names.includes(node.name))
+      const directDeps = this.idealTree.inventory
+        .filter(filterDirectDependencies)
+
+      // traverses the list of direct dependencies and collect all nodes
+      // to be updated, since any of them might have changed during reify
+      const nodes = []
+      for (const node of directDeps) {
+        for (const edgeIn of node.edgesIn) {
+          nodes.push({
+            name: node.name,
+            tree: edgeIn.from.target,
+          })
+        }
+      }
+      return nodes
+    }
+
+    // when using update all alongside with save, we'll make
+    // sure to refresh every dependency of the root idealTree
+    if (this[_updateAll] && options.save) {
+      const nodes = retrieveUpdatedNodes()
+      updateNodes(nodes)
+    } else {
+      // resolvedAdd is the list of user add requests, but with names added
+      // to things like git repos and tarball file/urls.  However, if the
+      // user requested 'foo@', and we have a foo@file:../foo, then we should
+      // end up saving the spec we actually used, not whatever they gave us.
+      if (this[_resolvedAdd].length) {
+        updateNodes(this[_resolvedAdd])
+      }
+
+      // if updating given dependencies by name, restrict the list of
+      // nodes to check to only those currently in _updateNames
+      if (this[_updateNames].length && options.save) {
+        const nodes = retrieveUpdatedNodes(this[_updateNames])
+        updateNodes(nodes)
       }
     }
 
