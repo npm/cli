@@ -3682,3 +3682,16 @@ t.test('overrides', t => {
 
   t.end()
 })
+
+t.test('store files with a custom indenting', async t => {
+  const tabIndentedPackageJson =
+    fs.readFileSync(
+      resolve(__dirname, '../fixtures/tab-indented-package-json/package.json'),
+      'utf8'
+    ).replace(/\r\n/g, '\n')
+  const path = t.testdir({
+    'package.json': tabIndentedPackageJson,
+  })
+  const tree = await buildIdeal(path)
+  t.matchSnapshot(String(tree.meta))
+})
