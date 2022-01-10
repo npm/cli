@@ -1394,7 +1394,7 @@ Save installed packages to a package.json file as `peerDependencies`
 
 #### `save-prefix`
 
-* Default: "^"
+* Default: No Prefix ("")
 * Type: String
 
 Configure how versions of packages installed to a package.json file via
