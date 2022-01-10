@@ -4,11 +4,12 @@
 /*
 
 # keep these
+!/.commitlintrc.js
+!/.npmrc
 !/.eslintrc*
 !/.github
 !**/.gitignore
 !/package.json
-!/package-lock.json
 !/docs
 !/bin
 !/lib

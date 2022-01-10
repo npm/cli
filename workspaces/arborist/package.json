@@ -94,9 +94,11 @@
   "engines": {
     "node": "^12.13.0 || ^14.15.0 || >=16"
   },
-  "templateVersion": "2.3.1",
   "eslintIgnore": [
     "test/fixtures/",
     "!test/fixtures/*.js"
-  ]
+  ],
+  "templateOSS": {
+    "version": "2.4.3"
+  }
 }
