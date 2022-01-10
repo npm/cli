@@ -1468,7 +1468,7 @@ Save installed packages to a package.json file as \`peerDependencies\`
 exports[`test/lib/utils/config/definitions.js TAP > config description for save-prefix 1`] = `
 #### \`save-prefix\`
 
-* Default: "^"
+* Default: No Prefix (Empty String)
 * Type: String
 
 Configure how versions of packages installed to a package.json file via

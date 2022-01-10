@@ -124,7 +124,7 @@ exports[`test/lib/commands/config.js TAP config list --json > output matches sna
   "save-exact": false,
   "save-optional": false,
   "save-peer": false,
-  "save-prefix": "^",
+  "save-prefix": "",
   "save-prod": false,
   "scope": "",
   "script-shell": null,
@@ -276,7 +276,7 @@ save-dev = false
 save-exact = false 
 save-optional = false 
 save-peer = false 
-save-prefix = "^" 
+save-prefix = "" 
 save-prod = false 
 scope = "" 
 script-shell = null 
