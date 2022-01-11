@@ -37,6 +37,7 @@
     "npm-registry-fetch": "^11.0.0"
   },
   "devDependencies": {
+    "@npmcli/template-oss": "^2.4.2",
     "nock": "^9.6.1",
     "tap": "^15.1.0"
   },
@@ -44,6 +45,6 @@
     "node": "^12.13.0 || ^14.15.0 || >=16"
   },
   "templateOSS": {
-    "version": "2.4.1"
+    "version": "2.4.3"
   }
 }

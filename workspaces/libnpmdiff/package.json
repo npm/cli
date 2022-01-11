@@ -43,6 +43,7 @@
     "check-coverage": true
   },
   "devDependencies": {
+    "@npmcli/template-oss": "^2.4.2",
     "eslint": "^8.1.0",
     "tap": "^15.0.9"
   },
@@ -57,6 +58,6 @@
     "tar": "^6.1.0"
   },
   "templateOSS": {
-    "version": "2.4.1"
+    "version": "2.4.3"
   }
 }

@@ -30,7 +30,7 @@ jobs:
           node ./bin/npm-cli.js install --ignore-scripts --no-audit
           node ./bin/npm-cli.js rebuild
       - name: Run linting
-        run: node ./bin/npm-cli.js run posttest -w libnpmdiff
+        run: node ./bin/npm-cli.js run posttest -w workspaces/libnpmteam
         env:
           DEPLOY_VERSION: testing
 
@@ -73,4 +73,4 @@ jobs:
 
       # Run the tests, but not if we're just gonna do coveralls later anyway
     - name: Run Tap tests
-      run: node ./bin/npm-cli.js run -w libnpmdiff --ignore-scripts test -- -t600 -Rbase -c
+      run: node ./bin/npm-cli.js run -w workspaces/libnpmteam --ignore-scripts test -- -t600 -Rbase -c
