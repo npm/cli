@@ -833,6 +833,50 @@ t.test('workspaces', t => {
     )
   })
 
+  t.test('should allow adding a workspace as a dep to a workspace', async t => {
+    // turn off networking, this should never make a registry request
+    nock.disableNetConnect()
+    t.teardown(() => nock.enableNetConnect())
+
+    const path = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'root',
+        workspaces: ['workspace-a', 'workspace-b'],
+      }),
+      'workspace-a': {
+        'package.json': JSON.stringify({
+          name: 'workspace-a',
+          version: '1.0.0',
+        }),
+      },
+      'workspace-b': {
+        'package.json': JSON.stringify({
+          name: 'workspace-b',
+          version: '1.0.0',
+        }),
+      },
+    })
+
+    const arb = new Arborist({
+      ...OPT,
+      path,
+      workspaces: ['workspace-a'],
+    })
+
+    const tree = arb.buildIdealTree({
+      path,
+      add: [
+        'workspace-b',
+      ],
+    })
+
+    // just assert that the buildIdealTree call resolves, if there's a
+    // problem here it will reject because of nock disabling requests
+    await t.resolves(tree)
+
+    t.matchSnapshot(printTree(await tree))
+  })
+
   t.end()
 })
 

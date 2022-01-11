@@ -1180,6 +1180,11 @@ This is a one-time fix-up, please be patient...
           return true
         }
 
+        // If the edge is a workspace, and it's valid, leave it alone
+        if (edge.to.isWorkspace) {
+          return false
+        }
+
         // user explicitly asked to update this package by name, problem
         if (this[_updateNames].includes(edge.name)) {
           return true
