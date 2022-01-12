@@ -1142,8 +1142,21 @@ module.exports = cls => class Reifier extends cls {
     // for install failures.  Those still end up in the shrinkwrap, so we
     // save it first, then prune out the optional trash, and then return it.
 
-    // support save=false option
-    if (options.save === false || this[_global] || this[_dryRun]) {
+    const skipSave = options.save === false
+    const save = !skipSave
+    const hasUpdates = this[_updateAll] || this[_updateNames].length
+
+    // we're going to completely skip save ideal tree in case of a global or
+    // dry-run install and also if the save option is set to false, EXCEPT for
+    // update since the expected behavior for npm7+ is for update to
+    // NOT save to package.json, we make that exception since we still want
+    // saveIdealTree to be able to write the lockfile
+    const skipSaveIdealTree =
+      (skipSave && !hasUpdates)
+      || this[_global]
+      || this[_dryRun]
+
+    if (skipSaveIdealTree) {
       return false
     }
 
@@ -1165,7 +1178,7 @@ module.exports = cls => class Reifier extends cls {
         // that we couldn't resolve, this MAY be missing.  if we haven't
         // blown up by now, it's because it was not a problem, though, so
         // just move on.
-        if (!child) {
+        if (!child || !addTree.isTop) {
           continue
         }
 
@@ -1284,25 +1297,32 @@ module.exports = cls => class Reifier extends cls {
       return nodes
     }
 
-    // when using update all alongside with save, we'll make
-    // sure to refresh every dependency of the root idealTree
-    if (this[_updateAll] && options.save) {
-      const nodes = retrieveUpdatedNodes()
-      updateNodes(nodes)
-    } else {
-      // resolvedAdd is the list of user add requests, but with names added
-      // to things like git repos and tarball file/urls.  However, if the
-      // user requested 'foo@', and we have a foo@file:../foo, then we should
-      // end up saving the spec we actually used, not whatever they gave us.
-      if (this[_resolvedAdd].length) {
-        updateNodes(this[_resolvedAdd])
-      }
-
-      // if updating given dependencies by name, restrict the list of
-      // nodes to check to only those currently in _updateNames
-      if (this[_updateNames].length && options.save) {
-        const nodes = retrieveUpdatedNodes(this[_updateNames])
+    if (save) {
+      // when using update all alongside with save, we'll make
+      // sure to refresh every dependency of the root idealTree
+      if (this[_updateAll]) {
+        const nodes = retrieveUpdatedNodes()
         updateNodes(nodes)
+      } else {
+        // resolvedAdd is the list of user add requests, but with names added
+        // to things like git repos and tarball file/urls.  However, if the
+        // user requested 'foo@', and we have a foo@file:../foo, then we should
+        // end up saving the spec we actually used, not whatever they gave us.
+        if (this[_resolvedAdd].length) {
+          updateNodes(this[_resolvedAdd])
+        }
+
+        // if updating given dependencies by name, restrict the list of
+        // nodes to check to only those currently in _updateNames
+        if (this[_updateNames].length) {
+          const nodes = retrieveUpdatedNodes(this[_updateNames])
+          updateNodes(nodes)
+        }
+
+        // grab any from explicitRequests that had deps removed
+        for (const { from: tree } of this.explicitRequests) {
+          updatedTrees.add(tree)
+        }
       }
     }
 
@@ -1338,15 +1358,12 @@ module.exports = cls => class Reifier extends cls {
       await pkgJson.save()
     }
 
-    // grab any from explicitRequests that had deps removed
-    for (const { from: tree } of this.explicitRequests) {
-      updatedTrees.add(tree)
-    }
-
-    for (const tree of updatedTrees) {
-      // refresh the edges so they have the correct specs
-      tree.package = tree.package
-      promises.push(updatePackageJson(tree))
+    if (save) {
+      for (const tree of updatedTrees) {
+        // refresh the edges so they have the correct specs
+        tree.package = tree.package
+        promises.push(updatePackageJson(tree))
+      }
     }
 
     await Promise.all(promises)

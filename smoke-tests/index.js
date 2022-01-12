@@ -267,3 +267,15 @@ t.test('npm pkg', async t => {
     'should have expected npm pkg delete modified package.json result'
   )
 })
+
+t.test('npm update --save', async t => {
+  const cmd = `${npmBin} update --save`
+  const cmdRes = await exec(cmd)
+
+  t.matchSnapshot(cmdRes.replace(/in.*s/, ''),
+    'should have expected update --save reify output')
+  t.matchSnapshot(readFile('package.json'),
+    'should have expected update --save package.json result')
+  t.matchSnapshot(readFile('package-lock.json'),
+    'should have expected update --save lockfile result')
+})

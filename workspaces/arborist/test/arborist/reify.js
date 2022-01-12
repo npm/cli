@@ -256,6 +256,7 @@ t.test('a workspace with a duplicated nested conflicted dep', t =>
 t.test('testing-peer-deps nested with update', t =>
   t.resolveMatchSnapshot(printReified(fixture(t, 'testing-peer-deps-nested'), {
     update: { names: ['@isaacs/testing-peer-deps'] },
+    save: false,
   })))
 
 t.test('update a bundling node without updating all of its deps', t => {
@@ -392,7 +393,7 @@ t.test('multiple bundles at the same level', t => {
 
 t.test('update a node without updating its children', t =>
   t.resolveMatchSnapshot(printReified(fixture(t, 'once-outdated'),
-    { update: { names: ['once'] } })))
+    { update: { names: ['once'] }, save: false })))
 
 t.test('do not add shrinkwrapped deps', t =>
   t.resolveMatchSnapshot(printReified(
@@ -508,6 +509,7 @@ t.test('update a node without updating a child that has bundle deps', t => {
   const path = fixture(t, 'testing-bundledeps-3')
   return t.resolveMatchSnapshot(printReified(path, {
     update: ['@isaacs/testing-bundledeps-parent'],
+    save: false,
   }))
 })
 
@@ -524,9 +526,16 @@ t.test('optional dependency failures', t => {
     'optional-metadep-postinstall-fail',
     'optional-metadep-allinstall-fail',
   ]
-  t.plan(cases.length)
-  cases.forEach(c => t.test(c, t =>
-    t.resolveMatchSnapshot(printReified(fixture(t, c), { update: true }))))
+  t.plan(cases.length * 2)
+  let p = [...cases.map(c => t.test(`${c} save=false`, t =>
+    t.resolveMatchSnapshot(printReified(fixture(t, c),
+      { update: true, save: false }))))]
+
+  // npm update --save
+  p = [...cases.map(c => t.test(`${c} save=true`, t =>
+    t.resolveMatchSnapshot(printReified(fixture(t, c),
+      { update: true, save: true }))))]
+  return p
 })
 
 t.test('failure to fetch prod dep is failure', t =>
@@ -665,6 +674,7 @@ t.test('rollbacks', { buffered: false }, t => {
 
     return t.resolveMatchSnapshot(a.reify({
       update: ['@isaacs/testing-bundledeps-parent'],
+      save: false,
     }).then(printTree))
   })
 
@@ -845,6 +855,7 @@ t.test('rollbacks', { buffered: false }, t => {
 
     return t.resolveMatchSnapshot(a.reify({
       update: ['@isaacs/testing-bundledeps-parent'],
+      save: false,
     }).then(tree => printTree(tree))).then(() => {
       const warnings = check()
       t.equal(warnings.length, 2)
@@ -1367,7 +1378,7 @@ t.test('save complete lockfile on update-all', async t => {
   const lock = () => fs.readFileSync(`${path}/package-lock.json`, 'utf8')
   await reify(path, { add: ['abbrev@1.0.4'] })
   t.matchSnapshot(lock(), 'should have abbrev 1.0.4')
-  await reify(path, { update: true })
+  await reify(path, { update: true, save: false })
   t.matchSnapshot(lock(), 'should update, but not drop root metadata')
 })
 
@@ -2478,7 +2489,7 @@ t.test('save package.json on update', t => {
       'package.json': JSON.stringify(pjson),
     })
 
-    await reify(path, { update: true })
+    await reify(path, { update: true, save: false })
 
     t.same(require(resolve(path, 'package.json')), pjson,
       'should not have changed package.json file on update all')
@@ -2490,7 +2501,7 @@ t.test('save package.json on update', t => {
       'package-lock.json': JSON.stringify(plock),
     })
 
-    await reify(path, { update: true })
+    await reify(path, { update: true, save: false })
 
     t.same(require(resolve(path, 'package.json')), pjson,
       'should not have changed package.json file on update all')
@@ -2511,7 +2522,7 @@ t.test('save package.json on update', t => {
       'package.json': JSON.stringify(pjson),
     })
 
-    await reify(path, { update: { names: ['abbrev'] } })
+    await reify(path, { update: { names: ['abbrev'] }, save: false })
 
     t.same(require(resolve(path, 'package.json')), pjson,
       'should not have changed package.json file on named update')
