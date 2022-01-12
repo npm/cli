@@ -333,8 +333,7 @@ module.exports = cls => class IdealTreeBuilder extends cls {
             root.meta.lockfileVersion = defaultLockfileVersion
           }
         }
-        // ensure indentation is inferred properly
-        root.meta.indent = root.package[Symbol.for('indent')]
+        root.meta.inferFormattingOptions(root.package)
         return root
       })
 
