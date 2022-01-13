@@ -1,3 +1,34 @@
+## v8.3.1 (2022-01-13)
+
+### Bug Fixes
+
+* [`2ac540b0c`](https://github.com/npm/cli/commit/2ac540b0ccd016a14676ad891758e8d9e903a12c)
+  fix(unpublish): Show warning on unpublish command when last version (#4191)
+  ([@ebsaral](https://github.com/ebsaral))
+
+### Dependencies
+
+* [`da80d579d`](https://github.com/npm/cli/commit/da80d579d1f1db61894c54f7b9b3623394882c16)
+  [#4211](https://github.com/npm/cli/pull/4211)
+  deps: `hosted-git-info@4.1.0`
+  * feat: Support Sourcehut
+* [`5a87d190f`](https://github.com/npm/cli/commit/5a87d190f38af9f2f98084d9b476184dbcaf1429)
+  [#4228](https://github.com/npm/cli/pull/4228)
+  deps: `@npmcli/config@2.4.0`
+* [`1f0d1370f`](https://github.com/npm/cli/commit/1f0d1370ff6bf2ca978ef0d7d32640314c62204e)
+  chore(release): `@npmcli/arborist@4.2.0`
+  * [`3cfae3840`](https://github.com/npm/cli/commit/3cfae384011a8b291cc82cc02b56bc114557a9e5)
+    [#4181](https://github.com/npm/cli/pull/4181)
+    feat(arborist) add `toJSON`/`toString` methods to get shrinkwrap contents without saving
+    ([@ljharb](https://github.com/ljharb))
+
+### Chores
+
+* [`d72650457`](https://github.com/npm/cli/commit/d7265045730555c03b3142c004c7438e9577028c)
+  chore: Bring in all libnpm modules + arborist as workspaces (#4166)
+  ([@fritzy](https://github.com/fritzy))
+
+
 ## v8.3.0 (2021-12-09)
 
 ### Features
