@@ -124,7 +124,7 @@
     "treeverse": "^1.0.4",
     "validate-npm-package-name": "~3.0.0",
     "which": "^2.0.2",
-    "write-file-atomic": "^3.0.3"
+    "write-file-atomic": "^4.0.0"
   },
   "bundleDependencies": [
     "@isaacs/string-locale-compare",
