@@ -5,6 +5,7 @@ const calcDepFlags = require('../lib/calc-dep-flags.js')
 const fs = require('fs')
 const Arborist = require('../lib/arborist/index.js')
 const rimraf = require('rimraf')
+const { execSync } = require('child_process')
 
 const t = require('tap')
 
@@ -1601,13 +1602,30 @@ t.test('setting lockfileVersion from the file contents', async t => {
   t.test('load should return error correctly when it cant access folder', async t => {
     const dir = t.testdir({})
     try {
-      fs.chmodSync(dir, '000')
+      const err = removePermissions(dir)
       const res = await Shrinkwrap.load({ path: dir })
       t.ok(res.loadingError, 'loading error should exist')
-      t.strictSame(res.loadingError.errno, -13)
-      t.strictSame(res.loadingError.code, 'EACCES')
+      t.strictSame(res.loadingError.code, err)
     } finally {
-      fs.chmodSync(dir, '777')
+      restorePermissions(dir)
+    }
+
+    function removePermissions(dir) {
+      if (process.platform === 'win32') {
+        execSync(`icacls ${dir} /deny "everyone:R"`)
+        return 'EPERM'
+      }
+  
+      fs.chmodSync(dir, '000')
+      return 'EACCES'
+    }
+
+    function restorePermissions(dir) {
+      if (process.platform === 'win32') {
+        execSync(`icacls ${dir} /grant "everyone:R"`)
+      } else {
+        fs.chmodSync(dir, '777')
+      }
     }
   })
 })
