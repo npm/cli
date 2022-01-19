@@ -10,7 +10,7 @@ const debug = require('../debug.js')
 const walkUp = require('walk-up-path')
 const log = require('proc-log')
 
-const { dirname, resolve, relative } = require('path')
+const { dirname, resolve, relative, join } = require('path')
 const { depth: dfwalk } = require('treeverse')
 const fs = require('fs')
 const { promisify } = require('util')
@@ -103,6 +103,8 @@ const _resolvedAdd = Symbol.for('resolvedAdd')
 const _usePackageLock = Symbol.for('usePackageLock')
 const _formatPackageLock = Symbol.for('formatPackageLock')
 
+const _createIsolatedTree = Symbol('createIsolatedTree')
+
 module.exports = cls => class Reifier extends cls {
   constructor (options) {
     super(options)
@@ -133,6 +135,106 @@ module.exports = cls => class Reifier extends cls {
     this[_nmValidated] = new Set()
   }
 
+  [_createIsolatedTree](idealTree) {
+    const t = {
+      fsChildren: [],
+      integrity: null,
+      resolved: null,
+      isLink: false,
+      isRoot: true,
+      hasShrinkwrap: false,
+      parent: null,
+      isTop: true,
+      path: idealTree.root.path,
+      meta: { loadedFromDisk: false },
+      global: false,
+      isProjectRoot: true,
+      children: []
+    }
+    idealTree.root.children.forEach(c => {
+      t.children.push(
+        {
+          global: false,
+          globalTop: false,
+          isProjectRoot: false,
+          isTop: false,
+          location: `node_modules/.store/${c.name}/node_modules/${c.name}`,
+          name: c.name,
+          optional: false,
+          top: { path: idealTree.root.path },
+          children: [],
+          fsChildren: [],
+          getBundler() { return null },
+          hasShrinkwrap: false,
+          inDepBundle: false,
+          integrity: null,
+          isLink: false,
+          isRoot: false,
+          path: `${idealTree.root.path}/node_modules/.store/${c.name}/node_modules/${c.name}`,
+          resolved: c.resolved,
+          package: { _id: c.package._id, bundleDependencies: undefined, deprecated: undefined },
+          target: {
+            path: `${idealTree.root.path}/node_modules/.store/${c.name}/node_modules/${c.name}`,
+            hasInstallScript: false,
+            package: {
+              bin: undefined,
+              bundleDependencies: undefined,
+              gypfile: undefined,
+              hasInstallScript: undefined,
+              scripts: undefined
+            }
+          }
+        })
+    })
+    const memo = new Set()
+    function processEdges(node) {
+      if (memo.has(node)) { return }
+      memo.add(node)
+      const node_modules_folder = node.isProjectRoot ? join(node.location, 'node_modules') : `node_modules/.store/${node.name}/node_modules` 
+      for(const [name, edge] of node.edgesOut) {
+        const to = edge.to
+        processEdges(to)
+
+        t.children.push(
+          {
+            global: false,
+            globalTop: false,
+            isProjectRoot: false,
+            isTop: false,
+            location: `${node_modules_folder}/${to.name}`,
+            path: `${idealTree.root.path}/${node_modules_folder}/${to.name}`,
+            realpath: `${idealTree.root.path}/node_modules/.store/${to.name}/node_modules/${to.name}`,
+            name: 'which-link',
+            resolved: 'which-link',
+            top: { path: idealTree.root.path },
+            children: [],
+            fsChildren: [],
+            isLink: true,
+            isRoot: false,
+            package: { _id: 'abc', bundleDependencies: undefined, deprecated: undefined },
+            target: {
+              path: `${idealTree.root.path}/node_modules/.store/${to.name}/node_modules/${to.name}`,
+              hasInstallScript: false,
+              package: {
+                bin: undefined,
+                bundleDependencies: undefined,
+                gypfile: undefined,
+                hasInstallScript: undefined,
+                scripts: undefined
+              }
+            }
+          })
+      }
+    }
+    processEdges(idealTree)
+    t.children.forEach(c => c.parent = t)
+    t.children.forEach(c => c.root = t)
+    t.root = t
+    t.target = t
+    return t
+
+  }
+
   // public method
   async reify (options = {}) {
     if (this[_packageLockOnly] && this[_global]) {
@@ -151,8 +253,18 @@ module.exports = cls => class Reifier extends cls {
     process.emit('time', 'reify')
     await this[_validatePath]()
     await this[_loadTrees](options)
+
+
+    const old = this.idealTree
+    const isolatedTree = this[_createIsolatedTree](this.idealTree)
+    this.idealTree = isolatedTree
+
     await this[_diffTrees]()
+
+    this.idealTree = old
+
     await this[_reifyPackages]()
+
     await this[_saveIdealTree](options)
     await this[_copyIdealToActual]()
     await this[_awaitQuickAudit]()
