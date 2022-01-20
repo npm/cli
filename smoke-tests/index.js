@@ -268,14 +268,55 @@ t.test('npm pkg', async t => {
   )
 })
 
+t.test('npm update --no-save --no-package-lock', async t => {
+  // setup, manually reset dep value
+  await exec(`${npmBin} pkg set "dependencies.abbrev==1.0.4"`)
+  await exec(`${npmBin} install`)
+  await exec(`${npmBin} pkg set "dependencies.abbrev=^1.0.4"`)
+
+  const cmd = `${npmBin} update --no-save --no-package-lock`
+  await exec(cmd)
+
+  t.equal(
+    JSON.parse(readFile('package.json')).dependencies.abbrev,
+    '^1.0.4',
+    'should have expected update --no-save --no-package-lock package.json result'
+  )
+  t.equal(
+    JSON.parse(readFile('package-lock.json')).packages['node_modules/abbrev'].version,
+    '1.0.4',
+    'should have expected update --no-save --no-package-lock lockfile result'
+  )
+})
+
+t.test('npm update --no-save', async t => {
+  const cmd = `${npmBin} update --no-save`
+  await exec(cmd)
+
+  t.equal(
+    JSON.parse(readFile('package.json')).dependencies.abbrev,
+    '^1.0.4',
+    'should have expected update --no-save package.json result'
+  )
+  t.equal(
+    JSON.parse(readFile('package-lock.json')).packages['node_modules/abbrev'].version,
+    '1.1.1',
+    'should have expected update --no-save lockfile result'
+  )
+})
+
 t.test('npm update --save', async t => {
   const cmd = `${npmBin} update --save`
-  const cmdRes = await exec(cmd)
+  await exec(cmd)
 
-  t.matchSnapshot(cmdRes.replace(/in.*s/, ''),
-    'should have expected update --save reify output')
-  t.matchSnapshot(readFile('package.json'),
-    'should have expected update --save package.json result')
-  t.matchSnapshot(readFile('package-lock.json'),
-    'should have expected update --save lockfile result')
+  t.equal(
+    JSON.parse(readFile('package.json')).dependencies.abbrev,
+    '^1.1.1',
+    'should have expected update --save package.json result'
+  )
+  t.equal(
+    JSON.parse(readFile('package-lock.json')).packages['node_modules/abbrev'].version,
+    '1.1.1',
+    'should have expected update --save lockfile result'
+  )
 })

@@ -666,64 +666,6 @@ removed 1 package
 
 `
 
-exports[`smoke-tests/index.js TAP npm update --save > should have expected update --save lockfile result 1`] = `
-{
-  "name": "project",
-  "version": "1.0.0",
-  "lockfileVersion": 2,
-  "requires": true,
-  "packages": {
-    "": {
-      "name": "project",
-      "version": "1.0.0",
-      "license": "ISC",
-      "dependencies": {
-        "abbrev": "^1.1.1"
-      }
-    },
-    "node_modules/abbrev": {
-      "version": "1.1.1",
-      "resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz",
-      "integrity": "sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q=="
-    }
-  },
-  "dependencies": {
-    "abbrev": {
-      "version": "1.1.1",
-      "resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz",
-      "integrity": "sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q=="
-    }
-  }
-}
-
-`
-
-exports[`smoke-tests/index.js TAP npm update --save > should have expected update --save package.json result 1`] = `
-{
-  "name": "project",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo /"Error: no test specified/" && exit 1",
-    "hello": "echo Hello"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "abbrev": "^1.1.1"
-  }
-}
-
-`
-
-exports[`smoke-tests/index.js TAP npm update --save > should have expected update --save reify output 1`] = `
-
-up to date 
-
-`
-
 exports[`smoke-tests/index.js TAP npm update dep > should have expected update lockfile result 1`] = `
 {
   "name": "project",

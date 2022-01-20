@@ -32676,28 +32676,416 @@ exports[`test/arborist/reify.js TAP save complete lockfile on update-all > shoul
 
 `
 
-exports[`test/arborist/reify.js TAP save package.json on update should update both package.json and package-lock.json using save=true > should update lockfile with same dep range from now updated package.json 1`] = `
+exports[`test/arborist/reify.js TAP save package.json on update should not save any with save=false and package-lock=false > should update lockfile with many deps updated package.json save=false 1`] = `
 {
-  "name": "tap-testdir-reify-save-package.json-on-update-should-update-both-package.json-and-package-lock.json-using-save-true",
+  "name": "workspaces-need-update",
   "lockfileVersion": 2,
   "requires": true,
   "packages": {
     "": {
+      "workspaces": [
+        "a",
+        "b"
+      ],
       "dependencies": {
-        "abbrev": "^1.1.1"
+        "abbrev": "^1.0.4"
       }
+    },
+    "a": {
+      "dependencies": {
+        "abbrev": "^1.0.4",
+        "once": "^1.3.2"
+      }
+    },
+    "b": {
+      "dependencies": {
+        "abbrev": "^1.0.4"
+      }
+    },
+    "node_modules/a": {
+      "resolved": "a",
+      "link": true
+    },
+    "node_modules/abbrev": {
+      "version": "1.0.4",
+      "resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.0.4.tgz",
+      "integrity": "sha1-vVWuXkE7oXIu5Mq6H26hBBSlns0="
+    },
+    "node_modules/b": {
+      "resolved": "b",
+      "link": true
+    },
+    "node_modules/once": {
+      "version": "1.3.2",
+      "resolved": "https://registry.npmjs.org/once/-/once-1.3.2.tgz",
+      "integrity": "sha1-2P7sqTsDnsHc3ud0HJK9rF4oCBs=",
+      "dependencies": {
+        "wrappy": "1"
+      }
+    },
+    "node_modules/wrappy": {
+      "version": "1.0.2",
+      "resolved": "https://registry.npmjs.org/wrappy/-/wrappy-1.0.2.tgz",
+      "integrity": "sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8="
+    }
+  }
+}
+`
+
+exports[`test/arborist/reify.js TAP save package.json on update should not save many deps in multiple package.json when using save=false > should update lockfile with many deps updated package.json save=false 1`] = `
+{
+  "name": "tap-testdir-reify-save-package.json-on-update-should-not-save-many-deps-in-multiple-package.json-when-using-save-false",
+  "lockfileVersion": 2,
+  "requires": true,
+  "packages": {
+    "": {
+      "workspaces": [
+        "a",
+        "b"
+      ],
+      "dependencies": {
+        "abbrev": "^1.0.4"
+      }
+    },
+    "a": {
+      "dependencies": {
+        "abbrev": "^1.0.4",
+        "once": "^1.3.2"
+      }
+    },
+    "b": {
+      "dependencies": {
+        "abbrev": "^1.0.4"
+      }
+    },
+    "node_modules/a": {
+      "resolved": "a",
+      "link": true
     },
     "node_modules/abbrev": {
       "version": "1.1.1",
       "resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz",
       "integrity": "sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q=="
+    },
+    "node_modules/b": {
+      "resolved": "b",
+      "link": true
+    },
+    "node_modules/once": {
+      "version": "1.4.0",
+      "resolved": "https://registry.npmjs.org/once/-/once-1.4.0.tgz",
+      "integrity": "sha1-WDsap3WWHUsROsF9nFC6753Xa9E=",
+      "dependencies": {
+        "wrappy": "1"
+      }
+    },
+    "node_modules/wrappy": {
+      "version": "1.0.2",
+      "resolved": "https://registry.npmjs.org/wrappy/-/wrappy-1.0.2.tgz",
+      "integrity": "sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8="
     }
   },
   "dependencies": {
+    "a": {
+      "version": "file:a",
+      "requires": {
+        "abbrev": "^1.0.4",
+        "once": "^1.3.2"
+      }
+    },
     "abbrev": {
       "version": "1.1.1",
       "resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz",
       "integrity": "sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q=="
+    },
+    "b": {
+      "version": "file:b",
+      "requires": {
+        "abbrev": "^1.0.4"
+      }
+    },
+    "once": {
+      "version": "1.4.0",
+      "resolved": "https://registry.npmjs.org/once/-/once-1.4.0.tgz",
+      "integrity": "sha1-WDsap3WWHUsROsF9nFC6753Xa9E=",
+      "requires": {
+        "wrappy": "1"
+      }
+    },
+    "wrappy": {
+      "version": "1.0.2",
+      "resolved": "https://registry.npmjs.org/wrappy/-/wrappy-1.0.2.tgz",
+      "integrity": "sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8="
+    }
+  }
+}
+
+`
+
+exports[`test/arborist/reify.js TAP save package.json on update should save many deps in multiple package.json when using save=true > should update lockfile with many deps updated package.json save=true 1`] = `
+{
+  "name": "tap-testdir-reify-save-package.json-on-update-should-save-many-deps-in-multiple-package.json-when-using-save-true",
+  "lockfileVersion": 2,
+  "requires": true,
+  "packages": {
+    "": {
+      "workspaces": [
+        "a",
+        "b"
+      ],
+      "dependencies": {
+        "abbrev": "^1.1.1"
+      }
+    },
+    "a": {
+      "dependencies": {
+        "abbrev": "^1.1.1",
+        "once": "^1.4.0"
+      }
+    },
+    "b": {
+      "dependencies": {
+        "abbrev": "^1.1.1"
+      }
+    },
+    "node_modules/a": {
+      "resolved": "a",
+      "link": true
+    },
+    "node_modules/abbrev": {
+      "version": "1.1.1",
+      "resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz",
+      "integrity": "sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q=="
+    },
+    "node_modules/b": {
+      "resolved": "b",
+      "link": true
+    },
+    "node_modules/once": {
+      "version": "1.4.0",
+      "resolved": "https://registry.npmjs.org/once/-/once-1.4.0.tgz",
+      "integrity": "sha1-WDsap3WWHUsROsF9nFC6753Xa9E=",
+      "dependencies": {
+        "wrappy": "1"
+      }
+    },
+    "node_modules/wrappy": {
+      "version": "1.0.2",
+      "resolved": "https://registry.npmjs.org/wrappy/-/wrappy-1.0.2.tgz",
+      "integrity": "sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8="
+    }
+  },
+  "dependencies": {
+    "a": {
+      "version": "file:a",
+      "requires": {
+        "abbrev": "^1.0.4",
+        "once": "^1.3.2"
+      }
+    },
+    "abbrev": {
+      "version": "1.1.1",
+      "resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz",
+      "integrity": "sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q=="
+    },
+    "b": {
+      "version": "file:b",
+      "requires": {
+        "abbrev": "^1.0.4"
+      }
+    },
+    "once": {
+      "version": "1.4.0",
+      "resolved": "https://registry.npmjs.org/once/-/once-1.4.0.tgz",
+      "integrity": "sha1-WDsap3WWHUsROsF9nFC6753Xa9E=",
+      "requires": {
+        "wrappy": "1"
+      }
+    },
+    "wrappy": {
+      "version": "1.0.2",
+      "resolved": "https://registry.npmjs.org/wrappy/-/wrappy-1.0.2.tgz",
+      "integrity": "sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8="
+    }
+  }
+}
+
+`
+
+exports[`test/arborist/reify.js TAP save package.json on update should update named dep across multiple package.json using save=true > should update lockfile with many deps updated package.json save=true 1`] = `
+{
+  "name": "tap-testdir-reify-save-package.json-on-update-should-update-named-dep-across-multiple-package.json-using-save-true",
+  "lockfileVersion": 2,
+  "requires": true,
+  "packages": {
+    "": {
+      "workspaces": [
+        "a",
+        "b"
+      ],
+      "dependencies": {
+        "abbrev": "^1.1.1"
+      }
+    },
+    "a": {
+      "dependencies": {
+        "abbrev": "^1.1.1",
+        "once": "^1.3.2"
+      }
+    },
+    "b": {
+      "dependencies": {
+        "abbrev": "^1.1.1"
+      }
+    },
+    "node_modules/a": {
+      "resolved": "a",
+      "link": true
+    },
+    "node_modules/abbrev": {
+      "version": "1.1.1",
+      "resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz",
+      "integrity": "sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q=="
+    },
+    "node_modules/b": {
+      "resolved": "b",
+      "link": true
+    },
+    "node_modules/once": {
+      "version": "1.3.2",
+      "resolved": "https://registry.npmjs.org/once/-/once-1.3.2.tgz",
+      "integrity": "sha1-2P7sqTsDnsHc3ud0HJK9rF4oCBs=",
+      "dependencies": {
+        "wrappy": "1"
+      }
+    },
+    "node_modules/wrappy": {
+      "version": "1.0.2",
+      "resolved": "https://registry.npmjs.org/wrappy/-/wrappy-1.0.2.tgz",
+      "integrity": "sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8="
+    }
+  },
+  "dependencies": {
+    "a": {
+      "version": "file:a",
+      "requires": {
+        "abbrev": "^1.0.4",
+        "once": "^1.3.2"
+      }
+    },
+    "abbrev": {
+      "version": "1.1.1",
+      "resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz",
+      "integrity": "sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q=="
+    },
+    "b": {
+      "version": "file:b",
+      "requires": {
+        "abbrev": "^1.0.4"
+      }
+    },
+    "once": {
+      "version": "1.3.2",
+      "resolved": "https://registry.npmjs.org/once/-/once-1.3.2.tgz",
+      "integrity": "sha1-2P7sqTsDnsHc3ud0HJK9rF4oCBs=",
+      "requires": {
+        "wrappy": "1"
+      }
+    },
+    "wrappy": {
+      "version": "1.0.2",
+      "resolved": "https://registry.npmjs.org/wrappy/-/wrappy-1.0.2.tgz",
+      "integrity": "sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8="
+    }
+  }
+}
+
+`
+
+exports[`test/arborist/reify.js TAP save package.json on update should update single named dep across multiple package.json using save=true > should update lockfile with single dep updated package.json save=true 1`] = `
+{
+  "name": "tap-testdir-reify-save-package.json-on-update-should-update-single-named-dep-across-multiple-package.json-using-save-true",
+  "lockfileVersion": 2,
+  "requires": true,
+  "packages": {
+    "": {
+      "workspaces": [
+        "a",
+        "b"
+      ],
+      "dependencies": {
+        "abbrev": "^1.0.4"
+      }
+    },
+    "a": {
+      "dependencies": {
+        "abbrev": "^1.0.4",
+        "once": "^1.4.0"
+      }
+    },
+    "b": {
+      "dependencies": {
+        "abbrev": "^1.0.4"
+      }
+    },
+    "node_modules/a": {
+      "resolved": "a",
+      "link": true
+    },
+    "node_modules/abbrev": {
+      "version": "1.0.4",
+      "resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.0.4.tgz",
+      "integrity": "sha1-vVWuXkE7oXIu5Mq6H26hBBSlns0="
+    },
+    "node_modules/b": {
+      "resolved": "b",
+      "link": true
+    },
+    "node_modules/once": {
+      "version": "1.4.0",
+      "resolved": "https://registry.npmjs.org/once/-/once-1.4.0.tgz",
+      "integrity": "sha1-WDsap3WWHUsROsF9nFC6753Xa9E=",
+      "dependencies": {
+        "wrappy": "1"
+      }
+    },
+    "node_modules/wrappy": {
+      "version": "1.0.2",
+      "resolved": "https://registry.npmjs.org/wrappy/-/wrappy-1.0.2.tgz",
+      "integrity": "sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8="
+    }
+  },
+  "dependencies": {
+    "a": {
+      "version": "file:a",
+      "requires": {
+        "abbrev": "^1.0.4",
+        "once": "^1.3.2"
+      }
+    },
+    "abbrev": {
+      "version": "1.0.4",
+      "resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.0.4.tgz",
+      "integrity": "sha1-vVWuXkE7oXIu5Mq6H26hBBSlns0="
+    },
+    "b": {
+      "version": "file:b",
+      "requires": {
+        "abbrev": "^1.0.4"
+      }
+    },
+    "once": {
+      "version": "1.4.0",
+      "resolved": "https://registry.npmjs.org/once/-/once-1.4.0.tgz",
+      "integrity": "sha1-WDsap3WWHUsROsF9nFC6753Xa9E=",
+      "requires": {
+        "wrappy": "1"
+      }
+    },
+    "wrappy": {
+      "version": "1.0.2",
+      "resolved": "https://registry.npmjs.org/wrappy/-/wrappy-1.0.2.tgz",
+      "integrity": "sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8="
     }
   }
 }

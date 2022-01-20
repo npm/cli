@@ -1142,21 +1142,25 @@ module.exports = cls => class Reifier extends cls {
     // for install failures.  Those still end up in the shrinkwrap, so we
     // save it first, then prune out the optional trash, and then return it.
 
-    const skipSave = options.save === false
-    const save = !skipSave
+    const save = !(options.save === false)
+
+    // we check for updates in order to make sure we run save ideal tree
+    // even though save=false since we want `npm update` to be able to
+    // write to package-lock files by default
     const hasUpdates = this[_updateAll] || this[_updateNames].length
 
     // we're going to completely skip save ideal tree in case of a global or
     // dry-run install and also if the save option is set to false, EXCEPT for
     // update since the expected behavior for npm7+ is for update to
     // NOT save to package.json, we make that exception since we still want
-    // saveIdealTree to be able to write the lockfile
-    const skipSaveIdealTree =
-      (skipSave && !hasUpdates)
+    // saveIdealTree to be able to write the lockfile by default.
+    const saveIdealTree = !(
+      (!save && !hasUpdates)
       || this[_global]
       || this[_dryRun]
+    )
 
-    if (skipSaveIdealTree) {
+    if (!saveIdealTree) {
       return false
     }
 
