@@ -97,8 +97,8 @@ const rule4 = {
   apply: (t, dir, resolvedGraph, alreadyAsserted) => {
     const graph = parseGraph(resolvedGraph)
     const allPackages = getAllPackages(withRequireChain(graph))
-    const allPackageNames = allPackages.filter(p => p.chain.length !== 0 || p.initialDir !== '.').map(p => p.name)
-    const rootDependenciesNames = graph.root.dependencies.map(o => o.name)
+    const allPackageNames = allPackages.filter(p => p.chain.length !== 0 || p.initialDir !== '.').map(o => o.name)
+    const rootDependencyNames = graph.root.dependencies.map(o => o.name)
     allPackages.forEach(p => {
       const resolvedDependencyNames = (p.dependencies || [])
       .filter(d => !isLoopToken(d))
@@ -109,11 +109,10 @@ const rule4 = {
           const back = parseLoopToken(t)
           return p.chain.slice(-1 - back)[0] // getting the name of the circular dep by going back in the chain
         }))
-      allPackageNames.filter(n => !rootDependenciesNames.includes(n))
+      allPackageNames.filter(n => !rootDependencyNames.includes(n))
         .filter(n => !resolvedDependencyNames.includes(n))
         .filter(n => n !== p.name)
         .forEach(n => {
-          debugger
           const resolveChain = [...p.chain, n]
           const key = p.initialDir + ' => ' + resolveChain.join(' => ')
           if (alreadyAsserted.has(key)) { return }
@@ -234,7 +233,7 @@ tap.only('most simple happy scenario', async t => {
   rule7.apply(t, dir, resolved, asserted)
 })
 
-tap.test('simple peer dependencies scenarios', async t => {
+tap.only('simple peer dependencies scenarios', async t => {
   /*
     * Dependencies:
     *
@@ -288,17 +287,20 @@ tap.test('simple peer dependencies scenarios', async t => {
 })
 
 
-tap.test('Lock file is same in hoisted and in isolated mode', async t => {
-  const package = { name: 'foo', dependencies: { 'which': '2.0.2' } }
+tap.only('Lock file is same in hoisted and in isolated mode', async t => {
+  const graph = {
+  registry: [
+      { name: 'which', version: '2.0.2' }
+      ],
+      root: { name: 'foo', version: '1.2.3', dependencies: { 'which': '2.0.2' } }
+  }
 
-  const hoistedModeDir = t.testdir({
-    'package.json': JSON.stringify(package)
-  })
-  const isolatedModeDir = t.testdir({
-    'package.json': JSON.stringify(package)
-  })
-  const arboristHoisted = new Arborist({ path: hoistedModeDir })
-  const arboristIsolated = new Arborist({ path: isolatedModeDir })
+  const { dir: hoistedModeDir , registry } = await getRepo(graph)
+  const { dir: isolatedModeDir } = await getRepo(graph)
+
+  const cache = fs.mkdtempSync(`${os.tmpdir}/test-`)
+  const arboristHoisted  = new Arborist({ path: hoistedModeDir, registry, packumentCache: new Map(), cache  })
+  const arboristIsolated  = new Arborist({ path: isolatedModeDir , registry, packumentCache: new Map(), cache  })
 
   await Promise.all([
     arboristHoisted.reify({ isolated: false }),
@@ -313,7 +315,7 @@ tap.test('Lock file is same in hoisted and in isolated mode', async t => {
   t.same(hoistedModeLockFile, isolatedModeLockFile, 'hoited mode and isolated mode produce the same lockfile')
 })
 
-tap.test('Basic workspaces setup', async t => {
+tap.only('Basic workspaces setup', async t => {
   const graph = {
     registry: [
         { name: 'which', version: '1.0.0', dependencies: { isexe: '^1.0.0' } },
@@ -339,39 +341,34 @@ tap.test('Basic workspaces setup', async t => {
         'which@2.0.0': {
           'isexe@1.0.0': {}
         }
-      }
-    },
-    'bar@1.0.0 (workspace)': {
-      'which@2.0.0': {
-        'isexe@1.0.0': {}
-      }
-    },
-    'baz@1.0.0 (workspace)': {
-      'bar@1.0.0 (workspace)': {
+      },
+      'baz@1.0.0 (workspace)': {
+        'bar@1.0.0 (workspace)': {
+          'which@2.0.0': {
+            'isexe@1.0.0': {}
+          }
+        },
         'which@2.0.0': {
           'isexe@1.0.0': {}
         }
       },
-      'which@2.0.0': {
-        'isexe@1.0.0': {}
-      }
-    },
-    'cat@1.0.0 (workspace)': {
-      'which@1.0.0': {
-        'isexe@1.0.0': {}
-      }
-    },
-    'fish@1.0.0 (workspace)': {
       'cat@1.0.0 (workspace)': {
         'which@1.0.0': {
           'isexe@1.0.0': {}
         }
       },
-      'which@1.0.0': {
-        'isexe@1.0.0': {}
-      }
-    },
-    'catfish@1.0.0': {}
+      'fish@1.0.0 (workspace)': {
+        'cat@1.0.0 (workspace)': {
+          'which@1.0.0': {
+            'isexe@1.0.0': {}
+          }
+        },
+        'which@1.0.0': {
+          'isexe@1.0.0': {}
+        }
+      },
+      'catfish@1.0.0': {}
+    }
   }
 
   const { dir, registry } = await getRepo(graph)

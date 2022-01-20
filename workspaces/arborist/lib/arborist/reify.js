@@ -151,14 +151,19 @@ module.exports = cls => class Reifier extends cls {
       isProjectRoot: true,
       children: []
     }
-    idealTree.root.children.forEach(c => {
+    const processed = new Set()
+    idealTree.inventory.forEach(c => {
+      if (c.isLink || c.isProjectRoot || c.isWorkspace) { return }
+      const key = `${c.name}@${c.version}`
+      if (processed.has(key)) { return }
+      processed.add(key)
       t.children.push(
         {
           global: false,
           globalTop: false,
           isProjectRoot: false,
           isTop: false,
-          location: `node_modules/.store/${c.name}/node_modules/${c.name}`,
+          location: `node_modules/.store/${key}/node_modules/${c.name}`,
           name: c.name,
           optional: false,
           top: { path: idealTree.root.path },
@@ -170,11 +175,11 @@ module.exports = cls => class Reifier extends cls {
           integrity: null,
           isLink: false,
           isRoot: false,
-          path: `${idealTree.root.path}/node_modules/.store/${c.name}/node_modules/${c.name}`,
+          path: `${idealTree.root.path}/node_modules/.store/${key}/node_modules/${c.name}`,
           resolved: c.resolved,
           package: { _id: c.package._id, bundleDependencies: undefined, deprecated: undefined },
           target: {
-            path: `${idealTree.root.path}/node_modules/.store/${c.name}/node_modules/${c.name}`,
+            path: `${idealTree.root.path}/node_modules/.store/${key}/node_modules/${c.name}`,
             hasInstallScript: false,
             package: {
               bin: undefined,
@@ -190,11 +195,19 @@ module.exports = cls => class Reifier extends cls {
     function processEdges(node) {
       if (memo.has(node)) { return }
       memo.add(node)
-      const node_modules_folder = node.isProjectRoot ? join(node.location, 'node_modules') : `node_modules/.store/${node.name}/node_modules` 
+      const key = `${node.name}@${node.version}`
+      const node_modules_folder = node.isProjectRoot || node.isWorkspace ? join(node.location, 'node_modules') : `node_modules/.store/${key}/node_modules` 
       for(const [name, edge] of node.edgesOut) {
-        const to = edge.to
-        processEdges(to)
+        // in the case of the workspace, the target is the real location of the workspace
+        // in the case of an external package, the targe of a node is itself
+        const to = edge.to && edge.to.target
+        // "to" can be null in case of unresolved optiona [peer]dependency
+        if (to) {
+          processEdges(to)
+        }
 
+        const toKey = `${to.name}@${to.version}`
+        const toLocation = to.isWorkspace ? to.location : `node_modules/.store/${toKey}/node_modules/${to.name}` 
         t.children.push(
           {
             global: false,
@@ -203,7 +216,7 @@ module.exports = cls => class Reifier extends cls {
             isTop: false,
             location: `${node_modules_folder}/${to.name}`,
             path: `${idealTree.root.path}/${node_modules_folder}/${to.name}`,
-            realpath: `${idealTree.root.path}/node_modules/.store/${to.name}/node_modules/${to.name}`,
+            realpath: `${idealTree.root.path}/${toLocation}`,
             name: 'which-link',
             resolved: 'which-link',
             top: { path: idealTree.root.path },
@@ -213,7 +226,7 @@ module.exports = cls => class Reifier extends cls {
             isRoot: false,
             package: { _id: 'abc', bundleDependencies: undefined, deprecated: undefined },
             target: {
-              path: `${idealTree.root.path}/node_modules/.store/${to.name}/node_modules/${to.name}`,
+              path: `${idealTree.root.path}/${toLocation}`,
               hasInstallScript: false,
               package: {
                 bin: undefined,
@@ -253,7 +266,6 @@ module.exports = cls => class Reifier extends cls {
     process.emit('time', 'reify')
     await this[_validatePath]()
     await this[_loadTrees](options)
-
 
     const old = this.idealTree
     const isolatedTree = this[_createIsolatedTree](this.idealTree)

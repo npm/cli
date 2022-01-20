@@ -155,6 +155,7 @@ async function getRepo (graph) {
 
   packuments.forEach((packument, name) => {
     nock(registry)
+      .persist()
       .get(`/${name.replace(/\//g,'%2f')}`)
       .reply(200, packument)
   })
