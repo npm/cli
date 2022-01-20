@@ -1,3 +1,30 @@
+## v8.3.2 (2022-01-20)
+
+### Bug Fixes
+
+* [`cfd59b8c8`](https://github.com/npm/cli/commit/cfd59b8c81078f842328b13a23a234150842cd58)
+  [#4223](https://github.com/npm/cli/pull/4223)
+  fix: npm update --save
+  ([@ruyadorno](https://github.com/ruyadorno))
+* [`510f0ecbc`](https://github.com/npm/cli/commit/510f0ecbc9970ed8c8993107cc03cf27b7b996dc)
+  [#4218](https://github.com/npm/cli/pull/4218)
+  fix(arborist): ensure indentation is preserved
+  ([@ljharb](https://github.com/ljharb))
+* [`c99c2151a`](https://github.com/npm/cli/commit/c99c2151a868672c017f64ff0ecb12149a2fb095)
+  [#4230](https://github.com/npm/cli/pull/4230)
+  fix(arborist): prioritize valid workspace nodes
+  ([@nlf](https://github.com/nlf))
+* [`14a3d9500`](https://github.com/npm/cli/commit/14a3d95000f1cba937f3309d198a363ae65cf01f)
+  [#4265](https://github.com/npm/cli/pull/4265)
+  fix: resolve workspace paths from cwd when possible
+  ([@nlf](https://github.com/nlf))
+
+### Dependencies
+
+* [`2ef9f9847`](https://github.com/npm/cli/commit/2ef9f9847c11fe8c0c0494558fe77c15ac4dbc80)
+  [#4254](https://github.com/npm/cli/pull/4254)
+  deps: `bin-links@3.0.0 write-file-atomic@4.0.0`
+
 ## v8.3.1 (2022-01-13)
 
 ### Bug Fixes
