@@ -17113,7 +17113,7 @@ ArboristNode {
 }
 `
 
-exports[`test/arborist/reify.js TAP optional dependency failures optional-dep-allinstall-fail > expect resolving Promise 1`] = `
+exports[`test/arborist/reify.js TAP optional dependency failures optional-dep-allinstall-fail save=false > expect resolving Promise 1`] = `
 ArboristNode {
   "edgesOut": Map {
     "@isaacs/testing-fail-allinstall" => EdgeOut {
@@ -17125,14 +17125,33 @@ ArboristNode {
   },
   "isProjectRoot": true,
   "location": "",
-  "name": "tap-testdir-reify-optional-dependency-failures-optional-dep-allinstall-fail",
+  "name": "tap-testdir-reify-optional-dependency-failures-optional-dep-allinstall-fail-save-false",
   "packageName": "optional-dep-allinstall-fail",
-  "path": "{CWD}/test/arborist/tap-testdir-reify-optional-dependency-failures-optional-dep-allinstall-fail",
+  "path": "{CWD}/test/arborist/tap-testdir-reify-optional-dependency-failures-optional-dep-allinstall-fail-save-false",
   "version": "1.0.0",
 }
 `
 
-exports[`test/arborist/reify.js TAP optional dependency failures optional-dep-install-fail > expect resolving Promise 1`] = `
+exports[`test/arborist/reify.js TAP optional dependency failures optional-dep-allinstall-fail save=true > expect resolving Promise 1`] = `
+ArboristNode {
+  "edgesOut": Map {
+    "@isaacs/testing-fail-allinstall" => EdgeOut {
+      "name": "@isaacs/testing-fail-allinstall",
+      "spec": "^1.0.0",
+      "to": null,
+      "type": "optional",
+    },
+  },
+  "isProjectRoot": true,
+  "location": "",
+  "name": "tap-testdir-reify-optional-dependency-failures-optional-dep-allinstall-fail-save-true",
+  "packageName": "optional-dep-allinstall-fail",
+  "path": "{CWD}/test/arborist/tap-testdir-reify-optional-dependency-failures-optional-dep-allinstall-fail-save-true",
+  "version": "1.0.0",
+}
+`
+
+exports[`test/arborist/reify.js TAP optional dependency failures optional-dep-install-fail save=false > expect resolving Promise 1`] = `
 ArboristNode {
   "edgesOut": Map {
     "@isaacs/testing-fail-install" => EdgeOut {
@@ -17144,14 +17163,33 @@ ArboristNode {
   },
   "isProjectRoot": true,
   "location": "",
-  "name": "tap-testdir-reify-optional-dependency-failures-optional-dep-install-fail",
+  "name": "tap-testdir-reify-optional-dependency-failures-optional-dep-install-fail-save-false",
   "packageName": "optional-dep-install-fail",
-  "path": "{CWD}/test/arborist/tap-testdir-reify-optional-dependency-failures-optional-dep-install-fail",
+  "path": "{CWD}/test/arborist/tap-testdir-reify-optional-dependency-failures-optional-dep-install-fail-save-false",
   "version": "1.0.0",
 }
 `
 
-exports[`test/arborist/reify.js TAP optional dependency failures optional-dep-postinstall-fail > expect resolving Promise 1`] = `
+exports[`test/arborist/reify.js TAP optional dependency failures optional-dep-install-fail save=true > expect resolving Promise 1`] = `
+ArboristNode {
+  "edgesOut": Map {
+    "@isaacs/testing-fail-install" => EdgeOut {
+      "name": "@isaacs/testing-fail-install",
+      "spec": "^1.0.0",
+      "to": null,
+      "type": "optional",
+    },
+  },
+  "isProjectRoot": true,
+  "location": "",
+  "name": "tap-testdir-reify-optional-dependency-failures-optional-dep-install-fail-save-true",
+  "packageName": "optional-dep-install-fail",
+  "path": "{CWD}/test/arborist/tap-testdir-reify-optional-dependency-failures-optional-dep-install-fail-save-true",
+  "version": "1.0.0",
+}
+`
+
+exports[`test/arborist/reify.js TAP optional dependency failures optional-dep-postinstall-fail save=false > expect resolving Promise 1`] = `
 ArboristNode {
   "children": Map {
     "@isaacs/testing-fail-postinstall" => ArboristNode {
@@ -17166,7 +17204,7 @@ ArboristNode {
       "location": "node_modules/@isaacs/testing-fail-postinstall",
       "name": "@isaacs/testing-fail-postinstall",
       "optional": true,
-      "path": "{CWD}/test/arborist/tap-testdir-reify-optional-dependency-failures-optional-dep-postinstall-fail/node_modules/@isaacs/testing-fail-postinstall",
+      "path": "{CWD}/test/arborist/tap-testdir-reify-optional-dependency-failures-optional-dep-postinstall-fail-save-false/node_modules/@isaacs/testing-fail-postinstall",
       "resolved": "https://registry.npmjs.org/@isaacs/testing-fail-postinstall/-/testing-fail-postinstall-1.0.0.tgz",
       "version": "1.0.0",
     },
@@ -17181,14 +17219,51 @@ ArboristNode {
   },
   "isProjectRoot": true,
   "location": "",
-  "name": "tap-testdir-reify-optional-dependency-failures-optional-dep-postinstall-fail",
+  "name": "tap-testdir-reify-optional-dependency-failures-optional-dep-postinstall-fail-save-false",
   "packageName": "optional-dep-postinstall-fail",
-  "path": "{CWD}/test/arborist/tap-testdir-reify-optional-dependency-failures-optional-dep-postinstall-fail",
+  "path": "{CWD}/test/arborist/tap-testdir-reify-optional-dependency-failures-optional-dep-postinstall-fail-save-false",
   "version": "1.0.0",
 }
 `
 
-exports[`test/arborist/reify.js TAP optional dependency failures optional-dep-preinstall-fail > expect resolving Promise 1`] = `
+exports[`test/arborist/reify.js TAP optional dependency failures optional-dep-postinstall-fail save=true > expect resolving Promise 1`] = `
+ArboristNode {
+  "children": Map {
+    "@isaacs/testing-fail-postinstall" => ArboristNode {
+      "edgesIn": Set {
+        EdgeIn {
+          "from": "",
+          "name": "@isaacs/testing-fail-postinstall",
+          "spec": "^1.0.0",
+          "type": "optional",
+        },
+      },
+      "location": "node_modules/@isaacs/testing-fail-postinstall",
+      "name": "@isaacs/testing-fail-postinstall",
+      "optional": true,
+      "path": "{CWD}/test/arborist/tap-testdir-reify-optional-dependency-failures-optional-dep-postinstall-fail-save-true/node_modules/@isaacs/testing-fail-postinstall",
+      "resolved": "https://registry.npmjs.org/@isaacs/testing-fail-postinstall/-/testing-fail-postinstall-1.0.0.tgz",
+      "version": "1.0.0",
+    },
+  },
+  "edgesOut": Map {
+    "@isaacs/testing-fail-postinstall" => EdgeOut {
+      "name": "@isaacs/testing-fail-postinstall",
+      "spec": "^1.0.0",
+      "to": "node_modules/@isaacs/testing-fail-postinstall",
+      "type": "optional",
+    },
+  },
+  "isProjectRoot": true,
+  "location": "",
+  "name": "tap-testdir-reify-optional-dependency-failures-optional-dep-postinstall-fail-save-true",
+  "packageName": "optional-dep-postinstall-fail",
+  "path": "{CWD}/test/arborist/tap-testdir-reify-optional-dependency-failures-optional-dep-postinstall-fail-save-true",
+  "version": "1.0.0",
+}
+`
+
+exports[`test/arborist/reify.js TAP optional dependency failures optional-dep-preinstall-fail save=false > expect resolving Promise 1`] = `
 ArboristNode {
   "edgesOut": Map {
     "@isaacs/testing-fail-preinstall" => EdgeOut {
@@ -17200,14 +17275,33 @@ ArboristNode {
   },
   "isProjectRoot": true,
   "location": "",
-  "name": "tap-testdir-reify-optional-dependency-failures-optional-dep-preinstall-fail",
+  "name": "tap-testdir-reify-optional-dependency-failures-optional-dep-preinstall-fail-save-false",
   "packageName": "optional-dep-preinstall-fail",
-  "path": "{CWD}/test/arborist/tap-testdir-reify-optional-dependency-failures-optional-dep-preinstall-fail",
+  "path": "{CWD}/test/arborist/tap-testdir-reify-optional-dependency-failures-optional-dep-preinstall-fail-save-false",
   "version": "1.0.0",
 }
 `
 
-exports[`test/arborist/reify.js TAP optional dependency failures optional-dep-tgz-missing > expect resolving Promise 1`] = `
+exports[`test/arborist/reify.js TAP optional dependency failures optional-dep-preinstall-fail save=true > expect resolving Promise 1`] = `
+ArboristNode {
+  "edgesOut": Map {
+    "@isaacs/testing-fail-preinstall" => EdgeOut {
+      "name": "@isaacs/testing-fail-preinstall",
+      "spec": "^1.0.0",
+      "to": null,
+      "type": "optional",
+    },
+  },
+  "isProjectRoot": true,
+  "location": "",
+  "name": "tap-testdir-reify-optional-dependency-failures-optional-dep-preinstall-fail-save-true",
+  "packageName": "optional-dep-preinstall-fail",
+  "path": "{CWD}/test/arborist/tap-testdir-reify-optional-dependency-failures-optional-dep-preinstall-fail-save-true",
+  "version": "1.0.0",
+}
+`
+
+exports[`test/arborist/reify.js TAP optional dependency failures optional-dep-tgz-missing save=false > expect resolving Promise 1`] = `
 ArboristNode {
   "edgesOut": Map {
     "@isaacs/testing-missing-tgz" => EdgeOut {
@@ -17219,14 +17313,33 @@ ArboristNode {
   },
   "isProjectRoot": true,
   "location": "",
-  "name": "tap-testdir-reify-optional-dependency-failures-optional-dep-tgz-missing",
+  "name": "tap-testdir-reify-optional-dependency-failures-optional-dep-tgz-missing-save-false",
   "packageName": "@isaacs/testing-optional-dep-tgz-missing",
-  "path": "{CWD}/test/arborist/tap-testdir-reify-optional-dependency-failures-optional-dep-tgz-missing",
+  "path": "{CWD}/test/arborist/tap-testdir-reify-optional-dependency-failures-optional-dep-tgz-missing-save-false",
   "version": "1.0.0",
 }
 `
 
-exports[`test/arborist/reify.js TAP optional dependency failures optional-metadep-allinstall-fail > expect resolving Promise 1`] = `
+exports[`test/arborist/reify.js TAP optional dependency failures optional-dep-tgz-missing save=true > expect resolving Promise 1`] = `
+ArboristNode {
+  "edgesOut": Map {
+    "@isaacs/testing-missing-tgz" => EdgeOut {
+      "name": "@isaacs/testing-missing-tgz",
+      "spec": "^1.0.1",
+      "to": null,
+      "type": "optional",
+    },
+  },
+  "isProjectRoot": true,
+  "location": "",
+  "name": "tap-testdir-reify-optional-dependency-failures-optional-dep-tgz-missing-save-true",
+  "packageName": "@isaacs/testing-optional-dep-tgz-missing",
+  "path": "{CWD}/test/arborist/tap-testdir-reify-optional-dependency-failures-optional-dep-tgz-missing-save-true",
+  "version": "1.0.0",
+}
+`
+
+exports[`test/arborist/reify.js TAP optional dependency failures optional-metadep-allinstall-fail save=false > expect resolving Promise 1`] = `
 ArboristNode {
   "edgesOut": Map {
     "@isaacs/testing-prod-dep-allinstall-fail" => EdgeOut {
@@ -17238,14 +17351,33 @@ ArboristNode {
   },
   "isProjectRoot": true,
   "location": "",
-  "name": "tap-testdir-reify-optional-dependency-failures-optional-metadep-allinstall-fail",
+  "name": "tap-testdir-reify-optional-dependency-failures-optional-metadep-allinstall-fail-save-false",
   "packageName": "optional-metadep-allinstall-fail",
-  "path": "{CWD}/test/arborist/tap-testdir-reify-optional-dependency-failures-optional-metadep-allinstall-fail",
+  "path": "{CWD}/test/arborist/tap-testdir-reify-optional-dependency-failures-optional-metadep-allinstall-fail-save-false",
   "version": "1.0.0",
 }
 `
 
-exports[`test/arborist/reify.js TAP optional dependency failures optional-metadep-install-fail > expect resolving Promise 1`] = `
+exports[`test/arborist/reify.js TAP optional dependency failures optional-metadep-allinstall-fail save=true > expect resolving Promise 1`] = `
+ArboristNode {
+  "edgesOut": Map {
+    "@isaacs/testing-prod-dep-allinstall-fail" => EdgeOut {
+      "name": "@isaacs/testing-prod-dep-allinstall-fail",
+      "spec": "^1.0.1",
+      "to": null,
+      "type": "optional",
+    },
+  },
+  "isProjectRoot": true,
+  "location": "",
+  "name": "tap-testdir-reify-optional-dependency-failures-optional-metadep-allinstall-fail-save-true",
+  "packageName": "optional-metadep-allinstall-fail",
+  "path": "{CWD}/test/arborist/tap-testdir-reify-optional-dependency-failures-optional-metadep-allinstall-fail-save-true",
+  "version": "1.0.0",
+}
+`
+
+exports[`test/arborist/reify.js TAP optional dependency failures optional-metadep-install-fail save=false > expect resolving Promise 1`] = `
 ArboristNode {
   "edgesOut": Map {
     "@isaacs/testing-prod-dep-install-fail" => EdgeOut {
@@ -17257,14 +17389,33 @@ ArboristNode {
   },
   "isProjectRoot": true,
   "location": "",
-  "name": "tap-testdir-reify-optional-dependency-failures-optional-metadep-install-fail",
+  "name": "tap-testdir-reify-optional-dependency-failures-optional-metadep-install-fail-save-false",
   "packageName": "optional-metadep-install-fail",
-  "path": "{CWD}/test/arborist/tap-testdir-reify-optional-dependency-failures-optional-metadep-install-fail",
+  "path": "{CWD}/test/arborist/tap-testdir-reify-optional-dependency-failures-optional-metadep-install-fail-save-false",
   "version": "1.0.0",
 }
 `
 
-exports[`test/arborist/reify.js TAP optional dependency failures optional-metadep-postinstall-fail > expect resolving Promise 1`] = `
+exports[`test/arborist/reify.js TAP optional dependency failures optional-metadep-install-fail save=true > expect resolving Promise 1`] = `
+ArboristNode {
+  "edgesOut": Map {
+    "@isaacs/testing-prod-dep-install-fail" => EdgeOut {
+      "name": "@isaacs/testing-prod-dep-install-fail",
+      "spec": "^1.0.1",
+      "to": null,
+      "type": "optional",
+    },
+  },
+  "isProjectRoot": true,
+  "location": "",
+  "name": "tap-testdir-reify-optional-dependency-failures-optional-metadep-install-fail-save-true",
+  "packageName": "optional-metadep-install-fail",
+  "path": "{CWD}/test/arborist/tap-testdir-reify-optional-dependency-failures-optional-metadep-install-fail-save-true",
+  "version": "1.0.0",
+}
+`
+
+exports[`test/arborist/reify.js TAP optional dependency failures optional-metadep-postinstall-fail save=false > expect resolving Promise 1`] = `
 ArboristNode {
   "edgesOut": Map {
     "@isaacs/testing-prod-dep-postinstall-fail" => EdgeOut {
@@ -17276,14 +17427,33 @@ ArboristNode {
   },
   "isProjectRoot": true,
   "location": "",
-  "name": "tap-testdir-reify-optional-dependency-failures-optional-metadep-postinstall-fail",
+  "name": "tap-testdir-reify-optional-dependency-failures-optional-metadep-postinstall-fail-save-false",
   "packageName": "optional-metadep-postinstall-fail",
-  "path": "{CWD}/test/arborist/tap-testdir-reify-optional-dependency-failures-optional-metadep-postinstall-fail",
+  "path": "{CWD}/test/arborist/tap-testdir-reify-optional-dependency-failures-optional-metadep-postinstall-fail-save-false",
   "version": "1.0.0",
 }
 `
 
-exports[`test/arborist/reify.js TAP optional dependency failures optional-metadep-preinstall-fail > expect resolving Promise 1`] = `
+exports[`test/arborist/reify.js TAP optional dependency failures optional-metadep-postinstall-fail save=true > expect resolving Promise 1`] = `
+ArboristNode {
+  "edgesOut": Map {
+    "@isaacs/testing-prod-dep-postinstall-fail" => EdgeOut {
+      "name": "@isaacs/testing-prod-dep-postinstall-fail",
+      "spec": "^1.0.1",
+      "to": null,
+      "type": "optional",
+    },
+  },
+  "isProjectRoot": true,
+  "location": "",
+  "name": "tap-testdir-reify-optional-dependency-failures-optional-metadep-postinstall-fail-save-true",
+  "packageName": "optional-metadep-postinstall-fail",
+  "path": "{CWD}/test/arborist/tap-testdir-reify-optional-dependency-failures-optional-metadep-postinstall-fail-save-true",
+  "version": "1.0.0",
+}
+`
+
+exports[`test/arborist/reify.js TAP optional dependency failures optional-metadep-preinstall-fail save=false > expect resolving Promise 1`] = `
 ArboristNode {
   "edgesOut": Map {
     "@isaacs/testing-prod-dep-preinstall-fail" => EdgeOut {
@@ -17295,14 +17465,33 @@ ArboristNode {
   },
   "isProjectRoot": true,
   "location": "",
-  "name": "tap-testdir-reify-optional-dependency-failures-optional-metadep-preinstall-fail",
+  "name": "tap-testdir-reify-optional-dependency-failures-optional-metadep-preinstall-fail-save-false",
   "packageName": "optional-metadep-preinstall-fail",
-  "path": "{CWD}/test/arborist/tap-testdir-reify-optional-dependency-failures-optional-metadep-preinstall-fail",
+  "path": "{CWD}/test/arborist/tap-testdir-reify-optional-dependency-failures-optional-metadep-preinstall-fail-save-false",
   "version": "1.0.0",
 }
 `
 
-exports[`test/arborist/reify.js TAP optional dependency failures optional-metadep-tgz-missing > expect resolving Promise 1`] = `
+exports[`test/arborist/reify.js TAP optional dependency failures optional-metadep-preinstall-fail save=true > expect resolving Promise 1`] = `
+ArboristNode {
+  "edgesOut": Map {
+    "@isaacs/testing-prod-dep-preinstall-fail" => EdgeOut {
+      "name": "@isaacs/testing-prod-dep-preinstall-fail",
+      "spec": "^1.0.1",
+      "to": null,
+      "type": "optional",
+    },
+  },
+  "isProjectRoot": true,
+  "location": "",
+  "name": "tap-testdir-reify-optional-dependency-failures-optional-metadep-preinstall-fail-save-true",
+  "packageName": "optional-metadep-preinstall-fail",
+  "path": "{CWD}/test/arborist/tap-testdir-reify-optional-dependency-failures-optional-metadep-preinstall-fail-save-true",
+  "version": "1.0.0",
+}
+`
+
+exports[`test/arborist/reify.js TAP optional dependency failures optional-metadep-tgz-missing save=false > expect resolving Promise 1`] = `
 ArboristNode {
   "edgesOut": Map {
     "@isaacs/testing-prod-dep-tgz-missing" => EdgeOut {
@@ -17314,9 +17503,28 @@ ArboristNode {
   },
   "isProjectRoot": true,
   "location": "",
-  "name": "tap-testdir-reify-optional-dependency-failures-optional-metadep-tgz-missing",
+  "name": "tap-testdir-reify-optional-dependency-failures-optional-metadep-tgz-missing-save-false",
   "packageName": "@isaacs/testing-optional-metadep-tgz-missing",
-  "path": "{CWD}/test/arborist/tap-testdir-reify-optional-dependency-failures-optional-metadep-tgz-missing",
+  "path": "{CWD}/test/arborist/tap-testdir-reify-optional-dependency-failures-optional-metadep-tgz-missing-save-false",
+  "version": "1.0.0",
+}
+`
+
+exports[`test/arborist/reify.js TAP optional dependency failures optional-metadep-tgz-missing save=true > expect resolving Promise 1`] = `
+ArboristNode {
+  "edgesOut": Map {
+    "@isaacs/testing-prod-dep-tgz-missing" => EdgeOut {
+      "name": "@isaacs/testing-prod-dep-tgz-missing",
+      "spec": "^1.0.1",
+      "to": null,
+      "type": "optional",
+    },
+  },
+  "isProjectRoot": true,
+  "location": "",
+  "name": "tap-testdir-reify-optional-dependency-failures-optional-metadep-tgz-missing-save-true",
+  "packageName": "@isaacs/testing-optional-metadep-tgz-missing",
+  "path": "{CWD}/test/arborist/tap-testdir-reify-optional-dependency-failures-optional-metadep-tgz-missing-save-true",
   "version": "1.0.0",
 }
 `
@@ -32462,6 +32670,422 @@ exports[`test/arborist/reify.js TAP save complete lockfile on update-all > shoul
       "version": "1.1.1",
       "resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz",
       "integrity": "sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q=="
+    }
+  }
+}
+
+`
+
+exports[`test/arborist/reify.js TAP save package.json on update should not save any with save=false and package-lock=false > should update lockfile with many deps updated package.json save=false 1`] = `
+{
+  "name": "workspaces-need-update",
+  "lockfileVersion": 2,
+  "requires": true,
+  "packages": {
+    "": {
+      "workspaces": [
+        "a",
+        "b"
+      ],
+      "dependencies": {
+        "abbrev": "^1.0.4"
+      }
+    },
+    "a": {
+      "dependencies": {
+        "abbrev": "^1.0.4",
+        "once": "^1.3.2"
+      }
+    },
+    "b": {
+      "dependencies": {
+        "abbrev": "^1.0.4"
+      }
+    },
+    "node_modules/a": {
+      "resolved": "a",
+      "link": true
+    },
+    "node_modules/abbrev": {
+      "version": "1.0.4",
+      "resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.0.4.tgz",
+      "integrity": "sha1-vVWuXkE7oXIu5Mq6H26hBBSlns0="
+    },
+    "node_modules/b": {
+      "resolved": "b",
+      "link": true
+    },
+    "node_modules/once": {
+      "version": "1.3.2",
+      "resolved": "https://registry.npmjs.org/once/-/once-1.3.2.tgz",
+      "integrity": "sha1-2P7sqTsDnsHc3ud0HJK9rF4oCBs=",
+      "dependencies": {
+        "wrappy": "1"
+      }
+    },
+    "node_modules/wrappy": {
+      "version": "1.0.2",
+      "resolved": "https://registry.npmjs.org/wrappy/-/wrappy-1.0.2.tgz",
+      "integrity": "sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8="
+    }
+  }
+}
+`
+
+exports[`test/arborist/reify.js TAP save package.json on update should not save many deps in multiple package.json when using save=false > should update lockfile with many deps updated package.json save=false 1`] = `
+{
+  "name": "tap-testdir-reify-save-package.json-on-update-should-not-save-many-deps-in-multiple-package.json-when-using-save-false",
+  "lockfileVersion": 2,
+  "requires": true,
+  "packages": {
+    "": {
+      "workspaces": [
+        "a",
+        "b"
+      ],
+      "dependencies": {
+        "abbrev": "^1.0.4"
+      }
+    },
+    "a": {
+      "dependencies": {
+        "abbrev": "^1.0.4",
+        "once": "^1.3.2"
+      }
+    },
+    "b": {
+      "dependencies": {
+        "abbrev": "^1.0.4"
+      }
+    },
+    "node_modules/a": {
+      "resolved": "a",
+      "link": true
+    },
+    "node_modules/abbrev": {
+      "version": "1.1.1",
+      "resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz",
+      "integrity": "sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q=="
+    },
+    "node_modules/b": {
+      "resolved": "b",
+      "link": true
+    },
+    "node_modules/once": {
+      "version": "1.4.0",
+      "resolved": "https://registry.npmjs.org/once/-/once-1.4.0.tgz",
+      "integrity": "sha1-WDsap3WWHUsROsF9nFC6753Xa9E=",
+      "dependencies": {
+        "wrappy": "1"
+      }
+    },
+    "node_modules/wrappy": {
+      "version": "1.0.2",
+      "resolved": "https://registry.npmjs.org/wrappy/-/wrappy-1.0.2.tgz",
+      "integrity": "sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8="
+    }
+  },
+  "dependencies": {
+    "a": {
+      "version": "file:a",
+      "requires": {
+        "abbrev": "^1.0.4",
+        "once": "^1.3.2"
+      }
+    },
+    "abbrev": {
+      "version": "1.1.1",
+      "resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz",
+      "integrity": "sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q=="
+    },
+    "b": {
+      "version": "file:b",
+      "requires": {
+        "abbrev": "^1.0.4"
+      }
+    },
+    "once": {
+      "version": "1.4.0",
+      "resolved": "https://registry.npmjs.org/once/-/once-1.4.0.tgz",
+      "integrity": "sha1-WDsap3WWHUsROsF9nFC6753Xa9E=",
+      "requires": {
+        "wrappy": "1"
+      }
+    },
+    "wrappy": {
+      "version": "1.0.2",
+      "resolved": "https://registry.npmjs.org/wrappy/-/wrappy-1.0.2.tgz",
+      "integrity": "sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8="
+    }
+  }
+}
+
+`
+
+exports[`test/arborist/reify.js TAP save package.json on update should save many deps in multiple package.json when using save=true > should update lockfile with many deps updated package.json save=true 1`] = `
+{
+  "name": "tap-testdir-reify-save-package.json-on-update-should-save-many-deps-in-multiple-package.json-when-using-save-true",
+  "lockfileVersion": 2,
+  "requires": true,
+  "packages": {
+    "": {
+      "workspaces": [
+        "a",
+        "b"
+      ],
+      "dependencies": {
+        "abbrev": "^1.1.1"
+      }
+    },
+    "a": {
+      "dependencies": {
+        "abbrev": "^1.1.1",
+        "once": "^1.4.0"
+      }
+    },
+    "b": {
+      "dependencies": {
+        "abbrev": "^1.1.1"
+      }
+    },
+    "node_modules/a": {
+      "resolved": "a",
+      "link": true
+    },
+    "node_modules/abbrev": {
+      "version": "1.1.1",
+      "resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz",
+      "integrity": "sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q=="
+    },
+    "node_modules/b": {
+      "resolved": "b",
+      "link": true
+    },
+    "node_modules/once": {
+      "version": "1.4.0",
+      "resolved": "https://registry.npmjs.org/once/-/once-1.4.0.tgz",
+      "integrity": "sha1-WDsap3WWHUsROsF9nFC6753Xa9E=",
+      "dependencies": {
+        "wrappy": "1"
+      }
+    },
+    "node_modules/wrappy": {
+      "version": "1.0.2",
+      "resolved": "https://registry.npmjs.org/wrappy/-/wrappy-1.0.2.tgz",
+      "integrity": "sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8="
+    }
+  },
+  "dependencies": {
+    "a": {
+      "version": "file:a",
+      "requires": {
+        "abbrev": "^1.0.4",
+        "once": "^1.3.2"
+      }
+    },
+    "abbrev": {
+      "version": "1.1.1",
+      "resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz",
+      "integrity": "sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q=="
+    },
+    "b": {
+      "version": "file:b",
+      "requires": {
+        "abbrev": "^1.0.4"
+      }
+    },
+    "once": {
+      "version": "1.4.0",
+      "resolved": "https://registry.npmjs.org/once/-/once-1.4.0.tgz",
+      "integrity": "sha1-WDsap3WWHUsROsF9nFC6753Xa9E=",
+      "requires": {
+        "wrappy": "1"
+      }
+    },
+    "wrappy": {
+      "version": "1.0.2",
+      "resolved": "https://registry.npmjs.org/wrappy/-/wrappy-1.0.2.tgz",
+      "integrity": "sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8="
+    }
+  }
+}
+
+`
+
+exports[`test/arborist/reify.js TAP save package.json on update should update named dep across multiple package.json using save=true > should update lockfile with many deps updated package.json save=true 1`] = `
+{
+  "name": "tap-testdir-reify-save-package.json-on-update-should-update-named-dep-across-multiple-package.json-using-save-true",
+  "lockfileVersion": 2,
+  "requires": true,
+  "packages": {
+    "": {
+      "workspaces": [
+        "a",
+        "b"
+      ],
+      "dependencies": {
+        "abbrev": "^1.1.1"
+      }
+    },
+    "a": {
+      "dependencies": {
+        "abbrev": "^1.1.1",
+        "once": "^1.3.2"
+      }
+    },
+    "b": {
+      "dependencies": {
+        "abbrev": "^1.1.1"
+      }
+    },
+    "node_modules/a": {
+      "resolved": "a",
+      "link": true
+    },
+    "node_modules/abbrev": {
+      "version": "1.1.1",
+      "resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz",
+      "integrity": "sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q=="
+    },
+    "node_modules/b": {
+      "resolved": "b",
+      "link": true
+    },
+    "node_modules/once": {
+      "version": "1.3.2",
+      "resolved": "https://registry.npmjs.org/once/-/once-1.3.2.tgz",
+      "integrity": "sha1-2P7sqTsDnsHc3ud0HJK9rF4oCBs=",
+      "dependencies": {
+        "wrappy": "1"
+      }
+    },
+    "node_modules/wrappy": {
+      "version": "1.0.2",
+      "resolved": "https://registry.npmjs.org/wrappy/-/wrappy-1.0.2.tgz",
+      "integrity": "sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8="
+    }
+  },
+  "dependencies": {
+    "a": {
+      "version": "file:a",
+      "requires": {
+        "abbrev": "^1.0.4",
+        "once": "^1.3.2"
+      }
+    },
+    "abbrev": {
+      "version": "1.1.1",
+      "resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz",
+      "integrity": "sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q=="
+    },
+    "b": {
+      "version": "file:b",
+      "requires": {
+        "abbrev": "^1.0.4"
+      }
+    },
+    "once": {
+      "version": "1.3.2",
+      "resolved": "https://registry.npmjs.org/once/-/once-1.3.2.tgz",
+      "integrity": "sha1-2P7sqTsDnsHc3ud0HJK9rF4oCBs=",
+      "requires": {
+        "wrappy": "1"
+      }
+    },
+    "wrappy": {
+      "version": "1.0.2",
+      "resolved": "https://registry.npmjs.org/wrappy/-/wrappy-1.0.2.tgz",
+      "integrity": "sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8="
+    }
+  }
+}
+
+`
+
+exports[`test/arborist/reify.js TAP save package.json on update should update single named dep across multiple package.json using save=true > should update lockfile with single dep updated package.json save=true 1`] = `
+{
+  "name": "tap-testdir-reify-save-package.json-on-update-should-update-single-named-dep-across-multiple-package.json-using-save-true",
+  "lockfileVersion": 2,
+  "requires": true,
+  "packages": {
+    "": {
+      "workspaces": [
+        "a",
+        "b"
+      ],
+      "dependencies": {
+        "abbrev": "^1.0.4"
+      }
+    },
+    "a": {
+      "dependencies": {
+        "abbrev": "^1.0.4",
+        "once": "^1.4.0"
+      }
+    },
+    "b": {
+      "dependencies": {
+        "abbrev": "^1.0.4"
+      }
+    },
+    "node_modules/a": {
+      "resolved": "a",
+      "link": true
+    },
+    "node_modules/abbrev": {
+      "version": "1.0.4",
+      "resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.0.4.tgz",
+      "integrity": "sha1-vVWuXkE7oXIu5Mq6H26hBBSlns0="
+    },
+    "node_modules/b": {
+      "resolved": "b",
+      "link": true
+    },
+    "node_modules/once": {
+      "version": "1.4.0",
+      "resolved": "https://registry.npmjs.org/once/-/once-1.4.0.tgz",
+      "integrity": "sha1-WDsap3WWHUsROsF9nFC6753Xa9E=",
+      "dependencies": {
+        "wrappy": "1"
+      }
+    },
+    "node_modules/wrappy": {
+      "version": "1.0.2",
+      "resolved": "https://registry.npmjs.org/wrappy/-/wrappy-1.0.2.tgz",
+      "integrity": "sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8="
+    }
+  },
+  "dependencies": {
+    "a": {
+      "version": "file:a",
+      "requires": {
+        "abbrev": "^1.0.4",
+        "once": "^1.3.2"
+      }
+    },
+    "abbrev": {
+      "version": "1.0.4",
+      "resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.0.4.tgz",
+      "integrity": "sha1-vVWuXkE7oXIu5Mq6H26hBBSlns0="
+    },
+    "b": {
+      "version": "file:b",
+      "requires": {
+        "abbrev": "^1.0.4"
+      }
+    },
+    "once": {
+      "version": "1.4.0",
+      "resolved": "https://registry.npmjs.org/once/-/once-1.4.0.tgz",
+      "integrity": "sha1-WDsap3WWHUsROsF9nFC6753Xa9E=",
+      "requires": {
+        "wrappy": "1"
+      }
+    },
+    "wrappy": {
+      "version": "1.0.2",
+      "resolved": "https://registry.npmjs.org/wrappy/-/wrappy-1.0.2.tgz",
+      "integrity": "sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8="
     }
   }
 }
