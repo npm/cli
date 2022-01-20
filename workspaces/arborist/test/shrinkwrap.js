@@ -1599,33 +1599,18 @@ t.test('setting lockfileVersion from the file contents', async t => {
 
   t.equal(Shrinkwrap.defaultLockfileVersion, 2, 'default is 2')
 
-  t.test('load should return error correctly when it cant access folder', async t => {
-    const dir = t.testdir({})
-    try {
-      const err = removePermissions(dir)
-      const res = await Shrinkwrap.load({ path: dir })
-      t.ok(res.loadingError, 'loading error should exist')
-      t.strictSame(res.loadingError.code, err)
-    } finally {
-      restorePermissions(dir)
-    }
-
-    function removePermissions(dir) {
-      if (process.platform === 'win32') {
-        execSync(`icacls ${dir} /deny "everyone:R"`)
-        return 'EPERM'
+  t.test('load should return error correctly when it cant access folder',
+    { skip: process.platform === 'win32' ? 'skip chmod in windows' : false },
+    async t => {
+      const dir = t.testdir({})
+      try {
+        fs.chmodSync(dir, '000')
+        const res = await Shrinkwrap.load({ path: dir })
+        t.ok(res.loadingError, 'loading error should exist')
+        t.strictSame(res.loadingError.errno, -13)
+        t.strictSame(res.loadingError.code, 'EACCES')
+      } finally {
+        fs.chmodSync(dir, '666')
       }
-  
-      fs.chmodSync(dir, '000')
-      return 'EACCES'
-    }
-
-    function restorePermissions(dir) {
-      if (process.platform === 'win32') {
-        execSync(`icacls ${dir} /grant "everyone:R"`)
-      } else {
-        fs.chmodSync(dir, '777')
-      }
-    }
-  })
+    })
 })
