@@ -2092,6 +2092,10 @@ t.test('update global', async t => {
       },
     },
   })
+
+  t.matchSnapshot(await printIdeal(path, { global: true, update: ['abbrev'] }),
+    'updating missing dep should have no effect')
+
   t.matchSnapshot(await printIdeal(path, { global: true, update: ['wrappy'] }),
     'updating sub-dep has no effect')
   t.matchSnapshot(await printIdeal(path, { global: true, update: ['once'] }),
