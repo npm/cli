@@ -5,7 +5,6 @@ const calcDepFlags = require('../lib/calc-dep-flags.js')
 const fs = require('fs')
 const Arborist = require('../lib/arborist/index.js')
 const rimraf = require('rimraf')
-const { execSync } = require('child_process')
 
 const t = require('tap')
 
@@ -1600,7 +1599,7 @@ t.test('setting lockfileVersion from the file contents', async t => {
   t.equal(Shrinkwrap.defaultLockfileVersion, 2, 'default is 2')
 
   t.test('load should return error correctly when it cant access folder',
-    { skip: process.platform === 'win32' ? 'skip chmod in windows' : false },
+  { skip: process.platform === 'win32' ? 'skip chmod in windows' : false },
     async t => {
       const dir = t.testdir({})
       try {
