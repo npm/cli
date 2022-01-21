@@ -269,6 +269,18 @@ module.exports = cls => class IdealTreeBuilder extends cls {
     this[_complete] = !!options.complete
     this[_preferDedupe] = !!options.preferDedupe
     this[_legacyBundling] = !!options.legacyBundling
+
+    // validates list of update names, they must
+    // be dep names only, no semver ranges are supported
+    const validationError =
+      new TypeError('Update arguments must not contain semver ranges')
+    validationError.code = 'EUPDATEARGS'
+    for (const name of update.names) {
+      const spec = npa(name)
+      if (spec.fetchSpec !== 'latest') {
+        throw validationError
+      }
+    }
     this[_updateNames] = update.names
 
     this[_updateAll] = update.all
