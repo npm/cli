@@ -37,9 +37,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/npm/libnpmpublish.git"
+    "url": "https://github.com/npm/cli.git"
   },
-  "bugs": "https://github.com/npm/libnpmpublish/issues",
+  "bugs": "https://github.com/npm/cli/issues",
   "homepage": "https://npmjs.com/package/libnpmpublish",
   "dependencies": {
     "normalize-package-data": "^3.0.2",
