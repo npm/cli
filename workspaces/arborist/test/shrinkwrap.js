@@ -1599,7 +1599,7 @@ t.test('setting lockfileVersion from the file contents', async t => {
   t.equal(Shrinkwrap.defaultLockfileVersion, 2, 'default is 2')
 
   t.test('load should return error correctly when it cant access folder',
-  { skip: process.platform === 'win32' ? 'skip chmod in windows' : false },
+    { skip: process.platform === 'win32' ? 'skip chmod in windows' : false },
     async t => {
       const dir = t.testdir({})
       try {
