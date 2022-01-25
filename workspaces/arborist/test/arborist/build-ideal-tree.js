@@ -3744,6 +3744,50 @@ t.test('overrides', t => {
     t.equal(bcEdge.to.version, '2.0.0', 'b->c is 2.0.0')
   })
 
+  t.test('overrides a workspace dependency', async (t) => {
+    generateNocks(t, {
+      bar: {
+        versions: ['1.0.0', '1.0.1', '2.0.0'],
+      },
+    })
+
+    const path = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'root',
+        dependencies: {
+          foo: '1.0.1',
+        },
+        overrides: {
+          bar: '2.0.0',
+        },
+        workspaces: [
+          './workspaces/*',
+        ],
+      }),
+      workspaces: {
+        foo: {
+          'package.json': JSON.stringify({
+            name: 'foo',
+            version: '1.0.1',
+            dependencies: {
+              bar: '1.0.0',
+            },
+          }),
+        },
+      },
+    })
+
+    const tree = await buildIdeal(path)
+
+    const fooEdge = tree.edgesOut.get('foo')
+    t.equal(fooEdge.valid, true)
+
+    // fooEdge.to is a link, so we need to look at the target for edgesOut
+    const fooBarEdge = fooEdge.to.target.edgesOut.get('bar')
+    t.equal(fooBarEdge.valid, true)
+    t.equal(fooBarEdge.to.version, '2.0.0')
+  })
+
   t.end()
 })
 

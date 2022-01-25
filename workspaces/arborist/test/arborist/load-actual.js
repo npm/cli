@@ -422,3 +422,33 @@ t.test('load global space with link deps', async t => {
     },
   })
 })
+
+t.test('loading a workspace maintains overrides', async t => {
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'root',
+      version: '1.0.0',
+      dependencies: {
+        foo: '1.0.0',
+      },
+      overrides: {
+        bar: '2.0.0',
+      },
+      workspaces: ['./foo'],
+    }),
+    foo: {
+      'package.json': JSON.stringify({
+        name: 'foo',
+        version: '1.0.0',
+        dependencies: {
+          bar: '1.0.0',
+        },
+      }),
+    },
+  })
+
+  const tree = await loadActual(path)
+
+  const fooEdge = tree.edgesOut.get('foo')
+  t.equal(tree.overrides, fooEdge.overrides, 'foo edge got the correct overrides')
+})
