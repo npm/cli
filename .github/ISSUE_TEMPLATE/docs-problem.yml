@@ -1,0 +1,37 @@
+name: 📄 CLI Docs Problem
+description: File a problem with the npm documentation
+title: "[DOCS] <title>"
+labels: [Documentation, Needs Triage]
+body:
+- type: checkboxes
+  attributes:
+    label: Is there an existing issue for this?
+    description: Please [search here](https://github.com/npm/cli/issues) to see if an issue already exists for your problem.
+    options:
+    - label: I have searched the existing issues
+      required: true
+- type: checkboxes
+  attributes:
+    label: This is a CLI Docs Problem, not another kind of Docs Problem.
+    description: These issue templates are only for CLI documentation problems. If you are looking to submit another kind of documentation problem, please submit it to the [documentation](https://github.com/npm/documentation) repo.
+    options:
+    - label: This is a CLI Docs Problem.
+      required: true
+- type: textarea
+  attributes:
+    label: Description of Problem
+    description: A clear & concise description of what is wrong with the docs.
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: Potential Solution
+    description: A clear & concise description of a potential solution or fix to the problem, if there is one.
+  validations:
+    required: false
+- type: input
+  attributes:
+    label: Affected URL
+    description: Please provide the affected URL.
+  validations:
+    required: false
