@@ -269,6 +269,22 @@ module.exports = cls => class IdealTreeBuilder extends cls {
     this[_complete] = !!options.complete
     this[_preferDedupe] = !!options.preferDedupe
     this[_legacyBundling] = !!options.legacyBundling
+
+    // validates list of update names, they must
+    // be dep names only, no semver ranges are supported
+    for (const name of update.names) {
+      const spec = npa(name)
+      const validationError =
+        new TypeError(`Update arguments must not contain package version specifiers
+
+Try using the package name instead, e.g:
+    npm update ${spec.name}`)
+      validationError.code = 'EUPDATEARGS'
+
+      if (spec.fetchSpec !== 'latest') {
+        throw validationError
+      }
+    }
     this[_updateNames] = update.names
 
     this[_updateAll] = update.all

@@ -2098,6 +2098,22 @@ t.test('update global', async t => {
 
   t.matchSnapshot(await printIdeal(path, { global: true, update: ['wrappy'] }),
     'updating sub-dep has no effect')
+
+  const invalidArgs = [
+    'once@1.4.0',
+    'once@next',
+    'once@^1.0.0',
+    'once@>=2.0.0',
+    'once@2',
+  ]
+  for (const updateName of invalidArgs) {
+    t.rejects(
+      printIdeal(path, { global: true, update: [updateName] }),
+      { code: 'EUPDATEARGS' },
+      'should throw an error when using semver ranges'
+    )
+  }
+
   t.matchSnapshot(await printIdeal(path, { global: true, update: ['once'] }),
     'update a single dep')
   t.matchSnapshot(await printIdeal(path, { global: true, update: true }),
