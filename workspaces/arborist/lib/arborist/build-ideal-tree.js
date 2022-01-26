@@ -272,11 +272,15 @@ module.exports = cls => class IdealTreeBuilder extends cls {
 
     // validates list of update names, they must
     // be dep names only, no semver ranges are supported
-    const validationError =
-      new TypeError('Update arguments must not contain semver ranges')
-    validationError.code = 'EUPDATEARGS'
     for (const name of update.names) {
       const spec = npa(name)
+      const validationError =
+        new TypeError(`Update arguments must not contain package version specifiers
+
+Try using the package name instead, e.g:
+    npm update ${spec.name}`)
+      validationError.code = 'EUPDATEARGS'
+
       if (spec.fetchSpec !== 'latest') {
         throw validationError
       }
