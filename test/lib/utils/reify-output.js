@@ -2,7 +2,7 @@ const t = require('tap')
 const log = require('../../../lib/utils/log-shim')
 
 const _level = log.level
-t.beforeEach(() => log.level = 'warn')
+t.beforeEach(() => log.level = 'notice')
 t.teardown(() => log.level = _level)
 
 t.cleanSnapshot = str => str.replace(/in [0-9]+m?s/g, 'in {TIME}')
@@ -267,6 +267,40 @@ t.test('showing and not showing audit report', async t => {
       },
     })
     t.match(OUT.join('\n'), /Run `npm audit` for details\.$/, 'got audit report')
+    t.end()
+  })
+
+  t.test('no output when loglevel = error', t => {
+    npm.output = out => {
+      t.fail('should not get output when loglevel = error', { actual: out })
+    }
+    log.level = 'error'
+    reifyOutput(npm, {
+      actualTree: { inventory: { size: 999 }, children: [] },
+      auditReport,
+      diff: {
+        children: [
+          { action: 'ADD', ideal: { location: 'loc' } },
+        ],
+      },
+    })
+    t.end()
+  })
+
+  t.test('no output when loglevel = warn', t => {
+    npm.output = out => {
+      t.fail('should not get output when loglevel = warn', { actual: out })
+    }
+    log.level = 'warn'
+    reifyOutput(npm, {
+      actualTree: { inventory: { size: 999 }, children: [] },
+      auditReport,
+      diff: {
+        children: [
+          { action: 'ADD', ideal: { location: 'loc' } },
+        ],
+      },
+    })
     t.end()
   })
 
