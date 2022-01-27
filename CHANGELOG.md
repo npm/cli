@@ -1,3 +1,76 @@
+## v8.4.0 (2022-01-27)
+
+### Features
+
+* [`fbe48a840`](https://github.com/npm/cli/commit/fbe48a84047e0c5de31bdaa84707f0f8fdcef71d)
+  [#4307](https://github.com/npm/cli/pull/4307)
+  feat(arborist): add named updates validation
+  ([@ruyadorno](https://github.com/ruyadorno))
+
+### Bug Fixes
+
+* [`1f853f8bf`](https://github.com/npm/cli/commit/1f853f8bf7cecd1222703dde676a4b664526141d)
+  [#4306](https://github.com/npm/cli/pull/4306)
+  fix(arborist): load actual tree on named updates
+  ([@ruyadorno](https://github.com/ruyadorno))
+* [`90c384ccc`](https://github.com/npm/cli/commit/90c384ccccac32c80c481a04c438cbcbea82539c)
+  [#4326](https://github.com/npm/cli/pull/4326)
+  fix(logout): require proper auth.js from npm-registry-fetch
+  ([@wraithgar](https://github.com/wraithgar))
+* [`fabcf431a`](https://github.com/npm/cli/commit/fabcf431a63ecf93b56ae5d9a05ad4e7ef280c2a)
+  [#4327](https://github.com/npm/cli/pull/4327)
+  fix(arborist): correctly load overrides on workspace edges, closes #4205
+  ([@nlf](https://github.com/nlf))
+* [`8c3b143ca`](https://github.com/npm/cli/commit/8c3b143ca20d0da56c0ce2764e288a4c203b9f93)
+  [#4258](https://github.com/npm/cli/pull/4258)
+  fix(arborist): shrinkwrap throws when trying to read a folder without permissions
+  ([@Linkgoron](https://github.com/Linkgoron))
+* [`b51b29c56`](https://github.com/npm/cli/commit/b51b29c563fa97aa4fbf38250d1f04e879a8d961)
+  [#4334](https://github.com/npm/cli/pull/4334)
+  fix(arborist): update save exact
+  ([@ruyadorno](https://github.com/ruyadorno))
+
+### Dependencies
+
+* [`8558527c7`](https://github.com/npm/cli/commit/8558527c7158b2c1c353f8ab9c31de2a66ab470e)
+  [#4333](https://github.com/npm/cli/pull/4333)
+  deps: `make-fetch-happen@10.0.0`
+    * compress option and accept/content encoding header edge cases
+    * strip cookie header on redirect across hostnames
+* [`1bfc507f2`](https://github.com/npm/cli/commit/1bfc507f2a5afa02f04d4dea2fc6d151d4fef3ac)
+  [#4326](https://github.com/npm/cli/pull/4326)
+  deps: `npm-registry-fetch@12.0.1`
+* [`52c9608e7`](https://github.com/npm/cli/commit/52c9608e7bb1cda396b2cef3fc1b48dbaa2b7de3)
+  [#4326](https://github.com/npm/cli/pull/4326)
+  deps: `pacote@12.0.3`
+* [`2bbeedfeb`](https://github.com/npm/cli/commit/2bbeedfebb3aea082d612deb5e4d9de9e550c529)
+  [#4326](https://github.com/npm/cli/pull/4326)
+  deps: `npm-profile@6.0.0`
+* [`9652d685b`](https://github.com/npm/cli/commit/9652d685b1e4bd21cec107a611c2e307387623d6)
+  chore(release): `@npmcli/arborist@4.3.0`
+  ([@wraithgar](https://github.com/wraithgar))
+* [`0ee4927d2`](https://github.com/npm/cli/commit/0ee4927d2e8206dd24fa7eea5e1c10ea649ecc49)
+  chore(release): `libnpmaccess@5.0.1`
+  ([@wraithgar](https://github.com/wraithgar))
+* [`6c0dc1ffb`](https://github.com/npm/cli/commit/6c0dc1ffb70858be1e9ca9afdb6950e39609a367)
+  chore(release): `libnpmexec@3.0.3`
+  ([@wraithgar](https://github.com/wraithgar))
+* [`41b8f7b6f`](https://github.com/npm/cli/commit/41b8f7b6ff62f0e738865eb8e98df8650f5467bd)
+  chore(release): `libnpmorg@3.0.1`
+  ([@wraithgar](https://github.com/wraithgar))
+* [`433e6aafb`](https://github.com/npm/cli/commit/433e6aafbbf56efcf71e991767a6f00afe4aba7c)
+  chore(release): `libnpmpublish@5.0.1`
+  ([@wraithgar](https://github.com/wraithgar))
+* [`6654b6efe`](https://github.com/npm/cli/commit/6654b6efe02666bdb9864f4608e477ba132fd215)
+  chore(release): `libnpmsearch@4.0.1`
+  ([@wraithgar](https://github.com/wraithgar))
+* [`3423a9804`](https://github.com/npm/cli/commit/3423a980436492b7f0ee9e002517387a801f4f4a)
+  chore(release): `libnpmteam@3.0.1`
+  ([@wraithgar](https://github.com/wraithgar))
+* [`fb03e485d`](https://github.com/npm/cli/commit/fb03e485d9b1f09eb1cbcce00ee8e3e5c012097f)
+  chore(release): `libnpmhook@7.0.1`
+  ([@wraithgar](https://github.com/wraithgar))
+
 ## v8.3.2 (2022-01-20)
 
 ### Bug Fixes
