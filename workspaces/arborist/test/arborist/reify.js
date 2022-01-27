@@ -2572,5 +2572,34 @@ t.test('save package.json on update', t => {
     )
   })
 
+  t.test('should preserve exact ranges', async t => {
+    const path = fixture(t, 'update-exact-version')
+
+    await reify(path, { update: true, save: true })
+
+    t.equal(
+      require(resolve(path, 'package.json')).dependencies.abbrev,
+      '1.0.4',
+      'should save no top level dep update to root package.json'
+    )
+  })
+
+  t.test('should preserve exact ranges, missing actual tree', async t => {
+    const path = t.testdir({
+      'package.json': JSON.stringify({
+        dependencies: {
+          abbrev: '1.0.4',
+        },
+      }),
+    })
+
+    await reify(path, { update: true, save: true })
+
+    t.equal(
+      require(resolve(path, 'package.json')).dependencies.abbrev,
+      '1.0.4',
+      'should save no top level dep update to root package.json'
+    )
+  })
   t.end()
 })

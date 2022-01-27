@@ -2092,8 +2092,28 @@ t.test('update global', async t => {
       },
     },
   })
+
+  t.matchSnapshot(await printIdeal(path, { global: true, update: ['abbrev'] }),
+    'updating missing dep should have no effect')
+
   t.matchSnapshot(await printIdeal(path, { global: true, update: ['wrappy'] }),
     'updating sub-dep has no effect')
+
+  const invalidArgs = [
+    'once@1.4.0',
+    'once@next',
+    'once@^1.0.0',
+    'once@>=2.0.0',
+    'once@2',
+  ]
+  for (const updateName of invalidArgs) {
+    t.rejects(
+      printIdeal(path, { global: true, update: [updateName] }),
+      { code: 'EUPDATEARGS' },
+      'should throw an error when using semver ranges'
+    )
+  }
+
   t.matchSnapshot(await printIdeal(path, { global: true, update: ['once'] }),
     'update a single dep')
   t.matchSnapshot(await printIdeal(path, { global: true, update: true }),
@@ -3722,6 +3742,50 @@ t.test('overrides', t => {
     const bcEdge = abEdge.to.edgesOut.get('c')
     t.equal(bcEdge.valid, true, 'b->c is valid')
     t.equal(bcEdge.to.version, '2.0.0', 'b->c is 2.0.0')
+  })
+
+  t.test('overrides a workspace dependency', async (t) => {
+    generateNocks(t, {
+      bar: {
+        versions: ['1.0.0', '1.0.1', '2.0.0'],
+      },
+    })
+
+    const path = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'root',
+        dependencies: {
+          foo: '1.0.1',
+        },
+        overrides: {
+          bar: '2.0.0',
+        },
+        workspaces: [
+          './workspaces/*',
+        ],
+      }),
+      workspaces: {
+        foo: {
+          'package.json': JSON.stringify({
+            name: 'foo',
+            version: '1.0.1',
+            dependencies: {
+              bar: '1.0.0',
+            },
+          }),
+        },
+      },
+    })
+
+    const tree = await buildIdeal(path)
+
+    const fooEdge = tree.edgesOut.get('foo')
+    t.equal(fooEdge.valid, true)
+
+    // fooEdge.to is a link, so we need to look at the target for edgesOut
+    const fooBarEdge = fooEdge.to.target.edgesOut.get('bar')
+    t.equal(fooBarEdge.valid, true)
+    t.equal(fooBarEdge.to.version, '2.0.0')
   })
 
   t.end()
