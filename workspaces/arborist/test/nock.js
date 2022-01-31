@@ -43,6 +43,7 @@ function packPackageToStream (manifest, reg) {
   pack.entry({ name: unscopedName, type: 'directory' })
   pack.entry({ name: `${unscopedName}/package.json` }, manifestString)
   pack.entry({ name: `${unscopedName}/index.js` }, index)
+  pack.entry({ name: `${unscopedName}/bin.js` }, '#!/usr/bin/env node\nconsole.log("bin")')
   if (shrinkwrap) {
     pack.entry({ name: `${unscopedName}/npm-shrinkwrap.json` }, shrinkwrap.replace(/##REG##/g, reg))
   }
@@ -90,6 +91,7 @@ async function publishPackage (registry, manifest, packuments) {
 
   if (packuments.has(name)) {
     packuments.get(name).versions[version] = {
+        bin: "./bin.js",
       ...rest,
       dist: {
         tarball: `${registry}/${name.replace(/\//g,'-')}/${version}.tar`
@@ -104,6 +106,7 @@ async function publishPackage (registry, manifest, packuments) {
       versions: {
         [version]: {
           ...rest,
+          bin: "./bin.js",
           dist: {
             tarball: `${registry}/${name.replace(/\//g,'-')}/${version}.tar`
           }

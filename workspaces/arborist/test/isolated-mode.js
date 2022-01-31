@@ -92,7 +92,7 @@ const rule3 = {
   }
 }
 
-const rule4 = {
+const rule4 ={
   description: 'Packages cannot require packages that are not in their dependencies, not root dependencies or not themselves.',
   apply: (t, dir, resolvedGraph, alreadyAsserted) => {
     const graph = parseGraph(resolvedGraph)
@@ -388,7 +388,7 @@ tap.only('Basic workspaces setup', async t => {
   rule7.apply(t, dir, resolved, asserted)
 })
 
-tap.test('resolved versions are the same on isolated and in hoisted mode', async t => {
+tap.only('resolved versions are the same on isolated and in hoisted mode', async t => {
   const graph = {
     registry: [
         { name: 'which', version: '1.0.0', dependencies: { isexe: '^1.0.0' } },
@@ -471,7 +471,7 @@ tap.test('resolved versions are the same on isolated and in hoisted mode', async
   rule7.apply(t, dir, resolved, new Set())
 })
 
-tap.test('peer dependency chain', async t => {
+tap.only('peer dependency chain', async t => {
   // Input of arborist
   const graph = {
     registry: [
@@ -514,11 +514,11 @@ tap.test('peer dependency chain', async t => {
   rule7.apply(t, dir, resolved, asserted)
 })
 
-tap.test('failing optional deps are not installed', async t => {
+tap.only('failing optional deps are not installed', async t => {
   // Input of arborist
   const graph = {
     registry: [
-      { name: 'which', version: '1.0.0', os: [ 'npmOS' ] }
+      { name: 'which', version: '1.0.0', os: [ '!linux' ] }
     ] ,
     root: {
       name: 'foo', version: '1.2.3', optionalDependencies: { which: '1.0.0' }
@@ -533,6 +533,8 @@ tap.test('failing optional deps are not installed', async t => {
   await arborist.reify({ isolated: true })
   
   t.notOk(setupRequire(dir)('which'), 'Failing optional deps should not be installed')
+
+  t.notOk(fs.existsSync(path.join(dir, 'node_modules', '.bin', 'which')))
 })
 
 tap.test('Optional deps are installed when possible', async t => {
@@ -554,6 +556,9 @@ tap.test('Optional deps are installed when possible', async t => {
   await arborist.reify({ isolated: true })
   
   t.ok(setupRequire(dir)('which'), 'Optional deps should be installed when possible')
+
+  // TODO: test that the bin files have been installed
+  t.notOk(fs.existsSync(path.join(dir, 'node_modules', '.bin', 'which')))
 })
 
 tap.test('shrinkwrap', async t => {

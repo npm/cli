@@ -142,101 +142,126 @@ module.exports = cls => class Reifier extends cls {
       resolved: null,
       isLink: false,
       isRoot: true,
+      edgesIn: new Set(),
+      edgesOut: new Map(),
       hasShrinkwrap: false,
       parent: null,
       isTop: true,
       path: idealTree.root.path,
+      realpath: idealTree.root.path,
       meta: { loadedFromDisk: false },
       global: false,
       isProjectRoot: true,
       children: []
     }
     const processed = new Set()
-    idealTree.inventory.forEach(c => {
-      if (c.isLink || c.isProjectRoot || c.isWorkspace) { return }
-      const key = `${c.name}@${c.version}`
-      if (processed.has(key)) { return }
-      processed.add(key)
-      t.children.push(
-        {
-          global: false,
-          globalTop: false,
-          isProjectRoot: false,
-          isTop: false,
-          location: `node_modules/.store/${key}/node_modules/${c.name}`,
-          name: c.name,
-          optional: false,
-          top: { path: idealTree.root.path },
-          children: [],
-          fsChildren: [],
-          getBundler() { return null },
-          hasShrinkwrap: false,
-          inDepBundle: false,
-          integrity: null,
-          isLink: false,
-          isRoot: false,
-          path: `${idealTree.root.path}/node_modules/.store/${key}/node_modules/${c.name}`,
-          resolved: c.resolved,
-          package: { _id: c.package._id, bundleDependencies: undefined, deprecated: undefined },
-          target: {
-            path: `${idealTree.root.path}/node_modules/.store/${key}/node_modules/${c.name}`,
-            hasInstallScript: false,
-            package: {
-              bin: undefined,
-              bundleDependencies: undefined,
-              gypfile: undefined,
-              hasInstallScript: undefined,
-              scripts: undefined
-            }
-          }
-        })
+    idealTree.fsChildren.forEach(c => {
+      const workspace = {
+        edgesIn: new Set(),
+        edgesOut: new Map(),
+        children: [],
+        package: c.package,
+        hasInstallScript: c.hasInstallScript,
+        package: c.package,
+        location: c.location,
+        path: c.path
+      }
+      t.fsChildren.push(workspace)
     })
-    const memo = new Set()
-    function processEdges(node) {
-      if (memo.has(node)) { return }
-      memo.add(node)
-      const key = `${node.name}@${node.version}`
-      const node_modules_folder = node.isProjectRoot || node.isWorkspace ? join(node.location, 'node_modules') : `node_modules/.store/${key}/node_modules` 
-      for(const [name, edge] of node.edgesOut) {
-        // in the case of the workspace, the target is the real location of the workspace
-        // in the case of an external package, the targe of a node is itself
-        const to = edge.to && edge.to.target
-        // "to" can be null in case of unresolved optiona [peer]dependency
-        if (to) {
-          processEdges(to)
-        }
-
-        const toKey = `${to.name}@${to.version}`
-        const toLocation = to.isWorkspace ? to.location : `node_modules/.store/${toKey}/node_modules/${to.name}` 
-        t.children.push(
-          {
+    idealTree.inventory.forEach(c => {
+      // workspaces are already handled by fsChildren and project root has already been created
+      if (!c.isWorkspace && !c.isProjectRoot) {
+        const key = `${c.name}@${c.version}`
+        if (processed.has(key)) { return }
+        processed.add(key)
+        const location = `node_modules/.store/${key}/node_modules/${c.name}`
+        const newChild = {
             global: false,
             globalTop: false,
             isProjectRoot: false,
             isTop: false,
+            location,
+            name: c.name,
+            optional: c.optional,
+            top: { path: idealTree.root.path },
+            children: [],
+            edgesIn: new Set(),
+            edgesOut: new Map(),
+            binPaths: [],
+            fsChildren: [],
+            getBundler() { return null },
+            hasShrinkwrap: false,
+            inDepBundle: false,
+            integrity: null,
+            isLink: false,
+            isRoot: false,
+            path: `${idealTree.root.path}/${location}`,
+            realpath: `${idealTree.root.path}/${location}`,
+            resolved: c.resolved,
+            package: c.package,
+          }
+        newChild.target = newChild
+        t.children.push(newChild)
+      }
+    })
+    const memo = new Set()
+    function processEdges(node) {
+      const key = `${node.name}@${node.version}`
+      if (memo.has(key)) { return }
+      memo.add(key)
+      const fromLocation = node.isWorkspace ? node.location : `node_modules/.store/${key}/node_modules/${node.name}` 
+      const from = node.isProjectRoot ? t
+          : node.isWorkspace ? t.fsChildren.find(c => c.location === node.location)
+          : t.children.find(c => c.location === fromLocation)
+      const node_modules_folder = node.isProjectRoot || node.isWorkspace ? join(node.location, 'node_modules') : `node_modules/.store/${key}/node_modules` 
+      for(const [name, edge] of node.edgesOut) {
+        const to = edge.to
+        // We have a failed dependency... ignore
+        if (!to.target) {
+          return
+        }
+
+        processEdges(to.target)
+
+        const binNames = to.package.bin && Object.keys(to.package.bin) || []
+
+        const toKey = `${to.name}@${to.version}`
+        const toLocation = to.isWorkspace ? to.location : `node_modules/.store/${toKey}/node_modules/${to.name}` 
+        const target = to.isWorkspace ? t.fsChildren.find(c => c.location === to.target.location) : t.children.find(c => c.location === toLocation)
+
+        binNames.forEach(bn => {
+            target.binPaths.push(`${from.realpath}/node_modules/.bin/${bn}`)
+            })
+
+        const link = {
+            global: false,
+            globalTop: false,
+            isProjectRoot: false,
+            edgesIn: new Set(),
+            edgesOut: new Map(),
+            binPaths: [],
+            isTop: false,
+            optional: edge.optional,
             location: `${node_modules_folder}/${to.name}`,
             path: `${idealTree.root.path}/${node_modules_folder}/${to.name}`,
-            realpath: `${idealTree.root.path}/${toLocation}`,
-            name: 'which-link',
-            resolved: 'which-link',
+            realpath: target.path,
+            name: toKey,
+            resolved:toKey,
             top: { path: idealTree.root.path },
             children: [],
             fsChildren: [],
             isLink: true,
             isRoot: false,
             package: { _id: 'abc', bundleDependencies: undefined, deprecated: undefined },
-            target: {
-              path: `${idealTree.root.path}/${toLocation}`,
-              hasInstallScript: false,
-              package: {
-                bin: undefined,
-                bundleDependencies: undefined,
-                gypfile: undefined,
-                hasInstallScript: undefined,
-                scripts: undefined
-              }
-            }
-          })
+            target
+          }
+        const newEdge1 = { optional: edge.optional, from, to: link }
+        from.edgesOut.set(to.name, newEdge1)
+        link.edgesIn.add(newEdge1)
+        const newEdge2 = { optional: false, from: link, to: target }
+        link.edgesOut.set(to.name, newEdge2)
+        target.edgesIn.add(newEdge2)
+        t.children.push(link)
       }
     }
     processEdges(idealTree)
@@ -268,6 +293,7 @@ module.exports = cls => class Reifier extends cls {
     await this[_loadTrees](options)
 
     const old = this.idealTree
+
     const isolatedTree = this[_createIsolatedTree](this.idealTree)
     this.idealTree = isolatedTree
 
