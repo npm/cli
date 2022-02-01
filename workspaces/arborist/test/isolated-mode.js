@@ -3,6 +3,19 @@ const fs = require('fs')
 const path = require('path')
 const os = require('os')
 
+const oldMap = Map
+
+class newMap extends oldMap {
+  get(prop) {
+    const newThis = this.__target || this
+    if (newThis !== this) {
+      debugger
+    }
+    return oldMap.prototype.get.bind(newThis)(prop)
+  }
+}
+Map = newMap
+
 const Arborist = require('../lib/arborist')
 const { getRepo } = require('./nock')
 
@@ -189,7 +202,7 @@ const rule7 = {
   }
 }
 
-tap.only('most simple happy scenario', async t => {
+tap.test('most simple happy scenario', async t => {
   /*
     *
     * Dependency graph:
@@ -233,7 +246,7 @@ tap.only('most simple happy scenario', async t => {
   rule7.apply(t, dir, resolved, asserted)
 })
 
-tap.only('simple peer dependencies scenarios', async t => {
+tap.test('simple peer dependencies scenarios', async t => {
   /*
     * Dependencies:
     *
@@ -287,7 +300,7 @@ tap.only('simple peer dependencies scenarios', async t => {
 })
 
 
-tap.only('Lock file is same in hoisted and in isolated mode', async t => {
+tap.test('Lock file is same in hoisted and in isolated mode', async t => {
   const graph = {
   registry: [
       { name: 'which', version: '2.0.2' }
@@ -315,7 +328,7 @@ tap.only('Lock file is same in hoisted and in isolated mode', async t => {
   t.same(hoistedModeLockFile, isolatedModeLockFile, 'hoited mode and isolated mode produce the same lockfile')
 })
 
-tap.only('Basic workspaces setup', async t => {
+tap.test('Basic workspaces setup', async t => {
   const graph = {
     registry: [
         { name: 'which', version: '1.0.0', dependencies: { isexe: '^1.0.0' } },
@@ -388,7 +401,7 @@ tap.only('Basic workspaces setup', async t => {
   rule7.apply(t, dir, resolved, asserted)
 })
 
-tap.only('resolved versions are the same on isolated and in hoisted mode', async t => {
+tap.test('resolved versions are the same on isolated and in hoisted mode', async t => {
   const graph = {
     registry: [
         { name: 'which', version: '1.0.0', dependencies: { isexe: '^1.0.0' } },
@@ -471,7 +484,7 @@ tap.only('resolved versions are the same on isolated and in hoisted mode', async
   rule7.apply(t, dir, resolved, new Set())
 })
 
-tap.only('peer dependency chain', async t => {
+tap.test('peer dependency chain', async t => {
   // Input of arborist
   const graph = {
     registry: [
@@ -514,7 +527,7 @@ tap.only('peer dependency chain', async t => {
   rule7.apply(t, dir, resolved, asserted)
 })
 
-tap.only('failing optional deps are not installed', async t => {
+tap.test('failing optional deps are not installed', async t => {
   // Input of arborist
   const graph = {
     registry: [
@@ -561,7 +574,7 @@ tap.test('Optional deps are installed when possible', async t => {
   t.notOk(fs.existsSync(path.join(dir, 'node_modules', '.bin', 'which')))
 })
 
-tap.test('shrinkwrap', async t => {
+tap.only('shrinkwrap', async t => {
   const shrinkwrap = JSON.stringify({
     "name": "foo",
     "version": "1.2.3",
