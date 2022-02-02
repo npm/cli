@@ -1,0 +1,126 @@
+Let us explore how reify works when a dependency comes with a shrinkwrap.
+
+The first step is to load the trees, there a two trees:
+- The virtual tree, which represents the lock file as it was last time an 'npm install' command was run
+- The ideal tree, which is how the graph should look like with the current package.json files and lock files.
+
+The ideal tree does not take shrinkwraps or optional dependencies into consideration.
+
+The second step creates a diff tree. The diff tree is a description of the changes that need to be done to the file system to go from the virtual tree to the ideal tree.
+
+Let us explore in more details what exactly happens during this second step.
+
+It calls 'Diff.calculate'.
+It takes an object called 'shrinkwrapInflated' and which is an empty set, at least for now
+It takes a list called filteredNodes which is empty, at least for now
+It also take the ideal tree and the actual tree.
+
+Since there a no elements in the filteredNodes list, the only thing this function does is creating a new Diff object and passing it to a function called depth.
+
+It also passes two functions as parameters to the depth function, one called getChildren and one called leave.
+
+Let's explore these tree options in order:
+- tree
+  it is a Diff object which is initialized with the actual and the virtual tree.
+
+- getChildren
+  This function is meant to be an abstraction around the Diff object to extract its children, but it seems to have other side effects as well...
+  It gets all the children and fsChildren's children.
+  If the ideal tree is has a shrinkwrap, then we return that we have not children AND we add the diff object itself to diff.leaves... I do not understand this (yet).
+  If the ideal tree does not have a shrinkwrap, then we loop over all the children of both ideal and actual tree.
+  For each of them, we call a function called diffNode with a bunch of parameters. this function adds an initialized diff object to the children array.
+  If after that no children where populated then we add the diff itself to its own leaves.
+- leave
+  it is a function to be run for each node in the tree but only once per node.
+  the fact that we use the parameter "leave" instead of the parameter "visit" means that we traverse the graph from top to bottom.
+  this function creates a graph of diffs.
+
+So I think it kind of makes sense.
+
+To summarize, what is useful for the diff algoritm is the children and fsChildren.
+
+The next step is 'reifyPackages', I suppose that this method performs the diff actions to disk.
+
+Let's double check...
+The first think it does is call a function call "retireShallowNodes"
+  This one adds to a queue called "addNodeToTrashList" the direct children of the root that are marked for deletion. The rational for this function is to enable rollback... I do not understand this but I will skip over the rollback code for now.
+
+The second step is "createSparseTree",
+  We get the ideal trees of the leaves node that have to be added or changed.
+  For each leaf node, we traverse all the directories that have to be created, and if we indeed created them then we store that information somewhere, so the result of this is the entire folder structure being created.
+
+Then the second step is "addOmitsToTrashList"
+  This step is useful only for the commands run with some flag that tell to omit certain kind of dependencies, I will not dive into this now.
+
+Then comes the interesting function: "loadShrinkwrapsAndUpdateTrees"_addOmitsToTrashList
+  We get all the leaves that have a shrinkwrap. (I am not sure how it works if the package having a shrinkwrap is not a leaf...)
+  Then, for each node having a shrinkwrap:
+    - 1 : we call "reifyNode" That function seems to do three things
+      - 1 : "checkBins": I do not understand this function but it seems to do nothing in our particular case
+      - 2 : "extractOrLink": (side note: when we extract a package, we assume that it is in the node_modules of its parent... that will not fly for isolated mode). It simply extract the archive into the path.
+      - 3 : "warnDeprecated": simply logs a warning if the package is marked as deprecated
+    - 2 : We create a new Arborist object for that node.
+    - 3 : call "loadVirtual" to get what is actually already installed in that package (it should be nothing)
+      - We load the shrinkwrap from this package.
+      - We call "loadRoot" with that shrinkwrap object.
+        - Which calls "loadWorkspaces, which is defined somewhere else but I expect it to do nothing since the package dones not have any workspace.
+      - We call "loadFromShrinkwrap"
+        - We call "checkRootEdges": We get the first level edges from the lock file...
+                                    We get the first level edges from the ideal node
+                  This function verifies that the edges out of the ideal tree and of the shrinkwrap are the same. This should always be the case in normal scenarios.
+        - We set the node.meta (node being our idealNode for that shrinkwrapped package) to the shrinkwrap object.
+        - We call "resolveNodes"
+           - For each node in the shrinkwrap we call "loadNode"
+               This creates a Node (using the data structure that we try to avoid), so it is kind of hard coded that the shrinkwrapped packages will have their dependencies hoisted.
+        - We call "resolveLinks" with the new created nodes
+          This does nothing because the previous method did not return any link
+        - Then we call "reCalcDepFlags": it re-calculate all the flags like "dev", "peer", "optional"... I do not think that I need to understand this right now.
+      - We call "treeCheck" which I couldn't debug so I don't know what it does
+    - Then we call diff trees again... which does not seem to have picked up the new tree!
+  But... it seems that the whole dance is happening again! It behaves like there are two packages that have a shrinkwrap.
+Maybe it is due to my spy being broken... How did the code manage to extract the target of a diff node out of my spy?
+Why do we manage to get the proxy unwrapped?
+
+The node comes from diff.ideal and where does that come from? the object being wrapped is the same as the one that is not wrapped, so there is a leak! Let's see where this diff.ideal is set: It is set in the constructor of diff.
+
+That is because the ideal tree is gotten after we restore the old tree :(
+
+
+Creating a now node mutates the ideal tree!
+
+We need the edges to have a name a type and a spec!!!! //TODO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
