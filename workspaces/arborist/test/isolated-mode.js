@@ -576,41 +576,27 @@ tap.test('Optional deps are installed when possible', async t => {
 
 tap.only('shrinkwrap', async t => {
   const shrinkwrap = JSON.stringify({
-    "name": "foo",
-    "version": "1.2.3",
+    "name": "which",
+    "version": "1.0.0",
     "lockfileVersion": 2,
     "requires": true,
     "packages": {
       "": {
-        "name": "foo",
-        "version": "1.2.3",
+        "name": "which",
+        "version": "1.0.0",
         "dependencies": {
-          "which": "1.0.0"
+          "isexe": "^1.0.0"
         }
       },
       "node_modules/isexe": {
         "version": "1.0.0",
         "resolved": "##REG##/isexe/1.0.0.tar"
-      },
-      "node_modules/which": {
-        "version": "1.0.0",
-        "resolved": "##REG##/which/1.0.0.tar",
-        "dependencies": {
-          "isexe": "^1.0.0"
-        }
       }
     },
     "dependencies": {
       "isexe": {
         "version": "1.0.0",
         "resolved": "##REG##/isexe/1.0.0.tar"
-      },
-      "which": {
-        "version": "1.0.0",
-        "resolved": "##REG##/which/1.0.0.tar",
-        "requires": {
-          "isexe": "^1.0.0"
-        }
       }
     }
   })
