@@ -199,7 +199,7 @@ t.test('should throw ECIGLOBAL', async t => {
 })
 
 t.test('should remove existing node_modules before installing', async t => {
-  t.plan(2)
+  t.plan(3)
   const testDir = t.testdir({
     node_modules: {
       'some-file': 'some contents',
@@ -212,6 +212,7 @@ t.test('should remove existing node_modules before installing', async t => {
     '@npmcli/arborist': function () {
       this.loadVirtual = () => Promise.resolve(true)
       this.reify = async (options) => {
+        t.equal(options.packageLock, true, 'npm ci should never ignore lock')
         t.equal(options.save, false, 'npm ci should never save')
         // check if node_modules was removed before reifying
         const contents = await readdir(testDir)
