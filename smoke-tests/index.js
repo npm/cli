@@ -21,6 +21,7 @@ t.cleanSnapshot = s =>
     .replace(/\r\n/g, '\n')
     .replace(/ \(in a browser\)/g, '')
     .replace(/^npm@.* /gm, 'npm ')
+    .replace(/^.*debug-[0-9]+.log$/gm, '')
 
 // setup server
 const { start, stop, registry } = require('./server.js')
@@ -319,4 +320,32 @@ t.test('npm update --save', async t => {
     '1.1.1',
     'should have expected update --save lockfile result'
   )
+})
+
+t.test('npm ci', async t => {
+  await exec(`${npmBin} uninstall abbrev`)
+  await exec(`${npmBin} install abbrev@1.0.4 --save-exact`)
+
+  t.equal(
+    JSON.parse(readFile('package-lock.json')).packages['node_modules/abbrev'].version,
+    '1.0.4',
+    'should have stored exact installed version'
+  )
+
+  await exec(`${npmBin} pkg set "dependencies.abbrev=^1.1.1"`)
+
+  try {
+    const npmOpts = [
+      `--registry=${registry}`,
+      `--cache="${cacheLocation}"`,
+      `--userconfig="${userconfigLocation}"`,
+      '--no-audit',
+      '--no-update-notifier',
+      '--loglevel=error',
+    ].join(' ')
+    const npmBin = `"${process.execPath}" "${npmLocation}" ${npmOpts}`
+    await exec(`${npmBin} ci`)
+  } catch (err) {
+    t.matchSnapshot(err.stderr, 'should throw mismatch deps in lock file error')
+  }
 })
