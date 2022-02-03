@@ -1,5 +1,5 @@
 {
-  "version": "8.4.0",
+  "version": "8.4.1",
   "name": "npm",
   "description": "a package manager for JavaScript",
   "workspaces": [
@@ -69,11 +69,11 @@
     "chalk": "^4.1.2",
     "chownr": "^2.0.0",
     "cli-columns": "^4.0.0",
-    "cli-table3": "^0.6.0",
+    "cli-table3": "^0.6.1",
     "columnify": "~1.5.4",
     "fastest-levenshtein": "^1.0.12",
     "glob": "^7.2.0",
-    "graceful-fs": "^4.2.8",
+    "graceful-fs": "^4.2.9",
     "hosted-git-info": "^4.1.0",
     "ini": "^2.0.0",
     "init-package-json": "^2.0.5",

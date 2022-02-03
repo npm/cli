@@ -1,3 +1,58 @@
+## v8.4.1 (2022-02-03)
+
+### Bug Fixes
+
+* [`1b9338554`](https://github.com/npm/cli/commit/1b9338554fc006954fae54c25c33e64e26ae997e)
+  [#4359](https://github.com/npm/cli/pull/4359)
+  fix(log): pass in logger to external modules
+  ([@wraithgar](https://github.com/wraithgar))
+* [`457e0ae61`](https://github.com/npm/cli/commit/457e0ae61bbc55846f5af44afa4066921923490f)
+  [#4363](https://github.com/npm/cli/pull/4363)
+  fix(ci): lock file validation
+  ([@ruyadorno](https://github.com/ruyadorno))
+* [`c0519edc1`](https://github.com/npm/cli/commit/c0519edc16f66370b2153430342247b4ec5cb496)
+  [#4364](https://github.com/npm/cli/pull/4364)
+  fix(ci): should not use package-lock config
+  ([@ruyadorno](https://github.com/ruyadorno))
+* [`ebb428375`](https://github.com/npm/cli/commit/ebb428375cd417c096d5a648df92620dc4215a3d)
+  [#4365](https://github.com/npm/cli/pull/4365)
+  fix(outdated): parse aliased modules
+  ([@ruyadorno](https://github.com/ruyadorno))
+
+### Documentation
+
+* [`0b0a7cc76`](https://github.com/npm/cli/commit/0b0a7cc767947ea738da50caa832d8a922e20ac6)
+  [#4361](https://github.com/npm/cli/pull/4361)
+  docs: bundleDependencies can be a boolean.
+  ([@forty](https://github.com/forty))
+
+### Dependencies
+
+* [`3d41447b9`](https://github.com/npm/cli/commit/3d41447b961a72f1ce541fea252d0cd462399c76)
+  [#4353](https://github.com/npm/cli/pull/4353)
+  deps: `wide-align@1.1.5`
+* [`dc1a0573a`](https://github.com/npm/cli/commit/dc1a0573ace328d985a741af76d03752b1dbf1ff)
+  [#4353](https://github.com/npm/cli/pull/4353)
+  deps: `socks-proxy-agent@6.1.1`
+* [`adcefef6b`](https://github.com/npm/cli/commit/adcefef6b953e0804f4a2de3a1912321f44c4a7e)
+  [#4353](https://github.com/npm/cli/pull/4353)
+  deps: `spdx-license-ids@3.0.11`
+* [`d7e2499e0`](https://github.com/npm/cli/commit/d7e2499e073301a62607266d3ab8f9b63d630fb5)
+  [#4353](https://github.com/npm/cli/pull/4353)
+  deps: `debug@4.3.3`
+* [`f0f307140`](https://github.com/npm/cli/commit/f0f30714002db979a2707d85c65bb92ae0ff76fe)
+  [#4353](https://github.com/npm/cli/pull/4353)
+  deps: `@npmcli/fs@1.1.0`
+* [`1cb107d33`](https://github.com/npm/cli/commit/1cb107d33d7e1499d92c3405fa0694142bdee8df)
+  [#4353](https://github.com/npm/cli/pull/4353)
+  deps: `is-core-module@2.8.1`
+* [`e198ac0d1`](https://github.com/npm/cli/commit/e198ac0d1c1e536db57e84af6e7f40089b4c1bfc)
+  [#4354](https://github.com/npm/cli/pull/4354)
+  deps: `cli-table3@0.6.1`
+* [`5a84e6515`](https://github.com/npm/cli/commit/5a84e6515a0331be20395ce2a6b1e892ecea20f8)
+  [#4355](https://github.com/npm/cli/pull/4355)
+  deps: `graceful-fs@4.2.9`
+
 ## v8.4.0 (2022-01-27)
 
 ### Features
