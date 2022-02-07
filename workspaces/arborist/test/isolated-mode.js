@@ -386,7 +386,6 @@ tap.only('Basic workspaces setup', async t => {
   // Note that we override this cache to prevent interference from other tests
   const cache = fs.mkdtempSync(`${os.tmpdir}/test-`)
   const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache  })
-  debugger
   await arborist.reify({ isolated: true })
 
   const asserted = new Set()
@@ -995,6 +994,42 @@ tap.only('virtual packages', async t => {
   rule7.apply(t, dir, resolved, asserted)
 })
 
+tap.only('postinstall scripts are run', async t => {
+  /*
+    *
+    * Dependency graph:
+    * 
+    * foo -> which -> isexe
+    *
+    */
+
+  // Input of arborist
+  const graph = {
+    registry: [
+      { name: 'which', version: '1.0.0', scripts: { postinstall: 'touch postInstallRanWhich' } },
+    ] ,
+    root: {
+      name: 'foo', version: '1.2.3', dependencies: { which: '1.0.0' }
+    },
+  }
+
+
+  const { dir, registry } = await getRepo(graph)
+
+  // Note that we override this cache to prevent interference from other tests
+  const cache = fs.mkdtempSync(`${os.tmpdir}/test-`)
+  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache  })
+  await arborist.reify({ isolated: true })
+
+  let postInstallRanWhich  = false
+  try {
+    fs.statSync(`${setupRequire(dir)('which')}/postInstallRanWhich`)
+    postInstallRanWhich   = true
+  } catch (_) {}
+  t.ok(postInstallRanWhich)
+})
+
+
 function setupRequire(cwd) {
   return function requireChain(...chain) {
     return chain.reduce((path, name) => {
@@ -1113,6 +1148,7 @@ function parseGraphRecursive(key, deps) {
 /*
   * TO TEST:
   *   --------------------------------------
+  * - rollbacks
   * - scoped installs
   * - overrides?
   * - changing repo from isolated to hoisted and from hoisted to isolated
