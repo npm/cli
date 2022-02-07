@@ -877,6 +877,105 @@ t.test('workspaces', t => {
     t.matchSnapshot(printTree(await tree))
   })
 
+  t.test('workspace nodes are used instead of fetching manifests when they are valid', async t => {
+    // turn off networking, this should never make a registry request
+    nock.disableNetConnect()
+    t.teardown(() => nock.enableNetConnect())
+
+    const path = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'root',
+        workspaces: ['workspace-a', 'workspace-b'],
+      }),
+      // the package-lock.json references version 1.0.0 of the workspace deps
+      // as it would if a user hand edited their workspace's package.json and
+      // now are attempting to reify with a stale package-lock
+      'package-lock.json': JSON.stringify({
+        name: 'root',
+        lockfileVersion: 2,
+        requires: true,
+        packages: {
+          '': {
+            name: 'root',
+            workspaces: ['workspace-a', 'workspace-b'],
+          },
+          'node_modules/workspace-a': {
+            resolved: 'workspace-a',
+            link: true,
+          },
+          'node_modules/workspace-b': {
+            resolved: 'workspace-b',
+            link: true,
+          },
+          'workspace-a': {
+            name: 'workspace-a',
+            version: '1.0.0',
+            dependencies: {
+              'workspace-b': '1.0.0',
+            },
+          },
+          'workspace-b': {
+            name: 'workspace-b',
+            version: '1.0.0',
+          },
+        },
+        dependencies: {
+          'workspace-a': {
+            version: 'file:workspace-a',
+            requires: {
+              'workspace-b': '1.0.0',
+            },
+          },
+          'workspace-b': {
+            version: 'file:workspace-b',
+          },
+        },
+      }),
+      node_modules: {
+        'workspace-a': t.fixture('symlink', '../workspace-a'),
+        'workspace-b': t.fixture('symlink', '../workspace-b'),
+      },
+      // the workspaces themselves are at 2.0.0 because they're what was edited
+      'workspace-a': {
+        'package.json': JSON.stringify({
+          name: 'workspace-a',
+          version: '2.0.0',
+          dependencies: {
+            'workspace-b': '2.0.0',
+          },
+        }),
+      },
+      'workspace-b': {
+        'package.json': JSON.stringify({
+          name: 'workspace-b',
+          version: '2.0.0',
+        }),
+      },
+    })
+
+    const arb = new Arborist({
+      ...OPT,
+      path,
+      workspaces: ['workspace-a', 'workspace-b'],
+    })
+
+    // this will reject if we try to fetch a manifest for some reason
+    const tree = await arb.buildIdealTree({
+      path,
+    })
+
+    const edgeA = tree.edgesOut.get('workspace-a')
+    t.ok(edgeA.valid, 'workspace-a should be valid')
+    const edgeB = tree.edgesOut.get('workspace-b')
+    t.ok(edgeB.valid, 'workspace-b should be valid')
+    const nodeA = edgeA.to.target
+    t.ok(nodeA.isWorkspace, 'workspace-a is definitely a workspace')
+    const nodeB = edgeB.to.target
+    t.ok(nodeB.isWorkspace, 'workspace-b is definitely a workspace')
+    const nodeBfromA = nodeA.edgesOut.get('workspace-b').to.target
+    t.equal(nodeBfromA, nodeB, 'workspace-b edgeOut from workspace-a is the workspace')
+  })
+
   t.end()
 })
 
