@@ -567,8 +567,8 @@ tap.only('Optional deps are installed when possible', async t => {
   
   t.ok(setupRequire(dir)('which'), 'Optional deps should be installed when possible')
 
-  // TODO: test that the bin files have been installed
-  t.notOk(fs.existsSync(path.join(dir, 'node_modules', '.bin', 'which')))
+  // TODO: make sure that existsSync is not deprecated
+  t.ok(fs.existsSync(path.join(dir, 'node_modules', '.bin', 'which')))
 })
 
 tap.test('shrinkwrap', async t => {
@@ -995,14 +995,6 @@ tap.only('virtual packages', async t => {
 })
 
 tap.only('postinstall scripts are run', async t => {
-  /*
-    *
-    * Dependency graph:
-    * 
-    * foo -> which -> isexe
-    *
-    */
-
   // Input of arborist
   const graph = {
     registry: [
@@ -1022,22 +1014,50 @@ tap.only('postinstall scripts are run', async t => {
   // Note that we override this cache to prevent interference from other tests
   const cache = fs.mkdtempSync(`${os.tmpdir}/test-`)
   const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache  })
+  await arborist.reify({ isolated: true })
+
+  const postInstallRanWhich = pathExists(`${setupRequire(dir)('which')}/postInstallRanWhich`)
+  t.ok(postInstallRanWhich)
+
+  const postInstallRanBar = pathExists(`${setupRequire(dir)('bar')}/postInstallRanBar`)
+  t.ok(postInstallRanBar)
+})
+
+tap.only('bins are installed', async t => {
+  // Input of arborist
+  const graph = {
+    registry: [
+      { name: 'which', version: '1.0.0', bin: './bin.js' },
+    ] ,
+    root: {
+      name: 'foo', version: '1.2.3', dependencies: { which: '1.0.0' }
+    },
+    workspaces: [
+      { name: 'bar', version: '1.0.0', dependencies: { which: '1.0.0' }, bin: './bin.js' }
+    ]
+  }
+
+
+  const { dir, registry } = await getRepo(graph)
+
+  // Note that we override this cache to prevent interference from other tests
+  const cache = fs.mkdtempSync(`${os.tmpdir}/test-`)
+  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache  })
   debugger
   await arborist.reify({ isolated: true })
 
-  let postInstallRanWhich  = false
-  try {
-    fs.statSync(`${setupRequire(dir)('which')}/postInstallRanWhich`)
-    postInstallRanWhich   = true
-  } catch (_) {}
-  t.ok(postInstallRanWhich)
+  // TODO: make the test not assume folder structure
+  const binFromWhichToWhich = pathExists(`${setupRequire(dir)('which')}/../.bin/which`)
+  t.ok(binFromWhichToWhich)
 
-  let postInstallRanBar  = false
-  try {
-    fs.statSync(`${setupRequire(dir)('bar')}/postInstallRanBar`)
-    postInstallRanBar   = true
-  } catch (_) {}
-  t.ok(postInstallRanBar)
+  const binFromRootToWhich = pathExists(`${dir}/node_modules/.bin/which`)
+  t.ok(binFromRootToWhich)
+
+  const binFromRootToBar = pathExists(`${dir}/node_modules/.bin/bar`)
+  t.ok(binFromRootToBar)
+
+  const binFromBarToWhich = pathExists(`${setupRequire(dir)('bar')}/node_modules/.bin/which`)
+  t.ok(binFromBarToWhich )
 })
 
 
@@ -1049,6 +1069,15 @@ function setupRequire(cwd) {
       }
       return resolvePackage(name, path)
     }, cwd)
+  }
+}
+
+function pathExists(path) {
+  try {
+    fs.statSync(path)
+    return true
+  } catch (_) {
+    return false
   }
 }
 
