@@ -1,6 +1,8 @@
 'use strict'
 
 const t = require('tap')
+const fs = require('fs')
+const path = require('path')
 const pack = require('../lib/index.js')
 const tnock = require('./fixtures/tnock.js')
 
@@ -23,6 +25,43 @@ t.test('packs from local directory', async t => {
 
   const tarball = await pack()
   t.ok(tarball)
+
+  t.teardown(async () => {
+    process.chdir(cwd)
+  })
+})
+
+t.test('writes tarball to file when dryRun === false', async t => {
+  const testDir = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'my-cool-pkg',
+      version: '1.0.0',
+      scripts: {
+        prepack: 'touch prepack',
+        postpack: 'touch postpack',
+      },
+    }, null, 2),
+  })
+
+  const cwd = process.cwd()
+  process.chdir(testDir)
+
+  const tarball = await pack('file:.', {
+    dryRun: false,
+    packDestination: testDir,
+    log: { level: 'silent' }, // so the test doesn't try to log
+  })
+  t.ok(tarball)
+  const expectedTarball = path.join(testDir, 'my-cool-pkg-1.0.0.tgz')
+  t.ok(fs.existsSync(expectedTarball), 'file was written')
+  t.same(fs.readFileSync(expectedTarball), tarball, 'wrote same data that was returned')
+
+  const prepackTimestamp = (await fs.promises.stat(path.join(testDir, 'prepack'))).mtime
+  const tarballTimestamp = (await fs.promises.stat(expectedTarball)).mtime
+  const postpackTimestamp = (await fs.promises.stat(path.join(testDir, 'postpack'))).mtime
+
+  t.ok(prepackTimestamp < tarballTimestamp, 'prepack ran before tarball was written')
+  t.ok(tarballTimestamp < postpackTimestamp, 'postpack ran after tarball was written')
 
   t.teardown(async () => {
     process.chdir(cwd)
