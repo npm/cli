@@ -1011,6 +1011,9 @@ tap.only('postinstall scripts are run', async t => {
     root: {
       name: 'foo', version: '1.2.3', dependencies: { which: '1.0.0' }
     },
+    workspaces: [
+      { name: 'bar', version: '1.0.0', scripts: { postinstall: 'touch postInstallRanBar' } },
+    ]
   }
 
 
@@ -1019,6 +1022,7 @@ tap.only('postinstall scripts are run', async t => {
   // Note that we override this cache to prevent interference from other tests
   const cache = fs.mkdtempSync(`${os.tmpdir}/test-`)
   const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache  })
+  debugger
   await arborist.reify({ isolated: true })
 
   let postInstallRanWhich  = false
@@ -1027,6 +1031,13 @@ tap.only('postinstall scripts are run', async t => {
     postInstallRanWhich   = true
   } catch (_) {}
   t.ok(postInstallRanWhich)
+
+  let postInstallRanBar  = false
+  try {
+    fs.statSync(`${setupRequire(dir)('bar')}/postInstallRanBar`)
+    postInstallRanBar   = true
+  } catch (_) {}
+  t.ok(postInstallRanBar)
 })
 
 

@@ -176,11 +176,7 @@ async function getRepo (graph) {
   }
   workspaces.forEach(wp => {
     repo.packages[wp.name] = { 
-      'package.json': JSON.stringify({
-        name: wp.name,
-        version: wp.version,
-        dependencies: wp.dependencies
-      }),
+      'package.json': JSON.stringify(wp),
       'index.js': `console.log('Hello from workspace ${wp.name}')`
     }
   })
