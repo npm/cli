@@ -85,7 +85,7 @@
     "libnpmfund": "^2.0.2",
     "libnpmhook": "^7.0.1",
     "libnpmorg": "^3.0.1",
-    "libnpmpack": "^3.0.1",
+    "libnpmpack": "^3.1.0",
     "libnpmpublish": "^5.0.1",
     "libnpmsearch": "^4.0.1",
     "libnpmteam": "^3.0.1",
