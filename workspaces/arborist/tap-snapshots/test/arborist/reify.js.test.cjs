@@ -33164,6 +33164,10 @@ exports[`test/arborist/reify.js TAP save-prod, with optional > must match snapsh
 {"dependencies":{"abbrev":"^1.1.1"}}
 `
 
+exports[`test/arborist/reify.js TAP saveBundle > must match snapshot 1`] = `
+{"dependencies":{"abbrev":"^1.1.1"},"bundleDependencies":["abbrev"]}
+`
+
 exports[`test/arborist/reify.js TAP saving the ideal tree save some stuff > lock after save 1`] = `
 Object {
   "dependencies": Object {
