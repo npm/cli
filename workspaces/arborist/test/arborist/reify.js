@@ -1783,6 +1783,17 @@ t.test('save-prod, with optional', async t => {
   t.matchSnapshot(fs.readFileSync(path + '/package.json', 'utf8'))
 })
 
+t.test('saveBundle', async t => {
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      dependencies: { abbrev: '*' },
+    }),
+  })
+  const arb = newArb({ path })
+  await arb.reify({ add: ['abbrev'], saveType: 'prod', saveBundle: true })
+  t.matchSnapshot(fs.readFileSync(path + '/package.json', 'utf8'))
+})
+
 t.test('no saveType: dev w/ compatible peer', async t => {
   const path = t.testdir({
     'package.json': JSON.stringify({
