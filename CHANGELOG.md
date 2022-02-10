@@ -1,3 +1,71 @@
+## v8.5.0 (2022-02-10)
+
+### Features
+
+* [`0cc9d4c51`](https://github.com/npm/cli/commit/0cc9d4c51a337af0edd2e20c6fadb26807e5d09f)
+  [#4372](https://github.com/npm/cli/pull/4372)
+  feat(deps): `@npmcli/config@3.0.0 - introduce automatic workspace roots`
+  ([@nlf](https://github.com/nlf))
+
+### Bug Fixes
+
+* [`fb6e2ddf9`](https://github.com/npm/cli/commit/fb6e2ddf942bacf5ae745d16c2d57f3836dce75a)
+  [#4386](https://github.com/npm/cli/pull/4386)
+  fix(log): pass in logger to more external modules
+  ([@wraithgar](https://github.com/wraithgar))
+* [`0e231d4a4`](https://github.com/npm/cli/commit/0e231d4a40526608411aca0a6e7cf27c750f2409)
+  [#4389](https://github.com/npm/cli/pull/4389)
+  fix(pack): let libnpmpack take care of file writes
+  ([@nlf](https://github.com/nlf))
+* [`e2f1f7b04`](https://github.com/npm/cli/commit/e2f1f7b045a3ae9840f431cb4266ba046831247b)
+  [#4389](https://github.com/npm/cli/pull/4389)
+  fix(publish): pass dryRun: true to libnpmpack so it doesnt write a tarball
+  ([@nlf](https://github.com/nlf))
+* [`2937b43d4`](https://github.com/npm/cli/commit/2937b43d4629225d83b6c71833df00743209f5ff)
+  [#4389](https://github.com/npm/cli/pull/4389)
+  fix(config): add pack-destination flattener
+  ([@nlf](https://github.com/nlf))
+
+### Documentation
+
+* [`b836d596f`](https://github.com/npm/cli/commit/b836d596f9d98cd7849882000cad11ad2a0b9a26)
+  [#4384](https://github.com/npm/cli/pull/4384)
+  docs: add cross-references between npx and npm exec
+  ([@Delapouite](https://github.com/Delapouite))
+* [`f3fbeea5a`](https://github.com/npm/cli/commit/f3fbeea5a173902ca7455c6c94a9e677591b0410)
+  [#4388](https://github.com/npm/cli/pull/4388)
+  docs: add --save-bundle to --save usage output
+  ([@wraithgar](https://github.com/wraithgar))
+
+### Dependencies
+
+* [`8732f393e`](https://github.com/npm/cli/commit/8732f393ee547e2eada4317613599517c1d8ec0a)
+  deps: `@npmcli/arborist@4.3.1`
+    * [`2ba09cc0d`](https://github.com/npm/cli/commit/2ba09cc0d7d56a064aa67bbb1881d381e6504888)
+      [#4371](https://github.com/npm/cli/pull/4371)
+      fix(arborist): check if a spec is a workspace before fetching a manifest, closes #3637
+      ([@nlf](https://github.com/nlf))
+    * [`e631faf7b`](https://github.com/npm/cli/commit/e631faf7b5f414c233d723ee11413264532b37de)
+      [#4387](https://github.com/npm/cli/pull/4387)
+      fix(arborist): save bundleDependencies to package.json when reifying
+      ([@wraithgar](https://github.com/wraithgar))
+* [`d3a7c15e1`](https://github.com/npm/cli/commit/d3a7c15e1e3d305a0bf781493406dfb1fdbaca35)
+  deps: `libnpmpack@3.1.0`
+    * [`4884821f6`](https://github.com/npm/cli/commit/4884821f637ca1992b494fbdbd94d000e4428a40)
+      [#4389](https://github.com/npm/cli/pull/4389)
+      feat(libnpmpack): write tarball file when dryRun === false
+      ([@nlf](https://github.com/nlf))
+* [`ab926995e`](https://github.com/npm/cli/commit/ab926995e43ccdd048a6e1164b436fea1940f932)
+  [#4393](https://github.com/npm/cli/pull/4393)
+  deps: `npm-registry-fetch@12.0.2`
+* [`1c0d0699c`](https://github.com/npm/cli/commit/1c0d0699c13e1cb36a69f2ac4acdb78ea205aa3e)
+  [#4394](https://github.com/npm/cli/pull/4394)
+  deps: `npmlog@6.0.1`
+    * changed notice color from blue to cyan for improved readability
+* [`3c33a5842`](https://github.com/npm/cli/commit/3c33a584213e4f2230f3b912fad2c2f5786906fb)
+  [#4400](https://github.com/npm/cli/pull/4400)
+  deps: `make-fetch-happen@10.0.2`
+
 ## v8.4.1 (2022-02-03)
 
 ### Bug Fixes
