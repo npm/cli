@@ -16,6 +16,7 @@ async function pack (spec = 'file:.', opts = {}) {
 
   // Default to true if no log options passed, set to false if we're in silent
   // mode
+  // TODO: npmlog
   const banner = !opts.log || (opts.log.level !== 'silent')
 
   if (spec.type === 'directory') {

@@ -15,38 +15,6 @@ const baseOpts = {
     : process.env.SHELL || 'sh',
 }
 
-t.test('disable, enable log progress', t => {
-  t.plan(3)
-
-  const path = t.testdir({
-    'package.json': JSON.stringify({
-      name: 'pkg',
-    }),
-  })
-  const runScript = t.mock('../lib/run-script.js', {
-    '@npmcli/ci-detect': () => false,
-    '@npmcli/run-script': async () => {
-      t.ok('should call run-script')
-    },
-    '../lib/no-tty.js': () => false,
-  })
-  const log = {
-    ...baseOpts.log,
-    disableProgress () {
-      t.ok('should disable progress')
-    },
-    enableProgress () {
-      t.ok('should enable progress')
-    },
-  }
-
-  runScript({
-    ...baseOpts,
-    log,
-    path,
-  })
-})
-
 t.test('no package.json', t => {
   t.plan(1)
 

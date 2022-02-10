@@ -59,7 +59,9 @@ const commands = {
   },
 }
 
-const commandFiles = fs.readdirSync(__dirname).filter((f) => path.extname(f) === '.js' && f !== __filename)
+const commandFiles = fs
+  .readdirSync(__dirname)
+  .filter((f) => path.extname(f) === '.js' && f !== __filename)
 
 if (bin.debug) {
   console.error({ bin, options, commandFiles })

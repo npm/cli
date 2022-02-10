@@ -1,6 +1,6 @@
 const readJson = require('./read-json.js')
 const version = require('./version.js')
-const proclog = require('./proc-log.js')
+const proclog = require('proc-log')
 
 module.exports = async (newversion, opts = {}) => {
   const {
@@ -15,6 +15,7 @@ module.exports = async (newversion, opts = {}) => {
     ignoreScripts = false,
     scriptShell = undefined,
     preid = null,
+    // XXX: BREAKING remove log option
     log = proclog,
     message = 'v%s',
   } = opts

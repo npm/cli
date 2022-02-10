@@ -8,13 +8,19 @@ const proggy = require('proggy')
 
 const { bin: options } = require('./options.js')
 
+// allow for last arg to proc log to be metadata that won't get displayed
 const META = Symbol('meta')
+
 const parseArgs = (...args) => {
   const { [META]: isMeta } = args[args.length - 1] || {}
   return isMeta
     ? [args[args.length - 1], ...args.slice(0, args.length - 1)]
     : [{}, ...args]
 }
+
+log.meta = (meta = {}) => ({ [META]: true, ...meta })
+
+const addLogListener = (fn) => process.on('log', (...args) => fn(...parseArgs(...args)))
 
 const levels = new Map([
   'silly',
@@ -27,14 +33,13 @@ const levels = new Map([
   'silent',
 ].map((level, index) => [level, index]))
 
-const initStream = (stream, { eol = os.EOL, loglevel = 'silly', colors = false } = {}) => {
-  const levelIndex = levels.get(loglevel)
-
+const createFormatter = ({ eol = os.EOL, colors = false } = {}) => {
   const magenta = m => colors ? `\x1B[35m${m}\x1B[39m` : m
   const dim = m => colors ? `\x1B[2m${m}\x1B[22m` : m
   const red = m => colors ? `\x1B[31m${m}\x1B[39m` : m
+  const green = m => colors ? `\x1B[32m${m}\x1B[39m` : m
 
-  const formatter = (level, ...args) => {
+  return (level, ...args) => {
     const depth = level === 'error' && args[0] && args[0].code === 'ERESOLVE' ? Infinity : 10
 
     if (level === 'info' && args[0] === 'timeEnd') {
@@ -44,39 +49,40 @@ const initStream = (stream, { eol = os.EOL, loglevel = 'silly', colors = false }
     }
 
     const messages = args.map(a => typeof a === 'string' ? a : inspect(a, { depth, colors }))
-    const pref = `${process.pid} ${magenta(level)} `
+    const levelColor = level === 'progress' ? green : magenta
+    const pref = `${dim(process.pid)} ${levelColor(level)} `
 
     return pref + format(...messages).trim().split('\n').join(`${eol}${pref}`) + eol
   }
+}
 
-  process.on('log', (...args) => {
-    const [meta, level, ...logArgs] = parseArgs(...args)
-
+console.log(options.loglevel)
+if (options.loglevel !== 'silent') {
+  const levelIndex = levels.get(options.loglevel)
+  const format = createFormatter({ eol: '\n', colors: options.colors })
+  addLogListener((meta, level, ...logArgs) => {
     if (levelIndex <= levels.get(level) || meta.force) {
-      stream.write(formatter(level, ...logArgs))
+      process.stderr.write(format(level, ...logArgs))
     }
   })
 }
-
-initStream(process.stderr, {
-  eol: '\n',
-  colors: options.colors,
-  loglevel: options.loglevel,
-})
 
 if (options.logfile) {
   log.silly('logfile', options.logfile)
   mkdirp.sync(dirname(options.logfile))
   const fd = fs.openSync(options.logfile, 'a')
-  initStream({ write: (str) => fs.writeSync(fd, str) })
-}
-
-if (options.progress) {
-  const client = proggy.createClient()
-  client.on('progress', (...args) => {
-    console.error(...args)
+  const format = createFormatter({ eol: os.EOL, colors: false })
+  addLogListener((meta, level, ...logArgs) => {
+    fs.writeSync(fd, format(level, ...logArgs))
   })
 }
 
-log.meta = (meta = {}) => ({ [META]: true, ...meta })
+if (options.progress) {
+  const client = proggy.createClient({ normalize: true })
+  const format = createFormatter({ eol: '\n', colors: options.colors })
+  client.on('progress', (key, data) => {
+    process.stderr.write(format('progress', key, `${(data.value / data.total * 100).toFixed(0)}%`))
+  })
+}
+
 module.exports = log

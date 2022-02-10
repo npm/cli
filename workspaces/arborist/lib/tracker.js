@@ -1,15 +1,7 @@
 const _progress = Symbol('_progress')
 const _onError = Symbol('_onError')
-const log = require('proc-log')
+const _childTracker = Symbol('_childTracker')
 const proggy = require('proggy')
-const c = require('chalk')
-
-const titles = {
-  g: c.green('GROUP      '),
-  gs: c.green('GROUP_SUB  '),
-  f: c.red('FINISH     '),
-  fs: c.red('FINISH_SUB '),
-}
 
 module.exports = cls => class Tracker extends cls {
   constructor (options = {}) {
@@ -42,11 +34,7 @@ module.exports = cls => class Tracker extends cls {
     } else if (!hasTracker || !hasSubtracker) {
       // 3. existing parent tracker, no subsection tracker
       // Create a new subtracker and update parents
-      this[_progress].get(section).update(
-        this[_progress].get(section).value,
-        this[_progress].get(section).total + 1)
-      this[_progress].set(`${section}:${key}`,
-        proggy.createTracker(`${section}:${subsection}`))
+      this[_childTracker](section, subsection, key)
     }
     // 4. existing parent tracker, existing subsection tracker
     // skip it
@@ -77,20 +65,29 @@ module.exports = cls => class Tracker extends cls {
       }
 
       // remove parent tracker
-      console.log(titles.f, `${section}:${key}__${subsection}`)
       this[_progress].get(section).finish()
-      this[_progress].delete(section)
     } else if (!hasTracker && subsection === null) {
       // 1. no existing parent tracker, no subsection
       this[_onError](`Tracker "${section}" does not exist`)
     } else if (!hasTracker || hasSubtracker) {
       // 2. subtracker exists
       // Finish subtracker and remove from this[_progress]
-      console.log(titles.fs, `${section}:${key}__${subsection}`)
-      this[_progress].get(`${section}:${key}`).finish()
-      this[_progress].delete(`${section}:${key}`)
+      this[_childTracker](section, subsection, key, true)
     }
     // 3. existing parent tracker, no subsection
+    // skip it
+  }
+
+  [_childTracker] (section, subsection, key, stop) {
+    const parentTracker = this[_progress].get(section)
+
+    if (stop) {
+      parentTracker.update(parentTracker.value + 1)
+      this[_progress].get(`${section}:${key}`).finish()
+    } else {
+      parentTracker.update(parentTracker.value, parentTracker.total + 1)
+      this[_progress].set(`${section}:${key}`, proggy.createTracker(`${section}:${subsection}`))
+    }
   }
 
   [_onError] (msg) {

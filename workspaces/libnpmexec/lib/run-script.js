@@ -41,49 +41,39 @@ const run = async ({
     },
   }
 
-  if (log && log.disableProgress) {
-    log.disableProgress()
-  }
+  if (script === scriptShell) {
+    const isTTY = !noTTY()
 
-  try {
-    if (script === scriptShell) {
-      const isTTY = !noTTY()
+    if (isTTY) {
+      if (ciDetect()) {
+        return log.warn('exec', 'Interactive mode disabled in CI environment')
+      }
 
-      if (isTTY) {
-        if (ciDetect()) {
-          return log.warn('exec', 'Interactive mode disabled in CI environment')
-        }
+      locationMsg = locationMsg || ` at location:\n${colorize.dim(runPath)}`
 
-        locationMsg = locationMsg || ` at location:\n${colorize.dim(runPath)}`
-
-        output(`${
+      output(`${
           colorize.reset('\nEntering npm script environment')
         }${
           colorize.reset(locationMsg)
         }${
           colorize.bold('\nType \'exit\' or ^D when finished\n')
         }`)
-      }
-    }
-    return await runScript({
-      ...flatOptions,
-      pkg,
-      banner: false,
-      // we always run in cwd, not --prefix
-      path: runPath,
-      stdioString: true,
-      event: 'npx',
-      args,
-      env: {
-        PATH: pathArr.join(delimiter),
-      },
-      stdio: 'inherit',
-    })
-  } finally {
-    if (log && log.enableProgress) {
-      log.enableProgress()
     }
   }
+  return await runScript({
+    ...flatOptions,
+    pkg,
+    banner: false,
+    // we always run in cwd, not --prefix
+    path: runPath,
+    stdioString: true,
+    event: 'npx',
+    args,
+    env: {
+      PATH: pathArr.join(delimiter),
+    },
+    stdio: 'inherit',
+  })
 }
 
 module.exports = run

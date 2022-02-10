@@ -1,6 +1,5 @@
 const nopt = require('nopt')
 const path = require('path')
-const npmlog = require('npmlog')
 
 const has = (o, k) => Object.prototype.hasOwnProperty.call(o, k)
 
@@ -12,7 +11,7 @@ const cleanPath = (val) => {
 }
 
 const parse = (...noptArgs) => {
-  const knownBin = {
+  const binOnlyOptions = {
     command: String,
     loglevel: String,
     colors: Boolean,
@@ -22,7 +21,7 @@ const parse = (...noptArgs) => {
     debug: Boolean,
   }
 
-  const known = {
+  const allOptions = {
     add: Array,
     rm: Array,
     omit: Array,
@@ -37,7 +36,7 @@ const parse = (...noptArgs) => {
     before: Date,
     path: path,
     cache: path,
-    ...knownBin,
+    ...binOnlyOptions,
   }
 
   const short = {
@@ -48,27 +47,27 @@ const parse = (...noptArgs) => {
     f: '--force',
   }
 
-  const def = {
+  const defaults = {
     // key order is important for command and path
-    // since they shift positional args
+    // since they mutate positional args
     // command is 1st, path is 2nd
-    command: (o) => o.argv.remain.shift(),
-    path: (o) => cleanPath(o.argv.remain.shift() || '.'),
+    command: ({ argv }) => argv.remain.shift(),
+    path: ({ argv }) => cleanPath(argv.remain.shift() || '.'),
     colors: has(process.env, 'NO_COLOR') ? false : !!process.stderr.isTTY,
     loglevel: 'silly',
-    timing: (o) => o.loglevel === 'silly',
+    timing: ({ loglevel }) => loglevel === 'silly',
     cache: `${process.env.HOME}/.npm/_cacache`,
   }
 
   const derived = [
     // making update either `all` or an array of names but not both
-    ({ updateAll: all, update: names, ...o }) => {
+    ({ updateAll: all, update: names, ...options }) => {
       if (all || names) {
-        o.update = all != null ? { all } : { names }
+        options.update = all != null ? { all } : { names }
       }
-      return o
+      return options
     },
-    ({ logfile, ...o }) => {
+    ({ logfile, ...options }) => {
       // logfile is parsed as a string so if its true or set but empty
       // then set the default logfile
       if (logfile === 'true' || logfile === '') {
@@ -76,65 +75,48 @@ const parse = (...noptArgs) => {
       }
       // then parse it the same as nopt parses other paths
       if (logfile) {
-        o.logfile = cleanPath(logfile)
+        options.logfile = cleanPath(logfile)
       }
-      return o
+      return options
     },
-  ]
+  ].map((fn) => (options) => fn(options) || options)
 
   const transforms = [
     // Camelcase all top level keys
-    (o) => {
-      const entries = Object.entries(o).map(([k, v]) => [
-        k.replace(/-./g, s => s[1].toUpperCase()),
-        v,
-      ])
-      return Object.fromEntries(entries)
+    (options) => {
+      const keys = Object.keys(options).map((k) => k.replace(/-./g, s => s[1].toUpperCase()))
+      return Object.fromEntries(keys.map((k, i) => [k, options[k]]))
     },
     // Set defaults on unset keys
-    (o) => {
-      for (const [k, v] of Object.entries(def)) {
-        if (!has(o, k)) {
-          o[k] = typeof v === 'function' ? v(o) : v
+    (options) => {
+      for (const [k, v] of Object.entries(defaults)) {
+        if (!has(options, k)) {
+          options[k] = typeof v === 'function' ? v(options) : v
         }
       }
-      return o
+      return options
     },
     // Set/unset derived values
-    ...derived.map((derive) => (o) => derive(o) || o),
+    ...derived,
     // Separate bin and arborist options
-    ({ argv: { remain: _ }, ...o }) => {
+    ({ argv: { remain: _ }, ...options }) => {
       const bin = { _ }
-      for (const k of Object.keys(knownBin)) {
-        if (has(o, k)) {
-          bin[k] = o[k]
-          delete o[k]
+      for (const k of Object.keys(binOnlyOptions)) {
+        if (has(options, k)) {
+          bin[k] = options[k]
+          delete options[k]
         }
       }
-      return { bin, arb: o }
+      return { bin, arb: options }
     },
   ]
 
-  let options = nopt(known, short, ...noptArgs)
+  let options = nopt(allOptions, short, ...noptArgs)
   for (const t of transforms) {
     options = t(options)
   }
-
-  options.arb.log = npmlog
-  npmlog.level = 'silent'
-  npmlog.disableProgress()
 
   return options
 }
 
 module.exports = parse()
-
-// ;[
-//   ['reify', 'a/path', '-w=a', '-w', 'b', '--woo', '--', 'query'],
-//   ['-w=a', '-w', 'b', '--woo', '--', 'reify', 'xxxx', 'query'],
-//   ['reify', '-w=a', '-w', 'b', '--aaa', 'false'],
-//   ['reify', '--update-all', '-w', 'b', '--aaa', 'false'],
-//   ['reify', '--update=woo', '-w', 'b', '--aaa', 'false'],
-//   ['reify', '--update-all', '--update=woo', '-w', 'b', '--aaa', 'false'],
-//   ['--update-all', '--update=woo', '-w', 'b', '--aaa', 'false', '--command=rrr', '--path=woo', '--quiet'],
-// ].forEach((c) => console.log(parse(c, 0)))
