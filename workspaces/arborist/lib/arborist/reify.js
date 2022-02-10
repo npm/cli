@@ -174,6 +174,10 @@ module.exports = cls => class Reifier extends cls {
 
       return result
         })()
+    const getKey = (idealTreeNode) => {
+      const hash = hasher.get(idealTreeNode.location)
+      return `${idealTreeNode.name}@${idealTreeNode.version}-${hash.substring(hash.length - 5)}`
+    }
     const t = {
       fsChildren: [],
       integrity: null,
@@ -212,7 +216,7 @@ module.exports = cls => class Reifier extends cls {
     idealTree.inventory.forEach(c => {
       // workspaces are already handled by fsChildren and project root has already been created
       if (!c.isWorkspace && !c.isProjectRoot) {
-        const key = hasher.get(c.location)
+        const key = getKey(c)
         if (processed.has(key)) { return }
         processed.add(key)
         const location = `node_modules/.store/${key}/node_modules/${c.name}`
@@ -248,7 +252,7 @@ module.exports = cls => class Reifier extends cls {
     })
     const memo = new Set()
     function processEdges(node) {
-      const key = hasher.get(node.location)
+      const key = getKey(node)
       if (memo.has(key)) { return }
       memo.add(key)
       const fromLocation = node.isWorkspace ? node.location : `node_modules/.store/${key}/node_modules/${node.name}` 
@@ -267,7 +271,7 @@ module.exports = cls => class Reifier extends cls {
 
         const binNames = to.package.bin && Object.keys(to.package.bin) || []
 
-        const toKey = hasher.get(to.target.location)
+        const toKey = getKey(to.target)
         const toLocation = to.isWorkspace ? to.location : `node_modules/.store/${toKey}/node_modules/${to.name}` 
         const target = to.isWorkspace ? t.fsChildren.find(c => c.location === to.target.location) : t.children.find(c => c.location === toLocation)
         // TODO: we should no-op is an edge has already been created with the same fromKey and toKey
