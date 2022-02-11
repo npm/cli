@@ -1,5 +1,6 @@
 // called with all the options already set to their defaults
 
+const log = require('proc-log')
 const retrieveTag = require('./retrieve-tag.js')
 const semver = require('semver')
 const enforceClean = require('./enforce-clean.js')
@@ -19,7 +20,7 @@ module.exports = async (newversion, opts) => {
     ignoreScripts,
     preid,
     pkg,
-    log,
+    silent,
   } = opts
 
   const { valid, clean, inc } = semver
@@ -64,8 +65,7 @@ module.exports = async (newversion, opts) => {
       pkg,
       stdio: 'inherit',
       event: 'preversion',
-      // TODO: npmlog
-      banner: log.level !== 'silent',
+      banner: !silent,
       env: {
         npm_old_version: current,
         npm_new_version: newV,
@@ -99,8 +99,7 @@ module.exports = async (newversion, opts) => {
       pkg,
       stdio: 'inherit',
       event: 'version',
-      // TODO: npmlog
-      banner: log.level !== 'silent',
+      banner: !silent,
       env: {
         npm_old_version: current,
         npm_new_version: newV,
@@ -127,8 +126,7 @@ module.exports = async (newversion, opts) => {
       pkg,
       stdio: 'inherit',
       event: 'postversion',
-      // TODO: npmlog
-      banner: log.level !== 'silent',
+      banner: !silent,
       env: {
         npm_old_version: current,
         npm_new_version: newV,

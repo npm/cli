@@ -56,7 +56,6 @@ const createFormatter = ({ eol = os.EOL, colors = false } = {}) => {
   }
 }
 
-console.log(options.loglevel)
 if (options.loglevel !== 'silent') {
   const levelIndex = levels.get(options.loglevel)
   const format = createFormatter({ eol: '\n', colors: options.colors })

@@ -4,7 +4,7 @@ const read = promisify(require('read'))
 
 const Arborist = require('@npmcli/arborist')
 const ciDetect = require('@npmcli/ci-detect')
-const logger = require('proc-log')
+const log = require('proc-log')
 const mkdirp = require('mkdirp-infer-owner')
 const npa = require('npm-package-arg')
 const pacote = require('pacote')
@@ -40,9 +40,6 @@ const exec = async (opts) => {
     ...flatOptions
   } = opts
 
-  // XXX: BREAKING remove flatOptions.log
-  const log = flatOptions.log || logger
-
   // dereferences values because we manipulate it later
   const packages = [..._packages]
   const pathArr = [...PATH]
@@ -52,7 +49,6 @@ const exec = async (opts) => {
     color,
     flatOptions,
     locationMsg,
-    log,
     output,
     path,
     pathArr,

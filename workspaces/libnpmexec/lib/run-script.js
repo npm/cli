@@ -1,5 +1,6 @@
 const { delimiter } = require('path')
 
+const log = require('proc-log')
 const chalk = require('chalk')
 const ciDetect = require('@npmcli/ci-detect')
 const runScript = require('@npmcli/run-script')
@@ -18,7 +19,6 @@ const run = async ({
   color,
   flatOptions,
   locationMsg,
-  log,
   output = () => {},
   path,
   pathArr,
