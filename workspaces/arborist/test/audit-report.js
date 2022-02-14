@@ -260,6 +260,24 @@ t.test('audit disabled by config', async t => {
   t.equal(report.error, null, 'no error encountered')
 })
 
+t.test('audit disabled by offline mode', async t => {
+  const path = resolve(fixtures, 'audit-nyc-mkdirp')
+
+  const logs = []
+  const onlog = (...msg) => logs.push(msg)
+  process.on('log', onlog)
+  t.teardown(() => process.removeListener('log', onlog))
+
+  const arb = newArb(path, { offline: true })
+
+  const tree = await arb.loadVirtual()
+  const report = await AuditReport.load(tree, arb.options)
+  t.equal(report.report, null, 'did not get audit response')
+  t.equal(report.size, 0, 'did not find any vulnerabilities')
+  t.match(logs, [], 'no logs of error')
+  t.equal(report.error, null, 'no error encountered')
+})
+
 t.test('one vulnerability', async t => {
   const path = resolve(fixtures, 'audit-one-vuln')
   const auditFile = resolve(path, 'audit.json')
