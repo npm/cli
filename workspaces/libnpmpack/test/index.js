@@ -49,7 +49,7 @@ t.test('writes tarball to file when dryRun === false', async t => {
   const tarball = await pack('file:.', {
     dryRun: false,
     packDestination: testDir,
-    log: { level: 'silent' }, // so the test doesn't try to log
+    silent: true,
   })
   t.ok(tarball)
   const expectedTarball = path.join(testDir, 'my-cool-pkg-1.0.0.tgz')
@@ -68,7 +68,7 @@ t.test('writes tarball to file when dryRun === false', async t => {
   })
 })
 
-t.test('packs from local directory with silent loglevel', async t => {
+t.test('packs from local directory with silent', async t => {
   const testDir = t.testdir({
     'package.json': JSON.stringify({
       name: 'my-cool-pkg',
@@ -79,7 +79,7 @@ t.test('packs from local directory with silent loglevel', async t => {
   const cwd = process.cwd()
   process.chdir(testDir)
 
-  const tarball = await pack('file:', { log: { level: 'silent' } })
+  const tarball = await pack('file:', { silent: true })
   t.ok(tarball)
 
   t.teardown(async () => {
