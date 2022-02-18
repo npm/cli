@@ -1043,7 +1043,6 @@ tap.only('bins are installed', async t => {
   // Note that we override this cache to prevent interference from other tests
   const cache = fs.mkdtempSync(`${os.tmpdir}/test-`)
   const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache  })
-  debugger
   await arborist.reify({ isolated: true })
 
   // TODO: make the test not assume folder structure
