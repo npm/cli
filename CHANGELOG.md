@@ -1,3 +1,40 @@
+## v8.5.1 (2022-02-17)
+
+### Dependencies
+
+* [`54cda9697`](https://github.com/npm/cli/commit/54cda9697b776fae807966097315c7b836623743)
+  [#4410](https://github.com/npm/cli/pull/4410)
+  fix(arborist): do not audit in offline mode
+  ([@mohd-akram](https://github.com/mohd-akram))
+* [`fb13bdaf1`](https://github.com/npm/cli/commit/fb13bdaf12dde3ef5685a77354e51a9cfa579879)
+  [#4403](https://github.com/npm/cli/pull/4403)
+  deps: `@npmcli/ci-detect@2.0.0`
+* [`702801002`](https://github.com/npm/cli/commit/702801002e99bf02dd4d6d1e447a5ab332d56c79)
+  [#4415](https://github.com/npm/cli/pull/4415)
+  deps: `make-fetch-happen@10.0.3`
+* [`88bab3540`](https://github.com/npm/cli/commit/88bab354097023c96c49e78d7ee54159f495bf73)
+  [#4416](https://github.com/npm/cli/pull/4416)
+  deps: `gauge@4.0.1`
+
+### Documentation
+
+* [`20378c67c`](https://github.com/npm/cli/commit/20378c67cd533db514dd2aec7828c6d119e9d6c7)
+  [#4423](https://github.com/npm/cli/pull/4423)
+  docs: update documentation for ping
+  ([@fhinkel](https://github.com/fhinkel))
+* [`408d2fc15`](https://github.com/npm/cli/commit/408d2fc150185ef66125f7d6bdb1c25edb71bba3)
+  [#4426](https://github.com/npm/cli/pull/4426)
+  docs: update workspaces guide for consistency
+  ([@bnb](https://github.com/bnb))
+* [`9275856eb`](https://github.com/npm/cli/commit/9275856eb75e7c394a3c7617c2b495aba35ee2de)
+  [#4424](https://github.com/npm/cli/pull/4424)
+  docs: update usage example for npm pkg
+  ([@manekinekko](https://github.com/manekinekko))
+* [`20c83fae7`](https://github.com/npm/cli/commit/20c83fae76ff4a051e4f6542a328f1c00cf071bb)
+  [#4428](https://github.com/npm/cli/pull/4428)
+  docs: update docs for npm install <folder>
+  ([@manekinekko](https://github.com/manekinekko))
+
 ## v8.5.0 (2022-02-10)
 
 ### Features
