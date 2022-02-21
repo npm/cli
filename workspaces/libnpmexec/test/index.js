@@ -336,10 +336,12 @@ t.test('prompt, accepts', async t => {
   t.test('with clearProgress function', async t => {
     const libexec = t.mock('../lib/index.js', {
       '@npmcli/ci-detect': () => false,
-      'proc-log': {
+      npmlog: {
         clearProgress () {
           t.ok(true, 'should call clearProgress function')
         },
+        disableProgress () {},
+        enableProgress () {},
       },
       read (opts, cb) {
         cb(null, 'y')
@@ -365,7 +367,6 @@ t.test('prompt, accepts', async t => {
   t.test('without clearProgress function', async t => {
     const libexec = t.mock('../lib/index.js', {
       '@npmcli/ci-detect': () => false,
-      'proc-log': {},
       read (opts, cb) {
         cb(null, 'y')
       },
@@ -401,10 +402,11 @@ t.test('prompt, refuses', async t => {
   t.test('with clearProgress function', async t => {
     const libexec = t.mock('../lib/index.js', {
       '@npmcli/ci-detect': () => false,
-      'proc-log': {
+      npmlog: {
         clearProgress () {
           t.ok(true, 'should call clearProgress function')
         },
+        disableProgess () {},
       },
       read (opts, cb) {
         cb(null, 'n')
@@ -439,7 +441,6 @@ t.test('prompt, refuses', async t => {
   t.test('without clearProgress function', async t => {
     const libexec = t.mock('../lib/index.js', {
       '@npmcli/ci-detect': () => false,
-      'proc-log': {},
       read (opts, cb) {
         cb(null, 'n')
       },

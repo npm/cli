@@ -4,9 +4,6 @@ const baseOpts = {
   args: [],
   call: '',
   color: false,
-  log: {
-    warn () {},
-  },
   path: '',
   pathArr: [''],
   runPath: '',
@@ -29,20 +26,18 @@ t.test('disable, enable log progress', t => {
       t.ok('should call run-script')
     },
     '../lib/no-tty.js': () => false,
+    npmlog: {
+      disableProgress () {
+        t.ok('should disable progress')
+      },
+      enableProgress () {
+        t.ok('should enable progress')
+      },
+    },
   })
-  const log = {
-    ...baseOpts.log,
-    disableProgress () {
-      t.ok('should disable progress')
-    },
-    enableProgress () {
-      t.ok('should enable progress')
-    },
-  }
 
   runScript({
     ...baseOpts,
-    log,
     path,
   })
 })
@@ -139,18 +134,17 @@ t.test('ci env', t => {
       throw new Error('should not call run-script')
     },
     '../lib/no-tty.js': () => false,
-  })
-  const log = {
-    ...baseOpts.log,
-    warn (title, msg) {
-      t.equal(title, 'exec', 'should have expected title')
-      t.equal(
-        msg,
-        'Interactive mode disabled in CI environment',
-        'should have expected ci environment message'
-      )
+    'proc-log': {
+      warn (title, msg) {
+        t.equal(title, 'exec', 'should have expected title')
+        t.equal(
+          msg,
+          'Interactive mode disabled in CI environment',
+          'should have expected ci environment message'
+        )
+      },
     },
-  }
+  })
 
-  runScript({ ...baseOpts, log })
+  runScript({ ...baseOpts })
 })
