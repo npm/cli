@@ -34,7 +34,7 @@ const pickManifest = (packument, wanted, opts) => {
     npmVersion = null,
     includeStaged = false,
     avoid = null,
-    avoidStrict = false
+    avoidStrict = false,
   } = opts
 
   const { name, time: verTimes } = packument
@@ -43,7 +43,7 @@ const pickManifest = (packument, wanted, opts) => {
   if (avoidStrict) {
     const looseOpts = {
       ...opts,
-      avoidStrict: false
+      avoidStrict: false,
     }
 
     const result = pickManifest(packument, wanted, looseOpts)
@@ -56,7 +56,7 @@ const pickManifest = (packument, wanted, opts) => {
       return {
         ...caret,
         _outsideDependencyRange: true,
-        _isSemVerMajor: false
+        _isSemVerMajor: false,
       }
     }
 
@@ -65,7 +65,7 @@ const pickManifest = (packument, wanted, opts) => {
       return {
         ...star,
         _outsideDependencyRange: true,
-        _isSemVerMajor: true
+        _isSemVerMajor: true,
       }
     }
 
@@ -75,7 +75,7 @@ const pickManifest = (packument, wanted, opts) => {
       wanted,
       avoid,
       before,
-      versions: Object.keys(versions)
+      versions: Object.keys(versions),
     })
   }
 
@@ -143,7 +143,7 @@ const pickManifest = (packument, wanted, opts) => {
       type,
       wanted,
       before,
-      versions: Object.keys(versions)
+      versions: Object.keys(versions),
     })
   }
 
@@ -213,6 +213,6 @@ module.exports = (packument, wanted, opts = {}) => {
     versions: Object.keys(packument.versions),
     name,
     distTags: packument['dist-tags'],
-    defaultTag
+    defaultTag,
   })
 }
