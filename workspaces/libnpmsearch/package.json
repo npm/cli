@@ -41,7 +41,7 @@
   "bugs": "https://github.com/npm/libnpmsearch/issues",
   "homepage": "https://npmjs.com/package/libnpmsearch",
   "dependencies": {
-    "npm-registry-fetch": "^12.0.1"
+    "npm-registry-fetch": "^13.0.0"
   },
   "engines": {
     "node": "^12.13.0 || ^14.15.0 || >=16"
