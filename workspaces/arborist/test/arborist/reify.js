@@ -1075,6 +1075,7 @@ t.test('scoped registries', async t => {
     registry,
   })
   const kReify = Symbol.for('reifyNode')
+  a.addTracker('reify')
   a.idealTree = new Node({ path })
 
   const node = new Node({
