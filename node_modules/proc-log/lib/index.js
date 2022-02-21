@@ -14,8 +14,9 @@ const LEVELS = [
 const log = level => (...args) => process.emit('log', level, ...args)
 
 const logger = {}
-for (const level of LEVELS)
+for (const level of LEVELS) {
   logger[level] = log(level)
+}
 
 logger.LEVELS = LEVELS
 
