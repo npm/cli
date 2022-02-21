@@ -10,13 +10,14 @@ t.test('add', t => {
   const file = npa('file@file:/some/path/foo.tgz', '/')
 
   const logs = []
-  const log = {
-    warn: function (...args) {
+  const log = (l, ...args) => {
+    if (l === 'warn') {
       logs.push(args)
-    },
+    }
   }
+  process.on('log', log)
+  t.teardown(() => process.off('log', log))
   t.strictSame(add({
-    log,
     pkg: {
       dependencies: { bar: '1' },
       devDependencies: { foo: '2' },
