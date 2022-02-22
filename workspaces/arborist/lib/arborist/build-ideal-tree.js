@@ -753,8 +753,7 @@ This is a one-time fix-up, please be patient...
         const id = useResolved ? resolved
           : version || `file:${node.path}`
         const spec = npa.resolve(name, id, dirname(path))
-        const sloc = location.substr('node_modules/'.length)
-        const t = `idealTree:inflate:${sloc}`
+        const t = `idealTree:inflate:${location}`
         this.addTracker(t)
         await pacote.manifest(spec, {
           ...this.options,
