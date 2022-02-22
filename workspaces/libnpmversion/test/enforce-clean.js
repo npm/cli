@@ -16,27 +16,27 @@ const enforceClean = requireInject('../lib/enforce-clean.js', {
       }
     },
   },
+  'proc-log': { warn: (...msg) => warnings.push(msg) },
 })
 
 const warnings = []
-const log = { warn: (...msg) => warnings.push(msg) }
 
 t.test('clean, ok', t =>
-  t.resolveMatch(enforceClean({ log, cwd: 'clean' }), true)
+  t.resolveMatch(enforceClean({ cwd: 'clean' }), true)
     .then(() => t.strictSame(warnings, []))
     .then(() => {
       warnings.length = 0
     }))
 
 t.test('unclean, no force, throws', t =>
-  t.rejects(enforceClean({ log, cwd: 'unclean' }))
+  t.rejects(enforceClean({ cwd: 'unclean' }))
     .then(() => t.strictSame(warnings, []))
     .then(() => {
       warnings.length = 0
     }))
 
 t.test('unclean, forced, no throw', t =>
-  t.resolveMatch(enforceClean({ log, cwd: 'unclean', force: true }), true)
+  t.resolveMatch(enforceClean({ cwd: 'unclean', force: true }), true)
     .then(() => t.strictSame(warnings, [
       [
         'version',
@@ -48,7 +48,7 @@ t.test('unclean, forced, no throw', t =>
     }))
 
 t.test('nogit, return false, no throw', t =>
-  t.resolveMatch(enforceClean({ log, cwd: 'nogit' }), false)
+  t.resolveMatch(enforceClean({ cwd: 'nogit' }), false)
     .then(() => t.strictSame(warnings, [
       [
         'version',
@@ -61,7 +61,7 @@ t.test('nogit, return false, no throw', t =>
     }))
 
 t.test('other error, throw it', t =>
-  t.rejects(enforceClean({ log, cwd: 'error' }), new Error('poop'))
+  t.rejects(enforceClean({ cwd: 'error' }), new Error('poop'))
     .then(() => t.strictSame(warnings, []))
     .then(() => {
       warnings.length = 0
