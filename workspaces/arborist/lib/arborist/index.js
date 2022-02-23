@@ -42,6 +42,7 @@ const mixins = [
   require('./load-virtual.js'),
   require('./rebuild.js'),
   require('./reify.js'),
+  require('./isolated-reifier'),
 ]
 
 const _workspacesEnabled = Symbol.for('workspacesEnabled')
