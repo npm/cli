@@ -21,7 +21,7 @@ t.test('basic operations', t => {
     i.get('y'),
   ], 'filter returns an iterable of all matching nodes')
 
-  t.same([...i.query('license')].sort((a, b) => String(a).localeCompare(String(b, 'en'))),
+  t.same([...i.query('license')].sort((a, b) => String(a).localeCompare(String(b), 'en')),
     ['ISC', 'MIT', undefined])
   t.same([...i.query('license', 'MIT')], [
     { location: 'x', name: 'x', package: { licence: 'MIT', funding: 'foo' } },
@@ -33,7 +33,7 @@ t.test('basic operations', t => {
     { location: 'x', name: 'x', package: { licence: 'MIT', funding: 'foo' } },
     { location: 'y', name: 'x', package: { licenses: [{ type: 'ISC' }], funding: { url: 'foo' } } },
   ], 'can query by name')
-  t.same([...i.query('funding')].sort((a, b) => String(a).localeCompare(String(b, 'en'))),
+  t.same([...i.query('funding')].sort((a, b) => String(a).localeCompare(String(b), 'en')),
     ['bar', 'foo', undefined])
   t.same([...i.query('funding', 'foo')], [
     { location: 'x', name: 'x', package: { licence: 'MIT', funding: 'foo' } },
