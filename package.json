@@ -70,7 +70,7 @@
     "chownr": "^2.0.0",
     "cli-columns": "^4.0.0",
     "cli-table3": "^0.6.1",
-    "columnify": "~1.5.4",
+    "columnify": "^1.6.0",
     "fastest-levenshtein": "^1.0.12",
     "glob": "^7.2.0",
     "graceful-fs": "^4.2.9",
