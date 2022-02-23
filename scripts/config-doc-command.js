@@ -35,7 +35,9 @@ const describeUsage = ({ usage }) => {
   synopsis.push('\n```bash')
 
   if (commandName) {
-    if (usage) {
+    if (!usage) {
+      synopsis.push(`npm ${commandName}`)
+    } else {
       synopsis.push(usage.map(usageInfo => `npm ${commandName} ${usageInfo}`).join('\n'))
     }
 
@@ -98,7 +100,7 @@ try {
   const hasUsageTag = doc.includes(TAGS.USAGE.START)
 
   let newDoc = params && hasTag ? addDescriptions(doc) : doc
-  newDoc = usage && hasUsageTag ? addUsageDescriptions(newDoc) : newDoc
+  newDoc = hasUsageTag ? addUsageDescriptions(newDoc) : newDoc
 
   if (params && !hasTag) {
     console.error('WARNING: did not find config description section', configDoc)
