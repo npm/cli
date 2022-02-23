@@ -35,10 +35,17 @@ const describeUsage = ({ usage }) => {
   synopsis.push('\n```bash')
 
   if (commandName) {
+    let baseCommand = `npm ${commandName}`
+
+    // special case for `npx`
+    if (commandName === 'exec') {
+      baseCommand = 'npx'
+    }
+
     if (!usage) {
-      synopsis.push(`npm ${commandName}`)
+      synopsis.push(baseCommand)
     } else {
-      synopsis.push(usage.map(usageInfo => `npm ${commandName} ${usageInfo}`).join('\n'))
+      synopsis.push(usage.map(usageInfo => `${baseCommand} ${usageInfo}`).join('\n'))
     }
 
     const aliases = usageFn(commandName, '').trim()
@@ -99,17 +106,19 @@ try {
   const hasTag = doc.includes(TAGS.CONFIG.START)
   const hasUsageTag = doc.includes(TAGS.USAGE.START)
 
-  let newDoc = params && hasTag ? addDescriptions(doc) : doc
-  newDoc = hasUsageTag ? addUsageDescriptions(newDoc) : newDoc
+  if (params.length) {
+    let newDoc = hasTag ? addDescriptions(doc) : doc
+    newDoc = hasUsageTag ? addUsageDescriptions(newDoc) : newDoc
 
-  if (params && !hasTag) {
-    console.error('WARNING: did not find config description section', configDoc)
-  }
+    if (!hasTag) {
+      console.error('WARNING: did not find config description section', configDoc)
+    }
 
-  if (usage && !hasUsageTag) {
-    console.error('WARNING: did not find usage description section', configDoc)
+    if (usage.length && !hasUsageTag) {
+      console.error('WARNING: did not find usage description section', configDoc)
+    }
+    writeFileSync(configDoc, newDoc)
   }
-  writeFileSync(configDoc, newDoc)
 } catch (err) {
   console.error(`WARNING: file cannot be open: ${configDoc}`)
 }

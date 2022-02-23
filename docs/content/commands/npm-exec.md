@@ -11,10 +11,10 @@ description: Run a command from a local or remote npm package
 <!-- see lib/commands/exec.js -->
 
 ```bash
-npm exec -- <pkg>[@<version>] [args...]
-npm exec --package=<pkg>[@<version>] -- <cmd> [args...]
-npm exec -c '<cmd> [args...]'
-npm exec --package=foo -c '<cmd> [args...]'
+npx -- <pkg>[@<version>] [args...]
+npx --package=<pkg>[@<version>] -- <cmd> [args...]
+npx -c '<cmd> [args...]'
+npx --package=foo -c '<cmd> [args...]'
 
 alias: x
 ```
