@@ -1,6 +1,7 @@
 const { resolve, basename } = require('path')
 const t = require('tap')
 const runScript = require('@npmcli/run-script')
+const localeCompare = require('@isaacs/string-locale-compare')('en')
 
 // mock rimraf so we can make it fail in rollback tests
 const realRimraf = require('rimraf')
@@ -241,7 +242,7 @@ t.test('omit peer deps', t => {
     .then(() => {
       process.removeListener('time', onTime)
       process.removeListener('timeEnd', onTimeEnd)
-      finishedTimers.sort((a, b) => a.localeCompare(b, 'en'))
+      finishedTimers.sort(localeCompare)
       t.matchSnapshot(finishedTimers, 'finished timers')
       t.strictSame(timers, {}, 'should have no timers in progress now')
     })

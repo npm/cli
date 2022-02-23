@@ -1,4 +1,5 @@
 const Arborist = require('../')
+const localeCompare = require('@isaacs/string-locale-compare')('en')
 const options = require('./lib/options.js')
 require('./lib/logging.js')
 require('./lib/timers.js')
@@ -24,7 +25,7 @@ a.loadVirtual().then(tree => {
     }
 
     for (const [count, license] of set.sort((a, b) =>
-      a[1] && b[1] ? b[0] - a[0] || a[1].localeCompare(b[1], 'en')
+      a[1] && b[1] ? b[0] - a[0] || localeCompare(a[1], b[1])
       : a[1] ? -1
       : b[1] ? 1
       : 0)) {
