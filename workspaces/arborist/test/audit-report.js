@@ -30,7 +30,7 @@ const sortReport = report => {
       {
         ...vuln,
         via: (vuln.via || []).sort((a, b) =>
-          String(a.source || a).localeCompare(String(b.source || b, 'en'))),
+          String(a.source || a).localeCompare(String(b.source || b), 'en')),
         effects: (vuln.effects || []).sort((a, b) => a.localeCompare(b, 'en')),
       },
     ])

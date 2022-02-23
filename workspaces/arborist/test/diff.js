@@ -31,7 +31,7 @@ const formatDiff = obj =>
     removed: obj.removed.map(d => normalizePath(d.path).split(normalizedCWD).join('{CWD}')),
     children: [...obj.children]
       .map(formatDiff)
-      .sort((a, b) => path(a).localeCompare(path(b, 'en'))),
+      .sort((a, b) => path(a).localeCompare(path(b), 'en')),
   })
 
 t.formatSnapshot = obj => format(formatDiff(obj), { sort: false })
