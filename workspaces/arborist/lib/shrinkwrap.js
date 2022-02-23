@@ -80,8 +80,8 @@ const swKeyOrder = [
 ]
 
 // used to rewrite from yarn registry to npm registry
-const yarnRegRe = /^https?:\/\/registry.yarnpkg.com\//
-const npmRegRe = /^https?:\/\/registry.npmjs.org\//
+const yarnRegRe = /^https?:\/\/registry\.yarnpkg\.com\//
+const npmRegRe = /^https?:\/\/registry\.npmjs\.org\//
 
 // sometimes resolved: is weird or broken, or something npa can't handle
 const specFromResolved = resolved => {
