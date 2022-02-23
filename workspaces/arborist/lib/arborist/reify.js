@@ -716,7 +716,7 @@ module.exports = cls => class Reifier extends cls {
     // Shrinkwrap and Node classes carefully, so for now, just treat
     // the default reg as the magical animal that it has been.
     return resolved && resolved
-      .replace(/^https?:\/\/registry.npmjs.org\//, this.registry)
+      .replace(/^https?:\/\/registry\.npmjs\.org\//, this.registry)
   }
 
   // bundles are *sort of* like shrinkwraps, in that the branch is defined
