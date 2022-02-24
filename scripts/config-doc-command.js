@@ -111,7 +111,7 @@ try {
   const hasTag = doc.includes(TAGS.CONFIG.START)
   const hasUsageTag = doc.includes(TAGS.USAGE.START)
 
-  if (params?.length) {
+  if (params && params.length) {
     let newDoc = hasTag ? addDescriptions(doc) : doc
     newDoc = hasUsageTag ? addUsageDescriptions(newDoc) : newDoc
 
@@ -119,7 +119,7 @@ try {
       console.error('WARNING: did not find config description section', configDoc)
     }
 
-    if (usage?.length && !hasUsageTag) {
+    if ((usage && usage.length) && !hasUsageTag) {
       console.error('WARNING: did not find usage description section', configDoc)
     }
     writeFileSync(configDoc, newDoc)
