@@ -38,6 +38,13 @@ const addGitPlus = url => url && `git+${url}`.replace(/^(git\+)+/, 'git+')
 class GitFetcher extends Fetcher {
   constructor (spec, opts) {
     super(spec, opts)
+
+    // we never want to compare integrity for git dependencies: npm/rfcs#525
+    if (this.opts.integrity) {
+      delete this.opts.integrity
+      log.warn(`skipping integrity check for git dependency ${this.spec.fetchSpec}`)
+    }
+
     this.resolvedRef = null
     if (this.spec.hosted) {
       this.from = this.spec.hosted.shortcut({ noCommittish: false })
@@ -194,7 +201,6 @@ class GitFetcher extends Fetcher {
   [_tarballFromResolved] () {
     const stream = new Minipass()
     stream.resolved = this.resolved
-    stream.integrity = this.integrity
     stream.from = this.from
 
     // check it out and then shell out to the DirFetcher tarball packer
@@ -304,7 +310,6 @@ class GitFetcher extends Fetcher {
         this[_readPackageJson](dir + '/package.json')
           .then(mani => this.package = {
             ...mani,
-            _integrity: this.integrity && String(this.integrity),
             _resolved: this.resolved,
             _from: this.from,
           }))
