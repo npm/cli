@@ -1,46 +1,15 @@
 const t = require('tap')
-const { load: loadMockNpm } = require('../../fixtures/mock-npm')
-const tnock = require('../../fixtures/tnock.js')
 const fs = require('fs')
 
+const { load: loadMockNpm } = require('../../fixtures/mock-npm')
+const tnock = require('../../fixtures/tnock.js')
+const mockGlobals = require('../../fixtures/mock-globals')
 const { cleanCwd, cleanDate } = require('../../fixtures/clean-snapshot.js')
 
 const cleanCacheSha = (str) =>
   str.replace(/content-v2\/sha512\/[^"]+/g, 'content-v2/sha512/{sha}')
 
 t.cleanSnapshot = p => cleanCacheSha(cleanDate(cleanCwd(p)))
-
-// TODO mockglobals!
-const isWindows = require('../../../lib/utils/is-windows.js')
-
-const processVersion = process.version
-// TODO mockglobals!
-t.beforeEach(() => {
-  Object.defineProperty(process, 'version', { value: 'v1.0.0' })
-})
-
-const consoleErrorFn = console.error
-let consoleError = false
-console.error = () => {
-  consoleError = true
-}
-t.teardown(() => {
-  Object.defineProperty(process, 'version', { value: processVersion })
-  console.error = consoleErrorFn
-})
-
-t.afterEach(() => {
-  consoleError = false
-})
-
-// getuid and getgid do not exist in windows, so we shim them
-// to return 0, as that is the value that lstat will assign the
-// gid and uid properties for fs.Stats objects
-// TODO mockglobals!
-if (isWindows) {
-  process.getuid = () => 0
-  process.getgid = () => 0
-}
 
 const npmManifest = (version) => {
   return {
@@ -83,9 +52,37 @@ const dirs = {
   },
 }
 
+let consoleError = false
+t.afterEach(() => {
+  consoleError = false
+})
+
+const globals = {
+  console: {
+    error: () => {
+      consoleError = true
+    },
+  },
+  process: {
+    platform: 'test-not-windows',
+    version: 'v1.0.0',
+  },
+}
+
+// getuid and getgid do not exist in windows, so we shim them
+// to return 0, as that is the value that lstat will assign the
+// gid and uid properties for fs.Stats objects
+if (process.platform === 'win32') {
+  mockGlobals(t, {
+    process: {
+      getuid: () => 0,
+      getgid: () => 0,
+    },
+  })
+}
+
 const mocks = {
   '../../package.json': { version: '1.0.0' },
-  '../../lib/utils/is-windows.js': false,
   which: async () => '/path/to/git',
   cacache: {
     verify: () => {
@@ -97,6 +94,7 @@ const mocks = {
 t.test('all clear', async t => {
   const { joinedOutput, logs, npm } = await loadMockNpm(t, {
     mocks,
+    globals,
     ...dirs,
   })
   tnock(t, npm.config.get('registry'))
@@ -113,6 +111,7 @@ t.test('all clear', async t => {
 t.test('all clear in color', async t => {
   const { joinedOutput, logs, npm } = await loadMockNpm(t, {
     mocks,
+    globals,
     ...dirs,
   })
   tnock(t, npm.config.get('registry'))
@@ -130,6 +129,7 @@ t.test('all clear in color', async t => {
 t.test('silent', async t => {
   const { joinedOutput, logs, npm } = await loadMockNpm(t, {
     mocks,
+    globals,
     config: {
       loglevel: 'silent',
     },
@@ -145,9 +145,11 @@ t.test('silent', async t => {
   t.notOk(consoleError, 'console.error not called')
   t.matchSnapshot({ info: logs.info, warn: logs.warn, error: logs.error }, 'logs')
 })
+
 t.test('ping 404', async t => {
   const { joinedOutput, logs, npm } = await loadMockNpm(t, {
     mocks,
+    globals,
     ...dirs,
   })
   tnock(t, npm.config.get('registry'))
@@ -164,6 +166,7 @@ t.test('ping 404', async t => {
 t.test('ping 404 in color', async t => {
   const { joinedOutput, logs, npm } = await loadMockNpm(t, {
     mocks,
+    globals,
     ...dirs,
   })
   tnock(t, npm.config.get('registry'))
@@ -180,6 +183,7 @@ t.test('ping 404 in color', async t => {
 t.test('ping exception with code', async t => {
   const { joinedOutput, logs, npm } = await loadMockNpm(t, {
     mocks,
+    globals,
     ...dirs,
   })
   tnock(t, npm.config.get('registry'))
@@ -195,6 +199,7 @@ t.test('ping exception with code', async t => {
 t.test('ping exception without code', async t => {
   const { joinedOutput, logs, npm } = await loadMockNpm(t, {
     mocks,
+    globals,
     ...dirs,
   })
   tnock(t, npm.config.get('registry'))
@@ -210,6 +215,7 @@ t.test('ping exception without code', async t => {
 t.test('npm out of date', async t => {
   const { joinedOutput, logs, npm } = await loadMockNpm(t, {
     mocks,
+    globals,
     ...dirs,
   })
   tnock(t, npm.config.get('registry'))
@@ -223,9 +229,15 @@ t.test('npm out of date', async t => {
 })
 
 t.test('node out of date - lts', async t => {
-  Object.defineProperty(process, 'version', { value: 'v0.0.1' })
   const { joinedOutput, logs, npm } = await loadMockNpm(t, {
     mocks,
+    globals: {
+      ...globals,
+      process: {
+        platform: 'test-not-windows',
+        version: 'v0.0.1',
+      },
+    },
     ...dirs,
   })
   tnock(t, npm.config.get('registry'))
@@ -239,9 +251,15 @@ t.test('node out of date - lts', async t => {
 })
 
 t.test('node out of date - current', async t => {
-  Object.defineProperty(process, 'version', { value: 'v2.0.0' })
   const { joinedOutput, logs, npm } = await loadMockNpm(t, {
     mocks,
+    globals: {
+      ...globals,
+      process: {
+        ...globals.process,
+        version: 'v2.0.0',
+      },
+    },
     ...dirs,
   })
   tnock(t, npm.config.get('registry'))
@@ -257,6 +275,7 @@ t.test('node out of date - current', async t => {
 t.test('non-default registry', async t => {
   const { joinedOutput, logs, npm } = await loadMockNpm(t, {
     mocks,
+    globals,
     config: { registry: 'http://some-other-url.npmjs.org' },
     ...dirs,
   })
@@ -278,6 +297,7 @@ t.test('missing git', async t => {
         throw new Error('test error')
       },
     },
+    globals,
     ...dirs,
   })
   tnock(t, npm.config.get('registry'))
@@ -292,9 +312,13 @@ t.test('missing git', async t => {
 
 t.test('windows skips permissions checks', async t => {
   const { joinedOutput, logs, npm } = await loadMockNpm(t, {
-    mocks: {
-      ...mocks,
-      '../../lib/utils/is-windows.js': true,
+    mocks,
+    globals: {
+      ...globals,
+      process: {
+        ...globals.process,
+        platform: 'win32',
+      },
     },
     prefixDir: {},
     globalPrefixDir: {},
@@ -312,6 +336,7 @@ t.test('windows skips permissions checks', async t => {
 t.test('missing global directories', async t => {
   const { joinedOutput, logs, npm } = await loadMockNpm(t, {
     mocks,
+    globals,
     prefixDir: dirs.prefixDir,
   })
   tnock(t, npm.config.get('registry'))
@@ -321,6 +346,22 @@ t.test('missing global directories', async t => {
     .get('/dist/index.json').reply(200, nodeVersions)
   await t.rejects(npm.exec('doctor', []))
   t.matchSnapshot(joinedOutput(), 'missing global directories')
+  t.matchSnapshot({ info: logs.info, warn: logs.warn, error: logs.error }, 'logs')
+})
+
+t.test('missing local node_modules', async t => {
+  const { joinedOutput, logs, npm } = await loadMockNpm(t, {
+    mocks,
+    globals,
+    globalPrefixDir: dirs.globalPrefixDir,
+  })
+  tnock(t, npm.config.get('registry'))
+    .get('/-/ping?write=true').reply(200, '{}')
+    .get('/npm').reply(200, npmManifest(npm.version))
+  tnock(t, 'https://nodejs.org')
+    .get('/dist/index.json').reply(200, nodeVersions)
+  await npm.exec('doctor', [])
+  t.matchSnapshot(joinedOutput(), 'missing local node_modules')
   t.matchSnapshot({ info: logs.info, warn: logs.warn, error: logs.error }, 'logs')
 })
 
@@ -338,6 +379,7 @@ t.test('incorrect owner', async t => {
         },
       },
     },
+    globals,
     ...dirs,
   })
   tnock(t, npm.config.get('registry'))
@@ -361,6 +403,7 @@ t.test('incorrect permissions', async t => {
         },
       },
     },
+    globals,
     ...dirs,
   })
   tnock(t, npm.config.get('registry'))
@@ -384,6 +427,7 @@ t.test('error reading directory', async t => {
         },
       },
     },
+    globals,
     ...dirs,
   })
   tnock(t, npm.config.get('registry'))
@@ -406,6 +450,7 @@ t.test('cacache badContent', async t => {
         },
       },
     },
+    globals,
     ...dirs,
   })
   tnock(t, npm.config.get('registry'))
@@ -428,6 +473,7 @@ t.test('cacache reclaimedCount', async t => {
         },
       },
     },
+    globals,
     ...dirs,
   })
   tnock(t, npm.config.get('registry'))
@@ -450,6 +496,7 @@ t.test('cacache missingContent', async t => {
         },
       },
     },
+    globals,
     ...dirs,
   })
   tnock(t, npm.config.get('registry'))
@@ -465,8 +512,9 @@ t.test('cacache missingContent', async t => {
 t.test('bad proxy', async t => {
   const { joinedOutput, logs, npm } = await loadMockNpm(t, {
     mocks,
+    globals,
     config: {
-      proxy: 'ssh://npmjs.org'
+      proxy: 'ssh://npmjs.org',
     },
     ...dirs,
   })
@@ -474,4 +522,3 @@ t.test('bad proxy', async t => {
   t.matchSnapshot(joinedOutput(), 'output')
   t.matchSnapshot({ info: logs.info, warn: logs.warn, error: logs.error }, 'logs')
 })
-
