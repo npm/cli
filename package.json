@@ -87,7 +87,7 @@
     "libnpmorg": "^4.0.0",
     "libnpmpack": "^4.0.0",
     "libnpmpublish": "^6.0.0",
-    "libnpmsearch": "^4.0.1",
+    "libnpmsearch": "^5.0.0",
     "libnpmteam": "^3.0.1",
     "libnpmversion": "^2.0.2",
     "make-fetch-happen": "^10.0.3",
