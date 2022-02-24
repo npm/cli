@@ -31,26 +31,31 @@ const describeAll = (content) =>
 
 const describeUsage = ({ usage }) => {
   const synopsis = []
-  const commandName = commandFile.split('/').pop().split('.')[0]
+
+  // Grab the command name from the *.md filename
+  // NOTE: We cannot use the name property command file because in the case of
+  // `npx` the file being used is `lib/commands/exec.js`
+  const commandName = configDoc.split('/').pop().split('.')[0].replace('npm-', '')
   synopsis.push('\n```bash')
 
   if (commandName) {
-    let baseCommand = `npm ${commandName}`
-
-    // special case for `npx`
-    if (commandName === 'exec') {
-      baseCommand = 'npx'
-    }
-
-    if (!usage) {
-      synopsis.push(baseCommand)
+    // special case for `npx`:
+    // `npx` is not technically a command in and of itself,
+    // so it just needs the usage and parameters of npm exec, and none of the aliases
+    if (commandName === 'npx') {
+      synopsis.push(usage.map(usageInfo => `npx ${usageInfo}`).join('\n'))
     } else {
-      synopsis.push(usage.map(usageInfo => `${baseCommand} ${usageInfo}`).join('\n'))
-    }
+      const baseCommand = `npm ${commandName}`
+      if (!usage) {
+        synopsis.push(baseCommand)
+      } else {
+        synopsis.push(usage.map(usageInfo => `${baseCommand} ${usageInfo}`).join('\n'))
+      }
 
-    const aliases = usageFn(commandName, '').trim()
-    if (aliases) {
-      synopsis.push(`\n${aliases}`)
+      const aliases = usageFn(commandName, '').trim()
+      if (aliases) {
+        synopsis.push(`\n${aliases}`)
+      }
     }
   } else {
     console.error(`could not determine command name from ${commandFile}`)
@@ -106,7 +111,7 @@ try {
   const hasTag = doc.includes(TAGS.CONFIG.START)
   const hasUsageTag = doc.includes(TAGS.USAGE.START)
 
-  if (params.length) {
+  if (params?.length) {
     let newDoc = hasTag ? addDescriptions(doc) : doc
     newDoc = hasUsageTag ? addUsageDescriptions(newDoc) : newDoc
 
@@ -114,11 +119,12 @@ try {
       console.error('WARNING: did not find config description section', configDoc)
     }
 
-    if (usage.length && !hasUsageTag) {
+    if (usage?.length && !hasUsageTag) {
       console.error('WARNING: did not find usage description section', configDoc)
     }
     writeFileSync(configDoc, newDoc)
   }
 } catch (err) {
   console.error(`WARNING: file cannot be open: ${configDoc}`)
+  console.error(err)
 }
