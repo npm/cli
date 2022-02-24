@@ -1,3 +1,68 @@
+## v8.5.2 (2022-02-24)
+
+### Bug Fixes
+
+* [`9bdd1ace8`](https://github.com/npm/cli/commit/9bdd1ace86300a8ee562027bbc5cb57d62dc7ba8)
+  [#4300](https://github.com/npm/cli/pull/4300)
+  fix(arborist): use full location as tracker key when inflating
+  ([@lukekarrys](https://github.com/lukekarrys)) ([@kirtangajjar](https://github.com/kirtangajjar))
+* [`c9ff797e8`](https://github.com/npm/cli/commit/c9ff797e8b5e5a7b39ced04b1d3f8a0006993a1f)
+  [#4457](https://github.com/npm/cli/pull/4457)
+  fix: remove html comments from man entries
+  ([@wraithgar](https://github.com/wraithgar))
+* [`f4c5f0e52`](https://github.com/npm/cli/commit/f4c5f0e52679b1aa42db833fc23dc07d96cc904e)
+  fix(arborist): fix unescaped periods (#4462)
+  ([@lukekarrys](https://github.com/lukekarrys))
+* [`c608512ed`](https://github.com/npm/cli/commit/c608512ed03ccf87dc989cec2849d14bf034513a)
+  [#4468](https://github.com/npm/cli/pull/4468)
+  fix: ignore integrity values for git dependencies
+  ([@lukekarrys](https://github.com/lukekarrys))
+
+### Documentation
+
+* [`e83e5c9ba`](https://github.com/npm/cli/commit/e83e5c9bad93e598969088ae780149dbe34c6b5c)
+  [#4435](https://github.com/npm/cli/pull/4435)
+  docs: clarify npm init @latest behavior
+  ([@wraithgar](https://github.com/wraithgar))
+* [`d8fa9fa5e`](https://github.com/npm/cli/commit/d8fa9fa5e44d91e1c0170628d4839f7802c65a7f)
+  [#4436](https://github.com/npm/cli/pull/4436)
+  docs: explain $INIT_CWD on using scripts page
+  ([@wraithgar](https://github.com/wraithgar))
+* [`6b68c1aaa`](https://github.com/npm/cli/commit/6b68c1aaa282205eb4d47dbc81909c11851f7e06)
+  [#4450](https://github.com/npm/cli/pull/4450)
+  docs: auto-generate npm usage for each command
+  ([@manekinekko](https://github.com/manekinekko))
+
+### Dependencies
+
+* [`d58e4442b`](https://github.com/npm/cli/commit/d58e4442b0a16c84219d5f80ab88ef68ad209918)
+  deps `@npmcli/arborist@5.0.0`
+* [`77399cb98`](https://github.com/npm/cli/commit/77399cb988d984133bfc2885a6407ffc56b9152d)
+  deps: `libnpmaccess@6.0.0`
+* [`9633752cd`](https://github.com/npm/cli/commit/9633752cd5c4a0d240adcb24f0ae7e3fafd122ba)
+  deps: `libnpmdiff@4.0.0`
+* [`938750581`](https://github.com/npm/cli/commit/9387505819f0e7e4b3d76dd3e2bd8636a1bb6306)
+  deps: `libnpmexec@4.0.0`
+* [`2c86feaf1`](https://github.com/npm/cli/commit/2c86feaf1f974ee510563c7d93c0dd26f6355b15)
+  deps: `libnpmfund@3.0.0`
+* [`1dab29805`](https://github.com/npm/cli/commit/1dab29805c820f82e4bae18123e911fec6948dfd)
+  deps: `libnpmhook@8.0.0`
+* [`cf273f1cf`](https://github.com/npm/cli/commit/cf273f1cf31775c8a73cc67b654faf87b44f7f79)
+  deps: `libnpmorg@4.0.0`
+* [`8b1d9636a`](https://github.com/npm/cli/commit/8b1d9636ad2374254263d154f2b4ca8ea6416f4c)
+  deps: `libnpmpack@4.0.0`
+* [`67aed0542`](https://github.com/npm/cli/commit/67aed05429163fc120e05e6fb15f8f3cd9c6ef22)
+  deps: `libnpmpublish@6.0.0`
+* [`8b26a6db1`](https://github.com/npm/cli/commit/8b26a6db13c37a6f0df86c54ca859ad2f9627825)
+  deps: `libnpmsearch@5.0.0`
+* [`0b2fa7fed`](https://github.com/npm/cli/commit/0b2fa7feda4643fe16c9a492497908f94d310dbd)
+  deps: `libnpmteam@4.0.0`
+* [`2646d199f`](https://github.com/npm/cli/commit/2646d199f26f77c4197ec0bcf30c3e452844c1ab)
+  deps: `libnpmversion@3.0.0`
+* [`5b29666e5`](https://github.com/npm/cli/commit/5b29666e566c09dc685108daaa20163dd58ade2b)
+  [#4459](https://github.com/npm/cli/pull/4459)
+  deps: `columnify@1.6.0 and dedupe vulnerable deps`
+
 ## v8.5.1 (2022-02-17)
 
 ### Dependencies
