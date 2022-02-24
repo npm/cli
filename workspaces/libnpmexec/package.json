@@ -50,7 +50,7 @@
     "tap": "^15.0.6"
   },
   "dependencies": {
-    "@npmcli/arborist": "^4.0.0",
+    "@npmcli/arborist": "^5.0.0",
     "@npmcli/ci-detect": "^2.0.0",
     "@npmcli/run-script": "^3.0.0",
     "chalk": "^4.1.0",
