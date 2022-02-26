@@ -36,7 +36,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/npm/libnpmsearch.git"
+    "url": "https://github.com/npm/cli",
+    "directory": "workspaces/libnpmsearch"
   },
   "bugs": "https://github.com/npm/libnpmsearch/issues",
   "homepage": "https://npmjs.com/package/libnpmsearch",

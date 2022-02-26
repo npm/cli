@@ -66,7 +66,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/npm/arborist"
+    "url": "https://github.com/npm/cli",
+    "directory": "workspaces/arborist"
   },
   "author": "GitHub Inc.",
   "license": "ISC",
