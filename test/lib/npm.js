@@ -575,7 +575,6 @@ t.test('implicit workspace rejection', async t => {
   })
   const cwd = join(mock.npm.config.localPrefix, 'packages', 'a')
   mock.npm.config.set('workspace', [cwd], 'default')
-  console.log(mock.npm.config.get('workspace', 'default'))
   mockGlobals(t, {
     'process.argv': [
       process.execPath,
