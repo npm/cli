@@ -137,6 +137,59 @@ module.exports = cls => class Reifier extends cls {
   }
 
   [_createIsolatedTree](idealTree) {
+    function memoize(fn, keyExtractor) {
+      const memo = new Map()
+      return function(...args) {
+        const key = keyExtractor(...args)
+        if (memo.has(key)) { return memo.get(key) }
+        const result = {}
+        memo.set(key, result)
+        fn(result, ...args)
+        return result
+      }
+    }
+    function mapMap(map, fn) {
+      return new Map([...map.entries()].map(([key, value]) => ([key, fn(value)])))
+    }
+    function edgeProxy(edge) {
+      return {
+        to: edge.to ? {
+          target: tmpProxyMemo(edge.to.target),
+          package: edge.to.package,
+          name: edge.to.name,
+        } : undefined,
+      }
+    }
+    function tmpProxy(result, tree) {
+      function copy(prop) {
+        result[prop] = tree[prop]
+      }
+      copy('isProjectRoot')
+      copy('isWorkspace')
+      copy('dev')
+      copy('devOptional')
+      copy('optional')
+      copy('path')
+      copy('location')
+      copy('peer')
+      copy('realpath')
+      copy('resolved')
+      copy('package')
+      copy('binPaths')
+      copy('hasInstallScript')
+      copy('name')
+      copy('version')
+      result.target = tree.target && tmpProxyMemo(tree.target)
+      result.parent= tree.parent && tmpProxyMemo(tree.parent)
+      result.children= mapMap(tree.children, tmpProxyMemo)
+      result.fsChildren= mapMap(tree.fsChildren, tmpProxyMemo)
+      result.edgesOut= mapMap(tree.edgesOut, edgeProxy)
+      result.root= tmpProxyMemo(tree.root)
+      result.inventory= mapMap(tree.inventory, tmpProxyMemo)
+    }
+    const tmpProxyMemo = memoize(tmpProxy, (o) => o.location)
+
+    const proxiedIdealTree = tmpProxyMemo(idealTree)
     const hasher = (() => {
       const result = new Map()
       const idToLocation = new Map()
@@ -166,7 +219,7 @@ module.exports = cls => class Reifier extends cls {
               })
         }
       }
-      visit(idealTree)
+      visit(proxiedIdealTree)
       const nodeHashes = getNodeHashes(graph)
       nodeHashes.forEach((value, key) => {
           result.set(idToLocation.get(key), value)
@@ -190,15 +243,15 @@ module.exports = cls => class Reifier extends cls {
       hasShrinkwrap: false,
       parent: null,
       isTop: true,
-      path: idealTree.root.path,
-      realpath: idealTree.root.path,
+      path: proxiedIdealTree.root.path,
+      realpath: proxiedIdealTree.root.path,
       meta: { loadedFromDisk: false },
       global: false,
       isProjectRoot: true,
       children: []
     }
     const processed = new Set()
-    idealTree.fsChildren.forEach(c => {
+    proxiedIdealTree.fsChildren.forEach(c => {
       const workspace = {
         edgesIn: new Set(),
         edgesOut: new Map(),
@@ -213,7 +266,7 @@ module.exports = cls => class Reifier extends cls {
       t.fsChildren.push(workspace)
       t.inventory.set(workspace.location, workspace)
     })
-    idealTree.inventory.forEach(c => {
+    proxiedIdealTree.inventory.forEach(c => {
       // workspaces are already handled by fsChildren and project root has already been created
       if (!c.isWorkspace && !c.isProjectRoot) {
         const key = getKey(c)
@@ -228,7 +281,7 @@ module.exports = cls => class Reifier extends cls {
             location,
             name: c.name,
             optional: c.optional,
-            top: { path: idealTree.root.path },
+            top: { path: proxiedIdealTree.root.path },
             children: [],
             edgesIn: new Set(),
             edgesOut: new Map(),
@@ -240,8 +293,8 @@ module.exports = cls => class Reifier extends cls {
             integrity: null,
             isLink: false,
             isRoot: false,
-            path: `${idealTree.root.path}/${location}`,
-            realpath: `${idealTree.root.path}/${location}`,
+            path: `${proxiedIdealTree.root.path}/${location}`,
+            realpath: `${proxiedIdealTree.root.path}/${location}`,
             resolved: c.resolved,
             package: c.package,
           }
@@ -272,8 +325,8 @@ module.exports = cls => class Reifier extends cls {
         const binNames = to.package.bin && Object.keys(to.package.bin) || []
 
         const toKey = getKey(to.target)
-        const toLocation = to.isWorkspace ? to.location : `node_modules/.store/${toKey}/node_modules/${to.name}` 
-        const target = to.isWorkspace ? t.fsChildren.find(c => c.location === to.target.location) : t.children.find(c => c.location === toLocation)
+        const toLocation = to.target.isWorkspace ? to.target.location : `node_modules/.store/${toKey}/node_modules/${to.name}` 
+        const target = to.target.isWorkspace ? t.fsChildren.find(c => c.location === to.target.location) : t.children.find(c => c.location === toLocation)
         // TODO: we should no-op is an edge has already been created with the same fromKey and toKey
 
         binNames.forEach(bn => {
@@ -290,11 +343,11 @@ module.exports = cls => class Reifier extends cls {
             isTop: false,
             optional: edge.optional,
             location: `${node_modules_folder}/${to.name}`,
-            path: `${idealTree.root.path}/${node_modules_folder}/${to.name}`,
+            path: `${proxiedIdealTree.root.path}/${node_modules_folder}/${to.name}`,
             realpath: target.path,
             name: toKey,
             resolved:toKey,
-            top: { path: idealTree.root.path },
+            top: { path: proxiedIdealTree.root.path },
             children: [],
             fsChildren: [],
             isLink: true,
@@ -311,7 +364,7 @@ module.exports = cls => class Reifier extends cls {
         t.children.push(link)
       }
     }
-    processEdges(idealTree)
+    processEdges(proxiedIdealTree)
     t.children.forEach(c => c.parent = t)
     t.children.forEach(c => c.root = t)
     t.root = t
