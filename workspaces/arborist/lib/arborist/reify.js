@@ -148,8 +148,8 @@ module.exports = cls => class Reifier extends cls {
         return result
       }
     }
-    function mapMap(map, fn) {
-      return new Map([...map.entries()].map(([key, value]) => ([key, fn(value)])))
+    function mapMap(map, fn, filter = () => true) {
+      return new Map([...map.entries()].filter(([key, value]) => filter(value)).map(([key, value]) => ([key, fn(value)])))
     }
     function edgeProxy(edge) {
       return {
@@ -165,28 +165,27 @@ module.exports = cls => class Reifier extends cls {
       function copy(prop) {
         result[prop] = tree[prop]
       }
+      if (tree.isProjectRoot) {
+        result.workspaceLocation = tree.location
+        result.localPath = tree.path
+        result.workspaces= mapMap(tree.fsChildren, tmpProxyMemo)
+        result.external= mapMap(tree.inventory, tmpProxyMemo, v => !v.isProjectRoot && !v.isWorkspace)
+      } else if (tree.isWorkspace) {
+        result.workspaceLocation = tree.location
+        result.localPath = tree.path
+      } else {
+        copy('optional')
+        copy('resolved')
+        copy('version')
+      }
       copy('isProjectRoot')
       copy('isWorkspace')
-      copy('dev')
-      copy('devOptional')
-      copy('optional')
-      copy('peer')
-      copy('resolved')
       copy('package')
-      copy('binPaths')
       copy('hasInstallScript')
       copy('name')
-      copy('version')
-      result.workspaceLocation = (tree.isWorkspace || tree.isProjectRoot) && tree.location
-      result.localPath = (tree.isWorkspace || tree.isProjectRoot) && tree.path
       result.id = tree.location
-      result.target = tree.target && tmpProxyMemo(tree.target)
-      result.parent= tree.parent && tmpProxyMemo(tree.parent)
-      result.children= mapMap(tree.children, tmpProxyMemo)
-      result.fsChildren= mapMap(tree.fsChildren, tmpProxyMemo)
-      result.edgesOut= mapMap(tree.edgesOut, edgeProxy)
+      result.dependencies= [...tree.edgesOut.values()].map(edgeProxy)
       result.root= tmpProxyMemo(tree.root)
-      result.inventory= mapMap(tree.inventory, tmpProxyMemo)
     }
     const tmpProxyMemo = memoize(tmpProxy, (o) => o.location)
 
@@ -212,7 +211,7 @@ module.exports = cls => class Reifier extends cls {
         }
         if (!visited.has(node.id)) {
           visited.add(node.id);
-          [...node.edgesOut.values()].forEach(e => {
+          node.dependencies.forEach(e => {
               const target = e.to && e.to.target
               if (target) {
                 visit(target, id)
@@ -253,7 +252,7 @@ module.exports = cls => class Reifier extends cls {
       children: []
     }
     const processed = new Set()
-    proxiedIdealTree.fsChildren.forEach(c => {
+    proxiedIdealTree.workspaces.forEach(c => {
       const workspace = {
         edgesIn: new Set(),
         edgesOut: new Map(),
@@ -268,42 +267,39 @@ module.exports = cls => class Reifier extends cls {
       t.fsChildren.push(workspace)
       t.inventory.set(workspace.location, workspace)
     })
-    proxiedIdealTree.inventory.forEach(c => {
-      // workspaces are already handled by fsChildren and project root has already been created
-      if (!c.isWorkspace && !c.isProjectRoot) {
-        const key = getKey(c)
-        if (processed.has(key)) { return }
-        processed.add(key)
-        const location = `node_modules/.store/${key}/node_modules/${c.name}`
-        const newChild = {
-            global: false,
-            globalTop: false,
-            isProjectRoot: false,
-            isTop: false,
-            location,
-            name: c.name,
-            optional: c.optional,
-            top: { path: proxiedIdealTree.root.localPath },
-            children: [],
-            edgesIn: new Set(),
-            edgesOut: new Map(),
-            binPaths: [],
-            fsChildren: [],
-            getBundler() { return null },
-            hasShrinkwrap: false,
-            inDepBundle: false,
-            integrity: null,
-            isLink: false,
-            isRoot: false,
-            path: `${proxiedIdealTree.root.localPath}/${location}`,
-            realpath: `${proxiedIdealTree.root.localPath}/${location}`,
-            resolved: c.resolved,
-            package: c.package,
-          }
-        newChild.target = newChild
-        t.children.push(newChild)
-        t.inventory.set(newChild.location, newChild)
-      }
+    proxiedIdealTree.external.forEach(c => {
+      const key = getKey(c)
+      if (processed.has(key)) { return }
+      processed.add(key)
+      const location = `node_modules/.store/${key}/node_modules/${c.name}`
+      const newChild = {
+          global: false,
+          globalTop: false,
+          isProjectRoot: false,
+          isTop: false,
+          location,
+          name: c.name,
+          optional: c.optional,
+          top: { path: proxiedIdealTree.root.localPath },
+          children: [],
+          edgesIn: new Set(),
+          edgesOut: new Map(),
+          binPaths: [],
+          fsChildren: [],
+          getBundler() { return null },
+          hasShrinkwrap: false,
+          inDepBundle: false,
+          integrity: null,
+          isLink: false,
+          isRoot: false,
+          path: `${proxiedIdealTree.root.localPath}/${location}`,
+          realpath: `${proxiedIdealTree.root.localPath}/${location}`,
+          resolved: c.resolved,
+          package: c.package,
+        }
+      newChild.target = newChild
+      t.children.push(newChild)
+      t.inventory.set(newChild.location, newChild)
     })
     const memo = new Set()
     function processEdges(node) {
@@ -315,7 +311,7 @@ module.exports = cls => class Reifier extends cls {
           : node.isWorkspace ? t.fsChildren.find(c => c.location === node.workspaceLocation)
           : t.children.find(c => c.location === fromLocation)
       const node_modules_folder = node.isProjectRoot || node.isWorkspace ? join(node.workspaceLocation, 'node_modules') : `node_modules/.store/${key}/node_modules` 
-      for(const [name, edge] of node.edgesOut) {
+      for(const edge of node.dependencies) {
         const to = edge.to
         // We have a failed dependency... ignore
         if (!to.target) {
