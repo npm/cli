@@ -18,77 +18,62 @@ module.exports = cls => class IsolatedReifier extends cls {
     await this.buildIdealTree(bitOpt)
     const idealTree = this.idealTree
 
-    function memoize(fn, keyExtractor) {
+    function memoize(fn) {
       const memo = new Map()
-      return function(...args) {
-        const key = keyExtractor(...args)
+      return function(arg) {
+        const key = arg
         if (memo.has(key)) { return memo.get(key) }
         const result = {}
         memo.set(key, result)
-        fn(result, ...args)
+        fn(result, arg)
         return result
       }
     }
-    function mapMap(map, fn, filter = () => true) {
-      return new Map([...map.entries()].filter(([key, value]) => filter(value)).map(([key, value]) => ([key, fn(value)])))
-    }
+    
     const root = {}
-    const externalProxyMemo = memoize(externalProxy, (o) => o.location)
-    const workspaceProxyMemo = memoize(workspaceProxy, (o) => o.location)
+    let counter = 0
+
+    function validEdgesOut(node) {
+      return [...node.edgesOut.values()].filter(e => e.to && e.to.target) 
+    }
+
+    function assignCommonProperties(node, result) {
+      const edges = validEdgesOut(node)
+      const optionalDeps = edges.filter(e => e.optional).map(e => e.to.target)
+      const nonOptionalDeps = edges.filter(e => !e.optional).map(e => e.to.target)
+
+      result.localDependencies = nonOptionalDeps.filter(n => n.isWorkspace).map(workspaceProxyMemo),
+      result.externalDependencies = nonOptionalDeps.filter(n => !n.isWorkspace).map(externalProxyMemo),
+      result.externalOptionalDependencies = optionalDeps.map(externalProxyMemo),
+      result.dependencies = [...result.externalDependencies, ...result.localDependencies, ...result.externalOptionalDependencies],
+      result.root = root
+      result.id = counter++
+      result.name = node.name
+      result.package = node.package
+      result.hasInstallScript = node.hasInstallScript
+    }
+
+    const externalProxyMemo = memoize(externalProxy)
+    const workspaceProxyMemo = memoize(workspaceProxy)
 
     root.isProjectRoot = true,
     root.localLocation = idealTree.location,
     root.localPath = idealTree.path,
-    root.workspaces = mapMap(idealTree.fsChildren, workspaceProxyMemo),
-    root.external = mapMap(idealTree.inventory, externalProxyMemo, v => !v.isProjectRoot && !v.isWorkspace),
-    root.package = idealTree.package,
-    root.hasInstallScript = idealTree.hasInstallScript,
-    root.name = idealTree.name,
-    root.id = 0,
-    root.localDependencies = [...idealTree.edgesOut.values()].filter(e => e.to && e.to.target && e.to.target.isWorkspace).map(e => e.to.target).map(workspaceProxyMemo),
-    root.externalDependencies = [...idealTree.edgesOut.values()].filter(e => e.to && e.to.target && !e.to.target.isWorkspace && !e.optional).map(e => e.to.target).map(externalProxyMemo),
-    root.externalOptionalDependencies = [...idealTree.edgesOut.values()].filter(e => e.to && e.to.target && !e.to.target.isWorkspace && e.optional).map(e => e.to.target).map(externalProxyMemo),
-    root.dependencies = [...root.externalDependencies, ...root.localDependencies, ...root.externalOptionalDependencies],
-    root.root = root
+    root.workspaces = [...idealTree.fsChildren.values()].map(workspaceProxyMemo),
+    root.external = [...idealTree.inventory.values()].filter(n => !n.isProjectRoot && !n.isWorkspace).map(externalProxyMemo),
+    assignCommonProperties(idealTree, root)
 
-    function workspaceProxy(result, tree) {
-      function copy(prop) {
-        result[prop] = tree[prop]
-      }
-      result.localLocation = tree.location
-      result.localPath = tree.path
-      copy('isProjectRoot')
-      copy('isWorkspace')
-      copy('package')
-      copy('hasInstallScript')
-      copy('name')
-      result.id = tree.location
-      // This is weird but externals can have local dependencies TODO:test this scenario
-      result.localDependencies= [...tree.edgesOut.values()].filter(e => e.to && e.to.target && e.to.target.isWorkspace).map(e => e.to.target).map(workspaceProxyMemo)
-      result.externalDependencies= [...tree.edgesOut.values()].filter(e => e.to && e.to.target && !e.to.target.isWorkspace && !e.optional).map(e => e.to.target).map(externalProxyMemo)
-      result.externalOptionalDependencies= [...tree.edgesOut.values()].filter(e => e.to && e.to.target && !e.to.target.isWorkspace && e.optional).map(e => e.to.target).map(externalProxyMemo)
-      result.dependencies = [...result.externalDependencies, ...result.localDependencies, ...result.externalOptionalDependencies]
-      result.root= root
+    function workspaceProxy(result, node) {
+      result.localLocation = node.location
+      result.localPath = node.path
+      result.isWorkspace = true
+      assignCommonProperties(node, result)
     }
-    function externalProxy(result, tree) {
-      function copy(prop) {
-        result[prop] = tree[prop]
-      }
-      copy('optional')
-      copy('resolved')
-      copy('version')
-      copy('isProjectRoot')
-      copy('isWorkspace')
-      copy('package')
-      copy('hasInstallScript')
-      copy('name')
-      result.id = tree.location
-      // This is weird but externals can have local dependencies TODO:test this scenario
-      result.localDependencies= [...tree.edgesOut.values()].filter(e => e.to && e.to.target && e.to.target.isWorkspace).map(e => e.to.target).map(workspaceProxyMemo)
-      result.externalDependencies= [...tree.edgesOut.values()].filter(e => e.to && e.to.target && !e.to.target.isWorkspace && !e.optional).map(e => e.to.target).map(externalProxyMemo)
-      result.externalOptionalDependencies= [...tree.edgesOut.values()].filter(e => e.to && e.to.target && !e.to.target.isWorkspace && e.optional).map(e => e.to.target).map(externalProxyMemo)
-      result.dependencies = [...result.externalDependencies, ...result.localDependencies, ...result.externalOptionalDependencies]
-      result.root= root
+    function externalProxy(result, node) {
+      result.optional = node.optional
+      result.resolved = node.resolved
+      result.version = node.version
+      assignCommonProperties(node, result)
     }
 
     this.idealGraph = root
