@@ -710,7 +710,6 @@ tap.only('shrinkwrap with peer dependencies', async t => {
   const { dir, registry } = await getRepo(graph)
   const cache = fs.mkdtempSync(`${os.tmpdir}/test-`)
   const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache  })
-  debugger
   await arborist.reify({ isolated: false })
 
 })
