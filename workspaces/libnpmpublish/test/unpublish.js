@@ -134,6 +134,61 @@ t.test('unpublish specific version', async t => {
   t.ok(ret, 'foo was unpublished')
 })
 
+t.test('unpublishing from a custom registry', async t => {
+  const opt = {
+    registry: 'https://artifactory.example.com/api/npm/npm-snapshots/',
+  }
+  const reg = opt.registry
+  const doc = {
+    _id: 'foo',
+    _rev: REV,
+    _revisions: [1, 2, 3],
+    _attachments: [1, 2, 3],
+    name: 'foo',
+    'dist-tags': {
+      latest: '1.0.1',
+    },
+    versions: {
+      '1.0.0': {
+        name: 'foo',
+        dist: {
+          tarball: `${reg}/foo/-/foo-1.0.0.tgz`,
+        },
+      },
+      '1.0.1': {
+        name: 'foo',
+        dist: {
+          tarball: `${reg}/foo/-/foo-1.0.1.tgz`,
+        },
+      },
+    },
+  }
+  const postEdit = {
+    _id: 'foo',
+    _rev: REV,
+    name: 'foo',
+    'dist-tags': {
+      latest: '1.0.0',
+    },
+    versions: {
+      '1.0.0': {
+        name: 'foo',
+        dist: {
+          tarball: `${reg}/foo/-/foo-1.0.0.tgz`,
+        },
+      },
+    },
+  }
+
+  const srv = tnock(t, reg)
+  srv.get('/foo?write=true').reply(200, doc)
+  srv.put(`/foo/-rev/${REV}`, postEdit).reply(200)
+  srv.get('/foo?write=true').reply(200, postEdit)
+  srv.delete(`/foo/-/foo-1.0.1.tgz/-rev/${REV}`).reply(200)
+  const ret = await unpub('foo@1.0.1', opt)
+  t.ok(ret, 'foo was unpublished')
+})
+
 t.test('404 considered a success', async t => {
   const srv = tnock(t, REG)
   srv.get('/foo?write=true').reply(404)
