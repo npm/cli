@@ -35,6 +35,40 @@ t.test('basic test', async t => {
   t.ok(ret, 'foo was unpublished')
 })
 
+t.test('unpublishing from a custom registry', async t => {
+  const opt = {
+    registry: 'https://artifactory.example.com/api/npm/npm-snapshots/',
+  }
+  const reg = opt.registry
+  const doc = {
+    _id: 'foo',
+    _rev: REV,
+    name: 'foo',
+    'dist-tags': {
+      latest: '1.0.1',
+    },
+    versions: {
+      '1.0.0': {
+        name: 'foo',
+        dist: {
+          tarball: `${reg}/foo/-/foo-1.0.0.tgz`,
+        },
+      },
+      '1.0.1': {
+        name: 'foo',
+        dist: {
+          tarball: `${reg}/foo/-/foo-1.0.1.tgz`,
+        },
+      },
+    },
+  }
+  const srv = tnock(t, reg)
+  srv.get('/foo?write=true').reply(200, doc)
+  srv.delete(`/foo/-rev/${REV}`).reply(201)
+  const ret = await unpub('foo@1.0.0', opt)
+  t.ok(ret, 'foo was unpublished')
+})
+
 t.test('scoped basic test', async t => {
   const doc = {
     _id: '@foo/bar',
