@@ -171,7 +171,6 @@ module.exports = cls => class Reifier extends cls {
       copy('devOptional')
       copy('optional')
       copy('path')
-      copy('location')
       copy('peer')
       copy('realpath')
       copy('resolved')
@@ -180,6 +179,7 @@ module.exports = cls => class Reifier extends cls {
       copy('hasInstallScript')
       copy('name')
       copy('version')
+      result.workspaceLocation = (tree.isWorkspace || tree.isProjectRoot) && tree.location
       result.id = tree.location
       result.target = tree.target && tmpProxyMemo(tree.target)
       result.parent= tree.parent && tmpProxyMemo(tree.parent)
@@ -263,7 +263,7 @@ module.exports = cls => class Reifier extends cls {
         hasInstallScript: c.hasInstallScript,
         binPaths: [],
         package: c.package,
-        location: c.location,
+        location: c.workspaceLocation,
         path: c.path
       }
       t.fsChildren.push(workspace)
@@ -311,11 +311,11 @@ module.exports = cls => class Reifier extends cls {
       const key = getKey(node)
       if (memo.has(key)) { return }
       memo.add(key)
-      const fromLocation = node.isWorkspace ? node.location : `node_modules/.store/${key}/node_modules/${node.name}` 
+      const fromLocation = node.isWorkspace ? node.workspaceLocation : `node_modules/.store/${key}/node_modules/${node.name}` 
       const from = node.isProjectRoot ? t
-          : node.isWorkspace ? t.fsChildren.find(c => c.location === node.location)
+          : node.isWorkspace ? t.fsChildren.find(c => c.location === node.workspaceLocation)
           : t.children.find(c => c.location === fromLocation)
-      const node_modules_folder = node.isProjectRoot || node.isWorkspace ? join(node.location, 'node_modules') : `node_modules/.store/${key}/node_modules` 
+      const node_modules_folder = node.isProjectRoot || node.isWorkspace ? join(node.workspaceLocation, 'node_modules') : `node_modules/.store/${key}/node_modules` 
       for(const [name, edge] of node.edgesOut) {
         const to = edge.to
         // We have a failed dependency... ignore
@@ -328,8 +328,8 @@ module.exports = cls => class Reifier extends cls {
         const binNames = to.package.bin && Object.keys(to.package.bin) || []
 
         const toKey = getKey(to.target)
-        const toLocation = to.target.isWorkspace ? to.target.location : `node_modules/.store/${toKey}/node_modules/${to.name}` 
-        const target = to.target.isWorkspace ? t.fsChildren.find(c => c.location === to.target.location) : t.children.find(c => c.location === toLocation)
+        const toLocation = to.target.isWorkspace ? to.target.workspaceLocation : `node_modules/.store/${toKey}/node_modules/${to.name}` 
+        const target = to.target.isWorkspace ? t.fsChildren.find(c => c.location === to.target.workspaceLocation) : t.children.find(c => c.location === toLocation)
         // TODO: we should no-op is an edge has already been created with the same fromKey and toKey
 
         binNames.forEach(bn => {
