@@ -105,6 +105,7 @@ const _usePackageLock = Symbol.for('usePackageLock')
 const _formatPackageLock = Symbol.for('formatPackageLock')
 
 const _createIsolatedTree = Symbol('createIsolatedTree')
+const _makeIdealGraph = Symbol.for('makeIdealGraph')
 
 module.exports = cls => class Reifier extends cls {
   constructor (options) {
@@ -136,81 +137,11 @@ module.exports = cls => class Reifier extends cls {
     this[_nmValidated] = new Set()
   }
 
-  [_createIsolatedTree](idealTree) {
-    function memoize(fn, keyExtractor) {
-      const memo = new Map()
-      return function(...args) {
-        const key = keyExtractor(...args)
-        if (memo.has(key)) { return memo.get(key) }
-        const result = {}
-        memo.set(key, result)
-        fn(result, ...args)
-        return result
-      }
-    }
-    function mapMap(map, fn, filter = () => true) {
-      return new Map([...map.entries()].filter(([key, value]) => filter(value)).map(([key, value]) => ([key, fn(value)])))
-    }
-    const root = {}
-    const tmpProxyMemo = memoize(tmpProxy, (o) => o.location)
-    const workspaceProxyMemo = memoize(workspaceProxy, (o) => o.location)
+  async [_createIsolatedTree](idealTree) {
+    await this[_makeIdealGraph](this.options)
 
-    root.isProjectRoot = true,
-    root.localLocation = idealTree.location,
-    root.localPath = idealTree.path,
-    root.workspaces = mapMap(idealTree.fsChildren, workspaceProxyMemo),
-    root.external = mapMap(idealTree.inventory, tmpProxyMemo, v => !v.isProjectRoot && !v.isWorkspace),
-    root.package = idealTree.package,
-    root.hasInstallScript = idealTree.hasInstallScript,
-    root.name = idealTree.name,
-    root.id = 0,
-    root.localDependencies = [...idealTree.edgesOut.values()].filter(e => e.to && e.to.target && e.to.target.isWorkspace).map(e => e.to.target).map(workspaceProxyMemo),
-    root.externalDependencies = [...idealTree.edgesOut.values()].filter(e => e.to && e.to.target && !e.to.target.isWorkspace && !e.optional).map(e => e.to.target).map(tmpProxyMemo),
-    root.externalOptionalDependencies = [...idealTree.edgesOut.values()].filter(e => e.to && e.to.target && !e.to.target.isWorkspace && e.optional).map(e => e.to.target).map(tmpProxyMemo),
-    root.dependencies = [...root.externalDependencies, ...root.localDependencies, ...root.externalOptionalDependencies],
-    root.root = root
+    const proxiedIdealTree = this.idealGraph
 
-    function workspaceProxy(result, tree) {
-      function copy(prop) {
-        result[prop] = tree[prop]
-      }
-      result.localLocation = tree.location
-      result.localPath = tree.path
-      copy('isProjectRoot')
-      copy('isWorkspace')
-      copy('package')
-      copy('hasInstallScript')
-      copy('name')
-      result.id = tree.location
-      // This is weird but externals can have local dependencies TODO:test this scenario
-      result.localDependencies= [...tree.edgesOut.values()].filter(e => e.to && e.to.target && e.to.target.isWorkspace).map(e => e.to.target).map(workspaceProxyMemo)
-      result.externalDependencies= [...tree.edgesOut.values()].filter(e => e.to && e.to.target && !e.to.target.isWorkspace && !e.optional).map(e => e.to.target).map(tmpProxyMemo)
-      result.externalOptionalDependencies= [...tree.edgesOut.values()].filter(e => e.to && e.to.target && !e.to.target.isWorkspace && e.optional).map(e => e.to.target).map(tmpProxyMemo)
-      result.dependencies = [...result.externalDependencies, ...result.localDependencies, ...result.externalOptionalDependencies]
-      result.root= root
-    }
-    function tmpProxy(result, tree) {
-      function copy(prop) {
-        result[prop] = tree[prop]
-      }
-      copy('optional')
-      copy('resolved')
-      copy('version')
-      copy('isProjectRoot')
-      copy('isWorkspace')
-      copy('package')
-      copy('hasInstallScript')
-      copy('name')
-      result.id = tree.location
-      // This is weird but externals can have local dependencies TODO:test this scenario
-      result.localDependencies= [...tree.edgesOut.values()].filter(e => e.to && e.to.target && e.to.target.isWorkspace).map(e => e.to.target).map(workspaceProxyMemo)
-      result.externalDependencies= [...tree.edgesOut.values()].filter(e => e.to && e.to.target && !e.to.target.isWorkspace && !e.optional).map(e => e.to.target).map(tmpProxyMemo)
-      result.externalOptionalDependencies= [...tree.edgesOut.values()].filter(e => e.to && e.to.target && !e.to.target.isWorkspace && e.optional).map(e => e.to.target).map(tmpProxyMemo)
-      result.dependencies = [...result.externalDependencies, ...result.localDependencies, ...result.externalOptionalDependencies]
-      result.root= root
-    }
-
-    const proxiedIdealTree = root
     const hasher = (() => {
       const result = new Map()
       const idToLocation = new Map()
@@ -634,7 +565,7 @@ module.exports = cls => class Reifier extends cls {
 
     const old = this.idealTree
     if (isolated) {
-      const isolatedTree = this[_createIsolatedTree](this.idealTree)
+      const isolatedTree = await this[_createIsolatedTree](this.idealTree)
       this.idealTree = isolatedTree
     }
 
