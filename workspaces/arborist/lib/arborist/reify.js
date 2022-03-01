@@ -157,7 +157,6 @@ module.exports = cls => class Reifier extends cls {
         to: edge.to ? {
           target: tmpProxyMemo(edge.to.target),
           package: edge.to.package,
-          name: edge.to.name,
         } : undefined,
       }
     }
@@ -166,12 +165,12 @@ module.exports = cls => class Reifier extends cls {
         result[prop] = tree[prop]
       }
       if (tree.isProjectRoot) {
-        result.workspaceLocation = tree.location
+        result.localLocation = tree.location
         result.localPath = tree.path
         result.workspaces= mapMap(tree.fsChildren, tmpProxyMemo)
-        result.external= mapMap(tree.inventory, tmpProxyMemo, v => !v.isProjectRoot && !v.isWorkspace)
+        result.external = mapMap(tree.inventory, tmpProxyMemo, v => !v.isProjectRoot && !v.isWorkspace)
       } else if (tree.isWorkspace) {
-        result.workspaceLocation = tree.location
+        result.localLocation = tree.location
         result.localPath = tree.path
       } else {
         copy('optional')
@@ -184,7 +183,10 @@ module.exports = cls => class Reifier extends cls {
       copy('hasInstallScript')
       copy('name')
       result.id = tree.location
-      result.dependencies= [...tree.edgesOut.values()].map(edgeProxy)
+      // This is weird but externals can have local dependencies TODO:test this scenario
+      result.localDependencies= [...tree.edgesOut.values()].map(edgeProxy).filter(e => e.to && e.to.target && e.to.target.isWorkspace).map(e => e.to.target)
+      result.externalDependencies= [...tree.edgesOut.values()].map(edgeProxy).filter(e => e.to && e.to.target && !e.to.target.isWorkspace)
+      result.dependencies = [...result.externalDependencies.map(e => e.to && e.to.target).filter(Boolean), ...result.localDependencies]
       result.root= tmpProxyMemo(tree.root)
     }
     const tmpProxyMemo = memoize(tmpProxy, (o) => o.location)
@@ -211,12 +213,9 @@ module.exports = cls => class Reifier extends cls {
         }
         if (!visited.has(node.id)) {
           visited.add(node.id);
-          node.dependencies.forEach(e => {
-              const target = e.to && e.to.target
-              if (target) {
-                visit(target, id)
-              }
-              })
+          node.dependencies.forEach(d => {
+            visit(d, id)
+          })
         }
       }
       visit(proxiedIdealTree)
@@ -261,7 +260,7 @@ module.exports = cls => class Reifier extends cls {
         hasInstallScript: c.hasInstallScript,
         binPaths: [],
         package: c.package,
-        location: c.workspaceLocation,
+        location: c.localLocation,
         path: c.localPath
       }
       t.fsChildren.push(workspace)
@@ -302,29 +301,67 @@ module.exports = cls => class Reifier extends cls {
       t.inventory.set(newChild.location, newChild)
     })
     const memo = new Set()
-    function processEdges(node) {
+    function processExternalEdges(node) {
       const key = getKey(node)
       if (memo.has(key)) { return }
       memo.add(key)
-      const fromLocation = node.isWorkspace ? node.workspaceLocation : `node_modules/.store/${key}/node_modules/${node.name}` 
-      const from = node.isProjectRoot ? t
-          : node.isWorkspace ? t.fsChildren.find(c => c.location === node.workspaceLocation)
-          : t.children.find(c => c.location === fromLocation)
-      const node_modules_folder = node.isProjectRoot || node.isWorkspace ? join(node.workspaceLocation, 'node_modules') : `node_modules/.store/${key}/node_modules` 
-      for(const edge of node.dependencies) {
-        const to = edge.to
-        // We have a failed dependency... ignore
-        if (!to.target) {
-          return
-        }
+      const fromLocation = `node_modules/.store/${key}/node_modules/${node.name}` 
+      const from = t.children.find(c => c.location === fromLocation)
+      const node_modules_folder = `node_modules/.store/${key}/node_modules` 
 
-        processEdges(to.target)
+      for(const target of node.localDependencies) {
+        processLocalEdges(dep)
+
+        const binNames = dep.package.bin && Object.keys(dep.package.bin) || []
+
+        const toKey = getKey(dep)
+        const toLocation = dep.localLocation
+        const target = t.fsChildren.find(c => c.location === dep.localLocation)
+        // TODO: we should no-op is an edge has already been created with the same fromKey and toKey
+
+        binNames.forEach(bn => {
+            target.binPaths.push(`${from.realpath}/node_modules/.bin/${bn}`)
+            })
+
+        const link = {
+            global: false,
+            globalTop: false,
+            isProjectRoot: false,
+            edgesIn: new Set(),
+            edgesOut: new Map(),
+            binPaths: [],
+            isTop: false,
+            optional: false,
+            location: `${node_modules_folder}/${dep.name}`,
+            path: `${dep.root.localPath}/${node_modules_folder}/${dep.name}`,
+            realpath: target.path,
+            name: toKey,
+            resolved:toKey,
+            top: { path: dep.root.localPath },
+            children: [],
+            fsChildren: [],
+            isLink: true,
+            isRoot: false,
+            package: { _id: 'abc', bundleDependencies: undefined, deprecated: undefined, bin: target.package.bin },
+            target
+          }
+        const newEdge1 = { optional: false, from, to: link }
+        from.edgesOut.set(dep.name, newEdge1)
+        link.edgesIn.add(newEdge1)
+        const newEdge2 = { optional: false, from: link, to: target }
+        link.edgesOut.set(dep.name, newEdge2)
+        target.edgesIn.add(newEdge2)
+        t.children.push(link)
+      }
+      for(const edge of node.externalDependencies) {
+        const to = edge.to
+        processExternalEdges(to.target)
 
         const binNames = to.package.bin && Object.keys(to.package.bin) || []
 
         const toKey = getKey(to.target)
-        const toLocation = to.target.isWorkspace ? to.target.workspaceLocation : `node_modules/.store/${toKey}/node_modules/${to.name}` 
-        const target = to.target.isWorkspace ? t.fsChildren.find(c => c.location === to.target.workspaceLocation) : t.children.find(c => c.location === toLocation)
+        const toLocation = `node_modules/.store/${toKey}/node_modules/${to.target.name}` 
+        const target = t.children.find(c => c.location === toLocation)
         // TODO: we should no-op is an edge has already been created with the same fromKey and toKey
 
         binNames.forEach(bn => {
@@ -340,8 +377,8 @@ module.exports = cls => class Reifier extends cls {
             binPaths: [],
             isTop: false,
             optional: edge.optional,
-            location: `${node_modules_folder}/${to.name}`,
-            path: `${proxiedIdealTree.root.localPath}/${node_modules_folder}/${to.name}`,
+            location: `${node_modules_folder}/${to.target.name}`,
+            path: `${proxiedIdealTree.root.localPath}/${node_modules_folder}/${to.target.name}`,
             realpath: target.path,
             name: toKey,
             resolved:toKey,
@@ -354,15 +391,113 @@ module.exports = cls => class Reifier extends cls {
             target
           }
         const newEdge1 = { optional: edge.optional, from, to: link }
-        from.edgesOut.set(to.name, newEdge1)
+        from.edgesOut.set(to.target.name, newEdge1)
         link.edgesIn.add(newEdge1)
         const newEdge2 = { optional: false, from: link, to: target }
-        link.edgesOut.set(to.name, newEdge2)
+        link.edgesOut.set(to.target.name, newEdge2)
         target.edgesIn.add(newEdge2)
         t.children.push(link)
       }
     }
-    processEdges(proxiedIdealTree)
+    function processLocalEdges(node) {
+      const key = getKey(node)
+      if (memo.has(key)) { return }
+      memo.add(key)
+      const fromLocation = node.localLocation
+      const from = node.isProjectRoot ? t : t.fsChildren.find(c => c.location === node.localLocation)
+      const node_modules_folder = join(node.localLocation, 'node_modules')
+
+      for(const dep of node.localDependencies) {
+        processLocalEdges(dep)
+
+        const binNames = dep.package.bin && Object.keys(dep.package.bin) || []
+
+        const toKey = getKey(dep)
+        const toLocation = dep.localLocation
+        const target = t.fsChildren.find(c => c.location === dep.localLocation)
+        // TODO: we should no-op is an edge has already been created with the same fromKey and toKey
+
+        binNames.forEach(bn => {
+            target.binPaths.push(`${from.realpath}/node_modules/.bin/${bn}`)
+            })
+
+        const link = {
+            global: false,
+            globalTop: false,
+            isProjectRoot: false,
+            edgesIn: new Set(),
+            edgesOut: new Map(),
+            binPaths: [],
+            isTop: false,
+            optional: false,
+            location: `${node_modules_folder}/${dep.name}`,
+            path: `${dep.root.localPath}/${node_modules_folder}/${dep.name}`,
+            realpath: target.path,
+            name: toKey,
+            resolved:toKey,
+            top: { path: dep.root.localPath },
+            children: [],
+            fsChildren: [],
+            isLink: true,
+            isRoot: false,
+            package: { _id: 'abc', bundleDependencies: undefined, deprecated: undefined, bin: target.package.bin },
+            target
+          }
+        const newEdge1 = { optional: false, from, to: link }
+        from.edgesOut.set(dep.name, newEdge1)
+        link.edgesIn.add(newEdge1)
+        const newEdge2 = { optional: false, from: link, to: target }
+        link.edgesOut.set(dep.name, newEdge2)
+        target.edgesIn.add(newEdge2)
+        t.children.push(link)
+      }
+      for(const edge of node.externalDependencies) {
+        const to = edge.to
+        processExternalEdges(to.target)
+
+        const binNames = to.package.bin && Object.keys(to.package.bin) || []
+
+        const toKey = getKey(to.target)
+        const toLocation = `node_modules/.store/${toKey}/node_modules/${to.target.name}` 
+        const target = t.children.find(c => c.location === toLocation)
+        // TODO: we should no-op is an edge has already been created with the same fromKey and toKey
+
+        binNames.forEach(bn => {
+            target.binPaths.push(`${from.realpath}/node_modules/.bin/${bn}`)
+            })
+
+        const link = {
+            global: false,
+            globalTop: false,
+            isProjectRoot: false,
+            edgesIn: new Set(),
+            edgesOut: new Map(),
+            binPaths: [],
+            isTop: false,
+            optional: edge.optional,
+            location: `${node_modules_folder}/${to.target.name}`,
+            path: `${proxiedIdealTree.root.localPath}/${node_modules_folder}/${to.target.name}`,
+            realpath: target.path,
+            name: toKey,
+            resolved:toKey,
+            top: { path: proxiedIdealTree.root.localPath },
+            children: [],
+            fsChildren: [],
+            isLink: true,
+            isRoot: false,
+            package: { _id: 'abc', bundleDependencies: undefined, deprecated: undefined, bin: target.package.bin },
+            target
+          }
+        const newEdge1 = { optional: edge.optional, from, to: link }
+        from.edgesOut.set(to.target.name, newEdge1)
+        link.edgesIn.add(newEdge1)
+        const newEdge2 = { optional: false, from: link, to: target }
+        link.edgesOut.set(to.target.name, newEdge2)
+        target.edgesIn.add(newEdge2)
+        t.children.push(link)
+      }
+    }
+    processLocalEdges(proxiedIdealTree)
     t.children.forEach(c => c.parent = t)
     t.children.forEach(c => c.root = t)
     t.root = t
