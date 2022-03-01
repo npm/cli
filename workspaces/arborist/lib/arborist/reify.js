@@ -171,7 +171,6 @@ module.exports = cls => class Reifier extends cls {
       copy('devOptional')
       copy('optional')
       copy('peer')
-      copy('realpath')
       copy('resolved')
       copy('package')
       copy('binPaths')
