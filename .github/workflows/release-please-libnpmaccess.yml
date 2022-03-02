@@ -19,7 +19,7 @@ jobs:
         with:
           release-type: node
           monorepo-tags: true
-          path: workspaces/libnpmaccess/**        
+          path: workspaces/libnpmaccess
           # If you change changelog-types be sure to also update commitlintrc.js
           changelog-types: >
             [{"type":"feat","section":"Features","hidden":false},

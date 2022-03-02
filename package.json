@@ -201,7 +201,7 @@
   ],
   "devDependencies": {
     "@npmcli/eslint-config": "^2.0.0",
-    "@npmcli/template-oss": "^2.9.1",
+    "@npmcli/template-oss": "^2.9.2",
     "eslint": "^8.3.0",
     "licensee": "^8.2.0",
     "spawk": "^1.7.1",
@@ -255,7 +255,7 @@
       "libnpmteam",
       "libnpmversion"
     ],
-    "version": "2.9.1"
+    "version": "2.9.2"
   },
   "license": "Artistic-2.0",
   "engines": {
