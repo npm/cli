@@ -4,8 +4,6 @@ on:
   pull_request:
     paths:
       - workspaces/libnpmexec/**
-    branches:
-      - '*'
   push:
     paths:
       - workspaces/libnpmexec/**
@@ -20,57 +18,46 @@ jobs:
     steps:
       # Checkout the npm/cli repo
       - uses: actions/checkout@v2
-      - name: Use Node.js 16.x
-        uses: actions/setup-node@v2
+      - uses: actions/setup-node@v2
         with:
-          node-version: 16.x
-          cache: npm
-      - name: Install dependencies
-        run: |
-          node ./bin/npm-cli.js install --ignore-scripts --no-audit
-          node ./bin/npm-cli.js rebuild
-      - name: Run linting
-        run: node ./bin/npm-cli.js run posttest -w workspaces/libnpmexec
-        env:
-          DEPLOY_VERSION: testing
+          node-version: '16'
+      - run: npm i --prefer-online -g npm@latest
+      - run: npm i
+      - run: npm run lint -w workspaces/libnpmexec
 
   test:
     strategy:
       fail-fast: false
       matrix:
-        node-version: ['12.13.0', 12.x, '14.15.0', 14.x, '16.0.0', 16.x]
+        node-version: [12.13.0, 12.x, 14.15.0, 14.x, 16.13.0, 16.x]
         platform:
           - os: ubuntu-latest
             shell: bash
           - os: macos-latest
             shell: bash
           - os: windows-latest
-            shell: bash
-          - os: windows-latest
-            shell: powershell
-
+            shell: cmd
     runs-on: ${{ matrix.platform.os }}
     defaults:
       run:
         shell: ${{ matrix.platform.shell }}
-
     steps:
-      # Checkout the npm/cli repo
-    - uses: actions/checkout@v2
-
-      # Installs the specific version of Node.js
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: npm
-
-      # Run the installer script
-    - name: Install dependencies
-      run: |
-        node ./bin/npm-cli.js install --ignore-scripts --no-audit
-        node ./bin/npm-cli.js rebuild
-
-      # Run the tests, but not if we're just gonna do coveralls later anyway
-    - name: Run Tap tests
-      run: node ./bin/npm-cli.js run -w workspaces/libnpmexec --ignore-scripts test -- -t600 -Rbase -c
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+        # node 12 and 14 ship with npm@6, which is known to fail when updating itself in windows
+      - name: Update to workable npm (windows)
+        if: matrix.platform.os == 'windows-latest' && (startsWith(matrix.node-version, '12') || startsWith(matrix.node-version, '14'))
+        run: |
+          curl -sO https://registry.npmjs.org/npm/-/npm-7.5.4.tgz
+          tar xf npm-7.5.4.tgz
+          cd package
+          node lib/npm.js install --no-fund --no-audit -g ..\npm-7.5.4.tgz
+          cd ..
+          rmdir /s /q package
+      - name: Update npm
+        run: npm i --prefer-online --no-fund --no-audit -g npm@latest
+      - run: npm -v
+      - run: npm i
+      - run: npm test --ignore-scripts -w workspaces/libnpmexec
