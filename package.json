@@ -90,7 +90,7 @@
     "libnpmsearch": "^5.0.0",
     "libnpmteam": "^4.0.0",
     "libnpmversion": "^3.0.0",
-    "make-fetch-happen": "^10.0.3",
+    "make-fetch-happen": "^10.0.4",
     "minipass": "^3.1.6",
     "minipass-pipeline": "^1.2.4",
     "mkdirp": "^1.0.4",
