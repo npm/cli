@@ -60,7 +60,7 @@
     "@npmcli/config": "^4.0.0",
     "@npmcli/map-workspaces": "^2.0.0",
     "@npmcli/package-json": "^1.0.1",
-    "@npmcli/run-script": "^3.0.0",
+    "@npmcli/run-script": "^3.0.1",
     "abbrev": "~1.1.1",
     "ansicolors": "~0.3.2",
     "ansistyles": "~0.1.3",
