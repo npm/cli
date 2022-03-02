@@ -24,7 +24,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/npm/libnpmteam.git"
+    "url": "https://github.com/npm/cli",
+    "directory": "workspaces/libnpmteam"
   },
   "files": [
     "bin",

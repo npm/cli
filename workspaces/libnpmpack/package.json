@@ -34,7 +34,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/npm/libnpmpack.git"
+    "url": "https://github.com/npm/cli",
+    "directory": "workspaces/libnpmpack"
   },
   "bugs": "https://github.com/npm/libnpmpack/issues",
   "homepage": "https://npmjs.com/package/libnpmpack",

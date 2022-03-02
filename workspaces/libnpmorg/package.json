@@ -40,7 +40,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/npm/libnpmorg.git"
+    "url": "https://github.com/npm/cli",
+    "directory": "workspaces/libnpmorg"
   },
   "bugs": "https://github.com/npm/libnpmorg/issues",
   "homepage": "https://npmjs.com/package/libnpmorg",

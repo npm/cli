@@ -24,7 +24,11 @@
   "tap": {
     "check-coverage": true
   },
-  "repository": "https://github.com/npm/libnpmhook",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/npm/cli",
+    "directory": "workspaces/libnpmhook"
+  },
   "keywords": [
     "npm",
     "hooks",

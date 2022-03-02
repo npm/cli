@@ -38,7 +38,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/npm/cli.git"
+    "url": "https://github.com/npm/cli",
+    "directory": "workspaces/libnpmpublish"
   },
   "bugs": "https://github.com/npm/cli/issues",
   "homepage": "https://npmjs.com/package/libnpmpublish",
