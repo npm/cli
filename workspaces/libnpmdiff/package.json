@@ -37,7 +37,8 @@
     "preversion": "npm test",
     "postversion": "npm publish",
     "prepublishOnly": "git push origin --follow-tags",
-    "postlint": "npm-template-check"
+    "postlint": "npm-template-check",
+    "template-copy": "npm-template-copy --force"
   },
   "tap": {
     "check-coverage": true
@@ -58,6 +59,6 @@
     "tar": "^6.1.0"
   },
   "templateOSS": {
-    "version": "2.4.3"
+    "version": "2.9.1"
   }
 }

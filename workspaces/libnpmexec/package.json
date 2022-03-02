@@ -37,7 +37,8 @@
     "postversion": "npm publish",
     "prepublishOnly": "git push origin --follow-tags",
     "postlint": "npm-template-check",
-    "lintfix": "npm run lint -- --fix"
+    "lintfix": "npm run lint -- --fix",
+    "template-copy": "npm-template-copy --force"
   },
   "tap": {
     "color": true,
@@ -64,6 +65,6 @@
     "walk-up-path": "^1.0.0"
   },
   "templateOSS": {
-    "version": "2.4.3"
+    "version": "2.9.1"
   }
 }
