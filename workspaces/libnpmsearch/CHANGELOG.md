@@ -18,6 +18,13 @@
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
 <a name="2.0.2"></a>
+### [5.0.1](https://www.github.com/npm/cli/compare/libnpmsearch-vlibnpmsearch@5.0.0...libnpmsearch-v5.0.1) (2022-03-03)
+
+
+### Bug Fixes
+
+* set proper workspace repo urls in package.json ([#4476](https://www.github.com/npm/cli/issues/4476)) ([0cfc155](https://www.github.com/npm/cli/commit/0cfc155db5f11ce23419e440111d99a63bf39754))
+
 ## [2.0.2](https://github.com/npm/libnpmsearch/compare/v2.0.1...v2.0.2) (2019-07-16)
 
 
