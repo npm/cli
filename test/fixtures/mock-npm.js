@@ -51,7 +51,7 @@ const LoadMockNpm = async (t, {
   load = init,
   prefixDir = {},
   cacheDir = {},
-  globalDir = {},
+  globalPrefixDir = {},
   config = {},
   mocks = {},
   globals = null,
@@ -79,7 +79,7 @@ const LoadMockNpm = async (t, {
   // Set log level as early as possible since
   setLoglevel(t, config.loglevel)
 
-  const dir = t.testdir({ prefix: prefixDir, cache: cacheDir, global: globalDir })
+  const dir = t.testdir({ prefix: prefixDir, cache: cacheDir, global: globalPrefixDir })
   const prefix = path.join(dir, 'prefix')
   const cache = path.join(dir, 'cache')
   const globalPrefix = path.join(dir, 'global')
