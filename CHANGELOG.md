@@ -1,3 +1,64 @@
+## v8.5.3 (2022-03-03)
+
+### Bug Fixes
+
+* [`defe79ad6`](https://github.com/npm/cli/commit/defe79ad6f2f4216bf5e0188256c77b49164eb94)
+  [#4480](https://github.com/npm/cli/pull/4480)
+  fix: publish of tarballs includes README in packument
+  ([@fritzy](https://github.com/fritzy))
+* [`45fc297f1`](https://github.com/npm/cli/commit/45fc297f12e63c026715945a186ba0ec4efbdedb)
+  [#4479](https://github.com/npm/cli/pull/4479)
+  fix: ignore implict workspace for some commands
+  ([@fritzy](https://github.com/fritzy))
+* [`a0900bdf1`](https://github.com/npm/cli/commit/a0900bdf1ab7a68988984735f1f3885d02ffb67f)
+  [#4481](https://github.com/npm/cli/pull/4481)
+  fix(ls): respect `--include-workspace-root`
+  ([@fritzy](https://github.com/fritzy))
+* [`0cfc155db`](https://github.com/npm/cli/commit/0cfc155db5f11ce23419e440111d99a63bf39754)
+  [#4476](https://github.com/npm/cli/pull/4476)
+  fix: set proper workspace repo urls in package.json
+  ([@ljharb](https://github.com/ljharb))
+* [`9e43de8a5`](https://github.com/npm/cli/commit/9e43de8a59e5bf354a9595ed8a79fedcec085aaa)
+  [#4493](https://github.com/npm/cli/pull/4493)
+  fix: ignore implicit workspace for whoami
+  ([@nlf](https://github.com/nlf))
+
+### Dependencies
+
+* [`d13f067d9`](https://github.com/npm/cli/commit/d13f067d91283e1dec94780a3c007883de9edc46)
+  [#4490](https://github.com/npm/cli/pull/4490)
+  deps: `@npmcli/run-script@3.0.1`
+  ([@wraithgar](https://github.com/wraithgar))
+* [`ce9a6eac0`](https://github.com/npm/cli/commit/ce9a6eac0c8329871664167c37f4982c5e443a2a)
+  [#4490](https://github.com/npm/cli/pull/4490)
+  deps: `node-gyp@9.0.0`
+  ([@wraithgar](https://github.com/wraithgar))
+* [`bd660f5f1`](https://github.com/npm/cli/commit/bd660f5f1ccc1d9fa88085b168ea05b6dcf5826a)
+  [#4490](https://github.com/npm/cli/pull/4490)
+  deps: `@npmcli/config@4.0.1`
+* [`3c17b6965`](https://github.com/npm/cli/commit/3c17b6965f0c5fffd5ac908388568a307466a73f)
+  [#4490](https://github.com/npm/cli/pull/4490)
+  deps: `make-fetch-happen@10.0.4`
+* [`e9b69c4c5`](https://github.com/npm/cli/commit/e9b69c4c5454cc8b7d6cf2cbf1f09313f0d20afc)
+  [#4490](https://github.com/npm/cli/pull/4490)
+  deps: `npm-registry-fetch@13.0.1`
+* [`cf27ca888`](https://github.com/npm/cli/commit/cf27ca8884387f2b82f8f6900a29e4e41693e774)
+  [#4490](https://github.com/npm/cli/pull/4490)
+  deps: `write-file-atomic@4.0.1`
+* [`f3421921a`](https://github.com/npm/cli/commit/f3421921aa72ef570105474cdb2e48cec80de796)
+  [#4490](https://github.com/npm/cli/pull/4490)
+  deps: `gauge@4.0.2`
+* [`1dd2f7ee1`](https://github.com/npm/cli/commit/1dd2f7ee16a61024e520b3efa54f8cdba5458a16)
+  [#4490](https://github.com/npm/cli/pull/4490)
+  deps: `socks@2.6.2`
+* [`236e3b403`](https://github.com/npm/cli/commit/236e3b4030dd91397713eb02cdf2737dcc988fd7)
+  [#4490](https://github.com/npm/cli/pull/4490)
+  deps: `minimatch@3.1.2`
+  ([@wraithgar](https://github.com/wraithgar))
+* [`10e1326d2`](https://github.com/npm/cli/commit/10e1326d2eb7ff2c70ee19907991b369476ccdd0)
+  [#4490](https://github.com/npm/cli/pull/4490)
+  deps: `lru-cache@7.4.0`
+
 ## v8.5.2 (2022-02-24)
 
 ### Bug Fixes
