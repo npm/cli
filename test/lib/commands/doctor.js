@@ -461,3 +461,17 @@ t.test('cacache missingContent', async t => {
   t.matchSnapshot(joinedOutput(), 'missing content')
   t.matchSnapshot({ info: logs.info, warn: logs.warn, error: logs.error }, 'logs')
 })
+
+t.test('bad proxy', async t => {
+  const { joinedOutput, logs, npm } = await loadMockNpm(t, {
+    mocks,
+    config: {
+      proxy: 'ssh://npmjs.org'
+    },
+    ...dirs,
+  })
+  await t.rejects(npm.exec('doctor', []))
+  t.matchSnapshot(joinedOutput(), 'output')
+  t.matchSnapshot({ info: logs.info, warn: logs.warn, error: logs.error }, 'logs')
+})
+

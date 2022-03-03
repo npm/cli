@@ -121,6 +121,64 @@ Object {
 }
 `
 
+exports[`test/lib/commands/doctor.js TAP bad proxy > logs 1`] = `
+Object {
+  "error": Array [],
+  "info": Array [
+    Array [
+      "Running checkup",
+    ],
+    Array [
+      "checkPing",
+      "Pinging registry",
+    ],
+    Array [
+      "getLatestNpmVersion",
+      "Getting npm package information",
+    ],
+    Array [
+      "getLatestNodejsVersion",
+      "Getting Node.js release information",
+    ],
+    Array [
+      "getGitPath",
+      "Finding git in your PATH",
+    ],
+    Array [
+      "verifyCachedFiles",
+      "Verifying the npm cache",
+    ],
+    Array [
+      "verifyCachedFiles",
+      String(
+        Verification complete. Stats: {
+          "badContentCount": 0,
+          "reclaimedCount": 0,
+          "missingContent": 0,
+          "verifiedContent": 0
+        }
+      ),
+    ],
+  ],
+  "warn": Array [],
+}
+`
+
+exports[`test/lib/commands/doctor.js TAP bad proxy > output 1`] = `
+Check                               Value   Recommendation/Notes
+npm ping                            not ok  unsupported proxy protocol: 'ssh:'
+npm -v                              not ok  Error: unsupported proxy protocol: 'ssh:'
+node -v                             not ok  Error: unsupported proxy protocol: 'ssh:'
+npm config get registry             ok      using default registry (https://registry.npmjs.org/)
+which git                           ok      /path/to/git
+Perms check on cached files         ok
+Perms check on local node_modules   ok
+Perms check on global node_modules  ok
+Perms check on local bin folder     ok
+Perms check on global bin folder    ok
+Verify cache contents               ok      verified 0 tarballs
+`
+
 exports[`test/lib/commands/doctor.js TAP cacache badContent > corrupted cache content 1`] = `
 Check                               Value  Recommendation/Notes
 npm ping                            ok
