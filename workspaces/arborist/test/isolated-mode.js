@@ -240,6 +240,8 @@ tap.only('most simple happy scenario', async t => {
   rule2.apply(t, dir, resolved, asserted)
   rule3.apply(t, dir, resolved, asserted)
   rule4.apply(t, dir, resolved, asserted)
+  rule5.apply(t, dir, resolved, asserted)
+  rule6.apply(t, dir, resolved, asserted)
   rule7.apply(t, dir, resolved, asserted)
 })
 
@@ -293,6 +295,7 @@ tap.only('simple peer dependencies scenarios', async t => {
   rule3.apply(t, dir, resolved, asserted)
   rule4.apply(t, dir, resolved, asserted)
   rule5.apply(t, dir, resolved, asserted)
+  rule6.apply(t, dir, resolved, asserted)
   rule7.apply(t, dir, resolved, asserted)
 })
 
@@ -632,6 +635,8 @@ tap.only('shrinkwrap', async t => {
   rule2.apply(t, dir, resolved, asserted)
   rule3.apply(t, dir, resolved, asserted)
   rule4.apply(t, dir, resolved, asserted)
+  rule5.apply(t, dir, resolved, asserted)
+  rule6.apply(t, dir, resolved, asserted)
   rule7.apply(t, dir, resolved, asserted)
 })
 
@@ -696,12 +701,15 @@ tap.only('shrinkwrap does not install dev deps', async t => {
   rule2.apply(t, dir, resolved, asserted)
   rule3.apply(t, dir, resolved, asserted)
   rule4.apply(t, dir, resolved, asserted)
+  rule5.apply(t, dir, resolved, asserted)
+  rule6.apply(t, dir, resolved, asserted)
   rule7.apply(t, dir, resolved, asserted)
 
   t.notOk(dir)('which', 'isexex')
 })
 
 tap.only('shrinkwrap with peer dependencies', async t => {
+    debugger
     const shrinkwrap = JSON.stringify({
         "name": "which",
         "version": "1.0.0",
@@ -749,6 +757,17 @@ tap.only('shrinkwrap with peer dependencies', async t => {
           }
         }
     })
+  // expected output
+  const resolved = {
+    'foo@1.0.0 (root)': {
+      'which@1.0.0': {
+        'isexe@1.0.0': {},
+        'bar@1.0.0': {}
+      },
+      'isexe@1.1.0': {},
+      'bar@1.1.0': {}
+    }
+  }
 
   // Input of arborist
   const graph = {
@@ -776,8 +795,17 @@ tap.only('shrinkwrap with peer dependencies', async t => {
   const { dir, registry } = await getRepo(graph)
   const cache = fs.mkdtempSync(`${os.tmpdir}/test-`)
   const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache  })
-  await arborist.reify({ isolated: false })
+  await arborist.reify({ isolated: true })
 
+// TODO: greate the resolved object  
+  const asserted = new Set()
+  rule1.apply(t, dir, resolved, asserted)
+  rule2.apply(t, dir, resolved, asserted)
+  rule3.apply(t, dir, resolved, asserted)
+  rule4.apply(t, dir, resolved, asserted)
+  rule5.apply(t, dir, resolved, asserted)
+  rule6.apply(t, dir, resolved, asserted)
+  rule7.apply(t, dir, resolved, asserted)
 })
 
 tap.test('bundled dependencies', async t => {
@@ -816,6 +844,8 @@ tap.test('bundled dependencies', async t => {
   rule2.apply(t, dir, resolved, asserted)
   rule3.apply(t, dir, resolved, asserted)
   rule4.apply(t, dir, resolved, asserted)
+  rule5.apply(t, dir, resolved, asserted)
+  rule6.apply(t, dir, resolved, asserted)
   rule7.apply(t, dir, resolved, asserted)
 })
 
@@ -860,6 +890,8 @@ tap.only('adding a dependency', async t => {
   rule2.apply(t, dir, resolved, asserted)
   rule3.apply(t, dir, resolved, asserted)
   rule4.apply(t, dir, resolved, asserted)
+  rule5.apply(t, dir, resolved, asserted)
+  rule6.apply(t, dir, resolved, asserted)
   rule7.apply(t, dir, resolved, asserted)
 
 })
