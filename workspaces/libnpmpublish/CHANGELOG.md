@@ -1,7 +1,6 @@
-# Change Log
+# Changelog
 
-<a name="3.0.1"></a>
-# [3.0.1](https://github.com/npm/libnpmpublish/compare/v3.0.0...v3.0.1) (2020-03-27)
+## [3.0.1](https://github.com/npm/libnpmpublish/compare/v3.0.0...v3.0.1) (2020-03-27)
 
 ### Features
 

@@ -1,7 +1,6 @@
-# Change Log
+# Changelog
 
-<a name="3.0.0"></a>
-# [3.0.0](https://github.com/npm/libnpmhook/compare/v2.0.2...v3.0.0) (2020-02-26)
+## [3.0.0](https://github.com/npm/libnpmhook/compare/v2.0.2...v3.0.0) (2020-02-26)
 
 ### Breaking Changes
 

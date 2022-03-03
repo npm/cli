@@ -8,8 +8,7 @@
 * set proper workspace repo urls in package.json ([#4476](https://www.github.com/npm/cli/issues/4476)) ([0cfc155](https://www.github.com/npm/cli/commit/0cfc155db5f11ce23419e440111d99a63bf39754))
 
 
-### [2.0.0](https://github.com/npm/libnpmpack/compare/libnpmpack-vlibnpmpack@1.0.0...libnpmpack-v2.0.0) (2020-03-27)
-
+## [2.0.0](https://github.com/npm/libnpmpack/compare/v1.0.0...v2.0.0) (2020-03-27)
 
 ### Breaking Changes
 

@@ -1,7 +1,6 @@
-# Change Log
+# Changelog
 
-<a name="6.0.0"></a>
-# [6.0.0](https://github.com/npm/libnpmhook/compare/v5.0.2...v6.0.0) (2020-02-26)
+## [6.0.0](https://github.com/npm/libnpmhook/compare/v5.0.2...v6.0.0) (2020-02-26)
 
 ### Breaking Changes
 
