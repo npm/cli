@@ -22,12 +22,12 @@ module.exports = cls => class IsolatedReifier extends cls {
 
     function memoize(fn) {
       const memo = new Map()
-      return function(arg) {
+      return async function(arg) {
         const key = arg
         if (memo.has(key)) { return memo.get(key) }
         const result = {}
         memo.set(key, result)
-        fn(result, arg)
+        await fn(result, arg)
         return result
       }
     }
@@ -40,11 +40,12 @@ module.exports = cls => class IsolatedReifier extends cls {
     this.externalProxyMemo = memoize(this.externalProxy.bind(this))
     this.workspaceProxyMemo = memoize(this.workspaceProxy.bind(this))
 
+    root.external = []
     root.isProjectRoot = true,
     root.localLocation = idealTree.location,
     root.localPath = idealTree.path,
     root.workspaces = await Promise.all([...idealTree.fsChildren.values()].map(this.workspaceProxyMemo)),
-    root.external = await Promise.all([...idealTree.inventory.values()].filter(n => !n.isProjectRoot && !n.isWorkspace).map(this.externalProxyMemo)),
+    root.external.push(...(await Promise.all([...idealTree.inventory.values()].filter(n => !n.isProjectRoot && !n.isWorkspace).map(this.externalProxyMemo)))),
     await this.assignCommonProperties(idealTree, root)
 
 
@@ -57,6 +58,7 @@ module.exports = cls => class IsolatedReifier extends cls {
       await this.assignCommonProperties(node, result)
     }
     async externalProxy(result, node) {
+      await this.assignCommonProperties(node, result)
       if (node.hasShrinkwrap) {
         const dir = `${node.root.path}/node_modules/.store/${node.name}@${node.version}`
         fs.mkdirSync(dir,{recursive: true})
@@ -68,8 +70,8 @@ module.exports = cls => class IsolatedReifier extends cls {
         const Arborist = this.constructor
         const arb = new Arborist({...this.options, path: dir})
         await arb[_makeIdealGraph]({dev: false})
-        result.external = arb.idealGraph.external
-        result.external.forEach(e => {
+        this.rootNode.external.push(...arb.idealGraph.external)
+        arb.idealGraph.external.forEach(e => {
             e.root = this.rootNode
             e.id = `${node.id}=>${e.id}`
             })
@@ -82,7 +84,6 @@ module.exports = cls => class IsolatedReifier extends cls {
       result.optional = node.optional
       result.resolved = node.resolved
       result.version = node.version
-      await this.assignCommonProperties(node, result)
     }
     async assignCommonProperties(node, result) {
       function validEdgesOut(node) {
