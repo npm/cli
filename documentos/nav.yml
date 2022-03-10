@@ -188,9 +188,9 @@
     description: Remove an item from your favorite packages
   - title: npm update
     url: /commands/npm-update
-    description: Update a package
-  - title: npm version
-    url: /commands/npm-version
+    descrição : Atualizar um pacote
+  - título  : versão npm
+    url : /commands/npm-version
     description: Bump a package version
   - title: npm view
     url: /commands/npm-view
