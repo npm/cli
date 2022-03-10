@@ -58,7 +58,7 @@
     "@npmcli/arborist": "^5.0.1",
     "@npmcli/ci-detect": "^2.0.0",
     "@npmcli/config": "^4.0.1",
-    "@npmcli/map-workspaces": "^2.0.0",
+    "@npmcli/map-workspaces": "^2.0.2",
     "@npmcli/package-json": "^1.0.1",
     "@npmcli/run-script": "^3.0.1",
     "abbrev": "~1.1.1",
