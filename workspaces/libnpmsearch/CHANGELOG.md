@@ -1,5 +1,12 @@
 # Changelog
 
+### [5.0.2](https://www.github.com/npm/cli/compare/libnpmsearch-v5.0.1...libnpmsearch-v5.0.2) (2022-03-10)
+
+
+### Documentation
+
+* standardize changelog heading ([#4510](https://www.github.com/npm/cli/issues/4510)) ([91f03ee](https://www.github.com/npm/cli/commit/91f03ee618bc635f9cfbded735fe98bbfa9d643f))
+
 ## [3.0.0](https://github.com/npm/libnpmhook/compare/v2.0.2...v3.0.0) (2020-02-26)
 
 ### Breaking Changes
