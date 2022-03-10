@@ -1,4 +1,4 @@
-# Change Log
+# Changelog
 
 ### [4.0.1](https://www.github.com/npm/cli/compare/libnpmteam-vlibnpmteam@4.0.0...libnpmteam-v4.0.1) (2022-03-03)
 

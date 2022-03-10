@@ -1,4 +1,4 @@
-# Change Log
+# Changelog
 
 <a name="4.0.0"></a>
 ### [6.0.1](https://www.github.com/npm/cli/compare/libnpmaccess-vlibnpmaccess@6.0.0...libnpmaccess-v6.0.1) (2022-03-03)

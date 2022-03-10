@@ -1,4 +1,4 @@
-# Change Log
+# Changelog
 
 ### [4.0.1](https://www.github.com/npm/cli/compare/libnpmorg-vlibnpmorg@4.0.0...libnpmorg-v4.0.1) (2022-03-03)
 
