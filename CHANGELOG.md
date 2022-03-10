@@ -1,5 +1,78 @@
 # Changelog
 
+## v8.5.4 (2022-03-10)
+
+### Bug Fixes
+
+* [`fbdb43138`](https://github.com/npm/cli/commit/fbdb43138ab8e682efb7668767465e7066d43b9f)
+  [#4529](https://github.com/npm/cli/pull/4529)
+  fix(rebuild): don't run lifecycle scripts twice on linked deps
+  ([@wraithgar](https://github.com/wraithgar))
+* [`1c182e11d`](https://github.com/npm/cli/commit/1c182e11d524294d85348a3c2566f266bd281c00)
+  [#4495](https://github.com/npm/cli/pull/4495)
+  fix(doctor): don't retry ping
+  ([@wraithgar](https://github.com/wraithgar))
+* [`55ab38c53`](https://github.com/npm/cli/commit/55ab38c5337de76b739c4f0cdfb8932dc5420ce4)
+  [#4495](https://github.com/npm/cli/pull/4495)
+  fix(doctor): allow for missing local bin and `node_modules`
+  ([@wraithgar](https://github.com/wraithgar))
+* [`5c06a33e6`](https://github.com/npm/cli/commit/5c06a33e641594c5617a0606c338fc54c64d623b)
+  [#4528](https://github.com/npm/cli/pull/4528)
+  fix: clean up owner command and otplease
+  ([@wraithgar](https://github.com/wraithgar))
+
+### Documentation
+
+* [`2485064da`](https://github.com/npm/cli/commit/2485064da590ef787e94a952e0bbdcd9f4880703)
+  [#4524](https://github.com/npm/cli/pull/4524)
+  docs: fix typo in configuring-npm/package-json.md
+  ([@dlcmh](https://github.com/dlcmh))
+* [`91f03ee61`](https://github.com/npm/cli/commit/91f03ee618bc635f9cfbded735fe98bbfa9d643f)
+  [#4510](https://github.com/npm/cli/pull/4510)
+  docs: standardize changelog heading
+  ([@wraithgar](https://github.com/wraithgar))
+
+### Dependencies
+
+* [`377f55e0e`](https://github.com/npm/cli/commit/377f55e0e786ac6c26d64848a89ce720c5d478eb)
+  [#4530](https://github.com/npm/cli/pull/4530)
+  deps: `make-fetch-happen@10.0.5`
+    * add code property to unsupported proxy url error
+* [`40b7fbf67`](https://github.com/npm/cli/commit/40b7fbf670c8ba064b3a771981fa0510d63fb6ef)
+  [#4531](https://github.com/npm/cli/pull/4531)
+  deps: `read-package-json@4.1.2`
+    * don't throw exception on invalid main attr
+* [`d9dc70ce4`](https://github.com/npm/cli/commit/d9dc70ce4d632b8b0401c41e9a015b8083e87db1)
+  [#4545](https://github.com/npm/cli/pull/4545)
+  deps: `map-workspaces@2.0.2`
+    * evaluate all patterns before throwing `EDUPLICATEWORKSPACE`
+* [`70fcfb46b`](https://github.com/npm/cli/commit/70fcfb46bebc777e0ef6b36a47d9620807488acd)
+  deps: `libnpmfund@3.0.1`
+* [`621cd033f`](https://github.com/npm/cli/commit/621cd033f64f101084af83ff8a797f5415a3b70d)
+  deps: `@npmcli/arborist@5.0.2`
+* [`087fdc4cb`](https://github.com/npm/cli/commit/087fdc4cb4d6582b2b628087f866e8ca8bc00934)
+  deps: `libnpmpublish@6.0.1`
+* [`d24c6d288`](https://github.com/npm/cli/commit/d24c6d288b1cfe6dd893a8ffedb15cbe6837d545)
+  deps: `libnpmhook@8.0.1`
+* [`fa59830fc`](https://github.com/npm/cli/commit/fa59830fc429d354179853e8f9b9a32ef3444067)
+  deps: `libnpmsearch@5.0.1`
+* [`6d5f22b86`](https://github.com/npm/cli/commit/6d5f22b86006e7c563161837f56e47079e0fde4a)
+  deps: `libnpmexec@4.0.1`
+* [`69ea54350`](https://github.com/npm/cli/commit/69ea5435016a9d1c454af7253a80204dc9941380)
+  deps: `libnpmaccess@6.0.1`
+* [`4742d7cf3`](https://github.com/npm/cli/commit/4742d7cf3ad15f5263fd5fefd15c04f9871c58af)
+  deps: `libnpmteam@4.0.1`
+* [`fdd255ae9`](https://github.com/npm/cli/commit/fdd255ae9ebf41147085e74cec5c9f65eb5ff1de)
+  deps: `libnpmorg@4.0.1`
+* [`ed41bc101`](https://github.com/npm/cli/commit/ed41bc10182ffd1db66181c20db6c348dba6783e)
+  deps: `libnpmdiff@4.0.1`
+* [`21e241025`](https://github.com/npm/cli/commit/21e24102564e2f3c795312d256fade4228e67776)
+  deps: `libnpmversion@3.0.1`
+* [`ec7f36ff9`](https://github.com/npm/cli/commit/ec7f36ff9e6c973ae5d5998a783bcff16027c282)
+  deps: `libnpmpack@4.0.1`
+* [`ad4b56414`](https://github.com/npm/cli/commit/ad4b564148eaa6fdfe68e5b68f910e41e4e8ee14)
+  deps: `gauge@4.0.3`
+
 ## v8.5.3 (2022-03-03)
 
 ### Bug Fixes
