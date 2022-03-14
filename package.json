@@ -65,7 +65,7 @@
     "ansicolors": "~0.3.2",
     "ansistyles": "~0.1.3",
     "archy": "~1.0.0",
-    "cacache": "^15.3.0",
+    "cacache": "^16.0.0",
     "chalk": "^4.1.2",
     "chownr": "^2.0.0",
     "cli-columns": "^4.0.0",
