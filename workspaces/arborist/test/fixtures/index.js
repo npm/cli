@@ -1,4 +1,5 @@
 const mkdirp = require('mkdirp').sync
+const localeCompare = require('@isaacs/string-locale-compare')('en')
 const { unlinkSync, symlinkSync, readFileSync, writeFileSync } = require('fs')
 const { relative, resolve, dirname } = require('path')
 
@@ -167,7 +168,7 @@ const setup = () => {
       `### BEGIN IGNORED SYMLINKS ###
 ### this list is generated automatically, do not edit directly
 ### update it by running \`node test/fixtures/index.js\`
-${links.sort((a,b) => a.localeCompare(b, 'en')).join('\n')}
+${links.sort(localeCompare).join('\n')}
 ### END IGNORED SYMLINKS ###`)
     writeFileSync(gifile, gitignore)
   }

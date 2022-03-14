@@ -5,6 +5,7 @@ const { resolve, dirname } = require('path')
 const fs = require('fs')
 const fixtures = resolve(__dirname, '../fixtures')
 const relpath = require('../../lib/relpath.js')
+const localeCompare = require('@isaacs/string-locale-compare')('en')
 
 const fixture = (t, p) => require(`${fixtures}/reify-cases/${p}`)(t)
 
@@ -181,7 +182,7 @@ t.test('verify dep flags in script environments', async t => {
   // don't include path or env, because that's going to be platform-specific
   const saved = [...arb.scriptsRun]
     .sort(({ path: patha, event: eventa }, { path: pathb, event: eventb }) =>
-      patha.localeCompare(pathb, 'en') || eventa.localeCompare(eventb, 'en'))
+      localeCompare(patha, pathb) || localeCompare(eventa, eventb))
     .map(({ pkg, event, cmd, code, signal, stdout, stderr }) =>
       ({ pkg, event, cmd, code, signal, stdout, stderr }))
   t.matchSnapshot(saved, 'saved script results')
@@ -191,7 +192,7 @@ t.test('verify dep flags in script environments', async t => {
     t.strictSame(flags, fs.readFileSync(file, 'utf8').split('\n'), pkg)
   }
   t.strictSame(checkLogs().sort((a, b) =>
-    a[2].localeCompare(b[2], 'en') || (typeof a[4] === 'string' ? -1 : 1)), [
+    localeCompare(a[2], b[2]) || (typeof a[4] === 'string' ? -1 : 1)), [
     ['info', 'run', 'devdep@1.0.0', 'postinstall', 'node_modules/devdep', 'node ../../env.js'],
     ['info', 'run', 'devdep@1.0.0', 'postinstall', { code: 0, signal: null }],
     ['info', 'run', 'devopt@1.0.0', 'postinstall', 'node_modules/devopt', 'node ../../env.js'],

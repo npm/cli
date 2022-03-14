@@ -1,6 +1,6 @@
 {
   "name": "libnpmsearch",
-  "version": "4.0.0",
+  "version": "5.0.1",
   "description": "Programmatic API for searching in npm and compatible registries.",
   "author": "GitHub Inc.",
   "main": "lib/index.js",
@@ -24,7 +24,8 @@
     "lint": "eslint '**/*.js'",
     "postlint": "npm-template-check",
     "lintfix": "npm run lint -- --fix",
-    "snap": "tap"
+    "snap": "tap",
+    "template-copy": "npm-template-copy --force"
   },
   "tap": {
     "check-coverage": true
@@ -36,17 +37,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/npm/libnpmsearch.git"
+    "url": "https://github.com/npm/cli",
+    "directory": "workspaces/libnpmsearch"
   },
   "bugs": "https://github.com/npm/libnpmsearch/issues",
   "homepage": "https://npmjs.com/package/libnpmsearch",
   "dependencies": {
-    "npm-registry-fetch": "^11.0.0"
+    "npm-registry-fetch": "^13.0.0"
   },
   "engines": {
     "node": "^12.13.0 || ^14.15.0 || >=16"
   },
   "templateOSS": {
-    "version": "2.4.3"
+    "version": "2.9.2"
   }
 }

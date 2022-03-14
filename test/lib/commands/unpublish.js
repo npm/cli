@@ -22,7 +22,6 @@ const singleVersion = async () => {
 
 const config = {
   force: false,
-  loglevel: 'silly',
 }
 
 const testDir = t.testdir({
@@ -54,7 +53,7 @@ t.afterEach(() => {
   result = ''
   config['dry-run'] = false
   config.force = false
-  config.loglevel = 'silly'
+  npm.config.set('loglevel', 'info')
 })
 
 t.test('no args --force', async t => {
@@ -77,7 +76,7 @@ t.test('no args --force', async t => {
   const libnpmpublish = {
     unpublish (spec, opts) {
       t.equal(spec.raw, 'pkg@1.0.0', 'should unpublish expected spec')
-      t.same(
+      t.match(
         opts,
         {
           publishConfig: undefined,
@@ -178,11 +177,6 @@ t.test('unpublish <pkg>@version', async t => {
   const libnpmpublish = {
     unpublish (spec, opts) {
       t.equal(spec.raw, 'pkg@1.0.0', 'should unpublish expected parsed spec')
-      t.same(
-        opts,
-        {},
-        'should unpublish with expected opts'
-      )
     },
   }
 
@@ -243,7 +237,7 @@ t.test('unpublish <pkg> --force no version set', async t => {
 })
 
 t.test('silent', async t => {
-  config.loglevel = 'silent'
+  npm.config.set('loglevel', 'silent')
 
   const Unpublish = t.mock('../../../lib/commands/unpublish.js', {
     ...mocks,

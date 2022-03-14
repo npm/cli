@@ -1,5 +1,5 @@
 const t = require('tap')
-const { resolve, dirname } = require('path')
+const { resolve, dirname, join } = require('path')
 
 const { load: loadMockNpm } = require('../fixtures/mock-npm.js')
 const mockGlobals = require('../fixtures/mock-globals')
@@ -77,7 +77,7 @@ t.test('npm.load', async t => {
 
   t.test('basic loading', async t => {
     const { npm, logs, prefix: dir, cache } = await loadMockNpm(t, {
-      testdir: { node_modules: {} },
+      prefixDir: { node_modules: {} },
     })
 
     t.equal(npm.loaded, true)
@@ -165,7 +165,7 @@ t.test('npm.load', async t => {
       ],
     })
     const { npm, logs, outputs, prefix } = await loadMockNpm(t, {
-      testdir: {
+      prefixDir: {
         bin: t.fixture('symlink', dirname(process.execPath)),
       },
       globals: ({ prefix }) => ({
@@ -237,7 +237,7 @@ t.test('npm.load', async t => {
     })
     const { npm } = await loadMockNpm(t, {
       load: false,
-      testdir: {
+      prefixDir: {
         packages: {
           a: {
             'package.json': JSON.stringify({
@@ -270,7 +270,7 @@ t.test('npm.load', async t => {
       ],
     })
     const { npm, outputs } = await loadMockNpm(t, {
-      testdir: {
+      prefixDir: {
         packages: {
           a: {
             'package.json': JSON.stringify({
@@ -329,7 +329,7 @@ t.test('npm.load', async t => {
       ],
     })
     const { npm } = await loadMockNpm(t, {
-      testdir: {
+      prefixDir: {
         packages: {
           a: {
             'package.json': JSON.stringify({
@@ -518,5 +518,107 @@ t.test('unknown command', async t => {
   await t.rejects(
     npm.cmd('thisisnotacommand'),
     { code: 'EUNKNOWNCOMMAND' }
+  )
+})
+
+t.test('explicit workspace rejection', async t => {
+  mockGlobals(t, {
+    'process.argv': [
+      process.execPath,
+      process.argv[1],
+      '--color', 'false',
+      '--workspace', './packages/a',
+    ],
+  })
+  const mock = await loadMockNpm(t, {
+    prefixDir: {
+      packages: {
+        a: {
+          'package.json': JSON.stringify({
+            name: 'a',
+            version: '1.0.0',
+            scripts: { test: 'echo test a' },
+          }),
+        },
+      },
+      'package.json': JSON.stringify({
+        name: 'root',
+        version: '1.0.0',
+        workspaces: ['./packages/a'],
+      }),
+    },
+  })
+  await t.rejects(
+    mock.npm.exec('ping', []),
+    /This command does not support workspaces/
+  )
+})
+
+t.test('implicit workspace rejection', async t => {
+  const mock = await loadMockNpm(t, {
+    prefixDir: {
+      packages: {
+        a: {
+          'package.json': JSON.stringify({
+            name: 'a',
+            version: '1.0.0',
+            scripts: { test: 'echo test a' },
+          }),
+        },
+      },
+      'package.json': JSON.stringify({
+        name: 'root',
+        version: '1.0.0',
+        workspaces: ['./packages/a'],
+      }),
+    },
+  })
+  const cwd = join(mock.npm.config.localPrefix, 'packages', 'a')
+  mock.npm.config.set('workspace', [cwd], 'default')
+  mockGlobals(t, {
+    'process.argv': [
+      process.execPath,
+      process.argv[1],
+      '--color', 'false',
+    ],
+  })
+  await t.rejects(
+    mock.npm.exec('owner', []),
+    /This command does not support workspaces/
+  )
+})
+
+t.test('implicit workspace accept', async t => {
+  const mock = await loadMockNpm(t, {
+    prefixDir: {
+      packages: {
+        a: {
+          'package.json': JSON.stringify({
+            name: 'a',
+            version: '1.0.0',
+            scripts: { test: 'echo test a' },
+          }),
+        },
+      },
+      'package.json': JSON.stringify({
+        name: 'root',
+        version: '1.0.0',
+        workspaces: ['./packages/a'],
+      }),
+    },
+  })
+  const cwd = join(mock.npm.config.localPrefix, 'packages', 'a')
+  mock.npm.config.set('workspace', [cwd], 'default')
+  mockGlobals(t, {
+    'process.cwd': () => mock.npm.config.cwd,
+    'process.argv': [
+      process.execPath,
+      process.argv[1],
+      '--color', 'false',
+    ],
+  })
+  await t.rejects(
+    mock.npm.exec('org', []),
+    /.*Usage/
   )
 })

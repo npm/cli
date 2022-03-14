@@ -1,7 +1,7 @@
 {
   "name": "libnpmteam",
   "description": "npm Team management APIs",
-  "version": "3.0.0",
+  "version": "4.0.1",
   "author": "GitHub Inc.",
   "license": "ISC",
   "main": "lib/index.js",
@@ -14,7 +14,8 @@
     "posttest": "npm run lint",
     "postlint": "npm-template-check",
     "lintfix": "npm run lint -- --fix",
-    "snap": "tap"
+    "snap": "tap",
+    "template-copy": "npm-template-copy --force"
   },
   "devDependencies": {
     "@npmcli/template-oss": "^2.4.2",
@@ -23,7 +24,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/npm/libnpmteam.git"
+    "url": "https://github.com/npm/cli",
+    "directory": "workspaces/libnpmteam"
   },
   "files": [
     "bin",
@@ -32,7 +34,7 @@
   "homepage": "https://npmjs.com/package/libnpmteam",
   "dependencies": {
     "aproba": "^2.0.0",
-    "npm-registry-fetch": "^11.0.0"
+    "npm-registry-fetch": "^13.0.0"
   },
   "engines": {
     "node": "^12.13.0 || ^14.15.0 || >=16"
@@ -41,6 +43,6 @@
     "check-coverage": true
   },
   "templateOSS": {
-    "version": "2.4.3"
+    "version": "2.9.2"
   }
 }

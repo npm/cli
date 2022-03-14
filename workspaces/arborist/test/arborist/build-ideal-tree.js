@@ -833,6 +833,149 @@ t.test('workspaces', t => {
     )
   })
 
+  t.test('should allow adding a workspace as a dep to a workspace', async t => {
+    // turn off networking, this should never make a registry request
+    nock.disableNetConnect()
+    t.teardown(() => nock.enableNetConnect())
+
+    const path = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'root',
+        workspaces: ['workspace-a', 'workspace-b'],
+      }),
+      'workspace-a': {
+        'package.json': JSON.stringify({
+          name: 'workspace-a',
+          version: '1.0.0',
+        }),
+      },
+      'workspace-b': {
+        'package.json': JSON.stringify({
+          name: 'workspace-b',
+          version: '1.0.0',
+        }),
+      },
+    })
+
+    const arb = new Arborist({
+      ...OPT,
+      path,
+      workspaces: ['workspace-a'],
+    })
+
+    const tree = arb.buildIdealTree({
+      path,
+      add: [
+        'workspace-b',
+      ],
+    })
+
+    // just assert that the buildIdealTree call resolves, if there's a
+    // problem here it will reject because of nock disabling requests
+    await t.resolves(tree)
+
+    t.matchSnapshot(printTree(await tree))
+  })
+
+  t.test('workspace nodes are used instead of fetching manifests when they are valid', async t => {
+    // turn off networking, this should never make a registry request
+    nock.disableNetConnect()
+    t.teardown(() => nock.enableNetConnect())
+
+    const path = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'root',
+        workspaces: ['workspace-a', 'workspace-b'],
+      }),
+      // the package-lock.json references version 1.0.0 of the workspace deps
+      // as it would if a user hand edited their workspace's package.json and
+      // now are attempting to reify with a stale package-lock
+      'package-lock.json': JSON.stringify({
+        name: 'root',
+        lockfileVersion: 2,
+        requires: true,
+        packages: {
+          '': {
+            name: 'root',
+            workspaces: ['workspace-a', 'workspace-b'],
+          },
+          'node_modules/workspace-a': {
+            resolved: 'workspace-a',
+            link: true,
+          },
+          'node_modules/workspace-b': {
+            resolved: 'workspace-b',
+            link: true,
+          },
+          'workspace-a': {
+            name: 'workspace-a',
+            version: '1.0.0',
+            dependencies: {
+              'workspace-b': '1.0.0',
+            },
+          },
+          'workspace-b': {
+            name: 'workspace-b',
+            version: '1.0.0',
+          },
+        },
+        dependencies: {
+          'workspace-a': {
+            version: 'file:workspace-a',
+            requires: {
+              'workspace-b': '1.0.0',
+            },
+          },
+          'workspace-b': {
+            version: 'file:workspace-b',
+          },
+        },
+      }),
+      node_modules: {
+        'workspace-a': t.fixture('symlink', '../workspace-a'),
+        'workspace-b': t.fixture('symlink', '../workspace-b'),
+      },
+      // the workspaces themselves are at 2.0.0 because they're what was edited
+      'workspace-a': {
+        'package.json': JSON.stringify({
+          name: 'workspace-a',
+          version: '2.0.0',
+          dependencies: {
+            'workspace-b': '2.0.0',
+          },
+        }),
+      },
+      'workspace-b': {
+        'package.json': JSON.stringify({
+          name: 'workspace-b',
+          version: '2.0.0',
+        }),
+      },
+    })
+
+    const arb = new Arborist({
+      ...OPT,
+      path,
+      workspaces: ['workspace-a', 'workspace-b'],
+    })
+
+    // this will reject if we try to fetch a manifest for some reason
+    const tree = await arb.buildIdealTree({
+      path,
+    })
+
+    const edgeA = tree.edgesOut.get('workspace-a')
+    t.ok(edgeA.valid, 'workspace-a should be valid')
+    const edgeB = tree.edgesOut.get('workspace-b')
+    t.ok(edgeB.valid, 'workspace-b should be valid')
+    const nodeA = edgeA.to.target
+    t.ok(nodeA.isWorkspace, 'workspace-a is definitely a workspace')
+    const nodeB = edgeB.to.target
+    t.ok(nodeB.isWorkspace, 'workspace-b is definitely a workspace')
+    const nodeBfromA = nodeA.edgesOut.get('workspace-b').to.target
+    t.equal(nodeBfromA, nodeB, 'workspace-b edgeOut from workspace-a is the workspace')
+  })
+
   t.end()
 })
 
@@ -2048,8 +2191,28 @@ t.test('update global', async t => {
       },
     },
   })
+
+  t.matchSnapshot(await printIdeal(path, { global: true, update: ['abbrev'] }),
+    'updating missing dep should have no effect')
+
   t.matchSnapshot(await printIdeal(path, { global: true, update: ['wrappy'] }),
     'updating sub-dep has no effect')
+
+  const invalidArgs = [
+    'once@1.4.0',
+    'once@next',
+    'once@^1.0.0',
+    'once@>=2.0.0',
+    'once@2',
+  ]
+  for (const updateName of invalidArgs) {
+    t.rejects(
+      printIdeal(path, { global: true, update: [updateName] }),
+      { code: 'EUPDATEARGS' },
+      'should throw an error when using semver ranges'
+    )
+  }
+
   t.matchSnapshot(await printIdeal(path, { global: true, update: ['once'] }),
     'update a single dep')
   t.matchSnapshot(await printIdeal(path, { global: true, update: true }),
@@ -3680,5 +3843,62 @@ t.test('overrides', t => {
     t.equal(bcEdge.to.version, '2.0.0', 'b->c is 2.0.0')
   })
 
+  t.test('overrides a workspace dependency', async (t) => {
+    generateNocks(t, {
+      bar: {
+        versions: ['1.0.0', '1.0.1', '2.0.0'],
+      },
+    })
+
+    const path = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'root',
+        dependencies: {
+          foo: '1.0.1',
+        },
+        overrides: {
+          bar: '2.0.0',
+        },
+        workspaces: [
+          './workspaces/*',
+        ],
+      }),
+      workspaces: {
+        foo: {
+          'package.json': JSON.stringify({
+            name: 'foo',
+            version: '1.0.1',
+            dependencies: {
+              bar: '1.0.0',
+            },
+          }),
+        },
+      },
+    })
+
+    const tree = await buildIdeal(path)
+
+    const fooEdge = tree.edgesOut.get('foo')
+    t.equal(fooEdge.valid, true)
+
+    // fooEdge.to is a link, so we need to look at the target for edgesOut
+    const fooBarEdge = fooEdge.to.target.edgesOut.get('bar')
+    t.equal(fooBarEdge.valid, true)
+    t.equal(fooBarEdge.to.version, '2.0.0')
+  })
+
   t.end()
+})
+
+t.test('store files with a custom indenting', async t => {
+  const tabIndentedPackageJson =
+    fs.readFileSync(
+      resolve(__dirname, '../fixtures/tab-indented-package-json/package.json'),
+      'utf8'
+    ).replace(/\r\n/g, '\n')
+  const path = t.testdir({
+    'package.json': tabIndentedPackageJson,
+  })
+  const tree = await buildIdeal(path)
+  t.matchSnapshot(String(tree.meta))
 })

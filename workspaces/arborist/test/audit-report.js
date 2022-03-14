@@ -1,4 +1,5 @@
 const t = require('tap')
+const localeCompare = require('@isaacs/string-locale-compare')('en')
 const AuditReport = require('../lib/audit-report.js')
 const { auditToBulk } = AuditReport
 const Node = require('../lib/node.js')
@@ -24,14 +25,14 @@ const newArb = (path, opts = {}) =>
 
 const sortReport = report => {
   const entries = Object.entries(report.vulnerabilities)
-  const vulns = entries.sort(([a], [b]) => a.localeCompare(b, 'en'))
+  const vulns = entries.sort(([a], [b]) => localeCompare(a, b))
     .map(([name, vuln]) => [
       name,
       {
         ...vuln,
         via: (vuln.via || []).sort((a, b) =>
-          String(a.source || a).localeCompare(String(b.source || b, 'en'))),
-        effects: (vuln.effects || []).sort((a, b) => a.localeCompare(b, 'en')),
+          localeCompare(String(a.source || a), String(b.source || b))),
+        effects: (vuln.effects || []).sort(localeCompare),
       },
     ])
   report.vulnerabilities = vulns.reduce((set, [k, v]) => {
@@ -251,6 +252,24 @@ t.test('audit disabled by config', async t => {
   t.teardown(() => process.removeListener('log', onlog))
 
   const arb = newArb(path, { audit: false })
+
+  const tree = await arb.loadVirtual()
+  const report = await AuditReport.load(tree, arb.options)
+  t.equal(report.report, null, 'did not get audit response')
+  t.equal(report.size, 0, 'did not find any vulnerabilities')
+  t.match(logs, [], 'no logs of error')
+  t.equal(report.error, null, 'no error encountered')
+})
+
+t.test('audit disabled by offline mode', async t => {
+  const path = resolve(fixtures, 'audit-nyc-mkdirp')
+
+  const logs = []
+  const onlog = (...msg) => logs.push(msg)
+  process.on('log', onlog)
+  t.teardown(() => process.removeListener('log', onlog))
+
+  const arb = newArb(path, { offline: true })
 
   const tree = await arb.loadVirtual()
   const report = await AuditReport.load(tree, arb.options)

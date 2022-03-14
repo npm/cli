@@ -15,17 +15,6 @@ Array [
     "force": false,
     "gitTagVersion": true,
     "ignoreScripts": false,
-    "log": Object {
-      "error": Function (...args),
-      "http": Function (...args),
-      "info": Function (...args),
-      "notice": Function (...args),
-      "pause": Function (...args),
-      "resume": Function (...args),
-      "silly": Function (...args),
-      "verbose": Function (...args),
-      "warn": Function (...args),
-    },
     "message": "v%s",
     "path": "{CWD}",
     "pkg": Object {
@@ -35,6 +24,7 @@ Array [
     "scriptShell": undefined,
     "signGitCommit": false,
     "signGitTag": false,
+    "silent": undefined,
     "tagVersionPrefix": "v",
   },
 ]
@@ -50,7 +40,6 @@ Array [
     "force": true,
     "gitTagVersion": false,
     "ignoreScripts": true,
-    "log": Object {},
     "message": "hello, i have a message for you",
     "path": "/some/path",
     "pkg": Object {
@@ -60,6 +49,7 @@ Array [
     "scriptShell": "/bin/bash",
     "signGitCommit": true,
     "signGitTag": true,
+    "silent": undefined,
     "tagVersionPrefix": "=",
   },
 ]

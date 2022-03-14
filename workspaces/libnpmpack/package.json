@@ -1,6 +1,6 @@
 {
   "name": "libnpmpack",
-  "version": "3.0.1",
+  "version": "4.0.1",
   "description": "Programmatic API for the bits behind npm pack",
   "author": "GitHub Inc.",
   "main": "lib/index.js",
@@ -21,7 +21,8 @@
     "posttest": "npm run lint",
     "postlint": "npm-template-check",
     "lintfix": "npm run lint -- --fix",
-    "snap": "tap"
+    "snap": "tap",
+    "template-copy": "npm-template-copy --force"
   },
   "tap": {
     "check-coverage": true
@@ -33,19 +34,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/npm/libnpmpack.git"
+    "url": "https://github.com/npm/cli",
+    "directory": "workspaces/libnpmpack"
   },
   "bugs": "https://github.com/npm/libnpmpack/issues",
   "homepage": "https://npmjs.com/package/libnpmpack",
   "dependencies": {
-    "@npmcli/run-script": "^2.0.0",
-    "npm-package-arg": "^8.1.0",
-    "pacote": "^12.0.0"
+    "@npmcli/run-script": "^3.0.0",
+    "npm-package-arg": "^9.0.0",
+    "pacote": "^13.0.2"
   },
   "engines": {
     "node": "^12.13.0 || ^14.15.0 || >=16"
   },
   "templateOSS": {
-    "version": "2.4.3"
+    "version": "2.9.2"
   }
 }

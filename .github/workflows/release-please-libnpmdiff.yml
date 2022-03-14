@@ -1,0 +1,29 @@
+# This file is automatically added by @npmcli/template-oss. Do not edit.
+
+name: Node Workspace Release Please libnpmdiff
+
+on:
+  push:
+    paths:
+      - workspaces/libnpmdiff/**
+    branches:
+      - release-next
+      - latest
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: google-github-actions/release-please-action@v2
+        id: release
+        with:
+          release-type: node
+          monorepo-tags: true
+          path: workspaces/libnpmdiff
+          # If you change changelog-types be sure to also update commitlintrc.js
+          changelog-types: >
+            [{"type":"feat","section":"Features","hidden":false},
+            {"type":"fix","section":"Bug Fixes","hidden":false},
+            {"type":"docs","section":"Documentation","hidden":false},
+            {"type":"deps","section":"Dependencies","hidden":false},
+            {"type":"chore","hidden":true}]

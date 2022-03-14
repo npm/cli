@@ -2,6 +2,8 @@
 // does not enable it.
 process.env.ARBORIST_DEBUG = '1'
 const Inventory = require('../lib/inventory.js')
+const localeCompare = require('@isaacs/string-locale-compare')('en')
+
 const t = require('tap')
 
 t.test('basic operations', t => {
@@ -21,7 +23,7 @@ t.test('basic operations', t => {
     i.get('y'),
   ], 'filter returns an iterable of all matching nodes')
 
-  t.same([...i.query('license')].sort((a, b) => String(a).localeCompare(String(b, 'en'))),
+  t.same([...i.query('license')].sort((a, b) => localeCompare(String(a), String(b))),
     ['ISC', 'MIT', undefined])
   t.same([...i.query('license', 'MIT')], [
     { location: 'x', name: 'x', package: { licence: 'MIT', funding: 'foo' } },
@@ -33,7 +35,7 @@ t.test('basic operations', t => {
     { location: 'x', name: 'x', package: { licence: 'MIT', funding: 'foo' } },
     { location: 'y', name: 'x', package: { licenses: [{ type: 'ISC' }], funding: { url: 'foo' } } },
   ], 'can query by name')
-  t.same([...i.query('funding')].sort((a, b) => String(a).localeCompare(String(b, 'en'))),
+  t.same([...i.query('funding')].sort((a, b) => localeCompare(String(a), String(b))),
     ['bar', 'foo', undefined])
   t.same([...i.query('funding', 'foo')], [
     { location: 'x', name: 'x', package: { licence: 'MIT', funding: 'foo' } },

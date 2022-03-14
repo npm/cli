@@ -1,7 +1,6 @@
-# Change Log
+# Changelog
 
-<a name="3.0.1"></a>
-# [3.0.1](https://github.com/npm/libnpmpublish/compare/v3.0.0...v3.0.1) (2020-03-27)
+## [3.0.1](https://github.com/npm/libnpmpublish/compare/v3.0.0...v3.0.1) (2020-03-27)
 
 ### Features
 
@@ -24,6 +23,13 @@
 ---
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### [6.0.1](https://www.github.com/npm/cli/compare/libnpmpublish-vlibnpmpublish@6.0.0...libnpmpublish-v6.0.1) (2022-03-03)
+
+
+### Bug Fixes
+
+* set proper workspace repo urls in package.json ([#4476](https://www.github.com/npm/cli/issues/4476)) ([0cfc155](https://www.github.com/npm/cli/commit/0cfc155db5f11ce23419e440111d99a63bf39754))
 
 ## [2.0.0](https://github.com/npm/libnpmpublish/compare/v1.1.3...v2.0.0) (2019-09-18)
 

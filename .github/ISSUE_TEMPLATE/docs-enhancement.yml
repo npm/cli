@@ -1,0 +1,37 @@
+name: 📄 CLI Docs Enhancement
+description: File a potential enhancement for the npm documentation 
+title: "[DOCS] <title>"
+labels: [Documentation, Needs Triage]
+body:
+- type: checkboxes
+  attributes:
+    label: Is there an existing issue for this?
+    description: Please [search here](https://github.com/npm/cli/issues) to see if an issue already exists for your problem.
+    options:
+    - label: I have searched the existing issues
+      required: true
+- type: checkboxes
+  attributes:
+    label: This is a CLI Docs Enhancement, not another kind of Docs Enhancement.
+    description: These issue templates are only for CLI documentation enhancements. If you are looking to submit another kind of documentation enhancement, please submit it to the [documentation](https://github.com/npm/documentation) repo.
+    options:
+    - label: This is a CLI Docs Enhancement.
+      required: true
+- type: textarea
+  attributes:
+    label: Description of Problem
+    description: A clear & concise description of the current state of the docs.
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: Potential Solution
+    description: A clear & concise description of the potential enhancement, if there is one.
+  validations:
+    required: false
+- type: input
+  attributes:
+    label: Docs URL
+    description: Please provide the URL of the page you'd like to see an enhancement to.
+  validations:
+    required: false

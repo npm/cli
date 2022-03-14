@@ -1,6 +1,7 @@
 const { resolve, basename } = require('path')
 const t = require('tap')
 const runScript = require('@npmcli/run-script')
+const localeCompare = require('@isaacs/string-locale-compare')('en')
 
 // mock rimraf so we can make it fail in rollback tests
 const realRimraf = require('rimraf')
@@ -241,7 +242,7 @@ t.test('omit peer deps', t => {
     .then(() => {
       process.removeListener('time', onTime)
       process.removeListener('timeEnd', onTimeEnd)
-      finishedTimers.sort((a, b) => a.localeCompare(b, 'en'))
+      finishedTimers.sort(localeCompare)
       t.matchSnapshot(finishedTimers, 'finished timers')
       t.strictSame(timers, {}, 'should have no timers in progress now')
     })
@@ -256,6 +257,7 @@ t.test('a workspace with a duplicated nested conflicted dep', t =>
 t.test('testing-peer-deps nested with update', t =>
   t.resolveMatchSnapshot(printReified(fixture(t, 'testing-peer-deps-nested'), {
     update: { names: ['@isaacs/testing-peer-deps'] },
+    save: false,
   })))
 
 t.test('update a bundling node without updating all of its deps', t => {
@@ -392,7 +394,7 @@ t.test('multiple bundles at the same level', t => {
 
 t.test('update a node without updating its children', t =>
   t.resolveMatchSnapshot(printReified(fixture(t, 'once-outdated'),
-    { update: { names: ['once'] } })))
+    { update: { names: ['once'] }, save: false })))
 
 t.test('do not add shrinkwrapped deps', t =>
   t.resolveMatchSnapshot(printReified(
@@ -508,6 +510,7 @@ t.test('update a node without updating a child that has bundle deps', t => {
   const path = fixture(t, 'testing-bundledeps-3')
   return t.resolveMatchSnapshot(printReified(path, {
     update: ['@isaacs/testing-bundledeps-parent'],
+    save: false,
   }))
 })
 
@@ -524,9 +527,16 @@ t.test('optional dependency failures', t => {
     'optional-metadep-postinstall-fail',
     'optional-metadep-allinstall-fail',
   ]
-  t.plan(cases.length)
-  cases.forEach(c => t.test(c, t =>
-    t.resolveMatchSnapshot(printReified(fixture(t, c), { update: true }))))
+  t.plan(cases.length * 2)
+  let p = [...cases.map(c => t.test(`${c} save=false`, t =>
+    t.resolveMatchSnapshot(printReified(fixture(t, c),
+      { update: true, save: false }))))]
+
+  // npm update --save
+  p = [...cases.map(c => t.test(`${c} save=true`, t =>
+    t.resolveMatchSnapshot(printReified(fixture(t, c),
+      { update: true, save: true }))))]
+  return p
 })
 
 t.test('failure to fetch prod dep is failure', t =>
@@ -665,6 +675,7 @@ t.test('rollbacks', { buffered: false }, t => {
 
     return t.resolveMatchSnapshot(a.reify({
       update: ['@isaacs/testing-bundledeps-parent'],
+      save: false,
     }).then(printTree))
   })
 
@@ -845,6 +856,7 @@ t.test('rollbacks', { buffered: false }, t => {
 
     return t.resolveMatchSnapshot(a.reify({
       update: ['@isaacs/testing-bundledeps-parent'],
+      save: false,
     }).then(tree => printTree(tree))).then(() => {
       const warnings = check()
       t.equal(warnings.length, 2)
@@ -1064,6 +1076,7 @@ t.test('scoped registries', async t => {
     registry,
   })
   const kReify = Symbol.for('reifyNode')
+  a.addTracker('reify')
   a.idealTree = new Node({ path })
 
   const node = new Node({
@@ -1367,7 +1380,7 @@ t.test('save complete lockfile on update-all', async t => {
   const lock = () => fs.readFileSync(`${path}/package-lock.json`, 'utf8')
   await reify(path, { add: ['abbrev@1.0.4'] })
   t.matchSnapshot(lock(), 'should have abbrev 1.0.4')
-  await reify(path, { update: true })
+  await reify(path, { update: true, save: false })
   t.matchSnapshot(lock(), 'should update, but not drop root metadata')
 })
 
@@ -1769,6 +1782,17 @@ t.test('save-prod, with optional', async t => {
   })
   const arb = newArb({ path })
   await arb.reify({ add: ['abbrev'], saveType: 'prod' })
+  t.matchSnapshot(fs.readFileSync(path + '/package.json', 'utf8'))
+})
+
+t.test('saveBundle', async t => {
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      dependencies: { abbrev: '*' },
+    }),
+  })
+  const arb = newArb({ path })
+  await arb.reify({ add: ['abbrev'], saveType: 'prod', saveBundle: true })
   t.matchSnapshot(fs.readFileSync(path + '/package.json', 'utf8'))
 })
 
@@ -2431,4 +2455,164 @@ t.test('add local dep with existing dev + peer/optional', async t => {
   t.matchSnapshot(printTree(tree), 'tree')
   t.equal(tree.children.get('abbrev').resolved, 'file:../../dep', 'resolved')
   t.equal(tree.children.size, 1, 'children')
+})
+
+t.test('save package.json on update', t => {
+  t.test('should save many deps in multiple package.json when using save=true', async t => {
+    const path = fixture(t, 'workspaces-need-update')
+
+    await reify(path, { update: true, save: true })
+
+    t.same(
+      require(resolve(path, 'package.json')),
+      { dependencies: { abbrev: '^1.1.1' }, workspaces: ['a', 'b'] },
+      'should save top level dep update to root package.json'
+    )
+    t.same(
+      require(resolve(path, 'a', 'package.json')),
+      { dependencies: { abbrev: '^1.1.1', once: '^1.4.0' } },
+      'should save workspace dep to its package.json file')
+
+    t.matchSnapshot(
+      fs.readFileSync(resolve(path, 'package-lock.json'), 'utf8'),
+      'should update lockfile with many deps updated package.json save=true'
+    )
+  })
+
+  t.test('should not save many deps in multiple package.json when using save=false', async t => {
+    const path = fixture(t, 'workspaces-need-update')
+
+    await reify(path, { update: true, save: false })
+
+    t.same(
+      require(resolve(path, 'package.json')),
+      {
+        dependencies: { abbrev: '^1.0.4' },
+        workspaces: ['a', 'b'],
+      },
+      'should not save top level dep update to root package.json'
+    )
+    t.same(
+      require(resolve(path, 'a', 'package.json')),
+      { dependencies: { abbrev: '^1.0.4', once: '^1.3.2' } },
+      'should not save workspace dep to its package.json file')
+
+    // package-lock entries will still get updated:
+    t.matchSnapshot(
+      fs.readFileSync(resolve(path, 'package-lock.json'), 'utf8'),
+      'should update lockfile with many deps updated package.json save=false'
+    )
+  })
+
+  t.test('should not save any with save=false and package-lock=false', async t => {
+    const path = fixture(t, 'workspaces-need-update')
+
+    await reify(path, { update: true, save: false, packageLock: false })
+
+    t.same(
+      require(resolve(path, 'package.json')),
+      {
+        dependencies: { abbrev: '^1.0.4' },
+        workspaces: ['a', 'b'],
+      },
+      'should not save top level dep update to root package.json'
+    )
+    t.same(
+      require(resolve(path, 'a', 'package.json')),
+      { dependencies: { abbrev: '^1.0.4', once: '^1.3.2' } },
+      'should not save workspace dep to its package.json file')
+
+    // package-lock entries will still get updated:
+    t.matchSnapshot(
+      JSON.stringify(JSON.parse(fs.readFileSync(resolve(path, 'package-lock.json'), 'utf8')), null, 2),
+      'should update lockfile with many deps updated package.json save=false'
+    )
+  })
+
+  t.test('should update named dep across multiple package.json using save=true', async t => {
+    const path = fixture(t, 'workspaces-need-update')
+
+    await reify(path, { update: ['abbrev'], save: true })
+
+    t.same(
+      require(resolve(path, 'package.json')),
+      {
+        dependencies: { abbrev: '^1.1.1' },
+        workspaces: ['a', 'b'],
+      },
+      'should save top level dep update to root package.json'
+    )
+    t.same(
+      require(resolve(path, 'a', 'package.json')),
+      { dependencies: { abbrev: '^1.1.1', once: '^1.3.2' } },
+      'should save only workspace a updated dep to its package.json file')
+    t.same(
+      require(resolve(path, 'b', 'package.json')),
+      { dependencies: { abbrev: '^1.1.1' } },
+      'should save only workspace b updated dep to its package.json file')
+
+    t.matchSnapshot(
+      fs.readFileSync(resolve(path, 'package-lock.json'), 'utf8'),
+      'should update lockfile with many deps updated package.json save=true'
+    )
+  })
+
+  t.test('should update single named dep across multiple package.json using save=true', async t => {
+    const path = fixture(t, 'workspaces-need-update')
+
+    await reify(path, { update: ['once'], save: true })
+
+    t.same(
+      require(resolve(path, 'package.json')),
+      {
+        dependencies: { abbrev: '^1.0.4' },
+        workspaces: ['a', 'b'],
+      },
+      'should save no top level dep update to root package.json'
+    )
+    t.same(
+      require(resolve(path, 'a', 'package.json')),
+      { dependencies: { abbrev: '^1.0.4', once: '^1.4.0' } },
+      'should save only workspace single updated dep to its package.json file')
+    t.same(
+      require(resolve(path, 'b', 'package.json')),
+      { dependencies: { abbrev: '^1.0.4' } },
+      'should not change workspace b package.json file')
+
+    t.matchSnapshot(
+      fs.readFileSync(resolve(path, 'package-lock.json'), 'utf8'),
+      'should update lockfile with single dep updated package.json save=true'
+    )
+  })
+
+  t.test('should preserve exact ranges', async t => {
+    const path = fixture(t, 'update-exact-version')
+
+    await reify(path, { update: true, save: true })
+
+    t.equal(
+      require(resolve(path, 'package.json')).dependencies.abbrev,
+      '1.0.4',
+      'should save no top level dep update to root package.json'
+    )
+  })
+
+  t.test('should preserve exact ranges, missing actual tree', async t => {
+    const path = t.testdir({
+      'package.json': JSON.stringify({
+        dependencies: {
+          abbrev: '1.0.4',
+        },
+      }),
+    })
+
+    await reify(path, { update: true, save: true })
+
+    t.equal(
+      require(resolve(path, 'package.json')).dependencies.abbrev,
+      '1.0.4',
+      'should save no top level dep update to root package.json'
+    )
+  })
+  t.end()
 })

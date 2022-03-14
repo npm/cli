@@ -18,7 +18,7 @@ const fixture = (t, p) => require('../fixtures/reify-cases/' + p)(t)
 
 const cache = t.testdir()
 const dedupeTree = (path, opt) =>
-  new Arborist({ registry, path, cache, ...(opt || {}) }).dedupe(opt)
+  new Arborist({ registry, path, cache, save: false, ...(opt || {}) }).dedupe(opt)
 
 t.test('dedupes with actual tree', async t => {
   const path = fixture(t, 'dedupe-actual')

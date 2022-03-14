@@ -1,7 +1,6 @@
-# Change Log
+# Changelog
 
-<a name="6.0.0"></a>
-# [6.0.0](https://github.com/npm/libnpmhook/compare/v5.0.2...v6.0.0) (2020-02-26)
+## [6.0.0](https://github.com/npm/libnpmhook/compare/v5.0.2...v6.0.0) (2020-02-26)
 
 ### Breaking Changes
 
@@ -17,6 +16,13 @@
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
 <a name="5.0.2"></a>
+### [8.0.1](https://www.github.com/npm/cli/compare/libnpmhook-vlibnpmhook@8.0.0...libnpmhook-v8.0.1) (2022-03-03)
+
+
+### Bug Fixes
+
+* set proper workspace repo urls in package.json ([#4476](https://www.github.com/npm/cli/issues/4476)) ([0cfc155](https://www.github.com/npm/cli/commit/0cfc155db5f11ce23419e440111d99a63bf39754))
+
 ## [5.0.2](https://github.com/npm/libnpmhook/compare/v5.0.1...v5.0.2) (2018-08-24)
 
 

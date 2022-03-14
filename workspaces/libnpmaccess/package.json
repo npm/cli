@@ -1,6 +1,6 @@
 {
   "name": "libnpmaccess",
-  "version": "5.0.0",
+  "version": "6.0.1",
   "description": "programmatic library for `npm access` commands",
   "author": "GitHub Inc.",
   "license": "ISC",
@@ -15,7 +15,8 @@
     "lintfix": "npm run lint -- --fix",
     "prepublishOnly": "git push origin --follow-tags",
     "snap": "tap",
-    "posttest": "npm run lint"
+    "posttest": "npm run lint",
+    "template-copy": "npm-template-copy --force"
   },
   "devDependencies": {
     "@npmcli/template-oss": "^2.4.2",
@@ -24,15 +25,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/npm/libnpmaccess.git"
+    "url": "https://github.com/npm/cli",
+    "directory": "workspaces/libnpmaccess"
   },
   "bugs": "https://github.com/npm/libnpmaccess/issues",
   "homepage": "https://npmjs.com/package/libnpmaccess",
   "dependencies": {
     "aproba": "^2.0.0",
     "minipass": "^3.1.1",
-    "npm-package-arg": "^8.1.2",
-    "npm-registry-fetch": "^11.0.0"
+    "npm-package-arg": "^9.0.0",
+    "npm-registry-fetch": "^13.0.0"
   },
   "engines": {
     "node": "^12.13.0 || ^14.15.0 || >=16"
@@ -45,6 +47,6 @@
     "lib"
   ],
   "templateOSS": {
-    "version": "2.4.3"
+    "version": "2.9.2"
   }
 }
