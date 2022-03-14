@@ -716,7 +716,8 @@ module.exports = cls => class Reifier extends cls {
     // ${REGISTRY} or something.  This has to be threaded through the
     // Shrinkwrap and Node classes carefully, so for now, just treat
     // the default reg as the magical animal that it has been.
-    return resolved && resolved
+    return this.options.replaceRegistryHost
+      && resolved && resolved
       .replace(/^https?:\/\/registry\.npmjs\.org\//, this.registry)
   }
 
