@@ -1,5 +1,7 @@
 'use strict'
 
+const execSync = require('child_process').execSync
+
 /*
 Usage:
 
@@ -12,32 +14,32 @@ Ordinarily this is run via the gen-changelog shell script, which appends
 the result to the changelog.
 
 */
-const execSync = require('child_process').execSync
-const branch = process.argv[2] || 'origin/latest'
-const log = execSync(`git log --reverse --pretty='format:%h' ${branch}...`)
-  .toString()
-  .split(/\n/)
 
-function printCommit (c) {
-  console.log(`* [\`${c.hash}\`](${c.url})`)
-  for (const pr of c.prs) {
-    console.log(`  [#${pr.number}](${pr.url})`)
-    // remove the (#111) relating to this pull request from the commit message,
-    // since we manually add the link outside of the commit message
-    const msgRe = new RegExp(`\\s*\\(#${pr.number}\\)`, 'g')
-    c.message = c.message.replace(msgRe, '')
+const parseArgs = (argv) => {
+  const result = {
+    releaseNotes: false,
+    branch: 'origin/latest',
   }
-  // no need to indent this output, it's already got 2 spaces
-  console.log(c.message)
-  // no credit for deps commits, leading spaces are important here
-  if (!c.message.startsWith('  deps')) {
-    for (const user of c.credit) {
-      console.log(`  ([${user.name}](${user.url}))`)
+
+  for (const arg of argv) {
+    if (arg === '--release-notes') {
+      result.releaseNotes = true
+      continue
     }
+
+    result.branch = arg
   }
+
+  return result
 }
 
 const main = async () => {
+  const { branch, releaseNotes } = parseArgs(process.argv.slice(2))
+
+  const log = execSync(`git log --reverse --pretty='format:%h' ${branch}...`)
+    .toString()
+    .split(/\n/)
+
   const query = `
     fragment commitCredit on GitObject {
       ... on Commit {
@@ -75,14 +77,54 @@ const main = async () => {
   const response = execSync(`gh api graphql -f query='${query}'`).toString()
   const body = JSON.parse(response)
 
+  const output = {
+    Features: [],
+    'Bug Fixes': [],
+    Documentation: [],
+    Dependencies: [],
+  }
+
   for (const [hash, data] of Object.entries(body.data.repository)) {
+    if (!data) {
+      console.error('no data for hash', hash)
+      continue
+    }
+
+    const message = data.message.replace(/^\s+/gm, '') // remove leading spaces
+      .replace(/(\r?\n)+/gm, '\n') // replace multiple newlines with one
+      .replace(/([^\s]+@\d+\.\d+\.\d+.*)/gm, '`$1`') // wrap package@version in backticks
+
+    const lines = message.split('\n')
+    // the title is the first line of the commit, 'let' because we change it later
+    let title = lines.shift()
+    // the body is the rest of the commit with some normalization
+    const body = lines.join('\n') // re-join our normalized commit into a string
+      .split(/\n?\*/gm) // split on lines starting with a literal *
+      .filter((line) => line.trim().length > 0) // remove blank lines
+      .map((line) => {
+        const clean = line.replace(/\n/gm, ' ') // replace new lines for this bullet with spaces
+        return clean.startsWith('*') ? clean : `* ${clean}` // make sure the line starts with *
+      })
+      .join('\n') // re-join with new lines
+
+    const type = title.startsWith('feat') ? 'Features'
+      : title.startsWith('fix') ? 'Bug Fixes'
+      : title.startsWith('docs') ? 'Documentation'
+      : title.startsWith('deps') ? 'Dependencies'
+      : null
+
+    const prs = data.associatedPullRequests.nodes.filter((pull) => pull.merged)
+    for (const pr of prs) {
+      title = title.replace(new RegExp(`\\s*\\(#${pr.number}\\)`, 'g'), '')
+    }
+
     const commit = {
       hash: hash.slice(1), // remove leading _
       url: data.url,
-      message: data.message.replace(/(\r?\n)+/gm, '\n') // swap multiple new lines with one
-        .replace(/^/gm, '  ') // add two spaces to the start of each line
-        .replace(/([^\s]+@\d+\.\d+\.\d+.*)/g, '`$1`'), // wrap package@version in backticks
-      prs: data.associatedPullRequests.nodes.filter((pull) => pull.merged),
+      title,
+      type,
+      body,
+      prs,
       credit: data.authors.nodes.map((author) => {
         if (author.user && author.user.login) {
           return {
@@ -100,7 +142,42 @@ const main = async () => {
       }),
     }
 
-    printCommit(commit)
+    if (commit.type) {
+      output[commit.type].push(commit)
+    }
+  }
+
+  for (const key of Object.keys(output)) {
+    if (output[key].length > 0) {
+      const groupHeading = `### ${key}`
+      console.group(groupHeading)
+      console.log() // blank line after heading
+
+      for (const commit of output[key]) {
+        let groupCommit = `* [\`${commit.hash}\`](${commit.url})`
+        for (const pr of commit.prs) {
+          groupCommit += ` [#${pr.number}](${pr.url})`
+        }
+        groupCommit += ` ${commit.title}`
+        if (key !== 'Dependencies') {
+          for (const user of commit.credit) {
+            if (releaseNotes) {
+              groupCommit += ` (${user.name})`
+            } else {
+              groupCommit += ` ([${user.name}](${user.url}))`
+            }
+          }
+        }
+        console.group(groupCommit)
+        if (commit.body && commit.body.length) {
+          console.log(commit.body)
+        }
+        console.groupEnd(groupCommit)
+      }
+
+      console.log() // blank line at end of group
+      console.groupEnd(groupHeading)
+    }
   }
 }
 
