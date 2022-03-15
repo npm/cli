@@ -1,0 +1,46 @@
+{
+  "name": "read-package-json",
+  "version": "4.1.2",
+  "author": "Isaac Z. Schlueter <i@izs.me> (http://blog.izs.me/)",
+  "description": "The thing npm uses to read package.json files with semantics and defaults and validation",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/npm/read-package-json.git"
+  },
+  "main": "read-json.js",
+  "scripts": {
+    "prerelease": "npm t",
+    "postrelease": "npm publish && git push --follow-tags",
+    "release": "standard-version -s",
+    "test": "tap --nyc-arg=--all --coverage test/*.js",
+    "npmclilint": "npmcli-lint",
+    "lint": "npm run npmclilint --  --ignore-pattern test/fixtures \"*.*js\" \"test/**/*.*js\"",
+    "lintfix": "npm run lint -- --fix",
+    "posttest": "npm run lint --",
+    "postsnap": "npm run lintfix --"
+  },
+  "dependencies": {
+    "glob": "^7.1.1",
+    "json-parse-even-better-errors": "^2.3.0",
+    "normalize-package-data": "^3.0.0",
+    "npm-normalize-package-bin": "^1.0.0"
+  },
+  "devDependencies": {
+    "@npmcli/lint": "^1.0.2",
+    "standard-version": "^9.3.1",
+    "tap": "^15.0.9"
+  },
+  "license": "ISC",
+  "files": [
+    "read-json.js"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "tap": {
+    "branches": 68,
+    "functions": 83,
+    "lines": 76,
+    "statements": 77
+  }
+}
