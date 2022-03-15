@@ -423,6 +423,51 @@ t.test('load global space with link deps', async t => {
   })
 })
 
+t.test('no edge errors for nested deps', async t => {
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'a',
+      version: '1.0.0',
+      dependencies: {
+        b: '1.0.0',
+      },
+    }),
+    node_modules: {
+      b: {
+        'package.json': JSON.stringify({
+          name: 'b',
+          version: '1.0.0',
+          dependencies: {
+            c: '1.0.0',
+          },
+        }),
+      },
+      c: {
+        'package.json': JSON.stringify({
+          name: 'c',
+          version: '1.0.0',
+        }),
+      },
+    },
+  })
+
+  // disable treeCheck since it prevents the original issue from occuring
+  const ArboristNoTreeCheck = t.mock('../../lib/arborist', {
+    '../../lib/tree-check.js': tree => tree,
+  })
+  const loadActualNoTreeCheck = (path, opts) =>
+    new ArboristNoTreeCheck({ path, ...opts }).loadActual(opts)
+
+  const tree = await loadActualNoTreeCheck(path)
+
+  // assert that no outgoing edges have errors
+  for (const node of tree.inventory.values()) {
+    for (const [name, edge] of node.edgesOut.entries()) {
+      t.equal(edge.error, null, `node ${node.name} has outgoing edge to ${name} with error ${edge.error}`)
+    }
+  }
+})
+
 t.test('loading a workspace maintains overrides', async t => {
   const path = t.testdir({
     'package.json': JSON.stringify({
