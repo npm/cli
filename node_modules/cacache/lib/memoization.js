@@ -2,13 +2,11 @@
 
 const LRU = require('lru-cache')
 
-const MAX_SIZE = 50 * 1024 * 1024 // 50MB
-const MAX_AGE = 3 * 60 * 1000
-
 const MEMOIZED = new LRU({
-  max: MAX_SIZE,
-  maxAge: MAX_AGE,
-  length: (entry, key) => key.startsWith('key:') ? entry.data.length : entry.length,
+  max: 500,
+  maxSize: 50 * 1024 * 1024, // 50MB
+  ttl: 3 * 60 * 1000, // 3 minutes
+  sizeCalculation: (entry, key) => key.startsWith('key:') ? entry.data.length : entry.length,
 })
 
 module.exports.clearMemoized = clearMemoized
