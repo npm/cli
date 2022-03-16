@@ -32,12 +32,15 @@ const packument = (nv, opts) => {
 
   const mocks = {
     red: {
+      _id: 'red@1.0.1',
       name: 'red',
       'dist-tags': {
         '1.0.1': {},
       },
       time: {
-        unpublished: new Date(),
+        unpublished: {
+          time: '2012-12-20T00:00:00.000Z',
+        },
       },
     },
     blue: {
@@ -533,7 +536,7 @@ t.test('throws when unpublished', async t => {
   const view = new View(npm)
   await t.rejects(
     view.exec(['red']),
-    { code: 'E404' }
+    { code: 'E404', pkgid: 'red@1.0.1', message: 'Unpublished on 2012-12-20T00:00:00.000Z' }
   )
 })
 
