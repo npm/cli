@@ -455,7 +455,7 @@ Options:
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [-ws|--workspaces] [--include-workspace-root]
 
-aliases: i, in, ins, inst, insta, instal, isnt, isnta, isntal, add
+aliases: i, in, ins, inst, insta, instal, isnt, isnta, isntal, isntall, add
 
 Run "npm help install" for more info
 `
