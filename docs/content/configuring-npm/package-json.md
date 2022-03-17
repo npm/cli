@@ -690,6 +690,10 @@ This feature is helpful for local offline development and creating tests
 that require npm installing where you don't want to hit an external server,
 but should not be used when publishing packages to the public registry.
 
+*note*: Packages linked by local path will not have their own
+dependencies installed when `npm install` is ran in this case.  You must
+run `npm install` from inside the local path itself.
+
 ### devDependencies
 
 If someone is planning on downloading and using your module in their
