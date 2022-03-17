@@ -155,6 +155,7 @@ exports[`test/lib/commands/config.js TAP config list --json > output matches sna
   "which": null,
   "workspace": [],
   "workspaces": null,
+  "workspaces-update": true,
   "yes": null,
   "metrics-registry": "https://registry.npmjs.org/"
 }
@@ -308,6 +309,7 @@ viewer = "{VIEWER}"
 which = null 
 workspace = [] 
 workspaces = null 
+workspaces-update = true 
 yes = null 
 
 ; "global" config from {GLOBALPREFIX}/npmrc
