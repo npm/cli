@@ -16,7 +16,7 @@ function clearMemoized () {
   MEMOIZED.forEach((v, k) => {
     old[k] = v
   })
-  MEMOIZED.reset()
+  MEMOIZED.clear()
   return old
 }
 
