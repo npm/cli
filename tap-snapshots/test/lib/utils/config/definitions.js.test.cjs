@@ -715,7 +715,8 @@ exports[`test/lib/utils/config/definitions.js TAP > config description for git-t
 * Default: true
 * Type: Boolean
 
-Tag the commit when using the \`npm version\` command.
+Tag the commit when using the \`npm version\` command. Setting this to false
+results in no commit being made at all.
 `
 
 exports[`test/lib/utils/config/definitions.js TAP > config description for global 1`] = `
