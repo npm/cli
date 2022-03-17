@@ -894,8 +894,7 @@ t.test('saving the ideal tree', t => {
         a: 'git+ssh://git@github.com:foo/bar#baz',
         b: '',
         d: 'npm:c@1.x <1.9.9',
-        // XXX: should we remove dependencies that are also workspaces?
-        e: 'file:e',
+        e: '*',
         f: 'git+https://user:pass@github.com/baz/quux#asdf',
         g: '',
         h: '~1.2.3',
@@ -1028,7 +1027,7 @@ t.test('saving the ideal tree', t => {
           a: 'github:foo/bar#baz',
           b: '^1.2.3',
           d: 'npm:c@1.x <1.9.9',
-          e: 'file:e',
+          e: '*',
           f: 'git+https://user:pass@github.com/baz/quux.git#asdf',
           g: '*',
           h: '~1.2.3',
@@ -2044,6 +2043,15 @@ t.test('add deps to workspaces', async t => {
     t.matchSnapshot(printTree(tree), 'returned tree')
     t.matchSnapshot(require(path + '/packages/a/package.json'), 'package.json a')
     t.matchSnapshot(require(path + '/package-lock.json'), 'lockfile')
+  })
+
+  t.test('add a to root', async t => {
+    const path = t.testdir(fixture)
+    await reify(path)
+    const tree = await reify(path, { add: ['a'], lockfileVersion: 3 })
+    t.matchSnapshot(printTree(tree), 'returned tree')
+    t.matchSnapshot(require(path + '/package.json'), 'package.json added workspace as dep')
+    t.matchSnapshot(require(path + '/package-lock.json'), 'lockfile added workspace as dep')
   })
 })
 
