@@ -1,5 +1,19 @@
 # Changelog
 
+### [4.0.2](https://www.github.com/npm/cli/compare/libnpmpack-v4.0.1...libnpmpack-v4.0.2) (2022-03-15)
+
+
+### Documentation
+
+* standardize changelog heading ([#4510](https://www.github.com/npm/cli/issues/4510)) ([91f03ee](https://www.github.com/npm/cli/commit/91f03ee618bc635f9cfbded735fe98bbfa9d643f))
+
+
+### Dependencies
+
+* npm-package-arg@9.0.1 ([9555a5f](https://www.github.com/npm/cli/commit/9555a5f1d135aa1b8f7374273403efe41e99ee26))
+* pacote@13.0.4 ([6d31450](https://www.github.com/npm/cli/commit/6d3145014861b4198c16d7772d809fd037ece289))
+* pacote@13.0.5 ([340fa51](https://www.github.com/npm/cli/commit/340fa51f423a518a96c8015a67d8f6144a2e8051))
+
 ### [4.0.1](https://www.github.com/npm/cli/compare/libnpmpack-vlibnpmpack@4.0.0...libnpmpack-v4.0.1) (2022-03-03)
 
 
