@@ -1,5 +1,12 @@
 # Changelog
 
+### [4.0.2](https://www.github.com/npm/cli/compare/libnpmteam-v4.0.1...libnpmteam-v4.0.2) (2022-03-10)
+
+
+### Documentation
+
+* standardize changelog heading ([#4510](https://www.github.com/npm/cli/issues/4510)) ([91f03ee](https://www.github.com/npm/cli/commit/91f03ee618bc635f9cfbded735fe98bbfa9d643f))
+
 ### [4.0.1](https://www.github.com/npm/cli/compare/libnpmteam-vlibnpmteam@4.0.0...libnpmteam-v4.0.1) (2022-03-03)
 
 
