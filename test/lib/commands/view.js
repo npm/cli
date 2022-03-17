@@ -265,6 +265,9 @@ const packument = (nv, opts) => {
   if (nv.type === 'git') {
     return mocks[nv.hosted.project]
   }
+  if (nv.raw === './blue') {
+    return mocks.blue
+  }
   return mocks[nv.name]
 }
 
@@ -388,6 +391,11 @@ t.test('should log info of package in current working dir', async t => {
 
   t.test('non-specific version', async t => {
     await view.exec(['.'])
+    t.matchSnapshot(logs)
+  })
+
+  t.test('directory', async t => {
+    await view.exec(['./blue'])
     t.matchSnapshot(logs)
   })
 })
