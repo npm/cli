@@ -239,3 +239,5 @@ function getHeaders (uri, auth, opts) {
 
   return headers
 }
+
+module.exports.cleanUrl = require('./clean-url.js')

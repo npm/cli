@@ -1,76 +1,60 @@
 const t = require('tap')
-const { fake: mockNpm } = require('../../fixtures/mock-npm')
+const { relative, join } = require('path')
+const { load: loadMockNpm } = require('../../fixtures/mock-npm')
+const mockGlobals = require('../../fixtures/mock-globals')
+
+const mockBin = async (t, { args = [], config = {} } = {}) => {
+  const { npm, outputs, ...rest } = await loadMockNpm(t, {
+    config,
+  })
+  const cmd = await npm.cmd('bin')
+  await npm.exec('bin', args)
+
+  return {
+    npm,
+    cmd,
+    bin: outputs[0][0],
+    ...rest,
+  }
+}
 
 t.test('bin', async t => {
-  t.plan(2)
-  const dir = '/bin/dir'
-
-  const Bin = require('../../../lib/commands/bin.js')
-
-  const npm = mockNpm({
-    bin: dir,
+  const { cmd, bin, prefix, outputErrors } = await mockBin(t, {
     config: { global: false },
-    output: (output) => {
-      t.equal(output, dir, 'prints the correct directory')
-    },
   })
-  const bin = new Bin(npm)
-  t.match(bin.usage, 'bin', 'usage has command name in it')
 
-  await bin.exec([])
+  t.match(cmd.usage, 'bin', 'usage has command name in it')
+  t.equal(relative(prefix, bin), join('node_modules/.bin'), 'prints the correct directory')
+  t.strictSame(outputErrors, [])
 })
 
 t.test('bin -g', async t => {
-  t.plan(1)
-  const consoleError = console.error
-  t.teardown(() => {
-    console.error = consoleError
-  })
-
-  console.error = (output) => {
-    t.fail('should not have printed to console.error')
-  }
-  const dir = '/bin/dir'
-
-  const Bin = t.mock('../../../lib/commands/bin.js', {
-    '../../../lib/utils/path.js': [dir],
-  })
-
-  const npm = mockNpm({
-    bin: dir,
+  mockGlobals(t, { 'process.platform': 'posix' })
+  const { globalPrefix, bin, outputErrors } = await mockBin(t, {
     config: { global: true },
-    output: (output) => {
-      t.equal(output, dir, 'prints the correct directory')
-    },
   })
-  const bin = new Bin(npm)
 
-  await bin.exec([])
+  t.equal(relative(globalPrefix, bin), 'bin', 'prints the correct directory')
+  t.strictSame(outputErrors, [])
+})
+
+t.test('bin -g win32', async t => {
+  mockGlobals(t, { 'process.platform': 'win32' })
+  const { globalPrefix, bin, outputErrors } = await mockBin(t, {
+    config: { global: true },
+  })
+
+  t.equal(relative(globalPrefix, bin), '', 'prints the correct directory')
+  t.strictSame(outputErrors, [])
 })
 
 t.test('bin -g (not in path)', async t => {
-  t.plan(2)
-  const consoleError = console.error
-  t.teardown(() => {
-    console.error = consoleError
-  })
-
-  console.error = (output) => {
-    t.equal(output, '(not in PATH env variable)', 'prints env warning')
-  }
-  const dir = '/bin/dir'
-
-  const Bin = t.mock('../../../lib/commands/bin.js', {
-    '../../../lib/utils/path.js': ['/not/my/dir'],
-  })
-  const npm = mockNpm({
-    bin: dir,
+  const { logs } = await mockBin(t, {
     config: { global: true },
-    output: (output) => {
-      t.equal(output, dir, 'prints the correct directory')
+    globals: {
+      'process.env.PATH': 'emptypath',
     },
   })
-  const bin = new Bin(npm)
 
-  await bin.exec([])
+  t.strictSame(logs.error[0], ['bin', '(not in PATH env variable)'])
 })
