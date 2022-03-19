@@ -89,6 +89,7 @@ exports[`test/lib/commands/config.js TAP config list --json > output matches sna
   "location": "user",
   "lockfile-version": null,
   "loglevel": "notice",
+  "logs-dir": null,
   "logs-max": 10,
   "long": false,
   "maxsockets": 15,
@@ -242,6 +243,7 @@ local-address = null
 location = "user" 
 lockfile-version = null 
 loglevel = "notice" 
+logs-dir = null 
 logs-max = 10 
 ; long = false ; overridden by cli
 maxsockets = 15 

@@ -1027,12 +1027,25 @@ See also the `foreground-scripts` config.
 <!-- automatically generated, do not edit manually -->
 <!-- see lib/utils/config/definitions.js -->
 
+#### `logs-dir`
+
+* Default: A directory named `_logs` inside the cache
+* Type: null or Path
+
+The location of npm's log directory. See [`npm logging`](/using-npm/logging)
+for more information.
+
+<!-- automatically generated, do not edit manually -->
+<!-- see lib/utils/config/definitions.js -->
+
 #### `logs-max`
 
 * Default: 10
 * Type: Number
 
 The maximum number of log files to store.
+
+If set to 0, no log files will be written for the current run.
 
 <!-- automatically generated, do not edit manually -->
 <!-- see lib/utils/config/definitions.js -->
@@ -1628,9 +1641,9 @@ particular, use care when overriding this setting for public packages.
 * Default: false
 * Type: Boolean
 
-If true, writes an `npm-debug` log to `_logs` and timing information to
-`_timing.json`, both in your cache, even if the command completes
-successfully. `_timing.json` is a newline delimited list of JSON objects.
+If true, writes a debug log to `logs-dir` and timing information to
+`_timing.json` in the cache, even if the command completes successfully.
+`_timing.json` is a newline delimited list of JSON objects.
 
 You can quickly view it with this [json](https://npm.im/json) command line:
 `npm exec -- json -g < ~/.npm/_timing.json`.
