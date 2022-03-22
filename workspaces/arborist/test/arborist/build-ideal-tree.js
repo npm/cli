@@ -2213,10 +2213,10 @@ t.test('update global', async t => {
   })
 
   t.matchSnapshot(await printIdeal(path, { global: true, update: ['abbrev'] }),
-    'updating missing dep should have no effect')
+    'updating missing dep should have no effect, but fix the invalid node')
 
   t.matchSnapshot(await printIdeal(path, { global: true, update: ['wrappy'] }),
-    'updating sub-dep has no effect')
+    'updating sub-dep has no effect, but fixes the invalid node')
 
   const invalidArgs = [
     'once@1.4.0',
@@ -2234,7 +2234,7 @@ t.test('update global', async t => {
   }
 
   t.matchSnapshot(await printIdeal(path, { global: true, update: ['once'] }),
-    'update a single dep')
+    'update a single dep, also fixes the invalid node')
   t.matchSnapshot(await printIdeal(path, { global: true, update: true }),
     'update all the deps')
 })
