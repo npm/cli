@@ -355,6 +355,21 @@ Try using the package name instead, e.g:
       })
 
       .then(tree => {
+        // search the virtual tree for invalid edges, if any are found add their source to
+        // the depsQueue so that we'll fix it later
+        depth({
+          tree,
+          getChildren: (node) => [...node.edgesOut.values()].map(edge => edge.to),
+          filter: node => node,
+          visit: node => {
+            for (const edge of node.edgesOut.values()) {
+              if (!edge.valid) {
+                this[_depsQueue].push(node)
+                break // no need to continue the loop after the first hit
+              }
+            }
+          },
+        })
         // null the virtual tree, because we're about to hack away at it
         // if you want another one, load another copy.
         this.idealTree = tree
