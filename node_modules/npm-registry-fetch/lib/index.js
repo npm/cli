@@ -104,11 +104,11 @@ function regFetch (uri, /* istanbul ignore next */ opts_ = {}) {
     opts.preferOnline = true
   }
 
-  const doFetch = async body => {
+  const doFetch = async fetchBody => {
     const p = fetch(uri, {
       agent: opts.agent,
       algorithms: opts.algorithms,
-      body,
+      body: fetchBody,
       cache: getCacheMode(opts),
       cachePath: opts.cache,
       ca: opts.ca,
