@@ -6,8 +6,13 @@ on:
     branches:
       - "**"
 
+permissions:
+  contents: read
+
 jobs:
   build:
+    permissions:
+      contents: none
     name: Trigger Benchmarks
 
     runs-on: ubuntu-latest

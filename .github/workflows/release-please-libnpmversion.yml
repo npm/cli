@@ -10,11 +10,16 @@ on:
       - release-next
       - latest
 
+permissions:
+  contents: read
+
 jobs:
   release-please:
+    permissions:
+      contents: write  # for google-github-actions/release-please-action to create release PR's and commit message
     runs-on: ubuntu-latest
     steps:
-      - uses: google-github-actions/release-please-action@v2
+      - uses: google-github-actions/release-please-action@0bf3158b7041ea3e07a46031da6bb5467dbea087 # v2
         id: release
         with:
           release-type: node

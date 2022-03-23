@@ -12,13 +12,16 @@ on:
       - latest
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
       # Checkout the npm/cli repo
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@629c2de402a417ea7690ca6ce3f33229e27606a5 # v2
+      - uses: actions/setup-node@1f8c6b94b26d0feae1e387ca63ccbdc44d27b561 # v2
         with:
           node-version: '16'
       - run: npm i --prefer-online -g npm@latest
@@ -42,8 +45,8 @@ jobs:
       run:
         shell: ${{ matrix.platform.shell }}
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@629c2de402a417ea7690ca6ce3f33229e27606a5 # v2
+      - uses: actions/setup-node@1f8c6b94b26d0feae1e387ca63ccbdc44d27b561 # v2
         with:
           node-version: ${{ matrix.node-version }}
         # node 12 and 14 ship with npm@6, which is known to fail when updating itself in windows
