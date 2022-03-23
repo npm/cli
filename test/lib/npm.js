@@ -43,7 +43,6 @@ t.test('not yet loaded', async t => {
       set: Function,
     },
     version: String,
-    shelloutCommands: Array,
   })
   t.throws(() => npm.config.set('foo', 'bar'))
   t.throws(() => npm.config.get('foo'))
