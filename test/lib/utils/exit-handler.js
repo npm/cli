@@ -32,7 +32,7 @@ t.cleanSnapshot = (path) => cleanDate(cleanCwd(path))
 // nerf itself, thinking global.process is broken or gone.
 mockGlobals(t, {
   process: Object.assign(new EventEmitter(), {
-    ...pick(process, 'execPath', 'stdout', 'stderr', 'cwd', 'env'),
+    ...pick(process, 'execPath', 'stdout', 'stderr', 'cwd', 'env', 'umask'),
     argv: ['/node', ...process.argv.slice(1)],
     version: 'v1.0.0',
     kill: () => {},
@@ -450,7 +450,10 @@ t.test('exits uncleanly when only emitting exit event', async (t) => {
 t.test('do no fancy handling for shellouts', async t => {
   const { exitHandler, npm, logs } = await mockExitHandler(t)
 
+  const exec = await npm.cmd('exec')
+
   npm.command = 'exec'
+  npm.commandInstance = exec
 
   const loudNoises = () =>
     logs.filter(([level]) => ['warn', 'error'].includes(level))
