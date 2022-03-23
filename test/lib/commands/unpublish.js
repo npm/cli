@@ -68,7 +68,7 @@ t.test('no args --force missing package.json', async t => {
 
   await t.rejects(
     npm.exec('unpublish', []),
-    /Usage: npm unpublish/,
+    { code: 'EUSAGE' },
     'should throw usage instructions on missing package.json'
   )
 })
@@ -95,7 +95,7 @@ t.test('no args entire project', async t => {
 
   await t.rejects(
     npm.exec('unpublish', []),
-    /Usage: Refusing to delete entire project/
+    /Refusing to delete entire project/
   )
 })
 
@@ -104,7 +104,7 @@ t.test('too many args', async t => {
 
   await t.rejects(
     npm.exec('unpublish', ['a', 'b']),
-    /Usage: npm unpublish/,
+    { code: 'EUSAGE' },
     'should throw usage instructions if too many args'
   )
 })
@@ -248,7 +248,7 @@ t.test('workspaces', async t => {
     })
     await t.rejects(
       npm.exec('unpublish', []),
-      /Usage: Refusing to delete entire project/
+      /Refusing to delete entire project/
     )
   })
 

@@ -7,14 +7,12 @@ const coverageMap = (filename) => {
   if (testbase === 'load-all-commands.js') {
     const { cmdList } = require('../lib/utils/cmd-list.js')
     return cmdList.map(cmd => `lib/${cmd}.js`)
-      .concat('lib/utils/usage.js')
       .concat('lib/base-command.js')
   }
   if (/^test\/lib\/commands/.test(filename) || filename === 'test/lib/npm.js') {
     return [
       filename.replace(/^test\//, ''),
       'lib/base-command.js',
-      'lib/utils/usage.js',
       'lib/exec/get-workspace-location-msg.js',
     ]
   }
