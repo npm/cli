@@ -68,6 +68,15 @@ Options:
 Run "npm help bin" for more info
 `
 
+exports[`test/lib/load-all-commands.js TAP load each command birthday > must match snapshot 1`] = `
+Birthday
+
+Usage:
+npm birthday
+
+Run "npm help birthday" for more info
+`
+
 exports[`test/lib/load-all-commands.js TAP load each command bugs > must match snapshot 1`] = `
 Report bugs for a package in a web browser
 
@@ -346,6 +355,18 @@ Options:
 alias: hlep
 
 Run "npm help help" for more info
+`
+
+exports[`test/lib/load-all-commands.js TAP load each command help-search > must match snapshot 1`] = `
+Search npm help documentation
+
+Usage:
+npm help-search <text>
+
+Options:
+[-l|--long]
+
+Run "npm help help-search" for more info
 `
 
 exports[`test/lib/load-all-commands.js TAP load each command hook > must match snapshot 1`] = `
