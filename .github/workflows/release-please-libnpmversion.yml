@@ -10,8 +10,6 @@ on:
       - release-next
       - latest
 
-permissions:
-  contents: read
 
 jobs:
   release-please:
