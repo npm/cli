@@ -214,7 +214,6 @@
     "licenses": "licensee --production --errors-only",
     "test": "tap",
     "test-all": "npm run test --if-present --workspaces --include-workspace-root",
-    "check-coverage": "tap",
     "snap": "tap",
     "postsnap": "make -s mandocs",
     "test:nocleanup": "NO_TEST_CLEANUP=1 npm run test --",
@@ -235,7 +234,6 @@
     "color": 1,
     "files": "test/{lib,bin,index.js}",
     "coverage-map": "test/coverage-map.js",
-    "check-coverage": true,
     "timeout": 600
   },
   "templateOSS": {
