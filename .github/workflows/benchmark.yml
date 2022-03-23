@@ -6,8 +6,6 @@ on:
     branches:
       - "**"
 
-permissions:
-  contents: read
 
 jobs:
   build:
