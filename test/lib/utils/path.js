@@ -1,6 +1,7 @@
 const t = require('tap')
 const mod = '../../../lib/utils/path.js'
-const delim = require('../../../lib/utils/is-windows.js') ? ';' : ':'
+const { isWindows } = require('../../../lib/utils/is-windows.js')
+const delim = isWindows ? ';' : ':'
 Object.defineProperty(process, 'env', {
   value: {},
 })
