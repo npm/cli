@@ -1125,7 +1125,7 @@ All commands:
                     [--allow-same-version] [--no-commit-hooks] [--no-git-tag-version] [--json]
                     [--preid prerelease-id] [--sign-git-tag]
                     [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-                    [-ws|--workspaces] [--include-workspace-root]
+                    [-ws|--workspaces] [--no-workspaces-update] [--include-workspace-root]
                     
                     alias: verison
                     

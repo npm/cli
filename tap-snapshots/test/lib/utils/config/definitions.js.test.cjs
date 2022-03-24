@@ -151,6 +151,7 @@ Array [
   "which",
   "workspace",
   "workspaces",
+  "workspaces-update",
   "yes",
 ]
 `
@@ -1913,6 +1914,16 @@ other things (test, exec, publish, etc.) will operate on the root project,
 _unless_ one or more workspaces are specified in the \`workspace\` config.
 
 This value is not exported to the environment for child processes.
+`
+
+exports[`test/lib/utils/config/definitions.js TAP > config description for workspaces-update 1`] = `
+#### \`workspaces-update\`
+
+* Default: true
+* Type: Boolean
+
+If set to true, the npm cli will run an update after operations that may
+possibly change the workspaces installed to the \`node_modules\` folder.
 `
 
 exports[`test/lib/utils/config/definitions.js TAP > config description for yes 1`] = `
