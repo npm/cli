@@ -743,6 +743,12 @@ This is a one-time fix-up, please be patient...
         continue
       }
 
+      // if the node's location isn't within node_modules then this is actually
+      // a link target, so skip it. the link node itself will be queued later.
+      if (!node.location.startsWith('node_modules')) {
+        continue
+      }
+
       queue.push(async () => {
         log.silly('inflate', node.location)
         const { resolved, version, path, name, location, integrity } = node
@@ -750,8 +756,7 @@ This is a one-time fix-up, please be patient...
         const useResolved = resolved && (
           !version || resolved.startsWith('file:')
         )
-        const id = useResolved ? resolved
-          : version || `file:${node.path}`
+        const id = useResolved ? resolved : version
         const spec = npa.resolve(name, id, dirname(path))
         const t = `idealTree:inflate:${location}`
         this.addTracker(t)
