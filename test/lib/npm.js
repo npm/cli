@@ -548,12 +548,14 @@ t.test('output clears progress and console.logs the message', async t => {
   t.end()
 })
 
-t.test('unknown command', async t => {
+t.test('aliases and typos', async t => {
   const { npm } = await loadMockNpm(t, { load: false })
-  await t.rejects(
-    npm.cmd('thisisnotacommand'),
-    { code: 'EUNKNOWNCOMMAND' }
-  )
+  await t.rejects(npm.cmd('thisisnotacommand'), { code: 'EUNKNOWNCOMMAND' })
+  await t.rejects(npm.cmd(''), { code: 'EUNKNOWNCOMMAND' })
+  await t.rejects(npm.cmd('birt'), { code: 'EUNKNOWNCOMMAND' })
+  await t.resolves(npm.cmd('it'), { name: 'install-test' })
+  await t.resolves(npm.cmd('installTe'), { name: 'install-test' })
+  await t.resolves(npm.cmd('birthday'), { name: 'birthday' })
 })
 
 t.test('explicit workspace rejection', async t => {
