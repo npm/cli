@@ -1,5 +1,5 @@
 const { definitions } = require('../lib/utils/config/index.js')
-const usageFn = require('../lib/utils/usage.js')
+const cmdAliases = require('../lib/utils/cmd-list').aliases
 const { writeFileSync, readFileSync } = require('fs')
 const { resolve } = require('path')
 
@@ -52,9 +52,19 @@ const describeUsage = ({ usage }) => {
         synopsis.push(usage.map(usageInfo => `${baseCommand} ${usageInfo}`).join('\n'))
       }
 
-      const aliases = usageFn(commandName, '').trim()
-      if (aliases) {
-        synopsis.push(`\n${aliases}`)
+      const aliases = Object.keys(cmdAliases).reduce((p, c) => {
+        if (cmdAliases[c] === commandName) {
+          p.push(c)
+        }
+        return p
+      }, [])
+
+      if (aliases.length === 1) {
+        synopsis.push('')
+        synopsis.push(`alias: ${aliases[0]}`)
+      } else if (aliases.length > 1) {
+        synopsis.push('')
+        synopsis.push(`aliases: ${aliases.join(', ')}`)
       }
     }
   } else {

@@ -145,22 +145,6 @@ jobs:
         node ./bin/npm-cli.js install --ignore-scripts --no-audit
         node ./bin/npm-cli.js rebuild
 
-      # Run the tests, but not if we're just gonna do coveralls later anyway
+      # Run the tests
     - name: Run Tap tests
-      if: matrix.platform.os != 'ubuntu-latest' || matrix.node-version != '16.x'
-      run: node ./bin/npm-cli.js run --ignore-scripts test -- -t600 -Rbase -c
-      env:
-        DEPLOY_VERSION: testing
-
-      # Run coverage check
-    - name: Run coverage report
-      if: matrix.platform.os == 'ubuntu-latest' && matrix.node-version == '16.x'
-      # turn off --check-coverage until 100%, so CI failure is relevant
-      run: node ./bin/npm-cli.js run check-coverage -- -t600 --no-check-coverage -Rbase -c
-      env:
-        DEPLOY_VERSION: testing
-        COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_OPTIONAL_TOKEN }}
-
-    # - name: Run sudo tests on Linux
-    #   if: matrix.os == 'ubuntu-latest'
-    #   run: sudo PATH=$PATH $(which node) . test -- --coverage  --timeout 600
+      run: node ./bin/npm-cli.js run test --ignore-scripts -- -t600 -Rbase -c
