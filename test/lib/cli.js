@@ -14,10 +14,6 @@ const cliMock = async (t, opts) => {
   const { Npm, outputs, logMocks, logs } = await loadMockNpm(t, { ...opts, init: false })
   const cli = t.mock('../../lib/cli.js', {
     '../../lib/npm.js': Npm,
-    '../../lib/utils/unsupported.js': {
-      checkForBrokenNode: () => {},
-      checkForUnsupportedNode: () => {},
-    },
     '../../lib/utils/exit-handler.js': exitHandlerMock,
     ...logMocks,
   })
@@ -174,4 +170,39 @@ t.test('load error calls error handler', async t => {
   })
   await cli(process)
   t.strictSame(exitHandlerCalled(), [err])
+})
+
+t.test('known broken node version', async t => {
+  const errors = []
+  let exitCode
+  const { cli } = await cliMock(t, {
+    globals: {
+      'console.error': (msg) => errors.push(msg),
+      'process.version': '6.0.0',
+      'process.exit': e => exitCode = e,
+    },
+  })
+  await cli(process)
+  t.match(errors, [
+    'ERROR: npm is known not to run on Node.js 6.0.0',
+    'You\'ll need to upgrade to a newer Node.js version in order to use this',
+    'version of npm. You can find the latest version at https://nodejs.org/',
+  ])
+  t.match(exitCode, 1)
+})
+
+t.test('unsupported node version', async t => {
+  const errors = []
+  const { cli } = await cliMock(t, {
+    globals: {
+      'console.error': (msg) => errors.push(msg),
+      'process.version': '10.0.0',
+    },
+  })
+  await cli(process)
+  t.match(errors, [
+    'npm does not support Node.js 10.0.0',
+    'You should probably upgrade to a newer version of node as we',
+    'can\'t make any promises that npm will work with this version.',
+  ])
 })
