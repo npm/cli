@@ -426,7 +426,7 @@ Options:
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [-ws|--workspaces] [--include-workspace-root]
 
-aliases: i, in, ins, inst, insta, instal, isnt, isnta, isntal, isntall, add
+aliases: add, i, in, ins, inst, insta, instal, isnt, isnta, isntal, isntall
 
 Run "npm help install" for more info
 `
@@ -784,7 +784,7 @@ Options:
 [--no-description] [--searchopts <searchopts>] [--searchexclude <searchexclude>]
 [--registry <registry>] [--prefer-online] [--prefer-offline] [--offline]
 
-aliases: s, se, find
+aliases: find, s, se
 
 Run "npm help search" for more info
 `
@@ -924,7 +924,7 @@ Options:
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [-ws|--workspaces] [--include-workspace-root]
 
-aliases: un, unlink, remove, rm, r
+aliases: unlink, remove, rm, r, un
 
 Run "npm help uninstall" for more info
 `
@@ -1002,7 +1002,7 @@ Options:
 [--json] [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [-ws|--workspaces] [--include-workspace-root]
 
-aliases: v, info, show
+aliases: info, show, v
 
 Run "npm help view" for more info
 `
