@@ -2622,5 +2622,33 @@ t.test('save package.json on update', t => {
       'should save no top level dep update to root package.json'
     )
   })
+
+  t.test('should not throw when trying to update a link dep', async t => {
+    const path = t.testdir({
+      one: {
+        'package.json': JSON.stringify({
+          name: 'one',
+          version: '1.0.0',
+          dependencies: {
+            two: 'file:../two',
+          },
+        }),
+      },
+      two: {
+        'package.json': JSON.stringify({
+          name: 'two',
+          version: '1.0.0',
+        }),
+      },
+    })
+
+    await t.resolves(reify(resolve(path, 'one'), { update: true, save: true, workspaces: [] }))
+
+    t.equal(
+      require(resolve(path, 'one', 'package.json')).dependencies.two,
+      'file:../two',
+      'should have made no changes'
+    )
+  })
   t.end()
 })
