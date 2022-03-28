@@ -1,6 +1,5 @@
 # Changelog
 
-<a name="4.0.0"></a>
 ### [6.0.2](https://www.github.com/npm/cli/compare/libnpmaccess-v6.0.1...libnpmaccess-v6.0.2) (2022-03-15)
 
 

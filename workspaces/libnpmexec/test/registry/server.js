@@ -83,7 +83,7 @@ const startServer = cb => {
               opts.headers.host = opts.host
               opts.path = '/v1/advisories/bulk'
               https.request(opts)
-                .on('response', upstream => handleUpstream(upstream))
+                .on('response', r => handleUpstream(r))
                 .end(Buffer.concat(body))
             } else {
               handleUpstream(upstream)
@@ -195,9 +195,9 @@ const startServer = cb => {
 
           const ct = upstream.headers['content-type']
           const isJson = ct.includes('application/json')
-          const file = isJson ? f + '.json' : f
-          console.error('PROXY', `${req.url} -> ${file} ${ct}`)
-          mkdirp.sync(dirname(file))
+          const proxyFile = isJson ? f + '.json' : f
+          console.error('PROXY', `${req.url} -> ${proxyFile} ${ct}`)
+          mkdirp.sync(dirname(proxyFile))
           const data = []
           res.statusCode = upstream.statusCode
           res.setHeader('content-type', ct)
@@ -207,13 +207,13 @@ const startServer = cb => {
             if (!errorStatus) {
               if (isJson) {
                 const obj = JSON.parse(out.toString())
-                writeFileSync(file, JSON.stringify(obj, 0, 2) + '\n')
+                writeFileSync(proxyFile, JSON.stringify(obj, 0, 2) + '\n')
                 const mrm = require('minify-registry-metadata')
-                const minFile = file.replace(/\.json$/, '.min.json')
+                const minFile = proxyFile.replace(/\.json$/, '.min.json')
                 writeFileSync(minFile, JSON.stringify(mrm(obj), 0, 2) + '\n')
-                console.error('WROTE JSONS', [file, minFile])
+                console.error('WROTE JSONS', [proxyFile, minFile])
               } else {
-                writeFileSync(file, out)
+                writeFileSync(proxyFile, out)
               }
             }
             res.end(out)

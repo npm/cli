@@ -16,6 +16,9 @@
 !/CHANGELOG*
 !/.eslintrc.js
 !/.gitignore
-!/bin/
-!/lib/
+!/config.json
+!/content/
+!/dockhand.js
+!/nav.yml
 !/package.json
+!/template.html

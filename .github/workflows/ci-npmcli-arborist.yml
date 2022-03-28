@@ -1,35 +1,53 @@
-name: Node Workspace CI @npmcli/arborist
+# This file is automatically added by @npmcli/template-oss. Do not edit.
+
+name: CI - @npmcli/arborist
 
 on:
+  workflow_dispatch:
   pull_request:
+    branches:
+      - '*'
     paths:
       - workspaces/arborist/**
   push:
+    branches:
+      - main
+      - latest
     paths:
       - workspaces/arborist/**
-    branches:
-      - release-next
-      - latest
-  workflow_dispatch:
+  schedule:
+    # "At 02:00 on Monday" https://crontab.guru/#0_2_*_*_1
+    - cron: "0 2 * * 1"
 
 jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      # Checkout the npm/cli repo
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v3
+      - name: Setup git user
+        run: |
+          git config --global user.email "ops+npm-cli@npmjs.com"
+          git config --global user.name "npm cli ops bot"
+      - uses: actions/setup-node@v3
         with:
-          node-version: '16'
-      - run: npm i --prefer-online -g npm@latest
-      - run: npm i
-      - run: npm run lint -w workspaces/arborist
+          node-version: 16.x
+      - name: Update npm to latest
+        run: npm i --prefer-online --no-fund --no-audit -g npm@latest
+      - run: npm -v
+      - run: npm i --ignore-scripts
+      - run: npm run lint -w @npmcli/arborist
 
   test:
     strategy:
       fail-fast: false
       matrix:
-        node-version: [12.13.0, 12.x, 14.15.0, 14.x, 16.13.0, 16.x]
+        node-version:
+          - 12.13.0
+          - 12.x
+          - 14.15.0
+          - 14.x
+          - 16.0.0
+          - 16.x
         platform:
           - os: ubuntu-latest
             shell: bash
@@ -42,13 +60,17 @@ jobs:
       run:
         shell: ${{ matrix.platform.shell }}
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v3
+      - name: Setup git user
+        run: |
+          git config --global user.email "ops+npm-cli@npmjs.com"
+          git config --global user.name "npm cli ops bot"
+      - uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-        # node 12 and 14 ship with npm@6, which is known to fail when updating itself in windows
       - name: Update to workable npm (windows)
-        if: matrix.platform.os == 'windows-latest' && (startsWith(matrix.node-version, '12') || startsWith(matrix.node-version, '14'))
+        # node 12 and 14 ship with npm@6, which is known to fail when updating itself in windows
+        if: matrix.platform.os == 'windows-latest' && (startsWith(matrix.node-version, '12.') || startsWith(matrix.node-version, '14.'))
         run: |
           curl -sO https://registry.npmjs.org/npm/-/npm-7.5.4.tgz
           tar xf npm-7.5.4.tgz
@@ -56,8 +78,13 @@ jobs:
           node lib/npm.js install --no-fund --no-audit -g ..\npm-7.5.4.tgz
           cd ..
           rmdir /s /q package
-      - name: Update npm
+      - name: Update npm to 7
+        # If we do test on npm 10 it needs npm7
+        if: startsWith(matrix.node-version, '10.')
+        run: npm i --prefer-online --no-fund --no-audit -g npm@7
+      - name: Update npm to latest
+        if: ${{ !startsWith(matrix.node-version, '10.') }}
         run: npm i --prefer-online --no-fund --no-audit -g npm@latest
       - run: npm -v
-      - run: npm i
-      - run: npm test --ignore-scripts -w workspaces/arborist
+      - run: npm i --ignore-scripts
+      - run: npm test --ignore-scripts -w @npmcli/arborist

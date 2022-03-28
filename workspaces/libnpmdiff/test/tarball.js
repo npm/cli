@@ -36,9 +36,9 @@ t.test('returns a tarball from node_modules', t => {
   tarball({ bin: { a: 'index.js' }, _resolved: resolve(path, 'node_modules/a') }, { where: path })
     .then(res => {
       tar.list({
-        filter: path => {
+        filter: p => {
           t.match(
-            path,
+            p,
             /package.json|index.js/,
             'should return tarball with expected files'
           )

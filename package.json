@@ -202,9 +202,8 @@
     "write-file-atomic"
   ],
   "devDependencies": {
-    "@npmcli/eslint-config": "^2.0.0",
-    "@npmcli/template-oss": "^2.9.2",
-    "eslint": "^8.12.0",
+    "@npmcli/eslint-config": "^3.0.1",
+    "@npmcli/template-oss": "3.2.1",
     "licensee": "^8.2.0",
     "nock": "^13.2.4",
     "spawk": "^1.7.1",
@@ -222,9 +221,9 @@
     "sudotest": "sudo npm run test --",
     "sudotest:nocleanup": "sudo NO_TEST_CLEANUP=1 npm run test --",
     "posttest": "npm run lint",
-    "eslint": "eslint",
-    "lint": "npm run eslint -- bin lib scripts smoke-tests test ./*.js",
+    "lint": "eslint \"**/*.js\"",
     "lintfix": "npm run lint -- --fix",
+    "lint-all": "npm run lint --if-present --workspaces --include-workspace-root",
     "prelint": "rimraf test/npm_cache*",
     "resetdeps": "bash scripts/resetdeps.sh",
     "smoke-tests": "tap smoke-tests/index.js"
@@ -239,24 +238,9 @@
     "timeout": 600
   },
   "templateOSS": {
-    "applyRootRepoFiles": false,
-    "applyWorkspaceRepoFiles": true,
-    "applyRootModuleFiles": false,
-    "workspaces": [
-      "@npmcli/arborist",
-      "libnpmaccess",
-      "libnpmdiff",
-      "libnpmfund",
-      "libnpmexec",
-      "libnpmorg",
-      "libnpmhook",
-      "libnpmpack",
-      "libnpmpublish",
-      "libnpmsearch",
-      "libnpmteam",
-      "libnpmversion"
-    ],
-    "version": "2.9.2"
+    "rootRepo": false,
+    "rootModule": false,
+    "version": "3.2.1"
   },
   "license": "Artistic-2.0",
   "engines": {
