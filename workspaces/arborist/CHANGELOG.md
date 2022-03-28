@@ -1,5 +1,15 @@
 # Changelog
 
+### [5.0.4](https://www.github.com/npm/cli/compare/arborist-v5.0.3...arborist-v5.0.4) (2022-03-28)
+
+
+### Bug Fixes
+
+* **arborist:** handle link nodes in old lockfiles correctly ([6f9cb49](https://www.github.com/npm/cli/commit/6f9cb490e7299976c43c6a118036c130671fe188))
+* **arborist:** identify and repair invalid nodes in the virtual tree ([bd96ae4](https://www.github.com/npm/cli/commit/bd96ae4071f9cc8a65e741f414db12e98537971d))
+* **arborist:** make sure resolveParent exists before checking props ([18b8b94](https://www.github.com/npm/cli/commit/18b8b94357d8f57301fbaa0f1e5dc2cf1128bf3e))
+* make sure we loadOverrides on the root node in loadVirtual() ([99d8845](https://www.github.com/npm/cli/commit/99d88454248f950b82652b592fe2b4d019c1060b))
+
 ### [5.0.3](https://www.github.com/npm/cli/compare/arborist-v5.0.2...arborist-v5.0.3) (2022-03-17)
 
 
