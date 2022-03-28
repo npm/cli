@@ -6,7 +6,6 @@ on:
       - '*'
   push:
     branches:
-      - release-next
       - latest
   workflow_dispatch:
 

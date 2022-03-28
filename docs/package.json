@@ -2,21 +2,56 @@
   "name": "docs",
   "description": "The npm cli documentation",
   "version": "1.0.0",
+  "private": true,
   "scripts": {
     "build": "node dockhand",
-    "eslint": "eslint",
-    "lint": "npm run eslint -- ./*.js"
+    "lint": "eslint \"**/*.js\"",
+    "postlint": "template-oss-check",
+    "template-oss-apply": "template-oss-apply --force",
+    "lintfix": "npm run lint -- --fix",
+    "preversion": "npm test",
+    "postversion": "npm publish",
+    "prepublishOnly": "git push origin --follow-tags",
+    "snap": "tap",
+    "test": "tap",
+    "posttest": "npm run lint"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/npm/cli",
-    "directory": "workspaces/docs"
+    "url": "https://github.com/npm/cli.git",
+    "directory": "docs"
   },
   "devDependencies": {
     "@mdx-js/mdx": "^1.6.22",
+    "@npmcli/eslint-config": "^3.0.1",
+    "@npmcli/template-oss": "3.2.1",
     "cmark-gfm": "^0.9.0",
     "jsdom": "^18.1.0",
     "marked-man": "^0.7.0",
+    "tap": "^15.2.3",
     "yaml": "^1.10.0"
+  },
+  "author": "GitHub Inc.",
+  "files": [
+    "content/",
+    "config.json",
+    "dockhand.js",
+    "nav.yml",
+    "template.html"
+  ],
+  "engines": {
+    "node": "^12.13.0 || ^14.15.0 || >=16.0.0"
+  },
+  "templateOSS": {
+    "//@npmcli/template-oss": "This file is partially managed by @npmcli/template-oss. Edits may be overwritten.",
+    "workspaceRepo": false,
+    "distPaths": [
+      "content/",
+      "config.json",
+      "dockhand.js",
+      "nav.yml",
+      "template.html"
+    ],
+    "version": "3.2.1"
   }
 }

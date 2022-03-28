@@ -1,0 +1,21 @@
+{
+  "ignorePatterns": [
+    "docs/",
+    "workspaces/*"
+  ],
+  "rules": {
+    "no-shadow": "off",
+    "no-console": "error"
+  },
+  "overrides": [{
+    "files": [
+      "scripts/**",
+      "smoke-tests/**",
+      "bin/**",
+      "test/**"
+    ],
+    "rules": {
+      "no-console": "off"
+    }
+  }]
+}

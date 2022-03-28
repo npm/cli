@@ -67,8 +67,8 @@ function ensureNavigationComplete (navPaths, fsPaths) {
     if (missingNav.length > 0 && missingFs.length > 0) {
       message += '\nThe following path(s) exist in nav.yml but are not present on disk:\n\n'
 
-      for (const fs of missingFs) {
-        message += `  ${fs}\n`
+      for (const m of missingFs) {
+        message += `  ${m}\n`
       }
     }
 

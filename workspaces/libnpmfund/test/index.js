@@ -6,7 +6,7 @@ const {
   readTree,
   normalizeFunding,
   isValidFunding,
-} = require('./lib/index.js')
+} = require('../lib/index.js')
 const { join } = require('path')
 
 t.test('symlink tree', async (t) => {
@@ -171,7 +171,7 @@ t.test('loading tree from path', async (t) => {
 t.test('no args', async (t) => {
   // will parse data from libnpmfund itself which has *many* fund-listed deps
   const res = await read({
-    path: join(__dirname, '..', '..'),
+    path: join(__dirname, '..', '..', '..'),
   })
   t.ok(
     res.length > 0, // thus length should always be greater than 0

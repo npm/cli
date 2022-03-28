@@ -1,29 +1,30 @@
 # This file is automatically added by @npmcli/template-oss. Do not edit.
 
-name: Node Workspace Release Please libnpmteam
+name: Release Please - libnpmteam
 
 on:
   push:
     paths:
       - workspaces/libnpmteam/**
     branches:
-      - release-next
+      - main
       - latest
 
 jobs:
   release-please:
     runs-on: ubuntu-latest
     steps:
-      - uses: google-github-actions/release-please-action@v2
+      - uses: google-github-actions/release-please-action@v3
         id: release
         with:
           release-type: node
           monorepo-tags: true
-          path: workspaces/libnpmteam
-          # If you change changelog-types be sure to also update commitlintrc.js
+          paths: workspaces/libnpmteam
           changelog-types: >
-            [{"type":"feat","section":"Features","hidden":false},
-            {"type":"fix","section":"Bug Fixes","hidden":false},
-            {"type":"docs","section":"Documentation","hidden":false},
-            {"type":"deps","section":"Dependencies","hidden":false},
-            {"type":"chore","hidden":true}]
+            [
+              {"type":"feat","section":"Features","hidden":false},
+              {"type":"fix","section":"Bug Fixes","hidden":false},
+              {"type":"docs","section":"Documentation","hidden":false},
+              {"type":"deps","section":"Dependencies","hidden":false},
+              {"type":"chore","hidden":true}
+            ]

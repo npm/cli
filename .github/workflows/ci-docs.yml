@@ -1,50 +1,45 @@
-name: Node CI docs
+name: CI - docs
 
 on:
+  workflow_dispatch:
   pull_request:
-    paths:
-      - docs/**
     branches:
       - '*'
-  push:
     paths:
       - docs/**
+  push:
     branches:
-      - release-next
+      - main
       - latest
-  workflow_dispatch:
+    paths:
+      - docs/**
+  schedule:
+    # "At 02:00 on Monday" https://crontab.guru/#0_2_*_*_1
+    - cron: "0 2 * * 1"
 
 jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      # Checkout the npm/cli repo
-      - uses: actions/checkout@v2
-      - name: Use Node.js 14.x
-        uses: actions/setup-node@v2
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
-          node-version: 14.x
-          cache: npm
-      - name: Install dependencies
-        run: |
+          node-version: 16.x
+      - run: |
           node ./bin/npm-cli.js install --ignore-scripts --no-audit
           node ./bin/npm-cli.js rebuild
-      - name: Run linting
-        run: node ./bin/npm-cli.js run lint -w docs
+      - run: node ./bin/npm-cli.js run lint -w docs
         env:
           DEPLOY_VERSION: testing
 
   check_docs:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js 14.x
-        uses: actions/setup-node@v2
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
-          node-version: 14.x
-          cache: npm
-      - name: Install dependencies
-        run: |
+          node-version: 16.x
+      - run: |
           node ./bin/npm-cli.js install --ignore-scripts --no-audit
       - name: Rebuild the docs
         run: make freshdocs
