@@ -196,12 +196,12 @@ t.test('unsupported node version', async t => {
   const { cli } = await cliMock(t, {
     globals: {
       'console.error': (msg) => errors.push(msg),
-      'process.version': '10.0.0',
+      'process.version': '12.6.0',
     },
   })
   await cli(process)
   t.match(errors, [
-    'npm does not support Node.js 10.0.0',
+    'npm does not support Node.js 12.6.0',
     'You should probably upgrade to a newer version of node as we',
     'can\'t make any promises that npm will work with this version.',
   ])
