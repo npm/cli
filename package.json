@@ -208,7 +208,7 @@
     "licensee": "^8.2.0",
     "nock": "^13.2.4",
     "spawk": "^1.7.1",
-    "tap": "^15.1.6"
+    "tap": "^15.2.3"
   },
   "scripts": {
     "dumpconf": "env | grep npm | sort | uniq",
