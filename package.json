@@ -109,7 +109,7 @@
     "npmlog": "^6.0.1",
     "opener": "^1.5.2",
     "pacote": "^13.0.5",
-    "parse-conflict-json": "^2.0.1",
+    "parse-conflict-json": "^2.0.2",
     "proc-log": "^2.0.1",
     "qrcode-terminal": "^0.12.0",
     "read": "~1.0.7",
