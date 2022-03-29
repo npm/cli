@@ -32,27 +32,24 @@ docs: mandocs htmldocs
 
 # don't regenerate the snapshot if we're generating
 # snapshots, since presumably we just did that.
-mandocs: dev-deps $(mandocs)
+mandocs: deps $(mandocs)
 	@ ! [ "$${npm_lifecycle_event}" = "snap" ] && \
 	  ! [ "$${npm_lifecycle_event}" = "postsnap" ] && \
 	  TAP_SNAPSHOT=1 node test/lib/utils/config/definitions.js || true
 
 $(version_mandocs): package.json
 
-htmldocs: dev-deps
-	node bin/npm-cli.js rebuild
-	node bin/npm-cli.js run -w docs build
+htmldocs: deps
+	node bin/npm-cli.js rebuild cmark-gfm
+	node bin/npm-cli.js run build -w docs 
 
-clean: docs-clean gitclean
+clean: docsclean gitclean
 
-docsclean: docs-clean
-
-docs-clean:
+docsclean:
 	rm -rf man
 
-## build-time dependencies for the documentation
-dev-deps:
-	node bin/npm-cli.js install --no-audit --ignore-scripts
+deps:
+	node bin/npm-cli.js run resetdeps
 
 ## targets for man files, these are encouraged to be only built by running `make docs` or `make mandocs`
 man/man1/%.1: docs/content/commands/%.md scripts/docs-build.js
@@ -87,11 +84,11 @@ freshdocs:
 	touch scripts/config-doc.js
 	make docs
 
-test: dev-deps
+test: deps
 	node bin/npm-cli.js test
 
-smoke-tests: dev-deps
-	node bin/npm-cli.js run smoke-tests -- --no-check-coverage
+smoke-tests: deps
+	node bin/npm-cli.js run smoke-tests
 
 ls-ok:
 	node . ls --production >/dev/null
@@ -105,11 +102,9 @@ uninstall:
 link: uninstall
 	node bin/npm-cli.js link -f --ignore-scripts
 
-prune:
-	node bin/npm-cli.js run resetdeps
+prune: deps
 	node bin/npm-cli.js prune --production --no-save --no-audit
 	@[[ "$(shell git status -s)" != "" ]] && echo "ERR: found unpruned files" && exit 1 || echo "git status is clean"
-
 
 publish: gitclean ls-ok link test smoke-tests docs prune
 	@git push origin :v$(shell node bin/npm-cli.js --no-timing -v) 2>&1 || true
@@ -120,4 +115,4 @@ publish: gitclean ls-ok link test smoke-tests docs prune
 release: gitclean ls-ok docs prune
 	@bash scripts/release.sh
 
-.PHONY: all latest install dev link docs clean uninstall test man docs-clean docsclean release ls-ok dev-deps prune freshdocs
+.PHONY: all latest install dev link docs clean uninstall test man docsclean release ls-ok deps prune freshdocs
