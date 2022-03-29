@@ -5,7 +5,7 @@ const defaultOptions = exports.defaultOptions = {
   family: undefined,
   hints: dns.ADDRCONFIG,
   all: false,
-  verbatim: true,
+  verbatim: undefined,
 }
 
 const lookupCache = exports.lookupCache = new LRUCache({ max: 50 })
