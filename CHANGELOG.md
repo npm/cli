@@ -1,5 +1,46 @@
 # Changelog
 
+## [8.6.0](https://github.com/npm/cli/compare/v8.5.5...v8.6.0) (2022-03-29)
+
+
+### Features
+
+* add logs-dir config to set custom logging location ([cc6c094](https://github.com/npm/cli/commit/cc6c09431d7fe2db8ac1dc7a707f2dab7a7a1f83)), closes [#4466](https://github.com/npm/cli/issues/4466) [#4206](https://github.com/npm/cli/issues/4206)
+* **version:** reify on workspace version change ([#4588](https://github.com/npm/cli/issues/4588)) ([723a091](https://github.com/npm/cli/commit/723a0918a5a9d9f795584f85d04506fafda9ca42))
+
+
+### Bug Fixes
+
+* 100% coverage in tests ([#4607](https://github.com/npm/cli/issues/4607)) ([716a07f](https://github.com/npm/cli/commit/716a07fde7905bb69e4c6f1991bb7289589a6669))
+* **arborist:** handle link nodes in old lockfiles correctly ([6f9cb49](https://github.com/npm/cli/commit/6f9cb490e7299976c43c6a118036c130671fe188))
+* **arborist:** identify and repair invalid nodes in the virtual tree ([bd96ae4](https://github.com/npm/cli/commit/bd96ae4071f9cc8a65e741f414db12e98537971d))
+* **arborist:** make sure resolveParent exists before checking props ([18b8b94](https://github.com/npm/cli/commit/18b8b94357d8f57301fbaa0f1e5dc2cf1128bf3e))
+* bump knownBroken to <12.5.0 ([738a404](https://github.com/npm/cli/commit/738a404454677b78b25ce82a8d2e4c1f46d57ffa))
+* consolidate command alias code ([d8dcc02](https://github.com/npm/cli/commit/d8dcc02cfd354c1314c45d6530ec926cd138210c))
+* consolidate is-windows code ([f76d4f2](https://github.com/npm/cli/commit/f76d4f2f661bcc2534f541ee0e7d683155372baf))
+* consolidate node version support logic ([57d8f75](https://github.com/npm/cli/commit/57d8f75eb864486f6aa17bb3dd2f213b5c148073))
+* consolidate path delimiter logic ([0a957f5](https://github.com/npm/cli/commit/0a957f5e2fbcce51c407d22b19e38004d09c51af))
+* make sure we loadOverrides on the root node in loadVirtual() ([99d8845](https://github.com/npm/cli/commit/99d88454248f950b82652b592fe2b4d019c1060b))
+* move shellout logic into commands ([45dd8b8](https://github.com/npm/cli/commit/45dd8b8615bb1d7a93e1733746581049a1f399e6))
+* really load all commands in tests, add description to birthday ([a64acc0](https://github.com/npm/cli/commit/a64acc0bf01e4bc68b26ead5b2d5c6db47ef16c2))
+* remove always true condition ([#4590](https://github.com/npm/cli/issues/4590)) ([98bfd9a](https://github.com/npm/cli/commit/98bfd9a8cc23930e6becd15fffabadd1c269b0a2))
+* return otplease fn results ([8b65bfd](https://github.com/npm/cli/commit/8b65bfd5d610a70e1a860936be1a47f3a3df7f32))
+* **unpublish:** properly apply publishConfig ([#4601](https://github.com/npm/cli/issues/4601)) ([81afa5a](https://github.com/npm/cli/commit/81afa5a8838c71a3a5037e2c8b4ae196e19fe0d7))
+
+
+### Dependencies
+
+* @npmcli/template-oss@3.2.1 ([aac01b8](https://github.com/npm/cli/commit/aac01b89caf6336a2eb34d696296303cdadd5c08))
+* cacache@16.0.3 ([6dd1139](https://github.com/npm/cli/commit/6dd1139c9f302ac71f47a75e70bbe9cdf2e64960))
+* debug@4.3.4 ([6e0a131](https://github.com/npm/cli/commit/6e0a131d2ff3143856f388bb42c6568d5312c451))
+* gauge@4.0.4 ([726a8a0](https://github.com/npm/cli/commit/726a8a07afeb3bd24979307679ce7e63c73b178e))
+* make-fetch-happen@10.1.0 ([feb4446](https://github.com/npm/cli/commit/feb4446d50a7b6a61e44a92b78e1e1af2d89a725))
+* minipass-fetch@2.1.0 ([c33b533](https://github.com/npm/cli/commit/c33b5331120d8304e0f090ceda55e19cc6f451f4))
+* npm-audit-report@3.0.0 ([6a4c8ff](https://github.com/npm/cli/commit/6a4c8ff89acc98409060f5aa55b2f1a795a6b66c))
+* npm-registry-fetch@13.1.0 ([6df061e](https://github.com/npm/cli/commit/6df061ec2a52882693ed86a3524ac6af0f88acd8))
+* parse-conflict-json@2.0.2 ([da377ee](https://github.com/npm/cli/commit/da377eed5cba72185b90f5fc32ef288331c856ef))
+* proc-log@2.0.1 ([0f1cd60](https://github.com/npm/cli/commit/0f1cd60a1cdb643782ae86a5a7fce84e357dbf10))
+
 ## v8.5.5 (2022-03-17)
 
 ### Bug Fixes
