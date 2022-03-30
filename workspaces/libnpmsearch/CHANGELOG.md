@@ -1,5 +1,13 @@
 # Changelog
 
+### [8.5.6](https://github.com/npm/cli/compare/v8.5.5...v8.5.6) (2022-03-30)
+
+
+### Dependencies
+
+* @npmcli/template-oss@3.2.1 ([aac01b8](https://github.com/npm/cli/commit/aac01b89caf6336a2eb34d696296303cdadd5c08))
+* @npmcli/template-oss@3.2.2 ([#4639](https://github.com/npm/cli/issues/4639)) ([a59fd2c](https://github.com/npm/cli/commit/a59fd2cb863245fce56f96c90ac854e62c5c4d6f))
+
 ### [5.0.2](https://www.github.com/npm/cli/compare/libnpmsearch-v5.0.1...libnpmsearch-v5.0.2) (2022-03-10)
 
 
