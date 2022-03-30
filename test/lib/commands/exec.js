@@ -190,9 +190,14 @@ t.test('npx foo, bin already exists globally', async t => {
 
 t.test('npm exec foo, already present locally', async t => {
   const path = t.testdir()
+  const pkg = { name: 'foo', version: '1.2.3', bin: { foo: 'foo' } }
   npm.localPrefix = path
   ARB_ACTUAL_TREE[path] = {
-    children: new Map([['foo', { name: 'foo', version: '1.2.3' }]]),
+    inventory: {
+      query () {
+        return new Set([{ ...pkg, package: pkg }])
+      },
+    },
   }
   MANIFESTS.foo = {
     name: 'foo',
@@ -339,10 +344,18 @@ t.test('npm exec foo, not present locally or in central loc', async t => {
   const installDir = resolve('npx-cache-dir/f7fbba6e0636f890')
   npm.localPrefix = path
   ARB_ACTUAL_TREE[path] = {
-    children: new Map(),
+    inventory: {
+      query () {
+        return new Set()
+      },
+    },
   }
   ARB_ACTUAL_TREE[installDir] = {
-    children: new Map(),
+    inventory: {
+      query () {
+        return new Set()
+      },
+    },
   }
   MANIFESTS.foo = {
     name: 'foo',
@@ -375,12 +388,21 @@ t.test('npm exec foo, not present locally or in central loc', async t => {
 t.test('npm exec foo, not present locally but in central loc', async t => {
   const path = t.testdir()
   const installDir = resolve('npx-cache-dir/f7fbba6e0636f890')
+  const pkg = { name: 'foo', version: '1.2.3', bin: { foo: 'foo' } }
   npm.localPrefix = path
   ARB_ACTUAL_TREE[path] = {
-    children: new Map(),
+    inventory: {
+      query () {
+        return new Set()
+      },
+    },
   }
   ARB_ACTUAL_TREE[installDir] = {
-    children: new Map([['foo', { name: 'foo', version: '1.2.3' }]]),
+    inventory: {
+      query () {
+        return new Set([{ ...pkg, package: pkg }])
+      },
+    },
   }
   MANIFESTS.foo = {
     name: 'foo',
@@ -413,12 +435,21 @@ t.test('npm exec foo, not present locally but in central loc', async t => {
 t.test('npm exec foo, present locally but wrong version', async t => {
   const path = t.testdir()
   const installDir = resolve('npx-cache-dir/2badf4630f1cfaad')
+  const pkg = { name: 'foo', version: '1.2.3', bin: { foo: 'foo' } }
   npm.localPrefix = path
   ARB_ACTUAL_TREE[path] = {
-    children: new Map(),
+    inventory: {
+      query () {
+        return new Set()
+      },
+    },
   }
   ARB_ACTUAL_TREE[installDir] = {
-    children: new Map([['foo', { name: 'foo', version: '1.2.3' }]]),
+    inventory: {
+      query () {
+        return new Set([{ ...pkg, package: pkg }])
+      },
+    },
   }
   MANIFESTS['foo@2.x'] = {
     name: 'foo',
@@ -448,11 +479,63 @@ t.test('npm exec foo, present locally but wrong version', async t => {
   ])
 })
 
-t.test('npm exec --package=foo bar', async t => {
+t.test('npm exec foo, present locally but outdated version', async t => {
   const path = t.testdir()
+  const installDir = resolve('npx-cache-dir/f7fbba6e0636f890')
+  const pkg = { name: 'foo', version: '1.2.3', bin: { foo: 'foo' } }
   npm.localPrefix = path
   ARB_ACTUAL_TREE[path] = {
-    children: new Map([['foo', { name: 'foo', version: '1.2.3' }]]),
+    inventory: {
+      query () {
+        return new Set()
+      },
+    },
+  }
+  ARB_ACTUAL_TREE[installDir] = {
+    inventory: {
+      query () {
+        return new Set([{ ...pkg, package: pkg }])
+      },
+    },
+  }
+  MANIFESTS.foo = {
+    name: 'foo',
+    version: '2.3.4',
+    bin: {
+      foo: 'foo',
+    },
+    _from: 'foo@2.x',
+  }
+  await exec.exec(['foo', 'one arg', 'two arg'])
+  t.strictSame(MKDIRPS, [installDir], 'need to make install dir')
+  t.match(ARB_CTOR, [{ path }])
+  t.match(ARB_REIFY, [{ add: ['foo'], legacyPeerDeps: false }], 'need to add foo@2.x')
+  t.equal(PROGRESS_ENABLED, true, 'progress re-enabled')
+  const PATH = `${resolve(installDir, 'node_modules', '.bin')}${delimiter}${process.env.PATH}`
+  t.match(RUN_SCRIPTS, [
+    {
+      pkg: { scripts: { npx: 'foo' } },
+      args: ['one arg', 'two arg'],
+      banner: false,
+      path: process.cwd(),
+      stdioString: true,
+      event: 'npx',
+      env: { PATH },
+      stdio: 'inherit',
+    },
+  ])
+})
+
+t.test('npm exec --package=foo bar', async t => {
+  const path = t.testdir()
+  const pkg = { name: 'foo', version: '1.2.3', bin: { foo: 'foo' } }
+  npm.localPrefix = path
+  ARB_ACTUAL_TREE[path] = {
+    inventory: {
+      query () {
+        return new Set([{ ...pkg, package: pkg }])
+      },
+    },
   }
   MANIFESTS.foo = {
     name: 'foo',
@@ -499,9 +582,18 @@ t.test('npm exec @foo/bar -- --some=arg, locally installed', async t => {
       },
     },
   })
+  const pkg = {
+    name: '@foo/bar',
+    version: '1.2.3',
+    bin: { foo: 'foo', bar: 'bar' },
+  }
   npm.localPrefix = path
   ARB_ACTUAL_TREE[path] = {
-    children: new Map([['@foo/bar', { name: '@foo/bar', version: '1.2.3' }]]),
+    inventory: {
+      query () {
+        return new Set([{ ...pkg, package: pkg }])
+      },
+    },
   }
   MANIFESTS['@foo/bar'] = foobarManifest
   await exec.exec(['@foo/bar', '--some=arg'])
@@ -526,7 +618,7 @@ t.test('npm exec @foo/bar -- --some=arg, locally installed', async t => {
 t.test(
   'npm exec @foo/bar, with same bin alias and no unscoped named bin, locally installed',
   async t => {
-    const foobarManifest = {
+    const pkg = {
       name: '@foo/bar',
       version: '1.2.3',
       bin: {
@@ -538,15 +630,19 @@ t.test(
     const path = t.testdir({
       node_modules: {
         '@foo/bar': {
-          'package.json': JSON.stringify(foobarManifest),
+          'package.json': JSON.stringify(pkg),
         },
       },
     })
     npm.localPrefix = path
     ARB_ACTUAL_TREE[path] = {
-      children: new Map([['@foo/bar', { name: '@foo/bar', version: '1.2.3' }]]),
+      inventory: {
+        query () {
+          return new Set([{ ...pkg, package: pkg }])
+        },
+      },
     }
-    MANIFESTS['@foo/bar'] = foobarManifest
+    MANIFESTS['@foo/bar'] = pkg
     await exec.exec(['@foo/bar', 'one arg', 'two arg'])
     t.strictSame(MKDIRPS, [], 'no need to make any dirs')
     t.match(ARB_CTOR, [{ path }])
@@ -571,9 +667,22 @@ t.test(
   'npm exec @foo/bar, with different bin alias and no unscoped named bin, locally installed',
   async t => {
     const path = t.testdir()
+    const pkg = {
+      name: '@foo/bar',
+      version: '1.2.3.',
+      bin: { foo: 'qux', corge: 'qux', baz: 'quux' },
+    }
     npm.localPrefix = path
     ARB_ACTUAL_TREE[path] = {
-      children: new Map([['@foo/bar', { name: '@foo/bar', version: '1.2.3' }]]),
+      inventory: {
+        query () {
+          return new Set([{
+            ...pkg,
+            package: pkg,
+            pkgid: `${pkg.name}@${pkg.version}`,
+          }])
+        },
+      },
     }
     MANIFESTS['@foo/bar'] = {
       name: '@foo/bar',
@@ -609,10 +718,18 @@ t.test('run command with 2 packages, need install, verify sort', async t => {
       const installDir = resolve('npx-cache-dir/07de77790e5f40f2')
       npm.localPrefix = path
       ARB_ACTUAL_TREE[path] = {
-        children: new Map(),
+        inventory: {
+          query () {
+            return new Set()
+          },
+        },
       }
       ARB_ACTUAL_TREE[installDir] = {
-        children: new Map(),
+        inventory: {
+          query () {
+            return new Set()
+          },
+        },
       }
       MANIFESTS.foo = {
         name: 'foo',
@@ -653,10 +770,25 @@ t.test('run command with 2 packages, need install, verify sort', async t => {
 })
 
 t.test('npm exec foo, no bin in package', async t => {
-  const path = t.testdir()
+  const pkg = { name: 'foo', version: '1.2.3' }
+  const path = t.testdir({
+    node_modules: {
+      foo: {
+        'package.json': JSON.stringify(pkg),
+      },
+    },
+  })
   npm.localPrefix = path
   ARB_ACTUAL_TREE[path] = {
-    children: new Map([['foo', { name: 'foo', version: '1.2.3' }]]),
+    inventory: {
+      query () {
+        return new Set([{
+          ...pkg,
+          package: pkg,
+          pkgid: `${pkg.name}@${pkg.version}`,
+        }])
+      },
+    },
   }
   MANIFESTS.foo = {
     name: 'foo',
@@ -672,9 +804,22 @@ t.test('npm exec foo, no bin in package', async t => {
 
 t.test('npm exec foo, many bins in package, none named foo', async t => {
   const path = t.testdir()
+  const pkg = {
+    name: 'foo',
+    version: '1.2.3',
+    bin: { bar: 'bar', baz: 'baz' },
+  }
   npm.localPrefix = path
   ARB_ACTUAL_TREE[path] = {
-    children: new Map([['foo', { name: 'foo', version: '1.2.3' }]]),
+    inventory: {
+      query () {
+        return new Set([{
+          ...pkg,
+          package: pkg,
+          pkgid: `${pkg.name}@${pkg.version}`,
+        }])
+      },
+    },
   }
   MANIFESTS.foo = {
     name: 'foo',
@@ -694,11 +839,16 @@ t.test('npm exec foo, many bins in package, none named foo', async t => {
 
 t.test('npm exec -p foo -c "ls -laF"', async t => {
   const path = t.testdir()
+  const pkg = { name: 'foo', version: '1.2.3' }
   npm.localPrefix = path
   config.package = ['foo']
   config.call = 'ls -laF'
   ARB_ACTUAL_TREE[path] = {
-    children: new Map([['foo', { name: 'foo', version: '1.2.3' }]]),
+    inventory: {
+      query () {
+        return new Set([{ ...pkg, package: pkg }])
+      },
+    },
   }
   MANIFESTS.foo = {
     name: 'foo',
@@ -751,10 +901,18 @@ t.test('prompt when installs are needed if not already present and shell is a TT
   const installDir = resolve('npx-cache-dir/07de77790e5f40f2')
   npm.localPrefix = path
   ARB_ACTUAL_TREE[path] = {
-    children: new Map(),
+    inventory: {
+      query () {
+        return new Set()
+      },
+    },
   }
   ARB_ACTUAL_TREE[installDir] = {
-    children: new Map(),
+    inventory: {
+      query () {
+        return new Set()
+      },
+    },
   }
   MANIFESTS.foo = {
     name: 'foo',
@@ -823,10 +981,18 @@ t.test(
     const installDir = resolve('npx-cache-dir/07de77790e5f40f2')
     npm.localPrefix = path
     ARB_ACTUAL_TREE[path] = {
-      children: new Map(),
+      inventory: {
+        query () {
+          return new Set()
+        },
+      },
     }
     ARB_ACTUAL_TREE[installDir] = {
-      children: new Map(),
+      inventory: {
+        query () {
+          return new Set()
+        },
+      },
     }
     MANIFESTS.foo = {
       name: 'foo',
@@ -896,10 +1062,18 @@ t.test(
     const installDir = resolve('npx-cache-dir/f7fbba6e0636f890')
     npm.localPrefix = path
     ARB_ACTUAL_TREE[path] = {
-      children: new Map(),
+      inventory: {
+        query () {
+          return new Set()
+        },
+      },
     }
     ARB_ACTUAL_TREE[installDir] = {
-      children: new Map(),
+      inventory: {
+        query () {
+          return new Set()
+        },
+      },
     }
     MANIFESTS.foo = {
       name: 'foo',
@@ -957,10 +1131,18 @@ t.test('abort if prompt rejected', async t => {
   const installDir = resolve('npx-cache-dir/07de77790e5f40f2')
   npm.localPrefix = path
   ARB_ACTUAL_TREE[path] = {
-    children: new Map(),
+    inventory: {
+      query () {
+        return new Set()
+      },
+    },
   }
   ARB_ACTUAL_TREE[installDir] = {
-    children: new Map(),
+    inventory: {
+      query () {
+        return new Set()
+      },
+    },
   }
   MANIFESTS.foo = {
     name: 'foo',
@@ -1014,10 +1196,18 @@ t.test('abort if prompt false', async t => {
   const installDir = resolve('npx-cache-dir/07de77790e5f40f2')
   npm.localPrefix = path
   ARB_ACTUAL_TREE[path] = {
-    children: new Map(),
+    inventory: {
+      query () {
+        return new Set()
+      },
+    },
   }
   ARB_ACTUAL_TREE[installDir] = {
-    children: new Map(),
+    inventory: {
+      query () {
+        return new Set()
+      },
+    },
   }
   MANIFESTS.foo = {
     name: 'foo',
@@ -1070,10 +1260,18 @@ t.test('abort if -n provided', async t => {
   const installDir = resolve('npx-cache-dir/07de77790e5f40f2')
   npm.localPrefix = path
   ARB_ACTUAL_TREE[path] = {
-    children: new Map(),
+    inventory: {
+      query () {
+        return new Set()
+      },
+    },
   }
   ARB_ACTUAL_TREE[installDir] = {
-    children: new Map(),
+    inventory: {
+      query () {
+        return new Set()
+      },
+    },
   }
   MANIFESTS.foo = {
     name: 'foo',
@@ -1105,10 +1303,18 @@ t.test('forward legacyPeerDeps opt', async t => {
   const installDir = resolve('npx-cache-dir/f7fbba6e0636f890')
   npm.localPrefix = path
   ARB_ACTUAL_TREE[path] = {
-    children: new Map(),
+    inventory: {
+      query () {
+        return new Set()
+      },
+    },
   }
   ARB_ACTUAL_TREE[installDir] = {
-    children: new Map(),
+    inventory: {
+      query () {
+        return new Set()
+      },
+    },
   }
   MANIFESTS.foo = {
     name: 'foo',
