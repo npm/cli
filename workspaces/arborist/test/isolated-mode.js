@@ -640,7 +640,7 @@ tap.only('shrinkwrap', async t => {
   rule7.apply(t, dir, resolved, asserted)
 })
 
-tap.only('shrinkwrap does not install dev deps', async t => {
+tap.only('shrinkwrap install dev deps (like hoisting does)', async t => {
   const shrinkwrap = JSON.stringify({
     "name": "which",
     "version": "1.0.0",
@@ -651,20 +651,20 @@ tap.only('shrinkwrap does not install dev deps', async t => {
         "name": "which",
         "version": "1.0.0",
         "devDependencies": {
-          "isexex": "^1.0.0"
+          "isexe": "^1.0.0"
         }
       },
-      "node_modules/isexex": {
+      "node_modules/isexe": {
         "version": "1.0.0",
         "dev": true,
-        "resolved": "##REG##/isexex/1.0.0.tar"
+        "resolved": "##REG##/isexe/1.0.0.tar"
       }
     },
     "dependencies": {
-      "isexex": {
+      "isexe": {
         "version": "1.0.0",
         "dev": true,
-        "resolved": "##REG##/isexex/1.0.0.tar"
+        "resolved": "##REG##/isexe/1.0.0.tar"
       }
     }
   })
@@ -672,9 +672,9 @@ tap.only('shrinkwrap does not install dev deps', async t => {
   // Input of arborist
   const graph = {
     registry: [
-      { name: 'which', version: '1.0.0', devDependencies: { isexex: '^1.0.0' }, shrinkwrap, _hasShrinkwrap: true },
+      { name: 'which', version: '1.0.0', devDependencies: { isexe: '^1.0.0' }, shrinkwrap, _hasShrinkwrap: true },
       { name: 'isexe', version: '1.1.0' },
-      { name: 'isexex', version: '1.0.0' },
+      { name: 'isexe', version: '1.0.0' },
     ] ,
     root: {
       name: 'foo', version: '1.2.3', dependencies: { which: '1.0.0', isexe: '^1.0.0' }
@@ -684,7 +684,9 @@ tap.only('shrinkwrap does not install dev deps', async t => {
   // expected output
   const resolved = {
     'foo@1.2.3 (root)': {
-      'which@1.0.0': {},
+      'which@1.0.0': {
+        'isexe@1.0.0': {}
+      },
       'isexe@1.1.0': {}
     }
   }
@@ -705,11 +707,9 @@ tap.only('shrinkwrap does not install dev deps', async t => {
   rule6.apply(t, dir, resolved, asserted)
   rule7.apply(t, dir, resolved, asserted)
 
-  t.notOk(dir)('which', 'isexex')
 })
 
 tap.only('shrinkwrap with peer dependencies', async t => {
-    debugger
     const shrinkwrap = JSON.stringify({
         "name": "which",
         "version": "1.0.0",
@@ -717,25 +717,25 @@ tap.only('shrinkwrap with peer dependencies', async t => {
         "requires": true,
         "packages": {
         "": {
-        "name": "which",
-        "version": "1.0.0",
-        "dependencies": {
-        "isexe": "^1.0.0"
-        },
-        "devDependencies": {
-        "bar": "1.0.0"
-        },
-        "peerDependencies": {
-        "bar": "*"
-        }
+          "name": "which",
+          "version": "1.0.0",
+          "dependencies": {
+            "isexe": "^1.0.0"
+          },
+          "devDependencies": {
+            "bar": "1.0.0"
+          },
+          "peerDependencies": {
+            "bar": "*"
+          }
         },
         "node_modules/bar": {
-        "version": "1.0.0",
-        "resolved": "##REG##/bar/1.0.0.tar",
-        "dev": true,
-        "bin": {
-          "bar": "bin.js"
-        }
+          "version": "1.0.0",
+          "resolved": "##REG##/bar/1.0.0.tar",
+          "dev": true,
+          "bin": {
+            "bar": "bin.js"
+          }
         },
         "node_modules/isexe": {
           "version": "1.0.0",

@@ -66,7 +66,6 @@ module.exports = cls => class IsolatedReifier extends cls {
           resolved: node.resolved,
           integrity: node.integrity,
         })
-      debugger
         const Arborist = this.constructor
         const arb = new Arborist({...this.options, path: dir})
         await arb[_makeIdealGraph]({dev: false})

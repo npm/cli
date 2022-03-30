@@ -138,12 +138,10 @@ module.exports = cls => class Reifier extends cls {
   }
 
   async [_createIsolatedTree](idealTree) {
-    debugger
     await this[_makeIdealGraph](this.options)
 
     const proxiedIdealTree = this.idealGraph
 
-    debugger
     const hasher = (() => {
       const result = new Map()
       const idToLocation = new Map()
