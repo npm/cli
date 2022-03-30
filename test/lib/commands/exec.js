@@ -1128,10 +1128,11 @@ t.test('forward legacyPeerDeps opt', async t => {
   )
 })
 
-t.test('workspaces', t => {
+t.test('workspaces', async t => {
   npm.localPrefix = t.testdir({
     node_modules: {
       '.bin': {
+        a: '',
         foo: '',
       },
     },
@@ -1159,68 +1160,119 @@ t.test('workspaces', t => {
   })
 
   PROGRESS_IGNORED = true
-  npm.localBin = resolve(npm.localPrefix, 'node_modules/.bin')
+  npm.localBin = resolve(npm.localPrefix, 'node_modules', '.bin')
 
-  t.test('with args, run scripts in the context of a workspace', async t => {
-    await exec.execWorkspaces(['foo', 'one arg', 'two arg'], ['a', 'b'])
+  // with arg matching existing bin, run scripts in the context of a workspace
+  await exec.execWorkspaces(['foo', 'one arg', 'two arg'], ['a', 'b'])
 
-    t.match(RUN_SCRIPTS, [
-      {
-        pkg: { scripts: { npx: 'foo' } },
-        args: ['one arg', 'two arg'],
-        banner: false,
-        path: process.cwd(),
-        stdioString: true,
-        event: 'npx',
-        env: {
-          PATH: [npm.localBin, process.env.PATH].join(delimiter),
-        },
-        stdio: 'inherit',
+  t.match(RUN_SCRIPTS, [
+    {
+      pkg: { scripts: { npx: 'foo' } },
+      args: ['one arg', 'two arg'],
+      banner: false,
+      path: npm.localPrefix,
+      stdioString: true,
+      event: 'npx',
+      env: {
+        PATH: [npm.localBin, process.env.PATH].join(delimiter),
       },
-    ])
-  })
+      stdio: 'inherit',
+    },
+    {
+      pkg: { scripts: { npx: 'foo' } },
+      args: ['one arg', 'two arg'],
+      banner: false,
+      path: npm.localPrefix,
+      stdioString: true,
+      event: 'npx',
+      env: {
+        PATH: [npm.localBin, process.env.PATH].join(delimiter),
+      },
+      stdio: 'inherit',
+    },
+  ], 'should run with multiple args across multiple workspaces')
 
-  t.test('no args, spawn interactive shell', async t => {
-    CI_NAME = null
-    process.stdin.isTTY = true
+  // clean up
+  RUN_SCRIPTS.length = 0
 
-    await exec.execWorkspaces([], ['a'])
+  // with packages, run scripts in the context of a workspace
+  config.package = ['foo']
+  config.call = 'foo'
+  config.yes = false
 
-    t.strictSame(LOG_WARN, [])
-    t.strictSame(
-      npm._mockOutputs,
+  ARB_ACTUAL_TREE[npm.localPrefix] = {
+    children: new Map([['foo', { name: 'foo', version: '1.2.3' }]]),
+  }
+
+  await exec.execWorkspaces([], ['a', 'b'])
+
+  // path should point to the workspace folder
+  t.match(RUN_SCRIPTS, [
+    {
+      pkg: { scripts: { npx: 'foo' } },
+      args: [],
+      banner: false,
+      path: resolve(npm.localPrefix, 'packages', 'a'),
+      stdioString: true,
+      event: 'npx',
+      stdio: 'inherit',
+    },
+    {
+      pkg: { scripts: { npx: 'foo' } },
+      args: [],
+      banner: false,
+      path: resolve(npm.localPrefix, 'packages', 'b'),
+      stdioString: true,
+      event: 'npx',
+      stdio: 'inherit',
+    },
+  ], 'should run without args in multiple workspaces')
+
+  t.match(ARB_CTOR, [
+    { path: npm.localPrefix },
+    { path: npm.localPrefix },
+  ])
+
+  // no args, spawn interactive shell
+  CI_NAME = null
+  config.package = []
+  config.call = ''
+  process.stdin.isTTY = true
+
+  await exec.execWorkspaces([], ['a'])
+
+  t.strictSame(LOG_WARN, [])
+  t.strictSame(
+    npm._mockOutputs,
+    [
       [
-        [
-          `\nEntering npm script environment in workspace a@1.0.0 at location:\n${resolve(
-            npm.localPrefix,
-            'packages/a'
-          )}\nType 'exit' or ^D when finished\n`,
-        ],
+        `\nEntering npm script environment in workspace a@1.0.0 at location:\n${resolve(
+          npm.localPrefix,
+          'packages/a'
+        )}\nType 'exit' or ^D when finished\n`,
       ],
-      'printed message about interactive shell'
-    )
+    ],
+    'printed message about interactive shell'
+  )
 
-    npm.color = true
-    flatOptions.color = true
-    npm._mockOutputs.length = 0
-    await exec.execWorkspaces([], ['a'])
+  npm.color = true
+  flatOptions.color = true
+  npm._mockOutputs.length = 0
+  await exec.execWorkspaces([], ['a'])
 
-    t.strictSame(LOG_WARN, [])
-    t.strictSame(
-      npm._mockOutputs,
+  t.strictSame(LOG_WARN, [])
+  t.strictSame(
+    npm._mockOutputs,
+    [
       [
-        [
+        /* eslint-disable-next-line max-len */
+        `\u001b[0m\u001b[0m\n\u001b[0mEntering npm script environment\u001b[0m\u001b[0m in workspace \u001b[32ma@1.0.0\u001b[39m at location:\u001b[0m\n\u001b[0m\u001b[2m${resolve(
+          npm.localPrefix,
+          'packages/a'
           /* eslint-disable-next-line max-len */
-          `\u001b[0m\u001b[0m\n\u001b[0mEntering npm script environment\u001b[0m\u001b[0m in workspace \u001b[32ma@1.0.0\u001b[39m at location:\u001b[0m\n\u001b[0m\u001b[2m${resolve(
-            npm.localPrefix,
-            'packages/a'
-            /* eslint-disable-next-line max-len */
-          )}\u001b[22m\u001b[0m\u001b[1m\u001b[22m\n\u001b[1mType 'exit' or ^D when finished\u001b[22m\n\u001b[1m\u001b[22m`,
-        ],
+        )}\u001b[22m\u001b[0m\u001b[1m\u001b[22m\n\u001b[1mType 'exit' or ^D when finished\u001b[22m\n\u001b[1m\u001b[22m`,
       ],
-      'printed message about interactive shell'
-    )
-  })
-
-  t.end()
+    ],
+    'printed message about interactive shell'
+  )
 })
