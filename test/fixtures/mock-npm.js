@@ -83,6 +83,10 @@ const LoadMockNpm = async (t, {
 
   const { Npm, ...rest } = RealMockNpm(t, mocks)
 
+  // We want to fail fast when writing tests. Default this to 0 unless it was
+  // explicitly set in a test.
+  config = { 'fetch-retries': 0, ...config }
+
   if (!init && load) {
     throw new Error('cant `load` without `init`')
   }
