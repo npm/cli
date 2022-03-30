@@ -29,16 +29,6 @@ const sso = t.mock('../../../lib/auth/sso.js', {
       )
     }
   },
-  '../../../lib/utils/otplease.js': (opts, fn) => {
-    if (opts) {
-      return fn({ ...opts, otp: '1234' })
-    } else {
-      throw Object.assign(
-        new Error('failed retrieving otp'),
-        { code: 'ERROR' }
-      )
-    }
-  },
 })
 
 const npm = {
@@ -75,7 +65,6 @@ t.test('simple login', async (t) => {
       opts,
       {
         creds: {},
-        otp: '1234',
         registry: 'https://registry.npmjs.org/',
         scope: '',
         ssoType: 'oauth',
