@@ -5,6 +5,7 @@
  * for tests against any registry data.
  */
 const pacote = require('pacote')
+const npa = require('npm-package-arg')
 class MockRegistry {
   #tap
   #nock
@@ -84,6 +85,16 @@ class MockRegistry {
     ).reply(200)
   }
 
+  couchuser ({ username, body, responseCode = 200 }) {
+    if (body) {
+      this.nock = this.nock.get(`/-/user/org.couchdb.user:${encodeURIComponent(username)}`)
+        .reply(responseCode, body)
+    } else {
+      this.nock = this.nock.get(`/-/user/org.couchdb.user:${encodeURIComponent(username)}`)
+        .reply(responseCode, { _id: `org.couchdb.user:${username}`, email: '', name: username })
+    }
+  }
+
   couchlogin ({ username, password, email, otp, token = 'npm_default-test-token' }) {
     this.nock = this.nock
       .post('/-/v1/login').reply(401, { error: 'You must be logged in to publish packages.' })
@@ -156,7 +167,8 @@ class MockRegistry {
 
   async package ({ manifest, times = 1, query, tarballs }) {
     let nock = this.nock
-    nock = nock.get(`/${manifest.name}`).times(times)
+    const spec = npa(manifest.name)
+    nock = nock.get(`/${spec.escapedName}`).times(times)
     if (query) {
       nock = nock.query(query)
     }
@@ -203,6 +215,7 @@ class MockRegistry {
         dist: {
           tarball: `${this.#registry}/${name}/-/${name}-${packument.version}.tgz`,
         },
+        maintainers: [],
         ...packument,
       }
       manifest.time[packument.version] = new Date()
