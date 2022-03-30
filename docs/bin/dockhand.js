@@ -7,22 +7,27 @@ const cmark = require('cmark-gfm')
 const mdx = require('@mdx-js/mdx')
 const mkdirp = require('mkdirp')
 const jsdom = require('jsdom')
-const npm = require('../lib/npm.js')
+const npm = require('../../lib/npm.js')
 
-const config = require('./config.json')
+const run = async function (rootDir) {
+  const dir = (...p) => path.join(rootDir, '..', ...p)
 
-const docsRoot = __dirname
-const inputRoot = path.join(docsRoot, 'content')
-const outputRoot = path.join(docsRoot, 'output')
+  const config = require(dir('bin', 'config.json'))
+  const template = fs.readFileSync(dir('bin', 'template.html'), 'utf-8')
+  const nav = yaml.parse(fs.readFileSync(dir('nav.yml'), 'utf-8'))
 
-const template = fs.readFileSync('template.html').toString()
-
-const run = async function () {
   try {
-    const navPaths = await getNavigationPaths()
-    const fsPaths = await renderFilesystemPaths()
+    const navPaths = getNavigationPaths(nav)
+    const fsPaths = await renderFilesystemPaths({
+      input: dir('content'),
+      output: dir('output'),
+      config,
+      template,
+    })
 
-    if (!ensureNavigationComplete(navPaths, fsPaths)) {
+    const navErrors = ensureNavigationComplete(navPaths, fsPaths)
+    if (navErrors) {
+      console.error(navErrors)
       process.exit(1)
     }
   } catch (error) {
@@ -30,7 +35,7 @@ const run = async function () {
   }
 }
 
-run()
+run(__dirname)
 
 function ensureNavigationComplete (navPaths, fsPaths) {
   const unmatchedNav = {}
@@ -41,7 +46,8 @@ function ensureNavigationComplete (navPaths, fsPaths) {
   }
 
   for (let fsPath of fsPaths) {
-    fsPath = '/' + fsPath.replace(/\.md$/, '')
+    fsPath = path.sep + fsPath.replace(/\.md$/, '')
+    fsPath = fsPath.split(path.sep).join(path.posix.sep)
 
     if (unmatchedNav[fsPath]) {
       delete unmatchedNav[fsPath]
@@ -50,8 +56,9 @@ function ensureNavigationComplete (navPaths, fsPaths) {
     }
   }
 
-  const missingNav = Object.keys(unmatchedNav).sort()
-  const missingFs = Object.keys(unmatchedFs).sort()
+  const toKeys = (v) => Object.keys(v).sort().map((p) => p.split(path.posix.sep).join(path.sep))
+  const missingNav = toKeys(unmatchedNav)
+  const missingFs = toKeys(unmatchedFs)
 
   if (missingNav.length > 0 || missingFs.length > 0) {
     let message = 'Error: documentation navigation (nav.yml) does not match filesystem.\n'
@@ -59,8 +66,8 @@ function ensureNavigationComplete (navPaths, fsPaths) {
     if (missingNav.length > 0) {
       message += '\nThe following path(s) exist on disk but are not present in nav.yml:\n\n'
 
-      for (const nav of missingNav) {
-        message += `  ${nav}\n`
+      for (const n of missingNav) {
+        message += `  ${n}\n`
       }
     }
 
@@ -74,27 +81,16 @@ function ensureNavigationComplete (navPaths, fsPaths) {
 
     message += '\nUpdate nav.yml to ensure that all files are listed in the appropriate place.'
 
-    console.error(message)
-
-    return false
+    return message
   }
-
-  return true
 }
 
-function getNavigationPaths () {
-  const navFilename = path.join(docsRoot, 'nav.yml')
-  const nav = yaml.parse(fs.readFileSync(navFilename).toString(), 'utf8')
-
-  return walkNavigation(nav)
-}
-
-function walkNavigation (entries) {
+function getNavigationPaths (entries) {
   const paths = []
 
   for (const entry of entries) {
     if (entry.children) {
-      paths.push(...walkNavigation(entry.children))
+      paths.push(...getNavigationPaths(entry.children))
     } else {
       paths.push(entry.url)
     }
@@ -103,24 +99,20 @@ function walkNavigation (entries) {
   return paths
 }
 
-async function renderFilesystemPaths () {
-  return await walkFilesystem(inputRoot)
-}
-
-async function walkFilesystem (root, dirRelative) {
+async function renderFilesystemPaths ({ input, output, ...opts }, dirRelative = null) {
   const paths = []
 
-  const dirPath = dirRelative ? path.join(root, dirRelative) : root
+  const dirPath = dirRelative ? path.join(input, dirRelative) : input
   const children = fs.readdirSync(dirPath)
 
   for (const childFilename of children) {
     const childRelative = dirRelative ? path.join(dirRelative, childFilename) : childFilename
-    const childPath = path.join(root, childRelative)
+    const childPath = path.join(input, childRelative)
 
     if (fs.lstatSync(childPath).isDirectory()) {
-      paths.push(...(await walkFilesystem(root, childRelative)))
+      paths.push(...(await renderFilesystemPaths({ input, output, ...opts }, childRelative)))
     } else {
-      await renderFile(childRelative)
+      await renderFile(input, output, childRelative, opts)
       paths.push(childRelative)
     }
   }
@@ -128,8 +120,8 @@ async function walkFilesystem (root, dirRelative) {
   return paths
 }
 
-async function renderFile (childPath) {
-  const inputPath = path.join(inputRoot, childPath)
+async function renderFile (root, outputRoot, childPath, { template, config }) {
+  const inputPath = path.join(root, childPath)
 
   if (!inputPath.match(/\.md$/)) {
     console.log(`warning: unknown file type ${inputPath}, ignored`)

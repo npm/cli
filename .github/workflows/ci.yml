@@ -1,149 +1,114 @@
-name: Node CI
+name: CI - cli
 
 on:
+  workflow_dispatch:
   pull_request:
     branches:
       - '*'
   push:
     branches:
       - latest
-  workflow_dispatch:
 
 jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      # Checkout the npm/cli repo
-      - uses: actions/checkout@v2
-      - name: Use Node.js 14.x
-        uses: actions/setup-node@v2
+      - uses: actions/checkout@v3
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v3
         with:
-          node-version: 14.x
+          node-version: 16.x
           cache: npm
-      - name: Install dependencies
-        run: |
-          node ./bin/npm-cli.js install --ignore-scripts --no-audit
-          node ./bin/npm-cli.js rebuild
-      - name: Run linting
-        run: node ./bin/npm-cli.js run posttest
-        env:
-          DEPLOY_VERSION: testing
+      - run: node ./bin/npm-cli.js run resetdeps
+      - run: node ./bin/npm-cli.js run lint
 
   check_docs:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js 14.x
-        uses: actions/setup-node@v2
+      - uses: actions/checkout@v3
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v3
         with:
-          node-version: 14.x
+          node-version: 16.x
           cache: npm
-      - name: Install dependencies
-        run: |
-          node ./bin/npm-cli.js install --ignore-scripts --no-audit
-      - name: Rebuild the docs
-        run: make freshdocs
-      - name: Git should not be dirty
-        run: node scripts/git-dirty.js
-
+      - run: make freshdocs
+      - run: node scripts/git-dirty.js
 
   licenses:
     runs-on: ubuntu-latest
     steps:
-      # Checkout the npm/cli repo
-      - uses: actions/checkout@v2
-      - name: Use Node.js 14.x
-        uses: actions/setup-node@v2
+      - uses: actions/checkout@v3
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v3
         with:
-          node-version: 14.x
+          node-version: 16.x
           cache: npm
-      - name: Install dependencies
-        run: |
-          node ./bin/npm-cli.js install --ignore-scripts --no-audit
-          node ./bin/npm-cli.js rebuild
-      - name: Validate licenses
-        run: node ./bin/npm-cli.js run licenses
+      - run: node ./bin/npm-cli.js run resetdeps
+      - run: node ./bin/npm-cli.js run licenses
 
   smoke-tests:
     strategy:
       fail-fast: false
       matrix:
-        node-version: [12.x, 14.x, 16.x]
+        node-version:
+          - 12.x
+          - 14.x
+          - 16.x
         platform:
           - os: ubuntu-latest
             shell: bash
           - os: macos-latest
             shell: bash
           - os: windows-latest
-            shell: bash
-          - os: windows-latest
-            shell: powershell
-
+            shell: cmd
     runs-on: ${{ matrix.platform.os }}
     defaults:
       run:
         shell: ${{ matrix.platform.shell }}
-
     steps:
-      # Checkout the npm/cli repo
-    - uses: actions/checkout@v2
-
-      # Installs the specific version of Node.js
+    - uses: actions/checkout@v3
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
         cache: npm
-
-      # Run the installer script
-    - name: Install dependencies
-      run: |
-        node ./bin/npm-cli.js install --ignore-scripts --no-audit
-        node ./bin/npm-cli.js rebuild
-
-      # Run the smoke tests
-    - name: Run Smoke tests
-      run: node ./bin/npm-cli.js run --ignore-scripts smoke-tests -- --no-check-coverage -t600 -Rbase -c
-      env:
-        DEPLOY_VERSION: testing
+    - run: node ./bin/npm-cli.js run resetdeps
+    - run: node ./bin/npm-cli.js run smoke-tests --ignore-scripts
+    - name: git status
+      if: matrix.platform.os != 'windows-latest'
+      run: node scripts/git-dirty.js
 
   test:
     strategy:
       fail-fast: false
       matrix:
-        node-version: ['12.13.0', 12.x, '14.15.0', 14.x, '16.0.0', 16.x]
+        node-version:
+          - 12.13.0
+          - 12.x
+          - 14.15.0
+          - 14.x
+          - 16.0.0
+          - 16.x
         platform:
           - os: ubuntu-latest
             shell: bash
           - os: macos-latest
             shell: bash
           - os: windows-latest
-            shell: bash
-          - os: windows-latest
-            shell: powershell
-
+            shell: cmd
     runs-on: ${{ matrix.platform.os }}
     defaults:
       run:
         shell: ${{ matrix.platform.shell }}
-
     steps:
-      # Checkout the npm/cli repo
-    - uses: actions/checkout@v2
-
-      # Installs the specific version of Node.js
+    - uses: actions/checkout@v3
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
         cache: npm
-
-      # Run the installer script
-    - name: Install dependencies
-      run: |
-        node ./bin/npm-cli.js install --ignore-scripts --no-audit
-        node ./bin/npm-cli.js rebuild
-
-      # Run the tests
-    - name: Run Tap tests
-      run: node ./bin/npm-cli.js run test --ignore-scripts -- -t600 -Rbase -c
+    - run: node ./bin/npm-cli.js run resetdeps
+    - run: node ./bin/npm-cli.js run test --ignore-scripts
+    - name: git status
+      if: matrix.platform.os != 'windows-latest'
+      run: node scripts/git-dirty.js

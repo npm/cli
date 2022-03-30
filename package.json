@@ -203,7 +203,7 @@
   ],
   "devDependencies": {
     "@npmcli/eslint-config": "^3.0.1",
-    "@npmcli/template-oss": "3.2.1",
+    "@npmcli/template-oss": "3.2.2",
     "licensee": "^8.2.0",
     "nock": "^13.2.4",
     "spawk": "^1.7.1",
@@ -226,7 +226,7 @@
     "lint-all": "npm run lint --if-present --workspaces --include-workspace-root",
     "prelint": "rimraf test/npm_cache*",
     "resetdeps": "bash scripts/resetdeps.sh",
-    "smoke-tests": "tap smoke-tests/index.js"
+    "smoke-tests": "tap smoke-tests/index.js --no-coverage"
   },
   "tap": {
     "test-env": [
@@ -240,7 +240,7 @@
   "templateOSS": {
     "rootRepo": false,
     "rootModule": false,
-    "version": "3.2.1"
+    "version": "3.2.2"
   },
   "license": "Artistic-2.0",
   "engines": {

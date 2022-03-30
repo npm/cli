@@ -29,7 +29,6 @@
 !/LICENSE
 !/make.bat
 !/Makefile
-!/netlify.toml
 !/package-lock.json
 !/package.json
 !/README.md

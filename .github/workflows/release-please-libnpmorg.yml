@@ -19,7 +19,7 @@ jobs:
         with:
           release-type: node
           monorepo-tags: true
-          paths: workspaces/libnpmorg
+          path: workspaces/libnpmorg
           changelog-types: >
             [
               {"type":"feat","section":"Features","hidden":false},

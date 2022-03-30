@@ -4,14 +4,13 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "node dockhand",
+    "build": "node bin/dockhand",
     "lint": "eslint \"**/*.js\"",
     "postlint": "template-oss-check",
     "template-oss-apply": "template-oss-apply --force",
     "lintfix": "npm run lint -- --fix",
     "preversion": "npm test",
-    "postversion": "npm publish",
-    "prepublishOnly": "git push origin --follow-tags",
+    "postversion": "git push origin --follow-tags",
     "snap": "tap",
     "test": "tap",
     "posttest": "npm run lint"
@@ -24,7 +23,9 @@
   "devDependencies": {
     "@mdx-js/mdx": "^1.6.22",
     "@npmcli/eslint-config": "^3.0.1",
-    "@npmcli/template-oss": "3.2.1",
+    "@npmcli/fs": "^2.1.0",
+    "@npmcli/promise-spawn": "^1.3.2",
+    "@npmcli/template-oss": "3.2.2",
     "cmark-gfm": "^0.9.0",
     "jsdom": "^18.1.0",
     "marked-man": "^0.7.0",
@@ -32,26 +33,31 @@
     "yaml": "^1.10.0"
   },
   "author": "GitHub Inc.",
+  "license": "ISC",
   "files": [
+    "bin/",
     "content/",
-    "config.json",
-    "dockhand.js",
-    "nav.yml",
-    "template.html"
+    "nav.yml"
   ],
   "engines": {
-    "node": "^12.13.0 || ^14.15.0 || >=16.0.0"
+    "node": ">=16.0.0"
+  },
+  "tap": {
+    "statements": 81,
+    "branches": 72,
+    "functions": 80,
+    "lines": 81
   },
   "templateOSS": {
     "//@npmcli/template-oss": "This file is partially managed by @npmcli/template-oss. Edits may be overwritten.",
-    "workspaceRepo": false,
     "distPaths": [
+      "bin/",
       "content/",
-      "config.json",
-      "dockhand.js",
-      "nav.yml",
-      "template.html"
+      "nav.yml"
     ],
-    "version": "3.2.1"
+    "ciVersions": [
+      "16"
+    ],
+    "version": "3.2.2"
   }
 }
