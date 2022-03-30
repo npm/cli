@@ -40,7 +40,7 @@
     "nav.yml"
   ],
   "engines": {
-    "node": "^12.13.0 || ^14.15.0 || >=16.0.0"
+    "node": ">=16.0.0"
   },
   "tap": {
     "statements": 81,
@@ -54,6 +54,9 @@
       "bin/",
       "content/",
       "nav.yml"
+    ],
+    "ciVersions": [
+      "16"
     ],
     "version": "3.2.2"
   }
