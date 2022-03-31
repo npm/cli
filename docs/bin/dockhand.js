@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 const path = require('path')
 const fs = require('fs')
 const yaml = require('yaml')
@@ -7,35 +5,7 @@ const cmark = require('cmark-gfm')
 const mdx = require('@mdx-js/mdx')
 const mkdirp = require('mkdirp')
 const jsdom = require('jsdom')
-const npm = require('../../lib/npm.js')
-
-const run = async function (rootDir) {
-  const dir = (...p) => path.join(rootDir, '..', ...p)
-
-  const config = require(dir('bin', 'config.json'))
-  const template = fs.readFileSync(dir('bin', 'template.html'), 'utf-8')
-  const nav = yaml.parse(fs.readFileSync(dir('nav.yml'), 'utf-8'))
-
-  try {
-    const navPaths = getNavigationPaths(nav)
-    const fsPaths = await renderFilesystemPaths({
-      input: dir('content'),
-      output: dir('output'),
-      config,
-      template,
-    })
-
-    const navErrors = ensureNavigationComplete(navPaths, fsPaths)
-    if (navErrors) {
-      console.error(navErrors)
-      process.exit(1)
-    }
-  } catch (error) {
-    console.error(error)
-  }
-}
-
-run(__dirname)
+const { version: VERSION } = require('../lib/npm.js')
 
 function ensureNavigationComplete (navPaths, fsPaths) {
   const unmatchedNav = {}
@@ -124,7 +94,7 @@ async function renderFile (root, outputRoot, childPath, { template, config }) {
   const inputPath = path.join(root, childPath)
 
   if (!inputPath.match(/\.md$/)) {
-    console.log(`warning: unknown file type ${inputPath}, ignored`)
+    console.error(`warning: unknown file type ${inputPath}, ignored`)
     return
   }
 
@@ -140,7 +110,7 @@ async function renderFile (root, outputRoot, childPath, { template, config }) {
   })
 
   // Replace any tokens in the source
-  md = md.replace(/@VERSION@/, npm.version)
+  md = md.replace(/@VERSION@/, VERSION)
 
   // Render the markdown into an HTML snippet using a GFM renderer.
   const content = cmark.renderHtmlSync(md, {
@@ -190,7 +160,7 @@ async function renderFile (root, outputRoot, childPath, { template, config }) {
         return config[key.replace(/^config\./, '')]
 
       default:
-        console.log(`warning: unknown token '${token}' in ${inputPath}`)
+        console.error(`warning: unknown token '${token}' in ${inputPath}`)
         return ''
     }
   })
@@ -323,3 +293,30 @@ class MarkdownError extends Error {
     this.inner = inner
   }
 }
+
+const run = async function (rootDir) {
+  const dir = (...p) => path.join(rootDir, '..', ...p)
+
+  const config = require(dir('lib', 'config.json'))
+  const template = fs.readFileSync(dir('lib', 'template.html'), 'utf-8')
+  const nav = yaml.parse(fs.readFileSync(dir('nav.yml'), 'utf-8'))
+
+  const navPaths = getNavigationPaths(nav)
+  const fsPaths = await renderFilesystemPaths({
+    input: dir('content'),
+    output: dir('output'),
+    config,
+    template,
+  })
+
+  const navErrors = ensureNavigationComplete(navPaths, fsPaths)
+  if (navErrors) {
+    console.error(navErrors)
+    throw new Error('Nav Errors')
+  }
+}
+
+run(__dirname).catch((err) => {
+  process.exitCode = 1
+  console.error(err)
+})

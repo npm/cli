@@ -1,7 +1,6 @@
-const { shorthands, describeAll } = require('../lib/utils/config/index.js')
-const { writeFileSync, readFileSync } = require('fs')
-const { resolve } = require('path')
-const configDoc = resolve(__dirname, '../docs/content/using-npm/config.md')
+const fs = require('fs').promises
+const { resolve, relative } = require('path')
+const { shorthands, describeAll } = require('../lib/npm.js')
 
 const addBetweenTags = (doc, startTag, endTag, body) => {
   const startSplit = doc.split(startTag)
@@ -49,6 +48,16 @@ const addShorthands = doc => {
   return addBetweenTags(doc, startTag, endTag, body)
 }
 
-const doc = readFileSync(configDoc, 'utf8')
-writeFileSync(configDoc, addDescriptions(addShorthands(doc)))
-console.log(`updated docs/content/using-npm/config.md`)
+const run = async (dir) => {
+  const configDoc = resolve(dir, '../content/using-npm/config.md')
+  const doc = await fs.readFile(configDoc, 'utf8')
+
+  await fs.writeFile(configDoc, addDescriptions(addShorthands(doc)))
+
+  return `updated ${relative(process.cwd(), configDoc)}`
+}
+
+run(__dirname).then(console.log).catch((err) => {
+  process.exitCode = 1
+  console.error(err)
+})

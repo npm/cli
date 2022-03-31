@@ -4,7 +4,6 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "node bin/dockhand",
     "lint": "eslint \"**/*.js\"",
     "postlint": "template-oss-check",
     "template-oss-apply": "template-oss-apply --force",
@@ -30,12 +29,14 @@
     "jsdom": "^18.1.0",
     "marked-man": "^0.7.0",
     "tap": "^15.2.3",
+    "which": "^2.0.2",
     "yaml": "^1.10.0"
   },
   "author": "GitHub Inc.",
   "license": "ISC",
   "files": [
     "bin/",
+    "lib/",
     "content/",
     "nav.yml"
   ],
@@ -45,13 +46,14 @@
   "tap": {
     "statements": 81,
     "branches": 72,
-    "functions": 80,
+    "functions": 75,
     "lines": 81
   },
   "templateOSS": {
     "//@npmcli/template-oss": "This file is partially managed by @npmcli/template-oss. Edits may be overwritten.",
     "distPaths": [
       "bin/",
+      "lib/",
       "content/",
       "nav.yml"
     ],

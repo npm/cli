@@ -18,5 +18,6 @@
 !/.gitignore
 !/bin/
 !/content/
+!/lib/
 !/nav.yml
 !/package.json
