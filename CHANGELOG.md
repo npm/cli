@@ -1,5 +1,56 @@
 # Changelog
 
+## v8.6.0 (2022-03-31)
+
+### Features
+
+  * [`723a0918a`](https://github.com/npm/cli/commit/723a0918a5a9d9f795584f85d04506fafda9ca42) [#4588](https://github.com/npm/cli/pull/4588) feat(version): reify on workspace version change ([@ruyadorno](https://github.com/ruyadorno))
+  * [`cc6c09431`](https://github.com/npm/cli/commit/cc6c09431d7fe2db8ac1dc7a707f2dab7a7a1f83) [#4594](https://github.com/npm/cli/pull/4594) feat: add logs-dir config to set custom logging location ([@lukekarrys](https://github.com/lukekarrys))
+
+### Bug Fixes
+
+  * [`98bfd9a8c`](https://github.com/npm/cli/commit/98bfd9a8cc23930e6becd15fffabadd1c269b0a2) fix: remove always true condition (#4590) ([@XhmikosR](https://github.com/XhmikosR))
+  * [`81afa5a88`](https://github.com/npm/cli/commit/81afa5a8838c71a3a5037e2c8b4ae196e19fe0d7) [#4601](https://github.com/npm/cli/pull/4601) fix(unpublish): properly apply publishConfig ([@wraithgar](https://github.com/wraithgar))
+  * [`716a07fde`](https://github.com/npm/cli/commit/716a07fde7905bb69e4c6f1991bb7289589a6669) [#4607](https://github.com/npm/cli/pull/4607) fix: 100% coverage in tests ([@wraithgar](https://github.com/wraithgar))
+  * [`6f9cb490e`](https://github.com/npm/cli/commit/6f9cb490e7299976c43c6a118036c130671fe188) [#4614](https://github.com/npm/cli/pull/4614) fix(arborist): handle link nodes in old lockfiles correctly ([@nlf](https://github.com/nlf))
+  * [`18b8b9435`](https://github.com/npm/cli/commit/18b8b94357d8f57301fbaa0f1e5dc2cf1128bf3e) [#4617](https://github.com/npm/cli/pull/4617) fix(arborist): make sure resolveParent exists before checking props ([@nlf](https://github.com/nlf))
+  * [`bd96ae407`](https://github.com/npm/cli/commit/bd96ae4071f9cc8a65e741f414db12e98537971d) [#4599](https://github.com/npm/cli/pull/4599) fix(arborist): identify and repair invalid nodes in the virtual tree ([@nlf](https://github.com/nlf))
+  * [`99d884542`](https://github.com/npm/cli/commit/99d88454248f950b82652b592fe2b4d019c1060b) [#4599](https://github.com/npm/cli/pull/4599) fix: make sure we loadOverrides on the root node in loadVirtual() ([@nlf](https://github.com/nlf))
+  * [`45dd8b861`](https://github.com/npm/cli/commit/45dd8b8615bb1d7a93e1733746581049a1f399e6) [#4609](https://github.com/npm/cli/pull/4609) fix: move shellout logic into commands ([@wraithgar](https://github.com/wraithgar))
+  * [`a64acc0bf`](https://github.com/npm/cli/commit/a64acc0bf01e4bc68b26ead5b2d5c6db47ef16c2) [#4609](https://github.com/npm/cli/pull/4609) fix: really load all commands in tests, add description to birthday ([@wraithgar](https://github.com/wraithgar))
+  * [`d8dcc02cf`](https://github.com/npm/cli/commit/d8dcc02cfd354c1314c45d6530ec926cd138210c) [#4609](https://github.com/npm/cli/pull/4609) fix: consolidate command alias code ([@wraithgar](https://github.com/wraithgar))
+  * [`f76d4f2f6`](https://github.com/npm/cli/commit/f76d4f2f661bcc2534f541ee0e7d683155372baf) [#4609](https://github.com/npm/cli/pull/4609) fix: consolidate is-windows code ([@wraithgar](https://github.com/wraithgar))
+  * [`57d8f75eb`](https://github.com/npm/cli/commit/57d8f75eb864486f6aa17bb3dd2f213b5c148073) [#4609](https://github.com/npm/cli/pull/4609) fix: consolidate node version support logic ([@wraithgar](https://github.com/wraithgar))
+  * [`0a957f5e2`](https://github.com/npm/cli/commit/0a957f5e2fbcce51c407d22b19e38004d09c51af) [#4609](https://github.com/npm/cli/pull/4609) fix: consolidate path delimiter logic ([@wraithgar](https://github.com/wraithgar))
+  * [`738a40445`](https://github.com/npm/cli/commit/738a404454677b78b25ce82a8d2e4c1f46d57ffa) [#4609](https://github.com/npm/cli/pull/4609) fix: bump knownBroken to <12.5.0 ([@wraithgar](https://github.com/wraithgar))
+  * [`8b65bfd5d`](https://github.com/npm/cli/commit/8b65bfd5d610a70e1a860936be1a47f3a3df7f32) [#4629](https://github.com/npm/cli/pull/4629) fix: return otplease fn results ([@wraithgar](https://github.com/wraithgar))
+  * [`d8d374d23`](https://github.com/npm/cli/commit/d8d374d23d34c17e22b52afc1cfb5247cc7c3e1d) [#4632](https://github.com/npm/cli/pull/4632) fix: consolidate split-package-names ([@wraithgar](https://github.com/wraithgar))
+  * [`cc0a2ec99`](https://github.com/npm/cli/commit/cc0a2ec9999b956ea654deaf68fd49ae4bf1a1c0) [#4611](https://github.com/npm/cli/pull/4611) fix: work better with system manpages (#4610) ([@d0sboots](https://github.com/d0sboots))
+  * [`668ec7f33`](https://github.com/npm/cli/commit/668ec7f33b7a76f5e86a59f7e5a6c0e068a242b1) [#4644](https://github.com/npm/cli/pull/4644) fix: only call npmlog progress methods if explicitly requested ([@lukekarrys](https://github.com/lukekarrys))
+
+### Documentation
+
+  * [`ff1367f01`](https://github.com/npm/cli/commit/ff1367f01b9dd924d039b5a6b58399101cac99ca) [#4641](https://github.com/npm/cli/pull/4641) docs: recommend prepare over prepublish ([@verhovsky](https://github.com/verhovsky))
+  
+### Dependencies
+
+  * [`6df061ec2`](https://github.com/npm/cli/commit/6df061ec2a52882693ed86a3524ac6af0f88acd8) [#4594](https://github.com/npm/cli/pull/4594) deps: `npm-registry-fetch@13.1.0`
+  * [`6dd1139c9`](https://github.com/npm/cli/commit/6dd1139c9f302ac71f47a75e70bbe9cdf2e64960) [#4594](https://github.com/npm/cli/pull/4594) deps: `cacache@16.0.3`
+  * [`feb4446d5`](https://github.com/npm/cli/commit/feb4446d50a7b6a61e44a92b78e1e1af2d89a725) [#4616](https://github.com/npm/cli/pull/4616) deps: `make-fetch-happen@10.1.0`
+  * [`c33b53311`](https://github.com/npm/cli/commit/c33b5331120d8304e0f090ceda55e19cc6f451f4) [#4613](https://github.com/npm/cli/pull/4613) deps: `minipass-fetch@2.1.0`
+  * [`6a4c8ff89`](https://github.com/npm/cli/commit/6a4c8ff89acc98409060f5aa55b2f1a795a6b66c) [#4606](https://github.com/npm/cli/pull/4606) deps: `npm-audit-report@3.0.0`
+  * [`6e0a131d2`](https://github.com/npm/cli/commit/6e0a131d2ff3143856f388bb42c6568d5312c451) [#4627](https://github.com/npm/cli/pull/4627) deps: `debug@4.3.4`
+  * [`0f1cd60a1`](https://github.com/npm/cli/commit/0f1cd60a1cdb643782ae86a5a7fce84e357dbf10) [#4627](https://github.com/npm/cli/pull/4627) deps: `proc-log@2.0.1`
+  * [`da377eed5`](https://github.com/npm/cli/commit/da377eed5cba72185b90f5fc32ef288331c856ef) [#4627](https://github.com/npm/cli/pull/4627) deps: `parse-conflict-json@2.0.2`
+  * [`726a8a07a`](https://github.com/npm/cli/commit/726a8a07afeb3bd24979307679ce7e63c73b178e) [#4627](https://github.com/npm/cli/pull/4627) deps: `gauge@4.0.4`
+  * [`aac01b89c`](https://github.com/npm/cli/commit/aac01b89caf6336a2eb34d696296303cdadd5c08) [#4628](https://github.com/npm/cli/pull/4628) deps: `@npmcli/template-oss@3.2.1`
+  * [`52dfaf239`](https://github.com/npm/cli/commit/52dfaf239a3f66a05ee9d6148bc41a46b5adffd6) [#4630](https://github.com/npm/cli/pull/4630) deps: `make-fetch-happen@10.1.1`
+  * [`9778a5387`](https://github.com/npm/cli/commit/9778a5387771256fc81e3587922c12ec47f750ea) [#4635](https://github.com/npm/cli/pull/4635) deps: `init-package-json@3.0.2`
+  * [`86eff5dcc`](https://github.com/npm/cli/commit/86eff5dccb9bce2eb8d80706e8dea855faf753b3) [#4635](https://github.com/npm/cli/pull/4635) deps: `npm-package-arg@9.0.2`
+  * [`5b4cbb217`](https://github.com/npm/cli/commit/5b4cbb2175bfa35e347fe94e21d49a05ea64ead1) [#4635](https://github.com/npm/cli/pull/4635) deps: `validate-npm-package-name@4.0.0`
+  * [`a59fd2cb8`](https://github.com/npm/cli/commit/a59fd2cb863245fce56f96c90ac854e62c5c4d6f) [#4639](https://github.com/npm/cli/pull/4639) deps: `@npmcli/template-oss@3.2.2`
+  * [`679e569d5`](https://github.com/npm/cli/commit/679e569d5778aef312b37c1ba3bda0171366c9fb) [#4655](https://github.com/npm/cli/pull/4655) deps: `@npmcli/arborist@5.0.4`
+
 ## v8.5.5 (2022-03-17)
 
 ### Bug Fixes
