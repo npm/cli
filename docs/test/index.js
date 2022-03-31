@@ -9,24 +9,24 @@ const output = join(cwd, 'output')
 
 const rmOutput = () => fs.rm(output, { recursive: true, force: true }).catch(() => {})
 
-const spawnNpm = (...args) => {
+const spawnNpm = (cmd, ...args) => {
   // remove npm config when spawning so config set by test commands don't interfere
   const env = Object.entries(process.env)
     .filter(([k]) => k.toLowerCase() !== 'npm_config_ignore_scripts')
 
-  return spawn(which('npm'), args, {
+  return spawn(which(cmd), args, {
     env: Object.fromEntries(env),
     stdioString: true,
     cwd,
   })
 }
 
-t.before(() => spawnNpm('rebuild', 'cmark-gfm'))
+t.before(() => spawnNpm('npm', 'rebuild', 'cmark-gfm'))
 t.beforeEach(() => rmOutput())
 
 t.test('docs', async (t) => {
   t.rejects(() => fs.stat(output))
-  const docs = await spawnNpm('run', 'build')
+  const docs = await spawnNpm('node', join('bin', 'dockhand'))
   t.equal(docs.code, 0)
   t.ok((await fs.stat(output)).isDirectory())
 })
