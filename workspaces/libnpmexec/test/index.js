@@ -746,3 +746,51 @@ t.test('workspaces', async t => {
   const wRes = fs.readFileSync(resolve(path, 'a/resfile')).toString()
   t.equal(wRes, 'LOCAL PKG', 'should run existing bin from workspace level')
 })
+
+t.test('run from registry with package lock', async t => {
+  const testdir = t.testdir({
+    cache: {},
+    npxCache: {},
+    work: {
+      'package.json': JSON.stringify({
+        name: 'some-package',
+        version: '1.0.0',
+      }),
+      'package-lock.json': JSON.stringify({
+        name: 'some-package',
+        version: '1.0.0',
+        lockfileVersion: 2,
+        requires: true,
+        packages: {
+          '': {
+            name: 'some-package',
+            version: '1.0.0',
+          },
+        },
+      }),
+    },
+  })
+  const path = resolve(testdir, 'work')
+  const runPath = path
+  const cache = resolve(testdir, 'cache')
+  const npxCache = resolve(testdir, 'npxCache')
+
+  t.throws(
+    () => fs.statSync(resolve(path, 'index.js')),
+    { code: 'ENOENT' },
+    'should not have template file'
+  )
+
+  await libexec({
+    ...baseOpts,
+    packageLock: true,
+    packageLockOnly: true,
+    args: ['@ruyadorno/create-index'],
+    cache,
+    npxCache,
+    path,
+    runPath,
+  })
+
+  t.ok(fs.statSync(resolve(path, 'index.js')).isFile(), 'ran create pkg')
+})

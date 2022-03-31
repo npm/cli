@@ -40,6 +40,8 @@ const exec = async (opts) => {
     yes = undefined,
     ...flatOptions
   } = opts
+  delete flatOptions.packageLock
+  delete flatOptions.packageLockOnly
 
   // dereferences values because we manipulate it later
   const packages = [..._packages]
