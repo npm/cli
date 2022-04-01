@@ -105,7 +105,7 @@ module.exports = cls => class IsolatedReifier extends cls {
     }
     async assignCommonProperties(node, result) {
       function validEdgesOut(node) {
-        return [...node.edgesOut.values()].filter(e => e.to && e.to.target) 
+          return [...node.edgesOut.values()].filter(e => e.to && e.to.target && !(node.package.bundledDepenedencies || node.package.bundleDependencies || []).includes(e.to.name)) 
       }
       const edges = validEdgesOut(node)
       const optionalDeps = edges.filter(e => e.optional).map(e => e.to.target)

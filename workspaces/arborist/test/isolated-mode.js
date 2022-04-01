@@ -807,10 +807,10 @@ tap.test('shrinkwrap with peer dependencies', async t => {
   rule6.apply(t, dir, resolved, asserted)
   rule7.apply(t, dir, resolved, asserted)
 })
-
+ 
 tap.test('bundled dependencies of external packages', async t => {
 
-  // Input of arboristm
+  // Input of arborist
   const graph = {
     registry: [
       { name: 'which', version: '1.0.0', dependencies: { isexe: '^1.0.0' }, bundleDependencies: [ 'isexe' ],
@@ -848,6 +848,55 @@ tap.test('bundled dependencies of external packages', async t => {
   rule6.apply(t, dir, resolved, asserted)
   rule7.apply(t, dir, resolved, asserted)
 })
+
+tap.only('bundled dependencies of internal packages', async t => {
+
+  // Input of arborist
+  const graph = {
+    registry: [
+      { name: 'which', version: '1.0.0', dependencies: { isexe: '^1.0.0' },
+      },
+      { name: 'isexe', version: '1.1.0' },
+    ] ,
+    root: {
+	name: 'foo', version: '1.2.3', dependencies: { which: '1.0.0', isexe: '^1.0.0' },
+	bundleDependencies: [ 'isexe' ]
+    }
+  }
+
+  // expected output
+  const resolved = {
+    'foo@1.2.3 (root)': {
+      'which@1.0.0': {
+        'isexe@1.1.0': {}
+      },
+     'isexe@1.1.0': {}
+    }
+  }
+
+  const { dir, registry } = await getRepo(graph)
+
+  // Note that we override this cache to prevent interference from other tests
+  const cache = fs.mkdtempSync(`${os.tmpdir}/test-`)
+  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache  })
+  await arborist.reify({ isolated: true })
+
+  const asserted = new Set()
+  rule1.apply(t, dir, resolved, asserted)
+  rule2.apply(t, dir, resolved, asserted)
+  rule3.apply(t, dir, resolved, asserted)
+  rule4.apply(t, dir, resolved, asserted)
+  rule5.apply(t, dir, resolved, asserted)
+  rule6.apply(t, dir, resolved, asserted)
+  rule7.apply(t, dir, resolved, asserted)
+
+    const isexePath = path.join(dir,'node_modules','isexe')
+    t.equals(isexePath, fs.realpathSync(isexePath))
+  // TODO: assert that the bundled dependency is hoisted
+})
+
+// TODO: add a test for bundled dependencies that have dependencies themselves
+// TODO: add a test for bundled dependencies of workspaces
 
 tap.test('adding a dependency', async t => {
   // Input of arborist
