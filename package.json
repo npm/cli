@@ -211,7 +211,7 @@
   },
   "scripts": {
     "dumpconf": "env | grep npm | sort | uniq",
-    "preversion": "bash scripts/update-authors.sh && git add AUTHORS && git commit -m \"update AUTHORS\" || true",
+    "preversion": "bash scripts/update-authors.sh && git add AUTHORS && git commit -m \"chore: update AUTHORS\" || true",
     "licenses": "licensee --production --errors-only",
     "test": "tap",
     "test-all": "npm run test --if-present --workspaces --include-workspace-root",
