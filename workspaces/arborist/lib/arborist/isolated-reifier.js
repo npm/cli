@@ -41,11 +41,30 @@ module.exports = cls => class IsolatedReifier extends cls {
     this.workspaceProxyMemo = memoize(this.workspaceProxy.bind(this))
 
     root.external = []
-    root.isProjectRoot = true,
-    root.localLocation = idealTree.location,
-    root.localPath = idealTree.path,
-    root.workspaces = await Promise.all([...idealTree.fsChildren.values()].map(this.workspaceProxyMemo)),
-    root.external.push(...(await Promise.all([...idealTree.inventory.values()].filter(n => !n.isProjectRoot && !n.isWorkspace).map(this.externalProxyMemo)))),
+    root.isProjectRoot = true
+    root.localLocation = idealTree.location
+    root.localPath = idealTree.path
+    root.workspaces = await Promise.all([...idealTree.fsChildren.values()].map(this.workspaceProxyMemo))
+    const processed = new Set()
+      const queue = [idealTree,...idealTree.fsChildren]
+      debugger
+    while(queue.length !== 0) {
+      const next = queue.pop()
+      if (processed.has(next.location)) {
+        continue
+      }
+      processed.add(next.location)
+      next.edgesOut.forEach(e => {
+        if (!e.to || (next.package.bundleDependencies || next.package.bundledDependencies || []).includes(e.to.name)) {
+          return
+        }
+        queue.push(e.to)
+      })
+      if (!next.isProjectRoot && !next.isWorkspace) {
+        root.external.push(await this.externalProxyMemo(next))
+      }
+    }
+
     await this.assignCommonProperties(idealTree, root)
 
 
@@ -99,7 +118,8 @@ module.exports = cls => class IsolatedReifier extends cls {
       result.root = this.rootNode
       result.id = this.counter++
       result.name = node.name
-      result.package = node.package
+      result.package = {...node.package}
+      result.package.bundleDependencies = undefined
       result.hasInstallScript = node.hasInstallScript
     }
 }
