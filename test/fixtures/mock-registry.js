@@ -44,6 +44,24 @@ class MockRegistry {
     this.nock.get('/-/whoami').reply(200, { username })
   }
 
+  advisory (advisory = {}) {
+    const id = advisory.id || parseInt(Math.random() * 1000000)
+    return {
+      id,
+      url: `https://github.com/advisories/GHSA-${id}`,
+      title: `Test advisory ${id}`,
+      severity: 'high',
+      vulnerable_versions: '*',
+      cwe: [
+        'cwe-0',
+      ],
+      cvss: {
+        score: 0,
+      },
+      ...advisory,
+    }
+  }
+
   async package ({ manifest, times = 1, query, tarballs }) {
     let nock = this.nock
     nock = nock.get(`/${manifest.name}`).times(times)
@@ -52,7 +70,8 @@ class MockRegistry {
     }
     nock = nock.reply(200, manifest)
     if (tarballs) {
-      for (const version in manifest.versions) {
+      for (const version in tarballs) {
+      // for (const version in manifest.versions) {
         const packument = manifest.versions[version]
         const dist = new URL(packument.dist.tarball)
         const tarball = await pacote.tarball(tarballs[version])
