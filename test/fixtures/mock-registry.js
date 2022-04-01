@@ -23,6 +23,9 @@ class MockRegistry {
 
   get nock () {
     if (!this.#nock) {
+      if (!this.#tap) {
+        throw new Error('cannot mock packages without a tap fixture')
+      }
       const tnock = require('./tnock.js')
       const reqheaders = {}
       if (this.#authorization) {
@@ -37,11 +40,12 @@ class MockRegistry {
     this.#nock = nock
   }
 
+  async whoami ({ username }) {
+    this.nock.get('/-/whoami').reply(200, { username })
+  }
+
   async package ({ manifest, times = 1, query, tarballs }) {
     let nock = this.nock
-    if (!nock) {
-      throw new Error('cannot mock packages without a tap fixture')
-    }
     nock = nock.get(`/${manifest.name}`).times(times)
     if (query) {
       nock = nock.query(query)
