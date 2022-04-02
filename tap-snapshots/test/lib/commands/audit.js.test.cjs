@@ -5,9 +5,38 @@
  * Make sure to inspect the output below.  Do not ignore changes!
  */
 'use strict'
+exports[`test/lib/commands/audit.js TAP audit fix > lockfile has test-dep-a@1.0.1 1`] = `
+{
+  "name": "test-dep",
+  "version": "1.0.0",
+  "lockfileVersion": 2,
+  "requires": true,
+  "packages": {
+    "": {
+      "name": "test-dep",
+      "version": "1.0.0",
+      "dependencies": {
+        "test-dep-a": "*"
+      }
+    },
+    "node_modules/test-dep-a": {
+      "version": "1.0.1",
+      "resolved": "https://registry.npmjs.org/test-dep-a/-/test-dep-a-1.0.1.tgz"
+    }
+  },
+  "dependencies": {
+    "test-dep-a": {
+      "version": "1.0.1",
+      "resolved": "https://registry.npmjs.org/test-dep-a/-/test-dep-a-1.0.1.tgz"
+    }
+  }
+}
+
+`
+
 exports[`test/lib/commands/audit.js TAP audit fix > must match snapshot 1`] = `
 
-added 1 package, and audited 2 packages in 120ms
+added 1 package, and audited 2 packages in xxx
 
 found 0 vulnerabilities
 `
