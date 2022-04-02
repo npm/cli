@@ -6,6 +6,9 @@ const util = require('util')
 const zlib = require('zlib')
 const gzip = util.promisify(zlib.gzip)
 const path = require('path')
+const fs = require('fs')
+
+t.cleanSnapshot = str => str.replace(/packages in [0-9]+[a-z]+/g, 'packages in xxx')
 
 const tree = {
   'package.json': JSON.stringify({
@@ -114,7 +117,6 @@ t.test('audit fix', async t => {
     tap: t,
     registry: npm.config.get('registry'),
   })
-  // with fix
   const manifest = registry.manifest({
     name: 'test-dep-a',
     packuments: [{ version: '1.0.0' }, { version: '1.0.1' }],
@@ -139,6 +141,12 @@ t.test('audit fix', async t => {
     })
   await npm.exec('audit', ['fix'])
   t.matchSnapshot(joinedOutput())
+  const pkg = fs.readFileSync(path.join(npm.prefix, 'package-lock.json'), 'utf8')
+  t.matchSnapshot(pkg, 'lockfile has test-dep-a@1.0.1')
+  t.ok(
+    fs.existsSync(path.join(npm.prefix, 'node_modules', 'test-dep-a', 'fixed.txt')),
+    'has test-dep-a@1.0.1 on disk'
+  )
 })
 
 t.test('completion', async t => {
