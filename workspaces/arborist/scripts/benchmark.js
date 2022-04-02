@@ -63,13 +63,13 @@ Options:
 for (let i = 2; i < process.argv.length; i++) {
   const arg = process.argv[i]
   if (/^--previous=/.test(arg)) {
-    options.previous = arg.substr('--previous='.length)
+    options.previous = arg.slice('--previous='.length)
   } else if (/^--warn-range=[0-9]+/.test(arg)) {
-    options.warnRange = +arg.substr('--warn-range='.length)
+    options.warnRange = +arg.slice('--warn-range='.length)
   } else if (/^--cache=/.test(arg)) {
-    options.cache = resolve(arg.substr('--cache='.length))
+    options.cache = resolve(arg.slice('--cache='.length))
   } else if (/^--save=/.test(arg)) {
-    const save = arg.substr('--save='.length)
+    const save = arg.slice('--save='.length)
     if (/[/\\]|^\.\.?$/.test(save)) {
       throw new Error('save cannot have slashes or be . or ..')
     }
