@@ -30,7 +30,7 @@ It also removes the package from the `dependencies`, `devDependencies`,
 `optionalDependencies`, and `peerDependencies` objects in your
 `package.json`.
 
-Futher, if you have an `npm-shrinkwrap.json` or `package-lock.json`, npm
+Further, if you have an `npm-shrinkwrap.json` or `package-lock.json`, npm
 will update those files as well.
 
 `--no-save` will tell npm not to remove the package from your
