@@ -57,6 +57,12 @@ exports[`test/lib/commands/audit.js TAP json audit > must match snapshot 1`] = `
           "title": "Test advisory 100",
           "url": "https://github.com/advisories/GHSA-100",
           "severity": "high",
+          "cwe": [
+            "cwe-0"
+          ],
+          "cvss": {
+            "score": 0
+          },
           "range": "*"
         }
       ],

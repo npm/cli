@@ -1627,6 +1627,8 @@ Object {
       "severity": "moderate",
       "via": Array [
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "acorn",
           "id": undefined,
           "name": "acorn",
@@ -1652,6 +1654,8 @@ Object {
       "severity": "high",
       "via": Array [
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "js-yaml",
           "id": undefined,
           "name": "js-yaml",
@@ -1664,6 +1668,8 @@ Object {
           "vulnerableVersions": undefined,
         },
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "js-yaml",
           "id": undefined,
           "name": "js-yaml",
@@ -1689,6 +1695,8 @@ Object {
       "severity": "high",
       "via": Array [
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "lodash",
           "id": undefined,
           "name": "lodash",
@@ -1701,6 +1709,8 @@ Object {
           "vulnerableVersions": undefined,
         },
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "lodash",
           "id": undefined,
           "name": "lodash",
@@ -1713,6 +1723,8 @@ Object {
           "vulnerableVersions": undefined,
         },
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "lodash",
           "id": undefined,
           "name": "lodash",
@@ -1740,6 +1752,8 @@ Object {
       "severity": "low",
       "via": Array [
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "minimist",
           "id": undefined,
           "name": "minimist",
@@ -2075,6 +2089,8 @@ Object {
       "severity": "critical",
       "via": Array [
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "handlebars",
           "id": undefined,
           "name": "handlebars",
@@ -2087,6 +2103,8 @@ Object {
           "vulnerableVersions": undefined,
         },
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "handlebars",
           "id": undefined,
           "name": "handlebars",
@@ -2099,6 +2117,8 @@ Object {
           "vulnerableVersions": undefined,
         },
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "handlebars",
           "id": undefined,
           "name": "handlebars",
@@ -2111,6 +2131,8 @@ Object {
           "vulnerableVersions": undefined,
         },
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "handlebars",
           "id": undefined,
           "name": "handlebars",
@@ -2123,6 +2145,8 @@ Object {
           "vulnerableVersions": undefined,
         },
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "handlebars",
           "id": undefined,
           "name": "handlebars",
@@ -2156,6 +2180,8 @@ Object {
       "severity": "low",
       "via": Array [
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "kind-of",
           "id": undefined,
           "name": "kind-of",
@@ -2181,6 +2207,8 @@ Object {
       "severity": "high",
       "via": Array [
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "lodash",
           "id": undefined,
           "name": "lodash",
@@ -2193,6 +2221,8 @@ Object {
           "vulnerableVersions": undefined,
         },
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "lodash",
           "id": undefined,
           "name": "lodash",
@@ -2205,6 +2235,8 @@ Object {
           "vulnerableVersions": undefined,
         },
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "lodash",
           "id": undefined,
           "name": "lodash",
@@ -2236,6 +2268,8 @@ Object {
       "severity": "low",
       "via": Array [
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "mem",
           "id": undefined,
           "name": "mem",
@@ -2269,6 +2303,8 @@ Object {
       "severity": "low",
       "via": Array [
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "minimist",
           "id": undefined,
           "name": "minimist",
@@ -2294,6 +2330,8 @@ Object {
       "severity": "high",
       "via": Array [
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "mixin-deep",
           "id": undefined,
           "name": "mixin-deep",
@@ -2403,6 +2441,8 @@ Object {
       "severity": "high",
       "via": Array [
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "set-value",
           "id": undefined,
           "name": "set-value",
@@ -2471,6 +2511,8 @@ Object {
       "severity": "low",
       "via": Array [
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "yargs-parser",
           "id": undefined,
           "name": "yargs-parser",
@@ -2526,6 +2568,8 @@ Object {
       "severity": "critical",
       "via": Array [
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "handlebars",
           "id": undefined,
           "name": "handlebars",
@@ -2538,6 +2582,8 @@ Object {
           "vulnerableVersions": undefined,
         },
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "handlebars",
           "id": undefined,
           "name": "handlebars",
@@ -2550,6 +2596,8 @@ Object {
           "vulnerableVersions": undefined,
         },
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "handlebars",
           "id": undefined,
           "name": "handlebars",
@@ -2562,6 +2610,8 @@ Object {
           "vulnerableVersions": undefined,
         },
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "handlebars",
           "id": undefined,
           "name": "handlebars",
@@ -2574,6 +2624,8 @@ Object {
           "vulnerableVersions": undefined,
         },
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "handlebars",
           "id": undefined,
           "name": "handlebars",
@@ -2606,6 +2658,8 @@ Object {
       "severity": "low",
       "via": Array [
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "minimist",
           "id": undefined,
           "name": "minimist",
@@ -2682,6 +2736,8 @@ Object {
       "severity": "critical",
       "via": Array [
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "handlebars",
           "id": undefined,
           "name": "handlebars",
@@ -2694,6 +2750,8 @@ Object {
           "vulnerableVersions": undefined,
         },
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "handlebars",
           "id": undefined,
           "name": "handlebars",
@@ -2706,6 +2764,8 @@ Object {
           "vulnerableVersions": undefined,
         },
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "handlebars",
           "id": undefined,
           "name": "handlebars",
@@ -2718,6 +2778,8 @@ Object {
           "vulnerableVersions": undefined,
         },
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "handlebars",
           "id": undefined,
           "name": "handlebars",
@@ -2730,6 +2792,8 @@ Object {
           "vulnerableVersions": undefined,
         },
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "handlebars",
           "id": undefined,
           "name": "handlebars",
@@ -2763,6 +2827,8 @@ Object {
       "severity": "low",
       "via": Array [
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "kind-of",
           "id": undefined,
           "name": "kind-of",
@@ -2788,6 +2854,8 @@ Object {
       "severity": "high",
       "via": Array [
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "lodash",
           "id": undefined,
           "name": "lodash",
@@ -2800,6 +2868,8 @@ Object {
           "vulnerableVersions": undefined,
         },
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "lodash",
           "id": undefined,
           "name": "lodash",
@@ -2812,6 +2882,8 @@ Object {
           "vulnerableVersions": undefined,
         },
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "lodash",
           "id": undefined,
           "name": "lodash",
@@ -2843,6 +2915,8 @@ Object {
       "severity": "low",
       "via": Array [
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "mem",
           "id": undefined,
           "name": "mem",
@@ -2876,6 +2950,8 @@ Object {
       "severity": "low",
       "via": Array [
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "minimist",
           "id": undefined,
           "name": "minimist",
@@ -2901,6 +2977,8 @@ Object {
       "severity": "high",
       "via": Array [
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "mixin-deep",
           "id": undefined,
           "name": "mixin-deep",
@@ -3010,6 +3088,8 @@ Object {
       "severity": "high",
       "via": Array [
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "set-value",
           "id": undefined,
           "name": "set-value",
@@ -3078,6 +3158,8 @@ Object {
       "severity": "low",
       "via": Array [
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "yargs-parser",
           "id": undefined,
           "name": "yargs-parser",
@@ -3133,6 +3215,8 @@ Object {
       "severity": "critical",
       "via": Array [
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "handlebars",
           "id": undefined,
           "name": "handlebars",
@@ -3145,6 +3229,8 @@ Object {
           "vulnerableVersions": undefined,
         },
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "handlebars",
           "id": undefined,
           "name": "handlebars",
@@ -3157,6 +3243,8 @@ Object {
           "vulnerableVersions": undefined,
         },
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "handlebars",
           "id": undefined,
           "name": "handlebars",
@@ -3169,6 +3257,8 @@ Object {
           "vulnerableVersions": undefined,
         },
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "handlebars",
           "id": undefined,
           "name": "handlebars",
@@ -3181,6 +3271,8 @@ Object {
           "vulnerableVersions": undefined,
         },
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "handlebars",
           "id": undefined,
           "name": "handlebars",
@@ -3213,6 +3305,8 @@ Object {
       "severity": "low",
       "via": Array [
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "minimist",
           "id": undefined,
           "name": "minimist",
@@ -3309,6 +3403,8 @@ Object {
       "severity": "critical",
       "via": Array [
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "handlebars",
           "id": undefined,
           "name": "handlebars",
@@ -3321,6 +3417,8 @@ Object {
           "vulnerableVersions": undefined,
         },
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "handlebars",
           "id": undefined,
           "name": "handlebars",
@@ -3333,6 +3431,8 @@ Object {
           "vulnerableVersions": undefined,
         },
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "handlebars",
           "id": undefined,
           "name": "handlebars",
@@ -3345,6 +3445,8 @@ Object {
           "vulnerableVersions": undefined,
         },
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "handlebars",
           "id": undefined,
           "name": "handlebars",
@@ -3357,6 +3459,8 @@ Object {
           "vulnerableVersions": undefined,
         },
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "handlebars",
           "id": undefined,
           "name": "handlebars",
@@ -3390,6 +3494,8 @@ Object {
       "severity": "low",
       "via": Array [
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "kind-of",
           "id": undefined,
           "name": "kind-of",
@@ -3415,6 +3521,8 @@ Object {
       "severity": "high",
       "via": Array [
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "lodash",
           "id": undefined,
           "name": "lodash",
@@ -3427,6 +3535,8 @@ Object {
           "vulnerableVersions": undefined,
         },
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "lodash",
           "id": undefined,
           "name": "lodash",
@@ -3439,6 +3549,8 @@ Object {
           "vulnerableVersions": undefined,
         },
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "lodash",
           "id": undefined,
           "name": "lodash",
@@ -3470,6 +3582,8 @@ Object {
       "severity": "low",
       "via": Array [
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "mem",
           "id": undefined,
           "name": "mem",
@@ -3502,6 +3616,8 @@ Object {
       "severity": "low",
       "via": Array [
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "minimist",
           "id": undefined,
           "name": "minimist",
@@ -3527,6 +3643,8 @@ Object {
       "severity": "high",
       "via": Array [
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "mixin-deep",
           "id": undefined,
           "name": "mixin-deep",
@@ -3631,6 +3749,8 @@ Object {
       "severity": "high",
       "via": Array [
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "set-value",
           "id": undefined,
           "name": "set-value",
@@ -3699,6 +3819,8 @@ Object {
       "severity": "low",
       "via": Array [
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "yargs-parser",
           "id": undefined,
           "name": "yargs-parser",
@@ -3750,6 +3872,8 @@ Object {
       "severity": "critical",
       "via": Array [
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "handlebars",
           "id": undefined,
           "name": "handlebars",
@@ -3762,6 +3886,8 @@ Object {
           "vulnerableVersions": undefined,
         },
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "handlebars",
           "id": undefined,
           "name": "handlebars",
@@ -3774,6 +3900,8 @@ Object {
           "vulnerableVersions": undefined,
         },
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "handlebars",
           "id": undefined,
           "name": "handlebars",
@@ -3786,6 +3914,8 @@ Object {
           "vulnerableVersions": undefined,
         },
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "handlebars",
           "id": undefined,
           "name": "handlebars",
@@ -3798,6 +3928,8 @@ Object {
           "vulnerableVersions": undefined,
         },
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "handlebars",
           "id": undefined,
           "name": "handlebars",
@@ -3831,6 +3963,8 @@ Object {
       "severity": "low",
       "via": Array [
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "kind-of",
           "id": undefined,
           "name": "kind-of",
@@ -3856,6 +3990,8 @@ Object {
       "severity": "high",
       "via": Array [
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "lodash",
           "id": undefined,
           "name": "lodash",
@@ -3868,6 +4004,8 @@ Object {
           "vulnerableVersions": undefined,
         },
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "lodash",
           "id": undefined,
           "name": "lodash",
@@ -3880,6 +4018,8 @@ Object {
           "vulnerableVersions": undefined,
         },
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "lodash",
           "id": undefined,
           "name": "lodash",
@@ -3911,6 +4051,8 @@ Object {
       "severity": "low",
       "via": Array [
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "mem",
           "id": undefined,
           "name": "mem",
@@ -3943,6 +4085,8 @@ Object {
       "severity": "low",
       "via": Array [
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "minimist",
           "id": undefined,
           "name": "minimist",
@@ -3968,6 +4112,8 @@ Object {
       "severity": "high",
       "via": Array [
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "mixin-deep",
           "id": undefined,
           "name": "mixin-deep",
@@ -4072,6 +4218,8 @@ Object {
       "severity": "high",
       "via": Array [
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "set-value",
           "id": undefined,
           "name": "set-value",
@@ -4140,6 +4288,8 @@ Object {
       "severity": "low",
       "via": Array [
         Object {
+          "cvss": undefined,
+          "cwe": undefined,
           "dependency": "yargs-parser",
           "id": undefined,
           "name": "yargs-parser",
