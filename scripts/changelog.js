@@ -124,7 +124,7 @@ const parseArgs = (argv) => {
     file: resolve(__dirname, '..', 'CHANGELOG.md'),
     branch: 'latest',
     remote: 'origin',
-    releaseNotes: false,
+    type: 'md', // or 'gh'
     write: false,
     read: false,
     help: false,
@@ -329,7 +329,7 @@ const generateRelease = async (args) => {
         groupCommit += ` ${commit.title}`
         if (key !== 'Dependencies') {
           for (const user of commit.credit) {
-            if (args.releaseNotes) {
+            if (args.type === 'gh') {
               groupCommit += ` (${user.name})`
             } else {
               groupCommit += ` ([${user.name}](${user.url}))`
@@ -360,7 +360,13 @@ const main = async (argv) => {
 
   if (args.read) {
     // this reads the release notes for that version
-    return console.log(findRelease(args, args.endTag || args.startTag).release)
+    let { release } = findRelease(args, args.endTag || args.startTag)
+    if (args.type === 'gh') {
+      // changelog was written in markdown so convert user links to gh release style
+      // XXX: this needs to be changed if the `generateRelease` format changes
+      release = release.replace(/\(\[(@[a-z\d-]+)\]\(https:\/\/github.com\/[a-z\d-]+\)\)/g, '($1)')
+    }
+    return console.log(release)
   }
 
   // otherwise fetch the requested release from github
