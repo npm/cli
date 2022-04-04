@@ -14,7 +14,7 @@ const {
 
 // strip the fixtures path off of the trees in snapshots
 const pp = path => path &&
-  normalizePath(path).substr(normalizePath(fixtures).length + 1)
+  normalizePath(path).slice(normalizePath(fixtures).length + 1)
 const defixture = obj => {
   if (obj instanceof Set) {
     return new Set([...obj].map(defixture))
