@@ -4,7 +4,7 @@ const colors = {
   removed: ansi.red,
   added: ansi.green,
   header: ansi.yellow,
-  section: ansi.magenta
+  section: ansi.magenta,
 }
 
 function colorize (str, opts) {
@@ -13,10 +13,10 @@ function colorize (str, opts) {
     headerLength = 2
   }
 
-  const color = (str, colorId) => {
+  const color = (colorStr, colorId) => {
     const { open, close } = colors[colorId]
     // avoid highlighting the "\n" (would highlight till the end of the line)
-    return str.replace(/[^\n\r]+/g, open + '$&' + close)
+    return colorStr.replace(/[^\n\r]+/g, open + '$&' + close)
   }
 
   // this RegExp will include all the `\n` chars into the lines, easier to join

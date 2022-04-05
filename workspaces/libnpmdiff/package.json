@@ -53,7 +53,7 @@
     "tap": "^15.0.9"
   },
   "dependencies": {
-    "@npmcli/disparity-colors": "^1.0.1",
+    "@npmcli/disparity-colors": "^2.0.0",
     "@npmcli/installed-package-contents": "^1.0.7",
     "binary-extensions": "^2.2.0",
     "diff": "^5.0.0",
