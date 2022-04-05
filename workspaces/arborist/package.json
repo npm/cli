@@ -9,7 +9,7 @@
     "@npmcli/metavuln-calculator": "^3.0.1",
     "@npmcli/move-file": "^2.0.0",
     "@npmcli/name-from-folder": "^1.0.1",
-    "@npmcli/node-gyp": "^1.0.3",
+    "@npmcli/node-gyp": "^2.0.0",
     "@npmcli/package-json": "^2.0.0",
     "@npmcli/run-script": "^3.0.0",
     "bin-links": "^3.0.0",
