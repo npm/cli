@@ -795,6 +795,8 @@ This option can be used when it's desirable to optionally run a script when
 it's present and fail if the script fails. This is useful, for example, when
 running scripts that may only apply for some builds in an otherwise generic
 CI setup.
+
+This value is not exported to the environment for child processes.
 `
 
 exports[`test/lib/utils/config/definitions.js TAP > config description for ignore-scripts 1`] = `
