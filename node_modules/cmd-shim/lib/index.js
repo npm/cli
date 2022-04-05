@@ -8,7 +8,7 @@
 // Write a binroot/pkg.bin + ".cmd" file that has this line in it:
 // @<prog> <args...> %dp0%<target> %*
 
-const {promisify} = require('util')
+const { promisify } = require('util')
 const fs = require('fs')
 const writeFile = promisify(fs.writeFile)
 const readFile = promisify(fs.readFile)
@@ -16,10 +16,10 @@ const chmod = promisify(fs.chmod)
 const stat = promisify(fs.stat)
 const unlink = promisify(fs.unlink)
 
-const {dirname, relative} = require('path')
+const { dirname, relative } = require('path')
 const mkdir = require('mkdirp-infer-owner')
-const toBatchSyntax = require('./lib/to-batch-syntax')
-const shebangExpr = /^#\!\s*(?:\/usr\/bin\/env)?\s*([^ \t]+=[^ \t]+\s+)*\s*([^ \t]+)(.*)$/
+const toBatchSyntax = require('./to-batch-syntax')
+const shebangExpr = /^#!\s*(?:\/usr\/bin\/env\s*((?:[^ \t=]+=[^ \t=]+\s+)*))?([^ \t]+)(.*)$/
 
 const cmdShimIfExists = (from, to) =>
   stat(from).then(() => cmdShim(from, to), () => {})
@@ -47,13 +47,14 @@ const writeShim = (from, to) =>
     .then(data => {
       const firstLine = data.trim().split(/\r*\n/)[0]
       const shebang = firstLine.match(shebangExpr)
-      if (!shebang) return writeShim_(from, to)
+      if (!shebang) {
+        return writeShim_(from, to)
+      }
       const vars = shebang[1] || ''
       const prog = shebang[2]
       const args = shebang[3] || ''
       return writeShim_(from, to, prog, args, vars)
     }, er => writeShim_(from, to))
-
 
 const writeShim_ = (from, to, prog, args, variables) => {
   let shTarget = relative(dirname(to), from)
@@ -94,8 +95,8 @@ const writeShim_ = (from, to, prog, args, variables) => {
 
   let cmd
   if (longProg) {
-    shLongProg = shLongProg.trim();
-    args = args.trim();
+    shLongProg = shLongProg.trim()
+    args = args.trim()
     const variablesBatch = toBatchSyntax.convertToSetCommands(variables)
     cmd = head
         + variablesBatch
@@ -110,7 +111,7 @@ const writeShim_ = (from, to, prog, args, variables) => {
         // prevent "Terminate Batch Job? (Y/n)" message
         // https://github.com/npm/cli/issues/969#issuecomment-737496588
         + 'endLocal & goto #_undefined_# 2>NUL || title %COMSPEC% & '
-        +  `"%_prog%" ${args} ${target} %*\r\n`
+        + `"%_prog%" ${args} ${target} %*\r\n`
   } else {
     cmd = `${head}${prog} ${args} ${target} %*\r\n`
   }
@@ -128,7 +129,7 @@ const writeShim_ = (from, to, prog, args, variables) => {
   //   exec node "$basedir/node_modules/npm/bin/npm-cli.js" "$@"
   // fi
 
-  let sh = "#!/bin/sh\n"
+  let sh = '#!/bin/sh\n'
 
   sh = sh
       + `basedir=$(dirname "$(echo "$0" | sed -e 's,\\\\,/,g')")\n`
@@ -182,7 +183,7 @@ const writeShim_ = (from, to, prog, args, variables) => {
            + '$basedir=Split-Path $MyInvocation.MyCommand.Definition -Parent\n'
            + '\n'
            + '$exe=""\n'
-           + 'if ($PSVersionTable.PSVersion -lt \"6.0\" -or $IsWindows) {\n'
+           + 'if ($PSVersionTable.PSVersion -lt "6.0" -or $IsWindows) {\n'
            + '  # Fix case when both the Windows and Linux builds of Node\n'
            + '  # are installed in the same directory\n'
            + '  $exe=".exe"\n'
