@@ -7,7 +7,7 @@
     "@npmcli/installed-package-contents": "^1.0.7",
     "@npmcli/map-workspaces": "^2.0.0",
     "@npmcli/metavuln-calculator": "^3.0.1",
-    "@npmcli/move-file": "^1.1.0",
+    "@npmcli/move-file": "^2.0.0",
     "@npmcli/name-from-folder": "^1.0.1",
     "@npmcli/node-gyp": "^1.0.3",
     "@npmcli/package-json": "^2.0.0",
