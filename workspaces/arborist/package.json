@@ -10,7 +10,7 @@
     "@npmcli/move-file": "^1.1.0",
     "@npmcli/name-from-folder": "^1.0.1",
     "@npmcli/node-gyp": "^1.0.3",
-    "@npmcli/package-json": "^1.0.1",
+    "@npmcli/package-json": "^2.0.0",
     "@npmcli/run-script": "^3.0.0",
     "bin-links": "^3.0.0",
     "cacache": "^16.0.0",
