@@ -35,7 +35,7 @@
     "rimraf": "^3.0.2",
     "semver": "^7.3.5",
     "ssri": "^8.0.1",
-    "treeverse": "^1.0.4",
+    "treeverse": "^2.0.0",
     "walk-up-path": "^1.0.0"
   },
   "devDependencies": {
