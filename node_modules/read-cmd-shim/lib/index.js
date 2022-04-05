@@ -1,6 +1,6 @@
 const fs = require('fs')
-const {promisify} = require('util')
-const {readFileSync} = fs
+const { promisify } = require('util')
+const { readFileSync } = fs
 const readFile = promisify(fs.readFile)
 
 const extractPath = (path, cmdshimContents) => {
@@ -53,7 +53,9 @@ const readCmdShim = path => {
   Error.captureStackTrace(er, readCmdShim)
   return readFile(path).then(contents => {
     const destination = extractPath(path, contents.toString())
-    if (destination) return destination
+    if (destination) {
+      return destination
+    }
     return Promise.reject(notaShim(path, er))
   }, readFileEr => Promise.reject(wrapError(readFileEr, er)))
 }
@@ -61,7 +63,9 @@ const readCmdShim = path => {
 const readCmdShimSync = path => {
   const contents = readFileSync(path)
   const destination = extractPath(path, contents.toString())
-  if (!destination) throw notaShim(path)
+  if (!destination) {
+    throw notaShim(path)
+  }
   return destination
 }
 
