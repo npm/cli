@@ -1,5 +1,20 @@
 # Changelog
 
+### [6.0.3](https://github.com/npm/cli/compare/libnpmpublish-v6.0.2...libnpmpublish-v6.0.3) (2022-04-06)
+
+
+### Bug Fixes
+
+* replace deprecated String.prototype.substr() ([#4667](https://github.com/npm/cli/issues/4667)) ([e3da5df](https://github.com/npm/cli/commit/e3da5df4152fbe547f7871547165328e1bf06262))
+* update readme badges ([#4658](https://github.com/npm/cli/issues/4658)) ([2829cb2](https://github.com/npm/cli/commit/2829cb28a432b5ff7beeeb3bf3e7e2e174c1121d))
+
+
+### Dependencies
+
+* @npmcli/template-oss@3.2.1 ([aac01b8](https://github.com/npm/cli/commit/aac01b89caf6336a2eb34d696296303cdadd5c08))
+* @npmcli/template-oss@3.2.2 ([#4639](https://github.com/npm/cli/issues/4639)) ([a59fd2c](https://github.com/npm/cli/commit/a59fd2cb863245fce56f96c90ac854e62c5c4d6f))
+* ssri@9.0.0 ([a2781a3](https://github.com/npm/cli/commit/a2781a367d62328d7f870de878f1b63d66593f4f))
+
 ### [6.0.2](https://www.github.com/npm/cli/compare/libnpmpublish-v6.0.1...libnpmpublish-v6.0.2) (2022-03-15)
 
 
