@@ -53,7 +53,7 @@
     "@npmcli/eslint-config": "^3.0.1",
     "@npmcli/template-oss": "3.2.2",
     "bin-links": "^3.0.0",
-    "tap": "^15.0.6"
+    "tap": "^16.0.1"
   },
   "dependencies": {
     "@npmcli/arborist": "^5.0.0",

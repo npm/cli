@@ -35,7 +35,7 @@
     "libnpmpack": "^4.0.0",
     "lodash.clonedeep": "^4.5.0",
     "nock": "^13.2.4",
-    "tap": "^15"
+    "tap": "^16.0.1"
   },
   "repository": {
     "type": "git",

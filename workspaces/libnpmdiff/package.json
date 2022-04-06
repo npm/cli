@@ -50,7 +50,7 @@
   "devDependencies": {
     "@npmcli/eslint-config": "^3.0.1",
     "@npmcli/template-oss": "3.2.2",
-    "tap": "^15.0.9"
+    "tap": "^16.0.1"
   },
   "dependencies": {
     "@npmcli/disparity-colors": "^2.0.0",
