@@ -203,7 +203,7 @@
   ],
   "devDependencies": {
     "@npmcli/eslint-config": "^3.0.1",
-    "@npmcli/template-oss": "3.2.2",
+    "@npmcli/template-oss": "3.3.1",
     "licensee": "^8.2.0",
     "nock": "^13.2.4",
     "spawk": "^1.7.1",
@@ -240,7 +240,7 @@
   "templateOSS": {
     "rootRepo": false,
     "rootModule": false,
-    "version": "3.2.2"
+    "version": "3.3.1"
   },
   "license": "Artistic-2.0",
   "engines": {
