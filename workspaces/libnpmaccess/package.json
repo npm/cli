@@ -22,7 +22,7 @@
     "@npmcli/eslint-config": "^3.0.1",
     "@npmcli/template-oss": "3.2.2",
     "nock": "^13.2.4",
-    "tap": "^15.1.0"
+    "tap": "^16.0.1"
   },
   "repository": {
     "type": "git",
