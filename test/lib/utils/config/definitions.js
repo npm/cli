@@ -379,18 +379,18 @@ t.test('color', t => {
 
   obj.color = true
   definitions.color.flatten('color', obj, flat)
-  t.strictSame(flat, { color: false, logColor: false }, 'no color when stdout not tty')
+  t.match(flat, { color: false }, 'no color when stdout not tty')
   setTTY('stdout', true)
   definitions.color.flatten('color', obj, flat)
-  t.strictSame(flat, { color: true, logColor: false }, '--color turns on color when stdout is tty')
+  t.match(flat, { color: true }, '--color turns on color when stdout is tty')
   setTTY('stdout', false)
 
   obj.color = true
   definitions.color.flatten('color', obj, flat)
-  t.strictSame(flat, { color: false, logColor: false }, 'no color when stderr not tty')
+  t.match(flat, { logColor: false }, 'no logColor when stderr not tty')
   setTTY('stderr', true)
   definitions.color.flatten('color', obj, flat)
-  t.strictSame(flat, { color: false, logColor: true }, '--color turns on color when stderr is tty')
+  t.match(flat, { logColor: true }, '--color turns on logColor when stderr is tty')
   setTTY('stderr', false)
 
   const setColor = (value) => mockGlobals(t, { 'process.env.NO_COLOR': value })

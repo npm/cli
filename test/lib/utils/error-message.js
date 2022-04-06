@@ -438,9 +438,6 @@ t.test('explain ERESOLVE errors', async t => {
       },
     },
   }))
-  t.match(EXPLAIN_CALLED, [[
-    er,
-    false,
-    path.resolve(npm.cache, 'eresolve-report.txt'),
-  ]])
+  t.equal(EXPLAIN_CALLED[0][0], er)
+  t.equal(EXPLAIN_CALLED[0][2], path.resolve(npm.cache, 'eresolve-report.txt'))
 })

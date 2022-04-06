@@ -210,13 +210,11 @@
     "dumpconf": "env | grep npm | sort | uniq",
     "preversion": "bash scripts/update-authors.sh && git add AUTHORS && git commit -m \"chore: update AUTHORS\" || true",
     "licenses": "licensee --production --errors-only",
-    "test": "tap",
+    "test": "FORCE_COLOR=true NO_COLOR='' tap -Rclassic",
     "test-all": "npm run test --if-present --workspaces --include-workspace-root",
-    "snap": "tap",
+    "snap": "FORCE_COLOR=true NO_COLOR='' tap -Rclassic",
     "postsnap": "make -s docs",
     "test:nocleanup": "NO_TEST_CLEANUP=1 npm run test --",
-    "sudotest": "sudo npm run test --",
-    "sudotest:nocleanup": "sudo NO_TEST_CLEANUP=1 npm run test --",
     "posttest": "npm run lint",
     "lint": "eslint \"**/*.js\"",
     "lintfix": "npm run lint -- --fix",
@@ -228,7 +226,6 @@
     "test-env": [
       "LC_ALL=sk"
     ],
-    "color": 1,
     "files": "test/{lib,bin,index.js}",
     "coverage-map": "test/coverage-map.js",
     "timeout": 600
