@@ -244,16 +244,19 @@ t.not(new Edge({
 }).satisfiedBy(b), 'b does not satisfy edge for c')
 reset(a)
 
+const overrideSet = new OverrideSet({
+  overrides: {
+    c: '2.x',
+  },
+})
+
+a.overrides = overrideSet
 t.matchSnapshot(new Edge({
   from: a,
   type: 'prod',
   name: 'c',
   spec: '1.x',
-  overrides: new OverrideSet({
-    overrides: {
-      c: '2.x',
-    },
-  }).getEdgeRule({ name: 'c', spec: '1.x' }),
+  overrides: overrideSet.getEdgeRule({ name: 'c', spec: '1.x' }),
 }).toJSON(), 'printableEdge shows overrides')
 reset(a)
 
@@ -262,11 +265,7 @@ const overriddenExplanation = new Edge({
   type: 'prod',
   name: 'c',
   spec: '1.x',
-  overrides: new OverrideSet({
-    overrides: {
-      c: '2.x',
-    },
-  }).getEdgeRule({ name: 'c', spec: '1.x' }),
+  overrides: overrideSet.getEdgeRule({ name: 'c', spec: '1.x' }),
 }).explain()
 t.equal(overriddenExplanation.rawSpec, '1.x', 'rawSpec has original spec')
 t.equal(overriddenExplanation.spec, '2.x', 'spec has override spec')
@@ -278,24 +277,22 @@ t.ok(new Edge({
   type: 'prod',
   name: 'c',
   spec: '1.x',
-  overrides: new OverrideSet({
-    overrides: {
-      c: '2.x',
-    },
-  }).getEdgeRule({ name: 'c', spec: '1.x' }),
+  overrides: overrideSet.getEdgeRule({ name: 'c', spec: '1.x' }),
 }).satisfiedBy(c), 'c@2 satisfies spec:1.x, override:2.x')
 reset(a)
 
+const overrideSetB = new OverrideSet({
+  overrides: {
+    b: '1.x',
+  },
+})
+a.overrides = overrideSetB
 t.matchSnapshot(new Edge({
   from: a,
   type: 'prod',
   name: 'c',
   spec: '2.x',
-  overrides: new OverrideSet({
-    overrides: {
-      b: '1.x',
-    },
-  }).getEdgeRule({ name: 'c', spec: '2.x' }),
+  overrides: overrideSetB.getEdgeRule({ name: 'c', spec: '2.x' }),
 }).toJSON(), 'printableEdge does not show non-applicable override')
 
 t.ok(new Edge({
@@ -303,12 +300,25 @@ t.ok(new Edge({
   type: 'prod',
   name: 'c',
   spec: '2.x',
-  overrides: new OverrideSet({
-    overrides: {
-      b: '1.x',
-    },
-  }).getEdgeRule({ name: 'c', spec: '2.x' }),
+  overrides: overrideSetB.getEdgeRule({ name: 'c', spec: '2.x' }),
 }).satisfiedBy(c), 'c@2 satisfies spec:1.x, no matching override')
+reset(a)
+delete a.overrides
+
+const overrideEdge = new Edge({
+  from: a,
+  type: 'prod',
+  name: 'c',
+  spec: '2.x',
+})
+t.notOk(overrideEdge.overrides, 'edge has no overrides')
+a.overrides = new OverrideSet({ overrides: { b: '1.x' } })
+t.notOk(overrideEdge.overrides, 'edge has no overrides')
+overrideEdge.reload()
+t.ok(overrideEdge.overrides, 'edge has overrides after reload')
+delete a.overrides
+overrideEdge.reload()
+t.notOk(overrideEdge.overrides, 'edge has no overrides after reload')
 reset(a)
 
 const referenceTop = {
@@ -494,6 +504,7 @@ const overrides = new OverrideSet({
     c: '1.x',
   },
 })
+a.overrides = overrides
 const overriddenEdge = new Edge({
   from: a,
   type: 'prod',
@@ -504,6 +515,7 @@ const overriddenEdge = new Edge({
 t.equal(overriddenEdge.spec, '1.x', 'override spec takes priority')
 t.equal(overriddenEdge.rawSpec, '2.x', 'rawSpec holds original spec')
 reset(a)
+delete a.overrides
 
 const old = new Edge({
   from: a,
