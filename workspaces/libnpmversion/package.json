@@ -27,8 +27,7 @@
     "template-oss-apply": "template-oss-apply --force"
   },
   "tap": {
-    "coverage-map": "map.js",
-    "check-coverage": true
+    "coverage-map": "map.js"
   },
   "devDependencies": {
     "@npmcli/eslint-config": "^3.0.1",

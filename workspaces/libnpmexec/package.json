@@ -46,7 +46,6 @@
   },
   "tap": {
     "color": true,
-    "check-coverage": true,
     "files": "test/*.js"
   },
   "devDependencies": {

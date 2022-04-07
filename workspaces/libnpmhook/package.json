@@ -21,9 +21,6 @@
     "posttest": "npm run lint",
     "template-oss-apply": "template-oss-apply --force"
   },
-  "tap": {
-    "check-coverage": true
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/npm/cli.git",
