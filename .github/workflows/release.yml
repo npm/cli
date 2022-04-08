@@ -1,0 +1,118 @@
+name: Release - cli
+
+on:
+  workflow_dispatch:
+  pull_request:
+  schedule:
+    # 08:00am UTC everyday: https://crontab.guru/#0_8_*_*_*
+    # https://dateful.com/convert/utc?t=8am
+    - cron: "0 8 * * *"
+
+jobs:
+  lint-all:
+    if: |
+      github.event_name == 'schedule' ||
+      github.event_name == 'workflow_dispatch' ||
+      startsWith(github.head_ref, 'release/')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+          cache: npm
+      - run: node bin/npm-cli.js run resetdeps
+      - run: node bin/npm-cli.js run lint-all --ignore-scripts
+
+  smoke-publish:
+    if: |
+      github.event_name == 'schedule' ||
+      github.event_name == 'workflow_dispatch' ||
+      startsWith(github.head_ref, 'release/')
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version:
+          - 12.13.0
+          - 12.x
+          - 14.15.0
+          - 14.x
+          - 16.0.0
+          - 16.x
+        platform:
+          - os: ubuntu-latest
+            shell: bash
+          - os: macos-latest
+            shell: bash
+        # XXX: this should be possible in windows also
+        # but resetdeps cant be a bash script
+    runs-on: ${{ matrix.platform.os }}
+    defaults:
+      run:
+        shell: ${{ matrix.platform.shell }}
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup git user
+        run: |
+          git config --global user.email "ops+npm-cli@npmjs.com"
+          git config --global user.name "npm cli ops bot"
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+          cache: npm
+      - name: Pack
+        run: |
+          NPM_VERSION="$(node bin/npm-cli.js --version)-$GITHUB_SHA.0"
+          node bin/npm-cli.js version $NPM_VERSION --ignore-scripts
+          node bin/npm-cli.js run resetdeps
+          git clean -fd
+          node bin/npm-cli.js ls --production >/dev/null
+          node bin/npm-cli.js prune --production --no-save --no-audit --no-fund
+          node scripts/git-dirty.js
+          node bin/npm-cli.js pack --pack-destination=$RUNNER_TEMP
+          node bin/npm-cli.js install -g $RUNNER_TEMP/npm-$NPM_VERSION.tgz
+          node bin/npm-cli.js install -w smoke-tests --ignore-scripts --no-audit --no-fund
+          rm -rf {lib,bin,index.js}
+          SMOKE_PUBLISH_NPM=1 npm test -w smoke-tests --ignore-scripts
+          
+  test-all:
+    if: |
+      github.event_name == 'schedule' ||
+      github.event_name == 'workflow_dispatch' ||
+      startsWith(github.head_ref, 'release/')
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version:
+          - 12.13.0
+          - 12.x
+          - 14.15.0
+          - 14.x
+          - 16.0.0
+          - 16.x
+        platform:
+          - os: ubuntu-latest
+            shell: bash
+          - os: macos-latest
+            shell: bash
+          - os: windows-latest
+            shell: cmd
+    runs-on: ${{ matrix.platform.os }}
+    defaults:
+      run:
+        shell: ${{ matrix.platform.shell }}
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: npm
+    - run: node bin/npm-cli.js run resetdeps
+    - run: node bin/npm-cli.js link -f --ignore-scripts
+    - run: node bin/npm-cli.js run test-all --ignore-scripts
+    - name: git status
+      if: matrix.platform.os != 'windows-latest'
+      run: node scripts/git-dirty.js
