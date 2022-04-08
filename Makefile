@@ -78,17 +78,14 @@ docs/content/commands/npm-%.md: docs/bin/config-doc-command.js lib/commands/%.js
 
 freshdocs:
 	touch lib/utils/config/definitions.js
-	touch "docs/bin/*.js"
+	touch docs/bin/*.js
 	make docs
 
-test: deps
-	node bin/npm-cli.js test
-
-smoke-tests: deps
-	node bin/npm-cli.js run smoke-tests
+test-all: deps
+	node bin/npm-cli.js run test-all
 
 ls-ok:
-	node . ls --production >/dev/null
+	node bin/npm-cli.js ls --production >/dev/null
 
 gitclean:
 	git clean -fd
@@ -100,11 +97,10 @@ link: uninstall
 	node bin/npm-cli.js link -f --ignore-scripts
 
 prune: deps
-	node bin/npm-cli.js prune --production --no-save --no-audit
-	@[[ "$(shell git status -s)" != "" ]] && echo "ERR: found unpruned files" && exit 1 || echo "git status is clean"
+	node bin/npm-cli.js prune --production --no-save --no-audit --no-fund
+	node scripts/git-dirty.js
 
-publish: gitclean ls-ok link test smoke-tests docs prune
-	@git push origin :v$(shell node bin/npm-cli.js --no-timing -v) 2>&1 || true
+publish: gitclean ls-ok link test-all docs prune
 	git push origin $(BRANCH) &&\
 	git push origin --tags &&\
 	node bin/npm-cli.js publish --tag=$(PUBLISHTAG)
@@ -112,4 +108,4 @@ publish: gitclean ls-ok link test smoke-tests docs prune
 release: gitclean ls-ok docs prune
 	@bash scripts/release.sh
 
-.PHONY: all latest install dev link docs clean uninstall test man docsclean release ls-ok deps prune freshdocs
+.PHONY: all latest install dev link docs clean uninstall test-all man docsclean release ls-ok deps prune freshdocs
