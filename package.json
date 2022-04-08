@@ -4,6 +4,7 @@
   "description": "a package manager for JavaScript",
   "workspaces": [
     "docs",
+    "smoke-tests",
     "workspaces/*"
   ],
   "files": [
@@ -225,8 +226,7 @@
     "lintfix": "npm run lint -- --fix",
     "lint-all": "npm run lint --if-present --workspaces --include-workspace-root",
     "prelint": "rimraf test/npm_cache*",
-    "resetdeps": "bash scripts/resetdeps.sh",
-    "smoke-tests": "tap smoke-tests/index.js --no-coverage"
+    "resetdeps": "bash scripts/resetdeps.sh"
   },
   "tap": {
     "test-env": [

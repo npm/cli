@@ -5,7 +5,7 @@
  * Make sure to inspect the output below.  Do not ignore changes!
  */
 'use strict'
-exports[`smoke-tests/index.js TAP npm (no args) > should have expected no args output 1`] = `
+exports[`test/index.js TAP npm (no args) > should have expected no args output 1`] = `
 npm <command>
 
 Usage:
@@ -32,7 +32,7 @@ All commands:
     uninstall, unpublish, unstar, update, version, view, whoami
 
 Specify configs in the ini-formatted file:
-    {CWD}/smoke-tests/tap-testdir-index/.npmrc
+    {CWD}/smoke-tests/test/tap-testdir-index/.npmrc
 or on the command line via: npm <command> --key=value
 
 More configuration info: npm help config
@@ -42,7 +42,7 @@ npm {CWD}
 
 `
 
-exports[`smoke-tests/index.js TAP npm ci > should throw mismatch deps in lock file error 1`] = `
+exports[`test/index.js TAP npm ci > should throw mismatch deps in lock file error 1`] = `
 npm ERR! \`npm ci\` can only install packages when your package.json and package-lock.json or npm-shrinkwrap.json are in sync. Please update your lock file with \`npm install\` before continuing.
 npm ERR! 
 npm ERR! Invalid: lock file's abbrev@1.0.4 does not satisfy abbrev@1.1.1
@@ -53,7 +53,7 @@ npm ERR! A complete log of this run can be found in:
 
 `
 
-exports[`smoke-tests/index.js TAP npm diff > should have expected diff output 1`] = `
+exports[`test/index.js TAP npm diff > should have expected diff output 1`] = `
 diff --git a/package.json b/package.json
 index v1.0.4..v1.1.1 100644
 --- a/package.json
@@ -308,14 +308,14 @@ index v1.0.4..v1.1.1
 
 `
 
-exports[`smoke-tests/index.js TAP npm explain > should have expected explain output 1`] = `
+exports[`test/index.js TAP npm explain > should have expected explain output 1`] = `
 abbrev@1.0.4
 node_modules/abbrev
   abbrev@"^1.0.4" from the root project
 
 `
 
-exports[`smoke-tests/index.js TAP npm fund > should have expected fund output 1`] = `
+exports[`test/index.js TAP npm fund > should have expected fund output 1`] = `
 project@1.0.0
 \`-- https://github.com/sponsors/isaacs
     \`-- promise-all-reject-late@1.0.1
@@ -323,8 +323,8 @@ project@1.0.0
 
 `
 
-exports[`smoke-tests/index.js TAP npm init > should have successful npm init result 1`] = `
-Wrote to {CWD}/smoke-tests/tap-testdir-index/project/package.json:
+exports[`test/index.js TAP npm init > should have successful npm init result 1`] = `
+Wrote to {CWD}/smoke-tests/test/tap-testdir-index/project/package.json:
 
 {
   "name": "project",
@@ -343,7 +343,7 @@ Wrote to {CWD}/smoke-tests/tap-testdir-index/project/package.json:
 
 `
 
-exports[`smoke-tests/index.js TAP npm install dev dep > should have expected dev dep added lockfile result 1`] = `
+exports[`test/index.js TAP npm install dev dep > should have expected dev dep added lockfile result 1`] = `
 {
   "name": "project",
   "version": "1.0.0",
@@ -393,7 +393,7 @@ exports[`smoke-tests/index.js TAP npm install dev dep > should have expected dev
 
 `
 
-exports[`smoke-tests/index.js TAP npm install dev dep > should have expected dev dep added package.json result 1`] = `
+exports[`test/index.js TAP npm install dev dep > should have expected dev dep added package.json result 1`] = `
 {
   "name": "project",
   "version": "1.0.0",
@@ -415,7 +415,7 @@ exports[`smoke-tests/index.js TAP npm install dev dep > should have expected dev
 
 `
 
-exports[`smoke-tests/index.js TAP npm install dev dep > should have expected dev dep added reify output 1`] = `
+exports[`test/index.js TAP npm install dev dep > should have expected dev dep added reify output 1`] = `
 
 added 1 package 
 
@@ -424,13 +424,13 @@ added 1 package
 
 `
 
-exports[`smoke-tests/index.js TAP npm install prodDep@version > should have expected install reify output 1`] = `
+exports[`test/index.js TAP npm install prodDep@version > should have expected install reify output 1`] = `
 
 added 1 package 
 
 `
 
-exports[`smoke-tests/index.js TAP npm install prodDep@version > should have expected lockfile result 1`] = `
+exports[`test/index.js TAP npm install prodDep@version > should have expected lockfile result 1`] = `
 {
   "name": "project",
   "version": "1.0.0",
@@ -462,7 +462,7 @@ exports[`smoke-tests/index.js TAP npm install prodDep@version > should have expe
 
 `
 
-exports[`smoke-tests/index.js TAP npm install prodDep@version > should have expected package.json result 1`] = `
+exports[`test/index.js TAP npm install prodDep@version > should have expected package.json result 1`] = `
 {
   "name": "project",
   "version": "1.0.0",
@@ -481,21 +481,21 @@ exports[`smoke-tests/index.js TAP npm install prodDep@version > should have expe
 
 `
 
-exports[`smoke-tests/index.js TAP npm ls > should have expected ls output 1`] = `
-project@1.0.0 {CWD}/smoke-tests/tap-testdir-index/project
+exports[`test/index.js TAP npm ls > should have expected ls output 1`] = `
+project@1.0.0 {CWD}/smoke-tests/test/tap-testdir-index/project
 +-- abbrev@1.0.4
 \`-- promise-all-reject-late@1.0.1
 
 
 `
 
-exports[`smoke-tests/index.js TAP npm outdated > should have expected outdated output 1`] = `
+exports[`test/index.js TAP npm outdated > should have expected outdated output 1`] = `
 Package  Current  Wanted  Latest  Location             Depended by
 abbrev     1.0.4   1.1.1   1.1.1  node_modules/abbrev  project
 
 `
 
-exports[`smoke-tests/index.js TAP npm pkg > should have expected npm pkg delete modified package.json result 1`] = `
+exports[`test/index.js TAP npm pkg > should have expected npm pkg delete modified package.json result 1`] = `
 {
   "name": "project",
   "version": "1.0.0",
@@ -515,7 +515,7 @@ exports[`smoke-tests/index.js TAP npm pkg > should have expected npm pkg delete 
 
 `
 
-exports[`smoke-tests/index.js TAP npm pkg > should have expected npm pkg set modified package.json result 1`] = `
+exports[`test/index.js TAP npm pkg > should have expected npm pkg set modified package.json result 1`] = `
 {
   "name": "project",
   "version": "1.0.0",
@@ -540,20 +540,20 @@ exports[`smoke-tests/index.js TAP npm pkg > should have expected npm pkg set mod
 
 `
 
-exports[`smoke-tests/index.js TAP npm pkg > should have expected pkg delete output 1`] = `
+exports[`test/index.js TAP npm pkg > should have expected pkg delete output 1`] = `
 
 `
 
-exports[`smoke-tests/index.js TAP npm pkg > should have expected pkg get output 1`] = `
+exports[`test/index.js TAP npm pkg > should have expected pkg get output 1`] = `
 "ISC"
 
 `
 
-exports[`smoke-tests/index.js TAP npm pkg > should have expected pkg set output 1`] = `
+exports[`test/index.js TAP npm pkg > should have expected pkg set output 1`] = `
 
 `
 
-exports[`smoke-tests/index.js TAP npm pkg > should print package.json contents 1`] = `
+exports[`test/index.js TAP npm pkg > should print package.json contents 1`] = `
 {
   "name": "project",
   "version": "1.0.0",
@@ -578,12 +578,12 @@ exports[`smoke-tests/index.js TAP npm pkg > should print package.json contents 1
 
 `
 
-exports[`smoke-tests/index.js TAP npm prefix > should have expected prefix output 1`] = `
-{CWD}/smoke-tests/tap-testdir-index/project
+exports[`test/index.js TAP npm prefix > should have expected prefix output 1`] = `
+{CWD}/smoke-tests/test/tap-testdir-index/project
 
 `
 
-exports[`smoke-tests/index.js TAP npm run-script > should have expected run-script output 1`] = `
+exports[`test/index.js TAP npm run-script > should have expected run-script output 1`] = `
 
 > project@1.0.0 hello
 > echo Hello
@@ -592,7 +592,7 @@ Hello
 
 `
 
-exports[`smoke-tests/index.js TAP npm set-script > should have expected script added package.json result 1`] = `
+exports[`test/index.js TAP npm set-script > should have expected script added package.json result 1`] = `
 {
   "name": "project",
   "version": "1.0.0",
@@ -615,11 +615,11 @@ exports[`smoke-tests/index.js TAP npm set-script > should have expected script a
 
 `
 
-exports[`smoke-tests/index.js TAP npm set-script > should have expected set-script output 1`] = `
+exports[`test/index.js TAP npm set-script > should have expected set-script output 1`] = `
 
 `
 
-exports[`smoke-tests/index.js TAP npm uninstall > should have expected uninstall lockfile result 1`] = `
+exports[`test/index.js TAP npm uninstall > should have expected uninstall lockfile result 1`] = `
 {
   "name": "project",
   "version": "1.0.0",
@@ -651,7 +651,7 @@ exports[`smoke-tests/index.js TAP npm uninstall > should have expected uninstall
 
 `
 
-exports[`smoke-tests/index.js TAP npm uninstall > should have expected uninstall package.json result 1`] = `
+exports[`test/index.js TAP npm uninstall > should have expected uninstall package.json result 1`] = `
 {
   "name": "project",
   "version": "1.0.0",
@@ -671,13 +671,13 @@ exports[`smoke-tests/index.js TAP npm uninstall > should have expected uninstall
 
 `
 
-exports[`smoke-tests/index.js TAP npm uninstall > should have expected uninstall reify output 1`] = `
+exports[`test/index.js TAP npm uninstall > should have expected uninstall reify output 1`] = `
 
 removed 1 package 
 
 `
 
-exports[`smoke-tests/index.js TAP npm update dep > should have expected update lockfile result 1`] = `
+exports[`test/index.js TAP npm update dep > should have expected update lockfile result 1`] = `
 {
   "name": "project",
   "version": "1.0.0",
@@ -727,7 +727,7 @@ exports[`smoke-tests/index.js TAP npm update dep > should have expected update l
 
 `
 
-exports[`smoke-tests/index.js TAP npm update dep > should have expected update package.json result 1`] = `
+exports[`test/index.js TAP npm update dep > should have expected update package.json result 1`] = `
 {
   "name": "project",
   "version": "1.0.0",
@@ -750,7 +750,7 @@ exports[`smoke-tests/index.js TAP npm update dep > should have expected update p
 
 `
 
-exports[`smoke-tests/index.js TAP npm update dep > should have expected update reify output 1`] = `
+exports[`test/index.js TAP npm update dep > should have expected update reify output 1`] = `
 
 changed 1 package 
 
@@ -759,7 +759,7 @@ changed 1 package
 
 `
 
-exports[`smoke-tests/index.js TAP npm view > should have expected view output 1`] = `
+exports[`test/index.js TAP npm view > should have expected view output 1`] = `
 
 [4m[1m[32mabbrev[39m@[32m1.0.4[39m[22m[24m | [32mMIT[39m | deps: [32mnone[39m | versions: [33m8[39m
 Like ruby's abbrev module, but in js

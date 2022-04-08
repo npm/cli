@@ -1,32 +1,53 @@
-const fs = require('fs')
-const { promisify } = require('util')
-const execAsync = promisify(require('child_process').exec)
-const { join, resolve } = require('path')
+const { readFileSync, realpathSync, mkdirSync, existsSync, writeFileSync } = require('fs')
+const spawn = require('@npmcli/promise-spawn')
+const { join, resolve, sep } = require('path')
 const t = require('tap')
-const rimraf = promisify(require('rimraf'))
+const rimraf = require('rimraf')
+const which = require('which').sync
+const { start, stop, registry } = require('./fixtures/server.js')
 
+const { SMOKE_PUBLISH_NPM, CI, PATH } = process.env
+const log = CI ? console.error : () => {}
+
+const cwd = resolve(__dirname, '..', '..')
+const npmCli = join('bin', 'npm-cli.js')
+const execArgv = SMOKE_PUBLISH_NPM ? ['npm'] : [process.execPath, join(cwd, npmCli)]
+const npmDir = SMOKE_PUBLISH_NPM ? realpathSync(which('npm')).replace(sep + npmCli, '') : cwd
+
+// setup server
+t.before(start)
+t.teardown(stop)
+// update notifier should never be written
+t.afterEach((t) => {
+  const updateExists = existsSync(join(cacheLocation, '_update-notifier-last-checked'))
+  t.equal(updateExists, false)
+})
+
+const readFile = filename => readFileSync(resolve(localPrefix, filename), 'utf-8')
 const normalizePath = path => path.replace(/[A-Z]:/, '').replace(/\\/g, '/')
-const cwd = normalizePath(process.cwd())
+
 t.cleanSnapshot = s =>
   s
-    .split(cwd)
+    // sometimes we print normalized paths in snapshots regardless of
+    // platform so replace those first
+    .split(normalizePath(npmDir))
+    .join('{CWD}')
+    .split(normalizePath(cwd))
     .join('{CWD}')
     .split(registry)
     .join('https://registry.npmjs.org/')
     .split(normalizePath(process.execPath))
     .join('node')
-    .split(process.cwd())
+    // then replace platform style paths
+    .split(npmDir)
+    .join('{CWD}')
+    .split(cwd)
     .join('{CWD}')
     .replace(/\\+/g, '/')
     .replace(/\r\n/g, '\n')
     .replace(/ \(in a browser\)/g, '')
     .replace(/^npm@.* /gm, 'npm ')
     .replace(/^.*debug-[0-9]+.log$/gm, '')
-
-// setup server
-const { start, stop, registry } = require('./server.js')
-t.before(start)
-t.teardown(stop)
 
 // setup fixtures
 const path = t.testdir({
@@ -37,30 +58,49 @@ const path = t.testdir({
 })
 const localPrefix = resolve(path, 'project')
 const userconfigLocation = resolve(path, '.npmrc')
-const npmLocation = resolve(__dirname, '../bin/npm-cli.js')
 const cacheLocation = resolve(path, 'cache')
 const binLocation = resolve(path, 'bin')
-const env = {
-  HOME: path,
-  PATH: `${process.env.PATH}:${binLocation}`,
-}
-const npmOpts = [
-  `--registry=${registry}`,
-  `--cache="${cacheLocation}"`,
-  `--userconfig="${userconfigLocation}"`,
-  '--no-audit',
-  '--no-update-notifier',
-  '--loglevel=silly',
-].join(' ')
-const npmBin = `"${process.execPath}" "${npmLocation}" ${npmOpts}`
-const exec = async cmd => {
-  const res = await execAsync(cmd, { cwd: localPrefix, env })
-  if (res.stderr) {
-    console.error(res.stderr)
+
+const exec = async (...args) => {
+  const cmd = []
+  const opts = [
+    `--registry=${registry}`,
+    `--cache=${cacheLocation}`,
+    `--userconfig=${userconfigLocation}`,
+    '--no-audit',
+    '--no-update-notifier',
+    '--loglevel=silly',
+  ]
+  for (const arg of args) {
+    if (arg.startsWith('--')) {
+      opts.push(arg)
+    } else {
+      cmd.push(arg)
+    }
   }
-  return String(res.stdout)
+
+  // XXX: not sure why outdated fails with no-workspaces but works without it
+  if (!opts.includes('--workspaces') && cmd[0] !== 'outdated') {
+    // This is required so we dont detect any workspace roots above the testdir
+    opts.push('--no-workspaces')
+  }
+
+  const spawnArgs = [execArgv[0], [...execArgv.slice(1), ...cmd, ...opts]]
+  log([spawnArgs[0], ...spawnArgs[1]].join(' '))
+
+  const res = await spawn(...spawnArgs, {
+    cwd: localPrefix,
+    env: {
+      HOME: path,
+      PATH: `${PATH}:${binLocation}`,
+    },
+    stdioString: true,
+    encoding: 'utf-8',
+  })
+
+  log(res.stderr)
+  return res.stdout
 }
-const readFile = filename => String(fs.readFileSync(resolve(localPrefix, filename)))
 
 // this test must come first, its package.json will be destroyed and the one
 // created in the next test (npm init) will create a new one that must be
@@ -71,35 +111,31 @@ t.test('npm install sends correct user-agent', async t => {
     name: 'smoke-test-workspaces',
     workspaces: ['packages/*'],
   })
-  fs.writeFileSync(pkgPath, pkgContent, { encoding: 'utf8' })
+  writeFileSync(pkgPath, pkgContent, { encoding: 'utf8' })
 
   const wsRoot = join(localPrefix, 'packages')
-  fs.mkdirSync(wsRoot)
+  mkdirSync(wsRoot)
 
   const wsPath = join(wsRoot, 'foo')
-  fs.mkdirSync(wsPath)
+  mkdirSync(wsPath)
 
   const wsPkgPath = join(wsPath, 'package.json')
   const wsContent = JSON.stringify({
     name: 'foo',
   })
-  fs.writeFileSync(wsPkgPath, wsContent, { encoding: 'utf8' })
-  t.teardown(async () => {
-    await rimraf(`${localPrefix}/*`)
-  })
+  writeFileSync(wsPkgPath, wsContent, { encoding: 'utf8' })
+  t.teardown(() => rimraf.sync(`${localPrefix}/*`))
 
-  const cmd = `${npmBin} install fail_reflect_user_agent`
   await t.rejects(
-    exec(cmd),
+    exec('install', 'fail_reflect_user_agent'),
     {
       stderr: /workspaces\/false/,
     },
     'workspaces/false is present in output'
   )
 
-  const wsCmd = `${npmBin} install fail_reflect_user_agent --workspaces`
   await t.rejects(
-    exec(wsCmd),
+    exec('install', 'fail_reflect_user_agent', '--workspaces'),
     {
       stderr: /workspaces\/true/,
     },
@@ -108,29 +144,34 @@ t.test('npm install sends correct user-agent', async t => {
 })
 
 t.test('npm init', async t => {
-  const cmd = `${npmBin} init -y`
-  const cmdRes = await exec(cmd)
+  const cmdRes = await exec('init', '-y')
 
   t.matchSnapshot(cmdRes, 'should have successful npm init result')
-  const pkg = JSON.parse(fs.readFileSync(resolve(localPrefix, 'package.json')))
+  const pkg = JSON.parse(readFileSync(resolve(localPrefix, 'package.json')))
   t.equal(pkg.name, 'project', 'should have expected generated name')
   t.equal(pkg.version, '1.0.0', 'should have expected generated version')
 })
 
-t.test('npm (no args)', async t => {
-  const cmd = `"${process.execPath}" "${npmLocation}" --no-audit --no-update-notifier`
-  const cmdRes = await execAsync(cmd, { cwd: localPrefix, env }).catch(err => {
-    t.equal(err.code, 1, 'should exit with error code')
-    return err
-  })
+t.test('npm --version', async t => {
+  const v = await exec('--version')
 
-  t.equal(cmdRes.stderr, '', 'should have no stderr output')
-  t.matchSnapshot(String(cmdRes.stdout), 'should have expected no args output')
+  if (SMOKE_PUBLISH_NPM) {
+    t.match(v.trim(), /-[0-9a-f]{40}\.\d$/, 'must have a git version')
+  } else {
+    t.skip('not checking version')
+  }
+})
+
+t.test('npm (no args)', async t => {
+  const err = await exec('--loglevel=notice').catch(e => e)
+
+  t.equal(err.code, 1, 'should exit with error code')
+  t.equal(err.stderr, '', 'should have no stderr output')
+  t.matchSnapshot(err.stdout, 'should have expected no args output')
 })
 
 t.test('npm install prodDep@version', async t => {
-  const cmd = `${npmBin} install abbrev@1.0.4`
-  const cmdRes = await exec(cmd)
+  const cmdRes = await exec('install', 'abbrev@1.0.4')
 
   t.matchSnapshot(cmdRes.replace(/in.*s/, ''), 'should have expected install reify output')
   t.matchSnapshot(readFile('package.json'), 'should have expected package.json result')
@@ -138,8 +179,7 @@ t.test('npm install prodDep@version', async t => {
 })
 
 t.test('npm install dev dep', async t => {
-  const cmd = `${npmBin} install -D promise-all-reject-late`
-  const cmdRes = await exec(cmd)
+  const cmdRes = await exec('install', 'promise-all-reject-late', '-D')
 
   t.matchSnapshot(cmdRes.replace(/in.*s/, ''), 'should have expected dev dep added reify output')
   t.matchSnapshot(
@@ -153,47 +193,39 @@ t.test('npm install dev dep', async t => {
 })
 
 t.test('npm ls', async t => {
-  const cmd = `${npmBin} ls`
-  const cmdRes = await exec(cmd)
+  const cmdRes = await exec('ls')
 
   t.matchSnapshot(cmdRes, 'should have expected ls output')
 })
 
 t.test('npm fund', async t => {
-  const cmd = `${npmBin} fund`
-  const cmdRes = await exec(cmd)
+  const cmdRes = await exec('fund')
 
   t.matchSnapshot(cmdRes, 'should have expected fund output')
 })
 
 t.test('npm explain', async t => {
-  const cmd = `${npmBin} explain abbrev`
-  const cmdRes = await exec(cmd)
+  const cmdRes = await exec('explain', 'abbrev')
 
   t.matchSnapshot(cmdRes, 'should have expected explain output')
 })
 
 t.test('npm diff', async t => {
-  const cmd = `${npmBin} diff --diff=abbrev@1.0.4 --diff=abbrev@1.1.1`
-  const cmdRes = await exec(cmd)
+  const cmdRes = await exec('diff', '--diff=abbrev@1.0.4', '--diff=abbrev@1.1.1')
 
   t.matchSnapshot(cmdRes, 'should have expected diff output')
 })
 
 t.test('npm outdated', async t => {
-  const cmd = `${npmBin} outdated`
-  const cmdRes = await exec(cmd).catch(err => {
-    t.equal(err.code, 1, 'should exit with error code')
-    return err
-  })
+  const err = await exec('outdated').catch(e => e)
 
-  t.not(cmdRes.stderr, '', 'should have stderr output')
-  t.matchSnapshot(String(cmdRes.stdout), 'should have expected outdated output')
+  t.equal(err.code, 1, 'should exit with error code')
+  t.not(err.stderr, '', 'should have stderr output')
+  t.matchSnapshot(err.stdout, 'should have expected outdated output')
 })
 
 t.test('npm set-script', async t => {
-  const cmd = `${npmBin} set-script "hello" "echo Hello"`
-  const cmdRes = await exec(cmd)
+  const cmdRes = await exec('set-script', 'hello', 'echo Hello')
 
   t.matchSnapshot(cmdRes, 'should have expected set-script output')
   t.matchSnapshot(
@@ -203,29 +235,25 @@ t.test('npm set-script', async t => {
 })
 
 t.test('npm run-script', async t => {
-  const cmd = `${npmBin} run hello`
-  const cmdRes = await exec(cmd)
+  const cmdRes = await exec('run', 'hello')
 
   t.matchSnapshot(cmdRes, 'should have expected run-script output')
 })
 
 t.test('npm prefix', async t => {
-  const cmd = `${npmBin} prefix`
-  const cmdRes = await exec(cmd)
+  const cmdRes = await exec('prefix')
 
   t.matchSnapshot(cmdRes, 'should have expected prefix output')
 })
 
 t.test('npm view', async t => {
-  const cmd = `${npmBin} view abbrev@1.0.4`
-  const cmdRes = await exec(cmd)
+  const cmdRes = await exec('view', 'abbrev@1.0.4')
 
   t.matchSnapshot(cmdRes, 'should have expected view output')
 })
 
 t.test('npm update dep', async t => {
-  const cmd = `${npmBin} update abbrev`
-  const cmdRes = await exec(cmd)
+  const cmdRes = await exec('update', 'abbrev')
 
   t.matchSnapshot(cmdRes.replace(/in.*s/, ''), 'should have expected update reify output')
   t.matchSnapshot(readFile('package.json'), 'should have expected update package.json result')
@@ -233,8 +261,7 @@ t.test('npm update dep', async t => {
 })
 
 t.test('npm uninstall', async t => {
-  const cmd = `${npmBin} uninstall promise-all-reject-late`
-  const cmdRes = await exec(cmd)
+  const cmdRes = await exec('uninstall', 'promise-all-reject-late')
 
   t.matchSnapshot(cmdRes.replace(/in.*s/, ''), 'should have expected uninstall reify output')
   t.matchSnapshot(readFile('package.json'), 'should have expected uninstall package.json result')
@@ -242,12 +269,10 @@ t.test('npm uninstall', async t => {
 })
 
 t.test('npm pkg', async t => {
-  let cmd = `${npmBin} pkg get license`
-  let cmdRes = await exec(cmd)
+  let cmdRes = await exec('pkg', 'get', 'license')
   t.matchSnapshot(cmdRes.replace(/in.*s/, ''), 'should have expected pkg get output')
 
-  cmd = `${npmBin} pkg set tap[test-env][0]=LC_ALL=sk`
-  cmdRes = await exec(cmd)
+  cmdRes = await exec('pkg', 'set', 'tap[test-env][0]=LC_ALL=sk')
   t.matchSnapshot(cmdRes.replace(/in.*s/, ''), 'should have expected pkg set output')
 
   t.matchSnapshot(
@@ -255,12 +280,10 @@ t.test('npm pkg', async t => {
     'should have expected npm pkg set modified package.json result'
   )
 
-  cmd = `${npmBin} pkg get`
-  cmdRes = await exec(cmd)
+  cmdRes = await exec('pkg', 'get')
   t.matchSnapshot(cmdRes.replace(/in.*s/, ''), 'should print package.json contents')
 
-  cmd = `${npmBin} pkg delete tap`
-  cmdRes = await exec(cmd)
+  cmdRes = await exec('pkg', 'delete', 'tap')
   t.matchSnapshot(cmdRes.replace(/in.*s/, ''), 'should have expected pkg delete output')
 
   t.matchSnapshot(
@@ -271,12 +294,11 @@ t.test('npm pkg', async t => {
 
 t.test('npm update --no-save --no-package-lock', async t => {
   // setup, manually reset dep value
-  await exec(`${npmBin} pkg set "dependencies.abbrev==1.0.4"`)
-  await exec(`${npmBin} install`)
-  await exec(`${npmBin} pkg set "dependencies.abbrev=^1.0.4"`)
+  await exec('pkg', 'set', 'dependencies.abbrev==1.0.4')
+  await exec(`install`)
+  await exec('pkg', 'set', 'dependencies.abbrev=^1.0.4')
 
-  const cmd = `${npmBin} update --no-save --no-package-lock`
-  await exec(cmd)
+  await exec('update', '--no-save', '--no-package-lock')
 
   t.equal(
     JSON.parse(readFile('package.json')).dependencies.abbrev,
@@ -291,8 +313,7 @@ t.test('npm update --no-save --no-package-lock', async t => {
 })
 
 t.test('npm update --no-save', async t => {
-  const cmd = `${npmBin} update --no-save`
-  await exec(cmd)
+  await exec('update', '--no-save')
 
   t.equal(
     JSON.parse(readFile('package.json')).dependencies.abbrev,
@@ -307,8 +328,7 @@ t.test('npm update --no-save', async t => {
 })
 
 t.test('npm update --save', async t => {
-  const cmd = `${npmBin} update --save`
-  await exec(cmd)
+  await exec('update', '--save')
 
   t.equal(
     JSON.parse(readFile('package.json')).dependencies.abbrev,
@@ -323,8 +343,8 @@ t.test('npm update --save', async t => {
 })
 
 t.test('npm ci', async t => {
-  await exec(`${npmBin} uninstall abbrev`)
-  await exec(`${npmBin} install abbrev@1.0.4 --save-exact`)
+  await exec('uninstall', 'abbrev')
+  await exec('install', 'abbrev@1.0.4', '--save-exact')
 
   t.equal(
     JSON.parse(readFile('package-lock.json')).packages['node_modules/abbrev'].version,
@@ -332,20 +352,9 @@ t.test('npm ci', async t => {
     'should have stored exact installed version'
   )
 
-  await exec(`${npmBin} pkg set "dependencies.abbrev=^1.1.1"`)
+  await exec('pkg', 'set', 'dependencies.abbrev=^1.1.1')
 
-  try {
-    const npmOpts = [
-      `--registry=${registry}`,
-      `--cache="${cacheLocation}"`,
-      `--userconfig="${userconfigLocation}"`,
-      '--no-audit',
-      '--no-update-notifier',
-      '--loglevel=error',
-    ].join(' ')
-    const npmBin = `"${process.execPath}" "${npmLocation}" ${npmOpts}`
-    await exec(`${npmBin} ci`)
-  } catch (err) {
-    t.matchSnapshot(err.stderr, 'should throw mismatch deps in lock file error')
-  }
+  const err = await exec('ci', '--loglevel=error').catch(e => e)
+  t.equal(err.code, 1)
+  t.matchSnapshot(err.stderr, 'should throw mismatch deps in lock file error')
 })
