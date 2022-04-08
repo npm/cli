@@ -19,8 +19,8 @@ jobs:
         with:
           node-version: 16.x
           cache: npm
-      - run: node ./bin/npm-cli.js run resetdeps
-      - run: node ./bin/npm-cli.js run lint
+      - run: node bin/npm-cli.js run resetdeps
+      - run: node bin/npm-cli.js run lint
 
   check_docs:
     runs-on: ubuntu-latest
@@ -43,40 +43,23 @@ jobs:
         with:
           node-version: 16.x
           cache: npm
-      - run: node ./bin/npm-cli.js run resetdeps
-      - run: node ./bin/npm-cli.js run licenses
-
+      - run: node bin/npm-cli.js run resetdeps
+      - run: node bin/npm-cli.js run licenses
+  
   smoke-tests:
-    strategy:
-      fail-fast: false
-      matrix:
-        node-version:
-          - 12.x
-          - 14.x
-          - 16.x
-        platform:
-          - os: ubuntu-latest
-            shell: bash
-          - os: macos-latest
-            shell: bash
-          - os: windows-latest
-            shell: cmd
-    runs-on: ${{ matrix.platform.os }}
-    defaults:
-      run:
-        shell: ${{ matrix.platform.shell }}
+    runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: npm
-    - run: node ./bin/npm-cli.js run resetdeps
-    - run: node ./bin/npm-cli.js run smoke-tests --ignore-scripts
-    - name: git status
-      if: matrix.platform.os != 'windows-latest'
-      run: node scripts/git-dirty.js
+      - uses: actions/checkout@v3
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+          cache: npm
+      - run: node bin/npm-cli.js run resetdeps
+      - run: node bin/npm-cli.js test -w smoke-tests --ignore-scripts
+      - name: git status
+        if: matrix.platform.os != 'windows-latest'
+        run: node scripts/git-dirty.js
 
   test:
     strategy:
@@ -107,8 +90,8 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: npm
-    - run: node ./bin/npm-cli.js run resetdeps
-    - run: node ./bin/npm-cli.js run test --ignore-scripts
+    - run: node bin/npm-cli.js run resetdeps
+    - run: node bin/npm-cli.js run test --ignore-scripts
     - name: git status
       if: matrix.platform.os != 'windows-latest'
       run: node scripts/git-dirty.js
