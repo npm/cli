@@ -1,0 +1,49 @@
+{
+  "name": "smoke-tests",
+  "description": "The npm cli smoke tests",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "lint": "eslint \"**/*.js\"",
+    "postlint": "template-oss-check",
+    "template-oss-apply": "template-oss-apply --force",
+    "lintfix": "npm run lint -- --fix",
+    "preversion": "npm test",
+    "postversion": "git push origin --follow-tags",
+    "snap": "tap",
+    "test": "tap",
+    "posttest": "npm run lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/npm/cli.git",
+    "directory": "smoke-tests"
+  },
+  "devDependencies": {
+    "@npmcli/eslint-config": "^3.0.1",
+    "@npmcli/promise-spawn": "^3.0.0",
+    "@npmcli/template-oss": "3.3.2",
+    "minify-registry-metadata": "^2.2.0",
+    "rimraf": "^3.0.2",
+    "tap": "^16.0.1",
+    "which": "^2.0.2"
+  },
+  "author": "GitHub Inc.",
+  "license": "ISC",
+  "templateOSS": {
+    "//@npmcli/template-oss": "This file is partially managed by @npmcli/template-oss. Edits may be overwritten.",
+    "version": "3.3.2",
+    "workspaceRepo": false
+  },
+  "tap": {
+    "no-coverage": true,
+    "files": "test/index.js"
+  },
+  "files": [
+    "bin/",
+    "lib/"
+  ],
+  "engines": {
+    "node": "^12.13.0 || ^14.15.0 || >=16.0.0"
+  }
+}
