@@ -19,7 +19,6 @@ const npm = mockNpm({
   },
 })
 const mocks = {
-  ansistyles: { bright: a => a },
   npmlog: {
     gauge: { show () {} },
   },
