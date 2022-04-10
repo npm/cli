@@ -761,24 +761,24 @@ changed 1 package
 
 exports[`test/index.js TAP npm view > should have expected view output 1`] = `
 
-[4m[1m[32mabbrev[39m@[32m1.0.4[39m[22m[24m | [32mMIT[39m | deps: [32mnone[39m | versions: [33m8[39m
+abbrev@1.0.4 | MIT | deps: none | versions: 8
 Like ruby's abbrev module, but in js
-[36mhttps://github.com/isaacs/abbrev-js#readme[39m
+https://github.com/isaacs/abbrev-js#readme
 
 dist
-.tarball: [36mhttps://registry.npmjs.org/abbrev/-/abbrev-1.0.4.tgz[39m
-.shasum: [33mbd55ae5e413ba1722ee4caba1f6ea10414a59ecd[39m
+.tarball: https://registry.npmjs.org/abbrev/-/abbrev-1.0.4.tgz
+.shasum: bd55ae5e413ba1722ee4caba1f6ea10414a59ecd
 
 maintainers:
-- [33mnlf[39m <[36mquitlahok@gmail.com[39m>
-- [33mruyadorno[39m <[36mruyadorno@hotmail.com[39m>
-- [33mdarcyclarke[39m <[36mdarcy@darcyclarke.me[39m>
-- [33madam_baldwin[39m <[36mevilpacket@gmail.com[39m>
-- [33misaacs[39m <[36mi@izs.me[39m>
+- nlf <quitlahok@gmail.com>
+- ruyadorno <ruyadorno@hotmail.com>
+- darcyclarke <darcy@darcyclarke.me>
+- adam_baldwin <evilpacket@gmail.com>
+- isaacs <i@izs.me>
 
 dist-tags:
-[1m[32mlatest[39m[22m: 1.1.1
+latest: 1.1.1
 
-published [33mover a year ago[39m by [33misaacs[39m <[36mi@izs.me[39m>
+published over a year ago by isaacs <i@izs.me>
 
 `
