@@ -7,83 +7,94 @@ on:
         description: "6.x.x or latest"
         required: true
         default: 'latest'
-
+      dryRun:
+        description: "Do a dry run"
+        required: true
+        default: false
 
 jobs:
   create-pull-request:
     runs-on: ubuntu-latest
-    env:
-      GITHUB_TOKEN: ${{ secrets.NPM_ROBOT_USER_PAT }}
-      NPM_VERSION: ${{ github.event.inputs.npmVersion }}
-      SUPPORT_BRANCH: "v14.x-staging"
     steps:
-      - name: Update gh cli & install jq parser
-        run: |
-          sudo apt-get update -y
-          sudo apt update
-          sudo apt-get install -y jq
-          sudo apt install gh
       - name: Checkout npm/node
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
           ref: master
-          repository: "npm/node"
+          repository: npm/node
           token: ${{ secrets.NPM_ROBOT_USER_PAT }}
-      - name: Pull (Fast-Forward) upstream
-        id: sync
-        uses: aormsby/Fork-Sync-With-Upstream-action@v2.1
-        with:
-          upstream_repository: nodejs/node
-          upstream_branch: master
-          target_branch: master
-          git_pull_args: --ff-only                    # optional arg use, defaults to simple 'pull'
-          github_token: ${{ secrets.NPM_ROBOT_USER_PAT }}   # optional, for accessing repos that require authentication
-      - name: Run dependency updates and create PR
+      - name: Setup git user
         run: |
+          git config --global user.email "npm team"
+          git config --global user.name "ops+robot@npmjs.com"
+      - name: Sync upstream changes
+        uses: aormsby/Fork-Sync-With-Upstream-action@v3
+        with:
+          target_sync_branch: master
+          target_repo_token: ${{ secrets.NPM_ROBOT_USER_PAT }}
+          upstream_sync_branch: master
+          upstream_sync_repo: nodejs/node
+          upstream_pull_args: --ff-only
+      - name: Run dependency updates and create PR
+        env:
+          GITHUB_TOKEN: ${{ secrets.NPM_ROBOT_USER_PAT }}
+        run: |
+          dry_run="${{ github.event.inputs.dryRun }}"
+          npm_version="${{ github.event.inputs.npmVersion }}"
           npm_tag=""
           base_branch=""
-          if [ "$NPM_VERSION" == "latest" ]
-          then 
+
+          if [ "$npm_version" == "latest" ]; then 
             npm_tag=`npm view npm@latest version`
             base_branch="master"
           else
-            npm_tag="$NPM_VERSION"
+            npm_tag="$npm_version"
             base_branch="v14.x-staging"
-          fi 
+          fi
 
-          git config user.name "npm team"
-          git config user.email "ops+robot@npmjs.com"
-          git checkout -b "npm-$npm_tag"
+          npm_vtag="v$npm_tag"
+          npm_branch="npm-$npm_tag"
+          message="deps: upgrade npm to $npm_tag"
 
-          BASE_DIR="$( pwd )"/ 
-          DEPS_DIR="$BASE_DIR"deps/ 
+          git checkout -b "$npm_branch"
 
           echo "Cloning CLI repo"
           gh repo clone npm/cli
 
           echo "Prepping CLI repo for release"
           cd cli
-          git checkout v"$npm_tag"
+          git checkout "$npm_vtag"
           make
           make release
 
-
           echo "Removing old npm"
-          cd "$DEPS_DIR"
+          base_dir="$( pwd )"/ 
+          deps_dir="$base_dir"deps/ 
+          cd "$deps_dir"
           rm -rf npm/
 
           echo "Copying new npm"
-          tar zxf "$BASE_DIR"cli/release/npm-"$npm_tag".tgz
+          tar zxf "$base_dir"cli/release/"$npm_branch".tgz
 
           echo "Removing CLI workspace"
-          cd "$BASE_DIR"
+          cd "$base_dir"
           rm -rf cli
 
           git add -A deps/npm
-          git commit -m "deps: upgrade npm to $npm_tag"
+          git commit -m "$message"
           git rebase --whitespace=fix master
-          git push origin "npm-$npm_tag"
-          gh_release_body=`gh release view v"$npm_tag" -R npm/cli --json body | jq -r '.body'`
+          git push origin "$npm_branch"
 
-          gh pr create -R "nodejs/node" -B "$base_branch" -H "npm:npm-$npm_tag" --title "deps: upgrade npm to $npm_tag" --body "$gh_release_body"
+          gh_release=`gh release view "$npm_vtag" -R npm/cli --json body -q ".body"`
+          
+          if [[ "$dry_run" == "true" ]]; then
+            echo $gh_release
+            echo $message
+            echo $npm_branch
+            echo $base_branch
+            echo $npm_vtag
+          else
+            gh pr create -R nodejs/node -B "$base_branch" -H "npm:$npm_branch" -t "$message" -b "$gh_release"
+          fi
+
+         
