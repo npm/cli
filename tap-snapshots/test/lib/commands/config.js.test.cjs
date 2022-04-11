@@ -343,7 +343,7 @@ userconfig = "{HOME}/.npmrc"
 
 ; node bin location = {EXECPATH}
 ; node version = {NODE-VERSION}
-; npm bin location = {NPMDIR}
+; npm local prefix = {LOCALPREFIX}
 ; npm version = {NPM-VERSION}
 ; cwd = {NPMDIR}
 ; HOME = {HOME}
@@ -359,7 +359,7 @@ userconfig = "{HOME}/.npmrc"
 
 ; node bin location = {EXECPATH}
 ; node version = {NODE-VERSION}
-; npm bin location = {NPMDIR}
+; npm local prefix = {LOCALPREFIX}
 ; npm version = {NPM-VERSION}
 ; cwd = {NPMDIR}
 ; HOME = {HOME}
@@ -390,7 +390,7 @@ userconfig = "{HOME}/.npmrc"
 
 ; node bin location = {EXECPATH}
 ; node version = {NODE-VERSION}
-; npm bin location = {NPMDIR}
+; npm local prefix = {LOCALPREFIX}
 ; npm version = {NPM-VERSION}
 ; cwd = {NPMDIR}
 ; HOME = {HOME}
