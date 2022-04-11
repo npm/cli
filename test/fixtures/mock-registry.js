@@ -40,8 +40,69 @@ class MockRegistry {
     this.#nock = nock
   }
 
-  async whoami ({ username }) {
+  whoami ({ username }) {
     this.nock.get('/-/whoami').reply(200, { username })
+  }
+
+  access ({ spec, access, publishRequires2fa }) {
+    const body = {}
+    if (access !== undefined) {
+      body.access = access
+    }
+    if (publishRequires2fa !== undefined) {
+      body.publish_requires_tfa = publishRequires2fa
+    }
+    this.nock.post(
+      `/-/package/${encodeURIComponent(spec)}/access`,
+      body
+    ).reply(200)
+  }
+
+  grant ({ spec, team, permissions }) {
+    if (team.startsWith('@')) {
+      team = team.slice(1)
+    }
+    const [scope, teamName] = team.split(':')
+    this.nock.put(
+      `/-/team/${encodeURIComponent(scope)}/${encodeURIComponent(teamName)}/package`,
+      { package: spec, permissions }
+    ).reply(200)
+  }
+
+  revoke ({ spec, team }) {
+    if (team.startsWith('@')) {
+      team = team.slice(1)
+    }
+    const [scope, teamName] = team.split(':')
+    this.nock.delete(
+      `/-/team/${encodeURIComponent(scope)}/${encodeURIComponent(teamName)}/package`,
+      { package: spec }
+    ).reply(200)
+  }
+
+  // team can be a team or a username
+  lsPackages ({ team, packages = {} }) {
+    if (team.startsWith('@')) {
+      team = team.slice(1)
+    }
+    const [scope, teamName] = team.split(':')
+    let uri
+    if (teamName) {
+      uri = `/-/team/${encodeURIComponent(scope)}/${encodeURIComponent(teamName)}/package`
+    } else {
+      uri = `/-/org/${encodeURIComponent(scope)}/package`
+    }
+    this.nock.get(uri).query({ format: 'cli' }).reply(200, packages)
+  }
+
+  lsCollaborators ({ spec, user, collaborators = {} }) {
+    const query = { format: 'cli' }
+    if (user) {
+      query.user = user
+    }
+    this.nock.get(`/-/package/${encodeURIComponent(spec)}/collaborators`)
+      .query(query)
+      .reply(200, collaborators)
   }
 
   advisory (advisory = {}) {
