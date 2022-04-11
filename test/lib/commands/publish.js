@@ -163,9 +163,9 @@ t.test('if loglevel=info and json, should not output package contents', async t 
 
 t.test(
   /* eslint-disable-next-line max-len */
-  'if loglevel=silent and dry-run, should not output package contents or publish or validate credentials, should log tarball contents',
+  'if loglevel=silent and dry-run, should not output package contents or publish, should log tarball contents',
   async t => {
-    t.plan(1)
+    t.plan(2)
 
     const testDir = t.testdir({
       'package.json': JSON.stringify(
@@ -199,8 +199,9 @@ t.test(
         throw new Error('should not output in dry run mode')
       },
     }, t)
-    npm.config.getCredentialsByURI = () => {
-      throw new Error('should not call getCredentialsByURI in dry run')
+    npm.config.getCredentialsByURI = uri => {
+      t.same(uri, npm.config.get('registry'), 'gets credentials for expected registry')
+      return { token: 'some.registry.token' }
     }
 
     const publish = new Publish(npm)
@@ -213,7 +214,7 @@ t.test(
   /* eslint-disable-next-line max-len */
   'if loglevel=info and dry-run, should not publish, should log package contents and log tarball contents',
   async t => {
-    t.plan(2)
+    t.plan(3)
 
     const testDir = t.testdir({
       'package.json': JSON.stringify(
@@ -247,9 +248,11 @@ t.test(
         t.pass('output fn is called')
       },
     }, t)
-    npm.config.getCredentialsByURI = () => {
-      throw new Error('should not call getCredentialsByURI in dry run')
+    npm.config.getCredentialsByURI = uri => {
+      t.same(uri, npm.config.get('registry'), 'gets credentials for expected registry')
+      return { token: 'some.registry.token' }
     }
+
     const publish = new Publish(npm)
 
     await publish.exec([testDir])
