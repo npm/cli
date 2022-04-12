@@ -24,9 +24,6 @@
     "snap": "tap",
     "template-oss-apply": "template-oss-apply --force"
   },
-  "tap": {
-    "check-coverage": true
-  },
   "devDependencies": {
     "@npmcli/eslint-config": "^3.0.1",
     "@npmcli/template-oss": "3.3.2",

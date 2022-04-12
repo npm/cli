@@ -40,9 +40,6 @@
   "engines": {
     "node": "^12.13.0 || ^14.15.0 || >=16.0.0"
   },
-  "tap": {
-    "check-coverage": true
-  },
   "files": [
     "bin/",
     "lib/"
