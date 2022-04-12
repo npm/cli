@@ -1,5 +1,12 @@
 # Changelog
 
+### [3.0.3](https://github.com/npm/cli/compare/libnpmversion-v3.0.2...libnpmversion-v3.0.3) (2022-04-12)
+
+
+### Dependencies
+
+* remove stringify-package ([#4714](https://github.com/npm/cli/issues/4714)) ([e33aa0f](https://github.com/npm/cli/commit/e33aa0f94f87ae4f9d2a73781e84832ef61d1855))
+
 ### [3.0.2](https://github.com/npm/cli/compare/libnpmversion-v3.0.1...libnpmversion-v3.0.2) (2022-04-06)
 
 
