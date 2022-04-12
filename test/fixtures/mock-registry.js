@@ -41,7 +41,7 @@ class MockRegistry {
   }
 
   whoami ({ username }) {
-    this.nock.get('/-/whoami').reply(200, { username })
+    this.nock = this.nock.get('/-/whoami').reply(200, { username })
   }
 
   access ({ spec, access, publishRequires2fa }) {
@@ -52,7 +52,7 @@ class MockRegistry {
     if (publishRequires2fa !== undefined) {
       body.publish_requires_tfa = publishRequires2fa
     }
-    this.nock.post(
+    this.nock = this.nock.post(
       `/-/package/${encodeURIComponent(spec)}/access`,
       body
     ).reply(200)
@@ -63,7 +63,7 @@ class MockRegistry {
       team = team.slice(1)
     }
     const [scope, teamName] = team.split(':')
-    this.nock.put(
+    this.nock = this.nock.put(
       `/-/team/${encodeURIComponent(scope)}/${encodeURIComponent(teamName)}/package`,
       { package: spec, permissions }
     ).reply(200)
@@ -74,10 +74,37 @@ class MockRegistry {
       team = team.slice(1)
     }
     const [scope, teamName] = team.split(':')
-    this.nock.delete(
+    this.nock = this.nock.delete(
       `/-/team/${encodeURIComponent(scope)}/${encodeURIComponent(teamName)}/package`,
       { package: spec }
     ).reply(200)
+  }
+
+  couchlogin ({ username, password, email, otp, token = 'npm_default-test-token' }) {
+    this.nock = this.nock
+      .post('/-/v1/login').reply(401, { error: 'You must be logged in to publish packages.' })
+    if (otp) {
+      // TODO otp failure results in a 401 with
+      // {"ok":false,"error":"failed to authenticate: Could not authenticate ${username}: bad otp"}
+    }
+    this.nock = this.nock.put(`/-/user/org.couchdb.user:${username}`, body => {
+      this.#tap.match(body, {
+        _id: `org.couchdb.user:${username}`,
+        name: username,
+        password,
+        type: 'user',
+        roles: [],
+      })
+      if (!body.date) {
+        return false
+      }
+      return true
+    }).reply(201, {
+      ok: true,
+      id: 'org.couchdb.user:undefined',
+      rev: '_we_dont_use_revs_any_more',
+      token,
+    })
   }
 
   // team can be a team or a username
@@ -92,7 +119,7 @@ class MockRegistry {
     } else {
       uri = `/-/org/${encodeURIComponent(scope)}/package`
     }
-    this.nock.get(uri).query({ format: 'cli' }).reply(200, packages)
+    this.nock = this.nock.get(uri).query({ format: 'cli' }).reply(200, packages)
   }
 
   lsCollaborators ({ spec, user, collaborators = {} }) {
@@ -100,7 +127,7 @@ class MockRegistry {
     if (user) {
       query.user = user
     }
-    this.nock.get(`/-/package/${encodeURIComponent(spec)}/collaborators`)
+    this.nock = this.nock.get(`/-/package/${encodeURIComponent(spec)}/collaborators`)
       .query(query)
       .reply(200, collaborators)
   }
