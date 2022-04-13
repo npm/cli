@@ -8,6 +8,11 @@ const config = require('@npmcli/template-oss')
 const { resolve, relative } = require('path')
 
 const exec = (...args) => execSync(...args).toString().trim()
+const today = () => {
+  const d = new Date()
+  const pad = s => s.toString().padStart(2, '0')
+  return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`
+}
 
 const usage = () => `
   node ${relative(process.cwd(), __filename)} [--read|-r] [--write|-w] [tag]
@@ -74,7 +79,7 @@ const RELEASE = {
     return s.startsWith(TAG_PREFIX) ? s : TAG_PREFIX + s
   },
   date (d) {
-    return `(${d || exec('date +%Y-%m-%d')})`
+    return `(${d})`
   },
   title (v, d) {
     return `${this.heading}${this.version(v)} ${this.date(d)}`
@@ -313,7 +318,7 @@ const generateRelease = async (args) => {
   // this doesnt work with majors but we dont do those very often
   const semverBump = commits.Features.length ? 'minor' : 'patch'
   const version = TAG_PREFIX + semver.parse(args.startTag).inc(semverBump).version
-  const date = args.endTag && exec(`git log -1 --date=short --format=%ad ${args.endTag}`)
+  const date = args.endTag ? exec(`git log -1 --date=short --format=%ad ${args.endTag}`) : today()
 
   const output = logger(RELEASE.title(version, date) + '\n')
 
@@ -350,6 +355,7 @@ const generateRelease = async (args) => {
   }
 
   return {
+    date,
     version,
     release: output.toString(),
   }
@@ -370,10 +376,13 @@ const main = async (argv) => {
   }
 
   // otherwise fetch the requested release from github
-  const { release, version } = await generateRelease(args)
+  const { release, version, date } = await generateRelease(args)
 
-  let msg = 'Edit release notes and run:\n'
-  msg += `git add CHANGELOG.md && git commit -m 'chore: changelog for ${version}'`
+  try {
+    exec(`node scripts/release-manager.js --update --version=${version.slice(1)} --date=${date}`)
+  } catch {
+    // optionally update release manager issue
+  }
 
   if (args.write) {
     const { release: existing, changelog } = findRelease(args, version)
@@ -386,14 +395,12 @@ const main = async (argv) => {
         : changelog.replace(RELEASE.h1, RELEASE.h1 + release + RELEASE.sep),
       'utf-8'
     )
-    return console.error([
-      `Release notes for ${version} written to "./${relative(process.cwd(), args.file)}".`,
-      msg,
-    ].join('\n'))
+    return console.log(
+      `Release notes for ${version} written to "./${relative(process.cwd(), args.file)}".`
+    )
   }
 
   console.log(release)
-  console.error('\n' + msg)
 }
 
 main(process.argv.slice(2))
