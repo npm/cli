@@ -1149,6 +1149,9 @@ class Node {
       for (const kid of node.children.values()) {
         kid.parent = this
       }
+      if (node.isLink && node.target) {
+        node.target.root = null
+      }
     }
 
     if (!node.isRoot) {
