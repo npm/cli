@@ -1,7 +1,6 @@
 const t = require('tap')
 
 let log = ''
-let warn = ''
 
 const _flatOptions = {
   ssoType: 'oauth',
@@ -14,9 +13,6 @@ const sso = t.mock('../../../lib/auth/sso.js', {
   'proc-log': {
     info: (...msgs) => {
       log += msgs.join(' ') + '\n'
-    },
-    warn: (...msgs) => {
-      warn += msgs.join(' ')
     },
   },
   'npm-profile': profile,
@@ -44,15 +40,8 @@ t.test('empty login', async (t) => {
     'should throw if no sso-type defined in flatOptions'
   )
 
-  t.equal(
-    warn,
-    'deprecated SSO --auth-type is deprecated',
-    'should print deprecation warning'
-  )
-
   _flatOptions.ssoType = 'oauth'
   log = ''
-  warn = ''
 })
 
 t.test('simple login', async (t) => {
@@ -104,7 +93,6 @@ t.test('simple login', async (t) => {
   )
 
   log = ''
-  warn = ''
   delete profile.loginCouch
   delete npmFetch.json
 })
@@ -151,7 +139,6 @@ t.test('polling retry', async (t) => {
   })
 
   log = ''
-  warn = ''
   delete profile.loginCouch
   delete npmFetch.json
 })
@@ -174,7 +161,6 @@ t.test('polling error', async (t) => {
   )
 
   log = ''
-  warn = ''
   delete profile.loginCouch
   delete npmFetch.json
 })
@@ -193,7 +179,6 @@ t.test('no token retrieved from loginCouch', async (t) => {
   )
 
   log = ''
-  warn = ''
   delete profile.loginCouch
 })
 
@@ -211,7 +196,6 @@ t.test('no sso url retrieved from loginCouch', async (t) => {
   )
 
   log = ''
-  warn = ''
   delete profile.loginCouch
 })
 
@@ -247,7 +231,6 @@ t.test('scoped login', async (t) => {
   )
 
   log = ''
-  warn = ''
   delete profile.loginCouch
   delete npmFetch.json
 })
