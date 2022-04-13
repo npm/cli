@@ -85,7 +85,7 @@ test-all: deps
 	node bin/npm-cli.js run test-all
 
 ls-ok:
-	node bin/npm-cli.js ls --production >/dev/null
+	node bin/npm-cli.js ls --omit=dev >/dev/null
 
 gitclean:
 	git clean -fd
@@ -97,7 +97,7 @@ link: uninstall
 	node bin/npm-cli.js link -f --ignore-scripts
 
 prune: deps
-	node bin/npm-cli.js prune --production --no-save --no-audit --no-fund
+	node bin/npm-cli.js prune --omit=dev --no-save --no-audit --no-fund
 	node scripts/git-dirty.js
 
 publish: gitclean ls-ok link test-all docs prune
