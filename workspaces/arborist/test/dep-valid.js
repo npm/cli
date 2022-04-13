@@ -176,3 +176,11 @@ t.test('invalid request all together', t => {
   }, 'parent got an error for their invalid request')
   t.end()
 })
+
+t.test('installLinks makes Link nodes invalid', t => {
+  const requestor = { errors: [], installLinks: true }
+  const child = { isLink: true, name: 'kid' }
+  const request = { type: 'directory' }
+  t.notOk(depValid(child, request, null, requestor))
+  t.end()
+})

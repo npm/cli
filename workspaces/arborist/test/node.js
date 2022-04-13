@@ -328,6 +328,16 @@ t.test('testing with dep tree', t => {
       t.equal(prodLink.children.size, 0, 'links do not have child nodes')
       t.equal(prodLink.target.children.size, kidCount, 'link target has children')
 
+      t.equal(newProd.canReplace(prodLink), true, 'node can replace link')
+      const { target } = prodLink
+      newProd.replace(prodLink)
+      t.equal(prodLink.parent, null, 'prodLink removed from tree')
+      t.equal(prodLink.target, null, 'prodLink lost its target')
+      t.equal(prodLink.root, prodLink, 'prodLink removed from tree')
+      t.equal(target.root, target, 'prodLinks old target removed from tree')
+      t.equal(normalizePath(newProd.path), normalizePath(prodLink.path), 'replaced node')
+      t.equal(prodLink.children.size, 0, 'prodLink has no child nodes')
+
       t.end()
     })
 

@@ -86,6 +86,7 @@ class Node {
       name,
       children,
       fsChildren,
+      installLinks = false,
       legacyPeerDeps = false,
       linksIn,
       hasShrinkwrap,
@@ -152,6 +153,7 @@ class Node {
     }
     this.integrity = integrity || pkg._integrity || null
     this.hasShrinkwrap = hasShrinkwrap || pkg._hasShrinkwrap || false
+    this.installLinks = installLinks
     this.legacyPeerDeps = legacyPeerDeps
 
     this.children = new CaseInsensitiveMap()
