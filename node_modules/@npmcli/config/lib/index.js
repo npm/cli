@@ -506,10 +506,9 @@ class Config {
   }
 
   [_checkDeprecated] (key, where, obj, kv) {
-    // XXX a future npm version will make this a warning.
-    // An even more future npm version will make this an error.
+    // XXX(npm9+) make this throw an error
     if (this.deprecated[key]) {
-      log.verbose('config', key, this.deprecated[key])
+      log.warn('config', key, this.deprecated[key])
     }
   }
 
