@@ -76,6 +76,7 @@ Array [
   "init.license",
   "init.module",
   "init.version",
+  "install-links",
   "json",
   "key",
   "legacy-bundling",
@@ -971,6 +972,17 @@ exports[`test/lib/utils/config/definitions.js TAP > config description for init.
 * DEPRECATED: Use \`--init-version\` instead.
 
 Alias for \`--init-version\`
+`
+
+exports[`test/lib/utils/config/definitions.js TAP > config description for install-links 1`] = `
+#### \`install-links\`
+
+* Default: false
+* Type: Boolean
+
+When set file: protocol dependencies that exist outside of the project root
+will be packed and installed as regular dependencies instead of creating a
+symlink. This option has no effect on workspaces.
 `
 
 exports[`test/lib/utils/config/definitions.js TAP > config description for json 1`] = `
