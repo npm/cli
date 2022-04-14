@@ -24,9 +24,11 @@ misc_mandocs = $(shell find docs/content/using-npm -name '*.md' \
 
 mandocs = $(cli_mandocs) $(files_mandocs) $(misc_mandocs)
 
+markdown_docs = $(shell for file in $(find lib/commands -name '*.js'); do echo docs/content/commands/npm-$(basename $file .js).md; done)
+
 all: docs
 
-docs: mandocs htmldocs
+docs: mandocs htmldocs $(markdown_docs)
 
 # don't regenerate the snapshot if we're generating
 # snapshots, since presumably we just did that.
