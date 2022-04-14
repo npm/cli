@@ -40,8 +40,12 @@ class MockRegistry {
     this.#nock = nock
   }
 
-  whoami ({ username }) {
-    this.nock = this.nock.get('/-/whoami').reply(200, { username })
+  whoami ({ username, body, responseCode = 200, times = 1 }) {
+    if (username) {
+      this.nock = this.nock.get('/-/whoami').times(times).reply(responseCode, { username })
+    } else {
+      this.nock = this.nock.get('/-/whoami').times(times).reply(responseCode, body)
+    }
   }
 
   access ({ spec, access, publishRequires2fa }) {
@@ -108,7 +112,7 @@ class MockRegistry {
   }
 
   // team can be a team or a username
-  lsPackages ({ team, packages = {} }) {
+  lsPackages ({ team, packages = {}, times = 1 }) {
     if (team.startsWith('@')) {
       team = team.slice(1)
     }
@@ -119,7 +123,7 @@ class MockRegistry {
     } else {
       uri = `/-/org/${encodeURIComponent(scope)}/package`
     }
-    this.nock = this.nock.get(uri).query({ format: 'cli' }).reply(200, packages)
+    this.nock = this.nock.get(uri).query({ format: 'cli' }).times(times).reply(200, packages)
   }
 
   lsCollaborators ({ spec, user, collaborators = {} }) {
@@ -169,8 +173,10 @@ class MockRegistry {
     this.nock = nock
   }
 
-  // the last packument in the packuments array will be tagged as latest
-  manifest ({ name = 'test-package', packuments } = {}) {
+  // either pass in packuments if you need to set specific attributes besides version,
+  // or an array of versions
+  // the last packument in the packuments or versions array will be tagged latest
+  manifest ({ name = 'test-package', packuments, versions } = {}) {
     packuments = this.packuments(packuments, name)
     const latest = packuments.slice(-1)[0]
     const manifest = {
@@ -183,6 +189,9 @@ class MockRegistry {
       time: {},
       'dist-tags': { latest: latest.version },
       ...latest,
+    }
+    if (versions) {
+      packuments = versions.map(version => ({ version }))
     }
 
     for (const packument of packuments) {
