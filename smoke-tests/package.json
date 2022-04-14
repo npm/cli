@@ -37,6 +37,7 @@
   },
   "tap": {
     "no-coverage": true,
+    "timeout": 300,
     "files": "test/index.js"
   },
   "files": [
