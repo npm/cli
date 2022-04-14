@@ -8,9 +8,8 @@ on:
         required: true
         default: 'latest'
       dryRun:
-        description: "Do a dry run"
-        required: true
-        default: false
+        description: "Do a dry run?"
+        default: ''
 
 jobs:
   create-pull-request:
@@ -28,7 +27,7 @@ jobs:
           git config --global user.email "npm team"
           git config --global user.name "ops+robot@npmjs.com"
       - name: Sync upstream changes
-        uses: aormsby/Fork-Sync-With-Upstream-action@v3
+        uses: aormsby/Fork-Sync-With-Upstream-action@v3.2
         with:
           target_sync_branch: master
           target_repo_token: ${{ secrets.NPM_ROBOT_USER_PAT }}
@@ -39,6 +38,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.NPM_ROBOT_USER_PAT }}
         run: |
+          base_dir="$( pwd )"/ 
           dry_run="${{ github.event.inputs.dryRun }}"
           npm_version="${{ github.event.inputs.npmVersion }}"
           npm_tag=""
@@ -68,8 +68,7 @@ jobs:
           make release
 
           echo "Removing old npm"
-          base_dir="$( pwd )"/ 
-          deps_dir="$base_dir"deps/ 
+          deps_dir="$base_dir"deps/
           cd "$deps_dir"
           rm -rf npm/
 
@@ -83,18 +82,16 @@ jobs:
           git add -A deps/npm
           git commit -m "$message"
           git rebase --whitespace=fix master
-          git push origin "$npm_branch"
-
-          gh_release=`gh release view "$npm_vtag" -R npm/cli --json body -q ".body"`
           
           if [[ "$dry_run" == "true" ]]; then
-            echo $gh_release
+            git status
+            git show --summary
             echo $message
             echo $npm_branch
             echo $base_branch
             echo $npm_vtag
           else
-            gh pr create -R nodejs/node -B "$base_branch" -H "npm:$npm_branch" -t "$message" -b "$gh_release"
+            git push origin "$npm_branch"
+            gh release view "$npm_vtag" -R npm/cli --json body -q ".body" | \
+            gh pr create -R nodejs/node -B "$base_branch" -H "npm:$npm_branch" -t "$message" -F -
           fi
-
-         
