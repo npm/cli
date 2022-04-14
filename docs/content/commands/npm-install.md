@@ -91,12 +91,12 @@ into a tarball (b).
     *npm will not install the package dependencies* in the directory `<folder>`, 
     but it will create a symlink to `<folder>`.
 
-    > NOTE: If you want to install the content of a directory like a package from the registry instead of creating a link, you would need to use [`npm pack`](/commands/npm-pack) while in the `<folder>` directory, and then install the resulting tarball instead of the `<folder>` using `npm install <tarball file>`
+    > NOTE: If you want to install the content of a directory like a package from the registry instead of creating a link, you would need to use the `--install-links` option.
 
     Example:
 
     ```bash
-    npm install ../../other-package
+    npm install ../../other-package --install-links
     npm install ./sub-package
     ```
 
