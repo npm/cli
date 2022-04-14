@@ -73,13 +73,22 @@ man/man7/%.7: docs/content/using-npm/%.md docs/bin/docs-build.js
 docs/content/using-npm/config.md: docs/bin/config-doc.js lib/utils/config/*.js
 	node docs/bin/config-doc.js
 
-docs/content/commands/npm-%.md: docs/bin/config-doc-command.js lib/commands/%.js lib/utils/config/*.js lib/utils/cmd-list.js
+mddocs: docs/bin/config-doc-command.js lib/utils/config/*.js lib/utils/cmd-list.js
+	@for file in $(shell find docs/content/commands -name 'npm-*.md'); do \
+		cmdname=$$(basename $$file .md) ;\
+		cmdname=$${cmdname##npm-} ;\
+		echo node docs/bin/config-doc-command.js $${file} lib/commands/$${cmdname}.js ;\
+		node docs/bin/config-doc-command.js $${file} lib/commands/$${cmdname}.js ;\
+	done
+
+docs/content/commands/npm-%.md: lib/commands/%.js
 	node docs/bin/config-doc-command.js $@ $<
 
 freshdocs:
 	touch lib/utils/config/definitions.js
 	touch docs/bin/*.js
 	make docs
+	make mddocs
 
 test-all: deps
 	node bin/npm-cli.js run test-all
@@ -108,4 +117,4 @@ publish: gitclean ls-ok link test-all docs prune
 release: gitclean ls-ok docs prune
 	@bash scripts/release.sh
 
-.PHONY: all latest install dev link docs clean uninstall test-all man docsclean release ls-ok deps prune freshdocs
+.PHONY: all latest install dev link docs mddocs clean uninstall test-all man docsclean release ls-ok deps prune freshdocs
