@@ -16,19 +16,19 @@
   "scripts": {
     "eslint": "eslint",
     "lint": "eslint \"**/*.js\"",
-    "lintfix": "npm run lint -- --fix",
-    "preversion": "npm test",
-    "postversion": "npm publish",
+    "lintfix": "node ../../bin/npm-cli.js run lint -- --fix",
+    "preversion": "node ../../bin/npm-cli.js test",
+    "postversion": "node ../../bin/npm-cli.js publish",
     "prepublishOnly": "git push origin --follow-tags",
     "test": "tap",
-    "posttest": "npm run lint",
+    "posttest": "node ../../bin/npm-cli.js run lint",
     "postlint": "template-oss-check",
     "snap": "tap",
     "template-oss-apply": "template-oss-apply --force"
   },
   "devDependencies": {
     "@npmcli/eslint-config": "^3.0.1",
-    "@npmcli/template-oss": "3.3.2",
+    "@npmcli/template-oss": "github:npm/template-oss#lk/npm-bin",
     "libnpmpack": "^4.0.0",
     "lodash.clonedeep": "^4.5.0",
     "nock": "^13.2.4",
@@ -53,6 +53,7 @@
   },
   "templateOSS": {
     "//@npmcli/template-oss": "This file is partially managed by @npmcli/template-oss. Edits may be overwritten.",
-    "version": "3.3.2"
+    "version": "3.3.2",
+    "npmBin": "node ../../bin/npm-cli.js"
   }
 }

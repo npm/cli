@@ -7,12 +7,12 @@
     "lint": "eslint \"**/*.js\"",
     "postlint": "template-oss-check",
     "template-oss-apply": "template-oss-apply --force",
-    "lintfix": "npm run lint -- --fix",
-    "preversion": "npm test",
+    "lintfix": "node ../bin/npm-cli.js run lint -- --fix",
+    "preversion": "node ../bin/npm-cli.js test",
     "postversion": "git push origin --follow-tags",
     "snap": "tap",
     "test": "tap",
-    "posttest": "npm run lint"
+    "posttest": "node ../bin/npm-cli.js run lint"
   },
   "repository": {
     "type": "git",
@@ -22,7 +22,7 @@
   "devDependencies": {
     "@npmcli/eslint-config": "^3.0.1",
     "@npmcli/promise-spawn": "^3.0.0",
-    "@npmcli/template-oss": "3.3.2",
+    "@npmcli/template-oss": "github:npm/template-oss#lk/npm-bin",
     "minify-registry-metadata": "^2.2.0",
     "rimraf": "^3.0.2",
     "tap": "^16.0.1",
@@ -33,7 +33,8 @@
   "templateOSS": {
     "//@npmcli/template-oss": "This file is partially managed by @npmcli/template-oss. Edits may be overwritten.",
     "version": "3.3.2",
-    "workspaceRepo": false
+    "workspaceRepo": false,
+    "npmBin": "node ../bin/npm-cli.js"
   },
   "tap": {
     "no-coverage": true,
