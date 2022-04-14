@@ -2815,5 +2815,53 @@ t.test('installLinks', (t) => {
     t.ok(abbrev.isDirectory(), 'abbrev got installed')
   })
 
+  t.test('workspaces are always symlinks, even with installLinks set to true', async (t) => {
+    const path = t.testdir({
+      a: {
+        'package.json': JSON.stringify({
+          name: 'a',
+          version: '1.0.0',
+          main: 'index.js',
+          dependencies: {
+            b: 'file:../b',
+            c: '^1.0.0',
+          },
+          workspaces: ['./c'],
+        }),
+        'index.js': '',
+        c: {
+          'package.json': JSON.stringify({
+            name: 'c',
+            version: '1.0.0',
+            main: 'index.js',
+          }),
+          'index.js': '',
+        },
+      },
+      b: {
+        'package.json': JSON.stringify({
+          name: 'b',
+          version: '1.0.0',
+          main: 'index.js',
+          dependencies: {
+            abbrev: '^1.0.0',
+          },
+        }),
+        'index.js': '',
+      },
+    })
+
+    await reify(resolve(path, 'a'), { installLinks: true })
+
+    const installedB = fs.lstatSync(resolve(path, 'a/node_modules/b'))
+    t.ok(installedB.isDirectory(), 'a/node_modules/b is a directory')
+
+    const installedC = fs.lstatSync(resolve(path, 'a/node_modules/c'))
+    t.ok(installedC.isSymbolicLink(), 'a/node_modules/c is a symlink')
+
+    const abbrev = fs.lstatSync(resolve(path, 'a/node_modules/abbrev'))
+    t.ok(abbrev.isDirectory(), 'abbrev got installed')
+  })
+
   t.end()
 })
