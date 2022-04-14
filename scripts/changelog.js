@@ -97,7 +97,7 @@ const assertArgs = (args) => {
     return process.exit(0)
   }
 
-  if (args.unsafe) {
+  if (args.force) {
     // just to make manual testing easier
     return args
   }
@@ -109,7 +109,7 @@ const assertArgs = (args) => {
     const current = exec(`git rev-parse --abbrev-ref HEAD`)
 
     if (current !== args.branch) {
-      throw new Error(`Must be on branch "${args.branch}"`)
+      throw new Error(`Must be on branch "${args.branch}", rerun with --force to override`)
     }
 
     const localLog = exec(`git log ${remoteBranch}..HEAD`).length > 0
@@ -130,10 +130,11 @@ const parseArgs = (argv) => {
     branch: 'latest',
     remote: 'origin',
     type: 'md', // or 'gh'
+    format: 'short', // or 'long'
     write: false,
     read: false,
     help: false,
-    unsafe: false,
+    force: false,
   }
 
   for (const arg of argv) {
@@ -270,6 +271,29 @@ const generateRelease = async (args) => {
     let [title, ...body] = message.split('\n')
 
     const prs = commit.associatedPullRequests.nodes.filter((pull) => pull.merged)
+
+    // external squashed PRs dont get the associated pr node set
+    // so we try to grab it from the end of the commit title
+    // since thats where it goes by default
+    const [, titleNumber] = title.match(/\s+\(#(\d+)\)$/) || []
+    console.log(prs, titleNumber)
+    if (titleNumber && !prs.find((pr) => pr.number === +titleNumber)) {
+      console.log('no title')
+      try {
+        // it could also reference an issue so we do one extra check
+        // to make sure it is really a pr that has been merged
+        const realPr = JSON.parse(exec(`gh pr view ${titleNumber} --json url,number,state`, {
+          stdio: 'pipe',
+        }))
+        if (realPr.state === 'MERGED') {
+          prs.push(realPr)
+        }
+      } catch {
+        // maybe an issue or something else went wrong
+        // not super important so keep going
+      }
+    }
+
     for (const pr of prs) {
       title = title.replace(new RegExp(`\\s*\\(#${pr.number}\\)`, 'g'), '')
     }
@@ -343,7 +367,8 @@ const generateRelease = async (args) => {
         }
 
         output.group(groupCommit)
-        if (commit.body && commit.body.length) {
+        // only optionally add full commit bodies to changelog
+        if (commit.body && commit.body.length && args.format === 'long') {
           output.log(commit.body)
         }
         output.groupEnd()
@@ -378,13 +403,18 @@ const main = async (argv) => {
   // otherwise fetch the requested release from github
   const { release, version, date } = await generateRelease(args)
 
-  try {
-    exec(`node scripts/release-manager.js --update --version=${version.slice(1)} --date=${date}`)
-  } catch {
-    // optionally update release manager issue
-  }
-
   if (args.write) {
+    // only try and run release manager issue update on write since that signals
+    // the first time we know the version of the release
+    try {
+      exec(
+        `node scripts/release-manager.js --update --version=${version.slice(1)} --date=${date}`, {
+          stdio: 'pipe',
+        })
+    } catch (e) {
+      console.error(`Updating release manager issue failed: ${e.stderr}`)
+    }
+
     const { release: existing, changelog } = findRelease(args, version)
     fs.writeFileSync(
       args.file,
