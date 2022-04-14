@@ -177,13 +177,13 @@ const findRelease = (args, version) => {
     RELEASE.heading,
     v ? escRegExp(v) : RELEASE.versionRe,
     ' ',
-    escRegExp(RELEASE.date()).replace(/\d/g, '\\d'),
+    escRegExp(RELEASE.date(today())).replace(/\d/g, '\\d'),
     '$',
   ].join('')
 
   const releaseSrc = [
     '(',
-    titleSrc(RELEASE.version(version)),
+    titleSrc(version && RELEASE.version(version)),
     '[\\s\\S]*?',
     RELEASE.sep,
     ')',
@@ -366,11 +366,11 @@ const main = async (argv) => {
 
   if (args.read) {
     // this reads the release notes for that version
-    let { release } = findRelease(args, args.endTag || args.startTag)
+    let { release } = findRelease(args, args.tag)
     if (args.type === 'gh') {
       // changelog was written in markdown so convert user links to gh release style
       // XXX: this needs to be changed if the `generateRelease` format changes
-      release = release.replace(/\(\[(@[a-z\d-]+)\]\(https:\/\/github.com\/[a-z\d-]+\)\)/g, '($1)')
+      release = release.replace(/\(\[(@[a-z\d-]+)\]\(https:\/\/github.com\/[a-z\d-]+\)\)/gi, '($1)')
     }
     return console.log(release)
   }
