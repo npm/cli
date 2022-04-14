@@ -76,7 +76,6 @@ graph LR;
   libnpmversion-->npmcli-template-oss["@npmcli/template-oss"];
   libnpmversion-->proc-log;
   libnpmversion-->semver;
-  libnpmversion-->stringify-package;
   make-fetch-happen-->cacache;
   make-fetch-happen-->minipass-fetch;
   make-fetch-happen-->ssri;
@@ -405,7 +404,6 @@ graph LR;
   libnpmversion-->proc-log;
   libnpmversion-->require-inject;
   libnpmversion-->semver;
-  libnpmversion-->stringify-package;
   libnpmversion-->tap;
   make-fetch-happen-->agentkeepalive;
   make-fetch-happen-->cacache;
@@ -456,8 +454,6 @@ graph LR;
   normalize-package-data-->semver;
   normalize-package-data-->validate-npm-package-license;
   npm-->abbrev;
-  npm-->ansicolors;
-  npm-->ansistyles;
   npm-->archy;
   npm-->cacache;
   npm-->chalk;
@@ -524,6 +520,7 @@ graph LR;
   npm-->readdir-scoped-modules;
   npm-->rimraf;
   npm-->semver;
+  npm-->smoke-tests;
   npm-->spawk;
   npm-->ssri;
   npm-->tap;
@@ -686,6 +683,13 @@ graph LR;
   readdir-scoped-modules-->once;
   rimraf-->glob;
   semver-->lru-cache;
+  smoke-tests-->minify-registry-metadata;
+  smoke-tests-->npmcli-eslint-config["@npmcli/eslint-config"];
+  smoke-tests-->npmcli-promise-spawn["@npmcli/promise-spawn"];
+  smoke-tests-->npmcli-template-oss["@npmcli/template-oss"];
+  smoke-tests-->rimraf;
+  smoke-tests-->tap;
+  smoke-tests-->which;
   socks-->ip;
   socks-->smart-buffer;
   socks-proxy-agent-->agent-base;
@@ -735,4 +739,4 @@ packages higher up the chain.
  - make-fetch-happen, libnpmversion, @npmcli/config, init-package-json
  - @npmcli/installed-package-contents, @npmcli/map-workspaces, cacache, @npmcli/git, @npmcli/run-script, npm-packlist, read-package-json, readdir-scoped-modules, promzard
  - npm-bundled, read-package-json-fast, @npmcli/fs, unique-filename, @npmcli/promise-spawn, npm-package-arg, normalize-package-data, bin-links, nopt, npm-install-checks, npmlog, dezalgo, read
- - npm-normalize-package-bin, @npmcli/name-from-folder, semver, @npmcli/move-file, fs-minipass, infer-owner, ssri, unique-slug, proc-log, @npmcli/node-gyp, hosted-git-info, validate-npm-package-name, ignore-walk, minipass-fetch, @npmcli/package-json, cmd-shim, read-cmd-shim, write-file-atomic, abbrev, are-we-there-yet, gauge, parse-conflict-json, wrappy, treeverse, @npmcli/eslint-config, @npmcli/template-oss, @npmcli/disparity-colors, @npmcli/ci-detect, mute-stream, stringify-package, ini, npm-audit-report, npm-user-validate
+ - npm-normalize-package-bin, @npmcli/name-from-folder, semver, @npmcli/move-file, fs-minipass, infer-owner, ssri, unique-slug, proc-log, @npmcli/node-gyp, hosted-git-info, validate-npm-package-name, ignore-walk, minipass-fetch, @npmcli/package-json, cmd-shim, read-cmd-shim, write-file-atomic, abbrev, are-we-there-yet, gauge, parse-conflict-json, wrappy, treeverse, @npmcli/eslint-config, @npmcli/template-oss, @npmcli/disparity-colors, @npmcli/ci-detect, mute-stream, ini, npm-audit-report, npm-user-validate
