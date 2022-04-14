@@ -15,18 +15,25 @@ jobs:
     steps:
       - name: Incoming Pull Request
         if: |
-          secrets.NPM_BENCHMARKS_TOKEN && (
-          github.event_name == 'pull_request' ||
-          (github.event_name == 'issue_comment' && github.event.issue.pull_request &&
-          startsWith(github.event.comment.body, 'test this please ✅')))
+          github.event_name == 'pull_request' || (
+            github.event_name == 'issue_comment' &&
+            github.event.issue.pull_request &&
+            startsWith(github.event.comment.body, 'test this please ✅')
+          )
         env:
           # gh cli uses these env vars for owner/repo/token
           GH_REPO: "npm/benchmarks"
           GITHUB_TOKEN: ${{ secrets.NPM_BENCHMARKS_TOKEN }}
         run: |
+          if [[ "$GITHUB_TOKEN" == "" ]]; then
+            echo "No auth - from fork pull request, exiting"
+            exit 0
+          fi
+
           EVENT_NAME="${{ github.event_name }}"
           OWNER="${{ github.event.repository.owner.login }}"
           REPO="${{ github.event.repository.name }}"
+          PR=""
 
           if [[ "$EVENT_NAME" == "pull_request" ]]; then
             PR="${{ github.event.pull_request.number }}"
@@ -49,7 +56,6 @@ jobs:
     steps:
       - name: Incoming Comment
         if: |
-          secrets.NPM_BENCHMARKS_TOKEN &&
           github.event_name == 'issue_comment' &&
           github.event.issue.pull_request &&
           startsWith(github.event.comment.body, 'test this please ✅')
