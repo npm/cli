@@ -4,6 +4,8 @@ on:
   pull_request:
     branches:
       - '*'
+    paths:
+      - lib/**
   issue_comment:
     types:
       - created
@@ -18,7 +20,8 @@ jobs:
           github.event_name == 'pull_request' || (
             github.event_name == 'issue_comment' &&
             github.event.issue.pull_request &&
-            startsWith(github.event.comment.body, 'test this please ✅')
+            github.event.issue.state == 'open' &&
+            startsWith(github.event.comment.body, '@npm-robot benchmark this')
           )
         env:
           # gh cli uses these env vars for owner/repo/token
@@ -39,6 +42,12 @@ jobs:
             PR="${{ github.event.pull_request.number }}"
           else
             PR="${{ github.event.issue.number }}"
+            SENDER="${{ github.event.issue.sender.login }}"
+            ROLE=$(gh api repos/${OWNER}/${REPO}/collaborators/${SENDER}/permission -q '.permission')
+            if [[ "$ROLE" != "admin"]]; then
+              echo "${SENDER} is ${ROLE}, not an admin, exiting"
+              exit 0
+            fi
           fi
 
           EVENT="${EVENT_NAME} ${OWNER}/${REPO}#${PR}"
@@ -58,11 +67,21 @@ jobs:
         if: |
           github.event_name == 'issue_comment' &&
           github.event.issue.pull_request &&
-          startsWith(github.event.comment.body, 'test this please ✅')
+          github.event.issue.state == 'open' &&
+          startsWith(github.event.comment.body, '@npm-robot benchmark this')
         env:
           # gh cli uses this env var as the token
           GITHUB_TOKEN: ${{ secrets.NPM_BENCHMARKS_TOKEN }}
         run: |
+          OWNER="${{ github.event.repository.owner.login }}"
+          REPO="${{ github.event.repository.name }}"
+          SENDER="${{ github.event.issue.sender.login }}"
+          ROLE=$(gh api repos/${OWNER}/${REPO}/collaborators/${SENDER}/permission -q '.permission')
+          if [[ "$ROLE" != "admin"]]; then
+            echo "${SENDER} is ${ROLE}, not an admin, exiting"
+            exit 0
+          fi
+
           COMMENT_NODE_ID="${{ github.event.comment.node_id }}"
           QUERY='mutation ($inputData:AddReactionInput!) {
             addReaction (input:$inputData) {
