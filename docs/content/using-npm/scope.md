@@ -79,9 +79,14 @@ If you wish, you may associate a scope with a registry; see below.
 
 #### Publishing public scoped packages to the primary npm registry
 
-To publish a public scoped package, you must specify `--access public` with
-the initial publication. This will publish the package and set access
-to `public` as if you had run `npm access public` after publishing.
+To publish a public scoped package, you must first create an
+organization with the name of the scope that you'd like to publish to.
+For example, if you'd like to publish to `@myscope`, you'd need to
+create the `myscope` organization on npmjs.com prior to trying to
+publish. Once you've created, the organization, you will need to 
+specify `--access public` with the initial `npm publish` command.
+This will publish the package and set access to `public` as if 
+you had run `npm access public` after publishing.
 
 #### Publishing private scoped packages to the npm registry
 
