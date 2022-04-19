@@ -1,5 +1,13 @@
 # Changelog
 
+### [4.0.4](https://github.com/npm/cli/compare/libnpmexec-v4.0.3...libnpmexec-v4.0.4) (2022-04-19)
+
+
+### Bug Fixes
+
+* **exec:** workspaces support ([6253d19](https://github.com/npm/cli/commit/6253d1968d8390ea6b16604ff3abb5e6509349c9))
+* **libnpmexec:** fix read mixed local/registry pkg ([4a46a27](https://github.com/npm/cli/commit/4a46a27f2b968e2f8c1f4821508f93013738c482))
+
 ### [4.0.3](https://github.com/npm/cli/compare/libnpmexec-v4.0.2...libnpmexec-v4.0.3) (2022-04-06)
 
 
