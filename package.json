@@ -105,7 +105,7 @@
     "npm-profile": "^6.0.3",
     "npm-registry-fetch": "^13.1.1",
     "npm-user-validate": "^1.0.1",
-    "npmlog": "^6.0.1",
+    "npmlog": "^6.0.2",
     "opener": "^1.5.2",
     "pacote": "^13.1.1",
     "parse-conflict-json": "^2.0.2",
