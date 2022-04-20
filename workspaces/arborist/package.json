@@ -33,7 +33,7 @@
     "read-package-json-fast": "^2.0.2",
     "readdir-scoped-modules": "^1.1.0",
     "rimraf": "^3.0.2",
-    "semver": "^7.3.5",
+    "semver": "^7.3.7",
     "ssri": "^9.0.0",
     "treeverse": "^2.0.0",
     "walk-up-path": "^1.0.0"
