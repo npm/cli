@@ -40,7 +40,7 @@
     "@npmcli/run-script": "^3.0.0",
     "json-parse-even-better-errors": "^2.3.1",
     "proc-log": "^2.0.0",
-    "semver": "^7.3.5"
+    "semver": "^7.3.7"
   },
   "engines": {
     "node": "^12.13.0 || ^14.15.0 || >=16.0.0"
