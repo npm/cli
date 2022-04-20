@@ -10,6 +10,7 @@ const pkg = 'test-package'
 const token = 'test-auth-token'
 const auth = { '//registry.npmjs.org/:_authToken': token }
 const alternateRegistry = 'https://other.registry.npmjs.org'
+const basic = Buffer.from('test-user:test-password').toString('base64')
 
 const pkgJson = {
   name: pkg,
@@ -601,4 +602,75 @@ t.test('ignore-scripts', async t => {
     false,
     'did not run postpublish'
   )
+})
+
+t.test('_auth config default registry', async t => {
+  const { npm, joinedOutput } = await loadMockNpm(t, {
+    config: {
+      _auth: basic,
+    },
+    prefixDir: {
+      'package.json': JSON.stringify(pkgJson),
+    },
+    globals: ({ prefix }) => ({
+      'process.cwd': () => prefix,
+    }),
+  })
+  const registry = new MockRegistry({
+    tap: t,
+    registry: npm.config.get('registry'),
+    basic,
+  })
+  registry.nock.put(`/${pkg}`).reply(200, {})
+  await npm.exec('publish', [])
+  t.matchSnapshot(joinedOutput(), 'new package version')
+})
+
+t.test('bare _auth config scoped registry', async t => {
+  const { npm } = await loadMockNpm(t, {
+    config: {
+      '@npm:registry': alternateRegistry,
+      _auth: basic,
+    },
+    prefixDir: {
+      'package.json': JSON.stringify({
+        name: '@npm/test-package',
+        version: '1.0.0',
+      }, null, 2),
+    },
+    globals: ({ prefix }) => ({
+      'process.cwd': () => prefix,
+    }),
+  })
+  await t.rejects(
+    npm.exec('publish', []),
+    { message: `This command requires you to be logged in to ${alternateRegistry}` }
+  )
+})
+
+t.test('scoped _auth config scoped registry', async t => {
+  const spec = npa('@npm/test-package')
+  const { npm, joinedOutput } = await loadMockNpm(t, {
+    config: {
+      '@npm:registry': alternateRegistry,
+      [`${alternateRegistry.slice(6)}/:_auth`]: basic,
+    },
+    prefixDir: {
+      'package.json': JSON.stringify({
+        name: '@npm/test-package',
+        version: '1.0.0',
+      }, null, 2),
+    },
+    globals: ({ prefix }) => ({
+      'process.cwd': () => prefix,
+    }),
+  })
+  const registry = new MockRegistry({
+    tap: t,
+    registry: alternateRegistry,
+    basic,
+  })
+  registry.nock.put(`/${spec.escapedName}`).reply(200, {})
+  await npm.exec('publish', [])
+  t.matchSnapshot(joinedOutput(), 'new package version')
 })
