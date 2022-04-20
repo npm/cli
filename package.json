@@ -65,7 +65,7 @@
     "@npmcli/run-script": "^3.0.1",
     "abbrev": "~1.1.1",
     "archy": "~1.0.0",
-    "cacache": "^16.0.4",
+    "cacache": "^16.0.6",
     "chalk": "^4.1.2",
     "chownr": "^2.0.0",
     "cli-columns": "^4.0.0",
