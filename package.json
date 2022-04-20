@@ -69,7 +69,7 @@
     "chalk": "^4.1.2",
     "chownr": "^2.0.0",
     "cli-columns": "^4.0.0",
-    "cli-table3": "^0.6.1",
+    "cli-table3": "^0.6.2",
     "columnify": "^1.6.0",
     "fastest-levenshtein": "^1.0.12",
     "glob": "^8.0.1",
