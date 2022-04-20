@@ -11,6 +11,7 @@ class MockRegistry {
   #nock
   #registry
   #authorization
+  #basic
 
   constructor (opts) {
     if (!opts.registry) {
@@ -18,6 +19,7 @@ class MockRegistry {
     }
     this.#registry = (new URL(opts.registry)).origin
     this.#authorization = opts.authorization
+    this.#basic = opts.basic
     // Required for this.package
     this.#tap = opts.tap
   }
@@ -31,6 +33,9 @@ class MockRegistry {
       const reqheaders = {}
       if (this.#authorization) {
         reqheaders.authorization = `Bearer ${this.#authorization}`
+      }
+      if (this.#basic) {
+        reqheaders.authorization = `Basic ${this.#basic}`
       }
       this.#nock = tnock(this.#tap, this.#registry, { reqheaders })
     }
