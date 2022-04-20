@@ -60,7 +60,7 @@
     "@npmcli/ci-detect": "^2.0.0",
     "@npmcli/config": "^4.1.0",
     "@npmcli/fs": "^2.1.0",
-    "@npmcli/map-workspaces": "^2.0.2",
+    "@npmcli/map-workspaces": "^2.0.3",
     "@npmcli/package-json": "^2.0.0",
     "@npmcli/run-script": "^3.0.1",
     "abbrev": "~1.1.1",
