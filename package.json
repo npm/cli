@@ -112,7 +112,7 @@
     "proc-log": "^2.0.1",
     "qrcode-terminal": "^0.12.0",
     "read": "~1.0.7",
-    "read-package-json": "^5.0.0",
+    "read-package-json": "^5.0.1",
     "read-package-json-fast": "^2.0.3",
     "readdir-scoped-modules": "^1.1.0",
     "rimraf": "^3.0.2",
