@@ -1365,6 +1365,7 @@ t.test('workspaces', async t => {
     }),
   })
 
+  const pkg = { name: 'foo', version: '1.2.3', bin: { foo: 'foo' } }
   PROGRESS_IGNORED = true
   npm.localBin = resolve(npm.localPrefix, 'node_modules', '.bin')
 
@@ -1407,7 +1408,11 @@ t.test('workspaces', async t => {
   config.yes = false
 
   ARB_ACTUAL_TREE[npm.localPrefix] = {
-    children: new Map([['foo', { name: 'foo', version: '1.2.3' }]]),
+    inventory: {
+      query () {
+        return new Set([{ ...pkg, package: pkg }])
+      },
+    },
   }
 
   await exec.execWorkspaces([], ['a', 'b'])
